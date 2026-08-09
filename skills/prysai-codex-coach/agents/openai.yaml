@@ -1,0 +1,6 @@
+interface:
+  display_name: "Prysai Codex Coach"
+  short_description: "带你从入门到熟练掌握 Codex 的学习教练"
+  default_prompt: "使用 $prysai-codex-coach，根据我的目标评估当前阶段并安排下一节学习与实践。"
+policy:
+  allow_implicit_invocation: true

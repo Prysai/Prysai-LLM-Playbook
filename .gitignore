@@ -1,0 +1,29 @@
+# Local archives and extracted source material stay outside the repository.
+*.zip
+*.7z
+*.rar
+
+# Secrets and machine-local configuration.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json
+
+# Python and editor artifacts.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+.idea/
+.vscode/
+
+# OS artifacts.
+Thumbs.db
+.DS_Store

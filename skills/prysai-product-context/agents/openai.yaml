@@ -1,0 +1,6 @@
+interface:
+  display_name: "Prysai Product Context"
+  short_description: "建立可复用、可版本化的产品与营销上下文"
+  default_prompt: "使用 $prysai-product-context，帮我建立这项产品的共享上下文和定位基础。"
+policy:
+  allow_implicit_invocation: true

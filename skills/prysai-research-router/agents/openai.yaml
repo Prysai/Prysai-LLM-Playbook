@@ -1,0 +1,6 @@
+interface:
+  display_name: "Prysai Research Router"
+  short_description: "把研究请求路由成有来源、有证据的工作流"
+  default_prompt: "使用 $prysai-research-router，先帮我收敛研究问题，再设计来源和证据流程。"
+policy:
+  allow_implicit_invocation: true

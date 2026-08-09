@@ -1,0 +1,6 @@
+interface:
+  display_name: "Prysai Workflow Orchestrator"
+  short_description: "把复杂 Codex 任务组织成可验证的完整工作流"
+  default_prompt: "使用 $prysai-workflow-orchestrator，把这个复杂任务拆成可执行、可验证的阶段。"
+policy:
+  allow_implicit_invocation: true

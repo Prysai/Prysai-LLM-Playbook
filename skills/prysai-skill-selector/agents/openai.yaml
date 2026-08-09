@@ -1,0 +1,6 @@
+interface:
+  display_name: "Prysai Skill Selector"
+  short_description: "按任务选择并审查最小有效 Skill 组合"
+  default_prompt: "使用 $prysai-skill-selector，帮我选择并比较完成这个任务所需的最小 Skill 组合。"
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,29 @@
+{
+  "audit_date": "2026-08-09",
+  "tool": "scripts/audit_input_archives.py",
+  "mode": "read-only",
+  "summary": {
+    "archives": 6,
+    "skill_files": {
+      "S01": 0,
+      "S02": 2,
+      "S03": 0,
+      "S04": 49,
+      "S05": 24,
+      "S06": 880
+    },
+    "notable_risks": [
+      "S01 has no explicit license signal in the supplied archive.",
+      "S02 contains duplicate Codex and skills layouts and is licensed CC BY-NC 4.0.",
+      "S06 contains many external-service automation skills and 92 names that do not satisfy the normalized skill-name rule."
+    ]
+  },
+  "sha256": {
+    "codex-orange-book-main.zip": "BA371729FF9B0490792C3172275AFF454FA5BE6E873AB50AA07472D8A3295F86",
+    "academic-research-skills-codex-main.zip": "F6EE818819D69D07D0637E4E88F30761E8F441BFDD93EDA549D82CE73F45DD5E",
+    "awesome-agent-skills-main.zip": "FC8A7116F3E88A8D4EE870CC2F50B5A3F8CE007EFAA77AFB98A8F02AEBC75CC6",
+    "marketingskills-main.zip": "B0076275740B31C1147C9BE5CEF6EF857C047C30E5334257A174292F26763D4D",
+    "agent-skills-main.zip": "6EEDBE7D2EA3A82417781D879785BD501FBDE21275627F557DE4B76560BA1250",
+    "awesome-codex-skills-master.zip": "D3DA83ED9D474690E7FF235351376114972840C78BC319CBCB8F89CBD704608E"
+  }
+}

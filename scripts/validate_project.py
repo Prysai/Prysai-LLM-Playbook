@@ -1,0 +1,94 @@
+"""Validate the minimum structural contract of Prysai Codex Atlas."""
+
+from __future__ import annotations
+
+import re
+import sys
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+REQUIRED = (
+    "AGENTS.md",
+    "CONTEXT.md",
+    "README.md",
+    "docs/charter.md",
+    "docs/book-architecture.md",
+    "docs/integration-map.md",
+    "docs/learning-model.md",
+    "docs/content-matrix.md",
+    "docs/roadmap.md",
+    "docs/research/openai-codex-baseline.md",
+    "docs/sources/asset-register.md",
+    "docs/sources/archive-audit-2026-08-09.json",
+    "docs/governance/content-lifecycle.md",
+    "docs/governance/contribution-model.md",
+    "docs/quality/skill-quality-standard.md",
+    "docs/quality/evaluation-framework.md",
+    "book/table-of-contents.md",
+    "book/labs/README.md",
+)
+
+
+def main() -> int:
+    errors: list[str] = []
+    for relative in REQUIRED:
+        if not (ROOT / relative).is_file():
+            errors.append(f"missing required file: {relative}")
+
+    skill_dirs = sorted(path.parent for path in (ROOT / "skills").glob("*/SKILL.md"))
+    if not skill_dirs:
+        errors.append("no Atlas skills found")
+
+    chapter_files = sorted((ROOT / "book/chapters").glob("*.md"))
+    if len(chapter_files) < 12:
+        errors.append("fewer than 12 book chapter files found")
+    lab_files = sorted((ROOT / "book/labs").glob("lab-*.md"))
+    if len(lab_files) < 6:
+        errors.append("fewer than 6 lab files found")
+
+    for skill_dir in skill_dirs:
+        skill_path = skill_dir / "SKILL.md"
+        skill_label = skill_dir.relative_to(ROOT).as_posix()
+        text = skill_path.read_text(encoding="utf-8")
+        if not text.startswith("---\n"):
+            errors.append(f"{skill_label}: frontmatter must start with ---")
+        name_match = re.search(
+            r"(?m)^name:\s*([a-z0-9]+(?:-[a-z0-9]+)*)\s*$", text
+        )
+        if not name_match:
+            errors.append(f"{skill_label}: skill name is missing or invalid")
+        elif name_match.group(1) != skill_dir.name:
+            errors.append(
+                f"{skill_label}: frontmatter name does not match directory"
+            )
+        if not re.search(r"(?m)^description:\s*", text):
+            errors.append(f"{skill_label}: skill description is missing")
+
+        yaml_path = skill_dir / "agents/openai.yaml"
+        if not yaml_path.is_file():
+            errors.append(f"{skill_label}: missing agents/openai.yaml")
+            continue
+        yaml_text = yaml_path.read_text(encoding="utf-8")
+        for key in ("display_name", "short_description", "default_prompt"):
+            if not re.search(rf"(?m)^\s+{key}:\s*['\"]?.+", yaml_text):
+                errors.append(f"{skill_label}: openai.yaml is missing {key}")
+        expected_mention = f"${skill_dir.name}"
+        if expected_mention not in yaml_text:
+            errors.append(
+                f"{skill_label}: default_prompt must mention {expected_mention}"
+            )
+
+    if errors:
+        print("VALIDATION_FAILED")
+        for error in errors:
+            print(f"- {error}")
+        return 1
+
+    print(f"VALIDATION_OK root={ROOT}")
+    print(f"required_files={len(REQUIRED)}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
