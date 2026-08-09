@@ -9,7 +9,7 @@ description: >
   Do not invent customer evidence or present assumptions as validated facts.
 ---
 
-# Prysai Product Context
+# Product Context
 
 Create a compact shared context that downstream work can reuse. Start by
 checking for an existing project context and its version/changelog. Preserve

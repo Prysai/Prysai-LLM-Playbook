@@ -1,4 +1,4 @@
-"""Check relative Markdown links in the Atlas workspace."""
+"""Check relative Markdown links in the Codex Field Guide workspace."""
 
 from __future__ import annotations
 

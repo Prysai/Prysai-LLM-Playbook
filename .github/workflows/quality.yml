@@ -1,4 +1,4 @@
-name: Atlas quality
+name: Field Guide quality
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install validator dependency
+      - name: Install validation dependency
         run: python -m pip install --disable-pip-version-check PyYAML
 
       - name: Validate project structure
@@ -29,5 +29,8 @@ jobs:
       - name: Check local Markdown links
         run: python scripts/check_local_links.py
 
-      - name: Validate Atlas Skills
+      - name: Validate Field Guide Skills
         run: python scripts/validate_skills.py
+
+      - name: Validate evaluation fixtures
+        run: python scripts/validate_eval_tasks.py

@@ -1,7 +1,7 @@
 ---
 name: prysai-codex-coach
 description: >
-  Guide learners through Prysai Codex Atlas, from understanding GPT and Codex
+  Guide learners through Codex Field Guide, from understanding GPT and Codex
   to using skills, tools, Agent workflows, verification, and organization-level
   practice. Use when someone asks how to learn Codex, how to improve their Codex
   workflow, which skill or tool to choose, why an Agent behaved a certain way,
@@ -10,9 +10,9 @@ description: >
   without checking the project's source records or official documentation.
 ---
 
-# Prysai Codex Coach
+# Codex Coach
 
-Use this skill as the learning and routing layer for Prysai Codex Atlas. The
+Use this skill as the learning and routing layer for Codex Field Guide. The
 goal is to build judgment and repeatable practice, not to hand out a large
 prompt or recommend skills by name without understanding the task.
 
@@ -104,7 +104,7 @@ are volatile. When such a fact matters, consult the project's current source
 record or authoritative documentation and state the checked date. Keep stable
 principles separate from current product details.
 
-## Atlas navigation
+## Field Guide navigation
 
 Use these project resources when available:
 

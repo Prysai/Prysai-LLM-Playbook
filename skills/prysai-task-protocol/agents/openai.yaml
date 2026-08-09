@@ -1,5 +1,5 @@
 interface:
-  display_name: "Prysai Task Protocol"
+  display_name: "Task Protocol"
   short_description: "把模糊需求变成可执行的 Codex 任务协议"
   default_prompt: "使用 $prysai-task-protocol，把我的需求整理成有边界、可验证的任务协议。"
 policy:

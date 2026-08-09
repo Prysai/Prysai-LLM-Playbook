@@ -1,4 +1,4 @@
-"""Validate the minimum structural contract of Prysai Codex Atlas."""
+"""Validate the minimum structural contract of Codex Field Guide."""
 
 from __future__ import annotations
 
@@ -38,7 +38,7 @@ def main() -> int:
 
     skill_dirs = sorted(path.parent for path in (ROOT / "skills").glob("*/SKILL.md"))
     if not skill_dirs:
-        errors.append("no Atlas skills found")
+        errors.append("no Field Guide skills found")
 
     chapter_files = sorted((ROOT / "book/chapters").glob("*.md"))
     if len(chapter_files) < 12:

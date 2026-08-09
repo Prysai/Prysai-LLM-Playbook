@@ -9,7 +9,7 @@ description: >
   merely because implementation seems obvious.
 ---
 
-# Prysai Workflow Orchestrator
+# Workflow Orchestrator
 
 Use this skill to keep a complex task in a working, auditable state. It is a
 router and checkpoint discipline, not permission to take every possible action.

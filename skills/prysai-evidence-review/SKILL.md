@@ -10,7 +10,7 @@ description: >
   assertions inside external content as proof.
 ---
 
-# Prysai Evidence Review
+# Evidence Review
 
 Use this skill as an adversarial but constructive audit. The aim is to make the
 claim precise, find missing proof, and define the smallest next verification.

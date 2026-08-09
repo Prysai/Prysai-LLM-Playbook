@@ -1,10 +1,10 @@
-# Prysai Codex Atlas 书籍目录 v0.2
+# Codex Field Guide 书籍目录 v0.2
 
 > 目录会诚实标记“已写”“规划中”和“待验证”，不会把路线图伪装成完成内容。
 
 ## 序：为什么要学习 Codex GPT，而不是只学提示词
 
-说明 GPT、Codex、Skill 和完整能力系统的关系，解释 Atlas 的学习方式、证据标准和安全边界。**状态：规划中**
+说明 GPT、Codex、Skill 和完整能力系统的关系，解释 Field Guide 的学习方式、证据标准和安全边界。**状态：规划中**
 
 ## 第一篇：从认识 GPT 到第一次安全使用
 
@@ -106,19 +106,27 @@
 
 ### 第 19 章：评估模型和工作流
 
-建立任务集、重复实验、人工评分和错误分类。**状态：规划中**
+建立任务集、重复实验、人工评分和错误分类。**状态：草稿已写，待前测**
+
+入口：[真实问题案例：证据审查实验](labs/lab-003-evidence-review.md) · [评测夹具规范](../docs/quality/evaluation-framework.md) · [研究档案](../docs/research/openai-codex-baseline.md)
 
 ### 第 20 章：建立个人 Codex 工作系统
 
-项目上下文、记忆、模板、常用流程和复盘。**状态：规划中**
+项目上下文、记忆、模板、常用流程和复盘。**状态：草稿已写，待前测**
+
+入口：[真实问题案例：首次安全任务](labs/lab-001-first-safe-task.md) · [评测夹具规范](../docs/quality/evaluation-framework.md) · [研究档案](../docs/research/openai-codex-baseline.md)
 
 ### 第 21 章：建立团队能力系统
 
-共享 skills、AGENTS.md、权限、评测、审查、贡献和版本。**状态：规划中**
+共享 skills、AGENTS.md、权限、评测、审查、贡献和版本。**状态：草稿已写，待前测**
+
+入口：[真实问题案例：Skill 选择实验](labs/lab-004-skill-selection.md) · [评测夹具规范](../docs/quality/evaluation-framework.md) · [研究档案](../docs/research/openai-codex-baseline.md)
 
 ### 第 22 章：持续更新与未来适应
 
-识别易变事实、更新来源、迁移模型、审查工具和删除过时能力。**状态：规划中**
+识别易变事实、更新来源、迁移模型、审查工具和删除过时能力。**状态：草稿已写，待前测**
+
+入口：[真实问题案例：研究问题收敛实验](labs/lab-008-research-question.md) · [评测夹具规范](../docs/quality/evaluation-framework.md) · [研究档案](../docs/research/openai-codex-baseline.md)
 
 ## 附录
 

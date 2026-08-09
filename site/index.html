@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Codex Field Guide：从 GPT 到 Codex 的学习、实验与实战指南。" />
+    <title>Codex Field Guide — 从第一个任务开始</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <header class="site-header" data-header>
+      <div class="shell header-inner">
+        <a class="wordmark" href="#top" aria-label="Codex Field Guide 首页">
+          <span class="wordmark-mark" aria-hidden="true">C</span>
+          <span>CODEX<br /><strong>Field Guide</strong></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span>菜单</span><span class="menu-icon" aria-hidden="true"><i></i><i></i></span>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="主导航">
+          <a href="#path">成长路径</a>
+          <a href="#chapters">阅读路线</a>
+          <a href="#labs">实验室</a>
+          <a href="#skills">Skills</a>
+          <a class="nav-cta" href="#start">从第一个任务开始 <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero shell" id="top" aria-labelledby="hero-title">
+        <div class="hero-index" aria-label="页面索引">
+          <span>01</span><span>—</span><span>Field Guide / v0.1</span>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">GPT → Codex · 学习与实践系统</p>
+          <h1 id="hero-title">把“会用 GPT”<br /><em>练成</em>可靠工作流。</h1>
+          <p class="hero-lede">Codex Field Guide 不是 Skill 目录，也不是安装手册。它把概念、任务、实验、证据与团队协作组织成一条能持续更新的学习路径。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#start">开始第一个安全任务 <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#chapters">查看 22 章路线 <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+        <aside class="hero-note" aria-label="项目状态说明">
+          <span class="note-rule"></span>
+          <p>当前基线</p>
+          <strong>v0.1</strong>
+          <p>产品章程与学习模型已建立；内容仍按章节、实验和前测逐项推进。</p>
+          <a href="#status">查看验证边界 <span aria-hidden="true">↗</span></a>
+        </aside>
+        <div class="hero-footer">
+          <span>读懂 → 动手 → 留证 → 迁移</span>
+          <span class="folio">CODEX / 001</span>
+        </div>
+      </section>
+
+      <section class="section section-light" id="path" aria-labelledby="path-title">
+        <div class="shell">
+          <div class="section-heading heading-split">
+            <div><span class="section-number">02</span><p class="eyebrow">Learning path</p><h2 id="path-title">七级路径，<br />每一步都要留下证据。</h2></div>
+            <p class="section-intro">等级不是阅读进度条。每一级都要求你能解释边界、完成操作、做出取舍，并审查一个结果。</p>
+          </div>
+          <div class="path-layout">
+            <div class="level-list" role="tablist" aria-label="七级成长路径">
+              <button class="level-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="level-panel" data-level="L0"><span>L0</span><strong>观察者</strong><small>先知道发生了什么</small></button>
+              <button class="level-tab" type="button" role="tab" aria-selected="false" aria-controls="level-panel" data-level="L1"><span>L1</span><strong>安全使用者</strong><small>完成第一个低风险任务</small></button>
+              <button class="level-tab" type="button" role="tab" aria-selected="false" aria-controls="level-panel" data-level="L2"><span>L2</span><strong>任务设计者</strong><small>把愿望写成任务协议</small></button>
+              <button class="level-tab" type="button" role="tab" aria-selected="false" aria-controls="level-panel" data-level="L3"><span>L3</span><strong>工作流设计者</strong><small>从定义走到交付</small></button>
+              <button class="level-tab" type="button" role="tab" aria-selected="false" aria-controls="level-panel" data-level="L4"><span>L4</span><strong>能力扩展者</strong><small>选择并组合最小能力</small></button>
+              <button class="level-tab" type="button" role="tab" aria-selected="false" aria-controls="level-panel" data-level="L5"><span>L5</span><strong>证据审查者</strong><small>识别完成声明的边界</small></button>
+              <button class="level-tab" type="button" role="tab" aria-selected="false" aria-controls="level-panel" data-level="L6"><span>L6</span><strong>组织教练</strong><small>把方法沉淀为团队系统</small></button>
+            </div>
+            <article class="level-panel" id="level-panel" role="tabpanel" tabindex="0">
+              <span class="panel-kicker">当前等级 / <span data-level-label>L0</span></span>
+              <h3 data-level-title>观察，而不是猜测。</h3>
+              <p data-level-description>先分清 GPT、模型、Codex、上下文、工具、Skill 与 Agent。学习从可观察的输入、行动、状态和证据开始。</p>
+              <div class="panel-meta"><span>建议入口</span><a data-level-link href="../book/chapters/01-gpt-and-codex.md">第 1 章：先理解 GPT，再理解 Codex 的工作原理 <span aria-hidden="true">↗</span></a></div>
+              <div class="panel-evidence"><span>掌握的四类证据</span><div><b>解释</b><b>操作</b><b>判断</b><b>审查</b></div></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-ink" id="chapters" aria-labelledby="chapters-title">
+        <div class="shell">
+          <div class="section-heading heading-split heading-light">
+            <div><span class="section-number">03</span><p class="eyebrow">The reading route</p><h2 id="chapters-title">22 章，四条<br />可以跳读的路线。</h2></div>
+            <p class="section-intro">顺读建立心智模型，跳读解决眼前任务。每条路线最终都会回到概念、实验与验证闭环。</p>
+          </div>
+          <div class="route-controls" role="group" aria-label="筛选章节路线">
+            <button class="filter-button is-active" type="button" data-filter="all">全部 <span>22</span></button>
+            <button class="filter-button" type="button" data-filter="A">A · 第一次认识 Codex <span>6</span></button>
+            <button class="filter-button" type="button" data-filter="B">B · 真实工作 <span>7</span></button>
+            <button class="filter-button" type="button" data-filter="C">C · 能力扩展 <span>5</span></button>
+            <button class="filter-button" type="button" data-filter="D">D · 组织化 <span>4</span></button>
+          </div>
+          <div class="chapter-list" data-chapter-list>
+            <details class="chapter-group" open data-route="A"><summary><span>A</span><strong>第一次认识 Codex</strong><small>01—06 · 目标：完成第一个安全任务</small><b>06</b></summary><div class="chapter-items"><a href="../book/chapters/01-gpt-and-codex.md"><span>01</span>先理解 GPT，再理解 Codex 的工作原理 <i>已写</i></a><a href="../book/chapters/02-first-safe-task.md"><span>02</span>完成第一个安全、可验证的任务 <i>已写</i></a><a href="../book/chapters/03-task-protocol.md"><span>03</span>把愿望变成任务协议 <i>已写</i></a><a href="../book/chapters/04-context-permissions-and-agent.md"><span>04</span>上下文、权限与 Agent 的行动边界 <i>已写</i></a><a href="../book/chapters/05-choose-the-codex-surface.md"><span>05</span>选择正确的 Codex 工作面 <i>已写</i></a><a href="../book/chapters/06-model-selection.md"><span>06</span>模型选择不是模型崇拜 <i>已写</i></a></div></details>
+            <details class="chapter-group" data-route="B"><summary><span>B</span><strong>把 Codex 用于真实工作</strong><small>07—13 · 目标：设计可验证的工作流</small><b>07</b></summary><div class="chapter-items"><a href="../book/chapters/07-skills-plugins-and-tools.md"><span>07</span>Skill、Plugin、MCP 和工具如何分工 <i>已写</i></a><a href="../book/chapters/08-full-lifecycle-workflow.md"><span>08</span>从定义到交付的完整生命周期 <i>已写</i></a><a href="../book/chapters/09-verification-and-recovery.md"><span>09</span>验证、怀疑与恢复 <i>已写</i></a><a href="../book/chapters/10-planning-and-slicing.md"><span>10</span>规划与竖向切片 <i>规划中</i></a><a href="../book/chapters/11-designing-a-skill.md"><span>11</span>设计一个真正有用的 Skill <i>规划中</i></a><a href="../book/chapters/12-agent-loop-and-stop.md"><span>12</span>Agent 的循环、状态和停止条件 <i>规划中</i></a><a href="../book/chapters/13-action-boundaries.md"><span>13</span>文件、终端、浏览器与 GitHub 的行动边界 <i>规划中</i></a></div></details>
+            <details class="chapter-group" data-route="C"><summary><span>C</span><strong>能力扩展与 Agent 协作</strong><small>14—18 · 目标：按任务选择最小能力组合</small><b>05</b></summary><div class="chapter-items"><a href="../book/chapters/14-discover-and-audit-skills.md"><span>14</span>如何发现、安装和审查外部 Skill <i>规划中</i></a><a href="../book/chapters/15-research-track.md"><span>15</span>研究轨：从问题到可审查知识 <i>规划中</i></a><a href="../book/chapters/16-engineering-track.md"><span>16</span>工程轨：从想法到可靠软件 <i>规划中</i></a><a href="../book/chapters/17-marketing-track.md"><span>17</span>营销轨：从产品理解到增长实验 <i>规划中</i></a><a href="../book/chapters/18-content-design-data-automation.md"><span>18</span>内容、设计、数据与自动化轨 <i>规划中</i></a></div></details>
+            <details class="chapter-group" data-route="D"><summary><span>D</span><strong>从熟练使用到组织化</strong><small>19—22 · 目标：把个人方法变成团队能力</small><b>04</b></summary><div class="chapter-items"><a href="../book/chapters/19-evaluate-models-and-workflows.md"><span>19</span>评估模型和工作流 <i>草稿 / 待前测</i></a><a href="../book/chapters/20-personal-codex-work-system.md"><span>20</span>建立个人 Codex 工作系统 <i>草稿 / 待前测</i></a><a href="../book/chapters/21-team-capability-system.md"><span>21</span>建立团队能力系统 <i>草稿 / 待前测</i></a><a href="../book/chapters/22-continuous-update-and-future-proofing.md"><span>22</span>持续更新与未来适应 <i>草稿 / 待前测</i></a></div></details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-light" id="labs" aria-labelledby="labs-title">
+        <div class="shell">
+          <div class="section-heading heading-split"><div><span class="section-number">04</span><p class="eyebrow">The lab</p><h2 id="labs-title">把原理变成<br />可观察的动作。</h2></div><p class="section-intro">实验是低风险、可复现的学习任务。每个实验都包含前置条件、证据、失败变体与复盘。</p></div>
+          <div class="lab-grid">
+            <a class="lab-card lab-feature" href="../book/labs/lab-001-first-safe-task.md"><span class="lab-id">LAB 001</span><h3>第一次安全任务</h3><p>在沙盒项目中，让 Codex 先检查再修改。把“完成了”变成可检查的差异。</p><span class="lab-footer">L1 · 起点实验 <b>↗</b></span></a>
+            <a class="lab-card" href="../book/labs/lab-002-task-protocol.md"><span class="lab-id">LAB 002</span><h3>任务协议</h3><p>将模糊需求拆成目标、输入、约束、验收与失败处理。</p><span class="lab-footer">L2 <b>↗</b></span></a>
+            <a class="lab-card" href="../book/labs/lab-003-evidence-review.md"><span class="lab-id">LAB 003</span><h3>证据审查</h3><p>发现一个“看起来完成但没有证据”的结果。</p><span class="lab-footer">L5 · candidate 前测相关 <b>↗</b></span></a>
+            <a class="lab-card" href="../book/labs/lab-004-skill-selection.md"><span class="lab-id">LAB 004</span><h3>Skill 选择</h3><p>说明选择理由，拒绝用目录数量替代适配判断。</p><span class="lab-footer">L4 · candidate 前测相关 <b>↗</b></span></a>
+          </div>
+          <a class="section-link" href="../book/labs/README.md">查看实验室规则与全部入口 <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="section section-red" id="skills" aria-labelledby="skills-title">
+        <div class="shell">
+          <div class="section-heading heading-split heading-light"><div><span class="section-number">05</span><p class="eyebrow">Capability layer</p><h2 id="skills-title">7 个 Skill，<br />不是 7 个答案。</h2></div><p class="section-intro">Skill 是可触发、可执行、可验证的方法包。它必须说明适用范围、输入检查、停止条件、输出与验证。</p></div>
+          <div class="skill-grid">
+            <a href="../skills/prysai-codex-coach/SKILL.md"><span>01</span><strong>Codex Coach</strong><small>理解概念、练习边界、复盘能力</small><b>↗</b></a>
+            <a href="../skills/prysai-task-protocol/SKILL.md"><span>02</span><strong>Task Protocol</strong><small>把模糊请求整理成可执行协议</small><b>↗</b></a>
+            <a href="../skills/prysai-evidence-review/SKILL.md"><span>03</span><strong>Evidence Review</strong><small>将完成声明拆成断言与证据</small><b>↗</b></a>
+            <a href="../skills/prysai-skill-selector/SKILL.md"><span>04</span><strong>Skill Selector</strong><small>按目标、风险和依赖选择组合</small><b>↗</b></a>
+            <a href="../skills/prysai-workflow-orchestrator/SKILL.md"><span>05</span><strong>Workflow Orchestrator</strong><small>组织阶段、检查点与交付</small><b>↗</b></a>
+            <a href="../skills/prysai-research-router/SKILL.md"><span>06</span><strong>Research Router</strong><small>让问题收敛到可审查知识</small><b>↗</b></a>
+            <a href="../skills/prysai-product-context/SKILL.md"><span>07</span><strong>Product Context</strong><small>维护稳定原则与易变事实边界</small><b>↗</b></a>
+          </div>
+          <p class="skill-footnote">当前质量记录明确标为 <strong>candidate</strong> 的是：Task Protocol、Evidence Review、Skill Selector。其余能力仍需继续前测与迁移测试。</p>
+        </div>
+      </section>
+
+      <section class="section section-dark" id="cases" aria-labelledby="cases-title">
+        <div class="shell case-layout"><div><span class="section-number">06</span><p class="eyebrow">Real problem entry</p><h2 id="cases-title">从一个真实问题<br />进入能力单元。</h2></div><div class="case-content"><p class="case-lede">不要先找“最强 Skill”。先描述你要完成的工作、风险和证据，再让 Field Guide 帮你选入口。</p><div class="case-steps"><div><span>01</span><strong>定义</strong><p>目标、背景、输入与约束</p></div><div><span>02</span><strong>行动</strong><p>允许做什么，何时暂停</p></div><div><span>03</span><strong>验证</strong><p>用什么证据证明结果</p></div></div><a class="button button-light" href="#start">选择我的第一个问题 <span aria-hidden="true">↗</span></a></div></div>
+      </section>
+
+      <section class="section section-light" id="status" aria-labelledby="status-title">
+        <div class="shell"><div class="section-heading heading-split"><div><span class="section-number">07</span><p class="eyebrow">Evidence boundary</p><h2 id="status-title">状态有边界，<br />声明才可信。</h2></div><p class="section-intro">Field Guide 不把文档数量、Skill 数量或一次成功输出当作“掌握”。状态只在对应证据存在时成立。</p></div><div class="status-grid"><div class="status-card"><span class="status-dot dot-draft"></span><strong>draft</strong><p>仍在编写，尚未完成最低验证。</p></div><div class="status-card"><span class="status-dot dot-candidate"></span><strong>candidate</strong><p>结构和基本检查通过，但新鲜前测仍需继续。</p></div><div class="status-card"><span class="status-dot dot-verified"></span><strong>verified</strong><p>在声明范围内通过正例、边界例、失败例与迁移例。</p></div><div class="status-card"><span class="status-dot dot-production"></span><strong>production-ready</strong><p>额外通过安全、维护、版本、许可证与发布门禁。</p></div></div><p class="source-note">本页状态依据仓库内 <a href="../docs/quality/forward-test-2026-08-09.md">2026-08-09 首批独立上下文前测记录</a>；页面本身是展示实现，不替代项目质量验证。</p></div>
+      </section>
+
+      <section class="start-section" id="start" aria-labelledby="start-title"><div class="shell start-inner"><div><span class="section-number">08</span><p class="eyebrow">Your first task</p><h2 id="start-title">带一个小问题来。<br /><em>留下完整证据。</em></h2></div><div class="start-flow"><div><span>1</span><strong>选低风险任务</strong><p>从可回滚、可观察的沙盒任务开始。</p></div><div><span>2</span><strong>打开第 2 章</strong><p>先写任务协议，再让 Codex 行动。</p></div><div><span>3</span><strong>进入 LAB 001</strong><p>保留差异、运行结果和复盘回答。</p></div><a class="button button-primary" href="../book/chapters/02-first-safe-task.md">打开第 2 章 <span aria-hidden="true">↗</span></a></div></div></section>
+    </main>
+    <footer class="site-footer"><div class="shell footer-inner"><a class="wordmark" href="#top"><span class="wordmark-mark" aria-hidden="true">C</span><span>CODEX<br /><strong>Field Guide</strong></span></a><p>从 GPT 到 Codex 的学习、实验与实战指南。</p><span class="footer-meta">工作基线 · v0.1 · 2026-08-09</span></div></footer>
+  </body>
+</html>

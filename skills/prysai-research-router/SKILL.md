@@ -9,9 +9,9 @@ description: >
   drafting conclusions. Do not invent sources, citations, statistics, or policy.
 ---
 
-# Prysai Research Router
+# Research Router
 
-Use this skill as a Prysai Lab research workflow. It provides the routing and
+Use this skill as the Field Guide research workflow. It provides the routing and
 evidence contract; load domain-specific references only for the current stage.
 
 ## Route by intent

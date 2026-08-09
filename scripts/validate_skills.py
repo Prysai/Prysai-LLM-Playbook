@@ -1,4 +1,4 @@
-"""Validate Atlas Skill frontmatter and UI metadata in CI."""
+"""Validate Field Guide Skill frontmatter and UI metadata in CI."""
 
 from __future__ import annotations
 

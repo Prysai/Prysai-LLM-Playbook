@@ -10,7 +10,7 @@ description: >
   task until the protocol and any required confirmation points are clear.
 ---
 
-# Prysai Task Protocol
+# Task Protocol
 
 Use this skill to convert a wish into a small contract for one Codex task. The
 protocol should reduce important ambiguity without scripting every model step.

@@ -1,8 +1,8 @@
-# Prysai Codex Atlas
+# Codex Field Guide
 
 ## Project purpose
 
-This repository is Prysai Lab's book-like learning and practice system for GPT,
+This repository is a book-like learning and practice system for GPT,
 Codex, skills, tools, Agent behavior, verification, and team adoption.
 
 ## Working rules

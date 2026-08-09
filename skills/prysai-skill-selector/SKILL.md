@@ -10,7 +10,7 @@ description: >
   popularity or install an entire catalog without task-specific evidence.
 ---
 
-# Prysai Skill Selector
+# Skill Selector
 
 Use this skill as a decision layer before installing or invoking external
 skills. A skill is a means to improve a task, not the goal of the task.

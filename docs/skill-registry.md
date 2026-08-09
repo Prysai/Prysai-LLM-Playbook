@@ -1,6 +1,6 @@
-# Atlas Skill 注册表
+# Field Guide Skill 注册表
 
-这里登记的是 Prysai Lab 维护的 Atlas skills，不是外部目录的完整复制。外部候选先进入来源台账和审查流程，只有通过触发、边界、来源、依赖和评测门槛后，才会进入本注册表。
+这里登记的是 Field Guide 维护的 skills，不是外部目录的完整复制。外部候选先进入来源台账和审查流程，只有通过触发、边界、来源、依赖和评测门槛后，才会进入本注册表。目录名保留 `prysai-` 作为安装命名空间，以避免与其他项目同名并保持现有调用兼容；界面显示名采用功能名。
 
 | Skill | 作用 | 主线阶段 | 状态 | 主要验证 |
 |---|---|---|---|---|
@@ -19,4 +19,4 @@
 - `verified`：在声明范围和任务集内通过正例、边界例、失败例和迁移例；
 - `production-ready`：还有安全、维护、版本、许可证和组织发布门禁全部通过。
 
-当前所有 Atlas skills 都诚实标为 `candidate`，即使官方 frontmatter 校验已经通过。
+当前所有 Field Guide skills 都诚实标为 `candidate`，即使官方 frontmatter 校验已经通过。

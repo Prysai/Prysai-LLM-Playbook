@@ -131,4 +131,4 @@ Skill 不是一个更长的提示词，也不是一个可以替你承担判断�
 
 ## 来源与更新提示
 
-本章的核心解释属于 Atlas 原创教学结构；Codex 入口、skills/plugins、权限和模型的产品事实见 [OpenAI Codex 官方基线](../../docs/research/openai-codex-baseline.md)，并需按内容生命周期复核。
+本章的核心解释属于 Field Guide 原创教学结构；Codex 入口、skills/plugins、权限和模型的产品事实见 [OpenAI Codex 官方基线](../../docs/research/openai-codex-baseline.md)，并需按内容生命周期复核。

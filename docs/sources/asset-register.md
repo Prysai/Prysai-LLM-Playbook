@@ -14,8 +14,6 @@
 | S01 | `D:/downloads/codex-orange-book-main.zip` | `bozhouDev/codex-orange-book` | 中文长篇教材、静态站、PDF、232 张 PNG；无 `SKILL.md` | 压缩包和 GitHub API 未发现明确许可证 | 只做结构与主题参考；不复制正文、图片或品牌表达，除非取得明确许可 |
 | S02 | `D:/downloads/academic-research-skills-codex-main.zip` | `Imbad0202/academic-research-skills-codex` | 3,533 个文件；单一 Codex 路由 skill；含 workflow、脚本、实验和评测 | `CC BY-NC 4.0`；含上游归属和 NOTICE | 暂作为外部参考/可选非商业研究轨；纳入发行版前进行许可审查并保留完整归属 |
 | S03 | `D:/downloads/awesome-agent-skills-main.zip` | `VoltAgent/awesome-agent-skills` | 目录型精选清单，非完整 skill 实现 | MIT | 作为外部生态索引；不把清单数量当作质量证明 |
-| S04 | `D:/downloads/marketingskills-main.zip` | `coreyhaines31/marketingskills` | 49 个领域 skill，围绕 product-marketing 共享上下文 | MIT | 可作为营销轨候选来源；保留版权和许可证，逐项适配、评测，不直接当作 Atlas 原创 |
-| S05 | `D:/downloads/agent-skills-main.zip` | `addyosmani/agent-skills` | 24 个工程 skill，覆盖定义、计划、构建、测试、审查、发布 | MIT | 作为工程方法轨候选来源；优先抽取生命周期方法并重写成 Atlas 教学材料 |
 | S06 | `D:/downloads/awesome-codex-skills-master.zip` | `composio-community/awesome-codex-skills` | 1,101 个文件、880 个 `SKILL.md`；大量外部服务自动化 | 根目录 Apache-2.0 信号不等于所有嵌套内容许可一致；GitHub API 无统一 SPDX | 作为生态目录和候选扩展；先过滤重复、坏元数据、外部依赖和许可证，再决定是否纳入 |
 
 ## 归档指纹
@@ -34,10 +32,10 @@
 ## 融合分层
 
 ```text
-Atlas 原创主线
+Field Guide 原创主线
 ├─ Codex/GPT 心智模型与边界
 ├─ 学习路径、实验和评测
-├─ Prysai Lab 团队方法与治理
+├─ 团队方法与治理
 └─ 经验证的教练、路由和质量 skills
 
 领域参考层
@@ -58,7 +56,7 @@ Atlas 原创主线
 - `reference-only`：只阅读和引用来源，不复制可版权表达；
 - `adaptation-candidate`：许可证允许改编，但必须保留归属并通过适配测试；
 - `vendored-with-notice`：经审查后以外部组件形式保留原始许可证和 NOTICE；
-- `original-rewrite`：由 Prysai Lab 重新解释、重新组织并自行验证，不能声称为外部原作；
+- `original-rewrite`：由项目团队重新解释、重新组织并自行验证，不能声称为外部原作；
 - `blocked`：许可证、依赖、质量或安全边界尚未满足。
 
 ## 后续核查任务
@@ -67,4 +65,4 @@ Atlas 原创主线
 2. 检查重复名称、命名不符合规范、缺失描述和外部服务要求；
 3. 追踪嵌套许可证和 NOTICE；
 4. 为每个纳入项建立来源、改动、测试和维护责任记录；
-5. 由 Prysai Lab 确认发行版许可证后再创建公开仓库。
+5. 由维护组织确认发行版许可证后再创建公开仓库。

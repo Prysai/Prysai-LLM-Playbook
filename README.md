@@ -1,8 +1,8 @@
-# Prysai Codex Atlas
+# Codex Field Guide
 
-> Prysai Lab 的组织级 Codex GPT 学习、实践与能力系统。
+> 从 GPT 到 Codex 的学习、实验与实战指南。
 
-Prysai Codex Atlas 不是一个把 skills 平铺在一起的目录，也不是一份只讲安装步骤的手册。它是一套书籍式、课程式、实验室式的 Codex GPT 能力系统：先让学习者理解 GPT、模型、Codex、上下文、工具、Skill 和 Agent 的关系，再通过实验把理解变成行动，最后把个人方法沉淀成可以评估、复用和更新的团队能力。
+Codex Field Guide 不是一个把 skills 平铺在一起的目录，也不是一份只讲安装步骤的手册。它是一套书籍式、课程式、实验室式的 Codex GPT 能力系统：先让学习者理解 GPT、模型、Codex、上下文、工具、Skill 和 Agent 的关系，再通过实验把理解变成行动，最后把个人方法沉淀成可以评估、复用和更新的团队能力。
 
 它要带领任何人完成一条完整成长路径：从“我听说过 GPT”开始，到能够安全使用 Codex、稳定完成真实任务、理解 Agent 为什么这样行动、选择和设计合适的 Skill，直到能够建立自己的工作系统并帮助团队共同使用。
 
@@ -17,7 +17,7 @@ Prysai Codex Atlas 不是一个把 skills 平铺在一起的目录，也不是�
 - 安装了很多 skills，却不知道它们为什么有用、何时组合、何时不该使用；
 - 在个人试验可以成功，却无法变成团队可复用、可审查、可持续更新的流程。
 
-Atlas 用一条连续路径解决这些问题：
+Field Guide 用一条连续路径解决这些问题：
 
 ```text
 认识 GPT → 认识 Codex → 安全准备 → 表达任务 → 管理上下文
@@ -47,11 +47,11 @@ Atlas 用一条连续路径解决这些问题：
 
 ## 当前状态
 
-当前是 v0.1 的产品地基阶段：产品章程、书籍架构、学习模型、来源台账、更新审查规则、质量标准和教练 skill 已建立；外部材料尚未被直接合并到主线。下一阶段将按来源台账逐项抽取、改写、归属和评测。
+当前是 v0.1 的产品地基阶段：六个输入来源已完成目录级审计，22 章书籍结构、首批实验、真实问题研究、7 个候选 Skill 和 30 项评测夹具已经建立。章节 19–22、全部候选 Skill 和模型/工作流评测仍需要 fresh-context 前测与运行日志；外部材料不会未经来源、许可证和内容审查直接进入主线。
 
 ## 重要边界
 
-- Prysai Lab 的原创内容与外部来源必须分开记录。
+- 项目维护者的原创内容与外部来源必须分开记录；组织归属和治理信息见来源台账。
 - 模型名称、价格、入口、额度和具体功能属于易变事实，必须带来源和复核日期。
 - “GPT-5.6 Luna 性价比最高”目前是需要用可重复评测验证的产品假设，不作为永久结论。
 - 任何没有明确许可证的材料都不直接复制进发行版。
@@ -67,10 +67,13 @@ Atlas 用一条连续路径解决这些问题：
 - [内容更新与审查](docs/governance/content-lifecycle.md)
 - [Skill 质量标准](docs/quality/skill-quality-standard.md)
 - [学习与运行评测框架](docs/quality/evaluation-framework.md)
+- [评测任务集 v1](evals/task-set-v1.yaml)
+- [真实问题研究](docs/research/field-problems-codex.md)
 - [书籍目录](book/table-of-contents.md)
-- [Prysai Codex Coach](skills/prysai-codex-coach/SKILL.md)
+- [Codex Coach](skills/prysai-codex-coach/SKILL.md)
 - [外部 Skill 候选目录](docs/sources/skill-candidate-catalog.md)
+- [展示页](site/README.md)
 
 ## 名称说明
 
-`Prysai Codex Atlas` 是当前工作名，表达“地图、路线和能力坐标系”。在创建组织仓库和公开发布前，名称、品牌表达、许可证和发布方式需要由 Prysai Lab 确认。
+正式项目名为 `Codex Field Guide`，中文副标题为“从 GPT 到 Codex 的学习、实验与实战指南”。仓库归属、维护责任和发行门禁记录在治理与来源文件中，不重复放入产品标题。

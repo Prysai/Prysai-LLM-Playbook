@@ -1,5 +1,5 @@
 interface:
-  display_name: "Prysai Evidence Review"
+  display_name: "Evidence Review"
   short_description: "审查 Codex 结果是否真的有证据"
   default_prompt: "使用 $prysai-evidence-review，逐条审查这份 Codex 完成声明并指出证据缺口。"
 policy:
