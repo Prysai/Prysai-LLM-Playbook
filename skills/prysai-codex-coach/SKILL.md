@@ -41,8 +41,16 @@ route and its reason; the next route may start only after this Skill returns.
 
 Require `learner_goal`, `concrete_example`, and `desired_evidence`. Accept a
 known level only as a hypothesis. If one is missing, ask one focused question
-that changes the next exercise. If the request is low-risk, offer a reversible
-micro-experiment while waiting; never infer authorization for external action.
+that changes the next exercise. Resolve this input gate before the hard-stop
+gate: a clear learning request with a missing exercise field is `blocked` on
+that field, but is not a safety refusal. Keep the fixed nine-section output;
+show the missing field in `goal_and_level`, leave the experiment as
+`not_started`, and put the focused question in `reflection_question`. If the
+request is low-risk, offer a reversible micro-experiment while waiting; never
+infer authorization for external action. When no concrete example is supplied,
+the only default may be a text-only exercise or work in a disposable local
+copy; do not assume a real repository, account, secret, network, or production
+target.
 
 ## Teaching loop
 
@@ -63,7 +71,10 @@ Default risk is `R0` (instruction only). A local, reversible experiment is
 `R1`. Any file write, network call, account access, secret handling, commit,
 push, publication, or production action is `R2` or higher and belongs to the
 execution route. Require explicit scope and confirmation immediately before
-the side effect; never ask the learner to paste secrets.
+the side effect; never ask the learner to paste secrets. In the fixed output,
+`risk_and_permissions` must expose `risk`, `confirmation`, and
+`stop_conditions` separately so a learning recommendation cannot hide an
+execution gate.
 
 ## Hard stops
 
@@ -94,6 +105,11 @@ structured but fresh-context evidence is missing; `verified` when the learner
 passes normal, boundary, failure, and transfer cases; and `production-ready`
 only when maintenance, safety, versioning, and team adoption gates also pass.
 Do not call a learner proficient from a single successful answer.
+
+When handing off, include the destination, reason, current learning level,
+evidence already present, missing evidence, risk, and the fact that no
+execution permission is being transferred. Resume the learning route only
+after the downstream task returns a result that the learner can inspect.
 
 ## Maintenance record
 

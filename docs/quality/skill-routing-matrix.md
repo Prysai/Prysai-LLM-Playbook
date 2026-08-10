@@ -99,6 +99,20 @@ token presence, or a broad permission statement. `checkpoint` and `rollback`
 must identify an observable artifact or target when the next stage can change
 state.
 
+Additional contract fields are required where the route needs them:
+
+- Coach exposes missing learning inputs, `risk`, `confirmation`, and
+  `stop_conditions`; a missing exercise field is a learning block, not an
+  inferred execution permission.
+- Research comparisons freeze candidate set, task-set version, context,
+  tools, permissions, budget, success definition, repetitions, scoring,
+  logging location, and decision owner.
+- Workflow stages expose `input_and_action`, `exit_evidence`, exact
+  `delivery_target`, stage owner, checkpoint, rollback, risk, and confirmation.
+- Product Context requires `decision_owner`, `context_version`,
+  `version_baseline`, and `canonical_location`; its Skill maintenance version
+  is not a product-context version.
+
 ## Source and maintenance boundary
 
 - **Source:** `CONTEXT.md`, `docs/charter.md`, `docs/book-architecture.md`,

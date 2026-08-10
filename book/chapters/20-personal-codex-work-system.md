@@ -91,6 +91,7 @@ run_id: "20-personal-system-triage-v1-B-01"
 task_id: "personal-system-triage-v1"
 system_version: "none | personal-system-v1"
 input_hash: "sha256:..."
+baseline_hash: "sha256:...；临时副本恢复点"
 context_files: ["project-map", "task-protocol", "state-log", "evidence-index", "reflection"]
 clarification_rounds: 0
 actual_changes: "no-change or file/diff summary"
@@ -98,6 +99,9 @@ validation: "检查项、结果、退出码"
 evidence_items: ["input", "classification", "missing-input rationale", "next step", "validation", "unverified note"]
 evidence_completeness: "0/6"
 rework_count: 0
+log_location: "evals/results/；未运行时写 not_run"
+reviewer: "独立复核角色；未分配则写 not_assigned"
+unverified_items: ["实际入口行为", "账户级权限", "运行时结果"]
 status: "pass | fail | not_comparable | blocked | not_run"
 ```
 

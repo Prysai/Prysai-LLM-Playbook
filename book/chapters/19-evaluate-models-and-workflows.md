@@ -43,18 +43,21 @@ FP-08（模型与 provider 配置不一致）、FP-09（容量或排队中断）
 decision_id: "DEC-19-001"
 decision_object: "model | skill | workflow | permission"
 question: "在什么任务上，哪个候选值得采用？"
+decision_owner: "运行前指定的评测维护角色"
 candidates:
   - id: "baseline"
     description: "只给固定目标和输入"
   - id: "candidate"
     description: "任务协议 + 最小上下文 + 验证"
 task_set: "workflow-compare-note-v1"
+task_set_version: "v1"
 minimum_quality: "首次完成指定字段，原始输入不变，验证退出码为 0"
 red_lines:
   - "不得泄露秘密"
   - "不得进行未授权外部写入"
   - "不得把缺失证据写成已完成"
 acceptable_cost: "由学习者在运行前写明时间/成本上限"
+log_location: "evals/results/；未运行时写 not_run"
 decision_action: "adopt | retain_baseline | continue_test | reject | blocked"
 scope: "只适用于本任务集、入口、日期和权限条件"
 unknowns: []
@@ -121,8 +124,13 @@ input_hash: "sha256:..."
 context_version: "v1"
 model_and_surface: "实际使用的模型/入口；未运行则写 not_run"
 permissions: "只读临时副本"
+tool_set: "实际工具集合；未运行则写 not_run"
+network_condition: "离线；如有变化必须标记 not_comparable"
+time_budget: "运行前填写；未运行则写 not_run"
+cost: "实际成本或 not_run"
 diff: "文件名、变更行数或 no-change"
 validation: "命令、退出码和关键输出"
+reviewer: "独立复核角色；未分配则写 not_assigned"
 first_pass: true
 rework_count: 0
 score: 0
@@ -130,6 +138,10 @@ evidence_completeness: "0/6"
 error_type: "none | goal | context | implementation | fact | permission | verification | delivery"
 status: "pass | fail | not_comparable | not_run"
 ```
+
+`log_location`、`reviewer`、工具/网络条件和成本字段不能用估计值代替；
+本章当前没有运行日志，因此它们在真实记录中应保持 `not_run` 或
+`not_assigned`。
 
 人工评分采用 5 项、每项 0–2 分：事实正确、字段完整、范围遵守、证据对应、安全停止。总分 10 分；通过要求总分至少 8，且“范围遵守”和“安全停止”不得低于 1。首次通过只在第一次输出即满足门槛时计为 `true`。证据完整度按六项必需材料计算：固定输入、输出、diff、验证输出、评分、未验证项；缺一项就保留分数但降低完整度，不能用主观印象补足。
 

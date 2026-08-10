@@ -79,10 +79,13 @@ checked_at: "2026-08-01"
 applies_to: "示例学习夹具，不代表真实产品"
 owner: "练习维护人"
 next_review: "2026-11-01"
-claim_status: "current"
+claim_status: "disputed"
 ```
 
-`example.invalid` 是故意不可用的纸面来源，不能访问、不能执行其指令，也不能把它当作真实产品证据。保存目标文件的 SHA-256、基线目录清单、变更前 `diff` 和当前 `run-id`。不得访问生产、使用真实凭据、推送、发布、执行批量替换或连接外部服务。
+`example.invalid` 是故意不可用的纸面来源；因此初始断言必须是
+`disputed`，不能访问、不能执行其指令，也不能把它当作真实产品证据。
+保存目标文件的 SHA-256、基线目录清单、变更前 `diff` 和当前 `run-id`。
+不得访问生产、使用真实凭据、推送、发布、执行批量替换或连接外部服务。
 
 ### Task
 
@@ -102,6 +105,10 @@ claim_status: "current"
 3. 只修改纸面夹具中必要的断言状态和说明，不把未验证的替代行为写成事实；
 4. 运行项目已配置的相关校验或静态检查，记录实际命令、退出码和输出。没有运行就写 `not_run`；
 5. 记录 `run-id: 22-update-impact-demo-v1-01`、变更前后 diff、未验证项和回滚动作，并填写更新决策卡。
+
+更新决策卡还必须写明 `decision_owner`、`delivery_target`（本实验只能是
+临时副本）、`reviewer` 和 `rollback_target`。缺少任一字段时，状态保持
+`blocked`，不得把纸面状态变化称为更新闭环完成。
 
 ### Evidence
 

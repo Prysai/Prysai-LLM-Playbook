@@ -6,7 +6,7 @@
 
 ## 当前阶段
 
-本轮继续做第 4–7 章的官方事实刷新与边界集成，补齐风险/证据门和 Skill 交接字段。当前仓库仍是私有开发仓库；书稿、Skill 和评测中的未验证部分必须继续保持 `draft` 或 `candidate`。当前状态以 `docs/governance/content-status.yaml` 为准。
+本轮完成第 4–7 章事实刷新后的边界集成，并继续补齐 Skill 合同、章节实验记录和风险/证据门。当前仓库仍是私有开发仓库；书稿、Skill 和评测中的未验证部分必须继续保持 `draft` 或 `candidate`。当前状态以 `docs/governance/content-status.yaml` 为准。
 
 ## 阶段任务
 
@@ -30,6 +30,7 @@
 
 - [x] 建立 7 个内部 Skill 的初版结构。
 - [ ] 为每个 Skill 完成正例、边界例、失败例和迁移例。
+- [x] 完成 Coach、Workflow Orchestrator、Research Router、Product Context 的独立静态合同审查，并记录其与运行验证的边界。
 - [x] 建立 38 项固定评测夹具，覆盖 15 个轨道。
 - [ ] 运行模型/工作流评测，保留输入、输出、环境、评分和复核人。
 - [ ] 只有在声明范围内完成前测后，才把状态从 `candidate` 改为 `verified`。

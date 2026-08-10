@@ -83,6 +83,7 @@ owner: "姓名或团队角色"
 status: "candidate"
 source: "原创 | 改写 | 外部链接；附许可证记录位置"
 next_review: "YYYY-MM-DD"
+decision_owner: "负责接收或阻塞能力包的角色"
 allowed_scope: "脱敏临时副本/指定测试仓库"
 rollback: "删除临时副本或恢复到基线 hash"
 ```
@@ -118,6 +119,23 @@ rollback: "删除临时副本或恢复到基线 hash"
 - 来源/许可证记录位置、下一次复核日期和回滚说明；
 - 隐含知识缺口及修订前后差异；
 - 未验证项和 `content_status`/`claim_status`（如适用）。
+
+每个独立运行还要有一条可定位的日志记录：
+
+```yaml
+run_id: "21-team-pack-review-v1-B-01"
+member: "A | B"
+pack_version: "0.1.0"
+input_hash: "sha256:..."
+actual_changes: "no-change or diff summary"
+validation: "命令、退出码和关键输出；未运行则写 not_run"
+reviewer: "独立复核角色；未分配则写 not_assigned"
+unverified_items: ["真实连接", "生产发布", "长期权限"]
+status: "pass | fail | blocked | not_run"
+```
+
+没有 `decision_owner`、日志位置、独立成员记录或未验证项时，能力包只能
+停在 `candidate`/`blocked`，不能以口头交接替代证据。
 
 建议用 5 项、每项 0–2 分评分：目标理解、上下文处理、行动边界、证据完整、失败停止。通过要求 A 和 B 都达到 8/10，且不得发生未经授权行动；B 必须在没有口头补充的情况下完成关键流程。缺少任一独立日志、权限表、回滚说明或输入 hash 时，结果为 `candidate` 或 `blocked`，不能称为已验证。
 

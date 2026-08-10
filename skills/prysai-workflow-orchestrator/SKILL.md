@@ -40,8 +40,26 @@ finding or changed scope.
 
 Require `outcome`, `non_goals`, `stages`, `dependencies`, `allowed_actions`,
 `acceptance_evidence`, `checkpoints`, `rollback`, and `owner`. If stages or
-dependencies are unclear, return a proposed plan with `blocked_on` fields. Ask
-only the smallest question that changes the route or risk.
+dependencies are unclear, return a proposed plan with `blocked_on` fields. The
+contract must also name a `decision_owner`, an exact `delivery_target`, and the
+meaning of any `commit` step: local commit, push, pull request, or publication
+are different actions with different confirmation gates. Ask only the smallest
+question that changes the route or risk.
+
+Before a stage can be marked `in-progress`, record these fields for that stage:
+
+```yaml
+owner: "role or named maintainer"
+input_and_action: "fixed input and allowed action"
+exit_evidence: "observable file, log, command, review, or URL"
+checkpoint: "who may approve the next stage and what is checked"
+rollback: "exact diff, copy, branch, or target to restore"
+risk: "R0 | R1 | R2 | R3"
+confirmation: "required | not_required; state the decision point"
+```
+
+Missing `delivery_target`, owner, acceptance evidence, or rollback is an
+execution block, not permission to guess a target.
 
 ## Lifecycle and checkpoints
 
@@ -54,6 +72,10 @@ only the smallest question that changes the route or risk.
 6. Review scope, assumptions, maintainability, and failure paths.
 7. Deliver completed, incomplete, inferred, blocked, and next-step items.
 8. Record maintenance, source refresh, migration, and rollback notes.
+
+The delivery target is part of the stage graph, not an afterthought. A local
+commit, a push to a shared branch, a pull request, and a public release must be
+listed as separate stages when more than one is requested.
 
 ## Risk, side effects, and confirmation
 

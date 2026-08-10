@@ -42,12 +42,19 @@ Require `question_or_topic`, `scope`, `date_boundary`, `audience`,
 language, or license is missing, mark it `unknown` or `blocked`; never invent a
 source, quote, statistic, or official confirmation.
 
+For a model, provider, Skill, or workflow comparison, also freeze the
+candidate set, task-set ID and version, context, tool set, permissions, time
+and cost budget, success definition, repetition count, scoring rubric, log
+location, and decision owner. A single demonstration or an unbounded claim
+such as “always best” cannot satisfy this contract.
+
 ## Evidence workflow
 
 1. State the question, scope, date boundary, audience, and standard.
 2. Record the search strategy and source-selection rules.
 3. Prefer authoritative primary sources; extract claim, location, date, and
-   applicability, not just a URL.
+   applicability, not just a URL. For volatile facts also record `owner`,
+   `next_review`, and `claim_status`.
 4. Record conflicts, missing data, access failures, and interpretation.
 5. Synthesize with calibrated language and claim-level citations.
 6. Check citation coverage, freshness, license, and disclosure.

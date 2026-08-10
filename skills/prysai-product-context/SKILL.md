@@ -34,11 +34,15 @@ unless a material context gap is discovered.
 ## Required inputs and missing-input behavior
 
 Require `product_or_project`, `current_goal`, `known_audience`, `available_sources`,
-`decision_to_support`, and `canonical_location`. Inspect existing context and
-changelog first. Mark absent customer evidence, metrics, testimonials,
+`decision_to_support`, and `canonical_location`. Also require a
+`decision_owner`, `context_version`, and `version_baseline`; the Skill's own
+maintenance version is not a product-context version. Inspect existing context
+and changelog first. Mark absent customer evidence, metrics, testimonials,
 competitive facts, and preferences as `hypothesis` or `unknown`; ask focused
 questions for high-impact gaps. Do not write a canonical context without an
-owner and version.
+owner, version baseline, decision, and canonical location. If any of those are
+missing, return `blocked` with a `blocked_on` list instead of creating a
+changelog entry.
 
 ## Capture and version
 
@@ -48,6 +52,10 @@ differentiation, proof points, customer language, words to use/avoid,
 glossary, tone, constraints, conversion action, and measurement decisions.
 For each material change increment the version and add a dated changelog entry.
 Tell downstream work which location and version are authoritative.
+
+The changelog entry must identify the prior version, new version, changed
+claims, evidence used, decision owner, and affected downstream artifacts. A
+draft context is not authoritative until the owner accepts that entry.
 
 ## Risk, side effects, and confirmation
 

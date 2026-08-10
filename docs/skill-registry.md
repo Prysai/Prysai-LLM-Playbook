@@ -20,3 +20,7 @@
 - `production-ready`：还有安全、维护、版本、许可证和组织发布门禁全部通过。
 
 当前所有项目 Skill 都诚实标为 `candidate`，即使官方 frontmatter 校验已经通过。
+2026-08-10 对 Coach、Workflow Orchestrator、Research Router 和 Product
+Context 完成了独立静态合同审查；该记录只证明合同缺口和边界已被检查，
+不等于 fresh-context、runtime、迁移或生产验证。见
+[Skill contract review](quality/skill-contract-review-2026-08-10.md)。

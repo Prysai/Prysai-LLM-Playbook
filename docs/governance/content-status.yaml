@@ -88,7 +88,7 @@
     "count": 7,
     "status": "candidate",
     "validator_status": "structural_checks_passed",
-    "fresh_context_status": "3_of_7_basic_pretest",
+    "fresh_context_status": "3_of_7_basic_pretest; 4_of_7_static_contract_review_only",
     "owner": "skills-maintainer",
     "last_reviewed": "2026-08-10",
     "next_review": "2026-11-09",
@@ -97,16 +97,17 @@
       "docs/skill-registry.md",
       "docs/quality/review-skills-current-2026-08-09.md",
       "docs/quality/forward-test-2026-08-09.md",
+      "docs/quality/skill-contract-review-2026-08-10.md",
       "docs/quality/review-codex-facts-refresh-2026-08-10.md"
     ],
     "items": [
-      {"id": "prysai-codex-coach", "path": "skills/prysai-codex-coach", "status": "candidate", "fresh_context_status": "pretest_pending"},
+      {"id": "prysai-codex-coach", "path": "skills/prysai-codex-coach", "status": "candidate", "fresh_context_status": "static_contract_reviewed; runtime_pretest_pending"},
       {"id": "prysai-task-protocol", "path": "skills/prysai-task-protocol", "status": "candidate", "fresh_context_status": "basic_pretest_passed"},
       {"id": "prysai-evidence-review", "path": "skills/prysai-evidence-review", "status": "candidate", "fresh_context_status": "basic_pretest_passed"},
       {"id": "prysai-skill-selector", "path": "skills/prysai-skill-selector", "status": "candidate", "fresh_context_status": "basic_pretest_passed"},
-      {"id": "prysai-workflow-orchestrator", "path": "skills/prysai-workflow-orchestrator", "status": "candidate", "fresh_context_status": "pretest_pending"},
-      {"id": "prysai-research-router", "path": "skills/prysai-research-router", "status": "candidate", "fresh_context_status": "pretest_pending"},
-      {"id": "prysai-product-context", "path": "skills/prysai-product-context", "status": "candidate", "fresh_context_status": "pretest_pending"}
+      {"id": "prysai-workflow-orchestrator", "path": "skills/prysai-workflow-orchestrator", "status": "candidate", "fresh_context_status": "static_contract_reviewed; runtime_pretest_pending"},
+      {"id": "prysai-research-router", "path": "skills/prysai-research-router", "status": "candidate", "fresh_context_status": "static_contract_reviewed; runtime_pretest_pending"},
+      {"id": "prysai-product-context", "path": "skills/prysai-product-context", "status": "candidate", "fresh_context_status": "static_contract_reviewed_blocked; runtime_pretest_pending"}
     ]
   },
   "evaluations": {
