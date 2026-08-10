@@ -149,7 +149,7 @@ def main() -> int:
         validate_path_list(project, "evidence", "project", errors)
 
     validate_items(document, "chapters", 22, "book/chapters/", errors)
-    validate_items(document, "labs", 12, "book/labs/", errors, require_run_status=True)
+    validate_items(document, "labs", 13, "book/labs/", errors, require_run_status=True)
     validate_items(document, "skills", 7, "skills/", errors)
 
     learning_path = document.get("learning_path")
@@ -223,7 +223,7 @@ def main() -> int:
         return 1
 
     print("CONTENT_STATUS_OK")
-    print("chapters=22 labs=12 skills=7 learning_levels=7 evaluations=38 tracks=15")
+    print("chapters=22 labs=13 skills=7 learning_levels=7 evaluations=39 tracks=16")
     print("public_site=en-default,zh-toggle,browser_review=pending")
     return 0
 

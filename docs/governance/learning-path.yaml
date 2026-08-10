@@ -91,10 +91,11 @@
       "capability": {"en": "Design a complete workflow with stages, checkpoints, action boundaries, recovery, and evidence that survives a real task.", "zh": "设计包含阶段、检查点、行动边界、恢复和证据的完整工作流，并用于真实任务。"},
       "prerequisites": ["L2"],
       "primary_chapters": ["chapter-07", "chapter-08", "chapter-09", "chapter-10", "chapter-13"],
-      "primary_labs": ["lab-009"],
-      "supporting_labs": ["lab-003", "lab-007"],
+      "primary_labs": ["lab-013"],
+      "supporting_labs": ["lab-003", "lab-007", "lab-009"],
       "supporting_skills": ["prysai-workflow-orchestrator", "prysai-evidence-review", "prysai-task-protocol"],
-      "evaluation_tasks": ["skill-risk-aware-selection-006", "context-untrusted-instructions-008", "permission-destructive-data-010", "evidence-claim-audit-011", "research-source-conflict-014", "engineering-plan-small-change-015", "marketing-experiment-plan-018", "conversion-table-to-learning-path-020", "conflict-scope-vs-safety-023", "failure-retry-budget-025", "stop-missing-authority-027", "stop-evidence-gap-028", "route-ownership-boundaries-032", "product-context-write-gate-033", "evidence-scope-insufficient-stop-035", "source-conflict-license-boundary-036"],
+      "evaluation_tasks": ["skill-risk-aware-selection-006", "context-untrusted-instructions-008", "permission-destructive-data-010", "evidence-claim-audit-011", "research-source-conflict-014", "engineering-plan-small-change-015", "marketing-experiment-plan-018", "conversion-table-to-learning-path-020", "conflict-scope-vs-safety-023", "failure-retry-budget-025", "stop-missing-authority-027", "stop-evidence-gap-028", "route-ownership-boundaries-032", "product-context-write-gate-033", "evidence-scope-insufficient-stop-035", "source-conflict-license-boundary-036", "workflow-local-vertical-slice-039"],
+      "required_artifacts": ["run_id", "task_protocol", "baseline_hash", "checkpoint_log", "diff", "validation_output", "claim_evidence_table", "unverified_items", "rollback_target", "transfer_record"],
       "evaluation_types": ["positive", "boundary", "failure", "transfer"],
       "evidence_gate": {
         "explain": {"en": "Explain the dependency graph, stage boundaries, permission changes, and acceptance evidence.", "zh": "解释依赖图、阶段边界、权限变化和验收证据。"},
@@ -102,8 +103,8 @@
         "judge": {"en": "Stop or recover when authority, scope, source, or evidence is insufficient.", "zh": "授权、范围、来源或证据不足时，正确停止或恢复。"},
         "review": {"en": "Compare the plan, diff, logs, checks, failed attempt, and remaining limits.", "zh": "对照计划、差异、日志、检查、失败尝试和剩余限制。"}
       },
-      "graduation_gate": {"en": "Advance with one complete workflow, one intentional failure or boundary case, and a transfer task in another domain.", "zh": "完成一条完整工作流、一个故意失败或边界案例，以及另一个领域的迁移任务后，才进入下一阶段。"},
-      "blocked_when": {"en": "The workflow relies on hidden permissions, untrusted instructions, unrecorded retries, or a claim outside its evidence.", "zh": "工作流依赖隐藏权限、不可信指令、未记录的重试，或结论超出证据范围。"},
+      "graduation_gate": {"en": "Advance with one complete vertical slice recorded from definition through review, one intentional failure or boundary case, a claim-evidence table, and a transfer task in another domain.", "zh": "完成一条从定义到审查并留下记录的完整竖向切片、一个故意失败或边界案例、一张断言—证据表，以及另一个领域的迁移任务后，才进入下一阶段。"},
+      "blocked_when": {"en": "The workflow has no usable checkpoint or run log, relies on hidden permissions, untrusted instructions, unrecorded retries, or a claim outside its evidence.", "zh": "工作流缺少可用的检查点或运行记录，依赖隐藏权限、不可信指令、未记录的重试，或结论超出证据范围。"},
       "next_level": "L4",
       "status": "candidate",
       "owner": "curriculum-maintainer"

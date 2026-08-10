@@ -11,9 +11,9 @@
 - `skill_status` 用于项目 Skill：`draft`、`candidate`、`verified`、`production-ready`。
 - `claim_status` 只用于易变事实断言：`current`、`stale`、`disputed`、`removed`。
 - 学习路径关系使用 `primary`、`supporting`、`transfer`、`reference`；同一个实验或 Skill 被复用不等于产生了新的资产或新的掌握证据。
-- 本表有 12 个课程映射，当前磁盘上有 12 个实验文件；主题重复时在“新增能力”列说明递进关系。
+- 本表有 13 个课程映射，当前磁盘上有 13 个实验文件；主题重复时在“新增能力”列说明递进关系。
 
-## 12 个实验映射
+## 13 个实验映射
 
 | 映射 | 方法与学习目标 | 来源/依据 | 章节 | 实验映射（真实文件） | Skill 映射 | 主题重复时新增的能力 | content_status | lab_status | skill_status | claim_status |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -29,6 +29,7 @@
 | M10 | 从主题收敛到可审查的研究问题 | S02 | [第 15 章](../book/chapters/15-research-track.md) | [实验 008](../book/labs/lab-008-research-question.md) | [Research Router](../skills/prysai-research-router/SKILL.md) | 从一般证据审查增加问题收敛、来源计划、访问日期和适用范围 | draft | draft | candidate | current |
 | M11 | 从定义到交付的工程生命周期 | S05 | [第 8 章](../book/chapters/08-full-lifecycle-workflow.md)、[第 16 章](../book/chapters/16-engineering-track.md) | [实验 009](../book/labs/lab-009-engineering-lifecycle.md) | [Workflow Orchestrator](../skills/prysai-workflow-orchestrator/SKILL.md) | 从单次任务增加两次对照、返工记录、检查点和竖向切片 | draft | draft | candidate | current |
 | M12 | 共享产品上下文与团队迁移 | S04 | [第 17 章](../book/chapters/17-marketing-track.md)、[第 20 章](../book/chapters/20-personal-codex-work-system.md)、[第 21 章](../book/chapters/21-team-capability-system.md)、[第 22 章](../book/chapters/22-continuous-update-and-future-proofing.md) | [实验 010](../book/labs/lab-010-product-context.md)；[实验 012](../book/labs/lab-012-team-capability-migration.md) | [Product Context](../skills/prysai-product-context/SKILL.md) | 从个人上下文增加版本、owner、权限表、独立复现、影响矩阵和回滚 | candidate | draft | candidate | disputed |
+| M13 | 从任务协议到可审计交付的竖向切片 | [高阶方法研究](research/web-methods-synthesis-2026-08-10.md) + [网页田野研究](research/web-field-problems-2026-08-10.md) | [第 8 章](../book/chapters/08-full-lifecycle-workflow.md)、[第 9 章](../book/chapters/09-verification-and-recovery.md)、[第 10 章](../book/chapters/10-planning-and-slicing.md)、[第 13 章](../book/chapters/13-action-boundaries.md) | [实验 013](../book/labs/lab-013-l3-vertical-slice.md) | [Workflow Orchestrator](../skills/prysai-workflow-orchestrator/SKILL.md)；[Evidence Review](../skills/prysai-evidence-review/SKILL.md)；[Task Protocol](../skills/prysai-task-protocol/SKILL.md) | 在既有协议、行动边界和证据审查之上，新增基线 hash、checkpoint、交接契约、故意失败和跨领域迁移的连续证据链 | candidate | draft | candidate | current |
 
 ## 转译规则
 
@@ -41,8 +42,8 @@
 
 ## 当前边界
 
-- 12 个映射都指向已存在的实验文件；主题重复通过章节和“新增能力”列表达递进关系。
-- 12 个实验源文件的 frontmatter 当前均为 `status: draft`；表中的 `lab_status` 与其一致。
+- 13 个映射都指向已存在的实验文件；主题重复通过章节和“新增能力”列表达递进关系。
+- 13 个实验源文件的 frontmatter 当前均为 `status: draft`；表中的 `lab_status` 与其一致。
 - 7 个项目 Skill 当前均为 `candidate`；结构校验通过不等于学习者已掌握，也不等于 `production-ready`。
 - GPT-5.6 Luna 的“性价比最高”是待验证假设，因此相关断言保持 `disputed`，不能写成项目结论。
 - 评测夹具、模型评测和展示页的存在不替代模型运行日志、学习者前测或独立复核。

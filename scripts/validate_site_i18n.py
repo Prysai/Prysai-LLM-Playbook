@@ -22,6 +22,25 @@ def keys_for(block: str, expected: set[str]) -> set[str]:
     }
 
 
+def translation_keys(app: str, language: str, html_keys: set[str]) -> set[str]:
+    """Collect keys from the primary dictionary and additive translation blocks."""
+    blocks: list[str] = []
+    if language == "en":
+        match = re.search(r"\n  en: \{(?P<body>.*?)\n  \},\n  zh: \{", app, re.DOTALL)
+    else:
+        match = re.search(r"\n  zh: \{(?P<body>.*?)\n  \}\n\};", app, re.DOTALL)
+    if match:
+        blocks.append(match.group("body"))
+    blocks.extend(
+        re.findall(
+            rf"Object\.assign\(copy\.{language}, \{{(?P<body>.*?)\}}\);",
+            app,
+            re.DOTALL,
+        )
+    )
+    return set().union(*(keys_for(block, html_keys) for block in blocks)) if blocks else set()
+
+
 def main() -> int:
     errors: list[str] = []
     html = HTML.read_text(encoding="utf-8")
@@ -54,8 +73,8 @@ def main() -> int:
         english_keys = set()
         chinese_keys = set()
     else:
-        english_keys = keys_for(en_match.group("body"), html_keys)
-        chinese_keys = keys_for(zh_match.group("body"), html_keys)
+        english_keys = translation_keys(app, "en", html_keys)
+        chinese_keys = translation_keys(app, "zh", html_keys)
         if not english_keys:
             errors.append("English translation dictionary is empty or malformed")
         if not chinese_keys:

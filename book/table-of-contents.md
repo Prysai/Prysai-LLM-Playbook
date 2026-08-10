@@ -60,7 +60,7 @@
 
 定义、计划、构建、验证、审查、交付和维护；用竖向切片保持可验证。**content_status：`candidate`**
 
-文件：[book/chapters/08-full-lifecycle-workflow.md](chapters/08-full-lifecycle-workflow.md) · 实验：[lab-009](labs/lab-009-engineering-lifecycle.md)
+文件：[book/chapters/08-full-lifecycle-workflow.md](chapters/08-full-lifecycle-workflow.md) · 主实验：[lab-013](labs/lab-013-l3-vertical-slice.md) · 支撑实验：[lab-009](labs/lab-009-engineering-lifecycle.md)
 
 ### 第 9 章：验证、怀疑与恢复
 
@@ -72,7 +72,7 @@
 
 把大型目标拆成依赖清楚、每步可运行和可检查的交付切片。**content_status：`candidate`**
 
-文件：[book/chapters/10-planning-and-slicing.md](chapters/10-planning-and-slicing.md) · 实验：[lab-002](labs/lab-002-task-protocol.md)
+文件：[book/chapters/10-planning-and-slicing.md](chapters/10-planning-and-slicing.md) · 实验：[lab-002](labs/lab-002-task-protocol.md)、[lab-013](labs/lab-013-l3-vertical-slice.md)
 
 ### 第 11 章：设计一个真正有用的 Skill
 
@@ -152,10 +152,10 @@
 
 ## 评测和状态入口
 
-- [实验索引](labs/README.md)：12 个实际实验文件、等级、领域、迁移焦点和 `lab_status`；
-- [内容融合矩阵](../docs/content-matrix.md)：12 个能力映射和主题重复时新增的能力；
+- [实验索引](labs/README.md)：13 个实际实验文件、等级、领域、迁移焦点和 `lab_status`；
+- [内容融合矩阵](../docs/content-matrix.md)：13 个能力映射和主题重复时新增的能力；
 - [评测框架](../docs/quality/evaluation-framework.md)：内容和能力的验收门槛；
 - [Codex 真实用户问题研究](../docs/research/field-problems-codex.md)：公开问题入口，不冒充官方根因；
 - [官方基线研究档案](../docs/research/openai-codex-baseline.md)：易变断言的来源边界。
 
-L0 和 L6 已分别有独立实验文件：[lab-011](labs/lab-011-gpt-codex-boundaries.md) 与 [lab-012](labs/lab-012-team-capability-migration.md)。
+L0、L3 和 L6 已分别有独立主实验文件：[lab-011](labs/lab-011-gpt-codex-boundaries.md)、[lab-013](labs/lab-013-l3-vertical-slice.md) 与 [lab-012](labs/lab-012-team-capability-migration.md)。

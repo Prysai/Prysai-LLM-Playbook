@@ -5,7 +5,7 @@
 - EN / 中文切换会更新可见文案、`lang`、标题、description、aria-label，并通过 URL `?lang=en|zh` 和 `localStorage` 保留选择；
 - L0—L6 成长路径标签切换，会更新当前等级的说明与章节入口，并支持方向键、Home/End；
 - 22 章路线按 A—D 四条路线筛选，并保留章节折叠；
-- 实验区展示当前实际存在的 12 个实验，并链接到实验索引；
+- 实验区展示当前实际存在的 13 个实验，并链接到实验索引；
 - 响应式导航在窄屏下折叠为菜单，支持 Escape 关闭和焦点返回；
 - 所有章节、实验、Skill、质量记录链接指向仓库内的真实文件。
 
@@ -26,10 +26,10 @@ py -m http.server 4173
 1. 默认打开 `http://localhost:4173/site/`，确认页面为英文，`document.documentElement.lang` 为 `en`；
 2. 点击 EN / 中文，确认正文、标题、description、aria-label 和 `lang` 同步，刷新后语言保持；访问 `?lang=zh` 和 `?lang=en` 也应可分享；
 3. 检查导航锚点、章节筛选、章节折叠和 L0—L6 切换；用方向键、Home/End 操作等级标签；
-4. 检查 12 个实验卡片、索引链接和窄屏布局与菜单展开；菜单打开后按 Escape，确认焦点回到菜单按钮；
+4. 检查 13 个实验卡片、索引链接和窄屏布局与菜单展开；菜单打开后按 Escape，确认焦点回到菜单按钮；
 5. 分别在 320px 和 390px 宽度检查无横向溢出、触控目标可用、中文不被截断；
 6. 确认没有外部字体、脚本、图片或 CDN 请求，控制台无错误；
-4. 在仓库根目录执行项目验证：
+7. 在仓库根目录执行项目验证：
 
 ```powershell
 $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'

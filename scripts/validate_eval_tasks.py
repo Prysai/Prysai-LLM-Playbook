@@ -45,6 +45,7 @@ TRACKS = {
     "repeated-failure",
     "stop-behavior",
     "team-capability-package",
+    "workflow-vertical-slice",
 }
 LEVELS = {f"L{number}" for number in range(7)}
 DOMAINS = {"general", "engineering", "research", "marketing", "team"}

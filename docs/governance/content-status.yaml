@@ -73,7 +73,7 @@
     ]
   },
   "labs": {
-    "count": 12,
+    "count": 13,
     "status": "draft",
     "run_status": "not_run",
     "owner": "lab-maintainer",
@@ -84,7 +84,10 @@
       "book/labs/README.md",
       "docs/quality/current-state-review-2026-08-09.md",
       "docs/quality/review-codex-facts-refresh-2026-08-10.md",
-      "docs/quality/review-workflow-vertical-slice-2026-08-10.md"
+      "docs/quality/review-workflow-vertical-slice-2026-08-10.md",
+      "docs/quality/review-lab-013-vertical-slice-2026-08-10.md",
+      "docs/research/web-field-problems-2026-08-10.md",
+      "docs/research/web-methods-synthesis-2026-08-10.md"
     ],
     "items": [
       {"id": "lab-001", "path": "book/labs/lab-001-first-safe-task.md", "status": "draft", "run_status": "not_run"},
@@ -98,7 +101,8 @@
       {"id": "lab-009", "path": "book/labs/lab-009-engineering-lifecycle.md", "status": "draft", "run_status": "not_run"},
       {"id": "lab-010", "path": "book/labs/lab-010-product-context.md", "status": "draft", "run_status": "not_run"},
       {"id": "lab-011", "path": "book/labs/lab-011-gpt-codex-boundaries.md", "status": "draft", "run_status": "not_run"},
-      {"id": "lab-012", "path": "book/labs/lab-012-team-capability-migration.md", "status": "draft", "run_status": "not_run"}
+      {"id": "lab-012", "path": "book/labs/lab-012-team-capability-migration.md", "status": "draft", "run_status": "not_run"},
+      {"id": "lab-013", "path": "book/labs/lab-013-l3-vertical-slice.md", "status": "draft", "run_status": "not_run"}
     ]
   },
   "skills": {
@@ -128,8 +132,8 @@
     ]
   },
   "evaluations": {
-    "task_count": 38,
-    "track_count": 15,
+    "task_count": 39,
+    "track_count": 16,
     "fixture_status": "candidate",
     "run_status": "not_run",
     "review_status": "static_structure_only",

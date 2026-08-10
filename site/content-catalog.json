@@ -35,15 +35,16 @@
     "lab-009": {"name": {"en": "Engineering lifecycle", "zh": "工程生命周期"}},
     "lab-010": {"name": {"en": "Shared product context", "zh": "共享产品上下文"}},
     "lab-011": {"name": {"en": "GPT and Codex boundaries", "zh": "GPT 与 Codex 边界"}},
-    "lab-012": {"name": {"en": "Team capability migration", "zh": "团队能力迁移"}}
+    "lab-012": {"name": {"en": "Team capability migration", "zh": "团队能力迁移"}},
+    "lab-013": {"name": {"en": "Auditable vertical slice", "zh": "可审计的竖向切片"}}
   },
   "skills": {
-    "prysai-codex-coach": {"name": {"en": "Codex Coach", "zh": "Codex Coach"}},
-    "prysai-task-protocol": {"name": {"en": "Task Protocol", "zh": "Task Protocol"}},
-    "prysai-evidence-review": {"name": {"en": "Evidence Review", "zh": "Evidence Review"}},
-    "prysai-skill-selector": {"name": {"en": "Skill Selector", "zh": "Skill Selector"}},
-    "prysai-workflow-orchestrator": {"name": {"en": "Workflow Orchestrator", "zh": "Workflow Orchestrator"}},
-    "prysai-research-router": {"name": {"en": "Research Router", "zh": "Research Router"}},
-    "prysai-product-context": {"name": {"en": "Product Context", "zh": "Product Context"}}
+    "prysai-codex-coach": {"name": {"en": "Codex Coach", "zh": "Codex 学习教练"}},
+    "prysai-task-protocol": {"name": {"en": "Task Protocol", "zh": "任务协议 Task Protocol"}},
+    "prysai-evidence-review": {"name": {"en": "Evidence Review", "zh": "证据审查 Evidence Review"}},
+    "prysai-skill-selector": {"name": {"en": "Skill Selector", "zh": "Skill 选择器 Skill Selector"}},
+    "prysai-workflow-orchestrator": {"name": {"en": "Workflow Orchestrator", "zh": "工作流编排 Workflow Orchestrator"}},
+    "prysai-research-router": {"name": {"en": "Research Router", "zh": "研究路由 Research Router"}},
+    "prysai-product-context": {"name": {"en": "Product Context", "zh": "产品上下文 Product Context"}}
   }
 }

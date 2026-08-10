@@ -49,7 +49,7 @@ window.CODEX_LEARNING_PATH = {
           "id": "prysai-codex-coach",
           "name": {
             "en": "Codex Coach",
-            "zh": "Codex Coach"
+            "zh": "Codex 学习教练"
           },
           "href": "../skills/prysai-codex-coach/SKILL.md",
           "relation": "supporting"
@@ -155,7 +155,7 @@ window.CODEX_LEARNING_PATH = {
           "id": "prysai-task-protocol",
           "name": {
             "en": "Task Protocol",
-            "zh": "Task Protocol"
+            "zh": "任务协议 Task Protocol"
           },
           "href": "../skills/prysai-task-protocol/SKILL.md",
           "relation": "supporting"
@@ -291,7 +291,7 @@ window.CODEX_LEARNING_PATH = {
           "id": "prysai-task-protocol",
           "name": {
             "en": "Task Protocol",
-            "zh": "Task Protocol"
+            "zh": "任务协议 Task Protocol"
           },
           "href": "../skills/prysai-task-protocol/SKILL.md",
           "relation": "supporting"
@@ -300,7 +300,7 @@ window.CODEX_LEARNING_PATH = {
           "id": "prysai-codex-coach",
           "name": {
             "en": "Codex Coach",
-            "zh": "Codex Coach"
+            "zh": "Codex 学习教练"
           },
           "href": "../skills/prysai-codex-coach/SKILL.md",
           "relation": "supporting"
@@ -440,12 +440,12 @@ window.CODEX_LEARNING_PATH = {
       ],
       "labs": [
         {
-          "id": "lab-009",
+          "id": "lab-013",
           "name": {
-            "en": "Engineering lifecycle",
-            "zh": "工程生命周期"
+            "en": "Auditable vertical slice",
+            "zh": "可审计的竖向切片"
           },
-          "href": "../book/labs/lab-009-engineering-lifecycle.md",
+          "href": "../book/labs/lab-013-l3-vertical-slice.md",
           "relation": "primary"
         },
         {
@@ -465,6 +465,15 @@ window.CODEX_LEARNING_PATH = {
           },
           "href": "../book/labs/lab-007-action-boundaries.md",
           "relation": "supporting"
+        },
+        {
+          "id": "lab-009",
+          "name": {
+            "en": "Engineering lifecycle",
+            "zh": "工程生命周期"
+          },
+          "href": "../book/labs/lab-009-engineering-lifecycle.md",
+          "relation": "supporting"
         }
       ],
       "skills": [
@@ -472,7 +481,7 @@ window.CODEX_LEARNING_PATH = {
           "id": "prysai-workflow-orchestrator",
           "name": {
             "en": "Workflow Orchestrator",
-            "zh": "Workflow Orchestrator"
+            "zh": "工作流编排 Workflow Orchestrator"
           },
           "href": "../skills/prysai-workflow-orchestrator/SKILL.md",
           "relation": "supporting"
@@ -481,7 +490,7 @@ window.CODEX_LEARNING_PATH = {
           "id": "prysai-evidence-review",
           "name": {
             "en": "Evidence Review",
-            "zh": "Evidence Review"
+            "zh": "证据审查 Evidence Review"
           },
           "href": "../skills/prysai-evidence-review/SKILL.md",
           "relation": "supporting"
@@ -490,7 +499,7 @@ window.CODEX_LEARNING_PATH = {
           "id": "prysai-task-protocol",
           "name": {
             "en": "Task Protocol",
-            "zh": "Task Protocol"
+            "zh": "任务协议 Task Protocol"
           },
           "href": "../skills/prysai-task-protocol/SKILL.md",
           "relation": "supporting"
@@ -512,7 +521,8 @@ window.CODEX_LEARNING_PATH = {
         "route-ownership-boundaries-032",
         "product-context-write-gate-033",
         "evidence-scope-insufficient-stop-035",
-        "source-conflict-license-boundary-036"
+        "source-conflict-license-boundary-036",
+        "workflow-local-vertical-slice-039"
       ],
       "evaluationTypes": [
         "positive",
@@ -539,12 +549,12 @@ window.CODEX_LEARNING_PATH = {
         }
       },
       "graduation": {
-        "en": "Advance with one complete workflow, one intentional failure or boundary case, and a transfer task in another domain.",
-        "zh": "完成一条完整工作流、一个故意失败或边界案例，以及另一个领域的迁移任务后，才进入下一阶段。"
+        "en": "Advance with one complete vertical slice recorded from definition through review, one intentional failure or boundary case, a claim-evidence table, and a transfer task in another domain.",
+        "zh": "完成一条从定义到审查并留下记录的完整竖向切片、一个故意失败或边界案例、一张断言—证据表，以及另一个领域的迁移任务后，才进入下一阶段。"
       },
       "blocked": {
-        "en": "The workflow relies on hidden permissions, untrusted instructions, unrecorded retries, or a claim outside its evidence.",
-        "zh": "工作流依赖隐藏权限、不可信指令、未记录的重试，或结论超出证据范围。"
+        "en": "The workflow has no usable checkpoint or run log, relies on hidden permissions, untrusted instructions, unrecorded retries, or a claim outside its evidence.",
+        "zh": "工作流缺少可用的检查点或运行记录，依赖隐藏权限、不可信指令、未记录的重试，或结论超出证据范围。"
       },
       "status": "candidate",
       "next": {
@@ -558,12 +568,12 @@ window.CODEX_LEARNING_PATH = {
           "relation": "primary"
         },
         "lab": {
-          "id": "lab-009",
+          "id": "lab-013",
           "name": {
-            "en": "Engineering lifecycle",
-            "zh": "工程生命周期"
+            "en": "Auditable vertical slice",
+            "zh": "可审计的竖向切片"
           },
-          "href": "../book/labs/lab-009-engineering-lifecycle.md",
+          "href": "../book/labs/lab-013-l3-vertical-slice.md",
           "relation": "primary"
         }
       }
@@ -676,7 +686,7 @@ window.CODEX_LEARNING_PATH = {
           "id": "prysai-skill-selector",
           "name": {
             "en": "Skill Selector",
-            "zh": "Skill Selector"
+            "zh": "Skill 选择器 Skill Selector"
           },
           "href": "../skills/prysai-skill-selector/SKILL.md",
           "relation": "supporting"
@@ -685,7 +695,7 @@ window.CODEX_LEARNING_PATH = {
           "id": "prysai-research-router",
           "name": {
             "en": "Research Router",
-            "zh": "Research Router"
+            "zh": "研究路由 Research Router"
           },
           "href": "../skills/prysai-research-router/SKILL.md",
           "relation": "supporting"
@@ -813,7 +823,7 @@ window.CODEX_LEARNING_PATH = {
           "id": "prysai-evidence-review",
           "name": {
             "en": "Evidence Review",
-            "zh": "Evidence Review"
+            "zh": "证据审查 Evidence Review"
           },
           "href": "../skills/prysai-evidence-review/SKILL.md",
           "relation": "supporting"
@@ -822,7 +832,7 @@ window.CODEX_LEARNING_PATH = {
           "id": "prysai-workflow-orchestrator",
           "name": {
             "en": "Workflow Orchestrator",
-            "zh": "Workflow Orchestrator"
+            "zh": "工作流编排 Workflow Orchestrator"
           },
           "href": "../skills/prysai-workflow-orchestrator/SKILL.md",
           "relation": "supporting"
@@ -958,7 +968,7 @@ window.CODEX_LEARNING_PATH = {
           "id": "prysai-product-context",
           "name": {
             "en": "Product Context",
-            "zh": "Product Context"
+            "zh": "产品上下文 Product Context"
           },
           "href": "../skills/prysai-product-context/SKILL.md",
           "relation": "supporting"
@@ -967,7 +977,7 @@ window.CODEX_LEARNING_PATH = {
           "id": "prysai-codex-coach",
           "name": {
             "en": "Codex Coach",
-            "zh": "Codex Coach"
+            "zh": "Codex 学习教练"
           },
           "href": "../skills/prysai-codex-coach/SKILL.md",
           "relation": "supporting"

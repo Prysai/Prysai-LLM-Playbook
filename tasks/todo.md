@@ -4,8 +4,9 @@
 
 - [ ] 在每次数量、状态或运行证据变化时先更新 `docs/governance/content-status.yaml`，再同步相关索引和页面。
 - [ ] 由项目所有者确认显示名，并决定是否将 GitHub 仓库 slug 迁移为 `codex-from-first-task-to-real-work`。
+- [x] 将 L3 主实验 `lab-013` 接入学习路径、状态源、评测夹具、书稿索引和展示页生成数据。
 - [ ] 完成 7 个候选 Skill 的 fresh-context 前测；本轮新增 4 个静态合同审查记录，但不计入 fresh-context 结果。
-- [ ] 运行 `evals/task-set-v1.yaml` 中的 38 项任务并保存结果。
+- [ ] 运行 `evals/task-set-v1.yaml` 中的 39 项任务并保存结果。
 - [ ] 补齐第 19–22 章的前测、失败案例和学习者验收证据。
 - [ ] 完成工具、MCP、插件和外部行动章节的官方事实核对。
 - [ ] 将第 4–7 章官方事实刷新在 2026-09-09 复核日重新核对，并把变更同步到受影响章节。

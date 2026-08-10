@@ -19,7 +19,7 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
 body { margin: 0; background: var(--paper); font-size: 16px; line-height: 1.45; }
 a { color: inherit; text-decoration: none; }
 button, a { -webkit-tap-highlight-color: transparent; }
@@ -68,6 +68,7 @@ button, input, select, textarea { font: inherit; }
 .hero-footer { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 1rem; margin-top: clamp(4rem, 8vw, 8rem); padding-top: 1rem; border-top: 1px solid var(--line); color: #6d6d6d; font-size: .7rem; }
 .folio { color: var(--red); font-weight: 700; }
 
+.section, .start-section { scroll-margin-top: 84px; }
 .section { padding: clamp(5rem, 9vw, 9rem) 0; }
 .section-light, .section-paper { background: var(--paper); }
 .section-ink { color: #fff; background: var(--ink); }
@@ -79,6 +80,7 @@ button, input, select, textarea { font: inherit; }
 .heading-light .section-number, .section-red .section-number, .section-dark .section-number { color: #fff; }
 .section h2 { max-width: 850px; margin: 0; font-size: clamp(2.7rem, 5.5vw, 6rem); letter-spacing: -.085em; line-height: .91; }
 .section-intro { margin: 0; color: var(--muted); font-size: .95rem; line-height: 1.7; }
+.data-warning { margin: -2rem 0 2rem; padding: .8rem 1rem; border-left: 4px solid var(--red); color: var(--ink); background: var(--soft-red); font-size: .8rem; line-height: 1.5; }
 .heading-light .section-intro, .section-red .section-intro, .section-dark .section-intro { color: var(--muted-dark); }
 
 .problem-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
@@ -179,6 +181,8 @@ button, input, select, textarea { font: inherit; }
 .lab-card { display: flex; min-height: 220px; flex-direction: column; padding: 1.5rem; background: #fff; transition: transform .2s ease, background .2s ease; }
 .lab-card:hover, .lab-card:focus-visible { background: #fffafb; transform: translateY(-4px); }
 .lab-feature { grid-row: span 2; min-height: 441px; color: #fff; background: var(--ink); }
+.lab-highlight { border-top: 5px solid var(--red); }
+.lab-featured { display: inline-block; margin-top: .45rem; color: var(--red); font-size: .66rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .lab-id { color: var(--red); font-size: .68rem; font-weight: 700; letter-spacing: .08em; }
 .lab-card h3 { max-width: 300px; margin: 1rem 0; font-size: clamp(1.4rem, 2.6vw, 2.5rem); letter-spacing: -.06em; line-height: 1; }
 .lab-card p { margin: 0; color: #666; font-size: .82rem; line-height: 1.65; }
@@ -287,6 +291,7 @@ button, input, select, textarea { font: inherit; }
   .problem-card { min-height: 210px; }
   .problem-card strong { margin-top: 2rem; }
   .lab-feature { grid-column: auto; min-height: 300px; }
+  .lab-highlight { grid-column: auto; }
   .skill-grid a { min-height: 145px; }
   .status-card { min-height: 145px; }
   .panel-topline, .path-card-heading { align-items: flex-start; flex-direction: column; }
@@ -294,6 +299,12 @@ button, input, select, textarea { font: inherit; }
   .protocol-rule { flex-wrap: wrap; }
   .trouble-row { grid-template-columns: 32px 1fr; }
   .trouble-row a { grid-column: 2; }
+}
+
+@media (max-width: 360px) {
+  .hero-actions, .next-actions { align-items: stretch; flex-direction: column; }
+  .button, .text-link { width: 100%; }
+  .button { justify-content: space-between; }
 }
 
 @media (prefers-reduced-motion: reduce) {

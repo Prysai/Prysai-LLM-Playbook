@@ -17,6 +17,8 @@
 
 ## 当前阅读入口
 
-第 19–22 章已有草稿，当前状态统一为“草稿已写，待前测”。从章节目录进入每章的真实问题案例、评测夹具规范和研究档案；`evals/task-set-v1.yaml` 已提交为 38 项固定夹具、覆盖 15 个轨道，但尚无模型运行日志，不能把它误读为已完成评测。
+第 19–22 章已有草稿，当前状态统一为“草稿已写，待前测”。从章节目录进入每章的真实问题案例、评测夹具规范和研究档案；`evals/task-set-v1.yaml` 已提交为 39 项固定夹具、覆盖 16 个轨道，但尚无模型运行日志，不能把它误读为已完成评测。
+
+L3 的贯穿式练习从[实验 013：可审计的竖向切片](labs/lab-013-l3-vertical-slice.md)开始；它把协议、基线、checkpoint、验证、故意失败和迁移放在同一条低风险路径中。
 
 入口：[书籍目录](table-of-contents.md) · [评测框架](../docs/quality/evaluation-framework.md) · [Luna 评估实验](../docs/model-evaluation-luna.md) · [研究档案](../docs/research/openai-codex-baseline.md)

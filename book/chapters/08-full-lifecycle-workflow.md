@@ -143,6 +143,21 @@ CP3: 检查完成；保存退出码、输出和未验证项
 
 回滚决策是：如果 CP2 的 diff 越界，先保存 diff，再回到 CP0 的副本重新开始；如果只是某个段落有问题，只撤销该段落并重新验证；不要在没有检查 diff 和恢复来源前执行覆盖式恢复命令。
 
+### 进入实验 013 前：带走阶段与检查点
+
+进入[实验 013：L3 贯穿式可审计运行](../labs/lab-013-l3-vertical-slice.md)前，把本节的生命周期压缩成一张阶段卡：
+
+```text
+current_stage: 当前阶段
+stage_exit_evidence: 离开本阶段必须留下的证据
+checkpoint_before: 本阶段开始时的状态/副本/hash
+checkpoint_after: 本阶段结束时的 diff、日志或输出
+stop_condition: 什么情况必须暂停
+recovery_path: 暂停后从哪个 checkpoint 恢复或回滚
+```
+
+决策规则很简单：没有 `stage_exit_evidence` 就不能进入下一阶段；只有“Agent 说完成了”时，状态保持 `unverified`，并记录缺失证据。
+
 ### 交接摘要
 
 贯穿案例结束时，交接记录至少写成这样：
