@@ -67,6 +67,7 @@ def main() -> int:
 
     required_areas = {
         "official-facts",
+        "learning-path",
         "chapters",
         "labs",
         "skills",

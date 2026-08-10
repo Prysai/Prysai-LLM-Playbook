@@ -4,6 +4,16 @@
   "description": "Fixed maintenance locations and evidence gates for the Codex learning system.",
   "areas": [
     {
+      "area": "learning-path",
+      "canonical_paths": ["docs/governance/learning-path.yaml", "docs/learning-model.md", "docs/content-matrix.md"],
+      "owner": "curriculum-maintainer",
+      "triggers": ["learning-gap", "asset-reassignment", "new-evaluation-fixture", "level-change", "site-path-change"],
+      "required_inputs": ["level-goal", "prerequisites", "primary-assets", "evaluation-ids", "evidence-gate", "graduation-gate", "blocked-condition"],
+      "validation_commands": ["scripts/validate_learning_path.py", "scripts/validate_learning_contract.py", "scripts/validate_content_status.py", "scripts/check_local_links.py"],
+      "status_fields": ["status", "owner", "last_reviewed", "next_review", "evidence"],
+      "next_review": "2026-11-09"
+    },
+    {
       "area": "official-facts",
       "canonical_paths": ["docs/research/openai-codex-baseline.md", "docs/research/openai-codex-facts-refresh-2026-08-09.md"],
       "owner": "facts-maintainer",

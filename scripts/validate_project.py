@@ -16,6 +16,7 @@ REQUIRED = (
     "docs/book-architecture.md",
     "docs/integration-map.md",
     "docs/learning-model.md",
+    "docs/governance/learning-path.yaml",
     "docs/content-matrix.md",
     "docs/roadmap.md",
     "docs/research/openai-codex-baseline.md",
@@ -35,6 +36,7 @@ REQUIRED = (
     "site/app.js",
     "site/styles.css",
     "scripts/validate_content_status.py",
+    "scripts/validate_learning_path.py",
 )
 
 

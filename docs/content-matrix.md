@@ -2,12 +2,15 @@
 
 这份矩阵把来源方法、章节、实验和可执行能力放在同一张图上。它记录的是“项目如何重新组织并验证能力”，不是外部资料的复制清单。
 
+> L0–L6 的唯一资产归属、前置关系和评测任务映射见[学习路径契约](governance/learning-path.yaml)。本表保留内容融合理由和来源边界；当两者冲突时，先修正契约或记录新的关系，不在表内静默改等级。
+
 ## 状态约定
 
 - `content_status` 用于章节和能力内容：`draft`、`candidate`、`verified`、`production-ready`。
 - `lab_status` 用于实验文件：`draft`、`candidate`、`verified`、`production-ready`。
 - `skill_status` 用于项目 Skill：`draft`、`candidate`、`verified`、`production-ready`。
 - `claim_status` 只用于易变事实断言：`current`、`stale`、`disputed`、`removed`。
+- 学习路径关系使用 `primary`、`supporting`、`transfer`、`reference`；同一个实验或 Skill 被复用不等于产生了新的资产或新的掌握证据。
 - 本表有 12 个课程映射，当前磁盘上有 12 个实验文件；主题重复时在“新增能力”列说明递进关系。
 
 ## 12 个实验映射

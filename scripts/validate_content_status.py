@@ -152,6 +152,21 @@ def main() -> int:
     validate_items(document, "labs", 12, "book/labs/", errors, require_run_status=True)
     validate_items(document, "skills", 7, "skills/", errors)
 
+    learning_path = document.get("learning_path")
+    if not isinstance(learning_path, dict):
+        errors.append("learning_path: section must be an object")
+    else:
+        if learning_path.get("count") != 7:
+            errors.append(f"learning_path: count must be 7, found {learning_path.get('count')!r}")
+        require_status(learning_path, "status", "learning_path", errors)
+        require_text(learning_path, "owner", "learning_path", errors)
+        require_date(learning_path, "last_reviewed", "learning_path", errors)
+        require_date(learning_path, "next_review", "learning_path", errors)
+        validate_path_list(learning_path, "evidence", "learning_path", errors)
+        path = require_text(learning_path, "path", "learning_path", errors)
+        if path is not None and not (ROOT / path).is_file():
+            errors.append(f"learning_path: path does not exist: {path}")
+
     evaluations = document.get("evaluations")
     if not isinstance(evaluations, dict):
         errors.append("evaluations: section must be an object")
@@ -208,7 +223,7 @@ def main() -> int:
         return 1
 
     print("CONTENT_STATUS_OK")
-    print("chapters=22 labs=12 skills=7 evaluations=38 tracks=15")
+    print("chapters=22 labs=12 skills=7 learning_levels=7 evaluations=38 tracks=15")
     print("public_site=en-default,zh-toggle,browser_review=pending")
     return 0
 

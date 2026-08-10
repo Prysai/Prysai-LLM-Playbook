@@ -38,6 +38,9 @@ jobs:
       - name: Validate learning contract
         run: python scripts/validate_learning_contract.py
 
+      - name: Validate learning path
+        run: python scripts/validate_learning_path.py
+
       - name: Validate update registry
         run: python scripts/validate_update_registry.py
 

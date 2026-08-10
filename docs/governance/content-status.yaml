@@ -18,6 +18,20 @@
       "scripts/validate_content_status.py"
     ]
   },
+  "learning_path": {
+    "count": 7,
+    "status": "candidate",
+    "owner": "curriculum-maintainer",
+    "last_reviewed": "2026-08-10",
+    "next_review": "2026-11-09",
+    "path": "docs/governance/learning-path.yaml",
+    "evidence": [
+      "docs/governance/learning-path.yaml",
+      "docs/learning-model.md",
+      "docs/content-matrix.md",
+      "scripts/validate_learning_path.py"
+    ]
+  },
   "chapters": {
     "count": 22,
     "status": "candidate",
