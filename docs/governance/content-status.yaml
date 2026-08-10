@@ -151,15 +151,16 @@
     "status": "candidate",
     "language_default": "en",
     "language_options": ["en", "zh"],
-    "browser_review": "pending",
+    "browser_review": "completed",
     "owner": "site-maintainer",
-    "last_reviewed": "2026-08-09",
+    "last_reviewed": "2026-08-10",
     "next_review": "2026-09-09",
     "path": "site",
     "evidence": [
       "site/README.md",
-        "docs/quality/review-presentation-2026-08-09.md",
-        "docs/quality/review-fact-impact-registry-2026-08-10.md"
+      "docs/quality/review-presentation-2026-08-09.md",
+      "docs/quality/review-fact-impact-registry-2026-08-10.md",
+      "docs/quality/review-public-site-browser-2026-08-10.md"
     ]
   },
   "sources_and_licenses": {

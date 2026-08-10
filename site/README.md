@@ -41,4 +41,4 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\build_learning_path_site.py --check
 ```
 
-本页对项目状态的表述以 `docs/governance/content-status.yaml` 为当前单一状态源，并由 `docs/quality/current-state-review-2026-08-09.md` 解释证据边界；`book/table-of-contents.md`、`book/labs/README.md`、`docs/governance/update-map.md` 仍是对应领域的阅读入口。当前页面实现状态为 **candidate**：静态文件与交互已实现，仍需在目标浏览器完成视觉与可访问性人工验收；页面不把 `candidate` 写成 `verified` 或 `production-ready`。
+本页对项目状态的表述以 `docs/governance/content-status.yaml` 为当前单一状态源，并由 `docs/quality/current-state-review-2026-08-09.md` 解释证据边界；`book/table-of-contents.md`、`book/labs/README.md`、`docs/governance/update-map.md` 仍是对应领域的阅读入口。2026-08-10 已完成一次范围化的本地浏览器验收，详见 `docs/quality/review-public-site-browser-2026-08-10.md`；这不等于完成完整视觉、屏幕阅读器、对比度、跨浏览器、部署环境或真实用户验收。当前页面实现状态仍为 **candidate**，页面不把 `candidate` 写成 `verified` 或 `production-ready`。

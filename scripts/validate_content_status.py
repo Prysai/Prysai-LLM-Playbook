@@ -14,6 +14,7 @@ STATUS_PATH = ROOT / "docs/governance/content-status.yaml"
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 ARTIFACT_STATUSES = {"draft", "candidate", "verified", "production-ready"}
 RUN_STATUSES = {"not_run", "running", "completed"}
+BROWSER_REVIEW_STATUSES = {"pending", "completed"}
 
 
 def load_document() -> dict[str, Any]:
@@ -193,8 +194,11 @@ def main() -> int:
             errors.append("public_site: language_default must be en")
         if site.get("language_options") != ["en", "zh"]:
             errors.append("public_site: language_options must be ['en', 'zh']")
-        if site.get("browser_review") != "pending":
-            errors.append("public_site: browser_review must remain pending until runtime review is recorded")
+        browser_review = require_text(site, "browser_review", "public_site", errors)
+        if browser_review is not None and browser_review not in BROWSER_REVIEW_STATUSES:
+            errors.append(
+                f"public_site: browser_review must be one of {sorted(BROWSER_REVIEW_STATUSES)}"
+            )
         require_text(site, "owner", "public_site", errors)
         require_date(site, "last_reviewed", "public_site", errors)
         require_date(site, "next_review", "public_site", errors)
@@ -224,7 +228,7 @@ def main() -> int:
 
     print("CONTENT_STATUS_OK")
     print("chapters=22 labs=13 skills=7 learning_levels=7 evaluations=39 tracks=16")
-    print("public_site=en-default,zh-toggle,browser_review=pending")
+    print(f"public_site=en-default,zh-toggle,browser_review={document['public_site']['browser_review']}")
     return 0
 
 

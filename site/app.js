@@ -68,7 +68,9 @@ Object.assign(copy.en, {
   skillSelectorName: 'Skill Selector',
   skillWorkflowName: 'Workflow Orchestrator',
   skillResearchName: 'Research Router',
-  skillContextName: 'Product Context'
+  skillContextName: 'Product Context',
+  statusReviewLink: 'the scoped browser review',
+  statusSourceAfter: '; the page remains candidate because this review covers only the recorded local scope.'
 });
 Object.assign(copy.zh, {
   heroPrimary: '\u4ece\u7b2c 2 \u7ae0\u5f00\u59cb',
@@ -84,7 +86,9 @@ Object.assign(copy.zh, {
   skillSelectorName: 'Skill \u9009\u62e9\u5668 Skill Selector',
   skillWorkflowName: '\u5de5\u4f5c\u6d41\u7f16\u6392 Workflow Orchestrator',
   skillResearchName: '\u7814\u7a76\u8def\u7531 Research Router',
-  skillContextName: '\u4ea7\u54c1\u4e0a\u4e0b\u6587 Product Context'
+  skillContextName: '\u4ea7\u54c1\u4e0a\u4e0b\u6587 Product Context',
+  statusReviewLink: '\u672c\u6b21\u8303\u56f4\u5316\u6d4f\u89c8\u5668\u9a8c\u6536',
+  statusSourceAfter: '\uff1b\u672c\u6b21\u9a8c\u6536\u53ea\u8986\u76d6\u8bb0\u5f55\u7684\u672c\u5730\u8303\u56f4\uff0c\u9875\u9762\u4ecd\u4fdd\u6301 candidate\u3002'
 });
 
 const evaluationTypeLabels = (types) => types.map((type) => copy[currentLanguage][type] || type).join(' · ');
