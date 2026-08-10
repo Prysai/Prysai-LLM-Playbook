@@ -60,18 +60,25 @@ transfer_limitations: "本实验只证明低风险沙盒中的边界表达和证
 
 ```text
 run-id: lab001-readme-01
+owner: <本次运行的负责人>
 checkpoint_before: <commit/hash/原始副本路径>
-allowed_scope: README.md
-observed_inputs: <实际读取的文件>
-plan_and_confirmation: <记录或链接>
-diff: <diff 路径>
-command_source: <脚本字段/文件行>
-verification: <实际输出或手工检查>
-status: passed | failed | stopped
+scope: README.md only
+inputs: <实际读取的文件>
+assumptions: <仍未确认的前提>
+actions_done: <实际完成的动作>
+actions_not_done: <明确没有做的动作>
+evidence: <diff、命令输出或手工检查路径>
 unverified: <没有运行或无法证明的事项>
+blocked_on: <需要补充的输入或确认；没有则写 none>
+next_check: <下一项最小检查>
+permission_boundary: <不得安装、提交、推送、发布或读取秘密>
+next_review: <复核时间或触发条件>
+status: passed | failed | stopped
 ```
 
-“命令来源”必须指向项目配置，而不是来自搜索结果或模型记忆；“verification”必须是实际检查结果，而不是 Codex 的完成声明。
+这组字段与第 8 章的贯穿案例一致，便于把一次实验交接给另一位学习者。`actions_done` 只能写实际发生的动作；计划中的动作放在 `actions_not_done` 或 `blocked_on`，不能混写成完成。
+
+`evidence` 中的命令来源必须指向项目配置，而不是来自搜索结果或模型记忆；其中的验证记录必须是实际检查结果，而不是 Codex 的完成声明。
 
 ## 故意失败变体
 
