@@ -1,4 +1,4 @@
-name: Field Guide quality
+name: Codex From First Task to Real Work quality
 
 on:
   push:
@@ -29,8 +29,17 @@ jobs:
       - name: Check local Markdown links
         run: python scripts/check_local_links.py
 
-      - name: Validate Field Guide Skills
+      - name: Validate Codex Skills
         run: python scripts/validate_skills.py
 
       - name: Validate evaluation fixtures
         run: python scripts/validate_eval_tasks.py
+
+      - name: Validate learning contract
+        run: python scripts/validate_learning_contract.py
+
+      - name: Validate update registry
+        run: python scripts/validate_update_registry.py
+
+      - name: Validate public page language contract
+        run: python scripts/validate_site_i18n.py

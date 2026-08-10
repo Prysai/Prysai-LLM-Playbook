@@ -1,0 +1,73 @@
+"""Validate the public page's language contract and translation coverage."""
+
+from __future__ import annotations
+
+import re
+import sys
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+HTML = ROOT / "site/index.html"
+APP = ROOT / "site/app.js"
+
+
+def keys_for(block: str, expected: set[str]) -> set[str]:
+    """Find only unquoted object keys, avoiding colons inside copy strings."""
+    return {
+        key
+        for key in expected
+        if re.search(rf"(?:^|,)\s*{re.escape(key)}\s*:", block, re.MULTILINE)
+    }
+
+
+def main() -> int:
+    errors: list[str] = []
+    html = HTML.read_text(encoding="utf-8")
+    app = APP.read_text(encoding="utf-8")
+
+    if not re.search(r"<html\s+lang=\"en\"", html):
+        errors.append("site/index.html must default to lang=\"en\"")
+    if "data-language-toggle" not in html:
+        errors.append("language toggle is missing")
+    if "URLSearchParams" not in app or "get('lang')" not in app or "searchParams.set('lang'" not in app or "localStorage" not in app:
+        errors.append("language state must support a shareable lang parameter and localStorage preference")
+    if "document.documentElement.lang" not in app:
+        errors.append("language switching must update document.documentElement.lang")
+
+    html_keys = set(re.findall(r'data-i18n="([^"]+)"', html))
+    for attribute_value in re.findall(r'data-i18n-attr="([^"]+)"', html):
+        for entry in attribute_value.split(";"):
+            parts = entry.split(":", 1)
+            if len(parts) == 2:
+                html_keys.add(parts[1])
+
+    en_match = re.search(r"\n  en: \{(?P<body>.*?)\n  \},\n  zh: \{", app, re.DOTALL)
+    zh_match = re.search(r"\n  zh: \{(?P<body>.*?)\n  \}\n\};\n\nconst levelContent", app, re.DOTALL)
+    if not en_match or not zh_match:
+        errors.append("translation dictionary could not be located")
+        english_keys = set()
+        chinese_keys = set()
+    else:
+        english_keys = keys_for(en_match.group("body"), html_keys)
+        chinese_keys = keys_for(zh_match.group("body"), html_keys)
+        if not english_keys:
+            errors.append("English translation dictionary is empty or malformed")
+        if not chinese_keys:
+            errors.append("Chinese translation dictionary is empty or malformed")
+        for language, keys in (("en", english_keys), ("zh", chinese_keys)):
+            for key in sorted(html_keys - keys):
+                errors.append(f"{language} dictionary is missing HTML key: {key}")
+
+    if errors:
+        print("VALIDATION_FAILED")
+        for error in errors:
+            print(f"- {error}")
+        return 1
+
+    print(f"VALIDATION_OK html_keys={len(html_keys)} translated_keys={len(english_keys)}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

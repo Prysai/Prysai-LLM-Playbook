@@ -1,4 +1,4 @@
-"""Check relative Markdown links in the Codex Field Guide workspace."""
+"""Check relative Markdown links in the Codex learning workspace."""
 
 from __future__ import annotations
 
@@ -9,12 +9,15 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+IGNORED_PARTS = {".git", ".work", "node_modules"}
 
 
 def main() -> int:
     missing: list[str] = []
     checked = 0
     for markdown in ROOT.rglob("*.md"):
+        if any(part in IGNORED_PARTS for part in markdown.relative_to(ROOT).parts):
+            continue
         text = markdown.read_text(encoding="utf-8")
         for target in LINK_RE.findall(text):
             if target.startswith(("http://", "https://", "mailto:", "#")):

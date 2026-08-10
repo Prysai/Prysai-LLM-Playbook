@@ -1,0 +1,201 @@
+"""Validate the teaching contract for Codex learning chapters and labs.
+
+This checker deliberately validates observable curriculum structure rather than
+judging prose quality. A chapter can use different headings for its acceptance
+section, but it must still provide the same learning loop: problem, objective,
+real-world entry, experiment setup, task, evidence, failure/boundary, reflection,
+transfer, acceptance, and source/update boundaries.
+"""
+
+from __future__ import annotations
+
+import re
+import sys
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+CHAPTERS = ROOT / "book/chapters"
+LABS = ROOT / "book/labs"
+
+CHAPTER_CONTRACT = {
+    # Keep both headings valid: early chapters use the explicit teaching
+    # heading, while later chapters use the shorter project convention.
+    "problem": re.compile(r"(?m)^##\s+(?:本章要解决的问题|问题)(?:：.*)?\s*$"),
+    "objective": re.compile(r"(?m)^##\s+学习目标\s*$"),
+    "real_problem": re.compile(r"现实问题入口|真实问题入口"),
+    "experiment": re.compile(r"(?:^##\s+.*实验|^###\s+.*实验|实验：)", re.MULTILINE),
+    "setup": re.compile(r"(?:^###\s+Setup\s*$|^###\s+准备|^###\s+前置|^###\s+实验准备|^##\s+实验准备)", re.MULTILINE),
+    "task": re.compile(r"(?:^###\s+Task\s*$|^###\s+任务|^###\s+操作步骤|^###\s+实验步骤)", re.MULTILINE),
+    "evidence": re.compile(r"(?:^###\s+Evidence\s*$|^###\s+证据|^###\s+记录|^###\s+必须保存)", re.MULTILINE),
+    "boundary": re.compile(r"(?:^###\s+Failure variant\s*$|^###\s+失败|^###\s+边界|失败|边界|停止|风险|不适用)"),
+    "reflection": re.compile(r"(?:^###\s+Reflection\s*$|^###\s+复盘|^###\s+反思|复盘|反思)", re.MULTILINE),
+    "transfer": re.compile(r"(?m)^##\s+迁移练习\s*$"),
+    "acceptance": re.compile(
+        r"^##\s+.*(?:本章验收|我真的学会了吗|验收清单).*$", re.MULTILINE
+    ),
+    "sources": re.compile(r"来源与更新提示|易变事实与来源|稳定原则|治理的连接"),
+}
+
+LAB_REQUIRED_KEYS = (
+    "id",
+    "title",
+    "level",
+    "domain",
+    "goal",
+    "setup",
+    "task",
+    "evidence",
+    "failure_variant",
+    "reflection",
+    "status",
+    "last_verified",
+    "transfer_task",
+    "transfer_domain",
+    "transfer_evidence",
+    "transfer_limitations",
+)
+LAB_TRANSFER_KEYS = (
+    "transfer_task",
+    "transfer_domain",
+    "transfer_evidence",
+    "transfer_limitations",
+)
+LAB_KEY_RE = re.compile(r"(?m)^([A-Za-z_][A-Za-z0-9_]*):(?:\s*(.*))?$")
+
+
+def read_utf8(path: Path) -> str:
+    return path.read_text(encoding="utf-8")
+
+
+def frontmatter(text: str) -> tuple[str | None, str]:
+    if not text.startswith("---\n"):
+        return None, text
+    closing = text.find("\n---", 4)
+    if closing < 0:
+        return None, text
+    return text[4:closing], text[closing + len("\n---") :]
+
+
+def metadata_block(text: str) -> tuple[str | None, str]:
+    """Read either standard frontmatter or the project's fenced YAML block."""
+    metadata, body = frontmatter(text)
+    if metadata is not None:
+        return metadata, body
+
+    # Existing labs may put the title first and wrap metadata in horizontal
+    # rule markers. Keep this format valid while the curriculum is migrated.
+    separated = re.search(r"(?ms)^---\s*\n(.*?)\n---\s*(?:\n|$)", text)
+    if separated:
+        return separated.group(1), text[: separated.start()] + text[separated.end() :]
+
+    match = re.search(r"```yaml\s*\n(.*?)\n```", text, flags=re.DOTALL)
+    if not match:
+        return None, text
+    return match.group(1), text[: match.start()] + text[match.end() :]
+
+
+def value_is_nonempty(value: str | None) -> bool:
+    if value is None:
+        return False
+    stripped = value.strip()
+    return bool(stripped) and stripped not in {"null", "~", "''", '""'}
+
+
+def validate_chapters(errors: list[str]) -> None:
+    chapters = sorted(CHAPTERS.glob("[0-9][0-9]-*.md"))
+    expected = {f"{number:02d}" for number in range(1, 23)}
+    actual = {path.name[:2] for path in chapters}
+    missing = sorted(expected - actual)
+    if missing:
+        errors.append(f"chapters: missing numbered chapters: {', '.join(missing)}")
+
+    for path in chapters:
+        text = read_utf8(path)
+        missing_sections = [
+            name for name, pattern in CHAPTER_CONTRACT.items() if not pattern.search(text)
+        ]
+        if missing_sections:
+            errors.append(
+                f"{path.relative_to(ROOT)}: missing teaching contract items: "
+                + ", ".join(missing_sections)
+            )
+
+
+def validate_labs(errors: list[str]) -> None:
+    labs = sorted(LABS.glob("lab-*.md"))
+    if len(labs) < 10:
+        errors.append(f"labs: expected at least 10 labs, found {len(labs)}")
+
+    for path in labs:
+        text = read_utf8(path)
+        metadata, body = metadata_block(text)
+        label = str(path.relative_to(ROOT))
+        if metadata is None:
+            errors.append(f"{label}: frontmatter must start and end with ---")
+            continue
+
+        values = {match.group(1): (match.group(2) or "").strip() for match in LAB_KEY_RE.finditer(metadata)}
+        missing = [key for key in LAB_REQUIRED_KEYS if key not in values]
+        if missing:
+            errors.append(f"{label}: missing metadata keys: {', '.join(missing)}")
+            continue
+
+        for key in LAB_REQUIRED_KEYS:
+            if key not in {"evidence", "last_verified"} and not value_is_nonempty(values[key]):
+                errors.append(f"{label}: {key} must be non-empty")
+
+        for key in LAB_TRANSFER_KEYS:
+            if key in values and not value_is_nonempty(values[key]):
+                errors.append(f"{label}: {key} must be non-empty")
+
+        last_verified = values.get("last_verified", "")
+        if not value_is_nonempty(last_verified):
+            errors.append(f"{label}: last_verified must state that the lab has not run yet")
+        elif not all(marker in last_verified for marker in ("未运行", "待运行")):
+            errors.append(
+                f"{label}: last_verified must explicitly contain both 未运行 and 待运行"
+            )
+
+        evidence_start = re.search(r"(?m)^evidence:\s*$", metadata)
+        if not evidence_start:
+            errors.append(f"{label}: evidence must be a YAML list")
+        else:
+            evidence_tail = metadata[evidence_start.end() :]
+            if not re.search(r"(?m)^\s+-\s+\S+", evidence_tail):
+                errors.append(f"{label}: evidence must contain at least one item")
+
+        if values["status"].strip("'\"").lower() != "draft":
+            errors.append(f"{label}: status must remain draft until runtime evidence exists")
+
+        if not re.search(r"(?m)^##\s+", body):
+            errors.append(f"{label}: body must contain an instructional section")
+        for name, pattern in {
+            "task": re.compile(r"任务|输入").search,
+            "evidence": re.compile(r"证据|记录").search,
+            "failure_variant": re.compile(r"失败|边界|故意").search,
+            "reflection": re.compile(r"复盘|反思|思考").search,
+            "acceptance": re.compile(r"通过标准|验收标准").search,
+        }.items():
+            if not pattern(body):
+                errors.append(f"{label}: body is missing {name} guidance")
+
+
+def main() -> int:
+    errors: list[str] = []
+    validate_chapters(errors)
+    validate_labs(errors)
+    if errors:
+        print("LEARNING_CONTRACT_FAILED")
+        for error in errors:
+            print(f"- {error}")
+        return 1
+
+    print("LEARNING_CONTRACT_OK")
+    print(f"chapters={len(list(CHAPTERS.glob('[0-9][0-9]-*.md')))}")
+    print(f"labs={len(list(LABS.glob('lab-*.md')))}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

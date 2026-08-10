@@ -1,9 +1,10 @@
-# Codex Field Guide 待办清单
+# Codex: From First Task to Real Work 待办清单
 
 ## 当前发布前工作
 
+- [ ] 由项目所有者确认显示名，并决定是否将 GitHub 仓库 slug 迁移为 `codex-from-first-task-to-real-work`。
 - [ ] 完成 7 个候选 Skill 的 fresh-context 前测。
-- [ ] 运行 `evals/task-set-v1.yaml` 中的 30 项任务并保存结果。
+- [ ] 运行 `evals/task-set-v1.yaml` 中的 38 项任务并保存结果。
 - [ ] 补齐第 19–22 章的前测、失败案例和学习者验收证据。
 - [ ] 完成工具、MCP、插件和外部行动章节的官方事实核对。
 - [ ] 复核六个输入来源的许可证、归属和可发布边界。

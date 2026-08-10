@@ -2,7 +2,9 @@
 
 **研究日期：** 2026-08-09
 **研究对象：** 包含课程、书籍、实验、Skills、评测和真实问题案例的开源学习项目
-**本轮结论状态：** candidate（命名建议，不是商标、域名或 GitHub 全局可用性确认）
+**本轮结论状态：** superseded（早期命名建议；已由 [`project-naming-refresh-2026-08-09.md`](project-naming-refresh-2026-08-09.md) 和 [`github-project-naming-candidates-2026-08-09.md`](github-project-naming-candidates-2026-08-09.md) 更新）
+
+> 本文件保留为历史记录。它曾推荐 `Codex Field Guide`，但后续 GitHub 重名复核发现该名称已有多个直接冲突，因此不再作为当前首选。
 
 ## 结论先行
 

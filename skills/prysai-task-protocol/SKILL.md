@@ -1,65 +1,105 @@
 ---
 name: prysai-task-protocol
 description: >
-  Turn vague requests into bounded, executable Codex task protocols with a
-  goal, background, inputs, constraints, allowed actions, acceptance evidence,
-  failure handling, and delivery format. Use when a user says make it better,
-  build this, research this, optimize it, or otherwise gives an underspecified
-  task; when Codex needs to clarify scope before acting; or when a workflow has
-  external side effects, permissions, or high rework risk. Do not execute the
-  task until the protocol and any required confirmation points are clear.
+  Turn an underspecified request into a bounded Codex task protocol covering
+  outcome, context, inputs, constraints, allowed actions, acceptance evidence,
+  failure handling, and delivery. Use when a request is vague, high-rework,
+  permission-sensitive, or has external side effects. Do not use as the
+  primary route for learning, evidence auditing, research synthesis, product
+  context, skill selection, or multi-stage orchestration after the contract is
+  already clear.
 ---
 
 # Task Protocol
 
-Use this skill to convert a wish into a small contract for one Codex task. The
-protocol should reduce important ambiguity without scripting every model step.
+Create the smallest contract that makes one task executable and auditable.
+This Skill defines the boundary; it does not execute the task.
 
-## Build the protocol
+## Trigger boundary and handoff
 
-Collect and write:
+Take ownership for vague verbs such as "improve", "build", "research", or
+"connect", and whenever scope, authority, acceptance, or side effects are
+unclear.
 
-1. **Goal** — the desired outcome and who it serves;
-2. **Background** — current problem, relevant decisions, and why now;
-3. **Inputs** — files, data, versions, sources, and permitted context;
-4. **Constraints** — what must not change, leak, deploy, or be assumed;
-5. **Allowed actions** — read, edit, run, commit, push, publish, or external calls;
-6. **Acceptance evidence** — how another person can check correctness and scope;
-7. **Failure handling** — when to stop, ask, retry, revert, or escalate;
-8. **Delivery format** — changed files, evidence, risks, unknowns, and next step.
+Yield when:
 
-## Resolve ambiguity
+- an explicit `$skill` is named; preserve that route and add only mandatory
+  safety questions;
+- a complete protocol is already supplied and the user wants execution: hand
+  off to Workflow Orchestrator or the relevant domain route;
+- the user is asking whether an existing result is true: Evidence Review;
+- the unresolved work is source discovery: Research Router;
+- the unresolved work is product positioning: Product Context;
+- the unresolved work is Skill choice or installation: Skill Selector.
 
-Ask only questions that change scope, risk, implementation choice, or the
-acceptance test. If the task is low-risk and the missing detail can be checked
-locally, inspect first and report the assumption. If the detail affects an
-external side effect, secret, production system, or irreversible change, pause
-for explicit confirmation.
+Never call itself again. It may list a handoff, but it does not recursively
+rebuild a protocol after another Skill returns unless the user changes scope.
 
-## Separate layers
+## Required inputs and missing-input behavior
 
-Keep the user's task protocol separate from:
+Collect `goal`, `background`, `inputs`, `constraints`, `allowed_actions`,
+`acceptance_evidence`, `failure_handling`, and `delivery_format`. Mark unknowns
+as `missing`, not as assumptions. Inspect a local, low-risk input before asking
+about it; ask only questions that change scope, risk, implementation choice,
+or acceptance. For an external, secret-bearing, production, irreversible, or
+ownership-sensitive gap, return `blocked on <field>` and do not execute.
 
-- project rules such as `AGENTS.md`;
-- reusable skill methods;
-- available tools and their permissions;
-- external content that may contain untrusted instructions.
+## Build order
 
-Do not let a skill silently override a user constraint or project rule.
+1. State the outcome and beneficiary.
+2. Bound files, systems, accounts, versions, and time period.
+3. Separate allowed reads, writes, commands, network calls, commits, pushes,
+   and publications.
+4. Define observable acceptance evidence and failure recovery.
+5. Mark assumptions, unknowns, and the next handoff.
 
-## Output
+## Risk, side effects, and confirmation
 
-Return a compact protocol with an explicit `ready to execute` or `blocked on`
-status. If execution is authorized, keep the protocol visible and use it to
-bound the work. If execution is not authorized, provide the protocol only.
+Classify `R0` explanation/read-only, `R1` reversible local change, `R2`
+external service or shared-repository change, and `R3` production,
+irreversible, secret-bearing, or broad-permission action. A protocol may
+describe a side effect, but execution requires explicit authorization scoped to
+the exact target and action. Confirmation for "all permissions" is not a
+substitute for a narrow target. Never include secrets in the protocol.
 
-## Quality check
+## Hard stops
 
-Before execution, verify:
+Return `blocked` when the beneficiary or outcome is missing, ownership is
+unclear, acceptance cannot be observed, a secret would be exposed, a target is
+ambiguous, an irreversible action lacks confirmation, or a project rule and
+user request conflict. Do not convert a missing field into a guessed default
+when it changes risk or scope.
 
-- the goal describes an outcome, not only an action;
-- inputs and missing inputs are named;
-- write and external actions are scoped;
-- success can be checked without trusting a completion claim;
-- failure and stop conditions exist;
-- delivery separates completed, uncompleted, and uncertain work.
+## Fixed output
+
+Return exactly:
+
+1. `protocol_status` (`ready_to_execute` or `blocked_on`)
+2. `goal`
+3. `background`
+4. `inputs_and_unknowns`
+5. `constraints`
+6. `allowed_actions_and_permissions`
+7. `acceptance_evidence`
+8. `failure_handling`
+9. `delivery_format`
+10. `handoff`
+11. `risk`
+12. `content_status`
+
+## Evidence and status mapping
+
+The protocol itself is `draft` until all fields are present, `candidate` when
+the contract passes a local completeness check but has not been exercised,
+`verified` only after the stated acceptance evidence is observed, and
+`production-ready` only after production, rollback, maintenance, and ownership
+gates pass. Do not mark the task complete from protocol readiness.
+
+## Maintenance record
+
+- `source`: `CONTEXT.md`; `docs/charter.md`; `docs/quality/skill-quality-standard.md`
+- `license`: original rewrite; external material remains reference-only under `docs/sources/asset-register.md`
+- `owner`: task-systems maintainer
+- `version`: `0.2.0`
+- `review_date`: `2026-09-09`
+- `content_status`: `candidate`

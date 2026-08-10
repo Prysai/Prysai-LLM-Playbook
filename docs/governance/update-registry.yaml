@@ -1,0 +1,87 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-08-09",
+  "description": "Fixed maintenance locations and evidence gates for the Codex learning system.",
+  "areas": [
+    {
+      "area": "official-facts",
+      "canonical_paths": ["docs/research/openai-codex-baseline.md"],
+      "owner": "facts-maintainer",
+      "triggers": ["official-doc-change", "product-release", "user-reports-step-failure"],
+      "required_inputs": ["authoritative-url", "checked-at", "applies-to", "next-review"],
+      "validation_commands": ["scripts/validate_project.py", "scripts/check_local_links.py"],
+      "status_fields": ["claim_status", "checked_at", "owner", "next_review"],
+      "next_review": "2026-09-09"
+    },
+    {
+      "area": "chapters",
+      "canonical_paths": ["book/chapters", "book/table-of-contents.md", "docs/content-matrix.md"],
+      "owner": "curriculum-maintainer",
+      "triggers": ["learning-gap", "source-refresh", "user-confusion", "new-domain-example"],
+      "required_inputs": ["problem", "objective", "experiment", "failure-case", "acceptance-checklist", "sources"],
+      "validation_commands": ["scripts/validate_project.py", "scripts/validate_learning_contract.py", "scripts/check_local_links.py"],
+      "status_fields": ["content_status", "last_reviewed", "owner", "next_review"],
+      "next_review": "2026-11-09"
+    },
+    {
+      "area": "labs",
+      "canonical_paths": ["book/labs", "book/labs/README.md"],
+      "owner": "lab-maintainer",
+      "triggers": ["chapter-change", "failed-reproduction", "new-boundary-case", "learning-level-change"],
+      "required_inputs": ["low-risk-setup", "observable-output", "evidence", "failure-variant", "secret-boundary", "transfer-task"],
+      "validation_commands": ["scripts/validate_project.py", "scripts/validate_learning_contract.py", "scripts/check_local_links.py"],
+      "status_fields": ["status", "last_verified", "runtime_evidence", "owner", "next_review"],
+      "next_review": "2026-11-09"
+    },
+    {
+      "area": "skills",
+      "canonical_paths": ["skills", "docs/skill-registry.md", "docs/quality/skill-quality-standard.md"],
+      "owner": "skills-maintainer",
+      "triggers": ["new-workflow", "trigger-conflict", "dependency-change", "validator-change", "fresh-context-failure"],
+      "required_inputs": ["trigger", "non-trigger", "inputs", "boundaries", "stop-conditions", "output-contract", "source-boundary", "tests"],
+      "validation_commands": ["scripts/validate_project.py", "scripts/validate_skills.py", "H:/Codex/home/skills/.system/skill-creator/scripts/quick_validate.py"],
+      "status_fields": ["skill_status", "validator_result", "fresh_context_status", "owner", "next_review"],
+      "next_review": "2026-11-09"
+    },
+    {
+      "area": "evaluations",
+      "canonical_paths": ["evals/task-set-v1.yaml", "docs/quality/evaluation-framework.md", "evals/results"],
+      "owner": "evaluation-maintainer",
+      "triggers": ["skill-change", "model-change", "workflow-change", "new-failure-class"],
+      "required_inputs": ["fixed-task", "context", "allowed-actions", "expected-evidence", "forbidden-behavior", "run-log"],
+      "validation_commands": ["scripts/validate_eval_tasks.py", "scripts/validate_project.py"],
+      "status_fields": ["fixture_status", "run_status", "review_status", "owner", "next_review"],
+      "next_review": "2026-09-09"
+    },
+    {
+      "area": "sources-and-licenses",
+      "canonical_paths": ["docs/sources/asset-register.md", "docs/sources/archive-audit-2026-08-09.json"],
+      "owner": "source-maintainer",
+      "triggers": ["new-archive", "upstream-license-change", "adaptation-request", "dependency-change"],
+      "required_inputs": ["source", "license", "attribution", "scope", "hash", "distribution-decision"],
+      "validation_commands": ["scripts/audit_input_archives.py", "scripts/validate_project.py"],
+      "status_fields": ["license_status", "distribution_status", "hash", "owner", "next_review"],
+      "next_review": "2026-11-09"
+    },
+    {
+      "area": "public-site",
+      "canonical_paths": ["site/index.html", "site/app.js", "site/styles.css", "site/README.md"],
+      "owner": "site-maintainer",
+      "triggers": ["count-change", "content-status-change", "language-coverage-change", "navigation-change", "browser-report"],
+      "required_inputs": ["current-counts", "real-links", "en-default", "zh-toggle", "status-boundary", "responsive-check"],
+      "validation_commands": ["scripts/check_local_links.py", "scripts/validate_site_i18n.py"],
+      "status_fields": ["site_status", "language_coverage", "browser_review", "owner", "next_review"],
+      "next_review": "2026-09-09"
+    },
+    {
+      "area": "release-and-rollback",
+      "canonical_paths": ["docs/release-checklist.md", "docs/governance/content-lifecycle.md"],
+      "owner": "release-maintainer",
+      "triggers": ["release-candidate", "public-site-change", "high-risk-content-change", "rollback-needed"],
+      "required_inputs": ["diff", "validation-log", "reviewer", "known-gaps", "rollback-target", "user-approval"],
+      "validation_commands": ["scripts/validate_project.py", "scripts/check_local_links.py", "scripts/validate_eval_tasks.py"],
+      "status_fields": ["release_status", "review_status", "rollback_target", "owner", "next_review"],
+      "next_review": "2026-09-09"
+    }
+  ]
+}

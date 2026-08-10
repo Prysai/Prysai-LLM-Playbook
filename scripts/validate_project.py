@@ -1,4 +1,4 @@
-"""Validate the minimum structural contract of Codex Field Guide."""
+"""Validate the minimum structural contract of the Codex learning project."""
 
 from __future__ import annotations
 
@@ -22,11 +22,17 @@ REQUIRED = (
     "docs/sources/asset-register.md",
     "docs/sources/archive-audit-2026-08-09.json",
     "docs/governance/content-lifecycle.md",
+    "docs/governance/update-map.md",
+    "docs/governance/update-registry.yaml",
+    "docs/templates/update-record.md",
     "docs/governance/contribution-model.md",
     "docs/quality/skill-quality-standard.md",
     "docs/quality/evaluation-framework.md",
     "book/table-of-contents.md",
     "book/labs/README.md",
+    "site/index.html",
+    "site/app.js",
+    "site/styles.css",
 )
 
 

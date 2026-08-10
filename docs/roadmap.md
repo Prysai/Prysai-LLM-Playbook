@@ -1,8 +1,8 @@
-# Codex Field Guide 路线图
+# Codex: From First Task to Real Work 路线图
 
 ## Phase 0：地基（已完成）
 
-- 确立 Field Guide 的产品定位和学习目标；
+- 确立项目的产品定位和学习目标；
 - 建立书籍、课程、实验室、skills、评测和治理的分层；
 - 盘点六个输入压缩包并保存 SHA-256；
 - 建立许可证/来源台账；
@@ -31,7 +31,7 @@
 
 - 建立贡献者指南、评审角色和维护责任；
 - 设计可发布的 plugin/skill 包边界；
-- 确认许可证、品牌使用边界和公开范围（项目名已确定为 `Codex Field Guide`，仓库当前保持私有）；
+- 确认许可证、品牌使用边界和公开范围（当前本地拟采用名称为 `Codex: From First Task to Real Work`，仓库路径暂保持私有开发路径）；
 - 配置 CI：结构、链接、frontmatter、许可证、评测和过时事实检查；
 - 对关键章节做学习者测试和版本化发布。
 

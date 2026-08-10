@@ -1,83 +1,196 @@
-# OpenAI Codex 官方基线
+# OpenAI Codex 官方事实基线
 
-**访问日期：** 2026-08-09
-**来源范围：** OpenAI 官方文档（`learn.chatgpt.com`、`developers.openai.com`）
-**用途：** 为 Field Guide 的产品事实、术语和更新审查提供基线，不替代当前官方文档。
+**基线日期：** 2026-08-09
+**内容状态：** `candidate`
+**用途：** 为本项目的术语、章节和更新审查提供有日期的官方事实入口；不替代当前产品文档，也不代表某个账户已经获得对应能力。
+**来源范围：** OpenAI 官方文档（`learn.chatgpt.com`）。
 
-## 已核实的 Codex 使用面
+## 状态分离
 
-- **ChatGPT 桌面应用：** 提供专门的 Codex 编程体验，并可与项目、文件、插件、浏览器/电脑使用、计划任务和长时间运行的工作结合。
-- **Codex CLI：** 支持终端中的项目检查、文件编辑、命令执行、自动化、skills、plugins、审查、子任务和云端交接。
-- **Codex IDE 扩展：** 以编辑器上下文为中心，支持行内审查/编辑，并可将工作交给 Codex Cloud。
-- **Codex Cloud：** 在隔离的云环境中运行编码任务，支持并行处理。
-- **Remote：** 用于从其他设备启动、指导、批准和审查连接电脑上运行的任务。
-- **ChatGPT Web / Work：** 是相关的文件、工具、skills 和 plugins 工作面，但不能简单等同于本地 Codex 运行时。
+- `content_status` 描述本文件和学习内容的成熟度：`draft`、`candidate`、`verified`、`production-ready`。
+- `claim_status` 描述单条事实：`current`、`stale`、`disputed`、`removed`。
+- 两种状态不能互相替代。本基线是 `candidate`，其中一条事实可以是 `current`；反之，事实当前也不等于章节已经被学习者验证。
 
-## Skills 与 plugins
+## 官方事实记录
 
-- **Skill** 是可复用的工作流，通常包含指令以及模板、示例、schema 或辅助工具等资源。
-- ChatGPT 和 Codex 可以自动选择匹配的 skill，也可以显式调用；Codex 采用 `$` 形式的 skill 提及。
-- **Plugin** 是可安装的能力包，可以包含 skills、connectors、MCP servers、浏览器扩展、hooks、计划任务模板和可选 UI。
-- 插件存在多个分发来源，包括公共目录、本地来源、仓库来源、个人 marketplace 和 workspace marketplace。
-- 插件可用范围取决于具体产品面；不能因为某个插件存在，就假定它在所有入口、账户或组织中可用。
-- 可分发插件需要 `.codex-plugin/plugin.json`；可选组件包括 `skills/`、`.mcp.json`、`.app.json`、`hooks/` 和 `assets/`。
+### 模型与推理
 
-## 权限与安全
+```yaml
+claim: "官方 Models 页面当前列出 gpt-5.6-sol、gpt-5.6-terra 和 gpt-5.6-luna 三个 GPT-5.6 Codex 模型，并分别将它们定位为复杂工作、日常工作和清晰可重复工作。"
+source: "https://learn.chatgpt.com/docs/models.md"
+checked_at: "2026-08-09"
+applies_to: "Codex 模型指南；工作面、账户和 API 的实际可用性需单独确认"
+owner: "Codex Field Guide 事实维护者"
+next_review: "2026-09-09"
+claim_status: "current"
+```
 
-- **Sandboxing** 决定 Agent 在技术上可以访问什么，包括文件系统和网络边界。
-- **Approval policy** 决定 Agent 在哪些动作前必须暂停并请求批准；更换审批策略不会自动扩大 sandbox。
-- 本地 Codex 的默认授权和网络行为会受到运行面与配置影响，不能只凭某次会话的行为推断所有环境的默认值。
-- 完全开放访问会提高数据丢失、泄露和意外行为的风险。
-- Cloud 使用隔离的 OpenAI 管理环境；setup 阶段和 Agent 阶段的网络行为可能不同。
-- Plugin、connector 和外部服务分别有自己的认证、权限、条款和隐私边界；“能连接”不等于“可以无条件操作”。
+```yaml
+claim: "模型和推理强度会影响速度、用量与结果；官方建议从默认强度开始，再根据任务需要增加深度。Ultra 会使用 Subagents 处理可拆分的复杂任务。"
+source: "https://learn.chatgpt.com/docs/models.md"
+checked_at: "2026-08-09"
+applies_to: "官方 Models 页面描述的 ChatGPT desktop、ChatGPT Work web、Codex CLI 和 IDE 工作面"
+owner: "Codex Field Guide 事实维护者"
+next_review: "2026-09-09"
+claim_status: "current"
+```
 
-## GPT-5.6 Luna 的处理方式
+```yaml
+claim: "‘GPT-5.6 Luna 性价比最高’不是官方事实；在本项目中只能作为待验证假设，必须用固定任务、相同输入、成本、耗时、错误、返工和人工评分进行评测。"
+source: "https://learn.chatgpt.com/docs/models.md"
+checked_at: "2026-08-09"
+applies_to: "本项目的模型评测和对外表述"
+owner: "Codex Field Guide 事实维护者"
+next_review: "2026-09-09"
+claim_status: "disputed"
+```
 
-截至本次核查，官方 API 模型目录把 `gpt-5.6-luna` 描述为面向成本敏感工作负载优化的 GPT-5.6 模型。官方 Codex 文档将 Luna 的适用方向描述为清晰、重复性较强的工作，例如抽取、分类、转换和结构化摘要。
+### Codex 工作面
 
-这条信息不应在 Field Guide 中被写成永久的“最佳模型”结论。需要以固定任务集、上下文、工具、权限、时间预算、重复次数和成功标准进行比较，并记录：
+```yaml
+claim: "ChatGPT 桌面应用面向复杂工作，支持在桌面工作区处理项目和文件，并使用浏览器、桌面应用、插件和计划任务。"
+source: "https://learn.chatgpt.com/docs/app.md"
+checked_at: "2026-08-09"
+applies_to: "ChatGPT desktop app；功能开放范围以实际应用为准"
+owner: "Codex Field Guide 事实维护者"
+next_review: "2026-09-09"
+claim_status: "current"
+```
 
-- 首次通过率；
-- 返工率和错误类型；
-- 运行时间；
-- 使用成本；
-- 人工评分；
-- 不同任务类别之间的稳定性。
+```yaml
+claim: "Codex CLI 用于在终端中探索项目、编辑文件和运行本地工具，并提供模型、推理强度、权限、skills、plugins、代码审查、Subagents、搜索、Cloud 交接和 MCP 等入口。"
+source: "https://learn.chatgpt.com/docs/codex/cli.md"
+checked_at: "2026-08-09"
+applies_to: "Codex CLI；命令和功能以当前 CLI 版本与配置为准"
+owner: "Codex Field Guide 事实维护者"
+next_review: "2026-09-09"
+claim_status: "current"
+```
 
-“性价比最高”或“转换最高”只能作为待验证假设，不能由单个演示或主观感受直接推出。
+```yaml
+claim: "Codex IDE 扩展以编辑器中的打开文件和选区为上下文，支持在代码旁审查变更，并可将较长工作交给 Codex Cloud。"
+source: "https://learn.chatgpt.com/docs/codex/ide.md"
+checked_at: "2026-08-09"
+applies_to: "Codex IDE extension；不同编辑器的集成入口和能力可能不同"
+owner: "Codex Field Guide 事实维护者"
+next_review: "2026-09-09"
+claim_status: "current"
+```
 
-## 必须定期复核的事实
+```yaml
+claim: "Codex Cloud 在隔离的云环境中运行编码任务，支持并行工作，并以 GitHub 连接、环境创建、任务运行和结果审查为基本入门流程。"
+source: "https://learn.chatgpt.com/docs/cloud.md"
+checked_at: "2026-08-09"
+applies_to: "Codex Cloud；仓库连接、环境、账户资格和集成范围需在当前产品中确认"
+owner: "Codex Field Guide 事实维护者"
+next_review: "2026-09-09"
+claim_status: "current"
+```
 
-- 模型名称、ID、描述、价格、限额、上下文长度、工具支持和知识截止日期；
-- Codex 入口的可用范围、计划资格、操作系统支持和 rollout 状态；
-- Plugin 目录、版本、认证方式、marketplace 行为和 manifest schema；
-- Skill 的调用语法、自动选择行为和 bundled resources；
-- Sandbox 默认值、审批策略、网络控制、企业限制和安全建议；
-- 版本更新、弃用日期和迁移要求；
-- 某个 skill、plugin、connector 或模型是否真的对特定账户/组织启用。
+### Skills、Plugins 与 Connectors
 
-## 官方来源
+```yaml
+claim: "Skill 是针对特定任务或工作流的可复用指导与资源包，可以包含流程指令、模板、示例、品牌指导、schema 或连接工具。ChatGPT 和 Codex 可以匹配 Skill，也可以显式选择；ChatGPT 使用 @ 提及，Codex 使用 $ 提及。"
+source: "https://learn.chatgpt.com/docs/skills-and-plugins.md"
+checked_at: "2026-08-09"
+applies_to: "ChatGPT 与 Codex 的 Skills 文档定义；启用和可用性仍受工作面与设置影响"
+owner: "Codex Field Guide 事实维护者"
+next_review: "2026-09-09"
+claim_status: "current"
+```
 
-以下链接均在 2026-08-09 访问：
+```yaml
+claim: "Plugin 是可安装的能力包，可以包含 Skills 和 Connectors；Connectors 由 MCP servers 支持，并可选择包含自定义 ChatGPT UI。"
+source: "https://learn.chatgpt.com/docs/skills-and-plugins.md"
+checked_at: "2026-08-09"
+applies_to: "官方 Skills & Plugins 文档定义的 Plugin 层"
+owner: "Codex Field Guide 事实维护者"
+next_review: "2026-09-09"
+claim_status: "current"
+```
 
-- [Codex 文档索引](https://learn.chatgpt.com/docs)
-- [ChatGPT 桌面应用](https://learn.chatgpt.com/docs/app)
-- [ChatGPT Web](https://learn.chatgpt.com/docs/web)
-- [Codex CLI](https://learn.chatgpt.com/docs/codex/cli)
-- [Codex IDE 扩展](https://learn.chatgpt.com/docs/codex/ide)
-- [Codex Cloud](https://learn.chatgpt.com/docs/cloud)
-- [Codex Remote](https://learn.chatgpt.com/docs/remote)
-- [Skills & Plugins](https://learn.chatgpt.com/docs/skills-and-plugins)
-- [Plugins](https://learn.chatgpt.com/docs/plugins)
-- [Package your plugin](https://developers.openai.com/plugins/build/plugins)
-- [Permissions](https://learn.chatgpt.com/docs/permission-modes)
-- [Sandbox](https://learn.chatgpt.com/docs/sandboxing)
-- [Agent approvals & security](https://learn.chatgpt.com/docs/agent-approvals-security)
-- [Codex model guide](https://learn.chatgpt.com/docs/models)
-- [API model catalog](https://developers.openai.com/api/docs/models)
-- [GPT-5.6 Luna model page](https://developers.openai.com/api/docs/models/gpt-5.6-luna)
-- [Codex updates](https://learn.chatgpt.com/docs/whats-new)
+```yaml
+claim: "安装或存在某个 Skill、Plugin 或 Connector，不足以证明它对所有工作面、账户或组织可用；实际启用、认证和服务权限必须在对应环境中核验。"
+source: "https://learn.chatgpt.com/docs/skills-and-plugins.md"
+checked_at: "2026-08-09"
+applies_to: "本项目的安装教学、权限教学和团队采用流程"
+owner: "Codex Field Guide 事实维护者"
+next_review: "2026-09-09"
+claim_status: "current"
+```
 
-## 记录方式
+### 权限、沙箱与安全
 
-本文件只保存基线和来源。具体章节应引用它需要的部分，并在内容生命周期记录中写明下一次复核日期；不要把这份基线当成脱离日期的产品承诺。
+```yaml
+claim: "Sandbox 定义 Agent 在技术上可以访问的文件和网络资源；Approvals 定义何时在动作前暂停并请求批准。改变审批者或审批方式不会扩大 Sandbox。"
+source: "https://learn.chatgpt.com/docs/permission-modes.md"
+checked_at: "2026-08-09"
+applies_to: "ChatGPT desktop app、Codex CLI 和 Codex IDE 的本地动作权限模型"
+owner: "Codex Field Guide 事实维护者"
+next_review: "2026-09-09"
+claim_status: "current"
+```
+
+```yaml
+claim: "官方权限文档建议大多数工作从 Ask for approval 开始；Approve for me 和 Full access 需要在 Permissions 中启用。学习实验应明确文件、网络、认证和外部副作用边界。"
+source: "https://learn.chatgpt.com/docs/permission-modes.md"
+checked_at: "2026-08-09"
+applies_to: "ChatGPT desktop app、Codex CLI 和 Codex IDE；菜单选项可能随配置变化"
+owner: "Codex Field Guide 事实维护者"
+next_review: "2026-09-09"
+claim_status: "current"
+```
+
+```yaml
+claim: "Cloud 有独立的隔离环境、依赖与工具配置和网络访问配置主题；本地 Codex 的文件或网络边界不能直接代表 Cloud 的边界。"
+source: "https://learn.chatgpt.com/docs/cloud.md"
+checked_at: "2026-08-09"
+applies_to: "Codex Cloud 环境和网络访问教学"
+owner: "Codex Field Guide 事实维护者"
+next_review: "2026-09-09"
+claim_status: "current"
+```
+
+### Subagents
+
+```yaml
+claim: "ChatGPT Work 和 Codex 可以启动专门的 Subagents 并行处理独立部分，再收集结果；这种工作流会消耗每个 Subagent 自己的模型和工具资源，适合能清晰拆分的复杂任务。"
+source: "https://learn.chatgpt.com/docs/agent-configuration/subagents.md"
+checked_at: "2026-08-09"
+applies_to: "ChatGPT Work、ChatGPT desktop app、Codex CLI 和 Codex IDE 的官方 Subagents 说明"
+owner: "Codex Field Guide 事实维护者"
+next_review: "2026-09-09"
+claim_status: "current"
+```
+
+```yaml
+claim: "本地 Codex 的 Subagents 继承父任务的 Sandbox/权限模式；ChatGPT Work 的 Subagents 在托管环境运行，网站和 Connector 权限仍是工具特定的。"
+source: "https://learn.chatgpt.com/docs/agent-configuration/subagents.md"
+checked_at: "2026-08-09"
+applies_to: "官方 Subagents 页面区分的本地 Codex 与 ChatGPT Work"
+owner: "Codex Field Guide 事实维护者"
+next_review: "2026-09-09"
+claim_status: "current"
+```
+
+```yaml
+claim: "本地 Codex 可通过自定义 Agent 配置定义 name、description 和 developer_instructions，并可配置模型、推理强度、sandbox_mode、MCP servers 或 skills.config；配置格式和支持项可能随版本变化。"
+source: "https://learn.chatgpt.com/docs/agent-configuration/subagents.md"
+checked_at: "2026-08-09"
+applies_to: "本地 Codex 的项目级或个人级自定义 Agent"
+owner: "Codex Field Guide 事实维护者"
+next_review: "2026-09-09"
+claim_status: "current"
+```
+
+## 复核清单
+
+下次刷新必须重新确认：
+
+- 模型名称、ID、描述、工作面可用性、价格、限额、上下文长度、工具支持和弃用时间；
+- 桌面、Web、CLI、IDE、Cloud、Remote 等入口的开放范围、系统支持、账户资格和 rollout 状态；
+- Skill 的调用语法、自动匹配、安装和 bundled resources；
+- Plugin、Connector、MCP、认证、workspace 分享和 manifest 约束；
+- Sandbox、审批模式、网络访问、企业限制和 Subagent 继承规则。
+
+本文件不记录秘密、Token、Cookie、`.env` 或账户凭据，也不把本项目尚未运行的模型比较写成验证结果。

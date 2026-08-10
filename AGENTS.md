@@ -1,4 +1,4 @@
-# Codex Field Guide
+# Codex: From First Task to Real Work
 
 ## Project purpose
 
@@ -30,8 +30,12 @@ Codex, skills, tools, Agent behavior, verification, and team adoption.
 
 ## Content conventions
 
-- Use simplified Chinese for the primary learning path unless a technical term
-  is clearer in English; include the English term on first use.
+- The public showcase page defaults to English and offers a Chinese switch.
+  The book's current primary正文 remains Simplified Chinese; do not imply that
+  the book is fully bilingual until translated files and their review evidence
+  exist.
+- Use simplified Chinese for the current primary learning path unless a
+  technical term is clearer in English; include the English term on first use.
 - Write in the order: problem, concept, decision, action, evidence, failure,
   reflection.
 - Each chapter needs a learning objective, a small experiment, a failure or

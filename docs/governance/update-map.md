@@ -1,0 +1,58 @@
+# Update map
+
+This is the maintenance map for the project. When a fact, lesson, lab, Skill,
+evaluation, source, or public-page element changes, start here and follow the
+matching row. The map keeps stable teaching principles separate from volatile
+product facts and external assets.
+
+## The update loop
+
+```text
+Locate → classify → gather evidence → edit → validate → independent review
+       → publish → keep rollback evidence
+```
+
+An update is not complete because a file changed. It is complete only when the
+affected contract, source boundary, validation result, review status, and
+unverified scope are recorded.
+
+## Where each kind of change belongs
+
+| If you are changing… | Start in… | Canonical content | Required evidence | Finish with… |
+|---|---|---|---|---|
+| A project term or boundary | `CONTEXT.md`, then `docs/charter.md` | `CONTEXT.md` and the relevant chapter | Term boundary and affected links | `validate_project.py`, link check, independent terminology review |
+| A stable teaching principle | `docs/book-architecture.md`, `docs/learning-model.md` | `book/chapters/` | Learning objective, experiment, failure case, acceptance checklist | Learning-contract validation and chapter review |
+| An OpenAI/Codex product fact | `docs/research/openai-codex-baseline.md` | The source record, then affected chapters/pages | Official URL, checked date, scope, owner, next review | Source refresh plus affected-content validation |
+| A chapter | `book/table-of-contents.md`, `docs/content-matrix.md` | One file in `book/chapters/` | Problem, concept, decision, action, evidence, failure, reflection | Chapter contract, local links, independent review |
+| An experiment | `book/labs/README.md` | One file in `book/labs/` | Low-risk setup, observable output, failure variant, secret boundary, transfer task | Lab index, link check, runtime log when claiming verification |
+| A project Skill | `docs/skill-registry.md`, `docs/quality/skill-quality-standard.md` | One directory in `skills/` | Trigger, inputs, boundaries, stop conditions, output, sources, tests | Project validator and official Skill validator; keep `candidate` until fresh-context evidence exists |
+| An evaluation fixture | `evals/README.md`, `docs/quality/evaluation-framework.md` | `evals/task-set-v1.yaml` | Fixed input, context, permissions, expected evidence, forbidden behavior | `validate_eval_tasks.py`; add run logs before changing status |
+| A source, archive, or borrowed asset | `docs/sources/asset-register.md` | Source record and, only if allowed, derived material | URL/archive, license, attribution, scope, hash, distribution decision | Archive audit and license review |
+| The public page | `site/README.md` | `site/index.html`, `site/app.js`, `site/styles.css` | Counts, links, language coverage, accessibility behavior, status wording | Local link check and desktop/320px/390px browser review |
+| A release or rollback | `docs/release-checklist.md` | Release record and change log | Diff, validation output, reviewer, known gaps, rollback target | User-approved commit/push and a recoverable reference |
+
+## Status vocabulary
+
+Use artifact status and fact status separately.
+
+- `draft`: still being written or missing the minimum check.
+- `candidate`: structure and basic checks pass; the declared behavior still
+  needs fresh-context, runtime, or migration evidence.
+- `verified`: the declared scope has positive, boundary, failure, and transfer
+  evidence with an independent review.
+- `production-ready`: the additional safety, maintenance, version, license,
+  and release gates pass.
+- `current`, `stale`, `disputed`, and `removed` describe individual facts, not
+  the maturity of a whole chapter, lab, or Skill.
+
+## Before opening a pull request
+
+- [ ] The registry row for the affected area is still accurate.
+- [ ] The source and license boundary is recorded before external material is
+      adapted.
+- [ ] Counts and links are generated from the current tree or checked against
+      it; no stale snapshot is presented as current.
+- [ ] The change says what was not tested.
+- [ ] `draft`/`candidate` has not been silently upgraded to `verified`.
+- [ ] The next review date and responsible owner are clear.
+
