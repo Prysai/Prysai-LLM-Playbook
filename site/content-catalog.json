@@ -1,0 +1,49 @@
+{
+  "chapters": {
+    "chapter-01": {"name": {"en": "Understand GPT before Codex", "zh": "先理解 GPT，再理解 Codex"}},
+    "chapter-02": {"name": {"en": "Complete a safe, verifiable task", "zh": "完成安全、可验证的任务"}},
+    "chapter-03": {"name": {"en": "Turn a wish into a task protocol", "zh": "把愿望变成任务协议"}},
+    "chapter-04": {"name": {"en": "Context, permissions, and Agent boundaries", "zh": "上下文、权限与 Agent 边界"}},
+    "chapter-05": {"name": {"en": "Choose the right Codex surface", "zh": "选择正确的 Codex 工作面"}},
+    "chapter-06": {"name": {"en": "Model choice is not model worship", "zh": "模型选择不是模型崇拜"}},
+    "chapter-07": {"name": {"en": "How Skills, Plugins, MCP, and tools divide the work", "zh": "Skill、Plugin、MCP 与工具如何分工"}},
+    "chapter-08": {"name": {"en": "The full lifecycle from definition to delivery", "zh": "从定义到交付的完整生命周期"}},
+    "chapter-09": {"name": {"en": "Verification, doubt, and recovery", "zh": "验证、怀疑与恢复"}},
+    "chapter-10": {"name": {"en": "Planning and vertical slices", "zh": "规划与竖向切片"}},
+    "chapter-11": {"name": {"en": "Design a Skill that earns its place", "zh": "设计一个真正有用的 Skill"}},
+    "chapter-12": {"name": {"en": "The Agent loop, state, and stop conditions", "zh": "Agent 的循环、状态与停止条件"}},
+    "chapter-13": {"name": {"en": "Action boundaries across files, terminals, browsers, and GitHub", "zh": "文件、终端、浏览器与 GitHub 的行动边界"}},
+    "chapter-14": {"name": {"en": "Discover, install, and audit an external Skill", "zh": "发现、安装与审查外部 Skill"}},
+    "chapter-15": {"name": {"en": "Research: from question to auditable knowledge", "zh": "研究：从问题到可审查知识"}},
+    "chapter-16": {"name": {"en": "Engineering: from idea to reliable software", "zh": "工程：从想法到可靠软件"}},
+    "chapter-17": {"name": {"en": "Marketing: from product context to experiments", "zh": "营销：从产品上下文到实验"}},
+    "chapter-18": {"name": {"en": "Content, design, data, and automation", "zh": "内容、设计、数据与自动化"}},
+    "chapter-19": {"name": {"en": "Evaluate models and workflows", "zh": "评估模型与工作流"}},
+    "chapter-20": {"name": {"en": "Build a personal Codex work system", "zh": "建立个人 Codex 工作系统"}},
+    "chapter-21": {"name": {"en": "Build a team capability system", "zh": "建立团队能力系统"}},
+    "chapter-22": {"name": {"en": "Keep the system current and recoverable", "zh": "持续更新并保持可恢复"}}
+  },
+  "labs": {
+    "lab-001": {"name": {"en": "First safe task", "zh": "第一个安全任务"}},
+    "lab-002": {"name": {"en": "Task protocol", "zh": "任务协议"}},
+    "lab-003": {"name": {"en": "Evidence review", "zh": "证据审查"}},
+    "lab-004": {"name": {"en": "Skill selection", "zh": "Skill 选择"}},
+    "lab-005": {"name": {"en": "Design a Skill", "zh": "设计一个 Skill"}},
+    "lab-006": {"name": {"en": "Agent stop conditions", "zh": "Agent 停止条件"}},
+    "lab-007": {"name": {"en": "Action boundaries", "zh": "行动边界"}},
+    "lab-008": {"name": {"en": "Research question", "zh": "研究问题"}},
+    "lab-009": {"name": {"en": "Engineering lifecycle", "zh": "工程生命周期"}},
+    "lab-010": {"name": {"en": "Shared product context", "zh": "共享产品上下文"}},
+    "lab-011": {"name": {"en": "GPT and Codex boundaries", "zh": "GPT 与 Codex 边界"}},
+    "lab-012": {"name": {"en": "Team capability migration", "zh": "团队能力迁移"}}
+  },
+  "skills": {
+    "prysai-codex-coach": {"name": {"en": "Codex Coach", "zh": "Codex Coach"}},
+    "prysai-task-protocol": {"name": {"en": "Task Protocol", "zh": "Task Protocol"}},
+    "prysai-evidence-review": {"name": {"en": "Evidence Review", "zh": "Evidence Review"}},
+    "prysai-skill-selector": {"name": {"en": "Skill Selector", "zh": "Skill Selector"}},
+    "prysai-workflow-orchestrator": {"name": {"en": "Workflow Orchestrator", "zh": "Workflow Orchestrator"}},
+    "prysai-research-router": {"name": {"en": "Research Router", "zh": "Research Router"}},
+    "prysai-product-context": {"name": {"en": "Product Context", "zh": "Product Context"}}
+  }
+}

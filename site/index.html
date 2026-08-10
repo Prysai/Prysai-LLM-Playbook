@@ -6,6 +6,7 @@
     <meta name="description" content="A practical Codex learning and practice system: understand GPT, design safer tasks, use Skills and Agents, and verify real work." />
     <title>Codex: From First Task to Real Work</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="learning-path-data.js"></script>
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -122,7 +123,7 @@
             <p class="section-intro" data-i18n="pathIntro">A level is not a reading count. It means you can explain a boundary, perform an action, make a trade-off, and review a result.</p>
           </div>
           <div class="path-layout">
-            <div class="level-list" role="tablist" aria-label="Seven-level learning path" data-i18n-attr="aria-label:pathAria">
+            <div class="level-list" role="tablist" aria-orientation="vertical" aria-label="Seven-level learning path" data-i18n-attr="aria-label:pathAria">
               <button class="level-tab is-active" id="level-tab-L0" type="button" role="tab" aria-selected="true" aria-controls="level-panel" tabindex="0" data-level="L0"><span>L0</span><strong data-i18n="levelL0Name">Observer</strong><small data-i18n="levelL0Short">Notice what happened</small></button>
               <button class="level-tab" id="level-tab-L1" type="button" role="tab" aria-selected="false" aria-controls="level-panel" tabindex="-1" data-level="L1"><span>L1</span><strong data-i18n="levelL1Name">Safe user</strong><small data-i18n="levelL1Short">Complete a low-risk task</small></button>
               <button class="level-tab" id="level-tab-L2" type="button" role="tab" aria-selected="false" aria-controls="level-panel" tabindex="-1" data-level="L2"><span>L2</span><strong data-i18n="levelL2Name">Task designer</strong><small data-i18n="levelL2Short">Write a task protocol</small></button>
@@ -131,12 +132,19 @@
               <button class="level-tab" id="level-tab-L5" type="button" role="tab" aria-selected="false" aria-controls="level-panel" tabindex="-1" data-level="L5"><span>L5</span><strong data-i18n="levelL5Name">Evidence reviewer</strong><small data-i18n="levelL5Short">Test completion claims</small></button>
               <button class="level-tab" id="level-tab-L6" type="button" role="tab" aria-selected="false" aria-controls="level-panel" tabindex="-1" data-level="L6"><span>L6</span><strong data-i18n="levelL6Name">Team coach</strong><small data-i18n="levelL6Short">Turn method into a system</small></button>
             </div>
-            <article class="level-panel" id="level-panel" role="tabpanel" tabindex="0" aria-labelledby="level-tab-L0">
-              <span class="panel-kicker"><span data-i18n="currentLevel">Current level</span> / <span data-level-label>L0</span></span>
+            <article class="level-panel" id="level-panel" role="tabpanel" tabindex="0" aria-live="polite" aria-labelledby="level-tab-L0">
+              <div class="panel-topline"><span class="panel-kicker"><span data-i18n="currentLevel">Current level</span> / <span data-level-label>L0</span></span><span class="panel-status" data-level-status>candidate</span></div>
               <h3 data-level-title>Observe, do not guess.</h3>
               <p data-level-description>Separate GPT, models, Codex, context, tools, Skills, and Agents. Start with observable inputs, actions, states, and evidence.</p>
-              <div class="panel-meta"><span data-i18n="recommendedEntry">Recommended entry</span><a data-level-link href="../book/chapters/01-gpt-and-codex.md"><span data-level-link-text>Chapter 1: Understand GPT before Codex</span><span aria-hidden="true">↗</span></a></div>
-              <div class="panel-evidence"><span data-i18n="fourEvidence">Four evidence types</span><div><b data-i18n="evidenceExplain">Explain</b><b data-i18n="evidenceOperate">Operate</b><b data-i18n="evidenceJudge">Judge</b><b data-i18n="evidenceReview">Review</b></div></div>
+              <div class="path-contract-grid">
+                <section class="path-contract-card" aria-labelledby="path-chapters-label"><h4 id="path-chapters-label" data-i18n="requiredChapters">Required chapters</h4><ul data-level-chapters></ul></section>
+                <section class="path-contract-card" aria-labelledby="path-labs-label"><h4 id="path-labs-label" data-i18n="requiredLabs">Required lab</h4><ul data-level-labs></ul></section>
+                <section class="path-contract-card" aria-labelledby="path-skills-label"><h4 id="path-skills-label" data-i18n="supportingSkills">Supporting Skills</h4><ul data-level-skills></ul></section>
+                <section class="path-contract-card" aria-labelledby="path-evals-label"><h4 id="path-evals-label" data-i18n="evaluationFixtures">Evaluation fixtures</h4><p class="path-eval-summary" data-level-evaluation-summary></p><ul class="path-evaluation-list" data-level-evaluations></ul></section>
+              </div>
+              <section class="path-evidence" aria-labelledby="path-evidence-label"><div class="path-card-heading"><h4 id="path-evidence-label" data-i18n="evidenceGate">Evidence gate</h4><span data-i18n="fourEvidence">Four evidence types</span></div><ul data-level-gate></ul></section>
+              <div class="path-boundary-grid"><section class="path-boundary path-boundary-next"><h4 data-i18n="graduationGate">Move on when</h4><p data-level-graduation></p></section><section class="path-boundary path-boundary-stop"><h4 data-i18n="blockedWhen">Stop when</h4><p data-level-blocked></p></section></div>
+              <div class="panel-next"><div class="panel-meta"><span data-i18n="nextStep">Next step</span><a data-level-link href="../book/chapters/01-gpt-and-codex.md"><span data-level-link-text>Chapter 1: Understand GPT before Codex</span><span aria-hidden="true">↗</span></a></div><a class="panel-lab-link" data-level-lab-link href="../book/labs/lab-011-gpt-codex-boundaries.md"><span data-level-lab-link-text>Lab 011</span><span aria-hidden="true">↗</span></a></div>
             </article>
           </div>
         </div>

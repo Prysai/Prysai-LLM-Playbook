@@ -41,6 +41,9 @@ jobs:
       - name: Validate learning path
         run: python scripts/validate_learning_path.py
 
+      - name: Check generated learning-path data
+        run: python scripts/build_learning_path_site.py --check
+
       - name: Validate update registry
         run: python scripts/validate_update_registry.py
 

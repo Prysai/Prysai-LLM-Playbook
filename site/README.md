@@ -1,6 +1,6 @@
 # Codex: From First Task to Real Work 展示页
 
-这是 Codex: From First Task to Real Work 的静态展示页实现，范围仅限 `site/`。页面采用 Swiss editorial 方向：白色/中性背景、近黑文字、单一 Swiss Red `#E4002B`、可见细线网格和左对齐编辑层级。公开页默认英文，支持中文切换；书籍正文当前仍以简体中文为主，页面不会把正文说成已经完整双语化。页面的核心交互是：
+这是 Codex: From First Task to Real Work 的静态展示页实现，范围仅限 `site/`。页面采用 Swiss editorial 方向：白色/中性背景、近黑文字、单一 Swiss Red `#E4002B`、可见细线网格和左对齐编辑层级。公开页默认英文，支持中文切换；书籍正文当前仍以简体中文为主，页面不会把正文说成已经完整双语化。学习路径面板由 `docs/governance/learning-path.yaml`、`docs/governance/content-status.yaml` 和 `site/content-catalog.json` 生成，`site/learning-path-data.js` 是提交到仓库的生成物，不应手工编辑。页面的核心交互是：
 
 - EN / 中文切换会更新可见文案、`lang`、标题、description、aria-label，并通过 URL `?lang=en|zh` 和 `localStorage` 保留选择；
 - L0—L6 成长路径标签切换，会更新当前等级的说明与章节入口，并支持方向键、Home/End；
@@ -38,6 +38,7 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\validate_update_registry.py
 & $py scripts\validate_site_i18n.py
 & $py scripts\validate_content_status.py
+& $py scripts\build_learning_path_site.py --check
 ```
 
 本页对项目状态的表述以 `docs/governance/content-status.yaml` 为当前单一状态源，并由 `docs/quality/current-state-review-2026-08-09.md` 解释证据边界；`book/table-of-contents.md`、`book/labs/README.md`、`docs/governance/update-map.md` 仍是对应领域的阅读入口。当前页面实现状态为 **candidate**：静态文件与交互已实现，仍需在目标浏览器完成视觉与可访问性人工验收；页面不把 `candidate` 写成 `verified` 或 `production-ready`。

@@ -75,11 +75,11 @@
     },
     {
       "area": "public-site",
-      "canonical_paths": ["site/index.html", "site/app.js", "site/styles.css", "site/README.md"],
+      "canonical_paths": ["site/index.html", "site/app.js", "site/styles.css", "site/content-catalog.json", "scripts/build_learning_path_site.py", "site/learning-path-data.js", "site/README.md"],
       "owner": "site-maintainer",
       "triggers": ["count-change", "content-status-change", "language-coverage-change", "navigation-change", "browser-report"],
-      "required_inputs": ["current-counts", "real-links", "en-default", "zh-toggle", "status-boundary", "responsive-check"],
-      "validation_commands": ["scripts/check_local_links.py", "scripts/validate_site_i18n.py"],
+      "required_inputs": ["current-counts", "real-links", "en-default", "zh-toggle", "status-boundary", "responsive-check", "generated-learning-path-data"],
+      "validation_commands": ["scripts/build_learning_path_site.py --check", "scripts/check_local_links.py", "scripts/validate_site_i18n.py"],
       "status_fields": ["site_status", "language_coverage", "browser_review", "owner", "next_review"],
       "next_review": "2026-09-09"
     },

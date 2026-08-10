@@ -14,7 +14,7 @@ STATUS_FILE = ROOT / "docs/governance/content-status.yaml"
 EVAL_FILE = ROOT / "evals/task-set-v1.yaml"
 LEVELS = [f"L{i}" for i in range(7)]
 ARTIFACT_STATUSES = {"draft", "candidate", "verified", "production-ready"}
-RELATIONS = {"primary", "prerequisite", "transfer", "reference"}
+RELATIONS = {"primary", "supporting", "prerequisite", "transfer", "reference"}
 EVALUATION_TYPES = {"positive", "boundary", "failure", "transfer"}
 
 
@@ -82,6 +82,8 @@ def main() -> int:
         errors.append("root: schema_version must be '1'")
     if path.get("status") not in ARTIFACT_STATUSES:
         errors.append("root: status must use the controlled artifact vocabulary")
+    if path.get("relation_vocabulary") != ["primary", "supporting", "prerequisite", "transfer", "reference"]:
+        errors.append("root: relation_vocabulary must use primary, supporting, prerequisite, transfer, reference")
     for field in ("description", "owner", "last_reviewed", "next_review"):
         if not nonempty(path.get(field)):
             errors.append(f"root: {field} must be non-empty")
@@ -117,8 +119,8 @@ def main() -> int:
             errors.append(f"{label}: must be an object")
             continue
         level = item.get("id")
-        if not bilingual(item.get("name")) or not bilingual(item.get("short")) or not bilingual(item.get("capability")):
-            errors.append(f"{label}: name, short, and capability must have en and zh text")
+        if not bilingual(item.get("name")) or not bilingual(item.get("short")) or not bilingual(item.get("headline")) or not bilingual(item.get("capability")):
+            errors.append(f"{label}: name, short, headline, and capability must have en and zh text")
         if item.get("status") not in ARTIFACT_STATUSES:
             errors.append(f"{label}: status must use the controlled artifact vocabulary")
         prerequisites = item.get("prerequisites")
