@@ -23,7 +23,7 @@ unverified scope are recorded.
 | A project term or boundary | `CONTEXT.md`, then `docs/charter.md` | `CONTEXT.md` and the relevant chapter | Term boundary and affected links | `validate_project.py`, link check, independent terminology review |
 | A stable teaching principle | `docs/book-architecture.md`, `docs/learning-model.md` | `book/chapters/` | Learning objective, experiment, failure case, acceptance checklist | Learning-contract validation and chapter review |
 | The L0–L6 learning path or an asset's level assignment | `docs/governance/learning-path.yaml` | The path contract, then affected indexes and site panel | Level goal, prerequisites, primary assets, evaluation IDs, evidence gate, graduation gate, blocked condition | `validate_learning_path.py`, status validation, local links, independent path review |
-| An OpenAI/Codex product fact | `docs/research/openai-codex-baseline.md` or the dated refresh record | The source record, then affected chapters/pages | Official URL, checked date, scope, owner, next review, evidence class | Source refresh plus affected-content validation; keep runtime/account gaps explicit |
+| An OpenAI/Codex product fact | `docs/research/openai-codex-baseline.md` or the dated refresh record, then `docs/governance/fact-impact-registry.yaml` | The source record, the claim impact group, then affected chapters/labs/Skills/evaluations/pages | Claim ID, official URL, checked date, scope, owner, next review, evidence class, consumers and recheck level | Fact-impact validation plus affected-content checks; keep runtime/account gaps explicit |
 | A chapter | `book/table-of-contents.md`, `docs/content-matrix.md` | One file in `book/chapters/` | Problem, concept, decision, action, evidence, failure, reflection | Chapter contract, local links, independent review |
 | An experiment | `book/labs/README.md` | One file in `book/labs/` | Low-risk setup, observable output, failure variant, secret boundary, transfer task | Lab index, link check, runtime log when claiming verification |
 | A project Skill | `docs/skill-registry.md`, `docs/quality/skill-quality-standard.md` | One directory in `skills/` | Trigger, inputs, boundaries, stop conditions, output, sources, tests | Project validator and official Skill validator; keep `candidate` until fresh-context evidence exists |
@@ -62,3 +62,8 @@ For a product refresh that touches only part of the curriculum, record the
 affected chapter range in the refresh file and link that file from the chapter,
 content matrix, and `official-facts` registry row. Do not silently replace the
 general baseline for claims outside that range.
+
+The fact-impact registry is the required bridge between a volatile claim and
+its consumers. A listed consumer is a recheck target, not proof that the
+consumer has already run. Promote a claim or artifact only when the declared
+recheck level has matching evidence.

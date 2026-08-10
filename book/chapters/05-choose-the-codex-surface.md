@@ -35,6 +35,18 @@ FP-01 至 FP-05 和 FP-12 覆盖 OAuth 回调、token exchange、Enterprise host
 
 这张表是方法，不是产品承诺。具体入口、支持范围和界面随官方版本变化，必须查 [官方基线](../../docs/research/openai-codex-baseline.md)、[本轮事实刷新记录](../../docs/research/openai-codex-facts-refresh-2026-08-09.md) 和当前文档。
 
+### 一个容易踩坑的支持面例子：Plugin
+
+截至本轮核对的官方 Plugins 文档，支持面要分开记：
+
+| 层 | 当前文档能支持的说法 | 不能从这句话推出 |
+|---|---|---|
+| 产品支持 | ChatGPT 的 Chat/Work 可在 web、desktop 和 mobile 使用账户可用的 Plugins；ChatGPT desktop app 中的 Codex 支持 Plugins；Codex CLI 有 Plugin browser；IDE extension 不支持 Plugins | 当前账户一定能看到目录，或某个组织一定允许安装 |
+| 账户/组织 | 目录、workspace 管理、connector 和认证仍受账户、workspace、组织策略和地区影响 | “已登录”就等于目标仓库、服务或工具已授权 |
+| 本次实际可用 | Plugin 已安装、需要的 connector 已认证、新会话能看到能力，并且一次低风险调用有结果证据 | 安装成功就等于外部动作成功 |
+
+移动端可以使用账户可用的 Chat/Work plugins，但不要把桌面目录的浏览和安装步骤直接外推到 mobile。每次记录具体入口、账户范围、目标资源和结果；这组事实对应 `OF-015`、`UF-001` 和 `LB-002`，会随官方文档变化而复查。
+
 ## 2. 本地与云端不是简单的“快与慢”
 
 本地工作通常更接近现有文件、开发环境和真实运行结果，但也更接近本地秘密、未提交改动和生产误操作。云端环境提供隔离和并行的价值，但需要重新确认环境、依赖、网络、凭据和文件是否真的存在。
@@ -78,6 +90,15 @@ FP-01 至 FP-05 和 FP-12 覆盖 OAuth 回调、token exchange、Enterprise host
 ```
 
 每个阶段写 `passed / failed / not_observed`，并附时间、版本、目标和证据位置。缺少某一段时，交付状态只能覆盖已观察段；不能用下一段的成功补齐上一段的缺口。
+
+对于 Plugin，再把流程拆成：
+
+```text
+产品支持 → 账户/组织授权 → 安装 → connector 认证 → 新会话
+→ 工具可见 → 具体动作 → 外部结果验证
+```
+
+这不是一串可以用“登录成功”跳过的步骤。认证成功只证明身份或连接阶段的某个结果；它不证明目标资源可读，也不证明当前任务已获写入或发布权限。
 
 ## 6. 实验：同一任务的入口对照
 

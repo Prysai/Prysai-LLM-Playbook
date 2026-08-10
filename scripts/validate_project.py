@@ -25,6 +25,7 @@ REQUIRED = (
     "docs/governance/content-lifecycle.md",
     "docs/governance/update-map.md",
     "docs/governance/update-registry.yaml",
+    "docs/governance/fact-impact-registry.yaml",
     "docs/governance/content-status.yaml",
     "docs/templates/update-record.md",
     "docs/governance/contribution-model.md",
@@ -37,6 +38,7 @@ REQUIRED = (
     "site/styles.css",
     "scripts/validate_content_status.py",
     "scripts/validate_learning_path.py",
+    "scripts/validate_fact_impact_registry.py",
 )
 
 

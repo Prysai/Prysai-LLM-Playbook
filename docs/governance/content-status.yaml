@@ -134,7 +134,7 @@
     "run_status": "not_run",
     "review_status": "static_structure_only",
     "owner": "evaluation-maintainer",
-    "last_reviewed": "2026-08-09",
+      "last_reviewed": "2026-08-10",
     "next_review": "2026-09-09",
     "path": "evals/task-set-v1.yaml",
     "results_path": "evals/results",
@@ -154,7 +154,8 @@
     "path": "site",
     "evidence": [
       "site/README.md",
-      "docs/quality/review-presentation-2026-08-09.md"
+        "docs/quality/review-presentation-2026-08-09.md",
+        "docs/quality/review-fact-impact-registry-2026-08-10.md"
     ]
   },
   "sources_and_licenses": {

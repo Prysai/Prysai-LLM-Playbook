@@ -46,6 +46,21 @@ FP-06 记录了文件 symlink 影响 Skill discovery，FP-07 记录了显式调�
 
 外部目录的数量不是质量指标。大量自动化 skill 还会携带账号、网络和第三方服务风险，必须逐项审查。
 
+### Plugin 的组成和支持面
+
+官方 Plugins 文档把 Plugin 描述为可安装的能力包，可以包含 Skills、Connectors 或两者；Connector 背后可由 MCP server 提供工具、共享信息或外部系统动作。它是“分发和组合层”，不是自动授权。
+
+截至 2026-08-09 的官方支持说明：ChatGPT 的 Chat/Work 可在 web、desktop 和 mobile 使用账户可用的 Plugins；ChatGPT desktop app 中的 Codex 支持 Plugins；Codex CLI 有 Plugin browser；IDE extension 不支持 Plugins。mobile 的 Chat/Work 使用能力不能反推 mobile 具备桌面目录浏览或安装入口。
+
+因此把状态写成一条可审查的链：
+
+```text
+产品支持 → 账户/组织授权 → Plugin 安装 → connector 认证
+→ 新会话 → Skill/工具可见 → 具体调用 → 外部结果验证
+```
+
+每个箭头都需要自己的证据。`Sign in with ChatGPT` 共享身份资料也不自动授予 Plugin 数据访问权或批准动作；连接要求的权限仍需单独审查和批准。对应的易变断言是 `OF-015`、`OF-016`、`UF-001`、`UF-003` 和 `LB-002`。如果官方页面或当前工作面改变，先查[事实影响注册表](../../docs/governance/fact-impact-registry.yaml)，再按影响组重审章节、实验、Skill 和评测。
+
 ## 4. 把“推荐”和“安装”分开
 
 Skill 决策至少有四个不同状态：

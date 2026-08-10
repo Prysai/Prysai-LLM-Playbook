@@ -214,7 +214,7 @@ chapter_refs: ["第7章"]
 ### OF-015：Plugin 是可安装的能力包，且可包含 Skill、connector 和 MCP server
 
 ```yaml
-claim: "官方 Plugins 文档将 Plugin 定义为可安装的能力 bundle，可以包含 skills、connectors 或两者；connector 由 MCP server 支撑，MCP server 可以提供工具或共享信息，也可以执行外部系统动作。官方列出的支持面包括 ChatGPT Work web、ChatGPT desktop app 中的 Work/Codex，以及 Codex CLI 的 plugin browser；Plugin 不在 IDE extension 或 mobile 中提供。"
+claim: "官方 Plugins 文档将 Plugin 定义为可安装的能力 bundle，可以包含 skills、connectors 或两者；connector 由 MCP server 支撑，MCP server 可以提供工具或共享信息，也可以执行外部系统动作。官方列出的支持面包括 ChatGPT web、desktop 和 mobile 中的 Chat/Work、ChatGPT desktop app 中的 Codex，以及 Codex CLI 的 plugin browser；IDE extension 不支持 Plugins。移动端可以使用账户可用的 Chat/Work plugins，但目录浏览和安装入口不应从桌面流程外推。"
 official_url: "https://learn.chatgpt.com/docs/plugins.md"
 checked_at: "2026-08-09"
 applies_to: "官方 Plugins 目录与支持面说明；插件目录内容、workspace 控制和具体连接能力可能随账户与组织设置变化"
