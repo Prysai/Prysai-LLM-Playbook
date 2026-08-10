@@ -29,6 +29,7 @@
         <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-i18n-attr="aria-label:navAria">
           <a href="#start" data-i18n="navStart">Start with a problem</a>
           <a href="#first-30" data-i18n="navFirst30">First 30 minutes</a>
+          <a href="#path" data-i18n="navPath">Learning path</a>
           <a href="#chapters" data-i18n="navRoutes">Reading routes</a>
           <a href="#labs" data-i18n="navLabs">Labs</a>
           <a href="#skills" data-i18n="navSkills">Skills</a>
@@ -47,8 +48,8 @@
           <h1 id="hero-title" data-i18n="heroTitle">Use Codex for real work.</h1>
           <p class="hero-lede" data-i18n="heroLede">Understand what GPT, Codex, models, tools, Skills, and Agents actually do. Practice on small tasks, keep evidence, and move into real workflows.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="../book/chapters/02-first-safe-task.md"><span data-i18n="heroPrimary">Start with chapter 2</span><span aria-hidden="true">↗</span></a>
-            <a class="text-link" href="../book/labs/lab-001-first-safe-task.md"><span data-i18n="heroSecondary">Then run lab 001</span><span aria-hidden="true">↓</span></a>
+            <a class="button button-primary" href="#first-30"><span data-i18n="heroPrimary">Start a 30-minute safe task</span><span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#path"><span data-i18n="heroSecondary">Choose a learning level</span><span aria-hidden="true">↓</span></a>
           </div>
         </div>
         <aside class="hero-note" aria-label="Project status" data-i18n-attr="aria-label:heroNoteAria">
@@ -158,12 +159,13 @@
             <p class="section-intro" data-i18n="chaptersIntro">Read in order to build the model. Jump by route when a real task is blocking you. Every route returns to practice and evidence.</p>
           </div>
           <div class="route-controls" role="group" aria-label="Filter chapter routes" data-i18n-attr="aria-label:routesAria">
-            <button class="filter-button is-active" type="button" data-filter="all"><span data-i18n="filterAll">All chapters</span> <span>22</span></button>
-            <button class="filter-button" type="button" data-filter="A"><span data-i18n="filterA">A · First contact</span> <span>6</span></button>
-            <button class="filter-button" type="button" data-filter="B"><span data-i18n="filterB">B · Real work</span> <span>7</span></button>
-            <button class="filter-button" type="button" data-filter="C"><span data-i18n="filterC">C · Capability</span> <span>5</span></button>
-            <button class="filter-button" type="button" data-filter="D"><span data-i18n="filterD">D · Team practice</span> <span>4</span></button>
+            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true"><span data-i18n="filterAll">All chapters</span> <span>22</span></button>
+            <button class="filter-button" type="button" data-filter="A" aria-pressed="false"><span data-i18n="filterA">A · First contact</span> <span>6</span></button>
+            <button class="filter-button" type="button" data-filter="B" aria-pressed="false"><span data-i18n="filterB">B · Real work</span> <span>7</span></button>
+            <button class="filter-button" type="button" data-filter="C" aria-pressed="false"><span data-i18n="filterC">C · Capability</span> <span>5</span></button>
+            <button class="filter-button" type="button" data-filter="D" aria-pressed="false"><span data-i18n="filterD">D · Team practice</span> <span>4</span></button>
           </div>
+          <p class="route-status" role="status" aria-live="polite" aria-atomic="true" data-route-status data-i18n="routeStatusAll">Showing all 22 chapters.</p>
           <div class="chapter-list" data-chapter-list>
             <details class="chapter-group" open data-route="A"><summary><span>A</span><strong data-i18n="routeATitle">First contact with Codex</strong><small data-i18n="routeADesc">01—06 · finish a first safe task</small><b>06</b></summary><div class="chapter-items">
               <a href="../book/chapters/01-gpt-and-codex.md"><span>01</span><span data-i18n="chapter01">Understand GPT before Codex</span><i data-i18n="candidateStatus">candidate</i></a>

@@ -47,6 +47,22 @@ risk, implementation choice, or acceptance. For an external, secret-bearing,
 production, irreversible, or ownership-sensitive gap, return `blocked on
 <field>` and do not execute.
 
+Apply this minimum risk gate before declaring the protocol ready:
+
+| Risk | Required contract | Default action |
+|---|---|---|
+| `R0` | exact read scope, inputs, acceptance check, and no-write boundary | explanation or read-only inspection only |
+| `R1` | exact local target, allowed write/command set, checkpoint, rollback target, and reversible acceptance check | local reversible action only |
+| `R2` | exact shared/external target, data exposure, owner, action-level confirmation, checkpoint, rollback, and evidence owner | blocked until the named confirmation is recorded |
+| `R3` | all `R2` fields plus narrow purpose, independent check, and explicit confirmation immediately before the irreversible, production, secret-bearing, or broad action | hard stop; do not execute from this protocol alone |
+
+Represent `read`, `edit`, `run`, `network`, `commit`, `push`, `publish`,
+`deploy`, `restart`, and `secret` access as separate action records with
+`allowed`, `not_allowed`, or `confirmation_required` state. A broad permission,
+token, login, or prior approval does not authorize an unlisted action. If the
+user asks for multiple actions, split them into stages with separate risk,
+target, confirmation, checkpoint, rollback, and acceptance evidence.
+
 ## Build order
 
 1. State the outcome and beneficiary.
@@ -57,6 +73,11 @@ production, irreversible, or ownership-sensitive gap, return `blocked on
    checkpoint, rollback and observable acceptance evidence.
 5. Mark assumptions, unknowns, and the next handoff.
 
+For every acceptance claim, name the observable artifact or command output that
+would prove it and the boundary it cannot prove. A protocol is not execution
+evidence. Do not mark an action complete because it was requested, planned,
+started, or returned plausible text.
+
 ## Risk, side effects, and confirmation
 
 Classify `R0` explanation/read-only, `R1` reversible local change, `R2`
@@ -64,15 +85,21 @@ external service or shared-repository change, and `R3` production,
 irreversible, secret-bearing, or broad-permission action. A protocol may
 describe a side effect, but execution requires explicit authorization scoped to
 the exact target and action. Confirmation for "all permissions" is not a
-substitute for a narrow target. Never include secrets in the protocol.
+substitute for a narrow target. Never include secrets in the protocol. For
+`R2`/`R3`, confirmation must occur after the target and action are fixed, not
+before. Do not treat a successful build, login, or dry run as confirmation of a
+later write, push, publication, deployment, or restart.
 
 ## Hard stops
 
 Return `blocked` when the beneficiary or outcome is missing, ownership is
 unclear, acceptance cannot be observed, a secret would be exposed, a target is
 ambiguous, an irreversible action lacks confirmation, or a project rule and
-user request conflict. Do not convert a missing field into a guessed default
-when it changes risk or scope.
+user request conflict. Preserve the failed condition and stop reason. A retry is
+permitted only when one stated condition changes and the new check is named;
+otherwise return `blocked` or `unverified` rather than retrying indefinitely.
+Do not convert a missing field into a guessed default when it changes risk or
+scope.
 
 ## Fixed output
 
@@ -83,14 +110,17 @@ Return exactly:
 3. `background`
 4. `inputs_and_unknowns`
 5. `constraints`
-6. `allowed_actions_and_permissions`
+6. `allowed_actions_and_permissions` — separate action records with action
+   state, target, risk, data exposure, and confirmation requirement
 7. `acceptance_evidence`
 8. `failure_handling`
 9. `delivery_format`
 10. `handoff`
 11. `risk`
-12. `owner_and_confirmation`
-13. `checkpoint_and_rollback`
+12. `owner_and_confirmation` — exact decision owner, confirmation point, and
+    unconfirmed actions
+13. `checkpoint_and_rollback` — observable artifact, restore target, and
+    recovery decision
 14. `content_status`
 
 ## Evidence and status mapping
@@ -99,7 +129,11 @@ The protocol itself is `draft` until all fields are present, `candidate` when
 the contract passes a local completeness check but has not been exercised,
 `verified` only after the stated acceptance evidence is observed, and
 `production-ready` only after production, rollback, maintenance, and ownership
-gates pass. Do not mark the task complete from protocol readiness.
+gates pass. Verify the protocol by checking required fields against the risk
+gate, comparing each action with the exact target and permission state, and
+tracing every acceptance claim to an observable check. For `R2` and `R3`, verify
+the confirmation point, checkpoint, rollback, and data-exposure record
+separately. Do not mark the task complete from protocol readiness.
 
 ## Maintenance record
 

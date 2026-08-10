@@ -41,7 +41,7 @@ button, input, select, textarea { font: inherit; }
 .menu-toggle { display: none; border: 0; padding: .5rem 0; align-items: center; gap: .75rem; color: var(--ink); background: transparent; cursor: pointer; font-size: .8rem; }
 .menu-icon { display: grid; gap: 5px; }
 .menu-icon i { display: block; width: 22px; height: 1px; background: currentColor; }
-.site-nav { display: flex; align-items: center; gap: clamp(1rem, 2.2vw, 2.6rem); font-size: .76rem; font-weight: 700; }
+.site-nav { display: flex; align-items: center; gap: clamp(.85rem, 1.6vw, 1.8rem); font-size: .76rem; font-weight: 700; }
 .site-nav a { padding-block: .5rem; border-bottom: 1px solid transparent; }
 .site-nav a:hover, .site-nav a:focus-visible { color: var(--red); border-color: var(--red); }
 
@@ -154,11 +154,12 @@ button, input, select, textarea { font: inherit; }
 .panel-lab-link { display: inline-flex; gap: .5rem; align-items: center; padding-bottom: .2rem; border-bottom: 1px solid var(--red); color: var(--ink); font-size: .75rem; font-weight: 700; }
 .panel-lab-link span:last-child { color: var(--red); }
 
-.route-controls { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.route-controls { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: .9rem; }
 .filter-button { padding: .6rem .75rem; border: 1px solid #555; color: #bbb; background: transparent; cursor: pointer; font-size: .72rem; }
 .filter-button span:last-child { margin-left: .35rem; color: var(--red); }
 .filter-button:hover, .filter-button.is-active { color: #fff; background: var(--red); border-color: var(--red); }
 .filter-button.is-active span:last-child { color: #fff; }
+.route-status { margin: 0 0 1.5rem; color: #bdbdb8; font-size: .72rem; line-height: 1.5; }
 .chapter-list { border-top: 1px solid #555; }
 .chapter-group { border-bottom: 1px solid #555; }
 .chapter-group[hidden] { display: none; }
@@ -243,7 +244,7 @@ button, input, select, textarea { font: inherit; }
 .footer-meta { color: #777; font-size: .68rem; }
 
 @media (max-width: 980px) {
-  .site-nav { gap: 1rem; }
+  .site-nav { gap: .55rem; font-size: .68rem; }
   .problem-grid { grid-template-columns: repeat(2, 1fr); }
   .problem-card { min-height: 230px; }
   .problem-card strong { margin-top: 2.5rem; }

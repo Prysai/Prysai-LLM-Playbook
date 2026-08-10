@@ -36,13 +36,22 @@ unless a material context gap is discovered.
 Require `product_or_project`, `current_goal`, `known_audience`, `available_sources`,
 `decision_to_support`, and `canonical_location`. Also require a
 `decision_owner`, `context_version`, and `version_baseline`; the Skill's own
-maintenance version is not a product-context version. Inspect existing context
-and changelog first. Mark absent customer evidence, metrics, testimonials,
-competitive facts, and preferences as `hypothesis` or `unknown`; ask focused
-questions for high-impact gaps. Do not write a canonical context without an
-owner, version baseline, decision, and canonical location. If any of those are
-missing, return `blocked` with a `blocked_on` list instead of creating a
-changelog entry.
+maintenance version is not a product-context version. Inspect the existing
+context, its current version or hash, and its changelog before proposing a
+change. Mark absent customer evidence, metrics, testimonials, competitive
+facts, and preferences as `hypothesis` or `unknown`; ask focused questions for
+high-impact gaps.
+
+Default to a non-authoritative draft or proposed diff. A request to explain,
+review, or polish an existing context does not authorize rebuilding or writing
+the canonical file. Before writing a canonical context, require exact target
+path, current version/hash, changed-field scope, privacy classification and PII
+decision, owner, reversible backup or rollback target, and explicit
+confirmation immediately before the write. The confirmation must name the
+target and action; a login, token, prior approval, or "all access" statement is
+not sufficient. If any field is missing, return `blocked` with `blocked_on`
+instead of writing or creating a changelog entry. Never overwrite an existing
+context when the target, baseline, or write scope cannot be matched.
 
 ## Capture and version
 
@@ -54,23 +63,30 @@ For each material change increment the version and add a dated changelog entry.
 Tell downstream work which location and version are authoritative.
 
 The changelog entry must identify the prior version, new version, changed
-claims, evidence used, decision owner, and affected downstream artifacts. A
-draft context is not authoritative until the owner accepts that entry.
+claims, evidence used, decision owner, affected downstream artifacts, target
+path, and rollback target. A draft context is not authoritative until the owner
+accepts that entry. Keep a proposal, a confirmed write, and a published change
+as separate states; completion of one does not imply the next.
 
 ## Risk, side effects, and confirmation
 
 Drafting from supplied sources is `R0` or `R1`. Writing the canonical file is
-`R1` if local and reversible; publishing, changing a live site, collecting
-personal data, sending messages, or altering analytics is `R2` or higher and
-requires explicit target, scope, and confirmation. Keep personally identifying
-information out unless necessary and authorized.
+`R1` only when the exact local target, baseline, backup, privacy decision,
+rollback target, owner, and immediate confirmation are recorded. Publishing,
+changing a live site, collecting personal data, sending messages, or altering
+analytics is `R2` or higher and requires a separate Task Protocol or Workflow
+Orchestrator handoff with exact target, scope, owner, and confirmation. Keep
+personally identifying information out unless necessary and authorized; do not
+copy raw customer records into a context merely because they were supplied.
 
 ## Hard stops
 
 Stop with `blocked` if the product identity, decision owner, canonical
-location, evidence provenance, privacy boundary, or version baseline is
-unclear. Never turn an assumption into proof, a draft into a customer claim,
-or a context update into permission to publish.
+location, evidence provenance, privacy boundary, version baseline, current
+target state, backup, rollback target, or write confirmation is unclear. Also
+stop if a proposed change would overwrite an unreviewed decision, expose PII,
+or exceed the requested field scope. Never turn an assumption into proof, a
+draft into a customer claim, or a context update into permission to publish.
 
 ## Fixed output
 
@@ -85,17 +101,24 @@ Return exactly:
 7. `proof_points_and_evidence_gaps`
 8. `changelog_entry`
 9. `downstream_handoff`
-10. `risk_and_permissions`
+10. `risk_and_permissions` — include `risk`, `action_state` (`draft_only`,
+    `write_blocked`, `write_confirmed`, or `handoff_required`), exact target,
+    privacy decision, owner, confirmation, backup/rollback, and stop conditions
 11. `content_status`
 
 ## Evidence and status mapping
 
 Label each statement `observed`, `attributed`, `hypothesis`, `decision`, or
-`unknown`. Use `draft` before source and ownership review, `candidate` when a
-versioned context exists but fresh stakeholder or source checks are absent,
-`verified` when the declared evidence and owner review pass, and
-`production-ready` only when privacy, publication, maintenance, and rollback
-gates pass. Context verification does not verify downstream claims.
+`unknown`. Verify a proposed context by checking every material claim against
+its cited source, comparing the proposed fields with the current baseline,
+checking the privacy classification and changed-field scope, and confirming
+that the acceptance owner can inspect the diff. This verifies the proposal,
+not customer impact or downstream execution. Use `draft` before source and
+ownership review, `candidate` when a versioned context exists but fresh
+stakeholder or source checks are absent, `verified` when the declared evidence
+and owner review pass, and `production-ready` only when privacy, publication,
+maintenance, and rollback gates pass. Context verification does not verify
+downstream claims.
 
 ## Maintenance record
 

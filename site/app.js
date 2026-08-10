@@ -55,8 +55,14 @@ const hasGeneratedLearningPath = Boolean(generatedLearningPath) && learningPathL
 const learningPath = hasGeneratedLearningPath ? generatedLearningPath : legacyLearningPath;
 
 Object.assign(copy.en, {
-  heroPrimary: 'Start with chapter 2',
-  heroSecondary: 'Then run lab 001',
+  navPath: 'Learning path',
+  heroPrimary: 'Start a 30-minute safe task',
+  heroSecondary: 'Choose a learning level',
+  routeStatusAll: 'Showing all 22 chapters.',
+  routeStatusA: 'Showing 6 chapters in A · First contact.',
+  routeStatusB: 'Showing 7 chapters in B · Real work.',
+  routeStatusC: 'Showing 5 chapters in C · Capability.',
+  routeStatusD: 'Showing 4 chapters in D · Team practice.',
   labsIndexLink: 'Open the lab rules and all 13 entries',
   featuredLab: 'featured lab',
   lab13Title: 'Auditable vertical slice',
@@ -73,8 +79,14 @@ Object.assign(copy.en, {
   statusSourceAfter: '; the page remains candidate because this review covers only the recorded local scope.'
 });
 Object.assign(copy.zh, {
-  heroPrimary: '\u4ece\u7b2c 2 \u7ae0\u5f00\u59cb',
-  heroSecondary: '\u7136\u540e\u8fd0\u884c\u5b9e\u9a8c 001',
+  navPath: '\u5b66\u4e60\u8def\u5f84',
+  heroPrimary: '\u5f00\u59cb\u4e00\u4e2a 30 \u5206\u949f\u7684\u5b89\u5168\u4efb\u52a1',
+  heroSecondary: '\u9009\u62e9\u5b66\u4e60\u7b49\u7ea7',
+  routeStatusAll: '\u6b63\u5728\u663e\u793a\u5168\u90e8 22 \u7ae0\u3002',
+  routeStatusA: '\u6b63\u5728\u663e\u793a A \u00b7 \u521d\u8bc6 Codex \u7684 6 \u7ae0\u3002',
+  routeStatusB: '\u6b63\u5728\u663e\u793a B \u00b7 \u771f\u5b9e\u5de5\u4f5c\u7684 7 \u7ae0\u3002',
+  routeStatusC: '\u6b63\u5728\u663e\u793a C \u00b7 \u80fd\u529b\u6269\u5c55\u7684 5 \u7ae0\u3002',
+  routeStatusD: '\u6b63\u5728\u663e\u793a D \u00b7 \u56e2\u961f\u5b9e\u8df5\u7684 4 \u7ae0\u3002',
   labsIndexLink: '\u6253\u5f00\u5b9e\u9a8c\u89c4\u5219\u548c\u5168\u90e8 13 \u4e2a\u5165\u53e3',
   featuredLab: '\u7cbe\u9009\u5b9e\u9a8c',
   lab13Title: '\u53ef\u5ba1\u8ba1\u7684\u7ad6\u5411\u5207\u7247',
@@ -148,6 +160,7 @@ const applyLanguage = (language, { updateUrl = true } = {}) => {
   languageToggle.setAttribute('aria-label', strings.languageToggleAria);
   languageToggle.setAttribute('aria-pressed', language === 'zh' ? 'true' : 'false');
   updateLevel(document.querySelector('.level-tab.is-active')?.dataset.level || 'L0', false);
+  updateRouteStatus(document.querySelector('.filter-button.is-active')?.dataset.filter || 'all');
   if (updateUrl) {
     const url = new URL(window.location.href);
     url.searchParams.set('lang', language);
@@ -206,6 +219,11 @@ const activateLevel = (tab, { focusPanel = false } = {}) => {
   updateLevel(tab.dataset.level, focusPanel);
 };
 
+const updateRouteStatus = (filter) => {
+  const key = filter === 'all' ? 'routeStatusAll' : `routeStatus${filter}`;
+  document.querySelector('[data-route-status]').textContent = copy[currentLanguage][key];
+};
+
 document.querySelectorAll('.level-tab').forEach((tab, index, tabs) => {
   tab.addEventListener('click', () => activateLevel(tab));
   tab.addEventListener('keydown', (event) => {
@@ -220,12 +238,17 @@ document.querySelectorAll('.level-tab').forEach((tab, index, tabs) => {
 document.querySelectorAll('.filter-button').forEach((button) => {
   button.addEventListener('click', () => {
     const filter = button.dataset.filter;
-    document.querySelectorAll('.filter-button').forEach((item) => item.classList.toggle('is-active', item === button));
+    document.querySelectorAll('.filter-button').forEach((item) => {
+      const active = item === button;
+      item.classList.toggle('is-active', active);
+      item.setAttribute('aria-pressed', String(active));
+    });
     document.querySelectorAll('.chapter-group').forEach((group) => {
       const visible = filter === 'all' || group.dataset.route === filter;
       group.hidden = !visible;
       if (visible && filter !== 'all') group.open = true;
     });
+    updateRouteStatus(filter);
   });
 });
 
