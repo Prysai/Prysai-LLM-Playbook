@@ -30,6 +30,7 @@
           <a href="#start" data-i18n="navStart">Start with a problem</a>
           <a href="#first-30" data-i18n="navFirst30">First 30 minutes</a>
           <a href="#path" data-i18n="navPath">Learning path</a>
+          <a href="#project-map" data-i18n="navIndex">Project index</a>
           <a href="#chapters" data-i18n="navRoutes">Reading routes</a>
           <a href="#labs" data-i18n="navLabs">Labs</a>
           <a href="#skills" data-i18n="navSkills">Skills</a>
@@ -59,9 +60,91 @@
           <p data-i18n="heroNoteBody">The structure is a candidate. Labs are still draft and have not completed live execution verification.</p>
           <a href="#status"><span data-i18n="heroNoteLink">See the evidence boundary</span><span aria-hidden="true">↗</span></a>
         </aside>
+        <div class="hero-brief" aria-label="Project at a glance" data-i18n-attr="aria-label:heroBriefAria">
+          <a class="brief-item" href="#project-map">
+            <span class="brief-index">01</span>
+            <span class="brief-copy"><strong data-i18n="briefMapTitle">Project index</strong><small data-i18n="briefMapBody">Files, roles, and entry points</small></span>
+            <span class="brief-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="brief-item" href="#content-state">
+            <span class="brief-index">02</span>
+            <span class="brief-copy"><strong data-i18n="briefStatusTitle">Evidence ledger</strong><small data-i18n="briefStatusBody">candidate · draft · not run</small></span>
+            <span class="brief-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="brief-item" href="#language-route">
+            <span class="brief-index">03</span>
+            <span class="brief-copy"><strong data-i18n="briefLanguageTitle">Six-language route</strong><small data-i18n="briefLanguageBody">2 available · 4 planned</small></span>
+            <span class="brief-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a class="brief-item" href="#field-research">
+            <span class="brief-index">04</span>
+            <span class="brief-copy"><strong data-i18n="briefResearchTitle">Field problems</strong><small data-i18n="briefResearchBody">User reports, bounded evidence</small></span>
+            <span class="brief-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
         <div class="hero-footer">
           <span data-i18n="heroFooter">Problem → protocol → action → evidence</span>
           <span class="folio">CODEX / 001</span>
+        </div>
+      </section>
+
+      <section class="section section-index" id="project-map" aria-labelledby="project-map-title">
+        <div class="shell">
+          <div class="section-heading heading-split">
+            <div><span class="section-number">INDEX</span><p class="eyebrow" data-i18n="indexEyebrow">Project index</p><h2 id="project-map-title" data-i18n="indexTitle">Know where each claim lives.</h2></div>
+            <p class="section-intro" data-i18n="indexIntro">This is a human-readable map of the repository: what each layer stores, where to begin, and which source controls its status.</p>
+          </div>
+          <div class="index-layout">
+            <article class="file-map-panel" aria-labelledby="file-map-title">
+              <div class="index-panel-head"><span class="index-panel-number">01</span><h3 id="file-map-title" data-i18n="fileMapTitle">Repository map</h3></div>
+              <p class="index-panel-intro" data-i18n="fileMapIntro">Read the layer that matches the work. The public page is a guide; the files below are the source of truth.</p>
+              <div class="file-map-list">
+                <a class="file-map-row" href="README.md"><code>site/</code><span><strong data-i18n="fileSiteTitle">Public showcase</strong><small data-i18n="fileSiteBody">index.html, styles.css, app.js, and generated learning-path data.</small></span><b aria-hidden="true">↗</b></a>
+                <a class="file-map-row" href="../book/table-of-contents.md"><code>book/chapters/</code><span><strong data-i18n="fileChaptersTitle">Core learning text</strong><small data-i18n="fileChaptersBody">22 chapters; current artifact status: candidate.</small></span><b aria-hidden="true">↗</b></a>
+                <a class="file-map-row" href="../book/labs/README.md"><code>book/labs/</code><span><strong data-i18n="fileLabsTitle">Observable practice</strong><small data-i18n="fileLabsBody">13 labs; current status: draft; run status: not_run.</small></span><b aria-hidden="true">↗</b></a>
+                <a class="file-map-row" href="../docs/skill-registry.md"><code>skills/</code><span><strong data-i18n="fileSkillsTitle">Reusable methods</strong><small data-i18n="fileSkillsBody">7 project Skills with triggers, boundaries, and evidence contracts.</small></span><b aria-hidden="true">↗</b></a>
+                <a class="file-map-row" href="../docs/governance/update-map.md"><code>docs/</code><span><strong data-i18n="fileDocsTitle">Governance and research</strong><small data-i18n="fileDocsBody">Status, sources, field reports, update rules, and quality records.</small></span><b aria-hidden="true">↗</b></a>
+              </div>
+            </article>
+            <div class="index-stack">
+              <article class="ledger-panel" id="content-state" aria-labelledby="ledger-title">
+                <div class="index-panel-head"><span class="index-panel-number">02</span><h3 id="ledger-title" data-i18n="ledgerTitle">Content state</h3></div>
+                <p class="index-panel-intro" data-i18n="ledgerIntro">A compact reading of the current status source. Status describes evidence, not ambition.</p>
+                <ul class="ledger-list">
+                  <li><span data-i18n="ledgerProject">Project</span><strong class="status-badge status-badge-candidate">candidate</strong></li>
+                  <li><span data-i18n="ledgerChapters">Chapters · 22</span><strong class="status-badge status-badge-candidate">candidate</strong></li>
+                  <li><span data-i18n="ledgerLabs">Labs · 13</span><strong class="status-badge status-badge-draft">draft</strong><small>run_status: not_run</small></li>
+                  <li><span data-i18n="ledgerSkills">Skills · 7</span><strong class="status-badge status-badge-candidate">candidate</strong></li>
+                  <li><span data-i18n="ledgerResearch">Field research</span><strong class="status-badge status-badge-candidate">candidate</strong><small data-i18n="ledgerResearchNote">user reports; not locally reproduced</small></li>
+                </ul>
+                <a class="index-source-link" href="../docs/governance/content-status.yaml"><span data-i18n="ledgerSource">Open the current status source</span><span aria-hidden="true">↗</span></a>
+              </article>
+              <article class="locale-panel" id="language-route" aria-labelledby="locale-title">
+                <div class="index-panel-head"><span class="index-panel-number">03</span><h3 id="locale-title" data-i18n="localeTitle">Six-language route</h3></div>
+                <p class="index-panel-intro" data-i18n="localeIntro">English is the default. This page currently exposes EN and 中文; four additional locales are a planned route, not shipped translations.</p>
+                <ol class="locale-list">
+                  <li class="locale-available"><span>EN</span><strong data-i18n="localeEnglish">available · default</strong></li>
+                  <li class="locale-available"><span>ZH</span><strong data-i18n="localeChinese">available · current toggle</strong></li>
+                  <li class="locale-planned"><span>ES</span><strong data-i18n="localeSpanish">planned</strong></li>
+                  <li class="locale-planned"><span>DE</span><strong data-i18n="localeGerman">planned</strong></li>
+                  <li class="locale-planned"><span>JA</span><strong data-i18n="localeJapanese">planned</strong></li>
+                  <li class="locale-planned"><span>KO</span><strong data-i18n="localeKorean">planned</strong></li>
+                </ol>
+                <p class="locale-rule" data-i18n="localeRule">Route rule: each translated artifact will carry its locale suffix and link to the same locale. The six-file set is not complete yet.</p>
+              </article>
+            </div>
+          </div>
+          <article class="research-panel" id="field-research" aria-labelledby="research-title">
+            <div class="research-lead">
+              <div class="index-panel-head"><span class="index-panel-number">04</span><h3 id="research-title" data-i18n="researchTitle">Real problems, with the boundary attached.</h3></div>
+              <p class="index-panel-intro" data-i18n="researchIntro">The research index turns public Codex issues and forum reports into symptoms, versions, safe checks, and teaching links. It does not claim an official root cause or local reproduction.</p>
+              <div class="research-boundary"><span class="status-badge status-badge-candidate">candidate</span><span data-i18n="researchBoundary">user reports and community advice · no local reproduction recorded</span></div>
+            </div>
+            <div class="research-links">
+              <a href="../docs/research/field-problems-index-2026-08-10.md"><strong data-i18n="researchIndexLink">Open the field-problems index</strong><small data-i18n="researchIndexBody">Codex, surfaces, handoffs, authentication, worktrees, and verification symptoms.</small><b aria-hidden="true">↗</b></a>
+              <a href="../docs/research/field-problems-forums-2026-08-10.md"><strong data-i18n="researchForumsLink">Read the forum case notes</strong><small data-i18n="researchForumsBody">Sandbox network allowlists, Windows spawn failures, approvals, encoding, and private paths.</small><b aria-hidden="true">↗</b></a>
+            </div>
+          </article>
         </div>
       </section>
 
