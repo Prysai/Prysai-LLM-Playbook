@@ -20,7 +20,21 @@
 
 ## 现实问题入口
 
-FP-01 至 FP-05 和 FP-12 覆盖 OAuth 回调、token exchange、Enterprise host、多个组织、updater 凭据和手机验证等现实断点。它们不是产品说明书；具体版本和 workaround 需要重新核对。入口：[Codex 真实用户问题现场研究](../../docs/research/field-problems-codex.md)。
+FP-01 至 FP-05 和 FP-12 覆盖 OAuth 回调、token exchange、Enterprise host、多个组织、updater 凭据和手机验证等现实断点。新增的 FP-S、FUP 和论坛记录继续覆盖 Provider 工具集合、WSL 代理、第二目录、Worktree、Cloud setup、网络 allowlist 和 VS Code host。它们都是排查入口，不是产品说明书；具体版本、Issue 状态和 workaround 需要重新核对。先读[真实问题研究索引](../../docs/research/field-problems-index-2026-08-10.md)，再回到[Codex 真实用户问题现场研究](../../docs/research/field-problems-codex.md)、[工作面研究](../../docs/research/field-problems-surface-2026-08-10.md)和[论坛研究](../../docs/research/field-problems-forums-2026-08-10.md)的原始链接。
+
+### 先记录症状，不要先猜根因
+
+下表把报告者看到的现象改写成“最小排查 → 停止/降级”入口。所有案例都是公开用户报告；本项目没有逐条本地复现，`open` 或 `closed` 也不等于官方确认或已修复。
+
+| 案例 | 报告者看到的现象 | 环境与记录日期 | 最小排查 | 停止或安全降级 |
+|---|---|---|---|---|
+| [FP-02](../../docs/research/field-problems-codex.md#fp-02：浏览器显示认证成功，但-token-exchange-失败) | 浏览器 OAuth 页面成功，但客户端 token exchange 失败；device auth 也没有补上缺口 | Codex/CLI 0.147.0；Windows 11、WSL/Linux；2026-08-07 创建，2026-08-09 整理 | 将授权页面、回调、交换、首个无副作用请求分成四段；只记录错误类别、时间和版本 | 第 3/4 段失败就标 `blocked`/`unverified`；不索要或粘贴 token，不把网页成功写成已登录 |
+| [FP-S-02](../../docs/research/field-problems-surface-2026-08-10.md#fp-s-02：自定义-provider-会话只暴露-image_gen，shell文件浏览器工具消失) | 配置被接受，但会话只看见 `image_gen`，shell、文件和浏览器工具不见 | Desktop 26.803.5235.0；bundled CLI 0.147.0-alpha.6.5；Windows；2026-08-10 访问 | 保存实际工具清单、Provider、认证方式和版本；先做固定文本请求，再分别验证工具“已注册”和“可调用” | 工具未注册时停在纯文本规划或已知支持的工作面；不扩大 sandbox、不粘贴 API key、不安装不明插件 |
+| [FP-S-05](../../docs/research/field-problems-surface-2026-08-10.md#fp-s-05：windows-linked-worktree-中的-apply_patch-被误判为项目外) / [FP-S-06](../../docs/research/field-problems-surface-2026-08-10.md#fp-s-06：界面显示已切到-worktree，但-agent-仍在原-checkout-工作) | Worktree 标记、Agent shell、patch、IDE 和 Git 目录可能不一致 | CLI 0.147.0/PowerShell 7.6.4、Windows，或 Desktop 26.715.52143、macOS；2026-08-10 访问 | 只读核对 `cwd`、worktree 根、`.git` 形状、workspace root、IDE 路径和 `git status` | 路径不一致就停止写入、构建和合并；降级为路径回显、状态检查和人工确认目标树 |
+| [FP-S-07](../../docs/research/field-problems-surface-2026-08-10.md#fp-s-07：codex-cloud-长时间停在-running-setup-scripts) / [FP-S-08](../../docs/research/field-problems-surface-2026-08-10.md#fp-s-08：cloud-environment-已配置-secret，但-cloud-task-运行时看不到) | Cloud setup 长时间无 marker，或 Secret 在配置页存在但运行时不可见 | Cloud/Web、Desktop Cloud environment；2026-08-10 访问 | 分开记录 runtime、custom setup 启动、首个 marker、setup 成功、Secret 配置层和 task runtime | 超过预设时间无新事件就停止/取消；Secret 不可见时暂停外部调用，不把配置页存在当成运行时可用 |
+| [论坛-1](../../docs/research/field-problems-forums-2026-08-10.md#1-sandbox-内访问-github-被网络-allowlist-拦截) | `workspace-write` 下访问 GitHub 被代理 allowlist 拒绝；回答者建议扩大网络或配置代理 | Codex CLI；配置语义与版本需重核；2026-08-10 通过 Stack Exchange API 整理 | 先区分 sandbox 禁止网络、代理 allowlist、DNS/TLS 和企业防火墙；用无秘密、单域名请求 | 不为省审批切换 full access；只为必要域名申请最小范围并保留“不确定”状态 |
+
+这张表不提供“修复清单”。它训练的是工作面选择：先确认入口、版本、目标路径、有效权限和工具证据，再决定是否继续；没有新证据时，`not_observed`、`blocked` 和“纯文本/本地脱敏夹具降级”都是正确交付。
 
 ## 一、概念：工作面、入口和可用性不是一回事
 

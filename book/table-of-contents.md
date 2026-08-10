@@ -156,6 +156,8 @@
 - [内容融合矩阵](../docs/content-matrix.md)：13 个能力映射和主题重复时新增的能力；
 - [评测框架](../docs/quality/evaluation-framework.md)：内容和能力的验收门槛；
 - [Codex 真实用户问题研究](../docs/research/field-problems-codex.md)：公开问题入口，不冒充官方根因；
+- [真实问题研究索引](../docs/research/field-problems-index-2026-08-10.md)：统一映射 FP、FP-S、FUP、论坛与章节/实验落点；
+- [论坛与公开 issue 研究](../docs/research/field-problems-forums-2026-08-10.md)：只收录可可靠访问的 Stack Overflow API/页面和 GitHub Issue 摘要；
 - [官方基线研究档案](../docs/research/openai-codex-baseline.md)：易变断言的来源边界。
 
 L0、L3 和 L6 已分别有独立主实验文件：[lab-011](labs/lab-011-gpt-codex-boundaries.md)、[lab-013](labs/lab-013-l3-vertical-slice.md) 与 [lab-012](labs/lab-012-team-capability-migration.md)。

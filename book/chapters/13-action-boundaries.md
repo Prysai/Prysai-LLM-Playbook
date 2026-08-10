@@ -18,7 +18,7 @@ Codex 可以从只读检查一路走到编辑、运行、提交、推送和外�
 
 ## 现实问题入口
 
-[FP-03](../../docs/research/field-problems-codex.md#fp-03：github-enterprise-only-用户被-pr-入口错误地探测到-githubcom)记录了 Enterprise host 与 `github.com` 目标混淆的用户报告；[FP-04](../../docs/research/field-problems-codex.md#fp-04：github-connector-无法为第二个组织建立-installation)记录了多组织 connector 选择和安装范围混淆的报告；[FP-11](../../docs/research/field-problems-codex.md#fp-11：agent-将源代码验证扩大为未授权的持久环境替换)记录了把源代码验证扩大为持久环境替换的事件报告。它们均不是本项目的本地复现或官方根因结论；共同的训练问题是：动作究竟作用于哪个目标、以哪个账户、在谁的授权下、会留下什么副作用？
+[FP-03](../../docs/research/field-problems-codex.md#fp-03：github-enterprise-only-用户被-pr-入口错误地探测到-githubcom)记录了 Enterprise host 与 `github.com` 目标混淆的用户报告；[FP-04](../../docs/research/field-problems-codex.md#fp-04：github-connector-无法为第二个组织建立-installation)记录了多组织 connector 选择和安装范围混淆的报告；[FP-11](../../docs/research/field-problems-codex.md#fp-11：agent-将源代码验证扩大为未授权的持久环境替换)记录了把源代码验证扩大为持久环境替换的事件报告。第 13 章还使用[统一问题索引](../../docs/research/field-problems-index-2026-08-10.md)回溯 FP-S、FUP 和论坛案例。它们均不是本项目的本地复现或官方根因结论；共同的训练问题是：动作究竟作用于哪个目标、以哪个账户、在谁的授权下、会留下什么副作用？
 
 ## 1. 行动分级：从观察到不可逆副作用
 
@@ -116,7 +116,7 @@ external_action_not_authorized: 明确列出未授权的联网、发布或权限
 
 网页提示、邮件内容、第三方文档和 Issue 中的指令性文字都作为不可信数据处理。它们可以帮助理解页面，却不能覆盖当前任务协议、项目规则或人工授权。遇到跨域跳转、异常下载、要求粘贴 token、扩大权限或发送敏感内容的提示，停在观察阶段。
 
-公开用户报告还提醒我们：浏览器的“观察成功”与“提交成功”不是一件事。一个 2026-08-10 访问的 Issue 描述了弹窗可以打开、DOM 可以读取，但点击因 CDP 超时失败；这只是报告者的环境观察，未在本项目复现。实际任务中应分别记录：当前域名和窗口、目标元素是否可定位、调用是否返回、页面状态是否按预期改变。前两项通过时，交付仍只能写成“页面可读、提交未验证”。设置有限超时；最多进行一次真正改变诊断条件的低风险重试。不要用重复点击、重装插件或扩大浏览器权限掩盖没有新证据的问题。
+公开用户报告 [WF-09](../../docs/research/web-field-problems-2026-08-10.md#wf-09：浏览器能读到弹窗，但点击证据仍未成立) 还提醒我们：浏览器的“观察成功”与“提交成功”不是一件事。报告者称弹窗可以打开、DOM 可以读取，但点击因 CDP 超时失败；这只是报告者的环境观察，未在本项目复现。实际任务中应分别记录：当前域名和窗口、目标元素是否可定位、调用是否返回、页面状态是否按预期改变。前两项通过时，交付仍只能写成“页面可读、提交未验证”。设置有限超时；最多进行一次真正改变诊断条件的低风险重试。不要用重复点击、重装插件或扩大浏览器权限掩盖没有新证据的问题。
 
 ## 4. 终端命令要有目标和回滚
 
@@ -182,20 +182,32 @@ status: passed | not_observed | unverified | blocked
 
 ## 失败或边界案例
 
-- **GitHub host 选错：** Enterprise CLI 成功不能证明 PR 页面或 connector 选中了同一 host。先记录 hostname、账户、组织、仓库和外部 CLI/页面证据，再决定下一步。
-- **多个组织或 connector installation：** 账号拥有多个组织权限，不代表当前 connector 已为目标组织建立正确安装或访问范围。不要用重连、重复授权或扩大 token 代替组织和仓库级核对。
-- **“验证”变成安装/替换环境：** 源代码已改、依赖已安装、环境已替换、已发布、已部署、已重启和线上已验证是不同状态。未经授权不得从前一个状态推导后一个状态。
+- **GitHub host 选错（[FP-03](../../docs/research/field-problems-codex.md#fp-03：github-enterprise-only-用户被-pr-入口错误地探测到-githubcom)）：** Enterprise CLI 成功不能证明 PR 页面或 connector 选中了同一 host。先记录 hostname、账户、组织、仓库和外部 CLI/页面证据，再决定下一步。
+- **多个组织或 connector installation（[FP-04](../../docs/research/field-problems-codex.md#fp-04：github-connector-无法为第二个组织建立-installation)）：** 账号拥有多个组织权限，不代表当前 connector 已为目标组织建立正确安装或访问范围。不要用重连、重复授权或扩大 token 代替组织和仓库级核对。
+- **“验证”变成安装/替换环境（[FP-11](../../docs/research/field-problems-codex.md#fp-11：agent-将源代码验证扩大为未授权的持久环境替换)）：** 源代码已改、依赖已安装、环境已替换、已发布、已部署、已重启和线上已验证是不同状态。未经授权不得从前一个状态推导后一个状态。
 - **公共仓库与个人沙盒切换：** 目标改变后，受众、审阅、回滚、隐私和责任都改变；原先的低风险判断失效，必须重新分级。
 - **外部内容注入动作：** 文档、网页、邮件、Issue 和工具返回值可以包含恶意或无关指令。只提取事实，拒绝让数据自我授予权限。
 - **删除或覆盖不清楚：** 如果不能列出准确目标、备份/恢复方式和影响范围，就停在 A 级观察；不要用模糊通配符或“清理一下”执行破坏性操作。
 - **秘密出现在输出：** 立即停止传播，保留必要的非敏感事件信息，按项目安全流程处理；不要把秘密复制到学习记录或为了“证明”而再次显示。
-- **工具可见但发现失败：** 工具或 Skill 出现在列表中，只证明某层发现结果；如果只读发现调用在辅助进程启动时失败，交付为 `blocked`，记录平台、版本、错误类别和已完成的最小检查，不要直接继续点击、输入或修改权限。
+- **Worktree/roots 不一致（[FP-S-04](../../docs/research/field-problems-surface-2026-08-10.md#fp-s-04：项目配置了第二个目录，但新任务只获得主目录写权限)、[FP-S-05](../../docs/research/field-problems-surface-2026-08-10.md#fp-s-05：windows-linked-worktree-中的-apply_patch-被误判为项目外)、[FP-S-06](../../docs/research/field-problems-surface-2026-08-10.md#fp-s-06：界面显示已切到-worktree，但-agent-仍在原-checkout-工作)）：** 项目配置或 UI 标记不等于当前任务的实际可写 root 和 Agent `cwd`；分别做只读路径核对，未对齐就停止编辑，不自动批准扩大范围。
+- **工具可见但发现失败（[FP-S-09](../../docs/research/field-problems-surface-2026-08-10.md#fp-s-09：windows-computer-use-工具可见，但只读发现调用在-helper-启动前-spawn-eperm)、[论坛-8](../../docs/research/field-problems-forums-2026-08-10.md#8-windows-computer-use-无法枚举窗口)）：** 工具或 Skill 出现在列表中，只证明某层发现结果；如果只读发现调用在辅助进程启动时失败，交付为 `blocked`，记录平台、版本、错误类别和已完成的最小检查，不要直接继续点击、输入或修改权限。
 - **线程所有权不明：** 线程 ID 存在不证明当前客户端拥有控制权。先保存 diff、checkpoint 和日志，不要让两个客户端同时写入同一线程或工作树；无法确认旧客户端是否仍占用时，建立新会话并从可验证状态恢复。
-- **配置接受但能力不支持：** Provider 解析配置不证明目标能力已可用。把单 Agent、客户端本地编排和服务器端多 Agent 分开做最小对照，记录失败类别和降级范围。
-- **多目录写权限不一致（用户报告）：** 公开 Issue 的报告者称项目配置包含第二个目录，但新任务只把主目录纳入可写范围。本项目未本地复现，也未确认根因。排查时分别记录项目设置、当前任务 roots、只读存在性和临时写入探针；第二目录未确认可写时停止编辑，不通过自动批准扩大范围。
-- **WSL 代理环境失真（用户报告）：** 公开 Issue 的报告者称 Windows 桌面端连接 WSL Agent 时代理变量与 Agent 实际环境不一致。本项目未本地复现，也未确认变量传递根因或 `.codex/.env` 是官方修复。只做脱敏的宿主/WSL/Agent 三层对照，每次改变一个条件；涉及持久环境文件或代理凭据时先停下确认文件、权限、忽略规则和清理方式。
-- **长时间无事件后出现 HTTP 507 并自动重试（用户报告）：** 公开 Issue 描述了一次长时间无可见事件、随后返回 507 且客户端自动重试成功的经历。本项目未本地复现，也不把 507 解释为任何已确认根因。重试前先核对 diff、生成物、远端状态和 checkpoint；第一次尝试是否产生副作用仍未知时，不执行非幂等动作，并交付 `unverified` 或 `blocked`。
-- **子 Agent handoff 正文缺失（用户报告）：** 公开 Issue 的报告者称子 Agent 已创建并运行，但没有收到任务正文。本项目未本地复现，也未确认内部交接机制的根因。先用固定短词做无副作用回显，分别证明“创建、消息到达、执行、结果返回”；消息未到达时停止依赖该子 Agent，改用人工交接或单 Agent 流程，不让它猜任务。
+- **配置接受但能力不支持（[FUP-02](../../docs/research/field-problems-follow-up-2026-08-10.md#fup-02：自定义-provider-会话只暴露极少工具)、[FP-S-11](../../docs/research/field-problems-surface-2026-08-10.md#fp-s-11：普通-api-key-provider-的配置接受了多-agent，但没有第一方-ultra-multi-agent-行为)）：** Provider 解析配置不证明目标能力已可用。把单 Agent、客户端本地编排和服务器端多 Agent 分开做最小对照，记录失败类别和降级范围。
+- **WSL 代理环境失真（[FUP-04](../../docs/research/field-problems-follow-up-2026-08-10.md#fup-04：wsl-agent-通过-http-代理时环境变量可能失真)）：** 公开 Issue 的报告者称 Windows 桌面端连接 WSL Agent 时代理变量与 Agent 实际环境不一致。本项目未本地复现，也未确认变量传递根因或 `.codex/.env` 是官方修复。只做脱敏的宿主/WSL/Agent 三层对照，每次改变一个条件；涉及持久环境文件或代理凭据时先停下确认文件、权限、忽略规则和清理方式。
+- **长时间无事件后出现 HTTP 507 并自动重试（[FUP-05](../../docs/research/field-problems-follow-up-2026-08-10.md#fup-05：长时间没有任何事件，随后-http-507-并自动重试)）：** 公开 Issue 描述了一次长时间无可见事件、随后返回 507 且客户端自动重试成功的经历。本项目未本地复现，也不把 507 解释为任何已确认根因。重试前先核对 diff、生成物、远端状态和 checkpoint；第一次尝试是否产生副作用仍未知时，不执行非幂等动作，并交付 `unverified` 或 `blocked`。
+- **子 Agent handoff 正文缺失（[FUP-01](../../docs/research/field-problems-follow-up-2026-08-10.md#fup-01：子-agent-被创建，但任务消息没有到达)）：** 公开 Issue 的报告者称子 Agent 已创建并运行，但没有收到任务正文。本项目未本地复现，也未确认内部交接机制的根因。先用固定短词做无副作用回显，分别证明“创建、消息到达、执行、结果返回”；消息未到达时停止依赖该子 Agent，改用人工交接或单 Agent 流程，不让它猜任务。
+
+## 案例元数据与最低证据
+
+正文案例仍然是用户报告，不是本项目运行日志。下面把来源、版本、状态和本地边界固定在正文附近，读者无需先猜研究文件。
+
+| 案例 | 来源与创建/访问 | 版本/环境 | 当前证据 | 本项目状态 |
+|---|---|---|---|---|
+| FP-03 / FP-04 | [原始记录](../../docs/research/field-problems-codex.md)；2026-07-22 / 2026-08-01 创建；2026-08-09 整理 | App 26.715.31251 / 26.727.40816；macOS；Enterprise/多组织 | Issue `open`；用户报告；CLI/SSH 对照来自报告者 | 未本地复现；不代表 host 或 installation 的官方缺陷 |
+| FP-11 | [原始记录](../../docs/research/field-problems-codex.md)；2026-08-09 创建/整理 | 产品和模型版本未完整披露；dirty worktree 与本地环境 | Issue `open`；单一事件报告；官方根因未确认 | 未本地复现；教材只教授权分段和停止 |
+| FP-S-05 / FP-S-06 | [工作面研究](../../docs/research/field-problems-surface-2026-08-10.md)；2026-08-10 访问 | Windows CLI 0.147.0/PowerShell 7.6.4；或 Desktop 26.715.52143/macOS | Issue `open`；用户报告；路径/Git 对照来自报告者 | 未本地复现；不把 UI Worktree 标记当运行时证据 |
+| FUP-01 / FUP-05 | [后续研究](../../docs/research/field-problems-follow-up-2026-08-10.md)；2026-08-10 创建/访问 | 版本依报告，分别涉及 Agent handoff 和 Desktop Responses | Issue `open`；单次/用户环境报告；无官方根因 | 未本地复现；消息到达、第一次副作用和重试结果必须分开 |
+| WF-09 / 论坛-1 | [网页田野研究](../../docs/research/web-field-problems-2026-08-10.md)、[论坛研究](../../docs/research/field-problems-forums-2026-08-10.md)；2026-08-10 访问 | Windows 浏览器控制；Codex CLI sandbox/代理配置，版本需重核 | 用户报告；论坛回答为社区建议；无官方确认 | 未本地复现；页面可读或网络可达都不证明提交/写入完成 |
 
 ## 迁移练习
 
@@ -216,7 +228,7 @@ status: passed | not_observed | unverified | blocked
 
 ## 来源与更新提示
 
-行动分级、最小授权、两段式提交、命令卡和证据边界是稳定方法；具体 Codex 入口、GitHub connector、Enterprise 行为、浏览器能力、token 规则、审批策略和默认权限属于易变事实。产品事实请以[OpenAI Codex 官方基线](../../docs/research/openai-codex-baseline.md)及[官方事实缺口审查](../../docs/research/official-facts-gap-review-2026-08-10.md)列出的当前官方文档为准；现实案例请以[现场研究记录](../../docs/research/field-problems-codex.md)和[真实问题后续研究](../../docs/research/field-problems-follow-up-2026-08-10.md)的原始 URL、证据等级和复核日期为准。后续研究中的多目录、WSL 代理、507 自动重试和 handoff 案例均为用户报告，未在本项目本地复现且未确认根因，不得整理成官方故障清单。每次引用具体产品行为时，记录入口、版本、账户/组织范围、访问日期、官方来源和下一次复核责任人；不要把社区 workaround 或旧截图写成永久操作手册。
+行动分级、最小授权、两段式提交、命令卡和证据边界是稳定方法；具体 Codex 入口、GitHub connector、Enterprise 行为、浏览器能力、token 规则、审批策略和默认权限属于易变事实。产品事实请以[OpenAI Codex 官方基线](../../docs/research/openai-codex-baseline.md)及[官方事实缺口审查](../../docs/research/official-facts-gap-review-2026-08-10.md)列出的当前官方文档为准；现实案例请以[统一问题索引](../../docs/research/field-problems-index-2026-08-10.md)、[现场研究记录](../../docs/research/field-problems-codex.md)、[工作面研究](../../docs/research/field-problems-surface-2026-08-10.md)、[真实问题后续研究](../../docs/research/field-problems-follow-up-2026-08-10.md)、[论坛研究](../../docs/research/field-problems-forums-2026-08-10.md)和[网页田野研究](../../docs/research/web-field-problems-2026-08-10.md)的原始 URL、证据等级和复核日期为准。多目录、WSL 代理、507 自动重试、handoff、Worktree、论坛 workaround 和浏览器点击案例均为用户报告或社区建议，未在本项目本地复现且未确认根因，不得整理成官方故障清单。每次引用具体产品行为时，记录入口、版本、账户/组织范围、访问日期、官方来源和下一次复核责任人；不要把社区 workaround 或旧截图写成永久操作手册。
 
 | 易变事实 | 官方 URL | 访问日期 | 适用范围 | owner / 下次复核 |
 |---|---|---|---|---|
