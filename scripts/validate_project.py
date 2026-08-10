@@ -24,6 +24,7 @@ REQUIRED = (
     "docs/governance/content-lifecycle.md",
     "docs/governance/update-map.md",
     "docs/governance/update-registry.yaml",
+    "docs/governance/content-status.yaml",
     "docs/templates/update-record.md",
     "docs/governance/contribution-model.md",
     "docs/quality/skill-quality-standard.md",
@@ -33,6 +34,7 @@ REQUIRED = (
     "site/index.html",
     "site/app.js",
     "site/styles.css",
+    "scripts/validate_content_status.py",
 )
 
 

@@ -37,6 +37,7 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\audit_input_archives.py
 & $py scripts\validate_update_registry.py
 & $py scripts\validate_site_i18n.py
+& $py scripts\validate_content_status.py
 ```
 
-本页对项目状态的表述来自仓库内的 `book/table-of-contents.md`、`book/labs/README.md`、`docs/quality/forward-test-2026-08-09.md` 和 `docs/governance/update-map.md`。当前页面实现状态为 **candidate**：静态文件与交互已实现，仍需在目标浏览器完成视觉与可访问性人工验收；页面不把 `candidate` 写成 `verified` 或 `production-ready`。
+本页对项目状态的表述以 `docs/governance/content-status.yaml` 为当前单一状态源，并由 `docs/quality/current-state-review-2026-08-09.md` 解释证据边界；`book/table-of-contents.md`、`book/labs/README.md`、`docs/governance/update-map.md` 仍是对应领域的阅读入口。当前页面实现状态为 **candidate**：静态文件与交互已实现，仍需在目标浏览器完成视觉与可访问性人工验收；页面不把 `candidate` 写成 `verified` 或 `production-ready`。

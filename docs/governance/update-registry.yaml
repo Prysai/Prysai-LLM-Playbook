@@ -74,6 +74,16 @@
       "next_review": "2026-09-09"
     },
     {
+      "area": "content-status",
+      "canonical_paths": ["docs/governance/content-status.yaml", "scripts/validate_content_status.py"],
+      "owner": "release-maintainer",
+      "triggers": ["count-change", "artifact-status-change", "run-log-added", "review-date-change"],
+      "required_inputs": ["current-counts", "artifact-status", "run-status", "review-status", "evidence-paths"],
+      "validation_commands": ["scripts/validate_content_status.py", "scripts/validate_project.py"],
+      "status_fields": ["status", "run_status", "review_status", "owner", "last_reviewed", "next_review"],
+      "next_review": "2026-11-09"
+    },
+    {
       "area": "release-and-rollback",
       "canonical_paths": ["docs/release-checklist.md", "docs/governance/content-lifecycle.md"],
       "owner": "release-maintainer",

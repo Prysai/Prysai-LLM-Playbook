@@ -29,6 +29,7 @@ unverified scope are recorded.
 | An evaluation fixture | `evals/README.md`, `docs/quality/evaluation-framework.md` | `evals/task-set-v1.yaml` | Fixed input, context, permissions, expected evidence, forbidden behavior | `validate_eval_tasks.py`; add run logs before changing status |
 | A source, archive, or borrowed asset | `docs/sources/asset-register.md` | Source record and, only if allowed, derived material | URL/archive, license, attribution, scope, hash, distribution decision | Archive audit and license review |
 | The public page | `site/README.md` | `site/index.html`, `site/app.js`, `site/styles.css` | Counts, links, language coverage, accessibility behavior, status wording | Local link check and desktop/320px/390px browser review |
+| The current status of the whole project | `docs/governance/content-status.yaml` | The status source and its validator | Counts, artifact status, run status, owner, review date, and evidence paths | `validate_content_status.py`; do not infer maturity from file presence |
 | A release or rollback | `docs/release-checklist.md` | Release record and change log | Diff, validation output, reviewer, known gaps, rollback target | User-approved commit/push and a recoverable reference |
 
 ## Status vocabulary
@@ -55,4 +56,3 @@ Use artifact status and fact status separately.
 - [ ] The change says what was not tested.
 - [ ] `draft`/`candidate` has not been silently upgraded to `verified`.
 - [ ] The next review date and responsible owner are clear.
-

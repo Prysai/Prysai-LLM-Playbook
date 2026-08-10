@@ -66,6 +66,8 @@ Codex: From First Task to Real Work 不是一个把 skills 平铺在一起的目
 - [学习模型](docs/learning-model.md)
 - [来源与许可证台账](docs/sources/asset-register.md)
 - [内容更新与审查](docs/governance/content-lifecycle.md)
+- [当前状态源](docs/governance/content-status.yaml)
+- [当前状态审查](docs/quality/current-state-review-2026-08-09.md)
 - [Skill 质量标准](docs/quality/skill-quality-standard.md)
 - [学习与运行评测框架](docs/quality/evaluation-framework.md)
 - [评测任务集 v1](evals/task-set-v1.yaml)

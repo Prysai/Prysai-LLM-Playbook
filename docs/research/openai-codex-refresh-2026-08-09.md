@@ -21,7 +21,7 @@ claim: "ChatGPT 桌面应用、ChatGPT Work 网页端、Codex CLI 和 Codex IDE 
 source: "https://learn.chatgpt.com/docs/models.md"
 checked_at: "2026-08-09"
 applies_to: "官方 Models 页面列出的 app、web、cli、ide 工作面"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```
@@ -33,7 +33,7 @@ claim: "官方当前将 gpt-5.6-sol 定位为适合复杂编码、电脑使用�
 source: "https://learn.chatgpt.com/docs/models.md"
 checked_at: "2026-08-09"
 applies_to: "Codex 模型选择指南；具体账户、订阅、API 和工作面仍以实际可用列表为准"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```
@@ -45,7 +45,7 @@ claim: "官方模型定位可以作为选择起点，但不能证明 gpt-5.6-lun
 source: "https://learn.chatgpt.com/docs/models.md"
 checked_at: "2026-08-09"
 applies_to: "本项目的模型比较章节与评测，不构成 OpenAI 的总体排名"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```
@@ -57,7 +57,7 @@ claim: "‘GPT-5.6 Luna 是当前性价比最高的模型’是项目团队提�
 source: "https://learn.chatgpt.com/docs/models.md"
 checked_at: "2026-08-09"
 applies_to: "项目决策记录、模型评测和对外表述"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "disputed"
 ```
@@ -69,7 +69,7 @@ claim: "官方说明 Ultra 会使用 Subagents 处理可拆分的复杂工作；
 source: "https://learn.chatgpt.com/docs/models.md"
 checked_at: "2026-08-09"
 applies_to: "官方 Models 页面所列并支持 Ultra 的工作面和账户"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```
@@ -81,7 +81,7 @@ claim: "ChatGPT 桌面应用面向复杂工作，可在同一桌面工作区处�
 source: "https://learn.chatgpt.com/docs/app.md"
 checked_at: "2026-08-09"
 applies_to: "ChatGPT desktop app；功能是否对特定账户开放仍需在应用中确认"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```
@@ -93,7 +93,7 @@ claim: "Codex CLI 用于在终端中探索项目、编辑文件和运行本地�
 source: "https://learn.chatgpt.com/docs/codex/cli.md"
 checked_at: "2026-08-09"
 applies_to: "Codex CLI；具体命令、版本和已安装能力以当前 CLI 与配置为准"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```
@@ -105,7 +105,7 @@ claim: "官方 CLI 入门文档建议在任务前后创建 Git checkpoints，以
 source: "https://learn.chatgpt.com/docs/codex/cli.md"
 checked_at: "2026-08-09"
 applies_to: "使用 Codex CLI 修改本地仓库的学习实验"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```
@@ -117,7 +117,7 @@ claim: "Codex IDE 扩展把编辑器中的打开文件和选区作为上下文�
 source: "https://learn.chatgpt.com/docs/codex/ide.md"
 checked_at: "2026-08-09"
 applies_to: "Codex IDE extension；VS Code 及兼容编辑器、JetBrains/Xcode 等入口的具体集成不同"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```
@@ -129,7 +129,7 @@ claim: "Codex Cloud 在隔离的云环境中运行编码任务，支持并行任
 source: "https://learn.chatgpt.com/docs/cloud.md"
 checked_at: "2026-08-09"
 applies_to: "Codex Cloud；环境、仓库连接、账户资格和具体集成以当前产品配置为准"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```
@@ -141,7 +141,7 @@ claim: "官方 Cloud 文档把环境配置、依赖与工具设置、变量以�
 source: "https://learn.chatgpt.com/docs/cloud.md"
 checked_at: "2026-08-09"
 applies_to: "Codex Cloud 环境与网络访问设置"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```
@@ -153,7 +153,7 @@ claim: "Skill 是为特定任务或工作流提供指导和支持资源的可复
 source: "https://learn.chatgpt.com/docs/skills-and-plugins.md"
 checked_at: "2026-08-09"
 applies_to: "ChatGPT 与 Codex 的 Skills 能力；实际加载、启用和权限仍受工作面与账户设置影响"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```
@@ -165,7 +165,7 @@ claim: "ChatGPT 和 Codex 可以在请求匹配时选择适用的 Skill，也可
 source: "https://learn.chatgpt.com/docs/skills-and-plugins.md"
 checked_at: "2026-08-09"
 applies_to: "官方 Skills 文档描述的 ChatGPT/Codex 调用方式"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```
@@ -177,7 +177,7 @@ claim: "Plugin 是可安装的能力包，可以同时包含 Skills 和 Connecto
 source: "https://learn.chatgpt.com/docs/skills-and-plugins.md"
 checked_at: "2026-08-09"
 applies_to: "官方 Skills & Plugins 文档定义的 Plugin 层；不能仅凭安装成功推断所有服务权限已授予"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```
@@ -189,7 +189,7 @@ claim: "需要聚焦的可复用指令时使用 Skill；需要可安装、可组
 source: "https://learn.chatgpt.com/docs/skills-and-plugins.md"
 checked_at: "2026-08-09"
 applies_to: "本项目的 Skill 设计、路由和安装教学"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```
@@ -201,7 +201,7 @@ claim: "Sandbox 定义 ChatGPT/Codex 在技术上可以访问的文件和网络�
 source: "https://learn.chatgpt.com/docs/permission-modes.md"
 checked_at: "2026-08-09"
 applies_to: "ChatGPT desktop app、Codex CLI 和 Codex IDE 的本地动作权限模型"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```
@@ -213,7 +213,7 @@ claim: "官方权限文档建议大多数工作从 Ask for approval 开始；App
 source: "https://learn.chatgpt.com/docs/permission-modes.md"
 checked_at: "2026-08-09"
 applies_to: "ChatGPT desktop app 与 Codex CLI/IDE 的权限菜单；具体可见选项随配置而异"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```
@@ -225,7 +225,7 @@ claim: "ChatGPT Work 和 Codex 可以启动专门的 Subagents 并行处理独�
 source: "https://learn.chatgpt.com/docs/agent-configuration/subagents.md"
 checked_at: "2026-08-09"
 applies_to: "ChatGPT Work、ChatGPT desktop app、Codex CLI 和 Codex IDE 中官方文档描述的 Subagent 工作流"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```
@@ -237,7 +237,7 @@ claim: "在本地 Codex 工作面中，Subagents 继承父任务的 Sandbox/权�
 source: "https://learn.chatgpt.com/docs/agent-configuration/subagents.md"
 checked_at: "2026-08-09"
 applies_to: "官方 Subagents 页面区分的本地 Codex 与 ChatGPT Work"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```
@@ -249,7 +249,7 @@ claim: "官方文档说明本地 Codex 可通过配置定义自定义 Agent；�
 source: "https://learn.chatgpt.com/docs/agent-configuration/subagents.md"
 checked_at: "2026-08-09"
 applies_to: "本地 Codex 的项目级或个人级自定义 Agent 配置；格式和支持项可能随版本演进"
-owner: "Codex Field Guide 事实维护者"
+owner: "facts-maintainer"
 next_review: "2026-09-09"
 claim_status: "current"
 ```

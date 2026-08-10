@@ -73,6 +73,7 @@ def main() -> int:
         "evaluations",
         "sources-and-licenses",
         "public-site",
+        "content-status",
         "release-and-rollback",
     }
     missing_areas = required_areas - seen
