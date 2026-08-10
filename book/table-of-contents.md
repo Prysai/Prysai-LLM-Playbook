@@ -152,6 +152,8 @@
 
 ## 评测和状态入口
 
+- [蓝皮书阅读层研究](../docs/research/workbuddyguide-structure-study-2026-08-10.md)：说明本项目借鉴连续阅读、案例入口和内容生产机制的边界；不复制外部正文或视觉资产；
+- [现实案例模板](../docs/templates/field-case.md)：把用户报告、官方边界、本地复现、推断和未验证范围分开记录；
 - [实验索引](labs/README.md)：13 个实际实验文件、等级、领域、迁移焦点和 `lab_status`；
 - [内容融合矩阵](../docs/content-matrix.md)：13 个能力映射和主题重复时新增的能力；
 - [评测框架](../docs/quality/evaluation-framework.md)：内容和能力的验收门槛；

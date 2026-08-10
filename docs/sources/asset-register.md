@@ -1,7 +1,7 @@
 # 外部资产与来源台账
 
 **盘点日期：** 2026-08-09
-**用途：** 记录六个输入压缩包的来源、结构、许可证、可用边界和融合决策。
+**用途：** 记录外部教材、代码、Skill、研究和结构参考的来源、结构、许可证、可用边界和融合决策。
 
 ## 总原则
 
@@ -18,6 +18,7 @@
 | S05 | `D:/downloads/agent-skills-main.zip` | `addyosmani/agent-skills` | 已检查 `LICENSE`、`README.md`、`CONTRIBUTING.md`、`docs/getting-started.md`、`docs/skill-anatomy.md`、`plugin.json`、`.codex-plugin/plugin.json`、`.claude-plugin/plugin.json`、`.claude-plugin/marketplace.json` 和 `.agents/plugins/marketplace.json`；包内未发现顶层 `NOTICE`；范围包括工程 skills、agents、commands、hooks、references、evals、docs 和插件配置 | **MIT（仓库级已确认）**：顶层 `LICENSE` 标明版权归 `Addy Osmani`（2025），Codex/Claude 插件元数据均声明 `MIT`，贡献说明也声明贡献按 MIT 授权。README 中的外部徽章、图片、链接及其他可能的第三方材料未逐项清权：`unknown/unresolved` | MIT 许可范围内可对上游自有仓库内容进行复制、修改和分发，但须保留版权与许可声明；本项目仅提炼流程原则并自行重写、验证。不得直接发布 README 外部图片/徽章或其他第三方材料，除非另有明确许可；纳入发行版前逐项复核 |
 | S06 | `D:/downloads/awesome-codex-skills-master.zip` | `composio-community/awesome-codex-skills` | 1,101 个文件、880 个 `SKILL.md`；大量外部服务自动化 | 根目录 Apache-2.0 信号不等于所有嵌套内容许可一致；GitHub API 无统一 SPDX | 作为生态目录和候选扩展；先过滤重复、坏元数据、外部依赖和许可证，再决定是否纳入 |
 | S07 | `docs/research/field-problems-*.md` | `openai/codex` GitHub Issues、Stack Overflow/Stack Exchange API | 只保留公开用户报告的原创摘要和原始链接；Stack Overflow 页面标注 CC BY-SA 4.0；未复制外部代码、图片、长段文字、日志、凭据或 Skill 指令 | `reference-only`：用于现实问题研究和教学边界；不把社区回答当作官方支持，不将外部内容作为可发行资产打包 |
+| S08 | `docs/research/workbuddyguide-structure-study-2026-08-10.md` | `AlephAITech/WorkBuddyGuide` GitHub 仓库、固定 commit `abd61e8`、`workbuddy.homes` | 只记录公开可核对的目录、VitePress 配置、内容同步链、案例模板、部署边界和阅读体验；没有复制正文、提示词、代码、截图、图标、字体、二维码、品牌或投稿素材 | 根目录公开 MIT；具体媒体、第三方图标/字体、品牌和投稿内容的逐项许可不能由根目录许可证推断 | `reference-only`：只借鉴内容产品结构和可验证的案例机制；不整体 vendoring，不复制视觉/品牌资产；未来单项资产必须重新核对来源、归属和许可 |
 
 ## 归档指纹
 

@@ -72,6 +72,8 @@ Codex: From First Task to Real Work 不是一个把 skills 平铺在一起的目
 - [学习与运行评测框架](docs/quality/evaluation-framework.md)
 - [评测任务集 v1](evals/task-set-v1.yaml)
 - [真实问题研究](docs/research/field-problems-codex.md)
+- [真实问题研究索引](docs/research/field-problems-index-2026-08-10.md)
+- [WorkBuddyGuide 结构研究](docs/research/workbuddyguide-structure-study-2026-08-10.md)
 - [书籍目录](book/table-of-contents.md)
 - [Codex Coach](skills/prysai-codex-coach/SKILL.md)
 - [外部 Skill 候选目录](docs/sources/skill-candidate-catalog.md)
