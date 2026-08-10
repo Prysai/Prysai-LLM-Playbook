@@ -19,6 +19,22 @@
       "checked_at": "2026-08-10",
       "next_review": "2026-09-10",
       "scope": "Registry structure, consumer mapping, Plugin support correction and known evidence limits"
+    },
+    {
+      "id": "official-facts-gap-review-2026-08-10",
+      "path": "docs/research/official-facts-gap-review-2026-08-10.md",
+      "canonical_claim_inventory": false,
+      "checked_at": "2026-08-10",
+      "next_review": "2026-09-10",
+      "scope": "Actionable gaps for sandbox, approvals, work surfaces, model availability, Cloud phases and Skill invocation"
+    },
+    {
+      "id": "field-problems-follow-up-2026-08-10",
+      "path": "docs/research/field-problems-follow-up-2026-08-10.md",
+      "canonical_claim_inventory": false,
+      "checked_at": "2026-08-10",
+      "next_review": "2026-09-10",
+      "scope": "User-reported GitHub Issue summaries for handoff, tool visibility, workspace permissions, proxy environments and long waits"
     }
   ],
   "impact_groups": [

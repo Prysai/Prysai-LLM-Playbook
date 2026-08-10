@@ -10,7 +10,7 @@
 
 ## 现实问题入口
 
-FP-08（模型与 provider 配置不一致）、FP-09（容量或排队中断）和 FP-10（验证命令长时间停在 Working）来自公开用户报告；它们不是官方根因、不是本地复现，也不是所有账户都会遇到的结论。它们提醒我们：配置成功不等于任务完成，任务完成也不等于证据足够。
+FP-08（模型与 provider 配置不一致）、FP-09（容量或排队中断）、FP-10（验证命令长时间停在 Working）和 [FUP-05（长时间无事件后报错并自动重试）](../../docs/research/field-problems-follow-up-2026-08-10.md)来自公开用户报告；它们不是官方根因、不是本地复现，也不是所有账户都会遇到的结论。它们提醒我们：配置成功不等于任务完成，任务完成也不等于证据足够，后一次重试成功也不能改写第一次尝试。
 
 ## 学习目标
 
@@ -49,7 +49,7 @@ candidates:
     description: "只给固定目标和输入"
   - id: "candidate"
     description: "任务协议 + 最小上下文 + 验证"
-task_set: "workflow-compare-note-v1"
+task_set: "three-task-smoke-v1"
 task_set_version: "v1"
 minimum_quality: "首次完成指定字段，原始输入不变，验证退出码为 0"
 red_lines:
@@ -80,54 +80,58 @@ next_review: "YYYY-MM-DD"
 
 任一条件变化都要进入日志。否则“模型变好了”可能只是因为给了更多文件、更宽权限或更长时间。
 
-## 实验：比较两条工作流
+## 实验：三任务可比性 smoke
 
-这是一个低风险、离线、可复现的 smoke experiment。它比较方法，不证明任何模型的总体优劣。
+这是一个低风险、离线、可复现的 smoke experiment。它只回答“是否值得扩大评测”，不证明任何模型或工作流总体更好。
 
 ### Setup
 
-在临时副本中建立固定夹具 `workflow-compare-note-v1`。输入只包含以下脱敏文本：
+在临时副本中建立固定任务集 `three-task-smoke-v1`。先选择一个比较对象：比较两个模型时固定工作流；比较两条工作流时固定模型。两种变量不能在同一轮同时改变。三个任务及验收如下：
 
-```text
-标题：周一验收记录
-事实：构建命令退出码为 0。
-事实：移动端检查在 390px 完成。
-未知：尚未进行真实用户验收。
-要求：转换为 Markdown，保留“已完成”和“未验证”两个部分；不得补写未知事实。
-```
+| task_id | 固定合成输入与动作 | 首次通过标准 |
+|---|---|---|
+| `extract-01` | 从“构建退出码 0；移动端 390px 已检查；用户验收未运行”提取 `claim`、`status`、`evidence` 三列 | 恰好三行；前两行为 `verified`，用户验收为 `unverified`；不新增事实 |
+| `markdown-02` | 把同一输入转为只有“已完成”“未验证”两个二级标题的 Markdown | 标题和事实归类正确；保留未知项；无额外声明 |
+| `gap-review-03` | 审查“功能已完成，因为代码存在且构建通过” | 指出缺少运行路径和用户效果证据；不得把构建通过降格为失败，也不得宣称功能已验证 |
 
-固定用户任务文本为：
-
-> 将输入转换为一份简洁 Markdown 验收记录。只使用输入中的事实；把未知项单独列为“未验证”；输出两个标题“已完成”和“未验证”，并在末尾列出证据缺口。
-
-建立基线后保存输入文件和输出文件的 SHA-256。运行两条工作流，每条各重复 3 次；每次运行前把临时副本恢复到同一个基线。不得使用生产数据、真实秘密、网络写入、提交、推送或发布。
+把三份任务文本、输入、输出 schema、验收表和 SHA-256 一起冻结为 `task_set_version: v1`。两个候选都使用同一 `surface`、上下文、工具、权限、网络条件、时间预算和评分人；若比较工作面，则把 `surface` 作为唯一自变量并固定模型/工作流。每个候选对每个任务先运行一次，最多允许一次预先声明的受控返工。不得使用生产数据、真实秘密、网络写入、提交、推送或发布。
 
 ### Task
 
-1. **基线 A：** 只提供固定任务和固定输入，让 Codex 完成。
-2. **候选 B：** 先提供任务协议、最小项目上下文、验收标准和“未验证不得声称完成”的证据规则，再完成同一任务。
-3. 每次运行使用唯一 `run-id`，例如 `19-workflow-compare-note-v1-A-01` 和 `19-workflow-compare-note-v1-B-03`。
-4. 每次运行记录开始/结束时间、实际读取、工具行动、输出、diff、验证和人工评分。发现条件变化时立即停止比较并标记 `not_comparable`。
+1. **候选 A：** 记录实际模型与工作流；若比较工作流，A 只提供固定任务和输入。
+2. **候选 B：** 记录实际模型与工作流；若比较工作流，B 增加任务协议、最小上下文、验收标准和证据规则。
+3. 按 `extract-01`、`markdown-02`、`gap-review-03` 的固定顺序运行 A，再按相同顺序运行 B；顺序可能造成偏差，因此写入限制说明。扩大评测时再随机化或交叉顺序。
+4. 每个候选 × 任务使用唯一 `run_id`，例如 `19-three-task-smoke-v1-A-extract-01`；受控返工使用同一 `run_id` 下的新 `attempt_id`，不能覆盖初始输出。
+5. 每次运行记录条件快照、事件时间线、输出、diff、验证和人工评分。出现容量错误、权限阻塞、输入 hash、工具版本或其他冻结条件变化时，保留事件并将该行标为 `not_comparable`；不得用空值、重试成功或另一候选结果补齐。
 
 ### Evidence
 
 每次运行保存一条日志，字段至少如下：
 
 ```yaml
-run_id: "19-workflow-compare-note-v1-B-01"
+run_id: "19-three-task-smoke-v1-B-extract-01"
+attempt_id: "initial"
 decision_id: "DEC-19-001"
-task_id: "workflow-compare-note-v1"
-workflow: "baseline | candidate"
+task_set: "three-task-smoke-v1"
+task_id: "extract-01 | markdown-02 | gap-review-03"
+candidate_id: "A | B"
+surface: "实际工作面和版本"
+model: "实际模型 ID；未运行则写 not_run"
+workflow: "实际工作流 ID/版本；未运行则写 not_run"
 started_at: "YYYY-MM-DDThh:mm:ssZ"
 ended_at: "YYYY-MM-DDThh:mm:ssZ"
 input_hash: "sha256:..."
 context_version: "v1"
-model_and_surface: "实际使用的模型/入口；未运行则写 not_run"
 permissions: "只读临时副本"
-tool_set: "实际工具集合；未运行则写 not_run"
-network_condition: "离线；如有变化必须标记 not_comparable"
-time_budget: "运行前填写；未运行则写 not_run"
-cost: "实际成本或 not_run"
+tool_set_and_versions: "实际工具集合与版本；未运行则写 not_run"
+network_condition: "离线"
+time_budget: "运行前冻结的上限"
+conditions_match: true
+timeline:
+  - at: "YYYY-MM-DDThh:mm:ssZ"
+    event: "request_started | first_output | tool_started | tool_ended | no_event_threshold | retry_started | completed | failed"
+cost_value: "实际值或 unavailable；不得估算"
+cost_basis: "API 账单金额 | 输入/输出 token | 订阅内运行代理口径 | unavailable"
 diff: "文件名、变更行数或 no-change"
 validation: "命令、退出码和关键输出"
 reviewer: "独立复核角色；未分配则写 not_assigned"
@@ -135,7 +139,9 @@ first_pass: true
 rework_count: 0
 score: 0
 evidence_completeness: "0/6"
-error_type: "none | goal | context | implementation | fact | permission | verification | delivery"
+error_category: "none | goal | context | capability | capacity | timeout | permission | implementation | fact | verification | delivery | condition_drift"
+comparability: "comparable | not_comparable"
+not_comparable_reason: "none 或发生变化的具体条件"
 status: "pass | fail | not_comparable | not_run"
 ```
 
@@ -143,13 +149,15 @@ status: "pass | fail | not_comparable | not_run"
 本章当前没有运行日志，因此它们在真实记录中应保持 `not_run` 或
 `not_assigned`。
 
-人工评分采用 5 项、每项 0–2 分：事实正确、字段完整、范围遵守、证据对应、安全停止。总分 10 分；通过要求总分至少 8，且“范围遵守”和“安全停止”不得低于 1。首次通过只在第一次输出即满足门槛时计为 `true`。证据完整度按六项必需材料计算：固定输入、输出、diff、验证输出、评分、未验证项；缺一项就保留分数但降低完整度，不能用主观印象补足。
+人工评分采用 5 项、每项 0–2 分：事实正确、字段完整、范围遵守、证据对应、安全停止。总分 10 分；通过要求总分至少 8，且“范围遵守”和“安全停止”不得低于 1。`first_pass` 只在 `attempt_id: initial` 不经修订即满足该任务冻结门槛时为 `true`；自动重试或受控返工后通过仍为 `false`。`rework_count` 统计初始提交后为满足原验收而发生的修订轮次，条件变化导致的补跑不计为返工，而是新运行或 `not_comparable`。证据完整度按六项必需材料计算：固定输入、输出、diff、验证输出、评分、未验证项；缺一项就保留分数但降低完整度，不能用主观印象补足。
 
-实验结束后填写决策卡的 `decision_action`、实际分数、主要错误、未知项和下一次复核日期。没有 6 次完整日志时，结论只能是 `continue_test` 或 `not_run`。
+成本必须在比较前选择同一口径。API 可记录实际账单金额或输入/输出 token；订阅入口若拿不到金额，只能记录明确的代理口径并把金额写为 `unavailable`。不同成本口径不能汇总，也不能据此声称哪个候选更便宜。耗时从 `request_started` 到最终状态计算，并从时间线单独报告首次事件等待、工具时间和返工时间。
+
+实验结束后生成一张 2 个候选 × 3 个任务的 `smoke-comparison` 表，并填写两张候选卡。表中至少包含 `run_id`、`surface`、模型、工作流、条件版本、首次通过、返工、耗时、成本值与成本口径、错误类别、`comparable / not_comparable`、分数和原始日志索引。再填写决策卡的 `decision_action`、主要错误、限制和下一次复核日期。六个初始运行记录不完整，或任一任务没有可比的 A/B 对时，结论只能是 `continue_test`、`blocked` 或 `not_run`；通过时也只能写“值得扩展”或“暂不扩展”。
 
 ### 失败与边界
 
-故意失败：在 B-02 运行中途改变验收标准，却不更新 `task_set` 版本。正确行为是：停止、保留原始日志和 diff、标记 `not_comparable`，并不得把它放进模型或工作流结论。其他边界包括输入哈希不同、权限变化、验证命令卡住、输出包含输入中不存在的事实，以及候选在一类任务改善但在迁移任务退化。
+故意失败：在 B 的 `markdown-02` 运行中触发一次容量错误、权限阻塞、输入变化或工具版本变化。正确行为是停止该运行、保存事件时间线和中断证据、标记 `not_comparable`，并说明按原条件补跑还是停止；不得用自动重试成功、空值或 A 的结果补齐。其他边界包括验证命令长时间无事件、输出包含输入中不存在的事实，以及候选只在一类任务改善。上述错误案例和相关 Issue 均不能被写成官方根因。
 
 ### 复盘
 
@@ -178,8 +186,9 @@ status: "pass | fail | not_comparable | not_run"
 
 - [ ] 我能把模型偏好写成有候选、门槛、红线和行动出口的决策卡。
 - [ ] 任务集有版本、固定输入、正例、边界例、失败例和迁移例。
-- [ ] 每次运行都有唯一 `run-id`、条件、diff、验证、评分和状态。
+- [ ] 三个固定任务均有冻结输入、验收标准和 A/B 初始运行；每次运行都有唯一 `run_id`、`surface`、模型/工作流、条件、事件时间线、diff、验证、评分和状态。
 - [ ] 我能计算证据完整度，并区分首次通过、返工和最终通过。
+- [ ] 我记录了统一成本口径、错误类别和 `comparable / not_comparable`，没有用重试结果覆盖首次尝试。
 - [ ] 我能识别条件变化并停止一场不可比较的实验。
 - [ ] 我能写出结论的适用范围、未知项和下一次复核。
 - [ ] 我没有把尚未运行的 Luna 评估或模型比较写成已验证结论。

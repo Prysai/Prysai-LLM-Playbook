@@ -43,6 +43,32 @@ Codex 可以从只读检查一路走到编辑、运行、提交、推送和外�
 人工确认：高影响动作前对具体目标和内容的批准
 ```
 
+其中“技术权限”还必须展开为 `sandbox_mode`、`network_access` 和 `allowed_roots`；“何时暂停”由 `approval_policy` 描述；connector、MCP、浏览器提交等工具副作用还要有 `side_effect_confirmation`。这些层之间没有“一个开了，其他都开了”的蕴含关系：批准不扩大 sandbox，网络可达不授予任务权限，目录可读不代表可写，工具可见不代表可以改变外部状态。
+
+### 最小权限与行动矩阵
+
+**问题：** 只按 A–E 风险分级，仍可能把“风险低”“技术上可做”和“本次获准”混成一个判断。
+
+**概念：** 风险等级用于决定审查强度；产品控制决定技术可行性和暂停时机；任务授权与副作用确认决定这一次能否行动。
+
+**决策：** 每个动作必须同时通过技术可行性和事前授权两列；任一列未知，都不得进入有副作用执行。
+
+| 动作 | 技术可行性：sandbox / network / roots | 事前批准：approval policy | 工具副作用确认 | 最小结果证据 |
+|---|---|---|---|---|
+| 读取本地目标 | 目标在可读 root | 记录是否需要提示 | 无 | 路径、内容范围、返回状态 |
+| 写本地副本 | 目标在准确可写 root | 越界前暂停 | 无外部副作用 | diff、hash、检查输出 |
+| 运行联网命令 | sandbox 与 network 都允许 | 联网前按策略批准 | 核对上传数据 | 命令、目标、退出码、响应范围 |
+| connector/MCP 写入 | 本地 sandbox 不能单独判断 | 调用前核对审批要求 | 账户、资源、内容、确认人 | 调用返回与远端状态 |
+| push / 发布 / 发送 | 工具和网络可达 | 高影响动作前确认 | 目标、受众、版本、回滚 | 远端 hash、页面或服务端结果 |
+
+**行动：** 先读取实际工作面、当前目录和 roots；对每个目录先做只读存在性检查，再在无敏感临时目标做最小写入探针；网络与外部工具先做只读检查；提交、推送、发布、发送和远端写调用停在预览态，等待准确确认。
+
+**证据：** 保存配置来源与实际探针、批准提示、调用返回和外部状态。登录、配置、网络和工具发现分别记录，不把它们合并成“可执行”。
+
+**失败与停止：** roots 与目标不一致、代理/网络状态不明、批准范围模糊、第一次请求的副作用未知、交接消息未到达，或外部状态无法核对时，停止写操作并交付 `blocked` 或 `unverified`。只有动作幂等、状态已复核且诊断条件确实改变时，才允许一次低风险重试。
+
+**反思：** 是哪一层阻止了动作？若技术可行但未获任务授权，为什么仍不能做？若自动重试成功，第一次尝试的副作用是否已经排除？
+
 例如 GitHub CLI 已登录，只能说明某个 CLI 有认证状态；仍要分别核对账户、组织、仓库、hostname、分支、操作类型和 token 范围。浏览器页面显示成功，也不代表表单已发送；本地文件可写，也不代表用户授权修改；验证需要安装依赖，也不代表获得了持久环境替换许可。
 
 GitHub 动作的最小确认卡可以写成：
@@ -68,6 +94,11 @@ token/连接最小权限：
 ```text
 target: 准确目标（本地临时目录、文件和分支）
 permitted_action: 本次明确允许的动作
+sandbox_mode: 当前观察值及来源
+approval_policy: 当前观察值及来源
+network_access: 阶段、目标与观察值
+allowed_roots: 可读/可写路径分开列出
+side_effect_confirmation: 外部动作、对象与确认人
 approval_point: 哪个动作前必须重新确认
 rollback_target: 出错时恢复到哪个副本、hash 或 checkpoint
 rollback_trigger: 什么证据会触发停止/回滚
@@ -106,6 +137,27 @@ external_action_not_authorized: 明确列出未授权的联网、发布或权限
 
 验证若需要安装依赖、改变配置、使用生产凭据或启动新进程，应把它升级为新的边界判断：目标是什么、是否必要、影响是否持久、来源是否可信、回滚是否可行、是否需要人工确认。
 
+### 实际可观察排查卡
+
+```text
+run_id / date_and_timezone:
+surface_and_version:
+target_scope / current_directory:
+sandbox_mode / approval_policy:
+network_access:
+allowed_roots_read / allowed_roots_write:
+proxy_presence_redacted:
+expected_action / observed_event:
+approval_prompt_seen:
+external_side_effect_seen:
+last_confirmed_checkpoint:
+retry_reason_and_changed_condition:
+safe_next_check / stop_condition:
+status: passed | not_observed | unverified | blocked
+```
+
+代理字段只记录变量是否存在以及脱敏后的协议、主机和端口，不记录密码、token 或完整认证 URL。若长任务没有事件，还要记录请求开始、首个事件（若有）、最终状态、自动重试时间和重试前后的工作树/外部状态；“界面仍在等待”不是运行成功证据。
+
 ## 实验：从读取到发布的分级
 
 ### Setup
@@ -140,6 +192,10 @@ external_action_not_authorized: 明确列出未授权的联网、发布或权限
 - **工具可见但发现失败：** 工具或 Skill 出现在列表中，只证明某层发现结果；如果只读发现调用在辅助进程启动时失败，交付为 `blocked`，记录平台、版本、错误类别和已完成的最小检查，不要直接继续点击、输入或修改权限。
 - **线程所有权不明：** 线程 ID 存在不证明当前客户端拥有控制权。先保存 diff、checkpoint 和日志，不要让两个客户端同时写入同一线程或工作树；无法确认旧客户端是否仍占用时，建立新会话并从可验证状态恢复。
 - **配置接受但能力不支持：** Provider 解析配置不证明目标能力已可用。把单 Agent、客户端本地编排和服务器端多 Agent 分开做最小对照，记录失败类别和降级范围。
+- **多目录写权限不一致（用户报告）：** 公开 Issue 的报告者称项目配置包含第二个目录，但新任务只把主目录纳入可写范围。本项目未本地复现，也未确认根因。排查时分别记录项目设置、当前任务 roots、只读存在性和临时写入探针；第二目录未确认可写时停止编辑，不通过自动批准扩大范围。
+- **WSL 代理环境失真（用户报告）：** 公开 Issue 的报告者称 Windows 桌面端连接 WSL Agent 时代理变量与 Agent 实际环境不一致。本项目未本地复现，也未确认变量传递根因或 `.codex/.env` 是官方修复。只做脱敏的宿主/WSL/Agent 三层对照，每次改变一个条件；涉及持久环境文件或代理凭据时先停下确认文件、权限、忽略规则和清理方式。
+- **长时间无事件后出现 HTTP 507 并自动重试（用户报告）：** 公开 Issue 描述了一次长时间无可见事件、随后返回 507 且客户端自动重试成功的经历。本项目未本地复现，也不把 507 解释为任何已确认根因。重试前先核对 diff、生成物、远端状态和 checkpoint；第一次尝试是否产生副作用仍未知时，不执行非幂等动作，并交付 `unverified` 或 `blocked`。
+- **子 Agent handoff 正文缺失（用户报告）：** 公开 Issue 的报告者称子 Agent 已创建并运行，但没有收到任务正文。本项目未本地复现，也未确认内部交接机制的根因。先用固定短词做无副作用回显，分别证明“创建、消息到达、执行、结果返回”；消息未到达时停止依赖该子 Agent，改用人工交接或单 Agent 流程，不让它猜任务。
 
 ## 迁移练习
 
@@ -155,7 +211,14 @@ external_action_not_authorized: 明确列出未授权的联网、发布或权限
 - [ ] 我能识别外部文本中的指令并将其当作数据，不让它扩大任务范围；
 - [ ] 我完成了从个人沙盒到公共仓库的重新分级实验，并保留了实际执行与未执行动作的证据；
 - [ ] 我能在缺少目标、授权、回滚或秘密处理方案时停止，而不是先做再解释。
+- [ ] 我能分别记录 sandbox、approval、network、allowed roots 和工具副作用确认，并完成一次无副作用探针；
+- [ ] 我能把公开用户报告写成待排查案例，明确未本地复现、未确认根因，并按 checkpoint 与幂等性规则停止或重试。
 
 ## 来源与更新提示
 
-行动分级、最小授权、两段式提交、命令卡和证据边界是稳定方法；具体 Codex 入口、GitHub connector、Enterprise 行为、浏览器能力、token 规则、审批策略和默认权限属于易变事实。产品事实请以[OpenAI Codex 官方基线](../../docs/research/openai-codex-baseline.md)及其中列出的当前官方文档为准；现实案例请以[现场研究记录](../../docs/research/field-problems-codex.md)的原始 URL、证据等级和复核日期为准。每次引用具体产品行为时，记录入口、版本、账户/组织范围、访问日期、官方来源和下一次复核责任人；不要把社区 workaround 或旧截图写成永久操作手册。
+行动分级、最小授权、两段式提交、命令卡和证据边界是稳定方法；具体 Codex 入口、GitHub connector、Enterprise 行为、浏览器能力、token 规则、审批策略和默认权限属于易变事实。产品事实请以[OpenAI Codex 官方基线](../../docs/research/openai-codex-baseline.md)及[官方事实缺口审查](../../docs/research/official-facts-gap-review-2026-08-10.md)列出的当前官方文档为准；现实案例请以[现场研究记录](../../docs/research/field-problems-codex.md)和[真实问题后续研究](../../docs/research/field-problems-follow-up-2026-08-10.md)的原始 URL、证据等级和复核日期为准。后续研究中的多目录、WSL 代理、507 自动重试和 handoff 案例均为用户报告，未在本项目本地复现且未确认根因，不得整理成官方故障清单。每次引用具体产品行为时，记录入口、版本、账户/组织范围、访问日期、官方来源和下一次复核责任人；不要把社区 workaround 或旧截图写成永久操作手册。
+
+| 易变事实 | 官方 URL | 访问日期 | 适用范围 | owner / 下次复核 |
+|---|---|---|---|---|
+| sandbox 限制技术行动空间，approval policy 决定何时暂停；外部工具副作用需单独审批 | https://learn.chatgpt.com/docs/agent-approvals-security.md | 2026-08-10 | 官方文档描述的 Codex 工作面；当前 roots、网络、审批和工具状态仍需本次运行取证 | `facts-maintainer` / 2026-09-09 |
+| 产品权限模式与可选批准方式 | https://learn.chatgpt.com/docs/permission-modes.md | 2026-08-10 | 官方权限模式页面；不外推为当前账户、组织或机器的默认值 | `facts-maintainer` / 2026-09-09 |

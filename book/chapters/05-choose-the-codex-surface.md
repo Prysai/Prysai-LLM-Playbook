@@ -1,149 +1,256 @@
 # 第五章：选择正确的 Codex 工作面
 
+**本章状态：** `candidate`。本章的决策卡已具备可执行结构，但尚未完成独立学习者前测；其中的账户、模型、工具和 Cloud 可用性不得写成已验证。
+
 ## 本章要解决的问题
 
-同一个目标可以从桌面应用、CLI、IDE 扩展、Cloud 或其他工作面开始。很多初学者把“我能打开哪个入口”误认为“哪个入口最适合这个任务”，结果要么缺少上下文，要么拿过大的工具去做过小的事情。
+同一个目标可以从桌面应用、CLI、IDE 扩展或 Cloud 开始。很多初学者把“我能打开哪个入口”误认为“这个任务应该在哪里运行”，又把“已登录”“模型可选”或“setup 成功”误认为整条任务链已经可用。结果可能是目标文件读不到、必要工具不能调用，或 Cloud 的环境准备成功却在 agent 阶段失败。
+
+本章先回答运行位置，再回答入口和模型：先在 `Local / Worktree / Cloud` 中选择工作面（surface），再检查目标入口、模型、资源和工具在该工作面是否实际可用。
 
 ## 学习目标
 
 读者完成本章后应当能够：
 
-- 按上下文、行动、风险和证据选择工作面；
-- 把本地、云端、IDE、CLI、Enterprise host 和 connector 的边界分开核对；
-- 在认证分段失败时保留“哪一步成功、哪一步失败”的证据。
+- 按上下文、隔离、行动、风险和证据选择 `Local / Worktree / Cloud`；
+- 把运行位置与桌面应用、CLI、IDE 等入口分开判断；
+- 在选定工作面后，核对模型、目标资源和必要工具的实际可用性；
+- 区分 Cloud 的 setup 阶段和 agent 阶段，并分别保留证据；
+- 交付一份可由第三方复核和否决的 `surface-decision.md`。
 
 ## 现实问题入口
 
 FP-01 至 FP-05 和 FP-12 覆盖 OAuth 回调、token exchange、Enterprise host、多个组织、updater 凭据和手机验证等现实断点。它们不是产品说明书；具体版本和 workaround 需要重新核对。入口：[Codex 真实用户问题现场研究](../../docs/research/field-problems-codex.md)。
 
-## 1. 先按任务选择，再按习惯选择
+## 一、概念：工作面、入口和可用性不是一回事
 
-选择工作面时先回答四个问题：
+### 1. 先分清运行位置与入口
 
-1. 任务需要本地文件、终端、浏览器还是远程环境？
-2. 任务是探索、修改、审查、并行执行还是持续运行？
-3. 哪些上下文必须保留在本机或组织边界内？
-4. 需要什么验证证据，谁会审查结果？
+工作面回答“任务在哪里运行、修改落在哪里”；入口回答“人从哪里发起和审查任务”。截至 2026-08-10，官方环境文档把 Codex chat 的运行位置分为：
 
-| 任务形态 | 优先考虑的工作面 | 判断重点 |
-|---|---|---|
-| 初次认识、低风险探索 | 桌面应用或交互式入口 | 是否容易观察、确认和回滚 |
-| 本地代码与终端工作 | CLI 或桌面应用 | 项目路径、权限、命令和验证 |
-| 编辑器内小范围修改 | IDE 扩展 | 编辑器上下文是否足够、diff 是否清晰 |
-| 需要隔离或并行运行 | Cloud | 环境、网络、凭据和交付证据 |
-| 需要远程指导与审查 | Remote 或对应远程工作面 | 谁在什么设备上批准了什么 |
+| 工作面 | 任务位置与输入 | 隔离与 Git 交付 | 网络、秘密与审查重点 |
+|---|---|---|---|
+| `Local` | 直接使用当前项目目录和其中的实际文件 | 不额外隔离当前未提交改动；交付通常是本地文件、diff 和验证记录 | 以当前本地沙盒、网络和权限配置为准；在本地查看 diff、命令与运行结果 |
+| `Worktree` | 在本机的 Git worktree 中使用仓库快照 | 通过独立 worktree 隔离变更；仍需确认起始分支、未跟踪输入和最终 Git 交付方式 | 仍属于本机运行；网络、工具与凭据不能仅凭“已隔离”推断；在对应 worktree 审查 diff 和验证记录 |
+| `Cloud` | 在已配置的云环境中检出所选仓库与分支或 commit | 在隔离容器中运行；完成后审查 summary 和 diff，再决定是否跟进或打开 PR | setup 与 agent 是不同阶段；分别核对依赖、网络、秘密生命周期、任务日志和结果 diff |
 
-这张表是方法，不是产品承诺。具体入口、支持范围和界面随官方版本变化，必须查 [官方基线](../../docs/research/openai-codex-baseline.md)、[本轮事实刷新记录](../../docs/research/openai-codex-facts-refresh-2026-08-09.md) 和当前文档。
+桌面应用、CLI 和 IDE 是入口或交互方式，不应与上表并列成同一层选择。比如，CLI 强调本地仓库、命令和可重复工作流；IDE 强调编辑器上下文与就近 diff 审查。先选 `Local / Worktree / Cloud`，再在该工作面支持的入口中选择最便于执行和审查的一种。
 
-### 一个容易踩坑的支持面例子：Plugin
+### 2. 产品支持、账户授权与本次可用是三层证据
 
-截至本轮核对的官方 Plugins 文档，支持面要分开记：
+一个能力只有在当前任务链上逐段通过，才算本次可用：
 
-| 层 | 当前文档能支持的说法 | 不能从这句话推出 |
-|---|---|---|
-| 产品支持 | ChatGPT 的 Chat/Work 可在 web、desktop 和 mobile 使用账户可用的 Plugins；ChatGPT desktop app 中的 Codex 支持 Plugins；Codex CLI 有 Plugin browser；IDE extension 不支持 Plugins | 当前账户一定能看到目录，或某个组织一定允许安装 |
-| 账户/组织 | 目录、workspace 管理、connector 和认证仍受账户、workspace、组织策略和地区影响 | “已登录”就等于目标仓库、服务或工具已授权 |
-| 本次实际可用 | Plugin 已安装、需要的 connector 已认证、新会话能看到能力，并且一次低风险调用有结果证据 | 安装成功就等于外部动作成功 |
+```text
+产品文档支持
+→ 当前账户 / workspace / 组织允许
+→ 目标资源可读
+→ 候选模型在该工作面实际可选
+→ 必要工具实际可调用
+→ 具体动作完成
+→ 结果得到验证
+```
 
-移动端可以使用账户可用的 Chat/Work plugins，但不要把桌面目录的浏览和安装步骤直接外推到 mobile。每次记录具体入口、账户范围、目标资源和结果；这组事实对应 `OF-015`、`UF-001` 和 `LB-002`，会随官方文档变化而复查。
+上游通过不能替代下游证据。登录成功只证明身份阶段的一个结果；模型出现在选择器中只证明模型选择阶段；它们都不证明目标仓库可读、终端可用或任务结果成立。
 
-## 2. 本地与云端不是简单的“快与慢”
+### 3. Cloud 的 setup 与 agent 是两个阶段
 
-本地工作通常更接近现有文件、开发环境和真实运行结果，但也更接近本地秘密、未提交改动和生产误操作。云端环境提供隔离和并行的价值，但需要重新确认环境、依赖、网络、凭据和文件是否真的存在。
+官方 Cloud 环境文档说明：setup 脚本可联网安装依赖；进入 agent 阶段后，网络默认关闭，除非为该环境另行启用。环境变量可贯穿任务，而 secrets 只在 setup 脚本中可用，并在 agent 阶段前移除。
 
-真正的选择问题是：哪种环境能在可接受的风险下提供完成任务所需的上下文和证据？
+因此必须分开记录：
 
-## 3. 用五道门选择工作面
+```text
+setup_action / setup_evidence
+agent_action / agent_evidence
+network_phase
+secret_lifetime
+result_review
+```
 
-按下面的顺序排除不合适的入口：
+“setup 已安装依赖”不能推出“agent 已联网调用服务”；“secret 在 setup 可读”也不能推出 agent 阶段仍可读取它。
 
-1. **上下文门：** 目标文件、版本、项目规则和必要数据是否真的能在这个工作面访问？
-2. **数据门：** 哪些内容必须留在本机、组织或受控环境内？工作面是否会把它们带到不适用的地方？
-3. **动作门：** 任务只读、改本地、改共享仓库，还是要调用外部服务？入口是否支持所需动作，但没有因此扩大不需要的权限？
-4. **证据门：** 能否在同一工作面看到 diff、命令结果、来源、截图或人工确认？
+## 二、决策：先选工作面，再检查模型和入口
+
+### 1. 用五道门排除不合适的工作面
+
+按下面顺序判断：
+
+1. **上下文门：** 目标文件、版本、项目规则和必要数据是否能在该工作面读取？
+2. **隔离与数据门：** 是否需要保护当前目录中的未提交改动，或限制数据离开本机、组织和受控环境？
+3. **动作门：** 任务只读、改本地、改隔离分支，还是需要外部服务？该工作面是否支持必要动作而没有扩大无关权限？
+4. **证据门：** 能否取得与断言对应的 diff、命令结果、日志、页面或人工确认？
 5. **恢复门：** 认证失败、网络中断、依赖缺失或部分修改后，能否保留现场并从 checkpoint 继续？
 
-一个入口“支持”某个能力，只能说明产品层可能提供它；账户已授权说明账户层通过；本次实际可用还要有目标对象和动作结果。三者必须分开记录。
+先根据这五道门选出候选工作面，然后再检查入口和模型。不要为了使用某个模型而倒推工作面，也不要为了沿用习惯入口而补开不必要的权限。
 
-## 4. 入口选择的最小协议
+### 2. 交付 Local / Worktree / Cloud 决策卡
 
-在开始前记录：
-
-```text
-任务：
-工作面：
-必须可访问的上下文：
-不应离开当前边界的数据：
-允许的副作用：
-验证位置：
-交付给谁：
-```
-
-如果答案里出现“可能需要全部文件”“先给全部权限再说”“完成后再想怎么验证”，说明入口选择还没有完成。
-
-## 5. 认证失败也要分段记录
-
-不要把“浏览器显示成功”或“CLI 已登录”写成整条链路成功。至少按以下阶段记录：
+为同一任务分别填写三张卡，并合并为 `surface-decision.md`。即使某工作面不可用，也要保留被否决卡和证据，不能只写最终选择。
 
 ```text
-入口打开 → 身份验证 → 凭据/会话交换 → 目标 host/组织 → 目标资源读取 → 具体动作 → 结果验证
+task_id：
+task_goal：
+surface：Local | Worktree | Cloud
+entry：desktop | CLI | IDE | web | other
+decision：selected | rejected | blocked | not_observed
+
+required_context：
+context_readable：yes | no | not_observed
+context_evidence：
+data_boundary：
+allowed_side_effects：
+isolation_and_git_delivery：
+
+account_authorized：yes | no | not_observed
+authorization_evidence：
+target_resource_readable：yes | no | not_observed
+resource_read_evidence：
+
+model_id：
+surface_available：yes | no | not_observed
+availability_evidence：
+required_tools：
+tools_available：yes | no | not_observed
+tool_evidence：
+
+setup_action：not_applicable | 具体动作
+setup_evidence：
+agent_action：not_applicable | 具体动作
+agent_evidence：
+network_phase：local_policy | setup | agent | not_observed
+secret_lifetime：none | setup_only | full_task_env | not_observed
+result_review：
+
+recovery_path：
+rejection_or_block_reason：
+checked_at：
+reviewer：
 ```
 
-每个阶段写 `passed / failed / not_observed`，并附时间、版本、目标和证据位置。缺少某一段时，交付状态只能覆盖已观察段；不能用下一段的成功补齐上一段的缺口。
+决策规则：
 
-对于 Plugin，再把流程拆成：
+- `target_resource_readable != yes` 时，不得把登录成功写成该工作面可用；
+- `surface_available != yes` 时，候选模型不得进入质量比较；
+- `tools_available != yes` 时，不能用模型可选替代工具证据；
+- Cloud 的 setup 与 agent 任一关键阶段缺证据时，只能声明已观察阶段，不能声明任务完成；
+- 没有运行条件时使用 `not_observed`，不要猜成 `yes` 或 `no`。
 
-```text
-产品支持 → 账户/组织授权 → 安装 → connector 认证 → 新会话
-→ 工具可见 → 具体动作 → 外部结果验证
-```
+## 三、行动：低风险实验——同一任务的工作面决策
 
-这不是一串可以用“登录成功”跳过的步骤。认证成功只证明身份或连接阶段的某个结果；它不证明目标资源可读，也不证明当前任务已获写入或发布权限。
-
-## 6. 实验：同一任务的入口对照
+**实验状态：** `not_run`。以下是可执行协议，不是本仓库已经完成的运行记录。
 
 ### Setup
 
-选择一个脱敏的文档或纯函数任务，准备相同输入和验收标准。只使用已有账户和低风险沙盒，不新增连接、不提交表单、不推送；记录每个工作面的模型、版本、权限、可访问文件和 `run-id`。不要求每个工作面都能执行任务；无法提供关键上下文时，应记录为不适合，而不是强行补权限。
+准备一份脱敏的 Markdown 发布说明、约束清单和一个没有 remote 的临时 Git 仓库。目标只是在本地形成草稿和检查结果；不发布、不推送、不连接新账户、不上传数据，也不写入生产环境。
+
+固定以下输入：
+
+- 同一份发布说明和验收标准；
+- 必须读取的两个输入文件和只允许修改的一个输出文件；
+- 一个只读格式检查命令；
+- 一张模拟的“浏览器登录成功但目标仓库不可读”状态卡；
+- 一张模拟的“模型可选但终端工具不可用”状态卡；
+- 一张模拟的“Cloud setup 安装成功但 agent 网络关闭”状态卡。
 
 ### Task
 
-选一个低风险的文档或纯函数任务，分别在本地交互式入口、CLI/终端入口和编辑器入口中描述。只比较：
+1. 不运行任务，先分别填写 `Local / Worktree / Cloud` 三张决策卡。
+2. 对每张卡先检查上下文、隔离、动作、证据和恢复五道门。
+3. 选出候选工作面后，再检查入口、`surface_available`、目标资源和必要工具。
+4. 只在一张满足最小条件的卡上执行草稿与只读检查；其余卡明确写 `rejected`、`blocked` 或 `not_observed`。
+5. 保存实际 diff 或“未执行”的原因，不补开权限来让三张卡都通过。
 
-- 任务上下文是否完整；
-- 计划和 diff 是否容易检查；
-- 验证是否能真实运行；
-- 失败时能否恢复；
-- 哪个入口产生了最少的无关动作。
+### 最小交付物
 
-不要把“界面更漂亮”当作唯一结论。
+```text
+surface-decision.md
+├─ 固定任务与验收标准
+├─ Local 决策卡
+├─ Worktree 决策卡
+├─ Cloud 决策卡
+├─ 被否决工作面的原因表
+├─ 认证 / 资源 / 模型 / 工具 / Cloud 阶段证据索引
+└─ 最终选择、恢复路径与限制说明
+```
+
+## 四、证据：什么才算决策成立
 
 ### Evidence
 
-保存三次任务协议、入口决策卡、实际读取/修改范围、计划和 diff、验证命令或页面结果、失败记录与恢复方式。比较表至少包含：
+证据表至少包含：
 
 ```text
-run-id | 工作面 | 产品支持 | 账户授权 | 本次实际可用 | 上下文缺口 | 证据 | 恢复方式
+run_id | surface | entry | account_authorized | target_resource_readable
+| model_id | surface_available | availability_evidence
+| tools_available | setup_status | agent_status | decision | evidence
 ```
 
-不能用登录成功替代“目标资源可读”或“具体动作已验证”。
+验收时逐项检查：
 
-### Reflection
+- 三张卡使用相同任务、输入和验收标准；
+- 目标文件读取证据与“登录成功”证据分开；
+- 模型可见性与工具调用证据分开；
+- Cloud 的 setup 日志、agent 日志、网络阶段和结果 diff 分开；
+- 最终工作面有实际 diff 与检查输出，或有可审查的 `blocked` 证据；
+- 第三方只看 `surface-decision.md` 就能解释为何选择或否决每个工作面。
 
-说明哪个工作面提供了最完整证据，哪个工作面缺少关键上下文，以及结果是否受网络、缓存、账户或本地依赖影响。下一次只改变一个环境变量。
+证据只支持对应范围。例如，setup 日志只支持环境准备；格式检查通过只支持该检查；没有运行 Cloud 就必须保留 `not_observed`。
 
-## 故意失败/边界实验
+## 五、失败：三种必须识别的变体
 
-先在一个未记住 GitHub Enterprise host 的空状态页面操作，再用 CLI 在明确 host 上读取同一仓库。比较两处的账户、host、权限和仓库证据；不要把一处登录成功当成另一处已经可用。
+| 失败变体 | 已通过 | 未通过 | 正确状态与处理 |
+|---|---|---|---|
+| 登录成功但资源不可读 | 身份验证 | 目标 host、组织或仓库读取 | `blocked`；保留登录与读取失败两段证据，不能继续声称该工作面可用 |
+| 模型可选但工具不可用 | `surface_available = yes` | 终端、文件、浏览器或目标 connector 调用 | `rejected` 或 `blocked`；记录 `tool_evidence`，不要把失败归为模型质量 |
+| Cloud setup 成功但 agent 阶段失败 | 依赖安装或 setup 网络 | agent 网络、秘密读取、任务动作或结果验证 | setup 标 `passed`，agent 标 `failed / not_observed`；任务状态仍是 `blocked`，不得写“Cloud 任务完成” |
+
+认证链路仍应逐段记录：
+
+```text
+入口打开 → 身份验证 → 凭据 / 会话交换 → 目标 host / 组织
+→ 目标资源读取 → 模型可用 → 工具可用 → 具体动作 → 结果验证
+```
+
+每段使用 `passed / failed / not_observed`，并附时间、入口、目标和证据位置。若连续失败，停止扩权，先判断是工作面不合适、账户边界不满足，还是运行条件尚未建立。
+
+## 六、反思与迁移
+
+复盘时回答：
+
+- 哪一道门真正改变了最终选择？
+- 哪个“上游成功”最容易被误写成整条链路成功？
+- 被否决的工作面缺的是产品支持、账户授权、资源、模型、工具，还是阶段证据？
+- 下一次只改变哪个条件，才能判断阻塞原因而不扩大权限？
+
+迁移到一个需要浏览器查官方来源、终端生成本地证据、远程环境隔离客户数据的研究任务。重新填写三张工作面卡，改写数据边界与最小证据；不要复制本次工程任务的入口结论。
 
 ## 迁移练习
 
-把入口选择协议应用到一个需要浏览器、终端和远程环境的研究任务。写出每个工作面必须提供的上下文、禁止离开的数据和最小验证。
+把本章决策卡迁移到一个“浏览器核对官方事实、终端生成本地证据、隔离环境处理脱敏数据”的研究任务。保持 `surface`、入口、模型和工具字段分开，重新定义数据边界、阶段证据和恢复路径；不要把本章工程任务的入口结论直接复制过去。
+
+## 本章证据
+
+交付 `surface-decision.md`、三张工作面卡、被否决原因表、认证/资源/模型/工具/Cloud 阶段证据索引，以及最终 diff 或明确的 `blocked` 记录。没有运行 Cloud 时，Cloud 卡必须保留 `not_observed`，不能用官方文档代替运行日志。
+
+## 易变事实与官方来源
+
+| 事实 | 官方来源 | 访问日期 | 适用范围 | 负责人 / 下次复核 |
+|---|---|---|---|---|
+| Codex chat 的运行位置包括 Local、Worktree 和 Cloud；Local 与 Worktree 在本机运行 | https://learn.chatgpt.com/docs/environments/modes.md | 2026-08-10 | 官方环境选择；具体账户、入口和 UI 需当前核验 | `facts-maintainer` / 2026-09-10 |
+| Cloud 任务包含 setup 与 agent 阶段，最终通过 summary 和 diff 审查 | https://learn.chatgpt.com/docs/environments/cloud-environment.md | 2026-08-10 | 官方 Cloud 环境生命周期；不证明本仓库已创建环境或运行任务 | `facts-maintainer` / 2026-09-10 |
+| setup 可联网；agent 网络默认关闭但可配置；secrets 在 agent 阶段前移除 | https://learn.chatgpt.com/docs/environments/cloud-environment.md 和 https://learn.chatgpt.com/docs/cloud/internet-access.md | 2026-08-10 | 官方 Cloud 配置；实际网络、allowlist、组织策略和 secrets 需逐环境核验 | `facts-maintainer` / 2026-09-10 |
+| 模型工作面支持不同，Cloud chat 当前不能更改默认模型 | https://learn.chatgpt.com/docs/models.md | 2026-08-10 | 官方模型页当前矩阵；实际可见性受账户、workspace、组织和 rollout 影响 | `facts-maintainer` / 2026-09-10 |
+
+本章同时使用[官方事实缺口审查](../../docs/research/official-facts-gap-review-2026-08-10.md)和[本轮事实刷新记录](../../docs/research/openai-codex-facts-refresh-2026-08-09.md)保持来源边界。官方产品说明不等于当前账户或本仓库的运行证据。
 
 ## 来源与更新提示
 
-入口、计划资格、认证流程和支持范围属于易变事实。以[官方 Codex 基线](../../docs/research/openai-codex-baseline.md)、[本轮事实刷新记录](../../docs/research/openai-codex-facts-refresh-2026-08-09.md)和当前官方文档复核，不以旧截图或 issue workaround 作为永久操作手册；刷新记录中的 `unconfirmed` 和 `local_unreproduced_boundary` 不能写成当前账户已具备的能力。
+工作面分类、模型可用性、Cloud 生命周期和入口支持范围都是易变事实。更新时先复核官方来源，再同步[事实影响注册表](../../docs/governance/fact-impact-registry.yaml)、本章、实验和页面；用户报告只能作为排查案例，不能替代官方事实或本地运行证据。
 
 ## 本章验收
 
-学习者能根据任务的上下文、行动、风险和验证需求解释入口选择；能说明为什么产品事实不能从旧截图或二手文章直接推断；能为本地和云端各写出一项必须复核的边界；能把认证链路拆成阶段，并为每一段标注证据和未观察状态。
+- [ ] 能先选 `Local / Worktree / Cloud`，再选择入口和模型；
+- [ ] 能交付包含三张卡和否决理由的 `surface-decision.md`；
+- [ ] 能用独立证据填写资源可读、`surface_available` 和工具可用状态；
+- [ ] 能区分 Cloud setup 与 agent 阶段，并说明秘密和网络的阶段边界；
+- [ ] 面对三种失败变体时会标记 `blocked / rejected / not_observed`，而不是扩大完成声明；
+- [ ] 能说明本章仍是 `candidate`，实验仍是 `not_run`，没有把官方文档写成本仓库实测。

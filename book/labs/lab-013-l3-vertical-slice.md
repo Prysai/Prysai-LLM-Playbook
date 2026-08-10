@@ -9,12 +9,13 @@ goal: "把任务协议、能力选择、基线、checkpoint、受控编辑、验
 setup: "一个只包含合成 Markdown 的临时本地项目、固定输入、无远程仓库和一份空白运行记录"
 task: "只在本地临时项目中把一份模糊的发布说明改成可执行的 Markdown 草稿，经过定义、计划、构建、验证、审查和交付；保存每个阶段的退出证据，并完成一次故意失败与一次跨领域迁移"
 evidence:
-  - "run_id、目标/非目标、目标路径、允许权限和外部副作用声明"
+  - "run_id、目标/非目标、目标路径，以及 sandbox、approval、network、allowed roots 和外部副作用确认声明"
   - "输入文件 hash、原始副本、初始工作树状态和回滚目标"
   - "Skill/工具选择与不选择记录，以及发现、加载、采用和行为验证状态"
   - "切片卡、阶段记录、checkpoint log、action log 和实际 diff"
   - "验证命令、原始输出、退出码、断言—证据表和未验证项"
   - "故意失败的停止/恢复记录，以及迁移任务的独立证据"
+  - "多目录、WSL 代理、无事件后自动重试或 handoff 消息完整性中的至少一张可观察排查卡"
 failure_variant: "至少选择一个缺少输入、验证失败/卡住、中途中断、外部文本注入或验证要求安装依赖的变体；正确结果可以是 blocked 或 unverified，不得用猜测补齐缺口"
 reflection: "哪个 checkpoint 最早阻止了错误扩大？哪些证据只证明文件变化而不能证明任务有效？如果必须交接给另一位成员，最容易缺少哪个字段？"
 status: draft
@@ -59,6 +60,8 @@ Make this clearer and ready for review. Keep it short and fix anything necessary
 
 本实验允许的动作只有：读取临时目录、创建本地文件、编辑 `work/release-note.md`、运行已有的无副作用检查、查看本地 diff、建立本地 checkpoint 和写运行记录。禁止联网、安装依赖、读取凭据、访问真实项目、创建远程、推送、发布、发送消息、重启环境或删除不在实验目录内的文件。
 
+权限不是一个字段：`sandbox_mode` 记录技术行动空间，`approval_policy` 记录何时必须暂停批准，`network_access` 记录当前阶段的网络边界，`allowed_roots` 分开记录可读与可写目录，`side_effect_confirmation` 记录外部工具写操作的对象和确认人。它们均不能替代用户对本次任务的授权。本实验默认网络和外部副作用均为禁止；若当前值无法观察，写 `not_observed`，不要按产品默认值猜测。
+
 ## 你必须留下的运行记录
 
 为本次运行生成一个不含秘密的 `run_id`，并在记录中填写：
@@ -71,14 +74,21 @@ target_workspace:
 target_files:
 inputs:
 permissions:
+sandbox_mode_observed:
+approval_policy_observed:
+network_access_observed:
+allowed_roots_read:
+allowed_roots_write:
+side_effect_confirmation:
 external_side_effects:
 acceptance_criteria:
 rollback_target:
+stop_condition:
 ```
 
 ### 1. 定义：先确认目标，不要先改文件
 
-记录 `input/brief.md`、`input/constraints.md` 的路径和 hash，保存原始副本，运行 `git status --short`，确认没有远程地址。把“需要一个更清楚的草稿”改写成三条可检查的验收标准：标题清楚、说明发生了什么、说明读者下一步能做什么，并列出禁止添加的内容。
+记录 `input/brief.md`、`input/constraints.md` 的路径和 hash，保存原始副本，运行 `git status --short`，确认没有远程地址。记录实际工作目录与可观察的 read/write roots：先对输入和目标父目录做只读存在性检查，只在实验临时目录做最小写入探针，然后删除该探针文件并确认没有其他状态变化。把“需要一个更清楚的草稿”改写成三条可检查的验收标准：标题清楚、说明发生了什么、说明读者下一步能做什么，并列出禁止添加的内容。
 
 退出定义阶段的证据是：任务协议、输入清单、权限卡、初始状态、hash 和回滚目标都已保存。任何一项缺失，状态为 `blocked`，不要创建输出文件。
 
@@ -116,6 +126,8 @@ action log 至少包含：
 ```text
 timestamp | observation | action | tool | result | state_change | evidence | risk | next_step | stop_reason
 ```
+
+若动作涉及批准提示，额外记录“提示针对哪个准确动作和目标”；出现提示只证明批准机制被触发，不证明 sandbox 已扩大、写入已发生或任务已完成。
 
 ### 4. 验证：检查命令和用户效果分开
 
@@ -160,9 +172,11 @@ permission_boundary:
 
 把 `input/constraints.md` 暂时移出实验副本，或让输入 hash 无法生成。正确结果是停止在定义阶段，保留初始状态并写明“缺少输入”；不得创建替代约束、凭空补验收标准或继续编辑。
 
-### F2：验证失败或长时间无输出
+### F2：验证失败、长时间无事件或自动重试
 
-让已有检查返回非零，或用安全的本地等待命令演练中断。中断只代表重新获得控制权，不代表验证通过。保存中断前输出、退出状态、当前 diff 和未验证项；改变诊断条件后最多再试一次，否则交付 `blocked`。
+让已有检查返回非零，或用安全的本地等待命令演练中断。记录开始时间、首个事件时间（若无则写 `none`）、最后事件、退出状态、是否发生自动重试和当前 checkpoint。中断只代表重新获得控制权，不代表验证通过。保存中断前输出、当前 diff、生成物、外部状态和未验证项；第一次运行是否产生副作用仍未知时禁止非幂等重试。只有状态已复核、动作幂等且诊断条件确实改变时最多再试一次，否则交付 `blocked` 或 `unverified`。
+
+这个分支借鉴了一则“长时间无可见事件、随后 HTTP 507 并自动重试”的公开用户报告；本项目未本地复现，也未确认 507 的根因或固定等待时长。实验中的本地等待只是训练事件时间线和停止规则，不能称为复现该 Issue。
 
 ### F3：中途切换上下文
 
@@ -196,6 +210,39 @@ effective: 外部状态是否按预期改变
 
 保存平台、客户端/Provider、版本、目标、调用、错误类别、退出状态和当前 checkpoint。若没有改变诊断条件，不重复同一动作；不要直接扩大权限、安装、重装、重启或发布。交付状态应精确写成 `blocked`、`read_verified_action_unverified` 或 `single_agent_verified_multi_agent_unverified` 这类范围化结论，并说明下一项最小检查。公开案例来源和边界见[网页田野研究](../../docs/research/web-field-problems-2026-08-10.md) WF-08—WF-11；它们不是本实验已复现的产品故障。
 
+### 公开用户报告驱动的排查分支
+
+下面四类情形来自公开 GitHub Issues 的用户报告，不是官方故障清单；本项目均未本地复现，也未确认根因。实验不要求制造真实平台故障，只要求在适用时运行无副作用探针；不适用时写 `not_observed`，不得写成 `passed`。
+
+| 报告情形 | 实际可观察项 | 最小安全探针 | 失败/停止规则 |
+|---|---|---|---|
+| 多目录 write roots 与项目设置不一致 | 项目目录清单、当前任务 read/write roots、当前目录、批准提示 | 对每个目录先只读存在性检查；只在获准的临时目录写一个无敏感探针 | 第二目录未确认可写或提示范围不明时停止编辑；不自动批准扩大范围 |
+| Windows / WSL / Agent 代理环境不一致 | 三层环境是否存在代理变量、脱敏协议/主机/端口、DNS/连通与 Agent 请求结果 | 只比较变量存在性与脱敏目标，每次改变一个条件 | 不显示凭据；需要创建 `.codex/.env`、写持久配置或改变代理时先停下确认 |
+| 长时间无事件后错误与自动重试 | 请求开始、首个事件、最终状态、重试时间、重试前后 diff/外部状态 | 使用 F2 的本地幂等等待演练时间线 | 第一次副作用不明时不重试；无新条件时停止，状态为 `unverified` 或 `blocked` |
+| 子 Agent 已创建但 handoff 正文未到达 | Agent 标识、发送时间、root 侧任务摘要、子 Agent 实收摘要、返回状态 | 要求回显固定短词，分别检查创建、消息到达、执行、结果返回 | 正文缺失时停止后续切片，改用人工交接或单 Agent；禁止让子 Agent 猜任务 |
+
+WSL/代理分支不应在本实验中写入真实代理配置；若没有安全的 WSL 测试环境，只提交 `not_observed` 卡。handoff 分支若没有可用子 Agent，使用两份本地角色记录演练交接契约，并把运行能力标为 `not_available`，不能声称验证了产品 handoff。
+
+统一排查卡如下：
+
+```text
+run_id / date_and_timezone:
+surface_and_version:
+workspace_or_agent:
+exact_target:
+sandbox_mode / approval_policy:
+network_access:
+allowed_roots_read / allowed_roots_write:
+expected_capability / observed_capability:
+actual_tool_or_network_event:
+approval_prompt_seen:
+external_side_effect_seen:
+last_confirmed_checkpoint:
+retry_reason_and_changed_condition:
+safe_next_check / stop_condition:
+status: passed | not_observed | unverified | blocked
+```
+
 ## 通过标准
 
 - [ ] 我能在新鲜上下文中说明目标、非目标、输入、权限、停止条件和回滚目标；
@@ -204,6 +251,10 @@ effective: 外部状态是否按预期改变
 - [ ] 我能把每条完成声明映射到证据，并标出 `unverified`、`partial` 或 `blocked`；
 - [ ] 我完成至少一个失败变体，失败时停止或恢复，而不是无限重试或扩大权限；
 - [ ] 我把至少一个工具/Skill/浏览器/Provider 能力拆成可见、可发现、可读取、可行动和生效五层，并只对有证据的层做声明；
+- [ ] 我分别记录了 sandbox、approval、network、allowed roots 和工具副作用确认，没有用其中一层替代另一层；
+- [ ] 我针对四类公开用户报告中的至少一类提交了可观察排查卡，并明确 `not_observed`、未本地复现和未确认根因的边界；
+- [ ] 我在自动重试前检查了 checkpoint、幂等性和既有副作用，或因状态不明正确停止；
+- [ ] 我在 handoff 中分别验证创建、消息到达、执行和结果返回，或在消息缺失时停止依赖子 Agent；
 - [ ] 我能交付一份另一位成员可继续的摘要，并明确下一检查和回滚目标；
 - [ ] 我把这套方法迁移到研究或内容任务，并重新填写领域特有的输入、来源和权限。
 
@@ -229,6 +280,6 @@ effective: 外部状态是否按预期改变
 
 ## 来源与更新提示
 
-本实验的状态卡、checkpoint、断言—证据表、失败停止和迁移要求是稳定的方法，来自项目自身的学习模型、章节契约和公开问题研究的原创提炼。真实问题案例见[网页田野研究](../../docs/research/web-field-problems-2026-08-10.md)；方法综合见[高阶方法研究](../../docs/research/web-methods-synthesis-2026-08-10.md)。公开网页只作为问题和方法的来源记录，不复制外部文字、代码、图片或 Skill 指令。
+本实验的状态卡、checkpoint、断言—证据表、失败停止和迁移要求是稳定的方法，来自项目自身的学习模型、章节契约和公开问题研究的原创提炼。真实问题案例见[网页田野研究](../../docs/research/web-field-problems-2026-08-10.md)和[真实问题后续研究](../../docs/research/field-problems-follow-up-2026-08-10.md)；方法综合见[高阶方法研究](../../docs/research/web-methods-synthesis-2026-08-10.md)。多目录、WSL 代理、507 自动重试和 handoff 消息缺失均只是用户报告，未在本项目本地复现且未确认根因。公开网页只作为问题和方法的来源记录，不复制外部文字、代码、图片或 Skill 指令。
 
-产品入口、模型、工具、权限、认证和界面属于易变事实；引用它们时应回到[官方 Codex 基线](../../docs/research/openai-codex-baseline.md)，记录访问日期、适用范围、owner 和下一次复核。当前实验仍是 `draft`、`not_run`，本文不证明任何真实 Skill、外部服务或发布流程已经验证。
+产品入口、模型、工具、权限、认证和界面属于易变事实；引用它们时应回到[官方 Codex 基线](../../docs/research/openai-codex-baseline.md)和[官方事实缺口审查](../../docs/research/official-facts-gap-review-2026-08-10.md)，记录访问日期、适用范围、owner 和下一次复核。当前实验仍是 `draft`、`not_run`，本文不证明任何真实 Skill、外部服务、用户报告故障或发布流程已经验证。

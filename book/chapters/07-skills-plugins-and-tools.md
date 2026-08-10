@@ -36,13 +36,14 @@ FP-06 记录了文件 symlink 影响 Skill discovery，FP-07 记录了显式调�
 5. 如果多个能力需要一起分发，再考虑 plugin；
 6. 最后才决定是否安装或开放额外能力。
 
-## 3. Skill 选择的五个问题
+## 3. Skill 选择先回答任务缺口
 
-- 它是否真的覆盖当前任务，而不是只共享几个关键词？
-- 它的 description 是否足够精确，边界是否清楚？
-- 它是否需要外部服务、账号、网络或高权限？
-- 它的来源、许可证、版本和维护状态是否可追踪？
-- 有没有正例、边界例、失败例和可检查输出？
+- **任务缺口：** 当前缺的是稳定方法、确定性脚本、外部连接，还是任务本身尚未澄清？
+- **触发与不触发：** 哪些输入应触发，哪些相似任务必须让位？不能只看名称是否共享关键词。
+- **来源与 revision：** 来源 URL、固定提交/版本或归档哈希、盘点日期是否可复核？
+- **许可与依赖：** 仓库许可证是否覆盖目标文件，NOTICE、嵌套资产和运行依赖是否清楚？
+- **权限与副作用：** 它需要读取什么、写到哪里、是否联网/认证，会不会发送、发布、删除或改变外部状态？
+- **验证与维护：** 是否能在隔离环境覆盖正例、边界例、失败例和迁移例；谁批准、谁维护、如何备份和回滚？
 
 外部目录的数量不是质量指标。大量自动化 skill 还会携带账号、网络和第三方服务风险，必须逐项审查。
 
@@ -52,7 +53,7 @@ FP-06 记录了文件 symlink 影响 Skill discovery，FP-07 记录了显式调�
 
 截至 2026-08-09 的官方支持说明：ChatGPT 的 Chat/Work 可在 web、desktop 和 mobile 使用账户可用的 Plugins；ChatGPT desktop app 中的 Codex 支持 Plugins；Codex CLI 有 Plugin browser；IDE extension 不支持 Plugins。mobile 的 Chat/Work 使用能力不能反推 mobile 具备桌面目录浏览或安装入口。
 
-因此把状态写成一条可审查的链：
+因此把产品与连接状态写成一条可审查的链：
 
 ```text
 产品支持 → 账户/组织授权 → Plugin 安装 → connector 认证
@@ -61,18 +62,59 @@ FP-06 记录了文件 symlink 影响 Skill discovery，FP-07 记录了显式调�
 
 每个箭头都需要自己的证据。`Sign in with ChatGPT` 共享身份资料也不自动授予 Plugin 数据访问权或批准动作；连接要求的权限仍需单独审查和批准。对应的易变断言是 `OF-015`、`OF-016`、`UF-001`、`UF-003` 和 `LB-002`。如果官方页面或当前工作面改变，先查[事实影响注册表](../../docs/governance/fact-impact-registry.yaml)，再按影响组重审章节、实验、Skill 和评测。
 
-## 4. 把“推荐”和“安装”分开
+截至 2026-08-10，官方 Skills/Plugins 文档还把自动匹配与显式选择作为两个入口：ChatGPT 使用 `@` 提及，Codex 使用 `$` 提及；安装后通常需要新建 chat 或 CLI session。它们属于易变的产品事实，不是 Skill 自带的权限。本地验证必须分别保存自动匹配证据与显式调用证据，并记录工作面、是否新建会话、实际调用字符串、加载资源、行为输出和结果验证；当前仓库没有这些运行证据时只能写 `not_observed`。
 
-Skill 决策至少有四个不同状态：
+## 4. 安装前审查包
+
+安装前必须产出 `skill-adoption-decision.md`，而不是只写一句“检查过许可证”。最小字段如下：
+
+```text
+task_gap:
+trigger_conditions:
+non_trigger_conditions:
+source_url / revision / inventory_date:
+license / NOTICE / nested_assets:
+dependencies:
+target_install_scope:
+permissions:
+external_side_effects:
+isolated_trial:
+backup_and_restore_target:
+rollback_steps_and_success_check:
+approval_points:
+behavior_tests: positive | boundary | failure | migration
+owner / next_review:
+decision: recommendation-only | blocked | approved-to-install | installed-candidate
+evidence / unverified:
+```
+
+四个决策值的含义是：
 
 | 状态 | 意思 | 允许说什么 | 不能说什么 |
 |---|---|---|---|
-| `recommendation-only` | 根据任务判断可能适合 | “它可能解决这个方法缺口” | “已安装/可用” |
-| `approved-to-install` | 来源、版本、许可、权限、目标路径和回滚已被批准 | “可以在指定范围试装” | “已经验证有效” |
-| `installed-candidate` | 已在隔离目标安装，但尚未完成行为测试 | “安装动作有记录” | “团队已采用” |
-| `verified` | 正例、边界、失败和迁移在声明环境通过 | “在该范围内通过” | “所有入口/账户都适用” |
+| `recommendation-only` | 任务匹配初步成立，建议继续只读审查或隔离试用 | “值得继续审查” | “已批准安装/可用” |
+| `blocked` | 许可证、NOTICE、revision、依赖、权限或回滚有阻塞项 | “拒绝或暂不采用，并列出解阻条件” | “先安装再补材料” |
+| `approved-to-install` | 指定 revision、目标范围、备份/回滚和批准点均已通过 | “可在批准范围安装” | “已安装/已验证” |
+| `installed-candidate` | 安装记录与目标路径可复核，仍待行为验证与采用决定 | “隔离安装候选存在” | “团队已采用/生产可用” |
 
-缺少来源、版本、许可证、依赖、权限或回滚路径时，状态必须停在 `blocked` 或 `reference-only`。GitHub 页面能打开，不等于许可证清楚；manifest 存在，也不等于工具调用成功。
+这组值是**采用决策**，不替代项目的 `draft / candidate / verified / production-ready` 内容状态。缺少关键材料时必须是 `blocked`；GitHub 页面能打开，不等于许可证清楚，manifest 存在也不等于工具调用成功。
+
+还要把五个容易混淆的行为状态拆开：
+
+| 行为状态 | 最小证据 | 不能推出 |
+|---|---|---|
+| 文件存在 | 固定 revision 中的路径、清单或哈希 | 当前工作面已发现 |
+| 被发现 | 当前工作面的可见列表或名称解析记录 | 本次会话已加载 |
+| 被加载 | 新会话中的资源/指令加载证据 | 团队决定采用 |
+| 被采用 | owner 与批准记录明确把它纳入声明范围 | 行为已经验证 |
+| 被验证 | 声明环境中的正例、边界、失败和迁移证据 | 其他入口、账户或版本同样成立 |
+
+安装是另一项可观察动作：目标路径出现文件且安装日志成功，只能支持 `installed-candidate`，不能跳过上述任何一项。
+
+### 两个原创示范结论
+
+- **推荐候选：** S05 的 `code-review-and-quality` 可作为“合并前多轴审查”任务的 `recommendation-only` 候选。来源固定为 `https://github.com/addyosmani/agent-skills` 的本地归档，revision 证据为 SHA-256 `6EEDBE7D2EA3A82417781D879785BD501FBDE21275627F557DE4B76560BA1250`；仓库级 MIT 信号已记录。触发条件是已有固定 diff/基线并要求审查，不触发于生成新功能或没有比较基线的泛化请求。依赖、目标 Skill 的嵌套资产、实际权限和回滚尚未逐项审完，所以这里只推荐继续只读审查和无网络隔离试用，不批准安装。owner 为 Field Guide 维护组。
+- **拒绝变体：** S06 的 `webapp-testing` 来源固定为 `https://github.com/composio-community/awesome-codex-skills` 的本地归档，revision 证据为 SHA-256 `D3DA83ED9D474690E7FF235351376114972840C78BC319CBCB8F89CBD704608E`。即使目录中存在 `SKILL.md`，它也应保持 `blocked`：现有台账只确认根目录 Apache-2.0 信号，不能证明嵌套 Skill、脚本和素材的许可/NOTICE 一致；若目标安装路径、配置备份与移除后恢复检查也未写清，更不能靠“文件存在”推进安装。解阻需要逐项许可结论和可演练回滚；在此之前不下载、不安装、不声称已发现或可用。
 
 ## 5. 组合而不是堆叠
 
@@ -100,7 +142,7 @@ permission_boundary | next_review
 
 ### Setup
 
-选择一个本地、低风险、可回滚的任务，准备任务协议、一个候选领域 Skill 和一个需要外部连接的模拟方案。外部连接只做静态审查或测试账号演练，不上传真实数据、不发送消息、不写入第三方服务。为三种方案分别生成 `run-id`，保持任务文本和验收标准不变。
+选择一个本地、低风险、可回滚的任务，准备任务协议、两个固定 revision 的候选 Skill，以及一个需要外部连接的模拟方案。两个候选中必须有一个可推荐继续隔离试用，另一个因许可证/NOTICE 或回滚不明而拒绝采用。外部连接只做静态审查或测试账号演练，不上传真实数据、不发送消息、不写入第三方服务。为三种能力组合分别生成 `run-id`，保持任务文本和验收标准不变。
 
 ### Task
 
@@ -110,19 +152,19 @@ permission_boundary | next_review
 2. 任务协议 + 一个领域 skill；
 3. 任务协议 + 领域 skill + 外部连接。
 
-比较结果质量、执行时间、权限范围、验证成本和副作用。写出在什么条件下额外能力是净收益，什么条件下只是复杂度。
+先为两个 Skill 各写一份安装前审查包，本轮只读审查，不安装、不认证、不启用团队环境。再比较结果质量、执行时间、权限范围、验证成本和副作用，写出在什么条件下额外能力是净收益，什么条件下只是复杂度。
 
 ### Evidence
 
-保存三份方案、`run-id`、Skill/工具/连接依赖、许可证和权限表、实际或模拟输出、验证结果和未执行的外部动作清单。通过条件是能解释每项能力为何存在，并保留一个不依赖额外连接的基线；模拟调用必须标记为模拟，不能写成运行成功。
+保存三份方案、`run-id`、两份 `skill-adoption-decision.md`、Skill/工具/连接依赖、许可证和权限表、实际或模拟输出、验证结果和未执行的外部动作清单。通过条件是：来源与 revision 可复核；许可证结论指向实际文件；安装/备份/回滚目标具体；批准点与 owner 明确；行为计划覆盖正例、边界例、失败例和迁移例；能解释每项能力为何存在，并保留不依赖额外连接的基线。模拟调用必须标记为模拟，不能写成运行成功。
 
 ### Reflection
 
-记录一个被淘汰的能力及原因：不匹配、重复、许可不明、依赖不可用、权限过宽还是证据不足。说明如果未来要启用它，需要补什么证据。
+记录推荐候选和被拒候选各自的决策值与原因，说明未来从 `recommendation-only` 或 `blocked` 前进时需要补什么证据。逐项标注你观察到的是文件存在、被发现、被加载、被采用还是被验证，不允许用前一状态代替后一状态。
 
 ## 故意失败/边界实验
 
-给任务同时启用三个重叠的 Skill，其中一个要求外部上传但任务只需要本地整理。通过标准是学习者能指出冗余、拒绝不必要权限，并保留一个只用任务协议或单个 Skill 的基线。
+给任务同时启用三个重叠的 Skill，其中一个要求外部上传但任务只需要本地整理；再提供一个“仓库可访问、Skill 文件存在，但许可证或回滚不明”的候选。通过标准是学习者能指出冗余、拒绝不必要权限，把不明候选标为 `blocked`，并保留一个只用任务协议或单个 Skill 的基线。
 
 ## 迁移练习
 
@@ -134,4 +176,4 @@ Skill、Plugin、connector 和 MCP 的可用范围、manifest 和调用方式属
 
 ## 本章验收
 
-学习者能用自己的话区分 Skill、Plugin、MCP、connector、工具、脚本和模板；能说明一个具体 skill 为什么触发、需要什么依赖、有什么边界；能区分推荐、获准安装、已安装候选和 verified；能设计一个最小组合并为组合结果安排验证和回滚。
+学习者能用自己的话区分 Skill、Plugin、MCP、connector、工具、脚本和模板；能提交包含全部固定字段的安装前审查包；能让一个候选保持 `recommendation-only`、让许可或回滚不明的候选正确 `blocked`；能区分文件存在、被发现、被加载、被采用和被验证，并为最小组合安排批准、行为验证、owner 与回滚。

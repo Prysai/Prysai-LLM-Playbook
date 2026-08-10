@@ -34,18 +34,42 @@ FP-03 和 FP-04 说明 GitHub host、组织和 connector installation 不能凭�
 
 学习者要训练一个习惯：读取外部内容时，先问它是否是要理解的对象，还是可以改变当前行动的指令来源。
 
-## 3. 权限决定行动空间
+## 3. 权限不是一个开关
 
-至少区分：
+“能做什么”至少要拆成五个字段；它们处在不同控制层，不能互相代替：
 
-- 只读文件与写文件；
-- 本地命令与网络命令；
-- 浏览器观察与提交表单；
-- Git 本地变更与远程推送；
-- 查询外部服务与改变外部服务；
-- 可回滚动作与不可逆动作。
+| 字段 | 回答的问题 | 不能证明什么 |
+|---|---|---|
+| `sandbox_mode` | 命令在技术上被限制在哪类文件、进程或环境范围内？ | 不证明任务已获用户授权 |
+| `approval_policy` | 哪些动作必须在执行前暂停并请求批准？ | 批准本身不会自动扩大 sandbox |
+| `network_access` | 当前阶段和工具是否能发起网络访问，允许到哪里？ | 网络可达不证明已认证或获准发送数据 |
+| `allowed_roots` | 哪些准确目录可读、哪些可写？ | 项目设置中列出目录不证明当前任务已继承写权限 |
+| `side_effect_confirmation` | 文件外的提交、发送、发布、删除、connector/MCP 写调用由谁确认？ | 工具可见或调用成功不证明副作用已获授权 |
 
-授权应该与当前任务相称。为了读一个 README，不需要开放全部仓库；为了检查一个 PR，不需要默认允许删除资源或发送消息。
+官方文档把 sandbox mode 与 approval policy 作为两个不同控制层；网络、可写根目录和工具副作用还需要分别核对。实际名称、默认值和可选项会随工作面、配置与组织策略变化，所以先记录当前可观察状态，不凭教程推断本次会话。
+
+### 最小权限矩阵
+
+**问题：** 一个动作常同时跨过文件、网络和外部服务边界，只写“允许工具”无法判断它会在哪里停下。
+
+**概念：** sandbox 是技术边界，approval 是暂停/批准机制，network 是连通边界，allowed roots 是路径边界，工具副作用是外部状态边界；任务授权则来自用户，位于这些产品控制之外。
+
+**决策：** 对每个动作逐列取证，任何一列未知都标为 `unknown`，不得用另一列的成功补齐。
+
+| 最小动作 | sandbox_mode | approval_policy | network_access | allowed_roots | side_effect_confirmation |
+|---|---|---|---|---|---|
+| 读取指定本地文件 | 只需只读能力 | 通常不应靠扩大审批完成 | 不需要 | 目标文件可读，写范围为空 | 不适用 |
+| 编辑本地副本 | 允许目标内写入 | 越界前暂停 | 不需要 | 只包含准确临时根目录 | 无外部提交 |
+| 查询公开页面 | 本地写入非必要 | 联网动作按当前策略处理 | 只允许任务所需目标 | 下载落盘另行核对 | 只观察，不提交表单 |
+| 调用 connector/MCP 写操作 | shell sandbox 不是充分条件 | 副作用调用前应有批准点 | 核对服务端点 | 本地根目录不能代表远端范围 | 核对账户、资源、内容和确认人 |
+
+**行动：** 先做无副作用探针：记录当前工作目录和实际 roots；对每个目标做只读存在性检查；只在准确的临时路径做最小写入探针；用不含秘密的连通性检查判断网络；对外部工具只读取其能力/审批声明，不触发写调用。
+
+**证据：** 保存工作面与版本、配置来源、实际 roots、探针动作、返回结果、是否出现批准提示、外部状态是否改变，并使用同一 `run-id` 关联。配置存在只证明“已配置”，探针结果才证明本次运行观察到了什么。
+
+**失败与停止：** 目标路径不在已确认写入根目录、批准对象或内容不清楚、网络检查要求暴露秘密、工具调用可能产生未确认副作用，或配置与实际行为不一致时，停止写入并标为 `blocked` 或 `unverified`。不要用改成 full access、扩大根目录或反复批准来代替诊断。
+
+**反思：** 哪一列真正阻止了动作？如果只改变 approval policy，sandbox、网络和外部工具的状态会不会自动改变？答案必须来自记录，不来自猜测。
 
 ## 4. 先让输入通过准入检查
 
@@ -91,6 +115,8 @@ input | role | source/owner | trust | freshness | allowed use | excluded action
 
 如果这些信息不清楚，正确行为是暂停澄清，不是扩大权限或假设授权。
 
+外部工具的副作用不能被 shell 权限吞并。例如 connector 能读取问题列表，不等于可以创建 Issue；浏览器能打开表单，不等于可以提交；MCP 工具被发现，不等于本次任务允许它写远端状态。对每个副作用单独记录调用对象、输入摘要、预计变化、确认人、回滚或补偿方式和结果证据。
+
 ## 7. 用一张决策卡串起上下文与权限
 
 在开始任何 L3 以上任务前，填写一张卡：
@@ -101,7 +127,11 @@ input | role | source/owner | trust | freshness | allowed use | excluded action
 上下文来源及准入标签：
 允许读取：
 允许修改：
-允许运行/联网：
+sandbox_mode（观察值/来源）：
+approval_policy（观察值/来源）：
+network_access（阶段、目标、观察值）：
+allowed_roots（read/write 分开）：
+side_effect_confirmation（动作、对象、确认人）：
 禁止动作：
 风险级别：R0 / R1 / R2 / R3
 事前确认人：
@@ -112,6 +142,30 @@ input | role | source/owner | trust | freshness | allowed use | excluded action
 ```
 
 `R0` 是解释或只读判断，`R1` 是可恢复的本地动作，`R2` 涉及共享仓库、网络、账户或外部服务，`R3` 涉及生产、不可逆动作、秘密或广泛权限。风险等级不是权限授予；它只决定需要多严格的确认和证据。任何 `R2/R3` 动作都要在目标、数据暴露、owner、回滚和确认点明确后才进入执行。
+
+### 实际可观察排查卡
+
+遇到“明明配置了却不能做”或“批准后仍失败”时，不先归因，填写：
+
+```text
+run_id / date_and_timezone:
+surface_and_version:
+task_and_exact_target:
+sandbox_mode_observed:
+approval_policy_observed:
+network_access_observed:
+allowed_roots_read / allowed_roots_write:
+tool_and_side_effect_class:
+probe_performed / result:
+approval_prompt_seen:
+external_state_changed:
+last_confirmed_checkpoint:
+safe_next_check:
+stop_condition:
+status: passed | unverified | blocked
+```
+
+这张卡只记录可观察事实。没有配置读取或运行探针时写 `not_observed`；不要把期望值写成观察值，也不要把“出现批准提示”写成“动作成功”。
 
 ## 实验：同一任务的三种上下文
 
@@ -133,7 +187,7 @@ input | role | source/owner | trust | freshness | allowed use | excluded action
 
 ### Evidence
 
-保存三次任务输入、`run-id`、输入准入表、读取范围、工具/行动记录、外部文档中的可疑指令、最终文件 diff 和权限判断表。通过条件是只读任务不产生写入，且能指出每条外部指令为何不能改变当前任务授权；没有真实工具日志时标记“未观察”，不以预期动作替代证据。
+保存三次任务输入、`run-id`、输入准入表、读取范围、工具/行动记录、外部文档中的可疑指令、最终文件 diff、最小权限矩阵和实际可观察排查卡。通过条件是只读任务不产生写入，且能指出每条外部指令为何不能改变当前任务授权；没有真实工具日志时标记“未观察”，不以预期动作替代证据。
 
 ### Reflection
 
@@ -156,10 +210,16 @@ input | role | source/owner | trust | freshness | allowed use | excluded action
 - 根据风险给行动分级；
 - 解释 Agent 行为时只使用可观察证据；
 - 为一个外部副作用写出明确的确认点和回滚思路；
-- 完成一张包含输入准入、风险级别、owner、回滚、证据和停止条件的决策卡。
+- 分别说明 sandbox、approval、network、allowed roots、工具副作用与任务授权的证据；
+- 完成一张包含输入准入、五个权限字段、风险级别、owner、回滚、证据和停止条件的决策卡。
 
 ## 来源与更新提示
 
-上下文分层、外部内容信任边界和证据优先是稳定方法；Codex 的权限模式、沙盒、审批、工具和入口属于易变事实。一般事实以[OpenAI Codex 官方基线](../../docs/research/openai-codex-baseline.md)为准；本章涉及的第 4–7 章事实以[本轮官方刷新记录](../../docs/research/openai-codex-facts-refresh-2026-08-09.md)补充，并按[内容生命周期](../../docs/governance/content-lifecycle.md)记录访问日期、适用范围和下次复核责任。
+上下文分层、外部内容信任边界和证据优先是稳定方法；Codex 的权限模式、沙盒、审批、工具和入口属于易变事实。一般事实以[OpenAI Codex 官方基线](../../docs/research/openai-codex-baseline.md)为准；本章涉及的第 4–7 章事实以[本轮官方刷新记录](../../docs/research/openai-codex-facts-refresh-2026-08-09.md)和[官方事实缺口审查](../../docs/research/official-facts-gap-review-2026-08-10.md)补充，并按[内容生命周期](../../docs/governance/content-lifecycle.md)记录访问日期、适用范围和下次复核责任。
+
+| 易变事实 | 官方 URL | 访问日期 | 适用范围 | owner / 下次复核 |
+|---|---|---|---|---|
+| sandbox 与 approval policy 是不同控制层；app/connector 的副作用也进入审批边界 | https://learn.chatgpt.com/docs/agent-approvals-security.md | 2026-08-10 | 官方文档描述的 Codex Cloud、ChatGPT desktop app、Codex CLI 和 IDE extension；不证明本会话配置 | `facts-maintainer` / 2026-09-09 |
+| 权限模式的产品选项与入口 | https://learn.chatgpt.com/docs/permission-modes.md | 2026-08-10 | 官方权限模式页面；实际可用项受工作面与组织策略影响 | `facts-maintainer` / 2026-09-09 |
 
 本章结合官方 Codex 的 skills/plugins、sandbox、approval 与安全概念，以及工程来源的上下文工程与怀疑驱动方法；具体产品细节以[官方基线](../../docs/research/openai-codex-baseline.md)和[事实刷新记录](../../docs/research/openai-codex-facts-refresh-2026-08-09.md)为准，但两者都不替代当前运行时证据。

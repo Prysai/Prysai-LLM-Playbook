@@ -16,6 +16,8 @@
       "docs/quality/review-codex-facts-refresh-2026-08-10.md",
       "docs/quality/review-workflow-vertical-slice-2026-08-10.md",
       "docs/research/openai-codex-facts-refresh-2026-08-09.md",
+      "docs/research/official-facts-gap-review-2026-08-10.md",
+      "docs/research/field-problems-follow-up-2026-08-10.md",
       "scripts/validate_content_status.py"
     ]
   },
@@ -45,7 +47,9 @@
       "docs/content-matrix.md",
       "docs/quality/current-state-review-2026-08-09.md",
       "docs/quality/review-codex-facts-refresh-2026-08-10.md",
-      "docs/quality/review-workflow-vertical-slice-2026-08-10.md"
+      "docs/quality/review-workflow-vertical-slice-2026-08-10.md",
+      "docs/research/official-facts-gap-review-2026-08-10.md",
+      "docs/research/field-problems-follow-up-2026-08-10.md"
     ],
     "items": [
       {"id": "chapter-01", "path": "book/chapters/01-gpt-and-codex.md", "status": "candidate"},
@@ -87,7 +91,9 @@
       "docs/quality/review-workflow-vertical-slice-2026-08-10.md",
       "docs/quality/review-lab-013-vertical-slice-2026-08-10.md",
       "docs/research/web-field-problems-2026-08-10.md",
-      "docs/research/web-methods-synthesis-2026-08-10.md"
+      "docs/research/web-methods-synthesis-2026-08-10.md",
+      "docs/research/official-facts-gap-review-2026-08-10.md",
+      "docs/research/field-problems-follow-up-2026-08-10.md"
     ],
     "items": [
       {"id": "lab-001", "path": "book/labs/lab-001-first-safe-task.md", "status": "draft", "run_status": "not_run"},
@@ -119,6 +125,7 @@
       "docs/quality/review-skills-current-2026-08-09.md",
       "docs/quality/forward-test-2026-08-09.md",
       "docs/quality/skill-contract-review-2026-08-10.md",
+      "docs/quality/curriculum-depth-review-2026-08-10.md",
       "docs/quality/review-codex-facts-refresh-2026-08-10.md"
     ],
     "items": [
@@ -138,7 +145,7 @@
     "run_status": "not_run",
     "review_status": "static_structure_only",
     "owner": "evaluation-maintainer",
-      "last_reviewed": "2026-08-10",
+    "last_reviewed": "2026-08-10",
     "next_review": "2026-09-09",
     "path": "evals/task-set-v1.yaml",
     "results_path": "evals/results",
@@ -160,6 +167,8 @@
       "site/README.md",
       "docs/quality/review-presentation-2026-08-09.md",
       "docs/quality/review-fact-impact-registry-2026-08-10.md",
+      "docs/quality/curriculum-depth-review-2026-08-10.md",
+      "docs/quality/site-content-and-ux-review-2026-08-10.md",
       "docs/quality/review-public-site-browser-2026-08-10.md"
     ]
   },
