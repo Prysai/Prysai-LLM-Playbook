@@ -38,19 +38,23 @@ rebuild a protocol after another Skill returns unless the user changes scope.
 ## Required inputs and missing-input behavior
 
 Collect `goal`, `background`, `inputs`, `constraints`, `allowed_actions`,
-`acceptance_evidence`, `failure_handling`, and `delivery_format`. Mark unknowns
-as `missing`, not as assumptions. Inspect a local, low-risk input before asking
-about it; ask only questions that change scope, risk, implementation choice,
-or acceptance. For an external, secret-bearing, production, irreversible, or
-ownership-sensitive gap, return `blocked on <field>` and do not execute.
+`acceptance_evidence`, `failure_handling`, and `delivery_format`. Also classify
+`risk` as `R0`, `R1`, `R2`, or `R3`, and record `owner`, `checkpoint`,
+`rollback`, and `confirmation` when the task can change shared or external
+state. Mark unknowns as `missing`, not as assumptions. Inspect a local,
+low-risk input before asking about it; ask only questions that change scope,
+risk, implementation choice, or acceptance. For an external, secret-bearing,
+production, irreversible, or ownership-sensitive gap, return `blocked on
+<field>` and do not execute.
 
 ## Build order
 
 1. State the outcome and beneficiary.
 2. Bound files, systems, accounts, versions, and time period.
 3. Separate allowed reads, writes, commands, network calls, commits, pushes,
-   and publications.
-4. Define observable acceptance evidence and failure recovery.
+   and publications; do not put them under one undifferentiated permission.
+4. Assign the risk level and define the exact target, owner, confirmation point,
+   checkpoint, rollback and observable acceptance evidence.
 5. Mark assumptions, unknowns, and the next handoff.
 
 ## Risk, side effects, and confirmation
@@ -85,7 +89,9 @@ Return exactly:
 9. `delivery_format`
 10. `handoff`
 11. `risk`
-12. `content_status`
+12. `owner_and_confirmation`
+13. `checkpoint_and_rollback`
+14. `content_status`
 
 ## Evidence and status mapping
 

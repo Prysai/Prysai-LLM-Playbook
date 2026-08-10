@@ -1,6 +1,6 @@
 # Skill routing matrix
 
-**Version:** `0.2.0`  
+**Version:** `0.3.0`
 **Review date:** `2026-09-09`  
 **Status:** `candidate`
 
@@ -24,6 +24,9 @@ rules.
    provide one stage but must not start a second orchestration loop.
 7. Task Protocol defines execution boundaries. It does not choose domain
    methods or authorize external side effects.
+8. Product facts must point to a dated source record with an evidence class.
+   A source refresh can narrow or update a claim, but it cannot prove current
+   account access, runtime behavior, or external side effects.
 
 ## Responsibility matrix
 
@@ -84,6 +87,18 @@ the project content statuses: `draft`, `candidate`, `verified`, or
 `production-ready`. Volatile claims additionally use `current`, `stale`,
 `disputed`, or `removed`; missing proof is `unknown`, not `verified`.
 
+The shared handoff payload is:
+
+```text
+owner | confirmation | checkpoint | rollback | evidence | unknowns
+next_review | handoff
+```
+
+`confirmation` records a human decision point; it is not inferred from login,
+token presence, or a broad permission statement. `checkpoint` and `rollback`
+must identify an observable artifact or target when the next stage can change
+state.
+
 ## Source and maintenance boundary
 
 - **Source:** `CONTEXT.md`, `docs/charter.md`, `docs/book-architecture.md`,
@@ -94,6 +109,10 @@ the project content statuses: `draft`, `candidate`, `verified`, or
 - **Owner:** capability-routing maintainer.
 - **Version:** `0.2.0`.
 - **Next review:** `2026-09-09`.
+
+The 2026-08-09 official facts refresh for chapters 4–7 is recorded at
+`docs/research/openai-codex-facts-refresh-2026-08-09.md`; its integration review
+is `docs/quality/review-codex-facts-refresh-2026-08-10.md`.
 
 Do not put organization branding in public Skill display names or descriptions.
 Installation compatibility names may remain where required by the registry.

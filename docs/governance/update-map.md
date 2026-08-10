@@ -22,7 +22,7 @@ unverified scope are recorded.
 |---|---|---|---|---|
 | A project term or boundary | `CONTEXT.md`, then `docs/charter.md` | `CONTEXT.md` and the relevant chapter | Term boundary and affected links | `validate_project.py`, link check, independent terminology review |
 | A stable teaching principle | `docs/book-architecture.md`, `docs/learning-model.md` | `book/chapters/` | Learning objective, experiment, failure case, acceptance checklist | Learning-contract validation and chapter review |
-| An OpenAI/Codex product fact | `docs/research/openai-codex-baseline.md` | The source record, then affected chapters/pages | Official URL, checked date, scope, owner, next review | Source refresh plus affected-content validation |
+| An OpenAI/Codex product fact | `docs/research/openai-codex-baseline.md` or the dated refresh record | The source record, then affected chapters/pages | Official URL, checked date, scope, owner, next review, evidence class | Source refresh plus affected-content validation; keep runtime/account gaps explicit |
 | A chapter | `book/table-of-contents.md`, `docs/content-matrix.md` | One file in `book/chapters/` | Problem, concept, decision, action, evidence, failure, reflection | Chapter contract, local links, independent review |
 | An experiment | `book/labs/README.md` | One file in `book/labs/` | Low-risk setup, observable output, failure variant, secret boundary, transfer task | Lab index, link check, runtime log when claiming verification |
 | A project Skill | `docs/skill-registry.md`, `docs/quality/skill-quality-standard.md` | One directory in `skills/` | Trigger, inputs, boundaries, stop conditions, output, sources, tests | Project validator and official Skill validator; keep `candidate` until fresh-context evidence exists |
@@ -56,3 +56,8 @@ Use artifact status and fact status separately.
 - [ ] The change says what was not tested.
 - [ ] `draft`/`candidate` has not been silently upgraded to `verified`.
 - [ ] The next review date and responsible owner are clear.
+
+For a product refresh that touches only part of the curriculum, record the
+affected chapter range in the refresh file and link that file from the chapter,
+content matrix, and `official-facts` registry row. Do not silently replace the
+general baseline for claims outside that range.

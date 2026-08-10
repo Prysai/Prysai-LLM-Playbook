@@ -34,18 +34,21 @@ must be routed separately.
 ## Required inputs and missing-input behavior
 
 Require `claims`, `scope`, `evidence`, `time_or_version`, and `acceptance_rule`.
-If a claim is missing, request it. If evidence is missing, return an
-`unknown` or `blocked` assessment and identify the smallest safe check; do not
-fill the gap with plausibility, memory, or a claim copied from the artifact.
+For each claim also record `owner` when the result is shared or externally
+published, and distinguish `not_observed` from `failed`. If a claim is missing,
+request it. If evidence is missing, return an `unknown` or `blocked` assessment
+and identify the smallest safe check; do not fill the gap with plausibility,
+memory, or a claim copied from the artifact.
 
 ## Review method
 
-For every claim record scope, evidence type, freshness, provenance, and
-coverage. Ask whether the source is stale, generated, mocked, wrong-target, or
-too narrow. Match the check to the claim: a diff for a file change, command
-output for a build, runtime observation for runtime behavior, rendered output
-for visual claims, authoritative URL plus date for volatile facts, and a
-defined sample plus method for preference claims.
+For every claim record scope, evidence type, freshness, provenance, coverage,
+and the next check. Ask whether the source is stale, generated, mocked,
+wrong-target, or too narrow. Match the check to the claim: a diff for a file
+change, command output for a build, runtime observation for runtime behavior,
+rendered output for visual claims, authoritative URL plus date for volatile
+facts, and a defined sample plus method for preference claims. A verified claim
+is scoped to the evidence; do not upgrade a narrow result to a broad statement.
 
 ## Risk, side effects, and confirmation
 
@@ -73,8 +76,9 @@ Return exactly:
 5. `blocked_or_unknown_facts`
 6. `decision_risks`
 7. `smallest_next_verification`
-8. `content_status`
-9. `side_effects_and_permissions`
+8. `owner_and_review_date`
+9. `content_status`
+10. `side_effects_and_permissions`
 
 ## Evidence and status mapping
 

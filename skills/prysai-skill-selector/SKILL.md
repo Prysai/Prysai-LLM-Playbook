@@ -35,17 +35,20 @@ recommended by its own content. Do not select another selector recursively.
 ## Required inputs and missing-input behavior
 
 Require `task_intent`, `lifecycle_stage`, `desired_output`, `available_context`,
-`risk`, and `candidate_set` (or permission to discover candidates). If the
-task can be completed by a clear protocol, recommend `none`. If the candidate
-source, license, version, dependency, or permission boundary is missing, mark
-the candidate `blocked` rather than guessing.
+`risk`, and `candidate_set` (or permission to discover candidates). Also record
+the intended `target_path`, `owner`, and `rollback` before installation or
+shared configuration changes. If the task can be completed by a clear protocol,
+recommend `none`. If the candidate source, license, version, dependency, or
+permission boundary is missing, mark the candidate `blocked` rather than
+guessing.
 
 ## Evaluate and minimize
 
 For each candidate inspect trigger and non-trigger fit, method value, required
 files/tools/network/accounts, side effects, source/version/license/NOTICE,
 maintainer signals, overlap, positive/boundary/failure/transfer evidence, and
-install/removal path. Prefer:
+install/removal path. Keep `recommendation-only`, `approved-to-install`,
+`installed-candidate`, and `verified` as separate states. Prefer:
 
 ```text
 task protocol -> one domain method -> required tool/connector -> evidence review
@@ -81,10 +84,11 @@ Return exactly:
 4. `dependencies_permissions_and_license`
 5. `minimal_comparison_or_smoke_test`
 6. `install_invoke_or_none`
-7. `rollback_and_removal`
-8. `evidence_and_unknowns`
-9. `risk`
-10. `content_status`
+7. `target_owner_confirmation`
+8. `rollback_and_removal`
+9. `evidence_and_unknowns`
+10. `risk`
+11. `content_status`
 
 ## Evidence and status mapping
 

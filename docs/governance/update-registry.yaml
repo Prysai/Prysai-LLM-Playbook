@@ -5,10 +5,10 @@
   "areas": [
     {
       "area": "official-facts",
-      "canonical_paths": ["docs/research/openai-codex-baseline.md"],
+      "canonical_paths": ["docs/research/openai-codex-baseline.md", "docs/research/openai-codex-facts-refresh-2026-08-09.md"],
       "owner": "facts-maintainer",
       "triggers": ["official-doc-change", "product-release", "user-reports-step-failure"],
-      "required_inputs": ["authoritative-url", "checked-at", "applies-to", "next-review"],
+      "required_inputs": ["authoritative-url", "checked-at", "applies-to", "owner", "next-review", "evidence-class"],
       "validation_commands": ["scripts/validate_project.py", "scripts/check_local_links.py"],
       "status_fields": ["claim_status", "checked_at", "owner", "next_review"],
       "next_review": "2026-09-09"

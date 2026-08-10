@@ -46,7 +46,20 @@ FP-06 记录了文件 symlink 影响 Skill discovery，FP-07 记录了显式调�
 
 外部目录的数量不是质量指标。大量自动化 skill 还会携带账号、网络和第三方服务风险，必须逐项审查。
 
-## 4. 组合而不是堆叠
+## 4. 把“推荐”和“安装”分开
+
+Skill 决策至少有四个不同状态：
+
+| 状态 | 意思 | 允许说什么 | 不能说什么 |
+|---|---|---|---|
+| `recommendation-only` | 根据任务判断可能适合 | “它可能解决这个方法缺口” | “已安装/可用” |
+| `approved-to-install` | 来源、版本、许可、权限、目标路径和回滚已被批准 | “可以在指定范围试装” | “已经验证有效” |
+| `installed-candidate` | 已在隔离目标安装，但尚未完成行为测试 | “安装动作有记录” | “团队已采用” |
+| `verified` | 正例、边界、失败和迁移在声明环境通过 | “在该范围内通过” | “所有入口/账户都适用” |
+
+缺少来源、版本、许可证、依赖、权限或回滚路径时，状态必须停在 `blocked` 或 `reference-only`。GitHub 页面能打开，不等于许可证清楚；manifest 存在，也不等于工具调用成功。
+
+## 5. 组合而不是堆叠
 
 合理组合通常是：
 
@@ -56,11 +69,23 @@ FP-06 记录了文件 symlink 影响 Skill discovery，FP-07 记录了显式调�
 
 例如做一次低风险营销实验：任务协议定义目标与边界，产品上下文提供受众和定位，分析工具记录决策需要的数据，证据审查检查事件是否真的触发。把十几个彼此重叠的 skill 同时打开，可能让路由和上下文都变得不清楚。
 
-## 实验：三方案对照
+## 6. 先交接，再组合
+
+默认组合的交接字段保持统一：
+
+```text
+status | owner | scope | inputs | assumptions | actions_done
+actions_not_done | evidence | unverified | blocked_on | next_check
+permission_boundary | next_review
+```
+
+领域 Skill 只负责自己的方法；Task Protocol 负责执行边界；Evidence Review 负责审查已有声明；Workflow Orchestrator 负责阶段和 checkpoint。一个 Skill 不能因为被调用就获得另一个 Skill 的权限，也不能递归启动完整编排。
+
+## 7. 实验：三方案对照
 
 ### Setup
 
-选择一个本地、低风险、可回滚的任务，准备任务协议、一个候选领域 Skill 和一个需要外部连接的模拟方案。外部连接只做静态审查或测试账号演练，不上传真实数据、不发送消息、不写入第三方服务。
+选择一个本地、低风险、可回滚的任务，准备任务协议、一个候选领域 Skill 和一个需要外部连接的模拟方案。外部连接只做静态审查或测试账号演练，不上传真实数据、不发送消息、不写入第三方服务。为三种方案分别生成 `run-id`，保持任务文本和验收标准不变。
 
 ### Task
 
@@ -74,7 +99,7 @@ FP-06 记录了文件 symlink 影响 Skill discovery，FP-07 记录了显式调�
 
 ### Evidence
 
-保存三份方案、Skill/工具/连接依赖、许可证和权限表、实际或模拟输出、验证结果和未执行的外部动作清单。通过条件是能解释每项能力为何存在，并保留一个不依赖额外连接的基线。
+保存三份方案、`run-id`、Skill/工具/连接依赖、许可证和权限表、实际或模拟输出、验证结果和未执行的外部动作清单。通过条件是能解释每项能力为何存在，并保留一个不依赖额外连接的基线；模拟调用必须标记为模拟，不能写成运行成功。
 
 ### Reflection
 
@@ -90,8 +115,8 @@ FP-06 记录了文件 symlink 影响 Skill discovery，FP-07 记录了显式调�
 
 ## 来源与更新提示
 
-Skill、Plugin、connector 和 MCP 的可用范围、manifest 和调用方式属于易变事实。以[官方 Codex 基线](../../docs/research/openai-codex-baseline.md)和[Skill 候选台账](../../docs/sources/skill-candidate-catalog.md)复核，不把目录宣传语当成验证证据。
+Skill、Plugin、connector 和 MCP 的可用范围、manifest 和调用方式属于易变事实。以[官方 Codex 基线](../../docs/research/openai-codex-baseline.md)、[本轮事实刷新记录](../../docs/research/openai-codex-facts-refresh-2026-08-09.md)和[Skill 候选台账](../../docs/sources/skill-candidate-catalog.md)复核，不把目录宣传语、安装成功或登录状态当成验证证据。
 
 ## 本章验收
 
-学习者能用自己的话区分 Skill、Plugin、MCP、connector、工具、脚本和模板；能说明一个具体 skill 为什么触发、需要什么依赖、有什么边界；能设计一个最小组合并为组合结果安排验证。
+学习者能用自己的话区分 Skill、Plugin、MCP、connector、工具、脚本和模板；能说明一个具体 skill 为什么触发、需要什么依赖、有什么边界；能区分推荐、获准安装、已安装候选和 verified；能设计一个最小组合并为组合结果安排验证和回滚。

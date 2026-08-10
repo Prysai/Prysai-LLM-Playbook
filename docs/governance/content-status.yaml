@@ -1,6 +1,6 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-08-09",
+  "generated_at": "2026-08-10",
   "description": "Single current-state source for curriculum, labs, Skills, evaluations, and the public site.",
   "status_vocabulary": {
     "artifact_status": ["draft", "candidate", "verified", "production-ready"],
@@ -9,10 +9,12 @@
   "project": {
     "status": "candidate",
     "owner": "curriculum-maintainer",
-    "last_reviewed": "2026-08-09",
+    "last_reviewed": "2026-08-10",
     "next_review": "2026-11-09",
     "evidence": [
       "docs/quality/current-state-review-2026-08-09.md",
+      "docs/quality/review-codex-facts-refresh-2026-08-10.md",
+      "docs/research/openai-codex-facts-refresh-2026-08-09.md",
       "scripts/validate_content_status.py"
     ]
   },
@@ -20,13 +22,14 @@
     "count": 22,
     "status": "candidate",
     "owner": "curriculum-maintainer",
-    "last_reviewed": "2026-08-09",
+    "last_reviewed": "2026-08-10",
     "next_review": "2026-11-09",
     "path": "book/chapters",
     "evidence": [
       "book/table-of-contents.md",
       "docs/content-matrix.md",
-      "docs/quality/current-state-review-2026-08-09.md"
+      "docs/quality/current-state-review-2026-08-09.md",
+      "docs/quality/review-codex-facts-refresh-2026-08-10.md"
     ],
     "items": [
       {"id": "chapter-01", "path": "book/chapters/01-gpt-and-codex.md", "status": "candidate"},
@@ -58,12 +61,13 @@
     "status": "draft",
     "run_status": "not_run",
     "owner": "lab-maintainer",
-    "last_reviewed": "2026-08-09",
+    "last_reviewed": "2026-08-10",
     "next_review": "2026-11-09",
     "path": "book/labs",
     "evidence": [
       "book/labs/README.md",
-      "docs/quality/current-state-review-2026-08-09.md"
+      "docs/quality/current-state-review-2026-08-09.md",
+      "docs/quality/review-codex-facts-refresh-2026-08-10.md"
     ],
     "items": [
       {"id": "lab-001", "path": "book/labs/lab-001-first-safe-task.md", "status": "draft", "run_status": "not_run"},
@@ -86,13 +90,14 @@
     "validator_status": "structural_checks_passed",
     "fresh_context_status": "3_of_7_basic_pretest",
     "owner": "skills-maintainer",
-    "last_reviewed": "2026-08-09",
+    "last_reviewed": "2026-08-10",
     "next_review": "2026-11-09",
     "path": "skills",
     "evidence": [
       "docs/skill-registry.md",
       "docs/quality/review-skills-current-2026-08-09.md",
-      "docs/quality/forward-test-2026-08-09.md"
+      "docs/quality/forward-test-2026-08-09.md",
+      "docs/quality/review-codex-facts-refresh-2026-08-10.md"
     ],
     "items": [
       {"id": "prysai-codex-coach", "path": "skills/prysai-codex-coach", "status": "candidate", "fresh_context_status": "pretest_pending"},
