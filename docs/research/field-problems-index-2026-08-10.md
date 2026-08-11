@@ -11,6 +11,7 @@
 | [FP](field-problems-codex.md) | Codex CLI/App、认证、GitHub host、connector、Skill、模型、验证 | `openai/codex` 原始 Issues；2026-08-09 | 用户报告为主；未本地复现；未把维护者未确认的推测写成根因 | 第 5、9、12、13、14、15、22 章 |
 | [FP-S](field-problems-surface-2026-08-10.md) | 工作面、Provider、WSL、目录 roots、Worktree、Cloud、Computer Use、线程所有权 | `openai/codex` 原始 Issues；2026-08-10 | 用户报告；Issue `closed` 不等于已修复；未本地复现 | 第 5 章、实验 007、第 13 章、实验 013 |
 | [FUP](field-problems-follow-up-2026-08-10.md) | 子 Agent handoff、工具注册、第二目录、WSL 代理、HTTP 507 | `openai/codex` 原始 Issues；2026-08-10 | 用户报告；未本地复现；没有官方根因确认 | 第 5、8、9、12、13、19 章、实验 013 |
+| [FUP-P2](field-problems-follow-up-2026-08-10-p2.md) | macOS Local Network 权限、Linear OAuth 循环、子 Agent UI 状态错位、Windows 权限选择器持久化 | `openai/codex` 原始 Issues + OpenAI/Apple 官方边界；2026-08-10 | 用户报告；官方根因未确认；未本地复现；workaround 不等于修复 | 第 4、5、9、12 章、实验 001、002、003 |
 | [论坛](field-problems-forums-2026-08-10.md) | Stack Overflow 的 sandbox 网络、Windows、VS Code spawn、审批、编码、私密目录、Maven，以及可访问的 GitHub Issue 摘要 | Stack Exchange API、可定位的 Stack Overflow 页面和 GitHub 公共 Issue；2026-08-10 | Stack Overflow 的回答是社区建议；Reddit、Discussions 和无法可靠访问的页面未纳入证据；未本地复现 | 第 5、7、9、13 章、实验 013 |
 
 ## 正文使用的案例映射
@@ -23,6 +24,10 @@
 | [FUP-01](field-problems-follow-up-2026-08-10.md#fup-01：子-agent-被创建，但任务消息没有到达) / [FUP-05](field-problems-follow-up-2026-08-10.md#fup-05：长时间没有任何事件，随后-http-507-并自动重试) | 状态存在或重试成功，但消息到达、第一次副作用和结果仍未证实 | 2026-08-10 创建/访问；具体版本依报告 | Issue `open`；用户报告；本项目未复现 | 用固定短词/检查点证明创建、到达、执行、返回；重试前先核对 diff 和外部状态 |
 | [论坛-1](field-problems-forums-2026-08-10.md#1-sandbox-内访问-github-被网络-allowlist-拦截) / [论坛-3](field-problems-forums-2026-08-10.md#3-vs-code-扩展-spawn-unknown，但-cli-能手动启动) | 网络 allowlist 或 VS Code host 失败，但另一层看似正常 | Codex CLI、Windows/VS Code、企业策略等；源站时间戳以页面为准 | 用户报告与回答者建议；无官方确认；本项目未复现 | 先区分 sandbox、代理、PATH、扩展 host 和目标工具；不要直接扩大网络或绕过企业策略 |
 | [WF-09](web-field-problems-2026-08-10.md#wf-09：浏览器能读到弹窗，但点击证据仍未成立) | 页面和 DOM 可读，但点击调用超时 | Windows 浏览器控制；2026-08-10 访问 | 用户报告；本项目未复现 | 把页面可见、元素可定位、调用返回、页面变化分开记录；交付“读取已验证、点击未验证” |
+| [P2-01](field-problems-follow-up-2026-08-10-p2.md#p2-01：网络开关已启用，但-macos-local-network-权限仍阻断-lan) | 任务元数据显示网络已启用，但 macOS Local Network 权限仍阻断 LAN；打开系统权限后报告者得到 HTTP 401 | Desktop 26.727.51351 / bundled CLI 0.146.0-alpha.9.2；Darwin arm64；2026-08-10 | 用户报告与官方边界；根因未确认；HTTP 401 只证明到达认证层；本项目未复现 | 第 4、5 章；实验 003；拆分配置、系统权限、TCP/HTTP、认证 |
+| [P2-02](field-problems-follow-up-2026-08-10-p2.md#p2-02：linear-oauth-显示已接受，但只读调用持续重新认证) | Linear OAuth 显示接受，但同一个只读 `get_issue` 调用反复要求重新认证 | CLI 0.146.1；macOS arm64；2026-08-10 | 用户报告与官方连接器边界；workaround 未被官方确认；本项目未复现 | 第 4、5 章；实验 002、003；一次无副作用重试后停止 |
+| [P2-03](field-problems-follow-up-2026-08-10-p2.md#p2-03：子-agent-已完成，但父任务界面仍显示-active) | 状态查询显示子 Agent completed，但父任务界面仍显示 Active，打开结果后指示才消失 | macOS 26.6.1；另有 Windows 社区报告；2026-08-10 | 用户报告；UI 状态机/后台进程根因未确认；本项目未复现 | 第 4、12 章；实验 003；分开记录执行终态、结果已读和父任务状态 |
+| [P2-04](field-problems-follow-up-2026-08-10-p2.md#p2-04：windows-权限选择器因旧持久化布尔值而灰掉) | 权限选择器灰掉；报告者替换旧持久化值后 UI 恢复，但有效运行时策略仍需单独观察 | Desktop 26.803.5235.0；Windows 11 Pro 22631；x64；2026-08-10 | 用户侧诊断；内部实现和修复未确认；本项目未复现；不要把手改状态文件当官方步骤 | 第 4 章；实验 001、003；先备份、低风险探针、验证批准行为 |
 
 ## 证据等级与复核规则
 

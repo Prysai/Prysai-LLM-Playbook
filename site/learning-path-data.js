@@ -29,7 +29,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Understand GPT before Codex",
             "zh": "先理解 GPT，再理解 Codex"
           },
-          "href": "../book/chapters/01-gpt-and-codex.md",
+          "href": "../book/chapters/01-gpt-and-codex-EN.md",
           "relation": "primary"
         }
       ],
@@ -40,7 +40,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "GPT and Codex boundaries",
             "zh": "GPT 与 Codex 边界"
           },
-          "href": "../book/labs/lab-011-gpt-codex-boundaries.md",
+          "href": "../book/labs/lab-011-gpt-codex-boundaries-EN.md",
           "relation": "primary"
         }
       ],
@@ -96,7 +96,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Understand GPT before Codex",
             "zh": "先理解 GPT，再理解 Codex"
           },
-          "href": "../book/chapters/01-gpt-and-codex.md",
+          "href": "../book/chapters/01-gpt-and-codex-EN.md",
           "relation": "primary"
         },
         "lab": {
@@ -105,7 +105,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "GPT and Codex boundaries",
             "zh": "GPT 与 Codex 边界"
           },
-          "href": "../book/labs/lab-011-gpt-codex-boundaries.md",
+          "href": "../book/labs/lab-011-gpt-codex-boundaries-EN.md",
           "relation": "primary"
         }
       }

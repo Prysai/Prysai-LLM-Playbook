@@ -17,7 +17,7 @@
 
 | ID | 实验 | level | domain | 对应章节 | status | 迁移焦点 |
 |---|---|---|---|---|---|---|
-| [lab-011](lab-011-gpt-codex-boundaries.md) | 分清 GPT、Codex、工具与 Agent | L0 | general | 第 1 章 | `draft` | 将静态边界表迁移到研究、工程或内容任务 |
+| [lab-011](lab-011-gpt-codex-boundaries-EN.md) | 分清 GPT、Codex、工具与 Agent | L0 | general | 第 1 章 | `draft` | EN 源文件；其他语言切片已登记在语言矩阵 |
 | [lab-001](lab-001-first-safe-task.md) | 第一个安全任务 | L1 | general | 第 2、20 章 | `draft` | 将沙盒 README 任务迁移到个人可回滚文档任务 |
 | [lab-002](lab-002-task-protocol.md) | 把模糊愿望改成任务协议 | L2 | general | 第 3、10 章 | `draft` | 将同一协议迁移到研究、营销或 UI 任务 |
 | [lab-003](lab-003-evidence-review.md) | 发现“看起来完成但没有证据” | L3 | general | 第 9、19 章 | `draft` | 将声明—证据审查迁移到测试、研究或交付摘要 |

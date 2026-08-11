@@ -53,5 +53,8 @@ jobs:
       - name: Validate current content status
         run: python scripts/validate_content_status.py
 
+      - name: Validate locale matrix and same-language links
+        run: python scripts/validate_localization.py
+
       - name: Validate public page language contract
         run: python scripts/validate_site_i18n.py

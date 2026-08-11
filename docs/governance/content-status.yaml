@@ -18,6 +18,7 @@
       "docs/research/openai-codex-facts-refresh-2026-08-09.md",
       "docs/research/official-facts-gap-review-2026-08-10.md",
       "docs/research/field-problems-follow-up-2026-08-10.md",
+      "docs/research/field-problems-follow-up-2026-08-10-p2.md",
       "docs/research/field-problems-index-2026-08-10.md",
       "docs/research/field-problems-surface-2026-08-10.md",
       "docs/research/field-problems-forums-2026-08-10.md",
@@ -54,13 +55,14 @@
       "docs/quality/review-workflow-vertical-slice-2026-08-10.md",
       "docs/research/official-facts-gap-review-2026-08-10.md",
       "docs/research/field-problems-follow-up-2026-08-10.md",
+      "docs/research/field-problems-follow-up-2026-08-10-p2.md",
       "docs/research/field-problems-index-2026-08-10.md",
       "docs/research/field-problems-surface-2026-08-10.md",
       "docs/research/field-problems-forums-2026-08-10.md",
       "docs/quality/real-world-case-integration-review-2026-08-10.md"
     ],
     "items": [
-      {"id": "chapter-01", "path": "book/chapters/01-gpt-and-codex.md", "status": "candidate"},
+      {"id": "chapter-01", "path": "book/chapters/01-gpt-and-codex-EN.md", "status": "candidate"},
       {"id": "chapter-02", "path": "book/chapters/02-first-safe-task.md", "status": "candidate"},
       {"id": "chapter-03", "path": "book/chapters/03-task-protocol.md", "status": "candidate"},
       {"id": "chapter-04", "path": "book/chapters/04-context-permissions-and-agent.md", "status": "candidate"},
@@ -118,7 +120,7 @@
       {"id": "lab-008", "path": "book/labs/lab-008-research-question.md", "status": "draft", "run_status": "not_run"},
       {"id": "lab-009", "path": "book/labs/lab-009-engineering-lifecycle.md", "status": "draft", "run_status": "not_run"},
       {"id": "lab-010", "path": "book/labs/lab-010-product-context.md", "status": "draft", "run_status": "not_run"},
-      {"id": "lab-011", "path": "book/labs/lab-011-gpt-codex-boundaries.md", "status": "draft", "run_status": "not_run"},
+      {"id": "lab-011", "path": "book/labs/lab-011-gpt-codex-boundaries-EN.md", "status": "draft", "run_status": "not_run"},
       {"id": "lab-012", "path": "book/labs/lab-012-team-capability-migration.md", "status": "draft", "run_status": "not_run"},
       {"id": "lab-013", "path": "book/labs/lab-013-l3-vertical-slice.md", "status": "draft", "run_status": "not_run"}
     ]
@@ -170,6 +172,9 @@
     "status": "candidate",
     "language_default": "en",
     "language_options": ["en", "zh"],
+    "repository_content_locales": ["en", "zh", "es", "ja", "ko", "de"],
+    "repository_locale_status": "migration",
+    "locale_matrix": "docs/governance/locale-matrix.yaml",
     "browser_review": "completed",
     "owner": "site-maintainer",
     "last_reviewed": "2026-08-10",
@@ -181,7 +186,10 @@
       "docs/quality/review-fact-impact-registry-2026-08-10.md",
       "docs/quality/curriculum-depth-review-2026-08-10.md",
       "docs/quality/site-content-and-ux-review-2026-08-10.md",
-      "docs/quality/review-public-site-browser-2026-08-10.md"
+      "docs/quality/review-public-site-browser-2026-08-10.md",
+      "scripts/validate_content_status.py",
+      "scripts/validate_localization.py",
+      "docs/governance/locale-matrix.yaml"
     ]
   },
   "sources_and_licenses": {

@@ -15,6 +15,9 @@ DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 ARTIFACT_STATUSES = {"draft", "candidate", "verified", "production-ready"}
 RUN_STATUSES = {"not_run", "running", "completed"}
 BROWSER_REVIEW_STATUSES = {"pending", "completed"}
+RUNTIME_LOCALES = ["en", "zh"]
+REPOSITORY_LOCALES = ["en", "zh", "es", "ja", "ko", "de"]
+LOCALE_MIGRATION_STATUSES = {"migration", "release"}
 
 
 def load_document() -> dict[str, Any]:
@@ -192,8 +195,22 @@ def main() -> int:
         require_status(site, "status", "public_site", errors)
         if site.get("language_default") != "en":
             errors.append("public_site: language_default must be en")
-        if site.get("language_options") != ["en", "zh"]:
-            errors.append("public_site: language_options must be ['en', 'zh']")
+        if site.get("language_options") != RUNTIME_LOCALES:
+            errors.append("public_site: language_options must be ['en', 'zh'] for the current runtime UI")
+        repository_locales = site.get("repository_content_locales")
+        if repository_locales != REPOSITORY_LOCALES:
+            errors.append(
+                "public_site: repository_content_locales must be "
+                "['en', 'zh', 'es', 'ja', 'ko', 'de']"
+            )
+        locale_status = require_text(site, "repository_locale_status", "public_site", errors)
+        if locale_status is not None and locale_status not in LOCALE_MIGRATION_STATUSES:
+            errors.append(
+                f"public_site: repository_locale_status must be one of {sorted(LOCALE_MIGRATION_STATUSES)}"
+            )
+        locale_matrix = require_text(site, "locale_matrix", "public_site", errors)
+        if locale_matrix is not None and not (ROOT / locale_matrix).is_file():
+            errors.append(f"public_site: locale_matrix path does not exist: {locale_matrix}")
         browser_review = require_text(site, "browser_review", "public_site", errors)
         if browser_review is not None and browser_review not in BROWSER_REVIEW_STATUSES:
             errors.append(

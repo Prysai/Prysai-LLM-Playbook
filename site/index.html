@@ -100,7 +100,7 @@
               <p class="index-panel-intro" data-i18n="fileMapIntro">Read the layer that matches the work. The public page is a guide; the files below are the source of truth.</p>
               <div class="file-map-list">
                 <a class="file-map-row" href="README.md"><code>site/</code><span><strong data-i18n="fileSiteTitle">Public showcase</strong><small data-i18n="fileSiteBody">index.html, styles.css, app.js, and generated learning-path data.</small></span><b aria-hidden="true">↗</b></a>
-                <a class="file-map-row" href="../book/table-of-contents.md"><code>book/chapters/</code><span><strong data-i18n="fileChaptersTitle">Core learning text</strong><small data-i18n="fileChaptersBody">22 chapters; current artifact status: candidate.</small></span><b aria-hidden="true">↗</b></a>
+                <a class="file-map-row" href="../book/table-of-contents-EN.md"><code>book/chapters/</code><span><strong data-i18n="fileChaptersTitle">Core learning text</strong><small data-i18n="fileChaptersBody">22 chapters; current artifact status: candidate.</small></span><b aria-hidden="true">↗</b></a>
                 <a class="file-map-row" href="../book/labs/README.md"><code>book/labs/</code><span><strong data-i18n="fileLabsTitle">Observable practice</strong><small data-i18n="fileLabsBody">13 labs; current status: draft; run status: not_run.</small></span><b aria-hidden="true">↗</b></a>
                 <a class="file-map-row" href="../docs/skill-registry.md"><code>skills/</code><span><strong data-i18n="fileSkillsTitle">Reusable methods</strong><small data-i18n="fileSkillsBody">7 project Skills with triggers, boundaries, and evidence contracts.</small></span><b aria-hidden="true">↗</b></a>
                 <a class="file-map-row" href="../docs/governance/update-map.md"><code>docs/</code><span><strong data-i18n="fileDocsTitle">Governance and research</strong><small data-i18n="fileDocsBody">Status, sources, field reports, update rules, and quality records.</small></span><b aria-hidden="true">↗</b></a>
@@ -121,16 +121,16 @@
               </article>
               <article class="locale-panel" id="language-route" aria-labelledby="locale-title">
                 <div class="index-panel-head"><span class="index-panel-number">03</span><h3 id="locale-title" data-i18n="localeTitle">Six-language route</h3></div>
-                <p class="index-panel-intro" data-i18n="localeIntro">English is the default. This page currently exposes EN and 中文; four additional locales are a planned route, not shipped translations.</p>
+                <p class="index-panel-intro" data-i18n="localeIntro">Six repository entry locales are registered. The runtime showcase currently switches EN / 中文; the other entry slices are still in migration review.</p>
                 <ol class="locale-list">
                   <li class="locale-available"><span>EN</span><strong data-i18n="localeEnglish">available · default</strong></li>
                   <li class="locale-available"><span>ZH</span><strong data-i18n="localeChinese">available · current toggle</strong></li>
-                  <li class="locale-planned"><span>ES</span><strong data-i18n="localeSpanish">planned</strong></li>
-                  <li class="locale-planned"><span>DE</span><strong data-i18n="localeGerman">planned</strong></li>
-                  <li class="locale-planned"><span>JA</span><strong data-i18n="localeJapanese">planned</strong></li>
-                  <li class="locale-planned"><span>KO</span><strong data-i18n="localeKorean">planned</strong></li>
+                  <li class="locale-entry"><span>ES</span><strong data-i18n="localeSpanish">entry slice · UI not exposed</strong></li>
+                  <li class="locale-entry"><span>DE</span><strong data-i18n="localeGerman">entry slice · UI not exposed</strong></li>
+                  <li class="locale-entry"><span>JA</span><strong data-i18n="localeJapanese">entry slice · UI not exposed</strong></li>
+                  <li class="locale-entry"><span>KO</span><strong data-i18n="localeKorean">entry slice · UI not exposed</strong></li>
                 </ol>
-                <p class="locale-rule" data-i18n="localeRule">Route rule: each translated artifact will carry its locale suffix and link to the same locale. The six-file set is not complete yet.</p>
+                <p class="locale-rule" data-i18n="localeRule">Route rule: translated artifacts carry a locale suffix and link to the same locale. This migration covers entry slices; it does not claim that the whole book or runtime UI is complete in six languages.</p>
               </article>
             </div>
           </div>
@@ -155,7 +155,7 @@
             <p class="section-intro" data-i18n="startIntro">Start with the failure you need to avoid or the work you need to finish. Pick the smallest useful entry, then leave evidence.</p>
           </div>
           <div class="problem-grid">
-            <a class="problem-card" href="../book/chapters/01-gpt-and-codex.md"><span class="card-number">01</span><strong data-i18n="problemStartTitle">I do not know where to start.</strong><p data-i18n="problemStartBody">Separate GPT, Codex, models, tools, Skills, and Agents before choosing a workflow.</p><span class="card-link" data-i18n="problemStartLink">Open chapter 1 ↗</span></a>
+            <a class="problem-card" href="../book/chapters/01-gpt-and-codex-EN.md"><span class="card-number">01</span><strong data-i18n="problemStartTitle">I do not know where to start.</strong><p data-i18n="problemStartBody">Separate GPT, Codex, models, tools, Skills, and Agents before choosing a workflow.</p><span class="card-link" data-i18n="problemStartLink">Open chapter 1 ↗</span></a>
             <a class="problem-card" href="../book/chapters/09-verification-and-recovery.md"><span class="card-number">02</span><strong data-i18n="problemWrongFileTitle">Codex changed the wrong file.</strong><p data-i18n="problemWrongFileBody">Learn to inspect scope, diff, tests, and recovery before trusting a completion statement.</p><span class="card-link" data-i18n="problemWrongFileLink">Open chapter 9 ↗</span></a>
             <a class="problem-card" href="../book/labs/lab-004-skill-selection.md"><span class="card-number">03</span><strong data-i18n="problemSkillTitle">I do not know which Skill to use.</strong><p data-i18n="problemSkillBody">Choose by task, risk, inputs, dependencies, and evidence—not by directory size.</p><span class="card-link" data-i18n="problemSkillLink">Run lab 004 ↗</span></a>
             <a class="problem-card" href="../docs/governance/update-map.md"><span class="card-number">04</span><strong data-i18n="problemUpdateTitle">I need to update this safely.</strong><p data-i18n="problemUpdateBody">Use the fixed update map to find the canonical file, required source record, and validation gate.</p><span class="card-link" data-i18n="problemUpdateLink">Open the update map ↗</span></a>
@@ -229,7 +229,7 @@
               </div>
               <section class="path-evidence" aria-labelledby="path-evidence-label"><div class="path-card-heading"><h4 id="path-evidence-label" data-i18n="evidenceGate">Evidence gate</h4><span data-i18n="fourEvidence">Four evidence types</span></div><ul data-level-gate></ul></section>
               <div class="path-boundary-grid"><section class="path-boundary path-boundary-next"><h4 data-i18n="graduationGate">Move on when</h4><p data-level-graduation></p></section><section class="path-boundary path-boundary-stop"><h4 data-i18n="blockedWhen">Stop when</h4><p data-level-blocked></p></section></div>
-              <div class="panel-next"><div class="panel-meta"><span data-i18n="nextStep">Next step</span><a data-level-link href="../book/chapters/01-gpt-and-codex.md"><span data-level-link-text>Chapter 1: Understand GPT before Codex</span><span aria-hidden="true">↗</span></a></div><a class="panel-lab-link" data-level-lab-link href="../book/labs/lab-011-gpt-codex-boundaries.md"><span data-level-lab-link-text>Lab 011</span><span aria-hidden="true">↗</span></a></div>
+              <div class="panel-next"><div class="panel-meta"><span data-i18n="nextStep">Next step</span><a data-level-link href="../book/chapters/01-gpt-and-codex-EN.md"><span data-level-link-text>Chapter 1: Understand GPT before Codex</span><span aria-hidden="true">↗</span></a></div><a class="panel-lab-link" data-level-lab-link href="../book/labs/lab-011-gpt-codex-boundaries-EN.md"><span data-level-lab-link-text>Lab 011</span><span aria-hidden="true">↗</span></a></div>
             </article>
           </div>
         </div>
@@ -251,7 +251,7 @@
           <p class="route-status" role="status" aria-live="polite" aria-atomic="true" data-route-status data-i18n="routeStatusAll">Showing all 22 chapters.</p>
           <div class="chapter-list" data-chapter-list>
             <details class="chapter-group" open data-route="A"><summary><span>A</span><strong data-i18n="routeATitle">First contact with Codex</strong><small data-i18n="routeADesc">01—06 · finish a first safe task</small><b>06</b></summary><div class="chapter-items">
-              <a href="../book/chapters/01-gpt-and-codex.md"><span>01</span><span data-i18n="chapter01">Understand GPT before Codex</span><i data-i18n="candidateStatus">candidate</i></a>
+              <a href="../book/chapters/01-gpt-and-codex-EN.md"><span>01</span><span data-i18n="chapter01">Understand GPT before Codex</span><i data-i18n="candidateStatus">candidate</i></a>
               <a href="../book/chapters/02-first-safe-task.md"><span>02</span><span data-i18n="chapter02">Complete a safe, verifiable task</span><i data-i18n="candidateStatus">candidate</i></a>
               <a href="../book/chapters/03-task-protocol.md"><span>03</span><span data-i18n="chapter03">Turn a wish into a task protocol</span><i data-i18n="candidateStatus">candidate</i></a>
               <a href="../book/chapters/04-context-permissions-and-agent.md"><span>04</span><span data-i18n="chapter04">Context, permissions, and Agent boundaries</span><i data-i18n="candidateStatus">candidate</i></a>
@@ -299,7 +299,7 @@
             <a class="lab-card" href="../book/labs/lab-008-research-question.md"><span class="lab-id">LAB 008 · L3</span><h3 data-i18n="lab08Title">Research question</h3><p data-i18n="lab08Body">Turn a broad topic into a question, source plan, and minimum evidence table.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
             <a class="lab-card" href="../book/labs/lab-009-engineering-lifecycle.md"><span class="lab-id">LAB 009 · L3</span><h3 data-i18n="lab09Title">Engineering lifecycle</h3><p data-i18n="lab09Body">Compare direct implementation with a full lifecycle and record the rework evidence.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
             <a class="lab-card" href="../book/labs/lab-010-product-context.md"><span class="lab-id">LAB 010 · L3</span><h3 data-i18n="lab10Title">Shared product context</h3><p data-i18n="lab10Body">Version a shared product understanding and separate facts from hypotheses.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
-            <a class="lab-card" href="../book/labs/lab-011-gpt-codex-boundaries.md"><span class="lab-id">LAB 011 · L0</span><h3 data-i18n="lab11Title">GPT and Codex boundaries</h3><p data-i18n="lab11Body">Use static task cards to separate generation, execution, verification, and external effects.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
+            <a class="lab-card" href="../book/labs/lab-011-gpt-codex-boundaries-EN.md"><span class="lab-id">LAB 011 · L0</span><h3 data-i18n="lab11Title">GPT and Codex boundaries</h3><p data-i18n="lab11Body">Use static task cards to separate generation, execution, verification, and external effects.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
             <a class="lab-card" href="../book/labs/lab-012-team-capability-migration.md"><span class="lab-id">LAB 012 · L6</span><h3 data-i18n="lab12Title">Team capability migration</h3><p data-i18n="lab12Body">Create a contract for version, owner, permissions, independent reproduction, and rollback.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
           </div>
           <a class="section-link" href="../book/labs/README.md"><span data-i18n="labsIndexLink">Open the lab rules and all 13 entries</span><span aria-hidden="true">↗</span></a>

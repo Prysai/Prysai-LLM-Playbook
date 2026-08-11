@@ -358,6 +358,7 @@ button, input, select, textarea { font: inherit; }
 .locale-list li { display: grid; gap: .35rem; min-height: 62px; align-content: center; padding: .7rem; background: #fff; }
 .locale-list li > span { color: var(--red); font-family: Consolas, 'Courier New', monospace; font-size: .68rem; font-weight: 700; }
 .locale-list strong { color: var(--ink); font-size: .68rem; line-height: 1.25; }
+.locale-entry { opacity: .78; }
 .locale-planned { opacity: .55; }
 .locale-planned > span::after { content: ' · planned'; color: var(--muted); font-family: Arial, Helvetica, sans-serif; font-size: .62rem; font-weight: 400; }
 .locale-rule { margin-bottom: 0; color: var(--muted); }

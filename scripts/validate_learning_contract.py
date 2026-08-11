@@ -21,21 +21,76 @@ LABS = ROOT / "book/labs"
 CHAPTER_CONTRACT = {
     # Keep both headings valid: early chapters use the explicit teaching
     # heading, while later chapters use the shorter project convention.
-    "problem": re.compile(r"(?m)^##\s+(?:本章要解决的问题|问题)(?:：.*)?\s*$"),
-    "objective": re.compile(r"(?m)^##\s+学习目标\s*$"),
-    "real_problem": re.compile(r"现实问题入口|真实问题入口"),
-    "experiment": re.compile(r"(?:^##\s+.*实验|^###\s+.*实验|实验：)", re.MULTILINE),
-    "setup": re.compile(r"(?:^###\s+Setup\s*$|^###\s+准备|^###\s+前置|^###\s+实验准备|^##\s+实验准备)", re.MULTILINE),
-    "task": re.compile(r"(?:^###\s+Task\s*$|^###\s+任务|^###\s+操作步骤|^###\s+实验步骤)", re.MULTILINE),
-    "evidence": re.compile(r"(?:^###\s+Evidence\s*$|^###\s+证据|^###\s+记录|^###\s+必须保存)", re.MULTILINE),
-    "boundary": re.compile(r"(?:^###\s+Failure variant\s*$|^###\s+失败|^###\s+边界|失败|边界|停止|风险|不适用)"),
-    "reflection": re.compile(r"(?:^###\s+Reflection\s*$|^###\s+复盘|^###\s+反思|复盘|反思)", re.MULTILINE),
-    "transfer": re.compile(r"(?m)^##\s+迁移练习\s*$"),
-    "acceptance": re.compile(
-        r"^##\s+.*(?:本章验收|我真的学会了吗|验收清单).*$", re.MULTILINE
+    "problem": re.compile(
+        r"(?m)^##\s+(?:本章要解决的问题|问题(?:：.*)?|The problem this chapter solves|"
+        r"Das Problem, das dieses Kapitel löst|El problema que resuelve este capítulo|"
+        r"この章が解決する問題|이 장에서 해결하는 문제)\s*$",
+        re.IGNORECASE,
     ),
-    "sources": re.compile(r"来源与更新提示|易变事实与来源|稳定原则|治理的连接"),
+    "objective": re.compile(
+        r"(?m)^##\s+(?:学习目标|Learning objectives|Lernziele|Objetivos de aprendizaje|"
+        r"学習目標|학습 목표)\s*$",
+        re.IGNORECASE,
+    ),
+    "real_problem": re.compile(
+        r"现实问题入口|真实问题入口|field cases?|real[- ]world (?:problem|cases?)|"
+        r"现场案例|casos de campo|praxisfälle|現場の事例|현장 사례",
+        re.IGNORECASE,
+    ),
+    "experiment": re.compile(
+        r"(?:^##\s+.*(?:实验|experiment|experimento|実験|실험)|"
+        r"^###\s+.*(?:实验|experiment|experimento|実験|실험)|实验：)",
+        re.MULTILINE | re.IGNORECASE,
+    ),
+    "setup": re.compile(
+        r"(?:^###\s+(?:Setup|准备|前置|实验准备|Vorbereitung|Preparación|準備|준비)\s*$|"
+        r"^##\s+(?:实验准备|Preparation|Vorbereitung|Preparación|準備|준비)\s*$)",
+        re.MULTILINE | re.IGNORECASE,
+    ),
+    "task": re.compile(
+        r"(?:^###\s+.*(?:Task|任务|操作步骤|实验步骤|Aufgabe|Tarea|タスク|작업).*$)",
+        re.MULTILINE | re.IGNORECASE,
+    ),
+    "evidence": re.compile(
+        r"(?:^###\s+.*(?:Evidence|证据|记录|必须保存|Belege?|Evidencia|証拠|증거).*$)",
+        re.MULTILINE | re.IGNORECASE,
+    ),
+    "boundary": re.compile(
+        r"(?:^###\s+.*(?:Failure variant|失败|边界|Failure|failure|boundary|"
+        r"Fehler|Grenze|Fallo|límite|失敗|境界|실패|경계)|"
+        r"失败|边界|停止|风险|不适用|failure|boundary|stop|risk|limitation|"
+        r"Fehler|Grenze|Stopp|Risiko|Fallo|límite|detener|失敗|境界|停止|"
+        r"リスク|실패|경계|중단|위험)",
+        re.MULTILINE | re.IGNORECASE,
+    ),
+    "reflection": re.compile(
+        r"(?:^###\s+.*(?:Reflection|复盘|反思|Reflexion|Reflexión|振り返り|"
+        r"회고|성찰).*$|复盘|反思|reflection|reflexion|reflexión|振り返り|회고|성찰)",
+        re.MULTILINE | re.IGNORECASE,
+    ),
+    "transfer": re.compile(
+        r"(?m)^##\s+(?:迁移练习|Transfer task|Transferaufgabe|Tarea de transferencia|"
+        r"迁移任务|移行タスク|전이 과제)\s*$",
+        re.IGNORECASE,
+    ),
+    "acceptance": re.compile(
+        r"^##\s+.*(?:本章验收|我真的学会了吗|验收清单|Acceptance checklist|"
+        r"Abnahme-Checkliste|Lista de aceptación|受け入れチェックリスト|수용 체크리스트).*$",
+        re.MULTILINE | re.IGNORECASE,
+    ),
+    "sources": re.compile(
+        r"来源与更新提示|易变事实与来源|稳定原则|治理的连接|Sources and maintenance boundary|"
+        r"来源与维护边界|Quellen und Wartungsgrenze|Fuentes y límite de mantenimiento|出典と保守の境界|"
+        r"출처 및 유지보수 경계",
+        re.IGNORECASE,
+    ),
 }
+
+UNRUN_STATUS_RE = re.compile(
+    r"(?:\bnot\s+run\b|\bnot\s+executed\b|nicht\s+ausgeführt|"
+    r"no\s+ejecutado|未実行|미실행)",
+    re.IGNORECASE,
+)
 
 LAB_REQUIRED_KEYS = (
     "id",
@@ -152,9 +207,12 @@ def validate_labs(errors: list[str]) -> None:
         last_verified = values.get("last_verified", "")
         if not value_is_nonempty(last_verified):
             errors.append(f"{label}: last_verified must state that the lab has not run yet")
-        elif not all(marker in last_verified for marker in ("未运行", "待运行")):
+        elif not (
+            all(marker in last_verified for marker in ("未运行", "待运行"))
+            or UNRUN_STATUS_RE.search(last_verified)
+        ):
             errors.append(
-                f"{label}: last_verified must explicitly contain both 未运行 and 待运行"
+                f"{label}: last_verified must explicitly state that the lab has not run yet"
             )
 
         evidence_start = re.search(r"(?m)^evidence:\s*$", metadata)
@@ -171,11 +229,22 @@ def validate_labs(errors: list[str]) -> None:
         if not re.search(r"(?m)^##\s+", body):
             errors.append(f"{label}: body must contain an instructional section")
         for name, pattern in {
-            "task": re.compile(r"任务|输入").search,
-            "evidence": re.compile(r"证据|记录").search,
-            "failure_variant": re.compile(r"失败|边界|故意").search,
-            "reflection": re.compile(r"复盘|反思|思考").search,
-            "acceptance": re.compile(r"通过标准|验收标准").search,
+            "task": re.compile(r"任务|输入|task|tarea|aufgabe|タスク|작업", re.IGNORECASE).search,
+            "evidence": re.compile(r"证据|记录|evidence|beleg|evidencia|証拠|증거", re.IGNORECASE).search,
+            "failure_variant": re.compile(
+                r"失败|边界|故意|failure|boundary|intentional|fehler|grenze|"
+                r"fallo|límite|intencional|失敗|境界|意図|실패|경계|의도",
+                re.IGNORECASE,
+            ).search,
+            "reflection": re.compile(
+                r"复盘|反思|思考|总结|reflection|reflexion|reflexión|summary|"
+                r"zusammenfassung|resumen|要約|振り返り|회고|성찰|요약|まとめ",
+                re.IGNORECASE,
+            ).search,
+            "acceptance": re.compile(
+                r"通过标准|验收标准|acceptance|abnahme|aceptación|受け入れ|수용",
+                re.IGNORECASE,
+            ).search,
         }.items():
             if not pattern(body):
                 errors.append(f"{label}: body is missing {name} guidance")
