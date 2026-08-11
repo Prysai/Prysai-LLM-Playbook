@@ -19,6 +19,9 @@
 | S06 | `D:/downloads/awesome-codex-skills-master.zip` | `composio-community/awesome-codex-skills` | 1,101 个文件、880 个 `SKILL.md`；大量外部服务自动化 | 根目录 Apache-2.0 信号不等于所有嵌套内容许可一致；GitHub API 无统一 SPDX | 作为生态目录和候选扩展；先过滤重复、坏元数据、外部依赖和许可证，再决定是否纳入 |
 | S07 | `docs/research/field-problems-*.md` | `openai/codex` GitHub Issues、Stack Overflow/Stack Exchange API | 只保留公开用户报告的原创摘要和原始链接；Stack Overflow 页面标注 CC BY-SA 4.0；未复制外部代码、图片、长段文字、日志、凭据或 Skill 指令 | `reference-only`：用于现实问题研究和教学边界；不把社区回答当作官方支持，不将外部内容作为可发行资产打包 |
 | S08 | `docs/research/workbuddyguide-structure-study-2026-08-10.md` | `AlephAITech/WorkBuddyGuide` GitHub 仓库、固定 commit `abd61e8`、`workbuddy.homes` | 只记录公开可核对的目录、VitePress 配置、内容同步链、案例模板、部署边界和阅读体验；没有复制正文、提示词、代码、截图、图标、字体、二维码、品牌或投稿素材 | 根目录公开 MIT；具体媒体、第三方图标/字体、品牌和投稿内容的逐项许可不能由根目录许可证推断 | `reference-only`：只借鉴内容产品结构和可验证的案例机制；不整体 vendoring，不复制视觉/品牌资产；未来单项资产必须重新核对来源、归属和许可 |
+| S09 | `docs/research/chapter-02-official-baseline-2026-08-10.md` | OpenAI/Codex 官方文档、Git 官方文档 | 只保留对官方边界和 Git 命令语义的原创改写、短事实卡和链接；没有复制长段落、代码样例、图片或凭据 | 官方页面的再使用边界和页面版本需在发行前复核 | `reference-only`：作为第 2 章的易变事实与安全边界来源，不把官方文档语义当成本机运行证明 |
+| S10 | `docs/research/chapter-02-field-problems-2026-08-10.md` | `openai/codex` GitHub Issues、Stack Overflow | 只保留公开用户报告的原创中文摘要、证据分类和原始链接；未复制长文、日志、附件、用户路径、秘密或社区代码 | GitHub Issues 与 Stack Overflow 仍归各自权利人所有；社区建议不是官方支持 | `reference-only`：用于现实问题入口和失败/边界教学；所有案例保持 `candidate`，本项目未做本地复现 |
+| S11 | `docs/research/workbuddyguide-structure-benchmark-2026-08-10.md` | `AlephAITech/WorkBuddyGuide` 固定 commit `abd61e8`、GitHub 页面、`workbuddy.homes` | 只记录公开可观察的结构事实与原创比较；没有复制正文、图片、代码、提示词、字体、图标、二维码、品牌资产或第三方媒体 | 根目录 MIT 不能推出图片、字体、投稿内容和第三方素材的逐项授权 | `reference-only`：只迁移双入口、案例层和内容生命周期等信息架构抽象；不复制 WorkBuddyGuide 的视觉或品牌表达 |
 
 ## 归档指纹
 
