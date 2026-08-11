@@ -271,7 +271,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Model choice is not model worship",
             "zh": "模型选择不是模型崇拜"
           },
-          "href": "../book/chapters/06-model-selection.md",
+          "href": "../book/chapters/06-model-selection-EN.md",
           "relation": "primary"
         }
       ],

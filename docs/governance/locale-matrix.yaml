@@ -168,6 +168,22 @@
       }
     },
     {
+      "content_id": "chapter-06-model-selection",
+      "kind": "chapter",
+      "stem": "book/chapters/06-model-selection",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-11",
+      "legacy_paths": ["book/chapters/06-model-selection.md"],
+      "locales": {
+        "EN": {"path": "book/chapters/06-model-selection-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full"},
+        "ZH": {"path": "book/chapters/06-model-selection-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Simplified Chinese review and translation are pending."},
+        "ES": {"path": "book/chapters/06-model-selection-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/chapters/06-model-selection-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/chapters/06-model-selection-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/chapters/06-model-selection-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
       "content_id": "lab-011-gpt-codex-boundaries",
       "kind": "lab",
       "stem": "book/labs/lab-011-gpt-codex-boundaries",

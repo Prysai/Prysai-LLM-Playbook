@@ -1,4 +1,4 @@
-# 内容融合矩阵
+﻿# 内容融合矩阵
 
 这份矩阵把来源方法、章节、实验和可执行能力放在同一张图上。它记录的是“项目如何重新组织并验证能力”，不是外部资料的复制清单。
 
@@ -11,15 +11,16 @@
 - `skill_status` 用于项目 Skill：`draft`、`candidate`、`verified`、`production-ready`。
 - `claim_status` 只用于易变事实断言：`current`、`stale`、`disputed`、`removed`。
 - 学习路径关系使用 `primary`、`supporting`、`transfer`、`reference`；同一个实验或 Skill 被复用不等于产生了新的资产或新的掌握证据。
-- 本表有 13 个课程映射，当前磁盘上有 13 个实验文件；主题重复时在“新增能力”列说明递进关系。
+- 本表有 14 个课程映射，当前磁盘上有 13 个实验文件；主题重复时在“新增能力”列说明递进关系。
 
-## 13 个实验映射
+## 14 个课程映射（含 13 个实验文件）
 
 | 映射 | 方法与学习目标 | 来源/依据 | 章节 | 实验映射（真实文件） | Skill 映射 | 主题重复时新增的能力 | content_status | lab_status | skill_status | claim_status |
 |---|---|---|---|---|---|---|---|---|---|---|
 | M01 | GPT、模型与 Codex 的边界 | [官方基线](research/openai-codex-baseline.md) | [第 1 章 EN 源文件](../book/chapters/01-gpt-and-codex-EN.md) | [实验 011 EN 源文件](../book/labs/lab-011-gpt-codex-boundaries-EN.md) | [Codex Coach](../skills/prysai-codex-coach/SKILL.md) | 第一次建立“能力、产品、工具、证据”四层区分，并以静态任务卡观察边界 | candidate | draft | candidate | current |
 | M02 | 第一个低风险、可回滚任务 | [官方 Chapter 2 基线](research/chapter-02-official-baseline-2026-08-10.md)；[真实问题研究](research/chapter-02-field-problems-2026-08-10.md) | [第 2 章 EN 源文件](../book/chapters/02-first-safe-task-EN.md) | [实验 001 EN 源文件](../book/labs/lab-001-first-safe-task-EN.md) | [Task Protocol](../skills/prysai-task-protocol/SKILL.md) | 从解释边界推进到先检查、再修改、留 diff 和验证输出；用真实用户报告练习区分等待、失败、重试和完成证据 | candidate | draft | candidate | current |
 | M03 | 把愿望改成任务协议与切片 | [官方 Chapter 3 基线](research/chapter-03-official-baseline-2026-08-10.md)；[真实工作提示结构研究](research/prompt-patterns-for-real-work-2026-08-10.md)；[coding-agent 现场案例](research/field-problems-coding-agents-2026-08-10.md) | [第 3 章 EN 源文件](../book/chapters/03-task-protocol-EN.md)、[第 10 章](../book/chapters/10-planning-and-slicing.md) | [实验 002 EN 源文件](../book/labs/lab-002-task-protocol-EN.md) | [Task Protocol](../skills/prysai-task-protocol/SKILL.md) | 从“写清楚任务”增加字段依赖、停止点、失败恢复、claim→evidence 和多 Agent 交付接口 | candidate | draft | candidate | current |
+| M14 | 按任务、工作面、provider 和证据选择模型 | [模型选择事实与现场症状](research/codex-model-selection-official-facts-2026-08-11.md)；[官方事实刷新](research/openai-codex-facts-refresh-2026-08-09.md) | [第 6 章 EN 源文件](../book/chapters/06-model-selection-EN.md)、[第 19 章](../book/chapters/19-evaluate-models-and-workflows.md) | 本章 `three-task-smoke-v1`（章节内协议，尚未独立登记或运行） | [Evidence Review](../skills/prysai-evidence-review/SKILL.md)；[Codex Coach](../skills/prysai-codex-coach/SKILL.md) | 在既有证据审查之上新增模型/provider/推理设置 tuple、实际可用性门、`not_comparable`、容量恢复和任务级结论边界；不把产品定位写成 benchmark | candidate | draft | candidate | disputed |
 | M04 | 上下文、权限与 Agent 行动边界 | [第 4–7 章官方事实刷新](research/openai-codex-facts-refresh-2026-08-09.md)；[官方事实缺口审查](research/official-facts-gap-review-2026-08-10.md)；[真实问题研究索引](research/field-problems-index-2026-08-10.md)；[后续研究](research/field-problems-follow-up-2026-08-10.md)；[P2 研究](research/field-problems-follow-up-2026-08-10-p2.md) | [第 4 章 EN 源文件](../book/chapters/04-context-permissions-and-agent-EN.md)、[第 12 章](../book/chapters/12-agent-loop-and-stop.md) | [实验 007 EN 源文件](../book/labs/lab-007-action-boundaries-EN.md) | [Codex Coach](../skills/prysai-codex-coach/SKILL.md) | 从任务协议增加信任边界、确认点、回滚和“登录不等于授权”判断；本轮补充 sandbox/系统权限、授权状态/工具读取、UI 状态/运行状态和持久化配置/有效策略的四组断点 | candidate | draft | candidate | current |
 | M05 | 证据审查与恢复 | S05；[真实问题后续研究](research/field-problems-follow-up-2026-08-10.md)；[P2 研究](research/field-problems-follow-up-2026-08-10-p2.md) | [第 9 章](../book/chapters/09-verification-and-recovery.md)、[第 19 章](../book/chapters/19-evaluate-models-and-workflows.md) | [实验 003](../book/labs/lab-003-evidence-review.md) | [Evidence Review](../skills/prysai-evidence-review/SKILL.md) | 从检查 diff 增加断言—证据对应、未知状态和最小补证动作；本轮补充长等待、自动重试、授权循环、子 Agent 状态错位和 UI/运行时证据分离 | candidate | draft | candidate | current |
 | M06 | 文件、终端、浏览器、GitHub 的动作分级 | [第 4–7 章官方事实刷新](research/openai-codex-facts-refresh-2026-08-09.md)；[官方事实缺口审查](research/official-facts-gap-review-2026-08-10.md)；[真实问题研究索引](research/field-problems-index-2026-08-10.md)；[后续研究](research/field-problems-follow-up-2026-08-10.md)；[P2 研究](research/field-problems-follow-up-2026-08-10-p2.md)；[论坛研究](research/field-problems-forums-2026-08-10.md) | [第 5 章 EN 源文件](../book/chapters/05-choose-the-codex-surface-EN.md)、[第 13 章](../book/chapters/13-action-boundaries.md) | [实验 007 EN 源文件](../book/labs/lab-007-action-boundaries-EN.md) | [Task Protocol](../skills/prysai-task-protocol/SKILL.md) | 在行动边界基础上新增入口选择、外部副作用和组织仓库风险比较；本轮补充多目录、代理、网络和工具调用的可观察边界，以及 macOS Local Network、Linear OAuth 和配置存在/运行时可用的分层排查 | candidate | draft | candidate | current |

@@ -15,7 +15,7 @@
 - Chapters are `candidate`. Labs are `draft` with `run_status: not_run`.
 - Chapter 6 has `claim_status: disputed`; Chapter 22 has
   `claim_status: current | disputed`.
-- Existing English entry pages use their `-EN` files. Chapters 1–5 and Labs
+- Existing English entry pages use their `-EN` files. Chapters 1–6 and Labs
   001, 002, 007, and 011 now have canonical `-EN` source files. The remaining
   chapters and labs do not yet have locale-suffixed English variants, so their
   links are explicitly marked `migration pending — current source path`.
@@ -81,7 +81,7 @@ Compare models with a task set, cost, speed, stability, and verification;
 test assumptions about model positioning. **content_status:** `candidate` ·
 related volatile claim: `claim_status: disputed`
 
-- Chapter: [migration pending — current source path](chapters/06-model-selection.md)
+- Chapter: [Chapter 6 — EN source](chapters/06-model-selection-EN.md)
 - Research: [OpenAI/Codex baseline — locale-neutral research](../docs/research/openai-codex-baseline.md)
 
 ## Part II: From user to workflow designer

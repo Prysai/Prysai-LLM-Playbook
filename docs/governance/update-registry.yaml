@@ -15,7 +15,7 @@
     },
     {
       "area": "official-facts",
-      "canonical_paths": ["docs/research/openai-codex-baseline.md", "docs/research/openai-codex-facts-refresh-2026-08-09.md", "docs/governance/fact-impact-registry.yaml"],
+      "canonical_paths": ["docs/research/openai-codex-baseline.md", "docs/research/openai-codex-facts-refresh-2026-08-09.md", "docs/research/codex-model-selection-official-facts-2026-08-11.md", "docs/governance/fact-impact-registry.yaml"],
       "owner": "facts-maintainer",
       "triggers": ["official-doc-change", "product-release", "user-reports-step-failure", "fact-scope-change", "affected-consumer-change"],
       "required_inputs": ["claim-id", "authoritative-url", "checked-at", "applies-to", "owner", "next-review", "evidence-class", "impact-groups", "affected-chapters", "affected-labs", "affected-skills", "affected-evaluation-tasks", "affected-site-paths", "recheck-level"],
