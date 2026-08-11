@@ -1,216 +1,337 @@
+<!-- content_id: project-readme | locale: EN | language: en | default_locale: EN | translation_status: source | canonical_source: README-EN.md -->
+
+<p align="center">
+  <img src="assets/readme/codex-field-guide-header.svg" alt="Codex: From First Task to Real Work — from problem to evidence" width="100%">
+</p>
+
 # Codex: From First Task to Real Work
 
-> English entry point — the source-locale migration is in progress.
+> An English-first, evidence-led field guide for turning GPT and Codex from a
+> clever answer generator into a dependable way to do real work.
 
 <!-- language-switcher:start -->
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-`Codex: From First Task to Real Work` is an independent, book-shaped learning
-and practice system for using GPT, Codex, tools, Skills, Agents, and
-verification in real work. It is not a flat collection of Skills and it is not
-a prompt catalogue. It teaches a complete operating method: understand the
-system, define a bounded task, give the right context, act with the smallest
-necessary permissions, verify the result, and turn a repeatable method into a
-team capability.
+> **Project status:** `candidate` · **Default locale:** English · **Scope:**
+> book, labs, Skills, research, evaluation, and team practice
 
-## The problem this project addresses
+## The short version
 
-Many people can make an AI produce a plausible paragraph or a convincing code
-diff. Far fewer can make it complete a real task reliably. The hard failures
-usually come from missing operating decisions rather than from a lack of
-clever wording:
+This repository is a book-shaped learning and practice system for GPT,
+Codex, models, context, tools, Skills, Agents, verification, and team
+adoption. It is designed for people who need useful results under real
+constraints: incomplete requirements, unfamiliar repositories, changing
+products, limited permissions, deadlines, and outputs that can look finished
+before they are actually checked.
 
-- GPT, a model, Codex, context, tools, Skills, and Agents are treated as if
-  they were the same thing;
-- a vague outcome is handed to an Agent without a scope, acceptance condition,
-  stop condition, or rollback path;
-- the Agent receives too little context, the wrong context, or secrets that it
-  never needed;
-- a successful-looking response is accepted without checking files, tests,
-  logs, sources, permissions, or unfinished work;
-- a large collection of Skills is installed without knowing when a Skill is
-  useful, when Skills should be combined, or when they should be left out; and
-- a personal trick works once but cannot be reviewed, transferred, or updated
-  by a team.
+The central promise is simple:
 
-The learning path addresses those failures as one connected system:
+> Do not stop at a plausible output. Define the task, choose the smallest
+> useful capability, act within a visible boundary, preserve the evidence, and
+> say exactly what remains unverified.
 
-```text
-GPT and models → Codex surfaces → safe setup → task protocol → context
-→ tools and permissions → Skill selection → Agent loops
-→ plan / execute / verify / deliver → specialist tracks → team capability
-```
+This is an independent curriculum and field guide. It is not OpenAI's
+official documentation, an official Codex product page, or a catalogue of
+copied prompts and Skills.
 
-It advances on two linked tracks. The understanding track explains how models,
-context, tools, Skills, Agents, permissions, and evidence change the action
-space. The capability track makes the reader practise those decisions on small,
-observable tasks before transferring them to research, engineering, content,
-marketing, and team workflows.
+## Start with a real outcome
 
-## What is in the repository
-
-| Layer | Location | Purpose |
+| What you need now | Start here | Leave with |
 |---|---|---|
-| Book | `book/` | A coherent sequence of concepts, decisions, and working methods |
-| Course path | Chapter objectives and learning contracts | Makes the order and reason for each stage explicit |
-| Labs | `book/labs/` | Low-risk tasks that produce inspectable evidence |
-| Skills | `skills/` | Repeatable methods expressed as Codex-executable guidance |
-| Evaluations | `evals/` and `docs/quality/` | Checks whether content, Skills, and workflows work within a stated scope |
-| Governance | `docs/governance/` and `docs/adr/` | Sources, permissions, lifecycle, updates, locale identity, and contribution boundaries |
-| Research | `docs/research/` | Official facts and carefully labelled reports of real user problems |
-| Public showcase | `site/` | A separate presentation layer for the learning path |
+| Understand what GPT, Codex, tools, Skills, and Agents actually are | [Chapter 1 — Understand GPT before Codex](book/chapters/01-gpt-and-codex-EN.md) + [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) | A usable mental model and a list of claims you refuse to infer without evidence |
+| Complete a first task safely | [Chapter 2 — English migration pending — current source](book/chapters/02-first-safe-task.md) + [Lab 001 — English migration pending — current source](book/labs/lab-001-first-safe-task.md) | One small, reversible diff, a focused check, and an explicit unverified list |
+| Turn a vague request into something an Agent can execute | [Task protocol — English migration pending](book/chapters/03-task-protocol.md) + [Lab 002 — English migration pending — current source](book/labs/lab-002-task-protocol.md) | Goal, context, constraints, acceptance, stop conditions, and failure handling |
+| Stop trusting “done” too early | [Verification and recovery — English migration pending](book/chapters/09-verification-and-recovery.md) + [Lab 003 — English migration pending — current source](book/labs/lab-003-evidence-review.md) | A claim-to-evidence review that catches wrong files, missing tests, and scope gaps |
+| Choose or design a Skill | [Skill registry](docs/skill-registry.md) + [Skill quality standard](docs/quality/skill-quality-standard.md) | A bounded Skill contract with triggers, exclusions, dependencies, rollback, and tests |
+| Learn from failures people actually report | [Real-world problem index](docs/research/field-problems-index-2026-08-10.md) | A symptom, a safe first check, a narrower fallback, and an honest evidence level |
+| Turn a personal method into team capability | [Team capability system — English migration pending](book/chapters/21-team-capability-system.md) + [Contribution model](docs/governance/contribution-model.md) | Ownership, sources, permissions, evaluation, maintenance, and rollback |
 
-The repository keeps original curriculum writing separate from external
-material. Public issue and forum reports are evidence of what users
-experienced, not automatic proof of an official root cause. They are cited and
-labelled accordingly; they are not copied wholesale into the book.
+The most useful first slice is deliberately small: read Chapter 2, run Lab
+001 in a sandbox, keep the diff and command output, then write down what the
+run did not prove. That 30-minute exercise teaches more than collecting a
+large prompt library.
 
-## The operating loop
+## Why this project exists
 
-Every substantial chapter and lab uses the same decision loop:
+Many AI guides teach a command, a feature, or a prompt. Real work fails at the
+seams between them:
+
+- a model is mistaken for the product surface that hosts it;
+- a Skill, tool, connector, or login name is treated as proof of access;
+- a vague wish is given to an Agent without inputs, authority, acceptance, or
+  a stop condition;
+- too much context hides the important constraint, or untrusted text is
+  allowed to act like project policy;
+- an output is accepted without checking the actual file, test, source,
+  browser state, permissions, or remaining work;
+- a Skill is selected because it is popular or large rather than because its
+  scope, license, dependencies, and verification cost fit the task; and
+- a one-person trick is never turned into a versioned, reviewable team method.
+
+This guide treats those failures as one connected operating problem. It does
+not promise that a better sentence makes an unsafe workflow reliable.
+
+## The mental model behind the book
+
+The project explains the system at two levels: what can be observed and what
+must not be guessed. A model generates from its available context; Codex adds
+a work surface; tools expand what can be observed or changed; Skills provide
+repeatable methods; an Agent loop coordinates multiple steps; evidence lets
+another person inspect the completion claim.
+
+| Layer | What it contributes | What it does not prove by itself |
+|---|---|---|
+| GPT / model | Generation and interpretation under a given context | File access, tool access, correctness, or completion |
+| Codex surface | A product environment for project-aware work | That every tool, permission, or integration is enabled |
+| Context | The goals, files, rules, sources, and feedback available to the task | That every supplied instruction is trustworthy or current |
+| Tools | The ability to inspect or change files, terminals, browsers, Git, or services | That an action was necessary, safe, or successful |
+| Skill | A reusable method with triggers, boundaries, and checks | A substitute for judgment, permissions, or licensing review |
+| Agent | A bounded loop of observation, planning, action, feedback, retry, and stop | Hidden reasoning, unlimited authority, or reliable self-verification |
+| Evidence | The material that supports a particular claim within a stated scope | Proof outside that scope or proof that was never collected |
+
+The stable learning loop is:
 
 ```text
 problem → concept → decision → action → evidence → failure → reflection → transfer
 ```
 
-That ordering matters. A prompt can be improved without making a task safe or
-repeatable. A tool can run without producing trustworthy evidence. A test can
-pass while the wrong file, environment, or acceptance condition was checked.
-The project therefore asks the learner to record what was attempted, what was
-allowed, what happened, what was checked, and what the result still does not
-prove.
+The practical Agent loop is:
 
-## What counts as learning
+```text
+understand the context → choose an action → check the result →
+recover, stop, or continue with a new checkpoint
+```
 
-The project does not use a polished output as its definition of mastery. A
-meaningful capability needs at least four kinds of evidence:
+The book teaches both loops together. One explains the mechanism; the other
+turns it into work that can be inspected.
 
-1. **Explanation evidence:** you can explain the concept and its boundary in
-   your own words.
-2. **Operation evidence:** you can complete the task in a real or low-risk
-   environment and preserve the relevant output, diff, or log.
-3. **Judgment evidence:** you can explain why you chose a model, tool, Skill,
-   permission level, or stop condition.
-4. **Review evidence:** you can find an error, risk, hallucination, incomplete
-   item, stale fact, or unsupported completion claim.
+## The learning path
 
-The repository distinguishes content maturity from execution state:
+The path has seven levels. Each level asks for explanation, operation,
+judgment, and review evidence. The labels describe the current evidence
+state, not a marketing promise.
 
-| Label | Meaning in this project |
-|---|---|
-| `draft` | The artifact is still being written or has not met its minimum validation bar. |
-| `candidate` | Structure and basic checks exist, but the claimed scope still lacks some fresh runs, transfer evidence, or independent review. |
-| `verified` | Positive, boundary, failure, and transfer evidence exists within the declared scope. |
-| `production-ready` | `verified` plus safety, maintenance, version, licence, and release gates. |
-| `not_run` | No execution log exists for the relevant run; it is not evidence of success. |
-
-A validator passing, a file existing, or a response looking complete does not
-upgrade an artifact to `verified`.
-
-## Current state — 2026-08-10
-
-This is a transparent snapshot, not a launch claim.
-
-| Area | Current evidence-backed state |
-|---|---|
-| Project | `candidate` |
-| Learning path | 7 stages, `candidate` |
-| Chapters | 22 structured chapters, `candidate` |
-| Labs | 13 labs, `draft`; run status `not_run` |
-| Skills | 7 candidates; structural checks passed; 3 of 7 have a basic fresh-context pretest, while 4 have only static contract review |
-| Evaluation fixtures | 39 fixtures across 16 tracks, `candidate`; run status `not_run`; review is static-structure-only |
-| Public site | `candidate`; English default; current public language options are English and Chinese |
-| Six-locale rollout | An accepted target and naming policy, not six completed translations |
-
-The existing chapter body is still primarily Simplified Chinese. These English
-entry files establish the English-first development direction, but they do not
-claim that the book is already bilingual. Real-world cases in the research
-files remain reports and community guidance unless a stronger source or a local
-reproduction is explicitly recorded.
-
-## English-first, six-locale content
-
-The project uses a strict locale suffix for reader-facing localized files. The
-English source is also labelled; an unsuffixed file is never silently treated
-as English.
-
-| Locale | Suffix | Role |
+| Level | Capability | Primary route |
 |---|---|---|
-| English | `-EN` | Default public locale and first development priority |
-| Simplified Chinese | `-ZH` | Translation locale |
-| Spanish | `-ES` | Translation locale |
-| Japanese | `-JA` | Translation locale |
-| Korean | `-KO` | Translation locale |
-| German | `-DE` | Translation locale |
+| **L0 · Observer** | Separate GPT, models, Codex, context, tools, Skills, and Agents before attributing an outcome | [Chapter 1](book/chapters/01-gpt-and-codex-EN.md) · [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) |
+| **L1 · Safe user** | Complete a reversible, observable task and distinguish a diff from proof | [Chapter 2 — English migration pending — current source](book/chapters/02-first-safe-task.md) · [Lab 001 — English migration pending — current source](book/labs/lab-001-first-safe-task.md) |
+| **L2 · Task designer** | Turn a wish into a protocol with relevant context, least authority, acceptance, and failure handling | [Chapter 3 — migration pending](book/chapters/03-task-protocol.md) · [Lab 002 — English migration pending — current source](book/labs/lab-002-task-protocol.md) |
+| **L3 · Workflow designer** | Run a complete workflow with stages, checkpoints, recovery, and delivery evidence | [Chapters 7–13 — migration pending](book/table-of-contents-EN.md) · [Lab 013 — English migration pending — current source](book/labs/lab-013-l3-vertical-slice.md) |
+| **L4 · Capability builder** | Select, compose, install, and improve Skills and tools by fit, risk, license, and verification cost | [Skill registry](docs/skill-registry.md) · [Chapter 11 — migration pending](book/chapters/11-designing-a-skill.md) |
+| **L5 · Evidence reviewer** | Test completion claims with positive, boundary, failure, and transfer cases | [Evaluation framework](docs/quality/evaluation-framework.md) · [Chapter 19 — migration pending](book/chapters/19-evaluate-models-and-workflows.md) |
+| **L6 · Team coach** | Turn a personal method into a versioned team capability with ownership and rollback | [Chapter 20–22 — migration pending](book/table-of-contents-EN.md) · [Contribution model](docs/governance/contribution-model.md) |
 
-The canonical rule is `<stable-stem>-<LOCALE>.md`, for example
-`book/chapters/01-first-safe-task-EN.md`. A locale variant keeps the same
-content identity and learning scope as its English source. The full naming,
-translation-status, URL, and migration decision is recorded in the
-[locale-suffixed content ADR](docs/adr/0010-locale-suffixed-content.md), which
-is locale-neutral governance.
+“Migration pending” is intentional. It points to the current source file and
+does not pretend that an English chapter exists when it does not.
 
-## Reader links and migration status
+## What a chapter, lab, or Skill must contain
 
-When a locale variant exists, a reader-facing page must link to the same
-content identity in the reader's current locale. Governance data, source
-registers, validators, and ADRs remain locale-neutral. If a target has not yet
-been migrated, this entry labels the legacy unsuffixed path explicitly instead
-of pretending that a translation exists.
+The repository is built as a learning product, not a pile of pages. Before an
+artifact can move through the maturity states, its contract should be visible.
 
-### Start here
+### A chapter
 
-- [English book guide](book/README-EN.md)
-- [English preface](book/preface-EN.md)
-- [English book table of contents](book/table-of-contents-EN.md)
+- the real problem and learning objective;
+- the smallest concept set needed to make a decision;
+- a concrete action and a small experiment;
+- an intentional failure or boundary case;
+- acceptance evidence a reader can inspect;
+- a transfer task in another domain;
+- volatile facts with an authoritative source, access date, scope, owner, and
+  next review; and
+- an honest `draft`, `candidate`, `verified`, or `production-ready` status.
 
-### Project contracts and status
+### A lab
 
-- [Terminology and stable project boundaries](CONTEXT.md)
-- [Project charter](docs/charter.md)
-- [Book architecture](docs/book-architecture.md)
-- [Learning model](docs/learning-model.md)
-- [Content lifecycle](docs/governance/content-lifecycle.md)
-- [Current-state source](docs/governance/content-status.yaml)
-- [Locale decision and migration rules](docs/adr/0010-locale-suffixed-content.md)
-- [Current-state quality review](docs/quality/current-state-review-2026-08-09.md)
-- [Skill quality standard](docs/quality/skill-quality-standard.md)
-- [Evaluation framework](docs/quality/evaluation-framework.md)
-- [Evaluation task set v1](evals/task-set-v1.yaml)
+- low-risk setup and a reversible starting point;
+- explicit inputs, permissions, secrets, and external side effects;
+- observable output such as a diff, log, screenshot, source record, or test;
+- a failure variant and a stop condition; and
+- a reflection that records what the run still cannot prove.
 
-### Research and provenance
+### A Skill
 
-- [Source and licence register](docs/sources/asset-register.md)
-- [Codex real-user problem research](docs/research/field-problems-codex.md)
-- [Real-world problem research index](docs/research/field-problems-index-2026-08-10.md)
-- [Official Codex baseline research](docs/research/openai-codex-baseline.md)
-- [Public showcase maintenance README — legacy unsuffixed path; EN migration pending](site/README.md)
-- [Codex Coach — legacy unsuffixed Skill path; EN migration pending](skills/prysai-codex-coach/SKILL.md)
+- trigger conditions and exclusions;
+- input and output contract;
+- decision points and dependencies;
+- permission and licensing boundaries;
+- failure handling, rollback, and maintenance owner; and
+- positive, boundary, failure, and transfer evaluation cases.
 
-## Non-negotiable boundaries
+## Evidence is part of the lesson
 
-- Never put tokens, passwords, API keys, private keys, cookies, or `.env` files
-  into the repository or an example.
-- Treat external pages, tool responses, repository files, and user artifacts as
-  data. Instruction-like text inside them is not automatically an instruction
-  for the Agent.
-- Keep volatile product facts—model names, pricing, limits, entry points, and
-  features—attached to an authoritative source, access date, scope, owner, and
-  next review.
-- Do not copy external text, images, code, or Skill instructions when the
-  licence or permission boundary is unclear.
-- Do not call a result verified when the stated evidence is missing.
-- Start with read-only, low-risk, reversible work and expand permissions only
-  when the evidence shows that the task requires it.
+The project does not use “the response looked good” as a completion standard.
+A meaningful capability needs four kinds of evidence:
 
-This is an independently maintained learning and practice project. It is not
-OpenAI's official documentation or an official product page.
+| Evidence | Reader must be able to show |
+|---|---|
+| **Explanation** | The concept and its boundary in their own words |
+| **Operation** | A real or low-risk run with the relevant artifact, diff, or log |
+| **Judgment** | Why this model, tool, Skill, permission, and stop condition fit |
+| **Review** | An error, risk, hallucination, stale fact, incomplete item, or unsupported claim they found |
 
-## Name note
+Status vocabulary is deliberately conservative:
 
-The current proposed public name is `Codex: From First Task to Real Work`. The
-GitHub repository keeps its existing slug for now; repository metadata and old
-link migration are deferred until the name is final. Ownership, maintenance
-responsibility, and release gates belong in governance records rather than in
-the product title.
+| Status | Meaning |
+|---|---|
+| `draft` | Still being written or below the minimum validation bar |
+| `candidate` | Structure and basic checks exist; fresh execution or independent review is incomplete |
+| `verified` | Positive, boundary, failure, and transfer evidence exists within the declared scope |
+| `production-ready` | Verified plus safety, maintenance, version, license, and release gates |
+| `not_run` | No execution log exists; it is not evidence of success |
+
+## Repository map
+
+The root README is the front door. The following layers are the actual
+learning system behind it.
+
+| Layer | Location | Stores | Why it matters |
+|---|---|---|---|
+| **Book** | [`book/`](book/) | Preface, chapters, table of contents, and labs | The coherent learning route |
+| **English book entry** | [`book/README-EN.md`](book/README-EN.md) | Book contract, reading state, and locale policy | The book-level starting point |
+| **Labs** | [`book/labs/`](book/labs/) | Low-risk, observable practice tasks | Turns concepts into inspectable action |
+| **Skills** | [`skills/`](skills/) | Project-owned reusable methods | Encodes a method only after its boundaries are understood |
+| **Skill registry** | [`docs/skill-registry.md`](docs/skill-registry.md) | Skill roles, triggers, and current status | Makes capability selection discoverable |
+| **Evaluation** | [`evals/`](evals/) and [`docs/quality/`](docs/quality/) | Fixed tasks, quality standards, and review records | Tests whether the curriculum and Skills work |
+| **Governance** | [`docs/governance/`](docs/governance/) and [`docs/adr/`](docs/adr/) | Ownership, sources, status, locale identity, updates, and decisions | Keeps a changing system maintainable |
+| **Research** | [`docs/research/`](docs/research/) | Official fact cards and real-world problem reports | Connects stable principles to current reality |
+| **Public showcase** | [`site/`](site/) | A separate visual learning-path surface | Gives readers a browsable overview |
+| **Checks** | [`scripts/`](scripts/) | Link, localization, status, content, and archive validators | Converts project rules into repeatable evidence |
+
+The public showcase and the repository are complementary: the site helps a
+reader choose a route; the repository keeps the source, evidence, history,
+and governance visible.
+
+## Real-world problems, handled honestly
+
+The research layer looks at the problems people report in GitHub Issues,
+Stack Overflow, Reddit, and other public discussions, then compares those
+reports with first-party documentation and local checks where possible. It
+does not turn a forum answer into an official root cause.
+
+Each case is classified as one or more of:
+
+1. **Official fact** — owned by a first-party documentation source;
+2. **User report** — what a person publicly observed;
+3. **Community suggestion** — a workaround or hypothesis from discussion;
+4. **Local reproduction** — what this project actually ran in a declared
+   environment; or
+5. **Project inference** — an original conclusion that remains bounded by the
+   available evidence.
+
+Start with the [real-world problem index](docs/research/field-problems-index-2026-08-10.md)
+and the [Codex problem research](docs/research/field-problems-codex.md). The
+newer coding-agent field cases and prompt-pattern report are being reviewed
+before their next sync; they are not linked here until the corresponding
+remote files exist. The [source and license register](docs/sources/asset-register.md)
+records what can be used as research, what can be adapted, and what must not
+be copied.
+
+## Current state
+
+This is a transparent snapshot as of **2026-08-10**. Counts describe the
+repository; they do not describe learning outcomes.
+
+| Area | Current state | What the state means |
+|---|---|---|
+| Project | `candidate` | The product skeleton and core contracts exist; broad independent evidence is still being built |
+| Chapters | 22 structured chapters · `candidate` | The corpus is substantial, but most chapter bodies still need English source migration and fresh review |
+| Labs | 13 labs · `draft` · `run_status: not_run` | The contracts exist; the repository does not claim that every lab has been freshly executed |
+| Skills | 7 project Skills · `candidate` | Structural checks pass; fresh-context evidence is partial and remains visible in the registry |
+| Evaluation fixtures | 39 fixtures · `candidate` · `not_run` | The task set is defined; model execution logs are not being implied |
+| Public showcase | `candidate` | English default and Chinese runtime toggle are implemented; broader visual and locale coverage remains work |
+| Locale rollout | EN source plus five translation entries in progress | Six entry locales are registered; the whole book is not yet six-language complete |
+
+The [current status source](docs/governance/content-status.yaml) is authoritative
+for evidence-backed maturity. The [current-state review](docs/quality/current-state-review-2026-08-09.md)
+explains the gaps behind the labels.
+
+## English first, with explicit language identity
+
+English is the default public language and the first development priority.
+Every reader-facing localized file, including an English source, carries an
+explicit suffix: `-EN`, `-ZH`, `-ES`, `-JA`, `-KO`, or `-DE`.
+
+| Reader entry | Role | Current truth |
+|---|---|---|
+| `README.md` | GitHub's default English facade | English content, marked `EN`, with the same language switcher |
+| `README-EN.md` | Canonical English source | Source file for the project entry |
+| `README-ZH.md` | Simplified Chinese entry | Translation slice; independent language review pending |
+| `README-ES.md` | Spanish entry | Translation slice; independent language review pending |
+| `README-JA.md` | Japanese entry | Translation slice; independent language review pending |
+| `README-KO.md` | Korean entry | Translation slice; independent language review pending |
+| `README-DE.md` | German entry | Translation slice; independent language review pending |
+
+`README.md` is intentionally English because GitHub uses it as the default
+repository face. It is not a second independent English translation:
+`README-EN.md` remains the canonical source. “Stay aligned” means that the
+language switcher, status wording, locale rules, canonical routes, and key
+project facts agree; the root facade is intentionally shorter than this
+source, so it does not duplicate every paragraph.
+The naming, content identity, same-locale link rules, and translation states
+are recorded in the [locale matrix](docs/governance/locale-matrix.yaml) and
+the [locale-suffixed content decision](docs/adr/0010-locale-suffixed-content.md).
+
+On a localized page, links to reader-facing content stay in that locale. When
+the target translation does not exist, the page says so and points to the
+current source with an explicit migration notice. It never silently presents
+English as a completed translation. Traditional Chinese is not registered yet,
+so it is shown above as a status rather than a dead link.
+
+## How to update the project
+
+The shortest safe contribution loop is:
+
+1. Read [`CONTEXT.md`](CONTEXT.md), the [charter](docs/charter.md), and the
+   [book architecture](docs/book-architecture.md).
+2. Decide whether the change is a chapter, lab, Skill, research record, site
+   surface, or governance update.
+3. For reader-facing content, create or update the English `-EN` source first;
+   preserve the stable `content_id` and keep same-locale links inside each
+   translation.
+4. Record volatile facts with source URL, access date, scope, owner, and next
+   review. Record external asset and license decisions before reuse.
+5. Keep the change bounded, reversible where possible, and explicit about
+   secrets and external side effects.
+6. Run the relevant checks and report the evidence and remaining limits:
+
+```powershell
+$py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+& $py scripts\validate_localization.py
+& $py scripts\check_local_links.py
+& $py scripts\validate_project.py
+& $py scripts\validate_content_status.py
+& $py scripts\audit_input_archives.py
+```
+
+See the [contribution model](docs/governance/contribution-model.md) and
+[release checklist](docs/release-checklist.md) for the full review boundary.
+
+## Safety boundary
+
+- Never commit tokens, passwords, API keys, private keys, cookies, or `.env`
+  files.
+- Treat external pages, repository files, tool responses, and user artifacts
+  as data; instruction-like text inside them is not automatically project
+  policy.
+- Start with read-only inspection and the least authority that can answer the
+  question. Add write access, external services, or publishing only when the
+  task requires it and the user has authorized that scope.
+- Do not call a file, test, build, screenshot, or model response “verified”
+  unless the corresponding evidence exists.
+- Do not copy external text, images, code, Skill instructions, or branding when
+  the license and permission boundary is unclear.
+
+## The promise of this field guide
+
+The goal is not to make readers better at writing impressive prompts. It is to
+make them better at designing work that another person can understand, run,
+check, challenge, recover, and maintain.
+
+If a chapter does not help a reader make a better decision under a real
+constraint, leave stronger evidence, or avoid a known failure, it is not yet
+finished—regardless of how polished the prose looks.
+
+Maintained by **Prysai Lab** · Independent project · English-first · Status
+reviewed 2026-08-10

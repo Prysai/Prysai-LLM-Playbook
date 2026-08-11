@@ -23,6 +23,8 @@
 | S10 | `docs/research/chapter-02-field-problems-2026-08-10.md` | `openai/codex` GitHub Issues、Stack Overflow | 只保留公开用户报告的原创中文摘要、证据分类和原始链接；未复制长文、日志、附件、用户路径、秘密或社区代码 | GitHub Issues 与 Stack Overflow 仍归各自权利人所有；社区建议不是官方支持 | `reference-only`：用于现实问题入口和失败/边界教学；所有案例保持 `candidate`，本项目未做本地复现 |
 | S11 | `docs/research/workbuddyguide-structure-benchmark-2026-08-10.md` | `AlephAITech/WorkBuddyGuide` 固定 commit `abd61e8`、GitHub 页面、`workbuddy.homes` | 只记录公开可观察的结构事实与原创比较；没有复制正文、图片、代码、提示词、字体、图标、二维码、品牌资产或第三方媒体 | 根目录 MIT 不能推出图片、字体、投稿内容和第三方素材的逐项授权 | `reference-only`：只迁移双入口、案例层和内容生命周期等信息架构抽象；不复制 WorkBuddyGuide 的视觉或品牌表达 |
 
+| S12 | `assets/readme/codex-field-guide-header.svg` | Prysai Lab 原创页眉图，创建于 2026-08-10 | 本项目为 README 设计的原创 SVG；只使用内嵌几何图形、文字、渐变和网格，不包含外部图片、字体文件、图标、品牌素材或远程请求 | 项目原创资产；仓库发行许可证尚未单独确定，不能将未决定的发行权利扩展到外部项目 | `original-rewrite / project-owned`：可用于本项目 README 与同一项目的文档展示；不得把它标记为第三方素材或从外部来源复制 |
+
 ## 归档指纹
 
 以下 SHA-256 用于确认本轮输入没有被悄悄替换：

@@ -20,6 +20,7 @@ SUFFIX_RE = re.compile(r"-(EN|ZH|ES|JA|KO|DE)(\.[^/]+)$")
 LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 LOCALE_FILE_RE = re.compile(r"-(EN|ZH|ES|JA|KO|DE)\.[^/]+$")
 README_RE = re.compile(r"^(?:README|book/README)(?:-(EN|ZH|ES|JA|KO|DE))?\.md$")
+ROOT_EN_README = "README.md"
 LANGUAGE_SWITCHER_START = "<!-- language-switcher:start -->"
 LANGUAGE_SWITCHER_END = "<!-- language-switcher:end -->"
 MIGRATION_NOTICE_RE = re.compile(
@@ -189,6 +190,12 @@ def main() -> int:
         path_string = relative(path)
         suffix_match = SUFFIX_RE.search(path_string)
         locale = suffix_match.group(1) if suffix_match else None
+        # GitHub renders the unsuffixed root README as the repository's
+        # default page. It is a deliberate English facade, while README-EN.md
+        # remains the suffixed canonical source. Keep this exception explicit
+        # so normal English reader links are validated as same-locale links.
+        if path_string == ROOT_EN_README:
+            locale = "EN"
         text = path.read_text(encoding="utf-8")
         switcher_start = text.find(LANGUAGE_SWITCHER_START)
         switcher_end = text.find(LANGUAGE_SWITCHER_END, switcher_start + len(LANGUAGE_SWITCHER_START)) if switcher_start >= 0 else -1

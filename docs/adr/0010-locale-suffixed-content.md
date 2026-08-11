@@ -200,11 +200,15 @@ An unavailable translation is shown as an unlinked status such as
 an unrelated English page. A validator may therefore distinguish an honest
 translation gap from a broken language switch.
 
-The unsuffixed root `README.md` and `book/README.md` are language-neutral
-compatibility entry points retained for GitHub and existing bookmarks. They
-default to the `-EN` entry, expose the same six-locale switcher, and are not
-treated as an unsuffixed English edition. Their legacy identity is registered
-in `docs/governance/locale-matrix.yaml`.
+The root `README.md` is a deliberate English (`EN`) GitHub facade retained for
+GitHub's default rendering and existing bookmarks. It carries an explicit
+`locale: EN` marker, exposes the six-locale switcher, and points to the
+suffixed `README-EN.md` as the canonical English source. It is not a second
+independent English edition; changes to the facade and source must be reviewed
+together. The unsuffixed `book/README.md` remains a language-neutral
+compatibility entry point during migration and defaults to `book/README-EN.md`.
+Both paths retain their compatibility identity in
+`docs/governance/locale-matrix.yaml`.
 
 The only permitted unsuffixed local targets are files explicitly classified as
 locale-neutral by the matrix, such as a validator, an ADR, or a source/license

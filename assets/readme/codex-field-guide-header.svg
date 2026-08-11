@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 480" role="img" aria-labelledby="title desc">
+  <title id="title">Codex: From First Task to Real Work</title>
+  <desc id="desc">A field guide visual showing the path from problem to decision, action, evidence, and transfer.</desc>
+  <defs>
+    <linearGradient id="wash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#11151a"/>
+      <stop offset="1" stop-color="#252b31"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#ffffff" stroke-opacity=".07" stroke-width="1"/>
+    </pattern>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="480" fill="url(#wash)"/>
+  <rect width="1600" height="480" fill="url(#grid)"/>
+  <path d="M 0 390 H 1600" stroke="#ffffff" stroke-opacity=".14"/>
+  <path d="M 1040 0 V 480" stroke="#ffffff" stroke-opacity=".12"/>
+
+  <g fill="#f4f1ea" font-family="Arial, Helvetica, sans-serif">
+    <text x="72" y="66" font-size="18" font-weight="700" letter-spacing="4">PRYSAI LAB / FIELD GUIDE 001</text>
+    <text x="72" y="214" font-size="118" font-weight="800" letter-spacing="-5">CODEX</text>
+    <text x="78" y="268" font-size="30" font-weight="700" letter-spacing="8">FROM FIRST TASK TO REAL WORK</text>
+    <text x="78" y="326" font-size="20" fill="#c8cdd2">A practical system for models, tools, Skills, Agents, and evidence.</text>
+  </g>
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 92 414 C 265 372, 364 432, 506 390 S 752 374, 900 418" stroke="#ff5b45" stroke-width="5" filter="url(#softGlow)"/>
+    <path d="M 92 414 C 265 372, 364 432, 506 390 S 752 374, 900 418" stroke="#ff806b" stroke-width="2"/>
+    <path d="M 1080 342 H 1512" stroke="#f4f1ea" stroke-opacity=".7" stroke-width="2"/>
+    <path d="M 1080 342 L 1142 284 L 1225 322 L 1328 208 L 1414 242 L 1512 132" stroke="#f4f1ea" stroke-width="3"/>
+    <circle cx="1142" cy="284" r="7" fill="#ff5b45" stroke="none"/>
+    <circle cx="1225" cy="322" r="7" fill="#ff5b45" stroke="none"/>
+    <circle cx="1328" cy="208" r="7" fill="#ff5b45" stroke="none"/>
+    <circle cx="1414" cy="242" r="7" fill="#ff5b45" stroke="none"/>
+    <circle cx="1512" cy="132" r="9" fill="#f4f1ea" stroke="none"/>
+  </g>
+
+  <g fill="#f4f1ea" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2">
+    <text x="1078" y="382">PROBLEM</text>
+    <text x="1184" y="382">DECISION</text>
+    <text x="1302" y="382">ACTION</text>
+    <text x="1402" y="382">EVIDENCE</text>
+    <text x="1500" y="110" text-anchor="end" fill="#ff806b">TRANSFER</text>
+  </g>
+
+  <g fill="#aeb6be" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="1">
+    <text x="1080" y="424">READ THE BOUNDARY. KEEP THE PROOF.</text>
+    <text x="1528" y="66" text-anchor="end">ENGLISH-FIRST / SIX LOCALES</text>
+  </g>
+</svg>
