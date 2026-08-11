@@ -2,13 +2,13 @@ const copy = {
   en: {
     skipToContent: 'Skip to main content',
     wordmarkAria: 'Codex: From First Task to Real Work home',
-    languageToggleAria: 'Switch to Chinese',
+    languageToggleAria: 'Choose interface language',
     menuAria: 'Open navigation',
     navAria: 'Main navigation',
     heroIndexAria: 'Page index',
     pathAria: 'Seven-level learning path',
     routesAria: 'Filter chapter routes',
-    menu: 'Menu', navStart: 'Start with a problem', navFirst30: 'First 30 minutes', navPath: 'Learning path', navIndex: 'Project index', navRoutes: 'Reading routes', navLabs: 'Labs', navSkills: 'Skills', navUpdates: 'Update map',
+    menu: 'Menu', navStart: 'Start with a problem', navFirst30: 'First 30 minutes', navPath: 'Learning path', navIndex: 'Project index', navRoutes: 'Reading routes', navLabs: 'Labs', navSkills: 'Skills', navUpdates: 'Update map', localeBannerFallback: 'The {requested} route is available, but some UI or reader-facing content is still in migration. Showing the current available source where needed.', localeManifestError: 'Locale routing is unavailable because the generated manifest did not load. English remains available; rebuild the manifest before relying on other routes.', localeBannerReady: 'Reading in {language}.', localeMenuAria: 'Interface languages', languageNameEnglish: 'English', languageNameChinese: 'Simplified Chinese', languageNameSpanish: 'Spanish', languageNameJapanese: 'Japanese', languageNameKorean: 'Korean', languageNameGerman: 'German',
     heroIndex: 'CODEX / LEARNING SYSTEM', heroEyebrow: 'Codex learning and practice · candidate', heroTitle: 'Use Codex for real work.', heroLede: 'Understand what GPT, Codex, models, tools, Skills, and Agents actually do. Practice on small tasks, keep evidence, and move into real workflows.', heroPrimary: 'Start with a real problem', heroSecondary: 'Browse 22 chapters', heroNoteAria: 'Project status', heroNoteLabel: 'Current baseline', heroNoteBody: 'The structure is a candidate. Labs are still draft and have not completed live execution verification.', heroNoteLink: 'See the evidence boundary', heroFooter: 'Problem → protocol → action → evidence',
     startEyebrow: 'Start with the problem', startTitle: 'Do not start with a Skill.', startIntro: 'Start with the failure you need to avoid or the work you need to finish. Pick the smallest useful entry, then leave evidence.',
     problemStartTitle: 'I do not know where to start.', problemStartBody: 'Separate GPT, Codex, models, tools, Skills, and Agents before choosing a workflow.', problemStartLink: 'Open chapter 1 ↗', problemWrongFileTitle: 'Codex changed the wrong file.', problemWrongFileBody: 'Learn to inspect scope, diff, tests, and recovery before trusting a completion statement.', problemWrongFileLink: 'Open chapter 9 ↗', problemSkillTitle: 'I do not know which Skill to use.', problemSkillBody: 'Choose by task, risk, inputs, dependencies, and evidence—not by directory size.', problemSkillLink: 'Run lab 004 ↗', problemUpdateTitle: 'I need to update this safely.', problemUpdateBody: 'Use the fixed update map to find the canonical file, required source record, and validation gate.', problemUpdateLink: 'Open the update map ↗',
@@ -24,7 +24,8 @@ const copy = {
     statusEyebrow: 'Evidence boundary', statusTitle: 'A status is a claim about evidence.', statusIntro: 'This project does not turn document count, Skill count, or one successful output into “mastery.” Use the status that the evidence supports.', statusDraft: 'Still being written or missing the minimum check.', statusCandidate: 'Structure and basic checks pass; fresh evidence is still needed.', statusVerified: 'The declared scope has positive, boundary, failure, and transfer evidence.', statusProduction: 'Safety, maintenance, version, license, and release gates also pass.', statusSourceBefore: 'Current evidence is recorded in', statusSourceLink: 'the current status source', statusReviewBefore: ' and explained by ', statusReviewLink: 'the current-state review', statusSourceAfter: '; the page itself remains candidate until browser review is recorded.', nextEyebrow: 'Next action', nextTitle: 'Bring one small problem.', nextBody: 'Open the task contract, choose a reversible first step, and keep the diff. That is the shortest useful way to begin.', nextPrimary: 'Open chapter 2', nextSecondary: 'Then run lab 001', footerTagline: 'A practical learning and practice system for Codex.'
   },
   zh: {
-    skipToContent: '跳到主要内容', wordmarkAria: 'Codex：从第一个任务到真实工作的首页', languageToggleAria: '切换为英文', menuAria: '打开导航', navAria: '主导航', heroIndexAria: '页面索引', pathAria: '七级学习路径', routesAria: '筛选章节路线', menu: '菜单', navStart: '从问题开始', navFirst30: '前 30 分钟', navPath: '学习路径', navIndex: '项目索引', navRoutes: '阅读路线', navLabs: '实验室', navSkills: 'Skills', navUpdates: '更新地图',
+    heroIndexAria: '页面索引',
+    skipToContent: '跳到主要内容', wordmarkAria: 'Codex：从第一个任务到真实工作的首页', languageToggleAria: '选择界面语言', menuAria: '打开导航', navAria: '主导航', pathAria: '七级学习路径', routesAria: '筛选章节路线', menu: '菜单', navStart: '从问题开始', navFirst30: '前 30 分钟', navPath: '学习路径', navIndex: '项目索引', navRoutes: '阅读路线', navLabs: '实验室', navSkills: 'Skills', navUpdates: '更新地图', localeBannerFallback: '已提供 {requested} 路由，但部分界面或读者内容仍在迁移中；需要时显示当前可用源文件。', localeManifestError: '语言路由不可用，因为生成的 manifest 没有加载。英文仍可用；在依赖其他语言路由前，请先重新生成 manifest。', localeBannerReady: '当前阅读语言：{language}。', localeMenuAria: '界面语言', languageNameEnglish: '英语', languageNameChinese: '简体中文', languageNameSpanish: '西班牙语', languageNameJapanese: '日语', languageNameKorean: '韩语', languageNameGerman: '德语',
     heroIndex: 'CODEX / 学习系统', heroEyebrow: 'Codex 学习与实践 · candidate', heroTitle: '用 Codex 做成真实工作。', heroLede: '弄清 GPT、Codex、模型、工具、Skill 与 Agent 各自做什么。用小任务练习，留下证据，再进入真实工作流。', heroPrimary: '从一个真实问题开始', heroSecondary: '浏览 22 章', heroNoteAria: '项目状态', heroNoteLabel: '当前基线', heroNoteBody: '项目结构为 candidate。实验仍为 draft，尚未完成实际运行验证。', heroNoteLink: '查看证据边界', heroFooter: '问题 → 协议 → 行动 → 证据',
     startEyebrow: '从问题开始', startTitle: '不要从 Skill 开始。', startIntro: '先说清楚你要避免的失败或要完成的工作。选择最小有效入口，然后留下证据。', problemStartTitle: '我不知道从哪里开始。', problemStartBody: '在选择工作流前，先分清 GPT、Codex、模型、工具、Skill 与 Agent。', problemStartLink: '打开第 1 章 ↗', problemWrongFileTitle: 'Codex 改错了文件。', problemWrongFileBody: '在相信完成声明前，检查范围、差异、测试与恢复方式。', problemWrongFileLink: '打开第 9 章 ↗', problemSkillTitle: '我不知道该用哪个 Skill。', problemSkillBody: '按任务、风险、输入、依赖和证据选择，不按目录大小选择。', problemSkillLink: '运行实验 004 ↗', problemUpdateTitle: '我需要安全地更新项目。', problemUpdateBody: '用固定更新地图找到规范文件、来源记录和验证门槛。', problemUpdateLink: '打开更新地图 ↗',
     first30Eyebrow: '前 30 分钟', first30Title: '完成一个小任务。', first30Intro: '使用一次性的或可回滚的项目。目标不是得到漂亮答案，而是完成一个可以检查的闭环。', stepOneTitle: '选择可回滚的改动。', stepOneBody: '使用沙盒文件或小型文档修改。不要从凭据、生产环境或破坏性命令开始。', stepTwoTitle: '写任务协议。', stepTwoBody: '写清目标、上下文、允许行动、验收标准、证据和停止条件。', stepThreeTitle: '让 Codex 先检查。', stepThreeBody: '允许修改前，先让它说明相关文件和当前状态，保持范围可见。', stepFourTitle: '验证实际变化。', stepFourBody: '检查差异，运行最小相关检查，并记录没有测试什么。', checkCardLabel: '一个有用的任务协议', fieldGoalLabel: '目标', fieldGoal: '完成一个明确的改动。', fieldContextLabel: '上下文', fieldContext: '只提供完成任务所需的文件。', fieldInputsLabel: '输入', fieldInputs: '路径、当前行为、约束。', fieldAllowedLabel: '允许行动', fieldAllowed: '读取和编辑；外部副作用前暂停。', fieldAcceptanceLabel: '验收', fieldAcceptance: '明确的差异和检查结果。', fieldEvidenceLabel: '证据', fieldEvidence: '差异、命令、输出和限制。', fieldStopLabel: '停止条件', fieldStop: '范围、授权或证据缺失。', openChapterTwo: '打开第 2 章',
@@ -108,7 +109,7 @@ Object.assign(copy.en, {
   heroBriefAria: 'Project at a glance',
   briefMapTitle: 'Project index', briefMapBody: 'Files, roles, and entry points',
   briefStatusTitle: 'Evidence ledger', briefStatusBody: 'candidate · draft · not run',
-  briefLanguageTitle: 'Six-language route', briefLanguageBody: '6 entry slices · UI EN / 中文',
+  briefLanguageTitle: 'Six-language route', briefLanguageBody: '6 route tokens · EN / ZH UI reviewed',
   briefResearchTitle: 'Field problems', briefResearchBody: 'User reports, bounded evidence',
   indexEyebrow: 'Project index', indexTitle: 'Know where each claim lives.', indexIntro: 'This is a human-readable map of the repository: what each layer stores, where to begin, and which source controls its status.',
   fileMapTitle: 'Repository map', fileMapIntro: 'Read the layer that matches the work. The public page is a guide; the files below are the source of truth.',
@@ -119,8 +120,8 @@ Object.assign(copy.en, {
   fileDocsTitle: 'Governance and research', fileDocsBody: 'Status, sources, field reports, update rules, and quality records.',
   ledgerTitle: 'Content state', ledgerIntro: 'A compact reading of the current status source. Status describes evidence, not ambition.',
   ledgerProject: 'Project', ledgerChapters: 'Chapters · 22', ledgerLabs: 'Labs · 13', ledgerSkills: 'Skills · 7', ledgerResearch: 'Field research', ledgerResearchNote: 'user reports; not locally reproduced', ledgerSource: 'Open the current status source',
-  localeTitle: 'Six-language route', localeIntro: 'Six repository entry locales are registered. The runtime showcase currently switches EN / 中文; the other entry slices are still in migration review.',
-  localeEnglish: 'available · default', localeChinese: 'available · current toggle', localeSpanish: 'entry slice · UI not exposed', localeGerman: 'entry slice · UI not exposed', localeJapanese: 'entry slice · UI not exposed', localeKorean: 'entry slice · UI not exposed', localeRule: 'Route rule: translated artifacts carry a locale suffix and link to the same locale. This migration covers entry slices; it does not claim that the whole book or runtime UI is complete in six languages.',
+  localeTitle: 'Six-language route', localeIntro: 'Six repository entry locales are registered. All six route tokens are exposed; EN / 中文 UI is reviewed, while the other locales use an explicit English UI fallback during migration.',
+  localeEnglish: 'available · default', localeChinese: 'available · current toggle', localeSpanish: 'route exposed · UI fallback', localeGerman: 'route exposed · UI fallback', localeJapanese: 'route exposed · UI fallback', localeKorean: 'route exposed · UI fallback', localeRule: 'Route rule: translated artifacts carry a locale suffix and link to the same locale. A route token is not the same as a completed translation or reviewed UI.',
   researchTitle: 'Real problems, with the boundary attached.', researchIntro: 'The research index turns public Codex issues and forum reports into symptoms, versions, safe checks, and teaching links. It does not claim an official root cause or local reproduction.', researchBoundary: 'user reports and community advice · no local reproduction recorded', researchIndexLink: 'Open the field-problems index', researchIndexBody: 'Codex, surfaces, handoffs, authentication, worktrees, and verification symptoms.', researchForumsLink: 'Read the forum case notes', researchForumsBody: 'Sandbox network allowlists, Windows spawn failures, approvals, encoding, and private paths.'
 });
 
@@ -140,7 +141,7 @@ Object.assign(copy.zh, {
   ledgerTitle: '\u5185\u5bb9\u72b6\u6001', ledgerIntro: '\u5f53\u524d\u72b6\u6001\u6e90\u7684\u7b80\u8bfb\u7248\u3002\u72b6\u6001\u63cf\u8ff0\u8bc1\u636e\uff0c\u4e0d\u63cf\u8ff0\u613f\u666f\u3002',
   ledgerProject: '\u9879\u76ee', ledgerChapters: '\u7ae0\u8282 \u00b7 22', ledgerLabs: '\u5b9e\u9a8c \u00b7 13', ledgerSkills: 'Skill \u00b7 7', ledgerResearch: '\u73b0\u5b9e\u95ee\u9898\u7814\u7a76', ledgerResearchNote: '\u7528\u6237\u62a5\u544a\uff1b\u672c\u5730\u672a\u590d\u73b0', ledgerSource: '\u6253\u5f00\u5f53\u524d\u72b6\u6001\u6e90',
   localeTitle: '\u516d\u8bed\u79cd\u8def\u7ebf', localeIntro: '\u4ed3\u5e93\u5df2\u767b\u8bb0\u516d\u79cd\u5165\u53e3\u8bed\u8a00\u3002\u5f53\u524d\u5c55\u793a\u9875\u53ea\u80fd\u5207\u6362 EN / \u4e2d\u6587\uff1b\u5176\u4ed6\u5165\u53e3\u5207\u7247\u4ecd\u5728\u8fc1\u79fb\u5ba1\u67e5\u4e2d\u3002',
-  localeEnglish: '\u53ef\u7528 \u00b7 \u9ed8\u8ba4', localeChinese: '\u53ef\u7528 \u00b7 \u5f53\u524d\u5207\u6362', localeSpanish: '\u5165\u53e3\u5207\u7247 \u00b7 UI \u672a\u5f00\u653e', localeGerman: '\u5165\u53e3\u5207\u7247 \u00b7 UI \u672a\u5f00\u653e', localeJapanese: '\u5165\u53e3\u5207\u7247 \u00b7 UI \u672a\u5f00\u653e', localeKorean: '\u5165\u53e3\u5207\u7247 \u00b7 UI \u672a\u5f00\u653e', localeRule: '\u8def\u7531\u89c4\u5219\uff1a\u7ffb\u8bd1\u6587\u4ef6\u4f7f\u7528\u8bed\u8a00\u540e\u7f00\u5e76\u94fe\u5230\u540c\u4e00\u8bed\u8a00\u3002\u5f53\u524d\u8fc1\u79fb\u8986\u76d6\u5165\u53e3\u5207\u7247\uff0c\u4e0d\u4ee3\u8868\u6574\u672c\u4e66\u6216\u8fd0\u884c\u65f6 UI \u5df2\u5b8c\u6210\u516d\u8bed\u79cd\u652f\u6301\u3002',
+  localeEnglish: '\u53ef\u7528 \u00b7 \u9ed8\u8ba4', localeChinese: '\u53ef\u7528 \u00b7 \u5f53\u524d\u5207\u6362', localeSpanish: '\u5165\u53e3\u5207\u7247 \u00b7 UI \u56de\u9000', localeGerman: '\u5165\u53e3\u5207\u7247 \u00b7 UI \u56de\u9000', localeJapanese: '\u5165\u53e3\u5207\u7247 \u00b7 UI \u56de\u9000', localeKorean: '\u5165\u53e3\u5207\u7247 \u00b7 UI \u56de\u9000', localeRule: '\u8def\u7531\u89c4\u5219\uff1a\u7ffb\u8bd1\u6587\u4ef6\u4f7f\u7528\u8bed\u8a00\u540e\u7f00\u5e76\u94fe\u5230\u540c\u4e00\u8bed\u8a00\u3002\u5f53\u524d\u8fc1\u79fb\u8986\u76d6\u5165\u53e3\u5207\u7247\uff0c\u4e0d\u4ee3\u8868\u6574\u672c\u4e66\u6216\u8fd0\u884c\u65f6 UI \u5df2\u5b8c\u6210\u516d\u8bed\u79cd\u652f\u6301\u3002',
   researchTitle: '\u628a\u73b0\u5b9e\u95ee\u9898\u548c\u8bc1\u636e\u8fb9\u754c\u4e00\u8d77\u653e\u4e0a\u3002', researchIntro: '\u7814\u7a76\u7d22\u5f15\u628a\u516c\u5f00 Codex issue \u4e0e\u8bba\u575b\u62a5\u544a\u6574\u7406\u6210\u75c7\u72b6\u3001\u7248\u672c\u3001\u5b89\u5168\u68c0\u67e5\u4e0e\u6559\u5b66\u94fe\u63a5\u3002\u5b83\u4e0d\u58f0\u79f0\u5b98\u65b9\u6839\u56e0\u6216\u672c\u5730\u590d\u73b0\u3002', researchBoundary: '\u7528\u6237\u62a5\u544a\u4e0e\u793e\u533a\u5efa\u8bae \u00b7 \u6ca1\u6709\u672c\u5730\u590d\u73b0\u8bb0\u5f55', researchIndexLink: '\u6253\u5f00\u73b0\u5b9e\u95ee\u9898\u7d22\u5f15', researchIndexBody: 'Codex\u3001\u5de5\u4f5c\u9762\u3001\u4ea4\u63a5\u3001\u8ba4\u8bc1\u3001worktree \u4e0e\u9a8c\u8bc1\u75c7\u72b6\u3002', researchForumsLink: '\u9605\u8bfb\u8bba\u575b\u6848\u4f8b\u7b14\u8bb0', researchForumsBody: 'sandbox \u7f51\u7edc allowlist\u3001Windows spawn \u5931\u8d25\u3001\u5ba1\u6279\u3001\u7f16\u7801\u4e0e\u79c1\u5bc6\u8def\u5f84\u3002'
 });
 
@@ -168,7 +169,109 @@ Object.assign(copy.zh, {
   visualCaseBody: 'Product Context \u8349\u7a3f \u2192 \u9759\u6001\u9875\u9762 \u2192 \u6d4f\u89c8\u5668\u622a\u56fe\u3002'
 });
 
-const evaluationTypeLabels = (types) => types.map((type) => copy[currentLanguage][type] || type).join(' · ');
+const fallbackLocales = {
+  en: { suffix: 'EN', html_lang: 'en', display_name: 'English' },
+  zh: { suffix: 'ZH', html_lang: 'zh-CN', display_name: '简体中文' },
+  es: { suffix: 'ES', html_lang: 'es', display_name: 'Español' },
+  ja: { suffix: 'JA', html_lang: 'ja', display_name: '日本語' },
+  ko: { suffix: 'KO', html_lang: 'ko', display_name: '한국어' },
+  de: { suffix: 'DE', html_lang: 'de', display_name: 'Deutsch' },
+};
+const loadedLocaleManifest = window.CODEX_LOCALE_MANIFEST;
+const localeManifest = loadedLocaleManifest || {
+  default_locale: 'en',
+  locales: fallbackLocales,
+  contents: {},
+  aliases: {},
+  path_index: {},
+};
+const requiredLocaleTokens = ['en', 'zh', 'es', 'ja', 'ko', 'de'];
+const localeManifestAvailable = Boolean(
+  loadedLocaleManifest
+  && requiredLocaleTokens.every((token) => loadedLocaleManifest.locales?.[token])
+  && loadedLocaleManifest.default_locale === 'en'
+);
+const localeTokens = Object.keys(localeManifest.locales);
+const uiLocales = new Set(['en', 'zh']);
+const languageStorageKey = 'codex-field-guide-language';
+const languageParam = new URLSearchParams(window.location.search).get('lang');
+const hasExplicitLanguageParam = languageParam !== null;
+const hasValidLanguageParam = localeTokens.includes(languageParam);
+let currentLanguage = hasValidLanguageParam ? languageParam : null;
+if (!hasExplicitLanguageParam) {
+  try { currentLanguage = localStorage.getItem(languageStorageKey); } catch (_) { currentLanguage = null; }
+}
+currentLanguage = localeTokens.includes(currentLanguage) ? currentLanguage : localeManifest.default_locale;
+let effectiveUiLanguage = uiLocales.has(currentLanguage) ? currentLanguage : 'en';
+
+const currentCopy = () => copy[effectiveUiLanguage] || copy.en;
+const dataLanguage = () => effectiveUiLanguage === 'zh' ? 'zh' : 'en';
+const localeDisplayName = (language) => localeManifest.locales[language]?.display_name || language;
+const localeHasUiCopy = (language) => uiLocales.has(language);
+const localeIsReady = (record) => record?.exists && ['source', 'verified', 'production-ready'].includes(record.translation_status);
+const pagesArtifactMode = Boolean(window.CODEX_PAGES_ARTIFACT);
+const pathFromHref = (href) => {
+  if (!href || href.startsWith('#') || /^(?:https?:|mailto:|javascript:)/i.test(href)) return null;
+  const path = href.split('#', 1)[0].split('?', 1)[0];
+  if (!path.startsWith('../')) return null;
+  return path.replace(/^\.\.\//, '');
+};
+const pagesPathFromHref = (href) => {
+  const repositoryPath = pathFromHref(href);
+  if (repositoryPath) return repositoryPath;
+  if (!pagesArtifactMode || !href || href.startsWith('#') || href.startsWith('/') || /^(?:https?:|mailto:|javascript:|reader\.html)/i.test(href)) return null;
+  const sitePath = href.split('#', 1)[0].split('?', 1)[0].replace(/^\.\//, '');
+  return sitePath.endsWith('.md') ? `site/${sitePath}` : null;
+};
+const pagesHref = (href) => {
+  if (!pagesArtifactMode) return href;
+  const path = pagesPathFromHref(href);
+  if (!path || !path.endsWith('.md')) return href;
+  const hash = href.includes('#') ? href.slice(href.indexOf('#')) : '';
+  return `reader.html?path=${encodeURIComponent(path)}${hash}`;
+};
+const contentFor = (contentId) => localeManifest.contents?.[contentId];
+const contentIdForHref = (href) => localeManifest.path_index?.[pathFromHref(href) || ''];
+const localizedContentHref = (contentId, fallbackHref) => {
+  const content = contentFor(contentId);
+  if (!content) return fallbackHref || '';
+  const requested = content.locales?.[currentLanguage];
+  const target = localeIsReady(requested) ? requested : content.locales?.en;
+  if (!target?.path) return fallbackHref || '';
+  const hash = fallbackHref?.includes('#') ? fallbackHref.slice(fallbackHref.indexOf('#')) : '';
+  return `../${target.path}${hash}`;
+};
+const localizeReaderLinks = () => {
+  document.querySelectorAll('a[href]').forEach((anchor) => {
+    if (anchor.closest('[data-language-switcher]')) return;
+    const sourceHref = anchor.dataset.sourceHref || anchor.getAttribute('href');
+    const contentId = anchor.dataset.contentId || contentIdForHref(sourceHref);
+    if (!contentId) {
+      if (pagesArtifactMode && pagesPathFromHref(sourceHref)?.endsWith('.md')) {
+        anchor.dataset.sourceHref = sourceHref;
+        anchor.href = pagesHref(sourceHref);
+      }
+      return;
+    }
+    anchor.dataset.sourceHref = sourceHref;
+    anchor.dataset.contentId = contentId;
+    const requested = contentFor(contentId)?.locales?.[currentLanguage];
+    anchor.href = pagesHref(localizedContentHref(contentId, sourceHref));
+    anchor.dataset.localeFallback = localeIsReady(requested) ? 'false' : 'true';
+    if (!localeIsReady(requested) && currentLanguage !== 'en') {
+      anchor.title = `${localeDisplayName(currentLanguage)} translation pending · current available source`;
+    } else {
+      anchor.removeAttribute('title');
+    }
+  });
+};
+const hrefForItem = (item) => {
+  const fallbackHref = item.href || item[2] || '';
+  const contentId = item.content_id || localeManifest.aliases?.[item.id];
+  return pagesHref(contentId ? localizedContentHref(contentId, fallbackHref) : fallbackHref);
+};
+
+const evaluationTypeLabels = (types) => types.map((type) => currentCopy()[type] || type).join(' · ');
 const renderList = (selector, items, { link = false } = {}) => {
   const target = document.querySelector(selector);
   target.replaceChildren();
@@ -176,8 +279,9 @@ const renderList = (selector, items, { link = false } = {}) => {
     const li = document.createElement('li');
     if (link) {
       const anchor = document.createElement('a');
-      anchor.href = item.href || item[2];
-      anchor.textContent = item.name?.[currentLanguage] || item[currentLanguage === 'zh' ? 1 : 0];
+      anchor.href = hrefForItem(item);
+      anchor.dataset.contentId = item.content_id || localeManifest.aliases?.[item.id] || '';
+      anchor.textContent = item.name?.[dataLanguage()] || item[dataLanguage() === 'zh' ? 1 : 0];
       li.append(anchor);
     } else {
       li.textContent = item;
@@ -186,14 +290,6 @@ const renderList = (selector, items, { link = false } = {}) => {
   });
 };
 
-const languageStorageKey = 'codex-field-guide-language';
-const languageParam = new URLSearchParams(window.location.search).get('lang');
-let currentLanguage = ['en', 'zh'].includes(languageParam) ? languageParam : null;
-if (!currentLanguage) {
-  try { currentLanguage = localStorage.getItem(languageStorageKey); } catch (_) { currentLanguage = null; }
-}
-currentLanguage = ['en', 'zh'].includes(currentLanguage) ? currentLanguage : 'en';
-
 const setText = (element, value) => {
   const textNode = [...element.childNodes].find((node) => node.nodeType === Node.TEXT_NODE);
   if (textNode) textNode.nodeValue = value;
@@ -201,11 +297,13 @@ const setText = (element, value) => {
 };
 
 const applyLanguage = (language, { updateUrl = true } = {}) => {
-  currentLanguage = language;
-  const strings = copy[language];
-  document.documentElement.lang = language === 'zh' ? 'zh-CN' : 'en';
-  document.title = language === 'zh' ? 'Codex：从第一个任务到真实工作' : 'Codex: From First Task to Real Work';
-  document.querySelector('meta[name="description"]').content = language === 'zh'
+  currentLanguage = localeTokens.includes(language) ? language : localeManifest.default_locale;
+  effectiveUiLanguage = uiLocales.has(currentLanguage) ? currentLanguage : 'en';
+  const strings = currentCopy();
+  const metadata = localeManifest.locales[currentLanguage] || localeManifest.locales.en;
+  document.documentElement.lang = metadata.html_lang || localeManifest.locales[effectiveUiLanguage]?.html_lang || 'en';
+  document.title = effectiveUiLanguage === 'zh' ? 'Codex：从第一个任务到真实工作' : 'Codex: From First Task to Real Work';
+  document.querySelector('meta[name="description"]').content = effectiveUiLanguage === 'zh'
     ? '一套实用的 Codex 学习与实践系统：理解 GPT，设计安全任务，使用 Skills 与 Agents，并验证真实工作。'
     : 'A practical Codex learning and practice system: understand GPT, design safer tasks, use Skills and Agents, and verify real work.';
   document.querySelectorAll('[data-i18n]').forEach((element) => {
@@ -220,25 +318,51 @@ const applyLanguage = (language, { updateUrl = true } = {}) => {
   });
   const learningPathWarning = document.querySelector('[data-learning-path-warning]');
   learningPathWarning.hidden = hasGeneratedLearningPath;
-  document.querySelectorAll('[data-lang-option]').forEach((element) => element.classList.toggle('is-active', element.dataset.langOption === language));
+  const languageMenu = document.querySelector('[data-language-menu]');
   const languageToggle = document.querySelector('[data-language-toggle]');
+  document.querySelector('[data-current-language]').textContent = metadata.suffix || currentLanguage.toUpperCase();
+  languageMenu.setAttribute('aria-label', strings.localeMenuAria || 'Interface languages');
   languageToggle.setAttribute('aria-label', strings.languageToggleAria);
-  languageToggle.setAttribute('aria-pressed', language === 'zh' ? 'true' : 'false');
+  document.querySelectorAll('[data-language-option]').forEach((element) => {
+    const active = element.dataset.languageOption === currentLanguage;
+    const unavailable = !localeManifestAvailable && element.dataset.languageOption !== 'en';
+    element.classList.toggle('is-active', active);
+    element.classList.toggle('is-unavailable', unavailable);
+    element.setAttribute('aria-selected', String(active));
+    element.setAttribute('aria-disabled', String(unavailable));
+    if (unavailable) element.title = strings.localeManifestError;
+    else element.removeAttribute('title');
+    const url = new URL(window.location.href);
+    url.searchParams.set('lang', element.dataset.languageOption);
+    element.href = `${url.pathname}${url.search}${url.hash}`;
+  });
   updateLevel(document.querySelector('.level-tab.is-active')?.dataset.level || 'L0', false);
   updateRouteStatus(document.querySelector('.filter-button.is-active')?.dataset.filter || 'all');
+  localizeReaderLinks();
+  const banner = document.querySelector('[data-locale-banner]');
+  const pageFallback = currentLanguage !== 'en' && !localeHasUiCopy(currentLanguage);
+  const hasContentFallback = Boolean(document.querySelector('[data-locale-fallback="true"]'));
+  const hasManifestError = !localeManifestAvailable;
+  banner.hidden = !hasManifestError && !pageFallback && !hasContentFallback;
+  if (!banner.hidden) {
+    const text = hasManifestError
+      ? strings.localeManifestError
+      : strings.localeBannerFallback.replace('{requested}', metadata.display_name);
+    document.querySelector('[data-locale-banner-text]').textContent = text;
+  }
   if (updateUrl) {
     const url = new URL(window.location.href);
-    url.searchParams.set('lang', language);
+    url.searchParams.set('lang', currentLanguage);
     window.history.replaceState({}, '', url);
   }
-  try { localStorage.setItem(languageStorageKey, language); } catch (_) { /* Persistence is optional. */ }
+  try { localStorage.setItem(languageStorageKey, currentLanguage); } catch (_) { /* Persistence is optional. */ }
 };
 
 const updateLevel = (level, focus = false) => {
   const data = learningPath[level];
-  const languageIndex = currentLanguage === 'zh' ? 1 : 0;
-  const title = data.headline?.[currentLanguage] || data.title?.[languageIndex];
-  const description = data.description?.[currentLanguage] || data.capability?.[currentLanguage] || data.description?.[languageIndex];
+  const languageIndex = dataLanguage() === 'zh' ? 1 : 0;
+  const title = data.headline?.[dataLanguage()] || data.title?.[languageIndex];
+  const description = data.description?.[dataLanguage()] || data.capability?.[dataLanguage()] || data.description?.[languageIndex];
   const nextChapter = data.next?.chapter || data.chapters[0];
   const nextLab = data.next?.lab || data.labs[0];
   document.querySelectorAll('[data-level-label]').forEach((element) => { element.textContent = level; });
@@ -255,20 +379,22 @@ const updateLevel = (level, focus = false) => {
   ['explain', 'operate', 'judge', 'review'].forEach((key, index) => {
     const item = document.createElement('li');
     const label = document.createElement('b');
-    label.textContent = copy[currentLanguage][`evidence${key[0].toUpperCase()}${key.slice(1)}`];
+    label.textContent = currentCopy()[`evidence${key[0].toUpperCase()}${key.slice(1)}`];
     const text = document.createElement('span');
-     text.textContent = data.gate[key][currentLanguage] || data.gate[key][languageIndex];
+    text.textContent = data.gate[key][dataLanguage()] || data.gate[key][languageIndex];
     item.append(label, text);
     gate.append(item);
   });
-  document.querySelector('[data-level-graduation]').textContent = data.graduation[currentLanguage] || data.graduation[languageIndex];
-  document.querySelector('[data-level-blocked]').textContent = data.blocked[currentLanguage] || data.blocked[languageIndex];
+  document.querySelector('[data-level-graduation]').textContent = data.graduation[dataLanguage()] || data.graduation[languageIndex];
+  document.querySelector('[data-level-blocked]').textContent = data.blocked[dataLanguage()] || data.blocked[languageIndex];
   const link = document.querySelector('[data-level-link]');
-  link.href = nextChapter.href || nextChapter[2];
-  link.querySelector('[data-level-link-text]').textContent = data.next?.label?.[currentLanguage] || data.next?.label?.[languageIndex] || (currentLanguage === 'zh' ? `打开${nextChapter.name?.zh || nextChapter[1]}` : `Open ${nextChapter.name?.en || nextChapter[0]}`);
+  link.href = hrefForItem(nextChapter);
+  link.dataset.contentId = nextChapter.content_id || localeManifest.aliases?.[nextChapter.id] || '';
+  link.querySelector('[data-level-link-text]').textContent = data.next?.label?.[dataLanguage()] || data.next?.label?.[languageIndex] || (dataLanguage() === 'zh' ? `打开${nextChapter.name?.zh || nextChapter[1]}` : `Open ${nextChapter.name?.en || nextChapter[0]}`);
   const labLink = document.querySelector('[data-level-lab-link]');
-  labLink.href = nextLab.href || nextLab[2];
-  labLink.querySelector('[data-level-lab-link-text]').textContent = nextLab.name?.[currentLanguage] || nextLab[languageIndex];
+  labLink.href = hrefForItem(nextLab);
+  labLink.dataset.contentId = nextLab.content_id || localeManifest.aliases?.[nextLab.id] || '';
+  labLink.querySelector('[data-level-lab-link-text]').textContent = nextLab.name?.[dataLanguage()] || nextLab.name?.[languageIndex];
   const panel = document.querySelector('#level-panel');
   panel.setAttribute('aria-labelledby', `level-tab-${level}`);
   if (focus) panel.focus();
@@ -286,7 +412,7 @@ const activateLevel = (tab, { focusPanel = false } = {}) => {
 
 const updateRouteStatus = (filter) => {
   const key = filter === 'all' ? 'routeStatusAll' : `routeStatus${filter}`;
-  document.querySelector('[data-route-status]').textContent = copy[currentLanguage][key];
+  document.querySelector('[data-route-status]').textContent = currentCopy()[key];
 };
 
 document.querySelectorAll('.level-tab').forEach((tab, index, tabs) => {
@@ -322,18 +448,51 @@ const nav = document.querySelector('.site-nav');
 const closeMenu = ({ returnFocus = false } = {}) => {
   nav.classList.remove('is-open');
   menuToggle.setAttribute('aria-expanded', 'false');
-  menuToggle.setAttribute('aria-label', copy[currentLanguage].menuAria);
+  menuToggle.setAttribute('aria-label', currentCopy().menuAria);
   if (returnFocus) menuToggle.focus();
 };
 menuToggle.addEventListener('click', () => {
   const open = nav.classList.toggle('is-open');
   menuToggle.setAttribute('aria-expanded', String(open));
-  menuToggle.setAttribute('aria-label', open ? (currentLanguage === 'zh' ? '关闭导航' : 'Close navigation') : copy[currentLanguage].menuAria);
+  menuToggle.setAttribute('aria-label', open ? (effectiveUiLanguage === 'zh' ? '关闭导航' : 'Close navigation') : currentCopy().menuAria);
   if (open) nav.querySelector('a')?.focus();
 });
 nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => closeMenu()));
-document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && nav.classList.contains('is-open')) closeMenu({ returnFocus: true }); });
+const languageToggle = document.querySelector('[data-language-toggle]');
+const languageMenu = document.querySelector('[data-language-menu]');
+const closeLanguageMenu = ({ returnFocus = false } = {}) => {
+  languageMenu.hidden = true;
+  languageToggle.setAttribute('aria-expanded', 'false');
+  if (returnFocus) languageToggle.focus();
+};
+languageToggle.addEventListener('click', () => {
+  const open = languageMenu.hidden;
+  languageMenu.hidden = !open;
+  languageToggle.setAttribute('aria-expanded', String(open));
+  if (open) languageMenu.querySelector('a.is-active')?.focus();
+});
+document.querySelectorAll('[data-language-option]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const unavailable = !localeManifestAvailable && link.dataset.languageOption !== 'en';
+    if (unavailable) {
+      event.preventDefault();
+      languageMenu.hidden = false;
+      languageToggle.setAttribute('aria-expanded', 'true');
+      link.focus();
+      return;
+    }
+    event.preventDefault();
+    applyLanguage(link.dataset.languageOption);
+    closeLanguageMenu();
+  });
+});
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('[data-language-switcher]')) closeLanguageMenu();
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key !== 'Escape') return;
+  if (nav.classList.contains('is-open')) closeMenu({ returnFocus: true });
+  if (!languageMenu.hidden) closeLanguageMenu({ returnFocus: true });
+});
 
-document.querySelector('[data-language-toggle]').addEventListener('click', () => applyLanguage(currentLanguage === 'en' ? 'zh' : 'en'));
-
-applyLanguage(currentLanguage, { updateUrl: false });
+applyLanguage(currentLanguage, { updateUrl: hasExplicitLanguageParam && !hasValidLanguageParam });

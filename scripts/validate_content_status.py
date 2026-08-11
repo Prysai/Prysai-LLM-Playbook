@@ -15,7 +15,6 @@ DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 ARTIFACT_STATUSES = {"draft", "candidate", "verified", "production-ready"}
 RUN_STATUSES = {"not_run", "running", "completed"}
 BROWSER_REVIEW_STATUSES = {"pending", "completed"}
-RUNTIME_LOCALES = ["en", "zh"]
 REPOSITORY_LOCALES = ["en", "zh", "es", "ja", "ko", "de"]
 LOCALE_MIGRATION_STATUSES = {"migration", "release"}
 
@@ -195,8 +194,13 @@ def main() -> int:
         require_status(site, "status", "public_site", errors)
         if site.get("language_default") != "en":
             errors.append("public_site: language_default must be en")
-        if site.get("language_options") != RUNTIME_LOCALES:
-            errors.append("public_site: language_options must be ['en', 'zh'] for the current runtime UI")
+        if site.get("language_options") != REPOSITORY_LOCALES:
+            errors.append(
+                "public_site: language_options must be "
+                "['en', 'zh', 'es', 'ja', 'ko', 'de'] for the public route menu"
+            )
+        if site.get("ui_language_options") != ["en", "zh"]:
+            errors.append("public_site: ui_language_options must be ['en', 'zh'] until the other UI dictionaries are reviewed")
         repository_locales = site.get("repository_content_locales")
         if repository_locales != REPOSITORY_LOCALES:
             errors.append(
@@ -245,7 +249,11 @@ def main() -> int:
 
     print("CONTENT_STATUS_OK")
     print("chapters=22 labs=13 skills=7 learning_levels=7 evaluations=39 tracks=16")
-    print(f"public_site=en-default,zh-toggle,browser_review={document['public_site']['browser_review']}")
+    print(
+        "public_site=6-route-locales,ui-dictionaries=en+zh,"
+        f"repository_locale_status={document['public_site']['repository_locale_status']},"
+        f"browser_review={document['public_site']['browser_review']}"
+    )
     return 0
 
 

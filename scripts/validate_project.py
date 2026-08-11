@@ -52,6 +52,7 @@ REQUIRED = (
     "scripts/validate_learning_path.py",
     "scripts/validate_fact_impact_registry.py",
     "scripts/build_book_navigation.py",
+    "scripts/build_pages_artifact.py",
     "scripts/validate_book_navigation.py",
     "scripts/validate_project_structure.py",
 )

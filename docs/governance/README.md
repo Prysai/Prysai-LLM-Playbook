@@ -9,6 +9,7 @@ book, site, translations, status, and maintenance records aligned.
 |---|---|---|
 | Add or reorder a chapter | [`book-navigation.yaml`](book-navigation.yaml) | Chapter footers and TOCs |
 | Change a locale identity or translation state | [`locale-matrix.yaml`](locale-matrix.yaml) | Localized links and migration checks |
+| Change which chapters/labs can be routed by the public site | [`content-status.yaml`](content-status.yaml) | Regenerate [`site/locale-manifest.js`](../../site/locale-manifest.js) |
 | Change a learning level | [`learning-path.yaml`](learning-path.yaml) | Site data and learning-path validator |
 | Change an artifact's maturity | [`content-status.yaml`](content-status.yaml) | Status indexes and status validator |
 | Change a volatile fact's consumers | [`fact-impact-registry.yaml`](fact-impact-registry.yaml) | Affected-content review |

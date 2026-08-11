@@ -6,6 +6,7 @@
     <meta name="description" content="A practical Codex learning and practice system: understand GPT, design safer tasks, use Skills and Agents, and verify real work." />
     <title>Codex: From First Task to Real Work</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="locale-manifest.js"></script>
     <script src="learning-path-data.js"></script>
     <script src="app.js" defer></script>
   </head>
@@ -19,9 +20,19 @@
           <span>FIRST TASK →<br /><strong>REAL WORK</strong></span>
         </a>
         <div class="header-actions">
-          <button class="language-toggle" type="button" data-language-toggle aria-label="Switch to Chinese" data-i18n-attr="aria-label:languageToggleAria">
-            <span data-lang-option="en">EN</span><span aria-hidden="true"> / </span><span data-lang-option="zh">中文</span>
-          </button>
+          <div class="language-switcher" data-language-switcher>
+            <button class="language-toggle" type="button" data-language-toggle aria-expanded="false" aria-controls="language-menu" aria-label="Choose interface language" data-i18n-attr="aria-label:languageToggleAria">
+              <span data-current-language>EN</span><span aria-hidden="true">⌄</span>
+            </button>
+            <div class="language-menu" id="language-menu" data-language-menu hidden role="listbox" aria-label="Interface languages">
+              <a href="?lang=en" data-language-option="en" role="option" lang="en"><span>EN</span><strong>English</strong></a>
+              <a href="?lang=zh" data-language-option="zh" role="option" lang="zh-CN"><span>ZH</span><strong>简体中文</strong></a>
+              <a href="?lang=es" data-language-option="es" role="option" lang="es"><span>ES</span><strong>Español</strong></a>
+              <a href="?lang=ja" data-language-option="ja" role="option" lang="ja"><span>JA</span><strong>日本語</strong></a>
+              <a href="?lang=ko" data-language-option="ko" role="option" lang="ko"><span>KO</span><strong>한국어</strong></a>
+              <a href="?lang=de" data-language-option="de" role="option" lang="de"><span>DE</span><strong>Deutsch</strong></a>
+            </div>
+          </div>
           <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation" data-i18n-attr="aria-label:menuAria">
             <span data-i18n="menu">Menu</span><span class="menu-icon" aria-hidden="true"><i></i><i></i></span>
           </button>
@@ -38,6 +49,10 @@
         </nav>
       </div>
     </header>
+
+    <div class="locale-banner shell" data-locale-banner hidden role="status" aria-live="polite">
+      <span data-locale-banner-text></span>
+    </div>
 
     <main id="main">
       <section class="hero shell" id="top" aria-labelledby="hero-title">
@@ -73,7 +88,7 @@
           </a>
           <a class="brief-item" href="#language-route">
             <span class="brief-index">03</span>
-            <span class="brief-copy"><strong data-i18n="briefLanguageTitle">Six-language route</strong><small data-i18n="briefLanguageBody">2 available · 4 planned</small></span>
+            <span class="brief-copy"><strong data-i18n="briefLanguageTitle">Six-language route</strong><small data-i18n="briefLanguageBody">6 route tokens · EN / ZH UI reviewed</small></span>
             <span class="brief-arrow" aria-hidden="true">↗</span>
           </a>
           <a class="brief-item" href="#field-research">
@@ -121,14 +136,14 @@
               </article>
               <article class="locale-panel" id="language-route" aria-labelledby="locale-title">
                 <div class="index-panel-head"><span class="index-panel-number">03</span><h3 id="locale-title" data-i18n="localeTitle">Six-language route</h3></div>
-                <p class="index-panel-intro" data-i18n="localeIntro">Six repository entry locales are registered. The runtime showcase currently switches EN / 中文; the other entry slices are still in migration review.</p>
+                <p class="index-panel-intro" data-i18n="localeIntro">Six repository entry locales are registered. All six route tokens are exposed; EN / 中文 UI is reviewed, while the other locales use an explicit English UI fallback during migration.</p>
                 <ol class="locale-list">
                   <li class="locale-available"><span>EN</span><strong data-i18n="localeEnglish">available · default</strong></li>
                   <li class="locale-available"><span>ZH</span><strong data-i18n="localeChinese">available · current toggle</strong></li>
-                  <li class="locale-entry"><span>ES</span><strong data-i18n="localeSpanish">entry slice · UI not exposed</strong></li>
-                  <li class="locale-entry"><span>DE</span><strong data-i18n="localeGerman">entry slice · UI not exposed</strong></li>
-                  <li class="locale-entry"><span>JA</span><strong data-i18n="localeJapanese">entry slice · UI not exposed</strong></li>
-                  <li class="locale-entry"><span>KO</span><strong data-i18n="localeKorean">entry slice · UI not exposed</strong></li>
+                  <li class="locale-entry"><span>ES</span><strong data-i18n="localeSpanish">route exposed · UI fallback</strong></li>
+                  <li class="locale-entry"><span>DE</span><strong data-i18n="localeGerman">route exposed · UI fallback</strong></li>
+                  <li class="locale-entry"><span>JA</span><strong data-i18n="localeJapanese">route exposed · UI fallback</strong></li>
+                  <li class="locale-entry"><span>KO</span><strong data-i18n="localeKorean">route exposed · UI fallback</strong></li>
                 </ol>
                 <p class="locale-rule" data-i18n="localeRule">Route rule: translated artifacts carry a locale suffix and link to the same locale. This migration covers entry slices; it does not claim that the whole book or runtime UI is complete in six languages.</p>
               </article>

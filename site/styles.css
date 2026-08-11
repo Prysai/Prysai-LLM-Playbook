@@ -36,8 +36,20 @@ button, input, select, textarea { font: inherit; }
 .wordmark strong { font-size: .9rem; letter-spacing: -.02em; }
 .wordmark-mark { display: grid; width: 31px; height: 31px; place-items: center; color: #fff; background: var(--red); font-size: 1.15rem; font-weight: 700; letter-spacing: 0; }
 .header-actions { display: flex; align-items: center; gap: 1rem; }
-.language-toggle { border: 0; padding: .45rem .1rem; color: var(--muted); background: transparent; cursor: pointer; font-size: .72rem; font-weight: 700; letter-spacing: .05em; }
-.language-toggle [data-lang-option].is-active { color: var(--red); }
+.language-switcher { position: relative; }
+.language-toggle { display: inline-flex; align-items: center; gap: .45rem; border: 0; padding: .45rem .1rem; color: var(--muted); background: transparent; cursor: pointer; font-size: .72rem; font-weight: 700; letter-spacing: .05em; }
+.language-toggle:hover, .language-toggle:focus-visible { color: var(--red); }
+.language-toggle span:last-child { color: var(--red); font-size: .9rem; line-height: 1; }
+.language-menu { position: absolute; z-index: 12; top: calc(100% + .7rem); right: 0; display: grid; min-width: 188px; padding: .35rem; border: 1px solid var(--line); background: #fff; box-shadow: 8px 8px 0 rgba(22, 22, 22, .08); }
+.language-menu[hidden] { display: none; }
+.language-menu a { display: grid; grid-template-columns: 2.1rem 1fr; gap: .65rem; align-items: center; padding: .65rem .55rem; border-bottom: 1px solid var(--line); font-size: .72rem; }
+.language-menu a:last-child { border-bottom: 0; }
+.language-menu a:hover, .language-menu a:focus-visible, .language-menu a.is-active { color: var(--red); background: var(--soft-red); }
+.language-menu a span { font-weight: 700; letter-spacing: .06em; }
+.language-menu a strong { color: var(--ink); font-size: .74rem; font-weight: 700; }
+.language-menu a:hover strong, .language-menu a:focus-visible strong, .language-menu a.is-active strong { color: var(--red); }
+.locale-banner { margin-top: 1rem; padding: .7rem 1rem; border-left: 4px solid var(--red); color: var(--ink); background: var(--soft-red); font-size: .76rem; line-height: 1.5; }
+.locale-banner[hidden] { display: none; }
 .menu-toggle { display: none; border: 0; padding: .5rem 0; align-items: center; gap: .75rem; color: var(--ink); background: transparent; cursor: pointer; font-size: .8rem; }
 .menu-icon { display: grid; gap: 5px; }
 .menu-icon i { display: block; width: 22px; height: 1px; background: currentColor; }

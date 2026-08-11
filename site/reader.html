@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A readable Field Guide source page." />
+    <title>Field Guide reader</title>
+    <link rel="stylesheet" href="reader.css" />
+    <script src="locale-manifest.js"></script>
+    <script src="reader.js" defer></script>
+  </head>
+  <body>
+    <header class="reader-header">
+      <div class="reader-header-inner">
+        <a class="reader-brand" href="index.html">Codex / Field Guide</a>
+        <div class="reader-header-actions">
+          <a class="reader-back" href="index.html">Back to overview</a>
+          <label class="reader-language-label" for="reader-language">Language</label>
+          <select id="reader-language" data-reader-language aria-label="Choose reading language">
+            <option value="en">English</option>
+            <option value="zh">简体中文</option>
+            <option value="es">Español</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="de">Deutsch</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <div class="reader-banner" data-reader-banner hidden></div>
+
+    <main class="reader-main">
+      <div class="reader-shell">
+        <article class="reader-article" data-reader-article aria-live="polite">
+          <p class="reader-loading">Loading the source page…</p>
+        </article>
+        <aside class="reader-aside" aria-label="Page details">
+          <div class="reader-aside-card">
+            <span class="reader-aside-label">Source path</span>
+            <code data-reader-path>—</code>
+          </div>
+          <div class="reader-aside-card">
+            <span class="reader-aside-label">Content identity</span>
+            <code data-reader-content-id>—</code>
+          </div>
+          <a class="reader-source-link" data-reader-source href="#">Open source file ↗</a>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="reader-footer">
+      <div class="reader-footer-inner">
+        <span>Codex: From First Task to Real Work</span>
+        <span>Source remains Markdown; this page is a static reading view.</span>
+      </div>
+    </footer>
+  </body>
+</html>

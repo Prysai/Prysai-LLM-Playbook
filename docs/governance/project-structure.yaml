@@ -2,14 +2,14 @@
   "schema_version": "1",
   "last_reviewed": "2026-08-11",
   "description": "The canonical directory map for reader-facing material, practice, research, governance, assets, tooling, and release work.",
-  "excluded_workdirs": [".git", ".work", "tmp", ".pytest_cache"],
+  "excluded_workdirs": [".git", ".work", ".codex-temp", "tmp", ".pytest_cache"],
   "top_level": [
     {
       "path": ".github",
       "role": "Repository automation and quality gates.",
       "entry": ".github/workflows/quality.yml",
       "first_read": ".github/workflows/quality.yml",
-      "canonical_sources": [".github/workflows/quality.yml"],
+      "canonical_sources": [".github/workflows/quality.yml", ".github/workflows/pages.yml"],
       "generated_outputs": []
     },
     {
@@ -65,8 +65,8 @@
       "role": "The public static showcase and generated learning-path presentation data.",
       "entry": "site/README.md",
       "first_read": "site/README.md",
-      "canonical_sources": ["docs/governance/learning-path.yaml", "docs/governance/content-status.yaml", "site/content-catalog.json"],
-      "generated_outputs": ["site/learning-path-data.js"]
+      "canonical_sources": ["docs/governance/learning-path.yaml", "docs/governance/content-status.yaml", "docs/governance/locale-matrix.yaml", "site/content-catalog.json"],
+      "generated_outputs": ["site/learning-path-data.js", "site/locale-manifest.js"]
     },
     {
       "path": "skills",
@@ -118,6 +118,13 @@
       "owner": "scripts/build_learning_path_site.py",
       "surface": "The complete generated JavaScript data file.",
       "edit_rule": "Edit the contracts and catalog, then regenerate and run --check."
+    },
+    {
+      "path": "site/locale-manifest.js",
+      "source": ["docs/governance/locale-matrix.yaml", "docs/governance/content-status.yaml"],
+      "owner": "scripts/build_site_locale_manifest.py",
+      "surface": "The generated content_id, locale, translation-state, alias, and path index consumed by the public site.",
+      "edit_rule": "Edit the locale matrix or current status source, then regenerate and run --check; do not hand-edit."
     }
   ]
 }

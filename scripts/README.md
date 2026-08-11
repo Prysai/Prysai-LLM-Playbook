@@ -13,6 +13,8 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\validate_localization.py
 & $py scripts\build_book_navigation.py --check
 & $py scripts\build_learning_path_site.py --check
+& $py scripts\build_site_locale_manifest.py --check
+& $py scripts\build_pages_artifact.py --check
 ```
 
 ## Generator rule
@@ -23,3 +25,9 @@ and regenerate it. Do not hand-edit a generated block to hide a stale source.
 
 A green script proves only the checks that script performs. It is not by itself
 runtime, browser, translation, or learning-outcome evidence.
+
+`build_pages_artifact.py` is the release-boundary check for GitHub Pages. It
+copies only the public showcase and declared reader-facing directories into an
+isolated artifact, adds the project-root entry, and rejects local work folders.
+It does not prove that GitHub Pages is enabled or that the deployed URL is
+reachable.

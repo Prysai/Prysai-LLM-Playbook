@@ -29,7 +29,7 @@ alignment.
 | See a reproducible example | [`examples/`](../examples/) and [`assets/cases/`](../assets/cases/) | Disposable local sandboxes, source inputs, rendered artifacts, and screenshots with evidence limits |
 | Inspect evaluation tasks | [`evals/`](../evals/) | Fixed task fixtures and result directories; task definitions are not run results |
 | Change or run a checker | [`scripts/`](../scripts/) | Validators, local-link checks, catalog builders, and generators |
-| Inspect the public front door | [`site/`](../site/) | Static showcase HTML, CSS, JavaScript, content catalog, and generated learning-path data |
+| Inspect the public front door | [`site/`](../site/) | Static showcase HTML, CSS, JavaScript, content catalog, generated learning-path/locale data, and Pages notes |
 | Follow active work | [`tasks/`](../tasks/) | The bounded implementation plan and current checklist |
 
 Every major directory also has a short landing page. Use it when you are
@@ -62,6 +62,7 @@ already inside the repository and need the local next step: [`book/README.md`](.
 ├── evals/                     fixed evaluation fixtures and run-result folders
 ├── scripts/                   validators, generators, and build helpers
 ├── site/                      public static showcase and generated data
+├── .github/workflows/pages.yml GitHub Pages deployment workflow
 └── tasks/                     current plan and short execution checklist
 ```
 
@@ -99,7 +100,7 @@ translation into a completed English page.
 | Add or change a Skill | `skills/<skill-name>/SKILL.md` | Skill registry, quality standard, official validator, and fresh-context evidence |
 | Add a field case | `docs/research/` or `examples/` | Source/license register, privacy boundary, chapter/lab link, and evidence status |
 | Change a volatile product fact | Dated record in `docs/research/` | Fact-impact registry, affected consumers, next review date, and relevant validators |
-| Change the public page | `site/` or its canonical catalog/contract | Generated data check, local links, i18n check, and browser review |
+| Change the public page | `site/` or its canonical catalog/contract | Generated data check, Pages artifact check, local links, i18n check, and browser review |
 
 ## Generated files and files not to hand-edit
 
@@ -109,6 +110,9 @@ The following are generated or contract-derived:
   are replaced between their two HTML markers;
 - [`site/learning-path-data.js`](../site/learning-path-data.js) comes from the
   learning-path and content-status contracts;
+- [`site/locale-manifest.js`](../site/locale-manifest.js) comes from the locale
+  matrix and current content-status source; it joins `content_id`, locale,
+  file existence, aliases, and explicit fallback state for chapter/lab links;
 - status and locale files are machine-readable contracts, not informal notes.
 
 The complete generated-output list and each output's owner are recorded in the

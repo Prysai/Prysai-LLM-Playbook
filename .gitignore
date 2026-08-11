@@ -3,6 +3,13 @@
 *.7z
 *.rar
 
+# Agent-local temporary command shims and work output.
+.codex-temp/
+.work/
+tmp/
+tmp-*.ipynb
+_site/
+
 # Secrets and machine-local configuration.
 .env
 .env.*

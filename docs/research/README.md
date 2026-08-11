@@ -26,5 +26,14 @@ Useful indexes:
 - [Book navigation study](book-navigation-architecture-study-2026-08-11.md)
 - [Tutorial and knowledge-base structure benchmark](tutorial-value-and-knowledge-base-benchmark-2026-08-11.md)
 - [Coding-agent field problems deep dive](field-problems-deep-dive-2026-08-11.md)
+- [Coding-agent field problems deep dive P2](field-problems-deep-dive-p2-2026-08-11.md)
+- [Multilingual routing and content identity](multilingual-routing-and-content-identity-2026-08-11.md)
+- [Six-locale routing study](multilingual-routing-and-six-locale-study-2026-08-11.md)
 - [Field Guide content and visual gap audit](field-guide-content-and-visual-gap-audit-2026-08-11.md)
 - [Official Codex fact cards](codex-official-fact-cards-2026-08-10.md)
+
+Historical contribution shortlists are kept as dated research records rather
+than active work instructions:
+
+- [AI contribution candidates (2026-08-09)](github-ai-contribution-candidates-2026-08-09.md)
+- [AI contribution candidates (2026-08-10)](github-ai-contribution-candidates-2026-08-10.md)

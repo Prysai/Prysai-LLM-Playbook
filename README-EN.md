@@ -56,7 +56,7 @@ large prompt library.
 
 | You want to… | Use this entry | What it is for |
 |---|---|---|
-| Browse the learning experience | [`site/index.html`](site/index.html) + [`site/README.md`](site/README.md) | The visual showcase; the companion README explains local serving and verification |
+| Browse the learning experience | [`site/index.html`](site/index.html) + [`site/README.md`](site/README.md) | The visual showcase; the companion README explains local serving, Pages packaging, and verification |
 | Read the book as a source-locale guide | [`book/README-EN.md`](book/README-EN.md) + [`book/table-of-contents-EN.md`](book/table-of-contents-EN.md) | The book contract, full route, chapter status, experiments, and research links |
 | Inspect how the project is maintained | [`docs/governance/`](docs/governance/) + [`scripts/`](scripts/) | Canonical status, locale identity, update rules, and repeatable checks |
 | Find a file quickly | [`Project map`](docs/project-map-EN.md) | Directory responsibilities, chapter order, generated files, and where each change starts |
