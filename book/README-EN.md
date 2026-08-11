@@ -54,7 +54,7 @@ currently `draft` with `run_status: not_run`.
 - [Real-user problem research index — locale-neutral research](../docs/research/field-problems-index-2026-08-10.md)
 
 The English table-of-contents entry now exists as `table-of-contents-EN.md`.
-Chapters 1–5 and Labs 001, 002, 007, and 011 now have explicit English source
+Chapters 1–6 and Labs 001, 002, 007, and 011 now have explicit English source
 files; the remaining chapter and experiment bodies remain migration-pending
 until their own locale-suffixed variants exist. The table of contents labels
 those links explicitly.
