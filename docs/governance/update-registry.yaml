@@ -75,7 +75,7 @@
     },
     {
       "area": "public-site",
-      "canonical_paths": ["site/index.html", "site/app.js", "site/styles.css", "site/content-catalog.json", "scripts/build_learning_path_site.py", "site/learning-path-data.js", "site/README.md"],
+      "canonical_paths": ["site/index.html", "site/app.js", "site/styles.css", "site/content-catalog.json", "scripts/build_learning_path_site.py", "site/learning-path-data.js", "site/README.md", "assets/teaching", "assets/cases", "examples/skill-sandbox"],
       "owner": "site-maintainer",
       "triggers": ["count-change", "content-status-change", "language-coverage-change", "navigation-change", "browser-report"],
       "required_inputs": ["current-counts", "real-links", "en-default", "zh-toggle", "status-boundary", "responsive-check", "generated-learning-path-data"],

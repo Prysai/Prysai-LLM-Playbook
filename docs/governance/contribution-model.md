@@ -1,5 +1,7 @@
 # Prysai Lab 贡献模型
 
+维护披露见 [`maintenance-disclosure.md`](maintenance-disclosure.md)。
+
 Field Guide 是组织级项目。贡献不只包括写代码，也包括写章节、设计实验、审核来源、验证 skill、报告过时事实和改进学习路径。
 
 ## 贡献类型

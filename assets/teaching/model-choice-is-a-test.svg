@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Model choice is a test, not model worship</title>
+  <desc id="desc">A classroom-style diagram showing a task passing through a comparison tuple, three smoke tests, evidence, and a bounded decision.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10161d"/>
+      <stop offset="1" stop-color="#1e2a32"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff806b"/>
+      <stop offset="1" stop-color="#ffc36b"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#fff" stroke-opacity=".06"/>
+    </pattern>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+  <path d="M72 144H1528" stroke="#fff" stroke-opacity=".14"/>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#f3f0ea">
+    <text x="72" y="78" font-size="18" font-weight="700" letter-spacing="4">FIELD GUIDE / CHAPTER 06 / TEACHING CARD</text>
+    <text x="72" y="220" font-size="76" font-weight="800" letter-spacing="-3">MODEL CHOICE</text>
+    <text x="72" y="296" font-size="76" font-weight="800" letter-spacing="-3" fill="url(#accent)">IS A TEST</text>
+    <text x="78" y="352" font-size="22" fill="#c8d0d5">A model label is a hypothesis. The task evidence decides.</text>
+  </g>
+  <g transform="translate(72 440)" font-family="Arial, Helvetica, sans-serif">
+    <rect width="270" height="224" rx="18" fill="#f3f0ea"/>
+    <text x="28" y="46" font-size="14" font-weight="700" letter-spacing="2" fill="#65727b">01 / TASK</text>
+    <text x="28" y="92" font-size="25" font-weight="700" fill="#14212a">What must be</text>
+    <text x="28" y="124" font-size="25" font-weight="700" fill="#14212a">true when done?</text>
+    <text x="28" y="177" font-size="16" fill="#52616a">Goal · context · risk</text>
+    <text x="28" y="201" font-size="16" fill="#52616a">acceptance · stop</text>
+  </g>
+  <path d="M352 552H418" stroke="#ff806b" stroke-width="4" marker-end="url(#arrow)"/>
+  <g transform="translate(430 440)" font-family="Arial, Helvetica, sans-serif">
+    <rect width="320" height="224" rx="18" fill="#202f38" stroke="#ff806b" stroke-width="2"/>
+    <text x="28" y="46" font-size="14" font-weight="700" letter-spacing="2" fill="#ffb19f">02 / TUPLE</text>
+    <text x="28" y="88" font-size="22" font-weight="700" fill="#f3f0ea">Compare the whole</text>
+    <text x="28" y="118" font-size="22" font-weight="700" fill="#f3f0ea">working condition</text>
+    <text x="28" y="160" font-size="15" fill="#c8d0d5">model · provider · surface</text>
+    <text x="28" y="184" font-size="15" fill="#c8d0d5">context · tools · permissions</text>
+  </g>
+  <path d="M760 552H826" stroke="#ff806b" stroke-width="4" marker-end="url(#arrow)"/>
+  <g transform="translate(838 440)" font-family="Arial, Helvetica, sans-serif">
+    <rect width="290" height="224" rx="18" fill="#f3f0ea"/>
+    <text x="28" y="46" font-size="14" font-weight="700" letter-spacing="2" fill="#65727b">03 / SMOKE TEST</text>
+    <text x="28" y="90" font-size="22" font-weight="700" fill="#14212a">Same three tasks</text>
+    <text x="28" y="122" font-size="22" font-weight="700" fill="#14212a">or mark incomparable</text>
+    <text x="28" y="164" font-size="15" fill="#52616a">success · time · output</text>
+    <text x="28" y="188" font-size="15" fill="#52616a">failure · evidence</text>
+  </g>
+  <path d="M1138 552H1204" stroke="#ff806b" stroke-width="4" marker-end="url(#arrow)"/>
+  <g transform="translate(1216 440)" font-family="Arial, Helvetica, sans-serif">
+    <rect width="312" height="224" rx="18" fill="#202f38" stroke="#ffc36b" stroke-width="2"/>
+    <text x="28" y="46" font-size="14" font-weight="700" letter-spacing="2" fill="#ffd994">04 / DECISION</text>
+    <text x="28" y="90" font-size="22" font-weight="700" fill="#f3f0ea">Choose for this task</text>
+    <text x="28" y="122" font-size="22" font-weight="700" fill="#f3f0ea">within this scope</text>
+    <text x="28" y="164" font-size="15" fill="#c8d0d5">record what passed</text>
+    <text x="28" y="188" font-size="15" fill="#c8d0d5">and what remains unknown</text>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" fill="#9eabb3" font-size="14">
+    <text x="72" y="774">EVIDENCE BOUNDARY</text>
+    <text x="72" y="808">This card does not prove a universal ranking, cost, speed, stability, or account-wide availability.</text>
+    <text x="1528" y="808" text-anchor="end">Prysai Lab / original SVG / 2026-08-11</text>
+  </g>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#ff806b"/></marker>
+  </defs>
+</svg>

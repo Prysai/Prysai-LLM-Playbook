@@ -145,6 +145,30 @@ Object.assign(copy.zh, {
   researchTitle: '\u628a\u73b0\u5b9e\u95ee\u9898\u548c\u8bc1\u636e\u8fb9\u754c\u4e00\u8d77\u653e\u4e0a\u3002', researchIntro: '\u7814\u7a76\u7d22\u5f15\u628a\u516c\u5f00 Codex issue \u4e0e\u8bba\u575b\u62a5\u544a\u6574\u7406\u6210\u75c7\u72b6\u3001\u7248\u672c\u3001\u5b89\u5168\u68c0\u67e5\u4e0e\u6559\u5b66\u94fe\u63a5\u3002\u5b83\u4e0d\u58f0\u79f0\u5b98\u65b9\u6839\u56e0\u6216\u672c\u5730\u590d\u73b0\u3002', researchBoundary: '\u7528\u6237\u62a5\u544a\u4e0e\u793e\u533a\u5efa\u8bae \u00b7 \u6ca1\u6709\u672c\u5730\u590d\u73b0\u8bb0\u5f55', researchIndexLink: '\u6253\u5f00\u73b0\u5b9e\u95ee\u9898\u7d22\u5f15', researchIndexBody: 'Codex\u3001\u5de5\u4f5c\u9762\u3001\u4ea4\u63a5\u3001\u8ba4\u8bc1\u3001worktree \u4e0e\u9a8c\u8bc1\u75c7\u72b6\u3002', researchForumsLink: '\u9605\u8bfb\u8bba\u575b\u6848\u4f8b\u7b14\u8bb0', researchForumsBody: 'sandbox \u7f51\u7edc allowlist\u3001Windows spawn \u5931\u8d25\u3001\u5ba1\u6279\u3001\u7f16\u7801\u4e0e\u79c1\u5bc6\u8def\u5f84\u3002'
 });
 
+Object.assign(copy.en, {
+  visualCaseTitle: 'See the method in context.',
+  visualCaseIntro: 'Two teaching cards and a concept case follow one thread: brief → context → page → screenshot.',
+  visualCaseBoundary: 'local rendering evidence · no customer or live-system claim',
+  visualModelLink: 'Model choice is a test',
+  visualModelBody: 'Task, comparison tuple, smoke test, bounded decision.',
+  visualSkillLink: 'Skill to observable output',
+  visualSkillBody: 'Trigger, inputs, method, artifact, and four-case evaluation.',
+  visualCaseLink: 'Real-estate concept case',
+  visualCaseBody: 'Product Context draft → static page → browser screenshot.'
+});
+
+Object.assign(copy.zh, {
+  visualCaseTitle: '\u770b\u4e00\u4e2a\u65b9\u6cd5\u5982\u4f55\u4ea7\u751f\u4ea4\u4ed8\u7269\u3002',
+  visualCaseIntro: '\u4e24\u5f20\u6559\u5b66\u5361\u548c\u4e00\u4e2a\u6982\u5ff5\u6848\u4f8b\u6cbf\u7740\u540c\u4e00\u6761\u7ebf\u7d22\uff1a\u7b80\u8981 \u2192 \u4e0a\u4e0b\u6587 \u2192 \u9875\u9762 \u2192 \u622a\u56fe\u3002',
+  visualCaseBoundary: '\u672c\u5730\u6e32\u67d3 \u00b7 \u6982\u5ff5\u6848\u4f8b',
+  visualModelLink: '\u6a21\u578b\u9009\u62e9\u662f\u4e00\u6b21\u6d4b\u8bd5',
+  visualModelBody: '\u4efb\u52a1\u3001\u5bf9\u6bd4\u5143\u7ec4\u3001\u5192\u70df\u6d4b\u8bd5\u548c\u6709\u8fb9\u754c\u7684\u51b3\u7b56\u3002',
+  visualSkillLink: 'Skill \u5230\u53ef\u89c2\u5bdf\u8f93\u51fa',
+  visualSkillBody: '\u89e6\u53d1\u3001\u8f93\u5165\u3001\u65b9\u6cd5\u3001\u4ea4\u4ed8\u7269\u548c\u56db\u7c7b\u6848\u4f8b\u8bc4\u6d4b\u3002',
+  visualCaseLink: '\u623f\u5730\u4ea7\u6982\u5ff5\u6848\u4f8b',
+  visualCaseBody: 'Product Context \u8349\u7a3f \u2192 \u9759\u6001\u9875\u9762 \u2192 \u6d4f\u89c8\u5668\u622a\u56fe\u3002'
+});
+
 const evaluationTypeLabels = (types) => types.map((type) => copy[currentLanguage][type] || type).join(' · ');
 const renderList = (selector, items, { link = false } = {}) => {
   const target = document.querySelector(selector);

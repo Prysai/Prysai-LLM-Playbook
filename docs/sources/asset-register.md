@@ -33,6 +33,8 @@
 | S19 | `docs/research/field-problems-coding-agents-2026-08-10.md` | OpenAI Codex GitHub Issues、Stack Overflow/Stack Exchange API、公开 coding-agent 讨论与官方文档 | 只保留用户报告、官方事实、社区建议、未证实推测和本项目迁移检查的原创摘要；没有复制日志、凭据、代码、图片或长段原文 | `reference-only`：用户报告与社区建议；本项目未本地复现这些环境，也未确认公开案例的根因或修复 | 用于章节/实验的现实问题索引和失败边界；不得把 accepted answer 或 issue 标签写成官方修复 |
 | S20 | `docs/research/site-information-architecture-audit-2026-08-10.md` | 本项目现有入口、状态源、内容矩阵、站点实现和既有结构研究；外部结构参考见文件内来源 | 只记录本项目的原创信息架构审查、优先级和验收清单；没有复制外部项目正文、代码、图片、字体、图标或品牌资产 | `project-audit / reference-only`：包含本地审查与结构参考；建议本身尚未证明为用户效果 | 用于首页入口、能力单元、raw Markdown 边界、locale 状态和站点验收；不把 candidate 审查意见写成生产级结果 |
 | S21 | `docs/research/codex-model-selection-official-facts-2026-08-11.md` | OpenAI/Codex 官方模型文档、OpenAI API 模型页、`openai/codex` 公开 Issues | 只保留官方模型定位、配置/工作面边界、用户症状和原创排查方法；没有复制长段正文、截图、Issue 日志、凭据、代码或 Skill 指令 | `reference-only`：官方事实按访问日期和适用范围复核；社区报告只证明报告者描述的症状，不证明根因、修复或本地复现 | 用于 Chapter 6 的英文源文件和模型选择证据边界；不把产品定位写成性能、成本、稳定性或总体排名结论 |
+| S22 | `assets/teaching/*.svg` | Prysai Lab 原创教学卡，创建于 2026-08-11 | 两张项目内 SVG：模型选择测试、Skill 到可观察输出；仅使用内嵌几何图形、文字、渐变和网格，无外部图片、字体、图标或远程请求 | 项目原创资产；仓库发行许可证尚未单独确定 | `original-rewrite / project-owned`：用于本项目教学和 README；不标记为第三方素材，不复制 WorkBuddyGuide 或其他项目视觉表达 |
+| S23 | `examples/skill-sandbox/product-context-real-estate/` + `assets/cases/product-context-real-estate-desktop.png` | Prysai Lab 原创合成案例，创建于 2026-08-11 | fictional brief、Product Context 草稿、原创 HTML/CSS/inline SVG 和本地浏览器截图；无真实房产、个人数据、外部媒体、CDN、分析或表单 | 项目原创资产；案例只可作为本仓库的合成教学材料，截图的证据范围限于记录的本地渲染视口 | `original-rewrite / project-owned`：可用于本项目案例教学；不得包装为真实客户、市场、库存、转化或 Skill runtime 证据 |
 
 ## 归档指纹
 

@@ -60,6 +60,25 @@ large prompt library.
 | Read the book as a source-locale guide | [`book/README-EN.md`](book/README-EN.md) + [`book/table-of-contents-EN.md`](book/table-of-contents-EN.md) | The book contract, full route, chapter status, experiments, and research links |
 | Inspect how the project is maintained | [`docs/governance/`](docs/governance/) + [`scripts/`](scripts/) | Canonical status, locale identity, update rules, and repeatable checks |
 
+## See the method produce an artifact
+
+The visual layer is part of the lesson, but it never replaces evidence. Start
+with two teaching cards, then follow one concept case from
+brief to context draft to a locally rendered page:
+
+| Visual entry | What it demonstrates | Evidence boundary |
+|---|---|---|
+| [Model choice is a test](assets/teaching/model-choice-is-a-test.svg) | Compare a task, working condition, smoke test, and bounded decision | It does not establish a universal model ranking, cost, speed, stability, or account-wide availability |
+| [Skill to observable output](assets/teaching/skill-to-observable-output.svg) | Trigger → input → method → inspectable artifact → four-case evaluation | A polished artifact is not proof that a Skill ran or that the method works everywhere |
+| [Real-estate concept case](docs/research/skill-case-product-context-real-estate-2026-08-11.md) | Product Context draft → static landing page → browser screenshot | Project-owned example; no customer, market, inventory, conversion, or runtime claim |
+
+The case is intentionally concrete: a fictional buyer-first brokerage page with
+a sample property card, a visible `CONCEPT PAGE / NO LIVE LISTINGS` label, and a panel
+that says what the screenshot can and cannot prove. The Product Context Skill
+was not run as an independent live invocation; the page is a project-owned
+implementation based on the Skill contract, and the screenshot documents its
+local rendering only.
+
 ## Why this project exists
 
 Many AI guides teach a command, a feature, or a prompt. Real work fails at the

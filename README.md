@@ -42,6 +42,16 @@ problem research, and explicit evidence boundaries.
 | Read the English source | [`book/README-EN.md`](book/README-EN.md) + [`book/table-of-contents-EN.md`](book/table-of-contents-EN.md) | The book contract, full route, chapter status, experiments, and research links |
 | Inspect the project itself | [`docs/governance/`](docs/governance/) + [`scripts/`](scripts/) | Canonical status, locale identity, update rules, and repeatable checks |
 
+## Visual teaching and a concrete Skill case
+
+Use the [model-choice card](assets/teaching/model-choice-is-a-test.svg) and
+[Skill-output card](assets/teaching/skill-to-observable-output.svg) for the core
+ideas. Then open the [real-estate Product Context case](docs/research/skill-case-product-context-real-estate-2026-08-11.md):
+it connects a fictional brief, a bounded context draft, a static page, and a
+local screenshot. The screenshot proves rendering at a recorded viewport;
+it does not prove live Skill execution, customer demand, inventory, conversion,
+or production readiness.
+
 ## Start with a result
 
 | If you need to… | Start with… | You should leave with… |
