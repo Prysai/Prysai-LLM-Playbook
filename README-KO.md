@@ -2,6 +2,10 @@
 
 > Codex: 첫 번째 작업에서 실제 업무까지
 
+<!-- language-switcher:start -->
+**언어:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
+<!-- language-switcher:end -->
+
 이 문서는 `Codex: From First Task to Real Work` 프로젝트의 한국어 핵심 입구입니다. 프로젝트의 기본 공개 언어는 영어(`EN`)이며, 현재 한국어(`KO`) 이관은 이 파일과 책의 한국어 입구, 한국어 서문부터 진행 중입니다. 한국어 전체 책이 완성되었거나 번역 품질과 브라우저 동작이 검증되었다는 뜻은 아닙니다.
 
 ## 한국어 이관 상태

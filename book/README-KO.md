@@ -4,6 +4,10 @@
 
 이 한국어 파일은 책의 한국어 핵심 입구입니다. 한국어 책 전체가 번역되었다는 뜻은 아닙니다. 현재 번역 상태는 `in-progress`이며, 한국어 전문 감수와 브라우저 검증은 아직 수행되지 않았습니다.
 
+<!-- language-switcher:start -->
+**언어:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
+<!-- language-switcher:end -->
+
 관련 입구: [한국어 서문](preface-KO.md) · [프로젝트 한국어 README](../README-KO.md)
 
 ## 각 장에 필요한 구성

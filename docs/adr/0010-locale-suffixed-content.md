@@ -161,6 +161,8 @@ artifact.
 
 The default link rule is strict: a localized page MUST link to the same
 `content_id` in the same locale whenever the target has a locale variant.
+The explicit language switcher described below is the only cross-locale
+navigation exception.
 
 Examples:
 
@@ -171,10 +173,38 @@ Examples:
 ```
 
 This applies to table-of-contents links, previous/next links, learning-path
-links, chapter-to-lab links, lab-to-chapter links, site cards, language
-switchers, and generated navigation. It also applies to links that point to a
-localized asset's anchor: the target file must be the same-locale file before
-the `#anchor` fragment is appended.
+links, chapter-to-lab links, lab-to-chapter links, site cards, and generated
+navigation. It also applies to links that point to a localized asset's anchor:
+the target file must be the same-locale file before the `#anchor` fragment is
+appended.
+
+#### The language switcher is the only cross-locale exception
+
+Every reader-facing README entry must contain one explicit, machine-checkable
+switcher block:
+
+```markdown
+<!-- language-switcher:start -->
+**Languages:** [English](../../README-EN.md) | [简体中文](../../README-ZH.md) | ...
+<!-- language-switcher:end -->
+```
+
+Links inside this marked block MAY cross locales, but each target MUST:
+
+1. belong to the same `content_id` as the page containing the switcher;
+2. use one of the six locales registered in the matrix; and
+3. appear exactly once for every registered locale.
+
+An unavailable translation is shown as an unlinked status such as
+`繁體中文（尚未提供）`; it is not represented by a guessed path or a link to
+an unrelated English page. A validator may therefore distinguish an honest
+translation gap from a broken language switch.
+
+The unsuffixed root `README.md` and `book/README.md` are language-neutral
+compatibility entry points retained for GitHub and existing bookmarks. They
+default to the `-EN` entry, expose the same six-locale switcher, and are not
+treated as an unsuffixed English edition. Their legacy identity is registered
+in `docs/governance/locale-matrix.yaml`.
 
 The only permitted unsuffixed local targets are files explicitly classified as
 locale-neutral by the matrix, such as a validator, an ADR, or a source/license
@@ -413,4 +443,3 @@ only when the following evidence exists:
 - [ADR-0008: Generate public learning-path data from the contract](0008-generated-public-learning-path-data.md)
 - [ADR-0009: Track volatile fact consumers in a machine-readable impact registry](0009-fact-impact-registry.md)
 - [Bilingual documentation patterns research](../research/bilingual-docs-patterns-2026-08-09.md)
-

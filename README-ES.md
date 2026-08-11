@@ -2,6 +2,10 @@
 
 > Codex: del primer trabajo a un trabajo real.
 
+<!-- language-switcher:start -->
+**Idiomas:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
+<!-- language-switcher:end -->
+
 Codex: From First Task to Real Work no es un directorio que se limite a
 enumerar skills ni un manual que solo explique pasos de instalación. Es un
 sistema de aprendizaje y práctica de Codex GPT, organizado como libro,

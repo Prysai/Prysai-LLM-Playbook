@@ -2,6 +2,10 @@
 
 > English entry point — the source-locale migration is in progress.
 
+<!-- language-switcher:start -->
+**Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
+<!-- language-switcher:end -->
+
 `Codex: From First Task to Real Work` is an independent, book-shaped learning
 and practice system for using GPT, Codex, tools, Skills, Agents, and
 verification in real work. It is not a flat collection of Skills and it is not

@@ -2,6 +2,10 @@
 
 > Codex：最初のタスクから、実際の仕事へ
 
+<!-- language-switcher:start -->
+**言語：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
+<!-- language-switcher:end -->
+
 `Codex: From First Task to Real Work` は、skills を並べただけの目録でも、インストール手順だけを説明するマニュアルでもありません。GPT、モデル、Codex、コンテキスト、ツール、Skill、Agent、検証を学び、実験し、チームで再利用できる仕事の仕組みに変えていくための、書籍・コース・実験室型の学習システムです。
 
 このプロジェクトが目指すのは、「GPT という名前を聞いたことがある」状態から、安全に Codex を使い、現実のタスクを安定して完了し、Agent がなぜその行動を取ったのかを説明し、適切な Skill を選び、最終的には自分の仕事の仕組みをつくってチームに展開できる状態までの、連続した成長経路です。

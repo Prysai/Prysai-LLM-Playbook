@@ -19,6 +19,9 @@ CONTENT_STATUSES = {"draft", "candidate", "verified", "production-ready"}
 SUFFIX_RE = re.compile(r"-(EN|ZH|ES|JA|KO|DE)(\.[^/]+)$")
 LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 LOCALE_FILE_RE = re.compile(r"-(EN|ZH|ES|JA|KO|DE)\.[^/]+$")
+README_RE = re.compile(r"^(?:README|book/README)(?:-(EN|ZH|ES|JA|KO|DE))?\.md$")
+LANGUAGE_SWITCHER_START = "<!-- language-switcher:start -->"
+LANGUAGE_SWITCHER_END = "<!-- language-switcher:end -->"
 MIGRATION_NOTICE_RE = re.compile(
     r"(?:migration|migraci[oó]n|移行|迁移|이관|[Mm]igration|[Üü]bersetzung|Übersetzungsstatus)"
 )
@@ -92,6 +95,7 @@ def main() -> int:
         contents = []
 
     path_to_identity: dict[str, tuple[str, str]] = {}
+    legacy_path_to_identity: dict[str, str] = {}
     matrix_paths: set[str] = set()
     for index, item in enumerate(contents, start=1):
         label = f"content[{index}]"
@@ -105,6 +109,16 @@ def main() -> int:
         stem = item.get("stem")
         if not isinstance(stem, str) or not stem.strip():
             errors.append(f"{label}.stem must be non-empty")
+        legacy_paths = item.get("legacy_paths", [])
+        if not isinstance(legacy_paths, list) or not all(isinstance(value, str) for value in legacy_paths):
+            errors.append(f"{label}.legacy_paths must be a list of strings")
+            legacy_paths = []
+        for legacy_path in legacy_paths:
+            normalized_legacy = legacy_path.replace("\\", "/")
+            if normalized_legacy in legacy_path_to_identity:
+                errors.append(f"duplicate legacy matrix path: {normalized_legacy}")
+            else:
+                legacy_path_to_identity[normalized_legacy] = str(content_id)
         locales = item.get("locales")
         if not isinstance(locales, dict) or set(locales) != set(LOCALES):
             errors.append(f"{label} ({content_id}) must declare all six locales")
@@ -160,16 +174,30 @@ def main() -> int:
         neutral_prefixes = []
 
     localized_files: list[Path] = []
+    readme_files: list[Path] = []
     for path in iter_workspace_files():
-        if LOCALE_FILE_RE.search(relative(path)):
-            localized_files.append(path)
-            if relative(path) not in matrix_paths:
-                errors.append(f"localized file is missing from matrix: {relative(path)}")
-
-    for path in localized_files:
         path_string = relative(path)
-        locale = SUFFIX_RE.search(path_string).group(1)  # type: ignore[union-attr]
+        if README_RE.search(path_string):
+            readme_files.append(path)
+        if LOCALE_FILE_RE.search(path_string):
+            localized_files.append(path)
+            if path_string not in matrix_paths:
+                errors.append(f"localized file is missing from matrix: {path_string}")
+
+    files_to_check = list(dict.fromkeys(localized_files + readme_files))
+    for path in files_to_check:
+        path_string = relative(path)
+        suffix_match = SUFFIX_RE.search(path_string)
+        locale = suffix_match.group(1) if suffix_match else None
         text = path.read_text(encoding="utf-8")
+        switcher_start = text.find(LANGUAGE_SWITCHER_START)
+        switcher_end = text.find(LANGUAGE_SWITCHER_END, switcher_start + len(LANGUAGE_SWITCHER_START)) if switcher_start >= 0 else -1
+        is_readme = README_RE.search(path_string) is not None
+        if is_readme and (switcher_start < 0 or switcher_end < 0 or switcher_end < switcher_start):
+            errors.append(f"{path_string} is missing a complete language switcher block")
+        source_identity = path_to_identity.get(path_string)
+        source_content_id = source_identity[0] if source_identity else legacy_path_to_identity.get(path_string)
+        switcher_locale_counts = {registered_locale: 0 for registered_locale in LOCALES}
         for link_match in LINK_RE.finditer(text):
             link_label = link_match.group(0).split("](", 1)[0].lstrip("[")
             target = link_match.group(1)
@@ -183,9 +211,19 @@ def main() -> int:
                 errors.append(f"{path_string} links outside workspace: {target}")
                 continue
             if target_relative in path_to_identity:
-                target_locale = path_to_identity[target_relative][1]
-                if target_locale != locale:
-                    errors.append(f"{path_string} links across locale: {target_relative}")
+                target_content_id, target_locale = path_to_identity[target_relative]
+                in_switcher = switcher_start >= 0 and switcher_end >= 0 and switcher_start < link_match.start() < switcher_end
+                if in_switcher and is_readme:
+                    switcher_locale_counts[target_locale] += 1
+                    if source_content_id and target_content_id != source_content_id:
+                        errors.append(
+                            f"{path_string} language switcher changes content identity: {target_relative}"
+                        )
+                if locale is not None and target_locale != locale:
+                    if not in_switcher:
+                        errors.append(f"{path_string} links across locale outside language switcher: {target_relative}")
+                elif locale is None and not in_switcher:
+                    errors.append(f"{path_string} links to a locale-specific file outside language switcher: {target_relative}")
             elif target_relative.endswith(".md") and not path_is_neutral(target_relative, neutral_prefixes):
                 legacy = any(target_relative == legacy_path for item in contents for legacy_path in item.get("legacy_paths", []) if isinstance(item, dict))
                 if legacy and matrix.get("mode") == "release":
@@ -194,6 +232,17 @@ def main() -> int:
                     errors.append(
                         f"{path_string} links to legacy content without an explicit migration notice: {target_relative}"
                     )
+        if is_readme and switcher_start >= 0 and switcher_end >= 0 and switcher_end > switcher_start:
+            missing_locales = {locale for locale, count in switcher_locale_counts.items() if count == 0}
+            duplicate_locales = {locale for locale, count in switcher_locale_counts.items() if count > 1}
+            if missing_locales:
+                errors.append(
+                    f"{path_string} language switcher is missing locales: {', '.join(sorted(missing_locales))}"
+                )
+            if duplicate_locales:
+                errors.append(
+                    f"{path_string} language switcher repeats locales: {', '.join(sorted(duplicate_locales))}"
+                )
 
     counts = {locale: 0 for locale in LOCALES}
     for path in localized_files:

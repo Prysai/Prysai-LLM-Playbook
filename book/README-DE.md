@@ -5,6 +5,10 @@
 > Deutscher Buch-Einstieg (`DE`). Die Kapitelkörper sind noch nicht vollständig
 > ins Deutsche übertragen und nicht vollständig zur Laufzeit geprüft.
 
+<!-- language-switcher:start -->
+**Sprachen:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
+<!-- language-switcher:end -->
+
 Navigation:
 
 - [Zum deutschen Projekt-Einstieg](../README-DE.md)

@@ -5,6 +5,10 @@
 > Deutscher Einstiegspunkt — die deutsche Migration der reader-facing Inhalte
 > ist in Arbeit.
 
+<!-- language-switcher:start -->
+**Sprachen:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
+<!-- language-switcher:end -->
+
 `Codex: From First Task to Real Work` ist ein eigenständiges, buchähnliches
 Lern- und Praxissystem für GPT, Codex, Tools, Skills, Agents und die Prüfung
 von Ergebnissen in echter Arbeit. Es ist weder ein flaches Skill-Verzeichnis

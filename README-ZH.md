@@ -4,6 +4,10 @@
 
 > 简体中文项目入口（`ZH`）。默认公开语言目标是 English（`EN`）；本文件是当前中文入口迁移的一部分。
 
+<!-- language-switcher:start -->
+**语言：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
+<!-- language-switcher:end -->
+
 中文入口导航：
 
 - [中文书稿入口](book/README-ZH.md)

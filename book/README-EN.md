@@ -3,6 +3,10 @@
 > English source-locale entry point. The chapter corpus is not yet fully
 > translated or runtime-verified.
 
+<!-- language-switcher:start -->
+**Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
+<!-- language-switcher:end -->
+
 This directory contains the original main-line book for `Codex: From First
 Task to Real Work`. It is arranged around the learner's growth, not assembled
 as a collection of unrelated external projects. The book explains the ideas,

@@ -4,6 +4,10 @@
 
 > 简体中文书稿入口（`ZH`）。这是三文件中文入口迁移切片的一部分，不代表整本书已经完成六语言翻译。
 
+<!-- language-switcher:start -->
+**语言：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
+<!-- language-switcher:end -->
+
 导航：
 
 - [返回中文项目入口](../README-ZH.md)

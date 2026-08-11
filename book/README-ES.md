@@ -1,5 +1,9 @@
 # Codex: From First Task to Real Work — manuscrito del libro
 
+<!-- language-switcher:start -->
+**Idiomas:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
+<!-- language-switcher:end -->
+
 Este directorio contiene el manuscrito original de la ruta principal de
 Codex: From First Task to Real Work. El manuscrito no es una combinación de
 seis proyectos externos: es un sistema de contenidos reordenado según la
