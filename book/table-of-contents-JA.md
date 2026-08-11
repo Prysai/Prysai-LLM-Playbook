@@ -60,8 +60,8 @@
 コンテキストの層、信頼境界、sandbox、承認、外部副作用、観測可能な挙動を
 扱います。**content_status：** `candidate`
 
-- 章：[移行中・現在のソース](chapters/04-context-permissions-and-agent.md)
-- 実験：[lab-007・移行中・現在のソース](labs/lab-007-action-boundaries.md)
+- 章：[第 4 章・JA ソース](chapters/04-context-permissions-and-agent-JA.md)
+- 実験：[Lab 007・JA ソース](labs/lab-007-action-boundaries-JA.md)
 
 ### 第 5 章：適切な Codex の作業面を選ぶ
 
@@ -69,7 +69,7 @@
 選択する方法を学びます。**content_status：** `candidate`
 
 - 章：[移行中・現在のソース](chapters/05-choose-the-codex-surface.md)
-- 実験：[lab-007・移行中・現在のソース](labs/lab-007-action-boundaries.md)
+- 実験：[Lab 007・JA ソース](labs/lab-007-action-boundaries-JA.md)
 
 ### 第 6 章：モデル選択はモデル崇拝ではない
 
@@ -137,7 +137,7 @@
 メッセージ、ロールバックを扱います。**content_status：** `candidate`
 
 - 章：[移行中・現在のソース](chapters/13-action-boundaries.md)
-- 実験：[lab-007・移行中・現在のソース](labs/lab-007-action-boundaries.md)
+- 実験：[Lab 007・JA ソース](labs/lab-007-action-boundaries-JA.md)
 
 ## 第 III 部：Skill、ツール、専門的な実践
 
@@ -231,7 +231,7 @@
 | lab-004 | Skill の選択 | `draft` · `not_run` | [移行中・現在のソース](labs/lab-004-skill-selection.md) |
 | lab-005 | Skill の設計 | `draft` · `not_run` | [移行中・現在のソース](labs/lab-005-design-a-skill.md) |
 | lab-006 | Agent の停止条件 | `draft` · `not_run` | [移行中・現在のソース](labs/lab-006-agent-stop-conditions.md) |
-| lab-007 | 行動境界 | `draft` · `not_run` | [移行中・現在のソース](labs/lab-007-action-boundaries.md) |
+| lab-007 | 行動境界 | `draft` · `not_run` | [JA ソース](labs/lab-007-action-boundaries-JA.md) |
 | lab-008 | 研究質問 | `draft` · `not_run` | [移行中・現在のソース](labs/lab-008-research-question.md) |
 | lab-009 | エンジニアリング・ライフサイクル | `draft` · `not_run` | [移行中・現在のソース](labs/lab-009-engineering-lifecycle.md) |
 | lab-010 | 製品コンテキスト | `draft` · `not_run` | [移行中・現在のソース](labs/lab-010-product-context.md) |

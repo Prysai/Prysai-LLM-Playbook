@@ -60,8 +60,8 @@
 컨텍스트 계층, 신뢰 경계, sandbox, 승인, 외부 부작용과 관찰 가능한 행동을
 다룹니다. **content_status:** `candidate`
 
-- 장: [이관 중 · 현재 원본 경로](chapters/04-context-permissions-and-agent.md)
-- 실험: [lab-007 · 이관 중 · 현재 원본 경로](labs/lab-007-action-boundaries.md)
+- 장: [4장 · KO 소스](chapters/04-context-permissions-and-agent-KO.md)
+- 실험: [Lab 007 · KO 소스](labs/lab-007-action-boundaries-KO.md)
 
 ### 5장 — 올바른 Codex 작업면 선택하기
 
@@ -69,7 +69,7 @@
 방법을 다룹니다. **content_status:** `candidate`
 
 - 장: [이관 중 · 현재 원본 경로](chapters/05-choose-the-codex-surface.md)
-- 실험: [lab-007 · 이관 중 · 현재 원본 경로](labs/lab-007-action-boundaries.md)
+- 실험: [Lab 007 · KO 소스](labs/lab-007-action-boundaries-KO.md)
 
 ### 6장 — 모델 선택은 모델 숭배가 아니다
 
@@ -137,7 +137,7 @@
 다룹니다. **content_status:** `candidate`
 
 - 장: [이관 중 · 현재 원본 경로](chapters/13-action-boundaries.md)
-- 실험: [lab-007 · 이관 중 · 현재 원본 경로](labs/lab-007-action-boundaries.md)
+- 실험: [Lab 007 · KO 소스](labs/lab-007-action-boundaries-KO.md)
 
 ## 제3부: Skill, 도구와 전문 실무
 
@@ -231,7 +231,7 @@
 | lab-004 | Skill 선택 | `draft` · `not_run` | [이관 중 · 현재 원본](labs/lab-004-skill-selection.md) |
 | lab-005 | Skill 설계 | `draft` · `not_run` | [이관 중 · 현재 원본](labs/lab-005-design-a-skill.md) |
 | lab-006 | Agent 정지 조건 | `draft` · `not_run` | [이관 중 · 현재 원본](labs/lab-006-agent-stop-conditions.md) |
-| lab-007 | 행동 경계 | `draft` · `not_run` | [이관 중 · 현재 원본](labs/lab-007-action-boundaries.md) |
+| lab-007 | 행동 경계 | `draft` · `not_run` | [KO 소스](labs/lab-007-action-boundaries-KO.md) |
 | lab-008 | 연구 질문 | `draft` · `not_run` | [이관 중 · 현재 원본](labs/lab-008-research-question.md) |
 | lab-009 | 엔지니어링 수명 주기 | `draft` · `not_run` | [이관 중 · 현재 원본](labs/lab-009-engineering-lifecycle.md) |
 | lab-010 | 제품 컨텍스트 | `draft` · `not_run` | [이관 중 · 현재 원본](labs/lab-010-product-context.md) |

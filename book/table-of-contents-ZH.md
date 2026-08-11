@@ -59,8 +59,8 @@
 理解上下文层级、信任边界、沙盒、审批、外部副作用和可观察行为。
 **content_status：** `candidate`
 
-- 章节：[迁移中·当前源文件](chapters/04-context-permissions-and-agent.md)
-- 实验：[lab-007·迁移中·当前源文件](labs/lab-007-action-boundaries.md)
+- 章节：[第 4 章·ZH 源文件](chapters/04-context-permissions-and-agent-ZH.md)
+- 实验：[Lab 007·ZH 源文件](labs/lab-007-action-boundaries-ZH.md)
 
 ### 第 5 章：选择正确的 Codex 工作面
 
@@ -68,7 +68,7 @@
 **content_status：** `candidate`
 
 - 章节：[迁移中·当前源文件](chapters/05-choose-the-codex-surface.md)
-- 实验：[lab-007·迁移中·当前源文件](labs/lab-007-action-boundaries.md)
+- 实验：[Lab 007·ZH 源文件](labs/lab-007-action-boundaries-ZH.md)
 
 ### 第 6 章：模型选择不是模型崇拜
 
@@ -135,7 +135,7 @@
 **content_status：** `candidate`
 
 - 章节：[迁移中·当前源文件](chapters/13-action-boundaries.md)
-- 实验：[lab-007·迁移中·当前源文件](labs/lab-007-action-boundaries.md)
+- 实验：[Lab 007·ZH 源文件](labs/lab-007-action-boundaries-ZH.md)
 
 ## 第三篇：技能、工具与专业实践
 
@@ -226,7 +226,7 @@
 | lab-004 | Skill 选择 | `draft` · `not_run` | [迁移中·当前源文件](labs/lab-004-skill-selection.md) |
 | lab-005 | Skill 设计 | `draft` · `not_run` | [迁移中·当前源文件](labs/lab-005-design-a-skill.md) |
 | lab-006 | Agent 停止条件 | `draft` · `not_run` | [迁移中·当前源文件](labs/lab-006-agent-stop-conditions.md) |
-| lab-007 | 行动边界分级 | `draft` · `not_run` | [迁移中·当前源文件](labs/lab-007-action-boundaries.md) |
+| lab-007 | 行动边界分级 | `draft` · `not_run` | [ZH 源文件](labs/lab-007-action-boundaries-ZH.md) |
 | lab-008 | 研究问题 | `draft` · `not_run` | [迁移中·当前源文件](labs/lab-008-research-question.md) |
 | lab-009 | 工程生命周期 | `draft` · `not_run` | [迁移中·当前源文件](labs/lab-009-engineering-lifecycle.md) |
 | lab-010 | 产品上下文 | `draft` · `not_run` | [迁移中·当前源文件](labs/lab-010-product-context.md) |

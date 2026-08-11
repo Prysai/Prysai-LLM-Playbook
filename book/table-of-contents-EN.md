@@ -15,10 +15,11 @@
 - Chapters are `candidate`. Labs are `draft` with `run_status: not_run`.
 - Chapter 6 has `claim_status: disputed`; Chapter 22 has
   `claim_status: current | disputed`.
-- Existing English entry pages use their `-EN` files. Chapters and labs do
-  not yet have locale-suffixed variants, so their links are explicitly marked
-  `migration pending — current source path`. Shared governance, evaluation,
-  and research documents are marked `locale-neutral`.
+- Existing English entry pages use their `-EN` files. Chapters 2–3 and Labs
+  001–002 now also have canonical `-EN` source files. The remaining chapters
+  and labs do not yet have locale-suffixed English variants, so their links are
+  explicitly marked `migration pending — current source path`. Shared
+  governance, evaluation, and research documents are marked `locale-neutral`.
 - No link on this page silently falls back to another locale. A migration
   notice is part of every link whose localized target does not yet exist.
 
@@ -46,24 +47,24 @@ Agent loop affect the result. **content_status:** `candidate`
 Choose a low-risk task, write a first-task protocol, set confirmation points,
 and leave delivery evidence. **content_status:** `candidate`
 
-- Chapter: [migration pending — current source path](chapters/02-first-safe-task.md)
-- Experiment: [lab-001 — migration pending — current source path](labs/lab-001-first-safe-task.md)
+- Chapter: [Chapter 2 EN source](chapters/02-first-safe-task-EN.md)
+- Experiment: [lab-001 EN source](labs/lab-001-first-safe-task-EN.md)
 
 ### Chapter 3 — Turn a wish into a task protocol
 
 Define the goal, background, inputs, constraints, allowed actions, acceptance,
 failure handling, and delivery format. **content_status:** `candidate`
 
-- Chapter: [migration pending — current source path](chapters/03-task-protocol.md)
-- Experiment: [lab-002 — migration pending — current source path](labs/lab-002-task-protocol.md)
+- Chapter: [Chapter 3 — EN source](chapters/03-task-protocol-EN.md)
+- Experiment: [Lab 002 — EN source](labs/lab-002-task-protocol-EN.md)
 
 ### Chapter 4 — Context, permissions, and the Agent action boundary
 
 Context layers, trust boundaries, sandboxing, approvals, external side
 effects, and observable behavior. **content_status:** `candidate`
 
-- Chapter: [migration pending — current source path](chapters/04-context-permissions-and-agent.md)
-- Experiment: [lab-007 — migration pending — current source path](labs/lab-007-action-boundaries.md)
+- Chapter: [Chapter 4 — EN source](chapters/04-context-permissions-and-agent-EN.md)
+- Experiment: [Lab 007 — EN source](labs/lab-007-action-boundaries-EN.md)
 
 ### Chapter 5 — Choose the right Codex surface
 
@@ -71,7 +72,7 @@ How to choose among the desktop app, CLI, IDE, Cloud, and Remote entry points
 for a task. **content_status:** `candidate`
 
 - Chapter: [migration pending — current source path](chapters/05-choose-the-codex-surface.md)
-- Experiment: [lab-007 — migration pending — current source path](labs/lab-007-action-boundaries.md)
+- Experiment: [Lab 007 — EN source](labs/lab-007-action-boundaries-EN.md)
 
 ### Chapter 6 — Model selection is not model worship
 
@@ -116,7 +117,7 @@ Break a large goal into delivery slices with clear dependencies, runnable
 steps, and inspectable checks. **content_status:** `candidate`
 
 - Chapter: [migration pending — current source path](chapters/10-planning-and-slicing.md)
-- Experiments: [lab-002 — migration pending — current source path](labs/lab-002-task-protocol.md) · [lab-013 — migration pending — current source path](labs/lab-013-l3-vertical-slice.md)
+- Experiments: [Lab 002 — EN source](labs/lab-002-task-protocol-EN.md) · [lab-013 — migration pending — current source path](labs/lab-013-l3-vertical-slice.md)
 
 ### Chapter 11 — Design a genuinely useful Skill
 
@@ -141,7 +142,7 @@ Read-only checks, editing, commands, browsing, commits, pushes, external
 messages, and rollback. **content_status:** `candidate`
 
 - Chapter: [migration pending — current source path](chapters/13-action-boundaries.md)
-- Experiment: [lab-007 — migration pending — current source path](labs/lab-007-action-boundaries.md)
+- Experiment: [Lab 007 — EN source](labs/lab-007-action-boundaries-EN.md)
 
 ## Part III: Skills, tools, and professional practice
 
@@ -203,7 +204,7 @@ Project context, memory, templates, recurring workflows, and retrospectives.
 **content_status:** `candidate`
 
 - Chapter: [migration pending — current source path](chapters/20-personal-codex-work-system.md)
-- Experiments: [lab-001 — migration pending — current source path](labs/lab-001-first-safe-task.md) · [lab-010 — migration pending — current source path](labs/lab-010-product-context.md)
+- Experiments: [lab-001 EN source](labs/lab-001-first-safe-task-EN.md) · [lab-010 — migration pending — current source path](labs/lab-010-product-context.md)
 
 ### Chapter 21 — Build a team capability system
 
@@ -230,13 +231,13 @@ the experiment or its learning outcome is verified.
 
 | Experiment | Focus | State | Entry |
 |---|---|---|---|
-| lab-001 | First safe task | `draft` · `not_run` | [migration pending — current source](labs/lab-001-first-safe-task.md) |
-| lab-002 | Task protocol | `draft` · `not_run` | [migration pending — current source](labs/lab-002-task-protocol.md) |
+| lab-001 | First safe task | `draft` · `not_run` | [EN source](labs/lab-001-first-safe-task-EN.md) |
+| lab-002 | Task protocol | `draft` · `not_run` | [EN source](labs/lab-002-task-protocol-EN.md) |
 | lab-003 | Evidence review | `draft` · `not_run` | [migration pending — current source](labs/lab-003-evidence-review.md) |
 | lab-004 | Skill selection | `draft` · `not_run` | [migration pending — current source](labs/lab-004-skill-selection.md) |
 | lab-005 | Skill design | `draft` · `not_run` | [migration pending — current source](labs/lab-005-design-a-skill.md) |
 | lab-006 | Agent stop conditions | `draft` · `not_run` | [migration pending — current source](labs/lab-006-agent-stop-conditions.md) |
-| lab-007 | Action boundaries | `draft` · `not_run` | [migration pending — current source](labs/lab-007-action-boundaries.md) |
+| lab-007 | Action boundaries | `draft` · `not_run` | [EN source](labs/lab-007-action-boundaries-EN.md) |
 | lab-008 | Research question | `draft` · `not_run` | [migration pending — current source](labs/lab-008-research-question.md) |
 | lab-009 | Engineering lifecycle | `draft` · `not_run` | [migration pending — current source](labs/lab-009-engineering-lifecycle.md) |
 | lab-010 | Product context | `draft` · `not_run` | [migration pending — current source](labs/lab-010-product-context.md) |

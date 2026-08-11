@@ -64,8 +64,8 @@ gestión del fallo y formato de entrega. **content_status:** `candidate`
 Capas de contexto, límites de confianza, sandbox, aprobaciones, efectos
 externos y comportamiento observable. **content_status:** `candidate`
 
-- Capítulo: [migración en curso · ruta fuente actual](chapters/04-context-permissions-and-agent.md)
-- Experimento: [lab-007 · migración en curso · ruta fuente actual](labs/lab-007-action-boundaries.md)
+- Capítulo: [Capítulo 4 · fuente ES](chapters/04-context-permissions-and-agent-ES.md)
+- Experimento: [Lab 007 · fuente ES](labs/lab-007-action-boundaries-ES.md)
 
 ### Capítulo 5 — Elegir la superficie correcta de Codex
 
@@ -73,7 +73,7 @@ Método para elegir entre la aplicación de escritorio, CLI, IDE, Cloud y Remote
 según la tarea. **content_status:** `candidate`
 
 - Capítulo: [migración en curso · ruta fuente actual](chapters/05-choose-the-codex-surface.md)
-- Experimento: [lab-007 · migración en curso · ruta fuente actual](labs/lab-007-action-boundaries.md)
+- Experimento: [Lab 007 · fuente ES](labs/lab-007-action-boundaries-ES.md)
 
 ### Capítulo 6 — Elegir un modelo no es venerar un modelo
 
@@ -141,7 +141,7 @@ Comprobaciones de solo lectura, edición, comandos, navegación, commits,
 pushes, mensajes externos y rollback. **content_status:** `candidate`
 
 - Capítulo: [migración en curso · ruta fuente actual](chapters/13-action-boundaries.md)
-- Experimento: [lab-007 · migración en curso · ruta fuente actual](labs/lab-007-action-boundaries.md)
+- Experimento: [Lab 007 · fuente ES](labs/lab-007-action-boundaries-ES.md)
 
 ## Parte III: Skills, herramientas y práctica profesional
 
@@ -235,7 +235,7 @@ no una prueba de que el experimento o el aprendizaje estén verificados.
 | lab-004 | Selección de Skills | `draft` · `not_run` | [migración en curso · fuente actual](labs/lab-004-skill-selection.md) |
 | lab-005 | Diseño de Skills | `draft` · `not_run` | [migración en curso · fuente actual](labs/lab-005-design-a-skill.md) |
 | lab-006 | Condiciones de parada del Agent | `draft` · `not_run` | [migración en curso · fuente actual](labs/lab-006-agent-stop-conditions.md) |
-| lab-007 | Límites de acción | `draft` · `not_run` | [migración en curso · fuente actual](labs/lab-007-action-boundaries.md) |
+| lab-007 | Límites de acción | `draft` · `not_run` | [fuente ES](labs/lab-007-action-boundaries-ES.md) |
 | lab-008 | Pregunta de investigación | `draft` · `not_run` | [migración en curso · fuente actual](labs/lab-008-research-question.md) |
 | lab-009 | Ciclo de vida de ingeniería | `draft` · `not_run` | [migración en curso · fuente actual](labs/lab-009-engineering-lifecycle.md) |
 | lab-010 | Contexto del producto | `draft` · `not_run` | [migración en curso · fuente actual](labs/lab-010-product-context.md) |

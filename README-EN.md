@@ -40,8 +40,8 @@ copied prompts and Skills.
 | What you need now | Start here | Leave with |
 |---|---|---|
 | Understand what GPT, Codex, tools, Skills, and Agents actually are | [Chapter 1 — Understand GPT before Codex](book/chapters/01-gpt-and-codex-EN.md) + [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) | A usable mental model and a list of claims you refuse to infer without evidence |
-| Complete a first task safely | [Chapter 2 — English migration pending — current source](book/chapters/02-first-safe-task.md) + [Lab 001 — English migration pending — current source](book/labs/lab-001-first-safe-task.md) | One small, reversible diff, a focused check, and an explicit unverified list |
-| Turn a vague request into something an Agent can execute | [Task protocol — English migration pending](book/chapters/03-task-protocol.md) + [Lab 002 — English migration pending — current source](book/labs/lab-002-task-protocol.md) | Goal, context, constraints, acceptance, stop conditions, and failure handling |
+| Complete a first task safely | [Chapter 2 EN source](book/chapters/02-first-safe-task-EN.md) + [Lab 001 EN source](book/labs/lab-001-first-safe-task-EN.md) | One small, reversible diff, a focused check, and an explicit unverified list |
+| Turn a vague request into something an Agent can execute | [Chapter 3 — task protocol](book/chapters/03-task-protocol-EN.md) + [Lab 002](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop conditions, and failure handling |
 | Stop trusting “done” too early | [Verification and recovery — English migration pending](book/chapters/09-verification-and-recovery.md) + [Lab 003 — English migration pending — current source](book/labs/lab-003-evidence-review.md) | A claim-to-evidence review that catches wrong files, missing tests, and scope gaps |
 | Choose or design a Skill | [Skill registry](docs/skill-registry.md) + [Skill quality standard](docs/quality/skill-quality-standard.md) | A bounded Skill contract with triggers, exclusions, dependencies, rollback, and tests |
 | Learn from failures people actually report | [Real-world problem index](docs/research/field-problems-index-2026-08-10.md) | A symptom, a safe first check, a narrower fallback, and an honest evidence level |
@@ -51,6 +51,14 @@ The most useful first slice is deliberately small: read Chapter 2, run Lab
 001 in a sandbox, keep the diff and command output, then write down what the
 run did not prove. That 30-minute exercise teaches more than collecting a
 large prompt library.
+
+## Three ways in
+
+| You want to… | Use this entry | What it is for |
+|---|---|---|
+| Browse the learning experience | [`site/index.html`](site/index.html) + [`site/README.md`](site/README.md) | The visual showcase; the companion README explains local serving and verification |
+| Read the book as a source-locale guide | [`book/README-EN.md`](book/README-EN.md) + [`book/table-of-contents-EN.md`](book/table-of-contents-EN.md) | The book contract, full route, chapter status, experiments, and research links |
+| Inspect how the project is maintained | [`docs/governance/`](docs/governance/) + [`scripts/`](scripts/) | Canonical status, locale identity, update rules, and repeatable checks |
 
 ## Why this project exists
 
@@ -115,15 +123,17 @@ state, not a marketing promise.
 | Level | Capability | Primary route |
 |---|---|---|
 | **L0 · Observer** | Separate GPT, models, Codex, context, tools, Skills, and Agents before attributing an outcome | [Chapter 1](book/chapters/01-gpt-and-codex-EN.md) · [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) |
-| **L1 · Safe user** | Complete a reversible, observable task and distinguish a diff from proof | [Chapter 2 — English migration pending — current source](book/chapters/02-first-safe-task.md) · [Lab 001 — English migration pending — current source](book/labs/lab-001-first-safe-task.md) |
-| **L2 · Task designer** | Turn a wish into a protocol with relevant context, least authority, acceptance, and failure handling | [Chapter 3 — migration pending](book/chapters/03-task-protocol.md) · [Lab 002 — English migration pending — current source](book/labs/lab-002-task-protocol.md) |
+| **L1 · Safe user** | Complete a reversible, observable task and distinguish a diff from proof | [Chapter 2 EN source](book/chapters/02-first-safe-task-EN.md) · [Lab 001 EN source](book/labs/lab-001-first-safe-task-EN.md) |
+| **L2 · Task designer** | Turn a wish into a protocol with relevant context, least authority, acceptance, and failure handling | [Chapter 3](book/chapters/03-task-protocol-EN.md) · [Lab 002](book/labs/lab-002-task-protocol-EN.md) |
 | **L3 · Workflow designer** | Run a complete workflow with stages, checkpoints, recovery, and delivery evidence | [Chapters 7–13 — migration pending](book/table-of-contents-EN.md) · [Lab 013 — English migration pending — current source](book/labs/lab-013-l3-vertical-slice.md) |
 | **L4 · Capability builder** | Select, compose, install, and improve Skills and tools by fit, risk, license, and verification cost | [Skill registry](docs/skill-registry.md) · [Chapter 11 — migration pending](book/chapters/11-designing-a-skill.md) |
 | **L5 · Evidence reviewer** | Test completion claims with positive, boundary, failure, and transfer cases | [Evaluation framework](docs/quality/evaluation-framework.md) · [Chapter 19 — migration pending](book/chapters/19-evaluate-models-and-workflows.md) |
 | **L6 · Team coach** | Turn a personal method into a versioned team capability with ownership and rollback | [Chapter 20–22 — migration pending](book/table-of-contents-EN.md) · [Contribution model](docs/governance/contribution-model.md) |
 
-“Migration pending” is intentional. It points to the current source file and
-does not pretend that an English chapter exists when it does not.
+“Migration pending” remains explicit wherever an English source has not yet
+ been authored. Chapters 2–3 and Labs 001–002 now have canonical `-EN` sources;
+the remaining unsuffixed links in this README are deliberately labelled as
+migration paths until their English files exist.
 
 ## What a chapter, lab, or Skill must contain
 
@@ -220,13 +230,16 @@ Each case is classified as one or more of:
 5. **Project inference** — an original conclusion that remains bounded by the
    available evidence.
 
-Start with the [real-world problem index](docs/research/field-problems-index-2026-08-10.md)
-and the [Codex problem research](docs/research/field-problems-codex.md). The
-newer coding-agent field cases and prompt-pattern report are being reviewed
-before their next sync; they are not linked here until the corresponding
-remote files exist. The [source and license register](docs/sources/asset-register.md)
-records what can be used as research, what can be adapted, and what must not
-be copied.
+Start with the [real-world problem index](docs/research/field-problems-index-2026-08-10.md),
+the [Codex problem research](docs/research/field-problems-codex.md), and the
+[coding-agent field cases](docs/research/field-problems-coding-agents-2026-08-10.md).
+For task design, read [prompt patterns for real work](docs/research/prompt-patterns-for-real-work-2026-08-10.md)
+and the [official Codex fact cards](docs/research/codex-official-fact-cards-2026-08-10.md).
+The [README front-door benchmark](docs/research/README-front-door-benchmark-2026-08-10.md)
+and [multilingual architecture review](docs/research/multilingual-architecture-round2-2026-08-10.md)
+explain the separation between the GitHub facade, the reading site, source files,
+and translation status. The [source and license register](docs/sources/asset-register.md)
+records what can be used as research, what can be adapted, and what must not be copied.
 
 ## Current state
 

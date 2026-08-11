@@ -104,6 +104,54 @@
       }
     },
     {
+      "content_id": "chapter-02-first-safe-task",
+      "kind": "chapter",
+      "stem": "book/chapters/02-first-safe-task",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-10",
+      "legacy_paths": ["book/chapters/02-first-safe-task.md"],
+      "locales": {
+        "EN": {"path": "book/chapters/02-first-safe-task-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full"},
+        "ZH": {"path": "book/chapters/02-first-safe-task-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "reason": "English source slice is published first; Simplified Chinese review and translation are pending."},
+        "ES": {"path": "book/chapters/02-first-safe-task-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/chapters/02-first-safe-task-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/chapters/02-first-safe-task-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/chapters/02-first-safe-task-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
+      "content_id": "chapter-03-task-protocol",
+      "kind": "chapter",
+      "stem": "book/chapters/03-task-protocol",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-10",
+      "legacy_paths": ["book/chapters/03-task-protocol.md"],
+      "locales": {
+        "EN": {"path": "book/chapters/03-task-protocol-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full"},
+        "ZH": {"path": "book/chapters/03-task-protocol-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "reason": "English source slice is published first; Simplified Chinese translation and review are pending."},
+        "ES": {"path": "book/chapters/03-task-protocol-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/chapters/03-task-protocol-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/chapters/03-task-protocol-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/chapters/03-task-protocol-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
+      "content_id": "chapter-04-context-permissions-and-agent",
+      "kind": "chapter",
+      "stem": "book/chapters/04-context-permissions-and-agent",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-11",
+      "legacy_paths": ["book/chapters/04-context-permissions-and-agent.md"],
+      "locales": {
+        "EN": {"path": "book/chapters/04-context-permissions-and-agent-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full"},
+        "ZH": {"path": "book/chapters/04-context-permissions-and-agent-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Simplified Chinese translation and review are pending."},
+        "ES": {"path": "book/chapters/04-context-permissions-and-agent-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/chapters/04-context-permissions-and-agent-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/chapters/04-context-permissions-and-agent-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/chapters/04-context-permissions-and-agent-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
       "content_id": "lab-011-gpt-codex-boundaries",
       "kind": "lab",
       "stem": "book/labs/lab-011-gpt-codex-boundaries",
@@ -117,6 +165,54 @@
         "JA": {"path": "book/labs/lab-011-gpt-codex-boundaries-JA.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "f521e29", "coverage": "full", "run_status": "not_run", "reason": "Initial translation slice; independent language review pending."},
         "KO": {"path": "book/labs/lab-011-gpt-codex-boundaries-KO.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "f521e29", "coverage": "full", "run_status": "not_run", "reason": "Initial translation slice; independent language review pending."},
         "DE": {"path": "book/labs/lab-011-gpt-codex-boundaries-DE.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "f521e29", "coverage": "full", "run_status": "not_run", "reason": "Initial translation slice; independent language review pending."}
+      }
+    },
+    {
+      "content_id": "lab-001-first-safe-task",
+      "kind": "lab",
+      "stem": "book/labs/lab-001-first-safe-task",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-10",
+      "legacy_paths": ["book/labs/lab-001-first-safe-task.md"],
+      "locales": {
+        "EN": {"path": "book/labs/lab-001-first-safe-task-EN.md", "content_status": "draft", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/labs/lab-001-first-safe-task-ZH.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Simplified Chinese review and translation are pending."},
+        "ES": {"path": "book/labs/lab-001-first-safe-task-ES.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/labs/lab-001-first-safe-task-JA.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/labs/lab-001-first-safe-task-KO.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/labs/lab-001-first-safe-task-DE.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
+      "content_id": "lab-002-task-protocol",
+      "kind": "lab",
+      "stem": "book/labs/lab-002-task-protocol",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-10",
+      "legacy_paths": ["book/labs/lab-002-task-protocol.md"],
+      "locales": {
+        "EN": {"path": "book/labs/lab-002-task-protocol-EN.md", "content_status": "draft", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/labs/lab-002-task-protocol-ZH.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Simplified Chinese translation and review are pending."},
+        "ES": {"path": "book/labs/lab-002-task-protocol-ES.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/labs/lab-002-task-protocol-JA.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/labs/lab-002-task-protocol-KO.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/labs/lab-002-task-protocol-DE.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-10", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
+      "content_id": "lab-007-action-boundaries",
+      "kind": "lab",
+      "stem": "book/labs/lab-007-action-boundaries",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-11",
+      "legacy_paths": ["book/labs/lab-007-action-boundaries.md"],
+      "locales": {
+        "EN": {"path": "book/labs/lab-007-action-boundaries-EN.md", "content_status": "draft", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/labs/lab-007-action-boundaries-ZH.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Simplified Chinese translation and review are pending."},
+        "ES": {"path": "book/labs/lab-007-action-boundaries-ES.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/labs/lab-007-action-boundaries-JA.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/labs/lab-007-action-boundaries-KO.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/labs/lab-007-action-boundaries-DE.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; German translation and review are pending."}
       }
     }
   ]

@@ -18,13 +18,13 @@
 | ID | 实验 | level | domain | 对应章节 | status | 迁移焦点 |
 |---|---|---|---|---|---|---|
 | [lab-011](lab-011-gpt-codex-boundaries-EN.md) | 分清 GPT、Codex、工具与 Agent | L0 | general | 第 1 章 | `draft` | EN 源文件；其他语言切片已登记在语言矩阵 |
-| [lab-001](lab-001-first-safe-task.md) | 第一个安全任务 | L1 | general | 第 2、20 章 | `draft` | 将沙盒 README 任务迁移到个人可回滚文档任务 |
-| [lab-002](lab-002-task-protocol.md) | 把模糊愿望改成任务协议 | L2 | general | 第 3、10 章 | `draft` | 将同一协议迁移到研究、营销或 UI 任务 |
+| [lab-001 EN 源文件](lab-001-first-safe-task-EN.md) | 第一个安全任务 | L1 | general | 第 2、20 章 | `draft` | 将沙盒 README 任务迁移到个人可回滚文档任务；其他语言登记在语言矩阵 |
+| [lab-002 EN 源文件](lab-002-task-protocol-EN.md) | 把模糊愿望改成任务协议 | L2 | general | 第 3、10 章 | `draft` | 将同一协议迁移到研究、营销或 UI 任务；其他语言登记在语言矩阵 |
 | [lab-003](lab-003-evidence-review.md) | 发现“看起来完成但没有证据” | L3 | general | 第 9、19 章 | `draft` | 将声明—证据审查迁移到测试、研究或交付摘要 |
 | [lab-004](lab-004-skill-selection.md) | 选择最小有效 Skill 组合 | L4 | general | 第 7、14、18 章 | `draft` | 将最小组合判断迁移到一个不同领域任务 |
 | [lab-005](lab-005-design-a-skill.md) | 把一次成功沉淀为 Skill | L4 | general | 第 11、14 章 | `draft` | 将稳定步骤迁移为不依赖项目偶然细节的能力包 |
 | [lab-006](lab-006-agent-stop-conditions.md) | 设计 Agent 的停止条件 | L5 | general | 第 12、13 章 | `draft` | 将状态表迁移到另一种可恢复失败场景 |
-| [lab-007](lab-007-action-boundaries.md) | 行动边界分级 | L3 | general | 第 4、5、13 章 | `draft` | 比较个人沙盒和组织仓库的权限、回滚与证据 |
+| [lab-007 EN 源文件](lab-007-action-boundaries-EN.md) | 行动边界分级 | L3 | general | 第 4、5、13 章 | `draft` | 比较个人沙盒和组织仓库的权限、回滚与证据；其他语言登记在语言矩阵 |
 | [lab-008](lab-008-research-question.md) | 从主题收敛研究问题 | L3 | research | 第 15、22 章 | `draft` | 将来源计划迁移到另一个公开、低风险主题 |
 | [lab-009](lab-009-engineering-lifecycle.md) | 工程生命周期对照 | L3 | engineering | 第 8、16、19 章 | `draft` | 将生命周期检查点迁移到一个小型非工程交付 |
 | [lab-010](lab-010-product-context.md) | 建立共享产品上下文 | L3 | marketing | 第 17、20、21、22 章 | `draft` | 将上下文版本和假设/事实区分迁移到团队内容任务 |

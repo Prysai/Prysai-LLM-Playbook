@@ -135,7 +135,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Complete a safe, verifiable task",
             "zh": "完成安全、可验证的任务"
           },
-          "href": "../book/chapters/02-first-safe-task.md",
+          "href": "../book/chapters/02-first-safe-task-EN.md",
           "relation": "primary"
         }
       ],
@@ -146,7 +146,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "First safe task",
             "zh": "第一个安全任务"
           },
-          "href": "../book/labs/lab-001-first-safe-task.md",
+          "href": "../book/labs/lab-001-first-safe-task-EN.md",
           "relation": "primary"
         }
       ],
@@ -205,7 +205,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Complete a safe, verifiable task",
             "zh": "完成安全、可验证的任务"
           },
-          "href": "../book/chapters/02-first-safe-task.md",
+          "href": "../book/chapters/02-first-safe-task-EN.md",
           "relation": "primary"
         },
         "lab": {
@@ -214,7 +214,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "First safe task",
             "zh": "第一个安全任务"
           },
-          "href": "../book/labs/lab-001-first-safe-task.md",
+          "href": "../book/labs/lab-001-first-safe-task-EN.md",
           "relation": "primary"
         }
       }
@@ -244,7 +244,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Turn a wish into a task protocol",
             "zh": "把愿望变成任务协议"
           },
-          "href": "../book/chapters/03-task-protocol.md",
+          "href": "../book/chapters/03-task-protocol-EN.md",
           "relation": "primary"
         },
         {
@@ -253,7 +253,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Context, permissions, and Agent boundaries",
             "zh": "上下文、权限与 Agent 边界"
           },
-          "href": "../book/chapters/04-context-permissions-and-agent.md",
+          "href": "../book/chapters/04-context-permissions-and-agent-EN.md",
           "relation": "primary"
         },
         {
@@ -282,7 +282,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Task protocol",
             "zh": "任务协议"
           },
-          "href": "../book/labs/lab-002-task-protocol.md",
+          "href": "../book/labs/lab-002-task-protocol-EN.md",
           "relation": "primary"
         }
       ],
@@ -359,7 +359,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Turn a wish into a task protocol",
             "zh": "把愿望变成任务协议"
           },
-          "href": "../book/chapters/03-task-protocol.md",
+          "href": "../book/chapters/03-task-protocol-EN.md",
           "relation": "primary"
         },
         "lab": {
@@ -368,7 +368,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Task protocol",
             "zh": "任务协议"
           },
-          "href": "../book/labs/lab-002-task-protocol.md",
+          "href": "../book/labs/lab-002-task-protocol-EN.md",
           "relation": "primary"
         }
       }
@@ -463,7 +463,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Action boundaries",
             "zh": "行动边界"
           },
-          "href": "../book/labs/lab-007-action-boundaries.md",
+          "href": "../book/labs/lab-007-action-boundaries-EN.md",
           "relation": "supporting"
         },
         {

@@ -34,13 +34,21 @@ flat Skill directory, or a catalogue of copied prompts. It is an independent
 curriculum built around original explanations, low-risk experiments, real
 problem research, and explicit evidence boundaries.
 
+## Three ways in
+
+| You want to… | Use this entry | What it is for |
+|---|---|---|
+| Browse the learning experience | [`site/index.html`](site/index.html) + [`site/README.md`](site/README.md) | The visual showcase; the companion README explains local serving and verification |
+| Read the English source | [`book/README-EN.md`](book/README-EN.md) + [`book/table-of-contents-EN.md`](book/table-of-contents-EN.md) | The book contract, full route, chapter status, experiments, and research links |
+| Inspect the project itself | [`docs/governance/`](docs/governance/) + [`scripts/`](scripts/) | Canonical status, locale identity, update rules, and repeatable checks |
+
 ## Start with a result
 
 | If you need to… | Start with… | You should leave with… |
 |---|---|---|
 | Understand the system | [Chapter 1](book/chapters/01-gpt-and-codex-EN.md) + [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) | A mental model that separates GPT, Codex, tools, Skills, and Agents |
-| Complete a first safe task | [Chapter 2 — English migration pending — current source](book/chapters/02-first-safe-task.md) + [Lab 001 — English migration pending — current source](book/labs/lab-001-first-safe-task.md) | A reversible diff, a focused check, and an explicit unverified list |
-| Design a reliable request | [English table of contents](book/table-of-contents-EN.md) + [Lab 002 — English migration pending — current source](book/labs/lab-002-task-protocol.md) | Goal, context, constraints, acceptance, stop, and recovery conditions |
+| Complete a first safe task | [Chapter 2 EN source](book/chapters/02-first-safe-task-EN.md) + [Lab 001 EN source](book/labs/lab-001-first-safe-task-EN.md) | A reversible diff, a focused check, and an explicit unverified list |
+| Design a reliable request | [Chapter 3 EN source](book/chapters/03-task-protocol-EN.md) + [Lab 002 EN source](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop, and recovery conditions |
 | Review whether “done” is real | [Evidence review lab — English migration pending — current source](book/labs/lab-003-evidence-review.md) + [Evaluation framework](docs/quality/evaluation-framework.md) | A claim-to-evidence table, not just a polished response |
 | Choose or build a Skill | [Skill registry](docs/skill-registry.md) + [Skill quality standard](docs/quality/skill-quality-standard.md) | A bounded, testable method with dependencies and rollback |
 | Learn from field failures | [Real-world problem index](docs/research/field-problems-index-2026-08-10.md) | A symptom, safe first check, fallback, and evidence classification |

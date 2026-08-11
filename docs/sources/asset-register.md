@@ -24,6 +24,14 @@
 | S11 | `docs/research/workbuddyguide-structure-benchmark-2026-08-10.md` | `AlephAITech/WorkBuddyGuide` 固定 commit `abd61e8`、GitHub 页面、`workbuddy.homes` | 只记录公开可观察的结构事实与原创比较；没有复制正文、图片、代码、提示词、字体、图标、二维码、品牌资产或第三方媒体 | 根目录 MIT 不能推出图片、字体、投稿内容和第三方素材的逐项授权 | `reference-only`：只迁移双入口、案例层和内容生命周期等信息架构抽象；不复制 WorkBuddyGuide 的视觉或品牌表达 |
 
 | S12 | `assets/readme/codex-field-guide-header.svg` | Prysai Lab 原创页眉图，创建于 2026-08-10 | 本项目为 README 设计的原创 SVG；只使用内嵌几何图形、文字、渐变和网格，不包含外部图片、字体文件、图标、品牌素材或远程请求 | 项目原创资产；仓库发行许可证尚未单独确定，不能将未决定的发行权利扩展到外部项目 | `original-rewrite / project-owned`：可用于本项目 README 与同一项目的文档展示；不得把它标记为第三方素材或从外部来源复制 |
+| S13 | `docs/research/README-front-door-benchmark-2026-08-10.md` | Docusaurus、VitePress、Rust Book、MDN、Hugging Face Course、OpenAI Cookbook 官方仓库/站点 | 只记录 README 首屏职责、网站与仓库分工、语言状态和阅读路径的原创比较；没有复制正文、代码、图片或品牌资产 | `reference-only`：公开结构参考；各项目页面和版本会变化 | 只借鉴门面信息架构；不复制外部文案或实现 |
+| S14 | `docs/research/multilingual-architecture-round2-2026-08-10.md` | Docusaurus、VitePress、Astro Starlight、Material for MkDocs、Kubernetes 官方文档 | 只记录 locale route、同名文件、缺译提示、anchor、source revision 和发布门槛的原创比较；没有复制正文或代码 | `reference-only`：官方架构参考；访问日期已记录在研究文件 | 用于当前 locale matrix 和切换设计；不声称本项目已经六语言完成 |
+| S15 | `docs/research/coding-agent-field-cases-round2-2026-08-10.md` | 公开 coding-agent 用户报告和官方/社区讨论 | 只保留症状、证据层、停止条件和可迁移检查的原创摘要；未复制日志、凭据、代码或长段原文 | `reference-only`：用户报告与社区建议；本项目未本地复现 | 用于失败边界和教材案例；不把社区 workaround 写成官方修复 |
+| S16 | `docs/research/codex-official-fact-cards-2026-08-10.md` | OpenAI 第一方 Codex/GPT 文档 | 只保留短事实卡、适用范围、访问日期和不能推出的结论；没有复制长段正文、图片或凭据 | `reference-only`：易变事实需按记录日期和范围复核 | 用于英文章节和 README 的官方基线；不把文档描述当成本机会话权限或运行证据 |
+| S17 | `docs/research/practical-ai-agent-guide-benchmark-2026-08-10.md` | OpenAI Codex CLI、Anthropic Claude Code、MCP、Rust Book 官方文档/仓库 | 只记录教程结构、练习、失败边界和验证机制的原创比较；没有复制正文、代码、图片或品牌资产 | `reference-only`：结构研究；官方产品事实仍需单独复核 | 用于能力单元、实验和 claim→evidence 设计；不把示例数量当作学习效果证明 |
+| S18 | `docs/research/prompt-patterns-for-real-work-2026-08-10.md` | OpenAI、Anthropic、Google、GitHub 官方提示工程文档与公开 GitHub Community 讨论 | 只保留任务协议字段、提示结构、验收、停止和失败恢复的原创归纳与短事实摘要；没有复制长段正文、代码、图片或 Skill 指令 | `reference-only`：官方文档与社区实践；产品文档、模型行为和社区页面会变化 | 用于 Chapter 3、任务协议实验和真实工作提示结构；不把七字段协议写成任何厂商的官方标准 |
+| S19 | `docs/research/field-problems-coding-agents-2026-08-10.md` | OpenAI Codex GitHub Issues、Stack Overflow/Stack Exchange API、公开 coding-agent 讨论与官方文档 | 只保留用户报告、官方事实、社区建议、未证实推测和本项目迁移检查的原创摘要；没有复制日志、凭据、代码、图片或长段原文 | `reference-only`：用户报告与社区建议；本项目未本地复现这些环境，也未确认公开案例的根因或修复 | 用于章节/实验的现实问题索引和失败边界；不得把 accepted answer 或 issue 标签写成官方修复 |
+| S20 | `docs/research/site-information-architecture-audit-2026-08-10.md` | 本项目现有入口、状态源、内容矩阵、站点实现和既有结构研究；外部结构参考见文件内来源 | 只记录本项目的原创信息架构审查、优先级和验收清单；没有复制外部项目正文、代码、图片、字体、图标或品牌资产 | `project-audit / reference-only`：包含本地审查与结构参考；建议本身尚未证明为用户效果 | 用于首页入口、能力单元、raw Markdown 边界、locale 状态和站点验收；不把 candidate 审查意见写成生产级结果 |
 
 ## 归档指纹
 

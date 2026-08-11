@@ -66,8 +66,8 @@ Fehlerbehandlung und Lieferformat definieren. **content_status:** `candidate`
 Kontextschichten, Vertrauensgrenzen, Sandbox, Freigaben, externe
 Nebenwirkungen und beobachtbares Verhalten. **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/04-context-permissions-and-agent.md)
-- Experiment: [lab-007 · Migration läuft · aktueller Quellpfad](labs/lab-007-action-boundaries.md)
+- Kapitel: [Kapitel 4 · DE-Quelle](chapters/04-context-permissions-and-agent-DE.md)
+- Experiment: [Lab 007 · DE-Quelle](labs/lab-007-action-boundaries-DE.md)
 
 ### Kapitel 5 — Die richtige Codex-Oberfläche auswählen
 
@@ -75,7 +75,7 @@ Aufgaben passend zwischen Desktop-App, CLI, IDE, Cloud und Remote auswählen.
 **content_status:** `candidate`
 
 - Kapitel: [Migration läuft · aktueller Quellpfad](chapters/05-choose-the-codex-surface.md)
-- Experiment: [lab-007 · Migration läuft · aktueller Quellpfad](labs/lab-007-action-boundaries.md)
+- Experiment: [Lab 007 · DE-Quelle](labs/lab-007-action-boundaries-DE.md)
 
 ### Kapitel 6 — Modellauswahl ist keine Modellverehrung
 
@@ -145,7 +145,7 @@ Nur-Lese-Prüfungen, Bearbeitung, Befehle, Browsing, Commits, Pushes, externe
 Nachrichten und Rollback. **content_status:** `candidate`
 
 - Kapitel: [Migration läuft · aktueller Quellpfad](chapters/13-action-boundaries.md)
-- Experiment: [lab-007 · Migration läuft · aktueller Quellpfad](labs/lab-007-action-boundaries.md)
+- Experiment: [Lab 007 · DE-Quelle](labs/lab-007-action-boundaries-DE.md)
 
 ## Teil III: Skills, Tools und professionelle Praxis
 
@@ -239,7 +239,7 @@ kein Nachweis dafür, dass Experiment oder Lernergebnis verifiziert sind.
 | lab-004 | Skill-Auswahl | `draft` · `not_run` | [Migration läuft · aktuelle Quelle](labs/lab-004-skill-selection.md) |
 | lab-005 | Skill-Design | `draft` · `not_run` | [Migration läuft · aktuelle Quelle](labs/lab-005-design-a-skill.md) |
 | lab-006 | Stoppbedingungen des Agents | `draft` · `not_run` | [Migration läuft · aktuelle Quelle](labs/lab-006-agent-stop-conditions.md) |
-| lab-007 | Aktionsgrenzen | `draft` · `not_run` | [Migration läuft · aktuelle Quelle](labs/lab-007-action-boundaries.md) |
+| lab-007 | Aktionsgrenzen | `draft` · `not_run` | [DE-Quelle](labs/lab-007-action-boundaries-DE.md) |
 | lab-008 | Forschungsfrage | `draft` · `not_run` | [Migration läuft · aktuelle Quelle](labs/lab-008-research-question.md) |
 | lab-009 | Engineering-Lebenszyklus | `draft` · `not_run` | [Migration läuft · aktuelle Quelle](labs/lab-009-engineering-lifecycle.md) |
 | lab-010 | Produktkontext | `draft` · `not_run` | [Migration läuft · aktuelle Quelle](labs/lab-010-product-context.md) |

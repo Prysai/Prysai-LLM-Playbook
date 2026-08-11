@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import re
 import sys
 from pathlib import Path
@@ -9,31 +10,36 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
-IGNORED_PARTS = {".git", ".work", "node_modules"}
+IGNORED_PARTS = {".git", ".work", "node_modules", "tmp"}
 
 
 def main() -> int:
     missing: list[str] = []
     checked = 0
-    for markdown in ROOT.rglob("*.md"):
-        if any(part in IGNORED_PARTS for part in markdown.relative_to(ROOT).parts):
-            continue
-        text = markdown.read_text(encoding="utf-8")
-        for target in LINK_RE.findall(text):
-            if target.startswith(("http://", "https://", "mailto:", "#")):
+    for directory, subdirectories, filenames in os.walk(ROOT):
+        subdirectories[:] = sorted(
+            name for name in subdirectories if name not in IGNORED_PARTS
+        )
+        for filename in sorted(filenames):
+            if not filename.endswith(".md"):
                 continue
-            target_path = target.split("#", 1)[0].strip().strip("<>")
-            if not target_path:
-                continue
-            checked += 1
-            resolved = (markdown.parent / target_path).resolve()
-            try:
-                resolved.relative_to(ROOT.resolve())
-            except ValueError:
-                missing.append(f"{markdown.relative_to(ROOT)} -> outside workspace: {target}")
-                continue
-            if not resolved.exists():
-                missing.append(f"{markdown.relative_to(ROOT)} -> missing: {target}")
+            markdown = Path(directory) / filename
+            text = markdown.read_text(encoding="utf-8")
+            for target in LINK_RE.findall(text):
+                if target.startswith(("http://", "https://", "mailto:", "#")):
+                    continue
+                target_path = target.split("#", 1)[0].strip().strip("<>")
+                if not target_path:
+                    continue
+                checked += 1
+                resolved = (markdown.parent / target_path).resolve()
+                try:
+                    resolved.relative_to(ROOT.resolve())
+                except ValueError:
+                    missing.append(f"{markdown.relative_to(ROOT)} -> outside workspace: {target}")
+                    continue
+                if not resolved.exists():
+                    missing.append(f"{markdown.relative_to(ROOT)} -> missing: {target}")
 
     if missing:
         print("LOCAL_LINKS_FAILED")
