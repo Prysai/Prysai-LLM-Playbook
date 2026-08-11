@@ -15,7 +15,7 @@
 - Chapters are `candidate`. Labs are `draft` with `run_status: not_run`.
 - Chapter 6 has `claim_status: disputed`; Chapter 22 has
   `claim_status: current | disputed`.
-- Existing English entry pages use their `-EN` files. Chapters 1–6 and Labs
+- Existing English entry pages use their `-EN` files. Chapters 1–7 and Labs
   001, 002, 007, and 011 now have canonical `-EN` source files. The remaining
   chapters and labs do not yet have locale-suffixed English variants, so their
   links are explicitly marked `migration pending — current source path`.
@@ -91,7 +91,7 @@ related volatile claim: `claim_status: disputed`
 Understand the method, connection, execution, and distribution layers; choose
 the smallest effective capability combination. **content_status:** `candidate`
 
-- Chapter: [migration pending — current source path](chapters/07-skills-plugins-and-tools.md)
+- Chapter: [English source](chapters/07-skills-plugins-and-tools-EN.md)
 - Experiment: [lab-004 — migration pending — current source path](labs/lab-004-skill-selection.md)
 
 ### Chapter 8 — The complete lifecycle from definition to delivery

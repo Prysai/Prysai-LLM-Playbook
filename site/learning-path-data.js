@@ -398,7 +398,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "How Skills, Plugins, MCP, and tools divide the work",
             "zh": "Skill、Plugin、MCP 与工具如何分工"
           },
-          "href": "../book/chapters/07-skills-plugins-and-tools.md",
+          "href": "../book/chapters/07-skills-plugins-and-tools-EN.md",
           "relation": "primary"
         },
         {
@@ -564,7 +564,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "How Skills, Plugins, MCP, and tools divide the work",
             "zh": "Skill、Plugin、MCP 与工具如何分工"
           },
-          "href": "../book/chapters/07-skills-plugins-and-tools.md",
+          "href": "../book/chapters/07-skills-plugins-and-tools-EN.md",
           "relation": "primary"
         },
         "lab": {
