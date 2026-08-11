@@ -75,7 +75,7 @@
       {"id": "chapter-05", "path": "book/chapters/05-choose-the-codex-surface-EN.md", "status": "candidate"},
       {"id": "chapter-06", "path": "book/chapters/06-model-selection-EN.md", "status": "candidate"},
       {"id": "chapter-07", "path": "book/chapters/07-skills-plugins-and-tools-EN.md", "status": "candidate"},
-      {"id": "chapter-08", "path": "book/chapters/08-full-lifecycle-workflow.md", "status": "candidate"},
+      {"id": "chapter-08", "path": "book/chapters/08-full-lifecycle-workflow-EN.md", "status": "candidate"},
       {"id": "chapter-09", "path": "book/chapters/09-verification-and-recovery.md", "status": "candidate"},
       {"id": "chapter-10", "path": "book/chapters/10-planning-and-slicing.md", "status": "candidate"},
       {"id": "chapter-11", "path": "book/chapters/11-designing-a-skill.md", "status": "candidate"},

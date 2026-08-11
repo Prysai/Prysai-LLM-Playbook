@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">A workflow carries evidence from definition to maintenance</title>
+  <desc id="desc">Seven stages run from definition to maintenance. Each stage has an exit evidence card, and every checkpoint can stop or recover the workflow.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071425"/>
+      <stop offset="1" stop-color="#102c4c"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#55d6be"/>
+      <stop offset="1" stop-color="#6aa8ff"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#173858" stop-opacity=".96"/>
+      <stop offset="1" stop-color="#0c2139" stop-opacity=".98"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#020a16" flood-opacity=".32"/>
+    </filter>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#8fb7dc" stroke-opacity=".07"/>
+    </pattern>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0L12 6L0 12Z" fill="#6aa8ff"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" rx="36" fill="url(#bg)"/>
+  <rect x="28" y="28" width="1544" height="844" rx="28" fill="url(#grid)"/>
+
+  <text x="96" y="108" fill="#79e4d0" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="4">WORKFLOW / EVIDENCE MAP</text>
+  <text x="96" y="166" fill="#f4f8ff" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700">A workflow is a chain of inspectable exits.</text>
+  <text x="96" y="209" fill="#a9bfd7" font-family="Arial, Helvetica, sans-serif" font-size="22">A stage is not complete because the Agent moved on. It is complete when its evidence exists.</text>
+
+  <path d="M130 360H1470" stroke="#284c70" stroke-width="16" stroke-linecap="round"/>
+  <path d="M130 360H1470" stroke="url(#line)" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <g transform="translate(92 284)">
+      <circle cx="38" cy="76" r="30" fill="#55d6be"/>
+      <text x="38" y="84" text-anchor="middle" fill="#06221f" font-size="22" font-weight="700">01</text>
+      <text x="38" y="136" text-anchor="middle" fill="#f4f8ff" font-size="18" font-weight="700">DEFINE</text>
+    </g>
+    <g transform="translate(304 284)">
+      <circle cx="38" cy="76" r="30" fill="#61d3d0"/>
+      <text x="38" y="84" text-anchor="middle" fill="#06221f" font-size="22" font-weight="700">02</text>
+      <text x="38" y="136" text-anchor="middle" fill="#f4f8ff" font-size="18" font-weight="700">PLAN</text>
+    </g>
+    <g transform="translate(516 284)">
+      <circle cx="38" cy="76" r="30" fill="#6aa8ff"/>
+      <text x="38" y="84" text-anchor="middle" fill="#071425" font-size="22" font-weight="700">03</text>
+      <text x="38" y="136" text-anchor="middle" fill="#f4f8ff" font-size="18" font-weight="700">BUILD</text>
+    </g>
+    <g transform="translate(728 284)">
+      <circle cx="38" cy="76" r="30" fill="#8bb4ff"/>
+      <text x="38" y="84" text-anchor="middle" fill="#071425" font-size="22" font-weight="700">04</text>
+      <text x="38" y="136" text-anchor="middle" fill="#f4f8ff" font-size="18" font-weight="700">VERIFY</text>
+    </g>
+    <g transform="translate(940 284)">
+      <circle cx="38" cy="76" r="30" fill="#b0a8ff"/>
+      <text x="38" y="84" text-anchor="middle" fill="#071425" font-size="22" font-weight="700">05</text>
+      <text x="38" y="136" text-anchor="middle" fill="#f4f8ff" font-size="18" font-weight="700">REVIEW</text>
+    </g>
+    <g transform="translate(1152 284)">
+      <circle cx="38" cy="76" r="30" fill="#d39cff"/>
+      <text x="38" y="84" text-anchor="middle" fill="#071425" font-size="22" font-weight="700">06</text>
+      <text x="38" y="136" text-anchor="middle" fill="#f4f8ff" font-size="18" font-weight="700">DELIVER</text>
+    </g>
+    <g transform="translate(1364 284)">
+      <circle cx="38" cy="76" r="30" fill="#f1a9c8"/>
+      <text x="38" y="84" text-anchor="middle" fill="#351228" font-size="22" font-weight="700">07</text>
+      <text x="38" y="136" text-anchor="middle" fill="#f4f8ff" font-size="18" font-weight="700">MAINTAIN</text>
+    </g>
+  </g>
+
+  <g filter="url(#shadow)" font-family="Arial, Helvetica, sans-serif">
+    <rect x="82" y="496" width="204" height="182" rx="18" fill="url(#card)" stroke="#55d6be" stroke-opacity=".42"/>
+    <rect x="294" y="496" width="204" height="182" rx="18" fill="url(#card)" stroke="#61d3d0" stroke-opacity=".42"/>
+    <rect x="506" y="496" width="204" height="182" rx="18" fill="url(#card)" stroke="#6aa8ff" stroke-opacity=".42"/>
+    <rect x="718" y="496" width="204" height="182" rx="18" fill="url(#card)" stroke="#8bb4ff" stroke-opacity=".42"/>
+    <rect x="930" y="496" width="204" height="182" rx="18" fill="url(#card)" stroke="#b0a8ff" stroke-opacity=".42"/>
+    <rect x="1142" y="496" width="204" height="182" rx="18" fill="url(#card)" stroke="#d39cff" stroke-opacity=".42"/>
+    <rect x="1354" y="496" width="164" height="182" rx="18" fill="url(#card)" stroke="#f1a9c8" stroke-opacity=".42"/>
+
+    <g fill="#d9e7f6" font-size="17">
+      <text x="106" y="536" fill="#79e4d0" font-weight="700">EXIT EVIDENCE</text>
+      <text x="106" y="571">goal + scope</text><text x="106" y="598">non-goals</text><text x="106" y="625">acceptance</text>
+      <text x="318" y="536" fill="#79e4d0" font-weight="700">EXIT EVIDENCE</text>
+      <text x="318" y="571">slice map</text><text x="318" y="598">dependencies</text><text x="318" y="625">risk order</text>
+      <text x="530" y="536" fill="#9ec3ff" font-weight="700">EXIT EVIDENCE</text>
+      <text x="530" y="571">scoped diff</text><text x="530" y="598">checkpoint</text><text x="530" y="625">changed files</text>
+      <text x="742" y="536" fill="#b4caff" font-weight="700">EXIT EVIDENCE</text>
+      <text x="742" y="571">command + code</text><text x="742" y="598">runtime result</text><text x="742" y="625">limits</text>
+      <text x="954" y="536" fill="#c4bdff" font-weight="700">EXIT EVIDENCE</text>
+      <text x="954" y="571">claim map</text><text x="954" y="598">independent read</text><text x="954" y="625">open risks</text>
+      <text x="1166" y="536" fill="#e0b6ff" font-weight="700">EXIT EVIDENCE</text>
+      <text x="1166" y="571">diff + logs</text><text x="1166" y="598">known gaps</text><text x="1166" y="625">handoff</text>
+      <text x="1378" y="536" fill="#f4bdd6" font-weight="700">EXIT</text>
+      <text x="1378" y="571">owner</text><text x="1378" y="598">next review</text><text x="1378" y="625">rollback</text>
+    </g>
+  </g>
+
+  <path d="M124 748H1476" stroke="#426486" stroke-width="2" stroke-dasharray="8 12"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <circle cx="230" cy="748" r="9" fill="#f5c26b"/><text x="250" y="756" fill="#f5d99c" font-size="19" font-weight="700">STOP / RECOVER</text>
+    <text x="250" y="789" fill="#9db4cc" font-size="17">No exit evidence, unclear authority, long silence, or a claim outside the check.</text>
+    <text x="1180" y="756" text-anchor="end" fill="#9db4cc" font-size="17">A screenshot can show a rendered state.</text>
+    <text x="1180" y="789" text-anchor="end" fill="#9db4cc" font-size="17">It cannot prove the whole workflow ran.</text>
+  </g>
+</svg>

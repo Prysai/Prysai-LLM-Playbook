@@ -144,13 +144,13 @@ state, not a marketing promise.
 | **L0 · Observer** | Separate GPT, models, Codex, context, tools, Skills, and Agents before attributing an outcome | [Chapter 1](book/chapters/01-gpt-and-codex-EN.md) · [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) |
 | **L1 · Safe user** | Complete a reversible, observable task and distinguish a diff from proof | [Chapter 2 EN source](book/chapters/02-first-safe-task-EN.md) · [Lab 001 EN source](book/labs/lab-001-first-safe-task-EN.md) |
 | **L2 · Task designer** | Turn a wish into a protocol with relevant context, least authority, acceptance, and failure handling | [Chapter 3](book/chapters/03-task-protocol-EN.md) · [Lab 002](book/labs/lab-002-task-protocol-EN.md) |
-| **L3 · Workflow designer** | Run a complete workflow with stages, checkpoints, recovery, and delivery evidence | [Chapters 7–13 — Chapter 7 EN source; Chapters 8–13 migration pending](book/table-of-contents-EN.md) · [Lab 013 — English migration pending — current source](book/labs/lab-013-l3-vertical-slice.md) |
+| **L3 · Workflow designer** | Run a complete workflow with stages, checkpoints, recovery, and delivery evidence | [Chapters 7–13 — Chapters 7–8 EN sources; Chapters 9–13 migration pending](book/table-of-contents-EN.md) · [Lab 013 — English migration pending — current source](book/labs/lab-013-l3-vertical-slice.md) |
 | **L4 · Capability builder** | Select, compose, install, and improve Skills and tools by fit, risk, license, and verification cost | [Skill registry](docs/skill-registry.md) · [Chapter 11 — migration pending](book/chapters/11-designing-a-skill.md) |
 | **L5 · Evidence reviewer** | Test completion claims with positive, boundary, failure, and transfer cases | [Evaluation framework](docs/quality/evaluation-framework.md) · [Chapter 19 — migration pending](book/chapters/19-evaluate-models-and-workflows.md) |
 | **L6 · Team coach** | Turn a personal method into a versioned team capability with ownership and rollback | [Chapter 20–22 — migration pending](book/table-of-contents-EN.md) · [Contribution model](docs/governance/contribution-model.md) |
 
 “Migration pending” remains explicit wherever an English source has not yet
- been authored. Chapters 1–7 and Labs 001–002, 007, and 011 now have canonical
+ been authored. Chapters 1–8 and Labs 001–002, 007, and 011 now have canonical
 `-EN` sources; the remaining unsuffixed links in this README are deliberately
 labelled as migration paths until their English files exist.
 

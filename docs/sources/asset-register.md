@@ -35,6 +35,7 @@
 | S21 | `docs/research/codex-model-selection-official-facts-2026-08-11.md` | OpenAI/Codex 官方模型文档、OpenAI API 模型页、`openai/codex` 公开 Issues | 只保留官方模型定位、配置/工作面边界、用户症状和原创排查方法；没有复制长段正文、截图、Issue 日志、凭据、代码或 Skill 指令 | `reference-only`：官方事实按访问日期和适用范围复核；社区报告只证明报告者描述的症状，不证明根因、修复或本地复现 | 用于 Chapter 6 的英文源文件和模型选择证据边界；不把产品定位写成性能、成本、稳定性或总体排名结论 |
 | S22 | `assets/teaching/*.svg` | Prysai Lab 原创教学卡，创建于 2026-08-11 | 两张项目内 SVG：模型选择测试、Skill 到可观察输出；仅使用内嵌几何图形、文字、渐变和网格，无外部图片、字体、图标或远程请求 | 项目原创资产；仓库发行许可证尚未单独确定 | `original-rewrite / project-owned`：用于本项目教学和 README；不标记为第三方素材，不复制 WorkBuddyGuide 或其他项目视觉表达 |
 | S23 | `examples/skill-sandbox/product-context-real-estate/` + `assets/cases/product-context-real-estate-desktop.png` | Prysai Lab 原创合成案例，创建于 2026-08-11 | fictional brief、Product Context 草稿、原创 HTML/CSS/inline SVG 和本地浏览器截图；无真实房产、个人数据、外部媒体、CDN、分析或表单 | 项目原创资产；案例只可作为本仓库的合成教学材料，截图的证据范围限于记录的本地渲染视口 | `original-rewrite / project-owned`：可用于本项目案例教学；不得包装为真实客户、市场、库存、转化或 Skill runtime 证据 |
+| S24 | `assets/teaching/lifecycle-checkpoints.svg` | Prysai Lab 原创教学卡，创建于 2026-08-11 | 七阶段生命周期与 CP0–CP4 evidence exit 的原创 SVG 教学图；仅使用内嵌几何图形、文字、渐变、网格和滤镜，无外部图片、字体、图标或远程请求 | 项目原创资产；仓库发行许可证尚未单独确定 | `original-rewrite / project-owned`：可用于本项目 Chapter 8 和 README 教学；不标记为第三方素材，不把图示当作 Skill、Agent 或外部服务运行证据 |
 
 ## 归档指纹
 

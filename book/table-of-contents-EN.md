@@ -15,7 +15,7 @@
 - Chapters are `candidate`. Labs are `draft` with `run_status: not_run`.
 - Chapter 6 has `claim_status: disputed`; Chapter 22 has
   `claim_status: current | disputed`.
-- Existing English entry pages use their `-EN` files. Chapters 1–7 and Labs
+- Existing English entry pages use their `-EN` files. Chapters 1–8 and Labs
   001, 002, 007, and 011 now have canonical `-EN` source files. The remaining
   chapters and labs do not yet have locale-suffixed English variants, so their
   links are explicitly marked `migration pending — current source path`.
@@ -100,7 +100,7 @@ Definition, planning, building, verification, review, delivery, and
 maintenance, with vertical slices that remain verifiable. **content_status:**
 `candidate`
 
-- Chapter: [migration pending — current source path](chapters/08-full-lifecycle-workflow.md)
+- Chapter: [English source](chapters/08-full-lifecycle-workflow-EN.md)
 - Primary experiment: [lab-013 — migration pending — current source path](labs/lab-013-l3-vertical-slice.md)
 - Supporting experiment: [lab-009 — migration pending — current source path](labs/lab-009-engineering-lifecycle.md)
 

@@ -407,7 +407,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "The full lifecycle from definition to delivery",
             "zh": "从定义到交付的完整生命周期"
           },
-          "href": "../book/chapters/08-full-lifecycle-workflow.md",
+          "href": "../book/chapters/08-full-lifecycle-workflow-EN.md",
           "relation": "primary"
         },
         {
