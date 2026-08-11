@@ -1,0 +1,123 @@
+{
+  "schema_version": "1",
+  "last_reviewed": "2026-08-11",
+  "description": "The canonical directory map for reader-facing material, practice, research, governance, assets, tooling, and release work.",
+  "excluded_workdirs": [".git", ".work", "tmp", ".pytest_cache"],
+  "top_level": [
+    {
+      "path": ".github",
+      "role": "Repository automation and quality gates.",
+      "entry": ".github/workflows/quality.yml",
+      "first_read": ".github/workflows/quality.yml",
+      "canonical_sources": [".github/workflows/quality.yml"],
+      "generated_outputs": []
+    },
+    {
+      "path": "assets",
+      "role": "Project-owned teaching diagrams, README visuals, and case evidence.",
+      "entry": "assets/README.md",
+      "first_read": "assets/README.md",
+      "canonical_sources": ["docs/sources/asset-register.md"],
+      "generated_outputs": []
+    },
+    {
+      "path": "book",
+      "role": "The reader-facing book, chapters, table of contents, and labs.",
+      "entry": "book/README.md",
+      "first_read": "book/README-EN.md",
+      "canonical_sources": ["docs/governance/book-navigation.yaml", "docs/book-architecture.md"],
+      "generated_outputs": []
+    },
+    {
+      "path": "docs",
+      "role": "The project control plane: research, governance, quality, sources, and decisions.",
+      "entry": "docs/README.md",
+      "first_read": "docs/project-map-EN.md",
+      "canonical_sources": ["docs/governance/project-structure.yaml"],
+      "generated_outputs": []
+    },
+    {
+      "path": "evals",
+      "role": "Fixed evaluation tasks and explicitly recorded run results.",
+      "entry": "evals/README.md",
+      "first_read": "evals/README.md",
+      "canonical_sources": ["evals/task-set-v1.yaml", "docs/quality/evaluation-framework.md"],
+      "generated_outputs": []
+    },
+    {
+      "path": "examples",
+      "role": "Disposable, low-risk sandboxes and reproducible case inputs.",
+      "entry": "examples/README.md",
+      "first_read": "examples/skill-sandbox/product-context-real-estate/README.md",
+      "canonical_sources": ["docs/sources/asset-register.md"],
+      "generated_outputs": []
+    },
+    {
+      "path": "scripts",
+      "role": "Repeatable validators, generators, and project checks.",
+      "entry": "scripts/README.md",
+      "first_read": "scripts/README.md",
+      "canonical_sources": ["AGENTS.md", "docs/release-checklist.md"],
+      "generated_outputs": []
+    },
+    {
+      "path": "site",
+      "role": "The public static showcase and generated learning-path presentation data.",
+      "entry": "site/README.md",
+      "first_read": "site/README.md",
+      "canonical_sources": ["docs/governance/learning-path.yaml", "docs/governance/content-status.yaml", "site/content-catalog.json"],
+      "generated_outputs": ["site/learning-path-data.js"]
+    },
+    {
+      "path": "skills",
+      "role": "Project-owned reusable Skill contracts and their agent metadata.",
+      "entry": "skills/README.md",
+      "first_read": "docs/skill-registry.md",
+      "canonical_sources": ["docs/skill-registry.md", "docs/quality/skill-quality-standard.md"],
+      "generated_outputs": []
+    },
+    {
+      "path": "tasks",
+      "role": "The current bounded plan, checklist, and handoff state.",
+      "entry": "tasks/README.md",
+      "first_read": "tasks/todo.md",
+      "canonical_sources": ["tasks/plan.md", "tasks/todo.md"],
+      "generated_outputs": []
+    }
+  ],
+  "subdirectories": [
+    {"path": "assets/cases", "role": "Rendered screenshots and other bounded case evidence.", "entry": "assets/cases/README.md"},
+    {"path": "assets/teaching", "role": "Original SVG teaching cards used in the book and showcase.", "entry": "assets/teaching/README.md"},
+    {"path": "book/chapters", "role": "One file per chapter identity, with explicit locale suffixes where authored.", "entry": "book/chapters/README.md"},
+    {"path": "book/labs", "role": "Low-risk experiments with observable output, failure variants, and transfer tasks.", "entry": "book/labs/README.md"},
+    {"path": "docs/adr", "role": "Architecture decisions and their trade-offs.", "entry": "docs/adr/README.md"},
+    {"path": "docs/governance", "role": "Machine-readable contracts for order, status, locale, updates, and ownership.", "entry": "docs/governance/README.md"},
+    {"path": "docs/quality", "role": "Acceptance standards and review records.", "entry": "docs/quality/README.md"},
+    {"path": "docs/research", "role": "Official fact records, structure studies, and dated field-problem reports.", "entry": "docs/research/README.md"},
+    {"path": "docs/sources", "role": "External-source, archive, asset, license, and attribution boundaries.", "entry": "docs/sources/README.md"},
+    {"path": "docs/templates", "role": "Reusable records for field cases and non-trivial updates.", "entry": "docs/templates/README.md"},
+    {"path": "examples/skill-sandbox", "role": "One-time local sandboxes used to make Skill outputs inspectable.", "entry": "examples/skill-sandbox/README.md"}
+  ],
+  "root_entries": [
+    {"path": "README.md", "role": "GitHub's default English facade.", "canonical_source": "README-EN.md"},
+    {"path": "README-EN.md", "role": "Detailed English project entry.", "canonical_source": "README-EN.md"},
+    {"path": "AGENTS.md", "role": "Working rules for contributors and agents.", "canonical_source": "AGENTS.md"},
+    {"path": "CONTEXT.md", "role": "Stable project vocabulary and boundaries.", "canonical_source": "CONTEXT.md"}
+  ],
+  "generated_outputs": [
+    {
+      "path": "book/chapters/*.md",
+      "source": ["docs/governance/book-navigation.yaml"],
+      "owner": "scripts/build_book_navigation.py",
+      "surface": "The marked chapter-navigation block inside each matching Markdown file.",
+      "edit_rule": "Edit the source order; do not hand-edit the marked chapter-navigation block."
+    },
+    {
+      "path": "site/learning-path-data.js",
+      "source": ["docs/governance/learning-path.yaml", "docs/governance/content-status.yaml", "site/content-catalog.json"],
+      "owner": "scripts/build_learning_path_site.py",
+      "surface": "The complete generated JavaScript data file.",
+      "edit_rule": "Edit the contracts and catalog, then regenerate and run --check."
+    }
+  ]
+}

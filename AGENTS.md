@@ -30,12 +30,12 @@ Codex, skills, tools, Agent behavior, verification, and team adoption.
 
 ## Content conventions
 
-- The public showcase page defaults to English and offers a Chinese switch.
-  The book's current primary正文 remains Simplified Chinese; do not imply that
-  the book is fully bilingual until translated files and their review evidence
-  exist.
-- Use simplified Chinese for the current primary learning path unless a
-  technical term is clearer in English; include the English term on first use.
+- The public showcase and the book's development source default to English and
+  offer a Chinese switch. Do not imply that the book is fully bilingual until
+  translated files and their review evidence exist.
+- Use English for new reader-facing source material. Existing Simplified
+  Chinese material remains a named legacy or translation path until its
+  corresponding English source and review evidence exist.
 - Write in the order: problem, concept, decision, action, evidence, failure,
   reflection.
 - Each chapter needs a learning objective, a small experiment, a failure or
@@ -49,6 +49,7 @@ Codex, skills, tools, Agent behavior, verification, and team adoption.
 ```powershell
 $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
 & $py scripts\validate_project.py
+& $py scripts\validate_project_structure.py
 & $py scripts\audit_input_archives.py
 ```
 

@@ -38,6 +38,9 @@
 | S24 | `assets/teaching/lifecycle-checkpoints.svg` | Prysai Lab 原创教学卡，创建于 2026-08-11 | 七阶段生命周期与 CP0–CP4 evidence exit 的原创 SVG 教学图；仅使用内嵌几何图形、文字、渐变、网格和滤镜，无外部图片、字体、图标或远程请求 | 项目原创资产；仓库发行许可证尚未单独确定 | `original-rewrite / project-owned`：可用于本项目 Chapter 8 和 README 教学；不标记为第三方素材，不把图示当作 Skill、Agent 或外部服务运行证据 |
 | S25 | `assets/teaching/evidence-recovery-ladder.svg` | Prysai Lab 原创教学卡，创建于 2026-08-11 | 断言强度、证据层、缺口标记和恢复/停止选择的原创 SVG 教学图；仅使用内嵌几何图形、文字、渐变、网格和滤镜，无外部图片、字体、图标或远程请求 | 项目原创资产；仓库发行许可证尚未单独确定 | `original-rewrite / project-owned`：可用于本项目 Chapter 9 和 README 教学；不标记为运行、用户验收或生产就绪证据 |
 | S26 | `docs/research/book-navigation-architecture-study-2026-08-11.md` | mdBook、Rust Book、Docusaurus、VitePress、WorkBuddyGuide、Astro Starlight 的官方文档/固定源码研究 | 只记录章节顺序、sidebar、分页、locale 和项目结构的原创比较；没有复制外部正文、代码、图片、字体、图标或品牌资产 | `reference-only`：结构研究；外部项目的根许可证不自动覆盖其媒体、投稿内容或品牌表达 | 用于本项目的 canonical chapter order、项目地图和生成式页脚；不复制外部框架实现，不把研究本身写成运行或用户效果证据 |
+| S27 | `docs/research/tutorial-value-and-knowledge-base-benchmark-2026-08-11.md` | mdBook、Rust Book、Docusaurus、VitePress、Starlight、MCP、Claude Code、OpenAI Cookbook、WorkBuddyGuide 的官方文档/固定源码研究 | 只记录多入口、实验、案例、失败、版本、搜索、贡献和许可证分层的原创综合；没有复制正文、代码、图片、配置、品牌或模板 | `reference-only`：结构研究；外部项目的许可证按文件和 revision 复核 | 用于本项目的多入口内容单元、结构契约、案例字段和失败/FAQ规划；不把结构研究写成学习效果或运行证据 |
+| S28 | `docs/research/field-problems-deep-dive-2026-08-11.md` | OpenAI/Codex、Anthropic/Claude Code GitHub Issues、Stack Overflow/Stack Exchange、Hacker News、Reddit、官方文档 | 只保留用户报告、官方边界、项目推断、复现状态、最小安全检查和停止/恢复条件的原创摘要；没有复制日志、凭据、代码、图片或长段原文 | `reference-only`：用户报告与社区建议；Reddit 本轮入口受限，报告已注明；本项目没有外部产品本地复现 | 用于真实问题卡、失败实验和评测落点；不把社区 workaround、issue 状态或相似报告写成官方根因或修复 |
+| S29 | `docs/research/field-guide-content-and-visual-gap-audit-2026-08-11.md` | 本项目现有入口、内容矩阵、状态源、站点实现，以及 Astro Starlight、GitHub Docs、MDN、Stripe、web.dev 的官方结构/可访问性资料 | 只记录本项目的原创内容与视觉缺口审计、逐章增量建议和验收清单；没有复制外部正文、代码、图片、字体或品牌资产 | `project-audit / reference-only`：建议仍需通过本地和浏览器证据验证 | 用于章节机制卡、真实问题卡、实验、故意失败、验收表和首页入口规划；不把候选建议写成用户效果证明 |
 
 ## 归档指纹
 

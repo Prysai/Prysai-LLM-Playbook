@@ -43,6 +43,11 @@ problem research, and explicit evidence boundaries.
 | Inspect the project itself | [`docs/governance/`](docs/governance/) + [`scripts/`](scripts/) | Canonical status, locale identity, update rules, and repeatable checks |
 | Find a file quickly | [`Project map`](docs/project-map-EN.md) | Directory responsibilities, chapter order, generated files, and where each change starts |
 
+The project map is backed by a machine-readable directory contract and concise
+landing pages. If you are contributing, start with the
+[project structure contract](docs/governance/project-structure.yaml); if you
+are reading, start with the [book guide](book/README-EN.md).
+
 ## Visual teaching and a concrete Skill case
 
 Use the [model-choice card](assets/teaching/model-choice-is-a-test.svg) and

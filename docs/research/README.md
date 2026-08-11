@@ -1,0 +1,30 @@
+# Research records
+
+`docs/research/` stores dated, source-backed records that inform the book and
+site. It includes official product facts, structure studies, public user
+reports, and project audits.
+
+## How to read a record
+
+Look for the source URL, access date, scope, evidence class, and next review.
+The project distinguishes:
+
+- official fact;
+- public user report;
+- community suggestion;
+- local reproduction; and
+- project inference.
+
+A public report is useful for finding a failure mode, but it is not proof of a
+root cause or an official fix. A research note is not automatically reader
+content; connect it to a chapter, lab, Skill, or evaluation only after the
+claim and license boundary are clear.
+
+Useful indexes:
+
+- [Field-problem index](field-problems-index-2026-08-10.md)
+- [Book navigation study](book-navigation-architecture-study-2026-08-11.md)
+- [Tutorial and knowledge-base structure benchmark](tutorial-value-and-knowledge-base-benchmark-2026-08-11.md)
+- [Coding-agent field problems deep dive](field-problems-deep-dive-2026-08-11.md)
+- [Field Guide content and visual gap audit](field-guide-content-and-visual-gap-audit-2026-08-11.md)
+- [Official Codex fact cards](codex-official-fact-cards-2026-08-10.md)

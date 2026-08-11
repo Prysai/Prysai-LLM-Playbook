@@ -61,6 +61,11 @@ large prompt library.
 | Inspect how the project is maintained | [`docs/governance/`](docs/governance/) + [`scripts/`](scripts/) | Canonical status, locale identity, update rules, and repeatable checks |
 | Find a file quickly | [`Project map`](docs/project-map-EN.md) | Directory responsibilities, chapter order, generated files, and where each change starts |
 
+The map is backed by the [canonical project structure contract](docs/governance/project-structure.yaml)
+and short landing pages inside the major directories. Use the contract when
+you are changing ownership, adding a directory, or deciding whether a file is
+source or generated.
+
 ## See the method produce an artifact
 
 The visual layer is part of the lesson, but it never replaces evidence. Start

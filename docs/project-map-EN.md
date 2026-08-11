@@ -6,6 +6,12 @@ research, governance, generated presentation data, and validation code. A
 directory name tells you what the file is responsible for; it is not a second
 table of contents.
 
+The machine-readable companion is
+[`docs/governance/project-structure.yaml`](governance/project-structure.yaml).
+This page is its human-facing projection. When the two disagree, update the
+contract and then bring this page and the relevant landing page back into
+alignment.
+
 ## Find something in seconds
 
 | I need to… | Start here | What belongs there |
@@ -25,6 +31,12 @@ table of contents.
 | Change or run a checker | [`scripts/`](../scripts/) | Validators, local-link checks, catalog builders, and generators |
 | Inspect the public front door | [`site/`](../site/) | Static showcase HTML, CSS, JavaScript, content catalog, and generated learning-path data |
 | Follow active work | [`tasks/`](../tasks/) | The bounded implementation plan and current checklist |
+
+Every major directory also has a short landing page. Use it when you are
+already inside the repository and need the local next step: [`book/README.md`](../book/README.md),
+[`docs/README.md`](README.md), [`assets/README.md`](../assets/README.md),
+[`examples/README.md`](../examples/README.md), [`scripts/README.md`](../scripts/README.md),
+[`skills/README.md`](../skills/README.md), and [`tasks/README.md`](../tasks/README.md).
 
 ## The top-level shape
 
@@ -98,6 +110,11 @@ The following are generated or contract-derived:
 - [`site/learning-path-data.js`](../site/learning-path-data.js) comes from the
   learning-path and content-status contracts;
 - status and locale files are machine-readable contracts, not informal notes.
+
+The complete generated-output list and each output's owner are recorded in the
+[project structure contract](governance/project-structure.yaml). That contract
+also excludes local work directories such as `.work/` and `tmp/` from the
+published map; those are working data, not project surfaces.
 
 If a generated result is wrong, fix its source and rerun the generator. Do not
 hide a stale result by editing the output by hand.

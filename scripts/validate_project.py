@@ -31,9 +31,14 @@ REQUIRED = (
     "docs/templates/field-case.md",
     "docs/research/workbuddyguide-structure-study-2026-08-10.md",
     "docs/research/book-navigation-architecture-study-2026-08-11.md",
+    "docs/research/tutorial-value-and-knowledge-base-benchmark-2026-08-11.md",
+    "docs/research/field-problems-deep-dive-2026-08-11.md",
+    "docs/research/field-guide-content-and-visual-gap-audit-2026-08-11.md",
     "docs/project-map-EN.md",
+    "docs/governance/project-structure.yaml",
     "docs/adr/0011-reading-product-and-field-case-layer.md",
     "docs/adr/0013-single-book-navigation-source.md",
+    "docs/adr/0014-canonical-project-directory-map.md",
     "docs/governance/book-navigation.yaml",
     "docs/governance/contribution-model.md",
     "docs/quality/skill-quality-standard.md",
@@ -48,6 +53,7 @@ REQUIRED = (
     "scripts/validate_fact_impact_registry.py",
     "scripts/build_book_navigation.py",
     "scripts/validate_book_navigation.py",
+    "scripts/validate_project_structure.py",
 )
 
 

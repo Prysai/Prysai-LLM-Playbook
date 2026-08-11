@@ -24,7 +24,12 @@
       "docs/research/field-problems-forums-2026-08-10.md",
       "docs/research/skill-case-product-context-real-estate-2026-08-11.md",
       "docs/research/book-navigation-architecture-study-2026-08-11.md",
+      "docs/research/tutorial-value-and-knowledge-base-benchmark-2026-08-11.md",
+      "docs/research/field-problems-deep-dive-2026-08-11.md",
+      "docs/research/field-guide-content-and-visual-gap-audit-2026-08-11.md",
       "docs/adr/0013-single-book-navigation-source.md",
+      "docs/adr/0014-canonical-project-directory-map.md",
+      "docs/governance/project-structure.yaml",
       "docs/project-map-EN.md",
       "docs/quality/real-world-case-integration-review-2026-08-10.md",
       "scripts/validate_content_status.py"

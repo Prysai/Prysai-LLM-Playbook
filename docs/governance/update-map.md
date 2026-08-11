@@ -5,6 +5,11 @@ evaluation, source, or public-page element changes, start here and follow the
 matching row. The map keeps stable teaching principles separate from volatile
 product facts and external assets.
 
+For repository navigation itself, start with the
+[canonical project structure contract](project-structure.yaml). It maps each
+major directory to its first entry, source-of-truth files, and generated
+outputs; this update map explains what to change after you arrive there.
+
 ## The update loop
 
 ```text

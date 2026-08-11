@@ -48,6 +48,23 @@ fresh-context 前测和运行时评测。新增的证据恢复阶梯图是项目
       footer boundaries, path resolution, and migration labels.
 - [x] README, book entry, and English table of contents link to the project map.
 
+## 当前切片：Canonical project directory map
+
+本切片把“从 GitHub 目录找文件”与“沿书籍主线阅读”分成两个互补入口：
+`docs/governance/project-structure.yaml` 是目录职责、首入口、权威来源和
+生成边界的机器契约；各主要目录提供短 landing page；`docs/project-map-EN.md`
+是面向人的投影。它不改变 22 章的 canonical order，也不把结构检查写成
+运行、翻译或学习掌握证据。
+
+### Acceptance criteria
+
+- [x] Every non-excluded top-level directory is represented in the structure contract.
+- [x] Important subdirectories have a discoverable entry page.
+- [x] Generated outputs name their source, owner, and edit rule.
+- [x] CI runs `scripts/validate_project_structure.py`.
+- [x] Structure, link, localization, content-status, and generated-data checks pass.
+- [ ] Browser review of the local static server remains a separate pending gate.
+
 ## 阶段任务
 
 ### 阶段 1：地基与命名
