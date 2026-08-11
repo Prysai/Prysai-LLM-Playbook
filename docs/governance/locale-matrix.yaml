@@ -2,7 +2,7 @@
   "matrix_version": "1",
   "mode": "migration",
   "default_locale": "EN",
-  "last_reviewed": "2026-08-10",
+  "last_reviewed": "2026-08-11",
   "next_review": "2026-11-09",
   "description": "Canonical identity and translation state for reader-facing localized content.",
   "locales": {
@@ -149,6 +149,22 @@
         "JA": {"path": "book/chapters/04-context-permissions-and-agent-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Japanese translation and review are pending."},
         "KO": {"path": "book/chapters/04-context-permissions-and-agent-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Korean translation and review are pending."},
         "DE": {"path": "book/chapters/04-context-permissions-and-agent-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
+      "content_id": "chapter-05-choose-the-codex-surface",
+      "kind": "chapter",
+      "stem": "book/chapters/05-choose-the-codex-surface",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-11",
+      "legacy_paths": ["book/chapters/05-choose-the-codex-surface.md"],
+      "locales": {
+        "EN": {"path": "book/chapters/05-choose-the-codex-surface-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full"},
+        "ZH": {"path": "book/chapters/05-choose-the-codex-surface-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Simplified Chinese translation and review are pending."},
+        "ES": {"path": "book/chapters/05-choose-the-codex-surface-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/chapters/05-choose-the-codex-surface-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/chapters/05-choose-the-codex-surface-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/chapters/05-choose-the-codex-surface-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; German translation and review are pending."}
       }
     },
     {

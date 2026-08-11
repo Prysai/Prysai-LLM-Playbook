@@ -23,8 +23,9 @@ CHAPTER_CONTRACT = {
     # heading, while later chapters use the shorter project convention.
     "problem": re.compile(
         r"(?m)^##\s+(?:本章要解决的问题|问题(?:：.*)?|The problem this chapter solves|"
-        r"Das Problem, das dieses Kapitel löst|El problema que resuelve este capítulo|"
-        r"この章が解決する問題|이 장에서 해결하는 문제)\s*$",
+        r"Das Problem, das dieses Kapitel löst|Das Problem dieses Kapitels|"
+        r"El problema que resuelve este capítulo|この章が解決する問題|"
+        r"이 장에서 해결하는 문제|이 장이 해결하는 문제)\s*$",
         re.IGNORECASE,
     ),
     "objective": re.compile(
@@ -33,8 +34,9 @@ CHAPTER_CONTRACT = {
         re.IGNORECASE,
     ),
     "real_problem": re.compile(
-        r"现实问题入口|真实问题入口|field cases?|real[- ]world (?:problem|cases?)|"
-        r"现场案例|casos de campo|praxisfälle|現場の事例|현장 사례",
+        r"现实问题入口|真实问题入口|field cases?|real[- ]world (?:problem|cases?|entry point)|"
+        r"现场案例|casos de campo|problemas reales|praxisfälle|reale Probleme|"
+        r"現場の事例|現実の問題|현장 사례|실제 문제",
         re.IGNORECASE,
     ),
     "experiment": re.compile(
@@ -69,26 +71,29 @@ CHAPTER_CONTRACT = {
         re.MULTILINE | re.IGNORECASE,
     ),
     "transfer": re.compile(
-        r"(?m)^##\s+(?:迁移练习|Transfer task|Transferaufgabe|Tarea de transferencia|"
-        r"迁移任务|移行タスク|전이 과제)\s*$",
+        r"(?m)^(?:##|###)\s+(?:迁移|迁移练习|Transfer|Transfer task|"
+        r"Transfer exercise|Transferaufgabe|Tarea de transferencia|"
+        r"Transferencia|Übertragung|迁移任务|移行|移行タスク|전환|전이 과제)\s*$",
         re.IGNORECASE,
     ),
     "acceptance": re.compile(
         r"^##\s+.*(?:本章验收|我真的学会了吗|验收清单|Acceptance checklist|"
-        r"Abnahme-Checkliste|Lista de aceptación|受け入れチェックリスト|수용 체크리스트).*$",
+        r"Abnahme-Checkliste|Abnahmecheckliste|Lista de aceptación|"
+        r"受け入れチェックリスト|合格チェックリスト|수용 체크리스트|합격 체크리스트).*$",
         re.MULTILINE | re.IGNORECASE,
     ),
     "sources": re.compile(
         r"来源与更新提示|易变事实与来源|稳定原则|治理的连接|Sources and maintenance boundary|"
-        r"来源与维护边界|Quellen und Wartungsgrenze|Fuentes y límite de mantenimiento|出典と保守の境界|"
-        r"출처 및 유지보수 경계",
+        r"Sources and review boundary|Sources and update boundary|来源与维护边界|来源与更新边界|"
+        r"Quellen und Wartungsgrenze|Quellen und Aktualitätsgrenze|Fuentes y límite de mantenimiento|"
+        r"Fuentes y actualización|出典と保守の境界|出典と更新境界|출처 및 유지보수 경계|출처와 갱신 경계",
         re.IGNORECASE,
     ),
 }
 
 UNRUN_STATUS_RE = re.compile(
     r"(?:\bnot\s+run\b|\bnot\s+executed\b|nicht\s+ausgeführt|"
-    r"no\s+ejecutado|未実行|미실행)",
+    r"no\s+ejecutado|未実行|未运行|미실행|실행하지\s+않음)",
     re.IGNORECASE,
 )
 

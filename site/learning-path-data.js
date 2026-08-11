@@ -262,7 +262,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Choose the right Codex surface",
             "zh": "选择正确的 Codex 工作面"
           },
-          "href": "../book/chapters/05-choose-the-codex-surface.md",
+          "href": "../book/chapters/05-choose-the-codex-surface-EN.md",
           "relation": "primary"
         },
         {

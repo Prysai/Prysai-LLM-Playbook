@@ -108,6 +108,12 @@ evidence_paths:
 Identidad observada no es acción autorizada; acción ejecutada no es resultado
 verificado; carpeta escribible no es permiso compartido o remoto.
 
+## Reflexión
+
+Antes de marcar un estado como `verified`, registra qué observación lo apoya, qué etapa
+sigue siendo desconocida y si la siguiente comprobación añade información sin añadir un
+efecto externo.
+
 ## Orden diagnóstico, parada y evidencia
 
 1. Congela ruta, objetivo, host, datos y acciones prohibidas.

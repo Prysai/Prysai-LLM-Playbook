@@ -307,12 +307,16 @@ against the source of truth.
 
 ## Experiment: three fixed versions of one request
 
+### Setup
+
 Use the companion [Lab 002](../labs/lab-002-task-protocol-EN.md) with a
 disposable project. Keep the underlying wish fixed and create three versions:
 
 - `v1`: only the wish;
 - `v2`: the wish plus goal, audience, allowed inputs, and forbidden actions;
 - `v3`: the same request plus acceptance, stop, failure recovery, and delivery.
+
+### Task
 
 Ask Codex for clarification and a protocol draft only. Do not let this
 experiment edit, install, commit, push, publish, or contact an external
@@ -336,6 +340,12 @@ Then replace vague words with observable criteria, such as:
 
 The criteria still need the project's actual validator and review scope. They
 are examples of testable language, not proof that the checks have run.
+
+### Reflection
+
+Record which missing field caused the largest change in scope, risk, or
+acceptance. Note whether the protocol could be handed to another person without
+guessing, and identify one claim that still needs runtime evidence.
 
 ## Acceptance checklist
 

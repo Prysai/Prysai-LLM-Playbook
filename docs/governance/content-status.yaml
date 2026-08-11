@@ -1,6 +1,6 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-08-10",
+  "generated_at": "2026-08-11",
   "description": "Single current-state source for curriculum, labs, Skills, evaluations, and the public site.",
   "status_vocabulary": {
     "artifact_status": ["draft", "candidate", "verified", "production-ready"],
@@ -9,7 +9,7 @@
   "project": {
     "status": "candidate",
     "owner": "curriculum-maintainer",
-    "last_reviewed": "2026-08-10",
+    "last_reviewed": "2026-08-11",
     "next_review": "2026-11-09",
     "evidence": [
       "docs/quality/current-state-review-2026-08-09.md",
@@ -30,7 +30,7 @@
     "count": 7,
     "status": "candidate",
     "owner": "curriculum-maintainer",
-    "last_reviewed": "2026-08-10",
+    "last_reviewed": "2026-08-11",
     "next_review": "2026-11-09",
     "path": "docs/governance/learning-path.yaml",
     "evidence": [
@@ -71,7 +71,7 @@
       {"id": "chapter-02", "path": "book/chapters/02-first-safe-task-EN.md", "status": "candidate"},
       {"id": "chapter-03", "path": "book/chapters/03-task-protocol-EN.md", "status": "candidate"},
       {"id": "chapter-04", "path": "book/chapters/04-context-permissions-and-agent-EN.md", "status": "candidate"},
-      {"id": "chapter-05", "path": "book/chapters/05-choose-the-codex-surface.md", "status": "candidate"},
+      {"id": "chapter-05", "path": "book/chapters/05-choose-the-codex-surface-EN.md", "status": "candidate"},
       {"id": "chapter-06", "path": "book/chapters/06-model-selection.md", "status": "candidate"},
       {"id": "chapter-07", "path": "book/chapters/07-skills-plugins-and-tools.md", "status": "candidate"},
       {"id": "chapter-08", "path": "book/chapters/08-full-lifecycle-workflow.md", "status": "candidate"},

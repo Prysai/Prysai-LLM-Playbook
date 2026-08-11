@@ -15,11 +15,12 @@
 - Chapters are `candidate`. Labs are `draft` with `run_status: not_run`.
 - Chapter 6 has `claim_status: disputed`; Chapter 22 has
   `claim_status: current | disputed`.
-- Existing English entry pages use their `-EN` files. Chapters 2–3 and Labs
-  001–002 now also have canonical `-EN` source files. The remaining chapters
-  and labs do not yet have locale-suffixed English variants, so their links are
-  explicitly marked `migration pending — current source path`. Shared
-  governance, evaluation, and research documents are marked `locale-neutral`.
+- Existing English entry pages use their `-EN` files. Chapters 1–5 and Labs
+  001, 002, 007, and 011 now have canonical `-EN` source files. The remaining
+  chapters and labs do not yet have locale-suffixed English variants, so their
+  links are explicitly marked `migration pending — current source path`.
+  Shared governance, evaluation, and research documents are marked
+  `locale-neutral`.
 - No link on this page silently falls back to another locale. A migration
   notice is part of every link whose localized target does not yet exist.
 
@@ -68,10 +69,10 @@ effects, and observable behavior. **content_status:** `candidate`
 
 ### Chapter 5 — Choose the right Codex surface
 
-How to choose among the desktop app, CLI, IDE, Cloud, and Remote entry points
-for a task. **content_status:** `candidate`
+How to choose among Local, Worktree, and Cloud, then select the desktop app,
+CLI, IDE, or web entry point for a task. **content_status:** `candidate`
 
-- Chapter: [migration pending — current source path](chapters/05-choose-the-codex-surface.md)
+- Chapter: [Chapter 5 — EN source](chapters/05-choose-the-codex-surface-EN.md)
 - Experiment: [Lab 007 — EN source](labs/lab-007-action-boundaries-EN.md)
 
 ### Chapter 6 — Model selection is not model worship

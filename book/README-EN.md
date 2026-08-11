@@ -54,10 +54,10 @@ currently `draft` with `run_status: not_run`.
 - [Real-user problem research index — locale-neutral research](../docs/research/field-problems-index-2026-08-10.md)
 
 The English table-of-contents entry now exists as `table-of-contents-EN.md`.
-Chapter 1 and Lab 011 now have explicit English source files; the remaining
-chapter and experiment bodies remain migration-pending until their own
-locale-suffixed variants exist. The table of contents labels those links
-explicitly.
+Chapters 1–5 and Labs 001, 002, 007, and 011 now have explicit English source
+files; the remaining chapter and experiment bodies remain migration-pending
+until their own locale-suffixed variants exist. The table of contents labels
+those links explicitly.
 
 ## The learning path
 
@@ -145,7 +145,7 @@ remain explicit as the corpus is migrated.
 
 1. Read the [English preface](preface-EN.md) to understand the operating model.
 2. Use the [English table of contents](table-of-contents-EN.md)
-   to choose a chapter; the target is labelled because its English migration is
+   to choose a chapter; migration notices identify any source that is still
    pending.
 3. Read the chapter's boundary and evidence requirements before touching a
    tool, external service, or credential.

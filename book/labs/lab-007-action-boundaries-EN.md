@@ -169,6 +169,12 @@ action was executed            ≠ its result is verified
 directory is writable          ≠ a shared or remote target allows writing
 ~~~
 
+## Reflection
+
+Before marking a state `verified`, record which observation supports it, which
+stage remains unknown, and whether the next check would add information without
+adding an external side effect.
+
 ## Smallest diagnostic order
 
 Each step must produce a new piece of evidence. Try again is not a diagnostic

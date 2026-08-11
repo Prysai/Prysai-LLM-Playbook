@@ -110,6 +110,12 @@ evidence_paths:
 Beobachtete Identität ist keine Autorisierung; ausgeführt ist nicht verifiziert;
 ein schreibbares Verzeichnis erlaubt kein gemeinsames oder Remote-Schreiben.
 
+## Reflexion
+
+Bevor ein Zustand als `verified` markiert wird, notiere die stützende Beobachtung, die
+noch unbekannte Phase und ob die nächste Prüfung Information ohne weiteren externen
+Nebeneffekt liefert.
+
 ## Kleinste Diagnosefolge, Stop und Evidenz
 
 1. Exakten Pfad, Ziel, Host, Datenumfang und verbotene Aktionen festhalten.
@@ -126,7 +132,7 @@ unbekanntem Schreiben stoppen. Eine Evidenztabelle mit Aufgabe, Oberfläche, Bas
 fünf Berechtigungsfeldern, Symptom, Aktion, Ergebnis, Zustand, Rollback und externen
 Aktionen einreichen; externe Aktionen ausdrücklich als not_run markieren.
 
-## Fehler, Übertragung und Bestehen
+## Fehler, Übertragung und Abnahmecheckliste
 
 Nur im Fixture behandeln: Browser war erfolgreich, CLI ist eingeloggt, Nutzer ist
 Administrator, zur Verifikation neu installieren. Jeweils fehlende Evidenz und
