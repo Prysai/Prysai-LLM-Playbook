@@ -401,3 +401,15 @@ validated a model matrix, or reproduced every public report as part of this
 chapter. A future verification pass must save the run-id, environment, exact
 inputs, tool inventory, diff, check output, and reviewer before changing those
 claims.
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="Chapter navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="04-context-permissions-and-agent-EN.md" aria-label="Previous chapter: Chapter 4 · Context, permissions, and the Agent action boundary">← Previous<br><strong>Chapter 4 · Context, permissions, and the Agent action boundary</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="06-model-selection-EN.md" aria-label="Next chapter: Chapter 6 · Model selection is not model worship">Next →<br><strong>Chapter 6 · Model selection is not model worship</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

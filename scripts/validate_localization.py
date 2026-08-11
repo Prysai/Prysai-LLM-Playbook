@@ -180,7 +180,10 @@ def main() -> int:
         path_string = relative(path)
         if README_RE.search(path_string):
             readme_files.append(path)
-        if LOCALE_FILE_RE.search(path_string):
+        # Governance and research documents live under declared neutral paths.
+        # A neutral document may use an explicit language suffix for its
+        # authoring language without becoming a translated content identity.
+        if LOCALE_FILE_RE.search(path_string) and not path_is_neutral(path_string, neutral_prefixes):
             localized_files.append(path)
             if path_string not in matrix_paths:
                 errors.append(f"localized file is missing from matrix: {path_string}")

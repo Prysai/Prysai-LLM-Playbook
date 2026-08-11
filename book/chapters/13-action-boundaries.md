@@ -234,3 +234,15 @@ status: passed | not_observed | unverified | blocked
 |---|---|---|---|---|
 | sandbox 限制技术行动空间，approval policy 决定何时暂停；外部工具副作用需单独审批 | https://learn.chatgpt.com/docs/agent-approvals-security.md | 2026-08-10 | 官方文档描述的 Codex 工作面；当前 roots、网络、审批和工具状态仍需本次运行取证 | `facts-maintainer` / 2026-09-09 |
 | 产品权限模式与可选批准方式 | https://learn.chatgpt.com/docs/permission-modes.md | 2026-08-10 | 官方权限模式页面；不外推为当前账户、组织或机器的默认值 | `facts-maintainer` / 2026-09-09 |
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop.md" aria-label="上一章：第 12 章 · Agent 的循环、状态和停止条件">← 上一章<br><strong>第 12 章 · Agent 的循环、状态和停止条件</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="14-discover-and-audit-skills.md" aria-label="下一章：第 14 章 · 如何发现、安装和审查外部 Skill">下一章 →<br><strong>第 14 章 · 如何发现、安装和审查外部 Skill</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

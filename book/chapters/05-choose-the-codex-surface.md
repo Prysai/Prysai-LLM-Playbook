@@ -268,3 +268,15 @@ run_id | surface | entry | account_authorized | target_resource_readable
 - [ ] 能区分 Cloud setup 与 agent 阶段，并说明秘密和网络的阶段边界；
 - [ ] 面对三种失败变体时会标记 `blocked / rejected / not_observed`，而不是扩大完成声明；
 - [ ] 能说明本章仍是 `candidate`，实验仍是 `not_run`，没有把官方文档写成本仓库实测。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="04-context-permissions-and-agent.md" aria-label="上一章：第 4 章 · 上下文、权限与 Agent 的行动边界">← 上一章<br><strong>第 4 章 · 上下文、权限与 Agent 的行动边界</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="06-model-selection.md" aria-label="下一章：第 6 章 · 模型选择不是模型崇拜">下一章 →<br><strong>第 6 章 · 模型选择不是模型崇拜</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

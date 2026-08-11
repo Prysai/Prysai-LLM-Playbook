@@ -223,3 +223,15 @@ status: passed | unverified | blocked
 | 权限模式的产品选项与入口 | https://learn.chatgpt.com/docs/permission-modes.md | 2026-08-10 | 官方权限模式页面；实际可用项受工作面与组织策略影响 | `facts-maintainer` / 2026-09-09 |
 
 本章结合官方 Codex 的 skills/plugins、sandbox、approval 与安全概念，以及工程来源的上下文工程与怀疑驱动方法；具体产品细节以[官方基线](../../docs/research/openai-codex-baseline.md)和[事实刷新记录](../../docs/research/openai-codex-facts-refresh-2026-08-09.md)为准，但两者都不替代当前运行时证据。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol.md" aria-label="上一章：第 3 章 · 把愿望变成任务协议">← 上一章<br><strong>第 3 章 · 把愿望变成任务协议</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="05-choose-the-codex-surface.md" aria-label="下一章：第 5 章 · 选择正确的 Codex 工作面">下一章 →<br><strong>第 5 章 · 选择正确的 Codex 工作面</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

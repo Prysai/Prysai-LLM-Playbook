@@ -24,6 +24,16 @@
       "next_review": "2026-09-09"
     },
     {
+      "area": "book-navigation",
+      "canonical_paths": ["docs/governance/book-navigation.yaml", "book/chapters", "book/table-of-contents.md", "book/table-of-contents-EN.md", "scripts/build_book_navigation.py", "scripts/validate_book_navigation.py"],
+      "owner": "curriculum-maintainer",
+      "triggers": ["new-chapter", "chapter-reorder", "chapter-rename", "english-migration", "navigation-report"],
+      "required_inputs": ["stable-chapter-id", "part", "chapter-number", "english-title", "chinese-title", "legacy-source-path", "english-source-path-or-pending-state"],
+      "validation_commands": ["scripts/build_book_navigation.py --check", "scripts/validate_book_navigation.py", "scripts/check_local_links.py"],
+      "status_fields": ["status", "owner", "generated_at", "english_path", "legacy_path", "migration_state"],
+      "next_review": "2026-11-09"
+    },
+    {
       "area": "chapters",
       "canonical_paths": ["book/chapters", "book/table-of-contents.md", "docs/content-matrix.md"],
       "owner": "curriculum-maintainer",

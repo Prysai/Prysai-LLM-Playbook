@@ -215,3 +215,15 @@ status: "pass | fail | not_comparable | not_run"
 ```
 
 `evals/task-set-v1.yaml` 和 `docs/model-evaluation-luna.md` 当前仍是 `draft / not run`；本章方法内容为 `candidate`。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation.md" aria-label="上一章：第 18 章 · 内容、设计、数据与自动化轨">← 上一章<br><strong>第 18 章 · 内容、设计、数据与自动化轨</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system.md" aria-label="下一章：第 20 章 · 建立个人 Codex 工作系统">下一章 →<br><strong>第 20 章 · 建立个人 Codex 工作系统</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

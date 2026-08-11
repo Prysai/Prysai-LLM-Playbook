@@ -173,3 +173,15 @@ dependency_check: 如何在开始前用一次低风险检查确认依赖
 ## 来源与更新提示
 
 依赖图、竖向切片、检查点和变更预算是稳定的方法；具体工作面、模型、命令、容量、权限和界面属于易变事实。现场问题只作为用户报告和研究入口，不能升级成产品承诺。产品事实请以[OpenAI Codex 官方基线](../../docs/research/openai-codex-baseline.md)及其中列出的当前官方文档为准；引用具体版本或行为前，记录访问日期、适用入口和复核责任人。每次产品或工具更新后，至少重跑本章实验的正例和失败变体，并把结果标为 `draft`、`candidate`、`verified` 或 `production-ready`，不要只凭文案更新状态。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery.md" aria-label="上一章：第 9 章 · 验证、怀疑与恢复">← 上一章<br><strong>第 9 章 · 验证、怀疑与恢复</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="11-designing-a-skill.md" aria-label="下一章：第 11 章 · 设计一个真正有用的 Skill">下一章 →<br><strong>第 11 章 · 设计一个真正有用的 Skill</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

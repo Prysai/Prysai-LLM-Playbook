@@ -144,3 +144,15 @@ Skill：可复用的方法、检查点和输出标准
 ## 来源与更新提示
 
 任务协议是稳定方法；项目规则、工具权限和具体命令属于易变事实。产品事实以[官方 Codex 基线](../../docs/research/openai-codex-baseline.md)为准，现场案例以[问题研究记录](../../docs/research/field-problems-codex.md)的证据等级为准。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="02-first-safe-task.md" aria-label="上一章：第 2 章 · 完成第一个安全、可验证的任务">← 上一章<br><strong>第 2 章 · 完成第一个安全、可验证的任务</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="04-context-permissions-and-agent.md" aria-label="下一章：第 4 章 · 上下文、权限与 Agent 的行动边界">下一章 →<br><strong>第 4 章 · 上下文、权限与 Agent 的行动边界</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

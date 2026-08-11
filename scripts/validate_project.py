@@ -30,7 +30,11 @@ REQUIRED = (
     "docs/templates/update-record.md",
     "docs/templates/field-case.md",
     "docs/research/workbuddyguide-structure-study-2026-08-10.md",
+    "docs/research/book-navigation-architecture-study-2026-08-11.md",
+    "docs/project-map-EN.md",
     "docs/adr/0011-reading-product-and-field-case-layer.md",
+    "docs/adr/0013-single-book-navigation-source.md",
+    "docs/governance/book-navigation.yaml",
     "docs/governance/contribution-model.md",
     "docs/quality/skill-quality-standard.md",
     "docs/quality/evaluation-framework.md",
@@ -42,6 +46,8 @@ REQUIRED = (
     "scripts/validate_content_status.py",
     "scripts/validate_learning_path.py",
     "scripts/validate_fact_impact_registry.py",
+    "scripts/build_book_navigation.py",
+    "scripts/validate_book_navigation.py",
 )
 
 

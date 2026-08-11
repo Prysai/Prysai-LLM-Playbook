@@ -6,6 +6,8 @@
 
 等级、必读章节、主实验、支撑实验、推荐 Skill、评测夹具、证据门槛和晋级条件以[学习路径契约](../docs/governance/learning-path.yaml)为准。本目录负责阅读入口；它不再单独决定等级归属。一个实验可以被多个章节支撑，但只有契约中标为 `primary` 的关系才是该等级的主练习。
 
+想快速找到文件时，先看[项目结构地图](../docs/project-map-EN.md)。22 章的阅读顺序由[章节导航源](../docs/governance/book-navigation.yaml)统一维护；每章末尾的上一章/下一章链接由生成器更新，本目录负责提供完整的阅读索引。
+
 ## 序：为什么要学习 Codex GPT，而不是只学提示词
 
 说明 GPT、Codex、Skill 和完整能力系统的关系，解释本项目的学习方式、证据标准和安全边界。**content_status：`candidate`**

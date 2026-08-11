@@ -551,3 +551,15 @@ review this chapter, related labs, Skills, evaluation fixtures, and site paths.
       not-done work.
 - [ ] I can report that this chapter is `candidate` and that its comparison
       experiment remains `not_run` until a run record and review exist.
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="Chapter navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="07-skills-plugins-and-tools-EN.md" aria-label="Previous chapter: Chapter 7 · How Skills, Plugins, MCP, and tools divide the work">← Previous<br><strong>Chapter 7 · How Skills, Plugins, MCP, and tools divide the work</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="09-verification-and-recovery-EN.md" aria-label="Next chapter: Chapter 9 · Verification, doubt, and recovery">Next →<br><strong>Chapter 9 · Verification, doubt, and recovery</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

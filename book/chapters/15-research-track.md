@@ -285,3 +285,15 @@ S02 的研究 Skill 记录了阶段路由、引用和评测方面的参考价值
 - 外部资产许可：[`docs/sources/asset-register.md`](../../docs/sources/asset-register.md)，S01、S02、S03、S06；S02 的许可证为 CC BY-NC 4.0，发行前需重新审查。
 - 产品与协议易变事实： [OpenAI Codex 官方仓库](https://github.com/openai/codex)及其关联官方文档；研究时记录具体 URL、访问日期和版本，不把 issue 推测写成官方结论。
 - 更新责任：Field Guide 维护组；来源变更、版本更新、许可证变更或最迟 2026-11-09 复核。章节当前状态：candidate；只有完成关键断言的人工复核和来源更新，研究产物才可称为 verified。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills.md" aria-label="上一章：第 14 章 · 如何发现、安装和审查外部 Skill">← 上一章<br><strong>第 14 章 · 如何发现、安装和审查外部 Skill</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="16-engineering-track.md" aria-label="下一章：第 16 章 · 工程轨：从想法到可靠软件">下一章 →<br><strong>第 16 章 · 工程轨：从想法到可靠软件</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

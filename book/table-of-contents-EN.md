@@ -15,7 +15,7 @@
 - Chapters are `candidate`. Labs are `draft` with `run_status: not_run`.
 - Chapter 6 has `claim_status: disputed`; Chapter 22 has
   `claim_status: current | disputed`.
-- Existing English entry pages use their `-EN` files. Chapters 1–8 and Labs
+- Existing English entry pages use their `-EN` files. Chapters 1–9 and Labs
   001, 002, 007, and 011 now have canonical `-EN` source files. The remaining
   chapters and labs do not yet have locale-suffixed English variants, so their
   links are explicitly marked `migration pending — current source path`.
@@ -28,6 +28,8 @@
 
 - [Project entry — EN](../README-EN.md)
 - [Book guide — EN](README-EN.md)
+- [Project map — EN](../docs/project-map-EN.md)
+- [Canonical chapter navigation source](../docs/governance/book-navigation.yaml)
 - [Preface — EN](preface-EN.md)
 - [Learning path contract — locale-neutral](../docs/governance/learning-path.yaml)
 - [Locale matrix — locale-neutral](../docs/governance/locale-matrix.yaml)
@@ -109,7 +111,7 @@ maintenance, with vertical slices that remain verifiable. **content_status:**
 Break completion claims into claims and evidence; handle uncertainty, failure,
 and recovery. **content_status:** `candidate`
 
-- Chapter: [migration pending — current source path](chapters/09-verification-and-recovery.md)
+- Chapter: [English source](chapters/09-verification-and-recovery-EN.md)
 - Experiment: [lab-003 — migration pending — current source path](labs/lab-003-evidence-review.md)
 
 ### Chapter 10 — Planning and vertical slicing

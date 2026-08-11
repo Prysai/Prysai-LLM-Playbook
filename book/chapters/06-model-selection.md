@@ -259,3 +259,15 @@ run_id | candidate_id | task_id | model_id | surface
 - [ ] 能交付原始证据、可比性记录和 `值得扩展 / 暂不扩展 / 证据不足` 结论；
 - [ ] 能明确说明为什么一次 demo 不能推出总体模型排名或总体性价比；
 - [ ] 能说明本章仍是 `candidate`，实验与模型评测仍是 `not_run`。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="05-choose-the-codex-surface.md" aria-label="上一章：第 5 章 · 选择正确的 Codex 工作面">← 上一章<br><strong>第 5 章 · 选择正确的 Codex 工作面</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="07-skills-plugins-and-tools.md" aria-label="下一章：第 7 章 · Skill、Plugin、MCP 和工具如何分工">下一章 →<br><strong>第 7 章 · Skill、Plugin、MCP 和工具如何分工</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

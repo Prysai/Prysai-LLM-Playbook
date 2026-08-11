@@ -41,6 +41,7 @@ problem research, and explicit evidence boundaries.
 | Browse the learning experience | [`site/index.html`](site/index.html) + [`site/README.md`](site/README.md) | The visual showcase; the companion README explains local serving and verification |
 | Read the English source | [`book/README-EN.md`](book/README-EN.md) + [`book/table-of-contents-EN.md`](book/table-of-contents-EN.md) | The book contract, full route, chapter status, experiments, and research links |
 | Inspect the project itself | [`docs/governance/`](docs/governance/) + [`scripts/`](scripts/) | Canonical status, locale identity, update rules, and repeatable checks |
+| Find a file quickly | [`Project map`](docs/project-map-EN.md) | Directory responsibilities, chapter order, generated files, and where each change starts |
 
 ## Visual teaching and a concrete Skill case
 
@@ -90,6 +91,7 @@ The guide keeps the layers distinct:
 | Layer | Location | What it stores |
 |---|---|---|
 | **Book** | [`book/`](book/) | Preface, chapters, contents, and practice labs |
+| **Project map** | [`docs/project-map-EN.md`](docs/project-map-EN.md) | A fast directory guide and maintenance entry point |
 | **Learning path** | [`docs/governance/learning-path.yaml`](docs/governance/learning-path.yaml) | L0–L6 capabilities, prerequisites, artifacts, and evidence gates |
 | **Labs** | [`book/labs/`](book/labs/) | Low-risk, observable, reversible exercises |
 | **Skills** | [`skills/`](skills/) | Project-owned reusable operating methods |

@@ -48,13 +48,15 @@ currently `draft` with `run_status: not_run`.
 
 - [Preface: This Is Not a Prompt Catalogue](preface-EN.md)
 - [English book table of contents](table-of-contents-EN.md)
+- [Project map — where chapters, labs, Skills, research, and checks live](../docs/project-map-EN.md)
+- [Canonical chapter navigation source](../docs/governance/book-navigation.yaml)
 - [Evaluation framework — locale-neutral governance](../docs/quality/evaluation-framework.md)
 - [Luna model evaluation — locale-neutral research](../docs/model-evaluation-luna.md)
 - [OpenAI/Codex baseline research — locale-neutral research](../docs/research/openai-codex-baseline.md)
 - [Real-user problem research index — locale-neutral research](../docs/research/field-problems-index-2026-08-10.md)
 
 The English table-of-contents entry now exists as `table-of-contents-EN.md`.
-Chapters 1–8 and Labs 001, 002, 007, and 011 now have explicit English source
+Chapters 1–9 and Labs 001, 002, 007, and 011 now have explicit English source
 files; the remaining chapter and experiment bodies remain migration-pending
 until their own locale-suffixed variants exist. The table of contents labels
 those links explicitly.
@@ -147,10 +149,13 @@ remain explicit as the corpus is migrated.
 2. Use the [English table of contents](table-of-contents-EN.md)
    to choose a chapter; migration notices identify any source that is still
    pending.
-3. Read the chapter's boundary and evidence requirements before touching a
+3. At the end of a chapter, use the generated **Previous chapter** or **Next
+   chapter** link. The first chapter has only a next link, middle chapters have
+   both, and the last chapter has only a previous link.
+4. Read the chapter's boundary and evidence requirements before touching a
    tool, external service, or credential.
-4. Run only the smallest reversible experiment that the chapter defines.
-5. Preserve the result, differences, logs, sources, and reflection before
+5. Run only the smallest reversible experiment that the chapter defines.
+6. Preserve the result, differences, logs, sources, and reflection before
    deciding whether the method transfers.
 
 The point of the sequence is not to finish pages quickly. It is to leave a

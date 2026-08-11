@@ -280,3 +280,15 @@ official documentation is not a substitute for observing the current run.
 |---|---|---|---|
 | Sandbox and approval are separate control layers; app and connector effects can enter an approval boundary | https://learn.chatgpt.com/docs/agent-approvals-security.md | 2026-08-10 | Official descriptions for supported Codex surfaces; does not prove this session configuration |
 | Permission options vary by product surface and policy | https://learn.chatgpt.com/docs/permission-modes.md | 2026-08-10 | Product documentation; actual options depend on surface and organization |
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="Chapter navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-EN.md" aria-label="Previous chapter: Chapter 3 · Turn a wish into a task protocol">← Previous<br><strong>Chapter 3 · Turn a wish into a task protocol</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="05-choose-the-codex-surface-EN.md" aria-label="Next chapter: Chapter 5 · Choose the right Codex surface">Next →<br><strong>Chapter 5 · Choose the right Codex surface</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

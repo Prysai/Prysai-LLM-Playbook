@@ -42,7 +42,7 @@ copied prompts and Skills.
 | Understand what GPT, Codex, tools, Skills, and Agents actually are | [Chapter 1 — Understand GPT before Codex](book/chapters/01-gpt-and-codex-EN.md) + [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) | A usable mental model and a list of claims you refuse to infer without evidence |
 | Complete a first task safely | [Chapter 2 EN source](book/chapters/02-first-safe-task-EN.md) + [Lab 001 EN source](book/labs/lab-001-first-safe-task-EN.md) | One small, reversible diff, a focused check, and an explicit unverified list |
 | Turn a vague request into something an Agent can execute | [Chapter 3 — task protocol](book/chapters/03-task-protocol-EN.md) + [Lab 002](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop conditions, and failure handling |
-| Stop trusting “done” too early | [Verification and recovery — English migration pending](book/chapters/09-verification-and-recovery.md) + [Lab 003 — English migration pending — current source](book/labs/lab-003-evidence-review.md) | A claim-to-evidence review that catches wrong files, missing tests, and scope gaps |
+| Stop trusting “done” too early | [Chapter 9 — Verification, doubt, and recovery](book/chapters/09-verification-and-recovery-EN.md) + [Lab 003 — English migration pending — current source](book/labs/lab-003-evidence-review.md) | A claim-to-evidence review that catches wrong files, missing tests, and scope gaps |
 | Choose or design a Skill | [Skill registry](docs/skill-registry.md) + [Skill quality standard](docs/quality/skill-quality-standard.md) | A bounded Skill contract with triggers, exclusions, dependencies, rollback, and tests |
 | Learn from failures people actually report | [Real-world problem index](docs/research/field-problems-index-2026-08-10.md) | A symptom, a safe first check, a narrower fallback, and an honest evidence level |
 | Turn a personal method into team capability | [Team capability system — English migration pending](book/chapters/21-team-capability-system.md) + [Contribution model](docs/governance/contribution-model.md) | Ownership, sources, permissions, evaluation, maintenance, and rollback |
@@ -59,6 +59,7 @@ large prompt library.
 | Browse the learning experience | [`site/index.html`](site/index.html) + [`site/README.md`](site/README.md) | The visual showcase; the companion README explains local serving and verification |
 | Read the book as a source-locale guide | [`book/README-EN.md`](book/README-EN.md) + [`book/table-of-contents-EN.md`](book/table-of-contents-EN.md) | The book contract, full route, chapter status, experiments, and research links |
 | Inspect how the project is maintained | [`docs/governance/`](docs/governance/) + [`scripts/`](scripts/) | Canonical status, locale identity, update rules, and repeatable checks |
+| Find a file quickly | [`Project map`](docs/project-map-EN.md) | Directory responsibilities, chapter order, generated files, and where each change starts |
 
 ## See the method produce an artifact
 
@@ -70,6 +71,7 @@ brief to context draft to a locally rendered page:
 |---|---|---|
 | [Model choice is a test](assets/teaching/model-choice-is-a-test.svg) | Compare a task, working condition, smoke test, and bounded decision | It does not establish a universal model ranking, cost, speed, stability, or account-wide availability |
 | [Skill to observable output](assets/teaching/skill-to-observable-output.svg) | Trigger → input → method → inspectable artifact → four-case evaluation | A polished artifact is not proof that a Skill ran or that the method works everywhere |
+| [Evidence and recovery ladder](assets/teaching/evidence-recovery-ladder.svg) | Claim strength, missing proof, and the smallest safe recovery action | A teaching model; it does not establish runtime, user acceptance, or production readiness |
 | [Real-estate concept case](docs/research/skill-case-product-context-real-estate-2026-08-11.md) | Product Context draft → static landing page → browser screenshot | Project-owned example; no customer, market, inventory, conversion, or runtime claim |
 
 The case is intentionally concrete: a fictional buyer-first brokerage page with
@@ -144,13 +146,13 @@ state, not a marketing promise.
 | **L0 · Observer** | Separate GPT, models, Codex, context, tools, Skills, and Agents before attributing an outcome | [Chapter 1](book/chapters/01-gpt-and-codex-EN.md) · [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) |
 | **L1 · Safe user** | Complete a reversible, observable task and distinguish a diff from proof | [Chapter 2 EN source](book/chapters/02-first-safe-task-EN.md) · [Lab 001 EN source](book/labs/lab-001-first-safe-task-EN.md) |
 | **L2 · Task designer** | Turn a wish into a protocol with relevant context, least authority, acceptance, and failure handling | [Chapter 3](book/chapters/03-task-protocol-EN.md) · [Lab 002](book/labs/lab-002-task-protocol-EN.md) |
-| **L3 · Workflow designer** | Run a complete workflow with stages, checkpoints, recovery, and delivery evidence | [Chapters 7–13 — Chapters 7–8 EN sources; Chapters 9–13 migration pending](book/table-of-contents-EN.md) · [Lab 013 — English migration pending — current source](book/labs/lab-013-l3-vertical-slice.md) |
+| **L3 · Workflow designer** | Run a complete workflow with stages, checkpoints, recovery, and delivery evidence | [Chapters 7–13 — Chapters 7–9 EN sources; Chapters 10–13 migration pending](book/table-of-contents-EN.md) · [Lab 013 — English migration pending — current source](book/labs/lab-013-l3-vertical-slice.md) |
 | **L4 · Capability builder** | Select, compose, install, and improve Skills and tools by fit, risk, license, and verification cost | [Skill registry](docs/skill-registry.md) · [Chapter 11 — migration pending](book/chapters/11-designing-a-skill.md) |
 | **L5 · Evidence reviewer** | Test completion claims with positive, boundary, failure, and transfer cases | [Evaluation framework](docs/quality/evaluation-framework.md) · [Chapter 19 — migration pending](book/chapters/19-evaluate-models-and-workflows.md) |
 | **L6 · Team coach** | Turn a personal method into a versioned team capability with ownership and rollback | [Chapter 20–22 — migration pending](book/table-of-contents-EN.md) · [Contribution model](docs/governance/contribution-model.md) |
 
 “Migration pending” remains explicit wherever an English source has not yet
- been authored. Chapters 1–8 and Labs 001–002, 007, and 011 now have canonical
+ been authored. Chapters 1–9 and Labs 001–002, 007, and 011 now have canonical
 `-EN` sources; the remaining unsuffixed links in this README are deliberately
 labelled as migration paths until their English files exist.
 
@@ -215,9 +217,15 @@ Status vocabulary is deliberately conservative:
 The root README is the front door. The following layers are the actual
 learning system behind it.
 
+For the short answer to “where is the file I need?”, use the
+[project map](docs/project-map-EN.md). It explains directory responsibilities,
+the canonical chapter order, generated files, and the correct starting point
+for common changes.
+
 | Layer | Location | Stores | Why it matters |
 |---|---|---|---|
 | **Book** | [`book/`](book/) | Preface, chapters, table of contents, and labs | The coherent learning route |
+| **Chapter order** | [`docs/governance/book-navigation.yaml`](docs/governance/book-navigation.yaml) | One ordered record for all 22 chapters and locale paths | Keeps chapter footers and future navigation adapters consistent |
 | **English book entry** | [`book/README-EN.md`](book/README-EN.md) | Book contract, reading state, and locale policy | The book-level starting point |
 | **Labs** | [`book/labs/`](book/labs/) | Low-risk, observable practice tasks | Turns concepts into inspectable action |
 | **Skills** | [`skills/`](skills/) | Project-owned reusable methods | Encodes a method only after its boundaries are understood |

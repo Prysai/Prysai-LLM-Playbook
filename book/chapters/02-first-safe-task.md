@@ -172,3 +172,15 @@ run-id | checkpoint | 允许修改 | 实际修改 | 验证断言 | 证据路径 
 ## 来源与更新提示
 
 本章的任务协议和证据结构是 Field Guide 的稳定教学方法；Codex 的具体入口、权限和工具行为属于易变事实，使用[OpenAI Codex 官方基线](../../docs/research/openai-codex-baseline.md)与项目[内容生命周期](../../docs/governance/content-lifecycle.md)复核。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="01-gpt-and-codex.md" aria-label="上一章：第 1 章 · 先理解 GPT，再理解 Codex 的工作原理">← 上一章<br><strong>第 1 章 · 先理解 GPT，再理解 Codex 的工作原理</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="03-task-protocol.md" aria-label="下一章：第 3 章 · 把愿望变成任务协议">下一章 →<br><strong>第 3 章 · 把愿望变成任务协议</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

@@ -487,3 +487,15 @@ confirmations. This chapter and its experiment remain `candidate`/`draft`, and
 the experiment is `not_run` until a fresh, bounded run produces the declared
 evidence. The next chapter remains on the current migration path:
 [Chapter 3 — task protocol](03-task-protocol-EN.md).
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="Chapter navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="01-gpt-and-codex-EN.md" aria-label="Previous chapter: Chapter 1 · Understand GPT before understanding how Codex works">← Previous<br><strong>Chapter 1 · Understand GPT before understanding how Codex works</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="03-task-protocol-EN.md" aria-label="Next chapter: Chapter 3 · Turn a wish into a task protocol">Next →<br><strong>Chapter 3 · Turn a wish into a task protocol</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

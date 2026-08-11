@@ -173,3 +173,15 @@ claim_status: "disputed"
 ```
 
 项目更新流程参考 [`docs/governance/content-lifecycle.md`](../../docs/governance/content-lifecycle.md)。本章和本实验仍分别为 `candidate` 与 `draft / not run`；上述 `claim_status` 不改变这一结论。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="21-team-capability-system.md" aria-label="上一章：第 21 章 · 建立团队能力系统">← 上一章<br><strong>第 21 章 · 建立团队能力系统</strong></a></td>
+      <td align="right"></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

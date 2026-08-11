@@ -227,3 +227,15 @@ next_review: after the next source or chapter-structure change
 ## 本章验收
 
 学习者能为一个真实任务写出阶段、切片、依赖、验收和检查点；能解释为什么计划不是实现的替代品，为什么每个切片都必须保持可验证状态；能在执行中暂停并重新评估而不是盲目完成原计划。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="07-skills-plugins-and-tools.md" aria-label="上一章：第 7 章 · Skill、Plugin、MCP 和工具如何分工">← 上一章<br><strong>第 7 章 · Skill、Plugin、MCP 和工具如何分工</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="09-verification-and-recovery.md" aria-label="下一章：第 9 章 · 验证、怀疑与恢复">下一章 →<br><strong>第 9 章 · 验证、怀疑与恢复</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

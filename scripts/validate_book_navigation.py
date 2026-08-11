@@ -1,0 +1,131 @@
+"""Validate the canonical chapter order and generated footer boundaries."""
+
+from __future__ import annotations
+
+import json
+import re
+import sys
+from pathlib import Path
+from typing import Any
+
+
+ROOT = Path(__file__).resolve().parents[1]
+NAV_PATH = ROOT / "docs/governance/book-navigation.yaml"
+START = "<!-- chapter-navigation:start -->"
+END = "<!-- chapter-navigation:end -->"
+BLOCK_RE = re.compile(rf"{re.escape(START)}(.*?){re.escape(END)}", re.DOTALL)
+LINK_RE = re.compile(r'<a[^>]+data-chapter-nav="([^"]+)"[^>]+href="([^"]+)"', re.IGNORECASE)
+
+
+def fail(errors: list[str]) -> int:
+    print("BOOK_NAVIGATION_FAILED")
+    for error in errors:
+        print(f"- {error}")
+    return 1
+
+
+def load() -> dict[str, Any]:
+    value = json.loads(NAV_PATH.read_text(encoding="utf-8"))
+    if not isinstance(value, dict):
+        raise ValueError("navigation source must be an object")
+    return value
+
+
+def check_target(
+    errors: list[str],
+    entries: list[dict[str, Any]],
+    current_source: Path,
+    target_index: int,
+    locale: str,
+    relative: str,
+) -> None:
+    item = entries[target_index]
+    path_key = "english_path" if locale == "EN" and item.get("english_path") else "legacy_path"
+    expected_path = str(item[path_key])
+    target = ROOT / expected_path
+    if not target.is_file():
+        errors.append(f"{path_key} does not exist: {expected_path}")
+    resolved = (current_source.parent / relative.split("#", 1)[0]).resolve()
+    if resolved != target.resolve():
+        errors.append(
+            f"{current_source.relative_to(ROOT)}: {relative!r} resolves to "
+            f"{resolved.relative_to(ROOT) if resolved.is_relative_to(ROOT) else resolved}, expected {expected_path}"
+        )
+
+
+def main() -> int:
+    errors: list[str] = []
+    try:
+        document = load()
+    except (OSError, UnicodeError, json.JSONDecodeError, ValueError) as exc:
+        return fail([f"cannot parse {NAV_PATH.relative_to(ROOT)}: {exc}"])
+
+    entries = document.get("chapters")
+    if not isinstance(entries, list) or len(entries) != 22:
+        return fail(["chapters must contain exactly 22 entries"])
+    numbers = [item.get("number") for item in entries if isinstance(item, dict)]
+    if numbers != list(range(1, 23)):
+        errors.append(f"chapter numbers must be 1..22 in order, found {numbers}")
+    ids = [item.get("id") for item in entries if isinstance(item, dict)]
+    if len(set(ids)) != len(ids):
+        errors.append("chapter IDs must be unique")
+    for item in entries:
+        if not isinstance(item, dict):
+            errors.append("each chapter must be an object")
+            continue
+        for key in ("id", "number", "part", "title_en", "title_zh", "legacy_path", "english_status", "status"):
+            if key not in item:
+                errors.append(f"chapter {item.get('number', '?')}: missing {key}")
+        legacy = ROOT / str(item.get("legacy_path", ""))
+        if not legacy.is_file():
+            errors.append(f"legacy chapter path does not exist: {item.get('legacy_path')}")
+        english_path = item.get("english_path")
+        if english_path:
+            if not str(english_path).endswith("-EN.md"):
+                errors.append(f"English path must end in -EN.md: {english_path}")
+            if not (ROOT / str(english_path)).is_file():
+                errors.append(f"English chapter path does not exist: {english_path}")
+            if item.get("english_status") != "source":
+                errors.append(f"chapter {item.get('number')}: English source must be marked source")
+        elif item.get("english_status") != "migration_pending":
+            errors.append(f"chapter {item.get('number')}: missing English source must be migration_pending")
+
+    for index, item in enumerate(entries):
+        if not isinstance(item, dict):
+            continue
+        targets = [(ROOT / str(item["legacy_path"]), "ZH")]
+        if item.get("english_path"):
+            targets.append((ROOT / str(item["english_path"]), "EN"))
+        for source, locale in targets:
+            text = source.read_text(encoding="utf-8") if source.is_file() else ""
+            blocks = BLOCK_RE.findall(text)
+            label = source.relative_to(ROOT)
+            if len(blocks) != 1:
+                errors.append(f"{label}: expected exactly one generated navigation block, found {len(blocks)}")
+                continue
+            links = LINK_RE.findall(blocks[0])
+            kinds = [kind for kind, _ in links]
+            expected_kinds = []
+            if index > 0:
+                expected_kinds.insert(0, "previous")
+            if index + 1 < len(entries):
+                expected_kinds.append("next")
+            if sorted(kinds) != sorted(expected_kinds):
+                errors.append(f"{label}: expected navigation links {expected_kinds}, found {kinds}")
+            if locale == "EN" and index + 1 < len(entries) and not entries[index + 1].get("english_path"):
+                if "migration pending" not in blocks[0]:
+                    errors.append(f"{label}: English link to the untranslated next chapter needs migration pending")
+            for kind, href in links:
+                if kind == "previous" and index > 0:
+                    check_target(errors, entries, source, index - 1, locale, href)
+                elif kind == "next" and index + 1 < len(entries):
+                    check_target(errors, entries, source, index + 1, locale, href)
+
+    if errors:
+        return fail(errors)
+    print("BOOK_NAVIGATION_OK chapters=22 locales=EN,ZH")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

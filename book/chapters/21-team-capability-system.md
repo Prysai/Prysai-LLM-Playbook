@@ -191,3 +191,15 @@ status: "pass | fail | blocked | not_run"
 ```
 
 本实验为 `draft / not run`；本章为 `candidate`。模拟权限配置不包含真实 token、密码、Cookie 或连接信息。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system.md" aria-label="上一章：第 20 章 · 建立个人 Codex 工作系统">← 上一章<br><strong>第 20 章 · 建立个人 Codex 工作系统</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing.md" aria-label="下一章：第 22 章 · 持续更新与未来适应">下一章 →<br><strong>第 22 章 · 持续更新与未来适应</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

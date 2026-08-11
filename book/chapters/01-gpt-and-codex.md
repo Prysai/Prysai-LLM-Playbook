@@ -186,3 +186,15 @@ run-id | 只改变的变量 | 读取范围 | 产生的副作用 | 观察到的�
 ## 来源与更新提示
 
 本章的核心解释属于 Field Guide 原创教学结构；Codex 入口、skills/plugins、权限和模型的产品事实见 [OpenAI Codex 官方基线](../../docs/research/openai-codex-baseline.md)，并需按内容生命周期复核。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"></td>
+      <td align="right"><a data-chapter-nav="next" href="02-first-safe-task.md" aria-label="下一章：第 2 章 · 完成第一个安全、可验证的任务">下一章 →<br><strong>第 2 章 · 完成第一个安全、可验证的任务</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

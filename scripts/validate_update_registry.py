@@ -73,6 +73,7 @@ def main() -> int:
         "skills",
         "evaluations",
         "sources-and-licenses",
+        "book-navigation",
         "public-site",
         "content-status",
         "release-and-rollback",

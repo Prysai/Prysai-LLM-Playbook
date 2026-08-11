@@ -130,3 +130,15 @@
 - 工程方法与外部资产：[`docs/sources/asset-register.md`](../../docs/sources/asset-register.md)，S05 仅作领域参考；本章为原创流程重写，不复制外部 Skill 文本。
 - 易变的框架/API/版本事实：优先查对应项目官方文档和 [OpenAI Codex 官方仓库](https://github.com/openai/codex)，将 URL、版本、访问日期和验证范围写入工程记录。
 - 更新责任：工程轨维护人；每次运行时、依赖、发布流程或权限策略变化复核，或最迟 2026-11-09。章节当前状态：candidate；只有运行时、失败恢复和发布回滚证据齐全，工程交付才可称为 verified 或 production-ready。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="15-research-track.md" aria-label="上一章：第 15 章 · 研究轨：从问题到可审查知识">← 上一章<br><strong>第 15 章 · 研究轨：从问题到可审查知识</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="17-marketing-track.md" aria-label="下一章：第 17 章 · 营销轨：从产品理解到增长实验">下一章 →<br><strong>第 17 章 · 营销轨：从产品理解到增长实验</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

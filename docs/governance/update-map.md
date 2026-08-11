@@ -18,6 +18,19 @@ unverified scope are recorded.
 
 ## Where each kind of change belongs
 
+### The first stop for chapter changes
+
+For a new chapter, a reordered chapter, a renamed chapter, or a newly
+available English source, start with
+[`docs/governance/book-navigation.yaml`](book-navigation.yaml). It is the
+single ordered record for the 22-chapter reading route. After changing it,
+update the affected source and table-of-contents records, then run the
+navigation generator and validator before the broader project checks.
+
+Do not hand-edit a chapter's generated previous/next block. The generator
+keeps the first, middle, and last chapter boundaries consistent and marks an
+English link as `migration pending` when its localized source is not present.
+
 | If you are changing… | Start in… | Canonical content | Required evidence | Finish with… |
 |---|---|---|---|---|
 | A project term or boundary | `CONTEXT.md`, then `docs/charter.md` | `CONTEXT.md` and the relevant chapter | Term boundary and affected links | `validate_project.py`, link check, independent terminology review |

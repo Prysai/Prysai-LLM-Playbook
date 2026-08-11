@@ -365,3 +365,15 @@ sentences.
       would be required before claiming runtime success.
 - [ ] I can report that this chapter is `candidate` and that its comparison
       experiment remains `not_run` until run records and review evidence exist.
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="Chapter navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="06-model-selection-EN.md" aria-label="Previous chapter: Chapter 6 · Model selection is not model worship">← Previous<br><strong>Chapter 6 · Model selection is not model worship</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="08-full-lifecycle-workflow-EN.md" aria-label="Next chapter: Chapter 8 · The complete lifecycle from definition to delivery">Next →<br><strong>Chapter 8 · The complete lifecycle from definition to delivery</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

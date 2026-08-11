@@ -135,3 +135,15 @@ Agent 可以整理产品上下文、产生变体、检查事件命名、计算�
 - 营销领域参考：[`docs/sources/asset-register.md`](../../docs/sources/asset-register.md) 中 S04；本章采用能力簇和实验纪律的原创重写，不复制外部营销 Skill 文本。
 - 隐私、渠道和平台事实：以实际平台的官方开发者/隐私文档、组织政策和当前配置为准；记录 URL、访问日期、适用地区、数据责任人和保留策略。
 - 更新责任：营销轨维护人；产品定位、渠道权限、隐私政策、事件 schema 或归因方法变化时复核，或最迟 2026-11-09。章节当前状态：candidate；营销结论只有在数据质量、隐私和人工复核证据齐全后才可称为 verified。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="16-engineering-track.md" aria-label="上一章：第 16 章 · 工程轨：从想法到可靠软件">← 上一章<br><strong>第 16 章 · 工程轨：从想法到可靠软件</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="18-content-design-data-automation.md" aria-label="下一章：第 18 章 · 内容、设计、数据与自动化轨">下一章 →<br><strong>第 18 章 · 内容、设计、数据与自动化轨</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

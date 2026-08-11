@@ -8,6 +8,46 @@
 
 本轮进入“高信息密度蓝皮书”升级：以英文为默认开发优先级，逐步让全部 reader-facing 文件带语言后缀并保持同语言链接；同时把官方机制、真实用户问题、Skill 工程、评测和视觉阅读体验串成可验证路径。当前仓库仍处于公开开发阶段；书稿、Skill、实验、翻译和评测中的未验证部分必须继续保持 `draft`、`candidate`、`in-progress` 或 `not_run`。当前状态以 `docs/governance/content-status.yaml` 与 `docs/governance/locale-matrix.yaml` 为准。
 
+## 当前切片：Chapter 9 English source
+
+本切片把“证据审查与恢复”从当前中文源文件迁移为英文主线源文件，并让
+README、书籍目录、展示页、学习路径和状态登记指向同一 `-EN` 入口。章节
+保持 `candidate`，实验保持 `not_run`，因为本项目尚未完成声明范围内的
+fresh-context 前测和运行时评测。新增的证据恢复阶梯图是项目原创教学资产，
+只表达方法关系，不作为 Skill、Agent、用户验收或生产运行证据。
+
+### Acceptance criteria
+
+- [x] Chapter 9 EN source contains the problem, objectives, claim-to-evidence
+      mapping, failure/recovery order, breakpoint card, experiment, deliberate
+      failure, transfer, acceptance checklist, and volatile-fact boundaries.
+- [x] All English reader-facing entries link to the `-EN` source, while the
+      legacy Simplified Chinese path remains recorded as a legacy path.
+- [x] The teaching SVG has no external assets or runtime claims and is recorded
+      in `docs/sources/asset-register.md`.
+- [x] Project validators, local links, diff checks, and manual content review
+      pass before commit.
+- [ ] Browser/visual review of the local static server remains pending because
+      the embedded browser blocks loopback URLs with `ERR_BLOCKED_BY_CLIENT`.
+
+## 当前切片：Book navigation and project map
+
+本切片把 22 章的阅读顺序、英文迁移边界和章节页脚导航收敛到
+`docs/governance/book-navigation.yaml`。生成器只维护章节文件中的标记块：首章
+只有“下一章”，中间章有“上一章/下一章”，末章只有“上一章”。项目地图则把
+章节、实验、Skill、研究、治理、质量、来源、案例、评测、脚本和站点的职责写清楚，
+让新贡献者能从目录直接定位内容。
+
+### Acceptance criteria
+
+- [x] The research record cites first-party structure sources and records the
+      reference-only/license boundary.
+- [x] The navigation source contains all 22 chapters in order and distinguishes
+      English source paths from migration-pending legacy paths.
+- [x] The generator is idempotent and the validator checks first/middle/last
+      footer boundaries, path resolution, and migration labels.
+- [x] README, book entry, and English table of contents link to the project map.
+
 ## 阶段任务
 
 ### 阶段 1：地基与命名

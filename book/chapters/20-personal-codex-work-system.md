@@ -159,3 +159,15 @@ status: "pass | fail | not_comparable | blocked | not_run"
 ```
 
 本章不把“记忆功能存在且会自动保存某类内容”当作前提；若未来加入此类断言，必须另行添加直接来源、适用范围和复核记录。`content_status` 仍为 `candidate`，本实验仍为 `draft / not run`。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows.md" aria-label="上一章：第 19 章 · 评估模型和工作流">← 上一章<br><strong>第 19 章 · 评估模型和工作流</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="21-team-capability-system.md" aria-label="下一章：第 21 章 · 建立团队能力系统">下一章 →<br><strong>第 21 章 · 建立团队能力系统</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

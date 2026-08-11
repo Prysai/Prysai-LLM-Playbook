@@ -23,6 +23,9 @@
       "docs/research/field-problems-surface-2026-08-10.md",
       "docs/research/field-problems-forums-2026-08-10.md",
       "docs/research/skill-case-product-context-real-estate-2026-08-11.md",
+      "docs/research/book-navigation-architecture-study-2026-08-11.md",
+      "docs/adr/0013-single-book-navigation-source.md",
+      "docs/project-map-EN.md",
       "docs/quality/real-world-case-integration-review-2026-08-10.md",
       "scripts/validate_content_status.py"
     ]
@@ -76,7 +79,7 @@
       {"id": "chapter-06", "path": "book/chapters/06-model-selection-EN.md", "status": "candidate"},
       {"id": "chapter-07", "path": "book/chapters/07-skills-plugins-and-tools-EN.md", "status": "candidate"},
       {"id": "chapter-08", "path": "book/chapters/08-full-lifecycle-workflow-EN.md", "status": "candidate"},
-      {"id": "chapter-09", "path": "book/chapters/09-verification-and-recovery.md", "status": "candidate"},
+      {"id": "chapter-09", "path": "book/chapters/09-verification-and-recovery-EN.md", "status": "candidate"},
       {"id": "chapter-10", "path": "book/chapters/10-planning-and-slicing.md", "status": "candidate"},
       {"id": "chapter-11", "path": "book/chapters/11-designing-a-skill.md", "status": "candidate"},
       {"id": "chapter-12", "path": "book/chapters/12-agent-loop-and-stop.md", "status": "candidate"},

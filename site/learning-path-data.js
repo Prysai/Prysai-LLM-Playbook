@@ -416,7 +416,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Verification, doubt, and recovery",
             "zh": "验证、怀疑与恢复"
           },
-          "href": "../book/chapters/09-verification-and-recovery.md",
+          "href": "../book/chapters/09-verification-and-recovery-EN.md",
           "relation": "primary"
         },
         {

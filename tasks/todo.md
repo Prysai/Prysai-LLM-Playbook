@@ -4,6 +4,31 @@
 
 ## 当前蓝皮书升级工作
 
+### Book navigation and project map slice
+
+- [x] Research mdBook, Docusaurus, VitePress, WorkBuddyGuide, and Starlight
+      using first-party documentation or fixed source revisions.
+- [x] Record the structure study, source/license boundary, and navigation ADR.
+- [x] Add the canonical 22-chapter order and idempotent footer generator.
+- [x] Add the English project map and connect it to the main reader entries.
+- [x] Run the full project structural validation, local-link check, and
+      generated-navigation check.
+- [ ] Complete browser/visual review of the local static server; the embedded
+      browser currently blocks loopback URLs with `ERR_BLOCKED_BY_CLIENT`.
+- [ ] Publish the navigation slice to `origin/main`.
+
+### Chapter 9 English source slice
+
+- [x] Draft the English source with claim-to-evidence, breakpoint, long-wait,
+      recovery, experiment, deliberate failure, transfer, and acceptance sections.
+- [x] Add and register the original evidence-recovery teaching card.
+- [x] Update English README, book TOC, site entry points, learning-path data,
+      content matrix, content status, and locale matrix.
+- [x] Run the full project structural validation and local-link check.
+- [ ] Complete browser/visual review of the local static server; the embedded
+      browser currently blocks loopback URLs with `ERR_BLOCKED_BY_CLIENT`.
+- [ ] Publish the candidate slice to `origin/main`.
+
 - [ ] 等待并审阅 LLM 机制、真实论坛问题、教程结构和六语种架构四条研究档案；所有结论保留 URL、访问日期、适用范围和证据等级。
 - [ ] 以“英文源文件优先、所有 reader-facing 文件带 `-EN/-ZH/-ES/-JA/-KO/-DE` 后缀”为硬约束，继续迁移章节、实验和 Skill 文档；每个迁移单元的 6 个槽位必须在矩阵中显式登记。
 - [ ] 把现有真实问题研究从索引推进到可阅读案例卡：症状、环境、用户报告、官方边界、安全检查、停止条件、复现状态、章节/实验/评测落点。

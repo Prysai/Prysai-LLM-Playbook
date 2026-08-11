@@ -1,0 +1,293 @@
+{
+  "schema_version": "1",
+  "content_id": "book-navigation",
+  "generated_at": "2026-08-11",
+  "status": "candidate",
+  "description": "Canonical reading order for the 22-chapter Field Guide.",
+  "owner": "curriculum-maintainer",
+  "default_locale": "EN",
+  "legacy_locale": "ZH",
+  "generator": "scripts/build_book_navigation.py",
+  "generated_block": "<!-- chapter-navigation:start --> ... <!-- chapter-navigation:end -->",
+  "policy": {
+    "order_source": "This file owns chapter order; filenames, directory enumeration, and page-local links do not.",
+    "english_navigation": "Use the English source when it exists. If it does not exist, link to the legacy current source and label the transition migration pending.",
+    "legacy_navigation": "Use the current unsuffixed chapter source so the existing Simplified Chinese reading path remains continuous.",
+    "footer": "The generated footer contains only previous and next chapter links. The table of contents remains the dedicated route index.",
+    "boundary": "This source controls chapter navigation only. Learning-level ownership remains in learning-path.yaml, and translation identity remains in locale-matrix.yaml."
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "number": "I",
+      "title_en": "From understanding GPT to the first safe use",
+      "title_zh": "从认识 GPT 到第一次安全使用",
+      "chapters": ["chapter-01", "chapter-02", "chapter-03", "chapter-04", "chapter-05", "chapter-06"]
+    },
+    {
+      "id": "part-2",
+      "number": "II",
+      "title_en": "From user to workflow designer",
+      "title_zh": "从使用者到工作流设计者",
+      "chapters": ["chapter-07", "chapter-08", "chapter-09", "chapter-10", "chapter-11", "chapter-12", "chapter-13"]
+    },
+    {
+      "id": "part-3",
+      "number": "III",
+      "title_en": "Skills, tools, and professional practice",
+      "title_zh": "技能、工具与专业实践",
+      "chapters": ["chapter-14", "chapter-15", "chapter-16", "chapter-17", "chapter-18"]
+    },
+    {
+      "id": "part-4",
+      "number": "IV",
+      "title_en": "From proficient use to organizational capability",
+      "title_zh": "从熟练使用到组织化",
+      "chapters": ["chapter-19", "chapter-20", "chapter-21", "chapter-22"]
+    }
+  ],
+  "chapters": [
+    {
+      "id": "chapter-01",
+      "number": 1,
+      "part": "part-1",
+      "title_en": "Understand GPT before understanding how Codex works",
+      "title_zh": "先理解 GPT，再理解 Codex 的工作原理",
+      "english_path": "book/chapters/01-gpt-and-codex-EN.md",
+      "legacy_path": "book/chapters/01-gpt-and-codex.md",
+      "english_status": "source",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-02",
+      "number": 2,
+      "part": "part-1",
+      "title_en": "Complete a first safe, verifiable task",
+      "title_zh": "完成第一个安全、可验证的任务",
+      "english_path": "book/chapters/02-first-safe-task-EN.md",
+      "legacy_path": "book/chapters/02-first-safe-task.md",
+      "english_status": "source",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-03",
+      "number": 3,
+      "part": "part-1",
+      "title_en": "Turn a wish into a task protocol",
+      "title_zh": "把愿望变成任务协议",
+      "english_path": "book/chapters/03-task-protocol-EN.md",
+      "legacy_path": "book/chapters/03-task-protocol.md",
+      "english_status": "source",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-04",
+      "number": 4,
+      "part": "part-1",
+      "title_en": "Context, permissions, and the Agent action boundary",
+      "title_zh": "上下文、权限与 Agent 的行动边界",
+      "english_path": "book/chapters/04-context-permissions-and-agent-EN.md",
+      "legacy_path": "book/chapters/04-context-permissions-and-agent.md",
+      "english_status": "source",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-05",
+      "number": 5,
+      "part": "part-1",
+      "title_en": "Choose the right Codex surface",
+      "title_zh": "选择正确的 Codex 工作面",
+      "english_path": "book/chapters/05-choose-the-codex-surface-EN.md",
+      "legacy_path": "book/chapters/05-choose-the-codex-surface.md",
+      "english_status": "source",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-06",
+      "number": 6,
+      "part": "part-1",
+      "title_en": "Model selection is not model worship",
+      "title_zh": "模型选择不是模型崇拜",
+      "english_path": "book/chapters/06-model-selection-EN.md",
+      "legacy_path": "book/chapters/06-model-selection.md",
+      "english_status": "source",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-07",
+      "number": 7,
+      "part": "part-2",
+      "title_en": "How Skills, Plugins, MCP, and tools divide the work",
+      "title_zh": "Skill、Plugin、MCP 和工具如何分工",
+      "english_path": "book/chapters/07-skills-plugins-and-tools-EN.md",
+      "legacy_path": "book/chapters/07-skills-plugins-and-tools.md",
+      "english_status": "source",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-08",
+      "number": 8,
+      "part": "part-2",
+      "title_en": "The complete lifecycle from definition to delivery",
+      "title_zh": "从定义到交付的完整生命周期",
+      "english_path": "book/chapters/08-full-lifecycle-workflow-EN.md",
+      "legacy_path": "book/chapters/08-full-lifecycle-workflow.md",
+      "english_status": "source",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-09",
+      "number": 9,
+      "part": "part-2",
+      "title_en": "Verification, doubt, and recovery",
+      "title_zh": "验证、怀疑与恢复",
+      "english_path": "book/chapters/09-verification-and-recovery-EN.md",
+      "legacy_path": "book/chapters/09-verification-and-recovery.md",
+      "english_status": "source",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-10",
+      "number": 10,
+      "part": "part-2",
+      "title_en": "Planning and vertical slicing",
+      "title_zh": "规划与竖向切片",
+      "english_path": null,
+      "legacy_path": "book/chapters/10-planning-and-slicing.md",
+      "english_status": "migration_pending",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-11",
+      "number": 11,
+      "part": "part-2",
+      "title_en": "Design a genuinely useful Skill",
+      "title_zh": "设计一个真正有用的 Skill",
+      "english_path": null,
+      "legacy_path": "book/chapters/11-designing-a-skill.md",
+      "english_status": "migration_pending",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-12",
+      "number": 12,
+      "part": "part-2",
+      "title_en": "The Agent loop, state, and stopping conditions",
+      "title_zh": "Agent 的循环、状态和停止条件",
+      "english_path": null,
+      "legacy_path": "book/chapters/12-agent-loop-and-stop.md",
+      "english_status": "migration_pending",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-13",
+      "number": 13,
+      "part": "part-2",
+      "title_en": "Action boundaries for files, terminals, browsers, and GitHub",
+      "title_zh": "文件、终端、浏览器与 GitHub 的行动边界",
+      "english_path": null,
+      "legacy_path": "book/chapters/13-action-boundaries.md",
+      "english_status": "migration_pending",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-14",
+      "number": 14,
+      "part": "part-3",
+      "title_en": "Discover, install, and audit external Skills",
+      "title_zh": "如何发现、安装和审查外部 Skill",
+      "english_path": null,
+      "legacy_path": "book/chapters/14-discover-and-audit-skills.md",
+      "english_status": "migration_pending",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-15",
+      "number": 15,
+      "part": "part-3",
+      "title_en": "Research track: from question to auditable knowledge",
+      "title_zh": "研究轨：从问题到可审查知识",
+      "english_path": null,
+      "legacy_path": "book/chapters/15-research-track.md",
+      "english_status": "migration_pending",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-16",
+      "number": 16,
+      "part": "part-3",
+      "title_en": "Engineering track: from idea to reliable software",
+      "title_zh": "工程轨：从想法到可靠软件",
+      "english_path": null,
+      "legacy_path": "book/chapters/16-engineering-track.md",
+      "english_status": "migration_pending",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-17",
+      "number": 17,
+      "part": "part-3",
+      "title_en": "Marketing track: from product understanding to growth experiments",
+      "title_zh": "营销轨：从产品理解到增长实验",
+      "english_path": null,
+      "legacy_path": "book/chapters/17-marketing-track.md",
+      "english_status": "migration_pending",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-18",
+      "number": 18,
+      "part": "part-3",
+      "title_en": "Content, design, data, and automation track",
+      "title_zh": "内容、设计、数据与自动化轨",
+      "english_path": null,
+      "legacy_path": "book/chapters/18-content-design-data-automation.md",
+      "english_status": "migration_pending",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-19",
+      "number": 19,
+      "part": "part-4",
+      "title_en": "Evaluate models and workflows",
+      "title_zh": "评估模型和工作流",
+      "english_path": null,
+      "legacy_path": "book/chapters/19-evaluate-models-and-workflows.md",
+      "english_status": "migration_pending",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-20",
+      "number": 20,
+      "part": "part-4",
+      "title_en": "Build a personal Codex work system",
+      "title_zh": "建立个人 Codex 工作系统",
+      "english_path": null,
+      "legacy_path": "book/chapters/20-personal-codex-work-system.md",
+      "english_status": "migration_pending",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-21",
+      "number": 21,
+      "part": "part-4",
+      "title_en": "Build a team capability system",
+      "title_zh": "建立团队能力系统",
+      "english_path": null,
+      "legacy_path": "book/chapters/21-team-capability-system.md",
+      "english_status": "migration_pending",
+      "status": "candidate"
+    },
+    {
+      "id": "chapter-22",
+      "number": 22,
+      "part": "part-4",
+      "title_en": "Continuous update and future-proofing",
+      "title_zh": "持续更新与未来适应",
+      "english_path": null,
+      "legacy_path": "book/chapters/22-continuous-update-and-future-proofing.md",
+      "english_status": "migration_pending",
+      "status": "candidate"
+    }
+  ]
+}

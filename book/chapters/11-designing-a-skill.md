@@ -150,3 +150,15 @@ references/scripts/assets：只有在当前分支需要时才加载或执行
 ## 来源与更新提示
 
 Skill 的触发契约、渐进披露、失败处理、任务集评测和证据边界是稳定方法；具体调用语法、发现范围、目录结构、插件能力和资源加载行为属于易变事实。产品事实请以[OpenAI Codex 官方基线](../../docs/research/openai-codex-baseline.md)及其中列出的当前官方文档为准；现实问题请回到[现场研究记录](../../docs/research/field-problems-codex.md)查看证据等级、原始 URL 和调查限制。吸收外部 Skill、代码或资产前，按项目的[资产与来源台账](../../docs/sources/asset-register.md)记录来源、许可、适用范围和复核日期。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing.md" aria-label="上一章：第 10 章 · 规划与竖向切片">← 上一章<br><strong>第 10 章 · 规划与竖向切片</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop.md" aria-label="下一章：第 12 章 · Agent 的循环、状态和停止条件">下一章 →<br><strong>第 12 章 · Agent 的循环、状态和停止条件</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

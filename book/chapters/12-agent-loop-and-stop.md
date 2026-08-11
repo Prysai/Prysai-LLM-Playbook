@@ -169,3 +169,15 @@ pause_and_inspect → side_effect_unknown? → stop blocked/unverified
 ## 来源与更新提示
 
 可观察循环、显式状态、有限重试和停止条件是稳定方法；具体 Agent 界面、Working 状态、模型容量、工具语义、审批流程和权限默认值属于易变事实。产品事实请以[OpenAI Codex 官方基线](../../docs/research/openai-codex-baseline.md)及其中列出的当前官方文档为准；现场案例请以[研究记录](../../docs/research/field-problems-codex.md)的用户报告、独立复现、官方确认和本地复现标记为准。每次工具或产品更新后，重新执行本章的缺失输入和重复失败变体，记录入口、版本、环境、证据和复核日期；在没有运行证据前保持 `draft` 或 `candidate`，不要写成 `verified`。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill.md" aria-label="上一章：第 11 章 · 设计一个真正有用的 Skill">← 上一章<br><strong>第 11 章 · 设计一个真正有用的 Skill</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="13-action-boundaries.md" aria-label="下一章：第 13 章 · 文件、终端、浏览器与 GitHub 的行动边界">下一章 →<br><strong>第 13 章 · 文件、终端、浏览器与 GitHub 的行动边界</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

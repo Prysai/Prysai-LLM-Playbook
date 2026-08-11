@@ -177,3 +177,15 @@ Skill、Plugin、connector 和 MCP 的可用范围、manifest 和调用方式属
 ## 本章验收
 
 学习者能用自己的话区分 Skill、Plugin、MCP、connector、工具、脚本和模板；能提交包含全部固定字段的安装前审查包；能让一个候选保持 `recommendation-only`、让许可或回滚不明的候选正确 `blocked`；能区分文件存在、被发现、被加载、被采用和被验证，并为最小组合安排批准、行为验证、owner 与回滚。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="06-model-selection.md" aria-label="上一章：第 6 章 · 模型选择不是模型崇拜">← 上一章<br><strong>第 6 章 · 模型选择不是模型崇拜</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="08-full-lifecycle-workflow.md" aria-label="下一章：第 8 章 · 从定义到交付的完整生命周期">下一章 →<br><strong>第 8 章 · 从定义到交付的完整生命周期</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

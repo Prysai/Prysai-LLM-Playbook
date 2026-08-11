@@ -134,3 +134,15 @@
 - 外部资产与许可证边界：[`docs/sources/asset-register.md`](../../docs/sources/asset-register.md)，S01、S03、S06；没有明确许可的图像、代码、模板或嵌套资产只作参考，不直接复制。
 - 文档、PDF、表格、浏览器和外部服务的最终形态规则：以所用工具/服务的官方文档和当前版本为准，记录 URL、访问日期、版本和适用范围。
 - 更新责任：内容与自动化轨维护人；渲染器、格式、浏览器、外部 API、许可证或权限变化时复核，或最迟 2026-11-09。章节当前状态：candidate；产物只有通过最终形态、数据质量、隐私、许可证、回滚和在线证据后，才能分别称为 verified 或 production-ready。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="17-marketing-track.md" aria-label="上一章：第 17 章 · 营销轨：从产品理解到增长实验">← 上一章<br><strong>第 17 章 · 营销轨：从产品理解到增长实验</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="19-evaluate-models-and-workflows.md" aria-label="下一章：第 19 章 · 评估模型和工作流">下一章 →<br><strong>第 19 章 · 评估模型和工作流</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

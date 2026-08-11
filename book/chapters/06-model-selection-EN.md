@@ -379,3 +379,15 @@ sentences.
       prove an overall ranking or value-for-money claim.
 - [ ] I can state that this chapter is still `candidate` and its experiment and
       model evaluation are still `not_run`.
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="Chapter navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="05-choose-the-codex-surface-EN.md" aria-label="Previous chapter: Chapter 5 · Choose the right Codex surface">← Previous<br><strong>Chapter 5 · Choose the right Codex surface</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="07-skills-plugins-and-tools-EN.md" aria-label="Next chapter: Chapter 7 · How Skills, Plugins, MCP, and tools divide the work">Next →<br><strong>Chapter 7 · How Skills, Plugins, MCP, and tools divide the work</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

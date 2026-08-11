@@ -373,3 +373,15 @@ invocation syntax, model availability, permissions, and service behaviour must
 be rechecked against the current first-party source before being treated as
 current facts. Chapter status remains candidate; the linked lab remains draft
 and not_run until a real run record and independent review exist.
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="Chapter navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"></td>
+      <td align="right"><a data-chapter-nav="next" href="02-first-safe-task-EN.md" aria-label="Next chapter: Chapter 2 · Complete a first safe, verifiable task">Next →<br><strong>Chapter 2 · Complete a first safe, verifiable task</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

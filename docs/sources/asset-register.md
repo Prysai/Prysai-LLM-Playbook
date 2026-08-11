@@ -36,6 +36,8 @@
 | S22 | `assets/teaching/*.svg` | Prysai Lab 原创教学卡，创建于 2026-08-11 | 两张项目内 SVG：模型选择测试、Skill 到可观察输出；仅使用内嵌几何图形、文字、渐变和网格，无外部图片、字体、图标或远程请求 | 项目原创资产；仓库发行许可证尚未单独确定 | `original-rewrite / project-owned`：用于本项目教学和 README；不标记为第三方素材，不复制 WorkBuddyGuide 或其他项目视觉表达 |
 | S23 | `examples/skill-sandbox/product-context-real-estate/` + `assets/cases/product-context-real-estate-desktop.png` | Prysai Lab 原创合成案例，创建于 2026-08-11 | fictional brief、Product Context 草稿、原创 HTML/CSS/inline SVG 和本地浏览器截图；无真实房产、个人数据、外部媒体、CDN、分析或表单 | 项目原创资产；案例只可作为本仓库的合成教学材料，截图的证据范围限于记录的本地渲染视口 | `original-rewrite / project-owned`：可用于本项目案例教学；不得包装为真实客户、市场、库存、转化或 Skill runtime 证据 |
 | S24 | `assets/teaching/lifecycle-checkpoints.svg` | Prysai Lab 原创教学卡，创建于 2026-08-11 | 七阶段生命周期与 CP0–CP4 evidence exit 的原创 SVG 教学图；仅使用内嵌几何图形、文字、渐变、网格和滤镜，无外部图片、字体、图标或远程请求 | 项目原创资产；仓库发行许可证尚未单独确定 | `original-rewrite / project-owned`：可用于本项目 Chapter 8 和 README 教学；不标记为第三方素材，不把图示当作 Skill、Agent 或外部服务运行证据 |
+| S25 | `assets/teaching/evidence-recovery-ladder.svg` | Prysai Lab 原创教学卡，创建于 2026-08-11 | 断言强度、证据层、缺口标记和恢复/停止选择的原创 SVG 教学图；仅使用内嵌几何图形、文字、渐变、网格和滤镜，无外部图片、字体、图标或远程请求 | 项目原创资产；仓库发行许可证尚未单独确定 | `original-rewrite / project-owned`：可用于本项目 Chapter 9 和 README 教学；不标记为运行、用户验收或生产就绪证据 |
+| S26 | `docs/research/book-navigation-architecture-study-2026-08-11.md` | mdBook、Rust Book、Docusaurus、VitePress、WorkBuddyGuide、Astro Starlight 的官方文档/固定源码研究 | 只记录章节顺序、sidebar、分页、locale 和项目结构的原创比较；没有复制外部正文、代码、图片、字体、图标或品牌资产 | `reference-only`：结构研究；外部项目的根许可证不自动覆盖其媒体、投稿内容或品牌表达 | 用于本项目的 canonical chapter order、项目地图和生成式页脚；不复制外部框架实现，不把研究本身写成运行或用户效果证据 |
 
 ## 归档指纹
 

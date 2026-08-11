@@ -165,3 +165,15 @@ HTTP 状态、长上下文、网络等待、模型推理或上游服务问题可
 ## 来源与更新提示
 
 完成状态词汇和证据原则是稳定方法；命令、入口和模型行为属于易变事实。使用[评测框架](../../docs/quality/evaluation-framework.md)、[官方基线](../../docs/research/openai-codex-baseline.md)和[网页田野研究](../../docs/research/web-field-problems-2026-08-10.md)复核具体操作。公开 Issue 的版本、页面状态和维护者回复会变化；教材只吸收可迁移的证据纪律，不把单个报告写成产品保证。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow.md" aria-label="上一章：第 8 章 · 从定义到交付的完整生命周期">← 上一章<br><strong>第 8 章 · 从定义到交付的完整生命周期</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing.md" aria-label="下一章：第 10 章 · 规划与竖向切片">下一章 →<br><strong>第 10 章 · 规划与竖向切片</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->
