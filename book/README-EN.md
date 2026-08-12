@@ -1,7 +1,9 @@
 # Codex: From First Task to Real Work — Book Guide
 
-> English source-locale entry point. The chapter corpus is not yet fully
-> translated or runtime-verified.
+> English source-locale entry point. All 22 chapter identities now have
+> authored `-EN` sources; the remaining migration notices apply to labs whose
+> English source has not yet been authored. No lab or reader route is claimed
+> as runtime-verified until its evidence record exists.
 
 <!-- language-switcher:start -->
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
@@ -56,9 +58,14 @@ currently `draft` with `run_status: not_run`.
 - [Real-user problem research index — locale-neutral research](../docs/research/field-problems-index-2026-08-10.md)
 
 The English table-of-contents entry now exists as `table-of-contents-EN.md`.
-English chapter sources cover Chapters 1–22. English lab sources currently
-cover Labs 001, 002, 007, 011, and 014–017; the remaining lab bodies keep their
-current source path and are labelled as migration-pending in the index.
+English chapter sources cover Chapters 1–22. Thirteen labs have canonical
+English sources. Labs 005, 008, 009, and 010 keep their current source path and
+are labelled as migration-pending in the index.
+
+The current canonical examples are [Chapter 12](chapters/12-agent-loop-and-stop-EN.md)
+and [Lab 006](labs/lab-006-agent-stop-conditions-EN.md), which show the
+state, stop-condition, recovery, and handoff model used by the later learning
+path.
 
 ## The learning path
 

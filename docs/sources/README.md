@@ -12,6 +12,7 @@ boundary is unclear, keep the material reference-only and write an original
 explanation.
 
 - [Asset and source register](asset-register.md)
+- [Licensing and asset boundary](licensing.md)
 - [Archive audit](archive-audit-2026-08-09.json)
 - [Skill integration decisions](skill-integration-decisions.md)
 - [Skill candidate catalog](skill-candidate-catalog.md)

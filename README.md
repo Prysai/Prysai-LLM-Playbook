@@ -6,6 +6,13 @@
 
 # Codex: From First Task to Real Work
 
+License: curriculum text and teaching assets are CC BY-NC 4.0 unless a file
+states otherwise. See [`LICENSE`](LICENSE) and the [licensing boundary](docs/sources/licensing.md).
+
+> **Release decision:** `candidate` only. Static checks pass, but learning
+> runs, evaluation runs, and independent review evidence are still pending.
+> This is a public development candidate, not a finished course.
+
 > An English-first, evidence-led field guide for turning GPT and Codex into a
 > dependable way to do real work.
 
@@ -80,13 +87,40 @@ public Pages URL is currently enabled.
 | Understand the system | [Chapter 1](book/chapters/01-gpt-and-codex-EN.md) + [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) | A mental model that separates GPT, Codex, tools, Skills, and Agents |
 | Complete a first safe task | [Chapter 2 EN source](book/chapters/02-first-safe-task-EN.md) + [Lab 001 EN source](book/labs/lab-001-first-safe-task-EN.md) | A reversible diff, a focused check, and an explicit unverified list |
 | Design a reliable request | [Chapter 3 EN source](book/chapters/03-task-protocol-EN.md) + [Lab 002 EN source](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop, and recovery conditions |
-| Review whether “done” is real | [Evidence review lab — English migration pending — current source](book/labs/lab-003-evidence-review.md) + [Evaluation framework](docs/quality/evaluation-framework.md) | A claim-to-evidence table, not just a polished response |
+| Review whether “done” is real | [Evidence review lab](book/labs/lab-003-evidence-review-EN.md) + [Evaluation framework](docs/quality/evaluation-framework.md) | A claim-to-evidence table, not just a polished response |
 | Choose or build a Skill | [Skill registry](docs/skill-registry.md) + [Skill quality standard](docs/quality/skill-quality-standard.md) | A bounded, testable method with dependencies and rollback |
 | Learn from field failures | [Real-world problem index](docs/research/field-problems-index-2026-08-10.md) | A symptom, safe first check, fallback, and evidence classification |
 
 The recommended first slice is intentionally small: use a sandbox, inspect
 before editing, make one reversible change, run one focused check, preserve the
 diff and output, and record what the run did not prove.
+
+## Read the status before the promise
+
+The inventory below describes repository state, not learner outcomes. A large
+table of contents must not be mistaken for a tested course.
+
+| Evidence layer | Current state | Missing evidence |
+|---|---|---|
+| English chapters | 22 canonical sources | Fresh chapter review and learner evidence |
+| English labs | 13 canonical sources; 4 migration-pending | English sources for Labs 005, 008, 009, and 010 |
+| Practice runs | 17 labs, all `draft / not_run` | Fixed inputs, logs, artifacts, failure branches, independent reruns |
+| Evaluation | 39 fixtures, `not_run / static_structure_only` | Scored executions, thresholds, reviewer records |
+| Locales | English source plus five migration routes | Actual translations and language review |
+| Release | `candidate` | License, runtime evidence, content review, deployment checks |
+
+The [quality register](docs/quality/quality-register.md) is the current defect
+ledger. Passing CI does not close a learning, licensing, or deployment finding.
+
+## What this project refuses to claim
+
+This guide does not treat a generated answer as a verified result. A directory
+does not prove a Skill ran, a product name does not prove access, and a polished
+screenshot does not prove a live system. It also does not claim six-language
+completion: most non-English content remains a route or translation slice.
+
+If a diff, command output, source record, screenshot, failure attempt, or
+reviewer note does not exist, the honest label is `not_run` or `unverified`.
 
 ## The operating model
 

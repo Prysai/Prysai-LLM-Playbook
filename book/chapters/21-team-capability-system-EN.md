@@ -1,3 +1,5 @@
+<!-- content_id: chapter-21-team-capability-system | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-12 -->
+
 # Chapter 21: Build a Team Capability System
 
 > `content_status: candidate`

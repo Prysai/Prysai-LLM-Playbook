@@ -9,6 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = (
+    "LICENSE",
     "AGENTS.md",
     "CONTEXT.md",
     "README.md",
@@ -21,6 +22,7 @@ REQUIRED = (
     "docs/roadmap.md",
     "docs/research/openai-codex-baseline.md",
     "docs/sources/asset-register.md",
+    "docs/sources/licensing.md",
     "docs/sources/archive-audit-2026-08-09.json",
     "docs/governance/content-lifecycle.md",
     "docs/governance/update-map.md",
@@ -43,6 +45,7 @@ REQUIRED = (
     "docs/governance/contribution-model.md",
     "docs/quality/skill-quality-standard.md",
     "docs/quality/evaluation-framework.md",
+    "docs/quality/quality-register.md",
     "book/table-of-contents.md",
     "book/labs/README.md",
     "site/index.html",
@@ -55,6 +58,7 @@ REQUIRED = (
     "scripts/build_pages_artifact.py",
     "scripts/validate_book_navigation.py",
     "scripts/validate_project_structure.py",
+    "scripts/validate_content_completeness.py",
 )
 
 

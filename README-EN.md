@@ -6,6 +6,13 @@
 
 # Codex: From First Task to Real Work
 
+License: curriculum text and teaching assets are CC BY-NC 4.0 unless a file
+states otherwise. See [`LICENSE`](LICENSE) and the [licensing boundary](docs/sources/licensing.md).
+
+> **Release decision:** `candidate` only. Static checks pass, but learning
+> runs, evaluation runs, and independent review evidence are still pending.
+> This is a public development candidate, not a finished course.
+
 > An English-first, evidence-led field guide for turning GPT and Codex from a
 > clever answer generator into a dependable way to do real work.
 
@@ -48,10 +55,10 @@ copied prompts and Skills.
 | Understand what GPT, Codex, tools, Skills, and Agents actually are | [Chapter 1 — Understand GPT before Codex](book/chapters/01-gpt-and-codex-EN.md) + [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) | A usable mental model and a list of claims you refuse to infer without evidence |
 | Complete a first task safely | [Chapter 2 EN source](book/chapters/02-first-safe-task-EN.md) + [Lab 001 EN source](book/labs/lab-001-first-safe-task-EN.md) | One small, reversible diff, a focused check, and an explicit unverified list |
 | Turn a vague request into something an Agent can execute | [Chapter 3 — task protocol](book/chapters/03-task-protocol-EN.md) + [Lab 002](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop conditions, and failure handling |
-| Stop trusting “done” too early | [Chapter 9 — Verification, doubt, and recovery](book/chapters/09-verification-and-recovery-EN.md) + [Lab 003 — English migration pending — current source](book/labs/lab-003-evidence-review.md) | A claim-to-evidence review that catches wrong files, missing tests, and scope gaps |
+| Stop trusting “done” too early | [Chapter 9 — Verification, doubt, and recovery](book/chapters/09-verification-and-recovery-EN.md) + [Lab 003](book/labs/lab-003-evidence-review-EN.md) | A claim-to-evidence review that catches wrong files, missing tests, and scope gaps |
 | Choose or design a Skill | [Skill registry](docs/skill-registry.md) + [Skill quality standard](docs/quality/skill-quality-standard.md) | A bounded Skill contract with triggers, exclusions, dependencies, rollback, and tests |
 | Learn from failures people actually report | [Real-world problem index](docs/research/field-problems-index-2026-08-10.md) | A symptom, a safe first check, a narrower fallback, and an honest evidence level |
-| Turn a personal method into team capability | [Team capability system — English migration pending](book/chapters/21-team-capability-system.md) + [Contribution model](docs/governance/contribution-model.md) | Ownership, sources, permissions, evaluation, maintenance, and rollback |
+| Turn a personal method into team capability | [Chapter 21 — team capability system](book/chapters/21-team-capability-system-EN.md) + [Contribution model](docs/governance/contribution-model.md) | Ownership, sources, permissions, evaluation, maintenance, and rollback |
 
 The most useful first slice is deliberately small: read Chapter 2, run Lab
 001 in a sandbox, keep the diff and command output, then write down what the
@@ -173,15 +180,15 @@ state, not a marketing promise.
 | **L0 · Observer** | Separate GPT, models, Codex, context, tools, Skills, and Agents before attributing an outcome | [Chapter 1](book/chapters/01-gpt-and-codex-EN.md) · [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) |
 | **L1 · Safe user** | Complete a reversible, observable task and distinguish a diff from proof | [Chapter 2 EN source](book/chapters/02-first-safe-task-EN.md) · [Lab 001 EN source](book/labs/lab-001-first-safe-task-EN.md) |
 | **L2 · Task designer** | Turn a wish into a protocol with relevant context, least authority, acceptance, and failure handling | [Chapter 3](book/chapters/03-task-protocol-EN.md) · [Lab 002](book/labs/lab-002-task-protocol-EN.md) |
-| **L3 · Workflow designer** | Run a complete workflow with stages, checkpoints, recovery, and delivery evidence | [Chapters 7–13 — Chapters 7–9 EN sources; Chapters 10–13 migration pending](book/table-of-contents-EN.md) · [Lab 013 — English migration pending — current source](book/labs/lab-013-l3-vertical-slice.md) |
-| **L4 · Capability builder** | Select, compose, install, and improve Skills and tools by fit, risk, license, and verification cost | [Skill registry](docs/skill-registry.md) · [Chapter 11 — migration pending](book/chapters/11-designing-a-skill.md) |
-| **L5 · Evidence reviewer** | Test completion claims with positive, boundary, failure, and transfer cases | [Evaluation framework](docs/quality/evaluation-framework.md) · [Chapter 19 — migration pending](book/chapters/19-evaluate-models-and-workflows.md) |
-| **L6 · Team coach** | Turn a personal method into a versioned team capability with ownership and rollback | [Chapter 20–22 — migration pending](book/table-of-contents-EN.md) · [Contribution model](docs/governance/contribution-model.md) |
+| **L3 · Workflow designer** | Run a complete workflow with stages, checkpoints, recovery, and delivery evidence | [Chapters 7–13 — English sources](book/table-of-contents-EN.md) · [Lab 013](book/labs/lab-013-l3-vertical-slice-EN.md) |
+| **L4 · Capability builder** | Select, compose, install, and improve Skills and tools by fit, risk, license, and verification cost | [Chapters 11 and 14–18 — English sources](book/table-of-contents-EN.md) · [Skill registry](docs/skill-registry.md) |
+| **L5 · Evidence reviewer** | Test completion claims with positive, boundary, failure, and transfer cases | [Chapter 19 — English source](book/chapters/19-evaluate-models-and-workflows-EN.md) · [Evaluation framework](docs/quality/evaluation-framework.md) |
+| **L6 · Team coach** | Turn a personal method into a versioned team capability with ownership and rollback | [Chapters 20–22 — English sources](book/table-of-contents-EN.md) · [Contribution model](docs/governance/contribution-model.md) |
 
 “Migration pending” remains explicit wherever an English source has not yet
- been authored. Chapters 1–9 and Labs 001–002, 007, and 011 now have canonical
-`-EN` sources; the remaining unsuffixed links in this README are deliberately
-labelled as migration paths until their English files exist.
+been authored. All 22 chapters now have canonical `-EN` sources. Thirteen labs
+also have canonical English sources. Labs 005, 008, 009, and 010 remain on
+explicit migration paths until their English files exist and pass review.
 
 ## What a chapter, lab, or Skill must contain
 
@@ -304,7 +311,7 @@ repository; they do not describe learning outcomes.
 | Area | Current state | What the state means |
 |---|---|---|
 | Project | `candidate` | The product skeleton and core contracts exist; broad independent evidence is still being built |
-| Chapters | 22 structured chapters · `candidate` | The corpus is substantial, but most chapter bodies still need English source migration and fresh review |
+| Chapters | 22 structured chapters · `candidate` | Canonical English sources exist, but runtime exercises and broad independent review remain incomplete |
 | Labs | 17 labs · `draft` · `run_status: not_run` | The contracts exist; the repository does not claim that every lab has been freshly executed |
 | Skills | 7 project Skills · `candidate` | Structural checks pass; fresh-context evidence is partial and remains visible in the registry |
 | Evaluation fixtures | 39 fixtures · `candidate` · `not_run` | The task set is defined; model execution logs are not being implied |
@@ -314,6 +321,9 @@ repository; they do not describe learning outcomes.
 The [current status source](docs/governance/content-status.yaml) is authoritative
 for evidence-backed maturity. The [current-state review](docs/quality/current-state-review-2026-08-09.md)
 explains the gaps behind the labels.
+
+The [current quality register](docs/quality/quality-register.md) is the
+actionable defect ledger. Open P0/P1 items block a verified release.
 
 ## English first, with explicit language identity
 

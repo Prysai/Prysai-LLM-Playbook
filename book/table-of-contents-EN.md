@@ -94,7 +94,7 @@ Understand the method, connection, execution, and distribution layers; choose
 the smallest effective capability combination. **content_status:** `candidate`
 
 - Chapter: [English source](chapters/07-skills-plugins-and-tools-EN.md)
-- Experiment: [lab-004 — migration pending — current source path](labs/lab-004-skill-selection.md)
+- Experiment: [Lab 004 — EN source](labs/lab-004-skill-selection-EN.md)
 
 ### Chapter 8 — The complete lifecycle from definition to delivery
 
@@ -103,7 +103,7 @@ maintenance, with vertical slices that remain verifiable. **content_status:**
 `candidate`
 
 - Chapter: [English source](chapters/08-full-lifecycle-workflow-EN.md)
-- Primary experiment: [lab-013 — migration pending — current source path](labs/lab-013-l3-vertical-slice.md)
+- Primary experiment: [Lab 013 — EN source](labs/lab-013-l3-vertical-slice-EN.md)
 - Supporting experiment: [lab-009 — migration pending — current source path](labs/lab-009-engineering-lifecycle.md)
 
 ### Chapter 9 — Verification, doubt, and recovery
@@ -112,7 +112,7 @@ Break completion claims into claims and evidence; handle uncertainty, failure,
 and recovery. **content_status:** `candidate`
 
 - Chapter: [English source](chapters/09-verification-and-recovery-EN.md)
-- Experiment: [lab-003 — migration pending — current source path](labs/lab-003-evidence-review.md)
+- Experiment: [Lab 003 — EN source](labs/lab-003-evidence-review-EN.md)
 
 ### Chapter 10 — Planning and vertical slicing
 
@@ -120,7 +120,7 @@ Break a large goal into delivery slices with clear dependencies, runnable
 steps, and inspectable checks. **content_status:** `candidate`
 
 - Chapter: [English source](chapters/10-planning-and-slicing-EN.md)
-- Experiments: [Lab 002 — EN source](labs/lab-002-task-protocol-EN.md) · [lab-013 — migration pending — current source path](labs/lab-013-l3-vertical-slice.md)
+- Experiments: [Lab 002 — EN source](labs/lab-002-task-protocol-EN.md) · [Lab 013 — EN source](labs/lab-013-l3-vertical-slice-EN.md)
 
 ### Chapter 11 — Design a genuinely useful Skill
 
@@ -137,7 +137,7 @@ explain behavior without inventing hidden reasoning. **content_status:**
 `candidate`
 
 - Chapter: [English source](chapters/12-agent-loop-and-stop-EN.md)
-- Experiment: [lab-006 — migration pending — current source path](labs/lab-006-agent-stop-conditions.md)
+- Experiment: [lab-006 — English source](labs/lab-006-agent-stop-conditions-EN.md)
 
 ### Chapter 13 — Action boundaries for files, terminals, browsers, and GitHub
 
@@ -156,7 +156,7 @@ dependencies, authentication, triggers, and maintenance. **content_status:**
 `candidate`
 
 - Chapter: [English source](chapters/14-discover-and-audit-skills-EN.md)
-- Experiments: [lab-004 — migration pending — current source path](labs/lab-004-skill-selection.md) · [lab-005 — migration pending — current source path](labs/lab-005-design-a-skill.md)
+- Experiments: [Lab 004 — EN source](labs/lab-004-skill-selection-EN.md) · [lab-005 — migration pending — current source path](labs/lab-005-design-a-skill.md)
 
 ### Chapter 15 — Research track: from question to auditable knowledge
 
@@ -188,7 +188,7 @@ Use the external ecosystem by task capability cluster instead of installing
 every Skill blindly. **content_status:** `candidate`
 
 - Chapter: [English source](chapters/18-content-design-data-automation-EN.md)
-- Experiment: [lab-004 — migration pending — current source path](labs/lab-004-skill-selection.md)
+- Experiment: [Lab 004 — EN source](labs/lab-004-skill-selection-EN.md)
 
 ## Part IV: From proficient use to organizational capability
 
@@ -198,7 +198,7 @@ Build task sets, repeat experiments, score with human review, and classify
 errors. **content_status:** `candidate`
 
 - Chapter: [English source](chapters/19-evaluate-models-and-workflows-EN.md)
-- Experiments: [lab-003 — migration pending — current source path](labs/lab-003-evidence-review.md) · [lab-009 — migration pending — current source path](labs/lab-009-engineering-lifecycle.md)
+- Experiments: [Lab 003 — EN source](labs/lab-003-evidence-review-EN.md) · [lab-009 — migration pending — current source path](labs/lab-009-engineering-lifecycle.md)
 - Evaluation framework: [locale-neutral governance](../docs/quality/evaluation-framework.md)
 
 ### Chapter 20 — Build a personal Codex work system
@@ -215,7 +215,7 @@ Shared Skills, `AGENTS.md`, permissions, evaluation, review, contribution, and
 versioning. **content_status:** `candidate`
 
 - Chapter: [English source](chapters/21-team-capability-system-EN.md)
-- Experiment: [lab-012 — migration pending — current source path](labs/lab-012-team-capability-migration.md)
+- Experiment: [Lab 012 — EN source](labs/lab-012-team-capability-migration-EN.md)
 
 ### Chapter 22 — Continuous update and future-proofing
 
@@ -236,17 +236,17 @@ the experiment or its learning outcome is verified.
 |---|---|---|---|
 | lab-001 | First safe task | `draft` · `not_run` | [EN source](labs/lab-001-first-safe-task-EN.md) |
 | lab-002 | Task protocol | `draft` · `not_run` | [EN source](labs/lab-002-task-protocol-EN.md) |
-| lab-003 | Evidence review | `draft` · `not_run` | [migration pending — current source](labs/lab-003-evidence-review.md) |
-| lab-004 | Skill selection | `draft` · `not_run` | [migration pending — current source](labs/lab-004-skill-selection.md) |
+| lab-003 | Evidence review | `draft` · `not_run` | [EN source](labs/lab-003-evidence-review-EN.md) |
+| lab-004 | Skill selection | `draft` · `not_run` | [EN source](labs/lab-004-skill-selection-EN.md) |
 | lab-005 | Skill design | `draft` · `not_run` | [migration pending — current source](labs/lab-005-design-a-skill.md) |
-| lab-006 | Agent stop conditions | `draft` · `not_run` | [migration pending — current source](labs/lab-006-agent-stop-conditions.md) |
+| lab-006 | Agent stop conditions | `draft` · `not_run` | [EN source](labs/lab-006-agent-stop-conditions-EN.md) |
 | lab-007 | Action boundaries | `draft` · `not_run` | [EN source](labs/lab-007-action-boundaries-EN.md) |
 | lab-008 | Research question | `draft` · `not_run` | [migration pending — current source](labs/lab-008-research-question.md) |
 | lab-009 | Engineering lifecycle | `draft` · `not_run` | [migration pending — current source](labs/lab-009-engineering-lifecycle.md) |
 | lab-010 | Product context | `draft` · `not_run` | [migration pending — current source](labs/lab-010-product-context.md) |
 | lab-011 | GPT, Codex, tools, and Agents | `draft` · `not_run` | [Lab 011 — EN source](labs/lab-011-gpt-codex-boundaries-EN.md) |
-| lab-012 | Team capability migration | `draft` · `not_run` | [migration pending — current source](labs/lab-012-team-capability-migration.md) |
-| lab-013 | Auditable L3 vertical slice | `draft` · `not_run` | [migration pending — current source](labs/lab-013-l3-vertical-slice.md) |
+| lab-012 | Team capability migration | `draft` · `not_run` | [EN source](labs/lab-012-team-capability-migration-EN.md) |
+| lab-013 | Auditable L3 vertical slice | `draft` · `not_run` | [EN source](labs/lab-013-l3-vertical-slice-EN.md) |
 | lab-014 | Resume reconciliation | `draft` · `not_run` | [EN source](labs/lab-014-resume-reconciliation-EN.md) |
 | lab-015 | Evidence delivery | `draft` · `not_run` | [EN source](labs/lab-015-evidence-delivery-EN.md) |
 | lab-016 | Side-effect boundary | `draft` · `not_run` | [EN source](labs/lab-016-side-effect-boundary-EN.md) |
@@ -263,4 +263,4 @@ the experiment or its learning outcome is verified.
 - [Forums and public-issue research — locale-neutral research](../docs/research/field-problems-forums-2026-08-10.md): reliable Stack Overflow API/pages and GitHub issue summaries.
 - [Official baseline research archive — locale-neutral research](../docs/research/openai-codex-baseline.md): source boundary for volatile claims.
 
-The independent primary experiments for L0, L3, and L6 are [Lab 011 — EN source](labs/lab-011-gpt-codex-boundaries-EN.md), [lab-013 — migration pending](labs/lab-013-l3-vertical-slice.md), and [lab-012 — migration pending](labs/lab-012-team-capability-migration.md).
+The independent primary experiments for L0, L3, and L6 are [Lab 011 — EN source](labs/lab-011-gpt-codex-boundaries-EN.md), [Lab 013 — EN source](labs/lab-013-l3-vertical-slice-EN.md), and [Lab 012 — EN source](labs/lab-012-team-capability-migration-EN.md).

@@ -1,5 +1,18 @@
 # Field Guide 发布前检查清单
 
+## License gate
+
+- [ ] Root `LICENSE` is present and matches the intended content boundary.
+- [ ] Documentation, scripts, diagrams, screenshots, trademarks, and third-party sources have explicit ownership or license decisions.
+- [ ] `docs/sources/licensing.md` and the asset register agree with the release.
+- [ ] No unresolved asset is included as a vendored or freely reusable release asset.
+
+## 完整性门禁
+
+- [ ] `python scripts/validate_content_completeness.py` 通过；迁移 warning 已逐项确认
+- [ ] 三个站点生成器的 `--check` 通过，未手改生成文件
+- [ ] `python scripts/build_pages_artifact.py --check` 通过；这只证明本地 artifact 边界，不证明公开 URL
+
 ## 产品与内容
 
 - [ ] 正式名称、描述、视觉和受众已确认

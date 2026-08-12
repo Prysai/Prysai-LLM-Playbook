@@ -1606,6 +1606,266 @@ window.CODEX_LOCALE_MANIFEST = {
         }
       }
     },
+    "lab-003-evidence-review": {
+      "kind": "lab",
+      "stem": "book/labs/lab-003-evidence-review",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/labs/lab-003-evidence-review.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/labs/lab-003-evidence-review-EN.md",
+          "exists": true,
+          "content_status": "draft",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/labs/lab-003-evidence-review-ZH.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "es": {
+          "path": "book/labs/lab-003-evidence-review-ES.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ja": {
+          "path": "book/labs/lab-003-evidence-review-JA.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ko": {
+          "path": "book/labs/lab-003-evidence-review-KO.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "de": {
+          "path": "book/labs/lab-003-evidence-review-DE.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        }
+      }
+    },
+    "lab-004-skill-selection": {
+      "kind": "lab",
+      "stem": "book/labs/lab-004-skill-selection",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/labs/lab-004-skill-selection.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/labs/lab-004-skill-selection-EN.md",
+          "exists": true,
+          "content_status": "draft",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/labs/lab-004-skill-selection-ZH.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "es": {
+          "path": "book/labs/lab-004-skill-selection-ES.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ja": {
+          "path": "book/labs/lab-004-skill-selection-JA.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ko": {
+          "path": "book/labs/lab-004-skill-selection-KO.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "de": {
+          "path": "book/labs/lab-004-skill-selection-DE.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        }
+      }
+    },
+    "lab-012-team-capability-migration": {
+      "kind": "lab",
+      "stem": "book/labs/lab-012-team-capability-migration",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/labs/lab-012-team-capability-migration.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/labs/lab-012-team-capability-migration-EN.md",
+          "exists": true,
+          "content_status": "draft",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/labs/lab-012-team-capability-migration-ZH.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "es": {
+          "path": "book/labs/lab-012-team-capability-migration-ES.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ja": {
+          "path": "book/labs/lab-012-team-capability-migration-JA.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ko": {
+          "path": "book/labs/lab-012-team-capability-migration-KO.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "de": {
+          "path": "book/labs/lab-012-team-capability-migration-DE.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        }
+      }
+    },
+    "lab-013-l3-vertical-slice": {
+      "kind": "lab",
+      "stem": "book/labs/lab-013-l3-vertical-slice",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/labs/lab-013-l3-vertical-slice.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/labs/lab-013-l3-vertical-slice-EN.md",
+          "exists": true,
+          "content_status": "draft",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/labs/lab-013-l3-vertical-slice-ZH.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "es": {
+          "path": "book/labs/lab-013-l3-vertical-slice-ES.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ja": {
+          "path": "book/labs/lab-013-l3-vertical-slice-JA.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ko": {
+          "path": "book/labs/lab-013-l3-vertical-slice-KO.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "de": {
+          "path": "book/labs/lab-013-l3-vertical-slice-DE.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        }
+      }
+    },
+    "lab-006-agent-stop-conditions": {
+      "kind": "lab",
+      "stem": "book/labs/lab-006-agent-stop-conditions",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/labs/lab-006-agent-stop-conditions.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/labs/lab-006-agent-stop-conditions-EN.md",
+          "exists": true,
+          "content_status": "draft",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/labs/lab-006-agent-stop-conditions-ZH.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "es": {
+          "path": "book/labs/lab-006-agent-stop-conditions-ES.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ja": {
+          "path": "book/labs/lab-006-agent-stop-conditions-JA.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ko": {
+          "path": "book/labs/lab-006-agent-stop-conditions-KO.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "de": {
+          "path": "book/labs/lab-006-agent-stop-conditions-DE.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-12"
+        }
+      }
+    },
     "lab-007-action-boundaries": {
       "kind": "lab",
       "stem": "book/labs/lab-007-action-boundaries",
@@ -1858,110 +2118,6 @@ window.CODEX_LOCALE_MANIFEST = {
         }
       }
     },
-    "lab-003": {
-      "kind": "lab",
-      "stem": "book/labs/lab-003-evidence-review",
-      "source_locale": "zh",
-      "legacy_paths": [
-        "book/labs/lab-003-evidence-review.md"
-      ],
-      "locales": {
-        "en": {
-          "path": "book/labs/lab-003-evidence-review.md",
-          "exists": true,
-          "content_status": "draft",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
-        },
-        "zh": {
-          "path": "book/labs/lab-003-evidence-review-ZH.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "es": {
-          "path": "book/labs/lab-003-evidence-review-ES.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ja": {
-          "path": "book/labs/lab-003-evidence-review-JA.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ko": {
-          "path": "book/labs/lab-003-evidence-review-KO.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "de": {
-          "path": "book/labs/lab-003-evidence-review-DE.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        }
-      }
-    },
-    "lab-004": {
-      "kind": "lab",
-      "stem": "book/labs/lab-004-skill-selection",
-      "source_locale": "zh",
-      "legacy_paths": [
-        "book/labs/lab-004-skill-selection.md"
-      ],
-      "locales": {
-        "en": {
-          "path": "book/labs/lab-004-skill-selection.md",
-          "exists": true,
-          "content_status": "draft",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
-        },
-        "zh": {
-          "path": "book/labs/lab-004-skill-selection-ZH.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "es": {
-          "path": "book/labs/lab-004-skill-selection-ES.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ja": {
-          "path": "book/labs/lab-004-skill-selection-JA.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ko": {
-          "path": "book/labs/lab-004-skill-selection-KO.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "de": {
-          "path": "book/labs/lab-004-skill-selection-DE.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        }
-      }
-    },
     "lab-005": {
       "kind": "lab",
       "stem": "book/labs/lab-005-design-a-skill",
@@ -2007,58 +2163,6 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "de": {
           "path": "book/labs/lab-005-design-a-skill-DE.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        }
-      }
-    },
-    "lab-006": {
-      "kind": "lab",
-      "stem": "book/labs/lab-006-agent-stop-conditions",
-      "source_locale": "zh",
-      "legacy_paths": [
-        "book/labs/lab-006-agent-stop-conditions.md"
-      ],
-      "locales": {
-        "en": {
-          "path": "book/labs/lab-006-agent-stop-conditions.md",
-          "exists": true,
-          "content_status": "draft",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
-        },
-        "zh": {
-          "path": "book/labs/lab-006-agent-stop-conditions-ZH.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "es": {
-          "path": "book/labs/lab-006-agent-stop-conditions-ES.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ja": {
-          "path": "book/labs/lab-006-agent-stop-conditions-JA.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ko": {
-          "path": "book/labs/lab-006-agent-stop-conditions-KO.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "de": {
-          "path": "book/labs/lab-006-agent-stop-conditions-DE.md",
           "exists": false,
           "content_status": "draft",
           "translation_status": "in-progress",
@@ -2221,110 +2325,6 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "content-status"
         }
       }
-    },
-    "lab-012": {
-      "kind": "lab",
-      "stem": "book/labs/lab-012-team-capability-migration",
-      "source_locale": "zh",
-      "legacy_paths": [
-        "book/labs/lab-012-team-capability-migration.md"
-      ],
-      "locales": {
-        "en": {
-          "path": "book/labs/lab-012-team-capability-migration.md",
-          "exists": true,
-          "content_status": "draft",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
-        },
-        "zh": {
-          "path": "book/labs/lab-012-team-capability-migration-ZH.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "es": {
-          "path": "book/labs/lab-012-team-capability-migration-ES.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ja": {
-          "path": "book/labs/lab-012-team-capability-migration-JA.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ko": {
-          "path": "book/labs/lab-012-team-capability-migration-KO.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "de": {
-          "path": "book/labs/lab-012-team-capability-migration-DE.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        }
-      }
-    },
-    "lab-013": {
-      "kind": "lab",
-      "stem": "book/labs/lab-013-l3-vertical-slice",
-      "source_locale": "zh",
-      "legacy_paths": [
-        "book/labs/lab-013-l3-vertical-slice.md"
-      ],
-      "locales": {
-        "en": {
-          "path": "book/labs/lab-013-l3-vertical-slice.md",
-          "exists": true,
-          "content_status": "draft",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
-        },
-        "zh": {
-          "path": "book/labs/lab-013-l3-vertical-slice-ZH.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "es": {
-          "path": "book/labs/lab-013-l3-vertical-slice-ES.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ja": {
-          "path": "book/labs/lab-013-l3-vertical-slice-JA.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ko": {
-          "path": "book/labs/lab-013-l3-vertical-slice-KO.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "de": {
-          "path": "book/labs/lab-013-l3-vertical-slice-DE.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        }
-      }
     }
   },
   "aliases": {
@@ -2352,17 +2352,17 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-22": "chapter-22-continuous-update-and-future-proofing",
     "lab-001": "lab-001-first-safe-task",
     "lab-002": "lab-002-task-protocol",
-    "lab-003": "lab-003",
-    "lab-004": "lab-004",
+    "lab-003": "lab-003-evidence-review",
+    "lab-004": "lab-004-skill-selection",
     "lab-005": "lab-005",
-    "lab-006": "lab-006",
+    "lab-006": "lab-006-agent-stop-conditions",
     "lab-007": "lab-007-action-boundaries",
     "lab-008": "lab-008",
     "lab-009": "lab-009",
     "lab-010": "lab-010",
     "lab-011": "lab-011-gpt-codex-boundaries",
-    "lab-012": "lab-012",
-    "lab-013": "lab-013",
+    "lab-012": "lab-012-team-capability-migration",
+    "lab-013": "lab-013-l3-vertical-slice",
     "lab-014": "lab-014-resume-reconciliation",
     "lab-015": "lab-015-evidence-delivery",
     "lab-016": "lab-016-side-effect-boundary",
@@ -2579,6 +2579,41 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-002-task-protocol-KO.md": "lab-002-task-protocol",
     "book/labs/lab-002-task-protocol-DE.md": "lab-002-task-protocol",
     "book/labs/lab-002-task-protocol.md": "lab-002-task-protocol",
+    "book/labs/lab-003-evidence-review-EN.md": "lab-003-evidence-review",
+    "book/labs/lab-003-evidence-review-ZH.md": "lab-003-evidence-review",
+    "book/labs/lab-003-evidence-review-ES.md": "lab-003-evidence-review",
+    "book/labs/lab-003-evidence-review-JA.md": "lab-003-evidence-review",
+    "book/labs/lab-003-evidence-review-KO.md": "lab-003-evidence-review",
+    "book/labs/lab-003-evidence-review-DE.md": "lab-003-evidence-review",
+    "book/labs/lab-003-evidence-review.md": "lab-003-evidence-review",
+    "book/labs/lab-004-skill-selection-EN.md": "lab-004-skill-selection",
+    "book/labs/lab-004-skill-selection-ZH.md": "lab-004-skill-selection",
+    "book/labs/lab-004-skill-selection-ES.md": "lab-004-skill-selection",
+    "book/labs/lab-004-skill-selection-JA.md": "lab-004-skill-selection",
+    "book/labs/lab-004-skill-selection-KO.md": "lab-004-skill-selection",
+    "book/labs/lab-004-skill-selection-DE.md": "lab-004-skill-selection",
+    "book/labs/lab-004-skill-selection.md": "lab-004-skill-selection",
+    "book/labs/lab-012-team-capability-migration-EN.md": "lab-012-team-capability-migration",
+    "book/labs/lab-012-team-capability-migration-ZH.md": "lab-012-team-capability-migration",
+    "book/labs/lab-012-team-capability-migration-ES.md": "lab-012-team-capability-migration",
+    "book/labs/lab-012-team-capability-migration-JA.md": "lab-012-team-capability-migration",
+    "book/labs/lab-012-team-capability-migration-KO.md": "lab-012-team-capability-migration",
+    "book/labs/lab-012-team-capability-migration-DE.md": "lab-012-team-capability-migration",
+    "book/labs/lab-012-team-capability-migration.md": "lab-012-team-capability-migration",
+    "book/labs/lab-013-l3-vertical-slice-EN.md": "lab-013-l3-vertical-slice",
+    "book/labs/lab-013-l3-vertical-slice-ZH.md": "lab-013-l3-vertical-slice",
+    "book/labs/lab-013-l3-vertical-slice-ES.md": "lab-013-l3-vertical-slice",
+    "book/labs/lab-013-l3-vertical-slice-JA.md": "lab-013-l3-vertical-slice",
+    "book/labs/lab-013-l3-vertical-slice-KO.md": "lab-013-l3-vertical-slice",
+    "book/labs/lab-013-l3-vertical-slice-DE.md": "lab-013-l3-vertical-slice",
+    "book/labs/lab-013-l3-vertical-slice.md": "lab-013-l3-vertical-slice",
+    "book/labs/lab-006-agent-stop-conditions-EN.md": "lab-006-agent-stop-conditions",
+    "book/labs/lab-006-agent-stop-conditions-ZH.md": "lab-006-agent-stop-conditions",
+    "book/labs/lab-006-agent-stop-conditions-ES.md": "lab-006-agent-stop-conditions",
+    "book/labs/lab-006-agent-stop-conditions-JA.md": "lab-006-agent-stop-conditions",
+    "book/labs/lab-006-agent-stop-conditions-KO.md": "lab-006-agent-stop-conditions",
+    "book/labs/lab-006-agent-stop-conditions-DE.md": "lab-006-agent-stop-conditions",
+    "book/labs/lab-006-agent-stop-conditions.md": "lab-006-agent-stop-conditions",
     "book/labs/lab-007-action-boundaries-EN.md": "lab-007-action-boundaries",
     "book/labs/lab-007-action-boundaries-ZH.md": "lab-007-action-boundaries",
     "book/labs/lab-007-action-boundaries-ES.md": "lab-007-action-boundaries",
@@ -2610,30 +2645,12 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-017-skill-discovery-audit-JA.md": "lab-017-skill-discovery-audit",
     "book/labs/lab-017-skill-discovery-audit-KO.md": "lab-017-skill-discovery-audit",
     "book/labs/lab-017-skill-discovery-audit-DE.md": "lab-017-skill-discovery-audit",
-    "book/labs/lab-003-evidence-review.md": "lab-003",
-    "book/labs/lab-003-evidence-review-ZH.md": "lab-003",
-    "book/labs/lab-003-evidence-review-ES.md": "lab-003",
-    "book/labs/lab-003-evidence-review-JA.md": "lab-003",
-    "book/labs/lab-003-evidence-review-KO.md": "lab-003",
-    "book/labs/lab-003-evidence-review-DE.md": "lab-003",
-    "book/labs/lab-004-skill-selection.md": "lab-004",
-    "book/labs/lab-004-skill-selection-ZH.md": "lab-004",
-    "book/labs/lab-004-skill-selection-ES.md": "lab-004",
-    "book/labs/lab-004-skill-selection-JA.md": "lab-004",
-    "book/labs/lab-004-skill-selection-KO.md": "lab-004",
-    "book/labs/lab-004-skill-selection-DE.md": "lab-004",
     "book/labs/lab-005-design-a-skill.md": "lab-005",
     "book/labs/lab-005-design-a-skill-ZH.md": "lab-005",
     "book/labs/lab-005-design-a-skill-ES.md": "lab-005",
     "book/labs/lab-005-design-a-skill-JA.md": "lab-005",
     "book/labs/lab-005-design-a-skill-KO.md": "lab-005",
     "book/labs/lab-005-design-a-skill-DE.md": "lab-005",
-    "book/labs/lab-006-agent-stop-conditions.md": "lab-006",
-    "book/labs/lab-006-agent-stop-conditions-ZH.md": "lab-006",
-    "book/labs/lab-006-agent-stop-conditions-ES.md": "lab-006",
-    "book/labs/lab-006-agent-stop-conditions-JA.md": "lab-006",
-    "book/labs/lab-006-agent-stop-conditions-KO.md": "lab-006",
-    "book/labs/lab-006-agent-stop-conditions-DE.md": "lab-006",
     "book/labs/lab-008-research-question.md": "lab-008",
     "book/labs/lab-008-research-question-ZH.md": "lab-008",
     "book/labs/lab-008-research-question-ES.md": "lab-008",
@@ -2651,19 +2668,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-010-product-context-ES.md": "lab-010",
     "book/labs/lab-010-product-context-JA.md": "lab-010",
     "book/labs/lab-010-product-context-KO.md": "lab-010",
-    "book/labs/lab-010-product-context-DE.md": "lab-010",
-    "book/labs/lab-012-team-capability-migration.md": "lab-012",
-    "book/labs/lab-012-team-capability-migration-ZH.md": "lab-012",
-    "book/labs/lab-012-team-capability-migration-ES.md": "lab-012",
-    "book/labs/lab-012-team-capability-migration-JA.md": "lab-012",
-    "book/labs/lab-012-team-capability-migration-KO.md": "lab-012",
-    "book/labs/lab-012-team-capability-migration-DE.md": "lab-012",
-    "book/labs/lab-013-l3-vertical-slice.md": "lab-013",
-    "book/labs/lab-013-l3-vertical-slice-ZH.md": "lab-013",
-    "book/labs/lab-013-l3-vertical-slice-ES.md": "lab-013",
-    "book/labs/lab-013-l3-vertical-slice-JA.md": "lab-013",
-    "book/labs/lab-013-l3-vertical-slice-KO.md": "lab-013",
-    "book/labs/lab-013-l3-vertical-slice-DE.md": "lab-013"
+    "book/labs/lab-010-product-context-DE.md": "lab-010"
   },
   "routed_status_counts": {
     "chapters": 22,

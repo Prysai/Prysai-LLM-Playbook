@@ -19,11 +19,12 @@ def load_structure() -> dict[str, Any]:
     return value
 
 
-def path_exists(path_value: str) -> bool:
+def path_exists(path_value: str, *, allow_directory: bool = False) -> bool:
     normalized = path_value.replace("\\", "/")
     if "*" in normalized:
         return bool(list(ROOT.glob(normalized)))
-    return (ROOT / normalized).is_file()
+    target = ROOT / normalized
+    return target.is_file() or (allow_directory and target.is_dir())
 
 
 def validate_file(errors: list[str], value: Any, label: str) -> None:
@@ -42,12 +43,29 @@ def validate_directory(errors: list[str], value: Any, label: str) -> None:
         errors.append(f"{label} is missing: {value}")
 
 
-def validate_file_list(errors: list[str], values: Any, label: str) -> None:
+def validate_path_reference(
+    errors: list[str], value: Any, label: str, *, allow_directory: bool = False
+) -> None:
+    if not isinstance(value, str) or not value.strip():
+        errors.append(f"{label} must be a non-empty path")
+        return
+    if not path_exists(value, allow_directory=allow_directory):
+        errors.append(f"{label} is missing: {value}")
+
+
+def validate_file_list(
+    errors: list[str], values: Any, label: str, *, allow_directory: bool = False
+) -> None:
     if not isinstance(values, list):
         errors.append(f"{label} must be a list")
         return
     for index, value in enumerate(values, start=1):
-        validate_file(errors, value, f"{label}[{index}]")
+        validate_path_reference(
+            errors,
+            value,
+            f"{label}[{index}]",
+            allow_directory=allow_directory,
+        )
 
 
 def main() -> int:
@@ -106,7 +124,12 @@ def main() -> int:
         validate_directory(errors, path, f"{label}.path")
         validate_file(errors, item.get("entry"), f"{label}.entry")
         validate_file(errors, item.get("first_read"), f"{label}.first_read")
-        validate_file_list(errors, item.get("canonical_sources"), f"{label}.canonical_sources")
+        validate_file_list(
+            errors,
+            item.get("canonical_sources"),
+            f"{label}.canonical_sources",
+            allow_directory=True,
+        )
         validate_file_list(errors, item.get("generated_outputs"), f"{label}.generated_outputs")
 
     for missing in sorted(actual_top_level - declared_top_level):
@@ -148,7 +171,12 @@ def main() -> int:
             errors.append(f"{label} must be an object")
             continue
         validate_file(errors, item.get("path"), f"{label}.path")
-        validate_file_list(errors, item.get("source"), f"{label}.source")
+        validate_file_list(
+            errors,
+            item.get("source"),
+            f"{label}.source",
+            allow_directory=True,
+        )
         for key in ("owner", "surface", "edit_rule"):
             if not isinstance(item.get(key), str) or not item[key].strip():
                 errors.append(f"{label}.{key} must be non-empty")

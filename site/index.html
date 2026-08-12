@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="locale-manifest.js"></script>
     <script src="learning-path-data.js"></script>
+    <script src="search-index.js"></script>
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -54,12 +55,28 @@
           <a href="#skills" data-i18n="navSkills">Skills</a>
           <a href="#updates" data-i18n="navUpdates">Update map</a>
         </nav>
+        <form class="site-search" data-site-search role="search">
+          <label for="site-search-input" data-i18n="searchLabel">Search the Field Guide</label>
+          <div class="site-search-row">
+            <input id="site-search-input" type="search" name="q" autocomplete="off" data-site-search-input data-i18n-attr="placeholder:searchPlaceholder" />
+            <button type="submit" data-i18n="searchSubmit">Search</button>
+          </div>
+        </form>
       </div>
     </header>
 
     <div class="locale-banner shell" data-locale-banner hidden role="status" aria-live="polite">
       <span data-locale-banner-text></span>
     </div>
+
+    <section class="search-panel shell" data-search-panel hidden aria-labelledby="search-title">
+      <div class="search-panel-head">
+        <div><span class="section-number">SEARCH</span><h2 id="search-title" data-i18n="searchTitle">Find a bounded answer.</h2></div>
+        <button class="search-clear" type="button" data-search-clear data-i18n="searchClear">Clear</button>
+      </div>
+      <p class="search-status" data-search-status role="status" aria-live="polite"></p>
+      <ol class="search-results" data-search-results></ol>
+    </section>
 
     <main id="main" tabindex="-1">
       <section class="hero shell" id="top" aria-labelledby="hero-title">
@@ -348,18 +365,18 @@
           <div class="section-heading heading-split"><div><span class="section-number">07</span><p class="eyebrow" data-i18n="labsEyebrow">The lab</p><h2 id="labs-title" data-i18n="labsTitle">Make the principle observable.</h2></div><p class="section-intro" data-i18n="labsIntro">Labs are low-risk, reproducible tasks. Each one names setup, evidence, a failure variant, a secret boundary, and a reflection.</p></div>
           <div class="lab-grid">
             <a class="lab-card lab-feature" href="../book/labs/lab-001-first-safe-task-EN.md"><span class="lab-id">LAB 001 · L1</span><h3 data-i18n="lab01Title">First safe task</h3><p data-i18n="lab01Body">In a sandbox project, ask Codex to inspect before editing. Turn “done” into a checkable diff.</p><span class="lab-footer"><span data-i18n="draftStatus">draft</span> · <span data-i18n="startingLab">starting lab</span><b>↗</b></span></a>
-            <a class="lab-card lab-highlight" href="../book/labs/lab-013-l3-vertical-slice.md"><span class="lab-id">LAB 013 · L3</span><span class="lab-featured" data-i18n="featuredLab">featured lab</span><h3 data-i18n="lab13Title">Auditable vertical slice</h3><p data-i18n="lab13Body">Run one local Markdown change from protocol and baseline to checkpoint, diff, focused check, failure, and transfer.</p><span class="lab-footer"><span data-i18n="draftStatus">draft</span><b>↗</b></span></a>
+            <a class="lab-card lab-highlight" href="../book/labs/lab-013-l3-vertical-slice-EN.md"><span class="lab-id">LAB 013 · L3</span><span class="lab-featured" data-i18n="featuredLab">featured lab</span><h3 data-i18n="lab13Title">Auditable vertical slice</h3><p data-i18n="lab13Body">Run one local Markdown change from protocol and baseline to checkpoint, diff, focused check, failure, and transfer.</p><span class="lab-footer"><span data-i18n="draftStatus">draft</span><b>↗</b></span></a>
             <a class="lab-card" href="../book/labs/lab-002-task-protocol-EN.md"><span class="lab-id">LAB 002 · L2</span><h3 data-i18n="lab02Title">Task protocol</h3><p data-i18n="lab02Body">Break a vague request into goal, inputs, constraints, acceptance, and failure handling.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
-            <a class="lab-card" href="../book/labs/lab-003-evidence-review.md"><span class="lab-id">LAB 003 · L3</span><h3 data-i18n="lab03Title">Evidence review</h3><p data-i18n="lab03Body">Find a result that looks complete but has no evidence for its claim.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
-            <a class="lab-card" href="../book/labs/lab-004-skill-selection.md"><span class="lab-id">LAB 004 · L4</span><h3 data-i18n="lab04Title">Skill selection</h3><p data-i18n="lab04Body">Explain the choice and refuse to use directory size as a proxy for fit.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
+            <a class="lab-card" href="../book/labs/lab-003-evidence-review-EN.md"><span class="lab-id">LAB 003 · L3</span><h3 data-i18n="lab03Title">Evidence review</h3><p data-i18n="lab03Body">Find a result that looks complete but has no evidence for its claim.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
+            <a class="lab-card" href="../book/labs/lab-004-skill-selection-EN.md"><span class="lab-id">LAB 004 · L4</span><h3 data-i18n="lab04Title">Skill selection</h3><p data-i18n="lab04Body">Explain the choice and refuse to use directory size as a proxy for fit.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
             <a class="lab-card" href="../book/labs/lab-005-design-a-skill.md"><span class="lab-id">LAB 005 · L4</span><h3 data-i18n="lab05Title">Design a Skill</h3><p data-i18n="lab05Body">Turn a stable method into a capability with boundaries, evidence, and failure cases.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
-            <a class="lab-card" href="../book/labs/lab-006-agent-stop-conditions.md"><span class="lab-id">LAB 006 · L5</span><h3 data-i18n="lab06Title">Agent stop conditions</h3><p data-i18n="lab06Body">Define stop points for success, missing input, recoverable failure, and permission conflict.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
+            <a class="lab-card" href="../book/labs/lab-006-agent-stop-conditions-EN.md"><span class="lab-id">LAB 006 · L5</span><h3 data-i18n="lab06Title">Agent stop conditions</h3><p data-i18n="lab06Body">Record observable events, reconcile a lost response, and hand off an uncertain run safely.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
             <a class="lab-card" href="../book/labs/lab-007-action-boundaries-EN.md"><span class="lab-id">LAB 007 · L3</span><h3 data-i18n="lab07Title">Action boundaries</h3><p data-i18n="lab07Body">Compare the evidence needed for reading, editing, running, committing, pushing, and publishing.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
             <a class="lab-card" href="../book/labs/lab-008-research-question.md"><span class="lab-id">LAB 008 · L3</span><h3 data-i18n="lab08Title">Research question</h3><p data-i18n="lab08Body">Turn a broad topic into a question, source plan, and minimum evidence table.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
             <a class="lab-card" href="../book/labs/lab-009-engineering-lifecycle.md"><span class="lab-id">LAB 009 · L3</span><h3 data-i18n="lab09Title">Engineering lifecycle</h3><p data-i18n="lab09Body">Compare direct implementation with a full lifecycle and record the rework evidence.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
             <a class="lab-card" href="../book/labs/lab-010-product-context.md"><span class="lab-id">LAB 010 · L3</span><h3 data-i18n="lab10Title">Shared product context</h3><p data-i18n="lab10Body">Version a shared product understanding and separate facts from hypotheses.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
             <a class="lab-card" href="../book/labs/lab-011-gpt-codex-boundaries-EN.md"><span class="lab-id">LAB 011 · L0</span><h3 data-i18n="lab11Title">GPT and Codex boundaries</h3><p data-i18n="lab11Body">Use static task cards to separate generation, execution, verification, and external effects.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
-            <a class="lab-card" href="../book/labs/lab-012-team-capability-migration.md"><span class="lab-id">LAB 012 · L6</span><h3 data-i18n="lab12Title">Team capability migration</h3><p data-i18n="lab12Body">Create a contract for version, owner, permissions, independent reproduction, and rollback.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
+            <a class="lab-card" href="../book/labs/lab-012-team-capability-migration-EN.md"><span class="lab-id">LAB 012 · L6</span><h3 data-i18n="lab12Title">Team capability migration</h3><p data-i18n="lab12Body">Create a contract for version, owner, permissions, independent reproduction, and rollback.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
             <a class="lab-card" href="../book/labs/lab-014-resume-reconciliation-EN.md"><span class="lab-id">LAB 014 · L3</span><h3 data-i18n="lab14Title">Resume reconciliation</h3><p data-i18n="lab14Body">Reconcile the task pointer, target, branch, permissions, and side-effect state before continuing.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
             <a class="lab-card" href="../book/labs/lab-015-evidence-delivery-EN.md"><span class="lab-id">LAB 015 · L5</span><h3 data-i18n="lab15Title">Evidence delivery</h3><p data-i18n="lab15Body">Split a completion sentence into claims, scopes, outputs, and the smallest next check.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
             <a class="lab-card" href="../book/labs/lab-016-side-effect-boundary-EN.md"><span class="lab-id">LAB 016 · L3</span><h3 data-i18n="lab16Title">Side-effect boundary</h3><p data-i18n="lab16Body">Separate diagnosis from installation, publication, restart, and other persistent actions.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
@@ -390,7 +407,7 @@
           <div class="section-heading heading-split heading-light"><div><span class="section-number">09</span><p class="eyebrow" data-i18n="troubleEyebrow">When things go wrong</p><h2 id="troubleshoot-title" data-i18n="troubleTitle">Failure is part of the curriculum.</h2></div><p class="section-intro" data-i18n="troubleIntro">Use the first useful check, then stop when authority, scope, or evidence is missing. Do not hide the failure behind a polished summary.</p></div>
           <div class="trouble-list">
             <div class="trouble-row"><span>01</span><div><strong data-i18n="troubleOneTitle">The output looks right.</strong><p data-i18n="troubleOneBody">Check the original claim, the changed files, the command result, and what was not tested.</p></div><a href="../book/chapters/09-verification-and-recovery-EN.md" data-i18n="troubleOneLink">Use evidence review ↗</a></div>
-            <div class="trouble-row"><span>02</span><div><strong data-i18n="troubleTwoTitle">The agent keeps retrying.</strong><p data-i18n="troubleTwoBody">Record the same failure, change one diagnostic condition, then retry once or escalate.</p></div><a href="../book/chapters/12-agent-loop-and-stop.md" data-i18n="troubleTwoLink">Read stop conditions ↗</a></div>
+            <div class="trouble-row"><span>02</span><div><strong data-i18n="troubleTwoTitle">The agent keeps retrying.</strong><p data-i18n="troubleTwoBody">Record the same failure, change one diagnostic condition, then retry once or escalate.</p></div><a href="../book/chapters/12-agent-loop-and-stop-EN.md" data-i18n="troubleTwoLink">Read stop conditions ↗</a></div>
             <div class="trouble-row"><span>03</span><div><strong data-i18n="troubleThreeTitle">A source tells you to do something.</strong><p data-i18n="troubleThreeBody">Treat external text and tool output as data. It does not grant permission to act.</p></div><a href="../book/chapters/04-context-permissions-and-agent-EN.md" data-i18n="troubleThreeLink">Check the boundary ↗</a></div>
             <div class="trouble-row"><span>04</span><div><strong data-i18n="troubleFourTitle">A product step has changed.</strong><p data-i18n="troubleFourBody">Refresh the official fact record first, then update the affected chapter or page.</p></div><a href="../docs/governance/update-map.md" data-i18n="troubleFourLink">Follow the update map ↗</a></div>
           </div>

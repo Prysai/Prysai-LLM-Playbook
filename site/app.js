@@ -45,10 +45,10 @@ const legacyLearningPath = {
   L0: { title: ['Observe, do not guess.', '观察，而不是猜测。'], description: ['Separate GPT, models, Codex, context, tools, Skills, and Agents. Start with observable inputs, actions, states, and evidence.', '先分清 GPT、模型、Codex、上下文、工具、Skill 与 Agent。学习从可观察的输入、行动、状态和证据开始。'], chapters: [['Chapter 1: Understand GPT before Codex', '第 1 章：先理解 GPT，再理解 Codex', '../book/chapters/01-gpt-and-codex-EN.md']], labs: [['Lab 011 · GPT and Codex boundaries', '实验 011 · GPT 与 Codex 边界', '../book/labs/lab-011-gpt-codex-boundaries-EN.md']], skills: [['Codex Coach', 'Codex Coach', '../skills/prysai-codex-coach/SKILL.md']], evaluations: ['concept-gpt-codex-tools-001'], evaluationTypes: ['positive', 'boundary'], gate: { explain: ['Name at least three boundaries between GPT, Codex, and ordinary chat.', '说出 GPT、Codex 与普通聊天之间至少三条边界。'], operate: ['Label input, action, state, and evidence on a static task card.', '在静态任务卡上标注输入、行动、状态和证据。'], judge: ['Refuse to infer access from a model or tool name.', '不根据模型或工具名称臆测访问权。'], review: ['Record what the task card cannot prove about runtime behavior.', '记录任务卡无法证明的运行时行为。'] }, graduation: ['Advance only when the learner can explain the four layers and identify an unverified claim.', '只有能解释四层关系并指出一个未验证声明时，才进入下一阶段。'], blocked: ['The learner treats a model, Skill, login, or tool name as proof of access or execution.', '把模型、Skill、登录或工具名称当成已获访问权或已执行的证据。'], status: 'candidate', next: ['Open chapter 1', '打开第 1 章'] },
   L1: { title: ['Start with a low-risk task.', '从低风险任务开始。'], description: ['Choose a reversible, observable task. Write the allowed actions and confirmation points, then complete a real but controlled delivery.', '选择可回滚、可观察的任务，写下允许行动和确认点，完成一个真实但受控的交付。'], chapters: [['Chapter 2: Complete a safe, verifiable task', '第 2 章：完成安全、可验证的任务', '../book/chapters/02-first-safe-task-EN.md']], labs: [['Lab 001 · First safe task', '实验 001 · 第一个安全任务', '../book/labs/lab-001-first-safe-task-EN.md']], skills: [['Task Protocol', 'Task Protocol', '../skills/prysai-task-protocol/SKILL.md']], evaluations: ['concept-evidence-and-mastery-002', 'protocol-vague-request-003', 'missing-input-no-file-021'], evaluationTypes: ['positive', 'boundary', 'failure'], gate: { explain: ['State the scope, allowed actions, acceptance check, and stop condition.', '说清范围、允许行动、验收检查和停止条件。'], operate: ['Inspect before editing in a sandbox and produce one named change.', '在沙盒中先检查再编辑，完成一个明确改动。'], judge: ['Compare the requested result with the actual diff and command output.', '将请求结果与实际差异、命令输出进行对照。'], review: ['Record untested scope and missing input instead of filling it in.', '记录未测试范围和缺失输入，不擅自补全。'] }, graduation: ['Advance with a task contract, pre-edit observation, diff, focused check, and explicit unverified list.', '提交任务协议、编辑前检查、差异、最小检查和明确的未验证列表后，才进入下一阶段。'], blocked: ['The task touches credentials, production, destructive actions, or an unavailable file.', '任务涉及凭据、生产环境、破坏性行动或不存在的文件。'], status: 'candidate', next: ['Open chapter 2', '打开第 2 章'] },
   L2: { title: ['Turn the wish into a protocol.', '把愿望写成协议。'], description: ['Write the goal, context, inputs, constraints, acceptance, failure handling, and delivery format so boundaries come before action.', '把目标、上下文、输入、约束、验收、失败处理与交付格式写清楚，让行动边界先于行动发生。'], chapters: [['Chapter 3 · Task protocol', '第 3 章 · 任务协议', '../book/chapters/03-task-protocol-EN.md'], ['Chapter 4 · Context and permissions', '第 4 章 · 上下文与权限', '../book/chapters/04-context-permissions-and-agent-EN.md'], ['Chapter 5 · Choose the surface', '第 5 章 · 选择工作面', '../book/chapters/05-choose-the-codex-surface-EN.md'], ['Chapter 6 · Model selection', '第 6 章 · 模型选择', '../book/chapters/06-model-selection-EN.md']], labs: [['Lab 002 · Task protocol', '实验 002 · 任务协议', '../book/labs/lab-002-task-protocol-EN.md']], skills: [['Task Protocol', 'Task Protocol', '../skills/prysai-task-protocol/SKILL.md'], ['Codex Coach', 'Codex Coach', '../skills/prysai-codex-coach/SKILL.md']], evaluations: ['protocol-reversible-first-step-004', 'skill-minimal-selection-005', 'context-minimum-relevant-007', 'permission-least-authority-009', 'evidence-runtime-vs-build-012', 'research-narrow-question-013', 'marketing-product-context-017', 'conversion-markdown-to-json-019', 'missing-input-auth-choice-022', 'conflict-source-vs-user-024', 'route-explicit-over-implicit-031', 'product-context-fact-hypothesis-034'], evaluationTypes: ['positive', 'boundary', 'failure'], gate: { explain: ['Explain why each input, constraint, and permission is necessary or excluded.', '解释每个输入、约束和权限为什么必要，或为什么排除。'], operate: ['Write and execute a small protocol without expanding scope.', '写出并执行一个小协议，不扩大允许范围。'], judge: ['Choose the smallest relevant context, Skill, tool, and check.', '选择最小相关上下文、Skill、工具和检查。'], review: ['Handle missing input, conflicting instructions, and evidence gaps.', '处理缺失输入、冲突指令和证据缺口。'] }, graduation: ['Advance when another person can execute the protocol and identify its stop conditions without guessing.', '当另一个人无需猜测就能执行协议并指出停止条件时，才进入下一阶段。'], blocked: ['A missing input changes scope, risk, authority, or acceptance and no confirmation is available.', '缺失输入会改变范围、风险、授权或验收，而又没有确认。'], status: 'candidate', next: ['Open chapter 3', '打开第 3 章'] },
-  L3: { title: ['Make the workflow runnable and checkable.', '让工作流可运行、可检查。'], description: ['Organize work as define, plan, execute, verify, review, deliver, and maintain. Use vertical slices to keep evidence moving.', '沿着定义、计划、执行、验证、审查、交付和维护组织任务，用竖向切片持续产出证据。'], chapters: [['Chapter 8 · Full lifecycle', '第 8 章 · 完整生命周期', '../book/chapters/08-full-lifecycle-workflow-EN.md'], ['Chapter 9 · Verification and recovery', '第 9 章 · 验证与恢复', '../book/chapters/09-verification-and-recovery-EN.md'], ['Chapter 13 · Action boundaries', '第 13 章 · 行动边界', '../book/chapters/13-action-boundaries-EN.md']], labs: [['Lab 009 · Engineering lifecycle', '实验 009 · 工程生命周期', '../book/labs/lab-009-engineering-lifecycle.md'], ['Lab 003 · Evidence review', '实验 003 · 证据审查', '../book/labs/lab-003-evidence-review.md'], ['Lab 007 · Action boundaries', '实验 007 · 行动边界', '../book/labs/lab-007-action-boundaries-EN.md']], skills: [['Workflow Orchestrator', 'Workflow Orchestrator', '../skills/prysai-workflow-orchestrator/SKILL.md'], ['Evidence Review', 'Evidence Review', '../skills/prysai-evidence-review/SKILL.md'], ['Task Protocol', 'Task Protocol', '../skills/prysai-task-protocol/SKILL.md']], evaluations: ['skill-risk-aware-selection-006', 'context-untrusted-instructions-008', 'permission-destructive-data-010', 'evidence-claim-audit-011', 'research-source-conflict-014', 'engineering-plan-small-change-015', 'marketing-experiment-plan-018', 'conversion-table-to-learning-path-020', 'conflict-scope-vs-safety-023', 'failure-retry-budget-025', 'stop-missing-authority-027', 'stop-evidence-gap-028', 'route-ownership-boundaries-032', 'product-context-write-gate-033', 'evidence-scope-insufficient-stop-035', 'source-conflict-license-boundary-036'], evaluationTypes: ['positive', 'boundary', 'failure', 'transfer'], gate: { explain: ['Explain the dependency graph, stage boundaries, permission changes, and acceptance evidence.', '解释依赖图、阶段边界、权限变化和验收证据。'], operate: ['Run a vertical slice from definition to verification with an explicit checkpoint.', '用明确检查点跑通从定义到验证的一条竖向切片。'], judge: ['Stop or recover when authority, scope, source, or evidence is insufficient.', '授权、范围、来源或证据不足时，正确停止或恢复。'], review: ['Compare the plan, diff, logs, checks, failed attempt, and remaining limits.', '对照计划、差异、日志、检查、失败尝试和剩余限制。'] }, graduation: ['Advance with one complete workflow, one intentional failure or boundary case, and a transfer task in another domain.', '完成一条完整工作流、一个故意失败或边界案例，以及另一个领域的迁移任务后，才进入下一阶段。'], blocked: ['The workflow relies on hidden permissions, untrusted instructions, unrecorded retries, or a claim outside its evidence.', '工作流依赖隐藏权限、不可信指令、未记录的重试，或结论超出证据范围。'], status: 'candidate', next: ['Open chapter 8', '打开第 8 章'] },
-  L4: { title: ['Choose the smallest useful capability.', '只选择最小有效能力。'], description: ['Choose Skills, tools, and surfaces by goal, lifecycle, risk, and dependency. “Install everything” is not a reason.', '按目标、生命周期、风险与依赖选择 Skill、工具和工作面；“全部安装”不是充分理由。'], chapters: [['Chapter 7 · Skills, Plugins, MCP, and tools', '第 7 章 · Skill、Plugin、MCP 与工具', '../book/chapters/07-skills-plugins-and-tools-EN.md'], ['Chapter 11 · Design a Skill', '第 11 章 · 设计一个 Skill', '../book/chapters/11-designing-a-skill-EN.md'], ['Chapter 14 · Audit an external Skill', '第 14 章 · 审查外部 Skill', '../book/chapters/14-discover-and-audit-skills.md']], labs: [['Lab 004 · Skill selection', '实验 004 · Skill 选择', '../book/labs/lab-004-skill-selection.md'], ['Lab 005 · Design a Skill', '实验 005 · 设计一个 Skill', '../book/labs/lab-005-design-a-skill.md'], ['Lab 008 · Research question', '实验 008 · 研究问题', '../book/labs/lab-008-research-question.md']], skills: [['Skill Selector', 'Skill Selector', '../skills/prysai-skill-selector/SKILL.md'], ['Research Router', 'Research Router', '../skills/prysai-research-router/SKILL.md']], evaluations: ['engineering-plan-regression-016', 'failure-scope-escalation-026', 'skill-install-confirmation-rollback-037'], evaluationTypes: ['positive', 'boundary', 'failure', 'transfer'], gate: { explain: ['Explain why each selected capability earns its place and what it does not cover.', '解释每个被选能力为什么值得使用，以及它不覆盖什么。'], operate: ['Use the minimum useful combination and preserve an installation or rollback record.', '使用最小有效组合，并保留安装或回滚记录。'], judge: ['Compare fit, dependency, permission, license, maintenance, and verification cost.', '比较适配、依赖、权限、许可证、维护和验证成本。'], review: ['Test a positive case, a boundary case, a failure case, and a transfer case before calling a Skill reliable.', '在称为可靠前，测试正例、边界例、失败例和迁移例。'] }, graduation: ['Advance when a reusable Skill or capability choice has a bounded contract, rollback path, and four-case evaluation plan.', '当可复用 Skill 或能力选择具备边界契约、回滚路径和四类案例评测计划时，才进入下一阶段。'], blocked: ['The choice is justified only by popularity, directory size, or an unverified performance claim.', '选择理由只有流行度、目录大小或未经验证的性能断言。'], status: 'candidate', next: ['Open chapter 7', '打开第 7 章'] },
-  L5: { title: ['A completion claim needs evidence.', '完成声明必须有证据。'], description: ['Break “done” into checkable claims. Separate verified, partial, unverified, and unknowable, then name evidence for each claim.', '将“完成了”拆成可检查的断言，区分已验证、部分完成、未验证与无法判断，并为每项声明指定证据。'], chapters: [['Chapter 12 · Agent loop and stop', '第 12 章 · Agent 循环与停止', '../book/chapters/12-agent-loop-and-stop.md'], ['Chapter 19 · Evaluate models and workflows', '第 19 章 · 评估模型和工作流', '../book/chapters/19-evaluate-models-and-workflows.md']], labs: [['Lab 006 · Agent stop conditions', '实验 006 · Agent 停止条件', '../book/labs/lab-006-agent-stop-conditions.md'], ['Lab 003 · Evidence review', '实验 003 · 证据审查', '../book/labs/lab-003-evidence-review.md']], skills: [['Evidence Review', 'Evidence Review', '../skills/prysai-evidence-review/SKILL.md'], ['Workflow Orchestrator', 'Workflow Orchestrator', '../skills/prysai-workflow-orchestrator/SKILL.md']], evaluations: ['team-capability-package-029', 'workflow-checkpoint-gate-038'], evaluationTypes: ['positive', 'boundary', 'failure', 'transfer'], gate: { explain: ['Explain observable states, retry budgets, stop conditions, and the difference between output and proof.', '解释可观察状态、重试预算、停止条件，以及输出与证明的区别。'], operate: ['Run a bounded comparison or review with fixed inputs, checkpoints, and logs.', '用固定输入、检查点和日志完成一次有边界的对照或审查。'], judge: ['Classify claims as verified, partial, unverified, disputed, or unknowable within scope.', '在声明范围内把结论分类为已验证、部分完成、未验证、有争议或无法判断。'], review: ['Produce an independent review that names evidence, gaps, limits, and the next smallest check.', '产出独立审查，指出证据、缺口、限制和下一个最小检查。'] }, graduation: ['Advance with a fixed evaluation record and an independent review that refuses to overclaim.', '提交固定评测记录和拒绝过度断言的独立审查后，才进入下一阶段。'], blocked: ['There are no fixed inputs, no run log, no independent reviewer, or the evidence cannot support the claim.', '缺少固定输入、运行日志、独立复核，或证据无法支持声明。'], status: 'candidate', next: ['Open chapter 12', '打开第 12 章'] },
-  L6: { title: ['Turn personal method into team capability.', '把个人方法沉淀为团队能力。'], description: ['Share context, Skills, evaluations, review, versioning, and contribution rules so the method can be reused and rechecked.', '共享上下文、Skill、评测、审查、版本与贡献规范，让能力可复用，也能在产品变化后重新审查。'], chapters: [['Chapter 20 · Personal work system', '第 20 章 · 个人工作系统', '../book/chapters/20-personal-codex-work-system.md'], ['Chapter 21 · Team capability system', '第 21 章 · 团队能力系统', '../book/chapters/21-team-capability-system.md'], ['Chapter 22 · Continuous update', '第 22 章 · 持续更新', '../book/chapters/22-continuous-update-and-future-proofing.md']], labs: [['Lab 012 · Team capability migration', '实验 012 · 团队能力迁移', '../book/labs/lab-012-team-capability-migration.md'], ['Lab 010 · Shared product context', '实验 010 · 共享产品上下文', '../book/labs/lab-010-product-context.md']], skills: [['Product Context', 'Product Context', '../skills/prysai-product-context/SKILL.md'], ['Codex Coach', 'Codex Coach', '../skills/prysai-codex-coach/SKILL.md']], evaluations: ['team-capability-migration-030'], evaluationTypes: ['positive', 'boundary', 'failure', 'transfer'], gate: { explain: ['Explain ownership, versioning, permissions, source boundaries, maintenance triggers, and rollback.', '解释负责人、版本、权限、来源边界、维护触发器和回滚。'], operate: ['Migrate one personal method into a team-readable package without exposing secrets.', '把一个个人方法迁移为团队可读的能力包，不暴露秘密。'], judge: ['Separate stable principles, volatile facts, hypotheses, runtime evidence, and release claims.', '分开稳定原则、易变事实、假设、运行时证据和发布声明。'], review: ['Run an independent reproduction or rollback review and record what remains unverified.', '完成独立复现或回滚审查，并记录仍未验证的部分。'] }, graduation: ['This is the terminal level: keep the package current, reproducible, and recoverable.', '这是终点等级：保持能力包当前、可复现、可恢复。'], blocked: ['The method depends on one person, hidden credentials, unclear licensing, or an ownerless update path.', '方法依赖某一个人、隐藏凭据、许可证不清或没有负责人的更新路径。'], status: 'candidate', next: ['Open chapter 21', '打开第 21 章'] }
+  L3: { title: ['Make the workflow runnable and checkable.', '让工作流可运行、可检查。'], description: ['Organize work as define, plan, execute, verify, review, deliver, and maintain. Use vertical slices to keep evidence moving.', '沿着定义、计划、执行、验证、审查、交付和维护组织任务，用竖向切片持续产出证据。'], chapters: [['Chapter 8 · Full lifecycle', '第 8 章 · 完整生命周期', '../book/chapters/08-full-lifecycle-workflow-EN.md'], ['Chapter 9 · Verification and recovery', '第 9 章 · 验证与恢复', '../book/chapters/09-verification-and-recovery-EN.md'], ['Chapter 13 · Action boundaries', '第 13 章 · 行动边界', '../book/chapters/13-action-boundaries-EN.md']], labs: [['Lab 009 · Engineering lifecycle', '实验 009 · 工程生命周期', '../book/labs/lab-009-engineering-lifecycle.md'], ['Lab 003 · Evidence review', '实验 003 · 证据审查', '../book/labs/lab-003-evidence-review-EN.md'], ['Lab 007 · Action boundaries', '实验 007 · 行动边界', '../book/labs/lab-007-action-boundaries-EN.md']], skills: [['Workflow Orchestrator', 'Workflow Orchestrator', '../skills/prysai-workflow-orchestrator/SKILL.md'], ['Evidence Review', 'Evidence Review', '../skills/prysai-evidence-review/SKILL.md'], ['Task Protocol', 'Task Protocol', '../skills/prysai-task-protocol/SKILL.md']], evaluations: ['skill-risk-aware-selection-006', 'context-untrusted-instructions-008', 'permission-destructive-data-010', 'evidence-claim-audit-011', 'research-source-conflict-014', 'engineering-plan-small-change-015', 'marketing-experiment-plan-018', 'conversion-table-to-learning-path-020', 'conflict-scope-vs-safety-023', 'failure-retry-budget-025', 'stop-missing-authority-027', 'stop-evidence-gap-028', 'route-ownership-boundaries-032', 'product-context-write-gate-033', 'evidence-scope-insufficient-stop-035', 'source-conflict-license-boundary-036'], evaluationTypes: ['positive', 'boundary', 'failure', 'transfer'], gate: { explain: ['Explain the dependency graph, stage boundaries, permission changes, and acceptance evidence.', '解释依赖图、阶段边界、权限变化和验收证据。'], operate: ['Run a vertical slice from definition to verification with an explicit checkpoint.', '用明确检查点跑通从定义到验证的一条竖向切片。'], judge: ['Stop or recover when authority, scope, source, or evidence is insufficient.', '授权、范围、来源或证据不足时，正确停止或恢复。'], review: ['Compare the plan, diff, logs, checks, failed attempt, and remaining limits.', '对照计划、差异、日志、检查、失败尝试和剩余限制。'] }, graduation: ['Advance with one complete workflow, one intentional failure or boundary case, and a transfer task in another domain.', '完成一条完整工作流、一个故意失败或边界案例，以及另一个领域的迁移任务后，才进入下一阶段。'], blocked: ['The workflow relies on hidden permissions, untrusted instructions, unrecorded retries, or a claim outside its evidence.', '工作流依赖隐藏权限、不可信指令、未记录的重试，或结论超出证据范围。'], status: 'candidate', next: ['Open chapter 8', '打开第 8 章'] },
+  L4: { title: ['Choose the smallest useful capability.', '只选择最小有效能力。'], description: ['Choose Skills, tools, and surfaces by goal, lifecycle, risk, and dependency. “Install everything” is not a reason.', '按目标、生命周期、风险与依赖选择 Skill、工具和工作面；“全部安装”不是充分理由。'], chapters: [['Chapter 7 · Skills, Plugins, MCP, and tools', '第 7 章 · Skill、Plugin、MCP 与工具', '../book/chapters/07-skills-plugins-and-tools-EN.md'], ['Chapter 11 · Design a Skill', '第 11 章 · 设计一个 Skill', '../book/chapters/11-designing-a-skill-EN.md'], ['Chapter 14 · Audit an external Skill', '第 14 章 · 审查外部 Skill', '../book/chapters/14-discover-and-audit-skills-EN.md']], labs: [['Lab 004 · Skill selection', '实验 004 · Skill 选择', '../book/labs/lab-004-skill-selection-EN.md'], ['Lab 005 · Design a Skill', '实验 005 · 设计一个 Skill', '../book/labs/lab-005-design-a-skill.md'], ['Lab 008 · Research question', '实验 008 · 研究问题', '../book/labs/lab-008-research-question.md']], skills: [['Skill Selector', 'Skill Selector', '../skills/prysai-skill-selector/SKILL.md'], ['Research Router', 'Research Router', '../skills/prysai-research-router/SKILL.md']], evaluations: ['engineering-plan-regression-016', 'failure-scope-escalation-026', 'skill-install-confirmation-rollback-037'], evaluationTypes: ['positive', 'boundary', 'failure', 'transfer'], gate: { explain: ['Explain why each selected capability earns its place and what it does not cover.', '解释每个被选能力为什么值得使用，以及它不覆盖什么。'], operate: ['Use the minimum useful combination and preserve an installation or rollback record.', '使用最小有效组合，并保留安装或回滚记录。'], judge: ['Compare fit, dependency, permission, license, maintenance, and verification cost.', '比较适配、依赖、权限、许可证、维护和验证成本。'], review: ['Test a positive case, a boundary case, a failure case, and a transfer case before calling a Skill reliable.', '在称为可靠前，测试正例、边界例、失败例和迁移例。'] }, graduation: ['Advance when a reusable Skill or capability choice has a bounded contract, rollback path, and four-case evaluation plan.', '当可复用 Skill 或能力选择具备边界契约、回滚路径和四类案例评测计划时，才进入下一阶段。'], blocked: ['The choice is justified only by popularity, directory size, or an unverified performance claim.', '选择理由只有流行度、目录大小或未经验证的性能断言。'], status: 'candidate', next: ['Open chapter 7', '打开第 7 章'] },
+  L5: { title: ['A completion claim needs evidence.', '完成声明必须有证据。'], description: ['Break “done” into checkable claims. Separate verified, partial, unverified, and unknowable, then name evidence for each claim.', '将“完成了”拆成可检查的断言，区分已验证、部分完成、未验证与无法判断，并为每项声明指定证据。'], chapters: [['Chapter 12 · Agent loop and stop', '第 12 章 · Agent 循环与停止', '../book/chapters/12-agent-loop-and-stop-EN.md'], ['Chapter 19 · Evaluate models and workflows', '第 19 章 · 评估模型和工作流', '../book/chapters/19-evaluate-models-and-workflows-EN.md']], labs: [['Lab 006 · Agent stop conditions', '实验 006 · Agent 停止条件', '../book/labs/lab-006-agent-stop-conditions-EN.md'], ['Lab 003 · Evidence review', '实验 003 · 证据审查', '../book/labs/lab-003-evidence-review-EN.md']], skills: [['Evidence Review', 'Evidence Review', '../skills/prysai-evidence-review/SKILL.md'], ['Workflow Orchestrator', 'Workflow Orchestrator', '../skills/prysai-workflow-orchestrator/SKILL.md']], evaluations: ['team-capability-package-029', 'workflow-checkpoint-gate-038'], evaluationTypes: ['positive', 'boundary', 'failure', 'transfer'], gate: { explain: ['Explain observable states, retry budgets, stop conditions, and the difference between output and proof.', '解释可观察状态、重试预算、停止条件，以及输出与证明的区别。'], operate: ['Run a bounded comparison or review with fixed inputs, checkpoints, and logs.', '用固定输入、检查点和日志完成一次有边界的对照或审查。'], judge: ['Classify claims as verified, partial, unverified, disputed, or unknowable within scope.', '在声明范围内把结论分类为已验证、部分完成、未验证、有争议或无法判断。'], review: ['Produce an independent review that names evidence, gaps, limits, and the next smallest check.', '产出独立审查，指出证据、缺口、限制和下一个最小检查。'] }, graduation: ['Advance with a fixed evaluation record and an independent review that refuses to overclaim.', '提交固定评测记录和拒绝过度断言的独立审查后，才进入下一阶段。'], blocked: ['There are no fixed inputs, no run log, no independent reviewer, or the evidence cannot support the claim.', '缺少固定输入、运行日志、独立复核，或证据无法支持声明。'], status: 'candidate', next: ['Open chapter 12', '打开第 12 章'] },
+  L6: { title: ['Turn personal method into team capability.', '把个人方法沉淀为团队能力。'], description: ['Share context, Skills, evaluations, review, versioning, and contribution rules so the method can be reused and rechecked.', '共享上下文、Skill、评测、审查、版本与贡献规范，让能力可复用，也能在产品变化后重新审查。'], chapters: [['Chapter 20 · Personal work system', '第 20 章 · 个人工作系统', '../book/chapters/20-personal-codex-work-system-EN.md'], ['Chapter 21 · Team capability system', '第 21 章 · 团队能力系统', '../book/chapters/21-team-capability-system-EN.md'], ['Chapter 22 · Continuous update', '第 22 章 · 持续更新', '../book/chapters/22-continuous-update-and-future-proofing-EN.md']], labs: [['Lab 012 · Team capability migration', '实验 012 · 团队能力迁移', '../book/labs/lab-012-team-capability-migration-EN.md'], ['Lab 010 · Shared product context', '实验 010 · 共享产品上下文', '../book/labs/lab-010-product-context.md']], skills: [['Product Context', 'Product Context', '../skills/prysai-product-context/SKILL.md'], ['Codex Coach', 'Codex Coach', '../skills/prysai-codex-coach/SKILL.md']], evaluations: ['team-capability-migration-030'], evaluationTypes: ['positive', 'boundary', 'failure', 'transfer'], gate: { explain: ['Explain ownership, versioning, permissions, source boundaries, maintenance triggers, and rollback.', '解释负责人、版本、权限、来源边界、维护触发器和回滚。'], operate: ['Migrate one personal method into a team-readable package without exposing secrets.', '把一个个人方法迁移为团队可读的能力包，不暴露秘密。'], judge: ['Separate stable principles, volatile facts, hypotheses, runtime evidence, and release claims.', '分开稳定原则、易变事实、假设、运行时证据和发布声明。'], review: ['Run an independent reproduction or rollback review and record what remains unverified.', '完成独立复现或回滚审查，并记录仍未验证的部分。'] }, graduation: ['This is the terminal level: keep the package current, reproducible, and recoverable.', '这是终点等级：保持能力包当前、可复现、可恢复。'], blocked: ['The method depends on one person, hidden credentials, unclear licensing, or an ownerless update path.', '方法依赖某一个人、隐藏凭据、许可证不清或没有负责人的更新路径。'], status: 'candidate', next: ['Open chapter 21', '打开第 21 章'] }
 };
 // Keep the legacy fallback aligned with the canonical English source paths.
 const generatedLearningPath = window.CODEX_LEARNING_PATH?.levels;
@@ -186,6 +186,22 @@ Object.assign(copy.zh, {
 });
 
 Object.assign(copy.en, {
+  searchLabel: 'Search the Field Guide',
+  searchPlaceholder: 'Search chapters, labs, Skills, or field cases',
+  searchSubmit: 'Search',
+  searchTitle: 'Find a bounded answer.',
+  searchClear: 'Clear',
+  searchNoQuery: 'Type a word or phrase to search the Field Guide.',
+  searchNoResults: 'No results for “{query}”. Try a chapter title, Skill name, or narrower phrase.',
+  searchResultsCount: '{count} results for “{query}”.',
+  searchIndexUnavailable: 'Search is temporarily unavailable. Rebuild the generated search index before relying on it.',
+  searchFallback: 'English source shown · requested translation is not ready',
+  searchOpen: 'Open reader',
+  searchKindChapter: 'Chapter',
+  searchKindLab: 'Lab',
+  searchKindProject: 'Project entry',
+  searchKindBook: 'Book entry',
+  searchKindDocument: 'Document',
   navStart: 'Start here',
   startEyebrow: 'Start here · choose by problem',
   startTitle: 'What do you need to do?',
@@ -212,6 +228,22 @@ Object.assign(copy.en, {
 });
 
 Object.assign(copy.zh, {
+  searchLabel: '搜索 Field Guide',
+  searchPlaceholder: '搜索章节、实验、Skill 或现实问题',
+  searchSubmit: '搜索',
+  searchTitle: '找到有边界的答案。',
+  searchClear: '清除',
+  searchNoQuery: '输入词语或短语，搜索 Field Guide。',
+  searchNoResults: '没有找到“{query}”的结果。试试章节标题、Skill 名称或更窄的短语。',
+  searchResultsCount: '“{query}”的结果：{count} 条。',
+  searchIndexUnavailable: '搜索暂时不可用。请先重新生成搜索索引，再依赖搜索结果。',
+  searchFallback: '显示英文源文件 · 请求的翻译尚未就绪',
+  searchOpen: '打开阅读器',
+  searchKindChapter: '章节',
+  searchKindLab: '实验',
+  searchKindProject: '项目入口',
+  searchKindBook: '书稿入口',
+  searchKindDocument: '文档',
   navStart: '从这里开始',
   startEyebrow: '从这里开始 · 按问题选择',
   startTitle: '你现在要做什么？',
@@ -278,6 +310,7 @@ const localeDisplayName = (language) => localeManifest.locales[language]?.displa
 const localeHasUiCopy = (language) => uiLocales.has(language);
 const localeIsReady = (record) => record?.exists && ['source', 'verified', 'production-ready'].includes(record.translation_status);
 const pagesArtifactMode = Boolean(window.CODEX_PAGES_ARTIFACT);
+const searchIndex = window.CODEX_SEARCH_INDEX;
 const pathFromHref = (href) => {
   if (!href || href.startsWith('#') || /^(?:https?:|mailto:|javascript:)/i.test(href)) return null;
   const path = href.split('#', 1)[0].split('?', 1)[0];
@@ -291,12 +324,12 @@ const pagesPathFromHref = (href) => {
   const sitePath = href.split('#', 1)[0].split('?', 1)[0].replace(/^\.\//, '');
   return sitePath.endsWith('.md') ? `site/${sitePath}` : null;
 };
-const pagesHref = (href) => {
+const pagesHref = (href, language = currentLanguage) => {
   if (!pagesArtifactMode) return href;
   const path = pagesPathFromHref(href);
   if (!path || !path.endsWith('.md')) return href;
   const hash = href.includes('#') ? href.slice(href.indexOf('#')) : '';
-  const localeQuery = localeTokens.includes(currentLanguage) ? `&lang=${encodeURIComponent(currentLanguage)}` : '';
+  const localeQuery = localeTokens.includes(language) ? `&lang=${encodeURIComponent(language)}` : '';
   return `reader.html?path=${encodeURIComponent(path)}${localeQuery}${hash}`;
 };
 const contentFor = (contentId) => localeManifest.contents?.[contentId];
@@ -338,6 +371,122 @@ const hrefForItem = (item) => {
   const fallbackHref = item.href || item[2] || '';
   const contentId = item.content_id || localeManifest.aliases?.[item.id];
   return pagesHref(contentId ? localizedContentHref(contentId, fallbackHref) : fallbackHref);
+};
+
+const searchNodes = {
+  form: document.querySelector('[data-site-search]'),
+  input: document.querySelector('[data-site-search-input]'),
+  panel: document.querySelector('[data-search-panel]'),
+  status: document.querySelector('[data-search-status]'),
+  results: document.querySelector('[data-search-results]'),
+  clear: document.querySelector('[data-search-clear]'),
+};
+const normalizeSearchQuery = (value) => String(value || '').trim().replace(/\s+/g, ' ').toLocaleLowerCase();
+const searchIndexAvailable = Boolean(
+  searchIndex?.schema_version === '1'
+  && Array.isArray(searchIndex.documents)
+);
+const searchKindLabel = (kind) => currentCopy()[`searchKind${kind === 'project-entry' ? 'Project' : kind === 'book-entry' ? 'Book' : kind === 'chapter' ? 'Chapter' : kind === 'lab' ? 'Lab' : 'Document'}`] || kind;
+const searchLocaleFor = (documentRecord) => {
+  const requested = documentRecord.locales?.[currentLanguage];
+  const english = documentRecord.locales?.en;
+  if (requested?.exists && documentRecord.search?.[currentLanguage]) {
+    if (requested.ready) return { searchLocale: currentLanguage, displayLocale: currentLanguage, record: requested, fallback: false };
+    if (english?.exists) return { searchLocale: currentLanguage, displayLocale: 'en', record: english, fallback: true };
+  }
+  if (english?.exists && documentRecord.search?.en) return { searchLocale: 'en', displayLocale: 'en', record: english, fallback: currentLanguage !== 'en' };
+  return null;
+};
+const searchScore = (documentRecord, query, locale) => {
+  const record = documentRecord.locales?.[locale];
+  const title = normalizeSearchQuery(record?.title);
+  const snippet = normalizeSearchQuery(record?.snippet);
+  const body = documentRecord.search?.[locale] || '';
+  let score = 0;
+  if (title === query) score += 100;
+  if (title.includes(query)) score += 40;
+  if (snippet.includes(query)) score += 20;
+  if (body.includes(query)) score += 5;
+  if (normalizeSearchQuery(documentRecord.content_id).includes(query)) score += 10;
+  return score;
+};
+const searchHref = (documentRecord, locale, record) => {
+  const sourceHref = `../${record.path}`;
+  return pagesHref(sourceHref, locale);
+};
+const renderSearch = (rawQuery = searchNodes.input?.value || '') => {
+  if (!searchNodes.form || !searchNodes.panel) return;
+  const query = normalizeSearchQuery(rawQuery);
+  searchNodes.input.value = rawQuery;
+  searchNodes.panel.hidden = !query;
+  searchNodes.results.replaceChildren();
+  if (!query) {
+    searchNodes.status.textContent = currentCopy().searchNoQuery;
+    return;
+  }
+  if (!searchIndexAvailable) {
+    searchNodes.status.textContent = currentCopy().searchIndexUnavailable;
+    return;
+  }
+  const matches = searchIndex.documents
+    .map((documentRecord) => {
+      const selected = searchLocaleFor(documentRecord);
+      if (!selected) return null;
+      const score = searchScore(documentRecord, query, selected.searchLocale);
+      return score ? { documentRecord, selected, score } : null;
+    })
+    .filter(Boolean)
+    .sort((left, right) => right.score - left.score || (left.documentRecord.order || 0) - (right.documentRecord.order || 0))
+    .slice(0, 12);
+  searchNodes.status.textContent = matches.length
+    ? currentCopy().searchResultsCount.replace('{count}', String(matches.length)).replace('{query}', rawQuery.trim())
+    : currentCopy().searchNoResults.replace('{query}', rawQuery.trim());
+  matches.forEach(({ documentRecord, selected }) => {
+    const item = document.createElement('li');
+    item.className = 'search-result';
+    const link = document.createElement('a');
+    link.href = searchHref(documentRecord, selected.displayLocale, selected.record);
+    link.className = 'search-result-link';
+    const meta = document.createElement('span');
+    meta.className = 'search-result-meta';
+    meta.textContent = `${searchKindLabel(documentRecord.kind)}${documentRecord.number ? ` ${String(documentRecord.number).padStart(2, '0')}` : ''} · ${selected.displayLocale.toUpperCase()}`;
+    const title = document.createElement('strong');
+    title.textContent = selected.record.title || documentRecord.content_id;
+    const snippet = document.createElement('span');
+    snippet.className = 'search-result-snippet';
+    snippet.textContent = selected.record.snippet || '';
+    link.append(meta, title, snippet);
+    if (selected.fallback) {
+      const fallback = document.createElement('small');
+      fallback.className = 'search-result-fallback';
+      fallback.textContent = currentCopy().searchFallback;
+      link.append(fallback);
+    }
+    item.append(link);
+    searchNodes.results.append(item);
+  });
+};
+const initializeSearch = () => {
+  if (!searchNodes.form) return;
+  const initialQuery = new URLSearchParams(window.location.search).get('q') || '';
+  searchNodes.form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const query = searchNodes.input.value.trim();
+    const url = new URL(window.location.href);
+    if (query) url.searchParams.set('q', query); else url.searchParams.delete('q');
+    url.searchParams.set('lang', currentLanguage);
+    window.history.replaceState({}, '', url);
+    renderSearch(query);
+    searchNodes.panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  searchNodes.clear.addEventListener('click', () => {
+    const url = new URL(window.location.href);
+    url.searchParams.delete('q');
+    window.history.replaceState({}, '', url);
+    renderSearch('');
+    searchNodes.input.focus();
+  });
+  if (initialQuery) renderSearch(initialQuery);
 };
 
 const evaluationTypeLabels = (types) => types.map((type) => currentCopy()[type] || type).join(' · ');
@@ -410,6 +559,7 @@ const applyLanguage = (language, { updateUrl = true } = {}) => {
   updateLevel(document.querySelector('.level-tab.is-active')?.dataset.level || 'L0', false);
   updateRouteStatus(document.querySelector('.filter-button.is-active')?.dataset.filter || 'all');
   localizeReaderLinks();
+  if (searchNodes.form) renderSearch(searchNodes.input.value);
   const banner = document.querySelector('[data-locale-banner]');
   const pageFallback = currentLanguage !== 'en' && !localeHasUiCopy(currentLanguage);
   const hasContentFallback = Boolean(document.querySelector('[data-locale-fallback="true"]'));
@@ -567,4 +717,5 @@ document.addEventListener('keydown', (event) => {
   if (!languageMenu.hidden) closeLanguageMenu({ returnFocus: true });
 });
 
+initializeSearch();
 applyLanguage(currentLanguage, { updateUrl: hasExplicitLanguageParam && !hasValidLanguageParam });

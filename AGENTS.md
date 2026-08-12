@@ -50,6 +50,8 @@ Codex, skills, tools, Agent behavior, verification, and team adoption.
 $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
 & $py scripts\validate_project.py
 & $py scripts\validate_project_structure.py
+& $py scripts\validate_content_completeness.py
+& $py scripts\validate_learning_contract.py --canonical-en
 & $py scripts\audit_input_archives.py
 ```
 

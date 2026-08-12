@@ -504,6 +504,86 @@
       }
     },
     {
+      "content_id": "lab-003-evidence-review",
+      "kind": "lab",
+      "stem": "book/labs/lab-003-evidence-review",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-12",
+      "legacy_paths": ["book/labs/lab-003-evidence-review.md"],
+      "locales": {
+        "EN": {"path": "book/labs/lab-003-evidence-review-EN.md", "content_status": "draft", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/labs/lab-003-evidence-review-ZH.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "ES": {"path": "book/labs/lab-003-evidence-review-ES.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "JA": {"path": "book/labs/lab-003-evidence-review-JA.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "KO": {"path": "book/labs/lab-003-evidence-review-KO.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "DE": {"path": "book/labs/lab-003-evidence-review-DE.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."}
+      }
+    },
+    {
+      "content_id": "lab-004-skill-selection",
+      "kind": "lab",
+      "stem": "book/labs/lab-004-skill-selection",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-12",
+      "legacy_paths": ["book/labs/lab-004-skill-selection.md"],
+      "locales": {
+        "EN": {"path": "book/labs/lab-004-skill-selection-EN.md", "content_status": "draft", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/labs/lab-004-skill-selection-ZH.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "ES": {"path": "book/labs/lab-004-skill-selection-ES.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "JA": {"path": "book/labs/lab-004-skill-selection-JA.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "KO": {"path": "book/labs/lab-004-skill-selection-KO.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "DE": {"path": "book/labs/lab-004-skill-selection-DE.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."}
+      }
+    },
+    {
+      "content_id": "lab-012-team-capability-migration",
+      "kind": "lab",
+      "stem": "book/labs/lab-012-team-capability-migration",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-12",
+      "legacy_paths": ["book/labs/lab-012-team-capability-migration.md"],
+      "locales": {
+        "EN": {"path": "book/labs/lab-012-team-capability-migration-EN.md", "content_status": "draft", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/labs/lab-012-team-capability-migration-ZH.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "ES": {"path": "book/labs/lab-012-team-capability-migration-ES.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "JA": {"path": "book/labs/lab-012-team-capability-migration-JA.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "KO": {"path": "book/labs/lab-012-team-capability-migration-KO.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "DE": {"path": "book/labs/lab-012-team-capability-migration-DE.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."}
+      }
+    },
+    {
+      "content_id": "lab-013-l3-vertical-slice",
+      "kind": "lab",
+      "stem": "book/labs/lab-013-l3-vertical-slice",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-12",
+      "legacy_paths": ["book/labs/lab-013-l3-vertical-slice.md"],
+      "locales": {
+        "EN": {"path": "book/labs/lab-013-l3-vertical-slice-EN.md", "content_status": "draft", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/labs/lab-013-l3-vertical-slice-ZH.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "ES": {"path": "book/labs/lab-013-l3-vertical-slice-ES.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "JA": {"path": "book/labs/lab-013-l3-vertical-slice-JA.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "KO": {"path": "book/labs/lab-013-l3-vertical-slice-KO.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "DE": {"path": "book/labs/lab-013-l3-vertical-slice-DE.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."}
+      }
+    },
+    {
+      "content_id": "lab-006-agent-stop-conditions",
+      "kind": "lab",
+      "stem": "book/labs/lab-006-agent-stop-conditions",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-12",
+      "legacy_paths": ["book/labs/lab-006-agent-stop-conditions.md"],
+      "locales": {
+        "EN": {"path": "book/labs/lab-006-agent-stop-conditions-EN.md", "content_status": "draft", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/labs/lab-006-agent-stop-conditions-ZH.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Simplified Chinese translation and review are pending."},
+        "ES": {"path": "book/labs/lab-006-agent-stop-conditions-ES.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/labs/lab-006-agent-stop-conditions-JA.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/labs/lab-006-agent-stop-conditions-KO.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/labs/lab-006-agent-stop-conditions-DE.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
       "content_id": "lab-007-action-boundaries",
       "kind": "lab",
       "stem": "book/labs/lab-007-action-boundaries",

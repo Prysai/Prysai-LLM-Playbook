@@ -54,6 +54,7 @@
 | S39 | `docs/research/english-curriculum-practical-value-and-repetition-audit-2026-08-11.md` | 本项目 22 个英文篇章、实验、Skill、案例和评测的只读审计 | 只记录本项目的覆盖、重复、缺口、状态冲突和编辑顺序；没有外部可版权内容 | `project-audit / reference-only`：审计建议仍需通过后续内容和运行证据验证 | 用于后续英文编辑、重复消解和实验增强；不把结构审计写成学习效果证明 |
 | S40 | `docs/research/six-locale-contract-audit-2026-08-11.md` | 本项目 locale matrix、manifest、README、Reader 和本地检查结果 | 只记录默认语言、六路由、文件覆盖、同语言链接、Reader 状态和 release 检查边界 | `project-audit / reference-only`：当前项目仍处于 migration，release 检查预期不通过 | 用于语言切换、fallback banner 和迁移状态维护；不声称整本书已完成六语言 |
 | S41 | `docs/research/tutorial-and-i18n-architecture-benchmark-2026-08-11.md` | WorkBuddyGuide、VitePress、Docusaurus、mdBook、Rust Book、GitHub Pages 文档及本项目来源 | 只保留教程信息架构、sidebar/TOC、章节翻页、多语言路由、搜索、Pages 与 source/generated 边界的原创比较；未复制外部正文、代码、模板、图片、Logo、字体或品牌表达 | `reference-only`：多项目和官方文档的许可证、媒体权利与版本边界需按具体来源复核；源 URL 和访问日期已记录在研究文件 | 仅用于项目地图、canonical navigation、Reader、locale identity、搜索和 Pages 检查；不 vendoring 外部框架代码，也不把研究比较当作运行或用户效果证据 |
+| S42 | `docs/research/field-problems-input-and-evidence-p3-2026-08-11.md` | `openai/codex` GitHub Issues #35335, #37578, and #37559 | 只保留三个 Windows 公开用户报告的原创摘要、版本、证据边界和低风险教学映射；没有复制 issue 正文、日志、代码、图片、凭据或补丁 | `reference-only`：用户报告；本项目未本地复现，报告不证明官方根因、普遍性或修复 | 用于 Chapter 9 与 Lab 015 的输入完整性、终端可见性和 Git/Agent 状态边界；不把社区 workaround 写成官方修复 |
 
 ## 归档指纹
 

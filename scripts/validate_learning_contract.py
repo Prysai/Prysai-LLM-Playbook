@@ -18,6 +18,50 @@ ROOT = Path(__file__).resolve().parents[1]
 CHAPTERS = ROOT / "book/chapters"
 LABS = ROOT / "book/labs"
 
+
+def canonical_english_chapter_paths() -> list[Path]:
+    """Return the 22 English source files declared by the locale matrix."""
+    try:
+        import json
+
+        matrix = json.loads(
+            (ROOT / "docs/governance/locale-matrix.yaml").read_text(encoding="utf-8")
+        )
+    except (OSError, UnicodeError, json.JSONDecodeError):
+        return sorted(CHAPTERS.glob("[0-9][0-9]-*-EN.md"))
+
+    paths: list[Path] = []
+    for item in matrix.get("content", []):
+        if not isinstance(item, dict) or item.get("kind") != "chapter":
+            continue
+        locale = item.get("locales", {}).get("EN", {})
+        path_value = locale.get("path") if isinstance(locale, dict) else None
+        if isinstance(path_value, str) and path_value.endswith("-EN.md"):
+            paths.append(ROOT / path_value)
+    return paths
+
+
+def canonical_english_lab_paths() -> list[Path]:
+    """Return English lab sources where the locale matrix declares one."""
+    try:
+        import json
+
+        matrix = json.loads(
+            (ROOT / "docs/governance/locale-matrix.yaml").read_text(encoding="utf-8")
+        )
+    except (OSError, UnicodeError, json.JSONDecodeError):
+        return sorted(LABS.glob("lab-*-EN.md"))
+
+    paths: list[Path] = []
+    for item in matrix.get("content", []):
+        if not isinstance(item, dict) or item.get("kind") != "lab":
+            continue
+        locale = item.get("locales", {}).get("EN", {})
+        path_value = locale.get("path") if isinstance(locale, dict) else None
+        if isinstance(path_value, str) and path_value.endswith("-EN.md"):
+            paths.append(ROOT / path_value)
+    return paths
+
 CHAPTER_CONTRACT = {
     # Keep both headings valid: early chapters use the explicit teaching
     # heading, while later chapters use the shorter project convention.
@@ -162,8 +206,9 @@ def value_is_nonempty(value: str | None) -> bool:
     return bool(stripped) and stripped not in {"null", "~", "''", '""'}
 
 
-def validate_chapters(errors: list[str]) -> None:
-    chapters = sorted(CHAPTERS.glob("[0-9][0-9]-*.md"))
+def validate_chapters(errors: list[str], chapters: list[Path] | None = None) -> None:
+    if chapters is None:
+        chapters = sorted(CHAPTERS.glob("[0-9][0-9]-*.md"))
     expected = {f"{number:02d}" for number in range(1, 23)}
     actual = {path.name[:2] for path in chapters}
     missing = sorted(expected - actual)
@@ -182,10 +227,12 @@ def validate_chapters(errors: list[str]) -> None:
             )
 
 
-def validate_labs(errors: list[str]) -> None:
-    labs = sorted(LABS.glob("lab-*.md"))
-    if len(labs) < 10:
-        errors.append(f"labs: expected at least 10 labs, found {len(labs)}")
+def validate_labs(errors: list[str], labs: list[Path] | None = None) -> None:
+    if labs is None:
+        labs = sorted(LABS.glob("lab-*.md"))
+    minimum_labs = 1 if labs is not None else 10
+    if len(labs) < minimum_labs:
+        errors.append(f"labs: expected at least {minimum_labs} labs, found {len(labs)}")
 
     for path in labs:
         text = read_utf8(path)
@@ -256,9 +303,12 @@ def validate_labs(errors: list[str]) -> None:
 
 
 def main() -> int:
+    canonical_only = "--canonical-en" in sys.argv[1:]
     errors: list[str] = []
-    validate_chapters(errors)
-    validate_labs(errors)
+    chapters = canonical_english_chapter_paths() if canonical_only else None
+    labs = canonical_english_lab_paths() if canonical_only else None
+    validate_chapters(errors, chapters)
+    validate_labs(errors, labs)
     if errors:
         print("LEARNING_CONTRACT_FAILED")
         for error in errors:
@@ -266,8 +316,12 @@ def main() -> int:
         return 1
 
     print("LEARNING_CONTRACT_OK")
-    print(f"chapters={len(list(CHAPTERS.glob('[0-9][0-9]-*.md')))}")
-    print(f"labs={len(list(LABS.glob('lab-*.md')))}")
+    chapter_count = len(chapters) if chapters is not None else len(list(CHAPTERS.glob("[0-9][0-9]-*.md")))
+    lab_count = len(labs) if labs is not None else len(list(LABS.glob("lab-*.md")))
+    print(f"chapters={chapter_count}")
+    print(f"labs={lab_count}")
+    if canonical_only:
+        print("scope=canonical-english-sources")
     return 0
 
 

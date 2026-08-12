@@ -61,6 +61,26 @@ The lesson is not “never retry” or “never install”. The lesson is to mak
 next action depend on evidence and authority rather than on elapsed time or the
 confidence of a status label.
 
+## Three Windows reports: the signal is not the evidence
+
+The following cases come from public GitHub reports accessed on 2026-08-12.
+They are useful teaching inputs, not local reproductions, official diagnoses,
+or universal Windows behavior. Read the symptom, then keep the evidence class
+attached to it.
+
+| Public symptom | What it can teach | First bounded check | Stop before |
+|---|---|---|---|
+| Codex CLI output longer than the terminal viewport reportedly cannot be recovered from scrollback ([#35335](https://github.com/openai/codex/issues/35335)) | A viewport is presentation, not durable evidence | Save the response or regenerate the relevant output into a named file; record CLI, terminal, and prompt scope | Claiming that a missing viewport proves Agent or repository data loss |
+| Non-BMP characters reportedly disappear when pasted into the TUI composer ([#37578](https://github.com/openai/codex/issues/37578)) | Composer echo is not input integrity | Compare the intended string with the received string using a harmless fixture before sending a consequential request | Editing, committing, or sending a request whose input was not preserved |
+| Long checkpoint refs reportedly make Windows Git report `bad ref` or `Filename too long` ([#37559](https://github.com/openai/codex/issues/37559)) | Internal Agent state is not the same as ordinary project state | In an approved diagnostic scope, record `git status`, `git show-ref`, `git fsck --full`, `git worktree list`, and the exact ref path | Deleting `.git` material, changing Git config, fetching, or repairing refs without a backup and authority |
+
+The project record [Windows input and evidence field problems](../../docs/research/field-problems-input-and-evidence-p3-2026-08-11.md)
+contains the version details, evidence boundary, and a reusable transfer table.
+The practical rule is <mark class="highlight-text highlight-yellow">capture the smallest durable artifact before you retry</mark>:
+an output file, received-input comparison, diff, hash, command log, or
+redacted hand-off. A community workaround may help triage, but it is not an
+official fix and it does not authorize a persistent environment change.
+
 ## 1. Match claims to evidence
 
 Start with the sentence you want to say. Then ask what a second person would
@@ -79,7 +99,7 @@ need to inspect before accepting that exact sentence at the declared scope.
 
 ### Before Lab 013: write a claim-to-evidence table
 
-Before entering [Lab 013: the auditable vertical slice](../labs/lab-013-l3-vertical-slice.md),
+Before entering [Lab 013: the auditable vertical slice](../labs/lab-013-l3-vertical-slice-EN.md),
 split “done” into checkable rows. Each row may be supported only by evidence
 that falls within its declared scope:
 
@@ -287,7 +307,7 @@ independent claim and decide the allowed status words before reviewing it.
 
 ### Task
 
-Use [Lab 003](../labs/lab-003-evidence-review.md) to turn the summary into a
+Use [Lab 003](../labs/lab-003-evidence-review-EN.md) to turn the summary into a
 claim table. Write the scope, evidence, status, and next check for every row.
 Then deliberately add an unsupported sentence such as “all tests passed” and
 observe whether the review rejects it rather than accepting the summary's tone.

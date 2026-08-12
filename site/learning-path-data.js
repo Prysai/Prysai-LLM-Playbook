@@ -832,7 +832,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Agent stop conditions",
             "zh": "Agent 停止条件"
           },
-          "href": "../book/labs/lab-006-agent-stop-conditions.md",
+          "href": "../book/labs/lab-006-agent-stop-conditions-EN.md",
           "relation": "primary"
         },
         {
@@ -927,7 +927,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Agent stop conditions",
             "zh": "Agent 停止条件"
           },
-          "href": "../book/labs/lab-006-agent-stop-conditions.md",
+          "href": "../book/labs/lab-006-agent-stop-conditions-EN.md",
           "relation": "primary"
         }
       }

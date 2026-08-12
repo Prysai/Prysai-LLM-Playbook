@@ -1,4 +1,4 @@
-<!-- content_id: chapter-12-agent-loop-and-stop | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-11 -->
+<!-- content_id: chapter-12-agent-loop-and-stop | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-12 -->
 
 # Chapter 12: The Agent Loop, State, and Stop Conditions
 
@@ -266,6 +266,56 @@ The checkpoint deliberately records what did **not** happen. That prevents a
 later session from treating an absent output as a partial success or from
 inventing an input file just to make the loop move.
 
+### Event trace: record the transition, not just the summary
+
+A state record tells you where the run is now. An event trace tells you how it
+got there. Keep the trace append-only: add a new event when the model proposes,
+the host decides, a tool starts or ends, an artifact changes, a check runs, or a
+delivery claim is made. Do not rewrite an earlier unknown event after a later
+attempt appears to succeed.
+
+The following is a project teaching format, not a universal vendor event API:
+
+```yaml
+run_id: run-2026-08-12-001
+attempt_id: attempt-02
+parent_attempt_id: attempt-01
+event_id: event-006
+event_type: effect
+timestamp: "2026-08-12T10:42:00-07:00"
+state_before: running
+state_after: feedback_received
+action_or_tool: "write the disposable output file"
+target: "sandbox/output.txt"
+approval_status: approved
+exit_status: 0
+artifact_hash_or_diff: "evidence/diff-attempt-02.txt"
+side_effect_status: "local file changed; no external action"
+evidence_ref: "evidence/events/event-006.md"
+```
+
+If a field was not observed, write `not_observed`. Do not fill it with the
+model's intention or with a guess based on the final paragraph.
+
+| Event | What it establishes | What it still leaves open |
+|---|---|---|
+| `proposal` | The model emitted a planned action or tool request | Whether a host allowed or executed it |
+| `approval` | A host or human decision allowed, rejected, or paused that proposal | Whether the tool started or the target changed |
+| `execution_start` / `execution_end` | The tool started and later returned, failed, or timed out | Whether the intended semantic effect exists |
+| `effect` | A named artifact or external target was observed to change or remain unchanged | Whether the change satisfies the acceptance rule |
+| `verification` | A scoped check examined the result and returned an observation | Claims outside that check's scope |
+| `delivery` | A person or Agent made a claim about the run | Whether the claim is supported until the evidence references are read |
+
+For a small local task, the minimum useful trace is usually six rows: proposal,
+approval, execution, effect, verification, and delivery. A rejected proposal
+may legitimately have no execution row. A timed-out write may have an
+`execution_end` row with `exit_status: unknown` and a later reconciliation row;
+it must not be silently converted into success.
+
+The trace is not a request to expose hidden model reasoning. It records
+observable transitions at the host, tool, artifact, and verification boundaries.
+That is enough to identify the first unsupported claim.
+
 ## 3. Retry is a bounded decision
 
 Retrying is not a virtue by itself. It is justified only when the next attempt
@@ -320,6 +370,51 @@ Automatic retry is safest for a read-only action or a write that is proven
 idempotent and still inside the declared budget. A write may have succeeded even
 when its response was lost. If that state cannot be checked, do not send the
 same non-idempotent action again merely because the UI says timeout.
+
+### Idempotency and side-effect reconciliation
+
+Classify the action before you decide whether a retry is allowed. These labels
+describe the action's side-effect shape; they do not grant permission:
+
+| Action class | Working definition | First check after an uncertain result |
+|---|---|---|
+| `read_only` | Observes state without intending to mutate it | Repeat only within the read and time budget; record the new observation |
+| `idempotent` | Repeating the same action converges on the same named state | Read the target and compare it with the postcondition |
+| `compensating` | Reverses or corrects a known earlier effect | Identify the exact prior effect and confirm that compensation is authorized |
+| `non_idempotent` | Repeating may create a duplicate, send twice, charge twice, or delete more | Do not repeat until the original effect is ruled out or a human decides |
+
+“It is just a file write” is not enough to classify an action. Appending a line,
+creating a remote issue, sending a message, and replacing a file have different
+repetition risks. If the target system's semantics are unknown, treat the action
+as `non_idempotent` until a smaller read-only check establishes otherwise.
+
+Use this reconciliation sequence when a response is lost:
+
+1. Freeze the same side effect; do not resend it because the interface says
+   `timeout`.
+2. Preserve the original attempt, request identifier, last event, output, and
+   diff. Keep the unknown attempt in the record.
+3. Read back the named target using the smallest authorized check.
+4. Compare the baseline with the postcondition: hash, diff, marker, output
+   identity, resource state, or an audit record.
+5. Classify the result as `no_effect_observed`, `effect_matches`,
+   `effect_differs`, or `effect_unknown`.
+6. Retry only when the action class, read-back evidence, changed condition, and
+   remaining budget justify it. Otherwise ask or stop.
+
+For example, if a local fixture write might have completed before its response
+was lost, the correct record is:
+
+```text
+attempt-01: write proposed and started; response: unknown
+reconciliation: read back sandbox/output.txt; marker matches expected value
+decision: do not repeat the write; run the scoped content check
+claim: effect_matches, verification pending
+```
+
+The read-back does not prove that the whole task is complete. It proves only
+that the named effect matches the recorded postcondition. Keep that distinction
+in the event trace and delivery note.
 
 ## 4. A practical task protocol
 
@@ -541,6 +636,77 @@ overwritten:
 Replace the example entries with the actual observations from the learner’s
 run. This table is a format, not a pre-filled result.
 
+### Incident handoff after an unknown state
+
+When the run stops with an unknown side effect, the handoff must be usable by a
+person who has not read the chat history. A new prompt is not a handoff: it
+usually omits the first missing transition and encourages a second person to
+repeat the same uncertain action.
+
+Save a short handoff beside the event trace:
+
+```markdown
+# Run handoff
+
+status: unknown
+run_id: run-2026-08-12-001
+attempt_id: attempt-02
+owner: current operator
+
+## Goal and scope
+
+- Goal: sort the non-empty lines in the disposable input file.
+- Allowed reads: `sandbox/`.
+- Allowed writes: `sandbox/output.txt`, `sandbox/evidence/`.
+- External actions: none.
+
+## Timeline
+
+- `event-001`: input and protocol read.
+- `event-002`: write proposed.
+- `event-003`: local write started; response was not observed.
+
+## Boundary
+
+- Last confirmed event: `event-003`, execution started.
+- First unproven transition: whether `sandbox/output.txt` changed.
+- Last known-good checkpoint: `cp-02`.
+
+## Current artifact and side-effect state
+
+- Affected target: `sandbox/output.txt`.
+- Baseline: `evidence/baseline-sha256.txt`.
+- Current read-back: `not_observed`.
+- External action: none authorized or attempted.
+
+## Actions already taken
+
+- Preserved the original attempt and command record.
+- Did not resend the write.
+
+## Actions deliberately not taken
+
+- No network call, message, publish, delete, or permission change.
+- No claim that the output exists or is correct.
+
+## Smallest safe next check
+
+Read back the named local target and compare it with the baseline and expected
+postcondition. Stop if the target is missing, ambiguous, or outside scope.
+
+## Human decision required
+
+If the read-back cannot distinguish `no_effect_observed` from `effect_unknown`,
+decide whether to abandon the fixture or authorize a new bounded attempt. Do not
+repeat a potentially completed non-idempotent action by default.
+```
+
+The handoff names both attempted and deliberately unattempted actions. That
+negative space matters: it prevents the next operator from assuming that a
+missing log means a network call, publish, delete, or permission change already
+happened. The handoff also names one next check, rather than turning an
+uncertain state into an invitation to “fix everything.”
+
 ## 6. Deliberate failures and recovery decisions
 
 The point of a deliberate failure is not to trick the model. It is to make a
@@ -711,7 +877,9 @@ Write short answers in your own words:
 4. If a long-running write might have completed before its response was lost,
    what evidence would you inspect before retrying it?
 5. How do you show that an external instruction was seen but not followed?
-6. Which claims in your last Agent delivery had no independent evidence?
+6. Which action class applies to the transfer task, and what read-back would
+   reconcile a lost response?
+7. Which claims in your last Agent delivery had no independent evidence?
 
 ## Acceptance checklist
 
@@ -719,8 +887,14 @@ Write short answers in your own words:
       tool effect, feedback, state update, verification, and stop/continue.
 - [ ] I can distinguish model generation, approval, tool execution, artifact
       change, and verification in a trace.
+- [ ] My event trace records proposal, approval, execution, effect,
+      verification, and delivery without rewriting an earlier unknown state.
 - [ ] I can maintain a state record containing identity, authority, inputs,
       actions, artifact state, verification, retry budget, and stop reason.
+- [ ] I can classify an action as read-only, idempotent, compensating, or
+      non-idempotent before deciding whether a retry is allowed.
+- [ ] After a lost response, I can preserve the original attempt, read back the
+      target, compare the postcondition, and refuse a blind repeat.
 - [ ] My task prompt names the goal, context, allowed actions, acceptance
       evidence, retry rule, stop conditions, and delivery format.
 - [ ] I can stop without inventing content when required input is missing.
@@ -733,6 +907,8 @@ Write short answers in your own words:
       and is expected to produce new evidence.
 - [ ] My evidence record maps each acceptance claim to a scoped artifact,
       command, log, source, or human decision.
+- [ ] My handoff names the last confirmed event, first unknown transition,
+      affected target, actions not taken, and one smallest safe next check.
 - [ ] I can deliver a useful `blocked` or `unverified` handoff instead of
       disguising uncertainty as completion.
 - [ ] I understand that this chapter’s sandbox experiment is `not_run` until a

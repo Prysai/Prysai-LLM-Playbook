@@ -65,7 +65,42 @@ acceptance.
 ## Failure variant
 
 Remove the output file while leaving the command name in the handoff. The
-correct result is `unverified` or `not_run`, not “probably passed”.
+  correct result is `unverified` or `not_run`, not “probably passed”.
+
+## Field variant: three Windows evidence breaks
+
+Use the three public reports in [Chapter 9](../chapters/09-verification-and-recovery-EN.md)
+as reference cases. Do not attempt to reproduce an upstream product issue as
+part of this lab. Instead, create harmless local fixtures that model the
+evidence boundary:
+
+1. Generate more text than a terminal viewport can show, then save the same
+   content to a file and compare what is durable with what is visible.
+2. Place BMP and non-BMP characters in a text fixture. Compare an intended
+   string with a received string before any tool call; mark the case blocked if
+   they differ.
+3. Create a disposable Git repository with a deliberately long *ordinary test
+   filename* only if the filesystem supports it. Record the path length and
+   Git result; do not create or delete Codex internal refs and do not change
+   repository configuration.
+
+For each case, add one row to the claim table:
+
+```text
+reported symptom:
+local fixture:
+source URL:
+local reproduction: not_run | observed | blocked
+last confirmed stage:
+first unknown stage:
+durable evidence:
+safe next check:
+stop condition:
+```
+
+The correct conclusion may be `reference-only`, `not_run`, or `blocked`. A
+local fixture that models a boundary is not a reproduction of the upstream
+issue, and a workaround copied from a public report is not an official fix.
 
 ## Transfer
 

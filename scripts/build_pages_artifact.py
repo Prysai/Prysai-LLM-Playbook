@@ -55,6 +55,7 @@ def validate_source() -> None:
         ROOT / "site/app.js",
         ROOT / "site/locale-manifest.js",
         ROOT / "site/learning-path-data.js",
+        ROOT / "site/search-index.js",
         ROOT / "site/reader.html",
         ROOT / "site/reader.css",
         ROOT / "site/reader.js",
@@ -98,6 +99,8 @@ def validate_artifact(output: Path) -> None:
     root_text = (output / "index.html").read_text(encoding="utf-8")
     if '<base href="site/" />' not in root_text or "window.CODEX_PAGES_ARTIFACT = true" not in root_text:
         raise ValueError("root Pages entry must point relative assets and content through site/")
+    if not (output / "site/search-index.js").is_file():
+        raise FileNotFoundError("Pages artifact is missing site/search-index.js")
 
 
 def build(output: Path) -> None:

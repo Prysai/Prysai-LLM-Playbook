@@ -1,3 +1,5 @@
+<!-- content_id: chapter-19-evaluate-models-and-workflows | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-12 -->
+
 # Chapter 19: Evaluate Models and Workflows — From Impressions to Evidence
 
 > `content_status: candidate`

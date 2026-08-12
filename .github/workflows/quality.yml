@@ -29,6 +29,9 @@ jobs:
       - name: Validate canonical directory map
         run: python scripts/validate_project_structure.py
 
+      - name: Validate content identity and reader entries
+        run: python scripts/validate_content_completeness.py
+
       - name: Validate volatile fact impact registry
         run: python scripts/validate_fact_impact_registry.py
 
@@ -44,6 +47,9 @@ jobs:
       - name: Validate learning contract
         run: python scripts/validate_learning_contract.py
 
+      - name: Validate canonical English teaching contract
+        run: python scripts/validate_learning_contract.py --canonical-en
+
       - name: Validate learning path
         run: python scripts/validate_learning_path.py
 
@@ -52,6 +58,9 @@ jobs:
 
       - name: Check generated locale manifest
         run: python scripts/build_site_locale_manifest.py --check
+
+      - name: Check generated site search index
+        run: python scripts/build_site_search_index.py --check
 
       - name: Check GitHub Pages artifact
         run: python scripts/build_pages_artifact.py --check

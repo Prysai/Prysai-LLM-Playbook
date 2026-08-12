@@ -1,3 +1,5 @@
+<!-- content_id: chapter-18-content-design-data-automation | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-12 -->
+
 # Chapter 18: Content, Design, Data, and Automation Track
 
 ## The problem this chapter solves

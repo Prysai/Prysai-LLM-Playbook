@@ -1,3 +1,5 @@
+<!-- content_id: chapter-22-continuous-update-and-future-proofing | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-12 -->
+
 # Chapter 22: Continuous Update and Future-Proofing
 
 > `content_status: candidate`

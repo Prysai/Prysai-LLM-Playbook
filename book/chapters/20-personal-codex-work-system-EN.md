@@ -1,3 +1,5 @@
+<!-- content_id: chapter-20-personal-codex-work-system | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-12 -->
+
 # Chapter 20: Build a Personal Codex Work System
 
 > `content_status: candidate`

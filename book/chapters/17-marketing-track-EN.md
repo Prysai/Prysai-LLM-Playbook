@@ -1,3 +1,5 @@
+<!-- content_id: chapter-17-marketing-track | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-12 -->
+
 # Chapter 17: Marketing Track — From Product Understanding to Growth Experiments
 
 ## The problem this chapter solves
