@@ -837,7 +837,7 @@ Before promoting this chapter from `candidate`, run the local contract experimen
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="Chapter navigation">
+<nav class="chapter-navigation" aria-label="Chapter navigation">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-EN.md" aria-label="Previous chapter: Chapter 10 · Planning and vertical slicing">← Previous<br><strong>Chapter 10 · Planning and vertical slicing</strong></a></td>

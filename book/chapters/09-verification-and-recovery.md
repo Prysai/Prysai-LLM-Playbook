@@ -168,7 +168,7 @@ HTTP 状态、长上下文、网络等待、模型推理或上游服务问题可
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow.md" aria-label="上一章：第 8 章 · 从定义到交付的完整生命周期">← 上一章<br><strong>第 8 章 · 从定义到交付的完整生命周期</strong></a></td>

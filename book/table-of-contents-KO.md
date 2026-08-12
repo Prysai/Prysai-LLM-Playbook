@@ -3,7 +3,7 @@
 # Codex: From First Task to Real Work — 책 목차 v0.2
 
 > 한국어 목차 페이지(`KO`)입니다. 기존
-> `book/table-of-contents.md`를 바탕으로 22개 장, 13개 실험, 상태 경계와
+> `book/table-of-contents.md`를 바탕으로 22개 장, 17개 실험, 상태 경계와
 > 실제 문제 연구 입구를 유지합니다. 장·실험 본문이나 런타임 검증이 이미
 > 6개 언어로 모두 이관되었다는 뜻은 아닙니다.
 

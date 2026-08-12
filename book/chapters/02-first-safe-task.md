@@ -175,7 +175,7 @@ run-id | checkpoint | 允许修改 | 实际修改 | 验证断言 | 证据路径 
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="01-gpt-and-codex.md" aria-label="上一章：第 1 章 · 先理解 GPT，再理解 Codex 的工作原理">← 上一章<br><strong>第 1 章 · 先理解 GPT，再理解 Codex 的工作原理</strong></a></td>

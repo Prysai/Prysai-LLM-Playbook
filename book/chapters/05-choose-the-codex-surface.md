@@ -271,7 +271,7 @@ run_id | surface | entry | account_authorized | target_resource_readable
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="04-context-permissions-and-agent.md" aria-label="上一章：第 4 章 · 上下文、权限与 Agent 的行动边界">← 上一章<br><strong>第 4 章 · 上下文、权限与 Agent 的行动边界</strong></a></td>

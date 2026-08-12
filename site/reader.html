@@ -37,10 +37,21 @@
 
     <main class="reader-main" id="reader-content" tabindex="-1">
       <div class="reader-shell">
-        <article class="reader-article" data-reader-article tabindex="-1" aria-busy="true">
+        <div class="reader-mobile-orientation" data-reader-orientation hidden></div>
+        <article class="reader-article" data-reader-article tabindex="-1" aria-busy="true" data-reader-requested-locale="" data-reader-effective-locale="" data-reader-fallback="false">
           <p class="reader-loading" data-reader-loading role="status">Loading the source page…</p>
         </article>
         <aside class="reader-aside" aria-label="Page details" data-reader-i18n-attr="aria-label:detailsAria">
+          <nav class="reader-book-nav" aria-label="Book chapters" data-reader-book-nav hidden data-reader-i18n-attr="aria-label:bookChaptersAria">
+            <div class="reader-aside-card reader-book-nav-card">
+              <span class="reader-aside-label" data-reader-i18n="bookChapters">Book chapters</span>
+              <div class="reader-book-progress" data-reader-book-progress></div>
+              <details class="reader-chapter-list-disclosure">
+                <summary data-reader-i18n="chapterList">Chapter list</summary>
+                <ol data-reader-chapter-list></ol>
+              </details>
+            </div>
+          </nav>
           <nav class="reader-toc" aria-label="On this page" data-reader-toc hidden data-reader-i18n-attr="aria-label:onThisPageAria">
             <div class="reader-aside-card reader-toc-card">
               <span class="reader-aside-label" data-reader-i18n="onThisPage">On this page</span>
@@ -52,17 +63,30 @@
             <strong data-reader-chapter-label></strong>
             <span class="reader-chapter-status" data-reader-chapter-status></span>
           </div>
-          <div class="reader-aside-card">
-            <span class="reader-aside-label" data-reader-i18n="sourcePath">Source path</span>
-            <code data-reader-path>—</code>
-          </div>
-          <div class="reader-aside-card">
-            <span class="reader-aside-label" data-reader-i18n="contentIdentity">Content identity</span>
-            <code data-reader-content-id>—</code>
-          </div>
-          <a class="reader-source-link" data-reader-source href="#" data-reader-i18n="openSource">Open source file ↗</a>
+          <details class="reader-aside-card reader-details">
+            <summary data-reader-i18n="pageDetails">Page details</summary>
+            <div class="reader-detail-row">
+              <span class="reader-aside-label" data-reader-i18n="sourcePath">Source path</span>
+              <code data-reader-path>—</code>
+            </div>
+            <div class="reader-detail-row">
+              <span class="reader-aside-label" data-reader-i18n="contentIdentity">Content identity</span>
+              <code data-reader-content-id>—</code>
+            </div>
+            <a class="reader-source-link" data-reader-source href="#" data-reader-i18n="openSource">Open source file ↗</a>
+          </details>
         </aside>
       </div>
+      <nav class="reader-pagination reader-shell" data-reader-pagination hidden aria-label="Chapter navigation" data-reader-i18n-attr="aria-label:chapterNavigationAria">
+        <a class="reader-pagination-link reader-pagination-previous" data-reader-previous href="#" hidden>
+          <span class="reader-pagination-kicker" data-reader-i18n="previousChapter">Previous chapter</span>
+          <strong data-reader-previous-title></strong>
+        </a>
+        <a class="reader-pagination-link reader-pagination-next" data-reader-next href="#" hidden>
+          <span class="reader-pagination-kicker" data-reader-i18n="nextChapter">Next chapter</span>
+          <strong data-reader-next-title></strong>
+        </a>
+      </nav>
     </main>
 
     <footer class="reader-footer">

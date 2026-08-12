@@ -78,6 +78,8 @@
       "docs/research/chapter-03-official-baseline-2026-08-10.md",
       "docs/research/prompt-patterns-for-real-work-2026-08-10.md",
       "docs/research/field-problems-coding-agents-2026-08-10.md",
+      "docs/research/field-problem-to-practice-map-2026-08-11.md",
+      "docs/research/coding-agent-observability-and-evidence-map-2026-08-11.md",
       "docs/quality/real-world-case-integration-review-2026-08-10.md"
     ],
     "items": [
@@ -94,23 +96,23 @@
       {"id": "chapter-11", "path": "book/chapters/11-designing-a-skill-EN.md", "status": "candidate"},
       {"id": "chapter-12", "path": "book/chapters/12-agent-loop-and-stop-EN.md", "status": "candidate"},
       {"id": "chapter-13", "path": "book/chapters/13-action-boundaries-EN.md", "status": "candidate"},
-      {"id": "chapter-14", "path": "book/chapters/14-discover-and-audit-skills.md", "status": "candidate"},
-      {"id": "chapter-15", "path": "book/chapters/15-research-track.md", "status": "candidate"},
-      {"id": "chapter-16", "path": "book/chapters/16-engineering-track.md", "status": "candidate"},
-      {"id": "chapter-17", "path": "book/chapters/17-marketing-track.md", "status": "candidate"},
-      {"id": "chapter-18", "path": "book/chapters/18-content-design-data-automation.md", "status": "candidate"},
-      {"id": "chapter-19", "path": "book/chapters/19-evaluate-models-and-workflows.md", "status": "candidate"},
-      {"id": "chapter-20", "path": "book/chapters/20-personal-codex-work-system.md", "status": "candidate"},
-      {"id": "chapter-21", "path": "book/chapters/21-team-capability-system.md", "status": "candidate"},
-      {"id": "chapter-22", "path": "book/chapters/22-continuous-update-and-future-proofing.md", "status": "candidate"}
+      {"id": "chapter-14", "path": "book/chapters/14-discover-and-audit-skills-EN.md", "status": "candidate"},
+      {"id": "chapter-15", "path": "book/chapters/15-research-track-EN.md", "status": "candidate"},
+      {"id": "chapter-16", "path": "book/chapters/16-engineering-track-EN.md", "status": "candidate"},
+      {"id": "chapter-17", "path": "book/chapters/17-marketing-track-EN.md", "status": "candidate"},
+      {"id": "chapter-18", "path": "book/chapters/18-content-design-data-automation-EN.md", "status": "candidate"},
+      {"id": "chapter-19", "path": "book/chapters/19-evaluate-models-and-workflows-EN.md", "status": "candidate"},
+      {"id": "chapter-20", "path": "book/chapters/20-personal-codex-work-system-EN.md", "status": "candidate"},
+      {"id": "chapter-21", "path": "book/chapters/21-team-capability-system-EN.md", "status": "candidate"},
+      {"id": "chapter-22", "path": "book/chapters/22-continuous-update-and-future-proofing-EN.md", "status": "candidate"}
     ]
   },
   "labs": {
-    "count": 13,
+    "count": 17,
     "status": "draft",
     "run_status": "not_run",
     "owner": "lab-maintainer",
-    "last_reviewed": "2026-08-10",
+    "last_reviewed": "2026-08-11",
     "next_review": "2026-11-09",
     "path": "book/labs",
     "evidence": [
@@ -131,6 +133,8 @@
       "docs/research/chapter-03-official-baseline-2026-08-10.md",
       "docs/research/prompt-patterns-for-real-work-2026-08-10.md",
       "docs/research/field-problems-coding-agents-2026-08-10.md",
+      "docs/research/field-problem-to-practice-map-2026-08-11.md",
+      "docs/research/coding-agent-observability-and-evidence-map-2026-08-11.md",
       "docs/quality/real-world-case-integration-review-2026-08-10.md"
     ],
     "items": [
@@ -146,7 +150,11 @@
       {"id": "lab-010", "path": "book/labs/lab-010-product-context.md", "status": "draft", "run_status": "not_run"},
       {"id": "lab-011", "path": "book/labs/lab-011-gpt-codex-boundaries-EN.md", "status": "draft", "run_status": "not_run"},
       {"id": "lab-012", "path": "book/labs/lab-012-team-capability-migration.md", "status": "draft", "run_status": "not_run"},
-      {"id": "lab-013", "path": "book/labs/lab-013-l3-vertical-slice.md", "status": "draft", "run_status": "not_run"}
+      {"id": "lab-013", "path": "book/labs/lab-013-l3-vertical-slice.md", "status": "draft", "run_status": "not_run"},
+      {"id": "lab-014", "path": "book/labs/lab-014-resume-reconciliation-EN.md", "status": "draft", "run_status": "not_run"},
+      {"id": "lab-015", "path": "book/labs/lab-015-evidence-delivery-EN.md", "status": "draft", "run_status": "not_run"},
+      {"id": "lab-016", "path": "book/labs/lab-016-side-effect-boundary-EN.md", "status": "draft", "run_status": "not_run"},
+      {"id": "lab-017", "path": "book/labs/lab-017-skill-discovery-audit-EN.md", "status": "draft", "run_status": "not_run"}
     ]
   },
   "skills": {

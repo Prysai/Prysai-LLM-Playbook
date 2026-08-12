@@ -147,7 +147,7 @@ Skill：可复用的方法、检查点和输出标准
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="02-first-safe-task.md" aria-label="上一章：第 2 章 · 完成第一个安全、可验证的任务">← 上一章<br><strong>第 2 章 · 完成第一个安全、可验证的任务</strong></a></td>

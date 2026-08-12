@@ -3,7 +3,7 @@
 # Codex: From First Task to Real Work — Índice del libro v0.2
 
 > Índice en español (`ES`). Esta página es una migración basada en
-> `book/table-of-contents.md`: conserva los 22 capítulos, los 13 experimentos,
+> `book/table-of-contents.md`: conserva los 22 capítulos, los 17 experimentos,
 > los límites de estado y las entradas de investigación sobre problemas reales.
 > No afirma que el corpus de capítulos, experimentos o la verificación en
 > ejecución ya estén traducidos a seis idiomas.

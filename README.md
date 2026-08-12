@@ -126,14 +126,14 @@ suggestions, local reproductions, and project inferences. A forum workaround
 is useful evidence about what people tried; it is not silently promoted to an
 official fix.
 
-## Current state — 2026-08-10
+## Current state — 2026-08-11
 
 | Area | State |
 |---|---|
 | Project | `candidate` |
 | Learning path | 7 levels · `candidate` |
 | Chapters | 22 structured chapters · `candidate` |
-| Labs | 13 labs · `draft` · `run_status: not_run` |
+| Labs | 17 labs · `draft` · `run_status: not_run` |
 | Skills | 7 project Skills · `candidate` |
 | Evaluation fixtures | 39 tasks across 16 tracks · `candidate` · `not_run` |
 | Public showcase | `candidate` · English default · Chinese runtime toggle |

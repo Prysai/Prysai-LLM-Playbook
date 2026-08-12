@@ -400,7 +400,7 @@ companion lab and independent reader run are still `draft`/`not_run`.
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="Chapter navigation">
+<nav class="chapter-navigation" aria-label="Chapter navigation">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="02-first-safe-task-EN.md" aria-label="Previous chapter: Chapter 2 · Complete a first safe, verifiable task">← Previous<br><strong>Chapter 2 · Complete a first safe, verifiable task</strong></a></td>

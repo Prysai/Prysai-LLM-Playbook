@@ -368,7 +368,7 @@ one issue, workaround, label, or community answer into a product guarantee.
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="Chapter navigation">
+<nav class="chapter-navigation" aria-label="Chapter navigation">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-EN.md" aria-label="Previous chapter: Chapter 8 · The complete lifecycle from definition to delivery">← Previous<br><strong>Chapter 8 · The complete lifecycle from definition to delivery</strong></a></td>

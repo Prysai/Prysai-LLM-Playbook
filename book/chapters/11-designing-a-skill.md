@@ -153,7 +153,7 @@ Skill 的触发契约、渐进披露、失败处理、任务集评测和证据�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing.md" aria-label="上一章：第 10 章 · 规划与竖向切片">← 上一章<br><strong>第 10 章 · 规划与竖向切片</strong></a></td>

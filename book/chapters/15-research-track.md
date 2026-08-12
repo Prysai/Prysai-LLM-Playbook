@@ -288,7 +288,7 @@ S02 的研究 Skill 记录了阶段路由、引用和评测方面的参考价值
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills.md" aria-label="上一章：第 14 章 · 如何发现、安装和审查外部 Skill">← 上一章<br><strong>第 14 章 · 如何发现、安装和审查外部 Skill</strong></a></td>

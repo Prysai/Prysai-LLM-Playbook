@@ -17,16 +17,26 @@
   const sourceLink = document.querySelector('[data-reader-source]');
   const toc = document.querySelector('[data-reader-toc]');
   const tocList = document.querySelector('[data-reader-toc-list]');
+  const bookNav = document.querySelector('[data-reader-book-nav]');
+  const bookProgress = document.querySelector('[data-reader-book-progress]');
+  const chapterList = document.querySelector('[data-reader-chapter-list]');
+  const orientation = document.querySelector('[data-reader-orientation]');
   const chapterCard = document.querySelector('[data-reader-chapter-card]');
   const chapterLabel = document.querySelector('[data-reader-chapter-label]');
   const chapterStatus = document.querySelector('[data-reader-chapter-status]');
+  const pagination = document.querySelector('[data-reader-pagination]');
+  const previousLink = document.querySelector('[data-reader-previous]');
+  const previousTitle = document.querySelector('[data-reader-previous-title]');
+  const nextLink = document.querySelector('[data-reader-next]');
+  const nextTitle = document.querySelector('[data-reader-next-title]');
+  const bookNavigation = manifest.book_navigation || { parts: [], chapters: [] };
   const readerCopy = {
     en: {
-      skip: 'Skip to content', back: 'Back to overview', language: 'Language', languageAria: 'Choose reading language', detailsAria: 'Page details', onThisPageAria: 'On this page', onThisPage: 'On this page', readingRoute: 'Reading route', sourcePath: 'Source path', contentIdentity: 'Content identity', openSource: 'Open source file ↗', footer: 'Source remains Markdown; this page is a static reading view', loading: 'Loading the source page…',
+      skip: 'Skip to content', back: 'Back to overview', language: 'Language', languageAria: 'Choose reading language', detailsAria: 'Page details', bookChaptersAria: 'Book chapters', bookChapters: 'Book chapters', chapterList: 'Chapter list', pageDetails: 'Page details', chapterNavigationAria: 'Chapter navigation', previousChapter: 'Previous chapter', nextChapter: 'Next chapter', onThisPageAria: 'On this page', onThisPage: 'On this page', readingRoute: 'Reading route', sourcePath: 'Source path', contentIdentity: 'Content identity', openSource: 'Open source file ↗', footer: 'Source remains Markdown; this page is a static reading view', loading: 'Loading the source page…',
       fallbackEnglish: (name) => `${name} is not available for this page yet. Showing the current English source.`, fallbackSource: (name, source) => `${name} is not available for this page yet. Showing the current ${source} source.`, invalidPath: 'This reader URL does not name an allowed project source file. Return to the overview and choose a page from the guide.', loadError: (status) => `The source page could not be loaded (${status}).`
     },
     zh: {
-      skip: '跳到正文', back: '返回总览', language: '语言', languageAria: '选择阅读语言', detailsAria: '页面详情', onThisPageAria: '本页目录', onThisPage: '本页目录', readingRoute: '阅读路线', sourcePath: '源文件路径', contentIdentity: '内容身份', openSource: '打开源文件 ↗', footer: '源文件仍是 Markdown；此页面是静态阅读视图', loading: '正在加载源文件……',
+      skip: '跳到正文', back: '返回总览', language: '语言', languageAria: '选择阅读语言', detailsAria: '页面详情', bookChaptersAria: '全书章节', bookChapters: '全书章节', chapterList: '章节列表', pageDetails: '页面详情', chapterNavigationAria: '章节导航', previousChapter: '上一章', nextChapter: '下一章', onThisPageAria: '本页目录', onThisPage: '本页目录', readingRoute: '阅读路线', sourcePath: '源文件路径', contentIdentity: '内容身份', openSource: '打开源文件 ↗', footer: '源文件仍是 Markdown；此页面是静态阅读视图', loading: '正在加载源文件……',
       fallbackEnglish: (name) => `此页面暂时没有${name}版本，当前显示英文源文件。`, fallbackSource: (name, source) => `此页面暂时没有${name}版本，当前显示${source}源文件。`, invalidPath: '这个阅读链接没有指向允许的项目源文件。请返回总览，从指南中选择页面。', loadError: (status) => `源文件加载失败（${status}）。`
     }
   };
@@ -104,6 +114,89 @@
   function readerHref(path, hash = '', locale = activeLocale) {
     const localeQuery = validLocales.includes(locale) ? `&lang=${encodeURIComponent(locale)}` : '';
     return `reader.html?path=${encodeURIComponent(path)}${localeQuery}${hash}`;
+  }
+
+  function chapterTitle(chapter) {
+    return uiLanguage() === 'zh' ? chapter.title_zh : chapter.title_en;
+  }
+
+  function chapterPath(chapter) {
+    const record = manifest.contents?.[chapter.content_id];
+    const requested = record?.locales?.[activeLocale];
+    if (ready(requested)) return requested.path;
+    const english = record?.locales?.en;
+    if (ready(english)) return english.path;
+    return chapter.legacy_path || chapter.english_path;
+  }
+
+  function chapterLink(chapter) {
+    return readerHref(chapterPath(chapter), '', activeLocale);
+  }
+
+  function chapterForSelection(selection) {
+    return bookNavigation.chapters.find((chapter) => chapter.content_id === selection.contentId) || null;
+  }
+
+  function partForChapter(chapter) {
+    return bookNavigation.parts.find((part) => part.id === chapter?.part) || null;
+  }
+
+  function chapterProgressLabel(chapter, index) {
+    const part = partForChapter(chapter);
+    const partLabel = uiLanguage() === 'zh' ? part?.title_zh : part?.title_en;
+    if (uiLanguage() === 'zh') return `第 ${chapter.number} 章 / 共 ${bookNavigation.chapters.length} 章 · ${part?.number || ''} ${partLabel || ''}`.trim();
+    return `Chapter ${chapter.number} of ${bookNavigation.chapters.length} · Part ${part?.number || ''} · ${partLabel || ''}`.trim();
+  }
+
+  function renderBookNavigation(selection) {
+    if (!bookNav || !bookProgress || !chapterList || !pagination) return;
+    const current = chapterForSelection(selection);
+    if (!current) {
+      bookNav.hidden = true;
+      pagination.hidden = true;
+      if (orientation) orientation.hidden = true;
+      return;
+    }
+    const index = bookNavigation.chapters.indexOf(current);
+    const part = partForChapter(current);
+    const partChapters = bookNavigation.chapters.filter((chapter) => chapter.part === current.part);
+    bookProgress.textContent = chapterProgressLabel(current, index);
+    chapterList.replaceChildren();
+    partChapters.forEach((chapter) => {
+      const item = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = chapterLink(chapter);
+      link.textContent = `${chapter.number}. ${chapterTitle(chapter)}`;
+      if (chapter.content_id === current.content_id) {
+        link.setAttribute('aria-current', 'page');
+        link.className = 'is-current';
+      }
+      item.append(link);
+      chapterList.append(item);
+    });
+    bookNav.hidden = false;
+    if (orientation) {
+      orientation.textContent = `${part?.number || ''} · ${chapterProgressLabel(current, index)}`;
+      orientation.hidden = false;
+    }
+    const previous = bookNavigation.chapters[index - 1];
+    const next = bookNavigation.chapters[index + 1];
+    const updatePaginationLink = (link, titleNode, chapter) => {
+      if (!chapter) { link.hidden = true; return; }
+      link.hidden = false;
+      link.href = chapterLink(chapter);
+      titleNode.textContent = `${chapter.number}. ${chapterTitle(chapter)}`;
+    };
+    updatePaginationLink(previousLink, previousTitle, previous);
+    updatePaginationLink(nextLink, nextTitle, next);
+    pagination.hidden = !previous && !next;
+  }
+
+  function restoreHashPosition() {
+    const rawHash = window.location.hash.slice(1);
+    if (!rawHash) return;
+    const target = document.getElementById(decodeURIComponent(rawHash));
+    if (target) window.requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
   }
 
   function headingHref(id) {
@@ -212,7 +305,7 @@
 
   function sanitizeHtml(raw, path) {
     const parsed = new DOMParser().parseFromString(`<body>${raw}</body>`, 'text/html');
-    const allowed = new Set(['a', 'br', 'code', 'details', 'div', 'em', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'img', 'li', 'mark', 'nav', 'ol', 'p', 'pre', 'section', 'small', 'span', 'strong', 'summary', 'table', 'tbody', 'td', 'tfoot', 'th', 'thead', 'tr', 'ul']);
+    const allowed = new Set(['a', 'br', 'code', 'details', 'dd', 'div', 'dl', 'dt', 'em', 'figcaption', 'figure', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'img', 'li', 'mark', 'nav', 'ol', 'p', 'pre', 'section', 'small', 'span', 'strong', 'summary', 'table', 'tbody', 'td', 'tfoot', 'th', 'thead', 'tr', 'ul']);
     const allowedAttributes = new Set(['align', 'alt', 'aria-label', 'class', 'data-chapter-nav', 'href', 'id', 'loading', 'rel', 'src', 'target', 'title', 'width']);
     const clean = (node) => {
       [...node.childNodes].forEach((child) => {
@@ -263,14 +356,11 @@
       if (frontMatter) { if (line.trim() === '---') frontMatter = false; index += 1; continue; }
       if (!line.trim()) { index += 1; continue; }
       if (/^<!--\s*chapter-navigation:start\s*-->$/i.test(line.trim())) {
-        const raw = [];
         index += 1;
         while (index < lines.length && !/^<!--\s*chapter-navigation:end\s*-->$/i.test(lines[index].trim())) {
-          raw.push(lines[index]);
           index += 1;
         }
         if (index < lines.length) index += 1;
-        sanitizeHtml(raw.join('\n'), path).forEach((node) => fragment.append(node));
         continue;
       }
       if (/^<!--/.test(line.trim())) { index += 1; continue; }
@@ -294,8 +384,8 @@
         let depth = 0;
         do {
           raw.push(lines[index]);
-          const opens = (lines[index].match(/<(div|table|details|section|nav|ul|ol)\b/gi) || []).length;
-          const closes = (lines[index].match(/<\/(div|table|details|section|nav|ul|ol)>/gi) || []).length;
+          const opens = (lines[index].match(/<(div|table|details|figure|section|nav|ul|ol|dl)\b/gi) || []).length;
+          const closes = (lines[index].match(/<\/(div|table|details|figure|section|nav|ul|ol|dl)>/gi) || []).length;
           depth += opens - closes;
           index += 1;
         } while (index < lines.length && depth > 0);
@@ -323,7 +413,11 @@
         thead.append(headerRow); table.append(thead);
         const tbody = document.createElement('tbody');
         rows.forEach((row) => { const tr = document.createElement('tr'); header.forEach((_, cellIndex) => { const td = document.createElement('td'); addInline(td, row[cellIndex] || '', path); tr.append(td); }); tbody.append(tr); });
-        table.append(tbody); fragment.append(table);
+        table.append(tbody);
+        const tableWrap = document.createElement('div');
+        tableWrap.className = 'reader-table-wrap';
+        tableWrap.append(table);
+        fragment.append(tableWrap);
         continue;
       }
       if (/^>\s?/.test(line)) {
@@ -336,11 +430,26 @@
       }
       if (/^\s*[-*+]\s+/.test(line) || /^\s*\d+[.)]\s+/.test(line)) {
         const ordered = /^\s*\d+[.)]\s+/.test(line);
+        const markerPattern = ordered ? /^(\s*)\d+[.)]\s+(.+)$/ : /^(\s*)[-*+]\s+(.+)$/;
+        const firstMatch = line.match(markerPattern);
+        const baseIndent = firstMatch?.[1].length || 0;
         const list = document.createElement(ordered ? 'ol' : 'ul');
         while (index < lines.length) {
-          const match = lines[index].match(ordered ? /^\s*\d+[.)]\s+(.+)$/ : /^\s*[-*+]\s+(.+)$/);
-          if (!match) break;
-          const item = document.createElement('li'); addInline(item, match[1], path); list.append(item); index += 1;
+          const match = lines[index].match(markerPattern);
+          if (!match || match[1].length !== baseIndent) break;
+          const itemLines = [match[2]];
+          index += 1;
+          while (index < lines.length && lines[index].trim()) {
+            const nextLine = lines[index];
+            const nextItem = nextLine.match(markerPattern);
+            if (nextItem && nextItem[1].length <= baseIndent) break;
+            if (isSpecial(nextLine, lines[index + 1]) && !/^\s{2,}\S/.test(nextLine)) break;
+            itemLines.push(nextLine.trim());
+            index += 1;
+          }
+          const item = document.createElement('li');
+          addInline(item, itemLines.join(' '), path);
+          list.append(item);
         }
         fragment.append(list);
         continue;
@@ -385,10 +494,28 @@
       link.href = headingHref(heading.id);
       link.dataset.level = heading.tagName === 'H3' ? '3' : '2';
       link.textContent = heading.textContent.trim();
+      link.dataset.tocTarget = heading.id;
       item.append(link);
       tocList.append(item);
     });
     toc.hidden = tocList.children.length === 0;
+    observeHeadings(headings);
+  }
+
+  function observeHeadings(headings) {
+    if (!('IntersectionObserver' in window) || !tocList) return;
+    const links = [...tocList.querySelectorAll('a[data-toc-target]')];
+    const setCurrent = (id) => links.forEach((link) => {
+      const current = link.dataset.tocTarget === id;
+      link.classList.toggle('is-current', current);
+      if (current) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (visible[0]) setCurrent(visible[0].target.id);
+    }, { rootMargin: '-86px 0px -68% 0px', threshold: [0, 1] });
+    headings.forEach((heading) => observer.observe(heading));
   }
 
   function updateChapterRail(selection, title) {
@@ -399,7 +526,9 @@
       return;
     }
     const number = alias.slice('chapter-'.length);
-    chapterLabel.textContent = `Chapter ${number} · ${title}`;
+    const current = chapterForSelection(selection);
+    const label = current ? chapterTitle(current) : title;
+    chapterLabel.textContent = uiLanguage() === 'zh' ? `第 ${number} 章 · ${label}` : `Chapter ${number} · ${label}`;
     chapterStatus.textContent = chapterStatusFor(selection);
     chapterCard.hidden = false;
   }
@@ -451,16 +580,31 @@
     const response = await fetch(directHref(selection.path));
     if (!response.ok) { showError(currentReaderCopy().loadError(response.status)); return; }
     const source = await response.text();
-    article.replaceChildren(renderBlocks(source, selection.path));
+    const chapter = chapterForSelection(selection);
+    article.replaceChildren();
+    if (chapter) {
+      const context = document.createElement('div');
+      context.className = 'reader-article-context';
+      context.textContent = chapterProgressLabel(chapter, bookNavigation.chapters.indexOf(chapter));
+      article.append(context);
+    }
+    article.append(renderBlocks(source, selection.path));
     article.setAttribute('aria-busy', 'false');
     const title = article.querySelector('h1')?.textContent?.trim() || selection.path;
     buildTableOfContents();
     updateChapterRail(selection, title);
+    renderBookNavigation(selection);
     document.title = `${title} · Codex Field Guide`;
     document.querySelector('meta[name="description"]').setAttribute('content', `Read ${title} in the Codex Field Guide.`);
     const effectiveLocale = selection.effective || locale;
-    document.documentElement.lang = locales[locale]?.html_lang || locale;
+    document.documentElement.lang = locales[effectiveLocale]?.html_lang || effectiveLocale;
     article.lang = locales[effectiveLocale]?.html_lang || effectiveLocale;
+    article.dataset.readerRequestedLocale = selection.requested;
+    article.dataset.readerEffectiveLocale = effectiveLocale;
+    article.dataset.readerFallback = selection.fallback ? 'true' : 'false';
+    article.setAttribute('data-reader-requested-locale', selection.requested);
+    article.setAttribute('data-reader-effective-locale', effectiveLocale);
+    article.setAttribute('data-reader-fallback', selection.fallback ? 'true' : 'false');
     sourcePathNode.textContent = selection.path;
     contentIdNode.textContent = selection.contentId || 'unindexed source';
     sourceLink.href = directHref(selection.path);
@@ -471,6 +615,7 @@
         ? currentReaderCopy().fallbackEnglish(locales[locale]?.display_name || locale)
         : currentReaderCopy().fallbackSource(locales[locale]?.display_name || locale, effectiveName));
     } else setReaderStatus('');
+    restoreHashPosition();
     if (selection.contentId) {
       languageSelect.disabled = false;
       languageSelect.dataset.contentId = selection.contentId;
@@ -483,7 +628,7 @@
     const content = current.content;
     const requested = content?.locales?.[locale];
     const target = ready(requested) ? requested.path : content?.locales?.en?.path || requestedPath;
-    window.location.href = readerHref(target, '', locale);
+    window.location.href = readerHref(target, window.location.hash, locale);
   });
 
   load().catch((error) => showError(`The source page could not be rendered: ${error.message}`));

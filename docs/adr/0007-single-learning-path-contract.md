@@ -10,7 +10,7 @@ Accepted
 
 ## Context
 
-The project already has seven capability levels, 22 chapters, 12 labs, seven
+The project already has seven capability levels, 22 chapters, 17 labs, seven
 project Skills, and 38 evaluation fixtures. Those assets were individually
 valid, but their relationships were maintained in several places. Reused labs
 were not distinguished as primary, prerequisite, transfer, or reference work;

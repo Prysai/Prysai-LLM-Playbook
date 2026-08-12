@@ -226,7 +226,7 @@ status: passed | unverified | blocked
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="03-task-protocol.md" aria-label="上一章：第 3 章 · 把愿望变成任务协议">← 上一章<br><strong>第 3 章 · 把愿望变成任务协议</strong></a></td>

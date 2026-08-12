@@ -97,7 +97,7 @@ def build_block(index: int, entries: list[dict[str, Any]], locale: str, source: 
         [
             START,
             "<hr>",
-            f'<nav aria-label="{aria_label}">',
+            f'<nav class="chapter-navigation" aria-label="{aria_label}">',
             '  <table role="presentation" width="100%">',
             "    <tr>",
             f"      {previous_cell}",

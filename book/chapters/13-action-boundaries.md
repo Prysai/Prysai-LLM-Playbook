@@ -237,7 +237,7 @@ status: passed | not_observed | unverified | blocked
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop.md" aria-label="上一章：第 12 章 · Agent 的循环、状态和停止条件">← 上一章<br><strong>第 12 章 · Agent 的循环、状态和停止条件</strong></a></td>

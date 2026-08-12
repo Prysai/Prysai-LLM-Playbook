@@ -388,11 +388,11 @@ experiment remains `not_run`.
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="Chapter navigation">
+<nav class="chapter-navigation" aria-label="Chapter navigation">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop-EN.md" aria-label="Previous chapter: Chapter 12 · The Agent loop, state, and stopping conditions">← Previous<br><strong>Chapter 12 · The Agent loop, state, and stopping conditions</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="14-discover-and-audit-skills.md" aria-label="Next chapter: Chapter 14 · Discover, install, and audit external Skills · migration pending">Next →<br><strong>Chapter 14 · Discover, install, and audit external Skills · migration pending</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="14-discover-and-audit-skills-EN.md" aria-label="Next chapter: Chapter 14 · Discover, install, and audit external Skills">Next →<br><strong>Chapter 14 · Discover, install, and audit external Skills</strong></a></td>
     </tr>
   </table>
 </nav>

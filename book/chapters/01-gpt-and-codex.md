@@ -189,7 +189,7 @@ run-id | 只改变的变量 | 读取范围 | 产生的副作用 | 观察到的�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"></td>

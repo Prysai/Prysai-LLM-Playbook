@@ -490,7 +490,7 @@ evidence. The next chapter remains on the current migration path:
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="Chapter navigation">
+<nav class="chapter-navigation" aria-label="Chapter navigation">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="01-gpt-and-codex-EN.md" aria-label="Previous chapter: Chapter 1 · Understand GPT before understanding how Codex works">← Previous<br><strong>Chapter 1 · Understand GPT before understanding how Codex works</strong></a></td>

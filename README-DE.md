@@ -97,7 +97,7 @@ Der Stand dieses deutschen Einstiegs ist `content_status: candidate` und
 sind angelegt, eine unabhängige deutsche Sprachprüfung steht aber noch aus.
 `reader_runtime_status: not_run` bedeutet, dass für diese Übersetzung kein
 Browser-, Runtime- oder Leserakzeptanzprotokoll vorliegt. Im zugrunde liegenden
-Projekt sind 22 Kapitel `candidate`, 13 Labs `draft` mit
+Projekt sind 22 Kapitel `candidate`, 17 Labs `draft` mit
 `run_status: not_run` und 39 Evaluations-Fixtures `candidate` mit
 `run_status: not_run`. Eine vorhandene Datei oder ein bestandener statischer
 Checker hebt diese Zustände nicht automatisch an.

@@ -152,7 +152,7 @@ def main() -> int:
         validate_path_list(project, "evidence", "project", errors)
 
     validate_items(document, "chapters", 22, "book/chapters/", errors)
-    validate_items(document, "labs", 13, "book/labs/", errors, require_run_status=True)
+    validate_items(document, "labs", 17, "book/labs/", errors, require_run_status=True)
     validate_items(document, "skills", 7, "skills/", errors)
 
     learning_path = document.get("learning_path")
@@ -248,7 +248,7 @@ def main() -> int:
         return 1
 
     print("CONTENT_STATUS_OK")
-    print("chapters=22 labs=13 skills=7 learning_levels=7 evaluations=39 tracks=16")
+    print("chapters=22 labs=17 skills=7 learning_levels=7 evaluations=39 tracks=16")
     print(
         "public_site=6-route-locales,ui-dictionaries=en+zh,"
         f"repository_locale_status={document['public_site']['repository_locale_status']},"

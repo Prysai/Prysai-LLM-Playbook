@@ -72,6 +72,22 @@
       }
     },
     {
+      "content_id": "book-labs-readme",
+      "kind": "book-entry",
+      "stem": "book/labs/README",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-11",
+      "legacy_paths": ["book/labs/README.md"],
+      "locales": {
+        "EN": {"path": "book/labs/README-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full"},
+        "ZH": {"path": "book/labs/README-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English lab index is published first; Simplified Chinese translation and review are pending."},
+        "ES": {"path": "book/labs/README-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English lab index is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/labs/README-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English lab index is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/labs/README-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English lab index is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/labs/README-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English lab index is published first; German translation and review are pending."}
+      }
+    },
+    {
       "content_id": "book-table-of-contents",
       "kind": "book-entry",
       "stem": "book/table-of-contents",
@@ -296,6 +312,150 @@
       }
     },
     {
+      "content_id": "chapter-14-discover-and-audit-skills",
+      "kind": "chapter",
+      "stem": "book/chapters/14-discover-and-audit-skills",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-11",
+      "legacy_paths": ["book/chapters/14-discover-and-audit-skills.md"],
+      "locales": {
+        "EN": {"path": "book/chapters/14-discover-and-audit-skills-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full"},
+        "ZH": {"path": "book/chapters/14-discover-and-audit-skills-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Chinese translation and review are pending."},
+        "ES": {"path": "book/chapters/14-discover-and-audit-skills-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/chapters/14-discover-and-audit-skills-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/chapters/14-discover-and-audit-skills-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/chapters/14-discover-and-audit-skills-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
+      "content_id": "chapter-15-research-track",
+      "kind": "chapter",
+      "stem": "book/chapters/15-research-track",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-11",
+      "legacy_paths": ["book/chapters/15-research-track.md"],
+      "locales": {
+        "EN": {"path": "book/chapters/15-research-track-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full"},
+        "ZH": {"path": "book/chapters/15-research-track-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Chinese translation and review are pending."},
+        "ES": {"path": "book/chapters/15-research-track-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/chapters/15-research-track-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/chapters/15-research-track-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/chapters/15-research-track-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
+      "content_id": "chapter-16-engineering-track",
+      "kind": "chapter",
+      "stem": "book/chapters/16-engineering-track",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-11",
+      "legacy_paths": ["book/chapters/16-engineering-track.md"],
+      "locales": {
+        "EN": {"path": "book/chapters/16-engineering-track-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full"},
+        "ZH": {"path": "book/chapters/16-engineering-track-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Chinese translation and review are pending."},
+        "ES": {"path": "book/chapters/16-engineering-track-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/chapters/16-engineering-track-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/chapters/16-engineering-track-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/chapters/16-engineering-track-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
+      "content_id": "chapter-17-marketing-track",
+      "kind": "chapter",
+      "stem": "book/chapters/17-marketing-track",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-11",
+      "legacy_paths": ["book/chapters/17-marketing-track.md"],
+      "locales": {
+        "EN": {"path": "book/chapters/17-marketing-track-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full"},
+        "ZH": {"path": "book/chapters/17-marketing-track-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Chinese translation and review are pending."},
+        "ES": {"path": "book/chapters/17-marketing-track-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/chapters/17-marketing-track-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/chapters/17-marketing-track-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/chapters/17-marketing-track-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
+      "content_id": "chapter-18-content-design-data-automation",
+      "kind": "chapter",
+      "stem": "book/chapters/18-content-design-data-automation",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-11",
+      "legacy_paths": ["book/chapters/18-content-design-data-automation.md"],
+      "locales": {
+        "EN": {"path": "book/chapters/18-content-design-data-automation-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full"},
+        "ZH": {"path": "book/chapters/18-content-design-data-automation-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Chinese translation and review are pending."},
+        "ES": {"path": "book/chapters/18-content-design-data-automation-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/chapters/18-content-design-data-automation-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/chapters/18-content-design-data-automation-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/chapters/18-content-design-data-automation-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
+      "content_id": "chapter-19-evaluate-models-and-workflows",
+      "kind": "chapter",
+      "stem": "book/chapters/19-evaluate-models-and-workflows",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-11",
+      "legacy_paths": ["book/chapters/19-evaluate-models-and-workflows.md"],
+      "locales": {
+        "EN": {"path": "book/chapters/19-evaluate-models-and-workflows-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full"},
+        "ZH": {"path": "book/chapters/19-evaluate-models-and-workflows-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Chinese translation and review are pending."},
+        "ES": {"path": "book/chapters/19-evaluate-models-and-workflows-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/chapters/19-evaluate-models-and-workflows-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/chapters/19-evaluate-models-and-workflows-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/chapters/19-evaluate-models-and-workflows-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
+      "content_id": "chapter-20-personal-codex-work-system",
+      "kind": "chapter",
+      "stem": "book/chapters/20-personal-codex-work-system",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-11",
+      "legacy_paths": ["book/chapters/20-personal-codex-work-system.md"],
+      "locales": {
+        "EN": {"path": "book/chapters/20-personal-codex-work-system-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full"},
+        "ZH": {"path": "book/chapters/20-personal-codex-work-system-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Chinese translation and review are pending."},
+        "ES": {"path": "book/chapters/20-personal-codex-work-system-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/chapters/20-personal-codex-work-system-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/chapters/20-personal-codex-work-system-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/chapters/20-personal-codex-work-system-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
+      "content_id": "chapter-21-team-capability-system",
+      "kind": "chapter",
+      "stem": "book/chapters/21-team-capability-system",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-11",
+      "legacy_paths": ["book/chapters/21-team-capability-system.md"],
+      "locales": {
+        "EN": {"path": "book/chapters/21-team-capability-system-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full"},
+        "ZH": {"path": "book/chapters/21-team-capability-system-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Chinese translation and review are pending."},
+        "ES": {"path": "book/chapters/21-team-capability-system-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/chapters/21-team-capability-system-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/chapters/21-team-capability-system-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/chapters/21-team-capability-system-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
+      "content_id": "chapter-22-continuous-update-and-future-proofing",
+      "kind": "chapter",
+      "stem": "book/chapters/22-continuous-update-and-future-proofing",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-11",
+      "legacy_paths": ["book/chapters/22-continuous-update-and-future-proofing.md"],
+      "locales": {
+        "EN": {"path": "book/chapters/22-continuous-update-and-future-proofing-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full"},
+        "ZH": {"path": "book/chapters/22-continuous-update-and-future-proofing-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Chinese translation and review are pending."},
+        "ES": {"path": "book/chapters/22-continuous-update-and-future-proofing-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/chapters/22-continuous-update-and-future-proofing-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/chapters/22-continuous-update-and-future-proofing-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/chapters/22-continuous-update-and-future-proofing-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
       "content_id": "lab-011-gpt-codex-boundaries",
       "kind": "lab",
       "stem": "book/labs/lab-011-gpt-codex-boundaries",
@@ -357,6 +517,66 @@
         "JA": {"path": "book/labs/lab-007-action-boundaries-JA.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Japanese translation and review are pending."},
         "KO": {"path": "book/labs/lab-007-action-boundaries-KO.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Korean translation and review are pending."},
         "DE": {"path": "book/labs/lab-007-action-boundaries-DE.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
+      "content_id": "lab-014-resume-reconciliation",
+      "kind": "lab",
+      "stem": "book/labs/lab-014-resume-reconciliation",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-11",
+      "locales": {
+        "EN": {"path": "book/labs/lab-014-resume-reconciliation-EN.md", "content_status": "draft", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/labs/lab-014-resume-reconciliation-ZH.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Simplified Chinese translation and review are pending."},
+        "ES": {"path": "book/labs/lab-014-resume-reconciliation-ES.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/labs/lab-014-resume-reconciliation-JA.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/labs/lab-014-resume-reconciliation-KO.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/labs/lab-014-resume-reconciliation-DE.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
+      "content_id": "lab-015-evidence-delivery",
+      "kind": "lab",
+      "stem": "book/labs/lab-015-evidence-delivery",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-11",
+      "locales": {
+        "EN": {"path": "book/labs/lab-015-evidence-delivery-EN.md", "content_status": "draft", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/labs/lab-015-evidence-delivery-ZH.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Simplified Chinese translation and review are pending."},
+        "ES": {"path": "book/labs/lab-015-evidence-delivery-ES.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/labs/lab-015-evidence-delivery-JA.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/labs/lab-015-evidence-delivery-KO.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/labs/lab-015-evidence-delivery-DE.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
+      "content_id": "lab-016-side-effect-boundary",
+      "kind": "lab",
+      "stem": "book/labs/lab-016-side-effect-boundary",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-11",
+      "locales": {
+        "EN": {"path": "book/labs/lab-016-side-effect-boundary-EN.md", "content_status": "draft", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/labs/lab-016-side-effect-boundary-ZH.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Simplified Chinese translation and review are pending."},
+        "ES": {"path": "book/labs/lab-016-side-effect-boundary-ES.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/labs/lab-016-side-effect-boundary-JA.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/labs/lab-016-side-effect-boundary-KO.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/labs/lab-016-side-effect-boundary-DE.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; German translation and review are pending."}
+      }
+    },
+    {
+      "content_id": "lab-017-skill-discovery-audit",
+      "kind": "lab",
+      "stem": "book/labs/lab-017-skill-discovery-audit",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-11",
+      "locales": {
+        "EN": {"path": "book/labs/lab-017-skill-discovery-audit-EN.md", "content_status": "draft", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/labs/lab-017-skill-discovery-audit-ZH.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Simplified Chinese translation and review are pending."},
+        "ES": {"path": "book/labs/lab-017-skill-discovery-audit-ES.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Spanish translation and review are pending."},
+        "JA": {"path": "book/labs/lab-017-skill-discovery-audit-JA.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Japanese translation and review are pending."},
+        "KO": {"path": "book/labs/lab-017-skill-discovery-audit-KO.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; Korean translation and review are pending."},
+        "DE": {"path": "book/labs/lab-017-skill-discovery-audit-DE.md", "content_status": "draft", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "run_status": "not_run", "reason": "English source slice is published first; German translation and review are pending."}
       }
     }
   ]

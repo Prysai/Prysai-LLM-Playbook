@@ -354,7 +354,7 @@ for evaluation evidence.
 | CLI surface and local repository workflow | [Codex CLI](https://learn.chatgpt.com/docs/cli.md) | 2026-08-11 | Official CLI documentation; not this session’s effective configuration | `facts-maintainer` / 2026-09-11 |
 | Cloud environment, setup, logs, and review boundaries | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-11 | Official Cloud documentation; setup is not agent-stage completion | `facts-maintainer` / 2026-09-11 |
 | Public model/provider, capacity, and long-wait symptoms | [Field problem record](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) | 2026-08-11 | User reports and project guidance; no local reproduction or official root-cause claim | `curriculum-maintainer` / 2026-09-11 |
-| Fixed-task comparison method | [Evaluation chapter](19-evaluate-models-and-workflows.md) and this chapter’s `three-task-smoke-v1` | 2026-08-11 | Field Guide method; no completed model runs yet | `evaluation-maintainer` / 2026-09-11 |
+| Fixed-task comparison method | [Evaluation chapter](19-evaluate-models-and-workflows-EN.md) and this chapter’s `three-task-smoke-v1` | 2026-08-11 | Field Guide method; no completed model runs yet | `evaluation-maintainer` / 2026-09-11 |
 
 Model IDs, surface matrices, prices, capacity, configuration syntax, provider
 support, effort controls, and deprecation notices can change. When they do,
@@ -382,7 +382,7 @@ sentences.
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="Chapter navigation">
+<nav class="chapter-navigation" aria-label="Chapter navigation">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="05-choose-the-codex-surface-EN.md" aria-label="Previous chapter: Chapter 5 · Choose the right Codex surface">← Previous<br><strong>Chapter 5 · Choose the right Codex surface</strong></a></td>

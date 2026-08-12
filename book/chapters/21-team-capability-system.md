@@ -194,7 +194,7 @@ status: "pass | fail | blocked | not_run"
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system.md" aria-label="上一章：第 20 章 · 建立个人 Codex 工作系统">← 上一章<br><strong>第 20 章 · 建立个人 Codex 工作系统</strong></a></td>

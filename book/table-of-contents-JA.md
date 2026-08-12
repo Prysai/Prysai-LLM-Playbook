@@ -3,7 +3,7 @@
 # Codex: From First Task to Real Work — 書籍目次 v0.2
 
 > 日本語の目次ページ（`JA`）です。既存の
-> `book/table-of-contents.md` を基に、22 章、13 の実験、状態の境界、現実の
+> `book/table-of-contents.md` を基に、22 章、17 の実験、状態の境界、現実の
 > 問題研究への入口を保持しています。章・実験の本文や実行時検証が六言語
 > 移行済みだと示すものではありません。
 

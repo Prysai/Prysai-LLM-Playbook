@@ -3,7 +3,8 @@ window.CODEX_LOCALE_MANIFEST = {
   "schema_version": "1",
   "source": [
     "docs/governance/locale-matrix.yaml",
-    "docs/governance/content-status.yaml"
+    "docs/governance/content-status.yaml",
+    "docs/governance/book-navigation.yaml"
   ],
   "default_locale": "en",
   "locales": {
@@ -198,6 +199,58 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "in-progress",
           "source_revision": "dd08a68"
+        }
+      }
+    },
+    "book-labs-readme": {
+      "kind": "book-entry",
+      "stem": "book/labs/README",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/labs/README.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/labs/README-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/labs/README-ZH.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "es": {
+          "path": "book/labs/README-ES.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ja": {
+          "path": "book/labs/README-JA.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ko": {
+          "path": "book/labs/README-KO.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "de": {
+          "path": "book/labs/README-DE.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
         }
       }
     },
@@ -929,6 +982,474 @@ window.CODEX_LOCALE_MANIFEST = {
         }
       }
     },
+    "chapter-14-discover-and-audit-skills": {
+      "kind": "chapter",
+      "stem": "book/chapters/14-discover-and-audit-skills",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/chapters/14-discover-and-audit-skills.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/chapters/14-discover-and-audit-skills-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/chapters/14-discover-and-audit-skills-ZH.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "es": {
+          "path": "book/chapters/14-discover-and-audit-skills-ES.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ja": {
+          "path": "book/chapters/14-discover-and-audit-skills-JA.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ko": {
+          "path": "book/chapters/14-discover-and-audit-skills-KO.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "de": {
+          "path": "book/chapters/14-discover-and-audit-skills-DE.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        }
+      }
+    },
+    "chapter-15-research-track": {
+      "kind": "chapter",
+      "stem": "book/chapters/15-research-track",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/chapters/15-research-track.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/chapters/15-research-track-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/chapters/15-research-track-ZH.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "es": {
+          "path": "book/chapters/15-research-track-ES.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ja": {
+          "path": "book/chapters/15-research-track-JA.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ko": {
+          "path": "book/chapters/15-research-track-KO.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "de": {
+          "path": "book/chapters/15-research-track-DE.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        }
+      }
+    },
+    "chapter-16-engineering-track": {
+      "kind": "chapter",
+      "stem": "book/chapters/16-engineering-track",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/chapters/16-engineering-track.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/chapters/16-engineering-track-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/chapters/16-engineering-track-ZH.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "es": {
+          "path": "book/chapters/16-engineering-track-ES.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ja": {
+          "path": "book/chapters/16-engineering-track-JA.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ko": {
+          "path": "book/chapters/16-engineering-track-KO.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "de": {
+          "path": "book/chapters/16-engineering-track-DE.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        }
+      }
+    },
+    "chapter-17-marketing-track": {
+      "kind": "chapter",
+      "stem": "book/chapters/17-marketing-track",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/chapters/17-marketing-track.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/chapters/17-marketing-track-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/chapters/17-marketing-track-ZH.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "es": {
+          "path": "book/chapters/17-marketing-track-ES.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ja": {
+          "path": "book/chapters/17-marketing-track-JA.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ko": {
+          "path": "book/chapters/17-marketing-track-KO.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "de": {
+          "path": "book/chapters/17-marketing-track-DE.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        }
+      }
+    },
+    "chapter-18-content-design-data-automation": {
+      "kind": "chapter",
+      "stem": "book/chapters/18-content-design-data-automation",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/chapters/18-content-design-data-automation.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/chapters/18-content-design-data-automation-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/chapters/18-content-design-data-automation-ZH.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "es": {
+          "path": "book/chapters/18-content-design-data-automation-ES.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ja": {
+          "path": "book/chapters/18-content-design-data-automation-JA.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ko": {
+          "path": "book/chapters/18-content-design-data-automation-KO.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "de": {
+          "path": "book/chapters/18-content-design-data-automation-DE.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        }
+      }
+    },
+    "chapter-19-evaluate-models-and-workflows": {
+      "kind": "chapter",
+      "stem": "book/chapters/19-evaluate-models-and-workflows",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/chapters/19-evaluate-models-and-workflows.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/chapters/19-evaluate-models-and-workflows-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/chapters/19-evaluate-models-and-workflows-ZH.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "es": {
+          "path": "book/chapters/19-evaluate-models-and-workflows-ES.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ja": {
+          "path": "book/chapters/19-evaluate-models-and-workflows-JA.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ko": {
+          "path": "book/chapters/19-evaluate-models-and-workflows-KO.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "de": {
+          "path": "book/chapters/19-evaluate-models-and-workflows-DE.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        }
+      }
+    },
+    "chapter-20-personal-codex-work-system": {
+      "kind": "chapter",
+      "stem": "book/chapters/20-personal-codex-work-system",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/chapters/20-personal-codex-work-system.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/chapters/20-personal-codex-work-system-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/chapters/20-personal-codex-work-system-ZH.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "es": {
+          "path": "book/chapters/20-personal-codex-work-system-ES.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ja": {
+          "path": "book/chapters/20-personal-codex-work-system-JA.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ko": {
+          "path": "book/chapters/20-personal-codex-work-system-KO.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "de": {
+          "path": "book/chapters/20-personal-codex-work-system-DE.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        }
+      }
+    },
+    "chapter-21-team-capability-system": {
+      "kind": "chapter",
+      "stem": "book/chapters/21-team-capability-system",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/chapters/21-team-capability-system.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/chapters/21-team-capability-system-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/chapters/21-team-capability-system-ZH.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "es": {
+          "path": "book/chapters/21-team-capability-system-ES.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ja": {
+          "path": "book/chapters/21-team-capability-system-JA.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ko": {
+          "path": "book/chapters/21-team-capability-system-KO.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "de": {
+          "path": "book/chapters/21-team-capability-system-DE.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        }
+      }
+    },
+    "chapter-22-continuous-update-and-future-proofing": {
+      "kind": "chapter",
+      "stem": "book/chapters/22-continuous-update-and-future-proofing",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/chapters/22-continuous-update-and-future-proofing.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/chapters/22-continuous-update-and-future-proofing-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/chapters/22-continuous-update-and-future-proofing-ZH.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "es": {
+          "path": "book/chapters/22-continuous-update-and-future-proofing-ES.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ja": {
+          "path": "book/chapters/22-continuous-update-and-future-proofing-JA.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ko": {
+          "path": "book/chapters/22-continuous-update-and-future-proofing-KO.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "de": {
+          "path": "book/chapters/22-continuous-update-and-future-proofing-DE.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        }
+      }
+    },
     "lab-011-gpt-codex-boundaries": {
       "kind": "lab",
       "stem": "book/labs/lab-011-gpt-codex-boundaries",
@@ -1137,471 +1658,203 @@ window.CODEX_LOCALE_MANIFEST = {
         }
       }
     },
-    "chapter-14": {
-      "kind": "chapter",
-      "stem": "book/chapters/14-discover-and-audit-skills",
-      "source_locale": "zh",
-      "legacy_paths": [
-        "book/chapters/14-discover-and-audit-skills.md"
-      ],
+    "lab-014-resume-reconciliation": {
+      "kind": "lab",
+      "stem": "book/labs/lab-014-resume-reconciliation",
+      "source_locale": "en",
+      "legacy_paths": [],
       "locales": {
         "en": {
-          "path": "book/chapters/14-discover-and-audit-skills.md",
+          "path": "book/labs/lab-014-resume-reconciliation-EN.md",
           "exists": true,
-          "content_status": "candidate",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
+          "content_status": "draft",
+          "translation_status": "source",
+          "source_revision": null
         },
         "zh": {
-          "path": "book/chapters/14-discover-and-audit-skills-ZH.md",
+          "path": "book/labs/lab-014-resume-reconciliation-ZH.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         },
         "es": {
-          "path": "book/chapters/14-discover-and-audit-skills-ES.md",
+          "path": "book/labs/lab-014-resume-reconciliation-ES.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         },
         "ja": {
-          "path": "book/chapters/14-discover-and-audit-skills-JA.md",
+          "path": "book/labs/lab-014-resume-reconciliation-JA.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         },
         "ko": {
-          "path": "book/chapters/14-discover-and-audit-skills-KO.md",
+          "path": "book/labs/lab-014-resume-reconciliation-KO.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         },
         "de": {
-          "path": "book/chapters/14-discover-and-audit-skills-DE.md",
+          "path": "book/labs/lab-014-resume-reconciliation-DE.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         }
       }
     },
-    "chapter-15": {
-      "kind": "chapter",
-      "stem": "book/chapters/15-research-track",
-      "source_locale": "zh",
-      "legacy_paths": [
-        "book/chapters/15-research-track.md"
-      ],
+    "lab-015-evidence-delivery": {
+      "kind": "lab",
+      "stem": "book/labs/lab-015-evidence-delivery",
+      "source_locale": "en",
+      "legacy_paths": [],
       "locales": {
         "en": {
-          "path": "book/chapters/15-research-track.md",
+          "path": "book/labs/lab-015-evidence-delivery-EN.md",
           "exists": true,
-          "content_status": "candidate",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
+          "content_status": "draft",
+          "translation_status": "source",
+          "source_revision": null
         },
         "zh": {
-          "path": "book/chapters/15-research-track-ZH.md",
+          "path": "book/labs/lab-015-evidence-delivery-ZH.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         },
         "es": {
-          "path": "book/chapters/15-research-track-ES.md",
+          "path": "book/labs/lab-015-evidence-delivery-ES.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         },
         "ja": {
-          "path": "book/chapters/15-research-track-JA.md",
+          "path": "book/labs/lab-015-evidence-delivery-JA.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         },
         "ko": {
-          "path": "book/chapters/15-research-track-KO.md",
+          "path": "book/labs/lab-015-evidence-delivery-KO.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         },
         "de": {
-          "path": "book/chapters/15-research-track-DE.md",
+          "path": "book/labs/lab-015-evidence-delivery-DE.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         }
       }
     },
-    "chapter-16": {
-      "kind": "chapter",
-      "stem": "book/chapters/16-engineering-track",
-      "source_locale": "zh",
-      "legacy_paths": [
-        "book/chapters/16-engineering-track.md"
-      ],
+    "lab-016-side-effect-boundary": {
+      "kind": "lab",
+      "stem": "book/labs/lab-016-side-effect-boundary",
+      "source_locale": "en",
+      "legacy_paths": [],
       "locales": {
         "en": {
-          "path": "book/chapters/16-engineering-track.md",
+          "path": "book/labs/lab-016-side-effect-boundary-EN.md",
           "exists": true,
-          "content_status": "candidate",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
+          "content_status": "draft",
+          "translation_status": "source",
+          "source_revision": null
         },
         "zh": {
-          "path": "book/chapters/16-engineering-track-ZH.md",
+          "path": "book/labs/lab-016-side-effect-boundary-ZH.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         },
         "es": {
-          "path": "book/chapters/16-engineering-track-ES.md",
+          "path": "book/labs/lab-016-side-effect-boundary-ES.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         },
         "ja": {
-          "path": "book/chapters/16-engineering-track-JA.md",
+          "path": "book/labs/lab-016-side-effect-boundary-JA.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         },
         "ko": {
-          "path": "book/chapters/16-engineering-track-KO.md",
+          "path": "book/labs/lab-016-side-effect-boundary-KO.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         },
         "de": {
-          "path": "book/chapters/16-engineering-track-DE.md",
+          "path": "book/labs/lab-016-side-effect-boundary-DE.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         }
       }
     },
-    "chapter-17": {
-      "kind": "chapter",
-      "stem": "book/chapters/17-marketing-track",
-      "source_locale": "zh",
-      "legacy_paths": [
-        "book/chapters/17-marketing-track.md"
-      ],
+    "lab-017-skill-discovery-audit": {
+      "kind": "lab",
+      "stem": "book/labs/lab-017-skill-discovery-audit",
+      "source_locale": "en",
+      "legacy_paths": [],
       "locales": {
         "en": {
-          "path": "book/chapters/17-marketing-track.md",
+          "path": "book/labs/lab-017-skill-discovery-audit-EN.md",
           "exists": true,
-          "content_status": "candidate",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
+          "content_status": "draft",
+          "translation_status": "source",
+          "source_revision": null
         },
         "zh": {
-          "path": "book/chapters/17-marketing-track-ZH.md",
+          "path": "book/labs/lab-017-skill-discovery-audit-ZH.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         },
         "es": {
-          "path": "book/chapters/17-marketing-track-ES.md",
+          "path": "book/labs/lab-017-skill-discovery-audit-ES.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         },
         "ja": {
-          "path": "book/chapters/17-marketing-track-JA.md",
+          "path": "book/labs/lab-017-skill-discovery-audit-JA.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         },
         "ko": {
-          "path": "book/chapters/17-marketing-track-KO.md",
+          "path": "book/labs/lab-017-skill-discovery-audit-KO.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         },
         "de": {
-          "path": "book/chapters/17-marketing-track-DE.md",
+          "path": "book/labs/lab-017-skill-discovery-audit-DE.md",
           "exists": false,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "content-status"
-        }
-      }
-    },
-    "chapter-18": {
-      "kind": "chapter",
-      "stem": "book/chapters/18-content-design-data-automation",
-      "source_locale": "zh",
-      "legacy_paths": [
-        "book/chapters/18-content-design-data-automation.md"
-      ],
-      "locales": {
-        "en": {
-          "path": "book/chapters/18-content-design-data-automation.md",
-          "exists": true,
-          "content_status": "candidate",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
-        },
-        "zh": {
-          "path": "book/chapters/18-content-design-data-automation-ZH.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "es": {
-          "path": "book/chapters/18-content-design-data-automation-ES.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ja": {
-          "path": "book/chapters/18-content-design-data-automation-JA.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ko": {
-          "path": "book/chapters/18-content-design-data-automation-KO.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "de": {
-          "path": "book/chapters/18-content-design-data-automation-DE.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        }
-      }
-    },
-    "chapter-19": {
-      "kind": "chapter",
-      "stem": "book/chapters/19-evaluate-models-and-workflows",
-      "source_locale": "zh",
-      "legacy_paths": [
-        "book/chapters/19-evaluate-models-and-workflows.md"
-      ],
-      "locales": {
-        "en": {
-          "path": "book/chapters/19-evaluate-models-and-workflows.md",
-          "exists": true,
-          "content_status": "candidate",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
-        },
-        "zh": {
-          "path": "book/chapters/19-evaluate-models-and-workflows-ZH.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "es": {
-          "path": "book/chapters/19-evaluate-models-and-workflows-ES.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ja": {
-          "path": "book/chapters/19-evaluate-models-and-workflows-JA.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ko": {
-          "path": "book/chapters/19-evaluate-models-and-workflows-KO.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "de": {
-          "path": "book/chapters/19-evaluate-models-and-workflows-DE.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        }
-      }
-    },
-    "chapter-20": {
-      "kind": "chapter",
-      "stem": "book/chapters/20-personal-codex-work-system",
-      "source_locale": "zh",
-      "legacy_paths": [
-        "book/chapters/20-personal-codex-work-system.md"
-      ],
-      "locales": {
-        "en": {
-          "path": "book/chapters/20-personal-codex-work-system.md",
-          "exists": true,
-          "content_status": "candidate",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
-        },
-        "zh": {
-          "path": "book/chapters/20-personal-codex-work-system-ZH.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "es": {
-          "path": "book/chapters/20-personal-codex-work-system-ES.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ja": {
-          "path": "book/chapters/20-personal-codex-work-system-JA.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ko": {
-          "path": "book/chapters/20-personal-codex-work-system-KO.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "de": {
-          "path": "book/chapters/20-personal-codex-work-system-DE.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        }
-      }
-    },
-    "chapter-21": {
-      "kind": "chapter",
-      "stem": "book/chapters/21-team-capability-system",
-      "source_locale": "zh",
-      "legacy_paths": [
-        "book/chapters/21-team-capability-system.md"
-      ],
-      "locales": {
-        "en": {
-          "path": "book/chapters/21-team-capability-system.md",
-          "exists": true,
-          "content_status": "candidate",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
-        },
-        "zh": {
-          "path": "book/chapters/21-team-capability-system-ZH.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "es": {
-          "path": "book/chapters/21-team-capability-system-ES.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ja": {
-          "path": "book/chapters/21-team-capability-system-JA.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ko": {
-          "path": "book/chapters/21-team-capability-system-KO.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "de": {
-          "path": "book/chapters/21-team-capability-system-DE.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        }
-      }
-    },
-    "chapter-22": {
-      "kind": "chapter",
-      "stem": "book/chapters/22-continuous-update-and-future-proofing",
-      "source_locale": "zh",
-      "legacy_paths": [
-        "book/chapters/22-continuous-update-and-future-proofing.md"
-      ],
-      "locales": {
-        "en": {
-          "path": "book/chapters/22-continuous-update-and-future-proofing.md",
-          "exists": true,
-          "content_status": "candidate",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
-        },
-        "zh": {
-          "path": "book/chapters/22-continuous-update-and-future-proofing-ZH.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "es": {
-          "path": "book/chapters/22-continuous-update-and-future-proofing-ES.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ja": {
-          "path": "book/chapters/22-continuous-update-and-future-proofing-JA.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ko": {
-          "path": "book/chapters/22-continuous-update-and-future-proofing-KO.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "de": {
-          "path": "book/chapters/22-continuous-update-and-future-proofing-DE.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
+          "source_revision": "worktree-2026-08-11"
         }
       }
     },
@@ -2088,15 +2341,15 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-11": "chapter-11-designing-a-skill",
     "chapter-12": "chapter-12-agent-loop-and-stop",
     "chapter-13": "chapter-13-action-boundaries",
-    "chapter-14": "chapter-14",
-    "chapter-15": "chapter-15",
-    "chapter-16": "chapter-16",
-    "chapter-17": "chapter-17",
-    "chapter-18": "chapter-18",
-    "chapter-19": "chapter-19",
-    "chapter-20": "chapter-20",
-    "chapter-21": "chapter-21",
-    "chapter-22": "chapter-22",
+    "chapter-14": "chapter-14-discover-and-audit-skills",
+    "chapter-15": "chapter-15-research-track",
+    "chapter-16": "chapter-16-engineering-track",
+    "chapter-17": "chapter-17-marketing-track",
+    "chapter-18": "chapter-18-content-design-data-automation",
+    "chapter-19": "chapter-19-evaluate-models-and-workflows",
+    "chapter-20": "chapter-20-personal-codex-work-system",
+    "chapter-21": "chapter-21-team-capability-system",
+    "chapter-22": "chapter-22-continuous-update-and-future-proofing",
     "lab-001": "lab-001-first-safe-task",
     "lab-002": "lab-002-task-protocol",
     "lab-003": "lab-003",
@@ -2109,7 +2362,11 @@ window.CODEX_LOCALE_MANIFEST = {
     "lab-010": "lab-010",
     "lab-011": "lab-011-gpt-codex-boundaries",
     "lab-012": "lab-012",
-    "lab-013": "lab-013"
+    "lab-013": "lab-013",
+    "lab-014": "lab-014-resume-reconciliation",
+    "lab-015": "lab-015-evidence-delivery",
+    "lab-016": "lab-016-side-effect-boundary",
+    "lab-017": "lab-017-skill-discovery-audit"
   },
   "path_index": {
     "README-EN.md": "project-readme",
@@ -2133,6 +2390,13 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/preface-KO.md": "book-preface",
     "book/preface-DE.md": "book-preface",
     "book/preface.md": "book-preface",
+    "book/labs/README-EN.md": "book-labs-readme",
+    "book/labs/README-ZH.md": "book-labs-readme",
+    "book/labs/README-ES.md": "book-labs-readme",
+    "book/labs/README-JA.md": "book-labs-readme",
+    "book/labs/README-KO.md": "book-labs-readme",
+    "book/labs/README-DE.md": "book-labs-readme",
+    "book/labs/README.md": "book-labs-readme",
     "book/table-of-contents-EN.md": "book-table-of-contents",
     "book/table-of-contents-ZH.md": "book-table-of-contents",
     "book/table-of-contents-ES.md": "book-table-of-contents",
@@ -2231,6 +2495,69 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/13-action-boundaries-KO.md": "chapter-13-action-boundaries",
     "book/chapters/13-action-boundaries-DE.md": "chapter-13-action-boundaries",
     "book/chapters/13-action-boundaries.md": "chapter-13-action-boundaries",
+    "book/chapters/14-discover-and-audit-skills-EN.md": "chapter-14-discover-and-audit-skills",
+    "book/chapters/14-discover-and-audit-skills-ZH.md": "chapter-14-discover-and-audit-skills",
+    "book/chapters/14-discover-and-audit-skills-ES.md": "chapter-14-discover-and-audit-skills",
+    "book/chapters/14-discover-and-audit-skills-JA.md": "chapter-14-discover-and-audit-skills",
+    "book/chapters/14-discover-and-audit-skills-KO.md": "chapter-14-discover-and-audit-skills",
+    "book/chapters/14-discover-and-audit-skills-DE.md": "chapter-14-discover-and-audit-skills",
+    "book/chapters/14-discover-and-audit-skills.md": "chapter-14-discover-and-audit-skills",
+    "book/chapters/15-research-track-EN.md": "chapter-15-research-track",
+    "book/chapters/15-research-track-ZH.md": "chapter-15-research-track",
+    "book/chapters/15-research-track-ES.md": "chapter-15-research-track",
+    "book/chapters/15-research-track-JA.md": "chapter-15-research-track",
+    "book/chapters/15-research-track-KO.md": "chapter-15-research-track",
+    "book/chapters/15-research-track-DE.md": "chapter-15-research-track",
+    "book/chapters/15-research-track.md": "chapter-15-research-track",
+    "book/chapters/16-engineering-track-EN.md": "chapter-16-engineering-track",
+    "book/chapters/16-engineering-track-ZH.md": "chapter-16-engineering-track",
+    "book/chapters/16-engineering-track-ES.md": "chapter-16-engineering-track",
+    "book/chapters/16-engineering-track-JA.md": "chapter-16-engineering-track",
+    "book/chapters/16-engineering-track-KO.md": "chapter-16-engineering-track",
+    "book/chapters/16-engineering-track-DE.md": "chapter-16-engineering-track",
+    "book/chapters/16-engineering-track.md": "chapter-16-engineering-track",
+    "book/chapters/17-marketing-track-EN.md": "chapter-17-marketing-track",
+    "book/chapters/17-marketing-track-ZH.md": "chapter-17-marketing-track",
+    "book/chapters/17-marketing-track-ES.md": "chapter-17-marketing-track",
+    "book/chapters/17-marketing-track-JA.md": "chapter-17-marketing-track",
+    "book/chapters/17-marketing-track-KO.md": "chapter-17-marketing-track",
+    "book/chapters/17-marketing-track-DE.md": "chapter-17-marketing-track",
+    "book/chapters/17-marketing-track.md": "chapter-17-marketing-track",
+    "book/chapters/18-content-design-data-automation-EN.md": "chapter-18-content-design-data-automation",
+    "book/chapters/18-content-design-data-automation-ZH.md": "chapter-18-content-design-data-automation",
+    "book/chapters/18-content-design-data-automation-ES.md": "chapter-18-content-design-data-automation",
+    "book/chapters/18-content-design-data-automation-JA.md": "chapter-18-content-design-data-automation",
+    "book/chapters/18-content-design-data-automation-KO.md": "chapter-18-content-design-data-automation",
+    "book/chapters/18-content-design-data-automation-DE.md": "chapter-18-content-design-data-automation",
+    "book/chapters/18-content-design-data-automation.md": "chapter-18-content-design-data-automation",
+    "book/chapters/19-evaluate-models-and-workflows-EN.md": "chapter-19-evaluate-models-and-workflows",
+    "book/chapters/19-evaluate-models-and-workflows-ZH.md": "chapter-19-evaluate-models-and-workflows",
+    "book/chapters/19-evaluate-models-and-workflows-ES.md": "chapter-19-evaluate-models-and-workflows",
+    "book/chapters/19-evaluate-models-and-workflows-JA.md": "chapter-19-evaluate-models-and-workflows",
+    "book/chapters/19-evaluate-models-and-workflows-KO.md": "chapter-19-evaluate-models-and-workflows",
+    "book/chapters/19-evaluate-models-and-workflows-DE.md": "chapter-19-evaluate-models-and-workflows",
+    "book/chapters/19-evaluate-models-and-workflows.md": "chapter-19-evaluate-models-and-workflows",
+    "book/chapters/20-personal-codex-work-system-EN.md": "chapter-20-personal-codex-work-system",
+    "book/chapters/20-personal-codex-work-system-ZH.md": "chapter-20-personal-codex-work-system",
+    "book/chapters/20-personal-codex-work-system-ES.md": "chapter-20-personal-codex-work-system",
+    "book/chapters/20-personal-codex-work-system-JA.md": "chapter-20-personal-codex-work-system",
+    "book/chapters/20-personal-codex-work-system-KO.md": "chapter-20-personal-codex-work-system",
+    "book/chapters/20-personal-codex-work-system-DE.md": "chapter-20-personal-codex-work-system",
+    "book/chapters/20-personal-codex-work-system.md": "chapter-20-personal-codex-work-system",
+    "book/chapters/21-team-capability-system-EN.md": "chapter-21-team-capability-system",
+    "book/chapters/21-team-capability-system-ZH.md": "chapter-21-team-capability-system",
+    "book/chapters/21-team-capability-system-ES.md": "chapter-21-team-capability-system",
+    "book/chapters/21-team-capability-system-JA.md": "chapter-21-team-capability-system",
+    "book/chapters/21-team-capability-system-KO.md": "chapter-21-team-capability-system",
+    "book/chapters/21-team-capability-system-DE.md": "chapter-21-team-capability-system",
+    "book/chapters/21-team-capability-system.md": "chapter-21-team-capability-system",
+    "book/chapters/22-continuous-update-and-future-proofing-EN.md": "chapter-22-continuous-update-and-future-proofing",
+    "book/chapters/22-continuous-update-and-future-proofing-ZH.md": "chapter-22-continuous-update-and-future-proofing",
+    "book/chapters/22-continuous-update-and-future-proofing-ES.md": "chapter-22-continuous-update-and-future-proofing",
+    "book/chapters/22-continuous-update-and-future-proofing-JA.md": "chapter-22-continuous-update-and-future-proofing",
+    "book/chapters/22-continuous-update-and-future-proofing-KO.md": "chapter-22-continuous-update-and-future-proofing",
+    "book/chapters/22-continuous-update-and-future-proofing-DE.md": "chapter-22-continuous-update-and-future-proofing",
+    "book/chapters/22-continuous-update-and-future-proofing.md": "chapter-22-continuous-update-and-future-proofing",
     "book/labs/lab-011-gpt-codex-boundaries-EN.md": "lab-011-gpt-codex-boundaries",
     "book/labs/lab-011-gpt-codex-boundaries-ZH.md": "lab-011-gpt-codex-boundaries",
     "book/labs/lab-011-gpt-codex-boundaries-ES.md": "lab-011-gpt-codex-boundaries",
@@ -2259,60 +2586,30 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-007-action-boundaries-KO.md": "lab-007-action-boundaries",
     "book/labs/lab-007-action-boundaries-DE.md": "lab-007-action-boundaries",
     "book/labs/lab-007-action-boundaries.md": "lab-007-action-boundaries",
-    "book/chapters/14-discover-and-audit-skills.md": "chapter-14",
-    "book/chapters/14-discover-and-audit-skills-ZH.md": "chapter-14",
-    "book/chapters/14-discover-and-audit-skills-ES.md": "chapter-14",
-    "book/chapters/14-discover-and-audit-skills-JA.md": "chapter-14",
-    "book/chapters/14-discover-and-audit-skills-KO.md": "chapter-14",
-    "book/chapters/14-discover-and-audit-skills-DE.md": "chapter-14",
-    "book/chapters/15-research-track.md": "chapter-15",
-    "book/chapters/15-research-track-ZH.md": "chapter-15",
-    "book/chapters/15-research-track-ES.md": "chapter-15",
-    "book/chapters/15-research-track-JA.md": "chapter-15",
-    "book/chapters/15-research-track-KO.md": "chapter-15",
-    "book/chapters/15-research-track-DE.md": "chapter-15",
-    "book/chapters/16-engineering-track.md": "chapter-16",
-    "book/chapters/16-engineering-track-ZH.md": "chapter-16",
-    "book/chapters/16-engineering-track-ES.md": "chapter-16",
-    "book/chapters/16-engineering-track-JA.md": "chapter-16",
-    "book/chapters/16-engineering-track-KO.md": "chapter-16",
-    "book/chapters/16-engineering-track-DE.md": "chapter-16",
-    "book/chapters/17-marketing-track.md": "chapter-17",
-    "book/chapters/17-marketing-track-ZH.md": "chapter-17",
-    "book/chapters/17-marketing-track-ES.md": "chapter-17",
-    "book/chapters/17-marketing-track-JA.md": "chapter-17",
-    "book/chapters/17-marketing-track-KO.md": "chapter-17",
-    "book/chapters/17-marketing-track-DE.md": "chapter-17",
-    "book/chapters/18-content-design-data-automation.md": "chapter-18",
-    "book/chapters/18-content-design-data-automation-ZH.md": "chapter-18",
-    "book/chapters/18-content-design-data-automation-ES.md": "chapter-18",
-    "book/chapters/18-content-design-data-automation-JA.md": "chapter-18",
-    "book/chapters/18-content-design-data-automation-KO.md": "chapter-18",
-    "book/chapters/18-content-design-data-automation-DE.md": "chapter-18",
-    "book/chapters/19-evaluate-models-and-workflows.md": "chapter-19",
-    "book/chapters/19-evaluate-models-and-workflows-ZH.md": "chapter-19",
-    "book/chapters/19-evaluate-models-and-workflows-ES.md": "chapter-19",
-    "book/chapters/19-evaluate-models-and-workflows-JA.md": "chapter-19",
-    "book/chapters/19-evaluate-models-and-workflows-KO.md": "chapter-19",
-    "book/chapters/19-evaluate-models-and-workflows-DE.md": "chapter-19",
-    "book/chapters/20-personal-codex-work-system.md": "chapter-20",
-    "book/chapters/20-personal-codex-work-system-ZH.md": "chapter-20",
-    "book/chapters/20-personal-codex-work-system-ES.md": "chapter-20",
-    "book/chapters/20-personal-codex-work-system-JA.md": "chapter-20",
-    "book/chapters/20-personal-codex-work-system-KO.md": "chapter-20",
-    "book/chapters/20-personal-codex-work-system-DE.md": "chapter-20",
-    "book/chapters/21-team-capability-system.md": "chapter-21",
-    "book/chapters/21-team-capability-system-ZH.md": "chapter-21",
-    "book/chapters/21-team-capability-system-ES.md": "chapter-21",
-    "book/chapters/21-team-capability-system-JA.md": "chapter-21",
-    "book/chapters/21-team-capability-system-KO.md": "chapter-21",
-    "book/chapters/21-team-capability-system-DE.md": "chapter-21",
-    "book/chapters/22-continuous-update-and-future-proofing.md": "chapter-22",
-    "book/chapters/22-continuous-update-and-future-proofing-ZH.md": "chapter-22",
-    "book/chapters/22-continuous-update-and-future-proofing-ES.md": "chapter-22",
-    "book/chapters/22-continuous-update-and-future-proofing-JA.md": "chapter-22",
-    "book/chapters/22-continuous-update-and-future-proofing-KO.md": "chapter-22",
-    "book/chapters/22-continuous-update-and-future-proofing-DE.md": "chapter-22",
+    "book/labs/lab-014-resume-reconciliation-EN.md": "lab-014-resume-reconciliation",
+    "book/labs/lab-014-resume-reconciliation-ZH.md": "lab-014-resume-reconciliation",
+    "book/labs/lab-014-resume-reconciliation-ES.md": "lab-014-resume-reconciliation",
+    "book/labs/lab-014-resume-reconciliation-JA.md": "lab-014-resume-reconciliation",
+    "book/labs/lab-014-resume-reconciliation-KO.md": "lab-014-resume-reconciliation",
+    "book/labs/lab-014-resume-reconciliation-DE.md": "lab-014-resume-reconciliation",
+    "book/labs/lab-015-evidence-delivery-EN.md": "lab-015-evidence-delivery",
+    "book/labs/lab-015-evidence-delivery-ZH.md": "lab-015-evidence-delivery",
+    "book/labs/lab-015-evidence-delivery-ES.md": "lab-015-evidence-delivery",
+    "book/labs/lab-015-evidence-delivery-JA.md": "lab-015-evidence-delivery",
+    "book/labs/lab-015-evidence-delivery-KO.md": "lab-015-evidence-delivery",
+    "book/labs/lab-015-evidence-delivery-DE.md": "lab-015-evidence-delivery",
+    "book/labs/lab-016-side-effect-boundary-EN.md": "lab-016-side-effect-boundary",
+    "book/labs/lab-016-side-effect-boundary-ZH.md": "lab-016-side-effect-boundary",
+    "book/labs/lab-016-side-effect-boundary-ES.md": "lab-016-side-effect-boundary",
+    "book/labs/lab-016-side-effect-boundary-JA.md": "lab-016-side-effect-boundary",
+    "book/labs/lab-016-side-effect-boundary-KO.md": "lab-016-side-effect-boundary",
+    "book/labs/lab-016-side-effect-boundary-DE.md": "lab-016-side-effect-boundary",
+    "book/labs/lab-017-skill-discovery-audit-EN.md": "lab-017-skill-discovery-audit",
+    "book/labs/lab-017-skill-discovery-audit-ZH.md": "lab-017-skill-discovery-audit",
+    "book/labs/lab-017-skill-discovery-audit-ES.md": "lab-017-skill-discovery-audit",
+    "book/labs/lab-017-skill-discovery-audit-JA.md": "lab-017-skill-discovery-audit",
+    "book/labs/lab-017-skill-discovery-audit-KO.md": "lab-017-skill-discovery-audit",
+    "book/labs/lab-017-skill-discovery-audit-DE.md": "lab-017-skill-discovery-audit",
     "book/labs/lab-003-evidence-review.md": "lab-003",
     "book/labs/lab-003-evidence-review-ZH.md": "lab-003",
     "book/labs/lab-003-evidence-review-ES.md": "lab-003",
@@ -2370,6 +2667,330 @@ window.CODEX_LOCALE_MANIFEST = {
   },
   "routed_status_counts": {
     "chapters": 22,
-    "labs": 13
+    "labs": 17
+  },
+  "book_navigation": {
+    "parts": [
+      {
+        "id": "part-1",
+        "number": "I",
+        "title_en": "From understanding GPT to the first safe use",
+        "title_zh": "从认识 GPT 到第一次安全使用",
+        "chapters": [
+          "chapter-01",
+          "chapter-02",
+          "chapter-03",
+          "chapter-04",
+          "chapter-05",
+          "chapter-06"
+        ]
+      },
+      {
+        "id": "part-2",
+        "number": "II",
+        "title_en": "From user to workflow designer",
+        "title_zh": "从使用者到工作流设计者",
+        "chapters": [
+          "chapter-07",
+          "chapter-08",
+          "chapter-09",
+          "chapter-10",
+          "chapter-11",
+          "chapter-12",
+          "chapter-13"
+        ]
+      },
+      {
+        "id": "part-3",
+        "number": "III",
+        "title_en": "Skills, tools, and professional practice",
+        "title_zh": "技能、工具与专业实践",
+        "chapters": [
+          "chapter-14",
+          "chapter-15",
+          "chapter-16",
+          "chapter-17",
+          "chapter-18"
+        ]
+      },
+      {
+        "id": "part-4",
+        "number": "IV",
+        "title_en": "From proficient use to organizational capability",
+        "title_zh": "从熟练使用到组织化",
+        "chapters": [
+          "chapter-19",
+          "chapter-20",
+          "chapter-21",
+          "chapter-22"
+        ]
+      }
+    ],
+    "chapters": [
+      {
+        "id": "chapter-01",
+        "number": 1,
+        "part": "part-1",
+        "title_en": "Understand GPT before understanding how Codex works",
+        "title_zh": "先理解 GPT，再理解 Codex 的工作原理",
+        "english_path": "book/chapters/01-gpt-and-codex-EN.md",
+        "legacy_path": "book/chapters/01-gpt-and-codex.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-01-gpt-and-codex"
+      },
+      {
+        "id": "chapter-02",
+        "number": 2,
+        "part": "part-1",
+        "title_en": "Complete a first safe, verifiable task",
+        "title_zh": "完成第一个安全、可验证的任务",
+        "english_path": "book/chapters/02-first-safe-task-EN.md",
+        "legacy_path": "book/chapters/02-first-safe-task.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-02-first-safe-task"
+      },
+      {
+        "id": "chapter-03",
+        "number": 3,
+        "part": "part-1",
+        "title_en": "Turn a wish into a task protocol",
+        "title_zh": "把愿望变成任务协议",
+        "english_path": "book/chapters/03-task-protocol-EN.md",
+        "legacy_path": "book/chapters/03-task-protocol.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-03-task-protocol"
+      },
+      {
+        "id": "chapter-04",
+        "number": 4,
+        "part": "part-1",
+        "title_en": "Context, permissions, and the Agent action boundary",
+        "title_zh": "上下文、权限与 Agent 的行动边界",
+        "english_path": "book/chapters/04-context-permissions-and-agent-EN.md",
+        "legacy_path": "book/chapters/04-context-permissions-and-agent.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-04-context-permissions-and-agent"
+      },
+      {
+        "id": "chapter-05",
+        "number": 5,
+        "part": "part-1",
+        "title_en": "Choose the right Codex surface",
+        "title_zh": "选择正确的 Codex 工作面",
+        "english_path": "book/chapters/05-choose-the-codex-surface-EN.md",
+        "legacy_path": "book/chapters/05-choose-the-codex-surface.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-05-choose-the-codex-surface"
+      },
+      {
+        "id": "chapter-06",
+        "number": 6,
+        "part": "part-1",
+        "title_en": "Model selection is not model worship",
+        "title_zh": "模型选择不是模型崇拜",
+        "english_path": "book/chapters/06-model-selection-EN.md",
+        "legacy_path": "book/chapters/06-model-selection.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-06-model-selection"
+      },
+      {
+        "id": "chapter-07",
+        "number": 7,
+        "part": "part-2",
+        "title_en": "How Skills, Plugins, MCP, and tools divide the work",
+        "title_zh": "Skill、Plugin、MCP 和工具如何分工",
+        "english_path": "book/chapters/07-skills-plugins-and-tools-EN.md",
+        "legacy_path": "book/chapters/07-skills-plugins-and-tools.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-07-skills-plugins-and-tools"
+      },
+      {
+        "id": "chapter-08",
+        "number": 8,
+        "part": "part-2",
+        "title_en": "The complete lifecycle from definition to delivery",
+        "title_zh": "从定义到交付的完整生命周期",
+        "english_path": "book/chapters/08-full-lifecycle-workflow-EN.md",
+        "legacy_path": "book/chapters/08-full-lifecycle-workflow.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-08-full-lifecycle-workflow"
+      },
+      {
+        "id": "chapter-09",
+        "number": 9,
+        "part": "part-2",
+        "title_en": "Verification, doubt, and recovery",
+        "title_zh": "验证、怀疑与恢复",
+        "english_path": "book/chapters/09-verification-and-recovery-EN.md",
+        "legacy_path": "book/chapters/09-verification-and-recovery.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-09-verification-and-recovery"
+      },
+      {
+        "id": "chapter-10",
+        "number": 10,
+        "part": "part-2",
+        "title_en": "Planning and vertical slicing",
+        "title_zh": "规划与竖向切片",
+        "english_path": "book/chapters/10-planning-and-slicing-EN.md",
+        "legacy_path": "book/chapters/10-planning-and-slicing.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-10-planning-and-slicing"
+      },
+      {
+        "id": "chapter-11",
+        "number": 11,
+        "part": "part-2",
+        "title_en": "Design a genuinely useful Skill",
+        "title_zh": "设计一个真正有用的 Skill",
+        "english_path": "book/chapters/11-designing-a-skill-EN.md",
+        "legacy_path": "book/chapters/11-designing-a-skill.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-11-designing-a-skill"
+      },
+      {
+        "id": "chapter-12",
+        "number": 12,
+        "part": "part-2",
+        "title_en": "The Agent loop, state, and stopping conditions",
+        "title_zh": "Agent 的循环、状态和停止条件",
+        "english_path": "book/chapters/12-agent-loop-and-stop-EN.md",
+        "legacy_path": "book/chapters/12-agent-loop-and-stop.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-12-agent-loop-and-stop"
+      },
+      {
+        "id": "chapter-13",
+        "number": 13,
+        "part": "part-2",
+        "title_en": "Action boundaries for files, terminals, browsers, and GitHub",
+        "title_zh": "文件、终端、浏览器与 GitHub 的行动边界",
+        "english_path": "book/chapters/13-action-boundaries-EN.md",
+        "legacy_path": "book/chapters/13-action-boundaries.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-13-action-boundaries"
+      },
+      {
+        "id": "chapter-14",
+        "number": 14,
+        "part": "part-3",
+        "title_en": "Discover, install, and audit external Skills",
+        "title_zh": "如何发现、安装和审查外部 Skill",
+        "english_path": "book/chapters/14-discover-and-audit-skills-EN.md",
+        "legacy_path": "book/chapters/14-discover-and-audit-skills.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-14-discover-and-audit-skills"
+      },
+      {
+        "id": "chapter-15",
+        "number": 15,
+        "part": "part-3",
+        "title_en": "Research track: from question to auditable knowledge",
+        "title_zh": "研究轨：从问题到可审查知识",
+        "english_path": "book/chapters/15-research-track-EN.md",
+        "legacy_path": "book/chapters/15-research-track.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-15-research-track"
+      },
+      {
+        "id": "chapter-16",
+        "number": 16,
+        "part": "part-3",
+        "title_en": "Engineering track: from idea to reliable software",
+        "title_zh": "工程轨：从想法到可靠软件",
+        "english_path": "book/chapters/16-engineering-track-EN.md",
+        "legacy_path": "book/chapters/16-engineering-track.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-16-engineering-track"
+      },
+      {
+        "id": "chapter-17",
+        "number": 17,
+        "part": "part-3",
+        "title_en": "Marketing track: from product understanding to growth experiments",
+        "title_zh": "营销轨：从产品理解到增长实验",
+        "english_path": "book/chapters/17-marketing-track-EN.md",
+        "legacy_path": "book/chapters/17-marketing-track.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-17-marketing-track"
+      },
+      {
+        "id": "chapter-18",
+        "number": 18,
+        "part": "part-3",
+        "title_en": "Content, design, data, and automation track",
+        "title_zh": "内容、设计、数据与自动化轨",
+        "english_path": "book/chapters/18-content-design-data-automation-EN.md",
+        "legacy_path": "book/chapters/18-content-design-data-automation.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-18-content-design-data-automation"
+      },
+      {
+        "id": "chapter-19",
+        "number": 19,
+        "part": "part-4",
+        "title_en": "Evaluate models and workflows",
+        "title_zh": "评估模型和工作流",
+        "english_path": "book/chapters/19-evaluate-models-and-workflows-EN.md",
+        "legacy_path": "book/chapters/19-evaluate-models-and-workflows.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-19-evaluate-models-and-workflows"
+      },
+      {
+        "id": "chapter-20",
+        "number": 20,
+        "part": "part-4",
+        "title_en": "Build a personal Codex work system",
+        "title_zh": "建立个人 Codex 工作系统",
+        "english_path": "book/chapters/20-personal-codex-work-system-EN.md",
+        "legacy_path": "book/chapters/20-personal-codex-work-system.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-20-personal-codex-work-system"
+      },
+      {
+        "id": "chapter-21",
+        "number": 21,
+        "part": "part-4",
+        "title_en": "Build a team capability system",
+        "title_zh": "建立团队能力系统",
+        "english_path": "book/chapters/21-team-capability-system-EN.md",
+        "legacy_path": "book/chapters/21-team-capability-system.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-21-team-capability-system"
+      },
+      {
+        "id": "chapter-22",
+        "number": 22,
+        "part": "part-4",
+        "title_en": "Continuous update and future-proofing",
+        "title_zh": "持续更新与未来适应",
+        "english_path": "book/chapters/22-continuous-update-and-future-proofing-EN.md",
+        "legacy_path": "book/chapters/22-continuous-update-and-future-proofing.md",
+        "english_status": "source",
+        "status": "candidate",
+        "content_id": "chapter-22-continuous-update-and-future-proofing"
+      }
+    ]
   }
 };

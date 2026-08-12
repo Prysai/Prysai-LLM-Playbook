@@ -180,7 +180,7 @@ Skill、Plugin、connector 和 MCP 的可用范围、manifest 和调用方式属
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="06-model-selection.md" aria-label="上一章：第 6 章 · 模型选择不是模型崇拜">← 上一章<br><strong>第 6 章 · 模型选择不是模型崇拜</strong></a></td>

@@ -474,6 +474,24 @@ window.CODEX_LEARNING_PATH = {
           },
           "href": "../book/labs/lab-009-engineering-lifecycle.md",
           "relation": "supporting"
+        },
+        {
+          "id": "lab-014",
+          "name": {
+            "en": "Resume reconciliation",
+            "zh": "恢复任务对账"
+          },
+          "href": "../book/labs/lab-014-resume-reconciliation-EN.md",
+          "relation": "supporting"
+        },
+        {
+          "id": "lab-016",
+          "name": {
+            "en": "Side-effect boundary",
+            "zh": "副作用边界"
+          },
+          "href": "../book/labs/lab-016-side-effect-boundary-EN.md",
+          "relation": "supporting"
         }
       ],
       "skills": [
@@ -612,7 +630,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Discover, install, and audit an external Skill",
             "zh": "发现、安装与审查外部 Skill"
           },
-          "href": "../book/chapters/14-discover-and-audit-skills.md",
+          "href": "../book/chapters/14-discover-and-audit-skills-EN.md",
           "relation": "primary"
         },
         {
@@ -621,7 +639,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Research: from question to auditable knowledge",
             "zh": "研究：从问题到可审查知识"
           },
-          "href": "../book/chapters/15-research-track.md",
+          "href": "../book/chapters/15-research-track-EN.md",
           "relation": "primary"
         },
         {
@@ -630,7 +648,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Engineering: from idea to reliable software",
             "zh": "工程：从想法到可靠软件"
           },
-          "href": "../book/chapters/16-engineering-track.md",
+          "href": "../book/chapters/16-engineering-track-EN.md",
           "relation": "primary"
         },
         {
@@ -639,7 +657,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Marketing: from product context to experiments",
             "zh": "营销：从产品上下文到实验"
           },
-          "href": "../book/chapters/17-marketing-track.md",
+          "href": "../book/chapters/17-marketing-track-EN.md",
           "relation": "primary"
         },
         {
@@ -648,7 +666,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Content, design, data, and automation",
             "zh": "内容、设计、数据与自动化"
           },
-          "href": "../book/chapters/18-content-design-data-automation.md",
+          "href": "../book/chapters/18-content-design-data-automation-EN.md",
           "relation": "primary"
         }
       ],
@@ -678,6 +696,15 @@ window.CODEX_LEARNING_PATH = {
             "zh": "研究问题"
           },
           "href": "../book/labs/lab-008-research-question.md",
+          "relation": "supporting"
+        },
+        {
+          "id": "lab-017",
+          "name": {
+            "en": "Skill discovery audit",
+            "zh": "Skill 发现审计"
+          },
+          "href": "../book/labs/lab-017-skill-discovery-audit-EN.md",
           "relation": "supporting"
         }
       ],
@@ -794,7 +821,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Evaluate models and workflows",
             "zh": "评估模型与工作流"
           },
-          "href": "../book/chapters/19-evaluate-models-and-workflows.md",
+          "href": "../book/chapters/19-evaluate-models-and-workflows-EN.md",
           "relation": "primary"
         }
       ],
@@ -815,6 +842,15 @@ window.CODEX_LEARNING_PATH = {
             "zh": "证据审查"
           },
           "href": "../book/labs/lab-003-evidence-review.md",
+          "relation": "supporting"
+        },
+        {
+          "id": "lab-015",
+          "name": {
+            "en": "Evidence delivery",
+            "zh": "证据交付"
+          },
+          "href": "../book/labs/lab-015-evidence-delivery-EN.md",
           "relation": "supporting"
         }
       ],
@@ -921,7 +957,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Build a personal Codex work system",
             "zh": "建立个人 Codex 工作系统"
           },
-          "href": "../book/chapters/20-personal-codex-work-system.md",
+          "href": "../book/chapters/20-personal-codex-work-system-EN.md",
           "relation": "primary"
         },
         {
@@ -930,7 +966,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Build a team capability system",
             "zh": "建立团队能力系统"
           },
-          "href": "../book/chapters/21-team-capability-system.md",
+          "href": "../book/chapters/21-team-capability-system-EN.md",
           "relation": "primary"
         },
         {
@@ -939,7 +975,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Keep the system current and recoverable",
             "zh": "持续更新并保持可恢复"
           },
-          "href": "../book/chapters/22-continuous-update-and-future-proofing.md",
+          "href": "../book/chapters/22-continuous-update-and-future-proofing-EN.md",
           "relation": "primary"
         }
       ],
@@ -1026,7 +1062,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Build a personal Codex work system",
             "zh": "建立个人 Codex 工作系统"
           },
-          "href": "../book/chapters/20-personal-codex-work-system.md",
+          "href": "../book/chapters/20-personal-codex-work-system-EN.md",
           "relation": "primary"
         },
         "lab": {

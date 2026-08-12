@@ -12,6 +12,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 MATRIX_FILE = ROOT / "docs/governance/locale-matrix.yaml"
 STATUS_FILE = ROOT / "docs/governance/content-status.yaml"
+NAVIGATION_FILE = ROOT / "docs/governance/book-navigation.yaml"
 OUTPUT_FILE = ROOT / "site/locale-manifest.js"
 LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE")
 ROUTED_STATUS_SECTIONS = ("chapters", "labs")
@@ -108,9 +109,54 @@ def status_content(
     }
 
 
+def build_navigation_payload(
+    navigation: dict[str, Any],
+    path_index: dict[str, str],
+) -> dict[str, Any]:
+    """Project the canonical chapter order into the reader manifest.
+
+    The navigation contract remains the source of truth. The public reader
+    receives only the stable labels, order, paths, and content identities it
+    needs to render a sidebar and adjacent-chapter controls.
+    """
+
+    chapters: list[dict[str, Any]] = []
+    for item in navigation.get("chapters", []):
+        if not isinstance(item, dict):
+            raise ValueError("book navigation chapters must contain objects")
+        legacy_path = normalize(str(item["legacy_path"]))
+        english_path = item.get("english_path")
+        if english_path:
+            english_path = normalize(str(english_path))
+        content_id = path_index.get(english_path or legacy_path) or path_index.get(legacy_path)
+        if not content_id:
+            raise ValueError(
+                f"book navigation chapter is not indexed: {item.get('id')}"
+            )
+        chapters.append(
+            {
+                "id": item["id"],
+                "number": item["number"],
+                "part": item["part"],
+                "title_en": item["title_en"],
+                "title_zh": item["title_zh"],
+                "english_path": english_path,
+                "legacy_path": legacy_path,
+                "english_status": item.get("english_status"),
+                "status": item.get("status"),
+                "content_id": content_id,
+            }
+        )
+    return {
+        "parts": navigation.get("parts", []),
+        "chapters": chapters,
+    }
+
+
 def build_manifest() -> dict[str, Any]:
     matrix = load_json(MATRIX_FILE)
     status = load_json(STATUS_FILE)
+    navigation = load_json(NAVIGATION_FILE)
     locale_records = matrix["locales"]
     locales: dict[str, Any] = {}
     for suffix in LOCALES:
@@ -149,6 +195,7 @@ def build_manifest() -> dict[str, Any]:
         "source": [
             "docs/governance/locale-matrix.yaml",
             "docs/governance/content-status.yaml",
+            "docs/governance/book-navigation.yaml",
         ],
         "default_locale": "en",
         "locales": locales,
@@ -156,6 +203,7 @@ def build_manifest() -> dict[str, Any]:
         "aliases": aliases,
         "path_index": path_index,
         "routed_status_counts": routed_counts,
+        "book_navigation": build_navigation_payload(navigation, path_index),
     }
 
 

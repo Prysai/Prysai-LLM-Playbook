@@ -133,7 +133,7 @@
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="15-research-track.md" aria-label="上一章：第 15 章 · 研究轨：从问题到可审查知识">← 上一章<br><strong>第 15 章 · 研究轨：从问题到可审查知识</strong></a></td>

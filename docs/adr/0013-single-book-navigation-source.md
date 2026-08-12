@@ -10,8 +10,8 @@ Accepted
 
 ## Context
 
-The repository has 22 chapters, English source files for only part of the
-corpus, legacy unsuffixed Chinese source files, a human-readable table of
+The repository has 22 chapters, English source files for all 22 chapters,
+legacy unsuffixed Chinese source files, a human-readable table of
 contents, a public learning-path page, and multiple README entry points. If
 each page or index owns its own links, the visible order can drift from the
 actual reading order. A reader then reaches the wrong chapter, skips a chapter,
@@ -78,8 +78,9 @@ explicit migration label.
   JavaScript runtime.
 - The repository now has a small generated surface that must be kept in sync by
   the validator.
-- English navigation is continuous but honest about chapters 10–22 still being
-  migration-pending.
+- English navigation is continuous, and all 22 chapters now have English source
+  routes. Non-English translations and experiment migrations remain tracked
+  separately in the locale matrix and table of contents.
 - If a future documentation framework is adopted, its sidebar and pagination
   adapter should consume this source rather than introduce a second order.
 

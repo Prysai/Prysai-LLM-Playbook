@@ -262,7 +262,7 @@ run_id | candidate_id | task_id | model_id | surface
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="05-choose-the-codex-surface.md" aria-label="上一章：第 5 章 · 选择正确的 Codex 工作面">← 上一章<br><strong>第 5 章 · 选择正确的 Codex 工作面</strong></a></td>

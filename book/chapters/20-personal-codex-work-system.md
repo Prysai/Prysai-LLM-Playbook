@@ -162,7 +162,7 @@ status: "pass | fail | not_comparable | blocked | not_run"
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows.md" aria-label="上一章：第 19 章 · 评估模型和工作流">← 上一章<br><strong>第 19 章 · 评估模型和工作流</strong></a></td>

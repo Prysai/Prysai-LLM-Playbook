@@ -524,7 +524,7 @@ how every Codex surface, operating system, model, or provider behaves.
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="Chapter navigation">
+<nav class="chapter-navigation" aria-label="Chapter navigation">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-EN.md" aria-label="Previous chapter: Chapter 9 · Verification, doubt, and recovery">← Previous<br><strong>Chapter 9 · Verification, doubt, and recovery</strong></a></td>

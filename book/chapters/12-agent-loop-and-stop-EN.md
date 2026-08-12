@@ -767,7 +767,7 @@ production trace. Keep those categories visible in the final evidence record.
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="Chapter navigation">
+<nav class="chapter-navigation" aria-label="Chapter navigation">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-EN.md" aria-label="Previous chapter: Chapter 11 · Design a genuinely useful Skill">← Previous<br><strong>Chapter 11 · Design a genuinely useful Skill</strong></a></td>

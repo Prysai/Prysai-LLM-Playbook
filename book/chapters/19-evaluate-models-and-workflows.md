@@ -218,7 +218,7 @@ status: "pass | fail | not_comparable | not_run"
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation.md" aria-label="上一章：第 18 章 · 内容、设计、数据与自动化轨">← 上一章<br><strong>第 18 章 · 内容、设计、数据与自动化轨</strong></a></td>

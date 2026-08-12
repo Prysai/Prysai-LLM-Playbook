@@ -11,9 +11,9 @@
 - `skill_status` 用于项目 Skill：`draft`、`candidate`、`verified`、`production-ready`。
 - `claim_status` 只用于易变事实断言：`current`、`stale`、`disputed`、`removed`。
 - 学习路径关系使用 `primary`、`supporting`、`transfer`、`reference`；同一个实验或 Skill 被复用不等于产生了新的资产或新的掌握证据。
-- 本表有 14 个课程映射，当前磁盘上有 13 个实验文件；主题重复时在“新增能力”列说明递进关系。
+- 本表有 14 个课程映射，当前磁盘上有 17 个实验文件；主题重复时在“新增能力”列说明递进关系。
 
-## 14 个课程映射（含 13 个实验文件）
+## 14 个课程映射（含 17 个实验文件）
 
 | 映射 | 方法与学习目标 | 来源/依据 | 章节 | 实验映射（真实文件） | Skill 映射 | 主题重复时新增的能力 | content_status | lab_status | skill_status | claim_status |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -43,8 +43,8 @@
 
 ## 当前边界
 
-- 13 个映射都指向已存在的实验文件；主题重复通过章节和“新增能力”列表达递进关系。
-- 13 个实验源文件的 frontmatter 当前均为 `status: draft`；表中的 `lab_status` 与其一致。
+- 14 个映射都指向已存在的实验文件；主题重复通过章节和“新增能力”列表达递进关系。实验 014–017 已进入状态源，但尚未各自新增为独立矩阵映射。
+- 17 个实验源文件的 frontmatter 当前均为 `status: draft`；表中的 `lab_status` 与其一致。
 - 7 个项目 Skill 当前均为 `candidate`；结构校验通过不等于学习者已掌握，也不等于 `production-ready`。
 - GPT-5.6 Luna 的“性价比最高”是待验证假设，因此相关断言保持 `disputed`，不能写成项目结论。
 - 评测夹具、模型评测和展示页的存在不替代模型运行日志、学习者前测或独立复核。

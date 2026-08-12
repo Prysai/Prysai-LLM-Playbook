@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
-IGNORED_PARTS = {".git", ".work", "node_modules", "tmp"}
+IGNORED_PARTS = {".git", ".work", "node_modules", "tmp", "_site", ".codex-temp", ".pytest_cache"}
 
 
 def main() -> int:

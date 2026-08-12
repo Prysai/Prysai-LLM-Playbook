@@ -3,7 +3,7 @@
 # Codex: From First Task to Real Work — Inhaltsverzeichnis v0.2
 
 > Deutsche Inhaltsverzeichnisseite (`DE`). Diese Migrationsscheibe basiert auf
-> `book/table-of-contents.md` und bewahrt alle 22 Kapitel, 13 Experimente,
+> `book/table-of-contents.md` und bewahrt alle 22 Kapitel, 17 Experimente,
 > Statusgrenzen sowie die Einstiege in die Forschung zu realen Problemen. Sie
 > behauptet nicht, dass Kapitel, Experimente oder Laufzeitprüfung bereits in
 > sechs Sprachen migriert sind.

@@ -137,7 +137,7 @@
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="17-marketing-track.md" aria-label="上一章：第 17 章 · 营销轨：从产品理解到增长实验">← 上一章<br><strong>第 17 章 · 营销轨：从产品理解到增长实验</strong></a></td>

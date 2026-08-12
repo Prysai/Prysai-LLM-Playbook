@@ -85,10 +85,10 @@ replace the learning-path contract, content status, locale matrix, or content
 matrix. Those files answer different questions and remain separate on
 purpose.
 
-For the English reading path, chapters 1–9 currently have `-EN` source files.
-Chapters 10–22 are linked to the existing unsuffixed source with an explicit
-`migration pending` label. The generator never silently turns a missing
-translation into a completed English page.
+For the English reading path, chapters 1–22 now have `-EN` source files.
+Non-English translations and experiment migrations remain tracked separately
+in the locale matrix. The generator never silently turns a missing translation
+into a completed localized page.
 
 ## Where a change starts
 

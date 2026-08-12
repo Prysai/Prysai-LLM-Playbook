@@ -41,7 +41,7 @@ the files exist, yet the required execution and review evidence is not complete.
 
 The evaluation fixture set contains 39 fixed tasks across 16 tracks. It is
 `candidate`, its run status is `not_run`, and its review is static-structure-only
-until model execution logs exist. The lab collection contains 13 labs, each
+until model execution logs exist. The lab collection contains 17 labs, each
 currently `draft` with `run_status: not_run`.
 
 ## Where to enter the book
@@ -56,10 +56,9 @@ currently `draft` with `run_status: not_run`.
 - [Real-user problem research index — locale-neutral research](../docs/research/field-problems-index-2026-08-10.md)
 
 The English table-of-contents entry now exists as `table-of-contents-EN.md`.
-Chapters 1–9 and Labs 001, 002, 007, and 011 now have explicit English source
-files; the remaining chapter and experiment bodies remain migration-pending
-until their own locale-suffixed variants exist. The table of contents labels
-those links explicitly.
+English chapter sources cover Chapters 1–22. English lab sources currently
+cover Labs 001, 002, 007, 011, and 014–017; the remaining lab bodies keep their
+current source path and are labelled as migration-pending in the index.
 
 ## The learning path
 

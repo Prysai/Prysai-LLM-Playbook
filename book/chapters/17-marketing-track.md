@@ -138,7 +138,7 @@ Agent 可以整理产品上下文、产生变体、检查事件命名、计算�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="16-engineering-track.md" aria-label="上一章：第 16 章 · 工程轨：从想法到可靠软件">← 上一章<br><strong>第 16 章 · 工程轨：从想法到可靠软件</strong></a></td>

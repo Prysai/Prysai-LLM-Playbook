@@ -196,9 +196,9 @@
       "part": "part-3",
       "title_en": "Discover, install, and audit external Skills",
       "title_zh": "如何发现、安装和审查外部 Skill",
-      "english_path": null,
+      "english_path": "book/chapters/14-discover-and-audit-skills-EN.md",
       "legacy_path": "book/chapters/14-discover-and-audit-skills.md",
-      "english_status": "migration_pending",
+      "english_status": "source",
       "status": "candidate"
     },
     {
@@ -207,9 +207,9 @@
       "part": "part-3",
       "title_en": "Research track: from question to auditable knowledge",
       "title_zh": "研究轨：从问题到可审查知识",
-      "english_path": null,
+      "english_path": "book/chapters/15-research-track-EN.md",
       "legacy_path": "book/chapters/15-research-track.md",
-      "english_status": "migration_pending",
+      "english_status": "source",
       "status": "candidate"
     },
     {
@@ -218,9 +218,9 @@
       "part": "part-3",
       "title_en": "Engineering track: from idea to reliable software",
       "title_zh": "工程轨：从想法到可靠软件",
-      "english_path": null,
+      "english_path": "book/chapters/16-engineering-track-EN.md",
       "legacy_path": "book/chapters/16-engineering-track.md",
-      "english_status": "migration_pending",
+      "english_status": "source",
       "status": "candidate"
     },
     {
@@ -229,9 +229,9 @@
       "part": "part-3",
       "title_en": "Marketing track: from product understanding to growth experiments",
       "title_zh": "营销轨：从产品理解到增长实验",
-      "english_path": null,
+      "english_path": "book/chapters/17-marketing-track-EN.md",
       "legacy_path": "book/chapters/17-marketing-track.md",
-      "english_status": "migration_pending",
+      "english_status": "source",
       "status": "candidate"
     },
     {
@@ -240,9 +240,9 @@
       "part": "part-3",
       "title_en": "Content, design, data, and automation track",
       "title_zh": "内容、设计、数据与自动化轨",
-      "english_path": null,
+      "english_path": "book/chapters/18-content-design-data-automation-EN.md",
       "legacy_path": "book/chapters/18-content-design-data-automation.md",
-      "english_status": "migration_pending",
+      "english_status": "source",
       "status": "candidate"
     },
     {
@@ -251,9 +251,9 @@
       "part": "part-4",
       "title_en": "Evaluate models and workflows",
       "title_zh": "评估模型和工作流",
-      "english_path": null,
+      "english_path": "book/chapters/19-evaluate-models-and-workflows-EN.md",
       "legacy_path": "book/chapters/19-evaluate-models-and-workflows.md",
-      "english_status": "migration_pending",
+      "english_status": "source",
       "status": "candidate"
     },
     {
@@ -262,9 +262,9 @@
       "part": "part-4",
       "title_en": "Build a personal Codex work system",
       "title_zh": "建立个人 Codex 工作系统",
-      "english_path": null,
+      "english_path": "book/chapters/20-personal-codex-work-system-EN.md",
       "legacy_path": "book/chapters/20-personal-codex-work-system.md",
-      "english_status": "migration_pending",
+      "english_status": "source",
       "status": "candidate"
     },
     {
@@ -273,9 +273,9 @@
       "part": "part-4",
       "title_en": "Build a team capability system",
       "title_zh": "建立团队能力系统",
-      "english_path": null,
+      "english_path": "book/chapters/21-team-capability-system-EN.md",
       "legacy_path": "book/chapters/21-team-capability-system.md",
-      "english_status": "migration_pending",
+      "english_status": "source",
       "status": "candidate"
     },
     {
@@ -284,9 +284,9 @@
       "part": "part-4",
       "title_en": "Continuous update and future-proofing",
       "title_zh": "持续更新与未来适应",
-      "english_path": null,
+      "english_path": "book/chapters/22-continuous-update-and-future-proofing-EN.md",
       "legacy_path": "book/chapters/22-continuous-update-and-future-proofing.md",
-      "english_status": "migration_pending",
+      "english_status": "source",
       "status": "candidate"
     }
   ]

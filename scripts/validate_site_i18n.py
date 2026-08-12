@@ -94,8 +94,8 @@ def main() -> int:
             if set(manifest.get("locales", {})) != LOCALE_TOKENS:
                 errors.append("locale manifest locale records do not match the six registered tokens")
             counts = manifest.get("routed_status_counts")
-            if counts != {"chapters": 22, "labs": 13}:
-                errors.append("locale manifest must cover 22 chapters and 13 labs from content-status")
+            if counts != {"chapters": 22, "labs": 17}:
+                errors.append("locale manifest must cover 22 chapters and 17 labs from content-status")
             aliases = manifest.get("aliases", {})
             for section, prefix in (("chapters", "chapter-"), ("labs", "lab-")):
                 try:
@@ -175,7 +175,7 @@ def main() -> int:
                 target
                 and (target.startswith("book/chapters/") or target.startswith("book/labs/"))
                 and target.endswith(".md")
-                and not target.endswith("/README.md")
+                and not Path(target).name.upper().startswith("README")
             )
             if is_routed_reader_file:
                 if target not in routed_paths or path_index.get(target) is None:

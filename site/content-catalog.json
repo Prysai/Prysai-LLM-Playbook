@@ -36,7 +36,11 @@
     "lab-010": {"name": {"en": "Shared product context", "zh": "共享产品上下文"}},
     "lab-011": {"name": {"en": "GPT and Codex boundaries", "zh": "GPT 与 Codex 边界"}},
     "lab-012": {"name": {"en": "Team capability migration", "zh": "团队能力迁移"}},
-    "lab-013": {"name": {"en": "Auditable vertical slice", "zh": "可审计的竖向切片"}}
+    "lab-013": {"name": {"en": "Auditable vertical slice", "zh": "可审计的竖向切片"}},
+    "lab-014": {"name": {"en": "Resume reconciliation", "zh": "恢复任务对账"}},
+    "lab-015": {"name": {"en": "Evidence delivery", "zh": "证据交付"}},
+    "lab-016": {"name": {"en": "Side-effect boundary", "zh": "副作用边界"}},
+    "lab-017": {"name": {"en": "Skill discovery audit", "zh": "Skill 发现审计"}}
   },
   "skills": {
     "prysai-codex-coach": {"name": {"en": "Codex Coach", "zh": "Codex 学习教练"}},

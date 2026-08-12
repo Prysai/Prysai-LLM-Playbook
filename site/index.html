@@ -55,7 +55,7 @@
       <span data-locale-banner-text></span>
     </div>
 
-    <main id="main">
+    <main id="main" tabindex="-1">
       <section class="hero shell" id="top" aria-labelledby="hero-title">
         <div class="hero-index" aria-label="Page index" data-i18n-attr="aria-label:heroIndexAria">
           <span>01</span><span>—</span><span data-i18n="heroIndex">CODEX / LEARNING SYSTEM</span>
@@ -120,7 +120,7 @@
             </a>
             <a class="brief-item" href="#labs" role="listitem">
               <span class="brief-index">02</span>
-              <span class="brief-copy"><strong><code>book/labs/</code></strong><small data-i18n="repositoryLabs">13 labs · draft · run_status: not_run</small></span>
+              <span class="brief-copy"><strong><code>book/labs/</code></strong><small data-i18n="repositoryLabs">17 labs · draft · run_status: not_run</small></span>
               <span class="brief-arrow" aria-hidden="true">↗</span>
             </a>
             <a class="brief-item" href="#skills" role="listitem">
@@ -140,8 +140,8 @@
               <p class="index-panel-intro" data-i18n="fileMapIntro">Read the layer that matches the work. The public page is a guide; the files below are the source of truth.</p>
               <div class="file-map-list">
                 <a class="file-map-row" href="README.md"><code>site/</code><span><strong data-i18n="fileSiteTitle">Public showcase</strong><small data-i18n="fileSiteBody">index.html, styles.css, app.js, and generated learning-path data.</small></span><b aria-hidden="true">↗</b></a>
-                <a class="file-map-row" href="../book/table-of-contents-EN.md"><code>book/chapters/</code><span><strong data-i18n="fileChaptersTitle">Core learning text</strong><small data-i18n="fileChaptersBody">22 chapters; current artifact status: candidate.</small></span><b aria-hidden="true">↗</b></a>
-                <a class="file-map-row" href="../book/labs/README.md"><code>book/labs/</code><span><strong data-i18n="fileLabsTitle">Observable practice</strong><small data-i18n="fileLabsBody">13 labs; current status: draft; run status: not_run.</small></span><b aria-hidden="true">↗</b></a>
+                <a class="file-map-row" href="../book/table-of-contents-EN.md"><code>book/chapters/</code><span><strong data-i18n="fileChaptersTitle">Core learning text</strong><small data-i18n="fileChaptersBody">22 English chapter sources; current artifact status: candidate.</small></span><b aria-hidden="true">↗</b></a>
+                <a class="file-map-row" href="../book/labs/README-EN.md"><code>book/labs/</code><span><strong data-i18n="fileLabsTitle">Observable practice</strong><small data-i18n="fileLabsBody">17 labs; current status: draft; run status: not_run.</small></span><b aria-hidden="true">↗</b></a>
                 <a class="file-map-row" href="../docs/skill-registry.md"><code>skills/</code><span><strong data-i18n="fileSkillsTitle">Reusable methods</strong><small data-i18n="fileSkillsBody">7 project Skills with triggers, boundaries, and evidence contracts.</small></span><b aria-hidden="true">↗</b></a>
                 <a class="file-map-row" href="../docs/governance/update-map.md"><code>docs/</code><span><strong data-i18n="fileDocsTitle">Governance and research</strong><small data-i18n="fileDocsBody">Status, sources, field reports, update rules, and quality records.</small></span><b aria-hidden="true">↗</b></a>
               </div>
@@ -153,7 +153,7 @@
                 <ul class="ledger-list">
                   <li><span data-i18n="ledgerProject">Project</span><strong class="status-badge status-badge-candidate">candidate</strong></li>
                   <li><span data-i18n="ledgerChapters">Chapters · 22</span><strong class="status-badge status-badge-candidate">candidate</strong></li>
-                  <li><span data-i18n="ledgerLabs">Labs · 13</span><strong class="status-badge status-badge-draft">draft</strong><small>run_status: not_run</small></li>
+                  <li><span data-i18n="ledgerLabs">Labs · 17</span><strong class="status-badge status-badge-draft">draft</strong><small>run_status: not_run</small></li>
                   <li><span data-i18n="ledgerSkills">Skills · 7</span><strong class="status-badge status-badge-candidate">candidate</strong></li>
                   <li><span data-i18n="ledgerResearch">Field research</span><strong class="status-badge status-badge-candidate">candidate</strong><small data-i18n="ledgerResearchNote">user reports; not locally reproduced</small></li>
                 </ul>
@@ -210,7 +210,7 @@
             <a class="problem-card" href="../book/labs/lab-001-first-safe-task-EN.md" data-content-id="lab-001-first-safe-task"><span class="card-number">01</span><strong data-i18n="problemStartTitle">I need a safe first task.</strong><p data-i18n="problemStartBody">Use a disposable or reversible change. Inspect before editing, then keep the diff and the check result.</p><span class="card-link" data-i18n="problemStartLink">Open lab 001 · draft · not_run ↗</span></a>
             <a class="problem-card" href="../book/chapters/09-verification-and-recovery-EN.md" data-content-id="chapter-09-verification-and-recovery"><span class="card-number">02</span><strong data-i18n="problemWrongFileTitle">The file or result is uncertain.</strong><p data-i18n="problemWrongFileBody">Freeze the next edit. Compare the requested scope, git diff, focused check, and remaining unknowns.</p><span class="card-link" data-i18n="problemWrongFileLink">Open chapter 9 · candidate ↗</span></a>
             <a class="problem-card" href="../book/chapters/11-designing-a-skill-EN.md" data-content-id="chapter-11"><span class="card-number">03</span><strong data-i18n="problemSkillTitle">I need to choose or design a Skill.</strong><p data-i18n="problemSkillBody">Start with the trigger, inputs, boundaries, and evidence contract; only then decide whether a Skill earns a place.</p><span class="card-link" data-i18n="problemSkillLink">Open chapter 11 · candidate ↗</span></a>
-            <a class="problem-card" href="../book/chapters/22-continuous-update-and-future-proofing.md" data-content-id="chapter-22"><span class="card-number">04</span><strong data-i18n="problemUpdateTitle">I need to publish or update safely.</strong><p data-i18n="problemUpdateBody">Locate the canonical file, attach the source record, run the relevant gate, and keep unverified claims out of the release.</p><span class="card-link" data-i18n="problemUpdateLink">Open chapter 22 · candidate ↗</span></a>
+             <a class="problem-card" href="../book/chapters/22-continuous-update-and-future-proofing-EN.md" data-content-id="chapter-22"><span class="card-number">04</span><strong data-i18n="problemUpdateTitle">I need to publish or update safely.</strong><p data-i18n="problemUpdateBody">Locate the canonical file, attach the source record, run the relevant gate, and keep unverified claims out of the release.</p><span class="card-link" data-i18n="problemUpdateLink">Open chapter 22 · candidate ↗</span></a>
           </div>
         </div>
       </section>
@@ -320,17 +320,17 @@
               <a href="../book/chapters/13-action-boundaries-EN.md"><span>13</span><span data-i18n="chapter13">Action boundaries across files, terminals, browsers, and GitHub</span><i data-i18n="candidateStatus">candidate</i></a>
             </div></details>
             <details class="chapter-group" data-route="C"><summary><span>C</span><strong data-i18n="routeCTitle">Capability and Agent collaboration</strong><small data-i18n="routeCDesc">14—18 · choose the smallest useful combination</small><b>05</b></summary><div class="chapter-items">
-              <a href="../book/chapters/14-discover-and-audit-skills.md"><span>14</span><span data-i18n="chapter14">Discover, install, and audit an external Skill</span><i data-i18n="candidateStatus">candidate</i></a>
-              <a href="../book/chapters/15-research-track.md"><span>15</span><span data-i18n="chapter15">Research: from question to auditable knowledge</span><i data-i18n="candidateStatus">candidate</i></a>
-              <a href="../book/chapters/16-engineering-track.md"><span>16</span><span data-i18n="chapter16">Engineering: from idea to reliable software</span><i data-i18n="candidateStatus">candidate</i></a>
-              <a href="../book/chapters/17-marketing-track.md"><span>17</span><span data-i18n="chapter17">Marketing: from product context to experiments</span><i data-i18n="candidateStatus">candidate</i></a>
-              <a href="../book/chapters/18-content-design-data-automation.md"><span>18</span><span data-i18n="chapter18">Content, design, data, and automation</span><i data-i18n="candidateStatus">candidate</i></a>
+              <a href="../book/chapters/14-discover-and-audit-skills-EN.md"><span>14</span><span data-i18n="chapter14">Discover, install, and audit an external Skill</span><i data-i18n="candidateStatus">candidate</i></a>
+              <a href="../book/chapters/15-research-track-EN.md"><span>15</span><span data-i18n="chapter15">Research: from question to auditable knowledge</span><i data-i18n="candidateStatus">candidate</i></a>
+              <a href="../book/chapters/16-engineering-track-EN.md"><span>16</span><span data-i18n="chapter16">Engineering: from idea to reliable software</span><i data-i18n="candidateStatus">candidate</i></a>
+              <a href="../book/chapters/17-marketing-track-EN.md"><span>17</span><span data-i18n="chapter17">Marketing: from product context to experiments</span><i data-i18n="candidateStatus">candidate</i></a>
+              <a href="../book/chapters/18-content-design-data-automation-EN.md"><span>18</span><span data-i18n="chapter18">Content, design, data, and automation</span><i data-i18n="candidateStatus">candidate</i></a>
             </div></details>
             <details class="chapter-group" data-route="D"><summary><span>D</span><strong data-i18n="routeDTitle">From fluency to team practice</strong><small data-i18n="routeDDesc">19—22 · turn personal method into team capability</small><b>04</b></summary><div class="chapter-items">
-              <a href="../book/chapters/19-evaluate-models-and-workflows.md"><span>19</span><span data-i18n="chapter19">Evaluate models and workflows</span><i data-i18n="candidateStatus">candidate</i></a>
-              <a href="../book/chapters/20-personal-codex-work-system.md"><span>20</span><span data-i18n="chapter20">Build a personal Codex work system</span><i data-i18n="candidateStatus">candidate</i></a>
-              <a href="../book/chapters/21-team-capability-system.md"><span>21</span><span data-i18n="chapter21">Build a team capability system</span><i data-i18n="candidateStatus">candidate</i></a>
-              <a href="../book/chapters/22-continuous-update-and-future-proofing.md"><span>22</span><span data-i18n="chapter22">Keep the system current and recoverable</span><i data-i18n="candidateStatus">candidate</i></a>
+              <a href="../book/chapters/19-evaluate-models-and-workflows-EN.md"><span>19</span><span data-i18n="chapter19">Evaluate models and workflows</span><i data-i18n="candidateStatus">candidate</i></a>
+              <a href="../book/chapters/20-personal-codex-work-system-EN.md"><span>20</span><span data-i18n="chapter20">Build a personal Codex work system</span><i data-i18n="candidateStatus">candidate</i></a>
+              <a href="../book/chapters/21-team-capability-system-EN.md"><span>21</span><span data-i18n="chapter21">Build a team capability system</span><i data-i18n="candidateStatus">candidate</i></a>
+              <a href="../book/chapters/22-continuous-update-and-future-proofing-EN.md"><span>22</span><span data-i18n="chapter22">Keep the system current and recoverable</span><i data-i18n="candidateStatus">candidate</i></a>
             </div></details>
           </div>
         </div>
@@ -353,8 +353,12 @@
             <a class="lab-card" href="../book/labs/lab-010-product-context.md"><span class="lab-id">LAB 010 · L3</span><h3 data-i18n="lab10Title">Shared product context</h3><p data-i18n="lab10Body">Version a shared product understanding and separate facts from hypotheses.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
             <a class="lab-card" href="../book/labs/lab-011-gpt-codex-boundaries-EN.md"><span class="lab-id">LAB 011 · L0</span><h3 data-i18n="lab11Title">GPT and Codex boundaries</h3><p data-i18n="lab11Body">Use static task cards to separate generation, execution, verification, and external effects.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
             <a class="lab-card" href="../book/labs/lab-012-team-capability-migration.md"><span class="lab-id">LAB 012 · L6</span><h3 data-i18n="lab12Title">Team capability migration</h3><p data-i18n="lab12Body">Create a contract for version, owner, permissions, independent reproduction, and rollback.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
+            <a class="lab-card" href="../book/labs/lab-014-resume-reconciliation-EN.md"><span class="lab-id">LAB 014 · L3</span><h3 data-i18n="lab14Title">Resume reconciliation</h3><p data-i18n="lab14Body">Reconcile the task pointer, target, branch, permissions, and side-effect state before continuing.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
+            <a class="lab-card" href="../book/labs/lab-015-evidence-delivery-EN.md"><span class="lab-id">LAB 015 · L5</span><h3 data-i18n="lab15Title">Evidence delivery</h3><p data-i18n="lab15Body">Split a completion sentence into claims, scopes, outputs, and the smallest next check.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
+            <a class="lab-card" href="../book/labs/lab-016-side-effect-boundary-EN.md"><span class="lab-id">LAB 016 · L3</span><h3 data-i18n="lab16Title">Side-effect boundary</h3><p data-i18n="lab16Body">Separate diagnosis from installation, publication, restart, and other persistent actions.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
+            <a class="lab-card" href="../book/labs/lab-017-skill-discovery-audit-EN.md"><span class="lab-id">LAB 017 · L4</span><h3 data-i18n="lab17Title">Skill discovery audit</h3><p data-i18n="lab17Body">Check existence, discovery, loading, behavior, license, and adoption as separate claims.</p><span class="lab-footer" data-i18n="draftStatus">draft <b>↗</b></span></a>
           </div>
-          <a class="section-link" href="../book/labs/README.md"><span data-i18n="labsIndexLink">Open the lab rules and all 13 entries</span><span aria-hidden="true">↗</span></a>
+          <a class="section-link" href="../book/labs/README-EN.md"><span data-i18n="labsIndexLink">Open the lab rules and all 17 entries</span><span aria-hidden="true">↗</span></a>
         </div>
       </section>
 

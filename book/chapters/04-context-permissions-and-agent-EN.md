@@ -283,7 +283,7 @@ official documentation is not a substitute for observing the current run.
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="Chapter navigation">
+<nav class="chapter-navigation" aria-label="Chapter navigation">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-EN.md" aria-label="Previous chapter: Chapter 3 · Turn a wish into a task protocol">← Previous<br><strong>Chapter 3 · Turn a wish into a task protocol</strong></a></td>

@@ -230,7 +230,7 @@ next_review: after the next source or chapter-structure change
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="07-skills-plugins-and-tools.md" aria-label="上一章：第 7 章 · Skill、Plugin、MCP 和工具如何分工">← 上一章<br><strong>第 7 章 · Skill、Plugin、MCP 和工具如何分工</strong></a></td>

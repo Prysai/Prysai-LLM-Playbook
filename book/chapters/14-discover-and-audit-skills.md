@@ -190,7 +190,7 @@ evidence / unverified / unblock_conditions:
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="13-action-boundaries.md" aria-label="上一章：第 13 章 · 文件、终端、浏览器与 GitHub 的行动边界">← 上一章<br><strong>第 13 章 · 文件、终端、浏览器与 GitHub 的行动边界</strong></a></td>

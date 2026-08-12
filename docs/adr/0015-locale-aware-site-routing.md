@@ -11,7 +11,7 @@ Accepted for the migration phase
 ## Context
 
 The repository now has six registered reader locales and a visible language
-menu, but the public showcase also contains 22 chapters and 13 labs whose
+menu, but the public showcase also contains 22 chapters and 17 labs whose
 translation files are being migrated at different speeds. A language toggle
 alone is not enough: a reader who chooses Chinese and then opens a chapter can
 still be sent to an English-specific hard-coded path. Conversely, a missing

@@ -176,7 +176,7 @@ dependency_check: 如何在开始前用一次低风险检查确认依赖
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery.md" aria-label="上一章：第 9 章 · 验证、怀疑与恢复">← 上一章<br><strong>第 9 章 · 验证、怀疑与恢复</strong></a></td>

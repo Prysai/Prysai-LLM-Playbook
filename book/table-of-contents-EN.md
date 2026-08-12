@@ -4,21 +4,21 @@
 
 > English source-locale directory page. This migration slice is based on the
 > existing unsuffixed `book/table-of-contents.md`. It keeps all 22 chapters,
-> 13 experiments, maturity boundaries, and real-user problem research
+> 17 experiments, maturity boundaries, and real-user problem research
 > entrances visible without claiming that the chapter or lab corpus is already
 > translated or runtime-verified.
 
 ## Migration state and link policy
 
 - Page `content_status`: `candidate`; source revision: `dd08a68`.
-- The directory contains 22 chapter records and 13 real experiment files.
+- The directory contains 22 chapter records and 17 real experiment files.
 - Chapters are `candidate`. Labs are `draft` with `run_status: not_run`.
 - Chapter 6 has `claim_status: disputed`; Chapter 22 has
   `claim_status: current | disputed`.
-- Existing English entry pages use their `-EN` files. Chapters 1–9 and Labs
-  001, 002, 007, and 011 now have canonical `-EN` source files. The remaining
-  chapters and labs do not yet have locale-suffixed English variants, so their
-  links are explicitly marked `migration pending — current source path`.
+- English chapter sources are now available for chapters 1–22 and are the
+  canonical English reader route. Labs remain a separate migration track: each
+  lab keeps its own `draft` and `not_run` state, and a pending label means the
+  English lab file has not yet been reviewed into the locale matrix.
   Shared governance, evaluation, and research documents are marked
   `locale-neutral`.
 - No link on this page silently falls back to another locale. A migration
@@ -119,7 +119,7 @@ and recovery. **content_status:** `candidate`
 Break a large goal into delivery slices with clear dependencies, runnable
 steps, and inspectable checks. **content_status:** `candidate`
 
-- Chapter: [migration pending — current source path](chapters/10-planning-and-slicing.md)
+- Chapter: [English source](chapters/10-planning-and-slicing-EN.md)
 - Experiments: [Lab 002 — EN source](labs/lab-002-task-protocol-EN.md) · [lab-013 — migration pending — current source path](labs/lab-013-l3-vertical-slice.md)
 
 ### Chapter 11 — Design a genuinely useful Skill
@@ -127,7 +127,7 @@ steps, and inspectable checks. **content_status:** `candidate`
 Trigger boundaries, progressive disclosure, resources, scripts, outputs,
 failure examples, evaluation, and versioning. **content_status:** `candidate`
 
-- Chapter: [migration pending — current source path](chapters/11-designing-a-skill.md)
+- Chapter: [English source](chapters/11-designing-a-skill-EN.md)
 - Experiment: [lab-005 — migration pending — current source path](labs/lab-005-design-a-skill.md)
 
 ### Chapter 12 — The Agent loop, state, and stopping conditions
@@ -136,7 +136,7 @@ Observation, planning, action, feedback, retry, confirmation, and stopping;
 explain behavior without inventing hidden reasoning. **content_status:**
 `candidate`
 
-- Chapter: [migration pending — current source path](chapters/12-agent-loop-and-stop.md)
+- Chapter: [English source](chapters/12-agent-loop-and-stop-EN.md)
 - Experiment: [lab-006 — migration pending — current source path](labs/lab-006-agent-stop-conditions.md)
 
 ### Chapter 13 — Action boundaries for files, terminals, browsers, and GitHub
@@ -144,7 +144,7 @@ explain behavior without inventing hidden reasoning. **content_status:**
 Read-only checks, editing, commands, browsing, commits, pushes, external
 messages, and rollback. **content_status:** `candidate`
 
-- Chapter: [migration pending — current source path](chapters/13-action-boundaries.md)
+- Chapter: [English source](chapters/13-action-boundaries-EN.md)
 - Experiment: [Lab 007 — EN source](labs/lab-007-action-boundaries-EN.md)
 
 ## Part III: Skills, tools, and professional practice
@@ -155,7 +155,7 @@ Move from an index to a trustworthy capability: source, license,
 dependencies, authentication, triggers, and maintenance. **content_status:**
 `candidate`
 
-- Chapter: [migration pending — current source path](chapters/14-discover-and-audit-skills.md)
+- Chapter: [English source](chapters/14-discover-and-audit-skills-EN.md)
 - Experiments: [lab-004 — migration pending — current source path](labs/lab-004-skill-selection.md) · [lab-005 — migration pending — current source path](labs/lab-005-design-a-skill.md)
 
 ### Chapter 15 — Research track: from question to auditable knowledge
@@ -163,7 +163,7 @@ dependencies, authentication, triggers, and maintenance. **content_status:**
 Narrow the research question; handle sources, citations, method, review,
 disclosure, and completeness. **content_status:** `candidate`
 
-- Chapter: [migration pending — current source path](chapters/15-research-track.md)
+- Chapter: [English source](chapters/15-research-track-EN.md)
 - Experiment: [lab-008 — migration pending — current source path](labs/lab-008-research-question.md)
 
 ### Chapter 16 — Engineering track: from idea to reliable software
@@ -171,7 +171,7 @@ disclosure, and completeness. **content_status:** `candidate`
 Requirements, specifications, planning, incremental implementation, tests,
 debugging, review, release, and migration. **content_status:** `candidate`
 
-- Chapter: [migration pending — current source path](chapters/16-engineering-track.md)
+- Chapter: [English source](chapters/16-engineering-track-EN.md)
 - Experiment: [lab-009 — migration pending — current source path](labs/lab-009-engineering-lifecycle.md)
 
 ### Chapter 17 — Marketing track: from product understanding to growth experiments
@@ -179,7 +179,7 @@ debugging, review, release, and migration. **content_status:** `candidate`
 Product context, audience, positioning, content, conversion, measurement, and
 attribution. **content_status:** `candidate`
 
-- Chapter: [migration pending — current source path](chapters/17-marketing-track.md)
+- Chapter: [English source](chapters/17-marketing-track-EN.md)
 - Experiment: [lab-010 — migration pending — current source path](labs/lab-010-product-context.md)
 
 ### Chapter 18 — Content, design, data, and automation track
@@ -187,7 +187,7 @@ attribution. **content_status:** `candidate`
 Use the external ecosystem by task capability cluster instead of installing
 every Skill blindly. **content_status:** `candidate`
 
-- Chapter: [migration pending — current source path](chapters/18-content-design-data-automation.md)
+- Chapter: [English source](chapters/18-content-design-data-automation-EN.md)
 - Experiment: [lab-004 — migration pending — current source path](labs/lab-004-skill-selection.md)
 
 ## Part IV: From proficient use to organizational capability
@@ -197,7 +197,7 @@ every Skill blindly. **content_status:** `candidate`
 Build task sets, repeat experiments, score with human review, and classify
 errors. **content_status:** `candidate`
 
-- Chapter: [migration pending — current source path](chapters/19-evaluate-models-and-workflows.md)
+- Chapter: [English source](chapters/19-evaluate-models-and-workflows-EN.md)
 - Experiments: [lab-003 — migration pending — current source path](labs/lab-003-evidence-review.md) · [lab-009 — migration pending — current source path](labs/lab-009-engineering-lifecycle.md)
 - Evaluation framework: [locale-neutral governance](../docs/quality/evaluation-framework.md)
 
@@ -206,7 +206,7 @@ errors. **content_status:** `candidate`
 Project context, memory, templates, recurring workflows, and retrospectives.
 **content_status:** `candidate`
 
-- Chapter: [migration pending — current source path](chapters/20-personal-codex-work-system.md)
+- Chapter: [English source](chapters/20-personal-codex-work-system-EN.md)
 - Experiments: [lab-001 EN source](labs/lab-001-first-safe-task-EN.md) · [lab-010 — migration pending — current source path](labs/lab-010-product-context.md)
 
 ### Chapter 21 — Build a team capability system
@@ -214,7 +214,7 @@ Project context, memory, templates, recurring workflows, and retrospectives.
 Shared Skills, `AGENTS.md`, permissions, evaluation, review, contribution, and
 versioning. **content_status:** `candidate`
 
-- Chapter: [migration pending — current source path](chapters/21-team-capability-system.md)
+- Chapter: [English source](chapters/21-team-capability-system-EN.md)
 - Experiment: [lab-012 — migration pending — current source path](labs/lab-012-team-capability-migration.md)
 
 ### Chapter 22 — Continuous update and future-proofing
@@ -223,12 +223,12 @@ Identify volatile facts, update sources, migrate models, audit tools, and
 remove obsolete capabilities. **content_status:** `candidate` · related
 volatile claim: `claim_status: current | disputed`
 
-- Chapter: [migration pending — current source path](chapters/22-continuous-update-and-future-proofing.md)
+- Chapter: [English source](chapters/22-continuous-update-and-future-proofing-EN.md)
 - Experiments: [lab-008 — migration pending — current source path](labs/lab-008-research-question.md) · [lab-010 — migration pending — current source path](labs/lab-010-product-context.md)
 
 ## Experiment index and status boundaries
 
-The repository has 13 real experiment files. Each remains `draft` and
+The repository has 17 real experiment files. Each remains `draft` and
 `run_status: not_run`; a directory link is an entry point, not evidence that
 the experiment or its learning outcome is verified.
 
@@ -247,10 +247,14 @@ the experiment or its learning outcome is verified.
 | lab-011 | GPT, Codex, tools, and Agents | `draft` · `not_run` | [Lab 011 — EN source](labs/lab-011-gpt-codex-boundaries-EN.md) |
 | lab-012 | Team capability migration | `draft` · `not_run` | [migration pending — current source](labs/lab-012-team-capability-migration.md) |
 | lab-013 | Auditable L3 vertical slice | `draft` · `not_run` | [migration pending — current source](labs/lab-013-l3-vertical-slice.md) |
+| lab-014 | Resume reconciliation | `draft` · `not_run` | [EN source](labs/lab-014-resume-reconciliation-EN.md) |
+| lab-015 | Evidence delivery | `draft` · `not_run` | [EN source](labs/lab-015-evidence-delivery-EN.md) |
+| lab-016 | Side-effect boundary | `draft` · `not_run` | [EN source](labs/lab-016-side-effect-boundary-EN.md) |
+| lab-017 | Skill discovery audit | `draft` · `not_run` | [EN source](labs/lab-017-skill-discovery-audit-EN.md) |
 
 ## Evaluation, status, and real-problem research
 
-- [Experiment index — migration pending; current source](labs/README.md): 13 real experiment files, levels, domains, migration focus, and `lab_status`.
+- [Experiment index — English source](labs/README-EN.md): 17 real experiment files, levels, domains, migration focus, and `lab_status`.
 - [Content integration matrix — locale-neutral governance](../docs/content-matrix.md): capability mappings and the additional capability introduced when themes repeat.
 - [Evaluation framework — locale-neutral governance](../docs/quality/evaluation-framework.md): acceptance gates for content and capability.
 - [Learning path contract — locale-neutral governance](../docs/governance/learning-path.yaml): levels, primary experiments, supporting experiments, and progression gates.

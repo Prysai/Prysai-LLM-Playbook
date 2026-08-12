@@ -10,7 +10,7 @@ Accepted
 
 ## Context
 
-The project has several maintained surfaces: 22 chapters, 12 labs, 7 Skills,
+The project has several maintained surfaces: 22 chapters, 17 labs, 7 Skills,
 38 evaluation tasks across 15 tracks, a bilingual public site, and source and
 license records. Their counts and maturity states are repeated in indexes,
 quality reports, and page copy. Repetition makes it easy for an old review

@@ -172,7 +172,7 @@ pause_and_inspect → side_effect_unknown? → stop blocked/unverified
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav aria-label="章节导航">
+<nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill.md" aria-label="上一章：第 11 章 · 设计一个真正有用的 Skill">← 上一章<br><strong>第 11 章 · 设计一个真正有用的 Skill</strong></a></td>
