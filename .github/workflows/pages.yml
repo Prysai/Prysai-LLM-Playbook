@@ -1,8 +1,6 @@
 name: Deploy the Field Guide site
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -16,6 +14,9 @@ concurrency:
 
 jobs:
   build:
+    # This private repository's current GitHub plan does not support Pages.
+    # Keep the workflow available for an explicit run after the repository is
+    # public or the account plan changes, instead of failing every main push.
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
