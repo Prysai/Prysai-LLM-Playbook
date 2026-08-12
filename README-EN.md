@@ -186,9 +186,9 @@ state, not a marketing promise.
 | **L6 · Team coach** | Turn a personal method into a versioned team capability with ownership and rollback | [Chapters 20–22 — English sources](book/table-of-contents-EN.md) · [Contribution model](docs/governance/contribution-model.md) |
 
 “Migration pending” remains explicit wherever an English source has not yet
-been authored. All 22 chapters now have canonical `-EN` sources. Thirteen labs
-also have canonical English sources. Labs 005, 008, 009, and 010 remain on
-explicit migration paths until their English files exist and pass review.
+been authored. All 22 chapters and all 17 labs now have canonical `-EN`
+sources. That closes the source-locale path gap; it does not supply runtime or
+independent-review evidence for the labs.
 
 ## What a chapter, lab, or Skill must contain
 

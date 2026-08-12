@@ -286,7 +286,7 @@ same events or obeys the same stop conditions. This lab remains `draft` and
 <hr>
 <nav class="chapter-navigation" aria-label="Lab navigation">
   <table role="presentation" width="100%"><tr>
-    <td align="left"><a href="lab-005-design-a-skill.md">← Previous · migration pending<br><strong>Lab 005 · Skill design</strong></a></td>
+    <td align="left"><a href="lab-005-design-a-skill-EN.md">← Previous<br><strong>Lab 005 · Skill design</strong></a></td>
     <td align="right"><a href="lab-007-action-boundaries-EN.md">Next →<br><strong>Lab 007 · Action boundaries</strong></a></td>
   </tr></table>
 </nav>

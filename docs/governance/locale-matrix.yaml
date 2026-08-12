@@ -536,6 +536,70 @@
       }
     },
     {
+      "content_id": "lab-005-design-a-skill",
+      "kind": "lab",
+      "stem": "book/labs/lab-005-design-a-skill",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-12",
+      "legacy_paths": ["book/labs/lab-005-design-a-skill.md"],
+      "locales": {
+        "EN": {"path": "book/labs/lab-005-design-a-skill-EN.md", "content_status": "draft", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/labs/lab-005-design-a-skill-ZH.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "ES": {"path": "book/labs/lab-005-design-a-skill-ES.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "JA": {"path": "book/labs/lab-005-design-a-skill-JA.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "KO": {"path": "book/labs/lab-005-design-a-skill-KO.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "DE": {"path": "book/labs/lab-005-design-a-skill-DE.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."}
+      }
+    },
+    {
+      "content_id": "lab-008-research-question",
+      "kind": "lab",
+      "stem": "book/labs/lab-008-research-question",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-12",
+      "legacy_paths": ["book/labs/lab-008-research-question.md"],
+      "locales": {
+        "EN": {"path": "book/labs/lab-008-research-question-EN.md", "content_status": "draft", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/labs/lab-008-research-question-ZH.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "ES": {"path": "book/labs/lab-008-research-question-ES.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "JA": {"path": "book/labs/lab-008-research-question-JA.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "KO": {"path": "book/labs/lab-008-research-question-KO.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "DE": {"path": "book/labs/lab-008-research-question-DE.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."}
+      }
+    },
+    {
+      "content_id": "lab-009-engineering-lifecycle",
+      "kind": "lab",
+      "stem": "book/labs/lab-009-engineering-lifecycle",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-12",
+      "legacy_paths": ["book/labs/lab-009-engineering-lifecycle.md"],
+      "locales": {
+        "EN": {"path": "book/labs/lab-009-engineering-lifecycle-EN.md", "content_status": "draft", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/labs/lab-009-engineering-lifecycle-ZH.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "ES": {"path": "book/labs/lab-009-engineering-lifecycle-ES.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "JA": {"path": "book/labs/lab-009-engineering-lifecycle-JA.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "KO": {"path": "book/labs/lab-009-engineering-lifecycle-KO.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "DE": {"path": "book/labs/lab-009-engineering-lifecycle-DE.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."}
+      }
+    },
+    {
+      "content_id": "lab-010-product-context",
+      "kind": "lab",
+      "stem": "book/labs/lab-010-product-context",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-12",
+      "legacy_paths": ["book/labs/lab-010-product-context.md"],
+      "locales": {
+        "EN": {"path": "book/labs/lab-010-product-context-EN.md", "content_status": "draft", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/labs/lab-010-product-context-ZH.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "ES": {"path": "book/labs/lab-010-product-context-ES.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "JA": {"path": "book/labs/lab-010-product-context-JA.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "KO": {"path": "book/labs/lab-010-product-context-KO.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "DE": {"path": "book/labs/lab-010-product-context-DE.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-12", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."}
+      }
+    },
+    {
       "content_id": "lab-012-team-capability-migration",
       "kind": "lab",
       "stem": "book/labs/lab-012-team-capability-migration",

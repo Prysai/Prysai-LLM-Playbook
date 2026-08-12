@@ -1,4 +1,4 @@
-<!-- content_id: book-table-of-contents | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: dd08a68 -->
+﻿<!-- content_id: book-table-of-contents | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: dd08a68 -->
 
 # Codex: From First Task to Real Work — Table of Contents v0.2
 
@@ -104,7 +104,7 @@ maintenance, with vertical slices that remain verifiable. **content_status:**
 
 - Chapter: [English source](chapters/08-full-lifecycle-workflow-EN.md)
 - Primary experiment: [Lab 013 — EN source](labs/lab-013-l3-vertical-slice-EN.md)
-- Supporting experiment: [lab-009 — migration pending — current source path](labs/lab-009-engineering-lifecycle.md)
+- Supporting experiment: [Lab 009 — EN source](labs/lab-009-engineering-lifecycle-EN.md)
 
 ### Chapter 9 — Verification, doubt, and recovery
 
@@ -128,7 +128,7 @@ Trigger boundaries, progressive disclosure, resources, scripts, outputs,
 failure examples, evaluation, and versioning. **content_status:** `candidate`
 
 - Chapter: [English source](chapters/11-designing-a-skill-EN.md)
-- Experiment: [lab-005 — migration pending — current source path](labs/lab-005-design-a-skill.md)
+- Experiment: [Lab 005 — EN source](labs/lab-005-design-a-skill-EN.md)
 
 ### Chapter 12 — The Agent loop, state, and stopping conditions
 
@@ -156,7 +156,7 @@ dependencies, authentication, triggers, and maintenance. **content_status:**
 `candidate`
 
 - Chapter: [English source](chapters/14-discover-and-audit-skills-EN.md)
-- Experiments: [Lab 004 — EN source](labs/lab-004-skill-selection-EN.md) · [lab-005 — migration pending — current source path](labs/lab-005-design-a-skill.md)
+- Experiments: [Lab 004 — EN source](labs/lab-004-skill-selection-EN.md) · [Lab 005 — EN source](labs/lab-005-design-a-skill-EN.md)
 
 ### Chapter 15 — Research track: from question to auditable knowledge
 
@@ -164,7 +164,7 @@ Narrow the research question; handle sources, citations, method, review,
 disclosure, and completeness. **content_status:** `candidate`
 
 - Chapter: [English source](chapters/15-research-track-EN.md)
-- Experiment: [lab-008 — migration pending — current source path](labs/lab-008-research-question.md)
+- Experiment: [Lab 008 — EN source](labs/lab-008-research-question-EN.md)
 
 ### Chapter 16 — Engineering track: from idea to reliable software
 
@@ -172,7 +172,7 @@ Requirements, specifications, planning, incremental implementation, tests,
 debugging, review, release, and migration. **content_status:** `candidate`
 
 - Chapter: [English source](chapters/16-engineering-track-EN.md)
-- Experiment: [lab-009 — migration pending — current source path](labs/lab-009-engineering-lifecycle.md)
+- Experiment: [Lab 009 — EN source](labs/lab-009-engineering-lifecycle-EN.md)
 
 ### Chapter 17 — Marketing track: from product understanding to growth experiments
 
@@ -180,7 +180,7 @@ Product context, audience, positioning, content, conversion, measurement, and
 attribution. **content_status:** `candidate`
 
 - Chapter: [English source](chapters/17-marketing-track-EN.md)
-- Experiment: [lab-010 — migration pending — current source path](labs/lab-010-product-context.md)
+- Experiment: [Lab 010 — EN source](labs/lab-010-product-context-EN.md)
 
 ### Chapter 18 — Content, design, data, and automation track
 
@@ -198,7 +198,7 @@ Build task sets, repeat experiments, score with human review, and classify
 errors. **content_status:** `candidate`
 
 - Chapter: [English source](chapters/19-evaluate-models-and-workflows-EN.md)
-- Experiments: [Lab 003 — EN source](labs/lab-003-evidence-review-EN.md) · [lab-009 — migration pending — current source path](labs/lab-009-engineering-lifecycle.md)
+- Experiments: [Lab 003 — EN source](labs/lab-003-evidence-review-EN.md) · [Lab 009 — EN source](labs/lab-009-engineering-lifecycle-EN.md)
 - Evaluation framework: [locale-neutral governance](../docs/quality/evaluation-framework.md)
 
 ### Chapter 20 — Build a personal Codex work system
@@ -207,7 +207,7 @@ Project context, memory, templates, recurring workflows, and retrospectives.
 **content_status:** `candidate`
 
 - Chapter: [English source](chapters/20-personal-codex-work-system-EN.md)
-- Experiments: [lab-001 EN source](labs/lab-001-first-safe-task-EN.md) · [lab-010 — migration pending — current source path](labs/lab-010-product-context.md)
+- Experiments: [Lab 001 — EN source](labs/lab-001-first-safe-task-EN.md) · [Lab 010 — EN source](labs/lab-010-product-context-EN.md)
 
 ### Chapter 21 — Build a team capability system
 
@@ -224,7 +224,7 @@ remove obsolete capabilities. **content_status:** `candidate` · related
 volatile claim: `claim_status: current | disputed`
 
 - Chapter: [English source](chapters/22-continuous-update-and-future-proofing-EN.md)
-- Experiments: [lab-008 — migration pending — current source path](labs/lab-008-research-question.md) · [lab-010 — migration pending — current source path](labs/lab-010-product-context.md)
+- Experiments: [Lab 008 — EN source](labs/lab-008-research-question-EN.md) · [Lab 010 — EN source](labs/lab-010-product-context-EN.md)
 
 ## Experiment index and status boundaries
 
@@ -238,12 +238,12 @@ the experiment or its learning outcome is verified.
 | lab-002 | Task protocol | `draft` · `not_run` | [EN source](labs/lab-002-task-protocol-EN.md) |
 | lab-003 | Evidence review | `draft` · `not_run` | [EN source](labs/lab-003-evidence-review-EN.md) |
 | lab-004 | Skill selection | `draft` · `not_run` | [EN source](labs/lab-004-skill-selection-EN.md) |
-| lab-005 | Skill design | `draft` · `not_run` | [migration pending — current source](labs/lab-005-design-a-skill.md) |
+| lab-005 | Skill design | `draft` · `not_run` | [EN source](labs/lab-005-design-a-skill-EN.md) |
 | lab-006 | Agent stop conditions | `draft` · `not_run` | [EN source](labs/lab-006-agent-stop-conditions-EN.md) |
 | lab-007 | Action boundaries | `draft` · `not_run` | [EN source](labs/lab-007-action-boundaries-EN.md) |
-| lab-008 | Research question | `draft` · `not_run` | [migration pending — current source](labs/lab-008-research-question.md) |
-| lab-009 | Engineering lifecycle | `draft` · `not_run` | [migration pending — current source](labs/lab-009-engineering-lifecycle.md) |
-| lab-010 | Product context | `draft` · `not_run` | [migration pending — current source](labs/lab-010-product-context.md) |
+| lab-008 | Research question | `draft` · `not_run` | [EN source](labs/lab-008-research-question-EN.md) |
+| lab-009 | Engineering lifecycle | `draft` · `not_run` | [EN source](labs/lab-009-engineering-lifecycle-EN.md) |
+| lab-010 | Product context | `draft` · `not_run` | [EN source](labs/lab-010-product-context-EN.md) |
 | lab-011 | GPT, Codex, tools, and Agents | `draft` · `not_run` | [Lab 011 — EN source](labs/lab-011-gpt-codex-boundaries-EN.md) |
 | lab-012 | Team capability migration | `draft` · `not_run` | [EN source](labs/lab-012-team-capability-migration-EN.md) |
 | lab-013 | Auditable L3 vertical slice | `draft` · `not_run` | [EN source](labs/lab-013-l3-vertical-slice-EN.md) |

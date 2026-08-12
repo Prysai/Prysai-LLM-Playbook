@@ -1710,6 +1710,214 @@ window.CODEX_LOCALE_MANIFEST = {
         }
       }
     },
+    "lab-005-design-a-skill": {
+      "kind": "lab",
+      "stem": "book/labs/lab-005-design-a-skill",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/labs/lab-005-design-a-skill.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/labs/lab-005-design-a-skill-EN.md",
+          "exists": true,
+          "content_status": "draft",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/labs/lab-005-design-a-skill-ZH.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "es": {
+          "path": "book/labs/lab-005-design-a-skill-ES.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ja": {
+          "path": "book/labs/lab-005-design-a-skill-JA.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ko": {
+          "path": "book/labs/lab-005-design-a-skill-KO.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "de": {
+          "path": "book/labs/lab-005-design-a-skill-DE.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        }
+      }
+    },
+    "lab-008-research-question": {
+      "kind": "lab",
+      "stem": "book/labs/lab-008-research-question",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/labs/lab-008-research-question.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/labs/lab-008-research-question-EN.md",
+          "exists": true,
+          "content_status": "draft",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/labs/lab-008-research-question-ZH.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "es": {
+          "path": "book/labs/lab-008-research-question-ES.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ja": {
+          "path": "book/labs/lab-008-research-question-JA.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ko": {
+          "path": "book/labs/lab-008-research-question-KO.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "de": {
+          "path": "book/labs/lab-008-research-question-DE.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        }
+      }
+    },
+    "lab-009-engineering-lifecycle": {
+      "kind": "lab",
+      "stem": "book/labs/lab-009-engineering-lifecycle",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/labs/lab-009-engineering-lifecycle.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/labs/lab-009-engineering-lifecycle-EN.md",
+          "exists": true,
+          "content_status": "draft",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/labs/lab-009-engineering-lifecycle-ZH.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "es": {
+          "path": "book/labs/lab-009-engineering-lifecycle-ES.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ja": {
+          "path": "book/labs/lab-009-engineering-lifecycle-JA.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ko": {
+          "path": "book/labs/lab-009-engineering-lifecycle-KO.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "de": {
+          "path": "book/labs/lab-009-engineering-lifecycle-DE.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        }
+      }
+    },
+    "lab-010-product-context": {
+      "kind": "lab",
+      "stem": "book/labs/lab-010-product-context",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/labs/lab-010-product-context.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/labs/lab-010-product-context-EN.md",
+          "exists": true,
+          "content_status": "draft",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/labs/lab-010-product-context-ZH.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "es": {
+          "path": "book/labs/lab-010-product-context-ES.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ja": {
+          "path": "book/labs/lab-010-product-context-JA.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ko": {
+          "path": "book/labs/lab-010-product-context-KO.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "de": {
+          "path": "book/labs/lab-010-product-context-DE.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        }
+      }
+    },
     "lab-012-team-capability-migration": {
       "kind": "lab",
       "stem": "book/labs/lab-012-team-capability-migration",
@@ -2117,214 +2325,6 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "worktree-2026-08-11"
         }
       }
-    },
-    "lab-005": {
-      "kind": "lab",
-      "stem": "book/labs/lab-005-design-a-skill",
-      "source_locale": "zh",
-      "legacy_paths": [
-        "book/labs/lab-005-design-a-skill.md"
-      ],
-      "locales": {
-        "en": {
-          "path": "book/labs/lab-005-design-a-skill.md",
-          "exists": true,
-          "content_status": "draft",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
-        },
-        "zh": {
-          "path": "book/labs/lab-005-design-a-skill-ZH.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "es": {
-          "path": "book/labs/lab-005-design-a-skill-ES.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ja": {
-          "path": "book/labs/lab-005-design-a-skill-JA.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ko": {
-          "path": "book/labs/lab-005-design-a-skill-KO.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "de": {
-          "path": "book/labs/lab-005-design-a-skill-DE.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        }
-      }
-    },
-    "lab-008": {
-      "kind": "lab",
-      "stem": "book/labs/lab-008-research-question",
-      "source_locale": "zh",
-      "legacy_paths": [
-        "book/labs/lab-008-research-question.md"
-      ],
-      "locales": {
-        "en": {
-          "path": "book/labs/lab-008-research-question.md",
-          "exists": true,
-          "content_status": "draft",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
-        },
-        "zh": {
-          "path": "book/labs/lab-008-research-question-ZH.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "es": {
-          "path": "book/labs/lab-008-research-question-ES.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ja": {
-          "path": "book/labs/lab-008-research-question-JA.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ko": {
-          "path": "book/labs/lab-008-research-question-KO.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "de": {
-          "path": "book/labs/lab-008-research-question-DE.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        }
-      }
-    },
-    "lab-009": {
-      "kind": "lab",
-      "stem": "book/labs/lab-009-engineering-lifecycle",
-      "source_locale": "zh",
-      "legacy_paths": [
-        "book/labs/lab-009-engineering-lifecycle.md"
-      ],
-      "locales": {
-        "en": {
-          "path": "book/labs/lab-009-engineering-lifecycle.md",
-          "exists": true,
-          "content_status": "draft",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
-        },
-        "zh": {
-          "path": "book/labs/lab-009-engineering-lifecycle-ZH.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "es": {
-          "path": "book/labs/lab-009-engineering-lifecycle-ES.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ja": {
-          "path": "book/labs/lab-009-engineering-lifecycle-JA.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ko": {
-          "path": "book/labs/lab-009-engineering-lifecycle-KO.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "de": {
-          "path": "book/labs/lab-009-engineering-lifecycle-DE.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        }
-      }
-    },
-    "lab-010": {
-      "kind": "lab",
-      "stem": "book/labs/lab-010-product-context",
-      "source_locale": "zh",
-      "legacy_paths": [
-        "book/labs/lab-010-product-context.md"
-      ],
-      "locales": {
-        "en": {
-          "path": "book/labs/lab-010-product-context.md",
-          "exists": true,
-          "content_status": "draft",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
-        },
-        "zh": {
-          "path": "book/labs/lab-010-product-context-ZH.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "es": {
-          "path": "book/labs/lab-010-product-context-ES.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ja": {
-          "path": "book/labs/lab-010-product-context-JA.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ko": {
-          "path": "book/labs/lab-010-product-context-KO.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "de": {
-          "path": "book/labs/lab-010-product-context-DE.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        }
-      }
     }
   },
   "aliases": {
@@ -2354,12 +2354,12 @@ window.CODEX_LOCALE_MANIFEST = {
     "lab-002": "lab-002-task-protocol",
     "lab-003": "lab-003-evidence-review",
     "lab-004": "lab-004-skill-selection",
-    "lab-005": "lab-005",
+    "lab-005": "lab-005-design-a-skill",
     "lab-006": "lab-006-agent-stop-conditions",
     "lab-007": "lab-007-action-boundaries",
-    "lab-008": "lab-008",
-    "lab-009": "lab-009",
-    "lab-010": "lab-010",
+    "lab-008": "lab-008-research-question",
+    "lab-009": "lab-009-engineering-lifecycle",
+    "lab-010": "lab-010-product-context",
     "lab-011": "lab-011-gpt-codex-boundaries",
     "lab-012": "lab-012-team-capability-migration",
     "lab-013": "lab-013-l3-vertical-slice",
@@ -2593,6 +2593,34 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-004-skill-selection-KO.md": "lab-004-skill-selection",
     "book/labs/lab-004-skill-selection-DE.md": "lab-004-skill-selection",
     "book/labs/lab-004-skill-selection.md": "lab-004-skill-selection",
+    "book/labs/lab-005-design-a-skill-EN.md": "lab-005-design-a-skill",
+    "book/labs/lab-005-design-a-skill-ZH.md": "lab-005-design-a-skill",
+    "book/labs/lab-005-design-a-skill-ES.md": "lab-005-design-a-skill",
+    "book/labs/lab-005-design-a-skill-JA.md": "lab-005-design-a-skill",
+    "book/labs/lab-005-design-a-skill-KO.md": "lab-005-design-a-skill",
+    "book/labs/lab-005-design-a-skill-DE.md": "lab-005-design-a-skill",
+    "book/labs/lab-005-design-a-skill.md": "lab-005-design-a-skill",
+    "book/labs/lab-008-research-question-EN.md": "lab-008-research-question",
+    "book/labs/lab-008-research-question-ZH.md": "lab-008-research-question",
+    "book/labs/lab-008-research-question-ES.md": "lab-008-research-question",
+    "book/labs/lab-008-research-question-JA.md": "lab-008-research-question",
+    "book/labs/lab-008-research-question-KO.md": "lab-008-research-question",
+    "book/labs/lab-008-research-question-DE.md": "lab-008-research-question",
+    "book/labs/lab-008-research-question.md": "lab-008-research-question",
+    "book/labs/lab-009-engineering-lifecycle-EN.md": "lab-009-engineering-lifecycle",
+    "book/labs/lab-009-engineering-lifecycle-ZH.md": "lab-009-engineering-lifecycle",
+    "book/labs/lab-009-engineering-lifecycle-ES.md": "lab-009-engineering-lifecycle",
+    "book/labs/lab-009-engineering-lifecycle-JA.md": "lab-009-engineering-lifecycle",
+    "book/labs/lab-009-engineering-lifecycle-KO.md": "lab-009-engineering-lifecycle",
+    "book/labs/lab-009-engineering-lifecycle-DE.md": "lab-009-engineering-lifecycle",
+    "book/labs/lab-009-engineering-lifecycle.md": "lab-009-engineering-lifecycle",
+    "book/labs/lab-010-product-context-EN.md": "lab-010-product-context",
+    "book/labs/lab-010-product-context-ZH.md": "lab-010-product-context",
+    "book/labs/lab-010-product-context-ES.md": "lab-010-product-context",
+    "book/labs/lab-010-product-context-JA.md": "lab-010-product-context",
+    "book/labs/lab-010-product-context-KO.md": "lab-010-product-context",
+    "book/labs/lab-010-product-context-DE.md": "lab-010-product-context",
+    "book/labs/lab-010-product-context.md": "lab-010-product-context",
     "book/labs/lab-012-team-capability-migration-EN.md": "lab-012-team-capability-migration",
     "book/labs/lab-012-team-capability-migration-ZH.md": "lab-012-team-capability-migration",
     "book/labs/lab-012-team-capability-migration-ES.md": "lab-012-team-capability-migration",
@@ -2644,31 +2672,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-017-skill-discovery-audit-ES.md": "lab-017-skill-discovery-audit",
     "book/labs/lab-017-skill-discovery-audit-JA.md": "lab-017-skill-discovery-audit",
     "book/labs/lab-017-skill-discovery-audit-KO.md": "lab-017-skill-discovery-audit",
-    "book/labs/lab-017-skill-discovery-audit-DE.md": "lab-017-skill-discovery-audit",
-    "book/labs/lab-005-design-a-skill.md": "lab-005",
-    "book/labs/lab-005-design-a-skill-ZH.md": "lab-005",
-    "book/labs/lab-005-design-a-skill-ES.md": "lab-005",
-    "book/labs/lab-005-design-a-skill-JA.md": "lab-005",
-    "book/labs/lab-005-design-a-skill-KO.md": "lab-005",
-    "book/labs/lab-005-design-a-skill-DE.md": "lab-005",
-    "book/labs/lab-008-research-question.md": "lab-008",
-    "book/labs/lab-008-research-question-ZH.md": "lab-008",
-    "book/labs/lab-008-research-question-ES.md": "lab-008",
-    "book/labs/lab-008-research-question-JA.md": "lab-008",
-    "book/labs/lab-008-research-question-KO.md": "lab-008",
-    "book/labs/lab-008-research-question-DE.md": "lab-008",
-    "book/labs/lab-009-engineering-lifecycle.md": "lab-009",
-    "book/labs/lab-009-engineering-lifecycle-ZH.md": "lab-009",
-    "book/labs/lab-009-engineering-lifecycle-ES.md": "lab-009",
-    "book/labs/lab-009-engineering-lifecycle-JA.md": "lab-009",
-    "book/labs/lab-009-engineering-lifecycle-KO.md": "lab-009",
-    "book/labs/lab-009-engineering-lifecycle-DE.md": "lab-009",
-    "book/labs/lab-010-product-context.md": "lab-010",
-    "book/labs/lab-010-product-context-ZH.md": "lab-010",
-    "book/labs/lab-010-product-context-ES.md": "lab-010",
-    "book/labs/lab-010-product-context-JA.md": "lab-010",
-    "book/labs/lab-010-product-context-KO.md": "lab-010",
-    "book/labs/lab-010-product-context-DE.md": "lab-010"
+    "book/labs/lab-017-skill-discovery-audit-DE.md": "lab-017-skill-discovery-audit"
   },
   "routed_status_counts": {
     "chapters": 22,

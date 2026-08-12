@@ -14,9 +14,7 @@ that the exercise has been freshly run in every Codex surface.
 ## Current state
 
 The index contains 17 lab identities. All 17 are currently `draft` with
-`run_status: not_run`. Thirteen have canonical English source files. Labs 005,
-008, 009, and 010 retain their current source path while the locale matrix
-records their migration state.
+`run_status: not_run`, and all 17 now have canonical English source files.
 
 ## Lab map
 
@@ -26,12 +24,12 @@ records their migration state.
 | 002 | Task protocol | L2 | [Open](lab-002-task-protocol-EN.md) |
 | 003 | Evidence review | L3 | [Open](lab-003-evidence-review-EN.md) |
 | 004 | Skill selection | L4 | [Open](lab-004-skill-selection-EN.md) |
-| 005 | Skill design | L4 | [Current source · migration pending](lab-005-design-a-skill.md) |
+| 005 | Skill design | L4 | [Open](lab-005-design-a-skill-EN.md) |
 | 006 | Agent stop conditions | L5 | [Open](lab-006-agent-stop-conditions-EN.md) |
 | 007 | Action boundaries | L3 | [Open](lab-007-action-boundaries-EN.md) |
-| 008 | Research question | L3 | [Current source · migration pending](lab-008-research-question.md) |
-| 009 | Engineering lifecycle | L3 | [Current source · migration pending](lab-009-engineering-lifecycle.md) |
-| 010 | Shared product context | L3 | [Current source · migration pending](lab-010-product-context.md) |
+| 008 | Research question | L3 | [Open](lab-008-research-question-EN.md) |
+| 009 | Engineering lifecycle | L3 | [Open](lab-009-engineering-lifecycle-EN.md) |
+| 010 | Shared product context | L3 | [Open](lab-010-product-context-EN.md) |
 | 011 | GPT and Codex boundaries | L0 | [Open](lab-011-gpt-codex-boundaries-EN.md) |
 | 012 | Team capability migration | L6 | [Open](lab-012-team-capability-migration-EN.md) |
 | 013 | Auditable vertical slice | L3 | [Open](lab-013-l3-vertical-slice-EN.md) |

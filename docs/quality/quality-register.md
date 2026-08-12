@@ -9,7 +9,7 @@ evidence.
 | Q-001 | P0 | Release | No learner lab has a recorded run; all 17 labs are `draft/not_run`. | Fixed input, run log, artifact, failure branch, and independent review for L0, L1, L3, and L6. | open |
 | Q-002 | P0 | Release | The 39 evaluation fixtures are `not_run/static_structure_only`. | Frozen environment, scored executions, threshold, and reviewer record. | open |
 | Q-003 | P0 | Licensing | The repository had no root license or complete asset boundary. | Root LICENSE, licensing policy, source register, and contribution notice. | resolved for candidate; recheck assets |
-| Q-004 | P1 | English path | Four labs remain migration-pending in the English route. | English source plus review for Labs 005, 008, 009, and 010, or an explicit route-only downgrade. | in progress; four of eight migrations completed |
+| Q-004 | P1 | English path | Eight labs lacked canonical English source files. | English source and contract validation for Labs 003, 004, 005, 008, 009, 010, 012, and 013. | resolved for source migration; runtime evidence remains Q-001 |
 | Q-005 | P1 | Curriculum | Reused labs do not consistently state the new capability, artifact, and acceptance delta. | Matrix fields `first_seen`, `new_capability`, `new_artifact`, and `new_acceptance`, reviewed per reuse. | open |
 | Q-006 | P1 | Locales | Non-English records describe planned coverage, not completed translation. | Separate route, file, translation, and language-review states; generated missing-file report. | open |
 | Q-007 | P1 | Facts | Fast-changing product claims have uneven review dates and no URL reachability gate. | Fresh source checks with scope, owner, checked date, and risk-based next review. | open |

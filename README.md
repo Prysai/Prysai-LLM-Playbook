@@ -103,7 +103,7 @@ table of contents must not be mistaken for a tested course.
 | Evidence layer | Current state | Missing evidence |
 |---|---|---|
 | English chapters | 22 canonical sources | Fresh chapter review and learner evidence |
-| English labs | 13 canonical sources; 4 migration-pending | English sources for Labs 005, 008, 009, and 010 |
+| English labs | 17 canonical sources | Runtime execution and independent review for all labs |
 | Practice runs | 17 labs, all `draft / not_run` | Fixed inputs, logs, artifacts, failure branches, independent reruns |
 | Evaluation | 39 fixtures, `not_run / static_structure_only` | Scored executions, thresholds, reviewer records |
 | Locales | English source plus five migration routes | Actual translations and language review |
