@@ -34,6 +34,7 @@ button, input, select, textarea { font: inherit; }
 .shell { width: min(var(--shell), calc(100% - (var(--space) * 2))); margin-inline: auto; }
 .skip-link { position: fixed; z-index: 20; top: 0; left: 1rem; padding: .75rem 1rem; color: #fff; background: var(--red); transform: translateY(-130%); transition: transform .2s ease; }
 .skip-link:focus { transform: translateY(1rem); }
+.skip-link:focus-visible, .button-primary:focus-visible { outline-color: var(--ink); }
 
 .site-header { position: sticky; z-index: 10; top: 0; background: rgba(246, 246, 243, .96); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
 .header-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; position: relative; }
@@ -119,6 +120,7 @@ button, input, select, textarea { font: inherit; }
 .task-steps strong { font-size: 1.1rem; }
 .task-steps p { max-width: 590px; margin: .45rem 0 0; color: #b4b4b0; font-size: .84rem; line-height: 1.6; }
 .check-card { padding: 1.4rem; color: var(--ink); background: #fff; }
+.check-card-callout { margin: 0 0 1.25rem; color: var(--ink); font-size: .88rem; line-height: 1.55; }
 .check-card-head { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; border-bottom: 1px solid var(--line); }
 .check-card .eyebrow { margin-bottom: .8rem; }
 .time-chip { color: var(--red); font-size: .72rem; font-weight: 700; }
@@ -267,7 +269,7 @@ button, input, select, textarea { font: inherit; }
 /* The emphasis is semantic HTML so it survives GitHub Markdown, the reader,
    and future renderers. Keep it sparse: mark decisions, boundaries, and
    evidence-bearing sentences rather than decorating every paragraph. */
-.highlight-text { position: relative; z-index: 0; display: inline; padding: .05em .13em .08em; color: inherit; background: transparent; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.highlight-text { position: relative; z-index: 0; display: inline; padding: .05em .13em .08em; color: var(--ink); background: transparent; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .highlight-text::before { position: absolute; z-index: -1; top: .17em; right: -.08em; bottom: .08em; left: -.08em; content: ''; background: var(--highlight-lime); transform: skewX(-5deg) rotate(-.6deg); }
 .highlight-yellow::before { background: var(--highlight-yellow); }
 .highlight-pink::before { background: var(--highlight-pink); }

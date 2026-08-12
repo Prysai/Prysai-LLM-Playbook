@@ -26,6 +26,7 @@ Useful indexes:
 - [Book navigation study](book-navigation-architecture-study-2026-08-11.md)
 - [Tutorial and knowledge-base structure benchmark](tutorial-value-and-knowledge-base-benchmark-2026-08-11.md)
 - [Comparable tutorial architecture study](comparable-tutorial-architecture-study-2026-08-11.md)
+- [Tutorial and i18n architecture benchmark](tutorial-and-i18n-architecture-benchmark-2026-08-11.md)
 - [Official Codex surface and safety baseline](codex-official-surface-and-safety-baseline-2026-08-11.md)
 - [Coding-agent field problems deep dive](field-problems-deep-dive-2026-08-11.md)
 - [Coding-agent field problems deep dive P2](field-problems-deep-dive-p2-2026-08-11.md)

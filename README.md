@@ -13,13 +13,15 @@
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
+[Open the visual showcase](site/index.html) · [Read the full English guide](README-EN.md)
+
 > **Status:** `candidate` · **Default:** English · **Maintained by:** Prysai Lab
 
 `README.md` is the English GitHub facade. The detailed, suffixed English
 source is [`README-EN.md`](README-EN.md); both files represent the same
-`project-readme` content identity and must stay aligned. The suffix is still
-present on the canonical source because every reader-facing locale is
-explicitly labelled, including English.
+`project-readme` content identity. Alignment means that the title, language
+switcher, status, key counts, canonical entry points, and claims agree; the
+facade is intentionally shorter than the canonical source.
 
 ## What this is
 
@@ -28,6 +30,10 @@ Codex, context, tools, Skills, Agents, verification, and team adoption. It
 helps readers move from “the model produced something plausible” to “the task
 was bounded, the action was appropriate, and the completion claim has
 evidence.”
+
+<mark>Do not stop at a plausible output.</mark> Define the task, choose the
+smallest useful capability, preserve the evidence, and say exactly what
+remains unverified.
 
 It is not OpenAI's official documentation, an official Codex product page, a
 flat Skill directory, or a catalogue of copied prompts. It is an independent
@@ -38,7 +44,7 @@ problem research, and explicit evidence boundaries.
 
 | You want to… | Use this entry | What it is for |
 |---|---|---|
-| Browse the learning experience | [`site/index.html`](site/index.html) + [`site/README.md`](site/README.md) | The visual showcase; the companion README explains local serving, Pages packaging, and verification |
+| Browse the learning experience | [`site/index.html`](site/index.html) · [`site/reader.html`](site/reader.html) · [`site/README.md`](site/README.md) | The showcase and dependency-free Reader; the companion README explains local serving, Pages packaging, and verification |
 | Read the English source | [`book/README-EN.md`](book/README-EN.md) + [`book/table-of-contents-EN.md`](book/table-of-contents-EN.md) | The book contract, full route, chapter status, experiments, and research links |
 | Inspect the project itself | [`docs/governance/`](docs/governance/) + [`scripts/`](scripts/) | Canonical status, locale identity, update rules, and repeatable checks |
 | Find a file quickly | [`Project map`](docs/project-map-EN.md) | Directory responsibilities, chapter order, generated files, and where each change starts |
@@ -57,6 +63,15 @@ it connects a fictional brief, a bounded context draft, a static page, and a
 local screenshot. The screenshot proves rendering at a recorded viewport;
 it does not prove live Skill execution, customer demand, inventory, conversion,
 or production readiness.
+
+![Model choice is a test](assets/teaching/model-choice-is-a-test.svg)
+
+![Fictional real-estate Product Context concept page](assets/cases/product-context-real-estate-desktop.png)
+
+The Reader opens Chapter 1 when entered without a path. It is a reading view
+over the Markdown sources, not a replacement for them. The repository includes
+the shell and Pages workflow; a successful artifact build is not proof that a
+public Pages URL is currently enabled.
 
 ## Start with a result
 

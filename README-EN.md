@@ -13,6 +13,12 @@
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
+[Open the visual showcase](site/index.html) · [Read the full English guide](README-EN.md)
+
+README language links switch repository entry files. The interactive showcase
+uses `?lang=` routes and may show an explicit fallback when a translation is
+not available.
+
 > **Project status:** `candidate` · **Default locale:** English · **Scope:**
 > book, labs, Skills, research, evaluation, and team practice
 
@@ -27,9 +33,9 @@ before they are actually checked.
 
 The central promise is simple:
 
-> Do not stop at a plausible output. Define the task, choose the smallest
-> useful capability, act within a visible boundary, preserve the evidence, and
-> say exactly what remains unverified.
+> <mark>Do not stop at a plausible output.</mark> Define the task, choose the
+> smallest useful capability, act within a visible boundary, preserve the
+> evidence, and say exactly what remains unverified.
 
 This is an independent curriculum and field guide. It is not OpenAI's
 official documentation, an official Codex product page, or a catalogue of
@@ -56,7 +62,7 @@ large prompt library.
 
 | You want to… | Use this entry | What it is for |
 |---|---|---|
-| Browse the learning experience | [`site/index.html`](site/index.html) + [`site/README.md`](site/README.md) | The visual showcase; the companion README explains local serving, Pages packaging, and verification |
+| Browse the learning experience | [`site/index.html`](site/index.html) · [`site/reader.html`](site/reader.html) · [`site/README.md`](site/README.md) | The visual showcase and dependency-free Reader; the companion README explains local serving, Pages packaging, and verification |
 | Read the book as a source-locale guide | [`book/README-EN.md`](book/README-EN.md) + [`book/table-of-contents-EN.md`](book/table-of-contents-EN.md) | The book contract, full route, chapter status, experiments, and research links |
 | Inspect how the project is maintained | [`docs/governance/`](docs/governance/) + [`scripts/`](scripts/) | Canonical status, locale identity, update rules, and repeatable checks |
 | Find a file quickly | [`Project map`](docs/project-map-EN.md) | Directory responsibilities, chapter order, generated files, and where each change starts |
@@ -66,11 +72,27 @@ and short landing pages inside the major directories. Use the contract when
 you are changing ownership, adding a directory, or deciding whether a file is
 source or generated.
 
+The Reader opens Chapter 1 when entered without a path. It is a dependency-free
+reading view over the Markdown sources, with a chapter list, current-page
+outline, and previous/next controls. The repository includes the shell and the
+Pages workflow; a successful artifact build is not proof that a public Pages
+URL is currently enabled.
+
 ## See the method produce an artifact
 
 The visual layer is part of the lesson, but it never replaces evidence. Start
-with two teaching cards, then follow one concept case from
-brief to context draft to a locally rendered page:
+with two teaching cards, then follow one concept case from brief to context
+draft to a locally rendered page. The images below are project-owned teaching
+assets; the case is explicitly synthetic.
+
+![Model choice is a test](assets/teaching/model-choice-is-a-test.svg)
+
+![Skill to observable output](assets/teaching/skill-to-observable-output.svg)
+
+![Fictional real-estate Product Context concept page](assets/cases/product-context-real-estate-desktop.png)
+
+Local concept rendering only; not a customer, market, inventory, conversion,
+or production claim.
 
 | Visual entry | What it demonstrates | Evidence boundary |
 |---|---|---|
