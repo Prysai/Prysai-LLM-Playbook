@@ -15,7 +15,7 @@ evidence.
 | Q-007 | P1 | Facts | Fast-changing product claims have uneven review dates and no URL reachability gate. | Fresh source checks with scope, owner, checked date, and risk-based next review. | open |
 | Q-008 | P2 | Navigation | TOC display titles and chapter H1 titles have aliases without a canonical map. | Generated title map consumed by TOC, reader, and search index. | open |
 | Q-009 | P2 | Teaching depth | Chapter size and experiment depth vary sharply; learning time and required artifact are not consistent. | Per-chapter time, prerequisite, artifact, failure, transfer, and learner review record. | open |
-| Q-010 | P2 | Cases | Several field reports are summaries rather than structured case cards with evidence level and reproduction status. | Symptom, version, date, source, evidence level, local reproduction, safe check, and stop condition. | open |
+| Q-010 | P2 | Cases | Several field reports are summaries rather than structured case cards with evidence level and reproduction status. | Symptom, version, date, source, evidence level, local reproduction, safe check, and stop condition. | in progress; canonical English case template repaired |
 
 The release decision is `candidate / static checks passed / runtime evidence
 pending`. Open P0 or P1 items block a `verified` or `production-ready` claim.
