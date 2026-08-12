@@ -23,6 +23,18 @@ PUBLISH_ROOT_FILES = (
     "CONTEXT.md",
 )
 FORBIDDEN_NAMES = (".git", ".work", ".codex-temp", "tmp", ".pytest_cache")
+REQUIRED_PUBLISH_FILES = (
+    "assets/branding/prysai-lab-mark-black-96.png",
+    "assets/branding/prysai-lab-mark-white-96.png",
+)
+FORBIDDEN_PUBLISH_FILENAMES = {
+    ".env",
+    "credentials.json",
+    "token.json",
+    "id_rsa",
+    "id_ed25519",
+}
+FORBIDDEN_PUBLISH_SUFFIXES = (".pem", ".key", ".p12", ".pfx")
 
 
 def root_index(site_index: Path) -> str:
@@ -46,6 +58,7 @@ def validate_source() -> None:
         ROOT / "site/reader.html",
         ROOT / "site/reader.css",
         ROOT / "site/reader.js",
+        *(ROOT / path for path in REQUIRED_PUBLISH_FILES),
     )
     missing = [path.relative_to(ROOT).as_posix() for path in required if not path.is_file()]
     if missing:
@@ -64,10 +77,23 @@ def validate_artifact(output: Path) -> None:
     for filename in PUBLISH_ROOT_FILES:
         if not (output / filename).is_file():
             raise FileNotFoundError(f"Pages artifact is missing root source: {filename}")
+    for filename in REQUIRED_PUBLISH_FILES:
+        if not (output / filename).is_file():
+            raise FileNotFoundError(f"Pages artifact is missing required public asset: {filename}")
 
     leaked = [name for name in FORBIDDEN_NAMES if (output / name).exists()]
     if leaked:
         raise ValueError("forbidden work directories leaked into Pages artifact: " + ", ".join(leaked))
+
+    forbidden_files = []
+    for path in output.rglob("*"):
+        if not path.is_file():
+            continue
+        name = path.name.lower()
+        if name in FORBIDDEN_PUBLISH_FILENAMES or name == ".env" or name.startswith(".env.") or name.endswith(FORBIDDEN_PUBLISH_SUFFIXES):
+            forbidden_files.append(path.relative_to(output).as_posix())
+    if forbidden_files:
+        raise ValueError("sensitive files leaked into Pages artifact: " + ", ".join(forbidden_files))
 
     root_text = (output / "index.html").read_text(encoding="utf-8")
     if '<base href="site/" />' not in root_text or "window.CODEX_PAGES_ARTIFACT = true" not in root_text:

@@ -425,7 +425,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Planning and vertical slices",
             "zh": "规划与竖向切片"
           },
-          "href": "../book/chapters/10-planning-and-slicing.md",
+          "href": "../book/chapters/10-planning-and-slicing-EN.md",
           "relation": "primary"
         },
         {
@@ -434,7 +434,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Action boundaries across files, terminals, browsers, and GitHub",
             "zh": "文件、终端、浏览器与 GitHub 的行动边界"
           },
-          "href": "../book/chapters/13-action-boundaries.md",
+          "href": "../book/chapters/13-action-boundaries-EN.md",
           "relation": "primary"
         }
       ],
@@ -603,7 +603,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Design a Skill that earns its place",
             "zh": "设计一个真正有用的 Skill"
           },
-          "href": "../book/chapters/11-designing-a-skill.md",
+          "href": "../book/chapters/11-designing-a-skill-EN.md",
           "relation": "primary"
         },
         {
@@ -746,7 +746,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "Design a Skill that earns its place",
             "zh": "设计一个真正有用的 Skill"
           },
-          "href": "../book/chapters/11-designing-a-skill.md",
+          "href": "../book/chapters/11-designing-a-skill-EN.md",
           "relation": "primary"
         },
         "lab": {
@@ -785,7 +785,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "The Agent loop, state, and stop conditions",
             "zh": "Agent 的循环、状态与停止条件"
           },
-          "href": "../book/chapters/12-agent-loop-and-stop.md",
+          "href": "../book/chapters/12-agent-loop-and-stop-EN.md",
           "relation": "primary"
         },
         {
@@ -882,7 +882,7 @@ window.CODEX_LEARNING_PATH = {
             "en": "The Agent loop, state, and stop conditions",
             "zh": "Agent 的循环、状态与停止条件"
           },
-          "href": "../book/chapters/12-agent-loop-and-stop.md",
+          "href": "../book/chapters/12-agent-loop-and-stop-EN.md",
           "relation": "primary"
         },
         "lab": {

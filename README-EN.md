@@ -238,12 +238,13 @@ for common changes.
 | **Evaluation** | [`evals/`](evals/) and [`docs/quality/`](docs/quality/) | Fixed tasks, quality standards, and review records | Tests whether the curriculum and Skills work |
 | **Governance** | [`docs/governance/`](docs/governance/) and [`docs/adr/`](docs/adr/) | Ownership, sources, status, locale identity, updates, and decisions | Keeps a changing system maintainable |
 | **Research** | [`docs/research/`](docs/research/) | Official fact cards and real-world problem reports | Connects stable principles to current reality |
-| **Public showcase** | [`site/`](site/) | A separate visual learning-path surface | Gives readers a browsable overview |
+| **Visual showcase** | [`site/`](site/) | A candidate visual learning-path surface | Gives readers a browsable overview; Pages deployment is pending |
 | **Checks** | [`scripts/`](scripts/) | Link, localization, status, content, and archive validators | Converts project rules into repeatable evidence |
 
-The public showcase and the repository are complementary: the site helps a
-reader choose a route; the repository keeps the source, evidence, history,
-and governance visible.
+The visual showcase and the repository are complementary: the local site and
+future Pages release help a reader choose a route; the repository keeps the
+source, evidence, history, and governance visible. The repository is currently
+private and Pages deployment is not live.
 
 ## Real-world problems, handled honestly
 

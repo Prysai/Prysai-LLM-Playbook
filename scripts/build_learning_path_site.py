@@ -138,7 +138,7 @@ def main() -> int:
         print(f"LEARNING_PATH_SITE_OK levels={len(payload['levels'])}")
         return 0
 
-    OUTPUT_FILE.write_text(expected, encoding="utf-8", newline="\n")
+    OUTPUT_FILE.write_text(expected, encoding="utf-8")
     print(f"LEARNING_PATH_SITE_BUILT output={OUTPUT_FILE.relative_to(ROOT)} levels={len(payload['levels'])}")
     return 0
 

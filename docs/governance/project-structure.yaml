@@ -2,7 +2,7 @@
   "schema_version": "1",
   "last_reviewed": "2026-08-11",
   "description": "The canonical directory map for reader-facing material, practice, research, governance, assets, tooling, and release work.",
-  "excluded_workdirs": [".git", ".work", ".codex-temp", "tmp", ".pytest_cache"],
+  "excluded_workdirs": [".git", ".work", ".codex-temp", "tmp", "_site", ".pytest_cache"],
   "top_level": [
     {
       "path": ".github",
@@ -86,6 +86,7 @@
     }
   ],
   "subdirectories": [
+    {"path": "assets/branding", "role": "Project-owned brand marks used by the reading surface.", "entry": "assets/branding/README.md"},
     {"path": "assets/cases", "role": "Rendered screenshots and other bounded case evidence.", "entry": "assets/cases/README.md"},
     {"path": "assets/teaching", "role": "Original SVG teaching cards used in the book and showcase.", "entry": "assets/teaching/README.md"},
     {"path": "book/chapters", "role": "One file per chapter identity, with explicit locale suffixes where authored.", "entry": "book/chapters/README.md"},

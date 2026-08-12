@@ -29,7 +29,7 @@ alignment.
 | See a reproducible example | [`examples/`](../examples/) and [`assets/cases/`](../assets/cases/) | Disposable local sandboxes, source inputs, rendered artifacts, and screenshots with evidence limits |
 | Inspect evaluation tasks | [`evals/`](../evals/) | Fixed task fixtures and result directories; task definitions are not run results |
 | Change or run a checker | [`scripts/`](../scripts/) | Validators, local-link checks, catalog builders, and generators |
-| Inspect the public front door | [`site/`](../site/) | Static showcase HTML, CSS, JavaScript, content catalog, generated learning-path/locale data, and Pages notes |
+| Inspect the visual front door | [`site/`](../site/) | Candidate showcase HTML, CSS, JavaScript, content catalog, generated learning-path/locale data, and Pages notes |
 | Follow active work | [`tasks/`](../tasks/) | The bounded implementation plan and current checklist |
 
 Every major directory also has a short landing page. Use it when you are
@@ -61,7 +61,7 @@ already inside the repository and need the local next step: [`book/README.md`](.
 ├── assets/                    teaching diagrams, README visuals, and case evidence
 ├── evals/                     fixed evaluation fixtures and run-result folders
 ├── scripts/                   validators, generators, and build helpers
-├── site/                      public static showcase and generated data
+├── site/                      candidate visual showcase and generated data
 ├── .github/workflows/pages.yml GitHub Pages deployment workflow
 └── tasks/                     current plan and short execution checklist
 ```

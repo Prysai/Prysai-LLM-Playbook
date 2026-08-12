@@ -152,9 +152,9 @@
       "part": "part-2",
       "title_en": "Planning and vertical slicing",
       "title_zh": "规划与竖向切片",
-      "english_path": null,
+      "english_path": "book/chapters/10-planning-and-slicing-EN.md",
       "legacy_path": "book/chapters/10-planning-and-slicing.md",
-      "english_status": "migration_pending",
+      "english_status": "source",
       "status": "candidate"
     },
     {
@@ -163,9 +163,9 @@
       "part": "part-2",
       "title_en": "Design a genuinely useful Skill",
       "title_zh": "设计一个真正有用的 Skill",
-      "english_path": null,
+      "english_path": "book/chapters/11-designing-a-skill-EN.md",
       "legacy_path": "book/chapters/11-designing-a-skill.md",
-      "english_status": "migration_pending",
+      "english_status": "source",
       "status": "candidate"
     },
     {
@@ -174,9 +174,9 @@
       "part": "part-2",
       "title_en": "The Agent loop, state, and stopping conditions",
       "title_zh": "Agent 的循环、状态和停止条件",
-      "english_path": null,
+      "english_path": "book/chapters/12-agent-loop-and-stop-EN.md",
       "legacy_path": "book/chapters/12-agent-loop-and-stop.md",
-      "english_status": "migration_pending",
+      "english_status": "source",
       "status": "candidate"
     },
     {
@@ -185,9 +185,9 @@
       "part": "part-2",
       "title_en": "Action boundaries for files, terminals, browsers, and GitHub",
       "title_zh": "文件、终端、浏览器与 GitHub 的行动边界",
-      "english_path": null,
+      "english_path": "book/chapters/13-action-boundaries-EN.md",
       "legacy_path": "book/chapters/13-action-boundaries.md",
-      "english_status": "migration_pending",
+      "english_status": "source",
       "status": "candidate"
     },
     {

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="A practical Codex learning and practice system: understand GPT, design safer tasks, use Skills and Agents, and verify real work." />
     <title>Codex: From First Task to Real Work</title>
+    <link rel="icon" type="image/png" href="../assets/branding/prysai-lab-mark-black-96.png" />
     <link rel="stylesheet" href="styles.css" />
     <script src="locale-manifest.js"></script>
     <script src="learning-path-data.js"></script>
@@ -16,29 +17,29 @@
     <header class="site-header" data-header>
       <div class="shell header-inner">
         <a class="wordmark" href="#top" aria-label="Codex: From First Task to Real Work home" data-i18n-attr="aria-label:wordmarkAria">
-          <span class="wordmark-mark" aria-hidden="true">C</span>
-          <span>FIRST TASK →<br /><strong>REAL WORK</strong></span>
+          <img class="wordmark-logo wordmark-logo-dark" src="../assets/branding/prysai-lab-mark-black-96.png" alt="" width="40" height="40" />
+          <span class="wordmark-copy"><span class="wordmark-owner">Prysai Lab</span><span>FIRST TASK →<br /><strong>REAL WORK</strong></span></span>
         </a>
         <div class="header-actions">
           <div class="language-switcher" data-language-switcher>
             <button class="language-toggle" type="button" data-language-toggle aria-expanded="false" aria-controls="language-menu" aria-label="Choose interface language" data-i18n-attr="aria-label:languageToggleAria">
               <span data-current-language>EN</span><span aria-hidden="true">⌄</span>
             </button>
-            <div class="language-menu" id="language-menu" data-language-menu hidden role="listbox" aria-label="Interface languages">
-              <a href="?lang=en" data-language-option="en" role="option" lang="en"><span>EN</span><strong>English</strong></a>
-              <a href="?lang=zh" data-language-option="zh" role="option" lang="zh-CN"><span>ZH</span><strong>简体中文</strong></a>
-              <a href="?lang=es" data-language-option="es" role="option" lang="es"><span>ES</span><strong>Español</strong></a>
-              <a href="?lang=ja" data-language-option="ja" role="option" lang="ja"><span>JA</span><strong>日本語</strong></a>
-              <a href="?lang=ko" data-language-option="ko" role="option" lang="ko"><span>KO</span><strong>한국어</strong></a>
-              <a href="?lang=de" data-language-option="de" role="option" lang="de"><span>DE</span><strong>Deutsch</strong></a>
-            </div>
+            <nav class="language-menu" id="language-menu" data-language-menu hidden aria-label="Interface languages">
+              <a href="?lang=en" data-language-option="en" lang="en"><span>EN</span><strong>English</strong></a>
+              <a href="?lang=zh" data-language-option="zh" lang="zh-CN"><span>ZH</span><strong>简体中文</strong></a>
+              <a href="?lang=es" data-language-option="es" lang="es"><span>ES</span><strong>Español</strong></a>
+              <a href="?lang=ja" data-language-option="ja" lang="ja"><span>JA</span><strong>日本語</strong></a>
+              <a href="?lang=ko" data-language-option="ko" lang="ko"><span>KO</span><strong>한국어</strong></a>
+              <a href="?lang=de" data-language-option="de" lang="de"><span>DE</span><strong>Deutsch</strong></a>
+            </nav>
           </div>
           <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation" data-i18n-attr="aria-label:menuAria">
             <span data-i18n="menu">Menu</span><span class="menu-icon" aria-hidden="true"><i></i><i></i></span>
           </button>
         </div>
         <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-i18n-attr="aria-label:navAria">
-          <a href="#start" data-i18n="navStart">Start with a problem</a>
+          <a href="#start" data-i18n="navStart">Start here</a>
           <a href="#first-30" data-i18n="navFirst30">First 30 minutes</a>
           <a href="#path" data-i18n="navPath">Learning path</a>
           <a href="#project-map" data-i18n="navIndex">Project index</a>
@@ -109,6 +110,30 @@
             <div><span class="section-number">INDEX</span><p class="eyebrow" data-i18n="indexEyebrow">Project index</p><h2 id="project-map-title" data-i18n="indexTitle">Know where each claim lives.</h2></div>
             <p class="section-intro" data-i18n="indexIntro">This is a human-readable map of the repository: what each layer stores, where to begin, and which source controls its status.</p>
           </div>
+          <div class="index-panel-head"><span class="index-panel-number">00</span><h3 data-i18n="repositoryStripTitle">What this repository contains</h3></div>
+          <p class="index-panel-intro" data-i18n="repositoryStripIntro">The public reader is rendered from site/. The canonical learning and maintenance sources below keep their current evidence boundary visible.</p>
+          <div class="hero-brief repository-strip" role="list" aria-label="Canonical source directories and current boundaries" data-i18n-attr="aria-label:repositoryStripAria">
+            <a class="brief-item" href="#chapters" role="listitem">
+              <span class="brief-index">01</span>
+              <span class="brief-copy"><strong><code>book/chapters/</code></strong><small data-i18n="repositoryChapters">22 chapters · candidate</small></span>
+              <span class="brief-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="brief-item" href="#labs" role="listitem">
+              <span class="brief-index">02</span>
+              <span class="brief-copy"><strong><code>book/labs/</code></strong><small data-i18n="repositoryLabs">13 labs · draft · run_status: not_run</small></span>
+              <span class="brief-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="brief-item" href="#skills" role="listitem">
+              <span class="brief-index">03</span>
+              <span class="brief-copy"><strong><code>skills/</code></strong><small data-i18n="repositorySkills">7 reusable Skills · candidate</small></span>
+              <span class="brief-arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="brief-item" href="#updates" role="listitem">
+              <span class="brief-index">04</span>
+              <span class="brief-copy"><strong><code>docs/</code></strong><small data-i18n="repositoryDocs">Governance and field research · candidate; reports not locally reproduced</small></span>
+              <span class="brief-arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
           <div class="index-layout">
             <article class="file-map-panel" aria-labelledby="file-map-title">
               <div class="index-panel-head"><span class="index-panel-number">01</span><h3 id="file-map-title" data-i18n="fileMapTitle">Repository map</h3></div>
@@ -167,9 +192,9 @@
               <div class="research-boundary"><span class="status-badge status-badge-candidate">candidate</span><span data-i18n="visualCaseBoundary">local rendering evidence · no customer or live-system claim</span></div>
             </div>
             <div class="visual-case-links">
-              <a href="../assets/teaching/model-choice-is-a-test.svg"><strong data-i18n="visualModelLink">Model choice is a test</strong><small data-i18n="visualModelBody">Task, comparison tuple, smoke test, bounded decision.</small><b aria-hidden="true">↗</b></a>
-              <a href="../assets/teaching/skill-to-observable-output.svg"><strong data-i18n="visualSkillLink">Skill to observable output</strong><small data-i18n="visualSkillBody">Trigger, inputs, method, artifact, and four-case evaluation.</small><b aria-hidden="true">↗</b></a>
-              <a href="../docs/research/skill-case-product-context-real-estate-2026-08-11.md"><strong data-i18n="visualCaseLink">Real-estate concept case</strong><small data-i18n="visualCaseBody">Product Context draft → static page → browser screenshot.</small><b aria-hidden="true">↗</b></a>
+              <a class="visual-case-card" href="../assets/teaching/model-choice-is-a-test.svg"><img src="../assets/teaching/model-choice-is-a-test.svg" alt="Model choice is a test diagram" loading="lazy" /><strong data-i18n="visualModelLink">Model choice is a test</strong><small data-i18n="visualModelBody">Task, comparison tuple, smoke test, bounded decision.</small><b aria-hidden="true">↗</b></a>
+              <a class="visual-case-card" href="../assets/teaching/skill-to-observable-output.svg"><img src="../assets/teaching/skill-to-observable-output.svg" alt="Skill to observable output diagram" loading="lazy" /><strong data-i18n="visualSkillLink">Skill to observable output</strong><small data-i18n="visualSkillBody">Trigger, inputs, method, artifact, and four-case evaluation.</small><b aria-hidden="true">↗</b></a>
+              <a class="visual-case-card" href="../docs/research/skill-case-product-context-real-estate-2026-08-11.md"><img src="../assets/cases/product-context-real-estate-desktop.png" alt="Local concept page screenshot for a fictional real-estate Product Context case" loading="lazy" /><strong data-i18n="visualCaseLink">Real-estate concept case</strong><small data-i18n="visualCaseBody">Product Context draft → static page → browser screenshot.</small><b aria-hidden="true">↗</b></a>
             </div>
           </article>
         </div>
@@ -178,14 +203,14 @@
       <section class="section section-light" id="start" aria-labelledby="start-title">
         <div class="shell">
           <div class="section-heading heading-split">
-            <div><span class="section-number">02</span><p class="eyebrow" data-i18n="startEyebrow">Start with the problem</p><h2 id="start-title" data-i18n="startTitle">Do not start with a Skill.</h2></div>
-            <p class="section-intro" data-i18n="startIntro">Start with the failure you need to avoid or the work you need to finish. Pick the smallest useful entry, then leave evidence.</p>
+            <div><span class="section-number">02</span><p class="eyebrow" data-i18n="startEyebrow">Start here · choose by problem</p><h2 id="start-title" data-i18n="startTitle">What do you need to do?</h2></div>
+            <p class="section-intro" data-i18n="startIntro">Choose the closest real problem. Each route names a first action, points to one canonical chapter or lab, and keeps the current evidence status visible.</p>
           </div>
           <div class="problem-grid">
-            <a class="problem-card" href="../book/chapters/01-gpt-and-codex-EN.md"><span class="card-number">01</span><strong data-i18n="problemStartTitle">I do not know where to start.</strong><p data-i18n="problemStartBody">Separate GPT, Codex, models, tools, Skills, and Agents before choosing a workflow.</p><span class="card-link" data-i18n="problemStartLink">Open chapter 1 ↗</span></a>
-            <a class="problem-card" href="../book/chapters/09-verification-and-recovery-EN.md"><span class="card-number">02</span><strong data-i18n="problemWrongFileTitle">Codex changed the wrong file.</strong><p data-i18n="problemWrongFileBody">Learn to inspect scope, diff, tests, and recovery before trusting a completion statement.</p><span class="card-link" data-i18n="problemWrongFileLink">Open chapter 9 ↗</span></a>
-            <a class="problem-card" href="../book/labs/lab-004-skill-selection.md"><span class="card-number">03</span><strong data-i18n="problemSkillTitle">I do not know which Skill to use.</strong><p data-i18n="problemSkillBody">Choose by task, risk, inputs, dependencies, and evidence—not by directory size.</p><span class="card-link" data-i18n="problemSkillLink">Run lab 004 ↗</span></a>
-            <a class="problem-card" href="../docs/governance/update-map.md"><span class="card-number">04</span><strong data-i18n="problemUpdateTitle">I need to update this safely.</strong><p data-i18n="problemUpdateBody">Use the fixed update map to find the canonical file, required source record, and validation gate.</p><span class="card-link" data-i18n="problemUpdateLink">Open the update map ↗</span></a>
+            <a class="problem-card" href="../book/labs/lab-001-first-safe-task-EN.md" data-content-id="lab-001-first-safe-task"><span class="card-number">01</span><strong data-i18n="problemStartTitle">I need a safe first task.</strong><p data-i18n="problemStartBody">Use a disposable or reversible change. Inspect before editing, then keep the diff and the check result.</p><span class="card-link" data-i18n="problemStartLink">Open lab 001 · draft · not_run ↗</span></a>
+            <a class="problem-card" href="../book/chapters/09-verification-and-recovery-EN.md" data-content-id="chapter-09-verification-and-recovery"><span class="card-number">02</span><strong data-i18n="problemWrongFileTitle">The file or result is uncertain.</strong><p data-i18n="problemWrongFileBody">Freeze the next edit. Compare the requested scope, git diff, focused check, and remaining unknowns.</p><span class="card-link" data-i18n="problemWrongFileLink">Open chapter 9 · candidate ↗</span></a>
+            <a class="problem-card" href="../book/chapters/11-designing-a-skill-EN.md" data-content-id="chapter-11"><span class="card-number">03</span><strong data-i18n="problemSkillTitle">I need to choose or design a Skill.</strong><p data-i18n="problemSkillBody">Start with the trigger, inputs, boundaries, and evidence contract; only then decide whether a Skill earns a place.</p><span class="card-link" data-i18n="problemSkillLink">Open chapter 11 · candidate ↗</span></a>
+            <a class="problem-card" href="../book/chapters/22-continuous-update-and-future-proofing.md" data-content-id="chapter-22"><span class="card-number">04</span><strong data-i18n="problemUpdateTitle">I need to publish or update safely.</strong><p data-i18n="problemUpdateBody">Locate the canonical file, attach the source record, run the relevant gate, and keep unverified claims out of the release.</p><span class="card-link" data-i18n="problemUpdateLink">Open chapter 22 · candidate ↗</span></a>
           </div>
         </div>
       </section>
@@ -289,10 +314,10 @@
               <a href="../book/chapters/07-skills-plugins-and-tools-EN.md"><span>07</span><span data-i18n="chapter07">How Skills, Plugins, MCP, and tools divide the work</span><i data-i18n="candidateStatus">candidate</i></a>
               <a href="../book/chapters/08-full-lifecycle-workflow-EN.md"><span>08</span><span data-i18n="chapter08">The full lifecycle from definition to delivery</span><i data-i18n="candidateStatus">candidate</i></a>
               <a href="../book/chapters/09-verification-and-recovery-EN.md"><span>09</span><span data-i18n="chapter09">Verification, doubt, and recovery</span><i data-i18n="candidateStatus">candidate</i></a>
-              <a href="../book/chapters/10-planning-and-slicing.md"><span>10</span><span data-i18n="chapter10">Planning and vertical slices</span><i data-i18n="candidateStatus">candidate</i></a>
-              <a href="../book/chapters/11-designing-a-skill.md"><span>11</span><span data-i18n="chapter11">Design a Skill that earns its place</span><i data-i18n="candidateStatus">candidate</i></a>
-              <a href="../book/chapters/12-agent-loop-and-stop.md"><span>12</span><span data-i18n="chapter12">The Agent loop, state, and stop conditions</span><i data-i18n="candidateStatus">candidate</i></a>
-              <a href="../book/chapters/13-action-boundaries.md"><span>13</span><span data-i18n="chapter13">Action boundaries across files, terminals, browsers, and GitHub</span><i data-i18n="candidateStatus">candidate</i></a>
+              <a href="../book/chapters/10-planning-and-slicing-EN.md"><span>10</span><span data-i18n="chapter10">Planning and vertical slices</span><i data-i18n="candidateStatus">candidate</i></a>
+              <a href="../book/chapters/11-designing-a-skill-EN.md"><span>11</span><span data-i18n="chapter11">Design a Skill that earns its place</span><i data-i18n="candidateStatus">candidate</i></a>
+              <a href="../book/chapters/12-agent-loop-and-stop-EN.md"><span>12</span><span data-i18n="chapter12">The Agent loop, state, and stop conditions</span><i data-i18n="candidateStatus">candidate</i></a>
+              <a href="../book/chapters/13-action-boundaries-EN.md"><span>13</span><span data-i18n="chapter13">Action boundaries across files, terminals, browsers, and GitHub</span><i data-i18n="candidateStatus">candidate</i></a>
             </div></details>
             <details class="chapter-group" data-route="C"><summary><span>C</span><strong data-i18n="routeCTitle">Capability and Agent collaboration</strong><small data-i18n="routeCDesc">14—18 · choose the smallest useful combination</small><b>05</b></summary><div class="chapter-items">
               <a href="../book/chapters/14-discover-and-audit-skills.md"><span>14</span><span data-i18n="chapter14">Discover, install, and audit an external Skill</span><i data-i18n="candidateStatus">candidate</i></a>
@@ -382,6 +407,6 @@
       <section class="start-section" aria-labelledby="next-title"><div class="shell next-layout"><div><span class="section-number">12</span><p class="eyebrow" data-i18n="nextEyebrow">Next action</p><h2 id="next-title" data-i18n="nextTitle">Bring one small problem.</h2><p class="next-body" data-i18n="nextBody">Open the task contract, choose a reversible first step, and keep the diff. That is the shortest useful way to begin.</p></div><div class="next-actions"><a class="button button-primary" href="../book/chapters/02-first-safe-task-EN.md"><span data-i18n="nextPrimary">Open chapter 2</span><span aria-hidden="true">↗</span></a><a class="text-link" href="../book/labs/lab-001-first-safe-task-EN.md"><span data-i18n="nextSecondary">Then run lab 001</span><span aria-hidden="true">↗</span></a></div></div></section>
     </main>
 
-    <footer class="site-footer"><div class="shell footer-inner"><a class="wordmark" href="#top"><span class="wordmark-mark" aria-hidden="true">C</span><span>FIRST TASK →<br /><strong>REAL WORK</strong></span></a><p data-i18n="footerTagline">A practical learning and practice system for Codex.</p><span class="footer-meta">v0.1 · candidate · 2026-08-10</span></div></footer>
+    <footer class="site-footer"><div class="shell footer-inner"><a class="wordmark wordmark-inverse" href="#top"><img class="wordmark-logo wordmark-logo-light" src="../assets/branding/prysai-lab-mark-white-96.png" alt="" width="40" height="40" /><span class="wordmark-copy"><span class="wordmark-owner">Prysai Lab</span><span>FIRST TASK →<br /><strong>REAL WORK</strong></span></span></a><p data-i18n="footerTagline">A practical learning and practice system for Codex.</p><span class="footer-meta">v0.1 · candidate · 2026-08-10</span></div></footer>
   </body>
 </html>

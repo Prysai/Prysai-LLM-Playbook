@@ -9,6 +9,11 @@
   --red: #e4002b;
   --red-dark: #b90023;
   --soft-red: #ffe5e9;
+  --highlight-lime: #c5f83a;
+  --highlight-yellow: #ffe28a;
+  --highlight-pink: #f7b4d7;
+  --highlight-cyan: #9be8ee;
+  --highlight-orange: #ffc078;
   --space: clamp(1.25rem, 4vw, 4rem);
   --shell: 1440px;
   color: var(--ink);
@@ -33,8 +38,11 @@ button, input, select, textarea { font: inherit; }
 .site-header { position: sticky; z-index: 10; top: 0; background: rgba(246, 246, 243, .96); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
 .header-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; position: relative; }
 .wordmark { display: inline-flex; align-items: center; gap: .7rem; flex-shrink: 0; font-size: .68rem; font-weight: 700; line-height: 1.05; letter-spacing: .08em; }
+.wordmark-logo { display: block; width: 40px; height: 40px; object-fit: contain; }
+.wordmark-copy { display: grid; gap: .22rem; }
+.wordmark-owner { color: var(--red); font-size: .58rem; letter-spacing: .06em; text-transform: uppercase; }
 .wordmark strong { font-size: .9rem; letter-spacing: -.02em; }
-.wordmark-mark { display: grid; width: 31px; height: 31px; place-items: center; color: #fff; background: var(--red); font-size: 1.15rem; font-weight: 700; letter-spacing: 0; }
+.wordmark-inverse .wordmark-owner { color: #fff; }
 .header-actions { display: flex; align-items: center; gap: 1rem; }
 .language-switcher { position: relative; }
 .language-toggle { display: inline-flex; align-items: center; gap: .45rem; border: 0; padding: .45rem .1rem; color: var(--muted); background: transparent; cursor: pointer; font-size: .72rem; font-weight: 700; letter-spacing: .05em; }
@@ -48,6 +56,7 @@ button, input, select, textarea { font: inherit; }
 .language-menu a span { font-weight: 700; letter-spacing: .06em; }
 .language-menu a strong { color: var(--ink); font-size: .74rem; font-weight: 700; }
 .language-menu a:hover strong, .language-menu a:focus-visible strong, .language-menu a.is-active strong { color: var(--red); }
+.language-menu a[aria-current="page"] { box-shadow: inset 3px 0 0 var(--red); }
 .locale-banner { margin-top: 1rem; padding: .7rem 1rem; border-left: 4px solid var(--red); color: var(--ink); background: var(--soft-red); font-size: .76rem; line-height: 1.5; }
 .locale-banner[hidden] { display: none; }
 .menu-toggle { display: none; border: 0; padding: .5rem 0; align-items: center; gap: .75rem; color: var(--ink); background: transparent; cursor: pointer; font-size: .8rem; }
@@ -61,7 +70,7 @@ button, input, select, textarea { font: inherit; }
 .hero-index { grid-column: 1 / -1; display: flex; gap: .75rem; color: var(--red); font-size: .7rem; font-weight: 700; letter-spacing: .08em; margin-bottom: clamp(3rem, 8vw, 7rem); }
 .hero-copy { grid-column: 1; align-self: center; }
 .eyebrow { margin: 0 0 1rem; color: var(--red); font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-.hero h1 { max-width: 900px; margin: 0 0 2rem; font-size: clamp(3.5rem, 9vw, 9.5rem); font-weight: 700; letter-spacing: -.09em; line-height: .88; }
+.hero h1 { max-width: 780px; margin: 0 0 2rem; font-size: clamp(3.5rem, 7.2vw, 7.5rem); font-weight: 700; letter-spacing: -.09em; line-height: .9; }
 .hero-lede { max-width: 600px; margin: 0 0 2.2rem; color: #4d4d4d; font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.65; }
 .hero-actions, .next-actions { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
 .button { display: inline-flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 46px; padding: .8rem 1.05rem; border: 1px solid transparent; color: var(--ink); font-size: .78rem; font-weight: 700; transition: transform .2s ease, background .2s ease, color .2s ease; }
@@ -255,6 +264,22 @@ button, input, select, textarea { font: inherit; }
 .footer-inner > p { margin: 0; color: #aaa; font-size: .75rem; }
 .footer-meta { color: #777; font-size: .68rem; }
 
+/* The emphasis is semantic HTML so it survives GitHub Markdown, the reader,
+   and future renderers. Keep it sparse: mark decisions, boundaries, and
+   evidence-bearing sentences rather than decorating every paragraph. */
+.highlight-text { position: relative; z-index: 0; display: inline; padding: .05em .13em .08em; color: inherit; background: transparent; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.highlight-text::before { position: absolute; z-index: -1; top: .17em; right: -.08em; bottom: .08em; left: -.08em; content: ''; background: var(--highlight-lime); transform: skewX(-5deg) rotate(-.6deg); }
+.highlight-yellow::before { background: var(--highlight-yellow); }
+.highlight-pink::before { background: var(--highlight-pink); }
+.highlight-cyan::before { background: var(--highlight-cyan); }
+.highlight-orange::before { background: var(--highlight-orange); }
+
+@media (forced-colors: active) {
+  .highlight-text { text-decoration: underline 3px; text-decoration-color: Highlight; text-decoration-skip-ink: none; }
+  .highlight-text::before { display: none; }
+  .language-menu a[aria-current="page"] { box-shadow: inset 3px 0 0 Highlight; }
+}
+
 @media (max-width: 980px) {
   .site-nav { gap: .55rem; font-size: .68rem; }
   .problem-grid { grid-template-columns: repeat(2, 1fr); }
@@ -263,12 +288,15 @@ button, input, select, textarea { font: inherit; }
   .skill-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-@media (max-width: 800px) {
-  .site-header { position: sticky; }
-  .menu-toggle { display: inline-flex; }
+@media (max-width: 1040px) {
   .site-nav { display: none; position: absolute; top: 72px; right: 0; left: 0; padding: 1rem var(--space) 1.5rem; flex-direction: column; align-items: stretch; gap: 0; border-bottom: 1px solid var(--line); background: var(--paper); }
   .site-nav.is-open { display: flex; }
   .site-nav a { padding: .8rem 0; border-bottom: 1px solid var(--line); }
+  .menu-toggle { display: inline-flex; }
+}
+
+@media (max-width: 800px) {
+  .site-header { position: sticky; }
   .hero { min-height: auto; grid-template-columns: 1fr; gap: 3rem; padding-top: 4rem; }
   .hero-index { margin-bottom: 2rem; }
   .hero-copy, .hero-note { grid-column: 1; }
@@ -328,6 +356,7 @@ button, input, select, textarea { font: inherit; }
 /* Index layer: make the repository legible before asking a visitor to read it. */
 .hero { grid-template-rows: auto 1fr auto auto; }
 .hero-brief { grid-column: 1 / -1; grid-row: 3; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: clamp(3rem, 6vw, 6rem); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.repository-strip { margin-top: 1rem; margin-bottom: clamp(2rem, 4vw, 4rem); }
 .brief-item { display: grid; grid-template-columns: 2rem minmax(0, 1fr) auto; gap: .7rem; align-items: start; min-width: 0; padding: 1rem .9rem 1rem 0; border-right: 1px solid var(--line); transition: background .2s ease, padding-left .2s ease; }
 .brief-item:first-child { padding-left: 0; }
 .brief-item:last-child { border-right: 0; padding-right: 0; }
@@ -389,6 +418,8 @@ button, input, select, textarea { font: inherit; }
 .visual-case-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-dark); }
 .visual-case-links a { position: relative; display: flex; min-height: 10.5rem; flex-direction: column; justify-content: space-between; gap: .85rem; padding: 1.2rem; background: var(--ink); transition: color .15s ease, background .15s ease; }
 .visual-case-links a:hover strong, .visual-case-links a:focus-visible strong { color: var(--red); }
+.visual-case-card img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid rgba(255, 255, 255, .18); background: #fff; opacity: .88; transition: opacity .15s ease, transform .15s ease; }
+.visual-case-card:hover img, .visual-case-card:focus-visible img { opacity: 1; transform: translateY(-2px); }
 .visual-case-links strong { color: #fff; font-size: .8rem; line-height: 1.35; }
 .visual-case-links small { color: #aaa; font-size: .7rem; line-height: 1.5; }
 .visual-case-links b { align-self: flex-end; color: var(--red); font-size: 1rem; }

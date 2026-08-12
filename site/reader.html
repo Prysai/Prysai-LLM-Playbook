@@ -3,20 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A readable Field Guide source page." />
+    <meta name="description" content="A readable Codex Field Guide source page." />
     <title>Field Guide reader</title>
+    <link rel="icon" type="image/png" href="../assets/branding/prysai-lab-mark-black-96.png" />
     <link rel="stylesheet" href="reader.css" />
     <script src="locale-manifest.js"></script>
     <script src="reader.js" defer></script>
   </head>
   <body>
+    <a class="reader-skip-link" href="#reader-content" data-reader-i18n="skip">Skip to content</a>
     <header class="reader-header">
       <div class="reader-header-inner">
-        <a class="reader-brand" href="index.html">Codex / Field Guide</a>
+        <a class="reader-brand" href="index.html" aria-label="Codex Field Guide overview">
+          <img class="reader-brand-logo reader-brand-logo-dark" src="../assets/branding/prysai-lab-mark-black-96.png" alt="" width="34" height="34" />
+          <span><small>Prysai Lab</small><strong>Codex / Field Guide</strong></span>
+        </a>
         <div class="reader-header-actions">
-          <a class="reader-back" href="index.html">Back to overview</a>
-          <label class="reader-language-label" for="reader-language">Language</label>
-          <select id="reader-language" data-reader-language aria-label="Choose reading language">
+          <a class="reader-back" href="index.html" data-reader-i18n="back">Back to overview</a>
+          <label class="reader-language-label" for="reader-language" data-reader-i18n="language">Language</label>
+          <select id="reader-language" data-reader-language aria-label="Choose reading language" data-reader-i18n-attr="aria-label:languageAria">
             <option value="en">English</option>
             <option value="zh">简体中文</option>
             <option value="es">Español</option>
@@ -28,31 +33,42 @@
       </div>
     </header>
 
-    <div class="reader-banner" data-reader-banner hidden></div>
+    <div class="reader-banner" data-reader-banner hidden role="status" aria-live="polite" aria-atomic="true"></div>
 
-    <main class="reader-main">
+    <main class="reader-main" id="reader-content" tabindex="-1">
       <div class="reader-shell">
-        <article class="reader-article" data-reader-article aria-live="polite">
-          <p class="reader-loading">Loading the source page…</p>
+        <article class="reader-article" data-reader-article tabindex="-1" aria-busy="true">
+          <p class="reader-loading" data-reader-loading role="status">Loading the source page…</p>
         </article>
-        <aside class="reader-aside" aria-label="Page details">
+        <aside class="reader-aside" aria-label="Page details" data-reader-i18n-attr="aria-label:detailsAria">
+          <nav class="reader-toc" aria-label="On this page" data-reader-toc hidden data-reader-i18n-attr="aria-label:onThisPageAria">
+            <div class="reader-aside-card reader-toc-card">
+              <span class="reader-aside-label" data-reader-i18n="onThisPage">On this page</span>
+              <ol data-reader-toc-list></ol>
+            </div>
+          </nav>
+          <div class="reader-aside-card reader-chapter-card" data-reader-chapter-card hidden>
+            <span class="reader-aside-label" data-reader-i18n="readingRoute">Reading route</span>
+            <strong data-reader-chapter-label></strong>
+            <span class="reader-chapter-status" data-reader-chapter-status></span>
+          </div>
           <div class="reader-aside-card">
-            <span class="reader-aside-label">Source path</span>
+            <span class="reader-aside-label" data-reader-i18n="sourcePath">Source path</span>
             <code data-reader-path>—</code>
           </div>
           <div class="reader-aside-card">
-            <span class="reader-aside-label">Content identity</span>
+            <span class="reader-aside-label" data-reader-i18n="contentIdentity">Content identity</span>
             <code data-reader-content-id>—</code>
           </div>
-          <a class="reader-source-link" data-reader-source href="#">Open source file ↗</a>
+          <a class="reader-source-link" data-reader-source href="#" data-reader-i18n="openSource">Open source file ↗</a>
         </aside>
       </div>
     </main>
 
     <footer class="reader-footer">
       <div class="reader-footer-inner">
-        <span>Codex: From First Task to Real Work</span>
-        <span>Source remains Markdown; this page is a static reading view.</span>
+        <span class="reader-footer-brand"><img class="reader-brand-logo reader-brand-logo-light" src="../assets/branding/prysai-lab-mark-white-96.png" alt="" width="30" height="30" /><span>Prysai Lab · Codex: From First Task to Real Work</span></span>
+        <span data-reader-i18n="footer">Source remains Markdown; this page is a static reading view.</span>
       </div>
     </footer>
   </body>

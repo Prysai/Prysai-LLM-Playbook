@@ -1,6 +1,6 @@
 # 外部资产与来源台账
 
-**盘点日期：** 2026-08-09
+**盘点日期：** 2026-08-11
 **用途：** 记录外部教材、代码、Skill、研究和结构参考的来源、结构、许可证、可用边界和融合决策。
 
 ## 总原则
@@ -33,7 +33,7 @@
 | S19 | `docs/research/field-problems-coding-agents-2026-08-10.md` | OpenAI Codex GitHub Issues、Stack Overflow/Stack Exchange API、公开 coding-agent 讨论与官方文档 | 只保留用户报告、官方事实、社区建议、未证实推测和本项目迁移检查的原创摘要；没有复制日志、凭据、代码、图片或长段原文 | `reference-only`：用户报告与社区建议；本项目未本地复现这些环境，也未确认公开案例的根因或修复 | 用于章节/实验的现实问题索引和失败边界；不得把 accepted answer 或 issue 标签写成官方修复 |
 | S20 | `docs/research/site-information-architecture-audit-2026-08-10.md` | 本项目现有入口、状态源、内容矩阵、站点实现和既有结构研究；外部结构参考见文件内来源 | 只记录本项目的原创信息架构审查、优先级和验收清单；没有复制外部项目正文、代码、图片、字体、图标或品牌资产 | `project-audit / reference-only`：包含本地审查与结构参考；建议本身尚未证明为用户效果 | 用于首页入口、能力单元、raw Markdown 边界、locale 状态和站点验收；不把 candidate 审查意见写成生产级结果 |
 | S21 | `docs/research/codex-model-selection-official-facts-2026-08-11.md` | OpenAI/Codex 官方模型文档、OpenAI API 模型页、`openai/codex` 公开 Issues | 只保留官方模型定位、配置/工作面边界、用户症状和原创排查方法；没有复制长段正文、截图、Issue 日志、凭据、代码或 Skill 指令 | `reference-only`：官方事实按访问日期和适用范围复核；社区报告只证明报告者描述的症状，不证明根因、修复或本地复现 | 用于 Chapter 6 的英文源文件和模型选择证据边界；不把产品定位写成性能、成本、稳定性或总体排名结论 |
-| S22 | `assets/teaching/*.svg` | Prysai Lab 原创教学卡，创建于 2026-08-11 | 两张项目内 SVG：模型选择测试、Skill 到可观察输出；仅使用内嵌几何图形、文字、渐变和网格，无外部图片、字体、图标或远程请求 | 项目原创资产；仓库发行许可证尚未单独确定 | `original-rewrite / project-owned`：用于本项目教学和 README；不标记为第三方素材，不复制 WorkBuddyGuide 或其他项目视觉表达 |
+| S22 | `assets/teaching/*.svg` | Prysai Lab 原创教学卡，创建于 2026-08-11 | 四张项目内 SVG：模型选择测试、Skill 到可观察输出、生命周期检查点、证据恢复阶梯；仅使用内嵌几何图形、文字、渐变、网格和滤镜，无外部图片、字体、图标或远程请求 | 项目原创资产；仓库发行许可证尚未单独确定 | `original-rewrite / project-owned`：用于本项目教学和 README；不标记为第三方素材，不复制 WorkBuddyGuide 或其他项目视觉表达 |
 | S23 | `examples/skill-sandbox/product-context-real-estate/` + `assets/cases/product-context-real-estate-desktop.png` | Prysai Lab 原创合成案例，创建于 2026-08-11 | fictional brief、Product Context 草稿、原创 HTML/CSS/inline SVG 和本地浏览器截图；无真实房产、个人数据、外部媒体、CDN、分析或表单 | 项目原创资产；案例只可作为本仓库的合成教学材料，截图的证据范围限于记录的本地渲染视口 | `original-rewrite / project-owned`：可用于本项目案例教学；不得包装为真实客户、市场、库存、转化或 Skill runtime 证据 |
 | S24 | `assets/teaching/lifecycle-checkpoints.svg` | Prysai Lab 原创教学卡，创建于 2026-08-11 | 七阶段生命周期与 CP0–CP4 evidence exit 的原创 SVG 教学图；仅使用内嵌几何图形、文字、渐变、网格和滤镜，无外部图片、字体、图标或远程请求 | 项目原创资产；仓库发行许可证尚未单独确定 | `original-rewrite / project-owned`：可用于本项目 Chapter 8 和 README 教学；不标记为第三方素材，不把图示当作 Skill、Agent 或外部服务运行证据 |
 | S25 | `assets/teaching/evidence-recovery-ladder.svg` | Prysai Lab 原创教学卡，创建于 2026-08-11 | 断言强度、证据层、缺口标记和恢复/停止选择的原创 SVG 教学图；仅使用内嵌几何图形、文字、渐变、网格和滤镜，无外部图片、字体、图标或远程请求 | 项目原创资产；仓库发行许可证尚未单独确定 | `original-rewrite / project-owned`：可用于本项目 Chapter 9 和 README 教学；不标记为运行、用户验收或生产就绪证据 |
@@ -46,6 +46,8 @@
 | S32 | `docs/research/multilingual-routing-and-six-locale-study-2026-08-11.md` | GitHub Docs、Docusaurus、MkDocs Material、Sphinx 官方文档/仓库与当前项目本地审计 | 只记录六 locale 矩阵、README/站点状态和迁移缺口的原创研究；没有复制正文、代码、图片、字体或品牌资产 | `reference-only / project-audit`：当前项目仍为 migration；不把入口文件数量写成六语言完成 | 用于六语言菜单、状态 banner、内容身份与验证器边界 |
 | S33 | `docs/research/github-ai-contribution-candidates-2026-08-09.md` | LangChain、Chroma 官方 GitHub 仓库、Issue、PR、贡献指南和许可证页面 | 只保留候选 Issue 的原创摘要、重复风险、建议范围和研究限制；未 clone、修改、评论、push 或创建 PR | `reference-only`：历史候选研究；不构成 maintainer 同意、PR 接受或合并预测 | 作为外部协作流程研究，不作为本项目运行或发布证据 |
 | S34 | `docs/research/github-ai-contribution-candidates-2026-08-10.md` | LangChain、Agno 官方 GitHub 仓库、Issue、PR、贡献指南和许可证页面 | 只保留候选 Issue 的原创摘要、实时检查时间和验证限制；未 clone、修改、评论、push 或创建 PR | `reference-only`：历史候选研究；外部状态可能变化，不能作为当前贡献授权 | 仅用于贡献流程和重复检查方法参考 |
+
+| S35 | `assets/branding/prysai-lab-mark-black.png`、`assets/branding/prysai-lab-mark-white.png` 及 `*-512.png` / `*-96.png` 显示衍生版 | 项目负责人提供的本地 Prysai Lab Logo：`D:/downloads/Prysai logo NEW/Prysai logo/Black _ white/`；纳入日期 2026-08-11 | 两张 8334×8334 RGBA PNG 母版与四张项目内生成的 512px/96px RGBA 显示衍生版；母版保留原始透明画布，衍生版裁切到可见标记并保留透明内边距；黑色版本用于浅色表面，白色版本用于深色表面；只作为品牌识别资源使用，不包含外部图片、字体、远程请求或用户数据 | 项目负责人明确授权用于本项目 Page、reader、README 和 Pages artifact；未宣称第三方许可证，也不把该授权扩展到其他项目 | `project-provided / project-authorized`：母版只作归档，页面使用显示衍生版以降低浏览器解码开销；发行或跨项目复用前重新确认品牌使用边界。母版 SHA-256：black `A4E25F5347E523C9B390E94FC749049D356F4E8BE7480720367B65DC73CDB77E`；white `7C1A5D03ACA9AF6C1F04055B2629449B184CAF6995ED58359BADDB2310414605` |
 
 ## 归档指纹
 

@@ -14,7 +14,7 @@ An Agent can produce a convincing completion summary for a result that is
 wrong, out of scope, never executed, or checked in the wrong environment. The
 reliable response is not blind trust or permanent suspicion. It is to split the
 summary into claims and assign each claim the smallest evidence that could
-support it at the stated scope.
+<mark class="highlight-text highlight-lime">support it at the stated scope</mark>.
 
 ![Teaching card: stop at the first missing proof and recover with one safe check](../../assets/teaching/evidence-recovery-ladder.svg)
 
@@ -372,7 +372,7 @@ one issue, workaround, label, or community answer into a product guarantee.
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-EN.md" aria-label="Previous chapter: Chapter 8 · The complete lifecycle from definition to delivery">← Previous<br><strong>Chapter 8 · The complete lifecycle from definition to delivery</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing.md" aria-label="Next chapter: Chapter 10 · Planning and vertical slicing · migration pending">Next →<br><strong>Chapter 10 · Planning and vertical slicing · migration pending</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-EN.md" aria-label="Next chapter: Chapter 10 · Planning and vertical slicing">Next →<br><strong>Chapter 10 · Planning and vertical slicing</strong></a></td>
     </tr>
   </table>
 </nav>

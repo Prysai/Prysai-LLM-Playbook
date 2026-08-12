@@ -67,6 +67,7 @@ def matrix_content(
     return {
         "kind": item.get("kind"),
         "stem": item.get("stem"),
+        "source_locale": str(item.get("source_locale", "EN")).lower(),
         "legacy_paths": legacy_paths,
         "locales": localized,
     }
@@ -101,6 +102,7 @@ def status_content(
     return content_id, {
         "kind": "chapter" if str(item["id"]).startswith("chapter-") else "lab",
         "stem": stem,
+        "source_locale": "en" if has_english_source else "zh",
         "legacy_paths": legacy_paths,
         "locales": localized,
     }
@@ -182,7 +184,7 @@ def main() -> int:
         print(f"SITE_LOCALE_MANIFEST_OK locales={len(build_manifest()['locales'])}")
         return 0
 
-    OUTPUT_FILE.write_text(expected, encoding="utf-8", newline="\n")
+    OUTPUT_FILE.write_text(expected, encoding="utf-8")
     print(f"SITE_LOCALE_MANIFEST_BUILT output={OUTPUT_FILE.relative_to(ROOT)}")
     return 0
 

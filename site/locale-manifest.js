@@ -48,6 +48,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "project-readme": {
       "kind": "project-entry",
       "stem": "README",
+      "source_locale": "en",
       "legacy_paths": [
         "README.md"
       ],
@@ -99,6 +100,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book-readme": {
       "kind": "book-entry",
       "stem": "book/README",
+      "source_locale": "en",
       "legacy_paths": [
         "book/README.md"
       ],
@@ -150,6 +152,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book-preface": {
       "kind": "book-entry",
       "stem": "book/preface",
+      "source_locale": "en",
       "legacy_paths": [
         "book/preface.md"
       ],
@@ -201,6 +204,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book-table-of-contents": {
       "kind": "book-entry",
       "stem": "book/table-of-contents",
+      "source_locale": "en",
       "legacy_paths": [
         "book/table-of-contents.md"
       ],
@@ -252,6 +256,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-01-gpt-and-codex": {
       "kind": "chapter",
       "stem": "book/chapters/01-gpt-and-codex",
+      "source_locale": "en",
       "legacy_paths": [
         "book/chapters/01-gpt-and-codex.md"
       ],
@@ -303,6 +308,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-02-first-safe-task": {
       "kind": "chapter",
       "stem": "book/chapters/02-first-safe-task",
+      "source_locale": "en",
       "legacy_paths": [
         "book/chapters/02-first-safe-task.md"
       ],
@@ -354,6 +360,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-03-task-protocol": {
       "kind": "chapter",
       "stem": "book/chapters/03-task-protocol",
+      "source_locale": "en",
       "legacy_paths": [
         "book/chapters/03-task-protocol.md"
       ],
@@ -405,6 +412,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-04-context-permissions-and-agent": {
       "kind": "chapter",
       "stem": "book/chapters/04-context-permissions-and-agent",
+      "source_locale": "en",
       "legacy_paths": [
         "book/chapters/04-context-permissions-and-agent.md"
       ],
@@ -456,6 +464,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-05-choose-the-codex-surface": {
       "kind": "chapter",
       "stem": "book/chapters/05-choose-the-codex-surface",
+      "source_locale": "en",
       "legacy_paths": [
         "book/chapters/05-choose-the-codex-surface.md"
       ],
@@ -507,6 +516,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-06-model-selection": {
       "kind": "chapter",
       "stem": "book/chapters/06-model-selection",
+      "source_locale": "en",
       "legacy_paths": [
         "book/chapters/06-model-selection.md"
       ],
@@ -558,6 +568,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-07-skills-plugins-and-tools": {
       "kind": "chapter",
       "stem": "book/chapters/07-skills-plugins-and-tools",
+      "source_locale": "en",
       "legacy_paths": [
         "book/chapters/07-skills-plugins-and-tools.md"
       ],
@@ -609,6 +620,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-08-full-lifecycle-workflow": {
       "kind": "chapter",
       "stem": "book/chapters/08-full-lifecycle-workflow",
+      "source_locale": "en",
       "legacy_paths": [
         "book/chapters/08-full-lifecycle-workflow.md"
       ],
@@ -660,6 +672,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-09-verification-and-recovery": {
       "kind": "chapter",
       "stem": "book/chapters/09-verification-and-recovery",
+      "source_locale": "en",
       "legacy_paths": [
         "book/chapters/09-verification-and-recovery.md"
       ],
@@ -708,9 +721,218 @@ window.CODEX_LOCALE_MANIFEST = {
         }
       }
     },
+    "chapter-10-planning-and-slicing": {
+      "kind": "chapter",
+      "stem": "book/chapters/10-planning-and-slicing",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/chapters/10-planning-and-slicing.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/chapters/10-planning-and-slicing-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/chapters/10-planning-and-slicing-ZH.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "es": {
+          "path": "book/chapters/10-planning-and-slicing-ES.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ja": {
+          "path": "book/chapters/10-planning-and-slicing-JA.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ko": {
+          "path": "book/chapters/10-planning-and-slicing-KO.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "de": {
+          "path": "book/chapters/10-planning-and-slicing-DE.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        }
+      }
+    },
+    "chapter-11-designing-a-skill": {
+      "kind": "chapter",
+      "stem": "book/chapters/11-designing-a-skill",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/chapters/11-designing-a-skill.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/chapters/11-designing-a-skill-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/chapters/11-designing-a-skill-ZH.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "es": {
+          "path": "book/chapters/11-designing-a-skill-ES.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ja": {
+          "path": "book/chapters/11-designing-a-skill-JA.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ko": {
+          "path": "book/chapters/11-designing-a-skill-KO.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "de": {
+          "path": "book/chapters/11-designing-a-skill-DE.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        }
+      }
+    },
+    "chapter-12-agent-loop-and-stop": {
+      "kind": "chapter",
+      "stem": "book/chapters/12-agent-loop-and-stop",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/chapters/12-agent-loop-and-stop.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/chapters/12-agent-loop-and-stop-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/chapters/12-agent-loop-and-stop-ZH.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "es": {
+          "path": "book/chapters/12-agent-loop-and-stop-ES.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ja": {
+          "path": "book/chapters/12-agent-loop-and-stop-JA.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ko": {
+          "path": "book/chapters/12-agent-loop-and-stop-KO.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "de": {
+          "path": "book/chapters/12-agent-loop-and-stop-DE.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        }
+      }
+    },
+    "chapter-13-action-boundaries": {
+      "kind": "chapter",
+      "stem": "book/chapters/13-action-boundaries",
+      "source_locale": "en",
+      "legacy_paths": [
+        "book/chapters/13-action-boundaries.md"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/chapters/13-action-boundaries-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/chapters/13-action-boundaries-ZH.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "es": {
+          "path": "book/chapters/13-action-boundaries-ES.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ja": {
+          "path": "book/chapters/13-action-boundaries-JA.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "ko": {
+          "path": "book/chapters/13-action-boundaries-KO.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        },
+        "de": {
+          "path": "book/chapters/13-action-boundaries-DE.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11"
+        }
+      }
+    },
     "lab-011-gpt-codex-boundaries": {
       "kind": "lab",
       "stem": "book/labs/lab-011-gpt-codex-boundaries",
+      "source_locale": "en",
       "legacy_paths": [
         "book/labs/lab-011-gpt-codex-boundaries.md"
       ],
@@ -762,6 +984,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "lab-001-first-safe-task": {
       "kind": "lab",
       "stem": "book/labs/lab-001-first-safe-task",
+      "source_locale": "en",
       "legacy_paths": [
         "book/labs/lab-001-first-safe-task.md"
       ],
@@ -813,6 +1036,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "lab-002-task-protocol": {
       "kind": "lab",
       "stem": "book/labs/lab-002-task-protocol",
+      "source_locale": "en",
       "legacy_paths": [
         "book/labs/lab-002-task-protocol.md"
       ],
@@ -864,6 +1088,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "lab-007-action-boundaries": {
       "kind": "lab",
       "stem": "book/labs/lab-007-action-boundaries",
+      "source_locale": "en",
       "legacy_paths": [
         "book/labs/lab-007-action-boundaries.md"
       ],
@@ -912,213 +1137,10 @@ window.CODEX_LOCALE_MANIFEST = {
         }
       }
     },
-    "chapter-10": {
-      "kind": "chapter",
-      "stem": "book/chapters/10-planning-and-slicing",
-      "legacy_paths": [
-        "book/chapters/10-planning-and-slicing.md"
-      ],
-      "locales": {
-        "en": {
-          "path": "book/chapters/10-planning-and-slicing.md",
-          "exists": true,
-          "content_status": "candidate",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
-        },
-        "zh": {
-          "path": "book/chapters/10-planning-and-slicing-ZH.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "es": {
-          "path": "book/chapters/10-planning-and-slicing-ES.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ja": {
-          "path": "book/chapters/10-planning-and-slicing-JA.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ko": {
-          "path": "book/chapters/10-planning-and-slicing-KO.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "de": {
-          "path": "book/chapters/10-planning-and-slicing-DE.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        }
-      }
-    },
-    "chapter-11": {
-      "kind": "chapter",
-      "stem": "book/chapters/11-designing-a-skill",
-      "legacy_paths": [
-        "book/chapters/11-designing-a-skill.md"
-      ],
-      "locales": {
-        "en": {
-          "path": "book/chapters/11-designing-a-skill.md",
-          "exists": true,
-          "content_status": "candidate",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
-        },
-        "zh": {
-          "path": "book/chapters/11-designing-a-skill-ZH.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "es": {
-          "path": "book/chapters/11-designing-a-skill-ES.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ja": {
-          "path": "book/chapters/11-designing-a-skill-JA.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ko": {
-          "path": "book/chapters/11-designing-a-skill-KO.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "de": {
-          "path": "book/chapters/11-designing-a-skill-DE.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        }
-      }
-    },
-    "chapter-12": {
-      "kind": "chapter",
-      "stem": "book/chapters/12-agent-loop-and-stop",
-      "legacy_paths": [
-        "book/chapters/12-agent-loop-and-stop.md"
-      ],
-      "locales": {
-        "en": {
-          "path": "book/chapters/12-agent-loop-and-stop.md",
-          "exists": true,
-          "content_status": "candidate",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
-        },
-        "zh": {
-          "path": "book/chapters/12-agent-loop-and-stop-ZH.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "es": {
-          "path": "book/chapters/12-agent-loop-and-stop-ES.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ja": {
-          "path": "book/chapters/12-agent-loop-and-stop-JA.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ko": {
-          "path": "book/chapters/12-agent-loop-and-stop-KO.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "de": {
-          "path": "book/chapters/12-agent-loop-and-stop-DE.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        }
-      }
-    },
-    "chapter-13": {
-      "kind": "chapter",
-      "stem": "book/chapters/13-action-boundaries",
-      "legacy_paths": [
-        "book/chapters/13-action-boundaries.md"
-      ],
-      "locales": {
-        "en": {
-          "path": "book/chapters/13-action-boundaries.md",
-          "exists": true,
-          "content_status": "candidate",
-          "translation_status": "migration-pending",
-          "source_revision": "content-status"
-        },
-        "zh": {
-          "path": "book/chapters/13-action-boundaries-ZH.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "es": {
-          "path": "book/chapters/13-action-boundaries-ES.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ja": {
-          "path": "book/chapters/13-action-boundaries-JA.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "ko": {
-          "path": "book/chapters/13-action-boundaries-KO.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        },
-        "de": {
-          "path": "book/chapters/13-action-boundaries-DE.md",
-          "exists": false,
-          "content_status": "candidate",
-          "translation_status": "in-progress",
-          "source_revision": "content-status"
-        }
-      }
-    },
     "chapter-14": {
       "kind": "chapter",
       "stem": "book/chapters/14-discover-and-audit-skills",
+      "source_locale": "zh",
       "legacy_paths": [
         "book/chapters/14-discover-and-audit-skills.md"
       ],
@@ -1170,6 +1192,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-15": {
       "kind": "chapter",
       "stem": "book/chapters/15-research-track",
+      "source_locale": "zh",
       "legacy_paths": [
         "book/chapters/15-research-track.md"
       ],
@@ -1221,6 +1244,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-16": {
       "kind": "chapter",
       "stem": "book/chapters/16-engineering-track",
+      "source_locale": "zh",
       "legacy_paths": [
         "book/chapters/16-engineering-track.md"
       ],
@@ -1272,6 +1296,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-17": {
       "kind": "chapter",
       "stem": "book/chapters/17-marketing-track",
+      "source_locale": "zh",
       "legacy_paths": [
         "book/chapters/17-marketing-track.md"
       ],
@@ -1323,6 +1348,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-18": {
       "kind": "chapter",
       "stem": "book/chapters/18-content-design-data-automation",
+      "source_locale": "zh",
       "legacy_paths": [
         "book/chapters/18-content-design-data-automation.md"
       ],
@@ -1374,6 +1400,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-19": {
       "kind": "chapter",
       "stem": "book/chapters/19-evaluate-models-and-workflows",
+      "source_locale": "zh",
       "legacy_paths": [
         "book/chapters/19-evaluate-models-and-workflows.md"
       ],
@@ -1425,6 +1452,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-20": {
       "kind": "chapter",
       "stem": "book/chapters/20-personal-codex-work-system",
+      "source_locale": "zh",
       "legacy_paths": [
         "book/chapters/20-personal-codex-work-system.md"
       ],
@@ -1476,6 +1504,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-21": {
       "kind": "chapter",
       "stem": "book/chapters/21-team-capability-system",
+      "source_locale": "zh",
       "legacy_paths": [
         "book/chapters/21-team-capability-system.md"
       ],
@@ -1527,6 +1556,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-22": {
       "kind": "chapter",
       "stem": "book/chapters/22-continuous-update-and-future-proofing",
+      "source_locale": "zh",
       "legacy_paths": [
         "book/chapters/22-continuous-update-and-future-proofing.md"
       ],
@@ -1578,6 +1608,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "lab-003": {
       "kind": "lab",
       "stem": "book/labs/lab-003-evidence-review",
+      "source_locale": "zh",
       "legacy_paths": [
         "book/labs/lab-003-evidence-review.md"
       ],
@@ -1629,6 +1660,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "lab-004": {
       "kind": "lab",
       "stem": "book/labs/lab-004-skill-selection",
+      "source_locale": "zh",
       "legacy_paths": [
         "book/labs/lab-004-skill-selection.md"
       ],
@@ -1680,6 +1712,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "lab-005": {
       "kind": "lab",
       "stem": "book/labs/lab-005-design-a-skill",
+      "source_locale": "zh",
       "legacy_paths": [
         "book/labs/lab-005-design-a-skill.md"
       ],
@@ -1731,6 +1764,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "lab-006": {
       "kind": "lab",
       "stem": "book/labs/lab-006-agent-stop-conditions",
+      "source_locale": "zh",
       "legacy_paths": [
         "book/labs/lab-006-agent-stop-conditions.md"
       ],
@@ -1782,6 +1816,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "lab-008": {
       "kind": "lab",
       "stem": "book/labs/lab-008-research-question",
+      "source_locale": "zh",
       "legacy_paths": [
         "book/labs/lab-008-research-question.md"
       ],
@@ -1833,6 +1868,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "lab-009": {
       "kind": "lab",
       "stem": "book/labs/lab-009-engineering-lifecycle",
+      "source_locale": "zh",
       "legacy_paths": [
         "book/labs/lab-009-engineering-lifecycle.md"
       ],
@@ -1884,6 +1920,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "lab-010": {
       "kind": "lab",
       "stem": "book/labs/lab-010-product-context",
+      "source_locale": "zh",
       "legacy_paths": [
         "book/labs/lab-010-product-context.md"
       ],
@@ -1935,6 +1972,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "lab-012": {
       "kind": "lab",
       "stem": "book/labs/lab-012-team-capability-migration",
+      "source_locale": "zh",
       "legacy_paths": [
         "book/labs/lab-012-team-capability-migration.md"
       ],
@@ -1986,6 +2024,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "lab-013": {
       "kind": "lab",
       "stem": "book/labs/lab-013-l3-vertical-slice",
+      "source_locale": "zh",
       "legacy_paths": [
         "book/labs/lab-013-l3-vertical-slice.md"
       ],
@@ -2045,10 +2084,10 @@ window.CODEX_LOCALE_MANIFEST = {
     "chapter-07": "chapter-07-skills-plugins-and-tools",
     "chapter-08": "chapter-08-full-lifecycle-workflow",
     "chapter-09": "chapter-09-verification-and-recovery",
-    "chapter-10": "chapter-10",
-    "chapter-11": "chapter-11",
-    "chapter-12": "chapter-12",
-    "chapter-13": "chapter-13",
+    "chapter-10": "chapter-10-planning-and-slicing",
+    "chapter-11": "chapter-11-designing-a-skill",
+    "chapter-12": "chapter-12-agent-loop-and-stop",
+    "chapter-13": "chapter-13-action-boundaries",
     "chapter-14": "chapter-14",
     "chapter-15": "chapter-15",
     "chapter-16": "chapter-16",
@@ -2164,6 +2203,34 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/09-verification-and-recovery-KO.md": "chapter-09-verification-and-recovery",
     "book/chapters/09-verification-and-recovery-DE.md": "chapter-09-verification-and-recovery",
     "book/chapters/09-verification-and-recovery.md": "chapter-09-verification-and-recovery",
+    "book/chapters/10-planning-and-slicing-EN.md": "chapter-10-planning-and-slicing",
+    "book/chapters/10-planning-and-slicing-ZH.md": "chapter-10-planning-and-slicing",
+    "book/chapters/10-planning-and-slicing-ES.md": "chapter-10-planning-and-slicing",
+    "book/chapters/10-planning-and-slicing-JA.md": "chapter-10-planning-and-slicing",
+    "book/chapters/10-planning-and-slicing-KO.md": "chapter-10-planning-and-slicing",
+    "book/chapters/10-planning-and-slicing-DE.md": "chapter-10-planning-and-slicing",
+    "book/chapters/10-planning-and-slicing.md": "chapter-10-planning-and-slicing",
+    "book/chapters/11-designing-a-skill-EN.md": "chapter-11-designing-a-skill",
+    "book/chapters/11-designing-a-skill-ZH.md": "chapter-11-designing-a-skill",
+    "book/chapters/11-designing-a-skill-ES.md": "chapter-11-designing-a-skill",
+    "book/chapters/11-designing-a-skill-JA.md": "chapter-11-designing-a-skill",
+    "book/chapters/11-designing-a-skill-KO.md": "chapter-11-designing-a-skill",
+    "book/chapters/11-designing-a-skill-DE.md": "chapter-11-designing-a-skill",
+    "book/chapters/11-designing-a-skill.md": "chapter-11-designing-a-skill",
+    "book/chapters/12-agent-loop-and-stop-EN.md": "chapter-12-agent-loop-and-stop",
+    "book/chapters/12-agent-loop-and-stop-ZH.md": "chapter-12-agent-loop-and-stop",
+    "book/chapters/12-agent-loop-and-stop-ES.md": "chapter-12-agent-loop-and-stop",
+    "book/chapters/12-agent-loop-and-stop-JA.md": "chapter-12-agent-loop-and-stop",
+    "book/chapters/12-agent-loop-and-stop-KO.md": "chapter-12-agent-loop-and-stop",
+    "book/chapters/12-agent-loop-and-stop-DE.md": "chapter-12-agent-loop-and-stop",
+    "book/chapters/12-agent-loop-and-stop.md": "chapter-12-agent-loop-and-stop",
+    "book/chapters/13-action-boundaries-EN.md": "chapter-13-action-boundaries",
+    "book/chapters/13-action-boundaries-ZH.md": "chapter-13-action-boundaries",
+    "book/chapters/13-action-boundaries-ES.md": "chapter-13-action-boundaries",
+    "book/chapters/13-action-boundaries-JA.md": "chapter-13-action-boundaries",
+    "book/chapters/13-action-boundaries-KO.md": "chapter-13-action-boundaries",
+    "book/chapters/13-action-boundaries-DE.md": "chapter-13-action-boundaries",
+    "book/chapters/13-action-boundaries.md": "chapter-13-action-boundaries",
     "book/labs/lab-011-gpt-codex-boundaries-EN.md": "lab-011-gpt-codex-boundaries",
     "book/labs/lab-011-gpt-codex-boundaries-ZH.md": "lab-011-gpt-codex-boundaries",
     "book/labs/lab-011-gpt-codex-boundaries-ES.md": "lab-011-gpt-codex-boundaries",
@@ -2192,30 +2259,6 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-007-action-boundaries-KO.md": "lab-007-action-boundaries",
     "book/labs/lab-007-action-boundaries-DE.md": "lab-007-action-boundaries",
     "book/labs/lab-007-action-boundaries.md": "lab-007-action-boundaries",
-    "book/chapters/10-planning-and-slicing.md": "chapter-10",
-    "book/chapters/10-planning-and-slicing-ZH.md": "chapter-10",
-    "book/chapters/10-planning-and-slicing-ES.md": "chapter-10",
-    "book/chapters/10-planning-and-slicing-JA.md": "chapter-10",
-    "book/chapters/10-planning-and-slicing-KO.md": "chapter-10",
-    "book/chapters/10-planning-and-slicing-DE.md": "chapter-10",
-    "book/chapters/11-designing-a-skill.md": "chapter-11",
-    "book/chapters/11-designing-a-skill-ZH.md": "chapter-11",
-    "book/chapters/11-designing-a-skill-ES.md": "chapter-11",
-    "book/chapters/11-designing-a-skill-JA.md": "chapter-11",
-    "book/chapters/11-designing-a-skill-KO.md": "chapter-11",
-    "book/chapters/11-designing-a-skill-DE.md": "chapter-11",
-    "book/chapters/12-agent-loop-and-stop.md": "chapter-12",
-    "book/chapters/12-agent-loop-and-stop-ZH.md": "chapter-12",
-    "book/chapters/12-agent-loop-and-stop-ES.md": "chapter-12",
-    "book/chapters/12-agent-loop-and-stop-JA.md": "chapter-12",
-    "book/chapters/12-agent-loop-and-stop-KO.md": "chapter-12",
-    "book/chapters/12-agent-loop-and-stop-DE.md": "chapter-12",
-    "book/chapters/13-action-boundaries.md": "chapter-13",
-    "book/chapters/13-action-boundaries-ZH.md": "chapter-13",
-    "book/chapters/13-action-boundaries-ES.md": "chapter-13",
-    "book/chapters/13-action-boundaries-JA.md": "chapter-13",
-    "book/chapters/13-action-boundaries-KO.md": "chapter-13",
-    "book/chapters/13-action-boundaries-DE.md": "chapter-13",
     "book/chapters/14-discover-and-audit-skills.md": "chapter-14",
     "book/chapters/14-discover-and-audit-skills-ZH.md": "chapter-14",
     "book/chapters/14-discover-and-audit-skills-ES.md": "chapter-14",

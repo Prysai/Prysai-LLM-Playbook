@@ -11,6 +11,8 @@ or document a bounded case. It is not a general image dump.
   public showcase.
 - Open [`cases/`](cases/) for screenshots and other evidence from disposable
   local sandboxes.
+- Open [`branding/`](branding/) for the project-owner-supplied Prysai Lab mark
+  and its display-size derivatives used by the Page and reader.
 
 ## Evidence boundary
 

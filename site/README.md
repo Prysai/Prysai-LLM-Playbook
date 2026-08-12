@@ -8,11 +8,40 @@
 - 22 章路线按 A—D 四条路线筛选，并保留章节折叠；
 - 实验区展示当前实际存在的 13 个实验，并链接到实验索引；
 - 响应式导航在窄屏下折叠为菜单，支持 Escape 关闭和焦点返回；
+- 首页语言入口使用普通导航语义并标记当前页面；Reader 提供跳到正文、异步加载/错误状态、正文语言标记和高对比度下划线 fallback；
 - 所有章节、实验、Skill、质量记录链接指向仓库内的真实文件；chapter/lab 路由身份由 `content-status.yaml` 与 manifest 共同覆盖。
 - `visual-cases` 区块链接到两张项目原创 SVG 教学卡和一个房地产
   Product Context 概念案例；案例的页面截图只证明本地渲染，不证明 Skill runtime、客户需求、市场效果或生产准备度。
 
-页面公开名称不包含组织名；维护与治理归属只在页脚说明中出现。Skill 链接保留仓库内部目录名，以保持安装和文件路径兼容。
+## Highlight component boundary
+
+This repository is intentionally a dependency-free static site. It does not
+currently contain a React, TypeScript, Tailwind, or shadcn application, so the
+highlight is implemented as a semantic native element:
+
+```html
+<mark class="highlight-text highlight-lime">important text</mark>
+```
+
+The matching CSS lives in `site/styles.css` and `site/reader.css`, which keeps
+the same emphasis visible in the GitHub Markdown source, the static showcase,
+and the reader. It is semantic emphasis, not programming-language syntax
+highlighting.
+
+If this project is later migrated to a React application, the expected shadcn
+layout is `components/ui/highlight-text.tsx` plus a shared `lib/utils.ts` and
+Tailwind entry stylesheet. The optional setup path is:
+
+```powershell
+npx shadcn@latest init
+npx shadcn@latest add button
+```
+
+Choose TypeScript, Tailwind CSS, and the `@/*` import alias during setup. Do
+not add that build chain only for the current Pages reader: it would create a
+second rendering system without improving the published static artifact.
+
+页面公开名称仍是 Codex: From First Task to Real Work；Prysai Lab Logo 作为项目负责人提供的品牌归属标记出现在表头和页脚。Skill 链接保留仓库内部目录名，以保持安装和文件路径兼容。Logo 的授权边界和显示衍生版见 `assets/branding/` 与 `docs/sources/asset-register.md`。
 
 ## 本地打开
 
@@ -60,8 +89,8 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 3. 在 EN / ZH 下确认正文、标题、description、aria-label 和 `lang` 同步；在 ES / JA / KO / DE 下确认英文 UI 与目标 locale fallback 都被明确标出；
 4. 点击章节、实验和学习路径入口，确认它们解析到当前 locale 的存在文件，或带 pending 标记的 English fallback；确认路径、查询参数和 hash 不丢失；
 5. 检查导航锚点、章节筛选、章节折叠和 L0—L6 切换；用方向键、Home/End 操作等级标签；
-6. 检查 13 个实验卡片、索引链接和窄屏布局与菜单展开；菜单打开后按 Escape，确认焦点回到菜单按钮；
-7. 分别在 320px 和 390px 宽度检查无横向溢出、触控目标可用、中文不被截断；
+6. 检查 13 个实验卡片、索引链接和窄屏布局与菜单展开；菜单打开后按 Escape，确认焦点回到菜单按钮；Reader 还要检查跳到正文、加载状态、错误状态和中文外壳文案；
+7. 分别在 320px、390px、820px、980px 宽度检查无横向溢出、触控目标可用、中文不被截断；
 8. 确认没有外部字体、脚本、图片或 CDN 请求，控制台无错误；
 9. 在仓库根目录执行项目验证：
 
