@@ -75,6 +75,8 @@ or production readiness.
 
 ![From request to evidence](assets/teaching/task-to-evidence-red-black.svg)
 
+![Field signal to safe degradation](assets/teaching/field-signal-to-safe-degradation-red-black.svg)
+
 ![Synthetic first-time buyer guide produced from a bounded Product Context handoff](assets/cases/product-context-real-estate-desktop.png)
 
 The same local artifact was checked at 390px. See the
@@ -96,6 +98,7 @@ public Pages URL is currently enabled.
 | Review whether “done” is real | [Evidence review lab](book/labs/lab-003-evidence-review-EN.md) + [Evaluation framework](docs/quality/evaluation-framework.md) | A claim-to-evidence table, not just a polished response |
 | Choose or build a Skill | [Skill registry](docs/skill-registry.md) + [Skill quality standard](docs/quality/skill-quality-standard.md) | A bounded, testable method with dependencies and rollback |
 | Learn from field failures | [Real-world problem index](docs/research/field-problems-index-2026-08-10.md) | A symptom, safe first check, fallback, and evidence classification |
+| Review three current public cases | [Bounded field-case review](docs/research/codex-field-cases-current-review-2026-08-12.md) | User report, official boundary, project inference, and `not_run` reproduction status kept separate |
 
 The recommended first slice is intentionally small: use a sandbox, inspect
 before editing, make one reversible change, run one focused check, preserve the

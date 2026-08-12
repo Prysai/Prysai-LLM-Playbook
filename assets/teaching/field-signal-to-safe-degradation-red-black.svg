@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Field signal to safe degradation</title>
+  <desc id="desc">Three public Codex issue signals mapped to unsupported inferences and the smallest safe response.</desc>
+  <rect width="1600" height="900" fill="#f7f7f8"/>
+  <rect x="0" y="0" width="1600" height="112" fill="#111820"/>
+  <rect x="64" y="48" width="16" height="16" fill="#d3262e"/>
+  <text x="104" y="70" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" letter-spacing="1">FIELD SIGNAL → SAFE DEGRADATION</text>
+  <text x="1454" y="70" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="end">12 AUG 2026</text>
+
+  <line x1="64" y1="158" x2="1536" y2="158" stroke="#111820" stroke-width="2"/>
+  <line x1="522" y1="158" x2="522" y2="760" stroke="#111820" stroke-width="2"/>
+  <line x1="1014" y1="158" x2="1014" y2="760" stroke="#111820" stroke-width="2"/>
+  <line x1="64" y1="356" x2="1536" y2="356" stroke="#111820" stroke-width="1"/>
+  <line x1="64" y1="558" x2="1536" y2="558" stroke="#111820" stroke-width="1"/>
+  <line x1="64" y1="760" x2="1536" y2="760" stroke="#111820" stroke-width="2"/>
+
+  <text x="64" y="196" fill="#d3262e" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="2">PUBLIC SIGNAL</text>
+  <text x="554" y="196" fill="#d3262e" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="2">DO NOT INFER</text>
+  <text x="1046" y="196" fill="#d3262e" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="2">SMALLEST SAFE MOVE</text>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#111820">
+    <text x="64" y="264" font-size="64" font-weight="700">01</text>
+    <text x="164" y="247" font-size="28" font-weight="700">WORKTREE LABEL</text>
+    <text x="164" y="285" font-size="22">One target is shown;</text>
+    <text x="164" y="317" font-size="22">runtime points elsewhere.</text>
+    <text x="554" y="258" font-size="28" font-weight="700">UI STATE = CWD</text>
+    <text x="554" y="298" font-size="21">A label does not prove Git root,</text>
+    <text x="554" y="328" font-size="21">branch, HEAD, or writable root.</text>
+    <text x="1046" y="250" font-size="28" font-weight="700">COMPARE TARGETS</text>
+    <text x="1046" y="290" font-size="21">cwd / Git top-level / worktree /</text>
+    <text x="1046" y="320" font-size="21">branch / writable root. Stop on mismatch.</text>
+
+    <text x="64" y="466" font-size="64" font-weight="700">02</text>
+    <text x="164" y="449" font-size="28" font-weight="700">OUTPUT DISAPPEARS</text>
+    <text x="164" y="487" font-size="22">A command may finish;</text>
+    <text x="164" y="519" font-size="22">audit evidence is hidden.</text>
+    <text x="554" y="460" font-size="28" font-weight="700">RAN = VERIFIED</text>
+    <text x="554" y="500" font-size="21">Exit, output, artifact, read-back,</text>
+    <text x="554" y="530" font-size="21">and reviewer decision are separate.</text>
+    <text x="1046" y="452" font-size="28" font-weight="700">PRESERVE CHANNELS</text>
+    <text x="1046" y="492" font-size="21">Keep authorized exit / event / artifact /</text>
+    <text x="1046" y="522" font-size="21">read-back. Missing proof = unverified.</text>
+
+    <text x="64" y="668" font-size="64" font-weight="700">03</text>
+    <text x="164" y="651" font-size="28" font-weight="700">VERIFY → REINSTALL</text>
+    <text x="164" y="689" font-size="22">A check expands into a</text>
+    <text x="164" y="721" font-size="22">persistent mutation.</text>
+    <text x="554" y="662" font-size="28" font-weight="700">CAPABLE = AUTHORIZED</text>
+    <text x="554" y="702" font-size="21">Sandbox, approval, credentials, and</text>
+    <text x="554" y="732" font-size="21">task authority answer different questions.</text>
+    <text x="1046" y="654" font-size="28" font-weight="700">STOP + RE-AUTHORIZE</text>
+    <text x="1046" y="694" font-size="21">Name target, effect, artifact, dirty state,</text>
+    <text x="1046" y="724" font-size="21">rollback, and blocked evidence first.</text>
+  </g>
+
+  <rect x="64" y="800" width="16" height="16" fill="#d3262e"/>
+  <text x="104" y="815" fill="#111820" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">PUBLIC USER REPORTS · ISSUES REMAIN OPEN · NO LOCAL REPRODUCTION · NO OFFICIAL ROOT-CAUSE CONFIRMATION</text>
+  <text x="1536" y="850" fill="#111820" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="end">FC-WORKTREE-01 · FC-EVIDENCE-01 · FC-SCOPE-01</text>
+</svg>

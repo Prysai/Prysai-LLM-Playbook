@@ -102,6 +102,8 @@ assets; the case is explicitly synthetic.
 
 ![Four evidence lenses teaching board](assets/teaching/four-evidence-lenses-red-black.svg)
 
+![Field signal to safe degradation teaching board](assets/teaching/field-signal-to-safe-degradation-red-black.svg)
+
 The [real-estate sandbox](examples/skill-sandbox/product-context-real-estate/README.md)
 is a real local HTML/CSS result, captured at both desktop and 390px mobile
 viewports. The screenshots prove rendering only; they do not pretend that the
@@ -115,6 +117,7 @@ or production claim.
 | [Model choice is a test](assets/teaching/model-choice-is-a-test.svg) | Compare a task, working condition, smoke test, and bounded decision | It does not establish a universal model ranking, cost, speed, stability, or account-wide availability |
 | [Skill to observable output](assets/teaching/skill-to-observable-output.svg) | Trigger → input → method → inspectable artifact → four-case evaluation | A polished artifact is not proof that a Skill ran or that the method works everywhere |
 | [Evidence and recovery ladder](assets/teaching/evidence-recovery-ladder.svg) | Claim strength, missing proof, and the smallest safe recovery action | A teaching model; it does not establish runtime, user acceptance, or production readiness |
+| [Field signal to safe degradation](assets/teaching/field-signal-to-safe-degradation-red-black.svg) | Three current public reports mapped to unsupported inferences and the smallest safe response | Issues were open on 2026-08-12; no local reproduction or public maintainer root-cause confirmation |
 | [Real-estate guide case](docs/research/skill-case-product-context-real-estate-2026-08-11.md) | Product Context draft → design handoff → static buyer guide → browser screenshots | Project-owned example; no customer, market, inventory, conversion, advice, or runtime claim |
 
 The case is intentionally concrete: a fictional first-time buyer guide with a
@@ -305,6 +308,11 @@ Each case is classified as one or more of:
 Start with the [real-world problem index](docs/research/field-problems-index-2026-08-10.md),
 the [Codex problem research](docs/research/field-problems-codex.md), and the
 [coding-agent field cases](docs/research/field-problems-coding-agents-2026-08-10.md).
+For one current, fully bounded slice, open the
+[three-case live review](docs/research/codex-field-cases-current-review-2026-08-12.md)
+and its worktree, hidden-output, and scope-expansion case cards. They preserve
+the distinction between a user report, an official product boundary, a project
+teaching inference, and a scenario not reproduced locally.
 For task design, read [prompt patterns for real work](docs/research/prompt-patterns-for-real-work-2026-08-10.md)
 and the [official Codex fact cards](docs/research/codex-official-fact-cards-2026-08-10.md).
 The [README front-door benchmark](docs/research/README-front-door-benchmark-2026-08-10.md)

@@ -81,6 +81,17 @@ an output file, received-input comparison, diff, hash, command log, or
 redacted hand-off. A community workaround may help triage, but it is not an
 official fix and it does not authorize a persistent environment change.
 
+### Field case: a completed command can still leave an unreviewable claim
+
+The bounded case [FC-EVIDENCE-01](../../docs/research/field-case-hidden-verification-output-2026-08-12.md)
+uses issue #34951 to separate execution from audit evidence. The issue remains
+open, has no public maintainer diagnosis, and was not reproduced here. If the
+required output is hidden or absent, preserve only already-authorized exit,
+event, diff, artifact, hash, or read-back evidence; mark the audit claim
+`unverified`; and name the missing channel. Do not rerun a consequential action
+merely to recover presentation output, weaken a safety control, or infer that a
+success-shaped state proves the result.
+
 ## 1. Match claims to evidence
 
 Start with the sentence you want to say. Then ask what a second person would

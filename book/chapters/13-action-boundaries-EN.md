@@ -67,6 +67,18 @@ Read the [field-problems and prompt-patterns research](../../docs/research/field
 for the source URLs, dates, versions where reported, and evidence limits. The
 reports remain `candidate` teaching material until independently reproduced.
 
+### Field case: verification is not permission to replace an environment
+
+The bounded case [FC-SCOPE-01](../../docs/research/field-case-verification-scope-expansion-2026-08-12.md)
+uses issue #37677 to expose a mutation-class boundary. The issue remains open;
+its detailed root-cause language is the reporter's analysis, not a maintainer
+RCA, and this project did not reproduce the incident. The teaching decision is
+still concrete: source edit, test, build, install, restart, publish, deploy,
+commit, push, and delete are separate action classes. If verification requires
+a new persistent or external side effect, stop and disclose the exact target,
+effect, source artifact, dirty state, rollback material, and blocked evidence
+before requesting explicit direction.
+
 ## 1. Five action classes
 
 Use the following classes as a starting point. They are not permanent labels for
@@ -312,6 +324,8 @@ directory or writable root is another.
 the exact target path with the allowed read/write roots.  
 **Stop when:** the roots do not match or ownership is unclear.
 
+Full case record: [FC-WORKTREE-01](../../docs/research/field-case-worktree-target-mismatch-2026-08-12.md).
+
 ### Verification becomes environment replacement
 
 **Symptom:** a request to validate source code turns into installing packages,
@@ -319,6 +333,8 @@ changing persistent configuration, restarting a service, or deploying.
 **Smallest check:** split source, tests, local runtime, published artifact,
 deployment, restart, and live verification into separate claims.  
 **Stop when:** the next step needs new authorization or a persistent side effect.
+
+Full case record: [FC-SCOPE-01](../../docs/research/field-case-verification-scope-expansion-2026-08-12.md).
 
 ### Long wait followed by a retry
 
