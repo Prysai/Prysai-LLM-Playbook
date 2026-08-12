@@ -163,26 +163,26 @@ Object.assign(copy.zh, {
 
 Object.assign(copy.en, {
   visualCaseTitle: 'See the method in context.',
-  visualCaseIntro: 'Two teaching cards and a concept case follow one thread: brief → context → page → screenshot.',
+  visualCaseIntro: 'Teaching boards and a rendered concept case follow one thread: request → boundary → artifact → evidence.',
   visualCaseBoundary: 'local rendering evidence · no customer or live-system claim',
-  visualModelLink: 'Model choice is a test',
-  visualModelBody: 'Task, comparison tuple, smoke test, bounded decision.',
-  visualSkillLink: 'Skill to observable output',
-  visualSkillBody: 'Trigger, inputs, method, artifact, and four-case evaluation.',
-  visualCaseLink: 'Real-estate concept case',
-  visualCaseBody: 'Product Context draft → static page → browser screenshot.'
+  visualModelLink: 'Request to evidence',
+  visualModelBody: 'Scope, action, check, and bounded handoff.',
+  visualSkillLink: 'Four evidence lenses',
+  visualSkillBody: 'Existence, correctness, readiness, and learning.',
+  visualCaseLink: 'Real-estate guide case',
+  visualCaseBody: 'Context draft → design handoff → buyer guide → desktop and mobile evidence.'
 });
 
 Object.assign(copy.zh, {
   visualCaseTitle: '\u770b\u4e00\u4e2a\u65b9\u6cd5\u5982\u4f55\u4ea7\u751f\u4ea4\u4ed8\u7269\u3002',
-  visualCaseIntro: '\u4e24\u5f20\u6559\u5b66\u5361\u548c\u4e00\u4e2a\u6982\u5ff5\u6848\u4f8b\u6cbf\u7740\u540c\u4e00\u6761\u7ebf\u7d22\uff1a\u7b80\u8981 \u2192 \u4e0a\u4e0b\u6587 \u2192 \u9875\u9762 \u2192 \u622a\u56fe\u3002',
+  visualCaseIntro: '\u6559\u5b66\u56fe\u677f\u4e0e\u771f\u5b9e\u6e32\u67d3\u6848\u4f8b\u6cbf\u7740\u540c\u4e00\u6761\u7ebf\u7d22\uff1a\u8bf7\u6c42 \u2192 \u8fb9\u754c \u2192 \u4ea4\u4ed8\u7269 \u2192 \u8bc1\u636e\u3002',
   visualCaseBoundary: '\u672c\u5730\u6e32\u67d3 \u00b7 \u6982\u5ff5\u6848\u4f8b',
-  visualModelLink: '\u6a21\u578b\u9009\u62e9\u662f\u4e00\u6b21\u6d4b\u8bd5',
-  visualModelBody: '\u4efb\u52a1\u3001\u5bf9\u6bd4\u5143\u7ec4\u3001\u5192\u70df\u6d4b\u8bd5\u548c\u6709\u8fb9\u754c\u7684\u51b3\u7b56\u3002',
-  visualSkillLink: 'Skill \u5230\u53ef\u89c2\u5bdf\u8f93\u51fa',
-  visualSkillBody: '\u89e6\u53d1\u3001\u8f93\u5165\u3001\u65b9\u6cd5\u3001\u4ea4\u4ed8\u7269\u548c\u56db\u7c7b\u6848\u4f8b\u8bc4\u6d4b\u3002',
-  visualCaseLink: '\u623f\u5730\u4ea7\u6982\u5ff5\u6848\u4f8b',
-  visualCaseBody: 'Product Context \u8349\u7a3f \u2192 \u9759\u6001\u9875\u9762 \u2192 \u6d4f\u89c8\u5668\u622a\u56fe\u3002'
+  visualModelLink: '\u4ece\u8bf7\u6c42\u5230\u8bc1\u636e',
+  visualModelBody: '\u8303\u56f4\u3001\u884c\u52a8\u3001\u68c0\u67e5\u4e0e\u6709\u8fb9\u754c\u7684\u4ea4\u63a5\u3002',
+  visualSkillLink: '\u56db\u4e2a\u8bc1\u636e\u955c\u5934',
+  visualSkillBody: '\u5b58\u5728\u3001\u6b63\u786e\u3001\u53ef\u7528\u4e0e\u771f\u6b63\u5b66\u4f1a\u3002',
+  visualCaseLink: '\u9996\u6b21\u8d2d\u623f\u6307\u5357\u6848\u4f8b',
+  visualCaseBody: '\u4e0a\u4e0b\u6587\u8349\u7a3f \u2192 \u8bbe\u8ba1\u4ea4\u63a5 \u2192 \u4e70\u5bb6\u6307\u5357 \u2192 \u684c\u9762\u548c\u624b\u673a\u8bc1\u636e\u3002'
 });
 
 Object.assign(copy.en, {

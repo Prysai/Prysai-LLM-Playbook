@@ -96,7 +96,16 @@ assets; the case is explicitly synthetic.
 
 ![Skill to observable output](assets/teaching/skill-to-observable-output.svg)
 
-![Fictional real-estate Product Context concept page](assets/cases/product-context-real-estate-desktop.png)
+![Synthetic first-time buyer guide produced from a bounded Product Context handoff](assets/cases/product-context-real-estate-desktop.png)
+
+![Request to evidence teaching board](assets/teaching/task-to-evidence-red-black.svg)
+
+![Four evidence lenses teaching board](assets/teaching/four-evidence-lenses-red-black.svg)
+
+The [real-estate sandbox](examples/skill-sandbox/product-context-real-estate/README.md)
+is a real local HTML/CSS result, captured at both desktop and 390px mobile
+viewports. The screenshots prove rendering only; they do not pretend that the
+Skill ran autonomously or that a fictional page has market impact.
 
 Local concept rendering only; not a customer, market, inventory, conversion,
 or production claim.
@@ -106,14 +115,15 @@ or production claim.
 | [Model choice is a test](assets/teaching/model-choice-is-a-test.svg) | Compare a task, working condition, smoke test, and bounded decision | It does not establish a universal model ranking, cost, speed, stability, or account-wide availability |
 | [Skill to observable output](assets/teaching/skill-to-observable-output.svg) | Trigger → input → method → inspectable artifact → four-case evaluation | A polished artifact is not proof that a Skill ran or that the method works everywhere |
 | [Evidence and recovery ladder](assets/teaching/evidence-recovery-ladder.svg) | Claim strength, missing proof, and the smallest safe recovery action | A teaching model; it does not establish runtime, user acceptance, or production readiness |
-| [Real-estate concept case](docs/research/skill-case-product-context-real-estate-2026-08-11.md) | Product Context draft → static landing page → browser screenshot | Project-owned example; no customer, market, inventory, conversion, or runtime claim |
+| [Real-estate guide case](docs/research/skill-case-product-context-real-estate-2026-08-11.md) | Product Context draft → design handoff → static buyer guide → browser screenshots | Project-owned example; no customer, market, inventory, conversion, advice, or runtime claim |
 
-The case is intentionally concrete: a fictional buyer-first brokerage page with
-a sample property card, a visible `CONCEPT PAGE / NO LIVE LISTINGS` label, and a panel
-that says what the screenshot can and cannot prove. The Product Context Skill
-was not run as an independent live invocation; the page is a project-owned
-implementation based on the Skill contract, and the screenshot documents its
-local rendering only.
+The case is intentionally concrete: a fictional first-time buyer guide with a
+visible synthetic-case warning, preparation checks, a six-stage decision table,
+question prompts, and a contact action withheld because no real owner or privacy
+authority exists. An earlier lifestyle landing page was rejected during review
+for generic AI-associated visual patterns; the Skill contract and artifact were
+then remediated together. The Product Context Skill was not run as an independent
+live invocation, and the screenshots document local rendering only.
 
 ## Why this project exists
 

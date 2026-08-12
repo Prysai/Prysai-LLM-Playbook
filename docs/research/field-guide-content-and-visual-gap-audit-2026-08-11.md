@@ -51,7 +51,7 @@
 | Book | 22 章覆盖从 GPT/Codex 边界到团队能力和持续更新；`book/README-EN.md` 已写出章节最低契约。 | 深度和主题连续性足够支撑一套教材。 | 章节现场的卡片、实验、失败、验收和图解密度不稳定；1–9 章有 `-EN` 源文件，10–22 章仍主要使用无 locale 后缀文件。 |
 | Labs | 13 个实验，方向覆盖安全任务、任务协议、证据审查、Skill、Agent、动作边界、研究、工程、产品上下文和团队迁移。 | 给抽象原则提供可行动的练习对象。 | 当前状态是 `draft` / `not_run`；实验入口与章节的“现在就做”关系还不够近。 |
 | 状态 | 页面和治理文件公开 `candidate`、`draft`、`not_run`，并说明部分案例是用户报告或本地渲染。 | 读者不容易把文档数量误读为生产证明。 | 状态标签没有统一附带“下一步”和“不能声称什么”，容易成为维护者术语而不是学习反馈。 |
-| 视觉 | 现有 `assets/readme/codex-field-guide-header.svg`、4 张教学 SVG 和 1 张房地产概念案例 PNG；英文第 8 章有 2 个图像引用，第 9 章有 1 个，其余章节基本没有嵌入图解。 | 少数机制已经能被一眼理解。 | 视觉层没有沿 22 章形成可预期的教学节奏；读者更多看到文字结构，而不是机制、状态和证据之间的关系。 |
+| 视觉 | 审计时只有 header、4 张教学 SVG 和 1 张房地产概念案例 PNG。2026-08-12 已新增两张红黑教学板，并把房地产案例重做为首次购房指南的桌面/手机证据。 | 少数机制已经能被一眼理解。 | 视觉层仍没有沿 22 章形成可预期的教学节奏；读者更多看到文字结构，而不是机制、状态和证据之间的关系。 |
 | 案例 | Product Context 案例明确是合成 brief、静态 HTML/CSS/inline SVG 和本地截图；明确声明没有真实客户、库存、转化或独立 Skill runtime 证明。 | 这是一个诚实的边界教学案例。 | 目前缺少至少 2–3 个同样结构化的“公开现场问题 → 证据级别 → 安全检查 → 降级路径”教学卡。 |
 
 ### 当前最值得保留的基础
@@ -201,7 +201,7 @@ Starlight 的 sidebar、pagination/prev-next 和 locale 目录模式适合借鉴
 | 14 `book/chapters/14-discover-and-audit-skills.md` | 外部 Skill 来源 → 许可证 → 依赖 → 权限 → 验证 → 维护流程。 | 许可证不明、秘密泄露、依赖含糊；失败时不安装、不运行，记录阻塞原因。 | 产出一张 provenance/audit card，并链接 `asset-register.md`。 |
 | 15 `book/chapters/15-research-track.md` | 问题 → 一手来源 → 声明 → 引用 → 复核时间线。 | 来源冲突或二手建议伪装成事实；故意只保留一条来源并标注不足。 | Lab 008 交付 source matrix；验收逐条对应 URL、日期和证据边界。 |
 | 16 `book/chapters/16-engineering-track.md` | 基线 → 改动 → 静态检查 → build → runtime → 发布证据图。 | build 绿但运行时坏、依赖/环境不一致；故意将 build evidence 与 runtime evidence 分开。 | Lab 009 记录命令、环境、diff、运行结果和未验证项。 |
-| 17 `book/chapters/17-marketing-track.md` | Product Context → 消息 → 页面 → 实验 → 指标图。 | 虚构客户、库存、偏好或转化；保留现有房地产概念案例的 synthetic boundary。 | Lab 010 产出 facts/hypotheses/unknowns 表和本地截图，不得声称业务结果。 |
+| 17 `book/chapters/17-marketing-track.md` | Product Context → 消息 → 页面 → 实验 → 指标图。 | 虚构客户、库存、偏好或转化；保留房地产首次购房指南的 synthetic 与 no-advice boundary。 | Lab 010 产出 facts/hypotheses/unknowns 表和本地截图，不得声称业务结果。 |
 | 18 `book/chapters/18-content-design-data-automation.md` | 来源数据 → schema → 转换 → 内容/设计产物 → 校验链。 | 脏输入、过时数据、格式化成功但内容错误；故意引入一个坏字段。 | sandbox 转换并保留输入 schema、日志、输出和复算方式。 |
 | 19 `book/chapters/19-evaluate-models-and-workflows.md` | 固定任务 → run-id → 评分 → 错误分类 → 人工审查卡。 | 指标游戏、只报最好的运行或把 `not_run` 写成结论；失败时保留原始结果。 | 用 `evals/task-set-v1.yaml` 做一组小样本；只有真实运行记录才能升级结果状态。 |
 | 20 `book/chapters/20-personal-codex-work-system.md` | 项目规则、任务上下文、当前状态、模板、复盘记录的循环图。 | 过时上下文、秘密进入模板、旧命令无限复用；故意加入 stale record 并触发复核。 | 建立不含秘密的个人工作包；提交迁移清单和过期判断。 |

@@ -68,6 +68,33 @@ path, and rollback target. A draft context is not authoritative until the owner
 accepts that entry. Keep a proposal, a confirmed write, and a published change
 as separate states; completion of one does not imply the next.
 
+## Downstream design handoff
+
+Product Context constrains downstream design; it does not choose a visual style
+by taste, generate a finished interface, or verify visual quality. When the
+downstream artifact is a web page, application, presentation, report, or other
+visual deliverable, provide a `design_handoff` that states:
+
+- the real user task and the decision the artifact must support;
+- the required information hierarchy and minimum useful information density;
+- familiar industry patterns that users can recognise without explanation;
+- required trust signals, sources, disclosures, ownership, and contact details;
+- which photography, inventory, data, customer language, testimonials, and
+  approved brand assets actually exist;
+- prohibited visual or copy patterns that would fabricate evidence or imply
+  unsupported authority; and
+- target viewports, accessibility conditions, review owner, and acceptance
+  checks for the rendered artifact.
+
+If real photography, inventory, customer language, testimonials, or an approved
+brand system is absent, do not fill the gap with lifestyle copy, synthetic
+listings, decorative property illustrations, oversized editorial serif type,
+soft gradient blobs, floating cards, or excessive rounding. Prefer a buyer
+guide, service explanation, checklist, comparison, or decision tool whose
+usefulness does not depend on invented evidence. A visually polished artifact
+remains unverified until it has been rendered and reviewed under the stated
+conditions.
+
 ## Risk, side effects, and confirmation
 
 Drafting from supplied sources is `R0` or `R1`. Writing the canonical file is
@@ -101,10 +128,11 @@ Return exactly:
 7. `proof_points_and_evidence_gaps`
 8. `changelog_entry`
 9. `downstream_handoff`
-10. `risk_and_permissions` — include `risk`, `action_state` (`draft_only`,
+10. `design_handoff`
+11. `risk_and_permissions` — include `risk`, `action_state` (`draft_only`,
     `write_blocked`, `write_confirmed`, or `handoff_required`), exact target,
     privacy decision, owner, confirmation, backup/rollback, and stop conditions
-11. `content_status`
+12. `content_status`
 
 ## Evidence and status mapping
 
@@ -125,6 +153,6 @@ downstream claims.
 - `source`: `docs/charter.md`; `CONTEXT.md`; `docs/quality/skill-quality-standard.md`
 - `license`: original rewrite; supplied customer or external material remains governed by its source permission
 - `owner`: product-context maintainer
-- `version`: `0.2.0`
+- `version`: `0.3.0`
 - `review_date`: `2026-09-09`
 - `content_status`: `candidate`

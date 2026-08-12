@@ -43,7 +43,7 @@ concept page. Read the [case record](../../docs/research/skill-case-product-cont
 before looking at the screenshot. It names the synthetic inputs, the local
 rendering command, the recorded viewport, and the claims the image cannot make.
 
-![Local rendering of the fictional real-estate concept page](../../assets/cases/product-context-real-estate-desktop.png)
+![Local rendering of the synthetic first-time buyer guide](../../assets/cases/product-context-real-estate-desktop.png)
 
 The screenshot is evidence of one local render at the recorded viewport. It is
 not evidence that the Product Context Skill ran independently, that the listing

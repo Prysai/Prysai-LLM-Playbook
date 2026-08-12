@@ -2,6 +2,8 @@
 
 # Chapter 19: Evaluate Models and Workflows — From Impressions to Evidence
 
+![Teaching board: separate artifact existence, correctness, readiness, and learning evidence](../../assets/teaching/four-evidence-lenses-red-black.svg)
+
 > `content_status: candidate`
 > `experiment_status: draft / not run`
 >

@@ -6,11 +6,12 @@ claim, not a product screenshot gallery.
 
 ## Current case
 
-- [Product Context real-estate concept](product-context-real-estate-desktop.png)
+- [Product Context real-estate guide · 1440px desktop](product-context-real-estate-desktop.png)
+- [Product Context real-estate guide · 390px mobile](product-context-real-estate-mobile.png)
 - [Case source and evidence record](../../docs/research/skill-case-product-context-real-estate-2026-08-11.md)
 - [Disposable sandbox](../../examples/skill-sandbox/product-context-real-estate/)
 
-The current image documents a local static render at the recorded viewport. It
+The current images document local static renders at the recorded viewports. They
 does not establish live data, customer demand, market performance, a runtime
 Skill invocation, or production readiness.
 

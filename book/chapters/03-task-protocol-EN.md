@@ -2,6 +2,8 @@
 
 # Chapter 3: Turn a wish into a task protocol
 
+![Teaching board: move from a request through scope, action, checking, and a bounded handoff](../../assets/teaching/task-to-evidence-red-black.svg)
+
 ## The problem this chapter solves
 
 “Make the homepage better.” “Research this.” “Use the best Skill.” “Deploy

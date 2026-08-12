@@ -464,13 +464,17 @@ local screenshot
 
 The local sandbox source is [available here](../../examples/skill-sandbox/product-context-real-estate/README.md), and the existing screenshot is shown below.
 
-![Synthetic real-estate concept page rendered in the local sandbox](../../assets/cases/product-context-real-estate-desktop.png)
+![Synthetic first-time buyer guide rendered in the local sandbox](../../assets/cases/product-context-real-estate-desktop.png)
 
-The screenshot can support a narrow claim: a project-owned static artifact was rendered at a recorded viewport with an illustrative-data boundary. It cannot support any of these stronger claims:
+The [390px capture](../../assets/cases/product-context-real-estate-mobile.png)
+checks the same artifact under a narrow viewport. Neither image proves that
+the Skill executed autonomously or that the concept changes buyer behaviour.
+
+The screenshot can support a narrow claim: a project-owned static guide was rendered at recorded viewports with its synthetic and no-advice boundaries visible. It cannot support any of these stronger claims:
 
 - the Product Context Skill generated the page independently;
 - Harbor & Key Realty is a real business;
-- the property card describes live inventory;
+- the buying sequence is universally applicable or professional advice;
 - buyers prefer the message;
 - the page increases trust, enquiries, conversion, speed, or sales; or
 - the page is legally approved, accessible in every context, or production-ready.
@@ -554,33 +558,35 @@ A failure test should be visible to a reviewer who does not know the implementat
 
 ### The fixture
 
-The real-estate sandbox deliberately displays two labels:
-
-```text
-CONCEPT LISTING
-CONCEPT PAGE / NO LIVE LISTINGS
-```
-
-They are not decoration. They stop a plausible property card from being mistaken for live inventory.
+The real-estate sandbox deliberately displays a synthetic-case banner, a
+no-advice boundary, and a disabled contact action that explains why no contact
+channel exists. These are not decoration. They prevent an informational guide
+from being mistaken for a real service or universal buying advice.
 
 ### The mutation
 
-In a disposable copy only, remove both labels while leaving the rest of the card visually plausible. Do not alter the repository's canonical sandbox. The mutation changes one important variable: the evidence boundary is no longer visible.
+In a disposable copy only, remove the synthetic-case banner and enable a contact
+button without adding a real owner or privacy notice. Do not alter the
+repository's canonical sandbox. The mutation changes one important variable:
+the evidence and authority boundary is no longer visible.
 
 ### The expected visible signal
 
 ```text
-FAIL — the card still looks like a listing, but the synthetic/no-live-data
-boundary is absent from the rendered page.
+FAIL — the guide now looks like a real service, but its synthetic status,
+contact authority, and privacy boundary are absent.
 ```
 
-The evaluator should be able to see the missing signal in the page, not only in a source diff. Reject the output even if the typography, layout, and property fields look polished. Restore the labels from the disposable baseline, then record:
+The evaluator should be able to see the missing signal in the page, not only in
+a source diff. Reject the output even if the typography and layout look
+polished. Restore the boundary and disabled action from the disposable baseline,
+then record:
 
 ```text
-failure_class: missing boundary signal
-last_known_good: baseline with both status labels
-unsafe_claim_prevented: live inventory or real brokerage impression
-rollback_check: labels visible again; no canonical files changed
+failure_class: missing authority and privacy boundary
+last_known_good: baseline with synthetic banner and withheld contact action
+unsafe_claim_prevented: real service or authorised contact impression
+rollback_check: boundaries visible again; no canonical files changed
 ```
 
 This failure teaches a general rule: an important limitation must be represented in the artifact at the point where a reader could otherwise misunderstand it.
@@ -648,12 +654,12 @@ Use the existing [synthetic real-estate sandbox](../../examples/skill-sandbox/pr
 Prepare a short `task.md` in the temporary directory containing:
 
 ```text
-Goal: audit whether the concept page keeps its synthetic-data boundary visible.
+Goal: audit whether the buyer guide keeps its synthetic, advice, and contact-authority boundaries visible.
 Allowed: read the local brief, context draft, HTML, and CSS; write an audit note
 inside the temporary copy only.
 Forbidden: network, credentials, publication, analytics, lead capture, and
 changes to the repository copy.
-Acceptance: identify the two status labels, list the evidence they provide,
+Acceptance: identify the synthetic banner and withheld contact action, list the evidence they provide,
 and state what the screenshot cannot prove.
 Stop: stop on a missing file, unexpected external URL, or path ambiguity.
 ```
@@ -666,8 +672,8 @@ Read `brief.md`, `context-draft.md`, `index.html`, and `README.md`. Confirm that
 
 1. the brief says the input is fictional;
 2. the context draft distinguishes facts, hypotheses, decisions, and unknowns;
-3. the page contains `CONCEPT LISTING` and `CONCEPT PAGE / NO LIVE LISTINGS`;
-4. the page declares no live inventory, lead capture, or external media; and
+3. the page contains the synthetic-case warning and a disabled contact action;
+4. the page declares no live inventory, advice, lead capture, or external media; and
 5. the audit note does not claim Skill runtime execution or business impact.
 
 Expected positive artifact set:

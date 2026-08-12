@@ -73,7 +73,13 @@ or production readiness.
 
 ![Model choice is a test](assets/teaching/model-choice-is-a-test.svg)
 
-![Fictional real-estate Product Context concept page](assets/cases/product-context-real-estate-desktop.png)
+![From request to evidence](assets/teaching/task-to-evidence-red-black.svg)
+
+![Synthetic first-time buyer guide produced from a bounded Product Context handoff](assets/cases/product-context-real-estate-desktop.png)
+
+The same local artifact was checked at 390px. See the
+[mobile capture](assets/cases/product-context-real-estate-mobile.png) and the
+[sandbox source](examples/skill-sandbox/product-context-real-estate/README.md).
 
 The Reader opens Chapter 1 when entered without a path. It is a reading view
 over the Markdown sources, not a replacement for them. The repository includes

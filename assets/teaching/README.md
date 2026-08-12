@@ -9,6 +9,8 @@ see before the reader works through the prose.
 - [Skill to observable output](skill-to-observable-output.svg)
 - [Lifecycle checkpoints](lifecycle-checkpoints.svg)
 - [Evidence and recovery ladder](evidence-recovery-ladder.svg)
+- [Request to evidence](task-to-evidence-red-black.svg)
+- [Four evidence lenses](four-evidence-lenses-red-black.svg)
 
 The cards are visual explanations, not benchmark results. Their scope,
 ownership, and reuse boundary are recorded in the
