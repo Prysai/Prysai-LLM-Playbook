@@ -36,11 +36,11 @@
   const bookNavigation = manifest.book_navigation || { parts: [], chapters: [] };
   const readerCopy = {
     en: {
-      skip: 'Skip to content', back: 'Back to overview', language: 'Language', languageAria: 'Choose reading language', detailsAria: 'Page details', bookChaptersAria: 'Book chapters', bookChapters: 'Book chapters', chapterList: 'Chapter list', pageDetails: 'Page details', trustRecord: 'Trust record', trustScope: 'Scope', trustReview: 'Next review', trustLimitations: 'Known limitation', trustUnavailable: 'unavailable', trustUnavailableDetail: 'The trust registry could not be loaded. This is a data failure, not evidence that the page has no record.', chapterNavigationAria: 'Chapter navigation', previousChapter: 'Previous chapter', nextChapter: 'Next chapter', onThisPageAria: 'On this page', onThisPage: 'On this page', readingRoute: 'Reading route', sourcePath: 'Source path', contentIdentity: 'Content identity', openSource: 'Open source file ↗', footer: 'Source remains Markdown; this page is a static reading view', loading: 'Loading the source page…',
+      skip: 'Skip to content', back: 'Back to overview', language: 'Language', languageAria: 'Choose reading language', detailsAria: 'Page details', bookChaptersAria: 'Book chapters', bookChapters: 'Book chapters', chapterList: 'Chapter list', pageDetails: 'Page details', trustRecord: 'Trust record', trustScope: 'Scope', trustReview: 'Next review', trustLimitations: 'Known limitation', trustUnavailable: 'unavailable', trustUnavailableDetail: 'The trust registry could not be loaded. This is a data failure, not evidence that the page has no record.', chapterNavigationAria: 'Chapter navigation', previousChapter: 'Previous chapter', nextChapter: 'Next chapter', onThisPageAria: 'On this page', onThisPage: 'On this page', readingRoute: 'Reading route', sourcePath: 'Source path', contentIdentity: 'Content identity', openSource: 'Open source file ↗', footer: 'Source remains Markdown; this page is a static reading view', loading: 'Loading the source page…', copyPrompt: 'Copy prompt', copiedPrompt: 'Prompt copied', copyFailed: 'Copy failed',
       fallbackEnglish: (name) => `${name} is not available for this page yet. Showing the current English source.`, fallbackSource: (name, source) => `${name} is not available for this page yet. Showing the current ${source} source.`, invalidPath: 'This reader URL does not name an allowed project source file. Return to the overview and choose a page from the guide.', loadError: (status) => `The source page could not be loaded (${status}).`
     },
     zh: {
-      skip: '跳到正文', back: '返回总览', language: '语言', languageAria: '选择阅读语言', detailsAria: '页面详情', bookChaptersAria: '全书章节', bookChapters: '全书章节', chapterList: '章节列表', pageDetails: '页面详情', trustRecord: '信任记录', trustScope: '范围', trustReview: '下次复核', trustLimitations: '已知限制', trustUnavailable: '不可用', trustUnavailableDetail: '信任登记表加载失败。这是数据故障，不代表本页没有登记记录。', chapterNavigationAria: '章节导航', previousChapter: '上一章', nextChapter: '下一章', onThisPageAria: '本页目录', onThisPage: '本页目录', readingRoute: '阅读路线', sourcePath: '源文件路径', contentIdentity: '内容身份', openSource: '打开源文件 ↗', footer: '源文件仍是 Markdown；此页面是静态阅读视图', loading: '正在加载源文件……',
+      skip: '跳到正文', back: '返回总览', language: '语言', languageAria: '选择阅读语言', detailsAria: '页面详情', bookChaptersAria: '全书章节', bookChapters: '全书章节', chapterList: '章节列表', pageDetails: '页面详情', trustRecord: '信任记录', trustScope: '范围', trustReview: '下次复核', trustLimitations: '已知限制', trustUnavailable: '不可用', trustUnavailableDetail: '信任登记表加载失败。这是数据故障，不代表本页没有登记记录。', chapterNavigationAria: '章节导航', previousChapter: '上一章', nextChapter: '下一章', onThisPageAria: '本页目录', onThisPage: '本页目录', readingRoute: '阅读路线', sourcePath: '源文件路径', contentIdentity: '内容身份', openSource: '打开源文件 ↗', footer: '源文件仍是 Markdown；此页面是静态阅读视图', loading: '正在加载源文件……', copyPrompt: '复制提示词', copiedPrompt: '提示词已复制', copyFailed: '复制失败',
       fallbackEnglish: (name) => `此页面暂时没有${name}版本，当前显示英文源文件。`, fallbackSource: (name, source) => `此页面暂时没有${name}版本，当前显示${source}源文件。`, invalidPath: '这个阅读链接没有指向允许的项目源文件。请返回总览，从指南中选择页面。', loadError: (status) => `源文件加载失败（${status}）。`
     }
   };
@@ -471,6 +471,33 @@ function canonicalChapterTitle(chapter) {
     return fragment;
   }
 
+  function addPromptCopyControls(path) {
+    if (path !== 'book/communication-clinic-EN.md') return;
+    article.querySelectorAll('pre').forEach((pre) => {
+      const code = pre.querySelector(':scope > code');
+      if (!code || !code.textContent.trim()) return;
+      const wrapper = document.createElement('div');
+      wrapper.className = 'reader-prompt-block';
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'reader-copy-prompt';
+      button.textContent = currentReaderCopy().copyPrompt;
+      const status = document.createElement('span');
+      status.className = 'reader-copy-status';
+      status.setAttribute('aria-live', 'polite');
+      pre.before(wrapper);
+      wrapper.append(button, pre, status);
+      button.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(code.textContent);
+          status.textContent = currentReaderCopy().copiedPrompt;
+        } catch (_) {
+          status.textContent = currentReaderCopy().copyFailed;
+        }
+      });
+    });
+  }
+
   function contentRecord(path) {
     const contentId = manifest.path_index?.[path] || null;
     return { contentId, content: contentId ? manifest.contents?.[contentId] : null };
@@ -641,6 +668,7 @@ function canonicalChapterTitle(chapter) {
       article.append(context);
     }
     article.append(renderBlocks(source, selection.path));
+    addPromptCopyControls(selection.path);
     article.setAttribute('aria-busy', 'false');
     const title = chapter ? canonicalChapterTitle(chapter) : article.querySelector('h1')?.textContent?.trim() || selection.path;
     buildTableOfContents();

@@ -12,6 +12,7 @@ see before the reader works through the prose.
 - [Request to evidence](task-to-evidence-red-black.svg)
 - [Four evidence lenses](four-evidence-lenses-red-black.svg)
 - [Field signal to safe degradation](field-signal-to-safe-degradation-red-black.svg)
+- [Beginner practice loop](beginner-practice-loop-red-black.svg)
 
 The cards are visual explanations, not benchmark results. Their scope,
 ownership, and reuse boundary are recorded in the

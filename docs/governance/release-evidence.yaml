@@ -95,6 +95,9 @@
         {"id": "skill-routing-contract", "argv": ["{python}", "scripts/validate_skill_routing_contract.py"]},
         {"id": "skill-routing-contract-fixtures", "argv": ["{python}", "scripts/test_skill_routing_contract.py"]},
         {"id": "evaluation-fixtures", "argv": ["{python}", "scripts/validate_eval_tasks.py"]},
+        {"id": "learning-practice-candidate", "argv": ["{python}", "scripts/validate_learning_practice_candidate.py"]},
+        {"id": "evidence-review-candidate", "argv": ["{python}", "scripts/validate_evidence_review_candidate.py"]},
+        {"id": "evidence-review-candidate-fixtures", "argv": ["{python}", "scripts/test_evidence_review_candidate.py"]},
         {"id": "all-learning-contracts", "argv": ["{python}", "scripts/validate_learning_contract.py"]}
       ]
     },

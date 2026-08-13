@@ -18,6 +18,11 @@ CONTRACT_PATH = ROOT / "docs/governance/release-evidence.yaml"
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 MATURITY = ("draft", "candidate", "verified", "production-ready")
+REQUIRED_COMMANDS = {
+    "learning-practice-candidate": ("{python}", "scripts/validate_learning_practice_candidate.py"),
+    "evidence-review-candidate": ("{python}", "scripts/validate_evidence_review_candidate.py"),
+    "evidence-review-candidate-fixtures": ("{python}", "scripts/test_evidence_review_candidate.py"),
+}
 
 
 def load_object(path: Path) -> dict[str, Any]:
@@ -98,6 +103,26 @@ def validate_contract(contract: dict[str, Any]) -> list[str]:
                 if signature in command_signatures:
                     errors.append(f"{command_label} duplicates an existing command")
                 command_signatures.add(signature)
+    missing_required = sorted(set(REQUIRED_COMMANDS) - command_ids)
+    if missing_required:
+        errors.append(
+            "release evidence is missing required command ids: "
+            + ", ".join(missing_required)
+        )
+    for command_id, required_argv in REQUIRED_COMMANDS.items():
+        actual = next(
+            (
+                tuple(command.get("argv", []))
+                for dimension in contract.get("dimensions", [])
+                for command in dimension.get("commands", [])
+                if command.get("id") == command_id
+            ),
+            None,
+        )
+        if actual is not None and actual != required_argv:
+            errors.append(
+                f"required command {command_id} must use argv {list(required_argv)}"
+            )
     return errors
 
 

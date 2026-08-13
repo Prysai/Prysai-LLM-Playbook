@@ -6,7 +6,7 @@
 - 章节、实验和学习路径链接通过 `content_id + locale` manifest 解析；目标文件缺失时回退到 English source，并通过页面 banner 与链接状态标记 pending。fallback 不等于翻译完成；
 - L0—L6 成长路径标签切换，会更新当前等级的说明与章节入口，并支持方向键、Home/End；
 - 22 章路线按 A—D 四条路线筛选，并保留章节折叠；
-- 实验区展示当前实际存在的 17 个实验，并链接到英文实验索引；
+- 实验区展示当前实际存在的 18 个实验，并链接到英文实验索引；
 - 响应式导航在窄屏下折叠为菜单，支持 Escape 关闭和焦点返回；
 - 首页语言入口使用普通导航语义并标记当前页面；Reader 提供跳到正文、异步加载/错误状态、正文语言标记和高对比度下划线 fallback；
 - 所有章节、实验、Skill、质量记录链接指向仓库内的真实文件；chapter/lab 路由身份由 `content-status.yaml` 与 manifest 共同覆盖。
@@ -68,6 +68,12 @@ the repository's Pages settings or API state before calling the site deployed.
 The workflow's success is not, by itself, proof that Pages is enabled or that
 the public URL is reachable.
 
+The workflow is named **Build the Field Guide Pages candidate artifact**. With
+the default `deploy: false`, its summary records
+`deployment_status=not_deployed`; a green run means only that the bounded
+review artifact was built and uploaded. Deployment requires an explicit
+`deploy: true` dispatch and remains a separate observable job.
+
 The Pages root entry sets a release-only flag so the showcase rewrites Markdown
 reader links to `site/reader.html?path=...`. The reader fetches the original
 Markdown source and renders a bounded, dependency-free reading view; the source
@@ -89,7 +95,7 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 3. 在 EN / ZH 下确认正文、标题、description、aria-label 和 `lang` 同步；在 ES / JA / KO / DE 下确认英文 UI 与目标 locale fallback 都被明确标出；
 4. 点击章节、实验和学习路径入口，确认它们解析到当前 locale 的存在文件，或带 pending 标记的 English fallback；确认路径、查询参数和 hash 不丢失；
 5. 检查导航锚点、章节筛选、章节折叠和 L0—L6 切换；用方向键、Home/End 操作等级标签；
-6. 检查 17 个实验卡片、索引链接和窄屏布局与菜单展开；菜单打开后按 Escape，确认焦点回到菜单按钮；Reader 还要检查跳到正文、加载状态、错误状态和中文外壳文案；
+6. 检查 18 个实验卡片、索引链接和窄屏布局与菜单展开；菜单打开后按 Escape，确认焦点回到菜单按钮；Reader 还要检查跳到正文、加载状态、错误状态和中文外壳文案；
 7. 分别在 320px、390px、820px、980px 宽度检查无横向溢出、触控目标可用、中文不被截断；
 8. 确认没有外部字体、脚本、图片或 CDN 请求，控制台无错误；
 9. 在仓库根目录执行项目验证：

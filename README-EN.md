@@ -133,17 +133,14 @@ with two teaching cards, then follow one concept case from brief to context
 draft to a locally rendered page. The images below are project-owned teaching
 assets; the case is explicitly synthetic.
 
-![Model choice is a test](assets/teaching/model-choice-is-a-test.svg)
-
-![Skill to observable output](assets/teaching/skill-to-observable-output.svg)
+![From request to evidence](assets/teaching/task-to-evidence-red-black.svg)
 
 [![Synthetic first-time buyer guide produced from a bounded Product Context handoff](assets/cases/product-context-real-estate-thumbnail.png)](assets/cases/product-context-real-estate-desktop.png)
 
-![Request to evidence teaching board](assets/teaching/task-to-evidence-red-black.svg)
-
-![Four evidence lenses teaching board](assets/teaching/four-evidence-lenses-red-black.svg)
-
-![Field signal to safe degradation teaching board](assets/teaching/field-signal-to-safe-degradation-red-black.svg)
+Open the [teaching asset index](assets/teaching/README.md) for the model-choice,
+Skill-output, evidence-lens, field-signal, and beginner-practice boards. They are
+linked instead of stacked here because their small evidence labels must remain
+readable at the intended viewing size.
 
 The [real-estate sandbox](examples/skill-sandbox/product-context-real-estate/README.md)
 is a real local HTML/CSS result, captured at both desktop and 390px mobile

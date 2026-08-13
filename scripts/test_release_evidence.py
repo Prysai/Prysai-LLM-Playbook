@@ -23,6 +23,21 @@ def main() -> int:
     require(any("duplicate command id" in error for error in duplicate_errors), "duplicate command id was accepted")
     require(any("duplicates an existing command" in error for error in duplicate_errors), "duplicate command argv was accepted")
 
+    for required_id in evidence.REQUIRED_COMMANDS:
+        omitted_required = copy.deepcopy(contract)
+        for dimension in omitted_required["dimensions"]:
+            dimension["commands"] = [command for command in dimension["commands"] if command["id"] != required_id]
+        omission_errors = evidence.validate_contract(omitted_required)
+        require(any(required_id in error for error in omission_errors), f"omitting required gate {required_id} was accepted")
+
+        substituted_required = copy.deepcopy(contract)
+        for dimension in substituted_required["dimensions"]:
+            for command in dimension["commands"]:
+                if command["id"] == required_id:
+                    command["argv"] = ["{python}", "scripts/validate_project.py"]
+        substitution_errors = evidence.validate_contract(substituted_required)
+        require(any(required_id in error and "must use argv" in error for error in substitution_errors), f"substituting required gate {required_id} argv was accepted")
+
     failed_contract = copy.deepcopy(contract)
     failed_contract["dimensions"] = [{
         "id": "failure-fixture",
@@ -91,7 +106,7 @@ def main() -> int:
     require("Decision: `not_ready`" in rendered, "readiness decision missing from packet summary")
     require("`rollback`" in rendered, "readiness blocker missing from packet summary")
 
-    print("RELEASE_EVIDENCE_TESTS_OK fixtures=10")
+    print("RELEASE_EVIDENCE_TESTS_OK fixtures=16")
     return 0
 
 

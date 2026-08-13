@@ -73,13 +73,13 @@ local screenshot. The screenshot proves rendering at a recorded viewport;
 it does not prove live Skill execution, customer demand, inventory, conversion,
 or production readiness.
 
-![Model choice is a test](assets/teaching/model-choice-is-a-test.svg)
-
 ![From request to evidence](assets/teaching/task-to-evidence-red-black.svg)
 
-![Field signal to safe degradation](assets/teaching/field-signal-to-safe-degradation-red-black.svg)
-
 [![Synthetic first-time buyer guide produced from a bounded Product Context handoff](assets/cases/product-context-real-estate-thumbnail.png)](assets/cases/product-context-real-estate-desktop.png)
+
+More boards are available in the [teaching asset index](assets/teaching/README.md),
+including the [beginner practice loop](assets/teaching/beginner-practice-loop-red-black.svg)
+and the [field-signal boundary](assets/teaching/field-signal-to-safe-degradation-red-black.svg).
 
 The same local artifact was checked at 390px. See the
 [mobile capture](assets/cases/product-context-real-estate-mobile.png) and the

@@ -39,6 +39,17 @@ def main() -> int:
             require("missing generated target", findings, "missing-route")
             require("missing generated anchor", findings, "missing-anchor")
             fixtures += 2
+
+        reader_script = (Path(__file__).resolve().parents[1] / "site/reader.js").read_text(encoding="utf-8")
+        for required in (
+            "copyPrompt: 'Copy prompt'",
+            "copyPrompt: '复制提示词'",
+            "copiedPrompt: '提示词已复制'",
+            "status.setAttribute('aria-live', 'polite')",
+        ):
+            if required not in reader_script:
+                raise AssertionError(f"dynamic-copy-control: missing {required}")
+        fixtures += 1
     except (AssertionError, OSError, UnicodeError, ValueError) as exc:
         print("SITE_ACCESSIBILITY_FIXTURES_FAILED")
         print(f"- {exc}")

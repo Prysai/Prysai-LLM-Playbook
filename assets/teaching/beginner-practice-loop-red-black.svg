@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Beginner practice loop</title>
+  <desc id="desc">A four-step editorial diagram: attempt, correct, vary, and receipt. It warns that one good turn is not mastery.</desc>
+  <rect width="1600" height="900" fill="#f6f6f2"/>
+  <rect x="64" y="56" width="1472" height="10" fill="#161616"/>
+  <text x="64" y="132" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="4">BEGINNER PRACTICE PACK / 01</text>
+  <text x="64" y="218" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="900" letter-spacing="-4">TRY BEFORE YOU TRUST.</text>
+  <text x="66" y="263" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="20">same capability / changed conditions / evidence kept</text>
+
+  <g transform="translate(64 326)">
+    <rect width="352" height="346" fill="#161616"/>
+    <text x="26" y="48" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="22" font-weight="700">01</text>
+    <text x="26" y="112" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="900">ATTEMPT</text>
+    <rect x="26" y="139" width="92" height="7" fill="#d71920"/>
+    <text x="26" y="198" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">No answer leakage.</text>
+    <text x="26" y="238" fill="#b9b9b3" font-family="Arial, Helvetica, sans-serif" font-size="18">Save the learner's exact words</text>
+    <text x="26" y="267" fill="#b9b9b3" font-family="Arial, Helvetica, sans-serif" font-size="18">and the conditions of the try.</text>
+    <text x="26" y="318" fill="#ffffff" font-family="Consolas, 'Courier New', monospace" font-size="15">EVIDENCE / BASELINE</text>
+  </g>
+  <g transform="translate(438 326)">
+    <rect width="352" height="346" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="26" y="48" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="22" font-weight="700">02</text>
+    <text x="26" y="112" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="900">CORRECT</text>
+    <rect x="26" y="139" width="92" height="7" fill="#d71920"/>
+    <text x="26" y="198" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">Smallest useful hint.</text>
+    <text x="26" y="238" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="18">Fix the first consequential error.</text>
+    <text x="26" y="267" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="18">The learner authors the revision.</text>
+    <text x="26" y="318" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15">EVIDENCE / REVISION</text>
+  </g>
+  <g transform="translate(812 326)">
+    <rect width="352" height="346" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="26" y="48" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="22" font-weight="700">03</text>
+    <text x="26" y="112" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="900">VARY</text>
+    <rect x="26" y="139" width="92" height="7" fill="#d71920"/>
+    <text x="26" y="198" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">Changed case. Same skill.</text>
+    <text x="26" y="238" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="18">Change audience, details, time,</text>
+    <text x="26" y="267" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="18">or ambiguity. Remove the hints.</text>
+    <text x="26" y="318" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15">EVIDENCE / TRANSFER</text>
+  </g>
+  <g transform="translate(1186 326)">
+    <rect width="350" height="346" fill="#d71920"/>
+    <text x="26" y="48" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="22" font-weight="700">04</text>
+    <text x="26" y="112" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="900">RECEIPT</text>
+    <rect x="26" y="139" width="92" height="7" fill="#161616"/>
+    <text x="26" y="198" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">Evidence and limits.</text>
+    <text x="26" y="238" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18">Record what changed, what held,</text>
+    <text x="26" y="267" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18">what failed, and the next review.</text>
+    <text x="26" y="318" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15">STATUS / EXACT CLAIM</text>
+  </g>
+
+  <path d="M416 499h22M790 499h22M1164 499h22" stroke="#d71920" stroke-width="10"/>
+  <path d="m429 486 13 13-13 13M803 486l13 13-13 13M1177 486l13 13-13 13" fill="none" stroke="#d71920" stroke-width="6"/>
+
+  <g transform="translate(64 712)">
+    <text y="24" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="16">CLAIM LADDER</text>
+    <rect y="50" width="214" height="38" fill="#161616"/>
+    <text x="12" y="75" fill="#ffffff" font-family="Consolas, 'Courier New', monospace" font-size="14">template_selected</text>
+    <rect x="222" y="50" width="150" height="38" fill="#d71920"/>
+    <text x="237" y="75" fill="#ffffff" font-family="Consolas, 'Courier New', monospace" font-size="14">practised</text>
+    <rect x="380" y="50" width="172" height="38" fill="#deded8"/>
+    <text x="394" y="75" fill="#777770" font-family="Consolas, 'Courier New', monospace" font-size="14">demonstrated</text>
+    <rect x="560" y="50" width="150" height="38" fill="#deded8"/>
+    <text x="575" y="75" fill="#777770" font-family="Consolas, 'Courier New', monospace" font-size="14">transferred</text>
+    <rect x="718" y="50" width="132" height="38" fill="#deded8"/>
+    <text x="733" y="75" fill="#777770" font-family="Consolas, 'Courier New', monospace" font-size="14">retained</text>
+  </g>
+  <rect x="982" y="712" width="554" height="112" fill="#161616"/>
+  <text x="1014" y="756" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="17" font-weight="700">STOP / CLAIM LIMIT</text>
+  <text x="1014" y="801" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="900">ONE GOOD TURN ≠ MASTERY</text>
+  <text x="64" y="866" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="14">PRYSAI LAB / ORIGINAL TEACHING BOARD / CANDIDATE / 2026-08-13</text>
+</svg>

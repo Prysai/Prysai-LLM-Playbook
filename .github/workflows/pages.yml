@@ -1,4 +1,4 @@
-name: Deploy the Field Guide site
+name: Build the Field Guide Pages candidate artifact
 
 on:
   workflow_dispatch:
@@ -11,8 +11,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -40,6 +38,16 @@ jobs:
       - name: Build the bounded Pages artifact
         run: python scripts/build_pages_artifact.py --output _site
 
+      - name: Record deployment boundary
+        shell: bash
+        run: |
+          if [ "${{ inputs.deploy }}" = "true" ]; then
+            echo "deployment_status=requested" | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            echo "deployment_status=not_deployed" | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "This successful job builds a review artifact only; it does not publish GitHub Pages." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
       - name: Upload bounded site artifact for review
         uses: actions/upload-artifact@v7
         with:
@@ -57,6 +65,9 @@ jobs:
   deploy:
     needs: build
     if: inputs.deploy
+    permissions:
+      pages: write
+      id-token: write
     runs-on: ubuntu-latest
     environment:
       name: github-pages
