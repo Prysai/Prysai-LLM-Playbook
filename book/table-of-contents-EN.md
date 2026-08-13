@@ -11,7 +11,7 @@
 ## Migration state and link policy
 
 - Page `content_status`: `candidate`; source revision: `dd08a68`.
-- The directory contains 22 chapter records and 17 real experiment files.
+- The directory contains 22 chapter records and 18 real experiment files.
 - Chapters are `candidate`. Labs are `draft` with `run_status: not_run`.
 - Chapter 6 has `claim_status: disputed`; Chapter 22 has
   `claim_status: current | disputed`.
@@ -228,7 +228,7 @@ volatile claim: `claim_status: current | disputed`
 
 ## Experiment index and status boundaries
 
-The repository has 17 real experiment files. Each remains `draft` and
+The repository has 18 real experiment files. Each remains `draft` and
 `run_status: not_run`; a directory link is an entry point, not evidence that
 the experiment or its learning outcome is verified.
 
@@ -251,10 +251,11 @@ the experiment or its learning outcome is verified.
 | lab-015 | Evidence delivery | `draft` · `not_run` | [EN source](labs/lab-015-evidence-delivery-EN.md) |
 | lab-016 | Side-effect boundary | `draft` · `not_run` | [EN source](labs/lab-016-side-effect-boundary-EN.md) |
 | lab-017 | Skill discovery audit | `draft` · `not_run` | [EN source](labs/lab-017-skill-discovery-audit-EN.md) |
+| lab-018 | Language transfer under a fixed practice contract | `draft` · `not_run` | [EN source](labs/lab-018-language-transfer-EN.md) |
 
 ## Evaluation, status, and real-problem research
 
-- [Experiment index — English source](labs/README-EN.md): 17 real experiment files, levels, domains, migration focus, and `lab_status`.
+- [Experiment index — English source](labs/README-EN.md): 18 real experiment files, levels, domains, migration focus, and `lab_status`.
 - [Content integration matrix — locale-neutral governance](../docs/content-matrix.md): capability mappings and the additional capability introduced when themes repeat.
 - [Evaluation framework — locale-neutral governance](../docs/quality/evaluation-framework.md): acceptance gates for content and capability.
 - [Learning path contract — locale-neutral governance](../docs/governance/learning-path.yaml): levels, primary experiments, supporting experiments, and progression gates.

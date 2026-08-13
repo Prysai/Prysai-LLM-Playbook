@@ -112,7 +112,7 @@
     ]
   },
   "labs": {
-    "count": 17,
+    "count": 18,
     "status": "draft",
     "run_status": "not_run",
     "reference_run_status": "partial",
@@ -163,7 +163,8 @@
       {"id": "lab-014", "path": "book/labs/lab-014-resume-reconciliation-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
       {"id": "lab-015", "path": "book/labs/lab-015-evidence-delivery-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
       {"id": "lab-016", "path": "book/labs/lab-016-side-effect-boundary-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
-      {"id": "lab-017", "path": "book/labs/lab-017-skill-discovery-audit-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"}
+      {"id": "lab-017", "path": "book/labs/lab-017-skill-discovery-audit-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
+      {"id": "lab-018", "path": "book/labs/lab-018-language-transfer-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"}
     ]
   },
   "skills": {
@@ -199,19 +200,21 @@
     ]
   },
   "supplemental_guides": {
-    "count": 1,
+    "count": 2,
     "status": "candidate",
     "owner": "curriculum-maintainer",
     "last_reviewed": "2026-08-12",
     "next_review": "2026-09-12",
     "evidence": [
       "book/communication-clinic-EN.md",
+      "book/guides/learning-practice-contract-EN.md",
       "docs/sources/asset-register.md"
     ],
     "items": [
-      {"id": "communication-clinic", "path": "book/communication-clinic-EN.md", "status": "candidate", "run_status": "not_run", "role": "supplemental_practice_route"}
+      {"id": "communication-clinic", "path": "book/communication-clinic-EN.md", "status": "candidate", "run_status": "not_run", "role": "supplemental_practice_route"},
+      {"id": "learning-practice-contract", "path": "book/guides/learning-practice-contract-EN.md", "status": "draft", "run_status": "not_run", "role": "canonical_application_guide"}
     ],
-    "claim_boundary": "Supplemental routes do not change the canonical 22-chapter order. This guide has structural editorial review only; prompt effectiveness, learner outcomes, delayed transfer, and platform equivalence remain untested."
+    "claim_boundary": "Supplemental routes and application guides do not change the canonical 22-chapter order. These records have structural editorial status only; prompt effectiveness, learner outcomes, delayed transfer, retention, and platform equivalence remain untested."
   },
   "evaluations": {
     "task_count": 39,

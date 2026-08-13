@@ -187,6 +187,28 @@ window.CODEX_LEARNING_PATH = {
             "en": "The diff stays inside the declared sandbox and the completion statement cites the check that actually ran.",
             "zh": "差异保持在声明的沙盒内，完成声明引用实际运行的检查。"
           }
+        },
+        {
+          "id": "lab-018",
+          "name": {
+            "en": "Language transfer",
+            "zh": "语言迁移练习"
+          },
+          "href": "../book/labs/lab-018-language-transfer-EN.md",
+          "relation": "supporting",
+          "firstSeen": "L1",
+          "newCapability": {
+            "en": "Use one platform-neutral practice contract to separate an unaided baseline, coached correction, changed-case demonstration, delayed retention, and unseen transfer.",
+            "zh": "使用一份平台中性的练习契约，区分无辅助基线、辅导后纠正、变式任务表现、延迟保持和未见任务迁移。"
+          },
+          "newArtifact": {
+            "en": "A disposable language-practice record containing the fixed fixture revision, allowed aids, baseline, hint ledger, learner-authored correction, changed-case score, and a preserved delayed task.",
+            "zh": "一份可丢弃的语言练习记录，包含固定夹具版本、允许辅助、基线、提示记录、学习者自行修正、变式评分和保留的延迟任务。"
+          },
+          "newAcceptance": {
+            "en": "The immediate run is labelled only at its observed scope; fluency, mastery, retention, and transfer remain unverified until their separate evidence exists.",
+            "zh": "即时运行只按已观察范围标记；在各自证据存在前，流利、掌握、保持和迁移仍为未验证。"
+          }
         }
       ],
       "skills": [

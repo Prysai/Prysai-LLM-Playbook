@@ -13,10 +13,10 @@ that the exercise has been freshly run in every Codex surface.
 
 ## Current state
 
-The index contains 17 lab identities. All 17 are currently `draft` with
-learner `run_status: not_run`, and all 17 have canonical English source files.
-One of 17 Labs (Lab 013) has an accepted deterministic maintainer reference
-run. Zero of 17 have a recorded learner run, and zero of 17 have a recorded
+The index contains 18 lab identities. All 18 are currently `draft` with
+learner `run_status: not_run`, and all 18 have canonical English source files.
+One of 18 Labs (Lab 013) has an accepted deterministic maintainer reference
+run. Zero of 18 have a recorded learner run, and zero of 18 have a recorded
 transfer run. A maintainer packet is implementation evidence, not a learning
 outcome.
 
@@ -41,6 +41,7 @@ outcome.
 | 015 | Evidence delivery | L5 | [Open](lab-015-evidence-delivery-EN.md) |
 | 016 | Side-effect boundary | L3 | [Open](lab-016-side-effect-boundary-EN.md) |
 | 017 | Skill discovery audit | L4 | [Open](lab-017-skill-discovery-audit-EN.md) |
+| 018 | Language transfer under a fixed practice contract | L2 | [Open](lab-018-language-transfer-EN.md) |
 
 ## How to run a lab safely
 

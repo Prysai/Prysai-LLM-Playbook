@@ -26,6 +26,24 @@
       "run_status": "not_run",
       "placement": "supplemental_practice",
       "boundary": "Optional practice route; not chapter 23 and not evidence of prompt effectiveness or learner transfer."
+    },
+    {
+      "id": "learning-practice-contract",
+      "title_en": "Learning Practice Contract",
+      "english_path": "book/guides/learning-practice-contract-EN.md",
+      "status": "draft",
+      "run_status": "not_run",
+      "placement": "application_guide",
+      "boundary": "Platform-neutral application guide; not chapter 23 and not evidence of learner improvement, delayed retention, transfer, or cross-platform behavior."
+    },
+    {
+      "id": "lab-018-language-transfer",
+      "title_en": "Language Retention and Transfer Lab",
+      "english_path": "book/labs/lab-018-language-transfer-EN.md",
+      "status": "draft",
+      "run_status": "not_run",
+      "placement": "supplemental_practice",
+      "boundary": "Supporting Lab registered at L2; it does not change chapter order or prove fluency, mastery, retention, transfer, or platform effectiveness."
     }
   ],
   "parts": [

@@ -231,7 +231,7 @@ def validate_document(document: dict[str, Any]) -> list[str]:
         validate_path_list(project, "evidence", "project", errors)
 
     validate_items(document, "chapters", 22, "book/chapters/", errors)
-    validate_items(document, "labs", 17, "book/labs/", errors, require_run_status=True)
+    validate_items(document, "labs", 18, "book/labs/", errors, require_run_status=True)
     validate_lab_projections(document, errors)
     skill_count = len(list((ROOT / "skills").glob("*/SKILL.md")))
     validate_items(document, "skills", skill_count, "skills/", errors)
@@ -339,7 +339,7 @@ def main() -> int:
         return 1
 
     print("CONTENT_STATUS_OK")
-    print(f"chapters=22 labs=17 skills={document['skills']['count']} learning_levels=7 evaluations=39 tracks=16")
+    print(f"chapters=22 labs=18 skills={document['skills']['count']} learning_levels=7 evaluations=39 tracks=16")
     print(
         "public_site=6-route-locales,ui-dictionaries=en+zh,"
         f"repository_locale_status={document['public_site']['repository_locale_status']},"

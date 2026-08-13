@@ -55,7 +55,7 @@ copied prompts and Skills.
 | Understand what GPT, Codex, tools, Skills, and Agents actually are | [Chapter 1 — Understand GPT before Codex](book/chapters/01-gpt-and-codex-EN.md) + [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) | A usable mental model and a list of claims you refuse to infer without evidence |
 | Complete a first task safely | [Chapter 2 EN source](book/chapters/02-first-safe-task-EN.md) + [Lab 001 EN source](book/labs/lab-001-first-safe-task-EN.md) | One small, reversible diff, a focused check, and an explicit unverified list |
 | Turn a vague request into something an Agent can execute | [Chapter 3 — task protocol](book/chapters/03-task-protocol-EN.md) + [Lab 002](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop conditions, and failure handling |
-| Learn, research, decide, or create with short prompts | [Communication Clinic](book/communication-clinic-EN.md) | Supplemental candidate · not run; first attempt, focused correction, transfer task, and evidence boundary |
+| Practise one language skill or research one bounded question | [Communication Clinic](book/communication-clinic-EN.md) | Choose one route and leave with a selected template plus a proposed evidence contract; supplemental candidate · not run |
 | Stop trusting “done” too early | [Chapter 9 — Verification, doubt, and recovery](book/chapters/09-verification-and-recovery-EN.md) + [Lab 003](book/labs/lab-003-evidence-review-EN.md) | A claim-to-evidence review that catches wrong files, missing tests, and scope gaps |
 | Choose or design a Skill | [Skill registry](docs/skill-registry.md) + [Skill quality standard](docs/quality/skill-quality-standard.md) | A bounded Skill contract with triggers, exclusions, dependencies, rollback, and tests |
 | Learn from failures people actually report | [Real-world problem index](docs/research/field-problems-index-2026-08-10.md) | A symptom, a safe first check, a narrower fallback, and an honest evidence level |
@@ -239,7 +239,7 @@ state, not a marketing promise.
 | **L6 · Team coach** | Turn a personal method into a versioned team capability with ownership and rollback | [Chapters 20–22 — English sources](book/table-of-contents-EN.md) · [Contribution model](docs/governance/contribution-model.md) |
 
 “Migration pending” remains explicit wherever an English source has not yet
-been authored. All 22 chapters and all 17 labs now have canonical `-EN`
+been authored. All 22 chapters and all 18 labs now have canonical `-EN`
 sources. That closes the source-locale path gap; it does not supply runtime or
 independent-review evidence for the labs.
 
@@ -370,7 +370,7 @@ repository; they do not describe learning outcomes.
 |---|---|---|
 | Project | `candidate` | The product skeleton and core contracts exist; broad independent evidence is still being built |
 | Chapters | 22 structured chapters · `candidate` | Canonical English sources exist, but runtime exercises and broad independent review remain incomplete |
-| Labs | 17 labs · `draft` · `run_status: not_run` | The contracts exist; the repository does not claim that every lab has been freshly executed |
+| Labs | 18 labs · `draft` · `run_status: not_run` | The contracts exist; the repository does not claim that every lab has been freshly executed |
 | Skills | 11 project Skills · `candidate` | Structural checks pass; fresh-context evidence is partial and remains visible in the registry |
 | Evaluation fixtures | 39 fixtures · `candidate` · `not_run` | The task set is defined; model execution logs are not being implied |
 | Public showcase | `candidate` | English default and Chinese runtime toggle are implemented; broader visual and locale coverage remains work |

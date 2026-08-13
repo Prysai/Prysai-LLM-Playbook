@@ -40,10 +40,12 @@
     "lab-014": {"name": {"en": "Resume reconciliation", "zh": "恢复任务对账"}},
     "lab-015": {"name": {"en": "Evidence delivery", "zh": "证据交付"}},
     "lab-016": {"name": {"en": "Side-effect boundary", "zh": "副作用边界"}},
-    "lab-017": {"name": {"en": "Skill discovery audit", "zh": "Skill 发现审计"}}
+    "lab-017": {"name": {"en": "Skill discovery audit", "zh": "Skill 发现审计"}},
+    "lab-018": {"name": {"en": "Language transfer", "zh": "语言迁移练习"}}
   },
   "supplemental_guides": {
-    "communication-clinic": {"name": {"en": "Communication Clinic", "zh": "沟通练习诊所"}, "status": "candidate", "run_status": "not_run"}
+    "communication-clinic": {"name": {"en": "Communication Clinic", "zh": "沟通练习诊所"}, "status": "candidate", "run_status": "not_run"},
+    "learning-practice-contract": {"name": {"en": "Learning Practice Contract", "zh": "学习练习契约"}, "status": "draft", "run_status": "not_run"}
   },
   "skills": {
     "prysai-codex-coach": {"name": {"en": "Codex Coach", "zh": "Codex 学习教练"}},

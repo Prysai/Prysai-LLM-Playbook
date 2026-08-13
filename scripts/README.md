@@ -16,6 +16,7 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\validate_gold_content_admission.py
 & $py scripts\test_gold_content_admission.py
 & $py scripts\validate_communication_clinic_candidate.py
+& $py scripts\validate_learning_practice_candidate.py
 & $py scripts\validate_executable_examples.py
 & $py scripts\test_executable_examples.py
 & $py scripts\test_lab_013_reference.py
@@ -106,6 +107,11 @@ and checks fixed inputs, context-channel equality, repetition controls,
 acceptance IDs, evidence IDs, telemetry nullability, and the secret/network
 boundary. Passing it is plan integrity, not evidence that one request style is
 better.
+
+`validate_learning_practice_candidate.py` checks the platform-neutral learning
+guide, language-transfer Lab, Learning Coach receipt fields, fixed candidate
+fixture, and public route. It is a static contract gate; it does not run a
+model or learner and cannot prove acquisition, retention, or transfer.
 
 `validate_executable_examples.py` enforces typed example claims rather than
 treating every code fence as executable. The first registered record is Lab

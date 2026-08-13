@@ -128,13 +128,17 @@ button, input, select, textarea { font: inherit; }
 .data-warning { margin: -2rem 0 2rem; padding: .8rem 1rem; border-left: 4px solid var(--red); color: var(--ink); background: var(--soft-red); font-size: .8rem; line-height: 1.5; }
 .heading-light .section-intro, .section-red .section-intro, .section-dark .section-intro { color: var(--muted-dark); }
 
-.problem-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .problem-card { display: flex; min-height: 270px; flex-direction: column; padding: 1.35rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; transition: transform .2s ease, background .2s ease; }
 .problem-card:hover, .problem-card:focus-visible { background: #fffafb; transform: translateY(-4px); }
 .card-number { color: var(--red); font-size: .72rem; font-weight: 700; }
 .problem-card strong { max-width: 250px; margin-top: 4rem; font-size: 1.1rem; letter-spacing: -.03em; line-height: 1.05; }
 .problem-card p { margin: .75rem 0 0; color: var(--muted); font-size: .8rem; line-height: 1.6; }
 .card-link { margin-top: auto; padding-top: 1.1rem; border-top: 1px solid var(--line); color: var(--red); font-size: .72rem; font-weight: 700; }
+.problem-card-practice { color: #fff; background: var(--ink); }
+.problem-card-practice:hover, .problem-card-practice:focus-visible { background: #242424; }
+.problem-card-practice p { color: #bcbcbc; }
+.problem-card-practice .card-link { border-top-color: #505050; }
 
 .first-30-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, .85fr); gap: clamp(2rem, 8vw, 8rem); align-items: start; }
 .task-steps { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-dark); }

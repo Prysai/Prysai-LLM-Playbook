@@ -80,6 +80,7 @@ REQUIRED = (
     "scripts/test_book_navigation_titles.py",
     "scripts/validate_core_unit_map.py",
     "scripts/test_core_unit_map.py",
+    "scripts/validate_learning_practice_candidate.py",
     "scripts/validate_project_structure.py",
     "scripts/validate_content_completeness.py",
 )

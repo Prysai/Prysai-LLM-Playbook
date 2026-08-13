@@ -1,7 +1,7 @@
 # Codex: From First Task to Real Work — Book Guide
 
 > English source-locale entry point. All 22 chapter identities now have
-> authored `-EN` sources, as do all 17 labs. No lab or reader route is claimed
+> authored `-EN` sources, as do all 18 labs. No lab or reader route is claimed
 > as runtime-verified until its evidence record exists.
 
 <!-- language-switcher:start -->
@@ -42,14 +42,14 @@ the files exist, yet the required execution and review evidence is not complete.
 
 The evaluation fixture set contains 39 fixed tasks across 16 tracks. It is
 `candidate`, its run status is `not_run`, and its review is static-structure-only
-until model execution logs exist. The lab collection contains 17 labs, each
+until model execution logs exist. The lab collection contains 18 labs, each
 currently `draft` with `run_status: not_run`.
 
 ## Where to enter the book
 
 - [Preface: This Is Not a Prompt Catalogue](preface-EN.md)
 - [English book table of contents](table-of-contents-EN.md)
-- [Communication Clinic: practical prompts for learning, research, decisions, and creation](communication-clinic-EN.md) — supplemental candidate; not run
+- [Communication Clinic: choose a practical route for learning, research, decisions, or creation](communication-clinic-EN.md) — supplemental candidate; templates and evidence contracts exist, but no learner run is claimed
 - [Project map — where chapters, labs, Skills, research, and checks live](../docs/project-map-EN.md)
 - [Canonical chapter navigation source](../docs/governance/book-navigation.yaml)
 - [Evaluation framework — locale-neutral governance](../docs/quality/evaluation-framework.md)
@@ -58,7 +58,7 @@ currently `draft` with `run_status: not_run`.
 - [Real-user problem research index — locale-neutral research](../docs/research/field-problems-index-2026-08-10.md)
 
 The English table-of-contents entry now exists as `table-of-contents-EN.md`.
-English chapter sources cover Chapters 1–22, and all 17 labs have canonical
+English chapter sources cover Chapters 1–22, and all 18 labs have canonical
 English sources. Their `draft / not_run` status remains unchanged.
 
 The current canonical examples are [Chapter 12](chapters/12-agent-loop-and-stop-EN.md)

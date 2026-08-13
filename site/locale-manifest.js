@@ -46,6 +46,106 @@ window.CODEX_LOCALE_MANIFEST = {
     }
   },
   "contents": {
+    "learning-practice-contract": {
+      "kind": "application-guide",
+      "stem": "book/guides/learning-practice-contract",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "book/guides/learning-practice-contract-EN.md",
+          "exists": true,
+          "content_status": "draft",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/guides/learning-practice-contract-ZH.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
+        },
+        "es": {
+          "path": "book/guides/learning-practice-contract-ES.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
+        },
+        "ja": {
+          "path": "book/guides/learning-practice-contract-JA.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
+        },
+        "ko": {
+          "path": "book/guides/learning-practice-contract-KO.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
+        },
+        "de": {
+          "path": "book/guides/learning-practice-contract-DE.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
+        }
+      }
+    },
+    "lab-018-language-transfer": {
+      "kind": "lab",
+      "stem": "book/labs/lab-018-language-transfer",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "book/labs/lab-018-language-transfer-EN.md",
+          "exists": true,
+          "content_status": "draft",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/labs/lab-018-language-transfer-ZH.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
+        },
+        "es": {
+          "path": "book/labs/lab-018-language-transfer-ES.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
+        },
+        "ja": {
+          "path": "book/labs/lab-018-language-transfer-JA.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
+        },
+        "ko": {
+          "path": "book/labs/lab-018-language-transfer-KO.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
+        },
+        "de": {
+          "path": "book/labs/lab-018-language-transfer-DE.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
+        }
+      }
+    },
     "universal-core-foundations-route": {
       "kind": "learning-route",
       "stem": "book/routes/universal-core-foundations",
@@ -2466,9 +2566,22 @@ window.CODEX_LOCALE_MANIFEST = {
     "lab-014": "lab-014-resume-reconciliation",
     "lab-015": "lab-015-evidence-delivery",
     "lab-016": "lab-016-side-effect-boundary",
-    "lab-017": "lab-017-skill-discovery-audit"
+    "lab-017": "lab-017-skill-discovery-audit",
+    "lab-018": "lab-018-language-transfer"
   },
   "path_index": {
+    "book/guides/learning-practice-contract-EN.md": "learning-practice-contract",
+    "book/guides/learning-practice-contract-ZH.md": "learning-practice-contract",
+    "book/guides/learning-practice-contract-ES.md": "learning-practice-contract",
+    "book/guides/learning-practice-contract-JA.md": "learning-practice-contract",
+    "book/guides/learning-practice-contract-KO.md": "learning-practice-contract",
+    "book/guides/learning-practice-contract-DE.md": "learning-practice-contract",
+    "book/labs/lab-018-language-transfer-EN.md": "lab-018-language-transfer",
+    "book/labs/lab-018-language-transfer-ZH.md": "lab-018-language-transfer",
+    "book/labs/lab-018-language-transfer-ES.md": "lab-018-language-transfer",
+    "book/labs/lab-018-language-transfer-JA.md": "lab-018-language-transfer",
+    "book/labs/lab-018-language-transfer-KO.md": "lab-018-language-transfer",
+    "book/labs/lab-018-language-transfer-DE.md": "lab-018-language-transfer",
     "book/routes/universal-core-foundations-EN.md": "universal-core-foundations-route",
     "book/routes/universal-core-foundations-ZH.md": "universal-core-foundations-route",
     "book/routes/universal-core-foundations-ES.md": "universal-core-foundations-route",
@@ -2788,7 +2901,7 @@ window.CODEX_LOCALE_MANIFEST = {
   },
   "routed_status_counts": {
     "chapters": 22,
-    "labs": 17
+    "labs": 18
   },
   "book_navigation": {
     "parts": [

@@ -13,7 +13,7 @@
       "owner_path": "book/chapters/03-task-protocol-EN.md",
       "start_anchor": "core-task-contract",
       "end_anchor": "core-task-contract-end",
-      "consumer_paths": ["book/chapters/12-agent-loop-and-stop-EN.md"],
+      "consumer_paths": ["book/chapters/12-agent-loop-and-stop-EN.md", "book/guides/learning-practice-contract-EN.md", "book/labs/lab-018-language-transfer-EN.md"],
       "depends_on": [],
       "platform_scope": "universal",
       "excluded_ranges": ["Codex product facts", "starter prompt catalogue", "multi-Agent hand-off example"]
@@ -24,7 +24,7 @@
       "owner_path": "book/chapters/09-verification-and-recovery-EN.md",
       "start_anchor": "core-evidence-recovery",
       "end_anchor": "core-evidence-recovery-end",
-      "consumer_paths": ["book/chapters/12-agent-loop-and-stop-EN.md"],
+      "consumer_paths": ["book/chapters/12-agent-loop-and-stop-EN.md", "book/guides/learning-practice-contract-EN.md", "book/labs/lab-018-language-transfer-EN.md"],
       "depends_on": ["core-task-contract"],
       "platform_scope": "universal",
       "excluded_ranges": ["named product incident reports", "product-specific capability examples"]
@@ -35,7 +35,7 @@
       "owner_path": "book/chapters/10-planning-and-slicing-EN.md",
       "start_anchor": "core-evidence-bearing-slice",
       "end_anchor": "core-evidence-bearing-slice-end",
-      "consumer_paths": ["book/chapters/08-full-lifecycle-workflow-EN.md", "book/chapters/16-engineering-track-EN.md"],
+      "consumer_paths": ["book/chapters/08-full-lifecycle-workflow-EN.md", "book/chapters/16-engineering-track-EN.md", "book/labs/lab-018-language-transfer-EN.md"],
       "depends_on": ["core-task-contract", "core-evidence-recovery"],
       "platform_scope": "universal",
       "excluded_ranges": ["named product planning surfaces", "product-specific orchestration claims"]
@@ -46,7 +46,7 @@
       "owner_path": "book/chapters/13-action-boundaries-EN.md",
       "start_anchor": "core-action-boundary",
       "end_anchor": "core-action-boundary-end",
-      "consumer_paths": ["book/chapters/04-context-permissions-and-agent-EN.md", "book/chapters/12-agent-loop-and-stop-EN.md"],
+      "consumer_paths": ["book/chapters/04-context-permissions-and-agent-EN.md", "book/chapters/12-agent-loop-and-stop-EN.md", "book/guides/learning-practice-contract-EN.md", "book/labs/lab-018-language-transfer-EN.md"],
       "depends_on": ["core-task-contract"],
       "platform_scope": "universal",
       "excluded_ranges": ["browser-specific operations", "terminal-specific operations", "GitHub-specific operations"]

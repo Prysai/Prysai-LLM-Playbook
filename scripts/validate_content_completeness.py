@@ -142,7 +142,7 @@ def check_status_registry(
     warnings: list[str],
 ) -> dict[str, dict[str, Any]]:
     status_by_id: dict[str, dict[str, Any]] = {}
-    expected_counts = {"chapters": 22, "labs": 17}
+    expected_counts = {"chapters": 22, "labs": 18}
     for section, expected_count in expected_counts.items():
         items = item_list(status, section, errors)
         declared_count = status.get(section, {}).get("count")

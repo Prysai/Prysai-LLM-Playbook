@@ -759,6 +759,41 @@
       "expected": {"disposition": "route", "owner": "prysai-learning-coach", "handoffs": [], "segments": []}
     },
     {
+      "id": "curriculum-language-transfer-practice",
+      "kind": "curriculum_route",
+      "text": "Use the platform-neutral learning contract and Lab 018 to run a bounded language baseline, correction, and changed-case transfer attempt.",
+      "signals": {
+        "intents": ["non_codex_practice"],
+        "explicit_skill": "",
+        "safety_block": "",
+        "content_need": "bounded_application",
+        "platform": ""
+      },
+      "expected_content_route": {"layer": "application_playbook", "platform": "", "claim_disposition": "allow"},
+      "expected": {"disposition": "route", "owner": "prysai-learning-coach", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "learning-current-language-rule",
+      "kind": "single",
+      "text": "Verify the current official rule behind this disputed language correction before coaching me.",
+      "signals": {"intents": ["bounded_current_lookup"], "explicit_skill": "", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-source-investigator", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "learning-mastery-claim-audit",
+      "kind": "single",
+      "text": "Audit the claim that one successful practice turn proves fluency, retention, and mastery.",
+      "signals": {"intents": ["existing_claim_audit"], "explicit_skill": "", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-evidence-review", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "learning-codex-boundary",
+      "kind": "single",
+      "text": "Teach me how Codex Skills and permission modes work through a practice exercise.",
+      "signals": {"intents": ["codex_learning"], "explicit_skill": "", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-codex-coach", "handoffs": [], "segments": []}
+    },
+    {
       "id": "curriculum-codex-adapter",
       "kind": "curriculum_route",
       "text": "Show the current Codex command and permission steps for this transferable workflow.",

@@ -24,6 +24,36 @@
   ],
   "content": [
     {
+      "content_id": "learning-practice-contract",
+      "kind": "application-guide",
+      "stem": "book/guides/learning-practice-contract",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-13",
+      "locales": {
+        "EN": {"path": "book/guides/learning-practice-contract-EN.md", "content_status": "draft", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/guides/learning-practice-contract-ZH.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "none", "run_status": "not_run", "reason": "Reserved identity only; file, translation, and independent language review do not exist."},
+        "ES": {"path": "book/guides/learning-practice-contract-ES.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "none", "run_status": "not_run", "reason": "Reserved identity only; file, translation, and independent language review do not exist."},
+        "JA": {"path": "book/guides/learning-practice-contract-JA.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "none", "run_status": "not_run", "reason": "Reserved identity only; file, translation, and independent language review do not exist."},
+        "KO": {"path": "book/guides/learning-practice-contract-KO.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "none", "run_status": "not_run", "reason": "Reserved identity only; file, translation, and independent language review do not exist."},
+        "DE": {"path": "book/guides/learning-practice-contract-DE.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "none", "run_status": "not_run", "reason": "Reserved identity only; file, translation, and independent language review do not exist."}
+      }
+    },
+    {
+      "content_id": "lab-018-language-transfer",
+      "kind": "lab",
+      "stem": "book/labs/lab-018-language-transfer",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-13",
+      "locales": {
+        "EN": {"path": "book/labs/lab-018-language-transfer-EN.md", "content_status": "draft", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/labs/lab-018-language-transfer-ZH.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "ES": {"path": "book/labs/lab-018-language-transfer-ES.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "JA": {"path": "book/labs/lab-018-language-transfer-JA.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "KO": {"path": "book/labs/lab-018-language-transfer-KO.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."},
+        "DE": {"path": "book/labs/lab-018-language-transfer-DE.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "route-only", "run_status": "not_run", "reason": "No translated file exists; use the English source explicitly."}
+      }
+    },
+    {
       "content_id": "universal-core-foundations-route",
       "kind": "learning-route",
       "stem": "book/routes/universal-core-foundations",

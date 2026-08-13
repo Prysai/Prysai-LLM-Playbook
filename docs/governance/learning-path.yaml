@@ -87,6 +87,12 @@
           "new_capability": {"en": "Convert a vague request into an executable protocol without inventing missing scope, authority, or acceptance.", "zh": "把模糊请求转成可执行协议，不臆造缺失的范围、授权或验收。"},
           "new_artifact": {"en": "A task protocol containing goal, inputs, constraints, allowed actions, acceptance, stop conditions, and failure handling.", "zh": "一份包含目标、输入、约束、允许行动、验收、停止条件和失败处理的任务协议。"},
           "new_acceptance": {"en": "A second person can identify the first safe action and every condition that requires confirmation or stopping.", "zh": "第二个人能够指出第一个安全行动，以及所有需要确认或停止的条件。"}
+        },
+        {
+          "id": "lab-018", "relation": "supporting", "first_seen": "L2",
+          "new_capability": {"en": "Use one platform-neutral practice contract to separate an unaided baseline, coached correction, changed-case demonstration, delayed retention, and unseen transfer.", "zh": "使用一份平台中性的练习契约，区分无辅助基线、辅导后纠正、变式任务表现、延迟保持和未见任务迁移。"},
+          "new_artifact": {"en": "A disposable language-practice record containing the fixed fixture revision, allowed aids, baseline, hint ledger, learner-authored correction, changed-case score, and a preserved delayed task.", "zh": "一份可丢弃的语言练习记录，包含固定夹具版本、允许辅助、基线、提示记录、学习者自行修正、变式评分和保留的延迟任务。"},
+          "new_acceptance": {"en": "The immediate run is labelled only at its observed scope; fluency, mastery, retention, and transfer remain unverified until their separate evidence exists.", "zh": "即时运行只按已观察范围标记；在各自证据存在前，流利、掌握、保持和迁移仍为未验证。"}
         }
       ],
       "supporting_skills": ["prysai-task-protocol", "prysai-codex-coach"],

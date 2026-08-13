@@ -1,210 +1,154 @@
-<!-- content_id: communication-clinic | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-12 -->
+<!-- content_id: communication-clinic | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-13 -->
 
-# Communication Clinic: useful prompts that teach a method
+# Communication Clinic: choose one route
 
-**Status:** `candidate` · **Run evidence:** `not_run` · **Platform:** universal
-chat baseline; product-specific actions require an adapter.
+**Status:** `candidate` | **Run evidence:** `not_run` | **Platform:** universal
+chat baseline; product-specific actions require a sourced adapter.
 
-This clinic is for a person who wants a useful result today and a transferable
-skill tomorrow. The prompts are deliberately ordinary. They do not ask the
-model to become a genius, reveal hidden reasoning, or guarantee mastery. Each
-one changes an observable part of the collaboration: the attempt, context,
-criteria, evidence, correction, or transfer task.
+This clinic offers two short routes: practise a language capability or answer a
+research question. Choose one. Each route turns a conversation into inspectable
+work, but neither route proves that its prompts are the best or that a model is
+an effective teacher or researcher.
 
-## The rule behind every prompt
+## Read the evidence state before you begin
+
+| State | What you may say | Minimum evidence | What it does not mean |
+|---|---|---|---|
+| Prompt or template selected | `template_selected` | The chosen route, prompt revision, target, and conditions are saved | The practice was completed or useful |
+| Practice completed | `practised` | An attempt, help used, correction, and result are saved | The capability was demonstrated unaided |
+| Learning evidence | `demonstrated_on_this_task`, `retained_at_[delay]`, or `transferred_to_[variation]` | The matching fixed, delayed, or changed task passed its declared rubric | Broad mastery, fluency, or expertise |
+| Bounded capability claim | A literal claim such as “transferred to a changed hotel check-in card” | Named task, conditions, scorer, score, limits, and retained artifacts | Performance outside the observed scope |
+
+Selecting a prompt earns only `template_selected`. Completing its activity can
+earn `practised`. Stronger labels require the corresponding check. Keep
+`candidate` for this curriculum artifact and `not_run` for its current run
+evidence until a qualifying record exists.
+
+<span id="language-practice-route"></span>
+
+## Route A — language practice
+
+Target a small interaction, such as a five-minute beginner travel exchange,
+instead of “learn Spanish.” Keep the original attempt, hints, corrections,
+rubric, scores, unknowns, and the date of any later check.
+
+### L1 — baseline
 
 ```text
-attempt first → diagnose one consequential gap → revise → test a changed case
-```
-
-Replace bracketed text. Keep the result, your first attempt, help used,
-correction, and final check. A smooth conversation proves only that a smooth
-conversation occurred.
-
-## Learn Spanish through six short contracts
-
-Use a real outcome such as “hold a five-minute conversation about travel,” not
-the unbounded goal “learn Spanish.”
-
-### 1. Establish the starting point
-
-```text
-I want to [hold a five-minute beginner conversation in Spanish about travel].
-Do not teach yet. Give me one short baseline task that tests that ability.
-State the rules, allowed help, time limit, and scoring criteria. Wait for my
-answer. Then record what communicated, what blocked meaning, and what one
+My target is [a five-minute beginner conversation in Spanish about travel].
+Do not teach or show a model answer yet. Give me one fixed baseline task. State
+the time limit, allowed aids, answer-leakage rule, and observable rubric. Wait
+for my attempt. Preserve it, score only against the rubric, and state what one
 attempt cannot establish.
 ```
 
-### 2. Teach one unit, then make me retrieve it
+### L2 — guided retrieval and correction
 
 ```text
-Teach only the next small unit I need for [asking for directions]. Keep the
-opening explanation brief. Ask me to answer from memory before showing a model
-answer. If I get stuck, give one hint at a time: error type, partial cue, then
-one worked fragment. Require a corrected attempt in my own words.
+Use my saved baseline. Ask me to retrieve the next response before explaining
+it. When I am stuck, reveal help in this order: error location or type, partial
+cue, then one worked fragment. Stop at the first level that lets me continue.
+Keep my original answer. Ask for my own corrected attempt and record attempt,
+hint level, correction, rule, score, and remaining uncertainty.
 ```
 
-### 3. Correct what changes meaning first
+### L3 — unseen transfer and delayed check
 
 ```text
-For each answer, say what was understood, then identify the first error that
-changes meaning or blocks the target skill. Explain that rule plainly and ask
-me to correct it. Keep an error ledger: attempt, correction, rule, next
-variation. Do not rewrite the whole answer or polish minor style first.
+Test the same capability in a changed situation. Change the setting,
+vocabulary, and one ambiguity; do not reuse lesson sentences. Let me answer
+without hints, then apply the original rubric and name the exact variation.
+Create a separate delayed check for [delay] using another unseen task. Do not
+claim that you scheduled a reminder. Report only demonstrated_on_this_task,
+retained_at_[delay], or transferred_to_[variation] when its matching evidence
+exists; otherwise report practised or not_run.
 ```
 
-### 4. Simulate a real exchange
+**Failure test:** ask the model to call you fluent or say you mastered Spanish.
+The correct response refuses or narrows the claim. A successful exchange does
+not test broad vocabulary, listening conditions, spontaneous interaction,
+durability, or independent assessment.
+
+For a runnable version, use [Lab 018: Test a language capability for transfer](labs/lab-018-language-transfer-EN.md).
+Use the [learning practice contract](guides/learning-practice-contract-EN.md)
+before changing the target, aids, delay, or scoring rule.
+
+<span id="bounded-research-route"></span>
+
+## Route B — source-routed research
+
+Research evidence is not learning evidence. The strongest ordinary claim from
+this route is `source-supported within [scope/date]`; it is not “complete
+research,” universally true, or current beyond the recorded access date.
+
+### R1 — decision and question
 
 ```text
-Run a [hotel check-in] role-play in Spanish. Use one turn at a time and wait for
-me. Do not silently make my answer correct. If meaning breaks, pause the scene,
-name the smallest repair, let me retry, then continue. End with the transcript,
-help used, and the two errors that matter next.
+I need to decide [decision] by [date] for [audience]. Rewrite the topic as one
+answerable question. Define inclusion, exclusion, freshness, required source
+classes, material claims, and a stop rule. Separate stable principles from
+volatile product facts. Do not search until the question can change the
+decision.
 ```
 
-### 5. Test transfer, not sentence memory
+### R2 — source and claim ledger
 
 ```text
-Give me a new situation using the same underlying skill, but change the
-setting, vocabulary, and one ambiguity. Do not reuse lesson sentences. Let me
-respond unaided. Score against the same criteria and label the result only as
-demonstrated on this task, not mastered.
+Investigate the bounded question. Route each fact to the source that owns it:
+official documentation, specification, source repository, or original study.
+For every material claim record the exact source location, access date, direct
+support, inference, scope, conflict, and unknowns. Treat community reports as
+symptoms or leads unless they contain evidence for the stated claim.
 ```
 
-### 6. Prepare a delayed review
+### R3 — synthesis, conflict, and stop receipt
 
 ```text
-Using only my attempts and error ledger here, create a 15-minute review for
-[date]. Start with unaided recall, revisit the two remaining errors, include a
-mixed example, and end with one unseen task. Do not claim you scheduled a
-reminder. Give me a cue to save and the evidence to bring back.
+Synthesize by claim, not by source count. Show the strongest support and the
+strongest material conflict. Narrow or withhold claims whose evidence is weak,
+stale, inaccessible, or outside the source's competence. End with a stop
+receipt: decision supported, material claims covered, unresolved conflicts,
+excluded material, freshness boundary, and the smallest next check that could
+change the conclusion.
 ```
 
-**Failure test:** ask the model to declare you fluent after the session. The
-correct response must refuse or narrow the claim. One session lacks delayed
-retention, broad vocabulary, spontaneous interaction, listening conditions,
-and independent assessment.
+**Failure test:** supply five forum posts that repeat one unsupported fix. The
+correct response does not turn repetition into prevalence, root cause, or
+official support. It preserves the reports as leads and marks the claim
+unresolved.
 
-## Learn any practical skill
+## Small experiment
 
-```text
-The capability I want is [write a clear one-page project brief]. Give me one
-small authentic task, an example input, and five observable criteria. Wait for
-my attempt. Diagnose the first decision I made poorly, not every surface flaw.
-Teach only what I need for a second attempt, then change the input and test
-whether the decision transfers.
-```
-
-```text
-Here is my current artifact: [paste or attach it]. Separate facts you can see,
-assumptions, and missing context. Ask at most three questions whose answers
-could change the critique. Then give me the smallest revision exercise. Do not
-replace my work with a polished final unless I explicitly ask for that.
-```
-
-```text
-Build a [two-week] practice plan from my baseline, available [20 minutes a
-day], and target [observable performance]. Each session needs retrieval, one
-new variation, a check, and a saved artifact. Include a midpoint transfer task
-and a delayed final task. Mark assumptions and do not promise a learning rate.
-```
-
-## Search and research without collecting confident noise
-
-```text
-I need to decide [decision] by [date] for [audience]. Before searching, rewrite
-this as one answerable question. Define inclusion, exclusion, freshness, and
-which sources can own each fact. Show me the search plan and stop rule. Do not
-search until the question is narrow enough to change the decision.
-```
-
-```text
-Investigate [bounded question]. Prefer first-party documents, specifications,
-primary research, or source-owner records. For every material claim record:
-claim, source, access date, direct support, scope, counterevidence, and what the
-source does not prove. Search once for disagreement. Treat forum posts as
-symptoms or leads, not official facts.
-```
-
-```text
-Audit this claim: [claim]. First define the exact result and time horizon it
-would need to prove. Separate fact, inference, anecdote, advertisement, and
-unknown. Find the strongest direct evidence and strongest contrary evidence.
-End with the narrowest truthful rewrite and the evidence still needed.
-```
-
-**Failure test:** give the model five forum posts that repeat one unsupported
-fix. It must not convert repetition into prevalence, root cause, or official
-support.
-
-## Make a better decision
-
-```text
-I am choosing between [options] for [decision]. Ask for the constraints that
-could reverse the choice. Propose a short weighted rubric and wait for my
-approval. Score each option with source-backed facts, mark missing evidence,
-run one sensitivity check, and return a recommendation only within the stated
-conditions.
-```
-
-```text
-Here is my preferred decision and evidence: [material]. Build the strongest
-case that it fails. Identify assumptions, omitted alternatives, irreversible
-costs, and the observation that would change your conclusion. Do not invent a
-balanced compromise. End with proceed, test first, or stop, plus the reason.
-```
-
-## Create or revise real work
-
-```text
-Revise [artifact] for [reader and outcome]. First describe its current voice,
-argument, and three highest-impact problems using quoted fragments only where
-necessary. Propose edits and explain each decision. Preserve specific language
-and useful irregularity; remove generic filler, unsupported confidence, and
-repeated conclusions. Return the revision plus a short change ledger.
-```
-
-```text
-Create [artifact] from [named inputs]. Constraints: [scope, facts, format,
-permissions]. Before drafting, list missing inputs that could change the
-result. Acceptance: [observable criteria]. After drafting, audit each criterion
-and label it pass, partial, or unverified with evidence. Stop before publishing
-or contacting anyone.
-```
-
-## A ten-minute experiment
-
-Use one real low-risk task twice: first ask for the answer immediately; then
-use the matching clinic prompt and make an attempt first. Keep the task, input,
-model/surface, time limit, and acceptance criteria fixed. Compare unsupported
-assumptions, correction turns, final acceptance, evidence completeness, and how
-much of the result you can reproduce without copying.
-
-Five or more repetitions per condition are required before even a descriptive
-pattern is worth discussing. This clinic has not run that comparison yet.
+Run one low-risk route twice: first ask for the answer immediately; then use the
+matching three-stage route. Hold task revision, inputs, surface/model label,
+time limit, and acceptance criteria as fixed as possible. Compare answer
+leakage, unsupported assumptions, corrections, final acceptance, evidence
+completeness, and confounders. One pair is an observation, not proof of prompt
+superiority. This clinic has no stored run yet.
 
 ## Acceptance checklist
 
-- [ ] The prompt names a real outcome and a bounded input.
-- [ ] The learner or worker makes an attempt before receiving a replacement.
-- [ ] Feedback prioritizes a consequential decision or error.
-- [ ] The next task changes enough to test transfer.
-- [ ] The output separates observed evidence, inference, and unknowns.
-- [ ] Product-specific actions are deferred to a sourced platform adapter.
-- [ ] The completion claim does not exceed the saved evidence.
+- [ ] Exactly one route and a bounded target or decision are named.
+- [ ] The first attempt or research question exists before substantive help.
+- [ ] Allowed aids, scoring or source rules, and stop conditions are explicit.
+- [ ] Corrections preserve the original attempt or unsupported claim.
+- [ ] Language status matches fixed, delayed, or changed-task evidence.
+- [ ] Research claims name scope, access date, conflict, and unknowns.
+- [ ] Product-specific commands, tools, persistence, and permissions are left
+      to a current sourced adapter.
+- [ ] No result is called mastered, fluent, expert, complete research, or the
+      best prompt.
 
 ## Sources and boundary
 
-The prompt wording and organization are original project material. The method
-is informed by the project's dated synthesis of official OpenAI, Anthropic,
-Google, learning-science, and field-problem sources:
+The wording and route design are original project material. They are informed
+by these project research records:
 
-- [Prompt patterns for real work](../docs/research/prompt-patterns-for-real-work-2026-08-10.md)
 - [Durable LLM-assisted learning](../docs/research/durable-llm-assisted-learning-and-skill-candidates-2026-08-12.md)
+- [Prompt patterns for real work](../docs/research/prompt-patterns-for-real-work-2026-08-10.md)
 - [Cross-platform problem patterns](../docs/research/cross-platform-public-problem-patterns-and-teaching-synthesis-2026-08-12.md)
 - [Communication Clinic evaluation candidate](../evals/candidates/communication-clinic-v1/README.md)
 
-Those records do not prove that these prompts improve outcomes. Product
-features, model behavior, and hosted guidance remain volatile; recheck a
-platform adapter before teaching commands, permissions, tools, or persistence.
+Those records support the design rationale, not a model/platform effectiveness
+claim. Product behavior and hosted guidance are volatile; recheck the relevant
+adapter before teaching commands, accounts, tools, or persistence.
