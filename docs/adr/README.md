@@ -25,3 +25,4 @@ Current entry points:
 - [ADR-0019: content integrity gate](0019-content-integrity-gate.md)
 - [ADR-0020: machine-readable quality register](0020-machine-readable-quality-register.md)
 - [ADR-0021: commit-bound release evidence](0021-commit-bound-release-evidence.md)
+- [ADR-0022: staged authoritative URL audit](0022-staged-authoritative-url-audit.md)

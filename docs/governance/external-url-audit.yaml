@@ -1,0 +1,26 @@
+{
+  "schema_version": "1",
+  "owner": "facts-maintainer",
+  "mode": "report_only",
+  "registry_source": "docs/governance/fact-impact-registry.yaml",
+  "url_field": "official_url",
+  "claim_id_field": "claim_id",
+  "reviewed_at": "2026-08-12",
+  "next_review": "2026-09-12",
+  "request": {
+    "timeout_seconds": 15,
+    "attempts": 2,
+    "user_agent": "Prysai-Codex-Field-Guide-Link-Audit/1.0",
+    "head_first": true,
+    "get_fallback_statuses": [401, 403, 405, 429, 500, 502, 503, 504]
+  },
+  "allowed_schemes": ["https"],
+  "allowed_hosts": ["learn.chatgpt.com"],
+  "success_status_ranges": [[200, 399]],
+  "known_blind_spots": [
+    "HTTP reachability does not prove that the page still supports the recorded claim.",
+    "A successful response does not prove that anchors, examples, product access, or account-specific behavior are unchanged.",
+    "A transient third-party failure is reported during the staged rollout and does not block every pull request.",
+    "Only official_url values in the fact-impact registry are covered; research and community links remain outside this audit."
+  ]
+}

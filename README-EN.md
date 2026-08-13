@@ -350,6 +350,10 @@ exact SHA, named gate dimensions, command logs, active blockers, freshness,
 rollback boundary, and known blind spots. It remains a workflow artifact
 because a checked-in file cannot truthfully contain the SHA of its own commit.
 
+A separate scheduled audit checks the allowlisted first-party URLs behind the
+fact registry. It reports categorized transport findings without pretending
+that HTTP reachability is a semantic source review.
+
 ## English first, with explicit language identity
 
 English is the default public language and the first development priority.

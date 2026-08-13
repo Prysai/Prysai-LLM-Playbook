@@ -15,11 +15,11 @@
     },
     {
       "area": "official-facts",
-      "canonical_paths": ["docs/research/openai-codex-baseline.md", "docs/research/openai-codex-facts-refresh-2026-08-09.md", "docs/research/codex-model-selection-official-facts-2026-08-11.md", "docs/governance/fact-impact-registry.yaml"],
+      "canonical_paths": ["docs/research/openai-codex-baseline.md", "docs/research/openai-codex-facts-refresh-2026-08-09.md", "docs/research/codex-model-selection-official-facts-2026-08-11.md", "docs/governance/fact-impact-registry.yaml", "docs/governance/external-url-audit.yaml", "scripts/audit_external_urls.py", ".github/workflows/external-links.yml"],
       "owner": "facts-maintainer",
       "triggers": ["official-doc-change", "product-release", "user-reports-step-failure", "fact-scope-change", "affected-consumer-change"],
       "required_inputs": ["claim-id", "authoritative-url", "checked-at", "applies-to", "owner", "next-review", "evidence-class", "impact-groups", "affected-chapters", "affected-labs", "affected-skills", "affected-evaluation-tasks", "affected-site-paths", "recheck-level"],
-      "validation_commands": ["scripts/validate_fact_impact_registry.py", "scripts/validate_project.py", "scripts/check_local_links.py"],
+      "validation_commands": ["scripts/validate_fact_impact_registry.py", "scripts/audit_external_urls.py --check", "scripts/test_external_url_audit.py", "scripts/validate_project.py", "scripts/check_local_links.py"],
       "status_fields": ["claim_status", "checked_at", "owner", "next_review", "recheck_level", "last_result_run"],
       "next_review": "2026-09-09"
     },

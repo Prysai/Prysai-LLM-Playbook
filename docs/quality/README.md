@@ -38,3 +38,9 @@ The commit-bound release packet is generated only during a run, using
 contract. It records the exact candidate SHA, named gate dimensions, logs,
 current blockers, source freshness, rollback boundary, and blind spots. It is
 uploaded as a workflow artifact rather than committed as a self-stale report.
+
+Authoritative fact URLs have a separate weekly, report-only audit governed by
+[`external-url-audit.yaml`](../governance/external-url-audit.yaml). It maps
+network observations back to claim IDs and categorizes failures. HTTP success
+does not refresh claim semantics or close Q-007; the staged rollout must first
+accumulate evidence about false positives and retry behavior.

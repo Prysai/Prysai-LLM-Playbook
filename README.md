@@ -99,6 +99,10 @@ contains the exact SHA, gate matrix, command logs, current blockers, freshness,
 rollback boundary, and known blind spots. The packet is not committed because
 embedding the current SHA in the same commit would make it immediately stale.
 
+First-party fact URLs are also checked by a separate scheduled, report-only
+workflow. It detects transport failures and maps them to claim IDs, but a 200
+response does not prove that the source still supports the claim.
+
 ## Start with a result
 
 | If you need to… | Start with… | You should leave with… |

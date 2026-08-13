@@ -76,3 +76,10 @@ maturity, and static success does not promote a `candidate`.
 pull-request template for parseable YAML, required fields, unique component
 IDs, required confirmations, repository-local contact links, and the disclosure
 headings that preserve source, safety, evidence, unknowns, and status claims.
+
+`audit_external_urls.py` derives deduplicated authoritative URLs from the
+fact-impact registry, enforces an HTTPS host allowlist before redirects, uses
+bounded HEAD/GET requests, and writes categorized JSON/Markdown observations.
+Its initial `report_only` policy does not turn transient third-party failures
+into random PR failures. `test_external_url_audit.py` covers classification,
+deduplication, claim mapping, insecure schemes, and redirect escape attempts.

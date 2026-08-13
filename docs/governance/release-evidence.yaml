@@ -31,6 +31,8 @@
         {"id": "project-structure", "argv": ["{python}", "scripts/validate_project_structure.py"]},
         {"id": "content-completeness", "argv": ["{python}", "scripts/validate_content_completeness.py"]},
         {"id": "fact-impact", "argv": ["{python}", "scripts/validate_fact_impact_registry.py"]},
+        {"id": "external-url-audit-contract", "argv": ["{python}", "scripts/audit_external_urls.py", "--check"]},
+        {"id": "external-url-audit-fixtures", "argv": ["{python}", "scripts/test_external_url_audit.py"]},
         {"id": "learning-path", "argv": ["{python}", "scripts/validate_learning_path.py"]},
         {"id": "update-registry", "argv": ["{python}", "scripts/validate_update_registry.py"]},
         {"id": "content-status", "argv": ["{python}", "scripts/validate_content_status.py"]},

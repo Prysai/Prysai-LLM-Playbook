@@ -104,11 +104,11 @@
       "next_review": "2026-08-19",
       "superseded_by": "",
       "area": "Facts",
-      "finding": "Fast-changing product claims have uneven review dates and no URL reachability gate.",
+      "finding": "Fast-changing product claims now have a scheduled report-only URL audit, but no proven stable blocking policy or content-semantic freshness check.",
       "required_evidence": "Fresh source checks with scope, owner, checked date, and risk-based next review.",
-      "status": "open",
-      "evidence_paths": ["docs/governance/fact-impact-registry.yaml", "scripts/validate_fact_impact_registry.py"],
-      "resolution_scope": ""
+      "status": "in_progress",
+      "evidence_paths": ["docs/governance/fact-impact-registry.yaml", "docs/governance/external-url-audit.yaml", "scripts/validate_fact_impact_registry.py", "scripts/audit_external_urls.py", ".github/workflows/external-links.yml", "docs/adr/0022-staged-authoritative-url-audit.md"],
+      "resolution_scope": "Initial coverage is limited to 10 deduplicated first-party official_url values mapped to 24 claims. Report-only observations must accumulate before stable failure classes become blocking; HTTP success does not prove claim semantics."
     },
     {
       "id": "Q-008",

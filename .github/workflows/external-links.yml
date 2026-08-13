@@ -1,0 +1,58 @@
+name: External authoritative URL audit
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 15 * * 2"
+
+permissions:
+  contents: read
+
+jobs:
+  authoritative-facts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Validate audit policy and fixtures
+        run: |
+          python scripts/audit_external_urls.py --check
+          python scripts/test_external_url_audit.py
+
+      - name: Audit authoritative fact URLs
+        id: external_urls
+        continue-on-error: true
+        env:
+          EXTERNAL_URL_AUDIT_DIR: ${{ runner.temp }}/external-url-audit
+        run: python scripts/audit_external_urls.py --output-dir "$EXTERNAL_URL_AUDIT_DIR"
+
+      - name: Upload URL audit report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: external-url-audit-${{ github.sha }}-${{ github.run_id }}
+          path: ${{ runner.temp }}/external-url-audit
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish URL audit summary
+        if: always()
+        env:
+          EXTERNAL_URL_AUDIT_DIR: ${{ runner.temp }}/external-url-audit
+        run: |
+          if [ -f "$EXTERNAL_URL_AUDIT_DIR/external-url-audit.md" ]; then
+            cat "$EXTERNAL_URL_AUDIT_DIR/external-url-audit.md" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "# External URL audit unavailable" >> "$GITHUB_STEP_SUMMARY"
+            echo "The report was not generated; inspect the preceding steps." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Enforce audit execution
+        if: steps.external_urls.outcome != 'success'
+        run: exit 1

@@ -33,7 +33,7 @@
       "role": "The project control plane: research, governance, quality, sources, and decisions.",
       "entry": "docs/README.md",
       "first_read": "docs/project-map-EN.md",
-      "canonical_sources": ["docs/governance/project-structure.yaml", "docs/governance/quality-register.yaml", "docs/governance/release-evidence.yaml"],
+      "canonical_sources": ["docs/governance/project-structure.yaml", "docs/governance/quality-register.yaml", "docs/governance/release-evidence.yaml", "docs/governance/external-url-audit.yaml"],
       "generated_outputs": []
     },
     {
