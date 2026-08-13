@@ -44,6 +44,7 @@
 - [ ] 章节和实验的 fresh-context 前测完成
 - [ ] 易变事实有来源、访问日期、责任人和下一次复核日期
 - [ ] `CONTEXT.md` 中的核心术语与目录、章节、Skill 和评测记录一致
+- [ ] CI 已为候选 SHA 上传 release evidence packet；packet 中的 gate、blind spots、freshness 和 blockers 已审查
 
 ## 组织准备
 
@@ -52,3 +53,4 @@
 - [ ] 仓库拆分/发布形式已决定
 - [ ] 组织许可证已决定
 - [ ] 版本、变更日志和下线策略已决定
+- [ ] 已声明不可变 release tag、rollback target，并记录一次有边界的恢复演练；未完成时保持 `candidate`

@@ -93,6 +93,11 @@ machine-readable defect ledger. The project may remain an honest `candidate`
 with visible open work, but CI rejects a `verified` or `production-ready`
 claim that contradicts its active release blockers.
 
+Each quality workflow also uploads a commit-bound release evidence packet. It
+contains the exact SHA, gate matrix, command logs, current blockers, freshness,
+rollback boundary, and known blind spots. The packet is not committed because
+embedding the current SHA in the same commit would make it immediately stale.
+
 ## Start with a result
 
 | If you need to… | Start with… | You should leave with… |

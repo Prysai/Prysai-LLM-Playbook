@@ -13,6 +13,7 @@ book, site, translations, status, and maintenance records aligned.
 | Change a learning level | [`learning-path.yaml`](learning-path.yaml) | Site data and learning-path validator |
 | Change an artifact's maturity | [`content-status.yaml`](content-status.yaml) | Status indexes and status validator |
 | Change a defect, resolution, or release blocker | [`quality-register.yaml`](quality-register.yaml) | Generated quality ledger and maturity-claim gate |
+| Change release evidence dimensions, blind spots, version, or rollback metadata | [`release-evidence.yaml`](release-evidence.yaml) | Commit-bound CI evidence packet |
 | Change a volatile fact's consumers | [`fact-impact-registry.yaml`](fact-impact-registry.yaml) | Affected-content review |
 | Record a recurring maintenance update | [`update-registry.yaml`](update-registry.yaml) | Update map and release review |
 | Change ownership or contribution flow | [`contribution-model.md`](contribution-model.md) | Contributor-facing guidance |

@@ -151,6 +151,20 @@
       "status": "in_progress",
       "evidence_paths": ["docs/templates/field-case.md", "docs/research/codex-field-cases-current-review-2026-08-12.md"],
       "resolution_scope": "Three current Codex cases are structured; older report sets still need conversion or retirement."
+    },
+    {
+      "id": "Q-011",
+      "severity": "P1",
+      "owner": "release-maintainer",
+      "opened_at": "2026-08-12",
+      "next_review": "2026-08-19",
+      "superseded_by": "",
+      "area": "Release operations",
+      "finding": "The unpublished candidate has no declared release version, reviewed release tag, or tested rollback target.",
+      "required_evidence": "A version decision, reviewed immutable tag, release evidence packet, rollback target, and rollback rehearsal or bounded recovery record.",
+      "status": "open",
+      "evidence_paths": ["docs/release-checklist.md", "docs/governance/release-evidence.yaml", "docs/adr/0021-commit-bound-release-evidence.md"],
+      "resolution_scope": ""
     }
   ]
 }

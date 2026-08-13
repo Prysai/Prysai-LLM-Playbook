@@ -32,3 +32,9 @@ The [quality register](quality-register.md) is generated from the
 review reports remain useful evidence, but they do not close an item without a
 recorded status, evidence path, and resolution scope. Active P0/P1 items block
 `verified`; any active item blocks `production-ready`.
+
+The commit-bound release packet is generated only during a run, using
+[`release-evidence.yaml`](../governance/release-evidence.yaml) as its stable
+contract. It records the exact candidate SHA, named gate dimensions, logs,
+current blockers, source freshness, rollback boundary, and blind spots. It is
+uploaded as a workflow artifact rather than committed as a self-stale report.

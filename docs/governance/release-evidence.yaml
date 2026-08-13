@@ -1,0 +1,83 @@
+{
+  "schema_version": "1",
+  "owner": "release-maintainer",
+  "release_version": "unreleased",
+  "rollback_target": "unavailable",
+  "rollback_reason": "No signed or reviewed release tag has been declared for this unpublished candidate.",
+  "status_source": "docs/governance/content-status.yaml",
+  "quality_source": "docs/governance/quality-register.yaml",
+  "freshness_sources": [
+    "docs/governance/content-status.yaml",
+    "docs/governance/quality-register.yaml",
+    "docs/governance/fact-impact-registry.yaml",
+    "docs/governance/locale-matrix.yaml",
+    "docs/governance/update-registry.yaml"
+  ],
+  "known_blind_spots": [
+    "Learner labs and evaluation fixtures remain not_run unless separate runtime records exist.",
+    "Automated source checks do not prove translation quality, reader comprehension, or independent review.",
+    "The Pages artifact check does not prove that a public URL is enabled, deployed, or reachable.",
+    "External URL reachability and manual accessibility review are not part of this CI packet.",
+    "The local input-archive audit depends on machine-local archives and is not replayed on GitHub-hosted runners.",
+    "The official Skill validator is run locally when its bundled runtime is available; CI runs the repository Skill contract validator."
+  ],
+  "dimensions": [
+    {
+      "id": "contracts",
+      "label": "Contracts",
+      "scope": "Project structure, content identity, navigation, status, locale, update, and volatile-fact contracts.",
+      "commands": [
+        {"id": "project", "argv": ["{python}", "scripts/validate_project.py"]},
+        {"id": "project-structure", "argv": ["{python}", "scripts/validate_project_structure.py"]},
+        {"id": "content-completeness", "argv": ["{python}", "scripts/validate_content_completeness.py"]},
+        {"id": "fact-impact", "argv": ["{python}", "scripts/validate_fact_impact_registry.py"]},
+        {"id": "learning-path", "argv": ["{python}", "scripts/validate_learning_path.py"]},
+        {"id": "update-registry", "argv": ["{python}", "scripts/validate_update_registry.py"]},
+        {"id": "content-status", "argv": ["{python}", "scripts/validate_content_status.py"]},
+        {"id": "quality-register", "argv": ["{python}", "scripts/build_quality_register.py", "--check"]},
+        {"id": "release-evidence-fixtures", "argv": ["{python}", "scripts/test_release_evidence.py"]},
+        {"id": "localization", "argv": ["{python}", "scripts/validate_localization.py"]},
+        {"id": "site-i18n", "argv": ["{python}", "scripts/validate_site_i18n.py"]},
+        {"id": "book-navigation", "argv": ["{python}", "scripts/validate_book_navigation.py"]}
+      ]
+    },
+    {
+      "id": "generated-artifacts",
+      "label": "Generated artifacts",
+      "scope": "Generated navigation, site data, search, and bounded Pages artifact freshness.",
+      "commands": [
+        {"id": "book-navigation-output", "argv": ["{python}", "scripts/build_book_navigation.py", "--check"]},
+        {"id": "learning-path-site", "argv": ["{python}", "scripts/build_learning_path_site.py", "--check"]},
+        {"id": "locale-manifest", "argv": ["{python}", "scripts/build_site_locale_manifest.py", "--check"]},
+        {"id": "search-index", "argv": ["{python}", "scripts/build_site_search_index.py", "--check"]}
+      ]
+    },
+    {
+      "id": "content-integrity",
+      "label": "Content integrity",
+      "scope": "Repository-local Markdown targets and canonical English teaching contracts.",
+      "commands": [
+        {"id": "local-links", "argv": ["{python}", "scripts/check_local_links.py"]},
+        {"id": "canonical-english-learning-contract", "argv": ["{python}", "scripts/validate_learning_contract.py", "--canonical-en"]}
+      ]
+    },
+    {
+      "id": "skills-and-evaluations",
+      "label": "Skills and evaluations",
+      "scope": "Repository Skill metadata, all learning contracts, and evaluation fixture structure.",
+      "commands": [
+        {"id": "skills", "argv": ["{python}", "scripts/validate_skills.py"]},
+        {"id": "evaluation-fixtures", "argv": ["{python}", "scripts/validate_eval_tasks.py"]},
+        {"id": "all-learning-contracts", "argv": ["{python}", "scripts/validate_learning_contract.py"]}
+      ]
+    },
+    {
+      "id": "rendered-product",
+      "label": "Rendered product",
+      "scope": "Static public artifact construction only; browser, deployment, accessibility, and user review remain separate evidence.",
+      "commands": [
+        {"id": "public-artifact-boundary", "argv": ["{python}", "scripts/build_pages_artifact.py", "--check"]}
+      ]
+    }
+  ]
+}

@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  structure-and-skills:
+  release-evidence:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -23,59 +23,43 @@ jobs:
       - name: Install validation dependency
         run: python -m pip install --disable-pip-version-check PyYAML
 
-      - name: Validate project structure
-        run: python scripts/validate_project.py
+      - name: Validate release evidence contract
+        run: python scripts/build_release_evidence.py --check
 
-      - name: Validate canonical directory map
-        run: python scripts/validate_project_structure.py
+      - name: Run gates and build commit-bound release evidence
+        id: release_evidence
+        continue-on-error: true
+        env:
+          RELEASE_EVIDENCE_DIR: ${{ runner.temp }}/release-evidence
+          RELEASE_EVIDENCE_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: >-
+          python scripts/build_release_evidence.py
+          --output-dir "$RELEASE_EVIDENCE_DIR"
+          --candidate-sha "$GITHUB_SHA"
+          --repository "$GITHUB_REPOSITORY"
+          --workflow-run-url "$RELEASE_EVIDENCE_RUN_URL"
 
-      - name: Validate content identity and reader entries
-        run: python scripts/validate_content_completeness.py
+      - name: Upload release evidence packet
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: release-evidence-${{ github.sha }}
+          path: ${{ runner.temp }}/release-evidence
+          if-no-files-found: error
+          retention-days: 30
 
-      - name: Validate volatile fact impact registry
-        run: python scripts/validate_fact_impact_registry.py
+      - name: Publish release evidence summary
+        if: always()
+        env:
+          RELEASE_EVIDENCE_DIR: ${{ runner.temp }}/release-evidence
+        run: |
+          if [ -f "$RELEASE_EVIDENCE_DIR/release-evidence.md" ]; then
+            cat "$RELEASE_EVIDENCE_DIR/release-evidence.md" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "# Release evidence unavailable" >> "$GITHUB_STEP_SUMMARY"
+            echo "The packet was not generated; inspect the preceding steps." >> "$GITHUB_STEP_SUMMARY"
+          fi
 
-      - name: Check local Markdown links
-        run: python scripts/check_local_links.py
-
-      - name: Validate Codex Skills
-        run: python scripts/validate_skills.py
-
-      - name: Validate evaluation fixtures
-        run: python scripts/validate_eval_tasks.py
-
-      - name: Validate learning contract
-        run: python scripts/validate_learning_contract.py
-
-      - name: Validate canonical English teaching contract
-        run: python scripts/validate_learning_contract.py --canonical-en
-
-      - name: Validate learning path
-        run: python scripts/validate_learning_path.py
-
-      - name: Check generated learning-path data
-        run: python scripts/build_learning_path_site.py --check
-
-      - name: Check generated locale manifest
-        run: python scripts/build_site_locale_manifest.py --check
-
-      - name: Check generated site search index
-        run: python scripts/build_site_search_index.py --check
-
-      - name: Check GitHub Pages artifact
-        run: python scripts/build_pages_artifact.py --check
-
-      - name: Validate update registry
-        run: python scripts/validate_update_registry.py
-
-      - name: Validate current content status
-        run: python scripts/validate_content_status.py
-
-      - name: Validate quality register and release claim
-        run: python scripts/build_quality_register.py --check
-
-      - name: Validate locale matrix and same-language links
-        run: python scripts/validate_localization.py
-
-      - name: Validate public page language contract
-        run: python scripts/validate_site_i18n.py
+      - name: Enforce release gate result
+        if: steps.release_evidence.outcome != 'success'
+        run: exit 1

@@ -198,7 +198,7 @@ def render(register: dict[str, Any], content_status: dict[str, Any]) -> str:
         )
     lines.extend([
         "",
-        "The release decision is therefore `candidate / static checks passed / runtime evidence pending`.",
+        f"The ledger permits the declared `{project_status}` maturity; runtime and other out-of-scope evidence remain separate.",
         "The ledger must be regenerated after changing its machine source.",
         "",
     ])

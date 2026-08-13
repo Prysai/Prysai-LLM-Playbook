@@ -12,6 +12,7 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\validate_content_completeness.py
 & $py scripts\validate_learning_contract.py --canonical-en
 & $py scripts\build_quality_register.py --check
+& $py scripts\build_release_evidence.py --check
 & $py scripts\check_local_links.py
 & $py scripts\validate_localization.py
 & $py scripts\build_book_navigation.py --check
@@ -58,3 +59,15 @@ evidence paths, and resolution records. Its `--check` mode
 also rejects a stale Markdown projection and prevents `verified` or
 `production-ready` maturity from contradicting active release blockers. A
 green result proves claim/register consistency, not defect resolution.
+
+`build_release_evidence.py --check` validates the stable release-evidence
+contract. A full invocation requires an exact 40-character candidate SHA, runs
+the named gate matrix, preserves one log per command, and writes JSON and
+Markdown packets to a temporary output directory. CI uploads that directory
+even on failure. The packet is evidence for one commit and runner, not a
+promotion of content maturity or proof of runtime/user outcomes.
+
+`test_release_evidence.py` keeps the release gate honest with negative and
+boundary fixtures. It proves duplicate commands are rejected, command failure
+is logged and blocks the packet, overdue or invalid freshness blocks stronger
+maturity, and static success does not promote a `candidate`.

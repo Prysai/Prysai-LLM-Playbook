@@ -345,6 +345,11 @@ from a machine-readable defect source. Active P0/P1 items block `verified`, and
 any active item blocks `production-ready`; CI checks that this release claim
 continues to match the ledger.
 
+The quality workflow uploads a commit-bound release evidence packet with the
+exact SHA, named gate dimensions, command logs, active blockers, freshness,
+rollback boundary, and known blind spots. It remains a workflow artifact
+because a checked-in file cannot truthfully contain the SHA of its own commit.
+
 ## English first, with explicit language identity
 
 English is the default public language and the first development priority.

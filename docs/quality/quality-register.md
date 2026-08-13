@@ -10,7 +10,7 @@ without a recorded status and evidence path here.
 ## Derived release decision
 
 - Current project maturity: `candidate`.
-- Active blockers: P0 `2` · P1 `3` · P2 `3`.
+- Active blockers: P0 `2` · P1 `4` · P2 `3`.
 - Active P0/P1 items block a `verified` claim.
 - Any active item blocks a `production-ready` claim.
 - A passing register check proves that the claim matches the ledger; it does not resolve the defects.
@@ -29,6 +29,7 @@ without a recorded status and evidence path here.
 | Q-008 | P2 | navigation-maintainer; opened 2026-08-09; next 2026-08-26 | Navigation | TOC display titles and chapter H1 titles have aliases without a canonical map. | Generated title map consumed by the TOC, reader, and search index. | open | `docs/governance/book-navigation.yaml`, `scripts/build_book_navigation.py`. No resolution recorded. |
 | Q-009 | P2 | curriculum-maintainer; opened 2026-08-09; next 2026-08-26 | Teaching depth | Chapter size and experiment depth vary sharply; learning time and required artifact are not consistent. | Per-chapter time, prerequisite, artifact, failure, transfer, and learner review record. | open | `docs/content-matrix.md`, `docs/quality/curriculum-depth-review-2026-08-10.md`. No resolution recorded. |
 | Q-010 | P2 | research-maintainer; opened 2026-08-09; next 2026-08-26 | Cases | Several field reports are summaries rather than structured case cards with evidence level and reproduction status. | Symptom, version, date, source, evidence level, local reproduction, safe check, and stop condition. | in_progress | `docs/templates/field-case.md`, `docs/research/codex-field-cases-current-review-2026-08-12.md`. Three current Codex cases are structured; older report sets still need conversion or retirement. |
+| Q-011 | P1 | release-maintainer; opened 2026-08-12; next 2026-08-19 | Release operations | The unpublished candidate has no declared release version, reviewed release tag, or tested rollback target. | A version decision, reviewed immutable tag, release evidence packet, rollback target, and rollback rehearsal or bounded recovery record. | open | `docs/release-checklist.md`, `docs/governance/release-evidence.yaml`, `docs/adr/0021-commit-bound-release-evidence.md`. No resolution recorded. |
 
-The release decision is therefore `candidate / static checks passed / runtime evidence pending`.
+The ledger permits the declared `candidate` maturity; runtime and other out-of-scope evidence remain separate.
 The ledger must be regenerated after changing its machine source.
