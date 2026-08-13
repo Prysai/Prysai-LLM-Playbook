@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 import { spawn } from 'node:child_process';
 import { spawnSync } from 'node:child_process';
 import { createServer } from 'node:net';
+import { get as httpGet } from 'node:http';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import path from 'node:path';
 
@@ -47,8 +48,15 @@ const freePort = () => new Promise((resolve, reject) => {
 const waitForHttp = async (url, attempts = 50) => {
   for (let attempt = 0; attempt < attempts; attempt += 1) {
     try {
-      const response = await fetch(url);
-      if (response.ok) return;
+      const status = await new Promise((resolve, reject) => {
+        const request = httpGet(url, (response) => {
+          response.resume();
+          response.once('end', () => resolve(response.statusCode || 0));
+        });
+        request.once('error', reject);
+        request.setTimeout(1_000, () => request.destroy(new Error('HTTP readiness timeout')));
+      });
+      if (status >= 200 && status < 400) return;
     } catch (_) {
       // The local server may still be binding.
     }
