@@ -73,7 +73,9 @@ TEXT_REQUIREMENTS = {
         "next_review_at",
         "Source Investigator",
         "Research Router",
-        "version`: `0.3.0",
+        "project heuristics",
+        "Never label a learner",
+        "version`: `0.4.0",
     ],
     SITE: [
         "communication-clinic-EN.md#first-practice-intake",

@@ -3,7 +3,7 @@
   "candidate_id": "learning-practice-contract-v1",
   "status": "candidate",
   "run_evidence_status": "not_run",
-  "fixture_revision": "1",
+  "fixture_revision": "2",
   "platform_scope": "universal-text-chat",
   "target_performance": "Complete a four-turn Spanish hotel check-in information exchange using a fixed guest card",
   "allowed_aids": ["the supplied information card", "up to three single-word lookups"],
@@ -13,7 +13,10 @@
     "help progresses from error type to cue to one worked fragment",
     "the learner supplies the corrected attempt",
     "the transfer task changes setting vocabulary and one ambiguity",
-    "the response refuses fluency mastery retention and reminder claims without evidence"
+    "the response refuses fluency mastery retention and reminder claims without evidence",
+    "language difficulty is controlled with observable limits instead of the word beginner alone",
+    "review timing is labelled as a heuristic until a delayed attempt records the actual interval",
+    "learner evidence labels stay separate from artifact maturity labels"
   ],
   "failure_fixtures": [
     "answer_leakage_before_baseline",

@@ -134,27 +134,42 @@ Selecting a card earns only `template_selected`. Keep this curriculum artifact
 
 ## Route A — beginner Spanish travel exchange
 
-The target is a four-turn information exchange, not “learn Spanish.” Card A1
-uses a hotel check-in. Card A2 changes the setting to a train station while
-keeping the capability—supply details and resolve one ambiguity—stable.
+The target is four **learner turns**, not “learn Spanish.” The receptionist
+starts each turn with one short question or reply; the learner responds four
+times. Card A1 uses a hotel check-in. Card A2 changes the setting to a train
+station while keeping the capability—supply details and resolve one
+ambiguity—stable. Use fictional details only.
 
 ### Card A1 — hotel baseline and correction
 
 ```text
-I want to practise a four-turn beginner Spanish hotel check-in. I am Ana
-Torres, booked for two nights in a single room with breakfast. I need to ask
-whether breakfast starts at 7:00 or 7:30. Give me a four-minute baseline with
-the guest card and at most three single-word lookups. Do not teach, translate,
-or show a model answer before I reply. State a five-item observable rubric and
-wait for my attempt. Preserve it. Then identify the first meaning-blocking
-error, give the smallest useful hint, ask for my correction, and keep both
-attempts. Do not call one successful exchange fluency.
+Run one four-minute Spanish hotel check-in with exactly four learner turns.
+You are the receptionist and speak first. Use only short present-tense
+questions. I will answer once after each question.
+
+Fictional guest card: Ana Torres; two nights; single room; breakfast included;
+ask whether breakfast starts at 7:00 or 7:30. I may use the card and look up at
+most three single words. Introduce no more than three words not used in my
+answers, and ask one either/or comprehension question. Do not request or accept
+a real name, booking number, passport, address, contact, or payment detail.
+
+Before turn one, show this fixed rubric: four learner turns; name and two-night
+stay communicated; single room and breakfast communicated; 7:00/7:30 ambiguity
+resolved; Spanish understandable enough to continue. Do not teach, translate,
+or show a model answer before I reply. Preserve my first attempt and record
+lookups. Correct only the first meaning-blocking error: name the error type,
+then give a partial cue, then one worked fragment only if I still cannot
+continue. Ask me to correct it. If the worked fragment is still insufficient,
+reduce the exchange to one missing information item and stop adding new
+material. Keep both attempts and do not call one successful exchange fluency.
 ```
 
 - **Model should:** fix conditions before teaching, wait, preserve the attempt,
   disclose the hint, and request a learner-authored correction.
 - **Common failure:** supplying a polished dialogue first contaminates the
   baseline; rewriting the answer for the learner is not learner correction.
+  If this happens, save the leaked text, mark the baseline `contaminated`, and
+  restart with changed fictional details instead of scoring it as unaided.
 - **Evidence to keep:** card revision, time, allowed aids, original attempt,
   rubric, hint, corrected attempt, score, scorer, and unknowns.
 - **Status and receipt boundary:** selecting the card is `template_selected`;
@@ -165,13 +180,18 @@ attempts. Do not call one successful exchange fluency.
 ### Card A2 — unseen train-station transfer and delayed check
 
 ```text
-Use my saved hotel record, but do not reuse its sentences. Test the same
-capability at a train station: I need a one-way ticket to Toledo tomorrow
+Use my saved hotel record, but do not reuse its sentences. Run exactly four
+learner turns at a train station: I need a one-way ticket to Toledo tomorrow
 morning and must resolve whether the train leaves at 8:15 or 8:50. Keep the
-original five scoring dimensions, allow no hints, preserve my attempt, and name
-the changed variation. Prepare another unrevealed travel exchange for a check
-after [delay], but do not claim that you scheduled a reminder. Report transfer
-or retention only after the matching attempt and score exist.
+same five scoring dimensions—turns completed, traveller detail, requested
+service, ambiguity resolved, understandable Spanish—allow no hints, preserve
+my attempt, and name the changed variation.
+
+Then create a review cue for seven days from today unless I provide another
+date. Do not reveal the later task and do not claim that you scheduled a
+reminder. Seven days is a project default, not an optimal interval or a
+guarantee. Report retention only after the dated attempt exists; until then
+record `not_run`.
 ```
 
 - **Model should:** change setting, vocabulary, and ambiguity while keeping the
@@ -215,7 +235,7 @@ a correct-looking answer.
 - **Evidence to keep:** target, situation, task revision, aids, rubric, first
   attempt, reasoning, time used, and unresolved factual inputs.
 - **Status and receipt boundary:** a ready but untried task remains
-  `template_selected` or `candidate`; one attempt is `attempted`, not
+  `template_selected`; one attempt is `practised`, not
   improvement, readiness, or mastery.
 
 ### Card B2 — repair one error and test a changed case

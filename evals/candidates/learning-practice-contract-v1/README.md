@@ -3,7 +3,7 @@
 **Status:** `candidate` · **Run evidence:** `not_run` · **Platform:** universal
 text-chat fixture
 
-This candidate tests whether a coaching response preserves a learner's attempt,
+This revision-2 candidate tests whether a coaching response preserves a learner's attempt,
 uses graduated help, asks for a learner-authored correction, and refuses to turn
 one successful exchange into fluency or mastery. It evaluates process behavior,
 not whether a learner acquired Spanish.
@@ -22,6 +22,11 @@ changing setting, vocabulary, and one ambiguity.
 | Failure | Refuse `fluent`, `mastered`, and fake reminder claims | Promotes one immediate result into mastery or retention |
 | Transfer | Use the changed card without reusing lesson sentences | Treats a near-copy as transfer |
 
+The candidate also checks that vague level labels are replaced by observable
+difficulty controls, proposed review intervals are identified as project
+heuristics, and learner evidence labels are not confused with the Skill
+artifact's `candidate` status.
+
 ## Evidence packet required for a future run
 
 ```text
@@ -30,11 +35,17 @@ rubric_scores | hints_used | corrected_attempt | transfer_delta
 transfer_attempt | scorer | claim_status | limits | next_review_at
 ```
 
-One fresh-context baseline first-turn response is preserved in
+One fresh-context baseline first-turn response from fixture revision 1 is preserved in
 [`runs/2026-08-13-baseline-first-turn.md`](runs/2026-08-13-baseline-first-turn.md).
 It passed the five static first-turn criteria, but no learner attempt or full
-coaching loop followed. The candidate therefore remains `not_run`; the record
+coaching loop followed. It is historical evidence and does not validate the
+new revision-2 controls. The candidate therefore remains `not_run`; the record
 is an observed model response, not learner-outcome evidence.
+
+A revision-2 [fresh-context forward-test packet](runs/2026-08-13-revision-2-forward-test.md)
+preserves five initial observations, two exposed boundary failures, the Skill
+clarifications they caused, and two focused reruns. This is process evidence
+only; no learner completed the loop.
 
 `process_pass` and `learner_outcome` must be scored separately. The same model
 may provide formative feedback, but its own score is not independent learning

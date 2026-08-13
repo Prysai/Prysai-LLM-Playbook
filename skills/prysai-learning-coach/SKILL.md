@@ -36,11 +36,16 @@ not copy either document into the response or imply that routing proves a run.
 
 ## Establish the learning contract
 
-Collect the target performance, current ability, real use situation, available
-time, review date, and evidence that would count as improvement. If the user
+Collect only what is needed for the next attempt: target performance, real use
+situation, available time, allowed help, and observable criteria. If the user
 does not know their level, run a five-minute baseline task instead of asking
-them to self-label. Keep the task low-risk and adapt examples to the learner's
-interests without inventing personal facts.
+them to self-label. For language practice, replace labels such as `beginner`
+with inspectable controls: known words or one sample response, maximum new
+items, turn or sentence limit, response mode, and one comprehension check.
+Keep the task low-risk and adapt examples to the learner's interests without
+inventing personal facts. Use fictional scenario details and tell the learner
+not to enter reservation numbers, identity documents, addresses, payment
+details, or other unnecessary personal data.
 
 Reject claims such as “fluent in seven days” unless the user defines a narrow,
 observable performance that can actually be checked. Reframe a deadline as a
@@ -59,8 +64,28 @@ review point, not a guarantee.
    silently rewrite the answer and move on.
 5. Change the surface details and require one transfer attempt. Keep the same
    underlying skill so transfer is observable.
-6. Schedule the next review from observed difficulty. Return a review cue, not
-   a false reminder or calendar action.
+6. Choose the next review point from the evidence below. Return a review cue,
+   not a false reminder or calendar action.
+
+Use this operational default only when the learner did not choose a review
+date:
+
+- no attempt or no saved difficulty evidence: ask for one preferred review
+  date; do not invent a personalised schedule;
+- a meaning-blocking error remains after the worked-fragment hint: reduce the
+  task and suggest retrying the next day before adding new material;
+- the learner corrects only after a partial cue or worked fragment: suggest a
+  short unaided check in two or three days;
+- the learner corrects after an error-type hint and completes the changed case
+  unaided: suggest an unseen check in about one week.
+
+These intervals are project heuristics for producing a usable cue, not an
+optimal-spacing formula or evidence of retention. Let the learner change them
+to fit a real deadline. Record the actual delay only when the later attempt
+happens; until then say explicitly that retention remains `not_run`. When the
+learner supplies a date but the conversation contains no difficulty evidence,
+honour the date and label the scheduling basis `learner-chosen / difficulty
+unknown`; ask at most one question needed to make the review cue usable.
 
 For language practice, stay mostly in the target language at the learner's
 working level, but allow a brief explanation in the learner's strongest
@@ -98,20 +123,26 @@ respond in this order: what worked, the first consequential error, one useful
 hint, and the corrected attempt. Do not print empty ledgers, pending fields, or
 a nine-part form merely because the Skill can eventually produce them.
 
-When the user asks for a plan or handoff, append a compact practice receipt:
+When the user explicitly asks for a saved plan, evidence record, or handoff,
+append a compact practice receipt. A deadline, baseline request, or exaggerated
+goal alone is not a request to print the receipt:
 `core_unit_ids | guide_id | lab_id | fixture_revision | target | allowed_aids |
 observed_baseline | next_attempt | scorer_and_threshold | hint_count |
-transfer_delta | next_review_at | evidence | limits | artifact_status`. Use
+transfer_delta | next_review_at | evidence | limits | learner_evidence_status |
+skill_artifact_status`. Use
 `learning-practice-contract` and `lab-018-language-transfer` only when those
 artifacts actually govern the session. Include an error ledger only after an
 error was observed. Name the scorer and pass threshold when progress or
-readiness will be judged; never present the model's own score as independent
-evidence.
+readiness will be judged; never invent a named rubric or present the model's
+own score as independent evidence.
 
-Use `draft` when the baseline or criteria are missing, `candidate` when a loop
-is ready but untried, and `verified` only for the declared performance after
-repeated original and transfer attempts have met the fixed criteria. Never
-map completion of a study plan to mastery.
+Keep two status systems separate. The Skill artifact remains `candidate` until
+its own review and evaluation evidence support a stronger release status. For
+learner evidence, use only the learning-contract labels such as
+`template_selected`, `practised`, `demonstrated_on_this_task`,
+`retained_at_[delay]`, and `transferred_to_[variation]`. Never label a learner
+`draft`, `candidate`, or `verified`, and never map completion of a study plan
+to mastery.
 
 ## Maintenance record
 
@@ -119,6 +150,6 @@ map completion of a study plan to mastery.
   recorded in `docs/sources/asset-register.md`
 - `license`: original rewrite; no external prompt text copied
 - `owner`: learning-systems maintainer
-- `version`: `0.3.0`
+- `version`: `0.4.0`
 - `review_date`: `2026-09-12`
 - `content_status`: `candidate`

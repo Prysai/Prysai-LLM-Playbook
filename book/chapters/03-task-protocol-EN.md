@@ -310,13 +310,14 @@ This makes a plan inspectable before the edit and makes it easier to identify
 which stage introduced a bad assumption. It does not remove the need to review
 the actual result.
 
-## Six starter prompts that form a learning loop
+## Six starter prompts for one evidence-bounded practice loop
 
-These are not magic wording. They are six small contracts that make the model
-wait for your attempt, diagnose one problem at a time, and separate practice
-from evidence. The example uses Spanish, but the bracketed fields work for a
-language, software concept, interview skill, writing technique, or other
-bounded capability.
+These are not magic wording and they are not six consecutive lessons. They
+solve six different control problems: observable target and baseline,
+retrieval before reveal, bounded correction, immediate variation, an
+evidence-based review cue, and a delayed unseen check. The examples use
+Spanish, but the bracketed fields work for a language, software concept,
+interview skill, writing technique, or other bounded capability.
 
 ### 1. Find the real starting point
 
@@ -383,7 +384,21 @@ try it, and the evidence I should bring back.
 The model can prepare a cue; it cannot truthfully claim that you retained the
 skill or that an external reminder exists unless there is evidence for it.
 
-### 6. Research before believing a learning claim
+### 6. Run the delayed unseen check before claiming retention
+
+```text
+This is my scheduled review for [target skill]. Do not show the saved lesson or
+corrected sentences. Give me one previously unrevealed task that tests the same
+capability with changed details. State the allowed help and unchanged scoring
+criteria, then wait for my attempt. Record the actual delay and help used.
+Report only what happened on this delayed task; do not infer permanent
+retention, broad transfer, fluency, or mastery.
+```
+
+A saved review cue is a plan. Retention remains `not_run` until the delayed
+attempt and its conditions are actually recorded.
+
+### Separate check: research a claim about the method
 
 ```text
 Investigate this claim: [six prompts can make anyone fluent in seven days].
@@ -395,8 +410,9 @@ inferences, anecdotes, and unknowns. Stop when further sources no longer change
 the decision. End with the narrowest truthful rewrite of the claim.
 ```
 
-Use this pattern for health, finance, product features, news, statistics, and
-other claims where a confident answer without a traceable source is not enough.
+This research prompt is outside the six-step practice loop. Use it for health,
+finance, product features, news, statistics, and other claims where a confident
+answer without a traceable source is not enough.
 
 ### What to save
 
