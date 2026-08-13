@@ -1,4 +1,4 @@
-"""Validate the static Communication Clinic candidate without running a model."""
+"""Validate the task-contract availability and channel candidate without running a model."""
 
 from __future__ import annotations
 
@@ -8,7 +8,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CANDIDATE = ROOT / "evals" / "candidates" / "communication-clinic-v1"
+CANDIDATE_ID = "task-contract-availability-and-channel-v1"
+CANDIDATE = ROOT / "evals" / "candidates" / CANDIDATE_ID
 
 
 def load_json(relative: str) -> dict:
@@ -44,7 +45,9 @@ def main() -> None:
     acceptance = load_json("acceptance.json")
     record = load_json("run-record-template.json")
 
-    require(plan.get("candidate_id") == "communication-clinic-v1", "wrong candidate_id")
+    require(plan.get("candidate_id") == CANDIDATE_ID, "wrong plan candidate_id")
+    require(acceptance.get("candidate_id") == CANDIDATE_ID, "wrong acceptance candidate_id")
+    require(record.get("candidate_id") == CANDIDATE_ID, "wrong run-record candidate_id")
     require(plan.get("content_status") == "candidate", "content_status must remain candidate")
     require(plan.get("run_status") == "not_run", "run_status must remain not_run")
     require(plan.get("review_status") == "evaluation_plan_only", "review status overclaims")
@@ -91,9 +94,8 @@ def main() -> None:
     secret_markers = ("api_key", "token=", "password=", "private key", "cookie=")
     require(not any(marker in packet.lower() for marker in secret_markers), "synthetic packet contains secret marker")
 
-    print("COMMUNICATION_CLINIC_CANDIDATE_OK conditions=3 acceptance=10 evidence=5 run_status=not_run")
+    print("TASK_CONTRACT_CONDITIONS_CANDIDATE_OK conditions=3 acceptance=10 evidence=5 run_status=not_run")
 
 
 if __name__ == "__main__":
     main()
-

@@ -1,13 +1,26 @@
-# Communication Clinic candidate: one task, three request conditions
+# Task-contract availability and channel study
 
-**Candidate ID:** `communication-clinic-v1`  
-**Content status:** `candidate`  
-**Run status:** `not_run`  
-**Review status:** `evaluation_plan_only`  
-**Canonical Lab:** no  
+**Candidate ID:** `task-contract-availability-and-channel-v1`
+
+**Content status:** `candidate`
+
+**Run status:** `not_run`
+
+**Review status:** `evaluation_plan_only`
+
+**Canonical Lab:** no
+
 **Formal task-set entry:** no
 
-This candidate tests a narrow claim: whether a task contract supplied in a
+**Artifact under evaluation:** a synthetic maintainer release handoff
+
+**Comparison:** no initial contract vs contract in the request vs the same
+contract in recorded shared context
+
+**Not evaluated:** Beginner Practice Pack, coaching quality, learner
+performance, Spanish ability, or learning outcomes
+
+This unrun evaluation plan is designed to test a narrow claim: whether a task contract supplied in a
 request or in shared context changes unsupported assumptions, repair effort,
 acceptance, and evidence completeness for the same low-risk task.
 
@@ -19,7 +32,7 @@ fixture and evaluation plan are internally complete enough for review.
 
 “Make it professional” can encourage a model to optimize tone while inventing
 completion, deployment, approval, or safety claims. A longer request may reduce
-ambiguity, but length itself is not the target. The clinic compares:
+ambiguity, but length itself is not the target. The study compares:
 
 1. a vague request;
 2. a complete task contract in the user request; and
@@ -204,12 +217,12 @@ Run:
 
 ```powershell
 $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
-& $py scripts\validate_communication_clinic_candidate.py
+& $py scripts\validate_task_contract_conditions_candidate.py
 ```
 
-The validator checks candidate status, required files, exact condition set,
-task-contract channel equality, acceptance IDs, evidence IDs, repair limits,
-telemetry nullability, and absence of URLs or common secret markers in the
-synthetic packet. It does not call a model, score behavior, prove learning, or
-promote this candidate.
-
+The validator checks candidate status, identity consistency across all three
+JSON records, required files, exact condition set, task-contract channel
+equality, acceptance IDs, evidence IDs, repair limits, telemetry nullability,
+and absence of URLs or common secret markers in the synthetic packet. It does
+not call a model, score behavior, evaluate the Beginner Practice Pack, prove
+learning, or promote this candidate.

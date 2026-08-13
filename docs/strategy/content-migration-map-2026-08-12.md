@@ -34,7 +34,7 @@ chapter may contribute to the stable core, a Codex adapter, and a later merge.
 | --- | --- | --- | --- | --- |
 | 01 | `split` | distinguish model capability from an action system | Codex product surfaces and tool access | teach the neutral model/platform/tool/Agent boundary first; keep Codex as the deep worked implementation |
 | 02 | `universal-core` | first low-risk task, observable acceptance, rollback | current Codex interaction route | rerun one equivalent safe task through a second platform adapter before claiming transfer |
-| 03 | `universal-core` | outcome, context, constraints, authority, evidence | Codex project context examples | connect to the communication clinic and measure correction turns instead of prescribing prompt adjectives |
+| 03 | `universal-core` | outcome, context, constraints, authority, evidence | Codex project context examples | connect to the Beginner Practice Pack and measure correction turns instead of prescribing prompt adjectives |
 | 04 | `split` | trusted context, authority, side effects | Codex permission and execution behavior | separate stable trust-boundary teaching from dated Codex controls |
 | 05 | `codex-depth` | surface selection as a general decision | exact Codex surfaces and their behavior | later add adapter comparison cards; do not generalize current surface facts |
 | 06 | `split` | task-based model selection and comparability | Codex model availability and selectors | remove unsupported value claims; require a dated availability tuple and comparable task packet |
@@ -50,7 +50,7 @@ chapter may contribute to the stable core, a Codex adapter, and a later merge.
 | 16 | `gap` | engineering lifecycle transfer | Codex implementation workflow | replace overview prose with one runnable vertical slice containing failing test, patch, regression, and review evidence |
 | 17 | `gap` | marketing decision and experiment design | Codex-assisted production route | add one sanitized field packet with real input provenance, baseline, asset, result, and failed hypothesis |
 | 18 | `split` | four kinds of artifact work share little beyond the lifecycle | any Codex execution details inside each route | split content, design, data, and automation only when each has a distinct artifact, failure, and acceptance packet |
-| 19 | `universal-core` | fixed tasks, rubrics, repeated runs, scoped conclusions | Codex/model configuration fields | become the evaluation hub; the communication clinic should use its variability and evidence rules |
+| 19 | `universal-core` | fixed tasks, rubrics, repeated runs, scoped conclusions | Codex/model configuration fields | become the evaluation hub; the Beginner Practice Pack should use its variability and evidence rules |
 | 20 | `merge` | shared context and compressed communication | Codex personal configuration | merge repeated owner/scope/evidence/rollback explanation; retain the personal-system assembly artifact |
 | 21 | `merge` | team conventions, review, authority, capability transfer | Codex team surfaces | depend on Chapter 20 and retain only organization-level decisions, drift controls, and review evidence |
 | 22 | `merge` | maintenance triggers, supersession, retirement | Codex fact refresh examples | become the maintenance hub; remove lifecycle recap and preserve freshness/retirement mechanisms |
@@ -111,7 +111,7 @@ remains unchanged.
 
 1. Adopt the architecture through an ADR without changing the public name.
 2. Gate new units with the machine-readable gold-content contract.
-3. Build and review the communication-clinic candidate against that contract.
+3. Build and review the task-contract availability and channel study against that contract.
 4. Refactor one repeated cluster only after link, navigation, locale, and status
    effects are enumerated.
 5. Produce one non-Codex adapter and rerun a core Lab with stored evidence.

@@ -220,7 +220,7 @@ before a delayed task with recorded exposure and independent scoring?
 ## Sources and boundary
 
 - [Learning Practice Contract](../guides/learning-practice-contract-EN.md) — evidence and answer-leakage rules used by this lab.
-- [Communication Clinic](../communication-clinic-EN.md) — the three-stage language route.
+- [Beginner Practice Pack](../communication-clinic-EN.md) — the three-stage language route.
 - [Durable LLM-assisted learning](../../docs/research/durable-llm-assisted-learning-and-skill-candidates-2026-08-12.md) — candidate research synthesis and source boundaries; accessed 2026-08-12.
 - [Lab 018 delayed-check card pool](../../docs/quality/lab-018-delayed-card-pool-v1.md) — project-authored pre-declared card and scoring-control procedure.
 

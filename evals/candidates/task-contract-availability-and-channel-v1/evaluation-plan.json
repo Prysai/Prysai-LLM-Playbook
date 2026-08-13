@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "candidate_id": "communication-clinic-v1",
+  "candidate_id": "task-contract-availability-and-channel-v1",
   "content_status": "candidate",
   "run_status": "not_run",
   "review_status": "evaluation_plan_only",
@@ -63,4 +63,3 @@
   ],
   "inference_boundary": "Descriptive fixture evidence only; no universal communication, model, platform, learner-mastery, cost-effectiveness, or production conclusion."
 }
-

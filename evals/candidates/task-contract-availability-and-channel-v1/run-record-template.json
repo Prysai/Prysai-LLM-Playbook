@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "candidate_id": "communication-clinic-v1",
+  "candidate_id": "task-contract-availability-and-channel-v1",
   "run_id": null,
   "condition_id": null,
   "repetition": null,
@@ -52,4 +52,3 @@
   "stop_condition": null,
   "notes": null
 }
-

@@ -188,6 +188,14 @@ try {
   assert.equal(await page.locator('[data-reader-trust-reviewed]').getAttribute('datetime'), '2026-08-12', 'Reader omits the last actual evidence review date');
   assert.match(await page.locator('.reader-trust-boundary').innerText(), /not a freshness guarantee/i, 'Reader does not bound the scheduled review date');
 
+  await page.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en`, { waitUntil: 'networkidle' });
+  await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
+  assert.match(await page.locator('[data-reader-article] h1').innerText(), /beginner practice pack/i, 'Reader did not render the public Beginner Practice Pack name');
+  assert.match(await page.locator('[data-reader-article]').innerText(), /learner-outcome evidence:\s*none/i, 'Beginner Practice Pack does not expose its learner-evidence boundary');
+  assert.equal(await page.getByRole('link', { name: /coaching-process evaluation candidate/i }).isVisible(), true, 'Related coaching-process evaluation is not discoverable');
+  assert.equal(await page.getByRole('link', { name: /task-contract availability and channel study/i }).isVisible(), true, 'Separate task-contract study is not discoverable');
+  await noHorizontalOverflow(page, 'mobile Beginner Practice Pack');
+
   const trustPage = await context.newPage();
   await trustPage.addInitScript(() => { window.CODEX_READER_FETCH_TIMEOUT_MS = 200; });
   await trustPage.route('**/docs/governance/page-trust-registry.yaml', async (route) => {
@@ -227,7 +235,7 @@ try {
   assert.deepEqual(consoleErrors, [], `browser console errors: ${consoleErrors.join(' | ')}`);
   assert.deepEqual(pageErrors, [], `browser page errors: ${pageErrors.join(' | ')}`);
   await context.tracing.stop();
-  console.log('BROWSER_SMOKE_OK initial_search_requests=0 lazy_search_requests=1 desktop=1280 mobile=390 reader=chapter-02 invalid_path=blocked');
+  console.log('BROWSER_SMOKE_OK initial_search_requests=0 lazy_search_requests=1 desktop=1280 mobile=390 readers=chapter-02,beginner-practice-pack invalid_path=blocked');
 } catch (error) {
   await fs.mkdir(evidenceDirectory, { recursive: true });
   if (page) await page.screenshot({ path: path.join(evidenceDirectory, 'failure.png'), fullPage: true }).catch(() => {});

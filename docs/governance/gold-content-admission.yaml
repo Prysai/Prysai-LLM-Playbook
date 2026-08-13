@@ -103,9 +103,9 @@
   "claim_boundary": "Admission proves that the proposed unit satisfies this editorial contract. It does not prove that the unit was run, that a learner mastered it, that it transfers across platforms, or that it is verified or production-ready.",
   "admissions": [
     {
-      "content_id": "communication-clinic-v1",
+      "content_id": "task-contract-availability-and-channel-v1",
       "family": "evaluation-candidate",
-      "title": "Communication Clinic: one task, three request conditions",
+      "title": "Task-contract availability and channel study",
       "status": "admitted-candidate",
       "audiences": ["beginner", "practitioner", "advanced"],
       "platform_scope": "universal",

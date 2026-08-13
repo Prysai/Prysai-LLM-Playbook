@@ -15,7 +15,7 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\build_release_evidence.py --check
 & $py scripts\validate_gold_content_admission.py
 & $py scripts\test_gold_content_admission.py
-& $py scripts\validate_communication_clinic_candidate.py
+& $py scripts\validate_task_contract_conditions_candidate.py
 & $py scripts\validate_learning_practice_candidate.py
 & $py scripts\validate_evidence_review_candidate.py
 & $py scripts\test_evidence_review_candidate.py
@@ -114,8 +114,8 @@ acceptance, missing evidence limits, empty platform deltas, and a below-threshol
 score. These checks establish admission-policy consistency, not runtime or
 learning effectiveness.
 
-`validate_communication_clinic_candidate.py` checks the isolated, synthetic
-three-condition communication experiment before any model run. It preserves
+`validate_task_contract_conditions_candidate.py` checks the isolated,
+synthetic task-contract availability and channel study before any model run. It preserves
 the candidate as `not_run`, outside the canonical Lab and evaluation counts,
 and checks fixed inputs, context-channel equality, repetition controls,
 acceptance IDs, evidence IDs, telemetry nullability, and the secret/network
@@ -160,4 +160,5 @@ deduplication, claim mapping, insecure schemes, and redirect escape attempts.
 `test_evidence_review_candidate.py` derive narrow learning-evidence statuses
 from original positive, boundary, failure, transfer, and fresh-context fixtures.
 They check declared policy and preserve one method-loaded blind handoff as
-`observed_single_turn`; this is not automatic-trigger or repeated-runtime proof.
+an editorial single-turn handoff observation; this is not an authenticated
+runtime receipt, automatic-trigger evidence, or repeated-runtime proof.

@@ -26,7 +26,7 @@ desktop catalogue, complete indexes, keyboard access, or evidence boundary?
 
 The three mobile route links begin at 587, 635, and 682 px from the document
 top, so they appear in the first 844 px viewport. They link to the first safe
-task, the Communication Clinic, and the complete project indexes. The eight
+task, the Beginner Practice Pack, and the complete project indexes. The eight
 index links preserve one-tap access to all 22 chapters, 18 Labs, 12 Skills,
 three field cases, six locale records, seven teaching boards, 18 update areas,
 and four Page Trust families.

@@ -1,22 +1,34 @@
 # Evidence Review v1 candidate
 
-This packet checks the declared learning-evidence behavior of
-`prysai-evidence-review` v0.3.0. The cases are original Prysai Lab fixtures.
-They contain no external text, learner data, credentials, or network actions.
+**Fixture type:** deterministic policy-mapping simulation
 
-The deterministic validator derives each result from synthetic attempts,
-item-level binary rubric scores, a numeric threshold, scorer role and
-independence, and the changed-case record. It covers a narrow fixed-task pass,
-an inflated fluency claim, missing evidence, an unseen transfer variation, and
-a coaching request that must be handed to Learning Coach without beginning a
-lesson. Its own result is `policy_mapping_pass`, not a verified learner claim.
+**Input data:** invented policy test records
 
-The coaching handoff case received one valid method-loaded blind run and one
-invalid no-method control on 2026-08-13. The expected result was not disclosed
-to either responder. The valid run yielded to Learning Coach without starting
-the lesson; the no-method control began coaching and is retained to show why a
-Skill behavior test must actually load the Skill. See `runs/`. Runtime evidence
-is therefore only `observed_single_turn`; the Skill remains `candidate`.
+**Real learner participation:** none
+
+**Learner-outcome evidence:** none
+
+**What passed:** fixture consistency and expected policy mapping only
+
+**Runtime observation:** one editorial handoff record, not a coaching or
+learner run
+
+This packet checks the declared status policy of `prysai-evidence-review`
+v0.3.0. The cases are original Prysai Lab fixtures. They contain no external
+text, learner data, credentials, or network actions.
+
+The deterministic validator checks whether invented packet shapes map to the
+expected hypothetical policy labels. It covers a complete fixed-task packet,
+an inflated fluency request, an incomplete packet, a changed-task packet, an
+unsupported retention Boolean, and a coaching handoff. Evidence references in
+these records use `fixture://`; they are test inputs, not observations of a
+learner. The fixture cannot emit learner-facing `verified` results.
+
+The `runs/` directory preserves one method-loaded handoff summary and one
+no-method control from 2026-08-13. These are editorial observations, not
+authenticated raw runtime receipts. They do not establish automatic routing,
+repeated reliability, learner participation, or learner outcomes. The Skill
+remains `candidate`.
 
 Run:
 
@@ -25,6 +37,6 @@ Run:
 & $py scripts\test_evidence_review_candidate.py
 ```
 
-Passing these checks proves only fixture consistency and policy mapping. It
-does not prove model trigger accuracy, coaching quality, learning, fluency,
-retention, or production readiness.
+Passing these checks proves only fixture consistency and policy mapping over
+invented inputs. It does not prove model trigger accuracy, coaching quality,
+learning, fluency, transfer, retention, or production readiness.

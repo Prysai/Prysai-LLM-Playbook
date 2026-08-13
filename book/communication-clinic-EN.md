@@ -2,8 +2,9 @@
 
 # Beginner Practice Pack v1
 
-**Status:** `candidate` | **Run evidence:** `not_run` | **Platform:** universal
-chat baseline; product-specific actions require a sourced adapter.
+**Curriculum status:** `candidate` | **Complete learner runs:** none |
+**Learner-outcome evidence:** none | **Platform:** universal text chat;
+product-specific actions require a sourced adapter.
 
 Choose one route: a Spanish travel exchange, another observable skill, or a
 source-supported research decision. Use its two cards in order. These original
@@ -208,6 +209,8 @@ record `not_run`.
 
 For the fuller fixture, use [Lab 018](labs/lab-018-language-transfer-EN.md) and
 the [learning practice contract](guides/learning-practice-contract-EN.md).
+The directly related [coaching-process evaluation candidate](../evals/candidates/learning-practice-contract-v1/README.md)
+contains an unrun plan and limited process observations, not learner outcomes.
 
 <span id="general-skill-practice-route"></span>
 
@@ -320,6 +323,8 @@ time limit, and acceptance criteria as fixed as possible. Compare answer
 leakage, assumptions, corrections, final acceptance, evidence completeness,
 and confounders. One pair is an observation, not proof of prompt superiority.
 This practice pack has no complete stored learner run yet.
+This comparison has not been run as a practice-pack evaluation. Results from
+the separate release-handoff request study cannot substitute for learner data.
 
 ## Copy-ready practice receipt
 
@@ -349,11 +354,14 @@ next_review | stop_reason
 The cards and fixtures are original project material. Their rationale is
 recorded in:
 
+No evaluation results for the Beginner Practice Pack are stored here. The
+records below explain its design or demonstrate separate evaluation methods.
+
 - [Beginner Practice Pack primary-source boundary](../docs/research/beginner-practice-pack-sources-2026-08-13.md)
 - [Beginner first-practice friction](../docs/research/beginner-first-practice-friction-2026-08-13.md)
 - [Durable language learning and bounded research](../docs/research/durable-language-learning-and-bounded-research-2026-08-13.md)
 - [Prompt patterns for real work](../docs/research/prompt-patterns-for-real-work-2026-08-10.md)
-- [Communication Clinic evaluation candidate](../evals/candidates/communication-clinic-v1/README.md)
+- **Separate evaluation-method example:** [Task-contract availability and channel study](../evals/candidates/task-contract-availability-and-channel-v1/README.md) — compares three ways of supplying a task contract for a synthetic maintainer handoff. It does not test these practice cards, coaching, or learner outcomes.
 
 Those records support design rationale, not prompt, model, platform, research,
 or learning effectiveness. Recheck volatile product guidance before teaching

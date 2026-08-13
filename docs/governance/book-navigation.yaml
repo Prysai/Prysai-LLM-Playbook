@@ -20,7 +20,7 @@
   "supplemental_routes": [
     {
       "id": "communication-clinic",
-      "title_en": "Communication Clinic",
+      "title_en": "Beginner Practice Pack",
       "english_path": "book/communication-clinic-EN.md",
       "status": "candidate",
       "run_status": "not_run",

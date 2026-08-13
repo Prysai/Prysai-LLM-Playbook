@@ -138,7 +138,7 @@ could strengthen—or falsify—the current claim?
 
 - [Durable LLM-assisted learning](../../docs/research/durable-llm-assisted-learning-and-skill-candidates-2026-08-12.md) — candidate synthesis of retrieval, feedback, spacing, retention, transfer, and claim boundaries; accessed 2026-08-12.
 - [Project terminology](../../CONTEXT.md) — stable distinctions among models, tools, Skills, Agents, evidence, and learning paths.
-- [Communication Clinic](../communication-clinic-EN.md) — reader-facing language and research routes that apply this contract.
+- [Beginner Practice Pack](../communication-clinic-EN.md) — reader-facing language and research routes that apply this contract.
 
 The guide is original project material. The research record links the IES
 practice guide and scholarly sources and states what they do not prove. Recheck

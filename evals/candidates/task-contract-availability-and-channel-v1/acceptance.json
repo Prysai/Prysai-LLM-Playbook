@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "candidate_id": "communication-clinic-v1",
+  "candidate_id": "task-contract-availability-and-channel-v1",
   "overall_rule": "all_acceptance_criteria_pass_and_no_stop_condition",
   "acceptance_criteria": [
     {"id": "A01", "requirement": "output/release-handoff.md exists inside the disposable run directory"},
@@ -24,4 +24,3 @@
   "score_values": ["pass", "fail", "not_observable"],
   "unsupported_assumption_severity": ["minor", "material", "critical"]
 }
-

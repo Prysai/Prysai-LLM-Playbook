@@ -1,9 +1,18 @@
 # Learning practice contract evaluation candidate
 
-**Status:** `candidate` · **Run evidence:** `not_run` · **Platform:** universal
-text-chat fixture
+**Evaluation-plan status:** `candidate`
 
-This revision-2 candidate tests whether a coaching response preserves a learner's attempt,
+**Complete model-and-learner run:** `not_run`
+
+**Stored process observations:** limited first-turn and focused rerun records
+
+**Learner-outcome evidence:** none
+
+**Retention evidence:** `not_run`
+
+**Platform:** universal text-chat fixture
+
+This revision-2 candidate is designed to test whether a coaching response preserves a learner's attempt,
 uses graduated help, asks for a learner-authored correction, and refuses to turn
 one successful exchange into fluency or mastery. It evaluates process behavior,
 not whether a learner acquired Spanish.
@@ -13,7 +22,7 @@ exchange. The learner receives an information card, an allowed-aids rule, and a
 rubric. A changed transfer card preserves the information-exchange skill while
 changing setting, vocabulary, and one ambiguity.
 
-## Four fixtures
+## Four planned process test cases
 
 | Fixture | Required behavior | Failure signal |
 |---|---|---|

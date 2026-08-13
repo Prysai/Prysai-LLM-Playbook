@@ -1,131 +1,147 @@
 {
-  "schema_version": "1",
+  "schema_version": "2",
   "candidate_id": "evidence-review-v1",
   "skill_id": "prysai-evidence-review",
   "skill_version": "0.3.0",
   "status": "candidate",
+  "fixture_data_kind": "invented_policy_test_records",
+  "learner_participation": "none",
+  "learner_run_status": "not_run",
+  "learner_outcome_evidence": "none",
+  "result_scope": "policy_mapping_only",
   "deterministic_check_status": "policy_mapping_pass",
-  "runtime_evidence_status": "observed_single_turn",
-  "claim_boundary": "The deterministic fixtures test the declared review policy, and one method-loaded blind run observed the coaching handoff. This does not prove automatic trigger selection, repeated reliability, or broader model behavior.",
+  "runtime_evidence_status": "editorial_observation_only",
+  "claim_boundary": "These invented records test status-policy mapping only. They do not establish learner participation, learner performance, scorer independence, transfer, retention, automatic Skill routing, or repeated runtime behavior.",
   "required_packet_fields": [
     "fixture_revision",
     "allowed_aids",
-    "baseline_attempt",
-    "hint_ledger",
-    "learner_correction",
-    "changed_case_task",
-    "scorer",
-    "rubric_scores",
-    "threshold"
+    "baseline_record",
+    "hint_record",
+    "correction_record",
+    "fixed_task_record",
+    "changed_task_record",
+    "scorer_record"
   ],
   "fixtures": [
     {
-      "id": "positive-fixed-task-pass",
+      "id": "complete-fixed-task-policy-input",
       "kind": "positive",
-      "request": "Audit the learner's claim that they passed this fixed Spanish hotel check-in task.",
+      "request": "Given a complete hypothetical packet for one fixed task, which narrow status would the policy allow?",
       "requested_status": "demonstrated_on_this_task",
       "packet": {
-        "fixture_revision": "hotel-check-in-r1",
-        "allowed_aids": ["guest card", "three single-word lookups"],
-        "baseline_attempt": "Hola, reserva Ana Torres. Dos noches. Habitación individual. Desayuno sí. ¿Desayuno a siete o siete y media?",
-        "hint_ledger": ["gender agreement cue"],
-        "learner_correction": "Hola, tengo una reserva a nombre de Ana Torres para dos noches. Quiero una habitación individual con desayuno. ¿El desayuno empieza a las siete o a las siete y media?",
-        "changed_case_task": {"id": "restaurant-r1", "unseen": false, "attempt": null, "rubric_scores": null},
-        "scorer": {"id": "human-reviewer-a", "role": "independent_scorer", "independent_from_coach": true},
-        "rubric_scores": {"four_turns": 1, "identity": 1, "reservation": 1, "breakfast_question": 1, "understandable": 1},
-        "threshold": 4,
-        "delay": null,
-        "delayed_unseen_passed": false
+        "fixture_revision": "hotel-check-in-policy-r2",
+        "allowed_aids": ["fictional guest card"],
+        "baseline_record": {"present": true, "evidence_ref": "fixture://baseline/1"},
+        "hint_record": {"present": true, "evidence_ref": "fixture://hints/1"},
+        "correction_record": {"present": true, "learner_authorship_recorded": true, "evidence_ref": "fixture://correction/1"},
+        "fixed_task_record": {"result": "pass", "rubric_revision": "hotel-rubric-r1", "evidence_ref": "fixture://fixed-score/1"},
+        "changed_task_record": null,
+        "scorer_record": {"role": "independent_scorer", "independence_evidence_ref": "fixture://scorer/1"},
+        "delayed_task_record": null
       },
-      "expected": {
+      "expected_policy_output": {
         "disposition": "review",
-        "claim_status": "verified",
-        "learning_status": "demonstrated_on_this_task",
-        "rejected_status": null,
+        "would_support_status": "demonstrated_on_this_task",
+        "would_reject_status": null,
         "handoff": null,
         "missing_fields": []
       }
     },
     {
-      "id": "boundary-single-pass-is-not-fluency",
+      "id": "single-pass-would-not-support-fluency",
       "kind": "boundary",
-      "request": "The learner passed one hotel task. Mark them fluent in Spanish.",
+      "request": "Given one hypothetical fixed-task pass, would the policy allow fluent?",
       "requested_status": "fluent",
       "packet": {
-        "fixture_revision": "hotel-check-in-r1",
-        "allowed_aids": ["guest card"],
-        "baseline_attempt": "Hola, reserva Ana Torres. Dos noches. Habitación individual. Desayuno sí. ¿Desayuno a siete o siete y media?",
-        "hint_ledger": [],
-        "learner_correction": "Hola, tengo una reserva a nombre de Ana Torres para dos noches. Quiero una habitación individual con desayuno. ¿El desayuno empieza a las siete o a las siete y media?",
-        "changed_case_task": {"id": "restaurant-r1", "unseen": false, "attempt": null, "rubric_scores": null},
-        "scorer": {"id": "human-reviewer-a", "role": "independent_scorer", "independent_from_coach": true},
-        "rubric_scores": {"four_turns": 1, "identity": 1, "reservation": 1, "breakfast_question": 1, "understandable": 1},
-        "threshold": 4,
-        "delay": null,
-        "delayed_unseen_passed": false
+        "fixture_revision": "hotel-check-in-policy-r2",
+        "allowed_aids": ["fictional guest card"],
+        "baseline_record": {"present": true, "evidence_ref": "fixture://baseline/2"},
+        "hint_record": {"present": true, "evidence_ref": "fixture://hints/2"},
+        "correction_record": {"present": true, "learner_authorship_recorded": true, "evidence_ref": "fixture://correction/2"},
+        "fixed_task_record": {"result": "pass", "rubric_revision": "hotel-rubric-r1", "evidence_ref": "fixture://fixed-score/2"},
+        "changed_task_record": null,
+        "scorer_record": {"role": "independent_scorer", "independence_evidence_ref": "fixture://scorer/2"},
+        "delayed_task_record": null
       },
-      "expected": {
+      "expected_policy_output": {
         "disposition": "review",
-        "claim_status": "partially-verified",
-        "learning_status": "demonstrated_on_this_task",
-        "rejected_status": "fluent",
+        "would_support_status": "demonstrated_on_this_task",
+        "would_reject_status": "fluent",
         "handoff": null,
         "missing_fields": []
       }
     },
     {
-      "id": "failure-incomplete-packet",
+      "id": "incomplete-packet-policy-input",
       "kind": "failure",
-      "request": "Verify that the learner improved from this unlabelled final answer.",
+      "request": "Given an incomplete hypothetical packet, would the policy support improvement?",
       "requested_status": "improved",
       "packet": {
-        "fixture_revision": "hotel-check-in-r1",
+        "fixture_revision": "hotel-check-in-policy-r2",
         "allowed_aids": ["unknown"],
-        "baseline_attempt": "",
-        "hint_ledger": null,
-        "learner_correction": "preserved",
-        "changed_case_task": null,
-        "scorer": {"id": "same-model", "role": "coach", "independent_from_coach": false},
-        "rubric_scores": null,
-        "threshold": null,
-        "delay": null,
-        "delayed_unseen_passed": false
+        "baseline_record": null,
+        "hint_record": null,
+        "correction_record": {"present": true, "learner_authorship_recorded": false, "evidence_ref": null},
+        "fixed_task_record": null,
+        "changed_task_record": null,
+        "scorer_record": {"role": "coach", "independence_evidence_ref": null},
+        "delayed_task_record": null
       },
-      "expected": {
+      "expected_policy_output": {
         "disposition": "review",
-        "claim_status": "unknown",
-        "learning_status": null,
-        "rejected_status": "improved",
+        "would_support_status": null,
+        "would_reject_status": "improved",
         "handoff": null,
-        "missing_fields": ["baseline_attempt", "changed_case_task", "hint_ledger", "rubric_scores", "threshold"]
+        "missing_fields": ["baseline_record", "correction_record", "fixed_task_record", "hint_record", "scorer_record"]
       }
     },
     {
-      "id": "transfer-unseen-restaurant-pass",
+      "id": "complete-transfer-policy-input",
       "kind": "transfer",
-      "request": "Audit the claim that the learner transferred the exchange to an unseen restaurant-booking variation.",
+      "request": "Given a complete hypothetical changed-task packet, which transfer status would the policy allow?",
       "requested_status": "transferred_to_restaurant_booking",
       "packet": {
-        "fixture_revision": "hotel-check-in-r1",
-        "allowed_aids": ["three single-word lookups"],
-        "baseline_attempt": "Hola, reserva Ana Torres. Dos noches. Habitación individual. Desayuno sí. ¿Desayuno a siete o siete y media?",
-        "hint_ledger": ["question-order cue"],
-        "learner_correction": "Hola, tengo una reserva a nombre de Ana Torres para dos noches. Quiero una habitación individual con desayuno. ¿El desayuno empieza a las siete o a las siete y media?",
-        "changed_case_task": {"id": "restaurant-r1", "unseen": true, "attempt": "Buenas tardes. Tengo una reserva para dos personas a las ocho. ¿La mesa está dentro o en la terraza?", "rubric_scores": {"party_size": 1, "time": 1, "reservation": 1, "ambiguity_question": 1, "understandable": 1}},
-        "scorer": {"id": "human-reviewer-b", "role": "independent_scorer", "independent_from_coach": true},
-        "rubric_scores": {"four_turns": 1, "identity": 1, "reservation": 1, "breakfast_question": 1, "understandable": 1},
-        "threshold": 4,
-        "variation": "restaurant_booking",
-        "delay": null,
-        "delayed_unseen_passed": false
+        "fixture_revision": "hotel-check-in-policy-r2",
+        "allowed_aids": ["three fictional single-word lookups"],
+        "baseline_record": {"present": true, "evidence_ref": "fixture://baseline/4"},
+        "hint_record": {"present": true, "evidence_ref": "fixture://hints/4"},
+        "correction_record": {"present": true, "learner_authorship_recorded": true, "evidence_ref": "fixture://correction/4"},
+        "fixed_task_record": {"result": "pass", "rubric_revision": "hotel-rubric-r1", "evidence_ref": "fixture://fixed-score/4"},
+        "changed_task_record": {"result": "pass", "unseen_recorded": true, "material_delta_recorded": true, "variation": "restaurant_booking", "rubric_revision": "restaurant-rubric-r1", "evidence_ref": "fixture://changed-score/4"},
+        "scorer_record": {"role": "independent_scorer", "independence_evidence_ref": "fixture://scorer/4"},
+        "delayed_task_record": null
       },
-      "expected": {
+      "expected_policy_output": {
         "disposition": "review",
-        "claim_status": "verified",
-        "learning_status": "transferred_to_restaurant_booking",
-        "rejected_status": null,
+        "would_support_status": "transferred_to_restaurant_booking",
+        "would_reject_status": null,
         "handoff": null,
         "missing_fields": []
+      }
+    },
+    {
+      "id": "boolean-retention-assertion-is-insufficient",
+      "kind": "retention-boundary",
+      "request": "Given only a delay label and passed Boolean, would the policy allow a retention status?",
+      "requested_status": "retained_at_7d",
+      "packet": {
+        "fixture_revision": "hotel-check-in-policy-r2",
+        "allowed_aids": ["none"],
+        "baseline_record": {"present": true, "evidence_ref": "fixture://baseline/5"},
+        "hint_record": {"present": true, "evidence_ref": "fixture://hints/5"},
+        "correction_record": {"present": true, "learner_authorship_recorded": true, "evidence_ref": "fixture://correction/5"},
+        "fixed_task_record": {"result": "pass", "rubric_revision": "hotel-rubric-r1", "evidence_ref": "fixture://fixed-score/5"},
+        "changed_task_record": {"result": "pass", "unseen_recorded": true, "material_delta_recorded": true, "variation": "restaurant_booking", "rubric_revision": "restaurant-rubric-r1", "evidence_ref": "fixture://changed-score/5"},
+        "scorer_record": {"role": "independent_scorer", "independence_evidence_ref": "fixture://scorer/5"},
+        "retention_assertion": {"delay": "7d", "passed": true},
+        "delayed_task_record": null
+      },
+      "expected_policy_output": {
+        "disposition": "review",
+        "would_support_status": null,
+        "would_reject_status": "retained_at_7d",
+        "handoff": null,
+        "missing_fields": ["delayed_task_record"]
       }
     },
     {
@@ -135,11 +151,10 @@
       "requested_status": null,
       "intent": "coaching",
       "packet": null,
-      "expected": {
+      "expected_policy_output": {
         "disposition": "handoff",
-        "claim_status": null,
-        "learning_status": null,
-        "rejected_status": null,
+        "would_support_status": null,
+        "would_reject_status": null,
         "handoff": "prysai-learning-coach",
         "missing_fields": []
       }

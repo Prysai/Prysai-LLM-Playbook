@@ -33,12 +33,12 @@ interface depth, not about reducing curriculum depth.
   Skills in its heading and prose while the repository already contained twelve,
   including Communication Failure Triage. This milestone corrects that stale
   count; the defect was maintenance debt, not evidence for another Skill.
-- `evals/candidates/communication-clinic-v1/evaluation-plan.json` fixes the
+- `evals/candidates/task-contract-availability-and-channel-v1/evaluation-plan.json` fixes the
   task and acceptance contract, uses fresh disposable sessions/workspaces,
   holds model/settings/tools/permissions/budget constant, randomizes condition
   order with a recorded seed, requires at least five repetitions, preserves
   every repetition, and calls for two condition-blind reviewers.
-- That Communication Clinic candidate is explicitly `not_run`; the controls
+- That task-contract availability and channel candidate is explicitly `not_run`; the controls
   are a design, not comparative evidence.
 - `evals/candidates/learning-practice-contract-v1/README.md` separates
   `process_pass` from `learner_outcome`, records aids and corrections, uses a
