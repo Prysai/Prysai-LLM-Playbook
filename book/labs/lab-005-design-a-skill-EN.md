@@ -116,3 +116,14 @@ Apply the method to a workflow in another domain. Which parts survived the
 move? Which parts belonged in project context instead? Did the candidate reduce
 a repeated omission, or did it merely make the instructions longer?
 
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-004-skill-selection-EN.md" aria-label="Previous Lab: Lab 004 · Choose the smallest useful capability">← Previous<br><strong>Lab 004 · Choose the smallest useful capability</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-006-agent-stop-conditions-EN.md" aria-label="Next Lab: Lab 006 · Design Agent stop conditions">Next →<br><strong>Lab 006 · Design Agent stop conditions</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- lab-navigation:end -->

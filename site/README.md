@@ -10,8 +10,7 @@
 - 响应式导航在窄屏下折叠为菜单，支持 Escape 关闭和焦点返回；
 - 首页语言入口使用普通导航语义并标记当前页面；Reader 提供跳到正文、异步加载/错误状态、正文语言标记和高对比度下划线 fallback；
 - 所有章节、实验、Skill、质量记录链接指向仓库内的真实文件；chapter/lab 路由身份由 `content-status.yaml` 与 manifest 共同覆盖。
-- `visual-cases` 区块链接到两张项目原创 SVG 教学卡和一个房地产
-  Product Context 概念案例；案例的页面截图只证明本地渲染，不证明 Skill runtime、客户需求、市场效果或生产准备度。
+- `visual-cases` 区块链接到两张项目原创 SVG 教学卡；它们解释方法，不证明 Skill runtime、客户需求、市场效果或生产准备度。
 
 ## Highlight component boundary
 

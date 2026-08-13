@@ -24,6 +24,10 @@ REQUIRED_COMMANDS = {
     "learning-practice-candidate": ("{python}", "scripts/validate_learning_practice_candidate.py"),
     "evidence-review-candidate": ("{python}", "scripts/validate_evidence_review_candidate.py"),
     "evidence-review-candidate-fixtures": ("{python}", "scripts/test_evidence_review_candidate.py"),
+    "lab-navigation": ("{python}", "scripts/validate_lab_navigation.py"),
+    "lab-navigation-fixtures": ("{python}", "scripts/test_lab_navigation.py"),
+    "reader-lab-navigation-fixtures": ("{python}", "scripts/test_reader_lab_navigation.py"),
+    "lab-navigation-output": ("{python}", "scripts/build_lab_navigation.py", "--check"),
 }
 
 

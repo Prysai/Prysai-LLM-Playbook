@@ -526,6 +526,14 @@ and records the project-owned planning method in original prose. Commands in
 the experiment are deliberately local and no-network; they do not establish
 how every Codex surface, operating system, model, or provider behaves.
 
+## Practice the recovery boundary
+
+Use [Lab 014: Reconcile a resumed task before continuing](../labs/lab-014-resume-reconciliation-EN.md)
+when a task returns after interruption, context loss, or a change of branch or
+permission state. The Lab requires a current-state probe before any resumed
+action; it does not treat a prior plan as evidence that the environment is
+unchanged.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Chapter navigation">

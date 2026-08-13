@@ -109,3 +109,15 @@ Transfer the workflow to a research or content task. Rewrite the source,
 permission, acceptance, and failure fields instead of copying engineering
 commands mechanically. Which checkpoint prevented the largest unsupported
 claim or unnecessary action?
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-012-team-capability-migration-EN.md" aria-label="Previous Lab: Lab 012 · Turn a personal method into a team capability">← Previous<br><strong>Lab 012 · Turn a personal method into a team capability</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-014-resume-reconciliation-EN.md" aria-label="Next Lab: Lab 014 · Reconcile a resumed task before continuing">Next →<br><strong>Lab 014 · Reconcile a resumed task before continuing</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- lab-navigation:end -->

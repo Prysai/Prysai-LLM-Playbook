@@ -20,6 +20,7 @@ alignment.
 | Read a chapter | [`book/chapters/`](../book/chapters/) | One file per chapter; `-EN` is the English source when it exists; unsuffixed files are the current legacy Chinese path |
 | Run an exercise | [`book/labs/`](../book/labs/) | Low-risk, observable labs with setup, failure cases, evidence, and transfer tasks |
 | Understand the chapter order | [`docs/governance/book-navigation.yaml`](governance/book-navigation.yaml) | The canonical 22-chapter order used by generated footers |
+| Browse every Lab by number | [`docs/governance/lab-navigation.yaml`](governance/lab-navigation.yaml) | The 18-Lab catalog order used by English footers and Reader pagination; not a prerequisite chain |
 | Choose a project Skill | [`skills/`](../skills/) and [`docs/skill-registry.md`](skill-registry.md) | Skill contracts, supporting resources, and the registry of triggers and boundaries |
 | Check a real-world problem | [`docs/research/`](research/) | First-party fact records, public user reports, field cases, and dated research notes |
 | Check what is current | [`docs/governance/`](governance/) | Status, locale identity, learning path, update map, impact registry, and lifecycle rules |
@@ -80,6 +81,13 @@ docs/governance/book-navigation.yaml
         └── human-facing book/table-of-contents*.md and project map
 ```
 
+Labs use the same one-source pattern through
+[`docs/governance/lab-navigation.yaml`](governance/lab-navigation.yaml),
+[`scripts/build_lab_navigation.py`](../scripts/build_lab_navigation.py), and
+[`scripts/validate_lab_navigation.py`](../scripts/validate_lab_navigation.py).
+That sequence supports catalog browsing only. Level placement, primary versus
+supporting use, and graduation evidence still come from the learning path.
+
 The navigation source controls order and page relationships. It does not
 replace the learning-path contract, content status, locale matrix, or content
 matrix. Those files answer different questions and remain separate on
@@ -97,6 +105,7 @@ into a completed localized page.
 | Add or reorder a chapter | `docs/governance/book-navigation.yaml` | Chapter source, English/legacy table of contents, content matrix, status, then navigation generator and validator |
 | Add a chapter body | `book/chapters/<id>.md` or `<id>-EN.md` | Relevant source record, locale matrix, status, local links, and chapter contract |
 | Add a lab | `book/labs/<id>.md` | Lab index, learning path, status, source record, and lab checks |
+| Reorder Lab catalog navigation | `docs/governance/lab-navigation.yaml` | Regenerate all English Lab footers and the locale manifest, then validate Reader pagination |
 | Add or change a Skill | `skills/<skill-name>/SKILL.md` | Skill registry, quality standard, official validator, and fresh-context evidence |
 | Add a field case | `docs/research/` or `examples/` | Source/license register, privacy boundary, chapter/lab link, and evidence status |
 | Change a volatile product fact | Dated record in `docs/research/` | Fact-impact registry, affected consumers, next review date, and relevant validators |
@@ -108,6 +117,8 @@ The following are generated or contract-derived:
 
 - [`book/chapters/*` navigation blocks](../scripts/build_book_navigation.py)
   are replaced between their two HTML markers;
+- [`book/labs/lab-*-EN.md` navigation blocks](../scripts/build_lab_navigation.py)
+  are generated from catalog order and do not define learning progression;
 - [`site/learning-path-data.js`](../site/learning-path-data.js) comes from the
   learning-path and content-status contracts;
 - [`site/locale-manifest.js`](../site/locale-manifest.js) comes from the locale

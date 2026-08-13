@@ -3,13 +3,13 @@
 # Codex：从第一个任务到真实工作——书籍目录 v0.2
 
 > 简体中文目录页（`ZH`）。本迁移切片基于现有的
-> `book/table-of-contents.md`，保留 22 章、17 个实验、成熟度边界和真实
+> `book/table-of-contents.md`，保留 22 章、18 个实验、成熟度边界和真实
 > 问题研究入口；它不表示章节、实验或运行时验证已经完成六语种迁移。
 
 ## 迁移状态与链接规则
 
 - 本页 `content_status` 为 `candidate`；源版本为 `dd08a68`。
-- 目录保留 22 条章节记录和 13 个实际实验文件。
+- 目录保留 22 条章节记录和 18 个规范英文实验源文件。
 - 章节状态为 `candidate`；实验状态为 `draft`，`run_status: not_run`。
 - 第 6 章的相关易变断言为 `claim_status: disputed`；第 22 章为
   `claim_status: current | disputed`。
@@ -214,9 +214,10 @@
 
 ## 实验索引与状态边界
 
-仓库中有 13 个实际实验文件。每个实验仍为 `draft`，且
+仓库中有 18 个已登记实验身份和 18 个规范英文源文件。每个实验仍为 `draft`，且
 `run_status: not_run`；目录链接只是阅读入口，不是实验或学习结果已经验证
-的证据。
+的证据。Lab 014–018 尚无中文译文，下面明确链接英文源文件，不将 fallback
+描述为翻译完成。
 
 | 实验 | 重点 | 状态 | 入口 |
 |---|---|---|---|
@@ -233,10 +234,15 @@
 | lab-011 | GPT、Codex、工具与 Agent | `draft` · `not_run` | [ZH 源文件](labs/lab-011-gpt-codex-boundaries-ZH.md) |
 | lab-012 | 团队能力迁移 | `draft` · `not_run` | [迁移中·当前源文件](labs/lab-012-team-capability-migration.md) |
 | lab-013 | 可审计的 L3 竖向切片 | `draft` · `not_run` | [迁移中·当前源文件](labs/lab-013-l3-vertical-slice.md) |
+| lab-014 | 恢复任务前的状态对账 | `draft` · `not_run` | [迁移中·当前中文实验索引·EN 源文件](labs/README.md#实验索引) |
+| lab-015 | 证据化交付 | `draft` · `not_run` | [迁移中·当前中文实验索引·EN 源文件](labs/README.md#实验索引) |
+| lab-016 | 副作用边界 | `draft` · `not_run` | [迁移中·当前中文实验索引·EN 源文件](labs/README.md#实验索引) |
+| lab-017 | Skill 发现与采用审查 | `draft` · `not_run` | [迁移中·当前中文实验索引·EN 源文件](labs/README.md#实验索引) |
+| lab-018 | 固定练习契约下的保持与迁移 | `draft` · `not_run` | [迁移中·当前中文实验索引·EN 源文件](labs/README.md#实验索引) |
 
 ## 评测、状态与真实问题研究
 
-- [实验索引——迁移中·当前源文件](labs/README.md)：13 个实际实验文件、等级、领域、迁移焦点和 `lab_status`。
+- [实验索引——迁移中·当前源文件](labs/README.md)：18 个实验身份、实际语言状态、等级、领域、迁移焦点和 `lab_status`。
 - [内容融合矩阵——locale-neutral 治理文件](../docs/content-matrix.md)：能力映射，以及主题重复时新增的能力。
 - [评测框架——locale-neutral 治理文件](../docs/quality/evaluation-framework.md)：内容与能力的验收门槛。
 - [学习路径契约——locale-neutral 治理文件](../docs/governance/learning-path.yaml)：等级、主实验、支撑实验和晋级条件。

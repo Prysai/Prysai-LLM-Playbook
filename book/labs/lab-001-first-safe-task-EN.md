@@ -1,7 +1,5 @@
 <!-- content_id: lab-001-first-safe-task | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-10 -->
 
-# Lab 001: Make one safe README change
-
 ---
 id: lab-001-first-safe-task
 title: "Complete one bounded README change and prove what happened"
@@ -23,6 +21,8 @@ transfer_domain: "research, engineering, content, design, or marketing"
 transfer_evidence: "Save both protocols, the changed evidence fields, one failure record, and the explicit unverified list"
 transfer_limitations: "This lab teaches a low-risk local boundary; it does not prove account authority, production safety, external publishing, or runtime behavior of every Codex surface"
 ---
+
+# Lab 001: Make one safe README change
 
 ## What this lab is for
 
@@ -195,3 +195,15 @@ Read [Chapter 2](../chapters/02-first-safe-task-EN.md), the
 [official baseline](../../docs/research/chapter-02-official-baseline-2026-08-10.md),
 and the [field-problems study](../../docs/research/chapter-02-field-problems-2026-08-10.md)
 before adapting the lab to a higher-risk task.
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"></td>
+      <td align="right"><a data-lab-nav="next" href="lab-002-task-protocol-EN.md" aria-label="Next Lab: Lab 002 · Turn one wish into a task protocol">Next →<br><strong>Lab 002 · Turn one wish into a task protocol</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- lab-navigation:end -->

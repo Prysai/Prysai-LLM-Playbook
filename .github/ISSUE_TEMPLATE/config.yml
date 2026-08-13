@@ -3,3 +3,6 @@ contact_links:
   - name: Contribution guide
     url: https://github.com/Prysai/Codex-Field-Guide/blob/main/CONTRIBUTING.md
     about: Read change classes, source boundaries, validation, and review rules before filing.
+  - name: Field report guidance
+    url: https://github.com/Prysai/Codex-Field-Guide/blob/main/docs/quality/first-task-pilot-protocol-v1.md
+    about: Submit only sanitized observations; a report is intake, not proof of a verified platform result or project fix.

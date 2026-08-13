@@ -4,7 +4,8 @@ window.CODEX_LOCALE_MANIFEST = {
   "source": [
     "docs/governance/locale-matrix.yaml",
     "docs/governance/content-status.yaml",
-    "docs/governance/book-navigation.yaml"
+    "docs/governance/book-navigation.yaml",
+    "docs/governance/lab-navigation.yaml"
   ],
   "default_locale": "en",
   "locales": {
@@ -1721,36 +1722,36 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/labs/lab-001-first-safe-task-ZH.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "es": {
           "path": "book/labs/lab-001-first-safe-task-ES.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "ja": {
           "path": "book/labs/lab-001-first-safe-task-JA.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "ko": {
           "path": "book/labs/lab-001-first-safe-task-KO.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "de": {
           "path": "book/labs/lab-001-first-safe-task-DE.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         }
       }
     },
@@ -1773,36 +1774,36 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/labs/lab-002-task-protocol-ZH.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "es": {
           "path": "book/labs/lab-002-task-protocol-ES.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "ja": {
           "path": "book/labs/lab-002-task-protocol-JA.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "ko": {
           "path": "book/labs/lab-002-task-protocol-KO.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "de": {
           "path": "book/labs/lab-002-task-protocol-DE.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         }
       }
     },
@@ -2241,36 +2242,36 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/labs/lab-006-agent-stop-conditions-ZH.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "es": {
           "path": "book/labs/lab-006-agent-stop-conditions-ES.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "ja": {
           "path": "book/labs/lab-006-agent-stop-conditions-JA.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "ko": {
           "path": "book/labs/lab-006-agent-stop-conditions-KO.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "de": {
           "path": "book/labs/lab-006-agent-stop-conditions-DE.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         }
       }
     },
@@ -2343,36 +2344,36 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/labs/lab-014-resume-reconciliation-ZH.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "es": {
           "path": "book/labs/lab-014-resume-reconciliation-ES.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "ja": {
           "path": "book/labs/lab-014-resume-reconciliation-JA.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "ko": {
           "path": "book/labs/lab-014-resume-reconciliation-KO.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "de": {
           "path": "book/labs/lab-014-resume-reconciliation-DE.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         }
       }
     },
@@ -2393,36 +2394,36 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/labs/lab-015-evidence-delivery-ZH.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "es": {
           "path": "book/labs/lab-015-evidence-delivery-ES.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "ja": {
           "path": "book/labs/lab-015-evidence-delivery-JA.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "ko": {
           "path": "book/labs/lab-015-evidence-delivery-KO.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "de": {
           "path": "book/labs/lab-015-evidence-delivery-DE.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         }
       }
     },
@@ -2443,36 +2444,36 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/labs/lab-016-side-effect-boundary-ZH.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "es": {
           "path": "book/labs/lab-016-side-effect-boundary-ES.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "ja": {
           "path": "book/labs/lab-016-side-effect-boundary-JA.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "ko": {
           "path": "book/labs/lab-016-side-effect-boundary-KO.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "de": {
           "path": "book/labs/lab-016-side-effect-boundary-DE.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         }
       }
     },
@@ -2493,36 +2494,36 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/labs/lab-017-skill-discovery-audit-ZH.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "es": {
           "path": "book/labs/lab-017-skill-discovery-audit-ES.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "ja": {
           "path": "book/labs/lab-017-skill-discovery-audit-JA.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "ko": {
           "path": "book/labs/lab-017-skill-discovery-audit-KO.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         },
         "de": {
           "path": "book/labs/lab-017-skill-discovery-audit-DE.md",
           "exists": false,
           "content_status": "draft",
-          "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
         }
       }
     }
@@ -3268,6 +3269,137 @@ window.CODEX_LOCALE_MANIFEST = {
         "english_status": "source",
         "status": "candidate",
         "content_id": "chapter-22-continuous-update-and-future-proofing"
+      }
+    ]
+  },
+  "lab_navigation": {
+    "sequence_boundary": "Adjacent links support browsing the complete Lab catalog. They do not declare prerequisites, required completion order, learner mastery, or progression evidence.",
+    "labs": [
+      {
+        "id": "lab-001",
+        "number": 1,
+        "title": "Make one safe README change",
+        "path": "book/labs/lab-001-first-safe-task-EN.md",
+        "content_id": "lab-001-first-safe-task"
+      },
+      {
+        "id": "lab-002",
+        "number": 2,
+        "title": "Turn one wish into a task protocol",
+        "path": "book/labs/lab-002-task-protocol-EN.md",
+        "content_id": "lab-002-task-protocol"
+      },
+      {
+        "id": "lab-003",
+        "number": 3,
+        "title": "Audit a completion claim",
+        "path": "book/labs/lab-003-evidence-review-EN.md",
+        "content_id": "lab-003-evidence-review"
+      },
+      {
+        "id": "lab-004",
+        "number": 4,
+        "title": "Choose the smallest useful capability",
+        "path": "book/labs/lab-004-skill-selection-EN.md",
+        "content_id": "lab-004-skill-selection"
+      },
+      {
+        "id": "lab-005",
+        "number": 5,
+        "title": "Turn a repeated method into a narrow Skill",
+        "path": "book/labs/lab-005-design-a-skill-EN.md",
+        "content_id": "lab-005-design-a-skill"
+      },
+      {
+        "id": "lab-006",
+        "number": 6,
+        "title": "Design Agent stop conditions",
+        "path": "book/labs/lab-006-agent-stop-conditions-EN.md",
+        "content_id": "lab-006-agent-stop-conditions"
+      },
+      {
+        "id": "lab-007",
+        "number": 7,
+        "title": "Put One README Task Behind Three Action Boundaries",
+        "path": "book/labs/lab-007-action-boundaries-EN.md",
+        "content_id": "lab-007-action-boundaries"
+      },
+      {
+        "id": "lab-008",
+        "number": 8,
+        "title": "Narrow a topic into an answerable research question",
+        "path": "book/labs/lab-008-research-question-EN.md",
+        "content_id": "lab-008-research-question"
+      },
+      {
+        "id": "lab-009",
+        "number": 9,
+        "title": "Compare direct implementation with a full engineering lifecycle",
+        "path": "book/labs/lab-009-engineering-lifecycle-EN.md",
+        "content_id": "lab-009-engineering-lifecycle"
+      },
+      {
+        "id": "lab-010",
+        "number": 10,
+        "title": "Build shared product context that survives two tasks",
+        "path": "book/labs/lab-010-product-context-EN.md",
+        "content_id": "lab-010-product-context"
+      },
+      {
+        "id": "lab-011",
+        "number": 11,
+        "title": "Separate GPT, Codex, tools, and Agents",
+        "path": "book/labs/lab-011-gpt-codex-boundaries-EN.md",
+        "content_id": "lab-011-gpt-codex-boundaries"
+      },
+      {
+        "id": "lab-012",
+        "number": 12,
+        "title": "Turn a personal method into a team capability",
+        "path": "book/labs/lab-012-team-capability-migration-EN.md",
+        "content_id": "lab-012-team-capability-migration"
+      },
+      {
+        "id": "lab-013",
+        "number": 13,
+        "title": "Run one complete vertical slice",
+        "path": "book/labs/lab-013-l3-vertical-slice-EN.md",
+        "content_id": "lab-013-l3-vertical-slice"
+      },
+      {
+        "id": "lab-014",
+        "number": 14,
+        "title": "Reconcile a resumed task before continuing",
+        "path": "book/labs/lab-014-resume-reconciliation-EN.md",
+        "content_id": "lab-014-resume-reconciliation"
+      },
+      {
+        "id": "lab-015",
+        "number": 15,
+        "title": "Deliver evidence, not a completion sentence",
+        "path": "book/labs/lab-015-evidence-delivery-EN.md",
+        "content_id": "lab-015-evidence-delivery"
+      },
+      {
+        "id": "lab-016",
+        "number": 16,
+        "title": "Stop at the side-effect boundary",
+        "path": "book/labs/lab-016-side-effect-boundary-EN.md",
+        "content_id": "lab-016-side-effect-boundary"
+      },
+      {
+        "id": "lab-017",
+        "number": 17,
+        "title": "Audit discovery before adopting a Skill",
+        "path": "book/labs/lab-017-skill-discovery-audit-EN.md",
+        "content_id": "lab-017-skill-discovery-audit"
+      },
+      {
+        "id": "lab-018",
+        "number": 18,
+        "title": "Test a beginner travel exchange for retention and transfer",
+        "path": "book/labs/lab-018-language-transfer-EN.md",
+        "content_id": "lab-018-language-transfer"
       }
     ]
   }

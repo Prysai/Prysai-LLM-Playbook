@@ -1,6 +1,6 @@
 {
   "schema_version": "1",
-  "reviewed_at": "2026-08-12",
+  "reviewed_at": "2026-08-13",
   "owner": "quality-maintainer",
   "description": "Machine-readable defect and release-blocker register for the current curriculum candidate.",
   "status_vocabulary": ["open", "in_progress", "resolved"],
@@ -179,6 +179,20 @@
       "status": "resolved",
       "evidence_paths": ["docs/governance/page-trust-registry.yaml", "scripts/validate_page_trust_registry.py", "scripts/test_page_trust_registry.py", "docs/research/live-documentation-trust-and-provenance-benchmark-2026-08-12.md"],
       "resolution_scope": "Resolved for static schema and identity coverage of all 22 canonical English chapter sources. The registry remains candidate and does not establish source semantics, content freshness after access, platform neutrality, learner or runtime evidence, translation review, license compatibility, deployment, or production readiness."
+    },
+    {
+      "id": "Q-013",
+      "severity": "P1",
+      "owner": "reader-research maintainer",
+      "opened_at": "2026-08-13",
+      "next_review": "2026-09-12",
+      "superseded_by": "",
+      "area": "Learner activation and usability",
+      "finding": "No externally observed evidence shows whether target readers can locate the candidate status, begin the first safe task, assemble a bounded task contract, or identify the evidence boundary without author direction.",
+      "required_evidence": "A preregistered privacy-minimized protocol, de-identified aggregate results from 5–8 target readers including completion, drop-off, critical incidents, and an independent review; any conclusion must remain limited to the tested first-task conditions.",
+      "status": "open",
+      "evidence_paths": ["docs/quality/first-task-pilot-protocol-v1.md", ".github/ISSUE_TEMPLATE/field-report.yml", "docs/quality/red-team-release-and-learning-audit-2026-08-13.md"],
+      "resolution_scope": "The protocol and field-report intake exist, but no recruitment, session, aggregate result, independent review, activation rate, or learner-effect conclusion has been recorded. Q-001 remains separate and cannot be closed by this usability pilot."
     }
   ]
 }

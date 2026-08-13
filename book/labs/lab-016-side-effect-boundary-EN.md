@@ -82,12 +82,14 @@ Record which proposed action looked like verification but would have changed per
 - [Field problems and prompt patterns — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-07, FP2-10, FP2-12, and FP2-19.
 - [Chapter 13: Action boundaries](../chapters/13-action-boundaries-EN.md).
 
-<!-- chapter-navigation:start -->
+<!-- lab-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Chapter navigation">
-  <table role="presentation" width="100%"><tr>
-    <td align="left"><a href="lab-015-evidence-delivery-EN.md">← Previous<br><strong>Lab 015 · Evidence delivery</strong></a></td>
-    <td align="right"><a href="lab-017-skill-discovery-audit-EN.md">Next →<br><strong>Lab 017 · Skill discovery audit</strong></a></td>
-  </tr></table>
+<nav class="lab-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-015-evidence-delivery-EN.md" aria-label="Previous Lab: Lab 015 · Deliver evidence, not a completion sentence">← Previous<br><strong>Lab 015 · Deliver evidence, not a completion sentence</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-017-skill-discovery-audit-EN.md" aria-label="Next Lab: Lab 017 · Audit discovery before adopting a Skill">Next →<br><strong>Lab 017 · Audit discovery before adopting a Skill</strong></a></td>
+    </tr>
+  </table>
 </nav>
-<!-- chapter-navigation:end -->
+<!-- lab-navigation:end -->

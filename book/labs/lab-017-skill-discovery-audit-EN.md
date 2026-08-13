@@ -91,12 +91,14 @@ Name the stage that a directory listing failed to prove and the evidence require
 - [Chapter 7: Skills, Plugins, MCP, and tools](../chapters/07-skills-plugins-and-tools-EN.md).
 - [Chapter 14: Discover, install, and audit external Skills](../chapters/14-discover-and-audit-skills-EN.md).
 
-<!-- chapter-navigation:start -->
+<!-- lab-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Chapter navigation">
-  <table role="presentation" width="100%"><tr>
-    <td align="left"><a href="lab-016-side-effect-boundary-EN.md">← Previous<br><strong>Lab 016 · Side-effect boundary</strong></a></td>
-    <td align="right"><a href="lab-018-language-transfer-EN.md">Next →<br><strong>Lab 018 · Language transfer</strong></a></td>
-  </tr></table>
+<nav class="lab-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-016-side-effect-boundary-EN.md" aria-label="Previous Lab: Lab 016 · Stop at the side-effect boundary">← Previous<br><strong>Lab 016 · Stop at the side-effect boundary</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-018-language-transfer-EN.md" aria-label="Next Lab: Lab 018 · Test a beginner travel exchange for retention and transfer">Next →<br><strong>Lab 018 · Test a beginner travel exchange for retention and transfer</strong></a></td>
+    </tr>
+  </table>
 </nav>
-<!-- chapter-navigation:end -->
+<!-- lab-navigation:end -->

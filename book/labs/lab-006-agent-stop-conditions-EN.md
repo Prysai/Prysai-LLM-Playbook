@@ -282,12 +282,14 @@ prove that every model, host, tool, terminal, or external service exposes the
 same events or obeys the same stop conditions. This lab remains `draft` and
 `not_run` until a real run record and independent review exist.
 
-<!-- chapter-navigation:start -->
+<!-- lab-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Lab navigation">
-  <table role="presentation" width="100%"><tr>
-    <td align="left"><a href="lab-005-design-a-skill-EN.md">← Previous<br><strong>Lab 005 · Skill design</strong></a></td>
-    <td align="right"><a href="lab-007-action-boundaries-EN.md">Next →<br><strong>Lab 007 · Action boundaries</strong></a></td>
-  </tr></table>
+<nav class="lab-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-005-design-a-skill-EN.md" aria-label="Previous Lab: Lab 005 · Turn a repeated method into a narrow Skill">← Previous<br><strong>Lab 005 · Turn a repeated method into a narrow Skill</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-007-action-boundaries-EN.md" aria-label="Next Lab: Lab 007 · Put One README Task Behind Three Action Boundaries">Next →<br><strong>Lab 007 · Put One README Task Behind Three Action Boundaries</strong></a></td>
+    </tr>
+  </table>
 </nav>
-<!-- chapter-navigation:end -->
+<!-- lab-navigation:end -->

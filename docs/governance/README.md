@@ -8,6 +8,7 @@ book, site, translations, status, and maintenance records aligned.
 | Change | Canonical file | Projection or check |
 |---|---|---|
 | Add or reorder a chapter | [`book-navigation.yaml`](book-navigation.yaml) | Chapter footers and TOCs |
+| Add or reorder a Lab in catalog navigation | [`lab-navigation.yaml`](lab-navigation.yaml) | English Lab footers and Reader pagination; learning progression remains separate |
 | Change a locale identity or translation state | [`locale-matrix.yaml`](locale-matrix.yaml) | Localized links and migration checks |
 | Change which chapters/labs can be routed by the public site | [`content-status.yaml`](content-status.yaml) | Regenerate [`site/locale-manifest.js`](../../site/locale-manifest.js) |
 | Change a learning level | [`learning-path.yaml`](learning-path.yaml) | Site data and learning-path validator |

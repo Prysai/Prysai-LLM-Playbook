@@ -1,7 +1,5 @@
 <!-- content_id: lab-002-task-protocol | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-10 -->
 
-# Lab 002: Turn one wish into a task protocol
-
 ---
 id: lab-002-task-protocol
 title: "Turn one vague request into a bounded, evidence-led protocol"
@@ -23,6 +21,8 @@ transfer_domain: "research, engineering, content, release, or team collaboration
 transfer_evidence: "Save the five protocols, changed fields, one failure record, and an independent boundary-review result"
 transfer_limitations: "A clear protocol does not prove that inputs are true, permissions are effective, or the final work is correct; those require separate evidence"
 ---
+
+# Lab 002: Turn one wish into a task protocol
 
 ## Purpose and safety boundary
 
@@ -195,3 +195,15 @@ Answer in your run record:
   a one-off instruction?
 
 **Status:** `draft` · **Run status:** `not_run`.
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-001-first-safe-task-EN.md" aria-label="Previous Lab: Lab 001 · Make one safe README change">← Previous<br><strong>Lab 001 · Make one safe README change</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-003-evidence-review-EN.md" aria-label="Next Lab: Lab 003 · Audit a completion claim">Next →<br><strong>Lab 003 · Audit a completion claim</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- lab-navigation:end -->

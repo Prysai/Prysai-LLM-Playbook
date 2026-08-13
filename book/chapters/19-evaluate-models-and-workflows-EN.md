@@ -244,6 +244,13 @@ This chapter treats model positioning, model IDs, availability, entry points, an
 
 The maintenance owner must recheck official model pages, the task-set version, evaluation fixtures, account scope, cost basis, and runtime surface when any of them changes, and no later than 2026-11-09. A result becomes `verified` only when the stated run logs, independent review, comparability checks, and evidence package exist. It becomes `production-ready` only after the relevant operational, security, permission, rollback, and user-acceptance checks also exist.
 
+## Practice evidence-bounded delivery
+
+Use [Lab 015: Deliver evidence, not a completion sentence](../labs/lab-015-evidence-delivery-EN.md)
+after the evaluation run. Lab 003 owns independent claim adjudication; Lab 015
+uses that result to produce a concise handoff whose wording does not exceed the
+attached evidence.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Chapter navigation">

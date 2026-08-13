@@ -1,0 +1,38 @@
+{
+  "schema_version": "1",
+  "content_id": "lab-navigation",
+  "generated_at": "2026-08-13",
+  "status": "candidate",
+  "description": "Canonical catalog order for the 18 English Lab sources and their generated adjacent navigation.",
+  "owner": "curriculum-maintainer",
+  "default_locale": "EN",
+  "generator": "scripts/build_lab_navigation.py",
+  "generated_block": "<!-- lab-navigation:start --> ... <!-- lab-navigation:end -->",
+  "policy": {
+    "order_source": "This file owns Lab catalog order; filenames, directory enumeration, page-local links, and learning-level placement do not.",
+    "sequence_boundary": "Adjacent links support browsing the complete Lab catalog. They do not declare prerequisites, required completion order, learner mastery, or progression evidence.",
+    "learning_path_boundary": "learning-path.yaml owns level placement, primary/supporting relation, first_seen, progression deltas, and evidence gates.",
+    "locale_boundary": "This contract covers the 18 canonical English Lab sources. Locale identity and translation state remain in locale-matrix.yaml; incomplete translations do not receive silent fallback navigation.",
+    "footer": "The first Lab exposes only Next, middle Labs expose Previous and Next, and the last Lab exposes only Previous. README-EN.md remains the dedicated Lab index."
+  },
+  "labs": [
+    {"id":"lab-001","number":1,"title":"Make one safe README change","path":"book/labs/lab-001-first-safe-task-EN.md"},
+    {"id":"lab-002","number":2,"title":"Turn one wish into a task protocol","path":"book/labs/lab-002-task-protocol-EN.md"},
+    {"id":"lab-003","number":3,"title":"Audit a completion claim","path":"book/labs/lab-003-evidence-review-EN.md"},
+    {"id":"lab-004","number":4,"title":"Choose the smallest useful capability","path":"book/labs/lab-004-skill-selection-EN.md"},
+    {"id":"lab-005","number":5,"title":"Turn a repeated method into a narrow Skill","path":"book/labs/lab-005-design-a-skill-EN.md"},
+    {"id":"lab-006","number":6,"title":"Design Agent stop conditions","path":"book/labs/lab-006-agent-stop-conditions-EN.md"},
+    {"id":"lab-007","number":7,"title":"Put One README Task Behind Three Action Boundaries","path":"book/labs/lab-007-action-boundaries-EN.md"},
+    {"id":"lab-008","number":8,"title":"Narrow a topic into an answerable research question","path":"book/labs/lab-008-research-question-EN.md"},
+    {"id":"lab-009","number":9,"title":"Compare direct implementation with a full engineering lifecycle","path":"book/labs/lab-009-engineering-lifecycle-EN.md"},
+    {"id":"lab-010","number":10,"title":"Build shared product context that survives two tasks","path":"book/labs/lab-010-product-context-EN.md"},
+    {"id":"lab-011","number":11,"title":"Separate GPT, Codex, tools, and Agents","path":"book/labs/lab-011-gpt-codex-boundaries-EN.md"},
+    {"id":"lab-012","number":12,"title":"Turn a personal method into a team capability","path":"book/labs/lab-012-team-capability-migration-EN.md"},
+    {"id":"lab-013","number":13,"title":"Run one complete vertical slice","path":"book/labs/lab-013-l3-vertical-slice-EN.md"},
+    {"id":"lab-014","number":14,"title":"Reconcile a resumed task before continuing","path":"book/labs/lab-014-resume-reconciliation-EN.md"},
+    {"id":"lab-015","number":15,"title":"Deliver evidence, not a completion sentence","path":"book/labs/lab-015-evidence-delivery-EN.md"},
+    {"id":"lab-016","number":16,"title":"Stop at the side-effect boundary","path":"book/labs/lab-016-side-effect-boundary-EN.md"},
+    {"id":"lab-017","number":17,"title":"Audit discovery before adopting a Skill","path":"book/labs/lab-017-skill-discovery-audit-EN.md"},
+    {"id":"lab-018","number":18,"title":"Test a beginner travel exchange for retention and transfer","path":"book/labs/lab-018-language-transfer-EN.md"}
+  ]
+}

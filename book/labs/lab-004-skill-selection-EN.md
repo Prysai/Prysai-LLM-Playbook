@@ -93,3 +93,15 @@ not evidence that any external Skill was installed or validated.
 Repeat the comparison for a research or content task. What new dependency
 created the most maintenance cost? What could be removed without reducing the
 quality of the final evidence?
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-003-evidence-review-EN.md" aria-label="Previous Lab: Lab 003 · Audit a completion claim">← Previous<br><strong>Lab 003 · Audit a completion claim</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-005-design-a-skill-EN.md" aria-label="Next Lab: Lab 005 · Turn a repeated method into a narrow Skill">Next →<br><strong>Lab 005 · Turn a repeated method into a narrow Skill</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- lab-navigation:end -->

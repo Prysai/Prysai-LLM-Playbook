@@ -84,3 +84,15 @@ recorded, this lab remains `draft / not_run`.
 Apply the table to a small engineering delivery, research conclusion, or
 publication draft. Which evidence proves existence, correctness, and readiness?
 Which claim became weaker after its scope was written precisely?
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-002-task-protocol-EN.md" aria-label="Previous Lab: Lab 002 · Turn one wish into a task protocol">← Previous<br><strong>Lab 002 · Turn one wish into a task protocol</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-004-skill-selection-EN.md" aria-label="Next Lab: Lab 004 · Choose the smallest useful capability">Next →<br><strong>Lab 004 · Choose the smallest useful capability</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- lab-navigation:end -->

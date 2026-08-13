@@ -34,6 +34,7 @@
 | [lab-015 EN 源文件](lab-015-evidence-delivery-EN.md) | 交付证据，而不是完成句子 | L5 | general | 第 9、19 章 | `draft` | 将来源、检查、运行时和用户效果拆成独立断言，并为每条断言记录最小证据 |
 | [lab-016 EN 源文件](lab-016-side-effect-boundary-EN.md) | 停在副作用边界 | L3 | general | 第 4、13 章 | `draft` | 将诊断、修复、安装、上传、重启和发布分层，遇到未授权持久动作时正确停止 |
 | [lab-017 EN 源文件](lab-017-skill-discovery-audit-EN.md) | 在采用 Skill 前审查发现链 | L4 | general | 第 7、14 章 | `draft` | 分开文件存在、隐式发现、显式解析、加载、行为和采用决定，不把目录列表当成能力证明 |
+| [lab-018 EN 源文件](lab-018-language-transfer-EN.md) | 在固定练习契约下检查保持与迁移 | L2 可选扩展 | language learning | 学习实践契约 | `draft / not_run` | 分开即时纠正、延迟保持与未见任务迁移；不作为 L2 晋级前置 |
 
 ## 实验记录模板
 

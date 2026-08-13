@@ -22,26 +22,32 @@ outcome.
 
 ## Lab map
 
-| Lab | Capability | Level | English entry |
-|---|---|---:|---|
-| 001 | First safe task | L1 | [Open](lab-001-first-safe-task-EN.md) |
-| 002 | Task protocol | L2 | [Open](lab-002-task-protocol-EN.md) |
-| 003 | Evidence review | L3 | [Open](lab-003-evidence-review-EN.md) |
-| 004 | Skill selection | L4 | [Open](lab-004-skill-selection-EN.md) |
-| 005 | Skill design | L4 | [Open](lab-005-design-a-skill-EN.md) |
-| 006 | Agent stop conditions | L5 | [Open](lab-006-agent-stop-conditions-EN.md) |
-| 007 | Action boundaries | L3 | [Open](lab-007-action-boundaries-EN.md) |
-| 008 | Research question | L3 | [Open](lab-008-research-question-EN.md) |
-| 009 | Engineering lifecycle | L3 | [Open](lab-009-engineering-lifecycle-EN.md) |
-| 010 | Shared product context | L3 | [Open](lab-010-product-context-EN.md) |
-| 011 | GPT and Codex boundaries | L0 | [Open](lab-011-gpt-codex-boundaries-EN.md) |
-| 012 | Team capability migration | L6 | [Open](lab-012-team-capability-migration-EN.md) |
-| 013 | Auditable vertical slice | L3 | [Open](lab-013-l3-vertical-slice-EN.md) |
-| 014 | Resume reconciliation | L3 | [Open](lab-014-resume-reconciliation-EN.md) |
-| 015 | Evidence delivery | L5 | [Open](lab-015-evidence-delivery-EN.md) |
-| 016 | Side-effect boundary | L3 | [Open](lab-016-side-effect-boundary-EN.md) |
-| 017 | Skill discovery audit | L4 | [Open](lab-017-skill-discovery-audit-EN.md) |
-| 018 | Language transfer under a fixed practice contract | L2 | [Open](lab-018-language-transfer-EN.md) |
+| Lab | Capability | Exercise level | First used in path | English entry |
+|---|---|---:|---:|---|
+| 001 | First safe task | L1 | L1 primary | [Open](lab-001-first-safe-task-EN.md) |
+| 002 | Task protocol | L2 | L2 primary | [Open](lab-002-task-protocol-EN.md) |
+| 003 | Evidence review | L3 | L3 supporting | [Open](lab-003-evidence-review-EN.md) |
+| 004 | Skill selection | L4 | L4 primary | [Open](lab-004-skill-selection-EN.md) |
+| 005 | Skill design | L4 | L4 supporting | [Open](lab-005-design-a-skill-EN.md) |
+| 006 | Agent stop conditions | L5 | L5 primary | [Open](lab-006-agent-stop-conditions-EN.md) |
+| 007 | Action boundaries | L3 | L3 supporting | [Open](lab-007-action-boundaries-EN.md) |
+| 008 | Research question | L3 | L4 supporting | [Open](lab-008-research-question-EN.md) |
+| 009 | Engineering lifecycle | L3 | L3 supporting | [Open](lab-009-engineering-lifecycle-EN.md) |
+| 010 | Shared product context | L3 | L6 supporting | [Open](lab-010-product-context-EN.md) |
+| 011 | GPT and Codex boundaries | L0 | L0 primary | [Open](lab-011-gpt-codex-boundaries-EN.md) |
+| 012 | Team capability migration | L6 | L6 primary | [Open](lab-012-team-capability-migration-EN.md) |
+| 013 | Auditable vertical slice | L3 | L3 primary | [Open](lab-013-l3-vertical-slice-EN.md) |
+| 014 | Resume reconciliation | L3 | L3 supporting | [Open](lab-014-resume-reconciliation-EN.md) |
+| 015 | Evidence delivery | L5 | L5 supporting | [Open](lab-015-evidence-delivery-EN.md) |
+| 016 | Side-effect boundary | L3 | L3 supporting | [Open](lab-016-side-effect-boundary-EN.md) |
+| 017 | Skill discovery audit | L4 | L4 supporting | [Open](lab-017-skill-discovery-audit-EN.md) |
+| 018 | Language transfer under a fixed practice contract | L2 | L2 optional supporting | [Open](lab-018-language-transfer-EN.md) |
+
+Lab numbers are stable catalog identities. The adjacent links at the end of a
+Lab browse this catalog by number; they are not prerequisites or a claim that
+the next numbered Lab belongs to the next learning level. Use the
+[learning path](../../docs/governance/learning-path.yaml) for level placement
+and progression evidence.
 
 ## How to run a lab safely
 

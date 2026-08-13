@@ -406,6 +406,13 @@ the boundary of what was not reproduced locally. The repository has not run
 this chapter's experiment yet, so the chapter remains `candidate` and the
 experiment remains `not_run`.
 
+## Practice the side-effect decision
+
+Use [Lab 016: Stop at the side-effect boundary](../labs/lab-016-side-effect-boundary-EN.md)
+to separate diagnosis from installation, restart, upload, publication, and
+other persistent actions. The useful result may be a bounded diagnosis and a
+request for authority—not an unapproved fix.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Chapter navigation">

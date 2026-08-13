@@ -42,11 +42,11 @@ def strip_markdown(value: str) -> str:
 
 def source_body(raw: str) -> str:
     text = raw.lstrip("\ufeff")
-    if text.startswith("---\n"):
-        _, _, remainder = text.partition("\n---\n")
-        text = remainder
-    text = re.sub(r"^<!--.*?-->\s*", "", text, flags=re.DOTALL)
-    return text
+    text = re.sub(r"^(?:\s*<!--.*?-->\s*)+", "", text, flags=re.DOTALL)
+    front_matter = re.match(r"(?s)^(?P<h1># [^\n]+\n\s*)?---\n.*?\n---\n", text)
+    if front_matter:
+        text = f"{front_matter.group('h1') or ''}{text[front_matter.end():]}"
+    return text.lstrip()
 
 
 def title_and_text(raw: str, canonical_title: str) -> tuple[str, str, str]:

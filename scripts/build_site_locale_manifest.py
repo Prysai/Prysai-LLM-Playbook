@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MATRIX_FILE = ROOT / "docs/governance/locale-matrix.yaml"
 STATUS_FILE = ROOT / "docs/governance/content-status.yaml"
 NAVIGATION_FILE = ROOT / "docs/governance/book-navigation.yaml"
+LAB_NAVIGATION_FILE = ROOT / "docs/governance/lab-navigation.yaml"
 OUTPUT_FILE = ROOT / "site/locale-manifest.js"
 LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE")
 ROUTED_STATUS_SECTIONS = ("chapters", "labs")
@@ -155,10 +156,40 @@ def build_navigation_payload(
     }
 
 
+def build_lab_navigation_payload(
+    navigation: dict[str, Any],
+    path_index: dict[str, str],
+) -> dict[str, Any]:
+    """Project Lab browsing order without importing progression semantics."""
+
+    labs: list[dict[str, Any]] = []
+    for item in navigation.get("labs", []):
+        if not isinstance(item, dict):
+            raise ValueError("Lab navigation entries must contain objects")
+        path = normalize(str(item["path"]))
+        content_id = path_index.get(path)
+        if not content_id:
+            raise ValueError(f"Lab navigation entry is not indexed: {item.get('id')}")
+        labs.append(
+            {
+                "id": item["id"],
+                "number": item["number"],
+                "title": item["title"],
+                "path": path,
+                "content_id": content_id,
+            }
+        )
+    return {
+        "sequence_boundary": navigation.get("policy", {}).get("sequence_boundary"),
+        "labs": labs,
+    }
+
+
 def build_manifest() -> dict[str, Any]:
     matrix = load_json(MATRIX_FILE)
     status = load_json(STATUS_FILE)
     navigation = load_json(NAVIGATION_FILE)
+    lab_navigation = load_json(LAB_NAVIGATION_FILE)
     locale_records = matrix["locales"]
     locales: dict[str, Any] = {}
     for suffix in LOCALES:
@@ -198,6 +229,7 @@ def build_manifest() -> dict[str, Any]:
             "docs/governance/locale-matrix.yaml",
             "docs/governance/content-status.yaml",
             "docs/governance/book-navigation.yaml",
+            "docs/governance/lab-navigation.yaml",
         ],
         "default_locale": "en",
         "locales": locales,
@@ -206,6 +238,7 @@ def build_manifest() -> dict[str, Any]:
         "path_index": path_index,
         "routed_status_counts": routed_counts,
         "book_navigation": build_navigation_payload(navigation, path_index),
+        "lab_navigation": build_lab_navigation_payload(lab_navigation, path_index),
     }
 
 
@@ -220,7 +253,7 @@ def main() -> int:
     args = parser.parse_args()
     try:
         expected = render(build_manifest())
-    except (OSError, UnicodeError, KeyError, TypeError, json.JSONDecodeError) as exc:
+    except (OSError, UnicodeError, KeyError, TypeError, ValueError, json.JSONDecodeError) as exc:
         print("SITE_LOCALE_MANIFEST_FAILED")
         print(f"- {exc}")
         return 1

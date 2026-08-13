@@ -97,3 +97,14 @@ Repeat the protocol in another domain. Which narrowing constraint created the
 largest improvement? Which source looked useful but could not support the
 actual claim? What remains a hypothesis rather than a finding?
 
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-007-action-boundaries-EN.md" aria-label="Previous Lab: Lab 007 · Put One README Task Behind Three Action Boundaries">← Previous<br><strong>Lab 007 · Put One README Task Behind Three Action Boundaries</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-009-engineering-lifecycle-EN.md" aria-label="Next Lab: Lab 009 · Compare direct implementation with a full engineering lifecycle">Next →<br><strong>Lab 009 · Compare direct implementation with a full engineering lifecycle</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- lab-navigation:end -->

@@ -194,6 +194,13 @@ Choose a Skill or internal team script you currently use without changing produc
 - Skill structure and verification: the [official OpenAI Codex repository](https://github.com/openai/codex), used to check volatile entry points, versions, and implementation behavior; it does not replace local runtime evidence.
 - Update owner: the Field Guide maintenance group. Review after every Skill-source upgrade, license change, or discovery-behavior change, or no later than 2026-11-09. Chapter status: `candidate`; related Skills should be called `production-ready` only after organizational-permission, licensing, regression, and rollback evidence is complete.
 
+## Practice the adoption decision
+
+Use [Lab 017: Audit discovery before adopting a Skill](../labs/lab-017-skill-discovery-audit-EN.md)
+to check discovery, explicit loading, dependencies, license, behavior, and
+rollback as separate claims. Finding or installing a Skill is not evidence
+that it loaded correctly or deserves team adoption.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Chapter navigation">

@@ -105,3 +105,14 @@ largest downstream decision change? Transfer the context to a different domain
 and remove marketing-only language; record what survives and what requires a
 new owner or evidence source.
 
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-009-engineering-lifecycle-EN.md" aria-label="Previous Lab: Lab 009 · Compare direct implementation with a full engineering lifecycle">← Previous<br><strong>Lab 009 · Compare direct implementation with a full engineering lifecycle</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-011-gpt-codex-boundaries-EN.md" aria-label="Next Lab: Lab 011 · Separate GPT, Codex, tools, and Agents">Next →<br><strong>Lab 011 · Separate GPT, Codex, tools, and Agents</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- lab-navigation:end -->

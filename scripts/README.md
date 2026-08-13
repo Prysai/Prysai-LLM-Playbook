@@ -26,6 +26,10 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\validate_localization.py
 & $py scripts\build_book_navigation.py --check
 & $py scripts\test_book_navigation_titles.py
+& $py scripts\build_lab_navigation.py --check
+& $py scripts\validate_lab_navigation.py
+& $py scripts\test_lab_navigation.py
+& $py scripts\test_reader_lab_navigation.py
 & $py scripts\validate_core_unit_map.py
 & $py scripts\test_core_unit_map.py
 & $py scripts\build_learning_path_site.py --check
@@ -52,8 +56,13 @@ passing does not prove cross-platform behavior or learner transfer.
 chapter titles and compact navigation labels. It does not prove that every
 downstream title consumer has been generated or visually reviewed.
 
+The Lab navigation checks cover all 18 canonical English Lab sources, exact
+identity and H1 matching, first/middle/last adjacent links, stale blocks, and
+Reader manifest projection. Numerical adjacency is catalog navigation, not a
+prerequisite, completion, or learning-outcome claim.
+
 `validate_content_completeness.py` is the narrow cross-file identity gate. It
-checks that the 22 canonical chapters, 17 lab records, locale matrix, chapter
+checks that the 22 canonical chapters, 18 lab records, locale matrix, chapter
 order, reader entries, and generated site outputs agree. Its migration warnings
 identify lab sources that are still intentionally unsuffixed; they are not
 claims that those labs have been translated or run.

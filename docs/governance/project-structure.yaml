@@ -25,7 +25,7 @@
       "role": "The reader-facing book, chapters, table of contents, and labs.",
       "entry": "book/README.md",
       "first_read": "book/README-EN.md",
-      "canonical_sources": ["docs/governance/book-navigation.yaml", "docs/book-architecture.md"],
+      "canonical_sources": ["docs/governance/book-navigation.yaml", "docs/governance/lab-navigation.yaml", "docs/book-architecture.md"],
       "generated_outputs": []
     },
     {
@@ -118,6 +118,13 @@
       "edit_rule": "Edit the source order; do not hand-edit the marked chapter-navigation block."
     },
     {
+      "path": "book/labs/lab-*-EN.md",
+      "source": ["docs/governance/lab-navigation.yaml"],
+      "owner": "scripts/build_lab_navigation.py",
+      "surface": "The marked lab-navigation block inside each canonical English Lab source.",
+      "edit_rule": "Edit the Lab catalog order; do not hand-edit the marked lab-navigation block."
+    },
+    {
       "path": "site/learning-path-data.js",
       "source": ["docs/governance/learning-path.yaml", "docs/governance/content-status.yaml", "site/content-catalog.json"],
       "owner": "scripts/build_learning_path_site.py",
@@ -126,7 +133,7 @@
     },
     {
       "path": "site/locale-manifest.js",
-      "source": ["docs/governance/locale-matrix.yaml", "docs/governance/content-status.yaml"],
+      "source": ["docs/governance/locale-matrix.yaml", "docs/governance/content-status.yaml", "docs/governance/book-navigation.yaml", "docs/governance/lab-navigation.yaml"],
       "owner": "scripts/build_site_locale_manifest.py",
       "surface": "The generated content_id, locale, translation-state, alias, and path index consumed by the public site.",
       "edit_rule": "Edit the locale matrix or current status source, then regenerate and run --check; do not hand-edit."

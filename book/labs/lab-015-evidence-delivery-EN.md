@@ -124,12 +124,14 @@ Identify the claim that was broader than its evidence and name the smallest chec
 - [Field problems and prompt patterns — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-05, FP2-06, and FP2-20.
 - [Chapter 9: Verification, doubt, and recovery](../chapters/09-verification-and-recovery-EN.md).
 
-<!-- chapter-navigation:start -->
+<!-- lab-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Chapter navigation">
-  <table role="presentation" width="100%"><tr>
-    <td align="left"><a href="lab-014-resume-reconciliation-EN.md">← Previous<br><strong>Lab 014 · Resume reconciliation</strong></a></td>
-    <td align="right"><a href="lab-016-side-effect-boundary-EN.md">Next →<br><strong>Lab 016 · Side-effect boundary</strong></a></td>
-  </tr></table>
+<nav class="lab-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-014-resume-reconciliation-EN.md" aria-label="Previous Lab: Lab 014 · Reconcile a resumed task before continuing">← Previous<br><strong>Lab 014 · Reconcile a resumed task before continuing</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-016-side-effect-boundary-EN.md" aria-label="Next Lab: Lab 016 · Stop at the side-effect boundary">Next →<br><strong>Lab 016 · Stop at the side-effect boundary</strong></a></td>
+    </tr>
+  </table>
 </nav>
-<!-- chapter-navigation:end -->
+<!-- lab-navigation:end -->

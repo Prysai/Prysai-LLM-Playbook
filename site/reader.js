@@ -21,6 +21,7 @@
   const bookProgress = document.querySelector('[data-reader-book-progress]');
   const chapterList = document.querySelector('[data-reader-chapter-list]');
   const orientation = document.querySelector('[data-reader-orientation]');
+  const orientationSummary = orientation?.querySelector('summary');
   const mobileProgress = document.querySelector('[data-reader-mobile-progress]');
   const mobilePrevious = document.querySelector('[data-reader-mobile-previous]');
   const mobileNext = document.querySelector('[data-reader-mobile-next]');
@@ -39,13 +40,14 @@
   const nextLink = document.querySelector('[data-reader-next]');
   const nextTitle = document.querySelector('[data-reader-next-title]');
   const bookNavigation = manifest.book_navigation || { parts: [], chapters: [] };
+  const labNavigation = manifest.lab_navigation || { labs: [] };
   const readerCopy = {
     en: {
-      skip: 'Skip to content', back: 'Back to overview', language: 'Language', languageAria: 'Choose reading language', detailsAria: 'Page details', bookChaptersAria: 'Book chapters', bookChapters: 'Book chapters', chapterList: 'Chapter list', pageDetails: 'Page details', trustRecord: 'Trust record', trustScope: 'Scope', trustReview: 'Next review', trustLimitations: 'Known limitation', trustUnavailable: 'unavailable', trustUnavailableDetail: 'The trust registry could not be loaded. This is a data failure, not evidence that the page has no record.', chapterNavigationAria: 'Chapter navigation', previousChapter: 'Previous chapter', nextChapter: 'Next chapter', onThisPageAria: 'On this page', onThisPage: 'On this page', readingRoute: 'Reading route', sourcePath: 'Source path', contentIdentity: 'Content identity', openSource: 'Open source file ↗', footer: 'Source remains Markdown; this page is a static reading view', loading: 'Loading the source page…', copyPrompt: 'Copy prompt', copiedPrompt: 'Prompt copied', copyFailed: 'Copy failed',
+      skip: 'Skip to content', back: 'Back to overview', language: 'Language', languageAria: 'Choose reading language', detailsAria: 'Page details', bookChaptersAria: 'Book chapters', bookChapters: 'Book chapters', chapterList: 'Chapter list', labSequence: 'Lab sequence', pageDetails: 'Page details', trustRecord: 'Trust record', trustScope: 'Scope', trustReview: 'Next review', trustLimitations: 'Known limitation', trustUnavailable: 'unavailable', trustUnavailableDetail: 'The trust registry could not be loaded. This is a data failure, not evidence that the page has no record.', chapterNavigationAria: 'Chapter navigation', labNavigationAria: 'Lab catalog navigation', previousChapter: 'Previous chapter', nextChapter: 'Next chapter', previousLab: 'Previous Lab', nextLab: 'Next Lab', onThisPageAria: 'On this page', onThisPage: 'On this page', readingRoute: 'Reading route', sourcePath: 'Source path', contentIdentity: 'Content identity', openSource: 'Open source file ↗', footer: 'Source remains Markdown; this page is a static reading view', loading: 'Loading the source page…', copyPrompt: 'Copy prompt', copiedPrompt: 'Prompt copied', copyFailed: 'Copy failed',
       fallbackEnglish: (name) => `${name} is not available for this page yet. Showing the current English source.`, fallbackSource: (name, source) => `${name} is not available for this page yet. Showing the current ${source} source.`, invalidPath: 'This reader URL does not name an allowed project source file. Return to the overview and choose a page from the guide.', loadError: (status) => `The source page could not be loaded (${status}).`
     },
     zh: {
-      skip: '跳到正文', back: '返回总览', language: '语言', languageAria: '选择阅读语言', detailsAria: '页面详情', bookChaptersAria: '全书章节', bookChapters: '全书章节', chapterList: '章节列表', pageDetails: '页面详情', trustRecord: '信任记录', trustScope: '范围', trustReview: '下次复核', trustLimitations: '已知限制', trustUnavailable: '不可用', trustUnavailableDetail: '信任登记表加载失败。这是数据故障，不代表本页没有登记记录。', chapterNavigationAria: '章节导航', previousChapter: '上一章', nextChapter: '下一章', onThisPageAria: '本页目录', onThisPage: '本页目录', readingRoute: '阅读路线', sourcePath: '源文件路径', contentIdentity: '内容身份', openSource: '打开源文件 ↗', footer: '源文件仍是 Markdown；此页面是静态阅读视图', loading: '正在加载源文件……', copyPrompt: '复制提示词', copiedPrompt: '提示词已复制', copyFailed: '复制失败',
+      skip: '跳到正文', back: '返回总览', language: '语言', languageAria: '选择阅读语言', detailsAria: '页面详情', bookChaptersAria: '全书章节', bookChapters: '全书章节', chapterList: '章节列表', labSequence: '实验编号导航', pageDetails: '页面详情', trustRecord: '信任记录', trustScope: '范围', trustReview: '下次复核', trustLimitations: '已知限制', trustUnavailable: '不可用', trustUnavailableDetail: '信任登记表加载失败。这是数据故障，不代表本页没有登记记录。', chapterNavigationAria: '章节导航', labNavigationAria: '实验目录导航', previousChapter: '上一章', nextChapter: '下一章', previousLab: '上一个实验', nextLab: '下一个实验', onThisPageAria: '本页目录', onThisPage: '本页目录', readingRoute: '阅读路线', sourcePath: '源文件路径', contentIdentity: '内容身份', openSource: '打开源文件 ↗', footer: '源文件仍是 Markdown；此页面是静态阅读视图', loading: '正在加载源文件……', copyPrompt: '复制提示词', copiedPrompt: '提示词已复制', copyFailed: '复制失败',
       fallbackEnglish: (name) => `此页面暂时没有${name}版本，当前显示英文源文件。`, fallbackSource: (name, source) => `此页面暂时没有${name}版本，当前显示${source}源文件。`, invalidPath: '这个阅读链接没有指向允许的项目源文件。请返回总览，从指南中选择页面。', loadError: (status) => `源文件加载失败（${status}）。`
     }
   };
@@ -150,6 +152,23 @@ function canonicalChapterTitle(chapter) {
     return bookNavigation.chapters.find((chapter) => chapter.content_id === selection.contentId) || null;
   }
 
+  function labForSelection(selection) {
+    return labNavigation.labs.find((lab) => lab.content_id === selection.contentId) || null;
+  }
+
+  function labPath(lab) {
+    const record = manifest.contents?.[lab.content_id];
+    const requested = record?.locales?.[activeLocale];
+    if (ready(requested)) return requested.path;
+    const english = record?.locales?.en;
+    return ready(english) ? english.path : lab.path;
+  }
+
+  function labProgressLabel(lab) {
+    if (uiLanguage() === 'zh') return `实验 ${String(lab.number).padStart(3, '0')} / 共 ${labNavigation.labs.length} 个 · 按编号浏览，不代表先修顺序`;
+    return `Lab ${String(lab.number).padStart(3, '0')} of ${labNavigation.labs.length} · Catalog order, not a prerequisite chain`;
+  }
+
   function partForChapter(chapter) {
     return bookNavigation.parts.find((part) => part.id === chapter?.part) || null;
   }
@@ -162,14 +181,62 @@ function canonicalChapterTitle(chapter) {
   }
 
   function renderBookNavigation(selection) {
-    if (!bookNav || !bookProgress || !chapterList || !pagination) return;
+    if (!pagination) return;
     const current = chapterForSelection(selection);
-    if (!current) {
-      bookNav.hidden = true;
+    const currentLab = labForSelection(selection);
+    if (!current && !currentLab) {
+      if (bookNav) bookNav.hidden = true;
       pagination.hidden = true;
       if (orientation) orientation.hidden = true;
       return;
     }
+    if (currentLab) {
+      const index = labNavigation.labs.indexOf(currentLab);
+      const previous = labNavigation.labs[index - 1];
+      const next = labNavigation.labs[index + 1];
+      const strings = currentReaderCopy();
+      if (bookNav) bookNav.hidden = true;
+      if (orientation) {
+        orientation.hidden = false;
+        if (orientationSummary) orientationSummary.textContent = strings.labSequence;
+        if (mobileProgress) mobileProgress.textContent = labProgressLabel(currentLab);
+        orientation.querySelector('nav')?.setAttribute('aria-label', strings.labNavigationAria);
+      }
+      const updateLabLink = (link, lab, direction) => {
+        if (!link) return;
+        if (!lab) { link.hidden = true; link.href = '#'; link.textContent = ''; return; }
+        link.hidden = false;
+        link.href = readerHref(labPath(lab), '', activeLocale);
+        link.textContent = `${direction === 'previous' ? '←' : '→'} Lab ${String(lab.number).padStart(3, '0')} · ${lab.title}`;
+        link.setAttribute('aria-label', direction === 'previous' ? strings.previousLab : strings.nextLab);
+      };
+      updateLabLink(mobilePrevious, previous, 'previous');
+      updateLabLink(mobileNext, next, 'next');
+      if (mobileToc && mobileTocList) {
+        mobileTocList.replaceChildren(...[...tocList.querySelectorAll('li')].map((item) => item.cloneNode(true)));
+        mobileToc.hidden = mobileTocList.children.length === 0;
+      }
+      const updateLabPagination = (link, titleNode, lab, direction) => {
+        if (!lab) { link.hidden = true; return; }
+        link.hidden = false;
+        link.href = readerHref(labPath(lab), '', activeLocale);
+        link.querySelector('.reader-pagination-kicker').textContent = direction === 'previous' ? strings.previousLab : strings.nextLab;
+        titleNode.textContent = `Lab ${String(lab.number).padStart(3, '0')} · ${lab.title}`;
+      };
+      updateLabPagination(previousLink, previousTitle, previous, 'previous');
+      updateLabPagination(nextLink, nextTitle, next, 'next');
+      pagination.setAttribute('aria-label', strings.labNavigationAria);
+      pagination.hidden = !previous && !next;
+      return;
+    }
+    if (!bookNav || !bookProgress || !chapterList) {
+      pagination.hidden = true;
+      if (orientation) orientation.hidden = true;
+      return;
+    }
+    if (orientationSummary) orientationSummary.textContent = currentReaderCopy().bookChapters;
+    orientation?.querySelector('nav')?.setAttribute('aria-label', currentReaderCopy().chapterNavigationAria);
+    pagination.setAttribute('aria-label', currentReaderCopy().chapterNavigationAria);
     const index = bookNavigation.chapters.indexOf(current);
     const part = partForChapter(current);
     const partChapters = bookNavigation.chapters.filter((chapter) => chapter.part === current.part);
@@ -385,6 +452,7 @@ function canonicalChapterTitle(chapter) {
     const lines = String(text).replace(/^\uFEFF/, '').split(/\r?\n/);
     let index = 0;
     let frontMatter = false;
+    let frontMatterSeen = false;
     const usedSlugs = new Map();
     const addParagraph = (items) => {
       const content = items.join('\n').replace(/\n/g, ' ');
@@ -395,12 +463,20 @@ function canonicalChapterTitle(chapter) {
     };
     while (index < lines.length) {
       const line = lines[index];
-      if (index === 0 && line.trim() === '---') { frontMatter = true; index += 1; continue; }
+      const h1BeforeFrontMatter = fragment.childNodes.length === 1 && fragment.firstChild?.tagName === 'H1';
+      if (!frontMatterSeen && line.trim() === '---' && (fragment.childNodes.length === 0 || h1BeforeFrontMatter)) {
+        frontMatter = true;
+        frontMatterSeen = true;
+        index += 1;
+        continue;
+      }
       if (frontMatter) { if (line.trim() === '---') frontMatter = false; index += 1; continue; }
       if (!line.trim()) { index += 1; continue; }
-      if (/^<!--\s*chapter-navigation:start\s*-->$/i.test(line.trim())) {
+      const navigationStart = line.trim().match(/^<!--\s*(chapter|lab)-navigation:start\s*-->$/i);
+      if (navigationStart) {
+        const navigationKind = navigationStart[1];
         index += 1;
-        while (index < lines.length && !/^<!--\s*chapter-navigation:end\s*-->$/i.test(lines[index].trim())) {
+        while (index < lines.length && !new RegExp(`^<!--\\s*${navigationKind}-navigation:end\\s*-->$`, 'i').test(lines[index].trim())) {
           index += 1;
         }
         if (index < lines.length) index += 1;
@@ -592,7 +668,14 @@ function canonicalChapterTitle(chapter) {
     if (!chapterCard || !chapterLabel || !chapterStatus) return;
     const alias = chapterAliasFor(selection.contentId);
     if (!alias) {
-      chapterCard.hidden = true;
+      const lab = labForSelection(selection);
+      if (!lab) {
+        chapterCard.hidden = true;
+        return;
+      }
+      chapterLabel.textContent = `Lab ${String(lab.number).padStart(3, '0')} · ${lab.title}`;
+      chapterStatus.textContent = `${chapterStatusFor(selection)} · ${uiLanguage() === 'zh' ? '编号仅用于目录浏览' : 'catalog order only'}`;
+      chapterCard.hidden = false;
       return;
     }
     const number = alias.slice('chapter-'.length);
@@ -695,17 +778,23 @@ function canonicalChapterTitle(chapter) {
     if (!response.ok) { showError(currentReaderCopy().loadError(response.status)); return; }
     const source = await response.text();
     const chapter = chapterForSelection(selection);
+    const lab = labForSelection(selection);
     article.replaceChildren();
     if (chapter) {
       const context = document.createElement('div');
       context.className = 'reader-article-context';
       context.textContent = chapterProgressLabel(chapter, bookNavigation.chapters.indexOf(chapter));
       article.append(context);
+    } else if (lab) {
+      const context = document.createElement('div');
+      context.className = 'reader-article-context';
+      context.textContent = labProgressLabel(lab);
+      article.append(context);
     }
     article.append(renderBlocks(source, selection.path));
     addPromptCopyControls(selection.path);
     article.setAttribute('aria-busy', 'false');
-    const title = chapter ? canonicalChapterTitle(chapter) : article.querySelector('h1')?.textContent?.trim() || selection.path;
+    const title = chapter ? canonicalChapterTitle(chapter) : lab ? `Lab ${String(lab.number).padStart(3, '0')}: ${lab.title}` : article.querySelector('h1')?.textContent?.trim() || selection.path;
     buildTableOfContents();
     updateChapterRail(selection, title);
     renderBookNavigation(selection);

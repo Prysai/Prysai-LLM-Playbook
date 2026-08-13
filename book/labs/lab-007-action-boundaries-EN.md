@@ -1,7 +1,5 @@
 <!-- content_id: lab-007-action-boundaries | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-11 -->
 
-# Lab 007: Put One README Task Behind Three Action Boundaries
-
 ---
 id: lab-007-action-boundaries
 title: "Place one README task in three work surfaces and practice authorization, stopping, and evidence"
@@ -24,6 +22,8 @@ transfer_domain: "Engineering release preparation, research publishing preparati
 transfer_evidence: "A redacted task card, surface cards, staged state cards, symptom and diagnostic notes, execution records, result checks, and rollback entry"
 transfer_limitations: "This lab does not prove that any real account, Enterprise host, organization installation, branch protection, connector, publishing platform, or rollback chain is available"
 ---
+
+# Lab 007: Put One README Task Behind Three Action Boundaries
 
 ## The real problem this lab addresses
 
@@ -283,3 +283,15 @@ Repeat the five moves:
 | FP-02, FP-03, FP-04, and FP-11 in the Codex field-problem research | Real symptoms and public issue links | User reports; not local reproductions; reported hypotheses are not official causes |
 | The forum research record | Community reports about sandbox networking and host boundaries | Community suggestions are not official fixes; do not execute forum commands as lab steps |
 | The redacted fixture in this file | Original, reversible training input | Cannot prove real account, connector, Enterprise, publishing, or rollback availability |
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-006-agent-stop-conditions-EN.md" aria-label="Previous Lab: Lab 006 · Design Agent stop conditions">← Previous<br><strong>Lab 006 · Design Agent stop conditions</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-008-research-question-EN.md" aria-label="Next Lab: Lab 008 · Narrow a topic into an answerable research question">Next →<br><strong>Lab 008 · Narrow a topic into an answerable research question</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- lab-navigation:end -->

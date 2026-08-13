@@ -1,0 +1,93 @@
+name: Field report
+description: Report first-task friction, a platform difference, or a reader-facing failure without sharing private material.
+title: "[Field report]: "
+labels: ["field-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is an intake record, not proof that the project, a platform, or a proposed fix is verified. Do not paste secrets, account identifiers, private repositories, raw prompts, raw logs, copyrighted text, or screenshots containing personal data. If a report becomes curriculum material, maintainers will create a separate, sourced field-case record.
+  - type: dropdown
+    id: report_kind
+    attributes:
+      label: What happened?
+      options:
+        - First-task friction
+        - Platform difference
+        - Result or evidence mismatch
+        - Accessibility or reader problem
+        - Other bounded observation
+    validations:
+      required: true
+  - type: dropdown
+    id: platform_surface
+    attributes:
+      label: Platform or surface observed
+      description: Listing a platform here does not mean the guide supports or has verified an adapter for it.
+      options:
+        - Codex
+        - ChatGPT
+        - Claude Code
+        - Grok
+        - Gemini
+        - Another platform or no platform
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Minimal environment
+      description: State only the product version or date, surface, OS/browser, and relevant setting. Omit account, organization, billing, and device identifiers.
+      placeholder: "Observed 2026-08-13 · desktop web · browser version if relevant · no account details"
+    validations:
+      required: true
+  - type: textarea
+    id: task_and_expected_outcome
+    attributes:
+      label: Bounded task and expected outcome
+      description: Describe the smallest task and what you expected to observe. Summarize rather than pasting a full prompt or private source.
+    validations:
+      required: true
+  - type: textarea
+    id: observed_result
+    attributes:
+      label: Observed result
+      description: Describe what happened, including the first safe check you tried and what remains unknown.
+    validations:
+      required: true
+  - type: dropdown
+    id: reproduction_status
+    attributes:
+      label: Reproduction status
+      options:
+        - Reproducible with sanitized steps
+        - Observed once
+        - Not reproducible
+        - Unknown
+    validations:
+      required: true
+  - type: textarea
+    id: safe_evidence
+    attributes:
+      label: Safe evidence
+      description: Provide a sanitized URL, short error class, or screenshot description. Write "none" if no safe evidence can be shared.
+    validations:
+      required: true
+  - type: textarea
+    id: related_material
+    attributes:
+      label: Related guide material
+      description: Name a chapter, Lab, Skill, or route if known; otherwise write "unknown".
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Privacy and evidence boundary
+      options:
+        - label: I removed secrets, private data, account identifiers, private repository material, and unclear-license content.
+          required: true
+        - label: I permit maintainers to summarize my original report, but I understand this issue is not automatically accepted or published as curriculum.
+          required: true
+        - label: I understand that one report does not establish a root cause, prevalence, platform behavior, or a verified fix.
+          required: true

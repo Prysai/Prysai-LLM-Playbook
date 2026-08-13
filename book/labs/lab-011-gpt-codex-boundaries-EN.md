@@ -1,7 +1,5 @@
 <!-- content_id: lab-011-gpt-codex-boundaries | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: f521e29 -->
 
-# Lab 011: Separate GPT, Codex, tools, and Agents
-
 ---
 id: lab-011-gpt-codex-boundaries
 title: "Build an observable boundary map before you grant authority"
@@ -23,6 +21,8 @@ transfer_domain: "research, engineering, content, or marketing"
 transfer_evidence: "Save the transfer ledger, source boundary, exclusion reason for one untrusted instruction, and an explicit unverified list"
 transfer_limitations: "This lab teaches observable boundaries; it does not prove that a particular model, Skill, tool, connector, account, or Agent surface behaves the same way in production"
 ---
+
+# Lab 011: Separate GPT, Codex, tools, and Agents
 
 ## What this lab is for
 
@@ -236,3 +236,15 @@ explicit scope and confirmation.
 This is an original exercise. It does not copy external prompts, logs,
 credentials, or Skill instructions. Re-check volatile product facts before
 using a live surface; status remains draft until the declared evidence exists.
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-010-product-context-EN.md" aria-label="Previous Lab: Lab 010 · Build shared product context that survives two tasks">← Previous<br><strong>Lab 010 · Build shared product context that survives two tasks</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-012-team-capability-migration-EN.md" aria-label="Next Lab: Lab 012 · Turn a personal method into a team capability">Next →<br><strong>Lab 012 · Turn a personal method into a team capability</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- lab-navigation:end -->

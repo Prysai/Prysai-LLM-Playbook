@@ -84,3 +84,15 @@ items. Until those records exist, L6 capability remains unproven.
 Apply the package format to a low-risk engineering, research, or content
 workflow. Which part was previously held only in one person's memory? What
 would make the package unsafe to inherit six months later?
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-011-gpt-codex-boundaries-EN.md" aria-label="Previous Lab: Lab 011 · Separate GPT, Codex, tools, and Agents">← Previous<br><strong>Lab 011 · Separate GPT, Codex, tools, and Agents</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-013-l3-vertical-slice-EN.md" aria-label="Next Lab: Lab 013 · Run one complete vertical slice">Next →<br><strong>Lab 013 · Run one complete vertical slice</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- lab-navigation:end -->

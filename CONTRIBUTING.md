@@ -15,11 +15,19 @@ the project's source, safety, evidence, language, and maturity boundaries.
 | Contract change | Navigation, locale, status, generated data, quality policy | [Governance contracts](docs/governance/README.md) | Proposal or ADR when costly to reverse, generator, validator, and migration evidence |
 | Behavior change | Skill, evaluation, automation | [Skill standard](docs/quality/skill-quality-standard.md) or [evaluation framework](docs/quality/evaluation-framework.md) | Positive, boundary, failure, and transfer evidence; fresh-context/runtime records when claiming verification |
 | Release change | Version, license, publication, maturity, rollback | [Release checklist](docs/release-checklist.md) and [release-evidence contract](docs/governance/release-evidence.yaml) | Exact candidate SHA, release packet, blockers, reviewer, rollback target, and explicit approval |
+| Field report | First-task friction, platform difference, reader problem | [Field Report form](.github/ISSUE_TEMPLATE/field-report.yml) | Sanitized observation, scope, reproduction status, privacy confirmation, and a clear unknowns boundary |
 
 Open an issue before investing in a large rewrite, a new project-wide term, a
 schema or maturity change, a new external dependency, a high-risk workflow, or
 a release decision. Small corrections and clearly bounded source updates can go
 directly to a pull request. One pull request should solve one coherent problem.
+
+A Field Report is an intake record, not a support channel, diagnosis, accepted
+case, or verification result. Do not put raw prompts, secrets, private logs,
+account details, copyrighted text, or private repositories into it. A report
+that becomes teaching material must first pass the source, license, privacy,
+evidence, reproduction, safe-check, and stop-condition fields in the
+[field-case template](docs/templates/field-case.md).
 
 ## Find the canonical source
 

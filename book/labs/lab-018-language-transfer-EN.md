@@ -5,25 +5,29 @@ id: lab-018-language-transfer
 title: "Test a beginner travel exchange for retention and transfer"
 level: L2
 domain: language-learning
-goal: "Produce a five-minute beginner travel information exchange under fixed conditions, then test a changed case and a delayed unseen case without converting one result into fluency"
+goal: "Produce a five-minute beginner travel information exchange under fixed conditions, then test a changed case and a predeclared delayed task without converting one observation into fluency"
 setup: "Synthetic travel cards, a fixed rubric, a disposable local record, no network, credentials, external contact, production system, or automated reminder"
 task: "Capture an unaided baseline, use retrieval-first correction, run one changed immediate task, and preserve a delayed unseen transfer task"
 evidence:
   - "Baseline, hint ladder, learner-authored correction, and correction ledger"
   - "Immediate changed-case attempt and score against the fixed rubric"
-  - "Delayed unseen-transfer attempt, score, unknowns, and calibrated status when actually run"
+  - "Delayed task card ID, assignment, exposure record, independent scores, disagreement record, unknowns, and calibrated status when actually run"
 failure_variant: "Ask the model to declare fluency or mastery after the immediate task; the correct outcome is refusal or a claim narrowed to saved evidence"
 reflection: "Which response survived changed context without help, and which claim remains unsupported until the delayed unseen task is run?"
 status: draft
 run_status: not_run
 last_verified: "not run"
-transfer_task: "After the declared delay, complete an unseen travel exchange with a changed setting, vocabulary, and ambiguity"
+transfer_task: "After a predeclared seven-day window (± one day), complete a pre-authored delayed travel exchange with a changed setting, vocabulary, and ambiguity"
 transfer_domain: "beginner travel information exchange"
-transfer_evidence: "Preserve task revision, unaided attempt, rubric score, scorer, delay, unknowns, and exact variation"
-transfer_limitations: "This lab cannot establish broad language learning, fluency, listening ability, real-world interaction, durable retention outside the stated delay, or model/platform effectiveness"
+transfer_evidence: "Preserve task-pool revision, assignment, learner-exposure status, unaided attempt, rubric scores, scorer independence, score disagreement, actual delay, unknowns, and exact variation"
+transfer_limitations: "This lab cannot establish broad language learning, fluency, listening ability, real-world interaction, durable retention outside the stated window, task equivalence, rubric reliability, or model/platform effectiveness"
 ---
 
 # Lab 018: Test a beginner travel exchange for retention and transfer
+
+> **Placement:** optional L2 application and enrichment practice. This Lab is
+> not required for L2 graduation. Its delayed-retention and unseen-transfer
+> records remain separate evidence, not a stronger label for the immediate run.
 
 ## Learning objective
 
@@ -65,7 +69,17 @@ Use this rubric, two points per row:
 | Interaction | Cannot sustain turns | Uneven turn sequence | Greeting through closing completed |
 
 The fixed pass threshold is 8/10, with no zero for required information or
-meaning. Record the scorer. A coach that also scores is not independent.
+meaning. Record the scorer. A coach who also scores is not independent. For
+any delayed-retention or transfer label, a second scorer who did not coach the
+learner and does not see the baseline, correction, immediate score, assigned
+card, or claimed result must score the delayed attempt independently.
+
+Each scorer writes one short evidence note per row before seeing another score.
+If scorers differ by more than one point on a row, or disagree about pass/fail,
+preserve both records and do not issue a retention or transfer label. A third
+condition-blind reviewer may resolve the disagreement only with the same
+attempt, rubric, and recorded conditions. This reduces interpretation risk; it
+does not validate the rubric or make scores comparable across learners.
 
 Create a run ID such as `lab018-en-2026-08-13-a`. Record task revisions,
 surface/model label if used, date, five-minute limit, aids, rubric, and scorer.
@@ -122,23 +136,39 @@ attempt and score it separately. If it passes, the narrow status may be
 `transferred_to_train-station-information-exchange`. It does not establish
 retention because no delay occurred.
 
-## Part 4 — delayed unseen transfer
+## Part 4 — delayed pre-authored task
+
+Before the B1 baseline, declare a seven-day check window with a one-day
+tolerance (for example, `2026-08-19 10:00–2026-08-21 10:00` after an
+August 13 baseline). This is a
+measurement window, not a claim that seven days is ideal or sufficient. Ask a
+scorer to apply the pre-authored procedure in the
+[Lab 018 delayed-check card pool](../../docs/quality/lab-018-delayed-card-pool-v1.md):
+freeze the pool revision, assign D1/D2/D3 before baseline, preserve the
+assignment, and keep the selected full card outside the learner's practice
+record.
 
 Before ending the session, write only this return instruction:
 
-> Return after [declared delay] with your evidence record. Do not rehearse this
-> lab immediately beforehand. Ask a scorer to reveal sealed card D1 and apply
-> the original rubric. This text is a cue to save, not a scheduled reminder.
+> Return during the declared seven-day window with your evidence record. Do not
+> rehearse this lab immediately beforehand. Ask a scorer to reveal the assigned
+> pre-authored D card and apply the original rubric. This text is a cue to save,
+> not a scheduled reminder.
 
-At the later session, create or reveal a previously unseen card that keeps the
-information-exchange capability but changes the setting, vocabulary, required
-facts, and one ambiguity. Record who prepared it and whether the learner could
-have seen it. Do not reuse B1 or C1 sentences.
+At the later session, reveal the assigned card without target-language help.
+Record actual delay, assigned card ID, pool revision, assignment source, card
+author, reveal time, allowed aids, and whether the learner could have accessed
+the pool. A public document cannot make a card technically secret: if exposure
+is `yes` or `unknown`, call this a **changed delayed task**, not an unseen task.
+Do not reuse B1 or C1 sentences.
 
-If the delayed unseen task passes, report the two dimensions separately, for
-example `retained_at_7_days` and
-`transferred_to_unseen_airport-information-exchange`. If it has not run, keep
-both unclaimed and record `not_run`.
+If both independent scores pass and the delay/exposure conditions are recorded,
+report two dimensions separately, for example `retained_at_7_days` and
+`transferred_to_unseen_airport-information-exchange`. If exposure prevents an
+unseen label, use only `transferred_to_changed_delayed_airport-information-exchange`.
+Call any passing case one observation under the declared conditions, not broad
+retention or general language-learning evidence. If it has not run, keep every
+label unclaimed and record `not_run`.
 
 ## Intentional failure
 
@@ -157,11 +187,12 @@ fluency, or mastery.
 Keep:
 
 ```text
-run_id | task_revisions | date | declared_delay | surface/model
-allowed_aids | leakage_policy | time_limit | rubric | scorer
+run_id | task_revisions | date | declared_delay_window | actual_delay | surface/model
+allowed_aids | leakage_policy | time_limit | rubric | scorer | scorer_independence
 baseline_attempt | baseline_score | hints | correction_ledger
 learner_correction | changed_attempt | changed_score
-delayed_unseen_attempt | delayed_score | unknowns
+pool_revision | assignment_uuid | card_id | card_author | revealed_at | learner_exposure
+delayed_attempt | delayed_scores | row_notes | disagreement | unknowns
 status_claims | claim_limits
 ```
 
@@ -171,8 +202,10 @@ status_claims | claim_limits
 - [ ] Time, aids, leakage policy, rubric, threshold, and scorer stayed visible.
 - [ ] Original attempts, hints, learner corrections, scores, and unknowns remain saved.
 - [ ] C1 changed setting, vocabulary, and ambiguity without changing the rubric.
-- [ ] The delayed task was unseen and materially different, or remains `not_run`.
-- [ ] Retention and transfer are reported separately and only after matching evidence.
+- [ ] The delayed card, assignment, seven-day window, actual delay, exposure, and reveal time were preserved before any label.
+- [ ] The delayed task is called unseen only when learner exposure is recorded `no`; otherwise it is a changed delayed task.
+- [ ] A condition-blind second scorer recorded an independent score, or retention/transfer remains unclaimed.
+- [ ] Retention and transfer are reported separately and only after matching evidence; any pass is one observation under these conditions.
 - [ ] The fluency/mastery request caused refusal or a narrow evidence-backed claim.
 - [ ] No network, secret, real contact, booking, purchase, publication, production action, or automated reminder occurred.
 - [ ] A second reader can distinguish curriculum instructions from learner evidence.
@@ -180,14 +213,16 @@ status_claims | claim_limits
 ## Reflection
 
 Which part of the immediate changed case was retrieved without help? Which
-surface change exposed fragile knowledge? Would another scorer apply the rubric
-the same way? What still cannot be claimed before the delayed unseen attempt?
+surface change exposed fragile knowledge? Did the second scorer agree, and what
+does a disagreement reveal about the rubric? What still cannot be claimed
+before a delayed task with recorded exposure and independent scoring?
 
 ## Sources and boundary
 
 - [Learning Practice Contract](../guides/learning-practice-contract-EN.md) — evidence and answer-leakage rules used by this lab.
 - [Communication Clinic](../communication-clinic-EN.md) — the three-stage language route.
 - [Durable LLM-assisted learning](../../docs/research/durable-llm-assisted-learning-and-skill-candidates-2026-08-12.md) — candidate research synthesis and source boundaries; accessed 2026-08-12.
+- [Lab 018 delayed-check card pool](../../docs/quality/lab-018-delayed-card-pool-v1.md) — project-authored pre-declared card and scoring-control procedure.
 
 All task cards, wording, and structure are original project material. The
 research record supports retrieval, feedback, delayed-check, and transfer-test
@@ -195,12 +230,14 @@ design decisions; it does not prove that this lab improves learning or that any
 model/platform is an effective tutor. Status remains `draft` and learner
 `run_status` remains `not_run` until the declared evidence exists.
 
-<!-- chapter-navigation:start -->
+<!-- lab-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Lab navigation">
-  <table role="presentation" width="100%"><tr>
-    <td align="left"><a href="lab-017-skill-discovery-audit-EN.md">← Previous<br><strong>Lab 017 · Skill discovery audit</strong></a></td>
-    <td align="right"><a href="README-EN.md">Lab index →<br><strong>Review all 18 Labs</strong></a></td>
-  </tr></table>
+<nav class="lab-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-017-skill-discovery-audit-EN.md" aria-label="Previous Lab: Lab 017 · Audit discovery before adopting a Skill">← Previous<br><strong>Lab 017 · Audit discovery before adopting a Skill</strong></a></td>
+      <td align="right"></td>
+    </tr>
+  </table>
 </nav>
-<!-- chapter-navigation:end -->
+<!-- lab-navigation:end -->

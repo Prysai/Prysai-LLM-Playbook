@@ -86,12 +86,14 @@ Write down which field was easiest to assume, which observation changed the deci
 - [Chapter 10: Planning and vertical slices](../chapters/10-planning-and-slicing-EN.md).
 - [Chapter 12: The Agent loop, state, and stop conditions](../chapters/12-agent-loop-and-stop-EN.md).
 
-<!-- chapter-navigation:start -->
+<!-- lab-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Chapter navigation">
-  <table role="presentation" width="100%"><tr>
-    <td align="left"><a href="lab-013-l3-vertical-slice-EN.md">← Previous<br><strong>Lab 013 · Auditable vertical slice</strong></a></td>
-    <td align="right"><a href="lab-015-evidence-delivery-EN.md">Next →<br><strong>Lab 015 · Evidence delivery</strong></a></td>
-  </tr></table>
+<nav class="lab-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-013-l3-vertical-slice-EN.md" aria-label="Previous Lab: Lab 013 · Run one complete vertical slice">← Previous<br><strong>Lab 013 · Run one complete vertical slice</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-015-evidence-delivery-EN.md" aria-label="Next Lab: Lab 015 · Deliver evidence, not a completion sentence">Next →<br><strong>Lab 015 · Deliver evidence, not a completion sentence</strong></a></td>
+    </tr>
+  </table>
 </nav>
-<!-- chapter-navigation:end -->
+<!-- lab-navigation:end -->

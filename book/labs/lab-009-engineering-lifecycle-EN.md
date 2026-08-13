@@ -117,3 +117,14 @@ added ceremony without changing the result? Transfer only the useful
 checkpoints to another reversible task, and state why that task is or is not
 comparable.
 
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-lab-nav="previous" href="lab-008-research-question-EN.md" aria-label="Previous Lab: Lab 008 · Narrow a topic into an answerable research question">← Previous<br><strong>Lab 008 · Narrow a topic into an answerable research question</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-010-product-context-EN.md" aria-label="Next Lab: Lab 010 · Build shared product context that survives two tasks">Next →<br><strong>Lab 010 · Build shared product context that survives two tasks</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- lab-navigation:end -->
