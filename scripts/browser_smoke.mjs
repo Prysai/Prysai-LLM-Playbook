@@ -158,9 +158,65 @@ try {
   await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F02-first-safe-task-EN.md&lang=en`, { waitUntil: 'networkidle' });
   await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
   assert.match(await page.locator('[data-reader-article] h1').innerText(), /first safe, verifiable task/i, 'Reader did not render Chapter 2');
+  assert.match(await page.locator('.reader-article-context').innerText(), /editorial order/i, 'chapter number implies progress without an editorial-order boundary');
+  const mobileReadingOrder = await page.evaluate(() => {
+    const heading = document.querySelector('[data-reader-article] h1');
+    const opening = document.querySelector('[data-reader-article] > p');
+    const orientation = document.querySelector('[data-reader-orientation]');
+    const toc = document.querySelector('[data-reader-mobile-page-toc]');
+    return {
+      headingBeforeOrientation: Boolean(heading.compareDocumentPosition(orientation) & Node.DOCUMENT_POSITION_FOLLOWING),
+      openingBeforeOrientation: Boolean(opening.compareDocumentPosition(orientation) & Node.DOCUMENT_POSITION_FOLLOWING),
+      orientationBeforeToc: Boolean(orientation.compareDocumentPosition(toc) & Node.DOCUMENT_POSITION_FOLLOWING),
+      headingTop: heading.getBoundingClientRect().top,
+      openingTop: opening.getBoundingClientRect().top,
+      headingLines: Math.round(heading.getBoundingClientRect().height / Number.parseFloat(getComputedStyle(heading).lineHeight)),
+      headerPosition: getComputedStyle(document.querySelector('.reader-header')).position,
+    };
+  });
+  assert.equal(mobileReadingOrder.headingBeforeOrientation, true, 'mobile orientation appears before the article title');
+  assert.equal(mobileReadingOrder.openingBeforeOrientation, true, 'mobile orientation interrupts the article before its opening paragraph');
+  assert.equal(mobileReadingOrder.orientationBeforeToc, true, 'mobile page contents appear before chapter orientation');
+  assert.ok(mobileReadingOrder.headingTop < 420, `mobile article title starts too late: ${mobileReadingOrder.headingTop}`);
+  assert.ok(mobileReadingOrder.openingTop < 720, `mobile opening paragraph starts too late: ${mobileReadingOrder.openingTop}`);
+  assert.ok(mobileReadingOrder.headingLines <= 3, `mobile chapter title uses too many lines: ${mobileReadingOrder.headingLines}`);
+  assert.equal(mobileReadingOrder.headerPosition, 'static', 'mobile header persistently obstructs the reading viewport');
   assert.equal(await page.locator('[data-reader-previous]').isVisible(), true, 'Reader previous chapter link is hidden');
   assert.equal(await page.locator('[data-reader-next]').isVisible(), true, 'Reader next chapter link is hidden');
   await noHorizontalOverflow(page, 'mobile Reader');
+  await page.getByText('Evidence note for this page').click();
+  assert.equal(await page.locator('[data-reader-trust-reviewed]').getAttribute('datetime'), '2026-08-12', 'Reader omits the last actual evidence review date');
+  assert.match(await page.locator('.reader-trust-boundary').innerText(), /not a freshness guarantee/i, 'Reader does not bound the scheduled review date');
+
+  const trustPage = await context.newPage();
+  await trustPage.addInitScript(() => { window.CODEX_READER_FETCH_TIMEOUT_MS = 200; });
+  await trustPage.route('**/docs/governance/page-trust-registry.yaml', async (route) => {
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    await route.continue();
+  });
+  await trustPage.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F02-first-safe-task-EN.md&lang=en`, { waitUntil: 'domcontentloaded' });
+  await trustPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor({ timeout: 800 });
+  await trustPage.locator('[data-reader-trust-card]').waitFor({ state: 'visible' });
+  await trustPage.getByText('Evidence note for this page').click();
+  assert.match(await trustPage.locator('[data-reader-trust-scope]').innerText(), /unavailable/i, 'trust timeout did not degrade independently');
+  await trustPage.close();
+
+  const readerRetryPage = await context.newPage();
+  await readerRetryPage.addInitScript(() => { window.CODEX_READER_FETCH_TIMEOUT_MS = 200; });
+  let readerSourceRequests = 0;
+  await readerRetryPage.route('**/book/chapters/02-first-safe-task-EN.md', async (route) => {
+    readerSourceRequests += 1;
+    if (readerSourceRequests === 1) {
+      await new Promise((resolve) => setTimeout(resolve, 500));
+    }
+    await route.continue();
+  });
+  await readerRetryPage.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F02-first-safe-task-EN.md&lang=en`, { waitUntil: 'domcontentloaded' });
+  await readerRetryPage.getByRole('alert').getByText(/took too long to respond/i).waitFor();
+  await readerRetryPage.getByRole('button', { name: 'Try loading again' }).click();
+  await readerRetryPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.equal(readerSourceRequests, 2, 'Reader retry did not issue one fresh source request');
+  await readerRetryPage.close();
 
   await page.goto(`${origin}/site/reader.html?path=private%2Fsecret.md&lang=en`, { waitUntil: 'domcontentloaded' });
   await page.getByRole('alert').waitFor();

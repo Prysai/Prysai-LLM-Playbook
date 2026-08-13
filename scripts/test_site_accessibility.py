@@ -66,6 +66,21 @@ def main() -> int:
             raise AssertionError("reader-error-announcement: primary assertive status is missing")
         if "banner.setAttribute('aria-live', assertive ? 'assertive' : 'polite');" not in reader_script:
             raise AssertionError("reader-error-announcement: live-region priority does not follow status severity")
+        for required in (
+            "async function fetchWithTimeout(url, consume = null)",
+            "controller.abort()",
+            "error?.name === 'AbortError' ? currentReaderCopy().loadTimeout : currentReaderCopy().loadNetwork",
+            "retryButton.addEventListener('click', () => { void load(); }",
+            "void loadTrustRecord(selection.contentId).then(renderTrustRecord)",
+            "(openingParagraph || articleHeading)?.after(orientation, mobilePageToc);",
+            "articleHeading.textContent.replace(/^Chapter",
+            "Evidence note for this page",
+            "data-reader-trust-reviewed",
+            "Editorial order",
+            "source-aware navigation and explicit evidence limits",
+        ):
+            if required not in reader_script:
+                raise AssertionError(f"reader-recovery-contract: missing {required}")
         fixtures += 2
 
         site_script = (Path(__file__).resolve().parents[1] / "site/app.js").read_text(encoding="utf-8")
@@ -143,8 +158,10 @@ def main() -> int:
         for required in ("mobilePageToc.open = false", "mobilePageTocList.replaceChildren", "target.focus({ preventScroll: true })"):
             if required not in reader_script:
                 raise AssertionError(f"mobile-reader-toc: missing {required}")
-        if ".reader-article h2, .reader-article h3 { scroll-margin-top: 190px; }" not in reader_css:
-            raise AssertionError("mobile-reader-toc: fixed-header heading offset is missing")
+        if ".reader-header { position: static; }" not in reader_css:
+            raise AssertionError("mobile-reader-toc: mobile header must not persistently obstruct headings")
+        if ".reader-article h2, .reader-article h3 { scroll-margin-top: 24px; }" not in reader_css:
+            raise AssertionError("mobile-reader-toc: static-header heading offset is missing")
         fixtures += 1
 
         manifest = build_site_locale_manifest.build_manifest()

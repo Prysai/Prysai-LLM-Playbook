@@ -81,6 +81,14 @@ files remain visible and authoritative in the repository. The release-only flag
 still handles the different Pages root/base path, but it no longer changes
 whether a learner receives a coherent reading surface.
 
+Reader source requests have a bounded deadline and an in-place retry. The
+page-level evidence registry is an independent enhancement: slow or unavailable
+evidence metadata cannot block the article, navigation, locale, source path, or
+document title. At 390 px, the header is not sticky and the title plus opening
+paragraph appear before the auxiliary chapter and page-outline disclosures.
+The evidence card separates the last completed review from the next scheduled
+review and does not present either as certification or a freshness guarantee.
+
 Run the artifact check locally:
 
 ```powershell

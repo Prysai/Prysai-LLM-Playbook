@@ -38,6 +38,17 @@ flow.
 5. Keep visual inspection, screen-reader testing, cross-browser coverage,
    performance measurement, deployment reachability, and learner usability as
    separate evidence.
+6. Bound Reader source and evidence-registry requests. A source timeout or
+   network/HTTP failure exposes one retryable page error; optional evidence
+   metadata loads independently and cannot delay the article, title, locale,
+   navigation, or source identity.
+7. On narrow screens, make the document title and opening paragraph precede
+   auxiliary chapter/TOC disclosures, and remove the persistent mobile header.
+   Chapter numbering is labelled as editorial order, not learner progress.
+8. Present governance metadata as an evidence note, not a trust badge. Show
+   the last completed evidence review separately from the next scheduled
+   review, and state that scheduling is not a freshness guarantee or complete
+   risk assessment.
 
 ## Consequences
 
@@ -47,6 +58,8 @@ flow.
 - Quality CI takes longer and installs a browser runtime.
 - One Chromium smoke path is deliberately smaller than a complete browser,
   assistive-technology, or user-study matrix.
+- Evidence metadata failures degrade the evidence card without making the
+  lesson unreadable or implying that no record exists.
 
 ## Evidence boundary
 

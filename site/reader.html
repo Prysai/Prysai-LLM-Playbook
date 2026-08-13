@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A readable Codex Field Guide source page with a transferable collaboration method." />
+    <meta name="description" content="Read a Codex Field Guide source page with source-aware navigation and explicit evidence limits." />
     <meta name="theme-color" content="#ffffff" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Codex Field Guide reader" />
@@ -18,9 +18,9 @@
     <meta name="twitter:image:alt" content="LLM for Real Work — define, add context, act, verify, and transfer" />
     <title>Codex Field Guide reader</title>
     <link rel="icon" type="image/png" href="../assets/branding/prysai-lab-mark-black-96.png" />
-    <link rel="stylesheet" href="reader.css?v=20260813-content-type" />
+    <link rel="stylesheet" href="reader.css?v=20260813-reader-recovery" />
     <script src="locale-manifest.js"></script>
-    <script src="reader.js?v=20260813-content-type" defer></script>
+    <script src="reader.js?v=20260813-reader-recovery" defer></script>
   </head>
   <body>
     <a class="reader-skip-link" href="#reader-content" data-reader-i18n="skip">Skip to content</a>
@@ -87,19 +87,24 @@
             <span class="reader-chapter-status" data-reader-chapter-status></span>
           </div>
           <details class="reader-aside-card reader-trust-card" data-reader-trust-card hidden>
-            <summary data-reader-i18n="trustRecord">Trust record</summary>
+            <summary data-reader-i18n="trustRecord">Evidence note for this page</summary>
             <div class="reader-detail-row">
               <span class="reader-aside-label" data-reader-i18n="trustScope">Scope</span>
               <span data-reader-trust-scope></span>
             </div>
             <div class="reader-detail-row">
-              <span class="reader-aside-label" data-reader-i18n="trustReview">Next review</span>
+              <span class="reader-aside-label" data-reader-i18n="trustReviewed">Last evidence review</span>
+              <time data-reader-trust-reviewed></time>
+            </div>
+            <div class="reader-detail-row">
+              <span class="reader-aside-label" data-reader-i18n="trustReview">Next scheduled review</span>
               <time data-reader-trust-review></time>
             </div>
             <div class="reader-detail-row">
-              <span class="reader-aside-label" data-reader-i18n="trustLimitations">Known limitation</span>
+              <span class="reader-aside-label" data-reader-i18n="trustLimitations">One declared limitation</span>
               <span data-reader-trust-limitations></span>
             </div>
+            <p class="reader-trust-boundary" data-reader-i18n="trustBoundary">A scheduled review is not a freshness guarantee. This note is not a complete risk assessment.</p>
           </details>
           <details class="reader-aside-card reader-details">
             <summary data-reader-i18n="pageDetails">Page details</summary>
