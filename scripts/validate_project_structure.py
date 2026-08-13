@@ -108,6 +108,8 @@ def main() -> int:
     if not isinstance(excluded, list) or not all(isinstance(item, str) for item in excluded):
         errors.append("excluded_workdirs must be a list of strings")
         excluded = []
+    elif "node_modules" not in excluded:
+        errors.append("excluded_workdirs must include node_modules for npm-based CI")
 
     top_level = structure.get("top_level")
     if not isinstance(top_level, list) or not top_level:
