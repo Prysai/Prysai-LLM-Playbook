@@ -534,8 +534,20 @@ button, input, select, textarea { font: inherit; }
 .starter-contract-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; }
 .starter-contract h3 { margin: .35rem 0 0; font-size: clamp(1.6rem, 3vw, 2.8rem); letter-spacing: -.06em; }
 .starter-contract > p { max-width: 760px; color: #bbb; line-height: 1.6; }
-.starter-contract pre { max-height: 34rem; margin: 1.4rem 0; padding: 1.2rem; border: 1px solid #444; overflow: auto; white-space: pre-wrap; color: #f3f3ef; background: #090909; font: .76rem/1.6 Consolas, 'Courier New', monospace; }
+.starter-contract pre { margin: 0; padding: 1.2rem; overflow: auto; white-space: pre-wrap; color: #f3f3ef; background: #090909; font: .76rem/1.6 Consolas, 'Courier New', monospace; }
 .starter-contract-status { min-height: 1.5em; }
+.first-win-sequence { display: grid; grid-template-columns: minmax(220px, .72fr) minmax(0, 1.28fr); margin: 1.5rem 0; border: 1px solid #555; }
+.first-win-sequence > div { min-width: 0; padding: 1.2rem; border-right: 1px solid #555; border-bottom: 1px solid #555; }
+.first-win-sequence > div:nth-child(even) { border-right: 0; }
+.first-win-sequence > div:nth-last-child(-n + 2) { border-bottom: 0; }
+.first-win-sequence span, .first-win-receipt > span { color: var(--red); font-size: .68rem; font-weight: 800; letter-spacing: .08em; }
+.first-win-source blockquote { margin: 1rem 0 0; font-size: clamp(1.1rem, 2vw, 1.6rem); letter-spacing: -.025em; line-height: 1.35; }
+.first-win-label { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.first-win-example { margin: 1rem 0 0; padding-left: .8rem; border-left: 2px solid var(--red); color: #bbb; font-size: .76rem; line-height: 1.5; }
+.first-win-checks ol { display: grid; gap: .8rem; margin: 1rem 0 0; padding-left: 1.25rem; color: #ddd; line-height: 1.45; }
+.first-win-rescue pre { border: 1px solid #444; }
+.first-win-receipt { display: grid; grid-template-columns: minmax(150px, .25fr) 1fr; gap: 1rem; margin-top: 1.4rem; padding: 1rem 0; border-top: 1px solid #555; border-bottom: 1px solid #555; }
+.first-win-receipt p { margin: 0; color: #bbb; font-size: .78rem; line-height: 1.5; }
 .starter-progression { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 1.4rem; border-top: 1px solid #555; }
 .starter-progression a { display: grid; grid-template-columns: 2rem 1fr; gap: .6rem; padding: 1rem .8rem 1rem 0; border-right: 1px solid #555; color: #fff; font-size: .76rem; }
 .starter-progression a:last-child { border-right: 0; padding-left: .8rem; }
@@ -544,14 +556,19 @@ button, input, select, textarea { font: inherit; }
 .starter-progression a:hover strong, .starter-progression a:focus-visible strong { color: var(--red); }
 
 @media (max-width: 800px) {
+  .first-win-sequence { grid-template-columns: 1fr; }
+  .first-win-sequence > div, .first-win-sequence > div:nth-child(even), .first-win-sequence > div:nth-last-child(-n + 2) { border-right: 0; border-bottom: 1px solid #555; }
+  .first-win-sequence > div:last-child { border-bottom: 0; }
   .starter-progression { grid-template-columns: 1fr; }
   .starter-progression a, .starter-progression a:nth-child(2), .starter-progression a:last-child { padding-left: 0; border-right: 0; border-bottom: 1px solid #555; }
 }
 
 @media (max-width: 480px) {
   .starter-contract-head { flex-direction: column; }
-  .starter-contract pre { max-height: 24rem; font-size: .72rem; }
-  .starter-contract pre::after { content: 'Scroll to read the complete prompt'; }
+  .first-win-label { align-items: stretch; flex-direction: column; }
+  .first-win-label .button { width: 100%; }
+  .starter-contract pre { max-height: 22rem; font-size: .7rem; }
+  .first-win-receipt { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

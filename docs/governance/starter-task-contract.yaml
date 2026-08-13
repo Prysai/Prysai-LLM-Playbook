@@ -1,19 +1,42 @@
 {
-  "schema_version": "1",
+  "schema_version": "2",
   "content_id": "starter-task-contract",
   "status": "candidate",
   "owner": "curriculum-maintainer",
-  "reviewed_at": "2026-08-12",
-  "next_review": "2026-09-12",
-  "audience": ["beginner", "practitioner", "advanced"],
-  "risk_scope": "low-risk, reversible work without credentials, production, destructive actions, or external side effects",
-  "prompt": "Help me complete one small, reversible task.\n\nOutcome: [one observable result].\nContext: [relevant files, input, and current state].\n\nFirst response — observe only:\n- inspect only the context needed for this task;\n- report what you found, missing inputs, and risks;\n- propose the smallest safe plan and the exact files or surfaces it would change;\n- do not edit, run a mutating command, or take an external action yet; wait for my approval.\n\nIf I approve the plan:\n- act only inside the approved scope;\n- run [one focused check];\n- stop and ask if scope, authority, a destructive action, an external side effect, or acceptance is unclear.\n\nDo not access secrets or production, install dependencies, use the network, commit, push, publish, or broaden the task unless I explicitly authorize that exact action.\n\nAcceptance: [specific artifact or diff] and [specific check output].\nDelivery: actions taken, changed files or surfaces, check output, remaining unknowns, and actions not taken.",
-  "required_phases": ["observe only", "wait for my approval", "If I approve the plan", "Acceptance", "Delivery"],
-  "required_boundaries": ["secrets", "production", "destructive action", "external side effect", "commit", "push", "publish", "remaining unknowns", "actions not taken"],
-  "progression": {
-    "beginner_next": "book/chapters/03-task-protocol-EN.md#smallest-useful-protocol",
-    "practice_next": "book/labs/lab-002-task-protocol-EN.md",
-    "evidence_next": "book/chapters/09-verification-and-recovery-EN.md"
+  "reviewed_at": "2026-08-13",
+  "next_review": "2026-09-13",
+  "audience": ["absolute-beginner"],
+  "duration": "15 minutes",
+  "platform": "universal chat",
+  "risk_scope": "fictional text revision without files, Git, credentials, tools, browsing, production, or external side effects",
+  "input_text": "Hi, the workshop changed. It starts Friday at 10. Bring the draft. Tell me if you cannot come.",
+  "prompt": "You are revising a fictional short message. Do not use tools, files, browsing, or outside facts.\n\nSource message:\n\"Hi, the workshop changed. It starts Friday at 10. Bring the draft. Tell me if you cannot come.\"\n\nRewrite it as a clear message to workshop participants. Preserve every fact in the source. Do not invent a calendar date, time zone, venue, deadline, sender, reason for the change, contact method, or any other detail. If a detail is missing, leave it unstated rather than guessing.\n\nReturn only the revised message. The reader will check it.",
+  "example_output": "The workshop starts Friday at 10. Please bring your draft. If you cannot attend, please reply.",
+  "expected_characteristics": [
+    "addresses workshop participants clearly",
+    "preserves Friday at 10",
+    "preserves the instruction to bring the draft",
+    "asks unavailable participants to reply",
+    "does not invent a venue, deadline, sender, or reason"
+  ],
+  "human_checks": [
+    "Facts kept — Friday at 10 and the instruction to bring the draft are still present: PASS / FAIL / UNSURE.",
+    "Action kept — anyone who cannot attend is asked to reply: PASS / FAIL / UNSURE.",
+    "Nothing invented — no date, time zone, venue, deadline, sender, reason, contact method, or other new fact appears: PASS / FAIL / UNSURE."
+  ],
+  "rescue_prompt": "Keep the fictional source and your previous answer in view.\n\nMy first failed or uncertain check is: [paste check 1, 2, or 3 here].\n\nDo three things only:\n1. quote the words in your previous answer that caused the failure or uncertainty;\n2. explain the mismatch in one sentence;\n3. return one corrected message, changing only what is necessary.\n\nDo not add any fact that is absent from the source. If the source does not contain a detail, leave it unstated rather than guessing.",
+  "receipt_fields": ["attempted", "checked_here", "help_used", "corrected", "not_proven"],
+  "receipt": {
+    "attempted": "yes or no",
+    "checked_here": "the three stated checks only",
+    "help_used": "first prompt, rescue prompt, both, or neither",
+    "corrected": "yes, no, or not needed",
+    "not_proven": "general writing ability, learning, transfer, or model superiority"
   },
-  "evidence_boundary": "Copying or sending this contract proves no action, correct result, learning, transfer, or platform behavior. Preserve the actual observation, approval, diff or artifact, check output, and unverified items."
+  "progression": {
+    "practice_next": "book/communication-clinic-EN.md#first-practice-intake",
+    "git_next": "book/labs/lab-001-first-safe-task-EN.md",
+    "recovery_next": "book/chapters/09-verification-and-recovery-EN.md"
+  },
+  "evidence_boundary": "The 15-minute label is a target, not measured beginner completion evidence. Completing and checking this fixed exercise records one attempt under three local checks. It does not prove learning, transfer, general writing ability, model superiority, Codex behavior, or platform reliability. Learner and transfer evidence remain not_run."
 }

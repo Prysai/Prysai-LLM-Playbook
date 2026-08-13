@@ -132,40 +132,48 @@ diff and output, and record what the run did not prove.
 
 <!-- starter-task-contract:start -->
 
-## Copy one safe starter prompt
+## Get a first result in 15 minutes — no Git required
 
-Replace the bracketed fields, send the prompt, and review the proposed plan
-before authorizing action. This is a low-risk starter, not a substitute for
-current production authority or verification.
+Use any chat model. The source message is already filled in, so your first job
+is to judge one result rather than invent files, commands, or acceptance tests.
 
 ```text
-Help me complete one small, reversible task.
+You are revising a fictional short message. Do not use tools, files, browsing, or outside facts.
 
-Outcome: [one observable result].
-Context: [relevant files, input, and current state].
+Source message:
+"Hi, the workshop changed. It starts Friday at 10. Bring the draft. Tell me if you cannot come."
 
-First response — observe only:
-- inspect only the context needed for this task;
-- report what you found, missing inputs, and risks;
-- propose the smallest safe plan and the exact files or surfaces it would change;
-- do not edit, run a mutating command, or take an external action yet; wait for my approval.
+Rewrite it as a clear message to workshop participants. Preserve every fact in the source. Do not invent a calendar date, time zone, venue, deadline, sender, reason for the change, contact method, or any other detail. If a detail is missing, leave it unstated rather than guessing.
 
-If I approve the plan:
-- act only inside the approved scope;
-- run [one focused check];
-- stop and ask if scope, authority, a destructive action, an external side effect, or acceptance is unclear.
-
-Do not access secrets or production, install dependencies, use the network, commit, push, publish, or broaden the task unless I explicitly authorize that exact action.
-
-Acceptance: [specific artifact or diff] and [specific check output].
-Delivery: actions taken, changed files or surfaces, check output, remaining unknowns, and actions not taken.
+Return only the revised message. The reader will check it.
 ```
 
-Copying or sending this contract proves no action or correct result. Continue to
-[Chapter 3](book/chapters/03-task-protocol-EN.md#smallest-useful-protocol) to
-design a complete protocol, run [Lab 002](book/labs/lab-002-task-protocol-EN.md)
-to practise it, then use [Chapter 9](book/chapters/09-verification-and-recovery-EN.md)
-for claim-to-evidence review.
+One acceptable shape is: “The workshop starts Friday at 10. Please bring your
+draft. If you cannot attend, please reply.” Your wording may differ. Judge it
+yourself: facts kept, action kept, and nothing invented — each is `PASS`, `FAIL`,
+or `UNSURE`.
+
+If one check fails, copy this rescue prompt:
+
+```text
+Keep the fictional source and your previous answer in view.
+
+My first failed or uncertain check is: [paste check 1, 2, or 3 here].
+
+Do three things only:
+1. quote the words in your previous answer that caused the failure or uncertainty;
+2. explain the mismatch in one sentence;
+3. return one corrected message, changing only what is necessary.
+
+Do not add any fact that is absent from the source. If the source does not contain a detail, leave it unstated rather than guessing.
+```
+
+The 15-minute label is a target; beginner completion time has not been measured.
+Your receipt is deliberately modest: attempted; checked here; help used;
+corrected; and not proven. This exercise records one checked attempt. It does
+not prove learning, transfer, general writing ability, or model superiority.
+Next, use the [Beginner Practice Pack](book/communication-clinic-EN.md#first-practice-intake),
+then move into files and Git with [Lab 001](book/labs/lab-001-first-safe-task-EN.md).
 
 <!-- starter-task-contract:end -->
 

@@ -1,4 +1,4 @@
-"""Negative fixtures for the copy-now starter contract."""
+"""Negative fixtures for the no-Git First Win contract."""
 
 from __future__ import annotations
 
@@ -16,32 +16,35 @@ def main() -> int:
     contract = starter.load_contract()
     require(not starter.validate_contract(contract), "checked-in starter contract is invalid")
 
-    no_approval = copy.deepcopy(contract)
-    no_approval["prompt"] = no_approval["prompt"].replace("wait for my approval", "continue immediately")
-    approval_errors = starter.validate_contract(no_approval, check_surfaces=False)
-    require(any("approval" in error for error in approval_errors), "prompt without approval gate was accepted")
+    missing_input = copy.deepcopy(contract)
+    missing_input["prompt"] = missing_input["prompt"].replace(missing_input["input_text"], "[paste text here]")
+    require(any("embed" in item for item in starter.validate_contract(missing_input, check_surfaces=False)), "unfilled input was accepted")
 
-    no_side_effect = copy.deepcopy(contract)
-    no_side_effect["prompt"] = no_side_effect["prompt"].replace("external side effect", "change")
-    side_effect_errors = starter.validate_contract(no_side_effect, check_surfaces=False)
-    require(any("external side effect" in error for error in side_effect_errors), "prompt without external-effect boundary was accepted")
+    git_required = copy.deepcopy(contract)
+    git_required["prompt"] += "\nRun git status in the terminal."
+    require(any("infrastructure" in item for item in starter.validate_contract(git_required, check_surfaces=False)), "Git prerequisite was accepted")
+
+    weak_checks = copy.deepcopy(contract)
+    weak_checks["human_checks"] = weak_checks["human_checks"][:2]
+    require(any("exactly three" in item for item in starter.validate_contract(weak_checks, check_surfaces=False)), "two-check exercise was accepted")
+
+    broad_rescue = copy.deepcopy(contract)
+    broad_rescue["rescue_prompt"] = "Rewrite everything however you think best."
+    require(any("first failed" in item for item in starter.validate_contract(broad_rescue, check_surfaces=False)), "unbounded rescue was accepted")
 
     false_evidence = copy.deepcopy(contract)
-    false_evidence["evidence_boundary"] = "Sending the prompt proves the workflow succeeded."
-    evidence_errors = starter.validate_contract(false_evidence, check_surfaces=False)
-    require(any("copy/send" in error for error in evidence_errors), "copying prompt was accepted as action evidence")
+    false_evidence["evidence_boundary"] = "This proves the learner can write clearly."
+    require(any("learning claims" in item for item in starter.validate_contract(false_evidence, check_surfaces=False)), "learning claim was accepted")
 
-    missing_progression = copy.deepcopy(contract)
-    missing_progression["progression"]["evidence_next"] = "book/chapters/missing.md"
-    progression_errors = starter.validate_contract(missing_progression, check_surfaces=False)
-    require(any("evidence_next" in error for error in progression_errors), "missing advanced route was accepted")
+    missing_receipt = copy.deepcopy(contract)
+    missing_receipt["receipt"].pop("not_proven")
+    require(any("receipt" in item for item in starter.validate_contract(missing_receipt, check_surfaces=False)), "incomplete receipt was accepted")
 
     promoted = copy.deepcopy(contract)
     promoted["status"] = "verified"
-    promoted_errors = starter.validate_contract(promoted, check_surfaces=False)
-    require(any("candidate" in error for error in promoted_errors), "unrun prompt was promoted")
+    require(any("candidate" in item for item in starter.validate_contract(promoted, check_surfaces=False)), "unrun exercise was promoted")
 
-    print("STARTER_TASK_CONTRACT_TESTS_OK fixtures=5")
+    print("STARTER_TASK_CONTRACT_TESTS_OK fixtures=7")
     return 0
 
 

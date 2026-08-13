@@ -155,13 +155,13 @@
     },
     {
       "area": "starter-task-contract",
-      "canonical_paths": ["docs/governance/starter-task-contract.yaml", "README.md", "README-EN.md", "book/chapters/03-task-protocol-EN.md", "site/index.html", "site/app.js", "site/styles.css", "scripts/validate_starter_task_contract.py", "scripts/test_starter_task_contract.py"],
+      "canonical_paths": ["docs/governance/starter-task-contract.yaml", "README.md", "README-EN.md", "site/index.html", "site/app.js", "site/styles.css", "scripts/validate_starter_task_contract.py", "scripts/test_starter_task_contract.py", "scripts/test_site_accessibility.py"],
       "owner": "curriculum-maintainer",
-      "triggers": ["beginner-entry-change", "starter-prompt-change", "approval-boundary-change", "prompt-projection-change", "progression-route-change"],
-      "required_inputs": ["observable-outcome", "relevant-context", "observation-only-first-response", "approval-gate", "action-boundaries", "acceptance", "delivery-evidence", "advanced-progression"],
+      "triggers": ["beginner-entry-change", "starter-prompt-change", "human-check-change", "rescue-prompt-change", "evidence-boundary-change", "progression-route-change"],
+      "required_inputs": ["fixed-fictional-input", "fully-filled-prompt", "expected-characteristics", "three-human-checks", "bounded-rescue", "plain-language-receipt", "evidence-boundary", "advanced-progression"],
       "validation_commands": ["scripts/validate_starter_task_contract.py", "scripts/test_starter_task_contract.py", "scripts/check_local_links.py", "scripts/validate_site_accessibility.py", "scripts/build_pages_artifact.py --check"],
       "status_fields": ["status", "owner", "risk_scope", "reviewed_at", "next_review", "evidence_boundary"],
-      "next_review": "2026-09-12"
+      "next_review": "2026-09-13"
     },
     {
       "area": "page-trust-registry",

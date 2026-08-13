@@ -76,6 +76,27 @@ def main() -> int:
             raise AssertionError("showcase-reader-route: unregistered Markdown links bypass the local Reader")
         fixtures += 1
 
+        site_markup = (Path(__file__).resolve().parents[1] / "site/index.html").read_text(encoding="utf-8")
+        for required in (
+            "data-copy-starter",
+            "data-copy-rescue",
+            "data-starter-prompt",
+            "data-rescue-prompt",
+            'aria-live="polite"',
+        ):
+            if required not in site_markup:
+                raise AssertionError(f"first-win-controls: missing {required}")
+        if site_markup.count("data-human-check") != 3:
+            raise AssertionError("first-win-controls: exactly three human checks are required")
+        for required in (
+            "rescueCopyButton?.addEventListener('click'",
+            "starterCopyButton?.addEventListener('click'",
+            "starterRescueCopied",
+        ):
+            if required not in site_script:
+                raise AssertionError(f"first-win-copy-feedback: missing {required}")
+        fixtures += 2
+
         reader_styles = (Path(__file__).resolve().parents[1] / "site/styles.css").read_text(encoding="utf-8")
         if ".skill-grid > a:nth-child(n + 5) { display: none; }" in reader_styles:
             raise AssertionError("mobile-skill-catalog: Skills 5-12 are permanently hidden")
