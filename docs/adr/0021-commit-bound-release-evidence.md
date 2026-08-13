@@ -30,9 +30,10 @@ describe the parent tree while appearing current.
    log per command, and generate `release-evidence.json` plus
    `release-evidence.md` as workflow artifacts.
 4. Upload the packet even when a gate fails, so failure evidence is not lost.
-5. Derive `blocked` when any named gate fails. When all named static gates pass,
-   retain the maturity declared by `content-status.yaml`; static success cannot
-   promote `candidate` to `verified`.
+5. Derive `blocked` when any named gate fails. Also block `verified` while an
+   active P0/P1 quality finding exists, and block `production-ready` while an
+   active P0/P1/P2 finding exists. An honestly declared `candidate` may still
+   pass with its known findings visible; static success cannot promote it.
 6. Keep active quality findings, overdue review dates, unavailable rollback
    metadata, and untested surfaces visible in every packet.
 

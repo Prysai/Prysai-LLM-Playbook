@@ -17,6 +17,21 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def packet_attestation(packet_root: Path) -> str:
+    record = load_json(packet_root / "run-record.json")
+    if not isinstance(record, dict):
+        raise ValueError("run record must be an object")
+    stable = {
+        "fixture_version": record.get("fixture_version"),
+        "input_manifest_sha256": record.get("input_manifest_sha256"),
+        "attempts": record.get("attempts"),
+        "artifact_hashes": record.get("artifact_hashes"),
+        "claims": record.get("claims"),
+        "evidence_limit": record.get("evidence_limit"),
+    }
+    return hashlib.sha256(json.dumps(stable, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
+
+
 def load_json(path: Path) -> object:
     return json.loads(path.read_text(encoding="utf-8"))
 
@@ -227,6 +242,7 @@ def main() -> int:
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--brief")
     group.add_argument("--packet")
+    parser.add_argument("--attest", action="store_true")
     args = parser.parse_args()
     acceptance = load_json(FIXTURE / "expected/acceptance.json")
     if not isinstance(acceptance, dict):
@@ -247,6 +263,8 @@ def main() -> int:
             print(f"- {error}")
         return 1
     print("LAB_008_BRIEF_OK conclusion=bounded support=S-CURRENT conflicts=1 unknowns=2")
+    if args.packet and args.attest:
+        print(f"LAB_008_PACKET_ATTESTATION sha256={packet_attestation(Path(args.packet).resolve())}")
     return 0
 
 

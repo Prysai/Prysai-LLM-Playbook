@@ -7,6 +7,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import argparse
 from pathlib import Path
 
 import validate_lab_008_brief as brief_validator
@@ -15,6 +16,20 @@ import validate_lab_008_brief as brief_validator
 ROOT = Path(__file__).resolve().parents[1]
 RUNNER = ROOT / "scripts/run_lab_008_reference.py"
 VALIDATOR = ROOT / "scripts/validate_lab_008_brief.py"
+NEGATIVE_FIXTURES = [
+    "existing-output",
+    "output-boundary",
+    "conclusion-downgrade",
+    "fabricated-support",
+    "inaccessible-support",
+    "source-count-confidence",
+    "missing-conflict",
+    "missing-limitations",
+    "zero-downtime-overclaim",
+    "claim-text-drift",
+    "source-statement-drift",
+    "artifact-path-escape",
+]
 
 
 def run(*arguments: str) -> subprocess.CompletedProcess[str]:
@@ -38,6 +53,9 @@ def write_json(path: Path, value: object) -> None:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--list-fixtures", action="store_true")
+    args = parser.parse_args()
     failures: list[str] = []
     work_root = ROOT / ".work"
     work_root.mkdir(exist_ok=True)
@@ -127,7 +145,10 @@ def main() -> int:
         for failure in failures:
             print(f"- {failure}")
         return 1
-    print("LAB_008_REFERENCE_TESTS_OK positive=2 negative=12 deterministic=byte-for-byte")
+    if args.list_fixtures:
+        print(json.dumps(NEGATIVE_FIXTURES))
+        return 0
+    print(f"LAB_008_REFERENCE_TESTS_OK positive=2 negative={len(NEGATIVE_FIXTURES)} deterministic=byte-for-byte")
     return 0
 
 

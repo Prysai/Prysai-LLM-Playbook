@@ -18,6 +18,8 @@ CONTRACT_PATH = ROOT / "docs/governance/release-evidence.yaml"
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 MATURITY = ("draft", "candidate", "verified", "production-ready")
+VERIFIED_BLOCKING_SEVERITIES = {"P0", "P1"}
+PRODUCTION_READY_BLOCKING_SEVERITIES = {"P0", "P1", "P2"}
 REQUIRED_COMMANDS = {
     "skill-registry": ("{python}", "scripts/validate_skill_registry.py"),
     "skill-registry-fixtures": ("{python}", "scripts/test_skill_registry.py"),
@@ -164,6 +166,16 @@ def freshness_report(contract: dict[str, Any], generated_day: date) -> dict[str,
     return {"date_fields_checked": len(records), "overdue": overdue, "invalid": invalid}
 
 
+def validate_release_policy(quality: dict[str, Any]) -> list[str]:
+    policy = quality.get("release_policy", {})
+    errors: list[str] = []
+    if set(policy.get("verified_blocking_severities", [])) != VERIFIED_BLOCKING_SEVERITIES:
+        errors.append("verified blocking severities must remain P0 and P1")
+    if set(policy.get("production_ready_blocking_severities", [])) != PRODUCTION_READY_BLOCKING_SEVERITIES:
+        errors.append("production-ready blocking severities must remain P0, P1, and P2")
+    return errors
+
+
 def run_gates(contract: dict[str, Any], output_dir: Path) -> list[dict[str, Any]]:
     logs_dir = output_dir / "logs"
     logs_dir.mkdir(parents=True, exist_ok=True)
@@ -199,8 +211,18 @@ def run_gates(contract: dict[str, Any], output_dir: Path) -> list[dict[str, Any]
     return dimensions
 
 
-def derive_decision(project_status: str, dimensions: list[dict[str, Any]], freshness: dict[str, Any]) -> str:
+def derive_decision(
+    project_status: str,
+    dimensions: list[dict[str, Any]],
+    freshness: dict[str, Any],
+    verified_blockers: list[str] | None = None,
+    production_ready_blockers: list[str] | None = None,
+) -> str:
     if any(dimension["status"] != "passed" for dimension in dimensions):
+        return "blocked"
+    if project_status == "verified" and verified_blockers:
+        return "blocked"
+    if project_status == "production-ready" and production_ready_blockers:
         return "blocked"
     if project_status in {"verified", "production-ready"} and (freshness["overdue"] or freshness["invalid"]):
         return "blocked"
@@ -270,8 +292,21 @@ def build_packet(contract: dict[str, Any], args: argparse.Namespace) -> tuple[di
     output_dir = Path(args.output_dir).resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
     dimensions = run_gates(contract, output_dir)
+    policy_errors = validate_release_policy(quality)
+    if policy_errors:
+        raise ValueError("; ".join(policy_errors))
     active_statuses = set(quality["release_policy"]["active_statuses"])
     active = [item for item in quality["items"] if item["status"] in active_statuses]
+    verified_blockers = [
+        item["id"]
+        for item in active
+        if item["severity"] in VERIFIED_BLOCKING_SEVERITIES
+    ]
+    production_ready_blockers = [
+        item["id"]
+        for item in active
+        if item["severity"] in PRODUCTION_READY_BLOCKING_SEVERITIES
+    ]
     freshness = freshness_report(contract, generated.date())
     packet = {
         "schema_version": "1",
@@ -283,11 +318,17 @@ def build_packet(contract: dict[str, Any], args: argparse.Namespace) -> tuple[di
         "rollback_target": contract["rollback_target"],
         "rollback_reason": contract["rollback_reason"],
         "declared_maturity": project_status,
-        "decision": derive_decision(project_status, dimensions, freshness),
+        "decision": derive_decision(
+            project_status,
+            dimensions,
+            freshness,
+            verified_blockers,
+            production_ready_blockers,
+        ),
         "dimensions": dimensions,
         "active_quality_findings": active,
-        "verified_blockers": [item["id"] for item in active if item["severity"] in quality["release_policy"]["verified_blocking_severities"]],
-        "production_ready_blockers": [item["id"] for item in active if item["severity"] in quality["release_policy"]["production_ready_blocking_severities"]],
+        "verified_blockers": verified_blockers,
+        "production_ready_blockers": production_ready_blockers,
         "freshness": freshness,
         "known_blind_spots": contract["known_blind_spots"],
         "release_readiness": {
@@ -308,7 +349,7 @@ def build_packet(contract: dict[str, Any], args: argparse.Namespace) -> tuple[di
     }
     (output_dir / "release-evidence.json").write_text(json.dumps(packet, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     (output_dir / "release-evidence.md").write_text(render_markdown(packet), encoding="utf-8")
-    failed = any(dimension["status"] == "failed" for dimension in dimensions)
+    failed = packet["decision"] == "blocked"
     return packet, 1 if failed else 0
 
 

@@ -133,6 +133,15 @@ Lab 013 preserves a failed implementation check and bounded recovery. Both keep
 artifact hashes, cleanup evidence, and negative packet fixtures, and both remain
 explicitly outside `human_reviewed` learner evidence.
 
+A `completed_reference_run` registration must also carry a safe output path,
+the frozen fixture-tree digest, runner command, packet-validator command, and
+fixture-test command. The validator reconciles those commands with the release
+evidence matrix and asks each test script for its named negative-fixture
+inventory only after the suite actually passes. It then replays the runner in
+a fresh `.work` directory, validates the packet, and compares a normalized
+semantic attestation digest that excludes timestamps and temporary-path IDs. A
+label, source directory, or prose evidence path cannot certify a run by itself.
+
 `validate_github_templates.py` checks the public contributor entry forms and
 pull-request template for parseable YAML, required fields, unique component
 IDs, required confirmations, repository-local contact links, and the disclosure

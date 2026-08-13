@@ -4,14 +4,29 @@
   "owner": "documentation-engineering-maintainer",
   "reviewed_at": "2026-08-12",
   "next_review": "2026-09-12",
-  "verification_classes": ["display_only", "parsed", "compiled", "executed", "asserted", "rendered", "live_checked", "human_reviewed"],
+  "verification_classes": [
+    "display_only",
+    "parsed",
+    "compiled",
+    "executed",
+    "asserted",
+    "rendered",
+    "live_checked",
+    "human_reviewed"
+  ],
   "records": [
     {
       "id": "lab-008-reference-v1",
       "kind": "research",
       "source_path": "examples/lab-008-v1",
-      "projections": ["book/labs/lab-008-research-question-EN.md"],
-      "verification_classes": ["parsed", "executed", "asserted"],
+      "projections": [
+        "book/labs/lab-008-research-question-EN.md"
+      ],
+      "verification_classes": [
+        "parsed",
+        "executed",
+        "asserted"
+      ],
       "environment": {
         "toolchain": "Python 3 standard library",
         "platform": "Windows local and GitHub Actions Linux",
@@ -26,20 +41,68 @@
         "before-and-after diff and artifact hashes",
         "cleanup and claim-limit record"
       ],
-      "negative_fixtures": ["conclusion-downgrade", "fabricated-support", "inaccessible-support", "source-count-confidence", "missing-conflict", "missing-limitations", "zero-downtime-overclaim", "claim-text-drift", "source-statement-drift", "artifact-path-escape"],
+      "negative_fixtures": [
+        "existing-output",
+        "output-boundary",
+        "conclusion-downgrade",
+        "fabricated-support",
+        "inaccessible-support",
+        "source-count-confidence",
+        "missing-conflict",
+        "missing-limitations",
+        "zero-downtime-overclaim",
+        "claim-text-drift",
+        "source-statement-drift",
+        "artifact-path-escape"
+      ],
       "danger": "none",
       "run_status": "completed_reference_run",
       "learner_run_status": "not_run",
       "transfer_status": "not_run",
-      "evidence_path": "commit-bound release-evidence artifact examples/lab-008-reference",
-      "known_blind_spots": ["independent human review", "reviewer agreement", "learner independence", "model or Codex behavior", "live research", "cross-domain transfer", "real-service behavior", "production readiness"]
+      "replay": {
+        "fixture_manifest_sha256": "8d437df616da0c7a5127019e661e3f40036cfce1afe46b307dc2fe09ef4bc0e2",
+        "packet_attestation_sha256": "257a34d99ee16243740c869a03d267bacc9492ec76ebe4f7bd5e9c1367ebfe2b",
+        "output_subdir": "examples/lab-008-reference",
+        "runner_argv": [
+          "{python}",
+          "scripts/run_lab_008_reference.py",
+          "--output-dir",
+          "{output_dir}"
+        ],
+        "validator_argv": [
+          "{python}",
+          "scripts/validate_lab_008_brief.py",
+          "--packet",
+          "{output_dir}"
+        ],
+        "fixture_test_argv": [
+          "{python}",
+          "scripts/test_lab_008_reference.py"
+        ]
+      },
+      "known_blind_spots": [
+        "independent human review",
+        "reviewer agreement",
+        "learner independence",
+        "model or Codex behavior",
+        "live research",
+        "cross-domain transfer",
+        "real-service behavior",
+        "production readiness"
+      ]
     },
     {
       "id": "lab-013-reference-v1",
       "kind": "workflow",
       "source_path": "examples/lab-013-v1",
-      "projections": ["book/labs/lab-013-l3-vertical-slice-EN.md"],
-      "verification_classes": ["parsed", "executed", "asserted"],
+      "projections": [
+        "book/labs/lab-013-l3-vertical-slice-EN.md"
+      ],
+      "verification_classes": [
+        "parsed",
+        "executed",
+        "asserted"
+      ],
       "environment": {
         "toolchain": "Python 3 standard library",
         "platform": "Windows local and GitHub Actions Linux",
@@ -54,13 +117,45 @@
         "artifact and diff hashes",
         "cleanup and claim-limit record"
       ],
-      "negative_fixtures": ["artifact-hash", "attempt-exit", "learner-overclaim", "path-escape"],
+      "negative_fixtures": [
+        "artifact-hash",
+        "attempt-exit",
+        "learner-overclaim",
+        "path-escape",
+        "cleanup-overclaim"
+      ],
       "danger": "none",
       "run_status": "completed_reference_run",
       "learner_run_status": "not_run",
       "transfer_status": "not_run",
-      "evidence_path": "commit-bound release-evidence artifact examples/lab-013-reference",
-      "known_blind_spots": ["learner independence", "model or Codex behavior", "cross-platform transfer", "publication", "production readiness"]
+      "replay": {
+        "fixture_manifest_sha256": "2d9e2c4334ae8090ef20d21c5af2129dc603a6ecf2b05779c5789e898e32c060",
+        "packet_attestation_sha256": "18eb19833f50da5766a34ef04605135a396baaad69c861a51eb938b8690dadd3",
+        "output_subdir": "examples/lab-013-reference",
+        "runner_argv": [
+          "{python}",
+          "scripts/run_lab_013_reference.py",
+          "--output-dir",
+          "{output_dir}"
+        ],
+        "validator_argv": [
+          "{python}",
+          "scripts/validate_lab_013_reference.py",
+          "--packet",
+          "{output_dir}"
+        ],
+        "fixture_test_argv": [
+          "{python}",
+          "scripts/test_lab_013_reference.py"
+        ]
+      },
+      "known_blind_spots": [
+        "learner independence",
+        "model or Codex behavior",
+        "cross-platform transfer",
+        "publication",
+        "production readiness"
+      ]
     }
   ]
 }

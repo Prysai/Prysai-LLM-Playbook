@@ -83,6 +83,17 @@ def main() -> int:
 
     passed_dimensions = [{"status": "passed"}]
     require(evidence.derive_decision("candidate", passed_dimensions, {"overdue": [], "invalid": []}) == "candidate", "static gates upgraded candidate")
+    require(evidence.derive_decision("verified", passed_dimensions, {"overdue": [], "invalid": []}, ["Q-P0"], ["Q-P0"]) == "blocked", "active verified blocker allowed verified maturity")
+    require(evidence.derive_decision("production-ready", passed_dimensions, {"overdue": [], "invalid": []}, [], ["Q-P2"]) == "blocked", "active production blocker allowed production-ready maturity")
+    require(evidence.derive_decision("candidate", passed_dimensions, {"overdue": [], "invalid": []}, ["Q-P0"], ["Q-P0"]) == "candidate", "active findings incorrectly blocked honest candidate maturity")
+
+    quality = evidence.load_object(evidence.ROOT / contract["quality_source"])
+    weakened = copy.deepcopy(quality)
+    weakened["release_policy"]["verified_blocking_severities"] = ["P1"]
+    require(any("verified blocking" in error for error in evidence.validate_release_policy(weakened)), "weakened verified policy was not rejected")
+    weakened = copy.deepcopy(quality)
+    weakened["release_policy"]["production_ready_blocking_severities"] = ["P0", "P1"]
+    require(any("production-ready blocking" in error for error in evidence.validate_release_policy(weakened)), "weakened production policy was not rejected")
     require(evidence.derive_decision("verified", passed_dimensions, {"overdue": [{"field": "next_review"}], "invalid": []}) == "blocked", "overdue source did not block verified")
     require(evidence.derive_decision("production-ready", passed_dimensions, {"overdue": [], "invalid": [{"field": "next_review"}]}) == "blocked", "invalid date did not block production-ready")
 
@@ -106,7 +117,7 @@ def main() -> int:
     require("Decision: `not_ready`" in rendered, "readiness decision missing from packet summary")
     require("`rollback`" in rendered, "readiness blocker missing from packet summary")
 
-    print("RELEASE_EVIDENCE_TESTS_OK fixtures=16")
+    print("RELEASE_EVIDENCE_TESTS_OK fixtures=21")
     return 0
 
 

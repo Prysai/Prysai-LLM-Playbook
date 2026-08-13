@@ -7,12 +7,20 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import argparse
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 RUNNER = ROOT / "scripts/run_lab_013_reference.py"
 VALIDATOR = ROOT / "scripts/validate_lab_013_reference.py"
+NEGATIVE_FIXTURES = [
+    "artifact-hash",
+    "attempt-exit",
+    "learner-overclaim",
+    "path-escape",
+    "cleanup-overclaim",
+]
 
 
 def validate(path: Path) -> subprocess.CompletedProcess[str]:
@@ -20,6 +28,9 @@ def validate(path: Path) -> subprocess.CompletedProcess[str]:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--list-fixtures", action="store_true")
+    args = parser.parse_args()
     failures: list[str] = []
     work_root = ROOT / ".work"
     work_root.mkdir(exist_ok=True)
@@ -46,7 +57,10 @@ def main() -> int:
         print("LAB_013_REFERENCE_FIXTURES_FAILED")
         for failure in failures: print(f"- {failure}")
         return 1
-    print("LAB_013_REFERENCE_FIXTURES_OK positive=1 negative=5")
+    if args.list_fixtures:
+        print(json.dumps(NEGATIVE_FIXTURES))
+        return 0
+    print(f"LAB_013_REFERENCE_FIXTURES_OK positive=1 negative={len(NEGATIVE_FIXTURES)}")
     return 0
 
 

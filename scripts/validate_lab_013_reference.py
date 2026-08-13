@@ -17,9 +17,35 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def packet_attestation(record: dict[str, object]) -> str:
+    stable = {
+        "fixture_version": record.get("fixture_version"),
+        "fixture_hashes": record.get("fixture_hashes"),
+        "baseline_hashes": record.get("baseline_hashes"),
+        "checkpoints": {
+            key: {"status": value.get("status"), "decision": value.get("decision")}
+            for key, value in record.get("checkpoints", {}).items()
+            if isinstance(value, dict)
+        },
+        "attempts": [
+            {"attempt": item.get("attempt"), "exit_code": item.get("exit_code")}
+            for item in record.get("attempts", [])
+            if isinstance(item, dict)
+        ],
+        "failed_artifact_sha256": record.get("failed_artifact_sha256"),
+        "final_artifact_sha256": record.get("final_artifact_sha256"),
+        "changed_product_paths": record.get("changed_product_paths"),
+        "claims": record.get("claims"),
+        "cleanup_status": record.get("cleanup", {}).get("status") if isinstance(record.get("cleanup"), dict) else None,
+        "evidence_limit": record.get("evidence_limit"),
+    }
+    return hashlib.sha256(json.dumps(stable, sort_keys=True, separators=(",", ":")).encode("utf-8")).hexdigest()
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--packet", required=True)
+    parser.add_argument("--attest", action="store_true")
     args = parser.parse_args()
     packet_root = Path(args.packet).resolve()
     errors: list[str] = []
@@ -73,6 +99,8 @@ def main() -> int:
         for error in errors: print(f"- {error}")
         return 1
     print("LAB_013_PACKET_OK evidence_class=maintainer_reference_run attempts=2 checkpoints=5 learner_run=not_run")
+    if args.attest:
+        print(f"LAB_013_PACKET_ATTESTATION sha256={packet_attestation(record)}")
     return 0
 
 
