@@ -15,8 +15,8 @@ that the exercise has been freshly run in every Codex surface.
 
 The index contains 18 lab identities. All 18 are currently `draft` with
 learner `run_status: not_run`, and all 18 have canonical English source files.
-One of 18 Labs (Lab 013) has an accepted deterministic maintainer reference
-run. Zero of 18 have a recorded learner run, and zero of 18 have a recorded
+Two of 18 Labs (Labs 008 and 013) have accepted deterministic maintainer reference
+runs. Zero of 18 have a recorded learner run, and zero of 18 have a recorded
 transfer run. A maintainer packet is implementation evidence, not a learning
 outcome.
 
@@ -69,7 +69,7 @@ chapters, Skills, research, and generated pages.
 `draft` means that the exercise still needs the project's declared evidence
 before it can be called `candidate`, `verified`, or `production-ready`.
 `run_status: not_run` means there is no recorded learner execution result in
-this repository. Lab 013 separately records one accepted
-`reference_run_status: completed`; its learner and transfer statuses remain
+this repository. Labs 008 and 013 separately record accepted
+`reference_run_status: completed` packets; their learner and transfer statuses remain
 `not_run`. The public site may link to a Lab or a maintainer packet, but neither
 link is a learning outcome or runtime guarantee.

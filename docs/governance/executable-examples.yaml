@@ -7,6 +7,34 @@
   "verification_classes": ["display_only", "parsed", "compiled", "executed", "asserted", "rendered", "live_checked", "human_reviewed"],
   "records": [
     {
+      "id": "lab-008-reference-v1",
+      "kind": "research",
+      "source_path": "examples/lab-008-v1",
+      "projections": ["book/labs/lab-008-research-question-EN.md"],
+      "verification_classes": ["parsed", "executed", "asserted"],
+      "environment": {
+        "toolchain": "Python 3 standard library",
+        "platform": "Windows local and GitHub Actions Linux",
+        "network": "disabled-by-contract; no network code path",
+        "permissions": "disposable_write_under_repository_workdir"
+      },
+      "expected_evidence": [
+        "fixed synthetic source packet and input hashes",
+        "intentional overclaim rejected with exit 1",
+        "bounded correction accepted with exit 0",
+        "claim ledger, conflict record, unknowns, and stop receipt",
+        "before-and-after diff and artifact hashes",
+        "cleanup and claim-limit record"
+      ],
+      "negative_fixtures": ["conclusion-downgrade", "fabricated-support", "inaccessible-support", "source-count-confidence", "missing-conflict", "missing-limitations", "zero-downtime-overclaim", "claim-text-drift", "source-statement-drift", "artifact-path-escape"],
+      "danger": "none",
+      "run_status": "completed_reference_run",
+      "learner_run_status": "not_run",
+      "transfer_status": "not_run",
+      "evidence_path": "commit-bound release-evidence artifact examples/lab-008-reference",
+      "known_blind_spots": ["independent human review", "reviewer agreement", "learner independence", "model or Codex behavior", "live research", "cross-domain transfer", "real-service behavior", "production readiness"]
+    },
+    {
       "id": "lab-013-reference-v1",
       "kind": "workflow",
       "source_path": "examples/lab-013-v1",

@@ -1,0 +1,13 @@
+{
+  "source_id": "S-CURRENT",
+  "kind": "current_authoritative",
+  "title": "Synthetic Orion 4.2 release record",
+  "authority": "fictional Orion release owner",
+  "published": "2026-07-15",
+  "accessed": "2026-08-13",
+  "scope": "Orion release 4.2 only",
+  "location": "section maintenance-window",
+  "statement": "Plan a 30-minute maintenance window for Orion release 4.2.",
+  "accessible": true,
+  "eligible_for_support": true
+}

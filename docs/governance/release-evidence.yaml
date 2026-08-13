@@ -23,6 +23,7 @@
     "Gold-content admission proves an editorial proposal clears the declared hard gates and score threshold; it does not prove the unit was run, learned, transferred, or independently verified.",
     "Communication Clinic validation proves only the unrun candidate plan, fixed conditions, scoring contract, and safety boundary are internally consistent; it does not contain model or learner results.",
     "The Lab 013 executable-example packet is a deterministic maintainer reference run. It does not use a model and does not prove learner independence, transfer, Codex behavior, publication, or production readiness.",
+    "The Lab 008 executable-example packet is a deterministic maintainer reference run over synthetic local sources. It does not use a model or live research and does not prove learner independence, transfer, real-service behavior, or production readiness.",
     "External URL reachability is recorded by a separate scheduled workflow and is not replayed in this CI packet.",
     "The local input-archive audit depends on machine-local archives and is not replayed on GitHub-hosted runners.",
     "The official Skill validator is run locally when its bundled runtime is available; CI runs the repository Skill contract validator."
@@ -114,6 +115,9 @@
       "commands": [
         {"id": "executable-example-manifest", "argv": ["{python}", "scripts/validate_executable_examples.py"]},
         {"id": "executable-example-fixtures", "argv": ["{python}", "scripts/test_executable_examples.py"]},
+        {"id": "lab-008-reference-run", "argv": ["{python}", "scripts/run_lab_008_reference.py", "--output-dir", "{evidence_dir}/examples/lab-008-reference"]},
+        {"id": "lab-008-reference-packet", "argv": ["{python}", "scripts/validate_lab_008_brief.py", "--packet", "{evidence_dir}/examples/lab-008-reference"]},
+        {"id": "lab-008-reference-fixtures", "argv": ["{python}", "scripts/test_lab_008_reference.py"]},
         {"id": "lab-013-reference-run", "argv": ["{python}", "scripts/run_lab_013_reference.py", "--output-dir", "{evidence_dir}/examples/lab-013-reference"]},
         {"id": "lab-013-reference-packet", "argv": ["{python}", "scripts/validate_lab_013_reference.py", "--packet", "{evidence_dir}/examples/lab-013-reference"]},
         {"id": "lab-013-reference-fixtures", "argv": ["{python}", "scripts/test_lab_013_reference.py"]}

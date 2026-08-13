@@ -145,11 +145,11 @@
     },
     {
       "area": "executable-examples",
-      "canonical_paths": ["docs/governance/executable-examples.yaml", "examples/lab-013-v1", "scripts/validate_executable_examples.py", "scripts/test_executable_examples.py", "scripts/run_lab_013_reference.py", "scripts/validate_lab_013_reference.py", "scripts/test_lab_013_reference.py", "docs/research/executable-documentation-and-example-verification-2026-08-12.md"],
+      "canonical_paths": ["docs/governance/executable-examples.yaml", "examples/lab-008-v1", "examples/lab-013-v1", "scripts/validate_executable_examples.py", "scripts/test_executable_examples.py", "scripts/run_lab_008_reference.py", "scripts/validate_lab_008_brief.py", "scripts/test_lab_008_reference.py", "scripts/run_lab_013_reference.py", "scripts/validate_lab_013_reference.py", "scripts/test_lab_013_reference.py", "docs/research/executable-documentation-and-example-verification-2026-08-12.md"],
       "owner": "documentation-engineering-maintainer",
       "triggers": ["new-executable-example", "verification-class-change", "example-source-change", "negative-fixture-change", "runtime-evidence-change"],
       "required_inputs": ["source-path", "verification-class", "environment", "permissions", "network-boundary", "expected-evidence", "negative-fixtures", "blind-spots", "owner"],
-      "validation_commands": ["scripts/validate_executable_examples.py", "scripts/test_executable_examples.py", "scripts/test_lab_013_reference.py", "scripts/build_release_evidence.py --check", "scripts/check_local_links.py"],
+      "validation_commands": ["scripts/validate_executable_examples.py", "scripts/test_executable_examples.py", "scripts/test_lab_008_reference.py", "scripts/test_lab_013_reference.py", "scripts/build_release_evidence.py --check", "scripts/check_local_links.py"],
       "status_fields": ["status", "verification_classes", "run_status", "learner_run_status", "transfer_status", "owner", "reviewed_at", "next_review"],
       "next_review": "2026-09-12"
     },

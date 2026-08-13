@@ -1,0 +1,23 @@
+{
+  "schema_version": "1",
+  "fixture_version": "lab-008-v1",
+  "question_id": "Q-ORION-WINDOW",
+  "required_attempts": ["initial-overclaim", "narrowed-correction"],
+  "required_exit_codes": [1, 0],
+  "required_source_ids": ["S-CURRENT", "S-STALE", "S-INACCESSIBLE", "S-FABRICATED"],
+  "eligible_support_ids": ["S-CURRENT"],
+  "forbidden_support_ids": ["S-STALE", "S-INACCESSIBLE", "S-FABRICATED"],
+  "required_source_statements": {
+    "S-CURRENT": "Plan a 30-minute maintenance window for Orion release 4.2.",
+    "S-STALE": "Plan a 60-minute maintenance window for Orion release 4.2."
+  },
+  "required_conclusion_strength": "bounded",
+  "required_conclusion": "For the synthetic Orion release 4.2 only, plan a 30-minute maintenance window; the supplied packet does not establish zero downtime or a rule for other releases.",
+  "required_claim_ids": ["C-WINDOW", "C-GENERALIZATION"],
+  "required_claim_text": {
+    "C-WINDOW": "Release 4.2 has a 30-minute planned maintenance window.",
+    "C-GENERALIZATION": "The same duration applies to other Orion releases."
+  },
+  "required_conflict_id": "D-WINDOW",
+  "required_unknown_ids": ["U-ZERO-DOWNTIME", "U-OTHER-RELEASES"]
+}

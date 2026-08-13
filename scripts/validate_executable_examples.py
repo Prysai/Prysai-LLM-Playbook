@@ -48,7 +48,9 @@ def main() -> int:
         print("EXECUTABLE_EXAMPLES_FAILED")
         for error in errors: print(f"- {error}")
         return 1
-    print(f"EXECUTABLE_EXAMPLES_OK records={len(records)} classes={len(allowed)} reference_runs=1 learner_runs=0")
+    reference_runs = sum(record.get("run_status") == "completed_reference_run" for record in records)
+    learner_runs = sum(record.get("learner_run_status") != "not_run" for record in records)
+    print(f"EXECUTABLE_EXAMPLES_OK records={len(records)} classes={len(allowed)} reference_runs={reference_runs} learner_runs={learner_runs}")
     return 0
 
 

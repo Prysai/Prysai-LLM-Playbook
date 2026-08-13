@@ -15,7 +15,7 @@ evidence:
 failure_variant: "Add an inaccessible, irrelevant, or weak source and check that the conclusion is narrowed rather than completed by invention"
 reflection: "Which constraint made the question answerable, which claim has the weakest support, and what would change the conclusion?"
 status: draft
-last_verified: "not run"
+last_verified: "Maintainer reference run accepted 2026-08-13; learner run not run"
 transfer_task: "Use the same question and evidence protocol for a second low-risk domain"
 transfer_domain: "product research, engineering investigation, or content fact-checking"
 transfer_evidence: "Keep question revisions, source records, claim mappings, limitations, and the smallest next research action"
@@ -73,6 +73,23 @@ Keep the original topic, all three candidate questions, selection rationale,
 source plan, captured excerpts or precise locations, access dates, claim table,
 draft, and limitation section. A URL alone is not evidence of what a source
 said on the access date.
+
+### Maintainer reference packet
+
+The project includes one frozen, fully offline reference fixture for this Lab.
+It presents a current source, a stale source with a scope-matched conflict, an
+inaccessible source record, and a fabricated citation candidate. The first
+brief overclaims support and must fail. The corrected brief must narrow the
+decision, preserve disagreement and unknowns, reject ineligible sources, and
+record a stop receipt before it can pass.
+
+See the [frozen fixture](../../examples/lab-008-v1/README.md), the
+[executable-example contract](../../docs/governance/executable-examples.yaml),
+and the [maintainer packet review](../../docs/quality/lab-008-reference-run-review-2026-08-13.md).
+The run is deterministic maintainer evidence over synthetic inputs. It did not
+use a model, browse the web, test a learner, or establish transfer or real-world
+research quality. This Lab therefore remains `draft`; learner and transfer runs
+remain `not_run`.
 
 ## Failure case
 

@@ -1,0 +1,10 @@
+{
+  "schema_version": "1",
+  "question_id": "Q-ORION-WINDOW",
+  "question": "For the synthetic Orion service release 4.2, should the maintainer plan a 30-minute maintenance window?",
+  "decision": "Choose the maintenance-window duration for a fictional internal runbook exercise.",
+  "included_scope": ["Orion service", "release 4.2", "supplied local records only"],
+  "excluded_scope": ["other releases", "other services", "real production systems"],
+  "required_source_class": "current authoritative release record",
+  "stop_condition": "Stop after all four supplied source records are classified and every decision-critical claim is supported, disputed, or unknown."
+}

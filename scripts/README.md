@@ -21,6 +21,7 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\test_evidence_review_candidate.py
 & $py scripts\validate_executable_examples.py
 & $py scripts\test_executable_examples.py
+& $py scripts\test_lab_008_reference.py
 & $py scripts\test_lab_013_reference.py
 & $py scripts\check_local_links.py
 & $py scripts\validate_localization.py
@@ -125,9 +126,11 @@ fixture, and public route. It is a static contract gate; it does not run a
 model or learner and cannot prove acquisition, retention, or transfer.
 
 `validate_executable_examples.py` enforces typed example claims rather than
-treating every code fence as executable. The first registered record is Lab
-013 v1: `parsed`, `executed`, and `asserted`, with a deterministic failed check,
-bounded recovery, cleanup, and four negative packet fixtures. It remains
+treating every code fence as executable. Labs 008 and 013 are registered as
+`parsed`, `executed`, and `asserted` maintainer reference runs. Lab 008 rejects
+an overclaimed synthetic research brief before accepting a bounded correction;
+Lab 013 preserves a failed implementation check and bounded recovery. Both keep
+artifact hashes, cleanup evidence, and negative packet fixtures, and both remain
 explicitly outside `human_reviewed` learner evidence.
 
 `validate_github_templates.py` checks the public contributor entry forms and

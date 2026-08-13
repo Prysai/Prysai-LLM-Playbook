@@ -1,0 +1,13 @@
+{
+  "source_id": "S-STALE",
+  "kind": "stale_conflicting",
+  "title": "Superseded synthetic Orion 4.2 operations note",
+  "authority": "fictional Orion release owner",
+  "published": "2025-11-02",
+  "accessed": "2026-08-13",
+  "scope": "Orion release 4.2 only",
+  "location": "section maintenance-window",
+  "statement": "Plan a 60-minute maintenance window for Orion release 4.2.",
+  "accessible": true,
+  "eligible_for_support": false
+}

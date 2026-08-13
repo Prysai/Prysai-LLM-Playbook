@@ -12,6 +12,7 @@ the project can honestly claim.
 - [First-task reader pilot protocol](first-task-pilot-protocol-v1.md)
 - [Red-team release and learning audit](red-team-release-and-learning-audit-2026-08-13.md)
 - [Lab navigation and locale integrity review](review-lab-navigation-and-locale-integrity-2026-08-13.md)
+- [Lab 008 deterministic reference review](lab-008-reference-run-review-2026-08-13.md)
 - [Project map](../project-map-EN.md)
 - [Content integrity standard](content-integrity-standard.md)
 - [Current quality register](quality-register.md)
