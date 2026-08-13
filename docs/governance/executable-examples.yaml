@@ -61,7 +61,7 @@
       "transfer_status": "not_run",
       "replay": {
         "fixture_manifest_sha256": "8d437df616da0c7a5127019e661e3f40036cfce1afe46b307dc2fe09ef4bc0e2",
-        "packet_attestation_sha256": "257a34d99ee16243740c869a03d267bacc9492ec76ebe4f7bd5e9c1367ebfe2b",
+        "packet_attestation_sha256": "549b72b05065456c9c89f20c131a5c782ea74245a616f49df8824554e788c12c",
         "output_subdir": "examples/lab-008-reference",
         "runner_argv": [
           "{python}",
@@ -130,7 +130,7 @@
       "transfer_status": "not_run",
       "replay": {
         "fixture_manifest_sha256": "2d9e2c4334ae8090ef20d21c5af2129dc603a6ecf2b05779c5789e898e32c060",
-        "packet_attestation_sha256": "18eb19833f50da5766a34ef04605135a396baaad69c861a51eb938b8690dadd3",
+        "packet_attestation_sha256": "4dd0b32df49f78e26ba566868b89771e24cc912252d0fe5b07cd2627968df36a",
         "output_subdir": "examples/lab-013-reference",
         "runner_argv": [
           "{python}",

@@ -17,11 +17,14 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def packet_attestation(record: dict[str, object]) -> str:
+def packet_attestation(packet_root: Path, record: dict[str, object]) -> str:
+    artifact_path = Path(str(record.get("artifact", "")))
+    artifact_text = ""
+    if artifact_path.parts:
+        artifact_text = (packet_root / artifact_path).read_text(encoding="utf-8").replace("\r\n", "\n")
     stable = {
         "fixture_version": record.get("fixture_version"),
-        "fixture_hashes": record.get("fixture_hashes"),
-        "baseline_hashes": record.get("baseline_hashes"),
+        "acceptance": json.loads((FIXTURE / "expected/acceptance.json").read_text(encoding="utf-8")),
         "checkpoints": {
             key: {"status": value.get("status"), "decision": value.get("decision")}
             for key, value in record.get("checkpoints", {}).items()
@@ -32,8 +35,7 @@ def packet_attestation(record: dict[str, object]) -> str:
             for item in record.get("attempts", [])
             if isinstance(item, dict)
         ],
-        "failed_artifact_sha256": record.get("failed_artifact_sha256"),
-        "final_artifact_sha256": record.get("final_artifact_sha256"),
+        "artifact_text": artifact_text,
         "changed_product_paths": record.get("changed_product_paths"),
         "claims": record.get("claims"),
         "cleanup_status": record.get("cleanup", {}).get("status") if isinstance(record.get("cleanup"), dict) else None,
@@ -100,7 +102,7 @@ def main() -> int:
         return 1
     print("LAB_013_PACKET_OK evidence_class=maintainer_reference_run attempts=2 checkpoints=5 learner_run=not_run")
     if args.attest:
-        print(f"LAB_013_PACKET_ATTESTATION sha256={packet_attestation(record)}")
+        print(f"LAB_013_PACKET_ATTESTATION sha256={packet_attestation(packet_root, record)}")
     return 0
 
 

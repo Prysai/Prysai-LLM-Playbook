@@ -23,9 +23,14 @@ def packet_attestation(packet_root: Path) -> str:
         raise ValueError("run record must be an object")
     stable = {
         "fixture_version": record.get("fixture_version"),
-        "input_manifest_sha256": record.get("input_manifest_sha256"),
         "attempts": record.get("attempts"),
-        "artifact_hashes": record.get("artifact_hashes"),
+        "sources": {
+            path.name: load_json(path)
+            for path in sorted((FIXTURE / "sources").glob("*.json"))
+        },
+        "acceptance": load_json(FIXTURE / "expected/acceptance.json"),
+        "initial_brief": load_json(packet_root / str(record.get("artifacts", {}).get("initial_brief"))),
+        "corrected_brief": load_json(packet_root / str(record.get("artifacts", {}).get("corrected_brief"))),
         "claims": record.get("claims"),
         "evidence_limit": record.get("evidence_limit"),
     }
