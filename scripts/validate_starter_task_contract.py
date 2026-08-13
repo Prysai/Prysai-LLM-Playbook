@@ -145,9 +145,11 @@ def validate_contract(contract: dict[str, Any], *, check_surfaces: bool = True) 
             if "data-first-win-comparison hidden" not in site_block:
                 errors.append("site starter example must be hidden until the reader chooses to compare")
         app = (ROOT / "site/app.js").read_text(encoding="utf-8")
-        for required in ("data-copy-starter", "data-copy-rescue", "data-copy-first-win-record", "navigator.clipboard.writeText", "const renderFirstWinRecord", "accepted_on_this_check", "not_accepted", "first_nonpass"):
+        for required in ("data-copy-starter", "data-copy-rescue", "data-copy-first-win-record", "navigator.clipboard.writeText", "const renderFirstWinRecord", "judgment_state:", "not_all_checks_marked_pass", "first_nonpass"):
             if required not in app:
                 errors.append(f"site/app.js must implement {required}")
+        if "accepted_on_this_check" in app or "acceptance:" in app:
+            errors.append("site/app.js must not label self-recorded judgments as acceptance")
     return errors
 
 

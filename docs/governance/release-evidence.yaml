@@ -90,6 +90,8 @@
         {"id": "local-links", "argv": ["{python}", "scripts/check_local_links.py"]},
         {"id": "site-accessibility-source", "argv": ["{python}", "scripts/validate_site_accessibility.py"]},
         {"id": "site-accessibility-fixtures", "argv": ["{python}", "scripts/test_site_accessibility.py"]},
+        {"id": "pages-artifact-fixtures", "argv": ["{python}", "scripts/test_build_pages_artifact.py"]},
+        {"id": "pages-candidate-preview-fixtures", "argv": ["{python}", "scripts/test_serve_pages_candidate.py"]},
         {"id": "browser-smoke", "argv": ["{node}", "scripts/browser_smoke.mjs"]},
         {"id": "canonical-english-learning-contract", "argv": ["{python}", "scripts/validate_learning_contract.py", "--canonical-en"]}
       ]

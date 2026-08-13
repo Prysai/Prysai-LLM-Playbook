@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -33,11 +34,24 @@ REQUIRED_PUBLISH_FILES = (
 FORBIDDEN_PUBLISH_FILENAMES = {
     ".env",
     "credentials.json",
+    "secrets.json",
     "token.json",
     "id_rsa",
     "id_ed25519",
 }
 FORBIDDEN_PUBLISH_SUFFIXES = (".pem", ".key", ".p12", ".pfx")
+TEXT_PUBLISH_SUFFIXES = {
+    ".css", ".csv", ".html", ".js", ".json", ".md", ".svg", ".toml", ".txt", ".xml", ".yaml", ".yml",
+}
+# Deliberately narrow credential signatures. This detects publishable secrets,
+# not ordinary instructional prose about tokens, keys, or passwords.
+SECRET_SIGNATURES = (
+    ("private-key", re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----")),
+    ("github-classic-token", re.compile(r"\bgh[pousr]_[A-Za-z0-9]{36,255}\b")),
+    ("github-fine-grained-token", re.compile(r"\bgithub_pat_[A-Za-z0-9_]{70,100}\b")),
+    ("openai-api-key", re.compile(r"\bsk-(?:proj-)?[A-Za-z0-9_-]{20,}\b")),
+    ("anthropic-api-key", re.compile(r"\bsk-ant-[A-Za-z0-9_-]{20,}\b")),
+)
 
 
 def root_index(site_index: Path) -> str:
@@ -80,6 +94,44 @@ def validate_source() -> None:
         raise FileNotFoundError("missing Pages source files: " + ", ".join(missing))
 
 
+def source_symlinks(candidates: list[Path] | None = None) -> list[str]:
+    """Return symbolic links in source paths that would be copied to Pages."""
+    if candidates is None:
+        candidates = [*(ROOT / directory for directory in PUBLISH_DIRECTORIES), *(ROOT / filename for filename in PUBLISH_ROOT_FILES)]
+    links: list[str] = []
+    for candidate in candidates:
+        if candidate.is_symlink():
+            links.append(source_path_label(candidate, candidate.parent))
+        elif candidate.is_dir():
+            links.extend(
+                source_path_label(path, candidate.parent)
+                for path in candidate.rglob("*")
+                if path.is_symlink()
+            )
+    return sorted(links)
+
+
+def source_path_label(path: Path, fallback_root: Path) -> str:
+    """Use repository labels in production and stable local labels in fixtures."""
+    try:
+        return path.relative_to(ROOT).as_posix()
+    except ValueError:
+        return path.relative_to(fallback_root).as_posix()
+
+
+def artifact_secret_findings(output: Path) -> list[str]:
+    """Find high-confidence credential signatures without exposing their values."""
+    findings: list[str] = []
+    for path in output.rglob("*"):
+        if not path.is_file() or path.suffix.lower() not in TEXT_PUBLISH_SUFFIXES:
+            continue
+        text = path.read_text(encoding="utf-8", errors="replace")
+        for rule_id, pattern in SECRET_SIGNATURES:
+            if pattern.search(text):
+                findings.append(f"{rule_id}:{path.relative_to(output).as_posix()}")
+    return findings
+
+
 def validate_artifact(output: Path) -> None:
     expected = (output / "index.html", output / ".nojekyll")
     missing = [path.name for path in expected if not path.is_file()]
@@ -110,6 +162,10 @@ def validate_artifact(output: Path) -> None:
     if forbidden_files:
         raise ValueError("sensitive files leaked into Pages artifact: " + ", ".join(forbidden_files))
 
+    secret_findings = artifact_secret_findings(output)
+    if secret_findings:
+        raise ValueError("credential signature leaked into Pages artifact: " + ", ".join(secret_findings))
+
     root_text = (output / "index.html").read_text(encoding="utf-8")
     if '<base href="site/" />' not in root_text or "window.CODEX_PAGES_ARTIFACT = true" not in root_text:
         raise ValueError("root Pages entry must point relative assets and content through site/")
@@ -124,16 +180,9 @@ def validate_artifact(output: Path) -> None:
         raise ValueError("Pages artifact route integrity failed: " + "; ".join(integrity_findings))
 
 
-def build(output: Path) -> None:
-    validate_source()
-    output = output.resolve()
-    allowed_in_repo = ROOT / "_site"
-    if output == ROOT or (ROOT in output.parents and output != allowed_in_repo):
-        raise ValueError(f"refusing to build Pages artifact at an unapproved repository path: {output}")
-    if output.exists():
-        shutil.rmtree(output)
+def build_into(output: Path) -> None:
+    """Copy and validate one staging artifact without replacing an existing one."""
     output.mkdir(parents=True)
-
     for directory in PUBLISH_DIRECTORIES:
         shutil.copytree(ROOT / directory, output / directory)
     for filename in PUBLISH_ROOT_FILES:
@@ -143,6 +192,35 @@ def build(output: Path) -> None:
     (output / "site/reader.html").write_text(pages_reader(ROOT / "site/reader.html"), encoding="utf-8", newline="\n")
     (output / ".nojekyll").write_text("", encoding="utf-8")
     validate_artifact(output)
+
+
+def build(output: Path) -> None:
+    validate_source()
+    links = source_symlinks()
+    if links:
+        raise ValueError("symbolic links are not allowed in Pages sources: " + ", ".join(links))
+    output = output.resolve()
+    allowed_in_repo = ROOT / "_site"
+    if output == ROOT or (ROOT in output.parents and output != allowed_in_repo):
+        raise ValueError(f"refusing to build Pages artifact at an unapproved repository path: {output}")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with TemporaryDirectory(prefix=f".{output.name}-build-", dir=output.parent) as temporary:
+        staged = Path(temporary) / "artifact"
+        build_into(staged)
+        backup = output.parent / f".{output.name}-previous"
+        if backup.exists():
+            shutil.rmtree(backup)
+        if output.exists():
+            output.replace(backup)
+        try:
+            shutil.move(str(staged), str(output))
+        except OSError:
+            if backup.exists() and not output.exists():
+                backup.replace(output)
+            raise
+        else:
+            if backup.exists():
+                shutil.rmtree(backup)
 
 
 def main() -> int:

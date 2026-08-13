@@ -21,7 +21,7 @@ states otherwise. See [`LICENSE`](LICENSE) and the [licensing boundary](docs/sou
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-[Get a first result in 15 minutes](#get-a-first-result-in-15-minutes-no-git-required) · [Read the full English guide](README-EN.md)
+[Start the recommended Codex path](#the-recommended-first-codex-path) · [Try the optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required)
 
 README language links switch repository entry files. The interactive showcase is
 a local contributor preview; follow [`site/README.md`](site/README.md) to serve
@@ -60,12 +60,38 @@ This is an independent curriculum and field guide. It is not OpenAI's
 official documentation, an official Codex product page, or a catalogue of
 copied prompts and Skills.
 
+## The recommended first Codex path
+
+If your goal is to make a real local change with Codex, do not choose among the
+full catalogue yet. Follow one L0 → L1 sequence:
+
+1. [Chapter 1 — Understand GPT before Codex](book/chapters/01-gpt-and-codex-EN.md)
+   establishes the boundary between generation, tools, actions, and evidence.
+2. [Lab 011 — Map the GPT and Codex boundary](book/labs/lab-011-gpt-codex-boundaries-EN.md)
+   lets you label what a static task card can and cannot establish about
+   generation, execution, verification, and external effects.
+3. [Chapter 2 — Complete a safe, verifiable task](book/chapters/02-first-safe-task-EN.md)
+   helps you choose one disposable or non-production Git project, one reversible
+   change, and one source-backed acceptance check.
+4. [Lab 001 — Make one safe README change](book/labs/lab-001-first-safe-task-EN.md)
+   turns that contract into an inspect-first, edit-once, diff-and-check run.
+
+Labs 011 and 001 remain `draft / not_run`. This is the complete candidate path
+the project asks readers to test; it is not evidence that a beginner can
+complete it, learn the method, or transfer it elsewhere. Stop rather than
+improvise if the project is not disposable, the target is not one named file,
+the check is not sourced from the project, or the task would add an external
+side effect.
+
+The 15-minute exercise below is an optional, text-only warm-up. It rehearses a
+checking habit; it is not a substitute for the Codex path.
+
 ## Start with a real outcome
 
 | What you need now | Start here | Leave with |
 |---|---|---|
-| Understand what GPT, Codex, tools, Skills, and Agents actually are | [Chapter 1 — Understand GPT before Codex](book/chapters/01-gpt-and-codex-EN.md) + [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) | A usable mental model and a list of claims you refuse to infer without evidence |
-| Complete a first task safely | [Chapter 2 EN source](book/chapters/02-first-safe-task-EN.md) + [Lab 001 EN source](book/labs/lab-001-first-safe-task-EN.md) | One small, reversible diff, a focused check, and an explicit unverified list |
+| Make a first reversible local Codex change | [Recommended Codex path](#the-recommended-first-codex-path) | One mental model, one bounded task card, a small diff, a focused check, and an explicit unverified list |
+| Rehearse the checking habit without project setup | [Optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) | One fictional message, three human checks, and a bounded receipt |
 | Turn a vague request into something an Agent can execute | [Chapter 3 — task protocol](book/chapters/03-task-protocol-EN.md) + [Lab 002](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop conditions, and failure handling |
 | Turn a broad learning or research wish into a first attempt | [Beginner Practice Pack intake](book/communication-clinic-EN.md#first-practice-intake) | Ask one decision at a time, select one existing route, and leave with a bounded receipt; supplemental candidate · complete learner run `not_run` |
 | Recover when the model answered the wrong task | [Post-failure recovery route](book/communication-clinic-EN.md#recovery-route) + [Communication Failure Triage Skill](skills/prysai-communication-failure-triage/SKILL.md) | Preserve the miss, change one communication condition, and record a comparable rerun without claiming a universal fix |
@@ -74,16 +100,17 @@ copied prompts and Skills.
 | Learn from failures people actually report | [Real-world problem index](docs/research/field-problems-index-2026-08-10.md) | A symptom, a safe first check, a narrower fallback, and an honest evidence level |
 | Turn a personal method into team capability | [Chapter 21 — team capability system](book/chapters/21-team-capability-system-EN.md) + [Contribution model](docs/governance/contribution-model.md) | Ownership, sources, permissions, evaluation, maintenance, and rollback |
 
-The most useful first slice is deliberately small: read Chapter 2, run Lab
-001 in a sandbox, keep the diff and command output, then write down what the
-run did not prove. That 30-minute exercise teaches more than collecting a
-large prompt library.
+The candidate first slice is deliberately small: read Chapter 1, use Lab 011 to
+label the boundary, choose the bounded local task described in Chapter 2, run
+Lab 001 in a sandbox, keep the diff and command output, then write down what
+the run did not prove. Its time,
+completion, and learning effects have not been measured.
 
 <!-- starter-task-contract:start -->
 
-<a id="get-a-first-result-in-15-minutes-no-git-required"></a>
+<a id="optional-15-minute-warm-up-no-git-required"></a>
 
-## Get a first result in 15 minutes — no Git required
+## Optional 15-minute warm-up — no Git required
 
 Use any chat model. The source message is already filled in, so your first job
 is to judge one result rather than invent files, commands, or acceptance tests.
@@ -132,8 +159,10 @@ The 15-minute label is a target; beginner completion time has not been measured.
 Your receipt is deliberately modest: attempted; checked here; help used;
 corrected; and not proven. This exercise records one checked attempt. It does
 not prove learning, transfer, general writing ability, or model superiority.
-Next, use the [Beginner Practice Pack](book/communication-clinic-EN.md#first-practice-intake),
-then move into files and Git with [Lab 001](book/labs/lab-001-first-safe-task-EN.md).
+For a real local Codex task, return to the
+[recommended path](#the-recommended-first-codex-path): Chapter 1 → Chapter 2
+→ Lab 001. The [Beginner Practice Pack](book/communication-clinic-EN.md#first-practice-intake)
+is a separate supplemental route for language, research, or a small work task.
 
 If you are an authorised pilot participant, use the
 [Field Report form](https://github.com/Prysai/Codex-Field-Guide/issues/new?template=field-report.yml)

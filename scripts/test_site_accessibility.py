@@ -138,6 +138,10 @@ def main() -> int:
                 raise AssertionError(f"lazy-search-index: missing {required}")
         fixtures += 2
 
+        if "document.documentElement.lang = localeManifest.locales[effectiveUiLanguage]?.html_lang || 'en';" not in site_script:
+            raise AssertionError("locale-fallback-language: the document language must follow the rendered UI language")
+        fixtures += 1
+
         for required in (
             "data-copy-starter",
             "data-copy-rescue",
@@ -159,11 +163,21 @@ def main() -> int:
             "starterCopyButton?.addEventListener('click'",
             "starterRescueCopied",
             "const renderFirstWinRecord = () => {",
-            "accepted_on_this_check",
+            "judgment_state:",
             "firstWinCompare.disabled = !record.complete;",
         ):
             if required not in site_script:
                 raise AssertionError(f"first-win-copy-feedback: missing {required}")
+        if "accepted_on_this_check" in site_script or "acceptance:" in site_script:
+            raise AssertionError("first-win-copy-feedback: self-reported judgments must not claim acceptance")
+        for required in (
+            'href="../README.md#choose-your-starting-point"',
+            'data-content-id="chapter-01"',
+            'data-content-id="chapter-02"',
+            'data-content-id="lab-001-first-safe-task"',
+        ):
+            if required not in site_markup:
+                raise AssertionError(f"recommended-codex-route: missing {required}")
         fixtures += 2
 
         reader_styles = (Path(__file__).resolve().parents[1] / "site/styles.css").read_text(encoding="utf-8")

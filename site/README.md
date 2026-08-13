@@ -45,22 +45,24 @@ second rendering system without improving the published static artifact.
 
 ## 本地打开
 
-在仓库根目录启动一个静态文件服务，例如：
+在仓库根目录运行受限的预览服务：
 
 ```powershell
-py -m http.server 4173
+$py = 'C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe'
+& $py scripts\serve_pages_candidate.py --port 4173
 ```
 
-然后访问 `http://localhost:4173/site/`。也可以直接打开 `site/index.html`，但使用静态服务更接近正常链接环境。
+然后访问 `http://127.0.0.1:4173/`。该命令先构建 `_site/` 候选产物，再只从这个受限产物目录提供文件，并且默认只绑定本机回环地址；它不会把仓库根目录、`.git/`、`.work/`、`node_modules/` 或其他本地工作目录作为预览根目录公开。使用 `Ctrl+C` 停止服务。
 
 ## GitHub Pages
 
 The repository includes a Pages workflow at
 `.github/workflows/pages.yml`. It builds a bounded artifact with
 `scripts/build_pages_artifact.py`, keeping the visual site and the reader-facing
-source directories while excluding `.git/`, `.work/`, `tmp/`, and other local
-work material. The project-root entry uses the same `site/` source through a
-relative base path, so the local `/site/` route remains useful for development.
+source directories while excluding `.git/`, `.work/`, `tmp/`, symbolic links,
+and high-confidence credential signatures. The project-root entry uses the same
+`site/` source through a relative base path, so the local `/site/` route remains
+useful for development.
 
 The workflow can build the artifact in any repository, but GitHub Pages itself
 may be unavailable for a private repository on the current account plan. Check
@@ -98,7 +100,7 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 
 ## 验证
 
-1. 默认打开 `http://localhost:4173/site/`，确认页面为英文，`document.documentElement.lang` 为 `en`；
+1. 默认打开 `http://127.0.0.1:4173/`，确认页面为英文，`document.documentElement.lang` 为 `en`；
 2. 访问 `?lang=en`、`?lang=zh`、`?lang=es`、`?lang=ja`、`?lang=ko`、`?lang=de`，确认菜单高亮、banner 状态和 URL 保持；显式 URL 必须优先于旧的 `localStorage` 值；
 3. 在 EN / ZH 下确认正文、标题、description、aria-label 和 `lang` 同步；在 ES / JA / KO / DE 下确认英文 UI 与目标 locale fallback 都被明确标出；
 4. 点击章节、实验和学习路径入口，确认它们解析到当前 locale 的存在文件，或带 pending 标记的 English fallback；确认路径、查询参数和 hash 不丢失；

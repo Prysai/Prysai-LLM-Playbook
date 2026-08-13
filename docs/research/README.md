@@ -22,6 +22,8 @@ claim and license boundary are clear.
 
 Useful indexes:
 
+- [AI collaboration safety boundaries](ai-collaboration-safety-boundaries-2026-08-13.md) — source-backed boundaries for prompt injection, minimum necessary input, action authority, and verification. It proposes low-risk teaching actions; it is not a security certification, incident study, or locally reproduced attack record.
+
 - [First five-minute Codex friction ledger](first-five-minute-codex-friction-ledger-2026-08-13.md) — official environment and evidence boundaries plus four public symptom reports, separated from product, runtime, and learning-outcome claims.
 
 - [Evidence-bounded language-practice starter prompts](evidence-bounded-language-practice-starter-prompts-2026-08-13.md) — primary learning and assessment sources, separated public user symptoms, six distinct beginner problems, and strict claim limits for a candidate language-practice workflow.

@@ -77,9 +77,19 @@ compatibility; neither mode proves runtime execution or reader comprehension.
 
 `build_pages_artifact.py` is the release-boundary check for GitHub Pages. It
 copies only the public showcase and declared reader-facing directories into an
-isolated artifact, adds the project-root entry, and rejects local work folders.
+isolated artifact, adds the project-root entry, and rejects local work folders,
+symbolic links, and high-confidence credential signatures without treating
+ordinary teaching references to tokens or keys as secrets.
 It does not prove that GitHub Pages is enabled or that the deployed URL is
 reachable.
+
+`serve_pages_candidate.py` is the local preview companion. It rebuilds the
+bounded `_site/` artifact, serves only that directory on `127.0.0.1`, and
+disables directory listings. `--skip-build` validates the existing artifact
+before serving it. It is not a deployment command. Run
+`test_build_pages_artifact.py` and `test_serve_pages_candidate.py` to check the
+artifact boundary, credential-signature and symlink guards, loopback binding,
+artifact root, listing boundary, and path-traversal boundary.
 
 `build_site_search_index.py` generates the dependency-free browser search index
 from canonical content identities and Markdown sources. It deduplicates

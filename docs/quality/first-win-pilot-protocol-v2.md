@@ -80,19 +80,21 @@ The fixed answer key contains three findings:
 
 ## Study presentation
 
-The public First Win currently shows an acceptable example before the checks.
-That is part of the public surface, but it would cue an instrument intended to
-observe the participant's first independent judgment. Before recruitment,
-prepare a commit-bound study worksheet containing the exact public source,
-prompt, checks, rescue prompt, and boundary statement, with only this change:
-hide the example until the first judgment is locked. Record the public URL and
-worksheet digest. Do not call worksheet results evidence of unassisted public
-homepage use.
+The public optional warm-up keeps its acceptable example hidden until all three
+local check statuses are selected. That gate is part of the public surface, but
+the study worksheet must still bind the exact public source, prompt, checks,
+rescue prompt, comparison gate, and boundary statement to one commit. Record
+the public URL and worksheet digest. Do not call worksheet results evidence of
+unassisted public-homepage use.
 
-Run one separate, unscored public-surface observation after the instrument
-tasks. Record whether the participant can find the First Win, recognizes that
+Before the unaided baseline, run one separate, unscored public-surface
+observation. Record whether the participant can distinguish the recommended Codex
+path from the optional warm-up, locate the first local task, recognizes that
 the example is illustrative, and reaches the checks. Keep this observation
-separate from task scores.
+separate from task scores. A participant who chooses the warm-up has not
+thereby selected or completed the local Codex path. Do not show the worksheet,
+prompt, example, checks, rescue prompt, or answer key until this observation is
+finished.
 
 ## Phase 2 — First Win instruction
 

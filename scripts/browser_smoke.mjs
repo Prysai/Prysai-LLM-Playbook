@@ -113,12 +113,12 @@ try {
   assert.equal(searchRequests.length, 0, 'initial page load fetched the full search index');
   await noHorizontalOverflow(page, 'desktop showcase');
   assert.equal(await page.getByRole('button', { name: 'Compare with one acceptable shape' }).isDisabled(), true, 'First Win comparison is available before all three judgments');
-  assert.match(await page.locator('[data-first-win-receipt]').innerText(), /acceptance: incomplete/i, 'First Win does not expose an incomplete local record before checks');
+  assert.match(await page.locator('[data-first-win-receipt]').innerText(), /judgment_state: incomplete/i, 'First Win does not expose an incomplete local record before checks');
   await page.locator('[data-first-win-check="facts_kept"][value="FAIL"]').check();
   await page.locator('[data-first-win-check="action_kept"][value="PASS"]').check();
   await page.locator('[data-first-win-check="nothing_invented"][value="PASS"]').check();
   assert.equal(await page.getByRole('button', { name: 'Compare with one acceptable shape' }).isEnabled(), true, 'First Win comparison remains disabled after three judgments');
-  assert.match(await page.locator('[data-first-win-receipt]').innerText(), /first_nonpass: facts_kept[\s\S]*acceptance: not_accepted/i, 'First Win does not retain a recovery-needed local record');
+  assert.match(await page.locator('[data-first-win-receipt]').innerText(), /first_nonpass: facts_kept[\s\S]*judgment_state: not_all_checks_marked_pass/i, 'First Win does not retain a recovery-needed local record');
   const firstWinRecoveryHref = await page.getByRole('link', { name: 'Open recovery handoff', exact: true }).getAttribute('href');
   assert.match(firstWinRecoveryHref, /reader\.html\?path=book%2Fcommunication-clinic-EN\.md&lang=en#recovery-route$/, 'First Win recovery handoff is not a direct bounded route');
   await page.getByRole('button', { name: 'Copy my local check record' }).click();
@@ -126,7 +126,7 @@ try {
   await page.getByRole('button', { name: 'Compare with one acceptable shape' }).click();
   assert.equal(await page.locator('[data-first-win-comparison]').isVisible(), true, 'First Win comparison does not reveal after three judgments');
   await page.locator('[data-first-win-check="facts_kept"][value="PASS"]').check();
-  assert.match(await page.locator('[data-first-win-receipt]').innerText(), /first_nonpass: none[\s\S]*acceptance: accepted_on_this_check/i, 'First Win does not distinguish an all-pass local check');
+  assert.match(await page.locator('[data-first-win-receipt]').innerText(), /first_nonpass: none[\s\S]*judgment_state: all_checks_marked_pass/i, 'First Win does not distinguish an all-pass local check');
   const firstWinFinalState = await page.evaluate(() => ({
     checks: [...document.querySelectorAll('[data-first-win-check]')].map((input) => ({ name: input.name, value: input.value, checked: input.checked })),
     recoveryHidden: document.querySelector('[data-first-win-recovery-link]')?.hidden,
@@ -183,6 +183,7 @@ try {
 
   await page.setViewportSize({ width: 390, height: 844 });
   await noHorizontalOverflow(page, 'mobile showcase');
+  assert.match(await page.getByRole('link', { name: 'Open every problem route' }).getAttribute('href'), /reader\.html\?path=README-EN\.md&lang=en#choose-your-starting-point$/, 'mobile route index link does not target the canonical English README route section');
   assert.equal(await page.getByRole('button', { name: 'Copy rescue prompt' }).isVisible(), true, 'mobile rescue control is hidden');
   assert.equal(await page.getByRole('button', { name: 'Copy my local check record' }).isVisible(), true, 'mobile local record control is hidden');
 
