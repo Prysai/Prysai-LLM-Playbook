@@ -1,8 +1,8 @@
 # Mobile route chooser browser review — 2026-08-13
 
-**Status:** scoped local browser review  
-**Artifact status:** `candidate`  
-**Environment:** local static server, headless Microsoft Edge through Playwright  
+**Status:** scoped local browser review
+**Artifact status:** `candidate`
+**Environment:** local static server, headless Microsoft Edge through Playwright
 **Viewports:** 1280 × 720 and 390 × 844
 
 ## Question

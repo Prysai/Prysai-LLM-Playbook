@@ -1,7 +1,7 @@
 # Context Packet Builder responsibility audit and official curriculum structures
 
-**Status:** research record; proposed responsibility only  
-**Accessed:** 2026-08-13  
+**Status:** research record; proposed responsibility only
+**Accessed:** 2026-08-13
 **Scope:** the current twelve project Skills, one possible independent
 responsibility, and five first-party tutorial or exercise repositories
 
