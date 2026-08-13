@@ -19,7 +19,7 @@ Field Guide 应把外部项目当作资料、方法假设和候选索引，而�
 
 候选目录共记录 955 个 `SKILL.md`，其中 S02=2、S04=49、S05=24、S06=880；882 个条目带有待审查标记。目录是只读发现索引，不表示质量、许可证、依赖或安装批准。
 
-现有 7 个 Field Guide skills 均有 `SKILL.md` 和 `agents/openai.yaml`，并已通过临时 PyYAML 环境运行的 `scripts/validate_skills.py`：`SKILLS_VALIDATION_OK skills=7`。它们仍统一为 `candidate`，因为项目质量标准要求正例、边界例、失败例、迁移例、新鲜上下文验证、来源与维护责任；结构校验通过不等于运行或生产验证通过。
+现有 9 个 Field Guide skills 均有 `SKILL.md` 和 `agents/openai.yaml`，并已通过临时 PyYAML 环境运行的 `scripts/validate_skills.py`：`SKILLS_VALIDATION_OK skills=9`。它们仍统一为 `candidate`，因为项目质量标准要求正例、边界例、失败例、迁移例、新鲜上下文验证、来源与维护责任；结构校验通过不等于运行或生产验证通过。
 
 ## 2. 采用原则
 
@@ -152,4 +152,4 @@ Field Guide 决策：采用原则 / 仅参考 / 不采用 / blocked
 - `docs/integration-map.md`：六个来源的价值抽取、Field Guide 转译和边界说明；
 - `docs/skill-registry.md`：现有 7 个 Field Guide skill 均为 `candidate`；
 - `scripts/audit_input_archives.py`：六个归档均为 `ok`，并确认 S02 重复路径及各来源 skill 数量；
-- `scripts/validate_skills.py`：在临时 PyYAML 目标目录中通过，结果为 `SKILLS_VALIDATION_OK skills=7`。
+- `scripts/validate_skills.py`：在临时 PyYAML 目标目录中通过，结果为 `SKILLS_VALIDATION_OK skills=9`。

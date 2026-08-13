@@ -165,7 +165,7 @@
                 <a class="file-map-row" href="README.md"><code>site/</code><span><strong data-i18n="fileSiteTitle">Public showcase</strong><small data-i18n="fileSiteBody">index.html, styles.css, app.js, and generated learning-path data.</small></span><b aria-hidden="true">↗</b></a>
                 <a class="file-map-row" href="../book/table-of-contents-EN.md"><code>book/chapters/</code><span><strong data-i18n="fileChaptersTitle">Core learning text</strong><small data-i18n="fileChaptersBody">22 English chapter sources; current artifact status: candidate.</small></span><b aria-hidden="true">↗</b></a>
                 <a class="file-map-row" href="../book/labs/README-EN.md"><code>book/labs/</code><span><strong data-i18n="fileLabsTitle">Observable practice</strong><small data-i18n="fileLabsBody">17 labs; current status: draft; run status: not_run.</small></span><b aria-hidden="true">↗</b></a>
-                <a class="file-map-row" href="../docs/skill-registry.md"><code>skills/</code><span><strong data-i18n="fileSkillsTitle">Reusable methods</strong><small data-i18n="fileSkillsBody">7 project Skills with triggers, boundaries, and evidence contracts.</small></span><b aria-hidden="true">↗</b></a>
+                <a class="file-map-row" href="../docs/skill-registry.md"><code>skills/</code><span><strong data-i18n="fileSkillsTitle">Reusable methods</strong><small data-i18n="fileSkillsBody">9 project Skills with triggers, boundaries, and evidence contracts.</small></span><b aria-hidden="true">↗</b></a>
                 <a class="file-map-row" href="../docs/governance/update-map.md"><code>docs/</code><span><strong data-i18n="fileDocsTitle">Governance and research</strong><small data-i18n="fileDocsBody">Status, sources, field reports, update rules, and quality records.</small></span><b aria-hidden="true">↗</b></a>
               </div>
             </article>
@@ -219,7 +219,7 @@
               <a class="visual-case-card" href="../assets/teaching/task-to-evidence-red-black.svg"><img src="../assets/teaching/task-to-evidence-red-black.svg" alt="Request to evidence teaching board" loading="lazy" /><strong data-i18n="visualModelLink">Request to evidence</strong><small data-i18n="visualModelBody">Scope, action, check, and bounded handoff.</small><b aria-hidden="true">↗</b></a>
               <a class="visual-case-card" href="../assets/teaching/four-evidence-lenses-red-black.svg"><img src="../assets/teaching/four-evidence-lenses-red-black.svg" alt="Four evidence lenses teaching board" loading="lazy" /><strong data-i18n="visualSkillLink">Four evidence lenses</strong><small data-i18n="visualSkillBody">Existence, correctness, readiness, and learning.</small><b aria-hidden="true">↗</b></a>
               <a class="visual-case-card" href="../assets/teaching/field-signal-to-safe-degradation-red-black.svg"><img src="../assets/teaching/field-signal-to-safe-degradation-red-black.svg" alt="Field signals mapped to unsupported inferences and safe responses" loading="lazy" /><strong data-i18n="visualFieldLink">Field signal → safe degradation</strong><small data-i18n="visualFieldBody">Three open reports; no local reproduction or official root-cause confirmation.</small><b aria-hidden="true">↗</b></a>
-              <a class="visual-case-card" href="../docs/research/skill-case-product-context-real-estate-2026-08-11.md"><img src="../assets/cases/product-context-real-estate-desktop.png" alt="Local screenshot of a synthetic first-time buyer guide" loading="lazy" /><strong data-i18n="visualCaseLink">Real-estate guide case</strong><small data-i18n="visualCaseBody">Context draft → design handoff → buyer guide → desktop and mobile evidence.</small><b aria-hidden="true">↗</b></a>
+              <a class="visual-case-card" href="../docs/research/skill-case-product-context-real-estate-2026-08-11.md"><img src="../assets/cases/product-context-real-estate-thumbnail.png" alt="Purpose-cropped preview of a synthetic first-time buyer guide" loading="lazy" /><strong data-i18n="visualCaseLink">Real-estate guide case</strong><small data-i18n="visualCaseBody">Context draft → design handoff → buyer guide → desktop and mobile evidence.</small><b aria-hidden="true">↗</b></a>
             </div>
           </article>
         </div>
@@ -268,6 +268,41 @@
               <a class="button button-light" href="../book/chapters/02-first-safe-task-EN.md"><span data-i18n="openChapterTwo">Open chapter 2</span><span aria-hidden="true">↗</span></a>
             </div>
           </div>
+          <!-- starter-task-contract-site:start -->
+          <section class="starter-contract" aria-labelledby="starter-contract-title">
+            <div class="starter-contract-head">
+              <div><span class="eyebrow" data-i18n="starterEyebrow">Copy now · inspect before action</span><h3 id="starter-contract-title" data-i18n="starterTitle">One safe starter prompt.</h3></div>
+              <button class="button button-light" type="button" data-copy-starter><span data-i18n="starterCopy">Copy prompt</span></button>
+            </div>
+            <p data-i18n="starterIntro">Replace the brackets. The first response may inspect and propose, but it must wait for approval before changing anything.</p>
+            <pre data-starter-prompt><code>Help me complete one small, reversible task.
+
+Outcome: [one observable result].
+Context: [relevant files, input, and current state].
+
+First response — observe only:
+- inspect only the context needed for this task;
+- report what you found, missing inputs, and risks;
+- propose the smallest safe plan and the exact files or surfaces it would change;
+- do not edit, run a mutating command, or take an external action yet; wait for my approval.
+
+If I approve the plan:
+- act only inside the approved scope;
+- run [one focused check];
+- stop and ask if scope, authority, a destructive action, an external side effect, or acceptance is unclear.
+
+Do not access secrets or production, install dependencies, use the network, commit, push, publish, or broaden the task unless I explicitly authorize that exact action.
+
+Acceptance: [specific artifact or diff] and [specific check output].
+Delivery: actions taken, changed files or surfaces, check output, remaining unknowns, and actions not taken.</code></pre>
+            <p class="starter-contract-status" data-copy-starter-status aria-live="polite" data-i18n="starterBoundary">Copying or sending this prompt proves no action or correct result.</p>
+            <nav class="starter-progression" aria-label="Continue from the starter prompt" data-i18n-attr="aria-label:starterProgressionAria">
+              <a href="../book/chapters/03-task-protocol-EN.md#smallest-useful-protocol"><span>01</span><strong data-i18n="starterDeepen">Deepen the protocol</strong></a>
+              <a href="../book/labs/lab-002-task-protocol-EN.md"><span>02</span><strong data-i18n="starterPractice">Practise in Lab 002 · draft / not_run</strong></a>
+              <a href="../book/chapters/09-verification-and-recovery-EN.md"><span>03</span><strong data-i18n="starterEvidence">Review claims against evidence</strong></a>
+            </nav>
+          </section>
+          <!-- starter-task-contract-site:end -->
         </div>
       </section>
 
@@ -402,7 +437,7 @@
             <a href="../skills/prysai-learning-coach/SKILL.md"><span>08</span><strong data-i18n="skillLearningName">Learning Coach</strong><small data-i18n="skillLearning">Practise with recall, correction, delayed review, and transfer.</small><b>↗</b></a>
             <a href="../skills/prysai-source-investigator/SKILL.md"><span>09</span><strong data-i18n="skillSourceName">Source Investigator</strong><small data-i18n="skillSource">Turn broad searches into bounded source-backed investigations.</small><b>↗</b></a>
           </div>
-          <p class="skill-footnote" data-i18n="skillFootnote">All 9 project Skills pass structural checks and remain candidate; 3 have completed a basic fresh-context pretest, while the 2 newest are not run.</p>
+          <p class="skill-footnote" data-i18n="skillFootnote">All 9 project Skills pass structural checks and remain candidate; 3 have a basic pretest, 2 have only a minimal fresh-task sample, and 4 remain static-review only.</p>
         </div>
       </section>
 

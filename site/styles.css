@@ -383,6 +383,30 @@ button, input, select, textarea { font: inherit; }
   .trouble-row a { grid-column: 2; }
 }
 
+.starter-contract { margin-top: 2rem; padding: clamp(1.2rem, 3vw, 2rem); scroll-margin-top: 10rem; border: 1px solid #555; color: #fff; background: #151515; }
+.starter-contract-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; }
+.starter-contract h3 { margin: .35rem 0 0; font-size: clamp(1.6rem, 3vw, 2.8rem); letter-spacing: -.06em; }
+.starter-contract > p { max-width: 760px; color: #bbb; line-height: 1.6; }
+.starter-contract pre { max-height: 34rem; margin: 1.4rem 0; padding: 1.2rem; border: 1px solid #444; overflow: auto; white-space: pre-wrap; color: #f3f3ef; background: #090909; font: .76rem/1.6 Consolas, 'Courier New', monospace; }
+.starter-contract-status { min-height: 1.5em; }
+.starter-progression { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 1.4rem; border-top: 1px solid #555; }
+.starter-progression a { display: grid; grid-template-columns: 2rem 1fr; gap: .6rem; padding: 1rem .8rem 1rem 0; border-right: 1px solid #555; color: #fff; font-size: .76rem; }
+.starter-progression a:last-child { border-right: 0; padding-left: .8rem; }
+.starter-progression a:nth-child(2) { padding-left: .8rem; }
+.starter-progression span { color: var(--red); font-weight: 700; }
+.starter-progression a:hover strong, .starter-progression a:focus-visible strong { color: var(--red); }
+
+@media (max-width: 800px) {
+  .starter-progression { grid-template-columns: 1fr; }
+  .starter-progression a, .starter-progression a:nth-child(2), .starter-progression a:last-child { padding-left: 0; border-right: 0; border-bottom: 1px solid #555; }
+}
+
+@media (max-width: 480px) {
+  .starter-contract-head { flex-direction: column; }
+  .starter-contract pre { max-height: 24rem; font-size: .72rem; }
+  .starter-contract pre::after { content: 'Scroll to read the complete prompt'; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }

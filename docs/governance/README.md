@@ -13,6 +13,8 @@ book, site, translations, status, and maintenance records aligned.
 | Change a learning level | [`learning-path.yaml`](learning-path.yaml) | Site data and learning-path validator |
 | Propose or admit a chapter, lab, case, adapter, route, or reference unit | [`gold-content-admission.yaml`](gold-content-admission.yaml) | Hard-gate, family-contract, and admission-score validator |
 | Change an artifact's maturity | [`content-status.yaml`](content-status.yaml) | Status indexes and status validator |
+| Change the beginner copy-now prompt or its progression route | [`starter-task-contract.yaml`](starter-task-contract.yaml) | README, Chapter 3, and Pages projections plus negative fixtures |
+| Change page identity, source provenance, review window, or reuse boundary | [`page-trust-registry.yaml`](page-trust-registry.yaml) | Pilot page-trust validator and negative fixtures; public projection waits for full coverage |
 | Change Lab execution evidence | [`content-status.yaml`](content-status.yaml) + [`executable-examples.yaml`](executable-examples.yaml) | Separate maintainer-reference, learner, and transfer projections; legacy `run_status` remains learner-only |
 | Change a defect, resolution, or release blocker | [`quality-register.yaml`](quality-register.yaml) | Generated quality ledger and maturity-claim gate |
 | Change release evidence dimensions, blind spots, version, or rollback metadata | [`release-evidence.yaml`](release-evidence.yaml) | Commit-bound CI evidence packet |

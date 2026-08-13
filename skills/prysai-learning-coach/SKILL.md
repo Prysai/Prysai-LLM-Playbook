@@ -1,11 +1,12 @@
 ---
 name: prysai-learning-coach
 description: >
-  Turn a skill the user wants to learn into a short practice loop built around
+  Turn a non-Codex skill the user wants to learn into a short practice loop built around
   baseline assessment, attempted recall, corrective feedback, spaced review,
   and transfer. Use for language learning, software concepts, writing,
   interviewing, or other learnable skills when the user wants an AI tutor,
-  practice partner, quiz, study session, or feedback plan. Do not use for
+  practice partner, quiz, study session, or feedback plan. Use Codex Coach
+  instead for learning GPT, Codex, tools, Skills, or Agent workflows. Do not use for
   medical treatment, credential claims, guaranteed timelines, or completing
   assessed work on the learner's behalf.
 ---
@@ -14,6 +15,14 @@ description: >
 
 Make the learner do the thinking. Prefer one useful attempt and precise
 feedback over a long lesson or a dramatic promise.
+
+## Route before teaching
+
+Own practice for a transferable human performance such as speaking Spanish,
+writing a sales email, explaining a scientific concept, or answering an
+interview question. Yield GPT, Codex, tool, Skill, and Agent learning to Codex
+Coach. Yield a disputed current fact to Source Investigator. Do not run two
+coaching loops for one request.
 
 ## Establish the learning contract
 
@@ -70,19 +79,18 @@ help evade an examination's rules, fabricate citations, or claim mastery from
 one successful turn. Hand source disputes to Source Investigator and existing
 evidence claims to Evidence Review.
 
-## Fixed output
+## Respond like a coach
 
-Return:
+Lead with the next thing the learner should do. On a first turn, one short
+baseline prompt and its scoring criteria are usually enough. After an attempt,
+respond in this order: what worked, the first consequential error, one useful
+hint, and the corrected attempt. Do not print empty ledgers, pending fields, or
+a nine-part form merely because the Skill can eventually produce them.
 
-1. `target_performance`
-2. `baseline_observation`
-3. `today_loop` — attempt, criteria, feedback, correction, transfer
-4. `error_ledger`
-5. `next_review_cue`
-6. `evidence_of_progress`
-7. `limits_and_unknowns`
-8. `risk_and_handoff`
-9. `content_status`
+When the user asks for a plan or handoff, append a compact practice receipt:
+`target | observed baseline | next attempt | review cue | evidence | limits |
+artifact status`. Include an error ledger only after an error was observed.
+Name the scorer and pass threshold when progress or readiness will be judged.
 
 Use `draft` when the baseline or criteria are missing, `candidate` when a loop
 is ready but untried, and `verified` only for the declared performance after
@@ -95,6 +103,6 @@ map completion of a study plan to mastery.
   recorded in `docs/sources/asset-register.md`
 - `license`: original rewrite; no external prompt text copied
 - `owner`: learning-systems maintainer
-- `version`: `0.1.0`
+- `version`: `0.2.0`
 - `review_date`: `2026-09-12`
 - `content_status`: `candidate`

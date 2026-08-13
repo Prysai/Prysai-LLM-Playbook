@@ -1,0 +1,19 @@
+{
+  "schema_version": "1",
+  "content_id": "starter-task-contract",
+  "status": "candidate",
+  "owner": "curriculum-maintainer",
+  "reviewed_at": "2026-08-12",
+  "next_review": "2026-09-12",
+  "audience": ["beginner", "practitioner", "advanced"],
+  "risk_scope": "low-risk, reversible work without credentials, production, destructive actions, or external side effects",
+  "prompt": "Help me complete one small, reversible task.\n\nOutcome: [one observable result].\nContext: [relevant files, input, and current state].\n\nFirst response — observe only:\n- inspect only the context needed for this task;\n- report what you found, missing inputs, and risks;\n- propose the smallest safe plan and the exact files or surfaces it would change;\n- do not edit, run a mutating command, or take an external action yet; wait for my approval.\n\nIf I approve the plan:\n- act only inside the approved scope;\n- run [one focused check];\n- stop and ask if scope, authority, a destructive action, an external side effect, or acceptance is unclear.\n\nDo not access secrets or production, install dependencies, use the network, commit, push, publish, or broaden the task unless I explicitly authorize that exact action.\n\nAcceptance: [specific artifact or diff] and [specific check output].\nDelivery: actions taken, changed files or surfaces, check output, remaining unknowns, and actions not taken.",
+  "required_phases": ["observe only", "wait for my approval", "If I approve the plan", "Acceptance", "Delivery"],
+  "required_boundaries": ["secrets", "production", "destructive action", "external side effect", "commit", "push", "publish", "remaining unknowns", "actions not taken"],
+  "progression": {
+    "beginner_next": "book/chapters/03-task-protocol-EN.md#smallest-useful-protocol",
+    "practice_next": "book/labs/lab-002-task-protocol-EN.md",
+    "evidence_next": "book/chapters/09-verification-and-recovery-EN.md"
+  },
+  "evidence_boundary": "Copying or sending this contract proves no action, correct result, learning, transfer, or platform behavior. Preserve the actual observation, approval, diff or artifact, check output, and unverified items."
+}

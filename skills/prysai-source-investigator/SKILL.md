@@ -1,10 +1,12 @@
 ---
 name: prysai-source-investigator
 description: >
-  Turn a broad information-search request into a bounded investigation with a
+  Execute a narrow current-source investigation with a
   precise question, source hierarchy, claim ledger, conflict handling,
   freshness checks, and a stopping rule. Use when the user asks to find,
-  compare, verify, or research current information for a decision. Do not use
+  verify current information for a decision. Use Research Router instead to
+  scope a broad topic, design a literature review, or plan a multi-source
+  research deliverable. Do not use
   as the primary route for casual brainstorming, reviewing evidence already
   supplied, product-context ownership, or claiming that search results prove
   real-world outcomes.
@@ -14,6 +16,14 @@ description: >
 
 Investigate a decision, not a topic-shaped cloud. Preserve the trail from each
 important sentence back to the source that owns the fact.
+
+## Route before searching
+
+Own a bounded lookup whose decision, candidate set, and deliverable are already
+clear. Yield broad topic scoping, literature-review design, and research-plan
+construction to Research Router. Yield an existing packet to Evidence Review.
+If the missing scope would change which sources count, ask one focused question
+instead of starting a parallel research workflow.
 
 ## Freeze the question
 
@@ -66,20 +76,18 @@ ownership is unclear, a paywalled or private source cannot be lawfully used, or
 the requested certainty exceeds the evidence. Mark volatile claims with an
 access date, owner, and next review.
 
-## Fixed output
+## Report for the decision
 
-Return:
+Lead with the bounded finding or state that the evidence cannot support one.
+Use the smallest format the decision needs. A simple lookup may need one
+sentence, two sources, and one caveat; a contested comparison may need a claim
+ledger. Do not force every request through a ten-part report.
 
-1. `investigation_question`
-2. `scope_and_exclusions`
-3. `source_plan`
-4. `claim_ledger`
-5. `conflicts_and_unknowns`
-6. `decision_relevance`
-7. `stopping_reason`
-8. `next_check`
-9. `risk_and_side_effects`
-10. `content_status`
+End with a compact investigation receipt:
+`question | checked sources and dates | finding | conflict or unknown | stop
+reason | next check | side effects | artifact status`. Label a recommendation
+`provisional` until all decision-changing environment facts have been checked.
+Do not make a pick merely because the user demanded certainty.
 
 Use `draft` while decision-critical claims lack sources, `candidate` when the
 ledger is complete enough for review, and `verified` only within the recorded
@@ -92,6 +100,6 @@ current claim without current evidence.
   and source-governance contracts
 - `license`: original rewrite; external sources remain reference-only
 - `owner`: research-systems maintainer
-- `version`: `0.1.0`
+- `version`: `0.2.0`
 - `review_date`: `2026-09-12`
 - `content_status`: `candidate`

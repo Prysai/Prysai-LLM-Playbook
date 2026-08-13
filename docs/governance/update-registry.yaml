@@ -144,6 +144,26 @@
       "next_review": "2026-09-12"
     },
     {
+      "area": "starter-task-contract",
+      "canonical_paths": ["docs/governance/starter-task-contract.yaml", "README.md", "README-EN.md", "book/chapters/03-task-protocol-EN.md", "site/index.html", "site/app.js", "site/styles.css", "scripts/validate_starter_task_contract.py", "scripts/test_starter_task_contract.py"],
+      "owner": "curriculum-maintainer",
+      "triggers": ["beginner-entry-change", "starter-prompt-change", "approval-boundary-change", "prompt-projection-change", "progression-route-change"],
+      "required_inputs": ["observable-outcome", "relevant-context", "observation-only-first-response", "approval-gate", "action-boundaries", "acceptance", "delivery-evidence", "advanced-progression"],
+      "validation_commands": ["scripts/validate_starter_task_contract.py", "scripts/test_starter_task_contract.py", "scripts/check_local_links.py", "scripts/validate_site_accessibility.py", "scripts/build_pages_artifact.py --check"],
+      "status_fields": ["status", "owner", "risk_scope", "reviewed_at", "next_review", "evidence_boundary"],
+      "next_review": "2026-09-12"
+    },
+    {
+      "area": "page-trust-registry",
+      "canonical_paths": ["docs/governance/page-trust-registry.yaml", "scripts/validate_page_trust_registry.py", "scripts/test_page_trust_registry.py", "docs/research/live-documentation-trust-and-provenance-benchmark-2026-08-12.md", "docs/sources/asset-register.md"],
+      "owner": "documentation-engineering-maintainer",
+      "triggers": ["page-identity-change", "fact-risk-change", "source-provenance-change", "review-window-change", "license-boundary-change", "coverage-promotion"],
+      "required_inputs": ["content-id", "artifact-status", "applicability", "fact-risk", "owner", "review-window", "authoritative-sources", "access-date", "license-boundary", "reuse-boundary", "limitations"],
+      "validation_commands": ["scripts/validate_page_trust_registry.py", "scripts/test_page_trust_registry.py", "scripts/validate_update_registry.py", "scripts/check_local_links.py"],
+      "status_fields": ["status", "coverage", "fact_risk", "owner", "last_reviewed", "next_review", "limitations"],
+      "next_review": "2026-09-12"
+    },
+    {
       "area": "release-and-rollback",
       "canonical_paths": ["docs/release-checklist.md", "docs/governance/content-lifecycle.md", "docs/governance/release-evidence.yaml", "docs/governance/release-readiness.yaml", "scripts/build_release_evidence.py", "scripts/validate_release_readiness.py", "scripts/test_release_readiness.py", "docs/adr/0021-commit-bound-release-evidence.md", "docs/adr/0026-machine-readable-release-readiness.md"],
       "owner": "release-maintainer",

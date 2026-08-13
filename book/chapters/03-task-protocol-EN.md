@@ -219,6 +219,44 @@ careful” does not repair a missing dependency.
 
 ## Smallest useful protocol
 
+<!-- starter-task-contract:start -->
+
+### Copy one safe starter prompt
+
+Replace the bracketed fields and require an observation-only first response.
+The approval pause is the bridge from a beginner request to an inspectable
+workflow; do not delete it merely to make the prompt shorter.
+
+```text
+Help me complete one small, reversible task.
+
+Outcome: [one observable result].
+Context: [relevant files, input, and current state].
+
+First response — observe only:
+- inspect only the context needed for this task;
+- report what you found, missing inputs, and risks;
+- propose the smallest safe plan and the exact files or surfaces it would change;
+- do not edit, run a mutating command, or take an external action yet; wait for my approval.
+
+If I approve the plan:
+- act only inside the approved scope;
+- run [one focused check];
+- stop and ask if scope, authority, a destructive action, an external side effect, or acceptance is unclear.
+
+Do not access secrets or production, install dependencies, use the network, commit, push, publish, or broaden the task unless I explicitly authorize that exact action.
+
+Acceptance: [specific artifact or diff] and [specific check output].
+Delivery: actions taken, changed files or surfaces, check output, remaining unknowns, and actions not taken.
+```
+
+Copying or sending the prompt proves no action or correct result. Use the
+protocol fields below to adapt it, [Lab 002](../labs/lab-002-task-protocol-EN.md)
+to practise it, and [Chapter 9](09-verification-and-recovery-EN.md) to review
+each completion claim against evidence.
+
+<!-- starter-task-contract:end -->
+
 For a low-risk local edit, this is often enough:
 
 ```text

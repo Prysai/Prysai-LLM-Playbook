@@ -1,10 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
   <title id="title">Turn a request into evidence</title>
   <desc id="desc">A red and black teaching board showing the path from a request through scope, action, and evidence to a bounded handoff.</desc>
-  <defs>
-    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#fff" stroke-opacity=".06"/></pattern>
-    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  </defs>
+  <defs><pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#fff" stroke-opacity=".06"/></pattern></defs>
   <rect width="1600" height="900" fill="#11151a"/><rect width="1600" height="900" fill="url(#grid)"/>
   <path d="M0 760H1600" stroke="#fff" stroke-opacity=".16"/><path d="M1050 0V900" stroke="#fff" stroke-opacity=".12"/>
   <g fill="#f4f1ea" font-family="Arial,Helvetica,sans-serif">
@@ -13,15 +10,14 @@
     <text x="80" y="310" font-size="92" font-weight="800" letter-spacing="-4" fill="#ff5b45">→ EVIDENCE</text>
     <text x="84" y="370" font-size="22" fill="#c8cdd2" letter-spacing="1">A task is not complete because the answer sounds certain.</text>
   </g>
-  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M100 550C260 470 380 620 540 530S800 460 950 565" stroke="#ff5b45" stroke-width="10" filter="url(#glow)"/>
-    <path d="M100 550C260 470 380 620 540 530S800 460 950 565" stroke="#ff806b" stroke-width="3"/>
+  <g fill="none" stroke-linejoin="miter">
+    <path d="M100 550H250V510H540V550H780V510H950" stroke="#ff5b45" stroke-width="8"/>
     <path d="M1120 540H1510" stroke="#f4f1ea" stroke-opacity=".8" stroke-width="3"/>
     <path d="M1120 540L1195 470L1280 520L1380 390L1510 270" stroke="#f4f1ea" stroke-width="5"/>
   </g>
-  <g fill="#ff5b45"><circle cx="250" cy="507" r="10"/><circle cx="540" cy="530" r="10"/><circle cx="780" cy="500" r="10"/><circle cx="1195" cy="470" r="10"/><circle cx="1280" cy="520" r="10"/><circle cx="1380" cy="390" r="10"/></g>
+  <g fill="#ff5b45"><rect x="240" y="500" width="20" height="20"/><rect x="530" y="540" width="20" height="20"/><rect x="770" y="500" width="20" height="20"/><circle cx="1195" cy="470" r="10"/><circle cx="1280" cy="520" r="10"/><circle cx="1380" cy="390" r="10"/></g>
   <g fill="#f4f1ea" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="2">
-    <text x="86" y="650">01 / SCOPE</text><text x="330" y="650">02 / ACT</text><text x="572" y="650">03 / CHECK</text><text x="800" y="650">04 / HAND OFF</text>
+    <text x="86" y="650">01 / SCOPE</text><text x="330" y="650">02 / ACT</text><text x="572" y="650">03 / CHECK</text><text x="800" y="650">04 / HANDOFF</text>
     <text x="1115" y="620">CLAIM</text><text x="1270" y="620">PROOF</text><text x="1400" y="620">LIMIT</text>
   </g>
   <g fill="#aeb6be" font-family="Arial,Helvetica,sans-serif" font-size="14" letter-spacing=".5">

@@ -1,70 +1,62 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-  <title id="title">Model choice is a test, not model worship</title>
-  <desc id="desc">A classroom-style diagram showing a task passing through a comparison tuple, three smoke tests, evidence, and a bounded decision.</desc>
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#10161d"/>
-      <stop offset="1" stop-color="#1e2a32"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#ff806b"/>
-      <stop offset="1" stop-color="#ffc36b"/>
-    </linearGradient>
-    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
-      <path d="M48 0H0V48" fill="none" stroke="#fff" stroke-opacity=".06"/>
-    </pattern>
-    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  </defs>
-  <rect width="1600" height="900" fill="url(#bg)"/>
-  <rect width="1600" height="900" fill="url(#grid)"/>
-  <path d="M72 144H1528" stroke="#fff" stroke-opacity=".14"/>
-  <g font-family="Arial, Helvetica, sans-serif" fill="#f3f0ea">
-    <text x="72" y="78" font-size="18" font-weight="700" letter-spacing="4">FIELD GUIDE / CHAPTER 06 / TEACHING CARD</text>
-    <text x="72" y="220" font-size="76" font-weight="800" letter-spacing="-3">MODEL CHOICE</text>
-    <text x="72" y="296" font-size="76" font-weight="800" letter-spacing="-3" fill="url(#accent)">IS A TEST</text>
-    <text x="78" y="352" font-size="22" fill="#c8d0d5">A model label is a hypothesis. The task evidence decides.</text>
+  <title id="title">Model choice is a bounded comparison</title>
+  <desc id="desc">A red, black, and cream editorial board. One fixed task contract passes through a complete working-condition comparison and the same smoke tests before a scoped decision is recorded.</desc>
+  <rect width="1600" height="900" fill="#111315"/>
+  <rect x="0" y="0" width="34" height="900" fill="#e43b2f"/>
+  <path d="M76 128H1524M76 748H1524" stroke="#e8e2d7" stroke-opacity=".28"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="76" y="84" fill="#e43b2f" font-size="18" font-weight="700" letter-spacing="4">FIELD TEST / MODEL SELECTION / 06</text>
+    <text x="76" y="214" fill="#f0ebe1" font-size="84" font-weight="800" letter-spacing="-4">A LABEL IS A HYPOTHESIS.</text>
+    <text x="80" y="267" fill="#a9adb0" font-size="23">Keep the task fixed. Compare the complete working condition. Record only what the tests support.</text>
+
+    <g transform="translate(76 350)">
+      <rect width="280" height="310" fill="#f0ebe1"/>
+      <rect width="280" height="14" fill="#e43b2f"/>
+      <text x="24" y="58" fill="#e43b2f" font-size="15" font-weight="700" letter-spacing="3">01 / FIX</text>
+      <text x="24" y="112" fill="#151719" font-size="31" font-weight="800">TASK</text>
+      <text x="24" y="154" fill="#151719" font-size="31" font-weight="800">CONTRACT</text>
+      <path d="M24 184H256" stroke="#151719" stroke-opacity=".25"/>
+      <text x="24" y="220" fill="#43474a" font-size="17">goal / context / risk</text>
+      <text x="24" y="250" fill="#43474a" font-size="17">acceptance / stop rule</text>
+      <text x="24" y="286" fill="#151719" font-size="14" font-weight="700">SAME INPUT FOR EVERY RUN</text>
+    </g>
+
+    <g transform="translate(386 350)">
+      <rect width="404" height="310" fill="#202326" stroke="#666a6d"/>
+      <text x="24" y="58" fill="#e43b2f" font-size="15" font-weight="700" letter-spacing="3">02 / COMPARE</text>
+      <text x="24" y="112" fill="#f0ebe1" font-size="31" font-weight="800">WHOLE CONDITION</text>
+      <path d="M24 142H380" stroke="#f0ebe1" stroke-opacity=".22"/>
+      <text x="24" y="183" fill="#c4c1ba" font-size="18">model + provider + surface</text>
+      <text x="24" y="217" fill="#c4c1ba" font-size="18">context + tools + permissions</text>
+      <rect x="24" y="252" width="356" height="34" fill="#111315"/>
+      <text x="38" y="275" fill="#e43b2f" font-size="14" font-weight="700">MARK INCOMPARABLE CONDITIONS</text>
+    </g>
+
+    <g transform="translate(820 350)">
+      <rect width="324" height="310" fill="#f0ebe1"/>
+      <text x="24" y="58" fill="#e43b2f" font-size="15" font-weight="700" letter-spacing="3">03 / OBSERVE</text>
+      <text x="24" y="112" fill="#151719" font-size="31" font-weight="800">THREE TESTS</text>
+      <path d="M24 142H300" stroke="#151719" stroke-opacity=".25"/>
+      <text x="24" y="182" fill="#151719" font-size="18" font-weight="700">A / routine success</text>
+      <text x="24" y="218" fill="#151719" font-size="18" font-weight="700">B / tool boundary</text>
+      <text x="24" y="254" fill="#151719" font-size="18" font-weight="700">C / recovery</text>
+      <text x="24" y="288" fill="#565a5d" font-size="14">time / output / failure / proof</text>
+    </g>
+
+    <g transform="translate(1174 350)">
+      <rect width="350" height="310" fill="#e43b2f"/>
+      <text x="24" y="58" fill="#151719" font-size="15" font-weight="700" letter-spacing="3">04 / DECIDE</text>
+      <text x="24" y="112" fill="#fff8ed" font-size="31" font-weight="800">FOR THIS TASK</text>
+      <text x="24" y="151" fill="#fff8ed" font-size="31" font-weight="800">IN THIS SCOPE</text>
+      <path d="M24 180H326" stroke="#151719" stroke-opacity=".42"/>
+      <text x="24" y="220" fill="#151719" font-size="17" font-weight="700">record what passed</text>
+      <text x="24" y="252" fill="#151719" font-size="17" font-weight="700">record what remains unknown</text>
+      <text x="24" y="287" fill="#fff8ed" font-size="14" font-weight="700">NO UNIVERSAL RANKING</text>
+    </g>
+
+    <path d="M356 505H386M790 505H820M1144 505H1174" stroke="#e43b2f" stroke-width="6"/>
+    <text x="76" y="797" fill="#e43b2f" font-size="15" font-weight="700" letter-spacing="3">EVIDENCE BOUNDARY</text>
+    <text x="76" y="832" fill="#a9adb0" font-size="17">This board proves no universal cost, speed, stability, quality, or account-wide availability.</text>
+    <text x="1524" y="832" text-anchor="end" fill="#74787b" font-size="14">PRYSAI LAB / PROJECT-OWNED TEACHING ASSET</text>
   </g>
-  <g transform="translate(72 440)" font-family="Arial, Helvetica, sans-serif">
-    <rect width="270" height="224" rx="18" fill="#f3f0ea"/>
-    <text x="28" y="46" font-size="14" font-weight="700" letter-spacing="2" fill="#65727b">01 / TASK</text>
-    <text x="28" y="92" font-size="25" font-weight="700" fill="#14212a">What must be</text>
-    <text x="28" y="124" font-size="25" font-weight="700" fill="#14212a">true when done?</text>
-    <text x="28" y="177" font-size="16" fill="#52616a">Goal · context · risk</text>
-    <text x="28" y="201" font-size="16" fill="#52616a">acceptance · stop</text>
-  </g>
-  <path d="M352 552H418" stroke="#ff806b" stroke-width="4" marker-end="url(#arrow)"/>
-  <g transform="translate(430 440)" font-family="Arial, Helvetica, sans-serif">
-    <rect width="320" height="224" rx="18" fill="#202f38" stroke="#ff806b" stroke-width="2"/>
-    <text x="28" y="46" font-size="14" font-weight="700" letter-spacing="2" fill="#ffb19f">02 / TUPLE</text>
-    <text x="28" y="88" font-size="22" font-weight="700" fill="#f3f0ea">Compare the whole</text>
-    <text x="28" y="118" font-size="22" font-weight="700" fill="#f3f0ea">working condition</text>
-    <text x="28" y="160" font-size="15" fill="#c8d0d5">model · provider · surface</text>
-    <text x="28" y="184" font-size="15" fill="#c8d0d5">context · tools · permissions</text>
-  </g>
-  <path d="M760 552H826" stroke="#ff806b" stroke-width="4" marker-end="url(#arrow)"/>
-  <g transform="translate(838 440)" font-family="Arial, Helvetica, sans-serif">
-    <rect width="290" height="224" rx="18" fill="#f3f0ea"/>
-    <text x="28" y="46" font-size="14" font-weight="700" letter-spacing="2" fill="#65727b">03 / SMOKE TEST</text>
-    <text x="28" y="90" font-size="22" font-weight="700" fill="#14212a">Same three tasks</text>
-    <text x="28" y="122" font-size="22" font-weight="700" fill="#14212a">or mark incomparable</text>
-    <text x="28" y="164" font-size="15" fill="#52616a">success · time · output</text>
-    <text x="28" y="188" font-size="15" fill="#52616a">failure · evidence</text>
-  </g>
-  <path d="M1138 552H1204" stroke="#ff806b" stroke-width="4" marker-end="url(#arrow)"/>
-  <g transform="translate(1216 440)" font-family="Arial, Helvetica, sans-serif">
-    <rect width="312" height="224" rx="18" fill="#202f38" stroke="#ffc36b" stroke-width="2"/>
-    <text x="28" y="46" font-size="14" font-weight="700" letter-spacing="2" fill="#ffd994">04 / DECISION</text>
-    <text x="28" y="90" font-size="22" font-weight="700" fill="#f3f0ea">Choose for this task</text>
-    <text x="28" y="122" font-size="22" font-weight="700" fill="#f3f0ea">within this scope</text>
-    <text x="28" y="164" font-size="15" fill="#c8d0d5">record what passed</text>
-    <text x="28" y="188" font-size="15" fill="#c8d0d5">and what remains unknown</text>
-  </g>
-  <g font-family="Arial, Helvetica, sans-serif" fill="#9eabb3" font-size="14">
-    <text x="72" y="774">EVIDENCE BOUNDARY</text>
-    <text x="72" y="808">This card does not prove a universal ranking, cost, speed, stability, or account-wide availability.</text>
-    <text x="1528" y="808" text-anchor="end">Prysai Lab / original SVG / 2026-08-11</text>
-  </g>
-  <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#ff806b"/></marker>
-  </defs>
 </svg>

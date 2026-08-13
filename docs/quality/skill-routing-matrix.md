@@ -15,7 +15,7 @@ rules.
    safety block; another Skill must not silently replace it.
 2. Project rules, user constraints, and permission gates outrank every Skill.
 3. If no Skill is explicit, choose the narrowest Skill whose primary question
-   matches the task. Do not load all seven by default.
+   matches the task. Do not load all nine by default.
 4. A Skill may hand off only to a named downstream responsibility in the table.
    Handoffs transfer control; they are not recursive co-ownership.
 5. Evidence Review is an audit gate, not a universal preamble. It reviews an
@@ -32,15 +32,15 @@ rules.
 
 | Skill | Primary question | Owns | Must yield to | Must not own |
 |---|---|---|---|---|
-| `prysai-codex-coach` / Codex Coach | “How do I learn or practice this?” | learning level, explanation, experiment, reflection, transfer | explicit Skill; Task Protocol; Evidence Review; Research Router; Skill Selector; Workflow Orchestrator; Product Context | execution, installation, source synthesis, product claims |
+| `prysai-codex-coach` / Codex Coach | “How do I learn GPT, Codex, tools, Skills, or Agent workflows?” | Codex-domain learning level, explanation, experiment, reflection, transfer | Learning Coach for non-Codex performance; explicit Skill; Task Protocol; Evidence Review; Research Router; Skill Selector; Workflow Orchestrator; Product Context | general tutoring, execution, installation, source synthesis, product claims |
 | `prysai-task-protocol` / Task Protocol | “What exactly is the bounded task?” | goal, inputs, constraints, actions, acceptance, failure, delivery | explicit Skill; Workflow Orchestrator after readiness; domain route for unresolved method | execution, evidence audit, method selection |
 | `prysai-evidence-review` / Evidence Review | “What does the evidence actually prove?” | claim table, coverage, freshness, status, next check | explicit non-audit Skill; Research Router for new research | repair, execution, invented proof |
 | `prysai-skill-selector` / Skill Selector | “Which smallest Skill set fits?” | fit, overlap, dependencies, license, permissions, smoke test, rollback | explicit Skill; Task Protocol for unclear task; Workflow Orchestrator for settled execution | general teaching, task execution, correctness certification |
 | `prysai-workflow-orchestrator` / Workflow Orchestrator | “How do dependent stages reach delivery?” | stage graph, checkpoints, recovery, handoffs, delivery status | explicit bounded Skill for a stage; Task Protocol for initial contract | domain method details, permission granting, evidence invention |
-| `prysai-research-router` / Research Router | “What question and sources support this?” | scope, search method, extraction, citations, conflicts, limitations | explicit Skill; Evidence Review for auditing an existing report | unsupported conclusions, generic execution, product context ownership |
+| `prysai-research-router` / Research Router | “How should this broad research question be scoped and routed?” | topic decomposition, research design, source plan, extraction and review method | Source Investigator for a settled current lookup; explicit Skill; Evidence Review for auditing an existing report | narrow lookup execution, unsupported conclusions, generic execution, product context ownership |
 | `prysai-product-context` / Product Context | “What shared product and audience context is authoritative?” | versioned facts, hypotheses, audience, positioning, message constraints, changelog | explicit Skill; Research Router for external fact-finding; Evidence Review for audit | customer research, campaign execution, publication |
-| `prysai-learning-coach` / Learning Coach | “How do I practise this until I can perform it?” | baseline, retrieval attempt, feedback, correction, transfer, review cue | Source Investigator for disputed facts; Evidence Review for mastery claims | guaranteed timelines, assessed-work substitution, medical diagnosis |
-| `prysai-source-investigator` / Source Investigator | “What current sources support this decision?” | bounded question, source hierarchy, claim ledger, conflicts, freshness, stopping rule | Evidence Review for an existing packet; Product Context for owned product facts | generic tutoring, side effects, outcome claims |
+| `prysai-learning-coach` / Learning Coach | “How do I practise this non-Codex skill until I can perform it?” | baseline, retrieval attempt, feedback, correction, transfer, review cue | Codex Coach for GPT/Codex learning; Source Investigator for disputed facts; Evidence Review for mastery claims | Codex curriculum, guaranteed timelines, assessed-work substitution, medical diagnosis |
+| `prysai-source-investigator` / Source Investigator | “Which current sources answer this already-bounded decision?” | narrow lookup execution, source hierarchy, claim ledger when needed, conflicts, freshness, stopping receipt | Research Router for broad scoping or literature-review design; Evidence Review for an existing packet; Product Context for owned product facts | broad research planning, generic tutoring, side effects, outcome claims |
 
 ## Allowed handoff graph
 
@@ -48,14 +48,14 @@ The default graph is finite:
 
 ```text
 user
- ├─ learning/practice ──> Codex Coach
+ ├─ GPT/Codex learning ──> Codex Coach
  ├─ unclear task ───────> Task Protocol
  ├─ existing claim ─────> Evidence Review
  ├─ skill decision ─────> Skill Selector
- ├─ research question ──> Research Router
+ ├─ broad research design > Research Router
  ├─ product context ────> Product Context
- ├─ learning practice ──> Learning Coach
- ├─ current search ─────> Source Investigator
+ ├─ non-Codex practice ─> Learning Coach
+ ├─ bounded current lookup > Source Investigator
  └─ multi-stage work ───> Workflow Orchestrator
 
 Workflow Orchestrator

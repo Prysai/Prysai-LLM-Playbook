@@ -25,8 +25,13 @@
 - [x] Run all 39 commit-bound release-evidence commands.
 - [x] Run all nine official Skill validators.
 - [x] Parse workflow YAML through the release gate and scan changed files for credentials.
-- [ ] Browser-check desktop and 390px status presentation (blocked: the in-app
-      browser policy rejects local `file://` pages; static accessibility,
-      i18n, links, and direct visual asset renders passed).
+- [x] Browser-check desktop and 390px Pages presentation through local HTTP:
+      no horizontal overflow, console errors, or page errors; starter prompt
+      and 9-Skill status were read back; the mobile starter crop exposed and
+      received a bounded-height correction.
 - [ ] Commit and push `main`.
-- [ ] Download and inspect the exact-SHA GitHub release-evidence artifact.
+- [x] Download and inspect the exact-SHA GitHub release-evidence artifact for
+      `39634735bc588b2070fbd4afa4b193d54f9b5e74`: 6/6 dimensions and 39/39
+      commands passed; decision remains candidate, release readiness remains
+      not_ready, Q-001/Q-011 remain active, failure/recovery exits are 1/0,
+      cleanup is recorded, and annotations are empty.

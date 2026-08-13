@@ -1,0 +1,97 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-08-12",
+  "status": "candidate",
+  "coverage": {
+    "kind": "pilot",
+    "registered_pages": 3,
+    "canonical_english_chapters": 22,
+    "claim_boundary": "Only the three listed English chapter sources have page trust records. Registry validation is not source, learner, runtime, translation, license, deployment, or production evidence."
+  },
+  "records": [
+    {
+      "content_id": "chapter-01-gpt-and-codex",
+      "canonical_path": "book/chapters/01-gpt-and-codex-EN.md",
+      "canonical_locale": "en",
+      "content_status": "candidate",
+      "fact_risk": "stable_concept",
+      "applies_to": "Transferable GPT, Codex, tool, Skill, and Agent boundaries as defined by this project; current product controls require separate official fact records.",
+      "owner": "curriculum-maintainer",
+      "reviewed_at": "2026-08-12",
+      "next_review": "2026-11-12",
+      "sources": [
+        {
+          "url": "https://github.com/openai/codex/tree/902bd9e06b3ecb32cbf7f8e64cd23b956be3e7fe",
+          "accessed_at": "2026-08-12",
+          "role": "first-party product and repository boundary",
+          "license_boundary": "Repository reports Apache-2.0; hosted product documentation, trademarks, linked material, and current behavior remain separately governed."
+        }
+      ],
+      "reuse_boundary": "Project-authored teaching expression. External sources are cited as reference-only and are not copied into the chapter.",
+      "known_limitations": [
+        "The record does not verify a learner outcome or hidden model reasoning.",
+        "It does not establish current product availability, controls, or account behavior."
+      ]
+    },
+    {
+      "content_id": "chapter-05-choose-the-codex-surface",
+      "canonical_path": "book/chapters/05-choose-the-codex-surface-EN.md",
+      "canonical_locale": "en",
+      "content_status": "candidate",
+      "fact_risk": "volatile_product",
+      "applies_to": "The source-scoped Codex surface decision method and product boundaries checked on 2026-08-12; recheck current official documentation before publication or operational use.",
+      "owner": "platform-adapter-maintainer",
+      "reviewed_at": "2026-08-12",
+      "next_review": "2026-09-12",
+      "sources": [
+        {
+          "url": "https://learn.chatgpt.com/docs/codex/cli",
+          "accessed_at": "2026-08-12",
+          "role": "current first-party Codex CLI product guidance",
+          "license_boundary": "Hosted OpenAI documentation is reference-only for this project; no reuse grant for prose, screenshots, or product marks is inferred."
+        },
+        {
+          "url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
+          "accessed_at": "2026-08-12",
+          "role": "current first-party project-instruction guidance",
+          "license_boundary": "Hosted OpenAI documentation is reference-only and volatile."
+        }
+      ],
+      "reuse_boundary": "Project-authored decision method with cited official facts. Do not copy product prose, screenshots, UI expression, or marks.",
+      "known_limitations": [
+        "No account-level availability, cloud run, authentication path, model comparison, or cross-platform behavior was verified by this registry.",
+        "A valid record does not prove that the hosted guidance remains unchanged after the access date."
+      ]
+    },
+    {
+      "content_id": "chapter-22-continuous-update-and-future-proofing",
+      "canonical_path": "book/chapters/22-continuous-update-and-future-proofing-EN.md",
+      "canonical_locale": "en",
+      "content_status": "candidate",
+      "fact_risk": "mixed",
+      "applies_to": "The project's stable maintenance method plus explicitly dated product examples; each external fact retains its own source and review boundary.",
+      "owner": "governance-maintainer",
+      "reviewed_at": "2026-08-12",
+      "next_review": "2026-09-12",
+      "sources": [
+        {
+          "url": "https://github.com/facebook/docusaurus/blob/3f483e80e326cc646b54b83d564b3f0c4881b9a6/website/docs/guides/docs/versioning.mdx",
+          "accessed_at": "2026-08-12",
+          "role": "first-party documentation-versioning tradeoff reference",
+          "license_boundary": "Docusaurus documentation is CC BY 4.0 at the inspected revision; this project cites the mechanism and independently authors its governance."
+        },
+        {
+          "url": "https://github.com/kubernetes/website/blob/6b59857681ff542e3eaae953bd9f34464f90a9af/data/releases/schedule.yaml",
+          "accessed_at": "2026-08-12",
+          "role": "first-party structured release-lifecycle reference",
+          "license_boundary": "Kubernetes website content is CC BY 4.0 at the inspected revision; no source data, template, prose, or branding is copied."
+        }
+      ],
+      "reuse_boundary": "Project-authored governance method. External implementations are reference-only; exact adaptation requires a separate file-level review.",
+      "known_limitations": [
+        "The chapter's maintenance experiment remains draft and not run.",
+        "The registry does not prove every volatile example has been refreshed or every downstream consumer revalidated."
+      ]
+    }
+  ]
+}
