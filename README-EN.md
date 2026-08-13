@@ -340,8 +340,10 @@ The [current status source](docs/governance/content-status.yaml) is authoritativ
 for evidence-backed maturity. The [current-state review](docs/quality/current-state-review-2026-08-09.md)
 explains the gaps behind the labels.
 
-The [current quality register](docs/quality/quality-register.md) is the
-actionable defect ledger. Open P0/P1 items block a verified release.
+The [current quality register](docs/quality/quality-register.md) is generated
+from a machine-readable defect source. Active P0/P1 items block `verified`, and
+any active item blocks `production-ready`; CI checks that this release claim
+continues to match the ledger.
 
 ## English first, with explicit language identity
 

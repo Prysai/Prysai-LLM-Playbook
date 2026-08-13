@@ -11,6 +11,7 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\validate_project_structure.py
 & $py scripts\validate_content_completeness.py
 & $py scripts\validate_learning_contract.py --canonical-en
+& $py scripts\build_quality_register.py --check
 & $py scripts\check_local_links.py
 & $py scripts\validate_localization.py
 & $py scripts\build_book_navigation.py --check
@@ -50,3 +51,10 @@ reachable.
 from canonical content identities and Markdown sources. It deduplicates
 language variants, records explicit fallback state, and must pass `--check`
 before a Pages artifact is considered complete.
+
+`build_quality_register.py` validates stable defect IDs, controlled severity
+and status values, item owners, lifecycle/review dates, supersession links,
+evidence paths, and resolution records. Its `--check` mode
+also rejects a stale Markdown projection and prevents `verified` or
+`production-ready` maturity from contradicting active release blockers. A
+green result proves claim/register consistency, not defect resolution.

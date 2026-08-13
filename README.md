@@ -88,6 +88,11 @@ over the Markdown sources, not a replacement for them. The repository includes
 the shell and Pages workflow; a successful artifact build is not proof that a
 public Pages URL is currently enabled.
 
+The [quality register](docs/quality/quality-register.md) is generated from a
+machine-readable defect ledger. The project may remain an honest `candidate`
+with visible open work, but CI rejects a `verified` or `production-ready`
+claim that contradicts its active release blockers.
+
 ## Start with a result
 
 | If you need to… | Start with… | You should leave with… |

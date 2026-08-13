@@ -33,7 +33,7 @@
       "role": "The project control plane: research, governance, quality, sources, and decisions.",
       "entry": "docs/README.md",
       "first_read": "docs/project-map-EN.md",
-      "canonical_sources": ["docs/governance/project-structure.yaml"],
+      "canonical_sources": ["docs/governance/project-structure.yaml", "docs/governance/quality-register.yaml"],
       "generated_outputs": []
     },
     {
@@ -134,6 +134,13 @@
       "owner": "scripts/build_site_search_index.py",
       "surface": "The generated dependency-free search index consumed by the public site.",
       "edit_rule": "Edit canonical content and contracts, then regenerate and run --check; do not hand-edit."
+    },
+    {
+      "path": "docs/quality/quality-register.md",
+      "source": ["docs/governance/quality-register.yaml", "docs/governance/content-status.yaml"],
+      "owner": "scripts/build_quality_register.py",
+      "surface": "The generated human-readable defect ledger and derived release decision.",
+      "edit_rule": "Edit the machine quality register, then regenerate and run --check; do not hand-edit the Markdown ledger."
     }
   ]
 }

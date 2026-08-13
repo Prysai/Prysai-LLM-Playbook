@@ -13,10 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
@@ -70,6 +70,9 @@ jobs:
 
       - name: Validate current content status
         run: python scripts/validate_content_status.py
+
+      - name: Validate quality register and release claim
+        run: python scripts/build_quality_register.py --check
 
       - name: Validate locale matrix and same-language links
         run: python scripts/validate_localization.py

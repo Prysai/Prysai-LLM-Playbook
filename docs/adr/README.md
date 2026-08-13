@@ -23,3 +23,4 @@ Current entry points:
 - [ADR-0016: GitHub Pages artifact boundary](0016-github-pages-artifact-boundary.md)
 - [ADR-0018: generated search index](0018-generated-search-index.md)
 - [ADR-0019: content integrity gate](0019-content-integrity-gate.md)
+- [ADR-0020: machine-readable quality register](0020-machine-readable-quality-register.md)

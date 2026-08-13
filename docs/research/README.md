@@ -39,6 +39,7 @@ Useful indexes:
 - [Field Guide content and visual gap audit](field-guide-content-and-visual-gap-audit-2026-08-11.md)
 - [Official Codex fact cards](codex-official-fact-cards-2026-08-10.md)
 - [Windows input and evidence field problems](field-problems-input-and-evidence-p3-2026-08-11.md)
+- [Documentation engineering and release systems](documentation-engineering-release-systems-2026-08-12.md)
 
 Historical contribution shortlists are kept as dated research records rather
 than active work instructions:

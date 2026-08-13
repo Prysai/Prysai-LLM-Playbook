@@ -27,6 +27,8 @@ identity, canonical English paths, chapter order, reader entries, and
 generated site outputs. A passing result does not prove a lab was run, a
 translation was reviewed, or a public deployment is reachable.
 
-The [quality register](quality-register.md) is the current defect ledger.
-Historical review reports remain useful evidence, but an open register item
-continues to block release until fresh evidence is attached.
+The [quality register](quality-register.md) is generated from the
+[machine-readable register](../governance/quality-register.yaml). Historical
+review reports remain useful evidence, but they do not close an item without a
+recorded status, evidence path, and resolution scope. Active P0/P1 items block
+`verified`; any active item blocks `production-ready`.
