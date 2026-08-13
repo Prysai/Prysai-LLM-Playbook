@@ -432,7 +432,73 @@ button, input, select, textarea { font: inherit; }
 }
 
 .mobile-index-rail { display: none; }
+.mobile-core-routes, .mobile-section-link { display: none; }
+.mobile-contract-details > summary { display: none; }
 @media (max-width: 480px) {
+  .hero { min-height: auto; padding-bottom: 2.2rem; }
+  .hero-index { margin-bottom: 1.4rem; }
+  .hero-lede { margin-bottom: 1.35rem; }
+  .hero-actions, .hero-brief, .hero-footer { display: none; }
+  .hero-note { margin-top: 1.2rem; padding-top: .7rem; }
+  .hero-note .note-rule, .hero-note > p, .hero-note > strong { display: none; }
+  .hero-note a { margin-top: 0; }
+  .mobile-core-routes { display: grid; margin-top: 1.5rem; border-top: 4px solid var(--ink); }
+  .mobile-core-routes a { display: grid; grid-template-columns: 2rem minmax(0, 1fr) auto; gap: .65rem; align-items: baseline; padding: .9rem 0; border-bottom: 1px solid var(--ink); color: var(--ink); }
+  .mobile-core-routes span, .mobile-core-routes b { color: var(--red); font-size: .72rem; }
+  .mobile-core-routes strong { font-size: .8rem; line-height: 1.35; }
+  .mobile-section-link { display: flex; margin-top: 1rem; }
+  #start .problem-card:nth-child(2), #start .problem-card:nth-child(3), #start .problem-card:nth-child(4), #start .problem-card:nth-child(6) { display: none; }
+  #start .section-heading, #project-map .section-heading, #project-map .index-panel-head, #project-map .index-panel-intro, #project-map .repository-strip, #project-map .index-layout, #project-map .research-panel { display: none; }
+  #project-map .visual-case-panel { display: block; margin-top: 1.2rem; padding-top: 1rem; }
+  #project-map .visual-case-lead { display: none; }
+  #project-map .visual-case-links { grid-template-columns: 1fr 1fr; }
+  #project-map .visual-case-links a { min-height: 0; padding: .75rem; }
+  #project-map .visual-case-card img, #project-map .visual-case-links small { display: none; }
+  #first-30 .section-heading { margin-bottom: 1.4rem; }
+  #first-30 .section-intro, #first-30 .check-card-callout { display: none; }
+  #first-30 .check-card { padding: 1rem; }
+  #first-30 .starter-contract { margin-top: 1.2rem; padding: 1rem; }
+  .mobile-contract-details > summary { display: block; padding: .8rem 0; color: #fff; cursor: pointer; font-size: .75rem; font-weight: 700; }
+  .mobile-contract-details:not([open]) pre { display: none; }
+  .mobile-contract-details pre { max-height: 10rem; margin: .5rem 0; }
+  .starter-progression { display: none; }
+  #protocol { padding: 2.8rem 0; }
+  #protocol h2 { font-size: 2rem; }
+  #protocol .section-intro, #protocol .protocol-note > p { display: none; }
+  #protocol .protocol-rule { margin-top: 1rem; padding: .8rem; }
+  #path .section-heading { margin-bottom: 1.4rem; }
+  #path .section-intro, .path-contract-grid, .path-evidence, .path-boundary-grid { display: none; }
+  .level-panel { min-height: 0; padding: 1rem; }
+  .level-panel h3 { margin: .8rem 0; font-size: 1.8rem; }
+  .level-panel > p { margin-bottom: 1rem; }
+  .panel-next { margin-top: 1rem; }
+  #chapters .section-heading, #chapters .route-controls, #chapters .route-status { display: none; }
+  #chapters .chapter-group summary { padding: .8rem 0; }
+  #chapters .chapter-items { display: none; }
+  #labs .section-heading, #skills .section-heading { margin-bottom: 1.2rem; }
+  #labs .section-intro, #skills .section-intro { display: none; }
+  .lab-grid .lab-card, .skill-grid > a { min-height: 0; padding: .85rem; }
+  .lab-grid .lab-card h3 { margin: .55rem 0; font-size: 1.2rem; }
+  .lab-grid .lab-card p, .skill-grid > a small { display: none; }
+  .skill-grid > a strong { margin-top: .5rem; }
+  .skill-boundary { display: none; }
+  .skill-footnote { margin-top: .9rem; }
+  #troubleshoot .section-heading { display: none; }
+  #troubleshoot .trouble-row:nth-child(n + 3) { display: none; }
+  .trouble-row { padding: .8rem 0; }
+  .trouble-row p { display: none; }
+  #updates { padding: 2.5rem 0; }
+  #updates .section-heading { margin-bottom: 1rem; }
+  #updates h2 { font-size: 2rem; }
+  #updates .section-intro { display: none; }
+  #updates .update-links a { padding: .75rem 0; }
+  #status .section-heading { margin-bottom: 1rem; }
+  #status .section-intro, #status .status-card p { display: none; }
+  #status .status-grid { grid-template-columns: 1fr 1fr; }
+  #status .status-card { min-height: 70px; }
+  #status .status-dot { margin-bottom: .65rem; }
+  #status .source-note { margin-top: 1rem; }
+  .start-section { padding: 3rem 0; }
   .mobile-index-rail { display: grid; grid-template-columns: 1fr 1fr; margin: 1.5rem 0; border: 1px solid var(--ink); }
   .mobile-index-rail a { display: grid; grid-template-columns: 2.5rem 1fr; align-items: baseline; gap: .5rem; padding: .9rem; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); color: var(--ink); }
   .mobile-index-rail a:nth-child(even) { border-right: 0; }

@@ -19,6 +19,8 @@ ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 MATURITY = ("draft", "candidate", "verified", "production-ready")
 REQUIRED_COMMANDS = {
+    "skill-registry": ("{python}", "scripts/validate_skill_registry.py"),
+    "skill-registry-fixtures": ("{python}", "scripts/test_skill_registry.py"),
     "learning-practice-candidate": ("{python}", "scripts/validate_learning_practice_candidate.py"),
     "evidence-review-candidate": ("{python}", "scripts/validate_evidence_review_candidate.py"),
     "evidence-review-candidate-fixtures": ("{python}", "scripts/test_evidence_review_candidate.py"),

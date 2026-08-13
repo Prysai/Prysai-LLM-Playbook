@@ -128,3 +128,13 @@ handoff:
 Accept the result only when every finding cites direct evidence, every edit
 addresses a named symptom, the rerun changes one variable, permissions do not
 expand, and the status does not exceed the recorded rerun evidence.
+
+## Maintenance record
+
+- `source`: original Prysai Lab method derived from the task, evidence,
+  authority, communication-clinic, and failure-classification contracts
+- `license`: original rewrite; official vendor guidance remains linked reference material
+- `owner`: communication-systems maintainer
+- `version`: `0.1.0`
+- `review_date`: `2026-09-12`
+- `content_status`: `candidate`

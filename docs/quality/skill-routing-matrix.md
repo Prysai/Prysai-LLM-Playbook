@@ -35,6 +35,7 @@ whose fixtures test declared policy consistency, not trigger accuracy.
 | Skill | Primary question | Owns | Must yield to | Must not own |
 |---|---|---|---|---|
 | `prysai-codex-coach` / Codex Coach | “How do I learn GPT, Codex, tools, Skills, or Agent workflows?” | Codex-domain learning level, explanation, experiment, reflection, transfer | Learning Coach for non-Codex performance; explicit Skill; Task Protocol; Evidence Review; Research Router; Skill Selector; Workflow Orchestrator; Product Context | general tutoring, execution, installation, source synthesis, product claims |
+| `prysai-communication-failure-triage` / Communication Failure Triage | “Why did this preserved request and reply fail, and what is the smallest comparable repair?” | post-failure evidence packet, candidate classification, one-variable prompt repair, comparable rerun contract | Task Protocol for an untried vague task; Evidence Review for a claim audit; Source Investigator for current platform facts | hidden-reasoning claims, fresh task definition, platform diagnosis, permission expansion, generic prompt catalogues |
 | `prysai-task-protocol` / Task Protocol | “What exactly is the bounded task?” | goal, inputs, constraints, actions, acceptance, failure, delivery | explicit Skill; Workflow Orchestrator after readiness; domain route for unresolved method | execution, evidence audit, method selection |
 | `prysai-evidence-review` / Evidence Review | “What does the evidence actually prove?” | claim table, coverage, freshness, status, next check | explicit non-audit Skill; Research Router for new research | repair, execution, invented proof |
 | `prysai-skill-selector` / Skill Selector | “Which smallest Skill set fits?” | fit, overlap, dependencies, license, permissions, smoke test, rollback | explicit Skill; Task Protocol for unclear task; Workflow Orchestrator for settled execution | general teaching, task execution, correctness certification |
@@ -74,6 +75,7 @@ The default graph is finite:
 ```text
 user
  ├─ GPT/Codex learning ──> Codex Coach
+ ├─ preserved failed reply > Communication Failure Triage
  ├─ unclear task ───────> Task Protocol
  ├─ existing claim ─────> Evidence Review
  ├─ skill decision ─────> Skill Selector

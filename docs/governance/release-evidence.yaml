@@ -90,9 +90,11 @@
       "id": "skills-and-evaluations",
       "label": "Skills and evaluations",
       "scope": "Repository Skill metadata, all learning contracts, and evaluation fixture structure.",
-      "commands": [
-        {"id": "skills", "argv": ["{python}", "scripts/validate_skills.py"]},
-        {"id": "skill-routing-contract", "argv": ["{python}", "scripts/validate_skill_routing_contract.py"]},
+        "commands": [
+          {"id": "skills", "argv": ["{python}", "scripts/validate_skills.py"]},
+          {"id": "skill-registry", "argv": ["{python}", "scripts/validate_skill_registry.py"]},
+          {"id": "skill-registry-fixtures", "argv": ["{python}", "scripts/test_skill_registry.py"]},
+          {"id": "skill-routing-contract", "argv": ["{python}", "scripts/validate_skill_routing_contract.py"]},
         {"id": "skill-routing-contract-fixtures", "argv": ["{python}", "scripts/test_skill_routing_contract.py"]},
         {"id": "evaluation-fixtures", "argv": ["{python}", "scripts/validate_eval_tasks.py"]},
         {"id": "learning-practice-candidate", "argv": ["{python}", "scripts/validate_learning_practice_candidate.py"]},

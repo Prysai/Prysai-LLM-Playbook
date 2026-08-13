@@ -187,6 +187,8 @@
       "docs/quality/curriculum-depth-review-2026-08-10.md",
       "docs/quality/review-codex-facts-refresh-2026-08-10.md",
       "docs/research/original-skill-overlap-and-controlled-evidence-patterns-2026-08-13.md",
+      "docs/governance/skill-registry.yaml",
+      "scripts/validate_skill_registry.py",
       "evals/candidates/evidence-review-v1/README.md",
       "evals/candidates/learning-practice-contract-v1/README.md"
     ],
@@ -260,6 +262,7 @@
       "docs/quality/review-public-site-browser-2026-08-10.md",
       "docs/quality/review-mobile-homepage-and-visual-assets-2026-08-13.md",
       "docs/quality/review-beginner-practice-pack-browser-2026-08-13.md",
+      "docs/quality/review-mobile-route-chooser-browser-2026-08-13.md",
       "docs/adr/0028-page-trust-families-and-reader-projection.md",
       "docs/adr/0018-generated-search-index.md",
       "scripts/build_site_search_index.py",

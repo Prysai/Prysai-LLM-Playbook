@@ -1,33 +1,26 @@
-# 项目 Skill 注册表
+# Project Skill registry
 
-这里登记的是本项目维护的 skills，不是外部目录的完整复制。外部候选先进入来源台账和审查流程，只有通过触发、边界、来源、依赖和评测门槛后，才会进入本注册表。`prysai-` 只保留为安装名和兼容命名空间；它不是对外品牌，公开页面使用功能名。
+> Generated from `docs/governance/skill-registry.yaml`. Do not edit this table by hand.
 
-| 安装名（兼容） | 公开名 | 作用 | 主线阶段 | 状态 | 主要验证 |
-|---|---|---|---|---|---|
-| `prysai-field-signal-curator` | Field Signal Curator | 将论坛、issue 和重复提问整理成可追溯的需求与失败信号 | L2–L6 | candidate | 去重、证据角色、社区边界、教学候选 |
-| `prysai-platform-adapter-review` | Platform Adapter Review | 审查某个平台教程是否具有真实、可维护且有证据的平台差异 | L4–L6 | candidate | 官方来源、运行记录、差异合同、等价性拒绝 |
-| `prysai-communication-failure-triage` | Communication Failure Triage | 对已经失败的请求与回复做后验分诊、最小修复和固定条件复跑 | L1–L6 | candidate | 失败证据、候选分类、单变量修复、权限停止、三项盲测 |
-| `prysai-codex-coach` | Codex Coach | 根据学习目标和能力等级安排学习与实践 | L0–L6 | candidate | 学习路由、解释、实验和反思 |
-| `prysai-task-protocol` | Task Protocol | 将模糊需求变成有边界的任务协议 | L2–L3 | candidate | 缺失输入、外部副作用、验收条件 |
-| `prysai-evidence-review` | Evidence Review | 审查完成声明和证据缺口 | L3–L6 | candidate | 正确、半完成、漂亮但无证据的结果 |
-| `prysai-skill-selector` | Skill Selector | 按任务选择最小有效 skill 组合 | L4–L6 | candidate | 任务分类、候选淘汰、依赖与许可 |
-| `prysai-workflow-orchestrator` | Workflow Orchestrator | 将复杂任务路由到定义、计划、构建、验证、审查和交付阶段 | L3–L6 | candidate | 阶段跳过、重复失败、风险检查点 |
-| `prysai-research-router` | Research Router | 将研究请求路由为问题收敛、检索、综合、引用和复核流程 | L3–L6 | candidate | 宽题目、来源不足、引用完整性 |
-| `prysai-product-context` | Product Context | 建立营销和产品任务共享的产品上下文 | L3–L6 | candidate | 受众、定位、决策和上下文迁移 |
-| `prysai-learning-coach` | Learning Coach | 用基线、主动回忆、纠错、间隔复习和迁移练习辅导真实技能 | L0–L4 | candidate | 语言学习、概念学习、写作练习、夸大时限与代做边界 |
-| `prysai-source-investigator` | Source Investigator | 把宽泛搜索变成有问题边界、来源层级、冲突和停止条件的调查 | L2–L6 | candidate | 当前事实、来源冲突、社区报告、缺失或不可访问证据 |
+This registry contains project-maintained Skills, not a bulk copy of external repositories. Original Skills are listed first. An external Skill must name its canonical target URL, source record, and license boundary before admission.
 
-## 状态定义
+| Install ID | Public name | Origin | Purpose | Path | Version | Owner | Review | Status | Source |
+|---|---|---|---|---|---|---|---|---|---|
+| `prysai-codex-coach` | Codex Coach | Original | Route a learner from a stated goal to explanation, practice, evidence, and reflection. | `skills/prysai-codex-coach` | `0.2.0` | learning-systems maintainer | 2026-09-09 | candidate | `S62` |
+| `prysai-communication-failure-triage` | Communication Failure Triage | Original | Classify a failed request and response, apply the smallest repair, and rerun one changed variable. | `skills/prysai-communication-failure-triage` | `0.1.0` | communication-systems maintainer | 2026-09-12 | candidate | `S57` |
+| `prysai-evidence-review` | Evidence Review | Original | Audit completion claims against inspectable evidence and expose unsupported status upgrades. | `skills/prysai-evidence-review` | `0.3.0` | evidence-systems maintainer | 2026-09-09 | candidate | `S59` |
+| `prysai-field-signal-curator` | Field Signal Curator | Original | Turn public reports and repeated questions into traceable demand and failure signals. | `skills/prysai-field-signal-curator` | `0.1.0` | curriculum-research maintainer | 2026-09-12 | candidate | `S56` |
+| `prysai-learning-coach` | Learning Coach | Original | Coach observable skills through baseline, retrieval, correction, spacing, and unseen transfer. | `skills/prysai-learning-coach` | `0.3.0` | learning-systems maintainer | 2026-09-12 | candidate | `S52`, `S60` |
+| `prysai-platform-adapter-review` | Platform Adapter Review | Original | Decide whether platform-specific teaching adds a sourced and maintainable real difference. | `skills/prysai-platform-adapter-review` | `0.1.0` | platform-adapter maintainer | 2026-09-12 | candidate | `S56` |
+| `prysai-product-context` | Product Context | Original | Create a versioned shared product context before marketing, content, design, or measurement work. | `skills/prysai-product-context` | `0.3.0` | product-context maintainer | 2026-09-09 | candidate | `S62` |
+| `prysai-research-router` | Research Router | Original | Route broad research through question scope, source planning, synthesis, citation, and review. | `skills/prysai-research-router` | `0.2.0` | research-systems maintainer | 2026-09-09 | candidate | `S62` |
+| `prysai-skill-selector` | Skill Selector | Original | Choose the smallest sufficient Skill set after checking fit, provenance, permissions, and overlap. | `skills/prysai-skill-selector` | `0.2.0` | capability-catalog maintainer | 2026-09-09 | candidate | `S62` |
+| `prysai-source-investigator` | Source Investigator | Original | Turn a bounded current question into a claim ledger with source hierarchy, conflict handling, and a stop receipt. | `skills/prysai-source-investigator` | `0.2.0` | research-systems maintainer | 2026-09-12 | candidate | `S52` |
+| `prysai-task-protocol` | Task Protocol | Original | Turn an ambiguous request into a bounded task contract with acceptance evidence. | `skills/prysai-task-protocol` | `0.2.0` | task-systems maintainer | 2026-09-09 | candidate | `S62` |
+| `prysai-workflow-orchestrator` | Workflow Orchestrator | Original | Route dependent work through definition, planning, action, verification, review, and delivery. | `skills/prysai-workflow-orchestrator` | `0.2.0` | workflow-systems maintainer | 2026-09-09 | candidate | `S62` |
 
-- `draft`：内容正在写，尚未完成运行测试；
-- `candidate`：结构和基本校验通过，但尚未完成足够的新鲜上下文前测；
-- `verified`：在声明范围和任务集内通过正例、边界例、失败例和迁移例；
-- `production-ready`：还有安全、维护、版本、许可证和组织发布门禁全部通过。
+## Status boundary
 
-当前所有项目 Skill 都诚实标为 `candidate`，即使官方 frontmatter 校验已经通过。
-Field Signal Curator、Platform Adapter Review、Learning Coach 与 Source Investigator 是项目原创候选，并非从外部项目
-拉取；外部候选必须在注册时附目标项目链接和许可证，不能混入原创列表。
-2026-08-10 对 Coach、Workflow Orchestrator、Research Router 和 Product
-Context 完成了独立静态合同审查；该记录只证明合同缺口和边界已被检查，
-不等于 fresh-context、runtime、迁移或生产验证。见
-[Skill contract review](quality/skill-contract-review-2026-08-10.md)。
+All current records are `candidate`. Structural, registry, and static checks do not prove automatic triggering, runtime effectiveness, cross-model behavior, learner outcomes, transfer, or production readiness.
+
+The machine registry is authoritative for provenance and maintenance metadata. `content-status.yaml` remains authoritative for runtime and maturity projections.

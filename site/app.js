@@ -61,6 +61,12 @@ const hasGeneratedLearningPath = Boolean(generatedLearningPath) && learningPathL
 const learningPath = hasGeneratedLearningPath ? generatedLearningPath : legacyLearningPath;
 
 Object.assign(copy.en, {
+  mobileRoutesAria: 'Choose your next move',
+  mobileRouteTask: 'Start one safe 30-minute task',
+  mobileRoutePractice: 'Practise language, research, or another skill',
+  mobileRouteIndexes: 'Browse the complete project indexes',
+  mobileAllRoutes: 'Open every problem route',
+  starterPreview: 'Preview the complete prompt',
   navPath: 'Learning path',
   heroPrimary: 'Start a 30-minute safe task',
   heroSecondary: 'Choose a learning level',
@@ -95,6 +101,12 @@ Object.assign(copy.en, {
   statusSourceAfter: '; the page remains candidate because this review covers only the recorded local scope.'
 });
 Object.assign(copy.zh, {
+  mobileRoutesAria: '\u9009\u62e9\u4e0b\u4e00\u6b65',
+  mobileRouteTask: '\u5f00\u59cb\u4e00\u4e2a 30 \u5206\u949f\u7684\u5b89\u5168\u4efb\u52a1',
+  mobileRoutePractice: '\u7ec3\u4e60\u8bed\u8a00\u3001\u7814\u7a76\u6216\u5176\u4ed6\u6280\u80fd',
+  mobileRouteIndexes: '\u6d4f\u89c8\u5b8c\u6574\u9879\u76ee\u7d22\u5f15',
+  mobileAllRoutes: '\u6253\u5f00\u5168\u90e8\u95ee\u9898\u8def\u7ebf',
+  starterPreview: '\u9884\u89c8\u5b8c\u6574\u63d0\u793a\u8bcd',
   navPath: '\u5b66\u4e60\u8def\u5f84',
   heroPrimary: '\u5f00\u59cb\u4e00\u4e2a 30 \u5206\u949f\u7684\u5b89\u5168\u4efb\u52a1',
   heroSecondary: '\u9009\u62e9\u5b66\u4e60\u7b49\u7ea7',
@@ -790,6 +802,8 @@ if (projectMapSection && firstTaskSection) firstTaskSection.insertAdjacentElemen
 // rows consume a full screen before the four route choices are visible.
 if (window.matchMedia('(max-width: 480px)').matches) {
   document.querySelectorAll('.chapter-group').forEach((group) => { group.open = false; });
+  const mobileContractDetails = document.querySelector('.mobile-contract-details');
+  if (mobileContractDetails) mobileContractDetails.open = false;
 }
 
 starterCopyButton?.addEventListener('click', async () => {

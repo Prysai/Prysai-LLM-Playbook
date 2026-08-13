@@ -13,6 +13,7 @@ book, site, translations, status, and maintenance records aligned.
 | Change a learning level | [`learning-path.yaml`](learning-path.yaml) | Site data and learning-path validator |
 | Propose or admit a chapter, lab, case, adapter, route, or reference unit | [`gold-content-admission.yaml`](gold-content-admission.yaml) | Hard-gate, family-contract, and admission-score validator |
 | Change an artifact's maturity | [`content-status.yaml`](content-status.yaml) | Status indexes and status validator |
+| Change Skill provenance, public name, maintenance owner, version, review date, or upstream URL | [`skill-registry.yaml`](skill-registry.yaml) | Generate [`docs/skill-registry.md`](../skill-registry.md) and validate every Skill maintenance projection |
 | Change the beginner copy-now prompt or its progression route | [`starter-task-contract.yaml`](starter-task-contract.yaml) | README, Chapter 3, and Pages projections plus negative fixtures |
 | Change Skill ownership, handoffs, precedence, or core/adapter/playbook routing | [`skill-routing-contract.yaml`](skill-routing-contract.yaml) | Deterministic policy fixtures; does not measure model routing accuracy or assert cross-platform equivalence |
 | Change page identity, curriculum scope, platform applicability, source provenance, review window, or reuse boundary | [`page-trust-registry.yaml`](page-trust-registry.yaml) | Complete 22/22 canonical-English schema coverage with typed sources and negative fixtures; public projection still requires a separate reader-design and release decision |
