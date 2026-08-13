@@ -12,6 +12,110 @@ is best or that a model is an effective teacher or researcher.
 
 ![Attempt, correct, vary, and receipt practice loop](../assets/teaching/beginner-practice-loop-red-black.svg)
 
+<span id="first-practice-intake"></span>
+
+## Before a route — first-practice intake
+
+**Learning objective:** turn a broad wish into one small, inspectable first
+attempt, then choose exactly one existing route. This is a selector, not a
+diagnosis, course recommender, study plan, or fourth prompt catalogue.
+
+### Problem
+
+"Learn Spanish in seven days," "get better at interviews," and "find the
+best AI course" are wishes, not yet tasks. A model can make any of them sound
+busy while skipping the decisions that make a first attempt comparable: what
+the person will do, what they can already do without help, what is in scope,
+what help is permitted, and what another person could inspect.
+
+### Decision
+
+Ask one question at a time, only until a safe first attempt is possible. Keep
+at most three route choices visible; this guide returns one of A, B, or C.
+Stop and ask a person to choose if a missing decision changes risk, scope, or
+the acceptance check. Do not fill an unknown with an impressive assumption.
+
+| Decide only if still unknown | Plain question | Keep in the receipt |
+| --- | --- | --- |
+| Performance | What do you want to be able to do, not merely know about? | One observable action |
+| Starting point | Try one tiny example without help. What happened? | Baseline attempt or `not_run` |
+| Session scope | Which one situation or subskill matters first? | One-session boundary |
+| Difficulty or prerequisites | What words, tools, or moves are already comfortable? | Allowed material and new-material limit |
+| Evidence | What could another person inspect when you finish? | Artifact and pass condition |
+| Help | Should the first help be a question, hint, example, or review? | Help mode and answer-leakage rule |
+| Recovery | If this is too hard or a source cannot be checked, what is smaller? | Fallback and stop rule |
+
+### Action — copy only the contract, not a promise
+
+```text
+Help me choose one first practice route. Ask one question at a time and stop
+as soon as a safe, checkable attempt is possible.
+
+Find only what is needed: one observable performance, one unassisted starting
+attempt, one situation, allowed material or prerequisites, an inspectable
+result, a help policy, and a smaller fallback.
+
+Return exactly one route: A language exchange, B another observable skill, or
+C a source-supported research decision. Then write a small task contract and
+a receipt. Do not make a study plan, rank courses, promise speed or mastery,
+or supply the answer before my first attempt.
+
+For a language route, replace "beginner" with known vocabulary or grammar, a
+new-item limit, a turn or sentence limit, and a comprehension check. For a
+research route, name the decision and the owner of the first material claim;
+do not call anything "best" before the criteria and sources are inspectable.
+```
+
+The returned receipt should have this narrow shape:
+
+```text
+route | observable_target_or_decision | baseline | one_session_scope
+allowed_material_or_prerequisites | evidence_and_pass_condition | help_policy
+fallback | exact_status: template_selected | claim_limit: not_run
+```
+
+Selecting the contract supports only `template_selected`; it does not show
+that a model, route, or person performed well.
+
+### Two synthetic reductions
+
+**Failure case: "I will learn Spanish in seven days."** Do not turn this into
+a seven-day syllabus. Ask for one situation and a baseline. A possible intake
+result is Route A: a four-turn hotel check-in, using an agreed known-word list,
+at most three new items, one comprehension question, and no model answer
+before the first reply. The receipt remains `template_selected` until the
+attempt exists. It does not establish a level, retention, or fluency.
+
+**Failure case: "Research the best AI course."** Do not generate a ranking.
+Ask what decision the research must change, for whom, by when, and which
+criterion is material. A possible intake result is Route C: decide whether a
+named course's published prerequisite and syllabus meet one learner's first
+week need; record the course owner's page as the first source to inspect and
+one fallback if it cannot be opened. This creates a research plan, not a
+recommendation or a source-supported conclusion.
+
+### Small experiment and reflection
+
+Try the intake on one broad wish. Compare the original wish with the final
+receipt: can another person identify one route, a bounded attempt, what help
+is allowed, and what would count as evidence? If not, ask one more question
+or stop as `blocked`; do not manufacture a route. Record whether the issue was
+scope, prerequisite, evidence, help policy, or an unresolved decision. This
+is a local observation, not evidence that the intake improves learning.
+
+### Acceptance checklist
+
+- [ ] The intake returned one existing route, not a new collection of advice.
+- [ ] It records one observable action or decision and one-session boundary.
+- [ ] A baseline, allowed material, help policy, and fallback are explicit or
+      marked `not_run` / `unknown`.
+- [ ] Language difficulty is inspectable; the word `beginner` is not the only
+      control.
+- [ ] Research has a decision, a material claim owner, and no unsupported
+      "best" conclusion.
+- [ ] The receipt says `template_selected` and `not_run` until an attempt or
+      source check actually exists.
+
 ## Read the evidence state first
 
 | State | Minimum evidence | What it does not mean |

@@ -5,7 +5,8 @@ window.CODEX_LOCALE_MANIFEST = {
     "docs/governance/locale-matrix.yaml",
     "docs/governance/content-status.yaml",
     "docs/governance/book-navigation.yaml",
-    "docs/governance/lab-navigation.yaml"
+    "docs/governance/lab-navigation.yaml",
+    "docs/governance/skill-registry.yaml"
   ],
   "default_locale": "en",
   "locales": {
@@ -49,6 +50,8 @@ window.CODEX_LOCALE_MANIFEST = {
   "contents": {
     "learning-practice-contract": {
       "kind": "application-guide",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
       "stem": "book/guides/learning-practice-contract",
       "source_locale": "en",
       "legacy_paths": [],
@@ -99,6 +102,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "lab-018-language-transfer": {
       "kind": "lab",
+      "reader_type": "lab",
+      "overview_target": "index.html#labs",
       "stem": "book/labs/lab-018-language-transfer",
       "source_locale": "en",
       "legacy_paths": [],
@@ -149,6 +154,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "universal-core-foundations-route": {
       "kind": "learning-route",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
       "stem": "book/routes/universal-core-foundations",
       "source_locale": "en",
       "legacy_paths": [],
@@ -199,6 +206,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "communication-clinic": {
       "kind": "supplemental-guide",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
       "stem": "book/communication-clinic",
       "source_locale": "en",
       "legacy_paths": [],
@@ -215,40 +224,42 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": false,
           "content_status": "draft",
           "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "source_revision": "worktree-2026-08-13"
         },
         "es": {
           "path": "book/communication-clinic-ES.md",
           "exists": false,
           "content_status": "draft",
           "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "source_revision": "worktree-2026-08-13"
         },
         "ja": {
           "path": "book/communication-clinic-JA.md",
           "exists": false,
           "content_status": "draft",
           "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "source_revision": "worktree-2026-08-13"
         },
         "ko": {
           "path": "book/communication-clinic-KO.md",
           "exists": false,
           "content_status": "draft",
           "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "source_revision": "worktree-2026-08-13"
         },
         "de": {
           "path": "book/communication-clinic-DE.md",
           "exists": false,
           "content_status": "draft",
           "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "source_revision": "worktree-2026-08-13"
         }
       }
     },
     "project-readme": {
       "kind": "project-entry",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
       "stem": "README",
       "source_locale": "en",
       "legacy_paths": [
@@ -301,6 +312,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "book-readme": {
       "kind": "book-entry",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
       "stem": "book/README",
       "source_locale": "en",
       "legacy_paths": [
@@ -353,6 +366,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "book-preface": {
       "kind": "book-entry",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
       "stem": "book/preface",
       "source_locale": "en",
       "legacy_paths": [
@@ -405,6 +420,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "book-labs-readme": {
       "kind": "book-entry",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
       "stem": "book/labs/README",
       "source_locale": "en",
       "legacy_paths": [
@@ -457,6 +474,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "book-table-of-contents": {
       "kind": "book-entry",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
       "stem": "book/table-of-contents",
       "source_locale": "en",
       "legacy_paths": [
@@ -509,6 +528,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-01-gpt-and-codex": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/01-gpt-and-codex",
       "source_locale": "en",
       "legacy_paths": [
@@ -561,6 +582,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-02-first-safe-task": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/02-first-safe-task",
       "source_locale": "en",
       "legacy_paths": [
@@ -613,6 +636,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-03-task-protocol": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/03-task-protocol",
       "source_locale": "en",
       "legacy_paths": [
@@ -665,6 +690,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-04-context-permissions-and-agent": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/04-context-permissions-and-agent",
       "source_locale": "en",
       "legacy_paths": [
@@ -717,6 +744,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-05-choose-the-codex-surface": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/05-choose-the-codex-surface",
       "source_locale": "en",
       "legacy_paths": [
@@ -769,6 +798,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-06-model-selection": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/06-model-selection",
       "source_locale": "en",
       "legacy_paths": [
@@ -821,6 +852,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-07-skills-plugins-and-tools": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/07-skills-plugins-and-tools",
       "source_locale": "en",
       "legacy_paths": [
@@ -873,6 +906,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-08-full-lifecycle-workflow": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/08-full-lifecycle-workflow",
       "source_locale": "en",
       "legacy_paths": [
@@ -925,6 +960,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-09-verification-and-recovery": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/09-verification-and-recovery",
       "source_locale": "en",
       "legacy_paths": [
@@ -977,6 +1014,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-10-planning-and-slicing": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/10-planning-and-slicing",
       "source_locale": "en",
       "legacy_paths": [
@@ -1029,6 +1068,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-11-designing-a-skill": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/11-designing-a-skill",
       "source_locale": "en",
       "legacy_paths": [
@@ -1081,6 +1122,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-12-agent-loop-and-stop": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/12-agent-loop-and-stop",
       "source_locale": "en",
       "legacy_paths": [
@@ -1133,6 +1176,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-13-action-boundaries": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/13-action-boundaries",
       "source_locale": "en",
       "legacy_paths": [
@@ -1185,6 +1230,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-14-discover-and-audit-skills": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/14-discover-and-audit-skills",
       "source_locale": "en",
       "legacy_paths": [
@@ -1237,6 +1284,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-15-research-track": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/15-research-track",
       "source_locale": "en",
       "legacy_paths": [
@@ -1289,6 +1338,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-16-engineering-track": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/16-engineering-track",
       "source_locale": "en",
       "legacy_paths": [
@@ -1341,6 +1392,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-17-marketing-track": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/17-marketing-track",
       "source_locale": "en",
       "legacy_paths": [
@@ -1393,6 +1446,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-18-content-design-data-automation": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/18-content-design-data-automation",
       "source_locale": "en",
       "legacy_paths": [
@@ -1445,6 +1500,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-19-evaluate-models-and-workflows": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/19-evaluate-models-and-workflows",
       "source_locale": "en",
       "legacy_paths": [
@@ -1497,6 +1554,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-20-personal-codex-work-system": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/20-personal-codex-work-system",
       "source_locale": "en",
       "legacy_paths": [
@@ -1549,6 +1608,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-21-team-capability-system": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/21-team-capability-system",
       "source_locale": "en",
       "legacy_paths": [
@@ -1601,6 +1662,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "chapter-22-continuous-update-and-future-proofing": {
       "kind": "chapter",
+      "reader_type": "chapter",
+      "overview_target": "index.html",
       "stem": "book/chapters/22-continuous-update-and-future-proofing",
       "source_locale": "en",
       "legacy_paths": [
@@ -1653,6 +1716,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "lab-011-gpt-codex-boundaries": {
       "kind": "lab",
+      "reader_type": "lab",
+      "overview_target": "index.html#labs",
       "stem": "book/labs/lab-011-gpt-codex-boundaries",
       "source_locale": "en",
       "legacy_paths": [
@@ -1705,6 +1770,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "lab-001-first-safe-task": {
       "kind": "lab",
+      "reader_type": "lab",
+      "overview_target": "index.html#labs",
       "stem": "book/labs/lab-001-first-safe-task",
       "source_locale": "en",
       "legacy_paths": [
@@ -1757,6 +1824,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "lab-002-task-protocol": {
       "kind": "lab",
+      "reader_type": "lab",
+      "overview_target": "index.html#labs",
       "stem": "book/labs/lab-002-task-protocol",
       "source_locale": "en",
       "legacy_paths": [
@@ -1809,6 +1878,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "lab-003-evidence-review": {
       "kind": "lab",
+      "reader_type": "lab",
+      "overview_target": "index.html#labs",
       "stem": "book/labs/lab-003-evidence-review",
       "source_locale": "en",
       "legacy_paths": [
@@ -1861,6 +1932,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "lab-004-skill-selection": {
       "kind": "lab",
+      "reader_type": "lab",
+      "overview_target": "index.html#labs",
       "stem": "book/labs/lab-004-skill-selection",
       "source_locale": "en",
       "legacy_paths": [
@@ -1913,6 +1986,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "lab-005-design-a-skill": {
       "kind": "lab",
+      "reader_type": "lab",
+      "overview_target": "index.html#labs",
       "stem": "book/labs/lab-005-design-a-skill",
       "source_locale": "en",
       "legacy_paths": [
@@ -1965,6 +2040,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "lab-008-research-question": {
       "kind": "lab",
+      "reader_type": "lab",
+      "overview_target": "index.html#labs",
       "stem": "book/labs/lab-008-research-question",
       "source_locale": "en",
       "legacy_paths": [
@@ -2017,6 +2094,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "lab-009-engineering-lifecycle": {
       "kind": "lab",
+      "reader_type": "lab",
+      "overview_target": "index.html#labs",
       "stem": "book/labs/lab-009-engineering-lifecycle",
       "source_locale": "en",
       "legacy_paths": [
@@ -2069,6 +2148,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "lab-010-product-context": {
       "kind": "lab",
+      "reader_type": "lab",
+      "overview_target": "index.html#labs",
       "stem": "book/labs/lab-010-product-context",
       "source_locale": "en",
       "legacy_paths": [
@@ -2121,6 +2202,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "lab-012-team-capability-migration": {
       "kind": "lab",
+      "reader_type": "lab",
+      "overview_target": "index.html#labs",
       "stem": "book/labs/lab-012-team-capability-migration",
       "source_locale": "en",
       "legacy_paths": [
@@ -2173,6 +2256,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "lab-013-l3-vertical-slice": {
       "kind": "lab",
+      "reader_type": "lab",
+      "overview_target": "index.html#labs",
       "stem": "book/labs/lab-013-l3-vertical-slice",
       "source_locale": "en",
       "legacy_paths": [
@@ -2225,6 +2310,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "lab-006-agent-stop-conditions": {
       "kind": "lab",
+      "reader_type": "lab",
+      "overview_target": "index.html#labs",
       "stem": "book/labs/lab-006-agent-stop-conditions",
       "source_locale": "en",
       "legacy_paths": [
@@ -2277,6 +2364,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "lab-007-action-boundaries": {
       "kind": "lab",
+      "reader_type": "lab",
+      "overview_target": "index.html#labs",
       "stem": "book/labs/lab-007-action-boundaries",
       "source_locale": "en",
       "legacy_paths": [
@@ -2329,6 +2418,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "lab-014-resume-reconciliation": {
       "kind": "lab",
+      "reader_type": "lab",
+      "overview_target": "index.html#labs",
       "stem": "book/labs/lab-014-resume-reconciliation",
       "source_locale": "en",
       "legacy_paths": [],
@@ -2379,6 +2470,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "lab-015-evidence-delivery": {
       "kind": "lab",
+      "reader_type": "lab",
+      "overview_target": "index.html#labs",
       "stem": "book/labs/lab-015-evidence-delivery",
       "source_locale": "en",
       "legacy_paths": [],
@@ -2429,6 +2522,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "lab-016-side-effect-boundary": {
       "kind": "lab",
+      "reader_type": "lab",
+      "overview_target": "index.html#labs",
       "stem": "book/labs/lab-016-side-effect-boundary",
       "source_locale": "en",
       "legacy_paths": [],
@@ -2479,6 +2574,8 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "lab-017-skill-discovery-audit": {
       "kind": "lab",
+      "reader_type": "lab",
+      "overview_target": "index.html#labs",
       "stem": "book/labs/lab-017-skill-discovery-audit",
       "source_locale": "en",
       "legacy_paths": [],
@@ -2524,6 +2621,786 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "draft",
           "translation_status": "not-started",
           "source_revision": "worktree-2026-08-13"
+        }
+      }
+    },
+    "field-problems-index-2026-08-10": {
+      "kind": "field-note",
+      "reader_type": "field-note",
+      "overview_target": "index.html#field-research",
+      "stem": "docs/research/field-problems-index-2026-08-10",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "docs/research/field-problems-index-2026-08-10.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "docs/research/field-problems-index-2026-08-10.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "docs/research/field-problems-index-2026-08-10.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "docs/research/field-problems-index-2026-08-10.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "docs/research/field-problems-index-2026-08-10.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "docs/research/field-problems-index-2026-08-10.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
+    "field-problems-forums-2026-08-10": {
+      "kind": "field-note",
+      "reader_type": "field-note",
+      "overview_target": "index.html#field-research",
+      "stem": "docs/research/field-problems-forums-2026-08-10",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "docs/research/field-problems-forums-2026-08-10.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "docs/research/field-problems-forums-2026-08-10.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "docs/research/field-problems-forums-2026-08-10.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "docs/research/field-problems-forums-2026-08-10.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "docs/research/field-problems-forums-2026-08-10.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "docs/research/field-problems-forums-2026-08-10.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
+    "codex-field-cases-current-review-2026-08-12": {
+      "kind": "field-note",
+      "reader_type": "field-note",
+      "overview_target": "index.html#field-research",
+      "stem": "docs/research/codex-field-cases-current-review-2026-08-12",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "docs/research/codex-field-cases-current-review-2026-08-12.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "docs/research/codex-field-cases-current-review-2026-08-12.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "docs/research/codex-field-cases-current-review-2026-08-12.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "docs/research/codex-field-cases-current-review-2026-08-12.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "docs/research/codex-field-cases-current-review-2026-08-12.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "docs/research/codex-field-cases-current-review-2026-08-12.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
+    "prysai-field-signal-curator": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-field-signal-curator/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-field-signal-curator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-field-signal-curator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-field-signal-curator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-field-signal-curator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-field-signal-curator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-field-signal-curator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-platform-adapter-review": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-platform-adapter-review/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-platform-adapter-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-platform-adapter-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-platform-adapter-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-platform-adapter-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-platform-adapter-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-platform-adapter-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-communication-failure-triage": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-communication-failure-triage/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-communication-failure-triage/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-communication-failure-triage/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-communication-failure-triage/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-communication-failure-triage/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-communication-failure-triage/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-communication-failure-triage/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-codex-coach": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-codex-coach/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-codex-coach/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-codex-coach/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-codex-coach/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-codex-coach/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-codex-coach/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-codex-coach/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-task-protocol": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-task-protocol/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-task-protocol/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-task-protocol/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-task-protocol/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-task-protocol/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-task-protocol/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-task-protocol/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-evidence-review": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-evidence-review/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-evidence-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-evidence-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-evidence-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-evidence-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-evidence-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-evidence-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-skill-selector": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-skill-selector/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-skill-selector/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-skill-selector/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-skill-selector/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-skill-selector/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-skill-selector/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-skill-selector/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-workflow-orchestrator": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-workflow-orchestrator/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-workflow-orchestrator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-workflow-orchestrator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-workflow-orchestrator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-workflow-orchestrator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-workflow-orchestrator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-workflow-orchestrator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-research-router": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-research-router/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-research-router/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-research-router/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-research-router/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-research-router/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-research-router/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-research-router/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-product-context": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-product-context/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-product-context/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-product-context/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-product-context/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-product-context/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-product-context/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-product-context/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-learning-coach": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-learning-coach/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-learning-coach/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-learning-coach/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-learning-coach/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-learning-coach/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-learning-coach/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-learning-coach/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-source-investigator": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-source-investigator/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-source-investigator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-source-investigator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-source-investigator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-source-investigator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-source-investigator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-source-investigator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
         }
       }
     }
@@ -2898,7 +3775,22 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-017-skill-discovery-audit-ES.md": "lab-017-skill-discovery-audit",
     "book/labs/lab-017-skill-discovery-audit-JA.md": "lab-017-skill-discovery-audit",
     "book/labs/lab-017-skill-discovery-audit-KO.md": "lab-017-skill-discovery-audit",
-    "book/labs/lab-017-skill-discovery-audit-DE.md": "lab-017-skill-discovery-audit"
+    "book/labs/lab-017-skill-discovery-audit-DE.md": "lab-017-skill-discovery-audit",
+    "docs/research/field-problems-index-2026-08-10.md": "field-problems-index-2026-08-10",
+    "docs/research/field-problems-forums-2026-08-10.md": "field-problems-forums-2026-08-10",
+    "docs/research/codex-field-cases-current-review-2026-08-12.md": "codex-field-cases-current-review-2026-08-12",
+    "skills/prysai-field-signal-curator/SKILL.md": "prysai-field-signal-curator",
+    "skills/prysai-platform-adapter-review/SKILL.md": "prysai-platform-adapter-review",
+    "skills/prysai-communication-failure-triage/SKILL.md": "prysai-communication-failure-triage",
+    "skills/prysai-codex-coach/SKILL.md": "prysai-codex-coach",
+    "skills/prysai-task-protocol/SKILL.md": "prysai-task-protocol",
+    "skills/prysai-evidence-review/SKILL.md": "prysai-evidence-review",
+    "skills/prysai-skill-selector/SKILL.md": "prysai-skill-selector",
+    "skills/prysai-workflow-orchestrator/SKILL.md": "prysai-workflow-orchestrator",
+    "skills/prysai-research-router/SKILL.md": "prysai-research-router",
+    "skills/prysai-product-context/SKILL.md": "prysai-product-context",
+    "skills/prysai-learning-coach/SKILL.md": "prysai-learning-coach",
+    "skills/prysai-source-investigator/SKILL.md": "prysai-source-investigator"
   },
   "routed_status_counts": {
     "chapters": 22,

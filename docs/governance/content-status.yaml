@@ -213,11 +213,12 @@
     "count": 2,
     "status": "candidate",
     "owner": "curriculum-maintainer",
-    "last_reviewed": "2026-08-12",
+    "last_reviewed": "2026-08-13",
     "next_review": "2026-09-12",
     "evidence": [
       "book/communication-clinic-EN.md",
       "book/guides/learning-practice-contract-EN.md",
+      "docs/research/beginner-first-practice-friction-2026-08-13.md",
       "docs/sources/asset-register.md"
     ],
     "items": [

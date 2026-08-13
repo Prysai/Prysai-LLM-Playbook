@@ -25,8 +25,8 @@
   const mobileProgress = document.querySelector('[data-reader-mobile-progress]');
   const mobilePrevious = document.querySelector('[data-reader-mobile-previous]');
   const mobileNext = document.querySelector('[data-reader-mobile-next]');
-  const mobileToc = document.querySelector('[data-reader-mobile-toc]');
-  const mobileTocList = document.querySelector('[data-reader-mobile-toc-list]');
+  const mobilePageToc = document.querySelector('[data-reader-mobile-page-toc]');
+  const mobilePageTocList = document.querySelector('[data-reader-mobile-page-toc-list]');
   const chapterCard = document.querySelector('[data-reader-chapter-card]');
   const chapterLabel = document.querySelector('[data-reader-chapter-label]');
   const chapterStatus = document.querySelector('[data-reader-chapter-status]');
@@ -212,10 +212,6 @@ function canonicalChapterTitle(chapter) {
       };
       updateLabLink(mobilePrevious, previous, 'previous');
       updateLabLink(mobileNext, next, 'next');
-      if (mobileToc && mobileTocList) {
-        mobileTocList.replaceChildren(...[...tocList.querySelectorAll('li')].map((item) => item.cloneNode(true)));
-        mobileToc.hidden = mobileTocList.children.length === 0;
-      }
       const updateLabPagination = (link, titleNode, lab, direction) => {
         if (!lab) { link.hidden = true; return; }
         link.hidden = false;
@@ -275,10 +271,6 @@ function canonicalChapterTitle(chapter) {
     };
     updateMobileLink(mobilePrevious, previous, 'previous');
     updateMobileLink(mobileNext, next, 'next');
-    if (mobileToc && mobileTocList) {
-      mobileTocList.replaceChildren(...[...tocList.querySelectorAll('li')].map((item) => item.cloneNode(true)));
-      mobileToc.hidden = mobileTocList.children.length === 0;
-    }
     const updatePaginationLink = (link, titleNode, chapter) => {
       if (!chapter) { link.hidden = true; return; }
       link.hidden = false;
@@ -454,6 +446,13 @@ function canonicalChapterTitle(chapter) {
     let frontMatter = false;
     let frontMatterSeen = false;
     const usedSlugs = new Map();
+    const usedIds = new Set();
+    const uniqueHeadingId = (value) => {
+      let id = slug(value, usedSlugs);
+      while (usedIds.has(id)) id = slug(value, usedSlugs);
+      usedIds.add(id);
+      return id;
+    };
     const addParagraph = (items) => {
       const content = items.join('\n').replace(/\n/g, ' ');
       if (!content.trim()) return;
@@ -483,6 +482,20 @@ function canonicalChapterTitle(chapter) {
         continue;
       }
       if (/^<!--/.test(line.trim())) { index += 1; continue; }
+      const emptyAnchor = line.trim().match(/^<(?:a|span)\s+id="([a-z][a-z0-9-]*)"\s*><\/(?:a|span)>$/i);
+      if (emptyAnchor) {
+        const id = emptyAnchor[1];
+        if (!usedIds.has(id)) {
+          const anchor = document.createElement('span');
+          anchor.id = id;
+          anchor.className = 'reader-anchor';
+          anchor.setAttribute('aria-hidden', 'true');
+          fragment.append(anchor);
+          usedIds.add(id);
+        }
+        index += 1;
+        continue;
+      }
       if (/^```|^~~~/.test(line)) {
         const fence = line.trim().slice(0, 3);
         const language = line.trim().slice(3).trim();
@@ -515,7 +528,7 @@ function canonicalChapterTitle(chapter) {
       if (heading) {
         const element = document.createElement(`h${heading[1].length}`);
         addInline(element, heading[2], path);
-        element.id = slug(heading[2], usedSlugs);
+        element.id = uniqueHeadingId(heading[2]);
         fragment.append(element);
         index += 1;
         continue;
@@ -645,12 +658,26 @@ function canonicalChapterTitle(chapter) {
       tocList.append(item);
     });
     toc.hidden = tocList.children.length === 0;
+    if (mobilePageToc && mobilePageTocList) {
+      mobilePageTocList.replaceChildren(...[...tocList.querySelectorAll('li')].map((item) => item.cloneNode(true)));
+      mobilePageToc.hidden = mobilePageTocList.children.length === 0;
+      mobilePageTocList.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+        const target = document.getElementById(decodeURIComponent(link.hash.slice(1)));
+        mobilePageToc.open = false;
+        window.requestAnimationFrame(() => {
+          if (!target) return;
+          target.tabIndex = -1;
+          target.focus({ preventScroll: true });
+          target.scrollIntoView({ block: 'start' });
+        });
+      }));
+    }
     observeHeadings(headings);
   }
 
   function observeHeadings(headings) {
     if (!('IntersectionObserver' in window) || !tocList) return;
-    const links = [...tocList.querySelectorAll('a[data-toc-target]')];
+    const links = [...tocList.querySelectorAll('a[data-toc-target]'), ...document.querySelectorAll('[data-reader-mobile-page-toc-list] a[data-toc-target]')];
     const setCurrent = (id) => links.forEach((link) => {
       const current = link.dataset.tocTarget === id;
       link.classList.toggle('is-current', current);
@@ -671,12 +698,12 @@ function canonicalChapterTitle(chapter) {
       const lab = labForSelection(selection);
       if (!lab) {
         const strings = currentReaderCopy();
-        const path = selection.path || requestedPath;
-        chapterLabel.textContent = path.startsWith('skills/')
-          ? strings.skillMethod
-          : path.startsWith('docs/research/')
-            ? strings.fieldNote
-            : strings.projectDocument;
+        const labels = {
+          skill: strings.skillMethod,
+          'field-note': strings.fieldNote,
+          'project-document': strings.projectDocument
+        };
+        chapterLabel.textContent = labels[selection.readerType] || strings.projectDocument;
         chapterStatus.textContent = title;
         chapterCard.hidden = false;
         return;
@@ -700,20 +727,31 @@ function canonicalChapterTitle(chapter) {
 
   function choosePath(path, locale) {
     const record = contentRecord(path);
-    if (!record.content) return { path, contentId: null, fallback: locale !== 'en', requested: locale, effective: 'en' };
+    const readerType = record.content?.reader_type || 'project-document';
+    const overviewTarget = record.content?.overview_target || 'index.html';
+    if (!record.content) return { path, contentId: null, readerType, overviewTarget, fallback: locale !== 'en', requested: locale, effective: 'en' };
     const requested = record.content.locales?.[locale];
-    if (ready(requested)) return { path: requested.path, contentId: record.contentId, fallback: false, requested: locale, effective: locale };
+    if (ready(requested)) return { path: requested.path, contentId: record.contentId, readerType, overviewTarget, fallback: false, requested: locale, effective: locale };
     const english = record.content.locales?.en;
-    if (ready(english)) return { path: english.path, contentId: record.contentId, fallback: locale !== 'en', requested: locale, effective: 'en' };
+    if (ready(english)) return { path: english.path, contentId: record.contentId, readerType, overviewTarget, fallback: locale !== 'en', requested: locale, effective: 'en' };
     const sourceLocale = record.content.source_locale || 'en';
     const legacyPath = record.content.legacy_paths?.[0];
     return {
       path: sourceLocale === 'zh' ? legacyPath || english?.path || path : english?.path || path,
       contentId: record.contentId,
+      readerType,
+      overviewTarget,
       fallback: sourceLocale !== locale,
       requested: locale,
       effective: sourceLocale,
     };
+  }
+
+  function updateOverviewLinks(selection) {
+    const target = selection.overviewTarget || 'index.html';
+    document.querySelectorAll('[data-reader-overview]').forEach((link) => {
+      link.href = window.CODEX_PAGES_ARTIFACT ? `../${target}` : target;
+    });
   }
 
   function showError(message) {
@@ -800,11 +838,13 @@ function canonicalChapterTitle(chapter) {
       article.append(context);
     }
     article.append(renderBlocks(source, selection.path));
+    article.querySelector('h1')?.after(mobilePageToc);
     addPromptCopyControls(selection.path);
     article.setAttribute('aria-busy', 'false');
     const title = chapter ? canonicalChapterTitle(chapter) : lab ? `Lab ${String(lab.number).padStart(3, '0')}: ${lab.title}` : article.querySelector('h1')?.textContent?.trim() || selection.path;
     buildTableOfContents();
     updateChapterRail(selection, title);
+    updateOverviewLinks(selection);
     renderBookNavigation(selection);
     renderTrustRecord(await loadTrustRecord(selection.contentId));
     document.title = `${title} · Codex Field Guide`;
@@ -834,15 +874,6 @@ function canonicalChapterTitle(chapter) {
       languageSelect.dataset.contentId = selection.contentId;
     }
   }
-
-  document.querySelectorAll('[data-reader-overview]').forEach((link) => {
-    const target = requestedPath.startsWith('skills/')
-      ? 'index.html#skills'
-      : requestedPath.startsWith('docs/research/')
-        ? 'index.html#field-research'
-        : 'index.html';
-    link.href = window.CODEX_PAGES_ARTIFACT ? `../${target}` : target;
-  });
 
   languageSelect.addEventListener('change', () => {
     const locale = languageSelect.value;

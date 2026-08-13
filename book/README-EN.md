@@ -52,7 +52,7 @@ currently `draft` with `run_status: not_run`.
 - [First mapped universal-core route](routes/universal-core-foundations-EN.md) — four extracted units; `candidate / not_run`; context selection, reuse, evaluation, and team governance remain incomplete
 - [Preface: This Is Not a Prompt Catalogue](preface-EN.md)
 - [English book table of contents](table-of-contents-EN.md)
-- [Communication Clinic: choose a practical route for learning, research, decisions, or creation](communication-clinic-EN.md) — supplemental candidate; templates and evidence contracts exist, but no learner run is claimed
+- [Communication Clinic: turn a broad wish into one practical route for learning, research, decisions, or creation](communication-clinic-EN.md#first-practice-intake) — supplemental candidate; an intake, templates, and evidence contracts exist, but no learner run is claimed
 - [Project map — where chapters, labs, Skills, research, and checks live](../docs/project-map-EN.md)
 - [Canonical chapter navigation source](../docs/governance/book-navigation.yaml)
 - [Evaluation framework — locale-neutral governance](../docs/quality/evaluation-framework.md)

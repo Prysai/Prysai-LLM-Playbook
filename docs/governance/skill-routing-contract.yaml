@@ -372,7 +372,7 @@
     {
       "id": "neighbor-communication-triage",
       "kind": "near_neighbor",
-      "text": "Polish this sentence; there is no failed interaction or acceptance mismatch to diagnose.",
+      "text": "The previous reply rewrote my sentence in a different tone even though I asked it to preserve tone; diagnose the mismatch and define a comparable rerun.",
       "signals": {"intents": ["failed_interaction_repair"], "explicit_skill": "", "safety_block": ""},
       "expected": {"disposition": "route", "owner": "prysai-communication-failure-triage", "handoffs": [], "segments": []}
     },

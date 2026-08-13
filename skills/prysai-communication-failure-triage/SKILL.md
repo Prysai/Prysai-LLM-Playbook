@@ -27,7 +27,9 @@ Never request a token, password, cookie, private key, or secret-bearing file.
 - Hand an untried, vague task to Task Protocol.
 - Hand a pure completion-claim audit to Evidence Review.
 - Hand a current command, feature, account, or platform-state question to Source
-  Investigator or Platform Adapter Review.
+  Investigator. Use Platform Adapter Review only when the artifact under review
+  is itself a named-platform lesson or workflow claiming a runnable delta from
+  the universal core.
 - Hand a software defect with a reproduction to bug diagnosis.
 - Use ordinary editing for wording polish without a failed interaction.
 

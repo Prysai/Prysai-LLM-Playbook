@@ -36,6 +36,15 @@ TEXT_REQUIREMENTS = {
         "not_run",
     ],
     CLINIC: [
+        'id="first-practice-intake"',
+        "first-practice intake",
+        "Ask one question at a time",
+        "Return exactly one route: A language exchange",
+        "C a source-supported research decision.",
+        "exact_status: template_selected",
+        "This is a selector, not a",
+        "diagnosis, course recommender, study plan, or fourth prompt catalogue.",
+        "Do not generate a ranking.",
         'id="language-practice-route"',
         'id="general-skill-practice-route"',
         'id="bounded-research-route"',
@@ -67,6 +76,7 @@ TEXT_REQUIREMENTS = {
         "version`: `0.3.0",
     ],
     SITE: [
+        "communication-clinic-EN.md#first-practice-intake",
         "communication-clinic-EN.md#language-practice-route",
         "communication-clinic-EN.md#general-skill-practice-route",
         "communication-clinic-EN.md#bounded-research-route",

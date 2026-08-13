@@ -14,9 +14,22 @@ MATRIX_FILE = ROOT / "docs/governance/locale-matrix.yaml"
 STATUS_FILE = ROOT / "docs/governance/content-status.yaml"
 NAVIGATION_FILE = ROOT / "docs/governance/book-navigation.yaml"
 LAB_NAVIGATION_FILE = ROOT / "docs/governance/lab-navigation.yaml"
+SKILL_REGISTRY_FILE = ROOT / "docs/governance/skill-registry.yaml"
 OUTPUT_FILE = ROOT / "site/locale-manifest.js"
 LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE")
 ROUTED_STATUS_SECTIONS = ("chapters", "labs")
+READER_PRESENTATION = {
+    "chapter": ("chapter", "index.html"),
+    "lab": ("lab", "index.html#labs"),
+    "skill": ("skill", "index.html#skills"),
+    "field-note": ("field-note", "index.html#field-research"),
+}
+
+
+def reader_presentation(kind: str | None) -> tuple[str, str]:
+    """Map governed content kinds to the Reader's small presentation vocabulary."""
+
+    return READER_PRESENTATION.get(str(kind), ("project-document", "index.html"))
 
 
 def load_json(path: Path) -> Any:
@@ -66,8 +79,12 @@ def matrix_content(
     legacy_paths = [normalize(path) for path in item.get("legacy_paths", [])]
     for path in legacy_paths:
         add_path_index(path_index, path, content_id)
+    kind = item.get("kind")
+    reader_type, overview_target = reader_presentation(kind)
     return {
-        "kind": item.get("kind"),
+        "kind": kind,
+        "reader_type": reader_type,
+        "overview_target": overview_target,
         "stem": item.get("stem"),
         "source_locale": str(item.get("source_locale", "EN")).lower(),
         "legacy_paths": legacy_paths,
@@ -75,8 +92,28 @@ def matrix_content(
     }
 
 
+def neutral_content(content_id: str, kind: str, path: str, status: str, path_index: dict[str, str], source_revision: str) -> dict[str, Any]:
+    """Build one English source identity with explicit fallback records."""
+
+    source_path = normalize(path)
+    localized = {}
+    for suffix in LOCALES:
+        token = suffix.lower()
+        localized[token] = {
+            "path": source_path,
+            "exists": (ROOT / source_path).is_file(),
+            "content_status": status,
+            "translation_status": "source" if suffix == "EN" else "not-started",
+            "source_revision": source_revision,
+        }
+    add_path_index(path_index, source_path, content_id)
+    reader_type, overview_target = reader_presentation(kind)
+    return {"kind": kind, "reader_type": reader_type, "overview_target": overview_target, "stem": stem_from_path(source_path), "source_locale": "en", "legacy_paths": [], "locales": localized}
+
+
 def status_content(
     item: dict[str, Any],
+    kind: str,
     locale_records: dict[str, Any],
     path_index: dict[str, str],
 ) -> tuple[str, dict[str, Any]]:
@@ -101,8 +138,11 @@ def status_content(
         add_path_index(path_index, path, content_id)
     for path in legacy_paths:
         add_path_index(path_index, path, content_id)
+    reader_type, overview_target = reader_presentation(kind)
     return content_id, {
-        "kind": "chapter" if str(item["id"]).startswith("chapter-") else "lab",
+        "kind": kind,
+        "reader_type": reader_type,
+        "overview_target": overview_target,
         "stem": stem,
         "source_locale": "en" if has_english_source else "zh",
         "legacy_paths": legacy_paths,
@@ -190,6 +230,7 @@ def build_manifest() -> dict[str, Any]:
     status = load_json(STATUS_FILE)
     navigation = load_json(NAVIGATION_FILE)
     lab_navigation = load_json(LAB_NAVIGATION_FILE)
+    skill_registry = load_json(SKILL_REGISTRY_FILE)
     locale_records = matrix["locales"]
     locales: dict[str, Any] = {}
     for suffix in LOCALES:
@@ -207,6 +248,20 @@ def build_manifest() -> dict[str, Any]:
         content_id = item["content_id"]
         contents[content_id] = matrix_content(item, locale_records, path_index)
 
+    for item in matrix.get("reader_content", []):
+        content_id = str(item["content_id"])
+        if content_id in contents:
+            raise ValueError(f"duplicate reader content identity: {content_id}")
+        contents[content_id] = neutral_content(content_id, str(item["kind"]), str(item["path"]), str(item["content_status"]), path_index, "locale-matrix")
+
+    status_skills = {str(item["id"]): item for item in status.get("skills", {}).get("items", [])}
+    registry_skills = {str(item["id"]): item for item in skill_registry.get("records", [])}
+    if set(status_skills) != set(registry_skills):
+        raise ValueError("Skill registry and content status IDs must match")
+    for content_id, item in registry_skills.items():
+        path = f"{normalize(str(item['path']))}/SKILL.md"
+        contents[content_id] = neutral_content(content_id, "skill", path, str(status_skills[content_id]["status"]), path_index, "skill-registry")
+
     aliases: dict[str, str] = {}
     for section in ROUTED_STATUS_SECTIONS:
         for item in status.get(section, {}).get("items", []):
@@ -215,7 +270,7 @@ def build_manifest() -> dict[str, Any]:
             path = normalize(str(item.get("path", "")))
             content_id = path_index.get(path)
             if not content_id:
-                content_id, contents[content_id] = status_content(item, locale_records, path_index)
+                content_id, contents[content_id] = status_content(item, "chapter" if section == "chapters" else "lab", locale_records, path_index)
             aliases[item["id"]] = content_id
 
     routed_counts = {
@@ -230,6 +285,7 @@ def build_manifest() -> dict[str, Any]:
             "docs/governance/content-status.yaml",
             "docs/governance/book-navigation.yaml",
             "docs/governance/lab-navigation.yaml",
+            "docs/governance/skill-registry.yaml",
         ],
         "default_locale": "en",
         "locales": locales,

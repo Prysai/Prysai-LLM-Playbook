@@ -7,6 +7,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 
 from validate_site_accessibility import artifact_findings, source_findings
+import build_site_locale_manifest
 
 
 MINIMAL = """<!doctype html><html lang=\"en\"><body><main><h1>Title</h1>{body}</main></body></html>"""
@@ -41,12 +42,17 @@ def main() -> int:
             fixtures += 2
 
         reader_script = (Path(__file__).resolve().parents[1] / "site/reader.js").read_text(encoding="utf-8")
+        reader_markup = (Path(__file__).resolve().parents[1] / "site/reader.html").read_text(encoding="utf-8")
+        reader_css = (Path(__file__).resolve().parents[1] / "site/reader.css").read_text(encoding="utf-8")
         for required in (
             "copyPrompt: 'Copy prompt'",
             "copyPrompt: '复制提示词'",
             "copiedPrompt: '提示词已复制'",
             "status.setAttribute('aria-live', 'polite')",
             "function isSafeDestination(value, path, { image = false } = {})",
+            "const emptyAnchor = line.trim().match(/^<(?:a|span)\\s+id=\"([a-z][a-z0-9-]*)\"\\s*><\\/(?:a|span)>$/i);",
+            "anchor.className = 'reader-anchor';",
+            "const uniqueHeadingId = (value) => {",
             "else if (isSafeDestination(destination.target, path)) element.href = destination.target;",
             "link.href = window.CODEX_PAGES_ARTIFACT ? `../${target}` : target;",
         ):
@@ -73,16 +79,40 @@ def main() -> int:
         reader_styles = (Path(__file__).resolve().parents[1] / "site/styles.css").read_text(encoding="utf-8")
         if ".skill-grid > a:nth-child(n + 5) { display: none; }" in reader_styles:
             raise AssertionError("mobile-skill-catalog: Skills 5-12 are permanently hidden")
+        if "#project-map .visual-case-card img, #project-map .visual-case-links small { display: none; }" in reader_styles:
+            raise AssertionError("mobile-teaching-boards: project-owned visual previews are hidden")
+        if "#project-map .visual-case-links { grid-template-columns: 1fr; }" not in reader_styles:
+            raise AssertionError("mobile-teaching-boards: visual previews must retain a readable one-column layout")
         for required in (
             "skillMethod: 'Skill method'",
             "fieldNote: 'Field note'",
-            "path.startsWith('skills/')",
+            "selection.readerType",
             "fallback: locale !== 'en', requested: locale, effective: 'en'",
-            "? 'index.html#skills'",
-            "? 'index.html#field-research'",
+            "selection.overviewTarget || 'index.html'",
         ):
             if required not in reader_script:
                 raise AssertionError(f"reader-content-type: missing {required}")
+        for forbidden in ("path.startsWith('skills/')", "path.startsWith('docs/research/')"):
+            if forbidden in reader_script:
+                raise AssertionError(f"reader-content-type: path-prefix inference returned: {forbidden}")
+        for required in ("data-reader-mobile-page-toc", "data-reader-mobile-page-toc-list"):
+            if required not in reader_markup:
+                raise AssertionError(f"mobile-reader-toc: missing {required}")
+        for required in ("mobilePageToc.open = false", "mobilePageTocList.replaceChildren", "target.focus({ preventScroll: true })"):
+            if required not in reader_script:
+                raise AssertionError(f"mobile-reader-toc: missing {required}")
+        if ".reader-article h2, .reader-article h3 { scroll-margin-top: 190px; }" not in reader_css:
+            raise AssertionError("mobile-reader-toc: fixed-header heading offset is missing")
+        fixtures += 1
+
+        manifest = build_site_locale_manifest.build_manifest()
+        kinds = {content_id: record.get("kind") for content_id, record in manifest["contents"].items()}
+        skill_ids = {content_id for content_id, kind in kinds.items() if kind == "skill"}
+        field_note_ids = {content_id for content_id, kind in kinds.items() if kind == "field-note"}
+        if len(skill_ids) != 12:
+            raise AssertionError(f"reader-content-identity: expected 12 Skills, got {len(skill_ids)}")
+        if field_note_ids != {"field-problems-index-2026-08-10", "field-problems-forums-2026-08-10", "codex-field-cases-current-review-2026-08-12"}:
+            raise AssertionError(f"reader-content-identity: unexpected public Field notes: {sorted(field_note_ids)}")
         fixtures += 1
     except (AssertionError, OSError, UnicodeError, ValueError) as exc:
         print("SITE_ACCESSIBILITY_FIXTURES_FAILED")
