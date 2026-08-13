@@ -9,7 +9,7 @@
 - 实验区展示当前实际存在的 18 个实验，并链接到英文实验索引；
 - 响应式导航在窄屏下折叠为菜单，支持 Escape 关闭和焦点返回；
 - 首页语言入口使用普通导航语义并标记当前页面；Reader 提供跳到正文、异步加载/错误状态、正文语言标记和高对比度下划线 fallback；
-- 所有章节、实验、Skill、质量记录链接指向仓库内的真实文件；chapter/lab 路由身份由 `content-status.yaml` 与 manifest 共同覆盖。
+- 所有 Markdown 章节、实验、Skill 与质量记录在本地展示页和 Pages artifact 中都先进入 Reader；Reader 仍从仓库内真实文件取源，chapter/lab 路由身份由 `content-status.yaml` 与 manifest 共同覆盖。非 Markdown 机器记录保留直接文件入口。
 - `visual-cases` 区块链接到两张项目原创 SVG 教学卡；它们解释方法，不证明 Skill runtime、客户需求、市场效果或生产准备度。
 
 ## Highlight component boundary
@@ -73,12 +73,12 @@ the default `deploy: false`, its summary records
 review artifact was built and uploaded. Deployment requires an explicit
 `deploy: true` dispatch and remains a separate observable job.
 
-The Pages root entry sets a release-only flag so the showcase rewrites Markdown
-reader links to `site/reader.html?path=...`. The reader fetches the original
+The showcase rewrites Markdown links to `reader.html?path=...` both in local
+`/site/` development and in the Pages artifact. The reader fetches the original
 Markdown source and renders a bounded, dependency-free reading view; the source
-files remain visible and authoritative. Local `/site/` development keeps the
-direct source links, which makes source inspection and release reading two
-separate, explicit surfaces.
+files remain visible and authoritative in the repository. The release-only flag
+still handles the different Pages root/base path, but it no longer changes
+whether a learner receives a coherent reading surface.
 
 Run the artifact check locally:
 

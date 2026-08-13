@@ -22,6 +22,7 @@ claim and license boundary are clear.
 
 Useful indexes:
 
+- [Beginner first-practice friction](beginner-first-practice-friction-2026-08-13.md) — public reports about over-broad learning wishes, uncontrolled difficulty, route overload, and citation-shaped answers, each mapped to a bounded first action and evidence limit.
 - [Durable LLM-assisted learning and Skill candidates](durable-llm-assisted-learning-and-skill-candidates-2026-08-12.md) — retrieval-first practice, delayed retention and transfer checks, truthful time-bound claims, and file-specific external Skill candidates with direct project links and license boundaries.
 - [Field-problem index](field-problems-index-2026-08-10.md)
 - [Book navigation study](book-navigation-architecture-study-2026-08-11.md)

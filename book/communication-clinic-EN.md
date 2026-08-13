@@ -226,6 +226,7 @@ The cards and fixtures are original project material. Their rationale is
 recorded in:
 
 - [Beginner Practice Pack primary-source boundary](../docs/research/beginner-practice-pack-sources-2026-08-13.md)
+- [Beginner first-practice friction](../docs/research/beginner-first-practice-friction-2026-08-13.md)
 - [Durable language learning and bounded research](../docs/research/durable-language-learning-and-bounded-research-2026-08-13.md)
 - [Prompt patterns for real work](../docs/research/prompt-patterns-for-real-work-2026-08-10.md)
 - [Communication Clinic evaluation candidate](../evals/candidates/communication-clinic-v1/README.md)

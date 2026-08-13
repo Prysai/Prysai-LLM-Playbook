@@ -48,13 +48,42 @@ def main() -> int:
             "status.setAttribute('aria-live', 'polite')",
             "function isSafeDestination(value, path, { image = false } = {})",
             "else if (isSafeDestination(destination.target, path)) element.href = destination.target;",
-            "if (window.CODEX_PAGES_ARTIFACT) link.href = '../index.html';",
+            "link.href = window.CODEX_PAGES_ARTIFACT ? `../${target}` : target;",
         ):
             if required not in reader_script:
                 raise AssertionError(f"dynamic-copy-control: missing {required}")
         if "else element.href = destination.target;" in reader_script:
             raise AssertionError("dynamic-reader-link-policy: unsafe fallback assignment returned")
         fixtures += 2
+
+        site_script = (Path(__file__).resolve().parents[1] / "site/app.js").read_text(encoding="utf-8")
+        for required in (
+            "const pagesHref = (href, language = currentLanguage) => {",
+            "if (!path || !path.endsWith('.md')) return href;",
+            "return `reader.html?path=${encodeURIComponent(path)}${localeQuery}${hash}`;",
+        ):
+            if required not in site_script:
+                raise AssertionError(f"showcase-reader-route: missing {required}")
+        if "if (!pagesArtifactMode) return href;" in site_script:
+            raise AssertionError("showcase-reader-route: local site still sends Markdown links to raw files")
+        if "if (pagesArtifactMode && pagesPathFromHref(sourceHref)?.endsWith('.md'))" in site_script:
+            raise AssertionError("showcase-reader-route: unregistered Markdown links bypass the local Reader")
+        fixtures += 1
+
+        reader_styles = (Path(__file__).resolve().parents[1] / "site/styles.css").read_text(encoding="utf-8")
+        if ".skill-grid > a:nth-child(n + 5) { display: none; }" in reader_styles:
+            raise AssertionError("mobile-skill-catalog: Skills 5-12 are permanently hidden")
+        for required in (
+            "skillMethod: 'Skill method'",
+            "fieldNote: 'Field note'",
+            "path.startsWith('skills/')",
+            "fallback: locale !== 'en', requested: locale, effective: 'en'",
+            "? 'index.html#skills'",
+            "? 'index.html#field-research'",
+        ):
+            if required not in reader_script:
+                raise AssertionError(f"reader-content-type: missing {required}")
+        fixtures += 1
     except (AssertionError, OSError, UnicodeError, ValueError) as exc:
         print("SITE_ACCESSIBILITY_FIXTURES_FAILED")
         print(f"- {exc}")

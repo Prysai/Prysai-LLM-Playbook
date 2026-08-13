@@ -364,7 +364,6 @@ const pagesPathFromHref = (href) => {
   return sitePath.endsWith('.md') ? `site/${sitePath}` : null;
 };
 const pagesHref = (href, language = currentLanguage) => {
-  if (!pagesArtifactMode) return href;
   const path = pagesPathFromHref(href);
   if (!path || !path.endsWith('.md')) return href;
   const hash = href.includes('#') ? href.slice(href.indexOf('#')) : '';
@@ -388,7 +387,7 @@ const localizeReaderLinks = () => {
     const sourceHref = anchor.dataset.sourceHref || anchor.getAttribute('href');
     const contentId = anchor.dataset.contentId || contentIdForHref(sourceHref);
     if (!contentId) {
-      if (pagesArtifactMode && pagesPathFromHref(sourceHref)?.endsWith('.md')) {
+      if (pagesPathFromHref(sourceHref)?.endsWith('.md')) {
         anchor.dataset.sourceHref = sourceHref;
         anchor.href = pagesHref(sourceHref);
       }

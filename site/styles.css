@@ -402,8 +402,7 @@ button, input, select, textarea { font: inherit; }
   .file-map-panel,
   .locale-panel,
   .research-panel,
-  .lab-grid .lab-card:nth-child(n + 3),
-  .skill-grid > a:nth-child(n + 5) { display: none; }
+  .lab-grid .lab-card:nth-child(n + 3) { display: none; }
   .index-layout { border-top: 4px solid var(--ink); }
   .visual-case-links { grid-template-columns: 1fr 1fr; }
   .visual-case-card { min-height: 10rem; }
@@ -480,7 +479,8 @@ button, input, select, textarea { font: inherit; }
   #labs .section-intro, #skills .section-intro { display: none; }
   .lab-grid .lab-card, .skill-grid > a { min-height: 0; padding: .85rem; }
   .lab-grid .lab-card h3 { margin: .55rem 0; font-size: 1.2rem; }
-  .lab-grid .lab-card p, .skill-grid > a small { display: none; }
+  .lab-grid .lab-card p { display: none; }
+  .skill-grid > a small { margin-top: .3rem; font-size: .68rem; line-height: 1.35; }
   .skill-grid > a strong { margin-top: .5rem; }
   .skill-boundary { display: none; }
   .skill-footnote { margin-top: .9rem; }
