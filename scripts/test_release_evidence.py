@@ -71,6 +71,12 @@ def main() -> int:
     require(evidence.derive_decision("verified", passed_dimensions, {"overdue": [{"field": "next_review"}], "invalid": []}) == "blocked", "overdue source did not block verified")
     require(evidence.derive_decision("production-ready", passed_dimensions, {"overdue": [], "invalid": [{"field": "next_review"}]}) == "blocked", "invalid date did not block production-ready")
 
+    empty_optional_date = {"release_tag": {"status": "absent", "reviewed_at": ""}}
+    require(evidence.collect_dates(empty_optional_date, "fixture") == [], "an absent optional artifact produced an invalid empty date")
+    invalid_present_date = {"release_tag": {"status": "reviewed", "reviewed_at": "not-a-date"}}
+    invalid_records = evidence.collect_dates(invalid_present_date, "fixture")
+    require(len(invalid_records) == 1 and invalid_records[0]["date"] == "not-a-date", "a present invalid date was hidden")
+
     rendered_packet = {
         "candidate_sha": "a" * 40, "repository": "example/example",
         "generated_at": "2026-08-12T00:00:00Z", "declared_maturity": "candidate",
@@ -85,7 +91,7 @@ def main() -> int:
     require("Decision: `not_ready`" in rendered, "readiness decision missing from packet summary")
     require("`rollback`" in rendered, "readiness blocker missing from packet summary")
 
-    print("RELEASE_EVIDENCE_TESTS_OK fixtures=9")
+    print("RELEASE_EVIDENCE_TESTS_OK fixtures=10")
     return 0
 
 

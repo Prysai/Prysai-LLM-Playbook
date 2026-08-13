@@ -107,7 +107,8 @@ def collect_dates(value: Any, source: str, trail: str = "") -> list[dict[str, st
         for key, child in value.items():
             child_trail = f"{trail}.{key}" if trail else key
             if key in {"next_review", "reviewed_at", "last_reviewed", "checked_at", "generated_at"} and isinstance(child, str):
-                records.append({"source": source, "field": child_trail, "date": child})
+                if child.strip():
+                    records.append({"source": source, "field": child_trail, "date": child})
             records.extend(collect_dates(child, source, child_trail))
     elif isinstance(value, list):
         for index, child in enumerate(value):
