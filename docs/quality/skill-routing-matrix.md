@@ -5,7 +5,7 @@
 **Status:** `candidate`
 
 This matrix is the human-readable projection of the routing contract for the
-eleven project Skills. It defines responsibility and handoff; it does not
+twelve project Skills. It defines responsibility and handoff; it does not
 grant tool access or replace project rules. The machine-readable source is
 [`../governance/skill-routing-contract.yaml`](../governance/skill-routing-contract.yaml),
 whose fixtures test declared policy consistency, not trigger accuracy.
@@ -17,7 +17,7 @@ whose fixtures test declared policy consistency, not trigger accuracy.
    safety block; another Skill must not silently replace it.
 2. Project rules, user constraints, and permission gates outrank every Skill.
 3. If no Skill is explicit, choose the narrowest Skill whose primary question
-   matches the task. Do not load all eleven by default.
+   matches the task. Do not load all twelve by default.
 4. A Skill may hand off only to a named downstream responsibility in the table.
    Handoffs transfer control; they are not recursive co-ownership.
 5. Evidence Review is an audit gate, not a universal preamble. It reviews an
@@ -150,7 +150,7 @@ Additional contract fields are required where the route needs them:
 ## Source and maintenance boundary
 
 - **Source:** `CONTEXT.md`, `docs/charter.md`, `docs/book-architecture.md`,
-  `docs/quality/skill-quality-standard.md`, and the eleven Skill files.
+  `docs/quality/skill-quality-standard.md`, and the twelve Skill files.
 - **License:** original project rewrite. External skill repositories and
   supplied archives remain reference-only unless the asset register records a
   compatible license and attribution.

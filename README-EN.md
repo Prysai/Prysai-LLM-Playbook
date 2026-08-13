@@ -10,7 +10,8 @@ License: curriculum text and teaching assets are CC BY-NC 4.0 unless a file
 states otherwise. See [`LICENSE`](LICENSE) and the [licensing boundary](docs/sources/licensing.md).
 
 > **Release decision:** `candidate` only. Static checks pass, but learning
-> runs, evaluation runs, and independent review evidence are still pending.
+> learner and transfer runs, repeated evaluations, and independent review
+> evidence are still pending; two isolated first-turn observations are recorded.
 > This is a public development candidate, not a finished course.
 
 > An English-first, evidence-led field guide for turning GPT and Codex from a
@@ -136,7 +137,7 @@ assets; the case is explicitly synthetic.
 
 ![Skill to observable output](assets/teaching/skill-to-observable-output.svg)
 
-![Synthetic first-time buyer guide produced from a bounded Product Context handoff](assets/cases/product-context-real-estate-desktop.png)
+[![Synthetic first-time buyer guide produced from a bounded Product Context handoff](assets/cases/product-context-real-estate-thumbnail.png)](assets/cases/product-context-real-estate-desktop.png)
 
 ![Request to evidence teaching board](assets/teaching/task-to-evidence-red-black.svg)
 
@@ -371,7 +372,7 @@ repository; they do not describe learning outcomes.
 | Project | `candidate` | The product skeleton and core contracts exist; broad independent evidence is still being built |
 | Chapters | 22 structured chapters · `candidate` | Canonical English sources exist, but runtime exercises and broad independent review remain incomplete |
 | Labs | 18 labs · `draft` · `run_status: not_run` | The contracts exist; the repository does not claim that every lab has been freshly executed |
-| Skills | 11 project Skills · `candidate` | Structural checks pass; fresh-context evidence is partial and remains visible in the registry |
+| Skills | 12 project Skills · `candidate` | Structural checks pass; fresh-context evidence is partial and remains visible in the registry |
 | Evaluation fixtures | 39 fixtures · `candidate` · `not_run` | The task set is defined; model execution logs are not being implied |
 | Public showcase | `candidate` | English default and Chinese runtime toggle are implemented; broader visual and locale coverage remains work |
 | Locale rollout | EN source plus five translation entries in progress | Six entry locales are registered; the whole book is not yet six-language complete |

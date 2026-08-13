@@ -26,7 +26,8 @@ Yield when:
 - the user wants missing research performed: Research Router;
 - the user wants an unclear task executed: Task Protocol;
 - the user wants a multi-stage workflow run: Workflow Orchestrator;
-- the user wants a lesson or practice exercise: Codex Coach.
+- the user wants a non-Codex lesson or practice exercise: Learning Coach;
+- the user wants a Codex lesson or practice exercise: Codex Coach.
 
 Do not silently repair the artifact under review. A repair is a new task and
 must be routed separately.
@@ -49,6 +50,25 @@ change, command output for a build, runtime observation for runtime behavior,
 rendered output for visual claims, authoritative URL plus date for volatile
 facts, and a defined sample plus method for preference claims. A verified claim
 is scoped to the evidence; do not upgrade a narrow result to a broad statement.
+
+### Learning-evidence profile
+
+When the claim concerns practice or learning, keep `process_pass` separate from
+`learner_outcome`. Require the fixed fixture revision, allowed aids, preserved
+baseline attempt, hint ledger, learner-authored correction, changed-case task,
+scorer and threshold, delay if retention is claimed, and the exact status
+requested. Map the result narrowly:
+
+- a selected prompt or plan: `template_selected`;
+- a completed coached loop: `practised`;
+- a passing fixed task: `demonstrated_on_this_task`;
+- a passing unseen changed task: `transferred_to_[variation]`;
+- a passing delayed unseen task: `retained_at_[delay]`.
+
+Reject `mastered`, `fluent`, `expert`, or general improvement when the packet
+contains only a model response, same-session correction, model self-score, or
+one successful task. Use the Learning Coach receipt as input when present; do
+not turn this review profile into a second coaching loop.
 
 ## Risk, side effects, and confirmation
 
@@ -94,6 +114,6 @@ rollback, and release gates also pass.
 - `source`: `docs/quality/skill-quality-standard.md`; `docs/book-architecture.md`; `docs/quality/evaluation-framework.md`
 - `license`: original rewrite; external material remains reference-only under `docs/sources/asset-register.md`
 - `owner`: evidence-systems maintainer
-- `version`: `0.2.0`
+- `version`: `0.3.0`
 - `review_date`: `2026-09-09`
 - `content_status`: `candidate`

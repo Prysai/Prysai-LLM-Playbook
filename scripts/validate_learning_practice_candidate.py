@@ -17,6 +17,7 @@ LAB = ROOT / "book/labs/lab-018-language-transfer-EN.md"
 CLINIC = ROOT / "book/communication-clinic-EN.md"
 SKILL = ROOT / "skills/prysai-learning-coach/SKILL.md"
 FIXTURE = ROOT / "evals/candidates/learning-practice-contract-v1/fixture.json"
+FIRST_TURN_RUN = ROOT / "evals/candidates/learning-practice-contract-v1/runs/2026-08-13-baseline-first-turn.md"
 SITE = ROOT / "site/index.html"
 
 TEXT_REQUIREMENTS = {
@@ -50,6 +51,13 @@ TEXT_REQUIREMENTS = {
         "communication-clinic-EN.md#language-practice-route",
         "communication-clinic-EN.md#bounded-research-route",
         "candidate · not_run",
+    ],
+    FIRST_TURN_RUN: [
+        "observed_single_turn",
+        "Full contract run:** `not_run`",
+        "Preserved model response",
+        "No learner",
+        "does not establish",
     ],
 }
 

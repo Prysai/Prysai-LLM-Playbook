@@ -389,6 +389,58 @@ button, input, select, textarea { font: inherit; }
   .trouble-row a { grid-column: 2; }
 }
 
+/* On a phone the homepage is a route chooser, not a second copy of every
+   registry. The canonical indexes remain one tap away and retain the complete
+   evidence/status record. */
+@media (max-width: 480px) {
+  .section { padding: 4.25rem 0; }
+  .section-heading { margin-bottom: 2.5rem; }
+  .section h2 { font-size: clamp(2.55rem, 13vw, 3.4rem); letter-spacing: -.07em; }
+  .repository-strip .brief-item:nth-child(n + 3),
+  .file-map-panel,
+  .locale-panel,
+  .research-panel,
+  .visual-case-card:nth-child(n + 3),
+  .lab-grid .lab-card:nth-child(n + 3),
+  .skill-grid > a:nth-child(n + 5) { display: none; }
+  .index-layout { border-top: 4px solid var(--ink); }
+  .visual-case-links { grid-template-columns: 1fr 1fr; }
+  .visual-case-card { min-height: 10rem; }
+  .level-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-right: 0; border-bottom: 1px solid var(--line); }
+  .level-tab { min-height: 4.5rem; padding: .7rem .45rem; border-right: 1px solid var(--line); }
+  .level-tab strong, .level-tab small { display: none; }
+  .level-tab span { font-size: .82rem; }
+  .starter-contract pre { max-height: 12rem; }
+  .lab-grid, .skill-grid { border-bottom: 4px solid currentColor; }
+  .skill-index-link { color: #fff; border-color: rgba(255,255,255,.65); }
+  .problem-card { min-height: 0; padding: 1rem; }
+  .problem-card strong { margin-top: .75rem; font-size: 1rem; }
+  .problem-card p { display: none; }
+  .problem-card .card-link { margin-top: 1rem; padding-top: .65rem; }
+  .task-steps { display: none; }
+  .first-30-layout { display: block; }
+  .contract-grid { grid-template-columns: 1fr 1fr; }
+  .contract-grid > div:nth-child(n + 5) { display: none; }
+  .path-contract-card:nth-child(n + 3), .path-evaluation-list { display: none; }
+  .path-contract-grid { grid-template-columns: 1fr 1fr; }
+  .update-flow { display: none; }
+  .update-links a:nth-child(n + 3) { display: none; }
+  .update-layout { display: block; }
+  .status-grid { grid-template-columns: 1fr 1fr; }
+  .status-card { min-height: 0; padding: 1rem; }
+  .status-card p { margin-top: .75rem; }
+}
+
+.mobile-index-rail { display: none; }
+@media (max-width: 480px) {
+  .mobile-index-rail { display: grid; grid-template-columns: 1fr 1fr; margin: 1.5rem 0; border: 1px solid var(--ink); }
+  .mobile-index-rail a { display: grid; grid-template-columns: 2.5rem 1fr; align-items: baseline; gap: .5rem; padding: .9rem; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); color: var(--ink); }
+  .mobile-index-rail a:nth-child(even) { border-right: 0; }
+  .mobile-index-rail a:nth-last-child(-n + 2) { border-bottom: 0; }
+  .mobile-index-rail strong { color: var(--red); font-size: 1.15rem; }
+  .mobile-index-rail span { font-size: .72rem; font-weight: 700; }
+}
+
 .starter-contract { margin-top: 2rem; padding: clamp(1.2rem, 3vw, 2rem); scroll-margin-top: 10rem; border: 1px solid #555; color: #fff; background: #151515; }
 .starter-contract-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; }
 .starter-contract h3 { margin: .35rem 0 0; font-size: clamp(1.6rem, 3vw, 2.8rem); letter-spacing: -.06em; }

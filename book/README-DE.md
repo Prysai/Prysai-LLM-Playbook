@@ -50,7 +50,7 @@ Die Dateien sind vorhanden, aber Ausführungs- und Prüfbelege fehlen noch.
 Die Evaluations-Fixtures umfassen 39 feste Aufgaben in 16 Spuren. Sie sind
 `candidate`, ihr `run_status` ist `not_run`, und die Prüfung bleibt bis zu
 Modellausführungsprotokollen auf statische Struktur beschränkt. Die Sammlung
-enthält 17 Labs; jedes ist derzeit `draft` mit `run_status: not_run`.
+enthält 18 Labs; jedes ist derzeit `draft` mit `run_status: not_run`.
 
 Für die drei deutschen Einstiege gilt separat:
 
@@ -105,7 +105,7 @@ und die
 | Ort | Inhalt | Aktueller Migrationsstatus |
 |---|---|---|
 | `book/chapters/` | 22 Hauptkapitel | Noch keine vollständige `-DE`-Matrix für die vorhandenen Dateien |
-| `book/labs/` | 13 praktische Labs | Noch keine vollständige `-DE`-Matrix; Ausführungen `not_run` |
+| `book/labs/` | 18 praktische Labs | Noch keine vollständige `-DE`-Matrix; Ausführungen `not_run` |
 | `book/table-of-contents-DE.md` | Deutsches Leseverzeichnis und Kapiteleinstiege | Erste Migration, Kapitel und Labs weiterhin in Arbeit |
 | `book/README-DE.md` | Dieser deutsche Buchleitfaden | Erste Migration, `candidate`, Übersetzung `in-progress` |
 | `book/preface-DE.md` | Deutsches Vorwort | Erste Migration, `candidate`, Übersetzung `in-progress` |

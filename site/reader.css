@@ -301,6 +301,10 @@ a:hover { color: var(--reader-link-hover); }
 .reader-chapter-list-disclosure a.is-current { font-weight: 800; }
 .reader-details { margin-top: 18px; }
 .reader-details[open] { padding-bottom: 18px; }
+.reader-trust-card { margin-top: 18px; }
+.reader-trust-card[open] { padding-bottom: 18px; }
+.reader-trust-card [data-reader-trust-scope] { color: var(--reader-ink); font-size: .8rem; font-weight: 700; }
+.reader-trust-card [data-reader-trust-limitations] { display: block; color: var(--reader-muted); font-size: .78rem; line-height: 1.45; }
 .reader-detail-row { margin-top: 14px; }
 .reader-detail-row .reader-aside-label { margin-bottom: 4px; }
 

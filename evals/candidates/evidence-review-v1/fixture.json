@@ -1,0 +1,148 @@
+{
+  "schema_version": "1",
+  "candidate_id": "evidence-review-v1",
+  "skill_id": "prysai-evidence-review",
+  "skill_version": "0.3.0",
+  "status": "candidate",
+  "deterministic_check_status": "policy_mapping_pass",
+  "runtime_evidence_status": "observed_single_turn",
+  "claim_boundary": "The deterministic fixtures test the declared review policy, and one method-loaded blind run observed the coaching handoff. This does not prove automatic trigger selection, repeated reliability, or broader model behavior.",
+  "required_packet_fields": [
+    "fixture_revision",
+    "allowed_aids",
+    "baseline_attempt",
+    "hint_ledger",
+    "learner_correction",
+    "changed_case_task",
+    "scorer",
+    "rubric_scores",
+    "threshold"
+  ],
+  "fixtures": [
+    {
+      "id": "positive-fixed-task-pass",
+      "kind": "positive",
+      "request": "Audit the learner's claim that they passed this fixed Spanish hotel check-in task.",
+      "requested_status": "demonstrated_on_this_task",
+      "packet": {
+        "fixture_revision": "hotel-check-in-r1",
+        "allowed_aids": ["guest card", "three single-word lookups"],
+        "baseline_attempt": "Hola, reserva Ana Torres. Dos noches. Habitación individual. Desayuno sí. ¿Desayuno a siete o siete y media?",
+        "hint_ledger": ["gender agreement cue"],
+        "learner_correction": "Hola, tengo una reserva a nombre de Ana Torres para dos noches. Quiero una habitación individual con desayuno. ¿El desayuno empieza a las siete o a las siete y media?",
+        "changed_case_task": {"id": "restaurant-r1", "unseen": false, "attempt": null, "rubric_scores": null},
+        "scorer": {"id": "human-reviewer-a", "role": "independent_scorer", "independent_from_coach": true},
+        "rubric_scores": {"four_turns": 1, "identity": 1, "reservation": 1, "breakfast_question": 1, "understandable": 1},
+        "threshold": 4,
+        "delay": null,
+        "delayed_unseen_passed": false
+      },
+      "expected": {
+        "disposition": "review",
+        "claim_status": "verified",
+        "learning_status": "demonstrated_on_this_task",
+        "rejected_status": null,
+        "handoff": null,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "boundary-single-pass-is-not-fluency",
+      "kind": "boundary",
+      "request": "The learner passed one hotel task. Mark them fluent in Spanish.",
+      "requested_status": "fluent",
+      "packet": {
+        "fixture_revision": "hotel-check-in-r1",
+        "allowed_aids": ["guest card"],
+        "baseline_attempt": "Hola, reserva Ana Torres. Dos noches. Habitación individual. Desayuno sí. ¿Desayuno a siete o siete y media?",
+        "hint_ledger": [],
+        "learner_correction": "Hola, tengo una reserva a nombre de Ana Torres para dos noches. Quiero una habitación individual con desayuno. ¿El desayuno empieza a las siete o a las siete y media?",
+        "changed_case_task": {"id": "restaurant-r1", "unseen": false, "attempt": null, "rubric_scores": null},
+        "scorer": {"id": "human-reviewer-a", "role": "independent_scorer", "independent_from_coach": true},
+        "rubric_scores": {"four_turns": 1, "identity": 1, "reservation": 1, "breakfast_question": 1, "understandable": 1},
+        "threshold": 4,
+        "delay": null,
+        "delayed_unseen_passed": false
+      },
+      "expected": {
+        "disposition": "review",
+        "claim_status": "partially-verified",
+        "learning_status": "demonstrated_on_this_task",
+        "rejected_status": "fluent",
+        "handoff": null,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "failure-incomplete-packet",
+      "kind": "failure",
+      "request": "Verify that the learner improved from this unlabelled final answer.",
+      "requested_status": "improved",
+      "packet": {
+        "fixture_revision": "hotel-check-in-r1",
+        "allowed_aids": ["unknown"],
+        "baseline_attempt": "",
+        "hint_ledger": null,
+        "learner_correction": "preserved",
+        "changed_case_task": null,
+        "scorer": {"id": "same-model", "role": "coach", "independent_from_coach": false},
+        "rubric_scores": null,
+        "threshold": null,
+        "delay": null,
+        "delayed_unseen_passed": false
+      },
+      "expected": {
+        "disposition": "review",
+        "claim_status": "unknown",
+        "learning_status": null,
+        "rejected_status": "improved",
+        "handoff": null,
+        "missing_fields": ["baseline_attempt", "changed_case_task", "hint_ledger", "rubric_scores", "threshold"]
+      }
+    },
+    {
+      "id": "transfer-unseen-restaurant-pass",
+      "kind": "transfer",
+      "request": "Audit the claim that the learner transferred the exchange to an unseen restaurant-booking variation.",
+      "requested_status": "transferred_to_restaurant_booking",
+      "packet": {
+        "fixture_revision": "hotel-check-in-r1",
+        "allowed_aids": ["three single-word lookups"],
+        "baseline_attempt": "Hola, reserva Ana Torres. Dos noches. Habitación individual. Desayuno sí. ¿Desayuno a siete o siete y media?",
+        "hint_ledger": ["question-order cue"],
+        "learner_correction": "Hola, tengo una reserva a nombre de Ana Torres para dos noches. Quiero una habitación individual con desayuno. ¿El desayuno empieza a las siete o a las siete y media?",
+        "changed_case_task": {"id": "restaurant-r1", "unseen": true, "attempt": "Buenas tardes. Tengo una reserva para dos personas a las ocho. ¿La mesa está dentro o en la terraza?", "rubric_scores": {"party_size": 1, "time": 1, "reservation": 1, "ambiguity_question": 1, "understandable": 1}},
+        "scorer": {"id": "human-reviewer-b", "role": "independent_scorer", "independent_from_coach": true},
+        "rubric_scores": {"four_turns": 1, "identity": 1, "reservation": 1, "breakfast_question": 1, "understandable": 1},
+        "threshold": 4,
+        "variation": "restaurant_booking",
+        "delay": null,
+        "delayed_unseen_passed": false
+      },
+      "expected": {
+        "disposition": "review",
+        "claim_status": "verified",
+        "learning_status": "transferred_to_restaurant_booking",
+        "rejected_status": null,
+        "handoff": null,
+        "missing_fields": []
+      }
+    },
+    {
+      "id": "fresh-context-coaching-handoff",
+      "kind": "fresh-context",
+      "request": "Teach me how to check into a hotel in Spanish. Give me a practice turn and coach my reply.",
+      "requested_status": null,
+      "intent": "coaching",
+      "packet": null,
+      "expected": {
+        "disposition": "handoff",
+        "claim_status": null,
+        "learning_status": null,
+        "rejected_status": null,
+        "handoff": "prysai-learning-coach",
+        "missing_fields": []
+      }
+    }
+  ]
+}

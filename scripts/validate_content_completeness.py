@@ -254,6 +254,28 @@ def check_generated_outputs(errors: list[str]) -> None:
             errors.append(f"{relative_path}: generator marker is missing")
 
 
+def check_public_count_claims(status: dict[str, Any], errors: list[str]) -> None:
+    """Keep manually authored front-door counts aligned with governance data."""
+    lab_count = status.get("labs", {}).get("count")
+    if not isinstance(lab_count, int):
+        errors.append("content-status.labs.count must be an integer")
+        return
+    expected = f"| Labs | {lab_count} labs"
+    exact_expectations = {
+        "README.md": expected,
+        "README-EN.md": expected,
+        "README-DE.md": f"{lab_count} Labs `draft`",
+        "book/preface-EN.md": f"{lab_count} labs as `draft`",
+        "book/README-DE.md": f"{lab_count} praktische Labs",
+        "book/preface-DE.md": f"{lab_count} Labs `draft`",
+        "site/app.js": f"ledgerLabs: 'Labs · {lab_count}'",
+    }
+    for relative_path, claim in exact_expectations.items():
+        path = ROOT / relative_path
+        if not path.is_file() or claim not in path.read_text(encoding="utf-8"):
+            errors.append(f"{relative_path}: public lab count must match {lab_count}")
+
+
 def main() -> int:
     errors: list[str] = []
     warnings: list[str] = []
@@ -276,6 +298,7 @@ def main() -> int:
     check_navigation(navigation, matrix_by_path, errors)
     check_reader_entries(errors)
     check_generated_outputs(errors)
+    check_public_count_claims(status, errors)
 
     for status_id, expected_identity in REQUIRED_IDENTITIES.items():
         item = status_by_id.get(status_id)

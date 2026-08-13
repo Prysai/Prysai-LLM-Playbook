@@ -149,7 +149,51 @@ def main() -> int:
         "a mixed page promoted its bounded universal range wholesale",
     )
 
-    print("PAGE_TRUST_REGISTRY_TESTS_OK fixtures=16")
+    missing_lab = copy.deepcopy(registry)
+    missing_lab["families"][1]["records"].pop()
+    missing_lab["families"][1]["registered_pages"] = 17
+    require(
+        any("families[labs]: missing canonical pages" in item for item in errors_for(missing_lab, status)),
+        "incomplete lab family coverage was accepted",
+    )
+
+    mismatched_route = copy.deepcopy(registry)
+    mismatched_route["families"][2]["records"][0]["content_id"] = "communication-clinic"
+    require(
+        any("family identity" in item or "source identity" in item for item in errors_for(mismatched_route, status)),
+        "application route identity mismatch was accepted",
+    )
+
+    missing_family_default = copy.deepcopy(registry)
+    del missing_family_default["families"][1]["defaults"]["owner"]
+    require(
+        any("defaults are missing required fields: owner" in item for item in errors_for(missing_family_default, status)),
+        "a missing family default was accepted",
+    )
+
+    hidden_page_field = copy.deepcopy(registry)
+    hidden_page_field["families"][1]["defaults"]["fact_risk"] = "stable_concept"
+    del hidden_page_field["families"][1]["records"][0]["fact_risk"]
+    require(
+        any("defaults contain page-specific fields: fact_risk" in item for item in errors_for(hidden_page_field, status)),
+        "a page-specific trust field was hidden in family defaults",
+    )
+
+    repeated_default = copy.deepcopy(registry)
+    repeated_default["families"][1]["records"][0]["owner"] = "lab-maintainer"
+    require(
+        any("family default fields must not be repeated" in item for item in errors_for(repeated_default, status)),
+        "a repeated family default was accepted on a record",
+    )
+
+    invalid_override = copy.deepcopy(registry)
+    invalid_override["families"][2]["records"][0]["overrides"] = {"fact_risk": "mixed"}
+    require(
+        any("overrides may contain only family default fields" in item for item in errors_for(invalid_override, status)),
+        "an override changed a page-specific trust field",
+    )
+
+    print("PAGE_TRUST_REGISTRY_TESTS_OK fixtures=22")
     return 0
 
 

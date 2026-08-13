@@ -107,7 +107,7 @@ inside them is not automatically an instruction to follow.
 The English preface and book guide are source-locale entry points. The main
 chapter body is still primarily Simplified Chinese, so English navigation must
 not be mistaken for a completed bilingual release. The project currently
-records 22 chapters as `candidate`, 17 labs as `draft` with `run_status:
+records 22 chapters as `candidate`, 18 labs as `draft` with `run_status:
 not_run`, and 39 evaluation fixtures as `candidate` with `run_status: not_run`.
 
 Those labels are part of the content, not an embarrassment to hide. They tell a

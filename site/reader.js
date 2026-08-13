@@ -24,6 +24,10 @@
   const chapterCard = document.querySelector('[data-reader-chapter-card]');
   const chapterLabel = document.querySelector('[data-reader-chapter-label]');
   const chapterStatus = document.querySelector('[data-reader-chapter-status]');
+  const trustCard = document.querySelector('[data-reader-trust-card]');
+  const trustScope = document.querySelector('[data-reader-trust-scope]');
+  const trustReview = document.querySelector('[data-reader-trust-review]');
+  const trustLimitations = document.querySelector('[data-reader-trust-limitations]');
   const pagination = document.querySelector('[data-reader-pagination]');
   const previousLink = document.querySelector('[data-reader-previous]');
   const previousTitle = document.querySelector('[data-reader-previous-title]');
@@ -32,11 +36,11 @@
   const bookNavigation = manifest.book_navigation || { parts: [], chapters: [] };
   const readerCopy = {
     en: {
-      skip: 'Skip to content', back: 'Back to overview', language: 'Language', languageAria: 'Choose reading language', detailsAria: 'Page details', bookChaptersAria: 'Book chapters', bookChapters: 'Book chapters', chapterList: 'Chapter list', pageDetails: 'Page details', chapterNavigationAria: 'Chapter navigation', previousChapter: 'Previous chapter', nextChapter: 'Next chapter', onThisPageAria: 'On this page', onThisPage: 'On this page', readingRoute: 'Reading route', sourcePath: 'Source path', contentIdentity: 'Content identity', openSource: 'Open source file ↗', footer: 'Source remains Markdown; this page is a static reading view', loading: 'Loading the source page…',
+      skip: 'Skip to content', back: 'Back to overview', language: 'Language', languageAria: 'Choose reading language', detailsAria: 'Page details', bookChaptersAria: 'Book chapters', bookChapters: 'Book chapters', chapterList: 'Chapter list', pageDetails: 'Page details', trustRecord: 'Trust record', trustScope: 'Scope', trustReview: 'Next review', trustLimitations: 'Known limitation', trustUnavailable: 'unavailable', trustUnavailableDetail: 'The trust registry could not be loaded. This is a data failure, not evidence that the page has no record.', chapterNavigationAria: 'Chapter navigation', previousChapter: 'Previous chapter', nextChapter: 'Next chapter', onThisPageAria: 'On this page', onThisPage: 'On this page', readingRoute: 'Reading route', sourcePath: 'Source path', contentIdentity: 'Content identity', openSource: 'Open source file ↗', footer: 'Source remains Markdown; this page is a static reading view', loading: 'Loading the source page…',
       fallbackEnglish: (name) => `${name} is not available for this page yet. Showing the current English source.`, fallbackSource: (name, source) => `${name} is not available for this page yet. Showing the current ${source} source.`, invalidPath: 'This reader URL does not name an allowed project source file. Return to the overview and choose a page from the guide.', loadError: (status) => `The source page could not be loaded (${status}).`
     },
     zh: {
-      skip: '跳到正文', back: '返回总览', language: '语言', languageAria: '选择阅读语言', detailsAria: '页面详情', bookChaptersAria: '全书章节', bookChapters: '全书章节', chapterList: '章节列表', pageDetails: '页面详情', chapterNavigationAria: '章节导航', previousChapter: '上一章', nextChapter: '下一章', onThisPageAria: '本页目录', onThisPage: '本页目录', readingRoute: '阅读路线', sourcePath: '源文件路径', contentIdentity: '内容身份', openSource: '打开源文件 ↗', footer: '源文件仍是 Markdown；此页面是静态阅读视图', loading: '正在加载源文件……',
+      skip: '跳到正文', back: '返回总览', language: '语言', languageAria: '选择阅读语言', detailsAria: '页面详情', bookChaptersAria: '全书章节', bookChapters: '全书章节', chapterList: '章节列表', pageDetails: '页面详情', trustRecord: '信任记录', trustScope: '范围', trustReview: '下次复核', trustLimitations: '已知限制', trustUnavailable: '不可用', trustUnavailableDetail: '信任登记表加载失败。这是数据故障，不代表本页没有登记记录。', chapterNavigationAria: '章节导航', previousChapter: '上一章', nextChapter: '下一章', onThisPageAria: '本页目录', onThisPage: '本页目录', readingRoute: '阅读路线', sourcePath: '源文件路径', contentIdentity: '内容身份', openSource: '打开源文件 ↗', footer: '源文件仍是 Markdown；此页面是静态阅读视图', loading: '正在加载源文件……',
       fallbackEnglish: (name) => `此页面暂时没有${name}版本，当前显示英文源文件。`, fallbackSource: (name, source) => `此页面暂时没有${name}版本，当前显示${source}源文件。`, invalidPath: '这个阅读链接没有指向允许的项目源文件。请返回总览，从指南中选择页面。', loadError: (status) => `源文件加载失败（${status}）。`
     }
   };
@@ -570,6 +574,50 @@ function canonicalChapterTitle(chapter) {
     setReaderStatus(message, { assertive: true });
   }
 
+  async function loadTrustRecord(contentId) {
+    try {
+      const response = await fetch(directHref('docs/governance/page-trust-registry.yaml'));
+      if (!response.ok) return { unavailable: true };
+      const registry = await response.json();
+      const records = [
+        ...(Array.isArray(registry.records) ? registry.records : []),
+        ...((registry.families || []).flatMap((family) => {
+          if (!Array.isArray(family.records)) return [];
+          const defaults = family.defaults && typeof family.defaults === 'object' ? family.defaults : {};
+          return family.records.map((record) => ({
+            ...defaults,
+            ...(record.overrides && typeof record.overrides === 'object' ? record.overrides : {}),
+            ...record,
+          }));
+        })),
+      ];
+      return records.find((record) => record.content_id === contentId) || null;
+    } catch (_) {
+      return { unavailable: true };
+    }
+  }
+
+  function renderTrustRecord(record) {
+    if (!trustCard || !trustScope || !trustReview || !trustLimitations) return;
+    if (!record) {
+      trustCard.hidden = true;
+      return;
+    }
+    if (record.unavailable) {
+      trustScope.textContent = currentReaderCopy().trustUnavailable;
+      trustReview.removeAttribute('datetime');
+      trustReview.textContent = '—';
+      trustLimitations.textContent = currentReaderCopy().trustUnavailableDetail;
+      trustCard.hidden = false;
+      return;
+    }
+    trustScope.textContent = `${record.content_status} · ${record.curriculum_scope}`;
+    trustReview.dateTime = record.next_review;
+    trustReview.textContent = record.next_review;
+    trustLimitations.textContent = record.known_limitations?.[0] || '';
+    trustCard.hidden = false;
+  }
+
   async function load() {
     if (!requestedPath || requestedPath.includes('..') || !/^(?:(?:README(?:-[A-Z]{2})?|AGENTS|CONTEXT)\.md|(?:book|docs|skills|assets|examples|evals|site)\/)/.test(requestedPath)) {
       showError(currentReaderCopy().invalidPath);
@@ -598,6 +646,7 @@ function canonicalChapterTitle(chapter) {
     buildTableOfContents();
     updateChapterRail(selection, title);
     renderBookNavigation(selection);
+    renderTrustRecord(await loadTrustRecord(selection.contentId));
     document.title = `${title} · Codex Field Guide`;
     document.querySelector('meta[name="description"]').setAttribute('content', `Read ${title} in the Codex Field Guide.`);
     const effectiveLocale = selection.effective || locale;

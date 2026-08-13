@@ -17,6 +17,8 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\test_gold_content_admission.py
 & $py scripts\validate_communication_clinic_candidate.py
 & $py scripts\validate_learning_practice_candidate.py
+& $py scripts\validate_evidence_review_candidate.py
+& $py scripts\test_evidence_review_candidate.py
 & $py scripts\validate_executable_examples.py
 & $py scripts\test_executable_examples.py
 & $py scripts\test_lab_013_reference.py
@@ -130,3 +132,9 @@ bounded HEAD/GET requests, and writes categorized JSON/Markdown observations.
 Its initial `report_only` policy does not turn transient third-party failures
 into random PR failures. `test_external_url_audit.py` covers classification,
 deduplication, claim mapping, insecure schemes, and redirect escape attempts.
+
+`validate_evidence_review_candidate.py` and
+`test_evidence_review_candidate.py` derive narrow learning-evidence statuses
+from original positive, boundary, failure, transfer, and fresh-context fixtures.
+They check declared policy and preserve one method-loaded blind handoff as
+`observed_single_turn`; this is not automatic-trigger or repeated-runtime proof.

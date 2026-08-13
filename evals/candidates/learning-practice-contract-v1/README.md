@@ -30,6 +30,12 @@ rubric_scores | hints_used | corrected_attempt | transfer_delta
 transfer_attempt | scorer | claim_status | limits | next_review_at
 ```
 
+One fresh-context baseline first-turn response is preserved in
+[`runs/2026-08-13-baseline-first-turn.md`](runs/2026-08-13-baseline-first-turn.md).
+It passed the five static first-turn criteria, but no learner attempt or full
+coaching loop followed. The candidate therefore remains `not_run`; the record
+is an observed model response, not learner-outcome evidence.
+
 `process_pass` and `learner_outcome` must be scored separately. The same model
 may provide formative feedback, but its own score is not independent learning
 evidence. Retention remains `not_run` until a learner returns after the stated
@@ -40,7 +46,7 @@ delay and attempts a new task unaided.
 Static review can show that the contract contains the expected controls. It
 cannot show that a model will follow them, that the prompts improve learning,
 that the learner retained or transferred a skill, or that behavior is consistent
-across products. No model or learner run is stored here yet.
+across products. No complete model-and-learner run is stored here yet.
 
 All wording and synthetic task structure are original Prysai Lab material. The
 research basis and reuse boundaries are recorded in the project source register.

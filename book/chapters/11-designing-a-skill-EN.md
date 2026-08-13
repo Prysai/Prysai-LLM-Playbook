@@ -464,7 +464,7 @@ local screenshot
 
 The local sandbox source is [available here](../../examples/skill-sandbox/product-context-real-estate/README.md), and the existing screenshot is shown below.
 
-![Synthetic first-time buyer guide rendered in the local sandbox](../../assets/cases/product-context-real-estate-desktop.png)
+[![Synthetic first-time buyer guide rendered in the local sandbox](../../assets/cases/product-context-real-estate-thumbnail.png)](../../assets/cases/product-context-real-estate-desktop.png)
 
 The [390px capture](../../assets/cases/product-context-real-estate-mobile.png)
 checks the same artifact under a narrow viewport. Neither image proves that

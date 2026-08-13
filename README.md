@@ -10,7 +10,8 @@ License: curriculum text and teaching assets are CC BY-NC 4.0 unless a file
 states otherwise. See [`LICENSE`](LICENSE) and the [licensing boundary](docs/sources/licensing.md).
 
 > **Release decision:** `candidate` only. Static checks pass, but learning
-> runs, evaluation runs, and independent review evidence are still pending.
+> learner and transfer runs, repeated evaluations, and independent review
+> evidence are still pending; two isolated first-turn observations are recorded.
 > This is a public development candidate, not a finished course.
 
 > An English-first, evidence-led field guide for turning GPT and Codex into a
@@ -78,7 +79,7 @@ or production readiness.
 
 ![Field signal to safe degradation](assets/teaching/field-signal-to-safe-degradation-red-black.svg)
 
-![Synthetic first-time buyer guide produced from a bounded Product Context handoff](assets/cases/product-context-real-estate-desktop.png)
+[![Synthetic first-time buyer guide produced from a bounded Product Context handoff](assets/cases/product-context-real-estate-thumbnail.png)](assets/cases/product-context-real-estate-desktop.png)
 
 The same local artifact was checked at 390px. See the
 [mobile capture](assets/cases/product-context-real-estate-mobile.png) and the
@@ -167,8 +168,8 @@ table of contents must not be mistaken for a tested course.
 | Evidence layer | Current state | Missing evidence |
 |---|---|---|
 | English chapters | 22 canonical sources | Fresh chapter review and learner evidence |
-| English labs | 17 canonical sources | Runtime execution and independent review for all labs |
-| Practice runs | 17 labs, all `draft / not_run` | Fixed inputs, logs, artifacts, failure branches, independent reruns |
+| English labs | 18 canonical sources | Runtime execution and independent review for all labs |
+| Practice runs | 18 labs, all `draft / not_run` | Fixed inputs, logs, artifacts, failure branches, independent reruns |
 | Evaluation | 39 fixtures, `not_run / static_structure_only` | Scored executions, thresholds, reviewer records |
 | Locales | English source plus five migration routes | Actual translations and language review |
 | Release | `candidate` | License, runtime evidence, content review, deployment checks |
@@ -246,8 +247,8 @@ official fix.
 | Project | `candidate` |
 | Learning path | 7 levels · `candidate` |
 | Chapters | 22 structured chapters · `candidate` |
-| Labs | 17 labs · `draft` · `run_status: not_run` |
-| Skills | 11 project Skills · `candidate` |
+| Labs | 18 labs · `draft` · `run_status: not_run` |
+| Skills | 12 project Skills · `candidate` |
 | Evaluation fixtures | 39 tasks across 16 tracks · `candidate` · `not_run` |
 | Public showcase | `candidate` · English default · Chinese runtime toggle |
 | Locale rollout | EN source plus five translation entries in progress |

@@ -139,7 +139,7 @@ deutsche Sprachreview und die Leser-/Runtime-Prüfung haben
 überwiegend auf Simplified Chinese verfasst; ein deutscher Einstieg darf daher
 nicht als vollständig deutsche Buchausgabe verstanden werden.
 
-Im Gesamtprojekt sind 22 Kapitel `candidate`, 17 Labs `draft` mit
+Im Gesamtprojekt sind 22 Kapitel `candidate`, 18 Labs `draft` mit
 `run_status: not_run` und 39 Evaluations-Fixtures `candidate` mit
 `run_status: not_run`. Diese Bezeichnungen zeigen, was heute inspiziert werden
 kann und welche frische Ausführung, Übertragungsbelege, unabhängige Review oder

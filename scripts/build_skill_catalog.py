@@ -185,6 +185,8 @@ def markdown(report: dict[str, object]) -> str:
         f"**候选 Skill 文件：** {report['summary']['candidate_skill_files']}",
         "**数据来源：** `docs/sources/asset-register.md` 与本地压缩包指纹记录",
         "",
+        "> 目录由 `scripts/build_skill_catalog.py` 生成。若要更新，先重新审计压缩包并复核来源台账；不要手工把候选条目改成已批准状态。",
+        "",
         "## 来源概览",
         "",
         "| 来源 | 上游 | Skill 文件数 | 初始门禁 | 说明 |",

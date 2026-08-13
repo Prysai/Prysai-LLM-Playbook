@@ -1,4 +1,4 @@
-<!-- content_id: universal-core-foundations | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-12 -->
+<!-- content_id: universal-core-foundations-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-12 -->
 
 # First mapped universal LLM collaboration units
 

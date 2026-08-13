@@ -31,3 +31,4 @@ Current entry points:
 - [ADR-0025: universal core, Codex flagship, and platform adapters](0025-universal-core-codex-flagship-and-platform-adapters.md)
 - [ADR-0026: machine-readable release readiness](0026-machine-readable-release-readiness.md)
 - [ADR-0027: separate reference, learner, and transfer run status](0027-separate-reference-learner-and-transfer-run-status.md)
+- [ADR-0028: Page Trust families and Reader projection](0028-page-trust-families-and-reader-projection.md)
