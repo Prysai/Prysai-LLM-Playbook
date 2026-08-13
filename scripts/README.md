@@ -148,6 +148,13 @@ label, source directory, or prose evidence path cannot certify a run by itself.
 pull-request template for parseable YAML, required fields, unique component
 IDs, required confirmations, repository-local contact links, and the disclosure
 headings that preserve source, safety, evidence, unknowns, and status claims.
+It also checks that the Field Report form declares labels and that the local
+feedback contract retains its candidate, privacy, minimization, and evidence
+boundaries. Run it with `--check-remote` only in a trusted environment with a
+read-capable `GITHUB_TOKEN` or `GH_TOKEN`: it compares the declared labels with
+the repository's live labels without printing the token. The default check is
+offline. `test_validate_github_templates.py` covers the static and mocked
+remote failure paths.
 
 `audit_external_urls.py` derives deduplicated authoritative URLs from the
 fact-impact registry, enforces an HTTPS host allowlist before redirects, uses

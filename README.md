@@ -21,7 +21,7 @@ states otherwise. See [`LICENSE`](LICENSE) and the [licensing boundary](docs/sou
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-[Open the visual showcase](site/index.html) · [Read the full English guide](README-EN.md)
+[Get a first result in 15 minutes](#get-a-first-result-in-15-minutes-no-git-required) · [Read the full English guide](README-EN.md)
 
 > **Status:** `candidate` · **Default:** English · **Maintained by:** Prysai Lab
 
@@ -61,7 +61,7 @@ problem research, and explicit evidence boundaries.
 
 | You want to… | Use this entry | What it is for |
 |---|---|---|
-| Browse the learning experience | [`site/index.html`](site/index.html) · [`site/reader.html`](site/reader.html) · [`site/README.md`](site/README.md) | The showcase and dependency-free Reader; the companion README explains local serving, Pages packaging, and verification |
+| Run a local contributor preview | [`site/README.md`](site/README.md) | The showcase and dependency-free Reader are local contributor tools; the companion README explains local serving, Pages packaging, and verification |
 | Read the English source | [`book/README-EN.md`](book/README-EN.md) + [`book/table-of-contents-EN.md`](book/table-of-contents-EN.md) | The book contract, full route, chapter status, experiments, and research links |
 | Inspect the project itself | [`docs/governance/`](docs/governance/) + [`scripts/`](scripts/) | Canonical status, locale identity, update rules, and repeatable checks |
 | Find a file quickly | [`Project map`](docs/project-map-EN.md) | Directory responsibilities, chapter order, generated files, and where each change starts |
@@ -133,6 +133,8 @@ diff and output, and record what the run did not prove.
 
 <!-- starter-task-contract:start -->
 
+<a id="get-a-first-result-in-15-minutes-no-git-required"></a>
+
 ## Get a first result in 15 minutes — no Git required
 
 Use any chat model. The source message is already filled in, so your first job
@@ -175,6 +177,12 @@ corrected; and not proven. This exercise records one checked attempt. It does
 not prove learning, transfer, general writing ability, or model superiority.
 Next, use the [Beginner Practice Pack](book/communication-clinic-EN.md#first-practice-intake),
 then move into files and Git with [Lab 001](book/labs/lab-001-first-safe-task-EN.md).
+
+If you are an authorised pilot participant, use the
+[Field Report form](https://github.com/Prysai/Codex-Field-Guide/issues/new?template=field-report.yml)
+to share a sanitized first-task observation. It is a private intake route, not
+support, proof of a bug, or learner-outcome evidence; see the
+[feedback contract](docs/quality/public-beta-feedback-contract-v1.md).
 
 <!-- starter-task-contract:end -->
 

@@ -39,6 +39,7 @@ REQUIRED_COMMANDS = {
     "lab-navigation-fixtures": ("{python}", "scripts/test_lab_navigation.py"),
     "reader-lab-navigation-fixtures": ("{python}", "scripts/test_reader_lab_navigation.py"),
     "lab-navigation-output": ("{python}", "scripts/build_lab_navigation.py", "--check"),
+    "github-template-fixtures": ("{python}", "scripts/test_validate_github_templates.py"),
 }
 
 

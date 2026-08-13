@@ -115,11 +115,11 @@
     },
     {
       "area": "contribution-flow",
-      "canonical_paths": ["CONTRIBUTING.md", "docs/governance/contribution-model.md", ".github/PULL_REQUEST_TEMPLATE.md", ".github/ISSUE_TEMPLATE", "scripts/validate_github_templates.py"],
+      "canonical_paths": ["CONTRIBUTING.md", "docs/governance/contribution-model.md", "docs/quality/public-beta-feedback-contract-v1.md", ".github/PULL_REQUEST_TEMPLATE.md", ".github/ISSUE_TEMPLATE", "scripts/validate_github_templates.py", "scripts/test_validate_github_templates.py"],
       "owner": "governance-maintainer",
       "triggers": ["contribution-class-change", "review-requirement-change", "issue-intake-change", "pull-request-disclosure-change", "license-or-safety-boundary-change"],
       "required_inputs": ["accepted-change-types", "canonical-source-routing", "required-evidence", "source-and-license-boundary", "safety-and-external-effects", "status-claim-boundary"],
-      "validation_commands": ["scripts/validate_github_templates.py", "scripts/validate_project.py", "scripts/validate_project_structure.py", "scripts/check_local_links.py"],
+      "validation_commands": ["scripts/validate_github_templates.py", "scripts/test_validate_github_templates.py", "scripts/validate_project.py", "scripts/validate_project_structure.py", "scripts/check_local_links.py"],
       "status_fields": ["owner", "accepted-change-types", "issue-before-work-cases", "required-disclosures", "next_review"],
       "next_review": "2026-09-12"
     },

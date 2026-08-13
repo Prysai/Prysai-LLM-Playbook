@@ -60,6 +60,7 @@
         {"id": "release-readiness", "argv": ["{python}", "scripts/validate_release_readiness.py"]},
         {"id": "release-readiness-fixtures", "argv": ["{python}", "scripts/test_release_readiness.py"]},
         {"id": "github-templates", "argv": ["{python}", "scripts/validate_github_templates.py"]},
+        {"id": "github-template-fixtures", "argv": ["{python}", "scripts/test_validate_github_templates.py"]},
         {"id": "localization", "argv": ["{python}", "scripts/validate_localization.py"]},
         {"id": "site-i18n", "argv": ["{python}", "scripts/validate_site_i18n.py"]},
         {"id": "book-navigation", "argv": ["{python}", "scripts/validate_book_navigation.py"]},

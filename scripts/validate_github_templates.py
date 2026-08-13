@@ -2,9 +2,17 @@
 
 from __future__ import annotations
 
+import argparse
+import json
+import os
+import re
+import subprocess
 import sys
+import urllib.error
+import urllib.parse
+import urllib.request
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 import yaml
 
@@ -12,7 +20,18 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 ISSUE_DIR = ROOT / ".github/ISSUE_TEMPLATE"
 PR_TEMPLATE = ROOT / ".github/PULL_REQUEST_TEMPLATE.md"
+FIELD_REPORT = ISSUE_DIR / "field-report.yml"
+FEEDBACK_CONTRACT = ROOT / "docs/quality/public-beta-feedback-contract-v1.md"
 ALLOWED_TYPES = {"markdown", "input", "textarea", "dropdown", "checkboxes"}
+REPOSITORY_RE = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
+FEEDBACK_BOUNDARIES = {
+    "Candidate status": ("candidate",),
+    "voluntary participation": ("voluntary",),
+    "secret and private-data exclusion": ("secret", "private"),
+    "data minimization": ("data minimization",),
+    "no automatic curriculum publication": ("not automatically", "curriculum"),
+    "single-report evidence limit": ("root cause", "prevalence", "verified fix"),
+}
 REQUIRED_PR_HEADINGS = {
     "## Problem and bounded change",
     "## Change class",
@@ -102,6 +121,142 @@ def validate_form(path: Path) -> list[str]:
     return errors
 
 
+def declared_labels(path: Path = FIELD_REPORT) -> tuple[list[str], list[str]]:
+    """Return normalized labels declared by the field-report issue form."""
+    if not path.is_absolute():
+        path = ROOT / path
+    label = str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path)
+    data = load_yaml(path)
+    if not isinstance(data, dict):
+        return [], [f"{label} must contain an object"]
+    labels = data.get("labels")
+    if not isinstance(labels, list) or not labels:
+        return [], [f"{label}.labels must be a non-empty list"]
+    errors: list[str] = []
+    normalized: list[str] = []
+    for index, value in enumerate(labels, start=1):
+        if not isinstance(value, str) or not value.strip():
+            errors.append(f"{label}.labels[{index}] must be a non-empty string")
+        else:
+            normalized.append(value.strip())
+    if len(set(normalized)) != len(normalized):
+        errors.append(f"{label}.labels must not contain duplicates")
+    return normalized, errors
+
+
+def validate_feedback_contract(path: Path = FEEDBACK_CONTRACT) -> list[str]:
+    """Check the local public-feedback boundary before exposing its issue form."""
+    if not path.is_absolute():
+        path = ROOT / path
+    label = str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path)
+    if not path.is_file():
+        return [f"missing {label}"]
+    text = path.read_text(encoding="utf-8").casefold()
+    errors: list[str] = []
+    for boundary, fragments in FEEDBACK_BOUNDARIES.items():
+        if any(fragment.casefold() not in text for fragment in fragments):
+            errors.append(f"{label} is missing the {boundary} boundary")
+    return errors
+
+
+def repository_from_remote_url(remote_url: str) -> str | None:
+    """Extract owner/repository only from recognized GitHub origin formats."""
+    value = remote_url.strip()
+    patterns = (
+        r"^https?://github\.com/([^/]+/[^/]+?)(?:\.git)?/?$",
+        r"^git@github\.com:([^/]+/[^/]+?)(?:\.git)?$",
+        r"^ssh://git@github\.com/([^/]+/[^/]+?)(?:\.git)?/?$",
+        r"^git://github\.com/([^/]+/[^/]+?)(?:\.git)?/?$",
+    )
+    for pattern in patterns:
+        match = re.fullmatch(pattern, value, flags=re.IGNORECASE)
+        if match:
+            repository = match.group(1)
+            return repository if REPOSITORY_RE.fullmatch(repository) else None
+    return None
+
+
+def resolve_repository(
+    environ: dict[str, str] | os._Environ[str] = os.environ,
+    run: Callable[..., subprocess.CompletedProcess[str]] = subprocess.run,
+) -> tuple[str | None, str | None]:
+    """Resolve GITHUB_REPOSITORY override, then the configured origin."""
+    override = environ.get("GITHUB_REPOSITORY", "").strip()
+    if override:
+        if REPOSITORY_RE.fullmatch(override):
+            return override, None
+        return None, "GITHUB_REPOSITORY must use owner/repository"
+    try:
+        result = run(
+            ["git", "config", "--get", "remote.origin.url"],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    except OSError:
+        return None, "cannot read remote.origin.url from git config"
+    repository = repository_from_remote_url(result.stdout) if result.returncode == 0 else None
+    if not repository:
+        return None, "remote.origin.url is not a recognized GitHub repository; set GITHUB_REPOSITORY=owner/repository"
+    return repository, None
+
+
+def fetch_remote_labels(
+    repository: str,
+    token: str,
+    open_url: Callable[..., Any] = urllib.request.urlopen,
+) -> tuple[set[str], list[str]]:
+    """Fetch all repository label names without exposing authorization data."""
+    owner, name = repository.split("/", maxsplit=1)
+    base = f"https://api.github.com/repos/{urllib.parse.quote(owner, safe='')}/{urllib.parse.quote(name, safe='')}/labels"
+    labels: set[str] = set()
+    page = 1
+    try:
+        while True:
+            request = urllib.request.Request(
+                f"{base}?per_page=100&page={page}",
+                headers={
+                    "Accept": "application/vnd.github+json",
+                    "Authorization": f"Bearer {token}",
+                    "User-Agent": "codex-field-guide-template-validator",
+                    "X-GitHub-Api-Version": "2022-11-28",
+                },
+            )
+            with open_url(request, timeout=15) as response:
+                payload = json.loads(response.read().decode("utf-8"))
+            if not isinstance(payload, list):
+                return set(), ["GitHub labels endpoint returned an unexpected response"]
+            for item in payload:
+                if isinstance(item, dict) and isinstance(item.get("name"), str):
+                    labels.add(item["name"])
+            if len(payload) < 100:
+                return labels, []
+            page += 1
+    except urllib.error.HTTPError as exc:
+        return set(), [f"GitHub labels request failed with HTTP {exc.code}"]
+    except (urllib.error.URLError, TimeoutError, OSError, UnicodeError, json.JSONDecodeError):
+        return set(), ["GitHub labels request failed due to a network or response error"]
+
+
+def validate_remote_labels(
+    declared: list[str],
+    environ: dict[str, str] | os._Environ[str] = os.environ,
+    resolve: Callable[..., tuple[str | None, str | None]] = resolve_repository,
+    fetch: Callable[..., tuple[set[str], list[str]]] = fetch_remote_labels,
+) -> list[str]:
+    token = environ.get("GITHUB_TOKEN", "").strip() or environ.get("GH_TOKEN", "").strip()
+    if not token:
+        return ["--check-remote requires GITHUB_TOKEN or GH_TOKEN"]
+    repository, repository_error = resolve(environ)
+    if repository_error:
+        return [repository_error]
+    available, errors = fetch(repository or "", token)
+    if errors:
+        return errors
+    return [f"declared field-report label does not exist in {repository}: {label}" for label in declared if label not in available]
+
+
 def validate_config(path: Path) -> list[str]:
     errors: list[str] = []
     if not path.is_absolute():
@@ -132,7 +287,18 @@ def validate_pr_template() -> list[str]:
     return [f"pull request template is missing heading: {heading}" for heading in missing]
 
 
-def main() -> int:
+def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--check-remote",
+        action="store_true",
+        help="verify field-report labels through the GitHub API; uses GITHUB_REPOSITORY or remote.origin.url and GITHUB_TOKEN/GH_TOKEN",
+    )
+    return parser.parse_args(argv)
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = parse_args(argv)
     errors: list[str] = []
     form_paths = sorted(path for path in ISSUE_DIR.glob("*.yml") if path.name != "config.yml")
     if len(form_paths) < 2:
@@ -147,12 +313,25 @@ def main() -> int:
     except (OSError, UnicodeError, yaml.YAMLError) as exc:
         errors.append(f"cannot parse .github/ISSUE_TEMPLATE/config.yml: {exc}")
     errors.extend(validate_pr_template())
+    labels: list[str] = []
+    try:
+        labels, label_errors = declared_labels()
+        errors.extend(label_errors)
+    except (OSError, UnicodeError, yaml.YAMLError) as exc:
+        errors.append(f"cannot parse .github/ISSUE_TEMPLATE/field-report.yml labels: {exc}")
+    try:
+        errors.extend(validate_feedback_contract())
+    except (OSError, UnicodeError) as exc:
+        errors.append(f"cannot read docs/quality/public-beta-feedback-contract-v1.md: {exc}")
+    if args.check_remote:
+        errors.extend(validate_remote_labels(labels))
     if errors:
         print("GITHUB_TEMPLATES_FAILED")
         for error in errors:
             print(f"- {error}")
         return 1
-    print(f"GITHUB_TEMPLATES_OK issue_forms={len(form_paths)} pr_headings={len(REQUIRED_PR_HEADINGS)}")
+    remote = "checked" if args.check_remote else "not_checked"
+    print(f"GITHUB_TEMPLATES_OK issue_forms={len(form_paths)} pr_headings={len(REQUIRED_PR_HEADINGS)} field_labels={len(labels)} remote={remote}")
     return 0
 
 
