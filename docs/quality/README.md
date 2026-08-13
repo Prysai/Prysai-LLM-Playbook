@@ -27,6 +27,12 @@ identity, canonical English paths, chapter order, reader entries, and
 generated site outputs. A passing result does not prove a lab was run, a
 translation was reviewed, or a public deployment is reachable.
 
+New curriculum units also pass the machine-readable
+[gold-content admission contract](../governance/gold-content-admission.yaml).
+The contract rejects padding and unsupported maturity before a unit enters the
+main curriculum. Its score is not a learner score: admission does not prove the
+exercise ran, the advice transfers, or a reader mastered the capability.
+
 The [quality register](quality-register.md) is generated from the
 [machine-readable register](../governance/quality-register.yaml). Historical
 review reports remain useful evidence, but they do not close an item without a

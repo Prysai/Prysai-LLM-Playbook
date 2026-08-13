@@ -1,0 +1,5 @@
+{
+  "extends": "valid-lab.json",
+  "remove": ["evidence_limit"],
+  "expected": "missing required field: evidence_limit"
+}

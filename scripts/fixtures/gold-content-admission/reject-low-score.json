@@ -1,0 +1,14 @@
+{
+  "extends": "valid-lab.json",
+  "mutations": {
+    "scores.real-demand.value": 2,
+    "scores.consequential-decision.value": 2,
+    "scores.novel-increment.value": 2,
+    "scores.actionability.value": 3,
+    "scores.evidence-strength.value": 2,
+    "scores.failure-value.value": 2,
+    "scores.transfer-value.value": 2,
+    "scores.maintenance-fitness.value": 2
+  },
+  "expected": "score total 17 is below admission threshold 24"
+}

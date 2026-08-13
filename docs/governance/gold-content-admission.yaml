@@ -1,0 +1,154 @@
+{
+  "schema_version": "1",
+  "status": "candidate",
+  "owner": "curriculum-maintainer",
+  "reviewed_at": "2026-08-12",
+  "next_review": "2026-09-12",
+  "purpose": "Reject padding and admit only distinct, evidence-bounded learning units. Passing this contract is editorial admission evidence, not learner, runtime, portability, or production evidence.",
+  "record_statuses": ["proposed", "admitted-candidate", "rejected", "quarantined", "retired"],
+  "families": ["chapter", "lab", "evaluation-candidate", "field-case", "platform-adapter", "task-route", "reference"],
+  "audiences": ["beginner", "practitioner", "advanced", "leader"],
+  "platform_scopes": ["universal", "platform-specific"],
+  "required_record_fields": [
+    "content_id",
+    "family",
+    "title",
+    "status",
+    "audiences",
+    "platform_scope",
+    "problem",
+    "capability_increment",
+    "consequential_decision",
+    "artifact",
+    "acceptance",
+    "failure_case",
+    "evidence_limit",
+    "transfer",
+    "existing_unit_disposition",
+    "sources",
+    "license_boundary",
+    "owner",
+    "reviewed_at",
+    "next_review",
+    "hard_gates",
+    "scores"
+  ],
+  "family_requirements": {
+    "chapter": ["experiment", "reflection"],
+    "lab": ["fixed_inputs", "safe_environment", "cleanup", "run_evidence_status"],
+    "evaluation-candidate": ["fixed_inputs", "conditions", "controls", "metrics", "safe_environment", "run_evidence_status"],
+    "field-case": ["reported_symptom", "evidence_level", "reproduction_status", "unresolved_facts"],
+    "platform-adapter": ["platform", "platform_delta", "authoritative_urls", "applies_to"],
+    "task-route": ["unit_sequence", "sequence_rationale", "terminal_artifact"],
+    "reference": ["lookup_scope", "canonical_owners"]
+  },
+  "hard_gates": [
+    {
+      "id": "distinct-increment",
+      "question": "Does the unit add a decision, failure class, artifact, or transfer not already owned elsewhere?",
+      "reject_when": "It only restates existing advice or changes wording."
+    },
+    {
+      "id": "no-prompt-folklore",
+      "question": "Does the unit avoid presenting a perfect prompt, role phrase, or longer prompt as a guarantee?",
+      "reject_when": "Prompt advice lacks task inputs, uncertainty, comparison, or verification."
+    },
+    {
+      "id": "no-invented-evidence",
+      "question": "Are stories, metrics, runs, screenshots, customers, and outcomes real or explicitly synthetic?",
+      "reject_when": "Any success, provenance, runtime, or user outcome is invented or ambiguous."
+    },
+    {
+      "id": "source-license-clear",
+      "question": "Are source, adaptation, asset, and license boundaries explicit?",
+      "reject_when": "Copied wording, code, image, dataset, or permission is unclear."
+    },
+    {
+      "id": "volatile-facts-bounded",
+      "question": "Are volatile product facts bound to authoritative URLs, date, scope, owner, and next review?",
+      "reject_when": "A volatile claim lacks any required freshness field."
+    },
+    {
+      "id": "platform-delta-real",
+      "question": "Does every platform-specific unit name a behavior or contract delta?",
+      "reject_when": "A platform name is added without a platform-specific difference."
+    },
+    {
+      "id": "acceptance-observable",
+      "question": "Can acceptance be judged from an observable artifact and bounded evidence?",
+      "reject_when": "Acceptance is subjective polish, length, confidence, or file presence alone."
+    },
+    {
+      "id": "limits-explicit",
+      "question": "Does the unit state what passing still does not prove?",
+      "reject_when": "The completion or maturity claim is broader than the named evidence."
+    }
+  ],
+  "score_policy": {
+    "minimum_total": 24,
+    "minimum_each": 1,
+    "maximum_each": 4,
+    "dimensions": [
+      {"id": "real-demand", "question": "Is the reader problem observed in credible field evidence, learner evidence, or repeated project practice?"},
+      {"id": "consequential-decision", "question": "Does the unit change a decision about quality, safety, cost, or speed?"},
+      {"id": "novel-increment", "question": "Does it add capability not already owned by another unit?"},
+      {"id": "actionability", "question": "Can the learner produce a bounded useful artifact?"},
+      {"id": "evidence-strength", "question": "Are claims supported at their stated scope with limits visible?"},
+      {"id": "failure-value", "question": "Does a realistic failure teach diagnosis, recovery, or a clean stop?"},
+      {"id": "transfer-value", "question": "Are the invariant and material delta named for another task or platform?"},
+      {"id": "maintenance-fitness", "question": "Are ownership, duplication, volatility, and retirement manageable?"}
+    ]
+  },
+  "admission_rule": "A record may be admitted-candidate only when every hard gate records pass plus an evidence note, every required family field exists, every score records a non-zero value plus rationale, and the total score is at least 24 of 32.",
+  "claim_boundary": "Admission proves that the proposed unit satisfies this editorial contract. It does not prove that the unit was run, that a learner mastered it, that it transfers across platforms, or that it is verified or production-ready.",
+  "admissions": [
+    {
+      "content_id": "communication-clinic-v1",
+      "family": "evaluation-candidate",
+      "title": "Communication Clinic: one task, three request conditions",
+      "status": "admitted-candidate",
+      "audiences": ["beginner", "practitioner", "advanced"],
+      "platform_scope": "universal",
+      "problem": "Readers are told to communicate clearly but lack a controlled way to distinguish useful task context from prompt length or polish.",
+      "capability_increment": "Hold task, acceptance, model configuration, tools, permissions, and budget fixed while comparing a vague request, an explicit task contract, and a short request backed by recorded shared context.",
+      "consequential_decision": "Decide whether a communication pattern reduces unsupported assumptions and repair work without weakening acceptance or evidence coverage.",
+      "artifact": "At least fifteen isolated run records, blinded claim reviews, criterion-level acceptance results, evidence-completeness results, and a descriptive comparison when all three conditions are available.",
+      "acceptance": ["Each available condition has at least five preserved repetitions.", "The fixed ten acceptance criteria and five evidence items are scored for every run.", "Unsupported assumptions, clarification repairs, acceptance repairs, missing telemetry, and reviewer disagreements remain visible."],
+      "failure_case": "A polished handoff widens local build evidence into deployment, security, approval, or publication claims; the run preserves that unsupported assumption and cannot pass acceptance.",
+      "evidence_limit": "Admission and static validation do not prove the conditions improve results. Future runs remain descriptive, surface-specific, nondeterministic, and unable to establish universal communication, model, platform, learner, cost, or production conclusions.",
+      "transfer": "Rerun the byte-identical fixture through a separately admitted platform adapter and compare only after recording the adapter's context channel and observable behavior differences.",
+      "existing_unit_disposition": "Operationalizes Chapters 3 and 19 without replacing them; remains outside the 17 canonical Labs and the 39 formal evaluation fixtures until a separate reviewed promotion.",
+      "sources": ["Original Prysai Lab synthetic fixture informed by the dated first-party benchmark recorded as S47."],
+      "license_boundary": "Original project fixture; no vendor prompt, answer, workflow, screenshot, or course prose is copied. External sources remain reference-only under S47 and the fixture boundary is recorded as S48.",
+      "owner": "evaluation-maintainer",
+      "reviewed_at": "2026-08-12",
+      "next_review": "2026-09-12",
+      "fixed_inputs": ["synthetic evidence packet", "byte-identical task contract for conditions B and C", "ten acceptance criteria", "five evidence-completeness items", "one output path"],
+      "conditions": ["A: vague request without an initial contract", "B: complete contract in the user request", "C: short request after the same contract is installed in a recorded shared-context channel"],
+      "controls": ["fresh session and disposable workspace per run", "same model version, settings, tools, permissions, network policy, and output budget", "randomized condition order with recorded seed", "two condition-blind reviewers", "at most two fixed repair turns"],
+      "metrics": ["unsupported assumptions by severity", "clarification and acceptance repair turns", "first-turn and final acceptance", "criterion-level evidence completeness", "observed time and provider telemetry only when available"],
+      "safe_environment": "Disposable local synthetic workspace with no network, credentials, commits, pushes, publication, deployment, notifications, source mutation, or writes outside the run directory.",
+      "run_evidence_status": "not_run",
+      "hard_gates": {
+        "distinct-increment": {"result": "pass", "evidence": "Adds a controlled three-condition comparison and reviewer protocol not owned by the explanatory chapters."},
+        "no-prompt-folklore": {"result": "pass", "evidence": "Tests request and context conditions against fixed acceptance; it does not prescribe wording or promise a perfect prompt."},
+        "no-invented-evidence": {"result": "pass", "evidence": "The task packet is explicitly synthetic, run status is not_run, and no output, score, learner result, or runtime result is present."},
+        "source-license-clear": {"result": "pass", "evidence": "Fixture files are original project material; S47 and S48 record the external-reference and fixture boundaries."},
+        "volatile-facts-bounded": {"result": "pass", "evidence": "The fixture contains no volatile product claim; a future platform run must record its model, surface, context channel, and settings."},
+        "platform-delta-real": {"result": "pass", "evidence": "The candidate claims no platform support and requires a separately admitted adapter before cross-platform comparison."},
+        "acceptance-observable": {"result": "pass", "evidence": "Ten criterion IDs, five evidence IDs, raw artifacts, tool traces, repair turns, and reviewer records make acceptance inspectable."},
+        "limits-explicit": {"result": "pass", "evidence": "The candidate and this record reject universal, causal, learner, cost, cross-platform, and production conclusions."}
+      },
+      "scores": {
+        "real-demand": {"value": 4, "rationale": "Efficient, accurate communication is the requested product center and repeated project research identifies the missing measured practice."},
+        "consequential-decision": {"value": 4, "rationale": "The comparison affects how users structure requests, install shared context, and judge whether brevity is safe."},
+        "novel-increment": {"value": 4, "rationale": "No existing unit compares these three channels under one fixed task, scorer, and repair protocol."},
+        "actionability": {"value": 4, "rationale": "The plan names exact inputs, conditions, run isolation, output, repair messages, scoring, and records."},
+        "evidence-strength": {"value": 2, "rationale": "The static design is detailed and falsifiable, but model runs, reviewer agreement, learner evidence, and independent review do not yet exist."},
+        "failure-value": {"value": 4, "rationale": "It preserves widened completion claims, safe clarification, confounding, unavailable context channels, and missing telemetry as distinct outcomes."},
+        "transfer-value": {"value": 3, "rationale": "The invariant and adapter requirement are explicit, but no non-Codex transfer run exists."},
+        "maintenance-fitness": {"value": 4, "rationale": "The candidate is isolated, synthetic, owner-bound, validator-backed, and excluded from canonical counts until separately promoted."}
+      }
+    }
+  ]
+}

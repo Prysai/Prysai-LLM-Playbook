@@ -1,0 +1,4 @@
+Complete the following task exactly as contracted.
+
+{{TASK_CONTRACT}}
+

@@ -96,6 +96,7 @@
     {"path": "docs/quality", "role": "Acceptance standards and review records.", "entry": "docs/quality/README.md"},
     {"path": "docs/research", "role": "Official fact records, structure studies, and dated field-problem reports.", "entry": "docs/research/README.md"},
     {"path": "docs/sources", "role": "External-source, archive, asset, license, and attribution boundaries.", "entry": "docs/sources/README.md"},
+    {"path": "docs/strategy", "role": "Dated product, audience, curriculum, and migration proposals that require explicit adoption.", "entry": "docs/strategy/README.md"},
     {"path": "docs/templates", "role": "Reusable records for field cases and non-trivial updates.", "entry": "docs/templates/README.md"},
     {"path": "examples/skill-sandbox", "role": "One-time local sandboxes used to make Skill outputs inspectable.", "entry": "examples/skill-sandbox/README.md"}
   ],

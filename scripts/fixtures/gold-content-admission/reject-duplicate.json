@@ -1,0 +1,8 @@
+{
+  "extends": "valid-lab.json",
+  "mutations": {
+    "capability_increment": "Restates that users should provide clear context.",
+    "hard_gates.distinct-increment.result": "fail"
+  },
+  "expected": "hard gate distinct-increment must pass"
+}

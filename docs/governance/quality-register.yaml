@@ -76,11 +76,11 @@
       "next_review": "2026-08-19",
       "superseded_by": "",
       "area": "Curriculum",
-      "finding": "Reused labs do not consistently state the new capability, artifact, and acceptance delta.",
+      "finding": "Reused labs did not consistently state the new capability, artifact, and acceptance delta.",
       "required_evidence": "Matrix fields first_seen, new_capability, new_artifact, and new_acceptance, reviewed per reuse.",
-      "status": "open",
-      "evidence_paths": ["docs/content-matrix.md", "docs/governance/learning-path.yaml"],
-      "resolution_scope": ""
+      "status": "resolved",
+      "evidence_paths": ["docs/governance/learning-path.yaml", "scripts/validate_learning_path.py", "scripts/test_learning_path_lab_uses.py", "scripts/build_learning_path_site.py", "site/learning-path-data.js", "docs/adr/0024-lab-use-progression-contract.md"],
+      "resolution_scope": "Resolved for all 18 current level-to-Lab uses across 17 Labs. Every use declares relation, first_seen, and bilingual capability, artifact, and acceptance deltas; the only repeated Lab has distinct L3 and L5 increments. This structural resolution does not supply the runtime evidence blocked by Q-001."
     },
     {
       "id": "Q-006",

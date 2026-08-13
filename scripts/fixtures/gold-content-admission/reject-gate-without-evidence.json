@@ -1,0 +1,7 @@
+{
+  "extends": "valid-lab.json",
+  "mutations": {
+    "hard_gates.distinct-increment.evidence": ""
+  },
+  "expected": "hard gate distinct-increment must include an evidence note"
+}

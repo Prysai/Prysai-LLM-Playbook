@@ -180,6 +180,13 @@ button, input, select, textarea { font: inherit; }
 .path-contract-card li { color: #555; font-size: .75rem; line-height: 1.4; }
 .path-contract-card a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--red); text-underline-offset: .2em; }
 .path-contract-card a:hover, .path-contract-card a:focus-visible { color: var(--red); }
+.path-contract-card .lab-use { display: grid; gap: .55rem; padding: .65rem 0; border-top: 1px solid var(--line); }
+.path-contract-card .lab-use:first-child { padding-top: 0; border-top: 0; }
+.lab-use > div { display: flex; align-items: baseline; justify-content: space-between; gap: .75rem; }
+.lab-use > div span { flex: 0 0 auto; padding: .12rem .32rem; border: 1px solid var(--red); color: var(--red); font-family: Consolas, 'Courier New', monospace; font-size: .56rem; letter-spacing: .04em; text-transform: uppercase; }
+.lab-use dl { display: grid; grid-template-columns: max-content 1fr; gap: .25rem .55rem; margin: 0; }
+.lab-use dt { color: #777; font-family: Consolas, 'Courier New', monospace; font-size: .56rem; letter-spacing: .04em; text-transform: uppercase; }
+.lab-use dd { margin: 0; color: #555; font-size: .66rem; line-height: 1.45; }
 .path-eval-summary { margin: .8rem 0 0 !important; color: var(--red) !important; font-size: .7rem !important; font-weight: 700; }
 .path-evaluation-list { max-height: 86px; overflow: auto; }
 .path-evaluation-list li { color: #777; font-family: Consolas, 'Courier New', monospace; font-size: .64rem; }

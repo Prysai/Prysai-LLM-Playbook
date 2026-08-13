@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "candidate_id": "communication-clinic-v1",
+  "run_id": null,
+  "condition_id": null,
+  "repetition": null,
+  "randomization_seed": null,
+  "run_status": "not_run",
+  "environment": {
+    "platform": null,
+    "surface": null,
+    "model": null,
+    "model_version": null,
+    "settings": null,
+    "tools": [],
+    "permissions": [],
+    "network": "disabled",
+    "input_hashes": {},
+    "context_channel": null
+  },
+  "turns": [],
+  "repair_turns": {
+    "count": null,
+    "types": []
+  },
+  "acceptance": {
+    "first_turn": {},
+    "final": {},
+    "overall": null
+  },
+  "evidence_completeness": {
+    "supported_items": null,
+    "total_items": 5,
+    "items": {}
+  },
+  "unsupported_assumptions": [],
+  "review": {
+    "reviewer_1": null,
+    "reviewer_2": null,
+    "disagreements": [],
+    "adjudicator": null
+  },
+  "telemetry": {
+    "elapsed_ms": "not_available",
+    "input_tokens": "not_available",
+    "cached_input_tokens": "not_available",
+    "output_tokens": "not_available",
+    "run_bound_cost": "not_available",
+    "unavailable_reasons": []
+  },
+  "raw_artifact_paths": [],
+  "stop_condition": null,
+  "notes": null
+}
+

@@ -1,0 +1,7 @@
+{
+  "extends": "valid-lab.json",
+  "mutations": {
+    "scores.real-demand.rationale": ""
+  },
+  "expected": "score real-demand must include a rationale"
+}

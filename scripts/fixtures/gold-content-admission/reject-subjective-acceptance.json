@@ -1,0 +1,8 @@
+{
+  "extends": "valid-lab.json",
+  "mutations": {
+    "acceptance": ["The answer feels polished and professional."],
+    "hard_gates.acceptance-observable.result": "fail"
+  },
+  "expected": "hard gate acceptance-observable must pass"
+}

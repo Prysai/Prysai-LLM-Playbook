@@ -41,7 +41,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "GPT 与 Codex 边界"
           },
           "href": "../book/labs/lab-011-gpt-codex-boundaries-EN.md",
-          "relation": "primary"
+          "relation": "primary",
+          "firstSeen": "L0",
+          "newCapability": {
+            "en": "Distinguish generation, execution, verification, and external effects before inferring what Codex did.",
+            "zh": "在推断 Codex 做了什么之前，区分生成、执行、验证和外部影响。"
+          },
+          "newArtifact": {
+            "en": "An annotated static task card with input, action, state, evidence, and unsupported inference fields.",
+            "zh": "一张标注输入、行动、状态、证据和无依据推断的静态任务卡。"
+          },
+          "newAcceptance": {
+            "en": "Every observation is assigned to one field and at least one unsupported access or execution claim is rejected.",
+            "zh": "每项观察都归入一个字段，并拒绝至少一项无依据的访问或执行声明。"
+          }
         }
       ],
       "skills": [
@@ -106,7 +119,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "GPT 与 Codex 边界"
           },
           "href": "../book/labs/lab-011-gpt-codex-boundaries-EN.md",
-          "relation": "primary"
+          "relation": "primary",
+          "firstSeen": "L0",
+          "newCapability": {
+            "en": "Distinguish generation, execution, verification, and external effects before inferring what Codex did.",
+            "zh": "在推断 Codex 做了什么之前，区分生成、执行、验证和外部影响。"
+          },
+          "newArtifact": {
+            "en": "An annotated static task card with input, action, state, evidence, and unsupported inference fields.",
+            "zh": "一张标注输入、行动、状态、证据和无依据推断的静态任务卡。"
+          },
+          "newAcceptance": {
+            "en": "Every observation is assigned to one field and at least one unsupported access or execution claim is rejected.",
+            "zh": "每项观察都归入一个字段，并拒绝至少一项无依据的访问或执行声明。"
+          }
         }
       }
     },
@@ -147,7 +173,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "第一个安全任务"
           },
           "href": "../book/labs/lab-001-first-safe-task-EN.md",
-          "relation": "primary"
+          "relation": "primary",
+          "firstSeen": "L1",
+          "newCapability": {
+            "en": "Complete one reversible local edit while separating the requested result, actual diff, and verification output.",
+            "zh": "完成一次可回滚的本地编辑，同时区分请求结果、实际差异和验证输出。"
+          },
+          "newArtifact": {
+            "en": "A pre-edit observation, one-file diff, focused check log, and explicit unverified list.",
+            "zh": "编辑前观察、单文件差异、聚焦检查日志和明确的未验证列表。"
+          },
+          "newAcceptance": {
+            "en": "The diff stays inside the declared sandbox and the completion statement cites the check that actually ran.",
+            "zh": "差异保持在声明的沙盒内，完成声明引用实际运行的检查。"
+          }
         }
       ],
       "skills": [
@@ -215,7 +254,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "第一个安全任务"
           },
           "href": "../book/labs/lab-001-first-safe-task-EN.md",
-          "relation": "primary"
+          "relation": "primary",
+          "firstSeen": "L1",
+          "newCapability": {
+            "en": "Complete one reversible local edit while separating the requested result, actual diff, and verification output.",
+            "zh": "完成一次可回滚的本地编辑，同时区分请求结果、实际差异和验证输出。"
+          },
+          "newArtifact": {
+            "en": "A pre-edit observation, one-file diff, focused check log, and explicit unverified list.",
+            "zh": "编辑前观察、单文件差异、聚焦检查日志和明确的未验证列表。"
+          },
+          "newAcceptance": {
+            "en": "The diff stays inside the declared sandbox and the completion statement cites the check that actually ran.",
+            "zh": "差异保持在声明的沙盒内，完成声明引用实际运行的检查。"
+          }
         }
       }
     },
@@ -283,7 +335,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "任务协议"
           },
           "href": "../book/labs/lab-002-task-protocol-EN.md",
-          "relation": "primary"
+          "relation": "primary",
+          "firstSeen": "L2",
+          "newCapability": {
+            "en": "Convert a vague request into an executable protocol without inventing missing scope, authority, or acceptance.",
+            "zh": "把模糊请求转成可执行协议，不臆造缺失的范围、授权或验收。"
+          },
+          "newArtifact": {
+            "en": "A task protocol containing goal, inputs, constraints, allowed actions, acceptance, stop conditions, and failure handling.",
+            "zh": "一份包含目标、输入、约束、允许行动、验收、停止条件和失败处理的任务协议。"
+          },
+          "newAcceptance": {
+            "en": "A second person can identify the first safe action and every condition that requires confirmation or stopping.",
+            "zh": "第二个人能够指出第一个安全行动，以及所有需要确认或停止的条件。"
+          }
         }
       ],
       "skills": [
@@ -369,7 +434,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "任务协议"
           },
           "href": "../book/labs/lab-002-task-protocol-EN.md",
-          "relation": "primary"
+          "relation": "primary",
+          "firstSeen": "L2",
+          "newCapability": {
+            "en": "Convert a vague request into an executable protocol without inventing missing scope, authority, or acceptance.",
+            "zh": "把模糊请求转成可执行协议，不臆造缺失的范围、授权或验收。"
+          },
+          "newArtifact": {
+            "en": "A task protocol containing goal, inputs, constraints, allowed actions, acceptance, stop conditions, and failure handling.",
+            "zh": "一份包含目标、输入、约束、允许行动、验收、停止条件和失败处理的任务协议。"
+          },
+          "newAcceptance": {
+            "en": "A second person can identify the first safe action and every condition that requires confirmation or stopping.",
+            "zh": "第二个人能够指出第一个安全行动，以及所有需要确认或停止的条件。"
+          }
         }
       }
     },
@@ -446,7 +524,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "可审计的竖向切片"
           },
           "href": "../book/labs/lab-013-l3-vertical-slice-EN.md",
-          "relation": "primary"
+          "relation": "primary",
+          "firstSeen": "L3",
+          "newCapability": {
+            "en": "Run a complete vertical slice with checkpoints, failure handling, recovery, and a bounded handoff.",
+            "zh": "运行一条包含检查点、失败处理、恢复和有边界交接的完整竖向切片。"
+          },
+          "newArtifact": {
+            "en": "A baseline hash, checkpoint log, diff, validation output, rollback target, and transfer record under one run ID.",
+            "zh": "同一运行 ID 下的基线哈希、检查点日志、差异、验证输出、回滚目标和迁移记录。"
+          },
+          "newAcceptance": {
+            "en": "The evidence chain preserves one intentional failure and supports each scoped delivery claim without rewriting history.",
+            "zh": "证据链保留一次故意失败，并在不改写历史的情况下支持每项有范围的交付声明。"
+          }
         },
         {
           "id": "lab-003",
@@ -455,7 +546,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "证据审查"
           },
           "href": "../book/labs/lab-003-evidence-review-EN.md",
-          "relation": "supporting"
+          "relation": "supporting",
+          "firstSeen": "L3",
+          "newCapability": {
+            "en": "Map a plausible completion statement to the evidence it needs and identify the smallest missing check.",
+            "zh": "把看似可信的完成声明映射到所需证据，并找出最小缺失检查。"
+          },
+          "newArtifact": {
+            "en": "A first-pass claim-to-evidence table with supported, partial, and unsupported rows.",
+            "zh": "一张首次断言—证据表，包含已支持、部分支持和不支持的行。"
+          },
+          "newAcceptance": {
+            "en": "Every claim has a scope, evidence path or explicit gap, and one bounded next action.",
+            "zh": "每项声明都有范围、证据路径或明确缺口，以及一个有边界的下一行动。"
+          }
         },
         {
           "id": "lab-007",
@@ -464,7 +568,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "行动边界"
           },
           "href": "../book/labs/lab-007-action-boundaries-EN.md",
-          "relation": "supporting"
+          "relation": "supporting",
+          "firstSeen": "L3",
+          "newCapability": {
+            "en": "Classify file, terminal, browser, and GitHub actions by authority, side effect, and recovery cost.",
+            "zh": "按授权、副作用和恢复成本对文件、终端、浏览器和 GitHub 行动分级。"
+          },
+          "newArtifact": {
+            "en": "An action-boundary matrix with read, edit, run, commit, push, and publish rows.",
+            "zh": "一张包含读取、编辑、运行、提交、推送和发布行的行动边界矩阵。"
+          },
+          "newAcceptance": {
+            "en": "Each persistent or external action names its authorization, confirmation point, evidence, and recovery path.",
+            "zh": "每个持久或外部行动都明确授权、确认点、证据和恢复路径。"
+          }
         },
         {
           "id": "lab-009",
@@ -473,7 +590,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "工程生命周期"
           },
           "href": "../book/labs/lab-009-engineering-lifecycle-EN.md",
-          "relation": "supporting"
+          "relation": "supporting",
+          "firstSeen": "L3",
+          "newCapability": {
+            "en": "Compare direct implementation with a staged engineering lifecycle using observed rework rather than preference.",
+            "zh": "用观察到的返工而非偏好，对比直接实现与分阶段工程生命周期。"
+          },
+          "newArtifact": {
+            "en": "Two comparable run records with stage logs, checks, rework counts, and a decision note.",
+            "zh": "两份可比较的运行记录，包含阶段日志、检查、返工次数和决策说明。"
+          },
+          "newAcceptance": {
+            "en": "The comparison keeps task and acceptance fixed and attributes only evidence-supported differences.",
+            "zh": "比较保持任务和验收固定，只归因有证据支持的差异。"
+          }
         },
         {
           "id": "lab-014",
@@ -482,7 +612,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "恢复任务对账"
           },
           "href": "../book/labs/lab-014-resume-reconciliation-EN.md",
-          "relation": "supporting"
+          "relation": "supporting",
+          "firstSeen": "L3",
+          "newCapability": {
+            "en": "Reconcile target, branch, permissions, and side-effect state before resuming interrupted work.",
+            "zh": "在恢复中断工作前，对账目标、分支、权限和副作用状态。"
+          },
+          "newArtifact": {
+            "en": "A resume reconciliation record with last known good state, current unknowns, and next safe probe.",
+            "zh": "一份恢复对账记录，包含最后已知良好状态、当前未知项和下一个安全探针。"
+          },
+          "newAcceptance": {
+            "en": "No action resumes until identity, authority, and prior external effects are either confirmed or explicitly blocked.",
+            "zh": "在身份、授权和先前外部影响得到确认或明确阻断前，不恢复任何行动。"
+          }
         },
         {
           "id": "lab-016",
@@ -491,7 +634,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "副作用边界"
           },
           "href": "../book/labs/lab-016-side-effect-boundary-EN.md",
-          "relation": "supporting"
+          "relation": "supporting",
+          "firstSeen": "L3",
+          "newCapability": {
+            "en": "Separate diagnosis from installation, publication, restart, and other persistent actions.",
+            "zh": "把诊断与安装、发布、重启及其他持久行动分开。"
+          },
+          "newArtifact": {
+            "en": "A side-effect ledger classifying read-only, reversible, compensating, and non-retryable actions.",
+            "zh": "一份副作用账本，对只读、可回滚、可补偿和不可重试行动进行分类。"
+          },
+          "newAcceptance": {
+            "en": "The diagnostic endpoint is useful without performing an unapproved persistent action or hiding recovery cost.",
+            "zh": "诊断终点在不执行未批准持久行动、也不隐藏恢复成本的情况下仍然有用。"
+          }
         }
       ],
       "skills": [
@@ -592,7 +748,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "可审计的竖向切片"
           },
           "href": "../book/labs/lab-013-l3-vertical-slice-EN.md",
-          "relation": "primary"
+          "relation": "primary",
+          "firstSeen": "L3",
+          "newCapability": {
+            "en": "Run a complete vertical slice with checkpoints, failure handling, recovery, and a bounded handoff.",
+            "zh": "运行一条包含检查点、失败处理、恢复和有边界交接的完整竖向切片。"
+          },
+          "newArtifact": {
+            "en": "A baseline hash, checkpoint log, diff, validation output, rollback target, and transfer record under one run ID.",
+            "zh": "同一运行 ID 下的基线哈希、检查点日志、差异、验证输出、回滚目标和迁移记录。"
+          },
+          "newAcceptance": {
+            "en": "The evidence chain preserves one intentional failure and supports each scoped delivery claim without rewriting history.",
+            "zh": "证据链保留一次故意失败，并在不改写历史的情况下支持每项有范围的交付声明。"
+          }
         }
       }
     },
@@ -678,7 +847,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "Skill 选择"
           },
           "href": "../book/labs/lab-004-skill-selection-EN.md",
-          "relation": "primary"
+          "relation": "primary",
+          "firstSeen": "L4",
+          "newCapability": {
+            "en": "Select the smallest useful Skill and tool set by fit, dependency, permission, license, and verification cost.",
+            "zh": "按适配、依赖、权限、许可证和验证成本选择最小有效 Skill 与工具组合。"
+          },
+          "newArtifact": {
+            "en": "A candidate comparison and exclusion record for the chosen capability set.",
+            "zh": "一份所选能力组合的候选比较和排除记录。"
+          },
+          "newAcceptance": {
+            "en": "Every selected capability earns its place and every rejected capability has a task-specific reason.",
+            "zh": "每个被选能力都有存在理由，每个被拒能力都有针对任务的理由。"
+          }
         },
         {
           "id": "lab-005",
@@ -687,7 +869,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "设计一个 Skill"
           },
           "href": "../book/labs/lab-005-design-a-skill-EN.md",
-          "relation": "supporting"
+          "relation": "supporting",
+          "firstSeen": "L4",
+          "newCapability": {
+            "en": "Package a stable method as a bounded Skill with triggers, stop conditions, output, and verification.",
+            "zh": "把稳定方法封装成包含触发、停止条件、输出和验证的有边界 Skill。"
+          },
+          "newArtifact": {
+            "en": "An original Skill candidate plus positive, boundary, failure, and transfer fixtures.",
+            "zh": "一个原创 Skill 候选，以及正例、边界例、失败例和迁移例夹具。"
+          },
+          "newAcceptance": {
+            "en": "The Skill passes structural validation and a fresh-context review without silently expanding the task.",
+            "zh": "Skill 通过结构验证和新鲜上下文审查，且不静默扩大任务。"
+          }
         },
         {
           "id": "lab-008",
@@ -696,7 +891,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "研究问题"
           },
           "href": "../book/labs/lab-008-research-question-EN.md",
-          "relation": "supporting"
+          "relation": "supporting",
+          "firstSeen": "L4",
+          "newCapability": {
+            "en": "Route a broad topic into a bounded research question, source plan, and stop condition.",
+            "zh": "把宽泛主题路由成有边界的研究问题、来源计划和停止条件。"
+          },
+          "newArtifact": {
+            "en": "A research brief with question, source classes, claim table, access dates, and unresolved conflicts.",
+            "zh": "一份包含问题、来源类别、声明表、访问日期和未解决冲突的研究简报。"
+          },
+          "newAcceptance": {
+            "en": "Conclusions distinguish primary evidence, interpretation, contradiction, and missing evidence.",
+            "zh": "结论区分一手证据、解释、矛盾和缺失证据。"
+          }
         },
         {
           "id": "lab-017",
@@ -705,7 +913,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "Skill 发现审计"
           },
           "href": "../book/labs/lab-017-skill-discovery-audit-EN.md",
-          "relation": "supporting"
+          "relation": "supporting",
+          "firstSeen": "L4",
+          "newCapability": {
+            "en": "Audit external Skill discovery, loading, behavior, licensing, and adoption as separate claims.",
+            "zh": "把外部 Skill 的发现、加载、行为、许可证和采用作为独立声明审查。"
+          },
+          "newArtifact": {
+            "en": "A staged adoption audit with source, license, dependency, behavior, and rollback records.",
+            "zh": "一份分阶段采用审查，包含来源、许可证、依赖、行为和回滚记录。"
+          },
+          "newAcceptance": {
+            "en": "Existence or installation is never used as proof of loading, correct behavior, or team adoption.",
+            "zh": "绝不把存在或安装当成加载、正确行为或团队采用的证明。"
+          }
         }
       ],
       "skills": [
@@ -783,7 +1004,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "Skill 选择"
           },
           "href": "../book/labs/lab-004-skill-selection-EN.md",
-          "relation": "primary"
+          "relation": "primary",
+          "firstSeen": "L4",
+          "newCapability": {
+            "en": "Select the smallest useful Skill and tool set by fit, dependency, permission, license, and verification cost.",
+            "zh": "按适配、依赖、权限、许可证和验证成本选择最小有效 Skill 与工具组合。"
+          },
+          "newArtifact": {
+            "en": "A candidate comparison and exclusion record for the chosen capability set.",
+            "zh": "一份所选能力组合的候选比较和排除记录。"
+          },
+          "newAcceptance": {
+            "en": "Every selected capability earns its place and every rejected capability has a task-specific reason.",
+            "zh": "每个被选能力都有存在理由，每个被拒能力都有针对任务的理由。"
+          }
         }
       }
     },
@@ -833,7 +1067,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "Agent 停止条件"
           },
           "href": "../book/labs/lab-006-agent-stop-conditions-EN.md",
-          "relation": "primary"
+          "relation": "primary",
+          "firstSeen": "L5",
+          "newCapability": {
+            "en": "Design an observable Agent loop with state transitions, retry budget, stop conditions, and safe handoff.",
+            "zh": "设计包含状态转换、重试预算、停止条件和安全交接的可观察 Agent 循环。"
+          },
+          "newArtifact": {
+            "en": "An event timeline, state ledger, retry record, stop decision, and handoff packet.",
+            "zh": "一份事件时间线、状态账本、重试记录、停止决策和交接包。"
+          },
+          "newAcceptance": {
+            "en": "Repeated failure, missing authority, or unverifiable completion ends in a recorded stop or escalation instead of an unbounded retry.",
+            "zh": "重复失败、缺失授权或无法验证的完成会以记录的停止或升级结束，而不是无限重试。"
+          }
         },
         {
           "id": "lab-003",
@@ -842,7 +1089,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "证据审查"
           },
           "href": "../book/labs/lab-003-evidence-review-EN.md",
-          "relation": "supporting"
+          "relation": "supporting",
+          "firstSeen": "L3",
+          "newCapability": {
+            "en": "Independently adjudicate a prior run's claims without editing its evidence or inheriting its conclusion.",
+            "zh": "在不编辑原证据、不继承原结论的情况下，独立裁定先前运行的声明。"
+          },
+          "newArtifact": {
+            "en": "A reviewer-owned adjudication table that references the L3 run and records disagreement, limits, and the next smallest check.",
+            "zh": "一张由审查者拥有的裁定表，引用 L3 运行并记录分歧、限制和下一个最小检查。"
+          },
+          "newAcceptance": {
+            "en": "The reviewer classifies each claim as verified, partial, unverified, disputed, or unknowable and preserves the original run record.",
+            "zh": "审查者把每项声明分类为已验证、部分、未验证、有争议或范围内不可知，并保留原始运行记录。"
+          }
         },
         {
           "id": "lab-015",
@@ -851,7 +1111,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "证据交付"
           },
           "href": "../book/labs/lab-015-evidence-delivery-EN.md",
-          "relation": "supporting"
+          "relation": "supporting",
+          "firstSeen": "L5",
+          "newCapability": {
+            "en": "Deliver an evidence-bounded completion statement that separates outputs, checks, unknowns, and next actions.",
+            "zh": "交付一份受证据约束的完成声明，分开输出、检查、未知项和下一行动。"
+          },
+          "newArtifact": {
+            "en": "A claim ledger and concise handoff with scope, evidence pointers, exclusions, and next check.",
+            "zh": "一份声明账本和简洁交接，包含范围、证据指针、排除项和下一检查。"
+          },
+          "newAcceptance": {
+            "en": "No sentence claims broader runtime, deployment, user, or production evidence than the attached record supports.",
+            "zh": "没有句子声称超出附带记录支持范围的运行、部署、用户或生产证据。"
+          }
         }
       ],
       "skills": [
@@ -928,7 +1201,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "Agent 停止条件"
           },
           "href": "../book/labs/lab-006-agent-stop-conditions-EN.md",
-          "relation": "primary"
+          "relation": "primary",
+          "firstSeen": "L5",
+          "newCapability": {
+            "en": "Design an observable Agent loop with state transitions, retry budget, stop conditions, and safe handoff.",
+            "zh": "设计包含状态转换、重试预算、停止条件和安全交接的可观察 Agent 循环。"
+          },
+          "newArtifact": {
+            "en": "An event timeline, state ledger, retry record, stop decision, and handoff packet.",
+            "zh": "一份事件时间线、状态账本、重试记录、停止决策和交接包。"
+          },
+          "newAcceptance": {
+            "en": "Repeated failure, missing authority, or unverifiable completion ends in a recorded stop or escalation instead of an unbounded retry.",
+            "zh": "重复失败、缺失授权或无法验证的完成会以记录的停止或升级结束，而不是无限重试。"
+          }
         }
       }
     },
@@ -987,7 +1273,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "团队能力迁移"
           },
           "href": "../book/labs/lab-012-team-capability-migration-EN.md",
-          "relation": "primary"
+          "relation": "primary",
+          "firstSeen": "L6",
+          "newCapability": {
+            "en": "Migrate a personal method into a versioned team capability with ownership, permissions, evaluation, maintenance, and rollback.",
+            "zh": "把个人方法迁移成包含负责人、权限、评测、维护和回滚的版本化团队能力。"
+          },
+          "newArtifact": {
+            "en": "A team capability package with owner, version, source boundary, permission table, review date, and rollback target.",
+            "zh": "一个包含负责人、版本、来源边界、权限表、复核日期和回滚目标的团队能力包。"
+          },
+          "newAcceptance": {
+            "en": "A second operator can reproduce or reject the package without hidden credentials, private context, or ownerless decisions.",
+            "zh": "第二位操作者无需隐藏凭据、私人上下文或无负责人决策，就能复现或拒绝该能力包。"
+          }
         },
         {
           "id": "lab-010",
@@ -996,7 +1295,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "共享产品上下文"
           },
           "href": "../book/labs/lab-010-product-context-EN.md",
-          "relation": "supporting"
+          "relation": "supporting",
+          "firstSeen": "L6",
+          "newCapability": {
+            "en": "Maintain one shared product context while separating stable facts, volatile facts, hypotheses, and task-specific decisions.",
+            "zh": "维护一份共享产品上下文，同时分开稳定事实、易变事实、假设和任务特定决策。"
+          },
+          "newArtifact": {
+            "en": "A versioned Product Context revision consumed by two tasks with field-use and change-impact records.",
+            "zh": "一份由两个任务消费的版本化 Product Context 修订，包含字段使用和变更影响记录。"
+          },
+          "newAcceptance": {
+            "en": "Both tasks cite the same revision, name consumed fields, and trigger review when a changed field alters a decision.",
+            "zh": "两个任务引用同一修订、明确使用字段，并在字段变更影响决策时触发复核。"
+          }
         }
       ],
       "skills": [
@@ -1072,7 +1384,20 @@ window.CODEX_LEARNING_PATH = {
             "zh": "团队能力迁移"
           },
           "href": "../book/labs/lab-012-team-capability-migration-EN.md",
-          "relation": "primary"
+          "relation": "primary",
+          "firstSeen": "L6",
+          "newCapability": {
+            "en": "Migrate a personal method into a versioned team capability with ownership, permissions, evaluation, maintenance, and rollback.",
+            "zh": "把个人方法迁移成包含负责人、权限、评测、维护和回滚的版本化团队能力。"
+          },
+          "newArtifact": {
+            "en": "A team capability package with owner, version, source boundary, permission table, review date, and rollback target.",
+            "zh": "一个包含负责人、版本、来源边界、权限表、复核日期和回滚目标的团队能力包。"
+          },
+          "newAcceptance": {
+            "en": "A second operator can reproduce or reject the package without hidden credentials, private context, or ownerless decisions.",
+            "zh": "第二位操作者无需隐藏凭据、私人上下文或无负责人决策，就能复现或拒绝该能力包。"
+          }
         }
       }
     }

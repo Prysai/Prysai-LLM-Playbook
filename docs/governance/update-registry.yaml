@@ -5,11 +5,11 @@
   "areas": [
     {
       "area": "learning-path",
-      "canonical_paths": ["docs/governance/learning-path.yaml", "docs/learning-model.md", "docs/content-matrix.md"],
+      "canonical_paths": ["docs/governance/learning-path.yaml", "docs/learning-model.md", "docs/content-matrix.md", "scripts/validate_learning_path.py", "scripts/test_learning_path_lab_uses.py", "scripts/build_learning_path_site.py", "site/learning-path-data.js", "docs/adr/0024-lab-use-progression-contract.md"],
       "owner": "curriculum-maintainer",
       "triggers": ["learning-gap", "asset-reassignment", "new-evaluation-fixture", "level-change", "site-path-change"],
-      "required_inputs": ["level-goal", "prerequisites", "primary-assets", "evaluation-ids", "evidence-gate", "graduation-gate", "blocked-condition"],
-      "validation_commands": ["scripts/validate_learning_path.py", "scripts/validate_learning_contract.py", "scripts/validate_content_status.py", "scripts/validate_content_completeness.py", "scripts/check_local_links.py"],
+      "required_inputs": ["level-goal", "prerequisites", "primary-assets", "lab-use-relation", "lab-first-seen", "lab-new-capability", "lab-new-artifact", "lab-new-acceptance", "evaluation-ids", "evidence-gate", "graduation-gate", "blocked-condition"],
+      "validation_commands": ["scripts/validate_learning_path.py", "scripts/test_learning_path_lab_uses.py", "scripts/build_learning_path_site.py --check", "scripts/validate_learning_contract.py", "scripts/validate_content_status.py", "scripts/validate_content_completeness.py", "scripts/check_local_links.py"],
       "status_fields": ["status", "owner", "last_reviewed", "next_review", "evidence"],
       "next_review": "2026-11-09"
     },
@@ -65,11 +65,11 @@
     },
     {
       "area": "evaluations",
-      "canonical_paths": ["evals/task-set-v1.yaml", "docs/quality/evaluation-framework.md", "evals/results"],
+      "canonical_paths": ["evals/task-set-v1.yaml", "evals/candidates/communication-clinic-v1", "scripts/validate_communication_clinic_candidate.py", "docs/quality/evaluation-framework.md", "evals/results"],
       "owner": "evaluation-maintainer",
-      "triggers": ["skill-change", "model-change", "workflow-change", "new-failure-class"],
+      "triggers": ["skill-change", "model-change", "workflow-change", "new-failure-class", "evaluation-candidate-change", "communication-condition-change"],
       "required_inputs": ["fixed-task", "context", "allowed-actions", "expected-evidence", "forbidden-behavior", "run-log"],
-      "validation_commands": ["scripts/validate_eval_tasks.py", "scripts/validate_project.py"],
+      "validation_commands": ["scripts/validate_eval_tasks.py", "scripts/validate_communication_clinic_candidate.py", "scripts/validate_project.py"],
       "status_fields": ["fixture_status", "run_status", "review_status", "owner", "next_review"],
       "next_review": "2026-09-09"
     },
@@ -111,6 +111,26 @@
       "required_inputs": ["accepted-change-types", "canonical-source-routing", "required-evidence", "source-and-license-boundary", "safety-and-external-effects", "status-claim-boundary"],
       "validation_commands": ["scripts/validate_github_templates.py", "scripts/validate_project.py", "scripts/validate_project_structure.py", "scripts/check_local_links.py"],
       "status_fields": ["owner", "accepted-change-types", "issue-before-work-cases", "required-disclosures", "next_review"],
+      "next_review": "2026-09-12"
+    },
+    {
+      "area": "gold-content-admission",
+      "canonical_paths": ["docs/governance/gold-content-admission.yaml", "scripts/validate_gold_content_admission.py", "scripts/test_gold_content_admission.py", "scripts/fixtures/gold-content-admission", "docs/quality/curriculum-portability-and-gold-content-audit-2026-08-12.md"],
+      "owner": "curriculum-maintainer",
+      "triggers": ["new-learning-unit", "new-platform-adapter", "new-field-case", "content-duplication-report", "admission-score-change", "hard-gate-change"],
+      "required_inputs": ["reader-problem", "capability-increment", "consequential-decision", "observable-artifact", "acceptance", "failure-case", "evidence-limit", "transfer", "existing-unit-disposition", "source-license-boundary", "hard-gate-results", "admission-scores"],
+      "validation_commands": ["scripts/validate_gold_content_admission.py", "scripts/test_gold_content_admission.py", "scripts/build_release_evidence.py --check", "scripts/validate_project.py", "scripts/check_local_links.py"],
+      "status_fields": ["status", "hard_gates", "scores", "owner", "reviewed_at", "next_review"],
+      "next_review": "2026-09-12"
+    },
+    {
+      "area": "curriculum-architecture",
+      "canonical_paths": ["docs/adr/0025-universal-core-codex-flagship-and-platform-adapters.md", "docs/strategy/universal-llm-practice-curriculum-architecture-2026-08-12.md", "docs/charter.md", "docs/book-architecture.md", "docs/learning-model.md", "docs/governance/learning-path.yaml", "docs/governance/book-navigation.yaml"],
+      "owner": "curriculum-maintainer",
+      "triggers": ["universal-core-change", "platform-adapter-proposal", "cross-platform-claim", "audience-route-change", "project-rename-proposal", "content-identity-migration"],
+      "required_inputs": ["reader-problem", "capability-delta", "canonical-owner", "platform-delta", "evidence-status", "volatile-fact-sources", "compatibility-map", "rollback-boundary", "owner-decision"],
+      "validation_commands": ["scripts/validate_project.py", "scripts/validate_project_structure.py", "scripts/validate_content_completeness.py", "scripts/validate_learning_contract.py --canonical-en", "scripts/check_local_links.py", "scripts/audit_input_archives.py"],
+      "status_fields": ["status", "owner", "scope", "implementation_state", "adapter_status", "brand_decision", "next_review"],
       "next_review": "2026-09-12"
     },
     {

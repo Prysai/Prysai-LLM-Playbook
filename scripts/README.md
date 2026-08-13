@@ -13,6 +13,9 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\validate_learning_contract.py --canonical-en
 & $py scripts\build_quality_register.py --check
 & $py scripts\build_release_evidence.py --check
+& $py scripts\validate_gold_content_admission.py
+& $py scripts\test_gold_content_admission.py
+& $py scripts\validate_communication_clinic_candidate.py
 & $py scripts\check_local_links.py
 & $py scripts\validate_localization.py
 & $py scripts\build_book_navigation.py --check
@@ -71,6 +74,23 @@ promotion of content maturity or proof of runtime/user outcomes.
 boundary fixtures. It proves duplicate commands are rejected, command failure
 is logged and blocks the packet, overdue or invalid freshness blocks stronger
 maturity, and static success does not promote a `candidate`.
+
+`validate_gold_content_admission.py` validates the editorial intake contract
+and any checked-in admission records. A proposed unit must satisfy its content
+family fields, pass all eight hard gates, score at least 24/32 with no zero,
+and declare what its evidence cannot prove. `test_gold_content_admission.py`
+uses a valid lab record and negative fixtures for duplicate advice, subjective
+acceptance, missing evidence limits, empty platform deltas, and a below-threshold
+score. These checks establish admission-policy consistency, not runtime or
+learning effectiveness.
+
+`validate_communication_clinic_candidate.py` checks the isolated, synthetic
+three-condition communication experiment before any model run. It preserves
+the candidate as `not_run`, outside the canonical Lab and evaluation counts,
+and checks fixed inputs, context-channel equality, repetition controls,
+acceptance IDs, evidence IDs, telemetry nullability, and the secret/network
+boundary. Passing it is plan integrity, not evidence that one request style is
+better.
 
 `validate_github_templates.py` checks the public contributor entry forms and
 pull-request template for parseable YAML, required fields, unique component

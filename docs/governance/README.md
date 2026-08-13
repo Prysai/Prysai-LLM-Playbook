@@ -11,6 +11,7 @@ book, site, translations, status, and maintenance records aligned.
 | Change a locale identity or translation state | [`locale-matrix.yaml`](locale-matrix.yaml) | Localized links and migration checks |
 | Change which chapters/labs can be routed by the public site | [`content-status.yaml`](content-status.yaml) | Regenerate [`site/locale-manifest.js`](../../site/locale-manifest.js) |
 | Change a learning level | [`learning-path.yaml`](learning-path.yaml) | Site data and learning-path validator |
+| Propose or admit a chapter, lab, case, adapter, route, or reference unit | [`gold-content-admission.yaml`](gold-content-admission.yaml) | Hard-gate, family-contract, and admission-score validator |
 | Change an artifact's maturity | [`content-status.yaml`](content-status.yaml) | Status indexes and status validator |
 | Change a defect, resolution, or release blocker | [`quality-register.yaml`](quality-register.yaml) | Generated quality ledger and maturity-claim gate |
 | Change release evidence dimensions, blind spots, version, or rollback metadata | [`release-evidence.yaml`](release-evidence.yaml) | Commit-bound CI evidence packet |
@@ -28,3 +29,10 @@ valid so the repository's standard-library checks can parse it.
 Change the canonical contract first, update its human-facing projection, run
 the focused validator, then run the full project checks. A generated file is a
 result, not a second source of truth.
+
+The gold-content admission contract rejects repetition, prompt folklore,
+invented evidence, unclear source/license boundaries, platform pages without a
+real platform delta, subjective acceptance, and claims without explicit
+limits. Its 24/32 threshold is an editorial intake gate. Passing it does not
+promote a unit beyond its separately recorded run, learner, transfer, review,
+or release evidence.

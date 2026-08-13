@@ -12,6 +12,7 @@ the reader-facing book and site consume.
 | Record a design decision | [`adr/`](adr/) | [`adr/README.md`](adr/README.md) |
 | Change a machine contract | [`governance/`](governance/) | [`governance/README.md`](governance/README.md) |
 | Read a research record | [`research/`](research/) | [`research/README.md`](research/README.md) |
+| Review a product or curriculum proposal | [`strategy/`](strategy/) | [`strategy/README.md`](strategy/README.md) |
 | Check acceptance standards | [`quality/`](quality/) | [`quality/README.md`](quality/README.md) |
 | Check a license or asset boundary | [`sources/`](sources/) | [`sources/README.md`](sources/README.md) |
 | Start a recurring record | [`templates/`](templates/) | [`templates/README.md`](templates/README.md) |

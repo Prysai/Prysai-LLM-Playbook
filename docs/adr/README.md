@@ -27,3 +27,5 @@ Current entry points:
 - [ADR-0021: commit-bound release evidence](0021-commit-bound-release-evidence.md)
 - [ADR-0022: staged authoritative URL audit](0022-staged-authoritative-url-audit.md)
 - [ADR-0023: static accessibility and artifact integrity](0023-static-accessibility-and-artifact-integrity.md)
+- [ADR-0024: Lab-use progression contract](0024-lab-use-progression-contract.md)
+- [ADR-0025: universal core, Codex flagship, and platform adapters](0025-universal-core-codex-flagship-and-platform-adapters.md)

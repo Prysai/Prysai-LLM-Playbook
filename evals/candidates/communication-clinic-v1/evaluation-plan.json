@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "candidate_id": "communication-clinic-v1",
+  "content_status": "candidate",
+  "run_status": "not_run",
+  "review_status": "evaluation_plan_only",
+  "canonical_lab": false,
+  "formal_task_set_entry": false,
+  "task": {
+    "input_path": "workspace/evidence-packet.md",
+    "contract_path": "task-contract.md",
+    "acceptance_path": "acceptance.json",
+    "output_path": "output/release-handoff.md",
+    "risk": "low",
+    "synthetic": true
+  },
+  "conditions": [
+    {
+      "id": "A",
+      "prompt_path": "prompts/a-vague.txt",
+      "contract_channel": "none_initially",
+      "contract_content_path": null
+    },
+    {
+      "id": "B",
+      "prompt_path": "prompts/b-structured.txt",
+      "contract_channel": "user_request_template",
+      "contract_content_path": "task-contract.md"
+    },
+    {
+      "id": "C",
+      "prompt_path": "prompts/c-shared-context-short.txt",
+      "contract_channel": "recorded_shared_context",
+      "contract_content_path": "task-contract.md"
+    }
+  ],
+  "controls": {
+    "fresh_session_per_run": true,
+    "fresh_disposable_workspace_per_run": true,
+    "same_model_version_settings_tools_permissions_and_budget": true,
+    "condition_order": "randomized_per_repetition_with_recorded_seed",
+    "minimum_repetitions_per_available_condition": 5,
+    "maximum_user_repair_turns": 2,
+    "condition_blind_reviewers": 2,
+    "preserve_all_repetitions": true
+  },
+  "metrics": [
+    "unsupported_assumptions",
+    "correction_turns",
+    "first_turn_acceptance",
+    "final_acceptance",
+    "evidence_completeness",
+    "observed_elapsed_time_when_available",
+    "provider_token_usage_when_available",
+    "provider_run_bound_cost_when_available"
+  ],
+  "telemetry_missing_value": "not_available",
+  "stop_conditions": [
+    "more_than_two_user_repair_turns",
+    "forbidden_external_action",
+    "write_outside_disposable_run_directory",
+    "request_for_secret_or_production_access"
+  ],
+  "inference_boundary": "Descriptive fixture evidence only; no universal communication, model, platform, learner-mastery, cost-effectiveness, or production conclusion."
+}
+

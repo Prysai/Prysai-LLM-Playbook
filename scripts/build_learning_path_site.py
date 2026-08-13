@@ -55,12 +55,28 @@ def build_asset(
     name = catalog_item["name"]
     if set(name) != {"en", "zh"} or not all(isinstance(value, str) and value.strip() for value in name.values()):
         raise ValueError(f"{section}: catalog name for {asset_id} must contain non-empty en and zh text")
-    return {
+    result = {
         "id": asset_id,
         "name": localized(name),
         "href": site_href(status_item["path"], section),
         "relation": relation,
     }
+    return result
+
+
+def build_lab_use(
+    use: dict[str, Any],
+    status_items: dict[str, dict[str, Any]],
+    catalog: dict[str, Any],
+) -> dict[str, Any]:
+    asset = build_asset(use["id"], "labs", use["relation"], status_items, catalog)
+    asset.update({
+        "firstSeen": use["first_seen"],
+        "newCapability": localized(use["new_capability"]),
+        "newArtifact": localized(use["new_artifact"]),
+        "newAcceptance": localized(use["new_acceptance"]),
+    })
+    return asset
 
 
 def build_payload() -> dict[str, Any]:
@@ -81,8 +97,7 @@ def build_payload() -> dict[str, Any]:
     for level in contract.get("levels", []):
         level_id = level["id"]
         chapters = [build_asset(asset_id, "chapters", "primary", status_items["chapters"], catalog) for asset_id in level["primary_chapters"]]
-        labs = [build_asset(asset_id, "labs", "primary", status_items["labs"], catalog) for asset_id in level["primary_labs"]]
-        labs.extend(build_asset(asset_id, "labs", "supporting", status_items["labs"], catalog) for asset_id in level.get("supporting_labs", []))
+        labs = [build_lab_use(use, status_items["labs"], catalog) for use in level["lab_uses"]]
         skills = [build_asset(asset_id, "skills", "supporting", status_items["skills"], catalog) for asset_id in level["supporting_skills"]]
         next_chapter = chapters[0]
         next_lab = labs[0]

@@ -1,0 +1,13 @@
+{
+  "extends": "valid-lab.json",
+  "mutations": {
+    "family": "platform-adapter",
+    "platform_scope": "platform-specific",
+    "platform": "Example AI",
+    "platform_delta": "",
+    "authoritative_urls": ["https://example.invalid/official"],
+    "applies_to": "Example account and surface",
+    "hard_gates.platform-delta-real.result": "fail"
+  },
+  "expected": "family field platform_delta must be non-empty"
+}
