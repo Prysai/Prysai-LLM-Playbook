@@ -8,6 +8,8 @@ import sys
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
+from validate_site_accessibility import artifact_findings
+
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLISH_DIRECTORIES = ("site", "book", "docs", "skills", "assets", "examples", "evals")
@@ -101,6 +103,10 @@ def validate_artifact(output: Path) -> None:
         raise ValueError("root Pages entry must point relative assets and content through site/")
     if not (output / "site/search-index.js").is_file():
         raise FileNotFoundError("Pages artifact is missing site/search-index.js")
+
+    integrity_findings = artifact_findings(output)
+    if integrity_findings:
+        raise ValueError("Pages artifact route integrity failed: " + "; ".join(integrity_findings))
 
 
 def build(output: Path) -> None:

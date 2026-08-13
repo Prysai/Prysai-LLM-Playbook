@@ -26,3 +26,4 @@ Current entry points:
 - [ADR-0020: machine-readable quality register](0020-machine-readable-quality-register.md)
 - [ADR-0021: commit-bound release evidence](0021-commit-bound-release-evidence.md)
 - [ADR-0022: staged authoritative URL audit](0022-staged-authoritative-url-audit.md)
+- [ADR-0023: static accessibility and artifact integrity](0023-static-accessibility-and-artifact-integrity.md)

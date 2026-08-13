@@ -17,7 +17,8 @@
     "Learner labs and evaluation fixtures remain not_run unless separate runtime records exist.",
     "Automated source checks do not prove translation quality, reader comprehension, or independent review.",
     "The Pages artifact check does not prove that a public URL is enabled, deployed, or reachable.",
-    "External URL reachability and manual accessibility review are not part of this CI packet.",
+    "Static accessibility rules do not prove browser behavior, keyboard flow, screen-reader output, contrast, zoom, reflow, or user review.",
+    "External URL reachability is recorded by a separate scheduled workflow and is not replayed in this CI packet.",
     "The local input-archive audit depends on machine-local archives and is not replayed on GitHub-hosted runners.",
     "The official Skill validator is run locally when its bundled runtime is available; CI runs the repository Skill contract validator."
   ],
@@ -61,6 +62,8 @@
       "scope": "Repository-local Markdown targets and canonical English teaching contracts.",
       "commands": [
         {"id": "local-links", "argv": ["{python}", "scripts/check_local_links.py"]},
+        {"id": "site-accessibility-source", "argv": ["{python}", "scripts/validate_site_accessibility.py"]},
+        {"id": "site-accessibility-fixtures", "argv": ["{python}", "scripts/test_site_accessibility.py"]},
         {"id": "canonical-english-learning-contract", "argv": ["{python}", "scripts/validate_learning_contract.py", "--canonical-en"]}
       ]
     },
@@ -77,7 +80,7 @@
     {
       "id": "rendered-product",
       "label": "Rendered product",
-      "scope": "Static public artifact construction only; browser, deployment, accessibility, and user review remain separate evidence.",
+      "scope": "Static public artifact construction plus generated local route, resource, and HTML-anchor integrity; browser, deployment, assistive-technology behavior, and user review remain separate evidence.",
       "commands": [
         {"id": "public-artifact-boundary", "argv": ["{python}", "scripts/build_pages_artifact.py", "--check"]}
       ]
