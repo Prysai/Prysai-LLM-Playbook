@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Failed interaction recovery</title>
+  <desc id="desc">Four preserved evidence inputs lead to classification, one-line repair, a one-variable rerun, and a bounded result. One better rerun is not a universal fix.</desc>
+  <rect width="1600" height="900" fill="#111418"/>
+  <rect x="0" width="34" height="900" fill="#ed3328"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="76" y="82" fill="#ed3328" font-size="18" font-weight="700" letter-spacing="4">RECOVERY ROUTE / PRESERVE THE MISS / 01</text>
+    <text x="76" y="178" fill="#f3eee5" font-size="69" font-weight="900" letter-spacing="-3">THE REPLY MISSED.</text>
+    <text x="76" y="247" fill="#f3eee5" font-size="69" font-weight="900" letter-spacing="-3">PRESERVE THE MISS.</text>
+    <text x="80" y="291" fill="#aeb0ae" font-size="21">Do not rewrite everything. Keep the evidence, change one condition, then compare.</text>
+
+    <g transform="translate(76 346)">
+      <rect width="346" height="218" fill="#f3eee5"/>
+      <text x="24" y="48" fill="#ed3328" font-size="15" font-weight="700" letter-spacing="3">01 / REQUEST</text>
+      <text x="24" y="103" fill="#111418" font-size="31" font-weight="900">WHAT YOU ASKED</text>
+      <path d="M24 129H322" stroke="#111418" stroke-opacity=".28"/>
+      <text x="24" y="166" fill="#45484a" font-size="17">goal / constraints / stop rule</text>
+      <text x="24" y="197" fill="#111418" font-size="14" font-weight="700">KEEP THE EXACT WORDING</text>
+    </g>
+    <g transform="translate(444 346)">
+      <rect width="346" height="218" fill="#202428" stroke="#606468"/>
+      <text x="24" y="48" fill="#ed3328" font-size="15" font-weight="700" letter-spacing="3">02 / VISIBLE CONTEXT</text>
+      <text x="24" y="103" fill="#f3eee5" font-size="31" font-weight="900">WHAT YOU SAW</text>
+      <path d="M24 129H322" stroke="#f3eee5" stroke-opacity=".24"/>
+      <text x="24" y="166" fill="#bfc1be" font-size="17">inputs / tools / permissions / turn</text>
+      <text x="24" y="197" fill="#f3eee5" font-size="14" font-weight="700">DO NOT INFER HIDDEN STATE</text>
+    </g>
+    <g transform="translate(812 346)">
+      <rect width="346" height="218" fill="#f3eee5"/>
+      <text x="24" y="48" fill="#ed3328" font-size="15" font-weight="700" letter-spacing="3">03 / ACTUAL REPLY</text>
+      <text x="24" y="103" fill="#111418" font-size="31" font-weight="900">WHAT CAME BACK</text>
+      <path d="M24 129H322" stroke="#111418" stroke-opacity=".28"/>
+      <text x="24" y="166" fill="#45484a" font-size="17">reply / artifact / action / evidence</text>
+      <text x="24" y="197" fill="#111418" font-size="14" font-weight="700">QUOTE THE MISMATCH</text>
+    </g>
+    <g transform="translate(1180 346)">
+      <rect width="344" height="218" fill="#ed3328"/>
+      <text x="24" y="48" fill="#111418" font-size="15" font-weight="700" letter-spacing="3">04 / EXPECTED RESULT</text>
+      <text x="24" y="103" fill="#fff8ed" font-size="31" font-weight="900">WHAT MUST PASS</text>
+      <path d="M24 129H320" stroke="#111418" stroke-opacity=".4"/>
+      <text x="24" y="166" fill="#111418" font-size="17">observable acceptance / boundary</text>
+      <text x="24" y="197" fill="#fff8ed" font-size="14" font-weight="700">NAME THE FIRST FAILURE</text>
+    </g>
+
+    <g transform="translate(76 618)">
+      <text y="20" fill="#ed3328" font-size="15" font-weight="700" letter-spacing="3">CONTROLLED RECOVERY</text>
+      <rect y="46" width="318" height="70" fill="#f3eee5"/>
+      <text x="22" y="89" fill="#111418" font-size="22" font-weight="900">CLASSIFY THE MISS</text>
+      <path d="M318 81H354" stroke="#ed3328" stroke-width="8"/>
+      <rect x="354" y="46" width="318" height="70" fill="#202428" stroke="#606468"/>
+      <text x="376" y="89" fill="#f3eee5" font-size="22" font-weight="900">CHANGE ONE LINE</text>
+      <path d="M672 81H708" stroke="#ed3328" stroke-width="8"/>
+      <rect x="708" y="46" width="318" height="70" fill="#f3eee5"/>
+      <text x="730" y="89" fill="#111418" font-size="22" font-weight="900">RERUN ONE VARIABLE</text>
+      <path d="M1026 81H1062" stroke="#ed3328" stroke-width="8"/>
+      <rect x="1062" y="46" width="386" height="70" fill="#ed3328"/>
+      <text x="1084" y="89" fill="#fff8ed" font-size="22" font-weight="900">RECORD THE RESULT</text>
+    </g>
+
+    <rect x="76" y="778" width="1448" height="72" fill="#f3eee5"/>
+    <text x="100" y="824" fill="#111418" font-size="28" font-weight="900">ONE BETTER RERUN</text>
+    <text x="432" y="824" fill="#ed3328" font-size="34" font-weight="900">≠</text>
+    <text x="484" y="824" fill="#111418" font-size="28" font-weight="900">A UNIVERSAL FIX</text>
+    <text x="1498" y="823" text-anchor="end" fill="#55595c" font-size="14" font-weight="700">CANDIDATE / NO RUNTIME CLAIM</text>
+    <text x="76" y="880" fill="#73777a" font-size="13">PRYSAI LAB / PROJECT-OWNED TEACHING ASSET / 2026-08-13</text>
+  </g>
+</svg>

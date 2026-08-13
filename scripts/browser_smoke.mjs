@@ -151,6 +151,15 @@ try {
   assert.equal(retryRequests, 3, 'search failure did not retry after input prefetch and submitted search');
   await retryPage.close();
 
+  const desktopRecoveryHref = await page.getByRole('link', { name: /open recovery handoff/i }).getAttribute('href');
+  assert.match(desktopRecoveryHref, /reader\.html\?path=book%2Fcommunication-clinic-EN\.md&lang=en#recovery-route$/, 'Showcase recovery card does not preserve the Reader fragment');
+  const desktopRecoveryPage = await context.newPage();
+  await desktopRecoveryPage.goto(new URL(desktopRecoveryHref, `${origin}/site/`).href, { waitUntil: 'networkidle' });
+  await desktopRecoveryPage.locator('[data-reader-article][aria-busy="false"]').waitFor();
+  const desktopRecoveryTop = await desktopRecoveryPage.locator('#recovery-route').evaluate((target) => target.getBoundingClientRect().top);
+  assert.ok(desktopRecoveryTop >= 0 && desktopRecoveryTop < 260, `Desktop Reader did not restore the recovery fragment: ${desktopRecoveryTop}`);
+  await desktopRecoveryPage.close();
+
   await page.setViewportSize({ width: 390, height: 844 });
   await noHorizontalOverflow(page, 'mobile showcase');
   assert.equal(await page.getByRole('button', { name: 'Copy rescue prompt' }).isVisible(), true, 'mobile rescue control is hidden');
@@ -188,13 +197,37 @@ try {
   assert.equal(await page.locator('[data-reader-trust-reviewed]').getAttribute('datetime'), '2026-08-12', 'Reader omits the last actual evidence review date');
   assert.match(await page.locator('.reader-trust-boundary').innerText(), /not a freshness guarantee/i, 'Reader does not bound the scheduled review date');
 
-  await page.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en`, { waitUntil: 'networkidle' });
+  await page.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#recovery-route`, { waitUntil: 'networkidle' });
   await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
   assert.match(await page.locator('[data-reader-article] h1').innerText(), /beginner practice pack/i, 'Reader did not render the public Beginner Practice Pack name');
   assert.match(await page.locator('[data-reader-article]').innerText(), /learner-outcome evidence:\s*none/i, 'Beginner Practice Pack does not expose its learner-evidence boundary');
+  assert.equal(await page.getByRole('heading', { name: /recovery route — when the reply already missed/i }).isVisible(), true, 'Post-failure recovery route is not discoverable');
+  assert.equal(await page.locator('#recovery-route').count(), 1, 'Reader did not preserve the recovery-route fragment target');
+  const recoveryFragmentPosition = await page.locator('#recovery-route').evaluate((target) => ({
+    top: target.getBoundingClientRect().top,
+    scrollY: window.scrollY,
+    scrollHeight: document.documentElement.scrollHeight,
+    innerHeight: window.innerHeight,
+  }));
+  assert.ok(recoveryFragmentPosition.top >= 0 && recoveryFragmentPosition.top < 260, `Reader did not restore the recovery-route fragment into the first visible reading band: ${JSON.stringify(recoveryFragmentPosition)}`);
+  assert.match(await page.locator('[data-reader-article]').innerText(), /improved_on_this_case \| unchanged \| regressed \| not_comparable/i, 'Recovery route omits comparable rerun statuses');
+  assert.equal(await page.getByRole('link', { name: /communication failure triage skill/i }).isVisible(), true, 'Recovery route does not expose the project-owned triage Skill');
+  const recoveryVisual = page.locator('img[alt*="Preserve the failed interaction"]');
+  await recoveryVisual.scrollIntoViewIfNeeded();
+  assert.equal(await recoveryVisual.evaluate((image) => image.complete && image.naturalWidth > 0), true, 'Recovery teaching visual did not load');
   assert.equal(await page.getByRole('link', { name: /coaching-process evaluation candidate/i }).isVisible(), true, 'Related coaching-process evaluation is not discoverable');
   assert.equal(await page.getByRole('link', { name: /task-contract availability and channel study/i }).isVisible(), true, 'Separate task-contract study is not discoverable');
   await noHorizontalOverflow(page, 'mobile Beginner Practice Pack');
+
+  const stalledImagePage = await context.newPage();
+  await stalledImagePage.route('**/assets/teaching/failed-interaction-recovery-red-black.svg', async (route) => {
+    await new Promise((resolve) => setTimeout(resolve, 2_000));
+    await route.continue().catch(() => {});
+  });
+  await stalledImagePage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#recovery-route`, { waitUntil: 'domcontentloaded' });
+  await stalledImagePage.locator('[data-reader-language]:not([disabled])').waitFor({ timeout: 1_200 });
+  assert.equal(await stalledImagePage.locator('[data-reader-article]').getAttribute('aria-busy'), 'false', 'A stalled teaching image blocked Reader initialization');
+  await stalledImagePage.close();
 
   const trustPage = await context.newPage();
   await trustPage.addInitScript(() => { window.CODEX_READER_FETCH_TIMEOUT_MS = 200; });

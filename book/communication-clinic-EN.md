@@ -11,6 +11,11 @@ source-supported research decision. Use its two cards in order. These original
 cards turn conversation into inspectable work; they do not prove that a prompt
 is best or that a model is an effective teacher or researcher.
 
+If a reply has already missed the task, skip the intake and use the
+[post-failure recovery route](#recovery-route). It preserves the miss, changes
+one communication condition, and records what a comparable rerun does and does
+not establish.
+
 ![Attempt, correct, vary, and receipt practice loop](../assets/teaching/beginner-practice-loop-red-black.svg)
 
 <span id="first-practice-intake"></span>
@@ -315,6 +320,99 @@ check that could change the decision.
   only for claims with matching evidence. Unsupported claims remain `unknown`,
   `disputed`, or `out_of_scope`; never report exhaustive research.
 
+<span id="recovery-route"></span>
+
+## Recovery route — when the reply already missed
+
+**Learning objective:** diagnose an observable mismatch without guessing at
+hidden reasoning, make the smallest request repair, and run a one-variable
+comparison. This route starts only after a real reply or artifact exists. For
+an untried vague request, return to [Route B](#route-b--one-observable-non-language-skill)
+or the [task protocol](chapters/03-task-protocol-EN.md).
+
+![Preserve the failed interaction, change one line, and rerun one variable](../assets/teaching/failed-interaction-recovery-red-black.svg)
+
+### Problem
+
+When a model ignores a constraint, answers the previous task, invents a detail,
+or returns something that cannot pass inspection, the tempting response is a
+longer and angrier prompt. That destroys useful evidence: the exact miss, the
+condition that may have caused it, and whether one change actually helped.
+
+### Decision
+
+Keep four items together: the original request, visible context, actual reply
+or artifact, and expected result. Name at most two observable mismatches. Do
+not claim a root cause from one interaction, request hidden reasoning, or treat
+more context as automatically better.
+
+### Recovery card 1 — preserve and classify the miss
+
+```text
+The last reply missed my task. Do not answer the task again yet.
+
+Compare:
+1. my original request;
+2. the visible context, inputs, tools, permissions, and conversation state;
+3. your actual reply or artifact; and
+4. the result I expected.
+
+Name at most two observable mismatches. For each, quote or point to the direct
+evidence, name plausible alternatives, and give a confidence of low, medium,
+or high. Do not guess at hidden reasoning, a system prompt, or a platform
+defect. Propose the smallest change to my request that addresses one mismatch,
+and show it as a short before/after diff. Redact secrets and private identifiers
+before storing or sharing this packet. Do not rerun yet.
+```
+
+- **Model should:** preserve the evidence packet, distinguish symptom from root
+  cause, and connect one small edit to one observed mismatch.
+- **Common failure:** rewriting the entire prompt changes several variables and
+  makes a later improvement impossible to attribute.
+- **Evidence to keep:** four-item packet, quoted mismatch, candidate class,
+  alternatives, confidence, discriminating check, and prompt diff.
+- **Status boundary:** the repair remains `unrun`; a plausible edit is not a
+  fix and does not establish a product defect.
+
+### Recovery card 2 — rerun one variable and record the result
+
+```text
+Rerun the same task with the same input, model or surface, visible context,
+tools, permissions, budget, and acceptance criteria. Change only the proposed
+request repair.
+
+Report:
+result: improved_on_this_case | unchanged | regressed | not_comparable
+evidence:
+what_remained_wrong:
+first_breakpoint:
+next_safe_check:
+
+If another condition changed, use not_comparable. Do not call the problem
+resolved from one successful rerun. Do not widen permissions or take a new
+external action merely to make the comparison pass.
+```
+
+- **Model should:** hold the working condition fixed, expose confounders, and
+  report the narrowest result supported by the rerun.
+- **Common failure:** changing the prompt, model, context, and tools together
+  produces a new run, not a comparison.
+- **Evidence to keep:** baseline and revised request, fixed conditions, both
+  artifacts, unchanged acceptance check, result status, remaining mismatch,
+  and first breakpoint.
+- **Safety boundary:** do not replay publishing, deployment, payments, messages
+  to other people, secret-bearing input, or another irreversible effect merely
+  to make a comparison. Replace it with a sandbox or dry run, or stop for human
+  review. Holding an unsafe permission constant does not make the rerun safe.
+- **Stop condition:** after two comparable reruns without improvement, stop
+  adding prompt text. Investigate the first platform, tool, context, authority,
+  or task-contract breakpoint instead.
+
+For the complete routing, classification, safety, and output contract, use the
+project-owned [Communication Failure Triage Skill](../skills/prysai-communication-failure-triage/SKILL.md).
+It is a `candidate`; its structural checks do not prove cross-model trigger
+accuracy, runtime improvement, or learner outcomes.
+
 ## Small experiment
 
 Run one low-risk route twice: first ask for the answer immediately; then use
@@ -322,6 +420,9 @@ the matching two-card route. Hold task revision, inputs, surface/model label,
 time limit, and acceptance criteria as fixed as possible. Compare answer
 leakage, assumptions, corrections, final acceptance, evidence completeness,
 and confounders. One pair is an observation, not proof of prompt superiority.
+This experiment compares direct help with a teaching route. The recovery
+handoff instead starts from an observed miss and changes one communication
+condition; its result status is not a learner-status promotion.
 This practice pack has no complete stored learner run yet.
 This comparison has not been run as a practice-pack evaluation. Results from
 the separate release-handoff request study cannot substitute for learner data.
@@ -334,18 +435,21 @@ Keep the receipt short enough to compare two runs. Leave unavailable fields
 ```text
 route | prompt_card_revisions | target_or_decision | conditions | allowed_aids
 baseline_or_question | correction_or_claim_ledger | changed_or_conflict_check
-scorer_and_threshold | evidence | unknowns | exact_status | claim_limit
-next_review | stop_reason
+scorer_and_threshold | evidence | unknowns | exact_status | interaction_recovery_status
+claim_limit | next_review | stop_reason
 ```
 
 ## Acceptance checklist
 
-- [ ] Exactly one of the three routes and one bounded target or decision are named.
+- [ ] A first-practice run names exactly one of A/B/C; a direct recovery handoff instead names the failed interaction.
+- [ ] If the recovery route was used, an actual failed reply or artifact and all four evidence-packet items exist.
 - [ ] The first attempt or research question exists before substantive help.
 - [ ] Allowed aids, scoring or source rules, and stop conditions are explicit.
 - [ ] Corrections preserve the original attempt or unsupported claim.
 - [ ] Learning status matches fixed, delayed, or changed-task evidence.
 - [ ] Research claims name scope, access date, conflict, and unknowns.
+- [ ] A recovery rerun changes one communication condition or is marked `not_comparable`.
+- [ ] Recovery status is not used as evidence of learner practice, transfer, retention, or mastery.
 - [ ] Product commands, tools, persistence, and permissions remain in a current adapter.
 - [ ] No result is called mastered, fluent, expert, complete research, or best prompt.
 
@@ -359,6 +463,7 @@ records below explain its design or demonstrate separate evaluation methods.
 
 - [Beginner Practice Pack primary-source boundary](../docs/research/beginner-practice-pack-sources-2026-08-13.md)
 - [Beginner first-practice friction](../docs/research/beginner-first-practice-friction-2026-08-13.md)
+- [Failed-interaction recovery public-demand record](../docs/research/failed-llm-interaction-recovery-public-demand-2026-08-13.md)
 - [Durable language learning and bounded research](../docs/research/durable-language-learning-and-bounded-research-2026-08-13.md)
 - [Prompt patterns for real work](../docs/research/prompt-patterns-for-real-work-2026-08-10.md)
 - **Separate evaluation-method example:** [Task-contract availability and channel study](../evals/candidates/task-contract-availability-and-channel-v1/README.md) — compares three ways of supplying a task contract for a synthetic maintainer handoff. It does not test these practice cards, coaching, or learner outcomes.

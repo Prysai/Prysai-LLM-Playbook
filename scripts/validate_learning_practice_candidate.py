@@ -16,6 +16,7 @@ GUIDE = ROOT / "book/guides/learning-practice-contract-EN.md"
 LAB = ROOT / "book/labs/lab-018-language-transfer-EN.md"
 CLINIC = ROOT / "book/communication-clinic-EN.md"
 SKILL = ROOT / "skills/prysai-learning-coach/SKILL.md"
+RECOVERY_SKILL = ROOT / "skills/prysai-communication-failure-triage/SKILL.md"
 FIXTURE = ROOT / "evals/candidates/learning-practice-contract-v1/fixture.json"
 FIRST_TURN_RUN = ROOT / "evals/candidates/learning-practice-contract-v1/runs/2026-08-13-baseline-first-turn.md"
 SITE = ROOT / "site/index.html"
@@ -65,6 +66,14 @@ TEXT_REQUIREMENTS = {
         "source-supported within",
         "beginner-practice-loop-red-black.svg",
         "route | prompt_card_revisions",
+        'id="recovery-route"',
+        "Recovery card 1",
+        "Recovery card 2",
+        "original request, visible context, actual reply",
+        "improved_on_this_case | unchanged | regressed | not_comparable",
+        "failed-interaction-recovery-red-black.svg",
+        "Communication Failure Triage Skill",
+        "after two comparable reruns without improvement",
     ],
     SKILL: [
         "fixture_revision",
@@ -77,11 +86,19 @@ TEXT_REQUIREMENTS = {
         "Never label a learner",
         "version`: `0.4.0",
     ],
+    RECOVERY_SKILL: [
+        "Require four items before diagnosis",
+        "Change only the proposed communication repair",
+        "Never write `resolved`",
+        "After two comparable",
+        "reruns without improvement",
+    ],
     SITE: [
         "communication-clinic-EN.md#first-practice-intake",
         "communication-clinic-EN.md#language-practice-route",
         "communication-clinic-EN.md#general-skill-practice-route",
         "communication-clinic-EN.md#bounded-research-route",
+        "communication-clinic-EN.md#recovery-route",
         "candidate · not_run",
     ],
     FIRST_TURN_RUN: [

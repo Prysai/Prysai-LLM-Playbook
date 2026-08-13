@@ -298,11 +298,29 @@ function canonicalChapterTitle(chapter) {
     pagination.hidden = !previous && !next;
   }
 
-  function restoreHashPosition() {
+  async function restoreHashPosition() {
     const rawHash = window.location.hash.slice(1);
     if (!rawHash) return;
     const target = document.getElementById(decodeURIComponent(rawHash));
-    if (target) window.requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
+    if (!target) return;
+    const scrollToTarget = () => new Promise((resolve) => window.requestAnimationFrame(() => {
+      target.scrollIntoView({ block: 'start' });
+      resolve();
+    }));
+    await scrollToTarget();
+    const imageLayout = [...article.querySelectorAll('img')].map((image) => {
+      if (image.complete) return Promise.resolve();
+      return new Promise((resolve) => {
+        image.addEventListener('load', resolve, { once: true });
+        image.addEventListener('error', resolve, { once: true });
+      });
+    });
+    await Promise.race([
+      Promise.all(imageLayout),
+      new Promise((resolve) => window.setTimeout(resolve, 600)),
+    ]);
+    if (document.fonts?.ready) await document.fonts.ready;
+    await scrollToTarget();
   }
 
   function headingHref(id) {
@@ -920,7 +938,7 @@ function canonicalChapterTitle(chapter) {
         ? currentReaderCopy().fallbackEnglish(locales[locale]?.display_name || locale)
         : currentReaderCopy().fallbackSource(locales[locale]?.display_name || locale, effectiveName));
     } else setReaderStatus('');
-    restoreHashPosition();
+    await restoreHashPosition();
     if (selection.contentId) {
       languageSelect.disabled = false;
       languageSelect.dataset.contentId = selection.contentId;
