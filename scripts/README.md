@@ -16,6 +16,9 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\validate_gold_content_admission.py
 & $py scripts\test_gold_content_admission.py
 & $py scripts\validate_communication_clinic_candidate.py
+& $py scripts\validate_executable_examples.py
+& $py scripts\test_executable_examples.py
+& $py scripts\test_lab_013_reference.py
 & $py scripts\check_local_links.py
 & $py scripts\validate_localization.py
 & $py scripts\build_book_navigation.py --check
@@ -91,6 +94,12 @@ and checks fixed inputs, context-channel equality, repetition controls,
 acceptance IDs, evidence IDs, telemetry nullability, and the secret/network
 boundary. Passing it is plan integrity, not evidence that one request style is
 better.
+
+`validate_executable_examples.py` enforces typed example claims rather than
+treating every code fence as executable. The first registered record is Lab
+013 v1: `parsed`, `executed`, and `asserted`, with a deterministic failed check,
+bounded recovery, cleanup, and four negative packet fixtures. It remains
+explicitly outside `human_reviewed` learner evidence.
 
 `validate_github_templates.py` checks the public contributor entry forms and
 pull-request template for parseable YAML, required fields, unique component

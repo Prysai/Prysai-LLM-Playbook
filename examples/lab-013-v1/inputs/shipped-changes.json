@@ -1,0 +1,15 @@
+{
+  "schema_version": "1",
+  "changes": [
+    {
+      "id": "CHG-101",
+      "summary": "Document the local validation command.",
+      "evidence": "EV-101"
+    },
+    {
+      "id": "CHG-102",
+      "summary": "Clarify that publication has not run.",
+      "evidence": "EV-102"
+    }
+  ]
+}

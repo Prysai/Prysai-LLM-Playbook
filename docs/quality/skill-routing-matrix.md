@@ -4,7 +4,7 @@
 **Review date:** `2026-09-09`  
 **Status:** `candidate`
 
-This matrix is the routing contract for the seven project Skills. It defines
+This matrix is the routing contract for the nine project Skills. It defines
 responsibility and handoff; it does not grant tool access or replace project
 rules.
 
@@ -39,6 +39,8 @@ rules.
 | `prysai-workflow-orchestrator` / Workflow Orchestrator | “How do dependent stages reach delivery?” | stage graph, checkpoints, recovery, handoffs, delivery status | explicit bounded Skill for a stage; Task Protocol for initial contract | domain method details, permission granting, evidence invention |
 | `prysai-research-router` / Research Router | “What question and sources support this?” | scope, search method, extraction, citations, conflicts, limitations | explicit Skill; Evidence Review for auditing an existing report | unsupported conclusions, generic execution, product context ownership |
 | `prysai-product-context` / Product Context | “What shared product and audience context is authoritative?” | versioned facts, hypotheses, audience, positioning, message constraints, changelog | explicit Skill; Research Router for external fact-finding; Evidence Review for audit | customer research, campaign execution, publication |
+| `prysai-learning-coach` / Learning Coach | “How do I practise this until I can perform it?” | baseline, retrieval attempt, feedback, correction, transfer, review cue | Source Investigator for disputed facts; Evidence Review for mastery claims | guaranteed timelines, assessed-work substitution, medical diagnosis |
+| `prysai-source-investigator` / Source Investigator | “What current sources support this decision?” | bounded question, source hierarchy, claim ledger, conflicts, freshness, stopping rule | Evidence Review for an existing packet; Product Context for owned product facts | generic tutoring, side effects, outcome claims |
 
 ## Allowed handoff graph
 
@@ -52,6 +54,8 @@ user
  ├─ skill decision ─────> Skill Selector
  ├─ research question ──> Research Router
  ├─ product context ────> Product Context
+ ├─ learning practice ──> Learning Coach
+ ├─ current search ─────> Source Investigator
  └─ multi-stage work ───> Workflow Orchestrator
 
 Workflow Orchestrator
@@ -116,7 +120,7 @@ Additional contract fields are required where the route needs them:
 ## Source and maintenance boundary
 
 - **Source:** `CONTEXT.md`, `docs/charter.md`, `docs/book-architecture.md`,
-  `docs/quality/skill-quality-standard.md`, and the seven Skill files.
+  `docs/quality/skill-quality-standard.md`, and the nine Skill files.
 - **License:** original project rewrite. External skill repositories and
   supplied archives remain reference-only unless the asset register records a
   compatible license and attribution.

@@ -58,7 +58,7 @@
           "new_acceptance": {"en": "The diff stays inside the declared sandbox and the completion statement cites the check that actually ran.", "zh": "差异保持在声明的沙盒内，完成声明引用实际运行的检查。"}
         }
       ],
-      "supporting_skills": ["prysai-task-protocol"],
+      "supporting_skills": ["prysai-task-protocol", "prysai-learning-coach"],
       "evaluation_tasks": ["concept-evidence-and-mastery-002", "protocol-vague-request-003", "missing-input-no-file-021"],
       "evaluation_types": ["positive", "boundary", "failure"],
       "evidence_gate": {
@@ -200,7 +200,7 @@
           "new_acceptance": {"en": "Existence or installation is never used as proof of loading, correct behavior, or team adoption.", "zh": "绝不把存在或安装当成加载、正确行为或团队采用的证明。"}
         }
       ],
-      "supporting_skills": ["prysai-skill-selector", "prysai-research-router"],
+      "supporting_skills": ["prysai-skill-selector", "prysai-research-router", "prysai-source-investigator"],
       "evaluation_tasks": ["engineering-plan-regression-016", "failure-scope-escalation-026", "skill-install-confirmation-rollback-037"],
       "evaluation_types": ["positive", "boundary", "failure", "transfer"],
       "evidence_gate": {

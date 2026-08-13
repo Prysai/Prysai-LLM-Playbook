@@ -6,9 +6,11 @@
   "rollback_reason": "No signed or reviewed release tag has been declared for this unpublished candidate.",
   "status_source": "docs/governance/content-status.yaml",
   "quality_source": "docs/governance/quality-register.yaml",
+  "readiness_source": "docs/governance/release-readiness.yaml",
   "freshness_sources": [
     "docs/governance/content-status.yaml",
     "docs/governance/quality-register.yaml",
+    "docs/governance/release-readiness.yaml",
     "docs/governance/fact-impact-registry.yaml",
     "docs/governance/locale-matrix.yaml",
     "docs/governance/update-registry.yaml"
@@ -20,6 +22,7 @@
     "Static accessibility rules do not prove browser behavior, keyboard flow, screen-reader output, contrast, zoom, reflow, or user review.",
     "Gold-content admission proves an editorial proposal clears the declared hard gates and score threshold; it does not prove the unit was run, learned, transferred, or independently verified.",
     "Communication Clinic validation proves only the unrun candidate plan, fixed conditions, scoring contract, and safety boundary are internally consistent; it does not contain model or learner results.",
+    "The Lab 013 executable-example packet is a deterministic maintainer reference run. It does not use a model and does not prove learner independence, transfer, Codex behavior, publication, or production readiness.",
     "External URL reachability is recorded by a separate scheduled workflow and is not replayed in this CI packet.",
     "The local input-archive audit depends on machine-local archives and is not replayed on GitHub-hosted runners.",
     "The official Skill validator is run locally when its bundled runtime is available; CI runs the repository Skill contract validator."
@@ -43,8 +46,11 @@
         {"id": "communication-clinic-candidate", "argv": ["{python}", "scripts/validate_communication_clinic_candidate.py"]},
         {"id": "update-registry", "argv": ["{python}", "scripts/validate_update_registry.py"]},
         {"id": "content-status", "argv": ["{python}", "scripts/validate_content_status.py"]},
+        {"id": "content-status-run-projection-fixtures", "argv": ["{python}", "scripts/test_content_status_run_projections.py"]},
         {"id": "quality-register", "argv": ["{python}", "scripts/build_quality_register.py", "--check"]},
         {"id": "release-evidence-fixtures", "argv": ["{python}", "scripts/test_release_evidence.py"]},
+        {"id": "release-readiness", "argv": ["{python}", "scripts/validate_release_readiness.py"]},
+        {"id": "release-readiness-fixtures", "argv": ["{python}", "scripts/test_release_readiness.py"]},
         {"id": "github-templates", "argv": ["{python}", "scripts/validate_github_templates.py"]},
         {"id": "localization", "argv": ["{python}", "scripts/validate_localization.py"]},
         {"id": "site-i18n", "argv": ["{python}", "scripts/validate_site_i18n.py"]},
@@ -81,6 +87,18 @@
         {"id": "skills", "argv": ["{python}", "scripts/validate_skills.py"]},
         {"id": "evaluation-fixtures", "argv": ["{python}", "scripts/validate_eval_tasks.py"]},
         {"id": "all-learning-contracts", "argv": ["{python}", "scripts/validate_learning_contract.py"]}
+      ]
+    },
+    {
+      "id": "executable-examples",
+      "label": "Executable examples",
+      "scope": "Deterministic, registered examples with fixed inputs, real negative observations, assertions, cleanup, and explicit learner/model limits.",
+      "commands": [
+        {"id": "executable-example-manifest", "argv": ["{python}", "scripts/validate_executable_examples.py"]},
+        {"id": "executable-example-fixtures", "argv": ["{python}", "scripts/test_executable_examples.py"]},
+        {"id": "lab-013-reference-run", "argv": ["{python}", "scripts/run_lab_013_reference.py", "--output-dir", "{evidence_dir}/examples/lab-013-reference"]},
+        {"id": "lab-013-reference-packet", "argv": ["{python}", "scripts/validate_lab_013_reference.py", "--packet", "{evidence_dir}/examples/lab-013-reference"]},
+        {"id": "lab-013-reference-fixtures", "argv": ["{python}", "scripts/test_lab_013_reference.py"]}
       ]
     },
     {

@@ -1,60 +1,32 @@
-# Codex: From First Task to Real Work 待办清单
+# Current executable-evidence checklist
 
-## 当前发布前工作
+## Lab 013 reference slice
 
-## 当前蓝皮书升级工作
+- [x] Freeze a synthetic, local, no-network sandbox contract.
+- [x] Add deterministic runner, packet validator, and negative fixtures.
+- [x] Preserve CP0–CP4, a real failed check, recovery, passing check, diff,
+      claim ledger, rollback, unknowns, and handoff.
+- [x] Store the generated reference packet with hashes.
+- [x] Obtain independent artifact review without changing raw evidence.
+- [x] Update Lab/status/quality/site projections with a separate
+      `reference_run` evidence class.
+- [x] Keep learner-run and transfer evidence explicitly pending.
 
-### Book navigation and project map slice
+## Documentation engineering and release maintenance
 
-- [x] Research mdBook, Docusaurus, VitePress, WorkBuddyGuide, and Starlight
-      using first-party documentation or fixed source revisions.
-- [x] Record the structure study, source/license boundary, and navigation ADR.
-- [x] Add the canonical 22-chapter order and idempotent footer generator.
-- [x] Add the English project map and connect it to the main reader entries.
-- [x] Run the full project structural validation, local-link check, and
-      generated-navigation check.
-- [ ] Complete browser/visual review of the local static server; the embedded
-      browser currently blocks loopback URLs with `ERR_BLOCKED_BY_CLIENT`.
-- [ ] Publish the navigation slice to `origin/main`.
+- [x] Integrate the first-party docs-engineering benchmark and license record.
+- [x] Integrate the bounded release/maintenance contract produced in parallel.
+- [x] Reject any mechanism that increases page count without a new decision,
+      artifact, failure, or evidence result.
 
-### Chapter 9 English source slice
+## Verification and delivery
 
-- [x] Draft the English source with claim-to-evidence, breakpoint, long-wait,
-      recovery, experiment, deliberate failure, transfer, and acceptance sections.
-- [x] Add and register the original evidence-recovery teaching card.
-- [x] Update English README, book TOC, site entry points, learning-path data,
-      content matrix, content status, and locale matrix.
-- [x] Run the full project structural validation and local-link check.
-- [ ] Complete browser/visual review of the local static server; the embedded
-      browser currently blocks loopback URLs with `ERR_BLOCKED_BY_CLIENT`.
-- [ ] Publish the candidate slice to `origin/main`.
-
-- [ ] 等待并审阅 LLM 机制、真实论坛问题、教程结构和六语种架构四条研究档案；所有结论保留 URL、访问日期、适用范围和证据等级。
-- [x] 完成教程结构、真实问题和视觉缺口三条研究档案；多语言路由研究保留为下一轮独立切片，未将未交付报告写入本轮成果。
-- [x] 建立 canonical project structure contract、目录 landing pages 和结构校验器；已接入 CI、项目地图、README 和状态证据。
-- [ ] 以“英文源文件优先、所有 reader-facing 文件带 `-EN/-ZH/-ES/-JA/-KO/-DE` 后缀”为硬约束，继续迁移章节、实验和 Skill 文档；每个迁移单元的 6 个槽位必须在矩阵中显式登记。
-- [ ] 把现有真实问题研究从索引推进到可阅读案例卡：症状、环境、用户报告、官方边界、安全检查、停止条件、复现状态、章节/实验/评测落点。
-- [ ] 对最薄弱章节做高密度改写：机制卡、现实问题、可观察实验、故意失败、证据审查和跨领域迁移必须同时出现。
-- [ ] 首页增加“从哪里开始 / 我遇到的问题 / 我想制作 Skill / 源码与状态”四类透明入口，并显示未验证边界。
-- [ ] 在当前静态站点上先完成一个可浏览、可分享、可键盘操作的英文优先纵向切片，再扩展视觉和其余语言。
-- [ ] 视觉改动必须以真实文件链接、状态源和浏览器证据为基础，不用装饰性卡片掩盖空内容。
-
-- [ ] 在每次数量、状态或运行证据变化时先更新 `docs/governance/content-status.yaml`，再同步相关索引和页面。
-- [ ] 由项目所有者确认显示名，并决定是否将 GitHub 仓库 slug 迁移为 `codex-from-first-task-to-real-work`。
-- [x] 将 L3 主实验 `lab-013` 接入学习路径、状态源、评测夹具、书稿索引和展示页生成数据。
-- [ ] 完成 7 个候选 Skill 的 fresh-context 前测；本轮新增 4 个静态合同审查记录，但不计入 fresh-context 结果。
-- [ ] 运行 `evals/task-set-v1.yaml` 中的 39 项任务并保存结果。
-- [ ] 补齐第 19–22 章的前测、失败案例和学习者验收证据。
-- [ ] 完成工具、MCP、插件和外部行动章节的官方事实核对。
-- [ ] 将第 4–7 章官方事实刷新在 2026-09-09 复核日重新核对，并把变更同步到受影响章节。
-- [ ] 复核六个输入来源的许可证、归属和可发布边界。
-- [ ] 由维护者确认发行版许可证、公开范围和版本策略。
-
-## 持续质量门
-
-- [ ] 运行 `scripts/validate_content_status.py`，确认登记项与当前文件、证据边界一致。
-- [ ] 每次内容变更运行项目结构、链接、Skill 和评测夹具校验。
-- [ ] 易变事实变更时更新来源、访问日期、适用范围和复核责任。
-- [ ] 产品事实刷新后同步 `docs/governance/update-registry.yaml`、`docs/content-matrix.md`、质量审查记录和当前状态源。
-- [ ] 不将 `candidate`、结构通过或草稿写成 `verified` 或 `production-ready`。
-- [ ] 不把目录数量或安装数量当作学习完成标准。
+- [x] Run focused runner and negative fixtures.
+- [x] Run all 39 commit-bound release-evidence commands.
+- [x] Run all nine official Skill validators.
+- [x] Parse workflow YAML through the release gate and scan changed files for credentials.
+- [ ] Browser-check desktop and 390px status presentation (blocked: the in-app
+      browser policy rejects local `file://` pages; static accessibility,
+      i18n, links, and direct visual asset renders passed).
+- [ ] Commit and push `main`.
+- [ ] Download and inspect the exact-SHA GitHub release-evidence artifact.

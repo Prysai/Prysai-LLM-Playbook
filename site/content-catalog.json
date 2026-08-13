@@ -49,6 +49,8 @@
     "prysai-skill-selector": {"name": {"en": "Skill Selector", "zh": "Skill 选择器 Skill Selector"}},
     "prysai-workflow-orchestrator": {"name": {"en": "Workflow Orchestrator", "zh": "工作流编排 Workflow Orchestrator"}},
     "prysai-research-router": {"name": {"en": "Research Router", "zh": "研究路由 Research Router"}},
-    "prysai-product-context": {"name": {"en": "Product Context", "zh": "产品上下文 Product Context"}}
+    "prysai-product-context": {"name": {"en": "Product Context", "zh": "产品上下文 Product Context"}},
+    "prysai-learning-coach": {"name": {"en": "Learning Coach", "zh": "学习教练 Learning Coach"}},
+    "prysai-source-investigator": {"name": {"en": "Source Investigator", "zh": "来源调查 Source Investigator"}}
   }
 }

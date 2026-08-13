@@ -1,0 +1,38 @@
+{
+  "schema_version": "1",
+  "status": "candidate",
+  "owner": "documentation-engineering-maintainer",
+  "reviewed_at": "2026-08-12",
+  "next_review": "2026-09-12",
+  "verification_classes": ["display_only", "parsed", "compiled", "executed", "asserted", "rendered", "live_checked", "human_reviewed"],
+  "records": [
+    {
+      "id": "lab-013-reference-v1",
+      "kind": "workflow",
+      "source_path": "examples/lab-013-v1",
+      "projections": ["book/labs/lab-013-l3-vertical-slice-EN.md"],
+      "verification_classes": ["parsed", "executed", "asserted"],
+      "environment": {
+        "toolchain": "Python 3 standard library",
+        "platform": "Windows local and GitHub Actions Linux",
+        "network": "disabled-by-contract; no network code path",
+        "permissions": "disposable_write_under_repository_workdir"
+      },
+      "expected_evidence": [
+        "CP0 through CP4",
+        "intentional validator failure with exit 1",
+        "bounded recovery with exit 0",
+        "one changed product path",
+        "artifact and diff hashes",
+        "cleanup and claim-limit record"
+      ],
+      "negative_fixtures": ["artifact-hash", "attempt-exit", "learner-overclaim", "path-escape"],
+      "danger": "none",
+      "run_status": "completed_reference_run",
+      "learner_run_status": "not_run",
+      "transfer_status": "not_run",
+      "evidence_path": "commit-bound release-evidence artifact examples/lab-013-reference",
+      "known_blind_spots": ["learner independence", "model or Codex behavior", "cross-platform transfer", "publication", "production readiness"]
+    }
+  ]
+}

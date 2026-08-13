@@ -20,11 +20,11 @@
       "next_review": "2026-08-19",
       "superseded_by": "",
       "area": "Release",
-      "finding": "No learner lab has a recorded run; all 17 labs are draft/not_run.",
+      "finding": "No learner lab has a recorded run; all 17 labs remain draft with learner run_status not_run. Lab 013 has one accepted deterministic maintainer reference run, which is not learner or transfer evidence.",
       "required_evidence": "Fixed input, run log, artifact, failure branch, and independent review for L0, L1, L3, and L6.",
       "status": "open",
-      "evidence_paths": ["docs/governance/content-status.yaml", "book/labs/README-EN.md"],
-      "resolution_scope": ""
+      "evidence_paths": ["docs/governance/content-status.yaml", "docs/governance/executable-examples.yaml", "docs/quality/lab-013-reference-run-resubmission-review-2026-08-12.md", "book/labs/README-EN.md"],
+      "resolution_scope": "Partial L3 implementation progress only: one deterministic maintainer reference packet is accepted. L0, L1, L3, and L6 learner evidence, plus transfer evidence, remain absent."
     },
     {
       "id": "Q-002",
@@ -162,9 +162,9 @@
       "area": "Release operations",
       "finding": "The unpublished candidate has no declared release version, reviewed release tag, or tested rollback target.",
       "required_evidence": "A version decision, reviewed immutable tag, release evidence packet, rollback target, and rollback rehearsal or bounded recovery record.",
-      "status": "open",
-      "evidence_paths": ["docs/release-checklist.md", "docs/governance/release-evidence.yaml", "docs/adr/0021-commit-bound-release-evidence.md"],
-      "resolution_scope": ""
+      "status": "in_progress",
+      "evidence_paths": ["docs/release-checklist.md", "docs/governance/release-evidence.yaml", "docs/governance/release-readiness.yaml", "scripts/validate_release_readiness.py", "scripts/test_release_readiness.py", "docs/adr/0021-commit-bound-release-evidence.md", "docs/adr/0026-machine-readable-release-readiness.md"],
+      "resolution_scope": "Release readiness now has a machine-readable not_ready decision and negative fixtures for unsupported readiness, invented tags, missing rehearsal records, and tag/evidence SHA mismatch. The version, changelog, reviewed immutable tag, accepted release packet, rollback target, and actual rehearsal remain missing, so Q-011 is not resolved."
     }
   ]
 }

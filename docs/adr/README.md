@@ -29,3 +29,5 @@ Current entry points:
 - [ADR-0023: static accessibility and artifact integrity](0023-static-accessibility-and-artifact-integrity.md)
 - [ADR-0024: Lab-use progression contract](0024-lab-use-progression-contract.md)
 - [ADR-0025: universal core, Codex flagship, and platform adapters](0025-universal-core-codex-flagship-and-platform-adapters.md)
+- [ADR-0026: machine-readable release readiness](0026-machine-readable-release-readiness.md)
+- [ADR-0027: separate reference, learner, and transfer run status](0027-separate-reference-learner-and-transfer-run-status.md)

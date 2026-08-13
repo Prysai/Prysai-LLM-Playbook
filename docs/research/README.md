@@ -22,6 +22,7 @@ claim and license boundary are clear.
 
 Useful indexes:
 
+- [Durable LLM-assisted learning and Skill candidates](durable-llm-assisted-learning-and-skill-candidates-2026-08-12.md) — retrieval-first practice, delayed retention and transfer checks, truthful time-bound claims, and file-specific external Skill candidates with direct project links and license boundaries.
 - [Field-problem index](field-problems-index-2026-08-10.md)
 - [Book navigation study](book-navigation-architecture-study-2026-08-11.md)
 - [Tutorial and knowledge-base structure benchmark](tutorial-value-and-knowledge-base-benchmark-2026-08-11.md)
@@ -42,6 +43,7 @@ Useful indexes:
 - [Documentation engineering and release systems](documentation-engineering-release-systems-2026-08-12.md)
 - [GitHub Actions release-evidence dependency facts](github-actions-release-evidence-facts-2026-08-12.md)
 - [Cross-platform LLM learning systems benchmark](cross-platform-llm-learning-systems-benchmark-2026-08-12.md)
+- [Executable documentation and example verification benchmark](executable-documentation-and-example-verification-2026-08-12.md)
 
 Historical contribution shortlists are kept as dated research records rather
 than active work instructions:

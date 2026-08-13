@@ -1,0 +1,4 @@
+interface:
+  display_name: "Learning Coach"
+  short_description: "Build practice loops with recall, correction, and transfer"
+  default_prompt: "Use $prysai-learning-coach to turn what I want to learn into a testable practice loop."

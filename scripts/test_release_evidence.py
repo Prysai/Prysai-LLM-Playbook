@@ -40,12 +40,52 @@ def main() -> int:
         require((Path(temp_dir) / dimensions[0]["commands"][0]["log"]).is_file(), "failure log was not preserved")
         require(evidence.derive_decision("candidate", dimensions, {"overdue": [], "invalid": []}) == "blocked", "failed gate did not block")
 
+    placeholder_contract = copy.deepcopy(contract)
+    placeholder_contract["dimensions"] = [{
+        "id": "placeholder-fixture", "label": "Placeholder fixture",
+        "scope": "The evidence directory is resolved without shell interpolation.",
+        "commands": [{
+            "id": "placeholder-check", "argv": ["{python}", "scripts/build_release_evidence.py", "--check"],
+        }],
+    }]
+    with tempfile.TemporaryDirectory(prefix="prysai-evidence-placeholder-") as temp_dir:
+        dimensions = evidence.run_gates(placeholder_contract, Path(temp_dir))
+        require(dimensions[0]["status"] == "passed", "placeholder-compatible command failed")
+
+    embedded_placeholder = copy.deepcopy(contract)
+    embedded_placeholder["dimensions"] = [{
+        "id": "embedded-placeholder-fixture", "label": "Embedded placeholder fixture",
+        "scope": "An evidence-directory placeholder embedded in a child path is expanded without a shell.",
+        "commands": [{
+            "id": "embedded-placeholder-check",
+            "argv": ["{python}", "scripts/run_lab_013_reference.py", "--output-dir", "{evidence_dir}/examples/lab-013-reference"],
+        }],
+    }]
+    repository_work = evidence.ROOT / ".work" / "release-evidence-placeholder-fixture"
+    dimensions = evidence.run_gates(embedded_placeholder, repository_work)
+    require(dimensions[0]["status"] == "passed", "embedded evidence-directory placeholder was not expanded")
+    require((repository_work / "examples/lab-013-reference/run-record.json").is_file(), "embedded placeholder output is missing")
+
     passed_dimensions = [{"status": "passed"}]
     require(evidence.derive_decision("candidate", passed_dimensions, {"overdue": [], "invalid": []}) == "candidate", "static gates upgraded candidate")
     require(evidence.derive_decision("verified", passed_dimensions, {"overdue": [{"field": "next_review"}], "invalid": []}) == "blocked", "overdue source did not block verified")
     require(evidence.derive_decision("production-ready", passed_dimensions, {"overdue": [], "invalid": [{"field": "next_review"}]}) == "blocked", "invalid date did not block production-ready")
 
-    print("RELEASE_EVIDENCE_TESTS_OK fixtures=6")
+    rendered_packet = {
+        "candidate_sha": "a" * 40, "repository": "example/example",
+        "generated_at": "2026-08-12T00:00:00Z", "declared_maturity": "candidate",
+        "decision": "candidate", "release_version": "unreleased",
+        "rollback_target": "unavailable", "workflow_run_url": "",
+        "dimensions": [], "active_quality_findings": [],
+        "freshness": {"date_fields_checked": 0, "overdue": [], "invalid": []},
+        "known_blind_spots": [], "rollback_reason": "No release target.",
+        "release_readiness": {"decision": "not_ready", "blockers": ["version", "rollback"]},
+    }
+    rendered = evidence.render_markdown(rendered_packet)
+    require("Decision: `not_ready`" in rendered, "readiness decision missing from packet summary")
+    require("`rollback`" in rendered, "readiness blocker missing from packet summary")
+
+    print("RELEASE_EVIDENCE_TESTS_OK fixtures=9")
     return 0
 
 

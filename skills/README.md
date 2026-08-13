@@ -20,6 +20,11 @@ pretest, a failure case, or an independent review.
 
 ## Current Skills
 
-The seven project Skills are listed in the [registry](../docs/skill-registry.md).
+The nine project Skills are listed in the [registry](../docs/skill-registry.md).
 The registry is the place to compare triggers, boundaries, maturity, and
 runtime evidence; this directory is the implementation surface.
+
+Project-owned Skills are shown first. External candidates are not copied into
+this directory merely to increase its size: each one must retain a direct
+source-project URL, pass a file-level license review, and clear the same
+behavior and evidence gates before adoption.

@@ -54,3 +54,11 @@
 - [ ] 组织许可证已决定
 - [ ] 版本、变更日志和下线策略已决定
 - [ ] 已声明不可变 release tag、rollback target，并记录一次有边界的恢复演练；未完成时保持 `candidate`
+
+## Machine-readable readiness
+
+- [ ] `python scripts/validate_release_readiness.py` passes and the recorded
+  decision is `ready`; a passing validator with `decision: not_ready` proves
+  only that the missing release evidence is represented honestly.
+- [ ] `python scripts/test_release_readiness.py` passes, including the invented
+  tag, missing rehearsal, unsupported readiness, and SHA-mismatch fixtures.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Source Investigator"
+  short_description: "Turn broad searches into bounded source-backed investigations"
+  default_prompt: "Use $prysai-source-investigator to investigate this question and separate facts, inferences, and unknowns."

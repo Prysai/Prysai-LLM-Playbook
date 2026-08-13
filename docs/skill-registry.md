@@ -11,6 +11,8 @@
 | `prysai-workflow-orchestrator` | Workflow Orchestrator | 将复杂任务路由到定义、计划、构建、验证、审查和交付阶段 | L3–L6 | candidate | 阶段跳过、重复失败、风险检查点 |
 | `prysai-research-router` | Research Router | 将研究请求路由为问题收敛、检索、综合、引用和复核流程 | L3–L6 | candidate | 宽题目、来源不足、引用完整性 |
 | `prysai-product-context` | Product Context | 建立营销和产品任务共享的产品上下文 | L3–L6 | candidate | 受众、定位、决策和上下文迁移 |
+| `prysai-learning-coach` | Learning Coach | 用基线、主动回忆、纠错、间隔复习和迁移练习辅导真实技能 | L0–L4 | candidate | 语言学习、概念学习、写作练习、夸大时限与代做边界 |
+| `prysai-source-investigator` | Source Investigator | 把宽泛搜索变成有问题边界、来源层级、冲突和停止条件的调查 | L2–L6 | candidate | 当前事实、来源冲突、社区报告、缺失或不可访问证据 |
 
 ## 状态定义
 
@@ -20,6 +22,8 @@
 - `production-ready`：还有安全、维护、版本、许可证和组织发布门禁全部通过。
 
 当前所有项目 Skill 都诚实标为 `candidate`，即使官方 frontmatter 校验已经通过。
+Learning Coach 与 Source Investigator 是项目原创候选，并非从外部项目
+拉取；外部候选必须在注册时附目标项目链接和许可证，不能混入原创列表。
 2026-08-10 对 Coach、Workflow Orchestrator、Research Router 和 Product
 Context 完成了独立静态合同审查；该记录只证明合同缺口和边界已被检查，
 不等于 fresh-context、runtime、迁移或生产验证。见

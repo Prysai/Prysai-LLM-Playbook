@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
   <title id="title">Field signal to safe degradation</title>
-  <desc id="desc">Three public Codex issue signals mapped to unsupported inferences and the smallest safe response.</desc>
+  <desc id="desc">Three public Codex issue reports, identified as 34352, 34951, and 37677 and checked on 12 August 2026, mapped to unsupported inferences and the smallest safe response.</desc>
   <rect width="1600" height="900" fill="#f7f7f8"/>
   <rect x="0" y="0" width="1600" height="112" fill="#111820"/>
   <rect x="64" y="48" width="16" height="16" fill="#d3262e"/>
   <text x="104" y="70" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" letter-spacing="1">FIELD SIGNAL → SAFE DEGRADATION</text>
-  <text x="1454" y="70" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="end">12 AUG 2026</text>
+  <text x="1536" y="70" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="end">CHECKED 12 AUG 2026</text>
 
   <line x1="64" y1="158" x2="1536" y2="158" stroke="#111820" stroke-width="2"/>
   <line x1="522" y1="158" x2="522" y2="760" stroke="#111820" stroke-width="2"/>
@@ -20,7 +20,7 @@
 
   <g font-family="Arial, Helvetica, sans-serif" fill="#111820">
     <text x="64" y="264" font-size="64" font-weight="700">01</text>
-    <text x="164" y="247" font-size="28" font-weight="700">WORKTREE LABEL</text>
+    <text x="164" y="247" font-size="24" font-weight="700">#34352 / WORKTREE LABEL</text>
     <text x="164" y="285" font-size="22">One target is shown;</text>
     <text x="164" y="317" font-size="22">runtime points elsewhere.</text>
     <text x="554" y="258" font-size="28" font-weight="700">UI STATE = CWD</text>
@@ -31,7 +31,7 @@
     <text x="1046" y="320" font-size="21">branch / writable root. Stop on mismatch.</text>
 
     <text x="64" y="466" font-size="64" font-weight="700">02</text>
-    <text x="164" y="449" font-size="28" font-weight="700">OUTPUT DISAPPEARS</text>
+    <text x="164" y="449" font-size="22" font-weight="700">#34951 / OUTPUT DISAPPEARS</text>
     <text x="164" y="487" font-size="22">A command may finish;</text>
     <text x="164" y="519" font-size="22">audit evidence is hidden.</text>
     <text x="554" y="460" font-size="28" font-weight="700">RAN = VERIFIED</text>
@@ -42,7 +42,7 @@
     <text x="1046" y="522" font-size="21">read-back. Missing proof = unverified.</text>
 
     <text x="64" y="668" font-size="64" font-weight="700">03</text>
-    <text x="164" y="651" font-size="28" font-weight="700">VERIFY → REINSTALL</text>
+    <text x="164" y="651" font-size="24" font-weight="700">#37677 / VERIFY → REINSTALL</text>
     <text x="164" y="689" font-size="22">A check expands into a</text>
     <text x="164" y="721" font-size="22">persistent mutation.</text>
     <text x="554" y="662" font-size="28" font-weight="700">CAPABLE = AUTHORIZED</text>
@@ -54,6 +54,6 @@
   </g>
 
   <rect x="64" y="800" width="16" height="16" fill="#d3262e"/>
-  <text x="104" y="815" fill="#111820" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">PUBLIC USER REPORTS · ISSUES REMAIN OPEN · NO LOCAL REPRODUCTION · NO OFFICIAL ROOT-CAUSE CONFIRMATION</text>
+  <text x="104" y="815" fill="#111820" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">PUBLIC USER REPORTS AT CHECK DATE · NO LOCAL REPRODUCTION · NO OFFICIAL ROOT-CAUSE CONFIRMATION</text>
   <text x="1536" y="850" fill="#111820" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="end">FC-WORKTREE-01 · FC-EVIDENCE-01 · FC-SCOPE-01</text>
 </svg>

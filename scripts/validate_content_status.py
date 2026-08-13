@@ -14,6 +14,7 @@ STATUS_PATH = ROOT / "docs/governance/content-status.yaml"
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 ARTIFACT_STATUSES = {"draft", "candidate", "verified", "production-ready"}
 RUN_STATUSES = {"not_run", "running", "completed"}
+RUN_PROJECTION_STATUSES = {"not_run", "partial", "completed"}
 BROWSER_REVIEW_STATUSES = {"pending", "completed"}
 REPOSITORY_LOCALES = ["en", "zh", "es", "ja", "ko", "de"]
 LOCALE_MIGRATION_STATUSES = {"migration", "release"}
@@ -113,17 +114,89 @@ def validate_items(
             run_status = require_text(item, "run_status", item_label, errors)
             if run_status is not None and run_status not in RUN_STATUSES:
                 errors.append(f"{item_label}: run_status must be one of {sorted(RUN_STATUSES)}")
+            for key in ("reference_run_status", "learner_run_status", "transfer_run_status"):
+                projection = require_text(item, key, item_label, errors)
+                if projection is not None and projection not in RUN_PROJECTION_STATUSES:
+                    errors.append(f"{item_label}: {key} must be one of {sorted(RUN_PROJECTION_STATUSES)}")
+            if run_status is not None and item.get("learner_run_status") != run_status:
+                errors.append(f"{item_label}: legacy run_status must equal learner_run_status")
+            if item.get("transfer_run_status") != "not_run" and item.get("learner_run_status") != "completed":
+                errors.append(f"{item_label}: transfer evidence requires a completed learner run")
 
 
-def main() -> int:
-    errors: list[str] = []
+def derive_projection(items: list[dict[str, Any]], key: str) -> str:
+    values = [item.get(key) for item in items]
+    if values and all(value == "completed" for value in values):
+        return "completed"
+    if any(value in {"partial", "completed"} for value in values):
+        return "partial"
+    return "not_run"
+
+
+def registered_run_labs(labs: dict[str, Any], errors: list[str]) -> dict[str, set[str]]:
+    path = labs.get("run_projection_source")
+    if not isinstance(path, str) or not path.strip() or not (ROOT / path).is_file():
+        errors.append("labs: run_projection_source must name an existing executable-example registry")
+        return {"reference_run_status": set(), "learner_run_status": set(), "transfer_run_status": set()}
     try:
-        document = load_document()
-    except ValueError as exc:
-        print("CONTENT_STATUS_FAILED")
-        print(f"- {exc}")
-        return 1
+        registry = json.loads((ROOT / path).read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+        errors.append(f"labs: cannot parse run_projection_source: {exc}")
+        return {"reference_run_status": set(), "learner_run_status": set(), "transfer_run_status": set()}
+    lab_ids_by_path = {
+        item.get("path"): item.get("id") for item in labs.get("items", []) if isinstance(item, dict)
+    }
+    registered = {"reference_run_status": set(), "learner_run_status": set(), "transfer_run_status": set()}
+    for record in registry.get("records", []):
+        if not isinstance(record, dict):
+            continue
+        completed_keys: list[str] = []
+        if record.get("run_status") == "completed_reference_run":
+            completed_keys.append("reference_run_status")
+        if record.get("learner_run_status") == "completed":
+            completed_keys.append("learner_run_status")
+        if record.get("transfer_status") == "completed":
+            completed_keys.append("transfer_run_status")
+        for projection in record.get("projections", []):
+            if projection in lab_ids_by_path:
+                for key in completed_keys:
+                    registered[key].add(lab_ids_by_path[projection])
+    return registered
 
+
+def validate_lab_projections(document: dict[str, Any], errors: list[str]) -> None:
+    labs = document.get("labs")
+    if not isinstance(labs, dict) or not isinstance(labs.get("items"), list):
+        return
+    items = labs["items"]
+    registered = registered_run_labs(labs, errors)
+    for key in ("reference_run_status", "learner_run_status", "transfer_run_status"):
+        declared_completed = {item.get("id") for item in items if item.get(key) == "completed"}
+        if declared_completed != registered[key]:
+            errors.append(
+                f"labs: completed {key} projections must exactly match registered evidence "
+                f"(declared={sorted(declared_completed)}, registered={sorted(registered[key])})"
+            )
+    for key in ("reference_run_status", "learner_run_status", "transfer_run_status"):
+        projection = require_text(labs, key, "labs", errors)
+        if projection is not None and projection not in RUN_PROJECTION_STATUSES:
+            errors.append(f"labs: {key} must be one of {sorted(RUN_PROJECTION_STATUSES)}")
+        derived = derive_projection(items, key)
+        if projection is not None and projection != derived:
+            errors.append(f"labs: {key} must equal derived item projection {derived}")
+    if labs.get("run_status") != labs.get("learner_run_status"):
+        errors.append("labs: legacy run_status must equal learner_run_status")
+    # A maintainer reference proves only that the exercise and checks can run.
+    # It cannot promote learner or transfer evidence, artifact maturity, or project maturity.
+    if (
+        labs.get("learner_run_status") == "not_run"
+        and any(item.get("learner_run_status") != "not_run" for item in items)
+    ):
+        errors.append("labs: learner projection contradicts item learner evidence")
+
+
+def validate_document(document: dict[str, Any]) -> list[str]:
+    errors: list[str] = []
     if document.get("schema_version") != "1":
         errors.append("schema_version must be '1'")
     for key in ("generated_at", "description"):
@@ -140,6 +213,12 @@ def main() -> int:
         declared_facts = vocabulary.get("fact_status")
         if declared_facts != ["current", "stale", "disputed", "removed"]:
             errors.append("status_vocabulary.fact_status must list the controlled fact statuses")
+        declared_run_projections = vocabulary.get("run_projection_status")
+        if not isinstance(declared_run_projections, list) or set(declared_run_projections) != RUN_PROJECTION_STATUSES:
+            errors.append("status_vocabulary.run_projection_status must list the controlled projection statuses")
+        semantics = vocabulary.get("legacy_run_status_semantics")
+        if not isinstance(semantics, str) or "learner_run_status" not in semantics or "never" not in semantics:
+            errors.append("status_vocabulary must define run_status as a learner-only compatibility alias")
 
     project = document.get("project")
     if not isinstance(project, dict):
@@ -153,7 +232,9 @@ def main() -> int:
 
     validate_items(document, "chapters", 22, "book/chapters/", errors)
     validate_items(document, "labs", 17, "book/labs/", errors, require_run_status=True)
-    validate_items(document, "skills", 7, "skills/", errors)
+    validate_lab_projections(document, errors)
+    skill_count = len(list((ROOT / "skills").glob("*/SKILL.md")))
+    validate_items(document, "skills", skill_count, "skills/", errors)
 
     learning_path = document.get("learning_path")
     if not isinstance(learning_path, dict):
@@ -241,6 +322,16 @@ def main() -> int:
         if sources.get("archive_count") != 6:
             errors.append("sources_and_licenses: archive_count must be 6")
 
+    return errors
+
+
+def main() -> int:
+    try:
+        document = load_document()
+        errors = validate_document(document)
+    except ValueError as exc:
+        errors = [str(exc)]
+        document = {}
     if errors:
         print("CONTENT_STATUS_FAILED")
         for error in errors:
@@ -248,11 +339,18 @@ def main() -> int:
         return 1
 
     print("CONTENT_STATUS_OK")
-    print("chapters=22 labs=17 skills=7 learning_levels=7 evaluations=39 tracks=16")
+    print(f"chapters=22 labs=17 skills={document['skills']['count']} learning_levels=7 evaluations=39 tracks=16")
     print(
         "public_site=6-route-locales,ui-dictionaries=en+zh,"
         f"repository_locale_status={document['public_site']['repository_locale_status']},"
         f"browser_review={document['public_site']['browser_review']}"
+    )
+    print(
+        "lab_runs="
+        f"reference:{document['labs']['reference_run_status']},"
+        f"learner:{document['labs']['learner_run_status']},"
+        f"transfer:{document['labs']['transfer_run_status']},"
+        "legacy_run_status=learner"
     )
     return 0
 

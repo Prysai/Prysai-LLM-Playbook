@@ -1,0 +1,13 @@
+{
+  "schema_version": "1",
+  "rubric_version": "lab-013-v1-review-1",
+  "criteria": [
+    "changed-path-boundary",
+    "checkpoint-reconciliation",
+    "failed-attempt-preserved",
+    "bounded-recovery",
+    "claim-scope",
+    "rollback-and-next-check"
+  ],
+  "evidence_limit": "Acceptance covers one deterministic maintainer reference packet, not learner mastery, transfer, Codex behavior, publication, or production readiness."
+}

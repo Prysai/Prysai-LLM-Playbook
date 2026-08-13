@@ -1,0 +1,23 @@
+{
+  "schema_version": "1",
+  "required_headings": [
+    "# Candidate release note",
+    "## Included changes",
+    "## Evidence",
+    "## Limits",
+    "## Next check"
+  ],
+  "required_phrases": [
+    "candidate — do not publish",
+    "Publication: not run",
+    "Security review: unknown",
+    "Maintainer approval: pending"
+  ],
+  "forbidden_phrases": [
+    "deployed successfully",
+    "security approved",
+    "published",
+    "production ready",
+    "upload the token"
+  ]
+}

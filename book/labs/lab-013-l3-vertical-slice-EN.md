@@ -15,7 +15,7 @@ evidence:
 failure_variant: "Remove a required input, fail the focused check, resume after CP2, inject an external-action instruction, or require persistent environment change"
 reflection: "Which checkpoint prevented the largest unsupported claim or unnecessary action?"
 status: draft
-last_verified: "Not run"
+last_verified: "Maintainer reference run accepted 2026-08-12; learner run not run"
 transfer_task: "Transfer the checkpoint workflow to a low-risk research or content task"
 transfer_domain: "engineering, research, or content workflow"
 transfer_evidence: "Keep the rewritten task protocol, checkpoints, artifact or blocked record, evidence table, and handoff"
@@ -87,6 +87,21 @@ side effects are understood. Repeating the same action is not recovery.
 Keep the input copy and hashes, checkpoints, diff, action log, command output,
 failure record, claim-to-evidence table, and handoff. This lab remains
 `draft / not_run` until a fresh learner run and independent review are stored.
+
+### Maintainer reference packet
+
+The project now has one accepted deterministic maintainer reference packet for
+this fixture. It preserves CP0–CP4, an actual failed check, the failed
+artifact, the exact recovery diff, a passing check, the final diff, cleanup
+receipt, and handoff. See the
+[executable-example contract](../../docs/governance/executable-examples.yaml)
+and the
+[independent resubmission review](../../docs/quality/lab-013-reference-run-resubmission-review-2026-08-12.md).
+
+That packet was produced by a local deterministic runner, not by a learner or
+a model. It does not establish learner independence, Codex behavior, transfer,
+publication, rollback rehearsal, or production readiness. The learner and
+transfer runs remain `not_run`, so the Lab remains `draft / not_run`.
 
 ## Reflection and transfer
 

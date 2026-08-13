@@ -268,6 +268,102 @@ This makes a plan inspectable before the edit and makes it easier to identify
 which stage introduced a bad assumption. It does not remove the need to review
 the actual result.
 
+## Six starter prompts that form a learning loop
+
+These are not magic wording. They are six small contracts that make the model
+wait for your attempt, diagnose one problem at a time, and separate practice
+from evidence. The example uses Spanish, but the bracketed fields work for a
+language, software concept, interview skill, writing technique, or other
+bounded capability.
+
+### 1. Find the real starting point
+
+```text
+I want to learn [hold a five-minute beginner conversation in Spanish].
+Do not teach yet. Give me one short baseline task that tests that exact ability.
+State the rules, allowed help, time limit, and scoring criteria before I start.
+Wait for my answer. Then record what I could do, what blocked meaning, and what
+you still cannot infer from one attempt.
+```
+
+Use this before lessons. A self-reported level such as “beginner” is less useful
+than an observed attempt.
+
+### 2. Make me retrieve before you reveal
+
+```text
+Teach me one small unit needed for [ordering food in Spanish]. Keep the opening
+explanation under 120 words. Then ask me to produce an answer from memory.
+Do not show the final answer before I try. If I get stuck, give one hint at a
+time: first the kind of error, then a partial cue, then a worked fragment.
+After feedback, require me to answer again in my own words.
+```
+
+The critical instruction is not the word count. It is “wait for my attempt.”
+
+### 3. Correct the first consequential error
+
+```text
+Act as a precise practice partner, not a cheerleader. For each answer I give:
+1. say briefly what communicated successfully;
+2. identify the first error that changes meaning or blocks the target skill;
+3. explain the rule in plain language;
+4. ask me for a corrected attempt;
+5. keep an error ledger with attempt, correction, rule, and next variation.
+Do not rewrite everything for me, and do not correct minor style while a
+meaning-blocking error remains.
+```
+
+This prevents a fluent rewrite from replacing learning.
+
+### 4. Test transfer with a changed situation
+
+```text
+I just practised [ordering a meal in Spanish]. Give me a new scenario that uses
+the same underlying skill but changes the setting, vocabulary, and one source
+of ambiguity. Do not reuse the sentences from the lesson. Let me respond first.
+Score my answer against the same criteria, show which help I used, and label the
+result only as demonstrated on this transfer task, not mastered.
+```
+
+A near-copy tests recognition. A changed situation begins to test transfer.
+
+### 5. Build the next review from evidence
+
+```text
+Using only the attempts and error ledger in this conversation, create my next
+15-minute review. Start with unaided recall, revisit the two errors that still
+matter, include one mixed example, and end with one unseen task. Do not claim
+you scheduled a reminder. Give me a review cue I can save, the date I should
+try it, and the evidence I should bring back.
+```
+
+The model can prepare a cue; it cannot truthfully claim that you retained the
+skill or that an external reminder exists unless there is evidence for it.
+
+### 6. Research before believing a learning claim
+
+```text
+Investigate this claim: [six prompts can make anyone fluent in seven days].
+First define the exact capability the claim would need to prove. Prefer primary
+research and official source-owner material. For every important conclusion,
+record the source, date, population or product scope, direct support, and what
+it does not establish. Search once for contrary evidence. Separate facts,
+inferences, anecdotes, and unknowns. Stop when further sources no longer change
+the decision. End with the narrowest truthful rewrite of the claim.
+```
+
+Use this pattern for health, finance, product features, news, statistics, and
+other claims where a confident answer without a traceable source is not enough.
+
+### What to save
+
+Keep the baseline, first attempts, hints used, corrected attempts, error
+ledger, delayed review, unseen task, and scoring criteria. One smooth session
+supports “practised today.” It does not establish fluency, durable retention,
+or transfer. The full candidate method and source boundary are recorded in the
+[durable LLM-assisted learning research](../../docs/research/durable-llm-assisted-learning-and-skill-candidates-2026-08-12.md).
+
 ## Real-world failure patterns
 
 The field reports collected for this project show why these fields matter:

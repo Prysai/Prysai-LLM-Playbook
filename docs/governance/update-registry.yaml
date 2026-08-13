@@ -95,12 +95,12 @@
     },
     {
       "area": "content-status",
-      "canonical_paths": ["docs/governance/content-status.yaml", "scripts/validate_content_status.py"],
+      "canonical_paths": ["docs/governance/content-status.yaml", "docs/governance/executable-examples.yaml", "scripts/validate_content_status.py", "scripts/test_content_status_run_projections.py", "docs/adr/0027-separate-reference-learner-and-transfer-run-status.md"],
       "owner": "release-maintainer",
       "triggers": ["count-change", "artifact-status-change", "run-log-added", "review-date-change"],
-      "required_inputs": ["current-counts", "artifact-status", "run-status", "review-status", "evidence-paths"],
-      "validation_commands": ["scripts/validate_content_status.py", "scripts/validate_project.py"],
-      "status_fields": ["status", "run_status", "review_status", "owner", "last_reviewed", "next_review"],
+      "required_inputs": ["current-counts", "artifact-status", "reference-run-evidence", "learner-run-evidence", "transfer-run-evidence", "review-status", "evidence-paths"],
+      "validation_commands": ["scripts/validate_content_status.py", "scripts/test_content_status_run_projections.py", "scripts/validate_executable_examples.py", "scripts/validate_project.py"],
+      "status_fields": ["status", "reference_run_status", "learner_run_status", "transfer_run_status", "run_status-legacy-learner-alias", "review_status", "owner", "last_reviewed", "next_review"],
       "next_review": "2026-11-09"
     },
     {
@@ -134,13 +134,23 @@
       "next_review": "2026-09-12"
     },
     {
+      "area": "executable-examples",
+      "canonical_paths": ["docs/governance/executable-examples.yaml", "examples/lab-013-v1", "scripts/validate_executable_examples.py", "scripts/test_executable_examples.py", "scripts/run_lab_013_reference.py", "scripts/validate_lab_013_reference.py", "scripts/test_lab_013_reference.py", "docs/research/executable-documentation-and-example-verification-2026-08-12.md"],
+      "owner": "documentation-engineering-maintainer",
+      "triggers": ["new-executable-example", "verification-class-change", "example-source-change", "negative-fixture-change", "runtime-evidence-change"],
+      "required_inputs": ["source-path", "verification-class", "environment", "permissions", "network-boundary", "expected-evidence", "negative-fixtures", "blind-spots", "owner"],
+      "validation_commands": ["scripts/validate_executable_examples.py", "scripts/test_executable_examples.py", "scripts/test_lab_013_reference.py", "scripts/build_release_evidence.py --check", "scripts/check_local_links.py"],
+      "status_fields": ["status", "verification_classes", "run_status", "learner_run_status", "transfer_status", "owner", "reviewed_at", "next_review"],
+      "next_review": "2026-09-12"
+    },
+    {
       "area": "release-and-rollback",
-      "canonical_paths": ["docs/release-checklist.md", "docs/governance/content-lifecycle.md", "docs/governance/release-evidence.yaml", "scripts/build_release_evidence.py", "docs/adr/0021-commit-bound-release-evidence.md"],
+      "canonical_paths": ["docs/release-checklist.md", "docs/governance/content-lifecycle.md", "docs/governance/release-evidence.yaml", "docs/governance/release-readiness.yaml", "scripts/build_release_evidence.py", "scripts/validate_release_readiness.py", "scripts/test_release_readiness.py", "docs/adr/0021-commit-bound-release-evidence.md", "docs/adr/0026-machine-readable-release-readiness.md"],
       "owner": "release-maintainer",
       "triggers": ["release-candidate", "public-site-change", "high-risk-content-change", "quality-policy-change", "evidence-dimension-change", "rollback-needed"],
-      "required_inputs": ["candidate-sha", "diff", "gate-logs", "reviewer", "known-gaps", "source-freshness", "rollback-target", "user-approval"],
-      "validation_commands": ["scripts/build_release_evidence.py --check", "scripts/validate_project.py", "scripts/check_local_links.py", "scripts/validate_eval_tasks.py"],
-      "status_fields": ["release_version", "release_status", "review_status", "candidate_sha", "rollback_target", "owner", "next_review"],
+      "required_inputs": ["candidate-sha", "diff", "gate-logs", "reviewer", "known-gaps", "source-freshness", "version-decision", "changelog", "reviewed-tag", "reviewed-release-evidence", "rollback-target", "rollback-rehearsal", "user-approval"],
+      "validation_commands": ["scripts/build_release_evidence.py --check", "scripts/validate_release_readiness.py", "scripts/test_release_readiness.py", "scripts/validate_project.py", "scripts/check_local_links.py", "scripts/validate_eval_tasks.py"],
+      "status_fields": ["decision", "release_version", "release_status", "review_status", "candidate_sha", "release_tag", "changelog", "rollback_target", "rehearsal_record", "owner", "next_review"],
       "next_review": "2026-09-09"
     }
   ]

@@ -1,0 +1,16 @@
+{
+  "schema_version": "1",
+  "fixture_version": "lab-013-v1",
+  "allowed_product_paths": ["release-notes/next.md"],
+  "required_change_ids": ["CHG-101", "CHG-102"],
+  "required_attempt_sequence": ["intentional-failure", "bounded-recovery"],
+  "required_check_exit_codes": [1, 0],
+  "required_checkpoints": ["CP0", "CP1", "CP2", "CP3", "CP4"],
+  "required_claims": [
+    "artifact-created",
+    "focused-check-passed",
+    "publication-not-run",
+    "learner-run-not-observed",
+    "transfer-not-run"
+  ]
+}

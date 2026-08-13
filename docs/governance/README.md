@@ -13,8 +13,10 @@ book, site, translations, status, and maintenance records aligned.
 | Change a learning level | [`learning-path.yaml`](learning-path.yaml) | Site data and learning-path validator |
 | Propose or admit a chapter, lab, case, adapter, route, or reference unit | [`gold-content-admission.yaml`](gold-content-admission.yaml) | Hard-gate, family-contract, and admission-score validator |
 | Change an artifact's maturity | [`content-status.yaml`](content-status.yaml) | Status indexes and status validator |
+| Change Lab execution evidence | [`content-status.yaml`](content-status.yaml) + [`executable-examples.yaml`](executable-examples.yaml) | Separate maintainer-reference, learner, and transfer projections; legacy `run_status` remains learner-only |
 | Change a defect, resolution, or release blocker | [`quality-register.yaml`](quality-register.yaml) | Generated quality ledger and maturity-claim gate |
 | Change release evidence dimensions, blind spots, version, or rollback metadata | [`release-evidence.yaml`](release-evidence.yaml) | Commit-bound CI evidence packet |
+| Change operational release readiness | [`release-readiness.yaml`](release-readiness.yaml) | Version, changelog, tag, reviewed packet, maintenance, and rollback-rehearsal gate |
 | Change a volatile fact's consumers | [`fact-impact-registry.yaml`](fact-impact-registry.yaml) | Affected-content review |
 | Change authoritative URL audit scope or rollout policy | [`external-url-audit.yaml`](external-url-audit.yaml) | Scheduled categorized reachability report |
 | Record a recurring maintenance update | [`update-registry.yaml`](update-registry.yaml) | Update map and release review |

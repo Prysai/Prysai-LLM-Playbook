@@ -198,6 +198,15 @@ window.CODEX_LEARNING_PATH = {
           },
           "href": "../skills/prysai-task-protocol/SKILL.md",
           "relation": "supporting"
+        },
+        {
+          "id": "prysai-learning-coach",
+          "name": {
+            "en": "Learning Coach",
+            "zh": "学习教练 Learning Coach"
+          },
+          "href": "../skills/prysai-learning-coach/SKILL.md",
+          "relation": "supporting"
         }
       ],
       "evaluations": [
@@ -946,6 +955,15 @@ window.CODEX_LEARNING_PATH = {
             "zh": "研究路由 Research Router"
           },
           "href": "../skills/prysai-research-router/SKILL.md",
+          "relation": "supporting"
+        },
+        {
+          "id": "prysai-source-investigator",
+          "name": {
+            "en": "Source Investigator",
+            "zh": "来源调查 Source Investigator"
+          },
+          "href": "../skills/prysai-source-investigator/SKILL.md",
           "relation": "supporting"
         }
       ],

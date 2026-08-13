@@ -34,7 +34,7 @@ def validate_contract(contract: dict[str, Any]) -> list[str]:
     for key in ("owner", "release_version", "rollback_target", "rollback_reason"):
         if not isinstance(contract.get(key), str) or not contract[key].strip():
             errors.append(f"{key} must be a non-empty string")
-    for key in ("status_source", "quality_source"):
+    for key in ("status_source", "quality_source", "readiness_source"):
         value = contract.get(key)
         if not isinstance(value, str) or not (ROOT / value).is_file():
             errors.append(f"{key} must name an existing file")
@@ -139,7 +139,11 @@ def run_gates(contract: dict[str, Any], output_dir: Path) -> list[dict[str, Any]
     for dimension in contract["dimensions"]:
         command_results: list[dict[str, Any]] = []
         for command in dimension["commands"]:
-            argv = [sys.executable if value == "{python}" else value for value in command["argv"]]
+            argv = [
+                sys.executable if value == "{python}"
+                else value.replace("{evidence_dir}", str(output_dir))
+                for value in command["argv"]
+            ]
             completed = subprocess.run(argv, cwd=ROOT, text=True, encoding="utf-8", errors="replace", capture_output=True, check=False)
             log_path = logs_dir / f"{command['id']}.log"
             log_path.write_text(
@@ -208,6 +212,18 @@ def render_markdown(packet: dict[str, Any]) -> str:
     lines.extend(["", "## Known blind spots", ""])
     lines.extend(f"- {item}" for item in packet["known_blind_spots"])
     lines.extend(["", "## Rollback boundary", "", packet["rollback_reason"], ""])
+    lines.extend([
+        "## Operational release readiness",
+        "",
+        f"- Decision: `{packet['release_readiness']['decision']}`",
+        f"- Missing dimensions: `{len(packet['release_readiness']['blockers'])}`",
+    ])
+    lines.extend(f"- `{item}`" for item in packet["release_readiness"]["blockers"])
+    lines.extend([
+        "",
+        "A `not_ready` record can pass its validator: that means the absence is represented honestly, not that a release is ready.",
+        "",
+    ])
     return "\n".join(lines)
 
 
@@ -215,6 +231,7 @@ def build_packet(contract: dict[str, Any], args: argparse.Namespace) -> tuple[di
     generated = datetime.fromisoformat(args.generated_at.replace("Z", "+00:00"))
     status = load_object(ROOT / contract["status_source"])
     quality = load_object(ROOT / contract["quality_source"])
+    readiness = load_object(ROOT / contract["readiness_source"])
     project_status = status.get("project", {}).get("status")
     if project_status not in MATURITY:
         raise ValueError("project maturity is not controlled")
@@ -241,6 +258,21 @@ def build_packet(contract: dict[str, Any], args: argparse.Namespace) -> tuple[di
         "production_ready_blockers": [item["id"] for item in active if item["severity"] in quality["release_policy"]["production_ready_blocking_severities"]],
         "freshness": freshness,
         "known_blind_spots": contract["known_blind_spots"],
+        "release_readiness": {
+            "decision": readiness.get("decision"),
+            "blockers": [
+                key
+                for key, expected in (
+                    ("version", "declared"),
+                    ("changelog", "current"),
+                    ("release_tag", "reviewed"),
+                    ("release_evidence", "reviewed"),
+                    ("rollback", "rehearsed"),
+                    ("maintenance", "reviewed"),
+                )
+                if readiness.get(key, {}).get("status") != expected
+            ],
+        },
     }
     (output_dir / "release-evidence.json").write_text(json.dumps(packet, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     (output_dir / "release-evidence.md").write_text(render_markdown(packet), encoding="utf-8")
