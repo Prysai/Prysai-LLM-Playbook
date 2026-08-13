@@ -236,9 +236,10 @@ Object.assign(copy.en, {
   searchTitle: 'Find a bounded answer.',
   searchClear: 'Clear',
   searchNoQuery: 'Type a word or phrase to search the Field Guide.',
+  searchLoading: 'Loading the local search index…',
   searchNoResults: 'No results for “{query}”. Try a chapter title, Skill name, or narrower phrase.',
   searchResultsCount: '{count} results for “{query}”.',
-  searchIndexUnavailable: 'Search is temporarily unavailable. Rebuild the generated search index before relying on it.',
+  searchIndexUnavailable: 'The local search index could not be loaded. Check the connection, then submit again to retry.',
   searchFallback: 'English source shown · requested translation is not ready',
   searchOpen: 'Open reader',
   searchKindChapter: 'Chapter',
@@ -289,9 +290,10 @@ Object.assign(copy.zh, {
   searchTitle: '找到有边界的答案。',
   searchClear: '清除',
   searchNoQuery: '输入词语或短语，搜索 Field Guide。',
+  searchLoading: '正在加载本地搜索索引……',
   searchNoResults: '没有找到“{query}”的结果。试试章节标题、Skill 名称或更窄的短语。',
   searchResultsCount: '“{query}”的结果：{count} 条。',
-  searchIndexUnavailable: '搜索暂时不可用。请先重新生成搜索索引，再依赖搜索结果。',
+  searchIndexUnavailable: '本地搜索索引未能加载。请检查连接，然后再次提交搜索以重试。',
   searchFallback: '显示英文源文件 · 请求的翻译尚未就绪',
   searchOpen: '打开阅读器',
   searchKindChapter: '章节',
@@ -379,7 +381,9 @@ const localeDisplayName = (language) => localeManifest.locales[language]?.displa
 const localeHasUiCopy = (language) => uiLocales.has(language);
 const localeIsReady = (record) => record?.exists && ['source', 'verified', 'production-ready'].includes(record.translation_status);
 const pagesArtifactMode = Boolean(window.CODEX_PAGES_ARTIFACT);
-const searchIndex = window.CODEX_SEARCH_INDEX;
+let searchIndex = window.CODEX_SEARCH_INDEX || null;
+let searchIndexLoadPromise = null;
+let searchRunGeneration = 0;
 const pathFromHref = (href) => {
   if (!href || href.startsWith('#') || /^(?:https?:|mailto:|javascript:)/i.test(href)) return null;
   const path = href.split('#', 1)[0].split('?', 1)[0];
@@ -450,10 +454,31 @@ const searchNodes = {
   clear: document.querySelector('[data-search-clear]'),
 };
 const normalizeSearchQuery = (value) => String(value || '').trim().replace(/\s+/g, ' ').toLocaleLowerCase();
-const searchIndexAvailable = Boolean(
+const searchIndexAvailable = () => Boolean(
   searchIndex?.schema_version === '1'
   && Array.isArray(searchIndex.documents)
 );
+const loadSearchIndex = () => {
+  if (searchIndexAvailable()) return Promise.resolve(searchIndex);
+  if (searchIndexLoadPromise) return searchIndexLoadPromise;
+  searchIndexLoadPromise = new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = 'search-index.js?v=20260813-lazy-search';
+    script.async = true;
+    script.dataset.searchIndexLoader = '';
+    script.addEventListener('load', () => {
+      searchIndex = window.CODEX_SEARCH_INDEX || null;
+      if (searchIndexAvailable()) resolve(searchIndex);
+      else reject(new Error('Search index contract is invalid.'));
+    }, { once: true });
+    script.addEventListener('error', () => reject(new Error('Search index request failed.')), { once: true });
+    document.head.append(script);
+  }).catch((error) => {
+    searchIndexLoadPromise = null;
+    throw error;
+  });
+  return searchIndexLoadPromise;
+};
 const searchKindKeys = { 'project-entry': 'Project', 'book-entry': 'Book', chapter: 'Chapter', lab: 'Lab', skill: 'Skill', 'field-note': 'FieldNote' };
 const searchKindLabel = (kind) => currentCopy()[`searchKind${searchKindKeys[kind] || 'Document'}`] || kind;
 const searchLocaleFor = (documentRecord) => {
@@ -493,7 +518,7 @@ const renderSearch = (rawQuery = searchNodes.input?.value || '') => {
     searchNodes.status.textContent = currentCopy().searchNoQuery;
     return;
   }
-  if (!searchIndexAvailable) {
+  if (!searchIndexAvailable()) {
     searchNodes.status.textContent = currentCopy().searchIndexUnavailable;
     return;
   }
@@ -535,27 +560,53 @@ const renderSearch = (rawQuery = searchNodes.input?.value || '') => {
     searchNodes.results.append(item);
   });
 };
+const runSearch = async (rawQuery) => {
+  const query = String(rawQuery || '').trim();
+  const generation = ++searchRunGeneration;
+  if (!query) {
+    renderSearch('');
+    return;
+  }
+  searchNodes.panel.hidden = false;
+  searchNodes.status.textContent = currentCopy().searchLoading;
+  searchNodes.results.replaceChildren();
+  try {
+    await loadSearchIndex();
+    if (generation !== searchRunGeneration || searchNodes.input.value.trim() !== query) return;
+    renderSearch(rawQuery);
+  } catch (_) {
+    if (generation !== searchRunGeneration || searchNodes.input.value.trim() !== query) return;
+    searchNodes.status.textContent = currentCopy().searchIndexUnavailable;
+  }
+};
 const initializeSearch = () => {
   if (!searchNodes.form) return;
   const initialQuery = new URLSearchParams(window.location.search).get('q') || '';
-  searchNodes.form.addEventListener('submit', (event) => {
+  let searchIntentObserved = false;
+  searchNodes.input.addEventListener('input', () => {
+    if (searchIntentObserved || !searchNodes.input.value.trim()) return;
+    searchIntentObserved = true;
+    void loadSearchIndex().catch(() => { searchIntentObserved = false; });
+  });
+  searchNodes.form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const query = searchNodes.input.value.trim();
     const url = new URL(window.location.href);
     if (query) url.searchParams.set('q', query); else url.searchParams.delete('q');
     url.searchParams.set('lang', currentLanguage);
     window.history.replaceState({}, '', url);
-    renderSearch(query);
+    await runSearch(query);
     searchNodes.panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
   searchNodes.clear.addEventListener('click', () => {
+    searchRunGeneration += 1;
     const url = new URL(window.location.href);
     url.searchParams.delete('q');
     window.history.replaceState({}, '', url);
     renderSearch('');
     searchNodes.input.focus();
   });
-  if (initialQuery) renderSearch(initialQuery);
+  if (initialQuery) void runSearch(initialQuery);
 };
 
 const evaluationTypeLabels = (types) => types.map((type) => currentCopy()[type] || type).join(' · ');
@@ -664,7 +715,7 @@ const applyLanguage = (language, { updateUrl = true } = {}) => {
   updateLevel(document.querySelector('.level-tab.is-active')?.dataset.level || 'L0', false);
   updateRouteStatus(document.querySelector('.filter-button.is-active')?.dataset.filter || 'all');
   localizeReaderLinks();
-  if (searchNodes.form) renderSearch(searchNodes.input.value);
+  if (searchNodes.form && searchIndexAvailable()) renderSearch(searchNodes.input.value);
   const banner = document.querySelector('[data-locale-banner]');
   const pageFallback = currentLanguage !== 'en' && !localeHasUiCopy(currentLanguage);
   const hasContentFallback = Boolean(document.querySelector('[data-locale-fallback="true"]'));

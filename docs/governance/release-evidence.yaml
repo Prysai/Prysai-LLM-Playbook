@@ -20,6 +20,7 @@
     "Automated source checks do not prove translation quality, reader comprehension, or independent review.",
     "The Pages artifact check does not prove that a public URL is enabled, deployed, or reachable.",
     "Static accessibility rules do not prove browser behavior, keyboard flow, screen-reader output, contrast, zoom, reflow, or user review.",
+    "The pinned Chromium smoke test covers named critical flows only; it does not prove cross-browser behavior, assistive-technology output, low-end-device performance, usability, or learning outcomes.",
     "Gold-content admission proves an editorial proposal clears the declared hard gates and score threshold; it does not prove the unit was run, learned, transferred, or independently verified.",
     "Communication Clinic validation proves only the unrun candidate plan, fixed conditions, scoring contract, and safety boundary are internally consistent; it does not contain model or learner results.",
     "The Lab 013 executable-example packet is a deterministic maintainer reference run. It does not use a model and does not prove learner independence, transfer, Codex behavior, publication, or production readiness.",
@@ -88,6 +89,7 @@
         {"id": "local-links", "argv": ["{python}", "scripts/check_local_links.py"]},
         {"id": "site-accessibility-source", "argv": ["{python}", "scripts/validate_site_accessibility.py"]},
         {"id": "site-accessibility-fixtures", "argv": ["{python}", "scripts/test_site_accessibility.py"]},
+        {"id": "browser-smoke", "argv": ["{node}", "scripts/browser_smoke.mjs"]},
         {"id": "canonical-english-learning-contract", "argv": ["{python}", "scripts/validate_learning_contract.py", "--canonical-en"]}
       ]
     },

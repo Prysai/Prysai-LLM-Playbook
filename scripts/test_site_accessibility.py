@@ -60,9 +60,16 @@ def main() -> int:
                 raise AssertionError(f"dynamic-copy-control: missing {required}")
         if "else element.href = destination.target;" in reader_script:
             raise AssertionError("dynamic-reader-link-policy: unsafe fallback assignment returned")
+        if "box.setAttribute('role', 'alert');" in reader_script:
+            raise AssertionError("reader-error-announcement: duplicate assertive alert returned")
+        if "setReaderStatus(message, { assertive: true });" not in reader_script:
+            raise AssertionError("reader-error-announcement: primary assertive status is missing")
+        if "banner.setAttribute('aria-live', assertive ? 'assertive' : 'polite');" not in reader_script:
+            raise AssertionError("reader-error-announcement: live-region priority does not follow status severity")
         fixtures += 2
 
         site_script = (Path(__file__).resolve().parents[1] / "site/app.js").read_text(encoding="utf-8")
+        site_markup = (Path(__file__).resolve().parents[1] / "site/index.html").read_text(encoding="utf-8")
         for required in (
             "const pagesHref = (href, language = currentLanguage) => {",
             "if (!path || !path.endsWith('.md')) return href;",
@@ -76,7 +83,21 @@ def main() -> int:
             raise AssertionError("showcase-reader-route: unregistered Markdown links bypass the local Reader")
         fixtures += 1
 
-        site_markup = (Path(__file__).resolve().parents[1] / "site/index.html").read_text(encoding="utf-8")
+        if '<script src="search-index.js' in site_markup:
+            raise AssertionError("lazy-search-index: full-text index blocks the initial document")
+        for required in (
+            "const loadSearchIndex = () => {",
+            "script.src = 'search-index.js?v=20260813-lazy-search';",
+            "searchNodes.input.addEventListener('input'",
+            "if (searchIntentObserved || !searchNodes.input.value.trim()) return;",
+            "await loadSearchIndex();",
+            "generation !== searchRunGeneration",
+            "searchLoading: 'Loading the local search index…'",
+        ):
+            if required not in site_script:
+                raise AssertionError(f"lazy-search-index: missing {required}")
+        fixtures += 2
+
         for required in (
             "data-copy-starter",
             "data-copy-rescue",

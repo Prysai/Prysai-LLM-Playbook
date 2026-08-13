@@ -67,6 +67,18 @@ def main() -> int:
         dimensions = evidence.run_gates(placeholder_contract, Path(temp_dir))
         require(dimensions[0]["status"] == "passed", "placeholder-compatible command failed")
 
+    node_contract = copy.deepcopy(contract)
+    node_contract["dimensions"] = [{
+        "id": "node-fixture", "label": "Node fixture",
+        "scope": "The browser gate resolves the declared Node runtime without shell interpolation.",
+        "commands": [{
+            "id": "node-version", "argv": ["{node}", "--version"],
+        }],
+    }]
+    with tempfile.TemporaryDirectory(prefix="prysai-node-evidence-fixture-") as temp_dir:
+        dimensions = evidence.run_gates(node_contract, Path(temp_dir))
+        require(dimensions[0]["status"] == "passed", "Node placeholder did not resolve")
+
     embedded_placeholder = copy.deepcopy(contract)
     embedded_placeholder["dimensions"] = [{
         "id": "embedded-placeholder-fixture", "label": "Embedded placeholder fixture",
@@ -117,7 +129,7 @@ def main() -> int:
     require("Decision: `not_ready`" in rendered, "readiness decision missing from packet summary")
     require("`rollback`" in rendered, "readiness blocker missing from packet summary")
 
-    print("RELEASE_EVIDENCE_TESTS_OK fixtures=21")
+    print("RELEASE_EVIDENCE_TESTS_OK fixtures=22")
     return 0
 
 

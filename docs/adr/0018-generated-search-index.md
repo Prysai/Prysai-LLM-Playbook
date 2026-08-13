@@ -38,6 +38,8 @@ fallback into a completed translation.
    The search index does not create a second navigation or fallback system.
 6. Require `scripts/build_site_search_index.py --check` in CI and require
    `site/search-index.js` in the Pages source and artifact checks.
+7. ADR-0028 supersedes the initial eager-load detail: keep the same generated
+   artifact and scoring contract, but request it only after search intent.
 
 ## Alternatives considered
 

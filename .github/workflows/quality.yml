@@ -1,5 +1,9 @@
 name: Codex From First Task to Real Work quality
 
+concurrency:
+  group: quality-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   push:
     branches: [main]
@@ -11,6 +15,7 @@ permissions:
 jobs:
   release-evidence:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
@@ -22,6 +27,18 @@ jobs:
 
       - name: Install validation dependency
         run: python -m pip install --disable-pip-version-check PyYAML
+
+      - name: Set up Node.js for browser checks
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install pinned browser test dependency
+        run: npm ci
+
+      - name: Install Chromium for browser checks
+        run: npx playwright install --with-deps chromium
 
       - name: Validate release evidence contract
         run: python scripts/build_release_evidence.py --check
@@ -47,6 +64,15 @@ jobs:
           path: ${{ github.workspace }}/.work/release-evidence
           if-no-files-found: error
           retention-days: 30
+
+      - name: Upload browser failure evidence
+        if: steps.release_evidence.outcome != 'success'
+        uses: actions/upload-artifact@v7
+        with:
+          name: browser-smoke-failure-${{ github.sha }}
+          path: ${{ github.workspace }}/.work/browser-smoke
+          if-no-files-found: warn
+          retention-days: 14
 
       - name: Publish release evidence summary
         if: always()

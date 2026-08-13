@@ -188,11 +188,11 @@
       "next_review": "2026-09-12",
       "superseded_by": "",
       "area": "Learner activation and usability",
-      "finding": "No externally observed evidence shows whether target readers can locate the candidate status, begin the first safe task, assemble a bounded task contract, or identify the evidence boundary without author direction.",
-      "required_evidence": "A preregistered privacy-minimized protocol, de-identified aggregate results from 5–8 target readers including completion, drop-off, critical incidents, and an independent review; any conclusion must remain limited to the tested first-task conditions.",
+      "finding": "No externally observed evidence shows whether target readers can complete the current no-Git First Win, detect source-fidelity errors, recover one failed check, or repeat the method on an unseen message. The v1 task-contract pilot no longer matches the current public entry.",
+      "required_evidence": "Run the fixed v2 baseline, commit-bound First Win study worksheet, seeded recovery branch, immediate unseen transfer, 48–72 hour delayed transfer, and separate public-surface observation with 5–8 experienced-beginner readers; preserve de-identified first answers, marked findings, before/after diffs, timing, drop-off, help, scorer disagreement, and independent review. Treat the first round as instrument debugging only and do not generalize it to first-time chat-model users.",
       "status": "open",
-      "evidence_paths": ["docs/quality/first-task-pilot-protocol-v1.md", ".github/ISSUE_TEMPLATE/field-report.yml", "docs/quality/red-team-release-and-learning-audit-2026-08-13.md"],
-      "resolution_scope": "The protocol and field-report intake exist, but no recruitment, session, aggregate result, independent review, activation rate, or learner-effect conclusion has been recorded. Q-001 remains separate and cannot be closed by this usability pilot."
+      "evidence_paths": ["docs/quality/first-win-pilot-protocol-v2.md", "docs/governance/starter-task-contract.yaml", ".github/ISSUE_TEMPLATE/field-report.yml", "docs/quality/red-team-release-and-learning-audit-2026-08-13.md"],
+      "resolution_scope": "The revised protocol now binds a controlled worksheet to the current First Win while treating public-surface navigation separately. It separates unaided baseline, first answer, learner judgment, seeded recovery, immediate transfer, delayed transfer, and final artifact, and defines the experienced-beginner sample boundary. No recruitment, session, aggregate result, scorer agreement, independent review, activation rate, or learner-effect conclusion has been recorded. Q-001 and Q-002 remain separate and cannot be closed by this protocol."
     }
   ]
 }

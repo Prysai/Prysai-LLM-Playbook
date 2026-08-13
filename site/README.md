@@ -10,6 +10,7 @@
 - 响应式导航在窄屏下折叠为菜单，支持 Escape 关闭和焦点返回；
 - 首页语言入口使用普通导航语义并标记当前页面；Reader 提供跳到正文、异步加载/错误状态、正文语言标记和高对比度下划线 fallback；
 - 所有 Markdown 章节、实验、Skill 与质量记录在本地展示页和 Pages artifact 中都先进入 Reader；Reader 仍从仓库内真实文件取源，chapter/lab 路由身份由 `content-status.yaml` 与 manifest 共同覆盖。非 Markdown 机器记录保留直接文件入口。
+- 全文搜索索引不会阻塞首屏。首次输入非空查询、提交查询，或用 `?q=` 打开页面时才加载；仅用键盘聚焦搜索框不会下载索引。加载失败会显示可重试的错误状态，不会伪装成零结果。
 - `visual-cases` 区块链接到两张项目原创 SVG 教学卡；它们解释方法，不证明 Skill runtime、客户需求、市场效果或生产准备度。
 
 ## Highlight component boundary
@@ -97,7 +98,8 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 6. 检查 18 个实验卡片、索引链接和窄屏布局与菜单展开；菜单打开后按 Escape，确认焦点回到菜单按钮；Reader 还要检查跳到正文、加载状态、错误状态和中文外壳文案；
 7. 分别在 320px、390px、820px、980px 宽度检查无横向溢出、触控目标可用、中文不被截断；
 8. 确认没有外部字体、脚本、图片或 CDN 请求，控制台无错误；
-9. 在仓库根目录执行项目验证：
+9. 构建 `_site` 后运行 `node scripts/browser_smoke.mjs`；确认首屏没有请求全文索引、搜索意图只加载一次索引、两个 First Win 复制反馈、Reader 正文与上一章/下一章、无效路径错误状态及 390px 回流均通过；
+10. 在仓库根目录执行项目验证：
 
 ```powershell
 $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -68,6 +69,29 @@ def validate_file_list(
         )
 
 
+def validate_adr_identity(errors: list[str]) -> None:
+    adr_dir = ROOT / "docs/adr"
+    index_text = (adr_dir / "README.md").read_text(encoding="utf-8")
+    seen: dict[str, str] = {}
+    for path in sorted(adr_dir.glob("[0-9][0-9][0-9][0-9]-*.md")):
+        file_id = path.name[:4]
+        first_line = path.read_text(encoding="utf-8").splitlines()[0]
+        title_match = re.match(r"^# ADR[- ](\d{4})", first_line)
+        if not title_match:
+            errors.append(f"ADR title does not declare its identity: {path.relative_to(ROOT)}")
+        elif title_match.group(1) != file_id:
+            errors.append(
+                f"ADR title identity {title_match.group(1)} does not match filename {file_id}: "
+                f"{path.relative_to(ROOT)}"
+            )
+        if file_id in seen:
+            errors.append(f"duplicate ADR identity {file_id}: {seen[file_id]} and {path.name}")
+        else:
+            seen[file_id] = path.name
+        if f"({path.name})" not in index_text:
+            errors.append(f"ADR index is missing {path.name}")
+
+
 def main() -> int:
     errors: list[str] = []
     try:
@@ -101,6 +125,8 @@ def main() -> int:
     if not isinstance(generated_outputs, list):
         errors.append("generated_outputs must be a list")
         generated_outputs = []
+
+    validate_adr_identity(errors)
 
     actual_top_level = {
         path.name

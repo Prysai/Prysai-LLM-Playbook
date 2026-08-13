@@ -20,7 +20,16 @@ SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 MATURITY = ("draft", "candidate", "verified", "production-ready")
 VERIFIED_BLOCKING_SEVERITIES = {"P0", "P1"}
 PRODUCTION_READY_BLOCKING_SEVERITIES = {"P0", "P1", "P2"}
+
+
+def node_executable() -> str:
+    configured = os.environ.get("NODE")
+    if configured:
+        return configured
+    bundled = Path.home() / ".cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe"
+    return str(bundled) if bundled.is_file() else "node"
 REQUIRED_COMMANDS = {
+    "browser-smoke": ("{node}", "scripts/browser_smoke.mjs"),
     "skill-registry": ("{python}", "scripts/validate_skill_registry.py"),
     "skill-registry-fixtures": ("{python}", "scripts/test_skill_registry.py"),
     "learning-practice-candidate": ("{python}", "scripts/validate_learning_practice_candidate.py"),
@@ -102,9 +111,9 @@ def validate_contract(contract: dict[str, Any]) -> list[str]:
             argv = command.get("argv")
             if not isinstance(argv, list) or not argv or any(not isinstance(value, str) or not value for value in argv):
                 errors.append(f"{command_label}.argv must contain non-empty strings")
-            elif argv[0] != "{python}":
-                errors.append(f"{command_label}.argv must start with {{python}}")
-            elif len(argv) < 2 or not (ROOT / argv[1]).is_file():
+            elif argv[0] not in {"{python}", "{node}"}:
+                errors.append(f"{command_label}.argv must start with {{python}} or {{node}}")
+            elif len(argv) < 2 or (argv[0] in {"{python}", "{node}"} and not argv[1].startswith("-") and not (ROOT / argv[1]).is_file()):
                 errors.append(f"{command_label} references a missing script")
             else:
                 signature = tuple(argv)
@@ -185,6 +194,7 @@ def run_gates(contract: dict[str, Any], output_dir: Path) -> list[dict[str, Any]
         for command in dimension["commands"]:
             argv = [
                 sys.executable if value == "{python}"
+                else node_executable() if value == "{node}"
                 else value.replace("{evidence_dir}", str(output_dir))
                 for value in command["argv"]
             ]

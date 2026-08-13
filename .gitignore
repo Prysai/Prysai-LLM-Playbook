@@ -29,6 +29,7 @@ __pycache__/
 .mypy_cache/
 .venv/
 venv/
+node_modules/
 .idea/
 .vscode/
 

@@ -77,6 +77,7 @@
   const setReaderStatus = (message, { assertive = false } = {}) => {
     banner.textContent = message;
     banner.setAttribute('role', assertive ? 'alert' : 'status');
+    banner.setAttribute('aria-live', assertive ? 'assertive' : 'polite');
     banner.hidden = !message;
   };
 
@@ -758,7 +759,6 @@ function canonicalChapterTitle(chapter) {
     article.replaceChildren();
     const box = document.createElement('div');
     box.className = 'reader-error';
-    box.setAttribute('role', 'alert');
     box.textContent = message;
     article.append(box);
     article.setAttribute('aria-busy', 'false');

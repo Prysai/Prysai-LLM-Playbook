@@ -1,0 +1,13 @@
+{
+  "name": "codex-field-guide-browser-checks",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test:browser": "node scripts/browser_smoke.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

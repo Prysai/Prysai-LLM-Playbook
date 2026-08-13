@@ -36,6 +36,8 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\build_learning_path_site.py --check
 & $py scripts\build_site_locale_manifest.py --check
 & $py scripts\build_site_search_index.py --check
+# Requires Node 20+ and Playwright from `npm ci`.
+node scripts/browser_smoke.mjs
 & $py scripts\build_pages_artifact.py --check
 ```
 
