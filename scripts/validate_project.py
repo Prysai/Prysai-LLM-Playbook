@@ -51,6 +51,8 @@ REQUIRED = (
     "docs/adr/0013-single-book-navigation-source.md",
     "docs/adr/0014-canonical-project-directory-map.md",
     "docs/governance/book-navigation.yaml",
+    "docs/governance/core-unit-map.yaml",
+    "book/routes/universal-core-foundations-EN.md",
     "docs/governance/contribution-model.md",
     "docs/quality/skill-quality-standard.md",
     "docs/quality/evaluation-framework.md",
@@ -75,6 +77,9 @@ REQUIRED = (
     "scripts/build_book_navigation.py",
     "scripts/build_pages_artifact.py",
     "scripts/validate_book_navigation.py",
+    "scripts/test_book_navigation_titles.py",
+    "scripts/validate_core_unit_map.py",
+    "scripts/test_core_unit_map.py",
     "scripts/validate_project_structure.py",
     "scripts/validate_content_completeness.py",
 )

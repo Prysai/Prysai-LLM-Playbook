@@ -56,6 +56,7 @@
     "prysai-learning-coach": {"name": {"en": "Learning Coach", "zh": "学习教练 Learning Coach"}},
     "prysai-source-investigator": {"name": {"en": "Source Investigator", "zh": "来源调查 Source Investigator"}},
     "prysai-field-signal-curator": {"name": {"en": "Field Signal Curator", "zh": "现场信号整理 Field Signal Curator"}},
-    "prysai-platform-adapter-review": {"name": {"en": "Platform Adapter Review", "zh": "平台适配审查 Platform Adapter Review"}}
+    "prysai-platform-adapter-review": {"name": {"en": "Platform Adapter Review", "zh": "平台适配审查 Platform Adapter Review"}},
+    "prysai-communication-failure-triage": {"name": {"en": "Communication Failure Triage", "zh": "沟通失败诊断 Communication Failure Triage"}}
   }
 }

@@ -686,6 +686,15 @@ window.CODEX_LEARNING_PATH = {
           },
           "href": "../skills/prysai-task-protocol/SKILL.md",
           "relation": "supporting"
+        },
+        {
+          "id": "prysai-communication-failure-triage",
+          "name": {
+            "en": "Communication Failure Triage",
+            "zh": "沟通失败诊断 Communication Failure Triage"
+          },
+          "href": "../skills/prysai-communication-failure-triage/SKILL.md",
+          "relation": "supporting"
         }
       ],
       "evaluations": [
@@ -965,6 +974,24 @@ window.CODEX_LEARNING_PATH = {
           },
           "href": "../skills/prysai-source-investigator/SKILL.md",
           "relation": "supporting"
+        },
+        {
+          "id": "prysai-field-signal-curator",
+          "name": {
+            "en": "Field Signal Curator",
+            "zh": "现场信号整理 Field Signal Curator"
+          },
+          "href": "../skills/prysai-field-signal-curator/SKILL.md",
+          "relation": "supporting"
+        },
+        {
+          "id": "prysai-platform-adapter-review",
+          "name": {
+            "en": "Platform Adapter Review",
+            "zh": "平台适配审查 Platform Adapter Review"
+          },
+          "href": "../skills/prysai-platform-adapter-review/SKILL.md",
+          "relation": "supporting"
         }
       ],
       "evaluations": [
@@ -1162,6 +1189,24 @@ window.CODEX_LEARNING_PATH = {
             "zh": "工作流编排 Workflow Orchestrator"
           },
           "href": "../skills/prysai-workflow-orchestrator/SKILL.md",
+          "relation": "supporting"
+        },
+        {
+          "id": "prysai-communication-failure-triage",
+          "name": {
+            "en": "Communication Failure Triage",
+            "zh": "沟通失败诊断 Communication Failure Triage"
+          },
+          "href": "../skills/prysai-communication-failure-triage/SKILL.md",
+          "relation": "supporting"
+        },
+        {
+          "id": "prysai-platform-adapter-review",
+          "name": {
+            "en": "Platform Adapter Review",
+            "zh": "平台适配审查 Platform Adapter Review"
+          },
+          "href": "../skills/prysai-platform-adapter-review/SKILL.md",
           "relation": "supporting"
         }
       ],

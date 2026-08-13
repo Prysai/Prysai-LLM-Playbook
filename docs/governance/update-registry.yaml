@@ -25,11 +25,11 @@
     },
     {
       "area": "book-navigation",
-      "canonical_paths": ["docs/governance/book-navigation.yaml", "book/chapters", "book/table-of-contents.md", "book/table-of-contents-EN.md", "scripts/build_book_navigation.py", "scripts/validate_book_navigation.py"],
+      "canonical_paths": ["docs/governance/book-navigation.yaml", "book/chapters", "book/table-of-contents.md", "book/table-of-contents-EN.md", "scripts/build_book_navigation.py", "scripts/validate_book_navigation.py", "scripts/test_book_navigation_titles.py"],
       "owner": "curriculum-maintainer",
       "triggers": ["new-chapter", "chapter-reorder", "chapter-rename", "english-migration", "navigation-report"],
       "required_inputs": ["stable-chapter-id", "part", "chapter-number", "english-title", "chinese-title", "legacy-source-path", "english-source-path-or-pending-state"],
-      "validation_commands": ["scripts/build_book_navigation.py --check", "scripts/validate_book_navigation.py", "scripts/check_local_links.py"],
+      "validation_commands": ["scripts/build_book_navigation.py --check", "scripts/validate_book_navigation.py", "scripts/test_book_navigation_titles.py", "scripts/check_local_links.py"],
       "status_fields": ["status", "owner", "generated_at", "english_path", "legacy_path", "migration_state"],
       "next_review": "2026-11-09"
     },
@@ -135,11 +135,11 @@
     },
     {
       "area": "curriculum-architecture",
-      "canonical_paths": ["docs/adr/0025-universal-core-codex-flagship-and-platform-adapters.md", "docs/strategy/universal-llm-practice-curriculum-architecture-2026-08-12.md", "docs/charter.md", "docs/book-architecture.md", "docs/learning-model.md", "docs/governance/learning-path.yaml", "docs/governance/book-navigation.yaml"],
+      "canonical_paths": ["docs/adr/0025-universal-core-codex-flagship-and-platform-adapters.md", "docs/strategy/universal-llm-practice-curriculum-architecture-2026-08-12.md", "docs/charter.md", "docs/book-architecture.md", "docs/learning-model.md", "docs/governance/learning-path.yaml", "docs/governance/book-navigation.yaml", "docs/governance/core-unit-map.yaml", "book/routes/universal-core-foundations-EN.md", "scripts/validate_core_unit_map.py", "scripts/test_core_unit_map.py"],
       "owner": "curriculum-maintainer",
       "triggers": ["universal-core-change", "platform-adapter-proposal", "cross-platform-claim", "audience-route-change", "project-rename-proposal", "content-identity-migration"],
       "required_inputs": ["reader-problem", "capability-delta", "canonical-owner", "platform-delta", "evidence-status", "volatile-fact-sources", "compatibility-map", "rollback-boundary", "owner-decision"],
-      "validation_commands": ["scripts/validate_project.py", "scripts/validate_project_structure.py", "scripts/validate_content_completeness.py", "scripts/validate_learning_contract.py --canonical-en", "scripts/check_local_links.py", "scripts/audit_input_archives.py"],
+      "validation_commands": ["scripts/validate_project.py", "scripts/validate_project_structure.py", "scripts/validate_content_completeness.py", "scripts/validate_learning_contract.py --canonical-en", "scripts/validate_core_unit_map.py", "scripts/test_core_unit_map.py", "scripts/check_local_links.py", "scripts/audit_input_archives.py"],
       "status_fields": ["status", "owner", "scope", "implementation_state", "adapter_status", "brand_decision", "next_review"],
       "next_review": "2026-09-12"
     },
@@ -165,7 +165,7 @@
     },
     {
       "area": "page-trust-registry",
-      "canonical_paths": ["docs/governance/page-trust-registry.yaml", "scripts/validate_page_trust_registry.py", "scripts/test_page_trust_registry.py", "docs/research/live-documentation-trust-and-provenance-benchmark-2026-08-12.md", "docs/sources/asset-register.md"],
+      "canonical_paths": ["docs/governance/page-trust-registry.yaml", "docs/governance/core-unit-map.yaml", "scripts/validate_page_trust_registry.py", "scripts/test_page_trust_registry.py", "docs/research/live-documentation-trust-and-provenance-benchmark-2026-08-12.md", "docs/sources/asset-register.md"],
       "owner": "documentation-engineering-maintainer",
       "triggers": ["page-identity-change", "curriculum-scope-change", "platform-applicability-change", "fact-risk-change", "source-provenance-change", "review-window-change", "license-boundary-change", "coverage-promotion"],
       "required_inputs": ["content-id", "artifact-status", "curriculum-scope", "platforms", "core-concepts", "applicability", "fact-risk", "owner", "review-window", "typed-sources", "evidence-role", "access-date-for-external-sources", "license-boundary", "reuse-boundary", "limitations"],

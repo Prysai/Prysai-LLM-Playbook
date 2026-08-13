@@ -140,6 +140,8 @@ def build_navigation_payload(
                 "part": item["part"],
                 "title_en": item["title_en"],
                 "title_zh": item["title_zh"],
+                "canonical_title_en": item["canonical_title_en"],
+                "canonical_title_zh": item["canonical_title_zh"],
                 "english_path": english_path,
                 "legacy_path": legacy_path,
                 "english_status": item.get("english_status"),

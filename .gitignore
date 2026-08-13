@@ -9,6 +9,7 @@
 tmp/
 tmp-*.ipynb
 _site/
+output/
 
 # Secrets and machine-local configuration.
 .env

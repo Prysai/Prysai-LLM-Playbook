@@ -15,6 +15,9 @@ START = "<!-- chapter-navigation:start -->"
 END = "<!-- chapter-navigation:end -->"
 BLOCK_RE = re.compile(rf"{re.escape(START)}(.*?){re.escape(END)}", re.DOTALL)
 LINK_RE = re.compile(r'<a[^>]+data-chapter-nav="([^"]+)"[^>]+href="([^"]+)"', re.IGNORECASE)
+H1_RE = re.compile(r"(?m)^#\s+(.+?)\s*$")
+EN_H1_RE = re.compile(r"^Chapter\s+(\d+):\s+(.+)$")
+ZH_H1_RE = re.compile(r"^第([一二三四五六七八九十]+)章：(.+)$")
 
 
 def fail(errors: list[str]) -> int:
@@ -60,6 +63,8 @@ def main() -> int:
     except (OSError, UnicodeError, json.JSONDecodeError, ValueError) as exc:
         return fail([f"cannot parse {NAV_PATH.relative_to(ROOT)}: {exc}"])
 
+    if document.get("schema_version") != "2":
+        errors.append("schema_version must be '2'")
     entries = document.get("chapters")
     if not isinstance(entries, list) or len(entries) != 22:
         return fail(["chapters must contain exactly 22 entries"])
@@ -73,18 +78,28 @@ def main() -> int:
         if not isinstance(item, dict):
             errors.append("each chapter must be an object")
             continue
-        for key in ("id", "number", "part", "title_en", "title_zh", "legacy_path", "english_status", "status"):
+        for key in ("id", "number", "part", "title_en", "title_zh", "canonical_title_en", "canonical_title_zh", "legacy_path", "english_status", "status"):
             if key not in item:
                 errors.append(f"chapter {item.get('number', '?')}: missing {key}")
         legacy = ROOT / str(item.get("legacy_path", ""))
         if not legacy.is_file():
             errors.append(f"legacy chapter path does not exist: {item.get('legacy_path')}")
+        else:
+            headings = H1_RE.findall(legacy.read_text(encoding="utf-8"))
+            expected = f"第{['一','二','三','四','五','六','七','八','九','十','十一','十二','十三','十四','十五','十六','十七','十八','十九','二十','二十一','二十二'][int(item['number'])-1]}章：{item.get('canonical_title_zh')}"
+            if headings != [expected]:
+                errors.append(f"{item.get('legacy_path')}: H1 must exactly equal {expected!r}")
         english_path = item.get("english_path")
         if english_path:
             if not str(english_path).endswith("-EN.md"):
                 errors.append(f"English path must end in -EN.md: {english_path}")
             if not (ROOT / str(english_path)).is_file():
                 errors.append(f"English chapter path does not exist: {english_path}")
+            else:
+                headings = H1_RE.findall((ROOT / str(english_path)).read_text(encoding="utf-8"))
+                expected = f"Chapter {item['number']}: {item.get('canonical_title_en')}"
+                if headings != [expected]:
+                    errors.append(f"{english_path}: H1 must exactly equal {expected!r}")
             if item.get("english_status") != "source":
                 errors.append(f"chapter {item.get('number')}: English source must be marked source")
         elif item.get("english_status") != "migration_pending":

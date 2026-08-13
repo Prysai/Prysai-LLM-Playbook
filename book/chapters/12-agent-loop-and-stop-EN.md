@@ -646,7 +646,7 @@ repeat the same uncertain action.
 Save a short handoff beside the event trace:
 
 ```markdown
-# Run handoff
+## Run handoff
 
 status: unknown
 run_id: run-2026-08-12-001

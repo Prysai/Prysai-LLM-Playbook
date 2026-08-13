@@ -6,6 +6,7 @@
 |---|---|---|---|---|---|
 | `prysai-field-signal-curator` | Field Signal Curator | 将论坛、issue 和重复提问整理成可追溯的需求与失败信号 | L2–L6 | candidate | 去重、证据角色、社区边界、教学候选 |
 | `prysai-platform-adapter-review` | Platform Adapter Review | 审查某个平台教程是否具有真实、可维护且有证据的平台差异 | L4–L6 | candidate | 官方来源、运行记录、差异合同、等价性拒绝 |
+| `prysai-communication-failure-triage` | Communication Failure Triage | 对已经失败的请求与回复做后验分诊、最小修复和固定条件复跑 | L1–L6 | candidate | 失败证据、候选分类、单变量修复、权限停止、三项盲测 |
 | `prysai-codex-coach` | Codex Coach | 根据学习目标和能力等级安排学习与实践 | L0–L6 | candidate | 学习路由、解释、实验和反思 |
 | `prysai-task-protocol` | Task Protocol | 将模糊需求变成有边界的任务协议 | L2–L3 | candidate | 缺失输入、外部副作用、验收条件 |
 | `prysai-evidence-review` | Evidence Review | 审查完成声明和证据缺口 | L3–L6 | candidate | 正确、半完成、漂亮但无证据的结果 |

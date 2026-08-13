@@ -92,6 +92,8 @@ event, diff, artifact, hash, or read-back evidence; mark the audit claim
 merely to recover presentation output, weaken a safety control, or infer that a
 success-shaped state proves the result.
 
+<a id="core-evidence-recovery"></a>
+
 ## 1. Match claims to evidence
 
 Start with the sentence you want to say. Then ask what a second person would
@@ -182,15 +184,6 @@ in a list, a page can be read, or a provider accepts configuration, while the
 actual discovery call, click, or higher-level capability still fails. A visible
 tool name proves only that the name is visible. It does not prove registration,
 discoverability, execution, or a successful side effect.
-
-For example, public reports describe a visible Computer Use and `node_repl`
-surface whose read-only `list_apps()` or `list_windows()` call hits `spawn EPERM`;
-a browser popup and DOM are readable while a click times out; and a custom
-provider accepts configuration without necessarily exposing the expected
-multi-agent capability. These are 2026-08-10 user reports, not local
-reproductions or official root-cause findings. See the
-[web field research](../../docs/research/web-field-problems-2026-08-10.md),
-especially WF-08—WF-11.
 
 Break the capability into observable claims:
 
@@ -304,6 +297,20 @@ Recovery can restore control without upgrading the completion status. For
 example, interrupting a hung process and preserving the diff may produce a
 useful `candidate` handoff, while the requested runtime result remains
 `unverified`.
+
+<a id="core-evidence-recovery-end"></a>
+
+### Codex field delta: visible surfaces without a working capability
+
+Public reports describe a visible Computer Use and `node_repl` surface whose
+read-only `list_apps()` or `list_windows()` call hits `spawn EPERM`; a browser
+popup and DOM are readable while a click times out; and a custom provider
+accepts configuration without necessarily exposing the expected multi-agent
+capability. These are 2026-08-10 user reports, not local reproductions or
+official root-cause findings. See the
+[web field research](../../docs/research/web-field-problems-2026-08-10.md),
+especially WF-08—WF-11. This named-product example is outside the universal
+owner range above.
 
 ## Experiment: audit a completion claim
 

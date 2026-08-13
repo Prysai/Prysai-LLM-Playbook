@@ -62,6 +62,8 @@ See the [official Codex fact baseline](../../docs/research/chapter-03-official-b
 and the [real-work prompt pattern research](../../docs/research/prompt-patterns-for-real-work-2026-08-10.md)
 for source-by-source scope and access dates.
 
+<a id="core-task-contract"></a>
+
 ## The eight-part protocol
 
 ```text
@@ -216,6 +218,8 @@ context ──> trust and relevance ────────────┘
 If the goal changes, acceptance changes with it. If a new input changes risk,
 the allowed action and stop condition must be revisited. Adding “please be
 careful” does not repair a missing dependency.
+
+<a id="core-task-contract-end"></a>
 
 ## Smallest useful protocol
 

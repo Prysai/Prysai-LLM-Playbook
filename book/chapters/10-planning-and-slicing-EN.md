@@ -78,6 +78,8 @@ The distinction matters. A plan is not a promise that the Agent will finish. It
 is a control surface that lets a person pause, inspect, and make the next
 decision without guessing.
 
+<a id="core-evidence-bearing-slice"></a>
+
 ## The mechanism: from outcome to evidence-bearing slices
 
 ### 1. Name the result before naming the work
@@ -235,6 +237,8 @@ The practical test is:
 
 If not, the slice needs a better interface or a smaller outcome.
 
+<a id="core-evidence-bearing-slice-end"></a>
+
 ## A reusable planning prompt
 
 Use the following as a starting protocol. Replace the example values; do not
@@ -295,7 +299,7 @@ directory, not a working tree containing someone else's changes.
 Create a temporary folder containing a `README.md` with only:
 
 ```markdown
-# Slice Lab
+## Slice Lab
 
 Starting point. The page does not yet explain what changed or how to check it.
 ```

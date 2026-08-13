@@ -79,6 +79,8 @@ a new persistent or external side effect, stop and disclose the exact target,
 effect, source artifact, dirty state, rollback material, and blocked evidence
 before requesting explicit direction.
 
+<a id="core-action-boundary"></a>
+
 ## 1. Five action classes
 
 Use the following classes as a starting point. They are not permanent labels for
@@ -173,6 +175,8 @@ smallest safe action.
 
 This prompt does not make the model infallible. Its purpose is to make the
 boundary observable and to give a reviewer a place to catch scope expansion.
+
+<a id="core-action-boundary-end"></a>
 
 ## 4. Browser work has an observation phase and a submission phase
 

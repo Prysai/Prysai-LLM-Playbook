@@ -22,6 +22,9 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\check_local_links.py
 & $py scripts\validate_localization.py
 & $py scripts\build_book_navigation.py --check
+& $py scripts\test_book_navigation_titles.py
+& $py scripts\validate_core_unit_map.py
+& $py scripts\test_core_unit_map.py
 & $py scripts\build_learning_path_site.py --check
 & $py scripts\build_site_locale_manifest.py --check
 & $py scripts\build_site_search_index.py --check
@@ -36,6 +39,15 @@ and regenerate it. Do not hand-edit a generated block to hide a stale source.
 
 A green script proves only the checks that script performs. It is not by itself
 runtime, browser, translation, or learning-outcome evidence.
+
+`validate_core_unit_map.py` checks that each transferable method has one
+canonical owner range, stable anchors, explicit exclusions, valid consumers,
+and no named-product fact inside that range. The route is a compact projection;
+passing does not prove cross-platform behavior or learner transfer.
+
+`test_book_navigation_titles.py` protects the distinction between canonical
+chapter titles and compact navigation labels. It does not prove that every
+downstream title consumer has been generated or visually reviewed.
 
 `validate_content_completeness.py` is the narrow cross-file identity gate. It
 checks that the 22 canonical chapters, 17 lab records, locale matrix, chapter

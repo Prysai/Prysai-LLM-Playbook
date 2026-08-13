@@ -2,7 +2,7 @@
   "schema_version": "1",
   "last_reviewed": "2026-08-12",
   "description": "The canonical directory map for reader-facing material, practice, research, governance, assets, tooling, and release work.",
-  "excluded_workdirs": [".git", ".work", ".codex-temp", "tmp", "_site", ".pytest_cache"],
+  "excluded_workdirs": [".git", ".work", ".codex-temp", "tmp", "_site", "output", ".pytest_cache"],
   "top_level": [
     {
       "path": ".github",

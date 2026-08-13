@@ -167,10 +167,10 @@
     ]
   },
   "skills": {
-    "count": 11,
+    "count": 12,
     "status": "candidate",
     "validator_status": "structural_checks_passed",
-    "fresh_context_status": "3_of_11_basic_pretest; 2_of_11_minimal_fresh_task_pretest; 4_of_11_static_contract_review_only; 2_of_11_structural_candidate_only",
+    "fresh_context_status": "3_of_12_basic_pretest; 3_of_12_minimal_fresh_task_pretest; 4_of_12_static_contract_review_only; 2_of_12_structural_candidate_only",
     "owner": "skills-maintainer",
     "last_reviewed": "2026-08-10",
     "next_review": "2026-11-09",
@@ -195,6 +195,7 @@
       {"id": "prysai-source-investigator", "path": "skills/prysai-source-investigator", "status": "candidate", "fresh_context_status": "minimal_fresh_task_pretest_passed; search_completeness_and_adversarial_routing_pending"}
       ,{"id": "prysai-field-signal-curator", "path": "skills/prysai-field-signal-curator", "status": "candidate", "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"}
       ,{"id": "prysai-platform-adapter-review", "path": "skills/prysai-platform-adapter-review", "status": "candidate", "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"}
+      ,{"id": "prysai-communication-failure-triage", "path": "skills/prysai-communication-failure-triage", "status": "candidate", "fresh_context_status": "three_minimal_blind_pretests_passed; cross_model_and_runtime_validation_pending"}
     ]
   },
   "supplemental_guides": {

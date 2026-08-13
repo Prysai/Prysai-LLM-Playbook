@@ -1,33 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-  <title id="title">Turn a request into evidence</title>
-  <desc id="desc">A red and black teaching board showing the path from a request through scope, action, and evidence to a bounded handoff.</desc>
-  <defs><pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#fff" stroke-opacity=".06"/></pattern></defs>
-  <rect width="1600" height="900" fill="#11151a"/><rect width="1600" height="900" fill="url(#grid)"/>
-  <path d="M0 760H1600" stroke="#fff" stroke-opacity=".16"/><path d="M1050 0V900" stroke="#fff" stroke-opacity=".12"/>
-  <g fill="#f4f1ea" font-family="Arial,Helvetica,sans-serif">
-    <text x="80" y="82" font-size="20" font-weight="700" letter-spacing="5">PRYSAI LAB / WORKING BOARD 002</text>
-    <text x="80" y="220" font-size="92" font-weight="800" letter-spacing="-4">REQUEST</text>
-    <text x="80" y="310" font-size="92" font-weight="800" letter-spacing="-4" fill="#ff5b45">→ EVIDENCE</text>
-    <text x="84" y="370" font-size="22" fill="#c8cdd2" letter-spacing="1">A task is not complete because the answer sounds certain.</text>
+  <title id="title">A claim can travel only as far as its evidence</title>
+  <desc id="desc">A hard-edged editorial evidence file showing request, scope, action, observation, and claim limit as one horizontal chain, ending at an explicit unknown boundary.</desc>
+  <rect width="1600" height="900" fill="#F3F0E9"/>
+  <g fill="#11151A" font-family="Arial,Helvetica,sans-serif">
+    <text x="72" y="70" font-size="18" font-weight="700" letter-spacing="4">PRYSAI LAB / EVIDENCE FILE 02 / REV. B</text>
+    <text x="72" y="190" font-size="86" font-weight="800" letter-spacing="-4">A CLAIM TRAVELS</text>
+    <text x="72" y="278" font-size="86" font-weight="800" letter-spacing="-4">ONLY AS FAR AS ITS</text>
+    <text x="72" y="366" font-size="86" font-weight="800" letter-spacing="-4" fill="#D62828">EVIDENCE.</text>
+    <text x="1210" y="80" font-size="14" font-weight="700" letter-spacing="2">OWNER / EVIDENCE REVIEW</text>
+    <text x="1210" y="108" font-size="14">STATUS / CANDIDATE</text>
   </g>
-  <g fill="none" stroke-linejoin="miter">
-    <path d="M100 550H250V510H540V550H780V510H950" stroke="#ff5b45" stroke-width="8"/>
-    <path d="M1120 540H1510" stroke="#f4f1ea" stroke-opacity=".8" stroke-width="3"/>
-    <path d="M1120 540L1195 470L1280 520L1380 390L1510 270" stroke="#f4f1ea" stroke-width="5"/>
+  <path d="M72 430H1528" stroke="#11151A" stroke-width="2"/>
+  <g font-family="Arial,Helvetica,sans-serif">
+    <g fill="#11151A" font-size="15" font-weight="700" letter-spacing="2">
+      <text x="72" y="492">01 / REQUEST</text><text x="348" y="492">02 / SCOPE</text><text x="624" y="492">03 / ACTION</text><text x="900" y="492">04 / OBSERVATION</text><text x="1190" y="492">05 / CLAIM LIMIT</text>
+    </g>
+    <g fill="#11151A" font-size="30" font-weight="700">
+      <text x="72" y="555">One result</text><text x="348" y="555">Named target</text><text x="624" y="555">Actual event</text><text x="900" y="555">Read-back</text><text x="1190" y="555">Narrow sentence</text>
+    </g>
+    <g fill="#5E6161" font-size="17">
+      <text x="72" y="600"><tspan x="72">“Update the page”</tspan><tspan x="72" dy="27">is still incomplete.</tspan></text>
+      <text x="348" y="600"><tspan x="348">Path, account,</tspan><tspan x="348" dy="27">authority, stop.</tspan></text>
+      <text x="624" y="600"><tspan x="624">Edit, command,</tspan><tspan x="624" dy="27">or submitted call.</tspan></text>
+      <text x="900" y="600"><tspan x="900">Diff, exit, log,</tspan><tspan x="900" dy="27">screenshot, source.</tspan></text>
+      <text x="1190" y="600"><tspan x="1190">State only what</tspan><tspan x="1190" dy="27">the record supports.</tspan></text>
+    </g>
   </g>
-  <g fill="#ff5b45"><rect x="240" y="500" width="20" height="20"/><rect x="530" y="540" width="20" height="20"/><rect x="770" y="500" width="20" height="20"/><circle cx="1195" cy="470" r="10"/><circle cx="1280" cy="520" r="10"/><circle cx="1380" cy="390" r="10"/></g>
-  <g fill="#f4f1ea" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700" letter-spacing="2">
-    <text x="86" y="650">01 / SCOPE</text><text x="330" y="650">02 / ACT</text><text x="572" y="650">03 / CHECK</text><text x="800" y="650">04 / HANDOFF</text>
-    <text x="1115" y="620">CLAIM</text><text x="1270" y="620">PROOF</text><text x="1400" y="620">LIMIT</text>
-  </g>
-  <g fill="#aeb6be" font-family="Arial,Helvetica,sans-serif" font-size="14" letter-spacing=".5">
-    <text x="85" y="700"><tspan x="85">name the target, authority,</tspan><tspan x="85" dy="24">and stop rule</tspan></text>
-    <text x="330" y="700"><tspan x="330">make one reversible</tspan><tspan x="330" dy="24">change</tspan></text>
-    <text x="572" y="700"><tspan x="572">run the smallest</tspan><tspan x="572" dy="24">useful check</tspan></text>
-    <text x="800" y="700"><tspan x="800">state what remains</tspan><tspan x="800" dy="24">unknown</tspan></text>
-    <text x="1120" y="675"><tspan x="1120">what is being</tspan><tspan x="1120" dy="24">claimed?</tspan></text>
-    <text x="1270" y="675"><tspan x="1270">what was</tspan><tspan x="1270" dy="24">observed?</tspan></text>
-    <text x="1400" y="675"><tspan x="1400">where does</tspan><tspan x="1400" dy="24">it stop?</tspan></text>
-  </g>
-  <text x="1510" y="82" text-anchor="end" fill="#ff806b" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700" letter-spacing="3">READ THE BOUNDARY. KEEP THE PROOF.</text>
+  <path d="M72 700H1340" stroke="#11151A" stroke-width="10"/>
+  <path d="M1340 700H1450" stroke="#D62828" stroke-width="10" stroke-dasharray="18 14"/>
+  <path d="M1450 665V735" stroke="#D62828" stroke-width="10"/>
+  <g fill="#D62828"><rect x="64" y="686" width="28" height="28"/><rect x="340" y="686" width="28" height="28"/><rect x="616" y="686" width="28" height="28"/><rect x="892" y="686" width="28" height="28"/><rect x="1182" y="686" width="28" height="28"/></g>
+  <g font-family="Arial,Helvetica,sans-serif"><text x="1465" y="690" fill="#D62828" font-size="18" font-weight="800" letter-spacing="2">UNKNOWN</text><text x="1465" y="718" fill="#11151A" font-size="15">STOP HERE</text></g>
+  <path d="M72 790H1528" stroke="#11151A" stroke-width="1"/>
+  <text x="72" y="835" fill="#11151A" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700">REJECTED ASSUMPTION / A CONFIDENT SUMMARY IS NOT AN OBSERVATION.</text>
+  <text x="1528" y="835" text-anchor="end" fill="#5E6161" font-family="Arial,Helvetica,sans-serif" font-size="15">SOURCE / CH. 9 · CORE-EVIDENCE-RECOVERY</text>
 </svg>

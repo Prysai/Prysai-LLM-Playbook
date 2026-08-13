@@ -1,0 +1,4 @@
+interface:
+  display_name: "Communication Failure Triage"
+  short_description: "Diagnose and retest one failed LLM interaction"
+  default_prompt: "Use $prysai-communication-failure-triage to diagnose this failed interaction and propose the smallest testable repair."

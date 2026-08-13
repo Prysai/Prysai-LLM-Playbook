@@ -49,10 +49,11 @@ def source_body(raw: str) -> str:
     return text
 
 
-def title_and_text(raw: str, fallback: str) -> tuple[str, str, str]:
+def title_and_text(raw: str, canonical_title: str) -> tuple[str, str, str]:
     body = source_body(raw)
     heading = re.search(r"(?m)^#\s+(.+?)\s*#*\s*$", body)
-    title = strip_markdown(heading.group(1)).strip() if heading else fallback
+    source_title = strip_markdown(heading.group(1)).strip() if heading else ""
+    title = canonical_title
     text = strip_markdown(body)
     text = normalize_text(text)
     if title:
@@ -94,10 +95,10 @@ def build_index() -> dict[str, Any]:
             if not record or not record.get("exists"):
                 continue
             path = ROOT / record["path"]
-            fallback_title = chapter.get("title_en") if locale == "en" else chapter.get("title_zh")
+            canonical_title = chapter.get("canonical_title_en") if locale == "en" else chapter.get("canonical_title_zh")
             title, search_text, snippet = title_and_text(
                 path.read_text(encoding="utf-8"),
-                fallback_title or content_id,
+                canonical_title or content_id,
             )
             ready = record.get("translation_status") in READY_TRANSLATIONS
             available.append(locale)

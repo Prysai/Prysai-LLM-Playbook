@@ -118,7 +118,38 @@ def main() -> int:
         "a named platform without matching first-party support was accepted",
     )
 
-    print("PAGE_TRUST_REGISTRY_TESTS_OK fixtures=13")
+    invented_core_owner = copy.deepcopy(registry)
+    invented_core_owner["records"][0]["owned_core_units"] = ["core-task-contract"]
+    require(
+        any("exactly match core-unit-map ownership" in item for item in errors_for(invented_core_owner, status)),
+        "a page claimed a core unit owned by another chapter",
+    )
+
+    missing_core_owner = copy.deepcopy(registry)
+    owner_record = next(item for item in missing_core_owner["records"] if item.get("owned_core_units"))
+    del owner_record["owned_core_units"]
+    require(
+        any("exactly match core-unit-map ownership" in item for item in errors_for(missing_core_owner, status)),
+        "mapped core ownership could disappear from page trust",
+    )
+
+    wholesale_promotion = copy.deepcopy(registry)
+    promoted_record = next(
+        item for item in wholesale_promotion["records"]
+        if item.get("owned_core_units") and item.get("curriculum_scope") == "mixed"
+    )
+    promoted_record["content_status"] = "verified"
+    promoted_status = copy.deepcopy(status)
+    next(
+        item for item in promoted_status["chapters"]["items"]
+        if item["path"] == promoted_record["canonical_path"]
+    )["status"] = "verified"
+    require(
+        any("cannot be promoted wholesale" in item for item in errors_for(wholesale_promotion, promoted_status)),
+        "a mixed page promoted its bounded universal range wholesale",
+    )
+
+    print("PAGE_TRUST_REGISTRY_TESTS_OK fixtures=16")
     return 0
 
 

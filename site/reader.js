@@ -116,9 +116,13 @@
     return `reader.html?path=${encodeURIComponent(path)}${localeQuery}${hash}`;
   }
 
-  function chapterTitle(chapter) {
+function chapterTitle(chapter) {
     return uiLanguage() === 'zh' ? chapter.title_zh : chapter.title_en;
-  }
+}
+
+function canonicalChapterTitle(chapter) {
+    return uiLanguage() === 'zh' ? chapter.canonical_title_zh : chapter.canonical_title_en;
+}
 
   function chapterPath(chapter) {
     const record = manifest.contents?.[chapter.content_id];
@@ -590,7 +594,7 @@
     }
     article.append(renderBlocks(source, selection.path));
     article.setAttribute('aria-busy', 'false');
-    const title = article.querySelector('h1')?.textContent?.trim() || selection.path;
+    const title = chapter ? canonicalChapterTitle(chapter) : article.querySelector('h1')?.textContent?.trim() || selection.path;
     buildTableOfContents();
     updateChapterRail(selection, title);
     renderBookNavigation(selection);

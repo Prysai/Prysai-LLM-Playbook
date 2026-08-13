@@ -1,10 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-  <title id="title">Four evidence lenses</title>
-  <desc id="desc">A red, black, and cream teaching board separating existence, correctness, readiness, and learning evidence.</desc>
-  <defs><pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#fff" stroke-opacity=".06"/></pattern></defs>
-  <rect width="1600" height="900" fill="#11151a"/><rect width="1600" height="900" fill="url(#grid)"/>
-  <g fill="#f4f1ea" font-family="Arial,Helvetica,sans-serif"><text x="80" y="86" font-size="20" font-weight="700" letter-spacing="5">PRYSAI LAB / REVIEW BOARD 003</text><text x="80" y="220" font-size="92" font-weight="800" letter-spacing="-4">FOUR LENSES</text><text x="80" y="310" font-size="92" font-weight="800" letter-spacing="-4" fill="#ff5b45">ONE CLAIM.</text><text x="84" y="372" font-size="22" fill="#c8cdd2" letter-spacing="1">A polished output can pass one lens and fail the next.</text></g>
-  <g stroke="#f4f1ea" stroke-opacity=".3" fill="none"><path d="M80 520H1520"/><path d="M440 460V760"/><path d="M800 460V760"/><path d="M1160 460V760"/></g>
-  <g font-family="Arial,Helvetica,sans-serif"><g fill="#ff5b45" font-size="18" font-weight="700" letter-spacing="3"><text x="86" y="500">01</text><text x="446" y="500">02</text><text x="806" y="500">03</text><text x="1166" y="500">04</text></g><g fill="#f4f1ea" font-size="32" font-weight="700"><text x="86" y="570">EXISTS</text><text x="446" y="570">CORRECT</text><text x="806" y="570">READY</text><text x="1166" y="570">LEARNED</text></g><g fill="#aeb6be" font-size="16"><text x="86" y="622">the file, page, or</text><text x="86" y="647">artifact is present</text><text x="446" y="622">the result works</text><text x="446" y="647">within the checked scope</text><text x="806" y="622">the intended reader</text><text x="806" y="647">can use it safely</text><text x="1166" y="622">a learner can explain,</text><text x="1166" y="647">operate, judge, and review</text></g></g>
-  <path d="M90 800H1510" stroke="#ff5b45" stroke-width="5"/><text x="80" y="846" fill="#f4f1ea" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" letter-spacing="2">DO NOT PROMOTE A LOWER LENS INTO A HIGHER CLAIM.</text>
+  <title id="title">Four evidence gates do not promote each other</title>
+  <desc id="desc">An editorial review docket with four unequal stacked gates for existence, correctness, usability, and learning evidence. Every gate names the additional proof and the inference it forbids.</desc>
+  <rect width="1600" height="900" fill="#11151A"/>
+  <g font-family="Arial,Helvetica,sans-serif">
+    <text x="72" y="68" fill="#F3F0E9" font-size="18" font-weight="700" letter-spacing="4">PRYSAI LAB / REVIEW DOCKET 03 / REV. B</text>
+    <text x="72" y="182" fill="#F3F0E9" font-size="82" font-weight="800" letter-spacing="-4">FOUR GATES.</text>
+    <text x="72" y="270" fill="#D62828" font-size="82" font-weight="800" letter-spacing="-4">NO FREE PROMOTION.</text>
+    <text x="72" y="322" fill="#B7BAB7" font-size="20">Each stronger claim requires evidence the lower gate cannot provide.</text>
+    <text x="1240" y="70" fill="#F3F0E9" font-size="14" font-weight="700">CASE / ONE OUTPUT</text>
+    <text x="1240" y="98" fill="#B7BAB7" font-size="14">STATUS / CANDIDATE</text>
+  </g>
+  <g font-family="Arial,Helvetica,sans-serif">
+    <rect x="72" y="398" width="1320" height="92" fill="#F3F0E9"/>
+    <rect x="1420" y="398" width="108" height="92" fill="#D62828"/>
+    <text x="96" y="435" fill="#D62828" font-size="15" font-weight="800" letter-spacing="2">GATE 01</text><text x="96" y="470" fill="#11151A" font-size="28" font-weight="800">EXISTS</text>
+    <text x="340" y="450" fill="#11151A" font-size="18">Add: path + read-back</text><text x="800" y="450" fill="#5E6161" font-size="18">Forbids: “therefore correct”</text><text x="1474" y="453" text-anchor="middle" fill="#F3F0E9" font-size="28" font-weight="800">01</text>
+    <rect x="72" y="506" width="1190" height="104" fill="#F3F0E9"/>
+    <rect x="1290" y="506" width="238" height="104" fill="#D62828"/>
+    <text x="96" y="545" fill="#D62828" font-size="15" font-weight="800" letter-spacing="2">GATE 02</text><text x="96" y="584" fill="#11151A" font-size="30" font-weight="800">CORRECT IN SCOPE</text>
+    <text x="440" y="558" fill="#11151A" font-size="18">Add: fixed check + failure case</text><text x="900" y="558" fill="#5E6161" font-size="18">Forbids: “therefore usable”</text><text x="1409" y="566" text-anchor="middle" fill="#F3F0E9" font-size="30" font-weight="800">02</text>
+    <rect x="72" y="626" width="1030" height="116" fill="#F3F0E9"/>
+    <rect x="1130" y="626" width="398" height="116" fill="#D62828"/>
+    <text x="96" y="668" fill="#D62828" font-size="15" font-weight="800" letter-spacing="2">GATE 03</text><text x="96" y="712" fill="#11151A" font-size="32" font-weight="800">USABLE BY THE READER</text>
+    <text x="510" y="684" fill="#11151A" font-size="18">Add: task observation + boundary review</text><text x="1329" y="692" text-anchor="middle" fill="#F3F0E9" font-size="18" font-weight="800">NOT “LEARNED”</text>
+    <rect x="72" y="758" width="850" height="94" fill="#F3F0E9"/>
+    <rect x="950" y="758" width="578" height="94" fill="#D62828"/>
+    <text x="96" y="796" fill="#D62828" font-size="15" font-weight="800" letter-spacing="2">GATE 04</text><text x="96" y="833" fill="#11151A" font-size="30" font-weight="800">LEARNED + TRANSFERRED</text>
+    <text x="510" y="790" fill="#11151A" font-size="17">Add: delayed, unaided, changed-case evidence</text><text x="1239" y="815" text-anchor="middle" fill="#F3F0E9" font-size="17" font-weight="800">NO MASTERY CLAIM BEYOND SAMPLE</text>
+  </g>
+  <path d="M72 366H1528" stroke="#F3F0E9" stroke-opacity=".35"/>
 </svg>

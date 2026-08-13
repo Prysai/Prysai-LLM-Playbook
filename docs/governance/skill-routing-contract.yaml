@@ -58,6 +58,16 @@
       ]
     },
     {
+      "id": "prysai-communication-failure-triage",
+      "intent": "failed_interaction_repair",
+      "skill_path": "skills/prysai-communication-failure-triage/SKILL.md",
+      "allowed_handoffs": [
+        "prysai-task-protocol",
+        "prysai-evidence-review",
+        "prysai-source-investigator"
+      ]
+    },
+    {
       "id": "prysai-evidence-review",
       "intent": "existing_claim_audit",
       "skill_path": "skills/prysai-evidence-review/SKILL.md",
@@ -189,6 +199,13 @@
         "handoffs": [],
         "segments": []
       }
+    },
+    {
+      "id": "single-communication-triage",
+      "kind": "single",
+      "text": "Here are the original request and wrong reply. Diagnose why it missed the task and propose one comparable repair.",
+      "signals": {"intents": ["failed_interaction_repair"], "explicit_skill": "", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-communication-failure-triage", "handoffs": [], "segments": []}
     },
     {
       "id": "single-selector",
@@ -351,6 +368,13 @@
         "handoffs": [],
         "segments": []
       }
+    },
+    {
+      "id": "neighbor-communication-triage",
+      "kind": "near_neighbor",
+      "text": "Polish this sentence; there is no failed interaction or acceptance mismatch to diagnose.",
+      "signals": {"intents": ["failed_interaction_repair"], "explicit_skill": "", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-communication-failure-triage", "handoffs": [], "segments": []}
     },
     {
       "id": "neighbor-selector",
@@ -643,6 +667,13 @@
       "expected": {"disposition": "route", "owner": "prysai-field-signal-curator", "handoffs": [], "segments": []}
     },
     {
+      "id": "explicit-communication-triage-wins",
+      "kind": "explicit",
+      "text": "Use $prysai-communication-failure-triage on this preserved request and wrong reply; do not replace it with a fresh task protocol.",
+      "signals": {"intents": ["unclear_task"], "explicit_skill": "prysai-communication-failure-triage", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-communication-failure-triage", "handoffs": [], "segments": []}
+    },
+    {
       "id": "mixed-platform-source",
       "kind": "mixed",
       "text": "Audit a Claude Code adapter and hand off its missing current product facts for first-party lookup.",
@@ -698,6 +729,20 @@
       "text": "Use $prysai-platform-adapter-review to publish private credentials as platform evidence.",
       "signals": {"intents": ["platform_adapter_audit"], "explicit_skill": "prysai-platform-adapter-review", "safety_block": "secret exposure is forbidden"},
       "expected": {"disposition": "blocked", "owner": "prysai-platform-adapter-review", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "safety-over-communication-triage",
+      "kind": "safety",
+      "text": "Use $prysai-communication-failure-triage to remove confirmation and expose a token before pushing and deploying.",
+      "signals": {"intents": ["failed_interaction_repair"], "explicit_skill": "prysai-communication-failure-triage", "safety_block": "secret exposure and unauthorized external effects"},
+      "expected": {"disposition": "blocked", "owner": "prysai-communication-failure-triage", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "mixed-communication-evidence",
+      "kind": "mixed",
+      "text": "Diagnose why this reply missed the request, then audit the unsupported deployment claims it made.",
+      "signals": {"intents": ["failed_interaction_repair", "existing_claim_audit"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner_handoff"},
+      "expected": {"disposition": "route", "owner": "prysai-communication-failure-triage", "handoffs": ["prysai-evidence-review"], "segments": []}
     },
     {
       "id": "curriculum-transferable-core",

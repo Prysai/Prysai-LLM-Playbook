@@ -11,7 +11,13 @@ def main() -> int:
     base=routing.load_contract(); require(not routing.validate_contract(base), "checked-in contract invalid")
     duplicate=copy.deepcopy(base); duplicate["skills"][1]["intent"]=duplicate["skills"][0]["intent"]
     require(any("one owner" in e for e in routing.validate_contract(duplicate)), "multi-owner intent accepted")
-    loop=copy.deepcopy(base); loop["skills"][2]["allowed_handoffs"]=["prysai-research-router"]
+    loop=copy.deepcopy(base)
+    # Add a back edge to a checked-in forward edge. Choosing fixed indexes made
+    # this fixture silently stop being cyclic when the Skill registry grew.
+    source=next(skill for skill in loop["skills"] if skill["allowed_handoffs"])
+    target=source["allowed_handoffs"][0]
+    target_record=next(skill for skill in loop["skills"] if skill["id"] == target)
+    target_record["allowed_handoffs"].append(source["id"])
     require(any("acyclic" in e for e in routing.validate_contract(loop)), "routing loop accepted")
     self_handoff=copy.deepcopy(base); self_handoff["skills"][0]["allowed_handoffs"].append("prysai-codex-coach")
     require(any("self handoff" in e for e in routing.validate_contract(self_handoff)), "self handoff accepted")

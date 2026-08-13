@@ -48,6 +48,8 @@
         {"id": "starter-task-contract-fixtures", "argv": ["{python}", "scripts/test_starter_task_contract.py"]},
         {"id": "page-trust-registry", "argv": ["{python}", "scripts/validate_page_trust_registry.py"]},
         {"id": "page-trust-registry-fixtures", "argv": ["{python}", "scripts/test_page_trust_registry.py"]},
+        {"id": "core-unit-map", "argv": ["{python}", "scripts/validate_core_unit_map.py"]},
+        {"id": "core-unit-map-fixtures", "argv": ["{python}", "scripts/test_core_unit_map.py"]},
         {"id": "update-registry", "argv": ["{python}", "scripts/validate_update_registry.py"]},
         {"id": "content-status", "argv": ["{python}", "scripts/validate_content_status.py"]},
         {"id": "content-status-run-projection-fixtures", "argv": ["{python}", "scripts/test_content_status_run_projections.py"]},
@@ -58,7 +60,8 @@
         {"id": "github-templates", "argv": ["{python}", "scripts/validate_github_templates.py"]},
         {"id": "localization", "argv": ["{python}", "scripts/validate_localization.py"]},
         {"id": "site-i18n", "argv": ["{python}", "scripts/validate_site_i18n.py"]},
-        {"id": "book-navigation", "argv": ["{python}", "scripts/validate_book_navigation.py"]}
+        {"id": "book-navigation", "argv": ["{python}", "scripts/validate_book_navigation.py"]},
+        {"id": "book-navigation-title-fixtures", "argv": ["{python}", "scripts/test_book_navigation_titles.py"]}
       ]
     },
     {

@@ -14,6 +14,7 @@ from urllib.parse import urlparse
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "docs/governance/page-trust-registry.yaml"
 CONTENT_STATUS = ROOT / "docs/governance/content-status.yaml"
+CORE_UNIT_MAP = ROOT / "docs/governance/core-unit-map.yaml"
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 CONTENT_ID_RE = re.compile(r"<!--\s*content_id:\s*([^|\s]+)")
 STATUSES = {"draft", "candidate", "verified", "production-ready"}
@@ -65,8 +66,27 @@ def parse_date(value: Any, label: str, errors: list[str]) -> date | None:
     return date.fromisoformat(value)
 
 
-def validate_document(registry: dict[str, Any], content_status: dict[str, Any]) -> list[str]:
+def core_ownership_by_path(core_map: dict[str, Any]) -> dict[str, set[str]]:
+    ownership: dict[str, set[str]] = {}
+    for unit in core_map.get("units", []):
+        if not isinstance(unit, dict):
+            continue
+        owner_path = unit.get("owner_path")
+        unit_id = unit.get("id")
+        if isinstance(owner_path, str) and isinstance(unit_id, str):
+            ownership.setdefault(owner_path, set()).add(unit_id)
+    return ownership
+
+
+def validate_document(
+    registry: dict[str, Any],
+    content_status: dict[str, Any],
+    core_map: dict[str, Any] | None = None,
+) -> list[str]:
     errors: list[str] = []
+    if core_map is None:
+        core_map = load_object(CORE_UNIT_MAP)
+    expected_core_ownership = core_ownership_by_path(core_map)
     if registry.get("schema_version") != "2":
         errors.append("schema_version must be '2'")
     generated_at = parse_date(registry.get("generated_at"), "generated_at", errors)
@@ -131,6 +151,28 @@ def validate_document(registry: dict[str, Any], content_status: dict[str, Any]) 
         curriculum_scope = record.get("curriculum_scope")
         if curriculum_scope not in CURRICULUM_SCOPES:
             errors.append(f"{label}: curriculum_scope is not controlled")
+        declared_units = record.get("owned_core_units")
+        if declared_units is None:
+            declared_unit_set: set[str] = set()
+        elif not isinstance(declared_units, list) or not all(
+            isinstance(item, str) and item.strip() for item in declared_units
+        ) or len(declared_units) != len(set(declared_units)):
+            errors.append(f"{label}: owned_core_units must be a unique string list")
+            declared_unit_set = set()
+        else:
+            declared_unit_set = set(declared_units)
+        expected_units = expected_core_ownership.get(path_value or "", set())
+        if declared_unit_set != expected_units:
+            errors.append(
+                f"{label}: owned_core_units must exactly match core-unit-map ownership; "
+                f"expected={sorted(expected_units)}"
+            )
+        if expected_units and curriculum_scope == "mixed" and record.get("content_status") in {
+            "verified", "production-ready"
+        }:
+            errors.append(
+                f"{label}: a mixed page owning a core range cannot be promoted wholesale"
+            )
         platforms = record.get("platforms")
         if not isinstance(platforms, list) or not platforms or not all(
             isinstance(item, str) and item.strip() for item in platforms
@@ -252,7 +294,8 @@ def main() -> int:
     try:
         registry = load_object(REGISTRY)
         content_status = load_object(CONTENT_STATUS)
-        errors = validate_document(registry, content_status)
+        core_map = load_object(CORE_UNIT_MAP)
+        errors = validate_document(registry, content_status, core_map)
     except (OSError, UnicodeError, json.JSONDecodeError, ValueError) as exc:
         errors = [str(exc)]
         registry = {"records": []}
