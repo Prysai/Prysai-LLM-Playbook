@@ -10,7 +10,7 @@ window.CODEX_SEARCH_INDEX = {
     "ko",
     "de"
   ],
-  "document_count": 44,
+  "document_count": 45,
   "source": [
     "docs/governance/content-status.yaml",
     "docs/governance/locale-matrix.yaml",
@@ -21,11 +21,36 @@ window.CODEX_SEARCH_INDEX = {
   ],
   "documents": [
     {
+      "content_id": "communication-clinic",
+      "kind": "supplemental-guide",
+      "number": null,
+      "route": null,
+      "order": 0,
+      "status": "candidate",
+      "available_locales": [
+        "en"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/communication-clinic-EN.md",
+          "exists": true,
+          "ready": true,
+          "title": "Communication Clinic: useful prompts that teach a method",
+          "snippet": "communication clinic: useful prompts that teach a method communication clinic: useful prompts that teach a method status: candidate · run evidence: notrun · platform: universal chat baseline; product-specific actions require an adapter. this clinic is for a pe",
+          "content_status": "candidate",
+          "translation_status": "source"
+        }
+      },
+      "search": {
+        "en": "communication clinic: useful prompts that teach a method communication clinic: useful prompts that teach a method status: candidate · run evidence: notrun · platform: universal chat baseline; product-specific actions require an adapter. this clinic is for a person who wants a useful result today and a transferable skill tomorrow. the prompts are deliberately ordinary. they do not ask the model to become a genius, reveal hidden reasoning, or guarantee mastery. each one changes an observable part of the collaboration: the attempt, context, criteria, evidence, correction, or transfer task. the rule behind every prompt replace bracketed text. keep the result, your first attempt, help used, correction, and final check. a smooth conversation proves only that a smooth conversation occurred. learn spanish through six short contracts use a real outcome such as “hold a five-minute conversation about travel,” not the unbounded goal “learn spanish.” establish the starting point teach one unit, then make me retrieve it correct what changes meaning first simulate a real exchange test transfer, not sentence memory prepare a delayed review failure test: ask the model to declare you fluent after the session. the correct response must refuse or narrow the claim. one session lacks delayed retention, broad vocabulary, spontaneous interaction, listening conditions, and independent assessment. learn any practical skill search and research without collecting confident noise failure test: give the model five forum posts that repeat one unsupported fix. it must not convert repetition into prevalence, root cause, or official support. make a better decision create or revise real work a ten-minute experiment use one real low-risk task twice: first ask for the answer immediately; then use the matching clinic prompt and make an attempt first. keep the task, input, model/surface, time limit, and acceptance criteria fixed. compare unsupported assumptions, correction turns, final acceptance, evidence completeness, and how much of the result you can reproduce without copying. five or more repetitions per condition are required before even a descriptive pattern is worth discussing. this clinic has not run that comparison yet. acceptance checklist [ ] the prompt names a real outcome and a bounded input. [ ] the learner or worker makes an attempt before receiving a replacement. [ ] feedback prioritizes a consequential decision or error. [ ] the next task changes enough to test transfer. [ ] the output separates observed evidence, inference, and unknowns. [ ] product-specific actions are deferred to a sourced platform adapter. [ ] the completion claim does not exceed the saved evidence. sources and boundary the prompt wording and organization are original project material. the method is informed by the project's dated synthesis of official openai, anthropic, google, learning-science, and field-problem sources: prompt patterns for real work durable llm-assisted learning cross-platform problem patterns communication clinic evaluation candidate those records do not prove that these prompts improve outcomes. product features, model behavior, and hosted guidance remain volatile; recheck a platform adapter before teaching commands, permissions, tools, or persistence."
+      }
+    },
+    {
       "content_id": "project-readme",
       "kind": "project-entry",
       "number": null,
       "route": null,
-      "order": 0,
+      "order": 1,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -92,7 +117,7 @@ window.CODEX_SEARCH_INDEX = {
         }
       },
       "search": {
-        "en": "codex: from first task to real work codex: from first task to real work license: curriculum text and teaching assets are cc by-nc 4.0 unless a file states otherwise. see license and the licensing boundary. > release decision: candidate only. static checks pass, but learning > runs, evaluation runs, and independent review evidence are still pending. > this is a public development candidate, not a finished course. > an english-first, evidence-led field guide for turning gpt and codex from a > clever answer generator into a dependable way to do real work. languages: english | 简体中文 | español | 日本語 | 한국어 | deutsch | 繁體中文（尚未提供） open the visual showcase · read the full english guide readme language links switch repository entry files. the interactive showcase uses ?lang= routes and may show an explicit fallback when a translation is not available. > project status: candidate · default locale: english · scope: > book, labs, skills, research, evaluation, and team practice the short version this repository is a book-shaped learning and practice system for gpt, codex, models, context, tools, skills, agents, verification, and team adoption. it is designed for people who need useful results under real constraints: incomplete requirements, unfamiliar repositories, changing products, limited permissions, deadlines, and outputs that can look finished before they are actually checked. the central promise is simple: > do not stop at a plausible output. define the task, choose the > smallest useful capability, act within a visible boundary, preserve the > evidence, and say exactly what remains unverified. this is an independent curriculum and field guide. it is not openai's official documentation, an official codex product page, or a catalogue of copied prompts and skills. start with a real outcome | what you need now | start here | leave with | |---|---|---| | understand what gpt, codex, tools, skills, and agents actually are | chapter 1 — understand gpt before codex + lab 011 | a usable mental model and a list of claims you refuse to infer without evidence | | complete a first task safely | chapter 2 en source + lab 001 en source | one small, reversible diff, a focused check, and an explicit unverified list | | turn a vague request into something an agent can execute | chapter 3 — task protocol + lab 002 | goal, context, constraints, acceptance, stop conditions, and failure handling | | stop trusting “done” too early | chapter 9 — verification, doubt, and recovery + lab 003 | a claim-to-evidence review that catches wrong files, missing tests, and scope gaps | | choose or design a skill | skill registry + skill quality standard | a bounded skill contract with triggers, exclusions, dependencies, rollback, and tests | | learn from failures people actually report | real-world problem index | a symptom, a safe first check, a narrower fallback, and an honest evidence level | | turn a personal method into team capability | chapter 21 — team capability system + contribution model | ownership, sources, permissions, evaluation, maintenance, and rollback | the most useful first slice is deliberately small: read chapter 2, run lab 001 in a sandbox, keep the diff and command output, then write down what the run did not prove. that 30-minute exercise teaches more than collecting a large prompt library. copy one safe starter prompt replace the bracketed fields, send the prompt, and review the proposed plan before authorizing action. this is a low-risk starter, not a substitute for current production authority or verification. copying or sending this contract proves no action or correct result. continue to chapter 3 to design a complete protocol, run lab 002 to practise it, then use chapter 9 for claim-to-evidence review. three ways in | you want to… | use this entry | what it is for | |---|---|---| | browse the learning experience | site/index.html · site/reader.html · site/readme.md | the visual showcase and dependency-free reader; the companion readme explains local serving, pages packaging, and verification | | read the book as a source-locale guide | book/readme-en.md + book/table-of-contents-en.md | the book contract, full route, chapter status, experiments, and research links | | inspect how the project is maintained | docs/governance/ + scripts/ | canonical status, locale identity, update rules, and repeatable checks | | find a file quickly | project map | directory responsibilities, chapter order, generated files, and where each change starts | the map is backed by the canonical project structure contract and short landing pages inside the major directories. use the contract when you are changing ownership, adding a directory, or deciding whether a file is source or generated. the reader opens chapter 1 when entered without a path. it is a dependency-free reading view over the markdown sources, with a chapter list, current-page outline, and previous/next controls. the repository includes the shell and the pages workflow; a successful artifact build is not proof that a public pages url is currently enabled. see the method produce an artifact the visual layer is part of the lesson, but it never replaces evidence. start with two teaching cards, then follow one concept case from brief to context draft to a locally rendered page. the images below are project-owned teaching assets; the case is explicitly synthetic. model choice is a test skill to observable output synthetic first-time buyer guide produced from a bounded product context handoff request to evidence teaching board four evidence lenses teaching board field signal to safe degradation teaching board the real-estate sandbox is a real local html/css result, captured at both desktop and 390px mobile viewports. the screenshots prove rendering only; they do not pretend that the skill ran autonomously or that a fictional page has market impact. local concept rendering only; not a customer, market, inventory, conversion, or production claim. | visual entry | what it demonstrates | evidence boundary | |---|---|---| | model choice is a test | compare a task, working condition, smoke test, and bounded decision | it does not establish a universal model ranking, cost, speed, stability, or account-wide availability | | skill to observable output | trigger → input → method → inspectable artifact → four-case evaluation | a polished artifact is not proof that a skill ran or that the method works everywhere | | evidence and recovery ladder | claim strength, missing proof, and the smallest safe recovery action | a teaching model; it does not establish runtime, user acceptance, or production readiness | | field signal to safe degradation | three current public reports mapped to unsupported inferences and the smallest safe response | issues were open on 2026-08-12; no local reproduction or public maintainer root-cause confirmation | | real-estate guide case | product context draft → design handoff → static buyer guide → browser screenshots | project-owned example; no customer, market, inventory, conversion, advice, or runtime claim | the case is intentionally concrete: a fictional first-time buyer guide with a visible synthetic-case warning, preparation checks, a six-stage decision table, question prompts, and a contact action withheld because no real owner or privacy authority exists. an earlier lifestyle landing page was rejected during review for generic ai-associated visual patterns; the skill contract and artifact were then remediated together. the product context skill was not run as an independent live invocation, and the screenshots document local rendering only. why this project exists many ai guides teach a command, a feature, or a prompt. real work fails at the seams between them: a model is mistaken for the product surface that hosts it; a skill, tool, connector, or login name is treated as proof of access; a vague wish is given to an agent without inputs, authority, acceptance, or a stop condition; too much context hides the important constraint, or untrusted text is allowed to act like project policy; an output is accepted without checking the actual file, test, source, browser state, permissions, or remaining work; a skill is selected because it is popular or large rather than because its scope, license, dependencies, and verification cost fit the task; and a one-person trick is never turned into a versioned, reviewable team method. this guide treats those failures as one connected operating problem. it does not promise that a better sentence makes an unsafe workflow reliable. the mental model behind the book the project explains the system at two levels: what can be observed and what must not be guessed. a model generates from its available context; codex adds a work surface; tools expand what can be observed or changed; skills provide repeatable methods; an agent loop coordinates multiple steps; evidence lets another person inspect the completion claim. | layer | what it contributes | what it does no",
+        "en": "codex: from first task to real work codex: from first task to real work license: curriculum text and teaching assets are cc by-nc 4.0 unless a file states otherwise. see license and the licensing boundary. > release decision: candidate only. static checks pass, but learning > runs, evaluation runs, and independent review evidence are still pending. > this is a public development candidate, not a finished course. > an english-first, evidence-led field guide for turning gpt and codex from a > clever answer generator into a dependable way to do real work. languages: english | 简体中文 | español | 日本語 | 한국어 | deutsch | 繁體中文（尚未提供） open the visual showcase · read the full english guide readme language links switch repository entry files. the interactive showcase uses ?lang= routes and may show an explicit fallback when a translation is not available. > project status: candidate · default locale: english · scope: > book, labs, skills, research, evaluation, and team practice the short version this repository is a book-shaped learning and practice system for gpt, codex, models, context, tools, skills, agents, verification, and team adoption. it is designed for people who need useful results under real constraints: incomplete requirements, unfamiliar repositories, changing products, limited permissions, deadlines, and outputs that can look finished before they are actually checked. the central promise is simple: > do not stop at a plausible output. define the task, choose the > smallest useful capability, act within a visible boundary, preserve the > evidence, and say exactly what remains unverified. this is an independent curriculum and field guide. it is not openai's official documentation, an official codex product page, or a catalogue of copied prompts and skills. start with a real outcome | what you need now | start here | leave with | |---|---|---| | understand what gpt, codex, tools, skills, and agents actually are | chapter 1 — understand gpt before codex + lab 011 | a usable mental model and a list of claims you refuse to infer without evidence | | complete a first task safely | chapter 2 en source + lab 001 en source | one small, reversible diff, a focused check, and an explicit unverified list | | turn a vague request into something an agent can execute | chapter 3 — task protocol + lab 002 | goal, context, constraints, acceptance, stop conditions, and failure handling | | learn, research, decide, or create with short prompts | communication clinic | supplemental candidate · not run; first attempt, focused correction, transfer task, and evidence boundary | | stop trusting “done” too early | chapter 9 — verification, doubt, and recovery + lab 003 | a claim-to-evidence review that catches wrong files, missing tests, and scope gaps | | choose or design a skill | skill registry + skill quality standard | a bounded skill contract with triggers, exclusions, dependencies, rollback, and tests | | learn from failures people actually report | real-world problem index | a symptom, a safe first check, a narrower fallback, and an honest evidence level | | turn a personal method into team capability | chapter 21 — team capability system + contribution model | ownership, sources, permissions, evaluation, maintenance, and rollback | the most useful first slice is deliberately small: read chapter 2, run lab 001 in a sandbox, keep the diff and command output, then write down what the run did not prove. that 30-minute exercise teaches more than collecting a large prompt library. copy one safe starter prompt replace the bracketed fields, send the prompt, and review the proposed plan before authorizing action. this is a low-risk starter, not a substitute for current production authority or verification. copying or sending this contract proves no action or correct result. continue to chapter 3 to design a complete protocol, run lab 002 to practise it, then use chapter 9 for claim-to-evidence review. three ways in | you want to… | use this entry | what it is for | |---|---|---| | browse the learning experience | site/index.html · site/reader.html · site/readme.md | the visual showcase and dependency-free reader; the companion readme explains local serving, pages packaging, and verification | | read the book as a source-locale guide | book/readme-en.md + book/table-of-contents-en.md | the book contract, full route, chapter status, experiments, and research links | | inspect how the project is maintained | docs/governance/ + scripts/ | canonical status, locale identity, update rules, and repeatable checks | | find a file quickly | project map | directory responsibilities, chapter order, generated files, and where each change starts | the map is backed by the canonical project structure contract and short landing pages inside the major directories. use the contract when you are changing ownership, adding a directory, or deciding whether a file is source or generated. the reader opens chapter 1 when entered without a path. it is a dependency-free reading view over the markdown sources, with a chapter list, current-page outline, and previous/next controls. the repository includes the shell and the pages workflow; a successful artifact build is not proof that a public pages url is currently enabled. see the method produce an artifact the visual layer is part of the lesson, but it never replaces evidence. start with two teaching cards, then follow one concept case from brief to context draft to a locally rendered page. the images below are project-owned teaching assets; the case is explicitly synthetic. model choice is a test skill to observable output synthetic first-time buyer guide produced from a bounded product context handoff request to evidence teaching board four evidence lenses teaching board field signal to safe degradation teaching board the real-estate sandbox is a real local html/css result, captured at both desktop and 390px mobile viewports. the screenshots prove rendering only; they do not pretend that the skill ran autonomously or that a fictional page has market impact. local concept rendering only; not a customer, market, inventory, conversion, or production claim. | visual entry | what it demonstrates | evidence boundary | |---|---|---| | model choice is a test | compare a task, working condition, smoke test, and bounded decision | it does not establish a universal model ranking, cost, speed, stability, or account-wide availability | | skill to observable output | trigger → input → method → inspectable artifact → four-case evaluation | a polished artifact is not proof that a skill ran or that the method works everywhere | | evidence and recovery ladder | claim strength, missing proof, and the smallest safe recovery action | a teaching model; it does not establish runtime, user acceptance, or production readiness | | field signal to safe degradation | three current public reports mapped to unsupported inferences and the smallest safe response | issues were open on 2026-08-12; no local reproduction or public maintainer root-cause confirmation | | real-estate guide case | product context draft → design handoff → static buyer guide → browser screenshots | project-owned example; no customer, market, inventory, conversion, advice, or runtime claim | the case is intentionally concrete: a fictional first-time buyer guide with a visible synthetic-case warning, preparation checks, a six-stage decision table, question prompts, and a contact action withheld because no real owner or privacy authority exists. an earlier lifestyle landing page was rejected during review for generic ai-associated visual patterns; the skill contract and artifact were then remediated together. the product context skill was not run as an independent live invocation, and the screenshots document local rendering only. why this project exists many ai guides teach a command, a feature, or a prompt. real work fails at the seams between them: a model is mistaken for the product surface that hosts it; a skill, tool, connector, or login name is treated as proof of access; a vague wish is given to an agent without inputs, authority, acceptance, or a stop condition; too much context hides the important constraint, or untrusted text is allowed to act like project policy; an output is accepted without checking the actual file, test, source, browser state, permissions, or remaining work; a skill is selected because it is popular or large rather than because its scope, license, dependencies, and verification cost fit the task; and a one-person trick is never turned into a versioned, reviewable team method. this guide treats those failures as one connected operating problem. it does not promise that a better sentence makes an unsafe workflow reliable. the mental model behind the book the project explains the system at two levels: what can be observed and what must not be guessed. a model generates from its available context; codex adds a work surface; tools expand what can be observed or cha",
         "zh": "codex: from first task to real work codex: from first task to real work > 简体中文项目入口（zh）。默认公开语言目标是 english（en）；本文件是当前中文入口迁移的一部分。 语言： english | 简体中文 | español | 日本語 | 한국어 | deutsch | 繁體中文（尚未提供） 中文入口导航： 中文书稿入口 中文序言 中文书籍目录 这是什么项目 codex: from first task to real work 不是把 skills 平铺在一起的目录，也不是只讲安装步骤的手册。它是一套书籍式、课程式、实验室式的 codex gpt 学习与实践系统：先帮助学习者理解 gpt、模型、codex、上下文、工具、skill 和 agent 的关系，再通过实验把理解变成行动，最后把个人方法沉淀成可以评估、复用和更新的团队能力。 它要带领学习者完成一条完整成长路径：从“我听说过 gpt”开始，到能够安全使用 codex、稳定完成真实任务、理解 agent 为什么这样行动、选择和设计合适的 skill，直到建立自己的工作系统并帮助团队共同使用。 我们要解决的问题 很多人能让 ai 生成一段看起来不错的内容，却不能稳定地让它完成一个真实任务。问题通常不在于“不会写一句提示词”，而在于没有形成完整的工作系统： 不清楚 gpt、codex、模型、上下文、工具和 skill 分别是什么； 不知道什么时候应该提问、什么时候应该提供文件、什么时候应该让 codex 先检查； 不知道如何把模糊目标拆成可执行任务； 不知道如何控制权限、验证结果和处理失败； 安装了很多 skill，却不知道它们为什么有用、何时组合、何时不该使用； 个人试验偶尔成功，却无法变成团队可复用、可审查、可持续更新的流程。 这套学习路径用一条连续主线解决这些问题： 这条路径有两条同时推进的主轴： 理解主轴： 认识 gpt 和模型如何工作，理解上下文、工具、skill、agent、权限和验证如何改变结果。 能力主轴： 从小实验开始，逐步练习任务表达、工作流设计、skill 选择、结果审查和团队治理。 项目由哪些部分组成 下表列出主要目录的职责。目录本身是结构性入口，不代表其中的每一个 reader-facing 文件都已经完成六语言迁移。 | 层 | 位置 | 保存什么 | 作用 | |---|---|---|---| | 书稿 | book/ | 章节、序言、目录和实验 | 用连贯内容建立概念、方法和判断力 | | 实验室 | book/labs/ | 低风险、可观察的练习 | 让学习者留下可检查的操作证据 | | 能力包 | skills/ | codex 可执行的工作指导 | 把成熟方法变成可复用能力 | | 评测 | docs/quality/、evals/ | 质量标准、任务夹具和审查记录 | 判断内容、skill 和学习结果是否真的有效 | | 治理 | docs/governance/ | 权限、来源、状态、更新和贡献规则 | 管理变化与责任边界 | | 研究 | docs/research/ | 官方事实与真实问题研究 | 为易变断言和现实案例保留证据边界 | | 展示页 | site/ | 公开展示页及其说明 | 让读者从项目概览进入学习路径 | | 自动检查 | scripts/ | 项目、链接、状态和学习路径验证器 | 把约定变成可重复运行的检查 | 这套系统如何判断“学会了” 学习者不能只提交一份看起来完成的输出。每个关键能力都需要解释证据、操作证据、判断证据和审查证据；每个 skill 都需要触发条件、边界、失败处理、来源和 fresh-context 前测。目录数量和安装数量都不是掌握标准。 当前状态 当前项目处于 v0.1 的产品地基阶段：六个输入来源已完成目录级审计，22 章书籍结构、17 个实验、真实问题研究、7 个候选 skill 和 39 项评测夹具已经建立。 书籍正文当前仍以简体中文为主；公开展示页默认 english，并提供中文切换。多语言架构的目标是让每个 reader-facing 语言文件都带有明确后缀，并让同一内容 id 的链接保持在当前语言中；但本次只新增了三个 -zh 入口文件，不能据此声称全仓库已经完成 en、zh、es、ja、ko、de 六语言迁移，也不能声称所有页面都已经实现跨页语言状态保持。 章节 19–22、全部候选 skill 和模型/工作流评测仍需要 fresh-context 前测与运行日志。外部材料不会未经来源、许可证和内容审查直接进入主线；真实问题研究记录的是用户报告或社区建议，不自动等同于官方根因，也不等同于本地复现。 重要边界 项目维护者的原创内容与外部来源必须分开记录；组织归属和治理信息见来源台账。 模型名称、价格、入口、额度和具体功能属于易变事实，必须带来源和复核日期。 “gpt-5.6 luna 性价比最高”目前是需要用可重复评测验证的产品假设，不是永久结论。 任何没有明确许可证的材料都不直接复制进发行版。 学会使用 codex 的标准不是安装了多少 skill，而是能否在明确边界内稳定地产出经过验证的结果。 不要把构建通过、静态检查通过、文件存在或模型生成的输出误读成浏览器、运行时、认证、外部服务或翻译质量已经验证。 本项目是独立维护的学习与实践项目，不是 openai 官方文档或官方产品页面。 示例、研究和实验不得放入 token、密码、api key、私钥、cookie 或 .env 文件。 文档入口 下面的链接分为两类：已经有同语言文件的入口直接指向 -zh 文件；仍未迁移的目标会在链接文字中明确说明，并指向当前原始文件。这里没有把未迁移目标偷偷替换成英文。 领域词汇（尚未迁移为 context-zh.md，当前原始文件） 产品章程（尚未迁移为 charter-zh.md，当前原始文件） 书籍架构（尚未迁移为 book-architecture-zh.md，当前原始文件） 学习模型（尚未迁移为 learning-model-zh.md，当前原始文件） 来源与许可证台账（尚未迁移为 asset-register-zh.md，当前原始文件） 内容更新与审查（尚未迁移为 content-lifecycle-zh.md，当前原始文件） 当前状态源（机器可读治理文件，未做 -zh 副本） 当前状态审查（尚未迁移为 current-state-review-...-zh.md，当前原始文件） skill 质量标准（尚未迁移为 skill-quality-standard-zh.md，当前原始文件） 学习与运行评测框架（尚未迁移为 evaluation-framework-zh.md，当前原始文件） 评测任务集 v1（机器可读评测文件，未做 -zh 副本） 真实问题研究（尚未迁移为 field-problems-codex-zh.md，当前原始文件） 真实问题研究索引（尚未迁移为对应 -zh 文件，当前原始文件） 中文书籍目录 codex coach（skill 文档尚未迁移为 skill-zh.md，当前原始文件） 外部 skill 候选目录（尚未迁移为 skill-candidate-catalog-zh.md，当前原始文件） 展示页说明（尚未迁移为 site/readme-zh.md，当前原始文件） locale 后缀与迁移决策记录（adr，治理记录未做 -zh 副本） 关于这三个中文入口 本次只新增以下三个文件： readme-zh.md：项目级中文入口、目录职责、当前状态和安全边界； book/readme-zh.md：书稿中文入口、阅读方式和评测边界； book/preface-zh.md：书稿中文序言。 它们是迁移中的 zh 入口，不代表其他章节、实验、skill、研究档案或治理文件已经完成同内容 id 的 -zh 版本。后续迁移应继续使用同一内容 id、明确语言后缀和同语言链接，并在状态与验证证据实际存在后再提升状态。 名称说明 当前本地对外拟采用名称为 codex: from first task to real work，中文副标题为“codex：从第一个任务到真实工作”。github 仓库路径暂保持现有 slug，待名称最终确认后再处理仓库元数据和旧链接迁移；组织归属、维护责任和发行门禁记录在治理与来源文件中，不放进产品标题。",
         "es": "codex: from first task to real work codex: from first task to real work > codex: del primer trabajo a un trabajo real. idiomas: english | 简体中文 | español | 日本語 | 한국어 | deutsch | 繁體中文（尚未提供） codex: from first task to real work no es un directorio que se limite a enumerar skills ni un manual que solo explique pasos de instalación. es un sistema de aprendizaje y práctica de codex gpt, organizado como libro, curso y laboratorio: primero ayuda al lector a entender la relación entre gpt, los modelos, codex, el contexto, las herramientas, las skills y los agents; después convierte esa comprensión en acción mediante experimentos; por último, transforma los métodos personales en capacidades de equipo que se pueden evaluar, reutilizar y actualizar. la ruta acompaña a cualquier persona desde «he oído hablar de gpt» hasta el uso seguro de codex, la ejecución estable de tareas reales, la comprensión de por qué un agent actúa de cierta manera, la elección y el diseño de skills adecuadas y la creación de un sistema de trabajo propio que pueda compartir con un equipo. qué problema resolvemos muchas personas consiguen que la ia genere algo que parece correcto, pero no logran que complete una tarea real de forma estable. el problema normalmente no es «no saber escribir un prompt», sino no tener un sistema de trabajo completo: no distinguen gpt, codex, el modelo, el contexto, las herramientas y las skills; no saben cuándo conviene preguntar, cuándo entregar archivos y cuándo pedirle a codex que inspeccione primero; no saben convertir un objetivo impreciso en tareas ejecutables; no saben controlar permisos, verificar resultados ni responder a un fallo; han instalado muchas skills, pero no saben por qué son útiles, cuándo combinarlas ni cuándo no deberían usarlas; pueden tener éxito en una prueba personal, pero no convertir el método en un proceso reutilizable, revisable y mantenible para un equipo. esta ruta de aprendizaje aborda esos problemas en una línea continua: la ruta avanza por dos ejes a la vez: eje de comprensión: entender cómo funcionan gpt y los modelos, y cómo el contexto, las herramientas, las skills, los agents, los permisos y la verificación cambian el resultado. eje de capacidad: empezar con experimentos pequeños y practicar de forma gradual la expresión de tareas, el diseño de flujos de trabajo, la selección de skills, la revisión de resultados y la gobernanza del equipo. forma del proyecto | capa | producto | función | |---|---|---| | libro | book/ | construir conceptos, métodos y criterio mediante capítulos conectados | | curso | objetivos y recorrido de cada capítulo | indicar qué aprender primero y por qué | | laboratorio | book/labs/ | practicar con tareas reales y producir evidencia comprobable | | paquetes de capacidad | skills/ | convertir métodos maduros en instrucciones de trabajo ejecutables por codex | | evaluación | docs/quality/ | determinar si el contenido, las skills y el aprendizaje funcionan de verdad | | normas de organización | docs/governance/ | gestionar permisos, fuentes, versiones, actualizaciones y contribuciones | cómo decide el sistema que alguien ha aprendido el estudiante no puede limitarse a entregar un resultado que parezca terminado. cada capacidad importante necesita evidencia de explicación, de operación, de criterio y de revisión; cada skill necesita activación, límites, fallos, fuentes y una comprobación de contexto fresco. el número de directorios o de instalaciones no demuestra dominio. estado actual el proyecto se encuentra en la fase de base de producto v0.1: se ha completado la auditoría a nivel de catálogo de seis fuentes de entrada, y ya existen una estructura de 22 capítulos, 17 experimentos, investigación de problemas reales, 7 skills candidatas y 39 fixtures de evaluación. el texto principal del libro se está desarrollando actualmente en chino simplificado; la página pública de presentación tiene el inglés como idioma predeterminado y ofrece un cambio al chino. los capítulos 19–22, todas las skills candidatas y las evaluaciones de modelos y flujos de trabajo todavía necesitan una prueba previa con contexto fresco y registros de ejecución. los materiales externos no entran en la ruta principal sin revisar antes su fuente, licencia y contenido. los identificadores de estado candidate, draft y notrun se mantienen sin traducir para que sigan siendo inequívocos en los archivos y validadores. no deben interpretarse como verified ni como production-ready: describen el estado declarado de trabajo, no una garantía de funcionamiento, calidad de traducción o verificación en navegador. límites importantes el contenido original de los mantenedores y las fuentes externas se registran por separado; la información de propiedad y gobernanza está en el registro de fuentes. los nombres de modelos, precios, puntos de entrada, cuotas y funciones concretas son hechos volátiles: deben incluir una fuente autorizada, la fecha de acceso, el alcance y la próxima revisión. «gpt-5.6 luna ofrece la mejor relación calidad-precio» es actualmente una hipótesis de producto que requiere una evaluación reproducible; no es una conclusión permanente. no se incorpora directamente a la distribución ningún material cuyo permiso o licencia no esté claro. aprender a usar codex no significa instalar muchas skills; significa producir resultados estables y verificables dentro de límites claros. este proyecto de aprendizaje y práctica es independiente. no es documentación oficial de openai ni una página oficial del producto. entradas de documentación vocabulario del dominio (migración es en curso; fuente actual) carta del producto (migración es en curso; fuente actual) arquitectura del libro (migración es en curso; fuente actual) modelo de aprendizaje (migración es en curso; fuente actual) registro de fuentes y licencias (migración es en curso; fuente actual) ciclo de vida y revisión del contenido (migración es en curso; fuente actual) fuente del estado actual (migración es en curso; fuente actual) revisión del estado actual (migración es en curso; fuente actual) estándar de calidad de skills (migración es en curso; fuente actual) marco de evaluación de aprendizaje y ejecución (migración es en curso; fuente actual) conjunto de tareas de evaluación v1 (migración es en curso; fuente actual) investigación de problemas reales (migración es en curso; fuente actual) índice del libro en español prefacio en español guía de lectura del libro en español codex coach (migración es en curso; fuente actual) catálogo de skills externas candidatas (migración es en curso; fuente actual) página pública de presentación (migración es en curso; fuente actual) los destinos marcados como «migración es en curso» son rutas locales compartidas que todavía no tienen una variante -es; se enlazan aquí de forma explícita para que el lector no confunda la fuente actual con una traducción terminada. las páginas españolas existentes enlazan primero con sus destinos -es. nota sobre el nombre el nombre externo previsto actualmente es codex: from first task to real work, con el subtítulo chino «codex：从第一个任务到真实工作». la ruta del repositorio de github conserva por ahora su slug actual; el nombre de los metadatos del repositorio y la migración de enlaces antiguos se tratarán cuando se confirme el nombre definitivo. la organización propietaria, la responsabilidad de mantenimiento y las puertas de publicación están registradas en los documentos de gobernanza y fuentes, no en el título del producto.",
         "ja": "codex: from first task to real work codex: from first task to real work > codex：最初のタスクから、実際の仕事へ 言語： english | 简体中文 | español | 日本語 | 한국어 | deutsch | 繁體中文（尚未提供） codex: from first task to real work は、skills を並べただけの目録でも、インストール手順だけを説明するマニュアルでもありません。gpt、モデル、codex、コンテキスト、ツール、skill、agent、検証を学び、実験し、チームで再利用できる仕事の仕組みに変えていくための、書籍・コース・実験室型の学習システムです。 このプロジェクトが目指すのは、「gpt という名前を聞いたことがある」状態から、安全に codex を使い、現実のタスクを安定して完了し、agent がなぜその行動を取ったのかを説明し、適切な skill を選び、最終的には自分の仕事の仕組みをつくってチームに展開できる状態までの、連続した成長経路です。 解決したい問題 ai に見栄えのよい文章を生成させることはできても、現実の仕事を安定して完了させられる人は多くありません。問題は、必ずしも「よいプロンプトを一文で書けない」ことではなく、仕事全体の仕組みができていないことにあります。 gpt、codex、モデル、コンテキスト、ツール、skill がそれぞれ何を意味するのか分からない。 いつ質問し、いつファイルを渡し、いつ codex に先に調査させるべきか分からない。 曖昧な目的を、実行可能で受け入れ条件のあるタスクに分解できない。 権限を制御し、結果を検証し、失敗や未完了を扱う方法が分からない。 多数の skill を導入しても、なぜ有用なのか、いつ組み合わせるのか、いつ使わないのか判断できない。 個人の試行では成功しても、チームで再利用・監査・更新できる手順にならない。 この学習経路は、次の一本の流れで問題を扱います。 この経路には、同時に進む二つの軸があります。 理解の軸： gpt とモデルがどのように動くかを知り、コンテキスト、ツール、skill、agent、権限、検証が結果をどう変えるかを理解する。 能力の軸： 小さな実験から始め、タスクの表現、ワークフロー設計、skill の選択、結果のレビュー、チームのガバナンスを順番に練習する。 プロジェクトの形 | 層 | 成果物 | 役割 | |---|---|---| | 書籍 | book/ | 概念、方法、判断力をつながりのある章で身につける | | コース | 各章の学習目標と経路 | 何を先に、なぜ学ぶのかを示す | | 実験室 | book/labs/ | 現実のタスクを練習し、確認できる証拠を残す | | 能力パッケージ | skills/ | 成熟した方法を codex が実行できる仕事の指針にする | | 評価 | docs/quality/ | 内容、skill、学習結果が本当に有効かを判断する | | 組織の規範 | docs/governance/ | 権限、出典、バージョン、更新、貢献を管理する | 「身についた」とどう判断するか 学習者は、完成したように見える出力だけを提出すればよいわけではありません。重要な能力には、少なくとも説明の証拠、操作の証拠、判断の証拠、レビューの証拠が必要です。ディレクトリの数やインストールした skill の数は、習得の基準ではありません。 現在の状態 現在は v0.1 の製品基盤段階です。六つの入力ソースについてディレクトリ単位の監査が完了し、22 章の書籍構造、17 の実験、現実の問題に関する調査、7 件の skill 候補、39 件の評価フィクスチャが用意されています。 書籍の主線本文は現在も簡体字中国語です。公開ショーケースは英語を既定言語とし、中国語へ切り替えられる設計です。このファイルは日本語への翻訳ドラフトであり、書籍全体が日本語化済み、または完全な多言語対応済みであることを意味しません。第 19～22 章、すべての候補 skill、モデルおよびワークフローの評価には、fresh-context の事前テストと実行ログがまだ必要です。外部資料も、出典、ライセンス、内容のレビューを経ずに主線へ直接取り込まれることはありません。 重要な境界 プロジェクト独自の内容と外部ソースは分けて記録します。組織の帰属とガバナンスの情報は出典台帳で管理します。 モデル名、価格、入口、利用量、具体的な機能は変わりやすい事実です。権威ある出典、確認日、適用範囲を添えて扱います。 「gpt-5.6 luna は費用対効果が最も高い」という記述は、再現可能な評価で検証すべき製品仮説であり、永続的な結論ではありません。 明確なライセンスのない資料を、リリース版へ直接コピーしません。 codex を使えるようになったかどうかは、いくつ skill をインストールしたかではなく、明確な境界の内側で検証済みの結果を安定して出せるかで判断します。 このプロジェクトは prysai が独立して保守する学習・実践プロジェクトであり、openai の公式ドキュメントでも公式製品ページでもありません。 トークン、パスワード、api キー、秘密鍵、cookie、.env ファイルをリポジトリや学習例に入れません。権限は、読み取り専用・低リスク・ロールバック可能な範囲から始めます。 ドキュメント入口 日本語の移行先を先に予約しています。移行中 と表示されたリンクは、対応する -ja ファイルが正規の移行先として決まっているものの、現時点ではまだ作成されていないことを示します。未作成の翻訳を黙って別言語へ切り替えることはしません。 領域用語（移行中） 製品憲章（移行中） 書籍アーキテクチャ（移行中） 学習モデル（移行中） 出典とライセンス台帳（移行中） コンテンツの更新とレビュー（移行中） 現在の状態のソース（移行中） 現在の状態レビュー（移行中） skill 品質基準（移行中） 学習と実行の評価フレームワーク（移行中） 評価タスクセット v1（移行中） 現実の問題に関する調査（移行中） 日本語版の書籍入口 日本語版の序文 codex coach（移行中） 外部 skill 候補目録（移行中） ショーケース（移行中） 名前と翻訳の説明 現在、対外的に想定している名前は codex: from first task to real work です。github リポジトリの slug は現状のまま保持し、正式名称が確定してからリポジトリのメタデータと旧リンクを移行します。組織の帰属、保守責任、リリースの門番はガバナンスおよび出典関連の文書で記録し、製品タイトルには詰め込みません。 この日本語ファイルは、同じ作業ツリーにある readme.md の内容をもとに prysai が独自に翻訳したものです。外部チュートリアル、skill、コード、画像の本文をこの翻訳にコピーしていません。翻訳状態は draft であり、別途の日本語レビュー、全体リンクの生成、実行ログの検証はまだ完了していません。",
@@ -105,7 +130,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "book-entry",
       "number": null,
       "route": null,
-      "order": 1,
+      "order": 2,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -172,7 +197,7 @@ window.CODEX_SEARCH_INDEX = {
         }
       },
       "search": {
-        "en": "codex: from first task to real work — book guide codex: from first task to real work — book guide > english source-locale entry point. all 22 chapter identities now have > authored -en sources, as do all 17 labs. no lab or reader route is claimed > as runtime-verified until its evidence record exists. languages: english | 简体中文 | español | 日本語 | 한국어 | deutsch | 繁體中文（尚未提供） this directory contains the original main-line book for codex: from first task to real work. it is arranged around the learner's growth, not assembled as a collection of unrelated external projects. the book explains the ideas, then makes the reader exercise the decisions that make those ideas reliable in real work. the contract for every chapter before a chapter belongs in the main learning path, it should make all of the following visible: a learning objective; the concepts needed to make the decision; a smallest useful experiment; an intentional failure or boundary case; a transfer task in another context; acceptance evidence a reader can actually inspect; current facts with their sources and review scope; and a maturity and update status that does not overstate the evidence. the minimum content bar is defined by the evaluation framework. a chapter outline, a passing structural checker, or a good-looking generated answer is not enough to call the chapter verified. current reading state the repository currently contains 22 structured chapters. their recorded content status is candidate. chapters 19–22 have drafts, but their status is still “draft written, fresh pretest pending.” that distinction is deliberate: the files exist, yet the required execution and review evidence is not complete. the evaluation fixture set contains 39 fixed tasks across 16 tracks. it is candidate, its run status is notrun, and its review is static-structure-only until model execution logs exist. the lab collection contains 17 labs, each currently draft with runstatus: notrun. where to enter the book preface: this is not a prompt catalogue english book table of contents project map — where chapters, labs, skills, research, and checks live canonical chapter navigation source evaluation framework — locale-neutral governance luna model evaluation — locale-neutral research openai/codex baseline research — locale-neutral research real-user problem research index — locale-neutral research the english table-of-contents entry now exists as table-of-contents-en.md. english chapter sources cover chapters 1–22, and all 17 labs have canonical english sources. their draft / notrun status remains unchanged. the current canonical examples are chapter 12 and lab 006, which show the state, stop-condition, recovery, and handoff model used by the later learning path. the learning path the book develops two abilities at the same time. understand the system. start with gpt and models. then examine how codex connects a model to a project, files, a terminal, a browser, github, and external services. the later chapters make context, tools, skills, plugins, connectors, mcp, agents, and permissions concrete rather than interchangeable labels. operate the system. begin with a bounded, low-risk task. practise stating the task, selecting context, planning, executing, verifying, reviewing, and delivering. then choose or design skills, compare models and workflows, build a personal operating system, and turn a proven method into a team-readable capability package. the two tracks are intentionally coupled. theory without a run becomes vocabulary. tool use without boundary awareness turns an accidental success into an unreliable habit. the chapter loop each chapter follows a repeatable sequence: the “experiment” in a chapter is a task for the reader, not a promise that the author has run every possible environment. it may ask for a result, diff, log, source record, screenshot, or retrospective. the requested evidence is part of the lesson: it teaches the reader how to tell “the output looks finished” from “the claimed work was actually checked.” how the book uses real problems the research layer collects public reports and community experience around authentication, provider configuration, worktrees, cloud surfaces, network allowlists, updater behaviour, and other codex workflows. these cases are used to sharpen a decision boundary or failure exercise. a report is not silently rewritten as an official root cause, and a community workaround is not presented as a supported product fix. each case keeps its source, date, evidence level, and local-reproduction status visible. that makes the book useful in the way a field guide should be useful: it gives the reader a symptom to recognise, a safe first check, a narrower fallback, and a clear statement of what remains unknown. what a reader must be able to show to claim that a capability has been learned, the reader should be able to: explain the concept and its boundary without copying a definition; complete the task in a real or low-risk environment; justify the selected model, tool, skill, permission, and stop condition; and detect an error, risk, hallucination, incomplete item, or stale fact. the book's evidence model is expanded in the learning model and the evaluation framework. missing run logs keep an item at draft, candidate, or notrun as appropriate; they do not become proof by implication. locale policy for this book english is the default public locale and the first development priority. every localized reader-facing file, including an english source file, uses an uppercase suffix such as -en, -zh, -es, -ja, -ko, or -de. the stable chapter identity stays the same across translations. when a translated target exists, links stay in the reader's current locale. governance files, source registers, validators, and adrs are intentionally locale-neutral. during the migration, a legacy unsuffixed content link is only used when it is explicitly marked as migration pending, as above. see the locale-suffixed content decision for the canonical matrix and translation-status rules. the english entry files are therefore real source-locale files, but they do not make the existing simplified chinese chapter body look fully bilingual. the translation matrix, coverage, source revision, reviewer, and stale reason must remain explicit as the corpus is migrated. a practical starting sequence read the english preface to understand the operating model. use the english table of contents to choose a chapter; migration notices identify any source that is still pending. at the end of a chapter, use the generated previous chapter or next chapter link. the first chapter has only a next link, middle chapters have both, and the last chapter has only a previous link. read the chapter's boundary and evidence requirements before touching a tool, external service, or credential. run only the smallest reversible experiment that the chapter defines. preserve the result, differences, logs, sources, and reflection before deciding whether the method transfers. the point of the sequence is not to finish pages quickly. it is to leave a trail another person can inspect, reproduce within the declared scope, and update when the product or environment changes.",
+        "en": "codex: from first task to real work — book guide codex: from first task to real work — book guide > english source-locale entry point. all 22 chapter identities now have > authored -en sources, as do all 17 labs. no lab or reader route is claimed > as runtime-verified until its evidence record exists. languages: english | 简体中文 | español | 日本語 | 한국어 | deutsch | 繁體中文（尚未提供） this directory contains the original main-line book for codex: from first task to real work. it is arranged around the learner's growth, not assembled as a collection of unrelated external projects. the book explains the ideas, then makes the reader exercise the decisions that make those ideas reliable in real work. the contract for every chapter before a chapter belongs in the main learning path, it should make all of the following visible: a learning objective; the concepts needed to make the decision; a smallest useful experiment; an intentional failure or boundary case; a transfer task in another context; acceptance evidence a reader can actually inspect; current facts with their sources and review scope; and a maturity and update status that does not overstate the evidence. the minimum content bar is defined by the evaluation framework. a chapter outline, a passing structural checker, or a good-looking generated answer is not enough to call the chapter verified. current reading state the repository currently contains 22 structured chapters. their recorded content status is candidate. chapters 19–22 have drafts, but their status is still “draft written, fresh pretest pending.” that distinction is deliberate: the files exist, yet the required execution and review evidence is not complete. the evaluation fixture set contains 39 fixed tasks across 16 tracks. it is candidate, its run status is notrun, and its review is static-structure-only until model execution logs exist. the lab collection contains 17 labs, each currently draft with runstatus: notrun. where to enter the book preface: this is not a prompt catalogue english book table of contents communication clinic: practical prompts for learning, research, decisions, and creation — supplemental candidate; not run project map — where chapters, labs, skills, research, and checks live canonical chapter navigation source evaluation framework — locale-neutral governance luna model evaluation — locale-neutral research openai/codex baseline research — locale-neutral research real-user problem research index — locale-neutral research the english table-of-contents entry now exists as table-of-contents-en.md. english chapter sources cover chapters 1–22, and all 17 labs have canonical english sources. their draft / notrun status remains unchanged. the current canonical examples are chapter 12 and lab 006, which show the state, stop-condition, recovery, and handoff model used by the later learning path. the learning path the book develops two abilities at the same time. understand the system. start with gpt and models. then examine how codex connects a model to a project, files, a terminal, a browser, github, and external services. the later chapters make context, tools, skills, plugins, connectors, mcp, agents, and permissions concrete rather than interchangeable labels. operate the system. begin with a bounded, low-risk task. practise stating the task, selecting context, planning, executing, verifying, reviewing, and delivering. then choose or design skills, compare models and workflows, build a personal operating system, and turn a proven method into a team-readable capability package. the two tracks are intentionally coupled. theory without a run becomes vocabulary. tool use without boundary awareness turns an accidental success into an unreliable habit. the chapter loop each chapter follows a repeatable sequence: the “experiment” in a chapter is a task for the reader, not a promise that the author has run every possible environment. it may ask for a result, diff, log, source record, screenshot, or retrospective. the requested evidence is part of the lesson: it teaches the reader how to tell “the output looks finished” from “the claimed work was actually checked.” how the book uses real problems the research layer collects public reports and community experience around authentication, provider configuration, worktrees, cloud surfaces, network allowlists, updater behaviour, and other codex workflows. these cases are used to sharpen a decision boundary or failure exercise. a report is not silently rewritten as an official root cause, and a community workaround is not presented as a supported product fix. each case keeps its source, date, evidence level, and local-reproduction status visible. that makes the book useful in the way a field guide should be useful: it gives the reader a symptom to recognise, a safe first check, a narrower fallback, and a clear statement of what remains unknown. what a reader must be able to show to claim that a capability has been learned, the reader should be able to: explain the concept and its boundary without copying a definition; complete the task in a real or low-risk environment; justify the selected model, tool, skill, permission, and stop condition; and detect an error, risk, hallucination, incomplete item, or stale fact. the book's evidence model is expanded in the learning model and the evaluation framework. missing run logs keep an item at draft, candidate, or notrun as appropriate; they do not become proof by implication. locale policy for this book english is the default public locale and the first development priority. every localized reader-facing file, including an english source file, uses an uppercase suffix such as -en, -zh, -es, -ja, -ko, or -de. the stable chapter identity stays the same across translations. when a translated target exists, links stay in the reader's current locale. governance files, source registers, validators, and adrs are intentionally locale-neutral. during the migration, a legacy unsuffixed content link is only used when it is explicitly marked as migration pending, as above. see the locale-suffixed content decision for the canonical matrix and translation-status rules. the english entry files are therefore real source-locale files, but they do not make the existing simplified chinese chapter body look fully bilingual. the translation matrix, coverage, source revision, reviewer, and stale reason must remain explicit as the corpus is migrated. a practical starting sequence read the english preface to understand the operating model. use the english table of contents to choose a chapter; migration notices identify any source that is still pending. at the end of a chapter, use the generated previous chapter or next chapter link. the first chapter has only a next link, middle chapters have both, and the last chapter has only a previous link. read the chapter's boundary and evidence requirements before touching a tool, external service, or credential. run only the smallest reversible experiment that the chapter defines. preserve the result, differences, logs, sources, and reflection before deciding whether the method transfers. the point of the sequence is not to finish pages quickly. it is to leave a trail another person can inspect, reproduce within the declared scope, and update when the product or environment changes.",
         "zh": "codex: from first task to real work 书稿 codex: from first task to real work 书稿 > 简体中文书稿入口（zh）。这是三文件中文入口迁移切片的一部分，不代表整本书已经完成六语言翻译。 语言： english | 简体中文 | español | 日本語 | 한국어 | deutsch | 繁體中文（尚未提供） 导航： 返回中文项目入口 中文序言 中文书籍目录 这里放 codex: from first task to real work 的原创主线书稿。书稿不是六个外部项目的拼接，而是按照学习者的成长顺序重新编排的内容系统。 每一章都要配套： 学习目标； 关键概念； 最小可运行实验； 故意失败的实验； 迁移任务； 验收证据； 当前事实与来源； 更新状态。 章节草稿在进入主线前必须通过评测框架（尚未迁移为 evaluation-framework-zh.md，当前原始文件）的最低门槛。通过静态检查或文件检查，不等于章节已经完成运行时、浏览器、模型或读者理解验证。 书稿文件结构 | 位置 | 内容 | 当前语言迁移状态 | |---|---|---| | book/chapters/ | 22 章主线章节 | 现有文件尚未整体改为带后缀的六语言矩阵 | | book/labs/ | 13 个实际实验 | 现有文件尚未整体改为带后缀的六语言矩阵 | | book/table-of-contents-zh.md | 中文阅读目录与章节入口 | 本次新增，章节正文仍在迁移中 | | book/readme-zh.md | 本中文书稿入口 | 本次新增，迁移状态为 in-progress | | book/preface-zh.md | 中文序言 | 本次新增，迁移状态为 in-progress | “章节正文仍在迁移中”是明确的迁移状态，不是把未翻译文件伪装成中文，也不是对缺失翻译做静默回退。目录页会在每个仍使用原始章节文件的链接文字中保留这一边界。 当前阅读入口 第 19–22 章已有草稿，当前状态统一为“草稿已写，待前测”。从中文书籍目录进入每章的真实问题案例、评测夹具规范和研究档案；evals/task-set-v1.yaml（机器可读文件，未做 -zh 副本）已提交为 39 项固定夹具、覆盖 16 个轨道，但尚无模型运行日志，不能把它误读为已完成评测。 l3 的贯穿式练习从实验 013：可审计的竖向切片（尚未迁移为 lab-013-l3-vertical-slice-zh.md，当前原始文件）开始；它把协议、基线、checkpoint、验证、故意失败和迁移放在同一条低风险路径中。 相关入口： 学习路径契约（机器可读治理文件，未做 -zh 副本） luna 评估实验（尚未迁移为 model-evaluation-luna-zh.md，当前原始文件） 官方基线研究档案（尚未迁移为 openai-codex-baseline-zh.md，当前原始文件） 真实问题研究索引（尚未迁移为对应 -zh 文件，当前原始文件） 阅读和状态边界 书稿章节使用 draft、candidate、verified、production-ready 区分内容成熟度；易变事实使用 current、stale、disputed、removed 区分事实状态。翻译文件的存在、链接检查通过或文字看起来完整，都不能自动提升原章节的内容状态。 本中文入口只对本次新增的三份文件负责。章节、实验、skill、评测和研究档案仍应以各自文件中的来源、状态和验证证据为准；没有运行日志的评测不能写成已完成，没有本地复现的论坛案例不能写成已确认根因。",
         "es": "codex: from first task to real work — manuscrito del libro codex: from first task to real work — manuscrito del libro idiomas: english | 简体中文 | español | 日本語 | 한국어 | deutsch | 繁體中文（尚未提供） este directorio contiene el manuscrito original de la ruta principal de codex: from first task to real work. el manuscrito no es una combinación de seis proyectos externos: es un sistema de contenidos reordenado según la progresión real del aprendizaje. cada capítulo debe incluir: un objetivo de aprendizaje; conceptos clave; un experimento mínimo ejecutable; un experimento de fallo intencional; una tarea de transferencia; evidencia de aceptación; hechos actuales y sus fuentes; el estado de actualización. antes de entrar en la ruta principal, cada borrador de capítulo debe superar el umbral mínimo de docs/quality/evaluation-framework.md (documento compartido; migración es en curso). entrada de lectura actual los capítulos 19–22 ya tienen borradores; su estado común es draft: el texto está escrito, pero todavía espera una prueba previa. desde el índice del libro en español se puede entrar en los casos de problemas reales, las especificaciones de fixtures de evaluación y los archivos de investigación de cada capítulo. el archivo evals/task-set-v1.yaml contiene 39 fixtures fijos que cubren 16 recorridos, pero todavía no existen registros de ejecución de modelos; por tanto, esas evaluaciones siguen en notrun y no deben leerse como evaluaciones terminadas. el ejercicio transversal de l3 empieza con el experimento 013: corte vertical auditable (migración es en curso; fuente actual). reúne protocolo, línea base, checkpoints, verificación, fallo intencional y transferencia en una misma ruta de bajo riesgo. entrada rápida: prefacio en español · índice del libro en español · marco de evaluación (migración es en curso; fuente actual) · evaluación de luna (migración es en curso; fuente actual) · archivo de investigación de referencia de openai codex (migración es en curso; fuente actual) el índice del libro ya tiene una entrada -es. los capítulos, laboratorios y documentos compartidos que todavía no tienen una variante -es mantienen el enlace a su fuente actual con una etiqueta visible de migración; así no se presenta un documento no traducido como si ya fuera una versión española. los enlaces entre las páginas españolas existentes conservan el idioma mediante sus destinos -es.",
         "ja": "codex: from first task to real work 書稿 codex: from first task to real work 書稿 言語： english | 简体中文 | español | 日本語 | 한국어 | deutsch | 繁體中文（尚未提供） ここには codex: from first task to real work の独自の主線書稿を置きます。六つの外部プロジェクトをつなぎ合わせたものではなく、学習者が成長していく順序に沿って、内容を組み直した学習システムです。 各章には、必ず次の要素を組み合わせます。 学習目標 重要な概念 最小限の実行可能な実験 故意に失敗させる実験 実務へ移すタスク 受け入れの証拠 現在の事実と出典 更新状態 章のドラフトは、主線に入る前に docs/quality/evaluation-framework-ja.md（移行中）が定める最低基準を通過する必要があります。翻訳先の品質確認がまだ済んでいないため、ここでの移行中リンクは検証済みの日本語資料を意味しません。 現在の読書入口 第 19～22 章にはドラフトがありますが、現在の状態は統一して「ドラフト執筆済み、事前テスト待ち」です。書籍目次から各章の現実の問題事例、評価フィクスチャの仕様、研究アーカイブへ進めます。evals/task-set-v1-ja.yaml（移行中）は 39 件の固定フィクスチャとして提出され、16 のトラックをカバーしていますが、モデルの実行ログはまだありません。そのため、評価が完了したと読み替えることはできません。 l3 の横断的な練習は、実験 013：監査可能な垂直スライス（移行中）から始まります。この実験は、プロトコル、ベースライン、checkpoint、検証、故意の失敗、移行を、一つの低リスクな経路にまとめます。対応する日本語ファイルはまだ生成されていません。 入口とリンクの方針 この日本語入口から出るローカルリンクは、可能な限り同じ資料の -ja 版へ向けています。翻訳版がまだない場合は、リンク名に 移行中 と明記します。原文や別言語のファイルへ自動的にフォールバックしないため、読者は翻訳の有無と検証状態を見分けられます。 日本語版の序文 書籍目次（移行中） 評価フレームワーク（移行中） luna 評価実験（移行中） 研究アーカイブ（移行中） 日本語版のプロジェクト入口 翻訳状態と出典境界 言語： 日本語（ja）。ファイル名の言語サフィックスを省略していません。 状態： draft。このファイルをもって、書稿全体の日本語化済み、レビュー済み、または production-ready とは主張しません。 翻訳元： 同じ作業ツリーの book/readme.md。翻訳確認日は 2026-08-10 です。 外部資料： このファイルには、ライセンスが明確でない外部の文章、コード、画像、skill 指示をコピーしていません。外部ソースを主線へ加える場合は、出典とライセンスの境界を先に記録します。 安全境界： 実験や移行の説明では、秘密情報を扱わず、外部への副作用を明示し、検証できる証拠がないものを verified と呼びません。",
@@ -185,7 +210,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "book-entry",
       "number": null,
       "route": null,
-      "order": 2,
+      "order": 3,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -265,7 +290,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "book-entry",
       "number": null,
       "route": null,
-      "order": 3,
+      "order": 4,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -290,7 +315,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "book-entry",
       "number": null,
       "route": null,
-      "order": 4,
+      "order": 5,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -370,7 +395,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 1,
       "route": "A",
-      "order": 5,
+      "order": 6,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -450,7 +475,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 2,
       "route": "A",
-      "order": 6,
+      "order": 7,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -475,7 +500,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 3,
       "route": "A",
-      "order": 7,
+      "order": 8,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -500,7 +525,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 4,
       "route": "A",
-      "order": 8,
+      "order": 9,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -580,7 +605,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 5,
       "route": "A",
-      "order": 9,
+      "order": 10,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -605,7 +630,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 6,
       "route": "A",
-      "order": 10,
+      "order": 11,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -630,7 +655,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 7,
       "route": "B",
-      "order": 11,
+      "order": 12,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -655,7 +680,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 8,
       "route": "B",
-      "order": 12,
+      "order": 13,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -680,7 +705,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 9,
       "route": "B",
-      "order": 13,
+      "order": 14,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -705,7 +730,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 10,
       "route": "B",
-      "order": 14,
+      "order": 15,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -730,7 +755,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 11,
       "route": "B",
-      "order": 15,
+      "order": 16,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -755,7 +780,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 12,
       "route": "B",
-      "order": 16,
+      "order": 17,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -780,7 +805,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 13,
       "route": "B",
-      "order": 17,
+      "order": 18,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -805,7 +830,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 14,
       "route": "C",
-      "order": 18,
+      "order": 19,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -830,7 +855,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 15,
       "route": "C",
-      "order": 19,
+      "order": 20,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -855,7 +880,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 16,
       "route": "C",
-      "order": 20,
+      "order": 21,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -880,7 +905,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 17,
       "route": "C",
-      "order": 21,
+      "order": 22,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -905,7 +930,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 18,
       "route": "C",
-      "order": 22,
+      "order": 23,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -930,7 +955,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 19,
       "route": "D",
-      "order": 23,
+      "order": 24,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -955,7 +980,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 20,
       "route": "D",
-      "order": 24,
+      "order": 25,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -980,7 +1005,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 21,
       "route": "D",
-      "order": 25,
+      "order": 26,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -1005,7 +1030,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "chapter",
       "number": 22,
       "route": "D",
-      "order": 26,
+      "order": 27,
       "status": "candidate",
       "available_locales": [
         "en"
@@ -1030,7 +1055,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "lab",
       "number": 11,
       "route": null,
-      "order": 27,
+      "order": 28,
       "status": "draft",
       "available_locales": [
         "en",
@@ -1110,7 +1135,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "lab",
       "number": 1,
       "route": null,
-      "order": 28,
+      "order": 29,
       "status": "draft",
       "available_locales": [
         "en"
@@ -1135,7 +1160,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "lab",
       "number": 2,
       "route": null,
-      "order": 29,
+      "order": 30,
       "status": "draft",
       "available_locales": [
         "en"
@@ -1160,7 +1185,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "lab",
       "number": 3,
       "route": null,
-      "order": 30,
+      "order": 31,
       "status": "draft",
       "available_locales": [
         "en"
@@ -1185,7 +1210,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "lab",
       "number": 4,
       "route": null,
-      "order": 31,
+      "order": 32,
       "status": "draft",
       "available_locales": [
         "en"
@@ -1210,7 +1235,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "lab",
       "number": 5,
       "route": null,
-      "order": 32,
+      "order": 33,
       "status": "draft",
       "available_locales": [
         "en"
@@ -1235,7 +1260,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "lab",
       "number": 8,
       "route": null,
-      "order": 33,
+      "order": 34,
       "status": "draft",
       "available_locales": [
         "en"
@@ -1260,7 +1285,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "lab",
       "number": 9,
       "route": null,
-      "order": 34,
+      "order": 35,
       "status": "draft",
       "available_locales": [
         "en"
@@ -1285,7 +1310,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "lab",
       "number": 10,
       "route": null,
-      "order": 35,
+      "order": 36,
       "status": "draft",
       "available_locales": [
         "en"
@@ -1310,7 +1335,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "lab",
       "number": 12,
       "route": null,
-      "order": 36,
+      "order": 37,
       "status": "draft",
       "available_locales": [
         "en"
@@ -1335,7 +1360,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "lab",
       "number": 13,
       "route": null,
-      "order": 37,
+      "order": 38,
       "status": "draft",
       "available_locales": [
         "en"
@@ -1360,7 +1385,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "lab",
       "number": 6,
       "route": null,
-      "order": 38,
+      "order": 39,
       "status": "draft",
       "available_locales": [
         "en"
@@ -1385,7 +1410,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "lab",
       "number": 7,
       "route": null,
-      "order": 39,
+      "order": 40,
       "status": "draft",
       "available_locales": [
         "en",
@@ -1465,7 +1490,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "lab",
       "number": 14,
       "route": null,
-      "order": 40,
+      "order": 41,
       "status": "draft",
       "available_locales": [
         "en"
@@ -1490,7 +1515,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "lab",
       "number": 15,
       "route": null,
-      "order": 41,
+      "order": 42,
       "status": "draft",
       "available_locales": [
         "en"
@@ -1515,7 +1540,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "lab",
       "number": 16,
       "route": null,
-      "order": 42,
+      "order": 43,
       "status": "draft",
       "available_locales": [
         "en"
@@ -1540,7 +1565,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "lab",
       "number": 17,
       "route": null,
-      "order": 43,
+      "order": 44,
       "status": "draft",
       "available_locales": [
         "en"

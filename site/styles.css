@@ -247,10 +247,12 @@ button, input, select, textarea { font: inherit; }
 
 .skill-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; border: 1px solid rgba(255, 255, 255, .45); background: rgba(255, 255, 255, .45); }
 .skill-grid a { position: relative; display: flex; min-height: 180px; flex-direction: column; padding: 1.3rem; color: #fff; background: var(--red); transition: background .2s ease; }
+.skill-grid .skill-boundary { display: flex; min-height: 180px; flex-direction: column; padding: 1.3rem; color: var(--ink); background: var(--paper); }
 .skill-grid a:hover, .skill-grid a:focus-visible { background: var(--ink); }
 .skill-grid span { opacity: .65; font-size: .7rem; }
 .skill-grid strong { margin-top: 2rem; font-size: 1rem; letter-spacing: -.03em; }
 .skill-grid small { max-width: 220px; margin-top: .45rem; opacity: .8; font-size: .74rem; line-height: 1.5; }
+.skill-grid .skill-boundary strong { margin-top: 2rem; }
 .skill-grid b { position: absolute; right: 1.2rem; bottom: 1rem; font-size: 1.2rem; }
 .skill-footnote { max-width: 740px; margin: 1.5rem 0 0; color: rgba(255, 255, 255, .84); font-size: .75rem; }
 

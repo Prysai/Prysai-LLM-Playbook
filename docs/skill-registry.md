@@ -4,6 +4,8 @@
 
 | 安装名（兼容） | 公开名 | 作用 | 主线阶段 | 状态 | 主要验证 |
 |---|---|---|---|---|---|
+| `prysai-field-signal-curator` | Field Signal Curator | 将论坛、issue 和重复提问整理成可追溯的需求与失败信号 | L2–L6 | candidate | 去重、证据角色、社区边界、教学候选 |
+| `prysai-platform-adapter-review` | Platform Adapter Review | 审查某个平台教程是否具有真实、可维护且有证据的平台差异 | L4–L6 | candidate | 官方来源、运行记录、差异合同、等价性拒绝 |
 | `prysai-codex-coach` | Codex Coach | 根据学习目标和能力等级安排学习与实践 | L0–L6 | candidate | 学习路由、解释、实验和反思 |
 | `prysai-task-protocol` | Task Protocol | 将模糊需求变成有边界的任务协议 | L2–L3 | candidate | 缺失输入、外部副作用、验收条件 |
 | `prysai-evidence-review` | Evidence Review | 审查完成声明和证据缺口 | L3–L6 | candidate | 正确、半完成、漂亮但无证据的结果 |
@@ -22,7 +24,7 @@
 - `production-ready`：还有安全、维护、版本、许可证和组织发布门禁全部通过。
 
 当前所有项目 Skill 都诚实标为 `candidate`，即使官方 frontmatter 校验已经通过。
-Learning Coach 与 Source Investigator 是项目原创候选，并非从外部项目
+Field Signal Curator、Platform Adapter Review、Learning Coach 与 Source Investigator 是项目原创候选，并非从外部项目
 拉取；外部候选必须在注册时附目标项目链接和许可证，不能混入原创列表。
 2026-08-10 对 Coach、Workflow Orchestrator、Research Router 和 Product
 Context 完成了独立静态合同审查；该记录只证明合同缺口和边界已被检查，

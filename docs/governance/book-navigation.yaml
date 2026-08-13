@@ -14,8 +14,19 @@
     "english_navigation": "Use the English source when it exists. If it does not exist, link to the legacy current source and label the transition migration pending.",
     "legacy_navigation": "Use the current unsuffixed chapter source so the existing Simplified Chinese reading path remains continuous.",
     "footer": "The generated footer contains only previous and next chapter links. The table of contents remains the dedicated route index.",
-    "boundary": "This source controls chapter navigation only. Learning-level ownership remains in learning-path.yaml, and translation identity remains in locale-matrix.yaml."
+    "boundary": "This source controls chapter navigation only. Learning-level ownership remains in learning-path.yaml, translation identity remains in locale-matrix.yaml, and supplemental routes never change the 22-chapter order."
   },
+  "supplemental_routes": [
+    {
+      "id": "communication-clinic",
+      "title_en": "Communication Clinic",
+      "english_path": "book/communication-clinic-EN.md",
+      "status": "candidate",
+      "run_status": "not_run",
+      "placement": "supplemental_practice",
+      "boundary": "Optional practice route; not chapter 23 and not evidence of prompt effectiveness or learner transfer."
+    }
+  ],
   "parts": [
     {
       "id": "part-1",

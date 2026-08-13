@@ -1,12 +1,14 @@
 # Skill routing matrix
 
-**Version:** `0.3.0`
-**Review date:** `2026-09-09`  
+**Version:** `0.4.0`
+**Review date:** `2026-09-12`
 **Status:** `candidate`
 
-This matrix is the routing contract for the nine project Skills. It defines
-responsibility and handoff; it does not grant tool access or replace project
-rules.
+This matrix is the human-readable projection of the routing contract for the
+eleven project Skills. It defines responsibility and handoff; it does not
+grant tool access or replace project rules. The machine-readable source is
+[`../governance/skill-routing-contract.yaml`](../governance/skill-routing-contract.yaml),
+whose fixtures test declared policy consistency, not trigger accuracy.
 
 ## Precedence rules
 
@@ -15,7 +17,7 @@ rules.
    safety block; another Skill must not silently replace it.
 2. Project rules, user constraints, and permission gates outrank every Skill.
 3. If no Skill is explicit, choose the narrowest Skill whose primary question
-   matches the task. Do not load all nine by default.
+   matches the task. Do not load all eleven by default.
 4. A Skill may hand off only to a named downstream responsibility in the table.
    Handoffs transfer control; they are not recursive co-ownership.
 5. Evidence Review is an audit gate, not a universal preamble. It reviews an
@@ -41,8 +43,31 @@ rules.
 | `prysai-product-context` / Product Context | “What shared product and audience context is authoritative?” | versioned facts, hypotheses, audience, positioning, message constraints, changelog | explicit Skill; Research Router for external fact-finding; Evidence Review for audit | customer research, campaign execution, publication |
 | `prysai-learning-coach` / Learning Coach | “How do I practise this non-Codex skill until I can perform it?” | baseline, retrieval attempt, feedback, correction, transfer, review cue | Codex Coach for GPT/Codex learning; Source Investigator for disputed facts; Evidence Review for mastery claims | Codex curriculum, guaranteed timelines, assessed-work substitution, medical diagnosis |
 | `prysai-source-investigator` / Source Investigator | “Which current sources answer this already-bounded decision?” | narrow lookup execution, source hierarchy, claim ledger when needed, conflicts, freshness, stopping receipt | Research Router for broad scoping or literature-review design; Evidence Review for an existing packet; Product Context for owned product facts | broad research planning, generic tutoring, side effects, outcome claims |
+| `prysai-field-signal-curator` / Field Signal Curator | “Which real public problems and demands are visible without overstating them?” | traceable symptom records, deduplication, evidence class, privacy and instruction boundaries, teaching-gap proposals | Research Router for a broader study; Source Investigator for current product facts; Evidence Review for an existing synthesis | prevalence, root cause, private-community access, copied issue prose, universal workaround claims |
+| `prysai-platform-adapter-review` / Platform Adapter Review | “Does this named-platform lesson add a sourced, runnable delta from the universal core?” | adapter admission decision, platform delta, official-source coverage, run/failure/evidence gate, maintenance boundary | Source Investigator for missing current facts; Evidence Review for an existing adapter packet | generic core teaching, unsupported equivalence, feature-list promotion, platform execution |
 
 ## Allowed handoff graph
+
+Two bounded research routes complement the original nine: Field Signal
+Curator owns public demand and failure-signal records without proving root
+cause or prevalence; Platform Adapter Review owns the decision about whether a
+named-platform lesson adds a sourced, runnable delta from the universal core.
+The former may hand off fixed facts to Source Investigator; the latter may
+hand off missing current facts to Source Investigator or an existing packet to
+Evidence Review.
+
+## Curriculum layer route
+
+Choose the transferable core when a decision, artifact, failure, and
+acceptance remain meaningful across products. Choose a platform adapter only
+for a named delta in commands, tools, permissions, runtime, interface,
+persistence, or verification surface. Choose an application playbook for a
+bounded domain outcome that composes the core with any required adapter.
+
+Codex is `candidate` in this contract; Claude Code and Grok are `proposed`.
+Never infer equivalent commands, tools, permissions, runtime, interface, or
+behavior from similar labels. Equivalence requires an explicitly scoped
+compatibility record and current authoritative evidence for every platform.
 
 The default graph is finite:
 
@@ -56,13 +81,18 @@ user
  ├─ product context ────> Product Context
  ├─ non-Codex practice ─> Learning Coach
  ├─ bounded current lookup > Source Investigator
+ ├─ public field signals ─> Field Signal Curator
+ ├─ platform adapter audit > Platform Adapter Review
  └─ multi-stage work ───> Workflow Orchestrator
 
 Workflow Orchestrator
- └─> Task Protocol (once)
-      └─> one domain route: Research Router | Product Context | Skill Selector
-           └─> Evidence Review (when a claim or artifact is ready to audit)
-                └─> Orchestrator checkpoint and delivery
+ ├─> Task Protocol (when the contract is unclear)
+ └─> Research Router (when broad research design is one declared stage)
+
+Other allowed finite handoffs are declared in the machine contract. A handoff
+ends the current owner's responsibility; it does not return control or create
+a cycle. Workflow Orchestrator records its own delivery checkpoint after the
+downstream artifact is available; that checkpoint is not a graph edge back.
 ```
 
 The graph forbids `Coach → Coach`, `Selector → Selector`,
@@ -120,13 +150,13 @@ Additional contract fields are required where the route needs them:
 ## Source and maintenance boundary
 
 - **Source:** `CONTEXT.md`, `docs/charter.md`, `docs/book-architecture.md`,
-  `docs/quality/skill-quality-standard.md`, and the nine Skill files.
+  `docs/quality/skill-quality-standard.md`, and the eleven Skill files.
 - **License:** original project rewrite. External skill repositories and
   supplied archives remain reference-only unless the asset register records a
   compatible license and attribution.
 - **Owner:** capability-routing maintainer.
-- **Version:** `0.2.0`.
-- **Next review:** `2026-09-09`.
+- **Version:** `0.4.0`.
+- **Next review:** `2026-09-12`.
 
 The 2026-08-09 official facts refresh for chapters 4–7 is recorded at
 `docs/research/openai-codex-facts-refresh-2026-08-09.md`; its integration review

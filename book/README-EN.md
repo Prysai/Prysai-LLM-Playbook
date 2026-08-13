@@ -49,6 +49,7 @@ currently `draft` with `run_status: not_run`.
 
 - [Preface: This Is Not a Prompt Catalogue](preface-EN.md)
 - [English book table of contents](table-of-contents-EN.md)
+- [Communication Clinic: practical prompts for learning, research, decisions, and creation](communication-clinic-EN.md) — supplemental candidate; not run
 - [Project map — where chapters, labs, Skills, research, and checks live](../docs/project-map-EN.md)
 - [Canonical chapter navigation source](../docs/governance/book-navigation.yaml)
 - [Evaluation framework — locale-neutral governance](../docs/quality/evaluation-framework.md)

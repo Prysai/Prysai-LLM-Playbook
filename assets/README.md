@@ -13,6 +13,8 @@ or document a bounded case. It is not a general image dump.
   local sandboxes.
 - Open [`branding/`](branding/) for the project-owner-supplied Prysai Lab mark
   and its display-size derivatives used by the Page and reader.
+- Open [`readme/`](readme/) for the project-owned README header and deterministic
+  social-preview raster. They are separate aspect-ratio deliverables.
 
 ## Evidence boundary
 

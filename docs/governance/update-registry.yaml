@@ -64,6 +64,16 @@
       "next_review": "2026-11-09"
     },
     {
+      "area": "skill-routing",
+      "canonical_paths": ["docs/governance/skill-routing-contract.yaml", "docs/quality/skill-routing-matrix.md", "skills", "scripts/validate_skill_routing_contract.py", "scripts/test_skill_routing_contract.py"],
+      "owner": "capability-routing-maintainer",
+      "triggers": ["skill-trigger-change", "intent-owner-change", "handoff-change", "precedence-change", "platform-adapter-proposal", "cross-platform-equivalence-claim", "curriculum-layer-change"],
+      "required_inputs": ["declared-intent", "unique-owner", "allowed-handoffs", "precedence", "fixture-expectation", "content-need", "platform-delta", "compatibility-evidence", "evidence-boundary"],
+      "validation_commands": ["scripts/validate_skill_routing_contract.py", "scripts/test_skill_routing_contract.py", "scripts/validate_skills.py", "scripts/build_release_evidence.py --check"],
+      "status_fields": ["status", "owner", "reviewed_at", "next_review", "adapter-status", "claim-disposition"],
+      "next_review": "2026-09-12"
+    },
+    {
       "area": "evaluations",
       "canonical_paths": ["evals/task-set-v1.yaml", "evals/candidates/communication-clinic-v1", "scripts/validate_communication_clinic_candidate.py", "docs/quality/evaluation-framework.md", "evals/results"],
       "owner": "evaluation-maintainer",
@@ -157,10 +167,10 @@
       "area": "page-trust-registry",
       "canonical_paths": ["docs/governance/page-trust-registry.yaml", "scripts/validate_page_trust_registry.py", "scripts/test_page_trust_registry.py", "docs/research/live-documentation-trust-and-provenance-benchmark-2026-08-12.md", "docs/sources/asset-register.md"],
       "owner": "documentation-engineering-maintainer",
-      "triggers": ["page-identity-change", "fact-risk-change", "source-provenance-change", "review-window-change", "license-boundary-change", "coverage-promotion"],
-      "required_inputs": ["content-id", "artifact-status", "applicability", "fact-risk", "owner", "review-window", "authoritative-sources", "access-date", "license-boundary", "reuse-boundary", "limitations"],
+      "triggers": ["page-identity-change", "curriculum-scope-change", "platform-applicability-change", "fact-risk-change", "source-provenance-change", "review-window-change", "license-boundary-change", "coverage-promotion"],
+      "required_inputs": ["content-id", "artifact-status", "curriculum-scope", "platforms", "core-concepts", "applicability", "fact-risk", "owner", "review-window", "typed-sources", "evidence-role", "access-date-for-external-sources", "license-boundary", "reuse-boundary", "limitations"],
       "validation_commands": ["scripts/validate_page_trust_registry.py", "scripts/test_page_trust_registry.py", "scripts/validate_update_registry.py", "scripts/check_local_links.py"],
-      "status_fields": ["status", "coverage", "fact_risk", "owner", "last_reviewed", "next_review", "limitations"],
+      "status_fields": ["status", "coverage", "curriculum_scope", "platforms", "fact_risk", "owner", "last_reviewed", "next_review", "limitations"],
       "next_review": "2026-09-12"
     },
     {

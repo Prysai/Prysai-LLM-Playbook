@@ -110,6 +110,7 @@ response does not prove that the source still supports the claim.
 | Understand the system | [Chapter 1](book/chapters/01-gpt-and-codex-EN.md) + [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) | A mental model that separates GPT, Codex, tools, Skills, and Agents |
 | Complete a first safe task | [Chapter 2 EN source](book/chapters/02-first-safe-task-EN.md) + [Lab 001 EN source](book/labs/lab-001-first-safe-task-EN.md) | A reversible diff, a focused check, and an explicit unverified list |
 | Design a reliable request | [Chapter 3 EN source](book/chapters/03-task-protocol-EN.md) + [Lab 002 EN source](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop, and recovery conditions |
+| Learn, research, decide, or create with short prompts | [Communication Clinic](book/communication-clinic-EN.md) | Supplemental candidate · not run; first attempt, focused correction, transfer task, and evidence boundary |
 | Review whether “done” is real | [Evidence review lab](book/labs/lab-003-evidence-review-EN.md) + [Evaluation framework](docs/quality/evaluation-framework.md) | A claim-to-evidence table, not just a polished response |
 | Choose or build a Skill | [Skill registry](docs/skill-registry.md) + [Skill quality standard](docs/quality/skill-quality-standard.md) | A bounded, testable method with dependencies and rollback |
 | Learn from field failures | [Real-world problem index](docs/research/field-problems-index-2026-08-10.md) | A symptom, safe first check, fallback, and evidence classification |
@@ -246,7 +247,7 @@ official fix.
 | Learning path | 7 levels · `candidate` |
 | Chapters | 22 structured chapters · `candidate` |
 | Labs | 17 labs · `draft` · `run_status: not_run` |
-| Skills | 9 project Skills · `candidate` |
+| Skills | 11 project Skills · `candidate` |
 | Evaluation fixtures | 39 tasks across 16 tracks · `candidate` · `not_run` |
 | Public showcase | `candidate` · English default · Chinese runtime toggle |
 | Locale rollout | EN source plus five translation entries in progress |

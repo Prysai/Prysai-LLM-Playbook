@@ -167,10 +167,10 @@
     ]
   },
   "skills": {
-    "count": 9,
+    "count": 11,
     "status": "candidate",
     "validator_status": "structural_checks_passed",
-    "fresh_context_status": "3_of_9_basic_pretest; 2_of_9_minimal_fresh_task_pretest; 4_of_9_static_contract_review_only",
+    "fresh_context_status": "3_of_11_basic_pretest; 2_of_11_minimal_fresh_task_pretest; 4_of_11_static_contract_review_only; 2_of_11_structural_candidate_only",
     "owner": "skills-maintainer",
     "last_reviewed": "2026-08-10",
     "next_review": "2026-11-09",
@@ -193,7 +193,24 @@
       {"id": "prysai-product-context", "path": "skills/prysai-product-context", "status": "candidate", "fresh_context_status": "static_contract_reviewed_blocked; runtime_pretest_pending"},
       {"id": "prysai-learning-coach", "path": "skills/prysai-learning-coach", "status": "candidate", "fresh_context_status": "minimal_fresh_task_pretest_passed; multi_turn_delayed_transfer_pending"},
       {"id": "prysai-source-investigator", "path": "skills/prysai-source-investigator", "status": "candidate", "fresh_context_status": "minimal_fresh_task_pretest_passed; search_completeness_and_adversarial_routing_pending"}
+      ,{"id": "prysai-field-signal-curator", "path": "skills/prysai-field-signal-curator", "status": "candidate", "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"}
+      ,{"id": "prysai-platform-adapter-review", "path": "skills/prysai-platform-adapter-review", "status": "candidate", "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"}
     ]
+  },
+  "supplemental_guides": {
+    "count": 1,
+    "status": "candidate",
+    "owner": "curriculum-maintainer",
+    "last_reviewed": "2026-08-12",
+    "next_review": "2026-09-12",
+    "evidence": [
+      "book/communication-clinic-EN.md",
+      "docs/sources/asset-register.md"
+    ],
+    "items": [
+      {"id": "communication-clinic", "path": "book/communication-clinic-EN.md", "status": "candidate", "run_status": "not_run", "role": "supplemental_practice_route"}
+    ],
+    "claim_boundary": "Supplemental routes do not change the canonical 22-chapter order. This guide has structural editorial review only; prompt effectiveness, learner outcomes, delayed transfer, and platform equivalence remain untested."
   },
   "evaluations": {
     "task_count": 39,

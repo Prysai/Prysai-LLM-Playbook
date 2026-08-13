@@ -89,6 +89,8 @@
       "scope": "Repository Skill metadata, all learning contracts, and evaluation fixture structure.",
       "commands": [
         {"id": "skills", "argv": ["{python}", "scripts/validate_skills.py"]},
+        {"id": "skill-routing-contract", "argv": ["{python}", "scripts/validate_skill_routing_contract.py"]},
+        {"id": "skill-routing-contract-fixtures", "argv": ["{python}", "scripts/test_skill_routing_contract.py"]},
         {"id": "evaluation-fixtures", "argv": ["{python}", "scripts/validate_eval_tasks.py"]},
         {"id": "all-learning-contracts", "argv": ["{python}", "scripts/validate_learning_contract.py"]}
       ]

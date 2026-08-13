@@ -1,4 +1,4 @@
-"""Validate the bounded page-level trust and provenance pilot."""
+"""Validate complete page-level trust coverage for canonical English chapters."""
 
 from __future__ import annotations
 
@@ -18,6 +18,19 @@ DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 CONTENT_ID_RE = re.compile(r"<!--\s*content_id:\s*([^|\s]+)")
 STATUSES = {"draft", "candidate", "verified", "production-ready"}
 FACT_RISKS = {"stable_concept", "volatile_product", "mixed"}
+CURRICULUM_SCOPES = {"universal_core", "platform_adapter", "domain_application", "mixed"}
+SOURCE_KINDS = {
+    "project_record",
+    "authoritative_platform",
+    "community_report",
+    "independent_reference",
+}
+EVIDENCE_ROLES = {
+    "canonical_provenance",
+    "official_fact",
+    "field_signal",
+    "design_reference",
+}
 
 
 def load_object(path: Path) -> dict[str, Any]:
@@ -54,19 +67,23 @@ def parse_date(value: Any, label: str, errors: list[str]) -> date | None:
 
 def validate_document(registry: dict[str, Any], content_status: dict[str, Any]) -> list[str]:
     errors: list[str] = []
-    if registry.get("schema_version") != "1":
-        errors.append("schema_version must be '1'")
+    if registry.get("schema_version") != "2":
+        errors.append("schema_version must be '2'")
     generated_at = parse_date(registry.get("generated_at"), "generated_at", errors)
     if registry.get("status") != "candidate":
-        errors.append("status must remain candidate while coverage.kind is pilot")
+        errors.append("status must remain candidate; schema coverage is not content verification")
     coverage = registry.get("coverage")
     if not isinstance(coverage, dict):
         errors.append("coverage must be an object")
         coverage = {}
-    if coverage.get("kind") != "pilot":
-        errors.append("coverage.kind must be pilot")
-    if coverage.get("canonical_english_chapters") != 22:
-        errors.append("coverage.canonical_english_chapters must be 22")
+    if coverage.get("kind") != "canonical_english_complete":
+        errors.append("coverage.kind must be canonical_english_complete")
+    canonical_statuses = chapter_status_by_path(content_status)
+    canonical_paths = set(canonical_statuses)
+    if coverage.get("canonical_english_chapters") != len(canonical_paths):
+        errors.append("coverage.canonical_english_chapters must equal the canonical chapter count")
+    if coverage.get("registered_pages") != len(canonical_paths):
+        errors.append("coverage.registered_pages must equal the canonical chapter count")
     require_text(coverage, "claim_boundary", "coverage", errors)
 
     records = registry.get("records")
@@ -76,7 +93,6 @@ def validate_document(registry: dict[str, Any], content_status: dict[str, Any]) 
     if coverage.get("registered_pages") != len(records):
         errors.append("coverage.registered_pages must equal the record count")
 
-    canonical_statuses = chapter_status_by_path(content_status)
     seen_ids: set[str] = set()
     seen_paths: set[str] = set()
     for index, record in enumerate(records, start=1):
@@ -107,11 +123,31 @@ def validate_document(registry: dict[str, Any], content_status: dict[str, Any]) 
             if canonical_statuses.get(path_value) != declared_status:
                 errors.append(f"{label}: content_status does not match content-status.yaml")
         if record.get("canonical_locale") != "en":
-            errors.append(f"{label}: canonical_locale must be en for this pilot")
+            errors.append(f"{label}: canonical_locale must be en for canonical English coverage")
         if record.get("content_status") not in STATUSES:
             errors.append(f"{label}: content_status is not controlled")
         if record.get("fact_risk") not in FACT_RISKS:
             errors.append(f"{label}: fact_risk is not controlled")
+        curriculum_scope = record.get("curriculum_scope")
+        if curriculum_scope not in CURRICULUM_SCOPES:
+            errors.append(f"{label}: curriculum_scope is not controlled")
+        platforms = record.get("platforms")
+        if not isinstance(platforms, list) or not platforms or not all(
+            isinstance(item, str) and item.strip() for item in platforms
+        ):
+            errors.append(f"{label}: platforms must be a non-empty string list")
+            platforms = []
+        if curriculum_scope == "universal_core" and platforms != ["universal"]:
+            errors.append(f"{label}: universal_core must use only the universal platform")
+        if curriculum_scope == "platform_adapter" and not any(
+            item != "universal" for item in platforms
+        ):
+            errors.append(f"{label}: platform_adapter must name a concrete platform")
+        concepts = record.get("core_concepts")
+        if not isinstance(concepts, list) or not concepts or not all(
+            isinstance(item, str) and item.strip() for item in concepts
+        ):
+            errors.append(f"{label}: core_concepts must be a non-empty string list")
         for key in ("applies_to", "owner", "reuse_boundary"):
             require_text(record, key, label, errors)
         reviewed = parse_date(record.get("reviewed_at"), f"{label}.reviewed_at", errors)
@@ -129,15 +165,62 @@ def validate_document(registry: dict[str, Any], content_status: dict[str, Any]) 
         if not isinstance(sources, list) or not sources:
             errors.append(f"{label}: sources must be a non-empty list")
             continue
+        concrete_platforms = {item for item in platforms if item != "universal"}
+        authoritative_source_count = 0
+        authoritative_platforms: set[str] = set()
         for source_index, source in enumerate(sources, start=1):
             source_label = f"{label}.sources[{source_index}]"
             if not isinstance(source, dict):
                 errors.append(f"{source_label} must be an object")
                 continue
-            url = require_text(source, "url", source_label, errors)
+            kind = source.get("kind")
+            if kind not in SOURCE_KINDS:
+                errors.append(f"{source_label}: kind is not controlled")
+            evidence_role = source.get("evidence_role")
+            if evidence_role not in EVIDENCE_ROLES:
+                errors.append(f"{source_label}: evidence_role is not controlled")
             for key in ("role", "license_boundary"):
                 require_text(source, key, source_label, errors)
+            if kind == "project_record":
+                path = require_text(source, "path", source_label, errors)
+                if "url" in source or "accessed_at" in source:
+                    errors.append(f"{source_label}: project_record must use path, not url/accessed_at")
+                if path:
+                    target = ROOT / path
+                    if target.resolve() == ROOT or ROOT not in target.resolve().parents:
+                        errors.append(f"{source_label}: path must stay inside the repository")
+                    elif not target.is_file():
+                        errors.append(f"{source_label}: project record does not exist: {path}")
+                if evidence_role != "canonical_provenance":
+                    errors.append(f"{source_label}: project_record must be canonical_provenance")
+                continue
+            url = require_text(source, "url", source_label, errors)
             parse_date(source.get("accessed_at"), f"{source_label}.accessed_at", errors)
+            if kind == "authoritative_platform":
+                authoritative_source_count += 1
+                source_platforms = source.get("platforms")
+                source_platform = source.get("platform")
+                if isinstance(source_platform, str) and source_platform.strip():
+                    source_platforms = [source_platform]
+                if isinstance(source_platforms, list) and source_platforms and all(
+                    isinstance(item, str) and item.strip() for item in source_platforms
+                ):
+                    authoritative_platforms.update(source_platforms)
+                elif len(concrete_platforms) == 1:
+                    authoritative_platforms.update(concrete_platforms)
+                else:
+                    errors.append(
+                        f"{source_label}: multi-platform records require explicit platform or platforms coverage"
+                    )
+                if evidence_role != "official_fact":
+                    errors.append(f"{source_label}: authoritative_platform must be official_fact")
+            if kind == "community_report":
+                if evidence_role != "field_signal":
+                    errors.append(f"{source_label}: community_report must be field_signal")
+                if source.get("reproduction_status") not in {"not_run", "partially_reproduced", "reproduced"}:
+                    errors.append(f"{source_label}: community_report requires controlled reproduction_status")
+                if source.get("root_cause_status") not in {"unknown", "project_hypothesis", "officially_confirmed"}:
+                    errors.append(f"{source_label}: community_report requires controlled root_cause_status")
             if url:
                 parsed = urlparse(url)
                 if parsed.scheme != "https" or not parsed.netloc:
@@ -146,6 +229,22 @@ def validate_document(registry: dict[str, Any], content_status: dict[str, Any]) 
                     revision = parsed.path.split("/blob/", 1)[1].split("/", 1)[0]
                     if not re.fullmatch(r"[0-9a-f]{40}", revision):
                         errors.append(f"{source_label}: GitHub blob URL must pin a 40-character commit")
+        if record.get("fact_risk") in {"volatile_product", "mixed"} and not authoritative_source_count:
+            errors.append(f"{label}: volatile_product and mixed records require an authoritative_platform HTTPS source")
+        if curriculum_scope == "platform_adapter" and not authoritative_source_count:
+            errors.append(f"{label}: platform_adapter requires an authoritative_platform source")
+        missing_platform_support = concrete_platforms - authoritative_platforms
+        if missing_platform_support:
+            errors.append(
+                f"{label}: every concrete platform needs a matching authoritative_platform source: "
+                f"missing={sorted(missing_platform_support)}"
+            )
+    missing = sorted(canonical_paths - seen_paths)
+    extra = sorted(seen_paths - canonical_paths)
+    if missing:
+        errors.append("registry is missing canonical chapters: " + ", ".join(missing))
+    if extra:
+        errors.append("registry contains non-canonical chapter paths: " + ", ".join(extra))
     return errors
 
 

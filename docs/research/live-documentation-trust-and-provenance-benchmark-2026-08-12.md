@@ -196,3 +196,24 @@ or production readiness. No upstream project was built locally.
 | Hosted i18n/product guidance | relevant platform or locale owner | before publication, on broken link, or material product change |
 | Repository/file license boundary | release/source owner | immediately before copying, adapting, vendoring, or public release |
 | Page trust pilot | documentation-engineering maintainer | after schema review, before reader integration, or by 2026-09-12 |
+
+## Follow-up implementation: complete canonical-English schema coverage
+
+On 2026-08-12, after the research and three-page pilot above were recorded,
+the project expanded `page-trust-registry.yaml` to all 22 canonical English
+chapter source files. Schema version 2 adds an orthogonal curriculum scope,
+explicit platform applicability, core-concept identifiers, typed local and
+external sources, and evidence roles. Community reports are field signals and
+cannot satisfy the authoritative-source requirement for volatile product
+records.
+
+The validator now requires the registry path set to match the canonical English
+chapter path set in `content-status.yaml` exactly. Negative fixtures reject
+missing or replaced chapters, nonexistent local provenance, community-only
+support for volatile facts, incomplete community evidence boundaries, maturity
+inflation, and false universal-platform classification.
+
+This follow-up does not rewrite the historical result above: the benchmark
+originally produced a three-page pilot. It also does not make the current
+corpus platform-neutral or reader-visible. The 22/22 result is schema and
+identity coverage only, and the registry remains `candidate`.

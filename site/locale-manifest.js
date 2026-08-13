@@ -46,6 +46,56 @@ window.CODEX_LOCALE_MANIFEST = {
     }
   },
   "contents": {
+    "communication-clinic": {
+      "kind": "supplemental-guide",
+      "stem": "book/communication-clinic",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "book/communication-clinic-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/communication-clinic-ZH.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "es": {
+          "path": "book/communication-clinic-ES.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ja": {
+          "path": "book/communication-clinic-JA.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "ko": {
+          "path": "book/communication-clinic-KO.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        },
+        "de": {
+          "path": "book/communication-clinic-DE.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-12"
+        }
+      }
+    },
     "project-readme": {
       "kind": "project-entry",
       "stem": "README",
@@ -2369,6 +2419,12 @@ window.CODEX_LOCALE_MANIFEST = {
     "lab-017": "lab-017-skill-discovery-audit"
   },
   "path_index": {
+    "book/communication-clinic-EN.md": "communication-clinic",
+    "book/communication-clinic-ZH.md": "communication-clinic",
+    "book/communication-clinic-ES.md": "communication-clinic",
+    "book/communication-clinic-JA.md": "communication-clinic",
+    "book/communication-clinic-KO.md": "communication-clinic",
+    "book/communication-clinic-DE.md": "communication-clinic",
     "README-EN.md": "project-readme",
     "README-ZH.md": "project-readme",
     "README-ES.md": "project-readme",

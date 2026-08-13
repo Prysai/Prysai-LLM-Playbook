@@ -1,0 +1,4 @@
+interface:
+  display_name: "Field Signal Curator"
+  short_description: "Turn public reports into bounded demand evidence"
+  default_prompt: "Use $prysai-field-signal-curator to turn these public reports into a traceable needs record without overstating them."

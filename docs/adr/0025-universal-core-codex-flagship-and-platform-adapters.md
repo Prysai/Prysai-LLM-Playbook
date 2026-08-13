@@ -44,7 +44,7 @@ Its naming options are decision candidates, not an authorization to rename.
    framing, context selection, collaboration protocols, authority and side
    effects, evidence, recovery, reuse, evaluation, and governance.
 2. Keep **Codex as the deepest flagship platform track**. Codex remains the
-   first complete implementation of the core method and retains dedicated
+   deepest current reference projection of the core method and retains dedicated
    treatment of its surfaces, project context, files, terminal, browser, Git,
    Skills, Agents, verification, and team use.
 3. Add another named model or platform only as an **evidence-gated adapter**.

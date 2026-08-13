@@ -1,0 +1,4 @@
+interface:
+  display_name: "Platform Adapter Review"
+  short_description: "Audit whether a platform lesson adds a proven delta"
+  default_prompt: "Use $prysai-platform-adapter-review to audit this platform lesson against the adapter admission contract."

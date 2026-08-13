@@ -42,6 +42,9 @@
     "lab-016": {"name": {"en": "Side-effect boundary", "zh": "副作用边界"}},
     "lab-017": {"name": {"en": "Skill discovery audit", "zh": "Skill 发现审计"}}
   },
+  "supplemental_guides": {
+    "communication-clinic": {"name": {"en": "Communication Clinic", "zh": "沟通练习诊所"}, "status": "candidate", "run_status": "not_run"}
+  },
   "skills": {
     "prysai-codex-coach": {"name": {"en": "Codex Coach", "zh": "Codex 学习教练"}},
     "prysai-task-protocol": {"name": {"en": "Task Protocol", "zh": "任务协议 Task Protocol"}},
@@ -51,6 +54,8 @@
     "prysai-research-router": {"name": {"en": "Research Router", "zh": "研究路由 Research Router"}},
     "prysai-product-context": {"name": {"en": "Product Context", "zh": "产品上下文 Product Context"}},
     "prysai-learning-coach": {"name": {"en": "Learning Coach", "zh": "学习教练 Learning Coach"}},
-    "prysai-source-investigator": {"name": {"en": "Source Investigator", "zh": "来源调查 Source Investigator"}}
+    "prysai-source-investigator": {"name": {"en": "Source Investigator", "zh": "来源调查 Source Investigator"}},
+    "prysai-field-signal-curator": {"name": {"en": "Field Signal Curator", "zh": "现场信号整理 Field Signal Curator"}},
+    "prysai-platform-adapter-review": {"name": {"en": "Platform Adapter Review", "zh": "平台适配审查 Platform Adapter Review"}}
   }
 }

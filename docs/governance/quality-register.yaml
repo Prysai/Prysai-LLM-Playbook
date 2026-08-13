@@ -165,6 +165,20 @@
       "status": "in_progress",
       "evidence_paths": ["docs/release-checklist.md", "docs/governance/release-evidence.yaml", "docs/governance/release-readiness.yaml", "scripts/validate_release_readiness.py", "scripts/test_release_readiness.py", "docs/adr/0021-commit-bound-release-evidence.md", "docs/adr/0026-machine-readable-release-readiness.md"],
       "resolution_scope": "Release readiness now has a machine-readable not_ready decision and negative fixtures for unsupported readiness, invented tags, missing rehearsal records, and tag/evidence SHA mismatch. The version, changelog, reviewed immutable tag, accepted release packet, rollback target, and actual rehearsal remain missing, so Q-011 is not resolved."
+    },
+    {
+      "id": "Q-012",
+      "severity": "P2",
+      "owner": "documentation-engineering-maintainer",
+      "opened_at": "2026-08-12",
+      "next_review": "2026-09-12",
+      "superseded_by": "",
+      "area": "Page trust coverage",
+      "finding": "The page trust registry covered only three of 22 canonical English chapter sources and could not distinguish local provenance, official platform facts, community field signals, or curriculum scope.",
+      "required_evidence": "Exact 22/22 canonical path-set validation, typed sources, platform and curriculum-scope fields, authoritative-source enforcement for volatile facts, and negative fixtures.",
+      "status": "resolved",
+      "evidence_paths": ["docs/governance/page-trust-registry.yaml", "scripts/validate_page_trust_registry.py", "scripts/test_page_trust_registry.py", "docs/research/live-documentation-trust-and-provenance-benchmark-2026-08-12.md"],
+      "resolution_scope": "Resolved for static schema and identity coverage of all 22 canonical English chapter sources. The registry remains candidate and does not establish source semantics, content freshness after access, platform neutrality, learner or runtime evidence, translation review, license compatibility, deployment, or production readiness."
     }
   ]
 }

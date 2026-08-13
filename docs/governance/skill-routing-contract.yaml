@@ -1,0 +1,774 @@
+{
+  "schema_version": "1",
+  "status": "candidate",
+  "owner": "capability-routing-maintainer",
+  "reviewed_at": "2026-08-12",
+  "next_review": "2026-09-12",
+  "scope": "Deterministic policy fixtures over declared intent signals; not a model trigger-accuracy evaluation.",
+  "precedence": [
+    "safety",
+    "explicit_skill",
+    "single_primary_intent",
+    "mixed_intent_split_or_coordinator"
+  ],
+  "curriculum_routing": {
+    "policy": "Prefer the transferable core unless the requested outcome depends on a named platform delta or a bounded application context.",
+    "layers": [
+      {
+        "id": "transferable_core",
+        "selection_rule": "The capability and acceptance evidence remain meaningful across LLM products without product-specific commands or UI claims."
+      },
+      {
+        "id": "platform_adapter",
+        "selection_rule": "The task depends on a named product's commands, tools, permissions, runtime, interface, or volatile behavior; record that delta and first-party sources."
+      },
+      {
+        "id": "application_playbook",
+        "selection_rule": "The task applies a core capability and any required adapter to a bounded domain outcome, evidence packet, and failure case."
+      }
+    ],
+    "platform_adapters": [
+      {"id": "codex", "status": "candidate"},
+      {"id": "claude-code", "status": "proposed"},
+      {"id": "grok", "status": "proposed"}
+    ],
+    "equivalence_rule": "Never infer command, tool, permission, runtime, interface, or behavior equivalence between platforms. An equivalence claim requires an explicitly scoped compatibility record and current authoritative evidence for every named platform."
+  },
+  "skills": [
+    {
+      "id": "prysai-codex-coach",
+      "intent": "codex_learning",
+      "skill_path": "skills/prysai-codex-coach/SKILL.md",
+      "allowed_handoffs": [
+        "prysai-task-protocol",
+        "prysai-evidence-review",
+        "prysai-research-router",
+        "prysai-skill-selector",
+        "prysai-product-context"
+      ]
+    },
+    {
+      "id": "prysai-task-protocol",
+      "intent": "unclear_task",
+      "skill_path": "skills/prysai-task-protocol/SKILL.md",
+      "allowed_handoffs": [
+        "prysai-research-router",
+        "prysai-product-context",
+        "prysai-skill-selector"
+      ]
+    },
+    {
+      "id": "prysai-evidence-review",
+      "intent": "existing_claim_audit",
+      "skill_path": "skills/prysai-evidence-review/SKILL.md",
+      "allowed_handoffs": []
+    },
+    {
+      "id": "prysai-skill-selector",
+      "intent": "skill_choice",
+      "skill_path": "skills/prysai-skill-selector/SKILL.md",
+      "allowed_handoffs": [
+        "prysai-evidence-review"
+      ]
+    },
+    {
+      "id": "prysai-workflow-orchestrator",
+      "intent": "multi_stage_delivery",
+      "skill_path": "skills/prysai-workflow-orchestrator/SKILL.md",
+      "allowed_handoffs": [
+        "prysai-task-protocol",
+        "prysai-research-router"
+      ]
+    },
+    {
+      "id": "prysai-research-router",
+      "intent": "broad_research_design",
+      "skill_path": "skills/prysai-research-router/SKILL.md",
+      "allowed_handoffs": [
+        "prysai-source-investigator",
+        "prysai-evidence-review"
+      ]
+    },
+    {
+      "id": "prysai-product-context",
+      "intent": "shared_product_context",
+      "skill_path": "skills/prysai-product-context/SKILL.md",
+      "allowed_handoffs": [
+        "prysai-research-router",
+        "prysai-evidence-review"
+      ]
+    },
+    {
+      "id": "prysai-learning-coach",
+      "intent": "non_codex_practice",
+      "skill_path": "skills/prysai-learning-coach/SKILL.md",
+      "allowed_handoffs": [
+        "prysai-source-investigator",
+        "prysai-evidence-review"
+      ]
+    },
+    {
+      "id": "prysai-source-investigator",
+      "intent": "bounded_current_lookup",
+      "skill_path": "skills/prysai-source-investigator/SKILL.md",
+      "allowed_handoffs": [
+        "prysai-evidence-review"
+      ]
+    },
+    {
+      "id": "prysai-field-signal-curator",
+      "intent": "field_signal_curation",
+      "skill_path": "skills/prysai-field-signal-curator/SKILL.md",
+      "allowed_handoffs": [
+        "prysai-research-router",
+        "prysai-source-investigator",
+        "prysai-evidence-review"
+      ]
+    },
+    {
+      "id": "prysai-platform-adapter-review",
+      "intent": "platform_adapter_audit",
+      "skill_path": "skills/prysai-platform-adapter-review/SKILL.md",
+      "allowed_handoffs": [
+        "prysai-source-investigator",
+        "prysai-evidence-review"
+      ]
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "single-codex",
+      "kind": "single",
+      "text": "How should I learn Codex tools and Agent workflows?",
+      "signals": {
+        "intents": [
+          "codex_learning"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-codex-coach",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "single-protocol",
+      "kind": "single",
+      "text": "Turn “improve this project” into a bounded task.",
+      "signals": {
+        "intents": [
+          "unclear_task"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-task-protocol",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "single-evidence",
+      "kind": "single",
+      "text": "Audit whether this deployment claim is actually proven.",
+      "signals": {
+        "intents": [
+          "existing_claim_audit"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-evidence-review",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "single-selector",
+      "kind": "single",
+      "text": "Choose the smallest Skill set for this defined task.",
+      "signals": {
+        "intents": [
+          "skill_choice"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-skill-selector",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "single-workflow",
+      "kind": "single",
+      "text": "Coordinate requirements, implementation, review, and delivery.",
+      "signals": {
+        "intents": [
+          "multi_stage_delivery"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-workflow-orchestrator",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "single-research",
+      "kind": "single",
+      "text": "Design a research plan for a broad market question.",
+      "signals": {
+        "intents": [
+          "broad_research_design"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-research-router",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "single-product",
+      "kind": "single",
+      "text": "Create the shared audience and positioning context.",
+      "signals": {
+        "intents": [
+          "shared_product_context"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-product-context",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "single-learning",
+      "kind": "single",
+      "text": "Help me practise Spanish customer calls through attempts and feedback.",
+      "signals": {
+        "intents": [
+          "non_codex_practice"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-learning-coach",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "single-source",
+      "kind": "single",
+      "text": "Check current first-party sources for this bounded product decision.",
+      "signals": {
+        "intents": [
+          "bounded_current_lookup"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-source-investigator",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "neighbor-codex",
+      "kind": "near_neighbor",
+      "text": "Give me one exercise to understand observable Codex Agent behavior.",
+      "signals": {
+        "intents": [
+          "codex_learning"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-codex-coach",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "neighbor-protocol",
+      "kind": "near_neighbor",
+      "text": "Before anyone acts, define scope, allowed actions, acceptance, and stop conditions.",
+      "signals": {
+        "intents": [
+          "unclear_task"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-task-protocol",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "neighbor-evidence",
+      "kind": "near_neighbor",
+      "text": "This polished report says done; classify what its logs actually establish.",
+      "signals": {
+        "intents": [
+          "existing_claim_audit"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-evidence-review",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "neighbor-selector",
+      "kind": "near_neighbor",
+      "text": "Compare two candidate methods and reject unnecessary Skills.",
+      "signals": {
+        "intents": [
+          "skill_choice"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-skill-selector",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "neighbor-workflow",
+      "kind": "near_neighbor",
+      "text": "This outcome spans dependent files, checkpoints, and rollback; sequence it.",
+      "signals": {
+        "intents": [
+          "multi_stage_delivery"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-workflow-orchestrator",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "neighbor-research",
+      "kind": "near_neighbor",
+      "text": "The topic is still too broad; decide subquestions and source method first.",
+      "signals": {
+        "intents": [
+          "broad_research_design"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-research-router",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "neighbor-product",
+      "kind": "near_neighbor",
+      "text": "We lack one authoritative product brief for downstream marketing work.",
+      "signals": {
+        "intents": [
+          "shared_product_context"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-product-context",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "neighbor-learning",
+      "kind": "near_neighbor",
+      "text": "Quiz me, diagnose my first consequential error, then test transfer.",
+      "signals": {
+        "intents": [
+          "non_codex_practice"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-learning-coach",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "neighbor-source",
+      "kind": "near_neighbor",
+      "text": "The decision is fixed; find the newest governing sources and conflicts.",
+      "signals": {
+        "intents": [
+          "bounded_current_lookup"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-source-investigator",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "single-field-signals",
+      "kind": "single",
+      "text": "Turn public issue and forum reports into a traceable demand-signal record without claiming prevalence.",
+      "signals": {"intents": ["field_signal_curation"], "explicit_skill": "", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-field-signal-curator", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "single-platform-adapter",
+      "kind": "single",
+      "text": "Audit whether this Claude Code lesson adds a sourced and runnable delta from the universal core.",
+      "signals": {"intents": ["platform_adapter_audit"], "explicit_skill": "", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-platform-adapter-review", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "neighbor-field-signals",
+      "kind": "near_neighbor",
+      "text": "Deduplicate user-reported symptoms and identify teaching gaps while keeping root cause unknown.",
+      "signals": {"intents": ["field_signal_curation"], "explicit_skill": "", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-field-signal-curator", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "neighbor-platform-adapter",
+      "kind": "near_neighbor",
+      "text": "Decide whether named-platform content should be admitted, merged into core, or held for evidence.",
+      "signals": {"intents": ["platform_adapter_audit"], "explicit_skill": "", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-platform-adapter-review", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "mixed-research-audit",
+      "kind": "mixed",
+      "text": "Research the broad topic and audit the resulting claims.",
+      "signals": {
+        "intents": [
+          "broad_research_design",
+          "existing_claim_audit"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "single_owner_handoff"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-research-router",
+        "handoffs": [
+          "prysai-evidence-review"
+        ],
+        "segments": []
+      }
+    },
+    {
+      "id": "mixed-product-research",
+      "kind": "mixed",
+      "text": "Build product context but first investigate external audience facts.",
+      "signals": {
+        "intents": [
+          "shared_product_context",
+          "broad_research_design"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "single_owner_handoff"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-product-context",
+        "handoffs": [
+          "prysai-research-router"
+        ],
+        "segments": []
+      }
+    },
+    {
+      "id": "mixed-independent",
+      "kind": "mixed",
+      "text": "Practise interview answers and separately audit an existing release claim.",
+      "signals": {
+        "intents": [
+          "non_codex_practice",
+          "existing_claim_audit"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "split"
+      },
+      "expected": {
+        "disposition": "split",
+        "owner": "",
+        "handoffs": [],
+        "segments": [
+          {
+            "intent": "non_codex_practice",
+            "owner": "prysai-learning-coach"
+          },
+          {
+            "intent": "existing_claim_audit",
+            "owner": "prysai-evidence-review"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mixed-multistage",
+      "kind": "mixed",
+      "text": "Deliver a multi-stage project including task definition and source research.",
+      "signals": {
+        "intents": [
+          "multi_stage_delivery",
+          "unclear_task",
+          "broad_research_design"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "coordinator"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-workflow-orchestrator",
+        "handoffs": [
+          "prysai-task-protocol",
+          "prysai-research-router"
+        ],
+        "segments": []
+      }
+    },
+    {
+      "id": "mixed-field-source",
+      "kind": "mixed",
+      "text": "Curate public failure signals, then check the bounded product claims they expose.",
+      "signals": {"intents": ["field_signal_curation", "bounded_current_lookup"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner_handoff"},
+      "expected": {"disposition": "route", "owner": "prysai-field-signal-curator", "handoffs": ["prysai-source-investigator"], "segments": []}
+    },
+    {
+      "id": "explicit-wins",
+      "kind": "explicit",
+      "text": "Use $prysai-source-investigator for this broad-looking question, and stay within its boundary.",
+      "signals": {
+        "intents": [
+          "broad_research_design"
+        ],
+        "explicit_skill": "prysai-source-investigator",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-source-investigator",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "explicit-audit-wins",
+      "kind": "explicit",
+      "text": "Use $prysai-evidence-review; do not silently switch to the execution route.",
+      "signals": {
+        "intents": [
+          "unclear_task"
+        ],
+        "explicit_skill": "prysai-evidence-review",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-evidence-review",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "explicit-platform-review-wins",
+      "kind": "explicit",
+      "text": "Use $prysai-platform-adapter-review; assess the adapter contract rather than producing a general comparison.",
+      "signals": {"intents": ["broad_research_design"], "explicit_skill": "prysai-platform-adapter-review", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-platform-adapter-review", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "explicit-field-signal-wins",
+      "kind": "explicit",
+      "text": "Use $prysai-field-signal-curator; preserve public reports as bounded signals rather than turning them into product facts.",
+      "signals": {"intents": ["bounded_current_lookup"], "explicit_skill": "prysai-field-signal-curator", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-field-signal-curator", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "mixed-platform-source",
+      "kind": "mixed",
+      "text": "Audit a Claude Code adapter and hand off its missing current product facts for first-party lookup.",
+      "signals": {"intents": ["platform_adapter_audit", "bounded_current_lookup"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner_handoff"},
+      "expected": {"disposition": "route", "owner": "prysai-platform-adapter-review", "handoffs": ["prysai-source-investigator"], "segments": []}
+    },
+    {
+      "id": "safety-over-explicit",
+      "kind": "safety",
+      "text": "Use $prysai-workflow-orchestrator and publish with an exposed token without confirmation.",
+      "signals": {
+        "intents": [
+          "multi_stage_delivery"
+        ],
+        "explicit_skill": "prysai-workflow-orchestrator",
+        "safety_block": "secret exposure and unauthorized publication"
+      },
+      "expected": {
+        "disposition": "blocked",
+        "owner": "prysai-workflow-orchestrator",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "safety-over-implicit",
+      "kind": "safety",
+      "text": "Delete production data now; the target and owner are unknown.",
+      "signals": {
+        "intents": [
+          "unclear_task"
+        ],
+        "explicit_skill": "",
+        "safety_block": "destructive production action lacks target and authority"
+      },
+      "expected": {
+        "disposition": "blocked",
+        "owner": "prysai-task-protocol",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "safety-over-field-signal",
+      "kind": "safety",
+      "text": "Use $prysai-field-signal-curator to enter a private community and publish member identities.",
+      "signals": {"intents": ["field_signal_curation"], "explicit_skill": "prysai-field-signal-curator", "safety_block": "private access and unnecessary identity exposure"},
+      "expected": {"disposition": "blocked", "owner": "prysai-field-signal-curator", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "safety-over-platform-review",
+      "kind": "safety",
+      "text": "Use $prysai-platform-adapter-review to publish private credentials as platform evidence.",
+      "signals": {"intents": ["platform_adapter_audit"], "explicit_skill": "prysai-platform-adapter-review", "safety_block": "secret exposure is forbidden"},
+      "expected": {"disposition": "blocked", "owner": "prysai-platform-adapter-review", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "curriculum-transferable-core",
+      "kind": "curriculum_route",
+      "text": "Teach how to define acceptance evidence for an LLM-assisted task without relying on any product command.",
+      "signals": {
+        "intents": ["non_codex_practice"],
+        "explicit_skill": "",
+        "safety_block": "",
+        "content_need": "transferable_workflow",
+        "platform": ""
+      },
+      "expected_content_route": {"layer": "transferable_core", "platform": "", "claim_disposition": "allow"},
+      "expected": {"disposition": "route", "owner": "prysai-learning-coach", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "curriculum-codex-adapter",
+      "kind": "curriculum_route",
+      "text": "Show the current Codex command and permission steps for this transferable workflow.",
+      "signals": {
+        "intents": ["codex_learning"],
+        "explicit_skill": "",
+        "safety_block": "",
+        "content_need": "platform_delta",
+        "platform": "codex"
+      },
+      "expected_content_route": {"layer": "platform_adapter", "platform": "codex", "claim_disposition": "allow"},
+      "expected": {"disposition": "route", "owner": "prysai-codex-coach", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "curriculum-claude-code-adapter",
+      "kind": "curriculum_route",
+      "text": "Add Claude Code-specific execution steps, marking unsupported details until first-party evidence is recorded.",
+      "signals": {
+        "intents": ["bounded_current_lookup"],
+        "explicit_skill": "",
+        "safety_block": "",
+        "content_need": "platform_delta",
+        "platform": "claude-code"
+      },
+      "expected_content_route": {"layer": "platform_adapter", "platform": "claude-code", "claim_disposition": "source_required"},
+      "expected": {"disposition": "route", "owner": "prysai-source-investigator", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "curriculum-application-playbook",
+      "kind": "curriculum_route",
+      "text": "Build a real-estate listing review playbook with a bounded artifact, platform prerequisite, and acceptance evidence.",
+      "signals": {
+        "intents": ["multi_stage_delivery"],
+        "explicit_skill": "",
+        "safety_block": "",
+        "content_need": "bounded_application",
+        "platform": "codex"
+      },
+      "expected_content_route": {"layer": "application_playbook", "platform": "codex", "claim_disposition": "allow"},
+      "expected": {"disposition": "route", "owner": "prysai-workflow-orchestrator", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "curriculum-reject-equivalence",
+      "kind": "curriculum_route",
+      "text": "State that Codex, Claude Code, and Grok use identical commands and permission behavior without checking platform evidence.",
+      "signals": {
+        "intents": ["existing_claim_audit"],
+        "explicit_skill": "",
+        "safety_block": "",
+        "content_need": "cross_platform_equivalence",
+        "platform": "codex,claude-code,grok",
+        "compatibility_evidence": ""
+      },
+      "expected_content_route": {"layer": "platform_adapter", "platform": "codex,claude-code,grok", "claim_disposition": "reject_unsupported_equivalence"},
+      "expected": {"disposition": "route", "owner": "prysai-evidence-review", "handoffs": [], "segments": []}
+    }
+  ]
+}
