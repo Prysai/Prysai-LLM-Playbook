@@ -118,6 +118,11 @@ def main() -> int:
             "data-copy-rescue",
             "data-starter-prompt",
             "data-rescue-prompt",
+            "data-first-win-check",
+            "data-first-win-compare",
+            "data-first-win-receipt",
+            "data-copy-first-win-record",
+            "data-first-win-comparison",
             'aria-live="polite"',
         ):
             if required not in site_markup:
@@ -128,6 +133,9 @@ def main() -> int:
             "rescueCopyButton?.addEventListener('click'",
             "starterCopyButton?.addEventListener('click'",
             "starterRescueCopied",
+            "const renderFirstWinRecord = () => {",
+            "accepted_on_this_check",
+            "firstWinCompare.disabled = !record.complete;",
         ):
             if required not in site_script:
                 raise AssertionError(f"first-win-copy-feedback: missing {required}")

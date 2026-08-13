@@ -69,12 +69,22 @@ Object.assign(copy.en, {
   mobileAllRoutes: 'Open every problem route',
   starterPreview: 'Preview the complete prompt',
   starterSequenceAria: 'Before, prompt, human check, and repair sequence',
-  starterCheckOne: 'Facts kept — Friday at 10 and “bring the draft” remain: PASS / FAIL / UNSURE.',
-  starterCheckTwo: 'Action kept — anyone who cannot attend is asked to reply: PASS / FAIL / UNSURE.',
-  starterCheckThree: 'Nothing invented — no date, time zone, venue, deadline, sender, reason, contact method, or other fact appears: PASS / FAIL / UNSURE.',
+  starterCheckOne: 'Facts kept — Friday at 10 and “bring the draft” remain.',
+  starterCheckTwo: 'Action kept — anyone who cannot attend is asked to reply.',
+  starterCheckThree: 'Nothing invented — no date, time zone, venue, deadline, sender, reason, contact method, or other fact appears.',
+  starterCheckPass: 'PASS', starterCheckFail: 'FAIL', starterCheckUnsure: 'UNSURE',
+  starterCheckGate: 'Record all three judgments before comparing with an example.',
+  starterCheckReady: 'All three judgments are recorded. You can now compare with the illustrative answer.',
+  starterCheckRecovery: 'A failed or uncertain check is recorded. Use the rescue prompt, then keep this record as a local observation.',
+  starterCheckOneAria: 'Record whether facts were kept', starterCheckTwoAria: 'Record whether the requested action was kept', starterCheckThreeAria: 'Record whether unsupported details were added',
+  starterCompare: 'Compare with one acceptable shape',
+  starterComparisonBoundary: 'This illustrative answer stays hidden until all three judgments are recorded. It does not score your answer or prove learning.',
   starterExample: 'One acceptable shape: “The workshop starts Friday at 10. Please bring your draft. If you cannot attend, please reply.” Wording may differ; this is not the only correct answer.',
   starterRescueCopy: 'Copy rescue prompt',
   starterRescueCopied: 'Rescue prompt copied. Repair only the first failed check.',
+  starterHelpLabel: 'Help used', starterHelpAria: 'Record help used', starterHelpPrompt: 'First prompt', starterHelpRescue: 'Rescue prompt', starterHelpBoth: 'Both prompts',
+  starterCorrectionLabel: 'Correction after checking', starterCorrectionAria: 'Record correction status', starterCorrectionNotNeeded: 'Not needed', starterCorrectionCorrected: 'Corrected', starterCorrectionNotYet: 'Not yet', starterRecordNotRecorded: 'Not recorded',
+  starterReceiptAria: 'Local First Win check record', starterCopyRecord: 'Copy my local check record', starterRecordCopied: 'Local check record copied. It contains statuses only, not your answer.', starterRecordCopyFailed: 'Could not copy the local check record. Select its text manually.', starterRecoveryLink: 'Open recovery handoff',
   starterReceiptLabel: 'Plain-language receipt',
   starterReceipt: 'Attempted · checked here · help used · corrected · not proven: learning, transfer, general writing ability, or model superiority.',
   navPath: 'Learning path',
@@ -119,12 +129,22 @@ Object.assign(copy.zh, {
   mobileAllRoutes: '\u6253\u5f00\u5168\u90e8\u95ee\u9898\u8def\u7ebf',
   starterPreview: '\u9884\u89c8\u5b8c\u6574\u63d0\u793a\u8bcd',
   starterSequenceAria: '原文、提示词、人工检查与修正流程',
-  starterCheckOne: '事实保留——星期五 10 点和“带上草稿”仍在：通过 / 失败 / 不确定。',
-  starterCheckTwo: '行动保留——无法参加的人被要求回复：通过 / 失败 / 不确定。',
-  starterCheckThree: '没有编造——未增加日期、时区、地点、截止时间、发送者、原因、联系方式或其他事实：通过 / 失败 / 不确定。',
+  starterCheckOne: '事实保留——星期五 10 点和“带上草稿”仍在。',
+  starterCheckTwo: '行动保留——无法参加的人被要求回复。',
+  starterCheckThree: '没有编造——未增加日期、时区、地点、截止时间、发送者、原因、联系方式或其他事实。',
+  starterCheckPass: '通过', starterCheckFail: '失败', starterCheckUnsure: '不确定',
+  starterCheckGate: '先记录三项判断，再对照示例。',
+  starterCheckReady: '三项判断均已记录。现在可以对照示例答案。',
+  starterCheckRecovery: '已记录失败或不确定项。请使用修正提示词，然后将这份记录保留为本地观察。',
+  starterCheckOneAria: '记录事实是否保留', starterCheckTwoAria: '记录要求的行动是否保留', starterCheckThreeAria: '记录是否加入了无依据的细节',
+  starterCompare: '对照一种合格形式',
+  starterComparisonBoundary: '只有在三项判断都记录后才显示这一示例。它不会给你的回答打分，也不证明已经学会。',
   starterExample: '一种合格形式：“活动星期五 10 点开始，请带上草稿。如果无法参加，请回复。”措辞可以不同，这不是唯一标准答案。',
   starterRescueCopy: '复制修正提示词',
   starterRescueCopied: '修正提示词已复制，只修正第一项失败标准。',
+  starterHelpLabel: '使用的帮助', starterHelpAria: '记录使用的帮助', starterHelpPrompt: '第一次提示词', starterHelpRescue: '修正提示词', starterHelpBoth: '两个提示词都用过',
+  starterCorrectionLabel: '检查后的修正', starterCorrectionAria: '记录修正状态', starterCorrectionNotNeeded: '无需修正', starterCorrectionCorrected: '已修正', starterCorrectionNotYet: '尚未修正', starterRecordNotRecorded: '未记录',
+  starterReceiptAria: '本地第一次结果检查记录', starterCopyRecord: '复制我的本地检查记录', starterRecordCopied: '本地检查记录已复制；其中只有状态，不含你的回答。', starterRecordCopyFailed: '无法复制本地检查记录，请手动选择文本。', starterRecoveryLink: '打开失败恢复路径',
   starterReceiptLabel: '人话版记录',
   starterReceipt: '已尝试 · 本次检查项 · 使用的帮助 · 是否修正 · 不证明：学习、迁移、普遍写作能力或模型优越性。',
   navPath: '\u5b66\u4e60\u8def\u5f84',
@@ -711,6 +731,7 @@ const applyLanguage = (language, { updateUrl = true } = {}) => {
   updateLevel(document.querySelector('.level-tab.is-active')?.dataset.level || 'L0', false);
   updateRouteStatus(document.querySelector('.filter-button.is-active')?.dataset.filter || 'all');
   localizeReaderLinks();
+  if (typeof renderFirstWinRecord === 'function') renderFirstWinRecord();
   if (searchNodes.form && searchIndexAvailable()) renderSearch(searchNodes.input.value);
   const banner = document.querySelector('[data-locale-banner]');
   const pageFallback = currentLanguage !== 'en' && !localeHasUiCopy(currentLanguage);
@@ -874,6 +895,50 @@ const starterPrompt = document.querySelector('[data-starter-prompt]');
 const rescueCopyButton = document.querySelector('[data-copy-rescue]');
 const rescuePrompt = document.querySelector('[data-rescue-prompt]');
 const starterCopyStatus = document.querySelector('[data-copy-starter-status]');
+const firstWinChecks = [...document.querySelectorAll('[data-first-win-check]')];
+const firstWinCompare = document.querySelector('[data-first-win-compare]');
+const firstWinComparison = document.querySelector('[data-first-win-comparison]');
+const firstWinReceipt = document.querySelector('[data-first-win-receipt]');
+const firstWinGate = document.querySelector('[data-first-win-check-gate]');
+const firstWinCopyRecord = document.querySelector('[data-copy-first-win-record]');
+const firstWinRecordStatus = document.querySelector('[data-first-win-record-status]');
+const firstWinHelp = document.querySelector('[data-first-win-help]');
+const firstWinCorrection = document.querySelector('[data-first-win-correction]');
+const firstWinRecoveryLink = document.querySelector('[data-first-win-recovery-link]');
+
+const firstWinRecord = () => {
+  const values = Object.fromEntries(['facts_kept', 'action_kept', 'nothing_invented'].map((name) => [
+    name,
+    document.querySelector(`[data-first-win-check="${name}"]:checked`)?.value || 'NOT_RECORDED',
+  ]));
+  const firstNonPass = Object.entries(values).find(([, value]) => value !== 'PASS')?.[0] || 'none';
+  const complete = Object.values(values).every((value) => value !== 'NOT_RECORDED');
+  const accepted = complete && firstNonPass === 'none';
+  return { ...values, firstNonPass, complete, accepted };
+};
+
+const renderFirstWinRecord = () => {
+  if (!firstWinReceipt || !firstWinGate) return;
+  const record = firstWinRecord();
+  const help = firstWinHelp?.value || 'not_recorded';
+  const correction = firstWinCorrection?.value || 'not_recorded';
+  firstWinReceipt.textContent = [
+    'task: fictional-workshop-message',
+    `facts_kept: ${record.facts_kept.toLowerCase()}`,
+    `action_kept: ${record.action_kept.toLowerCase()}`,
+    `nothing_invented: ${record.nothing_invented.toLowerCase()}`,
+    `first_nonpass: ${record.firstNonPass}`,
+    `help_used: ${help}`,
+    `correction: ${correction}`,
+    `acceptance: ${record.accepted ? 'accepted_on_this_check' : record.complete ? 'not_accepted' : 'incomplete'}`,
+    'claim_limit: one self-recorded checked attempt; not evidence of learning, transfer, or model quality',
+  ].join('\n');
+  firstWinCompare.disabled = !record.complete;
+  firstWinRecoveryLink.hidden = !record.complete || record.accepted;
+  if (!record.complete) firstWinGate.textContent = currentCopy().starterCheckGate;
+  else if (record.accepted) firstWinGate.textContent = currentCopy().starterCheckReady;
+  else firstWinGate.textContent = currentCopy().starterCheckRecovery;
+};
 
 // Progressive enhancement keeps the first task ahead of the maintainer map.
 // Source order remains readable when JavaScript is unavailable.
@@ -893,6 +958,8 @@ starterCopyButton?.addEventListener('click', async () => {
   try {
     await navigator.clipboard.writeText(starterPrompt?.textContent || '');
     starterCopyStatus.textContent = currentCopy().starterCopied;
+    if (firstWinHelp && firstWinHelp.value === 'not_recorded') firstWinHelp.value = 'first_prompt';
+    renderFirstWinRecord();
   } catch {
     starterCopyStatus.textContent = currentCopy().starterCopyFailed;
   }
@@ -902,10 +969,32 @@ rescueCopyButton?.addEventListener('click', async () => {
   try {
     await navigator.clipboard.writeText(rescuePrompt?.textContent || '');
     starterCopyStatus.textContent = currentCopy().starterRescueCopied;
+    if (firstWinHelp) {
+      firstWinHelp.value = firstWinHelp.value === 'first_prompt' ? 'both' : 'rescue_prompt';
+    }
+    renderFirstWinRecord();
   } catch {
     starterCopyStatus.textContent = currentCopy().starterCopyFailed;
   }
 });
+
+firstWinChecks.forEach((input) => input.addEventListener('change', renderFirstWinRecord));
+firstWinHelp?.addEventListener('change', renderFirstWinRecord);
+firstWinCorrection?.addEventListener('change', renderFirstWinRecord);
+firstWinCompare?.addEventListener('click', () => {
+  if (firstWinCompare.disabled) return;
+  firstWinComparison.hidden = false;
+  firstWinCompare.setAttribute('aria-expanded', 'true');
+});
+firstWinCopyRecord?.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(firstWinReceipt?.textContent || '');
+    firstWinRecordStatus.textContent = currentCopy().starterRecordCopied;
+  } catch {
+    firstWinRecordStatus.textContent = currentCopy().starterRecordCopyFailed;
+  }
+});
+renderFirstWinRecord();
 
 initializeSearch();
 applyLanguage(currentLanguage, { updateUrl: hasExplicitLanguageParam && !hasValidLanguageParam });

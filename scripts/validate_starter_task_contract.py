@@ -41,8 +41,8 @@ def fenced_values(block: str) -> list[str]:
 
 def validate_contract(contract: dict[str, Any], *, check_surfaces: bool = True) -> list[str]:
     errors: list[str] = []
-    if contract.get("schema_version") != "2":
-        errors.append("schema_version must be '2'")
+    if contract.get("schema_version") != "3":
+        errors.append("schema_version must be '3'")
     if contract.get("status") != "candidate":
         errors.append("status must remain candidate until learner and transfer evidence exist")
     if contract.get("duration") != "15 minutes" or contract.get("platform") != "universal chat":
@@ -78,6 +78,16 @@ def validate_contract(contract: dict[str, Any], *, check_surfaces: bool = True) 
         errors.append("human_checks must contain exactly three non-empty checks")
     elif any("PASS / FAIL / UNSURE" not in item for item in checks):
         errors.append("each human check must allow PASS / FAIL / UNSURE")
+    comparison_gate = contract.get("comparison_gate")
+    if not isinstance(comparison_gate, dict):
+        errors.append("comparison_gate must define the before-comparison boundary")
+    else:
+        if comparison_gate.get("rule") != "record_all_three_judgments_before_comparison":
+            errors.append("comparison_gate must require all three judgments before comparison")
+        if comparison_gate.get("accepted_judgments") != ["PASS", "FAIL", "UNSURE"]:
+            errors.append("comparison_gate must allow PASS, FAIL, and UNSURE")
+        if "does not collect" not in str(comparison_gate.get("storage_boundary", "")):
+            errors.append("comparison_gate must state the local-only storage boundary")
     if not isinstance(rescue, str) or "first failed or uncertain check" not in rescue or "Do not add any fact" not in rescue:
         errors.append("rescue_prompt must repair only the first failed check without adding facts")
 
@@ -87,6 +97,11 @@ def validate_contract(contract: dict[str, Any], *, check_surfaces: bool = True) 
     receipt = contract.get("receipt")
     if not isinstance(receipt, dict) or set(receipt) != REQUIRED_RECEIPT_FIELDS:
         errors.append("receipt must implement every declared evidence field")
+    check_record = contract.get("check_record")
+    if not isinstance(check_record, dict) or set(check_record.get("fields", [])) != {"facts_kept", "action_kept", "nothing_invented", "help_used", "correction_status"}:
+        errors.append("check_record must declare the local judgment and recovery fields")
+    elif "not include the reader's chat answer" not in str(check_record.get("copy_boundary", "")):
+        errors.append("check_record must exclude the reader's answer from copied records")
     boundary = contract.get("evidence_boundary")
     if not isinstance(boundary, str) or "target, not measured" not in boundary or "does not prove learning" not in boundary or "not_run" not in boundary:
         errors.append("evidence_boundary must reject learning claims and preserve not_run status")
@@ -124,8 +139,13 @@ def validate_contract(contract: dict[str, Any], *, check_surfaces: bool = True) 
                     errors.append(f"site starter block is missing {required}")
             if site_block.count("data-human-check") != 3:
                 errors.append("site starter block must project exactly three human checks")
+            for required in ("data-first-win-check", "data-first-win-compare", "data-first-win-receipt", "data-copy-first-win-record", "data-first-win-comparison"):
+                if required not in site_block:
+                    errors.append(f"site starter block is missing {required}")
+            if "data-first-win-comparison hidden" not in site_block:
+                errors.append("site starter example must be hidden until the reader chooses to compare")
         app = (ROOT / "site/app.js").read_text(encoding="utf-8")
-        for required in ("data-copy-starter", "data-copy-rescue", "navigator.clipboard.writeText"):
+        for required in ("data-copy-starter", "data-copy-rescue", "data-copy-first-win-record", "navigator.clipboard.writeText", "const renderFirstWinRecord", "accepted_on_this_check", "not_accepted", "first_nonpass"):
             if required not in app:
                 errors.append(f"site/app.js must implement {required}")
     return errors
@@ -142,7 +162,7 @@ def main() -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print("STARTER_TASK_CONTRACT_OK schema=2 duration=15m checks=3 rescue=present receipt=5 status=candidate")
+    print("STARTER_TASK_CONTRACT_OK schema=3 duration=15m checks=3 compare=local-gated receipt=5 status=candidate")
     return 0
 
 

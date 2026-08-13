@@ -99,10 +99,10 @@ Rewrite it as a clear message to workshop participants. Preserve every fact in t
 Return only the revised message. The reader will check it.
 ```
 
-One acceptable shape is: “The workshop starts Friday at 10. Please bring your
-draft. If you cannot attend, please reply.” Your wording may differ. Judge it
-yourself: facts kept, action kept, and nothing invented — each is `PASS`, `FAIL`,
-or `UNSURE`.
+Before comparing with an example, record three independent judgments about
+your answer: facts kept, action kept, and nothing invented. Mark each one
+`PASS`, `FAIL`, or `UNSURE`. Keep the answer and the words that support each
+judgment in your own chat; this repository does not receive them.
 
 If one check fails, copy this rescue prompt:
 
@@ -118,6 +118,15 @@ Do three things only:
 
 Do not add any fact that is absent from the source. If the source does not contain a detail, leave it unstated rather than guessing.
 ```
+
+<details>
+<summary>Compare with one acceptable shape after you record your three checks</summary>
+
+One acceptable shape is: “The workshop starts Friday at 10. Please bring your
+draft. If you cannot attend, please reply.” Your wording may differ. This is
+an illustration, not a score for your answer or evidence that you learned the
+method.
+</details>
 
 The 15-minute label is a target; beginner completion time has not been measured.
 Your receipt is deliberately modest: attempted; checked here; help used;

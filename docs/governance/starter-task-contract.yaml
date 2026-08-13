@@ -1,5 +1,5 @@
 {
-  "schema_version": "2",
+  "schema_version": "3",
   "content_id": "starter-task-contract",
   "status": "candidate",
   "owner": "curriculum-maintainer",
@@ -24,6 +24,12 @@
     "Action kept — anyone who cannot attend is asked to reply: PASS / FAIL / UNSURE.",
     "Nothing invented — no date, time zone, venue, deadline, sender, reason, contact method, or other new fact appears: PASS / FAIL / UNSURE."
   ],
+  "comparison_gate": {
+    "rule": "record_all_three_judgments_before_comparison",
+    "accepted_judgments": ["PASS", "FAIL", "UNSURE"],
+    "storage_boundary": "temporary page state only; the page does not collect, transmit, or retain the reader's answer or check record",
+    "comparison_boundary": "The example is illustrative and must not score the reader or establish learning."
+  },
   "rescue_prompt": "Keep the fictional source and your previous answer in view.\n\nMy first failed or uncertain check is: [paste check 1, 2, or 3 here].\n\nDo three things only:\n1. quote the words in your previous answer that caused the failure or uncertainty;\n2. explain the mismatch in one sentence;\n3. return one corrected message, changing only what is necessary.\n\nDo not add any fact that is absent from the source. If the source does not contain a detail, leave it unstated rather than guessing.",
   "receipt_fields": ["attempted", "checked_here", "help_used", "corrected", "not_proven"],
   "receipt": {
@@ -32,6 +38,10 @@
     "help_used": "first prompt, rescue prompt, both, or neither",
     "corrected": "yes, no, or not needed",
     "not_proven": "general writing ability, learning, transfer, or model superiority"
+  },
+  "check_record": {
+    "fields": ["facts_kept", "action_kept", "nothing_invented", "help_used", "correction_status"],
+    "copy_boundary": "A copied record contains selected statuses and claim limits only; it must not include the reader's chat answer or personal data."
   },
   "progression": {
     "practice_next": "book/communication-clinic-EN.md#first-practice-intake",
