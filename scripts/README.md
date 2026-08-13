@@ -71,3 +71,8 @@ promotion of content maturity or proof of runtime/user outcomes.
 boundary fixtures. It proves duplicate commands are rejected, command failure
 is logged and blocks the packet, overdue or invalid freshness blocks stronger
 maturity, and static success does not promote a `candidate`.
+
+`validate_github_templates.py` checks the public contributor entry forms and
+pull-request template for parseable YAML, required fields, unique component
+IDs, required confirmations, repository-local contact links, and the disclosure
+headings that preserve source, safety, evidence, unknowns, and status claims.

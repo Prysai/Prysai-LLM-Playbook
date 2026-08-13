@@ -36,6 +36,7 @@
         {"id": "content-status", "argv": ["{python}", "scripts/validate_content_status.py"]},
         {"id": "quality-register", "argv": ["{python}", "scripts/build_quality_register.py", "--check"]},
         {"id": "release-evidence-fixtures", "argv": ["{python}", "scripts/test_release_evidence.py"]},
+        {"id": "github-templates", "argv": ["{python}", "scripts/validate_github_templates.py"]},
         {"id": "localization", "argv": ["{python}", "scripts/validate_localization.py"]},
         {"id": "site-i18n", "argv": ["{python}", "scripts/validate_site_i18n.py"]},
         {"id": "book-navigation", "argv": ["{python}", "scripts/validate_book_navigation.py"]}

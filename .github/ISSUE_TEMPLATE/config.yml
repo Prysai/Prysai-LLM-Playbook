@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Contribution guide
+    url: https://github.com/Prysai/Codex-Field-Guide/blob/main/CONTRIBUTING.md
+    about: Read change classes, source boundaries, validation, and review rules before filing.

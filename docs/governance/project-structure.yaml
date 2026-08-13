@@ -104,6 +104,7 @@
     {"path": "README.md", "role": "GitHub's default English facade.", "canonical_source": "README-EN.md"},
     {"path": "README-EN.md", "role": "Detailed English project entry.", "canonical_source": "README-EN.md"},
     {"path": "AGENTS.md", "role": "Working rules for contributors and agents.", "canonical_source": "AGENTS.md"},
+    {"path": "CONTRIBUTING.md", "role": "Public contributor front door and change-class router.", "canonical_source": "docs/governance/contribution-model.md"},
     {"path": "CONTEXT.md", "role": "Stable project vocabulary and boundaries.", "canonical_source": "CONTEXT.md"}
   ],
   "generated_outputs": [

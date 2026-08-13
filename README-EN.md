@@ -384,6 +384,10 @@ so it is shown above as a status rather than a dead link.
 
 ## How to update the project
 
+Start with the root [`CONTRIBUTING.md`](CONTRIBUTING.md). It routes small
+corrections, content, contract, behavior, and release changes to different
+evidence paths without duplicating the governance manuals below.
+
 The shortest safe contribution loop is:
 
 1. Read [`CONTEXT.md`](CONTEXT.md), the [charter](docs/charter.md), and the

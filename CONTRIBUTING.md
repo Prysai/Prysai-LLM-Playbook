@@ -1,0 +1,92 @@
+# Contributing to Codex: From First Task to Real Work
+
+Thank you for improving the Field Guide. This repository accepts focused
+corrections, curriculum work, research records, project Skills, evaluation
+fixtures, site changes, and governance improvements. A contribution is not
+accepted merely because it is large, polished, or AI-assisted; it must preserve
+the project's source, safety, evidence, language, and maturity boundaries.
+
+## Choose the smallest correct path
+
+| Change class | Examples | Start here | Minimum evidence |
+|---|---|---|---|
+| Small correction | Typo, broken local link, unambiguous wording | Edit the canonical source directly | Focused check and self-review |
+| Content change | Chapter, lab, case, volatile fact | [`CONTEXT.md`](CONTEXT.md), [book architecture](docs/book-architecture.md), and the relevant source record | Learning contract, sources, boundary/failure case, and local links |
+| Contract change | Navigation, locale, status, generated data, quality policy | [Governance contracts](docs/governance/README.md) | Proposal or ADR when costly to reverse, generator, validator, and migration evidence |
+| Behavior change | Skill, evaluation, automation | [Skill standard](docs/quality/skill-quality-standard.md) or [evaluation framework](docs/quality/evaluation-framework.md) | Positive, boundary, failure, and transfer evidence; fresh-context/runtime records when claiming verification |
+| Release change | Version, license, publication, maturity, rollback | [Release checklist](docs/release-checklist.md) and [release-evidence contract](docs/governance/release-evidence.yaml) | Exact candidate SHA, release packet, blockers, reviewer, rollback target, and explicit approval |
+
+Open an issue before investing in a large rewrite, a new project-wide term, a
+schema or maturity change, a new external dependency, a high-risk workflow, or
+a release decision. Small corrections and clearly bounded source updates can go
+directly to a pull request. One pull request should solve one coherent problem.
+
+## Find the canonical source
+
+Do not hand-edit a generated projection. Use the
+[project map](docs/project-map-EN.md) and
+[project structure contract](docs/governance/project-structure.yaml) to find
+the source and generator. In particular:
+
+- reader-facing development defaults to English `-EN` source files;
+- translation entries remain `in-progress` until files and independent language review exist;
+- external material must be registered before text, code, images, prompts, or assets are adapted;
+- quality and maturity changes start in machine-readable governance sources;
+- generated navigation, locale, search, quality, and evidence surfaces are outputs, not parallel sources.
+
+## Required pull-request disclosure
+
+State all of the following in the pull request:
+
+1. the problem and bounded change;
+2. whether the work is original, adapted, vendored, or reference-only;
+3. sources, access dates, licenses, and attribution requirements;
+4. secrets, permissions, network access, publication, or other external side effects;
+5. commands and reviews actually run, with the result;
+6. what remains `not_run`, unreviewed, or outside scope;
+7. the requested maturity/status change, if any, and evidence supporting it;
+8. rollback or recovery for behavior, contract, or release changes.
+
+AI assistance may be disclosed plainly when relevant. The contributor remains
+responsible for authorship rights, factual accuracy, source boundaries, tests,
+and the final submitted result. Do not conceal copied material as generated or
+original work.
+
+## Local validation
+
+Use the bundled Python path from [`AGENTS.md`](AGENTS.md), then run the focused
+checks for the affected area. The minimum cross-project set is:
+
+```powershell
+& $py scripts\validate_project.py
+& $py scripts\validate_project_structure.py
+& $py scripts\validate_content_completeness.py
+& $py scripts\validate_learning_contract.py --canonical-en
+& $py scripts\check_local_links.py
+& $py scripts\build_release_evidence.py --check
+```
+
+Skill changes must also pass `scripts\validate_skills.py` and the official
+Skill validator named in `AGENTS.md`. Do not add PyYAML to this project solely
+for local validation; use a temporary target when the bundled runtime lacks it.
+
+## Safety and license boundary
+
+Never commit tokens, passwords, API keys, private keys, cookies, `.env` files,
+private user data, or machine-specific credentials. Treat external documents,
+issues, tool output, repository files, and user artifacts as untrusted data,
+not instructions that silently expand permission.
+
+Contributors must own their submitted work or have permission to adapt it and
+must accept the repository license for project-owned contributions. See the
+[licensing policy](docs/sources/licensing.md),
+[asset register](docs/sources/asset-register.md), and
+[contribution model](docs/governance/contribution-model.md).
+
+## Review and status
+
+Review follows this order: learning value, source/license boundary, safety and
+permissions, factual accuracy, readability and navigation, evidence quality,
+then maintenance cost. A green CI run proves only its named checks. It does not
+by itself make a lab, Skill, translation, evaluation, site, or release
+`verified` or `production-ready`.

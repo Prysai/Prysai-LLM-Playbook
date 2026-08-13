@@ -104,6 +104,16 @@
       "next_review": "2026-11-09"
     },
     {
+      "area": "contribution-flow",
+      "canonical_paths": ["CONTRIBUTING.md", "docs/governance/contribution-model.md", ".github/PULL_REQUEST_TEMPLATE.md", ".github/ISSUE_TEMPLATE", "scripts/validate_github_templates.py"],
+      "owner": "governance-maintainer",
+      "triggers": ["contribution-class-change", "review-requirement-change", "issue-intake-change", "pull-request-disclosure-change", "license-or-safety-boundary-change"],
+      "required_inputs": ["accepted-change-types", "canonical-source-routing", "required-evidence", "source-and-license-boundary", "safety-and-external-effects", "status-claim-boundary"],
+      "validation_commands": ["scripts/validate_github_templates.py", "scripts/validate_project.py", "scripts/validate_project_structure.py", "scripts/check_local_links.py"],
+      "status_fields": ["owner", "accepted-change-types", "issue-before-work-cases", "required-disclosures", "next_review"],
+      "next_review": "2026-09-12"
+    },
+    {
       "area": "release-and-rollback",
       "canonical_paths": ["docs/release-checklist.md", "docs/governance/content-lifecycle.md", "docs/governance/release-evidence.yaml", "scripts/build_release_evidence.py", "docs/adr/0021-commit-bound-release-evidence.md"],
       "owner": "release-maintainer",

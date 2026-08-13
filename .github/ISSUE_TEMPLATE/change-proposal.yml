@@ -1,0 +1,72 @@
+name: Curriculum, contract, or behavior proposal
+description: Propose a chapter, lab, Skill, evaluation, governance, dependency, automation, or release change.
+title: "[Proposal]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form before a large rewrite, new project term, schema or maturity change, external dependency, high-risk workflow, or release decision. A proposal is an intake record, not approval to implement or publish.
+  - type: dropdown
+    id: change_class
+    attributes:
+      label: Change class
+      options:
+        - Content change
+        - Contract change
+        - Behavior change
+        - Release change
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and affected users
+      description: Describe the concrete failure, gap, or decision and who encounters it.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Proposed scope and canonical sources
+      description: Name affected files/contracts, generated outputs, and what must remain outside scope.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources, ownership, and license
+      description: List first-party sources, access dates, volatility, authorship, licenses, attribution, and asset-register impact.
+    validations:
+      required: true
+  - type: textarea
+    id: safety
+    attributes:
+      label: Permissions and external effects
+      description: State secrets, network, external services, publication, deletion, messages, high authority, and required approval. Write none if absent.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence_plan
+    attributes:
+      label: Evidence and failure plan
+      description: Define positive, boundary, failure, and transfer checks; reviewer; stop condition; known blind spots; and what would reject the proposal.
+    validations:
+      required: true
+  - type: textarea
+    id: status
+    attributes:
+      label: Status and rollback
+      description: State requested maturity/fact status, evidence needed, migration path, rollback target, and recovery method. Do not infer verification from file presence.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I will keep one pull request focused on one coherent problem.
+          required: true
+        - label: I will not copy text, images, code, prompts, or Skill instructions without a recorded license decision.
+          required: true
+        - label: I understand that maintainers may request an ADR, prototype, or narrower scope before implementation.
+          required: true

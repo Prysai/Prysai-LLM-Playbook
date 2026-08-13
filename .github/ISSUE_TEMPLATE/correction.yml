@@ -1,0 +1,47 @@
+name: Small correction
+description: Report a typo, broken local link, ambiguous sentence, or narrow documentation defect.
+title: "[Correction]: "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for a narrow, reproducible correction. Use the proposal form for curriculum, contract, behavior, dependency, or release changes.
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: Link the file, page, heading, or line where the problem appears.
+      placeholder: docs/path.md#heading
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Current problem
+      description: Quote only the minimum necessary text and explain why it is incorrect, unclear, or broken.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+      description: Describe the smallest correction. Do not paste unlicensed third-party text.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence or source
+      description: For factual changes, provide an authoritative URL, access date, scope, and any known volatility. Write not applicable for a pure typo.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Boundaries
+      options:
+        - label: I did not include secrets, credentials, private data, or unclear-license material.
+          required: true
+        - label: I understand that filing this issue does not establish project acceptance or verification.
+          required: true

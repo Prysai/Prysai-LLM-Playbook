@@ -57,7 +57,8 @@ problem research, and explicit evidence boundaries.
 | Find a file quickly | [`Project map`](docs/project-map-EN.md) | Directory responsibilities, chapter order, generated files, and where each change starts |
 
 The project map is backed by a machine-readable directory contract and concise
-landing pages. If you are contributing, start with the
+landing pages. If you are contributing, start with
+[`CONTRIBUTING.md`](CONTRIBUTING.md), then use the
 [project structure contract](docs/governance/project-structure.yaml); if you
 are reading, start with the [book guide](book/README-EN.md).
 
