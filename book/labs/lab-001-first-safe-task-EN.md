@@ -1,4 +1,4 @@
-<!-- content_id: lab-001-first-safe-task | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-10 -->
+<!-- content_id: lab-001-first-safe-task | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-13 -->
 
 ---
 id: lab-001-first-safe-task
@@ -50,6 +50,48 @@ If any item is unclear, stop and mark the lab `blocked`; do not “try first.”
 Create a run ID such as `lab001-readme-2026-08-10-a`. The ID identifies the
 record; it is not evidence by itself.
 
+## Four answers before the first action
+
+### Problem
+
+A project folder, a permission label, or a confident completion message can
+look like a safe starting point without identifying the file that may change
+or the evidence that will be saved. In this lab, do not let any of those
+signals substitute for a bounded task.
+
+### Concept
+
+This is a written boundary check, not a product-capability test. A file task
+needs four independently clear answers: its effective local sandbox, its one
+editable target, its allowed actions, and its receipt. A blank or `unknown`
+answer is a stop signal, not something to fill in by guessing.
+
+### Decision and action
+
+Before you send the task, write these four lines in the run record:
+
+| Question | Record | Continue only when | Stop when |
+| --- | --- | --- | --- |
+| Where will this run? | Declared sandbox, observed current directory, repository root, and branch or `HEAD`. | The observed directory is inside the declared sandbox, and the Git root and identity describe the same local checkout. | Any identifier is missing, ambiguous, outside the sandbox, or disagrees with the others. |
+| What may change? | `README.md` only. | The target is one existing file in that sandbox. | The task needs another path or the target cannot be identified. |
+| What is allowed? | Inspect, report a plan, then edit only after approval; keep the exclusions from Setup. | The action is reversible and needs no new authority. | It needs credentials, an install, network access, a commit, push, publish, deletion, or another external write. |
+| What is the receipt? | Baseline, exact diff, command source, focused-check output, and explicit unknowns. | You can inspect and retain each item after the action. | The result would only be a status statement or an unreviewable response. |
+
+Do not begin the file task until every answer is concrete. If this type of
+file task is not available to you yet, use the public text-only
+[First Win](../../site/index.html#first-30) instead. It is a separate,
+fictional message-checking exercise and does not require a project folder.
+
+### Evidence, failure, and reflection
+
+Save the four answers with the baseline. For a local Git sandbox, record and
+compare the observed current directory, repository root, branch or `HEAD`, and
+declared sandbox before editing. If one answer or identifier changes during the
+task, stop, update the task card, and ask for a new narrow decision before
+continuing. Completing this check only records that you selected a bounded
+starting point; it does not prove that Codex can perform the task, that the
+task will pass, or that you learned the method.
+
 ## Task
 
 Give Codex a bounded request like this, replacing angle-bracket values with
@@ -58,11 +100,15 @@ facts from the sandbox:
 ```text
 Run ID: lab001-readme-<date>-<suffix>
 Goal: Add one accurate local-start section to <absolute-path>/README.md.
+Sandbox: <absolute-path>; the only editable file is README.md.
 Read first: README.md, the package/build manifest, and the existing script file.
 Allowed edit: README.md only.
 Do not: install, access the network, modify code, commit, push, publish, send
 messages, read secrets, or use production data.
-Before editing: report the baseline, plan, command source, and acceptance check.
+Receipt: baseline, plan, exact diff, command source, focused-check output, and
+an explicit unverified list.
+Before editing: report the observed current directory, repository root, branch
+or HEAD, declared sandbox, baseline, plan, command source, and acceptance check.
 After editing: show the exact diff and run only the focused checks I approved.
 If a path, command, permission, or recovery step is unclear, stop and ask.
 ```
@@ -78,6 +124,13 @@ Keep one record with these fields:
 ```text
 run_id:
 checkpoint_before:
+preflight_sandbox:
+preflight_observed_directory:
+preflight_repository_root:
+preflight_branch_or_head:
+preflight_edit_target:
+preflight_allowed_actions:
+preflight_receipt:
 scope:
 inputs_read:
 assumptions:
@@ -154,6 +207,11 @@ for broad access.
 ## Acceptance checklist
 
 - [ ] The task card names one target file and one allowed edit path.
+- [ ] The declared sandbox, observed directory, repository root, branch or
+      `HEAD`, editable target, allowed actions, and receipt were written
+      before the first action.
+- [ ] The observed directory is inside the declared sandbox, and the Git root
+      and branch or `HEAD` identify the same local checkout.
 - [ ] A baseline exists and pre-existing changes are identified.
 - [ ] Codex inspected before editing and stated a bounded plan.
 - [ ] The actual diff is limited to the allowed file.
@@ -171,6 +229,8 @@ Answer these questions in your run record:
 2. What did the diff prove, and what did it not prove?
 3. If a check stalled, what was still unknown after interruption?
 4. What single field would you add to the task card before repeating it?
+5. Which of the four pre-action answers was hardest to make concrete, and did
+   it change the task boundary?
 
 ## Transfer task
 
@@ -193,8 +253,11 @@ model, Skill, tool, connector, or work surface can perform the same task.
 
 Read [Chapter 2](../chapters/02-first-safe-task-EN.md), the
 [official baseline](../../docs/research/chapter-02-official-baseline-2026-08-10.md),
-and the [field-problems study](../../docs/research/chapter-02-field-problems-2026-08-10.md)
-before adapting the lab to a higher-risk task.
+the [field-problems study](../../docs/research/chapter-02-field-problems-2026-08-10.md),
+and the candidate [first-action friction ledger](../../docs/research/first-five-minute-codex-friction-ledger-2026-08-13.md)
+before adapting the lab to a higher-risk task. The ledger supplies scoped
+research context; it is not evidence that this lab, a product surface, or a
+learner has run successfully.
 
 <!-- lab-navigation:start -->
 <hr>

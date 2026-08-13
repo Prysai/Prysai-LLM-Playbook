@@ -23,10 +23,21 @@ class Element:
     attrs: dict[str, str | None]
     line: int
     in_main: bool
+    parent: "Element | None" = None
     text: list[str] = field(default_factory=list)
+    children: list["Element"] = field(default_factory=list)
 
     def accessible_text(self) -> str:
-        return SPACE_RE.sub(" ", " ".join(self.text)).strip()
+        parts = [*self.text]
+        for child in self.children:
+            if not is_hidden_from_accessibility(child):
+                parts.append(child.accessible_text())
+        return SPACE_RE.sub(" ", " ".join(parts)).strip()
+
+
+def is_hidden_from_accessibility(element: Element) -> bool:
+    """Return whether an element removes its descendants from the accessibility tree."""
+    return "hidden" in element.attrs or (element.attrs.get("aria-hidden") or "").lower() == "true"
 
 
 class DocumentParser(HTMLParser):
@@ -42,7 +53,16 @@ class DocumentParser(HTMLParser):
         normalized = tag.lower()
         if normalized == "main":
             self.main_depth += 1
-        element = Element(normalized, dict(attrs), self.getpos()[0], self.main_depth > 0)
+        parent = self.stack[-1] if self.stack else None
+        element = Element(
+            normalized,
+            dict(attrs),
+            self.getpos()[0],
+            self.main_depth > 0,
+            parent,
+        )
+        if parent:
+            parent.children.append(element)
         self.elements.append(element)
         if normalized not in {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}:
             self.stack.append(element)
@@ -62,9 +82,8 @@ class DocumentParser(HTMLParser):
             self.main_depth -= 1
 
     def handle_data(self, data: str) -> None:
-        if data.strip():
-            for element in self.stack:
-                element.text.append(data)
+        if data.strip() and self.stack:
+            self.stack[-1].text.append(data)
 
 
 def parse_html(text: str) -> DocumentParser:
@@ -72,6 +91,16 @@ def parse_html(text: str) -> DocumentParser:
     parser.feed(text)
     parser.close()
     return parser
+
+
+def has_named_implicit_label(element: Element) -> bool:
+    """Return whether a control is nested in a native label with usable text."""
+    parent = element.parent
+    while parent:
+        if parent.tag == "label":
+            return bool(parent.accessible_text())
+        parent = parent.parent
+    return False
 
 
 def source_findings(path: Path, text: str) -> list[str]:
@@ -109,7 +138,12 @@ def source_findings(path: Path, text: str) -> list[str]:
             if element.attrs.get("type") == "hidden":
                 continue
             control_id = element.attrs.get("id")
-            if not element.attrs.get("aria-label") and not element.attrs.get("aria-labelledby") and control_id not in labels_for:
+            if (
+                not element.attrs.get("aria-label")
+                and not element.attrs.get("aria-labelledby")
+                and control_id not in labels_for
+                and not has_named_implicit_label(element)
+            ):
                 findings.append(f"{label}:{element.line}: {element.tag} requires a label or accessible name")
 
         if element.tag in {"a", "button"}:

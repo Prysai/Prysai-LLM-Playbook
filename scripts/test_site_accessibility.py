@@ -29,6 +29,28 @@ def main() -> int:
         require("heading level jumps from h1 to h3", findings, "heading-jump")
         fixtures += 1
 
+        findings = source_findings(
+            Path("implicit-label.html"),
+            MINIMAL.format(body='<label><input type="radio" name="check" value="pass">Pass</label>'),
+        )
+        if any("input requires a label or accessible name" in item for item in findings):
+            raise AssertionError(f"implicit-label: native nested label was rejected: {findings}")
+        fixtures += 1
+
+        findings = source_findings(
+            Path("empty-implicit-label.html"),
+            MINIMAL.format(body='<label><input type="radio" name="check" value="pass"></label>'),
+        )
+        require("input requires a label or accessible name", findings, "empty-implicit-label")
+        fixtures += 1
+
+        findings = source_findings(
+            Path("hidden-implicit-label.html"),
+            MINIMAL.format(body='<label><input type="radio" name="check" value="pass"><span aria-hidden="true">Pass</span></label>'),
+        )
+        require("input requires a label or accessible name", findings, "hidden-implicit-label")
+        fixtures += 1
+
         with TemporaryDirectory(prefix="site-integrity-fixture-") as temporary:
             artifact = Path(temporary)
             (artifact / "site").mkdir()
@@ -55,6 +77,9 @@ def main() -> int:
             "const uniqueHeadingId = (value) => {",
             "else if (isSafeDestination(destination.target, path)) element.href = destination.target;",
             "link.href = window.CODEX_PAGES_ARTIFACT ? `../${target}` : target;",
+            "visualLink.className = 'reader-image-link';",
+            "linkLabel.className = 'reader-image-link-label';",
+            "openVisual: 'Open full-size visual'",
         ):
             if required not in reader_script:
                 raise AssertionError(f"dynamic-copy-control: missing {required}")

@@ -476,7 +476,9 @@ button, input, select, textarea { font: inherit; }
   #start .problem-card:nth-child(2), #start .problem-card:nth-child(3), #start .problem-card:nth-child(4), #start .problem-card:nth-child(6), #start .problem-card:nth-child(7), #start .problem-card:nth-child(8) { display: none; }
   #start .section-heading, #project-map .section-heading, #project-map .index-panel-head, #project-map .index-panel-intro, #project-map .repository-strip, #project-map .index-layout, #project-map .research-panel { display: none; }
   #project-map .visual-case-panel { display: block; margin-top: 1.2rem; padding-top: 1rem; }
-  #project-map .visual-case-lead { display: none; }
+  #project-map .visual-case-lead { display: block; margin-bottom: 1rem; }
+  #project-map .visual-case-lead .index-panel-head { display: flex; }
+  #project-map .visual-case-lead .index-panel-intro { display: block; margin: .55rem 0; font-size: .78rem; line-height: 1.45; }
   #project-map .visual-case-links { grid-template-columns: 1fr; }
   #project-map .visual-case-links a { min-height: 0; padding: .75rem; }
   #first-30 .section-heading { margin-bottom: 1.4rem; }

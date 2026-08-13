@@ -237,6 +237,10 @@ try {
   const recoveryVisual = page.locator('img[alt*="Preserve the failed interaction"]');
   await recoveryVisual.scrollIntoViewIfNeeded();
   assert.equal(await recoveryVisual.evaluate((image) => image.complete && image.naturalWidth > 0), true, 'Recovery teaching visual did not load');
+  const recoveryVisualLink = page.locator('.reader-image-link').filter({ has: recoveryVisual });
+  assert.equal(await recoveryVisualLink.getAttribute('target'), '_blank', 'Teaching visual does not offer a full-size reading route');
+  assert.match(await recoveryVisualLink.getAttribute('href'), /assets\/teaching\/failed-interaction-recovery-red-black\.svg$/, 'Teaching visual full-size route is not the original asset');
+  assert.equal(await page.getByRole('link', { name: /open full-size visual: preserve the failed interaction/i }).isVisible(), true, 'Teaching visual full-size route has no accessible name');
   assert.equal(await page.getByRole('link', { name: /coaching-process evaluation candidate/i }).isVisible(), true, 'Related coaching-process evaluation is not discoverable');
   assert.equal(await page.getByRole('link', { name: /task-contract availability and channel study/i }).isVisible(), true, 'Separate task-contract study is not discoverable');
   await noHorizontalOverflow(page, 'mobile Beginner Practice Pack');

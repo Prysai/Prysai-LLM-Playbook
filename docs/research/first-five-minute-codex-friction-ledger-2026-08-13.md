@@ -185,7 +185,9 @@ It reproduces no Issue body, command log, screen capture, source code, document 
 
 Linked material remains reference-only and owned by its publishers and contributors.
 
-No external asset entered the project, so no asset-register entry is required for this research-only addition.
+No external asset entered the project. The original reader-facing adaptation is
+recorded in the asset register as `S68`; its linked sources remain
+reference-only.
 
 ## Recommendation
 
