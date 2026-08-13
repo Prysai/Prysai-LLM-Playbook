@@ -9,10 +9,12 @@
 <!-- language-switcher:end -->
 
 This directory contains the original main-line book for `Codex: From First
-Task to Real Work`. It is arranged around the learner's growth, not assembled
-as a collection of unrelated external projects. The book explains the ideas,
-then makes the reader exercise the decisions that make those ideas reliable in
-real work.
+Task to Real Work`. Its stable collaboration method is intended to transfer
+across language-model tools; Codex is the deepest current worked track, not a
+claim that every platform behaves identically. The book is arranged around the
+learner's growth, not assembled as a collection of unrelated external
+projects. It explains the ideas, then makes the reader exercise the decisions
+that make those ideas reliable in real work.
 
 ## The contract for every chapter
 
@@ -47,6 +49,7 @@ currently `draft` with `run_status: not_run`.
 
 ## Where to enter the book
 
+- [First mapped universal-core route](routes/universal-core-foundations-EN.md) — four extracted units; `candidate / not_run`; context selection, reuse, evaluation, and team governance remain incomplete
 - [Preface: This Is Not a Prompt Catalogue](preface-EN.md)
 - [English book table of contents](table-of-contents-EN.md)
 - [Communication Clinic: choose a practical route for learning, research, decisions, or creation](communication-clinic-EN.md) — supplemental candidate; templates and evidence contracts exist, but no learner run is claimed

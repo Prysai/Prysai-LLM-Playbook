@@ -2,9 +2,14 @@
 
 # Codex: From First Task to Real Work — Table of Contents v0.2
 
+Readers who want the platform-neutral method first can open the
+[first mapped universal-core route](routes/universal-core-foundations-EN.md).
+It covers four extracted units and remains `candidate / not_run`; context
+selection, reuse, evaluation, and team governance are not yet complete.
+
 > English source-locale directory page. This migration slice is based on the
 > existing unsuffixed `book/table-of-contents.md`. It keeps all 22 chapters,
-> 17 experiments, maturity boundaries, and real-user problem research
+> 18 experiments, maturity boundaries, and real-user problem research
 > entrances visible without claiming that the chapter or lab corpus is already
 > translated or runtime-verified.
 

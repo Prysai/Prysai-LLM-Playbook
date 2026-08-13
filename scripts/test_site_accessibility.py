@@ -46,10 +46,15 @@ def main() -> int:
             "copyPrompt: '复制提示词'",
             "copiedPrompt: '提示词已复制'",
             "status.setAttribute('aria-live', 'polite')",
+            "function isSafeDestination(value, path, { image = false } = {})",
+            "else if (isSafeDestination(destination.target, path)) element.href = destination.target;",
+            "if (window.CODEX_PAGES_ARTIFACT) link.href = '../index.html';",
         ):
             if required not in reader_script:
                 raise AssertionError(f"dynamic-copy-control: missing {required}")
-        fixtures += 1
+        if "else element.href = destination.target;" in reader_script:
+            raise AssertionError("dynamic-reader-link-policy: unsafe fallback assignment returned")
+        fixtures += 2
     except (AssertionError, OSError, UnicodeError, ValueError) as exc:
         print("SITE_ACCESSIBILITY_FIXTURES_FAILED")
         print(f"- {exc}")

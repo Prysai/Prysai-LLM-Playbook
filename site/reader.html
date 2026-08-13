@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A readable Codex Field Guide source page." />
+    <meta name="description" content="A readable Codex Field Guide source page with a transferable collaboration method." />
     <meta name="theme-color" content="#ffffff" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Codex Field Guide reader" />
@@ -16,22 +16,22 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="../assets/readme/codex-field-guide-social.png" />
     <meta name="twitter:image:alt" content="LLM for Real Work — define, add context, act, verify, and transfer" />
-    <title>Field Guide reader</title>
+    <title>Codex Field Guide reader</title>
     <link rel="icon" type="image/png" href="../assets/branding/prysai-lab-mark-black-96.png" />
-    <link rel="stylesheet" href="reader.css" />
+    <link rel="stylesheet" href="reader.css?v=20260813-positioning" />
     <script src="locale-manifest.js"></script>
-    <script src="reader.js" defer></script>
+    <script src="reader.js?v=20260813-positioning" defer></script>
   </head>
   <body>
     <a class="reader-skip-link" href="#reader-content" data-reader-i18n="skip">Skip to content</a>
     <header class="reader-header">
       <div class="reader-header-inner">
-        <a class="reader-brand" href="index.html" aria-label="Codex Field Guide overview">
+        <a class="reader-brand" href="index.html" data-reader-overview aria-label="Codex Field Guide overview">
           <img class="reader-brand-logo reader-brand-logo-dark" src="../assets/branding/prysai-lab-mark-black-96.png" alt="" width="34" height="34" />
           <span><small>Prysai Lab</small><strong>Codex / Field Guide</strong></span>
         </a>
         <div class="reader-header-actions">
-          <a class="reader-back" href="index.html" data-reader-i18n="back">Back to overview</a>
+          <a class="reader-back" href="index.html" data-reader-overview data-reader-i18n="back">Back to overview</a>
           <label class="reader-language-label" for="reader-language" data-reader-i18n="language">Language</label>
           <select id="reader-language" data-reader-language aria-label="Choose reading language" data-reader-i18n-attr="aria-label:languageAria">
             <option value="en">English</option>
@@ -49,7 +49,18 @@
 
     <main class="reader-main" id="reader-content" tabindex="-1">
       <div class="reader-shell">
-        <div class="reader-mobile-orientation" data-reader-orientation hidden></div>
+        <details class="reader-mobile-orientation" data-reader-orientation hidden>
+          <summary data-reader-i18n="bookChapters">Book chapters</summary>
+          <strong class="reader-mobile-progress" data-reader-mobile-progress></strong>
+          <nav class="reader-mobile-chapter-links" aria-label="Chapter navigation" data-reader-i18n-attr="aria-label:chapterNavigationAria">
+            <a data-reader-mobile-previous href="#" hidden aria-label="Previous chapter" data-reader-i18n-attr="aria-label:previousChapter">Previous chapter</a>
+            <a data-reader-mobile-next href="#" hidden aria-label="Next chapter" data-reader-i18n-attr="aria-label:nextChapter">Next chapter</a>
+          </nav>
+          <div class="reader-mobile-toc" data-reader-mobile-toc hidden>
+            <span data-reader-i18n="onThisPage">On this page</span>
+            <ol data-reader-mobile-toc-list></ol>
+          </div>
+        </details>
         <article class="reader-article" data-reader-article tabindex="-1" aria-busy="true" data-reader-requested-locale="" data-reader-effective-locale="" data-reader-fallback="false">
           <p class="reader-loading" data-reader-loading role="status">Loading the source page…</p>
         </article>

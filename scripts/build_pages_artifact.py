@@ -51,6 +51,17 @@ def root_index(site_index: Path) -> str:
     return text.replace(marker, f"{marker}\n{base}", 1)
 
 
+def pages_reader(reader: Path) -> str:
+    """Return the Reader with an explicit artifact routing mode."""
+
+    text = reader.read_text(encoding="utf-8")
+    marker = "<head>"
+    if marker not in text:
+        raise ValueError(f"{reader.relative_to(ROOT)} is missing a <head> element")
+    flag = "    <script>window.CODEX_PAGES_ARTIFACT = true;</script>\n"
+    return text.replace(marker, f"{marker}\n{flag}", 1)
+
+
 def validate_source() -> None:
     required = (
         ROOT / "site/index.html",
@@ -104,6 +115,9 @@ def validate_artifact(output: Path) -> None:
         raise ValueError("root Pages entry must point relative assets and content through site/")
     if not (output / "site/search-index.js").is_file():
         raise FileNotFoundError("Pages artifact is missing site/search-index.js")
+    reader_text = (output / "site/reader.html").read_text(encoding="utf-8")
+    if "window.CODEX_PAGES_ARTIFACT = true" not in reader_text:
+        raise ValueError("Pages Reader must retain artifact routing mode")
 
     integrity_findings = artifact_findings(output)
     if integrity_findings:
@@ -126,6 +140,7 @@ def build(output: Path) -> None:
         shutil.copy2(ROOT / filename, output / filename)
 
     (output / "index.html").write_text(root_index(ROOT / "site/index.html"), encoding="utf-8", newline="\n")
+    (output / "site/reader.html").write_text(pages_reader(ROOT / "site/reader.html"), encoding="utf-8", newline="\n")
     (output / ".nojekyll").write_text("", encoding="utf-8")
     validate_artifact(output)
 

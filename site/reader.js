@@ -21,6 +21,11 @@
   const bookProgress = document.querySelector('[data-reader-book-progress]');
   const chapterList = document.querySelector('[data-reader-chapter-list]');
   const orientation = document.querySelector('[data-reader-orientation]');
+  const mobileProgress = document.querySelector('[data-reader-mobile-progress]');
+  const mobilePrevious = document.querySelector('[data-reader-mobile-previous]');
+  const mobileNext = document.querySelector('[data-reader-mobile-next]');
+  const mobileToc = document.querySelector('[data-reader-mobile-toc]');
+  const mobileTocList = document.querySelector('[data-reader-mobile-toc-list]');
   const chapterCard = document.querySelector('[data-reader-chapter-card]');
   const chapterLabel = document.querySelector('[data-reader-chapter-label]');
   const chapterStatus = document.querySelector('[data-reader-chapter-status]');
@@ -184,11 +189,29 @@ function canonicalChapterTitle(chapter) {
     });
     bookNav.hidden = false;
     if (orientation) {
-      orientation.textContent = `${part?.number || ''} · ${chapterProgressLabel(current, index)}`;
+      if (mobileProgress) mobileProgress.textContent = `${part?.number || ''} · ${chapterProgressLabel(current, index)}`;
       orientation.hidden = false;
     }
     const previous = bookNavigation.chapters[index - 1];
     const next = bookNavigation.chapters[index + 1];
+    const updateMobileLink = (link, chapter, direction) => {
+      if (!link) return;
+      if (!chapter) {
+        link.hidden = true;
+        link.href = '#';
+        link.textContent = '';
+        return;
+      }
+      link.hidden = false;
+      link.href = readerHref(chapterPath(chapter), '', activeLocale);
+      link.textContent = `${direction === 'previous' ? '←' : '→'} ${canonicalChapterTitle(chapter)}`;
+    };
+    updateMobileLink(mobilePrevious, previous, 'previous');
+    updateMobileLink(mobileNext, next, 'next');
+    if (mobileToc && mobileTocList) {
+      mobileTocList.replaceChildren(...[...tocList.querySelectorAll('li')].map((item) => item.cloneNode(true)));
+      mobileToc.hidden = mobileTocList.children.length === 0;
+    }
     const updatePaginationLink = (link, titleNode, chapter) => {
       if (!chapter) { link.hidden = true; return; }
       link.hidden = false;
@@ -219,6 +242,18 @@ function canonicalChapterTitle(chapter) {
     return /^(?:https?:|mailto:)/i.test(value);
   }
 
+  function isExternalImage(value) {
+    return /^https?:/i.test(value);
+  }
+
+  function isSafeDestination(value, path, { image = false } = {}) {
+    const target = String(value || '').trim();
+    if (!target) return false;
+    if (target.startsWith('#')) return !image;
+    if (resolveSourcePath(path, target)) return true;
+    return image ? isExternalImage(target) : isExternal(target);
+  }
+
   function appendInline(parent, value, path) {
     const pattern = /(<mark\b[^>]*>.*?<\/mark>|!?\[[^\]]*\]\([^)]*\)|\[[^\]]+\]\([^)]*\)|`[^`]+`|\*\*[^*]+\*\*|__[^_]+__|\*[^*]+\*|_[^_]+_|<https?:\/\/[^>]+>|https?:\/\/[^\s<]+)/gi;
     let cursor = 0;
@@ -244,7 +279,7 @@ function canonicalChapterTitle(chapter) {
           element.alt = label;
           element.loading = 'lazy';
           if (resolved && !isExternal(destination.target)) element.src = directHref(resolved);
-          else if (isExternal(destination.target)) element.src = destination.target;
+          else if (isExternalImage(destination.target)) element.src = destination.target;
           else element.alt = `${label} (image unavailable)`;
           if (destination.title) element.title = destination.title;
           parent.append(element);
@@ -255,7 +290,7 @@ function canonicalChapterTitle(chapter) {
           if (destination.target.startsWith('#')) element.href = destination.target;
           else if (resolved && resolved.endsWith('.md')) element.href = readerHref(resolved, hash);
           else if (resolved && !isExternal(destination.target)) element.href = directHref(resolved) + hash;
-          else element.href = destination.target;
+          else if (isSafeDestination(destination.target, path)) element.href = destination.target;
           if (isExternal(destination.target)) { element.target = '_blank'; element.rel = 'noreferrer'; }
           parent.append(element);
         }
@@ -336,7 +371,7 @@ function canonicalChapterTitle(chapter) {
           const src = child.getAttribute('src') || '';
           const resolved = resolveSourcePath(path, src);
           if (resolved && !isExternal(src)) child.setAttribute('src', directHref(resolved));
-          else if (!isExternal(src)) child.removeAttribute('src');
+          else if (!isExternalImage(src)) child.removeAttribute('src');
         }
         clean(child);
       });
@@ -676,7 +711,7 @@ function canonicalChapterTitle(chapter) {
     renderBookNavigation(selection);
     renderTrustRecord(await loadTrustRecord(selection.contentId));
     document.title = `${title} · Codex Field Guide`;
-    document.querySelector('meta[name="description"]').setAttribute('content', `Read ${title} in the Codex Field Guide.`);
+    document.querySelector('meta[name="description"]').setAttribute('content', `Read ${title} in the Codex Field Guide and its transferable collaboration method.`);
     const effectiveLocale = selection.effective || locale;
     document.documentElement.lang = locales[effectiveLocale]?.html_lang || effectiveLocale;
     article.lang = locales[effectiveLocale]?.html_lang || effectiveLocale;
@@ -702,6 +737,10 @@ function canonicalChapterTitle(chapter) {
       languageSelect.dataset.contentId = selection.contentId;
     }
   }
+
+  document.querySelectorAll('[data-reader-overview]').forEach((link) => {
+    if (window.CODEX_PAGES_ARTIFACT) link.href = '../index.html';
+  });
 
   languageSelect.addEventListener('change', () => {
     const locale = languageSelect.value;

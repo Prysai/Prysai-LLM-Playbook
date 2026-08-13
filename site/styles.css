@@ -474,7 +474,7 @@ button, input, select, textarea { font: inherit; }
   .panel-next { margin-top: 1rem; }
   #chapters .section-heading, #chapters .route-controls, #chapters .route-status { display: none; }
   #chapters .chapter-group summary { padding: .8rem 0; }
-  #chapters .chapter-items { display: none; }
+  #chapters .chapter-items { grid-template-columns: 1fr; }
   #labs .section-heading, #skills .section-heading { margin-bottom: 1.2rem; }
   #labs .section-intro, #skills .section-intro { display: none; }
   .lab-grid .lab-card, .skill-grid > a { min-height: 0; padding: .85rem; }

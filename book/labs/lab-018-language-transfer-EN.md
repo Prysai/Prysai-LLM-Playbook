@@ -31,9 +31,10 @@ Produce the information needed in a short beginner travel exchange, repair one
 meaning-blocking error through graduated hints, and test the same capability in
 a changed case. A delayed unseen task is required before any retention claim.
 
-This is a candidate curriculum artifact with no learner evidence. It remains an
-unregistered draft reader slice: it is not yet registered in the canonical
-learning path, content-status source, Lab index, or navigation.
+This is a registered `draft / not_run` curriculum artifact with no learner,
+delayed-retention, or transfer evidence. Its presence in the learning path,
+content-status source, Lab index, and locale manifest proves discoverability
+and structure only; it does not prove that the Lab improves learning.
 
 ## Setup and safety
 
@@ -193,3 +194,13 @@ research record supports retrieval, feedback, delayed-check, and transfer-test
 design decisions; it does not prove that this lab improves learning or that any
 model/platform is an effective tutor. Status remains `draft` and learner
 `run_status` remains `not_run` until the declared evidence exists.
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="Lab navigation">
+  <table role="presentation" width="100%"><tr>
+    <td align="left"><a href="lab-017-skill-discovery-audit-EN.md">← Previous<br><strong>Lab 017 · Skill discovery audit</strong></a></td>
+    <td align="right"><a href="README-EN.md">Lab index →<br><strong>Review all 18 Labs</strong></a></td>
+  </tr></table>
+</nav>
+<!-- chapter-navigation:end -->

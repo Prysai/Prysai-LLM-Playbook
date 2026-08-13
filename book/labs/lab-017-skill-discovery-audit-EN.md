@@ -96,7 +96,7 @@ Name the stage that a directory listing failed to prove and the evidence require
 <nav class="chapter-navigation" aria-label="Chapter navigation">
   <table role="presentation" width="100%"><tr>
     <td align="left"><a href="lab-016-side-effect-boundary-EN.md">← Previous<br><strong>Lab 016 · Side-effect boundary</strong></a></td>
-    <td align="right"><a href="README-EN.md">Next →<br><strong>Return to the lab index</strong></a></td>
+    <td align="right"><a href="lab-018-language-transfer-EN.md">Next →<br><strong>Lab 018 · Language transfer</strong></a></td>
   </tr></table>
 </nav>
 <!-- chapter-navigation:end -->

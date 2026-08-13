@@ -9,7 +9,7 @@
     pathAria: 'Seven-level learning path',
     routesAria: 'Filter chapter routes',
     menu: 'Menu', navStart: 'Start with a problem', navFirst30: 'First 30 minutes', navPath: 'Learning path', navIndex: 'Project index', navRoutes: 'Reading routes', navLabs: 'Labs', navSkills: 'Skills', navUpdates: 'Update map', localeBannerFallback: 'The {requested} route is available, but some UI or reader-facing content is still in migration. Showing the current available source where needed.', localeManifestError: 'Locale routing is unavailable because the generated manifest did not load. English remains available; rebuild the manifest before relying on other routes.', localeBannerReady: 'Reading in {language}.', localeMenuAria: 'Interface languages', languageNameEnglish: 'English', languageNameChinese: 'Simplified Chinese', languageNameSpanish: 'Spanish', languageNameJapanese: 'Japanese', languageNameKorean: 'Korean', languageNameGerman: 'German',
-    heroIndex: 'CODEX / LEARNING SYSTEM', heroEyebrow: 'Codex learning and practice · candidate', heroTitle: 'Use Codex for real work.', heroLede: 'Understand what GPT, Codex, models, tools, Skills, and Agents actually do. Practice on small tasks, keep evidence, and move into real workflows.', heroPrimary: 'Start with a real problem', heroSecondary: 'Browse 22 chapters', heroNoteAria: 'Project status', heroNoteLabel: 'Current baseline', heroNoteBody: 'The structure is a candidate. Labs are still draft and have not completed live execution verification.', heroNoteLink: 'See the evidence boundary', heroFooter: 'Problem → protocol → action → evidence',
+    heroIndex: 'CODEX / LEARNING SYSTEM', heroEyebrow: 'Transferable method · deepest practice in Codex', heroTitle: 'Use Codex for reliable, checkable work.', heroLede: 'Learn a method that transfers across language-model tools, then practise it deeply in Codex: define the outcome, control context and authority, inspect the work, recover from failure, and keep evidence.', heroPrimary: 'Start with a real problem', heroSecondary: 'Browse 22 chapters', heroNoteAria: 'Project scope', heroNoteLabel: 'Codex flagship track', heroNoteBody: 'Codex is the deepest worked track. The transferable-core architecture is accepted and its reader route is still being extracted; other named platform tracks are not yet claimed.', heroNoteLink: 'See the evidence boundary', heroFooter: 'Problem → protocol → action → evidence',
     startEyebrow: 'Start with the problem', startTitle: 'Do not start with a Skill.', startIntro: 'Start with the failure you need to avoid or the work you need to finish. Pick the smallest useful entry, then leave evidence.',
     problemStartTitle: 'I do not know where to start.', problemStartBody: 'Separate GPT, Codex, models, tools, Skills, and Agents before choosing a workflow.', problemStartLink: 'Open chapter 1 ↗', problemWrongFileTitle: 'Codex changed the wrong file.', problemWrongFileBody: 'Learn to inspect scope, diff, tests, and recovery before trusting a completion statement.', problemWrongFileLink: 'Open chapter 9 ↗', problemSkillTitle: 'I do not know which Skill to use.', problemSkillBody: 'Choose by task, risk, inputs, dependencies, and evidence—not by directory size.', problemSkillLink: 'Run lab 004 ↗', problemUpdateTitle: 'I need to update this safely.', problemUpdateBody: 'Use the fixed update map to find the canonical file, required source record, and validation gate.', problemUpdateLink: 'Open the update map ↗', problemLanguageTitle: 'I want to practise one language skill.', problemLanguageBody: 'Define one observable performance, attempt it before instruction, correct one meaning-blocking error, then test a changed case.', problemLanguageLink: 'Open language route · candidate · not_run ↗', problemGeneralSkillTitle: 'I want to practise another real skill.', problemGeneralSkillBody: 'Turn an interview answer, explanation, or presentation into one timed performance, then retest it under a changed condition.', problemGeneralSkillLink: 'Open general skill route · candidate · not_run ↗', problemResearchTitle: 'I need to research one bounded question.', problemResearchBody: 'Tie the question to a decision, assign source owners, keep a claim ledger, search for disagreement, and stop on purpose.', problemResearchLink: 'Open research route · candidate · not_run ↗',
     first30Eyebrow: 'The first 30 minutes', first30Title: 'Finish one small task.', first30Intro: 'Use a disposable or reversible project. The goal is not a perfect answer; it is a complete loop you can inspect.', stepOneTitle: 'Choose a reversible change.', stepOneBody: 'Use a sandbox file or a small documentation edit. Do not start with credentials, production, or a destructive command.', stepTwoTitle: 'Write the task contract.', stepTwoBody: 'State the goal, context, allowed actions, acceptance criteria, evidence, and stop condition.', stepThreeTitle: 'Let Codex inspect first.', stepThreeBody: 'Ask for the relevant files and current state before allowing an edit. Keep the scope visible.', stepFourTitle: 'Verify what changed.', stepFourBody: 'Review the diff, run the smallest relevant check, and record what was not tested.', checkCardLabel: 'A useful task contract', fieldGoalLabel: 'Goal', fieldGoal: 'Make one named change.', fieldContextLabel: 'Context', fieldContext: 'Only the files needed for this task.', fieldInputsLabel: 'Inputs', fieldInputs: 'Paths, current behavior, constraints.', fieldAllowedLabel: 'Allowed actions', fieldAllowed: 'Read and edit; pause before external effects.', fieldAcceptanceLabel: 'Acceptance', fieldAcceptance: 'A specific diff and check result.', fieldEvidenceLabel: 'Evidence', fieldEvidence: 'Diff, command, output, and limits.', fieldStopLabel: 'Stop when', fieldStop: 'Scope, authority, or evidence is missing.', contractHighlight: 'The safest first task is small, reversible, and easy to inspect.', openChapterTwo: 'Open chapter 2',
@@ -28,7 +28,7 @@
   zh: {
     heroIndexAria: '页面索引',
     skipToContent: '跳到主要内容', wordmarkAria: 'Codex：从第一个任务到真实工作的首页', languageToggleAria: '选择界面语言', menuAria: '打开导航', navAria: '主导航', pathAria: '七级学习路径', routesAria: '筛选章节路线', menu: '菜单', navStart: '从问题开始', navFirst30: '前 30 分钟', navPath: '学习路径', navIndex: '项目索引', navRoutes: '阅读路线', navLabs: '实验室', navSkills: 'Skills', navUpdates: '更新地图', localeBannerFallback: '已提供 {requested} 路由，但部分界面或读者内容仍在迁移中；需要时显示当前可用源文件。', localeManifestError: '语言路由不可用，因为生成的 manifest 没有加载。英文仍可用；在依赖其他语言路由前，请先重新生成 manifest。', localeBannerReady: '当前阅读语言：{language}。', localeMenuAria: '界面语言', languageNameEnglish: '英语', languageNameChinese: '简体中文', languageNameSpanish: '西班牙语', languageNameJapanese: '日语', languageNameKorean: '韩语', languageNameGerman: '德语',
-    heroIndex: 'CODEX / 学习系统', heroEyebrow: 'Codex 学习与实践 · candidate', heroTitle: '用 Codex 做成真实工作。', heroLede: '弄清 GPT、Codex、模型、工具、Skill 与 Agent 各自做什么。用小任务练习，留下证据，再进入真实工作流。', heroPrimary: '从一个真实问题开始', heroSecondary: '浏览 22 章', heroNoteAria: '项目状态', heroNoteLabel: '当前基线', heroNoteBody: '项目结构为 candidate。实验仍为 draft，尚未完成实际运行验证。', heroNoteLink: '查看证据边界', heroFooter: '问题 → 协议 → 行动 → 证据',
+    heroIndex: 'CODEX / 学习系统', heroEyebrow: '可迁移的方法 · 在 Codex 中深入实践', heroTitle: '用 Codex 完成可靠、可检查的真实工作。', heroLede: '先学习一套可迁移到不同大语言模型工具的方法，再在 Codex 中深入实践：定义结果、控制上下文与权限、检查工作、从失败中恢复，并保留证据。', heroPrimary: '从一个真实问题开始', heroSecondary: '浏览 22 章', heroNoteAria: '项目范围', heroNoteLabel: 'Codex 旗舰轨道', heroNoteBody: 'Codex 是当前最深入的实践轨道。通用核心架构已经采纳，但读者路线仍在提取中；项目尚未声称已完成其他命名平台课程。', heroNoteLink: '查看证据边界', heroFooter: '问题 → 协议 → 行动 → 证据',
     startEyebrow: '从问题开始', startTitle: '不要从 Skill 开始。', startIntro: '先说清楚你要避免的失败或要完成的工作。选择最小有效入口，然后留下证据。', problemStartTitle: '我不知道从哪里开始。', problemStartBody: '在选择工作流前，先分清 GPT、Codex、模型、工具、Skill 与 Agent。', problemStartLink: '打开第 1 章 ↗', problemWrongFileTitle: 'Codex 改错了文件。', problemWrongFileBody: '在相信完成声明前，检查范围、差异、测试与恢复方式。', problemWrongFileLink: '打开第 9 章 ↗', problemSkillTitle: '我不知道该用哪个 Skill。', problemSkillBody: '按任务、风险、输入、依赖和证据选择，不按目录大小选择。', problemSkillLink: '运行实验 004 ↗', problemUpdateTitle: '我需要安全地更新项目。', problemUpdateBody: '用固定更新地图找到规范文件、来源记录和验证门槛。', problemUpdateLink: '打开更新地图 ↗',
     first30Eyebrow: '前 30 分钟', first30Title: '完成一个小任务。', first30Intro: '使用一次性的或可回滚的项目。目标不是得到漂亮答案，而是完成一个可以检查的闭环。', stepOneTitle: '选择可回滚的改动。', stepOneBody: '使用沙盒文件或小型文档修改。不要从凭据、生产环境或破坏性命令开始。', stepTwoTitle: '写任务协议。', stepTwoBody: '写清目标、上下文、允许行动、验收标准、证据和停止条件。', stepThreeTitle: '让 Codex 先检查。', stepThreeBody: '允许修改前，先让它说明相关文件和当前状态，保持范围可见。', stepFourTitle: '验证实际变化。', stepFourBody: '检查差异，运行最小相关检查，并记录没有测试什么。', checkCardLabel: '一个有用的任务协议', fieldGoalLabel: '目标', fieldGoal: '完成一个明确的改动。', fieldContextLabel: '上下文', fieldContext: '只提供完成任务所需的文件。', fieldInputsLabel: '输入', fieldInputs: '路径、当前行为、约束。', fieldAllowedLabel: '允许行动', fieldAllowed: '读取和编辑；外部副作用前暂停。', fieldAcceptanceLabel: '验收', fieldAcceptance: '明确的差异和检查结果。', fieldEvidenceLabel: '证据', fieldEvidence: '差异、命令、输出和限制。', fieldStopLabel: '停止条件', fieldStop: '范围、授权或证据缺失。', contractHighlight: '最安全的第一个任务应该足够小、可回滚，而且容易检查。', openChapterTwo: '打开第 2 章',
     starterEyebrow: '立即复制 · 行动前先检查', starterTitle: '一个安全的起步提示词。', starterIntro: '替换方括号。第一轮只能检查和提议，必须在修改任何内容前等待批准。', starterCopy: '复制提示词', starterCopied: '提示词已复制。批准行动前请检查计划。', starterCopyFailed: '复制失败，请手动选择提示词文本。', starterBoundary: '复制或发送提示词不证明已经行动，也不证明结果正确。', starterProgressionAria: '从起步提示词继续学习', starterDeepen: '完善任务协议', starterPractice: '在实验 002 中练习 · draft / not_run', starterEvidence: '用证据审查完成声明',
@@ -69,7 +69,7 @@ Object.assign(copy.en, {
   starterPreview: 'Preview the complete prompt',
   navPath: 'Learning path',
   heroPrimary: 'Start a 30-minute safe task',
-  heroSecondary: 'Choose a learning level',
+  heroSecondary: 'Open the universal-core route',
   routeStatusAll: 'Showing all 22 chapters.',
   routeStatusA: 'Showing 6 chapters in A · First contact.',
   routeStatusB: 'Showing 7 chapters in B · Real work.',
@@ -109,7 +109,7 @@ Object.assign(copy.zh, {
   starterPreview: '\u9884\u89c8\u5b8c\u6574\u63d0\u793a\u8bcd',
   navPath: '\u5b66\u4e60\u8def\u5f84',
   heroPrimary: '\u5f00\u59cb\u4e00\u4e2a 30 \u5206\u949f\u7684\u5b89\u5168\u4efb\u52a1',
-  heroSecondary: '\u9009\u62e9\u5b66\u4e60\u7b49\u7ea7',
+  heroSecondary: '打开通用核心路线',
   routeStatusAll: '\u6b63\u5728\u663e\u793a\u5168\u90e8 22 \u7ae0\u3002',
   routeStatusA: '\u6b63\u5728\u663e\u793a A \u00b7 \u521d\u8bc6 Codex \u7684 6 \u7ae0\u3002',
   routeStatusB: '\u6b63\u5728\u663e\u793a B \u00b7 \u771f\u5b9e\u5de5\u4f5c\u7684 7 \u7ae0\u3002',
@@ -143,10 +143,10 @@ Object.assign(copy.zh, {
 
 Object.assign(copy.en, {
   heroBriefAria: 'Project at a glance',
-  briefMapTitle: 'Project index', briefMapBody: 'Files, roles, and entry points',
-  briefStatusTitle: 'Evidence ledger', briefStatusBody: 'candidate · draft · not run',
-  briefLanguageTitle: 'Six-language route', briefLanguageBody: '6 route tokens · EN / ZH UI reviewed',
-  briefResearchTitle: 'Field problems', briefResearchBody: 'User reports, bounded evidence',
+  briefMapTitle: 'Start safely', briefMapBody: 'One bounded task in 30 minutes',
+  briefStatusTitle: 'Choose a route', briefStatusBody: 'Learn, research, build, or review',
+  briefLanguageTitle: 'Go deep in Codex', briefLanguageBody: 'Files, tools, Skills, Agents, evidence',
+  briefResearchTitle: 'Check the claims', briefResearchBody: 'Status, sources, limits, field cases',
   indexEyebrow: 'Project index', indexTitle: 'Know where each claim lives.', indexIntro: 'This is a human-readable map of the repository: what each layer stores, where to begin, and which source controls its status.',
   fileMapTitle: 'Repository map', fileMapIntro: 'Read the layer that matches the work. The public page is a guide; the files below are the source of truth.',
   fileSiteTitle: 'Public showcase', fileSiteBody: 'index.html, styles.css, app.js, and generated learning-path data.',
@@ -163,10 +163,10 @@ Object.assign(copy.en, {
 
 Object.assign(copy.zh, {
   heroBriefAria: '\u9879\u76ee\u901f\u89c8',
-  briefMapTitle: '\u9879\u76ee\u7d22\u5f15', briefMapBody: '\u6587\u4ef6\u3001\u7528\u9014\u4e0e\u5165\u53e3',
-  briefStatusTitle: '\u8bc1\u636e\u53f0\u8d26', briefStatusBody: 'candidate \u00b7 draft \u00b7 not run',
-  briefLanguageTitle: '\u516d\u8bed\u79cd\u8def\u7ebf', briefLanguageBody: '6 \u4e2a\u5165\u53e3\u5207\u7247 \u00b7 UI \u4ec5 EN / \u4e2d\u6587',
-  briefResearchTitle: '\u73b0\u5b9e\u95ee\u9898', briefResearchBody: '\u7528\u6237\u62a5\u544a\uff0c\u8bc1\u636e\u6709\u8fb9\u754c',
+  briefMapTitle: '安全开始', briefMapBody: '30 分钟完成一个有边界的任务',
+  briefStatusTitle: '选择路线', briefStatusBody: '学习、研究、制作或审查',
+  briefLanguageTitle: '深入 Codex', briefLanguageBody: '文件、工具、Skill、Agent 与证据',
+  briefResearchTitle: '检查声明', briefResearchBody: '状态、来源、限制与现场案例',
   indexEyebrow: '\u9879\u76ee\u7d22\u5f15', indexTitle: '\u5148\u77e5\u9053\u6bcf\u4e2a\u7ed3\u8bba\u653e\u5728\u54ea\u91cc\u3002', indexIntro: '\u8fd9\u662f\u4ed3\u5e93\u7684\u4eba\u7c7b\u53ef\u8bfb\u5730\u56fe\uff1a\u6bcf\u5c42\u5b58\u4ec0\u4e48\u3001\u4ece\u54ea\u91cc\u5f00\u59cb\uff0c\u4ee5\u53ca\u54ea\u4e2a\u6e90\u6587\u4ef6\u63a7\u5236\u72b6\u6001\u3002',
   fileMapTitle: '\u4ed3\u5e93\u5730\u56fe', fileMapIntro: '\u6309\u5de5\u4f5c\u7c7b\u578b\u8bfb\u5bf9\u5e94\u7684\u5c42\u3002\u516c\u5f00\u9875\u9762\u662f\u6307\u5357\uff0c\u4e0b\u9762\u7684\u6587\u4ef6\u624d\u662f\u4fe1\u606f\u6e90\u3002',
   fileSiteTitle: '\u516c\u5f00\u5c55\u793a', fileSiteBody: 'index.html\u3001styles.css\u3001app.js \u4e0e\u751f\u6210\u7684\u5b66\u4e60\u8def\u5f84\u6570\u636e\u3002',
@@ -593,8 +593,8 @@ const applyLanguage = (language, { updateUrl = true } = {}) => {
   document.documentElement.lang = metadata.html_lang || localeManifest.locales[effectiveUiLanguage]?.html_lang || 'en';
   document.title = effectiveUiLanguage === 'zh' ? 'Codex：从第一个任务到真实工作' : 'Codex: From First Task to Real Work';
   document.querySelector('meta[name="description"]').content = effectiveUiLanguage === 'zh'
-    ? '一套实用的 Codex 学习与实践系统：理解 GPT，设计安全任务，使用 Skills 与 Agents，并验证真实工作。'
-    : 'A practical Codex learning and practice system: understand GPT, design safer tasks, use Skills and Agents, and verify real work.';
+    ? '学习可迁移的大语言模型协作方法，并在 Codex 旗舰轨道中深入实践。'
+    : 'Learn a transferable language-model collaboration method, then practise it deeply in the Codex flagship track.';
   document.querySelectorAll('[data-i18n]').forEach((element) => {
     const value = strings[element.dataset.i18n];
     if (value !== undefined) setText(element, value);
@@ -776,7 +776,7 @@ document.querySelectorAll('[data-language-option]').forEach((link) => {
     }
     event.preventDefault();
     applyLanguage(link.dataset.languageOption);
-    closeLanguageMenu();
+    closeLanguageMenu({ returnFocus: true });
   });
 });
 document.addEventListener('click', (event) => {

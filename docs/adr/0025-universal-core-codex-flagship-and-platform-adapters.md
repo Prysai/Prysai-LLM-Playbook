@@ -29,7 +29,8 @@ Platform workflows share a broad lifecycle, but they do not share identical
 context injection, tools, permissions, persistence, action semantics,
 verification surfaces, or failure modes. A renamed or expanded front door
 could therefore imply coverage that the repository has not built, run, or
-reviewed. The existing 17 Labs remain `draft / not_run`, the 39 evaluation
+reviewed. At decision time, the existing 17 Labs remained `draft / not_run`;
+the current inventory is owned by `docs/governance/content-status.yaml`. The 39 evaluation
 fixtures remain `not_run / static_structure_only`, and the current release
 decision remains `candidate`.
 
