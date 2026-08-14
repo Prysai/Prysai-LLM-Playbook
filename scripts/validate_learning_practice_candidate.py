@@ -20,6 +20,7 @@ RECOVERY_SKILL = ROOT / "skills/prysai-communication-failure-triage/SKILL.md"
 FIXTURE = ROOT / "evals/candidates/learning-practice-contract-v1/fixture.json"
 FIRST_TURN_RUN = ROOT / "evals/candidates/learning-practice-contract-v1/runs/2026-08-13-baseline-first-turn.md"
 SITE = ROOT / "site/index.html"
+PRACTICE_BOARD = ROOT / "assets/teaching/beginner-practice-loop-red-black.svg"
 
 TEXT_REQUIREMENTS = {
     GUIDE: [
@@ -171,6 +172,15 @@ def main() -> int:
             errors.append("communication-clinic: route chooser targets are incomplete")
         elif chooser_index >= min(route_indices):
             errors.append("communication-clinic: route chooser targets must follow the chooser heading")
+
+    if PRACTICE_BOARD.is_file():
+        board_text = PRACTICE_BOARD.read_text(encoding="utf-8")
+        if "PRYSAI LAB / ORIGINAL TEACHING BOARD / INSPECT THE RECEIPT" not in board_text:
+            errors.append("beginner practice board is missing its stable provenance footer")
+        if "CANDIDATE / 2026-08-13" in board_text:
+            errors.append("beginner practice board freezes mutable candidate/date status in pixels")
+    else:
+        errors.append(f"missing file: {PRACTICE_BOARD.relative_to(ROOT)}")
 
     if FIXTURE.is_file():
         try:
