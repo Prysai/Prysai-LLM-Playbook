@@ -11,6 +11,7 @@
   let activeLocale = requestedLocale;
   const article = document.querySelector('[data-reader-article]');
   const banner = document.querySelector('[data-reader-banner]');
+  const readerAside = document.querySelector('.reader-aside');
   const languageSelect = document.querySelector('[data-reader-language]');
   const sourcePathNode = document.querySelector('[data-reader-path]');
   const contentIdNode = document.querySelector('[data-reader-content-id]');
@@ -821,11 +822,32 @@ function canonicalChapterTitle(chapter) {
     });
   }
 
+  function overviewHref() {
+    const locale = validLocales.includes(activeLocale || requestedLocale) ? activeLocale || requestedLocale : '';
+    const language = locale ? `?lang=${encodeURIComponent(locale)}` : '';
+    return `index.html${language}`;
+  }
+
   function showError(message, { retry = false } = {}) {
     article.replaceChildren();
+    if (readerAside) readerAside.hidden = true;
+    if (orientation) orientation.hidden = true;
+    if (mobilePageToc) mobilePageToc.hidden = true;
+    if (pagination) pagination.hidden = true;
     const box = document.createElement('div');
     box.className = 'reader-error';
-    box.textContent = message;
+    box.setAttribute('role', 'alert');
+    box.setAttribute('aria-live', 'assertive');
+    const explanation = document.createElement('p');
+    explanation.textContent = message;
+    box.append(explanation);
+    const actions = document.createElement('div');
+    actions.className = 'reader-error-actions';
+    const overview = document.createElement('a');
+    overview.className = 'reader-error-action';
+    overview.href = overviewHref();
+    overview.textContent = currentReaderCopy().back;
+    actions.append(overview);
     article.append(box);
     if (retry) {
       const retryButton = document.createElement('button');
@@ -833,10 +855,11 @@ function canonicalChapterTitle(chapter) {
       retryButton.type = 'button';
       retryButton.textContent = currentReaderCopy().retry;
       retryButton.addEventListener('click', () => { void load(); }, { once: true });
-      article.append(retryButton);
+      actions.append(retryButton);
     }
+    box.append(actions);
     article.setAttribute('aria-busy', 'false');
-    setReaderStatus(message, { assertive: true });
+    setReaderStatus('');
   }
 
   async function loadTrustRecord(contentId) {
@@ -902,6 +925,7 @@ function canonicalChapterTitle(chapter) {
     const selection = choosePath(requestedPath, locale);
     activeLocale = locale;
     applyReaderChrome();
+    if (readerAside) readerAside.hidden = false;
     article.replaceChildren();
     const loading = document.createElement('p');
     loading.className = 'reader-loading';

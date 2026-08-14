@@ -446,6 +446,7 @@ try {
   await readerRetryPage.getByRole('button', { name: 'Try loading again' }).click();
   await readerRetryPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
   assert.equal(readerSourceRequests, 2, 'Reader retry did not issue one fresh source request');
+  assert.equal(await readerRetryPage.locator('.reader-aside').isVisible(), true, 'Reader does not restore page details after a successful retry');
   await readerRetryPage.close();
 
   await page.goto(`${origin}/site/reader.html?path=private%2Fsecret.md&lang=en`, { waitUntil: 'domcontentloaded' });
@@ -453,6 +454,12 @@ try {
   assert.equal(await page.getByRole('alert').count(), 1, 'Reader announces one error through multiple assertive regions');
   assert.equal(await page.getByRole('alert').getAttribute('aria-live'), 'assertive', 'Reader error is not an assertive live region');
   assert.match(await page.getByRole('alert').innerText(), /does not name an allowed project source file/i, 'Reader invalid-path failure is not explicit');
+  assert.equal(await page.locator('[data-reader-banner]').isHidden(), true, 'Reader repeats an invalid-path error above the actionable error card');
+  assert.equal(await page.locator('[data-reader-orientation]').isHidden(), true, 'Reader shows an empty mobile chapter control after an invalid path');
+  assert.equal(await page.locator('[data-reader-mobile-page-toc]').isHidden(), true, 'Reader shows an empty mobile page-contents control after an invalid path');
+  assert.equal(await page.locator('.reader-aside').isHidden(), true, 'Reader shows empty page details after an invalid path');
+  const invalidPathRecovery = page.locator('[data-reader-article]').getByRole('link', { name: 'Back to overview' });
+  assert.match(await invalidPathRecovery.getAttribute('href'), /index\.html\?lang=en$/, 'Reader invalid-path recovery does not preserve the current interface language');
 
   assert.deepEqual(consoleErrors, [], `browser console errors: ${consoleErrors.join(' | ')}`);
   assert.deepEqual(pageErrors, [], `browser page errors: ${pageErrors.join(' | ')}`);

@@ -98,8 +98,11 @@ a:hover { color: var(--reader-link-hover); }
   text-align: center;
   font-size: .9rem;
 }
-.reader-retry { min-height: 44px; margin-top: 18px; padding: 0 18px; border: 1px solid var(--reader-ink); color: #fff; background: var(--reader-ink); font: 800 .76rem/1 Arial, Helvetica, sans-serif; letter-spacing: .04em; text-transform: uppercase; cursor: pointer; }
+.reader-retry, .reader-error-action { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; border: 1px solid var(--reader-ink); font: 800 .76rem/1 Arial, Helvetica, sans-serif; letter-spacing: .04em; text-decoration: none; text-transform: uppercase; cursor: pointer; }
+.reader-retry { color: #fff; background: var(--reader-ink); }
+.reader-error-action { color: var(--reader-ink); background: #fff; }
 .reader-retry:hover, .reader-retry:focus-visible { border-color: var(--reader-red); background: var(--reader-red); }
+.reader-error-action:hover, .reader-error-action:focus-visible { border-color: var(--reader-red); color: var(--reader-red); }
 
 .reader-main { padding: clamp(42px, 7vw, 82px) 0 96px; }
 
@@ -120,6 +123,8 @@ a:hover { color: var(--reader-link-hover); }
 
 .reader-mobile-orientation { display: none; }
 .reader-mobile-page-toc { display: none; }
+.reader-mobile-orientation[hidden], .reader-mobile-page-toc[hidden] { display: none; }
+.reader-aside[hidden] { display: none; }
 .reader-mobile-orientation summary { cursor: pointer; font-size: .875rem; }
 .reader-mobile-progress { display: block; margin-top: 14px; color: var(--reader-ink); font-size: .875rem; letter-spacing: normal; text-transform: none; }
 .reader-mobile-chapter-links { display: grid; gap: 8px; margin-top: 12px; }
@@ -322,6 +327,8 @@ a:hover { color: var(--reader-link-hover); }
 .reader-source-link { display: block; margin-top: 22px; font-size: .86rem; font-weight: 700; }
 .reader-loading { color: var(--reader-muted); }
 .reader-error { padding: 22px; border-left: 5px solid var(--reader-red); background: #fff0f2; }
+.reader-error p { margin: 0; }
+.reader-error-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
 
 .reader-book-nav-card { padding-bottom: 18px; }
 .reader-book-progress { margin-bottom: 14px; color: var(--reader-ink); font-size: .78rem; font-weight: 700; line-height: 1.45; }
@@ -385,6 +392,7 @@ a:hover { color: var(--reader-link-hover); }
   .reader-pagination-next { text-align: left; }
   .reader-main { padding-top: 24px; }
   .reader-footer-inner { flex-direction: column; }
+  .reader-error-actions > * { flex: 1 1 12rem; }
   .reader-teaching-visual {
     width: auto;
     margin: 30px 0;
