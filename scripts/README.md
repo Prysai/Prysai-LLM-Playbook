@@ -19,6 +19,8 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\validate_learning_practice_candidate.py
 & $py scripts\validate_evidence_review_candidate.py
 & $py scripts\test_evidence_review_candidate.py
+& $py scripts\validate_context_packet_builder_candidate.py
+& $py scripts\test_context_packet_builder_candidate.py
 & $py scripts\validate_executable_examples.py
 & $py scripts\test_executable_examples.py
 & $py scripts\test_lab_008_reference.py
@@ -192,3 +194,11 @@ from original positive, boundary, failure, transfer, and fresh-context fixtures.
 They check declared policy and preserve one method-loaded blind handoff as
 an editorial single-turn handoff observation; this is not an authenticated
 runtime receipt, automatic-trigger evidence, or repeated-runtime proof.
+
+`validate_context_packet_builder_candidate.py` and
+`test_context_packet_builder_candidate.py` protect an unadmitted context-packet
+proposal. They require fictional positive, boundary, failure, budget, transfer,
+and near-neighbour routing fixtures; preserve sensitive-input, untrusted-text,
+conflict, freshness, and no-authority-widening boundaries; and reject a
+premature Skill or runtime claim. They do not run a model, evaluate a security
+control, establish routing behavior, or add a public Skill.

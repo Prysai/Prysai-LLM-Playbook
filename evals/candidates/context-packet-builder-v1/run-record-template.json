@@ -1,0 +1,26 @@
+{
+  "candidate_id": "context-packet-builder-v1",
+  "run_status": "not_run",
+  "record_boundary": "Use only for an authorized synthetic run. Do not store real source material, private prompts, account state, credentials, personal data, or external tool traces.",
+  "required_fields": [
+    "fixture_id",
+    "fixture_revision",
+    "model_and_surface",
+    "model_settings_if_visible",
+    "authority_envelope",
+    "selected_material_ids",
+    "excluded_material_ids_with_reasons",
+    "redaction_decisions",
+    "conflicts_and_unknowns",
+    "budget_receipt",
+    "downstream_handoff",
+    "stop_or_escalation",
+    "raw_output_location_or_not_retained_reason",
+    "independent_reviewer",
+    "review_result",
+    "disagreement",
+    "claim_limits"
+  ],
+  "required_statuses": ["completed", "blocked", "stopped", "not_available"],
+  "claim_limits": "One run is not a model benchmark, automatic-routing proof, security-control evaluation, learner result, or Skill admission decision."
+}

@@ -53,3 +53,11 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 来源边界：任务设计依据仓库内的 [评测框架](../docs/quality/evaluation-framework.md)、[Luna 评测说明](../docs/model-evaluation-luna.md)、[项目术语表](../CONTEXT.md) 和 [项目规则](../AGENTS.md)；没有复制外部 Skill 仓库的内容或资产。
 
 运行结果的建议格式见 [results/README.md](results/README.md)。
+
+## Proposal fixtures outside the formal task set
+
+The following candidate directories are deliberately outside `task-set-v1.yaml`
+and the canonical Lab count. They prepare a narrow experiment or responsibility
+boundary; a static pass does not create model, learner, or release evidence.
+
+- [Context Packet Builder v1 proposal fixture](candidates/context-packet-builder-v1/README.md) — original fictional material for a possible future context-packet responsibility. It is `proposed / not_run`; no Skill exists, no automatic routing is claimed, and the fixture is not a security-control evaluation.
