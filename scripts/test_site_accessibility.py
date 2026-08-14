@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -224,10 +225,36 @@ def main() -> int:
         kinds = {content_id: record.get("kind") for content_id, record in manifest["contents"].items()}
         skill_ids = {content_id for content_id, kind in kinds.items() if kind == "skill"}
         field_note_ids = {content_id for content_id, kind in kinds.items() if kind == "field-note"}
-        if len(skill_ids) != 14:
-            raise AssertionError(f"reader-content-identity: expected 14 Skills, got {len(skill_ids)}")
+        root = Path(__file__).resolve().parents[1]
+        skill_registry = json.loads((root / "docs/governance/skill-registry.yaml").read_text(encoding="utf-8"))
+        content_status = json.loads((root / "docs/governance/content-status.yaml").read_text(encoding="utf-8"))
+        skill_count = len(skill_registry.get("records", []))
+        if skill_count != content_status.get("skills", {}).get("count"):
+            raise AssertionError("homepage-skill-inventory: skill registry and content status counts differ")
+        if len(skill_ids) != skill_count:
+            raise AssertionError(
+                f"reader-content-identity: expected {skill_count} Skills, got {len(skill_ids)}"
+            )
         if field_note_ids != {"field-problems-index-2026-08-10", "field-problems-forums-2026-08-10", "codex-field-cases-current-review-2026-08-12", "ai-safety-field-signals-and-research-receipts-2026-08-13", "field-case-external-instruction-authority-2026-08-13"}:
             raise AssertionError(f"reader-content-identity: unexpected public Field notes: {sorted(field_note_ids)}")
+        fixtures += 1
+
+        for expected in (
+            f"{skill_count} reusable Skills · candidate",
+            f"<strong>{skill_count}</strong><span data-i18n=\"mobileIndexSkills\">Skills</span>",
+            f"Skills · {skill_count}",
+        ):
+            if expected not in site_markup:
+                raise AssertionError(f"homepage-skill-inventory: missing markup count '{expected}'")
+        for expected in (
+            f"{skill_count} project Skills with triggers, boundaries, and evidence contracts.",
+            f"ledgerSkills: 'Skills · {skill_count}'",
+            f"{skill_count} \\u4e2a\\u9879\\u76ee Skill",
+            f"ledgerSkills: 'Skill \\u00b7 {skill_count}'",
+            f"{skill_count} 个可复用 Skill · candidate",
+        ):
+            if expected not in site_script:
+                raise AssertionError(f"homepage-skill-inventory: missing localized count '{expected}'")
         fixtures += 1
     except (AssertionError, OSError, UnicodeError, ValueError) as exc:
         print("SITE_ACCESSIBILITY_FIXTURES_FAILED")

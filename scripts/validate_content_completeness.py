@@ -258,8 +258,9 @@ def check_generated_outputs(errors: list[str]) -> None:
 def check_public_count_claims(status: dict[str, Any], errors: list[str]) -> None:
     """Keep manually authored front-door counts aligned with governance data."""
     lab_count = status.get("labs", {}).get("count")
-    if not isinstance(lab_count, int):
-        errors.append("content-status.labs.count must be an integer")
+    skill_count = status.get("skills", {}).get("count")
+    if not isinstance(lab_count, int) or not isinstance(skill_count, int):
+        errors.append("content-status labs and skills counts must be integers")
         return
     expected = f"| Labs | {lab_count} labs"
     exact_expectations = {
@@ -275,6 +276,51 @@ def check_public_count_claims(status: dict[str, Any], errors: list[str]) -> None
         path = ROOT / relative_path
         if not path.is_file() or claim not in path.read_text(encoding="utf-8"):
             errors.append(f"{relative_path}: public lab count must match {lab_count}")
+
+    site_lab_expectations = {
+        "site/index.html": (
+            f"{lab_count} labs · 2 maintainer references · 0 learner runs",
+            f"<strong>{lab_count}</strong><span data-i18n=\"mobileIndexLabs\">labs</span>",
+            f"Labs · {lab_count}",
+        ),
+        "site/app.js": (
+            f"fileLabsBody: '{lab_count} labs; current status: draft; run status: not_run.'",
+            f"fileLabsBody: '{lab_count} \\u4e2a\\u5b9e\\u9a8c",
+            f"ledgerLabs: 'Labs · {lab_count}'",
+            f"ledgerLabs: '\\u5b9e\\u9a8c \\u00b7 {lab_count}'",
+            f"repositoryLabs: '{lab_count} labs · 2 maintainer references · 0 learner runs'",
+            f"repositoryLabs: '{lab_count} 个实验 · 2 个维护者参考运行 · 0 个学习者运行'",
+        ),
+    }
+    for relative_path, claims in site_lab_expectations.items():
+        path = ROOT / relative_path
+        text = path.read_text(encoding="utf-8") if path.is_file() else ""
+        for claim in claims:
+            if claim not in text:
+                errors.append(f"{relative_path}: site lab count must match {lab_count}")
+                break
+
+    skill_expectations = {
+        "site/index.html": (
+            f"{skill_count} reusable Skills · candidate",
+            f"<strong>{skill_count}</strong><span data-i18n=\"mobileIndexSkills\">Skills</span>",
+            f"Skills · {skill_count}",
+        ),
+        "site/app.js": (
+            f"{skill_count} project Skills with triggers, boundaries, and evidence contracts.",
+            f"ledgerSkills: 'Skills · {skill_count}'",
+            f"{skill_count} \\u4e2a\\u9879\\u76ee Skill",
+            f"ledgerSkills: 'Skill \\u00b7 {skill_count}'",
+            f"{skill_count} 个可复用 Skill · candidate",
+        ),
+    }
+    for relative_path, claims in skill_expectations.items():
+        path = ROOT / relative_path
+        text = path.read_text(encoding="utf-8") if path.is_file() else ""
+        for claim in claims:
+            if claim not in text:
+                errors.append(f"{relative_path}: public Skill count must match {skill_count}")
+                break
 
 
 def main() -> int:
