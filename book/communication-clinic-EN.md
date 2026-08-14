@@ -6,6 +6,28 @@
 **Learner-outcome evidence:** none | **Platform:** universal text chat;
 product-specific actions require a sourced adapter.
 
+<span id="practice-route-chooser"></span>
+
+## Choose one short route
+
+Start with the work you want to do. You do not need to read this whole page
+before your first card. Each route is a candidate template; selecting it is not
+evidence that it works for a learner or a model.
+
+- **A — speak in a short fictional Spanish situation.**
+  [Start Card A1: four-turn hotel check-in](#language-practice-route).
+- **B — practise one observable performance.**
+  [Start Card B1: define and attempt the performance](#general-skill-practice-route).
+- **C — make one source-supported research decision.**
+  [Start Card C1: decision, question, and source plan](#bounded-research-route).
+
+Already have a reply that missed the task? Use the
+[recovery route](#recovery-route) instead of starting a new practice card.
+Not sure which route fits? Use the short
+[first-practice intake](#first-practice-intake); it asks only for the first
+safe, checkable attempt. Before a route uses outside material, a local file,
+or a tool, read the [four-line safety card](#four-line-safety-card).
+
 Choose one route: a Spanish travel exchange, another observable skill, or a
 source-supported research decision. Use its two cards in order. These original
 cards turn conversation into inspectable work; they do not prove that a prompt

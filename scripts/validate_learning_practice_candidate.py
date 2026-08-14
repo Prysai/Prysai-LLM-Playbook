@@ -37,6 +37,14 @@ TEXT_REQUIREMENTS = {
         "not_run",
     ],
     CLINIC: [
+        'id="practice-route-chooser"',
+        "Choose one short route",
+        "Start Card A1: four-turn hotel check-in",
+        "Start Card B1: define and attempt the performance",
+        "Start Card C1: decision, question, and source plan",
+        "Already have a reply that missed the task?",
+        "Each route is a candidate template; selecting it is not",
+        "evidence that it works for a learner or a model.",
         'id="first-practice-intake"',
         "first-practice intake",
         "Ask one question at a time",
@@ -119,6 +127,13 @@ TEXT_REQUIREMENTS = {
     ],
 }
 
+ROUTE_CHOOSER_TARGETS = (
+    "[Start Card A1: four-turn hotel check-in](#language-practice-route)",
+    "[Start Card B1: define and attempt the performance](#general-skill-practice-route)",
+    "[Start Card C1: decision, question, and source plan](#bounded-research-route)",
+    "[recovery route](#recovery-route)",
+)
+
 FIXTURE_FIELDS = {
     "candidate_id",
     "status",
@@ -144,6 +159,18 @@ def main() -> int:
         for needle in needles:
             if needle.lower() not in text.lower():
                 errors.append(f"{path.relative_to(ROOT)}: missing contract text {needle!r}")
+
+    if CLINIC.is_file():
+        clinic_text = CLINIC.read_text(encoding="utf-8")
+        chooser_index = clinic_text.find('<span id="practice-route-chooser"></span>')
+        intake_index = clinic_text.find('<span id="first-practice-intake"></span>')
+        route_indices = [clinic_text.find(target) for target in ROUTE_CHOOSER_TARGETS]
+        if chooser_index < 0 or intake_index < 0 or chooser_index >= intake_index:
+            errors.append("communication-clinic: route chooser must appear before the first-practice intake")
+        if any(index < 0 for index in route_indices):
+            errors.append("communication-clinic: route chooser targets are incomplete")
+        elif chooser_index >= min(route_indices):
+            errors.append("communication-clinic: route chooser targets must follow the chooser heading")
 
     if FIXTURE.is_file():
         try:
