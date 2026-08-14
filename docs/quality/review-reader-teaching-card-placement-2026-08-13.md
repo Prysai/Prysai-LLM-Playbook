@@ -1,8 +1,11 @@
 # Reader teaching-card placement review — 2026-08-13
 
-**Status:** scoped local browser review  
-**Artifact status:** `candidate`  
-**Surface:** locally built Pages candidate at `127.0.0.1:4173`; no public deployment  
+**Status:** scoped local browser review
+
+**Artifact status:** `candidate`
+
+**Surface:** locally built Pages candidate at `127.0.0.1:4173`; no public deployment
+
 **Viewports:** 1440 × 1024 and 390 × 844
 
 ## Question
