@@ -50,6 +50,7 @@
   },
   "skills": {
     "prysai-dialogue-brief": {"name": {"en": "Dialogue Brief", "zh": "首轮对话简报 Dialogue Brief"}},
+    "prysai-first-turn-check": {"name": {"en": "First-Turn Check", "zh": "首轮请求检查 First-Turn Check"}},
     "prysai-codex-coach": {"name": {"en": "Codex Coach", "zh": "Codex 学习教练"}},
     "prysai-task-protocol": {"name": {"en": "Task Protocol", "zh": "任务协议 Task Protocol"}},
     "prysai-evidence-review": {"name": {"en": "Evidence Review", "zh": "证据审查 Evidence Review"}},
