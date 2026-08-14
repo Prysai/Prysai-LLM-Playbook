@@ -18,6 +18,7 @@ see before the reader works through the prose.
 - [Beginner safety stop card](beginner-safety-stop-card.svg)
 - [Public-interest safety research](public-interest-safety-research-red-black.svg)
 - [First-turn contract](first-turn-contract-card.svg)
+- [Universal seams](universal-seams-red-black.svg)
 
 The cards are visual explanations, not benchmark results. Their scope,
 ownership, and reuse boundary are recorded in the

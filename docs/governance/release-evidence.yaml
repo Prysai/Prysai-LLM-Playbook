@@ -25,6 +25,7 @@
     "Task-contract availability and channel validation proves only that the unrun release-handoff study, fixed conditions, scoring contract, and safety boundary are internally consistent; it does not evaluate the Beginner Practice Pack or contain model or learner results.",
     "The Lab 013 executable-example packet is a deterministic maintainer reference run. It does not use a model and does not prove learner independence, transfer, Codex behavior, publication, or production readiness.",
     "The Lab 008 executable-example packet is a deterministic maintainer reference run over synthetic local sources. It does not use a model or live research and does not prove learner independence, transfer, real-service behavior, or production readiness.",
+    "The Universal Seam Fixture validator checks fixed fictional records only. It does not reproduce a report, diagnose a product, validate a live tool, establish security, prove learner understanding, or establish cross-platform equivalence.",
     "External URL reachability is recorded by a separate scheduled workflow and is not replayed in this CI packet.",
     "The local input-archive audit depends on machine-local archives and is not replayed on GitHub-hosted runners.",
     "The official Skill validator is run locally when its bundled runtime is available; CI runs the repository Skill contract validator."
@@ -52,6 +53,8 @@
         {"id": "page-trust-registry-fixtures", "argv": ["{python}", "scripts/test_page_trust_registry.py"]},
         {"id": "core-unit-map", "argv": ["{python}", "scripts/validate_core_unit_map.py"]},
         {"id": "core-unit-map-fixtures", "argv": ["{python}", "scripts/test_core_unit_map.py"]},
+        {"id": "universal-seam-fixture", "argv": ["{python}", "scripts/validate_universal_seam_fixture.py"]},
+        {"id": "universal-seam-fixture-tests", "argv": ["{python}", "scripts/test_universal_seam_fixture.py"]},
         {"id": "update-registry", "argv": ["{python}", "scripts/validate_update_registry.py"]},
         {"id": "content-status", "argv": ["{python}", "scripts/validate_content_status.py"]},
         {"id": "content-status-run-projection-fixtures", "argv": ["{python}", "scripts/test_content_status_run_projections.py"]},

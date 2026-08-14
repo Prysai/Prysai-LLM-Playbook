@@ -47,8 +47,10 @@ non-Codex platform tracks are complete. Product-specific commands, authority,
 persistence, and failure modes belong in evidence-gated adapters.
 
 [Open the first mapped universal-core route](book/routes/universal-core-foundations-EN.md)
-to study the four extracted units and their explicit gaps. It is a
-`candidate / not_run` route, not a completed cross-platform curriculum.
+to study four extracted units, then use its fictional four-seam fixture to
+practise task, target, receipt, and structured-state checks before choosing an
+adapter. It is a `candidate / not_run` route, not a completed cross-platform
+curriculum.
 
 The central promise is simple:
 

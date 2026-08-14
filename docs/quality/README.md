@@ -17,6 +17,7 @@ the project can honestly claim.
 - [Lab navigation and locale integrity review](review-lab-navigation-and-locale-integrity-2026-08-13.md)
 - [Reader teaching-card placement review](review-reader-teaching-card-placement-2026-08-13.md)
 - [Lab 008 deterministic reference review](lab-008-reference-run-review-2026-08-13.md)
+- [Universal Seam Fixture](../../examples/universal-seam-v1/README.md)
 - [Project map](../project-map-EN.md)
 - [Content integrity standard](content-integrity-standard.md)
 - [Current quality register](quality-register.md)

@@ -102,6 +102,7 @@
     {"path": "examples/lab-001-v1", "role": "Disposable offline README fixture used as the novice bridge into Lab 001.", "entry": "examples/lab-001-v1/README.md"},
     {"path": "examples/lab-008-v1", "role": "Frozen deterministic source-conflict fixture for the Lab 008 maintainer reference run.", "entry": "examples/lab-008-v1/README.md"},
     {"path": "examples/lab-013-v1", "role": "Frozen deterministic fixture and review contract for the Lab 013 maintainer reference run.", "entry": "examples/lab-013-v1/README.md"},
+    {"path": "examples/universal-seam-v1", "role": "Fictional offline request, target, receipt, and structured-state seam fixture before a platform adapter is needed.", "entry": "examples/universal-seam-v1/README.md"},
     {"path": "evals/candidates/context-packet-builder-v1", "role": "Original fictional admission fixture for an unadmitted context-packet responsibility; it does not create a Skill or runtime evidence.", "entry": "evals/candidates/context-packet-builder-v1/README.md"}
   ],
   "root_entries": [

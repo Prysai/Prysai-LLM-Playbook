@@ -42,6 +42,8 @@ REQUIRED_COMMANDS = {
     "reader-lab-navigation-fixtures": ("{python}", "scripts/test_reader_lab_navigation.py"),
     "lab-navigation-output": ("{python}", "scripts/build_lab_navigation.py", "--check"),
     "github-template-fixtures": ("{python}", "scripts/test_validate_github_templates.py"),
+    "universal-seam-fixture": ("{python}", "scripts/validate_universal_seam_fixture.py"),
+    "universal-seam-fixture-tests": ("{python}", "scripts/test_universal_seam_fixture.py"),
 }
 
 
@@ -201,7 +203,17 @@ def run_gates(contract: dict[str, Any], output_dir: Path) -> list[dict[str, Any]
                 else value.replace("{evidence_dir}", str(output_dir))
                 for value in command["argv"]
             ]
-            completed = subprocess.run(argv, cwd=ROOT, text=True, encoding="utf-8", errors="replace", capture_output=True, check=False)
+            command_environment = os.environ | {"PYTHON": sys.executable}
+            completed = subprocess.run(
+                argv,
+                cwd=ROOT,
+                env=command_environment,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+                capture_output=True,
+                check=False,
+            )
             log_path = logs_dir / f"{command['id']}.log"
             log_path.write_text(
                 f"COMMAND: {' '.join(command['argv'])}\nEXIT_CODE: {completed.returncode}\n\nSTDOUT\n{completed.stdout}\nSTDERR\n{completed.stderr}",

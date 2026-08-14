@@ -190,7 +190,7 @@ finding. The repository is private and no public Pages URL is established.
 ## Go deeper or contribute
 
 - [Full English guide](README-EN.md): complete learning model, status detail, source boundaries, and maintenance workflow.
-- [Universal-core route](book/routes/universal-core-foundations-EN.md): four mapped transferable units and their explicit gaps.
+- [Universal-core route](book/routes/universal-core-foundations-EN.md): four mapped transferable units, an offline four-seam practice fixture, and explicit gaps.
 - [Reader and local showcase](site/README.md): serve the dependency-free reading surface locally; artifact success does not establish a live site.
 - [Research index](docs/research/README.md): official facts, public user reports, and project inferences kept distinct.
 - [Universal first-turn contract](docs/research/universal-first-turn-prompt-contract-2026-08-13.md): a candidate six-field contract and two text-only starter cards that do not claim product equivalence, five-minute completion, or learning results.

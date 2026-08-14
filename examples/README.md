@@ -13,6 +13,9 @@ credentials, live inventory, or external write permissions.
   rejected overclaim and a bounded correction.
 - [`lab-013-v1/`](lab-013-v1/) for the frozen deterministic CP0–CP4 reference
   fixture with a preserved failure and bounded recovery.
+- [`universal-seam-v1/`](universal-seam-v1/) for four fictional, offline
+  request/target/receipt/round-trip checks before a reader chooses a
+  platform-specific adapter.
 - [`skill-sandbox/product-context-real-estate/`](skill-sandbox/product-context-real-estate/)
   for the current fictional Product Context case.
 - [Related case evidence](../assets/cases/README.md)

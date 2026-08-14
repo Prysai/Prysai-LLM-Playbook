@@ -1,0 +1,43 @@
+{
+  "schema_version": "1",
+  "fixture_id": "universal-seam-v1",
+  "required_case_ids": [
+    "latest-request-mismatch",
+    "target-repository-mismatch",
+    "tool-receipt-missing",
+    "structured-round-trip-failure"
+  ],
+  "required_status_vocabulary": ["verified_in_fixture", "blocked", "not_run", "inferred"],
+  "required_fields": [
+    "id",
+    "title",
+    "intended_outcome",
+    "observed_state",
+    "unsupported_inference",
+    "smallest_safe_check",
+    "stop_condition",
+    "platform_adapter",
+    "expected_status",
+    "fixture_evidence"
+  ],
+  "expected_statuses": {
+    "latest-request-mismatch": "verified_in_fixture",
+    "target-repository-mismatch": "blocked",
+    "tool-receipt-missing": "not_run",
+    "structured-round-trip-failure": "inferred"
+  },
+  "forbidden_claim_fragments": [
+    "all platforms",
+    "vendor bug",
+    "reproduces",
+    "secure",
+    "learner mastered",
+    "production-ready"
+  ],
+  "required_boundary_fragments": [
+    "fictional",
+    "does not reproduce",
+    "does not prove learner understanding",
+    "does not establish cross-platform equivalence"
+  ]
+}

@@ -11,7 +11,7 @@
   "project": {
     "status": "candidate",
     "owner": "curriculum-maintainer",
-    "last_reviewed": "2026-08-13",
+    "last_reviewed": "2026-08-14",
     "next_review": "2026-11-09",
     "evidence": [
       "docs/quality/current-state-review-2026-08-09.md",
@@ -220,7 +220,7 @@
     ]
   },
   "supplemental_guides": {
-    "count": 3,
+    "count": 4,
     "status": "candidate",
     "owner": "curriculum-maintainer",
     "last_reviewed": "2026-08-13",
@@ -231,6 +231,10 @@
       "scripts/test_lab_001_first_safe_change_fixture.py",
       "book/communication-clinic-EN.md",
       "book/guides/learning-practice-contract-EN.md",
+      "book/routes/universal-core-foundations-EN.md",
+      "examples/universal-seam-v1/README.md",
+      "scripts/validate_universal_seam_fixture.py",
+      "scripts/test_universal_seam_fixture.py",
       "docs/research/beginner-first-practice-friction-2026-08-13.md",
       "docs/research/entry-level-llm-collaboration-for-language-and-research-2026-08-13.md",
       "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
@@ -241,9 +245,10 @@
     "items": [
       {"id": "first-safe-change-route", "path": "book/routes/first-safe-change-EN.md", "status": "candidate", "run_status": "not_run", "role": "novice_fixture_route"},
       {"id": "communication-clinic", "path": "book/communication-clinic-EN.md", "status": "candidate", "run_status": "not_run", "role": "supplemental_practice_route"},
-      {"id": "learning-practice-contract", "path": "book/guides/learning-practice-contract-EN.md", "status": "draft", "run_status": "not_run", "role": "canonical_application_guide"}
+      {"id": "learning-practice-contract", "path": "book/guides/learning-practice-contract-EN.md", "status": "draft", "run_status": "not_run", "role": "canonical_application_guide"},
+      {"id": "universal-seam-fixture-route", "path": "book/routes/universal-core-foundations-EN.md", "status": "candidate", "run_status": "not_run", "role": "offline_universal_fixture_route"}
     ],
-    "claim_boundary": "Supplemental routes and application guides do not change the canonical 22-chapter order. These records have structural editorial status only; prompt effectiveness, learner outcomes, delayed transfer, retention, and platform equivalence remain untested."
+    "claim_boundary": "Supplemental routes and application guides do not change the canonical 22-chapter order. These records have structural editorial status only; the Universal Seam Fixture checks fixed fictional data, not a product run. Prompt effectiveness, learner outcomes, delayed transfer, retention, security outcomes, and platform equivalence remain untested."
   },
   "evaluations": {
     "task_count": 40,

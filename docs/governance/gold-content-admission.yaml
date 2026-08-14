@@ -196,6 +196,51 @@
         "transfer-value": {"value": 3, "rationale": "The invariant and changed source types are explicit, but transfer evidence is not yet collected."},
         "maintenance-fitness": {"value": 4, "rationale": "The case is source-, owner-, status-, and review-bound; it links to existing units rather than creating a duplicate Skill or platform adapter."}
       }
+    },
+    {
+      "content_id": "universal-seam-fixture-v1",
+      "family": "task-route",
+      "title": "Universal Seam Fixture",
+      "status": "admitted-candidate",
+      "audiences": ["beginner", "practitioner", "advanced"],
+      "platform_scope": "universal",
+      "problem": "A visible reply, matching branch label, tool-shaped block, or parser success can look decisive while leaving the task, target, action, or structured state unproven.",
+      "capability_increment": "Classify four distinct evidence seams, select one smallest safe check, preserve a clean stop, and name when a live product question requires a separately sourced platform adapter.",
+      "consequential_decision": "Decide whether a record supports continuation, must stop on a target or authority conflict, remains not_run because a receipt is absent, or needs a later adapter before live diagnosis.",
+      "artifact": "Four original fictional JSON records, a fixed acceptance contract, a standard-library validator, negative contract tests, one reader route, and a project-owned explanatory SVG.",
+      "acceptance": ["All four fixed case IDs and their narrow statuses remain intact.", "Every case names observed state, unsupported inference, a bounded check, stop condition, adapter boundary, and fixture evidence.", "The validator rejects a missing case, widened status, weak receipt stop, and broad production claim.", "The route and asset state that the fixture is fictional and not evidence of product, learner, or cross-platform behavior."],
+      "failure_case": "A reader treats a polished reply, matching branch label, tool-like text, or parser success as evidence of a current task, correct target, executed action, or intact structured value and continues without a check.",
+      "evidence_limit": "Admission and fixture validation establish only editorial fit and fixed fictional-data consistency. They do not reproduce public reports, prove a vendor defect or behavior, validate a live tool protocol, establish safety, measure learner understanding, demonstrate transfer, compare platforms, or support production readiness.",
+      "transfer": "Keep the invariant while substituting a documented platform adapter: retain the task pointer, target envelope, execution receipt, and exact round-trip check, then record the product-specific control, authoritative source, date, and observed evidence separately.",
+      "existing_unit_disposition": "Adds one bounded offline practice bridge for the universal-core route. It does not replace Chapters 3, 9, 10, or 13, any canonical Lab, a Skill, an evaluation fixture, or a platform adapter.",
+      "sources": ["Original Prysai Lab fixture informed only by the dated, reference-only seam categories in docs/research/cross-platform-public-problem-patterns-and-teaching-synthesis-2026-08-12.md and recorded as S87."],
+      "license_boundary": "All records, validator code, reader prose, and SVG are original project material. No vendor issue prose, prompt, log, screenshot, code, tool protocol, credential, account, user data, model output, or branding is copied; external research remains reference-only.",
+      "owner": "curriculum-maintainer",
+      "reviewed_at": "2026-08-14",
+      "next_review": "2026-09-14",
+      "unit_sequence": ["core-task-contract", "core-evidence-recovery", "core-evidence-bearing-slice", "core-action-boundary", "universal-seam-v1"],
+      "sequence_rationale": "The fixture follows the canonical concepts so the learner can classify a seam before encountering any named product surface; it does not repeat canonical prose.",
+      "terminal_artifact": "A local decision record naming the case, observed fields, narrow status, smallest safe check, stop condition, adapter requirement, and explicit unverified list.",
+      "hard_gates": {
+        "distinct-increment": {"result": "pass", "evidence": "Adds a runnable offline evidence-seam classification bridge not owned by the canonical explanatory units, Labs, Skills, or evaluations."},
+        "no-prompt-folklore": {"result": "pass", "evidence": "The fixture tests evidence boundaries in fixed data; it does not prescribe a magic prompt, role, or wording guarantee."},
+        "no-invented-evidence": {"result": "pass", "evidence": "All four records are explicitly fictional, their statuses are narrowed to the fixture, and no product, action, learner, or runtime outcome is claimed."},
+        "source-license-clear": {"result": "pass", "evidence": "S87 records the dated reference-only research boundary and original project ownership for every fixture, code, and SVG asset."},
+        "volatile-facts-bounded": {"result": "pass", "evidence": "The fixture contains no volatile product fact; any later adapter must record its authoritative source and access date before making a live claim."},
+        "platform-delta-real": {"result": "pass", "evidence": "The route is universal and refuses behavior equivalence; it explicitly hands live tool, receipt, schema, and replay details to a future platform adapter."},
+        "acceptance-observable": {"result": "pass", "evidence": "The validator checks exact IDs, statuses, required case fields, bounded checks, receipt stop, adapter boundary, claim limits, and negative mutations."},
+        "limits-explicit": {"result": "pass", "evidence": "The reader route, fixture README, acceptance contract, asset register, and release blind spot all reject product, learner, transfer, security, and production conclusions."}
+      },
+      "scores": {
+        "real-demand": {"value": 4, "rationale": "The dated research record identifies task identity, target identity, receipt, and structured-state seams as recurring teaching concerns while retaining non-prevalence and non-reproduction limits."},
+        "consequential-decision": {"value": 4, "rationale": "Each case changes whether the next action is a comparison, a stop, an explicit not_run receipt, or a request for adapter evidence."},
+        "novel-increment": {"value": 3, "rationale": "The canonical chapters own the principles; this adds an offline four-case exercise that makes their separate seams observable without a platform adapter."},
+        "actionability": {"value": 4, "rationale": "A reader can inspect the supplied local files, write a bounded decision note, and run deterministic validation without an account, model, network, secret, or real project."},
+        "evidence-strength": {"value": 2, "rationale": "The data contract and negative tests are deterministic, but the records are fictional and no learner, runtime, independent, or cross-platform evidence exists."},
+        "failure-value": {"value": 4, "rationale": "The attractive but insufficient signals are distinct and each produces a safe, inspectable failure or clean stop rather than an invented completion claim."},
+        "transfer-value": {"value": 3, "rationale": "The four invariant checks are explicit and the adapter hand-off is bounded, but no transfer run has been collected."},
+        "maintenance-fitness": {"value": 4, "rationale": "The fixture is isolated, standard-library-only, source- and owner-bound, registered in status and CI, and excluded from canonical counts and executable-reference claims."}
+      }
     }
   ]
 }

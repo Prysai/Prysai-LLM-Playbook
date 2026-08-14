@@ -1,0 +1,73 @@
+{
+  "schema_version": "1",
+  "fixture_id": "universal-seam-v1",
+  "status_vocabulary": ["verified_in_fixture", "blocked", "not_run", "inferred"],
+  "scope": "Four fictional, offline records for separating visible text from the evidence needed to make a narrower decision.",
+  "cases": [
+    {
+      "id": "latest-request-mismatch",
+      "title": "A checkpoint names a different request",
+      "intended_outcome": "Update the inventory summary, not the earlier travel brief.",
+      "observed_state": {
+        "checkpoint_task": "Prepare a travel brief for the Monday workshop.",
+        "latest_request": "Update the inventory summary with the supplied counts.",
+        "visible_reply_topic": "travel brief"
+      },
+      "unsupported_inference": "A reply that sounds complete proves it answered the latest request.",
+      "smallest_safe_check": "Compare the preserved latest request with the checkpoint task and reply topic; do not continue the earlier task.",
+      "stop_condition": "The task pointer and latest request disagree until the task owner reconciles them.",
+      "platform_adapter": "not_needed_for_fixture",
+      "expected_status": "verified_in_fixture",
+      "fixture_evidence": ["checkpoint_task differs from latest_request", "visible_reply_topic matches checkpoint_task instead of latest_request"]
+    },
+    {
+      "id": "target-repository-mismatch",
+      "title": "The branch label matches, but the repository root does not",
+      "intended_outcome": "Inspect the stated documentation repository before any change.",
+      "observed_state": {
+        "requested_repository_root": "D:/work/guide-docs",
+        "visible_repository_root": "D:/work/guide-site",
+        "requested_branch": "docs-refresh",
+        "visible_branch": "docs-refresh"
+      },
+      "unsupported_inference": "A matching branch name proves the target repository is correct.",
+      "smallest_safe_check": "Compare the repository root as well as the branch label; do not open an editor or make a write.",
+      "stop_condition": "The visible root differs from the requested root.",
+      "platform_adapter": "not_needed_for_fixture",
+      "expected_status": "blocked",
+      "fixture_evidence": ["requested_repository_root differs from visible_repository_root", "matching branch label is insufficient target evidence"]
+    },
+    {
+      "id": "tool-receipt-missing",
+      "title": "Tool-like text has no execution receipt",
+      "intended_outcome": "Create a local draft named outline.md.",
+      "observed_state": {
+        "visible_text": "<tool_call name=\"write_file\">outline.md</tool_call>",
+        "tool_receipt": null,
+        "read_back_state": "outline.md is absent from the fictional directory listing"
+      },
+      "unsupported_inference": "Tool-shaped text proves a file was created.",
+      "smallest_safe_check": "Require a tool receipt and a read-back of the expected state; do not call the action complete first.",
+      "stop_condition": "No execution receipt or read-back state exists.",
+      "platform_adapter": "required_if_live_tool_controls_or_receipts_matter",
+      "expected_status": "not_run",
+      "fixture_evidence": ["tool_receipt is absent", "read_back_state says the expected file is absent"]
+    },
+    {
+      "id": "structured-round-trip-failure",
+      "title": "A structured value changes on round trip",
+      "intended_outcome": "Preserve an approved delivery label and its matching tool-call identity.",
+      "observed_state": {
+        "original": {"delivery_label": "café 🚲", "tool_call_id": "call-017"},
+        "parsed": {"delivery_label": "cafe ?", "tool_call_id": "call-071"}
+      },
+      "unsupported_inference": "A parser success proves the structured value and tool-call pairing stayed intact.",
+      "smallest_safe_check": "Compare the original and parsed field values exactly; do not replay or take a follow-up action first.",
+      "stop_condition": "A label or tool-call identity changes after the round trip.",
+      "platform_adapter": "future_platform_adapter_required_if_a_live_schema_or_replay_protocol_matters",
+      "expected_status": "inferred",
+      "fixture_evidence": ["delivery_label changes between original and parsed", "tool_call_id changes between original and parsed"]
+    }
+  ],
+  "evidence_boundary": "The records are fictional and local. A fixture pass only checks that the fixed case and decision contract agree. It does not reproduce a vendor report, show model behavior, validate any live tool protocol, does not prove learner understanding, and does not establish cross-platform equivalence."
+}

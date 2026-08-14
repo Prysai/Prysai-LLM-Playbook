@@ -231,6 +231,21 @@ try {
   assert.match(await publicInterestVisual.getAttribute('src'), /assets\/teaching\/public-interest-safety-research-red-black\.svg$/, 'Public-interest safety inquiry does not retain its original full-size teaching visual');
   await desktopPublicInterestPage.close();
 
+  const universalSeamPage = await context.newPage();
+  await universalSeamPage.goto(`${origin}/site/reader.html?path=book%2Froutes%2Funiversal-core-foundations-EN.md&lang=en`, { waitUntil: 'networkidle' });
+  await universalSeamPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.match(await universalSeamPage.locator('[data-reader-article] h1').innerText(), /first mapped universal llm collaboration units/i, 'Reader did not render the universal-core route');
+  assert.equal(await universalSeamPage.getByRole('link', { name: /universal seam fixture/i }).isVisible(), true, 'Universal-core route does not expose its offline seam fixture');
+  const universalSeamVisual = universalSeamPage.locator('img[alt*="Four evidence seams"]');
+  assert.match(await universalSeamVisual.getAttribute('src'), /assets\/teaching\/universal-seams-red-black\.svg$/, 'Universal-core route does not retain its original seam visual');
+  assert.equal(await universalSeamVisual.isVisible(), true, 'Desktop Reader does not show the universal seam board');
+  await noHorizontalOverflow(universalSeamPage, 'desktop universal-core route');
+  await universalSeamPage.setViewportSize({ width: 390, height: 844 });
+  assert.equal(await universalSeamVisual.isVisible(), false, 'Mobile Reader shrinks the dense universal seam board instead of offering a full-size route');
+  assert.equal(await universalSeamPage.getByRole('link', { name: /open full-size visual: four evidence seams/i }).isVisible(), true, 'Universal seam visual lacks an accessible mobile full-size route');
+  await noHorizontalOverflow(universalSeamPage, 'mobile universal-core route');
+  await universalSeamPage.close();
+
   await page.setViewportSize({ width: 390, height: 844 });
   await noHorizontalOverflow(page, 'mobile showcase');
   assert.match(await page.getByRole('link', { name: 'Open every problem route' }).getAttribute('href'), /reader\.html\?path=README-EN\.md&lang=en#choose-your-starting-point$/, 'mobile route index link does not target the canonical English README route section');
