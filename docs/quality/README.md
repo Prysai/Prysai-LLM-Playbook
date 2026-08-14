@@ -15,6 +15,7 @@ the project can honestly claim.
 - [Superseded first-task pilot protocol](first-task-pilot-protocol-v1.md)
 - [Red-team release and learning audit](red-team-release-and-learning-audit-2026-08-13.md)
 - [Lab navigation and locale integrity review](review-lab-navigation-and-locale-integrity-2026-08-13.md)
+- [Reader teaching-card placement review](review-reader-teaching-card-placement-2026-08-13.md)
 - [Lab 008 deterministic reference review](lab-008-reference-run-review-2026-08-13.md)
 - [Project map](../project-map-EN.md)
 - [Content integrity standard](content-integrity-standard.md)
