@@ -160,8 +160,8 @@ Your receipt is deliberately modest: attempted; checked here; help used;
 corrected; and not proven. This exercise records one checked attempt. It does
 not prove learning, transfer, general writing ability, or model superiority.
 For a real local Codex task, return to the
-[recommended path](#the-recommended-first-codex-path): Chapter 1 → Chapter 2
-→ Lab 001. The [Beginner Practice Pack](book/communication-clinic-EN.md#first-practice-intake)
+[recommended path](#the-recommended-first-codex-path): Chapter 1 → Lab 011
+→ Chapter 2 → Lab 001. The [Beginner Practice Pack](book/communication-clinic-EN.md#first-practice-intake)
 is a separate supplemental route for language, research, or a small work task.
 
 If you are an authorised pilot participant, use the

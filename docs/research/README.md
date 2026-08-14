@@ -22,6 +22,10 @@ claim and license boundary are clear.
 
 Useful indexes:
 
+- [Critical learning-product audit](critical-learning-product-audit-2026-08-13.md) — an evidence-mapped candidate audit through instructional-design, reproducibility, and responsible-AI governance lenses. It identifies release-blocking gaps; it is not external accreditation, endorsement, or certification.
+
+- [Cross-platform learner needs and prompt patterns](cross-platform-learner-needs-and-prompt-patterns-2026-08-13.md) — six official guidance records and six public user reports mapped to bounded language, research, and practical-task patterns. It does not compare platforms, establish prevalence, or prove outcomes.
+
 - [AI collaboration safety boundaries](ai-collaboration-safety-boundaries-2026-08-13.md) — source-backed boundaries for prompt injection, minimum necessary input, action authority, and verification. It proposes low-risk teaching actions; it is not a security certification, incident study, or locally reproduced attack record.
 
 - [First five-minute Codex friction ledger](first-five-minute-codex-friction-ledger-2026-08-13.md) — official environment and evidence boundaries plus four public symptom reports, separated from product, runtime, and learning-outcome claims.

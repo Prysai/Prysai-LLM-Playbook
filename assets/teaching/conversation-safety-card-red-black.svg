@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">A four-line safety card for a conversation or tool task</title>
+  <desc id="desc">An original red, black, cream, and lime teaching board showing four fields: inputs, actions, evidence, and stop condition.</desc>
+  <rect width="1600" height="900" fill="#f7f1e5"/>
+  <rect x="56" y="48" width="1488" height="804" fill="none" stroke="#1c1b1a" stroke-width="4"/>
+  <rect x="56" y="48" width="24" height="804" fill="#e23d28"/>
+  <text x="116" y="132" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="4">BEFORE A CHAT, RESEARCH, OR TOOL TASK</text>
+  <text x="116" y="205" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="800">A FOUR-LINE</text>
+  <rect x="661" y="146" width="399" height="73" fill="#c5f83a" transform="skewX(-8)"/>
+  <text x="682" y="205" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="800">SAFETY CARD</text>
+  <text x="116" y="252" fill="#504d48" font-family="Arial, Helvetica, sans-serif" font-size="25">Name the boundary before the task expands. A card is a decision aid, not a security certificate.</text>
+  <g transform="translate(116 326)">
+    <rect width="316" height="328" fill="#1c1b1a"/><rect width="316" height="13" fill="#e23d28"/>
+    <text x="27" y="69" fill="#c5f83a" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="3">01 / INPUTS</text>
+    <text x="27" y="123" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700">What may enter</text>
+    <text x="27" y="164" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22">Only relevant, named,</text><text x="27" y="195" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22">synthetic, or redacted</text><text x="27" y="226" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22">material.</text>
+    <line x1="27" y1="254" x2="289" y2="254" stroke="#74706a" stroke-width="2"/><text x="27" y="282" fill="#c5f83a" font-family="Courier New, monospace" font-size="14">no secrets / private records</text><text x="27" y="304" fill="#c5f83a" font-family="Courier New, monospace" font-size="14">no export / upload</text>
+  </g>
+  <path d="M454 490h54" fill="none" stroke="#e23d28" stroke-width="7"/><path d="M501 476l21 14-21 14" fill="none" stroke="#e23d28" stroke-width="7"/>
+  <g transform="translate(538 326)">
+    <rect width="316" height="328" fill="#ffffff" stroke="#1c1b1a" stroke-width="4"/><rect width="316" height="13" fill="#e23d28"/>
+    <text x="27" y="69" fill="#e23d28" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="3">02 / ACTIONS</text>
+    <text x="27" y="123" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700">What may happen</text>
+    <text x="27" y="164" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="22">One exact read, edit,</text><text x="27" y="195" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="22">or check. Name what</text><text x="27" y="226" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="22">is explicitly forbidden.</text>
+    <line x1="27" y1="262" x2="289" y2="262" stroke="#d4d0ca" stroke-width="2"/><text x="27" y="290" fill="#504d48" font-family="Courier New, monospace" font-size="15">no install / publish / push</text>
+  </g>
+  <path d="M876 490h54" fill="none" stroke="#e23d28" stroke-width="7"/><path d="M923 476l21 14-21 14" fill="none" stroke="#e23d28" stroke-width="7"/>
+  <g transform="translate(960 326)">
+    <rect width="316" height="328" fill="#1c1b1a"/><rect width="316" height="13" fill="#e23d28"/>
+    <text x="27" y="69" fill="#c5f83a" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="3">03 / EVIDENCE</text>
+    <text x="27" y="123" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700">What you inspect</text>
+    <text x="27" y="164" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22">A source location, diff,</text><text x="27" y="195" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22">focused check, or direct</text><text x="27" y="226" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22">observation.</text>
+    <line x1="27" y1="262" x2="289" y2="262" stroke="#74706a" stroke-width="2"/><text x="27" y="294" fill="#c5f83a" font-family="Courier New, monospace" font-size="17">claim + artifact + unknowns</text>
+  </g>
+  <path d="M1118 696v45" fill="none" stroke="#e23d28" stroke-width="7"/><path d="M1104 734l14 21 14-21" fill="none" stroke="#e23d28" stroke-width="7"/>
+  <g transform="translate(538 742)"><rect width="738" height="88" fill="#e23d28"/><text x="27" y="34" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">04 / STOP: untrusted instruction, sensitive input,</text><text x="27" y="63" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">new authority, scope growth, or missing evidence</text></g>
+  <text x="116" y="739" fill="#1c1b1a" font-family="Courier New, monospace" font-size="18">EXTERNAL TEXT AND TOOL OUTPUT ARE DATA. THEY DO NOT GRANT PERMISSION.</text>
+</svg>

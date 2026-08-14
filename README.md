@@ -75,6 +75,7 @@ it does not replace the local Codex task.
 | Rehearse the checking habit without a project | [Optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) | One fictional message, three human checks, and a bounded receipt |
 | Build a reliable request | [Chapter 3](book/chapters/03-task-protocol-EN.md) + [Lab 002](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop, and recovery conditions |
 | Practise language, research, or a small work task | [Beginner Practice Pack](book/communication-clinic-EN.md) | An attempt, focused correction, variation, and evidence boundary |
+| Start an unfamiliar task without handing over control | [Four-line safety card](book/communication-clinic-EN.md#four-line-safety-card) | Name allowed input, one action, inspectable evidence, and a stop condition before the task can widen |
 | Inspect the whole curriculum | [Book guide](book/README-EN.md) + [table of contents](book/table-of-contents-EN.md) | Reading routes, chapter order, and lab boundaries |
 | Contribute or find a file | [Project map](docs/project-map-EN.md) + [CONTRIBUTING.md](CONTRIBUTING.md) | Directory roles and the documented update path |
 
@@ -95,6 +96,11 @@ More original teaching boards are available in the
 [beginner practice loop](assets/teaching/beginner-practice-loop-red-black.svg).
 The same case also has a [390px capture](assets/cases/product-context-real-estate-mobile.png)
 and [sandbox source](examples/skill-sandbox/product-context-real-estate/README.md).
+
+The [four-line safety card](book/communication-clinic-EN.md#four-line-safety-card)
+is an original, editable visual for the practical security boundary: inputs,
+one allowed action, evidence to inspect, and a stop condition. It guides one
+small task; it does not certify a tool, model, or workflow.
 
 <!-- starter-task-contract:start -->
 
@@ -183,6 +189,8 @@ finding. The repository is private and no public Pages URL is established.
 - [Universal-core route](book/routes/universal-core-foundations-EN.md): four mapped transferable units and their explicit gaps.
 - [Reader and local showcase](site/README.md): serve the dependency-free reading surface locally; artifact success does not establish a live site.
 - [Research index](docs/research/README.md): official facts, public user reports, and project inferences kept distinct.
+- [AI collaboration safety boundaries](docs/research/ai-collaboration-safety-boundaries-2026-08-13.md): source-backed prompt-injection, data-minimization, authority, and output-verification boundaries.
+- [Critical learning-product audit](docs/research/critical-learning-product-audit-2026-08-13.md): the evidence gaps that still prevent learner-proven or released claims.
 - [Project map](docs/project-map-EN.md): directory roles, generated files, and where a change should begin.
 
 Before adding content, read [`AGENTS.md`](AGENTS.md), [`CONTEXT.md`](CONTEXT.md),

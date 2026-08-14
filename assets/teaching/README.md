@@ -14,6 +14,7 @@ see before the reader works through the prose.
 - [Field signal to safe degradation](field-signal-to-safe-degradation-red-black.svg)
 - [Beginner practice loop](beginner-practice-loop-red-black.svg)
 - [Failed-interaction recovery](failed-interaction-recovery-red-black.svg)
+- [Four-line conversation safety card](conversation-safety-card-red-black.svg)
 
 The cards are visual explanations, not benchmark results. Their scope,
 ownership, and reuse boundary are recorded in the
