@@ -28,6 +28,8 @@ Useful indexes:
 
 - [AI collaboration safety boundaries](ai-collaboration-safety-boundaries-2026-08-13.md) — source-backed boundaries for prompt injection, minimum necessary input, action authority, and verification. It proposes low-risk teaching actions; it is not a security certification, incident study, or locally reproduced attack record.
 
+- [AI safety field signals and research receipts](ai-safety-field-signals-and-research-receipts-2026-08-13.md) — a dated record of instruction-layer ambiguity, non-persistent citations, qualification-versus-contradiction, and long-task boundary drift. It adds an inspectable checkpoint; it is not a prevalence study, product diagnosis, or security control evaluation.
+
 - [First five-minute Codex friction ledger](first-five-minute-codex-friction-ledger-2026-08-13.md) — official environment and evidence boundaries plus four public symptom reports, separated from product, runtime, and learning-outcome claims.
 
 - [Evidence-bounded language-practice starter prompts](evidence-bounded-language-practice-starter-prompts-2026-08-13.md) — primary learning and assessment sources, separated public user symptoms, six distinct beginner problems, and strict claim limits for a candidate language-practice workflow.

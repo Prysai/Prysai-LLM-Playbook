@@ -2780,6 +2780,58 @@ window.CODEX_LOCALE_MANIFEST = {
         }
       }
     },
+    "ai-safety-field-signals-and-research-receipts-2026-08-13": {
+      "kind": "field-note",
+      "reader_type": "field-note",
+      "overview_target": "index.html#field-research",
+      "stem": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
     "prysai-field-signal-curator": {
       "kind": "skill",
       "reader_type": "skill",
@@ -3779,6 +3831,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "docs/research/field-problems-index-2026-08-10.md": "field-problems-index-2026-08-10",
     "docs/research/field-problems-forums-2026-08-10.md": "field-problems-forums-2026-08-10",
     "docs/research/codex-field-cases-current-review-2026-08-12.md": "codex-field-cases-current-review-2026-08-12",
+    "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md": "ai-safety-field-signals-and-research-receipts-2026-08-13",
     "skills/prysai-field-signal-curator/SKILL.md": "prysai-field-signal-curator",
     "skills/prysai-platform-adapter-review/SKILL.md": "prysai-platform-adapter-review",
     "skills/prysai-communication-failure-triage/SKILL.md": "prysai-communication-failure-triage",

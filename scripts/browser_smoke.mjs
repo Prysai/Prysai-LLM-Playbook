@@ -154,6 +154,20 @@ try {
   await page.getByRole('button', { name: 'Search', exact: true }).click();
   await page.locator('[data-search-results] .search-result').first().waitFor();
   assert.ok(await page.locator('[data-search-results] .search-result').count() > 0, 'search returned no results for verification');
+  await searchInput.fill('research checkpoint');
+  await page.getByRole('button', { name: 'Search', exact: true }).click();
+  await page.locator('[data-search-results] .search-result').filter({ hasText: 'AI safety field signals' }).first().waitFor();
+  await page.getByRole('button', { name: 'Clear' }).click();
+
+  const fieldSignalsHref = await page.getByRole('link', { name: 'Read the AI safety field signals' }).getAttribute('href');
+  assert.match(fieldSignalsHref, /reader\.html\?path=docs%2Fresearch%2Fai-safety-field-signals-and-research-receipts-2026-08-13\.md&lang=en$/, 'AI safety field-signals link does not open its canonical Reader route');
+  const fieldSignalsPage = await context.newPage();
+  await fieldSignalsPage.goto(new URL(fieldSignalsHref, `${origin}/site/`).href, { waitUntil: 'networkidle' });
+  await fieldSignalsPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.match(await fieldSignalsPage.locator('[data-reader-article] h1').innerText(), /AI safety field signals/i, 'Reader did not render the AI safety field-signals record');
+  assert.equal(await fieldSignalsPage.getByRole('heading', { name: /a research checkpoint that survives a long task/i }).isVisible(), true, 'AI safety field-signals record does not expose its research checkpoint');
+  assert.match(await fieldSignalsPage.locator('[data-reader-article]').innerText(), /not a security log, audit certificate, chain-of-thought record, or proof that the research is complete/i, 'research checkpoint is missing its evidence boundary');
+  await fieldSignalsPage.close();
 
   const retryPage = await context.newPage();
   let retryRequests = 0;
@@ -297,7 +311,7 @@ try {
   assert.deepEqual(consoleErrors, [], `browser console errors: ${consoleErrors.join(' | ')}`);
   assert.deepEqual(pageErrors, [], `browser page errors: ${pageErrors.join(' | ')}`);
   await context.tracing.stop();
-  console.log('BROWSER_SMOKE_OK initial_search_requests=0 lazy_search_requests=1 desktop=1280 mobile=390 readers=chapter-02,beginner-practice-pack invalid_path=blocked');
+  console.log('BROWSER_SMOKE_OK initial_search_requests=0 lazy_search_requests=1 desktop=1280 mobile=390 readers=chapter-02,beginner-practice-pack,ai-safety-field-signals invalid_path=blocked');
 } catch (error) {
   await fs.mkdir(evidenceDirectory, { recursive: true });
   if (page) await page.screenshot({ path: path.join(evidenceDirectory, 'failure.png'), fullPage: true }).catch(() => {});

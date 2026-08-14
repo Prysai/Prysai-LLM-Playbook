@@ -427,6 +427,40 @@ check that could change the decision.
   only for claims with matching evidence. Unsupported claims remain `unknown`,
   `disputed`, or `out_of_scope`; never report exhaustive research.
 
+### Research checkpoint — preserve the decision before a long task drifts
+
+Before you open another search surface, ask for more context, change a claim,
+or resume after a pause, save this short checkpoint in an approved local note:
+
+```text
+checkpoint_id:
+question and decision owner:
+approved scope and exclusions:
+opened sources:
+claims: claim | supports / qualifies / contradicts / unknown | source location | scope
+unresolved conflicts or inaccessible sources:
+actions actually taken / deliberately not taken:
+next smallest check:
+stop reason and review date:
+```
+
+Keep `supports`, `qualifies`, and `contradicts` separate. A qualification can
+change how a supported claim is read without making its stated fact false. A
+URL or citation marker is a lead until the reader opens the source and records
+the supporting location. On a task shift, reread the approved scope and stop
+if a new source, destination, or action would require new authority.
+
+- **Evidence to keep:** checkpoint revision; opened-source locations; claim
+  classifications; explicit unknowns; actions not taken; and the next check.
+- **Common failure:** replacing the ledger with a confident summary, or letting
+  a later request silently change the destination or permission boundary.
+- **Status and receipt boundary:** a checkpoint preserves what was known at
+  one point. It is not an audit certificate, a source-correctness guarantee,
+  or proof that research is complete or safe.
+
+For the public-report evidence boundary and one fictional five-minute practice,
+read the [AI safety field-signals and research-receipts record](../docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md).
+
 <span id="recovery-route"></span>
 
 ## Recovery route — when the reply already missed
@@ -572,6 +606,7 @@ records below explain its design or demonstrate separate evaluation methods.
 - [Beginner first-practice friction](../docs/research/beginner-first-practice-friction-2026-08-13.md)
 - [Failed-interaction recovery public-demand record](../docs/research/failed-llm-interaction-recovery-public-demand-2026-08-13.md)
 - [Durable language learning and bounded research](../docs/research/durable-language-learning-and-bounded-research-2026-08-13.md)
+- [AI safety field signals and research receipts](../docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md)
 - [Prompt patterns for real work](../docs/research/prompt-patterns-for-real-work-2026-08-10.md)
 - **Separate evaluation-method example:** [Task-contract availability and channel study](../evals/candidates/task-contract-availability-and-channel-v1/README.md) — compares three ways of supplying a task contract for a synthetic maintainer handoff. It does not test these practice cards, coaching, or learner outcomes.
 
