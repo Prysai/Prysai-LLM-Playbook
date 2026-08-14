@@ -112,6 +112,24 @@ checking habit; it is not a substitute for the Codex path.
 | Learn from failures people actually report | [Real-world problem index](docs/research/field-problems-index-2026-08-10.md) | A symptom, a safe first check, a narrower fallback, and an honest evidence level |
 | Turn a personal method into team capability | [Chapter 21 — team capability system](book/chapters/21-team-capability-system-EN.md) + [Contribution model](docs/governance/contribution-model.md) | Ownership, sources, permissions, evaluation, maintenance, and rollback |
 
+### If you already know your goal, do not take the intake
+
+Choose **one** text-only starter card below. They are original candidate cards
+for one low-risk attempt; they do not promise a result from a particular model
+or product. Do not combine them, add private material, or turn a card into a
+tool, browser, account, or external action without first setting a new boundary.
+
+| I want to… | Start with this card | The card can help you make visible | It does not establish |
+|---|---|---|---|
+| practise a short Spanish exchange | [Card A1 — hotel baseline and correction](book/communication-clinic-EN.md#language-practice-route) | One fictional four-turn attempt, disclosed help, and a learner revision. | Fluency, a language level, correct real-world wording, retention, or transfer. |
+| practise one skill for a real situation | [Card B1 — define and attempt the performance](book/communication-clinic-EN.md#general-skill-practice-route) | One small performance, allowed aids, visible criteria, and a first attempt. | Improvement, job readiness, independent performance, or mastery. |
+| prepare a reliable research check | [Card C1 — decision, question, and source plan](book/communication-clinic-EN.md#bounded-research-route) | One decision question, material-claim owners, and a stop rule before searching. | Browsing, source access, citation validity, a recommendation, or complete research. |
+
+Each card has a fuller boundary, failure case, receipt, and follow-up below its
+anchor. If you do not yet know which one fits, use the [Beginner Practice Pack
+intake](book/communication-clinic-EN.md#first-practice-intake) instead; it
+asks one question at a time and returns only one route.
+
 The candidate first slice is deliberately small: read Chapter 1, use Lab 011 to
 label the boundary, choose the bounded local task described in Chapter 2, use
 the First Safe Change fixture if you do not yet have a sandbox, then run Lab
