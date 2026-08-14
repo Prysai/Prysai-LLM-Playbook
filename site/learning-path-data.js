@@ -1415,6 +1415,15 @@ window.CODEX_LEARNING_PATH = {
           },
           "href": "../skills/prysai-codex-coach/SKILL.md",
           "relation": "supporting"
+        },
+        {
+          "id": "prysai-prompt-card-editor",
+          "name": {
+            "en": "Prompt Card Editor",
+            "zh": "提示卡编辑器 Prompt Card Editor"
+          },
+          "href": "../skills/prysai-prompt-card-editor/SKILL.md",
+          "relation": "supporting"
         }
       ],
       "evaluations": [

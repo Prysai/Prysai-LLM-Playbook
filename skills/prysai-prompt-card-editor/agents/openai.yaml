@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prompt Card Editor"
+  short_description: "Turn authorized prompt ideas into bounded teaching cards."
+  default_prompt: "Use $prysai-prompt-card-editor to turn this original prompt idea into one bounded, source-aware teaching card."

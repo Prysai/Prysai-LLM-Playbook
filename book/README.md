@@ -1,6 +1,6 @@
 <!-- compatibility-entrypoint: language-neutral | default-locale: EN -->
 
-# Codex: From First Task to Real Work — Book Guide
+# Prysai LLM Playbook: Book Guide
 
 This unsuffixed `book/README.md` is a language-neutral compatibility entry
 point. The localized book guides use explicit suffixes; English (`-EN`) is

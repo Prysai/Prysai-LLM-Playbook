@@ -31,6 +31,12 @@ def main() -> int:
     require(any("explicit-first-turn-check-wins" in e for e in routing.validate_contract(first_turn_rewrite)), "First-Turn Check was silently replaced by drafting")
     first_turn_safety=copy.deepcopy(base); fixture=next(x for x in first_turn_safety["fixtures"] if x["id"]=="safety-over-first-turn-check"); fixture["expected"]["disposition"]="route"
     require(any("safety-over-first-turn-check" in e for e in routing.validate_contract(first_turn_safety)), "First-Turn Check bypassed a safety block")
+    prompt_card_explicit=copy.deepcopy(base); fixture=next(x for x in prompt_card_explicit["fixtures"] if x["id"]=="explicit-prompt-card-editor-wins"); fixture["expected"]["owner"]="prysai-dialogue-brief"
+    require(any("explicit-prompt-card-editor-wins" in e for e in routing.validate_contract(prompt_card_explicit)), "Prompt Card Editor lost its explicit route")
+    prompt_card_safety=copy.deepcopy(base); fixture=next(x for x in prompt_card_safety["fixtures"] if x["id"]=="safety-over-prompt-card-editor-unclear-provenance"); fixture["expected"]["disposition"]="route"
+    require(any("safety-over-prompt-card-editor-unclear-provenance" in e for e in routing.validate_contract(prompt_card_safety)), "Prompt Card Editor accepted unclear provenance")
+    prompt_card_personal=copy.deepcopy(base); fixture=next(x for x in prompt_card_personal["fixtures"] if x["id"]=="boundary-prompt-card-editor-personal-first-turn"); fixture["expected"]["owner"]="prysai-prompt-card-editor"
+    require(any("boundary-prompt-card-editor-personal-first-turn" in e for e in routing.validate_contract(prompt_card_personal)), "personal first request was misrouted to the card editor")
     false_explicit=copy.deepcopy(base); fixture=next(x for x in false_explicit["fixtures"] if x["id"]=="explicit-wins"); fixture["expected"]["owner"]="prysai-research-router"
     require(any("explicit-wins" in e for e in routing.validate_contract(false_explicit)), "implicit route overrode explicit Skill")
     false_safety=copy.deepcopy(base); fixture=next(x for x in false_safety["fixtures"] if x["id"]=="safety-over-explicit"); fixture["expected"]["disposition"]="route"
@@ -47,6 +53,6 @@ def main() -> int:
     require(any("unknown platform adapter" in e for e in routing.validate_contract(unknown_platform)), "unknown platform adapter accepted")
     wrong_status=copy.deepcopy(base); wrong_status["curriculum_routing"]["platform_adapters"][1]["status"]="candidate"
     require(any("Claude Code/Grok proposed" in e for e in routing.validate_contract(wrong_status)), "proposed adapter silently promoted")
-    print("SKILL_ROUTING_CONTRACT_TESTS_OK fixtures=14")
+    print(f"SKILL_ROUTING_CONTRACT_TESTS_OK fixtures={len(base['fixtures'])}")
     return 0
 if __name__ == "__main__": raise SystemExit(main())

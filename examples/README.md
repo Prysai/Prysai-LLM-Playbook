@@ -7,7 +7,8 @@ credentials, live inventory, or external write permissions.
 ## Start here
 
 - [`lab-001-v1/`](lab-001-v1/) for the First Safe Change fixture: one seeded
-  README mistake, one permitted local edit, and one standard-library checker.
+  README mistake, one permitted local edit, a no-runtime acceptance check, and
+  an optional standard-library checker for readers who already have Python.
 - [`skill-sandbox/`](skill-sandbox/) for one-time local experiments.
 - [`lab-008-v1/`](lab-008-v1/) for the frozen offline research fixture with a
   rejected overclaim and a bounded correction.

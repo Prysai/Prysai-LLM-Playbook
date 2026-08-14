@@ -1,9 +1,10 @@
-# Codex: From First Task to Real Work
+# First Task, Real Work — An LLM Field Guide
 
 ## Project purpose
 
-This repository is a book-like learning and practice system for GPT,
-Codex, skills, tools, Agent behavior, verification, and team adoption.
+This repository is a book-like learning and practice system for AI language
+models, GPT, the Codex Practice Track, Skills, tools, Agent behavior,
+verification, and team adoption.
 
 ## Working rules
 

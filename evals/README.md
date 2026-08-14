@@ -1,4 +1,4 @@
-# Codex: From First Task to Real Work 评测夹具
+# Prysai LLM Playbook 评测夹具
 
 `task-set-v1.yaml` 是一组固定的、可重复运行的 Agent 评测任务。文件使用 YAML 1.2 兼容的 JSON 子集，因此仓库内的校验脚本只依赖 Python 标准库，不需要为评测夹具安装 PyYAML。
 

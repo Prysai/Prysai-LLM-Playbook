@@ -1,6 +1,6 @@
 <!-- content_id: book-readme | locale: DE | language: de | default_locale: EN | content_status: candidate | translation_status: in-progress | reader_runtime_status: not_run | translated_from: EN | source_revision: dd08a68 -->
 
-# Codex: From First Task to Real Work — Buchleitfaden
+# Prysai LLM Playbook: Buchleitfaden
 
 > Deutscher Buch-Einstieg (`DE`). Die Kapitelkörper sind noch nicht vollständig
 > ins Deutsche übertragen und nicht vollständig zur Laufzeit geprüft.
@@ -15,8 +15,7 @@ Navigation:
 - [Deutsches Vorwort](preface-DE.md)
 - [Deutsches Inhaltsverzeichnis](table-of-contents-DE.md)
 
-Hier liegt die originale Hauptlinie des Buches `Codex: From First Task to Real
-Work`. Sie ist nach dem Wachstum der Lernenden aufgebaut und nicht als
+Hier liegt die originale Hauptlinie des Buches `Prysai LLM Playbook`. Sie ist nach dem Wachstum der Lernenden aufgebaut und nicht als
 Sammlung unabhängiger externer Projekte. Das Buch erklärt zuerst die Ideen und
 lässt die Entscheidungen üben, die diese Ideen in echter Arbeit zuverlässig
 machen.

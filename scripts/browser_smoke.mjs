@@ -15,6 +15,7 @@ const { chromium } = playwrightModule;
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const artifact = path.join(root, '_site');
 const evidenceDirectory = path.join(root, '.work', 'browser-smoke');
+const visualEvidenceDirectory = path.join(root, 'output', 'playwright');
 const python = process.env.PYTHON || process.env.PYTHON_PATH || 'python';
 const testTimeoutMs = 90_000;
 const testTimeout = setTimeout(() => {
@@ -112,6 +113,25 @@ try {
   await page.goto(`${origin}/`, { waitUntil: 'networkidle' });
   assert.equal(searchRequests.length, 0, 'initial page load fetched the full search index');
   await noHorizontalOverflow(page, 'desktop showcase');
+  const everydayPromptDeck = page.locator('#everyday-prompts');
+  await everydayPromptDeck.waitFor();
+  await fs.mkdir(visualEvidenceDirectory, { recursive: true });
+  await everydayPromptDeck.screenshot({ path: path.join(visualEvidenceDirectory, 'everyday-prompt-cards-desktop.png') });
+  assert.equal(await everydayPromptDeck.getByRole('heading', { name: 'Start with one small conversation.' }).isVisible(), true, 'everyday prompt-card entry is missing');
+  const everydayPromptButtons = everydayPromptDeck.getByRole('button', { name: 'Copy prompt' });
+  assert.equal(await everydayPromptButtons.count(), 2, 'everyday prompt deck does not expose two copy controls');
+  assert.match(
+    await everydayPromptDeck.locator('[data-everyday-prompt]').first().innerText(),
+    /Do not assign a level or claim that I have learned Spanish/i,
+    'Spanish prompt card omits its no-fluency boundary',
+  );
+  assert.match(
+    await everydayPromptDeck.locator('[data-everyday-prompt]').nth(1).innerText(),
+    /Do not invent citations|give a recommendation/i,
+    'research prompt card omits its source and recommendation boundary',
+  );
+  await everydayPromptButtons.first().click();
+  await everydayPromptDeck.locator('#spanish-prompt-status').getByText(/Prompt copied\. Replace only the brackets/i).waitFor();
   const guidedRouteLink = page.getByRole('link', { name: 'Have a disposable project? Follow the guided path.' });
   assert.match(
     await guidedRouteLink.getAttribute('href'),
@@ -234,6 +254,44 @@ try {
   assert.match(await fieldSignalsPage.locator('[data-reader-article]').innerText(), /not a security log, audit certificate, chain-of-thought record, or proof that the research is complete/i, 'research checkpoint is missing its evidence boundary');
   await fieldSignalsPage.close();
 
+  await searchInput.fill('task receipt');
+  await page.getByRole('button', { name: 'Search', exact: true }).click();
+  const handoffSearchResult = page.locator('[data-search-results] .search-result').filter({ hasText: 'created sub-agent is not a task receipt' }).first();
+  await handoffSearchResult.waitFor();
+  const handoffCaseHref = await handoffSearchResult.locator('a').getAttribute('href');
+  assert.match(handoffCaseHref, /reader\.html\?path=docs%2Fresearch%2Ffield-case-agent-handoff-receipt-2026-08-14\.md&lang=en$/, 'Agent-handoff case is not exposed through the English Reader route');
+  const handoffCasePage = await context.newPage();
+  await handoffCasePage.goto(new URL(handoffCaseHref, `${origin}/site/`).href, { waitUntil: 'networkidle' });
+  await handoffCasePage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.match(await handoffCasePage.locator('[data-reader-article] h1').innerText(), /created sub-agent is not a task receipt/i, 'Reader did not render the agent-handoff field case');
+  assert.equal(await handoffCasePage.getByRole('heading', { name: /start here: name the missing checkpoint/i }).isVisible(), true, 'Agent-handoff case does not lead with the beginner checkpoint boundary');
+  assert.match(await handoffCasePage.locator('[data-reader-article]').innerText(), /does not create an agent, send a message, inspect a session, or diagnose a product/i, 'Agent-handoff case omits its offline scope boundary');
+  const handoffVisual = handoffCasePage.locator('img[alt*="Five handoff checkpoints"]');
+  assert.match(await handoffVisual.getAttribute('src'), /assets\/teaching\/agent-handoff-receipt-checkpoints-red-black\.svg$/, 'Agent-handoff case does not retain its project-owned teaching visual');
+  const handoffVisualLink = handoffCasePage.locator('.reader-image-link').filter({ has: handoffVisual });
+  assert.equal(await handoffVisualLink.getAttribute('target'), '_blank', 'Agent-handoff visual does not offer its full-size reading route');
+  await handoffCasePage.setViewportSize({ width: 390, height: 844 });
+  assert.equal(await handoffVisual.isVisible(), false, 'Mobile Reader shrinks the dense agent-handoff teaching board instead of offering a full-size route');
+  assert.equal(await handoffCasePage.getByRole('link', { name: /open full-size visual: five handoff checkpoints/i }).isVisible(), true, 'Agent-handoff visual lacks an accessible mobile full-size route');
+  await noHorizontalOverflow(handoffCasePage, 'mobile agent-handoff field case');
+  await handoffCasePage.close();
+
+  await searchInput.fill('better beginner opening');
+  await page.getByRole('button', { name: 'Search', exact: true }).click();
+  const tutorialIntakeSearchResult = page.locator('[data-search-results] .search-result').filter({ hasText: 'Community tutorial intake' }).first();
+  await tutorialIntakeSearchResult.waitFor();
+  const tutorialIntakeHref = await tutorialIntakeSearchResult.locator('a').getAttribute('href');
+  assert.match(tutorialIntakeHref, /reader\.html\?path=docs%2Fresearch%2Fcommunity-tutorial-intake-and-foundations-2026-08-14\.md&lang=en$/, 'Community tutorial intake is not exposed through the English Reader route');
+  const tutorialIntakePage = await context.newPage();
+  await tutorialIntakePage.goto(new URL(tutorialIntakeHref, `${origin}/site/`).href, { waitUntil: 'networkidle' });
+  await tutorialIntakePage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.match(await tutorialIntakePage.locator('[data-reader-article] h1').innerText(), /a better beginner opening, not a product source/i, 'Reader did not render the community tutorial intake');
+  assert.equal(await tutorialIntakePage.getByRole('heading', { name: /an original opening for the general course/i }).isVisible(), true, 'Community tutorial intake does not expose the original beginner-opening boundary');
+  assert.match(await tutorialIntakePage.locator('[data-reader-article]').innerText(), /do not embed its player, copy its transcript, reuse its screenshots/i, 'Community tutorial intake omits its source and rights boundary');
+  await noHorizontalOverflow(tutorialIntakePage, 'community tutorial intake field note');
+  await tutorialIntakePage.close();
+  await page.getByRole('button', { name: 'Clear' }).click();
+
   const retryPage = await context.newPage();
   let retryRequests = 0;
   await retryPage.route('**/search-index.js*', async (route) => {
@@ -307,6 +365,10 @@ try {
     assert.match(await page.locator('[data-reader-article] h1').innerText(), titlePattern, `${label}: Reader did not render the intended first page`);
   }
   await page.goto(`${origin}/site/`, { waitUntil: 'networkidle' });
+  await page.locator('#everyday-prompts').scrollIntoViewIfNeeded();
+  await page.locator('#everyday-prompts').screenshot({ path: path.join(visualEvidenceDirectory, 'everyday-prompt-cards-mobile-en.png') });
+  assert.equal(await page.locator('#everyday-prompts').getByRole('button', { name: 'Copy prompt' }).first().isVisible(), true, 'mobile prompt-card copy control is hidden');
+  await noHorizontalOverflow(page, 'mobile prompt-card deck');
   assert.match(await page.getByRole('link', { name: 'Open every problem route' }).getAttribute('href'), /reader\.html\?path=README-EN\.md&lang=en#choose-your-starting-point$/, 'mobile route index link does not target the canonical English README route section');
   assert.equal(await page.getByRole('button', { name: 'Copy rescue prompt' }).isVisible(), true, 'mobile rescue control is hidden');
   assert.equal(await page.getByRole('button', { name: 'Copy my local check record' }).isVisible(), true, 'mobile local record control is hidden');
@@ -416,6 +478,18 @@ try {
     `mobile search heading is obscured by the sticky header: ${JSON.stringify(chineseSearchPosition)}`,
   );
   await noHorizontalOverflow(chineseSearchPage, 'mobile Chinese search');
+  await chineseFirstResult.locator('a').click();
+  await chineseSearchPage.waitForURL(/reader\.html\?path=book%2Fchapters%2F02-first-safe-task-EN\.md&lang=zh$/);
+  await chineseSearchPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.equal(await chineseSearchPage.locator('[data-reader-language]').inputValue(), 'zh', 'Chinese fallback Reader loses the requested interface language');
+  const chineseFallbackStatus = chineseSearchPage.locator('[data-reader-banner]');
+  await chineseFallbackStatus.waitFor();
+  assert.equal(
+    (await chineseFallbackStatus.innerText()).includes('\u82f1\u6587\u6e90\u6587\u4ef6'),
+    true,
+    'Chinese fallback Reader does not explain that the English source is shown',
+  );
+  await noHorizontalOverflow(chineseSearchPage, 'mobile Chinese fallback Reader');
   await chineseSearchPage.close();
 
   await page.goto(`${origin}/site/reader.html?path=book%2Froutes%2Ffirst-safe-change-EN.md&lang=en`, { waitUntil: 'networkidle' });
@@ -505,12 +579,20 @@ try {
   assert.equal(await page.locator('.reader-aside').isHidden(), true, 'Reader shows empty page details after an invalid path');
   const invalidPathRecovery = page.locator('[data-reader-article]').getByRole('link', { name: 'Back to overview' });
   assert.match(await invalidPathRecovery.getAttribute('href'), /index\.html\?lang=en$/, 'Reader invalid-path recovery does not preserve the current interface language');
+  await invalidPathRecovery.click();
+  await page.waitForURL(/site\/index\.html\?lang=en$/);
+  await page.locator('[data-route-decision]').waitFor();
+  assert.equal(await page.locator('[data-route-decision]').isVisible(), true, 'Reader invalid-path recovery does not reach the English route chooser');
 
   await page.goto(`${origin}/site/reader.html?path=private%2Fsecret.md&lang=zh`, { waitUntil: 'domcontentloaded' });
   await page.getByRole('alert').waitFor();
   assert.equal(await page.locator('[data-reader-language]').inputValue(), 'zh', 'Reader invalid-path state resets the requested interface language');
   const chineseInvalidPathRecovery = page.locator('[data-reader-article]').getByRole('link', { name: '返回总览' });
   assert.match(await chineseInvalidPathRecovery.getAttribute('href'), /index\.html\?lang=zh$/, 'Reader invalid-path recovery does not preserve Chinese interface language');
+  await chineseInvalidPathRecovery.click();
+  await page.waitForURL(/site\/index\.html\?lang=zh$/);
+  await page.locator('[data-route-decision]').waitFor();
+  assert.equal(await page.locator('[data-route-decision]').isVisible(), true, 'Reader invalid-path recovery does not reach the Chinese route chooser');
 
   assert.deepEqual(consoleErrors, [], `browser console errors: ${consoleErrors.join(' | ')}`);
   assert.deepEqual(pageErrors, [], `browser page errors: ${pageErrors.join(' | ')}`);

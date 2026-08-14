@@ -1,4 +1,4 @@
-# Codex: From First Task to Real Work 实验室
+# Prysai 大模型实战手册：实验室
 
 实验的等级主归属以[学习路径契约](../../docs/governance/learning-path.yaml)为准。这里记录实验如何运行、观察和迁移；实验被章节复用时，复用关系不自动变成新的晋级证据。
 

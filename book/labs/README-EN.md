@@ -1,6 +1,6 @@
 <!-- content_id: book-labs-readme | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-11 -->
 
-# Codex: From First Task to Real Work — Lab Index
+# Prysai LLM Playbook: Lab Index
 
 <!-- language-switcher:start -->
 **Languages:** [English](README-EN.md) | [简体中文（迁移源）](README.md) | Español（translation pending） | 日本語（translation pending） | 한국어（translation pending） | Deutsch（translation pending）

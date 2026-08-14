@@ -18,7 +18,7 @@ working method around AI, not memorising a magic sentence.
 
 ## The two paths through the book
 
-`Codex: From First Task to Real Work` moves along two paths at once.
+`Prysai LLM Playbook` moves along two paths at once.
 
 The first is a path of understanding. It begins with GPT and models, then
 shows how Codex connects a model to a project, files, the terminal, the

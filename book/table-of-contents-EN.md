@@ -1,6 +1,6 @@
 ﻿<!-- content_id: book-table-of-contents | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: dd08a68 -->
 
-# Codex: From First Task to Real Work — Table of Contents v0.2
+# Prysai LLM Playbook: Table of Contents v0.2
 
 Readers who want the platform-neutral method first can open the
 [first mapped universal-core route](routes/universal-core-foundations-EN.md).

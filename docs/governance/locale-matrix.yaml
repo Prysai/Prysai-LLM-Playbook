@@ -2,7 +2,7 @@
   "matrix_version": "1",
   "mode": "migration",
   "default_locale": "EN",
-  "last_reviewed": "2026-08-11",
+  "last_reviewed": "2026-08-14",
   "next_review": "2026-11-09",
   "description": "Canonical identity and translation state for reader-facing localized content.",
   "locales": {
@@ -27,7 +27,10 @@
     {"content_id": "field-problems-forums-2026-08-10", "kind": "field-note", "path": "docs/research/field-problems-forums-2026-08-10.md", "content_status": "candidate"},
     {"content_id": "codex-field-cases-current-review-2026-08-12", "kind": "field-note", "path": "docs/research/codex-field-cases-current-review-2026-08-12.md", "content_status": "candidate"},
     {"content_id": "ai-safety-field-signals-and-research-receipts-2026-08-13", "kind": "field-note", "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md", "content_status": "candidate"},
-    {"content_id": "field-case-external-instruction-authority-2026-08-13", "kind": "field-note", "path": "docs/research/field-case-external-instruction-authority-2026-08-13.md", "content_status": "candidate"}
+    {"content_id": "field-case-external-instruction-authority-2026-08-13", "kind": "field-note", "path": "docs/research/field-case-external-instruction-authority-2026-08-13.md", "content_status": "candidate"},
+    {"content_id": "field-case-blocked-network-boundary-2026-08-14", "kind": "field-note", "path": "docs/research/field-case-blocked-network-boundary-2026-08-14.md", "content_status": "candidate"},
+    {"content_id": "field-case-agent-handoff-receipt-2026-08-14", "kind": "field-note", "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14.md", "content_status": "candidate"},
+    {"content_id": "community-tutorial-intake-and-foundations-2026-08-14", "kind": "field-note", "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md", "content_status": "candidate"}
   ],
   "content": [
     {
@@ -35,14 +38,14 @@
       "kind": "learning-route",
       "stem": "book/routes/first-safe-change",
       "source_locale": "EN",
-      "source_revision": "worktree-2026-08-13",
+      "source_revision": "worktree-2026-08-14",
       "locales": {
         "EN": {"path": "book/routes/first-safe-change-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
-        "ZH": {"path": "book/routes/first-safe-change-ZH.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "none", "run_status": "not_run", "reason": "Reserved route identity; translation and independent language review do not exist."},
-        "ES": {"path": "book/routes/first-safe-change-ES.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "none", "run_status": "not_run", "reason": "Reserved route identity; translation and independent language review do not exist."},
-        "JA": {"path": "book/routes/first-safe-change-JA.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "none", "run_status": "not_run", "reason": "Reserved route identity; translation and independent language review do not exist."},
-        "KO": {"path": "book/routes/first-safe-change-KO.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "none", "run_status": "not_run", "reason": "Reserved route identity; translation and independent language review do not exist."},
-        "DE": {"path": "book/routes/first-safe-change-DE.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "none", "run_status": "not_run", "reason": "Reserved route identity; translation and independent language review do not exist."}
+        "ZH": {"path": "book/routes/first-safe-change-ZH.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-14", "coverage": "none", "run_status": "not_run", "reason": "Reserved route identity; translation and independent language review do not exist."},
+        "ES": {"path": "book/routes/first-safe-change-ES.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-14", "coverage": "none", "run_status": "not_run", "reason": "Reserved route identity; translation and independent language review do not exist."},
+        "JA": {"path": "book/routes/first-safe-change-JA.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-14", "coverage": "none", "run_status": "not_run", "reason": "Reserved route identity; translation and independent language review do not exist."},
+        "KO": {"path": "book/routes/first-safe-change-KO.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-14", "coverage": "none", "run_status": "not_run", "reason": "Reserved route identity; translation and independent language review do not exist."},
+        "DE": {"path": "book/routes/first-safe-change-DE.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-14", "coverage": "none", "run_status": "not_run", "reason": "Reserved route identity; translation and independent language review do not exist."}
       }
     },
     {

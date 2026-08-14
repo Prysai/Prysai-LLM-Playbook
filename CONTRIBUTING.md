@@ -1,4 +1,4 @@
-# Contributing to Codex: From First Task to Real Work
+# Contributing to Prysai LLM Playbook
 
 Thank you for improving the Field Guide. This repository accepts focused
 corrections, curriculum work, research records, project Skills, evaluation

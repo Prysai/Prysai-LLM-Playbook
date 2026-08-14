@@ -88,12 +88,12 @@ def main() -> int:
                 raise AssertionError(f"dynamic-copy-control: missing {required}")
         if "else element.href = destination.target;" in reader_script:
             raise AssertionError("dynamic-reader-link-policy: unsafe fallback assignment returned")
-        if "box.setAttribute('role', 'alert');" in reader_script:
-            raise AssertionError("reader-error-announcement: duplicate assertive alert returned")
-        if "setReaderStatus(message, { assertive: true });" not in reader_script:
-            raise AssertionError("reader-error-announcement: primary assertive status is missing")
-        if "banner.setAttribute('aria-live', assertive ? 'assertive' : 'polite');" not in reader_script:
-            raise AssertionError("reader-error-announcement: live-region priority does not follow status severity")
+        if "box.setAttribute('role', 'alert');" not in reader_script:
+            raise AssertionError("reader-error-announcement: actionable error card is not assertive")
+        if "box.setAttribute('aria-live', 'assertive');" not in reader_script:
+            raise AssertionError("reader-error-announcement: actionable error card lacks assertive priority")
+        if "setReaderStatus('');" not in reader_script:
+            raise AssertionError("reader-error-announcement: stale status banner is not cleared after an actionable error")
         for required in (
             "async function fetchWithTimeout(url, consume = null)",
             "controller.abort()",
@@ -246,7 +246,7 @@ def main() -> int:
             raise AssertionError(
                 f"reader-content-identity: expected {skill_count} Skills, got {len(skill_ids)}"
             )
-        if field_note_ids != {"field-problems-index-2026-08-10", "field-problems-forums-2026-08-10", "codex-field-cases-current-review-2026-08-12", "ai-safety-field-signals-and-research-receipts-2026-08-13", "field-case-external-instruction-authority-2026-08-13"}:
+        if field_note_ids != {"field-problems-index-2026-08-10", "field-problems-forums-2026-08-10", "codex-field-cases-current-review-2026-08-12", "ai-safety-field-signals-and-research-receipts-2026-08-13", "field-case-external-instruction-authority-2026-08-13", "field-case-blocked-network-boundary-2026-08-14", "field-case-agent-handoff-receipt-2026-08-14", "community-tutorial-intake-and-foundations-2026-08-14"}:
             raise AssertionError(f"reader-content-identity: unexpected public Field notes: {sorted(field_note_ids)}")
         fixtures += 1
 

@@ -149,8 +149,8 @@
       "finding": "Several field reports are summaries rather than structured case cards with evidence level and reproduction status.",
       "required_evidence": "Symptom, version, date, source, evidence level, local reproduction, safe check, and stop condition.",
       "status": "in_progress",
-      "evidence_paths": ["docs/templates/field-case.md", "docs/research/codex-field-cases-current-review-2026-08-12.md"],
-      "resolution_scope": "Three current Codex cases are structured; older report sets still need conversion or retirement."
+      "evidence_paths": ["docs/templates/field-case.md", "docs/research/codex-field-cases-current-review-2026-08-12.md", "docs/research/field-case-blocked-network-boundary-2026-08-14.md", "docs/research/field-case-agent-handoff-receipt-2026-08-14.md"],
+      "resolution_scope": "Three current Codex cases and two older public signals are structured; older report sets still need conversion or retirement."
     },
     {
       "id": "Q-011",

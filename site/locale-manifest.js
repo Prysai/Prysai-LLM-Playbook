@@ -69,35 +69,35 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": false,
           "content_status": "draft",
           "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "source_revision": "worktree-2026-08-14"
         },
         "es": {
           "path": "book/routes/first-safe-change-ES.md",
           "exists": false,
           "content_status": "draft",
           "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "source_revision": "worktree-2026-08-14"
         },
         "ja": {
           "path": "book/routes/first-safe-change-JA.md",
           "exists": false,
           "content_status": "draft",
           "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "source_revision": "worktree-2026-08-14"
         },
         "ko": {
           "path": "book/routes/first-safe-change-KO.md",
           "exists": false,
           "content_status": "draft",
           "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "source_revision": "worktree-2026-08-14"
         },
         "de": {
           "path": "book/routes/first-safe-change-DE.md",
           "exists": false,
           "content_status": "draft",
           "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "source_revision": "worktree-2026-08-14"
         }
       }
     },
@@ -2937,6 +2937,162 @@ window.CODEX_LOCALE_MANIFEST = {
         }
       }
     },
+    "field-case-blocked-network-boundary-2026-08-14": {
+      "kind": "field-note",
+      "reader_type": "field-note",
+      "overview_target": "index.html#field-research",
+      "stem": "docs/research/field-case-blocked-network-boundary-2026-08-14",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
+    "field-case-agent-handoff-receipt-2026-08-14": {
+      "kind": "field-note",
+      "reader_type": "field-note",
+      "overview_target": "index.html#field-research",
+      "stem": "docs/research/field-case-agent-handoff-receipt-2026-08-14",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
+    "community-tutorial-intake-and-foundations-2026-08-14": {
+      "kind": "field-note",
+      "reader_type": "field-note",
+      "overview_target": "index.html#field-research",
+      "stem": "docs/research/community-tutorial-intake-and-foundations-2026-08-14",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
     "prysai-dialogue-brief": {
       "kind": "skill",
       "reader_type": "skill",
@@ -3664,6 +3820,58 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         }
       }
+    },
+    "prysai-prompt-card-editor": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-prompt-card-editor/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-prompt-card-editor/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-prompt-card-editor/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-prompt-card-editor/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-prompt-card-editor/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-prompt-card-editor/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-prompt-card-editor/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
     }
   },
   "aliases": {
@@ -4048,6 +4256,9 @@ window.CODEX_LOCALE_MANIFEST = {
     "docs/research/codex-field-cases-current-review-2026-08-12.md": "codex-field-cases-current-review-2026-08-12",
     "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md": "ai-safety-field-signals-and-research-receipts-2026-08-13",
     "docs/research/field-case-external-instruction-authority-2026-08-13.md": "field-case-external-instruction-authority-2026-08-13",
+    "docs/research/field-case-blocked-network-boundary-2026-08-14.md": "field-case-blocked-network-boundary-2026-08-14",
+    "docs/research/field-case-agent-handoff-receipt-2026-08-14.md": "field-case-agent-handoff-receipt-2026-08-14",
+    "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md": "community-tutorial-intake-and-foundations-2026-08-14",
     "skills/prysai-dialogue-brief/SKILL.md": "prysai-dialogue-brief",
     "skills/prysai-first-turn-check/SKILL.md": "prysai-first-turn-check",
     "skills/prysai-field-signal-curator/SKILL.md": "prysai-field-signal-curator",
@@ -4061,7 +4272,8 @@ window.CODEX_LOCALE_MANIFEST = {
     "skills/prysai-research-router/SKILL.md": "prysai-research-router",
     "skills/prysai-product-context/SKILL.md": "prysai-product-context",
     "skills/prysai-learning-coach/SKILL.md": "prysai-learning-coach",
-    "skills/prysai-source-investigator/SKILL.md": "prysai-source-investigator"
+    "skills/prysai-source-investigator/SKILL.md": "prysai-source-investigator",
+    "skills/prysai-prompt-card-editor/SKILL.md": "prysai-prompt-card-editor"
   },
   "routed_status_counts": {
     "chapters": 22,

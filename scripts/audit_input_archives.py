@@ -1,4 +1,4 @@
-"""Audit the six source archives used to seed Codex: From First Task to Real Work.
+"""Audit the six source archives used to seed First Task, Real Work.
 
 The script is intentionally read-only. It reports archive fingerprints,
 contents, SKILL.md metadata, duplicate names, and license-file signals without

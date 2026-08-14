@@ -1,7 +1,7 @@
 ﻿const copy = {
   en: {
     skipToContent: 'Skip to main content',
-    wordmarkAria: 'Codex: From First Task to Real Work home',
+    wordmarkAria: 'Prysai LLM Playbook home',
     languageToggleAria: 'Choose interface language',
     menuAria: 'Open navigation',
     navAria: 'Main navigation',
@@ -27,7 +27,7 @@
   },
   zh: {
     heroIndexAria: '页面索引',
-    skipToContent: '跳到主要内容', wordmarkAria: 'Codex：从第一个任务到真实工作的首页', languageToggleAria: '选择界面语言', menuAria: '打开导航', navAria: '主导航', pathAria: '七级学习路径', routesAria: '筛选章节路线', menu: '菜单', menuClose: '关闭', navStart: '从问题开始', navFirst30: '前 30 分钟', navPath: '学习路径', navIndex: '项目索引', navRoutes: '阅读路线', navLabs: '实验室', navSkills: 'Skills', navUpdates: '更新地图', localeBannerFallback: '已提供 {requested} 路由，但部分界面或读者内容仍在迁移中；需要时显示当前可用源文件。', localeManifestError: '语言路由不可用，因为生成的 manifest 没有加载。英文仍可用；在依赖其他语言路由前，请先重新生成 manifest。', localeBannerReady: '当前阅读语言：{language}。', localeMenuAria: '界面语言', languageNameEnglish: '英语', languageNameChinese: '简体中文', languageNameSpanish: '西班牙语', languageNameJapanese: '日语', languageNameKorean: '韩语', languageNameGerman: '德语', localeOptionFallback: '英文界面回退',
+    skipToContent: '跳到主要内容', wordmarkAria: 'Prysai 大模型实战手册首页', languageToggleAria: '选择界面语言', menuAria: '打开导航', navAria: '主导航', pathAria: '七级学习路径', routesAria: '筛选章节路线', menu: '菜单', menuClose: '关闭', navStart: '从问题开始', navFirst30: '前 30 分钟', navPath: '学习路径', navIndex: '项目索引', navRoutes: '阅读路线', navLabs: '实验室', navSkills: 'Skills', navUpdates: '更新地图', localeBannerFallback: '已提供 {requested} 路由，但部分界面或读者内容仍在迁移中；需要时显示当前可用源文件。', localeManifestError: '语言路由不可用，因为生成的 manifest 没有加载。英文仍可用；在依赖其他语言路由前，请先重新生成 manifest。', localeBannerReady: '当前阅读语言：{language}。', localeMenuAria: '界面语言', languageNameEnglish: '英语', languageNameChinese: '简体中文', languageNameSpanish: '西班牙语', languageNameJapanese: '日语', languageNameKorean: '韩语', languageNameGerman: '德语', localeOptionFallback: '英文界面回退',
     heroIndex: 'CODEX / 学习系统', heroEyebrow: '候选指南 · 基础结构和检查已通过', heroTitle: '练习可检查的 Codex 工作。', heroLede: '使用一套旨在迁移到各类大语言模型工具的协作方法，再在 Codex 中深入实践：定义结果、控制上下文与权限、检查工作、从失败中恢复，并保留证据。', heroPrimary: '开始有引导的 Codex 路径', heroSecondary: '查看可选的免设置热身', heroRouteAria: '选择推荐的第一条路线', heroRouteKicker: '按你的起始条件选择', heroRouteGuidedTitle: '有可丢弃的项目？沿着引导路径开始。', heroRouteGuidedBody: '从第 1 章开始。第一次本地编辑会在范围和证据边界清楚之后出现。', heroRouteFixtureTitle: '还没有可丢弃的项目？在第 2 章的决策点使用安全夹具。', heroRouteFixtureBody: '它提供一个离线目标和检查，不替代有引导的 Codex 路径。', heroRouteBoundary: '候选表示基础结构和检查已通过；首次读者的学习结果仍未测量。', heroProofAria: 'First Win 证据卡', heroProofKicker: 'FIRST WIN / 可检查示例', heroProofStatus: '候选 · 尚无参与者运行记录', heroProofTitle: '看看一次可检查的结果包含什么。', heroProofSourceLabel: '原始消息', heroProofSource: '“你好，工作坊改期了。周五 10 点开始。请带上草稿。如果你不能参加，请告诉我。”', heroProofPreserveLabel: '保留事实', heroProofPreserve: '保留周五 10 点、草稿和回复要求；不要添加日期、地点、原因或联系方式。', heroProofChecksLabel: '三项人工检查', heroProofCheckOne: '周五 10 点和草稿仍然保留。', heroProofCheckTwo: '不能参加的人仍被要求回复。', heroProofCheckThree: '没有出现无依据的细节。', heroProofReceiptLabel: '有边界的回执', heroProofReceipt: '可以记录一次经过检查的尝试；它不证明已经学会、能够迁移，或模型表现。', heroProofLink: '打开完整的 15 分钟检查', heroFooter: '问题 → 协议 → 行动 → 证据',
     startEyebrow: '从问题开始', startTitle: '不要从 Skill 开始。', startIntro: '先说清楚你要避免的失败或要完成的工作。选择最小有效入口，然后留下证据。', problemStartTitle: '我不知道从哪里开始。', problemStartBody: '在选择工作流前，先分清 GPT、Codex、模型、工具、Skill 与 Agent。', problemStartLink: '打开第 1 章 ↗', problemWrongFileTitle: 'Codex 改错了文件。', problemWrongFileBody: '在相信完成声明前，检查范围、差异、测试与恢复方式。', problemWrongFileLink: '打开第 9 章 ↗', problemSkillTitle: '我不知道该用哪个 Skill。', problemSkillBody: '按任务、风险、输入、依赖和证据选择，不按目录大小选择。', problemSkillLink: '运行实验 004 ↗', problemUpdateTitle: '我需要安全地更新项目。', problemUpdateBody: '用固定更新地图找到规范文件、来源记录和验证门槛。', problemUpdateLink: '打开更新地图 ↗', problemIntakeTitle: '我的目标很宽泛，不知道先练什么。', problemIntakeBody: '一次只澄清一个决定：选一条已有路线、一次可检查尝试、允许的帮助和更小的回退。', problemIntakeLink: '打开首次练习入口 · candidate · not_run ↗',
     first30Eyebrow: '你的前 15 分钟', first30Title: '先判断一个答案，无需配置。', first30Intro: '原文、任务和检查标准都已经填好。任意聊天模型都可以；不需要文件、终端、Git、账户连接或专业词汇。', stepOneTitle: '选择可回滚的改动。', stepOneBody: '使用沙盒文件或小型文档修改。不要从凭据、生产环境或破坏性命令开始。', stepTwoTitle: '写任务协议。', stepTwoBody: '写清目标、上下文、允许行动、验收标准、证据和停止条件。', stepThreeTitle: '让 Codex 先检查。', stepThreeBody: '允许修改前，先让它说明相关文件和当前状态，保持范围可见。', stepFourTitle: '验证实际变化。', stepFourBody: '检查差异，运行最小相关检查，并记录没有测试什么。', checkCardLabel: '一个有用的任务协议', fieldGoalLabel: '目标', fieldGoal: '完成一个明确的改动。', fieldContextLabel: '上下文', fieldContext: '只提供完成任务所需的文件。', fieldInputsLabel: '输入', fieldInputs: '路径、当前行为、约束。', fieldAllowedLabel: '允许行动', fieldAllowed: '读取和编辑；外部副作用前暂停。', fieldAcceptanceLabel: '验收', fieldAcceptance: '明确的差异和检查结果。', fieldEvidenceLabel: '证据', fieldEvidence: '差异、命令、输出和限制。', fieldStopLabel: '停止条件', fieldStop: '范围、授权或证据缺失。', contractHighlight: '最安全的第一个任务应该足够小、可回滚，而且容易检查。', openChapterTwo: '打开第 2 章',
@@ -43,6 +43,26 @@
     statusEyebrow: '证据边界', statusTitle: '状态是关于证据的声明。', statusIntro: '本项目不把文档数量、Skill 数量或一次成功输出当作“掌握”。使用证据真正支持的状态。', statusDraft: '仍在编写，或尚未完成最低检查。', statusCandidate: '结构和基本检查通过，但仍需要新鲜证据。', statusVerified: '在声明范围内具备正例、边界例、失败例和迁移证据。', statusProduction: '安全、维护、版本、许可证和发布门槛也全部通过。', statusSourceBefore: '当前证据记录在', statusSourceLink: '当前状态源', statusReviewBefore: '，说明见', statusReviewLink: '当前状态审查记录', statusSourceAfter: '；在浏览器验收记录前，页面自身仍为 candidate。', nextEyebrow: '下一步', nextTitle: '带一个小问题来。', nextBody: '打开任务协议，选择可回滚的第一步并保留差异。这是最短的有效起点。', nextPrimary: '打开第 2 章', nextSecondary: '然后运行实验 001', footerTagline: '一套面向 Codex 的实用学习与实践系统。', mobileRouteExplore: '探索练习路线与完整索引', visualCaseIntro: '两张原创教学图展示核心闭环：让工作可检查，再在变化条件下练习。', visualCaseBoundary: '项目原创教学图 · 不是运行或学习者证据', footerMeta: '候选 · 证据边界复核于 2026-08-13'
   }
 };
+
+// The public identity is independent from the stable Codex route and internal
+// identifiers. Keep that boundary explicit at the reader-facing entry point.
+Object.assign(copy.en, {
+  wordmarkAria: 'Prysai LLM Playbook home',
+  heroIndex: 'LLM / PRACTICE SYSTEM',
+  heroTitle: 'Turn a first LLM task into real work.',
+  heroLede: 'Learn one practical method for working with language models, then practise it deeply in the Codex Practice Track: define the outcome, control context and authority, inspect the work, recover from failure, and keep evidence.',
+  heroPrimary: 'Start the Codex Practice Track',
+  footerTagline: 'An evidence-led LLM playbook, with Codex as the flagship practice track.',
+});
+
+Object.assign(copy.zh, {
+  wordmarkAria: 'Prysai 大模型实战手册首页',
+  heroIndex: 'LLM / 实践系统',
+  heroTitle: '让第一项 LLM 任务变成真实工作。',
+  heroLede: '学习与语言模型协作的实用方法，再在 Codex 旗舰实践路线中深入练习：定义结果，控制上下文和权限，检查工作，处理失败，并保留证据。',
+  heroPrimary: '开始 Codex 旗舰实践路线',
+  footerTagline: '一套循证的大模型实战手册，Codex 是当前旗舰实践路线。',
+});
 
 // The generated contract is the source of truth; this fallback keeps a direct file open usable during local edits.
 const legacyLearningPath = {
@@ -357,7 +377,79 @@ Object.assign(copy.zh, {
 });
 
 Object.assign(copy.en, {
-  heroPrimary: 'Start the guided Codex path',
+  skillsTitle: 'Fifteen Skills. Distinct jobs.',
+  skillPromptCardName: 'Prompt Card Editor',
+  skillPromptCard: 'Turn one authorized prompt idea into a source-aware teaching card.',
+  skillIndexLink: 'Open the Skill registry and all 15 methods',
+  skillFootnote: 'All 15 project Skills pass structural checks and remain candidate; fresh-task evidence is partial, and Prompt Card Editor has one isolated forward test only.',
+  fileSkillsBody: '15 project Skills with triggers, boundaries, and evidence contracts.',
+  ledgerSkills: 'Skills · 15',
+  repositorySkills: '15 reusable Skills · candidate',
+});
+
+Object.assign(copy.zh, {
+  skillsTitle: '十五个 Skill，各有职责。',
+  skillPromptCardName: '提示卡编辑器 Prompt Card Editor',
+  skillPromptCard: '把一个已授权的提示想法整理成带来源边界的教学卡。',
+  skillIndexLink: '打开 Skill 登记表与全部 15 个方法',
+  skillFootnote: '15 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整，提示卡编辑器仅有一次独立前向测试。',
+  fileSkillsBody: '15 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
+  ledgerSkills: 'Skill \u00b7 15',
+  repositorySkills: '15 个可复用 Skill · candidate',
+});
+
+Object.assign(copy.en, {
+  heroSecondary: 'Try a five-minute prompt card',
+  promptDeckEyebrow: 'Optional prompt cards · five minutes',
+  promptDeckTitle: 'Start with one small conversation.',
+  promptDeckIntro: 'Copy one original, text-only card. Replace only the brackets, inspect the response yourself, and keep the claim small: one attempt is not fluency, research, or a finished answer.',
+  promptDeckVisualAlt: 'Six visible fields for a bounded first request',
+  promptDeckVisualLabel: 'See the six-field check before you send',
+  promptCardScope: 'text only · no tool authority',
+  promptCardCopy: 'Copy prompt',
+  promptCardCopied: 'Prompt copied. Replace only the brackets, then inspect the reply yourself.',
+  promptCardCopyFailed: 'Could not copy the prompt. Select the text manually.',
+  spanishCardIndex: '01 / LANGUAGE PRACTICE',
+  spanishCardTitle: 'Write one short Spanish reply.',
+  spanishCardIntro: 'Use an ordinary, non-sensitive situation. The model waits for your attempt, suggests no more than two changes, and asks for a revision.',
+  spanishCardLink: 'Read the practice boundary',
+  spanishCardBoundary: 'Candidate practice only: one session cannot show fluency, accuracy, retention, or independent performance.',
+  spanishPromptText: 'I have five minutes for beginner Spanish practice.\n\nOutcome: I want to write one polite two-sentence reply for [a simple situation].\nStarting context: [words I know, a self-written attempt, or "unknown"].\n\nGive me one short situation and wait for my reply. Do not assign a level or claim that I have learned Spanish. After I reply, point out at most two changes that would most affect meaning or politeness. For each change, say whether you are uncertain. Ask me for one revision.\n\nDo not use personal information, browse, contact anyone, or turn this into a study plan. End by listing: my first reply, my revision, help used, one thing I should check elsewhere, and the smallest next practice or stop condition.',
+  researchCardIndex: '02 / RESEARCH PREP',
+  researchCardTitle: 'Prepare a source check, not a verdict.',
+  researchCardIntro: 'Turn one narrow question and the material you supplied into a small ledger of claims, gaps, and the next question.',
+  researchCardLink: 'Read the research boundary',
+  researchCardBoundary: 'It cannot prove a source exists, is current, or supports a claim. A generated table is not evidence on its own.',
+  researchPromptText: 'I have five minutes to prepare a research check, not a final answer.\n\nQuestion: [one narrow question].\nMaterial I supplied: [URLs, titles, excerpts, or "none"].\n\nFirst, restate the question and name what evidence would be needed. Then make a three-row table with: possible claim, supplied source or "missing", and what would need checking. Do not invent citations, state that you opened a source you cannot access, or give a recommendation. Separate fact, report, and inference. If the material is missing, contradictory, personal, or high stakes, stop and tell me the smallest safe next step.\n\nEnd with: sources actually supplied, unknowns, and one question I should answer before continuing.',
+});
+
+Object.assign(copy.zh, {
+  heroSecondary: '试用一张 5 分钟提示词卡',
+  promptDeckEyebrow: '可选提示词卡 · 五分钟',
+  promptDeckTitle: '先完成一次小对话。',
+  promptDeckIntro: '复制一张项目原创的纯文本卡，只替换方括号中的内容，然后自行检查回复。保持结论很小：一次尝试不代表学会语言、完成研究或得到最终答案。',
+  promptDeckVisualAlt: '一条有边界的首轮请求包含的六个可见字段',
+  promptDeckVisualLabel: '发送前查看六字段检查',
+  promptCardScope: '纯文本 · 不授予工具权限',
+  promptCardCopy: '复制提示词',
+  promptCardCopied: '提示词已复制。只替换方括号中的内容，然后自行检查回复。',
+  promptCardCopyFailed: '无法复制提示词，请手动选择文字。',
+  spanishCardIndex: '01 / 语言练习',
+  spanishCardTitle: '写一条简短的西班牙语回复。',
+  spanishCardIntro: '只用于普通、非敏感的情境。模型会等你先尝试，最多提出两项修改，再请你修订。',
+  spanishCardLink: '阅读练习边界',
+  spanishCardBoundary: '仅为 candidate 练习：一次对话不能证明流利度、准确性、记忆保持或独立表现。',
+  spanishPromptText: '我有五分钟练习初级西班牙语。\n\n目标：我想为[一个简单情境]写一条礼貌的两句回复。\n起始背景：[我认识的词、我自己写的尝试，或“未知”]。\n\n请给我一个简短情境，然后等待我的回复。不要给我定级，也不要声称我已经学会西班牙语。等我回复后，最多指出两项最影响含义或礼貌的修改。对于每项修改，请说明你是否不确定。请我完成一次修订。\n\n不要使用个人信息、浏览网页、联系任何人，也不要把它变成学习计划。最后列出：我的第一次回复、我的修订、使用过的帮助、我应在别处核对的一件事，以及下一次最小练习或停止条件。',
+  researchCardIndex: '02 / 研究准备',
+  researchCardTitle: '准备一次来源检查，不要索要裁决。',
+  researchCardIntro: '把一个狭窄问题和你提供的材料变成一份小型台账：可能的声明、缺口和下一个问题。',
+  researchCardLink: '阅读研究边界',
+  researchCardBoundary: '它不能证明来源存在、仍然有效，或确实支持某项声明。生成的表格本身不是证据。',
+  researchPromptText: '我有五分钟准备一次研究检查，而不是得到最终答案。\n\n问题：[一个狭窄问题]。\n我提供的材料：[网址、标题、摘录，或“无”]。\n\n先复述问题，并说明需要哪些证据。然后做一个三行表格，包含：可能的声明、我提供的来源或“缺失”、以及需要核对的内容。不要虚构引用，不要声称你打开了无法访问的来源，也不要给出建议。区分事实、报告和推断。如果材料缺失、相互矛盾、涉及个人信息或高风险，请停止并告诉我最小的安全下一步。\n\n最后列出：实际提供的来源、未知之处，以及我继续前应回答的一个问题。',
+});
+
+Object.assign(copy.en, {
+  heroPrimary: 'Start the Codex Practice Track',
   heroSecondary: 'See the optional no-setup warm-up',
   heroRouteAria: 'Choose the recommended first route',
   heroRouteKicker: 'Choose by your starting condition',
@@ -370,7 +462,7 @@ Object.assign(copy.en, {
   heroProofAria: 'Optional warm-up proof card',
   heroProofKicker: 'OPTIONAL WARM-UP / INSPECTABLE EXAMPLE',
   heroProofLink: 'Open the optional 15-minute check',
-  mobileRouteTask: 'Start the guided Codex path',
+  mobileRouteTask: 'Start the Codex Practice Track',
   mobileRouteFixture: 'Need a safe file? Open the fixture',
   startIntro: 'For a real local Codex task, begin with one candidate path: boundary map, boundary lab, bounded task, then one reversible lab. Pick another route only when that path does not fit.',
   problemStartTitle: 'I want one safe Codex path.',
@@ -381,7 +473,7 @@ Object.assign(copy.en, {
 });
 
 Object.assign(copy.zh, {
-  heroPrimary: '开始有引导的 Codex 路径',
+  heroPrimary: '开始 Codex 旗舰实践路线',
   heroSecondary: '查看可选的免设置热身',
   heroRouteAria: '选择推荐的第一条路线',
   heroRouteKicker: '按你的起始条件选择',
@@ -394,7 +486,7 @@ Object.assign(copy.zh, {
   heroProofAria: '可选热身证据卡',
   heroProofKicker: '可选热身 / 可检查示例',
   heroProofLink: '打开可选的 15 分钟检查',
-  mobileRouteTask: '开始有引导的 Codex 路径',
+  mobileRouteTask: '开始 Codex 旗舰实践路线',
   mobileRouteFixture: '需要安全文件？打开夹具',
   startIntro: '要完成真实的本地 Codex 任务，先走一条候选路径：理解边界、标注边界、确定任务、再做一次可回滚的实验。只有不适用时再选择其他路线。',
   problemStartTitle: '我想走一条安全的 Codex 路径。',
@@ -764,10 +856,10 @@ const applyLanguage = (language, { updateUrl = true } = {}) => {
   const strings = currentCopy();
   const metadata = localeManifest.locales[currentLanguage] || localeManifest.locales.en;
   document.documentElement.lang = localeManifest.locales[effectiveUiLanguage]?.html_lang || 'en';
-  document.title = effectiveUiLanguage === 'zh' ? 'Codex：从第一个任务到真实工作' : 'Codex: From First Task to Real Work';
+  document.title = effectiveUiLanguage === 'zh' ? 'Prysai 大模型实战手册：从第一个任务到可靠交付' : 'Prysai LLM Playbook — From First Task to Reliable Work';
   document.querySelector('meta[name="description"]').content = effectiveUiLanguage === 'zh'
     ? '学习可迁移的大语言模型协作方法，并在 Codex 旗舰轨道中深入实践。'
-    : 'Learn a transferable language-model collaboration method, then practise it deeply in the Codex flagship track.';
+    : 'Learn a practical language-model collaboration method, then practise it deeply in the Codex Practice Track.';
   document.querySelectorAll('[data-i18n]').forEach((element) => {
     const value = strings[element.dataset.i18n];
     if (value !== undefined) setText(element, value);
@@ -972,6 +1064,7 @@ document.addEventListener('keydown', (event) => {
 
 const starterCopyButton = document.querySelector('[data-copy-starter]');
 const starterPrompt = document.querySelector('[data-starter-prompt]');
+const everydayPromptCopyButtons = [...document.querySelectorAll('[data-copy-everyday-prompt]')];
 const rescueCopyButton = document.querySelector('[data-copy-rescue]');
 const rescuePrompt = document.querySelector('[data-rescue-prompt]');
 const starterCopyStatus = document.querySelector('[data-copy-starter-status]');
@@ -1056,6 +1149,20 @@ rescueCopyButton?.addEventListener('click', async () => {
   } catch {
     starterCopyStatus.textContent = currentCopy().starterCopyFailed;
   }
+});
+
+everydayPromptCopyButtons.forEach((button) => {
+  button.addEventListener('click', async () => {
+    const card = button.closest('[data-prompt-card]');
+    const prompt = card?.querySelector('[data-everyday-prompt]')?.textContent || '';
+    const status = card?.querySelector('[data-prompt-card-status]');
+    try {
+      await navigator.clipboard.writeText(prompt);
+      if (status) status.textContent = currentCopy().promptCardCopied;
+    } catch {
+      if (status) status.textContent = currentCopy().promptCardCopyFailed;
+    }
+  });
 });
 
 firstWinChecks.forEach((input) => input.addEventListener('change', renderFirstWinRecord));

@@ -8,6 +8,10 @@ Accepted
 
 2026-08-10
 
+> **Name note (2026-08-14):** The former reader-facing name cited below is
+> historical. The active reader-facing identity is defined by
+> [ADR-0034](0034-prysai-llm-playbook-reader-identity.md).
+
 ## Context
 
 `Codex: From First Task to Real Work` 已经有 22 章、13 个实验、Skill、评测、学习路径和治理文件，但读者仍需要在多个入口之间跳转。公开研究显示，WorkBuddyGuide 的“蓝皮书感”主要来自分篇、阅读指南、任务入口、独立案例层和连续阅读导航；这些是内容产品结构，不是某个品牌颜色或某个文档引擎自动带来的效果。

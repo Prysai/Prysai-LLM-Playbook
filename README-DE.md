@@ -1,6 +1,6 @@
 <!-- content_id: project-readme | locale: DE | language: de | default_locale: EN | content_status: candidate | translation_status: in-progress | reader_runtime_status: not_run | translated_from: EN | source_revision: dd08a68 -->
 
-# Codex: From First Task to Real Work
+# Prysai LLM Playbook — From First Task to Reliable Work
 
 > Deutscher Einstiegspunkt — die deutsche Migration der reader-facing Inhalte
 > ist in Arbeit.
@@ -9,7 +9,7 @@
 **Sprachen:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-`Codex: From First Task to Real Work` ist ein eigenständiges, buchähnliches
+`Prysai LLM Playbook` ist ein eigenständiges, buchähnliches
 Lern- und Praxissystem für GPT, Codex, Tools, Skills, Agents und die Prüfung
 von Ergebnissen in echter Arbeit. Es ist weder ein flaches Skill-Verzeichnis
 noch ein Katalog von Prompts. Es vermittelt eine vollständige Arbeitsweise:

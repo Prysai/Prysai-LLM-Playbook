@@ -1,6 +1,27 @@
-<!-- content_id: chapter-01-gpt-and-codex | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: f521e29 -->
+<!-- content_id: chapter-01-gpt-and-codex | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-14 -->
 
 # Chapter 1: Understand GPT before you trust Codex
+
+## Start here: the names are not the lesson
+
+You may already have heard names such as Codex and Claude Code. They are useful
+examples of a bigger shift: a language model can now work with a task, context,
+and sometimes tools instead of only returning a chat reply. Before we tour any
+controls, learn the question that makes the rest easier:
+
+> When a language-model tool says it is done, what can you actually inspect
+> before you trust the result?
+
+You do not need to memorise product names in this first lesson. You will learn
+to separate a suggested action from a permitted action, a tool message from a
+changed target, and a plausible answer from evidence. Codex is the flagship
+practice track in this guide. The method is broader; a named platform must earn
+its own adapter before we teach its buttons, permissions, or behaviour as fact.
+
+That is why the first exercise is intentionally modest. Start with one visible
+input, one low-risk action, and one check that another person could repeat. A
+long feature list can wait until you know how to tell a finished result from a
+convincing-looking one.
 
 ## The problem this chapter solves
 

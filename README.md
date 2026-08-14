@@ -1,10 +1,10 @@
 <!-- content_id: project-readme | locale: EN | language: en | default_locale: EN | compatibility-entrypoint: github-default | canonical_source: README-EN.md -->
 
 <p align="center">
-  <img src="assets/readme/codex-field-guide-header.svg" alt="Codex: From First Task to Real Work — from problem to evidence" width="100%">
+  <img src="assets/readme/codex-field-guide-header.svg" alt="Prysai LLM Playbook: from first task to reliable work" width="100%">
 </p>
 
-# Codex: From First Task to Real Work
+# Prysai LLM Playbook — From First Task to Reliable Work
 
 > Learn a transferable method for turning a plausible answer into a bounded,
 > checkable result—then practise it most deeply in Codex.
@@ -28,7 +28,9 @@ independent review are still pending.
 ## What this is
 
 This is an independent, book-shaped curriculum for working with language
-models responsibly. It teaches one repeatable loop:
+models responsibly. Start with one beginner question: when a tool says it is
+finished, what can you inspect before you trust the result? It teaches one
+repeatable loop:
 
 ```text
 define the task → choose a bounded action → inspect the result → keep evidence → state the limit
@@ -36,8 +38,10 @@ define the task → choose a bounded action → inspect the result → keep evid
 
 The stable method applies beyond one product. The deepest current practice is
 the Codex track: files, tools, Skills, Agents, verification, and team adoption.
-Platform-specific actions belong in evidence-gated adapters; this guide does
-not claim that every platform behaves the same.
+Familiar names such as Claude Code can orient a new reader, but a named platform
+needs its own source-backed adapter before this guide teaches its controls as
+fact. Platform-specific actions belong in evidence-gated adapters; this guide
+does not claim that every platform behaves the same.
 
 <mark>Do not stop at a plausible output.</mark> Ask what changed, what was
 checked, and what remains unproven.

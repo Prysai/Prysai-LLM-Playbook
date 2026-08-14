@@ -1,4 +1,4 @@
-# Codex: From First Task to Real Work — Book Guide
+# Prysai LLM Playbook: Book Guide
 
 > English source-locale entry point. All 22 chapter identities now have
 > authored `-EN` sources, as do all 18 labs. No lab or reader route is claimed
@@ -8,8 +8,8 @@
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-This directory contains the original main-line book for `Codex: From First
-Task to Real Work`. Its stable collaboration method is intended to transfer
+This directory contains the original main-line book for the `Prysai LLM
+Playbook`. Its stable collaboration method is intended to transfer
 across language-model tools; Codex is the deepest current worked track, not a
 claim that every platform behaves identically. The book is arranged around the
 learner's growth, not assembled as a collection of unrelated external

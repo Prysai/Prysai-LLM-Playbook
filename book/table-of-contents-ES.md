@@ -1,6 +1,6 @@
 <!-- content_id: book-table-of-contents | locale: ES | language: es | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: dd08a68 -->
 
-# Codex: From First Task to Real Work — Índice del libro v0.2
+# Prysai LLM Playbook: Índice del libro v0.2
 
 > Índice en español (`ES`). Esta página es una migración basada en
 > `book/table-of-contents.md`: conserva los 22 capítulos, los 17 experimentos,

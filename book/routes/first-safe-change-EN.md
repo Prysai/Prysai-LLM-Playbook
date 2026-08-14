@@ -1,4 +1,4 @@
-<!-- content_id: first-safe-change-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-13 -->
+<!-- content_id: first-safe-change-route | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-14 -->
 
 # First Safe Change — an offline fixture before Lab 001
 
@@ -33,25 +33,37 @@ remains available for the next reader.
 
 ## Action
 
-From the repository root, make a private working copy and observe the seeded
-failure first:
+First make a private working copy. In your file manager, copy the entire
+`examples/lab-001-v1` folder to a throwaway location and call the copy
+`first-safe-change`. Do not edit the repository's original fixture: its seeded
+mistake is the starting point for the next reader.
+
+Then choose one of two checks:
+
+1. **No-runtime check (the default).** Open `seed/README.md` and
+   `expected/acceptance.json` in the copied folder. Before editing, the README
+   is missing two required preview details. After the one permitted README
+   edit, check that the README visibly contains all three strings named under
+   `required_readme_strings` in the acceptance file.
+2. **Optional local checker.** Use this only when Python 3 already works on
+   your computer. Open a terminal in the copied folder and run:
 
 ```powershell
-$py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
-Copy-Item -Recurse examples\lab-001-v1 .work\first-safe-change
-& $py .work\first-safe-change\seed\verify_readme.py
+python .\seed\verify_readme.py
 ```
 
-The first command result should be `FIRST_SAFE_CHANGE_FAILED`: that is the
-intentional starting state, not a broken installation. Then use the task card
-in the fixture README to inspect `seed/README.md`, propose the smallest change,
-and edit **only** that README after you approve the plan. Re-run the same
-checker. A passing local result is `FIRST_SAFE_CHANGE_OK`.
+The first optional checker result should be `FIRST_SAFE_CHANGE_FAILED`: that
+is the intentional starting state, not a broken installation. Then use the
+task card in the fixture README to inspect `seed/README.md`, propose the
+smallest change, and edit **only** that README after you approve the plan.
+Repeat the same manual check or optional local command. A passing optional
+local result is `FIRST_SAFE_CHANGE_OK`.
 
-If Python is unavailable, do not substitute another command or install a
-runtime just for this route. Record `blocked: Python unavailable`, keep the
-seeded README unchanged, and read the acceptance file manually. That is an
-honest stop, not an incomplete pass.
+If Python is unavailable, do not install a runtime or substitute another
+command just for this route. Use the no-runtime check and record
+`check: manual required_readme_strings 3/3`. If you cannot make a disposable
+local copy at all, stop and use the text-only First Win instead; do not pretend
+that a GitHub web view is a local sandbox.
 
 ## Evidence
 
@@ -62,7 +74,7 @@ sandbox: <working-copy path>
 baseline: FIRST_SAFE_CHANGE_FAILED
 allowed_change: seed/README.md only
 diff: <reviewed README diff>
-check: FIRST_SAFE_CHANGE_OK | blocked: Python unavailable
+check: manual required_readme_strings 3/3 | FIRST_SAFE_CHANGE_OK
 external_actions: none
 unverified: learner completion, model behavior, and transfer
 ```

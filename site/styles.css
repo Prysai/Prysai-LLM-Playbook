@@ -167,6 +167,33 @@ button, input, select, textarea { font: inherit; }
 .problem-card-practice p { color: #bcbcbc; }
 .problem-card-practice .card-link { border-top-color: #505050; }
 
+/* Swiss editorial deck: the prompt is the artefact, so the companion board
+   explains the boundary instead of using decorative AI imagery. */
+.everyday-prompt-deck { margin: 0 0 clamp(3rem, 6vw, 5rem); scroll-margin-top: 6rem; border-top: 5px solid var(--ink); }
+.everyday-prompt-head { display: grid; grid-template-columns: minmax(0, .85fr) minmax(260px, 1.15fr); gap: clamp(1.5rem, 5vw, 5rem); padding: clamp(1.4rem, 3vw, 2.6rem) 0; border-bottom: 1px solid var(--ink); }
+.everyday-prompt-head h3 { max-width: 680px; margin: 0; font-size: clamp(1.7rem, 3.5vw, 3.5rem); letter-spacing: -.075em; line-height: .96; }
+.everyday-prompt-head > div > p:last-child { max-width: 620px; margin: 1rem 0 0; color: var(--muted); font-size: .84rem; line-height: 1.6; }
+.everyday-prompt-visual { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .75rem 1rem; align-items: end; align-self: end; padding-top: .5rem; color: var(--ink); font-size: .68rem; font-weight: 700; line-height: 1.35; }
+.everyday-prompt-visual img { grid-column: 1 / -1; display: block; width: 100%; border: 1px solid var(--ink); background: #fff; transition: transform .18s ease, box-shadow .18s ease; }
+.everyday-prompt-visual b { color: var(--red); font-size: 1rem; }
+.everyday-prompt-visual:hover img, .everyday-prompt-visual:focus-visible img { transform: translateY(-3px); box-shadow: 6px 6px 0 var(--red); }
+.everyday-prompt-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); background: var(--ink); }
+.everyday-prompt-card { min-width: 0; padding: clamp(1.2rem, 2.5vw, 2.25rem); color: var(--ink); background: #fff; }
+.everyday-prompt-card + .everyday-prompt-card { border-left: 1px solid var(--ink); }
+.everyday-prompt-card-ink { color: #fff; background: var(--ink); }
+.everyday-prompt-card-head { display: flex; justify-content: space-between; gap: 1rem; padding-bottom: .8rem; border-bottom: 1px solid currentColor; color: var(--red); font: 700 .64rem/1.35 Consolas, 'Courier New', monospace; letter-spacing: .055em; }
+.everyday-prompt-card-head small { max-width: 12rem; color: currentColor; font: inherit; text-align: right; opacity: .72; }
+.everyday-prompt-card h4 { max-width: 520px; margin: clamp(1.6rem, 4vw, 4rem) 0 .8rem; font-size: clamp(1.55rem, 2.6vw, 2.55rem); letter-spacing: -.065em; line-height: .96; }
+.everyday-prompt-card > p:not(.everyday-prompt-status) { max-width: 550px; margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.55; }
+.everyday-prompt-card-ink > p:not(.everyday-prompt-status) { color: #c2c2bd; }
+.everyday-prompt-actions { display: flex; align-items: center; gap: 1rem 1.4rem; margin: 1.35rem 0; flex-wrap: wrap; }
+.everyday-prompt-actions .button { cursor: pointer; }
+.everyday-prompt-card-ink .text-link { color: #fff; }
+.everyday-prompt-card pre { min-height: 20rem; margin: 0; padding: 1rem; overflow: auto; border: 1px solid var(--line-dark); color: var(--ink); background: var(--paper); font: .72rem/1.58 Consolas, 'Courier New', monospace; white-space: pre-wrap; }
+.everyday-prompt-card pre code { font: inherit; }
+.everyday-prompt-status { min-height: 2.8em; margin: 1rem 0 0; color: var(--muted); font-size: .68rem; line-height: 1.45; }
+.everyday-prompt-card-ink .everyday-prompt-status { color: #c2c2bd; }
+
 .first-30-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, .85fr); gap: clamp(2rem, 8vw, 8rem); align-items: start; }
 .task-steps { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-dark); }
 .task-steps li { display: grid; grid-template-columns: 42px 1fr; gap: 1rem; padding: 1.3rem 0; border-bottom: 1px solid var(--line-dark); }
@@ -713,6 +740,15 @@ button, input, select, textarea { font: inherit; }
   .visual-case-links { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 620px) { .visual-case-links { grid-template-columns: 1fr; } .visual-case-links a { min-height: 8.5rem; } }
+
+@media (max-width: 760px) {
+  .everyday-prompt-head, .everyday-prompt-grid { grid-template-columns: 1fr; }
+  .everyday-prompt-head { gap: 1.4rem; }
+  .everyday-prompt-visual { max-width: none; }
+  .everyday-prompt-card + .everyday-prompt-card { border-top: 1px solid var(--ink); border-left: 0; }
+  .everyday-prompt-card h4 { margin-top: 2.1rem; }
+  .everyday-prompt-card pre { min-height: 0; max-height: 24rem; font-size: .68rem; }
+}
 
 @media (max-width: 800px) {
   .hero-brief { grid-column: 1; grid-row: auto; margin-top: 1rem; }

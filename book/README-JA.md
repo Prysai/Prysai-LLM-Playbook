@@ -1,10 +1,10 @@
-# Codex: From First Task to Real Work 書稿
+# Prysai LLM Playbook: 書稿
 
 <!-- language-switcher:start -->
 **言語：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-ここには `Codex: From First Task to Real Work` の独自の主線書稿を置きます。六つの外部プロジェクトをつなぎ合わせたものではなく、学習者が成長していく順序に沿って、内容を組み直した学習システムです。
+ここには `Prysai LLM Playbook` の独自の主線書稿を置きます。六つの外部プロジェクトをつなぎ合わせたものではなく、学習者が成長していく順序に沿って、内容を組み直した学習システムです。
 
 各章には、必ず次の要素を組み合わせます。
 

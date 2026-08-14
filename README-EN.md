@@ -1,10 +1,10 @@
 <!-- content_id: project-readme | locale: EN | language: en | default_locale: EN | translation_status: source | canonical_source: README-EN.md -->
 
 <p align="center">
-  <img src="assets/readme/codex-field-guide-header.svg" alt="Codex: From First Task to Real Work — from problem to evidence" width="100%">
+  <img src="assets/readme/codex-field-guide-header.svg" alt="Prysai LLM Playbook: from first task to reliable work" width="100%">
 </p>
 
-# Codex: From First Task to Real Work
+# Prysai LLM Playbook — From First Task to Reliable Work
 
 License: curriculum text and teaching assets are CC BY-NC 4.0 unless a file
 states otherwise. See [`LICENSE`](LICENSE) and the [licensing boundary](docs/sources/licensing.md).

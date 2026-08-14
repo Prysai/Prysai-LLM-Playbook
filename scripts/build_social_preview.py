@@ -40,11 +40,11 @@ def build() -> Image.Image:
     draw.line((842, 0, 842, HEIGHT), fill="#34383d", width=1)
 
     draw.rectangle((58, 51, 76, 69), fill=RED)
-    spaced(draw, (94, 48), "PRYSAI LAB / FIELD GUIDE", size=16, fill=PAPER, gap=3)
-    draw.text((58, 166), "LLM", font=font(118, True), fill=PAPER, stroke_width=0)
-    draw.text((58, 282), "FOR REAL WORK", font=font(70, True), fill=PAPER)
-    spaced(draw, (63, 383), "FROM FIRST REQUEST TO EVIDENCE", size=18, fill=RED, gap=3)
-    draw.text((61, 437), "A universal practice core. Codex as the flagship track.", font=font(24), fill=MUTED)
+    spaced(draw, (94, 48), "PRYSAI LAB / LLM PLAYBOOK", size=16, fill=PAPER, gap=3)
+    draw.text((58, 166), "LLM", font=font(86, True), fill=PAPER, stroke_width=0)
+    draw.text((58, 264), "PLAYBOOK", font=font(92, True), fill=PAPER)
+    spaced(draw, (63, 363), "FROM FIRST TASK TO RELIABLE WORK", size=16, fill=RED, gap=3)
+    draw.text((61, 421), "A universal practice core. Codex is the flagship practice track.", font=font(24), fill=MUTED)
 
     spaced(draw, (880, 52), "ONE METHOD", size=15, fill=PAPER, gap=3)
     labels = ("DEFINE", "CONTEXT", "ACT", "VERIFY", "TRANSFER")

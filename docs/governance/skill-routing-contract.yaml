@@ -171,6 +171,20 @@
         "prysai-source-investigator",
         "prysai-evidence-review"
       ]
+    },
+    {
+      "id": "prysai-prompt-card-editor",
+      "intent": "prompt_card_library_editor",
+      "skill_path": "skills/prysai-prompt-card-editor/SKILL.md",
+      "allowed_handoffs": [
+        "prysai-dialogue-brief",
+        "prysai-first-turn-check",
+        "prysai-learning-coach",
+        "prysai-research-router",
+        "prysai-source-investigator",
+        "prysai-communication-failure-triage",
+        "prysai-task-protocol"
+      ]
     }
   ],
   "fixtures": [
@@ -961,6 +975,48 @@
       },
       "expected_content_route": {"layer": "platform_adapter", "platform": "codex,claude-code,grok", "claim_disposition": "reject_unsupported_equivalence"},
       "expected": {"disposition": "route", "owner": "prysai-evidence-review", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "single-prompt-card-editor",
+      "kind": "single",
+      "text": "Turn this reviewed, project-authored beginner exercise into one source-aware teaching card; it must remain text-only and candidate.",
+      "signals": {"intents": ["prompt_card_library_editor"], "explicit_skill": "", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-prompt-card-editor", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "neighbor-prompt-card-editor",
+      "kind": "near_neighbor",
+      "text": "I own this low-risk prompt idea and want to save one bounded, reusable teaching card with a self-check and source boundary.",
+      "signals": {"intents": ["prompt_card_library_editor"], "explicit_skill": "", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-prompt-card-editor", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "mixed-prompt-card-editor-source",
+      "kind": "mixed",
+      "text": "Make a shared card from this approved project-owned exercise, then verify the current official rule that the card would cite.",
+      "signals": {"intents": ["prompt_card_library_editor", "bounded_current_lookup"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner_handoff"},
+      "expected": {"disposition": "route", "owner": "prysai-prompt-card-editor", "handoffs": ["prysai-source-investigator"], "segments": []}
+    },
+    {
+      "id": "explicit-prompt-card-editor-wins",
+      "kind": "explicit",
+      "text": "Use $prysai-prompt-card-editor to make one candidate teaching card from this original prompt idea; do not run it or publish it.",
+      "signals": {"intents": ["unclear_task"], "explicit_skill": "prysai-prompt-card-editor", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-prompt-card-editor", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "safety-over-prompt-card-editor-unclear-provenance",
+      "kind": "safety",
+      "text": "Use $prysai-prompt-card-editor to publish this copied viral prompt as a reusable card even though its source and permission are unknown.",
+      "signals": {"intents": ["prompt_card_library_editor"], "explicit_skill": "prysai-prompt-card-editor", "safety_block": "unclear prompt provenance and unauthorized publication"},
+      "expected": {"disposition": "blocked", "owner": "prysai-prompt-card-editor", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "boundary-prompt-card-editor-personal-first-turn",
+      "kind": "boundary",
+      "text": "I have one unsent fictional message request for myself; write a first message, but do not save or share a teaching-card library entry.",
+      "signals": {"intents": ["first_turn_dialogue_brief"], "explicit_skill": "", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-dialogue-brief", "handoffs": [], "segments": []}
     }
   ]
 }

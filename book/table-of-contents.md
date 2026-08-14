@@ -1,4 +1,4 @@
-# Codex: From First Task to Real Work 书籍目录 v0.2
+# Prysai 大模型实战手册：书籍目录 v0.2
 
 > 这是一本学习与实践系统，不是 Skill 目录。目录区分内容成熟度和易变事实状态：章节使用 `draft / candidate / verified / production-ready`；易变断言使用 `current / stale / disputed / removed`。
 

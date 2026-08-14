@@ -1,7 +1,7 @@
 # Branding assets
 
 This directory contains the Prysai Lab marks supplied by the project owner
-for the Codex Field Guide reading surface.
+for the Prysai LLM Playbook reading surface.
 
 ## Files
 

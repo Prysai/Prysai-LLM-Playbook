@@ -2,10 +2,11 @@
 
 # Chapter 7: How Skills, Plugins, MCP, and Tools Divide the Work
 
-**Status:** `candidate`. This chapter defines a selection and adoption method,
-but its comparison experiment has not been run. The examples below are
-project-owned teaching material; they are not evidence that an external Skill
-was installed, loaded, or invoked successfully.
+**Status:** `candidate`. **Comparison:** `not_run`. The examples teach the
+method; they do not prove that an external Skill ran successfully.
+
+**Start here:** name the task gap, then choose the smallest capability that
+fits it.
 
 ## The problem this chapter solves
 

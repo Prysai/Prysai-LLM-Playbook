@@ -48,3 +48,5 @@ Current entry points:
 - [ADR-0030: lazy search and Chromium smoke gate](0030-lazy-search-and-browser-smoke.md)
 - [ADR-0031: generated book title map](0031-generated-book-title-map.md)
 - [ADR-0032: distinguish the first local path from the optional warm-up](0032-first-route-priority.md)
+- [ADR-0033: reader-facing LLM Field Guide identity](0033-reader-facing-llm-field-guide-identity.md)
+- [ADR-0034: Prysai LLM Playbook reader identity](0034-prysai-llm-playbook-reader-identity.md)

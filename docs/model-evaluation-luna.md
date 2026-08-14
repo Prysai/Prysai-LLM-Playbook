@@ -2,7 +2,7 @@
 
 ## 目的
 
-验证 GPT-5.6 Luna 是否适合 Codex: From First Task to Real Work 的主要任务，而不是预先假定它“性价比最高”。评估结论只对声明的任务集、上下文、工具、权限和日期负责。
+验证 GPT-5.6 Luna 是否适合 First Task, Real Work — An LLM Field Guide 的主要任务，而不是预先假定它“性价比最高”。评估结论只对声明的任务集、上下文、工具、权限和日期负责。
 
 ## 假设
 

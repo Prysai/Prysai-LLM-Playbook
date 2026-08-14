@@ -1,6 +1,6 @@
 <!-- content_id: book-readme | locale: ZH | language: zh-CN | default_locale: EN | translation_status: in-progress -->
 
-# Codex: From First Task to Real Work 书稿
+# Prysai 大模型实战手册：书稿
 
 > 简体中文书稿入口（`ZH`）。这是三文件中文入口迁移切片的一部分，不代表整本书已经完成六语言翻译。
 
@@ -14,7 +14,7 @@
 - [中文序言](preface-ZH.md)
 - [中文书籍目录](table-of-contents-ZH.md)
 
-这里放 Codex: From First Task to Real Work 的原创主线书稿。书稿不是六个外部项目的拼接，而是按照学习者的成长顺序重新编排的内容系统。
+这里放 Prysai LLM Playbook 的原创主线书稿。书稿不是六个外部项目的拼接，而是按照学习者的成长顺序重新编排的内容系统。
 
 每一章都要配套：
 

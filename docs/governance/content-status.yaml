@@ -180,12 +180,12 @@
     ]
   },
   "skills": {
-    "count": 14,
+    "count": 15,
     "status": "candidate",
     "validator_status": "structural_checks_passed",
     "fresh_context_status": "2_isolated_single_turn_observations; broader trigger, repeated-runtime, learner, and transfer evidence remains partial or not_run",
     "owner": "skills-maintainer",
-    "last_reviewed": "2026-08-13",
+    "last_reviewed": "2026-08-14",
     "next_review": "2026-11-09",
     "path": "skills",
     "evidence": [
@@ -197,6 +197,7 @@
       "docs/quality/review-codex-facts-refresh-2026-08-10.md",
       "docs/research/original-skill-overlap-and-controlled-evidence-patterns-2026-08-13.md",
       "docs/research/entry-level-llm-collaboration-for-language-and-research-2026-08-13.md",
+      "docs/research/prompt-card-editor-capability-and-beginner-entry-2026-08-14.md",
       "docs/governance/skill-registry.yaml",
       "scripts/validate_skill_registry.py",
       "evals/candidates/evidence-review-v1/README.md",
@@ -217,6 +218,7 @@
       ,{"id": "prysai-field-signal-curator", "path": "skills/prysai-field-signal-curator", "status": "candidate", "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"}
       ,{"id": "prysai-platform-adapter-review", "path": "skills/prysai-platform-adapter-review", "status": "candidate", "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"}
       ,{"id": "prysai-communication-failure-triage", "path": "skills/prysai-communication-failure-triage", "status": "candidate", "fresh_context_status": "three_minimal_blind_pretests_passed; cross_model_and_runtime_validation_pending"}
+      ,{"id": "prysai-prompt-card-editor", "path": "skills/prysai-prompt-card-editor", "status": "candidate", "fresh_context_status": "isolated_forward_test_packet_reviewed; automatic_trigger, runtime, learner, and transfer evidence pending"}
     ]
   },
   "supplemental_guides": {

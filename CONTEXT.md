@@ -1,10 +1,10 @@
-# Codex: From First Task to Real Work 领域词汇
+# Prysai LLM Playbook — From First Task to Reliable Work 领域词汇
 
 本文档只记录项目的领域语言和概念边界，不记录实现细节。所有章节、实验、Skill、评测和组织规范都应使用这些词义。
 
 ## 产品是什么
 
-**Codex: From First Task to Real Work** 是一个以通用 LLM 协作核心为长期架构、以 Codex 为当前旗舰实践轨道的学习、实践与能力系统。它把知识理解、操作练习、工作流设计、能力扩展、结果评估和团队治理组织成一条可持续更新的学习路径。Claude Code、Grok 等命名平台只有通过适配器准入门槛后，才进入公开课程；当前名称不代表跨平台内容已经完成。
+**Prysai LLM Playbook — From First Task to Reliable Work** 是一个以通用 LLM 协作核心为长期架构、以 Codex Practice Track 为当前旗舰实践轨道的学习、实践与能力系统。它把知识理解、操作练习、工作流设计、能力扩展、结果评估和团队治理组织成一条可持续更新的学习路径。Claude Code、Grok 等命名平台只有通过适配器准入门槛后，才进入公开课程；名称不代表跨平台内容已经完成。
 
 本项目不是 Skill 目录，也不是单纯的安装手册。Skill 是其中一个能力层；完整产品还必须让学习者理解原理、观察行为、完成实验、审查证据，并把个人方法迁移到真实工作和团队协作中。
 

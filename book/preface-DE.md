@@ -25,7 +25,7 @@ Navigation: [Deutscher Projekt-Einstieg](../README-DE.md) · [Deutscher Buchleit
 
 ## Die zwei Wege durch das Buch
 
-`Codex: From First Task to Real Work` bewegt sich gleichzeitig auf zwei Wegen.
+`Prysai LLM Playbook` bewegt sich gleichzeitig auf zwei Wegen.
 
 Der erste ist ein Weg des Verstehens. Er beginnt mit GPT und Modellen und
 zeigt dann, wie Codex ein Modell mit einem Projekt, Dateien, Terminal,

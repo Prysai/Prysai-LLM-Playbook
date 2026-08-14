@@ -1,14 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 480" role="img" aria-labelledby="title desc">
-  <title id="title">Codex: From First Task to Real Work</title>
+  <title id="title">Prysai LLM Playbook — From First Task to Reliable Work</title>
   <desc id="desc">A hard-edged red and black editorial header. The title sits beside a five-stage rail labelled problem, decision, action, evidence, and transfer.</desc>
   <rect width="1600" height="480" fill="#11151a"/>
   <path d="M0 120H1600M0 390H1600M1040 0V480" fill="none" stroke="#f3f0e9" stroke-opacity=".18"/>
   <g font-family="Arial, Helvetica, sans-serif">
     <rect x="72" y="52" width="18" height="18" fill="#e12b2f"/>
-    <text x="108" y="68" fill="#f3f0e9" font-size="18" font-weight="700" letter-spacing="4">PRYSAI LAB / FIELD GUIDE 001</text>
-    <text x="72" y="230" fill="#f3f0e9" font-size="118" font-weight="800" letter-spacing="-6">CODEX</text>
-    <text x="78" y="284" fill="#f3f0e9" font-size="30" font-weight="700" letter-spacing="8">FROM FIRST TASK TO REAL WORK</text>
-    <text x="78" y="338" fill="#c7cbcf" font-size="20">A practical system for models, tools, Skills, Agents, and evidence.</text>
+    <text x="108" y="68" fill="#f3f0e9" font-size="18" font-weight="700" letter-spacing="4">PRYSAI LAB / LLM PLAYBOOK 001</text>
+    <text x="72" y="208" fill="#f3f0e9" font-size="92" font-weight="800" letter-spacing="-4">LLM</text>
+    <text x="72" y="304" fill="#f3f0e9" font-size="104" font-weight="800" letter-spacing="-5">PLAYBOOK</text>
+    <text x="78" y="348" fill="#e12b2f" font-size="16" font-weight="700" letter-spacing="3">FROM FIRST TASK TO RELIABLE WORK</text>
+    <text x="78" y="378" fill="#c7cbcf" font-size="20">A practical system for language models, tools, Skills, Agents, and evidence.</text>
 
     <text x="72" y="423" fill="#e12b2f" font-size="15" font-weight="700" letter-spacing="2">READ THE BOUNDARY</text>
     <line x1="296" y1="418" x2="720" y2="418" stroke="#f3f0e9" stroke-width="2"/>

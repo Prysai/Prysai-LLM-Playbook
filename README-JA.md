@@ -1,4 +1,4 @@
-# Codex: From First Task to Real Work
+# Prysai LLM Playbook — From First Task to Reliable Work
 
 > Codex：最初のタスクから、実際の仕事へ
 
@@ -6,7 +6,7 @@
 **言語：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-`Codex: From First Task to Real Work` は、skills を並べただけの目録でも、インストール手順だけを説明するマニュアルでもありません。GPT、モデル、Codex、コンテキスト、ツール、Skill、Agent、検証を学び、実験し、チームで再利用できる仕事の仕組みに変えていくための、書籍・コース・実験室型の学習システムです。
+`Prysai LLM Playbook` は、skills を並べただけの目録でも、インストール手順だけを説明するマニュアルでもありません。GPT、モデル、Codex、コンテキスト、ツール、Skill、Agent、検証を学び、実験し、チームで再利用できる仕事の仕組みに変えていくための、書籍・コース・実験室型の学習システムです。
 
 このプロジェクトが目指すのは、「GPT という名前を聞いたことがある」状態から、安全に Codex を使い、現実のタスクを安定して完了し、Agent がなぜその行動を取ったのかを説明し、適切な Skill を選び、最終的には自分の仕事の仕組みをつくってチームに展開できる状態までの、連続した成長経路です。
 
@@ -89,6 +89,6 @@ GPTを知る → Codexを知る → 安全に準備する → タスクを表現
 
 ## 名前と翻訳の説明
 
-現在、対外的に想定している名前は `Codex: From First Task to Real Work` です。GitHub リポジトリの slug は現状のまま保持し、正式名称が確定してからリポジトリのメタデータと旧リンクを移行します。組織の帰属、保守責任、リリースの門番はガバナンスおよび出典関連の文書で記録し、製品タイトルには詰め込みません。
+現在の対外名称は `Prysai LLM Playbook — From First Task to Reliable Work` です。GitHub リポジトリの slug は現状のまま保持し、リポジトリのメタデータと旧リンクの移行は別途決定します。組織の帰属、保守責任、リリースの門番はガバナンスおよび出典関連の文書で記録し、製品タイトルには詰め込みません。
 
 この日本語ファイルは、同じ作業ツリーにある `README.md` の内容をもとに Prysai が独自に翻訳したものです。外部チュートリアル、Skill、コード、画像の本文をこの翻訳にコピーしていません。翻訳状態は `draft` であり、別途の日本語レビュー、全体リンクの生成、実行ログの検証はまだ完了していません。

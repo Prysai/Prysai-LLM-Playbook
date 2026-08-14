@@ -18,21 +18,30 @@ the README with the fixed local acceptance source.
 
 ## Run it
 
-From the repository root on Windows:
+Copy this whole directory with your file manager into a disposable location;
+do not change this source copy. In your copy, open `seed/README.md` and
+`expected/acceptance.json` side by side. The no-runtime acceptance check is:
+
+1. Before editing, notice that `seed/README.md` is missing the required port
+   and local URL.
+2. Make the single permitted README correction.
+3. Confirm that the README now contains every value under
+   `required_readme_strings` in `expected/acceptance.json`.
+
+This manual `3/3` check is the default. It needs no account, package,
+installation, Git repository, or network request.
+
+If Python 3 already works on your computer, you can also open a terminal in
+the copied fixture and run:
 
 ```powershell
-$py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
-Copy-Item -Recurse examples\lab-001-v1 .work\first-safe-change
-& $py .work\first-safe-change\seed\verify_readme.py
+python .\seed\verify_readme.py
 ```
 
-The initial result must be `FIRST_SAFE_CHANGE_FAILED`. That failure is
-intentional. After reviewing the README and acceptance contract, make the
-single permitted README correction in the working copy and run the same command
-again. The expected local result is `FIRST_SAFE_CHANGE_OK`.
-
-If Python is unavailable, mark the attempt `blocked: Python unavailable`. Do
-not install a runtime or replace the verifier merely to complete this exercise.
+The initial checker result must be `FIRST_SAFE_CHANGE_FAILED`; after the one
+allowed correction it should be `FIRST_SAFE_CHANGE_OK`. Do not install Python
+or replace the verifier merely to obtain that extra local signal. If you cannot
+make a disposable local copy, stop and use the text-only First Win instead.
 
 ## Bounded task card
 
@@ -43,10 +52,11 @@ Read first: seed/README.md and expected/acceptance.json.
 Allowed edit: seed/README.md only, after you show a plan.
 Do not: edit the verifier or acceptance file; install; use the network; read
 secrets; commit; push; publish; contact anyone; or modify another file.
-Acceptance: the supplied verifier reports FIRST_SAFE_CHANGE_OK.
+Acceptance: manually confirm required_readme_strings 3/3; if Python is already
+available, the supplied verifier also reports FIRST_SAFE_CHANGE_OK.
 Receipt: baseline result, plan, exact README diff, second checker result, and
 an explicit unverified list.
-Stop: the target, acceptance source, or local Python command is unavailable.
+Stop: the local copy, target, or acceptance source is unavailable.
 ```
 
 ## What a result means

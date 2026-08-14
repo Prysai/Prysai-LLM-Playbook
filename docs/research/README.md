@@ -22,11 +22,17 @@ claim and license boundary are clear.
 
 Useful indexes:
 
+- [Prompt Card Editor: evidence boundary and one beginner entry](prompt-card-editor-capability-and-beginner-entry-2026-08-14.md) documents the source-bounded rationale for one project-authored candidate Skill that turns an authorized prompt idea into a maintainable teaching card. It supports a static editorial schema and a provenance gate, not prompt effectiveness, model behavior, learning results, or a local editor product.
+
+- [Community tutorial intake and beginner foundations](community-tutorial-intake-and-foundations-2026-08-14.md) — a source- and rights-bounded review of a supplied community tutorial. It retains an original, plain-language opening pattern while excluding the player, transcript, screenshots, and unverified product claims. It is not a current product guide, a local reproduction, or evidence that the revised opening helps learners.
+
 - [Hostile-but-fair external review simulation](hostile-but-fair-external-review-simulation-2026-08-13.md) — a source-bounded candidate desk review through learning, reproducibility, enterprise-governance, and consumer-discovery lenses. It is not feedback from Microsoft, Meta, Kugou, faculty, or scientists, and it does not establish user demand, learning outcomes, security, release readiness, or adoption.
 
 - [Durable beginner communication with text-first LLMs](durable-beginner-text-first-llm-communication-2026-08-13.md) — a candidate, text-only decision loop for shrinking a vague request, keeping constraints visible, separating recurring criteria from the current item, and routing factual claims to source-led work. It separates four product-scoped official sources from four individual public reports and does not claim prompt effectiveness, learning, cross-platform equivalence, or model behavior.
 
 - [Universal first-turn prompt contract](universal-first-turn-prompt-contract-2026-08-13.md) — a candidate six-field, plain-language request contract with two text-only Spanish and research cards. It separates product-scoped official guidance from two individual public signals and does not claim platform equivalence, a five-minute result, or learning efficacy.
+
+- [Everyday prompt cards: source receipt](everyday-prompt-cards-source-receipt-2026-08-14.md) — primary instructional, information-literacy, and product-owner prompt-guidance sources for the two candidate five-minute cards. It supports only a bounded attempt and source-check preparation; it does not claim fluency, browsing, citation validation, research completion, or learner outcomes.
 
 - [Historical: cross-platform first-session prompt practice](cross-platform-first-session-prompt-practice-2026-08-13.md) — a retained, language-only source note superseded for new reader-facing use by the universal first-turn contract above. It has no learner or model run and does not support a seven-day fluency claim.
 
@@ -47,6 +53,10 @@ Useful indexes:
 - [AI safety field signals and research receipts](ai-safety-field-signals-and-research-receipts-2026-08-13.md) — a dated record of instruction-layer ambiguity, non-persistent citations, qualification-versus-contradiction, and long-task boundary drift. It adds an inspectable checkpoint; it is not a prevalence study, product diagnosis, or security control evaluation.
 
 - [Field case: external instruction and action authority](field-case-external-instruction-authority-2026-08-13.md) — a small, synthetic practice case for instruction-like text that tries to widen authority. It does not reproduce an attack, establish product behavior, or prove that the practice prevents prompt injection.
+
+- [Field case: a blocked request does not widen authority](field-case-blocked-network-boundary-2026-08-14.md) — an older public network-access report converted into an offline decision case with source, symptom, reproduction status, a smallest safe check, and a stop condition. It does not teach a configuration recipe, reproduce a network error, or authorize broader access.
+
+- [Field case: a created sub-agent is not a task receipt](field-case-agent-handoff-receipt-2026-08-14.md) — an older public handoff report converted into an offline receipt check that separates creation, start, message receipt, execution, and return. It does not create an agent, reproduce a product behavior, identify a root cause, or authorize a retry.
 
 - [First five-minute Codex friction ledger](first-five-minute-codex-friction-ledger-2026-08-13.md) — official environment and evidence boundaries plus four public symptom reports, separated from product, runtime, and learning-outcome claims.
 

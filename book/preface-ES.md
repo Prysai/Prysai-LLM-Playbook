@@ -10,7 +10,7 @@ preguntas: ¿qué entendió?, ¿qué archivos y reglas forman parte del contexto
 qué el Agent continúa, reintenta, pausa o se detiene?, y ¿qué evidencia me
 permite confiar en que terminó?
 
-Codex: From First Task to Real Work estudia precisamente ese conjunto de
+Prysai LLM Playbook estudia precisamente ese conjunto de
 relaciones.
 
 ## Qué aprenderás

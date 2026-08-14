@@ -1,4 +1,4 @@
-# Codex: From First Task to Real Work
+# Prysai LLM Playbook — From First Task to Reliable Work
 
 > Codex: del primer trabajo a un trabajo real.
 
@@ -6,7 +6,7 @@
 **Idiomas:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-Codex: From First Task to Real Work no es un directorio que se limite a
+Prysai LLM Playbook no es un directorio que se limite a
 enumerar skills ni un manual que solo explique pasos de instalación. Es un
 sistema de aprendizaje y práctica de Codex GPT, organizado como libro,
 curso y laboratorio: primero ayuda al lector a entender la relación entre
@@ -143,8 +143,8 @@ terminada. Las páginas españolas existentes enlazan primero con sus destinos
 
 ## Nota sobre el nombre
 
-El nombre externo previsto actualmente es `Codex: From First Task to Real
-Work`, con el subtítulo chino «Codex：从第一个任务到真实工作». La ruta del
+El nombre externo previsto actualmente es `Prysai LLM Playbook — From First
+Task to Reliable Work`, con el nombre chino «Prysai 大模型实战手册：从第一个任务到可靠交付». La ruta del
 repositorio de GitHub conserva por ahora su slug actual; el nombre de los
 metadatos del repositorio y la migración de enlaces antiguos se tratarán
 cuando se confirme el nombre definitivo. La organización propietaria, la

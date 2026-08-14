@@ -1,6 +1,6 @@
 <!-- content_id: project-readme | locale: ZH | language: zh-CN | default_locale: EN | translation_status: in-progress -->
 
-# Codex: From First Task to Real Work
+# Prysai 大模型实战手册：从第一个任务到可靠交付
 
 > 简体中文项目入口（`ZH`）。默认公开语言目标是 English（`EN`）；本文件是当前中文入口迁移的一部分。
 
@@ -16,7 +16,7 @@
 
 ## 这是什么项目
 
-Codex: From First Task to Real Work 不是把 skills 平铺在一起的目录，也不是只讲安装步骤的手册。它是一套书籍式、课程式、实验室式的 Codex GPT 学习与实践系统：先帮助学习者理解 GPT、模型、Codex、上下文、工具、Skill 和 Agent 的关系，再通过实验把理解变成行动，最后把个人方法沉淀成可以评估、复用和更新的团队能力。
+Prysai LLM Playbook（Prysai 大模型实战手册）不是把 skills 平铺在一起的目录，也不是只讲安装步骤的手册。它是一套书籍式、课程式、实验室式的 LLM 协作学习与实践系统：先帮助学习者理解 GPT、模型、Codex、上下文、工具、Skill 和 Agent 的关系，再通过实验把理解变成行动，最后把个人方法沉淀成可以评估、复用和更新的团队能力。
 
 它要带领学习者完成一条完整成长路径：从“我听说过 GPT”开始，到能够安全使用 Codex、稳定完成真实任务、理解 Agent 为什么这样行动、选择和设计合适的 Skill，直到建立自己的工作系统并帮助团队共同使用。
 
@@ -117,4 +117,4 @@ Codex: From First Task to Real Work 不是把 skills 平铺在一起的目录，
 
 ## 名称说明
 
-当前本地对外拟采用名称为 `Codex: From First Task to Real Work`，中文副标题为“Codex：从第一个任务到真实工作”。GitHub 仓库路径暂保持现有 slug，待名称最终确认后再处理仓库元数据和旧链接迁移；组织归属、维护责任和发行门禁记录在治理与来源文件中，不放进产品标题。
+当前对外名称为 `Prysai LLM Playbook — From First Task to Reliable Work`，中文名称为“Prysai 大模型实战手册：从第一个任务到可靠交付”。GitHub 仓库路径暂保持现有 slug；仓库元数据和旧链接迁移需要单独决定。组织归属、维护责任和发行门禁记录在治理与来源文件中，不放进产品标题。

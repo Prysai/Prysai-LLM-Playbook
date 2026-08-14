@@ -987,7 +987,7 @@ function canonicalChapterTitle(chapter) {
     renderBookNavigation(selection);
     renderTrustRecord(null);
     if (selection.contentId) void loadTrustRecord(selection.contentId).then(renderTrustRecord);
-    document.title = `${title} · Codex Field Guide`;
+    document.title = `${title} · Prysai LLM Playbook`;
     document.querySelector('meta[name="description"]').setAttribute('content', `Read ${title} with source-aware navigation and explicit evidence limits.`);
     const effectiveLocale = selection.effective || locale;
     document.documentElement.lang = locales[effectiveLocale]?.html_lang || effectiveLocale;

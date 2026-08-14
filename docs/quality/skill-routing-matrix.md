@@ -5,7 +5,7 @@
 **Status:** `candidate`
 
 This matrix is the human-readable projection of the routing contract for the
-fourteen project Skills. It defines responsibility and handoff; it does not
+fifteen project Skills. It defines responsibility and handoff; it does not
 grant tool access or replace project rules. The machine-readable source is
 [`../governance/skill-routing-contract.yaml`](../governance/skill-routing-contract.yaml),
 whose fixtures test declared policy consistency, not trigger accuracy.
@@ -17,7 +17,7 @@ whose fixtures test declared policy consistency, not trigger accuracy.
    safety block; another Skill must not silently replace it.
 2. Project rules, user constraints, and permission gates outrank every Skill.
 3. If no Skill is explicit, choose the narrowest Skill whose primary question
-   matches the task. Do not load all fourteen by default.
+matches the task. Do not load all fifteen by default.
 4. A Skill may hand off only to a named downstream responsibility in the table.
    Handoffs transfer control; they are not recursive co-ownership.
 5. Evidence Review is an audit gate, not a universal preamble. It reviews an
@@ -34,6 +34,7 @@ whose fixtures test declared policy consistency, not trigger accuracy.
 
 | Skill | Primary question | Owns | Must yield to | Must not own |
 |---|---|---|---|---|
+| `prysai-prompt-card-editor` / Prompt Card Editor | "How do I turn an authorized, project-owned prompt idea into one reusable teaching card?" | one R0, text-only card with a learner job, non-fit boundary, copy-ready request, self-check, recovery route, source boundary, and candidate receipt | Dialogue Brief for one person's new first message; First-Turn Check for inspecting an existing draft; Learning Coach for performance practice; Research Router / Source Investigator for research; Communication Failure Triage for a preserved failure; Task Protocol for tools, files, authority, or effects | generic prompt collection, personal drafting, execution, external-text reuse with unknown permission, publication, model-run claims, or outcome guarantees |
 | `prysai-dialogue-brief` / Dialogue Brief | “How do I write one clear first message before I have sent it?” | one text-only, low-risk first-turn brief with outcome, safe inputs, acceptance check, and stop boundary | Learning Coach for practice; Codex Coach for Codex learning; Task Protocol for files, tools, authority, or effects; Source Investigator / Research Router for factual research; Communication Failure Triage for a preserved failed reply | teaching, research, execution, tool use, source claims, failure diagnosis, or a generic prompt catalogue |
 | `prysai-first-turn-check` / First-Turn Check | “Before I send this draft, which material first-turn boundaries are missing or unclear?” | six-field inspection of an unsent, text-only, low-risk user draft; at most three material add-or-clarify lines | Dialogue Brief for a new message; Task Protocol for files, tools, permissions, or effects; Source Investigator / Research Router for sources; Learning Coach for practice; Communication Failure Triage for an actual failed reply | drafting a replacement request, execution, product or security certification, research, coaching, or a generic prompt catalogue |
 | `prysai-codex-coach` / Codex Coach | “How do I learn GPT, Codex, tools, Skills, or Agent workflows?” | Codex-domain learning level, explanation, experiment, reflection, transfer | Learning Coach for non-Codex performance; explicit Skill; Task Protocol; Evidence Review; Research Router; Skill Selector; Workflow Orchestrator; Product Context | general tutoring, execution, installation, source synthesis, product claims |
@@ -110,6 +111,12 @@ The graph forbids `Coach → Coach`, `First-Turn Check → First-Turn Check`, `S
 `Product Context → Product Context`, and any domain Skill starting its own
 orchestration loop. A changed requirement is a new route, not an implicit loop.
 
+Prompt Card Editor starts only for a reviewed, authorized shared card. It hands
+an individual unsent draft back to Dialogue Brief, an existing draft to
+First-Turn Check, a copied or unlicensed prompt to a block, and any factual
+lookup to Source Investigator. It cannot run a card, grant an action, or turn
+a copied viral prompt into project material.
+
 ## Shared input, risk, and status contract
 
 Every Skill must declare its required inputs and return missing inputs instead
@@ -160,12 +167,12 @@ Additional contract fields are required where the route needs them:
 ## Source and maintenance boundary
 
 - **Source:** `CONTEXT.md`, `docs/charter.md`, `docs/book-architecture.md`,
-  `docs/quality/skill-quality-standard.md`, and the fourteen Skill files.
+  `docs/quality/skill-quality-standard.md`, and the fifteen Skill files.
 - **License:** original project rewrite. External skill repositories and
   supplied archives remain reference-only unless the asset register records a
   compatible license and attribution.
 - **Owner:** capability-routing maintainer.
-- **Version:** `0.6.0`.
+- **Version:** `0.7.0`.
 - **Next review:** `2026-09-12`.
 
 The 2026-08-09 official facts refresh for chapters 4–7 is recorded at

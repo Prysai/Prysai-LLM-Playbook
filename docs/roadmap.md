@@ -1,4 +1,4 @@
-# Codex: From First Task to Real Work 路线图
+# Prysai LLM Playbook 路线图
 
 ## Phase 0：地基（已完成）
 
@@ -31,7 +31,7 @@
 
 - 建立贡献者指南、评审角色和维护责任；
 - 设计可发布的 plugin/skill 包边界；
-- 确认许可证、品牌使用边界和公开范围（当前本地拟采用名称为 `Codex: From First Task to Real Work`，仓库路径暂保持私有开发路径）；
+- 确认许可证、品牌使用边界和公开范围（当前 reader-facing 名称为 `Prysai LLM Playbook — From First Task to Reliable Work`，GitHub 仓库路径暂保持私有开发路径）；
 - 配置 CI：结构、链接、frontmatter、许可证、评测和过时事实检查；
 - 以机器可读 release-readiness contract 管理版本、changelog、reviewed tag、候选证据与 rollback rehearsal；当前记录必须保持 `not_ready`，直到真实证据存在；
 - 对关键章节做学习者测试和版本化发布。

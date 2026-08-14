@@ -5,7 +5,7 @@
 **审查类型：** 只读、独立上下文、展示层与证据一致性审查。  
 **审查状态：** candidate；不构成浏览器视觉验收、可访问性验收或 production-ready 结论。
 
-> **历史快照说明（2026-08-09 命名刷新后）：** 本报告记录命名迁移前的展示层状态。其关于 `Codex Field Guide`、`From GPT to Codex` 或 `Codex: Learn, Practice, Verify` 的当前名称判断不再作为现行决策依据；现行拟采用名称见 [`docs/adr/0004-public-name-candidate.md`](../adr/0004-public-name-candidate.md)。
+> **历史快照说明（2026-08-09 命名刷新后）：** 本报告记录命名迁移前的展示层状态。其关于 `Codex Field Guide`、`From GPT to Codex` 或 `Codex: Learn, Practice, Verify` 的当前名称判断不再作为现行决策依据；现行 reader-facing 名称见 [`ADR-0034`](../adr/0034-prysai-llm-playbook-reader-identity.md)。
 
 ## 结论摘要
 

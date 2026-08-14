@@ -1,6 +1,6 @@
 <!-- content_id: book-table-of-contents | locale: DE | language: de | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: dd08a68 -->
 
-# Codex: From First Task to Real Work — Inhaltsverzeichnis v0.2
+# Prysai LLM Playbook: Inhaltsverzeichnis v0.2
 
 > Deutsche Inhaltsverzeichnisseite (`DE`). Diese Migrationsscheibe basiert auf
 > `book/table-of-contents.md` und bewahrt alle 22 Kapitel, 17 Experimente,

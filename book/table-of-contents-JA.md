@@ -1,6 +1,6 @@
 <!-- content_id: book-table-of-contents | locale: JA | language: ja | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: dd08a68 -->
 
-# Codex: From First Task to Real Work — 書籍目次 v0.2
+# Prysai LLM Playbook: 書籍目次 v0.2
 
 > 日本語の目次ページ（`JA`）です。既存の
 > `book/table-of-contents.md` を基に、22 章、17 の実験、状態の境界、現実の

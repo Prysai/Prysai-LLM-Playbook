@@ -62,6 +62,7 @@
     "prysai-source-investigator": {"name": {"en": "Source Investigator", "zh": "来源调查 Source Investigator"}},
     "prysai-field-signal-curator": {"name": {"en": "Field Signal Curator", "zh": "现场信号整理 Field Signal Curator"}},
     "prysai-platform-adapter-review": {"name": {"en": "Platform Adapter Review", "zh": "平台适配审查 Platform Adapter Review"}},
-    "prysai-communication-failure-triage": {"name": {"en": "Communication Failure Triage", "zh": "沟通失败诊断 Communication Failure Triage"}}
+    "prysai-communication-failure-triage": {"name": {"en": "Communication Failure Triage", "zh": "沟通失败诊断 Communication Failure Triage"}},
+    "prysai-prompt-card-editor": {"name": {"en": "Prompt Card Editor", "zh": "提示卡编辑器 Prompt Card Editor"}}
   }
 }

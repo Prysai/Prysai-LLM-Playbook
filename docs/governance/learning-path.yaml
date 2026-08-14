@@ -286,7 +286,7 @@
           "new_acceptance": {"en": "Both tasks cite the same revision, name consumed fields, and trigger review when a changed field alters a decision.", "zh": "两个任务引用同一修订、明确使用字段，并在字段变更影响决策时触发复核。"}
         }
       ],
-      "supporting_skills": ["prysai-product-context", "prysai-codex-coach"],
+      "supporting_skills": ["prysai-product-context", "prysai-codex-coach", "prysai-prompt-card-editor"],
       "evaluation_tasks": ["team-capability-migration-030"],
       "evaluation_types": ["positive", "boundary", "failure", "transfer"],
       "evidence_gate": {

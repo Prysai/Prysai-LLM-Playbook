@@ -11,6 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE = ROOT / "examples/lab-001-v1"
+ROUTE = ROOT / "book/routes/first-safe-change-EN.md"
 
 
 def run_verifier(seed: Path) -> subprocess.CompletedProcess[str]:
@@ -27,6 +28,18 @@ def run_verifier(seed: Path) -> subprocess.CompletedProcess[str]:
 
 def main() -> int:
     failures: list[str] = []
+    route_text = ROUTE.read_text(encoding="utf-8")
+    fixture_readme_text = (FIXTURE / "README.md").read_text(encoding="utf-8")
+    for label, text in (("route", route_text), ("fixture README", fixture_readme_text)):
+        if "C:\\Users\\Administrator\\.cache\\codex-runtimes" in text:
+            failures.append(f"{label} exposes a maintainer-specific runtime path to learners")
+        if "required_readme_strings" not in text:
+            failures.append(f"{label} does not explain the no-runtime acceptance source")
+    if "No-runtime check (the default)" not in route_text:
+        failures.append("route does not present a no-runtime check as the default")
+    if "manual `3/3` check is the default" not in fixture_readme_text:
+        failures.append("fixture README does not make the manual 3/3 check the default")
+
     baseline = run_verifier(FIXTURE / "seed")
     if baseline.returncode != 1 or "FIRST_SAFE_CHANGE_FAILED" not in baseline.stdout or "preview_command" not in baseline.stdout:
         failures.append("seeded README did not expose the intended preview-command failure")

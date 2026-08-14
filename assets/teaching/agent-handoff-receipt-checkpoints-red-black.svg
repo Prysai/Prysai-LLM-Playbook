@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">A handoff receipt separates creation from delivery</title>
+  <desc id="desc">Five checkpoints run from creation to a returned result. Receipt is the delivery gate. Without a receipt, the handoff is blocked and must not carry real work.</desc>
+  <rect width="1600" height="900" fill="#111418"/>
+  <rect width="34" height="900" fill="#ed3328"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="76" y="82" fill="#ed3328" font-size="18" font-weight="700" letter-spacing="4">HANDOFF RECEIPT / FIXED PHRASE / OFFLINE DECISION AID</text>
+    <text x="76" y="178" fill="#f3eee5" font-size="75" font-weight="900" letter-spacing="-3">CREATED IS NOT</text>
+    <text x="76" y="256" fill="#f3eee5" font-size="75" font-weight="900" letter-spacing="-3">RECEIVED.</text>
+    <text x="80" y="301" fill="#bfc1be" font-size="22">Treat each visible state as a separate claim. Only a harmless receipt checks delivery.</text>
+
+    <g transform="translate(76 350)">
+      <rect width="250" height="242" fill="#f3eee5"/>
+      <text x="24" y="45" fill="#ed3328" font-size="15" font-weight="700" letter-spacing="3">01 / CREATED</text>
+      <text x="24" y="98" fill="#111418" font-size="24" font-weight="900">REQUEST MADE</text>
+      <path d="M24 122H226" stroke="#111418" stroke-opacity=".28"/>
+      <text x="24" y="160" fill="#4a4d4f" font-size="17">The parent made a</text>
+      <text x="24" y="185" fill="#4a4d4f" font-size="17">handoff request.</text>
+      <text x="24" y="218" fill="#111418" font-size="14" font-weight="700">NOT DELIVERY</text>
+    </g>
+    <path d="M326 471H360" stroke="#ed3328" stroke-width="8"/>
+
+    <g transform="translate(376 350)">
+      <rect width="250" height="242" fill="#202428" stroke="#606468"/>
+      <text x="24" y="45" fill="#ed3328" font-size="15" font-weight="700" letter-spacing="3">02 / STARTED</text>
+      <text x="24" y="98" fill="#f3eee5" font-size="24" font-weight="900">CHILD WOKE</text>
+      <path d="M24 122H226" stroke="#f3eee5" stroke-opacity=".24"/>
+      <text x="24" y="160" fill="#c6c8c5" font-size="17">A child appears or</text>
+      <text x="24" y="185" fill="#c6c8c5" font-size="17">starts a turn.</text>
+      <text x="24" y="218" fill="#f3eee5" font-size="14" font-weight="700">NOT DELIVERY</text>
+    </g>
+    <path d="M626 471H660" stroke="#ed3328" stroke-width="8"/>
+
+    <g transform="translate(676 350)">
+      <rect width="250" height="242" fill="#ed3328"/>
+      <text x="24" y="45" fill="#111418" font-size="15" font-weight="700" letter-spacing="3">03 / RECEIPT</text>
+      <text x="24" y="98" fill="#fff8ed" font-size="24" font-weight="900">RECEIPT-OK</text>
+      <path d="M24 122H226" stroke="#111418" stroke-opacity=".4"/>
+      <text x="24" y="160" fill="#111418" font-size="17">The child can return</text>
+      <text x="24" y="185" fill="#111418" font-size="17">RECEIPT-OK.</text>
+      <text x="24" y="218" fill="#fff8ed" font-size="14" font-weight="700">DELIVERY GATE</text>
+    </g>
+    <path d="M926 471H960" stroke="#ed3328" stroke-width="8"/>
+
+    <g transform="translate(976 350)">
+      <rect width="250" height="242" fill="#f3eee5"/>
+      <text x="24" y="45" fill="#ed3328" font-size="15" font-weight="700" letter-spacing="3">04 / EXECUTED</text>
+      <text x="24" y="98" fill="#111418" font-size="24" font-weight="900">ACTION SEEN</text>
+      <path d="M24 122H226" stroke="#111418" stroke-opacity=".28"/>
+      <text x="24" y="160" fill="#4a4d4f" font-size="17">The stated action has</text>
+      <text x="24" y="185" fill="#4a4d4f" font-size="17">observable evidence.</text>
+      <text x="24" y="218" fill="#111418" font-size="14" font-weight="700">CHECK SCOPE</text>
+    </g>
+    <path d="M1226 471H1260" stroke="#ed3328" stroke-width="8"/>
+
+    <g transform="translate(1276 350)">
+      <rect width="250" height="242" fill="#202428" stroke="#606468"/>
+      <text x="24" y="45" fill="#ed3328" font-size="15" font-weight="700" letter-spacing="3">05 / RETURNED</text>
+      <text x="24" y="98" fill="#f3eee5" font-size="24" font-weight="900">RESULT SHOWN</text>
+      <path d="M24 122H226" stroke="#f3eee5" stroke-opacity=".24"/>
+      <text x="24" y="160" fill="#c6c8c5" font-size="17">The parent receives a</text>
+      <text x="24" y="185" fill="#c6c8c5" font-size="17">result it can inspect.</text>
+      <text x="24" y="218" fill="#f3eee5" font-size="14" font-weight="700">ACCEPT OR REJECT</text>
+    </g>
+
+    <g transform="translate(76 658)">
+      <rect width="700" height="116" fill="#ed3328"/>
+      <text x="28" y="39" fill="#111418" font-size="15" font-weight="700" letter-spacing="3">IF RECEIPT IS MISSING</text>
+      <text x="28" y="86" fill="#fff8ed" font-size="35" font-weight="900">STOP THE HANDOFF — BLOCKED</text>
+    </g>
+    <g transform="translate(824 658)">
+      <rect width="702" height="116" fill="#f3eee5"/>
+      <text x="28" y="39" fill="#ed3328" font-size="15" font-weight="700" letter-spacing="3">IF RECEIPT IS VISIBLE</text>
+      <text x="28" y="86" fill="#111418" font-size="31" font-weight="900">KEEP THE REAL TASK SEPARATE</text>
+    </g>
+
+    <path d="M76 816H1526" stroke="#606468"/>
+    <text x="76" y="856" fill="#bfc1be" font-size="19">A visible lifecycle event is not proof that the intended content reached the next actor.</text>
+    <text x="1526" y="856" text-anchor="end" fill="#ed3328" font-size="14" font-weight="700" letter-spacing="2">CANDIDATE / NO RUNTIME CLAIM</text>
+    <text x="76" y="884" fill="#73777a" font-size="13">PRYSAI LAB / PROJECT-OWNED TEACHING ASSET / 2026-08-14</text>
+  </g>
+</svg>

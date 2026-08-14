@@ -1,4 +1,4 @@
-# Codex: From First Task to Real Work
+# Prysai LLM Playbook — From First Task to Reliable Work
 
 > Codex: 첫 번째 작업에서 실제 업무까지
 
@@ -6,7 +6,7 @@
 **언어:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-이 문서는 `Codex: From First Task to Real Work` 프로젝트의 한국어 핵심 입구입니다. 프로젝트의 기본 공개 언어는 영어(`EN`)이며, 현재 한국어(`KO`) 이관은 이 파일과 책의 한국어 입구, 한국어 서문부터 진행 중입니다. 한국어 전체 책이 완성되었거나 번역 품질과 브라우저 동작이 검증되었다는 뜻은 아닙니다.
+이 문서는 `Prysai LLM Playbook` 프로젝트의 한국어 핵심 입구입니다. 프로젝트의 기본 공개 언어는 영어(`EN`)이며, 현재 한국어(`KO`) 이관은 이 파일과 책의 한국어 입구, 한국어 서문부터 진행 중입니다. 한국어 전체 책이 완성되었거나 번역 품질과 브라우저 동작이 검증되었다는 뜻은 아닙니다.
 
 ## 한국어 이관 상태
 
@@ -102,4 +102,4 @@ GPT 이해 → Codex 이해 → 안전한 준비 → 작업 표현 → 컨텍스
 
 ## 이름에 관하여
 
-현재 로컬에서 외부에 사용할 예정인 이름은 `Codex: From First Task to Real Work`이며, 중국어 부제는 “Codex：从第一个任务到真实工作”입니다. GitHub 저장소 경로는 현재 slug를 유지하고 있습니다. 최종 이름을 확정한 뒤 저장소 메타데이터와 이전 링크를 별도로 처리합니다. 조직 소속, 유지 책임과 배포 게이트는 거버넌스·출처 문서에 기록하며 제품 제목에 넣지 않습니다.
+현재 외부 이름은 `Prysai LLM Playbook — From First Task to Reliable Work`이며, 중국어 보조 이름은 “Prysai 大模型实战手册：从第一个任务到可靠交付”입니다. GitHub 저장소 경로는 현재 slug를 유지하고 있습니다. 저장소 메타데이터와 이전 링크는 별도로 처리합니다. 조직 소속, 유지 책임과 배포 게이트는 거버넌스·출처 문서에 기록하며 제품 제목에 넣지 않습니다.

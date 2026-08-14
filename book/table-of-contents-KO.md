@@ -1,6 +1,6 @@
 <!-- content_id: book-table-of-contents | locale: KO | language: ko | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: dd08a68 -->
 
-# Codex: From First Task to Real Work — 책 목차 v0.2
+# Prysai LLM Playbook: 책 목차 v0.2
 
 > 한국어 목차 페이지(`KO`)입니다. 기존
 > `book/table-of-contents.md`를 바탕으로 22개 장, 17개 실험, 상태 경계와
