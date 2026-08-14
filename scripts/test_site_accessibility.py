@@ -78,6 +78,8 @@ def main() -> int:
             "else if (isSafeDestination(destination.target, path)) element.href = destination.target;",
             "link.href = window.CODEX_PAGES_ARTIFACT ? `../${target}` : target;",
             "visualLink.className = 'reader-image-link';",
+            "visualLink.classList.add('reader-teaching-visual');",
+            "thesis.className = 'reader-visual-thesis';",
             "linkLabel.className = 'reader-image-link-label';",
             "openVisual: 'Open full-size visual'",
         ):
@@ -209,6 +211,13 @@ def main() -> int:
             raise AssertionError("mobile-reader-toc: mobile header must not persistently obstruct headings")
         if ".reader-article h2, .reader-article h3 { scroll-margin-top: 24px; }" not in reader_css:
             raise AssertionError("mobile-reader-toc: static-header heading offset is missing")
+        for required in (
+            ".reader-teaching-visual {",
+            ".reader-article .reader-teaching-visual img { display: none; }",
+            ".reader-visual-thesis {",
+        ):
+            if required not in reader_css:
+                raise AssertionError(f"teaching-visual-reader-treatment: missing {required}")
         fixtures += 1
 
         manifest = build_site_locale_manifest.build_manifest()

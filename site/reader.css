@@ -214,7 +214,7 @@ a:hover { color: var(--reader-link-hover); }
 .reader-article pre code { padding: 0; background: transparent; }
 .reader-article hr { margin: 40px 0; border: 0; border-top: 1px solid var(--reader-ink); }
 
-.reader-article p:has(.reader-image-link) { margin: 26px 0; }
+.reader-article p:has(.reader-image-link) { margin: 30px 0; }
 .reader-image-link { display: grid; gap: .55rem; color: inherit; }
 .reader-article .reader-image-link img,
 .reader-article > img {
@@ -228,6 +228,21 @@ a:hover { color: var(--reader-link-hover); }
 .reader-image-link-label { color: var(--reader-link); font-size: .78rem; font-weight: 700; }
 .reader-image-link:hover img,
 .reader-image-link:focus-visible img { border-color: var(--reader-red); }
+.reader-teaching-visual {
+  width: calc(100% + 3.5rem);
+  margin: 36px -1.75rem;
+  padding: 18px;
+  border-top: 4px solid var(--reader-red);
+  background: #f1f1ed;
+  text-decoration: none;
+}
+.reader-visual-thesis {
+  color: var(--reader-ink);
+  font-size: .9rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+.reader-teaching-visual .reader-image-link-label { margin-top: 2px; }
 
 .reader-table-wrap {
   max-width: 100%;
@@ -367,6 +382,31 @@ a:hover { color: var(--reader-link-hover); }
   .reader-pagination-next { text-align: left; }
   .reader-main { padding-top: 24px; }
   .reader-footer-inner { flex-direction: column; }
+  .reader-teaching-visual {
+    width: auto;
+    margin: 30px 0;
+    padding: 16px;
+    border: 1px solid var(--reader-line);
+    border-top: 4px solid var(--reader-red);
+    background: #f1f1ed;
+  }
+  .reader-article .reader-teaching-visual img { display: none; }
+  .reader-teaching-visual .reader-image-link-label {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    margin-top: 2px;
+    color: var(--reader-ink);
+    font-size: .75rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+  .reader-teaching-visual .reader-image-link-label::after {
+    margin-left: .5rem;
+    color: var(--reader-red);
+    content: '↗';
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 520px) {

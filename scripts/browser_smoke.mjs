@@ -236,12 +236,14 @@ try {
   assert.match(await page.locator('[data-reader-article]').innerText(), /improved_on_this_case \| unchanged \| regressed \| not_comparable/i, 'Recovery route omits comparable rerun statuses');
   assert.equal(await page.getByRole('link', { name: /communication failure triage skill/i }).isVisible(), true, 'Recovery route does not expose the project-owned triage Skill');
   const recoveryVisual = page.locator('img[alt*="Preserve the failed interaction"]');
-  await recoveryVisual.scrollIntoViewIfNeeded();
-  assert.equal(await recoveryVisual.evaluate((image) => image.complete && image.naturalWidth > 0), true, 'Recovery teaching visual did not load');
+  assert.match(await recoveryVisual.getAttribute('src'), /assets\/teaching\/failed-interaction-recovery-red-black\.svg$/, 'Recovery teaching visual does not retain its original full-size asset');
   const recoveryVisualLink = page.locator('.reader-image-link').filter({ has: recoveryVisual });
   assert.equal(await recoveryVisualLink.getAttribute('target'), '_blank', 'Teaching visual does not offer a full-size reading route');
   assert.match(await recoveryVisualLink.getAttribute('href'), /assets\/teaching\/failed-interaction-recovery-red-black\.svg$/, 'Teaching visual full-size route is not the original asset');
+  assert.equal(await recoveryVisualLink.evaluate((link) => link.classList.contains('reader-teaching-visual')), true, 'Teaching visual is not rendered as a deliberate visual break');
+  assert.match(await recoveryVisualLink.locator('.reader-visual-thesis').innerText(), /Preserve the failed interaction/i, 'Teaching visual does not expose a readable thesis before the full board');
   assert.equal(await page.getByRole('link', { name: /open full-size visual: preserve the failed interaction/i }).isVisible(), true, 'Teaching visual full-size route has no accessible name');
+  assert.equal(await recoveryVisual.isVisible(), false, 'Mobile Reader shrinks an information-dense teaching board instead of offering its focused full-size route');
   assert.equal(await page.getByRole('link', { name: /coaching-process evaluation candidate/i }).isVisible(), true, 'Related coaching-process evaluation is not discoverable');
   assert.equal(await page.getByRole('link', { name: /task-contract availability and channel study/i }).isVisible(), true, 'Separate task-contract study is not discoverable');
   await noHorizontalOverflow(page, 'mobile Beginner Practice Pack');

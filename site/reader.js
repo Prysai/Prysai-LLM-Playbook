@@ -373,6 +373,14 @@ function canonicalChapterTitle(chapter) {
           visualLink.target = '_blank';
           visualLink.rel = 'noreferrer';
           visualLink.setAttribute('aria-label', `${currentReaderCopy().openVisual}: ${label}`);
+          const teachingVisual = Boolean(resolved && resolved.startsWith('assets/teaching/'));
+          if (teachingVisual) visualLink.classList.add('reader-teaching-visual');
+          if (teachingVisual) {
+            const thesis = document.createElement('span');
+            thesis.className = 'reader-visual-thesis';
+            thesis.textContent = label;
+            visualLink.append(thesis);
+          }
           const element = document.createElement('img');
           element.alt = label;
           element.loading = 'lazy';
