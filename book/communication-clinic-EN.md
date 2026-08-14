@@ -22,6 +22,9 @@ to draft one plain-language request with an outcome, context, response shape,
 limits, check, and stop receipt. It is a candidate research reference, not a
 claim that product features, data controls, model behavior, or completion time
 are equivalent. Return here to choose and practise one route; use the
+[First-Turn Check Skill](../skills/prysai-first-turn-check/SKILL.md) only when
+you already have an unsent, text-only, low-risk draft and want its material
+gaps labeled rather than a new prompt written. Use the
 [four-line safety card](#four-line-safety-card) before a task includes outside
 material, tools, a local file, or an action that could widen.
 

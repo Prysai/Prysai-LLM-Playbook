@@ -2988,6 +2988,58 @@ window.CODEX_LOCALE_MANIFEST = {
         }
       }
     },
+    "prysai-first-turn-check": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-first-turn-check/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-first-turn-check/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-first-turn-check/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-first-turn-check/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-first-turn-check/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-first-turn-check/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-first-turn-check/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
     "prysai-field-signal-curator": {
       "kind": "skill",
       "reader_type": "skill",
@@ -3996,6 +4048,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md": "ai-safety-field-signals-and-research-receipts-2026-08-13",
     "docs/research/field-case-external-instruction-authority-2026-08-13.md": "field-case-external-instruction-authority-2026-08-13",
     "skills/prysai-dialogue-brief/SKILL.md": "prysai-dialogue-brief",
+    "skills/prysai-first-turn-check/SKILL.md": "prysai-first-turn-check",
     "skills/prysai-field-signal-curator/SKILL.md": "prysai-field-signal-curator",
     "skills/prysai-platform-adapter-review/SKILL.md": "prysai-platform-adapter-review",
     "skills/prysai-communication-failure-triage/SKILL.md": "prysai-communication-failure-triage",

@@ -1,0 +1,4 @@
+interface:
+  display_name: "First-Turn Check"
+  short_description: "Inspect an unsent low-risk request for visible boundaries."
+  default_prompt: "Use $prysai-first-turn-check to inspect my unsent text-only request before I send it."

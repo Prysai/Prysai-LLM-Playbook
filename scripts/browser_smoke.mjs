@@ -119,6 +119,22 @@ try {
     /reader\.html\?path=docs%2Fresearch%2Funiversal-first-turn-prompt-contract-2026-08-13\.md/,
     'universal first-turn research entry does not resolve through the bounded reader',
   );
+  const firstTurnPage = await context.newPage();
+  const firstTurnHref = await firstTurnLink.getAttribute('href');
+  await firstTurnPage.goto(new URL(firstTurnHref, `${origin}/site/`).href, { waitUntil: 'networkidle' });
+  await firstTurnPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.match(await firstTurnPage.locator('[data-reader-article] h1').innerText(), /universal first-turn prompt contract/i, 'Reader did not render the universal first-turn research record');
+  assert.equal(await firstTurnPage.getByRole('heading', { name: /before sending: inspect, do not certify/i }).isVisible(), true, 'First-turn record omits its before-send inspection boundary');
+  const firstTurnVisual = firstTurnPage.locator('img[alt*="Make the boundary visible"]');
+  assert.match(await firstTurnVisual.getAttribute('src'), /assets\/teaching\/first-turn-contract-card\.svg$/, 'First-turn record does not retain its original teaching visual');
+  const firstTurnVisualLink = firstTurnPage.locator('.reader-image-link').filter({ has: firstTurnVisual });
+  assert.equal(await firstTurnVisualLink.getAttribute('target'), '_blank', 'First-turn visual does not offer a full-size reading route');
+  assert.match(await firstTurnVisualLink.locator('.reader-visual-thesis').innerText(), /make the boundary visible/i, 'First-turn visual lacks a mobile-readable thesis');
+  await firstTurnPage.setViewportSize({ width: 390, height: 844 });
+  assert.equal(await firstTurnVisual.isVisible(), false, 'Mobile Reader shrinks the dense first-turn teaching board instead of offering a full-size route');
+  assert.equal(await firstTurnPage.getByRole('link', { name: /open full-size visual: make the boundary visible/i }).isVisible(), true, 'First-turn visual lacks an accessible mobile full-size route');
+  await noHorizontalOverflow(firstTurnPage, 'mobile universal first-turn record');
+  await firstTurnPage.close();
   assert.equal(await page.getByRole('button', { name: 'Compare with one acceptable shape' }).isDisabled(), true, 'First Win comparison is available before all three judgments');
   assert.match(await page.locator('[data-first-win-receipt]').innerText(), /judgment_state: incomplete/i, 'First Win does not expose an incomplete local record before checks');
   await page.locator('[data-first-win-check="facts_kept"][value="FAIL"]').check();
@@ -338,7 +354,7 @@ try {
   assert.deepEqual(consoleErrors, [], `browser console errors: ${consoleErrors.join(' | ')}`);
   assert.deepEqual(pageErrors, [], `browser page errors: ${pageErrors.join(' | ')}`);
   await context.tracing.stop();
-  console.log('BROWSER_SMOKE_OK initial_search_requests=0 lazy_search_requests=1 desktop=1280 mobile=390 readers=chapter-02,first-safe-change,beginner-practice-pack,ai-safety-field-signals invalid_path=blocked');
+  console.log('BROWSER_SMOKE_OK initial_search_requests=0 lazy_search_requests=1 desktop=1280 mobile=390 readers=chapter-02,first-safe-change,beginner-practice-pack,ai-safety-field-signals,universal-first-turn invalid_path=blocked');
 } catch (error) {
   await fs.mkdir(evidenceDirectory, { recursive: true });
   if (page) await page.screenshot({ path: path.join(evidenceDirectory, 'failure.png'), fullPage: true }).catch(() => {});

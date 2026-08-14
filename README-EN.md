@@ -432,7 +432,7 @@ records what can be used as research, what can be adapted, and what must not be 
 
 ## Current state
 
-This is a transparent snapshot as of **2026-08-11**. Counts describe the
+This is a transparent snapshot as of **2026-08-13**. Counts describe the
 repository; they do not describe learning outcomes.
 
 | Area | Current state | What the state means |
@@ -440,7 +440,7 @@ repository; they do not describe learning outcomes.
 | Project | `candidate` | The product skeleton and core contracts exist; broad independent evidence is still being built |
 | Chapters | 22 structured chapters · `candidate` | Canonical English sources exist, but runtime exercises and broad independent review remain incomplete |
 | Labs | 18 labs · `draft` · `run_status: not_run` | The contracts exist; the repository does not claim that every lab has been freshly executed |
-| Skills | 13 project Skills · `candidate` | Structural checks pass; fresh-context evidence is partial and remains visible in the registry |
+| Skills | 14 project Skills · `candidate` | Structural checks pass; fresh-context evidence is partial and remains visible in the registry |
 | Evaluation fixtures | 40 fixtures · `candidate` · `not_run` | The task set is defined; model execution logs are not being implied |
 | Public showcase | `candidate` | English default and Chinese runtime toggle are implemented; broader visual and locale coverage remains work |
 | Locale rollout | EN source plus five translation entries in progress | Six entry locales are registered; the whole book is not yet six-language complete |

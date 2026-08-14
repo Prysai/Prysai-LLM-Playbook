@@ -101,6 +101,22 @@ it.
 | **Check** | A question, source condition, or revision request that exposes uncertainty. | Prevents an answer from being treated as self-validating. | Verified facts, teaching quality, or a reliable score. |
 | **Stop and receipt** | A condition that ends the session and the small record to keep. | Makes incompleteness and next steps visible. | Retention, transfer, or a completed real-world task. |
 
+![Make the boundary visible: name six first-turn fields; visible fields do not certify safety, correctness, or completion.](../../assets/teaching/first-turn-contract-card.svg)
+
+### Before sending: inspect, do not certify
+
+If a reader has already written an unsent, text-only, low-risk request, the
+[First-Turn Check Skill](../../skills/prysai-first-turn-check/SKILL.md) can
+label each field `visible`, `missing`, `unclear`, or `out_of_scope`. It returns
+at most three material `add_or_clarify` lines rather than a replacement prompt.
+Use [Dialogue Brief](../../skills/prysai-dialogue-brief/SKILL.md) when a first
+message must be drafted, and use [Task Protocol](../../skills/prysai-task-protocol/SKILL.md)
+when a file, tool, account, permission, or external effect is involved.
+
+The check is a candidate structural method. It makes a draft easier to inspect;
+it does not validate the answer, product behavior, data handling, safety, or
+learning result.
+
 ## Prompt card A: five-minute Spanish practice
 
 This is an original, low-stakes exercise pattern. It asks for a short written

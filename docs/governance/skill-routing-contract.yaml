@@ -50,6 +50,20 @@
       ]
     },
     {
+      "id": "prysai-first-turn-check",
+      "intent": "first_turn_request_check",
+      "skill_path": "skills/prysai-first-turn-check/SKILL.md",
+      "allowed_handoffs": [
+        "prysai-dialogue-brief",
+        "prysai-task-protocol",
+        "prysai-source-investigator",
+        "prysai-research-router",
+        "prysai-learning-coach",
+        "prysai-communication-failure-triage",
+        "prysai-evidence-review"
+      ]
+    },
+    {
       "id": "prysai-codex-coach",
       "intent": "codex_learning",
       "skill_path": "skills/prysai-codex-coach/SKILL.md",
@@ -173,6 +187,20 @@
       "text": "I have not sent it yet; turn my safe text-only request into one first message with a check and a stop boundary.",
       "signals": {"intents": ["first_turn_dialogue_brief"], "explicit_skill": "", "safety_block": ""},
       "expected": {"disposition": "route", "owner": "prysai-dialogue-brief", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "single-first-turn-check",
+      "kind": "single",
+      "text": "Here is my unsent, text-only request. Check whether it names an outcome, context, response, limits, a check, and a stopping receipt; do not rewrite it.",
+      "signals": {"intents": ["first_turn_request_check"], "explicit_skill": "", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-first-turn-check", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "neighbor-first-turn-check",
+      "kind": "near_neighbor",
+      "text": "Before I send this low-risk chat request, label only the material gaps. Keep my wording and do not write a replacement message.",
+      "signals": {"intents": ["first_turn_request_check"], "explicit_skill": "", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-first-turn-check", "handoffs": [], "segments": []}
     },
     {
       "id": "single-codex",
@@ -621,6 +649,13 @@
       "expected": {"disposition": "route", "owner": "prysai-learning-coach", "handoffs": [], "segments": []}
     },
     {
+      "id": "mixed-first-turn-check-brief",
+      "kind": "mixed",
+      "text": "First inspect my unsent low-risk draft for material gaps, then help me write a revised first message only if I choose to continue.",
+      "signals": {"intents": ["first_turn_request_check", "first_turn_dialogue_brief"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner_handoff"},
+      "expected": {"disposition": "route", "owner": "prysai-first-turn-check", "handoffs": ["prysai-dialogue-brief"], "segments": []}
+    },
+    {
       "id": "mixed-multistage",
       "kind": "mixed",
       "text": "Deliver a multi-stage project including task definition and source research.",
@@ -675,6 +710,13 @@
       "text": "Use $prysai-dialogue-brief to make one first message; do not research or execute it.",
       "signals": {"intents": ["unclear_task"], "explicit_skill": "prysai-dialogue-brief", "safety_block": ""},
       "expected": {"disposition": "route", "owner": "prysai-dialogue-brief", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "explicit-first-turn-check-wins",
+      "kind": "explicit",
+      "text": "Use $prysai-first-turn-check to inspect this unsent request; do not turn it into a new prompt or run it.",
+      "signals": {"intents": ["first_turn_dialogue_brief"], "explicit_skill": "prysai-first-turn-check", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-first-turn-check", "handoffs": [], "segments": []}
     },
     {
       "id": "explicit-audit-wins",
@@ -746,6 +788,13 @@
       "text": "Use $prysai-dialogue-brief to send my customer export and publish the result without review.",
       "signals": {"intents": ["first_turn_dialogue_brief"], "explicit_skill": "prysai-dialogue-brief", "safety_block": "private data and unauthorized publication"},
       "expected": {"disposition": "blocked", "owner": "prysai-dialogue-brief", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "safety-over-first-turn-check",
+      "kind": "safety",
+      "text": "Use $prysai-first-turn-check on my unsent customer export and then publish the result without confirmation.",
+      "signals": {"intents": ["first_turn_request_check"], "explicit_skill": "prysai-first-turn-check", "safety_block": "private data and unauthorized publication"},
+      "expected": {"disposition": "blocked", "owner": "prysai-first-turn-check", "handoffs": [], "segments": []}
     },
     {
       "id": "boundary-dialogue-brief-local-repository",

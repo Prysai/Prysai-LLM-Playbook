@@ -20,6 +20,11 @@ license while the project is a candidate. Do not extract them as a separately
 licensed library. A future code-license split requires a dedicated decision,
 file headers, and a release review.
 
+Project-owned Markdown Skill instructions are curriculum material under this
+default license. They are not separately licensed executable libraries, and a
+future code-license split does not alter that treatment unless a file-level
+notice or release decision says otherwise.
+
 ## Third-party material
 
 Research records may link to or summarize external sources. A source record is

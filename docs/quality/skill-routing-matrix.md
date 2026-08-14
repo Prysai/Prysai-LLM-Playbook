@@ -5,7 +5,7 @@
 **Status:** `candidate`
 
 This matrix is the human-readable projection of the routing contract for the
-thirteen project Skills. It defines responsibility and handoff; it does not
+fourteen project Skills. It defines responsibility and handoff; it does not
 grant tool access or replace project rules. The machine-readable source is
 [`../governance/skill-routing-contract.yaml`](../governance/skill-routing-contract.yaml),
 whose fixtures test declared policy consistency, not trigger accuracy.
@@ -17,7 +17,7 @@ whose fixtures test declared policy consistency, not trigger accuracy.
    safety block; another Skill must not silently replace it.
 2. Project rules, user constraints, and permission gates outrank every Skill.
 3. If no Skill is explicit, choose the narrowest Skill whose primary question
-   matches the task. Do not load all thirteen by default.
+   matches the task. Do not load all fourteen by default.
 4. A Skill may hand off only to a named downstream responsibility in the table.
    Handoffs transfer control; they are not recursive co-ownership.
 5. Evidence Review is an audit gate, not a universal preamble. It reviews an
@@ -35,6 +35,7 @@ whose fixtures test declared policy consistency, not trigger accuracy.
 | Skill | Primary question | Owns | Must yield to | Must not own |
 |---|---|---|---|---|
 | `prysai-dialogue-brief` / Dialogue Brief | “How do I write one clear first message before I have sent it?” | one text-only, low-risk first-turn brief with outcome, safe inputs, acceptance check, and stop boundary | Learning Coach for practice; Codex Coach for Codex learning; Task Protocol for files, tools, authority, or effects; Source Investigator / Research Router for factual research; Communication Failure Triage for a preserved failed reply | teaching, research, execution, tool use, source claims, failure diagnosis, or a generic prompt catalogue |
+| `prysai-first-turn-check` / First-Turn Check | “Before I send this draft, which material first-turn boundaries are missing or unclear?” | six-field inspection of an unsent, text-only, low-risk user draft; at most three material add-or-clarify lines | Dialogue Brief for a new message; Task Protocol for files, tools, permissions, or effects; Source Investigator / Research Router for sources; Learning Coach for practice; Communication Failure Triage for an actual failed reply | drafting a replacement request, execution, product or security certification, research, coaching, or a generic prompt catalogue |
 | `prysai-codex-coach` / Codex Coach | “How do I learn GPT, Codex, tools, Skills, or Agent workflows?” | Codex-domain learning level, explanation, experiment, reflection, transfer | Learning Coach for non-Codex performance; explicit Skill; Task Protocol; Evidence Review; Research Router; Skill Selector; Workflow Orchestrator; Product Context | general tutoring, execution, installation, source synthesis, product claims |
 | `prysai-communication-failure-triage` / Communication Failure Triage | “Why did this preserved request and reply fail, and what is the smallest comparable repair?” | post-failure evidence packet, candidate classification, one-variable prompt repair, comparable rerun contract | Task Protocol for an untried vague task; Evidence Review for a claim audit; Source Investigator for current platform facts | hidden-reasoning claims, fresh task definition, platform diagnosis, permission expansion, generic prompt catalogues |
 | `prysai-task-protocol` / Task Protocol | “What exactly is the bounded task?” | goal, inputs, constraints, actions, acceptance, failure, delivery | explicit Skill; Workflow Orchestrator after readiness; domain route for unresolved method | execution, evidence audit, method selection |
@@ -50,13 +51,17 @@ whose fixtures test declared policy consistency, not trigger accuracy.
 
 ## Allowed handoff graph
 
-Two bounded research routes complement the original nine: Field Signal
+Five narrow responsibilities extend the original nine without turning the
+catalogue into a generic prompt library: Dialogue Brief drafts one unsent,
+text-only first message; First-Turn Check inspects an existing unsent draft;
+Communication Failure Triage owns an already failed interaction; Field Signal
 Curator owns public demand and failure-signal records without proving root
-cause or prevalence; Platform Adapter Review owns the decision about whether a
-named-platform lesson adds a sourced, runnable delta from the universal core.
-The former may hand off fixed facts to Source Investigator; the latter may
-hand off missing current facts to Source Investigator or an existing packet to
-Evidence Review.
+cause or prevalence; and Platform Adapter Review decides whether a named-
+platform lesson adds a sourced, runnable delta from the universal core. Field
+Signal Curator may hand off fixed facts to Source Investigator; Platform
+Adapter Review may hand off missing current facts to Source Investigator or an
+existing packet to Evidence Review. First-Turn Check may hand the reader's
+chosen next step to Dialogue Brief, but it never drafts the replacement itself.
 
 ## Curriculum layer route
 
@@ -76,6 +81,7 @@ The default graph is finite:
 ```text
 user
  ├─ untried text-only first message ─> Dialogue Brief
+ ├─ unsent text-only draft to inspect ─> First-Turn Check
  ├─ GPT/Codex learning ──> Codex Coach
  ├─ preserved failed reply > Communication Failure Triage
  ├─ unclear task ───────> Task Protocol
@@ -99,7 +105,7 @@ a cycle. Workflow Orchestrator records its own delivery checkpoint after the
 downstream artifact is available; that checkpoint is not a graph edge back.
 ```
 
-The graph forbids `Coach → Coach`, `Selector → Selector`,
+The graph forbids `Coach → Coach`, `First-Turn Check → First-Turn Check`, `Selector → Selector`,
 `Evidence Review → Evidence Review`, `Research Router → Research Router`,
 `Product Context → Product Context`, and any domain Skill starting its own
 orchestration loop. A changed requirement is a new route, not an implicit loop.
@@ -154,12 +160,12 @@ Additional contract fields are required where the route needs them:
 ## Source and maintenance boundary
 
 - **Source:** `CONTEXT.md`, `docs/charter.md`, `docs/book-architecture.md`,
-  `docs/quality/skill-quality-standard.md`, and the thirteen Skill files.
+  `docs/quality/skill-quality-standard.md`, and the fourteen Skill files.
 - **License:** original project rewrite. External skill repositories and
   supplied archives remain reference-only unless the asset register records a
   compatible license and attribution.
 - **Owner:** capability-routing maintainer.
-- **Version:** `0.5.0`.
+- **Version:** `0.6.0`.
 - **Next review:** `2026-09-12`.
 
 The 2026-08-09 official facts refresh for chapters 4–7 is recorded at

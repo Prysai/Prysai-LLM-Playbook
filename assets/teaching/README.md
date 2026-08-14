@@ -17,6 +17,7 @@ see before the reader works through the prose.
 - [Four-line conversation safety card](conversation-safety-card-red-black.svg)
 - [Beginner safety stop card](beginner-safety-stop-card.svg)
 - [Public-interest safety research](public-interest-safety-research-red-black.svg)
+- [First-turn contract](first-turn-contract-card.svg)
 
 The cards are visual explanations, not benchmark results. Their scope,
 ownership, and reuse boundary are recorded in the

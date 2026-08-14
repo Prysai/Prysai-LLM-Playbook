@@ -78,7 +78,7 @@ it does not replace the local Codex task.
 | Rehearse the checking habit without a project | [Optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) | One fictional message, three human checks, and a bounded receipt |
 | Build a reliable request | [Chapter 3](book/chapters/03-task-protocol-EN.md) + [Lab 002](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop, and recovery conditions |
 | Practise language, research, or a small work task | [Beginner Practice Pack](book/communication-clinic-EN.md) | An attempt, focused correction, variation, and evidence boundary |
-| Draft a first text-only request for any LLM surface | [Universal first-turn contract](docs/research/universal-first-turn-prompt-contract-2026-08-13.md) | Two candidate Spanish/research cards with an explicit limit, check, stop, and receipt |
+| Draft or check a first text-only request for any LLM surface | [Universal first-turn contract](docs/research/universal-first-turn-prompt-contract-2026-08-13.md) + [First-Turn Check](skills/prysai-first-turn-check/SKILL.md) | Six visible fields, two candidate cards, and a bounded before-send inspection |
 | Start an unfamiliar task without handing over control | [Four-line safety card](book/communication-clinic-EN.md#four-line-safety-card) | Name allowed input, one action, inspectable evidence, and a stop condition before the task can widen |
 | Inspect the whole curriculum | [Book guide](book/README-EN.md) + [table of contents](book/table-of-contents-EN.md) | Reading routes, chapter order, and lab boundaries |
 | Contribute or find a file | [Project map](docs/project-map-EN.md) + [CONTRIBUTING.md](CONTRIBUTING.md) | Directory roles and the documented update path |
@@ -178,7 +178,7 @@ support, proof of a bug, or learner-outcome evidence; see the
 |---|---|---|
 | English chapters | 22 canonical sources | Reader learning, retention, or transfer |
 | Labs | 18 labs, all `draft / not_run` | Learner runs and independent reruns |
-| Skills | 13 project-owned `candidate` Skills | Broad trigger reliability or learner outcomes |
+| Skills | 14 project-owned `candidate` Skills | Broad trigger reliability or learner outcomes |
 | Evaluation | 40 fixtures, `not_run / static_structure_only` | Scored executions and reviewer records |
 | Locales | English source plus five migration routes | Complete, independently reviewed translations |
 | Release | `candidate` | Public deployment, a release tag, or production readiness |

@@ -2,14 +2,23 @@
 
 **Access date:** 2026-08-13
 **Status:** research record; recommendations only
-**Scope:** the twelve project-owned candidate Skills, two proposed methods,
-controlled prompt comparison, and bounded evidence of learning
-**Decision:** add no new top-level Skill now
+**Scope at the recorded checkpoint:** the twelve project-owned candidate
+Skills, two proposed methods, controlled prompt comparison, and bounded
+evidence of learning
+**Decision at the recorded checkpoint:** add no new top-level Skill now
+
+> **Later status — 2026-08-13:** this historical overlap decision predates
+> `prysai-first-turn-check` (S83). That candidate owns a narrower seam not
+> assessed here: it labels material gaps in an existing unsent, text-only,
+> low-risk draft and does not draft, research, coach, execute, or repair a
+> failed interaction. Its separate routing fixtures and candidate limits are
+> the authoritative current record.
 
 ## Executive decision
 
-The project already has twelve candidate Skills and no demonstrated ownership
-gap that requires a thirteenth or fourteenth. `practice evidence reviewer`
+At this recorded checkpoint, the project had twelve candidate Skills and no
+demonstrated ownership gap requiring either proposal as a thirteenth or
+fourteenth Skill. `practice evidence reviewer`
 collides with Learning Coach and Evidence Review. Its useful controls belong in
 a learning-evidence evaluation profile and checklist: Learning Coach owns the
 live practice turn; Evidence Review audits an existing learning claim and its

@@ -27,6 +27,10 @@ def main() -> int:
     require(any("boundary-dialogue-brief-local-repository" in e for e in routing.validate_contract(local_repository)), "local repository boundary routed through Dialogue Brief")
     current_rules=copy.deepcopy(base); fixture=next(x for x in current_rules["fixtures"] if x["id"]=="boundary-dialogue-brief-current-rules"); fixture["expected"]["owner"]="prysai-dialogue-brief"
     require(any("boundary-dialogue-brief-current-rules" in e for e in routing.validate_contract(current_rules)), "current-facts boundary routed through Dialogue Brief")
+    first_turn_rewrite=copy.deepcopy(base); fixture=next(x for x in first_turn_rewrite["fixtures"] if x["id"]=="explicit-first-turn-check-wins"); fixture["expected"]["owner"]="prysai-dialogue-brief"
+    require(any("explicit-first-turn-check-wins" in e for e in routing.validate_contract(first_turn_rewrite)), "First-Turn Check was silently replaced by drafting")
+    first_turn_safety=copy.deepcopy(base); fixture=next(x for x in first_turn_safety["fixtures"] if x["id"]=="safety-over-first-turn-check"); fixture["expected"]["disposition"]="route"
+    require(any("safety-over-first-turn-check" in e for e in routing.validate_contract(first_turn_safety)), "First-Turn Check bypassed a safety block")
     false_explicit=copy.deepcopy(base); fixture=next(x for x in false_explicit["fixtures"] if x["id"]=="explicit-wins"); fixture["expected"]["owner"]="prysai-research-router"
     require(any("explicit-wins" in e for e in routing.validate_contract(false_explicit)), "implicit route overrode explicit Skill")
     false_safety=copy.deepcopy(base); fixture=next(x for x in false_safety["fixtures"] if x["id"]=="safety-over-explicit"); fixture["expected"]["disposition"]="route"
