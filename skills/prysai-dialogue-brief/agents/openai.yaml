@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dialogue Brief"
+  short_description: "Turn one untried request into a copy-ready first message."
+  default_prompt: "Use $prysai-dialogue-brief to prepare one low-risk, copy-ready first message for my request."

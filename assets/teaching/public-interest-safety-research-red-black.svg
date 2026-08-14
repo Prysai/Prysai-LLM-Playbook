@@ -1,79 +1,75 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-  <title id="title">A public-interest safety research card for an AI-assisted decision</title>
-  <desc id="desc">An original red, black, cream, and lime teaching board showing five questions: purpose, people, inputs, control, and evidence. It ends with a stop rule for missing ownership, recourse, data boundaries, or evidence.</desc>
+  <title id="title">Public-interest safety research before an AI-assisted decision</title>
+  <desc id="desc">An original cream, black, red, and lime teaching board. It shows five research questions: decision and owner, people and burdens, inputs and limits, review and recourse, and evidence and unknowns. A red stop panel says to record the gap instead of certifying a use.</desc>
   <rect width="1600" height="900" fill="#f7f1e5"/>
-  <rect x="56" y="48" width="1488" height="804" fill="none" stroke="#1c1b1a" stroke-width="4"/>
-  <rect x="56" y="48" width="24" height="804" fill="#e23d28"/>
-  <text x="116" y="128" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" letter-spacing="3">WHEN AN AI-ASSISTED TASK COULD AFFECT PEOPLE</text>
-  <text x="116" y="205" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="800">RESEARCH THE</text>
-  <rect x="605" y="145" width="482" height="73" fill="#c5f83a" transform="skewX(-8)"/>
-  <text x="629" y="205" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="800">PUBLIC IMPACT</text>
-  <text x="116" y="252" fill="#504d48" font-family="Arial, Helvetica, sans-serif" font-size="25">Safety is not a product adjective. Name the decision, the people, the control, and the evidence before a use widens.</text>
+  <rect x="48" y="42" width="1504" height="816" fill="none" stroke="#1c1b1a" stroke-width="4"/>
+  <rect x="48" y="42" width="22" height="816" fill="#e23d28"/>
 
-  <g transform="translate(116 320)">
-    <rect width="260" height="290" fill="#1c1b1a"/>
-    <rect width="260" height="13" fill="#e23d28"/>
-    <text x="22" y="62" fill="#c5f83a" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="2">01 / PURPOSE</text>
-    <text x="22" y="113" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700">What decision</text>
-    <text x="22" y="148" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700">is proposed?</text>
-    <line x1="22" y1="181" x2="238" y2="181" stroke="#74706a" stroke-width="2"/>
-    <text x="22" y="215" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="19">Name the owner,</text>
-    <text x="22" y="242" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="19">scope, and time.</text>
-    <text x="22" y="270" fill="#c5f83a" font-family="Courier New, monospace" font-size="14">not “is it safe?”</text>
+  <text x="104" y="104" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="3">PUBLIC-INTEREST RESEARCH FOR AN AI-ASSISTED DECISION</text>
+  <text x="104" y="174" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="800">START WITH THE</text>
+  <rect x="608" y="119" width="290" height="68" fill="#c5f83a" transform="skewX(-8)"/>
+  <text x="630" y="174" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="800">DECISION,</text>
+  <text x="914" y="174" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="800">NOT THE MODEL.</text>
+  <text x="104" y="224" fill="#504d48" font-family="Arial, Helvetica, sans-serif" font-size="23">Before a system affects people, make its purpose, data, control, evidence, and unknowns reviewable.</text>
+
+  <g transform="translate(104 300)">
+    <rect width="260" height="260" fill="#1c1b1a"/>
+    <rect width="260" height="12" fill="#e23d28"/>
+    <text x="22" y="55" fill="#c5f83a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="2">01 / PURPOSE</text>
+    <text x="22" y="111" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700">Decision</text>
+    <text x="22" y="148" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700">+ owner</text>
+    <line x1="22" y1="173" x2="238" y2="173" stroke="#74706a" stroke-width="2"/>
+    <text x="22" y="207" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18">Name what changes,</text>
+    <text x="22" y="233" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18">who owns it, and why.</text>
   </g>
 
-  <g transform="translate(398 320)">
-    <rect width="260" height="290" fill="#ffffff" stroke="#1c1b1a" stroke-width="4"/>
-    <rect width="260" height="13" fill="#e23d28"/>
-    <text x="22" y="62" fill="#e23d28" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="2">02 / PEOPLE</text>
-    <text x="22" y="113" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700">Who may be</text>
-    <text x="22" y="148" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700">affected?</text>
-    <line x1="22" y1="181" x2="238" y2="181" stroke="#d4d0ca" stroke-width="2"/>
-    <text x="22" y="215" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="19">Consider unequal</text>
-    <text x="22" y="242" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="19">burdens and benefits.</text>
-    <text x="22" y="270" fill="#504d48" font-family="Courier New, monospace" font-size="14">include non-users</text>
+  <g transform="translate(386 300)">
+    <rect width="260" height="260" fill="#ffffff" stroke="#1c1b1a" stroke-width="4"/>
+    <rect width="260" height="12" fill="#e23d28"/>
+    <text x="22" y="55" fill="#e23d28" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="2">02 / PEOPLE</text>
+    <text x="22" y="111" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700">People</text>
+    <text x="22" y="148" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700">+ burdens</text>
+    <line x1="22" y1="173" x2="238" y2="173" stroke="#d4d0ca" stroke-width="2"/>
+    <text x="22" y="207" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="18">Include non-users and</text>
+    <text x="22" y="233" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="18">people who need recourse.</text>
   </g>
 
-  <g transform="translate(680 320)">
-    <rect width="260" height="290" fill="#1c1b1a"/>
-    <rect width="260" height="13" fill="#e23d28"/>
-    <text x="22" y="62" fill="#c5f83a" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="2">03 / INPUTS</text>
-    <text x="22" y="113" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700">What data</text>
-    <text x="22" y="148" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700">enters — or stays out?</text>
-    <line x1="22" y1="181" x2="238" y2="181" stroke="#74706a" stroke-width="2"/>
-    <text x="22" y="215" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="19">Minimize and name</text>
-    <text x="22" y="242" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="19">the data boundary.</text>
-    <text x="22" y="270" fill="#c5f83a" font-family="Courier New, monospace" font-size="14">no secret by default</text>
+  <g transform="translate(668 300)">
+    <rect width="260" height="260" fill="#1c1b1a"/>
+    <rect width="260" height="12" fill="#e23d28"/>
+    <text x="22" y="55" fill="#c5f83a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="2">03 / INPUTS</text>
+    <text x="22" y="111" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700">Inputs</text>
+    <text x="22" y="148" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700">+ limits</text>
+    <line x1="22" y1="173" x2="238" y2="173" stroke="#74706a" stroke-width="2"/>
+    <text x="22" y="207" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18">Use only what is needed.</text>
+    <text x="22" y="233" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18">Name prohibited data.</text>
   </g>
 
-  <g transform="translate(962 320)">
-    <rect width="260" height="290" fill="#ffffff" stroke="#1c1b1a" stroke-width="4"/>
-    <rect width="260" height="13" fill="#e23d28"/>
-    <text x="22" y="62" fill="#e23d28" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="2">04 / CONTROL</text>
-    <text x="22" y="113" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700">Who reviews,</text>
-    <text x="22" y="148" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700">corrects, or stops?</text>
-    <line x1="22" y1="181" x2="238" y2="181" stroke="#d4d0ca" stroke-width="2"/>
-    <text x="22" y="215" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="19">Keep human review</text>
-    <text x="22" y="242" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="19">and recourse visible.</text>
-    <text x="22" y="270" fill="#504d48" font-family="Courier New, monospace" font-size="14">do not invent an owner</text>
+  <g transform="translate(950 300)">
+    <rect width="260" height="260" fill="#ffffff" stroke="#1c1b1a" stroke-width="4"/>
+    <rect width="260" height="12" fill="#e23d28"/>
+    <text x="22" y="55" fill="#e23d28" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="2">04 / CONTROL</text>
+    <text x="22" y="111" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700">Review</text>
+    <text x="22" y="148" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700">+ recourse</text>
+    <line x1="22" y1="173" x2="238" y2="173" stroke="#d4d0ca" stroke-width="2"/>
+    <text x="22" y="207" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="18">Name the reviewer,</text>
+    <text x="22" y="233" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="18">correction path, and stop.</text>
   </g>
 
-  <g transform="translate(1244 320)">
-    <rect width="260" height="290" fill="#1c1b1a"/>
-    <rect width="260" height="13" fill="#e23d28"/>
-    <text x="22" y="62" fill="#c5f83a" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" letter-spacing="2">05 / EVIDENCE</text>
-    <text x="22" y="113" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700">What was</text>
-    <text x="22" y="148" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700">actually checked?</text>
-    <line x1="22" y1="181" x2="238" y2="181" stroke="#74706a" stroke-width="2"/>
-    <text x="22" y="215" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="19">Separate findings</text>
-    <text x="22" y="242" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="19">from assumptions.</text>
-    <text x="22" y="270" fill="#c5f83a" font-family="Courier New, monospace" font-size="14">retain unknowns</text>
+  <g transform="translate(1232 300)">
+    <rect width="260" height="260" fill="#1c1b1a"/>
+    <rect width="260" height="12" fill="#e23d28"/>
+    <text x="22" y="55" fill="#c5f83a" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="2">05 / EVIDENCE</text>
+    <text x="22" y="111" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700">Evidence</text>
+    <text x="22" y="148" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700">+ unknowns</text>
+    <line x1="22" y1="173" x2="238" y2="173" stroke="#74706a" stroke-width="2"/>
+    <text x="22" y="207" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18">Link claims to scope.</text>
+    <text x="22" y="233" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18">Keep gaps visible.</text>
   </g>
 
-  <path d="M800 624v46" fill="none" stroke="#e23d28" stroke-width="7"/>
-  <path d="M786 663l14 21 14-21" fill="none" stroke="#e23d28" stroke-width="7"/>
-  <rect x="398" y="700" width="1106" height="104" fill="#e23d28"/>
-  <text x="430" y="742" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">STOP: no public-impact safety claim when the decision owner, route to correction,</text>
-  <text x="430" y="776" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">data boundary, or evidence cannot be named. Record the gap; do not turn it into approval.</text>
-  <text x="116" y="744" fill="#1c1b1a" font-family="Courier New, monospace" font-size="16">A PROJECT-OWNED RESEARCH AID — NOT A RISK ASSESSMENT OR A SECURITY CERTIFICATE</text>
+  <text x="104" y="636" fill="#1c1b1a" font-family="Courier New, monospace" font-size="17" font-weight="700" letter-spacing="1">RECORD THE DECISION  →  EXPOSE THE GAP  →  SEEK AUTHORIZED REVIEW</text>
+  <rect x="104" y="670" width="1388" height="98" fill="#e23d28"/>
+  <text x="134" y="711" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">STOP: do not make a public-impact safety claim when the owner, correction path,</text>
+  <text x="134" y="745" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">data boundary, or evidence cannot be named. Record the gap; do not turn it into approval.</text>
+  <text x="104" y="820" fill="#504d48" font-family="Courier New, monospace" font-size="15">PROJECT-OWNED RESEARCH AID · NOT A RISK ASSESSMENT, COMPLIANCE OPINION, OR SECURITY CERTIFICATE</text>
 </svg>

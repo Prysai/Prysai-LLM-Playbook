@@ -11,6 +11,11 @@ source-supported research decision. Use its two cards in order. These original
 cards turn conversation into inspectable work; they do not prove that a prompt
 is best or that a model is an effective teacher or researcher.
 
+The [entry-level collaboration research record](../docs/research/entry-level-llm-collaboration-for-language-and-research-2026-08-13.md)
+records the source boundaries behind the language and research cards. It is
+candidate research, not a finding that these cards improve learning or research
+quality.
+
 If a reply has already missed the task, skip the intake and use the
 [post-failure recovery route](#recovery-route). It preserves the miss, changes
 one communication condition, and records what a comparable rerun does and does
@@ -52,6 +57,12 @@ the acceptance check. Do not fill an unknown with an impressive assumption.
 | Recovery | If this is too hard or a source cannot be checked, what is smaller? | Fallback and stop rule |
 
 ### Action — copy only the contract, not a promise
+
+If the result is only one untried, text-only, low-risk first message and the
+outcome, audience, safe inputs, constraints, check, and stop boundary are
+already known, use the [Dialogue Brief Skill](../skills/prysai-dialogue-brief/SKILL.md)
+instead. It prepares that one message and stops; it does not teach, research,
+operate tools, or repair a reply that has already failed.
 
 ```text
 Help me choose one first practice route. Ask one question at a time and stop
@@ -272,6 +283,25 @@ accountability. These are governance frameworks in their own scopes. They do
 not certify an LLM product, establish that a proposed use has caused harm, or
 replace law, policy, security review, domain expertise, or an affected person's
 judgment.
+
+### Match the evidence to the question
+
+Public-interest research is not a softer name for a technical test. Each
+question needs evidence that can actually answer it. A model output, a polished
+policy, or one public post can be a lead; none substitutes for the right
+evidence below.
+
+| Question | Evidence that can begin to answer it | What it still cannot establish |
+| --- | --- | --- |
+| Did this bounded workflow follow a declared rule on a fictional input? | A fixed synthetic fixture, stated rubric, and saved receipt. | Behavior in a real service, resistance to every attack, or a safe deployment. |
+| Could people be burdened, excluded, or unable to correct an error? | A scoped affected-people analysis plus authorized, appropriate evidence from the people and context concerned. | That one operator's view or one anecdote is representative. |
+| Is a control or policy actually in force for this use? | A named owner, current approved policy, control scope, and an independently inspectable implementation record. | That the control is effective, lawful, or sufficient on its own. |
+| Does a claim about fairness, privacy, accessibility, or outcomes hold? | A claim-specific evaluation design, relevant data governance, scoring method, and qualified review. | A conclusion from generated prose, an unopened citation, or an unmeasured proxy. |
+
+This project supplies only the first row's fictional classification exercise.
+It uses the other rows to show why a real public-impact claim requires an
+authorized process and evidence beyond a chat session. Do not turn unknowns
+into reassuring policy language merely because the model can write it fluently.
 
 ### A five-question inquiry card
 

@@ -179,7 +179,7 @@
     ]
   },
   "skills": {
-    "count": 12,
+    "count": 13,
     "status": "candidate",
     "validator_status": "structural_checks_passed",
     "fresh_context_status": "2_isolated_single_turn_observations; broader trigger, repeated-runtime, learner, and transfer evidence remains partial or not_run",
@@ -195,6 +195,7 @@
       "docs/quality/curriculum-depth-review-2026-08-10.md",
       "docs/quality/review-codex-facts-refresh-2026-08-10.md",
       "docs/research/original-skill-overlap-and-controlled-evidence-patterns-2026-08-13.md",
+      "docs/research/entry-level-llm-collaboration-for-language-and-research-2026-08-13.md",
       "docs/governance/skill-registry.yaml",
       "scripts/validate_skill_registry.py",
       "evals/candidates/evidence-review-v1/README.md",
@@ -202,6 +203,7 @@
     ],
     "items": [
       {"id": "prysai-codex-coach", "path": "skills/prysai-codex-coach", "status": "candidate", "fresh_context_status": "static_contract_reviewed; runtime_pretest_pending"},
+      {"id": "prysai-dialogue-brief", "path": "skills/prysai-dialogue-brief", "status": "candidate", "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"},
       {"id": "prysai-task-protocol", "path": "skills/prysai-task-protocol", "status": "candidate", "fresh_context_status": "basic_pretest_passed"},
       {"id": "prysai-evidence-review", "path": "skills/prysai-evidence-review", "status": "candidate", "fresh_context_status": "editorial_single_turn_method_loaded_handoff_observation; authenticated_receipt_automatic_trigger_and_repeated_runtime_pending"},
       {"id": "prysai-skill-selector", "path": "skills/prysai-skill-selector", "status": "candidate", "fresh_context_status": "basic_pretest_passed"},
@@ -225,6 +227,7 @@
       "book/communication-clinic-EN.md",
       "book/guides/learning-practice-contract-EN.md",
       "docs/research/beginner-first-practice-friction-2026-08-13.md",
+      "docs/research/entry-level-llm-collaboration-for-language-and-research-2026-08-13.md",
       "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
       "docs/sources/asset-register.md"
     ],

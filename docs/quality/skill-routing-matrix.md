@@ -1,11 +1,11 @@
 # Skill routing matrix
 
-**Version:** `0.4.0`
+**Version:** `0.5.0`
 **Review date:** `2026-09-12`
 **Status:** `candidate`
 
 This matrix is the human-readable projection of the routing contract for the
-twelve project Skills. It defines responsibility and handoff; it does not
+thirteen project Skills. It defines responsibility and handoff; it does not
 grant tool access or replace project rules. The machine-readable source is
 [`../governance/skill-routing-contract.yaml`](../governance/skill-routing-contract.yaml),
 whose fixtures test declared policy consistency, not trigger accuracy.
@@ -17,7 +17,7 @@ whose fixtures test declared policy consistency, not trigger accuracy.
    safety block; another Skill must not silently replace it.
 2. Project rules, user constraints, and permission gates outrank every Skill.
 3. If no Skill is explicit, choose the narrowest Skill whose primary question
-   matches the task. Do not load all twelve by default.
+   matches the task. Do not load all thirteen by default.
 4. A Skill may hand off only to a named downstream responsibility in the table.
    Handoffs transfer control; they are not recursive co-ownership.
 5. Evidence Review is an audit gate, not a universal preamble. It reviews an
@@ -34,6 +34,7 @@ whose fixtures test declared policy consistency, not trigger accuracy.
 
 | Skill | Primary question | Owns | Must yield to | Must not own |
 |---|---|---|---|---|
+| `prysai-dialogue-brief` / Dialogue Brief | “How do I write one clear first message before I have sent it?” | one text-only, low-risk first-turn brief with outcome, safe inputs, acceptance check, and stop boundary | Learning Coach for practice; Codex Coach for Codex learning; Task Protocol for files, tools, authority, or effects; Source Investigator / Research Router for factual research; Communication Failure Triage for a preserved failed reply | teaching, research, execution, tool use, source claims, failure diagnosis, or a generic prompt catalogue |
 | `prysai-codex-coach` / Codex Coach | “How do I learn GPT, Codex, tools, Skills, or Agent workflows?” | Codex-domain learning level, explanation, experiment, reflection, transfer | Learning Coach for non-Codex performance; explicit Skill; Task Protocol; Evidence Review; Research Router; Skill Selector; Workflow Orchestrator; Product Context | general tutoring, execution, installation, source synthesis, product claims |
 | `prysai-communication-failure-triage` / Communication Failure Triage | “Why did this preserved request and reply fail, and what is the smallest comparable repair?” | post-failure evidence packet, candidate classification, one-variable prompt repair, comparable rerun contract | Task Protocol for an untried vague task; Evidence Review for a claim audit; Source Investigator for current platform facts | hidden-reasoning claims, fresh task definition, platform diagnosis, permission expansion, generic prompt catalogues |
 | `prysai-task-protocol` / Task Protocol | “What exactly is the bounded task?” | goal, inputs, constraints, actions, acceptance, failure, delivery | explicit Skill; Workflow Orchestrator after readiness; domain route for unresolved method | execution, evidence audit, method selection |
@@ -74,6 +75,7 @@ The default graph is finite:
 
 ```text
 user
+ ├─ untried text-only first message ─> Dialogue Brief
  ├─ GPT/Codex learning ──> Codex Coach
  ├─ preserved failed reply > Communication Failure Triage
  ├─ unclear task ───────> Task Protocol
@@ -152,12 +154,12 @@ Additional contract fields are required where the route needs them:
 ## Source and maintenance boundary
 
 - **Source:** `CONTEXT.md`, `docs/charter.md`, `docs/book-architecture.md`,
-  `docs/quality/skill-quality-standard.md`, and the twelve Skill files.
+  `docs/quality/skill-quality-standard.md`, and the thirteen Skill files.
 - **License:** original project rewrite. External skill repositories and
   supplied archives remain reference-only unless the asset register records a
   compatible license and attribution.
 - **Owner:** capability-routing maintainer.
-- **Version:** `0.4.0`.
+- **Version:** `0.5.0`.
 - **Next review:** `2026-09-12`.
 
 The 2026-08-09 official facts refresh for chapters 4–7 is recorded at

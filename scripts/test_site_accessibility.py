@@ -224,8 +224,8 @@ def main() -> int:
         kinds = {content_id: record.get("kind") for content_id, record in manifest["contents"].items()}
         skill_ids = {content_id for content_id, kind in kinds.items() if kind == "skill"}
         field_note_ids = {content_id for content_id, kind in kinds.items() if kind == "field-note"}
-        if len(skill_ids) != 12:
-            raise AssertionError(f"reader-content-identity: expected 12 Skills, got {len(skill_ids)}")
+        if len(skill_ids) != 13:
+            raise AssertionError(f"reader-content-identity: expected 13 Skills, got {len(skill_ids)}")
         if field_note_ids != {"field-problems-index-2026-08-10", "field-problems-forums-2026-08-10", "codex-field-cases-current-review-2026-08-12", "ai-safety-field-signals-and-research-receipts-2026-08-13", "field-case-external-instruction-authority-2026-08-13"}:
             raise AssertionError(f"reader-content-identity: unexpected public Field notes: {sorted(field_note_ids)}")
         fixtures += 1

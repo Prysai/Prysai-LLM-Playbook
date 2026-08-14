@@ -36,6 +36,20 @@
   },
   "skills": [
     {
+      "id": "prysai-dialogue-brief",
+      "intent": "first_turn_dialogue_brief",
+      "skill_path": "skills/prysai-dialogue-brief/SKILL.md",
+      "allowed_handoffs": [
+        "prysai-learning-coach",
+        "prysai-codex-coach",
+        "prysai-task-protocol",
+        "prysai-source-investigator",
+        "prysai-research-router",
+        "prysai-communication-failure-triage",
+        "prysai-evidence-review"
+      ]
+    },
+    {
       "id": "prysai-codex-coach",
       "intent": "codex_learning",
       "skill_path": "skills/prysai-codex-coach/SKILL.md",
@@ -146,6 +160,20 @@
     }
   ],
   "fixtures": [
+    {
+      "id": "single-dialogue-brief",
+      "kind": "single",
+      "text": "Help me write the first message to ask for a concise rewrite of this fictional workshop note, while preserving its facts.",
+      "signals": {"intents": ["first_turn_dialogue_brief"], "explicit_skill": "", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-dialogue-brief", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "neighbor-dialogue-brief",
+      "kind": "near_neighbor",
+      "text": "I have not sent it yet; turn my safe text-only request into one first message with a check and a stop boundary.",
+      "signals": {"intents": ["first_turn_dialogue_brief"], "explicit_skill": "", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-dialogue-brief", "handoffs": [], "segments": []}
+    },
     {
       "id": "single-codex",
       "kind": "single",
@@ -586,6 +614,13 @@
       }
     },
     {
+      "id": "mixed-dialogue-learning",
+      "kind": "mixed",
+      "text": "Write the first prompt for my Spanish practice, then coach my attempt and test a changed case.",
+      "signals": {"intents": ["non_codex_practice", "first_turn_dialogue_brief"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner"},
+      "expected": {"disposition": "route", "owner": "prysai-learning-coach", "handoffs": [], "segments": []}
+    },
+    {
       "id": "mixed-multistage",
       "kind": "mixed",
       "text": "Deliver a multi-stage project including task definition and source research.",
@@ -633,6 +668,13 @@
         "handoffs": [],
         "segments": []
       }
+    },
+    {
+      "id": "explicit-dialogue-brief-wins",
+      "kind": "explicit",
+      "text": "Use $prysai-dialogue-brief to make one first message; do not research or execute it.",
+      "signals": {"intents": ["unclear_task"], "explicit_skill": "prysai-dialogue-brief", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-dialogue-brief", "handoffs": [], "segments": []}
     },
     {
       "id": "explicit-audit-wins",
@@ -697,6 +739,27 @@
         "handoffs": [],
         "segments": []
       }
+    },
+    {
+      "id": "safety-over-dialogue-brief",
+      "kind": "safety",
+      "text": "Use $prysai-dialogue-brief to send my customer export and publish the result without review.",
+      "signals": {"intents": ["first_turn_dialogue_brief"], "explicit_skill": "prysai-dialogue-brief", "safety_block": "private data and unauthorized publication"},
+      "expected": {"disposition": "blocked", "owner": "prysai-dialogue-brief", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "boundary-dialogue-brief-local-repository",
+      "kind": "boundary",
+      "text": "Draft a first message asking the model to inspect my local repository and tell me which files it needs.",
+      "signals": {"intents": ["unclear_task"], "explicit_skill": "", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-task-protocol", "handoffs": [], "segments": []}
+    },
+    {
+      "id": "boundary-dialogue-brief-current-rules",
+      "kind": "boundary",
+      "text": "Draft a first message asking the model to search current travel rules for Japan and cite the official source.",
+      "signals": {"intents": ["bounded_current_lookup"], "explicit_skill": "", "safety_block": ""},
+      "expected": {"disposition": "route", "owner": "prysai-source-investigator", "handoffs": [], "segments": []}
     },
     {
       "id": "safety-over-implicit",

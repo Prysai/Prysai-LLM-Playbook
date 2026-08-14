@@ -74,6 +74,8 @@ def evaluate_fixture(contract: dict[str, Any], fixture: dict[str, Any]) -> dict[
     if policy == "single_owner_handoff":
         downstream = [owners.get(intent, "") for intent in intents[1:]]
         return {"disposition": "route", "owner": inferred, "handoffs": downstream, "segments": []}
+    if policy == "single_owner":
+        return {"disposition": "route", "owner": inferred, "handoffs": [], "segments": []}
     return {"disposition": "invalid", "owner": "", "handoffs": [], "segments": []}
 
 
@@ -115,7 +117,7 @@ def validate_contract(contract: dict[str, Any]) -> list[str]:
     if "Never infer" not in curriculum.get("equivalence_rule", ""):
         errors.append("curriculum routing must prohibit inferred platform equivalence")
     skills = contract.get("skills", [])
-    if not isinstance(skills, list) or len(skills) != 12: errors.append("skills must contain exactly twelve records"); skills = []
+    if not isinstance(skills, list) or len(skills) != 13: errors.append("skills must contain exactly thirteen records"); skills = []
     skill_ids: set[str] = set(); intents: set[str] = set(); graph: dict[str, set[str]] = {}
     for skill in skills:
         sid = skill.get("id"); intent = skill.get("intent"); path = skill.get("skill_path")
@@ -137,6 +139,7 @@ def validate_contract(contract: dict[str, Any]) -> list[str]:
     fixtures = contract.get("fixtures", [])
     seen: set[str] = set(); single: set[str] = set(); neighbors: set[str] = set()
     explicit_owners: set[str] = set(); safety_owners: set[str] = set(); mixed_owners: set[str] = set()
+    boundary_owners: dict[str, str] = {}
     content_needs: set[str] = set(); fixture_platforms: set[str] = set()
     kinds: set[str] = set()
     for fixture in fixtures:
@@ -166,6 +169,7 @@ def validate_contract(contract: dict[str, Any]) -> list[str]:
         owner = actual.get("owner", "")
         if kind == "safety" and owner: safety_owners.add(owner)
         if kind == "mixed" and owner: mixed_owners.add(owner)
+        if kind == "boundary": boundary_owners[str(fid)] = owner
         handoff_list = actual.get("handoffs", [])
         if len(handoff_list) != len(set(handoff_list)): errors.append(f"{fid}: duplicate handoff owner")
         if owner and owner in handoff_list: errors.append(f"{fid}: owner cannot hand off to itself")
@@ -176,10 +180,16 @@ def validate_contract(contract: dict[str, Any]) -> list[str]:
     if neighbors != intents: errors.append(f"near-neighbor fixtures must cover all intents: missing={sorted(intents-neighbors)}")
     for required in ("mixed", "explicit", "safety"):
         if required not in kinds: errors.append(f"fixtures need kind: {required}")
-    for new_skill in ("prysai-field-signal-curator", "prysai-platform-adapter-review", "prysai-communication-failure-triage"):
+    for new_skill in ("prysai-dialogue-brief", "prysai-field-signal-curator", "prysai-platform-adapter-review", "prysai-communication-failure-triage"):
         if new_skill not in explicit_owners: errors.append(f"new Skill needs explicit fixture: {new_skill}")
         if new_skill not in safety_owners: errors.append(f"new Skill needs safety fixture: {new_skill}")
-        if new_skill not in mixed_owners: errors.append(f"new Skill needs mixed-owner fixture: {new_skill}")
+        if new_skill != "prysai-dialogue-brief" and new_skill not in mixed_owners: errors.append(f"new Skill needs mixed-owner fixture: {new_skill}")
+    expected_boundaries = {
+        "boundary-dialogue-brief-local-repository": "prysai-task-protocol",
+        "boundary-dialogue-brief-current-rules": "prysai-source-investigator",
+    }
+    if boundary_owners != expected_boundaries:
+        errors.append(f"Dialogue Brief boundary fixtures must route files and current facts: {boundary_owners}")
     if content_needs != {"transferable_workflow", "platform_delta", "bounded_application", "cross_platform_equivalence"}:
         errors.append("curriculum fixtures must cover core, adapter, playbook, and equivalence boundaries")
     if fixture_platforms != set(adapter_status):
@@ -195,7 +205,7 @@ def main() -> int:
         for error in errors: print(f"- {error}")
         return 1
     contract=load_contract()
-    print(f"SKILL_ROUTING_CONTRACT_OK skills=12 fixtures={len(contract['fixtures'])} single=12 neighbors=12 curriculum_routes=5 status=candidate")
+    print(f"SKILL_ROUTING_CONTRACT_OK skills=13 fixtures={len(contract['fixtures'])} single=13 neighbors=13 curriculum_routes=5 status=candidate")
     print("evidence_boundary=declared-policy-and-curriculum-route-consistency; not model routing accuracy or cross-platform equivalence")
     return 0
 

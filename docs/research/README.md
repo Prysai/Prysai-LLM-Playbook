@@ -24,6 +24,8 @@ Useful indexes:
 
 - [Critical learning-product audit](critical-learning-product-audit-2026-08-13.md) — an evidence-mapped candidate audit through instructional-design, reproducibility, and responsible-AI governance lenses. It identifies release-blocking gaps; it is not external accreditation, endorsement, or certification.
 
+- [Entry-level LLM collaboration for language and research](entry-level-llm-collaboration-for-language-and-research-2026-08-13.md) — candidate prompt cards for one bounded language-practice or source-backed research session. It rejects speed, fluency, certification, and outcome claims that were not measured.
+
 - [Cross-platform learner needs and prompt patterns](cross-platform-learner-needs-and-prompt-patterns-2026-08-13.md) — six official guidance records and six public user reports mapped to bounded language, research, and practical-task patterns. It does not compare platforms, establish prevalence, or prove outcomes.
 
 - [AI collaboration safety boundaries](ai-collaboration-safety-boundaries-2026-08-13.md) — source-backed boundaries for prompt injection, minimum necessary input, action authority, and verification. It proposes low-risk teaching actions; it is not a security certification, incident study, or locally reproduced attack record.
