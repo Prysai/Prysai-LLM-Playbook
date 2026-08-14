@@ -62,7 +62,10 @@ button, input, select, textarea { font: inherit; }
 .locale-banner[hidden] { display: none; }
 .menu-toggle { display: none; border: 0; padding: .5rem 0; align-items: center; gap: .75rem; color: var(--ink); background: transparent; cursor: pointer; font-size: .8rem; }
 .menu-icon { display: grid; gap: 5px; }
-.menu-icon i { display: block; width: 22px; height: 1px; background: currentColor; }
+.menu-icon i { display: block; width: 22px; height: 1px; background: currentColor; transition: transform .16s ease; }
+.menu-toggle[aria-expanded="true"] .menu-icon { gap: 0; }
+.menu-toggle[aria-expanded="true"] .menu-icon i:first-child { transform: rotate(45deg); }
+.menu-toggle[aria-expanded="true"] .menu-icon i:last-child { transform: rotate(-45deg); }
 .site-nav { display: flex; align-items: center; gap: clamp(.85rem, 1.6vw, 1.8rem); font-size: .76rem; font-weight: 700; }
 .site-nav a { padding-block: .5rem; border-bottom: 1px solid transparent; }
 .site-nav a:hover, .site-nav a:focus-visible { color: var(--red); border-color: var(--red); }

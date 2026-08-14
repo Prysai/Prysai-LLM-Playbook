@@ -528,11 +528,11 @@ function canonicalChapterTitle(chapter) {
       }
       if (frontMatter) { if (line.trim() === '---') frontMatter = false; index += 1; continue; }
       if (!line.trim()) { index += 1; continue; }
-      const navigationStart = line.trim().match(/^<!--\s*(chapter|lab)-navigation:start\s*-->$/i);
-      if (navigationStart) {
-        const navigationKind = navigationStart[1];
+      const generatedBlockStart = line.trim().match(/^<!--\s*(chapter-navigation|lab-navigation|language-switcher):start\s*-->$/i);
+      if (generatedBlockStart) {
+        const generatedBlockKind = generatedBlockStart[1];
         index += 1;
-        while (index < lines.length && !new RegExp(`^<!--\\s*${navigationKind}-navigation:end\\s*-->$`, 'i').test(lines[index].trim())) {
+        while (index < lines.length && !new RegExp(`^<!--\\s*${generatedBlockKind}:end\\s*-->$`, 'i').test(lines[index].trim())) {
           index += 1;
         }
         if (index < lines.length) index += 1;

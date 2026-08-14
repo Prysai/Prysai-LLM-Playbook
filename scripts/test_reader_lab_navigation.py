@@ -51,7 +51,7 @@ def main() -> int:
             "updateLabLink(mobileNext, next, 'next');",
             "updateLabPagination(previousLink, previousTitle, previous, 'previous');",
             "updateLabPagination(nextLink, nextTitle, next, 'next');",
-            "const navigationStart = line.trim().match(/^<!--\\s*(chapter|lab)-navigation:start\\s*-->$/i);",
+            "const generatedBlockStart = line.trim().match(/^<!--\\s*(chapter-navigation|lab-navigation|language-switcher):start\\s*-->$/i);",
             "const h1BeforeFrontMatter = fragment.childNodes.length === 1 && fragment.firstChild?.tagName === 'H1';",
         ):
             require(required in reader, f"Reader Lab contract is missing: {required}")
@@ -68,7 +68,7 @@ def main() -> int:
             search_body = search_index.source_body(search_fixture)
             require(search_body.startswith("# Visible title"), "search index exposes front matter around the first H1")
             require("id: fixture" not in search_body, "search index retained front-matter metadata")
-        require("${navigationKind}-navigation:end" in reader, "Reader does not strip matching chapter and Lab navigation blocks")
+        require("${generatedBlockKind}:end" in reader, "Reader does not strip matching generated metadata blocks")
 
         matrix = json.loads(LOCALE_MATRIX_PATH.read_text(encoding="utf-8"))
         records = {record["content_id"]: record for record in matrix["content"]}

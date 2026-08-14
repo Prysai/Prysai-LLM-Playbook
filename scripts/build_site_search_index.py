@@ -53,7 +53,10 @@ def title_and_text(raw: str, canonical_title: str) -> tuple[str, str, str]:
     body = source_body(raw)
     heading = re.search(r"(?m)^#\s+(.+?)\s*#*\s*$", body)
     source_title = strip_markdown(heading.group(1)).strip() if heading else ""
-    title = canonical_title
+    # Chapters use the curated navigation title. Other pages should still have
+    # a human-readable heading in the reader and search results rather than an
+    # internal content identifier such as "lab-001-first-safe-task".
+    title = canonical_title or source_title
     text = strip_markdown(body)
     text = normalize_text(text)
     if title:
@@ -98,7 +101,7 @@ def build_index() -> dict[str, Any]:
             canonical_title = chapter.get("canonical_title_en") if locale == "en" else chapter.get("canonical_title_zh")
             title, search_text, snippet = title_and_text(
                 path.read_text(encoding="utf-8"),
-                canonical_title or content_id,
+                canonical_title or "",
             )
             ready = record.get("translation_status") in READY_TRANSLATIONS
             available.append(locale)

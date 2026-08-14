@@ -208,6 +208,17 @@ try {
   await page.getByRole('button', { name: 'Search', exact: true }).click();
   await page.locator('[data-search-results] .search-result').first().waitFor();
   assert.ok(await page.locator('[data-search-results] .search-result').count() > 0, 'search returned no results for verification');
+  await searchInput.fill('safe task');
+  await page.getByRole('button', { name: 'Search', exact: true }).click();
+  await page.locator('[data-search-results] .search-result').first().waitFor();
+  const safeTaskResults = await page.locator('[data-search-results] .search-result strong').allTextContents();
+  assert.match(safeTaskResults[0], /safe.*task/i, 'search did not put a safe-task learning page first');
+  const labIndexPage = await context.newPage();
+  await labIndexPage.goto(`${origin}/site/reader.html?path=book%2Flabs%2FREADME-EN.md&lang=en`, { waitUntil: 'networkidle' });
+  await labIndexPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.equal(await labIndexPage.getByText('<!-- language-switcher:end -->', { exact: true }).count(), 0, 'Reader rendered a source language-switcher comment');
+  assert.equal(await labIndexPage.getByText(/^Languages:/, { exact: false }).count(), 0, 'Reader rendered a duplicate source language selector');
+  await labIndexPage.close();
   await searchInput.fill('research checkpoint');
   await page.getByRole('button', { name: 'Search', exact: true }).click();
   await page.locator('[data-search-results] .search-result').filter({ hasText: 'AI safety field signals' }).first().waitFor();
@@ -282,6 +293,12 @@ try {
   assert.match(await page.getByRole('link', { name: 'Open every problem route' }).getAttribute('href'), /reader\.html\?path=README-EN\.md&lang=en#choose-your-starting-point$/, 'mobile route index link does not target the canonical English README route section');
   assert.equal(await page.getByRole('button', { name: 'Copy rescue prompt' }).isVisible(), true, 'mobile rescue control is hidden');
   assert.equal(await page.getByRole('button', { name: 'Copy my local check record' }).isVisible(), true, 'mobile local record control is hidden');
+  await page.getByRole('button', { name: 'Open navigation' }).click();
+  const closeMenuButton = page.getByRole('button', { name: 'Close navigation' });
+  assert.equal(await closeMenuButton.getByText('Close', { exact: true }).isVisible(), true, 'mobile menu does not visibly identify its close action');
+  assert.equal(await page.locator('.site-nav.is-open').isVisible(), true, 'mobile navigation does not open');
+  await closeMenuButton.click();
+  assert.equal(await page.locator('.site-nav.is-open').count(), 0, 'mobile navigation does not close again');
 
   await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F02-first-safe-task-EN.md&lang=en`, { waitUntil: 'networkidle' });
   await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
