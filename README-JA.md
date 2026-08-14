@@ -1,6 +1,6 @@
 # Prysai LLM Playbook — From First Task to Reliable Work
 
-> Codex：最初のタスクから、実際の仕事へ
+> LLM 実践ガイド：最初のタスクから、信頼できる仕事へ
 
 <!-- language-switcher:start -->
 **言語：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）

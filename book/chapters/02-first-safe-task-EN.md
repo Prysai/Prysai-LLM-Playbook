@@ -1,6 +1,19 @@
-<!-- content_id: chapter-02-first-safe-task | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-10 -->
+<!-- content_id: chapter-02-first-safe-task | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-14 -->
 
 # Chapter 2: Complete your first safe, verifiable task
+
+## Start here: make the first step boring on purpose
+
+This is where many people feel pressure to prove that they can “really use” an
+AI coding tool. You do not need a dramatic task. In fact, a dramatic first
+task hides the lesson: when too many files, permissions, and unknowns change at
+once, you cannot tell what made the result succeed or fail.
+
+For this chapter, small is a feature. Choose one visible target, one allowed
+change, and one check you can repeat. If you do not yet have a disposable
+project, pause here and use the offline [First Safe Change fixture](../routes/first-safe-change-EN.md).
+It gives you a safe place to practise the loop before Lab 001 asks you to work
+with project-specific facts.
 
 ## The problem this chapter solves
 

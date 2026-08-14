@@ -1,0 +1,111 @@
+{
+  "schema_version": "1",
+  "policy_id": "repository-security-policy",
+  "status": "candidate",
+  "owner": "governance-maintainer",
+  "reviewed_at": "2026-08-14",
+  "next_review": "2026-09-14",
+  "scope": {
+    "included": [
+      "tracked and unignored candidate repository files",
+      "GitHub Actions workflow definitions",
+      "pull-request review metadata",
+      "contributor security disclosures"
+    ],
+    "excluded": [
+      "GitHub account recovery",
+      "organization-wide policy",
+      "external hosting headers and access control",
+      "third-party dependency vulnerability databases",
+      "runtime penetration testing"
+    ]
+  },
+  "automation": {
+    "workflow_path": ".github/workflows/security-policy.yml",
+    "events": ["pull_request", "push:main"],
+    "token_permissions": {"contents": "read"},
+    "forbidden_workflow_features": [
+      "pull_request_target",
+      "secrets context in repository workflows",
+      "write-scoped token permissions on pull_request workflows",
+      "persisted checkout credentials on pull_request workflows",
+      "unpinned third-party GitHub Actions"
+    ],
+    "checks": [
+      "pull-request event, explicit read-only permission, and checkout credential boundary",
+      "full-SHA Action pinning",
+      "tracked credential-shaped files",
+      "common token and private-key markers",
+      "unsafe shell-pipe patterns in workflows",
+      "policy fixture tests"
+    ],
+    "evidence_limit": "A passing check only establishes the declared static policy over the checked commit. It does not prove that no secret, vulnerability, unsafe dependency, account compromise, deployment risk, or host-side misconfiguration exists."
+  },
+  "review_requirements": {
+    "all_pull_requests": [
+      "bounded change description",
+      "source and license disclosure",
+      "safety and external-effect disclosure",
+      "commands and evidence actually produced",
+      "unverified scope"
+    ],
+    "heightened_review_paths": [
+      ".github/workflows/**",
+      "scripts/**",
+      "package-lock.json",
+      "package.json",
+      "SECURITY.md",
+      "docs/governance/repository-security-policy.yaml"
+    ],
+    "heightened_review_rule": "A maintainer must review the diff, requested permission change, supply-chain source, rollback path, and declared evidence before merge. Automation may flag a change but must not approve, merge, comment on, or modify a pull request on its own."
+  },
+  "host_ruleset": {
+    "status": "unenforceable_on_private_organization_plan",
+    "observed_at": "2026-08-14",
+    "observation": "GitHub Settings > Rulesets displayed: Your rulesets won't be enforced on this private repository until you upgrade this organization account to GitHub Team.",
+    "configuration_state": "not_created",
+    "recommended_configuration_when_enforceable": {
+      "name": "protect-main",
+      "target_branches": ["main"],
+      "enforcement": "active",
+      "bypass_list": "empty by default; add a temporary emergency bypass only with a documented approval and removal date",
+      "rules": [
+        "Require a pull request before merging, with at least one approving human review and all review threads resolved.",
+        "Require the exact successful quality and repository-security status checks observed after the first CI run; do not guess check names.",
+        "Block force pushes on main.",
+        "Restrict deletions of main."
+      ]
+    },
+    "evidence_limit": "The current UI permits drafting a Ruleset but says it will not be enforced. This plan is not an enabled GitHub Ruleset, branch protection rule, required status check, or proof that direct pushes are blocked."
+  },
+  "sources": [
+    {
+      "url": "https://docs.github.com/en/actions/security-for-github-actions/security-guides/security-hardening-for-github-actions",
+      "accessed_at": "2026-08-14",
+      "scope": "least-privileged GITHUB_TOKEN permissions, pinning Actions, and workflow hardening",
+      "owner": "governance-maintainer",
+      "next_review": "2026-09-14"
+    },
+    {
+      "url": "https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#permissions",
+      "accessed_at": "2026-08-14",
+      "scope": "workflow-level and job-level permission declarations",
+      "owner": "governance-maintainer",
+      "next_review": "2026-09-14"
+    },
+    {
+      "url": "https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets",
+      "accessed_at": "2026-08-14",
+      "scope": "host-side Ruleset availability and later branch enforcement",
+      "owner": "governance-maintainer",
+      "next_review": "2026-09-14"
+    },
+    {
+      "url": "https://docs.github.com/en/enterprise-cloud@latest/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets",
+      "accessed_at": "2026-08-14",
+      "scope": "official Ruleset options for pull requests, required checks, force pushes, and deletion restrictions",
+      "owner": "governance-maintainer",
+      "next_review": "2026-09-14"
+    }
+  ]
+}

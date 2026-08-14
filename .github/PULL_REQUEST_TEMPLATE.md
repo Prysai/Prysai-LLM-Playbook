@@ -18,6 +18,10 @@
 
 <!-- Secrets, permissions, network access, publishing, deletion, external messages, or none. State authorization and rollback where applicable. -->
 
+## Security review
+
+<!-- Does this touch workflows, scripts, dependencies, credentials, deployment, or repository policy? State the requested permission, supply-chain source, rollback path, and the maintainer review needed. Otherwise write "No heightened-review path". -->
+
 ## Evidence actually produced
 
 <!-- Exact commands, run results, screenshots/logs/reviews, and the candidate SHA or artifact when relevant. -->

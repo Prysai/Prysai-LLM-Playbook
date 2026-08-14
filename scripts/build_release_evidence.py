@@ -44,6 +44,8 @@ REQUIRED_COMMANDS = {
     "reader-lab-navigation-fixtures": ("{python}", "scripts/test_reader_lab_navigation.py"),
     "lab-navigation-output": ("{python}", "scripts/build_lab_navigation.py", "--check"),
     "github-template-fixtures": ("{python}", "scripts/test_validate_github_templates.py"),
+    "repository-security-policy": ("{python}", "scripts/validate_repository_security.py"),
+    "repository-security-policy-fixtures": ("{python}", "scripts/test_validate_repository_security.py"),
     "universal-seam-fixture": ("{python}", "scripts/validate_universal_seam_fixture.py"),
     "universal-seam-fixture-tests": ("{python}", "scripts/test_universal_seam_fixture.py"),
 }

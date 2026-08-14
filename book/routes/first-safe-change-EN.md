@@ -9,6 +9,12 @@ one deliberately incomplete README, one permitted local edit, and one narrow
 checker before you work in a project of your own. It is not Chapter 23, a new
 Skill, a Git exercise, or evidence that a model completed anything.
 
+If this is your first time opening a project folder or running a checker, that
+is exactly why this route exists. You do not need to install anything, create
+an account, or risk a real project to learn the first loop. We will keep the
+target small enough that you can see every relevant file and decide whether the
+check actually answers the question.
+
 ## Problem
 
 Lab 001 asks for a disposable project, a real command source, and a bounded

@@ -3,6 +3,13 @@
 When people first meet GPT, the most natural question is: “What should I say
 to it?”
 
+You do not need to arrive with a favourite model, a coding background, or a
+perfect prompt. The wider LLM landscape includes chat assistants, coding
+agents, retrieval tools, and specialised workflows. This Playbook uses Codex
+as its deepest current practice track, while keeping the transferable method
+separate from product-specific controls. We will compare platforms only where
+their current behaviour is sourced and the lesson has a clear boundary.
+
 That question matters, but it is only the visible edge of the problem. A real
 Codex task succeeds or fails on a larger set of decisions:
 

@@ -396,11 +396,13 @@ The public home page should offer four honest doors:
 Advanced navigation remains visible through **Build systems** and **Lead a
 team**, but should not compete with the first action on the opening screen.
 
-## Naming options and decision criteria
+## Historical naming options and decision criteria
 
-No name is selected by this proposal. A rename has repository, URL, brand,
-scope-claim, translation, and compatibility consequences and therefore needs a
-separate owner decision and ADR.
+No name was selected by this proposal. This is an archived decision input:
+ADR-0034 later selected **Prysai LLM Playbook — From First Task to Reliable
+Work**. A rename has repository, URL, brand, scope-claim, translation, and
+compatibility consequences and therefore needed a separate owner decision and
+ADR.
 
 | Naming direction | Example working option | Strength | Main risk |
 |---|---|---|---|
@@ -409,7 +411,7 @@ separate owner decision and ADR.
 | Collaboration-led | **Working Well with AI** | Human, communication-focused, platform-neutral | May understate tools, agents, evaluation, and engineering depth |
 | Evidence-led | **Verified AI Workflows** | Differentiates on reliability and professional use | Can overpromise verification before labs and evaluations run |
 | Branded umbrella | **Prysai: From First Prompt to Real Work** | Ownable umbrella and continuity with the current subtitle | “Prompt” may narrow the method to prompting; brand recognition must be built |
-| Preserve current | **Codex: From First Task to Real Work** with a universal-core subtitle | Retains identity, links, and clear deepest track | Broader market may still assume Codex-only content |
+| Preserve the then-current title | **Codex: From First Task to Real Work** with a universal-core subtitle | Retains identity, links, and clear deepest track | Broader market may still assume Codex-only content |
 
 Any final candidate must be tested against these criteria:
 

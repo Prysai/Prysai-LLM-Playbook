@@ -1,0 +1,37 @@
+name: Prysai LLM Playbook security
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  push:
+    branches: [main]
+
+# This workflow intentionally uses pull_request, not pull_request_target.
+# It checks untrusted PR content with a read-only token and no secrets.
+permissions:
+  contents: read
+
+concurrency:
+  group: repository-security-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  repository-security:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository without persisted credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Validate repository security policy
+        run: python scripts/validate_repository_security.py
+
+      - name: Run repository security policy fixtures
+        run: python scripts/test_validate_repository_security.py

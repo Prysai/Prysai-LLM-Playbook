@@ -28,7 +28,8 @@
     "The Universal Seam Fixture validator checks fixed fictional records only. It does not reproduce a report, diagnose a product, validate a live tool, establish security, prove learner understanding, or establish cross-platform equivalence.",
     "External URL reachability is recorded by a separate scheduled workflow and is not replayed in this CI packet.",
     "The local input-archive audit depends on machine-local archives and is not replayed on GitHub-hosted runners.",
-    "The official Skill validator is run locally when its bundled runtime is available; CI runs the repository Skill contract validator."
+    "The official Skill validator is run locally when its bundled runtime is available; CI runs the repository Skill contract validator.",
+    "The repository-security policy is a static, pattern-based tripwire. It does not prove the absence of secrets, dependency vulnerabilities, account compromise, runtime flaws, deployment misconfiguration, or host-side branch protection."
   ],
   "dimensions": [
     {
@@ -64,6 +65,8 @@
         {"id": "release-readiness-fixtures", "argv": ["{python}", "scripts/test_release_readiness.py"]},
         {"id": "github-templates", "argv": ["{python}", "scripts/validate_github_templates.py"]},
         {"id": "github-template-fixtures", "argv": ["{python}", "scripts/test_validate_github_templates.py"]},
+        {"id": "repository-security-policy", "argv": ["{python}", "scripts/validate_repository_security.py"]},
+        {"id": "repository-security-policy-fixtures", "argv": ["{python}", "scripts/test_validate_repository_security.py"]},
         {"id": "localization", "argv": ["{python}", "scripts/validate_localization.py"]},
         {"id": "site-i18n", "argv": ["{python}", "scripts/validate_site_i18n.py"]},
         {"id": "book-navigation", "argv": ["{python}", "scripts/validate_book_navigation.py"]},

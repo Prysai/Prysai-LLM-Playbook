@@ -27,6 +27,7 @@ alignment.
 | Check what is current | [`docs/governance/`](governance/) | Status, locale identity, learning path, update map, impact registry, and lifecycle rules |
 | Check quality rules | [`docs/quality/`](quality/) | Chapter, lab, Skill, evaluation, site, and review standards |
 | Check a source or license | [`docs/sources/`](sources/) | External source, archive, asset, attribution, and distribution boundaries |
+| Report a suspected vulnerability | [`SECURITY.md`](../SECURITY.md) | Private reporting route, data-minimization boundary, and response expectations |
 | Inspect a decision | [`docs/adr/`](adr/) | Architecture decisions and the reasons behind them |
 | See a reproducible example | [`examples/`](../examples/) and [`assets/cases/`](../assets/cases/) | Disposable local sandboxes, source inputs, rendered artifacts, and screenshots with evidence limits |
 | Inspect evaluation tasks | [`evals/`](../evals/) | Fixed task fixtures and result directories; task definitions are not run results |

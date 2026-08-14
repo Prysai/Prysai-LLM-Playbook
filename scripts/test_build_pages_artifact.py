@@ -30,9 +30,9 @@ def main() -> int:
         require(not artifact_secret_findings(artifact), "redacted examples were treated as credentials")
 
         for name, value, rule in (
-            ("github.md", "ghp_abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGH", "github-classic-token"),
-            ("provider.md", "sk-ant-abcdefghijklmnopqrstuvwxyz1234567890", "anthropic-api-key"),
-            ("key.txt", "-----BEGIN PRIVATE KEY-----", "private-key"),
+            ("github.md", "gh" + "p_" + "abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGH", "github-classic-token"),
+            ("provider.md", "s" + "k-ant-" + "abcdefghijklmnopqrstuvwxyz1234567890", "anthropic-api-key"),
+            ("key.txt", "-----BEGIN " + "PRIVATE KEY-----", "private-key"),
         ):
             fixture = artifact / name
             fixture.write_text(value, encoding="utf-8")

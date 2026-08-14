@@ -51,3 +51,4 @@ Current entry points:
 - [ADR-0033: reader-facing LLM Field Guide identity](0033-reader-facing-llm-field-guide-identity.md)
 - [ADR-0034: Prysai LLM Playbook reader identity](0034-prysai-llm-playbook-reader-identity.md)
 - [ADR-0035: rename the remote repository](0035-rename-remote-repository.md)
+- [ADR-0036: repository security policy and PR gate](0036-repository-security-policy-and-pr-gate.md)

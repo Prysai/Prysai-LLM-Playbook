@@ -12,7 +12,7 @@ repository rename.
 > for the exact scope, compatibility boundary, and claims this decision does
 > not make.
 
-## Decision requested from Prysai
+## Decision requested from Prysai at the time of this proposal
 
 Approve, reject, or revise this recommended reader-facing identity:
 
@@ -28,12 +28,12 @@ other platform shares identical controls or outcomes.
 
 ## Why this change is needed
 
-The current title, **Codex: From First Task to Real Work**, is precise for one
-track but narrower than the actual architecture. The project already teaches a
-general collaboration core and explicitly makes platform lessons earn admission
-through sources, bounded runs, failures, and review dates. A reader who uses a
-different language-model product should be able to recognise the core method
-without being promised a completed adapter.
+The then-current title, **Codex: From First Task to Real Work**, was precise
+for one track but narrower than the actual architecture. The project already
+taught a general collaboration core and explicitly made platform lessons earn
+admission through sources, bounded runs, failures, and review dates. A reader
+who uses a different language-model product should be able to recognise the
+core method without being promised a completed adapter.
 
 `Models at Work` is intentionally plain:
 
@@ -47,7 +47,7 @@ It is a recommendation, not a branding claim. “Models” here means language
 models in the curriculum's defined scope; it does not expand the project into a
 survey of every machine-learning system.
 
-## Reader-facing positioning after approval
+## Proposed reader-facing positioning (not adopted)
 
 ```text
 Prysai Lab
@@ -65,10 +65,10 @@ result, then introduce evidence and boundaries. The Chapter 1 opening supplies
 that pattern. It should not begin with plan names, menus, pricing, or a long
 list of features.
 
-## Scope boundaries
+## Scope boundaries at the time of proposal
 
-- This proposal **does not** rename `Prysai/Codex-Field-Guide`, alter GitHub
-  visibility, create a redirect, publish a release, or enable Pages.
+- This proposal **did not itself** rename `Prysai/Codex-Field-Guide`, alter
+  GitHub visibility, create a redirect, publish a release, or enable Pages.
 - It **does not** claim that Codex and Claude Code are direct equivalents or
   that their tool, permission, context, Skill, Agent, or persistence behaviour
   is the same.

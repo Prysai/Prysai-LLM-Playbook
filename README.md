@@ -6,8 +6,8 @@
 
 # Prysai LLM Playbook — From First Task to Reliable Work
 
-> Learn a transferable method for turning a plausible answer into a bounded,
-> checkable result—then practise it most deeply in Codex.
+> Learn a transferable method for reliable work with language models, then
+> practise it most deeply in Codex, the project's flagship track.
 
 <!-- language-switcher:start -->
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
@@ -15,22 +15,23 @@
 
 [Start the recommended Codex path](#the-recommended-first-codex-path) · [Prepare a safe offline fixture](book/routes/first-safe-change-EN.md) · [Try the optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) · [Read the full English guide](README-EN.md)
 
-> **Status:** `candidate` · **Default language:** English · **Maintained by:** Prysai Lab
+> **Status:** `candidate` · **Default locale:** English · **Maintained by:** Prysai Lab
 
 License: curriculum text and teaching assets are CC BY-NC 4.0 unless a file
 states otherwise. See [`LICENSE`](LICENSE) and the [licensing boundary](docs/sources/licensing.md).
 
-`README.md` is the short English GitHub entry. The detailed source is
+`README.md` is GitHub's compact English entry. The detailed source is
 [`README-EN.md`](README-EN.md). The project is a candidate: its structure and
-static checks exist, but learner runs, transfer runs, repeated evaluations, and
-independent review are still pending.
+static checks exist, but learner runs, transfer runs, repeated evaluations,
+and independent review are still pending.
 
 ## What this is
 
-> **A quick welcome:** perhaps you have heard people mention Codex, Claude
-> Code, Agents, or Skills and wondered which one you are supposed to learn
-> first. You are in the right place. We will start with one small question,
-> make one bounded attempt, and keep enough evidence to tell what happened.
+You may have heard people mention Codex, Claude Code, Agents, or Skills and
+wondered which one you are supposed to learn first. You are in the right
+place. We will not start with a product contest or a long feature list. We
+will start with one small question, make one bounded attempt, and keep enough
+evidence to tell what happened.
 
 This is an independent, book-shaped curriculum for working with language
 models responsibly. Start with one beginner question: when a tool says it is
@@ -43,58 +44,63 @@ define the task → choose a bounded action → inspect the result → keep evid
 
 The stable method applies beyond one product. The deepest current practice is
 the Codex track: files, tools, Skills, Agents, verification, and team adoption.
-Familiar names such as Claude Code can orient a new reader, but a named platform
-needs its own source-backed adapter before this guide teaches its controls as
-fact. Platform-specific actions belong in evidence-gated adapters; this guide
-does not claim that every platform behaves the same.
+The wider LLM landscape includes other chat assistants and coding agents, but
+a familiar name is not a reason to pretend their controls or permissions are
+the same. A named platform earns a source-backed adapter before the Playbook
+teaches its actions as fact.
 
 <mark>Do not stop at a plausible output.</mark> Ask what changed, what was
 checked, and what remains unproven.
 
 ## The recommended first Codex path
 
-If you opened this project to make a real local change with Codex, take one
-sequence rather than choosing among the whole catalogue:
+If you opened this project to make a real local change with Codex, do not
+choose among the whole catalogue yet. Take this one sequence:
 
 1. Read [Chapter 1](book/chapters/01-gpt-and-codex-EN.md) to separate a model,
    Codex, tools, Skills, Agents, and evidence.
 2. Run [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) to label what a
    static task card can and cannot establish about generation, execution,
    verification, and external effects.
-3. Read [Chapter 2](book/chapters/02-first-safe-task-EN.md). If you do not
-   have a disposable project yet, use the offline [First Safe Change fixture](book/routes/first-safe-change-EN.md)
-   before choosing one reversible local file change.
-4. Run [Lab 001](book/labs/lab-001-first-safe-task-EN.md): inspect first,
+3. Read [Chapter 2](book/chapters/02-first-safe-task-EN.md) to define one
+   reversible local change and one source-backed acceptance check.
+4. Use [First Safe Change](book/routes/first-safe-change-EN.md) if you do not
+   yet have a disposable project. It provides an optional offline fixture.
+5. Run [Lab 001](book/labs/lab-001-first-safe-task-EN.md): inspect first,
    edit `README.md` only after confirmation, then keep the diff, focused check,
    and an explicit unverified list.
 
 This is the complete candidate L0 → L1 route. The fixture is a supplemental
-bridge, not a chapter or Lab run. Labs 011 and 001 are
-`draft / not_run`: they are candidate exercises, not evidence that beginners
-complete them successfully. Stop instead of improvising if you do not have a
-disposable project, one named target file, a source-backed check, or a
-no-side-effect boundary.
+bridge, not a chapter or Lab run. The fixture is `candidate / not_run`; Labs
+011 and 001 are `draft / not_run`. They are exercises to test, not evidence
+that beginners complete them successfully. Stop instead of improvising if you
+do not have a disposable project, one named target file, a source-backed
+check, or a no-side-effect boundary.
 
 > **Choose by readiness:** start with Chapter 1 when you have a disposable
 > project. If you do not have a safe local target when Chapter 2 asks you to
 > choose one, use the [First Safe Change fixture](book/routes/first-safe-change-EN.md)
-> before Lab 001. The fixture supplies one offline target and checker; it does
-> not replace the guided path. The warm-up below is optional and text-only.
+> before Lab 001. It supplies one offline target and checker; it does not
+> replace the guided path. The warm-up below is optional and text-only.
 
-The warm-up below is optional. It rehearses one evidence habit without setup;
+The warm-up below is optional and text-only. It rehearses one checking habit;
 it does not replace the local Codex task.
 
 ## Choose your starting point
 
-| Your goal | Start here | Leave with |
+| What you need now | Start here | Leave with |
 |---|---|---|
 | Make a first reversible local Codex change | [Recommended Codex path](#the-recommended-first-codex-path) | Needs a disposable project by Chapter 2; leaves with one bounded task card, a small diff, a focused check, and an unverified list |
-| Need a safe local file before using a project | [First Safe Change fixture](book/routes/first-safe-change-EN.md) | One intentionally failing README check, one scoped edit, and a modest local receipt; it does not replace the guided path |
-| Rehearse the checking habit without a project | [Optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) | One fictional message, three human checks, and a bounded receipt; optional, not the local Codex path |
-| Build a reliable request | [Chapter 3](book/chapters/03-task-protocol-EN.md) + [Lab 002](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop, and recovery conditions |
-| Practise language, research, or a small work task | [Spanish exchange](book/communication-clinic-EN.md#language-practice-route) · [one skill](book/communication-clinic-EN.md#general-skill-practice-route) · [source plan](book/communication-clinic-EN.md#bounded-research-route) | One bounded attempt or source plan with a visible limit; not fluency, mastery, browsing, citation validation, or complete research |
-| Draft or check a first text-only request for any LLM surface | [Universal first-turn contract](docs/research/universal-first-turn-prompt-contract-2026-08-13.md) + [First-Turn Check](skills/prysai-first-turn-check/SKILL.md) | Six visible fields, two candidate cards, and a bounded before-send inspection |
-| Start an unfamiliar task without handing over control | [Four-line safety card](book/communication-clinic-EN.md#four-line-safety-card) | Name allowed input, one action, inspectable evidence, and a stop condition before the task can widen |
+| Need a safe local file before using a project | [First Safe Change fixture](book/routes/first-safe-change-EN.md) | One seeded README failure, one permitted README edit, and one local acceptance result; candidate · learner run `not_run` |
+| Rehearse the checking habit without project setup | [Optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) | One fictional message, three human checks, and a bounded receipt; optional, not the local Codex path |
+| Turn a vague request into something an Agent can execute | [Chapter 3](book/chapters/03-task-protocol-EN.md) + [Lab 002](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop conditions, and failure handling |
+| Turn a broad learning or research wish into a first attempt | [Beginner Practice Pack intake](book/communication-clinic-EN.md#first-practice-intake) | Ask one decision at a time, select one existing route, and leave with a bounded receipt; supplemental candidate · complete learner run `not_run` |
+| Assess an AI idea that could affect other people | [Public-interest safety inquiry](book/communication-clinic-EN.md#public-interest-safety-route) | A fixed fictional case for decision ownership, affected people, input limits, recourse, evidence, and a stop receipt; candidate · `not_run` |
+| Recover when the model answered the wrong task | [Post-failure recovery route](book/communication-clinic-EN.md#recovery-route) + [Communication Failure Triage Skill](skills/prysai-communication-failure-triage/SKILL.md) | Preserve the miss, change one communication condition, and record a comparable rerun without claiming a universal fix |
+| Stop trusting “done” too early | [Chapter 9](book/chapters/09-verification-and-recovery-EN.md) + [Lab 003](book/labs/lab-003-evidence-review-EN.md) | A claim-to-evidence review that catches wrong files, missing tests, and scope gaps |
+| Choose or design a Skill | [Skill registry](docs/skill-registry.md) + [Skill quality standard](docs/quality/skill-quality-standard.md) | A bounded Skill contract with triggers, exclusions, dependencies, rollback, and tests |
+| Learn from failures people actually report | [Real-world problem index](docs/research/field-problems-index-2026-08-10.md) | A symptom, a safe first check, a narrower fallback, and an honest evidence level |
+| Turn a personal method into team capability | [Chapter 21](book/chapters/21-team-capability-system-EN.md) + [Contribution model](docs/governance/contribution-model.md) | Ownership, sources, permissions, evaluation, maintenance, and rollback |
 | Inspect the whole curriculum | [Book guide](book/README-EN.md) + [table of contents](book/table-of-contents-EN.md) | Reading routes, chapter order, and lab boundaries |
 | Contribute or find a file | [Project map](docs/project-map-EN.md) + [CONTRIBUTING.md](CONTRIBUTING.md) | Directory roles and the documented update path |
 

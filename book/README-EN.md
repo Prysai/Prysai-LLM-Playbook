@@ -16,6 +16,19 @@ learner's growth, not assembled as a collection of unrelated external
 projects. It explains the ideas, then makes the reader exercise the decisions
 that make those ideas reliable in real work.
 
+## Before you choose a chapter
+
+You do not need to understand the entire LLM landscape before starting. Pick
+the problem closest to your current situation, and let the later chapters fill
+in the vocabulary when it becomes useful. If you have never made a safe local
+change, take the Codex path from Chapter 1. If you do not have a disposable
+project, use **First Safe Change** before Lab 001. If your task is not about
+Codex, begin with the universal-core route, then stop at its stated boundary
+until a source-backed platform adapter exists.
+
+The aim is not to make you sound fluent in product names. It is to help you
+make one decision you can explain, inspect, and improve.
+
 ## The contract for every chapter
 
 Before a chapter belongs in the main learning path, it should make all of the
