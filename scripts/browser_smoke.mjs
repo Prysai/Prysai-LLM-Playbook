@@ -290,6 +290,23 @@ try {
 
   await page.setViewportSize({ width: 390, height: 844 });
   await noHorizontalOverflow(page, 'mobile showcase');
+  const mobileStartRoutes = [
+    [/01-gpt-and-codex-EN\.md/, /understand gpt.*codex/i],
+    [/first-safe-change-EN\.md/, /first safe change/i],
+  ];
+  for (const [index, [pathPattern, titlePattern]] of mobileStartRoutes.entries()) {
+    await page.goto(`${origin}/site/`, { waitUntil: 'networkidle' });
+    const route = page.locator('.mobile-core-routes a').nth(index);
+    const label = (await route.innerText()).replace(/\s+/g, ' ').trim();
+    assert.ok(label, `mobile start route ${index + 1} has no visible label`);
+    const href = await route.getAttribute('href');
+    assert.match(href, /reader\.html\?path=/, `${label}: mobile start route does not open Reader`);
+    assert.match(href, pathPattern, `${label}: mobile start route does not preserve its canonical source`);
+    await route.click();
+    await page.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+    assert.match(await page.locator('[data-reader-article] h1').innerText(), titlePattern, `${label}: Reader did not render the intended first page`);
+  }
+  await page.goto(`${origin}/site/`, { waitUntil: 'networkidle' });
   assert.match(await page.getByRole('link', { name: 'Open every problem route' }).getAttribute('href'), /reader\.html\?path=README-EN\.md&lang=en#choose-your-starting-point$/, 'mobile route index link does not target the canonical English README route section');
   assert.equal(await page.getByRole('button', { name: 'Copy rescue prompt' }).isVisible(), true, 'mobile rescue control is hidden');
   assert.equal(await page.getByRole('button', { name: 'Copy my local check record' }).isVisible(), true, 'mobile local record control is hidden');
