@@ -150,5 +150,52 @@
         "maintenance-fitness": {"value": 4, "rationale": "The candidate is isolated, synthetic, owner-bound, validator-backed, and excluded from canonical counts until separately promoted."}
       }
     }
+  ,
+    {
+      "content_id": "external-instruction-authority-field-case-v1",
+      "family": "field-case",
+      "title": "External instruction, unchanged authority",
+      "status": "admitted-candidate",
+      "audiences": ["beginner", "practitioner"],
+      "platform_scope": "universal",
+      "problem": "Readers can mistake instruction-like text inside external material for new authority, especially after a task becomes long or changes shape.",
+      "capability_increment": "Classify a source sentence separately from the task contract; either extract one predeclared field or stop before a new input, tool, target, or side effect is introduced.",
+      "consequential_decision": "Decide whether to preserve the current boundary and stop, or to request a new human decision before accepting a scope-expanding instruction.",
+      "artifact": "An original field-case record, a synthetic four-line safety card, a quoted predeclared field, an explicit non-action receipt, and a project-owned editable decision diagram.",
+      "acceptance": ["The original card names input, one allowed action, evidence, and a stop condition.", "The learner extracts only the named field from the synthetic fixture.", "The scope-expanding sentence is retained as untrusted data and external actions remain not_run.", "The receipt identifies a limit rather than claiming security or learner mastery."],
+      "failure_case": "A learner treats a request inside a source document to upload, publish, authenticate, or use a secret as task-owner authority, or marks an external action complete without an inspectable artifact.",
+      "evidence_limit": "Admission and the synthetic fixture do not prove that any report occurred as described, that a prompt or card resists injection, that a product is safe, that an action was authorized, or that a learner retains or transfers the decision.",
+      "transfer": "Keep the authority-separation invariant while changing the source type from a fictional note to a research page, dependency note, or tool result. The future exercise must keep a named field and no external action.",
+      "existing_unit_disposition": "Adds one searchable real-world field case and synthetic decision aid. It does not replace Chapter 13, Chapter 12, Chapter 15, Labs 001/007/016, Task Protocol, or Evidence Review; those retain the canonical teaching and practice ownership.",
+      "sources": ["Original project synthesis informed by NIST AI 600-1, OWASP LLM01:2025, CISA AI resources, OpenAI agent-safety guidance, and two public issue records recorded in docs/research/ai-safety-field-signals-2026-08-13.md."],
+      "license_boundary": "Original project prose, synthetic fixture, and SVG only. External sources are linked as reference-only; no issue prose, command, prompt, code, screenshot, attachment, credential, private path, or logo was copied.",
+      "owner": "security-research-maintainer",
+      "reviewed_at": "2026-08-13",
+      "next_review": "2026-09-13",
+      "reported_symptom": "Two public reports describe alleged long-session divergence between a prior safety/task boundary or claimed verification facts and later observable records. They are hypothesis signals only.",
+      "evidence_level": "official risk framing plus two public user reports; no local reproduction, incident investigation, or runtime safety evaluation.",
+      "reproduction_status": "not_run",
+      "unresolved_facts": ["Whether either report is reproducible or has a particular root cause.", "Whether any named product/version/surface behaves the same in another environment.", "Whether the synthetic card improves safety decisions, retention, or transfer."],
+      "hard_gates": {
+        "distinct-increment": {"result": "pass", "evidence": "The field case adds a searchable real-world question, a strict evidence boundary, and a concrete source-data-versus-authority decision without duplicating the existing canonical chapters or Labs."},
+        "no-prompt-folklore": {"result": "pass", "evidence": "The four-line card fixes a boundary and requires inspection; it does not claim a phrase, longer prompt, or role can guarantee a safety outcome."},
+        "no-invented-evidence": {"result": "pass", "evidence": "The reports are named as public symptoms, the fixture is explicitly synthetic, and all product, attack, learner, and action evidence remains not_run or unverified."},
+        "source-license-clear": {"result": "pass", "evidence": "S73 records direct source URLs, access dates, reference-only status, original wording, and the original editable SVG boundary."},
+        "volatile-facts-bounded": {"result": "pass", "evidence": "Issue state and official guidance have access dates, a named owner, review triggers, and a 2026-09-13 recheck boundary; the lesson itself avoids product-specific behavior claims."},
+        "platform-delta-real": {"result": "pass", "evidence": "The case is universal and explicitly refuses cross-platform behavior equivalence; no platform adapter or named-product command is implied."},
+        "acceptance-observable": {"result": "pass", "evidence": "A card, quoted source field, untrusted-data label, external-actions:not_run line, and stated limit can be reviewed against the fixed fixture."},
+        "limits-explicit": {"result": "pass", "evidence": "The case states that it cannot establish incident truth, product behavior, injection resistance, authorization, learner competence, retention, transfer, compliance, or production readiness."}
+      },
+      "scores": {
+        "real-demand": {"value": 4, "rationale": "Public safety guidance and dated public reports make authority drift and unverifiable completion concrete user concerns, while the source record retains non-generalization limits."},
+        "consequential-decision": {"value": 4, "rationale": "The learner must choose between an unsafe scope expansion and a clean stop/request for explicit authority."},
+        "novel-increment": {"value": 3, "rationale": "The core principle exists in Chapter 13 and the Labs; the distinct contribution is a searchable field case with a tiny offline decision artifact and source-specific evidence boundary."},
+        "actionability": {"value": 4, "rationale": "The fixed synthetic fixture, card, receipt, acceptance checks, and stop condition are all usable without an account, tool, secret, or network."},
+        "evidence-strength": {"value": 3, "rationale": "Authoritative risk framing and traceable public reports support the teaching concern, but neither issue was reproduced and no learner or runtime run exists."},
+        "failure-value": {"value": 4, "rationale": "The intentional failure teaches the observable difference between external data and new authority, and preserves a safe blocked outcome."},
+        "transfer-value": {"value": 3, "rationale": "The invariant and changed source types are explicit, but transfer evidence is not yet collected."},
+        "maintenance-fitness": {"value": 4, "rationale": "The case is source-, owner-, status-, and review-bound; it links to existing units rather than creating a duplicate Skill or platform adapter."}
+      }
+    }
   ]
 }

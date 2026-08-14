@@ -15,6 +15,7 @@ see before the reader works through the prose.
 - [Beginner practice loop](beginner-practice-loop-red-black.svg)
 - [Failed-interaction recovery](failed-interaction-recovery-red-black.svg)
 - [Four-line conversation safety card](conversation-safety-card-red-black.svg)
+- [Beginner safety stop card](beginner-safety-stop-card.svg)
 
 The cards are visual explanations, not benchmark results. Their scope,
 ownership, and reuse boundary are recorded in the

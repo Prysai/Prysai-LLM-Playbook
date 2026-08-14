@@ -356,6 +356,23 @@ to reveal secrets, widen permissions, or publish.
 contract.  
 **Stop when:** the instruction is outside the authorized target or data scope.
 
+### Field case: the request changes, but the authority does not
+
+The bounded case [FC-SAFETY-01](../../docs/research/field-case-external-instruction-authority-2026-08-13.md)
+turns two public long-session reports into a simpler, platform-neutral lesson:
+instruction-like text inside a file, page, citation, or tool result is still
+data until the task owner makes a new decision. The reports are symptom
+signals, not an attack study, product diagnosis, or evidence that this rule
+will prevent a failure.
+
+Use the case only when a task includes external material and the next proposed
+step would widen data access, tools, or side effects. It offers a synthetic,
+offline classification card and preserves an honest stop. For the complete
+action taxonomy, use this chapter; for a fuller practice design, see
+[Lab 007](../labs/lab-007-action-boundaries-EN.md) and
+[Lab 016](../labs/lab-016-side-effect-boundary-EN.md). Do not test the rule
+with a real secret, upload, account, connector, or external write.
+
 ## Acceptance checklist
 
 - [ ] I classified an action from its actual side effect, not its tool name.

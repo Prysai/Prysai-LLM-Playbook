@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Beginner safety field note: name the next action</title>
+  <desc id="desc">A safety decision card shows four task signals. A named local read can continue only inside scope. Sending, uploading, or publishing requires a stop. Tokens and environment files are sensitive inputs that require a stop. A completion claim requires inspection. The final rule says to request a new human decision for actions outside the card.</desc>
+  <style>
+    .ink { fill: #171717; }
+    .paper { fill: #f5f2e9; }
+    .red { fill: #d92d3a; }
+    .lime { fill: #c5f83a; }
+    .line { stroke: #171717; stroke-width: 3; }
+    .white { fill: #ffffff; }
+    .sans { font-family: Arial, Helvetica, sans-serif; }
+    .mono { font-family: "Courier New", Courier, monospace; }
+    .kicker { font: 700 22px Arial, Helvetica, sans-serif; letter-spacing: 3px; }
+    .title { font: 800 70px Arial, Helvetica, sans-serif; letter-spacing: -2px; }
+    .head { font: 700 20px Arial, Helvetica, sans-serif; letter-spacing: 1.5px; }
+    .body { font: 700 26px Arial, Helvetica, sans-serif; }
+    .small { font: 400 18px Arial, Helvetica, sans-serif; }
+    .monohead { font: 700 17px "Courier New", Courier, monospace; }
+    .monofoot { font: 700 15px "Courier New", Courier, monospace; letter-spacing: 1px; }
+  </style>
+  <rect class="paper" width="1600" height="900"/>
+  <rect class="ink" x="0" y="0" width="1600" height="210"/>
+  <rect class="red" x="72" y="58" width="18" height="88"/>
+  <text class="kicker white" x="120" y="86">BEGINNER SAFETY FIELD NOTE / 01</text>
+  <text class="title white" x="120" y="166">NAME THE NEXT ACTION.</text>
+  <text class="small white" x="1240" y="86">SYNTHETIC · OFFLINE</text>
+  <text class="small white" x="1240" y="116">NOT A SECURITY RESULT</text>
+
+  <rect class="ink" x="72" y="258" width="1456" height="58"/>
+  <text class="head white" x="100" y="295">PROMPT SIGNAL</text>
+  <text class="head white" x="490" y="295">CLASSIFY</text>
+  <text class="head white" x="770" y="295">SAFE RESPONSE</text>
+  <text class="head white" x="1228" y="295">RECORD</text>
+
+  <rect class="paper" x="72" y="316" width="1456" height="103"/>
+  <line class="line" x1="72" y1="316" x2="1528" y2="316"/>
+  <line class="line" x1="72" y1="419" x2="1528" y2="419"/>
+  <line class="line" x1="450" y1="316" x2="450" y2="419"/>
+  <line class="line" x1="730" y1="316" x2="730" y2="419"/>
+  <line class="line" x1="1190" y1="316" x2="1190" y2="419"/>
+  <rect class="lime" x="750" y="336" width="178" height="63"/>
+  <text class="body ink" x="100" y="358">“Open this file”</text>
+  <text class="small ink" x="100" y="388">named local read</text>
+  <text class="body ink" x="478" y="358">within scope?</text>
+  <text class="small ink" x="478" y="388">target is named</text>
+  <text class="body ink" x="776" y="358">ALLOW</text>
+  <text class="small ink" x="955" y="358">only if the card names it</text>
+  <text class="monohead ink" x="1220" y="370">path</text>
+
+  <rect class="paper" x="72" y="419" width="1456" height="103"/>
+  <line class="line" x1="72" y1="419" x2="1528" y2="419"/>
+  <line class="line" x1="72" y1="522" x2="1528" y2="522"/>
+  <line class="line" x1="450" y1="419" x2="450" y2="522"/>
+  <line class="line" x1="730" y1="419" x2="730" y2="522"/>
+  <line class="line" x1="1190" y1="419" x2="1190" y2="522"/>
+  <text class="body ink" x="100" y="461">“Send / upload / publish”</text>
+  <text class="small ink" x="100" y="491">external effect</text>
+  <text class="body ink" x="478" y="461">new authority</text>
+  <rect class="red" x="750" y="439" width="130" height="63"/>
+  <text class="body white" x="774" y="480">STOP</text>
+  <text class="small ink" x="906" y="461">ask for target + approver</text>
+  <text class="monohead ink" x="1220" y="473">target / owner</text>
+
+  <rect class="paper" x="72" y="522" width="1456" height="103"/>
+  <line class="line" x1="72" y1="522" x2="1528" y2="522"/>
+  <line class="line" x1="72" y1="625" x2="1528" y2="625"/>
+  <line class="line" x1="450" y1="522" x2="450" y2="625"/>
+  <line class="line" x1="730" y1="522" x2="730" y2="625"/>
+  <line class="line" x1="1190" y1="522" x2="1190" y2="625"/>
+  <text class="body ink" x="100" y="564">“Use this token / .env”</text>
+  <text class="small ink" x="100" y="594">sensitive input</text>
+  <text class="body ink" x="478" y="564">data boundary</text>
+  <rect class="red" x="750" y="542" width="130" height="63"/>
+  <text class="body white" x="774" y="583">STOP</text>
+  <text class="small ink" x="906" y="564">use fictional or redacted input</text>
+  <text class="monohead ink" x="1220" y="576">reason only</text>
+
+  <rect class="paper" x="72" y="625" width="1456" height="103"/>
+  <line class="line" x1="72" y1="625" x2="1528" y2="625"/>
+  <line class="line" x1="72" y1="728" x2="1528" y2="728"/>
+  <line class="line" x1="450" y1="625" x2="450" y2="728"/>
+  <line class="line" x1="730" y1="625" x2="730" y2="728"/>
+  <line class="line" x1="1190" y1="625" x2="1190" y2="728"/>
+  <text class="body ink" x="100" y="667">“Done”</text>
+  <text class="small ink" x="100" y="697">completion claim</text>
+  <text class="body ink" x="478" y="667">evidence boundary</text>
+  <text class="body ink" x="776" y="667">INSPECT</text>
+  <text class="small ink" x="952" y="667">artifact + focused check + unknown</text>
+  <text class="monohead ink" x="1220" y="679">receipt</text>
+
+  <rect class="red" x="72" y="774" width="1456" height="68"/>
+  <text class="head white" x="102" y="817">OUTSIDE THE CARD? STOP. ASK FOR A NEW HUMAN DECISION.</text>
+  <text class="monofoot ink" x="72" y="873">PROJECT-OWNED SYNTHETIC DECISION AID · NO ACTION WAS PERFORMED · NOT A SECURITY CERTIFICATE</text>
+</svg>

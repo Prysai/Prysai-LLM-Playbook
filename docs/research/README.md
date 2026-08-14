@@ -30,6 +30,8 @@ Useful indexes:
 
 - [AI safety field signals and research receipts](ai-safety-field-signals-and-research-receipts-2026-08-13.md) — a dated record of instruction-layer ambiguity, non-persistent citations, qualification-versus-contradiction, and long-task boundary drift. It adds an inspectable checkpoint; it is not a prevalence study, product diagnosis, or security control evaluation.
 
+- [Field case: external instruction and action authority](field-case-external-instruction-authority-2026-08-13.md) — a small, synthetic practice case for instruction-like text that tries to widen authority. It does not reproduce an attack, establish product behavior, or prove that the practice prevents prompt injection.
+
 - [First five-minute Codex friction ledger](first-five-minute-codex-friction-ledger-2026-08-13.md) — official environment and evidence boundaries plus four public symptom reports, separated from product, runtime, and learning-outcome claims.
 
 - [Evidence-bounded language-practice starter prompts](evidence-bounded-language-practice-starter-prompts-2026-08-13.md) — primary learning and assessment sources, separated public user symptoms, six distinct beginner problems, and strict claim limits for a candidate language-practice workflow.
