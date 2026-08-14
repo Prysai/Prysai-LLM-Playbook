@@ -345,6 +345,34 @@ try {
   assert.equal(await chineseLabPage.locator('[data-reader-next] .reader-pagination-kicker').innerText(), '下一个实验', 'Chinese Lab navigation labels the next Lab as previous');
   await chineseLabPage.close();
 
+  const chineseSearchPage = await context.newPage();
+  await chineseSearchPage.setViewportSize({ width: 390, height: 844 });
+  await chineseSearchPage.goto(`${origin}/site/index.html?lang=zh`, { waitUntil: 'networkidle' });
+  await chineseSearchPage.locator('[data-site-search-input]').fill('安全任务');
+  await chineseSearchPage.locator('[data-site-search] button[type="submit"]').click();
+  const chineseFirstResult = chineseSearchPage.locator('[data-search-results] .search-result').first();
+  await chineseFirstResult.waitFor();
+  assert.match(await chineseFirstResult.innerText(), /Complete your first safe, verifiable task/i, 'Chinese task search does not put the Chapter 2 fallback first');
+  assert.match(
+    await chineseFirstResult.locator('a').getAttribute('href'),
+    /reader\.html\?path=book%2Fchapters%2F02-first-safe-task-EN\.md&lang=zh$/,
+    'Chinese task search does not preserve the Chinese Reader interface for the English fallback',
+  );
+  const chineseSearchPosition = await chineseSearchPage.evaluate(() => {
+    const header = document.querySelector('[data-header]');
+    const heading = document.querySelector('[data-search-panel] h2');
+    return {
+      headerHeight: header?.getBoundingClientRect().height || 0,
+      headingTop: heading?.getBoundingClientRect().top || 0,
+    };
+  });
+  assert.ok(
+    chineseSearchPosition.headingTop >= chineseSearchPosition.headerHeight + 8,
+    `mobile search heading is obscured by the sticky header: ${JSON.stringify(chineseSearchPosition)}`,
+  );
+  await noHorizontalOverflow(chineseSearchPage, 'mobile Chinese search');
+  await chineseSearchPage.close();
+
   await page.goto(`${origin}/site/reader.html?path=book%2Froutes%2Ffirst-safe-change-EN.md&lang=en`, { waitUntil: 'networkidle' });
   await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
   assert.match(await page.locator('[data-reader-article] h1').innerText(), /First Safe Change/i, 'Reader did not render the First Safe Change route');

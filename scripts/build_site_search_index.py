@@ -122,6 +122,15 @@ def build_index() -> dict[str, Any]:
 
         if not localized:
             continue
+        search_aliases: dict[str, str] = {}
+        if kind == "chapter":
+            chinese_titles = [
+                chapter.get("canonical_title_zh", ""),
+                chapter.get("title_zh", ""),
+            ]
+            if chapter.get("number"):
+                chinese_titles.append(f"第{chapter['number']}章")
+            search_aliases["zh"] = normalize_text(" ".join(filter(None, chinese_titles)))
         documents.append(
             {
                 "content_id": content_id,
@@ -140,6 +149,7 @@ def build_index() -> dict[str, Any]:
                 "available_locales": available,
                 "locales": localized,
                 "search": searchable,
+                "search_aliases": search_aliases,
             }
         )
 

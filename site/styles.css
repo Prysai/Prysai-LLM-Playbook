@@ -78,7 +78,7 @@ button, input, select, textarea { font: inherit; }
 .site-search input:focus { outline: 3px solid var(--red); outline-offset: 2px; }
 .site-search button, .search-clear { flex: 0 0 auto; padding: .55rem .75rem; border: 1px solid var(--ink); border-radius: 0; color: #fff; background: var(--ink); cursor: pointer; font-size: .7rem; font-weight: 700; }
 .site-search button:hover, .site-search button:focus-visible, .search-clear:hover, .search-clear:focus-visible { color: #fff; background: var(--red); border-color: var(--red); }
-.search-panel { margin-top: 1rem; padding: clamp(1.25rem, 3vw, 2.25rem); border-top: 5px solid var(--red); color: var(--ink); background: #fff; }
+.search-panel { margin-top: 1rem; padding: clamp(1.25rem, 3vw, 2.25rem); border-top: 5px solid var(--red); color: var(--ink); background: #fff; scroll-margin-top: 5.75rem; }
 .search-panel[hidden] { display: none; }
 .search-panel-head { display: flex; align-items: start; justify-content: space-between; gap: 1rem; }
 .search-panel-head h2 { margin: .35rem 0 0; font-size: clamp(1.8rem, 4vw, 3.4rem); letter-spacing: -.07em; line-height: .95; }
@@ -379,6 +379,7 @@ button, input, select, textarea { font: inherit; }
 @media (max-width: 800px) {
   .site-search { order: 3; width: 100%; margin: 1rem 0 0; }
   .header-inner { flex-wrap: wrap; padding-block: .7rem; }
+  .search-panel { scroll-margin-top: 11rem; }
   .search-results { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .site-header { position: sticky; }
   .hero { min-height: auto; grid-template-columns: 1fr; gap: 3rem; padding-top: 4rem; }

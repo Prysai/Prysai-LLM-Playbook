@@ -516,6 +516,16 @@ const searchNodes = {
   clear: document.querySelector('[data-search-clear]'),
 };
 const normalizeSearchQuery = (value) => String(value || '').trim().replace(/\s+/g, ' ').toLocaleLowerCase();
+const hasOrderedCjkCharacters = (query, candidate) => {
+  if (!/^[\u3400-\u9fff]+$/u.test(query)) return false;
+  let offset = 0;
+  for (const character of query) {
+    offset = candidate.indexOf(character, offset);
+    if (offset === -1) return false;
+    offset += 1;
+  }
+  return true;
+};
 const searchIndexAvailable = () => Boolean(
   searchIndex?.schema_version === '1'
   && Array.isArray(searchIndex.documents)
@@ -558,6 +568,7 @@ const searchScore = (documentRecord, query, locale) => {
   const title = normalizeSearchQuery(record?.title);
   const snippet = normalizeSearchQuery(record?.snippet);
   const body = documentRecord.search?.[locale] || '';
+  const aliases = normalizeSearchQuery(documentRecord.search_aliases?.[currentLanguage]);
   const tokens = query.split(' ').filter((token) => token.length > 1);
   const tokenMatches = (value) => tokens.filter((token) => value.includes(token)).length;
   const titleTokens = tokenMatches(title);
@@ -571,6 +582,9 @@ const searchScore = (documentRecord, query, locale) => {
   if (snippet.includes(query)) score += 30;
   if (body.includes(query)) score += 10;
   if (contentId.includes(query)) score += 20;
+  if (aliases === query) score += 110;
+  if (aliases.includes(query)) score += 90;
+  if (hasOrderedCjkCharacters(query, aliases)) score += 70;
   // A beginner often types the important words in a different order from the
   // document title (for example, "safe task"). Reward matches in names and
   // summaries much more than incidental words from a long page body.
@@ -580,9 +594,9 @@ const searchScore = (documentRecord, query, locale) => {
   score += contentIdTokens * 8;
   return score;
 };
-const searchHref = (documentRecord, locale, record) => {
+const searchHref = (documentRecord, record) => {
   const sourceHref = `../${record.path}`;
-  return pagesHref(sourceHref, locale);
+  return pagesHref(sourceHref, currentLanguage);
 };
 const renderSearch = (rawQuery = searchNodes.input?.value || '') => {
   if (!searchNodes.form || !searchNodes.panel) return;
@@ -615,7 +629,7 @@ const renderSearch = (rawQuery = searchNodes.input?.value || '') => {
     const item = document.createElement('li');
     item.className = 'search-result';
     const link = document.createElement('a');
-    link.href = searchHref(documentRecord, selected.displayLocale, selected.record);
+    link.href = searchHref(documentRecord, selected.record);
     link.className = 'search-result-link';
     const meta = document.createElement('span');
     meta.className = 'search-result-meta';
