@@ -10,7 +10,7 @@
   "request": {
     "timeout_seconds": 15,
     "attempts": 2,
-    "user_agent": "Prysai-Codex-Field-Guide-Link-Audit/1.0",
+    "user_agent": "Prysai-LLM-Playbook-Link-Audit/1.0",
     "head_first": true,
     "get_fallback_statuses": [401, 403, 405, 429, 500, 502, 503, 504]
   },

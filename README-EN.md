@@ -17,6 +17,14 @@ states otherwise. See [`LICENSE`](LICENSE) and the [licensing boundary](docs/sou
 > Learn a transferable method for reliable work with language models, then
 > practise it most deeply in Codex, the project's flagship track.
 
+## A quick welcome
+
+Perhaps you have heard people mention Codex, Claude Code, Agents, or Skills
+and wondered which one you are supposed to learn first. You are in the right
+place. We will start with one small question, make one bounded attempt, and
+keep enough evidence to tell what happened. You do not need to memorise a
+product catalogue before beginning.
+
 <!-- language-switcher:start -->
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
@@ -196,7 +204,7 @@ For a real local Codex task, return to the
 is a separate supplemental route for language, research, or a small work task.
 
 If you are an authorised pilot participant, use the
-[Field Report form](https://github.com/Prysai/Codex-Field-Guide/issues/new?template=field-report.yml)
+[Field Report form](https://github.com/Prysai/Prysai-LLM-Playbook/issues/new?template=field-report.yml)
 to share a sanitized first-task observation. It is a private intake route, not
 support, proof of a bug, or learner-outcome evidence; see the
 [feedback contract](docs/quality/public-beta-feedback-contract-v1.md).

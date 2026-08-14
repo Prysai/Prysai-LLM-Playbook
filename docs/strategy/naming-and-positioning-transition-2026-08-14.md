@@ -3,8 +3,9 @@
 **Status:** superseded for reader-facing naming by
 [ADR-0034](../adr/0034-prysai-llm-playbook-reader-identity.md). The
 `Models at Work` proposal below is preserved as a decision input; it is not an
-active public identity. No repository identifier, remote URL, tag, or
-deployment has changed.
+active public identity. At the time of this proposal, no repository identifier,
+remote URL, tag, or deployment had changed; ADR-0035 records the later
+repository rename.
 
 > **Decision outcome (2026-08-14):** Prysai selected **Prysai LLM Playbook —
 > From First Task to Reliable Work**. Codex remains the flagship practice track. See ADR-0034

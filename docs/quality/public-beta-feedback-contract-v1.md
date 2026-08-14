@@ -18,8 +18,8 @@ authorizes a named pilot, no feedback collection or recruitment is active.
 
 | Current fact | Record |
 | --- | --- |
-| Repository boundary | `Prysai/Codex-Field-Guide` is private; public deployment is not established. |
-| Authority | GitHub repository metadata: <https://github.com/Prysai/Codex-Field-Guide>, accessed 2026-08-13. |
+| Repository boundary | `Prysai/Prysai-LLM-Playbook` is private; public deployment is not established. |
+| Authority | GitHub repository metadata: <https://github.com/Prysai/Prysai-LLM-Playbook>, accessed 2026-08-14. |
 | Scope owner | `release-maintainer` for publication authorization; `quality-maintainer` for this feedback contract. |
 | Next review | Before any pilot authorization, repository visibility change, or public deployment decision. |
 

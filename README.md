@@ -27,6 +27,11 @@ independent review are still pending.
 
 ## What this is
 
+> **A quick welcome:** perhaps you have heard people mention Codex, Claude
+> Code, Agents, or Skills and wondered which one you are supposed to learn
+> first. You are in the right place. We will start with one small question,
+> make one bounded attempt, and keep enough evidence to tell what happened.
+
 This is an independent, book-shaped curriculum for working with language
 models responsibly. Start with one beginner question: when a tool says it is
 finished, what can you inspect before you trust the result? It teaches one
@@ -175,7 +180,7 @@ For a real local Codex task, return to the
 is a separate supplemental route for language, research, or a small work task.
 
 If you are an authorised pilot participant, use the
-[Field Report form](https://github.com/Prysai/Codex-Field-Guide/issues/new?template=field-report.yml)
+[Field Report form](https://github.com/Prysai/Prysai-LLM-Playbook/issues/new?template=field-report.yml)
 to share a sanitized first-task observation. It is a private intake route, not
 support, proof of a bug, or learner-outcome evidence; see the
 [feedback contract](docs/quality/public-beta-feedback-contract-v1.md).

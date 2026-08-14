@@ -50,3 +50,4 @@ Current entry points:
 - [ADR-0032: distinguish the first local path from the optional warm-up](0032-first-route-priority.md)
 - [ADR-0033: reader-facing LLM Field Guide identity](0033-reader-facing-llm-field-guide-identity.md)
 - [ADR-0034: Prysai LLM Playbook reader identity](0034-prysai-llm-playbook-reader-identity.md)
+- [ADR-0035: rename the remote repository](0035-rename-remote-repository.md)

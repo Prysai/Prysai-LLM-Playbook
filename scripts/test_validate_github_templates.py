@@ -66,12 +66,27 @@ def main() -> int:
             require(any("single-report evidence limit" in error for error in templates.validate_feedback_contract(contract)), "evidence boundary omission was accepted")
             fixtures += 2
 
-        require(templates.repository_from_remote_url("https://github.com/Prysai/Codex-Field-Guide.git") == "Prysai/Codex-Field-Guide", "HTTPS origin was not parsed")
-        require(templates.repository_from_remote_url("git@github.com:Prysai/Codex-Field-Guide.git") == "Prysai/Codex-Field-Guide", "SSH origin was not parsed")
-        require(templates.repository_from_remote_url("https://example.com/Prysai/Codex-Field-Guide.git") is None, "non-GitHub origin was accepted")
-        repository, error = templates.resolve_repository({"GITHUB_REPOSITORY": "Prysai/Codex-Field-Guide"})
-        require(repository == "Prysai/Codex-Field-Guide" and error is None, "documented repository override was rejected")
+        fixture_repository = "Prysai/Example-Repository"
+        require(templates.repository_from_remote_url(f"https://github.com/{fixture_repository}.git") == fixture_repository, "HTTPS origin was not parsed")
+        require(templates.repository_from_remote_url(f"git@github.com:{fixture_repository}.git") == fixture_repository, "SSH origin was not parsed")
+        require(templates.repository_from_remote_url(f"https://example.com/{fixture_repository}.git") is None, "non-GitHub origin was accepted")
+        repository, error = templates.resolve_repository({"GITHUB_REPOSITORY": fixture_repository})
+        require(repository == fixture_repository and error is None, "documented repository override was rejected")
         fixtures += 4
+
+        config_path = templates.ISSUE_DIR / "config.yml"
+        require(
+            not templates.validate_config(config_path, "Prysai/Prysai-LLM-Playbook"),
+            "current contact links were rejected for the canonical repository",
+        )
+        require(
+            any(
+                "must stay inside" in error
+                for error in templates.validate_config(config_path, "Prysai/Other-Repository")
+            ),
+            "contact links accepted a different repository",
+        )
+        fixtures += 2
 
         token = "fixture-secret-token"
         seen_authorization: list[str] = []
@@ -81,7 +96,7 @@ def main() -> int:
             seen_authorization.append(request.get_header("Authorization"))
             return Response([{"name": "field-report"}])
 
-        labels, errors = templates.fetch_remote_labels("Prysai/Codex-Field-Guide", token, successful_open)
+        labels, errors = templates.fetch_remote_labels(fixture_repository, token, successful_open)
         require(not errors and labels == {"field-report"}, "remote labels response was not accepted")
         require(seen_authorization == [f"Bearer {token}"], "remote request did not use the supplied token")
         fixtures += 1
@@ -89,17 +104,17 @@ def main() -> int:
         def failing_open(request: object, timeout: int) -> Response:
             raise urllib.error.HTTPError(request.full_url, 401, "Unauthorized", {}, io.BytesIO())
 
-        _labels, errors = templates.fetch_remote_labels("Prysai/Codex-Field-Guide", token, failing_open)
+        _labels, errors = templates.fetch_remote_labels(fixture_repository, token, failing_open)
         require(errors == ["GitHub labels request failed with HTTP 401"], "HTTP failure was not clean")
         require(token not in " ".join(errors), "token leaked into remote error")
         require(templates.validate_remote_labels(["field-report"], {}) == ["--check-remote requires GITHUB_TOKEN or GH_TOKEN"], "missing token was not rejected")
         mismatch = templates.validate_remote_labels(
             ["field-report"],
             {"GITHUB_TOKEN": token},
-            resolve=lambda _environ: ("Prysai/Codex-Field-Guide", None),
+            resolve=lambda _environ: (fixture_repository, None),
             fetch=lambda _repository, _token: ({"bug"}, []),
         )
-        require(mismatch == ["declared field-report label does not exist in Prysai/Codex-Field-Guide: field-report"], "missing remote label was accepted")
+        require(mismatch == [f"declared field-report label does not exist in {fixture_repository}: field-report"], "missing remote label was accepted")
         require(token not in " ".join(mismatch), "token leaked into label mismatch")
         fixtures += 3
     except (AssertionError, OSError, UnicodeError) as exc:

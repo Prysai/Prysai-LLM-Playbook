@@ -1,5 +1,5 @@
 {
-  "name": "codex-field-guide-browser-checks",
+  "name": "prysai-llm-playbook-browser-checks",
   "private": true,
   "engines": {
     "node": ">=20"

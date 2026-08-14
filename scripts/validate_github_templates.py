@@ -219,7 +219,7 @@ def fetch_remote_labels(
                 headers={
                     "Accept": "application/vnd.github+json",
                     "Authorization": f"Bearer {token}",
-                    "User-Agent": "codex-field-guide-template-validator",
+                    "User-Agent": "prysai-llm-playbook-template-validator",
                     "X-GitHub-Api-Version": "2022-11-28",
                 },
             )
@@ -257,7 +257,8 @@ def validate_remote_labels(
     return [f"declared field-report label does not exist in {repository}: {label}" for label in declared if label not in available]
 
 
-def validate_config(path: Path) -> list[str]:
+def validate_config(path: Path, repository: str) -> list[str]:
+    """Require contact links to follow the current canonical repository."""
     errors: list[str] = []
     if not path.is_absolute():
         path = ROOT / path
@@ -274,7 +275,7 @@ def validate_config(path: Path) -> list[str]:
         for index, link in enumerate(links, start=1):
             if not isinstance(link, dict) or any(not isinstance(link.get(key), str) or not link[key].strip() for key in ("name", "url", "about")):
                 errors.append(f"{label}.contact_links[{index}] needs name, url, and about")
-            elif not link["url"].startswith("https://github.com/Prysai/Codex-Field-Guide/"):
+            elif not link["url"].startswith(f"https://github.com/{repository}/"):
                 errors.append(f"{label}.contact_links[{index}] must stay inside the project repository")
     return errors
 
@@ -308,10 +309,14 @@ def main(argv: list[str] | None = None) -> int:
             errors.extend(validate_form(path))
         except (OSError, UnicodeError, yaml.YAMLError) as exc:
             errors.append(f"cannot parse {path.relative_to(ROOT)}: {exc}")
-    try:
-        errors.extend(validate_config(ISSUE_DIR / "config.yml"))
-    except (OSError, UnicodeError, yaml.YAMLError) as exc:
-        errors.append(f"cannot parse .github/ISSUE_TEMPLATE/config.yml: {exc}")
+    repository, repository_error = resolve_repository()
+    if repository_error:
+        errors.append(repository_error)
+    else:
+        try:
+            errors.extend(validate_config(ISSUE_DIR / "config.yml", repository or ""))
+        except (OSError, UnicodeError, yaml.YAMLError) as exc:
+            errors.append(f"cannot parse .github/ISSUE_TEMPLATE/config.yml: {exc}")
     errors.extend(validate_pr_template())
     labels: list[str] = []
     try:
