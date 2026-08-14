@@ -292,7 +292,7 @@ Object.assign(copy.en, {
   repositoryStripIntro: 'The public reader is rendered from site/. The canonical learning and maintenance sources below keep their current evidence boundary visible.',
   repositoryChapters: '22 chapters · candidate',
   repositoryLabs: '18 labs · 2 maintainer references · 0 learner runs',
-  repositorySkills: '12 reusable Skills · candidate',
+  repositorySkills: '13 reusable Skills · candidate',
   repositoryDocs: 'Governance and field research · candidate; reports not locally reproduced',
 });
 
@@ -352,7 +352,7 @@ Object.assign(copy.zh, {
   repositoryStripIntro: '公开阅读页面由 site/ 渲染。下面是教程与维护的规范源目录，它们保留当前证据边界。',
   repositoryChapters: '22 章 · candidate',
   repositoryLabs: '18 个实验 · 2 个维护者参考运行 · 0 个学习者运行',
-  repositorySkills: '12 个可复用 Skill · candidate',
+  repositorySkills: '13 个可复用 Skill · candidate',
   repositoryDocs: '治理与现实研究 · candidate；报告尚未在本地复现',
 });
 

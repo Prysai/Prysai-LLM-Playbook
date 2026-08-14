@@ -48,6 +48,7 @@
     "learning-practice-contract": {"name": {"en": "Learning Practice Contract", "zh": "学习练习契约"}, "status": "draft", "run_status": "not_run"}
   },
   "skills": {
+    "prysai-dialogue-brief": {"name": {"en": "Dialogue Brief", "zh": "首轮对话简报 Dialogue Brief"}},
     "prysai-codex-coach": {"name": {"en": "Codex Coach", "zh": "Codex 学习教练"}},
     "prysai-task-protocol": {"name": {"en": "Task Protocol", "zh": "任务协议 Task Protocol"}},
     "prysai-evidence-review": {"name": {"en": "Evidence Review", "zh": "证据审查 Evidence Review"}},

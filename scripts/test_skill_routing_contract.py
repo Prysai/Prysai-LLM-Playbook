@@ -19,8 +19,14 @@ def main() -> int:
     target_record=next(skill for skill in loop["skills"] if skill["id"] == target)
     target_record["allowed_handoffs"].append(source["id"])
     require(any("acyclic" in e for e in routing.validate_contract(loop)), "routing loop accepted")
-    self_handoff=copy.deepcopy(base); self_handoff["skills"][0]["allowed_handoffs"].append("prysai-codex-coach")
+    self_handoff=copy.deepcopy(base); self_handoff["skills"][0]["allowed_handoffs"].append(self_handoff["skills"][0]["id"])
     require(any("self handoff" in e for e in routing.validate_contract(self_handoff)), "self handoff accepted")
+    dialogue_learning=copy.deepcopy(base); fixture=next(x for x in dialogue_learning["fixtures"] if x["id"]=="mixed-dialogue-learning"); fixture["expected"]["owner"]="prysai-dialogue-brief"
+    require(any("mixed-dialogue-learning" in e for e in routing.validate_contract(dialogue_learning)), "learning request was routed through Dialogue Brief")
+    local_repository=copy.deepcopy(base); fixture=next(x for x in local_repository["fixtures"] if x["id"]=="boundary-dialogue-brief-local-repository"); fixture["expected"]["owner"]="prysai-dialogue-brief"
+    require(any("boundary-dialogue-brief-local-repository" in e for e in routing.validate_contract(local_repository)), "local repository boundary routed through Dialogue Brief")
+    current_rules=copy.deepcopy(base); fixture=next(x for x in current_rules["fixtures"] if x["id"]=="boundary-dialogue-brief-current-rules"); fixture["expected"]["owner"]="prysai-dialogue-brief"
+    require(any("boundary-dialogue-brief-current-rules" in e for e in routing.validate_contract(current_rules)), "current-facts boundary routed through Dialogue Brief")
     false_explicit=copy.deepcopy(base); fixture=next(x for x in false_explicit["fixtures"] if x["id"]=="explicit-wins"); fixture["expected"]["owner"]="prysai-research-router"
     require(any("explicit-wins" in e for e in routing.validate_contract(false_explicit)), "implicit route overrode explicit Skill")
     false_safety=copy.deepcopy(base); fixture=next(x for x in false_safety["fixtures"] if x["id"]=="safety-over-explicit"); fixture["expected"]["disposition"]="route"
@@ -37,6 +43,6 @@ def main() -> int:
     require(any("unknown platform adapter" in e for e in routing.validate_contract(unknown_platform)), "unknown platform adapter accepted")
     wrong_status=copy.deepcopy(base); wrong_status["curriculum_routing"]["platform_adapters"][1]["status"]="candidate"
     require(any("Claude Code/Grok proposed" in e for e in routing.validate_contract(wrong_status)), "proposed adapter silently promoted")
-    print("SKILL_ROUTING_CONTRACT_TESTS_OK fixtures=11")
+    print("SKILL_ROUTING_CONTRACT_TESTS_OK fixtures=14")
     return 0
 if __name__ == "__main__": raise SystemExit(main())
