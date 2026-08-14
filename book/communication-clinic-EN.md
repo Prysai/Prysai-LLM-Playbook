@@ -13,9 +13,7 @@ product-specific actions require a sourced adapter.
 You may have arrived here with a broad ambition—learn a language, prepare for a
 role, make a research decision—or simply a reply that already went wrong. Do
 not try to solve all of that in one conversation. Start with the work you want
-to do now. You do not need to read this whole page before your first card. Each
-route is a candidate template; selecting it is not evidence that it works for a
-learner or a model.
+to do now. You do not need to read this whole page before your first card. Each route is a candidate template; selecting it is not evidence that it works for a learner or a model.
 
 - **A — speak in a short fictional Spanish situation.**
   [Start Card A1: four-turn hotel check-in](#language-practice-route).
