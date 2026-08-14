@@ -16,6 +16,15 @@ records the source boundaries behind the language and research cards. It is
 candidate research, not a finding that these cards improve learning or research
 quality.
 
+Moving between LLM products? Start with the [universal first-turn prompt
+contract](../docs/research/universal-first-turn-prompt-contract-2026-08-13.md)
+to draft one plain-language request with an outcome, context, response shape,
+limits, check, and stop receipt. It is a candidate research reference, not a
+claim that product features, data controls, model behavior, or completion time
+are equivalent. Return here to choose and practise one route; use the
+[four-line safety card](#four-line-safety-card) before a task includes outside
+material, tools, a local file, or an action that could widen.
+
 If a reply has already missed the task, skip the intake and use the
 [post-failure recovery route](#recovery-route). It preserves the miss, changes
 one communication condition, and records what a comparable rerun does and does

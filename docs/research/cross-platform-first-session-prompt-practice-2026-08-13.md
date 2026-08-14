@@ -4,9 +4,12 @@
 
 **Sources accessed:** 2026-08-13 (America/Los_Angeles)
 
-**Status:** candidate research record. No learner session, prompt execution,
-model comparison, language assessment, delayed retention check, transfer task,
-or independent scoring was run for this record.
+**Status:** historical source note, superseded for new reader-facing use by
+[`universal-first-turn-prompt-contract-2026-08-13.md`](universal-first-turn-prompt-contract-2026-08-13.md).
+It is retained for traceability of the narrower language-only evidence review.
+No learner session, prompt execution, model comparison, language assessment,
+delayed retention check, transfer task, or independent scoring was run for this
+record.
 
 **Owner:** curriculum-maintainer
 

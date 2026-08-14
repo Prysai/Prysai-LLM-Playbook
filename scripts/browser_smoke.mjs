@@ -112,6 +112,13 @@ try {
   await page.goto(`${origin}/`, { waitUntil: 'networkidle' });
   assert.equal(searchRequests.length, 0, 'initial page load fetched the full search index');
   await noHorizontalOverflow(page, 'desktop showcase');
+  const firstTurnLink = page.getByRole('link', { name: 'Draft a universal first turn' });
+  await assert.doesNotReject(async () => firstTurnLink.waitFor(), 'universal first-turn research entry is missing from the showcase');
+  assert.match(
+    await firstTurnLink.getAttribute('href'),
+    /reader\.html\?path=docs%2Fresearch%2Funiversal-first-turn-prompt-contract-2026-08-13\.md/,
+    'universal first-turn research entry does not resolve through the bounded reader',
+  );
   assert.equal(await page.getByRole('button', { name: 'Compare with one acceptable shape' }).isDisabled(), true, 'First Win comparison is available before all three judgments');
   assert.match(await page.locator('[data-first-win-receipt]').innerText(), /judgment_state: incomplete/i, 'First Win does not expose an incomplete local record before checks');
   await page.locator('[data-first-win-check="facts_kept"][value="FAIL"]').check();

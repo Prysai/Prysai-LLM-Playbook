@@ -22,7 +22,9 @@ claim and license boundary are clear.
 
 Useful indexes:
 
-- [Cross-platform first-session prompt practice](cross-platform-first-session-prompt-practice-2026-08-13.md) — a candidate, platform-neutral language-practice prompt contract. It separates official guidance, individual public reports, and project inference; it contains no learner or model run and rejects seven-day fluency claims.
+- [Universal first-turn prompt contract](universal-first-turn-prompt-contract-2026-08-13.md) — a candidate six-field, plain-language request contract with two text-only Spanish and research cards. It separates product-scoped official guidance from two individual public signals and does not claim platform equivalence, a five-minute result, or learning efficacy.
+
+- [Historical: cross-platform first-session prompt practice](cross-platform-first-session-prompt-practice-2026-08-13.md) — a retained, language-only source note superseded for new reader-facing use by the universal first-turn contract above. It has no learner or model run and does not support a seven-day fluency claim.
 
 - [Critical learning-product audit](critical-learning-product-audit-2026-08-13.md) — an evidence-mapped candidate audit through instructional-design, reproducibility, and responsible-AI governance lenses. It identifies release-blocking gaps; it is not external accreditation, endorsement, or certification.
 

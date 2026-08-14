@@ -78,6 +78,7 @@ it does not replace the local Codex task.
 | Rehearse the checking habit without a project | [Optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) | One fictional message, three human checks, and a bounded receipt |
 | Build a reliable request | [Chapter 3](book/chapters/03-task-protocol-EN.md) + [Lab 002](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop, and recovery conditions |
 | Practise language, research, or a small work task | [Beginner Practice Pack](book/communication-clinic-EN.md) | An attempt, focused correction, variation, and evidence boundary |
+| Draft a first text-only request for any LLM surface | [Universal first-turn contract](docs/research/universal-first-turn-prompt-contract-2026-08-13.md) | Two candidate Spanish/research cards with an explicit limit, check, stop, and receipt |
 | Start an unfamiliar task without handing over control | [Four-line safety card](book/communication-clinic-EN.md#four-line-safety-card) | Name allowed input, one action, inspectable evidence, and a stop condition before the task can widen |
 | Inspect the whole curriculum | [Book guide](book/README-EN.md) + [table of contents](book/table-of-contents-EN.md) | Reading routes, chapter order, and lab boundaries |
 | Contribute or find a file | [Project map](docs/project-map-EN.md) + [CONTRIBUTING.md](CONTRIBUTING.md) | Directory roles and the documented update path |
@@ -192,6 +193,7 @@ finding. The repository is private and no public Pages URL is established.
 - [Universal-core route](book/routes/universal-core-foundations-EN.md): four mapped transferable units and their explicit gaps.
 - [Reader and local showcase](site/README.md): serve the dependency-free reading surface locally; artifact success does not establish a live site.
 - [Research index](docs/research/README.md): official facts, public user reports, and project inferences kept distinct.
+- [Universal first-turn contract](docs/research/universal-first-turn-prompt-contract-2026-08-13.md): a candidate six-field contract and two text-only starter cards that do not claim product equivalence, five-minute completion, or learning results.
 - [AI collaboration safety boundaries](docs/research/ai-collaboration-safety-boundaries-2026-08-13.md): source-backed prompt-injection, data-minimization, authority, and output-verification boundaries.
 - [Critical learning-product audit](docs/research/critical-learning-product-audit-2026-08-13.md): the evidence gaps that still prevent learner-proven or released claims.
 - [Project map](docs/project-map-EN.md): directory roles, generated files, and where a change should begin.
