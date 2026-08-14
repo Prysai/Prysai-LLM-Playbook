@@ -1,0 +1,19 @@
+{
+  "schema_version": "1",
+  "fixture_id": "lab-001-first-safe-change-v1",
+  "allowed_change": "seed/README.md",
+  "required_readme_strings": {
+    "preview_heading": "## Local preview",
+    "preview_command": "python -m http.server 8080",
+    "preview_url": "http://127.0.0.1:8080"
+  },
+  "expected_baseline": "FIRST_SAFE_CHANGE_FAILED",
+  "expected_after_allowed_change": "FIRST_SAFE_CHANGE_OK",
+  "not_proved": [
+    "learner completion",
+    "model behavior",
+    "real-project command correctness",
+    "transfer",
+    "production readiness"
+  ]
+}

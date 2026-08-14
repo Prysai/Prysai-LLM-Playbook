@@ -22,6 +22,8 @@ claim and license boundary are clear.
 
 Useful indexes:
 
+- [Cross-platform first-session prompt practice](cross-platform-first-session-prompt-practice-2026-08-13.md) — a candidate, platform-neutral language-practice prompt contract. It separates official guidance, individual public reports, and project inference; it contains no learner or model run and rejects seven-day fluency claims.
+
 - [Critical learning-product audit](critical-learning-product-audit-2026-08-13.md) — an evidence-mapped candidate audit through instructional-design, reproducibility, and responsible-AI governance lenses. It identifies release-blocking gaps; it is not external accreditation, endorsement, or certification.
 
 - [Entry-level LLM collaboration for language and research](entry-level-llm-collaboration-for-language-and-research-2026-08-13.md) — candidate prompt cards for one bounded language-practice or source-backed research session. It rejects speed, fluency, certification, and outcome claims that were not measured.

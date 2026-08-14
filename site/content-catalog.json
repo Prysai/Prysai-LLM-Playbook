@@ -44,6 +44,7 @@
     "lab-018": {"name": {"en": "Language transfer", "zh": "语言迁移练习"}}
   },
   "supplemental_guides": {
+    "first-safe-change-route": {"name": {"en": "First Safe Change", "zh": "第一次安全改动"}, "status": "candidate", "run_status": "not_run"},
     "communication-clinic": {"name": {"en": "Beginner Practice Pack", "zh": "初学者实践包"}, "status": "candidate", "run_status": "not_run"},
     "learning-practice-contract": {"name": {"en": "Learning Practice Contract", "zh": "学习练习契约"}, "status": "draft", "run_status": "not_run"}
   },

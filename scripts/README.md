@@ -23,6 +23,7 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\test_executable_examples.py
 & $py scripts\test_lab_008_reference.py
 & $py scripts\test_lab_013_reference.py
+& $py scripts\test_lab_001_first_safe_change_fixture.py
 & $py scripts\check_local_links.py
 & $py scripts\validate_localization.py
 & $py scripts\build_book_navigation.py --check
@@ -153,6 +154,11 @@ inventory only after the suite actually passes. It then replays the runner in
 a fresh `.work` directory, validates the packet, and compares a normalized
 semantic attestation digest that excludes timestamps and temporary-path IDs. A
 label, source directory, or prose evidence path cannot certify a run by itself.
+
+`test_lab_001_first_safe_change_fixture.py` checks the synthetic novice fixture:
+its seeded README fails first, exactly one declared README correction passes,
+and a missing local URL remains visible as a failure. It does not invoke a
+model, observe a learner, validate a real project command, or establish transfer.
 
 `validate_github_templates.py` checks the public contributor entry forms and
 pull-request template for parseable YAML, required fields, unique component

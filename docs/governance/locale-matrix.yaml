@@ -31,6 +31,21 @@
   ],
   "content": [
     {
+      "content_id": "first-safe-change-route",
+      "kind": "learning-route",
+      "stem": "book/routes/first-safe-change",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-13",
+      "locales": {
+        "EN": {"path": "book/routes/first-safe-change-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/routes/first-safe-change-ZH.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "none", "run_status": "not_run", "reason": "Reserved route identity; translation and independent language review do not exist."},
+        "ES": {"path": "book/routes/first-safe-change-ES.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "none", "run_status": "not_run", "reason": "Reserved route identity; translation and independent language review do not exist."},
+        "JA": {"path": "book/routes/first-safe-change-JA.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "none", "run_status": "not_run", "reason": "Reserved route identity; translation and independent language review do not exist."},
+        "KO": {"path": "book/routes/first-safe-change-KO.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "none", "run_status": "not_run", "reason": "Reserved route identity; translation and independent language review do not exist."},
+        "DE": {"path": "book/routes/first-safe-change-DE.md", "content_status": "draft", "translation_status": "not-started", "translated_from": "EN", "source_revision": "worktree-2026-08-13", "coverage": "none", "run_status": "not_run", "reason": "Reserved route identity; translation and independent language review do not exist."}
+      }
+    },
+    {
       "content_id": "learning-practice-contract",
       "kind": "application-guide",
       "stem": "book/guides/learning-practice-contract",

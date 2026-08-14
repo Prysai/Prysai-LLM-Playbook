@@ -52,13 +52,15 @@ sequence rather than choosing among the whole catalogue:
 2. Run [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) to label what a
    static task card can and cannot establish about generation, execution,
    verification, and external effects.
-3. Read [Chapter 2](book/chapters/02-first-safe-task-EN.md) and choose a
-   disposable or non-production Git project with one reversible file change.
+3. Read [Chapter 2](book/chapters/02-first-safe-task-EN.md). If you do not
+   have a disposable project yet, use the offline [First Safe Change fixture](book/routes/first-safe-change-EN.md)
+   before choosing one reversible local file change.
 4. Run [Lab 001](book/labs/lab-001-first-safe-task-EN.md): inspect first,
    edit `README.md` only after confirmation, then keep the diff, focused check,
    and an explicit unverified list.
 
-This is the complete canonical L0 → L1 route. Labs 011 and 001 are
+This is the complete candidate L0 → L1 route. The fixture is a supplemental
+bridge, not a chapter or Lab run. Labs 011 and 001 are
 `draft / not_run`: they are candidate exercises, not evidence that beginners
 complete them successfully. Stop instead of improvising if you do not have a
 disposable project, one named target file, a source-backed check, or a
@@ -72,6 +74,7 @@ it does not replace the local Codex task.
 | Your goal | Start here | Leave with |
 |---|---|---|
 | Make a first reversible local Codex change | [Recommended Codex path](#the-recommended-first-codex-path) | One mental model, one bounded task card, a small diff, a focused check, and an unverified list |
+| Need a safe local file before using a project | [First Safe Change fixture](book/routes/first-safe-change-EN.md) | One intentionally failing README check, one scoped edit, and a modest local receipt |
 | Rehearse the checking habit without a project | [Optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) | One fictional message, three human checks, and a bounded receipt |
 | Build a reliable request | [Chapter 3](book/chapters/03-task-protocol-EN.md) + [Lab 002](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop, and recovery conditions |
 | Practise language, research, or a small work task | [Beginner Practice Pack](book/communication-clinic-EN.md) | An attempt, focused correction, variation, and evidence boundary |
@@ -156,8 +159,8 @@ Your receipt is deliberately modest: attempted; checked here; help used;
 corrected; and not proven. This exercise records one checked attempt. It does
 not prove learning, transfer, general writing ability, or model superiority.
 For a real local Codex task, return to the
-[recommended path](#the-recommended-first-codex-path): Chapter 1 → Chapter 2
-→ Lab 001. The [Beginner Practice Pack](book/communication-clinic-EN.md#first-practice-intake)
+[recommended path](#the-recommended-first-codex-path): Chapter 1 → Lab 011
+→ Chapter 2 → First Safe Change fixture → Lab 001. The [Beginner Practice Pack](book/communication-clinic-EN.md#first-practice-intake)
 is a separate supplemental route for language, research, or a small work task.
 
 If you are an authorised pilot participant, use the

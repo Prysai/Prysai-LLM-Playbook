@@ -50,6 +50,7 @@ currently `draft` with `run_status: not_run`.
 ## Where to enter the book
 
 - [First mapped universal-core route](routes/universal-core-foundations-EN.md) — four extracted units; `candidate / not_run`; context selection, reuse, evaluation, and team governance remain incomplete
+- [First Safe Change](routes/first-safe-change-EN.md) — optional offline bridge from Chapter 2 to Lab 001; candidate fixture route · learner run `not_run`
 - [Preface: This Is Not a Prompt Catalogue](preface-EN.md)
 - [English book table of contents](table-of-contents-EN.md)
 - [Beginner Practice Pack: turn a broad wish into one practical route for learning, research, decisions, or creation](communication-clinic-EN.md#first-practice-intake) — supplemental candidate; complete learner run `not_run`; an intake, templates, and evidence contracts exist

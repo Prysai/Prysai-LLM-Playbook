@@ -71,12 +71,14 @@ full catalogue yet. Follow one L0 → L1 sequence:
    lets you label what a static task card can and cannot establish about
    generation, execution, verification, and external effects.
 3. [Chapter 2 — Complete a safe, verifiable task](book/chapters/02-first-safe-task-EN.md)
-   helps you choose one disposable or non-production Git project, one reversible
-   change, and one source-backed acceptance check.
-4. [Lab 001 — Make one safe README change](book/labs/lab-001-first-safe-task-EN.md)
+   defines one reversible local change and one source-backed acceptance check.
+4. [First Safe Change](book/routes/first-safe-change-EN.md) supplies an
+   optional offline fixture when you do not yet have a disposable project.
+5. [Lab 001 — Make one safe README change](book/labs/lab-001-first-safe-task-EN.md)
    turns that contract into an inspect-first, edit-once, diff-and-check run.
 
-Labs 011 and 001 remain `draft / not_run`. This is the complete candidate path
+The fixture is `candidate / not_run`; Labs 011 and 001 remain `draft / not_run`.
+This is the complete candidate path
 the project asks readers to test; it is not evidence that a beginner can
 complete it, learn the method, or transfer it elsewhere. Stop rather than
 improvise if the project is not disposable, the target is not one named file,
@@ -91,6 +93,7 @@ checking habit; it is not a substitute for the Codex path.
 | What you need now | Start here | Leave with |
 |---|---|---|
 | Make a first reversible local Codex change | [Recommended Codex path](#the-recommended-first-codex-path) | One mental model, one bounded task card, a small diff, a focused check, and an explicit unverified list |
+| Need a safe local file before using a project | [First Safe Change fixture](book/routes/first-safe-change-EN.md) | One seeded README failure, one permitted README edit, and one local acceptance result; candidate · learner run `not_run` |
 | Rehearse the checking habit without project setup | [Optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) | One fictional message, three human checks, and a bounded receipt |
 | Turn a vague request into something an Agent can execute | [Chapter 3 — task protocol](book/chapters/03-task-protocol-EN.md) + [Lab 002](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop conditions, and failure handling |
 | Turn a broad learning or research wish into a first attempt | [Beginner Practice Pack intake](book/communication-clinic-EN.md#first-practice-intake) | Ask one decision at a time, select one existing route, and leave with a bounded receipt; supplemental candidate · complete learner run `not_run` |
@@ -102,9 +105,10 @@ checking habit; it is not a substitute for the Codex path.
 | Turn a personal method into team capability | [Chapter 21 — team capability system](book/chapters/21-team-capability-system-EN.md) + [Contribution model](docs/governance/contribution-model.md) | Ownership, sources, permissions, evaluation, maintenance, and rollback |
 
 The candidate first slice is deliberately small: read Chapter 1, use Lab 011 to
-label the boundary, choose the bounded local task described in Chapter 2, run
-Lab 001 in a sandbox, keep the diff and command output, then write down what
-the run did not prove. Its time,
+label the boundary, choose the bounded local task described in Chapter 2, use
+the First Safe Change fixture if you do not yet have a sandbox, then run Lab
+001. Keep the diff and command output, then write down what the run did not
+prove. Its time,
 completion, and learning effects have not been measured.
 
 <!-- starter-task-contract:start -->
@@ -162,7 +166,7 @@ corrected; and not proven. This exercise records one checked attempt. It does
 not prove learning, transfer, general writing ability, or model superiority.
 For a real local Codex task, return to the
 [recommended path](#the-recommended-first-codex-path): Chapter 1 → Lab 011
-→ Chapter 2 → Lab 001. The [Beginner Practice Pack](book/communication-clinic-EN.md#first-practice-intake)
+→ Chapter 2 → First Safe Change fixture → Lab 001. The [Beginner Practice Pack](book/communication-clinic-EN.md#first-practice-intake)
 is a separate supplemental route for language, research, or a small work task.
 
 If you are an authorised pilot participant, use the

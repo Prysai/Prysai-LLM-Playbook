@@ -19,6 +19,7 @@ alignment.
 | Read the book | [`book/`](../book/) | Preface, chapters, book table of contents, and lab index |
 | Read a chapter | [`book/chapters/`](../book/chapters/) | One file per chapter; `-EN` is the English source when it exists; unsuffixed files are the current legacy Chinese path |
 | Run an exercise | [`book/labs/`](../book/labs/) | Low-risk, observable labs with setup, failure cases, evidence, and transfer tasks |
+| Start Lab 001 without a project | [`book/routes/first-safe-change-EN.md`](../book/routes/first-safe-change-EN.md) | A synthetic README fixture and local pass/fail checker before a real project task |
 | Understand the chapter order | [`docs/governance/book-navigation.yaml`](governance/book-navigation.yaml) | The canonical 22-chapter order used by generated footers |
 | Browse every Lab by number | [`docs/governance/lab-navigation.yaml`](governance/lab-navigation.yaml) | The 18-Lab catalog order used by English footers and Reader pagination; not a prerequisite chain |
 | Choose a project Skill | [`skills/`](../skills/) and [`docs/skill-registry.md`](skill-registry.md) | Skill contracts, supporting resources, and the registry of triggers and boundaries |
@@ -108,6 +109,7 @@ into a completed localized page.
 | Reorder Lab catalog navigation | `docs/governance/lab-navigation.yaml` | Regenerate all English Lab footers and the locale manifest, then validate Reader pagination |
 | Add or change a Skill | `skills/<skill-name>/SKILL.md` | Skill registry, quality standard, official validator, and fresh-context evidence |
 | Add a field case | `docs/research/` or `examples/` | Source/license register, privacy boundary, chapter/lab link, and evidence status |
+| Add a novice fixture route | `book/routes/<id>-EN.md` | Disposable fixture, locale matrix, supplemental status, source register, focused test, and generated Reader/search projections |
 | Change a volatile product fact | Dated record in `docs/research/` | Fact-impact registry, affected consumers, next review date, and relevant validators |
 | Change the public page | `site/` or its canonical catalog/contract | Generated data check, Pages artifact check, local links, i18n check, and browser review |
 

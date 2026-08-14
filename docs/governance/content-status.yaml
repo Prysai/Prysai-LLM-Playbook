@@ -218,12 +218,15 @@
     ]
   },
   "supplemental_guides": {
-    "count": 2,
+    "count": 3,
     "status": "candidate",
     "owner": "curriculum-maintainer",
     "last_reviewed": "2026-08-13",
     "next_review": "2026-09-12",
     "evidence": [
+      "book/routes/first-safe-change-EN.md",
+      "examples/lab-001-v1/README.md",
+      "scripts/test_lab_001_first_safe_change_fixture.py",
       "book/communication-clinic-EN.md",
       "book/guides/learning-practice-contract-EN.md",
       "docs/research/beginner-first-practice-friction-2026-08-13.md",
@@ -233,6 +236,7 @@
       "docs/sources/asset-register.md"
     ],
     "items": [
+      {"id": "first-safe-change-route", "path": "book/routes/first-safe-change-EN.md", "status": "candidate", "run_status": "not_run", "role": "novice_fixture_route"},
       {"id": "communication-clinic", "path": "book/communication-clinic-EN.md", "status": "candidate", "run_status": "not_run", "role": "supplemental_practice_route"},
       {"id": "learning-practice-contract", "path": "book/guides/learning-practice-contract-EN.md", "status": "draft", "run_status": "not_run", "role": "canonical_application_guide"}
     ],

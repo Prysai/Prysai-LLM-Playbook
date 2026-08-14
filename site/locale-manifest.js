@@ -48,6 +48,58 @@ window.CODEX_LOCALE_MANIFEST = {
     }
   },
   "contents": {
+    "first-safe-change-route": {
+      "kind": "learning-route",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
+      "stem": "book/routes/first-safe-change",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "book/routes/first-safe-change-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/routes/first-safe-change-ZH.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
+        },
+        "es": {
+          "path": "book/routes/first-safe-change-ES.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
+        },
+        "ja": {
+          "path": "book/routes/first-safe-change-JA.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
+        },
+        "ko": {
+          "path": "book/routes/first-safe-change-KO.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
+        },
+        "de": {
+          "path": "book/routes/first-safe-change-DE.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "not-started",
+          "source_revision": "worktree-2026-08-13"
+        }
+      }
+    },
     "learning-practice-contract": {
       "kind": "application-guide",
       "reader_type": "project-document",
@@ -3604,6 +3656,12 @@ window.CODEX_LOCALE_MANIFEST = {
     "lab-018": "lab-018-language-transfer"
   },
   "path_index": {
+    "book/routes/first-safe-change-EN.md": "first-safe-change-route",
+    "book/routes/first-safe-change-ZH.md": "first-safe-change-route",
+    "book/routes/first-safe-change-ES.md": "first-safe-change-route",
+    "book/routes/first-safe-change-JA.md": "first-safe-change-route",
+    "book/routes/first-safe-change-KO.md": "first-safe-change-route",
+    "book/routes/first-safe-change-DE.md": "first-safe-change-route",
     "book/guides/learning-practice-contract-EN.md": "learning-practice-contract",
     "book/guides/learning-practice-contract-ZH.md": "learning-practice-contract",
     "book/guides/learning-practice-contract-ES.md": "learning-practice-contract",

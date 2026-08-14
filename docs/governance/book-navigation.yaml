@@ -19,6 +19,15 @@
   },
   "supplemental_routes": [
     {
+      "id": "first-safe-change-route",
+      "title_en": "First Safe Change",
+      "english_path": "book/routes/first-safe-change-EN.md",
+      "status": "candidate",
+      "run_status": "not_run",
+      "placement": "novice_fixture_route",
+      "boundary": "Optional bridge from Chapter 2 to Lab 001; not chapter 23, not a Lab run, and not evidence of learner completion, model behavior, real-project correctness, transfer, or platform equivalence."
+    },
+    {
       "id": "communication-clinic",
       "title_en": "Beginner Practice Pack",
       "english_path": "book/communication-clinic-EN.md",

@@ -136,6 +136,9 @@ Field Guide 原创主线
 └─ 橙皮书的主题结构与实战启发（S01，许可不明）
 ```
 
+| S80 | `book/routes/first-safe-change-EN.md`, `examples/lab-001-v1/`, and `scripts/test_lab_001_first_safe_change_fixture.py` | Prysai Lab original novice fixture created 2026-08-13 from the existing Lab 001 boundary and S68 context | Original synthetic README, acceptance strings, local standard-library verifier, candidate route, and negative test; no external prose, code, prompt, image, credential, personal data, account, Git repository, network call, model call, or production target copied | `original-rewrite / project-owned with unresolved release split`: the current repository license boundary applies; this fixture does not depend on an external project command or asset | A fixed local fixture only. Its test establishes seeded fail, scoped README correction, and visible negative result; it does not prove learner completion, model behavior, real-project correctness, transfer, deployment, or production readiness |
+| S81 | `docs/research/cross-platform-first-session-prompt-practice-2026-08-13.md` | U.S. IES, OpenAI, Anthropic, Google, and two dated public OpenAI Community reports listed with URLs and access dates in the record | Original synthesis, bounded prompt contract, source ledger, and claim limits; no external prompt, forum prose, assessment instrument, code, image, user data, or product output copied | `reference-only / original synthesis`: hosted guidance is volatile and public reports remain reference-only; external terms and product behavior must be rechecked before any adaptation | Candidate research only. It does not establish prompt effectiveness, language learning, cross-platform behavior, model correctness, fluency, retention, transfer, or production readiness |
+
 ## 融合状态定义
 
 - `reference-only`：只阅读和引用来源，不复制可版权表达；

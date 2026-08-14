@@ -36,8 +36,13 @@ records, or production configuration into the task.
 
 ## Setup
 
-1. Choose a disposable Git project or a copy that you can discard.
-2. Record the absolute path and the current `git status`.
+1. If you do not already have a disposable project, start with the
+   [First Safe Change fixture](../routes/first-safe-change-EN.md). It is the
+   default novice sandbox and needs no Git, account, install, or network.
+   Otherwise choose a disposable Git project or a copy that you can discard.
+2. Record the absolute path and, when this is a Git project, the current
+   `git status`. For the fixture, record `not a Git sandbox` rather than
+   inventing a repository identity.
 3. Save the original `README.md` or create a clean checkpoint.
 4. Identify the real file that defines local run commands. Do not invent a
    command from memory or from a search result.
@@ -68,17 +73,21 @@ answer is a stop signal, not something to fill in by guessing.
 
 ### Decision and action
 
-Before you send the task, write these four lines in the run record:
+Before you send the task, write these four lines in the run record. The fixture
+is the only default path that may use `not a Git sandbox`; a real project still
+needs its observed Git identity.
 
 | Question | Record | Continue only when | Stop when |
 | --- | --- | --- | --- |
-| Where will this run? | Declared sandbox, observed current directory, repository root, and branch or `HEAD`. | The observed directory is inside the declared sandbox, and the Git root and identity describe the same local checkout. | Any identifier is missing, ambiguous, outside the sandbox, or disagrees with the others. |
+| Where will this run? | Declared sandbox, observed current directory, and either repository root plus branch/`HEAD` **or** `not a Git sandbox` for the First Safe Change fixture. | The observed directory is inside the declared sandbox, and every applicable identity describes the same local checkout. | Any required identifier is missing, ambiguous, outside the sandbox, or disagrees with the others. |
 | What may change? | `README.md` only. | The target is one existing file in that sandbox. | The task needs another path or the target cannot be identified. |
 | What is allowed? | Inspect, report a plan, then edit only after approval; keep the exclusions from Setup. | The action is reversible and needs no new authority. | It needs credentials, an install, network access, a commit, push, publish, deletion, or another external write. |
 | What is the receipt? | Baseline, exact diff, command source, focused-check output, and explicit unknowns. | You can inspect and retain each item after the action. | The result would only be a status statement or an unreviewable response. |
 
-Do not begin the file task until every answer is concrete. If this type of
-file task is not available to you yet, use the public text-only
+Do not begin the file task until every answer is concrete. If you need a
+safe local file before using your own project, use the
+[First Safe Change fixture](../routes/first-safe-change-EN.md). If local files
+are unavailable entirely, use the public text-only
 [First Win](../../site/index.html#first-30) instead. It is a separate,
 fictional message-checking exercise and does not require a project folder.
 
@@ -86,11 +95,12 @@ fictional message-checking exercise and does not require a project folder.
 
 Save the four answers with the baseline. For a local Git sandbox, record and
 compare the observed current directory, repository root, branch or `HEAD`, and
-declared sandbox before editing. If one answer or identifier changes during the
-task, stop, update the task card, and ask for a new narrow decision before
-continuing. Completing this check only records that you selected a bounded
-starting point; it does not prove that Codex can perform the task, that the
-task will pass, or that you learned the method.
+declared sandbox before editing. For the First Safe Change fixture, record its
+copy path and `not a Git sandbox`; do not fabricate Git evidence. If one answer
+or identifier changes during the task, stop, update the task card, and ask for
+a new narrow decision before continuing. Completing this check only records
+that you selected a bounded starting point; it does not prove that Codex can
+perform the task, that the task will pass, or that you learned the method.
 
 ## Task
 
@@ -107,8 +117,9 @@ Do not: install, access the network, modify code, commit, push, publish, send
 messages, read secrets, or use production data.
 Receipt: baseline, plan, exact diff, command source, focused-check output, and
 an explicit unverified list.
-Before editing: report the observed current directory, repository root, branch
-or HEAD, declared sandbox, baseline, plan, command source, and acceptance check.
+Before editing: report the observed current directory, repository root and
+branch or HEAD when applicable (otherwise state `not a Git sandbox`), declared
+sandbox, baseline, plan, command source, and acceptance check.
 After editing: show the exact diff and run only the focused checks I approved.
 If a path, command, permission, or recovery step is unclear, stop and ask.
 ```

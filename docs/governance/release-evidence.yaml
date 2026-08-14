@@ -125,7 +125,8 @@
         {"id": "lab-008-reference-fixtures", "argv": ["{python}", "scripts/test_lab_008_reference.py"]},
         {"id": "lab-013-reference-run", "argv": ["{python}", "scripts/run_lab_013_reference.py", "--output-dir", "{evidence_dir}/examples/lab-013-reference"]},
         {"id": "lab-013-reference-packet", "argv": ["{python}", "scripts/validate_lab_013_reference.py", "--packet", "{evidence_dir}/examples/lab-013-reference"]},
-        {"id": "lab-013-reference-fixtures", "argv": ["{python}", "scripts/test_lab_013_reference.py"]}
+        {"id": "lab-013-reference-fixtures", "argv": ["{python}", "scripts/test_lab_013_reference.py"]},
+        {"id": "lab-001-first-safe-change-fixture", "argv": ["{python}", "scripts/test_lab_001_first_safe_change_fixture.py"]}
       ]
     },
     {

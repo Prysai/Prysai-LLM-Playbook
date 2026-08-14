@@ -38,6 +38,7 @@ selection, reuse, evaluation, and team governance are not yet complete.
 - [Preface — EN](preface-EN.md)
 - [Learning path contract — locale-neutral](../docs/governance/learning-path.yaml)
 - [Locale matrix — locale-neutral](../docs/governance/locale-matrix.yaml)
+- [First Safe Change — optional offline fixture before Lab 001](routes/first-safe-change-EN.md)
 
 ## Part I: From understanding GPT to the first safe use
 
@@ -56,6 +57,7 @@ Choose a low-risk task, write a first-task protocol, set confirmation points,
 and leave delivery evidence. **content_status:** `candidate`
 
 - Chapter: [Chapter 2 EN source](chapters/02-first-safe-task-EN.md)
+- Novice fixture: [First Safe Change — EN source](routes/first-safe-change-EN.md) (`candidate / not_run`; not a Lab run)
 - Experiment: [lab-001 EN source](labs/lab-001-first-safe-task-EN.md)
 
 ### Chapter 3 — Turn a wish into a task protocol
