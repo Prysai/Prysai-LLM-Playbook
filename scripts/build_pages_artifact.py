@@ -29,7 +29,7 @@ FORBIDDEN_NAMES = (".git", ".work", ".codex-temp", "tmp", ".pytest_cache")
 REQUIRED_PUBLISH_FILES = (
     "assets/branding/prysai-lab-mark-black-96.png",
     "assets/branding/prysai-lab-mark-white-96.png",
-    "assets/readme/codex-field-guide-social.png",
+    "assets/readme/prysai-llm-playbook-social.png",
 )
 FORBIDDEN_PUBLISH_FILENAMES = {
     ".env",

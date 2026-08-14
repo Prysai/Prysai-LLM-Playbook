@@ -1,4 +1,4 @@
-"""Validate Field Guide Skill frontmatter and UI metadata in CI."""
+"""Validate Prysai LLM Playbook Skill frontmatter and UI metadata in CI."""
 
 from __future__ import annotations
 

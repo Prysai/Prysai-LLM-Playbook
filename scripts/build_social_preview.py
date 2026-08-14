@@ -9,7 +9,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "assets/readme/codex-field-guide-social.png"
+OUTPUT = ROOT / "assets/readme/prysai-llm-playbook-social.png"
 WIDTH, HEIGHT = 1200, 630
 INK = "#11151a"
 PAPER = "#f3f0e9"

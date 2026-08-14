@@ -1,4 +1,4 @@
-# Field Guide 发布前检查清单
+# Prysai LLM Playbook 发布前检查清单
 
 ## License gate
 

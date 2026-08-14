@@ -70,7 +70,7 @@ the repository's Pages settings or API state before calling the site deployed.
 The workflow's success is not, by itself, proof that Pages is enabled or that
 the public URL is reachable.
 
-The workflow is named **Build the Field Guide Pages candidate artifact**. With
+The workflow is named **Build Prysai LLM Playbook Pages candidate artifact**. With
 the default `deploy: false`, its summary records
 `deployment_status=not_deployed`; a green run means only that the bounded
 review artifact was built and uploaded. Deployment requires an explicit

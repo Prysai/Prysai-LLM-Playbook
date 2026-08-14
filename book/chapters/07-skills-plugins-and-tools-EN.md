@@ -226,7 +226,7 @@ adoption, or behavior verification.
   review an undefined baseline. Nested dependencies, the target Skill's
   complete asset set, actual permissions, and rollback remain unreviewed, so
   the correct next step is read-only review or an offline isolated trial—not
-  approval to install. The owner is the Field Guide maintenance group.
+  approval to install. The owner is the Prysai LLM Playbook maintenance group.
 - **Blocked variant:** S06's `webapp-testing` should remain `blocked`. It comes
   from the local archive of
   `https://github.com/composio-community/awesome-codex-skills`, with SHA-256

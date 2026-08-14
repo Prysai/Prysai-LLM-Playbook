@@ -1,4 +1,4 @@
-"""Audit the six source archives used to seed First Task, Real Work.
+"""Audit the six source archives used to seed Prysai LLM Playbook.
 
 The script is intentionally read-only. It reports archive fingerprints,
 contents, SKILL.md metadata, duplicate names, and license-file signals without

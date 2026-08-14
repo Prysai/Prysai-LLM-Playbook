@@ -1,7 +1,7 @@
 <!-- content_id: project-readme | locale: EN | language: en | default_locale: EN | compatibility-entrypoint: github-default | canonical_source: README-EN.md -->
 
 <p align="center">
-  <img src="assets/readme/codex-field-guide-header.svg" alt="Prysai LLM Playbook: from first task to reliable work" width="100%">
+  <img src="assets/readme/prysai-llm-playbook-header.svg" alt="Prysai LLM Playbook: from first task to reliable work" width="100%">
 </p>
 
 # Prysai LLM Playbook — From First Task to Reliable Work

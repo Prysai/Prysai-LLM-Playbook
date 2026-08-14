@@ -278,13 +278,13 @@ S02 的研究 Skill 记录了阶段路由、引用和评测方面的参考价值
 
 ## 来源与更新提示
 
-- 现实问题入口：[`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md)，FP-01、FP-02；记录状态 candidate，访问/整理日期 2026-08-09，维护者为 Field Guide 维护组。
+- 现实问题入口：[`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md)，FP-01、FP-02；记录状态 candidate，访问/整理日期 2026-08-09，维护者为 Prysai LLM Playbook 维护组。
 - 现实问题扩展：[`docs/research/field-problems-forums-2026-08-10.md`](../../docs/research/field-problems-forums-2026-08-10.md)、[`docs/research/field-problems-follow-up-2026-08-10.md`](../../docs/research/field-problems-follow-up-2026-08-10.md) 和 [`docs/research/field-problems-index-2026-08-10.md`](../../docs/research/field-problems-index-2026-08-10.md)；只引用原创摘要、来源边界和研究编号，不复制帖子文字或命令。
 - 官方事实与缺口的示例：[`docs/research/official-facts-gap-review-2026-08-10.md`](../../docs/research/official-facts-gap-review-2026-08-10.md) 和 [`docs/research/openai-codex-facts-refresh-2026-08-09.md`](../../docs/research/openai-codex-facts-refresh-2026-08-09.md)；官方产品说明、账户级未确认和本地未复现必须分栏。
 - 教程方法的原创综合：[`docs/research/web-methods-synthesis-2026-08-10.md`](../../docs/research/web-methods-synthesis-2026-08-10.md)；本章只吸收问题收敛、证据阶梯和停止/复核思想，不复制外部教材文字、代码或资产。
 - 外部资产许可：[`docs/sources/asset-register.md`](../../docs/sources/asset-register.md)，S01、S02、S03、S06；S02 的许可证为 CC BY-NC 4.0，发行前需重新审查。
 - 产品与协议易变事实： [OpenAI Codex 官方仓库](https://github.com/openai/codex)及其关联官方文档；研究时记录具体 URL、访问日期和版本，不把 issue 推测写成官方结论。
-- 更新责任：Field Guide 维护组；来源变更、版本更新、许可证变更或最迟 2026-11-09 复核。章节当前状态：candidate；只有完成关键断言的人工复核和来源更新，研究产物才可称为 verified。
+- 更新责任：Prysai LLM Playbook 维护组；来源变更、版本更新、许可证变更或最迟 2026-11-09 复核。章节当前状态：candidate；只有完成关键断言的人工复核和来源更新，研究产物才可称为 verified。
 
 <!-- chapter-navigation:start -->
 <hr>

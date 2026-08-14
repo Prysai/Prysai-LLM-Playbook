@@ -7,16 +7,17 @@
 Today we begin with the question behind the product names. You may already
 have heard Codex and Claude Code mentioned together. They are useful examples
 of a bigger shift: a language model can work with a task, context, and
-sometimes tools instead of only returning a chat reply. You do not need to
-choose a side or memorise a feature list first. Before we tour any controls,
-learn the question that makes the rest easier:
+sometimes tools instead of only returning a chat reply. Think of this opening
+as a short guided conversation, not an exam: you do not need to choose a side
+or memorise a feature list first. Before we tour any controls, learn the
+question that makes the rest easier:
 
 > When a language-model tool says it is done, what can you actually inspect
 > before you trust the result?
 
 In this first lesson, you will separate a suggested action from a permitted
 action, a tool message from a changed target, and a plausible answer from
-evidence. Codex is the flagship practice track in this guide. The method is
+evidence. Codex is the flagship practice track in this Playbook. The method is
 broader; a named platform must earn its own adapter before we teach its
 buttons, permissions, or behaviour as fact.
 

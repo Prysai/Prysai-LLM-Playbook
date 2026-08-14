@@ -130,7 +130,7 @@
 
 ## 来源与更新提示
 
-- 现实问题入口：[`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md)，FP-10、FP-11；记录状态 candidate，访问/整理日期 2026-08-09，维护者为 Field Guide 维护组。
+- 现实问题入口：[`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md)，FP-10、FP-11；记录状态 candidate，访问/整理日期 2026-08-09，维护者为 Prysai LLM Playbook 维护组。
 - 外部资产与许可证边界：[`docs/sources/asset-register.md`](../../docs/sources/asset-register.md)，S01、S03、S06；没有明确许可的图像、代码、模板或嵌套资产只作参考，不直接复制。
 - 文档、PDF、表格、浏览器和外部服务的最终形态规则：以所用工具/服务的官方文档和当前版本为准，记录 URL、访问日期、版本和适用范围。
 - 更新责任：内容与自动化轨维护人；渲染器、格式、浏览器、外部 API、许可证或权限变化时复核，或最迟 2026-11-09。章节当前状态：candidate；产物只有通过最终形态、数据质量、隐私、许可证、回滚和在线证据后，才能分别称为 verified 或 production-ready。

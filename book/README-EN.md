@@ -114,7 +114,7 @@ rewritten as an official root cause, and a community workaround is not
 presented as a supported product fix. Each case keeps its source, date, evidence
 level, and local-reproduction status visible.
 
-That makes the book useful in the way a field guide should be useful: it gives
+That makes the book useful in the way a practical playbook should be useful: it gives
 the reader a symptom to recognise, a safe first check, a narrower fallback, and
 a clear statement of what remains unknown.
 

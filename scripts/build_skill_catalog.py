@@ -1,7 +1,7 @@
 """Build a read-only, searchable index of Skill candidates in source archives.
 
 The index is discovery metadata only. It does not extract, install, copy, or
-approve any source Skill. Every candidate remains subject to the Field Guide source,
+approve any source Skill. Every candidate remains subject to the Playbook source,
 license, dependency, boundary, and evaluation gates.
 """
 
@@ -205,7 +205,7 @@ def markdown(report: dict[str, object]) -> str:
             "",
             "1. 先按任务目标、生命周期阶段和风险筛选，不按目录数量或热度筛选。",
             "2. 回到来源压缩包和上游项目核对完整内容、许可证、依赖和认证要求。",
-            "3. 将候选内容改写为 Field Guide 的任务协议、实验、证据标准和失败案例。",
+            "3. 将候选内容改写为 Playbook 的任务协议、实验、证据标准和失败案例。",
             "4. 通过正例、边界例、失败例、迁移例和新鲜上下文前测后，才可进入 `docs/skill-registry.md`。",
             "",
             "## 条目索引",

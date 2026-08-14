@@ -212,7 +212,7 @@ try {
   await page.getByRole('button', { name: 'Copy rescue prompt' }).click();
   await page.locator('[data-copy-starter-status]').getByText('Rescue prompt copied.', { exact: false }).waitFor();
 
-  const searchInput = page.getByRole('searchbox', { name: 'Search the Field Guide' });
+  const searchInput = page.getByRole('searchbox', { name: 'Search the Playbook' });
   await searchInput.focus();
   await page.waitForTimeout(100);
   assert.equal(searchRequests.length, 0, 'keyboard focus fetched the full search index');
@@ -300,7 +300,7 @@ try {
     else await route.continue();
   });
   await retryPage.goto(`${origin}/`, { waitUntil: 'networkidle' });
-  const retryInput = retryPage.getByRole('searchbox', { name: 'Search the Field Guide' });
+  const retryInput = retryPage.getByRole('searchbox', { name: 'Search the Playbook' });
   await retryInput.fill('verification');
   await retryPage.getByRole('button', { name: 'Search', exact: true }).click();
   await retryPage.getByText(/submit again to retry/i).waitFor();

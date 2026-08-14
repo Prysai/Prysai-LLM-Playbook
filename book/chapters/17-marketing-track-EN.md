@@ -169,7 +169,7 @@ Choose a real marketing decision, but use only redacted or aggregate data:
 
 ## Sources and maintenance boundary
 
-- **Field reports:** [`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md), FP-03 and FP-04. The record is `candidate`; it was accessed and organized on 2026-08-09 by the Field Guide maintenance group. It is not local reproduction.
+- **Field reports:** [`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md), FP-03 and FP-04. The record is `candidate`; it was accessed and organized on 2026-08-09 by the Prysai LLM Playbook maintenance group. It is not local reproduction.
 - **Marketing-method reference:** [`docs/sources/asset-register.md`](../../docs/sources/asset-register.md), S04. This chapter is an original synthesis of decision and evidence practices; it does not copy external marketing skill text.
 - **Volatile platform and privacy facts:** Use the applicable platform’s official developer and privacy documentation, organization policy, and current configuration. Record the URL, access date, region, data owner, and retention policy in the experiment record.
 - **Maintenance owner:** Marketing-track maintainer. Review when positioning, channels, permissions, privacy policy, event schema, or attribution method changes, and no later than 2026-11-09.

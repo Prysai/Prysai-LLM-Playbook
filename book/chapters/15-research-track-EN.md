@@ -285,13 +285,13 @@ Choose a research conclusion you wrote recently, without retrieving it again:
 
 ## Sources and update boundary
 
-- Real-world problem entry: [`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md), FP-01 and FP-02; record status `candidate`, access/curation date 2026-08-09, owner Field Guide maintainers.
+- Real-world problem entry: [`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md), FP-01 and FP-02; record status `candidate`, access/curation date 2026-08-09, owner Prysai LLM Playbook maintainers.
 - Extended field problems: [`docs/research/field-problems-forums-2026-08-10.md`](../../docs/research/field-problems-forums-2026-08-10.md), [`docs/research/field-problems-follow-up-2026-08-10.md`](../../docs/research/field-problems-follow-up-2026-08-10.md), and [`docs/research/field-problems-index-2026-08-10.md`](../../docs/research/field-problems-index-2026-08-10.md); cite only original summaries, source boundaries, and research IDs, not forum text or commands.
 - Official facts and gaps: [`docs/research/official-facts-gap-review-2026-08-10.md`](../../docs/research/official-facts-gap-review-2026-08-10.md) and [`docs/research/openai-codex-facts-refresh-2026-08-09.md`](../../docs/research/openai-codex-facts-refresh-2026-08-09.md); keep official product descriptions, account-level unknowns, and local non-reproduction in separate columns.
 - Original synthesis of tutorial methods: [`docs/research/web-methods-synthesis-2026-08-10.md`](../../docs/research/web-methods-synthesis-2026-08-10.md); this chapter uses its original synthesis of question narrowing, evidence ladders, and stop/review logic without copying external text, code, or assets.
 - External asset licensing: [`docs/sources/asset-register.md`](../../docs/sources/asset-register.md), S01, S02, S03, and S06. S02 is CC BY-NC 4.0 and requires renewed review before release.
 - Volatile product and protocol facts: [OpenAI Codex repository](https://github.com/openai/codex) and related official documentation. Record the exact URL, access date, and version during research; do not turn an Issue hypothesis into an official conclusion.
-- Update owner: Field Guide maintainers. Review on source, version, or license change, or no later than 2026-11-09. Chapter status is `candidate`; research output should be called `verified` only after key claims receive human review and current source evidence.
+- Update owner: Prysai LLM Playbook maintainers. Review on source, version, or license change, or no later than 2026-11-09. Chapter status is `candidate`; research output should be called `verified` only after key claims receive human review and current source evidence.
 
 <!-- chapter-navigation:start -->
 <hr>

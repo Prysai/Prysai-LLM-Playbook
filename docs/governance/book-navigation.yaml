@@ -3,7 +3,7 @@
   "content_id": "book-navigation",
   "generated_at": "2026-08-11",
   "status": "candidate",
-  "description": "Canonical reading order for the 22-chapter Field Guide.",
+  "description": "Canonical reading order for the 22-chapter Prysai LLM Playbook.",
   "owner": "curriculum-maintainer",
   "default_locale": "EN",
   "legacy_locale": "ZH",

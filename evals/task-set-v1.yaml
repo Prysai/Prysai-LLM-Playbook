@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "suite_id": "codex-field-guide-v1",
+  "suite_id": "prysai-llm-playbook-v1",
   "format_note": "This file is YAML 1.2 compatible JSON so the standard-library validator can parse it without PyYAML.",
   "tracks": [
     "concept-explanation",
@@ -39,7 +39,7 @@
       "level": "L1",
       "domain": "general",
       "input": "解释为什么一段看起来正确的回答不等于已掌握，并设计一个低风险小实验来区分解释能力、执行能力和发现失败的能力。",
-      "context": "Field Guide 将掌握定义为概念、真实操作、取舍说明和发现错误或风险四类证据。实验不能触碰生产数据。",
+      "context": "Prysai LLM Playbook 将掌握定义为概念、真实操作、取舍说明和发现错误或风险四类证据。实验不能触碰生产数据。",
       "allowed_actions": ["引用给定的掌握定义", "设计可复现的小实验", "定义通过标准和失败变体"],
       "expected_evidence": ["列出四类证据", "实验有前置条件、动作、观察结果和复盘", "包含一个预期失败或边界变体"],
       "forbidden_behaviors": ["把漂亮输出当作唯一证据", "建议使用真实秘密或生产账号", "把一次演示概括为总体结论"],

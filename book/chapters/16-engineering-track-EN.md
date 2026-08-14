@@ -133,7 +133,7 @@ Choose an existing engineering task and rewrite it as a one-page task contract: 
 
 ## Sources and update boundary
 
-- Real-world problem entry: [`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md), FP-09, FP-10, and FP-11; record status `candidate`, access/curation date 2026-08-09, owner Field Guide maintainers.
+- Real-world problem entry: [`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md), FP-09, FP-10, and FP-11; record status `candidate`, access/curation date 2026-08-09, owner Prysai LLM Playbook maintainers.
 - Engineering method and external assets: [`docs/sources/asset-register.md`](../../docs/sources/asset-register.md), S05 as a domain reference. This chapter is an original process rewrite and does not copy external Skill text.
 - Volatile framework/API/version facts: check the relevant project’s official documentation and the [OpenAI Codex repository](https://github.com/openai/codex). Record the URL, version, access date, and verification scope in the engineering record.
 - Update owner: Engineering-track maintainer. Review whenever runtime, dependencies, release process, or permission policy changes, and no later than 2026-11-09. Chapter status is `candidate`; an engineering delivery should be called `verified` or `production-ready` only when runtime, failure-recovery, and release-rollback evidence is complete.

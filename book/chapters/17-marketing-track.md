@@ -131,7 +131,7 @@ Agent 可以整理产品上下文、产生变体、检查事件命名、计算�
 
 ## 来源与更新提示
 
-- 现实问题入口：[`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md)，FP-03、FP-04；记录状态 candidate，访问/整理日期 2026-08-09，维护者为 Field Guide 维护组。
+- 现实问题入口：[`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md)，FP-03、FP-04；记录状态 candidate，访问/整理日期 2026-08-09，维护者为 Prysai LLM Playbook 维护组。
 - 营销领域参考：[`docs/sources/asset-register.md`](../../docs/sources/asset-register.md) 中 S04；本章采用能力簇和实验纪律的原创重写，不复制外部营销 Skill 文本。
 - 隐私、渠道和平台事实：以实际平台的官方开发者/隐私文档、组织政策和当前配置为准；记录 URL、访问日期、适用地区、数据责任人和保留策略。
 - 更新责任：营销轨维护人；产品定位、渠道权限、隐私政策、事件 schema 或归因方法变化时复核，或最迟 2026-11-09。章节当前状态：candidate；营销结论只有在数据质量、隐私和人工复核证据齐全后才可称为 verified。

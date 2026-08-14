@@ -183,10 +183,10 @@ evidence / unverified / unblock_conditions:
 
 ## 来源与更新提示
 
-- 现实问题入口：[`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md)，FP-06、FP-07、FP-11；该记录状态为 candidate，访问/整理日期 2026-08-09，维护者为 Field Guide 维护组。
+- 现实问题入口：[`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md)，FP-06、FP-07、FP-11；该记录状态为 candidate，访问/整理日期 2026-08-09，维护者为 Prysai LLM Playbook 维护组。
 - 许可证与资产边界：[`docs/sources/asset-register.md`](../../docs/sources/asset-register.md)，S02、S03、S06；按项目归档和许可证审查流程更新。
 - Skill 结构与验证： [OpenAI Codex 官方仓库](https://github.com/openai/codex)；只用于确认易变的入口、版本和实现行为，不替代本地运行证据。
-- 更新责任：Field Guide 维护组；下一次复核建议为每次 Skill 来源升级、许可证变化、运行时发现行为变化，或最迟 2026-11-09。章节当前状态：candidate；只有完成组织权限、许可证、回归和回滚证据后，相关 Skill 才可标为 production-ready。
+- 更新责任：Prysai LLM Playbook 维护组；下一次复核建议为每次 Skill 来源升级、许可证变化、运行时发现行为变化，或最迟 2026-11-09。章节当前状态：candidate；只有完成组织权限、许可证、回归和回滚证据后，相关 Skill 才可标为 production-ready。
 
 <!-- chapter-navigation:start -->
 <hr>

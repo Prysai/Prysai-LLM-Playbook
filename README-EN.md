@@ -1,7 +1,7 @@
 <!-- content_id: project-readme | locale: EN | language: en | default_locale: EN | translation_status: source | canonical_source: README-EN.md -->
 
 <p align="center">
-  <img src="assets/readme/codex-field-guide-header.svg" alt="Prysai LLM Playbook: from first task to reliable work" width="100%">
+  <img src="assets/readme/prysai-llm-playbook-header.svg" alt="Prysai LLM Playbook: from first task to reliable work" width="100%">
 </p>
 
 # Prysai LLM Playbook — From First Task to Reliable Work
@@ -66,7 +66,7 @@ The central promise is simple:
 > smallest useful capability, act within a visible boundary, preserve the
 > evidence, and say exactly what remains unverified.
 
-This is an independent curriculum and field guide. It is not OpenAI's
+This is an independent curriculum and practical playbook. It is not OpenAI's
 official documentation, an official Codex product page, or a catalogue of
 copied prompts and Skills.
 
@@ -577,7 +577,7 @@ See the [contribution model](docs/governance/contribution-model.md) and
 - Do not copy external text, images, code, Skill instructions, or branding when
   the license and permission boundary is unclear.
 
-## The promise of this field guide
+## The Playbook's promise
 
 The goal is not to make readers better at writing impressive prompts. It is to
 make them better at designing work that another person can understand, run,

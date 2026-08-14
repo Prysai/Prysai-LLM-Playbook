@@ -117,7 +117,7 @@ def main() -> int:
 
     skill_dirs = sorted(path.parent for path in (ROOT / "skills").glob("*/SKILL.md"))
     if not skill_dirs:
-        errors.append("no Field Guide skills found")
+        errors.append("no Prysai LLM Playbook skills found")
 
     chapter_files = sorted((ROOT / "book/chapters").glob("*.md"))
     if len(chapter_files) < 12:

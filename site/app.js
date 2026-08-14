@@ -260,12 +260,12 @@ Object.assign(copy.zh, {
 });
 
 Object.assign(copy.en, {
-  searchLabel: 'Search the Field Guide',
+  searchLabel: 'Search the Playbook',
   searchPlaceholder: 'Search chapters, labs, Skills, or field cases',
   searchSubmit: 'Search',
   searchTitle: 'Find a bounded answer.',
   searchClear: 'Clear',
-  searchNoQuery: 'Type a word or phrase to search the Field Guide.',
+  searchNoQuery: 'Type a word or phrase to search the Playbook.',
   searchLoading: 'Loading the local search index…',
   searchNoResults: 'No results for “{query}”. Try a chapter title, Skill name, or narrower phrase.',
   searchResultsCount: '{count} results for “{query}”.',
@@ -317,12 +317,12 @@ Object.assign(copy.en, {
 });
 
 Object.assign(copy.zh, {
-  searchLabel: '搜索 Field Guide',
+  searchLabel: '搜索 Prysai LLM Playbook',
   searchPlaceholder: '搜索章节、实验、Skill 或现实问题',
   searchSubmit: '搜索',
   searchTitle: '找到有边界的答案。',
   searchClear: '清除',
-  searchNoQuery: '输入词语或短语，搜索 Field Guide。',
+  searchNoQuery: '输入词语或短语，搜索 Prysai LLM Playbook。',
   searchLoading: '正在加载本地搜索索引……',
   searchNoResults: '没有找到“{query}”的结果。试试章节标题、Skill 名称或更窄的短语。',
   searchResultsCount: '“{query}”的结果：{count} 条。',
@@ -520,13 +520,20 @@ const localeManifestAvailable = Boolean(
 );
 const localeTokens = Object.keys(localeManifest.locales);
 const uiLocales = new Set(['en', 'zh']);
-const languageStorageKey = 'codex-field-guide-language';
+const languageStorageKey = 'prysai-llm-playbook-language';
+const legacyLanguageStorageKey = 'codex-field-guide-language';
 const languageParam = new URLSearchParams(window.location.search).get('lang');
 const hasExplicitLanguageParam = languageParam !== null;
 const hasValidLanguageParam = localeTokens.includes(languageParam);
 let currentLanguage = hasValidLanguageParam ? languageParam : null;
 if (!hasExplicitLanguageParam) {
-  try { currentLanguage = localStorage.getItem(languageStorageKey); } catch (_) { currentLanguage = null; }
+  try {
+    currentLanguage = localStorage.getItem(languageStorageKey);
+    if (!currentLanguage) {
+      currentLanguage = localStorage.getItem(legacyLanguageStorageKey);
+      if (currentLanguage) localStorage.setItem(languageStorageKey, currentLanguage);
+    }
+  } catch (_) { currentLanguage = null; }
 }
 currentLanguage = localeTokens.includes(currentLanguage) ? currentLanguage : localeManifest.default_locale;
 let effectiveUiLanguage = uiLocales.has(currentLanguage) ? currentLanguage : 'en';

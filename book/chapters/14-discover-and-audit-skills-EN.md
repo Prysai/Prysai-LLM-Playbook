@@ -189,10 +189,10 @@ Choose a Skill or internal team script you currently use without changing produc
 
 ## Sources and update boundary
 
-- Realistic-report entry point: [`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md), FP-06, FP-07, and FP-11. The record is `candidate`, with an access and curation date of 2026-08-09, maintained by the Field Guide maintenance group.
+- Realistic-report entry point: [`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md), FP-06, FP-07, and FP-11. The record is `candidate`, with an access and curation date of 2026-08-09, maintained by the Prysai LLM Playbook maintenance group.
 - Licensing and asset boundaries: [`docs/sources/asset-register.md`](../../docs/sources/asset-register.md), S02, S03, and S06; update through the project’s archive and license-review process.
 - Skill structure and verification: the [official OpenAI Codex repository](https://github.com/openai/codex), used to check volatile entry points, versions, and implementation behavior; it does not replace local runtime evidence.
-- Update owner: the Field Guide maintenance group. Review after every Skill-source upgrade, license change, or discovery-behavior change, or no later than 2026-11-09. Chapter status: `candidate`; related Skills should be called `production-ready` only after organizational-permission, licensing, regression, and rollback evidence is complete.
+- Update owner: the Prysai LLM Playbook maintenance group. Review after every Skill-source upgrade, license change, or discovery-behavior change, or no later than 2026-11-09. Chapter status: `candidate`; related Skills should be called `production-ready` only after organizational-permission, licensing, regression, and rollback evidence is complete.
 
 ## Practice the adoption decision
 

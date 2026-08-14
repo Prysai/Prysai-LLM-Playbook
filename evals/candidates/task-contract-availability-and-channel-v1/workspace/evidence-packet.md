@@ -1,7 +1,7 @@
 # Synthetic release evidence packet
 
 This is fictional, project-owned evaluation data. It does not describe the
-Field Guide or any real release.
+Prysai LLM Playbook or any real release.
 
 | Evidence ID | Observation | Scope |
 | --- | --- | --- |
@@ -13,4 +13,3 @@ Field Guide or any real release.
 
 The candidate has no release version and no rollback target. No external
 action is authorized.
-

@@ -62,7 +62,7 @@ For each symptom, keep four labels separate:
 2. **Independent report:** whether another user describes a similar symptom.
 3. **Official confirmation:** a maintainer response, official documentation,
    release note, or other first-party evidence.
-4. **Field Guide evidence:** what this project actually reproduced.
+4. **Playbook evidence:** what this project actually reproduced.
 
 In the three examples above, the first two labels may be present, but this
 project has no local reproduction and no official root-cause confirmation to
@@ -121,7 +121,7 @@ recommended GPT-5.6 choices broadly like this:
 | Terra: pragmatic everyday workhorse | Try it for ordinary work that needs strong reasoning and tool use | Whether it clears your acceptance threshold under your actual constraints |
 | Luna: clear, repeatable, high-volume work | Try it for extraction, classification, transformation, and structured summaries | Whether its result remains acceptable after context, provider, effort, and review costs are included |
 
-These are product descriptions, not Field Guide benchmark results. The official
+These are product descriptions, not Playbook benchmark results. The official
 page also warns that higher reasoning effort can improve complex work while
 taking longer and using more tokens. Start with the lowest effort that meets
 the acceptance rubric; raise it only when the task needs more planning,
@@ -354,7 +354,7 @@ for evaluation evidence.
 | CLI surface and local repository workflow | [Codex CLI](https://learn.chatgpt.com/docs/cli.md) | 2026-08-11 | Official CLI documentation; not this session’s effective configuration | `facts-maintainer` / 2026-09-11 |
 | Cloud environment, setup, logs, and review boundaries | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-11 | Official Cloud documentation; setup is not agent-stage completion | `facts-maintainer` / 2026-09-11 |
 | Public model/provider, capacity, and long-wait symptoms | [Field problem record](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) | 2026-08-11 | User reports and project guidance; no local reproduction or official root-cause claim | `curriculum-maintainer` / 2026-09-11 |
-| Fixed-task comparison method | [Evaluation chapter](19-evaluate-models-and-workflows-EN.md) and this chapter’s `three-task-smoke-v1` | 2026-08-11 | Field Guide method; no completed model runs yet | `evaluation-maintainer` / 2026-09-11 |
+| Fixed-task comparison method | [Evaluation chapter](19-evaluate-models-and-workflows-EN.md) and this chapter’s `three-task-smoke-v1` | 2026-08-11 | Playbook method; no completed model runs yet | `evaluation-maintainer` / 2026-09-11 |
 
 Model IDs, surface matrices, prices, capacity, configuration syntax, provider
 support, effort controls, and deprecation notices can change. When they do,

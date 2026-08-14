@@ -7,7 +7,7 @@
 ```text
 评估日期：
 模型/版本：
-任务集版本：codex-field-guide-v1
+任务集版本：prysai-llm-playbook-v1
 运行环境：
 工具集与权限：
 网络条件：

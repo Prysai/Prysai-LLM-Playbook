@@ -1,50 +1,50 @@
-# 六个来源如何真正融合进 Field Guide
+# 六个来源如何真正融合进 Prysai LLM Playbook
 
-这份映射回答一个核心问题：外部项目提供什么价值，Field Guide 如何吸收，哪些内容不能直接带入。
+这份映射回答一个核心问题：外部项目提供什么价值，Prysai LLM Playbook 如何吸收，哪些内容不能直接带入。
 
 ## S01：Codex Orange Book
 
 **贡献类型：** 中文入门叙事、主题覆盖、真实使用场景启发。
-**抽取价值：** 它覆盖了 Codex 入口、配置、skills、MCP、Git/GitHub、云端运行、记忆和实战案例，这帮助 Field Guide 识别初学者需要的完整主题面。
-**Field Guide 转译：** 重新编写第一至第八篇的阅读顺序、术语解释和实验入口。
+**抽取价值：** 它覆盖了 Codex 入口、配置、skills、MCP、Git/GitHub、云端运行、记忆和实战案例，这帮助 Playbook 识别初学者需要的完整主题面。
+**Playbook 转译：** 重新编写第一至第八篇的阅读顺序、术语解释和实验入口。
 **处理边界：** 压缩包没有发现明确许可证；不复制正文、图片、HTML、PDF、章节措辞或品牌表达。只保留主题级的研究笔记和公开链接，直到获得明确授权。
 
 ## S02：Academic Research Skills Codex
 
 **贡献类型：** 复杂领域工作流、阶段路由、证据和引用纪律、评测与审查意识。
 **抽取价值：** 单一入口 router、按意图选择 workflow、先收敛研究问题、将研究/写作/审稿/实验分阶段处理，以及把来源、完整性和复核做成显式门槛。
-**Field Guide 转译：** 第 15 章研究轨、第 9/19 章来源与证据方法、评测框架和研究实验模板。
-**处理边界：** 该来源包含 CC BY-NC 4.0 内容和上游归属。Field Guide 主线只写项目原创解释；如未来分发原始或改编组件，必须保留 LICENSE、NOTICE、上游提交记录和非商业许可边界。
+**Playbook 转译：** 第 15 章研究轨、第 9/19 章来源与证据方法、评测框架和研究实验模板。
+**处理边界：** 该来源包含 CC BY-NC 4.0 内容和上游归属。Playbook 主线只写项目原创解释；如未来分发原始或改编组件，必须保留 LICENSE、NOTICE、上游提交记录和非商业许可边界。
 
 ## S03：Awesome Agent Skills
 
 **贡献类型：** 社区与官方 skill 生态索引。
 **抽取价值：** 帮助学习者理解 skills 并非单一厂商专属，且应根据真实任务发现能力。
-**Field Guide 转译：** 第 14 章生态发现与安装前检查，以及第 7/18 章“索引不等于质量证明”和外部行动边界实验。
+**Playbook 转译：** 第 14 章生态发现与安装前检查，以及第 7/18 章“索引不等于质量证明”和外部行动边界实验。
 **处理边界：** 不将清单数量、赞助信息或兼容性声明当作质量证据；引用索引时保留 MIT 归属。
 
 ## S04：Marketing Skills
 
 **贡献类型：** 49 个营销领域 skill，以及共享 `product-marketing` 上下文模式。
-**抽取价值：** 让 Field Guide 看到专业 skill 不应每次重新询问产品、受众和定位；analytics skill 的“为决策而测量、先问要做什么决定”也可迁移到所有 Agent 工作流。
-**Field Guide 转译：** 第 17 章营销轨、第 20 章项目上下文，以及第 19 章测量与评估实验。
-**处理边界：** MIT 允许改编，但每个纳入组件仍需保留版权和许可证，并通过 Field Guide 的触发、边界和输出评测；不把原项目整体宣称为本项目原创。
+**抽取价值：** 让 Playbook 看到专业 skill 不应每次重新询问产品、受众和定位；analytics skill 的“为决策而测量、先问要做什么决定”也可迁移到所有 Agent 工作流。
+**Playbook 转译：** 第 17 章营销轨、第 20 章项目上下文，以及第 19 章测量与评估实验。
+**处理边界：** MIT 允许改编，但每个纳入组件仍需保留版权和许可证，并通过 Playbook 的触发、边界和输出评测；不把原项目整体宣称为本项目原创。
 
 ## S05：Addy Osmani Agent Skills
 
 **贡献类型：** 24 个工程生命周期 skill。
-**抽取价值：** `define → plan → build → verify → review → ship` 提供了强而清楚的工作骨架；planning、context-engineering、doubt-driven-development 直接支撑 Field Guide 的核心方法。
-**Field Guide 转译：** 第 8–10、16 章完整工作流，第 4/12/20 章上下文工程，以及第 11/12/21 章 Skill 与 Agent 逻辑。
-**处理边界：** MIT 允许改编并要求保留许可证和版权；Field Guide 用自己的术语、练习和验收标准重写，不直接复制整套命令体验。
+**抽取价值：** `define → plan → build → verify → review → ship` 提供了强而清楚的工作骨架；planning、context-engineering、doubt-driven-development 直接支撑 Playbook 的核心方法。
+**Playbook 转译：** 第 8–10、16 章完整工作流，第 4/12/20 章上下文工程，以及第 11/12/21 章 Skill 与 Agent 逻辑。
+**处理边界：** MIT 允许改编并要求保留许可证和版权；Playbook 用自己的术语、练习和验收标准重写，不直接复制整套命令体验。
 
 ## S06：Awesome Codex Skills
 
 **贡献类型：** 880 个 Codex skill 候选，其中大量是 Composio 外部服务自动化。
 **抽取价值：** 展示 Codex skill 可以覆盖从文档、研究到外部服务行动的广阔生态，也暴露了命名、依赖、许可证、认证和副作用管理的重要性。
-**Field Guide 转译：** 第 7、13、14、18、22 章技能/工具/Agent 边界、外部生态目录和高权限行动实验。
+**Playbook 转译：** 第 7、13、14、18、22 章技能/工具/Agent 边界、外部生态目录和高权限行动实验。
 **处理边界：** 根目录许可证信号不能自动覆盖全部嵌套内容；先逐项检查许可证、依赖、命名、服务认证和真实动作，不能把 880 个目录直接合并进核心发行版。
 
-## 统一的 Field Guide 变换公式
+## 统一的 Playbook 变换公式
 
 ```text
 外部资产

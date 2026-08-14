@@ -13,8 +13,10 @@ Codex task succeeds or fails on a larger set of decisions:
 - Why does an Agent continue, retry, pause, or stop?
 - What evidence justifies saying that the task is complete?
 
-This book studies that whole relationship. It is about building a dependable
-working method around AI, not memorising a magic sentence.
+This book studies that whole relationship. Treat it like a guided conversation,
+not a vocabulary test: name one practical problem, make one bounded choice,
+inspect the result, then ask what it did not prove. The goal is a dependable
+working method around AI, not a magic sentence to memorise.
 
 ## The two paths through the book
 

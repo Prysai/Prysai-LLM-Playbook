@@ -1,4 +1,4 @@
-name: Build the Field Guide Pages candidate artifact
+name: Build Prysai LLM Playbook Pages candidate artifact
 
 on:
   workflow_dispatch:
@@ -24,16 +24,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Set up Python
-        uses: actions/setup-python@v7
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.12"
 
       - name: Set up GitHub Pages
         if: inputs.deploy
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
 
       - name: Build the bounded Pages artifact
         run: python scripts/build_pages_artifact.py --output _site
@@ -49,7 +49,7 @@ jobs:
           fi
 
       - name: Upload bounded site artifact for review
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: pages-candidate-${{ github.sha }}
           path: _site
@@ -58,7 +58,7 @@ jobs:
 
       - name: Upload Pages deployment artifact
         if: inputs.deploy
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
         with:
           path: _site
 
@@ -75,4 +75,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0

@@ -1,6 +1,6 @@
 # Contributing to Prysai LLM Playbook
 
-Thank you for improving the Field Guide. This repository accepts focused
+Thank you for improving the Prysai LLM Playbook. This repository accepts focused
 corrections, curriculum work, research records, project Skills, evaluation
 fixtures, site changes, and governance improvements. A contribution is not
 accepted merely because it is large, polished, or AI-assisted; it must preserve

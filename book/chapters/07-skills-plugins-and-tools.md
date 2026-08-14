@@ -113,7 +113,7 @@ evidence / unverified:
 
 ### 两个原创示范结论
 
-- **推荐候选：** S05 的 `code-review-and-quality` 可作为“合并前多轴审查”任务的 `recommendation-only` 候选。来源固定为 `https://github.com/addyosmani/agent-skills` 的本地归档，revision 证据为 SHA-256 `6EEDBE7D2EA3A82417781D879785BD501FBDE21275627F557DE4B76560BA1250`；仓库级 MIT 信号已记录。触发条件是已有固定 diff/基线并要求审查，不触发于生成新功能或没有比较基线的泛化请求。依赖、目标 Skill 的嵌套资产、实际权限和回滚尚未逐项审完，所以这里只推荐继续只读审查和无网络隔离试用，不批准安装。owner 为 Field Guide 维护组。
+- **推荐候选：** S05 的 `code-review-and-quality` 可作为“合并前多轴审查”任务的 `recommendation-only` 候选。来源固定为 `https://github.com/addyosmani/agent-skills` 的本地归档，revision 证据为 SHA-256 `6EEDBE7D2EA3A82417781D879785BD501FBDE21275627F557DE4B76560BA1250`；仓库级 MIT 信号已记录。触发条件是已有固定 diff/基线并要求审查，不触发于生成新功能或没有比较基线的泛化请求。依赖、目标 Skill 的嵌套资产、实际权限和回滚尚未逐项审完，所以这里只推荐继续只读审查和无网络隔离试用，不批准安装。owner 为 Prysai LLM Playbook 维护组。
 - **拒绝变体：** S06 的 `webapp-testing` 来源固定为 `https://github.com/composio-community/awesome-codex-skills` 的本地归档，revision 证据为 SHA-256 `D3DA83ED9D474690E7FF235351376114972840C78BC319CBCB8F89CBD704608E`。即使目录中存在 `SKILL.md`，它也应保持 `blocked`：现有台账只确认根目录 Apache-2.0 信号，不能证明嵌套 Skill、脚本和素材的许可/NOTICE 一致；若目标安装路径、配置备份与移除后恢复检查也未写清，更不能靠“文件存在”推进安装。解阻需要逐项许可结论和可演练回滚；在此之前不下载、不安装、不声称已发现或可用。
 
 ## 5. 组合而不是堆叠

@@ -1,4 +1,4 @@
-# First Task, Real Work — An LLM Field Guide
+# Prysai LLM Playbook — From First Task to Reliable Work
 
 ## Project purpose
 
