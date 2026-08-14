@@ -300,6 +300,34 @@ try {
   await closeMenuButton.click();
   assert.equal(await page.locator('.site-nav.is-open').count(), 0, 'mobile navigation does not close again');
 
+  const mobileAnchorDestinations = [
+    ['Start here', '#start', '#start-title'],
+    ['Learning path', '#path', '#path-title'],
+    ['Reading routes', '#chapters', '#chapters-title'],
+    ['Project index', '#project-map', '#project-map-title'],
+  ];
+  for (const [label, hash, headingSelector] of mobileAnchorDestinations) {
+    await page.goto(`${origin}/site/`, { waitUntil: 'networkidle' });
+    await page.getByRole('button', { name: 'Open navigation' }).click();
+    await page.getByRole('link', { name: label, exact: true }).click();
+    await page.waitForFunction((expectedHash) => window.location.hash === expectedHash, hash);
+    await page.waitForTimeout(2_000);
+    const destination = await page.evaluate((selector) => {
+      const header = document.querySelector('.site-header');
+      const heading = document.querySelector(selector);
+      return {
+        headerHeight: header.getBoundingClientRect().height,
+        headingTop: heading.getBoundingClientRect().top,
+        headingVisible: Boolean(heading.offsetParent),
+        navigationOpen: document.querySelector('.site-nav').classList.contains('is-open'),
+      };
+    }, headingSelector);
+    assert.equal(destination.navigationOpen, false, `mobile navigation stays open after choosing ${label}`);
+    assert.equal(destination.headingVisible, true, `mobile destination heading is hidden for ${label}`);
+    assert.ok(destination.headingTop >= destination.headerHeight + 12, `mobile destination heading is covered for ${label}: ${JSON.stringify(destination)}`);
+    assert.ok(destination.headingTop <= destination.headerHeight + 200, `mobile destination heading is too far below the header for ${label}: ${JSON.stringify(destination)}`);
+  }
+
   await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F02-first-safe-task-EN.md&lang=en`, { waitUntil: 'networkidle' });
   await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
   assert.match(await page.locator('[data-reader-article] h1').innerText(), /first safe, verifiable task/i, 'Reader did not render Chapter 2');
@@ -460,6 +488,12 @@ try {
   assert.equal(await page.locator('.reader-aside').isHidden(), true, 'Reader shows empty page details after an invalid path');
   const invalidPathRecovery = page.locator('[data-reader-article]').getByRole('link', { name: 'Back to overview' });
   assert.match(await invalidPathRecovery.getAttribute('href'), /index\.html\?lang=en$/, 'Reader invalid-path recovery does not preserve the current interface language');
+
+  await page.goto(`${origin}/site/reader.html?path=private%2Fsecret.md&lang=zh`, { waitUntil: 'domcontentloaded' });
+  await page.getByRole('alert').waitFor();
+  assert.equal(await page.locator('[data-reader-language]').inputValue(), 'zh', 'Reader invalid-path state resets the requested interface language');
+  const chineseInvalidPathRecovery = page.locator('[data-reader-article]').getByRole('link', { name: '返回总览' });
+  assert.match(await chineseInvalidPathRecovery.getAttribute('href'), /index\.html\?lang=zh$/, 'Reader invalid-path recovery does not preserve Chinese interface language');
 
   assert.deepEqual(consoleErrors, [], `browser console errors: ${consoleErrors.join(' | ')}`);
   assert.deepEqual(pageErrors, [], `browser page errors: ${pageErrors.join(' | ')}`);

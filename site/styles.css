@@ -493,7 +493,7 @@ button, input, select, textarea { font: inherit; }
   .mobile-core-routes strong { font-size: .8rem; line-height: 1.35; }
   .mobile-section-link { display: flex; margin-top: 1rem; }
   #start .problem-card:nth-child(2), #start .problem-card:nth-child(3), #start .problem-card:nth-child(4), #start .problem-card:nth-child(6), #start .problem-card:nth-child(7), #start .problem-card:nth-child(8) { display: none; }
-  #start .section-heading, #project-map .section-heading, #project-map .index-panel-head, #project-map .index-panel-intro, #project-map .repository-strip, #project-map .index-layout, #project-map .research-panel { display: none; }
+  #project-map .index-panel-head, #project-map .index-panel-intro, #project-map .repository-strip, #project-map .index-layout, #project-map .research-panel { display: none; }
   #project-map .visual-case-panel { display: block; margin-top: 1.2rem; padding-top: 1rem; }
   #project-map .visual-case-lead { display: block; margin-bottom: 1rem; }
   #project-map .visual-case-lead .index-panel-head { display: flex; }
@@ -518,7 +518,7 @@ button, input, select, textarea { font: inherit; }
   .level-panel h3 { margin: .8rem 0; font-size: 1.8rem; }
   .level-panel > p { margin-bottom: 1rem; }
   .panel-next { margin-top: 1rem; }
-  #chapters .section-heading, #chapters .route-controls, #chapters .route-status { display: none; }
+  #chapters .route-controls, #chapters .route-status { display: none; }
   #chapters .chapter-group summary { padding: .8rem 0; }
   #chapters .chapter-items { grid-template-columns: 1fr; }
   #labs .section-heading, #skills .section-heading { margin-bottom: 1.2rem; }

@@ -829,6 +829,19 @@ function canonicalChapterTitle(chapter) {
   }
 
   function showError(message, { retry = false } = {}) {
+    const errorLocale = validLocales.includes(activeLocale)
+      ? activeLocale
+      : validLocales.includes(requestedLocale)
+        ? requestedLocale
+        : manifest.default_locale || 'en';
+    activeLocale = errorLocale;
+    applyReaderChrome();
+    languageSelect.value = errorLocale;
+    document.documentElement.lang = locales[errorLocale]?.html_lang || errorLocale;
+    article.lang = locales[errorLocale]?.html_lang || errorLocale;
+    article.dataset.readerRequestedLocale = errorLocale;
+    article.dataset.readerEffectiveLocale = errorLocale;
+    article.dataset.readerFallback = 'false';
     article.replaceChildren();
     if (readerAside) readerAside.hidden = true;
     if (orientation) orientation.hidden = true;
