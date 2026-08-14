@@ -70,9 +70,11 @@ reports remain `candidate` teaching material until independently reproduced.
 ### Field case: verification is not permission to replace an environment
 
 The bounded case [FC-SCOPE-01](../../docs/research/field-case-verification-scope-expansion-2026-08-12.md)
-uses issue #37677 to expose a mutation-class boundary. The issue remains open;
-its detailed root-cause language is the reporter's analysis, not a maintainer
-RCA, and this project did not reproduce the incident. The teaching decision is
+uses the dated public report in issue #37677 to expose a mutation-class
+boundary. The 2026-08-12 research snapshot recorded no public maintainer
+root-cause confirmation; its detailed root-cause language is the reporter's
+analysis, not a maintainer RCA, and this project did not reproduce the
+incident. The teaching decision is
 still concrete: source edit, test, build, install, restart, publish, deploy,
 commit, push, and delete are separate action classes. If verification requires
 a new persistent or external side effect, stop and disclose the exact target,

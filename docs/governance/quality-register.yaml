@@ -34,7 +34,7 @@
       "next_review": "2026-08-19",
       "superseded_by": "",
       "area": "Release",
-      "finding": "The 39 evaluation fixtures are not_run/static_structure_only.",
+      "finding": "The declared evaluation fixtures are not_run/static_structure_only.",
       "required_evidence": "Frozen environment, scored executions, threshold, and reviewer record.",
       "status": "open",
       "evidence_paths": ["docs/governance/content-status.yaml", "evals/task-set-v1.yaml"],

@@ -85,9 +85,10 @@ about what this project did not reproduce.
 ![Field signals mapped to the smallest safe response](../../assets/teaching/field-signal-to-safe-degradation-red-black.svg)
 
 The bounded case [FC-WORKTREE-01](../../docs/research/field-case-worktree-target-mismatch-2026-08-12.md)
-turns issue #34352 into a target-identity exercise. The issue remains open, has
-no public maintainer root-cause confirmation, and was not reproduced by this
-project. Its value is narrower: after any Local-to-Worktree handoff, compare
+turns the dated public report in issue #34352 into a target-identity exercise.
+The 2026-08-12 research snapshot recorded no public maintainer root-cause
+confirmation, and this project did not reproduce the report. Its value is
+narrower: after any Local-to-Worktree handoff, compare
 the intended checkout with shell `cwd`, Git top-level, worktree list,
 branch/HEAD, and writable roots before an edit, branch operation, build, or
 test. If one signal disagrees, the safe result is a stopped write, not a guess
