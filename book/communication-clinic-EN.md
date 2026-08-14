@@ -243,6 +243,143 @@ shows only a bounded decision on this fixed fictional input. It does not show
 prompt-injection resistance, secure tool behavior, safe work in a real
 account or repository, retention, transfer, or general safety competence.
 
+<span id="public-interest-safety-route"></span>
+
+## Public-interest safety research — before a system affects people
+
+**Learning objective:** turn the vague question “Is this AI safe?” into a
+small, reviewable inquiry about one proposed decision, the people who may bear
+its effects, the data boundary, the human control point, and the evidence that
+actually exists. This is a research and governance exercise, not a threat
+model, impact assessment, compliance review, security certification, or proof
+that a control works.
+
+![A public-interest safety research card: purpose, people, inputs, control, evidence, and stop](../assets/teaching/public-interest-safety-research-red-black.svg)
+
+### Why this belongs beside technical safety
+
+Prompt injection, private-data exposure, and unsafe tool calls are technical
+risks. They are not the whole question. A use can also be harmful because a
+person cannot tell that it affected them, cannot correct an error, bears a
+different burden from the task owner, or has no meaningful way to challenge a
+decision.
+
+The [NIST Generative AI Profile](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)
+identifies risks involving human-AI configuration, information integrity, data
+privacy, and harmful bias or homogenization. The [OECD AI Principles](https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449)
+call for human agency and oversight, transparency, robustness, safety, and
+accountability. These are governance frameworks in their own scopes. They do
+not certify an LLM product, establish that a proposed use has caused harm, or
+replace law, policy, security review, domain expertise, or an affected person's
+judgment.
+
+### A five-question inquiry card
+
+Use the card only when an AI-assisted result might inform, rank, recommend,
+filter, route, or otherwise affect another person. Keep the inquiry small:
+one proposed decision, one named owner, one fictional or public scenario, and
+no live account, personal record, automated decision, or external action.
+
+| Ask | What to record | Stop if |
+| --- | --- | --- |
+| **1. Purpose** | What exact decision is proposed, who owns it, and what result would change it? | The proposed use or decision owner cannot be named. |
+| **2. People** | Who could benefit, be burdened, be excluded, or need an explanation — including people who never use the tool? | The answer treats only the tool operator as affected. |
+| **3. Inputs** | Which fields are necessary, which are prohibited, where they come from, and whether they are synthetic, public, or redacted? | The task asks for a secret, unnecessary sensitive record, bulk export, or hidden data source. |
+| **4. Control and recourse** | Who reviews a consequential output, who can correct a record, and what happens if the person disputes it? | No accountable reviewer or correction path exists. |
+| **5. Evidence and unknowns** | Which source supports each material claim, what was observed, and what remains unknown? | A conclusion depends on a generated claim, an unopened citation, or an assumed outcome. |
+
+The safe result can be a stop. “No owner or recourse is named; do not use this
+output to decide for another person” is a stronger result than inventing a
+mitigation. Do not ask a model to adjudicate fairness, consent, legality, or
+individual eligibility on the basis of this card.
+
+### Fixed fictional case: a housing-support triage draft
+
+This case is deliberately narrow. It is **not** a model for housing eligibility,
+credit, tenant screening, benefits, employment, healthcare, education, policing,
+or any real public service. Do not search for real applicants, upload an intake,
+connect a spreadsheet, contact an organization, or make a recommendation about
+any person.
+
+```text
+Proposal:
+An imaginary community desk wants an LLM to draft a plain-language list of
+questions for a human caseworker to use during a housing-support conversation.
+
+Approved task:
+Using only this fictional proposal, write an inquiry card. The caseworker—not
+the model—will decide what happens next. The model may not rank applicants,
+predict eligibility, suggest a priority order, retain records, or contact
+anyone.
+
+Known facts:
+- The desk has not named a data owner, retention rule, or correction process.
+- The draft might be read by people who have limited English or limited time.
+- No user data, outcomes, or trial results exist.
+```
+
+Return exactly this receipt:
+
+```text
+decision: draft questions for a human conversation; no eligibility or priority decision
+people: applicants, caseworkers, people with limited English/time, and people excluded by an inaccessible process
+inputs: fictional proposal only; no applicant records, identifiers, addresses, financial details, or uploads
+control: human caseworker owns the next step; data owner and correction route are unknown
+evidence: the three stated facts above; no outcome, fairness, privacy, or accessibility result observed
+stop: do not deploy, collect data, or use an output affecting a person until ownership, correction, and review boundaries are named
+status: demonstrated_on_this_fixed_fictional_task / not a real-world safety finding
+```
+
+The acceptance target is not a perfect ethical analysis. It is a refusal to
+turn missing ownership, data governance, recourse, or outcome evidence into a
+positive safety conclusion. A completed fixed receipt may be recorded as
+`demonstrated_on_this_fixed_fictional_task` only when it keeps the decision
+bounded, names affected people beyond the operator, prohibits sensitive input,
+leaves unknown control fields unknown, and records the stop. Otherwise record
+`not demonstrated`.
+
+### Failure case: a polished answer substitutes for an accountable process
+
+Suppose a reply says, “The system is safe because a human is in the loop,” but
+does not identify the human's authority, when they review, what they can
+override, how an affected person corrects an error, or which data is used. Do
+not repair the conclusion with stronger adjectives. Classify it as
+`control_not_specified`, preserve the missing fields, and stop the inquiry.
+
+Likewise, “we will remove bias” is not evidence. It becomes an action proposal
+only after a named decision, a documented data boundary, a representative and
+lawful evaluation plan, an accountable owner, and a way to handle observed
+harm are separately established. This guide does not provide that plan.
+
+### Evidence, privacy, and source boundary
+
+For a future authorized inquiry, retain only a revision ID, fictional/public
+scenario reference, named decision owner, five-question card, source ledger,
+stop reason, and reviewer disagreement. Do not retain private prompts, raw
+case records, demographic data, account sessions, contact details, or any
+model's hidden reasoning merely to make the exercise feel realistic.
+
+Use this [public-interest safety research ledger](../docs/research/public-interest-ai-safety-research-2026-08-13.md)
+for the source record, scope, and limits. Public reports in that ledger are
+signals for questions, not proof of frequency, cause, product behavior, or a
+fix. The [AI collaboration safety boundaries ledger](../docs/research/ai-collaboration-safety-boundaries-2026-08-13.md)
+covers the complementary technical boundaries: untrusted content, minimum
+necessary input, action authority, and output verification.
+
+### Acceptance checklist
+
+- [ ] One decision and a decision owner are named; the task does not drift into
+      a generic claim that a model is safe or unsafe.
+- [ ] The record names people who may bear effects, including relevant non-users.
+- [ ] Inputs are fictional, public, or redacted; sensitive input and external
+      actions remain prohibited.
+- [ ] Human review, correction, and recourse are named or explicitly `unknown`.
+- [ ] Findings, evidence, assumptions, and unknowns remain separate.
+- [ ] Missing ownership, recourse, data governance, or evidence ends in a
+      recorded stop rather than an invented mitigation.
+- [ ] The receipt is labeled as a fixed fictional exercise, not an impact
+      assessment, security test, learner outcome, or deployment approval.
+
 <span id="language-practice-route"></span>
 
 ## Route A — beginner Spanish travel exchange

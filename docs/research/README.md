@@ -28,6 +28,10 @@ Useful indexes:
 
 - [AI collaboration safety boundaries](ai-collaboration-safety-boundaries-2026-08-13.md) — source-backed boundaries for prompt injection, minimum necessary input, action authority, and verification. It proposes low-risk teaching actions; it is not a security certification, incident study, or locally reproduced attack record.
 
+- [External content and authority](external-content-authority-controls-2026-08-13.md) — official guidance on keeping external instruction-like content separate from granted authority, with individual, team, and workflow controls. It is not incident evidence, threat-model coverage, security certification, or proof that a control works.
+
+- [Public-interest AI safety research](public-interest-ai-safety-research-2026-08-13.md) — a source-bounded inquiry into affected people, data boundaries, human control, and recourse around a proposed AI-assisted decision. It is not an impact assessment, compliance opinion, incident finding, or deployment approval.
+
 - [AI safety field signals and research receipts](ai-safety-field-signals-and-research-receipts-2026-08-13.md) — a dated record of instruction-layer ambiguity, non-persistent citations, qualification-versus-contradiction, and long-task boundary drift. It adds an inspectable checkpoint; it is not a prevalence study, product diagnosis, or security control evaluation.
 
 - [Field case: external instruction and action authority](field-case-external-instruction-authority-2026-08-13.md) — a small, synthetic practice case for instruction-like text that tries to widen authority. It does not reproduce an attack, establish product behavior, or prove that the practice prevents prompt injection.

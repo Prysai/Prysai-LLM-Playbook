@@ -195,6 +195,19 @@ try {
   assert.ok(desktopRecoveryTop >= 0 && desktopRecoveryTop < 260, `Desktop Reader did not restore the recovery fragment: ${desktopRecoveryTop}`);
   await desktopRecoveryPage.close();
 
+  const desktopPublicInterestHref = await page.locator('.problem-card-practice[data-source-href$="#public-interest-safety-route"]').getAttribute('href');
+  assert.match(desktopPublicInterestHref, /reader\.html\?path=book%2Fcommunication-clinic-EN\.md&lang=en#public-interest-safety-route$/, 'Showcase public-interest safety card does not preserve the Reader fragment');
+  const desktopPublicInterestPage = await context.newPage();
+  await desktopPublicInterestPage.goto(new URL(desktopPublicInterestHref, `${origin}/site/`).href, { waitUntil: 'networkidle' });
+  await desktopPublicInterestPage.locator('[data-reader-article][aria-busy="false"]').waitFor();
+  assert.equal(await desktopPublicInterestPage.getByRole('heading', { name: /public-interest safety research — before a system affects people/i }).isVisible(), true, 'Public-interest safety inquiry is not discoverable in Reader');
+  assert.equal(await desktopPublicInterestPage.locator('#public-interest-safety-route').count(), 1, 'Reader did not preserve the public-interest-safety-route fragment target');
+  const publicInterestTop = await desktopPublicInterestPage.locator('#public-interest-safety-route').evaluate((target) => target.getBoundingClientRect().top);
+  assert.ok(publicInterestTop >= 0 && publicInterestTop < 260, `Desktop Reader did not restore the public-interest safety fragment: ${publicInterestTop}`);
+  const publicInterestVisual = desktopPublicInterestPage.locator('img[alt*="public-interest safety research card"]');
+  assert.match(await publicInterestVisual.getAttribute('src'), /assets\/teaching\/public-interest-safety-research-red-black\.svg$/, 'Public-interest safety inquiry does not retain its original full-size teaching visual');
+  await desktopPublicInterestPage.close();
+
   await page.setViewportSize({ width: 390, height: 844 });
   await noHorizontalOverflow(page, 'mobile showcase');
   assert.match(await page.getByRole('link', { name: 'Open every problem route' }).getAttribute('href'), /reader\.html\?path=README-EN\.md&lang=en#choose-your-starting-point$/, 'mobile route index link does not target the canonical English README route section');
