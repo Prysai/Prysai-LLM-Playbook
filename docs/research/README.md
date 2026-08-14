@@ -34,6 +34,8 @@ Useful indexes:
 
 - [Everyday prompt cards: source receipt](everyday-prompt-cards-source-receipt-2026-08-14.md) — primary instructional, information-literacy, and product-owner prompt-guidance sources for the two candidate five-minute cards. It supports only a bounded attempt and source-check preparation; it does not claim fluency, browsing, citation validation, research completion, or learner outcomes.
 
+- [Claude Code and Grok: platform-adapter admission source receipt](claude-code-and-grok-adapter-admission-source-receipt-2026-08-14.md) — first-party source check for the two proposed named-platform adapters. Both remain `source-checked / not_run / not-admitted`: the record identifies possible product deltas, but establishes no runnable adapter, platform equivalence, task result, safety property, or learning outcome.
+
 - [Historical: cross-platform first-session prompt practice](cross-platform-first-session-prompt-practice-2026-08-13.md) — a retained, language-only source note superseded for new reader-facing use by the universal first-turn contract above. It has no learner or model run and does not support a seven-day fluency claim.
 
 - [Critical learning-product audit](critical-learning-product-audit-2026-08-13.md) — an evidence-mapped candidate audit through instructional-design, reproducibility, and responsible-AI governance lenses. It identifies release-blocking gaps; it is not external accreditation, endorsement, or certification.
