@@ -250,7 +250,7 @@
         }
       ],
       "supporting_skills": ["prysai-evidence-review", "prysai-workflow-orchestrator", "prysai-communication-failure-triage", "prysai-platform-adapter-review"],
-      "evaluation_tasks": ["team-capability-package-029", "workflow-checkpoint-gate-038"],
+      "evaluation_tasks": ["team-capability-package-029", "workflow-checkpoint-gate-038", "public-interest-evidence-layers-040"],
       "evaluation_types": ["positive", "boundary", "failure", "transfer"],
       "evidence_gate": {
         "explain": {"en": "Explain observable states, retry budgets, stop conditions, and the difference between output and proof.", "zh": "解释可观察状态、重试预算、停止条件，以及输出与证明的区别。"},

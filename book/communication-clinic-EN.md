@@ -381,6 +381,43 @@ only after a named decision, a documented data boundary, a representative and
 lawful evaluation plan, an accountable owner, and a way to handle observed
 harm are separately established. This guide does not provide that plan.
 
+### Five-minute check: label the evidence layer
+
+This is a self-scored, offline exercise over a fixed fictional scenario. It
+does not evaluate a model, a real service, accessibility, fairness, safety, or
+social impact. Do not browse, contact anyone, collect feedback, upload records,
+or use a person’s data.
+
+For each statement, record both its `claim layer` (`framework`, `local proposal`,
+or `impact claim`) and its `evidence status` (`supported by the fixed text`,
+`not observed`, or `unsupported`). Then write one compact receipt.
+
+```text
+1. A public framework describes transparency, accountability, and human
+   oversight as relevant concerns for AI systems in its stated scope.
+
+2. An imaginary community desk proposes that an LLM draft questions for a
+   human caseworker's housing-support conversation; it will not rank people,
+   decide eligibility, store records, or contact anyone.
+
+3. The question draft improved accessibility and reduced exclusion because it
+   is short and uses simple language.
+```
+
+The expected classification is:
+
+```text
+1: claim layer = framework; evidence status = supported by the fixed text
+2: claim layer = local proposal; evidence status = supported by the fixed text
+3: claim layer = impact claim; evidence status = unsupported; observed impact = not observed
+```
+
+Your receipt must also say that the accountable owner, accessibility review,
+feedback/representation evidence, correction route, and outcome record are
+`unknown` or `not observed`. Stop before claiming the proposal is community
+informed, fair, accessible, safe, or ready to deploy. A pass only demonstrates
+correct classification of these fixed statements.
+
 ### Evidence, privacy, and source boundary
 
 For a future authorized inquiry, retain only a revision ID, fictional/public
@@ -396,6 +433,30 @@ fix. The [AI collaboration safety boundaries ledger](../docs/research/ai-collabo
 covers the complementary technical boundaries: untrusted content, minimum
 necessary input, action authority, and output verification.
 
+### Research extension: separate principles, proposals, and observed impact
+
+When a project says “this use is fair,” “the output is accessible,” or “the
+model benefits people,” do not start by polishing the claim. Put it in one of
+three evidence layers:
+
+| Layer | What it can say | What it cannot say alone |
+| --- | --- | --- |
+| **Framework** | An authoritative source describes a relevant concern or principle. | This proposed system meets that principle. |
+| **Local proposal** | A named owner describes a proposed decision, data boundary, and human role. | The proposal has helped or harmed anyone. |
+| **Observed impact** | Separately authorized evidence records what happened under stated conditions. | The result transfers to every person, setting, or future version. |
+
+Use `not observed` when the third layer is missing. This is not a weak answer:
+it prevents a model from turning a plausible description into an unearned
+social conclusion. The [public-interest research brief](../docs/research/public-interest-ai-safety-research-2026-08-13.md#from-a-research-question-to-a-public-interest-research-brief)
+shows the evidence fields, a fixed fictional accessibility example, and the
+limits on any future study.
+
+An affected-people list is also only a starting assumption. It does not show
+that people were consulted, represented, informed, or able to change the
+decision. Keep `perspective evidence`, `authorization owner`, `decision
+response`, and `not observed` separate; a fictional receipt for this boundary
+is included in the same research brief.
+
 ### Acceptance checklist
 
 - [ ] One decision and a decision owner are named; the task does not drift into
@@ -405,6 +466,10 @@ necessary input, action authority, and output verification.
       actions remain prohibited.
 - [ ] Human review, correction, and recourse are named or explicitly `unknown`.
 - [ ] Findings, evidence, assumptions, and unknowns remain separate.
+- [ ] I separated framework principles, a local proposal, and observed impact;
+      missing impact evidence remains `not observed`.
+- [ ] I did not turn an affected-people list into a claim of representation,
+      consent, feedback, or community acceptance.
 - [ ] Missing ownership, recourse, data governance, or evidence ends in a
       recorded stop rather than an invented mitigation.
 - [ ] The receipt is labeled as a fixed fictional exercise, not an impact

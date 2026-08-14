@@ -229,6 +229,7 @@
       "docs/research/beginner-first-practice-friction-2026-08-13.md",
       "docs/research/entry-level-llm-collaboration-for-language-and-research-2026-08-13.md",
       "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
+      "docs/research/public-interest-ai-safety-research-2026-08-13.md",
       "docs/sources/asset-register.md"
     ],
     "items": [
@@ -238,13 +239,13 @@
     "claim_boundary": "Supplemental routes and application guides do not change the canonical 22-chapter order. These records have structural editorial status only; prompt effectiveness, learner outcomes, delayed transfer, retention, and platform equivalence remain untested."
   },
   "evaluations": {
-    "task_count": 39,
+    "task_count": 40,
     "track_count": 16,
     "fixture_status": "candidate",
     "run_status": "not_run",
     "review_status": "static_structure_only",
     "owner": "evaluation-maintainer",
-    "last_reviewed": "2026-08-10",
+    "last_reviewed": "2026-08-13",
     "next_review": "2026-09-09",
     "path": "evals/task-set-v1.yaml",
     "results_path": "evals/results",

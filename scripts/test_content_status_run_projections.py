@@ -56,7 +56,12 @@ def main() -> int:
     learner_errors = status.validate_document(invented_learner)
     require(any("learner_run_status projections must exactly match registered" in error for error in learner_errors), "unregistered learner completion was accepted")
 
-    print("CONTENT_STATUS_RUN_PROJECTION_TESTS_OK fixtures=7 reference=partial learner=not_run transfer=not_run")
+    stale_evaluation_count = copy.deepcopy(document)
+    stale_evaluation_count["evaluations"]["task_count"] = 39
+    evaluation_errors = status.validate_document(stale_evaluation_count)
+    require(any("task_count must equal the task set count" in error for error in evaluation_errors), "stale evaluation task count was accepted")
+
+    print("CONTENT_STATUS_RUN_PROJECTION_TESTS_OK fixtures=8 reference=partial learner=not_run transfer=not_run")
     return 0
 
 

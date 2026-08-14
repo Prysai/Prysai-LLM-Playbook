@@ -31,7 +31,7 @@ está escrito, pero todavía espera una prueba previa. Desde el [índice del
 libro en español](table-of-contents-ES.md) se puede
 entrar en los casos de problemas reales, las especificaciones de fixtures de
 evaluación y los archivos de investigación de cada capítulo. El archivo
-`evals/task-set-v1.yaml` contiene 39 fixtures fijos que cubren 16 recorridos,
+`evals/task-set-v1.yaml` contiene 40 fixtures fijos que cubren 16 recorridos,
 pero todavía no existen registros de ejecución de modelos; por tanto, esas
 evaluaciones siguen en `not_run` y no deben leerse como evaluaciones
 terminadas.

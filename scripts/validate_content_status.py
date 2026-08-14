@@ -11,6 +11,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 STATUS_PATH = ROOT / "docs/governance/content-status.yaml"
+EVALUATION_TASK_SET_PATH = ROOT / "evals/task-set-v1.yaml"
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 ARTIFACT_STATUSES = {"draft", "candidate", "verified", "production-ready"}
 RUN_STATUSES = {"not_run", "running", "completed"}
@@ -272,6 +273,31 @@ def validate_document(document: dict[str, Any]) -> list[str]:
         validate_path_list(evaluations, "evidence", "evaluations", errors)
         if evaluations.get("run_status") != "not_run":
             errors.append("evaluations: run_status must remain not_run until run logs exist")
+        task_set_path = ROOT / evaluations.get("path", "") if isinstance(evaluations.get("path"), str) else None
+        if task_set_path != EVALUATION_TASK_SET_PATH:
+            errors.append("evaluations: path must be evals/task-set-v1.yaml")
+        else:
+            try:
+                task_set = json.loads(EVALUATION_TASK_SET_PATH.read_text(encoding="utf-8"))
+            except (OSError, UnicodeError, json.JSONDecodeError) as exc:
+                errors.append(f"evaluations: cannot parse task set: {exc}")
+            else:
+                task_rows = task_set.get("tasks") if isinstance(task_set, dict) else None
+                tracks = task_set.get("tracks") if isinstance(task_set, dict) else None
+                if not isinstance(task_rows, list):
+                    errors.append("evaluations: task set tasks must be a list")
+                elif evaluations.get("task_count") != len(task_rows):
+                    errors.append(
+                        "evaluations: task_count must equal the task set count "
+                        f"{len(task_rows)}, found {evaluations.get('task_count')!r}"
+                    )
+                if not isinstance(tracks, list):
+                    errors.append("evaluations: task set tracks must be a list")
+                elif evaluations.get("track_count") != len(tracks):
+                    errors.append(
+                        "evaluations: track_count must equal the task set track count "
+                        f"{len(tracks)}, found {evaluations.get('track_count')!r}"
+                    )
 
     site = document.get("public_site")
     if not isinstance(site, dict):
@@ -351,7 +377,12 @@ def main() -> int:
         return 1
 
     print("CONTENT_STATUS_OK")
-    print(f"chapters=22 labs=18 skills={document['skills']['count']} learning_levels=7 evaluations=39 tracks=16")
+    print(
+        "chapters=22 labs=18 "
+        f"skills={document['skills']['count']} learning_levels=7 "
+        f"evaluations={document['evaluations']['task_count']} "
+        f"tracks={document['evaluations']['track_count']}"
+    )
     print(
         "public_site=6-route-locales,ui-dictionaries=en+zh,"
         f"repository_locale_status={document['public_site']['repository_locale_status']},"

@@ -1234,7 +1234,8 @@ window.CODEX_LEARNING_PATH = {
       ],
       "evaluations": [
         "team-capability-package-029",
-        "workflow-checkpoint-gate-038"
+        "workflow-checkpoint-gate-038",
+        "public-interest-evidence-layers-040"
       ],
       "evaluationTypes": [
         "positive",

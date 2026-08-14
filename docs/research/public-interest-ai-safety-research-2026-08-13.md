@@ -183,6 +183,178 @@ independent review, or a consented learner pilot. None should begin by sending
 personal data, enrolling people, or acting on another person's behalf merely to
 make the exercise look realistic.
 
+## From a research question to a public-interest research brief
+
+The five-question card is an intake, not a research result. A credible
+public-interest brief makes one proposed decision reviewable without using a
+model to invent missing evidence. It is suitable only for a fictional or
+separately authorized public scenario; it must not be used to assess a person,
+rank an applicant, collect live records, or approve a deployment.
+
+### Use a three-layer claim map
+
+Keep these layers separate in the brief. Mixing them is how a well-written
+model response becomes an overconfident social claim.
+
+| Layer | Question to answer | Admissible material | Do not write |
+| --- | --- | --- | --- |
+| **Framework** | What concern or principle does an authoritative source describe? | A precise, dated passage from an official framework or technical source. | The framework proves this local system is compliant, fair, or safe. |
+| **Local proposal** | What is actually proposed, by whom, for whom, and with which data/action boundary? | A named owner’s approved description, or a fixed fictional input. | A model-generated description is an approved use case or policy. |
+| **Observed impact** | What happened to real people under declared conditions? | Separately authorized, minimized, reviewable evidence with a stated method and limitations. | A plausible scenario, testimonial, or model output proves impact or absence of harm. |
+
+If only the first layer exists, the honest product is a **question set**. If
+the first two exist, the product may be a **candidate decision brief** with
+unknowns. A statement about actual impact needs the third layer; until then,
+write `not observed` rather than filling the gap with a prediction.
+
+### A research brief that can be inspected
+
+Before research begins, create a compact record such as this one. The blank
+fields are safeguards: they are not invitations for a model to guess.
+
+```text
+brief_id:
+status: draft | candidate | blocked | not_run
+
+decision to inform:
+accountable owner:
+affected context and people who may be excluded or burdened:
+
+allowed question:
+out of scope:
+inputs allowed:
+inputs prohibited:
+external actions prohibited:
+
+framework claims to check:
+proposal facts to verify:
+observed-impact claims: not observed | separately authorized evidence reference
+
+source plan: source owner | URL or record | access date | exact claim | scope
+reviewer and disagreement route:
+stop conditions:
+next smallest safe check:
+```
+
+The format is intentionally not a checklist for declaring a project ethical.
+It is a handoff record: another person should be able to see which claims came
+from a framework, which came from the proposal owner, and which still have no
+observed evidence.
+
+### Do not confuse a stakeholder list with an affected voice
+
+An operator can draft a list of people who may be affected. That is a useful
+starting assumption, but it is not evidence that those people were consulted,
+represented, informed, or able to change a decision. Keep this distinction in
+the brief:
+
+```text
+provisional affected people:
+evidence held about their perspective: none | authorized record reference
+feedback needed to inform this decision:
+authorization owner for any collection or contact:
+representation unknowns:
+collection prohibited until:
+decision response to the evidence: not_run | recorded response reference
+stop rule:
+```
+
+The fields prevent two overclaims that this exercise is designed to expose:
+“we named the community, therefore it was represented” and “we received a
+comment, therefore the system is fair.” This record does not measure how often
+either claim occurs. A future feedback record is not interchangeable with a
+real-world impact result. As a project safeguard, require separate authority,
+data minimization, an appropriate review process, and a decision owner who
+records whether and how it changed the proposal.
+
+### Fixed fictional worked example: accessibility claim without evidence
+
+Use this only as an offline classification exercise. An imaginary community
+desk proposes a plain-language question draft for a human caseworker. Someone
+then writes: “The draft is accessible because it is short and uses simple
+language.” No readers, accessibility review, translation review, or outcome
+record exists.
+
+The correct brief entry is:
+
+```text
+decision to inform: whether to commission an authorized accessibility review
+accountable owner: unknown
+framework claim: none recorded for an accessibility conclusion in this exercise
+proposal fact: a fictional short question draft is proposed for a human conversation
+observed-impact claim: not observed
+classification: unsupported accessibility conclusion
+project safeguard: name an owner and an authorized review method; keep the draft fictional until then
+stop: do not describe the draft as accessible, deploy it, or use it to route a person
+```
+
+This does not decide that the draft is inaccessible. It identifies the weaker
+but important result: the available evidence cannot support an accessibility
+claim. The same reasoning applies to assertions about fairness, privacy,
+inclusion, trust, or benefit.
+
+### Fixed fictional receipt: a voice claim without participation evidence
+
+This offline exercise uses only the following invented record:
+
+```text
+proposal: an imaginary community desk will test a question draft with a human caseworker
+operator note: "Residents are represented because we listed renters and people with limited English."
+evidence supplied: no resident contact, feedback record, authorization owner, or decision response
+```
+
+The appropriate receipt is:
+
+```text
+provisional affected people: renters and people with limited English
+perspective evidence: not observed
+representation claim: unsupported
+feedback collection: prohibited until an accountable owner and appropriate authorized process exist
+decision response: not_run
+stop: do not describe the proposal as community-informed or representative
+```
+
+This receipt does not prove that participation would make a proposal fair, that
+the named groups are complete, or that a later feedback process is adequate. It
+only preserves the difference between an operator’s assumption and evidence
+that a decision can be reviewed against.
+
+### Review rules for a small social research exercise
+
+For a future authorized exercise, this project proposes using a fixed revision
+and collecting the least information needed to answer one question. It also
+proposes keeping the study artifact, conditions, completion and drop-off
+states, unknowns, and reviewer disagreement together. Do not retain raw
+conversations, identity data, work material, or private records by default. A
+participant can stop without explaining why, and a safety stop is a valid
+recorded outcome rather than a failure to edit away. These are project
+safeguards, not requirements attributed to the listed frameworks or a
+substitute for the review required in the actual setting.
+
+The project’s [first-task reader pilot protocol](../quality/first-task-pilot-protocol-v1.md)
+is an example of this level of restraint: it is a candidate design for a
+low-risk usability question, not evidence of learning effectiveness or public
+impact. A public-interest study would need an equally narrow question plus the
+appropriate privacy, accessibility, community, organizational, and legal
+review for its actual setting.
+
+### Acceptance checklist
+
+- [ ] I can label every material statement as framework, local proposal,
+      observed impact, or `unknown`.
+- [ ] No source framework has been turned into a local safety, fairness,
+      accessibility, privacy, or compliance conclusion.
+- [ ] The brief names the decision, owner, people affected, allowed inputs,
+      prohibited inputs, and a stop condition — or marks each missing field.
+- [ ] A fictional or public scenario remains separate from a record about a
+      real person or service.
+- [ ] I treated an affected-people list as a provisional assumption, not as
+      evidence of representation, consent, feedback, or community acceptance.
+- [ ] I preserved a negative result such as `not observed`, `blocked`, or
+      `unsupported` instead of asking a model to supply reassurance.
+- [ ] Any future participant activity remains separately authorized,
+      minimized, reviewable, and outside this candidate teaching claim.
+
 [N1]: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf
 [O1]: https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449
 [U1]: https://www.unesco.org/en/legal-affairs/recommendation-ethics-artificial-intelligence

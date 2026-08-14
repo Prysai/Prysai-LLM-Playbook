@@ -81,7 +81,7 @@ instalaciones no demuestra dominio.
 El proyecto se encuentra en la fase de base de producto v0.1: se ha completado
 la auditoría a nivel de catálogo de seis fuentes de entrada, y ya existen una
 estructura de 22 capítulos, 17 experimentos, investigación de problemas
-reales, 7 Skills candidatas y 39 fixtures de evaluación. El texto principal
+reales, 7 Skills candidatas y 40 fixtures de evaluación. El texto principal
 del libro se está desarrollando actualmente en chino simplificado; la página
 pública de presentación tiene el inglés como idioma predeterminado y ofrece
 un cambio al chino. Los capítulos 19–22, todas las Skills candidatas y las
