@@ -28,6 +28,8 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\validate_localization.py
 & $py scripts\build_book_navigation.py --check
 & $py scripts\test_book_navigation_titles.py
+& $py scripts\build_book_title_map.py --check
+& $py scripts\test_book_title_map.py
 & $py scripts\build_lab_navigation.py --check
 & $py scripts\validate_lab_navigation.py
 & $py scripts\test_lab_navigation.py
@@ -59,6 +61,11 @@ passing does not prove cross-platform behavior or learner transfer.
 `test_book_navigation_titles.py` protects the distinction between canonical
 chapter titles and compact navigation labels. It does not prove that every
 downstream title consumer has been generated or visually reviewed.
+
+`build_book_title_map.py` projects those roles into one generated title map.
+It refreshes the compact chapter headings in both tables of contents; the
+Reader manifest and generated search index refuse a stale map. The map is an
+output of `book-navigation.yaml`, not a second editable title source.
 
 The Lab navigation checks cover all 18 canonical English Lab sources, exact
 identity and H1 matching, first/middle/last adjacent links, stale blocks, and

@@ -24,6 +24,7 @@ GENERATED_OUTPUTS = {
     "site/learning-path-data.js": "scripts/build_learning_path_site.py",
     "site/locale-manifest.js": "scripts/build_site_locale_manifest.py",
     "site/search-index.js": "scripts/build_site_search_index.py",
+    "book/title-map.json": "scripts/build_book_title_map.py",
 }
 
 READER_ENTRY_EXPECTATIONS = {
@@ -328,7 +329,7 @@ def main() -> int:
         return 1
 
     print("CONTENT_COMPLETENESS_OK")
-    print("canonical_chapters=22 navigation=22 generated_outputs=3")
+    print(f"canonical_chapters=22 navigation=22 generated_outputs={len(GENERATED_OUTPUTS)}")
     if warnings:
         print(f"migration_warnings={len(warnings)}")
         for warning in warnings:

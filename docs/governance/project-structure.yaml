@@ -122,6 +122,13 @@
       "edit_rule": "Edit the source order; do not hand-edit the marked chapter-navigation block."
     },
     {
+      "path": "book/title-map.json",
+      "source": ["docs/governance/book-navigation.yaml"],
+      "owner": "scripts/build_book_title_map.py",
+      "surface": "The role-aware title projection consumed by both tables of contents, the Reader manifest, and the generated search index.",
+      "edit_rule": "Edit book-navigation.yaml, then regenerate; do not hand-edit this map or the generated compact chapter headings."
+    },
+    {
       "path": "book/labs/lab-*-EN.md",
       "source": ["docs/governance/lab-navigation.yaml"],
       "owner": "scripts/build_lab_navigation.py",
@@ -137,14 +144,14 @@
     },
     {
       "path": "site/locale-manifest.js",
-      "source": ["docs/governance/locale-matrix.yaml", "docs/governance/content-status.yaml", "docs/governance/book-navigation.yaml", "docs/governance/lab-navigation.yaml"],
+      "source": ["docs/governance/locale-matrix.yaml", "docs/governance/content-status.yaml", "docs/governance/book-navigation.yaml", "book/title-map.json", "docs/governance/lab-navigation.yaml"],
       "owner": "scripts/build_site_locale_manifest.py",
       "surface": "The generated content_id, locale, translation-state, alias, and path index consumed by the public site.",
       "edit_rule": "Edit the locale matrix or current status source, then regenerate and run --check; do not hand-edit."
     },
     {
       "path": "site/search-index.js",
-      "source": ["docs/governance/content-status.yaml", "docs/governance/locale-matrix.yaml", "docs/governance/book-navigation.yaml", "book/chapters", "book/labs"],
+      "source": ["docs/governance/content-status.yaml", "docs/governance/locale-matrix.yaml", "docs/governance/book-navigation.yaml", "book/title-map.json", "book/chapters", "book/labs"],
       "owner": "scripts/build_site_search_index.py",
       "surface": "The generated dependency-free search index consumed by the public site.",
       "edit_rule": "Edit canonical content and contracts, then regenerate and run --check; do not hand-edit."

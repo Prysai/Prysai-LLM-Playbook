@@ -65,6 +65,7 @@
         {"id": "site-i18n", "argv": ["{python}", "scripts/validate_site_i18n.py"]},
         {"id": "book-navigation", "argv": ["{python}", "scripts/validate_book_navigation.py"]},
         {"id": "book-navigation-title-fixtures", "argv": ["{python}", "scripts/test_book_navigation_titles.py"]},
+        {"id": "book-title-map-fixtures", "argv": ["{python}", "scripts/test_book_title_map.py"]},
         {"id": "lab-navigation", "argv": ["{python}", "scripts/validate_lab_navigation.py"]},
         {"id": "lab-navigation-fixtures", "argv": ["{python}", "scripts/test_lab_navigation.py"]},
         {"id": "reader-lab-navigation-fixtures", "argv": ["{python}", "scripts/test_reader_lab_navigation.py"]}
@@ -76,6 +77,7 @@
       "scope": "Generated navigation, site data, search, and bounded Pages artifact freshness.",
       "commands": [
         {"id": "book-navigation-output", "argv": ["{python}", "scripts/build_book_navigation.py", "--check"]},
+        {"id": "book-title-map-output", "argv": ["{python}", "scripts/build_book_title_map.py", "--check"]},
         {"id": "lab-navigation-output", "argv": ["{python}", "scripts/build_lab_navigation.py", "--check"]},
         {"id": "learning-path-site", "argv": ["{python}", "scripts/build_learning_path_site.py", "--check"]},
         {"id": "locale-manifest", "argv": ["{python}", "scripts/build_site_locale_manifest.py", "--check"]},

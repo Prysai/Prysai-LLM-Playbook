@@ -120,9 +120,9 @@
       "area": "Navigation",
       "finding": "TOC display titles and chapter H1 titles have aliases without a canonical map.",
       "required_evidence": "Generated title map consumed by the TOC, reader, and search index.",
-      "status": "open",
-      "evidence_paths": ["docs/governance/book-navigation.yaml", "scripts/build_book_navigation.py"],
-      "resolution_scope": ""
+      "status": "resolved",
+      "evidence_paths": ["docs/governance/book-navigation.yaml", "book/title-map.json", "book/table-of-contents-EN.md", "book/table-of-contents.md", "scripts/build_book_title_map.py", "scripts/build_site_locale_manifest.py", "scripts/build_site_search_index.py", "scripts/test_book_title_map.py"],
+      "resolution_scope": "Resolved for title identity only: book-navigation.yaml remains the editable source; build_book_title_map.py projects canonical H1 and compact display roles into book/title-map.json, refreshes both tables of contents, and is required before Reader-manifest and search-index generation. Fixture coverage rejects stale maps, compact-TOC drift, and duplicate IDs. This does not establish reader usability, translation quality, search relevance, deployed-site behavior, or learner outcomes."
     },
     {
       "id": "Q-009",

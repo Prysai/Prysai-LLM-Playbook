@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MATRIX_FILE = ROOT / "docs/governance/locale-matrix.yaml"
 STATUS_FILE = ROOT / "docs/governance/content-status.yaml"
 NAVIGATION_FILE = ROOT / "docs/governance/book-navigation.yaml"
+TITLE_MAP_FILE = ROOT / "book/title-map.json"
 LAB_NAVIGATION_FILE = ROOT / "docs/governance/lab-navigation.yaml"
 SKILL_REGISTRY_FILE = ROOT / "docs/governance/skill-registry.yaml"
 OUTPUT_FILE = ROOT / "site/locale-manifest.js"
@@ -153,6 +154,7 @@ def status_content(
 def build_navigation_payload(
     navigation: dict[str, Any],
     path_index: dict[str, str],
+    title_records: dict[str, dict[str, Any]],
 ) -> dict[str, Any]:
     """Project the canonical chapter order into the reader manifest.
 
@@ -174,15 +176,18 @@ def build_navigation_payload(
             raise ValueError(
                 f"book navigation chapter is not indexed: {item.get('id')}"
             )
+        title = title_records.get(str(item["id"]))
+        if not title:
+            raise ValueError(f"book title map is missing chapter: {item['id']}")
         chapters.append(
             {
                 "id": item["id"],
                 "number": item["number"],
                 "part": item["part"],
-                "title_en": item["title_en"],
-                "title_zh": item["title_zh"],
-                "canonical_title_en": item["canonical_title_en"],
-                "canonical_title_zh": item["canonical_title_zh"],
+                "title_en": title["display"]["en"],
+                "title_zh": title["display"]["zh"],
+                "canonical_title_en": title["canonical"]["en"],
+                "canonical_title_zh": title["canonical"]["zh"],
                 "english_path": english_path,
                 "legacy_path": legacy_path,
                 "english_status": item.get("english_status"),
@@ -226,9 +231,14 @@ def build_lab_navigation_payload(
 
 
 def build_manifest() -> dict[str, Any]:
+    import build_book_title_map  # pylint: disable=import-outside-toplevel
+
     matrix = load_json(MATRIX_FILE)
     status = load_json(STATUS_FILE)
     navigation = load_json(NAVIGATION_FILE)
+    title_map = build_book_title_map.load_title_map(TITLE_MAP_FILE)
+    build_book_title_map.assert_current_title_map(title_map, navigation)
+    title_records = build_book_title_map.records_by_id(title_map)
     lab_navigation = load_json(LAB_NAVIGATION_FILE)
     skill_registry = load_json(SKILL_REGISTRY_FILE)
     locale_records = matrix["locales"]
@@ -284,6 +294,7 @@ def build_manifest() -> dict[str, Any]:
             "docs/governance/locale-matrix.yaml",
             "docs/governance/content-status.yaml",
             "docs/governance/book-navigation.yaml",
+            "book/title-map.json",
             "docs/governance/lab-navigation.yaml",
             "docs/governance/skill-registry.yaml",
         ],
@@ -293,7 +304,7 @@ def build_manifest() -> dict[str, Any]:
         "aliases": aliases,
         "path_index": path_index,
         "routed_status_counts": routed_counts,
-        "book_navigation": build_navigation_payload(navigation, path_index),
+        "book_navigation": build_navigation_payload(navigation, path_index, title_records),
         "lab_navigation": build_lab_navigation_payload(lab_navigation, path_index),
     }
 

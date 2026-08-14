@@ -5,6 +5,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "docs/governance/locale-matrix.yaml",
     "docs/governance/content-status.yaml",
     "docs/governance/book-navigation.yaml",
+    "book/title-map.json",
     "docs/governance/lab-navigation.yaml",
     "docs/governance/skill-registry.yaml"
   ],

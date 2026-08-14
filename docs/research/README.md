@@ -22,6 +22,8 @@ claim and license boundary are clear.
 
 Useful indexes:
 
+- [Durable beginner communication with text-first LLMs](durable-beginner-text-first-llm-communication-2026-08-13.md) — a candidate, text-only decision loop for shrinking a vague request, keeping constraints visible, separating recurring criteria from the current item, and routing factual claims to source-led work. It separates four product-scoped official sources from four individual public reports and does not claim prompt effectiveness, learning, cross-platform equivalence, or model behavior.
+
 - [Universal first-turn prompt contract](universal-first-turn-prompt-contract-2026-08-13.md) — a candidate six-field, plain-language request contract with two text-only Spanish and research cards. It separates product-scoped official guidance from two individual public signals and does not claim platform equivalence, a five-minute result, or learning efficacy.
 
 - [Historical: cross-platform first-session prompt practice](cross-platform-first-session-prompt-practice-2026-08-13.md) — a retained, language-only source note superseded for new reader-facing use by the universal first-turn contract above. It has no learner or model run and does not support a seven-day fluency claim.

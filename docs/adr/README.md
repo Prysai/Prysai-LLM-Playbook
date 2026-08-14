@@ -46,3 +46,4 @@ Current entry points:
 - [ADR-0028: Page Trust families and Reader projection](0028-page-trust-families-and-reader-projection.md)
 - [ADR-0029: canonical Lab catalog navigation](0029-canonical-lab-navigation.md)
 - [ADR-0030: lazy search and Chromium smoke gate](0030-lazy-search-and-browser-smoke.md)
+- [ADR-0031: generated book title map](0031-generated-book-title-map.md)

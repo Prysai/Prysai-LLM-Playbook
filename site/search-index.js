@@ -15,6 +15,7 @@ window.CODEX_SEARCH_INDEX = {
     "docs/governance/content-status.yaml",
     "docs/governance/locale-matrix.yaml",
     "docs/governance/book-navigation.yaml",
+    "book/title-map.json",
     "book/chapters",
     "book/labs",
     "book/README*.md"
