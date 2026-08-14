@@ -47,3 +47,4 @@ Current entry points:
 - [ADR-0029: canonical Lab catalog navigation](0029-canonical-lab-navigation.md)
 - [ADR-0030: lazy search and Chromium smoke gate](0030-lazy-search-and-browser-smoke.md)
 - [ADR-0031: generated book title map](0031-generated-book-title-map.md)
+- [ADR-0032: distinguish the first local path from the optional warm-up](0032-first-route-priority.md)

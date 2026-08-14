@@ -112,6 +112,23 @@ try {
   await page.goto(`${origin}/`, { waitUntil: 'networkidle' });
   assert.equal(searchRequests.length, 0, 'initial page load fetched the full search index');
   await noHorizontalOverflow(page, 'desktop showcase');
+  const guidedRouteLink = page.getByRole('link', { name: 'Have a disposable project? Follow the guided path.' });
+  assert.match(
+    await guidedRouteLink.getAttribute('href'),
+    /reader\.html\?path=book%2Fchapters%2F01-gpt-and-codex-EN\.md&lang=en$/,
+    'guided first-route card does not open the canonical Chapter 1 Reader route',
+  );
+  const fixtureRouteLink = page.getByRole('link', { name: /No disposable project yet\? Use the safe fixture/ });
+  assert.match(
+    await fixtureRouteLink.getAttribute('href'),
+    /reader\.html\?path=book%2Froutes%2Ffirst-safe-change-EN\.md&lang=en$/,
+    'safe-fixture handoff does not open the canonical First Safe Change Reader route',
+  );
+  assert.match(
+    await page.locator('[data-route-decision]').innerText(),
+    /does not replace the guided Codex path/i,
+    'first-route decision card does not distinguish the fixture from the guided path',
+  );
   const firstTurnLink = page.getByRole('link', { name: 'Draft a universal first turn' });
   await assert.doesNotReject(async () => firstTurnLink.waitFor(), 'universal first-turn research entry is missing from the showcase');
   assert.match(

@@ -21,7 +21,7 @@ states otherwise. See [`LICENSE`](LICENSE) and the [licensing boundary](docs/sou
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-[Start the recommended Codex path](#the-recommended-first-codex-path) · [Try the optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required)
+[Start the recommended Codex path](#the-recommended-first-codex-path) · [Prepare a safe offline fixture](book/routes/first-safe-change-EN.md) · [Try the optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required)
 
 README language links switch repository entry files. The interactive showcase is
 a local contributor preview; follow [`site/README.md`](site/README.md) to serve
@@ -87,6 +87,12 @@ improvise if the project is not disposable, the target is not one named file,
 the check is not sourced from the project, or the task would add an external
 side effect.
 
+> **Choose by readiness:** start with Chapter 1 when you have a disposable
+> project. If you do not have a safe local target when Chapter 2 asks you to
+> choose one, use the [First Safe Change fixture](book/routes/first-safe-change-EN.md)
+> before Lab 001. It supplies one offline target and checker; it does not
+> replace the guided path. The warm-up below is optional and text-only.
+
 The 15-minute exercise below is an optional, text-only warm-up. It rehearses a
 checking habit; it is not a substitute for the Codex path.
 
@@ -94,9 +100,9 @@ checking habit; it is not a substitute for the Codex path.
 
 | What you need now | Start here | Leave with |
 |---|---|---|
-| Make a first reversible local Codex change | [Recommended Codex path](#the-recommended-first-codex-path) | One mental model, one bounded task card, a small diff, a focused check, and an explicit unverified list |
+| Make a first reversible local Codex change | [Recommended Codex path](#the-recommended-first-codex-path) | Needs a disposable project by Chapter 2; leaves with one bounded task card, a small diff, a focused check, and an explicit unverified list |
 | Need a safe local file before using a project | [First Safe Change fixture](book/routes/first-safe-change-EN.md) | One seeded README failure, one permitted README edit, and one local acceptance result; candidate · learner run `not_run` |
-| Rehearse the checking habit without project setup | [Optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) | One fictional message, three human checks, and a bounded receipt |
+| Rehearse the checking habit without project setup | [Optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) | One fictional message, three human checks, and a bounded receipt; optional, not the local Codex path |
 | Turn a vague request into something an Agent can execute | [Chapter 3 — task protocol](book/chapters/03-task-protocol-EN.md) + [Lab 002](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop conditions, and failure handling |
 | Turn a broad learning or research wish into a first attempt | [Beginner Practice Pack intake](book/communication-clinic-EN.md#first-practice-intake) | Ask one decision at a time, select one existing route, and leave with a bounded receipt; supplemental candidate · complete learner run `not_run` |
 | Assess an AI idea that could affect other people | [Public-interest safety inquiry](book/communication-clinic-EN.md#public-interest-safety-route) | A fixed fictional case for decision ownership, affected people, input limits, recourse, evidence, and a stop receipt; candidate · `not_run` |

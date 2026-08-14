@@ -178,9 +178,20 @@ def main() -> int:
             'data-content-id="chapter-01"',
             'data-content-id="chapter-02"',
             'data-content-id="lab-001-first-safe-task"',
+            'data-route-decision',
+            'data-content-id="first-safe-change-route"',
+            'heroRouteFixtureBody',
+            'mobileRouteFixture',
         ):
             if required not in site_markup:
                 raise AssertionError(f"recommended-codex-route: missing {required}")
+        for required in (
+            "heroRouteGuidedTitle: 'Have a disposable project? Follow the guided path.'",
+            "heroRouteFixtureBody: 'It supplies one offline target and check. It does not replace the guided Codex path.'",
+            "heroRouteFixtureBody: '它提供一个离线目标和检查，不替代有引导的 Codex 路径。'",
+        ):
+            if required not in site_script:
+                raise AssertionError(f"recommended-codex-route: missing route distinction '{required}'")
         fixtures += 2
 
         reader_styles = (Path(__file__).resolve().parents[1] / "site/styles.css").read_text(encoding="utf-8")

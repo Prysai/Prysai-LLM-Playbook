@@ -104,6 +104,17 @@ button, input, select, textarea { font: inherit; }
 .button-light { color: var(--ink); background: #fff; }
 .text-link, .section-link { display: inline-flex; align-items: center; gap: .6rem; padding-bottom: .2rem; border-bottom: 1px solid var(--red); font-size: .78rem; font-weight: 700; }
 .text-link span:last-child, .section-link span:last-child { color: var(--red); }
+.hero-route-decision { max-width: 680px; margin-top: 2rem; border-top: 3px solid var(--ink); border-bottom: 1px solid var(--line-dark); }
+.hero-route-kicker { margin: .8rem 0; color: var(--red); font-size: .62rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.hero-route-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line-dark); }
+.hero-route-option { display: grid; grid-template-columns: 1.7rem minmax(0, 1fr) auto; gap: .65rem; min-height: 8rem; padding: 1rem 1rem 1rem 0; border-right: 1px solid var(--line-dark); color: var(--ink); }
+.hero-route-option + .hero-route-option { padding-left: 1rem; border-right: 0; }
+.hero-route-option:hover, .hero-route-option:focus-visible { color: var(--red); background: #fff; }
+.hero-route-index { color: var(--red); font: 700 .68rem/1.4 Consolas, 'Courier New', monospace; }
+.hero-route-option strong { display: block; font-size: .88rem; letter-spacing: -.025em; line-height: 1.2; }
+.hero-route-option small { display: block; margin-top: .55rem; color: var(--muted); font-size: .7rem; line-height: 1.45; }
+.hero-route-option b { align-self: end; color: var(--red); font-size: 1rem; }
+.hero-route-boundary { margin: 0; padding: .7rem 0; border-top: 1px solid var(--line-dark); color: var(--muted); font-size: .66rem; line-height: 1.4; }
 .hero-proof-card { grid-column: 2; align-self: center; min-width: 0; border: 1px solid var(--ink); color: var(--ink); background: #fff; }
 .hero-proof-head { display: flex; align-items: flex-start; justify-content: space-between; gap: .8rem; padding: .85rem 1rem; border-bottom: 1px solid var(--ink); color: var(--red); font-size: .62rem; font-weight: 800; letter-spacing: .08em; }
 .hero-proof-status { flex: 0 0 auto; max-width: 11.5rem; color: var(--ink); font-size: .56rem; letter-spacing: .04em; line-height: 1.35; text-align: right; }
@@ -402,6 +413,10 @@ button, input, select, textarea { font: inherit; }
   .hero-actions, .next-actions { align-items: stretch; flex-direction: column; gap: .8rem; }
   .button, .text-link { width: 100%; }
   .button { justify-content: space-between; }
+  .hero-route-decision { margin-top: 1.5rem; }
+  .hero-route-grid { grid-template-columns: 1fr; }
+  .hero-route-option, .hero-route-option + .hero-route-option { min-height: 0; padding: .9rem 0; border-right: 0; border-bottom: 1px solid var(--line-dark); }
+  .hero-route-option + .hero-route-option { border-bottom: 0; }
   .hero-footer { flex-direction: column; }
   .problem-grid, .contract-grid, .lab-grid, .skill-grid, .status-grid { grid-template-columns: 1fr; }
   .problem-card { min-height: 210px; }

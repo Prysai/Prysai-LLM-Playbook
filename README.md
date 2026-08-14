@@ -13,7 +13,7 @@
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-[Start the recommended Codex path](#the-recommended-first-codex-path) · [Try the optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) · [Read the full English guide](README-EN.md)
+[Start the recommended Codex path](#the-recommended-first-codex-path) · [Prepare a safe offline fixture](book/routes/first-safe-change-EN.md) · [Try the optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) · [Read the full English guide](README-EN.md)
 
 > **Status:** `candidate` · **Default language:** English · **Maintained by:** Prysai Lab
 
@@ -66,6 +66,12 @@ complete them successfully. Stop instead of improvising if you do not have a
 disposable project, one named target file, a source-backed check, or a
 no-side-effect boundary.
 
+> **Choose by readiness:** start with Chapter 1 when you have a disposable
+> project. If you do not have a safe local target when Chapter 2 asks you to
+> choose one, use the [First Safe Change fixture](book/routes/first-safe-change-EN.md)
+> before Lab 001. The fixture supplies one offline target and checker; it does
+> not replace the guided path. The warm-up below is optional and text-only.
+
 The warm-up below is optional. It rehearses one evidence habit without setup;
 it does not replace the local Codex task.
 
@@ -73,9 +79,9 @@ it does not replace the local Codex task.
 
 | Your goal | Start here | Leave with |
 |---|---|---|
-| Make a first reversible local Codex change | [Recommended Codex path](#the-recommended-first-codex-path) | One mental model, one bounded task card, a small diff, a focused check, and an unverified list |
-| Need a safe local file before using a project | [First Safe Change fixture](book/routes/first-safe-change-EN.md) | One intentionally failing README check, one scoped edit, and a modest local receipt |
-| Rehearse the checking habit without a project | [Optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) | One fictional message, three human checks, and a bounded receipt |
+| Make a first reversible local Codex change | [Recommended Codex path](#the-recommended-first-codex-path) | Needs a disposable project by Chapter 2; leaves with one bounded task card, a small diff, a focused check, and an unverified list |
+| Need a safe local file before using a project | [First Safe Change fixture](book/routes/first-safe-change-EN.md) | One intentionally failing README check, one scoped edit, and a modest local receipt; it does not replace the guided path |
+| Rehearse the checking habit without a project | [Optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) | One fictional message, three human checks, and a bounded receipt; optional, not the local Codex path |
 | Build a reliable request | [Chapter 3](book/chapters/03-task-protocol-EN.md) + [Lab 002](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop, and recovery conditions |
 | Practise language, research, or a small work task | [Beginner Practice Pack](book/communication-clinic-EN.md) | An attempt, focused correction, variation, and evidence boundary |
 | Draft or check a first text-only request for any LLM surface | [Universal first-turn contract](docs/research/universal-first-turn-prompt-contract-2026-08-13.md) + [First-Turn Check](skills/prysai-first-turn-check/SKILL.md) | Six visible fields, two candidate cards, and a bounded before-send inspection |
