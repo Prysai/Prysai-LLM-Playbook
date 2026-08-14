@@ -152,6 +152,20 @@ try {
   assert.equal(await firstTurnPage.getByRole('link', { name: /open full-size visual: make the boundary visible/i }).isVisible(), true, 'First-turn visual lacks an accessible mobile full-size route');
   await noHorizontalOverflow(firstTurnPage, 'mobile universal first-turn record');
   await firstTurnPage.close();
+  const pilotProtocolPage = await context.newPage();
+  await pilotProtocolPage.goto(`${origin}/site/reader.html?path=docs%2Fquality%2Ffirst-win-pilot-protocol-v2.md&lang=en`, { waitUntil: 'networkidle' });
+  await pilotProtocolPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.match(await pilotProtocolPage.locator('[data-reader-article] h1').innerText(), /first win pilot protocol v2/i, 'Reader did not render the First Win pilot protocol');
+  const pilotKitLink = pilotProtocolPage.getByRole('link', { name: /pilot-kit contract/i });
+  assert.match(await pilotKitLink.getAttribute('href'), /docs\/governance\/first-win-pilot-kit\.yaml$/, 'Pilot protocol does not link to its commit-bound kit contract');
+  assert.match(await pilotProtocolPage.locator('[data-reader-article]').innerText(), /prepared_no_recruitment_or_participant_run_recorded/i, 'Pilot protocol omits the prepared-not-run boundary');
+  await noHorizontalOverflow(pilotProtocolPage, 'desktop First Win pilot protocol');
+  await pilotProtocolPage.setViewportSize({ width: 390, height: 844 });
+  await noHorizontalOverflow(pilotProtocolPage, 'mobile First Win pilot protocol');
+  const pilotConditionList = pilotProtocolPage.locator('[data-reader-article] h2', { hasText: 'Fixed conditions' }).locator('xpath=following-sibling::ul[1]');
+  assert.equal(await pilotConditionList.count(), 1, 'Pilot protocol uses a dense fixed-condition block instead of a mobile-readable list');
+  assert.equal(await pilotConditionList.locator('li').count(), 6, 'Pilot protocol fixed conditions do not expose six scannable records');
+  await pilotProtocolPage.close();
   assert.equal(await page.getByRole('button', { name: 'Compare with one acceptable shape' }).isDisabled(), true, 'First Win comparison is available before all three judgments');
   assert.match(await page.locator('[data-first-win-receipt]').innerText(), /judgment_state: incomplete/i, 'First Win does not expose an incomplete local record before checks');
   await page.locator('[data-first-win-check="facts_kept"][value="FAIL"]').check();
@@ -297,10 +311,22 @@ try {
   assert.equal(mobileReadingOrder.headerPosition, 'static', 'mobile header persistently obstructs the reading viewport');
   assert.equal(await page.locator('[data-reader-previous]').isVisible(), true, 'Reader previous chapter link is hidden');
   assert.equal(await page.locator('[data-reader-next]').isVisible(), true, 'Reader next chapter link is hidden');
+  const mobileWideTable = page.locator('.reader-table-wide').first();
+  assert.equal(await mobileWideTable.isVisible(), true, 'mobile multi-column table does not preserve a readable wide-table route');
+  assert.match(await mobileWideTable.getAttribute('aria-label'), /scroll horizontally/i, 'mobile wide table does not explain how to read every column');
+  assert.equal(await mobileWideTable.locator('.reader-table-hint').isVisible(), true, 'mobile wide table does not show a swipe hint');
+  const mobileTableWidth = await mobileWideTable.evaluate((wrap) => ({ viewport: wrap.clientWidth, content: wrap.querySelector('table').scrollWidth }));
+  assert.ok(mobileTableWidth.content > mobileTableWidth.viewport, `mobile wide table is still compressed instead of scrollable: ${JSON.stringify(mobileTableWidth)}`);
   await noHorizontalOverflow(page, 'mobile Reader');
   await page.getByText('Evidence note for this page').click();
   assert.equal(await page.locator('[data-reader-trust-reviewed]').getAttribute('datetime'), '2026-08-12', 'Reader omits the last actual evidence review date');
   assert.match(await page.locator('.reader-trust-boundary').innerText(), /not a freshness guarantee/i, 'Reader does not bound the scheduled review date');
+
+  const chineseLabPage = await context.newPage();
+  await chineseLabPage.goto(`${origin}/site/reader.html?path=book%2Flabs%2Flab-001-first-safe-task-EN.md&lang=zh`, { waitUntil: 'networkidle' });
+  await chineseLabPage.locator('[data-reader-article][aria-busy="false"]').waitFor();
+  assert.equal(await chineseLabPage.locator('[data-reader-next] .reader-pagination-kicker').innerText(), '下一个实验', 'Chinese Lab navigation labels the next Lab as previous');
+  await chineseLabPage.close();
 
   await page.goto(`${origin}/site/reader.html?path=book%2Froutes%2Ffirst-safe-change-EN.md&lang=en`, { waitUntil: 'networkidle' });
   await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
@@ -386,7 +412,7 @@ try {
   assert.deepEqual(consoleErrors, [], `browser console errors: ${consoleErrors.join(' | ')}`);
   assert.deepEqual(pageErrors, [], `browser page errors: ${pageErrors.join(' | ')}`);
   await context.tracing.stop();
-  console.log('BROWSER_SMOKE_OK initial_search_requests=0 lazy_search_requests=1 desktop=1280 mobile=390 readers=chapter-02,first-safe-change,beginner-practice-pack,ai-safety-field-signals,universal-first-turn invalid_path=blocked');
+  console.log('BROWSER_SMOKE_OK initial_search_requests=0 lazy_search_requests=1 desktop=1280 mobile=390 readers=chapter-02,first-safe-change,beginner-practice-pack,ai-safety-field-signals,universal-first-turn,first-win-pilot-protocol invalid_path=blocked');
 } catch (error) {
   await fs.mkdir(evidenceDirectory, { recursive: true });
   if (page) await page.screenshot({ path: path.join(evidenceDirectory, 'failure.png'), fullPage: true }).catch(() => {});

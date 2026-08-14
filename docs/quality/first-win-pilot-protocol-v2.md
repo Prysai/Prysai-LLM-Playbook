@@ -43,17 +43,58 @@ drop-off, and sanitized observation note.
 
 ## Fixed conditions
 
-Record before the first session:
+Record the following before the first session:
 
-```text
-protocol_revision | candidate_sha | entry_url | locale | browser_version
-viewport | model_and_surface | model_settings_if_visible | moderator
-independent_scorer | rubric_revision | retention_end | deletion_owner
-```
+- protocol revision and candidate SHA;
+- entry URL and locale;
+- browser version and viewport;
+- model and surface, plus visible model settings if any;
+- moderator and independent scorer;
+- rubric revision, retention end, and deletion owner.
 
 Keep model, prompts, task order, scoring rubric, and visible site revision
 fixed during a round. If one must change, stop the round and begin a new
 revision. Include abandoned and excluded sessions in the aggregate count.
+
+## Commit-bound pilot package
+
+Before any authorized session, generate one local-only package with the
+[pilot-kit contract](../governance/first-win-pilot-kit.yaml). It copies the
+fixed participant worksheet, moderator runbook, scorer key, blank records, and
+aggregate template while writing the exact source digests from one existing Git
+commit. The package generator refuses an invalid commit, a non-empty output
+directory, a malformed role alias, an expired retention date, or an entry URL
+with credentials, query text, or a fragment. It does not recruit, contact
+participants, collect data, or establish that the pilot has approval.
+
+From the repository root, the pilot authorizer runs the following only after
+the named authority, privacy, retention, and independent-review roles are
+confirmed. Replace every placeholder with a pre-authorized, non-identifying
+role or condition label; the output directory must be ignored local storage.
+
+```text
+python scripts/first_win_pilot_kit.py \
+  --candidate-sha <full-40-character-commit-sha> \
+  --output-dir .work/first-win-pilot/<round-label> \
+  --pilot-authorizer <role-alias> \
+  --privacy-owner <role-alias> \
+  --moderator <role-alias> \
+  --independent-scorer <role-alias> \
+  --deletion-owner <role-alias> \
+  --recruitment-channel <approved-channel-alias> \
+  --retention-end <YYYY-MM-DD> \
+  --locale <locale> \
+  --model-surface <surface-label> \
+  --browser-os-viewport <environment-label>
+```
+
+Before the first session, run `python scripts/first_win_pilot_kit.py
+--validate-package <local-package-path>` and compare `manifest.json` with the
+chosen commit. Do not place participant data in the package directory; the
+blank CSV files define fields only. The scorer key stays with the moderator and
+independent scorer, never with a participant. A package marked
+`prepared_no_recruitment_or_participant_run_recorded` remains preparation, not
+learner evidence.
 
 ## Phase 1 — unaided baseline
 

@@ -33,6 +33,8 @@ REQUIRED_COMMANDS = {
     "skill-registry": ("{python}", "scripts/validate_skill_registry.py"),
     "skill-registry-fixtures": ("{python}", "scripts/test_skill_registry.py"),
     "learning-practice-candidate": ("{python}", "scripts/validate_learning_practice_candidate.py"),
+    "first-win-pilot-kit": ("{python}", "scripts/first_win_pilot_kit.py", "--check"),
+    "first-win-pilot-kit-fixtures": ("{python}", "scripts/test_first_win_pilot_kit.py"),
     "evidence-review-candidate": ("{python}", "scripts/validate_evidence_review_candidate.py"),
     "evidence-review-candidate-fixtures": ("{python}", "scripts/test_evidence_review_candidate.py"),
     "context-packet-builder-candidate": ("{python}", "scripts/validate_context_packet_builder_candidate.py"),

@@ -1,0 +1,99 @@
+{
+  "schema_version": "1",
+  "status": "candidate",
+  "owner": "reader-research maintainer",
+  "quality_finding": "Q-013",
+  "contract_path": "docs/governance/first-win-pilot-kit.yaml",
+  "protocol_path": "docs/quality/first-win-pilot-protocol-v2.md",
+  "starter_contract_path": "docs/governance/starter-task-contract.yaml",
+  "public_surface": {
+    "entry_path": "site/index.html",
+    "source_paths": ["site/index.html", "site/app.js", "site/styles.css"]
+  },
+  "package_paths": [
+    "README.md",
+    "manifest.json",
+    "participant/worksheet.md",
+    "moderator/runbook.md",
+    "moderator/scorer-key.md",
+    "records/session-record.csv",
+    "records/scoring-sheet.csv",
+    "aggregate/aggregate-review.md"
+  ],
+  "protocol_anchors": [
+    "Phase 1",
+    "Phase 2",
+    "Phase 3",
+    "Phase 4",
+    "public-surface observation",
+    "48–72 hours",
+    "not evidence about a person's first chat-model session",
+    "three findings",
+    "protocol revision and candidate SHA",
+    "rubric revision, retention end, and deletion owner"
+  ],
+  "participant_boundary": [
+    "Participation is voluntary.",
+    "This is a test of a candidate guide, not a test of you.",
+    "Do not share secrets, private files, account details, work material, or personal information.",
+    "You may stop without explanation."
+  ],
+  "do_not_collect": [
+    "names",
+    "contact details",
+    "raw chat histories",
+    "account data",
+    "private files",
+    "employer material",
+    "health information",
+    "financial information",
+    "screen recordings"
+  ],
+  "session_record_fields": [
+    "session_code",
+    "phase",
+    "timer_start",
+    "timer_end",
+    "completed",
+    "first_answer",
+    "participant_instruction",
+    "marked_findings",
+    "check_1",
+    "check_2",
+    "check_3",
+    "help_code",
+    "recovery_branch",
+    "final_answer",
+    "before_after_diff",
+    "drop_off",
+    "example_exposed",
+    "scorer_a_dimensions",
+    "scorer_b_dimensions",
+    "disagreement"
+  ],
+  "scoring_sheet_fields": [
+    "session_code",
+    "phase",
+    "artifact_digest",
+    "scorer_alias",
+    "required_facts",
+    "unsupported_facts",
+    "requested_action",
+    "correction_scope",
+    "sanitized_notes"
+  ],
+  "fixed_stimuli": {
+    "baseline_source": "The volunteer briefing starts Tuesday at 3. Bring the printed checklist. If you cannot attend, message the coordinator.",
+    "baseline_defective_answer": "The volunteer briefing starts Tuesday at 3 in Room 204. If you cannot attend, email the coordinator.",
+    "baseline_findings": [
+      "Bring the printed checklist was omitted.",
+      "Room 204 was invented.",
+      "message was changed to the unsupported method email."
+    ],
+    "seeded_defective_answer": "The workshop starts Friday at 10 in Studio B. Please bring your notes. If you cannot attend, email the organizer.",
+    "immediate_source": "The repair appointment is Monday at 8. Leave the side gate unlocked. Call us if the time no longer works.",
+    "delayed_source": "Applications close Thursday at noon. Attach one work sample. Contact the programme office if the form does not open."
+  },
+  "allowed_help_codes": ["none", "reopen_first_win", "copy_text", "moderator_clarification", "other_recorded"],
+  "allowed_recovery_values": ["independent", "seeded", "not_observable_no_failure", "not_attempted", "stopped"]
+}

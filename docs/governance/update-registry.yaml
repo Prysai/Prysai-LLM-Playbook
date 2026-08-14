@@ -165,11 +165,11 @@
     },
     {
       "area": "quality-and-learner-evidence",
-      "canonical_paths": ["docs/governance/quality-register.yaml", "docs/quality/quality-register.md", "docs/quality/first-win-pilot-protocol-v2.md", "scripts/build_quality_register.py", "scripts/test_release_evidence.py"],
+      "canonical_paths": ["docs/governance/quality-register.yaml", "docs/quality/quality-register.md", "docs/quality/first-win-pilot-protocol-v2.md", "docs/governance/first-win-pilot-kit.yaml", "scripts/first_win_pilot_kit.py", "scripts/test_first_win_pilot_kit.py", "scripts/build_quality_register.py", "scripts/test_release_evidence.py"],
       "owner": "quality-maintainer",
       "triggers": ["quality-finding-change", "learner-pilot-change", "evaluation-evidence-change", "release-blocker-change"],
       "required_inputs": ["finding", "severity", "owner", "required-evidence", "current-evidence", "status", "resolution-boundary", "next-review"],
-      "validation_commands": ["scripts/build_quality_register.py --check", "scripts/test_release_evidence.py", "scripts/validate_update_registry.py", "scripts/check_local_links.py"],
+      "validation_commands": ["scripts/first_win_pilot_kit.py --check", "scripts/test_first_win_pilot_kit.py", "scripts/build_quality_register.py --check", "scripts/test_release_evidence.py", "scripts/validate_update_registry.py", "scripts/check_local_links.py"],
       "status_fields": ["severity", "status", "owner", "opened_at", "next_review", "resolution_scope"],
       "next_review": "2026-09-13"
     },

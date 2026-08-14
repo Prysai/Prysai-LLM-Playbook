@@ -10,6 +10,7 @@ the project can honestly claim.
 - [Current-state review](current-state-review-2026-08-09.md)
 - [Public-site review](review-public-site-browser-2026-08-10.md)
 - [Current First Win pilot protocol](first-win-pilot-protocol-v2.md)
+- [Commit-bound First Win pilot-kit contract](../governance/first-win-pilot-kit.yaml)
 - [Public beta feedback contract](public-beta-feedback-contract-v1.md)
 - [Context Packet Builder proposal fixture](../../evals/candidates/context-packet-builder-v1/README.md)
 - [Superseded first-task pilot protocol](first-task-pilot-protocol-v1.md)

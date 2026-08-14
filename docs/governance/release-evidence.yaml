@@ -113,6 +113,8 @@
         {"id": "skill-routing-contract-fixtures", "argv": ["{python}", "scripts/test_skill_routing_contract.py"]},
         {"id": "evaluation-fixtures", "argv": ["{python}", "scripts/validate_eval_tasks.py"]},
         {"id": "learning-practice-candidate", "argv": ["{python}", "scripts/validate_learning_practice_candidate.py"]},
+        {"id": "first-win-pilot-kit", "argv": ["{python}", "scripts/first_win_pilot_kit.py", "--check"]},
+        {"id": "first-win-pilot-kit-fixtures", "argv": ["{python}", "scripts/test_first_win_pilot_kit.py"]},
         {"id": "evidence-review-candidate", "argv": ["{python}", "scripts/validate_evidence_review_candidate.py"]},
         {"id": "evidence-review-candidate-fixtures", "argv": ["{python}", "scripts/test_evidence_review_candidate.py"]},
         {"id": "context-packet-builder-candidate", "argv": ["{python}", "scripts/validate_context_packet_builder_candidate.py"]},
