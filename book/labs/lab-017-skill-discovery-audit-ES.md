@@ -57,5 +57,5 @@ Transfiere las etapas a un MCP: configuración visible, descubrimiento de herram
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Navegación de Labs"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-016-side-effect-boundary-ES.md">← Anterior<br><strong>Lab 016 · límite de efectos secundarios</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-018-team-adoption-gate-ES.md">Siguiente →<br><strong>Lab 018 · puerta de adopción para el equipo</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Navegación de Labs"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-016-side-effect-boundary-ES.md">← Anterior<br><strong>Lab 016 · límite de efectos secundarios</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-018-language-transfer-ES.md">Siguiente →<br><strong>Lab 018 · transferencia de idioma</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

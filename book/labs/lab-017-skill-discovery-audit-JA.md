@@ -57,5 +57,5 @@ MCPでは設定の可視性、ツール発見、読取対象アクセス、呼�
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Labナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-016-side-effect-boundary-JA.md">← 前へ<br><strong>Lab 016 · 副作用の境界</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-018-team-adoption-gate-JA.md">次へ →<br><strong>Lab 018 · チーム採用のゲート</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Labナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-016-side-effect-boundary-JA.md">← 前へ<br><strong>Lab 016 · 副作用の境界</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-018-language-transfer-JA.md">次へ →<br><strong>Lab 018 · 入力型の旅行会話で保持と転移を確認する</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

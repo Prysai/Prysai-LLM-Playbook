@@ -82,6 +82,6 @@ model が「処理中」と言う、同じ案を繰り返す、file が変わっ
 <hr>
 <nav class="lab-navigation" aria-label="Lab のナビゲーション"><table role="presentation" width="100%"><tr>
 <td align="left"><a data-lab-nav="previous" href="lab-005-design-a-skill-JA.md">← 前の Lab<br><strong>Lab 005 · 繰り返す方法を境界のある Skill にする</strong></a></td>
-<td align="right"><a data-lab-nav="next" href="lab-007-browse-safely-JA.md">次へ →<br><strong>Lab 007 · 安全にブラウズする</strong></a></td>
+<td align="right"><a data-lab-nav="next" href="lab-007-action-boundaries-JA.md">次へ →<br><strong>Lab 007 · 一つの README タスクを三つの行動境界に置く</strong></a></td>
 </tr></table></nav>
 <!-- lab-navigation:end -->

@@ -82,6 +82,6 @@ model이 “처리 중”이라고 하거나 같은 제안을 반복하거나 fi
 <hr>
 <nav class="lab-navigation" aria-label="Lab 탐색"><table role="presentation" width="100%"><tr>
 <td align="left"><a data-lab-nav="previous" href="lab-005-design-a-skill-KO.md">← 이전 Lab<br><strong>Lab 005 · 반복되는 방법을 경계가 분명한 Skill로 만들기</strong></a></td>
-<td align="right"><a data-lab-nav="next" href="lab-007-browse-safely-KO.md">다음 →<br><strong>Lab 007 · 안전하게 탐색하기</strong></a></td>
+<td align="right"><a data-lab-nav="next" href="lab-007-action-boundaries-KO.md">다음 →<br><strong>Lab 007 · 하나의 README 작업을 세 가지 행동 경계에 넣기</strong></a></td>
 </tr></table></nav>
 <!-- lab-navigation:end -->

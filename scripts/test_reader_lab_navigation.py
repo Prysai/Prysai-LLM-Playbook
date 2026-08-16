@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -111,12 +112,27 @@ def main() -> int:
                 require(localized["translation_status"] == "not-started", f"{content_id} {locale} missing file has an inconsistent translation status")
                 require(localized["coverage"] == "route-only", f"{content_id} {locale} overstates translation coverage")
                 require(localized.get("reason"), f"{content_id} {locale} lacks an explicit missing-translation reason")
+
+        localized_lab_links = 0
+        for locale in ("ZH", "ES", "JA", "KO", "DE"):
+            for lab_path in sorted((ROOT / "book/labs").glob(f"*-{locale}.md")):
+                source = lab_path.read_text(encoding="utf-8")
+                for target in re.findall(r'<a\s+[^>]*data-lab-nav="(?:previous|next)"[^>]*href="([^"]+)"', source):
+                    localized_lab_links += 1
+                    require(
+                        target.endswith(f"-{locale}.md"),
+                        f"{lab_path.relative_to(ROOT)} crosses locale in Lab navigation: {target}",
+                    )
+                    require(
+                        (lab_path.parent / target).is_file(),
+                        f"{lab_path.relative_to(ROOT)} links to missing Lab navigation target: {target}",
+                    )
     except (AssertionError, KeyError, OSError, UnicodeError, ValueError, StopIteration) as exc:
         print("READER_LAB_NAVIGATION_TESTS_FAILED")
         print(f"- {exc}")
         return 1
 
-    print(f"READER_LAB_NAVIGATION_TESTS_OK labs=18 boundaries=3 unavailable_routes={unavailable_routes}")
+    print(f"READER_LAB_NAVIGATION_TESTS_OK labs=18 boundaries=3 unavailable_routes={unavailable_routes} localized_links={localized_lab_links}")
     return 0
 
 
