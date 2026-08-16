@@ -72,6 +72,7 @@
         {"id": "repository-security-policy", "argv": ["{python}", "scripts/validate_repository_security.py"]},
         {"id": "repository-security-policy-fixtures", "argv": ["{python}", "scripts/test_validate_repository_security.py"]},
         {"id": "localization", "argv": ["{python}", "scripts/validate_localization.py"]},
+        {"id": "locale-release-paths", "argv": ["{python}", "scripts/audit_locale_release_paths.py"]},
         {"id": "site-i18n", "argv": ["{python}", "scripts/validate_site_i18n.py"]},
         {"id": "site-i18n-fixtures", "argv": ["{python}", "scripts/test_validate_site_i18n.py"]},
         {"id": "book-navigation", "argv": ["{python}", "scripts/validate_book_navigation.py"]},
