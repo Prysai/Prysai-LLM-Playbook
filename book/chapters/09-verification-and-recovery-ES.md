@@ -46,6 +46,41 @@ status: unverified
 next_check: ejecutar solo la orden aprobada en el directorio y revisión fijados
 ```
 
+### Un estado verde no es una conclusión
+
+Una marca verde puede significar que **una** comprobación terminó sin error en
+un momento concreto. Antes de escribir «funciona», separa estas preguntas:
+
+| Lo que viste | Aún debes comprobar | Forma pequeña y segura de hacerlo |
+|---|---|---|
+| El comando terminó con código 0 | ¿Era el comando, carpeta y revisión esperados? | Guarda la orden, la carpeta, la revisión y la salida relevante |
+| Existe un diff | ¿El cambio respeta el encargo? | Lee el diff frente al objetivo y los límites acordados |
+| Abre una página | ¿El recorrido importante responde con la entrada prevista? | Prueba una ruta concreta, con una entrada inocua y un viewport anotado |
+| El modelo dijo «hecho» | ¿Qué observación independiente respalda cada frase? | Pide rutas, salida, diff o una limitación explícita |
+
+No conviertas una comprobación correcta en una promesa sobre seguridad,
+personas usuarias o producción. Si la observación no existe, deja esa fila como
+`unverified`; no la rellenes con confianza.
+
+### Recibo de recuperación: deja que otra persona continúe
+
+Cuando pares o recuperes un flujo, guarda un recibo breve. Sirve para no
+reiniciar a ciegas y para que la siguiente persona sepa qué puede comprobar sin
+ampliar permisos:
+
+```text
+objetivo y límite: qué debía ocurrir y qué no estaba autorizado
+último punto confirmado: observación, ruta o salida que sí existe
+primer punto no respaldado: la primera afirmación sin prueba
+estado del destino: sin cambio / cambio parcial / desconocido
+evidencia guardada: diff, registro, salida, captura o enlace concreto
+siguiente comprobación segura: una acción de solo lectura o reversible
+no hacer todavía: publicación, instalación, despliegue o nuevo alcance
+```
+
+Un recibo no arregla el resultado ni prueba una causa. Conserva el lugar exacto
+desde el que se puede retomar sin convertir un «quizá» en un «listo».
+
 ## Experimento y límite
 
 Prepara un resumen redactado, un diff, salida de pruebas, enlaces de fuente y una pieza de evidencia ausente. Con el Lab 003 crea una tabla de afirmación, alcance, evidencia, estado y siguiente paso. Añade deliberadamente «todas las pruebas pasaron» sin salida y recházala aunque el tono sea seguro.

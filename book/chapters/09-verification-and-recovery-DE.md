@@ -46,6 +46,42 @@ status: unverified
 next_check: Nur den freigegebenen Befehl im festen Verzeichnis und Revision ausführen
 ```
 
+### Ein grüner Status ist kein Schluss
+
+Ein grüner Check bedeutet nur, dass **ein** Check zu einem bestimmten Zeitpunkt
+ohne Fehler endete. Bevor du „funktioniert“ schreibst, trenne diese Fragen:
+
+| Beobachtung | Noch zu prüfen | Kleiner, sicherer Check |
+|---|---|---|
+| Der Befehl endete mit Exit-Code 0 | Waren Befehl, Ordner und Revision die erwarteten? | Befehl, Ordner, Revision und relevante Ausgabe sichern |
+| Es gibt einen Diff | Hält die Änderung Auftrag und Grenzen ein? | Den Diff gegen Ziel und vereinbarte Grenzen lesen |
+| Eine Seite öffnet sich | Reagiert der wichtige Pfad auf die vorgesehene Eingabe? | Einen Pfad mit harmloser Eingabe und notiertem Viewport prüfen |
+| Das Modell sagt „erledigt“ | Welche unabhängige Beobachtung stützt jede Behauptung? | Pfade, Ausgabe, Diff oder eine ausdrückliche Einschränkung anfordern |
+
+Aus einem bestandenen Check wird keine Zusage über Sicherheit, Nutzwert oder
+Produktionsreife. Fehlt die Beobachtung, bleibt die Zeile `unverified`; sie wird
+nicht mit Zuversicht aufgefüllt.
+
+### Wiederherstellungsbeleg: sicher an andere übergeben
+
+Wenn du einen Ablauf stoppst oder wieder unter Kontrolle bringst, hinterlasse
+einen kurzen Beleg. So beginnt niemand blind von vorn, und die nächste Person
+weiß, was sie ohne zusätzliche Berechtigungen prüfen darf:
+
+```text
+ziel und grenze: Was sollte geschehen, was war nicht erlaubt?
+letzter bestätigter punkt: vorhandene Beobachtung, Pfad oder Ausgabe
+erste unbelegte stelle: erste Behauptung ohne Beleg
+zielzustand: keine Änderung / Teiländerung / unbekannt
+gesicherte belege: Diff, Log, Ausgabe, Screenshot oder konkreter Link
+nächster sicherer check: eine schreibgeschützte oder reversible Aktion
+noch nicht: veröffentlichen, installieren, deployen oder Umfang erweitern
+```
+
+Der Beleg repariert kein Ergebnis und beweist keine Ursache. Er hält nur den
+genauen Ort fest, an dem sicher weitergearbeitet werden kann, ohne aus einem
+„vielleicht“ ein „erledigt“ zu machen.
+
 ## Experiment und Grenze
 
 Bereite eine bereinigte Zusammenfassung, Diff, Testausgabe, Quellenlinks und ein absichtlich fehlendes Belegstück vor. Erstelle mit Lab 003 eine Tabelle aus Behauptung, Umfang, Beleg, Status und nächstem Check. Lehne „alle Tests bestanden“ ohne Ausgabe auch bei sicherem Ton ab.

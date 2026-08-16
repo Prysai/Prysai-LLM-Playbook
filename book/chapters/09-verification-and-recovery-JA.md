@@ -46,6 +46,39 @@ status: unverified
 next_check: 固定した directory と revision で承認済み command だけを実行する
 ```
 
+### 緑の表示は結論ではない
+
+緑の check は、ある時点で **一つの** check が error なしで終わったことを示すだけです。
+「動く」と書く前に、次を分けます。
+
+| 見えたこと | まだ確認すること | 小さく安全な確認 |
+|---|---|---|
+| command が exit code 0 で終わった | 想定した command、folder、revision だったか | command、folder、revision、必要な output を残す |
+| diff がある | 依頼と boundary を守った変更か | goal と制約に照らして diff を読む |
+| page が開く | 想定した input で重要な path が通るか | 無害な input と記録した viewport で一つの path を確認する |
+| model が「完了」と言った | 各 claim を支える独立した observation は何か | path、output、diff、または明示的な limitation を求める |
+
+一つの check の成功を security、user value、production への約束に変えません。
+observation がなければ、その行は `unverified` のままにします。自信で埋めないでください。
+
+### 復旧レシート：次の人が安全に続けられるようにする
+
+workflow を止めた、または control を取り戻したら、短い receipt を残します。
+闇雲に最初からやり直さず、次の人が permission を広げずに何を確認できるかを示すためです。
+
+```text
+goal と boundary: 何を行う予定で、何が許可されていなかったか
+last confirmed point: 実際にある observation、path、または output
+first unsupported point: evidence のない最初の claim
+target state: no change / partial change / unknown
+saved evidence: diff、log、output、screenshot、または特定の link
+safe next check: read-only または reversible な一つの action
+not yet: publish、install、deploy、または scope の拡張
+```
+
+receipt は result を修正せず、cause も証明しません。`maybe` を `done` にせず、
+安全に再開できる正確な位置だけを残します。
+
 ## 実験と境界
 
 redacted summary、diff、test output、source link、意図的に欠けた evidence を用意します。Lab 003 で claim、scope、evidence、status、next check の表を作り、output のない「all tests passed」を安全な口調でも拒否します。fact claim、execution claim、user-effect claim を一つずつ含め、一つの弱い evidence を共有できない理由を説明します。production service には接続せず、external system を変更しません。
