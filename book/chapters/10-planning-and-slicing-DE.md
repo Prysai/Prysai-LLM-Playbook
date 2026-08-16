@@ -52,6 +52,42 @@ Miss aus einer Aufgabe keine allgemeine Geschwindigkeit oder Qualität. Nicht be
 - [ ] Externe Nebenwirkungen ohne ausdrückliche Autorität bleiben außerhalb des Umfangs.
 - [ ] Die Übergabe trennt geändert, verifiziert, blockiert und nicht bewiesen.
 
+## Arbeitsblatt mit drei Plänen: nach dem ersten Beleg entscheiden
+
+Schreibe für dieselbe Anfrage drei Varianten, bevor du den Editor öffnest. Du
+musst nicht alle ausführen. Der Vergleich zeigt, wo ein Plan den ersten
+nützlichen Befund versteckt.
+
+| Form | Typischer erster Schritt | Erster nützlicher Beleg | Signal zum Anhalten |
+|---|---|---|---|
+| Horizontal | „Erst alle Daten, dann die gesamte UI vorbereiten“ | Kommt oft erst nach vielen Schichten | Heute gibt es keine Person, Eingabe oder Prüfung für ein Review |
+| Dateireihenfolge | „Diese Dateien in dieser Reihenfolge editieren“ | Ein lokal prüfbarer Diff | Die Dateireihenfolge sagt nicht, was jemand beobachten kann |
+| Vertikal | „Mit fester Eingabe ein Ergebnis zeigen und prüfen“ | Ein kleiner Pfad, Check und Datensatz | Der erste Pfad braucht Veröffentlichung, Installation oder mehrere Systeme |
+
+Wähle den vertikalen Plan, wenn du früh wissen musst, ob die Idee den nächsten
+Schritt verdient. Weißt du noch nicht einmal, ob eine Abhängigkeit, Berechtigung
+oder Datei existiert, wähle einen schreibgeschützten Probe. Ein Probe beantwortet
+„können wir weiter?“, nicht „ist die Funktion fertig?“.
+
+## Stopp- und Übergabekarte
+
+Eine Unterbrechung löscht den Plan nicht, erlaubt aber auch keine automatische
+Fortsetzung. Hinterlasse vor dem Schließen der Sitzung oder vor einer Bitte um
+Hilfe eine Karte, die jemand ohne den Gesprächsverlauf lesen kann:
+
+```text
+schnitt: Name eines einzelnen beobachtbaren Ergebnisses
+baseline: verglichener Branch, Revision oder Kopie
+mit belegen erledigt: tatsächlich vorhandene Änderung und Prüfung
+blockade oder unbekanntes: erste fehlende Abhängigkeit oder Prüfung
+zielzustand: keine Änderung / Teiländerung / unbekannt
+noch nicht: Rechte erweitern, installieren, veröffentlichen oder ausgeschlossene Dateien
+nächste einzige Aktion: schreibgeschützter Probe oder idempotenter Wiederholversuch
+```
+
+Kannst du keine einzige nächste Aktion benennen, ist der Schnitt noch zu groß.
+Teile die Frage, bevor du erneut einfach „weiter“ anforderst.
+
 ## Deinen ersten vollständigen Schnitt machen
 
 Beginne nicht mit „Verbessere den ganzen Kurs“. Wähle einen lokalen Text mit

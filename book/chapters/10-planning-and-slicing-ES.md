@@ -54,6 +54,42 @@ No midas velocidad o calidad general a partir de una tarea. Marca tiempos, coste
 - [ ] Los efectos externos siguen fuera del alcance salvo autorización explícita.
 - [ ] El resumen diferencia cambio realizado, verificado, bloqueado y no demostrado.
 
+## Hoja de tres planes: elige por la primera evidencia
+
+Para una misma petición, escribe tres alternativas antes de abrir el editor.
+No necesitas ejecutar las tres; la comparación sirve para detectar dónde cada
+una esconde el primer resultado útil.
+
+| Forma | Primer paso típico | Primera evidencia útil | Señal para no seguir |
+|---|---|---|---|
+| Horizontal | «Prepara todos los datos, después toda la interfaz» | Normalmente llega tarde, tras varias capas | No hay una persona, entrada ni comprobación que pueda revisar hoy |
+| Orden de archivos | «Edita estos archivos en este orden» | Un diff local y revisable | El orden de archivos no explica qué resultado verá alguien |
+| Vertical | «Con una entrada fija, muestra un resultado y compruébalo» | Un recorrido pequeño, un check y un registro | El primer recorrido exige publicar, instalar o cambiar varios sistemas |
+
+Elige el plan vertical cuando necesites aprender pronto si la idea merece el
+siguiente paso. Elige una sonda de solo lectura cuando todavía no sepas si una
+dependencia, permiso o archivo existe. Una sonda responde «¿podemos continuar?»;
+no cuenta como una función terminada.
+
+## Tarjeta de parada y entrega
+
+Una interrupción no borra el plan, pero tampoco autoriza a continuar. Antes de
+cerrar la sesión o pedir ayuda, deja una tarjeta que otra persona pueda leer sin
+conocer la conversación:
+
+```text
+slice: nombre de un único resultado observable
+baseline: rama, revisión o copia que se comparó
+hecho con evidencia: cambio y prueba que sí existen
+bloqueo o incertidumbre: primera dependencia o comprobación que falta
+estado del destino: sin cambio / parcial / desconocido
+no hacer todavía: permisos, instalaciones, publicación o archivos excluidos
+siguiente acción única: sonda de lectura o reintento idempotente
+```
+
+Si no puedes nombrar una única acción siguiente, el corte sigue siendo demasiado
+grande. Divide la pregunta antes de volver a pedir «continúa».
+
 ## Haz tu primer corte completo
 
 No empieces por «mejora todo el curso». Elige un texto local de un máximo de

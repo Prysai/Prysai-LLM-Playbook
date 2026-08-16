@@ -52,6 +52,40 @@ disposable copy で同じ小さな change に対する horizontal plan と verti
 - [ ] explicit authority がない external side effect は scope 外である。
 - [ ] handoff が changed、verified、blocked、not proven を分ける。
 
+## 三つの plan のワークシート：最初の evidence で選ぶ
+
+同じ依頼に対して、editor を開く前に三つの案を書きます。三つすべてを実行する必要は
+ありません。どの案が最初の役立つ result を隠すかを見るための比較です。
+
+| 形 | よくある最初の step | 最初の役立つ evidence | 続けない signal |
+|---|---|---|---|
+| horizontal | 「すべての data、次にすべての UI を準備する」 | 多くの layer の後になりがち | 今日 review できる人、input、check がない |
+| file order | 「この file をこの順で edit する」 | local で review できる diff | file の順序が、誰に何が見えるかを説明しない |
+| vertical | 「固定 input から一つの result を見せ、check する」 | 小さな path、check、record | 最初の path に publish、install、複数 system の変更が必要 |
+
+次の step に進む価値があるかを早く知りたいときは vertical plan を選びます。dependency、
+permission、file があるかさえ不明なら、read-only の probe を選びます。probe は
+「続けられるか」に答えるもので、完成した feature ではありません。
+
+## stop と handoff のカード
+
+interrupt があっても plan は消えません。しかし、continue の permission になるわけでも
+ありません。session を閉じる前、または助けを求める前に、会話を知らない人にも読める
+カードを残します。
+
+```text
+slice: 一つの observable outcome の名前
+baseline: 比較した branch、revision、または copy
+done with evidence: 実在する change と proof
+blocker or unknown: 最初に欠けた dependency または check
+target state: no change / partial / unknown
+not yet: permission、install、publish、または除外した file
+one next action: read-only probe または idempotent retry
+```
+
+一つの next action を名前で言えなければ、slice はまだ大きすぎます。「continue」と
+頼む前に question を分けてください。
+
 ## 最初の完結した slice を作る
 
 「course 全体を改善する」から始めません。初めての人が読む、120 語以内の local text を一つ
