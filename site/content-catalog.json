@@ -473,6 +473,16 @@
         "ko": "프랑스어 연습 루프",
         "de": "Französisch-Übungsschleife"
       }
+    },
+    "llm-fundamentals-guide": {
+      "name": {
+        "en": "Lesson 0: What Is a Large Language Model",
+        "zh": "第 0 课：什么是大语言模型",
+        "es": "Lección 0: ¿Qué es un modelo de lenguaje grande?",
+        "ja": "レッスン0: 大規模言語モデルとは何か",
+        "ko": "Lesson 0: 대형 언어 모델이란 무엇인가?",
+        "de": "Lektion 0: Was ist ein großes Sprachmodell?"
+      }
     }
   },
   "skills": {
