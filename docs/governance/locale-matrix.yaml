@@ -3553,6 +3553,138 @@
           "reason": "German source exists; independent language review and learner-run evidence remain pending."
         }
       }
+    },
+    {
+      "content_id": "platform-adapter-guide-route",
+      "kind": "learning-route",
+      "stem": "book/routes/platform-adapter-guide",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-16",
+      "locales": {
+        "EN": {
+          "path": "book/routes/platform-adapter-guide-EN.md",
+          "content_status": "candidate",
+          "translation_status": "source",
+          "coverage": "full",
+          "run_status": "not_run"
+        },
+        "ZH": {
+          "path": "book/routes/platform-adapter-guide-ZH.md",
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "coverage": "full",
+          "run_status": "not_run",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-16",
+          "reason": "Simplified Chinese adapter guide exists; independent language review remains pending."
+        },
+        "ES": {
+          "path": "book/routes/platform-adapter-guide-ES.md",
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "coverage": "full",
+          "run_status": "not_run",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-16",
+          "reason": "Spanish adapter guide exists; independent language review remains pending."
+        },
+        "JA": {
+          "path": "book/routes/platform-adapter-guide-JA.md",
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "coverage": "full",
+          "run_status": "not_run",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-16",
+          "reason": "Japanese adapter guide exists; independent language review remains pending."
+        },
+        "KO": {
+          "path": "book/routes/platform-adapter-guide-KO.md",
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "coverage": "full",
+          "run_status": "not_run",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-16",
+          "reason": "Korean adapter guide exists; independent language review remains pending."
+        },
+        "DE": {
+          "path": "book/routes/platform-adapter-guide-DE.md",
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "coverage": "full",
+          "run_status": "not_run",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-16",
+          "reason": "German adapter guide exists; independent language review remains pending."
+        }
+      }
+    },
+    {
+      "content_id": "french-practice-loop",
+      "kind": "supplemental-guide",
+      "stem": "book/french-practice-loop",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-16",
+      "locales": {
+        "EN": {
+          "path": "book/french-practice-loop-EN.md",
+          "content_status": "candidate",
+          "translation_status": "source",
+          "coverage": "full",
+          "run_status": "not_run"
+        },
+        "ZH": {
+          "path": "book/french-practice-loop-ZH.md",
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "coverage": "full",
+          "run_status": "not_run",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-16",
+          "reason": "Simplified Chinese French-loop translation exists; independent language review remains pending."
+        },
+        "ES": {
+          "path": "book/french-practice-loop-ES.md",
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "coverage": "full",
+          "run_status": "not_run",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-16",
+          "reason": "Spanish French-loop translation exists; independent language review remains pending."
+        },
+        "JA": {
+          "path": "book/french-practice-loop-JA.md",
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "coverage": "full",
+          "run_status": "not_run",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-16",
+          "reason": "Japanese French-loop translation exists; independent language review remains pending."
+        },
+        "KO": {
+          "path": "book/french-practice-loop-KO.md",
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "coverage": "full",
+          "run_status": "not_run",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-16",
+          "reason": "Korean French-loop translation exists; independent language review remains pending."
+        },
+        "DE": {
+          "path": "book/french-practice-loop-DE.md",
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "coverage": "full",
+          "run_status": "not_run",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-16",
+          "reason": "German French-loop translation exists; independent language review remains pending."
+        }
+      }
     }
   ]
 }
