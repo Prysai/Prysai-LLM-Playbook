@@ -376,7 +376,7 @@ forum record には公開報告があります。いずれも現在の account-l
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="04-context-permissions-and-agent-JA.md" aria-label="前の章：第 4 章 · コンテキスト、権限、Agent の行動境界">← 前の章<br><strong>第 4 章 · コンテキスト、権限、Agent の行動境界</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="../table-of-contents-JA.md" aria-label="日本語目次へ戻る：第 6 章はまだ翻訳されていません">次の章は準備中 →<br><strong>第 6 章の提供状況を見る</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="06-model-selection-JA.md" aria-label="次の章：第 6 章 · モデル選択はモデル崇拝ではない">次へ →<br><strong>第 6 章 · モデル選択はモデル崇拝ではない</strong></a></td>
     </tr>
   </table>
 </nav>
