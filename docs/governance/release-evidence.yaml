@@ -77,6 +77,7 @@
         {"id": "localized-practice-cards", "argv": ["{python}", "scripts/validate_localized_practice_cards.py"]},
         {"id": "llm-fundamentals-boundaries", "argv": ["{python}", "scripts/validate_llm_fundamentals_boundaries.py"]},
         {"id": "textbook-entry-path", "argv": ["{python}", "scripts/validate_textbook_entry_path.py"]},
+        {"id": "foundation-route-structure", "argv": ["{python}", "scripts/validate_foundation_route_structure.py"]},
         {"id": "translation-depth", "argv": ["{python}", "scripts/audit_translation_depth.py"]},
         {"id": "site-i18n", "argv": ["{python}", "scripts/validate_site_i18n.py"]},
         {"id": "site-i18n-fixtures", "argv": ["{python}", "scripts/test_validate_site_i18n.py"]},

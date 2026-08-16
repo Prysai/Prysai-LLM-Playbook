@@ -122,6 +122,8 @@ REQUIRED = (
     "scripts/validate_llm_fundamentals_boundaries.py",
     "scripts/validate_textbook_entry_path.py",
     "tests/test_textbook_entry_path.py",
+    "scripts/validate_foundation_route_structure.py",
+    "tests/test_foundation_route_structure.py",
     "tests/README.md",
     "scripts/audit_translation_depth.py",
     "scripts/test_validate_site_i18n.py",
