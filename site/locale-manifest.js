@@ -166,7 +166,8 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "source",
-          "source_revision": null
+          "source_revision": null,
+          "title": "Lab 018: Test a typed beginner travel exchange for retention and transfer"
         },
         "zh": {
           "path": "book/labs/lab-018-language-transfer-ZH.md",
@@ -1782,42 +1783,48 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "source",
-          "source_revision": null
+          "source_revision": null,
+          "title": "Lab 011: Separate GPT, Codex, tools, and Agents"
         },
         "zh": {
           "path": "book/labs/lab-011-gpt-codex-boundaries-ZH.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "f521e29"
+          "source_revision": "f521e29",
+          "title": "实验 011：分清 GPT、Codex、工具与 Agent"
         },
         "es": {
           "path": "book/labs/lab-011-gpt-codex-boundaries-ES.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "f521e29"
+          "source_revision": "f521e29",
+          "title": "Laboratorio 011: Separar GPT, Codex, las herramientas y los Agents"
         },
         "ja": {
           "path": "book/labs/lab-011-gpt-codex-boundaries-JA.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "f521e29"
+          "source_revision": "f521e29",
+          "title": "実験 011：GPT、Codex、ツール、Agent を区別する"
         },
         "ko": {
           "path": "book/labs/lab-011-gpt-codex-boundaries-KO.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "f521e29"
+          "source_revision": "f521e29",
+          "title": "Lab 011: GPT, Codex, 도구와 Agent 구분하기"
         },
         "de": {
           "path": "book/labs/lab-011-gpt-codex-boundaries-DE.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "f521e29"
+          "source_revision": "f521e29",
+          "title": "Lab 011: GPT, Codex, Tools und Agents trennen"
         }
       }
     },
@@ -1836,42 +1843,48 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "source",
-          "source_revision": null
+          "source_revision": null,
+          "title": "Lab 001: Make one safe README change"
         },
         "zh": {
           "path": "book/labs/lab-001-first-safe-task-ZH.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-15"
+          "source_revision": "worktree-2026-08-15",
+          "title": "实验 001：完成一次安全的 README 改动"
         },
         "es": {
           "path": "book/labs/lab-001-first-safe-task-ES.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-15"
+          "source_revision": "worktree-2026-08-15",
+          "title": "Lab 001: Haz un cambio seguro de README"
         },
         "ja": {
           "path": "book/labs/lab-001-first-safe-task-JA.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-15"
+          "source_revision": "worktree-2026-08-15",
+          "title": "Lab 001: 安全な README の変更を一つ行う"
         },
         "ko": {
           "path": "book/labs/lab-001-first-safe-task-KO.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-15"
+          "source_revision": "worktree-2026-08-15",
+          "title": "Lab 001: 안전한 README 변경 하나 만들기"
         },
         "de": {
           "path": "book/labs/lab-001-first-safe-task-DE.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-15"
+          "source_revision": "worktree-2026-08-15",
+          "title": "Lab 001: Eine sichere README-Änderung vornehmen"
         }
       }
     },
@@ -1890,14 +1903,16 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "source",
-          "source_revision": null
+          "source_revision": null,
+          "title": "Lab 002: Turn one wish into a task protocol"
         },
         "zh": {
           "path": "book/labs/lab-002-task-protocol-ZH.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "1c6e6f95d691dc4a522fc6a6be9d41c4aea508ae"
+          "source_revision": "1c6e6f95d691dc4a522fc6a6be9d41c4aea508ae",
+          "title": "实验 002：把一个愿望变成任务协议"
         },
         "es": {
           "path": "book/labs/lab-002-task-protocol-ES.md",
@@ -1944,14 +1959,16 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "source",
-          "source_revision": null
+          "source_revision": null,
+          "title": "Lab 003: Audit a completion claim"
         },
         "zh": {
           "path": "book/labs/lab-003-evidence-review-ZH.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-12"
+          "source_revision": "worktree-2026-08-12",
+          "title": "实验 003：审计一条完成声明"
         },
         "es": {
           "path": "book/labs/lab-003-evidence-review-ES.md",
@@ -1998,14 +2015,16 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "source",
-          "source_revision": null
+          "source_revision": null,
+          "title": "Lab 004: Choose the smallest useful capability"
         },
         "zh": {
           "path": "book/labs/lab-004-skill-selection-ZH.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-12"
+          "source_revision": "worktree-2026-08-12",
+          "title": "实验 004：选择最小有用能力"
         },
         "es": {
           "path": "book/labs/lab-004-skill-selection-ES.md",
@@ -2052,14 +2071,16 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "source",
-          "source_revision": null
+          "source_revision": null,
+          "title": "Lab 005: Turn a repeated method into a narrow Skill"
         },
         "zh": {
           "path": "book/labs/lab-005-design-a-skill-ZH.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-12"
+          "source_revision": "worktree-2026-08-12",
+          "title": "实验 005：把重复方法沉淀为边界明确的 Skill"
         },
         "es": {
           "path": "book/labs/lab-005-design-a-skill-ES.md",
@@ -2106,7 +2127,8 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "source",
-          "source_revision": null
+          "source_revision": null,
+          "title": "Lab 008: Narrow a topic into an answerable research question"
         },
         "zh": {
           "path": "book/labs/lab-008-research-question-ZH.md",
@@ -2160,7 +2182,8 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "source",
-          "source_revision": null
+          "source_revision": null,
+          "title": "Lab 009: Compare direct implementation with a full engineering lifecycle"
         },
         "zh": {
           "path": "book/labs/lab-009-engineering-lifecycle-ZH.md",
@@ -2214,7 +2237,8 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "source",
-          "source_revision": null
+          "source_revision": null,
+          "title": "Lab 010: Build shared product context that survives two tasks"
         },
         "zh": {
           "path": "book/labs/lab-010-product-context-ZH.md",
@@ -2268,7 +2292,8 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "source",
-          "source_revision": null
+          "source_revision": null,
+          "title": "Lab 012: Turn a personal method into a team capability"
         },
         "zh": {
           "path": "book/labs/lab-012-team-capability-migration-ZH.md",
@@ -2322,14 +2347,16 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "source",
-          "source_revision": null
+          "source_revision": null,
+          "title": "Lab 013: Run one complete vertical slice"
         },
         "zh": {
           "path": "book/labs/lab-013-l3-vertical-slice-ZH.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-12"
+          "source_revision": "worktree-2026-08-12",
+          "title": "实验 013：完成一个完整的竖向切片"
         },
         "es": {
           "path": "book/labs/lab-013-l3-vertical-slice-ES.md",
@@ -2376,14 +2403,16 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "source",
-          "source_revision": null
+          "source_revision": null,
+          "title": "Lab 006: Design Agent stop conditions"
         },
         "zh": {
           "path": "book/labs/lab-006-agent-stop-conditions-ZH.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-15"
+          "source_revision": "worktree-2026-08-15",
+          "title": "实验 006：设计 Agent 的停止条件"
         },
         "es": {
           "path": "book/labs/lab-006-agent-stop-conditions-ES.md",
@@ -2430,42 +2459,48 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "source",
-          "source_revision": null
+          "source_revision": null,
+          "title": "Lab 007: Put One README Task Behind Three Action Boundaries"
         },
         "zh": {
           "path": "book/labs/lab-007-action-boundaries-ZH.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-11",
+          "title": "实验 007：把一个 README 任务放进三个行动边界"
         },
         "es": {
           "path": "book/labs/lab-007-action-boundaries-ES.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-11",
+          "title": "Lab 007: Coloca una tarea README detrás de tres límites de acción"
         },
         "ja": {
           "path": "book/labs/lab-007-action-boundaries-JA.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-11",
+          "title": "Lab 007：一つの README タスクを三つの行動境界に置く"
         },
         "ko": {
           "path": "book/labs/lab-007-action-boundaries-KO.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-11",
+          "title": "Lab 007: 하나의 README 작업을 세 가지 행동 경계에 넣기"
         },
         "de": {
           "path": "book/labs/lab-007-action-boundaries-DE.md",
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-11",
+          "title": "Lab 007: Eine README-Aufgabe hinter drei Handlungsgrenzen"
         }
       }
     },
@@ -2482,7 +2517,8 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "source",
-          "source_revision": null
+          "source_revision": null,
+          "title": "Lab 014: Reconcile a resumed task before continuing"
         },
         "zh": {
           "path": "book/labs/lab-014-resume-reconciliation-ZH.md",
@@ -2534,7 +2570,8 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "source",
-          "source_revision": null
+          "source_revision": null,
+          "title": "Lab 015: Deliver evidence, not a completion sentence"
         },
         "zh": {
           "path": "book/labs/lab-015-evidence-delivery-ZH.md",
@@ -2586,7 +2623,8 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "source",
-          "source_revision": null
+          "source_revision": null,
+          "title": "Lab 016: Stop at the side-effect boundary"
         },
         "zh": {
           "path": "book/labs/lab-016-side-effect-boundary-ZH.md",
@@ -2638,7 +2676,8 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "source",
-          "source_revision": null
+          "source_revision": null,
+          "title": "Lab 017: Audit discovery before adopting a Skill"
         },
         "zh": {
           "path": "book/labs/lab-017-skill-discovery-audit-ZH.md",
@@ -5176,56 +5215,49 @@ window.CODEX_LOCALE_MANIFEST = {
         "number": 1,
         "title": "Make one safe README change",
         "path": "book/labs/lab-001-first-safe-task-EN.md",
-        "content_id": "lab-001-first-safe-task",
-        "title_zh": "完成一次安全的 README 改动"
+        "content_id": "lab-001-first-safe-task"
       },
       {
         "id": "lab-002",
         "number": 2,
         "title": "Turn one wish into a task protocol",
         "path": "book/labs/lab-002-task-protocol-EN.md",
-        "content_id": "lab-002-task-protocol",
-        "title_zh": "把一个愿望变成任务协议"
+        "content_id": "lab-002-task-protocol"
       },
       {
         "id": "lab-003",
         "number": 3,
         "title": "Audit a completion claim",
         "path": "book/labs/lab-003-evidence-review-EN.md",
-        "content_id": "lab-003-evidence-review",
-        "title_zh": "审计一条完成声明"
+        "content_id": "lab-003-evidence-review"
       },
       {
         "id": "lab-004",
         "number": 4,
         "title": "Choose the smallest useful capability",
         "path": "book/labs/lab-004-skill-selection-EN.md",
-        "content_id": "lab-004-skill-selection",
-        "title_zh": "选择最小有用能力"
+        "content_id": "lab-004-skill-selection"
       },
       {
         "id": "lab-005",
         "number": 5,
         "title": "Turn a repeated method into a narrow Skill",
         "path": "book/labs/lab-005-design-a-skill-EN.md",
-        "content_id": "lab-005-design-a-skill",
-        "title_zh": "把重复方法沉淀为边界明确的 Skill"
+        "content_id": "lab-005-design-a-skill"
       },
       {
         "id": "lab-006",
         "number": 6,
         "title": "Design Agent stop conditions",
         "path": "book/labs/lab-006-agent-stop-conditions-EN.md",
-        "content_id": "lab-006-agent-stop-conditions",
-        "title_zh": "设计 Agent 的停止条件"
+        "content_id": "lab-006-agent-stop-conditions"
       },
       {
         "id": "lab-007",
         "number": 7,
         "title": "Put One README Task Behind Three Action Boundaries",
         "path": "book/labs/lab-007-action-boundaries-EN.md",
-        "content_id": "lab-007-action-boundaries",
-        "title_zh": "把一个 README 任务放进三个行动边界"
+        "content_id": "lab-007-action-boundaries"
       },
       {
         "id": "lab-008",
@@ -5253,8 +5285,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "number": 11,
         "title": "Separate GPT, Codex, tools, and Agents",
         "path": "book/labs/lab-011-gpt-codex-boundaries-EN.md",
-        "content_id": "lab-011-gpt-codex-boundaries",
-        "title_zh": "分清 GPT、Codex、工具与 Agent"
+        "content_id": "lab-011-gpt-codex-boundaries"
       },
       {
         "id": "lab-012",
@@ -5268,8 +5299,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "number": 13,
         "title": "Run one complete vertical slice",
         "path": "book/labs/lab-013-l3-vertical-slice-EN.md",
-        "content_id": "lab-013-l3-vertical-slice",
-        "title_zh": "完成一个完整的竖向切片"
+        "content_id": "lab-013-l3-vertical-slice"
       },
       {
         "id": "lab-014",

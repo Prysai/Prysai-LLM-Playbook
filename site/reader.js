@@ -204,14 +204,18 @@ function canonicalChapterTitle(chapter) {
     return requested?.path || lab.path;
   }
 
-  function labHasLocalizedTitle(lab) {
+  function localizedLabTitle(lab) {
     const record = manifest.contents?.[lab.content_id];
-    return uiLanguage() === 'zh' && ready(record?.locales?.[activeLocale]) && Boolean(lab.title_zh);
+    const title = record?.locales?.[activeLocale]?.title;
+    if (!ready(record?.locales?.[activeLocale]) || typeof title !== 'string' || !title.trim()) return '';
+    if (uiLanguage() === 'zh') return title.replace(/^实验\s+\d+\s*[：:·.-]\s*/, '').trim();
+    return title.trim();
   }
 
   function labNavigationTitle(lab) {
     const number = String(lab.number).padStart(3, '0');
-    if (labHasLocalizedTitle(lab)) return `实验 ${number} · ${lab.title_zh}`;
+    const title = localizedLabTitle(lab);
+    if (uiLanguage() === 'zh' && title) return `实验 ${number} · ${title}`;
     return `Lab ${number} · ${lab.title}`;
   }
 

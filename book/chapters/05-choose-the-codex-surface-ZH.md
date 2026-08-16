@@ -244,7 +244,7 @@ result_review
 
 **实验状态：** `not_run`。下面是练习设计，不是本仓库已经在 Local、Worktree 或 Cloud 中运行过的记录。
 
-### 设置
+### 准备
 
 准备一个可丢弃的 Markdown 文件、一份短验收清单和一个没有 remote 的临时 Git 仓库。
 不要使用秘密、私有数据、外部消息、安装、发布、push 或生产目标。

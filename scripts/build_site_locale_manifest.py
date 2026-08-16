@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -65,6 +66,21 @@ def add_path_index(path_index: dict[str, str], path: str, content_id: str) -> No
     path_index[path] = content_id
 
 
+def markdown_h1_title(path: str) -> str | None:
+    """Return the first Markdown H1 for an existing localized source.
+
+    Canonical Lab order and English labels remain in lab-navigation.yaml.
+    A localized Lab's display label instead belongs to its own Markdown source,
+    so an English-only navigation contract never has to carry translated text.
+    """
+
+    source = ROOT / path
+    if not source.is_file():
+        return None
+    match = re.search(r"(?m)^#\s+(.+?)\s*$", source.read_text(encoding="utf-8"))
+    return match.group(1).strip() if match else None
+
+
 def matrix_content(
     item: dict[str, Any],
     locale_records: dict[str, Any],
@@ -83,6 +99,10 @@ def matrix_content(
             "translation_status": record.get("translation_status"),
             "source_revision": record.get("source_revision"),
         }
+        if item.get("kind") == "lab":
+            title = markdown_h1_title(path)
+            if title:
+                localized[url_token]["title"] = title
         add_path_index(path_index, path, content_id)
     legacy_paths = [normalize(path) for path in item.get("legacy_paths", [])]
     for path in legacy_paths:
