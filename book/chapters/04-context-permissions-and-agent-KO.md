@@ -219,3 +219,15 @@ connector, 진입면은 변동 사실입니다. 구체적인 제품 사실을 �
 |---|---|---|---|
 | Sandbox와 승인은 별도 제어층이며 app와 connector 부작용은 승인이 필요할 수 있음 | https://learn.chatgpt.com/docs/agent-approvals-security.md | 2026-08-10 | 공식 설명이며 현재 세션을 증명하지 않음 |
 | 권한 옵션은 작업면과 정책에 따라 달라짐 | https://learn.chatgpt.com/docs/permission-modes.md | 2026-08-10 | 실제 사용 가능성은 환경과 조직에 좌우됨 |
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="장 탐색">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-KO.md" aria-label="이전 장: 3장 · 바람을 작업 프로토콜로 바꾸기">← 이전 장<br><strong>3장 · 바람을 작업 프로토콜로 바꾸기</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="05-choose-the-codex-surface-KO.md" aria-label="다음 장: 5장 · 알맞은 Codex 작업면 선택하기">다음 장 →<br><strong>5장 · 알맞은 Codex 작업면 선택하기</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->
