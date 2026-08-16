@@ -10,7 +10,7 @@
 
 すべての model、Agent、Skill を理解してから始める必要はありません。account permission、file 操作、private data が要らない練習を一つ選びます。
 
-- AI と language を練習したい： [スペイン語の六段階練習](book/spanish-practice-loop-JA.md)。
+- AI と language を練習したい： [スペイン語の六段階練習](book/spanish-practice-loop-JA.md) または [フランス語の六段階練習](book/french-practice-loop-JA.md)。
 - ばらばらの事実を信頼できる work update にしたい： [業務報告の六段階練習](book/work-update-practice-loop-JA.md)。
 - もっともらしい結論に流されず research claim を確認したい： [リサーチ確認の六段階練習](book/research-check-practice-loop-JA.md)。
 
