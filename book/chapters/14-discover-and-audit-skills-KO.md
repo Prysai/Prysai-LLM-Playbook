@@ -67,6 +67,33 @@ license: 저장소, 대상 파일, NOTICE, 중첩 script / asset의 증거
 
 `file exists`, `discovered`, `loaded`, `adopted`, `verified`를 합치지 마세요. `SKILL.md`는 첫 상태만, 설치 로그는 많아야 `installed-candidate`만 뒷받침합니다.
 
+## 네 단계 검토: 불분명한 후보는 먼저 멈춥니다
+
+“어떻게 설치하나?”로 시작하지 마세요. 다음 네 질문을 순서대로 묻고, 기록으로 답할 수 없는 첫
+지점에서 멈춥니다.
+
+1. **이 작업에 정말 필요한가?** 반복되고 안정적이며 빠뜨리기 쉬운 판단을 한 문장으로 적습니다. 사실이 부족하면 출처를 확인하고 목표가 모호하면 먼저 명확히 합니다.
+2. **정확히 무엇을 받는가?** 프로젝트 URL, 고정 revision, 실제 entry 경로, license/NOTICE, nested dependency를 고정합니다. 이름이나 Star 수만으로는 부족합니다.
+3. **무엇을 할 수 있는가?** 읽기, 쓰기, 설치, 네트워크, 계정, 비밀, 외부 효과를 나눕니다. 목록이 없으면 무해하다고 추측하지 않습니다.
+4. **실패 뒤 어떻게 되돌리는가?** 격리 directory, 설치 전 backup, restore, read-back check를 적습니다. “폴더 삭제”만으로 recovery가 증명되지는 않습니다.
+
+네 질문 모두에 기록으로 답할 수 있을 때만 `approved-to-install`을 권할 수 있습니다. 하나라도
+없으면 보통 `recommendation-only` 또는 `blocked`가 맞습니다. 후보를 부정하는 것이 아니라
+호기심이 검토하지 않은 환경 변경이 되는 것을 막는 일입니다.
+
+### 짧지만 인계 가능한 거절 기록
+
+```text
+후보: <고정 URL과 revision>
+결정: blocked
+이유: entry script가 네트워크를 쓰지만 dependency, 설치 대상, 복구 read-back이 없다.
+확인함: 프로젝트 링크, entry file, 상위 license 신호.
+확인 안 함: runtime 동작, nested asset license, 실제 네트워크 traffic.
+해제 조건: 부족한 정보를 채우고 민감하지 않은 격리 directory에서 검토를 다시 한다.
+```
+
+이는 “위험해 보인다”보다 쓸모 있고, 실행하지 않은 behavior를 이미 관찰한 risk로 바꾸지 않습니다.
+
 ## 작은 실험: 설치하지 않고 두 후보 검토하기
 
 고정 revision의 공개 후보 두 개나 가린 로컬 샘플 두 개를 고릅니다. A에는 추적 가능한 출처와 license 신호가 있고, B에는 license/NOTICE, 의존성 선언, 복구 계획 중 하나가 의도적으로 없습니다.

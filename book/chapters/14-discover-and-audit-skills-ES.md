@@ -74,6 +74,35 @@ Si falta revisión fija, licencia/NOTICE, destino de instalación, copia o compr
 
 No mezcles estos estados: `file exists` → `discovered` → `loaded` → `adopted` → `verified`. Un `SKILL.md` solo prueba el primero; un registro de instalación sostiene como mucho `installed-candidate`.
 
+## Revisión en cuatro pasos: rechaza primero lo que no esté claro
+
+No empieces por «¿cómo lo instalo?». Sigue estas cuatro preguntas y detente en
+la primera que no puedas responder con un registro:
+
+1. **¿La tarea lo necesita de verdad?** Nombra el juicio repetido, estable y fácil de olvidar. Si falta un hecho, consulta fuentes; si el objetivo es confuso, acláralo primero.
+2. **¿Qué recibimos exactamente?** Fija URL, revisión, ruta de entrada real, licencia/NOTICE y dependencias anidadas; un nombre o número de estrellas no basta.
+3. **¿Qué podría hacer?** Separa lectura, escritura, instalación, red, cuenta, secretos y efectos externos. Si no hay inventario, no supongas que es inocuo.
+4. **¿Cómo volvemos atrás tras un fallo?** Anota directorio aislado, copia previa, restauración y comprobación de lectura posterior. «Borrar la carpeta» no es una recuperación comprobada.
+
+Solo cuando las cuatro respuestas están registradas tiene sentido recomendar
+`approved-to-install`; si falta una, el resultado correcto suele ser
+`recommendation-only` o `blocked`. No condena al candidato: evita convertir la
+curiosidad en un cambio de entorno sin revisar.
+
+### Una nota de rechazo breve pero útil
+
+```text
+candidato: <URL y revisión fijadas>
+decisión: blocked
+motivo: el script de entrada usa red, pero faltan dependencias, destino de instalación y lectura de recuperación.
+revisado: enlace del proyecto, archivo de entrada y señal de licencia superior.
+no revisado: comportamiento en ejecución, licencia de recursos anidados y tráfico real.
+desbloqueo: completar esos datos y repetir la revisión en un directorio aislado sin datos sensibles.
+```
+
+Esta nota es más útil que «parece inseguro» y no transforma conductas no
+ejecutadas en riesgos ya observados.
+
 ## Experimento: revisar dos candidatos sin instalar
 
 Elige dos revisiones fijas públicas o muestras locales redactadas. A tiene procedencia y señal de licencia; B carece deliberadamente de licencia/NOTICE, dependencias o restauración.

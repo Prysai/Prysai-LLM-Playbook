@@ -67,6 +67,33 @@ fixed revision、license/NOTICE、install target、backup、restore check の一
 
 `file exists`、`discovered`、`loaded`、`adopted`、`verified` を混同しません。`SKILL.md` があることは最初だけ、install log はせいぜい `installed-candidate` を支えるだけです。
 
+## 四段階 review：不明な candidate は先に止める
+
+「どう install するか」から始めません。次の四つを順に問い、記録で答えられない最初の箇所で
+stop します。
+
+1. **task に本当に必要か？** 繰り返し、安定しており、見落としやすい decision を一文で書く。fact が不足なら source を確認し、goal が曖昧なら先に clarify する。
+2. **何を受け取るのか？** project URL、fixed revision、actual entry path、license/NOTICE、nested dependency を固定する。name や Star 数だけでは足りない。
+3. **何をする可能性があるか？** read、write、install、network、account、secret、external effect を分ける。inventory がなければ安全だと推測しない。
+4. **failure 後にどう戻すか？** isolated directory、pre-install backup、restore、read-back check を書く。「folder を消す」だけでは recovery を証明しない。
+
+四つすべてに記録で答えられるときだけ `approved-to-install` を勧められます。一つでも欠ければ
+通常は `recommendation-only` または `blocked` です。candidate を否定するのではなく、好奇心を
+未審査の environment change に変えないためです。
+
+### 短くても引き継げる rejection note
+
+```text
+candidate: <fixed URL と revision>
+decision: blocked
+reason: entry script は network を使うが、dependency、install target、restore read-back がない。
+checked: project link、entry file、top-level license signal。
+not checked: runtime behavior、nested asset license、actual network traffic。
+unblock: 不足情報をそろえ、non-sensitive isolated directory で review をやり直す。
+```
+
+これは「危なそう」より役立ち、run していない behavior を観測済みの risk に変えません。
+
 ## 小実験：二つの candidate を install せず review する
 
 fixed revision の public candidate 二つ、または redacted local sample 二つを選びます。A には traceable source と license signal があり、B には license/NOTICE、dependency declaration、restore plan のどれかが意図的にありません。

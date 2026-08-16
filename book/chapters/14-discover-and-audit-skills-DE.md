@@ -67,6 +67,36 @@ Fehlt feste Revision, Lizenz/NOTICE, Installationsziel, Backup oder Restore-Chec
 
 Vermische nicht `file exists`, `discovered`, `loaded`, `adopted` und `verified`. Eine `SKILL.md` belegt nur das Erste; ein Installationslog höchstens `installed-candidate`.
 
+## Vier Schritte zur Prüfung: Unklares zuerst stoppen
+
+Beginne nicht mit „Wie installiere ich das?“. Stelle diese vier Fragen der
+Reihe nach und stoppe bei der ersten, die sich nicht mit einem Eintrag
+beantworten lässt:
+
+1. **Braucht die Aufgabe es wirklich?** Benenne das wiederkehrende, stabile und leicht zu übersehende Urteil. Fehlt ein Fakt, prüfe Quellen; ist das Ziel unklar, kläre es zuerst.
+2. **Was erhalten wir genau?** Fixiere Projekt-URL, feste Revision, tatsächlichen Einstiegspfad, Lizenz/NOTICE und verschachtelte Abhängigkeiten. Name oder Star-Zahl reichen nicht.
+3. **Was könnte es tun?** Trenne Lesen, Schreiben, Installation, Netzwerk, Konto, Geheimnisse und externe Wirkung. Ohne Inventar nicht auf Harmlosigkeit schließen.
+4. **Wie kehren wir nach einem Fehler zurück?** Notiere isoliertes Verzeichnis, Backup vor Installation, Wiederherstellung und Read-back-Check. „Ordner löschen“ ist keine nachgewiesene Wiederherstellung.
+
+Nur wenn alle vier Antworten dokumentiert sind, ist `approved-to-install`
+sinnvoll. Fehlt eine, lautet die richtige Entscheidung meist
+`recommendation-only` oder `blocked`. Das verurteilt keinen Kandidaten; es
+verhindert nur, dass Neugier zu einer ungeprüften Umgebungsänderung wird.
+
+### Kurze, aber brauchbare Ablehnungsnotiz
+
+```text
+kandidat: <feste URL und Revision>
+entscheidung: blocked
+grund: Das Einstiegsskript nutzt Netzwerk, aber Abhängigkeiten, Installationsziel und Restore-Read-back fehlen.
+geprüft: Projektlink, Einstiegsdatei und oberes Lizenzsignal.
+nicht geprüft: Laufzeitverhalten, Lizenz verschachtelter Assets, tatsächlicher Netzwerkverkehr.
+freigabe_bedingung: fehlende Angaben ergänzen und im nicht sensiblen isolierten Verzeichnis erneut prüfen.
+```
+
+Das ist brauchbarer als „wirkt unsicher“ und macht nicht ausgeführtes Verhalten
+nicht zu einem bereits beobachteten Risiko.
+
 ## Kleines Experiment: zwei Kandidaten prüfen, keinen installieren
 
 Wähle zwei öffentliche Kandidaten mit festen Revisionen oder zwei bereinigte lokale Beispiele. A hat nachvollziehbare Quelle und Lizenzsignal; B hat absichtlich keine Lizenz/NOTICE, Abhängigkeitsangabe oder Wiederherstellung.
