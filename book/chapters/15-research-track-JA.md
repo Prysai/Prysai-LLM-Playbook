@@ -122,6 +122,39 @@ known、unknown、conflict、not claimed、stop reason、低リスクの next ac
 します。これは benchmark、user study、purchase advice ではありません。chapter と experiment は
 `candidate` と `not_run` のままです。
 
+## 十分の research receipt：結論より先に記録する
+
+始めたばかりで完全な report を装う必要はありません。一つの狭い question を選び、十分で
+この receipt を埋めます。目的は「best model」や「唯一の cause」を即断することではなく、
+次の review 可能な action を残すことです。
+
+```text
+question: <一 task、一 date、一 scope>
+does not answer: <ranking、effectiveness、account access、その他 evidence のないこと>
+source candidate: <original URL。search snippet は本文ではない>
+actual access: <success / redirect / login / timeout / not read>
+locatable content: <title、date、paragraph、Issue。なければ none>
+this source supports: <一つの atomic fact>
+this source does not support: <cause、generality、自分の account、real task result>
+reverse check: <結論を狭める query または source>
+current status: official / user_report / lead / inaccessible / citation_unverified
+next safe action: <一 source を読む、scope を比べる、または stop>
+```
+
+「page X は access date に Y を説明した」と「自分の team が今 Y を使える」は別の claim です。
+前者には public page があっても、後者には account、organization、region、actual surface の
+evidence が必要です。一つの link で二つを証明しません。
+
+### 文を downgrade する場面
+
+| 最初の文 | 足りないもの | より正直な文 |
+|---|---|---|
+| 「model A は research に最適だ」 | task、sample、comparison、score | 「public page は A の capability を説明する。この task への適合は未評価。」 |
+| 「X がこの problem の cause だ」 | reproduction または maintainer confirmation | 「ある user が symptom を報告し、X を possible cause とした。」 |
+| 「officially supported だ」 | locate できる official text と scope | 「access date に official page が宣言 scope 内で機能を説明した。」 |
+
+downgrade は research を弱くするのでなく、source があることを結論の証明と取り違えないためです。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-JA.md">← 前の章<br><strong>第14章 · 外部 Skill を見つけ、導入前に監査する</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-JA.md">次へ →<br><strong>第16章 · エンジニアリング・トラック、着想から信頼できるソフトウェアへ</strong></a></td></tr></table></nav>

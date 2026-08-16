@@ -126,6 +126,42 @@ Nichtbehauptetem, Stoppgrund und nächster risikoarmer Aktion. Das ist kein
 Benchmark, keine Nutzerstudie und keine Kaufempfehlung; Kapitel und Experiment
 bleiben `candidate` und `not_run`.
 
+## Forschungsbeleg in zehn Minuten: erst festhalten, dann schließen
+
+Zu Beginn musst du keinen vollständigen Bericht vorspielen. Wähle eine enge
+Frage und fülle diesen Beleg zehn Minuten lang aus. Er hinterlässt einen
+prüfbaren nächsten Schritt, statt sofort das „beste Modell“ oder eine „einzige
+Ursache“ zu behaupten.
+
+```text
+frage: <eine Aufgabe, ein Datum und ein Umfang>
+beantwortet_nicht: <Ranking, Wirksamkeit, Kontozugang oder anderes ohne Evidenz>
+quellenkandidat: <Original-URL; ein Suchausschnitt ist nicht der Text>
+tatsächlicher_zugriff: <Erfolg / Redirect / Login / Timeout / nicht gelesen>
+auffindbarer_inhalt: <Titel, Datum, Abschnitt oder Issue; sonst none>
+stützt: <eine atomare Tatsache>
+stützt_nicht: <Ursache, Allgemeingültigkeit, eigenes Konto oder echtes Aufgabenergebnis>
+gegencheck: <Query oder Quelle, die die Schlussfolgerung begrenzen könnte>
+aktueller_status: official / user_report / lead / inaccessible / citation_unverified
+nächste_sichere_aktion: <eine Quelle lesen, Umfang vergleichen oder stoppen>
+```
+
+„Seite X beschrieb Y am Zugriffstag“ und „mein Team kann Y jetzt nutzen“ sind
+verschiedene Behauptungen. Für die erste kann eine öffentliche Seite reichen;
+für die zweite braucht es Evidenz zu Konto, Organisation, Region und echter
+Arbeitsoberfläche. Ein Link ersetzt nicht zwei Belege.
+
+### Wann ein Satz abgeschwächt wird
+
+| Ausgangssatz | Was fehlt | Ehrlichere Fassung |
+|---|---|---|
+| „Modell A ist am besten für Forschung.“ | Aufgabe, Stichprobe, Vergleich und Bewertung | „Eine öffentliche Seite beschreibt eine Fähigkeit von A; die Eignung für diese Aufgabe wurde nicht bewertet.“ |
+| „X verursacht dieses Problem.“ | Reproduktion oder Maintainer-Bestätigung | „Eine Person berichtete das Symptom und nannte X als mögliche Ursache.“ |
+| „Es wird offiziell unterstützt.“ | Auffindbarer offizieller Text und Umfang | „Am Zugriffstag beschreibt eine offizielle Seite die Funktion in ihrem erklärten Umfang.“ |
+
+Abschwächen macht Forschung nicht schwächer. Es verhindert, dass das Vorliegen
+einer Quelle mit einer bewiesenen Schlussfolgerung verwechselt wird.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-DE.md">← Vorheriges<br><strong>Kapitel 14 · Externe Skills finden, installieren und prüfen</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-DE.md">Nächstes →<br><strong>Kapitel 16 · Engineering-Pfad, von der Idee zu zuverlässiger Software</strong></a></td></tr></table></nav>

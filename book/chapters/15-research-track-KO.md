@@ -121,6 +121,39 @@ known, unknown, conflict, not claimed, 중지 이유, 다음 저위험 행동을
 전달합니다. 이것은 benchmark, 사용자 연구, 구매 조언이 아니며 장과 실험은 `candidate`,
 `not_run`입니다.
 
+## 10분 연구 영수증: 결론 전에 기록하기
+
+처음부터 완전한 보고서인 척할 필요는 없습니다. 좁은 질문 하나를 고르고 10분 동안 이 영수증을
+채우세요. 목적은 곧바로 “최고 모델”이나 “유일한 원인”을 선언하는 것이 아니라 다음 검토 가능한
+행동을 남기는 것입니다.
+
+```text
+질문: <한 작업, 날짜, 범위>
+답하지 않음: <순위, 효과, 계정 접근 또는 증거 없는 다른 것>
+출처 후보: <원본 URL; 검색 snippet은 본문이 아님>
+실제 접근: <성공 / redirect / login / timeout / 읽지 않음>
+찾을 수 있는 내용: <제목, 날짜, 문단, Issue; 없으면 none>
+이 출처가 뒷받침함: <원자적 사실 하나>
+이 출처가 뒷받침하지 않음: <원인, 일반성, 내 계정, 실제 작업 결과>
+역방향 검사: <결론을 좁힐 query 또는 출처>
+현재 상태: official / user_report / lead / inaccessible / citation_unverified
+다음 안전 행동: <출처 하나 읽기, 범위 비교, 또는 중지>
+```
+
+“페이지 X가 접근일에 Y를 설명했다”와 “우리 팀이 지금 Y를 쓸 수 있다”는 다른 주장입니다.
+전자는 공개 페이지로 뒷받침될 수 있지만, 후자는 계정, 조직, 지역, 실제 surface 증거가 더
+필요합니다. 링크 하나가 두 증거를 대신하지 않습니다.
+
+### 문장을 낮춰 써야 하는 경우
+
+| 처음 문장 | 빠진 것 | 더 정직한 문장 |
+|---|---|---|
+| “모델 A가 연구에 가장 좋다.” | 작업, 표본, 비교, 점수 | “공개 페이지가 A의 능력을 설명한다. 이 작업 적합성은 평가하지 않았다.” |
+| “X가 이 문제의 원인이다.” | 재현 또는 maintainer 확인 | “한 사용자가 증상을 보고하고 X를 가능한 원인으로 제안했다.” |
+| “공식 지원된다.” | 위치를 찾을 공식 본문과 범위 | “접근일에 공식 페이지가 선언한 범위 안에서 기능을 설명했다.” |
+
+표현을 낮추는 일은 연구를 약하게 만드는 것이 아니라, 출처 존재를 입증된 결론으로 착각하지 않게 합니다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-KO.md">← 이전<br><strong>14장 · 외부 Skill 찾기, 설치하기, 감사하기</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-KO.md">다음 →<br><strong>16장 · 엔지니어링 트랙, 아이디어에서 신뢰할 수 있는 소프트웨어까지</strong></a></td></tr></table></nav>

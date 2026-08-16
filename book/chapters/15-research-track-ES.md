@@ -126,6 +126,41 @@ motivo de parada y siguiente acción de bajo riesgo. No es un benchmark, estudio
 de usuarios ni consejo de compra; capítulo y experimento siguen `candidate` y
 `not_run`.
 
+## Recibo de investigación de diez minutos: registra antes de concluir
+
+Al empezar no necesitas fingir un informe completo. Elige una pregunta estrecha
+y rellena este recibo durante diez minutos. Su fin es dejar un siguiente paso
+revisable, no declarar ya «el mejor modelo» o «la única causa».
+
+```text
+pregunta: <una tarea, fecha y alcance>
+no responde: <ranking, eficacia, acceso de cuenta u otro dato sin evidencia>
+posible fuente: <URL original; un fragmento de búsqueda no es el cuerpo>
+acceso real: <éxito / redirect / login / timeout / no leído>
+contenido localizable: <título, fecha, párrafo o Issue; none si no existe>
+esta fuente respalda: <un hecho atómico>
+esta fuente no respalda: <causa, generalidad, mi cuenta o resultado real>
+control inverso: <una consulta o fuente que podría limitar la conclusión>
+estado actual: official / user_report / lead / inaccessible / citation_unverified
+siguiente acción segura: <leer una fuente, comparar alcance o parar>
+```
+
+«La página X describía Y el día de acceso» y «mi equipo puede usar Y ahora»
+son afirmaciones distintas. La primera puede tener una página pública; la
+segunda necesita evidencia de cuenta, organización, región y superficie real.
+Un enlace no sustituye dos evidencias.
+
+### Cuándo rebajar una frase
+
+| Frase inicial | Qué falta | Forma más honesta |
+|---|---|---|
+| «El modelo A es el mejor para investigar.» | Tarea, muestra, comparación y puntuación | «Una página pública describe una capacidad de A; su adecuación a esta tarea no se evaluó.» |
+| «X causa este problema.» | Reproducción o confirmación de mantenimiento | «Una persona informó el síntoma y propuso X como causa posible.» |
+| «Tiene soporte oficial.» | Texto oficial localizable y alcance | «En la fecha de acceso, una página oficial describe la función dentro de su alcance declarado.» |
+
+Rebajar no debilita la investigación: evita que la existencia de una fuente se
+confunda con una conclusión demostrada.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-ES.md">← Anterior<br><strong>Capítulo 14 · descubrir, instalar y auditar Skills externos</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-ES.md">Siguiente →<br><strong>Capítulo 16 · ruta de ingeniería, de la idea al software fiable</strong></a></td></tr></table></nav>
