@@ -139,4 +139,4 @@
 
 ## 来源与边界
 
-这些提示卡是 Prysai 的原创练习材料。设计边界和来源记录见 [六阶段练习与主张边界](../docs/research/six-prompt-learning-claims-and-user-friction-2026-08-14.md)、[日常提示卡来源记录](../docs/research/everyday-prompt-cards-source-receipt-2026-08-14.md) 与 [跨 LLM 入门提示和平台边界记录](../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md)。这些来源解释为何采用“先尝试、再限制性反馈、最后留记录”的候选设计；它们不证明提示卡、模型或课程的效果。
+这些提示卡是 Prysai 的原创练习材料。其设计边界和来源记录目前只保存在原始语言的研究档案中，因此本中文阅读路线不直接打开它们。这些记录解释为何采用“先尝试、再限制性反馈、最后留记录”的候选设计；它们不证明提示卡、模型或课程的效果。

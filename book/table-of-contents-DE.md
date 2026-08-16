@@ -77,7 +77,7 @@ Transfer.
 ## Grenzen und nächster Schritt
 
 - Diese Seite fällt nicht still auf Englisch, Chinesisch oder eine andere Sprache zurück.
-- Governance- und Quellenmaterial mit `locale-neutral` wird nicht als deutsche Übersetzung dargestellt. Zählungen und Zustände stehen weiterhin im [aktuellen Projektstatus](../docs/governance/content-status.yaml).
+- Governance- und Quellenmaterial mit `locale-neutral` wird nicht als deutsche Übersetzung dargestellt. Zählungen und Zustände bleiben im Original protokolliert, werden aber von diesem deutschen Leseweg nicht geöffnet.
 - Wenn du mit einer Übersetzung beiträgst, behalte dieselbe `content_id` und das Suffix `-DE` bei, verwende vorhandene interne Links auf Deutsch und kennzeichne eine ausstehende Sprachprüfung, bis unabhängige Evidenz vorliegt.
 
 Siehe auch den [deutschen Projekteinstieg](../README-DE.md), die [deutsche Buchübersicht](README-DE.md) und das [deutsche Vorwort](preface-DE.md).

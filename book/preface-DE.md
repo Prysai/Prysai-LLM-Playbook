@@ -96,12 +96,9 @@ vergleicht dann unter anderem Erstversuchsrate, Nacharbeit, Dauer, Kosten,
 Vollständigkeit der Belege und korrektes Stoppen.
 
 Jede Schlussfolgerung gilt nur für den erklärten Aufgabensatz, die Umgebung und
-das Datum. Die
-[Luna-Evaluationsakte — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](../docs/model-evaluation-luna.md)
-und die
-[offizielle Codex-Baseline-Forschung — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](../docs/research/openai-codex-baseline.md)
-halten diesen Umfang sichtbar. Eine Fixture-Datei ohne Modell-Laufprotokolle
-bleibt `not_run`.
+das Datum. Die Luna-Evaluationsakte und die offizielle Codex-Baseline-Forschung
+sind noch nicht auf Deutsch verfügbar. Eine Fixture-Datei ohne
+Modell-Laufprotokolle bleibt `not_run`.
 
 ## Reale Probleme sind keine automatisch bestätigten Ursachen
 
@@ -112,9 +109,8 @@ oder beschrieben hat. Er beweist nicht automatisch einen offiziellen Root
 Cause. Ein Community-Workaround ist nicht automatisch ein unterstützter Fix;
 eine lokale Reproduktion ist nicht vorhanden, wenn sie nicht aufgezeichnet
 wurde. Quelle, Datum, Evidenzstufe, Scope und Reproduktionsstatus gehören daher
-zur Aussage. Der
-[Real-Problem-Forschungsindex — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](../docs/research/field-problems-index-2026-08-10.md)
-ist der passende Ausgangspunkt.
+zur Aussage. Der Real-Problem-Forschungsindex ist noch nicht auf Deutsch
+verfügbar und wird aus diesem Leseweg nicht geöffnet.
 
 ## Mit Grenzen beginnen
 

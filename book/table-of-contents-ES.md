@@ -77,8 +77,8 @@ transferencia.
 
 - Esta página no hace fallback silencioso a inglés, chino u otro idioma.
 - Los documentos de gobernanza y fuentes que aún son `locale-neutral` no se
-  presentan como una traducción española. El [estado actual del proyecto](../docs/governance/content-status.yaml)
-  sigue siendo la fuente de los conteos y estados.
+  presentan como una traducción española. El estado actual del proyecto sigue
+  siendo la fuente de los conteos y estados, pero no se abre desde esta ruta.
 - Si quieres contribuir con una traducción, conserva el mismo `content_id`,
   usa el sufijo `-ES`, conserva enlaces internos en español cuando existan y
   declara revisión lingüística pendiente hasta que haya evidencia independiente.
