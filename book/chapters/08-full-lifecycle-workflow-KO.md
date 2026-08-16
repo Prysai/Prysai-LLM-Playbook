@@ -4,7 +4,7 @@
 
 **상태:** `candidate`. 이 장은 증거를 남기는 작업 흐름과 복구 규칙을 설명합니다. 비교 실험은 `not_run`이며 실제 Codex 실행, 고객 업무, 운영 배포를 증명하지 않습니다.
 
-## 문제와 목표
+## 이 장에서 해결하는 문제
 
 모델에게 시작을 시키는 일과 다른 사람이 쓸 수 있는 일을 끝내는 일은 다릅니다. 목표가 모호하거나 범위가 커지거나 검사가 다른 파일을 보고 있어도 화면은 정상처럼 보일 수 있습니다.
 
@@ -13,6 +13,18 @@ define → plan → build → verify → review → deliver → maintain
 ```
 
 각 화살표는 판단 지점입니다. Agent가 완료라고 말해서가 아니라 다른 사람이 확인할 증거가 있을 때만 다음 단계로 갑니다. 이 장을 마치면 편집 전 범위·제외·수용·권한·복구를 쓰고, 큰 요청을 증거가 빠른 수직 슬라이스로 나누며, 마지막 수용 상태를 알고 조건부 재시도를 할 수 있어야 합니다.
+
+## 학습 목표
+
+- 편집 전에 범위, 제외, 수용, 권한, 복구를 적는다.
+- 큰 요청을 이른 증거가 나오는 수직 슬라이스로 나눈다.
+- 마지막으로 수용한 상태를 보존하고 정한 조건에서만 재시도한다.
+- build, runtime, visual, source, security, 사용자 수용 증거를 구분한다.
+- 완료와 미완료를 섞지 않는 handoff를 쓴다.
+
+## 실제 문제: 보이는 성공 사이에서 workflow가 깨질 수 있다
+
+login, model picker, 시작한 check는 다음에 필요한 state가 빠져도 진행처럼 보일 수 있습니다. 아래의 공개 증상은 이 실행의 재현도 제품 진단도 아닙니다. 중단 뒤 path와 diff를 읽고, browser 뒤 client exchange를 분리하고, 영속 change 전에 새 승인을 요청하는 등 첫 안전 관찰을 고르는 재료입니다.
 
 ## 증거를 운반하는 단계
 
@@ -125,9 +137,25 @@ handoff: 바꾼 것, 바꾸지 않은 것, check 결과, 남은 unknown.
 
 ## 실험과 한계
 
-버려도 되는 폴더에서 작은 문서 작업을 직접 요청과 프로토콜·checkpoint·집중 검사 방식으로 비교합니다. 첫 출력, diff, 명령, 종료 코드, 실제 시간, 재작업을 남깁니다. 없는 시간이나 비용은 추정하지 말고 `unavailable`로 적습니다.
+### 준비
+
+remote, secret, 고객 데이터가 없는 버려도 되는 폴더를 만듭니다. 원문, 수용 질문, local checkpoint를 저장하고 대기 한계와 안전한 중단 절차를 먼저 정합니다. install, sign-in, 제3자 전송은 하지 않습니다.
+
+### 작업
+
+작은 문서 작업을 직접 요청과 프로토콜·checkpoint·집중 검사 방식으로 비교합니다. 첫 출력, diff, 명령, 종료 코드, 실제 시간, 재작업을 남깁니다. 없는 시간이나 비용은 추정하지 말고 `unavailable`로 적습니다.
 
 시간 초과, 입력 변경, 권한 차단, 로컬 쓰기 결과 불명 중 하나를 일으킵니다. 중단한 시도를 보존하고 재시도 전 대상을 읽습니다. 고정 조건이 바뀌면 `not_comparable`로 표시합니다. 작은 과제 몇 개로 일반 효율, 품질, 모델 순위를 증명할 수 없고, 링크 검사가 학습, 공개, 채택을 증명하지도 않습니다.
+
+### 증거
+
+각 시도에서 고정 input과 수용 조건, 허용 행동, checkpoint 번호, 요청 또는 protocol, 변경 path, diff, directory와 종료 코드를 포함한 command, review note, 빠진 관찰을 보존합니다. 실행하지 않은 variant는 `not_run`으로 기록하며, 유창한 output에서 실행 기록을 만들어 내지 않습니다.
+
+### 회고
+
+- 어느 checkpoint에서 state를 실제로 알았고 어디부터 추정했는가?
+- diff가 뒷받침하는 주장과 runtime 또는 reader가 필요한 주장은 무엇인가?
+- 어떤 side effect가 새롭고 제한된 승인을 필요로 했는가?
 
 ## checkpoint를 가지고 한 바퀴 돌기
 
@@ -174,6 +202,10 @@ next: 안전한 행동 하나
 이는 “전부 완료”보다 짧아도 더 강한 handoff입니다. target, authority, recovery source가
 불명확하면 다음 행동은 edit가 아니라 질문 또는 read-only check입니다. 실행 기록과 review가
 생기기 전까지 이 장과 비교 실험은 `candidate`, `not_run`입니다.
+
+## 전이 과제
+
+같은 workflow를 비기술 작업으로 옮깁니다. 자신의 짧은 글을 고치거나, 작은 source 목록을 확인하거나, language practice를 계획합니다. goal, 허용 input, 금지 side effect, checkpoint, handoff는 유지합니다. 수용 조건만 domain에 맞게 바꿉니다. 예를 들어 reader의 이해, research의 source와 unknown, language practice의 지연된 무도움 recall입니다. 이 연습이 증명하지 않는 것도 적습니다.
 
 ## worked case: Markdown chapter 하나 검토하기
 
@@ -242,6 +274,19 @@ affected reader path, acceptance, permission, license, rollback을 하나씩 rev
 - [ ] timeout 뒤 마지막 accepted checkpoint를 확인했다.
 - [ ] delivery가 changed, not changed, not proven, next를 나눈다.
 - [ ] future maintenance에 owner와 review trigger가 있다.
+
+## 수용 체크리스트
+
+- [ ] 편집 전에 scope, non-goal, acceptance, authority, rollback을 쓸 수 있다.
+- [ ] 큰 request를 early evidence가 나오는 vertical slice로 바꿀 수 있다.
+- [ ] retry 전에 last accepted checkpoint를 말할 수 있다.
+- [ ] build, runtime, visual, source, security, user acceptance를 구분할 수 있다.
+- [ ] 요청받지 않은 install, restart, deployment, external write를 중단할 수 있다.
+- [ ] completed, not done, blocked, unverified를 나누어 handoff할 수 있다.
+
+## 출처 및 유지보수 경계
+
+workflow 순서, checkpoint, claim과 evidence의 분리는 이 프로젝트의 안정적인 교육 방법입니다. 제품 작업면, account와 tool 동작, model 가용성, community symptom은 변하는 사실입니다. 현재 제품 주장을 채택하기 전 날짜가 있는 [공식 사실 카드](../evidence-library-KO.md#source-notes)와 [현장 문제 색인](../evidence-library-KO.md#source-notes)을 확인하세요. 둘 다 local run이나 독립 학습 관찰을 대신하지 않습니다.
 
 <!-- chapter-navigation:start -->
 <hr>
