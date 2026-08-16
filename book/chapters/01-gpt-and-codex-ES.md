@@ -2,6 +2,30 @@
 
 # Capítulo 1: Entender GPT antes de confiar en Codex
 
+## Empieza aquí: todavía no necesitas los nombres
+
+Hoy empezamos por la pregunta que hay detrás de los nombres de producto. Puede que ya hayas oído mencionar Codex y Claude Code juntos. Son ejemplos útiles de un cambio mayor: un modelo de lenguaje puede trabajar con una tarea, un contexto y a veces herramientas, en lugar de limitarse a devolver una respuesta de chat. Piensa en esta apertura como una conversación guiada corta, no como un examen: no tienes que elegir bando ni memorizar una lista de funciones primero. Antes de recorrer ningún control, aprende la pregunta que hace más fácil todo lo demás:
+
+> Cuando una herramienta de modelo de lenguaje dice que ha terminado, ¿qué puedes inspeccionar de verdad antes de confiar en el resultado?
+
+En esta primera lección separarás una acción sugerida de una acción permitida, un mensaje de herramienta de un objetivo cambiado, y una respuesta plausible de la evidencia. Codex es el track insignia de práctica de este Playbook. El método es más amplio; una plataforma con nombre debe ganarse su propio adaptador antes de que enseñemos sus botones, permisos o comportamiento como hechos.
+
+Por eso el primer ejercicio es deliberadamente modesto. Empieza con una entrada visible, una acción de bajo riesgo y una comprobación que otra persona pueda repetir. Una larga lista de funciones puede esperar hasta que sepas distinguir un resultado terminado de uno que solo parece convincente.
+
+## Dónde encajan los nombres conocidos
+
+Oirás GPT, Grok, Gemini, Kimi, Codex y Answer.AI en la misma conversación. No son todos lo mismo. Algunos nombres se refieren a familias de modelos, otros a bancos de trabajo que añaden archivos o herramientas, y otros a organizaciones de investigación y educación en IA aplicada. Un mapa útil es:
+
+| Nombre que oirás | Primera pregunta que hacer | No asumas |
+| --- | --- | --- |
+| GPT / OpenAI | ¿Qué modelo y qué superficie—ChatGPT, API o Codex—usaré realmente? | Un nombre de modelo concede acceso a archivos, herramientas o un mejor resultado. |
+| Grok / xAI | ¿Su enfoque de razonamiento descrito por el propietario es relevante para mi tarea fija? | Es el mejor modelo para tu tarea o está disponible en tu cuenta. |
+| Gemini / Google DeepMind | ¿Esta tarea necesita las modalidades o el ecosistema a los que realmente puedo acceder? | Cada superficie de Gemini tiene las mismas herramientas o capacidades. |
+| Kimi / Moonshot AI | ¿Es la codificación, el análisis o el trabajo con documentos largos la tarea que necesito probar? | Su contexto o funciones anunciadas prueban la calidad en este banco de trabajo. |
+| Answer.AI | ¿Busco investigación aplicada, educación o un producto para usuarios finales? | Es un proveedor de modelos fundacionales para poner en el mismo selector. |
+
+El [recibo de paisaje de modelos y bancos de trabajo](../../docs/research/model-workbench-landscape-source-receipt-2026-08-15.md) enlaza cada fila con una fuente del propietario y separa el posicionamiento del propietario de un resultado medido. Empieza mejorando una petición en el modelo que ya tienes; solo después compara candidatos en la misma tarea y regla de aceptación.
+
 ## El problema que resuelve este capítulo
 
 A menudo se describe Codex como «una ventana de chat que escribe mejor
