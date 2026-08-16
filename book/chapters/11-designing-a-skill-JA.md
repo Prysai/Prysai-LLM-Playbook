@@ -160,6 +160,43 @@ scope: local relative path only; remote availability not checked
 - discovery を reliability と混同する。metadata、selection、load、action、evidence を別々に確認する。
 - unknown を隠す。「remote link は未確認」は失敗ではなく report の重要な結果である。
 
+## adoption receipt：file があるだけでは依存できない
+
+Skill を実際の task に渡す前に、adoption receipt を残します。これは「folder に見える」を
+「使ってよい」と取り違えないためであり、次の reviewer がどの layer から確認すべきかを
+示します。
+
+```text
+Skill name と version:
+task gap: 「AI を強くする」ではなく、補う具体的な decision
+source と license: original / reviewed source、license と review date
+この試行の host と surface: 実際に使った product、version、path
+observed: file / discovery / selection / load / action / output
+not observed: run、read-back、independent review がないすべての layer
+allowed scope: read、temporary write、network、install、publish を別々に記す
+next safe check: 未観測の layer を一つだけ確認する
+stop: input、authority、recovery target、evidence が欠けるとき
+```
+
+repository に `SKILL.md` があることは、file の存在だけを支えます。host の discovery や
+method の execution は支えません。一度 report が出ても、それは記録した task と environment
+だけの observation です。すべての model、folder、user に同じ結果が出る証明ではありません。
+
+## external method は source を review してから採用する
+
+external Skill の instruction、script、example は review 対象の material として扱います。
+repository が popular、説明が流暢、名前が似ているという理由だけで course に copy したり、
+real data で run したりしません。少なくとも次を確認します。
+
+1. original link、specific revision、owner、review date;
+2. top-level license が必要な code、script、asset、nested dependency を覆うか;
+3. read、write、install、network、send の何を行う可能性があるか;
+4. より小さな original method ではなく、その task gap に本当に必要か; そして
+5. non-sensitive temporary fixture で何を check し、何をまだ run していないか。
+
+答えが欠けるなら、link と research record だけを残します。本 project の Skill として copy
+せず、adopted capability とも書きません。
+
 ## ガイド付き練習：繰り返せる check を Skill にする
 
 少なくとも二回行った小さな task を選びます。たとえば Markdown file の local link review、

@@ -162,6 +162,45 @@ El resultado solo describe el entorno registrado. No demuestra descubrimiento, s
 - Confundir descubrimiento con fiabilidad: verifica por separado metadatos, selección, carga, acciones y evidencia.
 - Ocultar desconocidos: «no se revisó la red» también es un resultado útil.
 
+## Recibo de adopción: que el archivo exista no basta
+
+Antes de llevar un Skill a una tarea real, deja un recibo de adopción. Evita
+confundir «veo una carpeta» con «puedo depender de ella» y dice a la siguiente
+persona en qué capa debe empezar la revisión:
+
+```text
+nombre y versión del Skill:
+vacío de tarea: qué decisión concreta aporta, no “hacer la IA mejor”
+origen y licencia: original / fuente revisada; licencia y fecha de revisión
+host y superficie de esta prueba: producto, versión y ruta realmente usados
+observado: archivo / descubrimiento / selección / carga / acción / salida
+no observado: cada capa que no se ejecutó, leyó de vuelta o revisó de forma independiente
+alcance permitido: lectura, escritura temporal, red, instalación y publicación por separado
+siguiente comprobación segura: verificar solo una capa no observada
+parada: falta entrada, autorización, destino de recuperación o evidencia
+```
+
+Un `SKILL.md` presente solo prueba que el archivo está presente; no prueba que
+el host lo descubriera ni que el método se ejecutara. Un informe correcto una
+vez solo habla de esa tarea y entorno registrado, no de todos los modelos,
+carpetas o personas usuarias. El recibo convierte «creo que funciona» en una
+decisión que se puede revisar.
+
+## Revisa el origen antes de adoptar un método externo
+
+Trata las instrucciones, scripts y ejemplos de un Skill externo como material
+para revisar. No los copies al curso ni los ejecutes con datos reales solo
+porque el repositorio sea popular o el nombre parezca conocido. Confirma:
+
+1. enlace original, revisión concreta, responsable y fecha de consulta;
+2. que la licencia superior cubre código, scripts, recursos y dependencias que necesitas;
+3. qué puede leer, escribir, instalar, conectar o enviar;
+4. que el vacío de tarea realmente lo requiere, frente a un método propio más pequeño; y
+5. qué se comprobó en un ejemplo temporal no sensible y qué no se ejecutó.
+
+Si falta una respuesta, conserva el enlace y el registro de investigación; no
+copies el material como Skill propio ni lo presentes como capacidad adoptada.
+
 ## Práctica guiada: convierte una comprobación repetible en un Skill
 
 Elige una tarea pequeña que hayas hecho al menos dos veces: revisar enlaces

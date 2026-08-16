@@ -161,6 +161,45 @@ Diese Beobachtung gilt nur für die dokumentierte Umgebung. Sie beweist nicht di
 - Auffindbarkeit mit Zuverlässigkeit verwechseln: Metadaten, Auswahl, Laden, Aktionen und Evidenz getrennt prüfen.
 - Unbekanntes verstecken: „Remote-Link nicht geprüft“ ist ein wichtiges Ergebnis des Berichts.
 
+## Übernahmebeleg: Eine Datei allein genügt nicht
+
+Bevor ein Skill in eine echte Aufgabe kommt, hinterlässt du einen
+Übernahmebeleg. Er trennt „ich sehe einen Ordner“ von „ich darf mich darauf
+verlassen“ und zeigt der nächsten Person, auf welcher Stufe das Review beginnt:
+
+```text
+Skill-Name und Version:
+Aufgabenlücke: konkrete Entscheidung statt „die KI besser machen“
+Quelle und Lizenz: Original / geprüfte Quelle; Lizenz und Prüfdatum
+Host und Oberfläche dieses Versuchs: tatsächlich verwendetes Produkt, Version und Pfad
+beobachtet: Datei / Discovery / Auswahl / Laden / Aktion / Ausgabe
+nicht beobachtet: jede nicht ausgeführte, nicht zurückgelesene oder nicht unabhängig geprüfte Stufe
+erlaubter Umfang: Lesen, temporäres Schreiben, Netzwerk, Installation und Veröffentlichung getrennt
+nächster sicherer Check: genau eine unbeobachtete Stufe prüfen
+Stopp: Eingabe, Autorität, Wiederherstellungsziel oder Beleg fehlt
+```
+
+Eine vorhandene `SKILL.md` stützt nur die Existenz der Datei, nicht Discovery
+im Host oder die Ausführung der Methode. Ein einmaliger Bericht gilt nur für
+die dokumentierte Aufgabe und Umgebung, nicht für alle Modelle, Ordner oder
+Nutzenden. Der Beleg macht aus „ich glaube, es geht“ eine prüfbare Entscheidung.
+
+## Externe Methoden erst nach Quellenprüfung übernehmen
+
+Behandle Anweisungen, Skripte und Beispiele eines externen Skills als zu
+prüfendes Material. Kopiere sie nicht in den Kurs und führe sie nicht mit echten
+Daten aus, nur weil ein Repository beliebt ist, die Beschreibung glatt klingt
+oder der Name vertraut wirkt. Prüfe mindestens:
+
+1. ursprünglichen Link, konkrete Revision, verantwortliche Person und Prüfdatum;
+2. ob die obere Lizenz benötigten Code, Skripte, Assets und verschachtelte Abhängigkeiten abdeckt;
+3. was gelesen, geschrieben, installiert, verbunden oder versendet werden könnte;
+4. ob die Aufgabenlücke dies wirklich braucht statt einer kleineren eigenen Methode; und
+5. was mit einem nicht sensiblen temporären Fixture geprüft wurde und was nicht lief.
+
+Fehlt eine Antwort, bleiben nur Link und Forschungsnotiz erhalten. Das Material
+wird weder als eigener Skill kopiert noch als übernommene Fähigkeit bezeichnet.
+
 ## Geführte Übung: Einen wiederholbaren Check in einen Skill verwandeln
 
 Wähle eine kleine Aufgabe, die du mindestens zweimal gemacht hast: lokale Links
