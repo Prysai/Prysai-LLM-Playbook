@@ -8,6 +8,23 @@ Playbook is ready for public production use.
 
 ### Added
 
+- **Six-platform adapter guide** (book/routes/platform-adapter-guide-EN.md and
+  five translations): a safe first task and a visible difference list for
+  ChatGPT, Claude / Claude Code, Gemini, DeepSeek, Grok, and the Codex
+  flagship track, with the universal core kept platform-neutral.
+- **French practice loop** (book/french-practice-loop-EN.md and five
+  translations): six copy-ready messages for a typed four-turn French café or
+  hotel exchange, mirroring the Spanish loop.
+- **Language Partner Skill** (prysai-language-partner): one bounded typed
+  exchange in the learner's target language, learner-first turns, one
+  meaning-blocking correction, and a changed case.
+- **Interview Rehearsal Skill** (prysai-interview-rehearsal): one observable
+  timed answer with a visible check, one material gap, and one changed
+  question.
+- **Six-language site UI**: complete Spanish, Japanese, Korean, and German
+  interface dictionaries (506 keys each), six-language learning-path data,
+  chapter/lab/part titles, and localized chapter navigation footers; no route
+  uses an English UI fallback anymore.
 - Request Escalation, an original candidate Skill and beginner reader card
   that separates supplied-text drafting, one bounded current fact, multi-source
   research, and a proposed external change before substantive work begins.
