@@ -4,7 +4,7 @@
 
 이 문서는 한국어로 읽을 수 있는 길잡이이지, 책 전체 번역본은 아닙니다. 정식
 카탈로그에는 `candidate` 상태의 장 22개와 `draft` 상태의 Lab 18개가 있습니다.
-현재 한국어로 읽을 수 있는 것은 장 3개와 Lab 3개입니다. 이 페이지의 모든 링크는
+현재 한국어로 읽을 수 있는 것은 장 4개와 Lab 4개입니다. 이 페이지의 모든 링크는
 대응하는 한국어 콘텐츠를 가리킵니다. `-KO` 파일이 없으면 다른 장이나 다른 언어로
 보내지 않고, 아직 제공되지 않음을 분명히 표시합니다.
 
@@ -14,10 +14,12 @@
    가상의 텍스트만 쓰며 설치나 외부 작업이 필요 없는 연습입니다.
 2. [1장: Codex를 이해하기 전에 GPT 이해하기](chapters/01-gpt-and-codex-KO.md)
    → [Lab 011: GPT, Codex, 도구, Agent 구분하기](labs/lab-011-gpt-codex-boundaries-KO.md).
-3. [4장: 컨텍스트, 권한, Agent 행동 경계](chapters/04-context-permissions-and-agent-KO.md)
-   → [Lab 007: 행동 경계](labs/lab-007-action-boundaries-KO.md).
-4. [Lab 001: 첫 안전 작업](labs/lab-001-first-safe-task-KO.md) —
-   위험이 낮은 첫 작업을 확인 가능한 방식으로 구성합니다.
+3. [2장: 첫 안전하고 검증 가능한 작업 완료하기](chapters/02-first-safe-task-KO.md)
+   → [Lab 001: 첫 안전 작업](labs/lab-001-first-safe-task-KO.md).
+4. [3장: 바람을 작업 프로토콜로 바꾸기](chapters/03-task-protocol-KO.md)
+   → [Lab 002: 바람을 작업 프로토콜로 바꾸기](labs/lab-002-task-protocol-KO.md).
+5. [4장: 컨텍스트, 권한, Agent 행동 경계](chapters/04-context-permissions-and-agent-KO.md)
+    → [Lab 007: 행동 경계](labs/lab-007-action-boundaries-KO.md).
 
 이 자료는 여전히 `candidate` 또는 `draft / not_run` 상태입니다. 읽을 수 있는
 경로가 있다는 사실만으로 번역 품질, 모델 실행, 학습 효과 또는 전이가 검증되었다는
@@ -29,7 +31,7 @@
 | --- | --- |
 | 01 — Codex를 이해하기 전에 GPT 이해하기 | [제공됨: 1장](chapters/01-gpt-and-codex-KO.md) · `candidate / in-progress` |
 | 02 — 첫 안전하고 검증 가능한 작업 완료하기 | [제공됨: 2장](chapters/02-first-safe-task-KO.md) · `candidate / in-progress` |
-| 03 — 바람을 작업 프로토콜로 바꾸기 | 아직 한국어 파일이 없습니다. |
+| 03 — 바람을 작업 프로토콜로 바꾸기 | [제공됨: 3장](chapters/03-task-protocol-KO.md) · `candidate / in-progress` |
 | 04 — 컨텍스트, 권한, Agent 행동 경계 | [제공됨: 4장](chapters/04-context-permissions-and-agent-KO.md) · `candidate / in-progress` |
 | 05 — 알맞은 Codex 작업면 선택하기 | 아직 한국어 파일이 없습니다. |
 | 06 — 모델 선택은 모델 숭배가 아니다 | 아직 한국어 파일이 없습니다. |
@@ -55,7 +57,7 @@
 | 정식 Lab | 한국어 경로 상태 |
 | --- | --- |
 | 001 — 첫 안전 작업 | [제공됨: Lab 001](labs/lab-001-first-safe-task-KO.md) · `draft / not_run` |
-| 002 — 작업 프로토콜 | 아직 한국어 파일이 없습니다. |
+| 002 — 작업 프로토콜 | [제공됨: Lab 002](labs/lab-002-task-protocol-KO.md) · `draft / not_run` |
 | 003 — 증거 검토 | 아직 한국어 파일이 없습니다. |
 | 004 — 가장 작은 유효 역량 고르기 | 아직 한국어 파일이 없습니다. |
 | 005 — 반복하는 방법을 범위가 정해진 Skill로 만들기 | 아직 한국어 파일이 없습니다. |
