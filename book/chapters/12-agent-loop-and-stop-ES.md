@@ -51,6 +51,25 @@ Estados útiles: `ready`, `proposed`, `awaiting_approval`, `running`, `feedback_
 
 Registra eventos, no intenciones: propuesta, aprobación, inicio y fin de ejecución, efecto, verificación y entrega. Cuando un dato no se observó, escribe `not_observed`; no lo completes con lo que el modelo dijo que haría.
 
+### Tarjeta de eventos para empezar: un hecho por casilla
+
+Ante la pregunta «¿ya lo hizo?», llena primero estas seis casillas. Cada una
+contiene solo algo observado; una casilla anterior o la promesa del modelo no
+sustituye la siguiente:
+
+| Casilla | Qué registrar | Lo que no permite afirmar |
+|---|---|---|
+| Propuesta | Acción sugerida y ruta objetivo | Que fue autorizada o sucedió |
+| Aprobación | Alcance permitido explícitamente por host o persona | Que el resultado es correcto |
+| Ejecución | Orden/herramienta real, inicio, fin, salida o error | Que el destino cambió |
+| Efecto | Lectura posterior, diff, hash o recibo externo | Que el efecto cumple la regla del usuario |
+| Aceptación | Resultado y alcance de un check directo | Que todos los entornos o usuarios quedan cubiertos |
+| Entrega | Lo probado, no probado y el siguiente paso seguro | Que la incertidumbre desapareció |
+
+Si falta una casilla, deja de ampliar la afirmación ahí. Por ejemplo, si existe
+una propuesta pero no un evento de inicio de herramienta, escribe «propuesta
+registrada; ejecución `not_observed`», no «ya se está completando».
+
 ## Reintentar es una decisión limitada
 
 Antes de reintentar, clasifica el fallo: entrada ausente, conflicto de alcance o autoridad, interpretación equivocada, error de herramienta o entorno, comprobación ambigua o cambio de condiciones. Repetir la misma acción con las mismas condiciones casi nunca diagnostica nada.

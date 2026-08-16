@@ -49,6 +49,25 @@ Nützliche Statusnamen sind `ready`, `proposed`, `awaiting_approval`, `running`,
 
 Halte Ereignisse fest, keine Absichten: Vorschlag, Freigabe, Ausführungsbeginn und -ende, Effekt, Überprüfung und Übergabe. Nicht beobachtete Werte bleiben `not_observed`; sie werden nicht mit dem Plan des Modells ergänzt.
 
+### Ereigniskarte für Einsteiger: ein Fakt pro Feld
+
+Bei der Frage „Ist es schon erledigt?“ füllst du zuerst diese sechs Felder
+aus. Jedes Feld enthält nur eine Beobachtung; ein früheres Feld oder ein
+Modellversprechen ersetzt nicht das nächste:
+
+| Feld | Was festhalten | Was damit noch nicht behauptet werden darf |
+|---|---|---|
+| Vorschlag | Vorgeschlagene Aktion und Zielpfad | Dass sie erlaubt war oder geschah |
+| Freigabe | Explizit erlaubter Umfang durch Host oder Person | Dass das Ergebnis richtig ist |
+| Ausführung | Echter Befehl/Tool, Start, Ende, Ausgabe oder Fehler | Dass sich das Ziel änderte |
+| Effekt | Read-back, Diff, Hash oder externer Beleg | Dass der Effekt die Nutzerregel erfüllt |
+| Abnahme | Ergebnis und Umfang eines direkten Checks | Dass alle Umgebungen oder Nutzenden abgedeckt sind |
+| Übergabe | Belegtes, Unbelegtes und nächster sicherer Schritt | Dass keine Ungewissheit mehr besteht |
+
+Fehlt ein Feld, endet die Behauptung dort. Gibt es etwa einen Vorschlag, aber
+kein Tool-Start-Ereignis, lautet die ehrliche Aussage „Vorschlag protokolliert;
+Ausführung `not_observed`“, nicht „wird schon fertig“.
+
 ## Wiederholen ist eine begrenzte Entscheidung
 
 Ordne den Fehler vor einem Wiederholungsversuch ein: fehlende Eingabe, Umfangs- oder Berechtigungskonflikt, Fehlinterpretation, Tool- oder Umgebungsfehler, mehrdeutiger Check oder Bedingungsdrift. Dieselbe Aktion unter denselben Bedingungen zu wiederholen, ist meist keine Diagnose.

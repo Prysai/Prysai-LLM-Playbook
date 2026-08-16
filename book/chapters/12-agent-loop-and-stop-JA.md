@@ -49,6 +49,23 @@ next_safe_action: "入力ファイルを依頼する"
 
 意図ではなくイベントを残します。提案、承認、実行開始・終了、効果、検証、納品です。観測していない値は `not_observed` と書き、モデルの意図で補いません。
 
+### 初学者の event card：一つの枠に一つの事実
+
+「もう終わった？」と聞かれたら、先に次の六つを埋めます。各枠には観測したものだけを
+書きます。前の枠や model の約束で次の枠を代用しません。
+
+| 枠 | 記録するもの | それだけでは言えないこと |
+|---|---|---|
+| proposal | model が提案した action と target path | 許可または実行されたこと |
+| approval | host または人が明示的に許可した scope | result が正しいこと |
+| execution | 実際の command/tool、開始、終了、output または error | target が変わったこと |
+| effect | read-back、diff、hash、external receipt | user rule を満たすこと |
+| acceptance | 直接の check の結果と scope | すべての environment / user を満たすこと |
+| handoff | proven、not proven、next safe action | uncertainty が消えたこと |
+
+枠が一つ欠けたら、そこで claim を止めます。たとえば proposal はあっても tool-start event が
+なければ、「proposal は記録済み、execution は `not_observed`」と書きます。「完了中」とは書きません。
+
 ## 再試行は上限付きの判断
 
 再試行の前に、失敗を分類します。入力不足、範囲・権限の衝突、解釈の誤り、ツール・環境エラー、あいまいな検証、条件変化です。同じ条件で同じ操作を繰り返しても、通常は診断になりません。
