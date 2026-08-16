@@ -4,7 +4,7 @@
 
 **Estado:** `candidate`. **Experimento:** `draft / not_run`. Este capítulo presenta un método transferible; no supone que memoria, carga automática o puntos de entrada de un producto sean permanentes.
 
-## El problema
+## El problema que resuelve este capítulo
 
 Muchas personas vuelven a explicar proyecto, objetivo, términos, límites y aceptación desde cero. Aparecen contexto inconsistente, decisiones sin rastro, comandos obsoletos reutilizados y experiencia que no llega a la siguiente tarea. Un riesgo mayor es usar una nota de conveniencia como almacén de tokens, contraseñas, cookies, texto de clientes o conclusiones no confirmadas.
 
@@ -91,6 +91,48 @@ Antes de una ejecución A/B, añade al `project-map` un comando antiguo y un dir
 - [ ] Puedo explicar por qué un record es `stale` y cuál es la acción mínima para volver al hecho actual.
 - [ ] No convierto notas personales en almacén secreto, promesa de memoria de producto ni Skill verificado.
 - [ ] Distingo entre falta de entrada, ejecución posible y confirmación humana necesaria.
+
+## Experimento: una tarjeta contra entregas ambiguas
+
+El experimento es local y reversible: comprueba si cinco registros breves hacen visibles los hechos ausentes, los límites de parada y el siguiente paso de comprobación. No mide memoria de producto ni productividad personal a largo plazo.
+
+## Objetivos de aprendizaje
+
+Separarás reglas, contexto, estado, plantilla y reflexión; detectarás información obsoleta y no convertirás un éxito casual en Skill verificado.
+
+## Problemas reales: una nota solo ayuda si aclara la siguiente decisión
+
+Un chat largo o lista de comandos vieja puede confundir más de lo que ayuda. El sistema personal debe mostrar objetivo, hechos comprobados y próxima parada sin guardar secretos ni promesas de producto.
+
+### Preparación
+
+Crea una tarjeta local desechable con cuatro avisos sintéticos y cinco registros vacíos: reglas, tarea, estado, índice de evidencia y reflexión. Sin cuenta, token, cookie, texto real de cliente ni escritura externa.
+
+### Tarea
+
+Clasifica los avisos como falta de entrada, ejecutable o confirmación humana. Marca un comando y directorio antiguos como `stale`; no los ejecutes, registra la evidencia actual que falta.
+
+### Evidencia
+
+Conserva hash de entrada, cinco registros, clasificación, paradas, incógnitas y lectura posterior. Un plan o éxito anterior no es verificación actual.
+
+### Reflexión
+
+¿Qué dato debía estar en estado y no en plantilla permanente? ¿Qué regla puede comprobar otra persona sin leer todo tu historial?
+
+## Tarea de transferencia
+
+Crea la misma tarjeta para práctica semanal de idioma: objetivo, materiales permitidos, intento visible, corrección y siguiente revisión. No guardes conversaciones personales ni afirmes dominio.
+
+## Lista de aceptación
+
+- [ ] Separo los cinco activos y sus exclusiones.
+- [ ] Marco pistas antiguas como `stale` sin reutilizarlas a ciegas.
+- [ ] Mi entrega separa verificado, desconocido, bloqueado y siguiente responsable.
+
+## Fuentes y límite de mantenimiento
+
+Elegir contexto, checkpoints y entrega son métodos estables. Memoria de producto, carga automática y entradas cambian y requieren evidencia oficial y local actual.
 
 <!-- chapter-navigation:start -->
 <hr>

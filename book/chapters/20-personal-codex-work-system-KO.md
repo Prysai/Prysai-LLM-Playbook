@@ -4,7 +4,7 @@
 
 **상태:** `candidate`. **실험:** `draft / not_run`. 이 장은 옮길 수 있는 방법을 제시하며 제품의 memory, 자동 로드, 진입점 동작이 영구적이라고 가정하지 않습니다.
 
-## 문제
+## 이 장에서 해결하는 문제
 
 많은 사람이 project, goal, 용어, 제약, acceptance를 매번 다시 설명합니다. context가 들쑥날쑥해지고, 결정은 추적되지 않으며, 낡은 command는 재사용되고, 경험은 다음 task로 옮겨지지 않습니다. 더 큰 위험은 개인 편의 기록을 token, password, cookie, customer text, 확인되지 않은 결론 저장소로 쓰는 것입니다.
 
@@ -36,6 +36,48 @@ context가 많다고 좋은 것은 아닙니다. relevance, 신뢰성, 민감도
 project map, task protocol, state log, evidence index, reflection 다섯 기록으로 시작합니다. 시작 시 rules, branch, state, permission을 검사하고, 실행 중에는 필요한 context만 유지하며, 전달할 때 verified와 미완을 나누고, reflection에서 다른 사람이 이해하고 시험할 수 있는 규칙을 뽑습니다.
 
 전달에는 변경 사항, 실제 실행한 command, result와 exit code, 미검증·범위 밖 항목, risk, recovery, 다음 owner를 적습니다. 개인 습관을 제품 보장으로 바꾸지 말고 현재 공식 문서와 허가된 surface를 확인합니다.
+
+## 실험: 개인 작업 시스템 비교하기
+
+이 비교는 버릴 수 있는 로컬 복사본에서만 합니다. 다섯 기록이 빠진 사실, 중단 지점, 다음 확인을 드러내는지 살피며, 제품 memory, 외부 권한, 장기 생산성을 측정하지 않습니다.
+
+## 학습 목표
+
+프로젝트 규칙, task context, current state, template, reflection을 구분하고, 오래된 기록을 `stale`로 멈추며, 한 번의 성공을 verified Skill로 오해하지 않습니다.
+
+## 실제 문제
+
+긴 chat 기록이나 오래된 command 목록은 다음 판단을 돕기보다 혼란을 만들 수 있습니다. 개인 시스템의 목적은 비밀을 저장하는 것이 아니라 목표, 확인한 사실, 사람에게 물을 중단 지점을 다음 담당자에게 보이는 것입니다.
+
+### 준비
+
+임시 로컬 폴더에 합성 문제 보고 네 개와 project map, task protocol, state log, evidence index, reflection의 빈 다섯 기록을 만듭니다. account, token, cookie, 실제 고객 글, 외부 write는 사용하지 않습니다.
+
+### 작업
+
+네 보고를 input 부족, 실행 가능, 사람 확인 필요로 분류합니다. 오래된 command와 directory는 실행하지 말고 `stale`로 표시하며, 현재 증거가 없음을 기록합니다.
+
+### 증거
+
+input hash, 다섯 기록, 분류, 중단 이유, 미확인 항목, 작업 뒤 read-back을 보관합니다. plan이나 과거 성공은 현재 검증 사실이 아닙니다.
+
+### 회고
+
+어떤 정보가 영구 template이 아니라 current state에 있어야 했습니까? 전체 기록을 읽지 않은 다른 사람이 확인할 수 있는 규칙은 무엇입니까?
+
+## 전이 과제
+
+같은 카드를 주간 언어 연습에 옮깁니다. 목표, 허용된 자료, 보이는 시도, 교정, 다음 복습을 기록합니다. 개인 대화를 저장하지 않고, 대화가 매끄럽다는 사실을 숙달 증거로 주장하지 않습니다.
+
+## 수용 체크리스트
+
+- [ ] 다섯 asset과 넣지 말아야 할 것을 분리했다.
+- [ ] 오래된 단서를 맹목적으로 쓰지 않고 `stale`로 표시했다.
+- [ ] handoff에서 verified, unknown, blocked, 다음 담당을 분리했다.
+
+## 출처 및 유지보수 경계
+
+context 선택, checkpoint, handoff는 안정된 방법입니다. 제품 memory, 자동 로드, 진입점은 변하므로 현재 공식 정보와 로컬 관찰을 별도로 확인합니다.
 
 ## 연습과 경계
 

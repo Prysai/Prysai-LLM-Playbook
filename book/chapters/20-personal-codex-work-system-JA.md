@@ -4,7 +4,7 @@
 
 **状態：** `candidate`。**実験：** `draft / not_run`。この章は移植可能な方法を示します。製品の memory、auto-load、entry point が恒久的だとは仮定しません。
 
-## 問題
+## この章が解決する問題
 
 多くの人は project、goal、用語、制約、acceptance を毎回説明し直します。context が不整合になり、決定が追えず、古い command が再利用され、経験が次の task に渡りません。さらに深刻なのは、個人の便利な記録に token、password、cookie、customer text、未確認の結論を入れることです。
 
@@ -36,6 +36,48 @@ context は多いほど良いわけではありません。relevance、信頼性
 project map、task protocol、state log、evidence index、reflection の五記録から始めます。開始時に rules、branch、state、permission を調べ、実行中は必要な context だけを持ち、納品時には verified と未完を分け、reflection では他者が理解して試せる規則を取り出します。
 
 納品には変更、実際に走った command、result と exit code、未検証・範囲外の項目、risk、recovery、次の owner を書きます。個人の習慣を製品保証にせず、現在の公式文書と許可された surface を確認します。
+
+## 実験：個人用作業システムを比較する
+
+これは破棄できるローカルコピーだけで行う比較です。五つの記録が、欠けた事実、停止点、次の確認を見えるようにするかを確かめます。製品の memory、外部権限、長期的な生産性は測定しません。
+
+## 学習目標
+
+プロジェクト規則、task context、current state、template、reflection を分け、古い記録を `stale` として止め、一回の成功を verified Skill と取り違えない。
+
+## 現実の問題
+
+長い chat 履歴や古い command 集は、次の判断を助けるより混乱を増やすことがあります。個人用システムは、秘密を保管せず、目標、確認済みの事実、人に確認する停止点を次の担当者に示すためのものです。
+
+### 準備
+
+一時的なローカルフォルダーに、合成した四つの問題報告と、project map、task protocol、state log、evidence index、reflection の空の五記録を作ります。account、token、cookie、実在の顧客文、外部 write は使いません。
+
+### タスク
+
+四つの報告を「input が不足」「実行可能」「人の確認が必要」に分けます。古い command と古い directory は実行せず `stale` と記録し、現在の証拠が不足していることを明記します。
+
+### 証拠
+
+input hash、五記録、分類、停止理由、未知事項、作業後の読み返しを保存します。plan や過去の成功は、現在の確認済み事実にはなりません。
+
+### 振り返り
+
+どの情報を恒久 template ではなく current state に置くべきでしたか。履歴全体を渡さなくても、別の人が確認できる規則は何ですか。
+
+## 移行タスク
+
+同じカードを、週一回の語学練習に移します。目標、許可された教材、見える試行、訂正、次の復習を記録します。個人的な会話を保存せず、会話の流暢さを習得の証拠とはしません。
+
+## 受け入れチェックリスト
+
+- [ ] 五つの asset と、そこへ入れてはいけないものを分けた。
+- [ ] 古いヒントは盲目的に再利用せず `stale` と記録した。
+- [ ] handoff で verified、unknown、blocked、次の担当を分けた。
+
+## 出典と保守の境界
+
+context の選択、checkpoint、handoff は安定した方法です。製品の memory、自動読み込み、入口は変化するため、現在の公式情報とローカルの観測を別に確認します。
 
 ## 練習と境界
 

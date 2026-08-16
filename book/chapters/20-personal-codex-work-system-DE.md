@@ -4,7 +4,7 @@
 
 **Status:** `candidate`. **Experimentstatus:** `draft / not_run`. Dieses Kapitel zeigt eine übertragbare Methode; es setzt nicht voraus, dass Memory, automatisches Laden oder Einstiegspunkte eines Produkts dauerhaft sind.
 
-## Das Problem
+## Das Problem dieses Kapitels
 
 Viele Menschen erklären Projekt, Ziel, Begriffe, Grenzen und Abnahme jedes Mal neu. Daraus entstehen inkonsistenter Kontext, nicht nachvollziehbare Entscheidungen, wiederverwendete veraltete Befehle und Erfahrungen, die nicht in die nächste Aufgabe gelangen. Ein ernsteres Risiko ist, eine persönliche Komfortnotiz als Speicher für Tokens, Passwörter, Cookies, Kundentext oder unbestätigte Schlüsse zu nutzen.
 
@@ -91,6 +91,48 @@ Lege vor einem A/B-Lauf einen alten Befehl und ein nicht mehr vorhandenes Verzei
 - [ ] Ich kann erklären, warum ein Record `stale` ist und welche Minimalaktion zum aktuellen Fakt zurückführt.
 - [ ] Ich behandle persönliche Notizen nicht als Geheimnisspeicher, Produkt-Memory-Garantie oder verifizierten Skill.
 - [ ] Ich unterscheide fehlenden Input, mögliche Ausführung und nötige menschliche Bestätigung.
+
+## Experiment: Eine Karte gegen unklare Übergaben
+
+Das Experiment bleibt lokal und reversibel: Es prüft, ob fünf kurze Records fehlende Fakten, Stoppgrenzen und den nächsten Prüfschritt sichtbar machen. Es misst weder Produkt-Memory noch langfristige persönliche Produktivität.
+
+## Lernziele
+
+Du trennst Projektregeln, Aufgabenkontext, Zustand, Vorlage und Reflexion; du erkennst veraltete Hinweise und machst aus einem zufälligen Erfolg keinen verifizierten Skill.
+
+## Praxisfälle: Eine Notiz hilft nur, wenn sie die nächste Entscheidung klärt
+
+Ein langer Chatverlauf oder eine alte Befehlssammlung kann mehr Verwirrung als Hilfe erzeugen. Ein persönliches System soll Ziel, geprüfte Tatsachen und den nächsten Stopp sichtbar machen, ohne Geheimnisse oder Produktversprechen zu speichern.
+
+### Vorbereitung
+
+Erstelle eine wegwerfbare lokale Karte mit vier synthetischen Problemhinweisen und fünf leeren Records: Regeln, Task, Zustand, Evidenzindex und Reflexion. Kein Konto, Token, Cookie, echter Kundentext oder externer Write.
+
+### Aufgabe
+
+Klassifiziere die vier Hinweise als mehr Input, ausführbar oder menschliche Bestätigung. Kennzeichne einen alten Befehl und ein altes Verzeichnis als `stale`; prüfe sie nicht durch Ausführen, sondern notiere die fehlende aktuelle Evidenz.
+
+### Belege
+
+Bewahre Input-Hash, die fünf Records, Klassifikation, Stopps, Unbekannte und Read-back des temporären Ordners auf. Ein Plan oder früherer Erfolg zählt nicht als gegenwärtig verifiziert.
+
+### Reflexion
+
+Welche Information gehörte in den Zustand statt in eine dauerhafte Vorlage? Welche Regel kann eine andere Person prüfen, ohne deinen gesamten Verlauf zu lesen?
+
+## Transferaufgabe
+
+Erstelle dieselbe Karte für eine wöchentliche Sprachlernübung: Ziel, erlaubte Übungsmaterialien, sichtbarer Versuch, Korrektur und nächster Review. Speichere keine persönlichen Gespräche und behaupte keine Beherrschung.
+
+## Abnahme-Checkliste
+
+- [ ] Die fünf Asset-Typen und ihr Ausschluss sind getrennt.
+- [ ] Ich markiere veraltete Hinweise als `stale` statt sie blind wiederzuverwenden.
+- [ ] Meine Übergabe trennt verifiziert, unbekannt, blockiert und nächste Person.
+
+## Quellen und Wartungsgrenze
+
+Kontextauswahl, Checkpoints und Übergaben sind stabile Methoden. Produkt-Memory, automatisches Laden und Einträge sind veränderlich und benötigen aktuelle offizielle sowie lokale Evidenz.
 
 <!-- chapter-navigation:start -->
 <hr>
