@@ -104,7 +104,7 @@ reducir la calidad de la evidencia final?
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-lab-nav="previous" href="lab-003-evidence-review-ES.md" aria-label="Lab anterior: Lab 003 · Auditar una declaración de finalización">← Anterior<br><strong>Lab 003 · Auditar una declaración de finalización</strong></a></td>
-      <td align="right"><a data-lab-nav="next" href="../table-of-contents-ES.md" aria-label="Volver al índice en español: el Lab 005 aún no está traducido">Siguiente pendiente →<br><strong>Ver disponibilidad del Lab 005</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-005-design-a-skill-ES.md" aria-label="Siguiente Lab: Lab 005 · Convertir un método repetido en un Skill acotado">Siguiente →<br><strong>Lab 005 · Convertir un método repetido en un Skill acotado</strong></a></td>
     </tr>
   </table>
 </nav>
