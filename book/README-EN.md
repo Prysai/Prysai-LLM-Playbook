@@ -51,12 +51,12 @@ not enough to call the chapter verified.
 
 ## Current reading state
 
-The repository currently contains 22 structured chapters. Their recorded
-content status is `candidate`. Chapters 19–22 have drafts, but their status is
-still “draft written, fresh pretest pending.” That distinction is deliberate:
-the files exist, yet the required execution and review evidence is not complete.
+The repository currently contains 22 structured chapters, all recorded as
+`candidate`. This includes Chapters 19–22. Their files and reader paths exist,
+but fresh-context pretests, learner runs, and independent review evidence are
+still incomplete.
 
-The evaluation fixture set contains 39 fixed tasks across 16 tracks. It is
+The evaluation fixture set contains 40 fixed tasks across 16 tracks. It is
 `candidate`, its run status is `not_run`, and its review is static-structure-only
 until model execution logs exist. The lab collection contains 18 labs, each
 currently `draft` with `run_status: not_run`.
@@ -153,10 +153,10 @@ not become proof by implication.
 
 ## Locale policy for this book
 
-English is the default public locale and the first development priority. Every
-localized reader-facing file, including an English source file, uses an
-uppercase suffix such as `-EN`, `-ZH`, `-ES`, `-JA`, `-KO`, or `-DE`. The stable
-chapter identity stays the same across translations.
+English is the default public locale. Every localized reader-facing file,
+including an English source file, uses an uppercase suffix such as `-EN`,
+`-ZH`, `-ES`, `-JA`, `-KO`, or `-DE`. The stable chapter identity stays the
+same across translations.
 
 When a translated target exists, links stay in the reader's current locale.
 Governance files, source registers, validators, and ADRs are intentionally
@@ -165,17 +165,17 @@ used when it is explicitly marked as migration pending, as above. See the
 [locale-suffixed content decision](../docs/adr/0010-locale-suffixed-content.md)
 for the canonical matrix and translation-status rules.
 
-The English entry files are therefore real source-locale files, but they do not
-make the existing Simplified Chinese chapter body look fully bilingual. The
-translation matrix, coverage, source revision, reviewer, and stale reason must
-remain explicit as the corpus is migrated.
+The English entry files are source-locale files. All six locales now have
+reader-facing paths for the 22 chapters and 18 Labs. That coverage still does
+not establish independent language review, semantic equivalence, learner
+outcomes, or platform behavior; those evidence types remain separate.
 
 ## A practical starting sequence
 
 1. Read the [English preface](preface-EN.md) to understand the operating model.
 2. Use the [English table of contents](table-of-contents-EN.md)
-   to choose a chapter; migration notices identify any source that is still
-   pending.
+   to choose a chapter; reader-facing links stay within English, while shared
+   research and governance materials are visibly labelled as such.
 3. At the end of a chapter, use the generated **Previous chapter** or **Next
    chapter** link. The first chapter has only a next link, middle chapters have
    both, and the last chapter has only a previous link.

@@ -20,8 +20,8 @@ Navigation:
 ## Zwei erste lokalisierte Praxisschritte
 
 Wenn du nur mit Textchat beginnen willst, öffne die [Einstiegskarten](communication-clinic-DE.md).
-Sie enthalten sechs kopierbare Nachrichten für Sprache, Updates, Entscheidungen, Recherche und
-Quellenprüfung. Dieser Pfad ist `draft / not_run` und verspricht weder Sprachflüssigkeit,
+Sie enthalten sieben kopierbare Nachrichten für Sprache, Updates, Entscheidungen, Recherche,
+Quellenprüfung und Grenzen vor dem Teilen. Dieser Pfad ist `draft / not_run` und verspricht weder Sprachflüssigkeit,
 Effizienz noch Lernerfolg.
 
 Wenn du noch kein Projekt hast und die KI nichts außerhalb des Chats tun soll,
@@ -127,9 +127,9 @@ deutsche Lesestrecke bleibt deshalb auf ihre verfügbaren Einheiten begrenzt.
 | `book/README-DE.md` | Dieser deutsche Buchleitfaden | `candidate`, Übersetzung `in-progress` |
 | `book/preface-DE.md` | Deutsches Vorwort | Erste Migration, `candidate`, Übersetzung `in-progress` |
 
-„Noch nicht migriert“ bedeutet: kein englischer oder deutscher Inhalt wird
-stillschweigend vorgetäuscht. Wenn ein aktueller Originalpfad verlinkt wird,
-steht die Migrationsnotiz im sichtbaren Linktext.
+Gemeinsame Governance-, Quellen- und Validator-Materialien behalten ihre
+aufgezeichnete Originalsprache. Sie werden sichtbar als Evidenzmaterial
+gekennzeichnet, nicht stillschweigend als deutsche Kursseiten ausgegeben.
 
 ## Locale-Regel und Links
 
