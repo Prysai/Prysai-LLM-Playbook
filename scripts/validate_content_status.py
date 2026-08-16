@@ -311,8 +311,11 @@ def validate_document(document: dict[str, Any]) -> list[str]:
                 "public_site: language_options must be "
                 "['en', 'zh', 'es', 'ja', 'ko', 'de'] for the public route menu"
             )
-        if site.get("ui_language_options") != ["en", "zh"]:
-            errors.append("public_site: ui_language_options must be ['en', 'zh'] until the other UI dictionaries are reviewed")
+        if site.get("ui_language_options") != REPOSITORY_LOCALES:
+            errors.append(
+                "public_site: ui_language_options must be "
+                "['en', 'zh', 'es', 'ja', 'ko', 'de'] when all six UI dictionaries ship"
+            )
         repository_locales = site.get("repository_content_locales")
         if repository_locales != REPOSITORY_LOCALES:
             errors.append(
@@ -383,8 +386,10 @@ def main() -> int:
         f"evaluations={document['evaluations']['task_count']} "
         f"tracks={document['evaluations']['track_count']}"
     )
+    ui_dicts = ",".join(document["public_site"]["ui_language_options"])
     print(
-        "public_site=6-route-locales,ui-dictionaries=en+zh,"
+        "public_site=6-route-locales,"
+        f"ui-dictionaries={ui_dicts},"
         f"repository_locale_status={document['public_site']['repository_locale_status']},"
         f"browser_review={document['public_site']['browser_review']}"
     )

@@ -14,11 +14,19 @@
       "part": "part-1",
       "canonical": {
         "en": "Understand GPT before you trust Codex",
-        "zh": "先理解 GPT，再理解 Codex"
+        "zh": "先理解 GPT，再理解 Codex",
+        "es": "Entender GPT antes de confiar en Codex",
+        "ja": "Codex を信頼する前に GPT を理解する",
+        "ko": "Codex를 신뢰하기 전에 GPT 이해하기",
+        "de": "Verstehe GPT, bevor du Codex vertraust"
       },
       "display": {
         "en": "Understand GPT before understanding how Codex works",
-        "zh": "先理解 GPT，再理解 Codex 的工作原理"
+        "zh": "先理解 GPT，再理解 Codex 的工作原理",
+        "es": "Entender GPT antes de confiar en Codex",
+        "ja": "Codex を信頼する前に GPT を理解する",
+        "ko": "Codex를 신뢰하기 전에 GPT 이해하기",
+        "de": "Verstehe GPT, bevor du Codex vertraust"
       }
     },
     {
@@ -27,11 +35,19 @@
       "part": "part-1",
       "canonical": {
         "en": "Complete your first safe, verifiable task",
-        "zh": "完成第一个安全、可验证的任务"
+        "zh": "完成第一个安全、可验证的任务",
+        "es": "Completa tu primera tarea segura y verificable",
+        "ja": "最初の安全で検証可能なタスクを完了する",
+        "ko": "2장: 첫 번째 안전하고 검증 가능한 작업 완료하기",
+        "de": "Die erste sichere und überprüfbare Aufgabe erledigen"
       },
       "display": {
         "en": "Complete a first safe, verifiable task",
-        "zh": "完成第一个安全、可验证的任务"
+        "zh": "完成第一个安全、可验证的任务",
+        "es": "Completa tu primera tarea segura y verificable",
+        "ja": "最初の安全で検証可能なタスクを完了する",
+        "ko": "2장: 첫 번째 안전하고 검증 가능한 작업 완료하기",
+        "de": "Die erste sichere und überprüfbare Aufgabe erledigen"
       }
     },
     {
@@ -40,11 +56,19 @@
       "part": "part-1",
       "canonical": {
         "en": "Turn a wish into a task protocol",
-        "zh": "把愿望变成任务协议"
+        "zh": "把愿望变成任务协议",
+        "es": "Convierte un deseo en un protocolo de tarea",
+        "ja": "願いをタスク・プロトコルに変える",
+        "ko": "3장: 바람을 작업 프로토콜로 바꾸기",
+        "de": "Einen Wunsch in ein Aufgabenprotokoll verwandeln"
       },
       "display": {
         "en": "Turn a wish into a task protocol",
-        "zh": "把愿望变成任务协议"
+        "zh": "把愿望变成任务协议",
+        "es": "Convierte un deseo en un protocolo de tarea",
+        "ja": "願いをタスク・プロトコルに変える",
+        "ko": "3장: 바람을 작업 프로토콜로 바꾸기",
+        "de": "Einen Wunsch in ein Aufgabenprotokoll verwandeln"
       }
     },
     {
@@ -53,11 +77,19 @@
       "part": "part-1",
       "canonical": {
         "en": "Context, Permissions, and the Agent Action Boundary",
-        "zh": "上下文、权限与 Agent 的行动边界"
+        "zh": "上下文、权限与 Agent 的行动边界",
+        "es": "Contexto, permisos y límites de acción del Agent",
+        "ja": "コンテキスト、権限、Agent の行動境界",
+        "ko": "4장: 컨텍스트, 권한, Agent의 행동 경계",
+        "de": "Kontext, Berechtigungen und die Handlungsgrenze des Agents"
       },
       "display": {
         "en": "Context, permissions, and the Agent action boundary",
-        "zh": "上下文、权限与 Agent 的行动边界"
+        "zh": "上下文、权限与 Agent 的行动边界",
+        "es": "Contexto, permisos y límites de acción del Agent",
+        "ja": "コンテキスト、権限、Agent の行動境界",
+        "ko": "4장: 컨텍스트, 권한, Agent의 행동 경계",
+        "de": "Kontext, Berechtigungen und die Handlungsgrenze des Agents"
       }
     },
     {
@@ -66,11 +98,19 @@
       "part": "part-1",
       "canonical": {
         "en": "Choose the Right Codex Surface",
-        "zh": "选择正确的 Codex 工作面"
+        "zh": "选择正确的 Codex 工作面",
+        "es": "Elige la superficie de trabajo adecuada de Codex",
+        "ja": "適切な Codex の作業面を選ぶ",
+        "ko": "5장: 알맞은 Codex 작업면 선택하기",
+        "de": "Die richtige Codex-Arbeitsfläche wählen"
       },
       "display": {
         "en": "Choose the right Codex surface",
-        "zh": "选择正确的 Codex 工作面"
+        "zh": "选择正确的 Codex 工作面",
+        "es": "Elige la superficie de trabajo adecuada de Codex",
+        "ja": "適切な Codex の作業面を選ぶ",
+        "ko": "5장: 알맞은 Codex 작업면 선택하기",
+        "de": "Die richtige Codex-Arbeitsfläche wählen"
       }
     },
     {
@@ -79,11 +119,19 @@
       "part": "part-1",
       "canonical": {
         "en": "Model Choice Is Not Model Worship",
-        "zh": "模型选择不是模型崇拜"
+        "zh": "模型选择不是模型崇拜",
+        "es": "Elegir un modelo no es venerar un modelo",
+        "ja": "モデル選択はモデル崇拝ではない",
+        "ko": "6장: 모델 선택은 모델 숭배가 아니다",
+        "de": "Modellauswahl ist keine Modellverehrung"
       },
       "display": {
         "en": "Model selection is not model worship",
-        "zh": "模型选择不是模型崇拜"
+        "zh": "模型选择不是模型崇拜",
+        "es": "Elegir un modelo no es venerar un modelo",
+        "ja": "モデル選択はモデル崇拝ではない",
+        "ko": "6장: 모델 선택은 모델 숭배가 아니다",
+        "de": "Modellauswahl ist keine Modellverehrung"
       }
     },
     {
@@ -92,11 +140,19 @@
       "part": "part-2",
       "canonical": {
         "en": "How Skills, Plugins, MCP, and Tools Divide the Work",
-        "zh": "Skill、Plugin、MCP 和工具如何分工"
+        "zh": "Skill、Plugin、MCP 和工具如何分工",
+        "es": "cómo se reparten el trabajo los Skills, los Plugins, MCP y las herramientas",
+        "ja": "Skill、Plugin、MCP、ツールは仕事をどう分けるか",
+        "ko": "7장: Skills, Plugins, MCP, 도구는 어떻게 일을 나누는가",
+        "de": "Wie Skills, Plugins, MCP und Tools die Arbeit aufteilen"
       },
       "display": {
         "en": "How Skills, Plugins, MCP, and tools divide the work",
-        "zh": "Skill、Plugin、MCP 和工具如何分工"
+        "zh": "Skill、Plugin、MCP 和工具如何分工",
+        "es": "cómo se reparten el trabajo los Skills, los Plugins, MCP y las herramientas",
+        "ja": "Skill、Plugin、MCP、ツールは仕事をどう分けるか",
+        "ko": "7장: Skills, Plugins, MCP, 도구는 어떻게 일을 나누는가",
+        "de": "Wie Skills, Plugins, MCP und Tools die Arbeit aufteilen"
       }
     },
     {
@@ -105,11 +161,19 @@
       "part": "part-2",
       "canonical": {
         "en": "From Definition to Delivery",
-        "zh": "从定义到交付的完整生命周期"
+        "zh": "从定义到交付的完整生命周期",
+        "es": "de la definición a la entrega",
+        "ja": "定義から引き渡しまで",
+        "ko": "8장: 정의에서 전달까지",
+        "de": "Von der Definition zur Übergabe"
       },
       "display": {
         "en": "The complete lifecycle from definition to delivery",
-        "zh": "从定义到交付的完整生命周期"
+        "zh": "从定义到交付的完整生命周期",
+        "es": "de la definición a la entrega",
+        "ja": "定義から引き渡しまで",
+        "ko": "8장: 정의에서 전달까지",
+        "de": "Von der Definition zur Übergabe"
       }
     },
     {
@@ -118,11 +182,19 @@
       "part": "part-2",
       "canonical": {
         "en": "Verification, Doubt, and Recovery",
-        "zh": "验证、怀疑与恢复"
+        "zh": "验证、怀疑与恢复",
+        "es": "verificación, duda y recuperación",
+        "ja": "検証、疑い、復旧",
+        "ko": "9장: 검증, 의심, 복구",
+        "de": "Überprüfung, Zweifel und Wiederherstellung"
       },
       "display": {
         "en": "Verification, doubt, and recovery",
-        "zh": "验证、怀疑与恢复"
+        "zh": "验证、怀疑与恢复",
+        "es": "verificación, duda y recuperación",
+        "ja": "検証、疑い、復旧",
+        "ko": "9장: 검증, 의심, 복구",
+        "de": "Überprüfung, Zweifel und Wiederherstellung"
       }
     },
     {
@@ -131,11 +203,19 @@
       "part": "part-2",
       "canonical": {
         "en": "Planning and vertical slicing",
-        "zh": "把大目标拆成可交付切片"
+        "zh": "把大目标拆成可交付切片",
+        "es": "planificación y cortes verticales",
+        "ja": "計画と垂直スライス",
+        "ko": "10장: 계획과 수직 슬라이스",
+        "de": "Planung und vertikale Schnitte"
       },
       "display": {
         "en": "Planning and vertical slicing",
-        "zh": "规划与竖向切片"
+        "zh": "规划与竖向切片",
+        "es": "planificación y cortes verticales",
+        "ja": "計画と垂直スライス",
+        "ko": "10장: 계획과 수직 슬라이스",
+        "de": "Planung und vertikale Schnitte"
       }
     },
     {
@@ -144,11 +224,19 @@
       "part": "part-2",
       "canonical": {
         "en": "Designing a Skill That Earns Its Place",
-        "zh": "设计一个真正有用的 Skill"
+        "zh": "设计一个真正有用的 Skill",
+        "es": "diseñar un Skill que se gane su lugar",
+        "ja": "役に立つ Skill を設計する",
+        "ko": "11장: 쓸모 있는 Skill 설계하기",
+        "de": "Einen Skill entwerfen, der seinen Platz verdient"
       },
       "display": {
         "en": "Design a genuinely useful Skill",
-        "zh": "设计一个真正有用的 Skill"
+        "zh": "设计一个真正有用的 Skill",
+        "es": "diseñar un Skill que se gane su lugar",
+        "ja": "役に立つ Skill を設計する",
+        "ko": "11장: 쓸모 있는 Skill 설계하기",
+        "de": "Einen Skill entwerfen, der seinen Platz verdient"
       }
     },
     {
@@ -157,11 +245,19 @@
       "part": "part-2",
       "canonical": {
         "en": "The Agent Loop, State, and Stop Conditions",
-        "zh": "Agent 的循环、状态和停止条件"
+        "zh": "Agent 的循环、状态和停止条件",
+        "es": "el ciclo, el estado y las condiciones de parada del Agent",
+        "ja": "Agent のループ、状態、停止条件",
+        "ko": "12장: Agent 루프, 상태, 중지 조건",
+        "de": "Agent-Schleife, Zustand und Stoppbedingungen"
       },
       "display": {
         "en": "The Agent loop, state, and stopping conditions",
-        "zh": "Agent 的循环、状态和停止条件"
+        "zh": "Agent 的循环、状态和停止条件",
+        "es": "el ciclo, el estado y las condiciones de parada del Agent",
+        "ja": "Agent のループ、状態、停止条件",
+        "ko": "12장: Agent 루프, 상태, 중지 조건",
+        "de": "Agent-Schleife, Zustand und Stoppbedingungen"
       }
     },
     {
@@ -170,11 +266,19 @@
       "part": "part-2",
       "canonical": {
         "en": "Action Boundaries Across Files, Terminals, Browsers, and GitHub",
-        "zh": "文件、终端、浏览器与 GitHub 的行动边界"
+        "zh": "文件、终端、浏览器与 GitHub 的行动边界",
+        "es": "límites de acción en archivos, terminales, navegadores y GitHub",
+        "ja": "ファイル、ターミナル、ブラウザ、GitHub にまたがる行動境界",
+        "ko": "13장: 파일, 터미널, 브라우저, GitHub의 행동 경계",
+        "de": "Aktionsgrenzen für Dateien, Terminal, Browser und GitHub"
       },
       "display": {
         "en": "Action boundaries for files, terminals, browsers, and GitHub",
-        "zh": "文件、终端、浏览器与 GitHub 的行动边界"
+        "zh": "文件、终端、浏览器与 GitHub 的行动边界",
+        "es": "límites de acción en archivos, terminales, navegadores y GitHub",
+        "ja": "ファイル、ターミナル、ブラウザ、GitHub にまたがる行動境界",
+        "ko": "13장: 파일, 터미널, 브라우저, GitHub의 행동 경계",
+        "de": "Aktionsgrenzen für Dateien, Terminal, Browser und GitHub"
       }
     },
     {
@@ -183,11 +287,19 @@
       "part": "part-3",
       "canonical": {
         "en": "Discover, Install, and Audit External Skills",
-        "zh": "如何发现、安装和审查外部 Skill"
+        "zh": "如何发现、安装和审查外部 Skill",
+        "es": "descubrir, instalar y auditar Skills externos",
+        "ja": "外部 Skill を見つけ、導入前に監査する",
+        "ko": "14장: 외부 Skill 찾기, 설치하기, 감사하기",
+        "de": "Externe Skills finden, installieren und prüfen"
       },
       "display": {
         "en": "Discover, install, and audit external Skills",
-        "zh": "如何发现、安装和审查外部 Skill"
+        "zh": "如何发现、安装和审查外部 Skill",
+        "es": "descubrir, instalar y auditar Skills externos",
+        "ja": "外部 Skill を見つけ、導入前に監査する",
+        "ko": "14장: 외부 Skill 찾기, 설치하기, 감사하기",
+        "de": "Externe Skills finden, installieren und prüfen"
       }
     },
     {
@@ -196,11 +308,19 @@
       "part": "part-3",
       "canonical": {
         "en": "Research Track — From Question to Auditable Knowledge",
-        "zh": "研究轨——从问题到可审查知识"
+        "zh": "研究轨——从问题到可审查知识",
+        "es": "ruta de investigación, de la pregunta al conocimiento auditable",
+        "ja": "調査トラック、問いから監査可能な知識へ",
+        "ko": "15장: 연구 트랙, 질문에서 감사 가능한 지식까지",
+        "de": "Forschungspfad, von der Frage zu prüfbarem Wissen"
       },
       "display": {
         "en": "Research track: from question to auditable knowledge",
-        "zh": "研究轨：从问题到可审查知识"
+        "zh": "研究轨：从问题到可审查知识",
+        "es": "ruta de investigación, de la pregunta al conocimiento auditable",
+        "ja": "調査トラック、問いから監査可能な知識へ",
+        "ko": "15장: 연구 트랙, 질문에서 감사 가능한 지식까지",
+        "de": "Forschungspfad, von der Frage zu prüfbarem Wissen"
       }
     },
     {
@@ -209,11 +329,19 @@
       "part": "part-3",
       "canonical": {
         "en": "Engineering Track — From Idea to Reliable Software",
-        "zh": "工程轨——从想法到可靠软件"
+        "zh": "工程轨——从想法到可靠软件",
+        "es": "ruta de ingeniería, de la idea al software fiable",
+        "ja": "エンジニアリング・トラック、着想から信頼できるソフトウェアへ",
+        "ko": "16장: 엔지니어링 트랙, 아이디어에서 신뢰할 수 있는 소프트웨어까지",
+        "de": "Engineering-Pfad, von der Idee zu zuverlässiger Software"
       },
       "display": {
         "en": "Engineering track: from idea to reliable software",
-        "zh": "工程轨：从想法到可靠软件"
+        "zh": "工程轨：从想法到可靠软件",
+        "es": "ruta de ingeniería, de la idea al software fiable",
+        "ja": "エンジニアリング・トラック、着想から信頼できるソフトウェアへ",
+        "ko": "16장: 엔지니어링 트랙, 아이디어에서 신뢰할 수 있는 소프트웨어까지",
+        "de": "Engineering-Pfad, von der Idee zu zuverlässiger Software"
       }
     },
     {
@@ -222,11 +350,19 @@
       "part": "part-3",
       "canonical": {
         "en": "Marketing Track — From Product Understanding to Growth Experiments",
-        "zh": "营销轨——从产品理解到增长实验"
+        "zh": "营销轨——从产品理解到增长实验",
+        "es": "ruta de marketing, de entender el producto a experimentar con crecimiento",
+        "ja": "マーケティング・トラック、製品理解から成長実験へ",
+        "ko": "17장: 마케팅 트랙, 제품 이해에서 성장 실험까지",
+        "de": "Marketing-Pfad, vom Produktverständnis zu Wachstumsexperimenten"
       },
       "display": {
         "en": "Marketing track: from product understanding to growth experiments",
-        "zh": "营销轨：从产品理解到增长实验"
+        "zh": "营销轨：从产品理解到增长实验",
+        "es": "ruta de marketing, de entender el producto a experimentar con crecimiento",
+        "ja": "マーケティング・トラック、製品理解から成長実験へ",
+        "ko": "17장: 마케팅 트랙, 제품 이해에서 성장 실험까지",
+        "de": "Marketing-Pfad, vom Produktverständnis zu Wachstumsexperimenten"
       }
     },
     {
@@ -235,11 +371,19 @@
       "part": "part-3",
       "canonical": {
         "en": "Content, Design, Data, and Automation Track",
-        "zh": "内容、设计、数据与自动化轨"
+        "zh": "内容、设计、数据与自动化轨",
+        "es": "ruta de contenido, diseño, datos y automatización",
+        "ja": "コンテンツ、デザイン、データ、自動化トラック",
+        "ko": "18장: 콘텐츠, 디자인, 데이터, 자동화 트랙",
+        "de": "Pfad für Inhalte, Design, Daten und Automatisierung"
       },
       "display": {
         "en": "Content, design, data, and automation track",
-        "zh": "内容、设计、数据与自动化轨"
+        "zh": "内容、设计、数据与自动化轨",
+        "es": "ruta de contenido, diseño, datos y automatización",
+        "ja": "コンテンツ、デザイン、データ、自動化トラック",
+        "ko": "18장: 콘텐츠, 디자인, 데이터, 자동화 트랙",
+        "de": "Pfad für Inhalte, Design, Daten und Automatisierung"
       }
     },
     {
@@ -248,11 +392,19 @@
       "part": "part-4",
       "canonical": {
         "en": "Evaluate Models and Workflows — From Impressions to Evidence",
-        "zh": "评估模型和工作流——从感觉到证据"
+        "zh": "评估模型和工作流——从感觉到证据",
+        "es": "evaluar modelos y flujos de trabajo, de impresiones a evidencia",
+        "ja": "モデルとワークフローを評価する、印象から証拠へ",
+        "ko": "19장: 모델과 워크플로 평가하기, 인상에서 증거로",
+        "de": "Modelle und Workflows evaluieren, von Eindrücken zu Evidenz"
       },
       "display": {
         "en": "Evaluate models and workflows",
-        "zh": "评估模型和工作流"
+        "zh": "评估模型和工作流",
+        "es": "evaluar modelos y flujos de trabajo, de impresiones a evidencia",
+        "ja": "モデルとワークフローを評価する、印象から証拠へ",
+        "ko": "19장: 모델과 워크플로 평가하기, 인상에서 증거로",
+        "de": "Modelle und Workflows evaluieren, von Eindrücken zu Evidenz"
       }
     },
     {
@@ -261,11 +413,19 @@
       "part": "part-4",
       "canonical": {
         "en": "Build a Personal Codex Work System",
-        "zh": "建立个人 Codex 工作系统"
+        "zh": "建立个人 Codex 工作系统",
+        "es": "construir un sistema personal de trabajo con Codex",
+        "ja": "個人用 Codex 作業システムを作る",
+        "ko": "20장: 개인 Codex 작업 시스템 만들기",
+        "de": "Ein persönliches Codex-Arbeitssystem aufbauen"
       },
       "display": {
         "en": "Build a personal Codex work system",
-        "zh": "建立个人 Codex 工作系统"
+        "zh": "建立个人 Codex 工作系统",
+        "es": "construir un sistema personal de trabajo con Codex",
+        "ja": "個人用 Codex 作業システムを作る",
+        "ko": "20장: 개인 Codex 작업 시스템 만들기",
+        "de": "Ein persönliches Codex-Arbeitssystem aufbauen"
       }
     },
     {
@@ -274,11 +434,19 @@
       "part": "part-4",
       "canonical": {
         "en": "Build a Team Capability System",
-        "zh": "建立团队能力系统"
+        "zh": "建立团队能力系统",
+        "es": "construir un sistema de capacidades para el equipo",
+        "ja": "チーム能力システムを作る",
+        "ko": "21장: 팀 역량 시스템 만들기",
+        "de": "Ein Team-Fähigkeitssystem aufbauen"
       },
       "display": {
         "en": "Build a team capability system",
-        "zh": "建立团队能力系统"
+        "zh": "建立团队能力系统",
+        "es": "construir un sistema de capacidades para el equipo",
+        "ja": "チーム能力システムを作る",
+        "ko": "21장: 팀 역량 시스템 만들기",
+        "de": "Ein Team-Fähigkeitssystem aufbauen"
       }
     },
     {
@@ -287,11 +455,19 @@
       "part": "part-4",
       "canonical": {
         "en": "Continuous Update and Future-Proofing",
-        "zh": "持续更新与未来适应"
+        "zh": "持续更新与未来适应",
+        "es": "actualización continua y preparación para el futuro",
+        "ja": "継続的な更新と将来への備え",
+        "ko": "22장: 지속적인 업데이트와 미래 대비",
+        "de": "Kontinuierliche Aktualisierung und Zukunftssicherheit"
       },
       "display": {
         "en": "Continuous update and future-proofing",
-        "zh": "持续更新与未来适应"
+        "zh": "持续更新与未来适应",
+        "es": "actualización continua y preparación para el futuro",
+        "ja": "継続的な更新と将来への備え",
+        "ko": "22장: 지속적인 업데이트와 미래 대비",
+        "de": "Kontinuierliche Aktualisierung und Zukunftssicherheit"
       }
     }
   ]

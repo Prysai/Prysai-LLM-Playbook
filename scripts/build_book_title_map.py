@@ -14,9 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 NAVIGATION_FILE = ROOT / "docs/governance/book-navigation.yaml"
 OUTPUT_FILE = ROOT / "book/title-map.json"
 ENGLISH_TOC = ROOT / "book/table-of-contents-EN.md"
-LEGACY_TOC = ROOT / "book/table-of-contents.md"
 ENGLISH_HEADING_RE = re.compile(r"(?m)^### Chapter (\d+) — .+$")
-LEGACY_HEADING_RE = re.compile(r"(?m)^### 第 (\d+) 章：.+$")
+LOCALE_KEYS = ("en", "zh", "es", "ja", "ko", "de")
 
 
 def load_json(path: Path) -> Any:
@@ -38,14 +37,8 @@ def expected_title_map(navigation: dict[str, Any]) -> dict[str, Any]:
                 "id": item["id"],
                 "number": item["number"],
                 "part": item["part"],
-                "canonical": {
-                    "en": item["canonical_title_en"],
-                    "zh": item["canonical_title_zh"],
-                },
-                "display": {
-                    "en": item["title_en"],
-                    "zh": item["title_zh"],
-                },
+                "canonical": {key: item[f"canonical_title_{key}"] for key in LOCALE_KEYS},
+                "display": {key: item[f"title_{key}"] for key in LOCALE_KEYS},
             }
         )
     return {
@@ -90,9 +83,9 @@ def records_by_id(title_map: dict[str, Any]) -> dict[str, dict[str, Any]]:
             value = item[role]
             if not isinstance(value, dict) or not all(
                 isinstance(value.get(locale), str) and value[locale].strip()
-                for locale in ("en", "zh")
+                for locale in LOCALE_KEYS
             ):
-                raise ValueError(f"title map {role} titles must be non-empty: {item['id']}")
+                raise ValueError(f"title map {role} titles must be non-empty for all six locales: {item['id']}")
         records[item["id"]] = item
     return records
 
@@ -101,10 +94,9 @@ def render(title_map: dict[str, Any]) -> str:
     return json.dumps(title_map, ensure_ascii=False, indent=2) + "\n"
 
 
-def expected_toc(text: str, title_map: dict[str, Any], locale: str) -> str:
+def expected_toc(text: str, title_map: dict[str, Any]) -> str:
     records = list(records_by_id(title_map).values())
-    expected_by_number = {int(item["number"]): str(item["display"][locale]) for item in records}
-    heading_re = ENGLISH_HEADING_RE if locale == "en" else LEGACY_HEADING_RE
+    expected_by_number = {int(item["number"]): str(item["display"]["en"]) for item in records}
     seen: set[int] = set()
 
     def replace(match: re.Match[str]) -> str:
@@ -114,11 +106,9 @@ def expected_toc(text: str, title_map: dict[str, Any], locale: str) -> str:
         if number in seen:
             raise ValueError(f"TOC duplicates a chapter heading: {number}")
         seen.add(number)
-        if locale == "en":
-            return f"### Chapter {number} — {expected_by_number[number]}"
-        return f"### 第 {number} 章：{expected_by_number[number]}"
+        return f"### Chapter {number} — {expected_by_number[number]}"
 
-    updated = heading_re.sub(replace, text)
+    updated = ENGLISH_HEADING_RE.sub(replace, text)
     if seen != set(expected_by_number):
         raise ValueError("TOC title projection must contain each registered chapter once")
     return updated
@@ -129,13 +119,12 @@ def stale_outputs(title_map: dict[str, Any]) -> list[str]:
     expected_map = render(title_map)
     if not OUTPUT_FILE.is_file() or OUTPUT_FILE.read_text(encoding="utf-8") != expected_map:
         stale.append(str(OUTPUT_FILE.relative_to(ROOT)))
-    for path, locale in ((ENGLISH_TOC, "en"), (LEGACY_TOC, "zh")):
-        if not path.is_file():
-            stale.append(str(path.relative_to(ROOT)))
-            continue
-        actual = path.read_text(encoding="utf-8")
-        if expected_toc(actual, title_map, locale) != actual:
-            stale.append(str(path.relative_to(ROOT)))
+    if not ENGLISH_TOC.is_file():
+        stale.append(str(ENGLISH_TOC.relative_to(ROOT)))
+        return stale
+    actual = ENGLISH_TOC.read_text(encoding="utf-8")
+    if expected_toc(actual, title_map) != actual:
+        stale.append(str(ENGLISH_TOC.relative_to(ROOT)))
     return stale
 
 
@@ -145,12 +134,11 @@ def write_outputs(title_map: dict[str, Any]) -> int:
     if not OUTPUT_FILE.is_file() or OUTPUT_FILE.read_text(encoding="utf-8") != expected_map:
         OUTPUT_FILE.write_text(expected_map, encoding="utf-8", newline="\n")
         changed += 1
-    for path, locale in ((ENGLISH_TOC, "en"), (LEGACY_TOC, "zh")):
-        actual = path.read_text(encoding="utf-8")
-        expected = expected_toc(actual, title_map, locale)
-        if actual != expected:
-            path.write_text(expected, encoding="utf-8", newline="\n")
-            changed += 1
+    actual = ENGLISH_TOC.read_text(encoding="utf-8")
+    expected = expected_toc(actual, title_map)
+    if actual != expected:
+        ENGLISH_TOC.write_text(expected, encoding="utf-8", newline="\n")
+        changed += 1
     return changed
 
 

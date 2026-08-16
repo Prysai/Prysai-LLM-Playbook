@@ -41,10 +41,10 @@
             <nav class="language-menu" id="language-menu" data-language-menu hidden aria-label="Interface languages">
               <a href="?lang=en" data-language-option="en" lang="en"><span>EN</span><strong>English</strong></a>
               <a href="?lang=zh" data-language-option="zh" lang="zh-CN"><span>ZH</span><strong>简体中文</strong></a>
-              <a href="?lang=es" data-language-option="es" lang="es"><span>ES</span><strong>Español</strong><small data-language-fallback>English UI fallback</small></a>
-              <a href="?lang=ja" data-language-option="ja" lang="ja"><span>JA</span><strong>日本語</strong><small data-language-fallback>English UI fallback</small></a>
-              <a href="?lang=ko" data-language-option="ko" lang="ko"><span>KO</span><strong>한국어</strong><small data-language-fallback>English UI fallback</small></a>
-              <a href="?lang=de" data-language-option="de" lang="de"><span>DE</span><strong>Deutsch</strong><small data-language-fallback>English UI fallback</small></a>
+              <a href="?lang=es" data-language-option="es" lang="es"><span>ES</span><strong>Español</strong></a>
+              <a href="?lang=ja" data-language-option="ja" lang="ja"><span>JA</span><strong>日本語</strong></a>
+              <a href="?lang=ko" data-language-option="ko" lang="ko"><span>KO</span><strong>한국어</strong></a>
+              <a href="?lang=de" data-language-option="de" lang="de"><span>DE</span><strong>Deutsch</strong></a>
             </nav>
           </div>
           <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation" data-i18n-attr="aria-label:menuAria">
@@ -224,16 +224,16 @@
               </article>
               <article class="locale-panel" id="language-route" aria-labelledby="locale-title">
                 <div class="index-panel-head"><span class="index-panel-number">03</span><h3 id="locale-title" data-i18n="localeTitle">Six-language route</h3></div>
-                <p class="index-panel-intro" data-i18n="localeIntro">Six repository entry locales are registered. All six route tokens are exposed; EN / 中文 UI is reviewed, while the other locales use an explicit English UI fallback during migration.</p>
+                <p class="index-panel-intro" data-i18n="localeIntro">Six repository entry locales are registered, and every reader-facing page is available in all six: English, 简体中文, Español, 日本語, 한국어, Deutsch. No route needs an English fallback anymore.</p>
                 <ol class="locale-list">
                   <li class="locale-available"><span>EN</span><strong data-i18n="localeEnglish">available · default</strong></li>
-                  <li class="locale-available"><span>ZH</span><strong data-i18n="localeChinese">available · current toggle</strong></li>
-                  <li class="locale-entry"><span>ES</span><strong data-i18n="localeSpanish">route exposed · UI fallback</strong></li>
-                  <li class="locale-entry"><span>DE</span><strong data-i18n="localeGerman">route exposed · UI fallback</strong></li>
-                  <li class="locale-entry"><span>JA</span><strong data-i18n="localeJapanese">route exposed · UI fallback</strong></li>
-                  <li class="locale-entry"><span>KO</span><strong data-i18n="localeKorean">route exposed · UI fallback</strong></li>
+                  <li class="locale-available"><span>ZH</span><strong data-i18n="localeChinese">available · 简体中文</strong></li>
+                  <li class="locale-available"><span>ES</span><strong data-i18n="localeSpanish">available · Español</strong></li>
+                  <li class="locale-available"><span>DE</span><strong data-i18n="localeGerman">available · Deutsch</strong></li>
+                  <li class="locale-available"><span>JA</span><strong data-i18n="localeJapanese">available · 日本語</strong></li>
+                  <li class="locale-available"><span>KO</span><strong data-i18n="localeKorean">available · 한국어</strong></li>
                 </ol>
-                <p class="locale-rule" data-i18n="localeRule">Route rule: translated artifacts carry a locale suffix and link to the same locale. This migration covers entry slices; it does not claim that the whole book or runtime UI is complete in six languages.</p>
+                <p class="locale-rule" data-i18n="localeRule">Route rule: every translated artifact carries a locale suffix and links to the same locale. A route token now equals a completed, suffixed translation set.</p>
               </article>
             </div>
           </div>
