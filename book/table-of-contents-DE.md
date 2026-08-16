@@ -4,7 +4,7 @@
 
 Dies ist ein deutscher Leseweg, keine vollständige Übersetzung des Buchs. Der
 kanonische Katalog enthält 22 Kapitel im Status `candidate` und 18 Labs im
-Status `draft`. Derzeit stehen achtzehn Kapitel und elf Labs auf Deutsch bereit.
+Status `draft`. Derzeit stehen neunzehn Kapitel und elf Labs auf Deutsch bereit.
 Jeder Link auf dieser Seite führt zum entsprechenden deutschen Inhalt. Fehlt
 eine `-DE`-Datei, wird sie als nicht verfügbar ausgewiesen, statt auf ein
 anderes Kapitel oder in eine andere Sprache zu verweisen.
@@ -53,7 +53,7 @@ Transfer.
 | 16 — Engineering-Pfad: Von der Idee zu zuverlässiger Software | [Verfügbar: Kapitel 16](chapters/16-engineering-track-DE.md) · `candidate / in-progress` |
 | 17 — Marketing-Pfad: Vom Produktverständnis zu Wachstumsexperimenten | [Verfügbar: Kapitel 17](chapters/17-marketing-track-DE.md) · `candidate / in-progress` |
 | 18 — Pfad für Inhalte, Design, Daten und Automatisierung | [Verfügbar: Kapitel 18](chapters/18-content-design-data-automation-DE.md) · `candidate / in-progress` |
-| 19 — Modelle und Workflows evaluieren | Deutsche Datei noch nicht vorhanden. |
+| 19 — Modelle und Workflows evaluieren | [Verfügbar: Kapitel 19](chapters/19-evaluate-models-and-workflows-DE.md) · `candidate / in-progress` |
 | 20 — Ein persönliches Codex-Arbeitssystem aufbauen | Deutsche Datei noch nicht vorhanden. |
 | 21 — Ein Team-Fähigkeitssystem aufbauen | Deutsche Datei noch nicht vorhanden. |
 | 22 — Kontinuierliche Aktualisierung und Zukunftssicherheit | Deutsche Datei noch nicht vorhanden. |

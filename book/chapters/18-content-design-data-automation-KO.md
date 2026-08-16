@@ -45,5 +45,5 @@ A–D 표, 최종 render, data dictionary, validation, 잘못된 입력 응답, 
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="17-marketing-track-KO.md">← 이전<br><strong>17장 · 마케팅 트랙, 제품 이해에서 성장 실험까지</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-KO.md">다음 장 준비 중 →<br><strong>19장 제공 상태 보기</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="17-marketing-track-KO.md">← 이전<br><strong>17장 · 마케팅 트랙, 제품 이해에서 성장 실험까지</strong></a></td><td align="right"><a data-chapter-nav="next" href="19-evaluate-models-and-workflows-KO.md">다음 →<br><strong>19장 · 모델과 워크플로 평가하기, 인상에서 증거로</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->
