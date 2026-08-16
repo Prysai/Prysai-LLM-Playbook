@@ -7,7 +7,7 @@ Für eine kurze Übung in klaren Schritten öffne den [Arbeitsupdate-Ablauf](wor
 **Status:** `draft` · **Lernnachweis:** `not_run` · **Geeignet für:** risikoarme
 Übungen ohne sensible Daten in einem Textchat mit einem LLM.
 
-Du befindest dich auf dem deutsch erklärten Lernpfad: Erklärungen, Entscheidungen und Links auf dieser Seite sind auf Deutsch. „Spanisch“ ist ein optionales Übungsziel, kein versehentlicher Sprachwechsel und keine Pflicht.
+Du befindest dich auf dem deutsch erklärten Lernpfad: Erklärungen, Entscheidungen und Links auf dieser Seite sind auf Deutsch. Das Spanische in den Karten ist ein optionales Ziel für eine Sprachübung, kein versehentlicher Sprachwechsel und keine Pflicht.
 
 Sechs direkt kopierbare Nachrichten findest du in der [Spanischübung mit sechs Schritten](spanish-practice-loop-DE.md).
 
@@ -21,11 +21,13 @@ bitte die KI nur um Hilfe bei einem klar abgegrenzten Problem.
 
 ## Nach Ziel wählen: Sprache, Arbeit oder Recherche
 
-Du musst nicht mit der ersten Karte anfangen. Wähle A für eine Sprachübung, B für Ausdruck oder Entscheidungen bei der Arbeit und C für die Prüfung einer Behauptung oder Grenze vor dem Teilen.
+Du musst nicht mit der ersten Karte anfangen. Beginne mit B für Ausdruck oder Entscheidungen bei der Arbeit; wähle C, um eine Behauptung oder Grenze vor dem Teilen zu prüfen. A öffnest du nur für eine Sprachübung.
 
-## A. Sprachübung
+**Wenn du zum ersten Mal hier bist und kein Spanisch üben möchtest, beginne mit Karte 3 in B.** Sie hilft dir, vorhandene Stichpunkte in ein sendbares Arbeits-Update zu ordnen, ohne Fakten zu erfinden. A zeigt nur anhand von Spanisch die Methode „erst selbst versuchen, dann eine begrenzte Korrektur erbitten“.
 
-### 1. Spanisch: Erst selbst sprechen, dann begrenzte Korrektur erhalten
+## A. Optionale Sprachübung (nur wenn du Spanisch üben möchtest)
+
+### 1. Optionales Sprachbeispiel (Spanisch): Erst selbst sprechen, dann begrenzte Korrektur erhalten
 
 Dein eigener Satz bleibt erhalten; du bekommst eine kleine, überprüfbare Korrektur.
 Das Modell soll das Gespräch nicht von Anfang an für dich führen.
@@ -50,7 +52,7 @@ Danach sage nur „verständlich“ oder „Korrektur nötig“ und nenne höchs
 Nenne dieses Ergebnis nicht fließend, beherrscht oder Sprachniveau.
 ```
 
-## B. Ausdruck und Entscheidungen bei der Arbeit
+## B. Hier beginnen: Ausdruck und Entscheidungen bei der Arbeit
 
 ### 3. Arbeits-Update: Fakten ordnen, ohne Fortschritt zu erfinden
 

@@ -7,7 +7,7 @@ Para una práctica breve y guiada, abre el [ciclo de actualización de trabajo](
 **Estado:** `draft` · **Evidencia de aprendizaje:** `not_run` · **Uso previsto:**
 prácticas de bajo riesgo y sin datos sensibles en un chat de texto con un LLM.
 
-Estás en la ruta explicada en español: las explicaciones, decisiones y enlaces de esta página están en español. “Español” es una meta opcional de práctica, no un cambio accidental de idioma ni una obligación.
+Estás en la ruta explicada en español: las explicaciones, decisiones y enlaces de esta página están en español. El español que aparece en las tarjetas es una meta opcional de práctica de idiomas, no un cambio accidental de idioma ni una obligación.
 
 ¿Quieres seis mensajes listos para copiar? Abre la [práctica de español en seis pasos](spanish-practice-loop-ES.md).
 
@@ -20,11 +20,13 @@ solo problema concreto.
 
 ## Elige por objetivo: idioma, trabajo o investigación
 
-No tienes que empezar por la primera tarjeta. Elige A para practicar un idioma, B para expresar o decidir algo en el trabajo y C para comprobar una afirmación o un límite antes de compartir.
+No tienes que empezar por la primera tarjeta. Empieza por B si quieres expresar o decidir algo en el trabajo; elige C para comprobar una afirmación o un límite antes de compartir; usa A solo si quieres practicar un idioma.
 
-## A. Práctica de idioma
+**Si es tu primera visita y no quieres practicar español, empieza por la tarjeta 3 de B.** Te ayuda a convertir apuntes existentes en una actualización que puedas enviar sin inventar hechos. La sección A solo usa el español para mostrar el método de «intenta primero; pide después una corrección limitada».
 
-### 1. Español: habla primero y pide una corrección limitada
+## A. Práctica opcional de idioma (solo si quieres practicar español)
+
+### 1. Ejemplo opcional de idioma (español): habla primero y pide una corrección limitada
 
 Espera conservar tu frase y recibir una corrección pequeña, no que el modelo haga la
 conversación por ti.
@@ -47,7 +49,7 @@ Déjame escribir primero. Después indica solo «se entiende» o «necesita camb
 señala como máximo una cosa. No llames el resultado fluidez, dominio ni nivel.
 ```
 
-## B. Expresión y decisiones de trabajo
+## B. Empieza aquí: expresión y decisiones de trabajo
 
 ### 3. Actualización de trabajo: ordena hechos sin inventar avance
 
