@@ -626,8 +626,8 @@ try {
     const localePage = await context.newPage();
     await localePage.goto(`${origin}/site/index.html?lang=${locale}`, { waitUntil: 'networkidle' });
     const expectedUrl = locale === 'en'
-      ? 'https://prysai.github.io/Prysai-LLM-Playbook/'
-      : `https://prysai.github.io/Prysai-LLM-Playbook/?lang=${locale}`;
+      ? 'https://docs.prysai.com/llm-playbook/'
+      : `https://docs.prysai.com/llm-playbook/?lang=${locale}`;
     assert.equal(await localePage.locator('link[rel="canonical"]').getAttribute('href'), expectedUrl, `${locale} canonical metadata is incorrect`);
     assert.ok((await localePage.locator('meta[name="description"]').getAttribute('content'))?.trim(), `${locale} is missing a localized description`);
     assert.equal(await localePage.locator('.problem-grid .card-link').evaluateAll((links) => links.some((link) => /candidate|draft|not_run/i.test(link.textContent || ''))), false, `${locale} problem cards expose development statuses`);

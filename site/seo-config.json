@@ -1,5 +1,5 @@
 {
-  "public_site_url": "https://prysai.github.io/Prysai-LLM-Playbook/",
+  "public_site_url": "https://docs.prysai.com/llm-playbook/",
   "default_locale": "en",
   "locales": ["en", "zh", "es", "ja", "ko", "de"]
 }

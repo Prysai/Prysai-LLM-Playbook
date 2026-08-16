@@ -1354,7 +1354,7 @@ const localePageMeta = {
   de: { title: 'Prysai LLM Playbook — LLM-Guide, Prompts und verlässliche KI-Arbeit', description: 'Lerne, was LLMs sind, schreibe klarere Prompts und mache aus einer ersten KI-Aufgabe begrenzte, überprüfbare Arbeit.' },
 };
 
-const seoBaseUrl = 'https://prysai.github.io/Prysai-LLM-Playbook/';
+const seoBaseUrl = 'https://docs.prysai.com/llm-playbook/';
 const seoLocaleHref = (language) => language === 'en' ? seoBaseUrl : `${seoBaseUrl}?lang=${language}`;
 const setMetaContent = (selector, value) => {
   const element = document.querySelector(selector);
