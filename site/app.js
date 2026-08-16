@@ -222,10 +222,10 @@ Object.assign(copy.zh, {
   fileSiteTitle: '\u516c\u5f00\u5c55\u793a', fileSiteBody: 'index.html\u3001styles.css\u3001app.js \u4e0e\u751f\u6210\u7684\u5b66\u4e60\u8def\u5f84\u6570\u636e\u3002',
   fileChaptersTitle: '\u6838\u5fc3\u6559\u7a0b\u6b63\u6587', fileChaptersBody: '22 \u7ae0\uff1b\u5f53\u524d\u6587\u4ef6\u72b6\u6001\uff1acandidate\u3002',
   fileLabsTitle: '\u53ef\u89c2\u5bdf\u7684\u5b9e\u8df5', fileLabsBody: '18 \u4e2a\u5b9e\u9a8c\uff1b\u5f53\u524d\u72b6\u6001\uff1adraft\uff1b\u8fd0\u884c\u72b6\u6001\uff1anot_run\u3002',
-  fileSkillsTitle: '\u53ef\u590d\u7528\u65b9\u6cd5', fileSkillsBody: '21 \u4e2a\u9879\u76ee Skill\uff0c\u5305\u542b\u89e6\u53d1\u3001\u8fb9\u754c\u4e0e\u8bc1\u636e\u5951\u7ea6\u3002',
+  fileSkillsTitle: '\u53ef\u590d\u7528\u65b9\u6cd5', fileSkillsBody: '25 \u4e2a\u9879\u76ee Skill\uff0c\u5305\u542b\u89e6\u53d1\u3001\u8fb9\u754c\u4e0e\u8bc1\u636e\u5951\u7ea6\u3002',
   fileDocsTitle: '\u6cbb\u7406\u4e0e\u7814\u7a76', fileDocsBody: '\u72b6\u6001\u3001\u6765\u6e90\u3001\u73b0\u5b9e\u95ee\u9898\u3001\u66f4\u65b0\u89c4\u5219\u4e0e\u8d28\u91cf\u8bb0\u5f55\u3002',
   ledgerTitle: '\u5185\u5bb9\u72b6\u6001', ledgerIntro: '\u5f53\u524d\u72b6\u6001\u6e90\u7684\u7b80\u8bfb\u7248\u3002\u72b6\u6001\u63cf\u8ff0\u8bc1\u636e\uff0c\u4e0d\u63cf\u8ff0\u613f\u666f\u3002',
-  ledgerProject: '\u9879\u76ee', ledgerChapters: '\u7ae0\u8282 \u00b7 22', ledgerLabs: '\u5b9e\u9a8c \u00b7 18', ledgerSkills: 'Skill \u00b7 21', ledgerResearch: '\u73b0\u5b9e\u95ee\u9898\u7814\u7a76', ledgerResearchNote: '\u7528\u6237\u62a5\u544a\uff1b\u672c\u5730\u672a\u590d\u73b0', ledgerSource: '\u6253\u5f00\u5f53\u524d\u72b6\u6001\u6e90',
+  ledgerProject: '\u9879\u76ee', ledgerChapters: '\u7ae0\u8282 \u00b7 22', ledgerLabs: '\u5b9e\u9a8c \u00b7 18', ledgerSkills: 'Skill \u00b7 25', ledgerResearch: '\u73b0\u5b9e\u95ee\u9898\u7814\u7a76', ledgerResearchNote: '\u7528\u6237\u62a5\u544a\uff1b\u672c\u5730\u672a\u590d\u73b0', ledgerSource: '\u6253\u5f00\u5f53\u524d\u72b6\u6001\u6e90',
   localeTitle: '\u516d\u8bed\u79cd\u8def\u7ebf', localeIntro: '\u4ed3\u5e93\u5df2\u767b\u8bb0\u516d\u79cd\u5165\u53e3\u8bed\u8a00\u3002\u5f53\u524d\u5c55\u793a\u9875\u53ea\u80fd\u5207\u6362 EN / \u4e2d\u6587\uff1b\u5176\u4ed6\u5165\u53e3\u5207\u7247\u4ecd\u5728\u8fc1\u79fb\u5ba1\u67e5\u4e2d\u3002',
   localeEnglish: '\u53ef\u7528 \u00b7 \u9ed8\u8ba4', localeChinese: '\u53ef\u7528 \u00b7 \u5f53\u524d\u5207\u6362', localeSpanish: '\u5165\u53e3\u5207\u7247 \u00b7 UI \u56de\u9000', localeGerman: '\u5165\u53e3\u5207\u7247 \u00b7 UI \u56de\u9000', localeJapanese: '\u5165\u53e3\u5207\u7247 \u00b7 UI \u56de\u9000', localeKorean: '\u5165\u53e3\u5207\u7247 \u00b7 UI \u56de\u9000', localeRule: '\u8def\u7531\u89c4\u5219\uff1a\u7ffb\u8bd1\u6587\u4ef6\u4f7f\u7528\u8bed\u8a00\u540e\u7f00\u5e76\u94fe\u5230\u540c\u4e00\u8bed\u8a00\u3002\u5f53\u524d\u8fc1\u79fb\u8986\u76d6\u5165\u53e3\u5207\u7247\uff0c\u4e0d\u4ee3\u8868\u6574\u672c\u4e66\u6216\u8fd0\u884c\u65f6 UI \u5df2\u5b8c\u6210\u516d\u8bed\u79cd\u652f\u6301\u3002',
   researchTitle: '\u628a\u73b0\u5b9e\u95ee\u9898\u548c\u8bc1\u636e\u8fb9\u754c\u4e00\u8d77\u653e\u4e0a\u3002', researchIntro: '\u7814\u7a76\u7d22\u5f15\u628a\u516c\u5f00 Codex issue\u3001\u4e00\u624b\u5b89\u5168\u6307\u5f15\u4e0e\u8bba\u575b\u62a5\u544a\u6574\u7406\u6210\u75c7\u72b6\u3001\u6709\u6765\u6e90\u8303\u56f4\u7684\u8fb9\u754c\u3001\u5b89\u5168\u68c0\u67e5\u4e0e\u6559\u5b66\u94fe\u63a5\u3002\u5b83\u4e0d\u58f0\u79f0\u5b98\u65b9\u6839\u56e0\u6216\u672c\u5730\u590d\u73b0\u3002', researchBoundary: '\u6709\u6765\u6e90\u8303\u56f4\u7684\u6307\u5f15\u4e0e\u516c\u5f00\u62a5\u544a \u00b7 \u6ca1\u6709\u672c\u5730\u590d\u73b0\u8bb0\u5f55', researchIndexLink: '\u6253\u5f00\u73b0\u5b9e\u95ee\u9898\u7d22\u5f15', researchIndexBody: 'Codex\u3001\u5de5\u4f5c\u9762\u3001\u4ea4\u63a5\u3001\u8ba4\u8bc1\u3001worktree \u4e0e\u9a8c\u8bc1\u75c7\u72b6\u3002', researchForumsLink: '\u9605\u8bfb\u8bba\u575b\u6848\u4f8b\u7b14\u8bb0', researchForumsBody: 'sandbox \u7f51\u7edc allowlist\u3001Windows spawn \u5931\u8d25\u3001\u5ba1\u6279\u3001\u7f16\u7801\u4e0e\u79c1\u5bc6\u8def\u5f84\u3002', researchLiveLink: '\u590d\u6838\u4e09\u4e2a\u5f53\u524d\u73b0\u573a\u6848\u4f8b', researchLiveBody: 'Worktree \u76ee\u6807\u3001\u9690\u85cf\u8bc1\u636e\u4e0e\u9a8c\u8bc1\u8d8a\u754c\uff1b\u672c\u5730\u5747\u672a\u590d\u73b0\u3002', researchSafetyLink: '\u9605\u8bfb AI \u534f\u4f5c\u5b89\u5168\u8fb9\u754c', researchSafetyBody: '\u63d0\u793a\u6ce8\u5165\u3001\u6700\u5c0f\u5fc5\u8981\u8f93\u5165\u3001\u884c\u52a8\u6743\u9650\u4e0e\u9a8c\u8bc1\uff1b\u6709\u6765\u6e90\u8303\u56f4\u7684 candidate \u7814\u7a76\u3002', researchReceiptsLink: '\u9605\u8bfb AI \u5b89\u5168\u73b0\u573a\u4fe1\u53f7', researchReceiptsBody: '\u516c\u5f00\u62a5\u544a\u3001\u65ad\u8a00\u5206\u7c7b\u4e0e\u957f\u4efb\u52a1\u7814\u7a76\u68c0\u67e5\u70b9\uff1b candidate \u7814\u7a76\u3002', researchFirstTurnLink: '\u8d77\u8349\u4e00\u6b21\u901a\u7528\u9996\u8f6e\u8bf7\u6c42', researchFirstTurnBody: '\u516d\u4e2a\u5b57\u6bb5\u7684\u7eaf\u6587\u672c\u897f\u73ed\u7259\u8bed\u6216\u7814\u7a76\u5361\uff1bcandidate \u7814\u7a76，\u4e0d\u4ee3\u8868\u5e73\u53f0\u7b49\u4ef7\u6216\u5b66\u4e60\u7ed3\u679c\u3002', researchPublicInterestLink: '\u8fd0\u884c\u516c\u5171\u5229\u76ca\u5b89\u5168\u8be2\u95ee', researchPublicInterestBody: '\u56fa\u5b9a\u865a\u6784\u6848\u4f8b：\u4eba\u3001\u6570\u636e\u8fb9\u754c\u3001\u4eba\u7c7b\u63a7\u5236\u3001\u8bc1\u636e\u548c\u505c\u6b62；candidate / not_run\u3002', problemPublicInterestSafetyTitle: '\u6211\u9700\u8981\u8bc4\u4f30\u4e00\u4e2a\u53ef\u80fd\u5f71\u54cd\u4ed6\u4eba\u7684 AI \u60f3\u6cd5\u3002', problemPublicInterestSafetyBody: '\u5199\u4e0b\u4e00\u4e2a\u51b3\u7b56\u3001\u53ef\u80fd\u627f\u62c5\u5f71\u54cd\u7684\u4eba\u3001\u5fc5\u8981\u6570\u636e\u3001\u4eba\u7c7b\u6551\u6d4e\u3001\u8bc1\u636e，\u4ee5\u53ca\u5fc5\u987b\u505c\u4e0b\u7684\u65f6\u70b9\u3002', problemPublicInterestSafetyLink: '\u8fd0\u884c\u56fa\u5b9a\u5b89\u5168\u8be2\u95ee \u00b7 candidate \u00b7 not_run \u2197'
@@ -444,8 +444,8 @@ Object.assign(copy.zh, {
   skillRouteEscalationResult: '在起草、研究或行动前选择最小且安全的路径。',
   skillIndexLink: '打开 Skill 登记表与全部 25 个方法',
   skillFootnote: '25 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。练习目标用于准备一次首次尝试，不能证明学习结果。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
-  fileSkillsBody: '21 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
-  ledgerSkills: 'Skill \u00b7 21',
+  fileSkillsBody: '25 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
+  ledgerSkills: 'Skill \u00b7 25',
   repositorySkills: '25 个可复用 Skill · candidate',
 });
 
@@ -464,8 +464,8 @@ Object.assign(copy.zh, {
 });
 
 Object.assign(copy.zh, {
-  fileSkillsBody: '21 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
-  ledgerSkills: 'Skill \u00b7 21',
+  fileSkillsBody: '25 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
+  ledgerSkills: 'Skill \u00b7 25',
 });
 
 Object.assign(copy.en, {
@@ -669,8 +669,8 @@ Object.assign(copy.zh, {
   skillInterruption: '在重试、切换模型或创建新任务前，保留已经知道的事实。',
   skillIndexLink: '打开 Skill 登记表与全部 25 个方法',
   skillFootnote: '25 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。中断检查点只保留任务回执，不会重试或恢复工作。练习目标用于准备一次首次尝试，不能证明学习结果。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
-  fileSkillsBody: '21 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
-  ledgerSkills: 'Skill \u00b7 21',
+  fileSkillsBody: '25 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
+  ledgerSkills: 'Skill \u00b7 25',
   repositorySkills: '25 个可复用 Skill · candidate',
 });
 
@@ -691,8 +691,8 @@ Object.assign(copy.zh, {
   skillHandoff: '把稳定准则与当天提供的工作项分开。',
   skillIndexLink: '打开 Skill 登记表与全部 25 个方法',
   skillFootnote: '25 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。工作交接会拆开稳定准则与当天这项内容，不会执行任务或假设模型记得上一轮。中断检查点只保留任务回执，不会重试或恢复工作。练习目标用于准备一次首次尝试，不能证明学习结果。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
-  fileSkillsBody: '22 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
-  ledgerSkills: 'Skill \u00b7 22',
+  fileSkillsBody: '25 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
+  ledgerSkills: 'Skill \u00b7 25',
   repositorySkills: '25 个可复用 Skill · candidate',
 });
 
@@ -1400,15 +1400,15 @@ Object.assign(copy.en, {
 });
 Object.assign(copy.zh, {
   skillsTitle: '二十五个 Skill，各有职责。',
-  skillIndexLink: '打开 Skill 登记表与全部 23 个方法',
+  skillIndexLink: '打开 Skill 登记表与全部 25 个方法',
   skillFootnote: '25 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。平台观察记录只记录一个可见工作面，不是能力或安全性声明。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
   fileSkillsBody: '25 个项目 Skill，包含触发、边界与证据契约。',
   ledgerSkills: 'Skill · 25',
   repositorySkills: '25 个可复用 Skill · candidate',
 });
 Object.assign(copy.zh, {
-  fileSkillsBody: '23 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
-  ledgerSkills: 'Skill \u00b7 23',
+  fileSkillsBody: '25 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
+  ledgerSkills: 'Skill \u00b7 25',
 });
 
 const localePageMeta = {
