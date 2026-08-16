@@ -174,5 +174,6 @@ unbekannt? Welches eine Feld würdest du der nächsten Aufgabenkarte hinzufügen
 
 Dieses Lab ist `draft` und `not_run`. Eine Strukturprüfung bedeutet nicht, dass
 jemand es abgeschlossen hat. Sie belegt auch nicht das Verhalten eines bestimmten
-Kontos, Modells, Skills, Tools, Connectors oder einer Codex-Oberfläche. Wenn die
-nächste deutsche Einheit noch fehlt, kehre zum [deutschen Inhaltsverzeichnis](../table-of-contents-DE.md) zurück.
+Kontos, Modells, Skills, Tools, Connectors oder einer Codex-Oberfläche. Lies vor
+dem Start [Kapitel 2: Die erste sichere und überprüfbare Aufgabe erledigen](../chapters/02-first-safe-task-DE.md)
+und nutze das [deutsche Inhaltsverzeichnis](../table-of-contents-DE.md) für den aktuellen Stand.

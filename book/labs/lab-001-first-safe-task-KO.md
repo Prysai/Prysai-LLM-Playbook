@@ -167,5 +167,5 @@ status: passed | failed | stopped
 
 이 Lab은 `draft`이며 `not_run`입니다. 구조 검증은 누군가가 이 과정을 완수했다는 뜻이
 아닙니다. 특정 계정, 모델, Skill, 도구, 커넥터 또는 Codex 작업면이 같은 작업을 할 수
-있다는 증거도 아닙니다. 다음 한국어 단원이 아직 없으면 [한국어 목차](../table-of-contents-KO.md)로
-돌아가 현재 제공되는 단원을 확인하세요.
+있다는 증거도 아닙니다. 시작하기 전에 [2장: 첫 번째 안전하고 검증 가능한 작업 완료하기](../chapters/02-first-safe-task-KO.md)를
+확인하고, 현재 제공되는 다른 단원은 [한국어 목차](../table-of-contents-KO.md)에서 확인하세요.

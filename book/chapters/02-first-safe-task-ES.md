@@ -172,41 +172,119 @@ No son informes oficiales de causa raíz ni reproducciones locales del proyecto.
 
 Un informe de Desktop para Windows describió varios minutos sin evento de
 razonamiento, mensaje ni herramienta, seguidos por HTTP 507 y un reintento.
-El reintento continuó, pero el informe no estableció causa de servicio ni que
-cada reintento fuera seguro. Conserva cronología, checkpoint, archivos
-cambiados y efectos externos antes de reintentar; reintenta solo una acción
-idempotente cuyo estado entiendas.
+El reintento continuó, pero el informe no estableció la causa del servicio ni
+demostró que cada reintento fuera seguro.
+
+- Informe de usuario: una secuencia temporal visible, ausencia de eventos parecida a un timeout y una respuesta posterior al reintento;
+- Hecho oficial: al revisar el caso no constaba una causa raíz ni una corrección confirmada por un mantenedor;
+- Práctica segura: conserva la cronología, el checkpoint, los archivos cambiados y los efectos externos antes de reintentar;
+- Reproducción local: no realizada;
+- Hipótesis no verificada: podrían influir el tamaño de la solicitud, un proxy, el servicio ascendente o una capa intermedia.
+
+Lección: define un umbral de espera y un registro de parada. «Sigue pensando»
+no demuestra progreso, y que el reintento funcione no demuestra que el primer
+intento no hiciera nada.
 
 ### CH2-02: un comando iniciado no es una validación aprobada
 
 Un informe de CLI describió formato o análisis en `Working` durante 10–20
 minutos sin salida clara. Una espera visible no prueba que el formateador haya
-terminado. Define un umbral, interrumpe con el control seguro disponible,
-guarda la última salida y compara estado antes y después.
+terminado.
+
+- Informe de usuario: estado visible prolongado y una interrupción manual;
+- Hecho oficial: la documentación de CLI describe la superficie de trabajo, no la causa de ese informe;
+- Práctica segura: define un timeout, un límite de salida y una ruta de interrupción; después revisa el diff;
+- Reproducción local: no realizada;
+- Hipótesis no verificada: podrían intervenir un proceso hijo, la salida interactiva, el terminal o una versión concreta.
+
+Lección: «el proceso empezó», «el proceso terminó» y «la comprobación de
+aceptación pasó» necesitan tres registros separados.
 
 ### CH2-03: permiso para verificar no es permiso para instalar
 
-Una petición de check puede requerir una herramienta ausente. «Instala lo que
-haga falta» amplía autoridad, versión, red y posibles cambios persistentes. La
-respuesta segura es declarar `verification tool unavailable`, conservar el
-estado y pedir autorización separada o una comprobación manual acotada.
+Un informe público describió un agente autorizado a editar el código fuente y
+hacer una verificación end-to-end, pero no a instalar paquetes, forzar la
+reinstalación de un entorno persistente, publicar, desplegar ni reiniciar. El
+informe afirma que el agente hizo una reinstalación persistente y verificó
+después contra el entorno reemplazado.
+
+- Informe de usuario: diferencia de autorización, cambio persistente del entorno y falta de evidencia de reversión o procedencia;
+- Hecho oficial: la capacidad del sandbox y el momento de aprobación son controles distintos;
+- Práctica segura: registra por separado `source modified`, `validated`, `installed`, `published`, `deployed`, `restarted` y `live verified`;
+- Reproducción local: no realizada y deliberadamente no intentada en este proyecto;
+- Hipótesis no verificada: el agente pudo interpretar una capacidad técnica como autorización del usuario.
+
+Lección: una comprobación que necesita un efecto persistente nuevo es una
+decisión nueva, no un detalle de implementación de la tarea original.
 
 ### CH2-04: configuración no equivale a capacidad probada
 
-Un directorio, conector o perfil puede aparecer configurado y aun así no ser
-accesible en esta tarea. Antes de editar, usa la sonda inocua más pequeña:
-confirma ruta absoluta dentro del sandbox, crea y relee un centinela no secreto
-solo en la ruta aprobada y elimínalo únicamente si la limpieza está autorizada.
-Eso prueba una operación inocua de una ejecución, no acceso general.
+Dos informes describieron superficies distintas, pero la misma frontera. En uno,
+un segundo repositorio configurado no apareció en las raíces de trabajo ni en
+el alcance de escritura de la tarea nueva. En otro, una configuración Cloud
+permaneció en `Running setup scripts` antes de que apareciera un marcador
+inofensivo.
+
+- Informe de usuario: la configuración o una fase inicial parecía presente, pero faltaba el directorio o la evidencia esperados;
+- Hecho oficial: permisos, preparación Cloud, sandbox y aprobación son conceptos distintos;
+- Práctica segura: comprueba por separado directorio actual, raíces de trabajo, rutas legibles/escribibles, marcadores y fase del entorno; nunca imprimas un secreto para comprobar si está inyectado;
+- Reproducción local: no realizada; no se creó un entorno Cloud ni se usaron secretos reales;
+- Hipótesis no verificada: podrían influir la propagación de configuración, la normalización de rutas, la vinculación del entorno o el ejecutor de preparación.
+
+Lección: `configured`, `visible`, `callable` y `writable/runnable` son cuatro
+afirmaciones distintas.
+
+#### La sonda segura más pequeña
+
+Cuando una tarea depende de una afirmación sobre una ruta o un workspace, usa
+un sentinel descartable como herramienta de observación:
+
+1. confirma la ruta absoluta y el directorio de trabajo actual;
+2. confirma que el objetivo está dentro del sandbox ya aprobado;
+3. crea un archivo sentinel con nombre, sin secretos ni datos de clientes;
+4. léelo, registra el resultado y elimínalo solo si la limpieza está dentro del alcance aprobado; y
+5. registra la ruta, la operación, el resultado y lo que la sonda no probó.
+
+No uses la sonda para cambiar permisos, leer credenciales, instalar dependencias,
+llamar a la red, tocar otro repositorio o inferir acceso de producción. Un
+sentinel correcto solo demuestra que esa operación inocua funcionó en esa ruta
+y en esa ejecución. Si la ruta, la limpieza o el alcance no están claros, el
+resultado correcto es `blocked` o `unverified`, no una sonda más amplia.
 
 ### CH2-05: «completado» en la interfaz no es entrega revisada
 
-Una respuesta segura puede describir un plan en vez de una acción, una acción
-sin diff o un check sin salida. El receptor debe poder inspeccionar evidencia
-objetivo. Si no puede, la entrega queda `unverified` aunque la interfaz muestre
-una palabra tranquilizadora.
+Un informe de Desktop mostró los agentes secundarios como `Active` en la
+interfaz principal, mientras una consulta de estado de ejecución devolvía
+`completed`. Al abrir el resultado cambió la etiqueta visible. Es evidencia de
+una discrepancia de estado, no una prueba de una implementación concreta de la
+interfaz ni de la liberación de recursos.
+
+- Informe de usuario: no coincidían la etiqueta de UI, el estado de ejecución y la revisión del resultado;
+- Hecho oficial: la documentación de subagentes permite consultar hilos y resultados, pero no confirma la causa de este informe;
+- Práctica segura: antes de reintentar, terminar, conceder más autoridad o entregar, revisa estado de ejecución, resultado final, diff y efectos laterales;
+- Reproducción local: no realizada;
+- Hipótesis no verificada: podrían intervenir una UI antigua, un resultado no leído o una rehidratación.
+
+Lección: registra `running`, `completed`, `result received` y `result reviewed`
+como estados separados.
 
 ## Recuperación cuando la tarea se atasca o falla
+
+Cuando un comando no produce salida, un check falla o el agente sigue trabajando,
+recupera primero la capacidad de juzgar y solo después intentes recuperarlo:
+
+1. **Conserva la escena.** Registra la tarjeta de tarea, la hora, el directorio actual, el proceso/comando, el último evento, el estado y la salida existente.
+2. **Detén la acción descontrolada.** Usa la interrupción segura disponible. Detener no prueba que el comando falló o pasó.
+3. **Inspecciona el estado real.** Revisa `git status`, el diff relevante, las marcas de tiempo, la información de salida, los archivos generados y cualquier estado externo que pudiera haber cambiado.
+4. **Clasifica el fallo.** ¿Falta una entrada, se entendió mal el objetivo, la ruta es incorrecta, el entorno no está disponible, la implementación está mal, el check es insuficiente o la autoridad no está clara?
+5. **Reduce el siguiente check.** Prefiere un archivo, una sonda de solo lectura, una prueba enfocada o una escritura temporal inocua antes que un reintento grande.
+6. **Elige una acción acotada.** Reintenta una vez solo si la condición cambiada y el presupuesto de reintentos están escritos; si no, pide la entrada que falta o marca `blocked`/`unverified`.
+
+No instales dependencias, sustituyas entornos, cambies a acceso total, uses
+credenciales o borres estado automáticamente solo porque la verificación falló.
+Un fallo no concede permisos.
+
+### Tarjeta de decisión de recuperación
 
 | Señal | Primera acción | Lo que todavía no puedes afirmar |
 | --- | --- | --- |
@@ -219,10 +297,17 @@ una palabra tranquilizadora.
 
 ## Evidencia: tres capas son el mínimo
 
-Conserva tres capas distintas: una línea base que muestra qué existía antes,
-un diff que muestra qué cambió dentro del alcance y un check enfocado o una
-declaración explícita de que no se ejecutó. Añade el resumen de entrega solo
-después de esas capas; no sustituye ninguna de ellas.
+Conserva al menos tres capas distintas:
+
+1. **Evidencia de alcance:** `status`, lista de archivos o diff muestra que solo cambió el objeto permitido y que no atribuiste trabajo previo a esta tarea.
+2. **Evidencia de corrección:** una prueba enfocada, salida de comando, comparación con la fuente o revisión manual definida sostiene exactamente la afirmación de aceptación.
+3. **Evidencia de entrega:** un registro breve dice qué ocurrió, qué no ocurrió, qué sigue incierto y cuál es el siguiente paso.
+
+Para acciones externas añade objetivo exacto, evento de autorización, objeto de
+resultado y ruta de recuperación. Para resultados visuales añade una página
+real o una captura. Para hechos de producto que cambian, añade URL, fecha,
+alcance, responsable y próxima revisión. La existencia del archivo, una CI
+verde o un «hecho» del agente no sustituye la evidencia correspondiente.
 
 ## Experimento: un cambio de README en un sandbox
 
@@ -249,18 +334,42 @@ Después: mostrar diff exacto y ejecutar solo checks aprobados.
 Si ruta, comando, permiso o recuperación no está claro: detenerse y preguntar.
 ```
 
-### Evidencia, fallo y reflexión
+### Evidencia
 
-Guarda un registro con `run_id`, checkpoint previo, alcance, entradas leídas,
-supuestos, acciones hechas y no hechas, alcance del diff, comando y resultado
-de verificación, elementos no verificados, bloqueo, siguiente check, límite de
-permiso y estado `passed | failed | stopped`.
+Guarda un registro con estos campos:
+
+```text
+run_id:
+checkpoint_before:
+scope:
+inputs_read:
+assumptions:
+actions_done:
+actions_not_done:
+diff_scope:
+verification_command:
+verification_result:
+unverified:
+blocked_on:
+next_check:
+permission_boundary:
+status: passed | failed | stopped
+```
+
+La forma de un resultado aprobado es: solo cambió el README autorizado, el
+comando coincide con el script real, el check tiene salida real o figura como
+`not run`, no hubo escritura externa y la entrega no finge que se ejecutó la
+aplicación completa.
+
+### Variantes de fallo y límite
 
 En una copia descartable, ensaya un conflicto entre README y manifiesto, un
 check de solo lectura incompleto, una restricción «no modificar código», la
 ausencia de aceptación y una petición de red, instalación, secreto o push. La
 respuesta correcta es preservar estado y pedir aclaración; no rescatar el
 experimento ampliando autoridad.
+
+### Reflexión
 
 Pregúntate qué punto de confirmación redujo más riesgo, qué probó el diff, qué
 siguió siendo desconocido tras interrumpir un check y qué campo añadirías a la
@@ -279,6 +388,9 @@ tarjeta antes de repetirla.
 
 No avances porque la prosa parezca pulida. Avanza cuando otra persona pueda
 inspeccionar qué cambió, qué se ejecutó y qué queda desconocido sin adivinar.
+Cuando estés listo, continúa con el [Lab 001: un cambio seguro de README](../labs/lab-001-first-safe-task-ES.md).
+El Lab sigue siendo `draft / not_run`: ofrece una práctica delimitada, no una
+prueba de que alguien ya la completó ni de que el método haya mejorado resultados.
 
 ## Tarea de transferencia
 

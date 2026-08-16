@@ -4,7 +4,7 @@
 
 Dies ist ein deutscher Leseweg, keine vollständige Übersetzung des Buchs. Der
 kanonische Katalog enthält 22 Kapitel im Status `candidate` und 18 Labs im
-Status `draft`. Derzeit stehen zwei Kapitel und drei Labs auf Deutsch bereit.
+Status `draft`. Derzeit stehen drei Kapitel und drei Labs auf Deutsch bereit.
 Jeder Link auf dieser Seite führt zum entsprechenden deutschen Inhalt. Fehlt
 eine `-DE`-Datei, wird sie als nicht verfügbar ausgewiesen, statt auf ein
 anderes Kapitel oder in eine andere Sprache zu verweisen.
@@ -29,7 +29,7 @@ Transfer.
 | Kanonisches Kapitel | Status des deutschen Lesewegs |
 | --- | --- |
 | 01 — GPT verstehen, bevor man Codex versteht | [Verfügbar: Kapitel 1](chapters/01-gpt-and-codex-DE.md) · `candidate / in-progress` |
-| 02 — Eine erste sichere, überprüfbare Aufgabe erledigen | Deutsche Datei noch nicht vorhanden. |
+| 02 — Eine erste sichere, überprüfbare Aufgabe erledigen | [Verfügbar: Kapitel 2](chapters/02-first-safe-task-DE.md) · `candidate / in-progress` |
 | 03 — Einen Wunsch in ein Aufgabenprotokoll verwandeln | Deutsche Datei noch nicht vorhanden. |
 | 04 — Kontext, Berechtigungen und die Aktionsgrenze des Agents | [Verfügbar: Kapitel 4](chapters/04-context-permissions-and-agent-DE.md) · `candidate / in-progress` |
 | 05 — Die richtige Codex-Arbeitsfläche wählen | Deutsche Datei noch nicht vorhanden. |
