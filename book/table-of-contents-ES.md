@@ -4,7 +4,7 @@
 
 Esta es una ruta de lectura en español, no una traducción completa del libro.
 El catálogo canónico tiene 22 capítulos `candidate` y 18 Labs `draft`; en este
-momento existen 6 capítulos y 5 Labs en español. Cada enlace de esta página
+momento existen 6 capítulos y 6 Labs en español. Cada enlace de esta página
 apunta al mismo contenido en español. Cuando no hay un archivo `-ES`, se indica
 como no disponible en vez de enlazar a otro capítulo o cambiar de idioma.
 
@@ -22,7 +22,8 @@ como no disponible en vez de enlazar a otro capítulo o cambiar de idioma.
     → [Lab 007: límites de acción](labs/lab-007-action-boundaries-ES.md).
 6. [Capítulo 5: elegir la superficie de trabajo adecuada de Codex](chapters/05-choose-the-codex-surface-ES.md)
    → [Lab 003: auditar una declaración de finalización](labs/lab-003-evidence-review-ES.md).
-7. [Capítulo 6: elegir un modelo no es venerar un modelo](chapters/06-model-selection-ES.md).
+7. [Capítulo 6: elegir un modelo no es venerar un modelo](chapters/06-model-selection-ES.md)
+   → [Lab 004: elegir la capacidad mínima útil](labs/lab-004-skill-selection-ES.md).
 
 Estos materiales siguen en `candidate` o `draft / not_run`. Que una ruta exista
 no prueba calidad de traducción, ejecución de modelos, aprendizaje ni
@@ -62,7 +63,7 @@ transferencia.
 | 001 — Primera tarea segura | [Disponible: Lab 001](labs/lab-001-first-safe-task-ES.md) · `draft / not_run` |
 | 002 — Protocolo de tarea | [Disponible: Lab 002](labs/lab-002-task-protocol-ES.md) · `draft / not_run` |
 | 003 — Revisión de evidencia | [Disponible: Lab 003](labs/lab-003-evidence-review-ES.md) · `draft / not_run` |
-| 004 — Elegir la capacidad mínima útil | Aún no existe archivo español. |
+| 004 — Elegir la capacidad mínima útil | [Disponible: Lab 004](labs/lab-004-skill-selection-ES.md) · `draft / not_run` |
 | 005 — Convertir un método repetido en un Skill acotado | Aún no existe archivo español. |
 | 006 — Diseñar condiciones de parada del Agent | Aún no existe archivo español. |
 | 007 — Límites de acción para una tarea README | [Disponible: Lab 007](labs/lab-007-action-boundaries-ES.md) · `draft / not_run` |

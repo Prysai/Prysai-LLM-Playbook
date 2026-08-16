@@ -94,7 +94,7 @@ corrección y preparación? ¿Qué afirmación se volvió más débil al delimit
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-lab-nav="previous" href="lab-002-task-protocol-ES.md" aria-label="Lab anterior: Lab 002 · Convertir un deseo en un protocolo de tarea">← Anterior<br><strong>Lab 002 · Protocolo de tarea</strong></a></td>
-      <td align="right"><a data-lab-nav="next" href="../table-of-contents-ES.md" aria-label="Volver al índice en español: el Lab 004 aún no está traducido">Siguiente pendiente →<br><strong>Ver disponibilidad del Lab 004</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-004-skill-selection-ES.md" aria-label="Lab siguiente: Lab 004 · Elegir la capacidad mínima útil">Siguiente →<br><strong>Lab 004 · Elegir la capacidad mínima útil</strong></a></td>
     </tr>
   </table>
 </nav>
