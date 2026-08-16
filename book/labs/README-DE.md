@@ -31,7 +31,7 @@ oder dass bereits jemand die Methode gelernt hat.
 ## Aktueller Stand
 
 Der Katalog enthält 18 feste Kennungen. Alle sind `draft`; der Lernenden-Status ist
-`not_run`. In dieser deutschen Route sind zwölf Labs lokal verfügbar: 001–012.
+`not_run`. In dieser deutschen Route sind dreizehn Labs lokal verfügbar: 001–013.
 Die übrigen werden von dieser Seite nicht auf Englisch verlinkt, bis ihre eigene
 deutsche Datei und ihr Übersetzungsstatus vorliegen.
 
@@ -51,7 +51,7 @@ deutsche Datei und ihr Übersetzungsstatus vorliegen.
 | 010 | Gemeinsamer Produktkontext | L3 | [Lab 010 öffnen](lab-010-product-context-DE.md) |
 | 011 | Grenzen von GPT und Codex | L0 | [Lab 011 öffnen](lab-011-gpt-codex-boundaries-DE.md) |
 | 012 | Migration von Teamfähigkeiten | L6 | [Lab 012 öffnen](lab-012-team-capability-migration-DE.md) |
-| 013 | Prüffähiger vertikaler Schnitt | L3 | Noch nicht auf Deutsch verfügbar |
+| 013 | Prüffähiger vertikaler Schnitt | L3 | [Lab 013 öffnen](lab-013-l3-vertical-slice-DE.md) |
 | 014 | Abgleich beim Fortsetzen | L3 | Noch nicht auf Deutsch verfügbar |
 | 015 | Übergabe mit Evidenz | L5 | Noch nicht auf Deutsch verfügbar |
 | 016 | Grenze von Nebenwirkungen | L3 | Noch nicht auf Deutsch verfügbar |

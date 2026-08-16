@@ -74,7 +74,7 @@ Transfer.
 | 010 — Gemeinsamen Produktkontext erstellen | [Verfügbar: Lab 010](labs/lab-010-product-context-DE.md) · `draft / not_run` |
 | 011 — GPT, Codex, Tools und Agents unterscheiden | [Verfügbar: Lab 011](labs/lab-011-gpt-codex-boundaries-DE.md) · `draft / not_run` |
 | 012 — Eine persönliche Methode in Teamfähigkeit überführen | [Verfügbar: Lab 012](labs/lab-012-team-capability-migration-DE.md) · `draft / in-progress` |
-| 013 — Einen vollständigen vertikalen Schnitt ausführen | Deutsche Datei noch nicht vorhanden. |
+| 013 — Einen vollständigen vertikalen Schnitt ausführen | [Verfügbar: Lab 013](labs/lab-013-l3-vertical-slice-DE.md) · `draft / in-progress` |
 | 014 — Eine fortgesetzte Aufgabe vor dem Weiterarbeiten abgleichen | Deutsche Datei noch nicht vorhanden. |
 | 015 — Evidenz statt einer Fertigmeldung übergeben | Deutsche Datei noch nicht vorhanden. |
 | 016 — An der Grenze externer Auswirkungen stoppen | Deutsche Datei noch nicht vorhanden. |

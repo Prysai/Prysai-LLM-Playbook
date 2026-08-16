@@ -73,7 +73,7 @@ transferencia.
 | 010 — Crear contexto compartido de producto | [Disponible: Lab 010](labs/lab-010-product-context-ES.md) · `draft / not_run` |
 | 011 — Separar GPT, Codex, herramientas y Agents | [Disponible: Lab 011](labs/lab-011-gpt-codex-boundaries-ES.md) · `draft / not_run` |
 | 012 — Convertir un método personal en capacidad de equipo | [Disponible: Lab 012](labs/lab-012-team-capability-migration-ES.md) · `draft / in-progress` |
-| 013 — Ejecutar un corte vertical completo | Aún no existe archivo español. |
+| 013 — Ejecutar un corte vertical completo | [Disponible: Lab 013](labs/lab-013-l3-vertical-slice-ES.md) · `draft / in-progress` |
 | 014 — Conciliar una tarea reanudada antes de continuar | Aún no existe archivo español. |
 | 015 — Entregar evidencia, no una frase de finalización | Aún no existe archivo español. |
 | 016 — Detenerse en el límite de efectos externos | Aún no existe archivo español. |

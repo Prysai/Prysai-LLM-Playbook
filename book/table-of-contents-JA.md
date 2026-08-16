@@ -72,7 +72,7 @@
 | 010 — 共有する製品コンテキストを作る | [提供中：Lab 010](labs/lab-010-product-context-JA.md) · `draft / not_run` |
 | 011 — GPT、Codex、ツール、Agent を区別する | [提供中：Lab 011](labs/lab-011-gpt-codex-boundaries-JA.md) · `draft / not_run` |
 | 012 — 個人の方法をチーム能力に変える | [利用可能: Lab 012](labs/lab-012-team-capability-migration-JA.md) · `draft / in-progress` |
-| 013 — 完全な垂直スライスを実行する | 日本語ファイルはまだありません。 |
+| 013 — 完全な垂直スライスを実行する | [利用可能: Lab 013](labs/lab-013-l3-vertical-slice-JA.md) · `draft / in-progress` |
 | 014 — 再開したタスクを続ける前に照合する | 日本語ファイルはまだありません。 |
 | 015 — 完了の言葉ではなく証拠を渡す | 日本語ファイルはまだありません。 |
 | 016 — 外部への影響が始まる境界で止まる | 日本語ファイルはまだありません。 |
