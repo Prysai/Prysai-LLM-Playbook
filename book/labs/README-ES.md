@@ -1,0 +1,86 @@
+<!-- content_id: book-labs-readme | locale: ES | language: es | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
+
+# Prysai LLM Playbook: índice de Labs
+
+<!-- language-switcher:start -->
+**Idiomas:** [English](../README-EN.md) | [简体中文](../README-ZH.md) | [Español](README-ES.md) | [日本語](../README-JA.md) | [한국어](../README-KO.md) | [Deutsch](../README-DE.md)
+<!-- language-switcher:end -->
+
+Los Labs son el lugar para comprobar si una forma de pedir ayuda a un LLM te permite
+trabajar con más claridad. No son un curso aparte de papeleo ni exigen Codex Cloud o
+programación. Cada Lab parte de una pregunta visible: ¿la respuesta conserva los
+hechos?, ¿respeta la forma solicitada?, ¿muestra lo que no sabe?, ¿deja un cambio que
+otra persona pueda revisar?
+
+Esta es una traducción de la página de entrada, no una afirmación de que todos los
+Labs estén disponibles en español. Un enlace abre solo un archivo `-ES`; cuando aún
+no existe, el estado lo dice y no te desvía al inglés sin avisar.
+
+## Empieza con una práctica pequeña
+
+Si quieres notar la diferencia entre una petición vaga y una petición comprobable,
+abre el [Lab 001: primera tarea segura](lab-001-first-safe-task-ES.md). La parte de
+espacio de trabajo es opcional mientras no tengas un proyecto desechable. Para elegir
+un método reutilizable sin instalar nada, continúa con el
+[Lab 004: selección de Skills](lab-004-skill-selection-ES.md).
+
+Un Lab marcado `draft` es un contrato de enseñanza: describe qué probar, qué guardar
+y cuándo detenerse. No demuestra que el ejercicio se haya ejecutado recientemente en
+cada superficie de Codex, ni que una persona ya haya aprendido el método.
+
+## Estado actual
+
+El catálogo tiene 18 identidades estables. Todas siguen en `draft` y el estado de
+ejecución de aprendices es `not_run`. En esta ruta española hay cuatro Labs locales
+disponibles (001–004). Los demás no se enlazan en inglés desde esta página: aparecerán
+cuando exista su propio archivo español y su estado de traducción se haya registrado.
+
+## Mapa de Labs en español
+
+| Lab | Capacidad | Nivel | Estado de la ruta española |
+|---|---|---:|---|
+| 001 | Hacer útil la primera petición | L1 | [Abrir Lab 001](lab-001-first-safe-task-ES.md) |
+| 002 | Protocolo de tarea | L2 | [Abrir Lab 002](lab-002-task-protocol-ES.md) |
+| 003 | Revisión de evidencia | L3 | [Abrir Lab 003](lab-003-evidence-review-ES.md) |
+| 004 | Selección de Skills | L4 | [Abrir Lab 004](lab-004-skill-selection-ES.md) |
+| 005 | Diseño de Skills | L4 | Aún no disponible en español |
+| 006 | Condiciones de parada de Agent | L5 | Aún no disponible en español |
+| 007 | Límites de acción | L3 | Aún no disponible en español |
+| 008 | Pregunta de investigación | L3 | Aún no disponible en español |
+| 009 | Ciclo de ingeniería | L3 | Aún no disponible en español |
+| 010 | Contexto de producto compartido | L3 | Aún no disponible en español |
+| 011 | Límites entre GPT y Codex | L0 | Aún no disponible en español |
+| 012 | Migración de capacidades de equipo | L6 | Aún no disponible en español |
+| 013 | Corte vertical auditable | L3 | Aún no disponible en español |
+| 014 | Reconciliación al reanudar | L3 | Aún no disponible en español |
+| 015 | Entrega con evidencia | L5 | Aún no disponible en español |
+| 016 | Límite de efectos secundarios | L3 | Aún no disponible en español |
+| 017 | Auditoría del descubrimiento de Skills | L4 | Aún no disponible en español |
+| 018 | Transferencia de idioma con práctica fija | L2 | Aún no disponible en español |
+
+Los números son identidades de catálogo, no una promesa de que el número siguiente
+sea un requisito o pertenezca al siguiente nivel. La ruta de aprendizaje define la
+progresión; este índice solo muestra qué material español puedes abrir hoy.
+
+## Cómo ejecutar un Lab con seguridad
+
+1. Usa una carpeta desechable, una revisión fija de entrada y ninguna credencial real.
+2. Lee el límite de permisos y efectos secundarios antes de actuar.
+3. Guarda la línea base, órdenes, salidas, cambios, caso de fallo y elementos desconocidos.
+4. Detente si no puedes observar el destino, la autorización, la fuente o la vuelta atrás.
+5. Haz una tarea de transferencia solo después de guardar el ejercicio original.
+
+## Límite de estado
+
+`draft` significa que el ejercicio necesita las pruebas declaradas por el proyecto
+antes de llamarse `candidate`, `verified` o `production-ready`.
+`run_status: not_run` significa que este repositorio no guarda un resultado de
+ejecución de un aprendiz para ese Lab. Que el archivo exista, que se abra o que un
+enlace local pase una comprobación no prueba aprendizaje, comportamiento del modelo ni
+eficacia en otro entorno.
+
+## Volver a la ruta española
+
+- [Entrada del libro en español](../README-ES.md)
+- [Índice del libro en español](../table-of-contents-ES.md)
+- [Tarjetas de práctica para principiantes](../communication-clinic-ES.md)
