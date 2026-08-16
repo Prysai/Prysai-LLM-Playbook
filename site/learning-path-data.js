@@ -1014,6 +1014,15 @@ window.CODEX_LEARNING_PATH = {
           },
           "href": "../skills/prysai-platform-adapter-review/SKILL.md",
           "relation": "supporting"
+        },
+        {
+          "id": "prysai-platform-observation-record",
+          "name": {
+            "en": "Platform Observation Record",
+            "zh": "平台观察记录 Platform Observation Record"
+          },
+          "href": "../skills/prysai-platform-observation-record/SKILL.md",
+          "relation": "supporting"
         }
       ],
       "evaluations": [

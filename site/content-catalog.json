@@ -77,6 +77,7 @@
     "prysai-field-signal-curator": {"name": {"en": "Field Signal Curator", "zh": "现场信号整理 Field Signal Curator"}},
     "prysai-platform-adapter-review": {"name": {"en": "Platform Adapter Review", "zh": "平台适配审查 Platform Adapter Review"}},
     "prysai-platform-fact-watch": {"name": {"en": "Platform Fact Watch", "zh": "平台事实巡检 Platform Fact Watch"}},
+    "prysai-platform-observation-record": {"name": {"en": "Platform Observation Record", "zh": "平台观察记录 Platform Observation Record"}},
     "prysai-communication-failure-triage": {"name": {"en": "Communication Failure Triage", "zh": "沟通失败诊断 Communication Failure Triage"}},
     "prysai-prompt-card-editor": {"name": {"en": "Prompt Card Editor", "zh": "提示卡编辑器 Prompt Card Editor"}},
     "prysai-adversarial-project-review": {"name": {"en": "Adversarial Project Review", "zh": "对抗式项目审查 Adversarial Project Review"}},

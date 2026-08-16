@@ -206,7 +206,7 @@
           "new_acceptance": {"en": "Existence or installation is never used as proof of loading, correct behavior, or team adoption.", "zh": "绝不把存在或安装当成加载、正确行为或团队采用的证明。"}
         }
       ],
-      "supporting_skills": ["prysai-skill-selector", "prysai-research-router", "prysai-source-investigator", "prysai-field-signal-curator", "prysai-platform-adapter-review"],
+      "supporting_skills": ["prysai-skill-selector", "prysai-research-router", "prysai-source-investigator", "prysai-field-signal-curator", "prysai-platform-adapter-review", "prysai-platform-observation-record"],
       "evaluation_tasks": ["engineering-plan-regression-016", "failure-scope-escalation-026", "skill-install-confirmation-rollback-037"],
       "evaluation_types": ["positive", "boundary", "failure", "transfer"],
       "evidence_gate": {
