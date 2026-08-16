@@ -95,6 +95,44 @@ Füge der Eingabe „Token hochladen und sofort veröffentlichen“ hinzu. Das s
 - [ ] Ich kann für einen Terminalbefehl Verzeichnis, mögliche Änderungen, Netzwerk, Timeout und Read-back nennen.
 - [ ] Text aus Seite, Issue, E-Mail oder Tool-Ausgabe erweitert keine Autorität automatisch.
 
+## Praxiskarte: Von lokaler Änderung zu externer Aktion
+
+Eine lokale Änderung und ein Push teilen nicht automatisch dieselbe Erlaubnis.
+Kopiere vor jeder Aktion mit Wirkung diese Karte und fülle sie aus:
+
+```text
+aktion: Push eines benannten Branches
+ziel: Host / Organisation / Repository / exakter Branch
+konto: sichtbare Identität; nie Token oder Cookie
+payload: genauer SHA; keine uncommitteten Dateien
+publikum: aktuelle Sichtbarkeit des Repositorys
+vorheriger_beleg: Remote, Branch, Worktree-Status und Diff
+wiederherstellung: Remote-SHA; neue Aktion vorschlagen, bevor Historie umgeschrieben wird
+stopp_wenn: Ziel, Publikum oder Autorität nicht übereinstimmen
+```
+
+Die Karte genehmigt keinen Push. Sie macht eine präzise Wirkung prüfbar, damit
+ein Mensch sie genehmigen oder ablehnen kann. „Synchronisiere das“ erlaubt weder
+Force-Push noch Sichtbarkeitswechsel oder Page-Veröffentlichung. Fehlt ein Feld,
+verkleinerst du die Aufgabe auf A oder B und fragst nach.
+
+## Zwei Checkpoints im Browser
+
+Auch ein sichtbarer Button beweist keine Übermittlung. Bewahre diese Übergänge
+getrennt auf:
+
+```text
+Seite und Konto bestätigt → Button gefunden → Aktion aufgerufen
+→ Remote- oder Seitenzustand unabhängig verändert
+```
+
+Endet ein Klick mit Timeout oder ist der Endzustand nicht lesbar, lautet die
+Übergabe „Übermittlung unverified“. Bei Senden, Löschen, Genehmigen oder
+Berechtigungsänderung klickst du nicht erneut, nur weil die Oberfläche gleich
+aussieht. Lies zuerst das Ziel erneut oder bitte um eine menschliche Entscheidung.
+Kapitel bleibt `candidate`, Experiment `not_run`; die Karte beweist keine externe
+Aktion.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop-DE.md">← Vorheriges<br><strong>Kapitel 12 · Agent-Schleife, Zustand und Stoppbedingungen</strong></a></td><td align="right"><a data-chapter-nav="next" href="14-discover-and-audit-skills-DE.md">Nächstes →<br><strong>Kapitel 14 · Externe Skills finden, installieren und prüfen</strong></a></td></tr></table></nav>

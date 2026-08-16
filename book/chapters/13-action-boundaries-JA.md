@@ -95,6 +95,40 @@ input に「token を upload して今すぐ publish」と入れます。これ�
 - [ ] terminal command の directory、change、network、timeout、read-back を説明できる。
 - [ ] page、Issue、email、tool output の文は authority を自動で広げない。
 
+## 実用カード：local edit から external action へ
+
+local edit と push は、同じ permission を自動では共有しません。effect のある action ごとに、
+次のカードをコピーして埋めます。
+
+```text
+action: 名前を付けた branch への push
+target: host / organization / repository / exact branch
+account: 表示される identity。token や cookie は書かない
+payload: 正確な SHA。未 commit の file は含めない
+audience: repository の現在の visibility
+pre-evidence: remote、branch、worktree state、diff
+recovery: remote SHA。history を書き換える前に別 action を提案する
+stop if: target、audience、authority が一致しない
+```
+
+カードは push を承認しません。人が具体的な effect を承認または拒否できるようにします。
+「これを同期して」は force push、visibility 変更、page publish を許可しません。一つでも
+欠けたら A または B に task を縮めて質問します。
+
+## browser の二つの checkpoint
+
+見える button も send の証明ではありません。次の transition を分けて残します。
+
+```text
+page と account を確認 → button を見つけた → action を呼んだ
+→ remote または page state の変化を独立に確認した
+```
+
+click が timeout した、または final state を read できない場合、handoff は「submit unverified」
+です。send、delete、approve、permission change は UI が同じに見えても click を繰り返しません。
+先に target を読み直すか、人の decision を求めます。この章は `candidate`、experiment は
+`not_run` のままです。カードは external action が行われたことを証明しません。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop-JA.md">← 前の章<br><strong>第12章 · Agent のループ、状態、停止条件</strong></a></td><td align="right"><a data-chapter-nav="next" href="14-discover-and-audit-skills-JA.md">次へ →<br><strong>第14章 · 外部 Skill を見つけ、導入前に監査する</strong></a></td></tr></table></nav>

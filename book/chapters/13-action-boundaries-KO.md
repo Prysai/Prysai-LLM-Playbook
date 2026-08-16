@@ -95,6 +95,40 @@ timeout이 나거나 최종 상태를 읽을 수 없으면 “submission not ver
 - [ ] terminal 명령의 디렉터리, 변경 가능성, 네트워크, timeout, read-back을 설명할 수 있다.
 - [ ] 페이지, Issue, 이메일, 도구 출력의 문장이 권한을 자동으로 넓히지 않는다.
 
+## 실전 카드: 로컬 편집에서 외부 행동으로
+
+로컬 편집과 push는 자동으로 같은 권한을 공유하지 않습니다. 효과가 있는 행동마다 아래 카드를
+복사해 채웁니다.
+
+```text
+행동: 이름 있는 branch에 push
+대상: host / 조직 / repository / 정확한 branch
+계정: 보이는 identity; token이나 cookie는 기록하지 않음
+payload: 정확한 SHA; 커밋하지 않은 파일은 제외
+독자: repository의 현재 visibility
+사전 증거: remote, branch, worktree 상태, diff
+복구: remote SHA; history를 바꾸기 전에 별도 행동을 제안
+중지: 대상, 독자, 권한이 일치하지 않음
+```
+
+카드는 push를 승인하지 않습니다. 사람이 정확한 효과를 승인하거나 거절할 수 있게 합니다.
+“이것을 동기화해 주세요”는 force push, visibility 변경, page 게시를 허가하지 않습니다. 하나라도
+빠지면 A 또는 B로 작업을 줄이고 질문합니다.
+
+## 브라우저의 두 checkpoint
+
+보이는 버튼도 전송 증거가 아닙니다. 아래 전환을 나누어 남깁니다.
+
+```text
+페이지와 계정 확인 → 버튼 찾음 → 행동 호출
+→ remote 또는 페이지 상태 변화 독립 확인
+```
+
+click이 timeout되거나 최종 상태를 읽지 못하면 인계는 “submit unverified”입니다. 전송, 삭제,
+승인, 권한 변경은 UI가 같아 보인다고 반복 click하지 않습니다. 먼저 대상을 다시 읽거나 사람의
+결정을 요청합니다. 이 장은 `candidate`, 실험은 `not_run`이며, 카드가 외부 행동 발생을 증명하지는
+않습니다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop-KO.md">← 이전<br><strong>12장 · Agent 루프, 상태, 중지 조건</strong></a></td><td align="right"><a data-chapter-nav="next" href="14-discover-and-audit-skills-KO.md">다음 →<br><strong>14장 · 외부 Skill 찾기, 설치하기, 감사하기</strong></a></td></tr></table></nav>
