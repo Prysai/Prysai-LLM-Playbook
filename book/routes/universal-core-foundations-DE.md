@@ -1,10 +1,38 @@
 <!-- content_id: universal-core-foundations-route | locale: DE | language: de | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-15 -->
 
-# Die ersten universellen LLM-Kollaborationseinheiten
+# Universelle LLM-Zusammenarbeit: eine sichere erste Aufgabe und vier Grundlagen
 
 **Status:** `candidate`. **Ausführungsstatus:** `not_run`.
 
-Nutze diese Route, wenn sich Modell oder Produkt ändern, du aber weiterhin eine klare Aufgabe, begrenzte Aktionen, überprüfbare Nachweise und einen Wiederherstellungsplan brauchst. Sie ordnet vier stabile Lerneinheiten und einen Offline-Nahtstelltest. Sie ist kein vollständiges universelles Curriculum und behauptet nicht, dass Plattformen dieselben Werkzeuge, Berechtigungen, Erinnerungen oder Agent-Verhalten teilen.
+Beginne hier, wenn du einen gewöhnlichen Textchat nutzen möchtest und noch keine produktspezifische Einrichtung brauchst. Den ersten Versuch unten kannst du machen, ohne ChatGPT, Claude, Grok, Gemini, Codex oder ein anderes Produkt als dasselbe Produkt zu behandeln. Diese Route vermittelt nur eine kleine gemeinsame Entscheidungsebene: eine klare Aufgabe, begrenztes Material, eine sichtbare Prüfung und einen Stopp-Punkt. Sie behauptet nicht, dass Plattformen Werkzeuge, Berechtigungen, Erinnerungen, Konten, Preise oder Agent-Verhalten teilen.
+
+## Führe jetzt eine sichere erste Aufgabe aus
+
+Verwende nur die fiktive Mitteilung unten. Füge keine privaten Nachrichten, Kundenmaterialien, Zugangsdaten, unveröffentlichte Arbeit oder echte Dateien ein. Für diesen Versuch nutzt du kein Browsing, keine Tools, keine Uploads, keine Kontoänderungen, kein Senden und kein Veröffentlichen.
+
+Kopiere diese Anfrage in den gewählten Textchat:
+
+```text
+Ergebnis: Schreibe diese fiktive Vereinsmitteilung für neue Mitglieder um.
+Material: "Der Verein trifft sich am Dienstag um 18 Uhr. Bring ein Notizbuch mit. Der Raum wird später bestätigt."
+Antwortform: Schreibe zwei Sätze. Bewahre alle genannten Fakten. Setze fehlende Details in [eckige Klammern]. Liste danach die Fakten auf, die du bewahrt hast.
+Prüfung: Vergleiche Original und Umschreibung. Es dürfen keine neue Uhrzeit, kein neuer Raum, kein Beitrag, kein Kontakt und kein Versprechen erscheinen.
+Stopp: Nicht browsen, senden, veröffentlichen oder unbekannte Details annehmen.
+```
+
+Prüfe danach selbst drei Dinge:
+
+1. Kannst du jede Aussage der Umschreibung in der ursprünglichen Mitteilung wiederfinden?
+2. Hält die Antwort die Grenze von zwei Sätzen ein und zeigt sie die bewahrten Fakten?
+3. Fügt sie ein Detail hinzu, das `[unbekannt]` bleiben sollte?
+
+Wenn die letzte Antwort ja lautet, entferne das hinzugefügte Detail oder bitte nur um diese eine Korrektur. Stoppe, wenn der Chat Suchen, Senden, Veröffentlichen oder ein Tool vorschlägt oder mehr Material verlangt, als diese kleine Übung braucht. Eine gut formulierte Antwort beweist weder, dass ihre Fakten richtig sind, noch dass die Methode für jedes Produkt funktioniert.
+
+Dies ist eine Übung im Kandidatenstatus, keine universelle Prompt-Formel und keine Ergebnisaussage. Es gibt keine Evidenz aus produktübergreifenden Läufen, von Lernenden oder zur Wirksamkeit.
+
+## Von der ersten Aufgabe zu den vier Grundlagen
+
+Nach einem Versuch helfen dir die folgenden vier Einheiten zu verstehen, warum auch die kleine Anfrage ein Ergebnis, Material, eine Prüfung und eine Stopp-Zeile hatte. Sobald eine Aufgabe über einen reinen Textaustausch hinausgeht, werden diese Entscheidungen noch wichtiger.
 
 1. **Eine Absicht in einen Aufgabenvertrag überführen** – Ergebnis, relevanten Kontext, Aktionsgrenze, Abnahme, Stoppregel und Übergabe festlegen.
 2. **Behauptungen mit Nachweisen verbinden und begrenzt wiederherstellen** – die engste Behauptung prüfen und bei der ersten unbelegten Ebene stoppen.

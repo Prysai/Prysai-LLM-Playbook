@@ -1,10 +1,38 @@
 <!-- content_id: universal-core-foundations-route | locale: ES | language: es | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-15 -->
 
-# Unidades fundamentales de colaboración universal con LLM
+# Colaboración universal con LLM: una primera tarea segura y cuatro fundamentos
 
 **Estado:** `candidate`. **Estado de ejecución:** `not_run`.
 
-Usa esta ruta cuando cambie el modelo o el producto, pero sigas necesitando una tarea clara, una acción acotada, evidencia que otra persona pueda inspeccionar y un plan de recuperación. Reúne cuatro unidades de enseñanza estables y una comprobación de enlace sin conexión. No es un currículo universal completo ni afirma que las plataformas compartan herramientas, permisos, memoria o comportamiento de Agent.
+Empieza aquí si quieres usar un chat de texto normal y todavía no necesitas una configuración propia de un producto. Puedes hacer el primer intento de abajo sin tratar ChatGPT, Claude, Grok, Gemini, Codex u otro producto como si fueran lo mismo. Esta ruta solo enseña una pequeña capa común de decisión: una tarea clara, material limitado, una comprobación visible y un punto de parada. No afirma que las plataformas compartan herramientas, permisos, memoria, cuentas, precios ni comportamiento de Agent.
+
+## Haz ahora una primera tarea segura
+
+Usa solo el aviso ficticio de abajo. No pegues mensajes privados, material de clientes, credenciales, trabajo sin publicar ni archivos reales. En este intento no uses navegación, herramientas, cargas, cambios de cuenta, envíos ni publicaciones.
+
+Copia esta petición en el chat de texto que hayas elegido:
+
+```text
+Resultado: reescribe este aviso ficticio de un club para miembros nuevos.
+Material: "El club se reúne el martes a las 6. Trae un cuaderno. La sala se confirmará más tarde."
+Formato de respuesta: escribe dos frases. Conserva todos los hechos indicados. Pon cualquier detalle que falte entre [corchetes]. Después enumera los hechos que conservaste.
+Comprobación: compara el texto fuente y la reescritura. No puede aparecer una hora, sala, cuota, contacto ni promesa nuevos.
+Parada: no navegues, envíes, publiques ni supongas un detalle desconocido.
+```
+
+Después comprueba tú mismo tres cosas:
+
+1. ¿Puedes encontrar en el aviso original el respaldo de cada afirmación de la reescritura?
+2. ¿La respuesta respeta el límite de dos frases y muestra qué hechos conservó?
+3. ¿Añade un detalle que debería seguir siendo `[desconocido]`?
+
+Si la última respuesta es sí, elimina el detalle añadido o pide una sola corrección. Si el chat propone buscar, enviar, publicar, usar una herramienta o pide más material del necesario para este ejercicio, detente. Una respuesta bien redactada no demuestra que sus hechos sean verdaderos ni que el método funcione en todos los productos.
+
+Este es un ejercicio candidato, no una fórmula universal de prompts ni una afirmación de resultados. No tiene evidencia de ejecución entre modelos, de aprendizaje ni de efectividad.
+
+## Construye la base a partir de esa primera tarea
+
+Después de un intento, usa las cuatro unidades siguientes para entender por qué la petición pequeña tenía un resultado, material, comprobación y línea de parada. Son aún más importantes cuando la tarea deja de ser un intercambio solo de texto.
 
 1. **Convierte una intención en un contrato de tarea:** define el resultado, el contexto pertinente, el límite de acción, la aceptación, la regla de parada y la entrega.
 2. **Relaciona las afirmaciones con la evidencia y recupérate dentro de un límite:** comprueba la afirmación más acotada y detente en la primera capa que no tenga respaldo.
