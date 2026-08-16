@@ -3,8 +3,9 @@
 This is a pre-release audit, not a translation-quality or learner-outcome test.
 It checks 22 chapters and 18 Labs registered in the locale matrix. A release is
 blocked when a localized source links its generated previous/next navigation to
-another locale or when a registered existing file lacks the identity/header
-needed for a reviewer to compare it with the canonical source.
+another locale or when a registered existing file lacks the identity, declared
+document language, or reader-facing title needed for a reviewer to compare it
+with the canonical source.
 """
 
 from __future__ import annotations
@@ -20,8 +21,15 @@ MATRIX = ROOT / "docs/governance/locale-matrix.yaml"
 COURSE_KINDS = {"chapter", "lab"}
 LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE")
 MARKDOWN_LINK = re.compile(r"(?:href=\"|\]\()([^\"\)#]+\.md)(?:#[^\"\)]*)?", re.IGNORECASE)
-IDENTITY = re.compile(r"<!--\s*content_id:\s*([^|\s]+)\s*\|\s*locale:\s*([A-Z]{2})\b", re.IGNORECASE)
-H1 = re.compile(r"^#\s+\S", re.MULTILINE)
+IDENTITY = re.compile(
+    r"<!--\s*content_id:\s*([^|\s]+)\s*\|\s*locale:\s*([A-Z]{2})\s*"
+    r"\|\s*language:\s*([^|\s]+)",
+    re.IGNORECASE,
+)
+FRONT_MATTER = re.compile(r"^\s*(?:<!--.*?-->\s*)?---\s*\n(.*?)\n---", re.DOTALL)
+FRONT_MATTER_ID = re.compile(r"^id:\s*([^\s]+)\s*$", re.MULTILINE)
+FRONT_MATTER_TITLE = re.compile(r'^title:\s*["\']?(.+?)["\']?\s*$', re.MULTILINE)
+H1 = re.compile(r"^#\s+(\S.*)$", re.MULTILINE)
 
 
 def check_course_links(path: Path, locale: str, problems: list[str]) -> None:
@@ -43,6 +51,52 @@ def check_course_links(path: Path, locale: str, problems: list[str]) -> None:
                 f"{path.relative_to(ROOT)}: cross-locale course link {target} "
                 f"(expected a -{locale}.md target)"
             )
+
+
+def check_reader_identity(
+    path: Path,
+    content_id: str,
+    locale: str,
+    expected_language: str,
+    problems: list[str],
+) -> None:
+    """Verify the source metadata that makes a localized page reviewable.
+
+    A same-locale link is not sufficient if the file itself was copied from the
+    wrong unit or declares a different document language.  This also requires
+    a non-empty reader-facing title. It remains a structural guard: it cannot
+    assess fluency, semantic title equivalence, or translation quality.
+    """
+
+    text = path.read_text(encoding="utf-8")
+    display_path = path.relative_to(ROOT)
+    identity = IDENTITY.search(text)
+    if not identity:
+        problems.append(f"{display_path}: missing content identity with locale and language")
+    else:
+        actual_id, actual_locale, actual_language = identity.groups()
+        if actual_id != content_id or actual_locale.upper() != locale:
+            problems.append(f"{display_path}: content identity must be {content_id} / {locale}")
+        if actual_language != expected_language:
+            problems.append(
+                f"{display_path}: content identity language must be {expected_language}, got {actual_language}"
+            )
+
+    front_matter = FRONT_MATTER.search(text)
+    # Chapters predate the Lab front-matter contract, so the reader-facing H1
+    # is their title source.  When a file does opt into front matter, however,
+    # its ID and title must be usable rather than stale copied metadata.
+    if front_matter:
+        metadata = front_matter.group(1)
+        metadata_id = FRONT_MATTER_ID.search(metadata)
+        if not metadata_id or metadata_id.group(1) != content_id:
+            problems.append(f"{display_path}: front-matter id must be {content_id}")
+        metadata_title = FRONT_MATTER_TITLE.search(metadata)
+        if not metadata_title or not metadata_title.group(1).strip():
+            problems.append(f"{display_path}: front matter is missing a non-empty title")
+    h1 = H1.search(text)
+    if not h1:
+        problems.append(f"{display_path}: missing reader-facing H1 title")
 
 
 def main() -> int:
@@ -71,12 +125,8 @@ def main() -> int:
                 totals[locale]["missing"] += 1
                 continue
             totals[locale]["available"] += 1
-            text = path.read_text(encoding="utf-8")
-            identity = IDENTITY.search(text)
-            if not identity or identity.group(1) != content_id or identity.group(2).upper() != locale:
-                problems.append(f"{path.relative_to(ROOT)}: content identity must be {content_id} / {locale}")
-            if not H1.search(text):
-                problems.append(f"{path.relative_to(ROOT)}: missing reader-facing H1 title")
+            expected_language = matrix["locales"][locale]["html_lang"]
+            check_reader_identity(path, content_id, locale, expected_language, problems)
             check_course_links(path, locale, problems)
 
     # The learner begins at these entry documents, not only inside a chapter or
