@@ -4,7 +4,7 @@
 
 **Status:** `candidate`. **Experiment:** `not_run`. Dieses Kapitel ordnet Abschlussbehauptungen ihren Belegen zu und zeigt, wie ein unsicherer Ablauf wieder unter Kontrolle kommt. Es ist keine lokale Reproduktion, offizielle Diagnose oder Produktionsnachweis.
 
-## Das Problem
+## Das Problem dieses Kapitels
 
 Ein Agent kann eine überzeugende Abschlusszusammenfassung für ein falsches, zu weitgehendes, nie ausgeführtes oder im falschen Umfeld geprüftes Ergebnis schreiben. Die Antwort ist weder blindes Vertrauen noch dauerhafter Verdacht: Zerlege die Zusammenfassung in einzelne Behauptungen und ordne jeder den kleinsten Beleg zu, der sie im angegebenen Umfang tragen kann.
 
@@ -17,6 +17,14 @@ Ein Agent kann eine überzeugende Abschlusszusammenfassung für ein falsches, zu
 | Eine Tatsache ist offiziell | Autoritative URL, Datum, Umfang und Verantwortlichkeit | Zugriff dieses Kontos oder lokale Konfiguration |
 
 Ein schwacher Beleg ersetzt nicht alle anderen. Ein Build beweist keine Laufzeit, ein Screenshot keine Nachfrage und eine offizielle URL keinen Zugriff.
+
+## Lernziele
+
+Du kannst eine Abschlusszusammenfassung in einzeln prüfbare Behauptungen zerlegen, für jede den passenden Mindestbeleg benennen, einen ersten unbelegten Übergang finden und einen sicheren nächsten Check oder eine ehrliche Übergabe schreiben. Die Übung beweist weder Produktzuverlässigkeit noch Lernwirkung ohne einen gesonderten Lauf und Review.
+
+## Praxisfälle: Eine überzeugende Zusammenfassung ohne passenden Beleg
+
+Eine Antwort kann „fertig“, „alle Tests bestanden“ oder „Lesende verstehen es“ sagen, ohne Diff, Testausgabe oder Beobachtung der Lesenden zu liefern. Das ist keine Behauptung über ein bestimmtes Modell. Es ist ein Anlass, nur die erste fehlende Stufe zwischen Anfrage, Autorisierung, Tool, Aktion, Ergebnis und Review zu prüfen.
 
 ## Den ersten Bruch finden
 
@@ -84,9 +92,19 @@ genauen Ort fest, an dem sicher weitergearbeitet werden kann, ohne aus einem
 
 ## Experiment und Grenze
 
+### Vorbereitung
+
+Lege in einem lokalen, wegwerfbaren Ordner eine bereinigte Zusammenfassung, einen Diff, eine Testausgabe, Quellenlinks und genau ein absichtlich fehlendes Belegstück ab. Nutze keine Geheimnisse, Produktion, Installation, Anmeldung oder externe Änderung.
+
+### Aufgabe
+
 Bereite eine bereinigte Zusammenfassung, Diff, Testausgabe, Quellenlinks und ein absichtlich fehlendes Belegstück vor. Erstelle mit Lab 003 eine Tabelle aus Behauptung, Umfang, Beleg, Status und nächstem Check. Lehne „alle Tests bestanden“ ohne Ausgabe auch bei sicherem Ton ab.
 
 Halte Fakt-, Ausführungs- und Nutzerwirkungsbehauptung getrennt und erkläre, warum sie keinen schwachen Beleg teilen. Keine Produktionsdienste verbinden oder externe Systeme ändern. Wiederherstellung kann einen Zustand wieder beobachtbar machen, macht ihn aber nicht automatisch `verified`.
+
+### Belege
+
+Bewahre die Claim-Evidence-Tabelle, alle benannten Pfade und Ausgaben, den Status jeder Zeile, die erste Lücke und den nächsten sicheren Check auf. Fehlt eine Ausführung, schreibe `not_run`; erfinde keine Testausgabe aus einem selbstsicheren Ton.
 
 ## Geführte Übung: Eine sichere Zusammenfassung ist noch kein Nachweis
 
@@ -128,7 +146,7 @@ Die Karte macht aus „es hat nicht funktioniert“ einen untersuchbaren nächst
 Schritt. Sie beweist nicht die Wirksamkeit eines Modells, Skills oder Kurses.
 Sie trennt nur Beobachtung, Lücke und weiterhin sichere Handlung.
 
-## Absichtlicher Fehler und Rückblick
+## Absichtlicher Fehler und Grenze
 
 Schreibe einmal eine Übergabe mit „Lesende verstehen den Text“, obwohl niemand
 befragt wurde. Markiere die Behauptung, die über ihren Beleg hinausgeht, und
@@ -136,6 +154,25 @@ formuliere sie ehrlich um. Erkläre danach, welcher kleinste Nachweis den Status
 ändern könnte und was trotzdem außerhalb des Umfangs bliebe. Bewahre die Antwort
 beim Diff auf. Ohne Lauf- und Review-Aufzeichnungen bleibt dieses Kapitel
 `candidate` und diese Übung `not_run`.
+
+## Reflexion
+
+Welcher Satz in deiner Tabelle war am verführerischsten zu übertreiben? Welcher kleinste Check würde ihn enger stützen, und welche wichtige Behauptung bliebe trotz dieses Checks offen?
+
+## Transferaufgabe
+
+Nutze dieselbe Karte für eine Sprachübung oder eine Quellenrecherche. Bei Sprache unterscheide eine assistierte Antwort von einem späteren, unbekannten Abruf ohne Hilfe. Bei Recherche trenne einen gefundenen Link von einer überprüften Aussage. Übernimm Status, Belege und Grenzen, aber nicht die Behauptung aus diesem Kapitel.
+
+## Abnahme-Checkliste
+
+- [ ] Jede Abschlussbehauptung hat einen Umfang, einen Beleg oder den Status `unverified`.
+- [ ] Ich kann Diff, Testausgabe, Laufzeitbeobachtung, Render-Prüfung und Nutzerbeobachtung unterscheiden.
+- [ ] Ich habe die erste unbelegte Stufe gefunden und nur einen sicheren nächsten Check gewählt.
+- [ ] Meine Übergabe benennt Änderung, Evidenz, Unbekanntes und nicht ausgeführte Nebenwirkungen.
+
+## Quellen und Wartungsgrenze
+
+Die Claim-Evidence-Karte und der Wiederherstellungsablauf sind stabile Lehrmethoden. Produktstatus, Tools, Berechtigungen und öffentliche Symptome sind veränderlich. Prüfe vor einer aktuellen Produktbehauptung die [offiziellen Faktenkarten](../evidence-library-DE.md#source-notes) und den [Feldproblemindex](../evidence-library-DE.md#source-notes). Sie ersetzen keinen lokalen Lauf, keinen unabhängigen Review und keine Lernbeobachtung.
 
 <!-- chapter-navigation:start -->
 <hr>
