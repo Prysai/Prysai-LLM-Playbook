@@ -6,7 +6,7 @@
 
 ChatGPT, Claude, Gemini, DeepSeek, Grok und Codex sprechen alle im Gespräch mit
 dir, aber sie sind nicht dasselbe Produkt. Diese Route behält den übertragbaren
-Kern der [Universal Core Foundations route](universal-core-foundations-de.md)
+Kern der [Universal Core Foundations route](universal-core-foundations-DE.md)
 und ergänzt jeweils einen ehrlichen Adapter: was sich wirklich unterscheidet,
 was du heute auf jeder Plattform gefahrlos ausprobieren kannst und was du in
 offiziellen Quellen prüfen musst, bevor du einer plattformspezifischen
@@ -33,8 +33,8 @@ Behauptung über eine Plattform weitergibst, stelle drei Fragen:
 Wenn du nicht alle drei beantworten kannst, behandle die Behauptung als
 `unknown` und notiere die nächste Prüfung. Die Pflegemethode hinter dieser
 Regel beschreiben der
-[Platform Adapter Review Skill](../skills/prysai-platform-adapter-review/SKILL.md)
-und der [Platform Fact Watch](../skills/prysai-platform-fact-watch/SKILL.md).
+[Platform Adapter Review Skill](../../skills/prysai-platform-adapter-review/SKILL.md)
+und der [Platform Fact Watch](../../skills/prysai-platform-fact-watch/SKILL.md).
 
 ## Die Plattformübersicht auf einer Seite
 
@@ -45,7 +45,7 @@ und der [Platform Fact Watch](../skills/prysai-platform-fact-watch/SKILL.md).
 | Gemini | Web-Chat, App, API | Google-Kontoumfang, Google-Workspace-Integration, App-Erweiterung | [Erste Aufgabe in Gemini](#gemini-first-task) |
 | DeepSeek | Web-Chat, App, API | Modellwahl und Kontextfenster variieren je nach Release; offizielle Modellseite prüfen | [Erste Aufgabe in DeepSeek](#deepseek-first-task) |
 | Grok | Web-Chat, App | X-Konto-Integration, Zugriff auf Echtzeit-Beiträge, Rhythmus der Modell-Releases | [Erste Aufgabe in Grok](#grok-first-task) |
-| Codex | Desktop, CLI, IDE, Cloud, API | der Flaggschiff-Übungsstrang des Playbook: Dateien, Werkzeuge, Skills, Agents, Berechtigungen | [Codex-Pfad](../routes/first-safe-change-de.md) |
+| Codex | Desktop, CLI, IDE, Cloud, API | der Flaggschiff-Übungsstrang des Playbook: Dateien, Werkzeuge, Skills, Agents, Berechtigungen | [Codex-Pfad](../routes/first-safe-change-DE.md) |
 
 Diese Tabelle ist Orientierung, keine Gleichwertigkeitsaussage. Jede Zeile
 braucht weiterhin eine eigene aktuelle Quelle, bevor eine Lektion davon
@@ -92,7 +92,7 @@ oben aus. Notiere dann einen Plattform-Unterschied, den du tatsächlich
 beobachtest: Erwähnt die Antwort Browsing, Speicher oder einen Share-Link?
 Halte fest, was du gesehen hast, nicht was du annimmst. Für eine
 quellengestützte Prüfung einer ChatGPT-Behauptung nutze den
-[Source Investigator Skill](../skills/prysai-source-investigator/SKILL.md) –
+[Source Investigator Skill](../../skills/prysai-source-investigator/SKILL.md) –
 die offiziellen OpenAI-Hilfeseiten sind der Eigentümer der Produktfakten.
 
 <span id="claude-code-first-task"></span>
@@ -109,7 +109,7 @@ Datei `CLAUDE.md`; behandle alles, was dort steht, als Anweisungen, denen ein
 Modell folgen kann, und prüfe sie wie jede Projektregel. Starte Claude Code
 erst dann in einem echten Repository mit Zugangsdaten, Produktionsdaten oder
 destruktiven Befehlen, wenn du die Disziplin der
-[First Safe Change route](first-safe-change-de.md) abgeschlossen hast.
+[First Safe Change route](first-safe-change-DE.md) abgeschlossen hast.
 
 <span id="gemini-first-task"></span>
 
@@ -150,20 +150,20 @@ Hilfeseiten, bevor du sie weitergibst.
 
 Codex ist der Flaggschiff-Übungsstrang des Playbook, weil er den vollständigen
 Kreislauf zeigt: Kontext, Werkzeuge, Berechtigungen, Skills, Agents und
-Verifikation. Beginne mit der [First Safe Change route](first-safe-change-de.md)
-und [Lab 001](../labs/lab-001-first-safe-task-de.md) in einem Wegwerf-Projekt.
+Verifikation. Beginne mit der [First Safe Change route](first-safe-change-DE.md)
+und [Lab 001](../labs/lab-001-first-safe-task-DE.md) in einem Wegwerf-Projekt.
 Wechsle erst dann zu einer Cloud-Oberfläche oder einem echten Repository, wenn
 dir die Gewohnheit vertraut ist, erst zu prüfen und dann zu bearbeiten.
 
 ## Nach der ersten Aufgabe: Welchem Übungsstrang solltest du folgen?
 
-- Du willst eine reine Text-Einstiegsübung: [Beginner Practice Pack](../communication-clinic-de.md).
+- Du willst eine reine Text-Einstiegsübung: [Beginner Practice Pack](../communication-clinic-DE.md).
 - Du willst den Flaggschiff-Übungsstrang mit Dateien und Werkzeugen in der
-  Tiefe: [First Safe Change](first-safe-change-de.md).
-- Du willst zuerst das plattformneutrale Fundament: [Universal Core Foundations](universal-core-foundations-de.md).
-- Du willst zwei Plattformen fair vergleichen: [LLM Comparison Protocol](../skills/prysai-llm-comparison-protocol/SKILL.md).
+  Tiefe: [First Safe Change](first-safe-change-DE.md).
+- Du willst zuerst das plattformneutrale Fundament: [Universal Core Foundations](universal-core-foundations-DE.md).
+- Du willst zwei Plattformen fair vergleichen: [LLM Comparison Protocol](../../skills/prysai-llm-comparison-protocol/SKILL.md).
 - Du willst wissen, ob eine Plattform-Lektion in den Lehrplan gehört:
-  [Platform Adapter Review](../skills/prysai-platform-adapter-review/SKILL.md).
+  [Platform Adapter Review](../../skills/prysai-platform-adapter-review/SKILL.md).
 
 ## Belegstand und Grenzen
 
@@ -172,8 +172,8 @@ aber es ist kein Lernenden-Lauf, kein plattformübergreifender Lauf und keine
 unabhängige Prüfung dokumentiert. Die Beschreibungen der einzelnen Plattformen
 oben sind Orientierung, abgeleitet aus Dokumentation des Anbieters und
 datierten Forschungsbelegen
-([cross-LLM beginner prompting source receipt](../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md),
-[platform teaching boundary card](../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md)).
+([cross-LLM beginner prompting source receipt](../../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md),
+[platform teaching boundary card](../../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md)).
 Sie sind kein Beleg dafür, dass sich Plattformen identisch verhalten, dass eine
 Aufgabe überall gelingt oder dass Produktfunktionen gleichwertig sind.
 Plattformspezifische Befehle, Berechtigungen, Preise und Verfügbarkeit sind
