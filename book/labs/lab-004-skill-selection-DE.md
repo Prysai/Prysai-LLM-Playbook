@@ -104,7 +104,7 @@ ohne die Qualität der finalen Belege zu senken?
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-lab-nav="previous" href="lab-003-evidence-review-DE.md" aria-label="Vorheriges Lab: Lab 003 · Eine Fertigmeldung prüfen">← Vorheriges<br><strong>Lab 003 · Eine Fertigmeldung prüfen</strong></a></td>
-      <td align="right"><a data-lab-nav="next" href="../table-of-contents-DE.md" aria-label="Zum deutschen Inhaltsverzeichnis: Lab 005 ist noch nicht übersetzt">Nächstes Lab in Arbeit →<br><strong>Verfügbarkeit von Lab 005 ansehen</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-005-design-a-skill-DE.md" aria-label="Nächstes Lab: Lab 005 · Eine wiederholte Methode in einen klar begrenzten Skill überführen">Weiter →<br><strong>Lab 005 · Eine wiederholte Methode in einen klar begrenzten Skill überführen</strong></a></td>
     </tr>
   </table>
 </nav>
