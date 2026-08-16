@@ -115,6 +115,7 @@ REQUIRED = (
     "scripts/validate_evidence_review_candidate.py",
     "scripts/test_evidence_review_candidate.py",
     "scripts/validate_project_structure.py",
+    "scripts/run_tests.py",
     "scripts/validate_content_completeness.py",
     "scripts/audit_locale_release_paths.py",
     "scripts/localize_reader_evidence_links.py",

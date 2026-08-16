@@ -5,6 +5,7 @@
     "node": ">=20"
   },
   "scripts": {
+    "test": "python scripts/run_tests.py",
     "test:browser": "node scripts/browser_smoke.mjs"
   },
   "devDependencies": {

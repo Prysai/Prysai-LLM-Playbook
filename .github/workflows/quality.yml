@@ -49,6 +49,9 @@ jobs:
       - name: Install Chromium for browser checks
         run: npx playwright install --with-deps chromium
 
+      - name: Run unified regression suite
+        run: python scripts/run_tests.py
+
       - name: Validate release evidence contract
         run: python scripts/build_release_evidence.py --check
 
