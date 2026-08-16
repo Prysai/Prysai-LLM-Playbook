@@ -118,38 +118,38 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/guides/learning-practice-contract-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15"
         },
         "es": {
           "path": "book/guides/learning-practice-contract-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15"
         },
         "ja": {
           "path": "book/guides/learning-practice-contract-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15"
         },
         "ko": {
           "path": "book/guides/learning-practice-contract-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15"
         },
         "de": {
           "path": "book/guides/learning-practice-contract-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15"
         }
       }
     },
