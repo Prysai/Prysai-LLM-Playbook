@@ -4,7 +4,7 @@
 
 **状態：** `candidate`。**実験：** `not_run`。この章は設計方法を定義します。特定 host が Skill を discover、load、execute したことは証明しません。
 
-## 問題
+## この章が解決する問題
 
 一度うまくいった session だけで prompt を Skill にするのは危険です。書かれていない事実に依存し、不要な permission を求め、credential を前提にし、流行語だけで trigger するかもしれません。役に立つ Skill は、繰り返せる task class に、限定した action と確認可能な evidence を対応させる versioned method package です。
 
@@ -12,7 +12,11 @@
 
 Skill は model、tool、permission、connector、human approval の代わりではありません。
 
-## 現実の入口：Skill が動く前に失敗することがある
+## 学習目標
+
+繰り返す task に本当に Skill が必要かを判断し、trigger と non-trigger のある contract を書き、method、data、execution を分け、positive、boundary、failure、transfer の case で candidate を review できます。`SKILL.md` の存在や一回の run だけでは、すべての host、model、user における reliability を証明しません。
+
+## 現実の問題：Skill が動く前に失敗することがある
 
 ### discovery は独立した段階
 
@@ -81,11 +85,21 @@ critical safety rule を optional reference に隠しません。file exists は
 
 一変数だけを変え、artifact に見える signal を残す intentional failure を加えます。rollback は target、baseline、step、read-back check を定義します。「undo」だけでは不十分です。
 
-## 実践と境界
+## 実験と境界
+
+### 準備
+
+少なくとも二回行った、local で non-sensitive な task を選びます。disposable input、明確な acceptance、read-only boundary を決めます。credential、install、network、license が不明な他者の Skill content は使いません。
+
+### タスク
 
 Markdown link review、research brief の source check、release handoff など、二回以上行った低リスク method を選びます。contract、positive case、trigger しない near miss、missing input、visible failure、rollback check を作り、artifact が何を証明し、何が unknown かを表にします。
 
 宣言した environment でこれらの case を記録し、独立 review を受けるまで、その Skill は `candidate` です。discovery、load、execution、business impact を主張しません。
+
+### 証拠
+
+contract、version、non-sensitive input、expected と actual output、stop point、load した resource、host/surface の正確な observation を保存します。観察していない layer は `not_observed` とし、directory だけから execution record を作りません。
 
 ## 観察できる設計フロー
 
@@ -164,7 +178,7 @@ scope: local relative path only; remote availability not checked
 
 次に `https://` link を含む boundary case を試します。network へ出ず、out of scope / unknown と残すべきです。link base がない場合も、正しい答えは構造を推測することではなく、質問または stop です。
 
-## 小さな実験と振り返り
+## 小さな実験と境界
 
 1. 安全に read できる Markdown file を選ぶ。secret や private material は model に渡さない。
 2. goal、scope、acceptance を protocol に記入する。
@@ -241,6 +255,26 @@ response ではなく、その判断が Skill にする候補です。
 request を別の method に譲るか、reviewer は何で result を確認できるかを尋ねます。
 「すべてを自動化する」は受け取りません。役立つ rule には decision、boundary、reviewable
 signal が必要です。
+
+## 振り返り
+
+Skill の中で再利用できる decision と、この file または host だけに属するものは何か。Skill が明示的に引き受けてはいけない request は何か。permission や scope を広げずに、次の未観察 layer を確かめる evidence は何か。
+
+## 移行タスク
+
+contract を learning または research の task に移します。learning Skill は practice cycle と後の recall task を組織できますが、fluency や mastery を主張しません。research Skill は source と uncertainty を整理できますが、見つけた link を確認済みの fact にしません。trigger、non-trigger、stop rule、evidence boundary は保ちます。
+
+## 受け入れチェックリスト
+
+- [ ] candidate は「AI を強くする」ではなく、名前のある繰り返す decision を解く。
+- [ ] trigger、non-trigger、input、allowed action、stop、reviewable output がある。
+- [ ] method、project-specific data、deterministic execution を分けている。
+- [ ] positive、boundary、failure、transfer に expected result または正直な `not_run` がある。
+- [ ] external material は source、license、side effect を review してからだけ採用する。
+
+## 出典と保守の境界
+
+Skill の decision method は project-authored です。host behavior、discovery、Plugin、MCP、permission、external candidate は変わります。現在の claim は[公式ファクトカード](../evidence-library-JA.md#source-notes)、[Skill candidate record](../evidence-library-JA.md#source-notes)、具体的な license source で確認します。どれも記録した host での run の代わりにはなりません。
 
 ## 採用前の四つの case
 

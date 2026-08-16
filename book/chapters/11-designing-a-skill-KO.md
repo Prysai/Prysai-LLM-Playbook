@@ -4,7 +4,7 @@
 
 **상태:** `candidate`. **실험:** `not_run`. 이 장은 설계 방법을 정합니다. 특정 host가 Skill을 발견, 로드, 실행했다는 증거는 아닙니다.
 
-## 문제
+## 이 장에서 해결하는 문제
 
 한 번 잘 된 세션만으로 프롬프트를 Skill로 만들면 위험합니다. 기록하지 않은 사실에 의존하거나, 필요 없는 권한을 요구하거나, 자격 증명을 가정하거나, 유행어만으로 실행될 수 있습니다. 쓸모 있는 Skill은 반복 가능한 작업 범주를 제한된 행동과 검사 가능한 증거에 연결하는 버전 관리 방법 패키지입니다.
 
@@ -12,7 +12,11 @@
 
 Skill은 모델, 도구, 권한, 연결기, 사람의 승인을 대신하지 않습니다.
 
-## 현실의 출발점: Skill이 실행되기 전에 실패할 수 있습니다
+## 학습 목표
+
+반복 task에 정말 Skill이 필요한지 판단하고, trigger와 non-trigger가 있는 contract를 쓰며, method, data, execution을 나누고, positive, boundary, failure, transfer 사례로 candidate를 검토할 수 있습니다. `SKILL.md` 존재나 한 번의 run만으로 모든 host, model, user에서의 reliability를 증명하지 않습니다.
+
+## 실제 문제: Skill이 실행되기 전에 실패할 수 있습니다
 
 ### discovery는 독립된 단계입니다
 
@@ -81,11 +85,21 @@ trigger에는 작업 의도, 필요한 입력, 방법의 소유권, 허용 가�
 
 한 변수만 바꾸고 산출물에 보이는 신호를 남기는 의도적 실패를 넣습니다. rollback은 대상, 기준선, 단계, 읽어 본 성공 검사가 필요합니다. “되돌리기”만으로는 충분하지 않습니다.
 
-## 연습과 한계
+## 실험과 한계
+
+### 준비
+
+적어도 두 번 수행한 local 비민감 task를 고릅니다. disposable input, 명확한 acceptance, read-only boundary를 정합니다. credential, install, network, license가 불명확한 다른 사람의 Skill content는 사용하지 않습니다.
+
+### 작업
 
 Markdown 링크 검토, 조사 보고서 출처 확인, 릴리스 인계처럼 두 번 이상 한 저위험 방법을 고릅니다. 계약, 긍정 사례, 실행하면 안 되는 근접 사례, 빠진 입력, 보이는 실패, rollback 검사를 만들고, 산출물이 무엇을 증명하고 무엇이 unknown인지 표로 남깁니다.
 
 선언한 환경에서 이 사례들을 기록하고 독립 검토를 받기 전까지 Skill은 `candidate`입니다. 발견, 로드, 실행, 사업 효과를 주장하지 않습니다.
+
+### 증거
+
+contract, version, 비민감 input, expected와 actual output, stop point, 로드한 resource, host/surface의 정확한 observation을 보존합니다. 관찰하지 않은 layer는 `not_observed`로 적고 directory만으로 execution record를 만들지 않습니다.
 
 ## 관찰 가능한 설계 흐름
 
@@ -164,7 +178,7 @@ scope: local relative path only; remote availability not checked
 
 그다음 `https://` 링크가 있는 경계 사례를 실행합니다. 네트워크에 나가지 않고 범위 밖 또는 unknown으로 남겨야 합니다. 링크 기준이 빠진 경우에도 구조를 추측하지 말고 질문하거나 멈추는 것이 맞습니다.
 
-## 작은 실험과 되돌아보기
+## 작은 실험과 경계
 
 1. 안전하게 읽을 수 있는 Markdown 파일을 고른다. 비밀이나 사적인 자료를 모델에 주지 않는다.
 2. 목표, 범위, 수용 조건을 작업 계약에 채운다.
@@ -240,6 +254,26 @@ Skill 후보입니다.
 요청을 다른 방법에 넘겨야 하는지, 검토자가 무엇으로 결과를 확인할지를 묻습니다. “모두
 자동화한다”는 답을 받지 않습니다. 쓸모 있는 규칙에는 결정, 경계, 검토 가능한 신호가 있어야
 합니다.
+
+## 회고
+
+Skill 안에서 재사용 가능한 decision과 이 file 또는 host에만 속한 것은 무엇인가요? Skill이 명시적으로 맡지 말아야 할 request는 무엇인가요? permission이나 scope를 넓히지 않고 다음 미관찰 layer를 확인할 evidence는 무엇인가요?
+
+## 전이 과제
+
+contract를 learning 또는 research task에 옮깁니다. learning Skill은 practice cycle과 나중 recall task를 조직할 수 있지만 fluency나 mastery를 주장하지 않습니다. research Skill은 source와 uncertainty를 정리할 수 있지만 찾은 link를 확인된 fact로 만들지 않습니다. trigger, non-trigger, stop rule, evidence boundary는 유지합니다.
+
+## 수용 체크리스트
+
+- [ ] candidate는 “AI를 더 좋게”가 아니라 이름 붙은 반복 decision을 해결한다.
+- [ ] trigger, non-trigger, input, allowed action, stop, reviewable output이 있다.
+- [ ] method, project-specific data, deterministic execution을 나눈다.
+- [ ] positive, boundary, failure, transfer에 expected result 또는 정직한 `not_run`이 있다.
+- [ ] external material은 source, license, side effect를 review한 뒤에만 채택한다.
+
+## 출처 및 유지보수 경계
+
+Skill decision method는 project-authored입니다. host behavior, discovery, Plugin, MCP, permission, external candidate는 변합니다. 현재 claim은 [공식 사실 카드](../evidence-library-KO.md#source-notes), [Skill candidate record](../evidence-library-KO.md#source-notes), 구체 license source에서 확인합니다. 어느 것도 기록한 host의 run을 대신하지 않습니다.
 
 ## 채택 전 네 가지 사례
 
