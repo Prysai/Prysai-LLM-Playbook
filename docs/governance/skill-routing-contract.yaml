@@ -28,9 +28,18 @@
       }
     ],
     "platform_adapters": [
-      {"id": "codex", "status": "candidate"},
-      {"id": "claude-code", "status": "proposed"},
-      {"id": "grok", "status": "proposed"}
+      {
+        "id": "codex",
+        "status": "candidate"
+      },
+      {
+        "id": "claude-code",
+        "status": "proposed"
+      },
+      {
+        "id": "grok",
+        "status": "proposed"
+      }
     ],
     "equivalence_rule": "Never infer command, tool, permission, runtime, interface, or behavior equivalence between platforms. An equivalence claim requires an explicitly scoped compatibility record and current authoritative evidence for every named platform."
   },
@@ -282,6 +291,32 @@
         "prysai-evidence-review",
         "prysai-task-protocol"
       ]
+    },
+    {
+      "id": "prysai-language-partner",
+      "intent": "typed_language_exchange_practice",
+      "skill_path": "skills/prysai-language-partner/SKILL.md",
+      "allowed_handoffs": [
+        "prysai-practice-target",
+        "prysai-learning-coach",
+        "prysai-dialogue-brief",
+        "prysai-source-investigator",
+        "prysai-research-router",
+        "prysai-task-protocol"
+      ]
+    },
+    {
+      "id": "prysai-interview-rehearsal",
+      "intent": "interview_answer_rehearsal",
+      "skill_path": "skills/prysai-interview-rehearsal/SKILL.md",
+      "allowed_handoffs": [
+        "prysai-practice-target",
+        "prysai-learning-coach",
+        "prysai-dialogue-brief",
+        "prysai-source-investigator",
+        "prysai-research-router",
+        "prysai-task-protocol"
+      ]
     }
   ],
   "fixtures": [
@@ -289,29 +324,73 @@
       "id": "single-dialogue-brief",
       "kind": "single",
       "text": "Help me write the first message to ask for a concise rewrite of this fictional workshop note, while preserving its facts.",
-      "signals": {"intents": ["first_turn_dialogue_brief"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-dialogue-brief", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "first_turn_dialogue_brief"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-dialogue-brief",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "neighbor-dialogue-brief",
       "kind": "near_neighbor",
       "text": "I have not sent it yet; turn my safe text-only request into one first message with a check and a stop boundary.",
-      "signals": {"intents": ["first_turn_dialogue_brief"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-dialogue-brief", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "first_turn_dialogue_brief"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-dialogue-brief",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "single-first-turn-check",
       "kind": "single",
       "text": "Here is my unsent, text-only request. Check whether it names an outcome, context, response, limits, a check, and a stopping receipt; do not rewrite it.",
-      "signals": {"intents": ["first_turn_request_check"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-first-turn-check", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "first_turn_request_check"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-first-turn-check",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "neighbor-first-turn-check",
       "kind": "near_neighbor",
       "text": "Before I send this low-risk chat request, label only the material gaps. Keep my wording and do not write a replacement message.",
-      "signals": {"intents": ["first_turn_request_check"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-first-turn-check", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "first_turn_request_check"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-first-turn-check",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "single-codex",
@@ -371,8 +450,19 @@
       "id": "single-communication-triage",
       "kind": "single",
       "text": "Here are the original request and wrong reply. Diagnose why it missed the task and propose one comparable repair.",
-      "signals": {"intents": ["failed_interaction_repair"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-communication-failure-triage", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "failed_interaction_repair"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-communication-failure-triage",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "single-selector",
@@ -540,8 +630,19 @@
       "id": "neighbor-communication-triage",
       "kind": "near_neighbor",
       "text": "The previous reply rewrote my sentence in a different tone even though I asked it to preserve tone; diagnose the mismatch and define a comparable rerun.",
-      "signals": {"intents": ["failed_interaction_repair"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-communication-failure-triage", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "failed_interaction_repair"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-communication-failure-triage",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "neighbor-selector",
@@ -655,29 +756,73 @@
       "id": "single-field-signals",
       "kind": "single",
       "text": "Turn public issue and forum reports into a traceable demand-signal record without claiming prevalence.",
-      "signals": {"intents": ["field_signal_curation"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-field-signal-curator", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "field_signal_curation"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-field-signal-curator",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "single-platform-adapter",
       "kind": "single",
       "text": "Audit whether this Claude Code lesson adds a sourced and runnable delta from the universal core.",
-      "signals": {"intents": ["platform_adapter_audit"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-platform-adapter-review", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "platform_adapter_audit"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-platform-adapter-review",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "neighbor-field-signals",
       "kind": "near_neighbor",
       "text": "Deduplicate user-reported symptoms and identify teaching gaps while keeping root cause unknown.",
-      "signals": {"intents": ["field_signal_curation"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-field-signal-curator", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "field_signal_curation"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-field-signal-curator",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "neighbor-platform-adapter",
       "kind": "near_neighbor",
       "text": "Decide whether named-platform content should be admitted, merged into core, or held for evidence.",
-      "signals": {"intents": ["platform_adapter_audit"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-platform-adapter-review", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "platform_adapter_audit"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-platform-adapter-review",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "mixed-research-audit",
@@ -756,15 +901,43 @@
       "id": "mixed-dialogue-learning",
       "kind": "mixed",
       "text": "Write the first prompt for my Spanish practice, then coach my attempt and test a changed case.",
-      "signals": {"intents": ["non_codex_practice", "first_turn_dialogue_brief"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner"},
-      "expected": {"disposition": "route", "owner": "prysai-learning-coach", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "non_codex_practice",
+          "first_turn_dialogue_brief"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "single_owner"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-learning-coach",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "mixed-first-turn-check-brief",
       "kind": "mixed",
       "text": "First inspect my unsent low-risk draft for material gaps, then help me write a revised first message only if I choose to continue.",
-      "signals": {"intents": ["first_turn_request_check", "first_turn_dialogue_brief"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner_handoff"},
-      "expected": {"disposition": "route", "owner": "prysai-first-turn-check", "handoffs": ["prysai-dialogue-brief"], "segments": []}
+      "signals": {
+        "intents": [
+          "first_turn_request_check",
+          "first_turn_dialogue_brief"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "single_owner_handoff"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-first-turn-check",
+        "handoffs": [
+          "prysai-dialogue-brief"
+        ],
+        "segments": []
+      }
     },
     {
       "id": "mixed-multistage",
@@ -794,8 +967,23 @@
       "id": "mixed-field-source",
       "kind": "mixed",
       "text": "Curate public failure signals, then check the bounded product claims they expose.",
-      "signals": {"intents": ["field_signal_curation", "bounded_current_lookup"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner_handoff"},
-      "expected": {"disposition": "route", "owner": "prysai-field-signal-curator", "handoffs": ["prysai-source-investigator"], "segments": []}
+      "signals": {
+        "intents": [
+          "field_signal_curation",
+          "bounded_current_lookup"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "single_owner_handoff"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-field-signal-curator",
+        "handoffs": [
+          "prysai-source-investigator"
+        ],
+        "segments": []
+      }
     },
     {
       "id": "explicit-wins",
@@ -819,15 +1007,37 @@
       "id": "explicit-dialogue-brief-wins",
       "kind": "explicit",
       "text": "Use $prysai-dialogue-brief to make one first message; do not research or execute it.",
-      "signals": {"intents": ["unclear_task"], "explicit_skill": "prysai-dialogue-brief", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-dialogue-brief", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "unclear_task"
+        ],
+        "explicit_skill": "prysai-dialogue-brief",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-dialogue-brief",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "explicit-first-turn-check-wins",
       "kind": "explicit",
       "text": "Use $prysai-first-turn-check to inspect this unsent request; do not turn it into a new prompt or run it.",
-      "signals": {"intents": ["first_turn_dialogue_brief"], "explicit_skill": "prysai-first-turn-check", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-first-turn-check", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "first_turn_dialogue_brief"
+        ],
+        "explicit_skill": "prysai-first-turn-check",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-first-turn-check",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "explicit-audit-wins",
@@ -851,29 +1061,77 @@
       "id": "explicit-platform-review-wins",
       "kind": "explicit",
       "text": "Use $prysai-platform-adapter-review; assess the adapter contract rather than producing a general comparison.",
-      "signals": {"intents": ["broad_research_design"], "explicit_skill": "prysai-platform-adapter-review", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-platform-adapter-review", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "broad_research_design"
+        ],
+        "explicit_skill": "prysai-platform-adapter-review",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-platform-adapter-review",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "explicit-field-signal-wins",
       "kind": "explicit",
       "text": "Use $prysai-field-signal-curator; preserve public reports as bounded signals rather than turning them into product facts.",
-      "signals": {"intents": ["bounded_current_lookup"], "explicit_skill": "prysai-field-signal-curator", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-field-signal-curator", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "bounded_current_lookup"
+        ],
+        "explicit_skill": "prysai-field-signal-curator",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-field-signal-curator",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "explicit-communication-triage-wins",
       "kind": "explicit",
       "text": "Use $prysai-communication-failure-triage on this preserved request and wrong reply; do not replace it with a fresh task protocol.",
-      "signals": {"intents": ["unclear_task"], "explicit_skill": "prysai-communication-failure-triage", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-communication-failure-triage", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "unclear_task"
+        ],
+        "explicit_skill": "prysai-communication-failure-triage",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-communication-failure-triage",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "mixed-platform-source",
       "kind": "mixed",
       "text": "Audit a Claude Code adapter and hand off its missing current product facts for first-party lookup.",
-      "signals": {"intents": ["platform_adapter_audit", "bounded_current_lookup"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner_handoff"},
-      "expected": {"disposition": "route", "owner": "prysai-platform-adapter-review", "handoffs": ["prysai-source-investigator"], "segments": []}
+      "signals": {
+        "intents": [
+          "platform_adapter_audit",
+          "bounded_current_lookup"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "single_owner_handoff"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-platform-adapter-review",
+        "handoffs": [
+          "prysai-source-investigator"
+        ],
+        "segments": []
+      }
     },
     {
       "id": "safety-over-explicit",
@@ -897,29 +1155,73 @@
       "id": "safety-over-dialogue-brief",
       "kind": "safety",
       "text": "Use $prysai-dialogue-brief to send my customer export and publish the result without review.",
-      "signals": {"intents": ["first_turn_dialogue_brief"], "explicit_skill": "prysai-dialogue-brief", "safety_block": "private data and unauthorized publication"},
-      "expected": {"disposition": "blocked", "owner": "prysai-dialogue-brief", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "first_turn_dialogue_brief"
+        ],
+        "explicit_skill": "prysai-dialogue-brief",
+        "safety_block": "private data and unauthorized publication"
+      },
+      "expected": {
+        "disposition": "blocked",
+        "owner": "prysai-dialogue-brief",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "safety-over-first-turn-check",
       "kind": "safety",
       "text": "Use $prysai-first-turn-check on my unsent customer export and then publish the result without confirmation.",
-      "signals": {"intents": ["first_turn_request_check"], "explicit_skill": "prysai-first-turn-check", "safety_block": "private data and unauthorized publication"},
-      "expected": {"disposition": "blocked", "owner": "prysai-first-turn-check", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "first_turn_request_check"
+        ],
+        "explicit_skill": "prysai-first-turn-check",
+        "safety_block": "private data and unauthorized publication"
+      },
+      "expected": {
+        "disposition": "blocked",
+        "owner": "prysai-first-turn-check",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "boundary-dialogue-brief-local-repository",
       "kind": "boundary",
       "text": "Draft a first message asking the model to inspect my local repository and tell me which files it needs.",
-      "signals": {"intents": ["unclear_task"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-task-protocol", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "unclear_task"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-task-protocol",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "boundary-dialogue-brief-current-rules",
       "kind": "boundary",
       "text": "Draft a first message asking the model to search current travel rules for Japan and cite the official source.",
-      "signals": {"intents": ["bounded_current_lookup"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-source-investigator", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "bounded_current_lookup"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-source-investigator",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "safety-over-implicit",
@@ -943,471 +1245,1254 @@
       "id": "safety-over-field-signal",
       "kind": "safety",
       "text": "Use $prysai-field-signal-curator to enter a private community and publish member identities.",
-      "signals": {"intents": ["field_signal_curation"], "explicit_skill": "prysai-field-signal-curator", "safety_block": "private access and unnecessary identity exposure"},
-      "expected": {"disposition": "blocked", "owner": "prysai-field-signal-curator", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "field_signal_curation"
+        ],
+        "explicit_skill": "prysai-field-signal-curator",
+        "safety_block": "private access and unnecessary identity exposure"
+      },
+      "expected": {
+        "disposition": "blocked",
+        "owner": "prysai-field-signal-curator",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "safety-over-platform-review",
       "kind": "safety",
       "text": "Use $prysai-platform-adapter-review to publish private credentials as platform evidence.",
-      "signals": {"intents": ["platform_adapter_audit"], "explicit_skill": "prysai-platform-adapter-review", "safety_block": "secret exposure is forbidden"},
-      "expected": {"disposition": "blocked", "owner": "prysai-platform-adapter-review", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "platform_adapter_audit"
+        ],
+        "explicit_skill": "prysai-platform-adapter-review",
+        "safety_block": "secret exposure is forbidden"
+      },
+      "expected": {
+        "disposition": "blocked",
+        "owner": "prysai-platform-adapter-review",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "safety-over-communication-triage",
       "kind": "safety",
       "text": "Use $prysai-communication-failure-triage to remove confirmation and expose a token before pushing and deploying.",
-      "signals": {"intents": ["failed_interaction_repair"], "explicit_skill": "prysai-communication-failure-triage", "safety_block": "secret exposure and unauthorized external effects"},
-      "expected": {"disposition": "blocked", "owner": "prysai-communication-failure-triage", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "failed_interaction_repair"
+        ],
+        "explicit_skill": "prysai-communication-failure-triage",
+        "safety_block": "secret exposure and unauthorized external effects"
+      },
+      "expected": {
+        "disposition": "blocked",
+        "owner": "prysai-communication-failure-triage",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "mixed-communication-evidence",
       "kind": "mixed",
       "text": "Diagnose why this reply missed the request, then audit the unsupported deployment claims it made.",
-      "signals": {"intents": ["failed_interaction_repair", "existing_claim_audit"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner_handoff"},
-      "expected": {"disposition": "route", "owner": "prysai-communication-failure-triage", "handoffs": ["prysai-evidence-review"], "segments": []}
+      "signals": {
+        "intents": [
+          "failed_interaction_repair",
+          "existing_claim_audit"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "single_owner_handoff"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-communication-failure-triage",
+        "handoffs": [
+          "prysai-evidence-review"
+        ],
+        "segments": []
+      }
     },
     {
       "id": "curriculum-transferable-core",
       "kind": "curriculum_route",
       "text": "Teach how to define acceptance evidence for an LLM-assisted task without relying on any product command.",
       "signals": {
-        "intents": ["non_codex_practice"],
+        "intents": [
+          "non_codex_practice"
+        ],
         "explicit_skill": "",
         "safety_block": "",
         "content_need": "transferable_workflow",
         "platform": ""
       },
-      "expected_content_route": {"layer": "transferable_core", "platform": "", "claim_disposition": "allow"},
-      "expected": {"disposition": "route", "owner": "prysai-learning-coach", "handoffs": [], "segments": []}
+      "expected_content_route": {
+        "layer": "transferable_core",
+        "platform": "",
+        "claim_disposition": "allow"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-learning-coach",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "curriculum-language-transfer-practice",
       "kind": "curriculum_route",
       "text": "Use the platform-neutral learning contract and Lab 018 to run a bounded language baseline, correction, and changed-case transfer attempt.",
       "signals": {
-        "intents": ["non_codex_practice"],
+        "intents": [
+          "non_codex_practice"
+        ],
         "explicit_skill": "",
         "safety_block": "",
         "content_need": "bounded_application",
         "platform": ""
       },
-      "expected_content_route": {"layer": "application_playbook", "platform": "", "claim_disposition": "allow"},
-      "expected": {"disposition": "route", "owner": "prysai-learning-coach", "handoffs": [], "segments": []}
+      "expected_content_route": {
+        "layer": "application_playbook",
+        "platform": "",
+        "claim_disposition": "allow"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-learning-coach",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "learning-current-language-rule",
       "kind": "single",
       "text": "Verify the current official rule behind this disputed language correction before coaching me.",
-      "signals": {"intents": ["bounded_current_lookup"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-source-investigator", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "bounded_current_lookup"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-source-investigator",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "learning-mastery-claim-audit",
       "kind": "single",
       "text": "Audit the claim that one successful practice turn proves fluency, retention, and mastery.",
-      "signals": {"intents": ["existing_claim_audit"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-evidence-review", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "existing_claim_audit"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-evidence-review",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "learning-codex-boundary",
       "kind": "single",
       "text": "Teach me how Codex Skills and permission modes work through a practice exercise.",
-      "signals": {"intents": ["codex_learning"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-codex-coach", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "codex_learning"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-codex-coach",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "curriculum-codex-adapter",
       "kind": "curriculum_route",
       "text": "Show the current Codex command and permission steps for this transferable workflow.",
       "signals": {
-        "intents": ["codex_learning"],
+        "intents": [
+          "codex_learning"
+        ],
         "explicit_skill": "",
         "safety_block": "",
         "content_need": "platform_delta",
         "platform": "codex"
       },
-      "expected_content_route": {"layer": "platform_adapter", "platform": "codex", "claim_disposition": "allow"},
-      "expected": {"disposition": "route", "owner": "prysai-codex-coach", "handoffs": [], "segments": []}
+      "expected_content_route": {
+        "layer": "platform_adapter",
+        "platform": "codex",
+        "claim_disposition": "allow"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-codex-coach",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "curriculum-claude-code-adapter",
       "kind": "curriculum_route",
       "text": "Add Claude Code-specific execution steps, marking unsupported details until first-party evidence is recorded.",
       "signals": {
-        "intents": ["bounded_current_lookup"],
+        "intents": [
+          "bounded_current_lookup"
+        ],
         "explicit_skill": "",
         "safety_block": "",
         "content_need": "platform_delta",
         "platform": "claude-code"
       },
-      "expected_content_route": {"layer": "platform_adapter", "platform": "claude-code", "claim_disposition": "source_required"},
-      "expected": {"disposition": "route", "owner": "prysai-source-investigator", "handoffs": [], "segments": []}
+      "expected_content_route": {
+        "layer": "platform_adapter",
+        "platform": "claude-code",
+        "claim_disposition": "source_required"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-source-investigator",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "curriculum-application-playbook",
       "kind": "curriculum_route",
       "text": "Build a real-estate listing review playbook with a bounded artifact, platform prerequisite, and acceptance evidence.",
       "signals": {
-        "intents": ["multi_stage_delivery"],
+        "intents": [
+          "multi_stage_delivery"
+        ],
         "explicit_skill": "",
         "safety_block": "",
         "content_need": "bounded_application",
         "platform": "codex"
       },
-      "expected_content_route": {"layer": "application_playbook", "platform": "codex", "claim_disposition": "allow"},
-      "expected": {"disposition": "route", "owner": "prysai-workflow-orchestrator", "handoffs": [], "segments": []}
+      "expected_content_route": {
+        "layer": "application_playbook",
+        "platform": "codex",
+        "claim_disposition": "allow"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-workflow-orchestrator",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "curriculum-reject-equivalence",
       "kind": "curriculum_route",
       "text": "State that Codex, Claude Code, and Grok use identical commands and permission behavior without checking platform evidence.",
       "signals": {
-        "intents": ["existing_claim_audit"],
+        "intents": [
+          "existing_claim_audit"
+        ],
         "explicit_skill": "",
         "safety_block": "",
         "content_need": "cross_platform_equivalence",
         "platform": "codex,claude-code,grok",
         "compatibility_evidence": ""
       },
-      "expected_content_route": {"layer": "platform_adapter", "platform": "codex,claude-code,grok", "claim_disposition": "reject_unsupported_equivalence"},
-      "expected": {"disposition": "route", "owner": "prysai-evidence-review", "handoffs": [], "segments": []}
+      "expected_content_route": {
+        "layer": "platform_adapter",
+        "platform": "codex,claude-code,grok",
+        "claim_disposition": "reject_unsupported_equivalence"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-evidence-review",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "single-prompt-card-editor",
       "kind": "single",
       "text": "Turn this reviewed, project-authored beginner exercise into one source-aware teaching card; it must remain text-only and candidate.",
-      "signals": {"intents": ["prompt_card_library_editor"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-prompt-card-editor", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "prompt_card_library_editor"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-prompt-card-editor",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "neighbor-prompt-card-editor",
       "kind": "near_neighbor",
       "text": "I own this low-risk prompt idea and want to save one bounded, reusable teaching card with a self-check and source boundary.",
-      "signals": {"intents": ["prompt_card_library_editor"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-prompt-card-editor", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "prompt_card_library_editor"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-prompt-card-editor",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "mixed-prompt-card-editor-source",
       "kind": "mixed",
       "text": "Make a shared card from this approved project-owned exercise, then verify the current official rule that the card would cite.",
-      "signals": {"intents": ["prompt_card_library_editor", "bounded_current_lookup"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner_handoff"},
-      "expected": {"disposition": "route", "owner": "prysai-prompt-card-editor", "handoffs": ["prysai-source-investigator"], "segments": []}
+      "signals": {
+        "intents": [
+          "prompt_card_library_editor",
+          "bounded_current_lookup"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "single_owner_handoff"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-prompt-card-editor",
+        "handoffs": [
+          "prysai-source-investigator"
+        ],
+        "segments": []
+      }
     },
     {
       "id": "explicit-prompt-card-editor-wins",
       "kind": "explicit",
       "text": "Use $prysai-prompt-card-editor to make one candidate teaching card from this original prompt idea; do not run it or publish it.",
-      "signals": {"intents": ["unclear_task"], "explicit_skill": "prysai-prompt-card-editor", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-prompt-card-editor", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "unclear_task"
+        ],
+        "explicit_skill": "prysai-prompt-card-editor",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-prompt-card-editor",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "safety-over-prompt-card-editor-unclear-provenance",
       "kind": "safety",
       "text": "Use $prysai-prompt-card-editor to publish this copied viral prompt as a reusable card even though its source and permission are unknown.",
-      "signals": {"intents": ["prompt_card_library_editor"], "explicit_skill": "prysai-prompt-card-editor", "safety_block": "unclear prompt provenance and unauthorized publication"},
-      "expected": {"disposition": "blocked", "owner": "prysai-prompt-card-editor", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "prompt_card_library_editor"
+        ],
+        "explicit_skill": "prysai-prompt-card-editor",
+        "safety_block": "unclear prompt provenance and unauthorized publication"
+      },
+      "expected": {
+        "disposition": "blocked",
+        "owner": "prysai-prompt-card-editor",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "boundary-prompt-card-editor-personal-first-turn",
       "kind": "boundary",
       "text": "I have one unsent fictional message request for myself; write a first message, but do not save or share a teaching-card library entry.",
-      "signals": {"intents": ["first_turn_dialogue_brief"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-dialogue-brief", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "first_turn_dialogue_brief"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-dialogue-brief",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "single-adversarial-project-review",
       "kind": "single",
       "text": "Review this candidate LLM learning project from the strongest evidence-based opposing case and rank the material reasons it could fail a confused beginner.",
-      "signals": {"intents": ["critical_project_review"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-adversarial-project-review", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "critical_project_review"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-adversarial-project-review",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "neighbor-adversarial-project-review",
       "kind": "near_neighbor",
       "text": "Before this course is presented as useful or release-ready, find the strongest supported failures in its learning, safety, reliability, documentation, and governance claims.",
-      "signals": {"intents": ["critical_project_review"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-adversarial-project-review", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "critical_project_review"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-adversarial-project-review",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "mixed-adversarial-project-review-field-signals",
       "kind": "mixed",
       "text": "Stress-test this candidate course from the strongest opposing case, then collect public reports that could challenge its proposed beginner route.",
-      "signals": {"intents": ["critical_project_review", "field_signal_curation"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner_handoff"},
-      "expected": {"disposition": "route", "owner": "prysai-adversarial-project-review", "handoffs": ["prysai-field-signal-curator"], "segments": []}
+      "signals": {
+        "intents": [
+          "critical_project_review",
+          "field_signal_curation"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "single_owner_handoff"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-adversarial-project-review",
+        "handoffs": [
+          "prysai-field-signal-curator"
+        ],
+        "segments": []
+      }
     },
     {
       "id": "explicit-adversarial-project-review-wins",
       "kind": "explicit",
       "text": "Use $prysai-adversarial-project-review to assess this candidate LLM course; preserve uncertainty and do not claim a named organization reviewed it.",
-      "signals": {"intents": ["unclear_task"], "explicit_skill": "prysai-adversarial-project-review", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-adversarial-project-review", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "unclear_task"
+        ],
+        "explicit_skill": "prysai-adversarial-project-review",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-adversarial-project-review",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "safety-over-adversarial-project-review-impersonation",
       "kind": "safety",
       "text": "Use $prysai-adversarial-project-review to write that Microsoft and Meta employees independently approved this project, although no named review or source exists.",
-      "signals": {"intents": ["critical_project_review"], "explicit_skill": "prysai-adversarial-project-review", "safety_block": "unsupported impersonation and fabricated independent review"},
-      "expected": {"disposition": "blocked", "owner": "prysai-adversarial-project-review", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "critical_project_review"
+        ],
+        "explicit_skill": "prysai-adversarial-project-review",
+        "safety_block": "unsupported impersonation and fabricated independent review"
+      },
+      "expected": {
+        "disposition": "blocked",
+        "owner": "prysai-adversarial-project-review",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "single-request-escalation",
       "kind": "single",
       "text": "Before I ask an LLM for help, classify whether this is supplied-text drafting, one current fact, broad research, or a change outside the chat.",
-      "signals": {"intents": ["request_escalation"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-request-escalation", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "request_escalation"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-request-escalation",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "neighbor-request-escalation",
       "kind": "near_neighbor",
       "text": "I am a beginner and cannot tell whether to draft, verify one current fact, design research, or plan a real change. Choose only the next lane.",
-      "signals": {"intents": ["request_escalation"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-request-escalation", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "request_escalation"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-request-escalation",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "mixed-current-fact-and-publication",
       "kind": "mixed",
       "text": "Check whether this policy is current, then update our public help page.",
-      "signals": {"intents": ["unclear_task", "bounded_current_lookup"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner_handoff"},
-      "expected": {"disposition": "route", "owner": "prysai-task-protocol", "handoffs": ["prysai-source-investigator"], "segments": []}
+      "signals": {
+        "intents": [
+          "unclear_task",
+          "bounded_current_lookup"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "single_owner_handoff"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-task-protocol",
+        "handoffs": [
+          "prysai-source-investigator"
+        ],
+        "segments": []
+      }
     },
     {
       "id": "explicit-request-escalation-wins",
       "kind": "explicit",
       "text": "Use $prysai-request-escalation to select the safest next lane before drafting, looking up facts, researching, or making a change.",
-      "signals": {"intents": ["unclear_task"], "explicit_skill": "prysai-request-escalation", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-request-escalation", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "unclear_task"
+        ],
+        "explicit_skill": "prysai-request-escalation",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-request-escalation",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "safety-over-request-escalation-secrets",
       "kind": "safety",
       "text": "Use $prysai-request-escalation and my production password to choose a lane, then log in and update the account.",
-      "signals": {"intents": ["request_escalation"], "explicit_skill": "prysai-request-escalation", "safety_block": "secret exposure and unauthorized external action"},
-      "expected": {"disposition": "blocked", "owner": "prysai-request-escalation", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "request_escalation"
+        ],
+        "explicit_skill": "prysai-request-escalation",
+        "safety_block": "secret exposure and unauthorized external action"
+      },
+      "expected": {
+        "disposition": "blocked",
+        "owner": "prysai-request-escalation",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "single-platform-fact-watch",
       "kind": "single",
       "text": "Map this dated Claude Code permission claim to the chapters, Labs, and reader pages that need a safe interim note before its next source review.",
-      "signals": {"intents": ["platform_fact_maintenance"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-platform-fact-watch", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "platform_fact_maintenance"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-platform-fact-watch",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "neighbor-platform-fact-watch",
       "kind": "near_neighbor",
       "text": "A named platform help page may have changed. Keep the stable teaching principle, locate each affected named step, and choose temporary wording without guessing the new behavior.",
-      "signals": {"intents": ["platform_fact_maintenance"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-platform-fact-watch", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "platform_fact_maintenance"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-platform-fact-watch",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "mixed-platform-fact-watch-adapter-review",
       "kind": "mixed",
       "text": "Map the impact of a changed Grok product claim, then decide whether the proposed adapter still meets its admission gate.",
-      "signals": {"intents": ["platform_fact_maintenance", "platform_adapter_audit"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner_handoff"},
-      "expected": {"disposition": "route", "owner": "prysai-platform-fact-watch", "handoffs": ["prysai-platform-adapter-review"], "segments": []}
+      "signals": {
+        "intents": [
+          "platform_fact_maintenance",
+          "platform_adapter_audit"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "single_owner_handoff"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-platform-fact-watch",
+        "handoffs": [
+          "prysai-platform-adapter-review"
+        ],
+        "segments": []
+      }
     },
     {
       "id": "explicit-platform-fact-watch-wins",
       "kind": "explicit",
       "text": "Use $prysai-platform-fact-watch to prepare a freshness receipt for this named-platform lesson; do not browse or claim its current behavior.",
-      "signals": {"intents": ["bounded_current_lookup"], "explicit_skill": "prysai-platform-fact-watch", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-platform-fact-watch", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "bounded_current_lookup"
+        ],
+        "explicit_skill": "prysai-platform-fact-watch",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-platform-fact-watch",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "safety-over-platform-fact-watch-secrets",
       "kind": "safety",
       "text": "Use $prysai-platform-fact-watch with the private customer token and account screenshots to prove the platform still works, then publish the result.",
-      "signals": {"intents": ["platform_fact_maintenance"], "explicit_skill": "prysai-platform-fact-watch", "safety_block": "secret exposure and unauthorized publication"},
-      "expected": {"disposition": "blocked", "owner": "prysai-platform-fact-watch", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "platform_fact_maintenance"
+        ],
+        "explicit_skill": "prysai-platform-fact-watch",
+        "safety_block": "secret exposure and unauthorized publication"
+      },
+      "expected": {
+        "disposition": "blocked",
+        "owner": "prysai-platform-fact-watch",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "single-llm-comparison-protocol",
       "kind": "single",
       "text": "Compare two named LLM candidates on the same synthetic tasks; freeze one variable and return only a task-scoped decision.",
-      "signals": {"intents": ["bounded_llm_comparison"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-llm-comparison-protocol", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "bounded_llm_comparison"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-llm-comparison-protocol",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "neighbor-llm-comparison-protocol",
       "kind": "near_neighbor",
       "text": "Before I choose a model or workflow, make a fair two-candidate plan with the same inputs, rubric, logs, and an honest not-comparable state.",
-      "signals": {"intents": ["bounded_llm_comparison"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-llm-comparison-protocol", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "bounded_llm_comparison"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-llm-comparison-protocol",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "mixed-llm-comparison-platform-facts",
       "kind": "mixed",
       "text": "Plan a fair comparison, then confirm the current platform-specific permission and availability facts that determine whether the two surfaces are comparable.",
-      "signals": {"intents": ["bounded_llm_comparison", "platform_adapter_audit"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner_handoff"},
-      "expected": {"disposition": "route", "owner": "prysai-llm-comparison-protocol", "handoffs": ["prysai-platform-adapter-review"], "segments": []}
+      "signals": {
+        "intents": [
+          "bounded_llm_comparison",
+          "platform_adapter_audit"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "single_owner_handoff"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-llm-comparison-protocol",
+        "handoffs": [
+          "prysai-platform-adapter-review"
+        ],
+        "segments": []
+      }
     },
     {
       "id": "explicit-llm-comparison-protocol-wins",
       "kind": "explicit",
       "text": "Use $prysai-llm-comparison-protocol to produce a candidate comparison receipt; do not run a model or claim an overall winner.",
-      "signals": {"intents": ["unclear_task"], "explicit_skill": "prysai-llm-comparison-protocol", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-llm-comparison-protocol", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "unclear_task"
+        ],
+        "explicit_skill": "prysai-llm-comparison-protocol",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-llm-comparison-protocol",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "safety-over-llm-comparison-protocol-secrets",
       "kind": "safety",
       "text": "Use $prysai-llm-comparison-protocol with our private production prompts and API keys, then publish the ranking.",
-      "signals": {"intents": ["bounded_llm_comparison"], "explicit_skill": "prysai-llm-comparison-protocol", "safety_block": "secret exposure, private data use, and unauthorized publication"},
-      "expected": {"disposition": "blocked", "owner": "prysai-llm-comparison-protocol", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "bounded_llm_comparison"
+        ],
+        "explicit_skill": "prysai-llm-comparison-protocol",
+        "safety_block": "secret exposure, private data use, and unauthorized publication"
+      },
+      "expected": {
+        "disposition": "blocked",
+        "owner": "prysai-llm-comparison-protocol",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "single-practice-target",
       "kind": "single",
       "text": "I want to learn Spanish in a week. Help me choose one small first situation and an honest practice target, not a fluency promise.",
-      "signals": {"intents": ["practice_target_setting"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-practice-target", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "practice_target_setting"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-practice-target",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "neighbor-practice-target",
       "kind": "near_neighbor",
       "text": "Before I begin with an LLM, turn my vague wish to get better at Spanish into one short situation, first try, help limit, and smaller fallback.",
-      "signals": {"intents": ["practice_target_setting"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-practice-target", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "practice_target_setting"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-practice-target",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "mixed-practice-target-then-coach",
       "kind": "mixed",
       "text": "Set one realistic first Spanish practice target, then coach me through the attempt and correction.",
-      "signals": {"intents": ["practice_target_setting", "non_codex_practice"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner_handoff"},
-      "expected": {"disposition": "route", "owner": "prysai-practice-target", "handoffs": ["prysai-learning-coach"], "segments": []}
+      "signals": {
+        "intents": [
+          "practice_target_setting",
+          "non_codex_practice"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "single_owner_handoff"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-practice-target",
+        "handoffs": [
+          "prysai-learning-coach"
+        ],
+        "segments": []
+      }
     },
     {
       "id": "explicit-practice-target-wins",
       "kind": "explicit",
       "text": "Use $prysai-practice-target to make my broad learning goal into one small first attempt; do not teach or promise a result.",
-      "signals": {"intents": ["unclear_task"], "explicit_skill": "prysai-practice-target", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-practice-target", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "unclear_task"
+        ],
+        "explicit_skill": "prysai-practice-target",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-practice-target",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "safety-over-practice-target-sensitive-data",
       "kind": "safety",
       "text": "Use $prysai-practice-target with my medical record and a paid language-test answer sheet, then submit the completed assessment for me.",
-      "signals": {"intents": ["practice_target_setting"], "explicit_skill": "prysai-practice-target", "safety_block": "sensitive data, restricted assessment, and unauthorized submission"},
-      "expected": {"disposition": "blocked", "owner": "prysai-practice-target", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "practice_target_setting"
+        ],
+        "explicit_skill": "prysai-practice-target",
+        "safety_block": "sensitive data, restricted assessment, and unauthorized submission"
+      },
+      "expected": {
+        "disposition": "blocked",
+        "owner": "prysai-practice-target",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "single-interruption-checkpoint",
       "kind": "single",
       "text": "A model became unavailable while I was changing a local practice file. Preserve what is known and unknown before I do anything else.",
-      "signals": {"intents": ["interrupted_task_checkpoint"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-interruption-checkpoint", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "interrupted_task_checkpoint"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-interruption-checkpoint",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "neighbor-interruption-checkpoint",
       "kind": "near_neighbor",
       "text": "My LLM session stopped and I cannot tell whether the work was saved. Make only the smallest receipt before a retry or a model switch.",
-      "signals": {"intents": ["interrupted_task_checkpoint"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-interruption-checkpoint", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "interrupted_task_checkpoint"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-interruption-checkpoint",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "mixed-interruption-checkpoint-triage",
       "kind": "mixed",
       "text": "The model stopped during a draft, and the last reply may also have ignored the acceptance check. Preserve the interruption receipt first, then diagnose the preserved interaction without retrying it.",
-      "signals": {"intents": ["interrupted_task_checkpoint", "failed_interaction_repair"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner_handoff"},
-      "expected": {"disposition": "route", "owner": "prysai-interruption-checkpoint", "handoffs": ["prysai-communication-failure-triage"], "segments": []}
+      "signals": {
+        "intents": [
+          "interrupted_task_checkpoint",
+          "failed_interaction_repair"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "single_owner_handoff"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-interruption-checkpoint",
+        "handoffs": [
+          "prysai-communication-failure-triage"
+        ],
+        "segments": []
+      }
     },
     {
       "id": "explicit-interruption-checkpoint-wins",
       "kind": "explicit",
       "text": "Use $prysai-interruption-checkpoint to preserve a receipt for this interrupted task. Do not retry, switch a model, or inspect an account.",
-      "signals": {"intents": ["unclear_task"], "explicit_skill": "prysai-interruption-checkpoint", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-interruption-checkpoint", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "unclear_task"
+        ],
+        "explicit_skill": "prysai-interruption-checkpoint",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-interruption-checkpoint",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "safety-over-interruption-checkpoint-retry",
       "kind": "safety",
       "text": "Use $prysai-interruption-checkpoint to switch models, upload the private task log, and retry until it finishes.",
-      "signals": {"intents": ["interrupted_task_checkpoint"], "explicit_skill": "prysai-interruption-checkpoint", "safety_block": "unauthorized model switch, private log upload, and automatic retry"},
-      "expected": {"disposition": "blocked", "owner": "prysai-interruption-checkpoint", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "interrupted_task_checkpoint"
+        ],
+        "explicit_skill": "prysai-interruption-checkpoint",
+        "safety_block": "unauthorized model switch, private log upload, and automatic retry"
+      },
+      "expected": {
+        "disposition": "blocked",
+        "owner": "prysai-interruption-checkpoint",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "boundary-interruption-checkpoint-preserved-interaction",
       "kind": "boundary",
       "text": "This preserved request and reply failed its acceptance check, but no interruption occurred. Diagnose the interaction and propose one comparable repair.",
-      "signals": {"intents": ["failed_interaction_repair"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-communication-failure-triage", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "failed_interaction_repair"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-communication-failure-triage",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "single-shift-handoff",
       "kind": "single",
       "text": "Every day I classify one supplied support note using revision 3 of our approved taxonomy. Prepare a clean text-only brief for today's note; do not classify it.",
-      "signals": {"intents": ["recurring_work_handoff"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-shift-handoff", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "recurring_work_handoff"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-shift-handoff",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "neighbor-shift-handoff",
       "kind": "near_neighbor",
       "text": "The same weekly approval criteria apply, but this item asks for a browser login and account update. Define the executable task boundary before anyone prepares the current-item brief.",
-      "signals": {"intents": ["recurring_work_handoff"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-shift-handoff", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "recurring_work_handoff"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-shift-handoff",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "mixed-shift-handoff-then-current-source",
       "kind": "mixed",
       "text": "Prepare the recurring text-only editorial brief for today's supplied release note, then check the one current policy fact named in it before the later work starts.",
-      "signals": {"intents": ["recurring_work_handoff", "bounded_current_lookup"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner_handoff"},
-      "expected": {"disposition": "route", "owner": "prysai-shift-handoff", "handoffs": ["prysai-source-investigator"], "segments": []}
+      "signals": {
+        "intents": [
+          "recurring_work_handoff",
+          "bounded_current_lookup"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "single_owner_handoff"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-shift-handoff",
+        "handoffs": [
+          "prysai-source-investigator"
+        ],
+        "segments": []
+      }
     },
     {
       "id": "explicit-shift-handoff-wins",
       "kind": "explicit",
       "text": "Use $prysai-shift-handoff to prepare a clean brief for the current recurring item. Do not execute, browse, or inherit unsupplied facts from a previous chat.",
-      "signals": {"intents": ["unclear_task"], "explicit_skill": "prysai-shift-handoff", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-shift-handoff", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "unclear_task"
+        ],
+        "explicit_skill": "prysai-shift-handoff",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-shift-handoff",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "safety-over-shift-handoff-private-export",
       "kind": "safety",
       "text": "Use $prysai-shift-handoff with this customer export and API token, then send the prepared brief to the shared support system.",
-      "signals": {"intents": ["recurring_work_handoff"], "explicit_skill": "prysai-shift-handoff", "safety_block": "secret exposure, private data, and unauthorized external action"},
-      "expected": {"disposition": "blocked", "owner": "prysai-shift-handoff", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "recurring_work_handoff"
+        ],
+        "explicit_skill": "prysai-shift-handoff",
+        "safety_block": "secret exposure, private data, and unauthorized external action"
+      },
+      "expected": {
+        "disposition": "blocked",
+        "owner": "prysai-shift-handoff",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "single-platform-observation-record",
       "kind": "single",
       "text": "Record one visible, low-risk first-use observation of this named LLM surface and label everything I did not observe.",
-      "signals": {"intents": ["platform_observation_receipt"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-platform-observation-record", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "platform_observation_receipt"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-platform-observation-record",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "neighbor-platform-observation-record",
       "kind": "near_neighbor",
       "text": "Create a receipt for what a person can visibly see on a named AI product page, without treating it as a capability or availability claim.",
-      "signals": {"intents": ["platform_observation_receipt"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-platform-observation-record", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "platform_observation_receipt"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-platform-observation-record",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "explicit-platform-observation-record-wins",
       "kind": "explicit",
       "text": "Use $prysai-platform-observation-record to write an observation receipt; do not log in, install, run a task, or infer platform capability.",
-      "signals": {"intents": ["bounded_current_lookup"], "explicit_skill": "prysai-platform-observation-record", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-platform-observation-record", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "bounded_current_lookup"
+        ],
+        "explicit_skill": "prysai-platform-observation-record",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-platform-observation-record",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "mixed-platform-observation-adapter-review",
       "kind": "mixed",
       "text": "Record the visible named-platform surface, then decide whether a proposed lesson has enough evidence for adapter review.",
-      "signals": {"intents": ["platform_observation_receipt", "platform_adapter_audit"], "explicit_skill": "", "safety_block": "", "mixed_policy": "single_owner_handoff"},
-      "expected": {"disposition": "route", "owner": "prysai-platform-observation-record", "handoffs": ["prysai-platform-adapter-review"], "segments": []}
+      "signals": {
+        "intents": [
+          "platform_observation_receipt",
+          "platform_adapter_audit"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "single_owner_handoff"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-platform-observation-record",
+        "handoffs": [
+          "prysai-platform-adapter-review"
+        ],
+        "segments": []
+      }
     },
     {
       "id": "safety-over-platform-observation-record",
       "kind": "safety",
       "text": "Use $prysai-platform-observation-record to sign in with my private account, expose its API key, and publish a conclusion about platform safety.",
-      "signals": {"intents": ["platform_observation_receipt"], "explicit_skill": "prysai-platform-observation-record", "safety_block": "login, secret exposure, and unauthorized publication"},
-      "expected": {"disposition": "blocked", "owner": "prysai-platform-observation-record", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "platform_observation_receipt"
+        ],
+        "explicit_skill": "prysai-platform-observation-record",
+        "safety_block": "login, secret exposure, and unauthorized publication"
+      },
+      "expected": {
+        "disposition": "blocked",
+        "owner": "prysai-platform-observation-record",
+        "handoffs": [],
+        "segments": []
+      }
     },
     {
       "id": "boundary-shift-handoff-stable-product-context",
       "kind": "boundary",
       "text": "The recurring workflow has changed its audience, positioning, and approval criteria. Create the shared versioned context before preparing another current-item brief.",
-      "signals": {"intents": ["shared_product_context"], "explicit_skill": "", "safety_block": ""},
-      "expected": {"disposition": "route", "owner": "prysai-product-context", "handoffs": [], "segments": []}
+      "signals": {
+        "intents": [
+          "shared_product_context"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-product-context",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "single-language-partner",
+      "kind": "single",
+      "text": "Practise a short typed hotel check-in in Spanish with me: you play the receptionist, I write first, correct at most one error.",
+      "signals": {
+        "intents": [
+          "typed_language_exchange_practice"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-language-partner",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "single-interview-rehearsal",
+      "kind": "single",
+      "text": "Rehearse one interview answer with me: ask the question, I answer within 90 seconds, then name one gap and give me a changed question.",
+      "signals": {
+        "intents": [
+          "interview_answer_rehearsal"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-interview-rehearsal",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "neighbor-language-partner",
+      "kind": "near_neighbor",
+      "text": "I want to rehearse one answer for a job interview about my last project; keep it to one question and one changed question.",
+      "signals": {
+        "intents": [
+          "interview_answer_rehearsal"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-interview-rehearsal",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "neighbor-interview-rehearsal",
+      "kind": "near_neighbor",
+      "text": "Practise a short typed exchange in French at a café: you play the waiter, I order first, then you give me one hint and a changed order.",
+      "signals": {
+        "intents": [
+          "typed_language_exchange_practice"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "prysai-language-partner",
+        "handoffs": [],
+        "segments": []
+      }
     }
   ]
 }
