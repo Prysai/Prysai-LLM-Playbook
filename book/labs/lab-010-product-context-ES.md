@@ -8,8 +8,18 @@ domain: marketing
 goal: "Crear un registro pequeño y versionado del producto que reduzca explicaciones repetidas sin mezclar hechos, supuestos, decisiones de posicionamiento y evidencia ausente"
 setup: "Un producto ficticio o saneado, dos tareas de marketing de bajo riesgo y un archivo de contexto versionado sin conexión con campañas reales"
 task: "Construir el contexto mínimo, usarlo para explicar el producto y planificar una medición, cambiar una decisión de posicionamiento e inspeccionar las diferencias resultantes"
+evidence:
+  - "Dos versiones del contexto con procedencia, confianza, responsable y fecha de revisión"
+  - "Explicación de producto y plan de medición que nombran campos y supuestos usados"
+  - "Diff de la decisión, diffs posteriores, razón de métricas y lagunas de evidencia"
+failure_variant: "Eliminar audience o target_action y comprobar que se pide el contexto ausente en vez de inventar segmento, cita o métrica"
+reflection: "¿Qué campos se reutilizaron, cuál cambió una decisión real y dónde el texto pulido ocultó evidencia débil?"
 status: draft
 last_verified: "not run"
+transfer_task: "Trasladar el mismo contrato mínimo a una herramienta de ingeniería saneada, servicio de investigación o proyecto interno"
+transfer_domain: "ingeniería de producto, servicios de investigación, contenido o marketing"
+transfer_evidence: "Conservar revisiones, procedencia, supuestos, dos salidas, diffs, límites de métricas y conducta con campos ausentes"
+transfer_limitations: "El contexto compartido reduce repetición pero no establece verdad, voz real de clientes, mercado, atribución ni aprobación estratégica"
 ---
 
 # Lab 010: crear un contexto de producto compartido que sirva para dos tareas

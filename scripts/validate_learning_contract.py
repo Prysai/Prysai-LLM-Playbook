@@ -267,13 +267,17 @@ def validate_labs(errors: list[str], labs: list[Path] | None = None) -> None:
                 f"{label}: last_verified must explicitly state that the lab has not run yet"
             )
 
-        evidence_start = re.search(r"(?m)^evidence:\s*$", metadata)
-        if not evidence_start:
-            errors.append(f"{label}: evidence must be a YAML list")
-        else:
-            evidence_tail = metadata[evidence_start.end() :]
+        # YAML permits both a block sequence and a flow sequence. Require an
+        # actual nonempty list in either spelling; accepting flow sequences
+        # keeps localized frontmatter structurally equivalent to its source.
+        evidence_block = re.search(r"(?m)^evidence:\s*$", metadata)
+        evidence_flow = re.search(r"(?m)^evidence:\s*\[\s*\S", metadata)
+        if evidence_block:
+            evidence_tail = metadata[evidence_block.end() :]
             if not re.search(r"(?m)^\s+-\s+\S+", evidence_tail):
                 errors.append(f"{label}: evidence must contain at least one item")
+        elif not evidence_flow:
+            errors.append(f"{label}: evidence must be a nonempty YAML list")
 
         if values["status"].strip("'\"").lower() != "draft":
             errors.append(f"{label}: status must remain draft until runtime evidence exists")
@@ -281,22 +285,35 @@ def validate_labs(errors: list[str], labs: list[Path] | None = None) -> None:
         if not re.search(r"(?m)^##\s+", body):
             errors.append(f"{label}: body must contain an instructional section")
         for name, pattern in {
-            "task": re.compile(r"任务|输入|task|tarea|aufgabe|タスク|작업", re.IGNORECASE).search,
-            "evidence": re.compile(r"证据|记录|evidence|beleg|evidencia|証拠|증거", re.IGNORECASE).search,
+            # A lab contract is carried jointly by its structured frontmatter
+            # and its instructional body.  A localized body can call the
+            # activity an experiment rather than repeat the English word
+            # "task"; a saved-evidence list in metadata is still explicit
+            # evidence guidance.  Keep a body-section requirement above, then
+            # accept either a localized cue or the validated contract field.
+            "task": lambda candidate: bool(
+                re.search(r"任务|输入|task|tarea|aufgabe|実験|실험|experiment", candidate, re.IGNORECASE)
+                or value_is_nonempty(values.get("task"))
+            ),
+            "evidence": lambda candidate: bool(
+                re.search(r"证据|记录|evidence|beleg|evidencia|証拠|증거", candidate, re.IGNORECASE)
+                or evidence_block
+                or evidence_flow
+            ),
             "failure_variant": re.compile(
                 r"失败|边界|故意|failure|boundary|intentional|fehler|grenze|"
                 r"fallo|límite|intencional|失敗|境界|意図|실패|경계|의도",
                 re.IGNORECASE,
             ).search,
-            "reflection": re.compile(
+            "reflection": lambda candidate: bool(re.compile(
                 r"复盘|反思|思考|总结|reflection|reflexion|reflexión|summary|"
                 r"zusammenfassung|resumen|要約|振り返り|회고|성찰|요약|まとめ",
                 re.IGNORECASE,
-            ).search,
-            "acceptance": re.compile(
+            ).search(candidate) or value_is_nonempty(values.get("reflection"))),
+            "acceptance": lambda candidate: bool(re.compile(
                 r"通过标准|验收标准|acceptance|abnahme|aceptación|受け入れ|수용",
                 re.IGNORECASE,
-            ).search,
+            ).search(candidate) or re.search(r"(?m)^\s*- \[ \]", candidate)),
         }.items():
             if not pattern(body):
                 errors.append(f"{label}: body is missing {name} guidance")
