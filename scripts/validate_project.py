@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = (
     "LICENSE",
+    "CODE_OF_CONDUCT.md",
     "AGENTS.md",
     "CONTRIBUTING.md",
     "SECURITY.md",
@@ -87,6 +88,8 @@ REQUIRED = (
     "scripts/test_release_evidence.py",
     "scripts/validate_repository_security.py",
     "scripts/test_validate_repository_security.py",
+    "scripts/validate_contributed_test_material.py",
+    "scripts/test_validate_contributed_test_material.py",
     "scripts/validate_github_templates.py",
     "scripts/test_validate_github_templates.py",
     "scripts/validate_learning_path.py",
@@ -106,12 +109,16 @@ REQUIRED = (
     "scripts/validate_core_unit_map.py",
     "scripts/test_core_unit_map.py",
     "scripts/validate_learning_practice_candidate.py",
+    "scripts/test_three_task_smoke_fixture.py",
     "scripts/first_win_pilot_kit.py",
     "scripts/test_first_win_pilot_kit.py",
     "scripts/validate_evidence_review_candidate.py",
     "scripts/test_evidence_review_candidate.py",
     "scripts/validate_project_structure.py",
     "scripts/validate_content_completeness.py",
+    "scripts/test_validate_site_i18n.py",
+    "scripts/validate_teaching_assets.py",
+    "scripts/test_validate_teaching_assets.py",
 )
 
 

@@ -1,0 +1,18 @@
+{
+  "schema_version": "1",
+  "record_id": "SHP-CAP-14",
+  "session_code": "SH-RUN14",
+  "packet_id": "SHP-B-01-R3",
+  "condition": "baseline",
+  "task_id": "weekly-release-brief",
+  "repetition": 3,
+  "timestamp_start": "2026-08-15T16:34:04.001Z",
+  "timestamp_end": "2026-08-15T16:34:12.740Z",
+  "elapsed_seconds": 9,
+  "response_text": "stable_criteria: Concise internal handoff only; keep confirmed facts, unknowns, and authority boundaries distinct; do not publish, send, merge, or change any file.\ntoday_item: Fictional release-note draft for version 0.3 is complete.\nauthority: Approval owner; public-date confirmation remains with the approval owner. Publication is not authorized.\nacceptance_evidence: Release-note draft for version 0.3 is complete.\nunknowns: Public date has not been confirmed.\nnext_owner: Release editor.",
+  "response_sha256": "2b10319012ceb114aeee481583869a0567ad7c1fb744dbad32d7b2fbc3f09316",
+  "capture_status": "captured",
+  "condition_deviation": "none",
+  "evidence_boundary": "One de-identified output from a fixed fictional prompt. It is captured but unscored and does not establish quality, efficiency, productivity, learning, IQ, safety, accuracy, or model quality."
+}
+

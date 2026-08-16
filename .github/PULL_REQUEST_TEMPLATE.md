@@ -9,6 +9,31 @@
 - [ ] Contract change
 - [ ] Behavior change
 - [ ] Release change
+- [ ] Test material (fast route: original fictional fixture or text-only protocol only)
+
+## Contribution route and review request
+
+<!-- For the fast test-material route, link one contribution.json receipt and state the requested focused review. Real learner/model evidence, raw output, private material, license changes, security changes, and status promotion are never fast-route PRs. -->
+
+- Route: [ ] Standard review [ ] Fast material review [ ] Restricted evidence intake / do not merge public data
+- Receipt or protocol path (or `not applicable`):
+- Requested reviewer role:
+- Commit sign-off: [ ] I have the right to submit this work under the current repository license and signed off my commits.
+
+## Translation details (complete only for a translation or language-review PR)
+
+<!-- Keep one translation PR to one content identity and one locale. A green
+check or self-review is not an independent language review. -->
+
+- Canonical English source and revision:
+- Target locale and localized file:
+- `content_id`:
+- Terms, paths, commands, URLs, or status labels intentionally kept unchanged:
+- Machine assistance, if any:
+- Translator self-review performed:
+- Independent target-language reviewer requested or recorded:
+- Same-locale navigation checked:
+- Translation status claimed (`in-progress` unless named review evidence supports more):
 
 ## Source, authorship, and license
 
@@ -42,4 +67,6 @@
 - [ ] I did not commit secrets, credentials, private data, or machine-local configuration.
 - [ ] I ran the relevant validators and stated what they do not prove.
 - [ ] I kept translation, runtime, review, and maturity claims honest.
+- [ ] For a translation, I kept the same `content_id`, source revision, and same-locale links, and did not call it reviewed without named independent review evidence.
 - [ ] I documented rollback/recovery for contract, behavior, or release changes, or marked it not applicable.
+- [ ] If this is test material, it is original fictional material with no raw learner work, raw model output, identifiers, consent records, or outcome claim.

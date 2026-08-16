@@ -82,7 +82,10 @@ allowed_change: seed/README.md only
 diff: <reviewed README diff>
 check: manual required_readme_strings 3/3 | FIRST_SAFE_CHANGE_OK
 external_actions: none
-unverified: learner completion, model behavior, and transfer
+unverified:
+  - learner completion
+  - model behavior
+  - transfer
 ```
 
 The checker can establish only that this fixed synthetic README matches the

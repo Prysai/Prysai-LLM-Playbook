@@ -61,3 +61,4 @@ and the canonical Lab count. They prepare a narrow experiment or responsibility
 boundary; a static pass does not create model, learner, or release evidence.
 
 - [Context Packet Builder v1 proposal fixture](candidates/context-packet-builder-v1/README.md) — original fictional material for a possible future context-packet responsibility. It is `proposed / not_run`; no Skill exists, no automatic routing is claimed, and the fixture is not a security-control evaluation.
+- [Shift Handoff v1 candidate fixture](candidates/shift-handoff-v1/README.md) — fixed fictional recurring-work briefs for a predeclared model-output receipt study. It is `candidate / not_run`; its packet builder freezes and randomizes 18 prompts for one SHA, and its analyzer refuses synthetic, incomplete, condition-deviating, or manifest-unbound records. It cannot produce an IQ, learning, safety, or productivity claim.

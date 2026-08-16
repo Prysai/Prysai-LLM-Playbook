@@ -88,6 +88,20 @@ def main() -> int:
         )
         fixtures += 2
 
+        valid_pr = templates.PR_TEMPLATE.read_text(encoding="utf-8")
+        require(not templates.validate_pr_template_text(valid_pr), "current pull-request template was rejected")
+        require(
+            any("contribution-route text" in error for error in templates.validate_pr_template_text(valid_pr.replace("Fast material review", ""))),
+            "pull-request template accepted a missing fast-route declaration",
+        )
+        valid_codeowners = templates.CODEOWNERS.read_text(encoding="utf-8")
+        require(not templates.validate_codeowners_text(valid_codeowners), "current CODEOWNERS routing was rejected")
+        require(
+            any("evals/contributions" in error for error in templates.validate_codeowners_text(valid_codeowners.replace("/evals/contributions/ @Prysai", ""))),
+            "CODEOWNERS accepted a missing evidence route",
+        )
+        fixtures += 4
+
         token = "fixture-secret-token"
         seen_authorization: list[str] = []
 

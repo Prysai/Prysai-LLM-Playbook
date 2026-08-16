@@ -1,0 +1,35 @@
+{
+  "task_set_id": "three-task-smoke-v1",
+  "version": "v1",
+  "status": "candidate",
+  "run_evidence_status": "not_run",
+  "comparison_scope": "task-scoped expand-or-stop smoke only",
+  "side_effect_boundary": "offline synthetic inputs; no credentials, production data, network writes, commits, pushes, publication, or deployment",
+  "tasks": [
+    {
+      "id": "extract-01",
+      "instruction_path": "tasks/extract-01/instruction.md",
+      "input_path": "tasks/extract-01/input.txt",
+      "expected_path": "tasks/extract-01/expected.json",
+      "submission_kind": "json_array",
+      "input_sha256": "ee81bd7eb206b57a5fafe2de46d587ea2d55e3ff789e7998b24564d52d07b666"
+    },
+    {
+      "id": "markdown-02",
+      "instruction_path": "tasks/markdown-02/instruction.md",
+      "input_path": "tasks/markdown-02/input.txt",
+      "expected_path": "tasks/markdown-02/expected.md",
+      "submission_kind": "markdown_exact_normalized",
+      "input_sha256": "ed7eb7b9887192f5b3dd109cbc6e06ebbc3bdcb6cc3e9134bb60f63646800cb4"
+    },
+    {
+      "id": "gap-review-03",
+      "instruction_path": "tasks/gap-review-03/instruction.md",
+      "input_path": "tasks/gap-review-03/input.txt",
+      "expected_path": "tasks/gap-review-03/expected.json",
+      "submission_kind": "json_object",
+      "input_sha256": "20eac66aba53e841632e2ab9974645cddc16f3ffa759cf8e98a61b946e323d00"
+    }
+  ],
+  "decision_boundary": "A passing fixture validation is not a model benchmark, safety certification, price comparison, learner result, or general ranking."
+}

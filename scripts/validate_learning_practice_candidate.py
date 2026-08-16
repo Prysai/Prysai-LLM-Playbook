@@ -21,6 +21,8 @@ FIXTURE = ROOT / "evals/candidates/learning-practice-contract-v1/fixture.json"
 FIRST_TURN_RUN = ROOT / "evals/candidates/learning-practice-contract-v1/runs/2026-08-13-baseline-first-turn.md"
 SITE = ROOT / "site/index.html"
 PRACTICE_BOARD = ROOT / "assets/teaching/beginner-practice-loop-red-black.svg"
+SOURCE_CHECK_BOARD = ROOT / "assets/teaching/source-check-before-belief-red-black.svg"
+RESEARCH_RECORD_BOARD = ROOT / "assets/teaching/research-question-to-source-record-red-black.svg"
 
 TEXT_REQUIREMENTS = {
     GUIDE: [
@@ -36,16 +38,20 @@ TEXT_REQUIREMENTS = {
         "meaning-blocking",
         "retention",
         "not_run",
+        "mode: typed_rehearsal",
+        "Do not use this record as a speaking, pronunciation",
     ],
     CLINIC: [
         'id="practice-route-chooser"',
-        "Choose one short route",
-        "Start Card A1: four-turn hotel check-in",
-        "Start Card B1: define and attempt the performance",
-        "Start Card C1: decision, question, and source plan",
+        "Start here — choose one small route",
+        "Open Card A1: fictional hotel check-in",
+        "Open Card B1: define and make your own first attempt",
+        "Open Card C1: turn a topic into a checkable question",
+        "Open Card D1: find the missing source record",
+        "Open Card E1: make a user-declared continuity receipt",
         "Already have a reply that missed the task?",
-        "Each route is a candidate template; selecting it is not",
-        "evidence that it works for a learner or a model.",
+        "Each card is a candidate",
+        "not evidence that it works for every learner or model.",
         'id="first-practice-intake"',
         "first-practice intake",
         "Ask one question at a time",
@@ -58,11 +64,28 @@ TEXT_REQUIREMENTS = {
         'id="language-practice-route"',
         'id="general-skill-practice-route"',
         'id="bounded-research-route"',
-        "Beginner Practice Pack v1",
+        'id="card-e1-user-declared-continuity-receipt"',
+        "Card E1 — make a continuity receipt before a fresh turn",
+        "user-declared continuity receipt for a fresh text-only turn",
+        "Still active:",
+        "Superseded or rejected:",
+        "Unknown or unresolved:",
+        "One next permitted action:",
+        "Do not claim that you remember, forgot, cleared, or repaired any earlier conversation.",
+        "does not establish continuity, correctness, privacy, safety, memory control",
+        "user-declared context continuity source receipt",
+        "No cross-model run evidence exists; product-specific actions require a sourced adapter.",
+        "Beginner Practice Pack: Spanish practice, research, and first attempts",
         "Card A1",
         "Card A2",
         "Card B1",
         "Card B2",
+        'id="six-short-work-update-messages"',
+        "Six short messages for a work-update practice loop",
+        "not a promise that an LLM can assess writing",
+        "Freeze a fictional update brief",
+        "Change one condition, not the whole task",
+        "transferred_to_manager_audience",
         "Card C1",
         "Card C2",
         "Model should",
@@ -71,6 +94,10 @@ TEXT_REQUIREMENTS = {
         "Status and receipt boundary",
         "hotel check-in",
         "train station",
+        "Keep the evidence surface honest",
+        "mode: typed_rehearsal",
+        "does not observe speech, listening, pronunciation, pace,",
+        "ai-assisted-language-practice-boundaries-2026-08-14.md",
         "template_selected",
         "source-supported within",
         "beginner-practice-loop-red-black.svg",
@@ -83,15 +110,51 @@ TEXT_REQUIREMENTS = {
         "failed-interaction-recovery-red-black.svg",
         "Communication Failure Triage Skill",
         "after two comparable reruns without improvement",
+        "Boundary Card — before you share, search, or act",
+        "Decide what stays out before you paste",
+        "input status: [authorized instruction | external data | unknown]",
+        "egress: [nothing leaves | minimum permitted fields -> named destination -> owner]",
+        "Capability is not authority.",
+        "cross-platform Boundary Card source receipt",
         "Five-minute synthetic safety decision",
         "CONFIDENTIAL_PLACEHOLDER",
-        "synthetic note only",
-        "allowed action: extract the stated deadline",
+        "external data / synthetic note only",
+        "allowed effect: extract the stated deadline into a scratch note",
+        "egress: nothing leaves",
         "external actions: not_run",
         "demonstrated_on_this_task",
         "not demonstrated",
         "prompt-injection resistance",
         "general safety competence",
+        'id="source-check-route"',
+        "Source check — when an answer looks cited",
+        "Card D1 — source-record check",
+        "source_record_present or unverified — source record missing",
+        "source-shaped-answers-and-beginner-checks-2026-08-14.md",
+        "Do not decide whether the claim is true.",
+        'id="six-short-research-messages"',
+        "Six short messages for one research check",
+        "not a promise that an LLM can search correctly",
+        "Authorize one narrow public lookup, or stop",
+        "A link or citation marker without an opened matching passage is",
+        "Do not call the research exhaustive",
+        "research-question-to-source-record-red-black.svg",
+        "universal-first-turn-prompt-contract-2026-08-13.md",
+        "cross-platform-learner-needs-and-prompt-patterns-2026-08-13.md",
+        'id="retrieval-scope-receipt"',
+        "Card C3 — check whether a supplied source list follows the rule",
+        "available trace: supplied list only",
+        "scope_checked_for_supplied_list | partial_trace | blocked",
+        "does not establish web-research ability, source quality, product behavior",
+        "retrieval-scope-receipt-source-selection-constraints-2026-08-15.md",
+        'id="share-check"',
+        "Share Check — before an answer or conversation leaves your screen",
+        "Do not create a link, send a message, ask for private text, or recommend a product.",
+        "sensitive or unnecessary detail present: no | yes | unknown",
+        "decision: draft a smaller excerpt | stop",
+        "does not configure any product, create a link,",
+        "shared-link audience and snapshot source receipt",
+        "not evidence that a real recipient, model, product, link,",
     ],
     SKILL: [
         "fixture_revision",
@@ -118,6 +181,12 @@ TEXT_REQUIREMENTS = {
         "communication-clinic-EN.md#bounded-research-route",
         "communication-clinic-EN.md#recovery-route",
         "candidate · not_run",
+        "everyday-prompt-steps",
+        "Copy the card exactly as written.",
+        "fictional typed hotel check-in",
+        "Do not add a real name, booking, passport, or payment detail.",
+        "Run one four-minute typed Spanish hotel check-in",
+        "spoken conversation, pronunciation, listening",
     ],
     FIRST_TURN_RUN: [
         "observed_single_turn",
@@ -129,10 +198,19 @@ TEXT_REQUIREMENTS = {
 }
 
 ROUTE_CHOOSER_TARGETS = (
-    "[Start Card A1: four-turn hotel check-in](#language-practice-route)",
-    "[Start Card B1: define and attempt the performance](#general-skill-practice-route)",
-    "[Start Card C1: decision, question, and source plan](#bounded-research-route)",
-    "[recovery route](#recovery-route)",
+    "[Open Card A1: fictional hotel check-in](#card-a1-hotel-baseline-and-correction)",
+    "[Open Card B1: define and make your own first attempt](#card-b1-define-and-attempt-the-performance)",
+    "[Open Card C1: turn a topic into a checkable question](#card-c1-decision-question-and-source-plan)",
+    "[Open Card D1: find the missing source record](#card-d1-source-record-check)",
+    "[Open Card E1: make a user-declared continuity receipt](#card-e1-user-declared-continuity-receipt)",
+)
+
+ROUTE_CARD_TARGETS = (
+    ("#card-a1-hotel-baseline-and-correction", "### Card A1 — hotel baseline and correction"),
+    ("#card-b1-define-and-attempt-the-performance", "### Card B1 — define and attempt the performance"),
+    ("#card-c1-decision-question-and-source-plan", "### Card C1 — decision, question, and source plan"),
+    ("#card-d1-source-record-check", "### Card D1 — source-record check"),
+    ("#card-e1-user-declared-continuity-receipt", "### Card E1 — make a continuity receipt before a fresh turn"),
 )
 
 FIXTURE_FIELDS = {
@@ -156,9 +234,13 @@ def main() -> int:
         if not path.is_file():
             errors.append(f"missing file: {path.relative_to(ROOT)}")
             continue
-        text = path.read_text(encoding="utf-8")
+        # Markdown prose is routinely rewrapped during editing. Compare the
+        # contract semantically, rather than treating a harmless line break as
+        # missing teaching content.
+        text = " ".join(path.read_text(encoding="utf-8").split())
         for needle in needles:
-            if needle.lower() not in text.lower():
+            normalized_needle = " ".join(needle.split())
+            if normalized_needle.lower() not in text.lower():
                 errors.append(f"{path.relative_to(ROOT)}: missing contract text {needle!r}")
 
     if CLINIC.is_file():
@@ -172,6 +254,11 @@ def main() -> int:
             errors.append("communication-clinic: route chooser targets are incomplete")
         elif chooser_index >= min(route_indices):
             errors.append("communication-clinic: route chooser targets must follow the chooser heading")
+        for card_anchor, card_heading in ROUTE_CARD_TARGETS:
+            anchor_index = clinic_text.find(card_anchor)
+            heading_index = clinic_text.find(card_heading)
+            if anchor_index < 0 or heading_index < 0 or anchor_index >= heading_index:
+                errors.append(f"communication-clinic: route target for {card_heading} is missing or out of order")
 
     if PRACTICE_BOARD.is_file():
         board_text = PRACTICE_BOARD.read_text(encoding="utf-8")
@@ -181,6 +268,34 @@ def main() -> int:
             errors.append("beginner practice board freezes mutable candidate/date status in pixels")
     else:
         errors.append(f"missing file: {PRACTICE_BOARD.relative_to(ROOT)}")
+
+    if SOURCE_CHECK_BOARD.is_file():
+        board_text = SOURCE_CHECK_BOARD.read_text(encoding="utf-8")
+        required_board_text = (
+            "A citation is a pointer. Evidence is a record.",
+            "STATUS: UNVERIFIED",
+            "PRYSAI LAB / ORIGINAL TEACHING BOARD / CHECK THE RECORD",
+        )
+        for needle in required_board_text:
+            if needle not in board_text:
+                errors.append(f"source-check board is missing required text {needle!r}")
+    else:
+        errors.append(f"missing file: {SOURCE_CHECK_BOARD.relative_to(ROOT)}")
+
+    if RESEARCH_RECORD_BOARD.is_file():
+        board_text = RESEARCH_RECORD_BOARD.read_text(encoding="utf-8")
+        required_board_text = (
+            "DO NOT SEARCH A TOPIC.",
+            "CHECK A DECISION.",
+            "A LINK IS A LEAD.",
+            "AN OPENED, MATCHED SOURCE CAN SUPPORT A CLAIM.",
+            "PRYSAI LAB / ORIGINAL TEACHING BOARD / INSPECT THE SOURCE RECORD",
+        )
+        for needle in required_board_text:
+            if needle not in board_text:
+                errors.append(f"research-record board is missing required text {needle!r}")
+    else:
+        errors.append(f"missing file: {RESEARCH_RECORD_BOARD.relative_to(ROOT)}")
 
     if FIXTURE.is_file():
         try:

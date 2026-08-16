@@ -14,17 +14,48 @@ POLICY_PATH = ROOT / "docs/governance/repository-security-policy.yaml"
 SECURITY_PATH = ROOT / "SECURITY.md"
 PR_TEMPLATE = ROOT / ".github/PULL_REQUEST_TEMPLATE.md"
 WORKFLOW_DIR = ROOT / ".github/workflows"
+SITE_ENTRYPOINTS = (ROOT / "site/index.html", ROOT / "site/reader.html")
+QUALITY_WORKFLOW = WORKFLOW_DIR / "quality.yml"
 
 SHA_RE = re.compile(r"^[0-9a-f]{40}$", re.IGNORECASE)
 USES_RE = re.compile(r"^\s*(?:-\s*)?uses:\s*([^@\s]+)@([^\s#]+)", re.MULTILINE)
 PULL_REQUEST_TARGET_RE = re.compile(r"^\s*pull_request_target\s*:", re.MULTILINE)
 PULL_REQUEST_RE = re.compile(r"^\s*pull_request\s*:", re.MULTILINE)
-READ_ONLY_PERMISSIONS_RE = re.compile(r"^permissions:\s*\n\s+contents:\s*read\s*$", re.MULTILINE)
+PERMISSIONS_BLOCK_RE = re.compile(r"^permissions:\s*\n((?:^  [a-z-]+:\s*[a-z-]+\s*$\n?)+)", re.MULTILINE)
+PERMISSION_LINE_RE = re.compile(r"^  ([a-z-]+):\s*([a-z-]+)\s*$", re.MULTILINE)
 WRITE_PERMISSION_RE = re.compile(r"^\s+[a-z-]+:\s*write\s*$", re.MULTILINE)
 SECRETS_CONTEXT_RE = re.compile(r"\$\{\{\s*secrets\.", re.IGNORECASE)
 UNSAFE_PIPE_RE = re.compile(
     r"(?:curl|wget|Invoke-WebRequest)\b[^\n|]*\|\s*(?:sh|bash|zsh|pwsh|powershell|Invoke-Expression)\b",
     re.IGNORECASE,
+)
+CSP_META_RE = re.compile(
+    r'<meta\s+http-equiv="Content-Security-Policy"\s+content="([^"]+)"\s*/?>',
+    re.IGNORECASE,
+)
+RESOURCE_TAG_RE = re.compile(r"<(?:script|link)\b", re.IGNORECASE)
+REQUIRED_SITE_CSP_DIRECTIVES = (
+    "default-src 'self'",
+    "base-uri 'self'",
+    "object-src 'none'",
+    "script-src 'self'",
+    "style-src 'self'",
+    "img-src 'self'",
+    "font-src 'self'",
+    "connect-src 'self'",
+    "form-action 'self'",
+    "frame-src 'none'",
+)
+REQUIRED_PYYAML_INSTALL = "python -m pip install --disable-pip-version-check --only-binary=:all: PyYAML==6.0.3"
+FAST_MATERIAL_WORKFLOW = WORKFLOW_DIR / "contribution-material.yml"
+FAST_MATERIAL_REQUIRED_FRAGMENTS = (
+    "ref: ${{ github.event.pull_request.base.sha }}",
+    "path: trusted-base",
+    "ref: ${{ github.event.pull_request.head.sha }}",
+    "path: untrusted-submission",
+    "gh api --paginate",
+    "--repository-root \"$GITHUB_WORKSPACE/untrusted-submission\"",
+    "--changed-paths-file \"$GITHUB_WORKSPACE/changed-paths.txt\"",
 )
 SECRET_PATTERNS = (
     re.compile(r"\b(?:ghp|gho|ghu|ghs|ghr)_[A-Za-z0-9]{20,}\b"),
@@ -51,6 +82,7 @@ REQUIRED_PR_HEADINGS = {
     "## Source, authorship, and license",
     "## Safety and external effects",
     "## Security review",
+    "## Contribution route and review request",
     "## Evidence actually produced",
     "## Unverified and out of scope",
 }
@@ -137,12 +169,36 @@ def validate_workflow_text(text: str, label: str) -> list[str]:
         if not SHA_RE.fullmatch(ref):
             errors.append(f"{label}: Action must use a full commit SHA: {action}@{ref}")
     if PULL_REQUEST_RE.search(text):
-        if not READ_ONLY_PERMISSIONS_RE.search(text):
-            errors.append(f"{label}: pull-request workflow must explicitly set only contents: read")
+        permission_match = PERMISSIONS_BLOCK_RE.search(text)
+        if not permission_match:
+            errors.append(f"{label}: pull-request workflow must explicitly set read-only permissions")
+        else:
+            permissions = dict(PERMISSION_LINE_RE.findall(permission_match.group(0)))
+            if permissions.get("contents") != "read":
+                errors.append(f"{label}: pull-request workflow must grant contents: read")
+            if any(scope not in {"contents", "pull-requests"} or level != "read" for scope, level in permissions.items()):
+                errors.append(f"{label}: pull-request workflow may grant only read-only contents or pull-requests permissions")
         if WRITE_PERMISSION_RE.search(text):
             errors.append(f"{label}: pull-request workflow must not grant write-scoped permissions")
         if "actions/checkout@" in text and "persist-credentials: false" not in text:
             errors.append(f"{label}: pull-request workflow must disable persisted checkout credentials")
+    return errors
+
+
+def validate_quality_dependency_pin(text: str, label: str) -> list[str]:
+    if REQUIRED_PYYAML_INSTALL not in text:
+        return [f"{label}: validation dependency must use the pinned binary-only PyYAML install"]
+    return []
+
+
+def validate_fast_material_workflow(text: str, label: str) -> list[str]:
+    """Keep the fast route on trusted validator code and untrusted data only."""
+    errors = []
+    for fragment in FAST_MATERIAL_REQUIRED_FRAGMENTS:
+        if fragment not in text:
+            errors.append(f"{label}: missing trusted fast-material boundary: {fragment}")
+    if "working-directory: trusted-base" not in text:
+        errors.append(f"{label}: fast-material validators must run from trusted-base")
     return errors
 
 
@@ -166,6 +222,14 @@ def validate_workflows() -> tuple[int, list[str]]:
             errors.append("security-policy workflow must have a read-only contents permission")
         if "persist-credentials: false" not in text:
             errors.append("security-policy workflow must not persist checkout credentials")
+    if not QUALITY_WORKFLOW.is_file():
+        errors.append("missing .github/workflows/quality.yml")
+    else:
+        errors.extend(validate_quality_dependency_pin(QUALITY_WORKFLOW.read_text(encoding="utf-8"), relative(QUALITY_WORKFLOW)))
+    if not FAST_MATERIAL_WORKFLOW.is_file():
+        errors.append("missing .github/workflows/contribution-material.yml")
+    else:
+        errors.extend(validate_fast_material_workflow(FAST_MATERIAL_WORKFLOW.read_text(encoding="utf-8"), relative(FAST_MATERIAL_WORKFLOW)))
     return len(workflows), errors
 
 
@@ -224,6 +288,34 @@ def validate_contributor_docs() -> list[str]:
     return errors
 
 
+def validate_site_csp_text(text: str, label: str) -> list[str]:
+    errors: list[str] = []
+    match = CSP_META_RE.search(text)
+    if not match:
+        return [f"{label}: missing an early Content-Security-Policy meta contract"]
+    first_resource = RESOURCE_TAG_RE.search(text)
+    if first_resource and match.start() > first_resource.start():
+        errors.append(f"{label}: CSP must precede every script and stylesheet resource")
+    policy = match.group(1)
+    for directive in REQUIRED_SITE_CSP_DIRECTIVES:
+        if directive not in policy:
+            errors.append(f"{label}: CSP is missing {directive}")
+    for unsafe_directive in ("unsafe-inline", "unsafe-eval"):
+        if unsafe_directive in policy:
+            errors.append(f"{label}: CSP must not allow {unsafe_directive}")
+    return errors
+
+
+def validate_site_csp() -> list[str]:
+    errors: list[str] = []
+    for path in SITE_ENTRYPOINTS:
+        if not path.is_file():
+            errors.append(f"missing static-site entrypoint {relative(path)}")
+            continue
+        errors.extend(validate_site_csp_text(path.read_text(encoding="utf-8"), relative(path)))
+    return errors
+
+
 def main() -> int:
     policy, errors = load_policy()
     if policy is not None:
@@ -235,6 +327,7 @@ def main() -> int:
     if not candidate_errors:
         errors.extend(secret_scan(candidates))
     errors.extend(validate_contributor_docs())
+    errors.extend(validate_site_csp())
 
     if errors:
         print("REPOSITORY_SECURITY_POLICY_FAILED")

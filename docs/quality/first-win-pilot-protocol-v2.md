@@ -63,8 +63,11 @@ Before any authorized session, generate one local-only package with the
 fixed participant worksheet, moderator runbook, scorer key, blank records, and
 aggregate template while writing the exact source digests from one existing Git
 commit. The package generator refuses an invalid commit, a non-empty output
-directory, a malformed role alias, an expired retention date, or an entry URL
-with credentials, query text, or a fragment. It does not recruit, contact
+directory, a malformed role alias, the same alias for moderator and independent
+scorer, an expired retention date, or an entry URL with credentials, query text,
+or a fragment. The moderator and independent scorer must be different people
+for the round; role aliases make that separation auditable without recording
+names. The generator does not recruit, contact
 participants, collect data, or establish that the pilot has approval.
 
 From the repository root, the pilot authorizer runs the following only after

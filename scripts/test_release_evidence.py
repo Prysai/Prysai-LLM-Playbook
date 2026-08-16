@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import copy
+import subprocess
 import tempfile
 from pathlib import Path
 
@@ -14,8 +15,32 @@ def require(condition: bool, message: str) -> None:
         raise AssertionError(message)
 
 
+def git_fixture(head: str, status: str = ""):
+    def run(argv: list[str], **_: object) -> subprocess.CompletedProcess[str]:
+        if argv == ["git", "rev-parse", "HEAD"]:
+            return subprocess.CompletedProcess(argv, 0, stdout=f"{head}\n", stderr="")
+        if argv == ["git", "status", "--porcelain", "--untracked-files=all"]:
+            return subprocess.CompletedProcess(argv, 0, stdout=status, stderr="")
+        raise AssertionError(f"unexpected git command: {argv}")
+
+    return run
+
+
 def main() -> int:
     contract = evidence.load_object(evidence.CONTRACT_PATH)
+    candidate_sha = "a" * 40
+    require(
+        not evidence.validate_candidate_checkout(candidate_sha, git_fixture(candidate_sha)),
+        "clean matching checkout was rejected",
+    )
+    require(
+        any("must equal" in error for error in evidence.validate_candidate_checkout(candidate_sha, git_fixture("b" * 40))),
+        "candidate SHA mismatch was accepted",
+    )
+    require(
+        any("working tree must be clean" in error for error in evidence.validate_candidate_checkout(candidate_sha, git_fixture(candidate_sha, " M README.md\n"))),
+        "dirty checkout was accepted as commit-bound evidence",
+    )
 
     duplicate = copy.deepcopy(contract)
     duplicate["dimensions"][0]["commands"].append(copy.deepcopy(duplicate["dimensions"][0]["commands"][0]))
@@ -129,7 +154,7 @@ def main() -> int:
     require("Decision: `not_ready`" in rendered, "readiness decision missing from packet summary")
     require("`rollback`" in rendered, "readiness blocker missing from packet summary")
 
-    print("RELEASE_EVIDENCE_TESTS_OK fixtures=22")
+    print("RELEASE_EVIDENCE_TESTS_OK fixtures=25")
     return 0
 
 

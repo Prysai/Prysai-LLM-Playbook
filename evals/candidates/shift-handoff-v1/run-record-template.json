@@ -1,0 +1,20 @@
+{
+  "schema_version": "1",
+  "fixture_id": "shift-handoff-v1",
+  "record_set_status": "not_run",
+  "data_origin": "actual_deidentified_pilot",
+  "protocol_revision": "shift-handoff-pilot-v1",
+  "candidate_sha": null,
+  "packet_manifest_sha256": null,
+  "run_set_conditions": {
+    "model_surface": null,
+    "model_identifier": null,
+    "visible_settings": null,
+    "tool_state": "no_tools",
+    "locale": "en",
+    "scorer_a": null,
+    "scorer_b": null
+  },
+  "records": [],
+  "evidence_boundary": "This template contains no observations. Fill it only with authorized, de-identified, actual pilot records; do not add names, account data, private prompts, secrets, or raw user work."
+}

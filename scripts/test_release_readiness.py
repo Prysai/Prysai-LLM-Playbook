@@ -16,13 +16,26 @@ def main() -> int:
     contract = readiness.load_contract()
     require(not readiness.validate_contract(contract), "checked-in not_ready contract is invalid")
     require("release_tag" in readiness.readiness_blockers(contract), "missing tag was not reported")
+    require(contract["version"]["status"] == "declared", "candidate version was not declared")
+    require(contract["changelog"]["status"] == "current", "candidate changelog was not recorded")
 
     false_ready = copy.deepcopy(contract)
     false_ready["decision"] = "ready"
     false_ready_errors = readiness.validate_contract(false_ready, inspect_git=False)
-    require(any("ready decision requires version" in error for error in false_ready_errors), "ready accepted without version")
+    require(any("ready decision requires release_tag" in error for error in false_ready_errors), "ready accepted without release tag")
     require(any("ready decision requires rollback" in error for error in false_ready_errors), "ready accepted without rollback")
     require(any("cannot retain known_gaps" in error for error in false_ready_errors), "ready accepted known gaps")
+
+    undeclared_version = copy.deepcopy(false_ready)
+    undeclared_version["version"] = {"status": "pending", "value": ""}
+    undeclared_version_errors = readiness.validate_contract(
+        undeclared_version,
+        inspect_git=False,
+    )
+    require(
+        any("ready decision requires version" in error for error in undeclared_version_errors),
+        "ready accepted an undeclared version",
+    )
 
     invented_tag = copy.deepcopy(contract)
     invented_tag["release_tag"] = {
@@ -68,7 +81,7 @@ def main() -> int:
     mismatch_errors = readiness.validate_contract(mismatch, inspect_git=False)
     require(any("same commit" in error for error in mismatch_errors), "tag/evidence SHA mismatch was accepted")
 
-    print("RELEASE_READINESS_TESTS_OK fixtures=5")
+    print("RELEASE_READINESS_TESTS_OK fixtures=6")
     return 0
 
 

@@ -1,0 +1,18 @@
+{
+  "schema_version": "1",
+  "record_id": "SHP-CAP-08",
+  "session_code": "SH-RUN08",
+  "packet_id": "SHP-H-02-R1",
+  "condition": "shift_handoff",
+  "task_id": "support-summary-conflict",
+  "repetition": 1,
+  "timestamp_start": "2026-08-15T16:32:58.831Z",
+  "timestamp_end": "2026-08-15T16:33:06.369Z",
+  "elapsed_seconds": 8,
+  "response_text": "stable_criteria: Internal handoff only; do not contact the customer or modify a ticket. Preserve conflicting supplied facts. A ready receipt identifies the conflict, needed confirmation, and resolver.\ntoday_item: Support summary says Plan A; account note says Plan B. Do not select either plan or send a reply.\nauthority: Account owner is the only listed resolver and must confirm the applicable plan.\nacceptance_evidence: Account owner confirmation resolving Plan A vs. Plan B is recorded.\nunknowns: Which plan is correct remains unconfirmed.\nnext_owner: Account owner.",
+  "response_sha256": "d3118c19507956e1c901ba6b371e836fa143d9e1c437a82ff5e8309aef0aa89c",
+  "capture_status": "captured",
+  "condition_deviation": "none",
+  "evidence_boundary": "One de-identified output from a fixed fictional prompt. It is captured but unscored and does not establish quality, efficiency, productivity, learning, IQ, safety, accuracy, or model quality."
+}
+

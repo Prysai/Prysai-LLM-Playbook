@@ -2,11 +2,11 @@
 
 ---
 id: lab-018-language-transfer
-title: "Test a beginner travel exchange for retention and transfer"
+title: "Test a typed beginner travel exchange for retention and transfer"
 level: L2
 domain: language-learning
-goal: "Produce a five-minute beginner travel information exchange under fixed conditions, then test a changed case and a predeclared delayed task without converting one observation into fluency"
-setup: "Synthetic travel cards, a fixed rubric, a disposable local record, no network, credentials, external contact, production system, or automated reminder"
+goal: "Produce a five-minute typed beginner travel information exchange under fixed conditions, then test a changed case and a predeclared delayed task without converting one observation into fluency"
+setup: "Synthetic typed travel cards, a fixed rubric, a disposable local record, no network, credentials, external contact, production system, or automated reminder"
 task: "Capture an unaided baseline, use retrieval-first correction, run one changed immediate task, and preserve a delayed unseen transfer task"
 evidence:
   - "Baseline, hint ladder, learner-authored correction, and correction ledger"
@@ -20,10 +20,10 @@ last_verified: "not run"
 transfer_task: "After a predeclared seven-day window (± one day), complete a pre-authored delayed travel exchange with a changed setting, vocabulary, and ambiguity"
 transfer_domain: "beginner travel information exchange"
 transfer_evidence: "Preserve task-pool revision, assignment, learner-exposure status, unaided attempt, rubric scores, scorer independence, score disagreement, actual delay, unknowns, and exact variation"
-transfer_limitations: "This lab cannot establish broad language learning, fluency, listening ability, real-world interaction, durable retention outside the stated window, task equivalence, rubric reliability, or model/platform effectiveness"
+transfer_limitations: "This text-only lab cannot establish broad language learning, fluency, listening ability, pronunciation, spoken interaction, durable retention outside the stated window, task equivalence, rubric reliability, or model/platform effectiveness"
 ---
 
-# Lab 018: Test a beginner travel exchange for retention and transfer
+# Lab 018: Test a typed beginner travel exchange for retention and transfer
 
 > **Placement:** optional L2 application and enrichment practice. This Lab is
 > not required for L2 graduation. Its delayed-retention and unseen-transfer
@@ -31,11 +31,11 @@ transfer_limitations: "This lab cannot establish broad language learning, fluenc
 
 ## Learning objective
 
-Produce the information needed in a short beginner travel exchange, repair one
+Produce the information needed in a short typed beginner travel exchange, repair one
 meaning-blocking error through graduated hints, and test the same capability in
 a changed case. A delayed unseen task is required before any retention claim.
 
-This is a registered `draft / not_run` curriculum artifact with no learner,
+This is a text-only, registered `draft / not_run` curriculum artifact with no learner,
 delayed-retention, or transfer evidence. Its presence in the learning path,
 content-status source, Lab index, and locale manifest proves discoverability
 and structure only; it does not prove that the Lab improves learning.
@@ -49,7 +49,7 @@ created. Stop if the exercise would cause an external side effect.
 
 Use this fixed capability:
 
-> In five minutes, exchange greeting, reservation or destination information,
+> In five minutes, type greeting, reservation or destination information,
 > one clarifying question, one answer, and a closing so the practical meaning
 > remains understandable.
 
@@ -66,7 +66,7 @@ Use this rubric, two points per row:
 | Meaning | Exchange breaks | Repair needed | Understandable without repair |
 | Clarification | None when needed | Prompted or unclear | Relevant question and response |
 | Independence | Answer supplied | Hint or fragment used | No target-language help |
-| Interaction | Cannot sustain turns | Uneven turn sequence | Greeting through closing completed |
+| Typed interaction | Cannot sustain turns | Uneven turn sequence | Typed greeting through closing completed |
 
 The fixed pass threshold is 8/10, with no zero for required information or
 meaning. Record the scorer. A coach who also scores is not independent. For
@@ -82,7 +82,9 @@ attempt, rubric, and recorded conditions. This reduces interpretation risk; it
 does not validate the rubric or make scores comparable across learners.
 
 Create a run ID such as `lab018-en-2026-08-13-a`. Record task revisions,
-surface/model label if used, date, five-minute limit, aids, rubric, and scorer.
+`mode: typed_rehearsal`, surface/model label if used, date, five-minute limit,
+aids, rubric, and scorer. Do not use this record as a speaking, pronunciation,
+or listening measure.
 
 ## Part 1 — fixed baseline
 
@@ -93,7 +95,7 @@ Setting: hotel reception.
 You: a guest with reservation name Rivera for two nights.
 Need: confirm breakfast time and ask where the lift is.
 Ambiguity: the receptionist first hears one night.
-Complete the exchange in the language you are practising.
+Type the exchange in the language you are practising.
 ```
 
 Run one turn at a time for no more than five minutes. Save the learner's exact
@@ -128,7 +130,7 @@ Setting: train-station information desk.
 You: a traveller going to Valencia with a ticket for 16:40.
 Need: confirm the platform and ask whether a change is required.
 Ambiguity: the clerk first refers to the 16:14 train.
-Complete the exchange in the same target language.
+Type the exchange in the same target language.
 ```
 
 Keep the five-minute limit, allowed aids, and rubric fixed. Save the unaided
@@ -187,7 +189,7 @@ fluency, or mastery.
 Keep:
 
 ```text
-run_id | task_revisions | date | declared_delay_window | actual_delay | surface/model
+run_id | task_revisions | mode: typed_rehearsal | date | declared_delay_window | actual_delay | surface/model
 allowed_aids | leakage_policy | time_limit | rubric | scorer | scorer_independence
 baseline_attempt | baseline_score | hints | correction_ledger
 learner_correction | changed_attempt | changed_score
@@ -221,6 +223,7 @@ before a delayed task with recorded exposure and independent scoring?
 
 - [Learning Practice Contract](../guides/learning-practice-contract-EN.md) — evidence and answer-leakage rules used by this lab.
 - [Beginner Practice Pack](../communication-clinic-EN.md) — the three-stage language route.
+- [Typed rehearsal is not spoken conversation](../../docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md) — modality and feedback-interpretation boundary for this text-only Lab.
 - [Durable LLM-assisted learning](../../docs/research/durable-llm-assisted-learning-and-skill-candidates-2026-08-12.md) — candidate research synthesis and source boundaries; accessed 2026-08-12.
 - [Lab 018 delayed-check card pool](../../docs/quality/lab-018-delayed-card-pool-v1.md) — project-authored pre-declared card and scoring-control procedure.
 

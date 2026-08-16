@@ -37,6 +37,8 @@
       "tracked credential-shaped files",
       "common token and private-key markers",
       "unsafe shell-pipe patterns in workflows",
+      "pinned binary-only Python validation dependency",
+      "same-origin static-site Content-Security-Policy meta contract",
       "policy fixture tests"
     ],
     "evidence_limit": "A passing check only establishes the declared static policy over the checked commit. It does not prove that no secret, vulnerability, unsafe dependency, account compromise, deployment risk, or host-side misconfiguration exists."

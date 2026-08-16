@@ -6,14 +6,20 @@ fixtures, site changes, and governance improvements. A contribution is not
 accepted merely because it is large, polished, or AI-assisted; it must preserve
 the project's source, safety, evidence, language, and maturity boundaries.
 
+Participation is also covered by the [Community conduct](CODE_OF_CONDUCT.md).
+Keep disagreements focused on the work and report sensitive incidents through
+the private path described there, not through a public issue or pull request.
+
 ## Choose the smallest correct path
 
 | Change class | Examples | Start here | Minimum evidence |
 |---|---|---|---|
 | Small correction | Typo, broken local link, unambiguous wording | Edit the canonical source directly | Focused check and self-review |
 | Content change | Chapter, lab, case, volatile fact | [`CONTEXT.md`](CONTEXT.md), [book architecture](docs/book-architecture.md), and the relevant source record | Learning contract, sources, boundary/failure case, and local links |
+| Translation slice | One existing content identity in one locale | [Translation contribution protocol](docs/governance/translation-contribution-protocol.md) | Same `content_id`, source revision, same-locale links, independent language review request, and locale/link checks |
 | Contract change | Navigation, locale, status, generated data, quality policy | [Governance contracts](docs/governance/README.md) | Proposal or ADR when costly to reverse, generator, validator, and migration evidence |
 | Behavior change | Skill, evaluation, automation | [Skill standard](docs/quality/skill-quality-standard.md) or [evaluation framework](docs/quality/evaluation-framework.md) | Positive, boundary, failure, and transfer evidence; fresh-context/runtime records when claiming verification |
+| Test material | Original fictional evaluation fixture or safe text-only protocol | [Community evidence contribution protocol](docs/quality/community-evidence-contribution-protocol-v1.md) | `contribution.json`, a positive and boundary/failure case, no personal or raw model data, and an explicit non-claim boundary |
 | Release change | Version, license, publication, maturity, rollback | [Release checklist](docs/release-checklist.md) and [release-evidence contract](docs/governance/release-evidence.yaml) | Exact candidate SHA, release packet, blockers, reviewer, rollback target, and explicit approval |
 | Field report | First-task friction, platform difference, reader problem | [Field Report form](.github/ISSUE_TEMPLATE/field-report.yml) | Sanitized observation, scope, reproduction status, privacy confirmation, and a clear unknowns boundary |
 
@@ -28,6 +34,26 @@ account details, copyrighted text, or private repositories into it. A report
 that becomes teaching material must first pass the source, license, privacy,
 evidence, reproduction, safe-check, and stop-condition fields in the
 [field-case template](docs/templates/field-case.md).
+
+## Fast test-material route
+
+Use the fast route only for original fictional fixtures or low-risk text-only
+protocols. Follow the exact folder and receipt
+format in [community test-material contributions](evals/contributions/README.md).
+The CI gate verifies the receipt's scope, privacy declarations, and non-claim
+sentence; it does not merge the PR.
+
+One maintainer can review and merge a small fast-route PR when the receipt,
+positive and boundary/failure cases, source/license declaration, and CI pass. A PR whose only
+changed path is its one contribution folder uses the dedicated fast check;
+adding any other path also runs the full quality workflow. Follow the
+[short maintainer procedure](docs/governance/fast-material-review.md)
+before approval. It must not include executable code or a validator, an actual
+learner result, model transcript, private material, a status change,
+license change, workflow/security change, or a claim of improved model quality,
+learning, safety, productivity, efficiency, or IQ. Those changes use the
+restricted-evidence or standard review path and may need independent reviewers.
+No route promises a merge time or automatic approval.
 
 ## Find the canonical source
 
@@ -54,6 +80,11 @@ State all of the following in the pull request:
 6. what remains `not_run`, unreviewed, or outside scope;
 7. the requested maturity/status change, if any, and evidence supporting it;
 8. rollback or recovery for behavior, contract, or release changes.
+
+For the fast test-material route, also link the `contribution.json` receipt,
+state the reviewer role requested, and sign off each commit to attest that you
+have the right to submit the work under the current repository license. This
+is a review declaration, not an automated CLA or a grant of trademark rights.
 
 AI assistance may be disclosed plainly when relevant. The contributor remains
 responsible for authorship rights, factual accuracy, source boundaries, tests,

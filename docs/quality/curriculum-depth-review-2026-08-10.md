@@ -96,7 +96,19 @@
 
 ## 审查结论与状态边界
 
+### 2026-08-14 implementation note
+
+The three minimum tasks are now represented by bounded project artifacts rather
+than only recommendations in this review: Lab 007 supplies the surface-boundary
+record, Lab 017 supplies the pre-install Skill audit, and
+[`three-task-smoke-v1`](../../evals/candidates/three-task-smoke-v1/README.md)
+supplies versioned synthetic inputs, hashes, expected outputs, an offline
+validator, and a `not_run` run-record template for the model/workflow smoke.
+That improves reproducibility of these priority slices. It does not record a
+model run, learner completion, independent review, or general performance
+conclusion, and it does not resolve the per-chapter depth inconsistency.
+
 - 22 章的结构普遍包含目标、实验、失败、证据和迁移标题；标题存在不等于学习者已经产生对应证据。
-- 13 个实验目前仍是 `draft`/未运行状态；本报告没有把任何实验称为已验证。
-- 39 项评测任务已经覆盖大量边界和停止判断，但其中不少是静态决策输入；它们不能替代真实低风险运行日志。
+- 本审查在 2026-08-10 时抽查了 13 个实验；当前实验清单和运行状态以内容状态源为准，`draft` 或静态结构检查不等于任何实验已经通过学习者验证。
+- 本审查当时检查了 39 项评测任务。评测夹具可以覆盖边界和停止判断，但其中的静态决策输入不能替代真实低风险运行日志；当前夹具数量以内容状态源为准。
 - 本报告提出的是最小补强规格，不是已实施的课程改版；完成后仍需运行相应任务、保存输入/输出/复核记录，再决定是否提升内容状态。

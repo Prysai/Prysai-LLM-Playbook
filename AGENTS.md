@@ -56,6 +56,13 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\audit_input_archives.py
 ```
 
+The original source archives are optional local audit inputs, not repository
+assets. Supply their location explicitly with
+`& $py scripts\audit_input_archives.py --archive-dir <directory>` or set
+`PRYSAI_INPUT_ARCHIVE_DIR` before running the command. An unconfigured or
+missing archive is an incomplete audit, never a reason to skip the source and
+license boundary.
+
 The official skill validator is at
 `H:\Codex\home\skills\.system\skill-creator\scripts\quick_validate.py`.
 If its YAML dependency is unavailable, use the bundled workspace Python runtime

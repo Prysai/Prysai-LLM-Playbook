@@ -52,3 +52,8 @@ Current entry points:
 - [ADR-0034: Prysai LLM Playbook reader identity](0034-prysai-llm-playbook-reader-identity.md)
 - [ADR-0035: rename the remote repository](0035-rename-remote-repository.md)
 - [ADR-0036: repository security policy and PR gate](0036-repository-security-policy-and-pr-gate.md)
+- [ADR-0037: make the first decision match the reader's actual starting point](0037-first-time-entry-scope-and-observation.md)
+- [ADR-0038: prepare condition-blind model-output review packets](0038-condition-blind-model-output-review-packets.md)
+- [ADR-0039: bind evaluation prompt hashes to serialized input bytes](0039-bind-evaluation-prompt-hashes-to-serialized-input-bytes.md)
+- [ADR-0040: require a clean matching checkout for release evidence](0040-clean-checkout-release-evidence.md)
+- [ADR-0041: separate fictional contribution checks from full release evidence](0041-fictional-contribution-fast-check.md)

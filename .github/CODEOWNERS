@@ -1,0 +1,14 @@
+# Candidate review routing only. GitHub requests review from these owners when
+# an applicable pull request targets the branch that contains this file. A
+# Ruleset is still required before code-owner approval becomes enforceable.
+
+/evals/contributions/ @Prysai
+/LICENSE @Prysai
+/CONTRIBUTING.md @Prysai
+/SECURITY.md @Prysai
+/docs/quality/ @Prysai
+/docs/governance/ @Prysai
+/docs/sources/ @Prysai
+/docs/strategy/ @Prysai
+/.github/ @Prysai
+/scripts/ @Prysai

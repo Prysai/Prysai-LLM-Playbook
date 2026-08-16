@@ -30,6 +30,11 @@ def node_executable() -> str:
     return str(bundled) if bundled.is_file() else "node"
 REQUIRED_COMMANDS = {
     "browser-smoke": ("{node}", "scripts/browser_smoke.mjs"),
+    "teaching-asset-catalog": ("{python}", "scripts/validate_teaching_assets.py"),
+    "teaching-asset-catalog-fixtures": ("{python}", "scripts/test_validate_teaching_assets.py"),
+    "site-i18n": ("{python}", "scripts/validate_site_i18n.py"),
+    "site-i18n-fixtures": ("{python}", "scripts/test_validate_site_i18n.py"),
+    "input-archive-location-fixtures": ("{python}", "scripts/test_input_archive_locations.py"),
     "skill-registry": ("{python}", "scripts/validate_skill_registry.py"),
     "skill-registry-fixtures": ("{python}", "scripts/test_skill_registry.py"),
     "learning-practice-candidate": ("{python}", "scripts/validate_learning_practice_candidate.py"),
@@ -44,10 +49,14 @@ REQUIRED_COMMANDS = {
     "reader-lab-navigation-fixtures": ("{python}", "scripts/test_reader_lab_navigation.py"),
     "lab-navigation-output": ("{python}", "scripts/build_lab_navigation.py", "--check"),
     "github-template-fixtures": ("{python}", "scripts/test_validate_github_templates.py"),
+    "contributed-test-material": ("{python}", "scripts/validate_contributed_test_material.py"),
+    "contributed-test-material-fixtures": ("{python}", "scripts/test_validate_contributed_test_material.py"),
+    "contribution-receipt-scaffold-fixtures": ("{python}", "scripts/test_create_contribution_receipt.py"),
     "repository-security-policy": ("{python}", "scripts/validate_repository_security.py"),
     "repository-security-policy-fixtures": ("{python}", "scripts/test_validate_repository_security.py"),
     "universal-seam-fixture": ("{python}", "scripts/validate_universal_seam_fixture.py"),
     "universal-seam-fixture-tests": ("{python}", "scripts/test_universal_seam_fixture.py"),
+    "three-task-smoke-fixture": ("{python}", "scripts/test_three_task_smoke_fixture.py"),
 }
 
 
@@ -56,6 +65,42 @@ def load_object(path: Path) -> dict[str, Any]:
     if not isinstance(value, dict):
         raise ValueError(f"{path.relative_to(ROOT)} must contain an object")
     return value
+
+
+def validate_candidate_checkout(candidate_sha: str, run: Any = subprocess.run) -> list[str]:
+    """Refuse to label dirty or mismatched local results as commit-bound evidence."""
+    errors: list[str] = []
+    try:
+        head = run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=ROOT,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            capture_output=True,
+            check=False,
+        )
+        if head.returncode != 0:
+            return ["cannot resolve HEAD while binding release evidence"]
+        resolved_head = head.stdout.strip().casefold()
+        if resolved_head != candidate_sha:
+            errors.append("candidate_sha must equal the checked-out HEAD commit")
+        status = run(
+            ["git", "status", "--porcelain", "--untracked-files=all"],
+            cwd=ROOT,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            capture_output=True,
+            check=False,
+        )
+        if status.returncode != 0:
+            errors.append("cannot inspect the working tree while binding release evidence")
+        elif status.stdout.strip():
+            errors.append("working tree must be clean before generating commit-bound release evidence")
+    except OSError as exc:
+        errors.append(f"cannot run git while binding release evidence: {exc}")
+    return errors
 
 
 def validate_contract(contract: dict[str, Any]) -> list[str]:
@@ -405,6 +450,12 @@ def main() -> int:
         if not SHA_RE.fullmatch(args.candidate_sha):
             print("RELEASE_EVIDENCE_FAILED")
             print("- candidate_sha must be the full 40-character lowercase commit SHA")
+            return 1
+        candidate_errors = validate_candidate_checkout(args.candidate_sha)
+        if candidate_errors:
+            print("RELEASE_EVIDENCE_FAILED")
+            for error in candidate_errors:
+                print(f"- {error}")
             return 1
         packet, exit_code = build_packet(contract, args)
         print(f"RELEASE_EVIDENCE_{'OK' if exit_code == 0 else 'FAILED'} decision={packet['decision']} sha={packet['candidate_sha']}")

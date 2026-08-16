@@ -1,0 +1,8 @@
+Completed facts:
+- Build exit code: 0.
+- Mobile at 390px checked.
+
+Unverified fact:
+- User acceptance: not run.
+
+Use only the two category names Completed and Unverified.

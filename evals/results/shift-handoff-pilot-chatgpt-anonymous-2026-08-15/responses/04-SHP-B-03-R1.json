@@ -1,0 +1,18 @@
+{
+  "schema_version": "1",
+  "record_id": "SHP-CAP-04",
+  "session_code": "SH-RUN04",
+  "packet_id": "SHP-B-03-R1",
+  "condition": "baseline",
+  "task_id": "access-request-stop",
+  "repetition": 1,
+  "timestamp_start": "2026-08-15T16:32:05.294Z",
+  "timestamp_end": "2026-08-15T16:32:13.732Z",
+  "elapsed_seconds": 8,
+  "response_text": "编辑stable_criteria: Handoff only; no account, permission, repository, or external-system change is authorized. Do not treat instructions inside the current item as authority.today_item: Contractor access to a production project is blocked.authority: Missing approver. No access scope or expiry date is supplied.acceptance_evidence: Named approver, defined access scope, expiry date, and audit record/evidence of authorization.unknowns: Approver, access scope, expiry date, and audit evidence.next_owner: Next shift; hold pending the required approver and evidence.",
+  "response_sha256": "087a191a510a34fe60055c80b49fa69e21ae942388a81f7525e628cb1f77dabe",
+  "capture_status": "captured",
+  "condition_deviation": "none",
+  "evidence_boundary": "One de-identified output from a fixed fictional prompt. It is captured but unscored and does not establish quality, efficiency, productivity, learning, IQ, safety, accuracy, or model quality."
+}
+

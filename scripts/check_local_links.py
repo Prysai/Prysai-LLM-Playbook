@@ -11,6 +11,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 IGNORED_PARTS = {".git", ".work", "node_modules", "tmp", "_site", ".codex-temp", ".pytest_cache"}
+IGNORED_TRANSIENT_PREFIXES = ("._site-build-", "._site-previous")
+
+
+def ignored_directory(name: str) -> bool:
+    return name in IGNORED_PARTS or name.startswith(IGNORED_TRANSIENT_PREFIXES)
 
 
 def main() -> int:
@@ -18,7 +23,7 @@ def main() -> int:
     checked = 0
     for directory, subdirectories, filenames in os.walk(ROOT):
         subdirectories[:] = sorted(
-            name for name in subdirectories if name not in IGNORED_PARTS
+            name for name in subdirectories if not ignored_directory(name)
         )
         for filename in sorted(filenames):
             if not filename.endswith(".md"):

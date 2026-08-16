@@ -57,8 +57,22 @@ jobs:
 
         write_permission = valid_workflow.replace("  contents: read", "  contents: write")
         require(
-            any("read-only permission" in error or "write-scoped permissions" in error for error in policy.validate_workflow_text(write_permission, "write.yml")),
+            any("contents: read" in error or "write-scoped permissions" in error for error in policy.validate_workflow_text(write_permission, "write.yml")),
             "write-scoped pull-request permission was accepted",
+        )
+        fixtures += 1
+
+        fast_workflow = "\n".join(policy.FAST_MATERIAL_REQUIRED_FRAGMENTS) + "\nworking-directory: trusted-base\n"
+        require(
+            not policy.validate_fast_material_workflow(fast_workflow, "contribution-material.yml"),
+            "trusted fast-material workflow was rejected",
+        )
+        fixtures += 1
+
+        missing_trusted_root = fast_workflow.replace("path: trusted-base\n", "")
+        require(
+            any("trusted fast-material boundary" in error for error in policy.validate_fast_material_workflow(missing_trusted_root, "contribution-material.yml")),
+            "fast-material workflow without trusted checkout was accepted",
         )
         fixtures += 1
 
@@ -66,6 +80,48 @@ jobs:
         require(
             any("persisted checkout credentials" in error for error in policy.validate_workflow_text(persisted_checkout, "checkout.yml")),
             "persisted checkout credential was accepted",
+        )
+        fixtures += 1
+
+        require(
+            not policy.validate_quality_dependency_pin(policy.REQUIRED_PYYAML_INSTALL, "quality.yml"),
+            "pinned binary-only validation dependency was rejected",
+        )
+        fixtures += 1
+
+        require(
+            policy.validate_quality_dependency_pin("python -m pip install PyYAML", "quality.yml"),
+            "unbounded validation dependency was accepted",
+        )
+        fixtures += 1
+
+        valid_csp = (
+            '<meta http-equiv="Content-Security-Policy" '
+            'content="default-src \'self\'; base-uri \'self\'; object-src \'none\'; '
+            'script-src \'self\'; style-src \'self\'; img-src \'self\'; '
+            'font-src \'self\'; connect-src \'self\'; form-action \'self\'; frame-src \'none\'" />'
+        )
+        require(not policy.validate_site_csp_text(valid_csp, "site/index.html"), "strict site CSP was rejected")
+        fixtures += 1
+
+        late_csp = '<script src="app.js"></script>' + valid_csp
+        require(
+            any("must precede" in error for error in policy.validate_site_csp_text(late_csp, "site/index.html")),
+            "site CSP was accepted after a script resource",
+        )
+        fixtures += 1
+
+        missing_object = valid_csp.replace("object-src 'none'; ", "")
+        require(
+            any("object-src 'none'" in error for error in policy.validate_site_csp_text(missing_object, "site/index.html")),
+            "site CSP accepted a missing object-src boundary",
+        )
+        fixtures += 1
+
+        unsafe_csp = valid_csp.replace("script-src 'self'", "script-src 'self' 'unsafe-inline'")
+        require(
+            any("unsafe-inline" in error for error in policy.validate_site_csp_text(unsafe_csp, "site/index.html")),
+            "site CSP accepted unsafe inline script execution",
         )
         fixtures += 1
 

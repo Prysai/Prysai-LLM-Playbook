@@ -1,0 +1,25 @@
+{
+  "schema_version": "1",
+  "contribution_id": "CE-YYYYMMDD-short-topic",
+  "contribution_kind": "synthetic_fixture",
+  "status": "submitted_unreviewed",
+  "fixture_id": "short-fixture-id",
+  "base_commit": "0000000000000000000000000000000000000000",
+  "scope": "fictional_text_only",
+  "authorship": "original",
+  "license_boundary": "CC-BY-NC-4.0-current-repository-default",
+  "review_route": "fast_material_review",
+  "test_material_paths": [
+    "evals/contributions/CE-YYYYMMDD-short-topic/fixture.json"
+  ],
+  "validation_commands": [
+    "python scripts/validate_contributed_test_material.py"
+  ],
+  "privacy": {
+    "raw_personal_data_committed": false,
+    "raw_learner_work_committed": false,
+    "raw_model_output_committed": false,
+    "credentials_committed": false
+  },
+  "claim_boundary": "This submission contains fictional test material only; it does not establish model quality, learning, efficiency, safety, productivity, or IQ."
+}

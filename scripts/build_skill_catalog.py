@@ -7,6 +7,7 @@ license, dependency, boundary, and evaluation gates.
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import sys
@@ -14,17 +15,9 @@ import zipfile
 from collections import Counter
 from pathlib import Path
 
+from input_archive_locations import archive_paths
 
 ROOT = Path(__file__).resolve().parents[1]
-ARCHIVES = {
-    "S01": Path(r"D:/downloads/codex-orange-book-main.zip"),
-    "S02": Path(r"D:/downloads/academic-research-skills-codex-main.zip"),
-    "S03": Path(r"D:/downloads/awesome-agent-skills-main.zip"),
-    "S04": Path(r"D:/downloads/marketingskills-main.zip"),
-    "S05": Path(r"D:/downloads/agent-skills-main.zip"),
-    "S06": Path(r"D:/downloads/awesome-codex-skills-master.zip"),
-}
-
 SOURCE_META = {
     "S01": {
         "upstream": "bozhouDev/codex-orange-book",
@@ -129,10 +122,18 @@ def candidate_record(source_id: str, archive_path: Path, archive: zipfile.ZipFil
     }
 
 
-def build() -> dict[str, object]:
+def build(archives: dict[str, Path | None]) -> dict[str, object]:
     sources: list[dict[str, object]] = []
     candidates: list[dict[str, object]] = []
-    for source_id, path in ARCHIVES.items():
+    for source_id, path in archives.items():
+        if path is None:
+            sources.append({
+                "source_id": source_id,
+                "archive": "",
+                "status": "not_configured",
+                "skill_count": 0,
+            })
+            continue
         if not path.is_file():
             sources.append({
                 "source_id": source_id,
@@ -166,7 +167,7 @@ def build() -> dict[str, object]:
         "source_register": "docs/sources/asset-register.md",
         "sources": sources,
         "summary": {
-            "source_archives": len(ARCHIVES),
+            "source_archives": len(archives),
             "candidate_skill_files": len(candidates),
             "by_source": dict(Counter(str(item["source_id"]) for item in candidates)),
             "with_flags": sum(bool(item["flags"]) for item in candidates),
@@ -226,7 +227,17 @@ def markdown(report: dict[str, object]) -> str:
 
 
 def main() -> int:
-    report = build()
+    parser = argparse.ArgumentParser(
+        description="Build a read-only Skill discovery index from local source archives."
+    )
+    parser.add_argument(
+        "--archive-dir",
+        metavar="DIRECTORY",
+        help="directory containing the six archives; overrides PRYSAI_INPUT_ARCHIVE_DIR",
+    )
+    args = parser.parse_args()
+    archives, _, _ = archive_paths(args.archive_dir)
+    report = build(archives)
     json_path = ROOT / "docs/sources/skill-candidate-catalog-2026-08-09.json"
     markdown_path = ROOT / "docs/sources/skill-candidate-catalog.md"
     json_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

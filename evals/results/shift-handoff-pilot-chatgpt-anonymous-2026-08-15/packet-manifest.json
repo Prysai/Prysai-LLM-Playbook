@@ -1,0 +1,175 @@
+{
+  "schema_version": "1",
+  "status": "not_run",
+  "fixture_id": "shift-handoff-v1",
+  "packet_generator_revision": "shift-handoff-run-packets-v1",
+  "candidate_sha": "a99d0adae1b8211bd9a1870fc7fc02c021790046",
+  "fixture_sha256": "2b044692e1564c2bf98351c1d65697e533577ece2e96da7ea40d8b9312a29f04",
+  "randomization_seed": 2026081503,
+  "repetitions_per_task_condition": 3,
+  "packets": [
+    {
+      "packet_id": "SHP-H-03-R1",
+      "condition": "shift_handoff",
+      "task_id": "access-request-stop",
+      "repetition": 1,
+      "run_order": 1,
+      "prompt_path": "packets/01-SHP-H-03-R1.md",
+      "prompt_sha256": "52163040af47b51d5c50d5e2101f85a66884b07c39b8566ebb02cbc405968654"
+    },
+    {
+      "packet_id": "SHP-B-03-R3",
+      "condition": "baseline",
+      "task_id": "access-request-stop",
+      "repetition": 3,
+      "run_order": 2,
+      "prompt_path": "packets/02-SHP-B-03-R3.md",
+      "prompt_sha256": "1a289099488c34b19f6a5f4272c527dc4c489c6cc5d179e2c3a4fd0bf1d7c16a"
+    },
+    {
+      "packet_id": "SHP-H-03-R2",
+      "condition": "shift_handoff",
+      "task_id": "access-request-stop",
+      "repetition": 2,
+      "run_order": 3,
+      "prompt_path": "packets/03-SHP-H-03-R2.md",
+      "prompt_sha256": "52163040af47b51d5c50d5e2101f85a66884b07c39b8566ebb02cbc405968654"
+    },
+    {
+      "packet_id": "SHP-B-03-R1",
+      "condition": "baseline",
+      "task_id": "access-request-stop",
+      "repetition": 1,
+      "run_order": 4,
+      "prompt_path": "packets/04-SHP-B-03-R1.md",
+      "prompt_sha256": "1a289099488c34b19f6a5f4272c527dc4c489c6cc5d179e2c3a4fd0bf1d7c16a"
+    },
+    {
+      "packet_id": "SHP-H-03-R3",
+      "condition": "shift_handoff",
+      "task_id": "access-request-stop",
+      "repetition": 3,
+      "run_order": 5,
+      "prompt_path": "packets/05-SHP-H-03-R3.md",
+      "prompt_sha256": "52163040af47b51d5c50d5e2101f85a66884b07c39b8566ebb02cbc405968654"
+    },
+    {
+      "packet_id": "SHP-B-03-R2",
+      "condition": "baseline",
+      "task_id": "access-request-stop",
+      "repetition": 2,
+      "run_order": 6,
+      "prompt_path": "packets/06-SHP-B-03-R2.md",
+      "prompt_sha256": "1a289099488c34b19f6a5f4272c527dc4c489c6cc5d179e2c3a4fd0bf1d7c16a"
+    },
+    {
+      "packet_id": "SHP-H-01-R1",
+      "condition": "shift_handoff",
+      "task_id": "weekly-release-brief",
+      "repetition": 1,
+      "run_order": 7,
+      "prompt_path": "packets/07-SHP-H-01-R1.md",
+      "prompt_sha256": "6dab8adf2f1fd6685c2804fd15ea4fb9de20af05d266180cff8d58a94705ea65"
+    },
+    {
+      "packet_id": "SHP-H-02-R1",
+      "condition": "shift_handoff",
+      "task_id": "support-summary-conflict",
+      "repetition": 1,
+      "run_order": 8,
+      "prompt_path": "packets/08-SHP-H-02-R1.md",
+      "prompt_sha256": "4318556150a84a009133854a5b0dc4624c19987942a903c08cce818140dd7656"
+    },
+    {
+      "packet_id": "SHP-B-01-R1",
+      "condition": "baseline",
+      "task_id": "weekly-release-brief",
+      "repetition": 1,
+      "run_order": 9,
+      "prompt_path": "packets/09-SHP-B-01-R1.md",
+      "prompt_sha256": "9c8fe49184cfec3e7d580e6549c17088f14625c4f7d89a43b82765a593b25c3e"
+    },
+    {
+      "packet_id": "SHP-B-02-R3",
+      "condition": "baseline",
+      "task_id": "support-summary-conflict",
+      "repetition": 3,
+      "run_order": 10,
+      "prompt_path": "packets/10-SHP-B-02-R3.md",
+      "prompt_sha256": "e2b0d1930f34df2de2fdc423a21507dcd32024b66596628c8bf6885f5932874e"
+    },
+    {
+      "packet_id": "SHP-H-01-R2",
+      "condition": "shift_handoff",
+      "task_id": "weekly-release-brief",
+      "repetition": 2,
+      "run_order": 11,
+      "prompt_path": "packets/11-SHP-H-01-R2.md",
+      "prompt_sha256": "6dab8adf2f1fd6685c2804fd15ea4fb9de20af05d266180cff8d58a94705ea65"
+    },
+    {
+      "packet_id": "SHP-H-02-R2",
+      "condition": "shift_handoff",
+      "task_id": "support-summary-conflict",
+      "repetition": 2,
+      "run_order": 12,
+      "prompt_path": "packets/12-SHP-H-02-R2.md",
+      "prompt_sha256": "4318556150a84a009133854a5b0dc4624c19987942a903c08cce818140dd7656"
+    },
+    {
+      "packet_id": "SHP-B-02-R1",
+      "condition": "baseline",
+      "task_id": "support-summary-conflict",
+      "repetition": 1,
+      "run_order": 13,
+      "prompt_path": "packets/13-SHP-B-02-R1.md",
+      "prompt_sha256": "e2b0d1930f34df2de2fdc423a21507dcd32024b66596628c8bf6885f5932874e"
+    },
+    {
+      "packet_id": "SHP-B-01-R3",
+      "condition": "baseline",
+      "task_id": "weekly-release-brief",
+      "repetition": 3,
+      "run_order": 14,
+      "prompt_path": "packets/14-SHP-B-01-R3.md",
+      "prompt_sha256": "9c8fe49184cfec3e7d580e6549c17088f14625c4f7d89a43b82765a593b25c3e"
+    },
+    {
+      "packet_id": "SHP-H-01-R3",
+      "condition": "shift_handoff",
+      "task_id": "weekly-release-brief",
+      "repetition": 3,
+      "run_order": 15,
+      "prompt_path": "packets/15-SHP-H-01-R3.md",
+      "prompt_sha256": "6dab8adf2f1fd6685c2804fd15ea4fb9de20af05d266180cff8d58a94705ea65"
+    },
+    {
+      "packet_id": "SHP-B-01-R2",
+      "condition": "baseline",
+      "task_id": "weekly-release-brief",
+      "repetition": 2,
+      "run_order": 16,
+      "prompt_path": "packets/16-SHP-B-01-R2.md",
+      "prompt_sha256": "9c8fe49184cfec3e7d580e6549c17088f14625c4f7d89a43b82765a593b25c3e"
+    },
+    {
+      "packet_id": "SHP-B-02-R2",
+      "condition": "baseline",
+      "task_id": "support-summary-conflict",
+      "repetition": 2,
+      "run_order": 17,
+      "prompt_path": "packets/17-SHP-B-02-R2.md",
+      "prompt_sha256": "e2b0d1930f34df2de2fdc423a21507dcd32024b66596628c8bf6885f5932874e"
+    },
+    {
+      "packet_id": "SHP-H-02-R3",
+      "condition": "shift_handoff",
+      "task_id": "support-summary-conflict",
+      "repetition": 3,
+      "run_order": 18,
+      "prompt_path": "packets/18-SHP-H-02-R3.md",
+      "prompt_sha256": "4318556150a84a009133854a5b0dc4624c19987942a903c08cce818140dd7656"
+    }
+  ],
+  "evidence_boundary": "Prepared fictional prompts only. This manifest is not a model run, scorer record, timing record, learner observation, efficiency result, productivity result, safety result, or IQ measurement."
+}

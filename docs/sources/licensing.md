@@ -44,3 +44,12 @@ that boundary must not be merged until its license is recorded explicitly.
 The project cannot be called `production-ready` while an asset lacks a source,
 license decision, attribution requirement, or owner. A green structural check
 does not close this gate.
+
+## Pending contribution-license decision
+
+The current repository default remains CC BY-NC 4.0. The owner has not adopted
+a separate code license, contributor agreement, or commercial-use policy.
+[License and contribution options](../strategy/license-and-contribution-options-2026-08-15.md)
+records the proposed CC/Apache split and its adoption sequence. It is a
+decision input only: do not infer a license change from that proposal or from a
+contributor's PR template declaration.

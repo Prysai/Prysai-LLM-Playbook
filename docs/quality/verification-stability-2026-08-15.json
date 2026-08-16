@@ -1,0 +1,31 @@
+{
+  "schema_version": "1",
+  "status": "candidate",
+  "recorded_at": "2026-08-15",
+  "observation_type": "local_engineering_verification_stability",
+  "scope": "Five sequential local executions of seven repository checks in the current Windows working environment.",
+  "environment": {
+    "operating_system": "Windows",
+    "runtime": "bundled workspace Python runtime",
+    "repository_state": "current local candidate worktree",
+    "network_required": false
+  },
+  "commands": {
+    "project": "python scripts/validate_project.py",
+    "structure": "python scripts/validate_project_structure.py",
+    "content": "python scripts/validate_content_completeness.py",
+    "learning_contract": "python scripts/validate_learning_contract.py --canonical-en",
+    "skill_registry": "python scripts/validate_skill_registry.py",
+    "routing": "python scripts/validate_skill_routing_contract.py",
+    "local_links": "python scripts/check_local_links.py"
+  },
+  "runs": [
+    {"run": 1, "project": 48.9, "structure": 43.2, "content": 49.4, "learning_contract": 86.8, "skill_registry": 49.7, "routing": 34.2, "local_links": 498.1},
+    {"run": 2, "project": 38.3, "structure": 42.3, "content": 47.5, "learning_contract": 83.8, "skill_registry": 47.4, "routing": 35.2, "local_links": 496.1},
+    {"run": 3, "project": 36.1, "structure": 40.5, "content": 46.9, "learning_contract": 84.5, "skill_registry": 47.6, "routing": 35.4, "local_links": 474.8},
+    {"run": 4, "project": 34.4, "structure": 39.1, "content": 47.0, "learning_contract": 83.1, "skill_registry": 48.2, "routing": 34.0, "local_links": 473.9},
+    {"run": 5, "project": 35.1, "structure": 39.5, "content": 44.7, "learning_contract": 83.9, "skill_registry": 47.4, "routing": 34.3, "local_links": 484.5}
+  ],
+  "unit": "milliseconds",
+  "evidence_boundary": "These are local engineering-check observations only. They do not measure model quality, Skill effectiveness, learner outcomes, security outcomes, deployment availability, productivity, or IQ."
+}

@@ -4,6 +4,20 @@
 **Idiomas:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
+## Primer paso práctico localizado
+
+Antes de buscar una instalación o usar un proyecto propio, completa
+[Primer cambio seguro](routes/first-safe-change-ES.md): una copia local
+descartable, una sola edición permitida y una condición de aceptación visible.
+La ruta está en traducción `in-progress`; no afirma revisión lingüística
+independiente ni ejecución de aprendices.
+
+Cuando termines esa práctica, continúa con el Capítulo 2: primera tarea
+segura y verificable (versión en español aún no disponible) y el Lab 001:
+primera tarea segura (versión en español aún no disponible). Ambos son cortes
+españoles completos en estado `candidate` / `draft`: su revisión lingüística
+independiente y sus datos de ejecución por aprendices siguen pendientes.
+
 Este directorio contiene el manuscrito original de la ruta principal de
 Prysai LLM Playbook. El manuscrito no es una combinación de
 seis proyectos externos: es un sistema de contenidos reordenado según la
@@ -36,8 +50,8 @@ pero todavía no existen registros de ejecución de modelos; por tanto, esas
 evaluaciones siguen en `not_run` y no deben leerse como evaluaciones
 terminadas.
 
-El ejercicio transversal de L3 empieza con el [Experimento 013: corte vertical
-auditable (migración ES en curso; fuente actual)](labs/lab-013-l3-vertical-slice.md).
+El ejercicio transversal de L3 empieza con el Experimento 013: corte vertical
+auditable (migración ES en curso; fuente actual) (versión en español aún no disponible).
 Reúne protocolo, línea base, checkpoints, verificación, fallo intencional y
 transferencia en una misma ruta de bajo riesgo.
 

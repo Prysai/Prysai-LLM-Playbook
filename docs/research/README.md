@@ -22,6 +22,41 @@ claim and license boundary are clear.
 
 Useful indexes:
 
+- [Localization review and document-language declaration: source receipt](localization-review-and-language-declaration-source-receipt-2026-08-15.md) — three first-party sources on HTML language declarations, translation-friendly source writing, and reviewable pull requests. It supports a candidate small-slice localization workflow and visible course-unit counts; it does not establish translation quality, language review, completeness, learning outcomes, or release readiness.
+
+- [GitHub contribution governance for external test-evidence pull requests: source receipt](github-contribution-governance-source-receipt-2026-08-15.md) — seven official GitHub sources on PR templates, `CODEOWNERS`, Rulesets, checks, and contribution-rights seams. It supports a candidate local review route; it does not prove a host setting, legal agreement, external PR, reviewer, or merge result.
+
+- [GitHub Pages host-governance boundaries for a private candidate: source receipt](github-pages-host-governance-boundaries-source-receipt-2026-08-15.md) — five official GitHub Docs records separating a source repository from a future site's audience, a custom Pages workflow from an approved deployment, and `CODEOWNERS` routing from protected-branch enforcement. It records no local setting, Pages URL, environment, rule, reviewer, or deployment result.
+
+- [User-declared context continuity after corrections: public-friction source receipt](user-declared-context-continuity-public-friction-source-receipt-2026-08-15.md) — three dated individual feature requests about visible constraints, corrected material, and unresolved items. It maps an offline, learner-authored continuity-receipt question to existing routes; it does not state ChatGPT behavior, report prevalence, introduce a Skill, or claim a learning or workflow result.
+
+- [Cross-LLM beginner prompting and platform boundaries: source receipt](cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md) — five current first-party records from OpenAI, Anthropic, and xAI, reduced to a text-only four-field practice pattern. It keeps account, credit, API, tool, and surface differences visible; it does not report a model run, platform comparison, learner outcome, or universal prompting result.
+
+- [Measuring LLM workflow performance without IQ claims](measuring-llm-workflow-performance-without-iq-claims-2026-08-15.md) — a source-bounded measurement plan for task completion, recorded time, rework, fixed-rubric errors, and blinded scores. It separates existing local engineering data from two `candidate / not_run` model and volunteer pilots; it does not report an efficiency, learning, safety, or intelligence outcome.
+
+- [Efficiency and intelligence claim boundaries: source receipt](efficiency-and-intelligence-claim-boundaries-source-receipt-2026-08-15.md) — first-party evaluation, risk-management, preregistration, and testing-standard sources for task-scoped metrics and an explicit prohibition on IQ claims. It contains no model, learner, productivity, safety, or intelligence result.
+
+- [Workflow efficiency needs an accepted outcome and separate incident evidence](outcome-conditioned-workflow-efficiency-source-receipt-2026-08-15.md) — a source-bounded reporting rule: show acceptance, time, rubric quality, error or incident rate, and rework separately. It prevents a faster draft from being presented as efficiency evidence and contains no Prysai outcome result.
+
+- [Before sharing a ChatGPT conversation: audience and snapshot receipt](chatgpt-shared-link-audience-and-snapshot-source-receipt-2026-08-15.md) — a product-specific source receipt for choosing a full conversation, one response, or no shared link. It informs an original generic Share Check; it does not report sharing behavior, a security result, or a learner outcome.
+
+- [Task-scoped pilot method: source receipt](task-scoped-pilot-method-source-receipt-2026-08-15.md) — an independently checked primary-source receipt for preregistration, context-appropriate measurement, independent rubric scoring, practice-effect control, and voluntary consent. It records methods and limits only; it contains no participant, model-output, efficiency, quality, learning, safety, or IQ result.
+
+- [Cross-platform Boundary Card: source receipt](cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md) — a primary-source boundary for recognizing external instructions as data, preserving action authority, naming data egress, and reporting only task-scoped evaluation results. It informs one project-owned candidate teaching card; it is not a security control, product comparison, safety result, or learner outcome.
+
+- [A cited answer is not a retrieval-scope receipt](retrieval-scope-receipt-source-selection-constraints-2026-08-15.md) — a source-bounded gap analysis for checking whether the available retrieved-source trace actually follows declared language, region, date, source-class, and domain rules. It proposes no API requirement or product claim, and records no retrieval, model, or learner result.
+
+- [When a simple prompt is not enough](prompt-escalation-boundary-source-and-action-2026-08-14.md) — a primary-source-bounded beginner routing rule for separating a supplied-text request, one current fact, multi-source research, and proposed external action. It maps each route to an existing Skill and stop condition; it does not prove learner recognition, source validity, model behavior, or task success.
+
+- [Source-shaped LLM answers: a beginner check before belief](source-shaped-answers-and-beginner-checks-2026-08-14.md) — a source-bounded, fictional first check for the gap between a citation marker and an inspectable source record. It preserves missing fields and routes a real current-fact question to the appropriate existing method; it does not verify a claim, source, model, or learner outcome.
+
+- [Critical review lenses from public evidence](critical-review-lenses-public-evidence-2026-08-14.md) — a source-bounded set of six hard questions for learning value, reproducibility, human authority, prompt-injection handling, cross-platform scope, and beginner friction. It informs the original Adversarial Project Review Skill; it is not an external audit, endorsement, accreditation, security assessment, user study, or release decision.
+
+- [Six-prompt learning claims, interaction quality, and inflation risks](six-prompt-learning-claims-and-user-friction-2026-08-14.md) — a source-bounded review of claims that a few prompts or a fixed short period can teach a language. It proposes an original six-stage candidate practice attempt and retains four public user reports only as friction signals; it does not establish learning, retention, platform equivalence, or a seven-day result.
+
+- [Typed rehearsal is not spoken conversation](ai-assisted-language-practice-boundaries-2026-08-14.md) — a primary-source-bounded modality check for text-only LLM role-play. It keeps a typed artifact, model correction, and any spoken-conversation claim separate; it does not evaluate a learner, a model, speech feature, or assessment.
+- [First-turn language practice and verification](first-turn-language-practice-and-verification-source-receipt-2026-08-15.md) — a current source receipt for one bounded text-only language attempt. It rejects seven-day mastery claims, retains two limited public friction signals, and proposes an original candidate card without claiming learning or model effectiveness.
+
 - [Prompt Card Editor: evidence boundary and one beginner entry](prompt-card-editor-capability-and-beginner-entry-2026-08-14.md) documents the source-bounded rationale for one project-authored candidate Skill that turns an authorized prompt idea into a maintainable teaching card. It supports a static editorial schema and a provenance gate, not prompt effectiveness, model behavior, learning results, or a local editor product.
 
 - [Community tutorial intake and beginner foundations](community-tutorial-intake-and-foundations-2026-08-14.md) — a source- and rights-bounded review of a supplied community tutorial. It retains an original, plain-language opening pattern while excluding the player, transcript, screenshots, and unverified product claims. It is not a current product guide, a local reproduction, or evidence that the revised opening helps learners.
@@ -32,7 +67,7 @@ Useful indexes:
 
 - [Universal first-turn prompt contract](universal-first-turn-prompt-contract-2026-08-13.md) — a candidate six-field, plain-language request contract with two text-only Spanish and research cards. It separates product-scoped official guidance from two individual public signals and does not claim platform equivalence, a five-minute result, or learning efficacy.
 
-- [Everyday prompt cards: source receipt](everyday-prompt-cards-source-receipt-2026-08-14.md) — primary instructional, information-literacy, and product-owner prompt-guidance sources for the two candidate five-minute cards. It supports only a bounded attempt and source-check preparation; it does not claim fluency, browsing, citation validation, research completion, or learner outcomes.
+- [Everyday prompt cards: source receipt](everyday-prompt-cards-source-receipt-2026-08-14.md) — primary instructional, information-literacy, and product-owner prompt-guidance sources for three candidate five-minute cards: language, a fictional planning attempt, and source-check preparation. It does not claim fluency, planning ability, browsing, citation validation, research completion, or learner outcomes.
 
 - [Claude Code and Grok: platform-adapter admission source receipt](claude-code-and-grok-adapter-admission-source-receipt-2026-08-14.md) — first-party source check for the two proposed named-platform adapters. Both remain `source-checked / not_run / not-admitted`: the record identifies possible product deltas, but establishes no runnable adapter, platform equivalence, task result, safety property, or learning outcome.
 
@@ -59,6 +94,7 @@ Useful indexes:
 - [Field case: a blocked request does not widen authority](field-case-blocked-network-boundary-2026-08-14.md) — an older public network-access report converted into an offline decision case with source, symptom, reproduction status, a smallest safe check, and a stop condition. It does not teach a configuration recipe, reproduce a network error, or authorize broader access.
 
 - [Field case: a created sub-agent is not a task receipt](field-case-agent-handoff-receipt-2026-08-14.md) — an older public handoff report converted into an offline receipt check that separates creation, start, message receipt, execution, and return. It does not create an agent, reproduce a product behavior, identify a root cause, or authorize a retry.
+- [Field case: pause before retrying an interrupted task](field-case-capacity-interruption-checkpoint-2026-08-14.md) — one dated capacity report converted into a fictional checkpoint exercise that separates an interruption, an inspectable artifact, and a completed task. It does not reproduce an outage, identify a cause, prescribe a retry, or prove recovery.
 
 - [First five-minute Codex friction ledger](first-five-minute-codex-friction-ledger-2026-08-13.md) — official environment and evidence boundaries plus four public symptom reports, separated from product, runtime, and learning-outcome claims.
 

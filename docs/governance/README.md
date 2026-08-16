@@ -26,7 +26,7 @@ book, site, translations, status, and maintenance records aligned.
 | Change a volatile fact's consumers | [`fact-impact-registry.yaml`](fact-impact-registry.yaml) | Affected-content review |
 | Change authoritative URL audit scope or rollout policy | [`external-url-audit.yaml`](external-url-audit.yaml) | Scheduled categorized reachability report |
 | Record a recurring maintenance update | [`update-registry.yaml`](update-registry.yaml) | Update map and release review |
-| Change ownership or contribution flow | [`contribution-model.md`](contribution-model.md) | Contributor-facing guidance |
+| Change ownership or contribution flow | [`contribution-model.md`](contribution-model.md) and [`fast-material-review.md`](fast-material-review.md) | Contributor routing plus the bounded fictional-material review procedure |
 
 The [project structure contract](project-structure.yaml) maps this directory
 and identifies which files feed generated surfaces. Keep JSON-compatible YAML

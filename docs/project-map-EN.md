@@ -47,6 +47,7 @@ already inside the repository and need the local next step: [`book/README.md`](.
 .
 ├── README.md                  GitHub's default English facade
 ├── README-EN.md               canonical detailed English project entry
+├── CHANGELOG.md               curated candidate change record; not a release
 ├── AGENTS.md / CONTEXT.md     working rules and stable project vocabulary
 ├── book/
 │   ├── chapters/              chapter source files and locale variants

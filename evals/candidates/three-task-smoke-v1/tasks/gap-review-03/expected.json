@@ -1,0 +1,12 @@
+{
+  "claim": "The feature is complete",
+  "evidence_present": [
+    "The code exists.",
+    "Build exit code: 0."
+  ],
+  "evidence_gap": [
+    "No runtime behavior was observed.",
+    "No user acceptance was observed."
+  ],
+  "status": "unverified"
+}

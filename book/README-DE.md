@@ -14,6 +14,15 @@ Navigation:
 - [Zum deutschen Projekt-Einstieg](../README-DE.md)
 - [Deutsches Vorwort](preface-DE.md)
 - [Deutsches Inhaltsverzeichnis](table-of-contents-DE.md)
+- [Die erste sichere Änderung — vollständiger deutscher Übungsentwurf](routes/first-safe-change-DE.md)
+
+## Erster lokalisierter Praxisschritt
+
+Bevor du eine Installation suchst oder dein eigenes Projekt verwendest,
+bearbeite [Die erste sichere Änderung](routes/first-safe-change-DE.md): eine
+wegwerfbare lokale Kopie, genau eine erlaubte Änderung und eine sichtbare
+Abnahmebedingung. Die Route ist als Übersetzung `in-progress`; sie behauptet
+weder eine unabhängige Sprachprüfung noch einen Lernendendurchlauf.
 
 Hier liegt die originale Hauptlinie des Buches `Prysai LLM Playbook`. Sie ist nach dem Wachstum der Lernenden aufgebaut und nicht als
 Sammlung unabhängiger externer Projekte. Das Buch erklärt zuerst die Ideen und

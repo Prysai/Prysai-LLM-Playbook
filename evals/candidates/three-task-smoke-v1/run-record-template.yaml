@@ -1,0 +1,30 @@
+task_set: three-task-smoke-v1
+task_set_version: v1
+candidate_id: A | B
+task_id: extract-01 | markdown-02 | gap-review-03
+run_id: not_run
+attempt_id: initial | controlled_rework
+comparison_variable: model | workflow | surface
+surface: not_run
+model_or_workflow_id: not_run
+context_fingerprint: not_run
+tools_and_versions: not_run
+permission_profile: offline synthetic fixture
+network_condition: offline
+input_sha256: sha256:copy-from-fixture.json
+started_at: not_run
+ended_at: not_run
+raw_output_path: not_run
+validator_command: not_run
+validator_result: not_run
+first_pass: not_run
+rework_count: not_run
+cost_basis: unavailable
+cost_value: unavailable
+error_category: not_run
+comparability: not_run
+not_comparable_reason: not_run
+reviewer: not_assigned
+review_score: not_run
+decision: not_run
+limitations: "No execution record exists until this row has an actual run ID, preserved raw output, and review evidence."

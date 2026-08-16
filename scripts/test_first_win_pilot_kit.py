@@ -67,6 +67,10 @@ def main() -> int:
             entry_url="",
         )
         with patch.object(kit, "candidate_exists", return_value=True), patch.object(kit, "git_bytes", side_effect=lambda sha, path: candidate_sources[path]):
+            conflicting_roles = copy.copy(args)
+            conflicting_roles.independent_scorer = args.moderator
+            require_raises(lambda: kit.build_package(contract, conflicting_roles), "distinct role aliases", "pilot package accepted one person as both scoring roles")
+
             changed_contract = copy.deepcopy(contract)
             changed_contract["owner"] = "another-owner"
             require_raises(lambda: kit.validate_candidate_sources(changed_contract, synthetic_sha), "does not match", "candidate contract drift was accepted")
@@ -94,6 +98,12 @@ def main() -> int:
 
             manifest["entry_url"] = None
             manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+            manifest["roles"]["independent_scorer"] = manifest["roles"]["moderator"]
+            manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
+            require(any("distinct role aliases" in error for error in kit.validate_package(output, contract)), "package with collapsed scoring roles was accepted")
+
+            manifest["roles"]["independent_scorer"] = args.independent_scorer
+            manifest_path.write_text(json.dumps(manifest), encoding="utf-8")
             (output / "notes.txt").write_text("do not store participant notes here", encoding="utf-8")
             require(any("untracked files" in error for error in kit.validate_package(output, contract)), "unexpected package file was accepted")
 
@@ -112,7 +122,7 @@ def main() -> int:
             else:
                 raise AssertionError("existing pilot output was overwritten")
 
-    print("FIRST_WIN_PILOT_KIT_TESTS_OK fixtures=15")
+    print("FIRST_WIN_PILOT_KIT_TESTS_OK fixtures=17")
     return 0
 
 

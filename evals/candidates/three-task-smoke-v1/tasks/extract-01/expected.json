@@ -1,0 +1,17 @@
+[
+  {
+    "claim": "build",
+    "status": "verified",
+    "evidence": "Build exit code: 0."
+  },
+  {
+    "claim": "mobile_390px",
+    "status": "verified",
+    "evidence": "Mobile at 390px checked."
+  },
+  {
+    "claim": "user_acceptance",
+    "status": "unverified",
+    "evidence": "User acceptance: not run."
+  }
+]

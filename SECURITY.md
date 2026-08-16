@@ -58,10 +58,12 @@ GitHub account; this file does not promise a response-time SLA.
 
 The [repository security policy](docs/governance/repository-security-policy.yaml)
 and its dedicated PR workflow check for unsafe workflow triggers, excessive
-workflow permissions, unpinned Actions, tracked credential-shaped files, and
-common token patterns. These are useful tripwires, not a substitute for a
-human review, a dependency audit, security testing, secret rotation, or
-deployment configuration review.
+workflow permissions, unpinned Actions, tracked credential-shaped files,
+common token patterns, a pinned binary-only Python validation dependency, and
+the static site's restrictive same-origin CSP contract. These are useful
+tripwires, not a substitute for a human review, a dependency audit, security
+testing, secret rotation, runtime HTTP headers, or deployment configuration
+review.
 
 GitHub's official Rulesets screen is available, but it currently states that
 Rulesets will not be enforced for this private organization repository until

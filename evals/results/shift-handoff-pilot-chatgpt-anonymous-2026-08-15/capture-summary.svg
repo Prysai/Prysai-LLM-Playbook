@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" style="display:block;max-width:1200px;height:auto" role="img" aria-labelledby="title desc">
+  <title id="title">Shift Handoff model-output pilot capture status</title>
+  <desc id="desc">A capture-status chart shows 9 of 9 responses captured for each condition and a median interface elapsed time of 9 seconds for each condition. It explicitly states that the records are unscored and cannot show an efficiency or quality benefit.</desc>
+  <style>
+    .mobile-summary { display: none; }
+    @media (max-width: 600px) {
+      .desktop-summary { display: none; }
+      .mobile-summary { display: block; }
+    }
+  </style>
+  <rect width="1200" height="700" fill="#f6f6f2"/>
+  <g class="desktop-summary">
+  <rect x="56" y="48" width="1088" height="10" fill="#161616"/>
+  <text x="56" y="114" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">SHIFT HANDOFF / MODEL-OUTPUT PILOT</text>
+  <text x="56" y="174" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="900" letter-spacing="-2">CAPTURE STATUS</text>
+  <text x="58" y="216" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="20" font-weight="700">UNSCORED MODEL OUTPUT / NOT A BENEFIT RESULT</text>
+  <text x="58" y="254" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="16">18 fixed fictional prompts · anonymous web surface · responses retained · two human scores pending</text>
+  <text x="56" y="322" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">Response capture</text>
+  <text x="56" y="366" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="18">Baseline</text>
+  <text x="260" y="366" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="18" text-anchor="end">9 / 9</text>
+  <rect x="300" y="342" width="800" height="30" fill="#e4e4de"/>
+  <rect x="300" y="342" width="800" height="30" fill="#161616"/>
+  <text x="56" y="420" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="18">Shift Handoff</text>
+  <text x="260" y="420" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="18" text-anchor="end">9 / 9</text>
+  <rect x="300" y="396" width="800" height="30" fill="#e4e4de"/>
+  <rect x="300" y="396" width="800" height="30" fill="#d71920"/>
+  <text x="56" y="500" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">Median interface elapsed time</text>
+  <text x="58" y="530" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="16">web-response timing only; not worker time, saved time, cost, or productivity</text>
+  <text x="56" y="578" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="18">Baseline</text>
+  <text x="260" y="578" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="18" text-anchor="end">9 s</text>
+  <rect x="300" y="554" width="800" height="30" fill="#e4e4de"/>
+  <rect x="300" y="554" width="400" height="30" fill="#161616"/>
+  <text x="56" y="630" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="18">Shift Handoff</text>
+  <text x="260" y="630" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="18" text-anchor="end">9 s</text>
+  <rect x="300" y="606" width="800" height="30" fill="#e4e4de"/>
+  <rect x="300" y="606" width="400" height="30" fill="#d71920"/>
+  <rect x="56" y="658" width="1088" height="28" fill="#161616"/>
+  <text x="76" y="678" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">UNSCORED: DO NOT INFER QUALITY, EFFICIENCY, SAFETY, LEARNING, IQ, OR MODEL SUPERIORITY.</text>
+  </g>
+  <g class="mobile-summary">
+    <rect x="56" y="46" width="1088" height="14" fill="#161616"/>
+    <text x="56" y="140" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" letter-spacing="5">MODEL-OUTPUT PILOT</text>
+    <text x="56" y="238" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="900" letter-spacing="-3">18 / 18 CAPTURED</text>
+    <text x="58" y="292" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="34" font-weight="700">FICTIONAL PROMPTS · ANONYMOUS WEB · NO TOOLS</text>
+    <text x="56" y="380" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="40">Baseline</text>
+    <text x="1110" y="380" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="40" text-anchor="end">9 / 9</text>
+    <rect x="56" y="406" width="1088" height="48" fill="#161616"/>
+    <text x="56" y="530" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="40">Shift Handoff</text>
+    <text x="1110" y="530" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="40" text-anchor="end">9 / 9</text>
+    <rect x="56" y="556" width="1088" height="48" fill="#d71920"/>
+    <rect x="56" y="622" width="1088" height="58" fill="#161616"/>
+    <text x="82" y="651" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700">UNSCORED — HUMAN REVIEW PENDING</text>
+    <text x="82" y="674" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700">NOT A BENEFIT RESULT</text>
+  </g>
+</svg>

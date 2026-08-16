@@ -20,6 +20,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 ISSUE_DIR = ROOT / ".github/ISSUE_TEMPLATE"
 PR_TEMPLATE = ROOT / ".github/PULL_REQUEST_TEMPLATE.md"
+CODEOWNERS = ROOT / ".github/CODEOWNERS"
 FIELD_REPORT = ISSUE_DIR / "field-report.yml"
 FEEDBACK_CONTRACT = ROOT / "docs/quality/public-beta-feedback-contract-v1.md"
 ALLOWED_TYPES = {"markdown", "input", "textarea", "dropdown", "checkboxes"}
@@ -35,12 +36,31 @@ FEEDBACK_BOUNDARIES = {
 REQUIRED_PR_HEADINGS = {
     "## Problem and bounded change",
     "## Change class",
+    "## Contribution route and review request",
     "## Source, authorship, and license",
     "## Safety and external effects",
     "## Evidence actually produced",
     "## Unverified and out of scope",
     "## Status claim",
     "## Checklist",
+}
+REQUIRED_PR_ROUTE_TEXT = (
+    "Test material (fast route",
+    "Fast material review",
+    "contribution.json",
+    "Commit sign-off:",
+)
+REQUIRED_CODEOWNER_LINES = {
+    "/evals/contributions/ @Prysai",
+    "/LICENSE @Prysai",
+    "/CONTRIBUTING.md @Prysai",
+    "/SECURITY.md @Prysai",
+    "/docs/quality/ @Prysai",
+    "/docs/governance/ @Prysai",
+    "/docs/sources/ @Prysai",
+    "/docs/strategy/ @Prysai",
+    "/.github/ @Prysai",
+    "/scripts/ @Prysai",
 }
 
 
@@ -280,12 +300,31 @@ def validate_config(path: Path, repository: str) -> list[str]:
     return errors
 
 
+def validate_pr_template_text(text: str) -> list[str]:
+    missing = sorted(REQUIRED_PR_HEADINGS - set(text.splitlines()))
+    errors = [f"pull request template is missing heading: {heading}" for heading in missing]
+    for fragment in REQUIRED_PR_ROUTE_TEXT:
+        if fragment not in text:
+            errors.append(f"pull request template is missing contribution-route text: {fragment}")
+    return errors
+
+
 def validate_pr_template() -> list[str]:
     if not PR_TEMPLATE.is_file():
         return ["missing .github/PULL_REQUEST_TEMPLATE.md"]
-    text = PR_TEMPLATE.read_text(encoding="utf-8")
-    missing = sorted(REQUIRED_PR_HEADINGS - set(text.splitlines()))
-    return [f"pull request template is missing heading: {heading}" for heading in missing]
+    return validate_pr_template_text(PR_TEMPLATE.read_text(encoding="utf-8"))
+
+
+def validate_codeowners_text(text: str) -> list[str]:
+    lines = {line.strip() for line in text.splitlines() if line.strip() and not line.lstrip().startswith("#")}
+    missing = sorted(REQUIRED_CODEOWNER_LINES - lines)
+    return [f"CODEOWNERS is missing review route: {line}" for line in missing]
+
+
+def validate_codeowners() -> list[str]:
+    if not CODEOWNERS.is_file():
+        return ["missing .github/CODEOWNERS"]
+    return validate_codeowners_text(CODEOWNERS.read_text(encoding="utf-8"))
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -318,6 +357,7 @@ def main(argv: list[str] | None = None) -> int:
         except (OSError, UnicodeError, yaml.YAMLError) as exc:
             errors.append(f"cannot parse .github/ISSUE_TEMPLATE/config.yml: {exc}")
     errors.extend(validate_pr_template())
+    errors.extend(validate_codeowners())
     labels: list[str] = []
     try:
         labels, label_errors = declared_labels()

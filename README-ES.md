@@ -6,6 +6,15 @@
 **Idiomas:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
+## Empieza con una práctica segura, no con una instalación
+
+¿Es tu primera vez con una carpeta de proyecto? Abre
+[Primer cambio seguro](book/routes/first-safe-change-ES.md). Es una práctica
+local y descartable con un README, un cambio permitido y una comprobación
+visible; no pide una cuenta, red, instalación ni un proyecto real. Es una
+traducción `in-progress`, no una revisión lingüística independiente ni
+evidencia de aprendizaje.
+
 Prysai LLM Playbook no es un directorio que se limite a
 enumerar skills ni un manual que solo explique pasos de instalación. Es un
 sistema de aprendizaje y práctica de Codex GPT, organizado como libro,

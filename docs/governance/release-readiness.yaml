@@ -2,15 +2,15 @@
   "schema_version": "1",
   "owner": "release-maintainer",
   "decision": "not_ready",
-  "reviewed_at": "2026-08-12",
-  "next_review": "2026-08-19",
+  "reviewed_at": "2026-08-14",
+  "next_review": "2026-08-21",
   "version": {
-    "status": "pending",
-    "value": ""
+    "status": "declared",
+    "value": "0.1.0-candidate.1"
   },
   "changelog": {
-    "status": "absent",
-    "path": ""
+    "status": "current",
+    "path": "CHANGELOG.md"
   },
   "release_tag": {
     "status": "absent",
@@ -38,8 +38,7 @@
     "release_checklist_path": "docs/release-checklist.md"
   },
   "known_gaps": [
-    "No release version has been selected.",
-    "No release changelog exists.",
+    "The declared candidate version is not a public release or immutable tag.",
     "No reviewed immutable release tag exists.",
     "Commit-bound candidate evidence exists only in workflow artifacts and has not been accepted as release evidence.",
     "No rollback target or bounded rollback rehearsal record exists."

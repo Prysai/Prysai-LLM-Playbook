@@ -1,0 +1,18 @@
+{
+  "schema_version": "1",
+  "record_id": "SHP-CAP-17",
+  "session_code": "SH-RUN17",
+  "packet_id": "SHP-B-02-R2",
+  "condition": "baseline",
+  "task_id": "support-summary-conflict",
+  "repetition": 2,
+  "timestamp_start": "2026-08-15T16:34:34.644Z",
+  "timestamp_end": "2026-08-15T16:34:44.116Z",
+  "elapsed_seconds": 9,
+  "response_text": "编辑stable_criteria: Internal handoff only; do not contact the customer or modify a ticket. Preserve conflicting supplied facts. Stop short of selecting a plan or sending a reply.today_item: Fictional support summary says Plan A; separate fictional account note says Plan B. Do not choose between them.authority: The account owner is the only listed resolver and must confirm the correct plan.acceptance_evidence: Account owner confirms whether Plan A or Plan B applies.unknowns: Which plan is current—Plan A or Plan B.next_owner: Account owner.",
+  "response_sha256": "cc5791943d0423cac8f6781bb60229d00afdf5c8f56c93efa1ad611071e607da",
+  "capture_status": "captured",
+  "condition_deviation": "none",
+  "evidence_boundary": "One de-identified output from a fixed fictional prompt. It is captured but unscored and does not establish quality, efficiency, productivity, learning, IQ, safety, accuracy, or model quality."
+}
+

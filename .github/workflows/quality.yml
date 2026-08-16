@@ -8,6 +8,11 @@ on:
   push:
     branches: [main]
   pull_request:
+    # A PR that changes only an original fictional contribution uses the
+    # bounded fast workflow below. Any other touched path still runs this full
+    # release-evidence matrix.
+    paths-ignore:
+      - "evals/contributions/**"
 
 permissions:
   contents: read
@@ -29,7 +34,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install validation dependency
-        run: python -m pip install --disable-pip-version-check PyYAML
+        run: python -m pip install --disable-pip-version-check --only-binary=:all: PyYAML==6.0.3
 
       - name: Set up Node.js for browser checks
         uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0

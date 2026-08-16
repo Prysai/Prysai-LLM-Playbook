@@ -16,23 +16,23 @@
     "footer": "The first Lab exposes only Next, middle Labs expose Previous and Next, and the last Lab exposes only Previous. README-EN.md remains the dedicated Lab index."
   },
   "labs": [
-    {"id":"lab-001","number":1,"title":"Make one safe README change","path":"book/labs/lab-001-first-safe-task-EN.md"},
-    {"id":"lab-002","number":2,"title":"Turn one wish into a task protocol","path":"book/labs/lab-002-task-protocol-EN.md"},
-    {"id":"lab-003","number":3,"title":"Audit a completion claim","path":"book/labs/lab-003-evidence-review-EN.md"},
-    {"id":"lab-004","number":4,"title":"Choose the smallest useful capability","path":"book/labs/lab-004-skill-selection-EN.md"},
-    {"id":"lab-005","number":5,"title":"Turn a repeated method into a narrow Skill","path":"book/labs/lab-005-design-a-skill-EN.md"},
-    {"id":"lab-006","number":6,"title":"Design Agent stop conditions","path":"book/labs/lab-006-agent-stop-conditions-EN.md"},
-    {"id":"lab-007","number":7,"title":"Put One README Task Behind Three Action Boundaries","path":"book/labs/lab-007-action-boundaries-EN.md"},
+    {"id":"lab-001","number":1,"title":"Make one safe README change","title_zh":"完成一次安全的 README 改动","path":"book/labs/lab-001-first-safe-task-EN.md"},
+    {"id":"lab-002","number":2,"title":"Turn one wish into a task protocol","title_zh":"把一个愿望变成任务协议","path":"book/labs/lab-002-task-protocol-EN.md"},
+    {"id":"lab-003","number":3,"title":"Audit a completion claim","title_zh":"审计一条完成声明","path":"book/labs/lab-003-evidence-review-EN.md"},
+    {"id":"lab-004","number":4,"title":"Choose the smallest useful capability","title_zh":"选择最小有用能力","path":"book/labs/lab-004-skill-selection-EN.md"},
+    {"id":"lab-005","number":5,"title":"Turn a repeated method into a narrow Skill","title_zh":"把重复方法沉淀为边界明确的 Skill","path":"book/labs/lab-005-design-a-skill-EN.md"},
+    {"id":"lab-006","number":6,"title":"Design Agent stop conditions","title_zh":"设计 Agent 的停止条件","path":"book/labs/lab-006-agent-stop-conditions-EN.md"},
+    {"id":"lab-007","number":7,"title":"Put One README Task Behind Three Action Boundaries","title_zh":"把一个 README 任务放进三个行动边界","path":"book/labs/lab-007-action-boundaries-EN.md"},
     {"id":"lab-008","number":8,"title":"Narrow a topic into an answerable research question","path":"book/labs/lab-008-research-question-EN.md"},
     {"id":"lab-009","number":9,"title":"Compare direct implementation with a full engineering lifecycle","path":"book/labs/lab-009-engineering-lifecycle-EN.md"},
     {"id":"lab-010","number":10,"title":"Build shared product context that survives two tasks","path":"book/labs/lab-010-product-context-EN.md"},
-    {"id":"lab-011","number":11,"title":"Separate GPT, Codex, tools, and Agents","path":"book/labs/lab-011-gpt-codex-boundaries-EN.md"},
+    {"id":"lab-011","number":11,"title":"Separate GPT, Codex, tools, and Agents","title_zh":"分清 GPT、Codex、工具与 Agent","path":"book/labs/lab-011-gpt-codex-boundaries-EN.md"},
     {"id":"lab-012","number":12,"title":"Turn a personal method into a team capability","path":"book/labs/lab-012-team-capability-migration-EN.md"},
-    {"id":"lab-013","number":13,"title":"Run one complete vertical slice","path":"book/labs/lab-013-l3-vertical-slice-EN.md"},
+    {"id":"lab-013","number":13,"title":"Run one complete vertical slice","title_zh":"完成一个完整的竖向切片","path":"book/labs/lab-013-l3-vertical-slice-EN.md"},
     {"id":"lab-014","number":14,"title":"Reconcile a resumed task before continuing","path":"book/labs/lab-014-resume-reconciliation-EN.md"},
     {"id":"lab-015","number":15,"title":"Deliver evidence, not a completion sentence","path":"book/labs/lab-015-evidence-delivery-EN.md"},
     {"id":"lab-016","number":16,"title":"Stop at the side-effect boundary","path":"book/labs/lab-016-side-effect-boundary-EN.md"},
     {"id":"lab-017","number":17,"title":"Audit discovery before adopting a Skill","path":"book/labs/lab-017-skill-discovery-audit-EN.md"},
-    {"id":"lab-018","number":18,"title":"Test a beginner travel exchange for retention and transfer","path":"book/labs/lab-018-language-transfer-EN.md"}
+    {"id":"lab-018","number":18,"title":"Test a typed beginner travel exchange for retention and transfer","path":"book/labs/lab-018-language-transfer-EN.md"}
   ]
 }

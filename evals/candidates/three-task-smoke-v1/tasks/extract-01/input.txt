@@ -1,0 +1,5 @@
+Build exit code: 0.
+Mobile at 390px checked.
+User acceptance: not run.
+The team likes the cream-and-red visual direction.
+A draft illustration is waiting for review.

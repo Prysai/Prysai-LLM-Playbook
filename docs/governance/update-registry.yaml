@@ -75,11 +75,11 @@
     },
     {
       "area": "evaluations",
-      "canonical_paths": ["evals/task-set-v1.yaml", "evals/candidates/task-contract-availability-and-channel-v1", "scripts/validate_task_contract_conditions_candidate.py", "docs/quality/evaluation-framework.md", "evals/results"],
+      "canonical_paths": ["evals/task-set-v1.yaml", "evals/candidates/task-contract-availability-and-channel-v1", "evals/candidates/shift-handoff-v1", "scripts/validate_task_contract_conditions_candidate.py", "scripts/build_shift_handoff_run_packets.py", "scripts/build_shift_handoff_blind_score_packets.py", "scripts/analyze_shift_handoff_pilot.py", "docs/quality/evaluation-framework.md", "docs/quality/shift-handoff-blind-score-packet-v1.md", "docs/adr/0039-bind-evaluation-prompt-hashes-to-serialized-input-bytes.md", "evals/results"],
       "owner": "evaluation-maintainer",
       "triggers": ["skill-change", "model-change", "workflow-change", "new-failure-class", "evaluation-candidate-change", "communication-condition-change"],
       "required_inputs": ["fixed-task", "context", "allowed-actions", "expected-evidence", "forbidden-behavior", "run-log"],
-      "validation_commands": ["scripts/validate_eval_tasks.py", "scripts/validate_task_contract_conditions_candidate.py", "scripts/validate_project.py"],
+      "validation_commands": ["scripts/validate_eval_tasks.py", "scripts/validate_task_contract_conditions_candidate.py", "scripts/build_shift_handoff_run_packets.py --check", "scripts/test_build_shift_handoff_run_packets.py", "scripts/build_shift_handoff_blind_score_packets.py --check", "scripts/test_build_shift_handoff_blind_score_packets.py", "scripts/analyze_shift_handoff_pilot.py --check", "scripts/test_analyze_shift_handoff_pilot.py", "scripts/validate_project.py"],
       "status_fields": ["fixture_status", "run_status", "review_status", "owner", "next_review"],
       "next_review": "2026-09-09"
     },
@@ -115,17 +115,17 @@
     },
     {
       "area": "contribution-flow",
-      "canonical_paths": ["CONTRIBUTING.md", "docs/governance/contribution-model.md", "docs/quality/public-beta-feedback-contract-v1.md", ".github/PULL_REQUEST_TEMPLATE.md", ".github/ISSUE_TEMPLATE", "scripts/validate_github_templates.py", "scripts/test_validate_github_templates.py"],
+      "canonical_paths": ["CONTRIBUTING.md", "docs/governance/contribution-model.md", "docs/governance/fast-material-review.md", "docs/quality/public-beta-feedback-contract-v1.md", "docs/quality/community-evidence-contribution-protocol-v1.md", "docs/strategy/license-and-contribution-options-2026-08-15.md", "docs/sources/licensing.md", ".github/PULL_REQUEST_TEMPLATE.md", ".github/CODEOWNERS", ".github/ISSUE_TEMPLATE", ".github/workflows/contribution-material.yml", ".github/workflows/quality.yml", "evals/contributions", "scripts/create_contribution_receipt.py", "scripts/test_create_contribution_receipt.py", "scripts/validate_github_templates.py", "scripts/test_validate_github_templates.py", "scripts/validate_contributed_test_material.py", "scripts/test_validate_contributed_test_material.py"],
       "owner": "governance-maintainer",
       "triggers": ["contribution-class-change", "review-requirement-change", "issue-intake-change", "pull-request-disclosure-change", "license-or-safety-boundary-change"],
-      "required_inputs": ["accepted-change-types", "canonical-source-routing", "required-evidence", "source-and-license-boundary", "safety-and-external-effects", "status-claim-boundary"],
-      "validation_commands": ["scripts/validate_github_templates.py", "scripts/test_validate_github_templates.py", "scripts/validate_project.py", "scripts/validate_project_structure.py", "scripts/check_local_links.py"],
+      "required_inputs": ["accepted-change-types", "canonical-source-routing", "required-evidence", "source-and-license-boundary", "safety-and-external-effects", "status-claim-boundary", "contribution-route", "privacy-boundary", "merge-review-boundary"],
+      "validation_commands": ["scripts/validate_github_templates.py", "scripts/test_validate_github_templates.py", "scripts/validate_contributed_test_material.py", "scripts/test_validate_contributed_test_material.py", "scripts/test_create_contribution_receipt.py", "scripts/validate_repository_security.py", "scripts/test_validate_repository_security.py", "scripts/validate_project.py", "scripts/validate_project_structure.py", "scripts/check_local_links.py"],
       "status_fields": ["owner", "accepted-change-types", "issue-before-work-cases", "required-disclosures", "next_review"],
       "next_review": "2026-09-12"
     },
     {
       "area": "repository-security",
-      "canonical_paths": ["SECURITY.md", "docs/governance/repository-security-policy.yaml", ".github/workflows/security-policy.yml", ".github/PULL_REQUEST_TEMPLATE.md", "scripts/validate_repository_security.py", "scripts/test_validate_repository_security.py", "docs/adr/0036-repository-security-policy-and-pr-gate.md"],
+      "canonical_paths": ["SECURITY.md", "docs/governance/repository-security-policy.yaml", ".github/workflows/security-policy.yml", ".github/PULL_REQUEST_TEMPLATE.md", "site/index.html", "site/reader.html", "scripts/validate_repository_security.py", "scripts/test_validate_repository_security.py", "docs/adr/0036-repository-security-policy-and-pr-gate.md"],
       "owner": "governance-maintainer",
       "triggers": ["security-policy-change", "workflow-permission-change", "workflow-trigger-change", "action-pin-change", "dependency-or-supply-chain-change", "ruleset-availability-change", "security-reporting-path-change"],
       "required_inputs": ["scope", "least-privileged-permissions", "event-boundary", "secret-boundary", "action-pin-source", "manual-review-path", "rollback-path", "evidence-limit", "first-party-source-record", "host-ruleset-status"],
@@ -195,7 +195,7 @@
     },
     {
       "area": "release-and-rollback",
-      "canonical_paths": ["docs/release-checklist.md", "docs/governance/content-lifecycle.md", "docs/governance/release-evidence.yaml", "docs/governance/release-readiness.yaml", "scripts/build_release_evidence.py", "scripts/validate_release_readiness.py", "scripts/test_release_readiness.py", "docs/adr/0021-commit-bound-release-evidence.md", "docs/adr/0026-machine-readable-release-readiness.md"],
+      "canonical_paths": ["docs/release-checklist.md", "docs/governance/content-lifecycle.md", "docs/governance/release-evidence.yaml", "docs/governance/release-readiness.yaml", "scripts/build_release_evidence.py", "scripts/validate_release_readiness.py", "scripts/test_release_readiness.py", "docs/adr/0021-commit-bound-release-evidence.md", "docs/adr/0026-machine-readable-release-readiness.md", "docs/adr/0040-clean-checkout-release-evidence.md"],
       "owner": "release-maintainer",
       "triggers": ["release-candidate", "public-site-change", "high-risk-content-change", "quality-policy-change", "evidence-dimension-change", "rollback-needed"],
       "required_inputs": ["candidate-sha", "diff", "gate-logs", "reviewer", "known-gaps", "source-freshness", "version-decision", "changelog", "reviewed-tag", "reviewed-release-evidence", "rollback-target", "rollback-rehearsal", "user-approval"],

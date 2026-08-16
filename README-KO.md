@@ -6,6 +6,14 @@
 **언어:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
+## 설치보다 안전한 연습부터 시작하세요
+
+프로젝트 폴더를 처음 다룬다면
+[첫 번째 안전한 변경](book/routes/first-safe-change-KO.md)부터 여세요. README 하나,
+허용된 변경 하나, 눈으로 확인할 수 있는 검사 하나로 구성된 로컬·폐기 가능
+연습입니다. 계정, 네트워크, 설치, 실제 프로젝트가 필요하지 않습니다. 이것은
+`in-progress` 번역이며, 독립 언어 검토나 학습 성과의 증거가 아닙니다.
+
 이 문서는 `Prysai LLM Playbook` 프로젝트의 한국어 핵심 입구입니다. 프로젝트의 기본 공개 언어는 영어(`EN`)이며, 현재 한국어(`KO`) 이관은 이 파일과 책의 한국어 입구, 한국어 서문부터 진행 중입니다. 한국어 전체 책이 완성되었거나 번역 품질과 브라우저 동작이 검증되었다는 뜻은 아닙니다.
 
 ## 한국어 이관 상태

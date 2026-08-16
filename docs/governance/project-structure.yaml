@@ -103,10 +103,14 @@
     {"path": "examples/lab-008-v1", "role": "Frozen deterministic source-conflict fixture for the Lab 008 maintainer reference run.", "entry": "examples/lab-008-v1/README.md"},
     {"path": "examples/lab-013-v1", "role": "Frozen deterministic fixture and review contract for the Lab 013 maintainer reference run.", "entry": "examples/lab-013-v1/README.md"},
     {"path": "examples/universal-seam-v1", "role": "Fictional offline request, target, receipt, and structured-state seam fixture before a platform adapter is needed.", "entry": "examples/universal-seam-v1/README.md"},
-    {"path": "evals/candidates/context-packet-builder-v1", "role": "Original fictional admission fixture for an unadmitted context-packet responsibility; it does not create a Skill or runtime evidence.", "entry": "evals/candidates/context-packet-builder-v1/README.md"}
+    {"path": "evals/candidates/context-packet-builder-v1", "role": "Original fictional admission fixture for an unadmitted context-packet responsibility; it does not create a Skill or runtime evidence.", "entry": "evals/candidates/context-packet-builder-v1/README.md"},
+    {"path": "evals/candidates/shift-handoff-v1", "role": "Fictional candidate model-output study with frozen randomized prompt packets, manifest-bound records, and no checked-in result.", "entry": "evals/candidates/shift-handoff-v1/README.md"},
+    {"path": "evals/contributions", "role": "Publicly reviewable fictional test-material receipts; never a raw learner or model-evidence store.", "entry": "evals/contributions/README.md"}
   ],
   "root_entries": [
     {"path": "LICENSE", "role": "Default distribution license and trademark exclusion.", "canonical_source": "LICENSE"},
+    {"path": "CODE_OF_CONDUCT.md", "role": "Community participation, reporting, and maintainer-response boundary.", "canonical_source": "CODE_OF_CONDUCT.md"},
+    {"path": "CHANGELOG.md", "role": "Curated candidate change record; not a release record or immutable tag.", "canonical_source": "docs/governance/release-readiness.yaml"},
     {"path": "README.md", "role": "GitHub's default English facade.", "canonical_source": "README-EN.md"},
     {"path": "README-EN.md", "role": "Detailed English project entry.", "canonical_source": "README-EN.md"},
     {"path": "AGENTS.md", "role": "Working rules for contributors and agents.", "canonical_source": "AGENTS.md"},

@@ -1,0 +1,59 @@
+name: Fast test-material checks
+
+on:
+  pull_request:
+    paths:
+      - "evals/contributions/**"
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  validate-fictional-material:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out trusted base validator
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          # Never run validator code supplied by the pull request. The base
+          # branch supplies the validator; the separate checkout below is data.
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: trusted-base
+          persist-credentials: false
+
+      - name: Check out untrusted submission as data
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: untrusted-submission
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Record pull-request file scope
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh api --paginate
+          repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files
+          --jq '.[].filename' > "$GITHUB_WORKSPACE/changed-paths.txt"
+
+      - name: Validate fictional contribution receipt and material boundary
+        working-directory: trusted-base
+        run: >-
+          python scripts/validate_contributed_test_material.py
+          --repository-root "$GITHUB_WORKSPACE/untrusted-submission"
+          --changed-paths-file "$GITHUB_WORKSPACE/changed-paths.txt"
+
+      - name: Test trusted receipt validator
+        working-directory: trusted-base
+        run: python scripts/test_validate_contributed_test_material.py
+
+      - name: Test trusted receipt scaffold
+        working-directory: trusted-base
+        run: python scripts/test_create_contribution_receipt.py

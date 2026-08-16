@@ -1,0 +1,63 @@
+name: Translation or language-review offer
+description: Offer a focused native-language review or propose one bounded translation slice.
+title: "[Translation]: "
+labels: ["translation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping make the playbook useful in another language.
+
+        This form is for a focused translation slice or native-language review.
+        Do not paste private conversations, credentials, proprietary text, raw learner work, or a claim that a translation is already verified. A maintainer will scope the work before it is merged.
+  - type: dropdown
+    id: contribution_kind
+    attributes:
+      label: Contribution type
+      description: Choose the one bounded activity you can help with.
+      options:
+        - Native-language review of an existing candidate translation
+        - New translation of one existing English source
+        - Correction to an existing translation
+    validations:
+      required: true
+  - type: dropdown
+    id: locale
+    attributes:
+      label: Target locale
+      description: Select the language you can read and write fluently.
+      options:
+        - Simplified Chinese (ZH)
+        - Spanish (ES)
+        - Japanese (JA)
+        - Korean (KO)
+        - German (DE)
+    validations:
+      required: true
+  - type: input
+    id: content_id
+    attributes:
+      label: Content identity or file path
+      description: Name one `content_id` from the locale matrix, or one existing `-EN` file to scope with a maintainer.
+      placeholder: chapter-02-first-safe-task
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Review or translation scope
+      description: State the exact files, source revision if known, terminology questions, and anything you cannot review.
+      placeholder: I can review book/chapters/02-first-safe-task-ES.md against its current EN source. I cannot verify product facts or learner outcomes.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Contribution boundaries
+      options:
+        - label: I will submit only work I have the right to contribute under the repository's current license.
+          required: true
+        - label: I understand that language review does not verify product facts, runtime behavior, learning outcomes, or release readiness.
+          required: true
+        - label: I will not include secrets, private material, raw learner data, or copyrighted text without documented permission.
+          required: true

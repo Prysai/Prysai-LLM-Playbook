@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Five repeated local verification runs passed</title>
+  <desc id="desc">A horizontal bar chart shows median local runtime in milliseconds for seven repository verification commands. Each check passed five of five local runs. The chart explicitly limits itself to engineering verification, not learner, model, security, productivity, or IQ outcomes.</desc>
+  <rect width="1600" height="900" fill="#f6f6f2"/>
+  <rect x="64" y="56" width="1472" height="10" fill="#161616"/>
+  <text x="64" y="126" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="4">ENGINEERING OBSERVATION / LOCAL WINDOWS WORKTREE</text>
+  <text x="64" y="212" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="900" letter-spacing="-3">FIVE RUNS. SEVEN CHECKS. ALL PASSED.</text>
+  <text x="66" y="258" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="20">median duration in milliseconds / 2026-08-15 / measured locally, not a user or model outcome</text>
+
+  <text x="502" y="315" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="16">0 ms</text>
+  <text x="924" y="315" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="16">250 ms</text>
+  <text x="1340" y="315" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="16">500 ms</text>
+  <path d="M500 330H1360" stroke="#d3d3cd" stroke-width="2"/>
+  <path d="M930 322V757" stroke="#deded8" stroke-width="2"/>
+  <path d="M1360 322V757" stroke="#deded8" stroke-width="2"/>
+
+  <g font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#161616">
+    <text x="64" y="374">Project baseline</text>
+    <text x="64" y="430">Project structure</text>
+    <text x="64" y="486">Content completeness</text>
+    <text x="64" y="542">English learning contract</text>
+    <text x="64" y="598">Skill registry</text>
+    <text x="64" y="654">Skill routing contract</text>
+    <text x="64" y="710">Local Markdown links</text>
+  </g>
+  <g fill="#161616">
+    <rect x="500" y="348" width="62" height="28"/>
+    <rect x="500" y="404" width="70" height="28"/>
+    <rect x="500" y="460" width="81" height="28"/>
+    <rect x="500" y="516" width="144" height="28"/>
+    <rect x="500" y="572" width="82" height="28"/>
+    <rect x="500" y="628" width="59" height="28"/>
+    <rect x="500" y="684" width="833" height="28"/>
+  </g>
+  <g font-family="Consolas, 'Courier New', monospace" font-size="19" font-weight="700">
+    <text x="580" y="370" fill="#161616">36.1 ms / 5 of 5 passed</text>
+    <text x="588" y="426" fill="#161616">40.5 ms / 5 of 5 passed</text>
+    <text x="599" y="482" fill="#161616">47.0 ms / 5 of 5 passed</text>
+    <text x="662" y="538" fill="#161616">83.9 ms / 5 of 5 passed</text>
+    <text x="600" y="594" fill="#161616">47.6 ms / 5 of 5 passed</text>
+    <text x="577" y="650" fill="#161616">34.3 ms / 5 of 5 passed</text>
+    <text x="1320" y="706" text-anchor="end" fill="#ffffff">484.5 ms / 5 of 5 passed</text>
+  </g>
+
+  <rect x="64" y="752" width="1472" height="102" fill="#161616"/>
+  <text x="92" y="782" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">CLAIM LIMIT</text>
+  <text x="92" y="812" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700">THIS CHART MEASURES LOCAL CHECK STABILITY — NOT SKILL EFFECTIVENESS, LEARNING,</text>
+  <text x="92" y="840" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700">SECURITY, PRODUCTIVITY, OR IQ.</text>
+  <text x="64" y="882" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="14">PRYSAI LAB / RAW TIMINGS: docs/quality/verification-stability-2026-08-15.json / ORIGINAL DATA VISUALIZATION</text>
+</svg>

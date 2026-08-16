@@ -8,15 +8,28 @@ the project can honestly claim.
 - [Skill quality standard](skill-quality-standard.md)
 - [Evaluation framework](evaluation-framework.md)
 - [Current-state review](current-state-review-2026-08-09.md)
+- [Current adversarial and visual review](adversarial-current-state-and-visual-review-2026-08-15.md) — a current worst-case review of learner evidence, model-evaluation evidence, release operations, scope boundaries, mobile rendering, direct-link behavior, and one candidate search-discovery gap
+- [Model-output integrity adversarial addendum](adversarial-model-output-integrity-addendum-2026-08-15.md) — updates the model-evidence finding after the v1 capture defect, preserves the no-new-Skill decision, and separates real output collection from an eligible comparative study
+- [Static-site security review](static-site-security-review-2026-08-15.md) — an evidence-bounded JavaScript and workflow review; no critical or high client-side finding was confirmed locally, while host HTTP-header/framing and Ruleset enforcement remain explicit medium release risks
 - [Public-site review](review-public-site-browser-2026-08-10.md)
 - [Current First Win pilot protocol](first-win-pilot-protocol-v2.md)
+- [Newcomer entry observation protocol](newcomer-entry-observation-protocol-v1.md)
+- [Five repeated local verification runs](verification-stability-2026-08-15.md) — engineering stability only, not a learner or model result
+- [Shift Handoff pilot protocol](shift-handoff-pilot-protocol-v1.md) — a candidate process study with frozen prompt packets, a manifest-bound analyzer, and an explicit non-claim boundary
+- [Shift Handoff captured-output record](shift-handoff-pilot-capture-2026-08-15.md) — 18 fictional-prompt responses collected on one anonymous web surface; raw outputs and web timing are retained, while independent human scoring remains pending and the v1 input-byte defect prevents comparative analysis
+- [Shift Handoff input-integrity review](../../evals/results/shift-handoff-pilot-chatgpt-anonymous-2026-08-15/input-integrity-review.md) — records the v1 Windows newline mismatch and the v2 corrective boundary
+- [Shift Handoff blind-score packet](shift-handoff-blind-score-packet-v1.md) — a local two-reviewer handoff that hides condition metadata where practical and keeps the condition key sealed until both score sheets return
+- [Shift Handoff candidate fixture](../../evals/candidates/shift-handoff-v1/README.md)
 - [Commit-bound First Win pilot-kit contract](../governance/first-win-pilot-kit.yaml)
 - [Public beta feedback contract](public-beta-feedback-contract-v1.md)
+- [Community evidence contribution protocol](community-evidence-contribution-protocol-v1.md) — a two-route intake that fast-tracks fictional test material but keeps real learner/model evidence out of public PRs until an authorized study and independent review exist
+- [Fast fictional test-material review](../governance/fast-material-review.md) — contributor scaffold plus a short human review sequence; passing static CI remains neither a merge bot nor a learning/model result
 - [Context Packet Builder proposal fixture](../../evals/candidates/context-packet-builder-v1/README.md)
 - [Superseded first-task pilot protocol](first-task-pilot-protocol-v1.md)
 - [Red-team release and learning audit](red-team-release-and-learning-audit-2026-08-13.md)
 - [Lab navigation and locale integrity review](review-lab-navigation-and-locale-integrity-2026-08-13.md)
 - [Reader teaching-card placement review](review-reader-teaching-card-placement-2026-08-13.md)
+- [Current teaching-board visual audit addendum](visual-asset-audit-addendum-2026-08-14.md)
 - [Lab 008 deterministic reference review](lab-008-reference-run-review-2026-08-13.md)
 - [Universal Seam Fixture](../../examples/universal-seam-v1/README.md)
 - [Project map](../project-map-EN.md)

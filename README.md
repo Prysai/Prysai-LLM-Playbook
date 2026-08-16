@@ -13,7 +13,7 @@
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-[Start the recommended Codex path](#the-recommended-first-codex-path) · [Prepare a safe offline fixture](book/routes/first-safe-change-EN.md) · [Try the optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) · [Read the full English guide](README-EN.md)
+[No project? Start with the no-setup check](#optional-15-minute-warm-up-no-git-required) · [Practise a Spanish exchange](book/communication-clinic-EN.md#six-short-spanish-messages) · [Run a research check](book/communication-clinic-EN.md#six-short-research-messages) · [Received a citation-shaped answer? Check the source record](book/communication-clinic-EN.md#source-check-route) · [Need to share an AI answer? Run the Share Check](book/communication-clinic-EN.md#share-check) · [Ready to make a local Codex change? Start the Codex path](#the-recommended-first-codex-path) · [Need a disposable fixture?](book/routes/first-safe-change-EN.md) · [Read the full English guide](README-EN.md)
 
 > **Status:** `candidate` · **Default locale:** English · **Maintained by:** Prysai Lab
 
@@ -24,6 +24,20 @@ states otherwise. See [`LICENSE`](LICENSE) and the [licensing boundary](docs/sou
 [`README-EN.md`](README-EN.md). The project is a candidate: its structure and
 static checks exist, but learner runs, transfer runs, repeated evaluations,
 and independent review are still pending.
+
+## Evidence ledger — measured, prepared, and unknown
+
+| Evidence status | Current record | What a reader may conclude |
+|---|---|---|
+| Observed | [Seven local checks × five sequential runs](docs/quality/verification-stability-2026-08-15.md), with raw milliseconds and a chart | These named engineering checks were stable in one current local Windows worktree. It is not a speed, Skill, learner, safety, or model result. |
+| Prepared, not run | [Shift Handoff fixed-fictional pilot](docs/quality/shift-handoff-pilot-protocol-v1.md): 3 tasks × 2 conditions × 3 fresh runs; packet hashes and an analysis-chart generator are ready | A comparable model-output study can be run without changing the prompt halfway through. No model output, score, time, percentage, or benefit is recorded. |
+| Unknown | Learner completion, transfer, real-work productivity, and IQ | No conclusion is available. The Playbook does not measure or claim IQ improvement. |
+
+The [measurement research record](docs/research/measuring-llm-workflow-performance-without-iq-claims-2026-08-15.md)
+defines task-scoped completion, rework, time, and fixed-rubric measures. Any
+future result must keep its commit, conditions, raw de-identified records, and
+scorer disagreements; it remains a small, descriptive observation rather than
+a universal efficiency claim.
 
 ## What this is
 
@@ -42,17 +56,31 @@ repeatable loop:
 define the task → choose a bounded action → inspect the result → keep evidence → state the limit
 ```
 
-The stable method applies beyond one product. The deepest current practice is
-the Codex track: files, tools, Skills, Agents, verification, and team adoption.
-The wider LLM landscape includes other chat assistants and coding agents, but
-a familiar name is not a reason to pretend their controls or permissions are
-the same. A named platform earns a source-backed adapter before the Playbook
-teaches its actions as fact.
+The stable method applies beyond one product. **The current guided scope is
+the transferable core plus the Codex track**: files, tools, Skills, Agents,
+verification, and team adoption. Claude Code, Grok, and other named platforms
+are not runnable Playbook routes yet. A familiar name is not a reason to
+pretend its controls or permissions are the same; a named platform earns a
+source-backed adapter before the Playbook teaches its actions as fact.
 
 <mark>Do not stop at a plausible output.</mark> Ask what changed, what was
 checked, and what remains unproven.
 
-## The recommended first Codex path
+## Start here — choose one route
+
+You do not need to understand the whole catalogue before you begin. Choose the
+route that matches what you have **today**. Do not combine the two on your
+first visit.
+
+### I do not have a project or coding background
+
+Start with the [no-setup LLM check](#optional-15-minute-warm-up-no-git-required).
+It uses one fictional message and any chat model. You will make three human
+checks and keep a modest receipt. You do not need files, tools, a connected
+account, private data, or a real-world action. The 15-minute label is a target,
+not a measured beginner completion time.
+
+### I want to make one reversible local change with Codex
 
 If you opened this project to make a real local change with Codex, do not
 choose among the whole catalogue yet. Take this one sequence:
@@ -86,15 +114,24 @@ check, or a no-side-effect boundary.
 The warm-up below is optional and text-only. It rehearses one checking habit;
 it does not replace the local Codex task.
 
-## Choose your starting point
+<details>
+<summary>Other routes — open this only when you already know your next need</summary>
+
+If you start the Codex route but do not have a disposable local target at
+Chapter 2, use the [First Safe Change fixture](book/routes/first-safe-change-EN.md).
+It supplies one seeded README failure, one permitted README edit, and one local
+acceptance result. It is `candidate / not_run`; it is not a replacement for the
+guided Codex path.
 
 | What you need now | Start here | Leave with |
 |---|---|---|
-| Make a first reversible local Codex change | [Recommended Codex path](#the-recommended-first-codex-path) | Needs a disposable project by Chapter 2; leaves with one bounded task card, a small diff, a focused check, and an unverified list |
-| Need a safe local file before using a project | [First Safe Change fixture](book/routes/first-safe-change-EN.md) | One seeded README failure, one permitted README edit, and one local acceptance result; candidate · learner run `not_run` |
-| Rehearse the checking habit without project setup | [Optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) | One fictional message, three human checks, and a bounded receipt; optional, not the local Codex path |
 | Turn a vague request into something an Agent can execute | [Chapter 3](book/chapters/03-task-protocol-EN.md) + [Lab 002](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop conditions, and failure handling |
 | Turn a broad learning or research wish into a first attempt | [Beginner Practice Pack intake](book/communication-clinic-EN.md#first-practice-intake) | Ask one decision at a time, select one existing route, and leave with a bounded receipt; supplemental candidate · complete learner run `not_run` |
+| Practise a short typed Spanish exchange | [Six short Spanish practice messages](book/communication-clinic-EN.md#six-short-spanish-messages) | Six separate, copy-ready messages for one fictional four-turn practice loop; candidate · learner outcome `not_run` |
+| Prepare one source-supported research check | [Six short research messages](book/communication-clinic-EN.md#six-short-research-messages) | Six separate, copy-ready messages that preserve a decision, source ownership, and a stop receipt; candidate · research outcome `not_run` |
+| Check a citation-shaped answer before acting on it | [Source-record check](book/communication-clinic-EN.md#source-check-route) | A fixed fictional answer, visible missing source fields, and a next check or stop; candidate · `not_run` |
+| Check whether a source list stayed inside its rule | [Source-set scope check](book/communication-clinic-EN.md#retrieval-scope-receipt) | A supplied-list boundary, one inclusion/exclusion/unknown label per fictional source, and a stop receipt; candidate · `not_run` |
+| Decide whether an AI answer or conversation is safe to share | [Share Check](book/communication-clinic-EN.md#share-check) | One fictional item choice, audience boundary, smaller-excerpt decision, and stop condition; candidate · `not_run` |
 | Assess an AI idea that could affect other people | [Public-interest safety inquiry](book/communication-clinic-EN.md#public-interest-safety-route) | A fixed fictional case for decision ownership, affected people, input limits, recourse, evidence, and a stop receipt; candidate · `not_run` |
 | Recover when the model answered the wrong task | [Post-failure recovery route](book/communication-clinic-EN.md#recovery-route) + [Communication Failure Triage Skill](skills/prysai-communication-failure-triage/SKILL.md) | Preserve the miss, change one communication condition, and record a comparable rerun without claiming a universal fix |
 | Stop trusting “done” too early | [Chapter 9](book/chapters/09-verification-and-recovery-EN.md) + [Lab 003](book/labs/lab-003-evidence-review-EN.md) | A claim-to-evidence review that catches wrong files, missing tests, and scope gaps |
@@ -103,6 +140,8 @@ it does not replace the local Codex task.
 | Turn a personal method into team capability | [Chapter 21](book/chapters/21-team-capability-system-EN.md) + [Contribution model](docs/governance/contribution-model.md) | Ownership, sources, permissions, evaluation, maintenance, and rollback |
 | Inspect the whole curriculum | [Book guide](book/README-EN.md) + [table of contents](book/table-of-contents-EN.md) | Reading routes, chapter order, and lab boundaries |
 | Contribute or find a file | [Project map](docs/project-map-EN.md) + [CONTRIBUTING.md](CONTRIBUTING.md) | Directory roles and the documented update path |
+
+</details>
 
 ## See one bounded artifact
 
@@ -199,7 +238,7 @@ support, proof of a bug, or learner-outcome evidence; see the
 |---|---|---|
 | English chapters | 22 canonical sources | Reader learning, retention, or transfer |
 | Labs | 18 labs, all `draft / not_run` | Learner runs and independent reruns |
-| Skills | 14 project-owned `candidate` Skills | Broad trigger reliability or learner outcomes |
+| Skills | 23 project-owned `candidate` Skills | Broad trigger reliability or learner outcomes |
 | Evaluation | 40 fixtures, `not_run / static_structure_only` | Scored executions and reviewer records |
 | Locales | English source plus five migration routes | Complete, independently reviewed translations |
 | Release | `candidate` | Public deployment, a release tag, or production readiness |

@@ -7,6 +7,7 @@ extracting or modifying the source archives.
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import re
@@ -15,15 +16,7 @@ import zipfile
 from collections import Counter
 from pathlib import Path
 
-
-ARCHIVES = {
-    "S01": Path(r"D:/downloads/codex-orange-book-main.zip"),
-    "S02": Path(r"D:/downloads/academic-research-skills-codex-main.zip"),
-    "S03": Path(r"D:/downloads/awesome-agent-skills-main.zip"),
-    "S04": Path(r"D:/downloads/marketingskills-main.zip"),
-    "S05": Path(r"D:/downloads/agent-skills-main.zip"),
-    "S06": Path(r"D:/downloads/awesome-codex-skills-master.zip"),
-}
+from input_archive_locations import archive_location_hint, archive_paths
 
 
 def sha256(path: Path) -> str:
@@ -53,7 +46,13 @@ def skill_metadata(archive: zipfile.ZipFile, name: str) -> dict[str, object]:
     }
 
 
-def audit(source_id: str, path: Path) -> dict[str, object]:
+def audit(source_id: str, path: Path | None) -> dict[str, object]:
+    if path is None:
+        return {
+            "source_id": source_id,
+            "path": "",
+            "status": "not_configured",
+        }
     if not path.is_file():
         return {"source_id": source_id, "path": str(path), "status": "missing"}
 
@@ -99,9 +98,29 @@ def audit(source_id: str, path: Path) -> dict[str, object]:
 
 
 def main() -> int:
-    report = {source_id: audit(source_id, path) for source_id, path in ARCHIVES.items()}
+    parser = argparse.ArgumentParser(
+        description="Read-only audit for the six optional local source archives."
+    )
+    parser.add_argument(
+        "--archive-dir",
+        metavar="DIRECTORY",
+        help="directory containing the six archives; overrides PRYSAI_INPUT_ARCHIVE_DIR",
+    )
+    args = parser.parse_args()
+    archives, archive_dir, archive_dir_source = archive_paths(args.archive_dir)
+    report = {
+        source_id: audit(source_id, path)
+        for source_id, path in archives.items()
+    }
     print(json.dumps(report, ensure_ascii=False, indent=2))
-    return 0 if all(item["status"] == "ok" for item in report.values()) else 1
+    if all(item["status"] == "ok" for item in report.values()):
+        return 0
+    print(
+        f"INPUT_ARCHIVE_AUDIT_INCOMPLETE archive_dir={archive_dir or 'not_configured'} "
+        f"selection={archive_dir_source}; {archive_location_hint()}",
+        file=sys.stderr,
+    )
+    return 1
 
 
 if __name__ == "__main__":

@@ -9,6 +9,15 @@
 **Sprachen:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
+## Beginne mit einer sicheren Übung, nicht mit einer Installation
+
+Wenn du zum ersten Mal mit einem Projektordner arbeitest, öffne zuerst
+[Die erste sichere Änderung](book/routes/first-safe-change-DE.md). Das ist eine
+lokale, wegwerfbare Übung mit einem README, einer erlaubten Änderung und einem
+sichtbaren Check; kein Konto, Netzwerk, keine Installation und kein echtes
+Projekt sind nötig. Die Übersetzung ist `in-progress`; sie ist weder
+unabhängig sprachgeprüft noch ein Lernnachweis.
+
 `Prysai LLM Playbook` ist ein eigenständiges, buchähnliches
 Lern- und Praxissystem für GPT, Codex, Tools, Skills, Agents und die Prüfung
 von Ergebnissen in echter Arbeit. Es ist weder ein flaches Skill-Verzeichnis

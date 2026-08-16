@@ -194,6 +194,13 @@ def safe_label(value: object, label: str) -> str:
     return value
 
 
+def require_distinct_scoring_roles(roles: dict[str, object]) -> None:
+    moderator = safe_label(roles.get("moderator"), "moderator")
+    independent_scorer = safe_label(roles.get("independent_scorer"), "independent_scorer")
+    if moderator == independent_scorer:
+        raise ValueError("moderator and independent_scorer must use distinct role aliases so scores can be independent")
+
+
 def safe_entry_url(value: object) -> str:
     if not isinstance(value, str):
         raise ValueError("entry_url must be an http(s) URL without credentials, query text, or fragment")
@@ -446,18 +453,26 @@ def build_package(contract: dict[str, Any], args: argparse.Namespace) -> Path:
     output = safe_output_path(args.output_dir)
     if output.exists() and any(output.iterdir()):
         raise ValueError("output_dir must not already contain files; do not overwrite pilot records")
+    roles = {
+        "pilot_authorizer": args.pilot_authorizer,
+        "privacy_owner": args.privacy_owner,
+        "moderator": args.moderator,
+        "independent_scorer": args.independent_scorer,
+        "deletion_owner": args.deletion_owner,
+    }
     for value, label in (
-        (args.pilot_authorizer, "pilot_authorizer"),
-        (args.privacy_owner, "privacy_owner"),
-        (args.moderator, "moderator"),
-        (args.independent_scorer, "independent_scorer"),
-        (args.deletion_owner, "deletion_owner"),
+        (roles["pilot_authorizer"], "pilot_authorizer"),
+        (roles["privacy_owner"], "privacy_owner"),
+        (roles["moderator"], "moderator"),
+        (roles["independent_scorer"], "independent_scorer"),
+        (roles["deletion_owner"], "deletion_owner"),
         (args.recruitment_channel, "recruitment_channel"),
         (args.locale, "locale"),
         (args.model_surface, "model_surface"),
         (args.browser_os_viewport, "browser_os_viewport"),
     ):
         safe_label(value, label)
+    require_distinct_scoring_roles(roles)
     if not DATE_RE.fullmatch(args.retention_end) or date.fromisoformat(args.retention_end) < date.today():
         raise ValueError("retention_end must be today or a future YYYY-MM-DD date")
     entry_url = safe_entry_url(args.entry_url) if args.entry_url else ""
@@ -473,13 +488,7 @@ def build_package(contract: dict[str, Any], args: argparse.Namespace) -> Path:
         "quality_finding": candidate_contract["quality_finding"],
         "entry_path": contract["public_surface"]["entry_path"],
         "entry_url": entry_url or None,
-        "roles": {
-            "pilot_authorizer": args.pilot_authorizer,
-            "privacy_owner": args.privacy_owner,
-            "moderator": args.moderator,
-            "independent_scorer": args.independent_scorer,
-            "deletion_owner": args.deletion_owner,
-        },
+        "roles": roles,
         "conditions": {
             "recruitment_channel": args.recruitment_channel,
             "locale": args.locale,
@@ -572,6 +581,10 @@ def validate_package(path: Path, contract: dict[str, Any]) -> list[str]:
             safe_label(roles.get(key, ""), f"manifest.roles.{key}")
         except ValueError as exc:
             errors.append(str(exc))
+    try:
+        require_distinct_scoring_roles(roles)
+    except ValueError as exc:
+        errors.append(str(exc))
     try:
         safe_label(conditions.get("recruitment_channel", ""), "manifest.conditions.recruitment_channel")
         safe_label(conditions.get("locale", ""), "manifest.conditions.locale")

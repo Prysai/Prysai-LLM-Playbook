@@ -12,14 +12,17 @@ research outcome.
 
 ## Question and scope
 
-What durable public evidence can justify two very small, beginner-facing LLM
+What durable public evidence can justify three very small, beginner-facing LLM
 prompt-card candidates without claiming that an LLM teaches a language,
 browses the web, validates citations, or completes research?
 
 The candidates are deliberately limited to:
 
-1. a short Spanish exchange in which the learner writes before receiving help;
-2. source-check preparation in which the model helps structure a question and
+1. a four-turn fictional Spanish hotel exchange in which the learner writes
+   before receiving help;
+2. a fictional planning attempt in which the learner writes before receiving
+   one small hint and then tries a single changed constraint; and
+3. source-check preparation in which the model helps structure a question and
    the likely owners of evidence before any answer is drafted.
 
 This is a source receipt, not a prompt pack, an evaluation, a language
@@ -76,7 +79,43 @@ The candidate must state that model corrections are suggestions to inspect.
 They are not an authoritative language assessment, a guarantee of correctness,
 or evidence that the learner can perform independently in a real conversation.
 
-## Candidate B: source-check preparation, not an answer
+## Candidate B: one observable planning attempt
+
+### Narrow learner need
+
+The card should turn “help me make a plan” into one harmless, learner-authored
+attempt: a fictional situation, three visible constraints, a time box, a fixed
+check, one limited hint, and one changed constraint. The candidate is not a
+calendar, travel, health, financial, safety, or other real-world decision aid.
+
+### What the sources support
+
+- **Official fact and research finding:** the instructional-practice and
+  retrieval-practice records already listed as [O1] and [R1] support the
+  narrow design choice to preserve a learner attempt and distinguish it from a
+  later revision. They do not evaluate planning, feedback quality, transfer,
+  or this card.
+- **Official facts:** the product-owned prompt-guidance records [O2] and [O3]
+  support keeping the candidate as ordinary text, rather than claiming that a
+  named product, tool, or special prompt syntax is required. They do not prove
+  cross-product behavior or a successful task.
+
+### Candidate design boundary
+
+This receipt supports only the following **project inference**: a short,
+fictional plan can make attempt, constraint, correction, and changed-case
+evidence visible before a learner requests more help. The model must not
+replace the first attempt, recommend a real-world course of action, infer
+planning ability, or report an outcome beyond the saved interaction.
+
+The card must name its fictional setting and leave personal, private,
+consequential, or current factual inputs out. A pass on the first plan can at
+most support `demonstrated_on_this_task`; a comparable unassisted changed-time
+attempt can at most support `transferred_to_time_limit_variation`. Neither
+state demonstrates general planning skill, judgement, retention, safety, or
+independent performance.
+
+## Candidate C: source-check preparation, not an answer
 
 ### Narrow researcher need
 
@@ -116,22 +155,27 @@ search, factual correctness, a recommendation, or any research outcome. It
 does **not claim browsing** and must never invent titles, URLs, quotations,
 access dates, or source content.
 
-## Integration recommendation
+## Current reader integration
 
-When the project is ready to add reader-facing cards, add exactly two clearly
-labeled **candidate** cards to the first practical entry point:
+The three cards are now projected as clearly labeled **candidate** cards at the
+[site's first practical entry point](../../site/index.html). This is a static
+reader integration, not a learner, model, or source-check run. The Spanish
+card uses the original Route A1 fictional hotel record, the planning card uses
+the original Route B learning pattern, and the research card remains a separate
+preparation exercise in the
+[Beginner Practice Pack](../../book/communication-clinic-EN.md).
 
 | Card | Reader can reasonably receive | Required visible limit | Link target |
 | --- | --- | --- | --- |
-| Short Spanish exchange | A bounded first attempt, disclosed help, and learner revision to inspect. | Not fluency, placement, certification, or a seven-day result. | The existing language-learning / first-turn contract. |
+| Four-turn fictional Spanish hotel exchange | A bounded first attempt, disclosed help, and learner revision to inspect. | Not fluency, placement, certification, or a seven-day result. | The existing language-practice route. |
+| Fictional park-visit planning attempt | A bounded first plan, one hint, learner correction, and one changed-time attempt to inspect. | Not real-world advice, general planning ability, transfer beyond the named variation, or independent performance. | The existing observable-skill route. |
 | Prepare a source check | A claim-and-source-owner preparation sheet with explicit unknowns. | Not browsing, citation validation, complete research, or an answer. | The existing bounded-research / first-turn contract. |
 
 Use original project wording for any final cards. Do not copy a third party's
 prompt, assessment item, forum post, screenshot, or tutorial structure. A
-future integration should log the card version, product/surface used, supplied
-context, model output, learner action, sources actually inspected, and failure
-or stop reason. Until that work exists, both cards remain `candidate` and
-`not_run`.
+future run should log the card version, product/surface used, supplied context,
+model output, learner action, sources actually inspected, and failure or stop
+reason. Until that work exists, all three cards remain `candidate` and `not_run`.
 
 ## Source ledger
 
