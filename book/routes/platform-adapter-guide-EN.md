@@ -29,8 +29,8 @@ behavior. Before you repeat a platform claim, ask three questions:
 
 If you cannot answer all three, keep the claim as `unknown` and record the
 next check. See the
-[Platform Adapter Review Skill](../skills/prysai-platform-adapter-review/SKILL.md)
-and [Platform Fact Watch](../skills/prysai-platform-fact-watch/SKILL.md) for
+[Platform Adapter Review Skill](../../skills/prysai-platform-adapter-review/SKILL.md)
+and [Platform Fact Watch](../../skills/prysai-platform-fact-watch/SKILL.md) for
 the maintenance method behind this rule.
 
 ## The one-page platform map
@@ -81,7 +81,7 @@ Open any ChatGPT surface and run the safe first task above. Then note one
 platform difference you can actually observe: does the reply mention browsing,
 memory, or a share link? Record what you saw, not what you assume. For a
 source-backed check of a ChatGPT claim, use the
-[Source Investigator Skill](../skills/prysai-source-investigator/SKILL.md)
+[Source Investigator Skill](../../skills/prysai-source-investigator/SKILL.md)
 with the official OpenAI help pages as the owner of product facts.
 
 ## Claude Code first task
@@ -137,9 +137,9 @@ inspect-before-edit habit is comfortable.
 - You want a text-only starter practice: [Beginner Practice Pack](../communication-clinic-EN.md).
 - You want the deep flagship track with files and tools: [First Safe Change](first-safe-change-EN.md).
 - You want the platform-neutral foundation first: [Universal Core Foundations](universal-core-foundations-EN.md).
-- You want to compare two platforms fairly: [LLM Comparison Protocol](../skills/prysai-llm-comparison-protocol/SKILL.md).
+- You want to compare two platforms fairly: [LLM Comparison Protocol](../../skills/prysai-llm-comparison-protocol/SKILL.md).
 - You want to know whether a platform lesson belongs in the curriculum:
-  [Platform Adapter Review](../skills/prysai-platform-adapter-review/SKILL.md).
+  [Platform Adapter Review](../../skills/prysai-platform-adapter-review/SKILL.md).
 
 ## Evidence state and boundary
 
@@ -147,8 +147,8 @@ This route is `candidate / not_run`: the structure and checks exist, but no
 learner run, cross-platform run, or independent review is recorded. The
 per-platform descriptions above are orientation derived from first-party
 documentation and dated research receipts
-([cross-LLM beginner prompting source receipt](../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md),
-[platform teaching boundary card](../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md)).
+([cross-LLM beginner prompting source receipt](../../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md),
+[platform teaching boundary card](../../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md)).
 They are not evidence that any platform behaves identically, that a task will
 succeed everywhere, or that product features are equivalent. Platform-specific
 commands, permissions, prices, and availability are volatile facts: check the
