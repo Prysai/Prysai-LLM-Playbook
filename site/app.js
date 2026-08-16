@@ -821,7 +821,7 @@ const loadSearchIndex = () => {
   if (searchIndexLoadPromise) return searchIndexLoadPromise;
   searchIndexLoadPromise = new Promise((resolve, reject) => {
     const script = document.createElement('script');
-    script.src = 'search-index.js?v=20260815-search-target';
+    script.src = 'search-index.js?v=20260815-locale-route-continuity';
     script.async = true;
     script.dataset.searchIndexLoader = '';
     script.addEventListener('load', () => {
