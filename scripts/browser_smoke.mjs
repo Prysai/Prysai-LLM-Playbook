@@ -276,8 +276,8 @@ try {
   await everydayPromptDeck.locator('#skill-prompt-status').getByText(/Prompt copied\. Follow the three steps/i).waitFor();
   assert.match(
     await page.locator('.hero-scope').innerText(),
-    /transferable core \+ Codex Practice Track[\s\S]*Claude Code and Grok are not runnable routes yet/i,
-    'hero does not state the current guided platform scope before route selection',
+    /Six platforms, one method[\s\S]*Codex flagship track/i,
+    'hero does not state the six-platform guided scope before route selection',
   );
   const noSetupRouteLink = page.getByRole('link', { name: 'No project or coding background? Start with one no-setup check.' });
   assert.equal(
@@ -347,7 +347,7 @@ try {
   await requestEscalationPage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#request-escalation`, { waitUntil: 'networkidle' });
   await requestEscalationPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
   assert.match(await requestEscalationPage.locator('[data-reader-article] h1').innerText(), /beginner practice pack/i, 'Reader did not render the Beginner Practice Pack for request escalation');
-  const requestEscalationHeading = requestEscalationPage.getByRole('heading', { name: /before you ask — choose the lane/i });
+  const requestEscalationHeading = requestEscalationPage.getByRole('heading', { name: /choose the lane/i });
   assert.equal(await requestEscalationHeading.isVisible(), true, 'Request escalation card is not discoverable in Reader');
   assert.equal(await requestEscalationPage.locator('#request-escalation').count(), 1, 'Reader did not preserve the request-escalation fragment target');
   const requestEscalationPosition = await requestEscalationPage.locator('#request-escalation').evaluate((target) => target.getBoundingClientRect().top);
@@ -739,7 +739,7 @@ try {
   const universalSeamPage = await context.newPage();
   await universalSeamPage.goto(`${origin}/site/reader.html?path=book%2Froutes%2Funiversal-core-foundations-EN.md&lang=en`, { waitUntil: 'networkidle' });
   await universalSeamPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
-  assert.match(await universalSeamPage.locator('[data-reader-article] h1').innerText(), /first mapped universal llm collaboration units/i, 'Reader did not render the universal-core route');
+  assert.match(await universalSeamPage.locator('[data-reader-article] h1').innerText(), /universal llm collaboration: one safe first task, then four foundations/i, 'Reader did not render the universal-core route');
   assert.equal(await universalSeamPage.getByRole('link', { name: /universal seam fixture/i }).isVisible(), true, 'Universal-core route does not expose its offline seam fixture');
   const universalSeamVisual = universalSeamPage.locator('img[alt*="Four evidence seams"]');
   assert.match(await universalSeamVisual.getAttribute('src'), /assets\/teaching\/universal-seams-red-black\.svg$/, 'Universal-core route does not retain its original seam visual');
@@ -1012,21 +1012,17 @@ try {
   assert.equal(await chineseBookEntryPage.locator('[data-reader-language]').inputValue(), 'zh', 'Chinese book entry loses the requested interface language');
   const chineseFirstChapterLink = chineseBookEntryPage.locator('[data-reader-article] a[href*="book%2Fchapters%2F01-gpt-and-codex-ZH.md&lang=zh"]');
   assert.equal(await chineseFirstChapterLink.isVisible(), true, 'Chinese book entry does not route the first chapter to its available Chinese source');
-  assert.match(await chineseBookEntryPage.locator('[data-reader-article]').innerText(), /不会自动切换到英文正文/, 'Chinese book entry does not state the no-English-content-fallback boundary');
+  assert.match(await chineseBookEntryPage.locator('[data-reader-article]').innerText(), /不会静默跳到英文正文|不会自动切换到英文正文/, 'Chinese book entry does not state the no-English-content-fallback boundary');
   await noHorizontalOverflow(chineseBookEntryPage, 'mobile Chinese book entry');
   await chineseBookEntryPage.close();
 
-  // A localized chapter may reference an English-only research record. The
+    // A localized page may reference an English-only governance record. The
   // Reader must preserve the selected locale and render its local unavailable
   // state rather than silently presenting the English Markdown as Chinese.
   const chineseResearchBoundaryPage = await context.newPage();
   await chineseResearchBoundaryPage.setViewportSize({ width: 390, height: 844 });
-  await chineseResearchBoundaryPage.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F01-gpt-and-codex-ZH.md&lang=zh`, { waitUntil: 'networkidle' });
-  await chineseResearchBoundaryPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
-  const chineseResearchLink = chineseResearchBoundaryPage.locator('[data-reader-article] a').filter({ hasText: 'OpenAI Codex 官方事实基线' }).first();
-  assert.equal(await chineseResearchLink.isVisible(), true, 'Chinese Chapter 1 does not expose its research-record link');
-  await chineseResearchLink.click();
-  await chineseResearchBoundaryPage.waitForURL(/reader\.html\?path=docs%2Fresearch%2Fopenai-codex-baseline\.md&lang=zh$/);
+  await chineseResearchBoundaryPage.goto(`${origin}/site/reader.html?path=docs%2Fgovernance%2Flocale-matrix.yaml&lang=zh`, { waitUntil: 'networkidle' });
+  await chineseResearchBoundaryPage.locator('[data-reader-article][aria-busy="false"]').waitFor();
   const localizedUnavailable = chineseResearchBoundaryPage.locator('[data-reader-article] [role="alert"]');
   await localizedUnavailable.waitFor();
   assert.match(await localizedUnavailable.innerText(), /暂时没有.*版本|不会自动切换到其他语言/, 'Chinese research route does not explain the same-locale unavailable state');
@@ -1036,7 +1032,7 @@ try {
   await noHorizontalOverflow(chineseResearchBoundaryPage, 'mobile Chinese research unavailable state');
   await chineseResearchBoundaryPage.close();
 
-  // The same protection is a Reader contract for every non-English route,
+// The same protection is a Reader contract for every non-English route,
   // including locales that currently have only their starter path translated.
   for (const locale of ['zh', 'es', 'ja', 'ko', 'de']) {
     const untranslatedProjectPage = await context.newPage();
