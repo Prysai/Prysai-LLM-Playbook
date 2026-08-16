@@ -14,10 +14,10 @@ window.GOAL_TEMPLATES = {
      {
       "key": "scene",
       "label": "One scene",
-      "placeholder": "e.g. hotel check-in, café order, train station"
+      "placeholder": "e.g. study-group time, assignment planning, class discussion"
      }
     ],
-    "template": "Run one typed four-turn {scene} in {language}. You play the other role and write first, one short question at a time. I will type one answer after each question.\n\nUse fictional details only. Do not request or accept real names, booking numbers, passports, addresses, contacts, or payment details. Before turn one, show this fixed check: four learner turns; the requested information communicated; one ambiguity resolved; understandable enough to continue. Do not translate, teach, or show a model answer before I reply. Preserve my first attempt. Correct only the first meaning-blocking error: name the error type, give a partial cue, then one worked fragment only if I still cannot continue. Keep both attempts and do not call one exchange fluency, spoken conversation, or listening/pronunciation evidence.",
+    "template": "Run one typed four-turn {scene} in {language}. You play the other role and write first, one short question at a time. I will type one answer after each question.\n\nUse fictional details only. Do not request or accept real names, schools, calendars, accounts, addresses, contacts, or payment details. Before turn one, show this fixed check: four learner turns; the requested information communicated; one ambiguity resolved; understandable enough to continue. Do not translate, teach, or show a model answer before I reply. Preserve my first attempt. Correct only the first meaning-blocking error: name the error type, give a partial cue, then one worked fragment only if I still cannot continue. Keep both attempts and do not call one exchange fluency, spoken conversation, or listening/pronunciation evidence.",
     "path": "../book/communication-clinic-EN.md#language-practice-route"
    },
    "work": {
@@ -101,10 +101,10 @@ window.GOAL_TEMPLATES = {
      {
       "key": "scene",
       "label": "一个场景",
-      "placeholder": "例如：酒店入住、咖啡馆点单、火车站"
+      "placeholder": "例如：确认学习小组时间、规划作业、课堂讨论"
      }
     ],
-    "template": "用 {language} 进行一次四轮打字对话，场景是{scene}。你扮演对方并先开口，一次只问一个短问题，我每轮回复一句。\n\n只使用虚构信息。不要索取或接受真实姓名、预订号、护照、地址、联系方式或支付信息。开始前先展示这份固定检查：四轮学习者回复；所需信息已传达；一处歧义已解决；表达足以让对话继续。在我回复前不要翻译、教学或展示参考答案。保留我的首次尝试。只纠正第一个阻碍理解的问题：说明错误类型，给一个部分提示，只有在我仍然无法继续时才给一个完整片段。保留两次尝试，不要把一次对话称为流利、口语会话或听说能力证据。",
+    "template": "用 {language} 进行一次四轮打字对话，场景是{scene}。你扮演对方并先开口，一次只问一个短问题，我每轮回复一句。\n\n只使用虚构信息。不要索取或接受真实姓名、学校、日历、账号、地址、联系方式或支付信息。开始前先展示这份固定检查：四轮学习者回复；所需信息已传达；一处歧义已解决；表达足以让对话继续。在我回复前不要翻译、教学或展示参考答案。保留我的首次尝试。只纠正第一个阻碍理解的问题：说明错误类型，给一个部分提示，只有在我仍然无法继续时才给一个完整片段。保留两次尝试，不要把一次对话称为流利、口语会话或听说能力证据。",
     "path": "../book/communication-clinic-ZH.md#language-practice-route"
    },
    "work": {
@@ -188,10 +188,10 @@ window.GOAL_TEMPLATES = {
      {
       "key": "scene",
       "label": "Una escena",
-      "placeholder": "p. ej. registro en el hotel, pedido en un café, estación de tren"
+      "placeholder": "p. ej. hora de grupo de estudio, planificación de tarea, debate en clase"
      }
     ],
-    "template": "Desarrolla una {scene} escrita de cuatro turnos en {language}. Tú interpretas el otro papel y escribes primero, una pregunta corta cada vez. Yo escribiré una respuesta después de cada pregunta.\n\nUsa únicamente datos ficticios. No pidas ni aceptes nombres reales, números de reserva, pasaportes, direcciones, contactos ni datos de pago. Antes del primer turno, muestra esta comprobación fija: cuatro turnos de quien aprende; la información solicitada comunicada; una ambigüedad resuelta; suficientemente comprensible para continuar. No traduzcas, enseñes ni muestres una respuesta modelo antes de que yo responda. Conserva mi primer intento. Corrige solo el primer error que bloquee el significado: nombra el tipo de error, da una pista parcial y, solo si todavía no puedo continuar, un fragmento resuelto. Conserva ambos intentos y no califiques un único intercambio como fluidez, conversación oral ni evidencia de comprensión o pronunciación.",
+    "template": "Desarrolla una {scene} escrita de cuatro turnos en {language}. Tú interpretas el otro papel y escribes primero, una pregunta corta cada vez. Yo escribiré una respuesta después de cada pregunta.\n\nUsa únicamente datos ficticios. No pidas ni aceptes nombres reales, escuelas, calendarios, cuentas, direcciones, contactos ni datos de pago. Antes del primer turno, muestra esta comprobación fija: cuatro turnos de quien aprende; la información solicitada comunicada; una ambigüedad resuelta; suficientemente comprensible para continuar. No traduzcas, enseñes ni muestres una respuesta modelo antes de que yo responda. Conserva mi primer intento. Corrige solo el primer error que bloquee el significado: nombra el tipo de error, da una pista parcial y, solo si todavía no puedo continuar, un fragmento resuelto. Conserva ambos intentos y no califiques un único intercambio como fluidez, conversación oral ni evidencia de comprensión o pronunciación.",
     "path": "../book/communication-clinic-ES.md#language-practice-route"
    },
    "work": {
@@ -275,10 +275,10 @@ window.GOAL_TEMPLATES = {
      {
       "key": "scene",
       "label": "ひとつの場面",
-      "placeholder": "例：ホテルのチェックイン、カフェでの注文、駅"
+      "placeholder": "例：学習グループの時間確認、課題計画、授業での話し合い"
      }
     ],
-    "template": "{language}で、入力による4ターンの{scene}を1回実施してください。あなたは相手役を務め、最初に短い質問を1つずつ書き出してください。私は各質問の後に回答を1つ入力します。\n\n架空の詳細のみを使用してください。実在の名前、予約番号、パスポート、住所、連絡先、支払い情報を要求したり受け取ったりしないでください。ターン1の前に、以下の固定チェックを提示してください：学習者のターンが4つあること、要求された情報が伝えられたこと、曖昧さが1つ解消されたこと、続行できる程度に理解できたこと。私が返信する前に、翻訳、解説、模範解答の提示をしないでください。私の最初の回答を保持してください。意味の妨げになる最初の誤りだけを修正してください：誤りの種類を指摘し、部分的なヒントを与え、それでも私が続けられない場合にのみ、正しく直した断片を1つ示してください。両方の試みを保持し、1回のやり取りを流暢さ、口頭での会話、または聞き取り・発音の証拠と呼んではいけません。",
+    "template": "{language}で、入力による4ターンの{scene}を1回実施してください。あなたは相手役を務め、最初に短い質問を1つずつ書き出してください。私は各質問の後に回答を1つ入力します。\n\n架空の詳細のみを使用してください。実在の名前、学校、予定表、アカウント、住所、連絡先、支払い情報を要求したり受け取ったりしないでください。ターン1の前に、以下の固定チェックを提示してください：学習者のターンが4つあること、要求された情報が伝えられたこと、曖昧さが1つ解消されたこと、続行できる程度に理解できたこと。私が返信する前に、翻訳、解説、模範解答の提示をしないでください。私の最初の回答を保持してください。意味の妨げになる最初の誤りだけを修正してください：誤りの種類を指摘し、部分的なヒントを与え、それでも私が続けられない場合にのみ、正しく直した断片を1つ示してください。両方の試みを保持し、1回のやり取りを流暢さ、口頭での会話、または聞き取り・発音の証拠と呼んではいけません。",
     "path": "../book/communication-clinic-JA.md#language-practice-route"
    },
    "work": {
@@ -362,10 +362,10 @@ window.GOAL_TEMPLATES = {
      {
       "key": "scene",
       "label": "하나의 장면",
-      "placeholder": "예: 호텔 체크인, 카페 주문, 기차역"
+      "placeholder": "예: 학습 모임 시간 확인, 과제 계획, 수업 토론"
      }
     ],
-    "template": "{language}로 {scene}을(를) 타이핑으로 4턴 진행해 주세요. 당신은 상대 역할을 맡아 먼저 시작하며, 한 번에 짧은 질문을 하나씩 씁니다. 저는 질문마다 답을 하나씩 타이핑하겠습니다.\n\n가상의 정보만 사용하세요. 실제 이름, 예약 번호, 여권, 주소, 연락처, 결제 정보를 요청하거나 받지 마세요. 첫 턴 전에 다음 고정 확인 항목을 보여주세요: 학습자 턴 4회, 요청한 정보가 전달됨, 모호함 1건 해소됨, 계속 진행할 수 있을 만큼 이해 가능함. 제가 답하기 전에는 번역하거나 가르치거나 모범 답안을 보여주지 마세요. 제 첫 시도는 그대로 보존하세요. 의미 전달을 막는 첫 번째 오류만 수정하세요: 오류 유형을 짚어 주고, 부분 힌트를 하나 주되, 그래도 계속하지 못할 때만 완성된 조각 하나를 보여주세요. 두 시도를 모두 남기고, 단 한 번의 교류를 유창함, 말하기 대화, 듣기/발음 증거라고 부르지 마세요.",
+    "template": "{language}로 {scene}을(를) 타이핑으로 4턴 진행해 주세요. 당신은 상대 역할을 맡아 먼저 시작하며, 한 번에 짧은 질문을 하나씩 씁니다. 저는 질문마다 답을 하나씩 타이핑하겠습니다.\n\n가상의 정보만 사용하세요. 실제 이름, 학교, 일정표, 계정, 주소, 연락처, 결제 정보를 요청하거나 받지 마세요. 첫 턴 전에 다음 고정 확인 항목을 보여주세요: 학습자 턴 4회, 요청한 정보가 전달됨, 모호함 1건 해소됨, 계속 진행할 수 있을 만큼 이해 가능함. 제가 답하기 전에는 번역하거나 가르치거나 모범 답안을 보여주지 마세요. 제 첫 시도는 그대로 보존하세요. 의미 전달을 막는 첫 번째 오류만 수정하세요: 오류 유형을 짚어 주고, 부분 힌트를 하나 주되, 그래도 계속하지 못할 때만 완성된 조각 하나를 보여주세요. 두 시도를 모두 남기고, 단 한 번의 교류를 유창함, 말하기 대화, 듣기/발음 증거라고 부르지 마세요.",
     "path": "../book/communication-clinic-KO.md#language-practice-route"
    },
    "work": {
@@ -449,10 +449,10 @@ window.GOAL_TEMPLATES = {
      {
       "key": "scene",
       "label": "Eine Szene",
-      "placeholder": "z. B. Hotel-Check-in, Café-Bestellung, Bahnhof"
+      "placeholder": "z. B. Termin einer Lerngruppe, Aufgabenplanung, Unterrichtsgespräch"
      }
     ],
-    "template": "Führe in {language} eine getippte Szene mit vier Runden durch: {scene}. Du spielst die andere Rolle und schreibst zuerst, immer eine kurze Frage nach der anderen. Ich tippe nach jeder Frage eine Antwort ein.\n\nVerwende ausschließlich erfundene Angaben. Fordere keine echten Namen, Buchungsnummern, Pässe, Adressen, Kontaktdaten oder Zahlungsinformationen an und nimm sie nicht an. Zeige vor der ersten Runde diesen festen Check: vier Runden von mir; die angeforderte Information wurde übermittelt; eine Unklarheit wurde geklärt; verständlich genug, um fortzufahren. Übersetze nicht, unterrichte nicht und zeige keine Beispielantwort, bevor ich antworte. Mein erster Versuch bleibt erhalten. Korrigiere nur den ersten Fehler, der das Verstehen blockiert: Benenne die Fehlerart, gib einen Teilhinweis und liefere nur dann ein ausgearbeitetes Fragment, wenn ich immer noch nicht weitermachen kann. Behalte beide Versuche und bezeichne einen einzelnen Wortwechsel weder als fließend noch als gesprochene Konversation noch als Beleg für Hörverständnis oder Aussprache.",
+    "template": "Führe in {language} eine getippte Szene mit vier Runden durch: {scene}. Du spielst die andere Rolle und schreibst zuerst, immer eine kurze Frage nach der anderen. Ich tippe nach jeder Frage eine Antwort ein.\n\nVerwende ausschließlich erfundene Angaben. Fordere keine echten Namen, Schulen, Kalender, Konten, Adressen, Kontaktdaten oder Zahlungsinformationen an und nimm sie nicht an. Zeige vor der ersten Runde diesen festen Check: vier Runden von mir; die angeforderte Information wurde übermittelt; eine Unklarheit wurde geklärt; verständlich genug, um fortzufahren. Übersetze nicht, unterrichte nicht und zeige keine Beispielantwort, bevor ich antworte. Mein erster Versuch bleibt erhalten. Korrigiere nur den ersten Fehler, der das Verstehen blockiert: Benenne die Fehlerart, gib einen Teilhinweis und liefere nur dann ein ausgearbeitetes Fragment, wenn ich immer noch nicht weitermachen kann. Behalte beide Versuche und bezeichne einen einzelnen Wortwechsel weder als fließend noch als gesprochene Konversation noch als Beleg für Hörverständnis oder Aussprache.",
     "path": "../book/communication-clinic-DE.md#language-practice-route"
    },
    "work": {

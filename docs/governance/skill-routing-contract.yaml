@@ -2425,7 +2425,7 @@
     {
       "id": "single-language-partner",
       "kind": "single",
-      "text": "Practise a short typed hotel check-in in Spanish with me: you play the receptionist, I write first, correct at most one error.",
+      "text": "Practise a short typed Spanish study-group time check with me: you play a classmate, I write first, correct at most one error.",
       "signals": {
         "intents": [
           "typed_language_exchange_practice"

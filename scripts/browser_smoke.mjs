@@ -254,11 +254,11 @@ try {
   await spanishPromptDetails.locator('summary').click();
   assert.match(
     await spanishPromptDetails.locator('[data-everyday-prompt]').innerText(),
-    /typed Spanish hotel check-in[\s\S]*do not call one successful exchange fluency, spoken conversation, or listening\/pronunciation evidence/i,
+    /typed Spanish study-group time check[\s\S]*do not call one successful exchange fluency, spoken conversation, or listening\/pronunciation evidence/i,
     'Spanish prompt card omits its text-only or spoken-language boundary',
   );
   assert.equal(await everydayPromptDeck.locator('.everyday-prompt-steps').count(), 3, 'everyday prompt cards do not expose their three-step use instructions');
-  assert.match(await everydayPromptDeck.locator('.everyday-prompt-steps').first().innerText(), /Copy the card exactly as written[\s\S]*fictional typed hotel check-in/i, 'Spanish card does not provide a no-setup first action');
+  assert.match(await everydayPromptDeck.locator('.everyday-prompt-steps').first().innerText(), /Copy the card exactly as written[\s\S]*fictional typed Spanish study-group time check/i, 'Spanish card does not provide a no-setup first action');
   const researchPromptDetails = everydayPromptDeck.locator('[data-prompt-card]').nth(1).locator('details');
   assert.equal(await researchPromptDetails.getAttribute('open'), null, 'research prompt should begin compact');
   await researchPromptDetails.locator('summary').click();
@@ -353,7 +353,7 @@ try {
   const requestEscalationPage = await context.newPage();
   await requestEscalationPage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#request-escalation`, { waitUntil: 'networkidle' });
   await requestEscalationPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
-  assert.match(await requestEscalationPage.locator('[data-reader-article] h1').innerText(), /beginner practice pack/i, 'Reader did not render the Beginner Practice Pack for request escalation');
+  assert.match(await requestEscalationPage.locator('[data-reader-article] h1').innerText(), /optional application practice: language, work, and research/i, 'Reader did not render the optional application practice guide for request escalation');
   const requestEscalationHeading = requestEscalationPage.getByRole('heading', { name: /choose the lane/i });
   assert.equal(await requestEscalationHeading.isVisible(), true, 'Request escalation card is not discoverable in Reader');
   assert.equal(await requestEscalationPage.locator('#request-escalation').count(), 1, 'Reader did not preserve the request-escalation fragment target');
@@ -407,14 +407,14 @@ try {
 
   const directStarterCardPage = await context.newPage();
   await directStarterCardPage.setViewportSize({ width: 390, height: 844 });
-  await directStarterCardPage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#card-a1-hotel-baseline-and-correction`, { waitUntil: 'networkidle' });
+  await directStarterCardPage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#card-a1-study-group-baseline-and-correction`, { waitUntil: 'networkidle' });
   await directStarterCardPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
-  const directStarterHeading = directStarterCardPage.getByRole('heading', { name: /card a1 — hotel baseline and correction/i });
+  const directStarterHeading = directStarterCardPage.getByRole('heading', { name: /card a1 — study-group baseline and correction/i });
   await directStarterHeading.waitFor();
   const directStarterTop = await directStarterHeading.evaluate((heading) => heading.getBoundingClientRect().top);
   assert.ok(directStarterTop >= 0 && directStarterTop < 260, `Beginner route A1 does not land on its copy-ready card: ${directStarterTop}`);
   const directStarterPrompt = directStarterCardPage.locator('pre').filter({ hasText: 'Run one four-minute' }).first();
-  assert.match(await directStarterPrompt.innerText(), /Run one four-minute typed Spanish hotel check-in/i, 'Beginner route A1 does not retain its first copy-ready prompt');
+  assert.match(await directStarterPrompt.innerText(), /Run one four-minute typed Spanish study-group time check/i, 'Beginner route A1 does not retain its first copy-ready prompt');
   assert.doesNotMatch(await directStarterPrompt.innerText(), /\*\*typed\*\*/, 'Beginner route A1 leaks Markdown markup into the copied prompt');
   await noHorizontalOverflow(directStarterCardPage, 'mobile direct beginner starter card');
   await directStarterCardPage.close();
@@ -510,7 +510,7 @@ try {
   const typedLanguagePage = await context.newPage();
   await typedLanguagePage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#language-practice-route`, { waitUntil: 'networkidle' });
   await typedLanguagePage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
-  const typedLanguageHeading = typedLanguagePage.getByRole('heading', { name: /typed beginner Spanish travel exchange/i });
+  const typedLanguageHeading = typedLanguagePage.getByRole('heading', { name: /typed beginner Spanish scheduling exchange/i });
   assert.equal(await typedLanguageHeading.isVisible(), true, 'Typed language route is not discoverable in Reader');
   assert.equal(await typedLanguagePage.locator('#language-practice-route').count(), 1, 'Reader did not preserve the language-practice-route fragment target');
   const typedLanguagePosition = await typedLanguagePage.locator('#language-practice-route').evaluate((target) => target.getBoundingClientRect().top);
@@ -829,7 +829,7 @@ try {
   await chinesePromptPage.waitForTimeout(350);
   await noHorizontalOverflow(chinesePromptPage, 'mobile Chinese prompt-card deck');
   assert.equal(
-    await chinesePromptPage.getByRole('heading', { name: '完成一次简短的文字版西班牙语酒店入住对话。' }).isVisible(),
+    await chinesePromptPage.getByRole('heading', { name: '完成一次简短的文字版西班牙语学习小组时间确认。' }).isVisible(),
     true,
     'mobile Chinese language prompt-card heading is missing',
   );
@@ -1022,7 +1022,8 @@ try {
   await chineseBookEntryPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
   assert.equal(await chineseBookEntryPage.locator('[data-reader-language]').inputValue(), 'zh', 'Chinese book entry loses the requested interface language');
   const chineseFirstChapterLink = chineseBookEntryPage.locator('[data-reader-article] a[href*="book%2Fchapters%2F01-gpt-and-codex-ZH.md&lang=zh"]');
-  assert.equal(await chineseFirstChapterLink.isVisible(), true, 'Chinese book entry does not route the first chapter to its available Chinese source');
+  assert.ok(await chineseFirstChapterLink.count() >= 1, 'Chinese book entry does not route the first chapter to its available Chinese source');
+  assert.equal(await chineseFirstChapterLink.first().isVisible(), true, 'Chinese book entry does not visibly expose the first Chinese chapter route');
   assert.match(await chineseBookEntryPage.locator('[data-reader-article]').innerText(), /不会静默跳到英文正文|不会自动切换到英文正文/, 'Chinese book entry does not state the no-English-content-fallback boundary');
   await noHorizontalOverflow(chineseBookEntryPage, 'mobile Chinese book entry');
   await chineseBookEntryPage.close();
@@ -1180,7 +1181,7 @@ try {
 
   await page.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#recovery-route`, { waitUntil: 'networkidle' });
   await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
-  assert.match(await page.locator('[data-reader-article] h1').innerText(), /beginner practice pack/i, 'Reader did not render the public Beginner Practice Pack name');
+  assert.match(await page.locator('[data-reader-article] h1').innerText(), /optional application practice: language, work, and research/i, 'Reader did not render the public optional application practice title');
   assert.match(await page.locator('[data-reader-article]').innerText(), /learner evidence:\s*not_run/i, 'Beginner Practice Pack does not expose its learner-evidence boundary');
   assert.equal(await page.getByRole('heading', { name: /recovery route — when the reply already missed/i }).isVisible(), true, 'Post-failure recovery route is not discoverable');
   assert.equal(await page.locator('#recovery-route').count(), 1, 'Reader did not preserve the recovery-route fragment target');
@@ -1204,7 +1205,7 @@ try {
   assert.equal(await recoveryVisual.isVisible(), false, 'Mobile Reader shrinks an information-dense teaching board instead of offering its focused full-size route');
   assert.equal(await page.getByRole('link', { name: /coaching-process evaluation candidate/i }).isVisible(), true, 'Related coaching-process evaluation is not discoverable');
   assert.equal(await page.getByRole('link', { name: /task-contract availability and channel study/i }).isVisible(), true, 'Separate task-contract study is not discoverable');
-  await noHorizontalOverflow(page, 'mobile Beginner Practice Pack');
+  await noHorizontalOverflow(page, 'mobile optional application practice guide');
 
   const boundaryCardPage = await context.newPage();
   await boundaryCardPage.setViewportSize({ width: 390, height: 844 });

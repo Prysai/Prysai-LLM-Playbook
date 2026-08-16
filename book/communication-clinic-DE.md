@@ -38,9 +38,8 @@ Dein eigener Satz bleibt erhalten; du bekommst eine kleine, überprüfbare Korre
 Das Modell soll das Gespräch nicht von Anfang an für dich führen.
 
 ```text
-Ich möchte den ersten Satz bei der Ankunft in einem Hotel üben. Spiele nur den Empfang;
-zeige keine Beispielantwort.
-Ich kenne nur [hola, tengo una reserva, mi nombre es, por favor].
+Ich möchte mit erfundenen Angaben die Uhrzeit einer spanischen Lerngruppe bestätigen. Spiele nur eine Mitschülerin oder einen Mitschüler; zeige keine Beispielantwort.
+Ich darf nutzen: [Ana, Lerngruppe, Dienstag oder Donnerstag, 6:00 oder 6:30, Bibliothek oder online, eine Frage mitbringen].
 Zuerst schreibe ich einen spanischen Satz mit höchstens 12 Wörtern.
 Wenn ich antworte, nenne nur das eine Problem, das das Verstandenwerden am meisten stört,
 erkläre es in [meiner Sprache], gib einen Hinweis ohne den ganzen Satz umzuschreiben und
@@ -50,9 +49,8 @@ warte dann auf meine Korrektur.
 ### 2. Spanisch: Die Situation wechseln statt eine Antwort auswendig zu lernen
 
 ```text
-Setze die Übung fort, aber diesmal bitte ich am Bahnhof um eine Fahrkarte nach [Stadt].
-Verwende nur die vorherigen Wörter. Wenn sie nicht reichen, frage zuerst, welches Wort ich
-hinzufügen möchte. Ich schreibe zuerst einen Satz.
+Setze die Übung fort, aber wechsle zur Aufgabenplanung: Ich muss fragen, welchen Teil ich vorbereiten soll, und klären, ob der Entwurf für Dienstag oder Donnerstag ist.
+Verwende meinen Satz nicht erneut und gib vor meinem Versuch keinen Hinweis. Ich schreibe zuerst einen Satz.
 Danach sage nur „verständlich“ oder „Korrektur nötig“ und nenne höchstens eine Stelle.
 Nenne dieses Ergebnis nicht fließend, beherrscht oder Sprachniveau.
 ```

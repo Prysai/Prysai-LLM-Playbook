@@ -37,9 +37,9 @@ Espera conservar tu frase y recibir una corrección pequeña, no que el modelo h
 conversación por ti.
 
 ```text
-Quiero practicar la primera frase al llegar a un hotel. Actúa solo como recepción;
-no muestres una respuesta de ejemplo.
-Solo conozco: [hola, tengo una reserva, mi nombre es, por favor].
+Quiero practicar cómo confirmar la hora de un grupo de estudio con datos ficticios.
+Actúa solo como compañero de clase; no muestres una respuesta de ejemplo.
+Puedo usar: [Ana, grupo de estudio, martes o jueves, 6:00 o 6:30, biblioteca o en línea, llevar una pregunta].
 Primero escribiré una frase en español de máximo 12 palabras.
 Cuando responda, señala solo el problema que más afecta a que se me entienda,
 explícalo en [mi idioma], dame una pista y espera a que yo la corrija.
@@ -48,8 +48,8 @@ explícalo en [mi idioma], dame una pista y espera a que yo la corrija.
 ### 2. Español: cambia de situación, no memorices una respuesta
 
 ```text
-Continúa, pero ahora estoy en una estación y quiero pedir un billete a [ciudad].
-Usa solo las palabras anteriores. Si no bastan, pregúntame qué palabra quiero añadir.
+Continúa, pero cambia a un plan de tarea: necesito preguntar qué parte debo preparar y aclarar si el borrador es para el martes o el jueves.
+No reutilices mi frase ni des pistas antes de mi intento.
 Déjame escribir primero. Después indica solo «se entiende» o «necesita cambio» y
 señala como máximo una cosa. No llames el resultado fluidez, dominio ni nivel.
 ```

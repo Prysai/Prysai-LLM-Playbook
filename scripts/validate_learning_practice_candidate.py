@@ -43,15 +43,13 @@ TEXT_REQUIREMENTS = {
     ],
     CLINIC: [
         'id="practice-route-chooser"',
-        "Start here — choose one small route",
-        "Open Card A1: fictional hotel check-in",
-        "Open Card B1: define and make your own first attempt",
-        "Open Card C1: turn a topic into a checkable question",
-        "Open Card D1: find the missing source record",
-        "Open Card E1: make a user-declared continuity receipt",
+        "Choose an application after the foundation",
+        "four-turn study-group time check",
+        "one small performance attempt",
+        "decision and source plan",
         "Already have a reply that missed the task?",
-        "Each card is a candidate",
-        "not evidence that it works for every learner or model.",
+        "Use the [recovery route]",
+        "Before you share an AI answer or conversation, use the [Share Check]",
         'id="first-practice-intake"',
         "first-practice intake",
         "Ask one question at a time",
@@ -75,7 +73,7 @@ TEXT_REQUIREMENTS = {
         "does not establish continuity, correctness, privacy, safety, memory control",
         "user-declared context continuity source receipt",
         "No cross-model run evidence exists; product-specific actions require a sourced adapter.",
-        "Beginner Practice Pack: Spanish practice, research, and first attempts",
+        "Optional Application Practice: language, work, and research",
         "Card A1",
         "Card A2",
         "Card B1",
@@ -92,8 +90,8 @@ TEXT_REQUIREMENTS = {
         "Common failure",
         "Evidence to keep",
         "Status and receipt boundary",
-        "hotel check-in",
-        "train station",
+        "study-group time check",
+        "assignment-planning",
         "Keep the evidence surface honest",
         "mode: typed_rehearsal",
         "does not observe speech, listening, pronunciation, pace,",
@@ -183,9 +181,9 @@ TEXT_REQUIREMENTS = {
         "candidate · not_run",
         "everyday-prompt-steps",
         "Copy the card exactly as written.",
-        "fictional typed hotel check-in",
-        "Do not add a real name, booking, passport, or payment detail.",
-        "Run one four-minute typed Spanish hotel check-in",
+        "fictional typed Spanish study-group time check",
+        "Do not add a real name, school, calendar, account, or payment detail.",
+        "Run one four-minute typed Spanish study-group time check",
         "spoken conversation, pronunciation, listening",
     ],
     FIRST_TURN_RUN: [
@@ -197,20 +195,16 @@ TEXT_REQUIREMENTS = {
     ],
 }
 
-ROUTE_CHOOSER_TARGETS = (
-    "[Open Card A1: fictional hotel check-in](#card-a1-hotel-baseline-and-correction)",
-    "[Open Card B1: define and make your own first attempt](#card-b1-define-and-attempt-the-performance)",
-    "[Open Card C1: turn a topic into a checkable question](#card-c1-decision-question-and-source-plan)",
-    "[Open Card D1: find the missing source record](#card-d1-source-record-check)",
-    "[Open Card E1: make a user-declared continuity receipt](#card-e1-user-declared-continuity-receipt)",
+APPLICATION_CHOOSER_TARGETS = (
+    "[four-turn study-group time check](#card-a1-study-group-baseline-and-correction)",
+    "[one small performance attempt](#card-b1-define-and-attempt-the-performance)",
+    "[decision and source plan](#card-c1-decision-question-and-source-plan)",
 )
 
 ROUTE_CARD_TARGETS = (
-    ("#card-a1-hotel-baseline-and-correction", "### Card A1 — hotel baseline and correction"),
+    ("#card-a1-study-group-baseline-and-correction", "### Card A1 — study-group baseline and correction"),
     ("#card-b1-define-and-attempt-the-performance", "### Card B1 — define and attempt the performance"),
     ("#card-c1-decision-question-and-source-plan", "### Card C1 — decision, question, and source plan"),
-    ("#card-d1-source-record-check", "### Card D1 — source-record check"),
-    ("#card-e1-user-declared-continuity-receipt", "### Card E1 — make a continuity receipt before a fresh turn"),
 )
 
 FIXTURE_FIELDS = {
@@ -247,11 +241,11 @@ def main() -> int:
         clinic_text = CLINIC.read_text(encoding="utf-8")
         chooser_index = clinic_text.find('<span id="practice-route-chooser"></span>')
         intake_index = clinic_text.find('<span id="first-practice-intake"></span>')
-        route_indices = [clinic_text.find(target) for target in ROUTE_CHOOSER_TARGETS]
+        route_indices = [clinic_text.find(target) for target in APPLICATION_CHOOSER_TARGETS]
         if chooser_index < 0 or intake_index < 0 or chooser_index >= intake_index:
             errors.append("communication-clinic: route chooser must appear before the first-practice intake")
         if any(index < 0 for index in route_indices):
-            errors.append("communication-clinic: route chooser targets are incomplete")
+            errors.append("communication-clinic: application chooser targets are incomplete")
         elif chooser_index >= min(route_indices):
             errors.append("communication-clinic: route chooser targets must follow the chooser heading")
         for card_anchor, card_heading in ROUTE_CARD_TARGETS:
@@ -259,6 +253,13 @@ def main() -> int:
             heading_index = clinic_text.find(card_heading)
             if anchor_index < 0 or heading_index < 0 or anchor_index >= heading_index:
                 errors.append(f"communication-clinic: route target for {card_heading} is missing or out of order")
+        retired_default_terms = ("hotel check-in", "train station")
+        for term in retired_default_terms:
+            if term in clinic_text.casefold():
+                errors.append(
+                    "communication-clinic: retired travel default remains in the "
+                    f"reader-facing Spanish practice route: {term!r}"
+                )
 
     if PRACTICE_BOARD.is_file():
         board_text = PRACTICE_BOARD.read_text(encoding="utf-8")

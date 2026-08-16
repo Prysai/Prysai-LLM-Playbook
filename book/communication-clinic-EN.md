@@ -24,7 +24,7 @@ your own small attempt, and return for explanation only if you need it. You do
 not need to read the whole pack before using it.
 
 - **Practise a Spanish reply.** Start with the fictional,
-  [four-turn hotel check-in](#card-a1-hotel-baseline-and-correction). You try
+  [four-turn study-group time check](#card-a1-study-group-baseline-and-correction). You try
   first; the model corrects one consequential mistake instead of giving a long
   lesson.
 - **Get help with a real skill without handing over the answer.** Start with
@@ -222,7 +222,7 @@ that a model, route, or person performed well.
 
 **Failure case: "I will learn Spanish in seven days."** Do not turn this into
 a seven-day syllabus. Ask for one situation and a baseline. A possible intake
-result is Route A: a four-turn hotel check-in, using an agreed known-word list,
+result is Route A: a four-turn study-group time check, using an agreed known-word list,
 at most three new items, one comprehension question, and no model answer
 before the first reply. The receipt remains `template_selected` until the
 attempt exists. It does not establish a level, retention, or fluency.
@@ -697,13 +697,13 @@ is included in the same research brief.
 
 <span id="language-practice-route"></span>
 
-## Route A — typed beginner Spanish travel exchange
+## Route A — typed beginner Spanish scheduling exchange
 
-The target is four **learner turns**, not “learn Spanish.” The receptionist
-starts each turn with one short question or reply; the learner responds four
-times. Card A1 uses a hotel check-in. Card A2 changes the setting to a train
-station while keeping the capability—supply details and resolve one
-ambiguity—stable. Use fictional details only.
+The target is four **learner turns**, not “learn Spanish.” A fictional study
+partner starts each turn with one short question or reply; the learner responds
+four times. Card A1 clarifies a study-group time. Card A2 changes to an
+assignment-planning exchange while keeping the capability—supply details and
+resolve one ambiguity—stable. Use fictional details only.
 
 Four learner turns make an inspectable **typed** attempt, not a language
 outcome. The [six-prompt claim review](../docs/research/six-prompt-learning-claims-and-user-friction-2026-08-14.md)
@@ -734,25 +734,27 @@ for the source scope and a fuller receipt. If the goal later becomes a spoken
 conversation, change the evidence surface before changing the claim; this
 card does not provide that evaluation.
 
-### Card A1 — hotel baseline and correction
+<span id="card-a1-study-group-baseline-and-correction"></span>
+
+### Card A1 — study-group baseline and correction
 
 ```text
-Run one four-minute typed Spanish hotel check-in with exactly four learner
-turns. You are the receptionist and write first. Use only short present-tense
-questions. I will type one answer after each question.
+Run one four-minute typed Spanish study-group time check with exactly four
+learner turns. You are a fictional classmate and write first. Use only short
+present-tense questions. I will type one answer after each question.
 
-Fictional guest card: Ana Torres; two nights; single room; breakfast included;
-ask whether breakfast starts at 7:00 or 7:30. I may use the card and look up at
-most three single words. Introduce no more than three words not used in my
-answers, and ask one either/or comprehension question. Do not request or accept
-a real name, booking number, passport, address, contact, or payment detail.
+Fictional study card: Ana; a study group; Tuesday or Thursday; 6:00 or 6:30;
+library or online; bring one question. I may use the card and look up at most
+three single words. Introduce no more than three words not used in my answers,
+and ask one either/or comprehension question. Do not request or accept a real
+name, school, address, contact, calendar, account, or payment detail.
 
-Before turn one, show this fixed rubric: four learner turns; name and two-night
-stay communicated; single room and breakfast communicated; 7:00/7:30 ambiguity
-resolved; Spanish understandable enough to continue. Do not teach, translate,
-or show a model answer before I reply. Preserve my first attempt and record
-lookups. Correct only the first meaning-blocking error: name the error type,
-then give a partial cue, then one worked fragment only if I still cannot
+Before turn one, show this fixed rubric: four learner turns; purpose and study
+group communicated; day and time ambiguity resolved; place or online option
+communicated; Spanish understandable enough to continue. Do not teach,
+translate, or show a model answer before I reply. Preserve my first attempt and
+record lookups. Correct only the first meaning-blocking error: name the error
+type, then give a partial cue, then one worked fragment only if I still cannot
 continue. Ask me to correct it. If the worked fragment is still insufficient,
 reduce the exchange to one missing information item and stop adding new
 material. Keep both attempts and do not call one successful exchange fluency,
@@ -773,15 +775,15 @@ spoken conversation, or listening/pronunciation evidence.
   `demonstrated_on_this_task` only if the fixed task meets its rubric. A model's
   own score is not independent evidence, and generated feedback may be wrong.
 
-### Card A2 — unseen train-station transfer and delayed check
+### Card A2 — unseen assignment-planning transfer and delayed check
 
 ```text
-Use my saved hotel record, but do not reuse its sentences. Run exactly four
-learner turns at a train station: I need a one-way ticket to Toledo tomorrow
-morning and must resolve whether the train leaves at 8:15 or 8:50. Keep the
-same five scoring dimensions—turns completed, traveller detail, requested
-service, ambiguity resolved, understandable Spanish—allow no hints, preserve
-my attempt, and name the changed variation.
+Use my saved study-group record, but do not reuse its sentences. Run exactly
+four learner turns about planning a fictional assignment: I need to ask what
+part I should prepare and resolve whether the draft is due Tuesday or Thursday.
+Keep the same five scoring dimensions—turns completed, purpose, requested
+detail, ambiguity resolved, understandable Spanish—allow no hints, preserve my
+attempt, and name the changed variation.
 
 Then create a review cue for seven days from today unless I provide another
 date. Do not reveal the later task and do not claim that you scheduled a
@@ -792,13 +794,13 @@ record `not_run`.
 
 - **Model should:** change setting, vocabulary, and ambiguity while keeping the
   underlying exchange and scoring dimensions stable.
-- **Common failure:** a near-copy of the hotel dialogue is rehearsal, not
+- **Common failure:** a near-copy of the study-group dialogue is rehearsal, not
   transfer; a same-session result is not retention.
-- **Evidence to keep:** train-task revision, proof it was unrevealed, aids,
+- **Evidence to keep:** assignment-task revision, proof it was unrevealed, aids,
   attempt, rubric score, scorer, exact variation, planned delay, and the later
   task only when it actually runs.
-- **Status and receipt boundary:** a passing train attempt may support
-  `transferred_to_train-station-information-exchange`. Keep the delayed result
+- **Status and receipt boundary:** a passing assignment attempt may support
+  `transferred_to_assignment-planning-information-exchange`. Keep the delayed result
   `not_run` until its dated attempt exists; only then may it support
   `retained_at_[delay]`. Neither status means broad fluency.
 
@@ -821,7 +823,8 @@ or proof that the model's feedback was correct.
 **1. Set one target**
 
 ```text
-I want to rehearse one simple Spanish hotel check-in with fictional details.
+I want to rehearse a simple Spanish study-group time check with fictional
+details.
 Help me choose one observable four-turn typed target, one help limit, one
 self-check, and one smaller fallback. Do not write a dialogue, teach, assess
 my level, or promise fluency. Ask one question only if a decision is missing.
@@ -830,20 +833,20 @@ my level, or promise fluency. Ask one question only if a decision is missing.
 **2. Make the first attempt**
 
 ```text
-Run the fictional Spanish hotel check-in we agreed. You are the receptionist
+Run the fictional Spanish study-group time check we agreed. You are a classmate
 and ask one short present-tense question at a time. Wait for my answer before
 continuing. Do not translate, give me a model answer, or invent personal,
-booking, passport, contact, or payment details. Preserve my first attempt.
+school, calendar, contact, or payment details. Preserve my first attempt.
 ```
 
 **3. Look at one material gap**
 
 ```text
-Compare my preserved attempt with this visible check: four learner turns; name
-and stay communicated; requested service communicated; one ambiguity resolved;
-Spanish understandable enough to continue. Name at most one meaning-blocking
-gap. Quote the words that caused it. If you are unsure, say unknown. Do not
-rewrite my answer or call the result fluent.
+Compare my preserved attempt with this visible check: four learner turns;
+purpose and study group communicated; day and time clarified; place or online
+option communicated; Spanish understandable enough to continue. Name at most
+one meaning-blocking gap. Quote the words that caused it. If you are unsure,
+say unknown. Do not rewrite my answer or call the result fluent.
 ```
 
 **4. Let the learner repair it**
@@ -858,11 +861,11 @@ record what help I used.
 **5. Change the scene, not the skill**
 
 ```text
-Keep the same four-turn typed target and visible check, but change the
-fictional setting to a train station. I need a one-way ticket to Toledo
-tomorrow morning and must clarify whether the train leaves at 8:15 or 8:50.
-Do not reuse my earlier sentences, give hints, or call this broad fluency.
-Preserve the changed task and my unaided reply.
+Keep the same four-turn typed target and visible check, but change to a
+fictional assignment-planning exchange. I need to ask what part I should
+prepare and clarify whether the draft is due Tuesday or Thursday. Do not reuse
+my earlier sentences, give hints, or call this broad fluency. Preserve the
+changed task and my unaided reply.
 ```
 
 **6. Recheck later without pretending a reminder exists**
