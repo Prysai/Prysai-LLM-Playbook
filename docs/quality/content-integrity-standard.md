@@ -45,6 +45,6 @@ runs it before generated-output and Pages checks.
 
 The teaching-structure check has a matching focused mode:
 `python scripts/validate_learning_contract.py --canonical-en`. It currently
-covers all 22 English chapters and all 17 English lab sources declared in the
+covers all 22 English chapters and all 18 English lab sources declared in the
 locale matrix. Legacy unsuffixed files remain available for migration history;
 they are not canonical English sources.

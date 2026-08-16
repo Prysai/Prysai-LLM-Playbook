@@ -26,6 +26,11 @@ LANGUAGE_SWITCHER_END = "<!-- language-switcher:end -->"
 MIGRATION_NOTICE_RE = re.compile(
     r"(?:migration|migraci[oó]n|移行|迁移|이관|[Mm]igration|[Üü]bersetzung|Übersetzungsstatus)"
 )
+TOC_LAB_LINK_RE = re.compile(r"\bLab\s*[- ]?0*(\d{1,3})\b", re.IGNORECASE)
+TOC_CHAPTER_LINK_RE = re.compile(
+    r"(?:chapter|cap[ií]tulo|kapitel)\s*(\d{1,2})|第\s*(\d{1,2})\s*章|(\d{1,2})\s*장",
+    re.IGNORECASE,
+)
 
 
 def load_matrix() -> dict[str, Any]:
@@ -207,6 +212,7 @@ def main() -> int:
             errors.append(f"{path_string} is missing a complete language switcher block")
         source_identity = path_to_identity.get(path_string)
         source_content_id = source_identity[0] if source_identity else legacy_path_to_identity.get(path_string)
+        is_localized_toc = path_string.startswith("book/table-of-contents-") and locale not in {None, "EN"}
         switcher_locale_counts = {registered_locale: 0 for registered_locale in LOCALES}
         for link_match in LINK_RE.finditer(text):
             link_label = link_match.group(0).split("](", 1)[0].lstrip("[")
@@ -222,6 +228,19 @@ def main() -> int:
                 continue
             if target_relative in path_to_identity:
                 target_content_id, target_locale = path_to_identity[target_relative]
+                if is_localized_toc:
+                    lab_match = TOC_LAB_LINK_RE.search(link_label)
+                    chapter_match = TOC_CHAPTER_LINK_RE.search(link_label)
+                    if lab_match and not target_content_id.startswith(f"lab-{int(lab_match.group(1)):03d}-"):
+                        errors.append(
+                            f"{path_string} labels Lab {int(lab_match.group(1)):03d} but links to {target_content_id}"
+                        )
+                    if chapter_match:
+                        chapter_number = next(group for group in chapter_match.groups() if group is not None)
+                        if not target_content_id.startswith(f"chapter-{int(chapter_number):02d}-"):
+                            errors.append(
+                                f"{path_string} labels chapter {int(chapter_number):02d} but links to {target_content_id}"
+                            )
                 in_switcher = switcher_start >= 0 and switcher_end >= 0 and switcher_start < link_match.start() < switcher_end
                 if in_switcher and is_readme:
                     switcher_locale_counts[target_locale] += 1
