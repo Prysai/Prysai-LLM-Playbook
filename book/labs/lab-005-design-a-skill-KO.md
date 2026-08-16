@@ -101,7 +101,7 @@ unverified / unblock_conditions:
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-lab-nav="previous" href="lab-004-skill-selection-KO.md" aria-label="이전 Lab: Lab 004 · 가장 작은 유용한 역량 고르기">← 이전 Lab<br><strong>Lab 004 · 가장 작은 유용한 역량 고르기</strong></a></td>
-      <td align="right"><a data-lab-nav="next" href="../table-of-contents-KO.md" aria-label="한국어 목차로 돌아가기: Lab 006은 아직 번역되지 않음">다음 Lab 준비 중 →<br><strong>Lab 006 제공 상태 보기</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-006-agent-stop-conditions-KO.md" aria-label="다음 Lab: Lab 006 · Agent 중단 조건 설계하기">다음 →<br><strong>Lab 006 · Agent 중단 조건 설계하기</strong></a></td>
     </tr>
   </table>
 </nav>
