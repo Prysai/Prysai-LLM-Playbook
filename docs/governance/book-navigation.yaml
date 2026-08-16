@@ -70,6 +70,15 @@
       "run_status": "not_run",
       "placement": "supplemental_practice",
       "boundary": "Six-message typed French exchange; not chapter 23 and not evidence of fluency, retention, or model feedback quality."
+    },
+    {
+      "id": "llm-fundamentals-guide",
+      "title_en": "Lesson 0: What Is a Large Language Model",
+      "english_path": "book/guides/llm-fundamentals-EN.md",
+      "status": "candidate",
+      "run_status": "not_run",
+      "placement": "lesson_zero",
+      "boundary": "Textbook opener for the whole book; not chapter 23, not learner evidence, and not a product claim."
     }
   ],
   "parts": [
