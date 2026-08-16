@@ -2,6 +2,30 @@
 
 # Kapitel 1: Verstehe GPT, bevor du Codex vertraust
 
+## Fang hier an: Die Namen brauchst du noch nicht
+
+Heute beginnen wir mit der Frage hinter den Produktnamen. Vielleicht hast du schon gehört, dass Codex und Claude Code zusammen genannt werden. Sie sind nützliche Beispiele für einen größeren Wandel: Ein Sprachmodell kann mit einer Aufgabe, einem Kontext und manchmal Werkzeugen arbeiten, statt nur eine Chat-Antwort zu liefern. Betrachte diese Eröffnung als kurzes geführtes Gespräch, nicht als Prüfung: Du musst dich nicht zuerst für eine Seite entscheiden oder eine Funktionsliste auswendig lernen. Bevor wir uns irgendwelche Bedienelemente ansehen, lerne die Frage, die alles Weitere leichter macht:
+
+> Wenn ein Sprachmodell-Werkzeug sagt, es sei fertig: Was kannst du tatsächlich prüfen, bevor du dem Ergebnis vertraust?
+
+In dieser ersten Lektion trennst du eine vorgeschlagene Handlung von einer erlaubten Handlung, eine Werkzeugmeldung von einem tatsächlich geänderten Ziel und eine plausible Antwort von Belegen. Codex ist der Flaggschiff-Praxistrack dieses Playbooks. Die Methode ist breiter; eine benannte Plattform muss sich ihren eigenen Adapter verdienen, bevor wir ihre Buttons, Berechtigungen oder Verhaltensweisen als Tatsachen lehren.
+
+Deshalb ist die erste Übung bewusst bescheiden. Beginne mit einer sichtbaren Eingabe, einer risikoarmen Handlung und einer Prüfung, die eine andere Person wiederholen kann. Eine lange Funktionsliste kann warten, bis du einen fertigen von einem bloß überzeugend wirkenden Befund unterscheiden kannst.
+
+## Wo die bekannten Namen hingehören
+
+Du wirst GPT, Grok, Gemini, Kimi, Codex und Answer.AI in derselben Diskussion hören. Sie sind nicht alle dasselbe. Manche Namen bezeichnen Modellfamilien, manche Werkbänke, die Dateien oder Werkzeuge hinzufügen, und manche angewandte KI-Forschung und -Bildungsorganisationen. Eine nützliche Landkarte ist:
+
+| Name, den du hörst | Erste Frage, die du stellst | Nimm nicht an |
+| --- | --- | --- |
+| GPT / OpenAI | Welches Modell und welche Oberfläche—ChatGPT, API oder Codex—werde ich tatsächlich nutzen? | Ein Modellname gewährt Datei- oder Werkzeugzugriff oder ein besseres Ergebnis. |
+| Grok / xAI | Ist der vom Eigentümer beschriebene Denkfokus für meine feste Aufgabe relevant? | Es ist das beste Modell für deine Aufgabe oder in deinem Konto verfügbar. |
+| Gemini / Google DeepMind | Braucht diese Aufgabe die Eingabemodalitäten oder das Ökosystem, auf das ich wirklich zugreifen kann? | Jede Gemini-Oberfläche hat dieselben Werkzeuge oder Fähigkeiten. |
+| Kimi / Moonshot AI | Ist Codieren, Analysieren oder Arbeiten mit langen Dokumenten die Aufgabe, die ich testen muss? | Sein beworbener Kontext oder Funktionsumfang beweist Qualität in dieser Werkbank. |
+| Answer.AI | Suche ich angewandte Forschung, Bildung oder ein Endnutzerprodukt? | Es ist ein Basismodell-Anbieter für dieselbe Auswahl. |
+
+Die [Landschaft-Quittung für Modelle und Werkbänke](../../docs/research/model-workbench-landscape-source-receipt-2026-08-15.md) verknüpft jede Zeile mit einer Eigentümerquelle und trennt die Positionierung des Eigentümers von einem gemessenen Ergebnis. Verbessere zuerst eine Anfrage in dem Modell, das du bereits hast; vergleiche Kandidaten erst danach an derselben Aufgabe und derselben Akzeptanzregel.
+
 ## Das Problem, das dieses Kapitel löst
 
 Viele beschreiben Codex als „ein Chatfenster, das besseren Code schreibt“. Diese
