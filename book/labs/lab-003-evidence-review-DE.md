@@ -59,7 +59,7 @@ Bewahre Eingaben, Prüftabelle, Lösungsschlüsselvergleich, Reviewer-Notizen un
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-lab-nav="previous" href="lab-002-task-protocol-DE.md" aria-label="Vorheriges Lab: Lab 002 · Einen Wunsch in ein Aufgabenprotokoll verwandeln">← Vorheriges<br><strong>Lab 002 · Aufgabenprotokoll</strong></a></td>
-      <td align="right"><a data-lab-nav="next" href="../table-of-contents-DE.md" aria-label="Zum deutschen Inhaltsverzeichnis: Lab 004 ist noch nicht übersetzt">Nächstes Lab in Arbeit →<br><strong>Verfügbarkeit von Lab 004 ansehen</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-004-skill-selection-DE.md" aria-label="Nächstes Lab: Lab 004 · Die kleinste wirksame Fähigkeit auswählen">Weiter →<br><strong>Lab 004 · Die kleinste wirksame Fähigkeit auswählen</strong></a></td>
     </tr>
   </table>
 </nav>

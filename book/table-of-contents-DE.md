@@ -4,7 +4,7 @@
 
 Dies ist ein deutscher Leseweg, keine vollständige Übersetzung des Buchs. Der
 kanonische Katalog enthält 22 Kapitel im Status `candidate` und 18 Labs im
-Status `draft`. Derzeit stehen sechs Kapitel und fünf Labs auf Deutsch bereit.
+Status `draft`. Derzeit stehen sechs Kapitel und sechs Labs auf Deutsch bereit.
 Jeder Link auf dieser Seite führt zum entsprechenden deutschen Inhalt. Fehlt
 eine `-DE`-Datei, wird sie als nicht verfügbar ausgewiesen, statt auf ein
 anderes Kapitel oder in eine andere Sprache zu verweisen.
@@ -23,7 +23,8 @@ anderes Kapitel oder in eine andere Sprache zu verweisen.
     → [Lab 007: Aktionsgrenzen](labs/lab-007-action-boundaries-DE.md).
 6. [Kapitel 5: Die richtige Codex-Arbeitsfläche wählen](chapters/05-choose-the-codex-surface-DE.md)
    → [Lab 003: Eine Fertigmeldung prüfen](labs/lab-003-evidence-review-DE.md).
-7. [Kapitel 6: Modellauswahl ist keine Modellverehrung](chapters/06-model-selection-DE.md).
+7. [Kapitel 6: Modellauswahl ist keine Modellverehrung](chapters/06-model-selection-DE.md)
+   → [Lab 004: Die kleinste wirksame Fähigkeit auswählen](labs/lab-004-skill-selection-DE.md).
 
 Diese Materialien bleiben `candidate` oder `draft / not_run`. Ein vorhandener
 Leseweg beweist weder Übersetzungsqualität noch Modellläufe, Lernerfolg oder
@@ -63,7 +64,7 @@ Transfer.
 | 001 — Erste sichere Aufgabe | [Verfügbar: Lab 001](labs/lab-001-first-safe-task-DE.md) · `draft / not_run` |
 | 002 — Aufgabenprotokoll | [Verfügbar: Lab 002](labs/lab-002-task-protocol-DE.md) · `draft / not_run` |
 | 003 — Evidenzprüfung | [Verfügbar: Lab 003](labs/lab-003-evidence-review-DE.md) · `draft / not_run` |
-| 004 — Die kleinste wirksame Fähigkeit auswählen | Deutsche Datei noch nicht vorhanden. |
+| 004 — Die kleinste wirksame Fähigkeit auswählen | [Verfügbar: Lab 004](labs/lab-004-skill-selection-DE.md) · `draft / not_run` |
 | 005 — Eine wiederholte Methode in einen abgegrenzten Skill verwandeln | Deutsche Datei noch nicht vorhanden. |
 | 006 — Stoppbedingungen für einen Agent entwerfen | Deutsche Datei noch nicht vorhanden. |
 | 007 — Aktionsgrenzen für eine README-Aufgabe | [Verfügbar: Lab 007](labs/lab-007-action-boundaries-DE.md) · `draft / not_run` |
