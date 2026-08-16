@@ -242,15 +242,21 @@ try {
   assert.equal(await everydayPromptDeck.getByRole('heading', { name: 'Start with one small conversation.' }).isVisible(), true, 'everyday prompt-card entry is missing');
   const everydayPromptButtons = everydayPromptDeck.getByRole('button', { name: 'Copy prompt' });
   assert.equal(await everydayPromptButtons.count(), 3, 'everyday prompt deck does not expose three copy controls');
+  const spanishPromptDetails = everydayPromptDeck.locator('[data-prompt-card]').first().locator('details');
+  assert.equal(await spanishPromptDetails.getAttribute('open'), null, 'Spanish prompt should begin compact');
+  await spanishPromptDetails.locator('summary').click();
   assert.match(
-    await everydayPromptDeck.locator('[data-everyday-prompt]').first().innerText(),
+    await spanishPromptDetails.locator('[data-everyday-prompt]').innerText(),
     /typed Spanish hotel check-in[\s\S]*do not call one successful exchange fluency, spoken conversation, or listening\/pronunciation evidence/i,
     'Spanish prompt card omits its text-only or spoken-language boundary',
   );
   assert.equal(await everydayPromptDeck.locator('.everyday-prompt-steps').count(), 3, 'everyday prompt cards do not expose their three-step use instructions');
   assert.match(await everydayPromptDeck.locator('.everyday-prompt-steps').first().innerText(), /Copy the card exactly as written[\s\S]*fictional typed hotel check-in/i, 'Spanish card does not provide a no-setup first action');
+  const researchPromptDetails = everydayPromptDeck.locator('[data-prompt-card]').nth(1).locator('details');
+  assert.equal(await researchPromptDetails.getAttribute('open'), null, 'research prompt should begin compact');
+  await researchPromptDetails.locator('summary').click();
   assert.match(
-    await everydayPromptDeck.locator('[data-everyday-prompt]').nth(1).innerText(),
+    await researchPromptDetails.locator('[data-everyday-prompt]').innerText(),
     /Do not invent citations|give a recommendation/i,
     'research prompt card omits its source and recommendation boundary',
   );

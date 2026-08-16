@@ -9,7 +9,6 @@
   --red: #e4002b;
   --red-dark: #b90023;
   --soft-red: #ffe5e9;
-  --highlight-lime: #c5f83a;
   --highlight-yellow: #ffe28a;
   --highlight-pink: #f7b4d7;
   --highlight-cyan: #9be8ee;
@@ -197,7 +196,7 @@ button, input, select, textarea { font: inherit; }
 .everyday-prompt-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem; margin: 1.2rem 0 0; padding: 0; list-style: none; }
 .everyday-prompt-steps li { display: grid; grid-template-columns: 1.3rem minmax(0, 1fr); gap: .45rem; align-items: start; min-width: 0; font-size: .72rem; line-height: 1.45; }
 .everyday-prompt-steps b { display: grid; place-items: center; width: 1.25rem; height: 1.25rem; color: #fff; background: var(--ink); font: 700 .62rem/1 Consolas, 'Courier New', monospace; }
-.everyday-prompt-steps-inverse b { color: var(--ink); background: var(--highlight-lime); }
+.everyday-prompt-steps-inverse b { color: #fff; background: var(--red); }
 .everyday-prompt-actions { display: flex; align-items: center; gap: 1rem 1.4rem; margin: 1.35rem 0; flex-wrap: wrap; }
 .everyday-prompt-actions .button { cursor: pointer; }
 .everyday-prompt-card-ink .text-link { color: #fff; }
@@ -205,7 +204,7 @@ button, input, select, textarea { font: inherit; }
 .everyday-prompt-card pre code { font: inherit; }
 .everyday-prompt-status { min-height: 2.8em; margin: 1rem 0 0; color: var(--muted); font-size: .68rem; line-height: 1.45; }
 .everyday-prompt-card-ink .everyday-prompt-status { color: #c2c2bd; }
-.everyday-prompt-card-skill { display: grid; grid-column: 1 / -1; grid-template-columns: minmax(0, .9fr) minmax(320px, 1.1fr); column-gap: clamp(1.5rem, 5vw, 5rem); border-top: 1px solid var(--ink); border-left: 0; background: var(--highlight-lime); }
+.everyday-prompt-card-skill { display: grid; grid-column: 1 / -1; grid-template-columns: minmax(0, .9fr) minmax(320px, 1.1fr); column-gap: clamp(1.5rem, 5vw, 5rem); border-top: 4px solid var(--red); border-left: 0; background: #fff; }
 .everyday-prompt-card-skill .everyday-prompt-card-head { grid-column: 1 / -1; }
 .compact-prompt-copy { min-width: 0; }
 .compact-prompt-copy h4 { max-width: 560px; }
