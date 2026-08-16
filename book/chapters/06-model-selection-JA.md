@@ -1,63 +1,93 @@
-<!-- content_id: chapter-06-model-selection | locale: JA | language: ja | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
+<!-- content_id: chapter-06-model-selection | locale: JA | language: ja | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
 # 第 6 章：モデル選択はモデル崇拝ではない
 
-**状態：** `candidate`。比較プロトコルと出典境界は書かれていますが、このリポジトリは固定タスク
-セットをまだ実行していません。性能、費用、待ち時間、容量、安定性、順位づけはすべて `not_run`
-です。
+**状態：** `candidate`。以下の比較プロトコルは書かれており、出典に基づいて範囲が
+定められていますが、このリポジトリは固定タスクセットをまだ実行していません。モデルの性能、費用、
+待ち時間、容量、安定性、総合順位はすべて `not_run` のままです。
 
 ## この章が解く問題
 
-「いちばん良いモデルを使う」は、仕事の決め方ではありません。役に立つ問いは次です。
+モデル選択はしばしば「いちばん良いモデルを使う」というスローガンに置き換えられます。実際の仕事
+には、もっと絞り込んだ問いが必要です。
 
-> このタスク、この作業面、この provider、コンテキスト、ツール、権限境界、時間、受け入れ基準で、
-> 最低条件を満たす候補はどれか。試験を広げる根拠は何か。
+> このタスク、この作業面、この provider、コンテキスト、ツールセット、
+> 権限境界、時間予算、受け入れ基準のもとで、最低条件を満たす候補はどれか。そして
+> 試験を広げるのに十分な根拠はあるか。
 
-候補が選んだ作業面で利用できない、または入力、ツール、権限、設定が異なるなら、公平な比較にはなり
-ません。一度きれいな出力が出たことは、その設定が一度結果を出したというだけで、一般的な順位を
-決めるものではありません。
+選んだ作業面で候補が利用できない場合、あるいは二回の実行が異なる入力、ツール、権限、reasoning
+設定を使っている場合、きれいなモデル比較は成立しません。美しい demo は、ある設定が一つの結果を
+生んだことを示せます。しかし、普遍的な順位や総合的な価値を確立することはできません。
 
 ## 学習目標
 
-- モデルより先に、タスクと作業面を決める。
-- 実際の account、workspace、provider、session で利用可能かを確かめる。
-- モデル、provider、reasoning effort、コンテキスト、ツール、権限、受け入れを分けて記録する。
-- 条件を変えずに三つの低リスク課題で比較する。
-- 容量、provider、不明な待機の失敗も根拠として残す。
-- 実験が示すこと、示さないこと、止まるべき時点を説明する。
+この章を終えると、次のことができるようになります。
 
-## 公開報告：魔法の解決策ではなく症状
+- モデルを選ぶ前に、タスクと作業面を選ぶこと。
+- カタログや picker から推測するのではなく、実際の account、workspace、provider、
+  session でモデルの可用性を確かめること。
+- モデル ID、provider、reasoning effort、コンテキスト、ツール、権限、
+  受け入れ条件を、互いに異なる比較変数として区別すること。
+- 一方の候補を助けるために条件を変えずに、低リスクの三タスクのスモーク比較を実行すること。
+- 容量、provider 不一致、長時間の待機による失敗を根拠として保存すること。
+- 実験が何を証明し、何を証明しないか、いつ止めるかを説明すること。
 
-[Codex のフィールド調査](../evidence-library-JA.md#source-notes)には、公開 Issue と議論が
-集められています。これは症状であり、公式診断やローカル再現ではありません。
+## 現実の入口：モデル選択はありふれた形で失敗する
 
-| 症状 | 観測 | それだけでは証明しないこと | 安全な対応 |
+このプロジェクトの [Codex フィールド調査](../../docs/research/field-problems-codex.md) は、
+公開されている GitHub Issues やその他の公開議論を収集しています。これらの報告は症状であり、
+公式の診断やローカルでの再現ではありません。モデル選択がうまくいかないときに人々が抱く前提を
+明らかにしてくれるため、貴重な情報源です。
+
+| 公開症状 | 報告者が観測したこと | それだけでは**証明しない**こと | 最初の安全な対応 |
 |---|---|---|---|
-| selector は `model` を変えるが `model_provider` が残る | 表示モデルと実際の provider の組み合わせが不正になる場合がある | selector、provider、モデル全体が壊れていること | 両方の値を読み、伏せ字にした設定 diff を残して組を直す |
-| モデルが容量制限にかかる | タスクは完了前に止まり、次の試行は部分的な状態を引き継ぐことがある | モデルの品質が低いこと、再試行が最初の完了を意味すること | checkpoint、diff、log、check を保存し、続ける前に状態を分類する |
-| コマンドが `Working` のままになる | UI に活動表示があっても確認可能な出力がない | formatter、Agent、モデルが正しく進んでいること | 時間制限を適用し、安全に中断して worktree を確認し、一つだけ絞った check を行う |
+| モデル picker が `model` を変えるが、カスタムの `model_provider` が残る | 表示上のモデルと実効 provider が不正な組になることがある | picker、provider、モデル全体が壊れていること | 実効の `model` と `model_provider` を一緒に読み、修正する前に伏せ字にした設定 diff を保存する |
+| 選んだモデルが容量制限にかかっている | タスクが完全な結果の前に止まり、その後の prompt が部分的な状態に遭遇することがある | モデルの品質が低いこと、あるいは再試行すれば最初の試行が完了していたこと | checkpoint、diff、logs、tests を保存し、続ける前に状態を分類する |
+| Windows のコマンドが `Working` のまま残る | UI は活動を示すが、検証可能な出力が届かない | formatter、Agent、モデルがまだ有益な進捗を生んでいること | タイムアウト／停止ルールを適用し、安全に中断し、worktree を調べ、絞り込んだ check だけを再実行する |
 
-[モデル選択の記録](../evidence-library-JA.md#source-notes)にはリンク、日付、
-境界があります。各報告について「誰かが述べたこと」「独立報告の有無」「公式確認」「本 Playbook
-で再現したこと」を分けます。再現していない報告を、保証された解決策に変えてはいけません。
+元のリンク、日付、バージョン、根拠のレベル、不確実性に関する注記は、
+[モデル選択の調査記録](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) に
+あります。このプロジェクトは、それらの報告に含まれるコマンドや回避策を実行していません。
 
-## 1. モデルを選ぶとは、構成を選ぶこと
+### 実報告を「伝説」にせずに使う方法
+
+症状ごとに、四つのラベルを分けておきます。
+
+1. **ユーザー報告：** ある人が、名前の付いた環境で起きたこととして述べる内容。
+2. **独立した報告：** 別のユーザーが同様の症状を説明しているかどうか。
+3. **公式確認：** メンテナーの回答、公式ドキュメント、リリースノート、その他の一次情報源に
+   よる証拠。
+4. **Playbook の根拠：** このプロジェクトが実際に再現したこと。
+
+上の三つの例では、最初の二つのラベルは存在するかもしれません。しかし、このプロジェクトには
+ローカルでの再現がなく、それらを保証された修正へと格上げできる公式の根本原因確認もありません。
+それが行動を変えます。魔法のような設定を約束するのではなく、根拠を保存し、次の check を
+絞り込みます。
+
+## 1. モデル選択は構成上の決定である
 
 ### 品質より先に可用性を確かめる
 
-~~~
-公式ドキュメント → account / workspace / organization の認可
-→ 目的の作業面と provider → session で見えるモデル
-→ 無害な要求が通る → 必要なツールを呼び出せる
-→ タスク結果を検証する
-~~~
+二つの別々のゲートを使います。
 
-それぞれ別の主張です。公式ページ、カタログ項目、picker に見える名前は、そのモデルが必要な
-ファイル、terminal、browser、connector とともにこのタスクを実行できる証拠ではありません。
+```text
+公式の製品ドキュメント
+→ 実際の account / workspace / organization の認可
+→ 対象の作業面と provider
+→ この session で見えるモデル
+→ 無害な要求が成功する
+→ 必要なツールが呼び出せる
+→ タスクの結果が検証される
+```
 
-候補カードを使います。
+それぞれの矢印は異なる主張を持ちます。モデルは公式ページで説明されていても、account からは
+利用できないことがあります。picker に表示されていても、provider が要求を受け取った時点で
+失敗することがあります。テキストの応答が成功しても、タスクに必要なファイル、terminal、browser、
+connector が利用可能であることを証明できるとは限りません。
 
-~~~
+候補カードでは次のフィールドを使います。
+
+```text
 candidate_id:
 model_id:
 provider:
@@ -69,58 +99,103 @@ availability_evidence:
 not_available_reason:
 model_visible_evidence:
 harmless_request_evidence:
-~~~
+```
 
-`not_observed` は有効な結果です。推測で欄を埋めるより安全です。
+`not_observed` は有効な結果です。check が実行されなかったか、利用可能な根拠を残さなかった
+ことを意味します。推測でフォームを埋めるより安全です。
 
 ### 製品の位置づけは出発仮説にすぎない
 
-公式ページは、複雑で開いた仕事、日常的な実務、反復可能な大量変換などのためにモデルを説明する
-ことがあります。これは何を試すかを決める手掛かりであり、勝者の宣言ではありません。高い
-reasoning effort は分析を増やす代わりに時間や token を使うことがあります。まずは受け入れ基準を
-満たす最小の設定から始めます。reasoning や subagent を足すなら、比較しているのはモデルだけでは
-なくワークフローと予算です。
+2026-08-11 の出典確認時点で、公式の Codex models ページは推奨される GPT-5.6 の選択肢を
+おおむね次のように説明しています。
+
+| 公式の位置づけ | 合理的な出発仮説 | まだ試すべきこと |
+|---|---|---|
+| Sol：追加の分析と磨き込みを伴う、複雑で開かれた仕事 | あいまいさ、判断、価値の高いレビューが中心になるときに試す | 自分のタスクセットでの初回成功率、所要時間、費用、安定性、ツールの挙動 |
+| Terra：実用的な日常の主力 | 強い reasoning とツール利用を必要とする普段の仕事で試す | 実際の制約の下で受け入れ基準を満たすかどうか |
+| Luna：明確で反復可能な、量の多い仕事 | 抽出、分類、変換、構造化された要約で試す | コンテキスト、provider、effort、レビューの費用を含めても結果が許容範囲かどうか |
+
+これらは製品の説明であり、Playbook のベンチマーク結果ではありません。公式ページはまた、
+reasoning effort を上げると複雑な仕事が改善される一方で、時間がかかり、より多くの token を
+使うと警告しています。受け入れ基準を満たす最小の effort から始め、タスクがより多くの計画、
+分析、確認を必要とするときだけ上げてください。その設定を実行の一部として記録します。
+
+`Max` と `Ultra` は無料の品質ラベルではありません。公式ページは、Max を「一つのタスクに
+より多くの reasoning 時間を与えるもの」、Ultra を「分割可能な複雑な仕事に subagent を使うもの」
+と説明しています。これらはワークフローとリソースの枠組みを変えるため、Ultra の実行は
+シングルエージェントの実行とのモデルだけの比較にはなりません。
 
 ### モデル、provider、作業面は一つの組である
 
-~~~
+候補を `model = ...` だけで書いてはいけません。有用な比較の単位は次のとおりです。
+
+```text
 (model_id, provider, surface, entry, account_scope, reasoning_effort,
  context_fingerprint, tools_and_versions, permission_profile)
-~~~
+```
 
-主要な要素が一つでも変われば別の流れを比較していることになります。`not_comparable` と記し、
-新しい契約で両方をやり直します。設定ファイルは設定を示すだけです。実効 provider と model を
-読み戻し、無害な要求が通ってから有効と扱います。
+中核となる要素が一つでも変わったら、別のワークフローを比較するか、実行を `not_comparable` と
+記して、新しい契約の下で両方をやり直します。
+
+公式ドキュメントは、ローカルの desktop、CLI、IDE のデフォルトに共有の `config.toml` ルートを
+説明していますが、Cloud のチャットには別のデフォルトモデル境界があります。設定ファイルは設定に
+関する根拠にすぎません。実効の provider と model を読み戻し、無害な要求を送ってから、その組を
+有効として扱います。
 
 ## 2. 決める順序を守る
 
-~~~
-タスクとリスクを定義する → Local / Worktree / Cloud を選ぶ
-→ entry と provider を選ぶ → access と可用性を確認する
+お気に入りのモデルから始めてはいけません。次の順序を使います。
+
+```text
+タスクとリスクを定義する
+→ Local / Worktree / Cloud を選ぶ
+→ 入口と provider を選ぶ
+→ 対象のアクセスとモデルの可用性を確認する
 → context、tools、permissions、effort、acceptance を固定する
-→ 同じセットを実行する → 比較可能な行をレビューする
-→ 試験を広げる、止まる、追加根拠を集める
-~~~
+→ 同じタスクセットを実行する
+→ comparable / not_comparable の行を調べる
+→ 広げる、止める、または追加の根拠を集める
+```
 
-まずタスクを分類します。抽出、変換、計画、ツールを伴う実装、調査／レビュー、作成／設計では、
-必要な根拠が異なります。抽出が得意な候補が、複数ファイルの修正や高リスクな根拠レビューに
-向くとは限りません。rubric はタスクの種類に合わせます。
+### まずタスクを分類する
 
-必要な根拠を残せる最小の作業面を選びます。リモート実行が不要なら synthetic または伏せ字の
-入力を Local に保ちます。commit しない作業を隔離するなら破棄できる Worktree を使います。
-Cloud は、repository、environment、network、secrets、review の経路が承認され観測できるときだけ
-使います。モデルが、欠けたファイル、使えない connector、誤った checkout、許可されない書き込みを
-補うことはありません。
+タスクの分類は「十分良い」の意味を決めます。
 
-## 3. 実行前のカード
+- **理解と抽出：** 材料の中から構造化された値を見つける。
+- **変換と生成：** 固定された schema の下で書き直し、要約、分類、整形を行う。
+- **計画と判断：** 制約、トレードオフ、不確実性を扱う。
+- **コードとツール利用：** repository を調べ、編集し、実行し、修復する。
+- **調査とレビュー：** 出典を見つけ、主張を突き合わせ、穴を明らかにする。
+- **作成と設計：** フィードバックの往復を経てもスタイルを保つ。
 
-~~~
+抽出に合格する候補でも、複数ファイルの修復や高リスクの根拠レビューには間違った選択であることが
+あります。受け入れ基準はタスクの分類に合わせなければなりません。
+
+### 作業面とリスク境界を固定する
+
+必要な根拠を提供できる最小の環境を選びます。タスクがリモート実行を必要としないなら、
+synthetic または伏せ字の入力をローカルに保ちます。現在の未 commit の作業を隔離する必要が
+あるなら、使い捨ての Worktree を使います。repository、環境、ネットワーク、secrets、レビューの
+経路が承認され、観測可能なときだけ Cloud を使います。
+
+モデル選択は、欠けたファイル、利用できない connector、誤った checkout、許可されていない書き込みを
+補うことはできません。環境が間違っているなら、不公平な条件でモデルを「試す」のではなく、
+作業面の決定の段階で止まります。
+
+## 3. 実行前に候補カードを書く
+
+候補またはワークフローごとに一枚のカードを使います。
+
+```text
 candidate_id:
 model_id / provider:
 surface: Local | Worktree | Cloud
 entry:
 account_or_workspace_scope:
 surface_available: yes | no | not_observed
+availability_evidence:
+not_available_reason:
+
 reasoning_effort_or_config:
 task_set_version: three-task-smoke-v1
 context_fingerprint:
@@ -128,78 +203,162 @@ tools_and_versions:
 permission_profile:
 acceptance_rubric_version:
 cost_basis: actual | credits | token_only | not_observed
+known_capacity_or_network_issue:
+
 not_comparable: true | false
 not_comparable_reason:
 conclusion_status: not_run | candidate | disputed
-~~~
+```
 
-最初の実行前に、入力と版、作業面、entry、provider、model、effort、context、tool version、
-permissions、rubric、reviewer、時間制限、再試行、費用の基準を固定します。一方だけ prompt、
-context、tool、effort、permission を良くしてはいけません。契約が変わるなら版を上げ、両方を
-繰り返します。
+最初の実行の前に、次を固定します。
 
-## 4. 実験：三つのタスクを比べる
+- 正確なタスク入力とそのバージョン。
+- 作業面、入口、provider、モデル、effort の設定。
+- 関連するコンテキストとツールのバージョン。
+- 権限と許可された副作用。
+- 受け入れ基準とレビュー担当者。
+- 時間境界と再試行予算。
+- 費用の測定基準。
 
-**実験状態：** `not_run`。これは練習のプロトコルであり、このリポジトリがモデルを比較した証拠では
-ありません。
+一方の候補のためだけに、prompt を変えたり、コンテキストを足したり、ツールを許可したり、
+effort を上げたり、権限を広げたりしてはいけません。タスク契約が変わったら、バージョンを上げて
+両方の候補をやり直します。
 
-同じ作業面で `surface_available: yes` の候補を二つ選びます。synthetic input とローカル validator
-だけで構成された版管理済み fixture [`three-task-smoke-v1`](../../evals/candidates/three-task-smoke-v1/README-JA.md)
-を使います。そこにはモデル実行は含まれません。production data、secret、外部書き込み、公開、push、
-deploy、有料 connector を使わないでください。各タスクは一度だけ実行し、事前に定めた同形式の
-制御された再試行だけを最大一回許します。
+## 4. 実験：三タスクのスモーク比較
 
-固定タスクは `extract-01`、`markdown-02`、`gap-review-03` です。順に構造化抽出、制約下の
-Markdown 変換、根拠の穴のレビューを扱います。片方の候補だけ目立つ demo に差し替えてはいけません。
-入力、instruction、schema、acceptance が変わるなら、新版を作り両方を繰り返します。
+**実験状態：** `not_run`。これは練習用のプロトコルであり、このリポジトリがモデル比較を
+実行したという証拠ではありません。
 
-1. 候補を呼び出す前に二枚のカードを完成させる。
-2. 可用性を確かめ、根拠の場所を記録する。
-3. A と B を同じ順序、入力、rubric で実行する。
-4. 編集前の raw output、event、duration、cost、error を保存する。
-5. 失敗時は制御された再試行だけを使う。盲目的な再試行を成功率にしない。
-6. 要約の前に `not_comparable` の全行を確認する。
-7. 結論は `worth expanding`、`do not expand yet`、`insufficient evidence` のいずれかに限定し、
-   境界も記録する。
+### 準備
 
-~~~
+同じ作業面で `surface_available: yes` を持つ候補を二つ選びます。入力を記憶から作り直すのでは
+なく、バージョン管理されたオフラインの
+[`three-task-smoke-v1` fixture](../../evals/candidates/three-task-smoke-v1/README-JA.md) を
+使います。そこには synthetic で機密を含まない入力とローカルの validator が含まれます。モデルの
+実行は含まれません。production データ、本物の secrets、外部への書き込み、公開、push、deployment、
+有料の connector を使ってはいけません。各タスクは最初に一度だけ実行し、事前に宣言した同じ形式の
+再作業を最大一回だけ許します。
+
+`task_set_version: three-task-smoke-v1`、両方の候補カード、一つの受け入れ基準、raw 出力の
+保存場所、log の保存場所、そして利用不能、容量による中断、権限の不一致、入力のずれ、
+ツールバージョンのずれに対する停止条件を固定します。
+
+### 固定タスク
+
+正規のタスク ID は `extract-01`、`markdown-02`、`gap-review-03` です。それぞれ構造化抽出、
+制約付き Markdown 変換、根拠の穴のレビューを扱います。各タスクのディレクトリには、指示、凍結した
+入力一つ、期待される出力一つ、validator が含まれます。パッケージは正確な入力の SHA-256 値を
+`fixture.json` に公開しているため、レビュー担当者はずれを検出できます。
+
+片方の候補のためだけに、タスクを見栄えの良い demo に置き換えてはいけません。入力、指示、出力
+schema、受け入れルールを変える必要があるなら、新しいタスクセットのバージョンを作り、両方を
+やり直します。
+
+### 手順
+
+1. どちらの候補を呼び出す前にも、両方の候補カードを完成させて保存する。
+2. 選んだ作業面で可用性を確かめ、根拠の保存場所を記録する。
+3. 候補 A と B を同じタスク順、同じ入力、同じ受け入れ基準で実行する。
+4. 人が編集する前に raw 出力を保存する。イベント、所要時間、費用基準、error の分類を記録する。
+5. 実行が失敗したら、事前に宣言した制御された再作業だけを許す。繰り返す盲目的な再試行を隠れた
+   成功指標にしてはいけない。
+6. 要約を計算する前に、すべての `not_comparable` 行を確認する。
+7. 結論は `worth expanding`、`do not expand yet`、`insufficient evidence` のいずれかだけに
+   し、境界と次回実行の条件も添える。
+
+### 根拠
+
+比較記録には少なくとも次のものを含めます。
+
+```text
 run_id | candidate_id | task_id | model_id | provider | surface | entry
-surface_available | availability_evidence | reasoning_effort_or_config
-context_fingerprint | tools_and_versions | permission_profile | first_pass
-rework_count | duration | cost_basis | cost_observed | error_type
-reviewer_score | comparable | not_comparable_reason | raw_evidence
-~~~
+surface_available | availability_evidence
+reasoning_effort_or_config | context_fingerprint | tools_and_versions
+permission_profile | first_pass | rework_count | duration
+cost_basis | cost_observed | error_type | reviewer_score
+comparable | not_comparable_reason | raw_evidence
+```
 
-## 5. 失敗、復旧、転移
+別のレビュー担当者が三つの入力、条件、受け入れ条件を再構築できなければなりません。中断した実行を
+埋めるために、空のセル、見積もり、もう一方の候補の出力を使ってはいけません。選んだ費用基準が
+その換算を明示的に定義しない限り、token 数は通貨ではありません。
 
-| 失敗 | 対応 |
-|---|---|
-| 候補が見えない、呼び出せない | `no` または `not_observed` と記録し、可用性を品質として採点しない |
-| selector と provider が一致しない | 伏せ字にした diff を残し、組を直すか provider／workflow の試験として宣言する |
-| 容量制限で実行が止まる | error と checkpoint を保存し、`blocked` または `not_comparable` とする。再試行は宣言した条件で両方に行う |
-| 確認可能な event のない待機 | 時間制限を適用し、中断して diff／state を調べ、欠けた検証を記録する |
-| 片方だけが追加 context、effort、tool を得る | `not_comparable` とし、固定した契約でやり直す |
-| demo が万能の勝者を宣言する | `candidate` または `insufficient evidence` に戻す |
+## 5. 失敗のバリエーションと安全な復旧
 
-同じ項目を Local と Worktree の比較、厳密な schema の文書変換、引用と unknown 列を持つ source
-reconciliation、read-only tool を使うコード調査にも移せます。新しいセットと rubric なしに、別の
-領域へ結果をコピーしてはいけません。
-
-## 根拠の境界と出典
-
-予定する納品物は、二枚の候補カード、固定したセットと rubric、raw run、表、型づけた error、
-拡大／停止の判断です。それが存在するまで、すべて `not_run` のままです。公式の位置づけや一回の
-demo は評価の代わりになりません。
-
-| 変動する境界 | 一次情報源 | 確認日 |
+| 失敗のバリエーション | 結果が比較可能でない理由 | 安全な対応 |
 |---|---|---|
-| モデルの位置づけ、reasoning、制限 | [Codex models](https://learn.chatgpt.com/docs/models.md) | 2026-08-11 |
-| CLI とローカル repository の流れ | [Codex CLI](https://learn.chatgpt.com/docs/cli.md) | 2026-08-11 |
-| Cloud の環境とレビュー | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-11 |
-| model/provider/capacity の公開症状 | [フィールド記録](../evidence-library-JA.md#source-notes) | 2026-08-11 |
+| 選んだ作業面で候補が見えない、または呼び出せない | 比較する同じ作業面の実行がない | `surface_available: no` または `not_observed` と記録し、その候補を止め、利用不能をモデル品質として採点しない |
+| モデル picker と provider が一致しない | 要求が意図したモデルを使っていない可能性がある | 伏せ字にした実効設定の diff を保存し、組を直すか、比較を provider／ワークフローのテストに変える |
+| 容量エラーが一方の実行を中断する | 出力と所要時間が不完全で、次の試行が部分的な状態から始まる可能性がある | error と checkpoint を保存し、`blocked` または `not_comparable` と分類し、宣言した条件の下でのみ両方を再実行する |
+| コマンドが検証可能なイベントなしに待機する | `Working` という表示は結果ではない | タイムアウトのルールを適用し、中断し、diff とプロセスの状態を調べ、検証が欠けていると記録する |
+| 片方が追加のコンテキスト、より高い effort、新しいツールを得る | 独立変数がもはやモデルだけではない | `not_comparable` と記し、両方の記録を保存し、凍結した契約でやり直す |
+| 一つの魅力的な demo で総合優勝を宣言する | サンプル数と結論の範囲が一致しない | `candidate` または `insufficient evidence` に戻り、主張を広げる前にタスクの分類と反復回数を増やす |
 
-モデル ID、価格、容量、provider support、構文、control は変わり得ます。まず一次情報源を更新し、
-公式の位置づけ、ユーザー報告、ローカル根拠を別々の文で残してください。
+容量や長時間の待機による失敗への現実的な対応は「動くまでクリックし続ける」ことではありません。
+最後に確認できた状態を保存し、タスクが完了していたのか、部分的だったのか、不明だったのかを
+判断し、それから範囲を限定した復旧を選びます。新しい会話は復旧の作業面になり得ますが、古い
+会話から証明を受け継ぐわけではありません。
+
+## 振り返り
+
+カードと raw 根拠から答えましょう。記憶からではありません。
+
+- 拡大／停止の判断を変えたのはどのタスクか。
+- どの違いがモデルに由来し、どの違いが作業面、provider、コンテキスト、ツール、権限、容量、
+  レビュー担当者に由来する可能性があるか。
+- より速い、またはより安い出力でも受け入れ基準に失敗するのはどこか。
+- どの文が公式の製品位置づけで、どの文がこのスモーク実行からの観測か。
+- 魅力的な demo が一つしかないとき、一般的な順位を妨げるのは正確には何か。
+
+## 転移
+
+同じ比較フィールドを、次のタスクのいずれかに移します。
+
+- 同じモデルを Local と Worktree で。
+- 厳密な出力 schema を持つ文書変換。
+- 引用と「不明」列を持つ調査出典の突き合わせ。
+- read-only のツール境界を使う低リスクのコード調査。
+
+新しいタスクセットのバージョンと、領域固有の受け入れ基準を固定します。モデルの選択や三タスクの
+結果を新しい領域にコピーしてはいけません。どの結論がタスク単位のままか、どの主張を捨てなければ
+ならないかを明示します。
+
+## 章の根拠
+
+意図された納品物は、二枚の候補カード、凍結したタスクセットと基準、最初の raw 実行と制御された
+再作業があればそれ、比較表、型づけされた error 記録、拡大／停止の判断です。それらの記録が
+存在するまで、この章は `not_run` を維持しなければなりません。公式の位置づけと単一の demo は、
+評価の根拠の代わりにはなりません。
+
+## 出典と保守の境界
+
+| 事実または方法の境界 | 出典 | 確認日 | 適用範囲 | 担当者／次回レビュー |
+|---|---|---:|---|---|
+| 公式のモデル位置づけ、reasoning ガイダンス、ローカルのデフォルト、Cloud のモデル境界、廃止通知 | [Codex models](https://learn.chatgpt.com/docs/models.md) | 2026-08-11 | 確認日時点の公式ドキュメント。account レベルの証明やベンチマークではない | `facts-maintainer` / 2026-09-11 |
+| CLI の作業面とローカル repository のワークフロー | [Codex CLI](https://learn.chatgpt.com/docs/cli.md) | 2026-08-11 | 公式の CLI ドキュメント。この session の実効設定ではない | `facts-maintainer` / 2026-09-11 |
+| Cloud の環境、セットアップ、logs、レビューの境界 | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-11 | 公式の Cloud ドキュメント。セットアップは Agent ステージの完了ではない | `facts-maintainer` / 2026-09-11 |
+| 公開されている model／provider、容量、長時間待機の症状 | [フィールド問題の記録](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) | 2026-08-11 | ユーザー報告とプロジェクトの指針。ローカルでの再現や公式の根本原因の主張はない | `curriculum-maintainer` / 2026-09-11 |
+| 固定タスクの比較方法 | [評価の章](19-evaluate-models-and-workflows-JA.md) と[バージョン管理された fixture](../../evals/candidates/three-task-smoke-v1/README-JA.md) | 2026-08-14 | Playbook の方法とローカルの fixture validator。完了したモデル実行はまだない | `evaluation-maintainer` / 2026-09-11 |
+
+モデル ID、作業面マトリクス、価格、容量、設定構文、provider サポート、effort 制御、廃止通知は
+変わり得ます。変わったら、まず一次情報源を更新し、それから事実影響レジストリ、調査記録、この章、
+影響を受ける評価 fixture、ステータスの出典を更新します。公式の位置づけ、ユーザーの症状、ローカルの
+実行時根拠を別々の文に保ちます。
+
+## 受け入れチェックリスト
+
+- [ ] モデルの名前を挙げる前に、タスク、リスク、作業面、provider、受け入れ基準を定義できる。
+- [ ] モデルカタログ、設定値、picker の表示からアクセスを推測するのではなく、実際の可用性の
+      根拠を記録できる。
+- [ ] モデル、provider、effort、コンテキスト、ツール、権限、費用基準、タスクセットのバージョンを
+      二枚の候補カードに記入できる。
+- [ ] 一方の条件を変えずに、`three-task-smoke-v1` の六回の初期実行を実行するか、正しく
+      ブロックできる。
+- [ ] provider 不一致、容量、長時間待機の根拠を保存し、復旧と検証を区別できる。
+- [ ] タスクの範囲内の観測だけを報告し、一つの demo が総合順位や費用対効果の主張を証明できない
+      理由を説明できる。
+- [ ] この章がまだ `candidate` であり、その実験とモデル評価がまだ `not_run` であると
+      述べられる。
 
 <!-- chapter-navigation:start -->
 <hr>
