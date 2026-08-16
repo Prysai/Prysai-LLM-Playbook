@@ -1051,13 +1051,21 @@ try {
     const heading = document.querySelector('[data-search-panel] h2');
     return {
       headerHeight: header?.getBoundingClientRect().height || 0,
+      headerPosition: header ? getComputedStyle(header).position : 'static',
       headingTop: heading?.getBoundingClientRect().top || 0,
     };
   });
-  assert.ok(
-    chineseSearchPosition.headingTop >= chineseSearchPosition.headerHeight + 8,
-    `mobile search heading is obscured by the sticky header: ${JSON.stringify(chineseSearchPosition)}`,
-  );
+  if (chineseSearchPosition.headerPosition === 'sticky' || chineseSearchPosition.headerPosition === 'fixed') {
+    assert.ok(
+      chineseSearchPosition.headingTop >= chineseSearchPosition.headerHeight + 8,
+      `mobile search heading is obscured by the sticky header: ${JSON.stringify(chineseSearchPosition)}`,
+    );
+  } else {
+    assert.ok(
+      chineseSearchPosition.headingTop >= 0,
+      `mobile search heading starts outside the visible document flow: ${JSON.stringify(chineseSearchPosition)}`,
+    );
+  }
   await noHorizontalOverflow(chineseSearchPage, 'mobile Chinese search');
   await chineseFirstResult.locator('a').click();
   await chineseSearchPage.waitForURL(/reader\.html\?path=book%2Fchapters%2F02-first-safe-task-ZH\.md&lang=zh$/);
