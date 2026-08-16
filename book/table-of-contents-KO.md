@@ -77,7 +77,7 @@
 | 014 — 다시 시작한 작업을 계속하기 전에 조정하기 | [사용 가능: Lab 014](labs/lab-014-resume-reconciliation-KO.md) · `draft / in-progress` |
 | 015 — 완료 문구가 아니라 증거 전달하기 | [사용 가능: Lab 015](labs/lab-015-evidence-delivery-KO.md) · `draft / in-progress` |
 | 016 — 외부 영향 경계에서 멈추기 | [사용 가능: Lab 016](labs/lab-016-side-effect-boundary-KO.md) · `draft / in-progress` |
-| 017 — Skill을 채택하기 전에 발견 경로 감사하기 | 아직 한국어 파일이 없습니다. |
+| 017 — Skill을 채택하기 전에 발견 경로 감사하기 | [사용 가능: Lab 017](labs/lab-017-skill-discovery-audit-KO.md) · `draft / in-progress` |
 | 018 — 고정된 연습 계약으로 언어 간 전이 시험하기 | 아직 한국어 파일이 없습니다. |
 
 ## 경계와 다음 단계
