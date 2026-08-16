@@ -6,7 +6,7 @@
 
 ChatGPT、Claude、Gemini、DeepSeek、Grok、Codexは、どれも会話で応答して
 くれますが、同じ製品ではありません。このルートは
-[Universal Core Foundationsルート](universal-core-foundations-ja.md)の
+[Universal Core Foundationsルート](universal-core-foundations-JA.md)の
 転用可能な中核を維持したまま、正直なアダプターを一度に一つずつ加えます：
 各プラットフォームで実際に何が違うのか、今日すぐ安全に試せることは何か、
 そしてプラットフォーム固有の主張を信頼する前に公式ソースで何を確認すべきか。
@@ -30,8 +30,8 @@ Playbookの主力実践トラックはCodexですが、この方法は一つの�
 
 三つすべてに答えられなければ、その主張は`unknown`のままにし、次の確認
 時期を記録してください。このルールの背後にある維持方法は、
-[Platform Adapter Review Skill](../skills/prysai-platform-adapter-review/SKILL.md)と
-[Platform Fact Watch](../skills/prysai-platform-fact-watch/SKILL.md)を
+[Platform Adapter Review Skill](../../skills/prysai-platform-adapter-review/SKILL.md)と
+[Platform Fact Watch](../../skills/prysai-platform-fact-watch/SKILL.md)を
 参照してください。
 
 ## 一枚で分かるプラットフォームマップ
@@ -43,7 +43,7 @@ Playbookの主力実践トラックはCodexですが、この方法は一つの�
 | Gemini | ウェブチャット、アプリ、API | Googleアカウントのスコープ、Google Workspace連携、アプリ拡張 | [Geminiの最初のタスク](#gemini-first-task) |
 | DeepSeek | ウェブチャット、アプリ、API | モデルの選択肢とコンテキストウィンドウはリリースごとに異なる；公式モデルページで確認 | [DeepSeekの最初のタスク](#deepseek-first-task) |
 | Grok | ウェブチャット、アプリ | Xアカウント連携、リアルタイム投稿へのアクセス、モデルリリースのペース | [Grokの最初のタスク](#grok-first-task) |
-| Codex | デスクトップ、CLI、IDE、クラウド、API | Playbookの主力トラック：ファイル、ツール、Skills、Agents、権限 | [Codexパス](../routes/first-safe-change-ja.md) |
+| Codex | デスクトップ、CLI、IDE、クラウド、API | Playbookの主力トラック：ファイル、ツール、Skills、Agents、権限 | [Codexパス](../routes/first-safe-change-JA.md) |
 
 この表は方向づけであり、同等性の証明ではありません。どの行も、レッスンが
 依存する前に、それぞれ最新のソースが必要です。サーフェスの利用可否、価格、
@@ -85,7 +85,7 @@ Playbookの主力実践トラックはCodexですが、この方法は一つの�
 回答がブラウジング、メモリ、共有リンクに言及しましたか？推測したことでは
 なく、見たことを記録してください。ChatGPTの主張をソースに基づいて確認
 するには、製品事実の所有者として公式OpenAIヘルプページを使う
-[Source Investigator Skill](../skills/prysai-source-investigator/SKILL.md)を
+[Source Investigator Skill](../../skills/prysai-source-investigator/SKILL.md)を
 利用してください。
 
 ## Claude Codeの最初のタスク
@@ -98,7 +98,7 @@ Claude Codeはターミナルエージェントです：起動したプロジェ
 メモリについて、Claude Codeは`CLAUDE.md`ファイルを読み取ります。そこに
 書かれたものはすべてモデルが従う可能性のある指示なので、プロジェクトの
 ルールと同様にレビューしてください。資格情報、本番データ、破壊的なコマンド
-がある実際のリポジトリでは、[First Safe Changeルート](first-safe-change-ja.md)の
+がある実際のリポジトリでは、[First Safe Changeルート](first-safe-change-JA.md)の
 規律を完了するまでClaude Codeを起動しないでください。
 
 ## Geminiの最初のタスク
@@ -132,26 +132,26 @@ Grokの回答は、プラットフォームの検索（retrieval）動作に関�
 
 Codexは、コンテキスト、ツール、権限、Skills、Agents、検証という完全な
 ループを公開しているため、Playbookの主力トラックです。使い捨てプロジェクト
-で[First Safe Changeルート](first-safe-change-ja.md)と
-[Lab 001](../labs/lab-001-first-safe-task-ja.md)から始めてください。
+で[First Safe Changeルート](first-safe-change-JA.md)と
+[Lab 001](../labs/lab-001-first-safe-task-JA.md)から始めてください。
 編集前検査（inspect-before-edit）の習慣が身につくまでは、クラウド
 サーフェスや実際のリポジトリに飛びつかないでください。
 
 ## 最初のタスクの後：どのトラックを選ぶべきか
 
-- テキストのみの入門練習が欲しい場合：[Beginner Practice Pack](../communication-clinic-ja.md)。
-- ファイルとツールを使う本格的な主力トラックが欲しい場合：[First Safe Change](first-safe-change-ja.md)。
-- まずプラットフォーム中立の土台を固めたい場合：[Universal Core Foundations](universal-core-foundations-ja.md)。
-- 二つのプラットフォームを公平に比較したい場合：[LLM Comparison Protocol](../skills/prysai-llm-comparison-protocol/SKILL.md)。
-- プラットフォームのレッスンをカリキュラムに含めるべきか判断したい場合：[Platform Adapter Review](../skills/prysai-platform-adapter-review/SKILL.md)。
+- テキストのみの入門練習が欲しい場合：[Beginner Practice Pack](../communication-clinic-JA.md)。
+- ファイルとツールを使う本格的な主力トラックが欲しい場合：[First Safe Change](first-safe-change-JA.md)。
+- まずプラットフォーム中立の土台を固めたい場合：[Universal Core Foundations](universal-core-foundations-JA.md)。
+- 二つのプラットフォームを公平に比較したい場合：[LLM Comparison Protocol](../../skills/prysai-llm-comparison-protocol/SKILL.md)。
+- プラットフォームのレッスンをカリキュラムに含めるべきか判断したい場合：[Platform Adapter Review](../../skills/prysai-platform-adapter-review/SKILL.md)。
 
 ## 証拠の状態と境界
 
 このルートは`candidate / not_run`です：構造とチェック項目は存在しますが、
 学習者の実行、プラットフォーム間の実行、独立レビューの記録はありません。
 上記のプラットフォーム別の説明は、一次ドキュメントと日付入りの調査レシート
-（[cross-LLM beginner prompting source receipt](../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md)、
-[platform teaching boundary card](../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md)）から
+（[cross-LLM beginner prompting source receipt](../../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md)、
+[platform teaching boundary card](../../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md)）から
 導出された方向づけです。これは、あるプラットフォームが他と同一に動作する
 こと、タスクがどこでも成功すること、製品機能が同等であることの証拠では
 ありません。プラットフォーム固有のコマンド、権限、価格、利用可否は変動し
