@@ -31,6 +31,28 @@ START_HERE_HEADING = {
 }
 
 
+def english_root_route_number_errors(text: str) -> list[str]:
+    """Reject a duplicated visible step in GitHub's compact English entry.
+
+    ``README.md`` is the first page most repository visitors see.  Its guided
+    route ends immediately before the optional-routes disclosure.  Keeping the
+    check to that bounded section avoids interpreting numbered examples later
+    in the README as route steps.
+    """
+    start_marker = "## Start here — read it like a book"
+    end_marker = "<details>\n<summary>Other routes"
+    start = text.find(start_marker)
+    end = text.find(end_marker, start)
+    if start < 0 or end < 0:
+        return ["missing bounded English root route section"]
+    section = text[start:end]
+    numbers = [int(value) for value in re.findall(r"^\s*(\d+)\.\s+\[", section, flags=re.MULTILINE)]
+    expected = list(range(1, 6))
+    if numbers != expected:
+        return [f"English root route must show steps {expected} exactly once: found {numbers}"]
+    return []
+
+
 def visible_start_number_errors(text: str, locale: str) -> list[str]:
     """Return visible-numbering errors for a localized ``Start here`` list.
 
@@ -77,6 +99,12 @@ def required_links(locale: str, prefix: str) -> tuple[str, str, str]:
 
 def main() -> int:
     errors: list[str] = []
+    root_readme = ROOT / "README.md"
+    if not root_readme.is_file():
+        errors.append("missing GitHub root README")
+    else:
+        for error in english_root_route_number_errors(root_readme.read_text(encoding="utf-8")):
+            errors.append(f"README.md: {error}")
     for locale in LOCALES:
         for kind, prefix in (("project", "book/"), ("book", ""), ("toc", "")):
             path = path_for(kind, locale)

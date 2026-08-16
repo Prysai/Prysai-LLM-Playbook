@@ -96,16 +96,6 @@ This is a textbook, not a menu. Start at the beginning and read in order.
 The optional [15-minute no-setup check](#optional-15-minute-warm-up-no-git-required)
 and the practice cards are exercises you reach after the foundation — they are
 not the entry point.
-2. Run [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) to label what a
-   static task card can and cannot establish about generation, execution,
-   verification, and external effects.
-3. Read [Chapter 2](book/chapters/02-first-safe-task-EN.md) to define one
-   reversible local change and one source-backed acceptance check.
-4. Use [First Safe Change](book/routes/first-safe-change-EN.md) if you do not
-   yet have a disposable project. It provides an optional offline fixture.
-5. Run [Lab 001](book/labs/lab-001-first-safe-task-EN.md): inspect first,
-   edit `README.md` only after confirmation, then keep the diff, focused check,
-   and an explicit unverified list.
 
 This is the complete candidate L0 → L1 route. The fixture is a supplemental
 bridge, not a chapter or Lab run. The fixture is `candidate / not_run`; Labs

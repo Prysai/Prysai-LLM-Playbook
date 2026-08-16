@@ -45,6 +45,24 @@ class TextbookEntryPathTests(unittest.TestCase):
             ["start-list numbers must be sequential: found [1, 2, 3, 3], expected [1, 2, 3, 4]"],
         )
 
+    def test_english_root_route_rejects_repeated_steps(self) -> None:
+        text = """## Start here — read it like a book
+
+1. [Lesson 0](lesson.md)
+2. [Chapter 1](one.md)
+3. [Chapter 2](two.md)
+4. [Fixture](fixture.md)
+5. [Lab](lab.md)
+2. [Chapter 1 again](one.md)
+
+<details>
+<summary>Other routes
+"""
+        self.assertEqual(
+            VALIDATOR.english_root_route_number_errors(text),
+            ["English root route must show steps [1, 2, 3, 4, 5] exactly once: found [1, 2, 3, 4, 5, 2]"],
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
