@@ -31,7 +31,7 @@ oder dass bereits jemand die Methode gelernt hat.
 ## Aktueller Stand
 
 Der Katalog enthält 18 feste Kennungen. Alle sind `draft`; der Lernenden-Status ist
-`not_run`. In dieser deutschen Route sind nur die Labs 001–004 lokal verfügbar.
+`not_run`. In dieser deutschen Route sind zehn Labs lokal verfügbar: 001–009 und 011.
 Die übrigen werden von dieser Seite nicht auf Englisch verlinkt, bis ihre eigene
 deutsche Datei und ihr Übersetzungsstatus vorliegen.
 
@@ -43,13 +43,13 @@ deutsche Datei und ihr Übersetzungsstatus vorliegen.
 | 002 | Aufgabenprotokoll | L2 | [Lab 002 öffnen](lab-002-task-protocol-DE.md) |
 | 003 | Evidenzprüfung | L3 | [Lab 003 öffnen](lab-003-evidence-review-DE.md) |
 | 004 | Skill-Auswahl | L4 | [Lab 004 öffnen](lab-004-skill-selection-DE.md) |
-| 005 | Skill entwerfen | L4 | Noch nicht auf Deutsch verfügbar |
-| 006 | Agent-Stoppbedingungen | L5 | Noch nicht auf Deutsch verfügbar |
-| 007 | Handlungsgrenzen | L3 | Noch nicht auf Deutsch verfügbar |
-| 008 | Forschungsfrage | L3 | Noch nicht auf Deutsch verfügbar |
-| 009 | Engineering-Lebenszyklus | L3 | Noch nicht auf Deutsch verfügbar |
+| 005 | Skill entwerfen | L4 | [Lab 005 öffnen](lab-005-design-a-skill-DE.md) |
+| 006 | Agent-Stoppbedingungen | L5 | [Lab 006 öffnen](lab-006-agent-stop-conditions-DE.md) |
+| 007 | Handlungsgrenzen | L3 | [Lab 007 öffnen](lab-007-action-boundaries-DE.md) |
+| 008 | Forschungsfrage | L3 | [Lab 008 öffnen](lab-008-research-question-DE.md) |
+| 009 | Engineering-Lebenszyklus | L3 | [Lab 009 öffnen](lab-009-engineering-lifecycle-DE.md) |
 | 010 | Gemeinsamer Produktkontext | L3 | Noch nicht auf Deutsch verfügbar |
-| 011 | Grenzen von GPT und Codex | L0 | Noch nicht auf Deutsch verfügbar |
+| 011 | Grenzen von GPT und Codex | L0 | [Lab 011 öffnen](lab-011-gpt-codex-boundaries-DE.md) |
 | 012 | Migration von Teamfähigkeiten | L6 | Noch nicht auf Deutsch verfügbar |
 | 013 | Prüffähiger vertikaler Schnitt | L3 | Noch nicht auf Deutsch verfügbar |
 | 014 | Abgleich beim Fortsetzen | L3 | Noch nicht auf Deutsch verfügbar |

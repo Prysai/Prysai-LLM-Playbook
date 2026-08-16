@@ -31,8 +31,8 @@ cada superficie de Codex, ni que una persona ya haya aprendido el método.
 ## Estado actual
 
 El catálogo tiene 18 identidades estables. Todas siguen en `draft` y el estado de
-ejecución de aprendices es `not_run`. En esta ruta española hay cuatro Labs locales
-disponibles (001–004). Los demás no se enlazan en inglés desde esta página: aparecerán
+ejecución de aprendices es `not_run`. Esta ruta española ya ofrece diez Labs locales:
+001–009 y 011. Los que aún faltan no se enlazan en inglés desde esta página; aparecerán
 cuando exista su propio archivo español y su estado de traducción se haya registrado.
 
 ## Mapa de Labs en español
@@ -43,13 +43,13 @@ cuando exista su propio archivo español y su estado de traducción se haya regi
 | 002 | Protocolo de tarea | L2 | [Abrir Lab 002](lab-002-task-protocol-ES.md) |
 | 003 | Revisión de evidencia | L3 | [Abrir Lab 003](lab-003-evidence-review-ES.md) |
 | 004 | Selección de Skills | L4 | [Abrir Lab 004](lab-004-skill-selection-ES.md) |
-| 005 | Diseño de Skills | L4 | Aún no disponible en español |
-| 006 | Condiciones de parada de Agent | L5 | Aún no disponible en español |
-| 007 | Límites de acción | L3 | Aún no disponible en español |
-| 008 | Pregunta de investigación | L3 | Aún no disponible en español |
-| 009 | Ciclo de ingeniería | L3 | Aún no disponible en español |
+| 005 | Diseño de Skills | L4 | [Abrir Lab 005](lab-005-design-a-skill-ES.md) |
+| 006 | Condiciones de parada de Agent | L5 | [Abrir Lab 006](lab-006-agent-stop-conditions-ES.md) |
+| 007 | Límites de acción | L3 | [Abrir Lab 007](lab-007-action-boundaries-ES.md) |
+| 008 | Pregunta de investigación | L3 | [Abrir Lab 008](lab-008-research-question-ES.md) |
+| 009 | Ciclo de ingeniería | L3 | [Abrir Lab 009](lab-009-engineering-lifecycle-ES.md) |
 | 010 | Contexto de producto compartido | L3 | Aún no disponible en español |
-| 011 | Límites entre GPT y Codex | L0 | Aún no disponible en español |
+| 011 | Límites entre GPT y Codex | L0 | [Abrir Lab 011](lab-011-gpt-codex-boundaries-ES.md) |
 | 012 | Migración de capacidades de equipo | L6 | Aún no disponible en español |
 | 013 | Corte vertical auditable | L3 | Aún no disponible en español |
 | 014 | Reconciliación al reanudar | L3 | Aún no disponible en español |
