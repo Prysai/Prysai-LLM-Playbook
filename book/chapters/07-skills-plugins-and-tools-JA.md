@@ -278,7 +278,7 @@ review してください。公式説明、community symptom、local runtime evi
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="06-model-selection-JA.md" aria-label="前の章：第 6 章 · モデル選択はモデル崇拝ではない">← 前の章<br><strong>第 6 章 · モデル選択はモデル崇拝ではない</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="../table-of-contents-JA.md" aria-label="日本語目次へ戻る：第 8 章はまだ翻訳されていません">次の章は準備中 →<br><strong>第 8 章の提供状況を見る</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="08-full-lifecycle-workflow-JA.md" aria-label="次の章：第 8 章 · 定義から引き渡しまで">次の章へ →<br><strong>第 8 章 · 定義から引き渡しまで</strong></a></td>
     </tr>
   </table>
 </nav>
