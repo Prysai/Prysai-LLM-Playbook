@@ -44,12 +44,14 @@ de-identified record exists.
 | Evidence stream | Current record | What is actually measured | What it does not measure |
 | --- | --- | --- | --- |
 | Local engineering stability | [five repeated verification runs](../quality/verification-stability-2026-08-15.md) | Seven named structural checks passed in five sequential local Windows runs | Reader time saved, Skill behavior, model performance, learning, safety, or IQ |
-| Model-output process | [Shift Handoff fixture](../../evals/candidates/shift-handoff-v1/README.md) and [protocol](../quality/shift-handoff-pilot-protocol-v1.md) | A frozen fictional receipt task, once actual model records and two independent scores exist | A person's productivity, learning, real-work correctness, or cross-model result |
+| Model-output process | [Shift Handoff captured-output packet](../../evals/results/shift-handoff-pilot-chatgpt-anonymous-2026-08-15/README.md), [fixture](../../evals/candidates/shift-handoff-v1/README.md), and [protocol](../quality/shift-handoff-pilot-protocol-v1.md) | Eighteen de-identified fictional outputs were captured. The historical prompt-byte binding failed its [integrity review](../../evals/results/shift-handoff-pilot-chatgpt-anonymous-2026-08-15/input-integrity-review.md), so the collection is not eligible for comparative scoring or analysis | A person's productivity, learning, real-work correctness, a condition comparison, or a cross-model result |
 | Human task usability | [First Win pilot protocol](../quality/first-win-pilot-protocol-v2.md) | Whether a declared volunteer cohort can complete, check, recover, and attempt fixed transfer tasks | General teaching effectiveness, retention beyond its declared delayed check, demand, or IQ |
 
-The first stream has raw timings and a chart. The other two are
-`candidate / not_run`: their checked-in record templates contain no observed
-model or participant results. Zero records are not a zero-percent result.
+The first stream has raw timings and a chart. The human-task stream remains
+`candidate / not_run`. The model-output stream has a captured, unscored round,
+but its failed historical prompt-byte binding makes it ineligible for
+comparative scoring or aggregate analysis. A captured record is neither a
+score nor a result; missing records are not zero-percent results.
 
 ## Minimum design for a credible task-performance pilot
 
@@ -137,11 +139,12 @@ legal owners must decide what additional review applies.
 
 1. Run the existing local verification suite and retain the raw local timing
    record only as engineering evidence.
-2. For the model-output question, run the fixed fictional Shift Handoff
-   fixture with its frozen conditions: three tasks × three fresh runs × two
-   conditions. A dedicated authorisation is still required before calling a
-   model service; no API key, model call, or model result is stored in this
-   repository today.
+2. The first authorized Shift Handoff collection preserved 18 fictional,
+   de-identified outputs, but its historical prompt-byte binding failed review.
+   Do not score or analyse it. Before a replacement collection, freeze and
+   verify the exact input bytes, then obtain dedicated authorisation for any
+   model service call and run the declared three tasks × three fresh runs × two
+   conditions. No API key is stored in this repository.
 3. Have two independent human scorers use the existing rubric, then pass only
    de-identified run records to
    [`analyze_shift_handoff_pilot.py`](../../scripts/analyze_shift_handoff_pilot.py).

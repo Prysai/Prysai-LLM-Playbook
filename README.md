@@ -30,7 +30,7 @@ and independent review are still pending.
 | Evidence status | Current record | What a reader may conclude |
 |---|---|---|
 | Observed | [Seven local checks × five sequential runs](docs/quality/verification-stability-2026-08-15.md), with raw milliseconds and a chart | These named engineering checks were stable in one current local Windows worktree. It is not a speed, Skill, learner, safety, or model result. |
-| Prepared, not run | [Shift Handoff fixed-fictional pilot](docs/quality/shift-handoff-pilot-protocol-v1.md): 3 tasks × 2 conditions × 3 fresh runs; packet hashes and an analysis-chart generator are ready | A comparable model-output study can be run without changing the prompt halfway through. No model output, score, time, percentage, or benefit is recorded. |
+| Captured, unscored, analysis-ineligible | [Shift Handoff output packet](evals/results/shift-handoff-pilot-chatgpt-anonymous-2026-08-15/) contains 18 de-identified fictional outputs; its [input-integrity review](evals/results/shift-handoff-pilot-chatgpt-anonymous-2026-08-15/input-integrity-review.md) found that the historical prompt hashes do not bind the prepared Windows prompt bytes | A model-output collection occurred. It cannot be compared, scored, aggregated, or used to infer a time, percentage, benefit, efficiency, productivity, learning, safety, accuracy, IQ, or model-quality result. |
 | Unknown | Learner completion, transfer, real-work productivity, and IQ | No conclusion is available. The Playbook does not measure or claim IQ improvement. |
 
 The [measurement research record](docs/research/measuring-llm-workflow-performance-without-iq-claims-2026-08-15.md)
