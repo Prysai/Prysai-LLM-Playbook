@@ -67,6 +67,28 @@ def root_index(site_index: Path) -> str:
     return text.replace(marker, f"{marker}\n{base}", 1)
 
 
+def static_locale_page(site_index: Path, config: dict[str, object], locale: str) -> str:
+    """Build a crawlable, language-specific entry without duplicating source content."""
+    pages = config["static_locale_pages"]
+    assert isinstance(pages, dict)
+    metadata = pages[locale]
+    assert isinstance(metadata, dict)
+    base_url = str(config["public_site_url"])
+    page_url = f"{base_url}{locale}.html"
+    text = root_index(site_index)
+    text = text.replace('<html lang="en">', f'<html lang="{metadata["html_lang"]}" data-prysai-static-locale="{locale}">', 1)
+    text = text.replace('<title>Prysai LLM Playbook — From First Task to Reliable Work</title>', f'<title>{metadata["title"]}</title>', 1)
+    text = re.sub(r'(<meta name="description" content=")[^"]*(" />)', rf'\g<1>{metadata["description"]}\2', text, count=1)
+    text = re.sub(r'(<link rel="canonical" href=")[^"]*(" />)', rf'\g<1>{page_url}\2', text, count=1)
+    text = re.sub(r'(<meta property="og:url" content=")[^"]*(" />)', rf'\g<1>{page_url}\2', text, count=1)
+    text = re.sub(r'(<meta property="og:title" content=")[^"]*(" />)', rf'\g<1>{metadata["title"]}\2', text, count=1)
+    text = re.sub(r'(<meta property="og:description" content=")[^"]*(" />)', rf'\g<1>{metadata["description"]}\2', text, count=1)
+    text = re.sub(r'(<meta name="twitter:title" content=")[^"]*(" />)', rf'\g<1>{metadata["title"]}\2', text, count=1)
+    text = re.sub(r'(<meta name="twitter:description" content=")[^"]*(" />)', rf'\g<1>{metadata["description"]}\2', text, count=1)
+    text = text.replace('window.CODEX_PAGES_ARTIFACT = true;', f'window.CODEX_PAGES_ARTIFACT = true; window.PRYSAI_STATIC_LOCALE = "{locale}";', 1)
+    return text
+
+
 def pages_reader(reader: Path) -> str:
     """Return the Reader with an explicit artifact routing mode."""
 
@@ -107,12 +129,19 @@ def load_seo_config() -> dict[str, object]:
         raise ValueError("site/seo-config.json public_site_url must be an absolute HTTPS URL ending in /")
     if locales != ["en", "zh", "es", "ja", "ko", "de"]:
         raise ValueError("site/seo-config.json locales must list the six supported locales in canonical order")
+    locale_pages = value.get("static_locale_pages")
+    expected_pages = {locale for locale in locales if locale != "en"}
+    if not isinstance(locale_pages, dict) or set(locale_pages) != expected_pages:
+        raise ValueError("site/seo-config.json static_locale_pages must define each non-English locale")
+    for locale, metadata in locale_pages.items():
+        if not isinstance(metadata, dict) or not all(isinstance(metadata.get(key), str) and metadata[key].strip() for key in ("html_lang", "title", "description")):
+            raise ValueError(f"site/seo-config.json static_locale_pages[{locale}] needs html_lang, title, and description")
     return value
 
 
 def seo_files(config: dict[str, object]) -> tuple[str, str]:
     base_url = str(config["public_site_url"])
-    locale_urls = [base_url, *(f"{base_url}?lang={locale}" for locale in config["locales"] if locale != "en")]
+    locale_urls = [base_url, *(f"{base_url}{locale}.html" for locale in config["locales"] if locale != "en")]
     robots = "User-agent: *\nAllow: /\nSitemap: " + base_url + "sitemap.xml\n"
     sitemap_items = "".join(f"  <url><loc>{url}</loc></url>\n" for url in locale_urls)
     sitemap = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n" + sitemap_items + "</urlset>\n"
@@ -200,6 +229,21 @@ def validate_artifact(output: Path) -> None:
     if "window.CODEX_PAGES_ARTIFACT = true" not in reader_text:
         raise ValueError("Pages Reader must retain artifact routing mode")
     config = load_seo_config()
+    for locale in config["locales"]:
+        if locale == "en":
+            continue
+        page = output / f"{locale}.html"
+        if not page.is_file():
+            raise FileNotFoundError(f"Pages artifact is missing localized SEO entry: {page.name}")
+        text = page.read_text(encoding="utf-8")
+        expected_url = f"{config['public_site_url']}{locale}.html"
+        hreflang = config["static_locale_pages"][locale]["html_lang"]
+        if (
+            expected_url not in text
+            or f'<html lang="{hreflang}" data-prysai-static-locale="{locale}">' not in text
+            or f'window.PRYSAI_STATIC_LOCALE = "{locale}"' not in text
+        ):
+            raise ValueError(f"Pages artifact localized SEO entry is incomplete: {page.name}")
     robots, sitemap = seo_files(config)
     if (output / "robots.txt").read_text(encoding="utf-8") != robots:
         raise ValueError("Pages artifact robots.txt must be generated from site/seo-config.json")
@@ -220,9 +264,13 @@ def build_into(output: Path) -> None:
         shutil.copy2(ROOT / filename, output / filename)
 
     (output / "index.html").write_text(root_index(ROOT / "site/index.html"), encoding="utf-8", newline="\n")
+    seo_config = load_seo_config()
+    for locale in seo_config["locales"]:
+        if locale != "en":
+            (output / f"{locale}.html").write_text(static_locale_page(ROOT / "site/index.html", seo_config, locale), encoding="utf-8", newline="\n")
     (output / "site/reader.html").write_text(pages_reader(ROOT / "site/reader.html"), encoding="utf-8", newline="\n")
     (output / ".nojekyll").write_text("", encoding="utf-8")
-    robots, sitemap = seo_files(load_seo_config())
+    robots, sitemap = seo_files(seo_config)
     (output / "robots.txt").write_text(robots, encoding="utf-8", newline="\n")
     (output / "sitemap.xml").write_text(sitemap, encoding="utf-8", newline="\n")
     validate_artifact(output)

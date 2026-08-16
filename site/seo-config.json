@@ -1,5 +1,32 @@
 {
   "public_site_url": "https://docs.prysai.com/llm-playbook/",
   "default_locale": "en",
-  "locales": ["en", "zh", "es", "ja", "ko", "de"]
+  "locales": ["en", "zh", "es", "ja", "ko", "de"],
+  "static_locale_pages": {
+    "zh": {
+      "html_lang": "zh-Hans",
+      "title": "Prysai 大模型实战手册：LLM 入门、提示词与可靠 AI 工作",
+      "description": "从理解大语言模型开始，学习写清提示词，并把第一次 AI 任务变成有边界、可检查的工作。Codex 是旗舰实践路线。"
+    },
+    "es": {
+      "html_lang": "es",
+      "title": "Prysai LLM Playbook — guía de LLM, prompts y trabajo fiable con IA",
+      "description": "Aprende qué son los LLM, escribe prompts más claros y convierte una primera tarea de IA en trabajo acotado y comprobable."
+    },
+    "ja": {
+      "html_lang": "ja",
+      "title": "Prysai LLM プレイブック — LLM 入門、プロンプト、信頼できる AI 活用",
+      "description": "LLM とは何かを学び、より明確なプロンプトを書き、最初の AI タスクを境界が明確で確認可能な仕事に変えます。"
+    },
+    "ko": {
+      "html_lang": "ko",
+      "title": "Prysai LLM 플레이북 — LLM 입문, 프롬프트, 신뢰할 수 있는 AI 작업",
+      "description": "LLM이 무엇인지 배우고 더 명확한 프롬프트를 작성하며 첫 AI 과제를 경계가 분명하고 확인 가능한 작업으로 바꾸세요."
+    },
+    "de": {
+      "html_lang": "de",
+      "title": "Prysai LLM Playbook — LLM-Guide, Prompts und verlässliche KI-Arbeit",
+      "description": "Lerne, was LLMs sind, schreibe klarere Prompts und mache aus einer ersten KI-Aufgabe begrenzte, überprüfbare Arbeit."
+    }
+  }
 }

@@ -631,10 +631,11 @@ const uiLocales = new Set(['en', 'zh', 'es', 'ja', 'ko', 'de']);
 const languageStorageKey = 'prysai-llm-playbook-language';
 const legacyLanguageStorageKey = 'codex-field-guide-language';
 const languageParam = new URLSearchParams(window.location.search).get('lang');
+const staticLocale = window.PRYSAI_STATIC_LOCALE || document.documentElement.dataset.prysaiStaticLocale || null;
 const hasExplicitLanguageParam = languageParam !== null;
 const hasValidLanguageParam = localeTokens.includes(languageParam);
-let currentLanguage = hasValidLanguageParam ? languageParam : null;
-if (!hasExplicitLanguageParam) {
+let currentLanguage = hasValidLanguageParam ? languageParam : (localeTokens.includes(staticLocale) ? staticLocale : null);
+if (!hasExplicitLanguageParam && !staticLocale) {
   try {
     currentLanguage = localStorage.getItem(languageStorageKey);
     if (!currentLanguage) {
@@ -1359,7 +1360,7 @@ const localePageMeta = {
 };
 
 const seoBaseUrl = 'https://docs.prysai.com/llm-playbook/';
-const seoLocaleHref = (language) => language === 'en' ? seoBaseUrl : `${seoBaseUrl}?lang=${language}`;
+const seoLocaleHref = (language) => language === 'en' ? seoBaseUrl : `${seoBaseUrl}${language}.html`;
 const setMetaContent = (selector, value) => {
   const element = document.querySelector(selector);
   if (element) element.setAttribute('content', value);

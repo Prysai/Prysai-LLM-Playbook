@@ -203,6 +203,15 @@ def main() -> int:
         ):
             if required not in site_script:
                 raise AssertionError(f"localized-seo: missing {required}")
+        if 'const seoLocaleHref = (language) => language === \'en\' ? seoBaseUrl : `${seoBaseUrl}${language}.html`;' not in site_script:
+            raise AssertionError("localized-seo: non-English canonical URLs must have crawlable static entries")
+        for required in (
+            'hreflang="zh-Hans" href="https://docs.prysai.com/llm-playbook/zh.html"',
+            'href="../zh.html" data-language-option="zh"',
+            'href="../de.html" data-language-option="de"',
+        ):
+            if required not in site_markup:
+                raise AssertionError(f"localized-seo: missing static locale entry '{required}'")
         fixtures += 1
 
         reader_styles = (Path(__file__).resolve().parents[1] / "site/styles.css").read_text(encoding="utf-8")
