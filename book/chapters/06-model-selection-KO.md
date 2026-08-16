@@ -199,7 +199,7 @@ reconciliation, read-only tool 코드 조사에 옮길 수 있습니다. 새 세
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="05-choose-the-codex-surface-KO.md" aria-label="이전 장: 5장 · 알맞은 Codex 작업면 선택하기">← 이전 장<br><strong>5장 · 알맞은 Codex 작업면 선택하기</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="../table-of-contents-KO.md" aria-label="한국어 목차로 돌아가기: 7장은 아직 번역되지 않음">다음 장 준비 중 →<br><strong>7장 제공 상태 보기</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="07-skills-plugins-and-tools-KO.md" aria-label="다음 장: 7장 · Skills, Plugins, MCP, 도구는 어떻게 일을 나누는가">다음으로 →<br><strong>7장 · Skills, Plugins, MCP, 도구</strong></a></td>
     </tr>
   </table>
 </nav>
