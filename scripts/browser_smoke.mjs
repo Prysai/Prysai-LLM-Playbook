@@ -130,6 +130,13 @@ try {
   await page.goto(`${origin}/`, { waitUntil: 'networkidle' });
   assert.equal(searchRequests.length, 0, 'initial page load fetched the full search index');
   await noHorizontalOverflow(page, 'desktop showcase');
+  // A new reader must see the actual first action without having to discover
+  // it by scrolling past the opening explanation. Use a short desktop height
+  // because browser chrome commonly leaves less than a full 900px viewport.
+  await page.setViewportSize({ width: 1280, height: 720 });
+  const firstActionBounds = await page.locator('[data-hero-primary]').evaluate((link) => link.getBoundingClientRect().toJSON());
+  assert.ok(firstActionBounds.bottom <= 720, `desktop first action starts below the initial viewport: ${JSON.stringify(firstActionBounds)}`);
+  await page.setViewportSize({ width: 1280, height: 900 });
   await fs.mkdir(visualEvidenceDirectory, { recursive: true });
   await page.locator('.hero').screenshot({ path: path.join(visualEvidenceDirectory, 'hero-routes-desktop.png') });
   const skillsSection = page.locator('#skills');

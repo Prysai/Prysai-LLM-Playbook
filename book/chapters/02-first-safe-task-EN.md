@@ -136,6 +136,50 @@ The protocol is valuable because each vague verb has been converted into an
 object, an authority boundary, and an evidence requirement. It is not a magic
 prompt and it does not remove the need for human judgment.
 
+## From chat prompt to the first safe task
+
+The previous chapter's prompts can help you learn a language, organize sources, or
+clarify a request; the point here is not to escalate “please help me” into “do it
+all for me”. First choose an object you can see, undo, and that does not affect
+others. For a first practice, this card is enough:
+
+```text
+Goal: make [a short non-sensitive text of yours / a local README] clearer.
+Input: use only [the pasted text / the named file]; mark every fact you did not
+  provide as unknown.
+Allowed actions: read and suggest first; after confirmation, change only [one
+  named file].
+Forbidden actions: no network, no installs, no logins, no sending, no commits,
+  no publishing, no reading secrets.
+Acceptance: show the before/after diff and explain which change maps to which goal.
+Stop: if more files, accounts, network, external writes, or facts you cannot
+  confirm are needed, stop and ask.
+```
+
+If you are practicing Spanish or another skill, replace “the named file” with
+five to ten sentences you wrote yourself; the model may only give practice,
+feedback, and revision suggestions and must not claim you have mastered it. If
+you are organizing material, replace the input with excerpts from sources you are
+allowed to use; it must not treat unprovided web content or speculation as fact.
+The same protocol transfers across domains; what changes is the object and the
+acceptance evidence, not the order of “limit the scope first, then check the
+result”.
+
+### What to ask in the first round
+
+Ask the model to restate the boundary before editing anything:
+
+```text
+Before taking any action, restate the goal, the inputs you will read, the
+actions you will not take, the acceptance evidence, and the stop condition.
+If any field is missing, ask only the minimal clarifying questions.
+```
+
+After reading the answer, confirm it did not quietly widen the scope. Only then
+allow one small action. This way, even when the model gives a polished
+suggestion, you still know whether it is a plan, a proposal, or a result already
+backed by evidence.
+
 ## Three confirmation points
 
 ### Before the first action

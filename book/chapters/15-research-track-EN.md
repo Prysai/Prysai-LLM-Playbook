@@ -243,6 +243,147 @@ Answer:
 - Why is the result `candidate` rather than `verified`? What observable evidence would be needed for the latter?
 - Which parts of your research kit are original workflow and which remain subject to an external license?
 
+## Practice cards: from question to stop receipt
+
+These cards turn the chapter's method into prompts you can reuse. They apply to
+public or already-authorized material that you can open and check yourself; a
+card does not prove that a page is real, browse the whole web for you, or make
+high-stakes decisions (health, legal, employment, or money) for you.
+
+### The low-risk research card
+
+Do not start from “which model is best?” Rewrite the question into a form that
+can be checked and rejected:
+
+```text
+Question: as of [date and time zone], how do public first-party sources describe
+  the stated capabilities, limits, and unknowns of [two named models] on [one
+  concrete task, e.g., turning a short non-sensitive text into clear to-dos]?
+Not answered: overall rankings, untested success rates, account availability, or
+  hidden pricing.
+Priority sources: official vendor pages, release notes, public API/product docs.
+Deliverable: claim → URL → page location → access date → scope → unknown table.
+Stop: a key page is inaccessible, requires login/payment/private data, or sources
+  conflict without an explanation.
+```
+
+Ask the model to list candidate sources and search terms first, but treat every
+link as a lead. Open the source yourself and record the original title, the
+original and final URLs, the locatable passage, the access result, and the scope
+the page states. When the model says “officially supported” but no source text
+can be found, downgrade that sentence to `citation_unverified`; do not fill the
+gap with a plausible-looking bibliography.
+
+### One claim, one reverse check
+
+For every important conclusion, append one question that could overturn or
+narrow it. After “the page claims to support X”, search for the capability's
+limits, account or region differences, version prerequisites, and public
+counterexamples. Finding no counterexample does not prove the conclusion holds
+generally; it only means you found none within the recorded scope. Record the
+result as:
+
+| Claim | Direct source | Reverse check | What it supports | What is still unknown |
+|---|---|---|---|---|
+| The page described X on that date | URL and passage | limits/region/version search | The page's public wording at that time | Your account, real-task success rate, best choice |
+
+Finish with a one-page `candidate` record: known, unknown, conflicts, what was
+not claimed, the stop reason, and the next low-risk action. It is not a model
+evaluation, a user study, or a purchase recommendation; the chapter and its
+experiment remain `candidate` and `not_run`.
+
+### The ten-minute research receipt
+
+When you start researching, you do not have to pretend to complete a full report
+at once. Choose one narrow question and spend ten minutes filling in this
+receipt; its purpose is to make the next step re-checkable, not to deliver “the
+best model” or “the only cause” immediately.
+
+```text
+Question: <one task, one date, one scope>
+Not answered: <rankings, effects, account availability, or anything else without
+  current evidence>
+Candidate sources: <original URLs; do not treat a search snippet as the body>
+Actual access: <success / redirect / login / timeout / unread>
+Locatable content: <title, date, passage, or Issue number; else none>
+This source supports: <one atomic fact>
+This source does not support: <reasons, generality, my account, or real task
+  results>
+Reverse check: <one query or source that could narrow the conclusion>
+Current status: official / user_report / lead / inaccessible / citation_unverified
+Next safe action: <read one source, compare scopes, or stop>
+```
+
+“Page X described feature Y on the access date” and “my team can use Y today” are
+two different claims. The former may be supported by a public page; the latter
+still needs evidence about the account, organization, region, and the real work
+surface. Do not let one link replace two pieces of evidence.
+
+#### When to downgrade a sentence
+
+| Original sentence | What is missing | More honest wording |
+|---|---|---|
+| “Model A is best for research.” | Task, sample, comparison, and scoring | “A public page describes capability A; whether it suits this task is not yet evaluated.” |
+| “This issue is caused by X.” | Reproducible evidence or maintainer confirmation | “One user reported this symptom and suggested X as a possible cause.” |
+| “Officially supported.” | Locatable official text and its scope | “On the access date, the official page described this feature within its stated scope.” |
+
+Downgrading is not weakening the research; it stops readers from mistaking the
+existence of a source for a reached conclusion.
+
+### The research decision card
+
+Before any “please look this up” request, write it as a question that could
+change one concrete decision. The card below applies to public or authorized
+material you can open and check yourself; it does not prove that a page is real,
+browse the entire web for you, or make high-stakes decisions for you.
+
+#### Fix the decision and the question first
+
+```text
+Decision: what do I need to decide by [date] about [object]?
+Question: which answerable question would change this decision?
+Scope: what is included, what is not, and as of what date/time/place?
+Stop: which missing source, authorization, or definition must pause the work?
+```
+
+#### Give each claim a source owner
+
+| Claim | Most likely source owner | Direct support | Conflict/unknown | Next allowed check |
+|---|---|---|---|---|
+| [one checkable sentence] | official product page / original research / legal policy / first-party data / named institution | citation or passage location | unsupported part or a different version | one minimal check |
+
+Forum experience can help you discover symptoms and how to ask questions, but it
+cannot automatically prove a root cause or that all users hit the same issue.
+AI-generated links, titles, dates, and citations must also be checked against the
+original material.
+
+#### Run one reverse check before concluding
+
+For every sentence you plan to write as a conclusion, ask four things: does the
+material say it directly, or am I inferring it? Is there a newer version, an
+exception, or a conflicting source? Is the access date still inside the decision
+window? If another reader saw only the ledger, could they find the same support?
+If any answer fails, narrow the sentence or mark it `unknown` instead of filling
+it with a confident tone.
+
+#### Ten-minute stop receipt
+
+```text
+Decision and question:
+Opened and checkable material:
+Direct support:
+Interpretation or inference:
+Conflicts and unknowns:
+Access date and scope:
+Next minimal check:
+Stop reason:
+Status: research_plan | scope_checked_for_supplied_list | blocked | not_run
+```
+
+The receipt only states what happened within the recorded scope; it is not proof
+that “research is complete”, that the facts are current, that the model
+retrieved correctly, or that an action may be taken.
+
 ## Failure and boundary cases
 
 - **Turning a user report into official confirmation:** FP-01 and FP-02 require explicit layers. Write “the report says,” “the page records,” or “not reproduced locally,” not “the product confirmed this root cause.”

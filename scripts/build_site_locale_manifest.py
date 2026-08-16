@@ -247,7 +247,6 @@ def build_lab_navigation_payload(
             "id": item["id"],
             "number": item["number"],
             "title": item["title"],
-            **{f"title_{key}": item.get(f"title_{key}", "") for key in LOCALE_KEYS},
             "path": path,
             "content_id": content_id,
         }

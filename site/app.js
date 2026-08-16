@@ -4451,5 +4451,24 @@ Object.assign(copy.de, {
   heroRouteChapterTwoBody: 'Eine kleine Aufgabe, ein sichtbarer Check, eine Quittung.'
 });
 
+Object.assign(copy.en, {
+  heroRouteBoundary: 'Read in order. After Lesson 0 and Chapter 1, the whole book is one path — not a menu to choose from.'
+});
+Object.assign(copy.zh, {
+  heroRouteBoundary: '按顺序阅读。第 0 课与第 1 章之后，整本书就是一条路径——不是让你选择的菜单。'
+});
+Object.assign(copy.es, {
+  heroRouteBoundary: 'Lee en orden. Tras la Lección 0 y el Capítulo 1, todo el libro es un solo camino, no un menú para elegir.'
+});
+Object.assign(copy.ja, {
+  heroRouteBoundary: '順番に読みましょう。レッスン0と第1章の後、本全体は一つの道です——選ぶためのメニューではありません。'
+});
+Object.assign(copy.ko, {
+  heroRouteBoundary: '순서대로 읽으세요. 레슨 0과 1장 이후, 책 전체는 하나의 길입니다 — 고르는 메뉴가 아닙니다.'
+});
+Object.assign(copy.de, {
+  heroRouteBoundary: 'Lies der Reihe nach. Nach Lektion 0 und Kapitel 1 ist das ganze Buch ein einziger Weg — kein Menü zum Auswählen.'
+});
+
 initializeSearch();
 applyLanguage(currentLanguage, { updateUrl: hasExplicitLanguageParam && !hasValidLanguageParam });

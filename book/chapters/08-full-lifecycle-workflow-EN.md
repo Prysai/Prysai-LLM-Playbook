@@ -507,6 +507,41 @@ The learner passes when the handoff retains the checkpoint, partial diff,
 missing evidence, authority boundary, recovery path, and a precise statement of
 what remains unknown. Continuing to stack edits is a failure of the experiment.
 
+## Finish one small complete slice first
+
+Beginners do not have to start with a website, code, or publication. Choose a
+short text you can check yourself, a local README, or a set of public sources you
+are already allowed to use. The goal is not to have the model “do a lot” but to
+complete one closed loop from definition to handoff that you can see.
+
+```text
+Outcome: make a passage of at most 120 characters that lets a new reader find
+  the first step.
+Input: the original text, who the reader is, one known problem.
+Allowed: read the text only; propose a plan; after confirmation, edit only that
+  text.
+Not allowed: network, logins, installs, sending, publishing, or changing other
+  files.
+Check: save the text before and after the edit; have another person — or
+  yourself — check whether the first step can be found.
+Handoff: what changed, what did not, the check result, and what is still unknown.
+```
+
+Walk all seven stages: define the reader and the outcome; plan one change; save
+the original text as a checkpoint; edit; compare before and after; review with a
+fresh perspective; hand off to the next person or to tomorrow's you. If you need
+more material or an external action, stop at `blocked` first; do not widen
+permissions just to finish the flow.
+
+### How two attempts can be compared
+
+To compare “let the model edit directly” with “write the protocol first, then
+edit”, you must fix the original text, the goal, the allowed actions, the time
+limit, and the check rules. Record the first output, actual time spent, rework
+count, diff, check result, and unknowns. When the source text, model, tools,
+permissions, or environment change, write `not_comparable`; a faster or
+nicer-looking result is not by itself general efficiency or a better model.
+
 ## Transfer
 
 Apply the lifecycle to one non-code task, such as a research brief, a marketing

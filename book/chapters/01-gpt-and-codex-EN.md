@@ -327,6 +327,74 @@ Before asking Codex to act, write this small task card:
 This card is more valuable than a long prompt because it exposes the decisions
 that a prompt often leaves implicit.
 
+## First conversation: three prompts you can use now
+
+You do not need to master complex terminology first. Choose a small goal that
+contains no private information and has no external-write risk, copy any of the
+prompts below into the chat window of the LLM you actually use, and replace the
+square brackets with your own content. Their value is not in “magic wording” but
+in making the model expose its understanding, limits, and next steps first;
+different models and product surfaces may produce different results.
+
+### 1. Learn a language or another small skill
+
+```text
+I am learning [Spanish/a skill], and I can currently [my real level].
+Give me one 10-minute practice with a single goal; do not assume I know anything else.
+Show one example first, then let me answer myself; correct only the one or two
+things that most affect understanding. Close with three lines: what I did right,
+what to practice next, and what this one session cannot yet prove.
+Do not claim that one conversation means I have mastered the skill.
+```
+
+An example is not a promise to master a language in seven days. One practice
+session leaves at most the answer and feedback of that moment; retention, transfer
+to unfamiliar situations, and real conversational ability must be checked
+separately later. If the model offers unverifiable facts, too much practice, or
+asks you to reveal personal data, narrow the topic, ask for sources, or stop this
+round.
+
+### 2. Organize a set of public sources efficiently
+
+```text
+I need to answer this question: [question].
+Use only the sources I provide below; do not add facts I did not give you.
+First list each source's title, date (if any), and what it may support; then
+write a short summary with source markers. Separate “explicitly supported by a
+source”, “reasonable inference”, and “still unknown”. If sources conflict, are
+outdated, or lack key facts, stop at a list of questions; do not guess an answer
+for me.
+```
+
+This prompt turns “I searched a lot” into “conclusions that can be checked back
+to a source”. For research that needs the web, paid databases, or real accounts,
+first confirm the product's permissions, the source's license, and the data
+scope; an answer in a chat window is not completed research.
+
+### 3. Ask the model to clarify a vague task first
+
+```text
+I want to accomplish: [outcome], for: [audience or file].
+Known inputs: [material]; uncertain points: [unknowns].
+Do not execute, send, publish, install, or modify anything yet.
+Output only: restated goal, missing information, minimal reversible step,
+acceptance evidence, and stop condition. If secrets, network, accounts, external
+writes, or a wider scope are needed, mark blocked and state who must confirm.
+```
+
+When the answer looks good, check whether it actually answered these fields. If
+it skipped the unknowns and invented them, wrote “suggested” as “completed”, or
+expanded into unauthorized actions, treat that as an observable failure instead
+of letting it keep guessing.
+
+## Three-step read-back
+
+After each prompt use, take one minute to read back: **what did it read? what
+did it actually do? what can I check?** For a pure chat task, usually only the
+input and output can be checked; for file, browser, or code tasks, you also need
+the target, the diff, the command output, or an external read-back. This lets
+you tell “chats well” from “delivers reliably” from day one.
+
 ## Small experiment: hold the task, change one input
 
 ### Setup
