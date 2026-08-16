@@ -4,7 +4,7 @@
 
 **Status:** `candidate`. **Experimentstatus:** `draft / not_run`. Dieser Pfad lehrt die Prüfung von Übergaben; er dokumentiert keinen Produktionslauf.
 
-## Das Problem
+## Das Problem dieses Kapitels
 
 Je mehr Tools ein Workflow enthält, desto leichter werden „die Quelldatei existiert“, „das Script lief“ oder „die API ist verbunden“ mit einer fertigen Übergabe verwechselt. Auch Layout, Leerzustände, Barrierefreiheit, Lizenz, Formeln, Datenschutz, Berechtigungen, doppelte Schreibvorgänge und Wiederherstellung können fehlschlagen.
 
@@ -102,6 +102,44 @@ Versand an E-Mail, CRM, Cloud oder Website wäre ein neuer externer Schreibvorga
 - [ ] Ich öffne die Endform und prüfe Leer-/Fehlerzustand/Barrierefreiheit, nicht nur das Script.
 - [ ] Bei Timeout frage ich Batch/Ausgabe vor einem möglichen erneuten Schreiben ab.
 - [ ] Ich trenne lokal erzeugt, Entwurf, gesendet, veröffentlicht und online gelesen.
+
+## Lernziele
+
+Du wählst Fähigkeiten nach der endgültigen Übergabe und ihrem Risiko, prüfst die gerenderte Form und behandelst einen erfolgreichen Scriptlauf nicht als Nachweis einer vollständigen oder veröffentlichten Lieferung.
+
+## Praxisfälle: Eine Quelldatei ist nicht das Ergebnis für Leser
+
+Ein korrektes Markdown, Bild oder Script kann im PDF, Browser oder Tabellenexport trotzdem unlesbar, falsch beschriftet oder unzugänglich sein. Die richtige Frage lautet daher: Was sieht und nutzt die Zielperson nach dem Öffnen?
+
+### Vorbereitung
+
+Lege synthetische Zählwerte mit normalem, leerem, fehlendem und extremem Fall in einem wegwerfbaren Ordner an. Kein Konto, Netzwerk, Produktionsdatum oder externer Versand.
+
+### Aufgabe
+
+Erzeuge einen kurzen Offline-Bericht und prüfe Summe, Kategorien, Leerzustand und Fehler bei fehlender Spalte. Öffne die Endform und markiere, was geprüft wurde; bei Timeout nach einem Schreibversuch lies zuerst den Teilzustand zurück.
+
+### Belege
+
+Speichere Eingabe-Hash, Transformationsversion, Ausgabepfad, Log, Exit-Status, Read-back und Status „nicht versendet“. Ein erzeugtes Artefakt beweist keinen Versand, keine Veröffentlichung und keine Wirkung beim Publikum.
+
+### Reflexion
+
+Welcher Fehler war erst in der Endform sichtbar? Welche Aktion wäre nach einem Timeout nicht sicher wiederholbar?
+
+## Transferaufgabe
+
+Wende denselben Vertrag auf eine lokale Kursgrafik an: definiere Publikum, Tatsachen, Alt-Text, Lizenzgrenze und visuelle Prüfung. Erzeuge keinen externen Upload.
+
+## Abnahme-Checkliste
+
+- [ ] Ich definiere Schema, sensible Grenze, Ausgabe, Retry, Read-back und Stopp.
+- [ ] Ich prüfe die Endform einschließlich Leer- und Fehlerzustand.
+- [ ] Ich trenne lokal erzeugt, Entwurf, gesendet, veröffentlicht und online bestätigt.
+
+## Quellen und Wartungsgrenze
+
+Endformprüfung und Idempotenz sind stabile Methoden. Dateiformate, APIs, Renderer und Zugriffsregeln ändern sich und benötigen pro Umgebung aktuelle Prüfung.
 
 <!-- chapter-navigation:start -->
 <hr>

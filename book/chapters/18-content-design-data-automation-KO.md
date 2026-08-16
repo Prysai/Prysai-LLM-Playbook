@@ -4,7 +4,7 @@
 
 **상태:** `candidate`. **실험:** `draft / not_run`. 이 트랙은 전달물 검증 방법을 가르치며 프로덕션 실행 기록이 아닙니다.
 
-## 문제
+## 이 장에서 해결하는 문제
 
 workflow에 tool이 많을수록 “source file이 있다”, “script가 실행됐다”, “API가 연결됐다”를 완성된 전달물로 착각하기 쉽습니다. layout, empty state, 접근성, license, formula, privacy, permission, 중복 쓰기, 복구도 실패할 수 있습니다.
 
@@ -102,6 +102,44 @@ email, CRM, cloud drive, website 전송은 별도 external write입니다. test 
 - [ ] final form을 열어 empty/error/accessibility를 script 외에 확인한다.
 - [ ] timeout에서 batch/output을 query한 뒤 write를 재시도한다.
 - [ ] local generated, draft, sent, published, online read-back을 구분한다.
+
+## 학습 목표
+
+final delivery와 risk로 capability를 고르고 rendered form을 확인하며 script 성공을 complete 또는 published delivery 증거로 취급하지 않습니다.
+
+## 실제 문제: source file은 reader의 결과가 아니다
+
+Markdown, image, script가 맞아도 PDF, browser, export에서 읽기 어렵거나 label이 틀리거나 accessibility가 없을 수 있습니다. 연 사람이 무엇을 보고 쓰는지 확인합니다.
+
+### 준비
+
+normal, empty, missing column, extreme synthetic count를 버릴 수 있는 directory에 둡니다. account, network, production data, external send는 사용하지 않습니다.
+
+### 작업
+
+offline report를 만들고 sum, category, empty state, missing column error를 확인합니다. final form을 열어 check를 남기고 write 뒤 timeout이면 먼저 partial state를 read-back합니다.
+
+### 증거
+
+input hash, transformation version, output path, log, exit status, read-back, `not sent` status를 보관합니다. artifact 생성은 send, publish, audience effect 증거가 아닙니다.
+
+### 회고
+
+final form에서만 보인 failure는 무엇인가요? timeout 뒤 안전하게 반복할 수 없는 action은 무엇인가요?
+
+## 전이 과제
+
+local course graphic에 contract를 적용합니다. audience, fact, alt text, license boundary, visual check를 정의하고 external upload는 하지 않습니다.
+
+## 수용 체크리스트
+
+- [ ] schema, sensitive boundary, output, retry, read-back, stop을 정의한다.
+- [ ] empty/error state를 포함한 final form을 확인한다.
+- [ ] local generated, draft, sent, published, online confirmed를 구분한다.
+
+## 출처 및 유지보수 경계
+
+final-form review와 idempotency는 안정적인 방법입니다. format, API, renderer, access rule은 environment마다 변합니다.
 
 <!-- chapter-navigation:start -->
 <hr>

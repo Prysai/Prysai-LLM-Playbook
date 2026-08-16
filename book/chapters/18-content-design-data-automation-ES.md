@@ -4,7 +4,7 @@
 
 **Estado:** `candidate`. **Experimento:** `draft / not_run`. Esta ruta enseña cómo verificar entregables; no documenta una ejecución de producción.
 
-## El problema
+## El problema que resuelve este capítulo
 
 Cuantas más herramientas contiene un flujo, más fácil es confundir «existe el archivo», «corrió el script» o «conectó la API» con un entregable terminado. También pueden fallar diseño, estados vacíos, accesibilidad, licencia, fórmulas, privacidad, permisos, escrituras duplicadas y recuperación.
 
@@ -102,6 +102,44 @@ Enviar a correo, CRM, nube o web sería otra acción externa con cuenta de prueb
 - [ ] Abro la forma final y reviso vacío/error/acceso, no solo script.
 - [ ] Ante timeout consulto lote y salida antes de repetir posible escritura.
 - [ ] Distingo generado local, borrador, enviado, publicado y leído en línea.
+
+## Objetivos de aprendizaje
+
+Elegirás capacidades por entrega final y riesgo, comprobarás la forma renderizada y no tratarás un script exitoso como prueba de entrega completa o publicada.
+
+## Problemas reales: un archivo fuente no es el resultado para lectores
+
+Un Markdown, imagen o script correcto puede ser ilegible, estar mal rotulado o ser inaccesible en PDF, navegador o exportación. La pregunta es qué ve y usa la persona al abrirlo.
+
+### Preparación
+
+Crea conteos sintéticos normales, vacíos, con columna ausente y extremos en una carpeta desechable. Sin cuenta, red, datos de producción ni envío externo.
+
+### Tarea
+
+Genera un informe offline y comprueba suma, categorías, estado vacío y error por columna ausente. Abre la forma final y registra los checks; tras timeout de escritura, lee primero el estado parcial.
+
+### Evidencia
+
+Guarda hash de entrada, versión de transformación, ruta, log, salida, lectura posterior y estado «no enviado». Un artefacto generado no prueba envío, publicación ni efecto en audiencia.
+
+### Reflexión
+
+¿Qué fallo apareció solo en la forma final? ¿Qué acción no sería segura repetir tras timeout?
+
+## Tarea de transferencia
+
+Aplica el contrato a un gráfico local del curso: define audiencia, hechos, texto alternativo, límite de licencia y revisión visual. No lo subas.
+
+## Lista de aceptación
+
+- [ ] Defino esquema, límite sensible, salida, retry, lectura y parada.
+- [ ] Compruebo forma final, incluidos estados vacío y de error.
+- [ ] Distingo generado local, borrador, enviado, publicado y confirmado online.
+
+## Fuentes y límite de mantenimiento
+
+La revisión de forma final e idempotencia son métodos estables. Formatos, APIs, renderizadores y accesos cambian por entorno.
 
 <!-- chapter-navigation:start -->
 <hr>

@@ -4,7 +4,7 @@
 
 **状態：** `candidate`。**実験：** `draft / not_run`。このトラックは納品物の検証方法を教えます。本番実行の記録ではありません。
 
-## 問題
+## この章が解決する問題
 
 workflow の tool が増えるほど、「source file がある」「script が走った」「API が接続した」を完成品と取り違えやすくなります。layout、empty state、accessibility、license、formula、privacy、permission、重複書き込み、回復にも失敗がありえます。
 
@@ -102,6 +102,44 @@ email、CRM、cloud drive、website への送信は別の external write です�
 - [ ] final form を開き、empty/error/accessibility を script 以外で確認する。
 - [ ] timeout では batch/output を query してから write を繰り返す。
 - [ ] local generated、draft、sent、published、online read-back を分ける。
+
+## 学習目標
+
+final delivery と risk から capability を選び、rendered form を確認し、script の成功を complete または published delivery の証拠にしません。
+
+## 現実の問題：source file は reader の結果ではない
+
+Markdown、image、script が正しくても、PDF、browser、export では読めない、label が誤る、accessibility がないことがあります。開いた人が何を見て使うかを確認します。
+
+### 準備
+
+normal、empty、missing column、extreme の synthetic count を disposable directory に用意します。account、network、production data、external send は使いません。
+
+### タスク
+
+offline report を作り、sum、category、empty state、missing column error を確認します。final form を開いて check を残し、write 後 timeout なら先に partial state を read-back します。
+
+### 証拠
+
+input hash、transformation version、output path、log、exit status、read-back、`not sent` status を残します。artifact の生成は send、publish、audience effect の証拠ではありません。
+
+### 振り返り
+
+final form で初めて見えた failure は何ですか。timeout 後に安全に繰り返せない action は何ですか。
+
+## 移行タスク
+
+local course graphic に contract を使います。audience、fact、alt text、license boundary、visual check を定義し、external upload はしません。
+
+## 受け入れチェックリスト
+
+- [ ] schema、sensitive boundary、output、retry、read-back、stop を定義する。
+- [ ] empty/error state を含む final form を確認する。
+- [ ] local generated、draft、sent、published、online confirmed を分ける。
+
+## 出典と保守の境界
+
+final-form review と idempotency は安定した方法です。format、API、renderer、access rule は environment ごとに変わります。
 
 <!-- chapter-navigation:start -->
 <hr>
