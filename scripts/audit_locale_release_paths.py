@@ -30,12 +30,28 @@ FRONT_MATTER = re.compile(r"^\s*(?:<!--.*?-->\s*)?---\s*\n(.*?)\n---", re.DOTALL
 FRONT_MATTER_ID = re.compile(r"^id:\s*([^\s]+)\s*$", re.MULTILINE)
 FRONT_MATTER_TITLE = re.compile(r'^title:\s*["\']?(.+?)["\']?\s*$', re.MULTILINE)
 H1 = re.compile(r"^#\s+(\S.*)$", re.MULTILINE)
+LANGUAGE_SWITCHER = re.compile(
+    r"<!--\s*language-switcher:start\s*-->.*?<!--\s*language-switcher:end\s*-->",
+    re.DOTALL,
+)
 
 
-def check_course_links(path: Path, locale: str, problems: list[str]) -> None:
-    """Reject a locale entry that routes readers into another course locale."""
+def check_reader_links(path: Path, locale: str, problems: list[str]) -> None:
+    """Reject a locale entry that routes readers into another reader locale.
+
+    Chapters and Labs are the canonical course units, but a reader can also
+    begin in a route or the Beginner Practice Pack.  Those front doors need
+    the same locale guarantee: a local link into reader material may not
+    quietly change language.
+    """
     text = path.read_text(encoding="utf-8")
-    for target in MARKDOWN_LINK.findall(text):
+    for link_match in MARKDOWN_LINK.finditer(text):
+        # A language switcher is an explicit, reader-chosen locale change, not
+        # a silent fallback. Every other local reader link must preserve the
+        # active locale.
+        if any(block.start() <= link_match.start() < block.end() for block in LANGUAGE_SWITCHER.finditer(text)):
+            continue
+        target = link_match.group(1)
         if target.startswith(("http://", "https://", "mailto:")):
             continue
         target_path = (path.parent / target).resolve()
@@ -43,12 +59,12 @@ def check_course_links(path: Path, locale: str, problems: list[str]) -> None:
             target_relative = target_path.relative_to(ROOT)
         except ValueError:
             continue
-        if target_relative.parts[:2] not in {("book", "chapters"), ("book", "labs")}:
+        if not target_relative.parts or target_relative.parts[0] != "book":
             continue
         suffix = target_path.stem.rsplit("-", 1)[-1].upper()
-        if suffix != locale:
+        if suffix in LOCALES and suffix != locale:
             problems.append(
-                f"{path.relative_to(ROOT)}: cross-locale course link {target} "
+                f"{path.relative_to(ROOT)}: cross-locale reader link {target} "
                 f"(expected a -{locale}.md target)"
             )
 
@@ -127,21 +143,25 @@ def main() -> int:
             totals[locale]["available"] += 1
             expected_language = matrix["locales"][locale]["html_lang"]
             check_reader_identity(path, content_id, locale, expected_language, problems)
-            check_course_links(path, locale, problems)
+            check_reader_links(path, locale, problems)
 
     # The learner begins at these entry documents, not only inside a chapter or
     # Lab. Include every existing locale-specific front door so the audit
     # covers the complete published route tree.
     for locale in LOCALES:
         entry_paths = (
+            ROOT / f"README-{locale}.md",
             ROOT / f"book/preface-{locale}.md",
             ROOT / f"book/README-{locale}.md",
             ROOT / f"book/table-of-contents-{locale}.md",
             ROOT / f"book/routes/first-safe-change-{locale}.md",
+            ROOT / f"book/routes/universal-core-foundations-{locale}.md",
+            ROOT / f"book/communication-clinic-{locale}.md",
+            ROOT / f"book/labs/README-{locale}.md",
         )
         for path in entry_paths:
             if path.is_file():
-                check_course_links(path, locale, problems)
+                check_reader_links(path, locale, problems)
 
     for locale in LOCALES:
         count = totals[locale]
