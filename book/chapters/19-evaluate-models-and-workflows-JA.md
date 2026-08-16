@@ -67,6 +67,20 @@ error category、comparability、unknown、final status:
 
 初回 attempt と管理した rework は両方保存します。成功した retry は「最終的には pass、first pass ではない」と示すだけです。capacity error、permission block、input drift、長い無イベント待機を消してはいけません。
 
+## 身近な小さな比較から始める
+
+最初から「どちらのモデルの IQ が高いか」とは問いません。今日必要で、機密を含まない小さな仕事を選びます。たとえば公開済みのプロジェクト更新を、次に行う三つの作業へ整理します。元の文章を固定 input として保存し、期待する形を先に決めます。三つの作業に担当者と期限を付け、文章に無い場合は「要確認」と書く、という形です。
+
+A には task と文章だけを渡します。B には同じものに加えて、次の手順を渡します。model、entry point、時間、network、reviewer は変えません。
+
+```text
+与えられた文章だけを根拠にしてください。次に行う作業を三つ書きます。
+担当者または期限が文章に無いときは「要確認」と書き、事実を補いません。
+最後に、各作業を支える文章中の文を示してください。根拠が無いときは止まり、足りない情報を説明してください。
+```
+
+これは万能の prompt でも、モデルの能力を自動的に上げるものでもありません。範囲、欠けている情報、合格条件を明示するだけです。同じ 0–2 の rubric で、抜け、作り話、原文との対応、安全に止まれたかを比べます。B が良くても、「この input と rubric ではこの手順を追加で試す価値がある」までが結論です。
+
 ## 小実験：三 task、二候補、一変数
 
 固定した三つの synthetic input を使います。claim/status/evidence の抽出、事実を増やさない Markdown 化、「code と build だけでは完了を示さない」という抜けのレビューです。A には task と input のみ、B には protocol、最小 context、evidence rule を追加します。model、surface、permission、tool、network、時間、reviewer は同じにします。

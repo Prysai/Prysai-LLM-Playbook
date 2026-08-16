@@ -67,6 +67,20 @@ error category, comparability, unknown, final status:
 
 초기 attempt와 통제된 rework를 모두 보관합니다. 성공한 retry는 “최종 pass지만 first pass는 아님”만 뜻합니다. capacity error, permission block, input drift, 긴 무이벤트 대기를 지우면 안 됩니다.
 
+## 실제로 쓸 작은 비교부터 시작하기
+
+처음부터 “어느 모델의 IQ가 더 높은가”를 묻지 않습니다. 오늘 바로 쓸 수 있고 민감한 자료를 포함하지 않는 작은 일을 고릅니다. 예를 들어 공개된 프로젝트 업데이트를 다음 행동 세 가지로 정리합니다. 원문을 고정 input으로 저장하고, 원하는 결과를 먼저 적습니다. 행동 세 가지에는 담당자와 마감일이 있어야 하며, 원문에 없으면 “확인 필요”라고 써야 합니다.
+
+A에는 task와 원문만 줍니다. B에는 같은 내용과 아래 작업 지침을 줍니다. model, 진입 화면, 시간, network, reviewer는 바꾸지 않습니다.
+
+```text
+제공된 원문만 근거로 작업하세요. 다음 행동 세 가지를 작성합니다.
+담당자나 날짜가 원문에 없으면 “확인 필요”라고 쓰고 사실을 만들지 마세요.
+마지막에 각 행동을 뒷받침하는 원문의 문장을 표시하세요. 근거가 없으면 멈추고 무엇이 부족한지 설명하세요.
+```
+
+이것은 만능 prompt도, 어떤 모델의 능력을 자동으로 높이는 방법도 아닙니다. 범위, 빠진 정보, 통과 기준을 드러낼 뿐입니다. 같은 0–2 rubric으로 누락, 지어낸 내용, 원문 연결, 안전한 중지를 비교하세요. B가 더 좋아도 결론은 “이 input과 rubric에서 이 지침을 더 시험할 가치가 있다”까지입니다.
+
 ## 작은 실험: 세 task, 두 후보, 한 변수
 
 세 개의 고정 synthetic input을 씁니다. claim/status/evidence 추출, 사실을 추가하지 않는 Markdown 변환, “code와 build만으로 완료를 증명할 수 없다”는 빈틈 검토입니다. A에는 task와 input만 주고, B에는 protocol, 최소 context, evidence rule을 더합니다. model, surface, permission, tool, network, 시간, reviewer는 동일하게 둡니다.

@@ -64,6 +64,20 @@ unavailable; error, comparabilidad, desconocidos y estado.
 
 Conserva intento inicial y retrabajo. Un retry exitoso es final-pass, no first-pass; no borra capacidad, permiso, drift o espera sin eventos.
 
+## Empieza con una comparación útil de verdad
+
+No empieces preguntando qué modelo tiene «más IQ». Elige una tarea pequeña que necesites hoy y que no revele datos: por ejemplo, convertir una actualización pública del proyecto en tres acciones. Guarda el texto como entrada fija y define el resultado antes de abrir el modelo: tres acciones, cada una con responsable y fecha; si el texto no los da, debe decir «por confirmar».
+
+Pide primero a A que vea solo la tarea y el texto. Después pide a B exactamente lo mismo, más este protocolo. No cambies modelo, entrada, superficie, tiempo, red ni revisor.
+
+```text
+Trabaja solo con el texto proporcionado. Escribe tres acciones.
+Si no aparecen responsable o fecha, escribe «por confirmar»; no inventes datos.
+Al final, indica qué frase del texto respalda cada acción. Si no hay respaldo, detente y explica qué falta.
+```
+
+No es un prompt mágico ni demuestra que ningún modelo sea más capaz. Solo hace explícitos el alcance, los datos que faltan y la aceptación. Puntúa ambas salidas con la misma rúbrica de 0–2: omisiones, invenciones, vínculo con el texto y parada segura. Si B sale mejor, la única conclusión honesta es que este protocolo merece más pruebas con esa entrada y esa rúbrica.
+
 ## Experimento: tres tareas, dos candidatos, una variable
 
 Usa tres textos sintéticos fijos: extraer claim/status/evidence, convertir a Markdown sin hechos nuevos y revisar la brecha de «código y build». A recibe tarea e input; B añade protocolo, contexto mínimo y reglas de evidencia. Ambos comparten modelo, surface, permisos, herramientas, red, tiempo y revisor.

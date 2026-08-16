@@ -67,6 +67,20 @@ Fehlerkategorie, Vergleichbarkeit, Unbekannte, finaler Status:
 
 Bewahre den ersten Versuch und die kontrollierte Nacharbeit beide auf. Ein erfolgreicher Retry bedeutet nur „am Ende bestanden, nicht beim First Pass“. Capacity-Fehler, Berechtigungsblockaden, Input-Drift und lange Zeit ohne Events dürfen nicht verschwinden.
 
+## Mit einem echten kleinen Vergleich beginnen
+
+Frage nicht zuerst, welches Modell den höheren „IQ“ hat. Wähle eine kleine Aufgabe, die du heute tatsächlich brauchst und die keine Daten preisgibt: etwa eine öffentliche Projektaktualisierung in drei nächste Schritte zu überführen. Speichere den Text als festen Input und schreibe das gewünschte Ergebnis vorher auf: drei Schritte, jeweils mit zuständiger Person und Termin; fehlt beides im Text, steht dort „zu klären“.
+
+Lass Kandidat A nur Aufgabe und Text sehen. Kandidat B erhält exakt dasselbe plus dieses Arbeitsprotokoll. Modell, Oberfläche, Zeit, Netzwerk und Review bleiben unverändert.
+
+```text
+Arbeite ausschließlich mit dem gegebenen Text. Formuliere drei nächste Schritte.
+Fehlt zuständige Person oder Termin, schreibe „zu klären“; erfinde keine Angaben.
+Nenne am Ende für jeden Schritt den Satz im Text, der ihn stützt. Fehlt ein Beleg, stoppe und beschreibe die Lücke.
+```
+
+Das ist kein magischer Prompt und kein Nachweis für eine höhere Modellleistung. Er macht nur Umfang, fehlende Angaben und Abnahme sichtbar. Bewerte beide Ausgaben mit derselben 0–2-Rubrik: Auslassungen, Erfindungen, Textbezug und sicheres Stoppen. Ist B besser, lautet die ehrliche Schlussfolgerung lediglich, dass dieses Protokoll mit diesem Input und dieser Rubrik weiter geprüft werden sollte.
+
 ## Kleine Übung: drei Tasks, zwei Kandidaten, eine Variable
 
 Nutze drei feste synthetische Inputs: Claim/Status/Evidenz extrahieren, ohne neue Fakten nach Markdown übertragen und die Lücke prüfen, warum „Code plus Build“ keine Fertigstellung belegt. A erhält nur Task und Input; B erhält zusätzlich Protokoll, minimalen Kontext und Evidenzregeln. Modell, Surface, Berechtigungen, Tools, Netzwerk, Zeit und Reviewer bleiben gleich.
