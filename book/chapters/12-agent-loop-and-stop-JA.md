@@ -70,5 +70,5 @@ next_safe_action: "入力ファイルを依頼する"
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章ナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-JA.md">← 前へ<br><strong>第11章 · 役に立つ Skill を設計する</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-JA.md">次の章は準備中 →<br><strong>第13章の公開状況を見る</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章ナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-JA.md">← 前へ<br><strong>第11章 · 役に立つ Skill を設計する</strong></a></td><td align="right"><a data-chapter-nav="next" href="13-action-boundaries-JA.md">次へ →<br><strong>第13章 · ファイル、ターミナル、ブラウザ、GitHub にまたがる行動境界</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->

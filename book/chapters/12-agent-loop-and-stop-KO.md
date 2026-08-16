@@ -70,5 +70,5 @@ next_safe_action: "입력 파일 요청"
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-KO.md">← 이전<br><strong>11장 · 제 몫을 하는 Skill 설계하기</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-KO.md">다음 장 준비 중 →<br><strong>13장 제공 상태 보기</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-KO.md">← 이전<br><strong>11장 · 제 몫을 하는 Skill 설계하기</strong></a></td><td align="right"><a data-chapter-nav="next" href="13-action-boundaries-KO.md">다음 →<br><strong>13장 · 파일, 터미널, 브라우저, GitHub의 행동 경계</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->
