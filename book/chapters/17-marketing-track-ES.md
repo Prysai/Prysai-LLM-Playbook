@@ -4,7 +4,7 @@
 
 **Estado:** `candidate`. **Experimento:** `draft / not_run`. Esta ruta enseña decisiones de marketing revisables; no aporta clientes, resultados de campaña ni causalidad demostrada.
 
-## El problema
+## El problema que resuelve este capítulo
 
 El marketing se vuelve vago cuando faltan producto, audiencia, posicionamiento, prueba y acción deseada. También se vuelve riesgoso si se recolectan datos personales o se publica automáticamente antes de decidir qué debe cambiar el dato.
 
@@ -73,6 +73,44 @@ Siguiente paso: describir diferencia y límites, sin causalidad ni ganador.
 - [ ] No convierto conteos descriptivos en causalidad, eficiencia o aceptación.
 - [ ] Cada claim es hecho, hipótesis, feedback autorizado o eliminación.
 - [ ] Sin evidencia de clientes no invento testimonios, escala, adopción ni urgencia.
+
+## Objetivos de aprendizaje
+
+Podrás formular una hipótesis comprobable, separar hechos de supuestos y preparar variantes sin recopilar datos personales ni publicar.
+
+## Problemas reales: palabras buenas no son prueba de mercado
+
+Una introducción clara puede ayudar, pero no demuestra demanda ni causalidad. Solo una audiencia definida, un cambio único y una medición declarada permiten decidir qué puede cambiar el resultado.
+
+### Preparación
+
+Usa solo contexto sintético y una tabla local de conteos agregados. No incluyas nombres, correo, IP, cuentas, canales reales ni listas de clientes.
+
+### Tarea
+
+Redacta dos introducciones con igual audiencia y acción. Marca cada frase como hecho, hipótesis o sin prueba; elimina la última categoría. Escribe denominador, ventana, parada y decisión si la muestra no basta.
+
+### Evidencia
+
+Guarda versión de contexto, variantes, registro de claims, tarjeta de hipótesis, diccionario de datos y la decisión «no publicado». Conteos agregados y una prueba local de comprensión no prueban aceptación ni causalidad.
+
+### Reflexión
+
+¿Qué frase sonaba convincente sin evidencia? ¿Qué datos serían necesarios antes de pedir un canal real?
+
+## Tarea de transferencia
+
+Aplica la tarjeta a la portada del curso: crea dos descripciones locales de la primera acción segura. No afirmes popularidad ni resultados; prueba solo si una persona nombrada entiende el siguiente paso.
+
+## Lista de aceptación
+
+- [ ] Documento decisión, un cambio, denominador, límite y parada.
+- [ ] Separo hechos, hipótesis y falta de prueba.
+- [ ] No publico ni recopilo datos personales sin nueva autorización explícita.
+
+## Fuentes y límite de mantenimiento
+
+Los límites de decisión y evidencia son estables. Canales, consentimiento, medición y datos de producto cambian y requieren revisión actual y específica.
 
 <!-- chapter-navigation:start -->
 <hr>

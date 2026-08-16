@@ -4,7 +4,7 @@
 
 **Status:** `candidate`. **Experimentstatus:** `draft / not_run`. Dieser Pfad lehrt überprüfbare Marketingentscheidungen; er liefert keine Kunden, Kampagnenergebnisse oder nachgewiesene Kausalität.
 
-## Das Problem
+## Das Problem dieses Kapitels
 
 Marketing wird vage, wenn Produkt, Zielgruppe, Positionierung, Beleg und gewünschte Handlung fehlen. Es wird auch riskant, wenn persönliche Daten gesammelt oder automatisch veröffentlicht werden, bevor klar ist, welche Entscheidung die Daten ändern sollen.
 
@@ -73,6 +73,44 @@ Nächster Schritt: Differenz und Grenzen beschreiben, keinen kausalen Sieger erk
 - [ ] Ich mache aus beschreibenden Zählwerten keine Kausalität, Effizienz oder Marktakzeptanz.
 - [ ] Jeder Claim ist Fakt, Hypothese, autorisiertes Feedback oder gelöscht.
 - [ ] Ohne Kundenevidenz erfinde ich keine Testimonials, Größe, Adoption oder Dringlichkeit.
+
+## Lernziele
+
+Du formulierst eine überprüfbare Marketinghypothese, trennst bestätigte Fakten von Annahmen und bereitest Varianten vor, ohne personenbezogene Daten zu sammeln oder etwas zu veröffentlichen.
+
+## Praxisfälle: Gute Worte sind keine Marktbelege
+
+Eine verständliche Einleitung kann nützlich sein, belegt aber weder Nachfrage noch Kausalität. Erst eine klare Zielgruppe, ein einzelner Unterschied und eine definierte Messung zeigen, welche Entscheidung das Ergebnis überhaupt beeinflussen darf.
+
+### Vorbereitung
+
+Nutze nur den synthetischen Produktkontext und eine lokale Tabelle mit aggregierten Zählwerten. Keine Namen, E-Mail-Adressen, IP-Adressen, Konten, echten Channels oder Kundenlisten.
+
+### Aufgabe
+
+Entwirf zwei Einleitungen mit derselben Zielgruppe und Aktion. Kennzeichne jeden Satz als Fakt, Hypothese oder ohne Beleg; entferne die letzte Kategorie. Schreibe Nenner, Zeitfenster, Stoppregel und die Entscheidung bei unzureichender Stichprobe auf.
+
+### Belege
+
+Bewahre Kontextversion, Varianten, Claim-Register, Hypothesenkarte, Datenwörterbuch und die Entscheidung „nicht veröffentlicht“ auf. Aggregierte Zählwerte und ein lokaler Verständlichkeitstest belegen weder Marktakzeptanz noch Kausalität.
+
+### Reflexion
+
+Welche Aussage klang überzeugend, hatte aber keinen Beleg? Welche Daten wären nötig, bevor ein echter Channel überhaupt beantragt werden kann?
+
+## Transferaufgabe
+
+Wende die Karte auf die Kurs-Startseite an: Erstelle zwei lokale Beschreibungen der ersten sicheren Lernhandlung. Behaupte keine Popularität oder Ergebnisse; teste nur, ob eine benannte Testperson die nächste Aktion versteht.
+
+## Abnahme-Checkliste
+
+- [ ] Ich dokumentiere Entscheidung, eine Änderung, Nenner, Grenze und Stoppregel.
+- [ ] Ich trenne Fakten, Hypothesen und fehlende Belege.
+- [ ] Ich veröffentliche, sammle oder verknüpfe keine personenbezogenen Daten ohne neue ausdrückliche Freigabe.
+
+## Quellen und Wartungsgrenze
+
+Entscheidungs- und Evidenzgrenzen sind stabil. Channels, Einwilligungsregeln, Messsysteme und Produktdaten sind veränderlich und brauchen eine aktuelle, kontextspezifische Prüfung.
 
 <!-- chapter-navigation:start -->
 <hr>

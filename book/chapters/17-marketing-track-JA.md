@@ -4,7 +4,7 @@
 
 **状態：** `candidate`。**実験：** `draft / not_run`。この章はレビュー可能なマーケティング判断を教えます。顧客、キャンペーン結果、因果関係の証明を提供するものではありません。
 
-## 問題
+## この章が解決する問題
 
 製品、読者、positioning、証拠、望む行動がなければマーケティングは曖昧になります。データが何を変えるか決める前に個人データを集めたり自動公開したりすれば危険にもなります。
 
@@ -73,6 +73,44 @@ next: 差と限界を記述するだけで causal/winner を言わない。
 - [ ] descriptive count を causal、efficiency、market acceptance にしない。
 - [ ] claim は fact、hypothesis、authorized feedback、削除のいずれかである。
 - [ ] customer evidence がなければ testimonial、scale、adoption、urgency を作らない。
+
+## 学習目標
+
+検証可能な marketing hypothesis を作り、fact と assumption を分け、personal data を集めたり publish したりせずに variant を準備できます。
+
+## 現実の問題：良い言葉は market evidence ではない
+
+分かりやすい introduction は役立っても、demand や causality を証明しません。定義された audience、一つの change、明示した measurement があって初めて判断できます。
+
+### 準備
+
+synthetic product context と local aggregate count table だけを使います。name、email、IP、account、real channel、customer list は使いません。
+
+### タスク
+
+同じ audience と action で introduction を二つ書きます。各文を fact、hypothesis、evidence なしに分類し、最後の分類を削除します。denominator、window、stop、sample が足りない場合の decision を書きます。
+
+### 証拠
+
+context version、variant、claim register、hypothesis card、data dictionary、「not published」の decision を残します。aggregate count や local comprehension check は market acceptance や causality の証拠ではありません。
+
+### 振り返り
+
+evidence がないのに説得的だった文は何ですか。real channel を求める前にどんな data が必要ですか。
+
+## 移行タスク
+
+course の start page に card を適用します。最初の safe action の local description を二つ作ります。popularity や result は主張せず、指定した一人が next step を理解するかだけを確認します。
+
+## 受け入れチェックリスト
+
+- [ ] decision、一つの change、denominator、limit、stop を記録する。
+- [ ] fact、hypothesis、evidence なしを分ける。
+- [ ] 新しい明示的な authorization なしに publish や personal data の収集をしない。
+
+## 出典と保守の境界
+
+decision と evidence の境界は安定しています。channel、consent、measurement、product data は変わるため現在の具体的な review が必要です。
 
 <!-- chapter-navigation:start -->
 <hr>

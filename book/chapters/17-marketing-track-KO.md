@@ -4,7 +4,7 @@
 
 **상태:** `candidate`. **실험:** `draft / not_run`. 이 장은 검토 가능한 마케팅 판단을 가르치며 고객, 캠페인 결과, 인과관계 증명을 제공하지 않습니다.
 
-## 문제
+## 이 장에서 해결하는 문제
 
 제품, 대상, 포지셔닝, 증거, 원하는 행동이 빠지면 마케팅 작업은 모호해집니다. 데이터가 무엇을 바꿔야 하는지 정하기 전에 개인 데이터를 모으거나 자동 게시하면 위험해집니다.
 
@@ -73,6 +73,44 @@ account access도 특정 organization 데이터를 특정 실험에 쓸 권한�
 - [ ] descriptive count를 causal, efficiency, market acceptance로 바꾸지 않는다.
 - [ ] claim은 fact, hypothesis, authorized feedback, 삭제 중 하나다.
 - [ ] customer evidence가 없으면 testimonial, 규모, adoption, urgency를 만들지 않는다.
+
+## 학습 목표
+
+검증 가능한 marketing hypothesis를 만들고 fact와 assumption을 구분하며 personal data 수집이나 publish 없이 variant를 준비할 수 있습니다.
+
+## 실제 문제: 좋은 문구는 market evidence가 아니다
+
+명확한 introduction은 도움이 되어도 demand나 causality를 증명하지 않습니다. 정의된 audience, 하나의 change, 명시한 measurement가 있어야 무엇을 판단할지 결정할 수 있습니다.
+
+### 준비
+
+synthetic product context와 local aggregate count table만 사용합니다. name, email, IP, account, real channel, customer list는 사용하지 않습니다.
+
+### 작업
+
+같은 audience와 action으로 introduction 두 개를 작성합니다. 각 문장을 fact, hypothesis, evidence 없음으로 표시하고 마지막 항목은 제거합니다. denominator, window, stop, sample이 부족할 때의 decision을 적습니다.
+
+### 증거
+
+context version, variant, claim register, hypothesis card, data dictionary, `not published` decision을 보관합니다. aggregate count와 local comprehension check는 market acceptance나 causality를 증명하지 않습니다.
+
+### 회고
+
+evidence 없이 설득력 있어 보인 문장은 무엇이었나요? real channel을 요청하기 전에 어떤 data가 필요한가요?
+
+## 전이 과제
+
+course start page에 카드를 적용합니다. 첫 safe action의 local description 두 개를 만듭니다. popularity나 result를 주장하지 말고 지정한 한 사람이 next step을 이해하는지만 확인합니다.
+
+## 수용 체크리스트
+
+- [ ] decision, 하나의 change, denominator, limit, stop을 기록한다.
+- [ ] fact, hypothesis, evidence 없음을 구분한다.
+- [ ] 새 명시적 authorization 없이 publish하거나 personal data를 수집하지 않는다.
+
+## 출처 및 유지보수 경계
+
+decision과 evidence 경계는 안정적입니다. channel, consent, measurement, product data는 변하므로 현재의 구체적 review가 필요합니다.
 
 <!-- chapter-navigation:start -->
 <hr>
