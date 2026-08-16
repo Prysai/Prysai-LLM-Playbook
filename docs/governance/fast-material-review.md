@@ -30,6 +30,10 @@ effects, a license change, a workflow or security change, or a maturity claim.
      --base-commit $base
    ```
 
+   The command writes to this checkout by default. For a local rehearsal, add
+   `--output-root <empty-local-root>`; it creates the same contribution path
+   under that root without changing the PR checkout.
+
    If the target remote is named differently, use that remote's `main` ref.
    The SHA records the declared baseline; it is not a release tag or proof that
    the contribution was tested against every later commit.

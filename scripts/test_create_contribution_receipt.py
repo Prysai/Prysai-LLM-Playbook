@@ -46,6 +46,16 @@ def main() -> int:
         else:
             raise AssertionError("scaffold accepted an invalid contribution ID")
 
+        parsed = scaffold.parse_args([
+            "--id", "CE-20260815-output-root-sample",
+            "--kind", "protocol",
+            "--fixture-id", "output-root-fixture",
+            "--base-commit", BASE_COMMIT,
+            "--output-root", str(root),
+        ])
+        require(parsed.output_root == str(root), "optional scratch output root was not parsed")
+        fixtures += 1
+
     print(f"CONTRIBUTION_SCAFFOLD_TESTS_OK fixtures={fixtures}")
     return 0
 

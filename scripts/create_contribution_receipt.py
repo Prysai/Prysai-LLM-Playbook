@@ -113,17 +113,23 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--kind", required=True, choices=KINDS, help="fictional material type")
     parser.add_argument("--fixture-id", required=True, help="lowercase kebab-case identifier for the material")
     parser.add_argument("--base-commit", required=True, help="lowercase 40-character commit SHA used as the declared baseline")
+    parser.add_argument(
+        "--output-root",
+        help="optional empty scratch checkout root; defaults to the repository root and still creates evals/contributions/<id>",
+    )
     return parser.parse_args(argv)
 
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     try:
-        directory = create_scaffold(ROOT, args.contribution_id, args.kind, args.fixture_id, args.base_commit)
+        output_root = Path(args.output_root).resolve() if args.output_root else ROOT
+        directory = create_scaffold(output_root, args.contribution_id, args.kind, args.fixture_id, args.base_commit)
     except (OSError, ValueError) as exc:
         print(f"CONTRIBUTION_SCAFFOLD_FAILED: {exc}")
         return 1
-    print(f"CONTRIBUTION_SCAFFOLD_CREATED directory={directory.relative_to(ROOT).as_posix()} kind={args.kind}")
+    display_directory = directory.relative_to(output_root).as_posix()
+    print(f"CONTRIBUTION_SCAFFOLD_CREATED directory={display_directory} kind={args.kind}")
     print("next_step=replace_placeholders_then_run_the_declared_offline_checks")
     return 0
 

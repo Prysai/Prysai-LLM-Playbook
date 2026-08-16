@@ -27,6 +27,11 @@ closes Q-001 or Q-002 by itself.
      --base-commit $base
    ```
 
+   By default this creates the required folder in the current checkout. To
+   rehearse without changing that checkout, add `--output-root <empty-local-root>`.
+   The same `evals/contributions/<contribution-id>/` layout is created there;
+   copy only the completed folder into your PR checkout after reviewing it.
+
    The receipt template remains available for inspection, but the scaffold
    prevents common path and field mistakes. It is not a study generator.
 2. Use only original, fictional, low-risk inputs. Register any external source
