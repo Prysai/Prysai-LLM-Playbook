@@ -30,8 +30,8 @@ Playbookの主力実践トラックはCodexですが、この方法は一つの�
 
 三つすべてに答えられなければ、その主張は`unknown`のままにし、次の確認
 時期を記録してください。このルールの背後にある維持方法は、
-[Platform Adapter Review Skill](../../skills/prysai-platform-adapter-review/SKILL.md)と
-[Platform Fact Watch](../../skills/prysai-platform-fact-watch/SKILL.md)を
+Platform Adapter Review Skillと
+Platform Fact Watchを
 参照してください。
 
 ## 一枚で分かるプラットフォームマップ
@@ -85,7 +85,7 @@ Playbookの主力実践トラックはCodexですが、この方法は一つの�
 回答がブラウジング、メモリ、共有リンクに言及しましたか？推測したことでは
 なく、見たことを記録してください。ChatGPTの主張をソースに基づいて確認
 するには、製品事実の所有者として公式OpenAIヘルプページを使う
-[Source Investigator Skill](../../skills/prysai-source-investigator/SKILL.md)を
+Source Investigator Skillを
 利用してください。
 
 ## Claude Codeの最初のタスク
@@ -142,16 +142,16 @@ Codexは、コンテキスト、ツール、権限、Skills、Agents、検証と
 - テキストのみの入門練習が欲しい場合：[Beginner Practice Pack](../communication-clinic-JA.md)。
 - ファイルとツールを使う本格的な主力トラックが欲しい場合：[First Safe Change](first-safe-change-JA.md)。
 - まずプラットフォーム中立の土台を固めたい場合：[Universal Core Foundations](universal-core-foundations-JA.md)。
-- 二つのプラットフォームを公平に比較したい場合：[LLM Comparison Protocol](../../skills/prysai-llm-comparison-protocol/SKILL.md)。
-- プラットフォームのレッスンをカリキュラムに含めるべきか判断したい場合：[Platform Adapter Review](../../skills/prysai-platform-adapter-review/SKILL.md)。
+- 二つのプラットフォームを公平に比較したい場合：LLM Comparison Protocol。
+- プラットフォームのレッスンをカリキュラムに含めるべきか判断したい場合：Platform Adapter Review。
 
 ## 証拠の状態と境界
 
 このルートは`candidate / not_run`です：構造とチェック項目は存在しますが、
 学習者の実行、プラットフォーム間の実行、独立レビューの記録はありません。
 上記のプラットフォーム別の説明は、一次ドキュメントと日付入りの調査レシート
-（[cross-LLM beginner prompting source receipt](../../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md)、
-[platform teaching boundary card](../../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md)）から
+（cross-LLM beginner prompting source receipt、
+platform teaching boundary card）から
 導出された方向づけです。これは、あるプラットフォームが他と同一に動作する
 こと、タスクがどこでも成功すること、製品機能が同等であることの証拠では
 ありません。プラットフォーム固有のコマンド、権限、価格、利用可否は変動し
