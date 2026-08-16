@@ -475,5 +475,6 @@ Die [Aufzeichnung der Feldprobleme](../../docs/research/chapter-02-field-problem
 enthält Nutzerberichte und Community-Vorschläge, keine offiziellen
 Root-Cause-Bestätigungen. Dieses Kapitel bleibt `candidate`, das Experiment
 `draft / not_run`, bis ein frischer, begrenzter Lauf die erklärten Belege
-erzeugt. Das deutsche Kapitel 3 ist noch nicht verfügbar; den aktuellen Stand
-zeigt das [deutsche Inhaltsverzeichnis](../table-of-contents-DE.md).
+erzeugt. Als Nächstes folgt [Kapitel 3: Einen Wunsch in ein Aufgabenprotokoll
+verwandeln](03-task-protocol-DE.md). Dieser Übergang bleibt auf Deutsch;
+behandle keine Seite in einer anderen Sprache als seine Fortsetzung.

@@ -4,7 +4,7 @@
 
 Dies ist ein deutscher Leseweg, keine vollständige Übersetzung des Buchs. Der
 kanonische Katalog enthält 22 Kapitel im Status `candidate` und 18 Labs im
-Status `draft`. Derzeit stehen drei Kapitel und drei Labs auf Deutsch bereit.
+Status `draft`. Derzeit stehen vier Kapitel und vier Labs auf Deutsch bereit.
 Jeder Link auf dieser Seite führt zum entsprechenden deutschen Inhalt. Fehlt
 eine `-DE`-Datei, wird sie als nicht verfügbar ausgewiesen, statt auf ein
 anderes Kapitel oder in eine andere Sprache zu verweisen.
@@ -15,10 +15,12 @@ anderes Kapitel oder in eine andere Sprache zu verweisen.
    eine Übung mit fiktivem Text, ohne Installation oder externe Aktion.
 2. [Kapitel 1: GPT verstehen, bevor man Codex versteht](chapters/01-gpt-and-codex-DE.md)
    → [Lab 011: GPT, Codex, Tools und Agents unterscheiden](labs/lab-011-gpt-codex-boundaries-DE.md).
-3. [Kapitel 4: Kontext, Berechtigungen und die Aktionsgrenze des Agents](chapters/04-context-permissions-and-agent-DE.md)
-   → [Lab 007: Aktionsgrenzen](labs/lab-007-action-boundaries-DE.md).
-4. [Lab 001: Erste sichere Aufgabe](labs/lab-001-first-safe-task-DE.md) —
-   eine risikoarme erste Aufgabe nachvollziehbar strukturieren.
+3. [Kapitel 2: Die erste sichere und überprüfbare Aufgabe erledigen](chapters/02-first-safe-task-DE.md)
+   → [Lab 001: Erste sichere Aufgabe](labs/lab-001-first-safe-task-DE.md).
+4. [Kapitel 3: Einen Wunsch in ein Aufgabenprotokoll verwandeln](chapters/03-task-protocol-DE.md)
+   → [Lab 002: Einen Wunsch in ein Aufgabenprotokoll verwandeln](labs/lab-002-task-protocol-DE.md).
+5. [Kapitel 4: Kontext, Berechtigungen und die Aktionsgrenze des Agents](chapters/04-context-permissions-and-agent-DE.md)
+    → [Lab 007: Aktionsgrenzen](labs/lab-007-action-boundaries-DE.md).
 
 Diese Materialien bleiben `candidate` oder `draft / not_run`. Ein vorhandener
 Leseweg beweist weder Übersetzungsqualität noch Modellläufe, Lernerfolg oder
@@ -30,7 +32,7 @@ Transfer.
 | --- | --- |
 | 01 — GPT verstehen, bevor man Codex versteht | [Verfügbar: Kapitel 1](chapters/01-gpt-and-codex-DE.md) · `candidate / in-progress` |
 | 02 — Eine erste sichere, überprüfbare Aufgabe erledigen | [Verfügbar: Kapitel 2](chapters/02-first-safe-task-DE.md) · `candidate / in-progress` |
-| 03 — Einen Wunsch in ein Aufgabenprotokoll verwandeln | Deutsche Datei noch nicht vorhanden. |
+| 03 — Einen Wunsch in ein Aufgabenprotokoll verwandeln | [Verfügbar: Kapitel 3](chapters/03-task-protocol-DE.md) · `candidate / in-progress` |
 | 04 — Kontext, Berechtigungen und die Aktionsgrenze des Agents | [Verfügbar: Kapitel 4](chapters/04-context-permissions-and-agent-DE.md) · `candidate / in-progress` |
 | 05 — Die richtige Codex-Arbeitsfläche wählen | Deutsche Datei noch nicht vorhanden. |
 | 06 — Modellauswahl ist keine Modellverehrung | Deutsche Datei noch nicht vorhanden. |
@@ -56,7 +58,7 @@ Transfer.
 | Kanonisches Lab | Status des deutschen Lesewegs |
 | --- | --- |
 | 001 — Erste sichere Aufgabe | [Verfügbar: Lab 001](labs/lab-001-first-safe-task-DE.md) · `draft / not_run` |
-| 002 — Aufgabenprotokoll | Deutsche Datei noch nicht vorhanden. |
+| 002 — Aufgabenprotokoll | [Verfügbar: Lab 002](labs/lab-002-task-protocol-DE.md) · `draft / not_run` |
 | 003 — Evidenzprüfung | Deutsche Datei noch nicht vorhanden. |
 | 004 — Die kleinste wirksame Fähigkeit auswählen | Deutsche Datei noch nicht vorhanden. |
 | 005 — Eine wiederholte Methode in einen abgegrenzten Skill verwandeln | Deutsche Datei noch nicht vorhanden. |
