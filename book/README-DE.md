@@ -62,7 +62,7 @@ Inhaltsstatus ist `candidate`. Für die Kapitel 19–22 existieren Entwürfe; ih
 Status bleibt jedoch „Entwurf geschrieben, Fresh-Context-Vortest ausstehend“.
 Die Dateien sind vorhanden, aber Ausführungs- und Prüfbelege fehlen noch.
 
-Die Evaluations-Fixtures umfassen 39 feste Aufgaben in 16 Spuren. Sie sind
+Die Evaluations-Fixtures umfassen 40 feste Aufgaben in 16 Spuren. Sie sind
 `candidate`, ihr `run_status` ist `not_run`, und die Prüfung bleibt bis zu
 Modellausführungsprotokollen auf statische Struktur beschränkt. Die Sammlung
 enthält 18 Labs; jedes ist derzeit `draft` mit `run_status: not_run`.

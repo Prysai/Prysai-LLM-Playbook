@@ -18,11 +18,12 @@ descartable, una sola edición permitida y una condición de aceptación visible
 La ruta está en traducción `in-progress`; no afirma revisión lingüística
 independiente ni ejecución de aprendices.
 
-Cuando termines esa práctica, continúa con el Capítulo 2: primera tarea
-segura y verificable (versión en español aún no disponible) y el Lab 001:
-primera tarea segura (versión en español aún no disponible). Ambos son cortes
-españoles completos en estado `candidate` / `draft`: su revisión lingüística
-independiente y sus datos de ejecución por aprendices siguen pendientes.
+Cuando termines esa práctica, el siguiente contenido canónico es el Capítulo 2:
+primera tarea segura y verificable y el Lab 001: primera tarea segura. Sus
+versiones en español aún no existen; no se presentan como una traducción ni
+como una ruta local en español. Los estados `candidate` / `draft` de las
+fuentes canónicas no prueban revisión lingüística independiente ni datos de
+ejecución por aprendices.
 
 Este directorio contiene el manuscrito original de la ruta principal de
 Prysai LLM Playbook. El manuscrito no es una combinación de
