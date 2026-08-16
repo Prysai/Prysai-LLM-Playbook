@@ -90,8 +90,6 @@ C1 は別 record にし、修正後の B1 を新しい baseline にしません�
 - [ ] 独立第二採点者がいるか、保持・転移を未主張にした。
 - [ ] ネットワーク、秘密、連絡、予約、購入、公開、自動リマインダーを使わなかった。
 
-調査は想起、フィードバック、遅延確認、転移という設計判断を支えますが、このLabが学習を改善することやモデルが有効な教師であることは証明しません。`draft / not_run` のままです。
-
 <!-- lab-navigation:start -->
 <hr>
 <nav class="lab-navigation" aria-label="Labナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-017-skill-discovery-audit-JA.md">← 前へ<br><strong>Lab 017 · Skill 発見の監査</strong></a></td><td align="right"></td></tr></table></nav>
