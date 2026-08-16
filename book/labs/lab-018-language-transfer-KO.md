@@ -52,7 +52,35 @@ C1에는 모델 답을 보이지 않습니다. 역 안내소에서 Valencia행 1
 
 B1 전에 ±1일의 7일 창을 선언하고 카드 풀 D1/D2/D3를 미리 배정합니다. 전체 카드는 연습 기록 밖에 둡니다. 이는 자동 알림도 7일이 충분하다는 주장도 아닙니다. 이후 실제 지연, 카드, 풀 revision, 배정, 노출, 보조, 공개 시각을 기록합니다. 노출이 `yes` 또는 `unknown`이면 미확인이 아니라 변경된 지연 과제입니다. 독립 점수가 불일치하면 유지ㆍ전이를 주장하지 않습니다.
 
+## 인상이 아니라 record 남기기
+
+각 attempt를 같은 local record에 남깁니다. 항목이 없으면 `unknown` 또는 `not_run`이라고 쓰고 나중에 더 좋아 보이는 이야기로 채우지 않습니다.
+
+```text
+run_id | 날짜 | 목표 언어 | card_id | 5분 제한 | 허용 보조
+원래 시도 | 채점자 | 다섯 행 score와 근거 | hint level | 학습자 수정
+first pass 여부 | rework count | model/surface(사용한 경우) | unknown | status
+```
+
+C1은 별도 record로 남기고 수정한 B1을 새 baseline으로 쓰지 않습니다. 지연 과제는 window, 배정 D card, card pool revision을 먼저 기록하고 window 전에는 학습자에게 완전한 D card를 보여 주지 않습니다. 실제 자동 reminder가 없다면 return instruction만 저장하며 “system이 알려 준다”고 말하지 않습니다.
+
+### scorer가 다를 때
+
+두 scorer는 서로의 score를 보기 전에 각 행의 짧은 근거를 씁니다. 한 행이라도 1점보다 차이가 나거나 pass/fail이 갈리면 두 score와 원문을 보존하고 status를 `disagreement`로 둡니다. 유지나 전이를 선언하지 않습니다. 이전 결과를 모르는 세 번째 scorer가 같은 text와 rubric으로 다시 검토할 수 있지만, 그래도 rubric 신뢰도나 모든 학습자에 대한 적용을 증명하지는 않습니다.
+
 «즉시 카드에 통과했으니 여행 스페인어를 유창하게 숙달했다고 선언하라»는 요청은 거절하거나 좁은 주장으로 답합니다. 과제, 조건, 점수, 힌트, 변화는 말할 수 있어도 넓은 어휘, 듣기, 자발 대화, 지속 유지, 숙련은 추론하지 않습니다.
+
+## 회고
+
+hint 없이 쓴 문장은 무엇인가요? C1로 바뀐 뒤 가장 불안정했던 것은 무엇인가요? 지연 과제가 아직 실행되지 않았다면 정확히 어떤 evidence가 빠졌나요? 총점만이 아니라 원문과 함께 남깁니다.
+
+## 출처와 경계
+
+- [학습 실습 계약](../guides/learning-practice-contract-KO.md) — evidence와 answer leakage 규칙.
+- [초보자 연습 팩](../communication-clinic-KO.md) — 세 단계 언어 연습 경로.
+- [지연 확인 카드 풀](../../docs/quality/lab-018-delayed-card-pool-v1.md) — 이 프로젝트가 작성한 사전 선언 card와 채점 통제 절차.
+
+조사는 회상, feedback, 지연 확인, transfer 설계 판단을 뒷받침합니다. 이 Lab이 학습을 개선하거나 어떤 model/platform이 효과적인 교사임을 증명하지 않습니다. 상태는 `draft / not_run`입니다.
 
 - [ ] B1을 목표 언어 힌트 전에 시도했다.
 - [ ] 시간, 보조, rubric, 임계값, 채점자를 기록했다.

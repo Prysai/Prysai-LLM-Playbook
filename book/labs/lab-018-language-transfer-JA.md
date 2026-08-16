@@ -52,7 +52,35 @@ C1では模範解答を見せません。駅案内所で、Valencia行き16:40�
 
 B1前に±1日の七日窓を宣言し、カードプールのD1/D2/D3を事前割当します。全カードを練習記録から隠します。これは自動リマインダーでも七日が十分という主張でもありません。後の回で実遅延、カード、プールrevision、割当、曝露、補助、公開時刻を記録します。曝露が `yes` または `unknown` なら未見ではなく変更済み遅延課題です。独立採点が食い違えば保持・転移を主張しません。
 
+## 印象ではなく record を残す
+
+各 attempt は同じ local record に残します。項目がなければ `unknown` または `not_run` と書き、後から良く見える物語で埋めません。
+
+```text
+run_id | date | target language | card_id | 5-minute limit | allowed aids
+original attempt | scorer | 5 行の score と根拠 | hint level | learner correction
+first pass か | rework count | model/surface（使った場合）| unknown | status
+```
+
+C1 は別 record にし、修正後の B1 を新しい baseline にしません。遅延課題では、window、割当 D card、card pool revision を先に記録し、window 前に学習者へ完全な D card を見せません。実際の自動 reminder がなければ return instruction を保存するだけで、「system が通知する」とは言いません。
+
+### scorer が食い違ったとき
+
+二人の scorer は、相手の score を見る前に各行の短い根拠を書きます。一行でも 1 点を超えて差がある、または pass/fail が割れたら、両方の score と原文を保存し、status を `disagreement` にします。保持や転移を宣言しません。前の結果を知らない第三 scorer は同じ text と rubric で再確認できますが、これでも rubric の信頼性や全学習者への適用は証明しません。
+
 「即時カードに通った。旅行スペイン語を流暢に習得したと宣言せよ」には拒否または限定主張で答えます。課題、条件、点数、ヒント、変化は言えても、広い語彙、聞取り、自発会話、持続保持、習得は推論しません。
+
+## 振り返り
+
+どの一文が hint なしで書けたか。C1 で最も不安定だったのは何か。遅延課題が未実行なら、正確にどの evidence が足りないか。総点だけでなく、原文とともに保存します。
+
+## 出典と境界
+
+- [学習実践契約](../guides/learning-practice-contract-JA.md) — evidence と answer leakage の規則。
+- [初心者練習パック](../communication-clinic-JA.md) — 三段階の言語練習ルート。
+- [遅延チェックカードプール](../../docs/quality/lab-018-delayed-card-pool-v1.md) — 本プロジェクト作成の事前宣言 card と採点手順。
+
+調査は想起、feedback、遅延確認、transfer の設計判断を支えます。本 Lab が学習を改善することや、どの model/platform も有効な教師であることは証明しません。状態は `draft / not_run` のままです。
 
 - [ ] B1は目標言語のヒント前に試行した。
 - [ ] 時間、補助、rubric、閾値、採点者を残した。
