@@ -190,4 +190,6 @@ Beantworte im Datensatz:
 Diese Kandidatenübersetzung ist lesbar, bleibt aber bis zu unabhängigem
 Sprachreview `in-progress`. Lesen oder statisches Review beweisen weder einen
 erfolgreichen Lernerlauf noch Änderungen an Sicherheit, Produktivität, Effizienz
-oder Lernfähigkeit.
+oder Lernfähigkeit. Wenn du bereit bist, fahre mit [Kapitel 4: Kontext,
+Berechtigungen und die Aktionsgrenze des Agents](../chapters/04-context-permissions-and-agent-DE.md)
+fort. Dieser Weg bleibt auf Deutsch.

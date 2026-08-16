@@ -190,4 +190,6 @@ Responde en tu registro:
 Esta traducción candidata puede leerse, pero sigue `in-progress` hasta revisión
 independiente de idioma. Leerla o hacer una revisión estática no prueba que un
 aprendiz completó el Lab ni que cambiaron seguridad, productividad, eficiencia
-o capacidad de aprendizaje.
+o capacidad de aprendizaje. Cuando estés listo, continúa con el [Capítulo 4:
+contexto, permisos y límites de acción del Agent](../chapters/04-context-permissions-and-agent-ES.md).
+La ruta se mantiene en español.
