@@ -4,7 +4,7 @@
 
 Dies ist ein deutscher Leseweg, keine vollständige Übersetzung des Buchs. Der
 kanonische Katalog enthält 22 Kapitel im Status `candidate` und 18 Labs im
-Status `draft`. Derzeit stehen sieben Kapitel und elf Labs auf Deutsch bereit.
+Status `draft`. Derzeit stehen acht Kapitel und elf Labs auf Deutsch bereit.
 Jeder Link auf dieser Seite führt zum entsprechenden deutschen Inhalt. Fehlt
 eine `-DE`-Datei, wird sie als nicht verfügbar ausgewiesen, statt auf ein
 anderes Kapitel oder in eine andere Sprache zu verweisen.
@@ -42,7 +42,7 @@ Transfer.
 | 05 — Die richtige Codex-Arbeitsfläche wählen | [Verfügbar: Kapitel 5](chapters/05-choose-the-codex-surface-DE.md) · `candidate / in-progress` |
 | 06 — Modellauswahl ist keine Modellverehrung | [Verfügbar: Kapitel 6](chapters/06-model-selection-DE.md) · `candidate / in-progress` |
 | 07 — Skills, Plugins, MCP und Tools | [Verfügbar: Kapitel 7](chapters/07-skills-plugins-and-tools-DE.md) · `candidate / in-progress` |
-| 08 — Der vollständige Lebenszyklus von Definition bis Lieferung | Deutsche Datei noch nicht vorhanden. |
+| 08 — Der vollständige Lebenszyklus von Definition bis Lieferung | [Verfügbar: Kapitel 8](chapters/08-full-lifecycle-workflow-DE.md) · `candidate / in-progress` |
 | 09 — Überprüfung, Zweifel und Wiederherstellung | Deutsche Datei noch nicht vorhanden. |
 | 10 — Planung und vertikale Schnitte | Deutsche Datei noch nicht vorhanden. |
 | 11 — Einen wirklich nützlichen Skill entwerfen | Deutsche Datei noch nicht vorhanden. |
