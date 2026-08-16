@@ -6,14 +6,16 @@
 **Idiomas:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-## Empieza con una práctica segura, no con una instalación
+## Empieza con una tarea de texto segura, sin instalación
 
-¿Es tu primera vez con una carpeta de proyecto? Abre
-[Primer cambio seguro](book/routes/first-safe-change-ES.md). Es una práctica
-local y descartable con un README, un cambio permitido y una comprobación
-visible; no pide una cuenta, red, instalación ni un proyecto real. Es una
-traducción `in-progress`, no una revisión lingüística independiente ni
-evidencia de aprendizaje.
+Si hoy solo quieres probar un chat de texto, abre la
+[ruta universal de primera tarea](book/routes/universal-core-foundations-ES.md).
+Usa un aviso ficticio, escribe una petición con resultado, material, forma de
+respuesta, comprobación y límite de parada, y revisa tú mismo la respuesta.
+No necesitas una cuenta especial, código, archivos, una red, datos privados ni
+una acción real. Esta traducción está `in-progress`; no es una revisión
+lingüística independiente ni evidencia de aprendizaje, y no afirma que los
+productos de LLM se comporten igual.
 
 Prysai LLM Playbook no es un directorio que se limite a
 enumerar skills ni un manual que solo explique pasos de instalación. Es un
@@ -87,17 +89,14 @@ instalaciones no demuestra dominio.
 
 ## Estado actual
 
-El proyecto se encuentra en la fase de base de producto v0.1: se ha completado
-la auditoría a nivel de catálogo de seis fuentes de entrada, y ya existen una
-estructura de 22 capítulos, 17 experimentos, investigación de problemas
-reales, 7 Skills candidatas y 40 fixtures de evaluación. El texto principal
-del libro se está desarrollando actualmente en chino simplificado; la página
-pública de presentación tiene el inglés como idioma predeterminado y ofrece
-un cambio al chino. Los capítulos 19–22, todas las Skills candidatas y las
-evaluaciones de modelos y flujos de trabajo todavía necesitan una prueba
-previa con contexto fresco y registros de ejecución. Los materiales externos
-no entran en la ruta principal sin revisar antes su fuente, licencia y
-contenido.
+La fuente canónica en inglés contiene 22 capítulos `candidate`, 18 Labs
+`draft`, 23 Skills propias `candidate` y 40 fixtures de evaluación
+`candidate`. Las comprobaciones estructurales existen, pero no sustituyen
+resultados de aprendizaje, transferencia, evaluación repetida ni revisión
+independiente. Esta entrada y las unidades españolas disponibles siguen en
+`in-progress`; no constituyen un curso completo en español ni una revisión
+lingüística independiente. Los materiales externos no entran en la ruta
+principal sin revisar antes su fuente, licencia y contenido.
 
 Los identificadores de estado `candidate`, `draft` y `not_run` se mantienen
 sin traducir para que sigan siendo inequívocos en los archivos y validadores.

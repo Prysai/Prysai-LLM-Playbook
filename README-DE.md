@@ -9,14 +9,16 @@
 **Sprachen:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-## Beginne mit einer sicheren Übung, nicht mit einer Installation
+## Beginne mit einer sicheren Textaufgabe, nicht mit einer Installation
 
-Wenn du zum ersten Mal mit einem Projektordner arbeitest, öffne zuerst
-[Die erste sichere Änderung](book/routes/first-safe-change-DE.md). Das ist eine
-lokale, wegwerfbare Übung mit einem README, einer erlaubten Änderung und einem
-sichtbaren Check; kein Konto, Netzwerk, keine Installation und kein echtes
-Projekt sind nötig. Die Übersetzung ist `in-progress`; sie ist weder
-unabhängig sprachgeprüft noch ein Lernnachweis.
+Wenn du heute nur einen gewöhnlichen Textchat ausprobieren möchtest, öffne
+zuerst die [universelle Route für die erste Aufgabe](book/routes/universal-core-foundations-DE.md).
+Du verwendest nur eine fiktive Mitteilung, formulierst eine Anfrage mit
+Ergebnis, Material, Antwortform, Prüfung und Stopp-Punkt und prüfst die Antwort
+selbst. Weder ein besonderes Konto noch Code, Dateien, Netzwerk, private Daten
+oder eine echte Aktion sind nötig. Die Übersetzung ist `in-progress`; sie ist
+weder unabhängig sprachgeprüft noch ein Lernnachweis und behauptet nicht, dass
+LLM-Produkte gleich funktionieren.
 
 `Prysai LLM Playbook` ist ein eigenständiges, buchähnliches
 Lern- und Praxissystem für GPT, Codex, Tools, Skills, Agents und die Prüfung
