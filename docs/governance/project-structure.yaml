@@ -9,7 +9,7 @@
       "role": "Repository automation and quality gates.",
       "entry": ".github/workflows/quality.yml",
       "first_read": ".github/workflows/quality.yml",
-      "canonical_sources": [".github/workflows/quality.yml", ".github/workflows/pages.yml"],
+      "canonical_sources": [".github/workflows/quality.yml", ".github/workflows/release-gate.yml", ".github/workflows/pages.yml"],
       "generated_outputs": []
     },
     {

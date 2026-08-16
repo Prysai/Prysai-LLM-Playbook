@@ -1,31 +1,26 @@
-name: Prysai LLM Playbook quality
-
-concurrency:
-  group: quality-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+name: Prysai LLM Playbook release gate
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    # A PR that changes only an original fictional contribution uses the
-    # bounded fast workflow below. Any other touched path still runs this full
-    # release-evidence matrix.
-    paths-ignore:
-      - "evals/contributions/**"
+  workflow_dispatch:
+    inputs:
+      candidate_sha:
+        description: "Exact reviewed commit SHA to evaluate for a formal release"
+        required: true
+        type: string
 
 permissions:
   contents: read
 
 jobs:
-  candidate-evidence:
+  enforce-release-readiness:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - name: Check out repository
+      - name: Check out reviewed candidate
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          # Pull requests are untrusted; the read-only token does not need to remain in Git config.
+          ref: ${{ inputs.candidate_sha }}
+          fetch-depth: 0
           persist-credentials: false
 
       - name: Set up Python
@@ -49,19 +44,14 @@ jobs:
       - name: Install Chromium for browser checks
         run: npx playwright install --with-deps chromium
 
-      - name: Validate release evidence contract
-        run: python scripts/build_release_evidence.py --check
-
-      - name: Run gates and build commit-bound release evidence
-        id: release_evidence
-        continue-on-error: true
+      - name: Run formal release gate
         env:
           RELEASE_EVIDENCE_DIR: ${{ github.workspace }}/.work/release-evidence
           RELEASE_EVIDENCE_RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: >-
           python scripts/build_release_evidence.py
           --output-dir "$RELEASE_EVIDENCE_DIR"
-          --candidate-sha "$GITHUB_SHA"
+          --candidate-sha "${{ inputs.candidate_sha }}"
           --repository "$GITHUB_REPOSITORY"
           --workflow-run-url "$RELEASE_EVIDENCE_RUN_URL"
 
@@ -69,19 +59,10 @@ jobs:
         if: always()
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: release-evidence-${{ github.sha }}
+          name: release-evidence-${{ inputs.candidate_sha }}
           path: ${{ github.workspace }}/.work/release-evidence
-          if-no-files-found: error
-          retention-days: 30
-
-      - name: Upload browser failure evidence
-        if: steps.release_evidence.outcome != 'success'
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
-        with:
-          name: browser-smoke-failure-${{ github.sha }}
-          path: ${{ github.workspace }}/.work/browser-smoke
           if-no-files-found: warn
-          retention-days: 14
+          retention-days: 30
 
       - name: Publish release evidence summary
         if: always()
@@ -92,5 +73,5 @@ jobs:
             cat "$RELEASE_EVIDENCE_DIR/release-evidence.md" >> "$GITHUB_STEP_SUMMARY"
           else
             echo "# Release evidence unavailable" >> "$GITHUB_STEP_SUMMARY"
-            echo "The packet was not generated; inspect the preceding steps." >> "$GITHUB_STEP_SUMMARY"
+            echo "The formal gate did not create a packet; inspect the preceding steps." >> "$GITHUB_STEP_SUMMARY"
           fi
