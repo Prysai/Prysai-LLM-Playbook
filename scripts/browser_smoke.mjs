@@ -283,8 +283,8 @@ try {
   await everydayPromptDeck.locator('#skill-prompt-status').getByText(/Prompt copied\. Follow the three steps/i).waitFor();
   assert.match(
     await page.locator('.hero-scope').innerText(),
-    /Six platforms, one method[\s\S]*Codex flagship track/i,
-    'hero does not state the six-platform guided scope before route selection',
+    /One transferable method[\s\S]*Codex[\s\S]*current sources[\s\S]*runnable evidence/i,
+    'hero overstates named-platform coverage or omits the adapter evidence boundary',
   );
   const lessonZeroLink = page.getByRole('link', { name: 'Lesson 0: what an LLM is' });
   assert.match(
