@@ -102,8 +102,8 @@ Codex 行为、迁移、发布、回滚演练或生产就绪性。学习者和�
 <nav class="lab-navigation" aria-label="实验导航">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-lab-nav="previous" href="../README-ZH.md#当前可用的中文实验" aria-label="返回中文实验索引：实验 012 尚在迁移中">← 上一项待翻译<br><strong>返回中文索引查看英文源文件</strong></a></td>
-      <td align="right"><a data-lab-nav="next" href="../README-ZH.md#当前可用的中文实验" aria-label="返回中文实验索引：实验 014 尚在迁移中">下一项待翻译 →<br><strong>返回中文索引查看英文源文件</strong></a></td>
+      <td align="left"><a data-lab-nav="previous" href="lab-012-team-capability-migration-ZH.md" aria-label="上一个实验：实验 012·把个人方法迁移为团队能力">← 上一个实验<br><strong>实验 012·把个人方法迁移为团队能力</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-014-resume-reconciliation-ZH.md" aria-label="下一个实验：实验 014·恢复任务前的状态对账">下一个实验 →<br><strong>实验 014·恢复任务前的状态对账</strong></a></td>
     </tr>
   </table>
 </nav>

@@ -57,5 +57,5 @@ transfer_limitations: "静态样本不能证明真实 Skill 可以加载、行�
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="实验导航"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-016-side-effect-boundary-ZH.md">← 上一个实验<br><strong>实验 016 · 副作用边界</strong></a></td><td align="right"><a data-lab-nav="next" href="../README-ZH.md">下一项待补全 →<br><strong>查看实验 018 的可用状态</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="实验导航"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-016-side-effect-boundary-ZH.md">← 上一个实验<br><strong>实验 016 · 副作用边界</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-018-language-transfer-ZH.md">下一个实验 →<br><strong>实验 018 · 旅行打字对话的保持与迁移</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

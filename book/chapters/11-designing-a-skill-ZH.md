@@ -164,7 +164,7 @@ Skill 的触发契约、渐进披露、失败处理、任务集评测和证据�
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-ZH.md" aria-label="上一章：第 10 章·规划与竖向切片">← 上一章<br><strong>第 10 章·规划与竖向切片</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="../table-of-contents-ZH.md#第-12-章agent-的循环状态和停止条件" aria-label="返回中文目录：第 12 章尚在迁移中">下一章待翻译 →<br><strong>返回中文目录查看英文源文件</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-ZH.md" aria-label="下一章：第 12 章·Agent 的循环、状态和停止条件">下一章 →<br><strong>第 12 章·Agent 的循环、状态和停止条件</strong></a></td>
     </tr>
   </table>
 </nav>

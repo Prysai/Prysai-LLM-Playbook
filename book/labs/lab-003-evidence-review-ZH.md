@@ -85,7 +85,7 @@ transfer_limitations: "静态审计不能证明被引用产物在检查范围外
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-lab-nav="previous" href="lab-002-task-protocol-ZH.md" aria-label="上一个实验：实验 002·把一个愿望变成任务协议">← 上一个实验<br><strong>实验 002·任务协议</strong></a></td>
-      <td align="right"><a data-lab-nav="next" href="../README-ZH.md#当前可用的中文实验" aria-label="返回中文实验索引：实验 004 尚在迁移中">下一项待翻译 →<br><strong>返回中文索引查看英文源文件</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-004-skill-selection-ZH.md" aria-label="下一个实验：实验 004·选择最小有用能力">下一个实验 →<br><strong>实验 004·选择最小有用能力</strong></a></td>
     </tr>
   </table>
 </nav>

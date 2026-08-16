@@ -335,4 +335,4 @@ status: passed | failed | stopped
 
 任务协议、证据层和恢复顺序是本项目稳定的教学方法。产品具体权限、沙盒默认值、CLI 命令、审查工作面、模型名称和 UI 状态属于易变事实。相关事实变化时，重新检查[第 2 章官方基线](../../docs/research/chapter-02-official-baseline-2026-08-10.md)和[内容生命周期](../../docs/governance/content-lifecycle.md)。
 
-[现场问题记录](../../docs/research/chapter-02-field-problems-2026-08-10.md)包含用户报告和社区建议，不是官方根因确认。本章保持 `candidate`，实验保持 `draft / not_run`，直到新的、有边界的运行产生所声明的证据。下一章的中文正文尚未提供；请从[中文目录](../table-of-contents-ZH.md)继续选择已提供的中文单元。阅读器应显示中文的“暂不可用”说明，而不是把你静默带到英文页面。
+[现场问题记录](../../docs/research/chapter-02-field-problems-2026-08-10.md)包含用户报告和社区建议，不是官方根因确认。本章保持 `candidate`，实验保持 `draft / not_run`，直到新的、有边界的运行产生所声明的证据。
