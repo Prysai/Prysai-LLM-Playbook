@@ -28,8 +28,10 @@ catalogue before beginning.
 > This is a development candidate, not a finished course.
 
 <!-- language-switcher:start -->
-**Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
+**Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md)
 <!-- language-switcher:end -->
+
+**New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) for one clear first task. This repository remains the auditable source.
 
 [Start with Chapter 0](book/guides/llm-fundamentals-EN.md) · [Continue to Chapter 1](book/chapters/01-gpt-and-codex-EN.md) · [Then Chapter 2](book/chapters/02-first-safe-task-EN.md) · [Prepare a safe offline fixture](book/routes/first-safe-change-EN.md)
 
@@ -258,9 +260,10 @@ source or generated.
 
 The Reader opens Chapter 1 when entered without a path. It is a dependency-free
 reading view over the Markdown sources, with a chapter list, current-page
-outline, and previous/next controls. The repository includes the shell and the
-Pages workflow; a successful artifact build is not proof that a public Pages
-URL is currently enabled.
+outline, and previous/next controls. The public reading site is reachable at
+[docs.prysai.com/llm-playbook](https://docs.prysai.com/llm-playbook/).
+A successful artifact build or a reachable URL still does not prove search
+indexing, reader acceptance, or release readiness.
 
 ## See the method produce an artifact
 
@@ -454,13 +457,14 @@ for common changes.
 | **Evaluation** | [`evals/`](evals/) and [`docs/quality/`](docs/quality/) | Fixed tasks, quality standards, and review records | Tests whether the curriculum and Skills work |
 | **Governance** | [`docs/governance/`](docs/governance/) and [`docs/adr/`](docs/adr/) | Ownership, sources, status, locale identity, updates, and decisions | Keeps a changing system maintainable |
 | **Research** | [`docs/research/`](docs/research/) | Official fact cards and real-world problem reports | Connects stable principles to current reality |
-| **Visual showcase** | [`site/`](site/) | A candidate visual learning-path surface | Gives readers a browsable overview; Pages deployment is pending |
+| **Visual showcase** | [`site/`](site/) | A candidate visual learning-path surface | Gives readers a browsable overview at [docs.prysai.com/llm-playbook](https://docs.prysai.com/llm-playbook/); reader acceptance and rollback evidence remain pending |
 | **Checks** | [`scripts/`](scripts/) | Link, localization, status, content, and archive validators | Converts project rules into repeatable evidence |
 
-The visual showcase and the repository are complementary: the local site and
-future Pages release help a reader choose a route; the repository keeps the
-source, evidence, history, and governance visible. The repository is currently
-private and Pages deployment is not live.
+The visual showcase and the repository are complementary: the public site
+helps a reader choose a route; the repository keeps source, evidence, history,
+and governance visible. Public access does not change the curriculum's
+`candidate` status or establish search indexing, learner outcomes, or rollback
+readiness.
 
 ## Real-world problems, handled honestly
 
@@ -497,7 +501,7 @@ records what can be used as research, what can be adapted, and what must not be 
 
 ## Current state
 
-This is a transparent snapshot as of **2026-08-14**. Counts describe the
+This is a transparent snapshot as of **2026-08-16**. Counts describe the
 repository; they do not describe learning outcomes.
 
 | Area | Current state | What the state means |
@@ -507,7 +511,7 @@ repository; they do not describe learning outcomes.
 | Labs | 18 labs · `draft` · `run_status: not_run` | The contracts exist; the repository does not claim that every lab has been freshly executed |
 | Skills | 25 project Skills · `candidate` | Structural checks pass; fresh-context evidence is partial and remains visible in the registry |
 | Evaluation fixtures | 40 fixtures · `candidate` · `not_run` | The task set is defined; model execution logs are not being implied |
-| Public showcase | `candidate` | English default and Chinese runtime toggle are implemented; broader visual and locale coverage remains work |
+| Public showcase | `candidate`, publicly reachable | Six localized entry URLs are deployed; indexing, reader acceptance, deployment evidence, and rollback remain unproven |
 | Locale rollout | EN source plus five candidate translations in progress | Every locale has 40 / 40 chapter-and-Lab files and same-locale routes; independent language review and supplemental-material coverage remain incomplete |
 
 The [current status source](docs/governance/content-status.yaml) is authoritative
