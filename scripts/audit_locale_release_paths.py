@@ -61,6 +61,11 @@ def check_reader_links(path: Path, locale: str, problems: list[str]) -> None:
             continue
         if not target_relative.parts or target_relative.parts[0] != "book":
             continue
+        if not target_path.is_file():
+            problems.append(
+                f"{path.relative_to(ROOT)}: reader link targets a missing local file {target}"
+            )
+            continue
         suffix = target_path.stem.rsplit("-", 1)[-1].upper()
         if suffix in LOCALES and suffix != locale:
             problems.append(
