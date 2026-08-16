@@ -46,7 +46,7 @@ quality, learner outcomes, or release readiness.
 | Locale | Readable course units | Current boundary |
 |---|---:|---|
 | English | 40 / 40 | Canonical source language. |
-| Simplified Chinese | 22 / 40 | Candidate route through Chapter 12, including ten Labs; English-source alignment and independent language review pending. |
+| Simplified Chinese | 27 / 40 | Candidate coverage through Chapter 12, including fifteen Labs and a Chinese starter-card subset; independent language review pending. |
 | Spanish | 6 / 40 | Entry, a safe-practice route, and the first chapter/Lab pair; independent language review pending. |
 | Japanese | 5 / 40 | Entry, scattered translation slices, and the first safe-task Lab; independent language review pending. |
 | Korean | 5 / 40 | Entry, scattered translation slices, and the first safe-task Lab; independent language review pending. |

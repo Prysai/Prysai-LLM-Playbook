@@ -13,6 +13,7 @@
 - [中文书稿入口](book/README-ZH.md)
 - [中文序言](book/preface-ZH.md)
 - [中文书籍目录](book/table-of-contents-ZH.md)
+- [中文新手提示卡：先把一件小事说清楚](book/communication-clinic-ZH.md)
 
 ## 这是什么项目
 
@@ -67,14 +68,14 @@ Prysai LLM Playbook（Prysai 大模型实战手册）不是把 skills 平铺在�
 
 当前项目处于 v0.1 的产品地基阶段：22 章书籍结构、18 个实验、真实问题研究、22 个候选 Skill 和约 40 项评测夹具已经建立。目录、结构与静态契约检查不等于学习者已经完成、迁移或掌握这些内容。
 
-书籍规范源为 English（`EN`），公开展示页默认 English，并提供中文切换。简体中文目前是一条正在形成的候选学习路径，而不是完整中文课程：项目与书稿入口、序言、目录、第 1–10 章、lab-001、lab-002、lab-003、lab-004、lab-007、lab-008、lab-011、lab-013 和第一次安全改动夹具已有 `-ZH` 文件；其他正文、实验、Skill、评测与研究档案仍在迁移中。多语言架构要求每个 reader-facing 文件带明确后缀，同一内容 ID 的链接保持当前语言；在独立语言审校完成前，现有中文译文保持 `in-progress`，不能被宣传为完整六语言支持。
+书籍规范源为 English（`EN`），公开展示页默认 English，并提供中文切换。简体中文目前是一条正在形成的候选学习路径，而不是完整中文课程：项目与书稿入口、序言、目录、第 1–12 章、15 个实验、第一次安全改动路线和一组新手提示卡已有 `-ZH` 文件；其他正文、实验、Skill、评测与研究档案仍在迁移中。多语言架构要求每个 reader-facing 文件带明确后缀，同一内容 ID 的链接保持当前语言；在独立语言审校完成前，现有中文译文保持 `in-progress`，不能被宣传为完整六语言支持。
 
 ### 实际课程覆盖率（22 章 + 18 个 Lab）
 
 | 语言 | 当前可读课程单元 | 这代表什么 |
 |---|---:|---|
 | English | 40 / 40 | 规范源语言；不等于学习效果已经验证。 |
-| 简体中文 | 22 / 40 | 已有连续的候选起步路径、能力选择与设计、完整工作流切片、Agent 停止条件、证据审查、研究提问和规划练习；第 11、12 章仍待与英文规范稿对齐，并待独立语言审校。 |
+| 简体中文 | 27 / 40 | 已有第 1–12 章、15 个实验和候选起步路径；所有译文仍待独立语言审校，其他 13 个课程单元尚未提供中文文件。 |
 | Español | 6 / 40 | 已有入口、安全练习路线及第一个章节/实验对；独立语言审校待完成。 |
 | 日本語 | 5 / 40 | 有入口、分散翻译切片和第一个安全任务实验；独立语言审校待完成。 |
 | 한국어 | 5 / 40 | 有入口、分散翻译切片和第一个安全任务实验；独立语言审校待完成。 |
@@ -124,6 +125,7 @@ Prysai LLM Playbook（Prysai 大模型实战手册）不是把 skills 平铺在�
 当前中文候选路径不是只有语言入口。它包括：
 
 - `README-ZH.md`、`book/README-ZH.md`、`book/preface-ZH.md` 与本目录；
+- [中文新手提示卡](book/communication-clinic-ZH.md)：六张可直接复制的低风险文字练习卡；它是中文起步切片，不是完整中文译本，也没有效果或跨模型运行证据；
 - [第 1 章](book/chapters/01-gpt-and-codex-ZH.md) → [实验 011](book/labs/lab-011-gpt-codex-boundaries-ZH.md) → [第 2 章](book/chapters/02-first-safe-task-ZH.md) → [第一次安全改动夹具](book/routes/first-safe-change-ZH.md) → [实验 001](book/labs/lab-001-first-safe-task-ZH.md) → [第 3 章](book/chapters/03-task-protocol-ZH.md) → [实验 002](book/labs/lab-002-task-protocol-ZH.md)；
 - [第 4 章](book/chapters/04-context-permissions-and-agent-ZH.md) → [实验 007](book/labs/lab-007-action-boundaries-ZH.md) → [第 5 章](book/chapters/05-choose-the-codex-surface-ZH.md) → [第 6 章](book/chapters/06-model-selection-ZH.md) → [第 7 章](book/chapters/07-skills-plugins-and-tools-ZH.md) → [实验 004：选择最小有用能力](book/labs/lab-004-skill-selection-ZH.md) → [第 8 章](book/chapters/08-full-lifecycle-workflow-ZH.md) → [实验 013](book/labs/lab-013-l3-vertical-slice-ZH.md) → [第 9 章](book/chapters/09-verification-and-recovery-ZH.md) → [实验 003](book/labs/lab-003-evidence-review-ZH.md) → [第 10 章](book/chapters/10-planning-and-slicing-ZH.md)。
 

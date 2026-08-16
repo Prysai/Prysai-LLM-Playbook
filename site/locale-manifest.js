@@ -275,10 +275,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/communication-clinic-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15"
         },
         "es": {
           "path": "book/communication-clinic-ES.md",
@@ -602,7 +602,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "f521e29"
+          "source_revision": "worktree-2026-08-15"
         },
         "es": {
           "path": "book/chapters/01-gpt-and-codex-ES.md",
@@ -1844,7 +1844,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "draft",
           "translation_status": "source",
           "source_revision": null,
-          "title": "Lab 001: Make one safe README change"
+          "title": "Lab 001: Make the first request usable"
         },
         "zh": {
           "path": "book/labs/lab-001-first-safe-task-ZH.md",
@@ -1852,7 +1852,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "draft",
           "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-15",
-          "title": "实验 001：完成一次安全的 README 改动"
+          "title": "实验 001：让第一个请求变得可用"
         },
         "es": {
           "path": "book/labs/lab-001-first-safe-task-ES.md",
@@ -2188,10 +2188,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/labs/lab-009-engineering-lifecycle-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-12",
+          "title": "实验 009：比较直接实施与完整工程生命周期"
         },
         "es": {
           "path": "book/labs/lab-009-engineering-lifecycle-ES.md",
@@ -2243,10 +2244,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/labs/lab-010-product-context-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-12",
+          "title": "实验 010：建立可跨两个任务复用的产品上下文"
         },
         "es": {
           "path": "book/labs/lab-010-product-context-ES.md",
@@ -2523,10 +2525,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/labs/lab-014-resume-reconciliation-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11",
+          "title": "实验 014：继续之前，先核对恢复的任务"
         },
         "es": {
           "path": "book/labs/lab-014-resume-reconciliation-ES.md",
@@ -2576,10 +2579,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/labs/lab-015-evidence-delivery-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11",
+          "title": "实验 015：交付证据，而不只是一句完成声明"
         },
         "es": {
           "path": "book/labs/lab-015-evidence-delivery-ES.md",
@@ -2629,10 +2633,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/labs/lab-016-side-effect-boundary-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-11",
+          "title": "实验 016：在副作用边界停下"
         },
         "es": {
           "path": "book/labs/lab-016-side-effect-boundary-ES.md",
@@ -4806,9 +4811,9 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "zh": {
       "total_units": 40,
-      "available_units": 22,
+      "available_units": 27,
       "source_units": 0,
-      "candidate_translation_units": 22,
+      "candidate_translation_units": 27,
       "reviewed_translation_units": 0
     },
     "es": {
@@ -5214,7 +5219,7 @@ window.CODEX_LOCALE_MANIFEST = {
       {
         "id": "lab-001",
         "number": 1,
-        "title": "Make one safe README change",
+        "title": "Make the first request usable",
         "path": "book/labs/lab-001-first-safe-task-EN.md",
         "content_id": "lab-001-first-safe-task"
       },
