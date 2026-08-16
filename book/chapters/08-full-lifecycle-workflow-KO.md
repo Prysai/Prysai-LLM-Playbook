@@ -57,6 +57,25 @@ rollback: 기록한 편집 전 복사본 또는 clean checkpoint로 돌아간다
 
 재시도 전에는 `failed_stage`, `failure_class`, `last_accepted_checkpoint`, `changes_since_checkpoint`, `retry_condition`, `fallback`을 남깁니다. “계속해”는 복구 계획이 아닙니다. 명령이 `Working`에 머물면 침묵은 성공이 아니라 관찰입니다.
 
+## 먼저 작고 완전한 slice 하나 끝내기
+
+처음부터 site, code, release로 시작할 필요는 없습니다. 직접 확인할 수 있는 짧은 글, local README 하나, 이미 사용 허가된 공개 source 묶음을 고르세요. 목표는 model이 “많이 하게” 하는 것이 아니라 define부터 handoff까지 보이는 한 바퀴를 끝내는 것입니다.
+
+```text
+result: 120자 이내 설명으로 새 reader가 첫 단계를 찾게 한다.
+input: 원문, 예상 reader, 알려진 문제 하나.
+allowed: 원문을 읽고 plan을 제안한다. 확인 뒤에도 그 text만 편집한다.
+not allowed: network, sign-in, install, 전송, publish, 다른 file 변경.
+check: before/after text를 보관하고 “첫 단계를 찾는가”를 한 번 확인한다.
+handoff: 바꾼 것, 바꾸지 않은 것, check 결과, 남은 unknown.
+```
+
+일곱 단계를 통과합니다. reader와 result를 정의하고, 한 변경을 plan하며, 원문을 checkpoint로 보관하고, 편집하고, 전후를 비교하고, 새 시각으로 review한 뒤, 다음 사람이나 내일의 자신에게 handoff합니다. 더 많은 자료나 external action이 필요하면 `blocked`에서 멈춥니다. 닫힌 것처럼 보이기 위해 permission을 넓히지 않습니다.
+
+### 두 시도가 비교 가능한 때
+
+“model에게 바로 편집을 요청”과 “먼저 protocol을 작성”을 비교하려면 원문, goal, allowed action, time limit, check rule을 고정합니다. first output, 실제 시간, rework, diff, check result, unknown을 남깁니다. text, model, tool, permission, environment가 바뀌면 `not_comparable`입니다. 한 번 더 빠르거나 보기 좋은 결과는 일반 효율이나 model 우위를 증명하지 않습니다.
+
 ## 실험과 한계
 
 버려도 되는 폴더에서 작은 문서 작업을 직접 요청과 프로토콜·checkpoint·집중 검사 방식으로 비교합니다. 첫 출력, diff, 명령, 종료 코드, 실제 시간, 재작업을 남깁니다. 없는 시간이나 비용은 추정하지 말고 `unavailable`로 적습니다.

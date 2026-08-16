@@ -54,6 +54,25 @@ rollback: aufgezeichnete Vorversion oder sauberer Checkpoint
 
 Nutze statt eines horizontalen Plans einen vertikalen Schnitt: `eine Eingabe → kleinste Änderung → beobachtbare Aktion → fokussierter Check`. Netzwerk, Authentifizierung, Installation, Neustart, Deployment oder externe Nachricht benötigen einen ausdrücklichen Auftrag.
 
+## Zuerst einen kleinen vollständigen Slice abschließen
+
+Du musst nicht mit einer Website, Code oder einem Release beginnen. Wähle einen kurzen Text, den du selbst prüfen kannst, eine lokale README oder eine bereits erlaubte Sammlung öffentlicher Quellen. Ziel ist nicht, dass das Modell „viel erledigt“, sondern eine sichtbare Schleife von Definition bis Übergabe zu schließen.
+
+```text
+Ergebnis: Ein Text unter 120 Wörtern hilft einer neuen Person, den ersten Schritt zu finden.
+Eingabe: Ausgangstext, vorgesehene Leserschaft und ein bekanntes Problem.
+Erlaubt: Text lesen; Plan vorschlagen; nach Bestätigung nur diesen Text bearbeiten.
+Nicht erlaubt: Netzwerk, Sign-in, Installieren, Senden, Veröffentlichen oder andere Dateien ändern.
+Check: Vorher-/Nachher-Text speichern und einmal prüfen: „Findet die Person den ersten Schritt?“
+Übergabe: was sich änderte, was nicht, Checkergebnis und was unbekannt bleibt.
+```
+
+Durchlaufe die sieben Phasen: Leserschaft und Ergebnis definieren; eine Änderung planen; Ausgangstext als Checkpoint speichern; bearbeiten; vergleichen; mit frischem Blick reviewen; an eine andere Person oder dein Ich von morgen übergeben. Sind mehr Material oder externe Aktionen nötig, halte bei `blocked` an. Erweitere keine Rechte, nur damit der Ablauf abgeschlossen aussieht.
+
+### Wann zwei Versuche vergleichbar sind
+
+Willst du „Modell sofort bearbeiten lassen“ mit „erst ein Protokoll schreiben“ vergleichen, friere Ausgangstext, Ziel, erlaubte Aktionen, Zeitlimit und Checkregel ein. Bewahre erste Ausgabe, echte Dauer, Nacharbeit, Diff, Checkergebnis und Unbekannte auf. Ändern sich Text, Modell, Tool, Rechte oder Umgebung, schreibe `not_comparable`. Ein einmal schnelleres oder hübscheres Ergebnis beweist weder allgemeine Effizienz noch ein besseres Modell.
+
 ## Checkpoints, Versuch und Grenze
 
 Vor einem Retry notiere fehlgeschlagene Phase, Fehlerklasse, letzten akzeptierten Checkpoint, bekannte Änderungen, Retry-Bedingung und Fallback. „Weiter“ ist kein Wiederherstellungsplan. Wenn ein Befehl in `Working` bleibt, ist Stille eine Beobachtung, kein Erfolg.

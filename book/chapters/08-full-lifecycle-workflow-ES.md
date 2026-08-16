@@ -152,6 +152,25 @@ permission_boundary: edición local reversible y comprobaciones de lectura
 
 Entregar no termina el ciclo. Si el resultado depende de un modelo, permiso, comando o servicio cambiante, registra fuente oficial, fecha de consulta, alcance, responsable y próxima revisión.
 
+## Completa primero un corte pequeño y entero
+
+No hace falta empezar con un sitio, código o publicación. Elige un texto corto que puedas revisar, un README local o un conjunto de fuentes públicas ya autorizadas. La meta no es que el modelo «haga mucho», sino completar una vuelta visible desde definición hasta entrega.
+
+```text
+Resultado: que una explicación de menos de 120 palabras permita a una persona nueva encontrar el primer paso.
+Entrada: texto original, lector previsto y un problema conocido.
+Permitido: leer el texto; proponer plan; tras confirmación editar solo ese texto.
+No permitido: red, inicio de sesión, instalación, envío, publicación ni otros archivos.
+Comprobación: guardar antes/después; pedir una revisión de «¿encuentra el primer paso?».
+Entrega: qué cambió, qué no cambió, resultado de comprobación y qué sigue siendo desconocido.
+```
+
+Recorre las siete etapas: define lector y resultado; planifica un cambio; guarda el original como checkpoint; edita; compara; revisa con mirada nueva; entrega a otra persona o a tu yo de mañana. Si necesitas más material o una acción externa, detente en `blocked`; no amplíes permisos para aparentar que cerraste el ciclo.
+
+### Cuándo dos intentos son comparables
+
+Para comparar «pide al modelo que edite» con «escribe primero el protocolo», congela texto, objetivo, acciones permitidas, tiempo y regla de comprobación. Guarda primera salida, tiempo real, retrabajo, diff, resultado y desconocidos. Si cambia texto, modelo, herramienta, permiso o entorno, escribe `not_comparable`; un resultado más rápido o agradable una vez no demuestra eficiencia general ni un modelo superior.
+
 ## Experimento y caso de fallo
 
 En una carpeta desechable, toma una tarea de documentación pequeña. Ejecuta dos variantes: una petición directa y otra con el contrato, los puntos de control y una comprobación elegida. Guarda ambos primeros intentos, diffs, órdenes, códigos de salida, duración real y cualquier corrección. No inventes tiempos o costes ausentes: escribe `unavailable`.

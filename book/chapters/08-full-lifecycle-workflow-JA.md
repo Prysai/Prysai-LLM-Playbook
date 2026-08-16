@@ -94,6 +94,25 @@ timeout、input hash の変更、permission block、local write result の不明
 - [ ] 求められていない install、restart、deployment、external write を止められる。
 - [ ] completed、not done、blocked、unverified を分けて handoff できる。
 
+## まず小さく完結する slice を一つ終える
+
+最初から site、code、release を扱う必要はありません。自分で確認できる短い文章、一つの local README、またはすでに使用許可のある公開 source 一式を選びます。目的は model に「たくさんさせる」ことではなく、define から handoff まで見える一周を終えることです。
+
+```text
+result: 120 字以内の説明で、新しい reader が最初の一歩を見つけられる。
+input: 原文、想定 reader、分かっている問題一つ。
+allowed: 原文を読む。plan を出す。確認後もその text だけを編集する。
+not allowed: network、sign-in、install、送信、publish、他 file の変更。
+check: before/after text を保存し、「最初の一歩を見つけられるか」を一度確認する。
+handoff: 変えたこと、変えなかったこと、check の結果、まだ unknown なこと。
+```
+
+七段階を通します。reader と result を定義し、一か所を plan し、原文を checkpoint として残し、編集し、前後を比べ、別の視点で review し、次の人または明日の自分へ handoff します。追加資料や external action が必要なら `blocked` で止めます。閉じたように見せるために permission を広げません。
+
+### 二つの試行が比較できる条件
+
+「model にすぐ編集を頼む」と「先に protocol を書く」を比べるなら、原文、goal、allowed action、time limit、check rule を固定します。first output、実時間、rework、diff、check result、unknown を残します。text、model、tool、permission、environment が変われば `not_comparable` です。一度速い、または見栄えが良い結果は、一般的な効率や model の優劣を証明しません。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション">
