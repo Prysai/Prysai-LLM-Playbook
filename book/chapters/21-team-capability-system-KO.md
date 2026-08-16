@@ -69,6 +69,37 @@ manifest에는 `id`, `version`, `owner`, `status`, 출처와 라이선스, 다�
 
 권한, 연결 기능, 제품 화면은 변하는 사실입니다. 현재 공식 문서를 확인하십시오. 이 장은 `candidate`이며, 시뮬레이션은 운영 연결이나 팀 성과를 증명하지 않습니다.
 
+## 빠르게 검토할 수 있는 contribution 보내기
+
+팀은 모든 제안을 큰 변경으로 만들 필요가 없습니다. 검토하기 쉬운 test 또는 content PR은 하나의 분명한 문제만 다루고, source, 변경, validation, 불확실성을 몇 분 안에 찾을 수 있게 합니다.
+
+```yaml
+contribution_type: "test-case | content-correction | translation | skill-candidate"
+problem: "고치거나 확인할 하나의 claim"
+scope: "바꿔도 되는 files와 바꾸지 않는 것"
+source_or_fixture: "공식 URL 또는 공유 가능한 최소 fixture"
+expected_result: "확인 가능한 output, failure, 또는 block 조건"
+evidence: "command, log, diff, screenshot, score 위치"
+license: "original 또는 asset register의 license record"
+reviewer_questions: ["사실에 source가 있는가?", "permission이나 scope가 바뀌는가?", "failure면 어떻게 하는가?"]
+```
+
+secret, 실제 customer data, 허가 없는 model output, 재배포할 수 없는 자료를 붙이지 않습니다. test에 account, 결제, network, write, platform별 permission이 필요하면 먼저 `requested`나 `blocked`로 표시합니다. CI나 maintainer가 authorization을 추측하게 하지 않습니다.
+
+### 빠른 merge를 위한 최소 경로
+
+1. 한 PR에는 독립적으로 검토할 수 있는 한 변경만 넣고 format 전체 변경과 content 변경을 나눕니다.
+2. test에는 고정 input, expected result, failure condition, 최소 reproduction command를 넣습니다. 실행하지 않았다면 `not_run`이라고 씁니다.
+3. content에는 claim, source, access date, scope, review date를 넣고 translation에는 EN source와 review status도 표시합니다.
+4. maintainer는 link와 test 전에 license, data scope, permission, rollback을 먼저 확인합니다.
+5. scope가 명확하고 evidence를 찾을 수 있으며 check가 통과하고 permission을 넓히지 않는 변경만 빠른 merge 후보입니다. 나머지는 clarification을 요청하거나 `candidate`로 둡니다.
+
+## 스스로 확인하기
+
+- [ ] 제안을 “더 좋게 해 달라”가 아니라 하나의 problem, 고정 input, 확인 가능한 result로 쓸 수 있다.
+- [ ] PR에 넣으면 안 되는 자료를 알고, 초록 CI로 authorization이나 독립 review를 대신하지 않는다.
+- [ ] 빠른 merge 이유 또는 `blocked` / `candidate`로 남겨야 할 이유를 설명할 수 있다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-KO.md">← 이전<br><strong>20장 · Codex 개인 작업 시스템 만들기</strong></a></td><td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing-KO.md">다음 →<br><strong>22장 · 지속적인 업데이트와 미래 대비</strong></a></td></tr></table></nav>

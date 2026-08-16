@@ -69,6 +69,37 @@ Entfernt `owner` und `version`: Das Paket muss abgelehnt werden. Auch wenn eine 
 
 Berechtigungen, Connectoren und Produktoberflächen sind veränderliche Fakten. Prüfe die aktuelle offizielle Dokumentation. Dieses Kapitel bleibt `candidate`; die Simulation beweist weder Produktionsverbindung noch Teamwirkung.
 
+## Beiträge einreichen, die sich schnell prüfen lassen
+
+Das Team muss nicht jeden Vorschlag zu einer großen Änderung machen. Ein gut prüfbarer Test- oder Content-PR löst ein klares Problem und lässt Quelle, Änderung, Validierung und Unsicherheit in wenigen Minuten finden.
+
+```yaml
+contribution_type: "test-case | content-correction | translation | skill-candidate"
+problem: "eine konkrete zu korrigierende oder prüfende Behauptung"
+scope: "erlaubte Dateien und was unverändert bleibt"
+source_or_fixture: "offizielle URL oder teilbares minimales Fixture"
+expected_result: "prüfbarer Output, Fehler oder Blockierbedingung"
+evidence: "Befehl, Log, Diff, Screenshot oder Ort der Bewertung"
+license: "original oder Lizenzrecord im Asset Register"
+reviewer_questions: ["Hat die Tatsache eine Quelle?", "Ändert sich Berechtigung oder Umfang?", "Was geschieht bei Fehler?"]
+```
+
+Füge keine Secrets, echten Kundendaten, unautorisierten Model Output oder nicht weiterverteilbares Material ein. Benötigt ein Test Account, Zahlung, Netzwerk, Write oder plattformspezifische Rechte, markiere ihn zuerst als `requested` oder `blocked`. Weder CI noch Maintainer sollen Autorisierung erraten.
+
+### Minimaler Weg zum schnellen Merge
+
+1. Ein PR enthält eine unabhängig prüfbare Änderung; umfassende Formatierung und Content-Änderung werden getrennt.
+2. Ein Test enthält festen Input, erwartetes Ergebnis, Fehlerbedingung und minimalen Reproduktionsbefehl. Ohne Lauf steht dort `not_run`.
+3. Content enthält Claim, Quelle, Abrufdatum, Umfang und Prüftermin; eine Übersetzung nennt zusätzlich EN-Quelle und Review-Status.
+4. Der Maintainer prüft Lizenz, Datenumfang, Berechtigungen und Rollback vor Links, Struktur und passenden Tests.
+5. Nur Änderungen mit klarem Umfang, auffindbarer Evidenz, bestandenen Checks und ohne Rechteausweitung kommen für schnellen Merge infrage; sonst folgt Klärung oder der Status bleibt `candidate`.
+
+## Selbstcheck
+
+- [ ] Ich kann einen Vorschlag als ein Problem, festen Input und prüfbares Ergebnis formulieren statt als „mach es besser“.
+- [ ] Ich weiß, was nicht in einen PR gehört, und ersetze Autorisierung oder unabhängiges Review nicht durch grüne CI.
+- [ ] Ich kann begründen, warum eine Änderung schnell mergebar ist oder `blocked` / `candidate` bleiben muss.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-DE.md">← Vorheriges<br><strong>Kapitel 20 · ein persönliches Codex-Arbeitssystem aufbauen</strong></a></td><td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing-DE.md">Weiter →<br><strong>Kapitel 22 · kontinuierliche Aktualisierung und Zukunftssicherheit</strong></a></td></tr></table></nav>

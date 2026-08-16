@@ -48,6 +48,37 @@ manifest 至少有 `id`、`version`、`owner`、状态、来源和许可证、�
 
 这个模拟不能证明生产连接或团队效果；本章保持 `candidate`。
 
+## 让贡献者可以快速审查地提交
+
+团队不需要把每一个建议都变成大型改动。一个容易审核的测试或内容 PR 应只解决一个明确问题，并让审查者能在几分钟内找到来源、变化、验证和不确定性。
+
+```yaml
+contribution_type: "test-case | content-correction | translation | skill-candidate"
+problem: "要纠正或检验的单一主张"
+scope: "允许变更的文件；明确不改什么"
+source_or_fixture: "官方来源 URL，或可公开的最小夹具"
+expected_result: "可检查的输出、失败或阻塞条件"
+evidence: "命令、日志、diff、截图或人工评分位置"
+license: "原创，或资产登记中的许可记录"
+reviewer_questions: ["事实是否有来源？", "是否改变权限或范围？", "失败时如何处理？"]
+```
+
+提交者不应粘贴秘密、真实客户数据、未授权模型输出或不可再分发的材料。若测试需要账号、付费、网络、写入或平台特定权限，应先把它标为 `requested` 或 `blocked`，而不是让 CI 或维护者替自己猜测授权。
+
+### 快速合并的最小路径
+
+1. 一个 PR 只放一个可独立审查的改变；格式化重写和内容修改分开。
+2. 为测试给出固定输入、预期结果、失败条件与最小复现命令；不能运行时如实标 `not_run`。
+3. 为内容给出主张、来源、访问日期、适用范围与复核日期；翻译还要说明英文源文件和审校状态。
+4. 维护者先检查许可证、数据范围、权限和回滚，再检查链接、结构和相关测试。
+5. 只有范围清楚、证据可定位、检查通过且未扩权的改动才适合快速合并；其他改动应请求澄清或保持 `candidate`。
+
+## 本章验收补充
+
+- [ ] 我能把一个建议写成单一问题、固定输入和可检查结果，而不是“请让它更好”。
+- [ ] 我知道哪些材料不能放进 PR，也不会用 CI 成功替代授权或独立复核。
+- [ ] 我能说明一个改动为何可以快速合并，或为何必须停在 `blocked` / `candidate`。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章节导航"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-ZH.md">← 上一章<br><strong>第 20 章·构建个人 LLM 工作系统</strong></a></td><td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing-ZH.md">下一章 →<br><strong>第 22 章·持续更新与面向未来</strong></a></td></tr></table></nav>

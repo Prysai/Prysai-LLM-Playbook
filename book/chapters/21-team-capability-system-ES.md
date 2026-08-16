@@ -71,6 +71,37 @@ Quita `owner` y `version`: el revisor debe rechazarlo. Marca en una lista estát
 
 Los permisos, conectores y superficies de producto son hechos cambiantes: comprueba la documentación oficial vigente. Este capítulo continúa siendo `candidate`; la simulación no prueba impacto de equipo ni conectividad de producción.
 
+## Enviar contribuciones que se puedan revisar rápido
+
+El equipo no necesita convertir cada idea en un cambio enorme. Un PR de prueba o contenido fácil de revisar resuelve un solo problema y permite localizar fuente, cambio, validación e incertidumbre en pocos minutos.
+
+```yaml
+contribution_type: "test-case | content-correction | translation | skill-candidate"
+problem: "una afirmación concreta que corregir o comprobar"
+scope: "archivos permitidos y lo que no cambia"
+source_or_fixture: "URL oficial o fixture mínimo que se puede compartir"
+expected_result: "salida, fallo o condición de bloqueo comprobable"
+evidence: "comando, log, diff, captura o ubicación de puntuación"
+license: "original o registro de licencia en el inventario de activos"
+reviewer_questions: ["¿hay fuente para el hecho?", "¿cambia permiso o alcance?", "¿qué ocurre si falla?"]
+```
+
+No pegues secretos, datos reales de clientes, salidas no autorizadas ni material que no se pueda redistribuir. Si una prueba exige cuenta, pago, red, escritura o permiso específico de plataforma, márcala primero `requested` o `blocked`; ni CI ni el mantenedor deben adivinar la autorización.
+
+### Ruta mínima para una fusión rápida
+
+1. Un PR contiene un cambio revisable por sí mismo; separa reformatos de cambios de contenido.
+2. Una prueba aporta input fijo, resultado esperado, condición de fallo y comando mínimo; si no se ejecutó, dice `not_run`.
+3. Un cambio de contenido aporta afirmación, fuente, fecha de acceso, alcance y fecha de revisión; una traducción indica además fuente inglesa y estado de revisión.
+4. El mantenedor revisa primero licencia, datos, permisos y rollback; después enlaces, estructura y pruebas pertinentes.
+5. Solo los cambios de alcance claro, evidencia localizable, checks aprobados y sin ampliación de permisos son candidatos a fusión rápida; los demás piden aclaración o siguen `candidate`.
+
+## Comprobación propia
+
+- [ ] Puedo convertir una propuesta en problema único, input fijo y resultado comprobable, no «hazlo mejor».
+- [ ] Sé qué no puede entrar en un PR y no sustituyo autorización o revisión independiente por CI verde.
+- [ ] Puedo explicar por qué un cambio se fusiona rápido o debe quedar `blocked` / `candidate`.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-ES.md">← Anterior<br><strong>Capítulo 20 · construir un sistema personal de trabajo con Codex</strong></a></td><td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing-ES.md">Siguiente →<br><strong>Capítulo 22 · actualización continua y preparación para el futuro</strong></a></td></tr></table></nav>
