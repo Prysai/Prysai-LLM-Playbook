@@ -104,11 +104,11 @@ mejorar y enseñar.
 Si no quieres leer en orden, elige un capítulo desde el [índice del libro en
 español](table-of-contents-ES.md) y entra después
 en los casos de problemas reales, la especificación de fixtures de evaluación
-y el archivo de investigación que ese capítulo enumera. Los capítulos 19–22
-siguen en estado `draft` —el texto está escrito, pero espera la prueba previa—
-y los recorridos de evaluación que aún no tienen registros permanecen en
-`not_run`. Estos enlaces sirven para localizar ejercicios y evidencia; no
-significan que el capítulo o la evaluación ya hayan sido verificados.
+y el archivo de investigación que ese capítulo enumera. Los 22 capítulos están
+en estado `candidate`; los 18 Labs siguen en `draft / not_run`, y los recorridos
+de evaluación sin registros también permanecen en `not_run`. Estos enlaces
+sirven para localizar ejercicios y evidencia; no significan que el capítulo,
+la traducción o la evaluación ya hayan sido verificados.
 
 Para volver a la guía del manuscrito en español, usa la [entrada del libro en
 español](README-ES.md). Los materiales compartidos que no son páginas de lectura

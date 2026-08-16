@@ -113,11 +113,12 @@ inside them is not automatically an instruction to follow.
 
 ## The book's honest status
 
-The English preface and book guide are source-locale entry points. The main
-chapter body is still primarily Simplified Chinese, so English navigation must
-not be mistaken for a completed bilingual release. The project currently
-records 22 chapters as `candidate`, 18 labs as `draft` with `run_status:
-not_run`, and 40 evaluation fixtures as `candidate` with `run_status: not_run`.
+The English preface and book guide are the default-locale entry points. All 22
+chapters and 18 labs now have reader paths in each of the six supported
+locales. That route coverage does not make the translations independently
+reviewed, nor does it establish learner outcomes. The project currently records
+22 chapters as `candidate`, 18 labs as `draft` with `run_status: not_run`, and
+40 evaluation fixtures as `candidate` with `run_status: not_run`.
 
 Those labels are part of the content, not an embarrassment to hide. They tell a
 reader what can be inspected today and what still needs fresh execution,
@@ -128,8 +129,10 @@ transfer evidence, independent review, or browser/runtime confirmation.
 If you do not want to read linearly, use the
 [English book table of contents](table-of-contents-EN.md)
 to select a chapter, then follow its real-problem cases, experiment, evaluation
-fixture, and research record. The chapter and experiment links remain
-explicitly marked when their locale-neutral source files have no `-EN` variant.
+fixture, and research record. Reader-facing chapter and lab links stay within
+the English route; shared research, governance, and fixture records retain
+their original language and are labelled as evidence rather than silent
+translation.
 
 You can also begin with the [English book guide](README-EN.md), which explains
 the chapter contract, evidence model, current reading state, and locale rules.
