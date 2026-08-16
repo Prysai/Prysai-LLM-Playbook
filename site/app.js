@@ -4360,5 +4360,96 @@ function initGoalWizard() {
 }
 
 initGoalWizard();
+Object.assign(copy.en, {
+  heroIndex: 'A TEXTBOOK FOR USING LLMS',
+  heroEyebrow: 'Start at Lesson 0 · read chapter by chapter',
+  heroTitle: 'What are LLMs, and how do you use them well?',
+  heroLede: 'This is a textbook: Lesson 0 explains what a large language model is, then each chapter teaches one layer of using it - tasks, context, tools, verification. Read in order, do the small experiments, and learn to check what a model tells you.',
+  heroPrimary: 'Start Lesson 0: what is a large language model',
+  heroSecondary: 'Read the table of contents',
+  heroRouteKicker: 'One reading path - follow it from the start',
+  heroRouteLessonZero: '0 · Lesson 0: what an LLM is',
+  heroRouteLessonZeroBody: '20 minutes. Tokens, context, capabilities, and the honest limits.',
+  heroRouteChapterOne: '1 · Chapter 1: GPT before Codex',
+  heroRouteChapterOneBody: 'Separate a model, a tool, and an agent before trusting either.',
+  heroRouteChapterTwo: '2 · Chapter 2: your first safe task',
+  heroRouteChapterTwoBody: 'One small task, one visible check, one receipt.'
+});
+Object.assign(copy.zh, {
+  heroIndex: 'LLM 使用教科书',
+  heroEyebrow: '从第 0 课开始 · 逐章阅读',
+  heroTitle: '大语言模型是什么，以及如何用好它？',
+  heroLede: '这是一本教科书：第 0 课讲清什么是大语言模型，随后每章教授使用它的一个层次——任务、上下文、工具、验证。按顺序阅读，做小实验，学会检查模型告诉你的一切。',
+  heroPrimary: '开始第 0 课：什么是大语言模型',
+  heroSecondary: '查看完整目录',
+  heroRouteKicker: '一条阅读主线——从头开始',
+  heroRouteLessonZero: '0 · 第 0 课：LLM 是什么',
+  heroRouteLessonZeroBody: '20 分钟。token、上下文、能力与诚实的边界。',
+  heroRouteChapterOne: '1 · 第 1 章：先理解 GPT，再理解 Codex',
+  heroRouteChapterOneBody: '在信任之前，分清模型、工具与 Agent。',
+  heroRouteChapterTwo: '2 · 第 2 章：你的第一个安全任务',
+  heroRouteChapterTwoBody: '一个小任务、一个可见检查、一份回执。'
+});
+Object.assign(copy.es, {
+  heroIndex: 'UN MANUAL PARA USAR LLMs',
+  heroEyebrow: 'Empieza en la Lección 0 · lee capítulo a capítulo',
+  heroTitle: '¿Qué son los LLM y cómo usarlos bien?',
+  heroLede: 'Esto es un manual: la Lección 0 explica qué es un modelo de lenguaje grande, y cada capítulo enseña una capa de su uso: tareas, contexto, herramientas, verificación. Lee en orden, haz los pequeños experimentos y aprende a comprobar lo que el modelo te dice.',
+  heroPrimary: 'Empezar la Lección 0: qué es un LLM',
+  heroSecondary: 'Leer el índice completo',
+  heroRouteKicker: 'Una sola ruta de lectura: síguela desde el principio',
+  heroRouteLessonZero: '0 · Lección 0: qué es un LLM',
+  heroRouteLessonZeroBody: '20 minutos. Tokens, contexto, capacidades y los límites honestos.',
+  heroRouteChapterOne: '1 · Capítulo 1: GPT antes de Codex',
+  heroRouteChapterOneBody: 'Separa un modelo, una herramienta y un agente antes de confiar en ellos.',
+  heroRouteChapterTwo: '2 · Capítulo 2: tu primera tarea segura',
+  heroRouteChapterTwoBody: 'Una tarea pequeña, una comprobación visible, un recibo.'
+});
+Object.assign(copy.ja, {
+  heroIndex: 'LLM を使いこなすための教科書',
+  heroEyebrow: 'レッスン 0 から始める · 章ごとに読む',
+  heroTitle: '大規模言語モデルとは何か、そしてどう使えばよいのか？',
+  heroLede: 'これは教科書です。レッスン 0 で大規模言語モデルとは何かを説明し、各章で使い方の層——タスク、コンテキスト、ツール、検証——を一つずつ教えます。順番に読み、小さな実験をやり、モデルが伝えることを確認する習慣を身につけてください。',
+  heroPrimary: 'レッスン 0 を始める：LLM とは何か',
+  heroSecondary: '目次を読む',
+  heroRouteKicker: '一つの読書経路——最初からたどる',
+  heroRouteLessonZero: '0 · レッスン 0：LLM とは',
+  heroRouteLessonZeroBody: '20分。トークン、コンテキスト、能力、そして正直な限界。',
+  heroRouteChapterOne: '1 · 第1章：Codex より先に GPT を理解する',
+  heroRouteChapterOneBody: 'モデル・ツール・エージェントを区別してから信頼する。',
+  heroRouteChapterTwo: '2 · 第2章：最初の安全なタスク',
+  heroRouteChapterTwoBody: '小さなタスク、見えるチェック、レシート。'
+});
+Object.assign(copy.ko, {
+  heroIndex: 'LLM 사용 교과서',
+  heroEyebrow: '레슨 0부터 시작 · 장마다 읽기',
+  heroTitle: 'LLM이란 무엇이고, 어떻게 잘 쓸까?',
+  heroLede: '이것은 교과서입니다. 레슨 0에서 대규모 언어 모델이 무엇인지 설명하고, 각 장에서 사용의 한 층(과제, 컨텍스트, 도구, 검증)을 가르칩니다. 순서대로 읽고, 작은 실험을 하고, 모델이 말하는 것을 확인하는 습관을 기르세요.',
+  heroPrimary: '레슨 0 시작하기: LLM이란 무엇인가',
+  heroSecondary: '전체 목차 읽기',
+  heroRouteKicker: '하나의 읽기 경로 — 처음부터 따라가기',
+  heroRouteLessonZero: '0 · 레슨 0: LLM이란',
+  heroRouteLessonZeroBody: '20분. 토큰, 컨텍스트, 능력, 그리고 정직한 한계.',
+  heroRouteChapterOne: '1 · 1장: Codex 전에 GPT 이해하기',
+  heroRouteChapterOneBody: '모델·도구·에이전트를 구분한 뒤 신뢰하세요.',
+  heroRouteChapterTwo: '2 · 2장: 첫 번째 안전한 과제',
+  heroRouteChapterTwoBody: '작은 과제 하나, 보이는 확인 하나, 영수증 하나.'
+});
+Object.assign(copy.de, {
+  heroIndex: 'EIN LEHRBUCH FÜR DEN LLM-EINSATZ',
+  heroEyebrow: 'Beginne mit Lektion 0 · lies Kapitel für Kapitel',
+  heroTitle: 'Was sind LLMs und wie nutzt man sie gut?',
+  heroLede: 'Dies ist ein Lehrbuch: Lektion 0 erklärt, was ein großes Sprachmodell ist, und jedes Kapitel lehrt eine Ebene seiner Nutzung - Aufgaben, Kontext, Werkzeuge, Verifikation. Lies der Reihe nach, mach die kleinen Experimente und lerne, zu prüfen, was ein Modell dir sagt.',
+  heroPrimary: 'Lektion 0 beginnen: Was ist ein LLM',
+  heroSecondary: 'Inhaltsverzeichnis lesen',
+  heroRouteKicker: 'Ein Lese-Pfad - von Anfang an folgen',
+  heroRouteLessonZero: '0 · Lektion 0: Was ist ein LLM',
+  heroRouteLessonZeroBody: '20 Minuten. Tokens, Kontext, Fähigkeiten und die ehrlichen Grenzen.',
+  heroRouteChapterOne: '1 · Kapitel 1: GPT vor Codex verstehen',
+  heroRouteChapterOneBody: 'Trenne Modell, Werkzeug und Agent, bevor du ihnen vertraust.',
+  heroRouteChapterTwo: '2 · Kapitel 2: deine erste sichere Aufgabe',
+  heroRouteChapterTwoBody: 'Eine kleine Aufgabe, ein sichtbarer Check, eine Quittung.'
+});
+
 initializeSearch();
 applyLanguage(currentLanguage, { updateUrl: hasExplicitLanguageParam && !hasValidLanguageParam });
