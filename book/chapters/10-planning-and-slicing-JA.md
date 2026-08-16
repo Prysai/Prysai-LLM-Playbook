@@ -54,5 +54,5 @@ disposable copy で同じ小さな change に対する horizontal plan と verti
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-JA.md">← 前の章<br><strong>第 9 章 · 検証、疑い、復旧</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-JA.md">次の章は準備中 →<br><strong>第 11 章の提供状況を見る</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-JA.md">← 前の章<br><strong>第 9 章 · 検証、疑い、復旧</strong></a></td><td align="right"><a data-chapter-nav="next" href="11-designing-a-skill-JA.md">次の章へ →<br><strong>第 11 章 · 役に立つ Skill を設計する</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->

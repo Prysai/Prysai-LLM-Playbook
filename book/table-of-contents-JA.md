@@ -4,7 +4,7 @@
 
 これは日本語で読める入口であり、書籍全体の翻訳ではありません。正規の
 カタログには `candidate` の章が 22、本書の実験である `draft` の Lab が 18
-あります。現在、日本語で読めるのは 10 章と 11 Lab です。このページのリンクは
+あります。現在、日本語で読めるのは 11 章と 11 Lab です。このページのリンクは
 すべて対応する日本語コンテンツを指します。`-JA` ファイルがなければ、別の章や
 別の言語へ飛ばさず「未提供」と明記します。
 
@@ -43,7 +43,7 @@
 | 08 — 定義から納品までの完全なライフサイクル | [提供中：第 8 章](chapters/08-full-lifecycle-workflow-JA.md) · `candidate / in-progress` |
 | 09 — 検証、疑い、復旧 | [提供中：第 9 章](chapters/09-verification-and-recovery-JA.md) · `candidate / in-progress` |
 | 10 — 計画と垂直スライス | [提供中：第 10 章](chapters/10-planning-and-slicing-JA.md) · `candidate / in-progress` |
-| 11 — 本当に役立つ Skill を設計する | 日本語ファイルはまだありません。 |
+| 11 — 本当に役立つ Skill を設計する | [提供中：第 11 章](chapters/11-designing-a-skill-JA.md) · `candidate / in-progress` |
 | 12 — Agent のループ、状態、停止条件 | 日本語ファイルはまだありません。 |
 | 13 — ファイル、ターミナル、ブラウザ、GitHub の行動境界 | 日本語ファイルはまだありません。 |
 | 14 — 外部 Skill を見つけ、導入し、監査する | 日本語ファイルはまだありません。 |
