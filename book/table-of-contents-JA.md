@@ -4,7 +4,7 @@
 
 これは日本語で読める入口であり、書籍全体の翻訳ではありません。正規の
 カタログには `candidate` の章が 22、本書の実験である `draft` の Lab が 18
-あります。現在、日本語で読めるのは 19 章と 11 Lab です。このページのリンクは
+あります。現在、日本語で読めるのは 20 章と 11 Lab です。このページのリンクは
 すべて対応する日本語コンテンツを指します。`-JA` ファイルがなければ、別の章や
 別の言語へ飛ばさず「未提供」と明記します。
 
@@ -52,7 +52,7 @@
 | 17 — マーケティング・トラック：製品理解から成長実験へ | [提供中：第 17 章](chapters/17-marketing-track-JA.md) · `candidate / in-progress` |
 | 18 — コンテンツ、デザイン、データ、自動化トラック | [提供中：第 18 章](chapters/18-content-design-data-automation-JA.md) · `candidate / in-progress` |
 | 19 — モデルとワークフローを評価する | [提供中：第 19 章](chapters/19-evaluate-models-and-workflows-JA.md) · `candidate / in-progress` |
-| 20 — 個人用 Codex 作業システムを作る | 日本語ファイルはまだありません。 |
+| 20 — 個人用 Codex 作業システムを作る | [利用可能: 第20章](chapters/20-personal-codex-work-system-JA.md) · `candidate / in-progress` |
 | 21 — チーム能力システムを作る | 日本語ファイルはまだありません。 |
 | 22 — 継続的な更新と将来への備え | 日本語ファイルはまだありません。 |
 

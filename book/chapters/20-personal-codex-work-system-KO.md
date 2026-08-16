@@ -1,0 +1,49 @@
+<!-- content_id: chapter-20-personal-codex-work-system | locale: KO | language: ko | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
+
+# 20장: 개인 Codex 작업 시스템 만들기
+
+**상태:** `candidate`. **실험:** `draft / not_run`. 이 장은 옮길 수 있는 방법을 제시하며 제품의 memory, 자동 로드, 진입점 동작이 영구적이라고 가정하지 않습니다.
+
+## 문제
+
+많은 사람이 project, goal, 용어, 제약, acceptance를 매번 다시 설명합니다. context가 들쑥날쑥해지고, 결정은 추적되지 않으며, 낡은 command는 재사용되고, 경험은 다음 task로 옮겨지지 않습니다. 더 큰 위험은 개인 편의 기록을 token, password, cookie, customer text, 확인되지 않은 결론 저장소로 쓰는 것입니다.
+
+## 다섯 asset, 다섯 역할
+
+| Asset | 답하는 질문 | Lifecycle | 넣지 않을 것 |
+|---|---|---|---|
+| Project rules | 이 project가 늘 지켜야 할 것은 무엇인가 | version 관리, 의도적 변경·review | 일시적 추측과 비밀 |
+| Task context | 이번에는 무엇을 해야 하는가 | task마다 만들고 archive | 무관한 기록 |
+| Current state | 무엇을 읽고, 바꾸고, 검증하고, block했는가 | checkpoint마다 갱신 | 결과처럼 쓰인 plan |
+| Template | 비슷한 task를 어떻게 시작·전달하는가 | 반복 뒤 추출 | 검증되지 않은 영구 결론 |
+| Reflection | 무엇이 되었고, 실패했고, 다음에 바꿀까 | 옮길 수 있는 교훈만 | token, cookie, customer text, 불필요한 개인 데이터 |
+
+context가 많다고 좋은 것은 아닙니다. relevance, 신뢰성, 민감도, 최신성이 더 중요합니다.
+
+## Skill을 만들까, protocol을 유지할까
+
+| 관찰 | 결정 | 필요한 증거 |
+|---|---|---|
+| 일회성이거나 input/output이 변하는 중 | task protocol 유지 | 한 task의 input, 제약, 결정, 전달 기록 |
+| input, 결정 지점, output이 안정되고 긍정·실패 사례가 있음 | Skill candidate 생성 | 세 번 이상 실행, failure set, transfer task |
+| 방법은 유용하지만 trigger나 부작용이 불명확 | 계속 관찰 또는 block | gap 기록, risk, 미완 validation |
+| 비밀, 외부 write, 프로덕션 release에 권한·rollback 불명확 | Block | permission matrix, 사람 승인, rollback plan |
+
+한 번의 우연한 성공은 Skill의 근거가 아닙니다. decision ID, 반복 task, candidate asset, 안정 input, failure, evidence, owner, review, action을 기록합니다.
+
+## 최소 개인 패키지
+
+project map, task protocol, state log, evidence index, reflection 다섯 기록으로 시작합니다. 시작 시 rules, branch, state, permission을 검사하고, 실행 중에는 필요한 context만 유지하며, 전달할 때 verified와 미완을 나누고, reflection에서 다른 사람이 이해하고 시험할 수 있는 규칙을 뽑습니다.
+
+전달에는 변경 사항, 실제 실행한 command, result와 exit code, 미검증·범위 밖 항목, risk, recovery, 다음 owner를 적습니다. 개인 습관을 제품 보장으로 바꾸지 말고 현재 공식 문서와 허가된 surface를 확인합니다.
+
+## 연습과 경계
+
+임시 복사본에서 고치지 않은 mobile overflow, user acceptance 없는 build success, version/entry/log 없는 authentication failure, audience/source 없는 copy update를 분류합니다. task/input만 주는 A와 다섯 기록을 쓰는 B를 비교합니다. 같은 input과 baseline을 복원해 각 두 번 실행하고 hash, `run_id`, clarification, 실제 변경, validation, 여섯 evidence, rework, unverified, status를 보관합니다.
+
+낡은 command와 directory를 fixture로 넣어 stale로 표시하고 재사용을 멈춥니다. 네 log가 완전하고 비밀·외부 부작용이 없으며 acceptance를 review해야 실험이 통과합니다. 그래도 Skill이나 실제 memory 동작을 검증하지는 않습니다.
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows-KO.md">← 이전<br><strong>19장 · 모델과 워크플로 평가하기, 인상에서 증거로</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-KO.md">다음 장 준비 중 →<br><strong>21장 제공 상태 보기</strong></a></td></tr></table></nav>
+<!-- chapter-navigation:end -->
