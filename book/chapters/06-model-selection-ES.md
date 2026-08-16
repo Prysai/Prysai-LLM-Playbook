@@ -42,7 +42,7 @@ Al terminar este capítulo, deberías ser capaz de:
 
 ## Un punto de entrada real: la elección de modelo falla de maneras ordinarias
 
-La [investigación de campo de Codex](../../docs/research/field-problems-codex.md)
+La [investigación de campo de Codex](../evidence-library-ES.md#source-notes)
 del proyecto recoge Issues públicos de GitHub y otros debates públicos. Estos
 informes son síntomas, no diagnósticos oficiales ni reproducciones locales. Son
 valiosos porque exponen las suposiciones que la gente hace cuando una elección de
@@ -56,7 +56,7 @@ modelo sale mal.
 
 Los enlaces originales, las fechas, las versiones, los niveles de evidencia y
 las notas de incertidumbre están en el
-[registro de investigación sobre selección de modelos](../../docs/research/codex-model-selection-official-facts-2026-08-11.md).
+[registro de investigación sobre selección de modelos](../evidence-library-ES.md#source-notes).
 El proyecto no ejecutó los comandos ni los workarounds de esos informes.
 
 ### Cómo usar un informe real sin convertirlo en folklore
@@ -391,7 +391,7 @@ sustituir a la evidencia de evaluación.
 | Posicionamiento oficial de modelos, guía de razonamiento, valores por defecto locales, límite de modelos en Cloud y avisos de deprecación | [Codex models](https://learn.chatgpt.com/docs/models.md) | 2026-08-11 | La documentación oficial en la fecha de consulta; no es prueba a nivel de cuenta ni un benchmark | `facts-maintainer` / 2026-09-11 |
 | Superficie CLI y flujo de trabajo con repositorio local | [Codex CLI](https://learn.chatgpt.com/docs/cli.md) | 2026-08-11 | Documentación oficial de la CLI; no la configuración efectiva de esta sesión | `facts-maintainer` / 2026-09-11 |
 | Entorno Cloud, configuración, logs y límites de revisión | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-11 | Documentación oficial de Cloud; la configuración no es la finalización de la etapa del Agent | `facts-maintainer` / 2026-09-11 |
-| Síntomas públicos de modelo/proveedor, capacidad y esperas prolongadas | [Registro de problemas de campo](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) | 2026-08-11 | Informes de usuarios y guía del proyecto; sin reproducción local ni afirmación oficial de causa raíz | `curriculum-maintainer` / 2026-09-11 |
+| Síntomas públicos de modelo/proveedor, capacidad y esperas prolongadas | [Registro de problemas de campo](../evidence-library-ES.md#source-notes) | 2026-08-11 | Informes de usuarios y guía del proyecto; sin reproducción local ni afirmación oficial de causa raíz | `curriculum-maintainer` / 2026-09-11 |
 | Método de comparación de tareas fijas | [Capítulo de evaluación](19-evaluate-models-and-workflows-ES.md) y el [fixture versionado](../../evals/candidates/three-task-smoke-v1/README-ES.md) | 2026-08-14 | Método del Playbook y validador local del fixture; aún sin ejecuciones de modelos completadas | `evaluation-maintainer` / 2026-09-11 |
 
 Los IDs de los modelos, las matrices de superficies, los precios, la capacidad,

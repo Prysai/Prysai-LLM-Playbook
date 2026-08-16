@@ -34,7 +34,7 @@
 
 ## 現実の入口：モデル選択はありふれた形で失敗する
 
-このプロジェクトの [Codex フィールド調査](../../docs/research/field-problems-codex.md) は、
+このプロジェクトの [Codex フィールド調査](../evidence-library-JA.md#source-notes) は、
 公開されている GitHub Issues やその他の公開議論を収集しています。これらの報告は症状であり、
 公式の診断やローカルでの再現ではありません。モデル選択がうまくいかないときに人々が抱く前提を
 明らかにしてくれるため、貴重な情報源です。
@@ -46,7 +46,7 @@
 | Windows のコマンドが `Working` のまま残る | UI は活動を示すが、検証可能な出力が届かない | formatter、Agent、モデルがまだ有益な進捗を生んでいること | タイムアウト／停止ルールを適用し、安全に中断し、worktree を調べ、絞り込んだ check だけを再実行する |
 
 元のリンク、日付、バージョン、根拠のレベル、不確実性に関する注記は、
-[モデル選択の調査記録](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) に
+[モデル選択の調査記録](../evidence-library-JA.md#source-notes) に
 あります。このプロジェクトは、それらの報告に含まれるコマンドや回避策を実行していません。
 
 ### 実報告を「伝説」にせずに使う方法
@@ -337,7 +337,7 @@ comparable | not_comparable_reason | raw_evidence
 | 公式のモデル位置づけ、reasoning ガイダンス、ローカルのデフォルト、Cloud のモデル境界、廃止通知 | [Codex models](https://learn.chatgpt.com/docs/models.md) | 2026-08-11 | 確認日時点の公式ドキュメント。account レベルの証明やベンチマークではない | `facts-maintainer` / 2026-09-11 |
 | CLI の作業面とローカル repository のワークフロー | [Codex CLI](https://learn.chatgpt.com/docs/cli.md) | 2026-08-11 | 公式の CLI ドキュメント。この session の実効設定ではない | `facts-maintainer` / 2026-09-11 |
 | Cloud の環境、セットアップ、logs、レビューの境界 | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-11 | 公式の Cloud ドキュメント。セットアップは Agent ステージの完了ではない | `facts-maintainer` / 2026-09-11 |
-| 公開されている model／provider、容量、長時間待機の症状 | [フィールド問題の記録](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) | 2026-08-11 | ユーザー報告とプロジェクトの指針。ローカルでの再現や公式の根本原因の主張はない | `curriculum-maintainer` / 2026-09-11 |
+| 公開されている model／provider、容量、長時間待機の症状 | [フィールド問題の記録](../evidence-library-JA.md#source-notes) | 2026-08-11 | ユーザー報告とプロジェクトの指針。ローカルでの再現や公式の根本原因の主張はない | `curriculum-maintainer` / 2026-09-11 |
 | 固定タスクの比較方法 | [評価の章](19-evaluate-models-and-workflows-JA.md) と[バージョン管理された fixture](../../evals/candidates/three-task-smoke-v1/README-JA.md) | 2026-08-14 | Playbook の方法とローカルの fixture validator。完了したモデル実行はまだない | `evaluation-maintainer` / 2026-09-11 |
 
 モデル ID、作業面マトリクス、価格、容量、設定構文、provider サポート、effort 制御、廃止通知は

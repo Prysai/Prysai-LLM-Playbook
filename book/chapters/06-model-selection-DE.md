@@ -25,7 +25,7 @@ Am Ende dieses Kapitels solltest du in der Lage sein:
 
 ## Einstieg aus der Praxis: Modellauswahl scheitert auf ganz gewöhnliche Weise
 
-Die [Codex-Feldrecherche](../../docs/research/field-problems-codex.md) des Projekts sammelt öffentliche GitHub Issues und andere öffentliche Diskussionen. Diese Berichte sind Symptome, keine offiziellen Diagnosen und keine lokalen Reproduktionen. Sie sind wertvoll, weil sie die Annahmen sichtbar machen, die Menschen treffen, wenn eine Modellauswahl schiefgeht.
+Die [Codex-Feldrecherche](../evidence-library-DE.md#source-notes) des Projekts sammelt öffentliche GitHub Issues und andere öffentliche Diskussionen. Diese Berichte sind Symptome, keine offiziellen Diagnosen und keine lokalen Reproduktionen. Sie sind wertvoll, weil sie die Annahmen sichtbar machen, die Menschen treffen, wenn eine Modellauswahl schiefgeht.
 
 | Öffentliches Symptom | Was der Melder beobachtet hat | Was es **nicht** beweist | Erste sichere Reaktion |
 |---|---|---|---|
@@ -33,7 +33,7 @@ Die [Codex-Feldrecherche](../../docs/research/field-problems-codex.md) des Proje
 | Das gewählte Modell ist ausgelastet | Eine Aufgabe stoppt vor einem vollständigen Ergebnis, und spätere Prompts können auf einen Teilzustand treffen | Dass das Modell schlecht ist oder dass ein erneuter Versuch bedeutet, der erste Lauf sei abgeschlossen | Checkpoint, Diff, Logs und Tests sichern; den Zustand einordnen, bevor du fortfährst |
 | Ein Windows-Befehl bleibt auf `Working` | Die UI zeigt Aktivität, aber es trifft keine überprüfbare Ausgabe ein | Dass Formatter, Agent oder Modell weiterhin sinnvolle Fortschritte machen | Die Timeout-/Stopp-Regel anwenden, sicher unterbrechen, den Worktree prüfen und nur einen begrenzten Check erneut ausführen |
 
-Die ursprünglichen Links, Daten, Versionen, Evidenzgrade und Unsicherheitshinweise stehen im [Datensatz zur Modellauswahl](../../docs/research/codex-model-selection-official-facts-2026-08-11.md). Das Projekt hat die Befehle oder Workarounds aus diesen Berichten nicht ausgeführt.
+Die ursprünglichen Links, Daten, Versionen, Evidenzgrade und Unsicherheitshinweise stehen im [Datensatz zur Modellauswahl](../evidence-library-DE.md#source-notes). Das Projekt hat die Befehle oder Workarounds aus diesen Berichten nicht ausgeführt.
 
 ### Wie man einen echten Bericht nutzt, ohne daraus Folklore zu machen
 
@@ -269,7 +269,7 @@ Die vorgesehene Lieferung besteht aus zwei Kandidatenkarten, einem eingefrorenen
 | Offizielle Modellpositionierung, Reasoning-Hinweise, lokale Standardwerte, Cloud-Modellgrenze und Deprecation-Hinweise | [Codex models](https://learn.chatgpt.com/docs/models.md) | 2026-08-11 | Die offizielle Dokumentation zum Zugriffszeitpunkt; kein Konto-Nachweis und kein Benchmark | `facts-maintainer` / 2026-09-11 |
 | CLI-Arbeitsfläche und lokaler Repository-Workflow | [Codex CLI](https://learn.chatgpt.com/docs/cli.md) | 2026-08-11 | Offizielle CLI-Dokumentation; nicht die wirksame Konfiguration dieser Sitzung | `facts-maintainer` / 2026-09-11 |
 | Cloud-Umgebung, Einrichtung, Logs und Review-Grenzen | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-11 | Offizielle Cloud-Dokumentation; die Einrichtung ist kein abgeschlossener Agent-Schritt | `facts-maintainer` / 2026-09-11 |
-| Öffentliche Modell-/Provider-, Kapazitäts- und Langzeit-Wartesymptome | [Feldproblem-Datensatz](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) | 2026-08-11 | Nutzerberichte und Projektleitfaden; keine lokale Reproduktion und kein Anspruch auf eine offizielle Ursache | `curriculum-maintainer` / 2026-09-11 |
+| Öffentliche Modell-/Provider-, Kapazitäts- und Langzeit-Wartesymptome | [Feldproblem-Datensatz](../evidence-library-DE.md#source-notes) | 2026-08-11 | Nutzerberichte und Projektleitfaden; keine lokale Reproduktion und kein Anspruch auf eine offizielle Ursache | `curriculum-maintainer` / 2026-09-11 |
 | Vergleichsmethode mit festen Aufgaben | [Evaluierungskapitel](19-evaluate-models-and-workflows-DE.md) und das [versionierte Fixture](../../evals/candidates/three-task-smoke-v1/README-DE.md) | 2026-08-14 | Playbook-Methode und lokaler Fixture-Validator; noch keine abgeschlossenen Modellläufe | `evaluation-maintainer` / 2026-09-11 |
 
 Modell-IDs, Arbeitsflächen-Matrizen, Preise, Kapazität, Konfigurationssyntax, Provider-Support, Aufwandskontrollen und Deprecation-Hinweise können sich ändern. Wenn das geschieht, aktualisiere zuerst die Erstparteien-Quellen und dann das Faktenwirkungsregister, den Forschungsdatensatz, dieses Kapitel, betroffene Evaluierungs-Fixtures und die Statusquelle. Halte offizielle Positionierung, Nutzersymptome und lokale Laufzeitbelege in getrennten Sätzen.

@@ -24,7 +24,7 @@ Oirás GPT, Grok, Gemini, Kimi, Codex y Answer.AI en la misma conversación. No 
 | Kimi / Moonshot AI | ¿Es la codificación, el análisis o el trabajo con documentos largos la tarea que necesito probar? | Su contexto o funciones anunciadas prueban la calidad en este banco de trabajo. |
 | Answer.AI | ¿Busco investigación aplicada, educación o un producto para usuarios finales? | Es un proveedor de modelos fundacionales para poner en el mismo selector. |
 
-El [recibo de paisaje de modelos y bancos de trabajo](../../docs/research/model-workbench-landscape-source-receipt-2026-08-15.md) enlaza cada fila con una fuente del propietario y separa el posicionamiento del propietario de un resultado medido. Empieza mejorando una petición en el modelo que ya tienes; solo después compara candidatos en la misma tarea y regla de aceptación.
+El [recibo de paisaje de modelos y bancos de trabajo](../evidence-library-ES.md#source-notes) enlaza cada fila con una fuente del propietario y separa el posicionamiento del propietario de un resultado medido. Empieza mejorando una petición en el modelo que ya tienes; solo después compara candidatos en la misma tarea y regla de aceptación.
 
 ## El problema que resuelve este capítulo
 

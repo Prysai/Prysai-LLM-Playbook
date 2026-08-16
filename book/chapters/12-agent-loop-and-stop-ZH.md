@@ -48,7 +48,7 @@
 
 ## 现实问题入口：“工作中”不等于结论
 
-项目的[现场问题研究](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)收集了上下文漂移、任务中断或恢复、命令长期停留在 `Working` 状态、worktree 不匹配、工具不可用，以及验证演变成未经批准的安装等报告。另一份[深度分析记录](../../docs/research/field-problems-deep-dive-p2-2026-08-11.md)比较了这些报告所暴露出的可观察边界。
+项目的[现场问题研究](../evidence-library-ZH.md#source-notes)收集了上下文漂移、任务中断或恢复、命令长期停留在 `Working` 状态、worktree 不匹配、工具不可用，以及验证演变成未经批准的安装等报告。另一份[深度分析记录](../evidence-library-ZH.md#source-notes)比较了这些报告所暴露出的可观察边界。
 
 这些报告只支持一个很窄的教训：可见的状态通常只告诉你界面显示了哪个状态，而不告诉你下一次状态转换是否真的发生了。它们**不能**证明存在一个共同的根因、一个适用于每个账号的修复，或每个版本的行为。因此，第一个安全的问题不是“怎么让它继续”，而是：“我能证明的最后一次转换是什么？”
 
@@ -707,10 +707,10 @@ owner: 当前操作者
 | 审批与护栏 | [OpenAI: Guardrails and approvals](https://developers.openai.com/api/docs/guides/agents/guardrails-approvals) | 2026-08-10 | 记录了一个审批边界；它不能证明某次运行中审批被展示或授予 | `curriculum-maintainer` / 2026-09-10 |
 | 间接指令与工具/数据信任边界 | [OpenAI: Agent Builder safety](https://developers.openai.com/api/docs/guides/agent-builder-safety) | 2026-08-10 | 安全指南与威胁边界，不是 Agent 阻止每种注入变体的证明 | `curriculum-maintainer` / 2026-09-10 |
 | 对比工具与上下文行为 | [Anthropic: Tool use overview](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview.md) 与 [context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows.md) | 2026-08-10 | 用于比较可观察阶段的产品专用参考；不是 Codex 实现契约 | `curriculum-maintainer` / 2026-09-10 |
-| 真实用户报告的失败边界 | [现场问题与 prompt 模式](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md) | 2026-08-11 | 公开报告与原始总结；无本地复现、无普适根因、无供应商背书 | `curriculum-maintainer` / 2026-09-11 |
-| 跨案例状态与恢复综合 | [现场问题深度分析](../../docs/research/field-problems-deep-dive-p2-2026-08-11.md) | 2026-08-11 | 从公开报告得出的教学推断；issue 状态与产品行为可能变化 | `curriculum-maintainer` / 2026-09-11 |
-| 教程结构与实验设计 | [实用 Agent 指南基准](../../docs/research/practical-ai-agent-guide-benchmark-2026-08-10.md) | 2026-08-10 | 对公开教程的原始比较；不是学习成果的证据 | `curriculum-maintainer` / 2026-09-10 |
-| 本章使用的机制笔记 | [LLM 机制深度分析](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md) | 2026-08-10 | 区分官方事实、推断、未知与教学实验；把产品声明当作当前事实前先复核 | `curriculum-maintainer` / 2026-09-10 |
+| 真实用户报告的失败边界 | [现场问题与 prompt 模式](../evidence-library-ZH.md#source-notes) | 2026-08-11 | 公开报告与原始总结；无本地复现、无普适根因、无供应商背书 | `curriculum-maintainer` / 2026-09-11 |
+| 跨案例状态与恢复综合 | [现场问题深度分析](../evidence-library-ZH.md#source-notes) | 2026-08-11 | 从公开报告得出的教学推断；issue 状态与产品行为可能变化 | `curriculum-maintainer` / 2026-09-11 |
+| 教程结构与实验设计 | [实用 Agent 指南基准](../evidence-library-ZH.md#source-notes) | 2026-08-10 | 对公开教程的原始比较；不是学习成果的证据 | `curriculum-maintainer` / 2026-09-10 |
+| 本章使用的机制笔记 | [LLM 机制深度分析](../evidence-library-ZH.md#source-notes) | 2026-08-10 | 区分官方事实、推断、未知与教学实验；把产品声明当作当前事实前先复核 | `curriculum-maintainer` / 2026-09-10 |
 
 来源边界很重要。一条公开 issue 只能证明报告者描述了一个症状；它不能证明普遍性、根因或修复。官方 runtime 指南描述的只是一个 runtime 的契约；它不能证明桌面 UI、CLI、自定义宿主或其他供应商会暴露相同的事件。教学示意图或 sandbox fixture 可以阐明机制，但它不是生产轨迹。在最终证据记录中保持这些类别清晰可见。
 

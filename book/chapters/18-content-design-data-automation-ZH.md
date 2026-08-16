@@ -163,8 +163,8 @@
 
 ## 来源与维护边界
 
-- **实地报告：**[`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md)，FP-10 和 FP-11。这些记录为 `candidate`，访问并整理于 2026-08-09，未在本地复现。
-- **外部资产与许可证边界：**[`docs/sources/asset-register.md`](../../docs/sources/asset-register.md)，S01、S03 和 S06。许可证不明的图片、代码、模板或嵌套资产仅供引用，不得复制进发布物。
+- **实地报告：**[`docs/research/field-problems-codex.md`](../evidence-library-ZH.md#source-notes)，FP-10 和 FP-11。这些记录为 `candidate`，访问并整理于 2026-08-09，未在本地复现。
+- **外部资产与许可证边界：**[`docs/sources/asset-register.md`](../evidence-library-ZH.md#source-notes)，S01、S03 和 S06。许可证不明的图片、代码、模板或嵌套资产仅供引用，不得复制进发布物。
 - **易变的工具事实：**以实际使用的文档、PDF、电子表格、浏览器、渲染和外部服务工具的官方文档为准。在工作记录中记下 URL、访问日期、版本和范围。
 - **维护负责人：**内容与自动化轨维护者。当渲染器、格式、浏览器、API、许可证或权限模型发生变化时进行复核，且不晚于 2026-11-09。
 

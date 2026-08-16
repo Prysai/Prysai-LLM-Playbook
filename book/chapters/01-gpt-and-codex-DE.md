@@ -24,7 +24,7 @@ Du wirst GPT, Grok, Gemini, Kimi, Codex und Answer.AI in derselben Diskussion h�
 | Kimi / Moonshot AI | Ist Codieren, Analysieren oder Arbeiten mit langen Dokumenten die Aufgabe, die ich testen muss? | Sein beworbener Kontext oder Funktionsumfang beweist Qualität in dieser Werkbank. |
 | Answer.AI | Suche ich angewandte Forschung, Bildung oder ein Endnutzerprodukt? | Es ist ein Basismodell-Anbieter für dieselbe Auswahl. |
 
-Die [Landschaft-Quittung für Modelle und Werkbänke](../../docs/research/model-workbench-landscape-source-receipt-2026-08-15.md) verknüpft jede Zeile mit einer Eigentümerquelle und trennt die Positionierung des Eigentümers von einem gemessenen Ergebnis. Verbessere zuerst eine Anfrage in dem Modell, das du bereits hast; vergleiche Kandidaten erst danach an derselben Aufgabe und derselben Akzeptanzregel.
+Die [Landschaft-Quittung für Modelle und Werkbänke](../evidence-library-DE.md#source-notes) verknüpft jede Zeile mit einer Eigentümerquelle und trennt die Positionierung des Eigentümers von einem gemessenen Ergebnis. Verbessere zuerst eine Anfrage in dem Modell, das du bereits hast; vergleiche Kandidaten erst danach an derselben Aufgabe und derselben Akzeptanzregel.
 
 ## Das Problem, das dieses Kapitel löst
 

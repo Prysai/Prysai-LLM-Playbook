@@ -169,8 +169,8 @@ Agent 可以整理产品上下文、起草变体、检查事件名称、计算�
 
 ## 来源与维护边界
 
-- **实地报告：**[`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md) 中的 FP-03 与 FP-04。该记录状态为 `candidate`；它由 Prysai LLM Playbook 维护组于 2026-08-09 访问并整理。它不是本地复现。
-- **营销方法参考：**[`docs/sources/asset-register.md`](../../docs/sources/asset-register.md) 中的 S04。本章是对决策与证据实践的原创综合；它不复制任何外部营销 Skill 的文本。
+- **实地报告：**[`docs/research/field-problems-codex.md`](../evidence-library-ZH.md#source-notes) 中的 FP-03 与 FP-04。该记录状态为 `candidate`；它由 Prysai LLM Playbook 维护组于 2026-08-09 访问并整理。它不是本地复现。
+- **营销方法参考：**[`docs/sources/asset-register.md`](../evidence-library-ZH.md#source-notes) 中的 S04。本章是对决策与证据实践的原创综合；它不复制任何外部营销 Skill 的文本。
 - **易变的平台与隐私事实：**使用适用平台的官方开发者文档与隐私文档、组织政策与当前配置。在实验记录中记下 URL、访问日期、地区、数据负责人与保留政策。
 - **维护负责人：**营销路线维护者。当定位、渠道、权限、隐私政策、事件结构或归因方法发生变化时进行复核，且最迟不晚于 2026-11-09。
 

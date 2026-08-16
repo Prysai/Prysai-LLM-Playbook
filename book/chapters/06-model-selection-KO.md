@@ -36,7 +36,7 @@ reasoning 설정을 사용한다면 깨끗한 모델 비교가 성립하지 않�
 
 ## 현실 진입점: 모델 선택은 평범한 방식으로 실패한다
 
-이 프로젝트의 [Codex 현장 조사](../../docs/research/field-problems-codex.md)는 공개
+이 프로젝트의 [Codex 현장 조사](../evidence-library-KO.md#source-notes)는 공개
 GitHub Issue와 기타 공개 토론을 수집합니다. 이 보고들은 증상이지 공식 진단이나 로컬
 재현이 아닙니다. 모델 선택이 잘못될 때 사람들이 세우는 가정을 드러내기 때문에 가치가
 있습니다.
@@ -48,7 +48,7 @@ GitHub Issue와 기타 공개 토론을 수집합니다. 이 보고들은 증상
 | Windows 명령이 `Working` 상태로 남음 | UI는 활동을 보여 주지만 검증 가능한 출력은 도착하지 않음 | formatter, Agent, 모델이 여전히 유용한 진전을 만들고 있다는 것 | timeout/stop 규칙을 적용하고 안전하게 중단한 뒤 worktree를 검사하고 제한된 check만 다시 실행 |
 
 원본 링크, 날짜, 버전, 근거 수준, 불확실성 메모는
-[모델 선택 연구 기록](../../docs/research/codex-model-selection-official-facts-2026-08-11.md)에
+[모델 선택 연구 기록](../evidence-library-KO.md#source-notes)에
 있습니다. 이 프로젝트는 그 보고들의 명령이나 해결 방법을 실행하지 않았습니다.
 
 ### 실제 보고서를 전설로 만들지 않고 활용하는 법
@@ -340,7 +340,7 @@ comparable | not_comparable_reason | raw_evidence
 | 공식 모델 포지셔닝, reasoning 지침, 로컬 기본값, Cloud 모델 경계, 지원 중단(deprecation) 공지 | [Codex models](https://learn.chatgpt.com/docs/models.md) | 2026-08-11 | 확인 시점의 공식 문서. 계정 수준의 증명이나 벤치마크가 아님 | `facts-maintainer` / 2026-09-11 |
 | CLI 작업면과 로컬 repository workflow | [Codex CLI](https://learn.chatgpt.com/docs/cli.md) | 2026-08-11 | 공식 CLI 문서. 이 session의 유효 구성이 아님 | `facts-maintainer` / 2026-09-11 |
 | Cloud 환경, 설정, 로그, 검토 경계 | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-11 | 공식 Cloud 문서. 설정이 agent 단계 완료를 뜻하지는 않음 | `facts-maintainer` / 2026-09-11 |
-| 공개된 model/provider, 용량, 오래 기다림 증상 | [현장 문제 기록](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) | 2026-08-11 | 사용자 보고와 프로젝트 지침. 로컬 재현이나 공식 근본 원인 주장 없음 | `curriculum-maintainer` / 2026-09-11 |
+| 공개된 model/provider, 용량, 오래 기다림 증상 | [현장 문제 기록](../evidence-library-KO.md#source-notes) | 2026-08-11 | 사용자 보고와 프로젝트 지침. 로컬 재현이나 공식 근본 원인 주장 없음 | `curriculum-maintainer` / 2026-09-11 |
 | 고정 작업 비교 방법 | [평가 장](19-evaluate-models-and-workflows-KO.md)과 [버전 고정 fixture](../../evals/candidates/three-task-smoke-v1/README-KO.md) | 2026-08-14 | Playbook 방법과 로컬 fixture validator. 아직 완료된 모델 실행 없음 | `evaluation-maintainer` / 2026-09-11 |
 
 모델 ID, 작업면 매트릭스, 가격, 용량, 구성 문법, provider 지원, effort 제어, 지원

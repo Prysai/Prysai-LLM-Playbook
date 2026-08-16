@@ -186,7 +186,7 @@ claim_status: "disputed"
   claim_status: "current"
 ```
 
-项目的更新流程在 [`docs/governance/content-lifecycle.md`](../../docs/governance/content-lifecycle.md) 中有进一步说明。本章保持 `candidate`，练习保持 `draft / not_run`；上面的 `claim_status` 值不会改变这两个结论。
+项目的更新流程在 [`docs/governance/content-lifecycle.md`](../evidence-library-ZH.md#method-and-status) 中有进一步说明。本章保持 `candidate`，练习保持 `draft / not_run`；上面的 `claim_status` 值不会改变这两个结论。
 
 <!-- chapter-navigation:start -->
 <hr>
