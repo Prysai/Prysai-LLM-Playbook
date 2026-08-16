@@ -27,7 +27,7 @@ smallest safe check, and keep the supplied status meaning narrow:
 Run the deterministic checker from the repository root:
 
 ```powershell
-$py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+$py = (Get-Command python -ErrorAction Stop).Source
 & $py scripts\validate_universal_seam_fixture.py
 & $py scripts\test_universal_seam_fixture.py
 ```

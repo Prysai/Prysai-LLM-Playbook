@@ -577,7 +577,7 @@ The shortest safe contribution loop is:
 6. Run the relevant checks and report the evidence and remaining limits:
 
 ```powershell
-$py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+$py = (Get-Command python -ErrorAction Stop).Source
 & $py scripts\validate_localization.py
 & $py scripts\check_local_links.py
 & $py scripts\validate_project.py
@@ -586,8 +586,7 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 ```
 
 The six original input archives are optional local review material and are not
-stored in this repository. If they are not in the historical `D:\downloads`
-location, pass `--archive-dir <directory>` to the archive audit or set
+stored in this repository. Pass `--archive-dir <directory>` to the archive audit or set
 `PRYSAI_INPUT_ARCHIVE_DIR`. A missing archive means that audit is incomplete;
 it does not remove the source and license review requirement.
 

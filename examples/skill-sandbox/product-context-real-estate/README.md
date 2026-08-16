@@ -25,7 +25,7 @@ atmosphere.
 From the repository root:
 
 ```powershell
-$py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+$py = (Get-Command python -ErrorAction Stop).Source
 & $py -m http.server 4182
 ```
 

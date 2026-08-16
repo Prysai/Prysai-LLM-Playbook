@@ -12,7 +12,7 @@ that the release note must ignore.
 Run from the repository root:
 
 ```powershell
-$py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+$py = (Get-Command python -ErrorAction Stop).Source
 & $py scripts\run_lab_013_reference.py --output-dir .work/lab-013-reference
 & $py scripts\validate_lab_013_reference.py --packet .work/lab-013-reference
 & $py scripts\test_lab_013_reference.py
@@ -22,4 +22,3 @@ The runner deliberately creates one invalid artifact first, preserves the
 non-zero check, corrects only the missing change, and preserves the passing
 check. A passing packet is runtime evidence about this deterministic fixture,
 not learner, model, Codex, transfer, publication, or production evidence.
-

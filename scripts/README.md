@@ -6,7 +6,7 @@ turn project rules into evidence that can be rerun locally and in CI.
 ## Common commands
 
 ```powershell
-$py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+$py = (Get-Command python -ErrorAction Stop).Source
 & $py scripts\validate_project.py
 & $py scripts\validate_project_structure.py
 & $py scripts\validate_content_completeness.py

@@ -94,7 +94,7 @@ review and does not present either as certification or a freshness guarantee.
 Run the artifact check locally:
 
 ```powershell
-$py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+$py = (Get-Command python -ErrorAction Stop).Source
 & $py scripts\build_pages_artifact.py --check
 ```
 
@@ -112,7 +112,7 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 10. 在仓库根目录执行项目验证：
 
 ```powershell
-$py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+$py = (Get-Command python -ErrorAction Stop).Source
 & $py scripts\validate_project.py
 & $py scripts\audit_input_archives.py
 & $py scripts\validate_update_registry.py
