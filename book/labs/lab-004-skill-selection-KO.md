@@ -95,7 +95,7 @@ research 또는 content task에서 비교를 반복하세요. 어느 새 depende
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-lab-nav="previous" href="lab-003-evidence-review-KO.md" aria-label="이전 Lab: Lab 003 · 완료 주장 감사하기">← 이전 Lab<br><strong>Lab 003 · 완료 주장 감사하기</strong></a></td>
-      <td align="right"><a data-lab-nav="next" href="../table-of-contents-KO.md" aria-label="한국어 목차로 돌아가기: Lab 005는 아직 번역되지 않음">다음 Lab 준비 중 →<br><strong>Lab 005 제공 상태 보기</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-005-design-a-skill-KO.md" aria-label="다음 Lab: Lab 005 · 반복되는 방법을 경계가 분명한 Skill로 만들기">다음 →<br><strong>Lab 005 · 반복되는 방법을 경계가 분명한 Skill로 만들기</strong></a></td>
     </tr>
   </table>
 </nav>
