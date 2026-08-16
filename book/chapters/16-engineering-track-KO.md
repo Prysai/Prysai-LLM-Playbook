@@ -51,5 +51,5 @@ timeout까지 출력 없음, 누락된 test 의존성, 알 수 없는 worktree �
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-KO.md">← 이전<br><strong>15장 · 연구 트랙, 질문에서 감사 가능한 지식까지</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-KO.md">다음 장 준비 중 →<br><strong>17장 제공 상태 보기</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-KO.md">← 이전<br><strong>15장 · 연구 트랙, 질문에서 감사 가능한 지식까지</strong></a></td><td align="right"><a data-chapter-nav="next" href="17-marketing-track-KO.md">다음 →<br><strong>17장 · 마케팅 트랙, 제품 이해에서 성장 실험까지</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->

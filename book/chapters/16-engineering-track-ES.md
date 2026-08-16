@@ -51,5 +51,5 @@ Simula una interrupción: detente, inspecciona worktree, diff, logs y estado de 
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-ES.md">← Anterior<br><strong>Capítulo 15 · ruta de investigación, de la pregunta al conocimiento auditable</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-ES.md">Siguiente pendiente →<br><strong>Ver disponibilidad del Capítulo 17</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-ES.md">← Anterior<br><strong>Capítulo 15 · ruta de investigación, de la pregunta al conocimiento auditable</strong></a></td><td align="right"><a data-chapter-nav="next" href="17-marketing-track-ES.md">Siguiente →<br><strong>Capítulo 17 · ruta de marketing, de entender el producto a experimentar con crecimiento</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->

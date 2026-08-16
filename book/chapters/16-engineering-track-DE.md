@@ -51,5 +51,5 @@ Simuliere eine Unterbrechung und prüfe Worktree, Diff, Logs und Teststatus, bev
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-DE.md">← Vorheriges<br><strong>Kapitel 15 · Forschungspfad, von der Frage zu prüfbarem Wissen</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-DE.md">Nächstes Kapitel in Arbeit →<br><strong>Verfügbarkeit von Kapitel 17 ansehen</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-DE.md">← Vorheriges<br><strong>Kapitel 15 · Forschungspfad, von der Frage zu prüfbarem Wissen</strong></a></td><td align="right"><a data-chapter-nav="next" href="17-marketing-track-DE.md">Nächstes →<br><strong>Kapitel 17 · Marketing-Pfad, vom Produktverständnis zu Wachstumsexperimenten</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->

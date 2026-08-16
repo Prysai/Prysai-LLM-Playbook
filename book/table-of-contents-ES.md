@@ -4,7 +4,7 @@
 
 Esta es una ruta de lectura en español, no una traducción completa del libro.
 El catálogo canónico tiene 22 capítulos `candidate` y 18 Labs `draft`; en este
-momento existen 16 capítulos y 11 Labs en español. Cada enlace de esta página
+momento existen 17 capítulos y 11 Labs en español. Cada enlace de esta página
 apunta al mismo contenido en español. Cuando no hay un archivo `-ES`, se indica
 como no disponible en vez de enlazar a otro capítulo o cambiar de idioma.
 
@@ -50,7 +50,7 @@ transferencia.
 | 14 — Descubrir, instalar y auditar Skills externos | [Disponible: capítulo 14](chapters/14-discover-and-audit-skills-ES.md) · `candidate / in-progress` |
 | 15 — Ruta de investigación: de la pregunta al conocimiento auditable | [Disponible: capítulo 15](chapters/15-research-track-ES.md) · `candidate / in-progress` |
 | 16 — Ruta de ingeniería: de la idea al software fiable | [Disponible: capítulo 16](chapters/16-engineering-track-ES.md) · `candidate / in-progress` |
-| 17 — Ruta de marketing: de entender el producto a experimentar con crecimiento | Aún no existe archivo español. |
+| 17 — Ruta de marketing: de entender el producto a experimentar con crecimiento | [Disponible: capítulo 17](chapters/17-marketing-track-ES.md) · `candidate / in-progress` |
 | 18 — Ruta de contenido, diseño, datos y automatización | Aún no existe archivo español. |
 | 19 — Evaluar modelos y flujos de trabajo | Aún no existe archivo español. |
 | 20 — Construir un sistema personal de trabajo con Codex | Aún no existe archivo español. |

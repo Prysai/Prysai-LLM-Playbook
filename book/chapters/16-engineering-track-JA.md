@@ -51,5 +51,5 @@ timeout まで出力なし、欠けた test 依存、未知の worktree、実 cr
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-JA.md">← 前の章<br><strong>第15章 · 調査トラック、問いから監査可能な知識へ</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-JA.md">次の章は準備中 →<br><strong>第17章の提供状況を見る</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-JA.md">← 前の章<br><strong>第15章 · 調査トラック、問いから監査可能な知識へ</strong></a></td><td align="right"><a data-chapter-nav="next" href="17-marketing-track-JA.md">次へ →<br><strong>第17章 · マーケティング・トラック、製品理解から成長実験へ</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->
