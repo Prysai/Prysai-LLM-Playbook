@@ -4,9 +4,17 @@
 
 **Status:** `candidate`. **Experimentstatus:** `not_run`. Dieses Kapitel beschreibt eine Entwurfsmethode; es beweist nicht, dass ein bestimmter Host einen Skill findet, lädt oder ausführt.
 
-## Das Problem
+## Das Problem dieses Kapitels
 
 Eine beeindruckende Sitzung reicht nicht, um aus einem Prompt einen Skill zu machen. Der Prompt kann von nicht dokumentierten Fakten abhängen, unnötige Rechte verlangen, eine Zugangsdaten voraussetzen oder bei einem Modewort anspringen. Ein nützlicher Skill ist ein versioniertes Methodenpaket für eine wiederkehrende Arbeitsklasse: mit begrenzten Aktionen und überprüfbarer Evidenz.
+
+## Lernziele
+
+Du kannst entscheiden, ob eine wiederkehrende Aufgabe überhaupt einen Skill braucht, einen Vertrag mit Auslösern und Nicht-Auslösern schreiben, Methode von Daten und Ausführung trennen und einen Kandidaten mit positiven, Grenz-, Fehler- und Transferfällen prüfen. Ein vorhandenes `SKILL.md` oder ein einzelner Lauf beweist noch keine Zuverlässigkeit über Hosts, Modelle oder Personen hinweg.
+
+## Praxisfälle: Ein Skill kann scheitern, bevor seine Methode beginnt
+
+Der praktische Fehler ist oft eine fehlende Entscheidung: Der Host entdeckt den Skill nicht, ein Trigger passt nicht, die Eingabe fehlt, eine Lizenz ist unklar oder die Aufgabe fordert eine breitere Nebenwirkung als erlaubt. Deshalb prüfst du Datei, Discovery, Auswahl, Laden, Aktion und Ausgabe getrennt und stoppst, bevor ein externer Kandidat als eigene Fähigkeit ausgegeben wird.
 
 > Ein Skill ist ein auffindbares, wiederverwendbares Methodenpaket, das eine abgegrenzte Aufgabenklasse auf begrenzte Aktionen und prüfbare Evidenz abbildet.
 
@@ -59,9 +67,19 @@ Kritische Sicherheitsregeln gehören nicht in eine optionale Referenz. Eine vorh
 
 Baue einen absichtlichen Fehler ein, der nur eine Variable verändert und ein sichtbares Signal hinterlässt. Bestimme Ziel, Ausgangslage, Wiederherstellungsschritte und eine anschließende Kontrolle: „Rückgängig machen“ allein genügt nicht.
 
-## Übung und Grenze
+## Experiment und Grenze
+
+### Vorbereitung
+
+Wähle eine lokale, nicht sensible Aufgabe, die du mindestens zweimal erledigt hast. Lege eine wegwerfbare Eingabe, eine klare Abnahme und eine Nur-Lesen-Grenze fest. Verwende keine Zugangsdaten, Installation, Netzwerkzugriffe oder fremde Skill-Inhalte mit unklarer Lizenz.
+
+### Aufgabe
 
 Wähle eine risikoarme Methode, die du mindestens zweimal ausgeführt hast, etwa Markdown-Links prüfen, Quellen eines Berichts kontrollieren oder eine Übergabe vorbereiten. Entwirf Vertrag, positiven Fall, einen ähnlichen Fall, der nicht auslösen soll, eine fehlende Eingabe, einen sichtbaren Fehler und eine Wiederherstellungsprüfung. Bewahre eine Tabelle auf: Was beweist jedes Artefakt, und was bleibt unbekannt?
+
+### Belege
+
+Sichere Vertrag, Version, nicht sensible Eingabe, erwartete und tatsächliche Ausgabe, Stoppunkt, geladene Ressourcen und die genaue Host-/Oberflächenbeobachtung. Markiere jede Stufe, die nicht beobachtet wurde, als `not_observed`; aus dem Ordner allein wird kein Ausführungsnachweis.
 
 Solange diese Fälle nicht in einer deklarierten Umgebung dokumentiert und unabhängig geprüft sind, bleibt der Skill `candidate`. Behaupte weder Auffindbarkeit, Laden, Ausführung noch geschäftliche Wirkung.
 
@@ -143,7 +161,7 @@ scope: local relative path only; remote availability not checked
 
 Danach folgt ein Grenzfall mit einem `https://`-Link. Der Skill soll ihn ohne Netzverbindung als außerhalb des Umfangs oder unbekannt ausweisen. Fehlt die Link-Basis, ist Fragen oder Stoppen richtig, nicht das Erraten der Struktur.
 
-## Kleines Experiment und Rückblick
+## Kleines Experiment und Grenze
 
 1. Wähle eine Markdown-Datei, die du gefahrlos lesen darfst; gib dem Modell keine Geheimnisse oder privaten Materialien.
 2. Trage Ziel, Umfang und Abnahme in den Aufgabenvertrag ein.
@@ -227,6 +245,26 @@ Welche Eingabe würde es erfinden? Welche ähnliche Anfrage muss einem anderen
 Verfahren weichen? Womit kann ein Review das Ergebnis prüfen? „Der Skill
 automatisiert alles“ ist keine ausreichende Antwort. Eine brauchbare Regel nennt
 Entscheidung, Grenze und ein prüfbares Signal.
+
+## Reflexion
+
+Welche Entscheidung ist im Skill wiederverwendbar, und welche gehört nur zu dieser Datei oder diesem Host? Welche Anfrage darf der Skill ausdrücklich nicht übernehmen? Welche Evidence würde die nächste unbeobachtete Stufe prüfen, ohne Berechtigung oder Umfang zu erweitern?
+
+## Transferaufgabe
+
+Übertrage den Vertrag auf eine Lern- oder Rechercheaufgabe. Ein Lern-Skill darf Übungszyklen und eine spätere Abrufaufgabe organisieren, aber weder fluency noch mastery behaupten. Ein Recherche-Skill kann Quellen und Unsicherheit ordnen, aber keinen gefundenen Link als geprüfte Tatsache ausgeben. Behalte Trigger, Nicht-Trigger, Stoppregel und Evidenzgrenze bei.
+
+## Abnahme-Checkliste
+
+- [ ] Der Kandidat löst eine benannte wiederkehrende Entscheidung, nicht „die KI besser machen“.
+- [ ] Trigger, Nicht-Trigger, Eingaben, erlaubte Aktionen, Stopppunkt und überprüfbare Ausgabe sind benannt.
+- [ ] Methode, projektspezifische Daten und deterministische Ausführung sind getrennt.
+- [ ] Positive, Grenz-, Fehler- und Transferfälle haben erwartete Ergebnisse oder ehrliches `not_run`.
+- [ ] Externes Material wurde nur nach Quellen-, Lizenz- und Nebenwirkungsprüfung aufgenommen.
+
+## Quellen und Wartungsgrenze
+
+Die Skill-Entscheidungsmethode ist projektintern. Host-Verhalten, Discovery, Plugins, MCP, Berechtigungen und externe Kandidaten sind veränderlich. Prüfe aktuelle Behauptungen gegen die [offiziellen Faktenkarten](../evidence-library-DE.md#source-notes), das [Skill-Kandidatenregister](../evidence-library-DE.md#source-notes) und die konkrete Lizenzquelle. Keiner dieser Nachweise ersetzt einen Lauf im dokumentierten Host.
 
 ## Vier Fälle vor der Übernahme
 

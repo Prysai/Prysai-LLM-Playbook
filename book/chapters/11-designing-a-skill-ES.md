@@ -4,9 +4,17 @@
 
 **Estado:** `candidate`. **Experimento:** `not_run`. Este capítulo especifica un método de diseño; no demuestra que un host descubra, cargue o ejecute un Skill concreto.
 
-## El problema
+## El problema que resuelve este capítulo
 
 Una sesión llamativa no basta para convertir un prompt en Skill. Puede depender de hechos no escritos, pedir permisos innecesarios, asumir una credencial o activarse por una palabra de moda. Un Skill útil es un paquete de método versionado para una clase de trabajo repetible, con acciones limitadas y evidencia inspeccionable.
+
+## Objetivos de aprendizaje
+
+Podrás decidir si una tarea repetida realmente necesita un Skill, escribir un contrato con activadores y no activadores, separar método, datos y ejecución, y revisar un candidato con casos positivo, de límite, de fallo y de transferencia. Un `SKILL.md` presente o una sola ejecución no prueba fiabilidad en todos los hosts, modelos o personas.
+
+## Problemas reales: un Skill puede fallar antes de que empiece su método
+
+El fallo práctico suele ser una decisión ausente: el host no descubre el Skill, el activador no encaja, falta la entrada, la licencia es incierta o la tarea pide un efecto más amplio que el autorizado. Por eso revisas archivo, descubrimiento, selección, carga, acción y salida por separado, y te detienes antes de presentar un candidato externo como capacidad propia.
 
 > Un Skill es un paquete descubrible y reutilizable que asigna una clase de tarea acotada a acciones acotadas y evidencia comprobable.
 
@@ -59,9 +67,19 @@ No ocultes reglas de seguridad críticas en una referencia opcional. Un archivo 
 
 Incluye una falla intencional que cambie una sola variable y tenga señal visible. Define destino, línea base, pasos de rollback y una lectura posterior: «deshacer» no es suficiente.
 
-## Práctica y límite
+## Experimento y límite
+
+### Preparación
+
+Elige una tarea local no sensible que hayas hecho al menos dos veces. Define una entrada desechable, aceptación clara y límite de solo lectura. No uses credenciales, instalación, red ni contenido ajeno de Skill cuya licencia no esté clara.
+
+### Tarea
 
 Elige un método de bajo riesgo realizado al menos dos veces, como revisar enlaces de Markdown, comprobar fuentes de un informe o preparar una entrega. Diseña contrato, un caso positivo, un caso cercano que no debe activar, una entrada ausente, una falla visible y una comprobación de rollback. Conserva una tabla de qué prueba cada artefacto y qué queda desconocido.
+
+### Evidencia
+
+Conserva contrato, versión, entrada no sensible, salida esperada y real, punto de parada, recursos cargados y la observación exacta de host/superficie. Marca cada capa no observada como `not_observed`; una carpeta no es una prueba de ejecución.
 
 Hasta registrar esos casos en un entorno declarado y revisarlos de forma independiente, el Skill es `candidate`; no afirmes descubrimiento, carga, ejecución ni impacto de negocio.
 
@@ -144,7 +162,7 @@ alcance: solo rutas relativas locales; no se comprobó la red
 
 Después usa un caso límite con un enlace `https://`: debe quedar como fuera de alcance o desconocido, sin conectarse. Con una base de resolución ausente, la respuesta correcta es preguntar o detenerse, no adivinar la estructura.
 
-## Experimento pequeño y revisión
+## Experimento pequeño y límite
 
 1. Elige un Markdown que puedas leer con seguridad; no entregues secretos ni material privado al modelo.
 2. Completa el acuerdo de tarea con objetivo, alcance y aceptación.
@@ -227,6 +245,26 @@ entrada inventaría?, ¿qué solicitud cercana debe ceder a otro método?, ¿qu�
 evidencia permitiría a un revisor comprobar el resultado? No aceptes «el Skill
 automatiza todo» como respuesta: una regla útil nombra una decisión, un límite y
 una señal revisable.
+
+## Reflexión
+
+¿Qué decisión es reutilizable dentro del Skill y cuál pertenece solo a este archivo o host? ¿Qué petición debe rechazar de forma explícita? ¿Qué evidencia comprobaría la siguiente capa no observada sin ampliar permisos ni alcance?
+
+## Tarea de transferencia
+
+Lleva el contrato a aprendizaje o investigación. Un Skill de aprendizaje puede organizar ciclos de práctica y recuperación posterior, pero no afirmar fluidez ni dominio. Uno de investigación puede ordenar fuentes e incertidumbre, pero no presentar un enlace encontrado como hecho comprobado. Conserva activador, no activador, regla de parada y límite de evidencia.
+
+## Lista de aceptación
+
+- [ ] El candidato resuelve una decisión repetida nombrada, no «hacer la IA mejor».
+- [ ] Se nombran activador, no activador, entradas, acciones permitidas, parada y salida comprobable.
+- [ ] Método, datos específicos de proyecto y ejecución determinista están separados.
+- [ ] Casos positivo, límite, fallo y transferencia tienen resultado esperado o `not_run` honesto.
+- [ ] El material externo solo se adopta tras revisar origen, licencia y efectos.
+
+## Fuentes y límite de mantenimiento
+
+El método de decisión de Skills es interno al proyecto. Comportamiento de host, descubrimiento, Plugins, MCP, permisos y candidatos externos cambian. Contrasta una afirmación actual con las [tarjetas oficiales](../evidence-library-ES.md#source-notes), el [registro de candidatos](../evidence-library-ES.md#source-notes) y la fuente concreta de licencia. Ninguna sustituye una ejecución en el host documentado.
 
 ## Cuatro casos antes de adoptar
 
