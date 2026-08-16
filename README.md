@@ -25,20 +25,6 @@ states otherwise. See [`LICENSE`](LICENSE) and the [licensing boundary](docs/sou
 static checks exist, but learner runs, transfer runs, repeated evaluations,
 and independent review are still pending.
 
-## Evidence ledger — measured, prepared, and unknown
-
-| Evidence status | Current record | What a reader may conclude |
-|---|---|---|
-| Observed | [Seven local checks × five sequential runs](docs/quality/verification-stability-2026-08-15.md), with raw milliseconds and a chart | These named engineering checks were stable in one current local Windows worktree. It is not a speed, Skill, learner, safety, or model result. |
-| Captured, unscored, analysis-ineligible | [Shift Handoff output packet](evals/results/shift-handoff-pilot-chatgpt-anonymous-2026-08-15/) contains 18 de-identified fictional outputs; its [input-integrity review](evals/results/shift-handoff-pilot-chatgpt-anonymous-2026-08-15/input-integrity-review.md) found that the historical prompt hashes do not bind the prepared Windows prompt bytes | A model-output collection occurred. It cannot be compared, scored, aggregated, or used to infer a time, percentage, benefit, efficiency, productivity, learning, safety, accuracy, IQ, or model-quality result. |
-| Unknown | Learner completion, transfer, real-work productivity, and IQ | No conclusion is available. The Playbook does not measure or claim IQ improvement. |
-
-The [measurement research record](docs/research/measuring-llm-workflow-performance-without-iq-claims-2026-08-15.md)
-defines task-scoped completion, rework, time, and fixed-rubric measures. Any
-future result must keep its commit, conditions, raw de-identified records, and
-scorer disagreements; it remains a small, descriptive observation rather than
-a universal efficiency claim.
-
 ## What this is
 
 You may have heard people mention Codex, Claude Code, Agents, or Skills and
@@ -69,6 +55,20 @@ source-backed adapter boundary until its own evidence exists.
 
 <mark>Do not stop at a plausible output.</mark> Ask what changed, what was
 checked, and what remains unproven.
+
+## Evidence ledger — measured, prepared, and unknown
+
+| Evidence status | Current record | What a reader may conclude |
+|---|---|---|
+| Observed | [Seven local checks × five sequential runs](docs/quality/verification-stability-2026-08-15.md), with raw milliseconds and a chart | These named engineering checks were stable in one current local Windows worktree. It is not a speed, Skill, learner, safety, or model result. |
+| Captured, unscored, analysis-ineligible | [Shift Handoff output packet](evals/results/shift-handoff-pilot-chatgpt-anonymous-2026-08-15/) contains 18 de-identified fictional outputs; its [input-integrity review](evals/results/shift-handoff-pilot-chatgpt-anonymous-2026-08-15/input-integrity-review.md) found that the historical prompt hashes do not bind the prepared Windows prompt bytes | A model-output collection occurred. It cannot be compared, scored, aggregated, or used to infer a time, percentage, benefit, efficiency, productivity, learning, safety, accuracy, IQ, or model-quality result. |
+| Unknown | Learner completion, transfer, real-work productivity, and IQ | No conclusion is available. The Playbook does not measure or claim IQ improvement. |
+
+The [measurement research record](docs/research/measuring-llm-workflow-performance-without-iq-claims-2026-08-15.md)
+defines task-scoped completion, rework, time, and fixed-rubric measures. Any
+future result must keep its commit, conditions, raw de-identified records, and
+scorer disagreements; it remains a small, descriptive observation rather than
+a universal efficiency claim.
 
 ## Start here — choose one route
 
