@@ -31,8 +31,8 @@ cada superficie de Codex, ni que una persona ya haya aprendido el método.
 ## Estado actual
 
 El catálogo tiene 18 identidades estables. Todas siguen en `draft` y el estado de
-ejecución de aprendices es `not_run`. Esta ruta española ya ofrece diez Labs locales:
-001–009 y 011. Los que aún faltan no se enlazan en inglés desde esta página; aparecerán
+ejecución de aprendices es `not_run`. Esta ruta española ya ofrece once Labs locales:
+001–011. Los que aún faltan no se enlazan en inglés desde esta página; aparecerán
 cuando exista su propio archivo español y su estado de traducción se haya registrado.
 
 ## Mapa de Labs en español
@@ -48,7 +48,7 @@ cuando exista su propio archivo español y su estado de traducción se haya regi
 | 007 | Límites de acción | L3 | [Abrir Lab 007](lab-007-action-boundaries-ES.md) |
 | 008 | Pregunta de investigación | L3 | [Abrir Lab 008](lab-008-research-question-ES.md) |
 | 009 | Ciclo de ingeniería | L3 | [Abrir Lab 009](lab-009-engineering-lifecycle-ES.md) |
-| 010 | Contexto de producto compartido | L3 | Aún no disponible en español |
+| 010 | Contexto de producto compartido | L3 | [Abrir Lab 010](lab-010-product-context-ES.md) |
 | 011 | Límites entre GPT y Codex | L0 | [Abrir Lab 011](lab-011-gpt-codex-boundaries-ES.md) |
 | 012 | Migración de capacidades de equipo | L6 | Aún no disponible en español |
 | 013 | Corte vertical auditable | L3 | Aún no disponible en español |
