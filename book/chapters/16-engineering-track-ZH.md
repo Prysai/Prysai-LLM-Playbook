@@ -120,5 +120,12 @@ AI 可以快速生成补丁，却也能在错误的仓库、错误的范围或�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章节导航"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-ZH.md">← 上一章<br><strong>第 15 章·研究路线：从问题到可审计知识</strong></a></td><td align="right"><a data-chapter-nav="next" href="17-marketing-track-ZH.md">下一章 →<br><strong>第 17 章·营销路线：从产品理解到增长实验</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="15-research-track-ZH.md" aria-label="上一章: 第 15 章 · 研究轨：从问题到可审查知识">← 上一章<br><strong>第 15 章 · 研究轨：从问题到可审查知识</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="17-marketing-track-ZH.md" aria-label="下一章: 第 17 章 · 营销轨：从产品理解到增长实验">下一章 →<br><strong>第 17 章 · 营销轨：从产品理解到增长实验</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

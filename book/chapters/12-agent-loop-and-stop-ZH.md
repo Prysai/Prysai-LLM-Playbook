@@ -337,8 +337,8 @@ stop_if: 没有终止事件、副作用未知、或范围扩大
 <nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-ZH.md" aria-label="上一章：第 11 章·设计一个真正有用的 Skill">← 上一章<br><strong>第 11 章·设计一个真正有用的 Skill</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="13-action-boundaries-ZH.md" aria-label="下一章：第 13 章·文件、终端、浏览器与 GitHub 的行动边界">下一章 →<br><strong>第 13 章·文件、终端、浏览器与 GitHub 的行动边界</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-ZH.md" aria-label="上一章: 第 11 章 · 设计一个真正有用的 Skill">← 上一章<br><strong>第 11 章 · 设计一个真正有用的 Skill</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="13-action-boundaries-ZH.md" aria-label="下一章: 第 13 章 · 文件、终端、浏览器与 GitHub 的行动边界">下一章 →<br><strong>第 13 章 · 文件、终端、浏览器与 GitHub 的行动边界</strong></a></td>
     </tr>
   </table>
 </nav>

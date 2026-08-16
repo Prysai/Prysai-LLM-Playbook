@@ -245,5 +245,12 @@ affected reader path, acceptance, permission, license, rollback을 하나씩 rev
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="07-skills-plugins-and-tools-KO.md">← 이전<br><strong>7장 · Skills, Plugins, MCP, 도구</strong></a></td><td align="right"><a data-chapter-nav="next" href="09-verification-and-recovery-KO.md">다음 →<br><strong>9장 · 검증, 의심, 복구</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="장 내비게이션">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="07-skills-plugins-and-tools-KO.md" aria-label="이전 장: 7장 · 7장: Skills, Plugins, MCP, 도구는 어떻게 일을 나누는가">← 이전<br><strong>7장 · 7장: Skills, Plugins, MCP, 도구는 어떻게 일을 나누는가</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="09-verification-and-recovery-KO.md" aria-label="다음 장: 9장 · 9장: 검증, 의심, 복구">다음 →<br><strong>9장 · 9장: 검증, 의심, 복구</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

@@ -333,3 +333,15 @@ schema/类型检查 → 业务规则检查 → 来源/状态检查
 - [项目术语](../evidence-library-ZH.md#core-terms) — GPT、Codex、工具、Skill、Agent、证据和状态的稳定定义。
 
 本章的解释结构是本项目原创内容。产品名称、调用语法、模型可用性、权限和服务行为在被视为当前事实之前，必须重新对照最新的一手来源。本章状态仍为 candidate；在存在真实运行记录和独立审查之前，所链接实验的状态仍为 draft 和 not_run。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"></td>
+      <td align="right"><a data-chapter-nav="next" href="02-first-safe-task-ZH.md" aria-label="下一章: 第 2 章 · 完成第一个安全、可验证的任务">下一章 →<br><strong>第 2 章 · 完成第一个安全、可验证的任务</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

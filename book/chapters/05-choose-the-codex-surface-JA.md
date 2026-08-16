@@ -372,11 +372,11 @@ forum record には公開報告があります。いずれも現在の account-l
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション">
+<nav class="chapter-navigation" aria-label="章ナビゲーション">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="04-context-permissions-and-agent-JA.md" aria-label="前の章：第 4 章 · コンテキスト、権限、Agent の行動境界">← 前の章<br><strong>第 4 章 · コンテキスト、権限、Agent の行動境界</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="06-model-selection-JA.md" aria-label="次の章：第 6 章 · モデル選択はモデル崇拝ではない">次へ →<br><strong>第 6 章 · モデル選択はモデル崇拝ではない</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="04-context-permissions-and-agent-JA.md" aria-label="前の章: 第 4 章 · コンテキスト、権限、Agent の行動境界">← 前へ<br><strong>第 4 章 · コンテキスト、権限、Agent の行動境界</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="06-model-selection-JA.md" aria-label="次の章: 第 6 章 · モデル選択はモデル崇拝ではない">次へ →<br><strong>第 6 章 · モデル選択はモデル崇拝ではない</strong></a></td>
     </tr>
   </table>
 </nav>

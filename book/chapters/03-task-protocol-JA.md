@@ -457,3 +457,15 @@ Codex には、確認質問とプロトコル草案だけを求めます。編�
 **状態:** `candidate`。章構造と出典記録はありますが、付属 Lab と独立した読者実行は
 `draft`/`not_run` のままです。次の日本語単元は、別言語のページではなく[日本語目次](../table-of-contents-JA.md)
 から選んでください。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="章ナビゲーション">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="02-first-safe-task-JA.md" aria-label="前の章: 第 2 章 · 最初の安全で検証可能なタスクを完了する">← 前へ<br><strong>第 2 章 · 最初の安全で検証可能なタスクを完了する</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="04-context-permissions-and-agent-JA.md" aria-label="次の章: 第 4 章 · コンテキスト、権限、Agent の行動境界">次へ →<br><strong>第 4 章 · コンテキスト、権限、Agent の行動境界</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

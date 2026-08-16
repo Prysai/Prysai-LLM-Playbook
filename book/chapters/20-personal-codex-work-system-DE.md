@@ -94,5 +94,12 @@ Lege vor einem A/B-Lauf einen alten Befehl und ein nicht mehr vorhandenes Verzei
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows-DE.md">← Vorheriges<br><strong>Kapitel 19 · Modelle und Workflows evaluieren, von Eindrücken zu Evidenz</strong></a></td><td align="right"><a data-chapter-nav="next" href="21-team-capability-system-DE.md">Weiter →<br><strong>Kapitel 21 · ein Team-Fähigkeitssystem aufbauen</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Kapitelnavigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows-DE.md" aria-label="Vorheriges Kapitel: Kapitel 19 · Modelle und Workflows evaluieren, von Eindrücken zu Evidenz">← Zurück<br><strong>Kapitel 19 · Modelle und Workflows evaluieren, von Eindrücken zu Evidenz</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="21-team-capability-system-DE.md" aria-label="Nächstes Kapitel: Kapitel 21 · Ein Team-Fähigkeitssystem aufbauen">Weiter →<br><strong>Kapitel 21 · Ein Team-Fähigkeitssystem aufbauen</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

@@ -291,8 +291,8 @@ comparable | not_comparable_reason | raw_evidence
 <nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="05-choose-the-codex-surface-ZH.md" aria-label="上一章：第 5 章·选择正确的 Codex 工作面">← 上一章<br><strong>第 5 章·选择正确的 Codex 工作面</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="07-skills-plugins-and-tools-ZH.md" aria-label="下一章：第 7 章·Skill、Plugin、MCP 和工具如何分工">下一章 →<br><strong>第 7 章·Skill、Plugin、MCP 和工具如何分工</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="05-choose-the-codex-surface-ZH.md" aria-label="上一章: 第 5 章 · 选择正确的 Codex 工作面">← 上一章<br><strong>第 5 章 · 选择正确的 Codex 工作面</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="07-skills-plugins-and-tools-ZH.md" aria-label="下一章: 第 7 章 · Skill、Plugin、MCP 和工具如何分工">下一章 →<br><strong>第 7 章 · Skill、Plugin、MCP 和工具如何分工</strong></a></td>
     </tr>
   </table>
 </nav>

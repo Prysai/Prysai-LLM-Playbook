@@ -120,5 +120,12 @@ delivery: diff、実際の command と output、passed / failed / not_run、unkn
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-JA.md">← 前の章<br><strong>第15章 · 調査トラック、問いから監査可能な知識へ</strong></a></td><td align="right"><a data-chapter-nav="next" href="17-marketing-track-JA.md">次へ →<br><strong>第17章 · マーケティング・トラック、製品理解から成長実験へ</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章ナビゲーション">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="15-research-track-JA.md" aria-label="前の章: 第 15 章 · 調査トラック、問いから監査可能な知識へ">← 前へ<br><strong>第 15 章 · 調査トラック、問いから監査可能な知識へ</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="17-marketing-track-JA.md" aria-label="次の章: 第 17 章 · マーケティング・トラック、製品理解から成長実験へ">次へ →<br><strong>第 17 章 · マーケティング・トラック、製品理解から成長実験へ</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

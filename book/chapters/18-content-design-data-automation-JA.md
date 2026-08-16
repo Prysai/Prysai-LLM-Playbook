@@ -105,5 +105,12 @@ email、CRM、cloud drive、website への送信は別の external write です�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="17-marketing-track-JA.md">← 前の章<br><strong>第17章 · マーケティング・トラック、製品理解から成長実験へ</strong></a></td><td align="right"><a data-chapter-nav="next" href="19-evaluate-models-and-workflows-JA.md">次へ →<br><strong>第19章 · モデルとワークフローを評価する、印象から証拠へ</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章ナビゲーション">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="17-marketing-track-JA.md" aria-label="前の章: 第 17 章 · マーケティング・トラック、製品理解から成長実験へ">← 前へ<br><strong>第 17 章 · マーケティング・トラック、製品理解から成長実験へ</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="19-evaluate-models-and-workflows-JA.md" aria-label="次の章: 第 19 章 · モデルとワークフローを評価する、印象から証拠へ">次へ →<br><strong>第 19 章 · モデルとワークフローを評価する、印象から証拠へ</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

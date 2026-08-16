@@ -236,5 +236,12 @@ field report는 symptom의 teaching input일 뿐 local reproduction, root cause,
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-KO.md">← 이전<br><strong>8장 · 정의에서 전달까지</strong></a></td><td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-KO.md">다음 →<br><strong>10장 · 계획과 수직 슬라이스</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="장 내비게이션">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-KO.md" aria-label="이전 장: 8장 · 8장: 정의에서 전달까지">← 이전<br><strong>8장 · 8장: 정의에서 전달까지</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-KO.md" aria-label="다음 장: 10장 · 10장: 계획과 수직 슬라이스">다음 →<br><strong>10장 · 10장: 계획과 수직 슬라이스</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

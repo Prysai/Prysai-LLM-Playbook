@@ -281,11 +281,11 @@ instruction は source、access date、scope とともに更新します。古�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション">
+<nav class="chapter-navigation" aria-label="章ナビゲーション">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="07-skills-plugins-and-tools-JA.md" aria-label="前の章：第 7 章 · Skill、Plugin、MCP、ツールは仕事をどう分けるか">← 前の章<br><strong>第 7 章 · Skill、Plugin、MCP、ツール</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="09-verification-and-recovery-JA.md" aria-label="次の章：第 9 章 · 検証、疑い、復旧">次の章へ →<br><strong>第 9 章 · 検証、疑い、復旧</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="07-skills-plugins-and-tools-JA.md" aria-label="前の章: 第 7 章 · Skill、Plugin、MCP、ツールは仕事をどう分けるか">← 前へ<br><strong>第 7 章 · Skill、Plugin、MCP、ツールは仕事をどう分けるか</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="09-verification-and-recovery-JA.md" aria-label="次の章: 第 9 章 · 検証、疑い、復旧">次へ →<br><strong>第 9 章 · 検証、疑い、復旧</strong></a></td>
     </tr>
   </table>
 </nav>

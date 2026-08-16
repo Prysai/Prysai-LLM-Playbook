@@ -110,5 +110,12 @@ Es un registro personal de práctica, no datos de benchmark. Que B salga mejor s
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-ES.md">← Anterior<br><strong>Capítulo 18 · ruta de contenido, diseño, datos y automatización</strong></a></td><td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-ES.md">Siguiente →<br><strong>Capítulo 20 · construir un sistema personal de trabajo con Codex</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Navegación de capítulos">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-ES.md" aria-label="Capítulo anterior: Capítulo 18 · ruta de contenido, diseño, datos y automatización">← Anterior<br><strong>Capítulo 18 · ruta de contenido, diseño, datos y automatización</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-ES.md" aria-label="Capítulo siguiente: Capítulo 20 · construir un sistema personal de trabajo con Codex">Siguiente →<br><strong>Capítulo 20 · construir un sistema personal de trabajo con Codex</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

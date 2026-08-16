@@ -109,5 +109,12 @@ reviewer_questions: ["事实是否有来源？", "是否改变权限或范围？
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章节导航"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-ZH.md">← 上一章<br><strong>第 20 章·构建个人 LLM 工作系统</strong></a></td><td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing-ZH.md">下一章 →<br><strong>第 22 章·持续更新与面向未来</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-ZH.md" aria-label="上一章: 第 20 章 · 建立个人 Codex 工作系统">← 上一章<br><strong>第 20 章 · 建立个人 Codex 工作系统</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing-ZH.md" aria-label="下一章: 第 22 章 · 持续更新与未来适应">下一章 →<br><strong>第 22 章 · 持续更新与未来适应</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

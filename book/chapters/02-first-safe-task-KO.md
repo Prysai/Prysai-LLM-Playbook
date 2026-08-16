@@ -453,3 +453,15 @@ README 변경 하나 만들기](../labs/lab-001-first-safe-task-KO.md)입니다.
 `draft / not_run`으로 유지합니다. 새롭고 범위가 제한된 실행이 선언한 증거를 만들기 전에는
 학습자가 완료했다고 다루지 않습니다. 다음은 [3장: 바람을 작업 프로토콜로 바꾸기](03-task-protocol-KO.md)입니다.
 이 이동은 한국어 안에서 이루어집니다. 다른 언어 페이지를 한국어 경로의 다음 단원처럼 취급하지 마세요.
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="장 내비게이션">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="01-gpt-and-codex-KO.md" aria-label="이전 장: 1장 · Codex를 신뢰하기 전에 GPT 이해하기">← 이전<br><strong>1장 · Codex를 신뢰하기 전에 GPT 이해하기</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="03-task-protocol-KO.md" aria-label="다음 장: 3장 · 3장: 바람을 작업 프로토콜로 바꾸기">다음 →<br><strong>3장 · 3장: 바람을 작업 프로토콜로 바꾸기</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

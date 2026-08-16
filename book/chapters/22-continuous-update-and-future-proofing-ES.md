@@ -102,5 +102,12 @@ Coloca un nombre ficticio de modelo o herramienta en cinco consumidores de un fi
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="21-team-capability-system-ES.md">← Anterior<br><strong>Capítulo 21 · construir un sistema de capacidades para el equipo</strong></a></td><td align="right"></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Navegación de capítulos">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="21-team-capability-system-ES.md" aria-label="Capítulo anterior: Capítulo 21 · construir un sistema de capacidades para el equipo">← Anterior<br><strong>Capítulo 21 · construir un sistema de capacidades para el equipo</strong></a></td>
+      <td align="right"></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

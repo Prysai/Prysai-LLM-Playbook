@@ -270,11 +270,11 @@ record를 먼저 갱신하고 fact impact registry, 이 장, Labs, Skills, fixtu
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="장 탐색">
+<nav class="chapter-navigation" aria-label="장 내비게이션">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="06-model-selection-KO.md" aria-label="이전 장: 6장 · 모델 선택은 모델 숭배가 아니다">← 이전 장<br><strong>6장 · 모델 선택은 모델 숭배가 아니다</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="08-full-lifecycle-workflow-KO.md" aria-label="다음 장: 8장 · 정의에서 전달까지">다음 장 →<br><strong>8장 · 정의에서 전달까지</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="06-model-selection-KO.md" aria-label="이전 장: 6장 · 6장: 모델 선택은 모델 숭배가 아니다">← 이전<br><strong>6장 · 6장: 모델 선택은 모델 숭배가 아니다</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="08-full-lifecycle-workflow-KO.md" aria-label="다음 장: 8장 · 8장: 정의에서 전달까지">다음 →<br><strong>8장 · 8장: 정의에서 전달까지</strong></a></td>
     </tr>
   </table>
 </nav>

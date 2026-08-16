@@ -195,5 +195,12 @@ receipt は記録した scope 内の出来事だけを示します。「調査�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-JA.md">← 前の章<br><strong>第14章 · 外部 Skill を見つけ、導入前に監査する</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-JA.md">次へ →<br><strong>第16章 · エンジニアリング・トラック、着想から信頼できるソフトウェアへ</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章ナビゲーション">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-JA.md" aria-label="前の章: 第 14 章 · 外部 Skill を見つけ、導入前に監査する">← 前へ<br><strong>第 14 章 · 外部 Skill を見つけ、導入前に監査する</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="16-engineering-track-JA.md" aria-label="次の章: 第 16 章 · エンジニアリング・トラック、着想から信頼できるソフトウェアへ">次へ →<br><strong>第 16 章 · エンジニアリング・トラック、着想から信頼できるソフトウェアへ</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

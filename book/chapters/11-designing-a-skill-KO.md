@@ -258,5 +258,12 @@ Skill 버전, 비민감 입력, 불러온 리소스, 출력, 첫 중단 지점�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-KO.md">← 이전<br><strong>10장 · 계획과 수직 슬라이스</strong></a></td><td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-KO.md">다음 →<br><strong>12장 · Agent 루프, 상태, 중지 조건</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="장 내비게이션">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-KO.md" aria-label="이전 장: 10장 · 10장: 계획과 수직 슬라이스">← 이전<br><strong>10장 · 10장: 계획과 수직 슬라이스</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-KO.md" aria-label="다음 장: 12장 · 12장: Agent 루프, 상태, 중지 조건">다음 →<br><strong>12장 · 12장: Agent 루프, 상태, 중지 조건</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

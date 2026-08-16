@@ -57,8 +57,13 @@ def main() -> int:
         if not isinstance(item, dict):
             errors.append(f"labs[{index}] must be an object")
             continue
-        if set(item) != {"id", "number", "title", "path"}:
-            errors.append(f"{item.get('id', index)} must contain only id, number, title, and path")
+        allowed_keys = {"id", "number", "title", "path", "title_es", "title_ja", "title_ko", "title_de"}
+        if not set(item) <= allowed_keys:
+            errors.append(f"{item.get('id', index)} must contain only id, number, title, path, and localized title fields")
+        for key in ("title_es", "title_ja", "title_ko", "title_de"):
+            value = item.get(key)
+            if not isinstance(value, str) or not value.strip():
+                errors.append(f"{item.get('id', index)}: {key} must be a non-empty localized title")
         path_value = item.get("path")
         if not isinstance(path_value, str) or not path_value.endswith("-EN.md"):
             errors.append(f"{item.get('id')}: path must identify an English -EN.md source")

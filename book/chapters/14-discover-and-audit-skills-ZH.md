@@ -169,5 +169,12 @@ Skill 是方法与路由契约；工具是观察或改变外部世界的接口�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章节导航"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-ZH.md">← 上一章<br><strong>第 13 章·文件、终端、浏览器与 GitHub 的行动边界</strong></a></td><td align="right"><a data-chapter-nav="next" href="15-research-track-ZH.md">下一章 →<br><strong>第 15 章·研究路线：从问题到可审计知识</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-ZH.md" aria-label="上一章: 第 13 章 · 文件、终端、浏览器与 GitHub 的行动边界">← 上一章<br><strong>第 13 章 · 文件、终端、浏览器与 GitHub 的行动边界</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="15-research-track-ZH.md" aria-label="下一章: 第 15 章 · 研究轨：从问题到可审查知识">下一章 →<br><strong>第 15 章 · 研究轨：从问题到可审查知识</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

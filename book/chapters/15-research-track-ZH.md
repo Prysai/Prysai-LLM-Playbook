@@ -199,5 +199,12 @@
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章节导航"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-ZH.md">← 上一章<br><strong>第 14 章·发现、安装与审计外部 Skill</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-ZH.md">下一章 →<br><strong>第 16 章·工程路线：从想法到可靠软件</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-ZH.md" aria-label="上一章: 第 14 章 · 如何发现、安装和审查外部 Skill">← 上一章<br><strong>第 14 章 · 如何发现、安装和审查外部 Skill</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="16-engineering-track-ZH.md" aria-label="下一章: 第 16 章 · 工程轨：从想法到可靠软件">下一章 →<br><strong>第 16 章 · 工程轨：从想法到可靠软件</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

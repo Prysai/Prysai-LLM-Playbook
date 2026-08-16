@@ -155,7 +155,7 @@ Die [Faktenkarten](../evidence-library-DE.md#source-notes) und [Feldproblemakten
 <nav class="chapter-navigation" aria-label="Kapitelnavigation">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="04-context-permissions-and-agent-DE.md" aria-label="Vorheriges Kapitel: Kapitel 4 · Kontext, Berechtigungen und die Aktionsgrenze des Agents">← Vorheriges<br><strong>Kapitel 4 · Kontext, Berechtigungen und die Aktionsgrenze des Agents</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="04-context-permissions-and-agent-DE.md" aria-label="Vorheriges Kapitel: Kapitel 4 · Kontext, Berechtigungen und die Handlungsgrenze des Agents">← Zurück<br><strong>Kapitel 4 · Kontext, Berechtigungen und die Handlungsgrenze des Agents</strong></a></td>
       <td align="right"><a data-chapter-nav="next" href="06-model-selection-DE.md" aria-label="Nächstes Kapitel: Kapitel 6 · Modellauswahl ist keine Modellverehrung">Weiter →<br><strong>Kapitel 6 · Modellauswahl ist keine Modellverehrung</strong></a></td>
     </tr>
   </table>

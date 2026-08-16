@@ -339,5 +339,12 @@ syntax は current official documentation で確認してください。公開 i
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章ナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-JA.md">← 前へ<br><strong>第11章 · 役に立つ Skill を設計する</strong></a></td><td align="right"><a data-chapter-nav="next" href="13-action-boundaries-JA.md">次へ →<br><strong>第13章 · ファイル、ターミナル、ブラウザ、GitHub にまたがる行動境界</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章ナビゲーション">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-JA.md" aria-label="前の章: 第 11 章 · 役に立つ Skill を設計する">← 前へ<br><strong>第 11 章 · 役に立つ Skill を設計する</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="13-action-boundaries-JA.md" aria-label="次の章: 第 13 章 · ファイル、ターミナル、ブラウザ、GitHub にまたがる行動境界">次へ →<br><strong>第 13 章 · ファイル、ターミナル、ブラウザ、GitHub にまたがる行動境界</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

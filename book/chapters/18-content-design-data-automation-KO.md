@@ -105,5 +105,12 @@ email, CRM, cloud drive, website 전송은 별도 external write입니다. test 
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="17-marketing-track-KO.md">← 이전<br><strong>17장 · 마케팅 트랙, 제품 이해에서 성장 실험까지</strong></a></td><td align="right"><a data-chapter-nav="next" href="19-evaluate-models-and-workflows-KO.md">다음 →<br><strong>19장 · 모델과 워크플로 평가하기, 인상에서 증거로</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="장 내비게이션">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="17-marketing-track-KO.md" aria-label="이전 장: 17장 · 17장: 마케팅 트랙, 제품 이해에서 성장 실험까지">← 이전<br><strong>17장 · 17장: 마케팅 트랙, 제품 이해에서 성장 실험까지</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="19-evaluate-models-and-workflows-KO.md" aria-label="다음 장: 19장 · 19장: 모델과 워크플로 평가하기, 인상에서 증거로">다음 →<br><strong>19장 · 19장: 모델과 워크플로 평가하기, 인상에서 증거로</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

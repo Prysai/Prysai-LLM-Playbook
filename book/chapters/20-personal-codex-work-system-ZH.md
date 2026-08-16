@@ -107,5 +107,12 @@ recovery: "删除临时记录并恢复干净副本"
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章节导航"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows-ZH.md">← 上一章<br><strong>第 19 章·评估模型与工作流</strong></a></td><td align="right"><a data-chapter-nav="next" href="21-team-capability-system-ZH.md">下一章 →<br><strong>第 21 章·构建团队能力系统</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows-ZH.md" aria-label="上一章: 第 19 章 · 评估模型和工作流">← 上一章<br><strong>第 19 章 · 评估模型和工作流</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="21-team-capability-system-ZH.md" aria-label="下一章: 第 21 章 · 建立团队能力系统">下一章 →<br><strong>第 21 章 · 建立团队能力系统</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

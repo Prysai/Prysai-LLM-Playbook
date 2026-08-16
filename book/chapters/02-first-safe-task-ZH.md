@@ -362,3 +362,15 @@ status: passed | failed | stopped
 任务协议、证据层和恢复顺序是本项目稳定的教学方法。产品具体权限、沙盒默认值、CLI 命令、审查工作面、模型名称和 UI 状态属于易变事实。相关事实变化时，重新检查[第 2 章官方基线](../evidence-library-ZH.md#source-notes)和[内容生命周期](../evidence-library-ZH.md#method-and-status)。
 
 [现场问题记录](../evidence-library-ZH.md#source-notes)包含用户报告和社区建议，不是官方根因确认。本章保持 `candidate`，实验保持 `draft / not_run`，直到新的、有边界的运行产生所声明的证据。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="01-gpt-and-codex-ZH.md" aria-label="上一章: 第 1 章 · 先理解 GPT，再理解 Codex 的工作原理">← 上一章<br><strong>第 1 章 · 先理解 GPT，再理解 Codex 的工作原理</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="03-task-protocol-ZH.md" aria-label="下一章: 第 3 章 · 把愿望变成任务协议">下一章 →<br><strong>第 3 章 · 把愿望变成任务协议</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

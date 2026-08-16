@@ -94,5 +94,12 @@ Antes de una ejecución A/B, añade al `project-map` un comando antiguo y un dir
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows-ES.md">← Anterior<br><strong>Capítulo 19 · evaluar modelos y flujos de trabajo, de impresiones a evidencia</strong></a></td><td align="right"><a data-chapter-nav="next" href="21-team-capability-system-ES.md">Siguiente →<br><strong>Capítulo 21 · construir un sistema de capacidades para el equipo</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Navegación de capítulos">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows-ES.md" aria-label="Capítulo anterior: Capítulo 19 · evaluar modelos y flujos de trabajo, de impresiones a evidencia">← Anterior<br><strong>Capítulo 19 · evaluar modelos y flujos de trabajo, de impresiones a evidencia</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="21-team-capability-system-ES.md" aria-label="Capítulo siguiente: Capítulo 21 · construir un sistema de capacidades para el equipo">Siguiente →<br><strong>Capítulo 21 · construir un sistema de capacidades para el equipo</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

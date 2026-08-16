@@ -35,8 +35,11 @@ def indexed_items(status: dict[str, Any], section: str) -> dict[str, dict[str, A
     }
 
 
+LOCALE_KEYS = ("en", "zh", "es", "ja", "ko", "de")
+
+
 def localized(value: dict[str, str]) -> dict[str, str]:
-    return {"en": value["en"], "zh": value["zh"]}
+    return {key: value[key] for key in LOCALE_KEYS}
 
 
 def build_asset(
@@ -53,8 +56,8 @@ def build_asset(
     if not catalog_item or not isinstance(catalog_item.get("name"), dict):
         raise ValueError(f"{section}: catalog is missing bilingual name for {asset_id}")
     name = catalog_item["name"]
-    if set(name) != {"en", "zh"} or not all(isinstance(value, str) and value.strip() for value in name.values()):
-        raise ValueError(f"{section}: catalog name for {asset_id} must contain non-empty en and zh text")
+    if set(name) != set(LOCALE_KEYS) or not all(isinstance(value, str) and value.strip() for value in name.values()):
+        raise ValueError(f"{section}: catalog name for {asset_id} must contain non-empty text for all six locales")
     result = {
         "id": asset_id,
         "name": localized(name),

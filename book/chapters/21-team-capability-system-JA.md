@@ -116,5 +116,12 @@ secret、実際の customer data、無許可の model output、再配布でき�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-JA.md">← 前の章<br><strong>第20章 · Codexで使う個人の作業システムを作る</strong></a></td><td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing-JA.md">次へ →<br><strong>第22章 · 継続的な更新と将来への備え</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章ナビゲーション">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-JA.md" aria-label="前の章: 第 20 章 · 個人用 Codex 作業システムを作る">← 前へ<br><strong>第 20 章 · 個人用 Codex 作業システムを作る</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing-JA.md" aria-label="次の章: 第 22 章 · 継続的な更新と将来への備え">次へ →<br><strong>第 22 章 · 継続的な更新と将来への備え</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

@@ -439,8 +439,8 @@ owner：[个人或团队]
 <nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-ZH.md" aria-label="上一章：第 9 章·验证、怀疑与恢复">← 上一章<br><strong>第 9 章·验证、怀疑与恢复</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="11-designing-a-skill-ZH.md" aria-label="下一章：第 11 章·设计一个真正有用的 Skill">下一章 →<br><strong>第 11 章·设计一个真正有用的 Skill</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-ZH.md" aria-label="上一章: 第 9 章 · 验证、怀疑与恢复">← 上一章<br><strong>第 9 章 · 验证、怀疑与恢复</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="11-designing-a-skill-ZH.md" aria-label="下一章: 第 11 章 · 设计一个真正有用的 Skill">下一章 →<br><strong>第 11 章 · 设计一个真正有用的 Skill</strong></a></td>
     </tr>
   </table>
 </nav>

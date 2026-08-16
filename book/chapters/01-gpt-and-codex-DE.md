@@ -462,3 +462,15 @@ erneut anhand der aktuellen Quelle aus erster Hand geprüft werden, bevor sie al
 aktuelle Fakten gelten. Der Kapitelstatus bleibt `candidate`; das verlinkte Lab
 bleibt `draft` und `not_run`, bis ein echtes Laufprotokoll und eine unabhängige
 Review vorliegen.
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="Kapitelnavigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"></td>
+      <td align="right"><a data-chapter-nav="next" href="02-first-safe-task-DE.md" aria-label="Nächstes Kapitel: Kapitel 2 · Die erste sichere und überprüfbare Aufgabe erledigen">Weiter →<br><strong>Kapitel 2 · Die erste sichere und überprüfbare Aufgabe erledigen</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

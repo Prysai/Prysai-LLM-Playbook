@@ -30,14 +30,21 @@ def load_navigation() -> dict[str, Any]:
     return document
 
 
+LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE")
+
+
 def path_for(item: dict[str, Any], locale: str) -> str:
-    if locale == "EN" and item.get("english_path"):
-        return str(item["english_path"])
-    return str(item["legacy_path"])
+    english_path = item.get("english_path")
+    if locale == "EN" and english_path:
+        return str(english_path)
+    if english_path:
+        stem = str(english_path)[: -len("-EN.md")]
+        return f"{stem}-{locale}.md"
+    return str(item.get("legacy_path", english_path or ""))
 
 
 def title_for(item: dict[str, Any], locale: str) -> str:
-    return str(item["title_en"] if locale == "EN" else item["title_zh"])
+    return str(item.get(f"title_{locale.lower()}") or item.get("title_en") or "")
 
 
 def relative_href(source: Path, target: Path) -> str:
@@ -55,25 +62,22 @@ def link_markup(
     number = int(item["number"])
     title = title_for(item, locale)
     pending = locale == "EN" and not item.get("english_path")
-    if locale == "EN":
-        prefix = "Previous chapter" if direction == "previous" else "Next chapter"
-        label = f"{prefix}: Chapter {number} · {title}"
-        if pending:
-            label += " · migration pending"
-        visible_prefix = "← Previous" if direction == "previous" else "Next →"
-    else:
-        prefix = "上一章" if direction == "previous" else "下一章"
-        label = f"{prefix}：第 {number} 章 · {title}"
-        visible_prefix = "← 上一章" if direction == "previous" else "下一章 →"
-        if pending:
-            label += " · 迁移待定"
-    visible_title = (
-        f"Chapter {number} · {title}"
-        if locale == "EN"
-        else f"第 {number} 章 · {title}"
-    )
-    if pending and locale == "EN":
-        visible_title += " · migration pending"
+    copy = {
+        "EN": {"prev": "Previous chapter", "next": "Next chapter", "prev_short": "← Previous", "next_short": "Next →", "sep": " · ", "pending": " · migration pending", "num": f"Chapter {number}"},
+        "ZH": {"prev": "上一章", "next": "下一章", "prev_short": "← 上一章", "next_short": "下一章 →", "sep": " · ", "pending": " · 迁移待定", "num": f"第 {number} 章"},
+        "ES": {"prev": "Capítulo anterior", "next": "Capítulo siguiente", "prev_short": "← Anterior", "next_short": "Siguiente →", "sep": " · ", "pending": " · migración pendiente", "num": f"Capítulo {number}"},
+        "JA": {"prev": "前の章", "next": "次の章", "prev_short": "← 前へ", "next_short": "次へ →", "sep": " · ", "pending": " · 移行待ち", "num": f"第 {number} 章"},
+        "KO": {"prev": "이전 장", "next": "다음 장", "prev_short": "← 이전", "next_short": "다음 →", "sep": " · ", "pending": " · 전환 대기 중", "num": f"{number}장"},
+        "DE": {"prev": "Vorheriges Kapitel", "next": "Nächstes Kapitel", "prev_short": "← Zurück", "next_short": "Weiter →", "sep": " · ", "pending": " · Migration ausstehend", "num": f"Kapitel {number}"},
+    }[locale]
+    prefix = copy["prev"] if direction == "previous" else copy["next"]
+    label = f"{prefix}: {copy['num']}{copy['sep']}{title}"
+    if pending:
+        label += copy["pending"]
+    visible_prefix = copy["prev_short"] if direction == "previous" else copy["next_short"]
+    visible_title = f"{copy['num']}{copy['sep']}{title}"
+    if pending:
+        visible_title += copy["pending"]
     return (
         f'<a data-chapter-nav="{direction}" href="{href}" '
         f'aria-label="{label}">{visible_prefix}<br><strong>'
@@ -84,7 +88,11 @@ def link_markup(
 def build_block(index: int, entries: list[dict[str, Any]], locale: str, source: Path) -> str:
     previous = entries[index - 1] if index > 0 else None
     following = entries[index + 1] if index + 1 < len(entries) else None
-    aria_label = "Chapter navigation" if locale == "EN" else "章节导航"
+    aria_labels = {
+        "EN": "Chapter navigation", "ZH": "章节导航", "ES": "Navegación de capítulos",
+        "JA": "章ナビゲーション", "KO": "장 내비게이션", "DE": "Kapitelnavigation",
+    }
+    aria_label = aria_labels.get(locale, "Chapter navigation")
     previous_cell = (
         f'<td align="left">{link_markup(previous, locale, source, "previous")}</td>'
         if previous else '<td align="left"></td>'
@@ -120,9 +128,10 @@ def expected_files(document: dict[str, Any]) -> list[tuple[Path, int, str]]:
     entries = document["chapters"]
     targets: list[tuple[Path, int, str]] = []
     for index, item in enumerate(entries):
-        targets.append((ROOT / str(item["legacy_path"]), index, "ZH"))
-        if item.get("english_path"):
-            targets.append((ROOT / str(item["english_path"]), index, "EN"))
+        for locale in LOCALES:
+            target = ROOT / path_for(item, locale)
+            if target.is_file():
+                targets.append((target, index, locale))
     return targets
 
 

@@ -135,5 +135,12 @@ Aktion.
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop-DE.md">← Vorheriges<br><strong>Kapitel 12 · Agent-Schleife, Zustand und Stoppbedingungen</strong></a></td><td align="right"><a data-chapter-nav="next" href="14-discover-and-audit-skills-DE.md">Nächstes →<br><strong>Kapitel 14 · Externe Skills finden, installieren und prüfen</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Kapitelnavigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop-DE.md" aria-label="Vorheriges Kapitel: Kapitel 12 · Agent-Schleife, Zustand und Stoppbedingungen">← Zurück<br><strong>Kapitel 12 · Agent-Schleife, Zustand und Stoppbedingungen</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="14-discover-and-audit-skills-DE.md" aria-label="Nächstes Kapitel: Kapitel 14 · Externe Skills finden, installieren und prüfen">Weiter →<br><strong>Kapitel 14 · Externe Skills finden, installieren und prüfen</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

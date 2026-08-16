@@ -142,5 +142,12 @@ Lies zuerst Metadaten und Anleitung, prüfe dann einen schreibgeschützten oder 
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-DE.md">← Vorheriges<br><strong>Kapitel 13 · Aktionsgrenzen für Dateien, Terminal, Browser und GitHub</strong></a></td><td align="right"><a data-chapter-nav="next" href="15-research-track-DE.md">Nächstes →<br><strong>Kapitel 15 · Forschungspfad, von der Frage zu prüfbarem Wissen</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Kapitelnavigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-DE.md" aria-label="Vorheriges Kapitel: Kapitel 13 · Aktionsgrenzen für Dateien, Terminal, Browser und GitHub">← Zurück<br><strong>Kapitel 13 · Aktionsgrenzen für Dateien, Terminal, Browser und GitHub</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="15-research-track-DE.md" aria-label="Nächstes Kapitel: Kapitel 15 · Forschungspfad, von der Frage zu prüfbarem Wissen">Weiter →<br><strong>Kapitel 15 · Forschungspfad, von der Frage zu prüfbarem Wissen</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

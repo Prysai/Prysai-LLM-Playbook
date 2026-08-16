@@ -443,3 +443,15 @@ acotado produzca la evidencia declarada. Cuando hayas terminado, continúa con
 el [Capítulo 3: convierte un deseo en un protocolo de tarea](03-task-protocol-ES.md).
 La siguiente transición se mantiene en español; no trates una ruta inglesa como
 su continuación.
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="Navegación de capítulos">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="01-gpt-and-codex-ES.md" aria-label="Capítulo anterior: Capítulo 1 · Entender GPT antes de confiar en Codex">← Anterior<br><strong>Capítulo 1 · Entender GPT antes de confiar en Codex</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="03-task-protocol-ES.md" aria-label="Capítulo siguiente: Capítulo 3 · Convierte un deseo en un protocolo de tarea">Siguiente →<br><strong>Capítulo 3 · Convierte un deseo en un protocolo de tarea</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

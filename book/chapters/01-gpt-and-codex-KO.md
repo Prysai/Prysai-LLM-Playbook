@@ -407,3 +407,15 @@ secret, network, account, external write, 더 넓은 scope가 필요하면 block
 구문, 모델 가용성, 권한, 서비스 동작은 현재 사실로 취급하기 전에 최신 1차 출처와
 다시 대조해야 합니다. 장의 상태는 `candidate`로 유지되며, 연결된 실험은 실제 실행
 기록과 독립 검토가 존재할 때까지 `draft` 및 `not_run`으로 유지됩니다.
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="장 내비게이션">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"></td>
+      <td align="right"><a data-chapter-nav="next" href="02-first-safe-task-KO.md" aria-label="다음 장: 2장 · 2장: 첫 번째 안전하고 검증 가능한 작업 완료하기">다음 →<br><strong>2장 · 2장: 첫 번째 안전하고 검증 가능한 작업 완료하기</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

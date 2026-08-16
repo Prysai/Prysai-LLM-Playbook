@@ -131,5 +131,12 @@ click이 timeout되거나 최종 상태를 읽지 못하면 인계는 “submit 
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop-KO.md">← 이전<br><strong>12장 · Agent 루프, 상태, 중지 조건</strong></a></td><td align="right"><a data-chapter-nav="next" href="14-discover-and-audit-skills-KO.md">다음 →<br><strong>14장 · 외부 Skill 찾기, 설치하기, 감사하기</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="장 내비게이션">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop-KO.md" aria-label="이전 장: 12장 · 12장: Agent 루프, 상태, 중지 조건">← 이전<br><strong>12장 · 12장: Agent 루프, 상태, 중지 조건</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="14-discover-and-audit-skills-KO.md" aria-label="다음 장: 14장 · 14장: 외부 Skill 찾기, 설치하기, 감사하기">다음 →<br><strong>14장 · 14장: 외부 Skill 찾기, 설치하기, 감사하기</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

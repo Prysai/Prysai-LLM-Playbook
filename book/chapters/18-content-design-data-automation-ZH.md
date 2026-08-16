@@ -106,5 +106,12 @@
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章节导航"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="17-marketing-track-ZH.md">← 上一章<br><strong>第 17 章·营销路线：从产品理解到增长实验</strong></a></td><td align="right"><a data-chapter-nav="next" href="19-evaluate-models-and-workflows-ZH.md">下一章 →<br><strong>第 19 章·评估模型与工作流</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="17-marketing-track-ZH.md" aria-label="上一章: 第 17 章 · 营销轨：从产品理解到增长实验">← 上一章<br><strong>第 17 章 · 营销轨：从产品理解到增长实验</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="19-evaluate-models-and-workflows-ZH.md" aria-label="下一章: 第 19 章 · 评估模型和工作流">下一章 →<br><strong>第 19 章 · 评估模型和工作流</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

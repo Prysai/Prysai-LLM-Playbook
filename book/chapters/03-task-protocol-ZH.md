@@ -411,3 +411,15 @@
 - [真实问题索引](../evidence-library-ZH.md#source-notes)
 
 **状态：** `candidate`——章节结构和来源记录已存在；配套实验与独立读者运行仍为 `draft` / `not_run`。本简体中文译文可阅读，但仍是 `in-progress`，等待独立语言审校；它不是已验证译文，也不表示课程已经通过学习者验证。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="02-first-safe-task-ZH.md" aria-label="上一章: 第 2 章 · 完成第一个安全、可验证的任务">← 上一章<br><strong>第 2 章 · 完成第一个安全、可验证的任务</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="04-context-permissions-and-agent-ZH.md" aria-label="下一章: 第 4 章 · 上下文、权限与 Agent 的行动边界">下一章 →<br><strong>第 4 章 · 上下文、权限与 Agent 的行动边界</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

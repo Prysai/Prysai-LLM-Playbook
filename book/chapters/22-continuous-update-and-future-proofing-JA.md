@@ -102,5 +102,12 @@ release_decision: blocked
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="21-team-capability-system-JA.md">← 前の章<br><strong>第21章 · チーム能力システムを作る</strong></a></td><td align="right"></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章ナビゲーション">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="21-team-capability-system-JA.md" aria-label="前の章: 第 21 章 · チーム能力システムを作る">← 前へ<br><strong>第 21 章 · チーム能力システムを作る</strong></a></td>
+      <td align="right"></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

@@ -168,8 +168,8 @@ ID de modelos, precios, capacidad, soporte de proveedor, sintaxis y controles pu
 <nav class="chapter-navigation" aria-label="Navegación de capítulos">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="05-choose-the-codex-surface-ES.md" aria-label="Capítulo anterior: Capítulo 5 · Elegir la superficie de trabajo adecuada de Codex">← Anterior<br><strong>Capítulo 5 · Elegir la superficie de trabajo adecuada de Codex</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="07-skills-plugins-and-tools-ES.md" aria-label="Capítulo siguiente: Capítulo 7 · Skills, Plugins, MCP y herramientas">Siguiente →<br><strong>Capítulo 7 · Skills, Plugins, MCP y herramientas</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="05-choose-the-codex-surface-ES.md" aria-label="Capítulo anterior: Capítulo 5 · Elige la superficie de trabajo adecuada de Codex">← Anterior<br><strong>Capítulo 5 · Elige la superficie de trabajo adecuada de Codex</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="07-skills-plugins-and-tools-ES.md" aria-label="Capítulo siguiente: Capítulo 7 · cómo se reparten el trabajo los Skills, los Plugins, MCP y las herramientas">Siguiente →<br><strong>Capítulo 7 · cómo se reparten el trabajo los Skills, los Plugins, MCP y las herramientas</strong></a></td>
     </tr>
   </table>
 </nav>

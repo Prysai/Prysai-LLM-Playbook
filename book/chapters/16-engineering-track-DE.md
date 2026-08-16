@@ -120,5 +120,12 @@ Fehlt ein Signal, bleibt `not_run`, `blocked` oder `unknown` in der Übergabe. E
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-DE.md">← Vorheriges<br><strong>Kapitel 15 · Forschungspfad, von der Frage zu prüfbarem Wissen</strong></a></td><td align="right"><a data-chapter-nav="next" href="17-marketing-track-DE.md">Nächstes →<br><strong>Kapitel 17 · Marketing-Pfad, vom Produktverständnis zu Wachstumsexperimenten</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Kapitelnavigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="15-research-track-DE.md" aria-label="Vorheriges Kapitel: Kapitel 15 · Forschungspfad, von der Frage zu prüfbarem Wissen">← Zurück<br><strong>Kapitel 15 · Forschungspfad, von der Frage zu prüfbarem Wissen</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="17-marketing-track-DE.md" aria-label="Nächstes Kapitel: Kapitel 17 · Marketing-Pfad, vom Produktverständnis zu Wachstumsexperimenten">Weiter →<br><strong>Kapitel 17 · Marketing-Pfad, vom Produktverständnis zu Wachstumsexperimenten</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

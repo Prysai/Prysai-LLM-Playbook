@@ -259,5 +259,12 @@ directory に file があることは、host での discovery、loading、execut
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-JA.md">← 前の章<br><strong>第 10 章 · 計画と垂直スライス</strong></a></td><td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-JA.md">次へ →<br><strong>第 12 章 · Agent のループ、状態、停止条件</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章ナビゲーション">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-JA.md" aria-label="前の章: 第 10 章 · 計画と垂直スライス">← 前へ<br><strong>第 10 章 · 計画と垂直スライス</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-JA.md" aria-label="次の章: 第 12 章 · Agent のループ、状態、停止条件">次へ →<br><strong>第 12 章 · Agent のループ、状態、停止条件</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

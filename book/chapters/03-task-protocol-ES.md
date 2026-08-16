@@ -496,3 +496,15 @@ actual.
 **Estado:** `candidate`. Estructura y registros de fuentes existen; el Lab
 complementario y una ejecución independiente por lectores siguen
 `draft`/`not_run`. Elige la siguiente unidad disponible desde el [índice en español](../table-of-contents-ES.md), no desde una página en otra lengua.
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="Navegación de capítulos">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="02-first-safe-task-ES.md" aria-label="Capítulo anterior: Capítulo 2 · Completa tu primera tarea segura y verificable">← Anterior<br><strong>Capítulo 2 · Completa tu primera tarea segura y verificable</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="04-context-permissions-and-agent-ES.md" aria-label="Capítulo siguiente: Capítulo 4 · Contexto, permisos y límites de acción del Agent">Siguiente →<br><strong>Capítulo 4 · Contexto, permisos y límites de acción del Agent</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

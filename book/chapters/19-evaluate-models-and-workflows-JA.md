@@ -113,5 +113,12 @@ model 一つと offline text だけで、account を接続せずにできます�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-JA.md">← 前の章<br><strong>第18章 · コンテンツ、デザイン、データ、自動化トラック</strong></a></td><td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-JA.md">次へ →<br><strong>第20章 · Codexで使う個人の作業システムを作る</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章ナビゲーション">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-JA.md" aria-label="前の章: 第 18 章 · コンテンツ、デザイン、データ、自動化トラック">← 前へ<br><strong>第 18 章 · コンテンツ、デザイン、データ、自動化トラック</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-JA.md" aria-label="次の章: 第 20 章 · 個人用 Codex 作業システムを作る">次へ →<br><strong>第 20 章 · 個人用 Codex 作業システムを作る</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

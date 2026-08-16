@@ -116,5 +116,12 @@ Si falta una luz, conserva `not_run`, `blocked` o `unknown` en la entrega. No am
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-ES.md">← Anterior<br><strong>Capítulo 15 · ruta de investigación, de la pregunta al conocimiento auditable</strong></a></td><td align="right"><a data-chapter-nav="next" href="17-marketing-track-ES.md">Siguiente →<br><strong>Capítulo 17 · ruta de marketing, de entender el producto a experimentar con crecimiento</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Navegación de capítulos">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="15-research-track-ES.md" aria-label="Capítulo anterior: Capítulo 15 · ruta de investigación, de la pregunta al conocimiento auditable">← Anterior<br><strong>Capítulo 15 · ruta de investigación, de la pregunta al conocimiento auditable</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="17-marketing-track-ES.md" aria-label="Capítulo siguiente: Capítulo 17 · ruta de marketing, de entender el producto a experimentar con crecimiento">Siguiente →<br><strong>Capítulo 17 · ruta de marketing, de entender el producto a experimentar con crecimiento</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

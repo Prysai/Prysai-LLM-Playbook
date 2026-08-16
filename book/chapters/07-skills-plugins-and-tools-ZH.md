@@ -238,8 +238,8 @@ Skill、Plugin、连接器、MCP、manifest、认证和调用细节都可能变�
 <nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="06-model-selection-ZH.md" aria-label="上一章：第 6 章·模型选择不是模型崇拜">← 上一章<br><strong>第 6 章·模型选择不是模型崇拜</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="08-full-lifecycle-workflow-ZH.md" aria-label="下一章：第 8 章·从定义到交付">下一章 →<br><strong>第 8 章·从定义到交付</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="06-model-selection-ZH.md" aria-label="上一章: 第 6 章 · 模型选择不是模型崇拜">← 上一章<br><strong>第 6 章 · 模型选择不是模型崇拜</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="08-full-lifecycle-workflow-ZH.md" aria-label="下一章: 第 8 章 · 从定义到交付的完整生命周期">下一章 →<br><strong>第 8 章 · 从定义到交付的完整生命周期</strong></a></td>
     </tr>
   </table>
 </nav>

@@ -246,7 +246,7 @@ Tres tareas pequeñas no prueban eficiencia general, calidad universal ni superi
 <nav class="chapter-navigation" aria-label="Navegación de capítulos">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="07-skills-plugins-and-tools-ES.md" aria-label="Capítulo anterior: Capítulo 7 · cómo se reparten el trabajo los Skills, los Plugins, MCP y las herramientas">← Anterior<br><strong>Capítulo 7 · Skills, Plugins, MCP y herramientas</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="07-skills-plugins-and-tools-ES.md" aria-label="Capítulo anterior: Capítulo 7 · cómo se reparten el trabajo los Skills, los Plugins, MCP y las herramientas">← Anterior<br><strong>Capítulo 7 · cómo se reparten el trabajo los Skills, los Plugins, MCP y las herramientas</strong></a></td>
       <td align="right"><a data-chapter-nav="next" href="09-verification-and-recovery-ES.md" aria-label="Capítulo siguiente: Capítulo 9 · verificación, duda y recuperación">Siguiente →<br><strong>Capítulo 9 · verificación, duda y recuperación</strong></a></td>
     </tr>
   </table>

@@ -84,5 +84,12 @@ Agent 可以整理上下文、起草版本、检查事件名、解释描述统�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章节导航"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="16-engineering-track-ZH.md">← 上一章<br><strong>第 16 章·工程路线：从想法到可靠软件</strong></a></td><td align="right"><a data-chapter-nav="next" href="18-content-design-data-automation-ZH.md">下一章 →<br><strong>第 18 章·内容、设计、数据与自动化</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="16-engineering-track-ZH.md" aria-label="上一章: 第 16 章 · 工程轨：从想法到可靠软件">← 上一章<br><strong>第 16 章 · 工程轨：从想法到可靠软件</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="18-content-design-data-automation-ZH.md" aria-label="下一章: 第 18 章 · 内容、设计、数据与自动化轨">下一章 →<br><strong>第 18 章 · 内容、设计、数据与自动化轨</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

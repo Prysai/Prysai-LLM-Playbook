@@ -131,5 +131,12 @@ click が timeout した、または final state を read できない場合、h
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop-JA.md">← 前の章<br><strong>第12章 · Agent のループ、状態、停止条件</strong></a></td><td align="right"><a data-chapter-nav="next" href="14-discover-and-audit-skills-JA.md">次へ →<br><strong>第14章 · 外部 Skill を見つけ、導入前に監査する</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章ナビゲーション">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop-JA.md" aria-label="前の章: 第 12 章 · Agent のループ、状態、停止条件">← 前へ<br><strong>第 12 章 · Agent のループ、状態、停止条件</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="14-discover-and-audit-skills-JA.md" aria-label="次の章: 第 14 章 · 外部 Skill を見つけ、導入前に監査する">次へ →<br><strong>第 14 章 · 外部 Skill を見つけ、導入前に監査する</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

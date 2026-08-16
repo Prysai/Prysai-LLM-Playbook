@@ -76,5 +76,12 @@ Siguiente paso: describir diferencia y límites, sin causalidad ni ganador.
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="16-engineering-track-ES.md">← Anterior<br><strong>Capítulo 16 · ruta de ingeniería, de la idea al software fiable</strong></a></td><td align="right"><a data-chapter-nav="next" href="18-content-design-data-automation-ES.md">Siguiente →<br><strong>Capítulo 18 · ruta de contenido, diseño, datos y automatización</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Navegación de capítulos">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="16-engineering-track-ES.md" aria-label="Capítulo anterior: Capítulo 16 · ruta de ingeniería, de la idea al software fiable">← Anterior<br><strong>Capítulo 16 · ruta de ingeniería, de la idea al software fiable</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="18-content-design-data-automation-ES.md" aria-label="Capítulo siguiente: Capítulo 18 · ruta de contenido, diseño, datos y automatización">Siguiente →<br><strong>Capítulo 18 · ruta de contenido, diseño, datos y automatización</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

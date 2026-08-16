@@ -136,5 +136,12 @@ que existan registros de ejecución y revisión.
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-ES.md">← Anterior<br><strong>Capítulo 8 · de la definición a la entrega</strong></a></td><td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-ES.md">Siguiente →<br><strong>Capítulo 10 · planificación y cortes verticales</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Navegación de capítulos">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-ES.md" aria-label="Capítulo anterior: Capítulo 8 · de la definición a la entrega">← Anterior<br><strong>Capítulo 8 · de la definición a la entrega</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-ES.md" aria-label="Capítulo siguiente: Capítulo 10 · planificación y cortes verticales">Siguiente →<br><strong>Capítulo 10 · planificación y cortes verticales</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

@@ -197,5 +197,12 @@ current source와 actual run 없이는 assertion으로 쓰지 않습니다.
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-KO.md">← 이전<br><strong>9장 · 검증, 의심, 복구</strong></a></td><td align="right"><a data-chapter-nav="next" href="11-designing-a-skill-KO.md">다음 →<br><strong>11장 · 쓸모 있는 Skill 설계하기</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="장 내비게이션">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-KO.md" aria-label="이전 장: 9장 · 9장: 검증, 의심, 복구">← 이전<br><strong>9장 · 9장: 검증, 의심, 복구</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="11-designing-a-skill-KO.md" aria-label="다음 장: 11장 · 11장: 쓸모 있는 Skill 설계하기">다음 →<br><strong>11장 · 11장: 쓸모 있는 Skill 설계하기</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

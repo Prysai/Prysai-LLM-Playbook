@@ -504,3 +504,15 @@ Root-Cause-Bestätigungen. Dieses Kapitel bleibt `candidate`, das Experiment
 erzeugt. Als Nächstes folgt [Kapitel 3: Einen Wunsch in ein Aufgabenprotokoll
 verwandeln](03-task-protocol-DE.md). Dieser Übergang bleibt auf Deutsch;
 behandle keine Seite in einer anderen Sprache als seine Fortsetzung.
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="Kapitelnavigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="01-gpt-and-codex-DE.md" aria-label="Vorheriges Kapitel: Kapitel 1 · Verstehe GPT, bevor du Codex vertraust">← Zurück<br><strong>Kapitel 1 · Verstehe GPT, bevor du Codex vertraust</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="03-task-protocol-DE.md" aria-label="Nächstes Kapitel: Kapitel 3 · Einen Wunsch in ein Aufgabenprotokoll verwandeln">Weiter →<br><strong>Kapitel 3 · Einen Wunsch in ein Aufgabenprotokoll verwandeln</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

@@ -246,5 +246,12 @@ siendo `candidate` y el experimento `not_run` hasta que esos registros existan.
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-ES.md">← Anterior<br><strong>Capítulo 10 · planificación y cortes verticales</strong></a></td><td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-ES.md">Siguiente →<br><strong>Capítulo 12 · el ciclo, el estado y las condiciones de parada del Agent</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Navegación de capítulos">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-ES.md" aria-label="Capítulo anterior: Capítulo 10 · planificación y cortes verticales">← Anterior<br><strong>Capítulo 10 · planificación y cortes verticales</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-ES.md" aria-label="Capítulo siguiente: Capítulo 12 · el ciclo, el estado y las condiciones de parada del Agent">Siguiente →<br><strong>Capítulo 12 · el ciclo, el estado y las condiciones de parada del Agent</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

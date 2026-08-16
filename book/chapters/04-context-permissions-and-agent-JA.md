@@ -226,11 +226,11 @@ run-id で計画します。外部の命令文は data と分類し、それが�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション">
+<nav class="chapter-navigation" aria-label="章ナビゲーション">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-JA.md" aria-label="前の章：第 3 章 · 願いをタスク・プロトコルに変える">← 前の章<br><strong>第 3 章 · 願いをタスク・プロトコルに変える</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="05-choose-the-codex-surface-JA.md" aria-label="次の章：第 5 章 · 適切な Codex の作業面を選ぶ">次の章 →<br><strong>第 5 章 · 適切な Codex の作業面を選ぶ</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-JA.md" aria-label="前の章: 第 3 章 · 願いをタスク・プロトコルに変える">← 前へ<br><strong>第 3 章 · 願いをタスク・プロトコルに変える</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="05-choose-the-codex-surface-JA.md" aria-label="次の章: 第 5 章 · 適切な Codex の作業面を選ぶ">次へ →<br><strong>第 5 章 · 適切な Codex の作業面を選ぶ</strong></a></td>
     </tr>
   </table>
 </nav>

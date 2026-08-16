@@ -254,8 +254,8 @@ documentación con evidencia de ejecución local.
 <nav class="chapter-navigation" aria-label="Navegación de capítulos">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-ES.md" aria-label="Capítulo anterior: Capítulo 3 · Convertir un deseo en un protocolo de tarea">← Anterior<br><strong>Capítulo 3 · Convertir un deseo en un protocolo de tarea</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="05-choose-the-codex-surface-ES.md" aria-label="Capítulo siguiente: Capítulo 5 · Elegir la superficie de trabajo adecuada de Codex">Siguiente →<br><strong>Capítulo 5 · Elegir la superficie de trabajo adecuada de Codex</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-ES.md" aria-label="Capítulo anterior: Capítulo 3 · Convierte un deseo en un protocolo de tarea">← Anterior<br><strong>Capítulo 3 · Convierte un deseo en un protocolo de tarea</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="05-choose-the-codex-surface-ES.md" aria-label="Capítulo siguiente: Capítulo 5 · Elige la superficie de trabajo adecuada de Codex">Siguiente →<br><strong>Capítulo 5 · Elige la superficie de trabajo adecuada de Codex</strong></a></td>
     </tr>
   </table>
 </nav>

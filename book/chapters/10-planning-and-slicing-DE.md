@@ -133,5 +133,12 @@ Geschwindigkeit oder dauerhaftes Lernen.
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-DE.md">← Vorheriges<br><strong>Kapitel 9 · Überprüfung, Zweifel und Wiederherstellung</strong></a></td><td align="right"><a data-chapter-nav="next" href="11-designing-a-skill-DE.md">Nächstes →<br><strong>Kapitel 11 · Einen Skill entwerfen, der seinen Platz verdient</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Kapitelnavigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-DE.md" aria-label="Vorheriges Kapitel: Kapitel 9 · Überprüfung, Zweifel und Wiederherstellung">← Zurück<br><strong>Kapitel 9 · Überprüfung, Zweifel und Wiederherstellung</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="11-designing-a-skill-DE.md" aria-label="Nächstes Kapitel: Kapitel 11 · Einen Skill entwerfen, der seinen Platz verdient">Weiter →<br><strong>Kapitel 11 · Einen Skill entwerfen, der seinen Platz verdient</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

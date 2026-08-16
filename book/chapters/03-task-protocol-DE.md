@@ -509,3 +509,15 @@ die Primärquellen vor einer aktuellen Aufgabe erneut.
 Begleit-Lab und unabhängige Leserlauf bleiben `draft`/`not_run`. Wähle die nächste
 deutsche Einheit im [deutschen Inhaltsverzeichnis](../table-of-contents-DE.md),
 nicht auf einer Seite in anderer Sprache.
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="Kapitelnavigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="02-first-safe-task-DE.md" aria-label="Vorheriges Kapitel: Kapitel 2 · Die erste sichere und überprüfbare Aufgabe erledigen">← Zurück<br><strong>Kapitel 2 · Die erste sichere und überprüfbare Aufgabe erledigen</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="04-context-permissions-and-agent-DE.md" aria-label="Nächstes Kapitel: Kapitel 4 · Kontext, Berechtigungen und die Handlungsgrenze des Agents">Weiter →<br><strong>Kapitel 4 · Kontext, Berechtigungen und die Handlungsgrenze des Agents</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

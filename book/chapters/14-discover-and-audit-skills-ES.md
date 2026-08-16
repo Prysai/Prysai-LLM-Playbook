@@ -148,5 +148,12 @@ Lee primero metadatos e instrucciones; luego prueba una ruta de solo lectura o r
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-ES.md">← Anterior<br><strong>Capítulo 13 · límites de acción en archivos, terminales, navegadores y GitHub</strong></a></td><td align="right"><a data-chapter-nav="next" href="15-research-track-ES.md">Siguiente →<br><strong>Capítulo 15 · ruta de investigación, de la pregunta al conocimiento auditable</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Navegación de capítulos">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-ES.md" aria-label="Capítulo anterior: Capítulo 13 · límites de acción en archivos, terminales, navegadores y GitHub">← Anterior<br><strong>Capítulo 13 · límites de acción en archivos, terminales, navegadores y GitHub</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="15-research-track-ES.md" aria-label="Capítulo siguiente: Capítulo 15 · ruta de investigación, de la pregunta al conocimiento auditable">Siguiente →<br><strong>Capítulo 15 · ruta de investigación, de la pregunta al conocimiento auditable</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

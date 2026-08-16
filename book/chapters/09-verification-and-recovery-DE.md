@@ -139,5 +139,12 @@ beim Diff auf. Ohne Lauf- und Review-Aufzeichnungen bleibt dieses Kapitel
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-DE.md">← Vorheriges<br><strong>Kapitel 8 · Von der Definition zur Übergabe</strong></a></td><td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-DE.md">Weiter →<br><strong>Kapitel 10 · Planung und vertikale Schnitte</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Kapitelnavigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-DE.md" aria-label="Vorheriges Kapitel: Kapitel 8 · Von der Definition zur Übergabe">← Zurück<br><strong>Kapitel 8 · Von der Definition zur Übergabe</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-DE.md" aria-label="Nächstes Kapitel: Kapitel 10 · Planung und vertikale Schnitte">Weiter →<br><strong>Kapitel 10 · Planung und vertikale Schnitte</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

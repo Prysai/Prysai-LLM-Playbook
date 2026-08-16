@@ -323,8 +323,8 @@ list_windows() 调用会出现 spawn EPERM；浏览器弹窗与 DOM 可读，但
 <nav class="chapter-navigation" aria-label="章节导航">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-ZH.md" aria-label="上一章：第 8 章·从定义到交付">← 上一章<br><strong>第 8 章·从定义到交付</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-ZH.md" aria-label="下一章：第 10 章·规划与竖向切片">下一章 →<br><strong>第 10 章·规划与竖向切片</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-ZH.md" aria-label="上一章: 第 8 章 · 从定义到交付的完整生命周期">← 上一章<br><strong>第 8 章 · 从定义到交付的完整生命周期</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-ZH.md" aria-label="下一章: 第 10 章 · 规划与竖向切片">下一章 →<br><strong>第 10 章 · 规划与竖向切片</strong></a></td>
     </tr>
   </table>
 </nav>

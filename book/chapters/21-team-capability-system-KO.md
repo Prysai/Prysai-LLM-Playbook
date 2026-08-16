@@ -116,5 +116,12 @@ secret, 실제 customer data, 허가 없는 model output, 재배포할 수 없�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-KO.md">← 이전<br><strong>20장 · Codex 개인 작업 시스템 만들기</strong></a></td><td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing-KO.md">다음 →<br><strong>22장 · 지속적인 업데이트와 미래 대비</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="장 내비게이션">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-KO.md" aria-label="이전 장: 20장 · 20장: 개인 Codex 작업 시스템 만들기">← 이전<br><strong>20장 · 20장: 개인 Codex 작업 시스템 만들기</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing-KO.md" aria-label="다음 장: 22장 · 22장: 지속적인 업데이트와 미래 대비">다음 →<br><strong>22장 · 22장: 지속적인 업데이트와 미래 대비</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

@@ -225,8 +225,8 @@ Nutzerbericht und lokalen Beleg in getrennten Sätzen.
 <nav class="chapter-navigation" aria-label="Kapitelnavigation">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="05-choose-the-codex-surface-DE.md" aria-label="Vorheriges Kapitel: Kapitel 5 · Die richtige Codex-Arbeitsfläche wählen">← Vorheriges<br><strong>Kapitel 5 · Die richtige Codex-Arbeitsfläche wählen</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="07-skills-plugins-and-tools-DE.md" aria-label="Nächstes Kapitel: Kapitel 7 · Wie Skills, Plugins, MCP und Tools die Arbeit aufteilen">Weiter →<br><strong>Kapitel 7 · Skills, Plugins, MCP und Tools</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="05-choose-the-codex-surface-DE.md" aria-label="Vorheriges Kapitel: Kapitel 5 · Die richtige Codex-Arbeitsfläche wählen">← Zurück<br><strong>Kapitel 5 · Die richtige Codex-Arbeitsfläche wählen</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="07-skills-plugins-and-tools-DE.md" aria-label="Nächstes Kapitel: Kapitel 7 · Wie Skills, Plugins, MCP und Tools die Arbeit aufteilen">Weiter →<br><strong>Kapitel 7 · Wie Skills, Plugins, MCP und Tools die Arbeit aufteilen</strong></a></td>
     </tr>
   </table>
 </nav>

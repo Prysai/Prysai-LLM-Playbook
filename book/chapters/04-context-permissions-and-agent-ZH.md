@@ -236,3 +236,15 @@ R0 是解释或只读判断；R1 是可恢复的本地行动；R2 涉及共享�
 |---|---|---|---|
 | 沙盒与审批是不同控制层，应用和连接器副作用可能进入审批边界 | https://learn.chatgpt.com/docs/agent-approvals-security.md | 2026-08-10 | 官方支持工作面的描述；不证明本会话配置 |
 | 权限选项随产品工作面和策略变化 | https://learn.chatgpt.com/docs/permission-modes.md | 2026-08-10 | 产品文档；实际选项受工作面和组织策略影响 |
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="章节导航">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-ZH.md" aria-label="上一章: 第 3 章 · 把愿望变成任务协议">← 上一章<br><strong>第 3 章 · 把愿望变成任务协议</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="05-choose-the-codex-surface-ZH.md" aria-label="下一章: 第 5 章 · 选择正确的 Codex 工作面">下一章 →<br><strong>第 5 章 · 选择正确的 Codex 工作面</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

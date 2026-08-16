@@ -133,5 +133,12 @@ externa.
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop-ES.md">← Anterior<br><strong>Capítulo 12 · el ciclo, el estado y las condiciones de parada del Agent</strong></a></td><td align="right"><a data-chapter-nav="next" href="14-discover-and-audit-skills-ES.md">Siguiente →<br><strong>Capítulo 14 · descubrir, instalar y auditar Skills externos</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Navegación de capítulos">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop-ES.md" aria-label="Capítulo anterior: Capítulo 12 · el ciclo, el estado y las condiciones de parada del Agent">← Anterior<br><strong>Capítulo 12 · el ciclo, el estado y las condiciones de parada del Agent</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="14-discover-and-audit-skills-ES.md" aria-label="Capítulo siguiente: Capítulo 14 · descubrir, instalar y auditar Skills externos">Siguiente →<br><strong>Capítulo 14 · descubrir, instalar y auditar Skills externos</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

@@ -113,5 +113,12 @@ model 하나와 offline text만으로, account를 연결하지 않고 할 수 �
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-KO.md">← 이전<br><strong>18장 · 콘텐츠, 디자인, 데이터, 자동화 트랙</strong></a></td><td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-KO.md">다음 →<br><strong>20장 · Codex 개인 작업 시스템 만들기</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="장 내비게이션">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-KO.md" aria-label="이전 장: 18장 · 18장: 콘텐츠, 디자인, 데이터, 자동화 트랙">← 이전<br><strong>18장 · 18장: 콘텐츠, 디자인, 데이터, 자동화 트랙</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-KO.md" aria-label="다음 장: 20장 · 20장: 개인 Codex 작업 시스템 만들기">다음 →<br><strong>20장 · 20장: 개인 Codex 작업 시스템 만들기</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

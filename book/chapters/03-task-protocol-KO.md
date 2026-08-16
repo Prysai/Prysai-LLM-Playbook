@@ -447,3 +447,15 @@ Codex에는 확인 질문과 프로토콜 초안만 요구합니다. 편집, ins
 
 **상태:** `candidate`. 장 구조와 출처 기록은 있지만 부속 Lab과 독립 학습자 실행은
 `draft`/`not_run`입니다. 다음 한국어 단원은 다른 언어 페이지가 아닌 [한국어 목차](../table-of-contents-KO.md)에서 고르세요.
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="장 내비게이션">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="02-first-safe-task-KO.md" aria-label="이전 장: 2장 · 2장: 첫 번째 안전하고 검증 가능한 작업 완료하기">← 이전<br><strong>2장 · 2장: 첫 번째 안전하고 검증 가능한 작업 완료하기</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="04-context-permissions-and-agent-KO.md" aria-label="다음 장: 4장 · 4장: 컨텍스트, 권한, Agent의 행동 경계">다음 →<br><strong>4장 · 4장: 컨텍스트, 권한, Agent의 행동 경계</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

@@ -76,5 +76,12 @@ account access도 특정 organization 데이터를 특정 실험에 쓸 권한�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="16-engineering-track-KO.md">← 이전<br><strong>16장 · 엔지니어링 트랙, 아이디어에서 신뢰할 수 있는 소프트웨어까지</strong></a></td><td align="right"><a data-chapter-nav="next" href="18-content-design-data-automation-KO.md">다음 →<br><strong>18장 · 콘텐츠, 디자인, 데이터, 자동화 트랙</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="장 내비게이션">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="16-engineering-track-KO.md" aria-label="이전 장: 16장 · 16장: 엔지니어링 트랙, 아이디어에서 신뢰할 수 있는 소프트웨어까지">← 이전<br><strong>16장 · 16장: 엔지니어링 트랙, 아이디어에서 신뢰할 수 있는 소프트웨어까지</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="18-content-design-data-automation-KO.md" aria-label="다음 장: 18장 · 18장: 콘텐츠, 디자인, 데이터, 자동화 트랙">다음 →<br><strong>18장 · 18장: 콘텐츠, 디자인, 데이터, 자동화 트랙</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

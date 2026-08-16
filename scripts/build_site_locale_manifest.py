@@ -19,6 +19,7 @@ LAB_NAVIGATION_FILE = ROOT / "docs/governance/lab-navigation.yaml"
 SKILL_REGISTRY_FILE = ROOT / "docs/governance/skill-registry.yaml"
 OUTPUT_FILE = ROOT / "site/locale-manifest.js"
 LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE")
+LOCALE_KEYS = tuple(locale.lower() for locale in LOCALES)
 ROUTED_STATUS_SECTIONS = ("chapters", "labs")
 RENDERABLE_TRANSLATION_STATUSES = {
     "source",
@@ -194,7 +195,9 @@ def build_navigation_payload(
     for item in navigation.get("chapters", []):
         if not isinstance(item, dict):
             raise ValueError("book navigation chapters must contain objects")
-        legacy_path = normalize(str(item["legacy_path"]))
+        legacy_path = item.get("legacy_path")
+        if legacy_path:
+            legacy_path = normalize(str(legacy_path))
         english_path = item.get("english_path")
         if english_path:
             english_path = normalize(str(english_path))
@@ -211,10 +214,8 @@ def build_navigation_payload(
                 "id": item["id"],
                 "number": item["number"],
                 "part": item["part"],
-                "title_en": title["display"]["en"],
-                "title_zh": title["display"]["zh"],
-                "canonical_title_en": title["canonical"]["en"],
-                "canonical_title_zh": title["canonical"]["zh"],
+                **{f"title_{key}": title["display"][key] for key in LOCALE_KEYS},
+                **{f"canonical_title_{key}": title["canonical"][key] for key in LOCALE_KEYS},
                 "english_path": english_path,
                 "legacy_path": legacy_path,
                 "english_status": item.get("english_status"),
@@ -246,6 +247,7 @@ def build_lab_navigation_payload(
             "id": item["id"],
             "number": item["number"],
             "title": item["title"],
+            **{f"title_{key}": item.get(f"title_{key}", "") for key in LOCALE_KEYS},
             "path": path,
             "content_id": content_id,
         }

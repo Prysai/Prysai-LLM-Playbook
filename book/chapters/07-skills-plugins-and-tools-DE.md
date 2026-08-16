@@ -271,7 +271,7 @@ Satz.
 <nav class="chapter-navigation" aria-label="Kapitelnavigation">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="06-model-selection-DE.md" aria-label="Vorheriges Kapitel: Kapitel 6 · Modellauswahl ist keine Modellverehrung">← Vorheriges<br><strong>Kapitel 6 · Modellauswahl ist keine Modellverehrung</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="06-model-selection-DE.md" aria-label="Vorheriges Kapitel: Kapitel 6 · Modellauswahl ist keine Modellverehrung">← Zurück<br><strong>Kapitel 6 · Modellauswahl ist keine Modellverehrung</strong></a></td>
       <td align="right"><a data-chapter-nav="next" href="08-full-lifecycle-workflow-DE.md" aria-label="Nächstes Kapitel: Kapitel 8 · Von der Definition zur Übergabe">Weiter →<br><strong>Kapitel 8 · Von der Definition zur Übergabe</strong></a></td>
     </tr>
   </table>

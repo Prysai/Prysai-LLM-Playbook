@@ -246,5 +246,12 @@ bleiben Kapitel `candidate` und Experiment `not_run`.
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-DE.md">← Vorheriges<br><strong>Kapitel 10 · Planung und vertikale Schnitte</strong></a></td><td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-DE.md">Nächstes →<br><strong>Kapitel 12 · Agent-Schleife, Zustand und Stoppbedingungen</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Kapitelnavigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-DE.md" aria-label="Vorheriges Kapitel: Kapitel 10 · Planung und vertikale Schnitte">← Zurück<br><strong>Kapitel 10 · Planung und vertikale Schnitte</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-DE.md" aria-label="Nächstes Kapitel: Kapitel 12 · Agent-Schleife, Zustand und Stoppbedingungen">Weiter →<br><strong>Kapitel 12 · Agent-Schleife, Zustand und Stoppbedingungen</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

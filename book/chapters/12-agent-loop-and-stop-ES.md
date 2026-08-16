@@ -209,5 +209,12 @@ Esta entrega no convierte lo desconocido en terminado; solo evita repetir accion
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-ES.md">← Anterior<br><strong>Capítulo 11 · diseñar un Skill que se gane su lugar</strong></a></td><td align="right"><a data-chapter-nav="next" href="13-action-boundaries-ES.md">Siguiente →<br><strong>Capítulo 13 · límites de acción en archivos, terminales, navegadores y GitHub</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Navegación de capítulos">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-ES.md" aria-label="Capítulo anterior: Capítulo 11 · diseñar un Skill que se gane su lugar">← Anterior<br><strong>Capítulo 11 · diseñar un Skill que se gane su lugar</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="13-action-boundaries-ES.md" aria-label="Capítulo siguiente: Capítulo 13 · límites de acción en archivos, terminales, navegadores y GitHub">Siguiente →<br><strong>Capítulo 13 · límites de acción en archivos, terminales, navegadores y GitHub</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

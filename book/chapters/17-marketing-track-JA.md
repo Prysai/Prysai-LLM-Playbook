@@ -76,5 +76,12 @@ next: 差と限界を記述するだけで causal/winner を言わない。
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="16-engineering-track-JA.md">← 前の章<br><strong>第16章 · エンジニアリング・トラック、着想から信頼できるソフトウェアへ</strong></a></td><td align="right"><a data-chapter-nav="next" href="18-content-design-data-automation-JA.md">次へ →<br><strong>第18章 · コンテンツ、デザイン、データ、自動化トラック</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章ナビゲーション">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="16-engineering-track-JA.md" aria-label="前の章: 第 16 章 · エンジニアリング・トラック、着想から信頼できるソフトウェアへ">← 前へ<br><strong>第 16 章 · エンジニアリング・トラック、着想から信頼できるソフトウェアへ</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="18-content-design-data-automation-JA.md" aria-label="次の章: 第 18 章 · コンテンツ、デザイン、データ、自動化トラック">次へ →<br><strong>第 18 章 · コンテンツ、デザイン、データ、自動化トラック</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

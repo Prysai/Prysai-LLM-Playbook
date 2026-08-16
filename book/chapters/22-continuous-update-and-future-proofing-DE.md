@@ -102,5 +102,12 @@ Lege einen erfundenen Modell- oder Toolnamen in fünf Consumer eines temporary F
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="21-team-capability-system-DE.md">← Vorheriges<br><strong>Kapitel 21 · ein Team-Fähigkeitssystem aufbauen</strong></a></td><td align="right"></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Kapitelnavigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="21-team-capability-system-DE.md" aria-label="Vorheriges Kapitel: Kapitel 21 · Ein Team-Fähigkeitssystem aufbauen">← Zurück<br><strong>Kapitel 21 · Ein Team-Fähigkeitssystem aufbauen</strong></a></td>
+      <td align="right"></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

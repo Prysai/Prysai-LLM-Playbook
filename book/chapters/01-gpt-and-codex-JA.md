@@ -390,3 +390,15 @@ Codex に依頼してください。モデル、作業画面、情報源のコ�
 サービスの挙動は、現行の事実として扱う前に、現在の一次資料で再確認しなければなりません。章の状態は
 引き続き `candidate` です。リンク先の実験は、実際の実行記録と独立レビューが存在するまで、引き続き
 `draft` かつ `not_run` です。
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="章ナビゲーション">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"></td>
+      <td align="right"><a data-chapter-nav="next" href="02-first-safe-task-JA.md" aria-label="次の章: 第 2 章 · 最初の安全で検証可能なタスクを完了する">次へ →<br><strong>第 2 章 · 最初の安全で検証可能なタスクを完了する</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

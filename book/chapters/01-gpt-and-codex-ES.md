@@ -468,3 +468,15 @@ la fuente actual de primera parte antes de tratarlos como hechos vigentes. El
 estado del capítulo sigue siendo `candidate`; el laboratorio enlazado sigue en
 `draft` y `not_run` hasta que existan un registro de ejecución real y una
 revisión independiente.
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="Navegación de capítulos">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"></td>
+      <td align="right"><a data-chapter-nav="next" href="02-first-safe-task-ES.md" aria-label="Capítulo siguiente: Capítulo 2 · Completa tu primera tarea segura y verificable">Siguiente →<br><strong>Capítulo 2 · Completa tu primera tarea segura y verificable</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

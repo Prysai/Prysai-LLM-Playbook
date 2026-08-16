@@ -246,8 +246,8 @@ ersetzt keine Beobachtung des aktuellen Laufs.
 <nav class="chapter-navigation" aria-label="Kapitelnavigation">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-DE.md" aria-label="Vorheriges Kapitel: Kapitel 3 · Einen Wunsch in ein Aufgabenprotokoll verwandeln">← Vorheriges<br><strong>Kapitel 3 · Einen Wunsch in ein Aufgabenprotokoll verwandeln</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="05-choose-the-codex-surface-DE.md" aria-label="Nächstes Kapitel: Kapitel 5 · Die richtige Codex-Arbeitsfläche wählen">Nächstes →<br><strong>Kapitel 5 · Die richtige Codex-Arbeitsfläche wählen</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-DE.md" aria-label="Vorheriges Kapitel: Kapitel 3 · Einen Wunsch in ein Aufgabenprotokoll verwandeln">← Zurück<br><strong>Kapitel 3 · Einen Wunsch in ein Aufgabenprotokoll verwandeln</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="05-choose-the-codex-surface-DE.md" aria-label="Nächstes Kapitel: Kapitel 5 · Die richtige Codex-Arbeitsfläche wählen">Weiter →<br><strong>Kapitel 5 · Die richtige Codex-Arbeitsfläche wählen</strong></a></td>
     </tr>
   </table>
 </nav>

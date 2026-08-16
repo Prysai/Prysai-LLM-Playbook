@@ -102,5 +102,12 @@ release_decision: blocked
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="21-team-capability-system-KO.md">← 이전<br><strong>21장 · 팀 역량 시스템 만들기</strong></a></td><td align="right"></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="장 내비게이션">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="21-team-capability-system-KO.md" aria-label="이전 장: 21장 · 21장: 팀 역량 시스템 만들기">← 이전<br><strong>21장 · 21장: 팀 역량 시스템 만들기</strong></a></td>
+      <td align="right"></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

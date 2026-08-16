@@ -240,5 +240,12 @@ evidence と、それでも scope 外に残ることを説明します。diff �
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-JA.md">← 前の章<br><strong>第 8 章 · 定義から引き渡しまで</strong></a></td><td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-JA.md">次の章へ →<br><strong>第 10 章 · 計画と垂直スライス</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章ナビゲーション">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-JA.md" aria-label="前の章: 第 8 章 · 定義から引き渡しまで">← 前へ<br><strong>第 8 章 · 定義から引き渡しまで</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-JA.md" aria-label="次の章: 第 10 章 · 計画と垂直スライス">次へ →<br><strong>第 10 章 · 計画と垂直スライス</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

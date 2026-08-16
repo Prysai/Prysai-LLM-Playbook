@@ -173,11 +173,11 @@
   }
 
 function chapterTitle(chapter) {
-    return uiLanguage() === 'zh' ? chapter.title_zh : chapter.title_en;
+    return chapter.title?.[uiLanguage()] || chapter.title?.en || chapter.title_en || '';
 }
 
 function canonicalChapterTitle(chapter) {
-    return uiLanguage() === 'zh' ? chapter.canonical_title_zh : chapter.canonical_title_en;
+    return chapter.canonical_title?.[uiLanguage()] || chapter.canonical_title?.en || chapter.canonical_title_en || '';
 }
 
   function chapterPath(chapter) {
@@ -207,15 +207,29 @@ function canonicalChapterTitle(chapter) {
   function localizedLabTitle(lab) {
     const record = manifest.contents?.[lab.content_id];
     const title = record?.locales?.[activeLocale]?.title;
-    if (!ready(record?.locales?.[activeLocale]) || typeof title !== 'string' || !title.trim()) return '';
-    if (uiLanguage() === 'zh') return title.replace(/^实验\s+\d+\s*[：:·.-]\s*/, '').trim();
-    return title.trim();
+    if (typeof title === 'string' && title.trim()) {
+      if (uiLanguage() === 'zh') return title.replace(/^实验\s+\d+\s*[：:·.-]\s*/, '').trim();
+      return title.trim();
+    }
+    const localized = lab?.['title_' + uiLanguage()];
+    if (typeof localized === 'string' && localized.trim()) return localized.trim();
+    return '';
   }
 
   function labNavigationTitle(lab) {
     const number = String(lab.number).padStart(3, '0');
     const title = localizedLabTitle(lab);
-    if (uiLanguage() === 'zh' && title) return `实验 ${number} · ${title}`;
+    if (title) {
+      const labels = {
+        zh: (n, t) => `实验 ${n} · ${t}`,
+        es: (n, t) => `Lab ${n} · ${t}`,
+        ja: (n, t) => `Lab ${n} · ${t}`,
+        ko: (n, t) => `Lab ${n} · ${t}`,
+        de: (n, t) => `Lab ${n} · ${t}`,
+        en: (n, t) => `Lab ${n} · ${t}`,
+      };
+      return (labels[uiLanguage()] || labels.en)(number, title);
+    }
     return `Lab ${number} · ${lab.title}`;
   }
 
@@ -234,7 +248,7 @@ function canonicalChapterTitle(chapter) {
 
   function chapterProgressLabel(chapter, index) {
     const part = partForChapter(chapter);
-    const partLabel = uiLanguage() === 'zh' ? part?.title_zh : part?.title_en;
+    const partLabel = part?.['title_' + uiLanguage()] || part?.title_en || '';
     if (uiLanguage() === 'zh') return `第 ${chapter.number} 章 / 共 ${bookNavigation.chapters.length} 章 · 编辑顺序 · ${part?.number || ''} ${partLabel || ''}`.trim();
     return `Chapter ${chapter.number} of ${bookNavigation.chapters.length} · Editorial order · Part ${part?.number || ''} · ${partLabel || ''}`.trim();
   }
