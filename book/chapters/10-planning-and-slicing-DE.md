@@ -54,5 +54,5 @@ Miss aus einer Aufgabe keine allgemeine Geschwindigkeit oder Qualität. Nicht be
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-DE.md">← Vorheriges<br><strong>Kapitel 9 · Überprüfung, Zweifel und Wiederherstellung</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-DE.md">Nächstes Kapitel in Arbeit →<br><strong>Verfügbarkeit von Kapitel 11 ansehen</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-DE.md">← Vorheriges<br><strong>Kapitel 9 · Überprüfung, Zweifel und Wiederherstellung</strong></a></td><td align="right"><a data-chapter-nav="next" href="11-designing-a-skill-DE.md">Nächstes →<br><strong>Kapitel 11 · Einen Skill entwerfen, der seinen Platz verdient</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->

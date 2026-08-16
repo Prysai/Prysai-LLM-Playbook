@@ -362,7 +362,7 @@
         "ES": {"path": "book/chapters/11-designing-a-skill-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "reason": "Spanish source exists; independent language review remains pending."},
         "JA": {"path": "book/chapters/11-designing-a-skill-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "reason": "Japanese source exists; independent language review remains pending."},
         "KO": {"path": "book/chapters/11-designing-a-skill-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "reason": "Korean source exists; independent language review remains pending."},
-        "DE": {"path": "book/chapters/11-designing-a-skill-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-11", "coverage": "full", "reason": "English source slice is published first; German translation and review are pending."}
+        "DE": {"path": "book/chapters/11-designing-a-skill-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "reason": "German source exists; independent language review remains pending."}
       }
     },
     {
