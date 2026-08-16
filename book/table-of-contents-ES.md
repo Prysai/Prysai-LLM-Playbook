@@ -72,7 +72,7 @@ transferencia.
 | 009 — Comparar implementación directa y ciclo de vida de ingeniería | [Disponible: Lab 009](labs/lab-009-engineering-lifecycle-ES.md) · `draft / not_run` |
 | 010 — Crear contexto compartido de producto | [Disponible: Lab 010](labs/lab-010-product-context-ES.md) · `draft / not_run` |
 | 011 — Separar GPT, Codex, herramientas y Agents | [Disponible: Lab 011](labs/lab-011-gpt-codex-boundaries-ES.md) · `draft / not_run` |
-| 012 — Convertir un método personal en capacidad de equipo | Aún no existe archivo español. |
+| 012 — Convertir un método personal en capacidad de equipo | [Disponible: Lab 012](labs/lab-012-team-capability-migration-ES.md) · `draft / in-progress` |
 | 013 — Ejecutar un corte vertical completo | Aún no existe archivo español. |
 | 014 — Conciliar una tarea reanudada antes de continuar | Aún no existe archivo español. |
 | 015 — Entregar evidencia, no una frase de finalización | Aún no existe archivo español. |
