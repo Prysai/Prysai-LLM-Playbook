@@ -2132,10 +2132,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/labs/lab-008-research-question-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15",
+          "title": "实验 008：把一个大话题收窄为可回答的研究问题"
         },
         "es": {
           "path": "book/labs/lab-008-research-question-ES.md",
@@ -4805,9 +4806,9 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "zh": {
       "total_units": 40,
-      "available_units": 21,
+      "available_units": 22,
       "source_units": 0,
-      "candidate_translation_units": 21,
+      "candidate_translation_units": 22,
       "reviewed_translation_units": 0
     },
     "es": {
