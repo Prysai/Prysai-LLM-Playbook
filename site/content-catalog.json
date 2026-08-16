@@ -685,6 +685,26 @@
         "ko": "LLM 비교 프로토콜",
         "de": "LLM Comparison Protocol"
       }
+    },
+    "prysai-language-partner": {
+      "name": {
+        "en": "Language Partner",
+        "zh": "语言伙伴 Language Partner",
+        "es": "Language Partner (compañero de idiomas)",
+        "ja": "言語パートナー Language Partner",
+        "ko": "언어 파트너 Language Partner",
+        "de": "Language Partner (Sprachpartner)"
+      }
+    },
+    "prysai-interview-rehearsal": {
+      "name": {
+        "en": "Interview Rehearsal",
+        "zh": "面试演练 Interview Rehearsal",
+        "es": "Interview Rehearsal (ensayo de entrevista)",
+        "ja": "面接リハーサル Interview Rehearsal",
+        "ko": "면접 리허설 Interview Rehearsal",
+        "de": "Interview Rehearsal (Vorstellungsgespräch-Probe)"
+      }
     }
   }
 }
