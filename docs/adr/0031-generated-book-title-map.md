@@ -26,8 +26,7 @@ document. That left title agreement accidental rather than generated.
    contains the stable ID, number, part, canonical title, and display title in
    English and Simplified Chinese.
 3. Generate the compact chapter headings in `book/table-of-contents-EN.md`
-   and `book/table-of-contents.md` from that map. The surrounding explanatory
-   prose remains authored material.
+   from that map. The surrounding explanatory prose remains authored material.
 4. Require `scripts/build_site_locale_manifest.py` to reject a stale map and
    use it when projecting Reader titles. The search builder consumes that
    manifest projection, so search headings use the same canonical title role.

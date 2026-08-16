@@ -1,6 +1,6 @@
 {
   "schema_version": "1",
-  "reviewed_at": "2026-08-15",
+  "reviewed_at": "2026-08-16",
   "owner": "quality-maintainer",
   "description": "Machine-readable defect and release-blocker register for the current curriculum candidate.",
   "status_vocabulary": ["open", "in_progress", "resolved"],
@@ -93,8 +93,8 @@
       "finding": "Non-English records describe planned coverage, not completed translation.",
       "required_evidence": "Separate route, file, translation, and language-review states plus a generated missing-file report.",
       "status": "open",
-      "evidence_paths": ["docs/governance/locale-matrix.yaml", "scripts/validate_localization.py"],
-      "resolution_scope": ""
+      "evidence_paths": ["docs/governance/locale-matrix.yaml", "scripts/validate_localization.py", "scripts/audit_locale_release_paths.py", "scripts/audit_translation_depth.py", "docs/quality/translation-depth-release-audit-2026-08-16.md"],
+      "resolution_scope": "All six routes now contain 40 of 40 same-locale chapter and Lab files, and path checks pass. A 2026-08-16 depth audit flagged 51 of 200 non-English pairs for short-text or heading-count attention. Repository locale status was returned to migration and the UI labels non-English coverage as local route files pending independent language review. This is routing and disclosure progress, not completed translation, native review, or learner evidence."
     },
     {
       "id": "Q-007",
@@ -121,8 +121,8 @@
       "finding": "TOC display titles and chapter H1 titles have aliases without a canonical map.",
       "required_evidence": "Generated title map consumed by the TOC, reader, and search index.",
       "status": "resolved",
-      "evidence_paths": ["docs/governance/book-navigation.yaml", "book/title-map.json", "book/table-of-contents-EN.md", "book/table-of-contents.md", "scripts/build_book_title_map.py", "scripts/build_site_locale_manifest.py", "scripts/build_site_search_index.py", "scripts/test_book_title_map.py"],
-      "resolution_scope": "Resolved for title identity only: book-navigation.yaml remains the editable source; build_book_title_map.py projects canonical H1 and compact display roles into book/title-map.json, refreshes both tables of contents, and is required before Reader-manifest and search-index generation. Fixture coverage rejects stale maps, compact-TOC drift, and duplicate IDs. This does not establish reader usability, translation quality, search relevance, deployed-site behavior, or learner outcomes."
+      "evidence_paths": ["docs/governance/book-navigation.yaml", "book/title-map.json", "book/table-of-contents-EN.md", "scripts/build_book_title_map.py", "scripts/build_site_locale_manifest.py", "scripts/build_site_search_index.py", "scripts/test_book_title_map.py"],
+      "resolution_scope": "Resolved for title identity only: book-navigation.yaml remains the editable source; build_book_title_map.py projects canonical H1 and compact display roles into book/title-map.json, refreshes the canonical English table of contents, and is required before Reader-manifest and search-index generation. Fixture coverage rejects stale maps, compact-TOC drift, and duplicate IDs. This does not establish reader usability, translation quality, search relevance, deployed-site behavior, or learner outcomes."
     },
     {
       "id": "Q-009",

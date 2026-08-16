@@ -25,7 +25,7 @@
     },
     {
       "area": "book-navigation",
-      "canonical_paths": ["docs/governance/book-navigation.yaml", "book/chapters", "book/title-map.json", "book/table-of-contents.md", "book/table-of-contents-EN.md", "scripts/build_book_navigation.py", "scripts/build_book_title_map.py", "scripts/validate_book_navigation.py", "scripts/test_book_navigation_titles.py", "scripts/test_book_title_map.py"],
+      "canonical_paths": ["docs/governance/book-navigation.yaml", "book/chapters", "book/title-map.json", "book/table-of-contents-EN.md", "scripts/build_book_navigation.py", "scripts/build_book_title_map.py", "scripts/validate_book_navigation.py", "scripts/test_book_navigation_titles.py", "scripts/test_book_title_map.py"],
       "owner": "curriculum-maintainer",
       "triggers": ["new-chapter", "chapter-reorder", "chapter-rename", "english-migration", "navigation-report"],
       "required_inputs": ["stable-chapter-id", "part", "chapter-number", "english-title", "chinese-title", "legacy-source-path", "english-source-path-or-pending-state"],
@@ -35,7 +35,7 @@
     },
     {
       "area": "chapters",
-      "canonical_paths": ["book/chapters", "book/table-of-contents.md", "docs/content-matrix.md"],
+      "canonical_paths": ["book/chapters", "book/table-of-contents-EN.md", "docs/content-matrix.md"],
       "owner": "curriculum-maintainer",
       "triggers": ["learning-gap", "source-refresh", "user-confusion", "new-domain-example"],
       "required_inputs": ["problem", "objective", "experiment", "failure-case", "acceptance-checklist", "sources"],
@@ -45,7 +45,7 @@
     },
     {
       "area": "labs",
-      "canonical_paths": ["book/labs", "book/labs/README.md"],
+      "canonical_paths": ["book/labs", "book/labs/README-EN.md"],
       "owner": "lab-maintainer",
       "triggers": ["chapter-change", "failed-reproduction", "new-boundary-case", "learning-level-change"],
       "required_inputs": ["low-risk-setup", "observable-output", "evidence", "failure-variant", "secret-boundary", "transfer-task"],
