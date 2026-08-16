@@ -64,6 +64,20 @@ status: pass
 
 Schätze fehlende Zeit oder Kosten nie. Trage `unavailable` ein. Ein Erfolg nach Nacharbeit wird nicht zum Erfolg im Erstversuch.
 
+## Eine kleinste Version, auch ohne Engineering-Erfahrung
+
+Du musst nicht mit einer echten Website oder einem komplexen Repository anfangen. Erstelle eine temporäre Datei `status.md` mit nur diesen drei synthetischen Zeilen:
+
+```text
+Build-Prüfung: Exit-Code 0
+Mobil-Prüfung: erledigt
+Nutzerabnahme: noch nicht ausgeführt
+```
+
+A erhält nur „Ordne diesen Inhalt als Abschlussstatus“. B erhält denselben Text plus: **„Du darfst nur `status.md` ändern; behalte Unbekanntes bei; nenne zuerst den Plan; prüfe am Ende, ob es noch drei Zeilen sind; nenne Nutzerabnahme nicht erledigt.“** Beide nutzen kein Netzwerk, committen nicht und ändern keine andere Datei.
+
+Vergleiche nicht, welche Antwort schöner klingt. Prüfe, ob „noch nicht ausgeführt“ erhalten bleibt, ob die tatsächliche Änderung erklärt wird und ob ein prüfbares Ergebnis bleibt. Ist B klarer, heißt das nur, dass dieses Protokoll mit diesem synthetischen Text weiter getestet werden sollte; es beweist keine Effizienz eines Modells, Teams oder echten Projekts.
+
 ## Belege, Fehlerfall und Abnahme
 
 Bewahre die sechs Erstausgaben, jede Nacharbeit als eigenen Versuch, alle Diffs, Befehle, Exit-Codes, Prüfausgaben, Review-Notizen, Übergabezusammenfassungen und eine 2-mal-3-Vergleichstabelle auf. Das Ergebnis lautet `expand`, `do_not_expand` oder `insufficient_evidence`.

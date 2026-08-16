@@ -64,6 +64,20 @@ status: pass
 
 No inventes tiempo ni coste: usa `unavailable`. Un resultado que pasó tras retrabajo no pasa a ser éxito al primer intento.
 
+## Una versión mínima, incluso sin experiencia de ingeniería
+
+No hace falta empezar con un sitio real ni un repositorio complejo. Crea un archivo temporal `status.md` con solo estas tres líneas sintéticas:
+
+```text
+Comprobación de build: código de salida 0
+Comprobación móvil: terminada
+Aceptación de usuario: aún no ejecutada
+```
+
+Da a A solo «ordena este contenido como estado terminado». Da a B el mismo texto y añade: **«solo puedes cambiar `status.md`; conserva lo desconocido; enumera primero el plan; al final comprueba que siguen tres líneas; no llames terminada a la aceptación de usuario».** Ninguno usa red, hace commit ni toca otro archivo.
+
+No compares cuál suena más bonito. Comprueba si conserva «aún no ejecutada», si explica el cambio real y si deja un resultado verificable. Aunque B sea más claro, solo diría que este protocolo merece más pruebas con este texto sintético; no demuestra eficiencia de un modelo, equipo o proyecto real.
+
 ## Evidencia, fallo y aceptación
 
 Guarda seis salidas iniciales, retrabajos como intentos nuevos, diffs, órdenes, códigos de salida, resultados de comprobación, notas de revisión, entregas y una tabla 2×3. Declara `expand`, `do_not_expand` o `insufficient_evidence`.

@@ -64,6 +64,20 @@ status: pass
 
 不明な時間やコストは見積もらず `unavailable` にします。手戻り後の通過を初回成功にはしません。
 
+## エンジニアでなくてもできる最小版
+
+本物のサイトや複雑な repository から始める必要はありません。一時 file `status.md` を作り、次の synthetic text だけを入れます。
+
+```text
+build check：exit code 0
+mobile check：完了
+user acceptance：未実行
+```
+
+A には「この内容を完了状態として整理して」とだけ渡します。B には同じ文章に加え、**「変更できるのは `status.md` だけ。不明を残す。最初に plan を示す。最後に三行のままか確認する。user acceptance を完了と書かない」**と渡します。どちらも network を使わず、commit も他の file の変更もしません。
+
+どちらがきれいかを比べるのではありません。「未実行」を残したか、実際の変更を説明したか、確認できる結果を残したかを比べます。B が明確でも、この synthetic text でこの protocol をさらに試す価値がある、までです。model、team、実際の project の効率を証明するものではありません。
+
 ## 証拠、失敗、受け入れ
 
 六つの初回出力、別試行としての手戻り、差分、コマンド、終了コード、チェック出力、レビュー記録、交付概要、2×3 比較表を残します。結論は `expand`、`do_not_expand`、`insufficient_evidence` のいずれかです。
