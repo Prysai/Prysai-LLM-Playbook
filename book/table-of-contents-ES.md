@@ -41,7 +41,7 @@ transferencia.
 | 05 — Elegir la superficie correcta de Codex | [Disponible: capítulo 05](chapters/05-choose-the-codex-surface-ES.md) · `candidate / in-progress` |
 | 06 — Elegir un modelo no es venerar un modelo | [Disponible: capítulo 06](chapters/06-model-selection-ES.md) · `candidate / in-progress` |
 | 07 — Skills, Plugins, MCP y herramientas | [Disponible: capítulo 07](chapters/07-skills-plugins-and-tools-ES.md) · `candidate / in-progress` |
-| 08 — El ciclo de vida completo, de la definición a la entrega | Aún no existe archivo español. |
+| 08 — El ciclo de vida completo, de la definición a la entrega | [Disponible: capítulo 08](chapters/08-full-lifecycle-workflow-ES.md) · `candidate / in-progress` |
 | 09 — Verificación, duda y recuperación | Aún no existe archivo español. |
 | 10 — Planificación y cortes verticales | Aún no existe archivo español. |
 | 11 — Diseñar un Skill realmente útil | Aún no existe archivo español. |

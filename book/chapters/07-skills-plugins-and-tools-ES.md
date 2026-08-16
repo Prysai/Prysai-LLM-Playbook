@@ -302,7 +302,7 @@ y evidencia local en una sola frase.
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="06-model-selection-ES.md" aria-label="Capítulo anterior: Capítulo 6 · Elegir un modelo no es venerar un modelo">← Anterior<br><strong>Capítulo 6 · Elegir un modelo no es venerar un modelo</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="../table-of-contents-ES.md" aria-label="Volver al índice en español: el Capítulo 8 aún no está traducido">Siguiente pendiente →<br><strong>Ver disponibilidad del Capítulo 8</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="08-full-lifecycle-workflow-ES.md" aria-label="Capítulo siguiente: Capítulo 8 · de la definición a la entrega">Siguiente →<br><strong>Capítulo 8 · de la definición a la entrega</strong></a></td>
     </tr>
   </table>
 </nav>
