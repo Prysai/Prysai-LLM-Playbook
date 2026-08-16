@@ -87,7 +87,7 @@ transfer_limitations: "정적 감사는 점검 범위 밖에서 참조 산출물
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-lab-nav="previous" href="lab-002-task-protocol-KO.md" aria-label="이전 Lab: Lab 002 · 바람을 작업 프로토콜로 바꾸기">← 이전 Lab<br><strong>Lab 002 · 작업 프로토콜</strong></a></td>
-      <td align="right"><a data-lab-nav="next" href="../table-of-contents-KO.md" aria-label="한국어 목차로 돌아가기: Lab 004는 아직 번역되지 않음">다음 Lab 준비 중 →<br><strong>Lab 004 제공 상태 보기</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-004-skill-selection-KO.md" aria-label="다음 Lab: Lab 004 · 가장 작은 유효 역량 고르기">다음으로 →<br><strong>Lab 004 · 가장 작은 유효 역량 고르기</strong></a></td>
     </tr>
   </table>
 </nav>

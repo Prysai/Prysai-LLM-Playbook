@@ -4,7 +4,7 @@
 
 이 문서는 한국어로 읽을 수 있는 길잡이이지, 책 전체 번역본은 아닙니다. 정식
 카탈로그에는 `candidate` 상태의 장 22개와 `draft` 상태의 Lab 18개가 있습니다.
-현재 한국어로 읽을 수 있는 것은 장 6개와 Lab 5개입니다. 이 페이지의 모든 링크는
+현재 한국어로 읽을 수 있는 것은 장 6개와 Lab 6개입니다. 이 페이지의 모든 링크는
 대응하는 한국어 콘텐츠를 가리킵니다. `-KO` 파일이 없으면 다른 장이나 다른 언어로
 보내지 않고, 아직 제공되지 않음을 분명히 표시합니다.
 
@@ -22,7 +22,8 @@
     → [Lab 007: 행동 경계](labs/lab-007-action-boundaries-KO.md).
 6. [5장: 알맞은 Codex 작업면 선택하기](chapters/05-choose-the-codex-surface-KO.md)
    → [Lab 003: 완료 주장을 감사하기](labs/lab-003-evidence-review-KO.md).
-7. [6장: 모델 선택은 모델 숭배가 아니다](chapters/06-model-selection-KO.md).
+7. [6장: 모델 선택은 모델 숭배가 아니다](chapters/06-model-selection-KO.md)
+   → [Lab 004: 가장 작은 유효 역량 고르기](labs/lab-004-skill-selection-KO.md).
 
 이 자료는 여전히 `candidate` 또는 `draft / not_run` 상태입니다. 읽을 수 있는
 경로가 있다는 사실만으로 번역 품질, 모델 실행, 학습 효과 또는 전이가 검증되었다는
@@ -62,7 +63,7 @@
 | 001 — 첫 안전 작업 | [제공됨: Lab 001](labs/lab-001-first-safe-task-KO.md) · `draft / not_run` |
 | 002 — 작업 프로토콜 | [제공됨: Lab 002](labs/lab-002-task-protocol-KO.md) · `draft / not_run` |
 | 003 — 증거 검토 | [제공됨: Lab 003](labs/lab-003-evidence-review-KO.md) · `draft / not_run` |
-| 004 — 가장 작은 유효 역량 고르기 | 아직 한국어 파일이 없습니다. |
+| 004 — 가장 작은 유효 역량 고르기 | [제공됨: Lab 004](labs/lab-004-skill-selection-KO.md) · `draft / not_run` |
 | 005 — 반복하는 방법을 범위가 정해진 Skill로 만들기 | 아직 한국어 파일이 없습니다. |
 | 006 — Agent 중단 조건 설계하기 | 아직 한국어 파일이 없습니다. |
 | 007 — README 작업을 위한 행동 경계 | [제공됨: Lab 007](labs/lab-007-action-boundaries-KO.md) · `draft / not_run` |
