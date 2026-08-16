@@ -117,6 +117,116 @@ receipt가 결과를 고치거나 원인을 증명하지는 않습니다. `아�
 이 카드는 “안 됐다”를 조사 가능한 다음 단계로 바꿉니다. 모델, Skill, 과정의 효과를
 증명하지는 않습니다. 관찰한 것, 빠진 것, 여전히 안전한 행동만 따로 남깁니다.
 
+## claim을 evidence에 대응시키기
+
+summary를 받으면 먼저 claim을 한 줄씩 나눕니다. artifact 하나나 green check 하나를 여러 결론에
+돌려 쓰지 않기 위해서입니다.
+
+| claim | scope에 맞는 evidence | evidence가 있어도 남는 한계 |
+| --- | --- | --- |
+| 지정한 file이 바뀜 | exact path, before/after diff, 필요하면 hash | 변경이 요청한 의미를 만족함 |
+| named command가 pass함 | exact command, working directory, revision, timeout, exit status, relevant output | 다른 command, environment, 실행하지 않은 path |
+| page의 한 path가 열림 | recorded viewport, input, URL, render observation | 모든 browser, authenticated state, accessibility 전체 |
+| source가 문장을 지지함 | original URL, access date, 인용 범위, scope | current product behavior, account access, 인과 |
+| beginner가 이해함 | 누가 무엇을 읽었는지, 질문, 답, 조건을 남긴 reader observation | 모든 reader, 보존, transfer |
+
+`claim → evidence → status → next check` 표를 만들고 evidence가 없는 row는 `unverified`로 둡니다.
+거짓이라고 단정할 필요는 없습니다. 다만 evidence가 없는 사실을 success 말로 숨기지 않는 것이 중요합니다.
+
+```text
+claim: README의 start step은 초보자에게 분명하다
+evidence: maintainer의 본문 검토와 local diff
+status: partial
+not proven: 처음 보는 reader가 올바르게 행동할 수 있음
+next check: 한 사람에게 “가장 먼저 무엇을 하겠어요?”라고 한 질문만 함
+```
+
+## capability chain과 breakpoint card
+
+“tool이 보인다”, “session이 열린다”, “control을 되찾았다”는 서로 다른 layer의 signal입니다.
+아래 chain의 각 화살표에는 독립 proof가 필요합니다.
+
+```text
+request → authorization → visible tool → action started → result observed → acceptance review
+```
+
+support할 수 없는 첫 layer에서 멈춥니다. 뒤 layer를 추측해 채우지 않습니다.
+
+| breakpoint | 먼저 보존할 것 | 다음의 작은 check |
+| --- | --- | --- |
+| authorization이 불명확 | task contract, requested action, approval screen/record | scope와 approver를 확인한다. 실행하지 않는다 |
+| visible tool이 없음 | current surface, account/environment label, exact missing control | official/current setup을 읽거나 human에게 ask |
+| action start가 불명확 | proposal, tool trace, target baseline | named local target을 read-only로 확인 |
+| result가 불명확 | diff, partial output, log, timestamp | exact artifact를 read back |
+| acceptance가 없음 | artifact와 requirement | requirement를 직접 검사하는 한 check를 고름 |
+
+breakpoint card는 recovery를 작게 유지합니다.
+
+```text
+last confirmed layer:
+first unsupported layer:
+artifact / side-effect state:
+evidence preserved:
+claim downgraded to:
+one safe next check:
+explicitly forbidden next actions:
+```
+
+## event 없는 대기 다루기
+
+오래 `Working`으로 보이거나 command가 응답하지 않는 것은 성공이나 failure가 아니라 먼저 timeline의
+문제입니다. 기다리기를 반복하기 전에 시작 시각, 마지막 output, process/tool state, observed diff,
+allowed timeout을 기록합니다. timeout 뒤에는 같은 write를 보내기 전에 artifact를 읽거나, authorized한
+interrupt를 사용하거나, `unknown`으로 handoff합니다.
+
+```text
+started_at:
+last_output_at:
+no-event threshold:
+process or tool state:
+artifact read-back:
+external side effects observed:
+decision: wait once | interrupt | read back | stop
+```
+
+elapsed time은 effect proof가 아닙니다. 특히 write, publish, send, payment 같은 non-idempotent action은
+response를 잃어도 blind retry하지 않습니다. baseline과 postcondition을 대조한 뒤 human이 새 attempt를
+허용할지 결정합니다.
+
+## completion status와 recovery status를 나누기
+
+recovery로 control을 되찾아도 completion claim이 참이 되는 것은 아닙니다. 두 column을 따로 남깁니다.
+
+| recovery state | completion state | 정직한 handoff 예 |
+| --- | --- | --- |
+| checkpoint를 저장하고 pause | `unverified` | “재개 가능한 checkpoint는 있다. 결과는 미확인” |
+| target을 read back해 partial diff 확인 | `partial` | “일부 변경을 확인. acceptance check는 미실행” |
+| missing input 식별 | `blocked` | “원인 후보가 아니라 필요한 input 부재를 관찰” |
+| exact check가 scope 안에서 pass | `verified` | “이 local rule은 pass. scope 밖은 not proven” |
+
+이는 product status label을 정하는 것이 아닙니다. delivery claim이 실제로 보존한 evidence보다 강해지지
+않게 하는 vocabulary입니다.
+
+## 전이 과제와 acceptance checklist
+
+고정 source를 쓰는 research memo나 static page review에 같은 method를 옮깁니다. fact claim,
+execution claim, reader-effect claim을 하나씩 쓰고 각각에 다른 evidence를 요구합니다. citation, diff,
+output 중 하나를 일부러 빼고 claim을 downgrade한 뒤 한 가지 safe next check를 고릅니다.
+
+- [ ] build, diff, screenshot, source URL, reader feedback 어느 것도 다른 종류의 claim을 자동으로 증명하지 않는다고 설명할 수 있다.
+- [ ] first unsupported layer를 이름 붙이고 scope를 넓히지 않고 다음 check를 고른다.
+- [ ] no-event command의 timeline을 보존하고 time만으로 success라 하지 않는다.
+- [ ] recovery state와 completion state를 따로 전달한다.
+- [ ] `verified`는 exact acceptance check 기록이 있는 row에만 쓴다.
+
+## sources와 업데이트 경계
+
+이 장의 method는 project-authored teaching framework입니다. product-specific behavior, command, approval,
+UI status는 volatile하므로 current official documentation과 actual environment에서 확인해야 합니다. 공개
+field report는 symptom의 teaching input일 뿐 local reproduction, root cause, universal fix의 evidence가 아닙니다.
+참조는 English source chapter와 [evidence library](../evidence-library-KO.md#source-notes)에 남아 있습니다.
+장은 `candidate`, 실험은 `not_run` 상태를 유지합니다.
+
 ## 의도적인 실패와 되돌아보기
 
 독자에게 묻지 않았는데도 “독자가 이해했다”라고 쓴 인계를 하나 만드세요. 증거를 넘는

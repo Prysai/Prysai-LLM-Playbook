@@ -118,6 +118,119 @@ honest_handoff: 本文 review はある。読者理解は unverified
 効果を証明するものではありません。観測したこと、欠けていること、安全な次の行動だけを
 分けて残します。
 
+## claim を evidence に対応させる
+
+summary を受け取ったら、まず claim を一行ずつ分けます。一つの artifact や green check を
+複数の結論に使い回さないためです。
+
+| claim | scope に合う evidence | evidence があっても残る限界 |
+| --- | --- | --- |
+| 指定 file が変わった | exact path、before/after diff、必要なら hash | 変更が依頼の意味を満たすこと |
+| named command が pass した | exact command、working directory、revision、timeout、exit status、relevant output | 他の command、environment、未実行 path |
+| page の一つの path が開いた | recorded viewport、input、URL、render observation | 全 browser、authenticated state、accessibility 全体 |
+| source が文を支える | original URL、access date、引用した範囲、scope | current product behavior、account access、因果 |
+| beginner が理解した | 誰が、何を読んだか、質問、回答、条件を残す reader observation | すべての reader、保持、transfer |
+
+`claim → evidence → status → next check` の表を作り、evidence がない row は `unverified` のまま
+にします。false と決める必要はありません。ただし、evidence がないことを success の語で隠さない
+ことが重要です。
+
+```text
+claim: README の start step は初学者に分かりやすい
+evidence: maintainer の本文 review と local diff
+status: partial
+not proven: 初見の reader が正しく行動できること
+next check: 一人に「最初に何をするか」を一問だけ聞く
+```
+
+## capability chain と breakpoint card
+
+「tool が見える」「session が開く」「control を取り戻した」は、それぞれ違う層の signal です。
+次の chain の各矢印に独立した proof が必要です。
+
+```text
+request → authorization → visible tool → action started → result observed → acceptance review
+```
+
+最初に support できない layer で止まります。後ろの layer を推測して埋めません。
+
+| breakpoint | まず保存するもの | 次の小さな check |
+| --- | --- | --- |
+| authorization が不明 | task contract、requested action、approval screen/record | scope と approver を確認する。実行しない |
+| visible tool がない | current surface、account/environment label、exact missing control | official/current setup を読むか human に ask |
+| action start が不明 | proposal、tool trace、target baseline | named local target を read-only で確認 |
+| result が不明 | diff、partial output、log、timestamp | exact artifact を read back する |
+| acceptance がない | artifact と requirement | requirement を直接調べる一つの check を選ぶ |
+
+breakpoint card は復旧を小さく保ちます。
+
+```text
+last confirmed layer:
+first unsupported layer:
+artifact / side-effect state:
+evidence preserved:
+claim downgraded to:
+one safe next check:
+explicitly forbidden next actions:
+```
+
+## event がない待機を扱う
+
+長い `Working` 表示や無応答の command は、成功でも failure でもなく、まず timeline の問題です。
+wait を繰り返す前に開始時刻、最後の output、process/tool state、observed diff、allowed timeout を
+記録します。timeout の後は、同じ write を送る前に artifact を読むか、authorized な interrupt を
+使うか、`unknown` として handoff します。
+
+```text
+started_at:
+last_output_at:
+no-event threshold:
+process or tool state:
+artifact read-back:
+external side effects observed:
+decision: wait once | interrupt | read back | stop
+```
+
+elapsed time は effect の proof ではありません。特に write、publish、send、payment のような
+non-idempotent action は、response が失われても blind retry しません。baseline と postcondition を
+照合してから、human が新しい attempt を許可するか決めます。
+
+## completion status と recovery status を分ける
+
+recovery で control を取り戻しても、completion claim が真になるとは限りません。二つの column を
+別に残します。
+
+| recovery state | completion state | 正確な handoff の例 |
+| --- | --- | --- |
+| checkpoint を保存して pause | `unverified` | 「再開可能な checkpoint はある。結果は未確認」 |
+| target を read back して partial diff を確認 | `partial` | 「一部変更を確認。acceptance check は未実行」 |
+| missing input を特定 | `blocked` | 「原因候補ではなく、必要 input の不在を観測」 |
+| exact check が scope 内で pass | `verified` | 「この local rule は pass。scope 外は not proven」 |
+
+これは product の status label を定義するものではありません。自分の delivery claim が、実際に
+保存した evidence より強くならないための vocabulary です。
+
+## transfer と acceptance checklist
+
+固定 source を使う research memo または static page review に同じ method を移します。事実 claim、
+execution claim、reader-effect claim を一つずつ書き、それぞれに別の evidence を要求します。意図的に
+一つの citation、diff、または output を外し、claim を downgrade してから一つの safe next check を
+選びます。
+
+- [ ] build、diff、screenshot、source URL、reader feedback のどれも、別の種類の claim を自動で証明しないと説明できる。
+- [ ] first unsupported layer を名付け、scope を広げずに次の check を選べる。
+- [ ] no-event command の timeline を保存し、time だけから success と言わない。
+- [ ] recovery state と completion state を別々に delivery する。
+- [ ] `verified` は exact acceptance check の記録がある row にだけ使う。
+
+## sources と更新境界
+
+この章の method は project-authored の teaching framework です。product-specific behavior、command、
+approval、UI status は volatile であり、current official documentation と actual environment で確認します。
+public field report は symptom の teaching input であり、local reproduction、root cause、universal fix の
+証拠ではありません。参照先は英語 source chapter と [evidence library](../evidence-library-JA.md#source-notes)
+に記録されています。章は `candidate`、実験は `not_run` のままです。
+
 ## 意図的な失敗と振り返り
 
 読者に尋ねていないのに「読者は理解した」と書いた handoff を一度作ります。その claim が
