@@ -4,11 +4,19 @@
 
 **Estado:** `candidate`. **Experimento:** `not_run`. Este capítulo explica un ciclo observable; no prueba el comportamiento de un host, modelo o herramienta concretos.
 
-## El problema
+## El problema que resuelve este capítulo
 
 «Deja que el Agent se ocupe» parece una sola acción. En realidad hay propuesta del modelo, decisión del host, ejecución o rechazo de una herramienta, observación, actualización de estado, verificación y una decisión de continuar o parar. Una conclusión segura no sustituye esos hechos.
 
 > La salida de un modelo es una propuesta. El resultado de una herramienta es una observación. Una entrega verificada necesita evidencia del entorno objetivo.
+
+## Objetivos de aprendizaje
+
+Podrás distinguir propuesta, aprobación, ejecución, efecto observado y aceptación; definir paradas por entrada, autoridad, evidencia y presupuesto antes de empezar; y entregar una tarea interrumpida sin que alguien repita a ciegas una escritura que pudo ocurrir. El ejercicio no prueba comportamiento general de Agents ni hosts.
+
+## Problemas reales: un ciclo visible no es un resultado terminado
+
+Un comando propuesto, una etiqueta `Working` o un resumen pueden verse aunque falten ejecución, lectura posterior o aceptación. No es un diagnóstico de producto. Solo explica por qué un incidente se detiene en la primera etapa no observada: inicio de herramienta, estado del destino o salida del check.
 
 ## El ciclo observable
 
@@ -83,11 +91,21 @@ Fija presupuestos de intentos, tiempo, archivos que pueden cambiar, efectos exte
 | Compensable | Confirmar el efecto y preparar una compensación limitada |
 | No idempotente | Detenerse y reconciliar antes de repetir |
 
-## Práctica y límite
+## Experimento y límite
+
+### Preparación
+
+Prepara un directorio local desechable con `input.txt`. Permite lectura y escritura solo allí, sin credenciales, instalación, red, publicación ni borrado. Escribe objetivo, límite de rutas, aceptación y presupuesto de un reintento antes de que un modelo proponga una acción.
+
+### Tarea
 
 En un directorio desechable, pide al Agent que informe enlaces que apuntan a archivos ausentes sin modificar las fuentes. Define raíz de lectura y escritura, qué cuenta como enlace ausente, el check, dos reintentos de solo lectura y un fallo deliberado —por ejemplo, una raíz equivocada—. Revisa propuesta, informe y comprobación por separado.
 
 La práctica pasa si puedes explicar cada transición y entregar `verified`, `partial`, `blocked` o `unverified` con evidencia. Hasta guardar una ejecución real e independiente, este capítulo sigue siendo `candidate / not_run`.
+
+### Evidencia
+
+Conserva contrato de tarea, tarjeta de eventos, decisión de aprobación, comandos ejecutados con directorio y estado final, diff o lectura posterior, aceptación y entrega. Si falta una transición, escribe `not_observed` en vez de completarla con la respuesta del modelo.
 
 ## Define la parada antes de iniciar el ciclo
 
@@ -134,6 +152,26 @@ En un directorio desechable crea `input.txt` con tres líneas desordenadas. La t
 - [ ] Mi entrega separa lo probado, lo desconocido, lo no afirmado y el siguiente paso seguro.
 
 Los nombres de eventos y permisos cambian según el host. Verifica esos hechos con documentación oficial y observación actual; los informes públicos solo ayudan a diseñar controles, no sustituyen tu ejecución.
+
+## Reflexión
+
+¿Qué etapa de tu tarjeta de eventos sería más fácil saltar con texto convincente? ¿Cuándo sería seguro reintentar y cuándo debería parar por un posible efecto desconocido? ¿Qué afirmación sigue fuera del alcance incluso después de una lectura posterior?
+
+## Tarea de transferencia
+
+Aplica el mismo ciclo a práctica de idioma o investigación de fuentes. En idioma, corrección del modelo, respuesta del estudiante, recuperación posterior sin ayuda y retroalimentación son eventos distintos; una conversación fluida no prueba dominio. En investigación, encontrar, leer, comprobar fuente y concluir también son pasos distintos. Conserva presupuestos de parada y entrega honesta.
+
+## Lista de aceptación
+
+- [ ] Distingo propuesta, decisión del host, ejecución, observación y aceptación.
+- [ ] Puedo señalar la primera transición sin soporte en una declaración de «hecho».
+- [ ] Definí paradas para entrada, autoridad, evidencia y presupuesto.
+- [ ] Ante una respuesta perdida, leo estado y postcondición antes de repetir una escritura.
+- [ ] Mi entrega separa lo probado, lo desconocido, lo no afirmado y el siguiente paso seguro.
+
+## Fuentes y límite de mantenimiento
+
+El ciclo observable, los estados y los métodos de parada son la enseñanza estable del proyecto. Superficies de Agent, nombres de herramientas, permisos y comportamiento de ejecución cambian. Comprueba hechos actuales en las [tarjetas oficiales](../evidence-library-ES.md#source-notes) y usa el [índice de problemas de campo](../evidence-library-ES.md#source-notes) solo como material de síntomas. Ninguno sustituye una ejecución propia registrada.
 
 ## Práctica guiada: cuatro paradas seguras en el mismo trabajo
 
