@@ -1,11 +1,15 @@
 <!-- content_id: communication-clinic | locale: JA | language: ja | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
-# LLM 初心者カード：言語・仕事・調査
+# 任意の応用練習：言語・仕事・調査
 
 短く順番に練習したい場合は、[業務報告の練習](work-update-practice-loop-JA.md) または [リサーチ確認の練習](research-check-practice-loop-JA.md) を開いてください。
 
 **状態：** `draft` · **学習者の根拠：** `not_run` · **対象：** テキストチャット型 LLM で行う、
 低リスクかつ非機微な練習。
+
+**書籍の基礎を終えてから使います：**[レッスン 0](guides/llm-fundamentals-JA.md)
+→ [第 1 章](chapters/01-gpt-and-codex-JA.md) →
+[第 2 章](chapters/02-first-safe-task-JA.md)。このカードは学んだ方法を応用するもので、LLMとは何かを説明する入門ではありません。
 
 ここは日本語で説明する学習ルートです。このページの説明、判断、リンクは日本語です。カードに出てくるスペイン語は任意の語学練習の目標であり、誤った言語への移動でも必須科目でもありません。
 

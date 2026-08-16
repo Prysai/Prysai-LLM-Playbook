@@ -1,15 +1,19 @@
 <!-- content_id: communication-clinic | locale: ZH | language: zh-CN | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
-# 通用 LLM 新手提示卡：语言、工作与研究
+# 可选应用练习：语言、工作与研究
 
 状态：`draft` ｜ 学习者运行证据：`not_run` ｜ 适用范围：任何文字聊天式 LLM 工作台中的低风险、非敏感练习。
+
+**请在完成教材基础主线后再使用：**[第 0 课](guides/llm-fundamentals-ZH.md)
+→ [第 1 章](chapters/01-gpt-and-codex-ZH.md) →
+[第 2 章](chapters/02-first-safe-task-ZH.md)。这些卡片用于应用已经学到的方法；它们不是解释“大语言模型是什么”的入门课。
 
 你现在处于中文说明路径：本页所有说明、判断和导航都使用中文。页面中的西班牙语只是**可选择的外语练习目标**，不是页面误跳转，也不表示你必须学习西班牙语。
 
 想直接复制六条西班牙语练习消息？打开[西班牙语六步练习](spanish-practice-loop-ZH.md)。
 想练一条不编造事实的工作更新，或核查一项资料？打开[工作更新六步练习](work-update-practice-loop-ZH.md)或[研究核查六步练习](research-check-practice-loop-ZH.md)。
 
-今天先不讲术语，也不要求你先打开 Codex。选一张卡，把方括号里的内容换成你自己的小任务：先自己试一次，再让 AI 只帮你解决一个明确问题。
+选一张卡，把方括号里的内容换成你自己的小任务：先自己试一次，再让 AI 只帮你解决一个明确问题。
 
 > 只使用虚构、公开或已获授权的文字。不要粘贴密码、令牌、私人聊天、客户资料、未公开文件或生产系统内容。
 

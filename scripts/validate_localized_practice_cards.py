@@ -34,7 +34,7 @@ REQUIRED_MARKERS = {
 # surrounding explanation remains in their selected language.
 ROUTE_CONTEXT_MARKERS = {
     "ZH": (
-        "通用 LLM 新手提示卡：语言、工作与研究",
+        "可选应用练习：语言、工作与研究",
         "你现在处于中文说明路径",
         "如果你只是第一次来、也不打算练西班牙语：先从 B 的第 3 张开始。",
         "A. 可选外语练习",
@@ -42,7 +42,7 @@ ROUTE_CONTEXT_MARKERS = {
         "C. 研究与分享前核查",
     ),
     "ES": (
-        "Tarjetas iniciales para LLM: idioma, trabajo e investigación",
+        "Práctica de aplicación opcional: idioma, trabajo e investigación",
         "Estás en la ruta explicada en español",
         "Si es tu primera visita y no quieres practicar español, empieza por la tarjeta 3 de B.",
         "A. Práctica opcional de idioma",
@@ -50,7 +50,7 @@ ROUTE_CONTEXT_MARKERS = {
         "C. Investigación y revisión antes de compartir",
     ),
     "JA": (
-        "LLM 初心者カード：言語・仕事・調査",
+        "任意の応用練習：言語・仕事・調査",
         "ここは日本語で説明する学習ルートです",
         "初めてで、スペイン語を練習する目的がない場合は、B のカード 3 から始めてください。",
         "A. 任意の語学練習",
@@ -58,7 +58,7 @@ ROUTE_CONTEXT_MARKERS = {
         "C. 調査と共有前の確認",
     ),
     "KO": (
-        "LLM 초보자 카드: 언어, 업무, 리서치",
+        "선택 응용 연습: 언어, 업무, 리서치",
         "지금 보고 있는 것은 한국어 설명 경로입니다",
         "처음 왔고 스페인어를 연습할 생각이 없다면 B의 3번 카드부터 시작하세요.",
         "A. 선택 외국어 연습",
@@ -66,13 +66,22 @@ ROUTE_CONTEXT_MARKERS = {
         "C. 리서치와 공유 전 확인",
     ),
     "DE": (
-        "LLM-Einstiegskarten: Sprache, Arbeit und Recherche",
+        "Optionale Anwendungsübung: Sprache, Arbeit und Recherche",
         "Du befindest dich auf dem deutsch erklärten Lernpfad",
         "Wenn du zum ersten Mal hier bist und kein Spanisch üben möchtest, beginne mit Karte 3 in B.",
         "A. Optionale Sprachübung",
         "B. Hier beginnen: Ausdruck und Entscheidungen bei der Arbeit",
         "C. Recherche und Prüfung vor dem Teilen",
     ),
+}
+
+FOUNDATION_MARKERS = {
+    "EN": ("Lesson 0](guides/llm-fundamentals-EN.md)", "they are not an introduction to what an LLM is"),
+    "ZH": ("第 0 课](guides/llm-fundamentals-ZH.md)", "它们不是解释“大语言模型是什么”的入门课"),
+    "ES": ("Lección 0](guides/llm-fundamentals-ES.md)", "no son una introducción a lo que es un LLM"),
+    "JA": ("レッスン 0](guides/llm-fundamentals-JA.md)", "LLMとは何かを説明する入門ではありません"),
+    "KO": ("레슨 0](guides/llm-fundamentals-KO.md)", "LLM이 무엇인지 설명하는 입문 과정이 아닙니다"),
+    "DE": ("Lektion 0](guides/llm-fundamentals-DE.md)", "sie führen nicht in die Frage ein, was ein LLM ist"),
 }
 
 
@@ -95,6 +104,9 @@ def main() -> int:
                 errors.append(
                     f"{path.relative_to(ROOT)}: missing route-context marker #{marker_index}"
                 )
+        for marker in FOUNDATION_MARKERS[locale]:
+            if marker not in text:
+                errors.append(f"{path.relative_to(ROOT)}: missing textbook-foundation boundary {marker!r}")
         if "not_run" not in text:
             errors.append(f"{path.relative_to(ROOT)}: missing not_run evidence boundary")
 

@@ -1,11 +1,16 @@
 <!-- content_id: communication-clinic | locale: DE | language: de | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
-# LLM-Einstiegskarten: Sprache, Arbeit und Recherche
+# Optionale Anwendungsübung: Sprache, Arbeit und Recherche
 
 Für eine kurze Übung in klaren Schritten öffne den [Arbeitsupdate-Ablauf](work-update-practice-loop-DE.md) oder den [Rechercheprüfungs-Ablauf](research-check-practice-loop-DE.md).
 
 **Status:** `draft` · **Lernnachweis:** `not_run` · **Geeignet für:** risikoarme
 Übungen ohne sensible Daten in einem Textchat mit einem LLM.
+
+**Nutze diese Karten erst nach dem Lehrbuchfundament:** [Lektion 0](guides/llm-fundamentals-DE.md)
+→ [Kapitel 1](chapters/01-gpt-and-codex-DE.md) →
+[Kapitel 2](chapters/02-first-safe-task-DE.md). Die Karten wenden die Methode
+an; sie führen nicht in die Frage ein, was ein LLM ist.
 
 Du befindest dich auf dem deutsch erklärten Lernpfad: Erklärungen, Entscheidungen und Links auf dieser Seite sind auf Deutsch. Das Spanische in den Karten ist ein optionales Ziel für eine Sprachübung, kein versehentlicher Sprachwechsel und keine Pflicht.
 

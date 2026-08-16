@@ -1,10 +1,15 @@
 <!-- content_id: communication-clinic | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-13 -->
 
-# Beginner Practice Pack: first prompts for real work
+# Optional Application Practice: language, work, and research
 
 **Status:** `candidate` · **Learner evidence:** `not_run` · **Designed for:**
 low-risk, text-only chat. No cross-model run evidence exists; product-specific
 actions require a sourced adapter.
+
+**Use this after the textbook foundation:** [Lesson 0](guides/llm-fundamentals-EN.md)
+→ [Chapter 1](chapters/01-gpt-and-codex-EN.md) →
+[Chapter 2](chapters/02-first-safe-task-EN.md). These cards apply the method;
+they are not an introduction to what an LLM is.
 
 Need a short, copy-ready language route? Open the [six-message Spanish practice loop](spanish-practice-loop-EN.md).
 Need a short work or research route? Open the [truthful work-update loop](work-update-practice-loop-EN.md)
@@ -12,7 +17,7 @@ or the [bounded research-check loop](research-check-practice-loop-EN.md).
 
 <span id="practice-route-chooser"></span>
 
-## Start here — do one useful thing
+## Choose an application after the foundation
 
 Choose the situation closest to what you need **today**. Open one card, make
 your own small attempt, and return for explanation only if you need it. You do

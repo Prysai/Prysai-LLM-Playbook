@@ -1,11 +1,15 @@
 <!-- content_id: communication-clinic | locale: KO | language: ko | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
-# LLM 초보자 카드: 언어, 업무, 리서치
+# 선택 응용 연습: 언어, 업무, 리서치
 
 짧고 순서 있는 연습을 원하면 [업무 업데이트 연습](work-update-practice-loop-KO.md) 또는 [리서치 확인 연습](research-check-practice-loop-KO.md)을 여세요.
 
 **상태:** `draft` · **학습자 근거:** `not_run` · **대상:** 텍스트 채팅형 LLM에서 하는
 저위험·비민감 연습입니다.
+
+**교과서 기초를 마친 뒤 사용하세요:** [레슨 0](guides/llm-fundamentals-KO.md)
+→ [1장](chapters/01-gpt-and-codex-KO.md) →
+[2장](chapters/02-first-safe-task-KO.md). 이 카드는 배운 방법을 적용하는 것이며 LLM이 무엇인지 설명하는 입문 과정이 아닙니다.
 
 지금 보고 있는 것은 한국어 설명 경로입니다. 이 페이지의 설명, 판단, 링크는 한국어로 제공됩니다. 카드에 나오는 스페인어는 선택할 수 있는 외국어 연습 목표일 뿐, 언어가 잘못 바뀐 것도 필수 과목도 아닙니다.
 
