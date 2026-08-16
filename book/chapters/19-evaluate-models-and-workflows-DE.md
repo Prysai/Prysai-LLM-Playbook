@@ -98,6 +98,19 @@ Nutze drei feste synthetische Inputs: Claim/Status/Evidenz extrahieren, ohne neu
 - [ ] First Pass, Pass nach Nacharbeit, Fehlschlag und Unvergleichbarkeit sind getrennt gespeichert.
 - [ ] Ich formuliere Fixture, Smoke-Test, Zeit oder Kosten nicht zu „klüger“, Produktivitätsgewinn oder einem allgemeinen Ranking um.
 
+## Fünf-Minuten-Karte: eine Anweisung testen, nicht den „IQ“ eines Modells
+
+Das geht mit einem Modell, Offline-Text und ohne Kontoverbindung. Nimm eine kurze öffentliche oder erfundene Statusnotiz. Text, Modell, Oberfläche, Zeitlimit und Reviewer bleiben gleich; nur die Anweisung ändert sich.
+
+| Runde | Anweisung | Vor dem Urteil aufbewahren |
+|---|---|---|
+| A | „Liste drei nächste Schritte aus dieser Notiz auf.“ | Exakte Ausgabe und Laufzeit |
+| B | „Nutze nur diese Notiz. Liste drei nächste Schritte auf. Fehlen zuständige Person oder Termin, schreibe `[zu klären]`; erfinde keine Fakten. Zitiere für jeden Schritt den stützenden Satz; fehlt er, stoppe und benenne die Lücke.“ | Exakte Ausgabe und Laufzeit |
+
+Bewerte beide Ausgaben bei **Fakten erhalten**, **fehlende Information markiert**, **Textbezug nachvollziehbar**, **Umfang eingehalten** und **sicher gestoppt** jeweils mit 0–2. Bewahre Prompt, Input, Ausgaben, Scores und einen Satz zur Differenz auf. Ändern sich Text, Modell, Tool, Rechte oder Bedingung, schreibe `not_comparable`, statt einen Gewinner zu erklären.
+
+Dies ist ein persönlicher Übungsrecord, keine Benchmark-Daten. Ein besseres B rechtfertigt nur, das Protokoll bei einer weiteren festen Aufgabe zu prüfen; es beweist keinen Produktivitätsgewinn, kein klügeres Modell und kein allgemeines Ranking.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-DE.md">← Vorheriges<br><strong>Kapitel 18 · Pfad für Inhalte, Design, Daten und Automatisierung</strong></a></td><td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-DE.md">Weiter →<br><strong>Kapitel 20 · ein persönliches Codex-Arbeitssystem aufbauen</strong></a></td></tr></table></nav>

@@ -98,6 +98,19 @@ A には task と文章だけを渡します。B には同じものに加えて�
 - [ ] first pass、rework 後の pass、failure、incomparable を別の結果として残した。
 - [ ] fixture、smoke、時間、cost を「より賢い」「効率向上」や一般順位に言い換えていない。
 
+## 5分比較カード：model の「IQ」ではなく instruction を試す
+
+model 一つと offline text だけで、account を接続せずにできます。短い公開済みまたは架空の status note を選びます。text、model、surface、時間制限、reviewer は固定し、変えるのは instruction だけです。
+
+| round | instruction | 判断前に残すもの |
+|---|---|---|
+| A | 「この note から次の action を3つ挙げてください。」 | 元の output と経過時間 |
+| B | 「この note だけを使って次の action を3つ挙げてください。担当者または日付がなければ `[要確認]` と書き、事実を作らないでください。各 action を支える原文の一文を示し、なければ止まって不足を説明してください。」 | 元の output と経過時間 |
+
+両方を **事実を保ったか**、**欠けた情報を印したか**、**原文を追跡できるか**、**範囲を守ったか**、**安全に止まれたか** の5項目で各0–2点にします。prompt、input、output、score、差が出た理由を一文保存します。text、model、tool、permission、条件が変わったら、勝者を決めず `not_comparable` と記録します。
+
+これは個人の練習 record であり benchmark data ではありません。B が良くても、別の固定 task でこの protocol を再確認する理由になるだけです。生産性向上、より賢い model、一般順位は示しません。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-JA.md">← 前の章<br><strong>第18章 · コンテンツ、デザイン、データ、自動化トラック</strong></a></td><td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-JA.md">次へ →<br><strong>第20章 · Codexで使う個人の作業システムを作る</strong></a></td></tr></table></nav>

@@ -100,6 +100,19 @@ run_id / attempt_id / task_id / candidate_id:
 - [ ] 我把首次通过、返工后通过、失败和不可比作为不同结果保存。
 - [ ] 我不把夹具通过、一次烟雾测试或更低耗时写成“更聪明”“效率提高”或通用排名。
 
+## 五分钟比较卡：测试一条指令，不测试“模型 IQ”
+
+只用一个模型、一段离线文本，不连接任何账户也能完成。选一条短的公开或虚构状态说明。固定文本、模型、工作面、时间限制和评分人；唯一变化的是指令。
+
+| 轮次 | 指令 | 判断前要保存 |
+|---|---|---|
+| A | “从这段说明中列出三条下一步行动。” | 原始输出与耗时 |
+| B | “只能依据这段说明列出三条下一步行动。负责人或日期缺失时写 `[待确认]`，不要补充事实。每条行动都引用支撑它的原句；没有依据时停止并说明缺口。” | 原始输出与耗时 |
+
+两份输出都按 **事实保留**、**缺失信息已标明**、**能追溯原文**、**遵守范围**、**安全停止** 五项各记 0–2 分。保存提示、输入、输出、评分，以及解释差异的一句话。文本、模型、工具、权限或条件一旦变化，就写 `not_comparable`，而不是宣布谁赢了。
+
+这是个人练习记录，不是基准数据。B 更好，只能说明这个协议值得在另一项固定任务上再试；不能证明生产力提高、模型更聪明或存在通用排名。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章节导航"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-ZH.md">← 上一章<br><strong>第 18 章·内容、设计、数据与自动化</strong></a></td><td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-ZH.md">下一章 →<br><strong>第 20 章·构建个人工作系统</strong></a></td></tr></table></nav>

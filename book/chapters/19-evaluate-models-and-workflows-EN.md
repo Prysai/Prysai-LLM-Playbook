@@ -263,6 +263,27 @@ after the evaluation run. Lab 003 owns independent claim adjudication; Lab 015
 uses that result to produce a concise handoff whose wording does not exceed the
 attached evidence.
 
+## Five-minute comparison card: test one instruction, not a model's IQ
+
+You can run this with one model, offline text, and no account connection. Pick
+a short public or fictional status note. Keep the text, model, surface, time
+limit, and reviewer fixed. The only thing that changes is the instruction.
+
+| Round | Instruction | Record before judging |
+|---|---|---|
+| A | “List three next actions from this note.” | Exact output and elapsed time |
+| B | “Use only this note. List three next actions. Mark missing owner or date as `[needs confirmation]`; do not invent facts. Quote the supporting sentence for each action; if none exists, stop and name the gap.” | Exact output and elapsed time |
+
+Score each output 0–2 for **facts preserved**, **missing information marked**,
+**supporting text traceable**, **scope followed**, and **safe stopping**. Keep
+the prompt, input, outputs, scores, and one sentence explaining any difference.
+If the text, model, tools, permissions, or conditions change, write
+`not_comparable` instead of declaring a winner.
+
+This is a personal practice record, not benchmark data. A better B output can
+justify trying the protocol again on another fixed task; it cannot establish a
+productivity gain, a smarter model, or a general ranking.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Chapter navigation">

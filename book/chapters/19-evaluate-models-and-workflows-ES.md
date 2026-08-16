@@ -95,6 +95,19 @@ Usa tres textos sintéticos fijos: extraer claim/status/evidence, convertir a Ma
 - [ ] Distingo primer pase, pase con retrabajo, fallo e incomparabilidad.
 - [ ] No convierto fixture, smoke, tiempo o coste en «más inteligente», eficiencia o ranking general.
 
+## Tarjeta de cinco minutos: prueba una instrucción, no el «IQ» de un modelo
+
+Puedes hacerlo con un solo modelo, texto sin conexión y sin conectar una cuenta. Elige una nota de estado breve, pública o ficticia. Mantén fijos el texto, modelo, superficie, límite de tiempo y revisor; solo cambia la instrucción.
+
+| Ronda | Instrucción | Guarda antes de juzgar |
+|---|---|---|
+| A | «Enumera tres acciones siguientes a partir de esta nota.» | Salida exacta y tiempo transcurrido |
+| B | «Usa solo esta nota. Enumera tres acciones siguientes. Si falta responsable o fecha, escribe `[por confirmar]`; no inventes hechos. Cita la frase que sustenta cada acción; si no existe, detente y explica la carencia.» | Salida exacta y tiempo transcurrido |
+
+Puntúa ambas salidas de 0 a 2 en **hechos conservados**, **información faltante marcada**, **texto de apoyo rastreable**, **alcance respetado** y **parada segura**. Conserva prompt, entrada, salidas, puntuaciones y una frase sobre cualquier diferencia. Si cambia texto, modelo, herramienta, permiso o condición, escribe `not_comparable` en vez de declarar un ganador.
+
+Es un registro personal de práctica, no datos de benchmark. Que B salga mejor solo justifica probar el protocolo otra vez con otra tarea fija; no demuestra productividad, un modelo más inteligente ni un ranking general.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-ES.md">← Anterior<br><strong>Capítulo 18 · ruta de contenido, diseño, datos y automatización</strong></a></td><td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-ES.md">Siguiente →<br><strong>Capítulo 20 · construir un sistema personal de trabajo con Codex</strong></a></td></tr></table></nav>

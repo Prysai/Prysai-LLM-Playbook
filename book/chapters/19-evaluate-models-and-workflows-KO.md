@@ -98,6 +98,19 @@ A에는 task와 원문만 줍니다. B에는 같은 내용과 아래 작업 지�
 - [ ] first pass, rework 뒤 pass, failure, incomparable을 다른 결과로 보존했다.
 - [ ] fixture, smoke, 시간, cost를 “더 똑똑함”, 효율 향상, 일반 순위로 바꾸어 말하지 않았다.
 
+## 5분 비교 카드: 모델의 “IQ”가 아니라 지시를 시험하기
+
+model 하나와 offline text만으로, account를 연결하지 않고 할 수 있습니다. 짧은 공개 또는 가상 status note를 고릅니다. text, model, surface, 시간 제한, reviewer는 고정하고 instruction만 바꿉니다.
+
+| round | instruction | 판단 전에 보관할 것 |
+|---|---|---|
+| A | “이 note에서 다음 action 세 가지를 적으세요.” | 원본 output과 경과 시간 |
+| B | “이 note만 사용해 다음 action 세 가지를 적으세요. 담당자나 날짜가 없으면 `[확인 필요]`라고 쓰고 사실을 만들지 마세요. 각 action을 뒷받침하는 원문의 문장을 적고, 없으면 멈춰 부족한 점을 설명하세요.” | 원본 output과 경과 시간 |
+
+두 output을 **사실 보존**, **빠진 정보 표시**, **원문 추적 가능성**, **범위 준수**, **안전한 중지** 다섯 항목에서 각각 0–2점으로 평가합니다. prompt, input, output, score, 차이에 대한 한 문장을 보관합니다. text, model, tool, permission, 조건이 바뀌면 승자를 선언하지 말고 `not_comparable`로 기록합니다.
+
+이는 개인 연습 record이며 benchmark data가 아닙니다. B가 더 좋아도 다른 고정 task에서 이 protocol을 다시 시험할 이유가 될 뿐, 생산성 향상, 더 똑똑한 model, 일반 순위를 증명하지 않습니다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-KO.md">← 이전<br><strong>18장 · 콘텐츠, 디자인, 데이터, 자동화 트랙</strong></a></td><td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-KO.md">다음 →<br><strong>20장 · Codex 개인 작업 시스템 만들기</strong></a></td></tr></table></nav>
