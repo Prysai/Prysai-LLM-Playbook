@@ -207,7 +207,7 @@ demo は評価の代わりになりません。
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="05-choose-the-codex-surface-JA.md" aria-label="前の章：第 5 章 · 適切な Codex の作業面を選ぶ">← 前の章<br><strong>第 5 章 · 適切な Codex の作業面を選ぶ</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="../table-of-contents-JA.md" aria-label="日本語目次へ戻る：第 7 章はまだ翻訳されていません">次の章は準備中 →<br><strong>第 7 章の提供状況を見る</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="07-skills-plugins-and-tools-JA.md" aria-label="次の章：第 7 章 · Skill、Plugin、MCP、ツールは仕事をどう分けるか">次へ →<br><strong>第 7 章 · Skill、Plugin、MCP、ツール</strong></a></td>
     </tr>
   </table>
 </nav>
