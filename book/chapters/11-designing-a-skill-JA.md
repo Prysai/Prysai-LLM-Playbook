@@ -12,6 +12,28 @@
 
 Skill は model、tool、permission、connector、human approval の代わりではありません。
 
+## 現実の入口：Skill が動く前に失敗することがある
+
+### discovery は独立した段階
+
+Skill を directory に置いたことは、その場所に file があることだけを示します。file の存在、現在の surface からの可視性、task による選択、入口の load、step の実行、artifact の acceptance は別々に記録します。どこかが観察されていないなら、handoff は「connected」とまとめず `unknown` と書きます。
+
+### 「接続済み」は「呼び出せる」ではない
+
+connector、plugin、workspace setting が画面で見えても、現在の task の file、network、account、publish permission を与えるわけではありません。最初の adoption では、non-sensitive な positive case で host、version、path、input、actual selection、output を残し、未観察の layer を receipt に書きます。設定画面は runtime evidence の代わりになりません。
+
+### trigger と non-trigger を先に分ける
+
+trigger は task intent、complete input、method ownership、acceptable risk がそろったときだけ成立します。keyword の一致は十分条件ではありません。近い task に譲る `non_trigger` は、attention と permission を守る product の一部です。どの method も、copy rewrite、remote check、bulk repair、authority 不明の task を黙って引き受けてはいけません。
+
+### input、permission、secret の境界
+
+input は provided、readable、inferred、unknown を分けます。path、version、source、baseline、acceptance rule、recovery location がないとき、model が補ってはいけません。read、temporary write、persistent write、network、install、send、publish、delete も別の permission です。secret は `SKILL.md`、example、log、screenshot、receipt に入れず、必要なら指定された制御入口でだけ扱います。
+
+### resource を増やす前の判断
+
+`scripts/` は決定的で検査可能な反復 action、`references/` は一部の branch だけで必要な詳細、`assets/` は用途と license が明記された static resource に限ります。すべての resource は input、output、failure mode、副作用を示します。最初の実行は temporary directory または非機密 sample で行い、version と raw output を残します。script があることは、安全、正しさ、実行済みの証明ではありません。
+
 ## prose より先に contract を書く
 
 ```yaml

@@ -12,6 +12,28 @@
 
 Skill은 모델, 도구, 권한, 연결기, 사람의 승인을 대신하지 않습니다.
 
+## 현실의 출발점: Skill이 실행되기 전에 실패할 수 있습니다
+
+### discovery는 독립된 단계입니다
+
+Skill을 디렉터리에 넣었다는 것은 그 위치에 file이 있다는 사실만 뜻합니다. file 존재, 현재 surface에서의 가시성, task의 선택, 입구의 load, step 실행, artifact acceptance는 각각 기록해야 합니다. 어느 단계든 관찰하지 못했다면 handoff에 “연결됨”이라고 뭉뚱그리지 말고 `unknown`이라고 적으세요.
+
+### “연결됨”은 “호출 가능함”이 아닙니다
+
+connector, plugin, workspace setting이 화면에 보인다고 해서 현재 task에 file, network, account, publish permission이 생기지는 않습니다. 첫 adoption에서는 민감하지 않은 positive case로 host, version, path, input, 실제 선택, output을 남기고, 관찰하지 못한 layer를 receipt에 씁니다. 설정 화면은 runtime evidence를 대신할 수 없습니다.
+
+### trigger와 non-trigger를 먼저 나누기
+
+trigger에는 task intent, complete input, method ownership, acceptable risk가 모두 필요합니다. keyword 일치는 충분조건이 아닙니다. 가까운 task에 양보하는 `non_trigger`는 attention과 permission을 지키는 product의 일부입니다. 어떤 method도 copy rewrite, remote check, bulk repair, authority가 불명확한 task를 조용히 맡아서는 안 됩니다.
+
+### input, permission, secret 경계
+
+input은 provided, readable, inferred, unknown으로 나눕니다. path, version, source, baseline, acceptance rule, recovery location이 없으면 model이 채워 넣으면 안 됩니다. read, temporary write, persistent write, network, install, send, publish, delete도 각각 다른 permission입니다. secret은 `SKILL.md`, example, log, screenshot, receipt에 넣지 말고, 필요할 때도 지정된 통제 입구에서만 다룹니다.
+
+### resource를 늘리기 전의 판단
+
+`scripts/`는 결정적이고 검사 가능한 반복 action, `references/`는 일부 branch에서만 필요한 상세, `assets/`는 용도와 license가 명시된 static resource로 제한합니다. 모든 resource에는 input, output, failure mode, 부작용을 적습니다. 첫 실행은 temporary directory 또는 비민감 sample에서 하고 version과 raw output을 남기세요. script가 있다는 사실은 안전, 정확성, 실행 완료의 증거가 아닙니다.
+
 ## 문장보다 먼저 계약 쓰기
 
 ```yaml
