@@ -29,8 +29,8 @@ Playbook의 대표 실습 트랙은 Codex이지만, 이 방법은 한 벤더에 
 
 세 질문에 모두 답할 수 없다면 해당 주장을 `unknown`으로 두고 다음 확인
 시점을 기록하십시오. 이 규칙 뒤에 있는 유지보수 방법은
-[Platform Adapter Review Skill](../../skills/prysai-platform-adapter-review/SKILL.md)과
-[Platform Fact Watch](../../skills/prysai-platform-fact-watch/SKILL.md)를 참고하십시오.
+Platform Adapter Review Skill과
+Platform Fact Watch를 참고하십시오.
 
 ## 한 페이지 플랫폼 지도
 
@@ -81,7 +81,7 @@ Playbook의 대표 실습 트랙은 Codex이지만, 이 방법은 한 벤더에 
 메모리, 또는 공유 링크를 언급하는가? 추측한 것이 아니라 본 것을 기록하십시오.
 ChatGPT 주장에 대한 출처 기반 확인은 제품 사실의 소유자로서 공식 OpenAI
 도움말 페이지를 사용하는
-[Source Investigator Skill](../../skills/prysai-source-investigator/SKILL.md)을
+Source Investigator Skill을
 활용하십시오.
 
 ## Claude Code 첫 과제
@@ -136,17 +136,17 @@ Codex는 컨텍스트, 도구, 권한, Skills, Agents, 검증이라는 전체 �
 - 텍스트 전용 입문 연습을 원한다면: [Beginner Practice Pack](../communication-clinic-KO.md).
 - 파일과 도구가 있는 심화 대표 트랙을 원한다면: [First Safe Change](first-safe-change-KO.md).
 - 먼저 플랫폼 중립 기초를 원한다면: [Universal Core Foundations](universal-core-foundations-KO.md).
-- 두 플랫폼을 공정하게 비교하고 싶다면: [LLM Comparison Protocol](../../skills/prysai-llm-comparison-protocol/SKILL.md).
+- 두 플랫폼을 공정하게 비교하고 싶다면: LLM Comparison Protocol.
 - 플랫폼 수업이 커리큘럼에 들어갈 자격이 있는지 알고 싶다면:
-  [Platform Adapter Review](../../skills/prysai-platform-adapter-review/SKILL.md).
+  Platform Adapter Review.
 
 ## 증거 상태와 경계
 
 이 루트는 `candidate / not_run`입니다: 구조와 검사 항목은 존재하지만,
 학습자 실행, 플랫폼 간 실행, 또는 독립 검토는 기록되지 않았습니다. 위의
 플랫폼별 설명은 1차 문서와 날짜가 찍힌 연구 영수증
-([cross-LLM beginner prompting source receipt](../../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md),
-[platform teaching boundary card](../../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md))에서
+(cross-LLM beginner prompting source receipt,
+platform teaching boundary card)에서
 파생된 방향 안내입니다. 이것은 어떤 플랫폼이 동일하게 동작한다거나, 과제가
 어디서나 성공한다거나, 제품 기능이 동등하다는 증거가 아닙니다. 플랫폼별
 명령, 권한, 가격, 제공 여부는 변동성 높은 사실입니다. 의존하기 전에 접근
