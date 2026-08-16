@@ -69,7 +69,7 @@ transfer_limitations: "可丢弃夹具不能证明真实账户、远端资源或
 <nav class="lab-navigation" aria-label="实验导航">
   <table role="presentation" width="100%"><tr>
     <td align="left"><a data-lab-nav="previous" href="lab-013-l3-vertical-slice-ZH.md" aria-label="上一个实验：实验 013 · 完成一个完整纵向切片">← 上一个<br><strong>实验 013 · 完成一个完整纵向切片</strong></a></td>
-    <td align="right"><p>实验 015 的中文版本仍在翻译；为避免跳转到英文或无效页面，本页在此结束。</p></td>
+    <td align="right"><a data-lab-nav="next" href="lab-015-evidence-delivery-ZH.md" aria-label="下一个实验：实验 015 · 交付证据，而不只是一句完成声明">下一个 →<br><strong>实验 015 · 交付证据，而不只是一句完成声明</strong></a></td>
   </tr></table>
 </nav>
 <!-- lab-navigation:end -->
