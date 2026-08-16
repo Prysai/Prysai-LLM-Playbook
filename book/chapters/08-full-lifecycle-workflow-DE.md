@@ -79,6 +79,55 @@ Vor einem Retry notiere fehlgeschlagene Phase, Fehlerklasse, letzten akzeptierte
 
 Vergleiche in einem wegwerfbaren Ordner eine direkte Bitte mit einem Protokoll, Checkpoints und fokussiertem Check. Bewahre erste Ausgabe, Diff, Befehl, Exit-Code, reale Dauer und Nacharbeit auf; fehlende Zeit oder Kosten bleiben `unavailable`. Erzeuge einen Timeout, geänderten Input, Berechtigungsblock oder unbekanntes lokales Schreibergebnis. Ändern sich feste Bedingungen, markiere `not_comparable`. Wenige kleine Aufgaben beweisen keine allgemeine Effizienz, Qualität oder Modellrangfolge.
 
+## Mit Checkpoints einen vollständigen Kreis schließen
+
+Auch eine kleine Aufgabe braucht einen sichtbaren Verlauf. Maßstab ist, dass die
+nächste Person ohne den alten Chat sicher weiterarbeiten kann:
+
+```text
+CP0: Originaltext, Zielpfad, erlaubter Umfang, Wiederherstellungsquelle
+CP1: Ziel und Abnahme bestätigt; noch kein Edit
+CP2: Genau eine Änderung; Vorher/Nachher und Diff aufbewahrt
+CP3: Benannten Check ausgeführt oder gestoppt; Ausgabe und Grenzen aufbewahrt
+CP4: Behauptung gegen Evidenz geprüft; Übergabe und nächste Aktion notiert
+```
+
+Notiere pro Checkpoint das letzte bestätigte Ereignis, möglicherweise geänderte
+Dateien, fehlende Evidenz und genau einen sicheren nächsten Schritt. Ohne `CP2`
+gehört eine Modellbehauptung über eine Änderung nicht in die Übergabe. Hängt
+`CP3`, ist Stille kein Pass: Ausgabe, Prozesszustand und Diff bleiben erhalten,
+der Status wird `unverified` oder `blocked`.
+
+## Den Check passend zur Behauptung wählen
+
+| Behauptung | Erforderliche Evidenz | Beweist weiterhin nicht |
+|---|---|---|
+| Text änderte sich | Vorher/Nachher oder Diff am benannten Pfad | Verständnis von Lesenden |
+| Lokaler Check bestand | Befehl, Verzeichnis, Exit-Code und Ausgabe | Verhalten in anderer Umgebung |
+| Seite ist sichtbar | Render-Review mit dokumentiertem Viewport | Barrierefreiheit, Nachfrage, Deployment |
+| Externe Änderung wurde gesendet | Read-back am Ziel | Sichtbarkeit für alle Personen |
+
+Ein grüner Check wird nicht für alle Behauptungen wiederverwendet. Ein Diff
+belegt Änderung, nicht Nutzerwert oder Veröffentlichung. Fehlt Evidenz, wird die
+Aussage enger.
+
+## Kurze Übergabe für die nächste Person
+
+```text
+status: passed | partial | blocked | unverified
+done: nur Aktionen mit Evidenz
+changed: exakte Pfade oder none
+evidence: CP-Nummern, Diff, Kommandoausgabe, Review-Notiz
+not done: ob commit / push / publish / external write geschahen
+not proven: Leserwert, Laufzeit, visuelle Qualität, Sicherheit
+next: eine sichere nächste Aktion
+```
+
+Das ist stärker als „alles fertig“. Sind Ziel, Autorität oder Wiederherstellungs-
+quelle unklar, ist die nächste Aktion eine Frage oder ein Read-only-Check, kein
+Edit. Kapitel und Vergleich bleiben bis zu Laufprotokoll und Review `candidate`
+und `not_run`.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="07-skills-plugins-and-tools-DE.md">← Vorheriges<br><strong>Kapitel 7 · Skills, Plugins, MCP und Tools</strong></a></td><td align="right"><a data-chapter-nav="next" href="09-verification-and-recovery-DE.md">Weiter →<br><strong>Kapitel 9 · Überprüfung, Zweifel und Wiederherstellung</strong></a></td></tr></table></nav>

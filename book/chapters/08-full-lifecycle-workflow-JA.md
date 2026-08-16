@@ -113,6 +113,52 @@ handoff: 変えたこと、変えなかったこと、check の結果、まだ u
 
 「model にすぐ編集を頼む」と「先に protocol を書く」を比べるなら、原文、goal、allowed action、time limit、check rule を固定します。first output、実時間、rework、diff、check result、unknown を残します。text、model、tool、permission、environment が変われば `not_comparable` です。一度速い、または見栄えが良い結果は、一般的な効率や model の優劣を証明しません。
 
+## checkpoint を持って一周する
+
+短い task でも、途中で何が確定したかを残します。次の人が conversation を読まなくても
+続けられることが基準です。
+
+```text
+CP0: original text、target path、許可 scope、rollback source
+CP1: goal と acceptance を確認。まだ edit していない
+CP2: 一か所だけ edit。before/after と diff を保存
+CP3: named check を実行、または stop。output と limit を保存
+CP4: claim と evidence を review。handoff と next action を書く
+```
+
+checkpoint ごとに、最後に確認できたこと、変わった可能性がある file、まだ足りない
+evidence、次の一つの安全な action を書きます。`CP2` がなければ、model が「変更した」と
+言っても change を delivery に含めません。`CP3` が timeout したら silence を pass にせず、
+output、process state、diff を残して `unverified` または `blocked` にします。
+
+## claim ごとに check を選ぶ
+
+| claim | 必要な evidence | まだ証明しないこと |
+|---|---|---|
+| text を変えた | named path の before/after または diff | 読者が理解すること |
+| local check が通った | command、directory、exit code、output | 別の environment での動作 |
+| page が見える | recorded viewport の render review | accessibility、demand、deployment |
+| external change を送った | target 側の read-back | すべての人が見られること |
+
+一つの green check をすべての claim に使いません。特に diff は change の証拠であり、
+user value や publish の証拠ではありません。evidence がなければ、文を狭めます。
+
+## 次の人へ渡す短い handoff
+
+```text
+status: passed | partial | blocked | unverified
+done: evidence がある action だけ
+changed: exact paths または none
+evidence: CP 番号、diff、command output、review note
+not done: commit / push / publish / external write の有無
+not proven: reader usefulness、runtime、visual、security など
+next: 一つの安全な action
+```
+
+これは「すべて完了」より短くても強い handoff です。対象、authority、recovery source が
+不明なら、次の action は edit ではなく質問または read-only check です。この章と比較実験は
+run record と review ができるまで `candidate` と `not_run` のままです。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション">

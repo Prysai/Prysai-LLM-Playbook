@@ -82,6 +82,52 @@ handoff: 바꾼 것, 바꾸지 않은 것, check 결과, 남은 unknown.
 
 시간 초과, 입력 변경, 권한 차단, 로컬 쓰기 결과 불명 중 하나를 일으킵니다. 중단한 시도를 보존하고 재시도 전 대상을 읽습니다. 고정 조건이 바뀌면 `not_comparable`로 표시합니다. 작은 과제 몇 개로 일반 효율, 품질, 모델 순위를 증명할 수 없고, 링크 검사가 학습, 공개, 채택을 증명하지도 않습니다.
 
+## checkpoint를 가지고 한 바퀴 돌기
+
+짧은 작업도 중간에 무엇이 확정됐는지 남겨야 합니다. 다음 사람이 conversation을 읽지 않아도
+이어갈 수 있는지가 기준입니다.
+
+```text
+CP0: original text, target path, 허용 scope, rollback source
+CP1: goal과 acceptance 확인; 아직 edit하지 않음
+CP2: 한 곳만 edit; before/after와 diff 보관
+CP3: named check 실행 또는 stop; output과 limit 보관
+CP4: claim과 evidence 검토; handoff와 next action 작성
+```
+
+각 checkpoint에 마지막으로 확인한 것, 바뀌었을 수 있는 file, 부족한 evidence, 다음 안전한
+행동 하나를 적습니다. `CP2`가 없으면 model이 “바꿨다”고 해도 change를 delivery에 넣지 않습니다.
+`CP3`가 timeout되면 silence를 pass라고 하지 않고 output, process state, diff를 남겨
+`unverified` 또는 `blocked`로 둡니다.
+
+## 주장마다 검사를 고르기
+
+| 주장 | 필요한 evidence | 아직 증명하지 않는 것 |
+|---|---|---|
+| text를 바꿨다 | named path의 before/after 또는 diff | 독자가 이해한다는 것 |
+| local check가 통과했다 | command, directory, exit code, output | 다른 environment의 동작 |
+| page가 보인다 | recorded viewport의 render review | accessibility, demand, deployment |
+| external change를 보냈다 | target 쪽 read-back | 모든 사람이 볼 수 있다는 것 |
+
+하나의 green check를 모든 주장에 쓰지 않습니다. 특히 diff는 change의 증거일 뿐 user value나
+publish의 증거가 아닙니다. evidence가 없으면 문장을 좁힙니다.
+
+## 다음 사람을 위한 짧은 handoff
+
+```text
+status: passed | partial | blocked | unverified
+done: evidence가 있는 action만
+changed: exact paths 또는 none
+evidence: CP 번호, diff, command output, review note
+not done: commit / push / publish / external write 여부
+not proven: reader usefulness, runtime, visual, security 등
+next: 안전한 행동 하나
+```
+
+이는 “전부 완료”보다 짧아도 더 강한 handoff입니다. target, authority, recovery source가
+불명확하면 다음 행동은 edit가 아니라 질문 또는 read-only check입니다. 실행 기록과 review가
+생기기 전까지 이 장과 비교 실험은 `candidate`, `not_run`입니다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="07-skills-plugins-and-tools-KO.md">← 이전<br><strong>7장 · Skills, Plugins, MCP, 도구</strong></a></td><td align="right"><a data-chapter-nav="next" href="09-verification-and-recovery-KO.md">다음 →<br><strong>9장 · 검증, 의심, 복구</strong></a></td></tr></table></nav>
