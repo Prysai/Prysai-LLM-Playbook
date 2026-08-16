@@ -58,5 +58,5 @@ transfer_limitations: "소스 검사는 시각적 실행, 사용자 수용, 공�
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Lab 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-014-resume-reconciliation-KO.md">← 이전<br><strong>Lab 014 · 재개 조정</strong></a></td><td align="right"><a data-lab-nav="next" href="../README-KO.md">다음 Lab 준비 중 →<br><strong>Lab 016 제공 상태 보기</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Lab 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-014-resume-reconciliation-KO.md">← 이전<br><strong>Lab 014 · 재개 조정</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-016-side-effect-boundary-KO.md">다음 →<br><strong>Lab 016 · 부작용 경계</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

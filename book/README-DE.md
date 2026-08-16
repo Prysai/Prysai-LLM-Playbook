@@ -2,8 +2,8 @@
 
 # Prysai LLM Playbook: Buchleitfaden
 
-> Deutscher Buch-Einstieg (`DE`). Die Kapitelkörper sind noch nicht vollständig
-> ins Deutsche übertragen und nicht vollständig zur Laufzeit geprüft.
+> Deutscher Buch-Einstieg (`DE`). Alle 22 Kapitel und 18 Labs haben deutsche
+> Leserpfade; unabhängige Sprachprüfung und Lernendenläufe stehen weiterhin aus.
 
 <!-- language-switcher:start -->
 **Sprachen:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
@@ -55,9 +55,9 @@ sichtbar machen:
 - aktuelle Fakten mit Quelle und Prüfungsumfang; und
 - einen Reife- und Aktualisierungsstatus, der die Belege nicht übertreibt.
 
-Die Mindestanforderung beschreibt der Evaluationsrahmen. Eine deutsche
-Lesefassung dieses Rahmens steht noch nicht bereit und wird von hier nicht in
-der Originalsprache geöffnet.
+Die Mindestanforderung beschreibt der Evaluationsrahmen. Seine Aufzeichnungen
+sind locale-neutral; ein statischer Check ersetzt weder Modell- noch
+Lernendenbelege.
 Eine Gliederung, ein bestandener Struktur-Checker oder eine gut aussehende
 generierte Antwort reicht nicht aus, um ein Kapitel `verified` zu nennen.
 
@@ -95,10 +95,9 @@ Evaluationsrahmen, Luna-Modellevaluation und Forschungsakten haben noch keine
 deutsche Lesefassung. Dieser Buchleitfaden verlinkt daher nicht auf ihre
 Originalsprache.
 
-Das deutsche Inhaltsverzeichnis liegt jetzt unter
-`table-of-contents-DE.md`. Kapitel und Labs haben noch keine vollständige
-deutsche Variante; die dort sichtbaren Migrationshinweise markieren deshalb
-weiterhin den locale-neutralen Quellpfad.
+Das deutsche Inhaltsverzeichnis liegt unter `table-of-contents-DE.md`. Alle
+22 Kapitel und 18 Labs haben `-DE`-Pfade; ihre Übersetzungen bleiben
+`in-progress` und unabhängig ungeprüft.
 
 ## Reale Probleme und ihre Evidenzgrenze
 
@@ -123,10 +122,10 @@ deutsche Lesestrecke bleibt deshalb auf ihre verfügbaren Einheiten begrenzt.
 
 | Ort | Inhalt | Aktueller Migrationsstatus |
 |---|---|---|
-| `book/chapters/` | 22 Hauptkapitel | Noch keine vollständige `-DE`-Matrix für die vorhandenen Dateien |
-| `book/labs/` | 18 praktische Labs | Noch keine vollständige `-DE`-Matrix; Ausführungen `not_run` |
-| `book/table-of-contents-DE.md` | Deutsches Leseverzeichnis und Kapiteleinstiege | Erste Migration, Kapitel und Labs weiterhin in Arbeit |
-| `book/README-DE.md` | Dieser deutsche Buchleitfaden | Erste Migration, `candidate`, Übersetzung `in-progress` |
+| `book/chapters/` | 22 Hauptkapitel | 22 deutsche Kandidatenübersetzungen; unabhängige Sprachprüfung ausstehend |
+| `book/labs/` | 18 praktische Labs | 18 deutsche Kandidatenübersetzungen; alle Lernendenläufe `not_run` |
+| `book/table-of-contents-DE.md` | Deutsches Leseverzeichnis und Kapiteleinstiege | Vollständige deutsche Lesepfade, Übersetzung `in-progress` |
+| `book/README-DE.md` | Dieser deutsche Buchleitfaden | `candidate`, Übersetzung `in-progress` |
 | `book/preface-DE.md` | Deutsches Vorwort | Erste Migration, `candidate`, Übersetzung `in-progress` |
 
 „Noch nicht migriert“ bedeutet: kein englischer oder deutscher Inhalt wird
@@ -168,9 +167,7 @@ Inhalt nicht automatisch auf `verified`.
 
 ## Umfang dieses deutschen Schnitts
 
-Dieser erste deutsche Schnitt erstellt nur die drei Einstiegsdateien
-`README-DE.md`, `book/README-DE.md` und `book/preface-DE.md`. Kapitel, Labs,
-Skills, Evaluations-Fixtures, Forschung und Site bleiben in ihren jeweils
-aufgezeichneten Zuständen. Die nächste Migration muss denselben `content_id`,
-das Suffix `-DE`, die Quellenrevision und die sichtbare Evidenzgrenze
-beibehalten.
+Dieser Schnitt liefert deutsche Leserpfade für 22 Kapitel und 18 Labs. Skills,
+Evaluations-Fixtures, Forschung und Site behalten ihren jeweils aufgezeichneten
+Status. Weitere Änderungen müssen denselben `content_id`, das Suffix `-DE`,
+die Quellenrevision und die sichtbare Evidenzgrenze beibehalten.

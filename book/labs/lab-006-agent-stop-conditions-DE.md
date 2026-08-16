@@ -63,6 +63,6 @@ Das Fixture ist lokal und künstlich. Ein Durchlauf beweist nicht, dass jedes Mo
 <hr>
 <nav class="lab-navigation" aria-label="Lab-Navigation"><table role="presentation" width="100%"><tr>
 <td align="left"><a data-lab-nav="previous" href="lab-005-design-a-skill-DE.md">← Vorheriges<br><strong>Lab 005 · Eine wiederholte Methode in einen klar begrenzten Skill überführen</strong></a></td>
-<td align="right"><a data-lab-nav="next" href="../table-of-contents-DE.md">Nächstes Lab in Arbeit →<br><strong>Verfügbarkeit von Lab 007 ansehen</strong></a></td>
+<td align="right"><a data-lab-nav="next" href="lab-007-action-boundaries-DE.md">Nächstes Lab →<br><strong>Lab 007 · Aktionsgrenzen</strong></a></td>
 </tr></table></nav>
 <!-- lab-navigation:end -->

@@ -47,5 +47,5 @@ A와 B는 새 맥락에서 같은 패키지를 받고 작성자의 채팅 기록
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Lab 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-011-gpt-codex-boundaries-KO.md">← 이전<br><strong>Lab 011 · GPT, Codex, 도구, Agent 구분하기</strong></a></td><td align="right"><a data-lab-nav="next" href="../README-KO.md">다음 Lab 준비 중 →<br><strong>Lab 013 제공 상태 보기</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Lab 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-011-gpt-codex-boundaries-KO.md">← 이전<br><strong>Lab 011 · GPT, Codex, 도구, Agent 구분하기</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-013-l3-vertical-slice-KO.md">다음 →<br><strong>Lab 013 · 감사 가능한 수직 슬라이스</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

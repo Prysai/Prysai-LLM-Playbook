@@ -47,8 +47,9 @@ Cada capítulo debe incluir:
 - el estado de actualización.
 
 Antes de entrar en la ruta principal, cada borrador de capítulo debe superar
-el umbral mínimo del marco de evaluación. Ese marco todavía no tiene un archivo
-en español, por lo que no se abre desde esta ruta de lectura.
+el umbral mínimo del marco de evaluación. Los registros de evaluación siguen
+siendo locales neutrales; una comprobación estática no equivale a resultados de
+modelo ni de aprendizaje.
 
 ## Entrada de lectura actual
 
@@ -62,8 +63,8 @@ pero todavía no existen registros de ejecución de modelos; por tanto, esas
 evaluaciones siguen en `not_run` y no deben leerse como evaluaciones
 terminadas.
 
-El ejercicio transversal de L3 empieza con el Experimento 013: corte vertical
-auditable (migración ES en curso; fuente actual) (versión en español aún no disponible).
+El ejercicio transversal de L3 empieza con el
+[Experimento 013: corte vertical auditable](labs/lab-013-l3-vertical-slice-ES.md).
 Reúne protocolo, línea base, checkpoints, verificación, fallo intencional y
 transferencia en una misma ruta de bajo riesgo.
 
@@ -72,9 +73,8 @@ en español](table-of-contents-ES.md). El marco de evaluación, la evaluación d
 Luna y la investigación de referencia todavía no tienen versiones en español;
 esta guía no redirige a la fuente original.
 
-El índice del libro ya tiene una entrada `-ES`. Los capítulos, laboratorios y
-documentos compartidos que todavía no tienen una variante `-ES` mantienen el
-enlace a su fuente actual con una etiqueta visible de migración; así no se
-presenta un documento no traducido como si ya fuera una versión española. Los
-enlaces entre las páginas españolas existentes conservan el idioma mediante
-sus destinos `-ES`.
+El índice, los 22 capítulos y los 18 Labs tienen rutas `-ES`. Los enlaces entre
+las páginas españolas conservan el idioma mediante sus destinos `-ES`. Todas
+las traducciones permanecen `in-progress`: la cobertura de archivos no prueba
+revisión lingüística independiente, comportamiento de plataforma ni resultados
+de aprendizaje.

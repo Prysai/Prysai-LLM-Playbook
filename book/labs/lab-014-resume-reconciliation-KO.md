@@ -48,5 +48,5 @@ transfer_limitations: "일회용 fixture는 실제 계정, 원격 리소스, 운
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Lab 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-013-l3-vertical-slice-KO.md">← 이전<br><strong>Lab 013 · 감사 가능한 수직 슬라이스</strong></a></td><td align="right"><a data-lab-nav="next" href="../README-KO.md">다음 Lab 준비 중 →<br><strong>Lab 015 제공 상태 보기</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Lab 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-013-l3-vertical-slice-KO.md">← 이전<br><strong>Lab 013 · 감사 가능한 수직 슬라이스</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-015-evidence-delivery-KO.md">다음 →<br><strong>Lab 015 · 증거를 갖춘 전달</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

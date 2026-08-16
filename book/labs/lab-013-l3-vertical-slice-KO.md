@@ -49,5 +49,5 @@ hash, checkpoint, diff, log, 출력, 실패 기록, 주장-증거 표, 인수인
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Lab 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-012-team-capability-migration-KO.md">← 이전<br><strong>Lab 012 · 팀 역량 이전</strong></a></td><td align="right"><a data-lab-nav="next" href="../README-KO.md">다음 Lab 준비 중 →<br><strong>Lab 014 제공 상태 보기</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Lab 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-012-team-capability-migration-KO.md">← 이전<br><strong>Lab 012 · 팀 역량 이전</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-014-resume-reconciliation-KO.md">다음 →<br><strong>Lab 014 · 재개 전 상태 조정</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

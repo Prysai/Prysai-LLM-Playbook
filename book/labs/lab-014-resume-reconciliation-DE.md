@@ -48,5 +48,5 @@ Lass den sichtbaren Aufgabennamen gleich, ändere aber Root oder Zieldatei. Stop
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Labnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-013-l3-vertical-slice-DE.md">← Vorheriges<br><strong>Lab 013 · Prüffähiger vertikaler Schnitt</strong></a></td><td align="right"><a data-lab-nav="next" href="../README-DE.md">Nächstes Lab in Arbeit →<br><strong>Verfügbarkeit von Lab 015 ansehen</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Labnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-013-l3-vertical-slice-DE.md">← Vorheriges<br><strong>Lab 013 · Prüffähiger vertikaler Schnitt</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-015-evidence-delivery-DE.md">Nächstes Lab →<br><strong>Lab 015 · Übergabe mit Evidenz</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

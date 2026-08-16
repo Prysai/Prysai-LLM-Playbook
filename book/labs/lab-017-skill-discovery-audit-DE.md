@@ -57,5 +57,5 @@ Bei MCP trenne sichtbare Konfiguration, Tool-Entdeckung, schreibgeschützten Zie
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Labnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-016-side-effect-boundary-DE.md">← Vorheriges<br><strong>Lab 016 · Grenze von Nebenwirkungen</strong></a></td><td align="right"><a data-lab-nav="next" href="../README-DE.md">Nächstes Lab in Arbeit →<br><strong>Verfügbarkeit von Lab 018 ansehen</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Labnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-016-side-effect-boundary-DE.md">← Vorheriges<br><strong>Lab 016 · Grenze von Nebenwirkungen</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-018-language-transfer-DE.md">Nächstes Lab →<br><strong>Lab 018 · Getippter Sprachtransfer</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

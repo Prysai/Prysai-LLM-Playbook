@@ -49,5 +49,5 @@ GitHub push, 브라우저 form, Skill 설치, 데이터 export에 행렬을 적�
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Lab 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-015-evidence-delivery-KO.md">← 이전<br><strong>Lab 015 · 증거를 갖춘 전달</strong></a></td><td align="right"><a data-lab-nav="next" href="../README-KO.md">다음 Lab 준비 중 →<br><strong>Lab 017 제공 상태 보기</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Lab 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-015-evidence-delivery-KO.md">← 이전<br><strong>Lab 015 · 증거를 갖춘 전달</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-017-skill-discovery-audit-KO.md">다음 →<br><strong>Lab 017 · Skill 발견 감사</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

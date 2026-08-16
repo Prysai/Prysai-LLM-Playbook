@@ -49,5 +49,5 @@ Bewahre hashes, Checkpoints, Diff, Aktionslog, Befehlsausgabe, Fehlerprotokoll, 
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Labnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-012-team-capability-migration-DE.md">← Vorheriges<br><strong>Lab 012 · Migration von Teamfähigkeiten</strong></a></td><td align="right"><a data-lab-nav="next" href="../README-DE.md">Nächstes Lab in Arbeit →<br><strong>Verfügbarkeit von Lab 014 ansehen</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Labnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-012-team-capability-migration-DE.md">← Vorheriges<br><strong>Lab 012 · Migration von Teamfähigkeiten</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-014-resume-reconciliation-DE.md">Nächstes Lab →<br><strong>Lab 014 · Abgleich beim Fortsetzen</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->
