@@ -248,3 +248,15 @@ documentación con evidencia de ejecución local.
 |---|---|---|---|
 | Sandbox y aprobación son capas distintas; los efectos de app y conectores pueden requerir aprobación | https://learn.chatgpt.com/docs/agent-approvals-security.md | 2026-08-10 | Descripción oficial; no prueba esta sesión |
 | Las opciones de permiso dependen de superficie y política | https://learn.chatgpt.com/docs/permission-modes.md | 2026-08-10 | La disponibilidad real depende del entorno y organización |
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="Navegación de capítulos">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-ES.md" aria-label="Capítulo anterior: Capítulo 3 · Convertir un deseo en un protocolo de tarea">← Anterior<br><strong>Capítulo 3 · Convertir un deseo en un protocolo de tarea</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="05-choose-the-codex-surface-ES.md" aria-label="Capítulo siguiente: Capítulo 5 · Elegir la superficie de trabajo adecuada de Codex">Siguiente →<br><strong>Capítulo 5 · Elegir la superficie de trabajo adecuada de Codex</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

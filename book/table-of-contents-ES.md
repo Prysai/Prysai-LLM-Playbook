@@ -4,7 +4,7 @@
 
 Esta es una ruta de lectura en español, no una traducción completa del libro.
 El catálogo canónico tiene 22 capítulos `candidate` y 18 Labs `draft`; en este
-momento existen 4 capítulos y 4 Labs en español. Cada enlace de esta página
+momento existen 5 capítulos y 5 Labs en español. Cada enlace de esta página
 apunta al mismo contenido en español. Cuando no hay un archivo `-ES`, se indica
 como no disponible en vez de enlazar a otro capítulo o cambiar de idioma.
 
@@ -20,6 +20,8 @@ como no disponible en vez de enlazar a otro capítulo o cambiar de idioma.
    → [Lab 002: protocolo de tarea](labs/lab-002-task-protocol-ES.md).
 5. [Capítulo 4: contexto, permisos y límites de acción del Agent](chapters/04-context-permissions-and-agent-ES.md)
     → [Lab 007: límites de acción](labs/lab-007-action-boundaries-ES.md).
+6. [Capítulo 5: elegir la superficie de trabajo adecuada de Codex](chapters/05-choose-the-codex-surface-ES.md)
+   → [Lab 003: auditar una declaración de finalización](labs/lab-003-evidence-review-ES.md).
 
 Estos materiales siguen en `candidate` o `draft / not_run`. Que una ruta exista
 no prueba calidad de traducción, ejecución de modelos, aprendizaje ni
@@ -33,7 +35,7 @@ transferencia.
 | 02 — Completar una primera tarea segura y verificable | [Disponible: capítulo 02](chapters/02-first-safe-task-ES.md) · `candidate / in-progress` |
 | 03 — Convertir un deseo en un protocolo de tarea | [Disponible: capítulo 03](chapters/03-task-protocol-ES.md) · `candidate / in-progress` |
 | 04 — Contexto, permisos y límites de acción del Agent | [Disponible: capítulo 04](chapters/04-context-permissions-and-agent-ES.md) · `candidate / in-progress` |
-| 05 — Elegir la superficie correcta de Codex | Aún no existe archivo español. |
+| 05 — Elegir la superficie correcta de Codex | [Disponible: capítulo 05](chapters/05-choose-the-codex-surface-ES.md) · `candidate / in-progress` |
 | 06 — Elegir un modelo no es venerar un modelo | Aún no existe archivo español. |
 | 07 — Skills, Plugins, MCP y herramientas | Aún no existe archivo español. |
 | 08 — El ciclo de vida completo, de la definición a la entrega | Aún no existe archivo español. |
@@ -58,7 +60,7 @@ transferencia.
 | --- | --- |
 | 001 — Primera tarea segura | [Disponible: Lab 001](labs/lab-001-first-safe-task-ES.md) · `draft / not_run` |
 | 002 — Protocolo de tarea | [Disponible: Lab 002](labs/lab-002-task-protocol-ES.md) · `draft / not_run` |
-| 003 — Revisión de evidencia | Aún no existe archivo español. |
+| 003 — Revisión de evidencia | [Disponible: Lab 003](labs/lab-003-evidence-review-ES.md) · `draft / not_run` |
 | 004 — Elegir la capacidad mínima útil | Aún no existe archivo español. |
 | 005 — Convertir un método repetido en un Skill acotado | Aún no existe archivo español. |
 | 006 — Diseñar condiciones de parada del Agent | Aún no existe archivo español. |
