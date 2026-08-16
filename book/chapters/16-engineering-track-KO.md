@@ -4,7 +4,7 @@
 
 **상태:** `candidate`. **실험:** `draft / not_run`. 이 장은 엔지니어링 수명 주기를 가르치며 현장 보고는 로컬 재현이나 모든 버전의 원인 확인이 아닙니다.
 
-## 문제
+## 이 장에서 해결하는 문제
 
 엔지니어링 작업은 요구사항, 설계 선택, 테스트 설계, 런타임 관찰, rollback이 분명해지기 전에 코딩을 시작하게 만듭니다. patch가 build되고 unit test가 모두 통과해도 사용자 경로, 오류 처리, 의존성 버전, 배포, 복구가 맞는 것은 아닙니다.
 
@@ -117,6 +117,44 @@ delivery: diff, 실제 command와 output, passed / failed / not_run, unknown, �
 | human acceptance | 지정 reader가 지정 rule로 결과를 봄 | maintenance, transfer, 넓은 adoption |
 
 하나라도 빠지면 delivery에 `not_run`, `blocked`, `unknown`을 남기세요. green을 얻기 위해 permission을 넓히거나 environment를 바꾸거나 specification을 다시 쓰지 않습니다.
+
+## 학습 목표
+
+requirement를 작고 검증 가능한 slice로 나누고 build, test, local run, publish, user acceptance를 별도 evidence claim으로 다룰 수 있습니다.
+
+## 실제 문제: green test가 user task의 끝은 아니다
+
+patch가 compile되어도 empty input, 잘못된 path, recovery를 놓칠 수 있습니다. green 수가 아니라 check가 구체적인 user action과 failure를 덮는지가 중요합니다.
+
+### 준비
+
+`input.json`이 있는 버릴 수 있는 local directory를 사용합니다. network, credential, remote, install 없이 원본 file과 써도 되는 path를 기록합니다.
+
+### 작업
+
+string list의 duplicate만 제거하고 local `output.json`을 씁니다. normal, empty, duplicate, invalid input을 확인하고 한 번에 설명 가능한 한 점만 바꿉니다.
+
+### 증거
+
+card, diff, command, exit status, input, 독립적으로 읽은 output, 실행하지 않은 action을 보관합니다. 기록 없는 test는 publish나 user acceptance를 증명하지 않습니다.
+
+### 회고
+
+각 check는 실제로 어떤 claim을 뒷받침하나요? 어떤 failure path가 unknown이며 다음 최소 check는 무엇인가요?
+
+## 전이 과제
+
+link, navigation, publish status를 바꾸지 않고 learning example을 고칠 때 card를 적용합니다. user effect, files, check, recovery를 씁니다.
+
+## 수용 체크리스트
+
+- [ ] user action, success, failure, non-goal, scope, recovery를 쓸 수 있다.
+- [ ] diff, command, result, 미확인 claim을 나누어 전달한다.
+- [ ] unknown path, secret, network, persistent effect에서 멈춘다.
+
+## 출처 및 유지보수 경계
+
+lifecycle과 evidence 분리는 안정적인 방법입니다. framework, command, runtime, deployment rule은 project마다 변하므로 확인합니다.
 
 <!-- chapter-navigation:start -->
 <hr>

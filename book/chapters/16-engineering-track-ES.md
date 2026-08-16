@@ -4,7 +4,7 @@
 
 **Estado:** `candidate`. **Experimento:** `draft / not_run`. Este capítulo enseña un ciclo de ingeniería; los informes de campo no son reproducciones locales ni confirmaciones universales de causa raíz.
 
-## El problema
+## El problema que resuelve este capítulo
 
 Las tareas de ingeniería invitan a escribir código antes de aclarar requisitos, decisiones de arquitectura, pruebas, comportamiento en ejecución y rollback. Un parche puede compilar y pasar pruebas unitarias sin que funcione el camino de usuario, el manejo de errores, las versiones de dependencias, el despliegue o la recuperación.
 
@@ -113,6 +113,44 @@ Entrega: diff, comandos y salidas reales, aprobado/fallido/no ejecutado, incógn
 | aceptación humana | una persona vio el resultado con la regla indicada | mantenimiento, transferencia o adopción general |
 
 Si falta una luz, conserva `not_run`, `blocked` o `unknown` en la entrega. No amplíes permisos, sustituyas el entorno ni reescribas la especificación para obtener verde.
+
+## Objetivos de aprendizaje
+
+Podrás dividir un requisito en un corte pequeño verificable y separar build, test, ejecución local, publicación y aceptación de usuario como afirmaciones de evidencia distintas.
+
+## Problemas reales: un test verde no termina en la tarea del usuario
+
+Un parche puede compilar y aun así ignorar una entrada vacía, una ruta equivocada o recuperación. Importa que los checks cubran la acción concreta del usuario y su fallo.
+
+### Preparación
+
+Usa una carpeta desechable con `input.json`, sin red, credenciales, remoto ni instalación. Registra el archivo inicial y las rutas que pueden cambiar.
+
+### Tarea
+
+Elimina solo duplicados de una lista de cadenas y escribe `output.json` localmente. Comprueba entrada normal, vacía, duplicada e inválida; cambia un punto explicable cada vez.
+
+### Evidencia
+
+Guarda tarjeta, diff, comandos, salida, entrada, salida leída aparte y acciones no ejecutadas. Un test sin este registro no prueba publicación ni aceptación.
+
+### Reflexión
+
+¿Qué afirmación respalda cada check? ¿Qué fallo sigue desconocido y cuál es la siguiente comprobación mínima?
+
+## Tarea de transferencia
+
+Aplica la tarjeta a corregir un ejemplo de aprendizaje sin cambiar enlaces, navegación ni publicación. Nombra efecto, archivos, check y recuperación.
+
+## Lista de aceptación
+
+- [ ] Indico acción, éxito, error, no objetivos, alcance y recuperación.
+- [ ] Entrego diff, comando, resultado y afirmación no comprobada por separado.
+- [ ] Me detengo ante ruta, secreto, red o efecto persistente desconocidos.
+
+## Fuentes y límite de mantenimiento
+
+El ciclo y la separación de evidencia son métodos estables. Frameworks, comandos, ejecución y despliegue cambian por proyecto.
 
 <!-- chapter-navigation:start -->
 <hr>

@@ -4,7 +4,7 @@
 
 **Status:** `candidate`. **Experimentstatus:** `draft / not_run`. Dieses Kapitel lehrt einen Engineering-Lebenszyklus; Feldberichte sind keine lokalen Reproduktionen oder Ursachenbestätigungen für jede Version.
 
-## Das Problem
+## Das Problem dieses Kapitels
 
 Engineering-Aufgaben verleiten dazu, vor klaren Anforderungen, Architekturentscheidungen, Testdesign, Laufzeitbeobachtung und Rollback zu programmieren. Ein Patch kann bauen und alle Unit-Tests bestehen, ohne dass der Nutzerpfad, Fehlerbehandlung, Abhängigkeitsversionen, Deployment oder Wiederherstellung funktionieren.
 
@@ -117,6 +117,44 @@ Stopp: Pausieren, wenn Pfad, Spezifikation, Berechtigung, Wiederherstellung oder
 | menschliche Abnahme | eine benannte Person sah das Ergebnis nach der Regel | Wartung, Transfer oder breite Übernahme |
 
 Fehlt ein Signal, bleibt `not_run`, `blocked` oder `unknown` in der Übergabe. Erweitere weder Berechtigungen noch ersetze die Umgebung oder schreibe die Spezifikation um, nur um Grün zu erhalten.
+
+## Lernziele
+
+Du zerlegst eine Anforderung in einen kleinen prüfbaren Schnitt und trennst Build, Test, lokalen Lauf, Veröffentlichung und Nutzerannahme als eigene Evidenzbehauptungen.
+
+## Praxisfälle: Ein grüner Test endet nicht bei der Nutzeraufgabe
+
+Ein Patch kann kompilieren und trotzdem leere Eingabe, falschen Pfad oder Wiederherstellung übersehen. Entscheidend ist, ob die Checks die konkrete Nutzerhandlung und ihren Fehlerfall abdecken.
+
+### Vorbereitung
+
+Verwende einen wegwerfbaren lokalen Ordner mit `input.json`, ohne Netzwerk, Zugangsdaten, Remote oder Installation. Halte Ausgangsdatei und erlaubte Schreibpfade fest.
+
+### Aufgabe
+
+Entferne nur Duplikate aus einer String-Liste und schreibe lokal `output.json`. Prüfe normalen, leeren, doppelten und ungültigen Input; ändere pro Schritt nur einen erklärbaren Punkt.
+
+### Belege
+
+Speichere Karte, Diff, Befehle, Exit-Status, Eingabe, unabhängig zurückgelesene Ausgabe und nicht ausgeführte Aktionen. Ein Test beweist ohne diese Aufzeichnung keine Veröffentlichung oder Nutzerannahme.
+
+### Reflexion
+
+Welche Behauptung stützt jeder Check tatsächlich? Welcher Fehlerpfad bleibt unbekannt, und was ist die kleinste nächste Prüfung?
+
+## Transferaufgabe
+
+Übertrage die Karte auf eine Korrektur eines Lernbeispiels, ohne Links, Navigation oder Veröffentlichungsstatus zu verändern. Benenne Nutzerwirkung, Dateien, Check und Rückholweg.
+
+## Abnahme-Checkliste
+
+- [ ] Ich nenne Nutzeraktion, Erfolg, Fehler, Nicht-Ziele, Umfang und Wiederherstellung.
+- [ ] Ich kann Diff, Befehl, Ergebnis und nicht geprüfte Behauptung getrennt übergeben.
+- [ ] Ich stoppe bei unbekanntem Pfad, Geheimnis, Netzwerk oder persistentem Effekt.
+
+## Quellen und Wartungsgrenze
+
+Der Lebenszyklus und die Evidenztrennung sind stabile Methoden. Frameworks, Befehle, Laufzeiten und Deploymentregeln sind veränderlich und müssen im jeweiligen Projekt geprüft werden.
 
 <!-- chapter-navigation:start -->
 <hr>

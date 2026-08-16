@@ -4,7 +4,7 @@
 
 **状態：** `candidate`。**実験：** `draft / not_run`。この章はエンジニアリングのライフサイクルを教えます。フィールド報告はローカル再現でも、すべての版への原因確認でもありません。
 
-## 問題
+## この章が解決する問題
 
 エンジニアリングでは、要件、設計上の選択、テスト設計、実行時の観測、rollback が明確になる前にコードを書き始めがちです。patch は build と unit test を通っても、利用者の経路、エラー処理、依存関係の版、デプロイ、安全な回復が正しいとは限りません。
 
@@ -117,6 +117,44 @@ delivery: diff、実際の command と output、passed / failed / not_run、unkn
 | human acceptance | 指定 reader が指定 rule で結果を見た | maintenance、transfer、広い adoption |
 
 一つでも欠ければ delivery に `not_run`、`blocked`、`unknown` を残します。green にするために permission を広げたり、environment を置き換えたり、specification を書き換えたりしません。
+
+## 学習目標
+
+requirement を小さく検証可能な slice に分け、build、test、local run、publish、user acceptance を別の evidence claim として扱えます。
+
+## 現実の問題：green test は user task の終わりではない
+
+patch は compile しても、empty input、誤った path、recovery を見落とせます。green の数ではなく、具体的な user action と failure を check が覆うかが重要です。
+
+### 準備
+
+`input.json` のある disposable local directory を使います。network、credential、remote、install は使わず、元の file と書いてよい path を記録します。
+
+### タスク
+
+string list の duplicate だけを取り除き、local に `output.json` を書きます。normal、empty、duplicate、invalid input を確認し、一度に一つの説明可能な点だけを変えます。
+
+### 証拠
+
+card、diff、command、exit status、input、独立に読み直した output、実行しなかった action を残します。記録のない test は publish や user acceptance を証明しません。
+
+### 振り返り
+
+各 check はどの claim を実際に支えますか。どの failure path が unknown で、次の最小 check は何ですか。
+
+## 移行タスク
+
+link、navigation、publish status を変えず learning example を直す場合に card を適用します。user effect、files、check、recovery を書きます。
+
+## 受け入れチェックリスト
+
+- [ ] user action、success、failure、non-goal、scope、recovery を書ける。
+- [ ] diff、command、result、未確認 claim を分けて渡せる。
+- [ ] unknown path、secret、network、persistent effect で停止する。
+
+## 出典と保守の境界
+
+lifecycle と evidence の分離は安定した方法です。framework、command、runtime、deployment rule は project ごとに変わるため確認します。
 
 <!-- chapter-navigation:start -->
 <hr>
