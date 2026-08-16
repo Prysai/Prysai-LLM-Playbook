@@ -65,6 +65,103 @@ Elige un método de bajo riesgo realizado al menos dos veces, como revisar enlac
 
 Hasta registrar esos casos en un entorno declarado y revisarlos de forma independiente, el Skill es `candidate`; no afirmes descubrimiento, carga, ejecución ni impacto de negocio.
 
+## Un flujo de diseño que se puede observar
+
+Probemos el método con una tarea de bajo riesgo: revisar enlaces Markdown locales. No requiere red, cuenta ni datos de una persona. Tampoco demuestra que un host descubra automáticamente este Skill.
+
+### Reduce la tarea a un alcance comprobable
+
+«Revisa la calidad de la documentación» no basta. Escribe el acuerdo de esta tarea antes de invocar el método:
+
+```text
+Objetivo: encontrar enlaces Markdown relativos rotos en docs/quickstart.md.
+Permitido: leer ese archivo; escribir candidatos en un informe temporal;
+ejecutar una comprobación local de solo lectura.
+Prohibido: editar el texto, usar red, instalar dependencias, borrar o publicar.
+Aceptación: el informe muestra texto de enlace, destino, resultado y motivo de lo desconocido.
+Parada: falta el archivo, la base de resolución no está clara o hace falta una acción no autorizada.
+```
+
+El acuerdo pertenece a esta ocasión. El Skill solo contiene el método reutilizable. Si se mezclan, el siguiente encargo hereda nombres de archivo, permisos y conclusiones que ya no corresponden.
+
+### Diseña activadores y reglas para ceder
+
+Un activador no es una frase publicitaria. Debe permitir decidir si el método es dueño de esta tarea.
+
+| Elemento | Ejemplo para revisión de enlaces |
+|---|---|
+| Aplica | Se solicita revisar enlaces locales de un archivo Markdown nombrado, con objetivo y aceptación |
+| No aplica | Se pide reescribir, comprobar un sitio remoto, reparar todo el repositorio o falta el archivo objetivo |
+| Preguntar antes | ¿Los enlaces se resuelven desde el archivo, la raíz del repositorio o la salida del sitio? |
+| Detener | Haría falta red, credenciales, escritura protegida o cambiar una publicación sin permiso explícito |
+
+Que aparezcan «enlace» y «revisión» no basta. La intención, las entradas, la propiedad del método y el riesgo aceptable forman la decisión.
+
+### Empareja cada acción con su evidencia
+
+| Etapa | Acción permitida | Evidencia que queda | Lo que todavía no prueba |
+|---|---|---|---|
+| Entrada | Leer archivo y acuerdo | Ruta, versión base, entradas ausentes | Que el enlace esté roto |
+| Exploración | Extraer enlaces relativos | Tabla de candidatos y regla de análisis | Que el destino exista |
+| Comprobación | Resolver rutas en solo lectura | Resultado existe/no existe/desconocido | Que una URL remota funcione |
+| Entrega | Escribir informe desechable | Informe, comando y estado de salida | Que el problema se arregló |
+| Revisión | Leer casos de riesgo o desconocidos | Decisión y alcance no cubierto | Que funcione en todo repositorio |
+
+Un estado de salida cero solo prueba que la comprobación terminó según su propia definición. No prueba formatos ignorados, reescrituras de compilación ni destinos remotos.
+
+## Mínimo no significa pocas palabras
+
+Un Skill mínimo conserva todos los juicios que siempre hacen falta. Puede tener una entrada breve, pero no puede esconder límites esenciales:
+
+```markdown
+---
+name: revision-de-enlaces-locales
+description: Revisa enlaces Markdown locales de un archivo nombrado cuando se
+aportan objetivo, aceptación y alcance de solo lectura. No sirve para reescribir,
+red ni reparaciones masivas.
+---
+
+1. Confirma destino, base de enlace, alcance permitido y aceptación.
+2. Detente y pregunta si falta cualquiera de ellos.
+3. Extrae solo enlaces relativos locales; conserva el texto original.
+4. Ejecuta la comprobación declarada y registra versión y salida.
+5. Separa resultados candidatos, confirmados y desconocidos.
+6. No edites, publiques, instales ni uses red sin una nueva autorización.
+```
+
+Las reglas de análisis pueden vivir en `references/` y un comprobador determinista en `scripts/`. Pero «detente sin objetivo» y «no uses red ni escritura» deben permanecer en la entrada, no en un archivo opcional.
+
+## Provoca un fallo para comprobar la parada
+
+Copia el ejemplo a un archivo temporal y cambia una sola variable: apunta un enlace a una ruta que no existe. El resultado esperado es una señal concreta, no una promesa de inteligencia:
+
+```text
+ROTO: [Guía de instalación] (guides/install.md)
+resuelto: docs/guides/install.md
+comprobación: la ruta no existe
+alcance: solo rutas relativas locales; no se comprobó la red
+```
+
+Después usa un caso límite con un enlace `https://`: debe quedar como fuera de alcance o desconocido, sin conectarse. Con una base de resolución ausente, la respuesta correcta es preguntar o detenerse, no adivinar la estructura.
+
+## Experimento pequeño y revisión
+
+1. Elige un Markdown que puedas leer con seguridad; no entregues secretos ni material privado al modelo.
+2. Completa el acuerdo de tarea con objetivo, alcance y aceptación.
+3. Ejecuta un control de solo lectura y conserva entorno, fecha, entrada y salida original.
+4. Introduce un enlace roto temporal, repite y confirma una señal de fallo sin acción correctiva.
+5. Descarta el ejemplo temporal o restaura la línea; vuelve a leer archivo e informe para comprobar que no hubo cambios no autorizados.
+6. Pide a otra persona que, solo con el acuerdo y el informe, diga qué se comprobó y qué quedó desconocido.
+
+El resultado solo describe el entorno registrado. No demuestra descubrimiento, selección, carga ni ejecución idénticos en otros hosts, versiones o modelos.
+
+## Errores comunes
+
+- Convertir una descripción en garantía: «asegura publicaciones» no define límites ni aceptación.
+- Confundir script y Skill: el script comprueba algo determinado; el Skill decide cuándo usarlo y cómo interpretar el resultado.
+- Confundir descubrimiento con fiabilidad: verifica por separado metadatos, selección, carga, acciones y evidencia.
+- Ocultar desconocidos: «no se revisó la red» también es un resultado útil.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-ES.md">← Anterior<br><strong>Capítulo 10 · planificación y cortes verticales</strong></a></td><td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-ES.md">Siguiente →<br><strong>Capítulo 12 · el ciclo, el estado y las condiciones de parada del Agent</strong></a></td></tr></table></nav>

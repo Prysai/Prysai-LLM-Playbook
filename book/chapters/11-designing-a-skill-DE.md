@@ -65,6 +65,102 @@ Wähle eine risikoarme Methode, die du mindestens zweimal ausgeführt hast, etwa
 
 Solange diese Fälle nicht in einer deklarierten Umgebung dokumentiert und unabhängig geprüft sind, bleibt der Skill `candidate`. Behaupte weder Auffindbarkeit, Laden, Ausführung noch geschäftliche Wirkung.
 
+## Ein beobachtbarer Entwurfsablauf
+
+Wir verwenden eine risikoarme Aufgabe: lokale Markdown-Links prüfen. Dafür sind weder Netzwerk, Konto noch Daten realer Nutzer nötig. Das beweist allerdings nicht, dass ein bestimmter Host diesen Skill automatisch findet.
+
+### Die Aufgabe auf einen prüfbaren Umfang begrenzen
+
+„Prüfe die Dokumentationsqualität“ hat keine Grenze. Schreibe vor der Methode den Vertrag für diesen einen Auftrag auf:
+
+```text
+Ziel: defekte relative Markdown-Links in docs/quickstart.md finden.
+Erlaubt: diese Datei lesen; Kandidaten in einen temporären Bericht schreiben;
+einen lokalen Read-only-Check ausführen.
+Nicht erlaubt: Text ändern, Netzwerk, Abhängigkeiten installieren, löschen, veröffentlichen.
+Abnahme: Der Bericht zeigt Linktext, Ziel, Prüfergebnis und Grund für unbekannte Fälle.
+Stopp: Datei fehlt, Auflösungsbasis ist unklar oder eine nicht autorisierte Aktion wäre nötig.
+```
+
+Dieser Vertrag gehört nur zu diesem Auftrag. Der Skill enthält nur die wiederverwendbare Methode. Werden beide vermischt, gelangen alte Pfade, Berechtigungen und Schlüsse in die nächste Aufgabe.
+
+### Auslöser und Übergaberegeln entwerfen
+
+Ein Auslöser ist kein Werbesatz. Er muss erkennen lassen, ob die Methode diese Aufgabe besitzen darf.
+
+| Punkt | Beispiel für Link-Prüfung |
+|---|---|
+| Gilt | Ein benanntes Markdown-Dokument mit Ziel und Abnahme soll auf lokale Links geprüft werden |
+| Gilt nicht | Neufassung, Remote-Site-Check, Reparatur des ganzen Repos oder fehlende Zieldatei |
+| Zuerst fragen | Werden Links relativ zur Datei, zum Repository-Root oder zur Site-Ausgabe aufgelöst? |
+| Stoppen | Netzwerk, Zugangsdaten, geschütztes Schreiben oder Veröffentlichungsänderung wäre ohne explizite Freigabe nötig |
+
+Die Wörter „Link“ und „Prüfung“ reichen nicht. Absicht, Eingaben, Zuständigkeit der Methode und akzeptables Risiko bilden zusammen die Entscheidung.
+
+### Handlung und Evidenz koppeln
+
+| Phase | Erlaubte Handlung | Zurückbleibende Evidenz | Noch nicht bewiesen |
+|---|---|---|---|
+| Eingabe | Datei und Vertrag lesen | Pfad, Ausgangsversion, fehlende Eingaben | Dass ein Link defekt ist |
+| Suche | Relative Links extrahieren | Kandidatentabelle und Auflösungsregel | Dass das Ziel existiert |
+| Check | Pfade nur lesend auflösen | vorhanden/fehlend/unbekannt | Dass eine Remote-URL funktioniert |
+| Übergabe | Wegwerfbaren Bericht schreiben | Bericht, Befehl, Exit-Status | Dass das Problem behoben wurde |
+| Review | Risiko- und unbekannte Fälle lesen | Entscheidung und nicht abgedeckter Umfang | Dass es für jedes Repo funktioniert |
+
+Ein Exit-Status von null zeigt nur, dass der Check nach seiner eigenen Definition endete. Er deckt weder ignorierte Formate noch Build-Umschreibungen oder Remote-Ziele automatisch ab.
+
+## Minimal heißt nicht: wichtige Urteile weglassen
+
+Die Eingangsdatei `SKILL.md` darf kurz sein; Grenzen, die immer gelten, müssen bleiben.
+
+```markdown
+---
+name: local-link-review
+description: Prüft lokale Markdown-Links in einer benannten Datei, wenn Ziel,
+Abnahme und Read-only-Umfang vorliegen. Nicht für Neufassungen, Netzwerk oder Massenreparaturen.
+---
+
+1. Ziel, Link-Basis, erlaubten Umfang und Abnahme bestätigen.
+2. Bei einer fehlenden Angabe stoppen und fragen.
+3. Nur lokale relative Links extrahieren; Originaltext bewahren.
+4. Den deklarierten Read-only-Check ausführen sowie Version und Exit-Status notieren.
+5. Kandidaten, bestätigte und unbekannte Ergebnisse trennen.
+6. Ohne neue Freigabe weder ändern, veröffentlichen, installieren noch Netzwerk nutzen.
+```
+
+Details können in `references/`, ein deterministischer Prüfer in `scripts/` liegen. „Ohne Ziel stoppen“ und „kein Netzwerk, kein Schreiben“ dürfen jedoch nicht in einer optionalen Datei versteckt werden.
+
+## Einen absichtlichen Fehler nutzen, um das Stoppen zu prüfen
+
+Erstelle ein temporäres Beispiel und ändere nur eine Variable: Ein Link zeigt auf einen nicht vorhandenen Pfad. Erwartet wird ein sichtbares Signal, keine vage Behauptung von Intelligenz.
+
+```text
+BROKEN: [Installationshinweis] (guides/install.md)
+resolved: docs/guides/install.md
+check: path does not exist
+scope: local relative path only; remote availability not checked
+```
+
+Danach folgt ein Grenzfall mit einem `https://`-Link. Der Skill soll ihn ohne Netzverbindung als außerhalb des Umfangs oder unbekannt ausweisen. Fehlt die Link-Basis, ist Fragen oder Stoppen richtig, nicht das Erraten der Struktur.
+
+## Kleines Experiment und Rückblick
+
+1. Wähle eine Markdown-Datei, die du gefahrlos lesen darfst; gib dem Modell keine Geheimnisse oder privaten Materialien.
+2. Trage Ziel, Umfang und Abnahme in den Aufgabenvertrag ein.
+3. Führe einen Read-only-Check aus und bewahre Umgebung, Datum, Eingabe und Roh-Ausgabe auf.
+4. Füge zeitweise einen kaputten Link ein, wiederhole den Check und prüfe, dass ein Fehlersignal statt einer Reparatur entsteht.
+5. Verwirf das Beispiel oder stelle die Zeile wieder her; lies Original und Bericht erneut, um unautorisierte Änderungen auszuschließen.
+6. Gib einer zweiten Person nur Vertrag und Bericht. Sie soll Ergebnis, Umfang und Unbekanntes erklären können.
+
+Diese Beobachtung gilt nur für die dokumentierte Umgebung. Sie beweist nicht dieselbe Entdeckung, Auswahl, Ladung oder Ausführung in anderen Hosts, Versionen oder Modellen.
+
+## Häufige Fehler
+
+- Eine Beschreibung als Garantie schreiben: „Veröffentlichungen automatisch absichern“ hat weder Grenze noch Abnahme.
+- Skript und Skill verwechseln: Das Skript prüft etwas Bestimmtes; der Skill entscheidet über Einsatz, Stopp und Interpretation.
+- Auffindbarkeit mit Zuverlässigkeit verwechseln: Metadaten, Auswahl, Laden, Aktionen und Evidenz getrennt prüfen.
+- Unbekanntes verstecken: „Remote-Link nicht geprüft“ ist ein wichtiges Ergebnis des Berichts.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-DE.md">← Vorheriges<br><strong>Kapitel 10 · Planung und vertikale Schnitte</strong></a></td><td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-DE.md">Nächstes →<br><strong>Kapitel 12 · Agent-Schleife, Zustand und Stoppbedingungen</strong></a></td></tr></table></nav>

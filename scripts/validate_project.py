@@ -118,6 +118,7 @@ REQUIRED = (
     "scripts/validate_content_completeness.py",
     "scripts/audit_locale_release_paths.py",
     "scripts/validate_localized_practice_cards.py",
+    "scripts/audit_translation_depth.py",
     "scripts/test_validate_site_i18n.py",
     "scripts/validate_teaching_assets.py",
     "scripts/test_validate_teaching_assets.py",

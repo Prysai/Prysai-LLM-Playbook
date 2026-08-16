@@ -65,6 +65,101 @@ Markdown link review、research brief の source check、release handoff など�
 
 宣言した environment でこれらの case を記録し、独立 review を受けるまで、その Skill は `candidate` です。discovery、load、execution、business impact を主張しません。
 
+## 観察できる設計フロー
+
+ここでは低リスクな「Markdown のローカルリンク確認」を使います。ネットワーク、アカウント、実在の利用者データは不要です。ただし、特定の host がこの Skill を自動で discover する証明にはなりません。
+
+### task を確認可能な範囲に絞る
+
+「ドキュメントの品質を確認する」では境界がありません。method を使う前に、その回の task protocol を書きます。
+
+```text
+goal: docs/quickstart.md 内の壊れた相対 Markdown link を見つける。
+allowed: 対象を read、temporary report に候補を書く、read-only local check を run。
+not allowed: 本文 edit、network、dependency install、delete、publish。
+acceptance: link text、target、check result、unknown の理由を一件ずつ示す。
+stop: file がない、解決基準が不明、または未許可の action が必要。
+```
+
+この protocol は今回の task のものです。Skill は繰り返し使う method だけを持ちます。混ぜると次の task に古い path、permission、結論まで持ち込んでしまいます。
+
+### trigger と譲る条件を設計する
+
+trigger は宣伝文句ではありません。method がこの task を担当してよいか判断できる必要があります。
+
+| 項目 | link review Skill の例 |
+|---|---|
+| 適用 | named Markdown file の local link を、goal と acceptance 付きで確認してほしい |
+| 非適用 | rewrite、remote site check、repository 全体の repair、対象 file 不明 |
+| 先に質問 | file、repository root、site output のどれを link base にするか |
+| stop | network、credential、protected write、publish change が必要なのに明示許可がない |
+
+「link」と「review」が出ただけでは足りません。intent、input、method ownership、許容 risk を合わせて決めます。
+
+### action と evidence を対にする
+
+| 段階 | 許可する action | 残す evidence | まだ証明しないこと |
+|---|---|---|---|
+| input check | file と protocol を read | path、baseline、missing input | link が壊れていること |
+| scan | relative link を抽出 | candidate table と parse rule | target が存在すること |
+| check | path を read-only で解決 | exists / missing / unknown | remote URL が使えること |
+| delivery | disposable report を write | report、command、exit status | 問題を修正したこと |
+| review | high-risk / unknown を人が読む | decision と uncovered scope | すべての repo で有効なこと |
+
+exit status が 0 でも、その check が自身の定義で終わっただけです。無視した format、build 時の書き換え、remote target まで正しいとは言えません。
+
+## 最小とは、短くして大事な判断を落とすことではない
+
+入口の `SKILL.md` は短くできますが、毎回必要な boundary は残します。
+
+```markdown
+---
+name: local-link-review
+description: Named Markdown file の local link を、goal、acceptance、
+read-only scope が与えられたときに review する。rewrite、network、bulk repair には使わない。
+---
+
+1. target、link base、allowed scope、acceptance を確認する。
+2. 一つでも欠けたら stop して質問する。
+3. local relative link だけを抽出し、元の text を保存する。
+4. 宣言済み read-only check を run し、version と exit status を記録する。
+5. candidate、confirmed、unknown を分けて返す。
+6. 新しい approval なしに edit、publish、install、network をしない。
+```
+
+方言別の解析は `references/`、決定的な checker は `scripts/` に置けます。しかし「target がなければ stop」「network と write はしない」は optional file に隠してはいけません。
+
+## 意図的な failure で stop を試す
+
+temporary sample を作り、一つだけ変えます。link を存在しない path に向けます。期待するのは曖昧な賢さではなく、見える signal です。
+
+```text
+BROKEN: [インストール手順] (guides/install.md)
+resolved: docs/guides/install.md
+check: path does not exist
+scope: local relative path only; remote availability not checked
+```
+
+次に `https://` link を含む boundary case を試します。network へ出ず、out of scope / unknown と残すべきです。link base がない場合も、正しい答えは構造を推測することではなく、質問または stop です。
+
+## 小さな実験と振り返り
+
+1. 安全に read できる Markdown file を選ぶ。secret や private material は model に渡さない。
+2. goal、scope、acceptance を protocol に記入する。
+3. read-only check を一度 run し、environment、date、input、raw output を残す。
+4. temporary broken link を入れて再実行し、repair ではなく failure signal が残るか確かめる。
+5. sample を捨てるか行を戻し、original file と report を read back して未許可の change がないか確認する。
+6. protocol と report だけを別の reader に渡し、result、scope、unknown を説明できるか聞く。
+
+この観察は記録した environment に限られます。他の host、version、model で同じ discovery、selection、load、execution が起きる証明ではありません。
+
+## よくある誤り
+
+- description を保証にする。「安全な publish を自動保証する」は boundary も acceptance もない。
+- script と Skill を混同する。script は決まった check、Skill は使用時、停止時、解釈を決める。
+- discovery を reliability と混同する。metadata、selection、load、action、evidence を別々に確認する。
+- unknown を隠す。「remote link は未確認」は失敗ではなく report の重要な結果である。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-JA.md">← 前の章<br><strong>第 10 章 · 計画と垂直スライス</strong></a></td><td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-JA.md">次へ →<br><strong>第 12 章 · Agent のループ、状態、停止条件</strong></a></td></tr></table></nav>
