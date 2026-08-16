@@ -10,8 +10,10 @@
 > practise it most deeply in Codex, the project's flagship track.
 
 <!-- language-switcher:start -->
-**Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
+**Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md)
 <!-- language-switcher:end -->
+
+**New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) — choose one small task, get a bounded prompt, then follow the book path. The repository is the auditable source, not the recommended first screen.
 
 [No project? Start with the no-setup check](#optional-15-minute-warm-up-no-git-required) · [Practise a Spanish exchange](book/communication-clinic-EN.md#six-short-spanish-messages) · [Run a research check](book/communication-clinic-EN.md#six-short-research-messages) · [Received a citation-shaped answer? Check the source record](book/communication-clinic-EN.md#source-check-route) · [Need to share an AI answer? Run the Share Check](book/communication-clinic-EN.md#share-check) · [Ready to make a local Codex change? Start the Codex path](#the-recommended-first-codex-path) · [Need a disposable fixture?](book/routes/first-safe-change-EN.md) · [Read the full English guide](README-EN.md)
 
@@ -221,11 +223,13 @@ is a separate supplemental route for language, research, or a small work task.
 | Skills | 25 project-owned `candidate` Skills | Broad trigger reliability or learner outcomes |
 | Evaluation | 40 fixtures, `not_run / static_structure_only` | Scored executions and reviewer records |
 | Locales | English source plus five migration routes | Complete, independently reviewed translations |
-| Release | `candidate` | Public deployment, a release tag, or production readiness |
+| Public site | Reachable at [docs.prysai.com/llm-playbook](https://docs.prysai.com/llm-playbook/) | Search indexing, reader acceptance, and deployment rollback evidence |
+| Release | `candidate` | Immutable release tag, accepted release evidence, rollback rehearsal, and production readiness |
 
 The [quality register](docs/quality/quality-register.md) is the active defect
 ledger. Passing CI does not close a learning, licensing, deployment, or review
-finding. The repository is private and no public Pages URL is established.
+finding. The repository and reading site are public; public reachability does
+not establish indexing, learning outcomes, or release readiness.
 
 ## Go deeper or contribute
 
