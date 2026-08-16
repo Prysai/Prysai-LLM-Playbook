@@ -453,6 +453,26 @@
       },
       "status": "draft",
       "run_status": "not_run"
+    },
+    "platform-adapter-guide-route": {
+      "name": {
+        "en": "Choose your LLM platform",
+        "zh": "选择你的 LLM 平台",
+        "es": "Elige tu plataforma de LLM",
+        "ja": "LLMプラットフォームの選び方",
+        "ko": "LLM 플랫폼 선택하기",
+        "de": "Wähle deine LLM-Plattform"
+      }
+    },
+    "french-practice-loop": {
+      "name": {
+        "en": "French Practice Loop",
+        "zh": "法语六步练习",
+        "es": "Bucle de práctica de francés",
+        "ja": "フランス語練習ループ",
+        "ko": "프랑스어 연습 루프",
+        "de": "Französisch-Übungsschleife"
+      }
     }
   },
   "skills": {
