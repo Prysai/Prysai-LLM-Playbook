@@ -38,6 +38,42 @@ account access도 특정 organization 데이터를 특정 실험에 쓸 권한�
 
 요청, context 버전, variant, 가설 표, metric, sample 메모, 비식별 data dictionary, privacy 결정, 다음 결정을 보관합니다. 허가된 데이터, 품질 검토, 사람 검토가 생기기 전까지 이 연습은 `candidate / not_run`입니다.
 
+## 콘텐츠 초안에서 측정 가능한 결정으로: 실험 카드
+
+먼저 “이 데이터가 어떤 결정을 바꾸는가?”를 묻습니다. 합성 로컬 페이지의 예입니다.
+
+```text
+결정: “인계 누락을 줄인다”는 표현을 계속 시험할지, 설정 비용 설명으로 돌아갈지.
+가설: 같은 대상과 위치에서 인계 문제를 분명히 하면 sample 요청 행동이 늘어난다.
+유일한 변경: 제목과 첫 문단. 가격, channel, 대상, CTA는 바꾸지 않는다.
+지표: sample 요청 / 중복 제거 노출.
+범위: 합성 또는 허가된 집계 count, 짧은 기간. 이름, 전체 email, IP, chat은 수집하지 않는다.
+중지: sample이 작음, variant 혼합, event 없음, consent 또는 대상 불명확.
+다음: 차이와 한계만 기술하고 causal/winner를 선언하지 않는다.
+```
+
+| 종류 | 쓸 수 있는 형태 | 쓰면 안 되는 형태 |
+|---|---|---|
+| 확인된 사실 | “이 연습은 local synthetic task를 쓴다” | “많은 team이 이미 채택했다” |
+| 가설 | “더 이해하기 쉬운지 확인 중이다” | “이미 efficiency를 높였다” |
+| 대상 목소리 | 허가되고 비식별화되며 추적 가능한 짧은 말 | 만든 testimonial |
+| 증거 없음 | 삭제하거나 가설로 표시 | “업계 최고”, “가장 인기” |
+
+## 작은 실험: 두 초안, 공개 없음
+
+1. 합성 context로 소개문 두 개를 쓰고 대상, 문제, 행동, 빠진 증거를 밝힙니다.
+2. 익명 label과 denominator, deduplication, window, retention이 있는 로컬 집계 count dictionary를 만듭니다.
+3. 문장마다 fact, hypothesis, no proof로 표시하고 마지막 것은 삭제합니다.
+4. test reader에게 local sample에서 이해한 행동과 unknown을 묻습니다. 허가된 feedback만 남기며 market result라고 하지 않습니다.
+5. 실제 channel은 host, organization, account, 대상, consent, batch, 사람 승인, withdrawal을 다시 확인해야 하는 새 행동입니다.
+
+## 스스로 확인하기
+
+- [ ] writing 전에 결정, 유일한 변경, denominator, 중지를 정했다.
+- [ ] descriptive count를 causal, efficiency, market acceptance로 바꾸지 않는다.
+- [ ] claim은 fact, hypothesis, authorized feedback, 삭제 중 하나다.
+- [ ] customer evidence가 없으면 testimonial, 규모, adoption, urgency를 만들지 않는다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="16-engineering-track-KO.md">← 이전<br><strong>16장 · 엔지니어링 트랙, 아이디어에서 신뢰할 수 있는 소프트웨어까지</strong></a></td><td align="right"><a data-chapter-nav="next" href="18-content-design-data-automation-KO.md">다음 →<br><strong>18장 · 콘텐츠, 디자인, 데이터, 자동화 트랙</strong></a></td></tr></table></nav>

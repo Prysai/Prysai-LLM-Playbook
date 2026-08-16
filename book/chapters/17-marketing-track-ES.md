@@ -38,6 +38,42 @@ Usa un producto sintético con tres objeciones, sin testimonios, inventario ni r
 
 Conserva solicitudes, versión de contexto, variantes, tabla de hipótesis, métricas, notas de muestra, diccionario de datos desidentificado, decisiones de privacidad y siguiente decisión. El ejercicio queda `candidate / not_run` hasta contar con datos autorizados, calidad revisada y revisión humana.
 
+## De borrador a decisión medible: tarjeta de experimento
+
+Pregunta primero «¿qué decisión cambiará este dato?». Para una página local sintética:
+
+```text
+Decisión: seguir probando el mensaje sobre no perder entregas, o volver al coste de configuración.
+Hipótesis: con misma audiencia y posición, explicar el problema de entrega anima a pedir la muestra.
+Único cambio: título y primer párrafo; no precio, canal, audiencia ni CTA.
+Métrica: solicitudes de muestra / exposiciones desduplicadas.
+Alcance: conteos sintéticos o autorizados, agregados y de ventana corta; sin nombre, email completo, IP ni chat.
+Parada: muestra pequeña, variantes mezcladas, evento ausente, consentimiento o destino incierto.
+Siguiente paso: describir diferencia y límites, sin causalidad ni ganador.
+```
+
+| Tipo | Forma permitida | No convertir en |
+|---|---|---|
+| Hecho confirmado | «Este ejercicio usa una tarea local sintética» | «Muchos equipos ya lo adoptan» |
+| Hipótesis | «Estamos comprobando si resulta más claro» | «Ya mejora eficiencia» |
+| Voz de audiencia | Frase autorizada, desidentificada y trazable | Testimonio inventado |
+| Sin prueba | Eliminar o marcar como hipótesis | «Líder» o «más popular» |
+
+## Experimento: dos borradores, sin publicación
+
+1. Redacta dos introducciones desde contexto sintético y nombra audiencia, problema, acción y prueba ausente.
+2. Asigna etiquetas anónimas y un diccionario local de conteos agregados con denominador, deduplicación, ventana y retención.
+3. Etiqueta cada frase como hecho, hipótesis o sin prueba; elimina la última.
+4. Haz una revisión local con una persona de prueba: registra solo feedback autorizado, no resultado de mercado.
+5. Un canal real requiere host, organización, cuenta, audiencia, consentimiento, lote, aprobación y retirada de nuevo.
+
+## Comprobación propia
+
+- [ ] Antes de escribir fijé decisión, cambio único, denominador y parada.
+- [ ] No convierto conteos descriptivos en causalidad, eficiencia o aceptación.
+- [ ] Cada claim es hecho, hipótesis, feedback autorizado o eliminación.
+- [ ] Sin evidencia de clientes no invento testimonios, escala, adopción ni urgencia.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="16-engineering-track-ES.md">← Anterior<br><strong>Capítulo 16 · ruta de ingeniería, de la idea al software fiable</strong></a></td><td align="right"><a data-chapter-nav="next" href="18-content-design-data-automation-ES.md">Siguiente →<br><strong>Capítulo 18 · ruta de contenido, diseño, datos y automatización</strong></a></td></tr></table></nav>
