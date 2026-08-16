@@ -4,7 +4,7 @@
 
 Dies ist ein deutscher Leseweg, keine vollständige Übersetzung des Buchs. Der
 kanonische Katalog enthält 22 Kapitel im Status `candidate` und 18 Labs im
-Status `draft`. Derzeit stehen elf Kapitel und elf Labs auf Deutsch bereit.
+Status `draft`. Derzeit stehen zwölf Kapitel und elf Labs auf Deutsch bereit.
 Jeder Link auf dieser Seite führt zum entsprechenden deutschen Inhalt. Fehlt
 eine `-DE`-Datei, wird sie als nicht verfügbar ausgewiesen, statt auf ein
 anderes Kapitel oder in eine andere Sprache zu verweisen.
@@ -46,7 +46,7 @@ Transfer.
 | 09 — Überprüfung, Zweifel und Wiederherstellung | [Verfügbar: Kapitel 9](chapters/09-verification-and-recovery-DE.md) · `candidate / in-progress` |
 | 10 — Planung und vertikale Schnitte | [Verfügbar: Kapitel 10](chapters/10-planning-and-slicing-DE.md) · `candidate / in-progress` |
 | 11 — Einen wirklich nützlichen Skill entwerfen | [Verfügbar: Kapitel 11](chapters/11-designing-a-skill-DE.md) · `candidate / in-progress` |
-| 12 — Agent-Schleife, Zustand und Stoppbedingungen | Deutsche Datei noch nicht vorhanden. |
+| 12 — Agent-Schleife, Zustand und Stoppbedingungen | [Verfügbar: Kapitel 12](chapters/12-agent-loop-and-stop-DE.md) · `candidate / in-progress` |
 | 13 — Aktionsgrenzen für Dateien, Terminal, Browser und GitHub | Deutsche Datei noch nicht vorhanden. |
 | 14 — Externe Skills finden, installieren und prüfen | Deutsche Datei noch nicht vorhanden. |
 | 15 — Forschungspfad: Von der Frage zu prüfbarem Wissen | Deutsche Datei noch nicht vorhanden. |

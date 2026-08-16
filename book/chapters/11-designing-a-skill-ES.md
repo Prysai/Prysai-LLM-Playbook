@@ -67,5 +67,5 @@ Hasta registrar esos casos en un entorno declarado y revisarlos de forma indepen
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-ES.md">← Anterior<br><strong>Capítulo 10 · planificación y cortes verticales</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-ES.md">Siguiente pendiente →<br><strong>Ver disponibilidad del Capítulo 12</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-ES.md">← Anterior<br><strong>Capítulo 10 · planificación y cortes verticales</strong></a></td><td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-ES.md">Siguiente →<br><strong>Capítulo 12 · el ciclo, el estado y las condiciones de parada del Agent</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->
