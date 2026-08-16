@@ -72,6 +72,7 @@ def check_reader_links(path: Path, locale: str, problems: list[str]) -> None:
             fixture_directory in {
                 ("examples", "universal-seam-v1"),
                 ("examples", "lab-001-v1"),
+                ("examples", "skill-sandbox"),
             }
             or target_relative.parts[:3] == ("evals", "candidates", "three-task-smoke-v1")
         ) and target_relative.suffix.lower() == ".md"
@@ -83,6 +84,11 @@ def check_reader_links(path: Path, locale: str, problems: list[str]) -> None:
             )
             continue
         suffix = target_path.stem.rsplit("-", 1)[-1].upper()
+        if is_localized_fixture and suffix not in LOCALES:
+            problems.append(
+                f"{path.relative_to(ROOT)}: reader fixture link must target a locale-suffixed explanation {target}"
+            )
+            continue
         if suffix in LOCALES and suffix != locale:
             problems.append(
                 f"{path.relative_to(ROOT)}: cross-locale reader link {target} "

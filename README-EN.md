@@ -275,7 +275,7 @@ Skill-output, evidence-lens, field-signal, and beginner-practice boards. They ar
 linked instead of stacked here because their small evidence labels must remain
 readable at the intended viewing size.
 
-The [real-estate sandbox](examples/skill-sandbox/product-context-real-estate/README.md)
+The [real-estate sandbox](examples/skill-sandbox/product-context-real-estate/README-EN.md)
 is a real local HTML/CSS result, captured at both desktop and 390px mobile
 viewports. The screenshots prove rendering only; they do not pretend that the
 Skill ran autonomously or that a fictional page has market impact.

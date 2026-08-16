@@ -48,7 +48,7 @@ rendering command, the recorded viewport, and the claims the image cannot make.
 The screenshot is evidence of one local render at the recorded viewport. It is
 not evidence that the Product Context Skill ran independently, that the listing
 is real, or that the page improves trust, enquiries, conversion, or sales. The
-[sandbox source](../../examples/skill-sandbox/product-context-real-estate/README.md)
+[sandbox source](../../examples/skill-sandbox/product-context-real-estate/README-EN.md)
 is intentionally small enough to inspect and rerun without credentials or
 external requests.
 

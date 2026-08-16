@@ -462,7 +462,7 @@ local screenshot
    ↓ evidence of one recorded render only
 ```
 
-The local sandbox source is [available here](../../examples/skill-sandbox/product-context-real-estate/README.md), and the existing screenshot is shown below.
+The local sandbox source is [available here](../../examples/skill-sandbox/product-context-real-estate/README-EN.md), and the existing screenshot is shown below.
 
 [![Synthetic first-time buyer guide rendered in the local sandbox](../../assets/cases/product-context-real-estate-thumbnail.png)](../../assets/cases/product-context-real-estate-desktop.png)
 
@@ -649,7 +649,7 @@ This experiment is intentionally local, disposable, and small. It does not requi
 
 ### Setup
 
-Use the existing [synthetic real-estate sandbox](../../examples/skill-sandbox/product-context-real-estate/README.md) as a read-only fixture. Make a temporary copy outside the repository. Keep the repository's canonical directory untouched.
+Use the existing [synthetic real-estate sandbox](../../examples/skill-sandbox/product-context-real-estate/README-EN.md) as a read-only fixture. Make a temporary copy outside the repository. Keep the repository's canonical directory untouched.
 
 Prepare a short `task.md` in the temporary directory containing:
 
@@ -833,7 +833,7 @@ The principles in this chapter—bounded triggers, explicit inputs, least privil
 | Skill discovery failure symptom | [openai/codex#31592](https://github.com/openai/codex/issues/31592) | 2026-08-11 | Public user report; no universal filesystem rule, root cause, fix, or local reproduction is claimed |
 | MCP connection/call boundary symptom | [anthropics/claude-code#73185](https://github.com/anthropics/claude-code/issues/73185) and [MCP transports](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports) | 2026-08-11 | Public report plus protocol reference; neither proves the reported root cause or Codex behavior |
 | Project Skill quality requirements | [Skill quality standard](../../docs/quality/skill-quality-standard.md) and [Skill integration decisions](../../docs/sources/skill-integration-decisions.md) | 2026-08-11 | Repository governance; structure checks do not prove runtime behavior or production readiness |
-| Synthetic real-estate teaching case | [Case record](../../docs/research/skill-case-product-context-real-estate-2026-08-11.md), [sandbox](../../examples/skill-sandbox/product-context-real-estate/README.md) | 2026-08-11 | Project-owned synthetic materials; the screenshot is scoped to a recorded local render and is not customer or Skill-runtime evidence |
+| Synthetic real-estate teaching case | [Case record](../../docs/research/skill-case-product-context-real-estate-2026-08-11.md), [sandbox](../../examples/skill-sandbox/product-context-real-estate/README-EN.md) | 2026-08-11 | Project-owned synthetic materials; the screenshot is scoped to a recorded local render and is not customer or Skill-runtime evidence |
 | Prompt, recovery, and field-problem patterns | [Field problems and prompt patterns](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md) and [deep-dive cases](../../docs/research/field-problems-deep-dive-p2-2026-08-11.md) | 2026-08-11 | Original summaries of public reports and project teaching patterns; reports do not establish prevalence, root cause, or vendor endorsement |
 | External asset and licence boundary | [Asset register](../../docs/sources/asset-register.md) | 2026-08-11 | Research and project-owned assets are classified there; an external repository's top-level licence does not automatically cover nested media or dependencies |
 

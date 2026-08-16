@@ -40,7 +40,7 @@
 
 截图只是指定视口下的一次本地渲染证据。它不能证明 Product Context Skill 曾独立
 运行、房源真实存在，或页面提高了信任、咨询、转化或销售。
-[sandbox 源码](../../examples/skill-sandbox/product-context-real-estate/README.md)
+[sandbox 说明](../../examples/skill-sandbox/product-context-real-estate/README-ZH.md)
 被刻意保持得足够小，可以在无需凭据或外部请求的前提下检查和重跑。
 
 ## 学习目标
