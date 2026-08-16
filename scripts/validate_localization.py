@@ -71,6 +71,7 @@ def iter_workspace_files() -> list[Path]:
             directory
             for directory in directories
             if directory not in {".git", ".work", ".codex-temp", "tmp", "_site", ".pytest_cache"}
+            and not directory.startswith("._site-build-")
         ]
         files.extend(Path(current_root) / filename for filename in filenames)
     return files
