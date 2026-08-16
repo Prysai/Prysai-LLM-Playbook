@@ -4,7 +4,7 @@
 
 이 문서는 한국어로 읽을 수 있는 길잡이이지, 책 전체 번역본은 아닙니다. 정식
 카탈로그에는 `candidate` 상태의 장 22개와 `draft` 상태의 Lab 18개가 있습니다.
-현재 한국어로 읽을 수 있는 것은 장 10개와 Lab 11개입니다. 이 페이지의 모든 링크는
+현재 한국어로 읽을 수 있는 것은 장 11개와 Lab 11개입니다. 이 페이지의 모든 링크는
 대응하는 한국어 콘텐츠를 가리킵니다. `-KO` 파일이 없으면 다른 장이나 다른 언어로
 보내지 않고, 아직 제공되지 않음을 분명히 표시합니다.
 
@@ -44,7 +44,7 @@
 | 08 — 정의에서 전달까지의 전체 수명 주기 | [제공됨: 8장](chapters/08-full-lifecycle-workflow-KO.md) · `candidate / in-progress` |
 | 09 — 검증, 의심, 복구 | [제공됨: 9장](chapters/09-verification-and-recovery-KO.md) · `candidate / in-progress` |
 | 10 — 계획과 수직 슬라이스 | [제공됨: 10장](chapters/10-planning-and-slicing-KO.md) · `candidate / in-progress` |
-| 11 — 실제로 유용한 Skill 설계하기 | 아직 한국어 파일이 없습니다. |
+| 11 — 실제로 유용한 Skill 설계하기 | [제공됨: 11장](chapters/11-designing-a-skill-KO.md) · `candidate / in-progress` |
 | 12 — Agent 루프, 상태, 중단 조건 | 아직 한국어 파일이 없습니다. |
 | 13 — 파일, 터미널, 브라우저, GitHub의 행동 경계 | 아직 한국어 파일이 없습니다. |
 | 14 — 외부 Skill 찾기, 설치하기, 감사하기 | 아직 한국어 파일이 없습니다. |
