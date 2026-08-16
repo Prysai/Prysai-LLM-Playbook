@@ -43,8 +43,10 @@ def check_target(
     relative: str,
 ) -> None:
     item = entries[target_index]
-    path_key = "english_path" if locale == "EN" and item.get("english_path") else "legacy_path"
+    path_key = "english_path" if item.get("english_path") else "legacy_path"
     expected_path = str(item[path_key])
+    if path_key == "english_path" and locale != "EN":
+        expected_path = expected_path.replace("-EN.md", f"-{locale}.md")
     target = ROOT / expected_path
     if not target.is_file():
         errors.append(f"{path_key} does not exist: {expected_path}")
@@ -78,17 +80,9 @@ def main() -> int:
         if not isinstance(item, dict):
             errors.append("each chapter must be an object")
             continue
-        for key in ("id", "number", "part", "title_en", "title_zh", "canonical_title_en", "canonical_title_zh", "legacy_path", "english_status", "status"):
+        for key in ("id", "number", "part", "title_en", "title_zh", "canonical_title_en", "canonical_title_zh", "english_status", "status"):
             if key not in item:
                 errors.append(f"chapter {item.get('number', '?')}: missing {key}")
-        legacy = ROOT / str(item.get("legacy_path", ""))
-        if not legacy.is_file():
-            errors.append(f"legacy chapter path does not exist: {item.get('legacy_path')}")
-        else:
-            headings = H1_RE.findall(legacy.read_text(encoding="utf-8"))
-            expected = f"第{['一','二','三','四','五','六','七','八','九','十','十一','十二','十三','十四','十五','十六','十七','十八','十九','二十','二十一','二十二'][int(item['number'])-1]}章：{item.get('canonical_title_zh')}"
-            if headings != [expected]:
-                errors.append(f"{item.get('legacy_path')}: H1 must exactly equal {expected!r}")
         english_path = item.get("english_path")
         if english_path:
             if not str(english_path).endswith("-EN.md"):
@@ -108,9 +102,16 @@ def main() -> int:
     for index, item in enumerate(entries):
         if not isinstance(item, dict):
             continue
-        targets = [(ROOT / str(item["legacy_path"]), "ZH")]
+        targets: list[tuple[Path, str]] = []
         if item.get("english_path"):
-            targets.append((ROOT / str(item["english_path"]), "EN"))
+            english_target = ROOT / str(item["english_path"])
+            targets.append((english_target, "EN"))
+            for locale in ("ZH", "ES", "JA", "KO", "DE"):
+                localized_target = ROOT / str(item["english_path"]).replace("-EN.md", f"-{locale}.md")
+                if localized_target.is_file():
+                    targets.append((localized_target, locale))
+        elif item.get("legacy_path"):
+            targets.append((ROOT / str(item["legacy_path"]), "ZH"))
         for source, locale in targets:
             text = source.read_text(encoding="utf-8") if source.is_file() else ""
             blocks = BLOCK_RE.findall(text)

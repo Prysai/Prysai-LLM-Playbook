@@ -73,7 +73,7 @@
     },
     {
       "id": "llm-fundamentals-guide",
-      "title_en": "Lesson 0: What Is a Large Language Model",
+      "title_en": "Chapter 0: What Is a Large Language Model",
       "english_path": "book/guides/llm-fundamentals-EN.md",
       "status": "candidate",
       "run_status": "not_run",

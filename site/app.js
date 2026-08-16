@@ -560,9 +560,10 @@ Object.assign(copy.en, {
   heroRouteFixtureBody: 'It supplies one target and check after Chapter 2. It is a fallback, not a substitute for the guided path.',
   heroEyebrow: 'Start small · one task, one visible check',
   heroRouteBoundary: 'All three entries are candidate: the structure is checked, but reader outcomes are not yet measured.',
-  heroProofAria: 'Optional warm-up proof card',
-  heroProofKicker: 'OPTIONAL WARM-UP / INSPECTABLE EXAMPLE',
-  heroProofLink: 'Open the optional 15-minute check',
+  heroProofAria: 'Five-minute prompt example',
+  heroProofKicker: 'FIVE-MINUTE EXAMPLE',
+  heroProofTitle: 'See one small prompt make a difference.',
+  heroProofLink: 'Try the five-minute prompt practice',
   mobileRouteNoSetup: 'No project? Start with the no-setup check',
   mobileRouteTask: 'Have a disposable project? Start Codex',
   mobileRouteFixture: 'Need a safe file? Open the fixture',
@@ -588,9 +589,10 @@ Object.assign(copy.zh, {
   heroRouteFixtureBody: '它在第 2 章之后提供一个目标和检查，是回退方案，不替代引导路径。',
   heroEyebrow: '从小处开始 · 一个任务，一项可见检查',
   heroRouteBoundary: '三条入口都还是 candidate：结构已检查，读者结果尚未测量。',
-  heroProofAria: '可选热身证据卡',
-  heroProofKicker: '可选热身 / 可检查示例',
-  heroProofLink: '打开可选的 15 分钟检查',
+  heroProofAria: '5 分钟提示词示例',
+  heroProofKicker: '5 分钟示例',
+  heroProofTitle: '看看一条小提示词如何改变结果。',
+  heroProofLink: '试试 5 分钟提示词练习',
   mobileRouteNoSetup: '没有项目？先做免设置检查',
   mobileRouteTask: '有可丢弃项目？开始 Codex',
   mobileRouteFixture: '需要安全文件？打开夹具',
@@ -3790,6 +3792,7 @@ Object.assign(copy.zh, {
 });
 
 Object.assign(copy.es, {
+  heroProofAria: 'Ejemplo de prompt de cinco minutos', heroProofKicker: 'EJEMPLO DE CINCO MINUTOS', heroProofTitle: 'Mira cómo un prompt pequeño puede cambiar el resultado.', heroProofLink: 'Prueba la práctica de prompt de cinco minutos',
   'localeTitle': 'Ruta de seis idiomas',
   'localeIntro': 'Seis idiomas de entrada están registrados y todas las páginas para lectores existen en los seis: English, 简体中文, Español, 日本語, 한국어, Deutsch. Ninguna ruta necesita ya un respaldo en inglés.',
   'localeEnglish': 'disponible · por defecto',
@@ -3803,6 +3806,7 @@ Object.assign(copy.es, {
 });
 
 Object.assign(copy.ja, {
+  heroProofAria: '5分間のプロンプト例', heroProofKicker: '5分間の例', heroProofTitle: '小さなプロンプトが結果をどう変えるか見てみよう。', heroProofLink: '5分間のプロンプト練習を試す',
   'localeTitle': '6言語ルート',
   'localeIntro': '6つの入り口言語が登録され、すべての読者向けページが6言語で存在します：English、简体中文、Español、日本語、한국어、Deutsch。どの言語ルートも英語へのフォールバックは不要になりました。',
   'localeEnglish': '利用可能 · デフォルト',
@@ -3816,6 +3820,7 @@ Object.assign(copy.ja, {
 });
 
 Object.assign(copy.ko, {
+  heroProofAria: '5분 프롬프트 예시', heroProofKicker: '5분 예시', heroProofTitle: '작은 프롬프트가 결과를 어떻게 바꾸는지 확인해 보세요.', heroProofLink: '5분 프롬프트 연습 해보기',
   'localeTitle': '6개 언어 루트',
   'localeIntro': '6개의 진입 언어가 등록되어 있으며 모든 독자용 페이지가 6개 언어로 제공됩니다: English, 简体中文, Español, 日本語, 한국어, Deutsch. 이제 어떤 언어 루트도 영어 폴백이 필요하지 않습니다.',
   'localeEnglish': '사용 가능 · 기본값',
@@ -3829,6 +3834,7 @@ Object.assign(copy.ko, {
 });
 
 Object.assign(copy.de, {
+  heroProofAria: 'Fünf-Minuten-Prompt-Beispiel', heroProofKicker: 'FÜNF-MINUTEN-BEISPIEL', heroProofTitle: 'Sieh, wie ein kleiner Prompt das Ergebnis verändern kann.', heroProofLink: 'Die Fünf-Minuten-Prompt-Übung ausprobieren',
   'localeTitle': 'Sechs-Sprachen-Route',
   'localeIntro': 'Sechs Einstiegssprachen sind registriert, und jede leserorientierte Seite liegt in allen sechs Sprachen vor: English, 简体中文, Español, 日本語, 한국어, Deutsch. Keine Route braucht mehr einen englischen Fallback.',
   'localeEnglish': 'verfügbar · Standard',
