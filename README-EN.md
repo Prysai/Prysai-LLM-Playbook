@@ -9,11 +9,6 @@
 License: curriculum text and teaching assets are CC BY-NC 4.0 unless a file
 states otherwise. See [`LICENSE`](LICENSE) and the [licensing boundary](docs/sources/licensing.md).
 
-> **Release decision:** `candidate` only. Static checks pass, but learner and
-> transfer runs, repeated evaluations, and independent review
-> evidence are still pending; two isolated first-turn observations are recorded.
-> This is a development candidate, not a finished course.
-
 > Learn a transferable method for reliable work with language models, then
 > practise it most deeply in Codex, the project's flagship track.
 
@@ -25,6 +20,11 @@ place. We will not start with a product contest or a long feature list. We
 will start with one small question, make one bounded attempt, and keep enough
 evidence to tell what happened. You do not need to memorise a product
 catalogue before beginning.
+
+> **Release decision:** `candidate` only. Static checks pass, but learner and
+> transfer runs, repeated evaluations, and independent review
+> evidence are still pending; two isolated first-turn observations are recorded.
+> This is a development candidate, not a finished course.
 
 <!-- language-switcher:start -->
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
