@@ -2,8 +2,7 @@
 
 # Lección 0: ¿Qué es un modelo de lenguaje grande?
 
-**Tiempo de lectura:** unos 20 minutos. **Estado:** `candidate` · **Evidencia
-de aprendizaje:** `not_run`.
+**Tiempo de lectura:** unos 20 minutos. Empieza con un modelo mental de una frase y después prueba sus límites con un ejercicio de chat de cinco minutos.
 
 Esta es la primera lección del Playbook. Si no tienes claro qué es en realidad
 un «modelo de lenguaje grande» (LLM), más allá de la publicidad, empieza aquí.
@@ -267,4 +266,6 @@ Las fechas de acceso, las versiones de los modelos y los datos de producto
 cambian; trata cualquier contenido específico de producto de esta lección como
 `stale after 2026-11-09` hasta que se actualice contra las fuentes oficiales.
 La lección no afirma que ningún modelo, proveedor o resultado de referencia
-sea el mejor, el más rápido o el más seguro.
+sea el mejor, el más rápido o el más seguro. Es una lección candidata: se han
+revisado las fuentes y la estructura, pero todavía no se han medido resultados
+de aprendizaje.

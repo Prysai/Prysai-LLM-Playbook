@@ -2,7 +2,7 @@
 
 # Lesson 0: What Is a Large Language Model?
 
-**Reading time:** about 20 minutes. **Status:** `candidate` · **Learner evidence:** `not_run`.
+**Reading time:** about 20 minutes. Start with the one-sentence model, then test its limits in a five-minute chat exercise.
 
 This is the first lesson of the Playbook. If you are not sure what a "large
 language model" (LLM) actually is — beyond the marketing — start here. We will
@@ -245,4 +245,6 @@ sources (checked 2026-08-16) are:
 Access dates, model versions, and product facts change; treat anything
 product-specific in this lesson as `stale after 2026-11-09` until refreshed
 against official sources. The lesson does not claim that any model, provider,
-or benchmark result is best, fastest, or safest.
+or benchmark result is best, fastest, or safest. This is a candidate lesson:
+its sources and structure have been checked, but learner outcomes have not yet
+been measured.

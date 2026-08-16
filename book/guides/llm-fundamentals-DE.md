@@ -2,7 +2,7 @@
 
 # Lektion 0: Was ist ein großes Sprachmodell?
 
-**Lesezeit:** etwa 20 Minuten. **Status:** `candidate` · **Lernnachweis:** `not_run`.
+**Lesezeit:** etwa 20 Minuten. Beginne mit einem Ein-Satz-Modell und prüfe seine Grenzen anschließend in einer fünfminütigen Chat-Übung.
 
 Dies ist die erste Lektion des Playbooks. Wenn du nicht sicher bist, was ein
 „Large Language Model“ (LLM) wirklich ist — jenseits des Marketings —, beginne
@@ -272,4 +272,5 @@ Zugriffsdaten, Modellversionen und Produktfakten ändern sich; behandle alles
 Produktspezifische in dieser Lektion als `stale after 2026-11-09`, bis es
 anhand offizieller Quellen aktualisiert wird. Die Lektion behauptet nicht,
 dass ein Modell, ein Anbieter oder ein Benchmark-Ergebnis das beste,
-schnellste oder sicherste ist.
+schnellste oder sicherste ist. Sie ist ein Kandidat: Quellen und Struktur
+wurden geprüft, Lernergebnisse wurden jedoch noch nicht gemessen.
