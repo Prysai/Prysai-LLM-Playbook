@@ -4,7 +4,7 @@
 
 이 문서는 한국어로 읽을 수 있는 길잡이이지, 책 전체 번역본은 아닙니다. 정식
 카탈로그에는 `candidate` 상태의 장 22개와 `draft` 상태의 Lab 18개가 있습니다.
-현재 한국어로 읽을 수 있는 것은 장 20개와 Lab 11개입니다. 이 페이지의 모든 링크는
+현재 한국어로 읽을 수 있는 것은 장 21개와 Lab 11개입니다. 이 페이지의 모든 링크는
 대응하는 한국어 콘텐츠를 가리킵니다. `-KO` 파일이 없으면 다른 장이나 다른 언어로
 보내지 않고, 아직 제공되지 않음을 분명히 표시합니다.
 
@@ -54,7 +54,7 @@
 | 18 — 콘텐츠, 디자인, 데이터, 자동화 트랙 | [제공됨: 18장](chapters/18-content-design-data-automation-KO.md) · `candidate / in-progress` |
 | 19 — 모델과 워크플로 평가하기 | [제공됨: 19장](chapters/19-evaluate-models-and-workflows-KO.md) · `candidate / in-progress` |
 | 20 — 개인 Codex 작업 시스템 만들기 | [사용 가능: 20장](chapters/20-personal-codex-work-system-KO.md) · `candidate / in-progress` |
-| 21 — 팀 역량 시스템 만들기 | 아직 한국어 파일이 없습니다. |
+| 21 — 팀 역량 시스템 만들기 | [사용 가능: 21장](chapters/21-team-capability-system-KO.md) · `candidate / in-progress` |
 | 22 — 지속적인 업데이트와 미래 대비 | 아직 한국어 파일이 없습니다. |
 
 ## Lab별 제공 상태
