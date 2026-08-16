@@ -58,4 +58,4 @@ tu as programmé un rappel et n'infère pas de rétention permanente. Note la
 date, ma tentative, l'aide utilisée et ce qui reste sans observation.
 ```
 
-请保存目标、首次尝试、所用帮助、修改、变更后的任务以及未知项。一次循环只是一次有记录的练习尝试，并不等于掌握或独立评估。如需同一循环的西班牙语版本，请打开 [spanish-practice-loop-zh.md](spanish-practice-loop-zh.md)。
+请保存目标、首次尝试、所用帮助、修改、变更后的任务以及未知项。一次循环只是一次有记录的练习尝试，并不等于掌握或独立评估。如需同一循环的西班牙语版本，请打开 [spanish-practice-loop-ZH.md](spanish-practice-loop-ZH.md)。
