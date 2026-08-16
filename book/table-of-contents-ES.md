@@ -4,7 +4,7 @@
 
 Esta es una ruta de lectura en español, no una traducción completa del libro.
 El catálogo canónico tiene 22 capítulos `candidate` y 18 Labs `draft`; en este
-momento existen 7 capítulos y 11 Labs en español. Cada enlace de esta página
+momento existen 9 capítulos y 11 Labs en español. Cada enlace de esta página
 apunta al mismo contenido en español. Cuando no hay un archivo `-ES`, se indica
 como no disponible en vez de enlazar a otro capítulo o cambiar de idioma.
 
@@ -42,7 +42,7 @@ transferencia.
 | 06 — Elegir un modelo no es venerar un modelo | [Disponible: capítulo 06](chapters/06-model-selection-ES.md) · `candidate / in-progress` |
 | 07 — Skills, Plugins, MCP y herramientas | [Disponible: capítulo 07](chapters/07-skills-plugins-and-tools-ES.md) · `candidate / in-progress` |
 | 08 — El ciclo de vida completo, de la definición a la entrega | [Disponible: capítulo 08](chapters/08-full-lifecycle-workflow-ES.md) · `candidate / in-progress` |
-| 09 — Verificación, duda y recuperación | Aún no existe archivo español. |
+| 09 — Verificación, duda y recuperación | [Disponible: capítulo 09](chapters/09-verification-and-recovery-ES.md) · `candidate / in-progress` |
 | 10 — Planificación y cortes verticales | Aún no existe archivo español. |
 | 11 — Diseñar un Skill realmente útil | Aún no existe archivo español. |
 | 12 — El bucle, el estado y las condiciones de parada del Agent | Aún no existe archivo español. |
