@@ -4,7 +4,7 @@
 
 Esta es una ruta de lectura en español, no una traducción completa del libro.
 El catálogo canónico tiene 22 capítulos `candidate` y 18 Labs `draft`; en este
-momento existen 10 capítulos y 11 Labs en español. Cada enlace de esta página
+momento existen 11 capítulos y 11 Labs en español. Cada enlace de esta página
 apunta al mismo contenido en español. Cuando no hay un archivo `-ES`, se indica
 como no disponible en vez de enlazar a otro capítulo o cambiar de idioma.
 
@@ -44,7 +44,7 @@ transferencia.
 | 08 — El ciclo de vida completo, de la definición a la entrega | [Disponible: capítulo 08](chapters/08-full-lifecycle-workflow-ES.md) · `candidate / in-progress` |
 | 09 — Verificación, duda y recuperación | [Disponible: capítulo 09](chapters/09-verification-and-recovery-ES.md) · `candidate / in-progress` |
 | 10 — Planificación y cortes verticales | [Disponible: capítulo 10](chapters/10-planning-and-slicing-ES.md) · `candidate / in-progress` |
-| 11 — Diseñar un Skill realmente útil | Aún no existe archivo español. |
+| 11 — Diseñar un Skill realmente útil | [Disponible: capítulo 11](chapters/11-designing-a-skill-ES.md) · `candidate / in-progress` |
 | 12 — El bucle, el estado y las condiciones de parada del Agent | Aún no existe archivo español. |
 | 13 — Límites de acción para archivos, terminal, navegador y GitHub | Aún no existe archivo español. |
 | 14 — Descubrir, instalar y auditar Skills externos | Aún no existe archivo español. |

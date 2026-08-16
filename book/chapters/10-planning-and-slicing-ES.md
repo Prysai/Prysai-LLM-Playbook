@@ -56,5 +56,5 @@ No midas velocidad o calidad general a partir de una tarea. Marca tiempos, coste
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-ES.md">← Anterior<br><strong>Capítulo 9 · verificación, duda y recuperación</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-ES.md">Siguiente pendiente →<br><strong>Ver disponibilidad del Capítulo 11</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-ES.md">← Anterior<br><strong>Capítulo 9 · verificación, duda y recuperación</strong></a></td><td align="right"><a data-chapter-nav="next" href="11-designing-a-skill-ES.md">Siguiente →<br><strong>Capítulo 11 · diseñar un Skill que se gane su lugar</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->
