@@ -185,6 +185,41 @@ claim_scope: 로컬 텍스트 파일 하나
 없는 전환을 찾아 `unverified`로 고칩니다. 이것은 Agent, model, host의 일반 성능을 증명하지
 않으며, 이 장과 실험은 기록과 검토 전까지 `candidate / not_run`입니다.
 
+## 실행 handoff: 다음 reader가 사실에서 이어 가도록 하기
+
+task가 멈추거나 timeout이 나거나 사람의 판단이 필요해졌을 때 “계속하세요”만 남기지 마세요. 다음 reader가 관찰한 사실과 아직 허가되지 않은 범위를 먼저 보도록 다음 template을 사용합니다.
+
+### goal과 scope
+```text
+task ID:
+goal과 acceptance rule:
+read / write가 허용된 path:
+명시적으로 하지 않을 action:
+```
+### timeline과 boundary
+```text
+마지막으로 확인한 시각:
+마지막으로 증명할 수 있는 state transition:
+current state: verified | partial | blocked | unknown
+permission, input, external side effect boundary:
+```
+### artifact와 부작용 상태
+```text
+관찰한 file / diff / hash:
+실행한 command와 exit status:
+확인한 external side effect:
+관찰하지 못했거나 확인할 수 없는 것:
+```
+### 한 일, 하지 않은 일, 다음 단계
+```text
+수행한 action:
+의도적으로 수행하지 않은 action:
+가장 작은 안전한 next check:
+아직 human이 결정해야 할 것:
+```
+
+이 handoff는 unknown을 완료로 바꾸지 않습니다. 안전하지 않은 action의 반복이나 오래된 artifact를 새 결과로 오해하는 일을 막을 뿐입니다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-KO.md">← 이전<br><strong>11장 · 제 몫을 하는 Skill 설계하기</strong></a></td><td align="right"><a data-chapter-nav="next" href="13-action-boundaries-KO.md">다음 →<br><strong>13장 · 파일, 터미널, 브라우저, GitHub의 행동 경계</strong></a></td></tr></table></nav>

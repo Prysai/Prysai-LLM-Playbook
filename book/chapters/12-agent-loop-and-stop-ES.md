@@ -172,6 +172,41 @@ eficiencia. Enseña a no convertir una conversación convincente en una afirmaci
 de ejecución. El capítulo sigue `candidate` y el experimento `not_run` hasta
 que existan registros reales y revisión.
 
+## Entrega de ejecución: que la siguiente persona continúe desde los hechos
+
+Si la tarea se detiene, agota el tiempo o requiere una decisión humana, no dejes solo «continúa». Usa esta plantilla para que la siguiente persona vea primero los hechos observados y los límites que todavía no tienen autorización.
+
+### Objetivo y alcance
+```text
+ID de tarea:
+Objetivo y regla de aceptación:
+Rutas permitidas para leer/escribir:
+Acciones explícitamente excluidas:
+```
+### Cronología y límite
+```text
+Última hora confirmada:
+Última transición de estado demostrable:
+Estado actual: verified | partial | blocked | unknown
+Límite de permisos, entradas y efectos externos:
+```
+### Estado de artefactos y efectos
+```text
+Archivos/diff/hash observados:
+Comandos ejecutados y estado de salida:
+Efectos externos confirmados:
+Lo no observado o no confirmable:
+```
+### Hecho, no hecho y siguiente paso
+```text
+Acciones realizadas:
+Acciones deliberadamente no realizadas:
+Siguiente comprobación segura más pequeña:
+Decisión que aún debe tomar una persona:
+```
+
+Esta entrega no convierte lo desconocido en terminado; solo evita repetir acciones inseguras o confundir un artefacto antiguo con un resultado nuevo.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-ES.md">← Anterior<br><strong>Capítulo 11 · diseñar un Skill que se gane su lugar</strong></a></td><td align="right"><a data-chapter-nav="next" href="13-action-boundaries-ES.md">Siguiente →<br><strong>Capítulo 13 · límites de acción en archivos, terminales, navegadores y GitHub</strong></a></td></tr></table></nav>

@@ -195,6 +195,41 @@ die Übergabe zu `unverified`. Das beweist weder allgemeine Agent- oder
 Modellleistung noch Host-Verhalten. Kapitel und Übung bleiben bis zu protokollierten
 Läufen und Review `candidate / not_run`.
 
+## Ausführungsübergabe: Damit die nächste Person bei Fakten weiterarbeitet
+
+Wenn eine Aufgabe stoppt, ein Zeitlimit erreicht oder eine menschliche Entscheidung braucht, hinterlasse nicht nur „weitermachen“. Nutze diese Vorlage, damit die nächste Person zuerst beobachtete Fakten und noch nicht erlaubte Grenzen sieht.
+
+### Ziel und Umfang
+```text
+Aufgaben-ID:
+Ziel und Abnahmeregel:
+Zum Lesen/Schreiben erlaubte Pfade:
+Ausdrücklich ausgeschlossene Aktionen:
+```
+### Zeitlinie und Grenze
+```text
+Letzter bestätigter Zeitpunkt:
+Letzter belegbarer Zustandsübergang:
+Aktueller Zustand: verified | partial | blocked | unknown
+Grenze für Berechtigungen, Eingaben und externe Nebenwirkungen:
+```
+### Stand von Artefakten und Nebenwirkungen
+```text
+Beobachtete Dateien/Diff/Hash:
+Ausgeführte Befehle und Exit-Status:
+Bestätigte externe Nebenwirkungen:
+Nicht Beobachtetes oder nicht Bestätigbares:
+```
+### Erledigt, bewusst nicht erledigt und nächster Schritt
+```text
+Ausgeführte Aktionen:
+Bewusst nicht ausgeführte Aktionen:
+Kleinste sichere nächste Prüfung:
+Noch erforderliche menschliche Entscheidung:
+```
+
+Diese Übergabe macht Unbekanntes nicht zu Erledigtem. Sie verhindert nur die Wiederholung unsicherer Aktionen oder die Verwechslung eines alten Artefakts mit einem neuen Ergebnis.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-DE.md">← Vorheriges<br><strong>Kapitel 11 · Einen Skill entwerfen, der seinen Platz verdient</strong></a></td><td align="right"><a data-chapter-nav="next" href="13-action-boundaries-DE.md">Nächstes →<br><strong>Kapitel 13 · Aktionsgrenzen für Dateien, Terminal, Browser und GitHub</strong></a></td></tr></table></nav>

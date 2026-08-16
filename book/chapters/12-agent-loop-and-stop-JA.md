@@ -165,6 +165,41 @@ one next safe action:
 もっともらしい conversation を execution claim にしない方法を教えます。実行記録と review が
 できるまで、chapter は `candidate`、experiment は `not_run` のままです。
 
+## 実行の handoff：次の reader が事実から続けるために
+
+task が止まった、timeout した、人の判断が必要になったとき、「続けて」だけを残しません。次の reader が観察済みの事実と未許可の範囲を先に読めるよう、次の template を使います。
+
+### goal と scope
+```text
+task ID:
+goal と acceptance rule:
+read / write を許可された path:
+明示的にしない action:
+```
+### timeline と boundary
+```text
+最後に確認した時刻:
+最後に証明できる state transition:
+current state: verified | partial | blocked | unknown
+permission、input、external side effect の boundary:
+```
+### artifact と副作用の状態
+```text
+観察した file / diff / hash:
+実行した command と exit status:
+確認した external side effect:
+観察していない、または確認できないこと:
+```
+### 行ったこと、行わなかったこと、次の一手
+```text
+行った action:
+意図的に行わなかった action:
+最小の安全な next check:
+まだ human が決めること:
+```
+
+この handoff は unknown を完了に変えません。unsafe な action の重複や、古い artifact を新しい結果と取り違えることを防ぐだけです。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章ナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-JA.md">← 前へ<br><strong>第11章 · 役に立つ Skill を設計する</strong></a></td><td align="right"><a data-chapter-nav="next" href="13-action-boundaries-JA.md">次へ →<br><strong>第13章 · ファイル、ターミナル、ブラウザ、GitHub にまたがる行動境界</strong></a></td></tr></table></nav>
