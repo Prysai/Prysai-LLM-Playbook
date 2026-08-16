@@ -97,7 +97,7 @@ research または content task で比較を繰り返します。新しい depen
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-lab-nav="previous" href="lab-003-evidence-review-JA.md" aria-label="前の Lab：Lab 003 · 完了宣言を監査する">← 前の Lab<br><strong>Lab 003 · 完了宣言を監査する</strong></a></td>
-      <td align="right"><a data-lab-nav="next" href="../table-of-contents-JA.md" aria-label="日本語目次へ戻る：Lab 005 はまだ翻訳されていません">次の Lab は準備中 →<br><strong>Lab 005 の提供状況を見る</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-005-design-a-skill-JA.md" aria-label="次の Lab：Lab 005 · 繰り返す方法を境界のある Skill にする">次へ →<br><strong>Lab 005 · 繰り返す方法を境界のある Skill にする</strong></a></td>
     </tr>
   </table>
 </nav>
