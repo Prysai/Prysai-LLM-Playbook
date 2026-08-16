@@ -68,6 +68,52 @@ next_safe_action: "입력 파일 요청"
 
 각 전환을 설명하고 증거와 함께 `verified`, `partial`, `blocked`, `unverified` 중 하나로 전달할 수 있으면 연습은 성공입니다. 독립적인 실행 기록이 남기 전까지 이 장은 `candidate / not_run`입니다.
 
+## 루프를 시작하기 전에 중지를 정하기
+
+중지는 실패와 같은 말이 아닙니다. 불확실한 상태가 커지는 것을 막는 작업 결과입니다. 작업 계약에 다음 네 가지 중지 조건을 씁니다.
+
+| 중지 조건 | 예 | 올바른 행동 |
+|---|---|---|
+| 입력 | 필요한 파일이 없음 | 빠진 입력을 기록하고 요청 |
+| 권한 | 승인 없이 쓰기, 네트워크, 게시가 필요함 | 영향을 보여 주고 명시 확인을 기다림 |
+| 증거 | 결과는 있지만 검사가 실행되지 않거나 서로 모순됨 | 산출물을 보존하고 `partial` 또는 `unverified`로 전달 |
+| 예산 | 허용한 시도, 시간, 부작용을 모두 사용함 | 마지막으로 확인된 지점에서 중지 |
+
+“한 번 더 해 보기”를 기본 복구로 삼지 마세요. 재시도마다 새 관찰을 만들 수 있는 조건 하나를 바꿉니다. 입력을 보충하거나, 디렉터리를 줄이거나, 시간 제한이 있는 읽기 전용 검사를 쓰거나, 권한을 받는 식입니다. 바뀐 조건 없는 반복은 설명할 수 없는 상태만 늘립니다.
+
+### 다음 사람이 이어받을 수 있는 중지 기록
+
+```yaml
+delivery_state: blocked
+last_confirmed_transition: "proposal accepted; no tool-start event observed"
+artifact_state: "target not read back; change status unknown"
+evidence_kept: [task-protocol.md, approval-record.md, process-status.txt]
+not_claimed: ["file updated", "tests passed"]
+next_safe_action: "target을 읽고 나서 새 쓰기를 허용할지 결정"
+```
+
+이는 “막혔습니다”보다 낫습니다. 이어받는 사람은 무엇이 증명되었고 무엇을 주장할 수 없으며, 어떻게 가능한 부작용 반복을 피할지 알 수 있습니다.
+
+## 작은 실험: continue, pause, stop 연습하기
+
+버릴 수 있는 디렉터리에 순서 없는 세 줄의 `input.txt`를 만듭니다. 비어 있지 않은 줄을 정렬해 `output.txt`에 쓰는 작업입니다. 이 디렉터리 안에서만 읽고 쓸 수 있으며 네트워크와 설치는 금지합니다.
+
+1. 목표, 허용 경로, 수용 조건, 한 번의 재시도 예산을 적습니다.
+2. 입력을 읽고 관찰을 기록한 뒤 쓰기를 제안합니다. 범위를 확인한 뒤 실행합니다.
+3. `output.txt`를 독립적으로 읽어 규칙과 비교하고 명령, 출력, 범위를 남깁니다.
+4. 입력 경로를 일부러 틀리게 합니다. 대체 파일을 만들지 말고 `blocked_input`이 되어야 합니다.
+5. 쓰기 뒤 출력을 읽지 않는 변형을 만듭니다. 읽기 전용 검사가 증거를 남길 때까지 전달은 `unverified`입니다.
+
+## 스스로 확인하기
+
+- [ ] 제안, 호스트 결정, 실행, 관찰, 수용을 구분한다.
+- [ ] “완료” 선언에서 처음으로 근거 없는 전환을 찾을 수 있다.
+- [ ] 입력, 권한, 증거, 예산에 대한 중지 규칙을 썼다.
+- [ ] 응답이 사라지면 쓰기를 반복하기 전에 상태와 사후 조건을 읽는다.
+- [ ] 인계문이 proven, unknown, not claimed, next safe action을 구분한다.
+
+이벤트 이름과 권한은 host마다 달라집니다. 공식 문서와 현재 관찰로 확인하세요. 공개 보고서는 점검 설계에 도움을 줄 뿐, 자신의 실행을 대신하지 않습니다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-KO.md">← 이전<br><strong>11장 · 제 몫을 하는 Skill 설계하기</strong></a></td><td align="right"><a data-chapter-nav="next" href="13-action-boundaries-KO.md">다음 →<br><strong>13장 · 파일, 터미널, 브라우저, GitHub의 행동 경계</strong></a></td></tr></table></nav>

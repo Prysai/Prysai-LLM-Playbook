@@ -70,6 +70,52 @@ En un directorio desechable, pide al Agent que informe enlaces que apuntan a arc
 
 La práctica pasa si puedes explicar cada transición y entregar `verified`, `partial`, `blocked` o `unverified` con evidencia. Hasta guardar una ejecución real e independiente, este capítulo sigue siendo `candidate / not_run`.
 
+## Define la parada antes de iniciar el ciclo
+
+Detenerse no equivale a fracasar. Es un resultado de trabajo que evita ampliar un estado incierto. Escribe estas cuatro condiciones en el contrato:
+
+| Condición | Ejemplo | Acción correcta |
+|---|---|---|
+| Entrada | No existe el archivo requerido | Registrar lo ausente y pedirlo |
+| Autoridad | Haría falta escribir, usar red o publicar sin permiso | Mostrar impacto y esperar confirmación |
+| Evidencia | Hay resultado, pero el check no corre o se contradice | Conservar artefacto y entregar `partial` o `unverified` |
+| Presupuesto | Se agotaron intentos, tiempo o efectos permitidos | Parar en el último punto confirmado |
+
+No hagas de «inténtalo otra vez» la recuperación por defecto. Cada reintento debe cambiar una condición que pueda producir una observación nueva: aportar una entrada, reducir una carpeta, usar un check de solo lectura con límite de tiempo o pedir una aprobación. Repetir sin cambio solo crea más estado sin explicación.
+
+### Un registro que otra persona puede retomar
+
+```yaml
+delivery_state: blocked
+last_confirmed_transition: "proposal accepted; no tool-start event observed"
+artifact_state: "target not read back; change status unknown"
+evidence_kept: [task-protocol.md, approval-record.md, process-status.txt]
+not_claimed: ["archivo actualizado", "pruebas superadas"]
+next_safe_action: "read the target, then decide whether another write is allowed"
+```
+
+Esto es más útil que «se atascó»: quien recibe el trabajo sabe qué está probado, qué no puede afirmar y cómo evitar repetir un posible efecto.
+
+## Experimento pequeño: continuar, pausar y parar
+
+En un directorio desechable crea `input.txt` con tres líneas desordenadas. La tarea es ordenar las líneas no vacías en `output.txt`; solo se permite leer y escribir ese directorio, sin red ni instalaciones.
+
+1. Escribe objetivo, rutas permitidas, aceptación y un presupuesto de un reintento.
+2. Lee la entrada, registra la observación, propone la escritura y confirma su alcance antes de ejecutarla.
+3. Lee `output.txt` de forma independiente y compáralo con la regla; conserva comando, salida y alcance.
+4. Cambia la ruta de entrada a propósito. Debe quedar `blocked_input`, sin inventar un archivo sustituto.
+5. Tras una escritura, omite deliberadamente la lectura de salida. La entrega es `unverified` hasta que un control de lectura aporte evidencia.
+
+## Comprobación propia
+
+- [ ] Distingo propuesta, decisión del host, ejecución, observación y aceptación.
+- [ ] Puedo señalar la primera transición sin soporte en una declaración de «hecho».
+- [ ] Definí paradas para entrada, autoridad, evidencia y presupuesto.
+- [ ] Ante una respuesta perdida, leo estado y postcondición antes de repetir una escritura.
+- [ ] Mi entrega separa lo probado, lo desconocido, lo no afirmado y el siguiente paso seguro.
+
+Los nombres de eventos y permisos cambian según el host. Verifica esos hechos con documentación oficial y observación actual; los informes públicos solo ayudan a diseñar controles, no sustituyen tu ejecución.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-ES.md">← Anterior<br><strong>Capítulo 11 · diseñar un Skill que se gane su lugar</strong></a></td><td align="right"><a data-chapter-nav="next" href="13-action-boundaries-ES.md">Siguiente →<br><strong>Capítulo 13 · límites de acción en archivos, terminales, navegadores y GitHub</strong></a></td></tr></table></nav>

@@ -68,6 +68,52 @@ next_safe_action: "入力ファイルを依頼する"
 
 各遷移を説明でき、証拠付きで `verified`、`partial`、`blocked`、または `unverified` を納品できれば練習は成功です。独立した実行記録が残るまで、この章は `candidate / not_run` のままです。
 
+## ループを始める前に stop を決める
+
+stop は failure と同じではありません。不確実な状態を広げないための仕事の結果です。task contract に四つの stop condition を書きます。
+
+| stop condition | 例 | 正しい action |
+|---|---|---|
+| input | 必須 file がない | missing input を記録して依頼する |
+| authority | write、network、publish に許可がない | impact を示して明示確認を待つ |
+| evidence | 結果はあるが check が実行できない、または矛盾する | artifact を残し `partial` / `unverified` として渡す |
+| budget | attempts、time、side effect の上限を使い切った | 最後に確認できた点で止まる |
+
+「もう一度試す」を default recovery にしません。retry ごとに、新しい observation を生む条件を一つ変えます。input を追加する、directory を狭める、timeout 付き read-only check にする、approval を得る、といった変更です。条件が同じ反復は説明できない state を増やすだけです。
+
+### 次の人が引き継げる stop record
+
+```yaml
+delivery_state: blocked
+last_confirmed_transition: "proposal accepted; no tool-start event observed"
+artifact_state: "target not read back; change status unknown"
+evidence_kept: [task-protocol.md, approval-record.md, process-status.txt]
+not_claimed: ["file updated", "tests passed"]
+next_safe_action: "target を read してから、新しい write を許可するか決める"
+```
+
+これは「止まりました」より有用です。引継ぎ側は何が証明済みで、何を主張できず、どうすれば副作用を繰り返さないかを知れます。
+
+## 小さな実験：continue、pause、stop を同じ task で練習する
+
+disposable directory に、順序のない三行を持つ `input.txt` を作ります。空でない行を並べ替え `output.txt` に書く task です。read/write はこの directory だけ、network と install は禁止です。
+
+1. goal、allowed path、acceptance、retry を一回までと書く。
+2. input を read し observation を残す。write を proposal し、scope を確認してから execute する。
+3. `output.txt` を独立に read し規則と比べ、command、output、scope を残す。
+4. input path を意図的に間違える。代替 file を作らず `blocked_input` になるべきです。
+5. write 後に output を読まない変体を作る。read-only check が入るまで delivery は `unverified` です。
+
+## 自己確認
+
+- [ ] proposal、host decision、execution、observation、acceptance を分けている。
+- [ ] 「done」宣言で最初に裏付けのない transition を示せる。
+- [ ] input、authority、evidence、budget の stop rule がある。
+- [ ] response が失われたとき、write を繰り返す前に state と postcondition を読む。
+- [ ] handoff に proven、unknown、not claimed、next safe action がある。
+
+event 名と permission は host ごとに変わります。公式 documentation と現在の observation で確認してください。public report は check を設計する材料であり、あなたの run の代わりではありません。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章ナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-JA.md">← 前へ<br><strong>第11章 · 役に立つ Skill を設計する</strong></a></td><td align="right"><a data-chapter-nav="next" href="13-action-boundaries-JA.md">次へ →<br><strong>第13章 · ファイル、ターミナル、ブラウザ、GitHub にまたがる行動境界</strong></a></td></tr></table></nav>
