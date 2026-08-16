@@ -20,7 +20,7 @@ const copy = {
     levelL0Name: 'Observer', levelL0Short: 'Notice what happened', levelL1Name: 'Safe user', levelL1Short: 'Complete a low-risk task', levelL2Name: 'Task designer', levelL2Short: 'Write a task protocol', levelL3Name: 'Workflow designer', levelL3Short: 'Move from definition to delivery', levelL4Name: 'Capability builder', levelL4Short: 'Choose the smallest useful set', levelL5Name: 'Evidence reviewer', levelL5Short: 'Test completion claims', levelL6Name: 'Team coach', levelL6Short: 'Turn method into a system',
     chaptersEyebrow: 'The reading routes', chaptersTitle: '22 chapters. Four ways in.', chaptersIntro: 'Read in order to build the model. Jump by route when a real task is blocking you. Every route returns to practice and evidence.', filterAll: 'All chapters', filterA: 'A · First contact', filterB: 'B · Real work', filterC: 'C · Capability', filterD: 'D · Team practice', routeATitle: 'First contact with Codex', routeADesc: '01—06 · finish a first safe task', routeBTitle: 'Codex for real work', routeBDesc: '07—13 · design a verifiable workflow', routeCTitle: 'Capability and Agent collaboration', routeCDesc: '14—18 · choose the smallest useful combination', routeDTitle: 'From fluency to team practice', routeDDesc: '19—22 · turn personal method into team capability', candidateStatus: 'candidate', chapter01: 'Understand GPT before Codex', chapter02: 'Complete a safe, verifiable task', chapter03: 'Turn a wish into a task protocol', chapter04: 'Context, permissions, and Agent boundaries', chapter05: 'Choose the right Codex surface', chapter06: 'Model choice is not model worship', chapter07: 'How Skills, Plugins, MCP, and tools divide the work', chapter08: 'The full lifecycle from definition to delivery', chapter09: 'Verification, doubt, and recovery', chapter10: 'Planning and vertical slices', chapter11: 'Design a Skill that earns its place', chapter12: 'The Agent loop, state, and stop conditions', chapter13: 'Action boundaries across files, terminals, browsers, and GitHub', chapter14: 'Discover, install, and audit an external Skill', chapter15: 'Research: from question to auditable knowledge', chapter16: 'Engineering: from idea to reliable software', chapter17: 'Marketing: from product context to experiments', chapter18: 'Content, design, data, and automation', chapter19: 'Evaluate models and workflows', chapter20: 'Build a personal Codex work system', chapter21: 'Build a team capability system', chapter22: 'Keep the system current and recoverable',
     labsEyebrow: 'The lab', labsTitle: 'Make the principle observable.', labsIntro: 'Labs are low-risk, reproducible tasks. Each one names setup, evidence, a failure variant, a secret boundary, and a reflection.', draftStatus: 'draft', startingLab: 'starting lab', lab01Title: 'First safe task', lab01Body: 'In a sandbox project, ask Codex to inspect before editing. Turn “done” into a checkable diff.', lab02Title: 'Task protocol', lab02Body: 'Break a vague request into goal, inputs, constraints, acceptance, and failure handling.', lab03Title: 'Evidence review', lab03Body: 'Find a result that looks complete but has no evidence for its claim.', lab04Title: 'Skill selection', lab04Body: 'Explain the choice and refuse to use directory size as a proxy for fit.', lab05Title: 'Design a Skill', lab05Body: 'Turn a stable method into a capability with boundaries, evidence, and failure cases.', lab06Title: 'Agent stop conditions', lab06Body: 'Define stop points for success, missing input, recoverable failure, and permission conflict.', lab07Title: 'Action boundaries', lab07Body: 'Compare the evidence needed for reading, editing, running, committing, pushing, and publishing.', lab08Title: 'Research question', lab08Body: 'Turn a broad topic into a question, source plan, and minimum evidence table.', lab09Title: 'Engineering lifecycle', lab09Body: 'Compare direct implementation with a full lifecycle and record the rework evidence.', lab10Title: 'Shared product context', lab10Body: 'Version a shared product understanding and separate facts from hypotheses.', lab11Title: 'GPT and Codex boundaries', lab11Body: 'Use static task cards to separate generation, execution, verification, and external effects.', lab12Title: 'Team capability migration', lab12Body: 'Create a contract for version, owner, permissions, independent reproduction, and rollback.', labsIndexLink: 'Open the lab rules and all 18 entries',
-    skillsEyebrow: 'Capability layer', skillsTitle: 'Twenty-two Skills. Distinct jobs.', skillsIntro: 'A Skill is a method with a trigger, an input check, boundaries, stop conditions, an output contract, and a way to verify it.', skillCoach: 'Choose a learning path and practice boundary.', skillProtocol: 'Turn a vague request into an executable contract.', skillEvidence: 'Split completion claims into checkable evidence.', skillSelector: 'Choose a minimum viable capability set.', skillWorkflow: 'Manage stages, checkpoints, and hand-off.', skillResearch: 'Converge a question into auditable knowledge.', skillContext: 'Keep stable principles separate from changing facts.', skillLearningName: 'Learning Coach', skillLearning: 'Practise with recall, correction, delayed review, and transfer.', skillSourceName: 'Source Investigator', skillSource: 'Turn broad searches into bounded source-backed investigations.', skillSignalName: 'Field Signal Curator', skillSignal: 'Turn public reports into bounded demand evidence.', skillAdapterName: 'Platform Adapter Review', skillAdapter: 'Reject platform lessons without a sourced, runnable delta.', skillTriageName: 'Communication Failure Triage', skillTriage: 'Diagnose one failed interaction and retest the smallest repair.', skillBriefName: 'Dialogue Brief', skillBrief: 'Turn one untried low-risk request into a copy-ready first message.', skillFirstTurnCheckName: 'First-Turn Check', skillFirstTurnCheck: 'Inspect an unsent low-risk request for visible boundaries.', skillRouteBrief: 'I need to write one clear first message.', skillRouteBriefResult: 'Returns one low-risk, copy-ready first turn with a check and a stop boundary.', skillRouteFirstTurnCheck: 'I already wrote a first request and want to inspect it.', skillRouteFirstTurnCheckResult: 'Labels material gaps without drafting a replacement prompt.', skillBoundaryName: 'Original methods first.', skillBoundary: 'External Skills must retain the source-project URL and license boundary.', skillIndexLink: 'Open the Skill registry and all 22 methods', mobileIndexAria: 'Complete project indexes', mobileIndexChapters: 'chapters', mobileIndexLabs: 'labs', mobileIndexSkills: 'Skills', mobileIndexCases: 'field cases', mobileIndexLocales: 'locale records', mobileIndexVisuals: 'teaching boards', mobileIndexUpdates: '更新区域', mobileIndexTrust: '可信度类型', skillFootnote: 'All 22 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Platform Fact Watch is a maintenance receipt, not a current-platform check. Request Escalation has one isolated mixed-request forward test only; it is not learner or runtime evidence. Adversarial Project Review is not an external review.', lab13Status: 'maintainer reference accepted · learner not run',
+    skillsEyebrow: 'Capability layer', skillsTitle: 'Twenty-five Skills. Distinct jobs.', skillsIntro: 'A Skill is a method with a trigger, an input check, boundaries, stop conditions, an output contract, and a way to verify it.', skillCoach: 'Choose a learning path and practice boundary.', skillProtocol: 'Turn a vague request into an executable contract.', skillEvidence: 'Split completion claims into checkable evidence.', skillSelector: 'Choose a minimum viable capability set.', skillWorkflow: 'Manage stages, checkpoints, and hand-off.', skillResearch: 'Converge a question into auditable knowledge.', skillContext: 'Keep stable principles separate from changing facts.', skillLearningName: 'Learning Coach', skillLearning: 'Practise with recall, correction, delayed review, and transfer.', skillSourceName: 'Source Investigator', skillSource: 'Turn broad searches into bounded source-backed investigations.', skillSignalName: 'Field Signal Curator', skillSignal: 'Turn public reports into bounded demand evidence.', skillAdapterName: 'Platform Adapter Review', skillAdapter: 'Reject platform lessons without a sourced, runnable delta.', skillTriageName: 'Communication Failure Triage', skillTriage: 'Diagnose one failed interaction and retest the smallest repair.', skillBriefName: 'Dialogue Brief', skillBrief: 'Turn one untried low-risk request into a copy-ready first message.', skillFirstTurnCheckName: 'First-Turn Check', skillFirstTurnCheck: 'Inspect an unsent low-risk request for visible boundaries.', skillRouteBrief: 'I need to write one clear first message.', skillRouteBriefResult: 'Returns one low-risk, copy-ready first turn with a check and a stop boundary.', skillRouteFirstTurnCheck: 'I already wrote a first request and want to inspect it.', skillRouteFirstTurnCheckResult: 'Labels material gaps without drafting a replacement prompt.', skillBoundaryName: 'Original methods first.', skillBoundary: 'External Skills must retain the source-project URL and license boundary.', skillIndexLink: 'Open the Skill registry and all 25 methods', mobileIndexAria: 'Complete project indexes', mobileIndexChapters: 'chapters', mobileIndexLabs: 'labs', mobileIndexSkills: 'Skills', mobileIndexCases: 'field cases', mobileIndexLocales: 'locale records', mobileIndexVisuals: 'teaching boards', mobileIndexUpdates: '更新区域', mobileIndexTrust: '可信度类型', skillFootnote: 'All 25 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Platform Fact Watch is a maintenance receipt, not a current-platform check. Request Escalation has one isolated mixed-request forward test only; it is not learner or runtime evidence. Adversarial Project Review is not an external review.', lab13Status: 'maintainer reference accepted · learner not run',
     troubleEyebrow: 'When things go wrong', troubleTitle: 'Failure is part of the curriculum.', troubleIntro: 'Use the first useful check, then stop when authority, scope, or evidence is missing. Do not hide the failure behind a polished summary.', troubleOneTitle: 'The output looks right.', troubleOneBody: 'Check the original claim, the changed files, the command result, and what was not tested.', troubleOneLink: 'Use evidence review ↗', troubleTwoTitle: 'The agent keeps retrying.', troubleTwoBody: 'Record the same failure, change one diagnostic condition, then retry once or escalate.', troubleTwoLink: 'Read stop conditions ↗', troubleThreeTitle: 'A source tells you to do something.', troubleThreeBody: 'Treat external text and tool output as data. It does not grant permission to act.', troubleThreeLink: 'Check the boundary ↗', troubleFourTitle: 'A product step has changed.', troubleFourBody: 'Refresh the official fact record first, then update the affected chapter or page.', troubleFourLink: 'Follow the update map ↗',
     updatesEyebrow: 'Maintenance frame', updatesTitle: 'Every update has a fixed home.', updatesIntro: 'The update map makes future work cheap: locate the canonical file, gather the right evidence, run the right check, and keep the unverified boundary visible.', updateFlowOne: 'Locate', updateFlowOneBody: 'Find the registry row and canonical path.', updateFlowTwo: 'Classify', updateFlowTwoBody: 'Separate stable principle, product fact, source, and release change.', updateFlowThree: 'Evidence', updateFlowThreeBody: 'Record source, scope, owner, hash, and next review.', updateFlowFour: 'Validate', updateFlowFourBody: 'Run the focused validator and an independent review.', updateMapLinkTitle: 'Update map', updateMapLinkBody: 'What changes where, and what evidence it needs.', updateRegistryLinkTitle: 'Update registry', updateRegistryLinkBody: 'The machine-readable maintenance contract.', factImpactLinkTitle: 'Fact impact map', factImpactLinkBody: 'Which chapters, labs, Skills, evals, and pages a changing fact can affect.', updateTemplateLinkTitle: 'Update record', updateTemplateLinkBody: 'A repeatable record for non-trivial changes.', lifecycleLinkTitle: 'Content lifecycle', lifecycleLinkBody: 'The evidence and release gates.',
     statusEyebrow: 'Evidence boundary', statusTitle: 'A status is a claim about evidence.', statusIntro: 'This project does not turn document count, Skill count, or one successful output into “mastery.” Use the status that the evidence supports.', statusDraft: 'Still being written or missing the minimum check.', statusCandidate: 'Structure and basic checks pass; fresh evidence is still needed.', statusVerified: 'The declared scope has positive, boundary, failure, and transfer evidence.', statusProduction: 'Safety, maintenance, version, license, and release gates also pass.', statusSourceBefore: 'Current evidence is recorded in', statusSourceLink: 'the current status source', statusReviewBefore: ' and explained by ', statusReviewLink: 'the current-state review', statusSourceAfter: '; the page itself remains candidate until browser review is recorded.', nextEyebrow: 'Next action', nextTitle: 'Bring one small problem.', nextBody: 'Open the task contract, choose a reversible first step, and keep the diff. That is the shortest useful way to begin.', nextPrimary: 'Open chapter 2', nextSecondary: 'Then run lab 001', footerTagline: 'A practical learning and practice system for Codex.', mobileRouteFixture: 'Need a safe file? Open the fixture', visualCaseIntro: 'Two original boards show the core loop: make the work inspectable, then practise it under changed conditions.', visualCaseBoundary: 'project-authored teaching visuals · not runtime or learner evidence', footerMeta: 'candidate · evidence boundary reviewed 2026-08-13'
@@ -37,7 +37,7 @@ const copy = {
     labFirstSeen: '首次引入', labReused: '复用自', labCapability: '新增能力', labArtifact: '新增产物', labAcceptance: '新增验收',
     chaptersEyebrow: '阅读路线', chaptersTitle: '22 章，四种进入方式。', chaptersIntro: '顺读建立心智模型；被真实任务卡住时按路线跳读。每条路线都会回到练习和证据。', filterAll: '全部章节', filterA: 'A · 初识 Codex', filterB: 'B · 真实工作', filterC: 'C · 能力扩展', filterD: 'D · 团队实践', routeATitle: '第一次接触 Codex', routeADesc: '01—06 · 完成第一个安全任务', routeBTitle: '把 Codex 用于真实工作', routeBDesc: '07—13 · 设计可验证工作流', routeCTitle: '能力与 Agent 协作', routeCDesc: '14—18 · 选择最小有效组合', routeDTitle: '从熟练到团队实践', routeDDesc: '19—22 · 把个人方法变成团队能力', candidateStatus: 'candidate', chapter01: '先理解 GPT，再理解 Codex', chapter02: '完成安全、可验证的任务', chapter03: '把愿望变成任务协议', chapter04: '上下文、权限与 Agent 边界', chapter05: '选择正确的 Codex 工作面', chapter06: '模型选择不是模型崇拜', chapter07: 'Skill、Plugin、MCP 与工具如何分工', chapter08: '从定义到交付的完整生命周期', chapter09: '验证、怀疑与恢复', chapter10: '规划与竖向切片', chapter11: '设计一个真正有用的 Skill', chapter12: 'Agent 的循环、状态与停止条件', chapter13: '文件、终端、浏览器与 GitHub 的行动边界', chapter14: '发现、安装和审查外部 Skill', chapter15: '研究：从问题到可审查知识', chapter16: '工程：从想法到可靠软件', chapter17: '营销：从产品理解到增长实验', chapter18: '内容、设计、数据与自动化', chapter19: '评估模型和工作流', chapter20: '建立个人 Codex 工作系统', chapter21: '建立团队能力系统', chapter22: '保持系统更新并可恢复',
     labsEyebrow: '实验室', labsTitle: '把原理变成可观察的动作。', labsIntro: '实验是低风险、可复现的任务。每个实验都写清设置、证据、失败变体、秘密边界和复盘。', draftStatus: 'draft', startingLab: '起点实验', lab01Title: '第一个安全任务', lab01Body: '在沙盒项目中，让 Codex 先检查再编辑，把“完成了”变成可检查的差异。', lab02Title: '任务协议', lab02Body: '把模糊请求拆成目标、输入、约束、验收和失败处理。', lab03Title: '证据审查', lab03Body: '发现一个看似完成却没有证据支撑声明的结果。', lab04Title: 'Skill 选择', lab04Body: '解释选择理由，拒绝用目录大小代替适配判断。', lab05Title: '设计一个 Skill', lab05Body: '把稳定方法变成有边界、有证据、有失败案例的能力包。', lab06Title: 'Agent 停止条件', lab06Body: '为成功、缺失输入、可恢复失败和权限冲突定义停点。', lab07Title: '行动边界', lab07Body: '比较读取、编辑、运行、提交、推送和发布需要的证据。', lab08Title: '研究问题', lab08Body: '把宽泛主题变成问题、来源计划和最小证据表。', lab09Title: '工程生命周期', lab09Body: '比较直接实现与完整生命周期，并记录返工证据。', lab10Title: '共享产品上下文', lab10Body: '版本化共享产品理解，并区分事实与假设。', lab11Title: 'GPT 与 Codex 边界', lab11Body: '用静态任务卡分清生成、执行、验证和外部副作用。', lab12Title: '团队能力迁移', lab12Body: '为版本、负责人、权限、独立复现和回滚建立契约。', labsIndexLink: '打开实验规则和全部 18 个入口',
-    skillsEyebrow: '能力层', skillsTitle: '二十二个 Skill，各有职责。', skillsIntro: 'Skill 是带触发器、输入检查、边界、停止条件、输出契约和验证方式的方法包。', skillCoach: '选择学习路径和练习边界。', skillProtocol: '把模糊请求变成可执行契约。', skillEvidence: '把完成声明拆成可检查证据。', skillSelector: '选择最小有效能力组合。', skillWorkflow: '管理阶段、检查点和交接。', skillResearch: '把问题收敛为可审查知识。', skillContext: '分开稳定原则和易变事实。', skillLearningName: '学习教练', skillLearning: '通过回忆、纠错、延迟复习和迁移进行练习。', skillSourceName: '来源调查', skillSource: '把宽泛搜索变成有边界、有来源的调查。', skillSignalName: '现场信号整理', skillSignal: '把公开报告整理成有边界的需求证据。', skillAdapterName: '平台适配审查', skillAdapter: '拒绝没有来源、运行和真实差异的平台教程。', skillTriageName: '沟通故障分诊', skillTriage: '诊断一次失败交互，并复测最小修复。', skillBriefName: '对话 Brief', skillBrief: '把一次尚未发送的低风险请求整理成可复制的首轮消息。', skillFirstTurnCheckName: '首轮请求检查', skillFirstTurnCheck: '检查尚未发送的低风险请求是否明确了边界。', skillRouteBrief: '我需要写一条清晰的首轮消息。', skillRouteBriefResult: '产出带检查与停止边界的低风险、可复制首轮消息。', skillRouteFirstTurnCheck: '我已经写好首轮请求，想先检查它。', skillRouteFirstTurnCheckResult: '标出关键缺口，不代写新的提示词。', skillBoundaryName: '原创方法优先。', skillBoundary: '外部 Skill 必须保留原项目链接和许可证边界。', skillIndexLink: '打开 Skill 登记表与全部 21 个方法', mobileIndexAria: '完整项目索引', mobileIndexChapters: '章', mobileIndexLabs: '实验', mobileIndexSkills: 'Skill', mobileIndexCases: '现场案例', mobileIndexLocales: '语言记录', mobileIndexVisuals: '教学图板', mobileIndexUpdates: 'update areas', mobileIndexTrust: 'trust families', skillFootnote: '22 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。平台事实巡检是维护记录，不是当前平台检查。请求分流目前只有一次隔离的混合请求前向测试；它不是学习者或运行时证据。对抗式项目审查不是外部评审。', lab13Status: '维护者参考运行已接受 · 学习者尚未运行',
+    skillsEyebrow: '能力层', skillsTitle: '二十五个 Skill，各有职责。', skillsIntro: 'Skill 是带触发器、输入检查、边界、停止条件、输出契约和验证方式的方法包。', skillCoach: '选择学习路径和练习边界。', skillProtocol: '把模糊请求变成可执行契约。', skillEvidence: '把完成声明拆成可检查证据。', skillSelector: '选择最小有效能力组合。', skillWorkflow: '管理阶段、检查点和交接。', skillResearch: '把问题收敛为可审查知识。', skillContext: '分开稳定原则和易变事实。', skillLearningName: '学习教练', skillLearning: '通过回忆、纠错、延迟复习和迁移进行练习。', skillSourceName: '来源调查', skillSource: '把宽泛搜索变成有边界、有来源的调查。', skillSignalName: '现场信号整理', skillSignal: '把公开报告整理成有边界的需求证据。', skillAdapterName: '平台适配审查', skillAdapter: '拒绝没有来源、运行和真实差异的平台教程。', skillTriageName: '沟通故障分诊', skillTriage: '诊断一次失败交互，并复测最小修复。', skillBriefName: '对话 Brief', skillBrief: '把一次尚未发送的低风险请求整理成可复制的首轮消息。', skillFirstTurnCheckName: '首轮请求检查', skillFirstTurnCheck: '检查尚未发送的低风险请求是否明确了边界。', skillRouteBrief: '我需要写一条清晰的首轮消息。', skillRouteBriefResult: '产出带检查与停止边界的低风险、可复制首轮消息。', skillRouteFirstTurnCheck: '我已经写好首轮请求，想先检查它。', skillRouteFirstTurnCheckResult: '标出关键缺口，不代写新的提示词。', skillBoundaryName: '原创方法优先。', skillBoundary: '外部 Skill 必须保留原项目链接和许可证边界。', skillIndexLink: '打开 Skill 登记表与全部 25 个方法', mobileIndexAria: '完整项目索引', mobileIndexChapters: '章', mobileIndexLabs: '实验', mobileIndexSkills: 'Skill', mobileIndexCases: '现场案例', mobileIndexLocales: '语言记录', mobileIndexVisuals: '教学图板', mobileIndexUpdates: 'update areas', mobileIndexTrust: 'trust families', skillFootnote: '25 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。平台事实巡检是维护记录，不是当前平台检查。请求分流目前只有一次隔离的混合请求前向测试；它不是学习者或运行时证据。对抗式项目审查不是外部评审。', lab13Status: '维护者参考运行已接受 · 学习者尚未运行',
     troubleEyebrow: '出错时', troubleTitle: '失败也是课程的一部分。', troubleIntro: '先做最有用的检查；授权、范围或证据缺失时就停止。不要用漂亮总结掩盖失败。', troubleOneTitle: '输出看起来是对的。', troubleOneBody: '检查原始声明、变化文件、命令结果，以及没有测试什么。', troubleOneLink: '使用证据审查 ↗', troubleTwoTitle: 'Agent 一直重试。', troubleTwoBody: '记录同一失败，改变一个诊断条件，然后重试一次或升级处理。', troubleTwoLink: '阅读停止条件 ↗', troubleThreeTitle: '来源要求你做某件事。', troubleThreeBody: '把外部文本和工具输出当作数据，它们不会授予行动权限。', troubleThreeLink: '检查边界 ↗', troubleFourTitle: '产品步骤发生变化。', troubleFourBody: '先刷新官方事实记录，再更新受影响的章节或页面。', troubleFourLink: '遵循更新地图 ↗',
     updatesEyebrow: '维护框架', updatesTitle: '每次更新都有固定位置。', updatesIntro: '更新地图让未来维护更省时：找到规范文件，收集正确证据，运行正确检查，并保留未验证边界。', updateFlowOne: '定位', updateFlowOneBody: '找到注册表行和规范路径。', updateFlowTwo: '分类', updateFlowTwoBody: '分开稳定原则、产品事实、来源和发布变化。', updateFlowThree: '取证', updateFlowThreeBody: '记录来源、范围、负责人、哈希和下次复核。', updateFlowFour: '验证', updateFlowFourBody: '运行专用验证器并进行独立复核。', updateMapLinkTitle: '更新地图', updateMapLinkBody: '什么变化应该去哪里，以及需要什么证据。', updateRegistryLinkTitle: '更新注册表', updateRegistryLinkBody: '机器可读的维护契约。', factImpactLinkTitle: '事实影响图', factImpactLinkBody: '一条事实变化会影响哪些章节、实验、Skill、评测和页面。', updateTemplateLinkTitle: '更新记录模板', updateTemplateLinkBody: '记录非简单更新的可重复模板。', lifecycleLinkTitle: '内容生命周期', lifecycleLinkBody: '证据和发布门槛。',
     statusEyebrow: '证据边界', statusTitle: '状态是关于证据的声明。', statusIntro: '本项目不把文档数量、Skill 数量或一次成功输出当作“掌握”。使用证据真正支持的状态。', statusDraft: '仍在编写，或尚未完成最低检查。', statusCandidate: '结构和基本检查通过，但仍需要新鲜证据。', statusVerified: '在声明范围内具备正例、边界例、失败例和迁移证据。', statusProduction: '安全、维护、版本、许可证和发布门槛也全部通过。', statusSourceBefore: '当前证据记录在', statusSourceLink: '当前状态源', statusReviewBefore: '，说明见', statusReviewLink: '当前状态审查记录', statusSourceAfter: '；在浏览器验收记录前，页面自身仍为 candidate。', nextEyebrow: '下一步', nextTitle: '带一个小问题来。', nextBody: '打开任务协议，选择可回滚的第一步并保留差异。这是最短的有效起点。', nextPrimary: '打开第 2 章', nextSecondary: '然后运行实验 001', footerTagline: '一套面向 Codex 的实用学习与实践系统。', mobileRouteExplore: '探索练习路线与完整索引', visualCaseIntro: '两张原创教学图展示核心闭环：让工作可检查，再在变化条件下练习。', visualCaseBoundary: '项目原创教学图 · 不是运行或学习者证据', footerMeta: '候选 · 证据边界复核于 2026-08-13'
@@ -207,10 +207,10 @@ Object.assign(copy.en, {
   fileSiteTitle: 'Public showcase', fileSiteBody: 'index.html, styles.css, app.js, and generated learning-path data.',
   fileChaptersTitle: 'Core learning text', fileChaptersBody: '22 chapters; current artifact status: candidate.',
   fileLabsTitle: 'Observable practice', fileLabsBody: '18 labs; current status: draft; run status: not_run.',
-  fileSkillsTitle: 'Reusable methods', fileSkillsBody: '23 project Skills with triggers, boundaries, and evidence contracts.',
+  fileSkillsTitle: 'Reusable methods', fileSkillsBody: '25 project Skills with triggers, boundaries, and evidence contracts.',
   fileDocsTitle: 'Governance and research', fileDocsBody: 'Status, sources, field reports, update rules, and quality records.',
   ledgerTitle: 'Content state', ledgerIntro: 'A compact reading of the current status source. Status describes evidence, not ambition.',
-  ledgerProject: 'Project', ledgerChapters: 'Chapters · 22', ledgerLabs: 'Labs · 18', ledgerSkills: 'Skills · 23', ledgerResearch: 'Field research', ledgerResearchNote: 'user reports; not locally reproduced', ledgerSource: 'Open the current status source',
+  ledgerProject: 'Project', ledgerChapters: 'Chapters · 22', ledgerLabs: 'Labs · 18', ledgerSkills: 'Skills · 25', ledgerResearch: 'Field research', ledgerResearchNote: 'user reports; not locally reproduced', ledgerSource: 'Open the current status source',
   localeTitle: 'Six-language route', localeIntro: 'Six repository entry locales are registered. All six route tokens are exposed; EN / 中文 UI is reviewed, while the other locales use an explicit English UI fallback during migration.',
   localeEnglish: 'available · default', localeChinese: 'available · current toggle', localeSpanish: 'route exposed · UI fallback', localeGerman: 'route exposed · UI fallback', localeJapanese: 'route exposed · UI fallback', localeKorean: 'route exposed · UI fallback', localeRule: 'Route rule: translated artifacts carry a locale suffix and link to the same locale. A route token is not the same as a completed translation or reviewed UI.',
   researchTitle: 'Real problems, with the boundary attached.', researchIntro: 'The research index turns public Codex issues, first-party safety guidance, and forum reports into symptoms, source-scoped boundaries, safe checks, and teaching links. It does not claim an official root cause or local reproduction.', researchBoundary: 'source-scoped guidance and public reports · no local reproduction recorded', researchIndexLink: 'Open the field-problems index', researchIndexBody: 'Codex, surfaces, handoffs, authentication, worktrees, and verification symptoms.', researchForumsLink: 'Read the forum case notes', researchForumsBody: 'Sandbox network allowlists, Windows spawn failures, approvals, encoding, and private paths.', researchLiveLink: 'Review three current field cases', researchLiveBody: 'Worktree target, hidden evidence, and verification scope; all remain unverified locally.', researchSafetyLink: 'Read the AI collaboration safety boundaries', researchSafetyBody: 'Prompt injection, minimum necessary input, action authority, and verification; source-backed candidate research.', researchReceiptsLink: 'Read the AI safety field signals', researchReceiptsBody: 'Public reports, claim classification, and a checkpoint for long research tasks; candidate research.', researchFirstTurnLink: 'Draft a universal first turn', researchFirstTurnBody: 'A six-field, text-only Spanish or research card; candidate research, not platform equivalence or an outcome claim.', researchPublicInterestLink: 'Run the public-interest safety inquiry', researchPublicInterestBody: 'A fixed fictional case: people, data boundary, human control, evidence, and stop; candidate / not_run.', problemPublicInterestSafetyTitle: 'I need to assess an AI idea that could affect people.', problemPublicInterestSafetyBody: 'Name one decision, the people it could burden, necessary data, human recourse, evidence, and the point where the work must stop.', problemPublicInterestSafetyLink: 'Run the fixed safety inquiry · candidate · not_run ↗',
@@ -312,7 +312,7 @@ Object.assign(copy.en, {
   repositoryStripIntro: 'The public reader is rendered from site/. The canonical learning and maintenance sources below keep their current evidence boundary visible.',
   repositoryChapters: '22 chapters · candidate',
   repositoryLabs: '18 labs · 2 maintainer references · 0 learner runs',
-  repositorySkills: '23 reusable Skills · candidate',
+  repositorySkills: '25 reusable Skills · candidate',
   repositoryDocs: 'Governance and field research · candidate; reports not locally reproduced',
 });
 
@@ -372,7 +372,7 @@ Object.assign(copy.zh, {
   repositoryStripIntro: '公开阅读页面由 site/ 渲染。下面是教程与维护的规范源目录，它们保留当前证据边界。',
   repositoryChapters: '22 章 · candidate',
   repositoryLabs: '18 个实验 · 2 个维护者参考运行 · 0 个学习者运行',
-  repositorySkills: '23 个可复用 Skill · candidate',
+  repositorySkills: '25 个可复用 Skill · candidate',
   repositoryDocs: '治理与现实研究 · candidate；报告尚未在本地复现',
 });
 
@@ -405,7 +405,7 @@ Object.assign(copy.zh, {
 });
 
 Object.assign(copy.en, {
-  skillsTitle: 'Twenty-three Skills. Distinct jobs.',
+  skillsTitle: 'Twenty-five Skills. Distinct jobs.',
   skillPromptCardName: 'Prompt Card Editor',
   skillPromptCard: 'Turn one authorized prompt idea into a source-aware teaching card.',
   skillAdversarialName: 'Adversarial Project Review',
@@ -421,15 +421,15 @@ Object.assign(copy.en, {
   troubleFourBody: 'Keep the task goal; pause only the named step, then refresh the official fact record before resuming.',
   skillRouteEscalation: 'I am not sure what kind of help I need yet.',
   skillRouteEscalationResult: 'Chooses the smallest safe lane before drafting, researching, or acting.',
-  skillIndexLink: 'Open the Skill registry and all 23 methods',
-  skillFootnote: 'All 23 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Practice Target sets up one first attempt; it does not prove learning. Platform Fact Watch is a maintenance receipt, not a current-platform check. LLM Comparison Protocol is an unrun comparison method, not a model ranking. Adversarial Project Review is not an external review.',
-  fileSkillsBody: '23 project Skills with triggers, boundaries, and evidence contracts.',
-  ledgerSkills: 'Skills · 23',
-  repositorySkills: '23 reusable Skills · candidate',
+  skillIndexLink: 'Open the Skill registry and all 25 methods',
+  skillFootnote: 'All 25 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Practice Target sets up one first attempt; it does not prove learning. Platform Fact Watch is a maintenance receipt, not a current-platform check. LLM Comparison Protocol is an unrun comparison method, not a model ranking. Adversarial Project Review is not an external review.',
+  fileSkillsBody: '25 project Skills with triggers, boundaries, and evidence contracts.',
+  ledgerSkills: 'Skills · 25',
+  repositorySkills: '25 reusable Skills · candidate',
 });
 
 Object.assign(copy.zh, {
-  skillsTitle: '二十二个 Skill，各有职责。',
+  skillsTitle: '二十五个 Skill，各有职责。',
   skillPromptCardName: '提示卡编辑器 Prompt Card Editor',
   skillPromptCard: '把一个已授权的提示想法整理成带来源边界的教学卡。',
   skillAdversarialName: '对抗式项目审查',
@@ -442,22 +442,22 @@ Object.assign(copy.zh, {
   skillPracticeTarget: '把宽泛的学习愿望变成一次可观察的首次尝试。',
   skillRouteEscalation: '我还不确定自己需要哪一种帮助。',
   skillRouteEscalationResult: '在起草、研究或行动前选择最小且安全的路径。',
-  skillIndexLink: '打开 Skill 登记表与全部 21 个方法',
-  skillFootnote: '22 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。练习目标用于准备一次首次尝试，不能证明学习结果。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
+  skillIndexLink: '打开 Skill 登记表与全部 25 个方法',
+  skillFootnote: '25 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。练习目标用于准备一次首次尝试，不能证明学习结果。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
   fileSkillsBody: '21 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
   ledgerSkills: 'Skill \u00b7 21',
-  repositorySkills: '22 个可复用 Skill · candidate',
+  repositorySkills: '25 个可复用 Skill · candidate',
 });
 
 Object.assign(copy.zh, {
-  skillsTitle: '二十二个 Skill，各有职责。',
+  skillsTitle: '二十五个 Skill，各有职责。',
   skillFactWatchName: '平台事实巡检 Platform Fact Watch',
   skillFactWatch: '在命名步骤误导读者之前，先定位变化的产品事实。',
-  skillIndexLink: '打开 Skill 登记表与全部 21 个方法',
-  skillFootnote: '22 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。练习目标用于准备一次首次尝试，不能证明学习结果。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
-  fileSkillsBody: '22 个项目 Skill，包含触发、边界与证据契约。',
-  ledgerSkills: 'Skill · 22',
-  repositorySkills: '22 个可复用 Skill · candidate',
+  skillIndexLink: '打开 Skill 登记表与全部 25 个方法',
+  skillFootnote: '25 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。练习目标用于准备一次首次尝试，不能证明学习结果。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
+  fileSkillsBody: '25 个项目 Skill，包含触发、边界与证据契约。',
+  ledgerSkills: 'Skill · 25',
+  repositorySkills: '25 个可复用 Skill · candidate',
   mobileIndexUpdates: '更新区域',
   mobileIndexTrust: '可信度类型',
   troubleFourBody: '保留任务目标；只暂停命名步骤，然后刷新官方事实记录再继续。',
@@ -653,47 +653,47 @@ Object.assign(copy.zh, {
 });
 
 Object.assign(copy.en, {
-  skillsTitle: 'Twenty-three Skills. Distinct jobs.',
+  skillsTitle: 'Twenty-five Skills. Distinct jobs.',
   skillInterruptionName: 'Interruption Checkpoint',
   skillInterruption: 'Preserve what is known before a retry, a model switch, or a new task.',
-  skillIndexLink: 'Open the Skill registry and all 23 methods',
-  skillFootnote: 'All 23 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Interruption Checkpoint preserves a task receipt; it does not retry or recover work. Practice Target sets up one first attempt; it does not prove learning. Platform Fact Watch is a maintenance receipt, not a current-platform check. LLM Comparison Protocol is an unrun comparison method, not a model ranking. Adversarial Project Review is not an external review.',
-  fileSkillsBody: '23 project Skills with triggers, boundaries, and evidence contracts.',
-  ledgerSkills: 'Skills · 23',
-  repositorySkills: '23 reusable Skills · candidate',
+  skillIndexLink: 'Open the Skill registry and all 25 methods',
+  skillFootnote: 'All 25 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Interruption Checkpoint preserves a task receipt; it does not retry or recover work. Practice Target sets up one first attempt; it does not prove learning. Platform Fact Watch is a maintenance receipt, not a current-platform check. LLM Comparison Protocol is an unrun comparison method, not a model ranking. Adversarial Project Review is not an external review.',
+  fileSkillsBody: '25 project Skills with triggers, boundaries, and evidence contracts.',
+  ledgerSkills: 'Skills · 25',
+  repositorySkills: '25 reusable Skills · candidate',
 });
 
 Object.assign(copy.zh, {
-  skillsTitle: '二十二个 Skill，各有职责。',
+  skillsTitle: '二十五个 Skill，各有职责。',
   skillInterruptionName: '中断检查点',
   skillInterruption: '在重试、切换模型或创建新任务前，保留已经知道的事实。',
-  skillIndexLink: '打开 Skill 登记表与全部 21 个方法',
-  skillFootnote: '22 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。中断检查点只保留任务回执，不会重试或恢复工作。练习目标用于准备一次首次尝试，不能证明学习结果。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
+  skillIndexLink: '打开 Skill 登记表与全部 25 个方法',
+  skillFootnote: '25 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。中断检查点只保留任务回执，不会重试或恢复工作。练习目标用于准备一次首次尝试，不能证明学习结果。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
   fileSkillsBody: '21 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
   ledgerSkills: 'Skill \u00b7 21',
-  repositorySkills: '22 个可复用 Skill · candidate',
+  repositorySkills: '25 个可复用 Skill · candidate',
 });
 
 Object.assign(copy.en, {
-  skillsTitle: 'Twenty-three Skills. Distinct jobs.',
+  skillsTitle: 'Twenty-five Skills. Distinct jobs.',
   skillHandoffName: 'Shift Handoff',
   skillHandoff: 'Separate reusable rules from today’s supplied work item.',
-  skillIndexLink: 'Open the Skill registry and all 23 methods',
-  skillFootnote: 'All 23 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Shift Handoff separates stable criteria from one new item; it does not execute or assume model memory. Interruption Checkpoint preserves a task receipt; it does not retry or recover work. Practice Target sets up one first attempt; it does not prove learning. Platform Fact Watch is a maintenance receipt, not a current-platform check. LLM Comparison Protocol is an unrun comparison method, not a model ranking. Adversarial Project Review is not an external review.',
-  fileSkillsBody: '23 project Skills with triggers, boundaries, and evidence contracts.',
-  ledgerSkills: 'Skills · 23',
-  repositorySkills: '23 reusable Skills · candidate',
+  skillIndexLink: 'Open the Skill registry and all 25 methods',
+  skillFootnote: 'All 25 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Shift Handoff separates stable criteria from one new item; it does not execute or assume model memory. Interruption Checkpoint preserves a task receipt; it does not retry or recover work. Practice Target sets up one first attempt; it does not prove learning. Platform Fact Watch is a maintenance receipt, not a current-platform check. LLM Comparison Protocol is an unrun comparison method, not a model ranking. Adversarial Project Review is not an external review.',
+  fileSkillsBody: '25 project Skills with triggers, boundaries, and evidence contracts.',
+  ledgerSkills: 'Skills · 25',
+  repositorySkills: '25 reusable Skills · candidate',
 });
 
 Object.assign(copy.zh, {
-  skillsTitle: '二十二个 Skill，各有职责。',
+  skillsTitle: '二十五个 Skill，各有职责。',
   skillHandoffName: '工作交接',
   skillHandoff: '把稳定准则与当天提供的工作项分开。',
-  skillIndexLink: '打开 Skill 登记表与全部 22 个方法',
-  skillFootnote: '22 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。工作交接会拆开稳定准则与当天这项内容，不会执行任务或假设模型记得上一轮。中断检查点只保留任务回执，不会重试或恢复工作。练习目标用于准备一次首次尝试，不能证明学习结果。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
+  skillIndexLink: '打开 Skill 登记表与全部 25 个方法',
+  skillFootnote: '25 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。工作交接会拆开稳定准则与当天这项内容，不会执行任务或假设模型记得上一轮。中断检查点只保留任务回执，不会重试或恢复工作。练习目标用于准备一次首次尝试，不能证明学习结果。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
   fileSkillsBody: '22 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
   ledgerSkills: 'Skill \u00b7 22',
-  repositorySkills: '22 个可复用 Skill · candidate',
+  repositorySkills: '25 个可复用 Skill · candidate',
 });
 
 const currentCopy = () => copy[effectiveUiLanguage] || copy.en;
@@ -1391,20 +1391,20 @@ renderFirstWinRecord();
 // source. Locale-specific course coverage remains governed by the matrix; this
 // count does not imply that every Skill has runtime or learner evidence.
 Object.assign(copy.en, {
-  skillsTitle: 'Twenty-three Skills. Distinct jobs.',
-  skillIndexLink: 'Open the Skill registry and all 23 methods',
-  skillFootnote: 'All 23 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Platform Observation Record documents one visible surface; it is not a capability or safety claim. Practice Target sets up one first attempt; it does not prove learning. Interruption Checkpoint preserves a task receipt; it does not retry or recover work. Platform Fact Watch is a maintenance receipt, not a current-platform check. LLM Comparison Protocol is an unrun comparison method, not a model ranking. Adversarial Project Review is not an external review.',
-  fileSkillsBody: '23 project Skills with triggers, boundaries, and evidence contracts.',
-  ledgerSkills: 'Skills · 23',
-  repositorySkills: '23 reusable Skills · candidate',
+  skillsTitle: 'Twenty-five Skills. Distinct jobs.',
+  skillIndexLink: 'Open the Skill registry and all 25 methods',
+  skillFootnote: 'All 25 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Platform Observation Record documents one visible surface; it is not a capability or safety claim. Practice Target sets up one first attempt; it does not prove learning. Interruption Checkpoint preserves a task receipt; it does not retry or recover work. Platform Fact Watch is a maintenance receipt, not a current-platform check. LLM Comparison Protocol is an unrun comparison method, not a model ranking. Adversarial Project Review is not an external review.',
+  fileSkillsBody: '25 project Skills with triggers, boundaries, and evidence contracts.',
+  ledgerSkills: 'Skills · 25',
+  repositorySkills: '25 reusable Skills · candidate',
 });
 Object.assign(copy.zh, {
-  skillsTitle: '二十三个 Skill，各有职责。',
+  skillsTitle: '二十五个 Skill，各有职责。',
   skillIndexLink: '打开 Skill 登记表与全部 23 个方法',
-  skillFootnote: '23 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。平台观察记录只记录一个可见工作面，不是能力或安全性声明。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
-  fileSkillsBody: '23 个项目 Skill，包含触发、边界与证据契约。',
-  ledgerSkills: 'Skill · 23',
-  repositorySkills: '23 个可复用 Skill · candidate',
+  skillFootnote: '25 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。平台观察记录只记录一个可见工作面，不是能力或安全性声明。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
+  fileSkillsBody: '25 个项目 Skill，包含触发、边界与证据契约。',
+  ledgerSkills: 'Skill · 25',
+  repositorySkills: '25 个可复用 Skill · candidate',
 });
 Object.assign(copy.zh, {
   fileSkillsBody: '23 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
@@ -1867,7 +1867,7 @@ copy.es = {
   'ledgerProject': 'Proyecto',
   'ledgerChapters': 'Capítulos · 22',
   'ledgerLabs': 'Labs · 18',
-  'ledgerSkills': 'Skills · 23',
+  'ledgerSkills': 'Skills · 25',
   'ledgerResearch': 'Investigación de campo',
   'ledgerResearchNote': 'informes de usuarios; sin reproducción local',
   'ledgerSource': 'Abrir la fuente de estado actual',
@@ -2461,7 +2461,7 @@ copy.ja = {
   'ledgerProject': 'プロジェクト',
   'ledgerChapters': '章 · 22',
   'ledgerLabs': 'Lab · 18',
-  'ledgerSkills': 'Skills · 23',
+  'ledgerSkills': 'Skills · 25',
   'ledgerResearch': 'フィールドリサーチ',
   'ledgerResearchNote': 'ユーザーレポート。ローカルでは再現されていない',
   'ledgerSource': '現在のステータスソースを開く',
@@ -3055,7 +3055,7 @@ copy.ko = {
   'ledgerProject': '프로젝트',
   'ledgerChapters': '챕터 · 22',
   'ledgerLabs': '랩 · 18',
-  'ledgerSkills': 'Skill · 23',
+  'ledgerSkills': 'Skill · 25',
   'ledgerResearch': '현장 조사',
   'ledgerResearchNote': '사용자 보고 · 로컬 재현 안 됨',
   'ledgerSource': '현재 상태 출처 열기',
@@ -3649,7 +3649,7 @@ copy.de = {
   'ledgerProject': 'Projekt',
   'ledgerChapters': 'Kapitel · 22',
   'ledgerLabs': 'Labs · 18',
-  'ledgerSkills': 'Skills · 23',
+  'ledgerSkills': 'Skills · 25',
   'ledgerResearch': 'Feldrecherche',
   'ledgerResearchNote': 'Nutzerberichte; nicht lokal reproduziert',
   'ledgerSource': 'Die aktuelle Statusquelle öffnen',
@@ -3876,6 +3876,200 @@ Object.assign(copy.de, {
   'localeKorean': 'verfügbar · 한국어',
   'localeRule': 'Routenregel: Jedes übersetzte Artefakt trägt das Sprachsuffix und verlinkt auf dieselbe Sprache; eine Sprachroute entspricht einem vollständigen, suffigierten Übersetzungssatz.',
   'menuCloseAria': 'Navigation schließen'
+});
+
+Object.assign(copy.en, {
+  'skillsTitle': 'Twenty-five Skills. Distinct jobs.',
+  'skillIndexLink': 'Open the Skill registry and all 25 methods',
+  'skillFootnote': 'All 25 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Language Partner runs one typed exchange; it does not teach a language or promise fluency. Interview Rehearsal coaches one answer; it does not predict interview questions or promise an outcome. Interruption Checkpoint preserves a task receipt; it does not retry or recover work. Practice Target sets up one first attempt; it does not prove learning. Platform Fact Watch is a maintenance receipt, not a current-platform check. LLM Comparison Protocol is an unrun comparison method, not a model ranking. Adversarial Project Review is not an external review.',
+  'fileSkillsBody': '25 project Skills with triggers, boundaries, and evidence contracts.',
+  'ledgerSkills': 'Skills · 25',
+  'repositorySkills': '25 reusable Skills · candidate',
+  'skillRouteLanguagePartner': 'I want to practise a language by typing.',
+  'skillRouteLanguagePartnerResult': 'Runs one fictional typed exchange; you write first, one correction at a time.',
+  'skillRouteInterview': 'I want to rehearse one interview answer.',
+  'skillRouteInterviewResult': 'Coaches one timed answer with a visible check and one changed question.',
+  'skillLanguagePartnerName': 'Language Partner',
+  'skillLanguagePartner': 'Run one bounded typed exchange in the learner\'s target language.',
+  'skillInterviewName': 'Interview Rehearsal',
+  'skillInterview': 'Rehearse one observable answer under a time limit.'
+});
+Object.assign(copy.zh, {
+  'skillsTitle': '二十五个 Skill，各有职责。',
+  'skillIndexLink': '打开 Skill 登记表与全部 25 个方法',
+  'skillFootnote': '25 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。语言伙伴只运行一次打字对话，不教语言、不承诺流利。面试演练只教练一个回答，不预测面试问题、不承诺结果。中断检查点只保留任务回执，不会重试或恢复工作。练习目标用于准备一次首次尝试，不能证明学习结果。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
+  'fileSkillsBody': '25 个项目 Skill，包含触发、边界与证据契约。',
+  'ledgerSkills': 'Skill · 25',
+  'repositorySkills': '25 个可复用 Skill · candidate',
+  'skillRouteLanguagePartner': '我想用打字练习一门语言。',
+  'skillRouteLanguagePartnerResult': '运行一段虚构的打字对话；你先写，一次只纠正一处。',
+  'skillRouteInterview': '我想演练一个面试回答。',
+  'skillRouteInterviewResult': '按时间限制教练一个可检查的回答，再给一个变式问题。',
+  'skillLanguagePartnerName': '语言伙伴 Language Partner',
+  'skillLanguagePartner': '在目标语言中运行一段有边界的打字对话。',
+  'skillInterviewName': '面试演练 Interview Rehearsal',
+  'skillInterview': '在时间限制下演练一个可观察的回答。'
+});
+Object.assign(copy.es, {
+  'skillsTitle': 'Veinticinco Skills. Trabajos distintos.',
+  'skillIndexLink': 'Abrir el registro de Skills y los 25 métodos',
+  'skillFootnote': 'Los 25 Skills del proyecto pasan las comprobaciones estructurales y siguen siendo candidate; la evidencia de tareas nuevas es parcial. Language Partner ejecuta un intercambio escrito; no enseña un idioma ni promete fluidez. Interview Rehearsal entrena una respuesta; no predice preguntas de entrevista ni promete un resultado. Interruption Checkpoint conserva un recibo de tarea; no reintenta ni recupera trabajo. Practice Target prepara un primer intento; no demuestra aprendizaje. Platform Fact Watch es un recibo de mantenimiento, no una comprobación de la plataforma actual. LLM Comparison Protocol es un método de comparación sin ejecutar, no una clasificación de modelos. Adversarial Project Review no es una revisión externa.',
+  'fileSkillsBody': '25 Skills del proyecto con disparadores, límites y contratos de evidencia.',
+  'ledgerSkills': 'Skills · 25',
+  'repositorySkills': '25 Skills reutilizables · candidate',
+  'skillRouteLanguagePartner': 'Quiero practicar un idioma escribiendo.',
+  'skillRouteLanguagePartnerResult': 'Ejecuta un intercambio ficticio por escrito; tú escribes primero, una corrección a la vez.',
+  'skillRouteInterview': 'Quiero ensayar una respuesta de entrevista.',
+  'skillRouteInterviewResult': 'Entrena una respuesta cronometrada con una comprobación visible y una pregunta variada.',
+  'skillLanguagePartnerName': 'Language Partner (compañero de idiomas)',
+  'skillLanguagePartner': 'Ejecuta un intercambio escrito acotado en el idioma objetivo del alumno.',
+  'skillInterviewName': 'Interview Rehearsal (ensayo de entrevista)',
+  'skillInterview': 'Ensaya una respuesta observable con límite de tiempo.'
+});
+Object.assign(copy.ja, {
+  'skillsTitle': '25のSkill。それぞれ役割が違います。',
+  'skillIndexLink': 'Skill レジストリと全25メソッドを開く',
+  'skillFootnote': 'プロジェクトの25のSkill はすべて構造チェックに合格し candidate のままです。新しいタスクのエビデンスは部分的です。Language Partner は文字会話を1回実行するだけで、言語を教えたり流暢さを約束したりしません。Interview Rehearsal は回答を1つ練習するだけで、面接問題を予測したり結果を約束したりしません。Interruption Checkpoint はタスクのレシートを保存するもので、作業の再試行や復旧は行いません。Practice Target は最初の試行を設定するもので、学習を証明するものではありません。Platform Fact Watch はメンテナンスのレシートであり、現在のプラットフォームのチェックではありません。LLM Comparison Protocol は未実行の比較メソッドであり、モデルランキングではありません。Adversarial Project Review は外部レビューではありません。',
+  'fileSkillsBody': 'プロジェクトの25のSkill（トリガー、境界、エビデンス契約付き）。',
+  'ledgerSkills': 'Skills · 25',
+  'repositorySkills': '再利用可能な25のSkill · candidate',
+  'skillRouteLanguagePartner': 'タイピングで言語を練習したい。',
+  'skillRouteLanguagePartnerResult': '架空の文字会話を1回実行。先にあなたが書き、一度に1つだけ直します。',
+  'skillRouteInterview': '面接の答えを1つ練習したい。',
+  'skillRouteInterviewResult': '制限時間付きで1つの回答を練習し、チェックと変形質問を出します。',
+  'skillLanguagePartnerName': '言語パートナー Language Partner',
+  'skillLanguagePartner': '学習者の目標言語で、境界のある文字会話を1回実行する。',
+  'skillInterviewName': '面接リハーサル Interview Rehearsal',
+  'skillInterview': '制限時間内で観察可能な回答を1つ練習する。'
+});
+Object.assign(copy.ko, {
+  'skillsTitle': '스물다섯 개의 Skill. 역할이 각각 다릅니다.',
+  'skillIndexLink': 'Skill 레지스트리와 25개 메서드 열기',
+  'skillFootnote': '프로젝트의 25개 Skill 모두 구조 검사를 통과했으며 candidate로 유지됩니다. 신규 과제 증거는 일부만 있습니다. 언어 파트너는 문자 대화를 한 번 실행할 뿐, 언어를 가르치거나 유창함을 약속하지 않습니다. 면접 리허설은 답변 하나를 코칭할 뿐, 면접 문제를 예측하거나 결과를 약속하지 않습니다. 중단 체크포인트는 과제 기록을 보존할 뿐, 작업을 재시도하거나 복구하지 않습니다. 연습 목표는 첫 시도 하나를 준비할 뿐, 학습을 증명하지 않습니다. 플랫폼 사실 관찰은 유지보수 기록이지 현재 플랫폼 점검이 아닙니다. LLM 비교 프로토콜은 실행되지 않은 비교 메서드이지 모델 순위가 아닙니다. 적대적 프로젝트 검토는 외부 검토가 아닙니다.',
+  'fileSkillsBody': '트리거, 경계, 증거 계약을 갖춘 프로젝트 Skill 25개.',
+  'ledgerSkills': 'Skills · 25',
+  'repositorySkills': '재사용 가능한 Skill 25개 · candidate',
+  'skillRouteLanguagePartner': '언어를 타이핑으로 연습하고 싶어요.',
+  'skillRouteLanguagePartnerResult': '가상의 문자 대화를 한 번 실행합니다. 먼저 직접 쓰고, 한 번에 하나만 고쳐 줍니다.',
+  'skillRouteInterview': '면접 답변 하나를 연습하고 싶어요.',
+  'skillRouteInterviewResult': '시간 제한 안에서 확인 가능한 답변 하나를 코칭하고, 변형 질문 하나를 냅니다.',
+  'skillLanguagePartnerName': '언어 파트너 Language Partner',
+  'skillLanguagePartner': '학습자의 목표 언어로 경계가 있는 문자 대화를 한 번 실행합니다.',
+  'skillInterviewName': '면접 리허설 Interview Rehearsal',
+  'skillInterview': '시간 제한 안에서 관찰 가능한 답변 하나를 연습합니다.'
+});
+Object.assign(copy.de, {
+  'skillsTitle': 'Fünfundzwanzig Skills. Klar getrennte Aufgaben.',
+  'skillIndexLink': 'Skill-Register und alle 25 Methoden öffnen',
+  'skillFootnote': 'Alle 25 Projekt-Skills bestehen die Strukturprüfungen und bleiben candidate; die Belege aus frischen Aufgaben sind lückenhaft. Language Partner führt einen schriftlichen Austausch durch; es unterrichtet keine Sprache und verspricht keine Flüssigkeit. Interview Rehearsal trainiert eine Antwort; es sagt keine Interviewfragen voraus und verspricht kein Ergebnis. Interruption Checkpoint bewahrt eine Aufgabenquittung; es wiederholt oder rettet keine Arbeit. Practice Target richtet einen ersten Versuch ein; es beweist kein Lernen. Platform Fact Watch ist eine Wartungsquittung, keine Prüfung der aktuellen Plattform. LLM Comparison Protocol ist eine nicht ausgeführte Vergleichsmethode, kein Modellranking. Adversarial Project Review ist keine externe Prüfung.',
+  'fileSkillsBody': '25 Projekt-Skills mit Triggern, Grenzen und Beleg-Verträgen.',
+  'ledgerSkills': 'Skills · 25',
+  'repositorySkills': '25 wiederverwendbare Skills · candidate',
+  'skillRouteLanguagePartner': 'Ich möchte eine Sprache schreibend üben.',
+  'skillRouteLanguagePartnerResult': 'Führt einen fiktiven schriftlichen Austausch durch; Sie schreiben zuerst, immer nur eine Korrektur.',
+  'skillRouteInterview': 'Ich möchte eine Interview-Antwort proben.',
+  'skillRouteInterviewResult': 'Trainiert eine zeitlich begrenzte Antwort mit sichtbarem Check und einer Variante.',
+  'skillLanguagePartnerName': 'Language Partner (Sprachpartner)',
+  'skillLanguagePartner': 'Führt einen begrenzten schriftlichen Austausch in der Zielsprache der Lernenden durch.',
+  'skillInterviewName': 'Interview Rehearsal (Gesprächsprobe)',
+  'skillInterview': 'Probt eine beobachtbare Antwort unter Zeitlimit.'
+});
+
+Object.assign(copy.en, {
+  skillsTitle: 'Twenty-five Skills. Distinct jobs.',
+  skillIndexLink: 'Open the Skill registry and all 25 methods',
+  skillFootnote: 'All 25 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Language Partner runs one typed exchange; it does not teach a language or promise fluency. Interview Rehearsal coaches one answer; it does not predict interview questions or promise an outcome. Interruption Checkpoint preserves a task receipt; it does not retry or recover work. Practice Target sets up one first attempt; it does not prove learning. Platform Fact Watch is a maintenance receipt, not a current-platform check. LLM Comparison Protocol is an unrun comparison method, not a model ranking. Adversarial Project Review is not an external review.',
+  fileSkillsBody: '25 project Skills with triggers, boundaries, and evidence contracts.',
+  ledgerSkills: 'Skills · 25',
+  repositorySkills: '25 reusable Skills · candidate',
+  skillRouteLanguagePartner: 'I want to practise a language by typing.',
+  skillRouteLanguagePartnerResult: 'Runs one fictional typed exchange; you write first, one correction at a time.',
+  skillRouteInterview: 'I want to rehearse one interview answer.',
+  skillRouteInterviewResult: 'Coaches one timed answer with a visible check and one changed question.',
+  skillLanguagePartnerName: 'Language Partner',
+  skillLanguagePartner: 'Run one bounded typed exchange in the learner\'s target language.',
+  skillInterviewName: 'Interview Rehearsal',
+  skillInterview: 'Rehearse one observable answer under a time limit.'
+});
+Object.assign(copy.zh, {
+  skillsTitle: '二十五个 Skill，各有职责。',
+  skillIndexLink: '打开 Skill 登记表与全部 25 个方法',
+  skillFootnote: '25 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。语言伙伴只运行一次打字对话，不教语言、不承诺流利。面试演练只教练一个回答，不预测面试问题、不承诺结果。中断检查点只保留任务回执，不会重试或恢复工作。练习目标用于准备一次首次尝试，不能证明学习结果。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
+  fileSkillsBody: '25 个项目 Skill，包含触发、边界与证据契约。',
+  ledgerSkills: 'Skill · 25',
+  repositorySkills: '25 个可复用 Skill · candidate',
+  skillRouteLanguagePartner: '我想用打字练习一门语言。',
+  skillRouteLanguagePartnerResult: '运行一段虚构的打字对话；你先写，一次只纠正一处。',
+  skillRouteInterview: '我想演练一个面试回答。',
+  skillRouteInterviewResult: '按时间限制教练一个可检查的回答，再给一个变式问题。',
+  skillLanguagePartnerName: '语言伙伴 Language Partner',
+  skillLanguagePartner: '在目标语言中运行一段有边界的打字对话。',
+  skillInterviewName: '面试演练 Interview Rehearsal',
+  skillInterview: '在时间限制下演练一个可观察的回答。'
+});
+Object.assign(copy.es, {
+  skillsTitle: 'Veinticinco Skills. Trabajos distintos.',
+  skillIndexLink: 'Abrir el registro de Skills y los 25 métodos',
+  skillFootnote: 'Los 25 Skills del proyecto pasan las comprobaciones estructurales y siguen siendo candidate; la evidencia de tareas nuevas es parcial. Language Partner ejecuta un intercambio escrito; no enseña un idioma ni promete fluidez. Interview Rehearsal entrena una respuesta; no predice preguntas de entrevista ni promete un resultado. Interruption Checkpoint conserva un recibo de tarea; no reintenta ni recupera trabajo. Practice Target prepara un primer intento; no demuestra aprendizaje. Platform Fact Watch es un recibo de mantenimiento, no una comprobación de la plataforma actual. LLM Comparison Protocol es un método de comparación sin ejecutar, no una clasificación de modelos. Adversarial Project Review no es una revisión externa.',
+  fileSkillsBody: '25 Skills del proyecto con disparadores, límites y contratos de evidencia.',
+  ledgerSkills: 'Skills · 25',
+  repositorySkills: '25 Skills reutilizables · candidate',
+  skillRouteLanguagePartner: 'Quiero practicar un idioma escribiendo.',
+  skillRouteLanguagePartnerResult: 'Ejecuta un intercambio ficticio por escrito; tú escribes primero, una corrección a la vez.',
+  skillRouteInterview: 'Quiero ensayar una respuesta de entrevista.',
+  skillRouteInterviewResult: 'Entrena una respuesta cronometrada con una comprobación visible y una pregunta variada.',
+  skillLanguagePartnerName: 'Language Partner (compañero de idiomas)',
+  skillLanguagePartner: 'Ejecuta un intercambio escrito acotado en el idioma objetivo del alumno.',
+  skillInterviewName: 'Interview Rehearsal (ensayo de entrevista)',
+  skillInterview: 'Ensaya una respuesta observable con límite de tiempo.'
+});
+Object.assign(copy.ja, {
+  skillsTitle: '25のSkill。それぞれ役割が違います。',
+  skillIndexLink: 'Skill レジストリと全25メソッドを開く',
+  skillFootnote: 'プロジェクトの25のSkill はすべて構造チェックに合格し candidate のままです。新しいタスクのエビデンスは部分的です。Language Partner は文字会話を1回実行するだけで、言語を教えたり流暢さを約束したりしません。Interview Rehearsal は回答を1つ練習するだけで、面接問題を予測したり結果を約束したりしません。Interruption Checkpoint はタスクのレシートを保存するもので、作業の再試行や復旧は行いません。Practice Target は最初の試行を設定するもので、学習を証明するものではありません。Platform Fact Watch はメンテナンスのレシートであり、現在のプラットフォームのチェックではありません。LLM Comparison Protocol は未実行の比較メソッドであり、モデルランキングではありません。Adversarial Project Review は外部レビューではありません。',
+  fileSkillsBody: 'プロジェクトの25のSkill（トリガー、境界、エビデンス契約付き）。',
+  ledgerSkills: 'Skills · 25',
+  repositorySkills: '再利用可能な25のSkill · candidate',
+  skillRouteLanguagePartner: 'タイピングで言語を練習したい。',
+  skillRouteLanguagePartnerResult: '架空の文字会話を1回実行。先にあなたが書き、一度に1つだけ直します。',
+  skillRouteInterview: '面接の答えを1つ練習したい。',
+  skillRouteInterviewResult: '制限時間付きで1つの回答を練習し、チェックと変形質問を出します。',
+  skillLanguagePartnerName: '言語パートナー Language Partner',
+  skillLanguagePartner: '学習者の目標言語で、境界のある文字会話を1回実行する。',
+  skillInterviewName: '面接リハーサル Interview Rehearsal',
+  skillInterview: '制限時間内で観察可能な回答を1つ練習する。'
+});
+Object.assign(copy.ko, {
+  skillsTitle: '스물다섯 개의 Skill. 역할이 각각 다릅니다.',
+  skillIndexLink: 'Skill 레지스트리와 25개 메서드 열기',
+  skillFootnote: '프로젝트의 25개 Skill 모두 구조 검사를 통과했으며 candidate로 유지됩니다. 신규 과제 증거는 일부만 있습니다. 언어 파트너는 문자 대화를 한 번 실행할 뿐, 언어를 가르치거나 유창함을 약속하지 않습니다. 면접 리허설은 답변 하나를 코칭할 뿐, 면접 문제를 예측하거나 결과를 약속하지 않습니다. 중단 체크포인트는 과제 기록을 보존할 뿐, 작업을 재시도하거나 복구하지 않습니다. 연습 목표는 첫 시도 하나를 준비할 뿐, 학습을 증명하지 않습니다. 플랫폼 사실 관찰은 유지보수 기록이지 현재 플랫폼 점검이 아닙니다. LLM 비교 프로토콜은 실행되지 않은 비교 메서드이지 모델 순위가 아닙니다. 적대적 프로젝트 검토는 외부 검토가 아닙니다.',
+  fileSkillsBody: '트리거, 경계, 증거 계약을 갖춘 프로젝트 Skill 25개.',
+  ledgerSkills: 'Skills · 25',
+  repositorySkills: '재사용 가능한 Skill 25개 · candidate',
+  skillRouteLanguagePartner: '언어를 타이핑으로 연습하고 싶어요.',
+  skillRouteLanguagePartnerResult: '가상의 문자 대화를 한 번 실행합니다. 먼저 직접 쓰고, 한 번에 하나만 고쳐 줍니다.',
+  skillRouteInterview: '면접 답변 하나를 연습하고 싶어요.',
+  skillRouteInterviewResult: '시간 제한 안에서 확인 가능한 답변 하나를 코칭하고, 변형 질문 하나를 냅니다.',
+  skillLanguagePartnerName: '언어 파트너 Language Partner',
+  skillLanguagePartner: '학습자의 목표 언어로 경계가 있는 문자 대화를 한 번 실행합니다.',
+  skillInterviewName: '면접 리허설 Interview Rehearsal',
+  skillInterview: '시간 제한 안에서 관찰 가능한 답변 하나를 연습합니다.'
+});
+Object.assign(copy.de, {
+  skillsTitle: 'Fünfundzwanzig Skills. Klar getrennte Aufgaben.',
+  skillIndexLink: 'Skill-Register und alle 25 Methoden öffnen',
+  skillFootnote: 'Alle 25 Projekt-Skills bestehen die Strukturprüfungen und bleiben candidate; die Belege aus frischen Aufgaben sind lückenhaft. Language Partner führt einen schriftlichen Austausch durch; es unterrichtet keine Sprache und verspricht keine Flüssigkeit. Interview Rehearsal trainiert eine Antwort; es sagt keine Interviewfragen voraus und verspricht kein Ergebnis. Interruption Checkpoint bewahrt eine Aufgabenquittung; es wiederholt oder rettet keine Arbeit. Practice Target richtet einen ersten Versuch ein; es beweist kein Lernen. Platform Fact Watch ist eine Wartungsquittung, keine Prüfung der aktuellen Plattform. LLM Comparison Protocol ist eine nicht ausgeführte Vergleichsmethode, kein Modellranking. Adversarial Project Review ist keine externe Prüfung.',
+  fileSkillsBody: '25 Projekt-Skills mit Triggern, Grenzen und Beleg-Verträgen.',
+  ledgerSkills: 'Skills · 25',
+  repositorySkills: '25 wiederverwendbare Skills · candidate',
+  skillRouteLanguagePartner: 'Ich möchte eine Sprache schreibend üben.',
+  skillRouteLanguagePartnerResult: 'Führt einen fiktiven schriftlichen Austausch durch; Sie schreiben zuerst, immer nur eine Korrektur.',
+  skillRouteInterview: 'Ich möchte eine Interview-Antwort proben.',
+  skillRouteInterviewResult: 'Trainiert eine zeitlich begrenzte Antwort mit sichtbarem Check und einer Variante.',
+  skillLanguagePartnerName: 'Language Partner (Sprachpartner)',
+  skillLanguagePartner: 'Führt einen begrenzten schriftlichen Austausch in der Zielsprache der Lernenden durch.',
+  skillInterviewName: 'Interview Rehearsal (Gesprächsprobe)',
+  skillInterview: 'Probt eine beobachtbare Antwort unter Zeitlimit.'
 });
 
 initializeSearch();
