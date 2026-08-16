@@ -58,4 +58,4 @@ tu as programmé un rappel et n'infère pas de rétention permanente. Note la
 date, ma tentative, l'aide utilisée et ce qui reste sans observation.
 ```
 
-Speichere Ziel, ersten Versuch, Hilfe, Überarbeitung, geänderte Aufgabe und Unbekanntes. Ein Durchlauf ist dokumentierte Übung, kein Nachweis von Beherrschung und keine unabhängige Bewertung. Die spanische Version derselben Übung findest du unter [spanish-practice-loop-de.md](spanish-practice-loop-de.md).
+Speichere Ziel, ersten Versuch, Hilfe, Überarbeitung, geänderte Aufgabe und Unbekanntes. Ein Durchlauf ist dokumentierte Übung, kein Nachweis von Beherrschung und keine unabhängige Bewertung. Die spanische Version derselben Übung findest du unter [spanish-practice-loop-DE.md](spanish-practice-loop-DE.md).
