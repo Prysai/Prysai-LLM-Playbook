@@ -728,6 +728,13 @@ let searchIndexLoadPromise = null;
 let searchRunGeneration = 0;
 const pathFromHref = (href) => {
   if (!href || href.startsWith('#') || /^(?:https?:|mailto:|javascript:)/i.test(href)) return null;
+  // Homepage cards may be authored either as a source Markdown link or as a
+  // Reader link. Normalize both forms before looking them up in the locale
+  // manifest so an existing Reader URL cannot pin a reader to English.
+  if (/^reader\.html\?/i.test(href)) {
+    try { return new URL(href, window.location.href).searchParams.get('path'); }
+    catch (_) { return null; }
+  }
   const path = href.split('#', 1)[0].split('?', 1)[0];
   if (!path.startsWith('../')) return null;
   return path.replace(/^\.\.\//, '');
@@ -1103,6 +1110,10 @@ const applyLanguage = (language, { updateUrl = true } = {}) => {
   updateLevel(document.querySelector('.level-tab.is-active')?.dataset.level || 'L0', false);
   updateRouteStatus(document.querySelector('.filter-button.is-active')?.dataset.filter || 'all');
   localizeReaderLinks();
+  // The goal wizard is rendered from locale-specific templates. Rebuild the
+  // visible step after a language change so its labels, fields, and deep link
+  // never remain in the language that was active at page load.
+  if (typeof refreshGoalWizardForLanguage === 'function') refreshGoalWizardForLanguage();
   if (typeof renderFirstWinRecord === 'function') renderFirstWinRecord();
   if (searchNodes.form && searchIndexAvailable()) renderSearch(searchNodes.input.value);
   const banner = document.querySelector('[data-locale-banner]');
@@ -1135,7 +1146,11 @@ const updateLevel = (level, focus = false) => {
   document.querySelectorAll('[data-level-label]').forEach((element) => { element.textContent = level; });
   document.querySelector('[data-level-title]').textContent = title;
   document.querySelector('[data-level-description]').textContent = description;
-  document.querySelector('[data-level-status]').textContent = data.status;
+  // Some reading-path layouts intentionally omit a visible status chip. Keep
+  // the structured state for routing, but do not make a missing decorative
+  // surface break language changes or the rest of the learning-path panel.
+  const levelStatus = document.querySelector('[data-level-status]');
+  if (levelStatus) levelStatus.textContent = data.status;
   renderList('[data-level-chapters]', data.chapters, { link: true });
   renderLabUses(data.labs, level);
   renderList('[data-level-skills]', data.skills, { link: true });
@@ -4230,14 +4245,78 @@ Object.assign(copy.de, {
   wizardBoundary: 'Ein kopierter Prompt ist ein Übungsversuch, kein Beweis für Lernen, Sprachgewandtheit, Recherchequalität oder Modellverhalten.'
 });
 
+Object.assign(copy.en, {
+  wizardGoalLanguageOutcome: 'You get a four-turn practice prompt that waits for your answer.',
+  wizardGoalWorkOutcome: 'You get a bounded update prompt that protects the facts you provide.',
+  wizardGoalResearchOutcome: 'You get a source-check prompt that separates evidence from guesses.',
+  wizardGoalInterviewOutcome: 'You get one timed rehearsal prompt with a visible self-check.',
+  wizardGoalTaskOutcome: 'You get a compact task contract before an AI or tool starts acting.',
+  wizardGoalCodexOutcome: 'You get a safe text-only first exercise and a route into the coding track.'
+});
+Object.assign(copy.zh, {
+  wizardGoalLanguageOutcome: '得到一条四轮练习提示词，模型会等待你自己作答。',
+  wizardGoalWorkOutcome: '得到一条有边界的工作更新提示词，保护你提供的事实。',
+  wizardGoalResearchOutcome: '得到一条来源核查提示词，区分证据与猜测。',
+  wizardGoalInterviewOutcome: '得到一条带可见自检的限时演练提示词。',
+  wizardGoalTaskOutcome: '在 AI 或工具行动前，得到一份简明任务协议。',
+  wizardGoalCodexOutcome: '得到一个安全的纯文字首练习，并进入编程实践路线。'
+});
+Object.assign(copy.es, {
+  wizardGoalLanguageOutcome: 'Obtienes un prompt de práctica de cuatro turnos que espera tu respuesta.',
+  wizardGoalWorkOutcome: 'Obtienes un prompt de actualización acotado que protege los hechos que aportas.',
+  wizardGoalResearchOutcome: 'Obtienes un prompt para comprobar fuentes y separar evidencia de conjeturas.',
+  wizardGoalInterviewOutcome: 'Obtienes un prompt para un ensayo cronometrado con una comprobación visible.',
+  wizardGoalTaskOutcome: 'Obtienes un contrato de tarea breve antes de que una IA o herramienta actúe.',
+  wizardGoalCodexOutcome: 'Obtienes un primer ejercicio seguro solo de texto y una ruta hacia la práctica de código.'
+});
+Object.assign(copy.ja, {
+  wizardGoalLanguageOutcome: 'あなたの回答を待つ、4ターンの練習プロンプトが得られます。',
+  wizardGoalWorkOutcome: 'あなたが示した事実を守る、範囲のある更新用プロンプトが得られます。',
+  wizardGoalResearchOutcome: '根拠と推測を分ける、情報源確認用プロンプトが得られます。',
+  wizardGoalInterviewOutcome: '見える自己チェック付きの、時間制限のある練習プロンプトが得られます。',
+  wizardGoalTaskOutcome: 'AI やツールが動く前に、簡潔なタスク契約が得られます。',
+  wizardGoalCodexOutcome: '安全なテキストだけの初回演習と、コーディング実践への入口が得られます。'
+});
+Object.assign(copy.ko, {
+  wizardGoalLanguageOutcome: '내 답변을 기다리는 4턴 연습 프롬프트를 받습니다.',
+  wizardGoalWorkOutcome: '내가 제공한 사실을 지키는 범위 있는 업무 업데이트 프롬프트를 받습니다.',
+  wizardGoalResearchOutcome: '증거와 추측을 구분하는 출처 확인 프롬프트를 받습니다.',
+  wizardGoalInterviewOutcome: '눈에 보이는 자기 점검이 있는 시간제한 연습 프롬프트를 받습니다.',
+  wizardGoalTaskOutcome: 'AI나 도구가 행동하기 전에 간결한 작업 계약을 받습니다.',
+  wizardGoalCodexOutcome: '안전한 텍스트 전용 첫 연습과 코딩 실습 경로를 받습니다.'
+});
+Object.assign(copy.de, {
+  wizardGoalLanguageOutcome: 'Du erhältst einen Übungsprompt mit vier Runden, der auf deine Antwort wartet.',
+  wizardGoalWorkOutcome: 'Du erhältst einen begrenzten Update-Prompt, der die von dir genannten Fakten schützt.',
+  wizardGoalResearchOutcome: 'Du erhältst einen Prompt zur Quellenprüfung, der Belege von Vermutungen trennt.',
+  wizardGoalInterviewOutcome: 'Du erhältst einen zeitlich begrenzten Übungsprompt mit sichtbarem Selbstcheck.',
+  wizardGoalTaskOutcome: 'Du erhältst einen kompakten Aufgabenvertrag, bevor eine KI oder ein Tool handelt.',
+  wizardGoalCodexOutcome: 'Du erhältst eine sichere erste Textübung und einen Weg zur Programmierpraxis.'
+});
+
 // Goal wizard: pick a goal, fill the smallest form, copy a ready-to-use prompt.
 const goalTemplates = window.GOAL_TEMPLATES || {};
 const goalWizard = document.querySelector('[data-goal-wizard]');
 let wizardState = { goal: null };
 const wizardGoalKeys = ['language', 'work', 'research', 'interview', 'task', 'codex'];
+const goalTemplateFor = (goalKey) => (
+  goalTemplates.goals?.[currentLanguage]?.[goalKey]
+  || goalTemplates.goals?.en?.[goalKey]
+  // Preserve compatibility with an earlier, flat generated template shape.
+  || goalTemplates[currentLanguage]?.[goalKey]
+  || goalTemplates.en?.[goalKey]
+);
 
 function wizardCopyKey(goalKey) {
   return { language: 'wizardGoalLanguage', work: 'wizardGoalWork', research: 'wizardGoalResearch', interview: 'wizardGoalInterview', task: 'wizardGoalTask', codex: 'wizardGoalCodex' }[goalKey] || 'wizardGoalLanguage';
+}
+
+function wizardOutcomeKey(goalKey) {
+  return {
+    language: 'wizardGoalLanguageOutcome', work: 'wizardGoalWorkOutcome',
+    research: 'wizardGoalResearchOutcome', interview: 'wizardGoalInterviewOutcome',
+    task: 'wizardGoalTaskOutcome', codex: 'wizardGoalCodexOutcome',
+  }[goalKey] || 'wizardGoalLanguageOutcome';
 }
 
 function renderGoalOptions() {
@@ -4246,7 +4325,7 @@ function renderGoalOptions() {
   container.replaceChildren();
   const copyTable = currentCopy();
   wizardGoalKeys.forEach((key, index) => {
-    const goal = goalTemplates[currentLanguage]?.[key] || goalTemplates.en?.[key];
+    const goal = goalTemplateFor(key);
     if (!goal) return;
     const button = document.createElement('button');
     button.type = 'button';
@@ -4257,9 +4336,9 @@ function renderGoalOptions() {
     num.textContent = String(index + 1).padStart(2, '0');
     const label = document.createElement('strong');
     label.textContent = copyTable[wizardCopyKey(key)] || key;
-    const count = document.createElement('small');
-    count.textContent = goal.fields.length ? `${goal.fields.length} ${copyTable.wizardStepTwo || 'fields'}` : '';
-    button.append(num, label, count);
+    const outcome = document.createElement('small');
+    outcome.textContent = copyTable[wizardOutcomeKey(key)] || 'A ready-to-use prompt and one next step.';
+    button.append(num, label, outcome);
     button.addEventListener('click', () => {
       wizardState.goal = key;
       renderGoalFields();
@@ -4269,7 +4348,7 @@ function renderGoalOptions() {
 }
 
 function renderGoalFields() {
-  const goal = goalTemplates[currentLanguage]?.[wizardState.goal] || goalTemplates.en?.[wizardState.goal];
+  const goal = goalTemplateFor(wizardState.goal);
   if (!goal) return;
   const fieldsBox = document.querySelector('[data-goal-fields]');
   fieldsBox.replaceChildren();
@@ -4293,7 +4372,7 @@ function renderGoalFields() {
 }
 
 function buildGoalPrompt() {
-  const goal = goalTemplates[currentLanguage]?.[wizardState.goal] || goalTemplates.en?.[wizardState.goal];
+  const goal = goalTemplateFor(wizardState.goal);
   if (!goal) return '';
   let prompt = goal.template;
   document.querySelectorAll('[data-goal-fields] [data-field-key]').forEach((input) => {
@@ -4318,9 +4397,13 @@ function renderGoalPrompt() {
   const prompt = buildGoalPrompt();
   const pre = document.querySelector('[data-goal-prompt]');
   pre.textContent = prompt;
-  const goal = goalTemplates[currentLanguage]?.[wizardState.goal] || goalTemplates.en?.[wizardState.goal];
+  const goal = goalTemplateFor(wizardState.goal);
   const pathLink = document.querySelector('[data-goal-path]');
-  if (goal && goal.path) pathLink.setAttribute('href', goal.path);
+  if (goal && goal.path) {
+    const contentId = canonicalContentId(contentIdForHref(goal.path));
+    const path = contentId ? localizedContentHref(contentId, goal.path) : goal.path;
+    pathLink.setAttribute('href', pagesHref(path));
+  }
   const status = document.querySelector('[data-goal-copy-status]');
   if (status) status.textContent = '';
   showWizardPanel('prompt');
@@ -4357,6 +4440,21 @@ function initGoalWizard() {
       if (status) status.textContent = 'Copy failed. Select the prompt text manually.';
     }
   });
+}
+
+function refreshGoalWizardForLanguage() {
+  if (!goalWizard) return;
+  const activePanel = document.querySelector('[data-wizard-panel]:not([hidden])')?.dataset.wizardPanel;
+  if (!wizardState.goal || activePanel === 'goals') {
+    renderGoalOptions();
+    return;
+  }
+  // A language change intentionally starts this small, disposable form again;
+  // retaining entered text while changing the prompt language would be more
+  // surprising than useful and could mix languages inside the result.
+  wizardState.goal = null;
+  renderGoalOptions();
+  showWizardPanel('goals');
 }
 
 initGoalWizard();
@@ -4528,6 +4626,51 @@ Object.assign(copy.de, {
   fileChaptersBody: '22 Kapitel, die die Methode Schritt für Schritt aufbauen.', fileLabsTitle: 'Angeleitete Praxis', fileLabsBody: '18 risikoarme Übungen mit klaren Prüfungen und Reflexion.',
   localeTitle: 'In deiner Sprache lesen', localeIntro: 'Wähle die Sprache, die du am natürlichsten liest. Auf deinem Weg durch das Buch bleibt die Route in dieser Sprache.', localeEnglish: 'Englisch', localeChinese: 'Vereinfachtes Chinesisch', localeSpanish: 'Spanisch', localeGerman: 'Deutsch', localeJapanese: 'Japanisch', localeKorean: 'Koreanisch', localeRule: 'Wenn du wechseln möchtest, verwende das Sprachmenü oben auf der Seite.',
   researchBoundary: 'Lies die Quellen zusammen mit den Lehrnotizen und nutze sie als Ausgangspunkt für deine eigene Recherche.', visualCaseBoundary: 'Nutze diese Diagramme, um die Methode zu verstehen, und probiere sie dann an einer eigenen kleinen Aufgabe aus.', starterBoundaryLab: 'Grenze markieren: Lab 011', starterPractice: 'Lab 001 durchführen: Dateien und Git', openExercise: 'Übung öffnen'
+});
+
+// The first screen should answer a reader's immediate question: what can I do
+// with an LLM today? Keep the full curriculum one step away, not in the way.
+Object.assign(copy.en, {
+  heroPrimary: 'Choose what you want to do today', heroSecondary: 'First, understand what an LLM is',
+  startEyebrow: 'Start here · one useful result today', startTitle: 'What do you want the model to help you do?',
+  startIntro: 'Pick one real purpose. In under a minute, you will get a ready-to-use prompt and one clear next step; you do not need to understand the whole book first.',
+  wizardEyebrow: 'Your first useful result', wizardTitle: 'Choose one thing you want help with now.',
+  wizardIntro: 'Choose a purpose, add only the details that matter, then copy a prompt you can use in any chat model. No account, files, or setup required.'
+});
+Object.assign(copy.zh, {
+  heroPrimary: '选择你今天要完成的事', heroSecondary: '先理解 LLM 是什么',
+  startEyebrow: '从这里开始 · 今天得到一个有用结果', startTitle: '你想让大模型现在帮你做什么？',
+  startIntro: '选择一个真实目的。不到一分钟，你会得到一条可直接使用的提示词和一个清晰的下一步；不必先读完整本书。',
+  wizardEyebrow: '你的第一个有用结果', wizardTitle: '选择一件你现在想获得帮助的事。',
+  wizardIntro: '选择目的，只补充必要信息，然后复制一条能用于任何聊天模型的提示词。不需要账号、文件或设置。'
+});
+Object.assign(copy.es, {
+  heroPrimary: 'Elige lo que quieres hacer hoy', heroSecondary: 'Primero, entiende qué es un LLM',
+  startEyebrow: 'Empieza aquí · un resultado útil hoy', startTitle: '¿En qué quieres que te ayude el modelo ahora?',
+  startIntro: 'Elige un propósito real. En menos de un minuto tendrás un prompt listo para usar y un siguiente paso claro; no necesitas entender todo el libro primero.',
+  wizardEyebrow: 'Tu primer resultado útil', wizardTitle: 'Elige una cosa para la que necesitas ayuda ahora.',
+  wizardIntro: 'Elige un propósito, añade solo los datos necesarios y copia un prompt que puedas usar en cualquier modelo de chat. No necesitas cuenta, archivos ni configuración.'
+});
+Object.assign(copy.ja, {
+  heroPrimary: '今日やりたいことを選ぶ', heroSecondary: 'まず LLM とは何かを知る',
+  startEyebrow: 'ここから始める · 今日ひとつ役立つ結果を得る', startTitle: '今、モデルに何を手伝ってほしいですか？',
+  startIntro: '実際の目的を一つ選んでください。1分以内に、そのまま使えるプロンプトと明確な次の一歩が得られます。本全体を先に理解する必要はありません。',
+  wizardEyebrow: '最初の役立つ結果', wizardTitle: '今助けてほしいことを一つ選んでください。',
+  wizardIntro: '目的を選び、必要な情報だけを加えて、どのチャットモデルでも使えるプロンプトをコピーします。アカウント、ファイル、設定は不要です。'
+});
+Object.assign(copy.ko, {
+  heroPrimary: '오늘 하고 싶은 일을 고르기', heroSecondary: '먼저 LLM이 무엇인지 이해하기',
+  startEyebrow: '여기서 시작 · 오늘 유용한 결과 하나', startTitle: '지금 모델이 무엇을 도와주면 좋겠나요?',
+  startIntro: '실제 목적 하나를 고르세요. 1분 안에 바로 쓸 수 있는 프롬프트와 명확한 다음 단계가 생깁니다. 먼저 책 전체를 이해할 필요는 없습니다.',
+  wizardEyebrow: '첫 번째 유용한 결과', wizardTitle: '지금 도움받고 싶은 일 하나를 고르세요.',
+  wizardIntro: '목적을 고르고 필요한 정보만 추가한 뒤, 어떤 채팅 모델에도 쓸 수 있는 프롬프트를 복사하세요. 계정, 파일, 설정이 필요 없습니다.'
+});
+Object.assign(copy.de, {
+  heroPrimary: 'Wähle, was du heute tun möchtest', heroSecondary: 'Zuerst verstehen, was ein LLM ist',
+  startEyebrow: 'Hier beginnen · heute ein nützliches Ergebnis', startTitle: 'Wobei soll dir das Modell jetzt helfen?',
+  startIntro: 'Wähle einen echten Zweck. In weniger als einer Minute erhältst du einen einsatzbereiten Prompt und einen klaren nächsten Schritt; du musst nicht zuerst das ganze Buch verstehen.',
+  wizardEyebrow: 'Dein erstes nützliches Ergebnis', wizardTitle: 'Wähle eine Sache, bei der du jetzt Hilfe möchtest.',
+  wizardIntro: 'Wähle einen Zweck, ergänze nur die nötigen Angaben und kopiere einen Prompt für jedes Chatmodell. Kein Konto, keine Dateien und keine Einrichtung nötig.'
 });
 
 initializeSearch();

@@ -97,7 +97,7 @@ Name the stage that a directory listing failed to prove and the evidence require
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-lab-nav="previous" href="lab-016-side-effect-boundary-EN.md" aria-label="Previous Lab: Lab 016 · Stop at the side-effect boundary">← Previous<br><strong>Lab 016 · Stop at the side-effect boundary</strong></a></td>
-      <td align="right"><a data-lab-nav="next" href="lab-018-language-transfer-EN.md" aria-label="Next Lab: Lab 018 · Test a typed beginner travel exchange for retention and transfer">Next →<br><strong>Lab 018 · Test a typed beginner travel exchange for retention and transfer</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-018-language-transfer-EN.md" aria-label="Next Lab: Lab 018 · Test a typed beginner study-coordination exchange for retention and transfer">Next →<br><strong>Lab 018 · Test a typed beginner study-coordination exchange for retention and transfer</strong></a></td>
     </tr>
   </table>
 </nav>

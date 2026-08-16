@@ -4,9 +4,9 @@ description: >
   Run one bounded typed exchange in the learner's target language: the learner
   writes first, the partner plays one native-speaker role, corrects at most one
   meaning-blocking error with a partial cue, and later runs one changed case.
-  Use when a learner says "practise Spanish with me", "rehearse a hotel
-  conversation in French", "I want to talk with an AI in German", or wants one
-  small typed conversation before a trip or meeting. Do not use to teach
+  Use when a learner says "practise Spanish with me", "rehearse a French study
+  group conversation", "I want to talk with an AI in German", or wants one
+  small typed conversation for a class, meeting, or everyday task. Do not use to teach
   grammar from scratch, translate documents, assess a language level, promise
   fluency, or build a long study plan.
 ---
@@ -37,7 +37,7 @@ Yield instead of stretching the partner role:
 - files, tools, accounts, a real person, booking, payment, or another external
   effect enters scope: `prysai-task-protocol`.
 
-Never request real names, booking numbers, passports, addresses, contacts,
+Never request real names, school or employment records, addresses, contacts,
 payment details, or private records. A practice exchange grants no authority
 for a later real-world action.
 
@@ -51,7 +51,7 @@ Set only these fields:
 
 ```text
 target_language: the language the learner will write in
-situation: one ordinary scene, e.g. hotel check-in, train station, café order
+situation: one ordinary scene, e.g. study-group scheduling, assignment planning, class discussion
 learner_turns: a small fixed number, usually four
 known_words: what the learner already has, or none
 new_item_limit: at most three new words or phrases per exchange
@@ -62,8 +62,8 @@ fallback: the smaller exchange if the first one is too hard
 ```
 
 Reject a fixed-duration promise as a target. "French in seven days" becomes
-"resolve a café order and one either/or question in four typed turns." It never
-becomes a claim of fluency, a language level, or retention.
+"confirm one study-group time and resolve one either/or question in four typed
+turns." It never becomes a claim of fluency, a language level, or retention.
 
 ## Run the exchange
 
@@ -127,4 +127,3 @@ it as unknown instead of filling it in.
 - `version`: `0.1.0`
 - `review_date`: `2026-09-16`
 - `content_status`: `candidate`
-

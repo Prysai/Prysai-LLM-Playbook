@@ -2,11 +2,11 @@
 
 ---
 id: lab-018-language-transfer
-title: "Probar un intercambio escrito de viaje para principiantes: retención y transferencia"
+title: "Probar un intercambio escrito de coordinación de estudio: retención y transferencia"
 level: L2
 domain: language-learning
-goal: "Completar un intercambio escrito de viaje de cinco minutos en condiciones fijas, cambiar el caso y guardar una tarea retrasada sin convertir una observación en fluidez"
-setup: "Tarjetas sintéticas de viaje, rúbrica fija y registro local desechable; sin red, credenciales, contacto externo, producción ni recordatorio automático"
+goal: "Completar un intercambio escrito de coordinación de estudio de cinco minutos en condiciones fijas, cambiar el caso y guardar una tarea retrasada sin convertir una observación en fluidez"
+setup: "Tarjetas sintéticas de estudio, rúbrica fija y registro local desechable; sin red, credenciales, contacto externo, producción ni recordatorio automático"
 task: "Capturar línea base sin ayuda, corregir con recuperación primero, ejecutar caso cambiado y preservar tarea retrasada no vista"
 evidence: ["Línea base, escalera de pistas, corrección escrita por aprendiz y registro", "Intento inmediato cambiado y puntuación con rúbrica", "ID de tarjeta retrasada, asignación, exposición, puntuaciones independientes, desacuerdo e incógnitas cuando se ejecute"]
 failure_variant: "Pedir al modelo que declare fluidez o dominio tras la tarea inmediata; debe rechazar o limitar la afirmación a la evidencia guardada"
@@ -14,19 +14,19 @@ reflection: "¿Qué respuesta sobrevivió al cambio sin ayuda y qué afirmación
 status: draft
 run_status: not_run
 last_verified: "not run"
-transfer_task: "Tras ventana predeclarada de siete días (± un día), completar intercambio de viaje cambiado y preescrito"
-transfer_domain: "intercambio de información de viaje para principiantes"
+transfer_task: "Tras ventana predeclarada de siete días (± un día), completar intercambio preescrito y cambiado de coordinación de estudio"
+transfer_domain: "coordinación de estudio y proyecto para principiantes"
 transfer_evidence: "Revisión del banco, asignación, exposición, intento sin ayuda, rúbrica, independencia de puntuadores, desacuerdo, demora e incógnitas"
 transfer_limitations: "Este Lab de texto no demuestra aprendizaje amplio, fluidez, escucha, pronunciación, interacción oral, retención fuera de ventana, equivalencia de tareas, fiabilidad de rúbrica ni eficacia de modelo"
 ---
 
-# Lab 018: probar un intercambio escrito de viaje para retención y transferencia
+# Lab 018: probar un intercambio escrito de coordinación de estudio para retención y transferencia
 
 > Práctica opcional L2. Una ejecución inmediata no prueba retención ni dominio; el Lab sigue `draft / not_run` hasta que exista la evidencia declarada.
 
 ## Objetivo y seguridad
 
-En cinco minutos, escribe saludo, información de reserva o destino, una pregunta aclaratoria, respuesta y despedida conservando significado práctico. Trabaja en un registro Markdown local. No navegues, inicies sesión, uses credenciales, contactes personas o negocios, reserves, compres, publiques ni crees recordatorios automáticos.
+En cinco minutos, escribe saludo, una hora de estudio propuesta, una pregunta aclaratoria, respuesta y despedida conservando significado práctico. Trabaja en un registro Markdown local. No navegues, inicies sesión, uses credenciales, contactes personas o instituciones, modifiques sistemas escolares, compres, publiques ni crees recordatorios automáticos.
 
 En línea base y tareas puntuadas solo se permite tarjeta y notas en blanco: sin traductor, diccionario, transcripción, respuesta de modelo ni sugerencia generada. El coach puede aclarar instrucciones, pero no dar contenido en idioma objetivo antes de guardar la línea base.
 
@@ -42,17 +42,17 @@ El pase es 8/10 sin cero en información o significado. Conserva puntuador y not
 
 ## Línea base, corrección y caso cambiado
 
-Usa B1: recepción de hotel; eres Rivera con reserva de dos noches, confirmas desayuno y preguntas por ascensor; la recepción oye inicialmente una noche. Escribe en el idioma que practicas, por turnos, máximo cinco minutos. Guarda intento exacto, errores, puntuación e incógnitas antes de enseñar.
+Usa B1: hilo de grupo de estudio; propones una sesión el martes a las 16:00 para el capítulo 3, confirmas la hora y preguntas si hay que preparar ejemplos; otro estudiante entiende jueves. Escribe por turnos, máximo cinco minutos. Guarda intento exacto, errores, puntuación e incógnitas antes de enseñar.
 
 Corrige el primer error que bloquea significado mediante recuperación: nombra ubicación/tipo, luego da pista parcial y solo después un fragmento, nunca toda la respuesta. Guarda intento original, nivel de pista y corrección escrita por el aprendiz. La respuesta corregida no es línea base ni demuestra retención.
 
-Usa C1 sin respuesta modelo: mostrador de estación; viajas a Valencia con billete 16:40, confirmas andén y si hay cambio; el empleado menciona 16:14. Conserva límite, ayudas y rúbrica. Si pasa, la afirmación estrecha es solo transferencia al intercambio de estación; no retención.
+Usa C1 sin respuesta modelo: hilo de proyecto del curso; propones quién redacta la introducción y cuándo revisarla, confirmas responsable y preguntas si el esquema vence antes del viernes; otro estudiante entiende la conclusión. Conserva límite, ayudas y rúbrica. Si pasa, la afirmación estrecha es solo transferencia a coordinación de proyecto; no retención.
 
 ## Comprobación retrasada y límite
 
 Antes de B1 declara ventana de siete días con tolerancia de un día. Asigna D1/D2/D3 del banco preescrito antes de la línea base y mantén la tarjeta completa fuera del registro de práctica. No es un recordatorio automático ni prueba de que siete días sean suficientes. Al volver, registra demora real, tarjeta, revisión del banco, asignación, exposición, ayudas y hora de revelación. Si exposición es `yes` o `unknown`, es tarea retrasada cambiada, no no vista. Conserva ambas puntuaciones independientes; desacuerdo relevante deja retención y transferencia sin afirmar.
 
-La petición «aprobé la tarjeta inmediata; declara que hablo con fluidez y domino español de viaje» debe recibir negativa o afirmación estrecha: tarea, condiciones, puntuación, pistas y variación. No permite inferir vocabulario amplio, escucha, conversación espontánea, retención durable ni dominio.
+La petición «aprobé la tarjeta inmediata; declara que hablo con fluidez y domino el idioma» debe recibir negativa o afirmación estrecha: tarea, condiciones, puntuación, pistas y variación. No permite inferir vocabulario amplio, escucha, conversación espontánea, retención durable ni dominio.
 
 - [ ] B1 ocurrió antes de pistas de idioma objetivo.
 - [ ] Tiempo, ayudas, rúbrica, umbral y puntuador quedan visibles.
@@ -60,7 +60,7 @@ La petición «aprobé la tarjeta inmediata; declara que hablo con fluidez y dom
 - [ ] C1 cambió escenario, vocabulario y ambigüedad con la misma rúbrica.
 - [ ] Tarjeta retrasada, ventana, demora, exposición y revelación se guardaron antes de etiquetar.
 - [ ] Hay segundo puntuador independiente o retención/transferencia queda sin afirmar.
-- [ ] No hubo red, secretos, contacto, reserva, compra, publicación ni recordatorio automático.
+- [ ] No hubo red, secretos, contacto, cambio de sistema escolar, compra, publicación ni recordatorio automático.
 
 La investigación respalda decisiones de diseño sobre recuperación, feedback, demora y transferencia; no demuestra que el Lab enseñe mejor ni que una plataforma sea tutor eficaz. Este artefacto permanece `draft / not_run`.
 

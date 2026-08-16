@@ -282,9 +282,8 @@ def check_public_count_claims(status: dict[str, Any], errors: list[str]) -> None
 
     site_lab_expectations = {
         "site/index.html": (
-            f"{lab_count} labs · 2 maintainer references · 0 learner runs",
             f"<strong>{lab_count}</strong><span data-i18n=\"mobileIndexLabs\">labs</span>",
-            f"Labs · {lab_count}",
+            f"{lab_count} guided exercises for safe practice",
         ),
         "site/app.js": (
             f"fileLabsBody: '{lab_count} labs; current status: draft; run status: not_run.'",
@@ -305,9 +304,8 @@ def check_public_count_claims(status: dict[str, Any], errors: list[str]) -> None
 
     skill_expectations = {
         "site/index.html": (
-            f"{skill_count} reusable Skills · candidate",
             f"<strong>{skill_count}</strong><span data-i18n=\"mobileIndexSkills\">Skills</span>",
-            f"Skills · {skill_count}",
+            f"{skill_count} reusable methods for recurring work",
         ),
         "site/app.js": (
             f"{skill_count} project Skills with triggers, boundaries, and evidence contracts.",

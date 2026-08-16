@@ -27,33 +27,33 @@ comparison between learners.
 
 ## Fixed cards
 
-### D1 — airport information desk
+### D1 — study-group schedule
 
 ```text
-Setting: airport information desk.
-You: a traveller flying to Madrid at 18:20.
-Need: confirm the gate and ask whether the baggage drop is still open.
-Ambiguity: the staff member first refers to the 18:50 flight.
+Setting: study-group message thread.
+You: a student proposing a Wednesday 18:20 review session.
+Need: confirm the meeting room and ask whether everyone should bring the practice questions.
+Ambiguity: the other student first understands 18:50.
 Complete the exchange in the target language.
 ```
 
-### D2 — museum visitor desk
+### D2 — project-outline handoff
 
 ```text
-Setting: museum visitor desk.
-You: a visitor with a ticket for the modern-art exhibition.
-Need: confirm the entry time and ask where the audio guide is collected.
-Ambiguity: the attendant first gives the time for a different exhibition.
+Setting: course-project message thread.
+You: a student coordinating a shared outline.
+Need: confirm who owns the methods section and ask when the group will review it.
+Ambiguity: the other student first assigns the results section.
 Complete the exchange in the target language.
 ```
 
-### D3 — ferry-terminal information desk
+### D3 — class-discussion preparation
 
 ```text
-Setting: ferry-terminal information desk.
-You: a passenger travelling to an island with a ticket for 10:30.
-Need: confirm the boarding pier and ask whether a bag must be checked.
-Ambiguity: the clerk first names the 10:03 departure.
+Setting: class-discussion message thread.
+You: a student preparing to discuss an assigned article at 10:30.
+Need: confirm which question to prepare and ask whether a short example is required.
+Ambiguity: the other student first refers to the 10:03 office-hour session.
 Complete the exchange in the target language.
 ```
 

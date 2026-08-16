@@ -167,7 +167,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "draft",
           "translation_status": "source",
           "source_revision": null,
-          "title": "Lab 018: Test a typed beginner travel exchange for retention and transfer"
+          "title": "Lab 018: Test a typed beginner study-coordination exchange for retention and transfer"
         },
         "zh": {
           "path": "book/labs/lab-018-language-transfer-ZH.md",
@@ -175,7 +175,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "draft",
           "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-16",
-          "title": "实验 018：用初学者旅行打字对话测试保持与迁移"
+          "title": "实验 018：用初学者学习协调打字对话测试保持与迁移"
         },
         "es": {
           "path": "book/labs/lab-018-language-transfer-ES.md",
@@ -183,7 +183,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "draft",
           "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-16",
-          "title": "Lab 018: probar un intercambio escrito de viaje para retención y transferencia"
+          "title": "Lab 018: probar un intercambio escrito de coordinación de estudio para retención y transferencia"
         },
         "ja": {
           "path": "book/labs/lab-018-language-transfer-JA.md",
@@ -191,7 +191,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "draft",
           "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-16",
-          "title": "Lab 018: 初心者向け旅行会話の入力練習で保持と転移を試す"
+          "title": "Lab 018: 初心者向け学習調整会話の入力練習で保持と転移を試す"
         },
         "ko": {
           "path": "book/labs/lab-018-language-transfer-KO.md",
@@ -199,7 +199,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "draft",
           "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-16",
-          "title": "Lab 018: 초보자 여행 입력 대화로 유지와 전이 시험하기"
+          "title": "Lab 018: 초보자 학습 조정 입력 대화로 유지와 전이 시험하기"
         },
         "de": {
           "path": "book/labs/lab-018-language-transfer-DE.md",
@@ -207,7 +207,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "draft",
           "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-16",
-          "title": "Lab 018: Einen getippten Reiseaustausch für Anfänger auf Behalten und Transfer testen"
+          "title": "Lab 018: Einen getippten Lernabstimmungsaustausch für Anfänger auf Behalten und Transfer testen"
         }
       }
     },
@@ -6105,7 +6105,7 @@ window.CODEX_LOCALE_MANIFEST = {
       {
         "id": "lab-018",
         "number": 18,
-        "title": "Test a typed beginner travel exchange for retention and transfer",
+        "title": "Test a typed beginner study-coordination exchange for retention and transfer",
         "path": "book/labs/lab-018-language-transfer-EN.md",
         "content_id": "lab-018-language-transfer"
       }

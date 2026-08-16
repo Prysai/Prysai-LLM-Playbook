@@ -139,6 +139,40 @@ try {
   await page.setViewportSize({ width: 1280, height: 900 });
   await fs.mkdir(visualEvidenceDirectory, { recursive: true });
   await page.locator('.hero').screenshot({ path: path.join(visualEvidenceDirectory, 'hero-routes-desktop.png') });
+  // The product entry must give an unsure visitor one concrete outcome, not
+  // make them decode the curriculum before trying anything.
+  const goalWizard = page.locator('[data-goal-wizard]');
+  await goalWizard.scrollIntoViewIfNeeded();
+  assert.equal(await goalWizard.locator('[data-goal-key]').count(), 6, 'goal wizard does not offer six concrete starting purposes');
+  assert.match(
+    await goalWizard.locator('[data-goal-key="research"]').innerText(),
+    /source-check prompt that separates evidence from guesses/i,
+    'research goal does not state the usable result before asking for details',
+  );
+  await goalWizard.locator('[data-goal-key="task"]').click();
+  await goalWizard.locator('[data-field-key="goal"]').fill('Fix one broken help-page link');
+  await goalWizard.locator('[data-field-key="context"]').fill('The file is docs/help.md and I can edit it locally.');
+  await goalWizard.locator('[data-goal-form]').getByRole('button', { name: 'Build my prompt' }).click();
+  assert.match(await goalWizard.locator('[data-goal-prompt]').innerText(), /allowed actions[\s\S]*stop condition/i, 'task goal does not produce a bounded, usable prompt');
+  assert.match(
+    await goalWizard.locator('[data-goal-path]').getAttribute('href'),
+    /reader\.html\?path=book%2Fchapters%2F03-task-protocol-EN\.md&lang=en#core-task-contract$/,
+    'task goal deep link does not use the current English Reader route',
+  );
+  await page.goto(`${origin}/site/?lang=zh`, { waitUntil: 'networkidle' });
+  const chineseGoalWizard = page.locator('[data-goal-wizard]');
+  await chineseGoalWizard.locator('[data-goal-key="task"]').click();
+  await chineseGoalWizard.locator('[data-field-key="goal"]').fill('修复帮助页面上的一个失效链接');
+  await chineseGoalWizard.locator('[data-field-key="context"]').fill('文件是 docs/help.md，我可以在本地修改。');
+  await chineseGoalWizard.locator('[data-wizard-next]').click();
+  assert.match(await chineseGoalWizard.locator('[data-goal-prompt]').innerText(), /允许行动[\s\S]*停止条件/, 'Chinese task goal does not render its Chinese prompt');
+  assert.match(
+    await chineseGoalWizard.locator('[data-goal-path]').getAttribute('href'),
+    /reader\.html\?path=book%2Fchapters%2F03-task-protocol-ZH\.md&lang=zh#core-task-contract$/,
+    'Chinese task goal deep link does not stay on the Chinese route',
+  );
+  await noHorizontalOverflow(page, 'Chinese goal wizard');
+  await page.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
   const skillsSection = page.locator('#skills');
   const adversarialReviewLink = skillsSection.getByRole('link', { name: 'Adversarial Project Review' });
   await adversarialReviewLink.waitFor();
@@ -587,7 +621,7 @@ try {
   const searchIndexResponse = page.waitForResponse((response) => response.url().includes('search-index.js') && response.ok());
   await searchInput.fill('verification');
   await page.getByRole('button', { name: 'Search', exact: true }).click();
-  await page.getByRole('button', { name: 'Clear' }).click();
+  await page.locator('[data-search-clear]').click();
   await searchIndexResponse;
   assert.equal(searchRequests.length, 1, 'search index was not loaded exactly once on first search intent');
   assert.equal(await searchInput.inputValue(), '', 'clearing during index load restored a stale query');
@@ -610,7 +644,7 @@ try {
   await searchInput.fill('research checkpoint');
   await page.getByRole('button', { name: 'Search', exact: true }).click();
   await page.locator('[data-search-results] .search-result').filter({ hasText: 'AI safety field signals' }).first().waitFor();
-  await page.getByRole('button', { name: 'Clear' }).click();
+  await page.locator('[data-search-clear]').click();
 
   const fieldSignalsHref = await page.getByRole('link', { name: 'Read the AI safety field signals' }).getAttribute('href');
   assert.match(fieldSignalsHref, /reader\.html\?path=docs%2Fresearch%2Fai-safety-field-signals-and-research-receipts-2026-08-13\.md&lang=en$/, 'AI safety field-signals link does not open its canonical Reader route');
@@ -702,7 +736,7 @@ try {
   assert.match(await tutorialIntakePage.locator('[data-reader-article]').innerText(), /do not embed its player, copy its transcript, reuse its screenshots/i, 'Community tutorial intake omits its source and rights boundary');
   await noHorizontalOverflow(tutorialIntakePage, 'community tutorial intake field note');
   await tutorialIntakePage.close();
-  await page.getByRole('button', { name: 'Clear' }).click();
+  await page.locator('[data-search-clear]').click();
 
   const retryPage = await context.newPage();
   let retryRequests = 0;
@@ -721,7 +755,11 @@ try {
   assert.equal(retryRequests, 2, 'search failure did not retry after the submitted search failed');
   await retryPage.close();
 
-  const desktopRecoveryHref = await page.locator('.problem-card-practice[data-source-href$="#recovery-route"]').getAttribute('href');
+  // Earlier goal-wizard coverage deliberately visits the Chinese home page.
+  // The following legacy card assertions are specifically about English
+  // source fragments, so restore their explicit locale precondition.
+  await page.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
+  const desktopRecoveryHref = await page.locator('.problem-card-practice').filter({ hasText: 'The model answered the wrong task.' }).getAttribute('href');
   assert.match(desktopRecoveryHref, /reader\.html\?path=book%2Fcommunication-clinic-EN\.md&lang=en#recovery-route$/, 'Showcase recovery card does not preserve the Reader fragment');
   const desktopRecoveryPage = await context.newPage();
   await desktopRecoveryPage.goto(new URL(desktopRecoveryHref, `${origin}/site/`).href, { waitUntil: 'networkidle' });
@@ -730,7 +768,7 @@ try {
   assert.ok(desktopRecoveryTop >= 0 && desktopRecoveryTop < 260, `Desktop Reader did not restore the recovery fragment: ${desktopRecoveryTop}`);
   await desktopRecoveryPage.close();
 
-  const desktopPublicInterestHref = await page.locator('.problem-card-practice[data-source-href$="#public-interest-safety-route"]').getAttribute('href');
+  const desktopPublicInterestHref = await page.locator('.problem-card-practice').filter({ hasText: 'I need to assess an AI idea that could affect people.' }).getAttribute('href');
   assert.match(desktopPublicInterestHref, /reader\.html\?path=book%2Fcommunication-clinic-EN\.md&lang=en#public-interest-safety-route$/, 'Showcase public-interest safety card does not preserve the Reader fragment');
   const desktopPublicInterestPage = await context.newPage();
   await desktopPublicInterestPage.goto(new URL(desktopPublicInterestHref, `${origin}/site/`).href, { waitUntil: 'networkidle' });

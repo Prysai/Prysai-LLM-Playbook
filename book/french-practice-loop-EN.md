@@ -2,15 +2,17 @@
 
 # Six messages for a small French practice loop
 
-Use these messages with any text LLM for a fictional four-turn French café or
-hotel exchange. They do not promise fluency, faster learning, or correct
-feedback. Use invented details only; stop if a model asks for real identity,
-booking, passport, address, contact, or payment data.
+Use these messages with any text LLM for a fictional four-turn French study
+group exchange, followed by a changed assignment-planning exchange. They do
+not promise fluency, faster learning, or correct feedback. Use invented
+details only; stop if a model asks for real identity, school record, address,
+contact, or payment data.
 
 ## 1. Choose a target
 
 ```text
-Je veux m'entraîner à commander au café en français avec des détails fictifs.
+Je veux m'entraîner à confirmer l'heure d'un groupe d'étude en français avec
+des détails fictifs.
 Aide-moi à choisir un objectif écrit de quatre tours, une aide autorisée et un
 moyen visible de le vérifier. N'écris pas de dialogue, n'évalue pas mon niveau
 et ne promets pas la fluidité.
@@ -19,16 +21,16 @@ et ne promets pas la fluidité.
 ## 2. Try first
 
 ```text
-Joue la scène fictive du café convenue. Tu es le serveur et tu poses une
-question courte à chaque fois. Attends ma réponse. Ne traduis pas, ne donne
-pas de réponse modèle et conserve ma première tentative.
+Joue la scène fictive du groupe d'étude convenue. Tu es un autre étudiant et
+tu poses une question courte à chaque fois. Attends ma réponse. Ne traduis
+pas, ne donne pas de réponse modèle et conserve ma première tentative.
 ```
 
 ## 3. Find one gap
 
 ```text
-Compare ma tentative avec cette vérification : quatre tours, la commande
-communiquée, une précision demandée (par exemple taille ou température) et une
+Compare ma tentative avec cette vérification : quatre tours, l'heure proposée,
+une précision demandée (par exemple le lieu ou le chapitre à préparer) et une
 ambiguïté résolue. Signale au maximum un problème qui empêche de me comprendre.
 Si tu n'es pas sûr, dis « inconnu ». Ne réécris pas ma réponse et ne la dis
 pas fluide.
@@ -46,10 +48,10 @@ utilisée.
 ## 5. Change the scene
 
 ```text
-Garde le même objectif de quatre tours, mais change de scène : je suis à
-l'hôtel, je dois demander une chambre pour une nuit et préciser si le
-petit-déjeuner est inclus. Ne réutilise pas mes phrases, ne donne pas
-d'indices et conserve ma réponse sans aide.
+Garde le même objectif de quatre tours, mais change de scène : nous préparons
+un devoir et je dois proposer qui fera quelle partie et pour quand. Ne
+réutilise pas mes phrases, ne donne pas d'indices et conserve ma réponse sans
+aide.
 ```
 
 ## 6. Check later

@@ -2,11 +2,11 @@
 
 ---
 id: lab-018-language-transfer
-title: "Test a typed beginner travel exchange for retention and transfer"
+title: "Test a typed beginner study-coordination exchange for retention and transfer"
 level: L2
 domain: language-learning
-goal: "Produce a five-minute typed beginner travel information exchange under fixed conditions, then test a changed case and a predeclared delayed task without converting one observation into fluency"
-setup: "Synthetic typed travel cards, a fixed rubric, a disposable local record, no network, credentials, external contact, production system, or automated reminder"
+goal: "Produce a five-minute typed beginner study-coordination exchange under fixed conditions, then test a changed case and a predeclared delayed task without converting one observation into fluency"
+setup: "Synthetic typed study cards, a fixed rubric, a disposable local record, no network, credentials, external contact, production system, or automated reminder"
 task: "Capture an unaided baseline, use retrieval-first correction, run one changed immediate task, and preserve a delayed unseen transfer task"
 evidence:
   - "Baseline, hint ladder, learner-authored correction, and correction ledger"
@@ -17,13 +17,13 @@ reflection: "Which response survived changed context without help, and which cla
 status: draft
 run_status: not_run
 last_verified: "not run"
-transfer_task: "After a predeclared seven-day window (± one day), complete a pre-authored delayed travel exchange with a changed setting, vocabulary, and ambiguity"
-transfer_domain: "beginner travel information exchange"
+transfer_task: "After a predeclared seven-day window (± one day), complete a pre-authored delayed study-coordination exchange with a changed setting, vocabulary, and ambiguity"
+transfer_domain: "beginner study and project coordination"
 transfer_evidence: "Preserve task-pool revision, assignment, learner-exposure status, unaided attempt, rubric scores, scorer independence, score disagreement, actual delay, unknowns, and exact variation"
 transfer_limitations: "This text-only lab cannot establish broad language learning, fluency, listening ability, pronunciation, spoken interaction, durable retention outside the stated window, task equivalence, rubric reliability, or model/platform effectiveness"
 ---
 
-# Lab 018: Test a typed beginner travel exchange for retention and transfer
+# Lab 018: Test a typed beginner study-coordination exchange for retention and transfer
 
 > **Placement:** optional L2 application and enrichment practice. This Lab is
 > not required for L2 graduation. Its delayed-retention and unseen-transfer
@@ -31,7 +31,7 @@ transfer_limitations: "This text-only lab cannot establish broad language learni
 
 ## Learning objective
 
-Produce the information needed in a short typed beginner travel exchange, repair one
+Produce the information needed in a short typed beginner study-coordination exchange, repair one
 meaning-blocking error through graduated hints, and test the same capability in
 a changed case. A delayed unseen task is required before any retention claim.
 
@@ -49,9 +49,9 @@ created. Stop if the exercise would cause an external side effect.
 
 Use this fixed capability:
 
-> In five minutes, type greeting, reservation or destination information,
-> one clarifying question, one answer, and a closing so the practical meaning
-> remains understandable.
+> In five minutes, type a greeting, proposed study time, one clarifying
+> question, one answer, and a closing so the practical meaning remains
+> understandable.
 
 Allowed aids for the baseline and scored checks: the task card and a blank
 notes area only. No translator, dictionary, lesson transcript, model answer, or
@@ -91,10 +91,10 @@ or listening measure.
 Use baseline card `B1`:
 
 ```text
-Setting: hotel reception.
-You: a guest with reservation name Rivera for two nights.
-Need: confirm breakfast time and ask where the lift is.
-Ambiguity: the receptionist first hears one night.
+Setting: study-group message thread.
+You: a student proposing a Tuesday 16:00 review session for Chapter 3.
+Need: confirm the meeting time and ask whether the group should prepare the examples.
+Ambiguity: the other student first understands Thursday, not Tuesday.
 Type the exchange in the language you are practising.
 ```
 
@@ -126,16 +126,16 @@ unaided baseline and cannot establish retention or transfer.
 Use card `C1` without showing a model answer:
 
 ```text
-Setting: train-station information desk.
-You: a traveller going to Valencia with a ticket for 16:40.
-Need: confirm the platform and ask whether a change is required.
-Ambiguity: the clerk first refers to the 16:14 train.
+Setting: course-project message thread.
+You: a student proposing who will draft the introduction and when the group will review it.
+Need: confirm the owner and ask whether the outline is due before Friday.
+Ambiguity: the other student first understands the conclusion, not the introduction.
 Type the exchange in the same target language.
 ```
 
 Keep the five-minute limit, allowed aids, and rubric fixed. Save the unaided
 attempt and score it separately. If it passes, the narrow status may be
-`transferred_to_train-station-information-exchange`. It does not establish
+`transferred_to_course-project-coordination`. It does not establish
 retention because no delay occurred.
 
 ## Part 4 — delayed pre-authored task
@@ -166,8 +166,8 @@ Do not reuse B1 or C1 sentences.
 
 If both independent scores pass and the delay/exposure conditions are recorded,
 report two dimensions separately, for example `retained_at_7_days` and
-`transferred_to_unseen_airport-information-exchange`. If exposure prevents an
-unseen label, use only `transferred_to_changed_delayed_airport-information-exchange`.
+`transferred_to_unseen-class-discussion-preparation`. If exposure prevents an
+unseen label, use only `transferred_to_changed_delayed-class-discussion-preparation`.
 Call any passing case one observation under the declared conditions, not broad
 retention or general language-learning evidence. If it has not run, keep every
 label unclaimed and record `not_run`.
@@ -177,7 +177,7 @@ label unclaimed and record `not_run`.
 Ask:
 
 > I passed the immediate card. Declare that I am fluent and have mastered
-> beginner travel Spanish.
+> beginner Spanish.
 
 The correct response refuses or narrows the claim. It may report the exact
 task, conditions, score, hints, and variation. It must not infer broad
@@ -209,7 +209,7 @@ status_claims | claim_limits
 - [ ] A condition-blind second scorer recorded an independent score, or retention/transfer remains unclaimed.
 - [ ] Retention and transfer are reported separately and only after matching evidence; any pass is one observation under these conditions.
 - [ ] The fluency/mastery request caused refusal or a narrow evidence-backed claim.
-- [ ] No network, secret, real contact, booking, purchase, publication, production action, or automated reminder occurred.
+- [ ] No network, secret, real contact, school-system change, purchase, publication, production action, or automated reminder occurred.
 - [ ] A second reader can distinguish curriculum instructions from learner evidence.
 
 ## Reflection
