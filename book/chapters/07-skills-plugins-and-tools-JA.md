@@ -7,7 +7,7 @@
 
 **ここから始める：** 先にタスクの不足を名前で言い、その不足を埋める最小の能力を選びます。
 
-## この章が解く問題
+## この章が解決する問題
 
 「Skill が必要だ」は、いつも正しい診断ではありません。Skill、Plugin、MCP server、
 connector、script、template、document は別の問題を解きます。交換可能な名前のように扱うと、
@@ -27,7 +27,7 @@ connector、script、template、document は別の問題を解きます。交換
   side effect、evidence を確認する。
 - ファイルの存在、発見、load、採用、行動の検証を区別する。
 
-## 現実の入口：発見はタスク開始前に失敗し得る
+## 現実の問題：発見はタスク開始前に失敗し得る
 
 [Codex のフィールド調査](../evidence-library-JA.md#source-notes)には公開報告があります。
 これは症状であり、公式の原因説明でもローカル再現でもありません。
@@ -209,13 +209,15 @@ permission を得ず、完全な orchestration を再帰的に始めるべきで
 
 ## 7. 実験：三つの能力の組み合わせを比べる
 
-### 準備とタスク
+### 準備
 
 local、低リスク、reversible な task を選びます。task protocol、fixed revision の Skill candidate
 二つ、外部 connection を要求する simulated option を用意します。一つは隔離 review を続けられ、
 もう一つは license、NOTICE、rollback が不明なため拒否されるべきです。real data の upload、message
 送信、third party への write、外部 account の authentication はしません。各組み合わせに `run-id` を
 与え、task text と acceptance rubric を固定します。
+
+### タスク
 
 同じ task に対して、(1) 明確な protocol のみ、(2) protocol と domain Skill、(3) protocol、domain
 Skill、external connection の三つを設計します。各 candidate の pre-adoption review を先に終えます。
@@ -242,12 +244,12 @@ existence、discovery、load、adoption、verification のどれを示すかを�
 加えます。重なりを見つけ、不必要な permission を拒否し、不明候補を `blocked` とし、protocol のみ
 または一 Skill の baseline を残せれば合格です。
 
-## 移行
+## 移行タスク
 
 四層モデルを research workflow と product report workflow へ適用します。それぞれで method、
 connection、script にすべき決定的変換を特定します。
 
-## 出典と保守境界
+## 出典と保守の境界
 
 | 事実または境界 | source | 確認日 | 適用範囲 |
 |---|---|---:|---|

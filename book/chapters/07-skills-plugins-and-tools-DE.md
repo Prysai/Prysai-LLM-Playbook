@@ -8,7 +8,7 @@ es belegt nicht, dass ein externer Skill in diesem Repository lief.
 **Startpunkt:** Benenne zuerst die Aufgabenlücke und wähle erst dann die kleinste
 Fähigkeit, die sie schließt.
 
-## Das Problem
+## Das Problem dieses Kapitels
 
 „Ich brauche einen Skill“ ist nicht immer die richtige Diagnose. Skill, Plugin,
 MCP-Server, Connector, Skript, Vorlage und Dokument lösen verschiedene Probleme.
@@ -25,7 +25,7 @@ verbirgt Abhängigkeiten und erweitert externe Nebenwirkungen unbemerkt.
 - Trigger, Abhängigkeiten, Lizenz, Rechte, Nebenwirkungen und Belege vor der Übernahme prüfen; und
 - Datei, Entdeckung, Laden, Übernahme und verifiziertes Verhalten nicht verwechseln.
 
-## Ein realer Einstieg: Entdeckung kann vor der Aufgabe scheitern
+## Praxisfälle: Entdeckung kann vor der Aufgabe scheitern
 
 Die [Codex-Feldrecherche](../evidence-library-DE.md#source-notes) enthält
 öffentliche Symptome, keine offizielle Ursache und keine lokale Reproduktion.
@@ -204,6 +204,8 @@ Checkpoints. Ein aufgerufener Skill erhält nicht die Rechte eines anderen.
 
 ## 7. Experiment: drei Fähigkeitskombinationen vergleichen
 
+### Vorbereitung
+
 Wähle eine lokale, risikoarme, reversible Aufgabe. Bereite ein Protokoll, zwei
 Skill-Kandidaten mit fixer Revision und eine simulierte externe Verbindung vor.
 Einer soll weiter isoliert geprüft, einer wegen unklarer Lizenz, NOTICE oder
@@ -211,10 +213,14 @@ Rücknahme abgelehnt werden. Lade keine echten Daten hoch, sende keine Nachricht
 schreibe nicht an Dritte und authentifiziere keine externen Konten. Jede Kombination
 erhält eine `run-id`; Aufgabentext und Abnahmerubrik bleiben gleich.
 
+### Aufgabe
+
 Vergleiche (1) Protokoll allein, (2) Protokoll plus Domänen-Skill und (3) Protokoll,
 Skill plus externe Verbindung. Schließe die Vorprüfung vorher ab. Der Versuch bleibt
 read-only: nicht installieren, authentifizieren oder Teamkonfiguration aktivieren.
 Vergleiche Ausgabequalität, Zeit, Rechteumfang, Verifikationskosten und Nebenwirkung.
+
+### Belege
 
 Bewahre Wege, `run-id`, zwei Entscheidungen, Rechte-/Abhängigkeitstabelle,
 Lizenzfunde, simulierte oder echte Ausgabe, Prüfergebnis und eine Liste nicht
@@ -227,13 +233,19 @@ Erkläre, welcher Beleg `recommendation-only` oder `blocked` weiterbewegen würd
 Notiere, ob jede Beobachtung Existenz, Entdeckung, Laden, Übernahme oder Verifikation
 zeigt; ein früher Zustand ersetzt keinen späteren.
 
-## Bewusster Fehlerfall und Transfer
+## Bewusster Fehlerfall und Grenze
 
 Gib drei überlappende Skills vor, von denen einer externes Hochladen verlangt,
 obwohl nur lokale Ordnung nötig ist. Ergänze einen Kandidaten mit erreichbarem Repo
 und `SKILL.md`, aber unklarer Lizenz oder Rücknahme. Die Übung ist bestanden, wenn
 Überlappung erkannt, unnötige Rechte abgelehnt, der unklare Kandidat `blocked`
 bleibt und die Basis mit Protokoll allein oder einem Skill erhalten bleibt.
+
+## Reflexion
+
+Welche zusätzliche Fähigkeit veränderte den Beleg oder die Berechtigung am stärksten? Welche Beobachtung war nur simuliert? Begründe, weshalb die Basis ohne externe Verbindung erhalten bleiben muss.
+
+## Transferaufgabe
 
 Übertrage das Vier-Schichten-Modell auf Recherche-Workflow und Produktbericht.
 Bestimme jeweils Methode, Verbindung und jede deterministische Umwandlung, die ein

@@ -8,7 +8,7 @@ no prueban que un Skill externo haya funcionado en este repositorio.
 **Empieza aquí:** nombra primero la brecha de la tarea y elige después la capacidad
 mínima que la cubra.
 
-## El problema
+## El problema que resuelve este capítulo
 
 «Necesito un Skill» no siempre es el diagnóstico correcto. Un Skill, Plugin,
 servidor MCP, conector, script, plantilla y documento resuelven problemas distintos.
@@ -29,7 +29,7 @@ La pregunta útil no es «¿qué directorio tiene más Skills?», sino:
 - distinguir archivo existente, capacidad descubierta, cargada, adoptada y
   comportamiento verificado.
 
-## Un punto de entrada real: el descubrimiento falla antes de empezar
+## Problemas reales: el descubrimiento falla antes de empezar
 
 La [investigación de campo de Codex](../evidence-library-ES.md#source-notes)
 registra informes públicos. Son síntomas, no una causa oficial ni reproducción local.
@@ -229,7 +229,7 @@ forma recursiva.
 
 ## 7. Experimento: compara tres combinaciones
 
-### Preparación y tarea
+### Preparación
 
 Elige una tarea local, reversible y de bajo riesgo. Prepara un protocolo, dos
 candidatos Skill de revisión fija y una opción simulada que pediría conexión externa.
@@ -237,6 +237,8 @@ Uno debe poder seguir a revisión aislada; otro debe rechazarse por licencia, NO
 o reversión poco claros. No subas datos reales, envíes mensajes, escribas en terceros
 ni autentiques cuentas. Asigna un `run-id` a cada combinación y conserva texto y
 rúbrica de la tarea.
+
+### Tarea
 
 Diseña para la misma tarea: (1) solo protocolo, (2) protocolo y Skill de dominio,
 (3) protocolo, Skill y conexión externa. Completa primero la revisión previa. Es un

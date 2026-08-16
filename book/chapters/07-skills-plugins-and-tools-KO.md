@@ -26,7 +26,7 @@ template, document는 서로 다른 문제를 풉니다. 이들을 바꿔 쓸 �
   side effect, evidence를 검토한다.
 - 파일 존재, 발견, 로드, 채택, 동작 검증을 구분한다.
 
-## 실제 진입점: 발견은 작업 시작 전에도 실패한다
+## 실제 문제: 발견은 작업 시작 전에도 실패한다
 
 [Codex 현장 조사](../evidence-library-KO.md#source-notes)는 공개 보고를 기록합니다.
 이는 증상이지 공식 원인 분석이나 로컬 재현이 아닙니다.
@@ -206,13 +206,15 @@ Workflow Orchestrator는 phase와 checkpoint를 맡습니다. 호출된 Skill은
 
 ## 7. 실험: 세 역량 조합 비교하기
 
-### 준비와 작업
+### 준비
 
 local, 저위험, reversible task를 고릅니다. task protocol, fixed revision Skill candidate 둘, 외부
 connection이 필요할 simulated option을 준비합니다. 하나는 격리 review를 이어갈 수 있고, 하나는
 license, NOTICE, rollback이 불명확해 거부되어야 합니다. real data upload, message 전송, third-party
 write, 외부 account authentication은 하지 않습니다. 각 조합에 `run-id`를 주고 task text와 acceptance
 rubric을 고정합니다.
+
+### 작업
 
 같은 task에 (1) 명확한 protocol만, (2) protocol과 domain Skill, (3) protocol, domain Skill, external
 connection의 세 방식을 설계합니다. 각 candidate의 pre-adoption review를 먼저 끝냅니다. 실험은
@@ -238,12 +240,12 @@ backup, rollback target, owner, approval point를 이름 붙이고, positive/bou
 찾고 불필요한 permission을 거부하며 불명확 후보를 `blocked`로 두고 protocol만 또는 한 Skill baseline을
 보존하면 통과입니다.
 
-## 전이
+## 전이 과제
 
 네 층 모델을 research workflow와 product report workflow에 적용하세요. 각각에서 method, connection,
 script가 되어야 할 결정적 변환을 찾습니다.
 
-## 출처와 유지보수 경계
+## 출처 및 유지보수 경계
 
 | 사실 또는 경계 | source | 확인일 | 적용 범위 |
 |---|---|---:|---|
