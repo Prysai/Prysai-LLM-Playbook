@@ -4,7 +4,7 @@
 
 **状態：** `candidate`。**実験：** `draft / not_run`。評価 fixture にはモデル実行ログがありません。この章は、あるモデルが優れている証明ではありません。
 
-## 問題
+## この章が解決する問題
 
 「このモデルは賢い」「この Skill は信頼できる」「すぐ終わった」は観測にはなっても選定には足りません。model、prompt、context、tool、permission、難易度、人の review が結果に影響します。一条件でも変われば、比較は元の問いに答えなくなります。
 
@@ -110,6 +110,44 @@ model 一つと offline text だけで、account を接続せずにできます�
 両方を **事実を保ったか**、**欠けた情報を印したか**、**原文を追跡できるか**、**範囲を守ったか**、**安全に止まれたか** の5項目で各0–2点にします。prompt、input、output、score、差が出た理由を一文保存します。text、model、tool、permission、条件が変わったら、勝者を決めず `not_comparable` と記録します。
 
 これは個人の練習 record であり benchmark data ではありません。B が良くても、別の固定 task でこの protocol を再確認する理由になるだけです。生産性向上、より賢い model、一般順位は示しません。
+
+## 学習目標
+
+一回に一つの variable だけを比較し、first attempt と rework を分けて残し、smoke test を一般的な model ranking にしません。
+
+## 現実の問題：より良い answer は別の attempt かもしれない
+
+prompt、permission、input、time が同時に変われば、差の原因は分かりません。役立つ retry でも first attempt を record から消せません。
+
+### 準備
+
+固定した三つの synthetic task と二つの candidate を secret のない local environment で使います。input、model または workflow、time、permission、reviewer、rubric を最初の attempt 前に固定します。
+
+### タスク
+
+変えるのは protocol または candidate の一つだけです。candidate と task ごとに run ID を付け、fact、completeness、scope、evidence、safe stop を同じ rubric で score します。
+
+### 証拠
+
+decision card、input hash、output、timeline、score、first attempt、rework、comparability、cost basis を残します。record や condition が欠ければ `not_run`、`blocked`、`continue_test` です。
+
+### 振り返り
+
+どの change が comparison を無効にしましたか。良い result があっても productivity や intelligence について何が未証明ですか。
+
+## 移行タスク
+
+同じ synthetic text で language-learning dialog 用の instruction を二つ比べます。fact fidelity、見える correction、missing data での stop だけを評価し、mastery は主張しません。
+
+## 受け入れチェックリスト
+
+- [ ] 一回に model、workflow、permission の一つだけを変える。
+- [ ] first pass、retry、`not_comparable` を分けて残す。
+- [ ] decision に task、condition、scope、unknown、next check がある。
+
+## 出典と保守の境界
+
+fixed condition と evidence record は安定した方法です。model、price、limit、surface、availability は変わるため run ごとに記録します。
 
 <!-- chapter-navigation:start -->
 <hr>

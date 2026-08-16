@@ -4,7 +4,7 @@
 
 **상태:** `candidate`. **실험:** `draft / not_run`. 평가 fixture에는 모델 실행 로그가 없습니다. 이 장은 어떤 모델이 더 낫다는 증명이 아닙니다.
 
-## 문제
+## 이 장에서 해결하는 문제
 
 “이 모델은 더 똑똑하다”, “이 Skill은 믿을 만하다”, “작업이 빨리 끝났다”는 관찰일 수 있지만 선택의 근거는 아닙니다. model, prompt, context, tool, permission, 난이도, 사람 review가 결과를 바꿉니다. 조건 하나가 바뀌면 비교는 원래 질문에 답하지 않을 수 있습니다.
 
@@ -110,6 +110,44 @@ model 하나와 offline text만으로, account를 연결하지 않고 할 수 �
 두 output을 **사실 보존**, **빠진 정보 표시**, **원문 추적 가능성**, **범위 준수**, **안전한 중지** 다섯 항목에서 각각 0–2점으로 평가합니다. prompt, input, output, score, 차이에 대한 한 문장을 보관합니다. text, model, tool, permission, 조건이 바뀌면 승자를 선언하지 말고 `not_comparable`로 기록합니다.
 
 이는 개인 연습 record이며 benchmark data가 아닙니다. B가 더 좋아도 다른 고정 task에서 이 protocol을 다시 시험할 이유가 될 뿐, 생산성 향상, 더 똑똑한 model, 일반 순위를 증명하지 않습니다.
+
+## 학습 목표
+
+한 라운드에 한 variable만 비교하고 first attempt와 rework를 나누어 보관하며 smoke test를 일반 model ranking으로 바꾸지 않습니다.
+
+## 실제 문제: 더 나은 answer는 다른 attempt일 수 있다
+
+prompt, permission, input, time이 동시에 바뀌면 차이의 원인을 알 수 없습니다. 유용한 retry도 first attempt를 record에서 지울 수 없습니다.
+
+### 준비
+
+고정된 세 synthetic task와 두 candidate를 secret 없는 local environment에서 사용합니다. input, model 또는 workflow, time, permission, reviewer, rubric을 첫 attempt 전에 고정합니다.
+
+### 작업
+
+protocol 또는 candidate 중 하나만 바꿉니다. candidate와 task마다 run ID를 주고 fact, completeness, scope, evidence, safe stop을 같은 rubric으로 score합니다.
+
+### 증거
+
+decision card, input hash, output, timeline, score, first attempt, rework, comparability, cost basis를 보관합니다. record나 condition이 없으면 `not_run`, `blocked`, `continue_test`입니다.
+
+### 회고
+
+어떤 change가 comparison을 무효로 만들었나요? 좋은 result가 있어도 productivity나 intelligence에 대해 무엇이 미증명인가요?
+
+## 전이 과제
+
+같은 synthetic text로 language-learning dialog instruction 두 개를 비교합니다. fact fidelity, 보이는 correction, missing data의 stop만 평가하고 mastery는 주장하지 않습니다.
+
+## 수용 체크리스트
+
+- [ ] 한 라운드에 model, workflow, permission 중 하나만 바꾼다.
+- [ ] first pass, retry, `not_comparable`을 나누어 보관한다.
+- [ ] decision에 task, condition, scope, unknown, next check가 있다.
+
+## 출처 및 유지보수 경계
+
+fixed condition과 evidence record는 안정적인 방법입니다. model, price, limit, surface, availability는 변하므로 run마다 기록합니다.
 
 <!-- chapter-navigation:start -->
 <hr>

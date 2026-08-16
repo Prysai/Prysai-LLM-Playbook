@@ -4,7 +4,7 @@
 
 **Status:** `candidate`. **Experimentstatus:** `draft / not_run`. Die Evaluations-Fixtures enthalten keine Modelllauf-Logs. Dieses Kapitel beweist nicht, dass ein Modell besser ist.
 
-## Das Problem
+## Das Problem dieses Kapitels
 
 „Dieses Modell ist klüger“, „dieser Skill ist zuverlässig“ oder „die Aufgabe war schnell fertig“ können Beobachtungen sein, reichen aber nicht zur Auswahl. Modell, Prompt, Kontext, Tools, Berechtigungen, Schwierigkeit und menschliches Review beeinflussen das Ergebnis. Ändert sich eine Bedingung, beantwortet der Vergleich möglicherweise nicht mehr dieselbe Frage.
 
@@ -81,7 +81,7 @@ Nenne am Ende für jeden Schritt den Satz im Text, der ihn stützt. Fehlt ein Be
 
 Das ist kein magischer Prompt und kein Nachweis für eine höhere Modellleistung. Er macht nur Umfang, fehlende Angaben und Abnahme sichtbar. Bewerte beide Ausgaben mit derselben 0–2-Rubrik: Auslassungen, Erfindungen, Textbezug und sicheres Stoppen. Ist B besser, lautet die ehrliche Schlussfolgerung lediglich, dass dieses Protokoll mit diesem Input und dieser Rubrik weiter geprüft werden sollte.
 
-## Kleine Übung: drei Tasks, zwei Kandidaten, eine Variable
+## Kleines Experiment: drei Tasks, zwei Kandidaten, eine Variable
 
 Nutze drei feste synthetische Inputs: Claim/Status/Evidenz extrahieren, ohne neue Fakten nach Markdown übertragen und die Lücke prüfen, warum „Code plus Build“ keine Fertigstellung belegt. A erhält nur Task und Input; B erhält zusätzlich Protokoll, minimalen Kontext und Evidenzregeln. Modell, Surface, Berechtigungen, Tools, Netzwerk, Zeit und Reviewer bleiben gleich.
 
@@ -110,6 +110,44 @@ Das geht mit einem Modell, Offline-Text und ohne Kontoverbindung. Nimm eine kurz
 Bewerte beide Ausgaben bei **Fakten erhalten**, **fehlende Information markiert**, **Textbezug nachvollziehbar**, **Umfang eingehalten** und **sicher gestoppt** jeweils mit 0–2. Bewahre Prompt, Input, Ausgaben, Scores und einen Satz zur Differenz auf. Ändern sich Text, Modell, Tool, Rechte oder Bedingung, schreibe `not_comparable`, statt einen Gewinner zu erklären.
 
 Dies ist ein persönlicher Übungsrecord, keine Benchmark-Daten. Ein besseres B rechtfertigt nur, das Protokoll bei einer weiteren festen Aufgabe zu prüfen; es beweist keinen Produktivitätsgewinn, kein klügeres Modell und kein allgemeines Ranking.
+
+## Lernziele
+
+Du vergleichst nur eine Variable pro Runde, bewahrst Erstversuch und Nacharbeit getrennt auf und leitest aus einem Smoke-Test kein allgemeines Modellranking ab.
+
+## Praxisfälle: Eine bessere Antwort kann ein anderer Versuch sein
+
+Wenn Prompt, Rechte, Input oder Zeit gleichzeitig wechseln, ist unklar, was die Differenz verursacht hat. Ein überzeugender Retry kann nützlich sein, darf aber den ersten Versuch nicht aus dem Record löschen.
+
+### Vorbereitung
+
+Nutze drei feste synthetische Aufgaben und zwei benannte Kandidaten in einer lokalen, geheimnisfreien Umgebung. Friere Input, Modell oder Workflow, Zeit, Rechte, Reviewer und Rubrik vor dem ersten Versuch ein.
+
+### Aufgabe
+
+Ändere nur eine Variable: entweder das Arbeitsprotokoll oder den Kandidaten. Vergib pro Kandidat und Aufgabe Run-ID und score Fakten, Vollständigkeit, Umfang, Evidenzbezug und sicheres Stoppen mit derselben Rubrik.
+
+### Belege
+
+Bewahre Decision Card, Input-Hashes, Ausgaben, Zeitlinie, Scores, Erstversuch, Nacharbeit, Vergleichbarkeitsstatus und Kostenbasis auf. Fehlen Records oder Bedingungen, lautet das Ergebnis `not_run`, `blocked` oder `continue_test`.
+
+### Reflexion
+
+Welche Änderung machte einen Vergleich unzulässig? Welche Behauptung über Produktivität oder „Intelligenz“ bleibt auch bei einem guten Resultat unbelegt?
+
+## Transferaufgabe
+
+Vergleiche zwei Anweisungen für einen kurzen Sprachlern-Dialog mit demselben synthetischen Text. Beurteile nur Faktentreue, sichtbare Korrektur und Stopp bei fehlenden Angaben; behaupte keine Sprachbeherrschung.
+
+## Abnahme-Checkliste
+
+- [ ] Ich ändere je Runde nur Modell, Workflow oder Berechtigung.
+- [ ] Ich behalte First Pass, Retry und `not_comparable` getrennt.
+- [ ] Meine Entscheidung nennt Aufgabe, Bedingungen, Scope, Unknowns und nächste Prüfung.
+
+## Quellen und Wartungsgrenze
+
+Feste Bedingungen und Evidenzrecords sind stabile Methoden. Modelle, Preise, Limits, Oberflächen und Verfügbarkeit sind veränderliche Fakten und brauchen pro Lauf eine aktuelle Aufzeichnung.
 
 <!-- chapter-navigation:start -->
 <hr>

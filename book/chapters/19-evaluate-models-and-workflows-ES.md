@@ -4,7 +4,7 @@
 
 **Estado:** `candidate`. **Experimento:** `draft / not_run`. Los fixtures de evaluación no contienen logs de ejecuciones de modelos; este capítulo no prueba que un modelo sea mejor.
 
-## El problema
+## El problema que resuelve este capítulo
 
 «Este modelo es más inteligente», «este Skill es fiable» o «la tarea acabó rápido» pueden ser observaciones, pero no bastan para elegir. Modelo, prompt, contexto, herramientas, permisos, dificultad y revisión humana afectan el resultado. Si cambia una condición, quizá la comparación deja de responder la misma pregunta.
 
@@ -107,6 +107,44 @@ Puedes hacerlo con un solo modelo, texto sin conexión y sin conectar una cuenta
 Puntúa ambas salidas de 0 a 2 en **hechos conservados**, **información faltante marcada**, **texto de apoyo rastreable**, **alcance respetado** y **parada segura**. Conserva prompt, entrada, salidas, puntuaciones y una frase sobre cualquier diferencia. Si cambia texto, modelo, herramienta, permiso o condición, escribe `not_comparable` en vez de declarar un ganador.
 
 Es un registro personal de práctica, no datos de benchmark. Que B salga mejor solo justifica probar el protocolo otra vez con otra tarea fija; no demuestra productividad, un modelo más inteligente ni un ranking general.
+
+## Objetivos de aprendizaje
+
+Compararás una sola variable por ronda, guardarás primer intento y retrabajo por separado y no convertirás un smoke test en ranking general.
+
+## Problemas reales: una respuesta mejor puede ser otro intento
+
+Si cambian prompt, permisos, entrada y tiempo a la vez, no se sabe qué causó la diferencia. Un retry útil no puede borrar el primer intento.
+
+### Preparación
+
+Usa tres tareas sintéticas fijas y dos candidatos nombrados en entorno local sin secretos. Congela entrada, modelo o flujo, tiempo, permisos, revisor y rúbrica antes de empezar.
+
+### Tarea
+
+Cambia solo una variable: protocolo o candidato. Asigna run ID a cada candidato y tarea y puntúa hechos, completitud, alcance, evidencia y parada segura con la misma rúbrica.
+
+### Evidencia
+
+Conserva tarjeta, hashes, salidas, línea temporal, puntuaciones, primer intento, retrabajo, comparabilidad y base de coste. Si faltan condiciones o registros, usa `not_run`, `blocked` o `continue_test`.
+
+### Reflexión
+
+¿Qué cambio volvió inválida la comparación? ¿Qué afirmación sobre productividad o inteligencia sigue sin prueba aun con buen resultado?
+
+## Tarea de transferencia
+
+Compara dos instrucciones para un diálogo breve de aprendizaje de idioma con el mismo texto sintético. Evalúa solo fidelidad, corrección visible y parada ante datos faltantes; no afirmes dominio.
+
+## Lista de aceptación
+
+- [ ] Cambio solo modelo, flujo o permiso por ronda.
+- [ ] Mantengo separados primer pase, retry y `not_comparable`.
+- [ ] Mi decisión nombra tarea, condiciones, alcance, incógnitas y próxima prueba.
+
+## Fuentes y límite de mantenimiento
+
+Las condiciones fijas y registros de evidencia son estables. Modelos, precios, límites, superficies y disponibilidad cambian y se registran en cada ejecución.
 
 <!-- chapter-navigation:start -->
 <hr>
