@@ -71,27 +71,31 @@ future result must keep its commit, conditions, raw de-identified records, and
 scorer disagreements; it remains a small, descriptive observation rather than
 a universal efficiency claim.
 
-## Start here — choose one route
+## Start here — read it like a book
 
-You do not need to understand the whole catalogue before you begin. Choose the
-route that matches what you have **today**. Do not combine the two on your
-first visit.
+This is a textbook, not a menu. Start at the beginning and read in order.
 
-### I do not have a project or coding background
+**Step 0.** [Lesson 0 — What Is a Large Language Model](book/guides/llm-fundamentals-EN.md):
+20 minutes on what an LLM is, its capabilities, and its honest limits.
 
-Start with the [no-setup LLM check](#optional-15-minute-warm-up-no-git-required).
-It uses one fictional message and any chat model. You will make three human
-checks and keep a modest receipt. You do not need files, tools, a connected
-account, private data, or a real-world action. The 15-minute label is a target,
-not a measured beginner completion time.
+**Then the first safe task, in this order:**
 
-### I want to make one reversible local change with Codex
-
-If you opened this project to make a real local change with Codex, do not
-choose among the whole catalogue yet. Take this one sequence:
-
-1. Read [Chapter 1](book/chapters/01-gpt-and-codex-EN.md) to separate a model,
+1. [Chapter 1](book/chapters/01-gpt-and-codex-EN.md) — separate a model,
    Codex, tools, Skills, Agents, and evidence.
+2. [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) — label what a
+   static task card can and cannot establish.
+3. [Chapter 2](book/chapters/02-first-safe-task-EN.md) — define one reversible
+   local change and one acceptance check.
+4. [First Safe Change](book/routes/first-safe-change-EN.md) — an optional
+   offline fixture if you have no disposable project.
+5. [Lab 001](book/labs/lab-001-first-safe-task-EN.md) — inspect first, edit
+   once, keep the diff and the check.
+
+**After Chapter 2**, keep reading: Chapter 3 (task protocols) through Chapter
+22, with the [table of contents](book/table-of-contents-EN.md) as your map.
+The optional [15-minute no-setup check](#optional-15-minute-warm-up-no-git-required)
+and the practice cards are exercises you reach after the foundation — they are
+not the entry point.
 2. Run [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) to label what a
    static task card can and cannot establish about generation, execution,
    verification, and external effects.
