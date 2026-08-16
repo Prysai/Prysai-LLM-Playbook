@@ -131,7 +131,10 @@ automation. A passed check is a static tripwire, not an approval, merge
 authorization, security audit, or branch-protection guarantee.
 
 Contributors must own their submitted work or have permission to adapt it and
-must accept the repository license for project-owned contributions. See the
+must accept the repository license for project-owned contributions: **CC BY
+4.0** for curriculum text, diagrams, and teaching assets, and **Apache-2.0**
+for scripts and tooling. Third-party material keeps its own license; disclose
+any restrictions in the PR. See the
 [licensing policy](docs/sources/licensing.md),
 [asset register](docs/sources/asset-register.md), and
 [contribution model](docs/governance/contribution-model.md).
