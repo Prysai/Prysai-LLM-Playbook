@@ -167,10 +167,10 @@ dieselbe Locale behalten. Die deutsche Navigation verlinkt daher
 englischen oder chinesischen Varianten. Das gilt auch für Inhaltsverzeichnisse,
 Vor-/Zurück-Links, Kapitel-Lab-Verweise und Sprachumschalter.
 
-Gibt es ein `-DE`-Ziel noch nicht, wird kein englisches oder altes
-unsuffixiertes Dokument als Ersatz verlinkt. Der deutsche Buchindex zeigt
-dann „Deutsche Datei noch nicht vorhanden“. So bleibt die fehlende Übersetzung
-erkennbar, ohne die Lesesprache zu wechseln.
+Für alle 22 Kapitel und 18 Labs existiert ein `-DE`-Ziel. Leserlinks bleiben
+innerhalb dieser deutschen Kursroute. Gemeinsame Forschungs-, Governance- und
+Evaluationsmaterialien behalten ihre dokumentierte Originalsprache und werden
+als Evidenzmaterial bezeichnet, nicht als deutsche Kursseiten ausgegeben.
 
 ### Deutsche Einstiege
 
@@ -178,7 +178,7 @@ erkennbar, ohne die Lesesprache zu wechseln.
 - [Deutsches Vorwort](book/preface-DE.md)
 - [Deutsches Inhaltsverzeichnis](book/table-of-contents-DE.md)
 - [Erste universelle LLM-Aufgabe](book/routes/universal-core-foundations-DE.md)
-- [Einstiegskarten](book/communication-clinic-DE.md): sechs direkt kopierbare kurze Nachrichten für Sprache, Update, Entscheidung und Quellencheck. Es ist eine Route `draft / not_run`, keine Zusage zu Flüssigkeit, Effizienz oder Lernerfolg.
+- [Einstiegskarten](book/communication-clinic-DE.md): sieben direkt kopierbare kurze Nachrichten für Sprache, Update, Entscheidung, Quellencheck und Grenzen vor dem Teilen. Es ist eine Route `draft / not_run`, keine Zusage zu Flüssigkeit, Effizienz oder Lernerfolg.
 - [Deutsche Lab-Übersicht](book/labs/README-DE.md): achtzehn risikoarme Übungen, jeweils mit einer deutschen `-DE`-Datei und einem deutschen Pfad.
 
 ### Projektverträge und Status
