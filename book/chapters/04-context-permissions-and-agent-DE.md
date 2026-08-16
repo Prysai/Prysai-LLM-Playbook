@@ -240,3 +240,15 @@ ersetzt keine Beobachtung des aktuellen Laufs.
 |---|---|---|---|
 | Sandbox und Genehmigung sind getrennte Kontrollschichten; App- und Connector-Nebeneffekte können Genehmigung erfordern | https://learn.chatgpt.com/docs/agent-approvals-security.md | 2026-08-10 | Offizielle Beschreibung, kein Sitzungsnachweis |
 | Berechtigungsoptionen hängen von Oberfläche und Policy ab | https://learn.chatgpt.com/docs/permission-modes.md | 2026-08-10 | Tatsächliche Verfügbarkeit hängt von Umgebung und Organisation ab |
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="Kapitelnavigation">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-DE.md" aria-label="Vorheriges Kapitel: Kapitel 3 · Einen Wunsch in ein Aufgabenprotokoll verwandeln">← Vorheriges<br><strong>Kapitel 3 · Einen Wunsch in ein Aufgabenprotokoll verwandeln</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="05-choose-the-codex-surface-DE.md" aria-label="Nächstes Kapitel: Kapitel 5 · Die richtige Codex-Arbeitsfläche wählen">Nächstes →<br><strong>Kapitel 5 · Die richtige Codex-Arbeitsfläche wählen</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->
