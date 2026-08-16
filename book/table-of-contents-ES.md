@@ -2,11 +2,9 @@
 
 # Prysai LLM Playbook: índice del libro en español
 
-Esta es una ruta de lectura en español, no una traducción completa del libro.
-El catálogo canónico tiene 22 capítulos `candidate` y 18 Labs `draft`; en este
-momento existen 22 capítulos y 11 Labs en español. Cada enlace de esta página
-apunta al mismo contenido en español. Cuando no hay un archivo `-ES`, se indica
-como no disponible en vez de enlazar a otro capítulo o cambiar de idioma.
+Esta es una ruta de lectura en español. El catálogo canónico tiene 22 capítulos
+`candidate` y 18 Labs `draft`; los 40 tienen una ruta en español. Cada enlace
+de esta página apunta al mismo contenido en español, sin cambiar de idioma.
 
 ## Empieza aquí
 
