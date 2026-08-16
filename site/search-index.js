@@ -10,7 +10,7 @@ window.CODEX_SEARCH_INDEX = {
     "ko",
     "de"
   ],
-  "document_count": 84,
+  "document_count": 86,
   "source": [
     "docs/governance/content-status.yaml",
     "docs/governance/locale-matrix.yaml",
@@ -376,7 +376,7 @@ window.CODEX_SEARCH_INDEX = {
           "exists": true,
           "ready": true,
           "title": "新手提示卡：把话说清",
-          "snippet": "新手提示卡：把话说清 新手提示卡：把话说清 状态：draft ｜ 学习者运行证据：notrun ｜ 适用范围：任何文字聊天式 llm 工作台中的低风险、非敏感练习。 想直接复制六条西班牙语练习消息？打开西班牙语六步练习。 今天先不讲术语，也不要求你先打开 codex。选一张卡，把方括号里的内容换成你自己的小任务：先自己试一次，再让 ai 只帮你解决一个明确问题。 > 只使用虚构、公开或已获授权的文字。不要粘贴密码、令牌、私人聊天、客户资料、未公开文件或生产系统内容。 先选一张：七个马上能做的小练习 西班牙语：先自己",
+          "snippet": "新手提示卡：把话说清 新手提示卡：把话说清 状态：draft ｜ 学习者运行证据：notrun ｜ 适用范围：任何文字聊天式 llm 工作台中的低风险、非敏感练习。 想直接复制六条西班牙语练习消息？打开西班牙语六步练习。 想练一条不编造事实的工作更新，或核查一项资料？打开工作更新六步练习或研究核查六步练习。 今天先不讲术语，也不要求你先打开 codex。选一张卡，把方括号里的内容换成你自己的小任务：先自己试一次，再让 ai 只帮你解决一个明确问题。 > 只使用虚构、公开或已获授权的文字。不要粘贴密码、令牌、私人聊天",
           "content_status": "draft",
           "translation_status": "in-progress"
         },
@@ -385,7 +385,7 @@ window.CODEX_SEARCH_INDEX = {
           "exists": true,
           "ready": true,
           "title": "Tarjetas de práctica para principiantes: decir lo que necesitas con claridad",
-          "snippet": "tarjetas de práctica para principiantes: decir lo que necesitas con claridad tarjetas de práctica para principiantes: decir lo que necesitas con claridad estado: draft · evidencia de aprendizaje: notrun · uso previsto: prácticas de bajo riesgo y sin datos sens",
+          "snippet": "tarjetas de práctica para principiantes: decir lo que necesitas con claridad tarjetas de práctica para principiantes: decir lo que necesitas con claridad para una práctica breve y guiada, abre el ciclo de actualización de trabajo o el ciclo de comprobación de ",
           "content_status": "draft",
           "translation_status": "in-progress"
         },
@@ -394,7 +394,7 @@ window.CODEX_SEARCH_INDEX = {
           "exists": true,
           "ready": true,
           "title": "初心者の練習カード：必要なことをはっきり伝える",
-          "snippet": "初心者の練習カード：必要なことをはっきり伝える 初心者の練習カード：必要なことをはっきり伝える 状態： draft · 学習者の根拠： notrun · 対象： テキストチャット型 llm で行う、 低リスクかつ非機微な練習。 すぐにコピーできる六つのメッセージは、スペイン語の六段階練習にあります。 今日は codex を開く必要も用語を覚える必要もありません。カードを一つ選び、角括弧を小さな タスクに置き換え、先に自分で試し、ai には一つの明確な問題だけを手伝わせます。 > 架空、公開、または共有許可のある文章",
+          "snippet": "初心者の練習カード：必要なことをはっきり伝える 初心者の練習カード：必要なことをはっきり伝える 短く順番に練習したい場合は、業務報告の練習 または リサーチ確認の練習 を開いてください。 状態： draft · 学習者の根拠： notrun · 対象： テキストチャット型 llm で行う、 低リスクかつ非機微な練習。 すぐにコピーできる六つのメッセージは、スペイン語の六段階練習にあります。 今日は codex を開く必要も用語を覚える必要もありません。カードを一つ選び、角括弧を小さな タスクに置き換え、先に自分で試",
           "content_status": "draft",
           "translation_status": "in-progress"
         },
@@ -403,7 +403,7 @@ window.CODEX_SEARCH_INDEX = {
           "exists": true,
           "ready": true,
           "title": "초보자 연습 카드: 필요한 것을 분명하게 말하기",
-          "snippet": "초보자 연습 카드: 필요한 것을 분명하게 말하기 초보자 연습 카드: 필요한 것을 분명하게 말하기 상태: draft · 학습자 근거: notrun · 대상: 텍스트 채팅형 llm에서 하는 저위험·비민감 연습입니다. 바로 복사할 여섯 메시지는 스페인어 여섯 단계 연습에 있습니다. 오늘 codex를 열거나 용어를 외울 필요는 없습니다. 카드 하나를 고르고 대괄호를 작은 과제로 바꾼 뒤, 먼저 직접 시도하고 ai에게는 한 가지 분명한 문제만 도와 달라고 요청하세요. >",
+          "snippet": "초보자 연습 카드: 필요한 것을 분명하게 말하기 초보자 연습 카드: 필요한 것을 분명하게 말하기 짧고 순서 있는 연습을 원하면 업무 업데이트 연습 또는 리서치 확인 연습을 여세요. 상태: draft · 학습자 근거: notrun · 대상: 텍스트 채팅형 llm에서 하는 저위험·비민감 연습입니다. 바로 복사할 여섯 메시지는 스페인어 여섯 단계 연습에 있습니다. 오늘 codex를 열거나 용어를 외울 필요는 없습니다. 카드 하나를 고르고 대괄호를 작은 과제로 바꾼 뒤",
           "content_status": "draft",
           "translation_status": "in-progress"
         },
@@ -412,18 +412,18 @@ window.CODEX_SEARCH_INDEX = {
           "exists": true,
           "ready": true,
           "title": "Einstiegskarten: Klar sagen, was du brauchst",
-          "snippet": "einstiegskarten: klar sagen, was du brauchst einstiegskarten: klar sagen, was du brauchst status: draft · lernnachweis: notrun · geeignet für: risikoarme übungen ohne sensible daten in einem textchat mit einem llm. sechs direkt kopierbare nachrichten findest d",
+          "snippet": "einstiegskarten: klar sagen, was du brauchst einstiegskarten: klar sagen, was du brauchst für eine kurze übung in klaren schritten öffne den arbeitsupdate-ablauf oder den rechercheprüfungs-ablauf. status: draft · lernnachweis: notrun · geeignet für: risikoarme",
           "content_status": "draft",
           "translation_status": "in-progress"
         }
       },
       "search": {
-        "en": "beginner practice pack: first prompts for real work beginner practice pack: first prompts for real work status: candidate · learner evidence: notrun · designed for: low-risk, text-only chat. no cross-model run evidence exists; product-specific actions require a sourced adapter. need a short, copy-ready language route? open the six-message spanish practice loop. start here — do one useful thing choose the situation closest to what you need today. open one card, make your own small attempt, and return for explanation only if you need it. you do not need to read the whole pack before using it. practise a spanish reply. start with the fictional, four-turn hotel check-in. you try first; the model corrects one consequential mistake instead of giving a long lesson. get help with a real skill without handing over the answer. start with one small performance attempt, such as explaining an idea or drafting a work update. check a claim before you repeat it. start with a decision and source plan, then keep the conclusion narrow when the sources are missing or disagree. these are candidate templates, not proof that they work for every learner, model, or situation. the later cards cover source checks, recovery after a missed reply, safe sharing, and continuity when one of those is your real problem. already have a reply that missed the task? use the recovery route. not sure which card fits? use the short first-practice intake. before outside material, a local file, a tool, or an action is involved, read the boundary card. before you share an ai answer or conversation, use the share check to decide the item, audience, and stop boundary without creating a link. not sure whether you are asking for a rewrite, a current fact, research, or a real change? start with choose the lane before you ask for an answer. it selects a next method; it does not verify facts, give you authority, or perform the work. before you ask — choose the lane learning objective: name the smallest kind of help you need before a request grows into research or an action. this is a candidate routing aid, not a prompt formula, source check, permission grant, or completion claim. start with the ordinary question: can i judge the reply only against text or facts i have supplied? then ask: does it need a current external fact, or would it change anything outside this conversation? | if your request sounds like this | choose this lane | first safe move | | --- | --- | --- | | “make this supplied paragraph friendlier. do not add facts.” | text-only draft | use dialogue brief for a new message, or first-turn check for an unsent draft. | | “is this product rule still current?” | one bounded current fact | use source investigator; freeze one claim, a date boundary, and the source owner. | | “compare several options and tell me what the evidence says.” | multi-source research | use research router; first define the decision, candidates, and acceptable evidence. | | “confirm the policy, then update the public help page.” | external action or change | use task protocol first. treat the policy check as a separate source investigator handoff; a citation is not permission to publish. | a small route receipt do not ask the model to solve all four lanes at once. say which lane you selected and retain a tiny receipt: failure case: “check whether this policy is current and update our site.” the polished reply includes a link, so it looks finished. but the reader still does not know who owns the fact, when it was checked, who may publish, which page is the target, or how to undo a bad update. split it: establish the source question, then create a task contract. stop before either step asks for private data, access, or an external change. use the request escalation skill when choosing the lane itself is the problem. it returns a route receipt only; it does not draft the final prompt, retrieve sources, make a plan, or act. the source-and-action escalation record records the dated source boundary. both are candidate / notrun: they do not show that a learner recognizes the right lane, that a source is correct, or that a task is authorized or complete. the entry-level collaboration research record records the source boundaries behind the language and research cards. it is candidate research, not a finding that these cards improve learning or research quality. moving between llm products? start with the universal first-turn prompt contract to draft one plain-language request with an outcome, context, response shape, limits, check, and stop receipt. it is a candidate research reference, not a claim that product features, data controls, model behavior, or completion time are equivalent. the newer cross-llm beginner prompting and platform-boundary receipt keeps the small text-only common ground separate from account, credit, api, tool, and surface differences. it does not admit a named-platform adapter or establish that the same request will behave the same way. return here to choose and practise one route; use the first-turn check skill only when you already have an unsent, text-only, low-risk draft and want its material gaps labeled rather than a new prompt written. use the boundary card before a task includes outside material, tools, a local file, or an action that could widen. if you want the durable foundation before choosing a named product, take the universal core route. it uses an offline fictional fixture to practise task identity, target identity, execution receipts, and structured round trips. it is not a chatgpt, claude code, grok, or codex adapter: account access, permissions, tools, and live product behavior remain platform-specific and need their own current source and bounded run. if a reply has already missed the task, skip the intake and use the post-failure recovery route. it preserves the miss, changes one communication condition, and records what a comparable rerun does and does not establish. attempt, correct, vary, and receipt practice loop before a route — first-practice intake learning objective: turn a broad wish into one small, inspectable first attempt, then choose exactly one existing route. this is a selector, not a diagnosis, course recommender, study plan, or fourth prompt catalogue. problem \"learn spanish in seven days,\" \"get better at interviews,\" and \"find the best ai course\" are wishes, not yet tasks. a model can make any of them sound busy while skipping the decisions that make a first attempt comparable: what the person will do, what they can already do without help, what is in scope, what help is permitted, and what another person could inspect. decision ask one question at a time, only until a safe first attempt is possible. keep at most three route choices visible; this guide returns one of a, b, or c. stop and ask a person to choose if a missing decision changes risk, scope, or the acceptance check. do not fill an unknown with an impressive assumption. | decide only if still unknown | plain question | keep in the receipt | | --- | --- | --- | | performance | what do you want to be able to do, not merely know about? | one observable action | | starting point | try one tiny example without help. what happened? | baseline attempt or notrun | | session scope | which one situation or subskill matters first? | one-session boundary | | difficulty or prerequisites | what words, tools, or moves are already comfortable? | allowed material and new-material limit | | evidence | what could another person inspect when you finish? | artifact and pass condition | | help | should the first help be a question, hint, example, or review? | help mode and answer-leakage rule | | recovery | if this is too hard or a source cannot be checked, what is smaller? | fallback and stop rule | action — copy only the contract, not a promise make the first try small a learning wish becomes one ordinary situation, one observable target, and one first attempt before a practice session, use the practice target skill when the learner has a wish but not yet a first action. it keeps the person's own words, then asks for one situation, one observable move, one short first try, a help limit, a visible check, and a smaller fallback. it prepares a practice handoff; it does not teach, grade, label a level, or promise a result. if the result is only one untried, text-only, low-risk first message and the outcome, audience, safe inputs, constraints, check, and stop boundary are already known, use the dialogue brief skill instead. it prepares that one message and stops; it does not teach, research, operate tools, or repair a reply that has already failed. the returned receipt should have this narrow shape: selecting the contract supports only templateselected; it does not show that a model, route, or person performed well. two synthetic reductions failure case: \"i will learn spanish in seven days.\" do not turn this into a seven-day syllabus. ask for one situation and a baseline. a possible intake result is route a",
-        "zh": "新手提示卡：把话说清 新手提示卡：把话说清 状态：draft ｜ 学习者运行证据：notrun ｜ 适用范围：任何文字聊天式 llm 工作台中的低风险、非敏感练习。 想直接复制六条西班牙语练习消息？打开西班牙语六步练习。 今天先不讲术语，也不要求你先打开 codex。选一张卡，把方括号里的内容换成你自己的小任务：先自己试一次，再让 ai 只帮你解决一个明确问题。 > 只使用虚构、公开或已获授权的文字。不要粘贴密码、令牌、私人聊天、客户资料、未公开文件或生产系统内容。 先选一张：七个马上能做的小练习 西班牙语：先自己开口，再要纠错 预期：先保留你的原句，再拿到一条有限、可检查的纠错。不要让模型一开始就替你完成对话。 西班牙语：把同一能力换一个场景 预期：练习“提出一个简单请求”，而不是背上一轮的标准答案。 工作表达：把散乱要点变成可发送的更新 预期：同一批事实可以有不同语气；模型不能替你补出不存在的进度。 工作判断：先问清楚，再给建议 预期：当关键条件缺失时，一个好回复会先暴露未知，而不是装作已经知道答案。 研究起步：把“大问题”缩成一个可核查的问题 预期：你先得到研究计划，而不是一篇看起来很完整、却无从核查的结论。 研究核对：让来源支持一句具体的话 预期：链接存在不等于它真的支持你的结论；模型的任务是帮助你准备核对表。 分享前检查：先缩小内容和对象，再决定是否发送 预期：先分清“我想分享什么”和“我被允许分享什么”。这张卡只帮你整理判断，不会替你上传、发送或公开内容。 只做四步，别把第一次练习做复杂 选一张与今天最接近的卡。 先写出你自己的短尝试，或填入你已知的事实。 把回答和你的原始版本并排看，检查它是否越过了你的限制。 留下一个最小记录：任务、原始尝试、使用的帮助、你最终保留的版本、仍未知的部分。 如果模型给出的是完整答案而你本来想练习，请要求它退回到“一条提示”；如果它编造事实、来源或承诺，请停止使用该回答，并把未核查部分保留为未知。 练习回执：把一次对话留下来 完成任意一张卡后，只保留这一小段记录。它让你下次能看清自己练了什么，也让“我觉得有用”不至于被写成没有证据的结论。 practised 只表示保存了一次有记录的练习；它不表示流利、掌握、效率提升或来源已被完整验证。 这次练习算完成了吗？ 完成一张卡，最多只能说明你保存了一次带条件的尝试。若想说“我在这项任务上表现出来了”，还需要预先写好的标准和可检查的结果；若要谈保持或迁移，还需要延迟和变式任务。当前这七张卡都没有 prysai 学习者运行、独立评分或跨模型比较证据。 这是一组中文起步卡，独立语言审校仍待完成；它不是“万能提示词”。它没有跨模型运行记录，不能证明效率提升、学习效果、模型优劣或各平台行为相同。涉及文件、工具、浏览、账号、外部发布或真实数据时，先停下并转到相应的有来源平台说明。 [ ] 我只使用了虚构、公开或获授权的文本。 [ ] 我在收到完整答案前留下了自己的尝试或已知事实。 [ ] 我检查了模型是否新增了事实、承诺或来源。 [ ] 我知道本次结果不能证明效率、掌握、流利或模型优劣。 [ ] 需要文件、浏览、外部行动或敏感资料时，我已经停止并换到有边界的流程。 接下来读什么 想理解“模型、gpt 与 codex 分别是什么”：读第 1 章：先理解 gpt，再理解 codex。 想把提示卡变成一个有验收标准的任务：读第 3 章：把愿望变成任务协议。 想练一次安全、可回退的真实文件改动：做实验 001：第一个安全任务。 想让练习产生可解释的证据：读学习练习契约。 来源与边界 这些提示卡是 prysai 的原创练习材料。其设计边界和来源记录目前只保存在语言中立研究档案中，因此本中文阅读路线不直接打开它们。这些记录解释为何采用“先尝试、再限制性反馈、最后留记录”的候选设计；它们不证明提示卡、模型或课程的效果。",
-        "es": "tarjetas de práctica para principiantes: decir lo que necesitas con claridad tarjetas de práctica para principiantes: decir lo que necesitas con claridad estado: draft · evidencia de aprendizaje: notrun · uso previsto: prácticas de bajo riesgo y sin datos sensibles en un chat de texto con un llm. ¿quieres seis mensajes listos para copiar? abre la práctica de español en seis pasos. no necesitas abrir codex ni dominar términos hoy. escoge una tarjeta, reemplaza los corchetes con una tarea pequeña, intenta primero por tu cuenta y pide ayuda para un solo problema concreto. > usa texto ficticio, público o autorizado. no pegues contraseñas, tokens, chats > privados, datos de clientes, archivos no publicados ni sistemas de producción. siete tarjetas que puedes usar ahora español: habla primero y pide una corrección limitada espera conservar tu frase y recibir una corrección pequeña, no que el modelo haga la conversación por ti. español: cambia de situación, no memorices una respuesta actualización de trabajo: ordena hechos sin inventar avance decisión de trabajo: pregunta antes de aconsejar inicio de investigación: reduce una pregunta grande comprobación de fuente: haz que el material sostenga una frase precisa antes de compartir: reduce el contenido y la audiencia antes de decidir esta tarjeta separa «quiero compartir algo» de «estoy autorizado a compartirlo». solo ordena una decisión: no envía, no sube nada y no crea enlaces. solo cuatro pasos elige la tarjeta más cercana a tu necesidad de hoy. escribe tu propio intento corto o los hechos que ya conoces. compara respuesta y versión original: ¿la ia cruzó tus límites? conserva tarea, intento original, ayuda usada, versión retenida y desconocidos. si el modelo da una respuesta completa cuando querías practicar, pídele una sola pista. si inventa un hecho, fuente o promesa, deja de usar esa respuesta y conserva lo no comprobado como desconocido. recibo de práctica: conserva una conversación comprobable después de cualquier tarjeta, guarda solo este registro breve. te permite ver qué practicaste la próxima vez y evita convertir «me pareció útil» en una afirmación sin evidencia. practised solo significa que guardaste una práctica con registro; no significa fluidez, dominio, eficiencia mayor ni fuentes verificadas por completo. ¿ya terminaste? completar una tarjeta solo demuestra que guardaste un intento condicionado. para afirmar rendimiento hacen falta criterios definidos y un resultado revisable; para retención o transferencia hacen falta tareas posteriores y variadas. estas tarjetas no tienen ejecuciones de aprendices de prysai, puntuación independiente ni comparación entre modelos. este es un conjunto inicial en español con revisión lingüística independiente pendiente, no una colección de «prompts universales». no prueba eficiencia, aprendizaje, fluidez, calidad de modelo ni comportamiento igual entre plataformas. si necesitas archivos, herramientas, navegación, cuentas, publicación externa o datos reales, detente y usa un flujo con límites y fuentes adecuados. [ ] usé solo texto ficticio, público o autorizado. [ ] dejé mi propio intento o hechos conocidos antes de recibir respuesta completa. [ ] revisé si el modelo añadió hechos, promesas o fuentes. [ ] sé que el resultado no prueba eficiencia, dominio, fluidez ni calidad de modelo. dónde seguir capítulo 1: gpt y codex capítulo 3: protocolo de tarea lab 001: primera tarea segura fuentes y límite estas tarjetas son material didáctico original de prysai. sus registros de diseño y fuentes se conservan en inglés. explican una elección candidata de «intento primero, retroalimentación limitada, registro al final»; no prueban la eficacia de las tarjetas, del modelo ni del curso.",
-        "ja": "初心者の練習カード：必要なことをはっきり伝える 初心者の練習カード：必要なことをはっきり伝える 状態： draft · 学習者の根拠： notrun · 対象： テキストチャット型 llm で行う、 低リスクかつ非機微な練習。 すぐにコピーできる六つのメッセージは、スペイン語の六段階練習にあります。 今日は codex を開く必要も用語を覚える必要もありません。カードを一つ選び、角括弧を小さな タスクに置き換え、先に自分で試し、ai には一つの明確な問題だけを手伝わせます。 > 架空、公開、または共有許可のある文章だけを使います。パスワード、トークン、非公開の会話、 > 顧客データ、未公開ファイル、本番システムの内容を貼り付けないでください。 今すぐ使える七つのカード スペイン語：先に話し、限定した訂正をもらう 自分の文を残し、小さく確認できる訂正を受けます。最初からモデルに会話を代行させません。 スペイン語：答えを暗記せず、場面を変える 仕事の更新：事実を並べ、進捗を作らない 仕事の判断：助言の前に質問する 調査の開始：大きな問いを確認可能な問いへ縮める 出典確認：材料が一つの文を本当に支えるか確かめる 共有前の確認：送る前に内容と相手を小さくする 「共有したい」と「共有を許可されている」を分けます。このカードは判断を整理するだけで、送信、アップロード、リンク作成はしません。 最初の練習は四歩だけ 今日の必要に最も近いカードを選ぶ。 自分の短い試み、または既知の事実を先に書く。 回答と元の文を並べ、ai が制限を越えたか確認する。 課題、元の試み、使った助け、残した版、未知を記録する。 練習したいのに完全な答えが出たら、一つのヒントへ戻すよう求めます。事実、出典、約束を 作ったら、その回答を使うのを止め、未確認部分を未知として残します。 練習レシート：一回の対話を残す どのカードの後でも、この短い記録だけを残します。次回何を練習したかが分かり、「役立った気がする」を根拠のない結論にしません。 practised は記録付きで一度練習したことだけを意味します。流暢さ、習得、効率向上、出典の完全な検証を意味しません。 これで終わりですか カードを終えても、条件つきの試みを保存したことしか示しません。課題での成果を言うには 事前に決めた基準と検査可能な結果が必要です。定着や転移には後日の別の 課題が必要です。このカードには prysai 学習者の実行記録、独立採点、モデル比較がありません。 これは日本語の起動カードであり、完全訳でも「万能プロンプト」でもありません。効率、学習、 流暢さ、モデル品質、プラットフォーム間で同じ動作をすることを証明しません。ファイル、ツール、 ブラウザー、アカウント、外部公開、実データが必要なら止まり、境界と出典のある手順を使ってください。 [ ] 架空、公開、または許可された text だけを使った。 [ ] 完全な答えの前に自分の試みまたは既知事実を残した。 [ ] モデルが事実、約束、出典を追加していないか確認した。 [ ] 結果が効率、習熟、流暢さ、モデル品質を証明しないと分かる。 次に読むもの 第 1 章：gpt と codex 第 3 章：タスク・プロトコル lab 001：最初の安全なタスク 出典と境界 これらは prysai のオリジナル教材です。設計と出典記録は現在英語にあります。それらは 「先に試す、限定したフィードバック、最後に記録」という候補設計を説明しますが、カード、 モデル、コースの効果を証明しません。",
-        "ko": "초보자 연습 카드: 필요한 것을 분명하게 말하기 초보자 연습 카드: 필요한 것을 분명하게 말하기 상태: draft · 학습자 근거: notrun · 대상: 텍스트 채팅형 llm에서 하는 저위험·비민감 연습입니다. 바로 복사할 여섯 메시지는 스페인어 여섯 단계 연습에 있습니다. 오늘 codex를 열거나 용어를 외울 필요는 없습니다. 카드 하나를 고르고 대괄호를 작은 과제로 바꾼 뒤, 먼저 직접 시도하고 ai에게는 한 가지 분명한 문제만 도와 달라고 요청하세요. > 가상, 공개 또는 공유 허가를 받은 글만 사용하세요. 비밀번호, 토큰, 비공개 대화, 고객 데이터, > 미공개 파일, 운영 중인 시스템의 내용을 붙여 넣지 마세요. 지금 바로 쓸 수 있는 일곱 장 스페인어: 먼저 말하고, 제한된 교정을 받기 내 문장을 남긴 채 작고 확인 가능한 교정을 받습니다. 처음부터 모델이 대화를 대신하게 하지 않습니다. 스페인어: 답을 외우지 말고 상황 바꾸기 업무 업데이트: 사실을 정리하되 진척을 만들어 내지 않기 업무 판단: 조언하기 전에 질문하기 조사 시작: 큰 질문을 확인 가능한 질문으로 줄이기 출처 확인: 자료가 한 문장을 실제로 뒷받침하는지 살피기 공유 전 확인: 보내기 전에 내용과 대상을 줄이기 “공유하고 싶다”와 “공유해도 된다”를 구분합니다. 이 카드는 판단만 정리하며 보내기, 업로드, 링크 만들기를 하지 않습니다. 첫 연습은 네 단계면 됩니다 오늘 필요한 일에 가장 가까운 카드를 고릅니다. 내 짧은 시도 또는 이미 아는 사실을 먼저 씁니다. 답변과 원문을 나란히 놓고 ai가 제한을 넘었는지 확인합니다. 과제, 원래 시도, 받은 도움, 남긴 버전, 모르는 것을 기록합니다. 연습하고 싶은데 완성된 답이 나오면, 힌트 하나로 돌아가 달라고 요청하세요. 사실, 출처 또는 약속을 지어 냈다면 그 답을 쓰지 말고 확인하지 못한 부분은 모르는 것으로 남기세요. 연습 영수증: 한 번의 대화를 남기기 어느 카드를 마친 뒤에도 이 짧은 기록만 남기세요. 다음에 무엇을 연습했는지 알 수 있고, “도움이 된 것 같다”를 근거 없는 결론으로 바꾸지 않게 합니다. practised는 기록을 남긴 한 번의 연습만 뜻합니다. 유창함, 숙달, 효율 향상 또는 출처의 완전한 검증을 뜻하지 않습니다. 이걸로 끝인가요? 카드를 마쳐도 조건이 붙은 시도를 저장했다는 사실만 보여 줍니다. 과제에서의 성과를 말하려면 미리 정한 기준과 점검 가능한 결과가 필요합니다. 유지나 전이를 말하려면 나중에 다른 과제도 필요합니다. 이 카드에는 prysai 학습자의 실행 기록, 독립 채점, 모델 비교가 없습니다. 이것은 한국어 시작 카드이지 완역이나 “만능 프롬프트”가 아닙니다. 효율, 학습, 유창함, 모델 품질, 플랫폼 사이의 같은 동작을 증명하지 않습니다. 파일, 도구, 브라우저, 계정, 외부 공개, 실제 데이터가 필요하면 멈추고 경계와 출처가 있는 흐름을 사용하세요. [ ] 가상, 공개 또는 허가된 텍스트만 사용했다. [ ] 완성된 답을 받기 전에 내 시도 또는 알고 있던 사실을 남겼다. [ ] 모델이 사실, 약속 또는 출처를 추가하지 않았는지 확인했다. [ ] 결과가 효율, 숙달, 유창함 또는 모델 품질을 증명하지 않는다는 것을 안다. 다음에 읽을 것 1장: gpt와 codex 3장: 과제 프로토콜 lab 001: 첫 번째 안전한 과제 출처와 경계 이 카드는 prysai의 독창적인 학습 자료입니다. 설계와 출처 기록은 현재 영어로만 있습니다. 그 기록은 “먼저 시도하고, 제한된 피드백을 받고, 마지막에 기록한다”는 후보 설계를 설명할 뿐, 카드·모델·과정의 효과를 증명하지 않습니다.",
-        "de": "einstiegskarten: klar sagen, was du brauchst einstiegskarten: klar sagen, was du brauchst status: draft · lernnachweis: notrun · geeignet für: risikoarme übungen ohne sensible daten in einem textchat mit einem llm. sechs direkt kopierbare nachrichten findest du in der spanischübung mit sechs schritten. du musst heute weder codex öffnen noch begriffe auswendig lernen. wähle eine karte, ersetze die klammern durch eine kleine aufgabe, probiere zuerst selbst etwas aus und bitte die ki nur um hilfe bei einem klar abgegrenzten problem. > verwende nur erfundene, öffentliche oder freigegebene texte. füge keine passwörter, > tokens, privaten chats, kundendaten, unveröffentlichten dateien oder inhalte aus > produktionssystemen ein. sieben karten für den sofortigen start spanisch: erst selbst sprechen, dann begrenzte korrektur erhalten dein eigener satz bleibt erhalten; du bekommst eine kleine, überprüfbare korrektur. das modell soll das gespräch nicht von anfang an für dich führen. spanisch: die situation wechseln statt eine antwort auswendig zu lernen arbeits-update: fakten ordnen, ohne fortschritt zu erfinden arbeitsentscheidung: vor dem rat zuerst fragen recherchebeginn: eine große frage kleiner und prüfbar machen quellenprüfung: prüfen, ob das material einen satz wirklich stützt vor dem teilen: inhalt und publikum verkleinern, bevor du entscheidest diese karte trennt „ich möchte etwas teilen“ von „ich darf es teilen“. sie ordnet nur eine entscheidung; sie versendet nichts, lädt nichts hoch und erstellt keinen link. die erste übung hat nur vier schritte wähle die karte, die deinem heutigen bedarf am nächsten kommt. schreibe zuerst deinen kurzen versuch oder die fakten auf, die du schon kennst. lege antwort und original nebeneinander: hat die ki deine grenzen überschritten? bewahre aufgabe, ursprünglichen versuch, genutzte hilfe, behaltene fassung und offene punkte auf. wenn du üben möchtest, aber eine vollständige antwort erhältst, bitte um genau einen hinweis. erfindet das modell einen fakt, eine quelle oder ein versprechen, verwende diese antwort nicht weiter und halte das ungeprüfte als offen fest. übungsbeleg: ein gespräch prüfbar festhalten bewahre nach jeder karte nur diese kurze notiz auf. so siehst du beim nächsten mal, was du geübt hast, und machst aus „es fühlte sich hilfreich an“ keine unbelegte aussage. practised bedeutet nur, dass ein dokumentierter übungsversuch vorliegt. es bedeutet weder sprachflüssigkeit noch beherrschung, höhere effizienz oder vollständig geprüfte quellen. bin ich damit fertig? nach einer karte hast du nur einen versuch mit bedingungen festgehalten. um leistung in einer aufgabe zu behaupten, braucht es vorher festgelegte kriterien und ein überprüfbares ergebnis. für behalten oder übertragung sind spätere, andere aufgaben nötig. für diese karten gibt es keine prysai-lernläufe, keine unabhängige bewertung und keinen modellvergleich. dies sind deutsche einstiegskarten mit noch ausstehender unabhängiger sprachprüfung, keine „universal-prompts“. sie beweisen weder effizienz noch lernen, sprachflüssigkeit, modellqualität oder gleiches verhalten auf verschiedenen plattformen. sobald dateien, tools, browser, konten, externe veröffentlichung oder echte daten nötig sind, halte an und verwende einen ablauf mit passenden grenzen und quellen. [ ] ich habe nur erfundene, öffentliche oder freigegebene texte verwendet. [ ] ich habe meinen eigenen versuch oder bekannte fakten vor einer vollständigen antwort festgehalten. [ ] ich habe geprüft, ob das modell fakten, versprechen oder quellen ergänzt hat. [ ] ich weiß, dass das ergebnis weder effizienz noch beherrschung, sprachflüssigkeit oder modellqualität beweist. als nächstes lesen kapitel 1: gpt und codex kapitel 3: aufgabenprotokoll lab 001: die erste sichere aufgabe quellen und grenzen diese karten sind originales lehrmaterial von prysai. die design- und quellenaufzeichnungen liegen derzeit auf englisch vor. sie erläutern die kandidatenentscheidung „zuerst versuchen, begrenztes feedback, am ende festhalten“; sie beweisen nicht die wirksamkeit der karten, des modells oder des kurses."
+        "en": "beginner practice pack: first prompts for real work beginner practice pack: first prompts for real work status: candidate · learner evidence: notrun · designed for: low-risk, text-only chat. no cross-model run evidence exists; product-specific actions require a sourced adapter. need a short, copy-ready language route? open the six-message spanish practice loop. need a short work or research route? open the truthful work-update loop or the bounded research-check loop. start here — do one useful thing choose the situation closest to what you need today. open one card, make your own small attempt, and return for explanation only if you need it. you do not need to read the whole pack before using it. practise a spanish reply. start with the fictional, four-turn hotel check-in. you try first; the model corrects one consequential mistake instead of giving a long lesson. get help with a real skill without handing over the answer. start with one small performance attempt, such as explaining an idea or drafting a work update. check a claim before you repeat it. start with a decision and source plan, then keep the conclusion narrow when the sources are missing or disagree. these are candidate templates, not proof that they work for every learner, model, or situation. the later cards cover source checks, recovery after a missed reply, safe sharing, and continuity when one of those is your real problem. already have a reply that missed the task? use the recovery route. not sure which card fits? use the short first-practice intake. before outside material, a local file, a tool, or an action is involved, read the boundary card. before you share an ai answer or conversation, use the share check to decide the item, audience, and stop boundary without creating a link. not sure whether you are asking for a rewrite, a current fact, research, or a real change? start with choose the lane before you ask for an answer. it selects a next method; it does not verify facts, give you authority, or perform the work. before you ask — choose the lane learning objective: name the smallest kind of help you need before a request grows into research or an action. this is a candidate routing aid, not a prompt formula, source check, permission grant, or completion claim. start with the ordinary question: can i judge the reply only against text or facts i have supplied? then ask: does it need a current external fact, or would it change anything outside this conversation? | if your request sounds like this | choose this lane | first safe move | | --- | --- | --- | | “make this supplied paragraph friendlier. do not add facts.” | text-only draft | use dialogue brief for a new message, or first-turn check for an unsent draft. | | “is this product rule still current?” | one bounded current fact | use source investigator; freeze one claim, a date boundary, and the source owner. | | “compare several options and tell me what the evidence says.” | multi-source research | use research router; first define the decision, candidates, and acceptable evidence. | | “confirm the policy, then update the public help page.” | external action or change | use task protocol first. treat the policy check as a separate source investigator handoff; a citation is not permission to publish. | a small route receipt do not ask the model to solve all four lanes at once. say which lane you selected and retain a tiny receipt: failure case: “check whether this policy is current and update our site.” the polished reply includes a link, so it looks finished. but the reader still does not know who owns the fact, when it was checked, who may publish, which page is the target, or how to undo a bad update. split it: establish the source question, then create a task contract. stop before either step asks for private data, access, or an external change. use the request escalation skill when choosing the lane itself is the problem. it returns a route receipt only; it does not draft the final prompt, retrieve sources, make a plan, or act. the source-and-action escalation record records the dated source boundary. both are candidate / notrun: they do not show that a learner recognizes the right lane, that a source is correct, or that a task is authorized or complete. the entry-level collaboration research record records the source boundaries behind the language and research cards. it is candidate research, not a finding that these cards improve learning or research quality. moving between llm products? start with the universal first-turn prompt contract to draft one plain-language request with an outcome, context, response shape, limits, check, and stop receipt. it is a candidate research reference, not a claim that product features, data controls, model behavior, or completion time are equivalent. the newer cross-llm beginner prompting and platform-boundary receipt keeps the small text-only common ground separate from account, credit, api, tool, and surface differences. it does not admit a named-platform adapter or establish that the same request will behave the same way. return here to choose and practise one route; use the first-turn check skill only when you already have an unsent, text-only, low-risk draft and want its material gaps labeled rather than a new prompt written. use the boundary card before a task includes outside material, tools, a local file, or an action that could widen. if you want the durable foundation before choosing a named product, take the universal core route. it uses an offline fictional fixture to practise task identity, target identity, execution receipts, and structured round trips. it is not a chatgpt, claude code, grok, or codex adapter: account access, permissions, tools, and live product behavior remain platform-specific and need their own current source and bounded run. if a reply has already missed the task, skip the intake and use the post-failure recovery route. it preserves the miss, changes one communication condition, and records what a comparable rerun does and does not establish. attempt, correct, vary, and receipt practice loop before a route — first-practice intake learning objective: turn a broad wish into one small, inspectable first attempt, then choose exactly one existing route. this is a selector, not a diagnosis, course recommender, study plan, or fourth prompt catalogue. problem \"learn spanish in seven days,\" \"get better at interviews,\" and \"find the best ai course\" are wishes, not yet tasks. a model can make any of them sound busy while skipping the decisions that make a first attempt comparable: what the person will do, what they can already do without help, what is in scope, what help is permitted, and what another person could inspect. decision ask one question at a time, only until a safe first attempt is possible. keep at most three route choices visible; this guide returns one of a, b, or c. stop and ask a person to choose if a missing decision changes risk, scope, or the acceptance check. do not fill an unknown with an impressive assumption. | decide only if still unknown | plain question | keep in the receipt | | --- | --- | --- | | performance | what do you want to be able to do, not merely know about? | one observable action | | starting point | try one tiny example without help. what happened? | baseline attempt or notrun | | session scope | which one situation or subskill matters first? | one-session boundary | | difficulty or prerequisites | what words, tools, or moves are already comfortable? | allowed material and new-material limit | | evidence | what could another person inspect when you finish? | artifact and pass condition | | help | should the first help be a question, hint, example, or review? | help mode and answer-leakage rule | | recovery | if this is too hard or a source cannot be checked, what is smaller? | fallback and stop rule | action — copy only the contract, not a promise make the first try small a learning wish becomes one ordinary situation, one observable target, and one first attempt before a practice session, use the practice target skill when the learner has a wish but not yet a first action. it keeps the person's own words, then asks for one situation, one observable move, one short first try, a help limit, a visible check, and a smaller fallback. it prepares a practice handoff; it does not teach, grade, label a level, or promise a result. if the result is only one untried, text-only, low-risk first message and the outcome, audience, safe inputs, constraints, check, and stop boundary are already known, use the dialogue brief skill instead. it prepares that one message and stops; it does not teach, research, operate tools, or repair a reply that has already failed. the returned receipt should have this narrow shape: selecting the contract supports only templateselected; it does not show that a model, route, or person performed well. two synthetic reductions failure case: \"i will learn spanish in seven days.\" do not tu",
+        "zh": "新手提示卡：把话说清 新手提示卡：把话说清 状态：draft ｜ 学习者运行证据：notrun ｜ 适用范围：任何文字聊天式 llm 工作台中的低风险、非敏感练习。 想直接复制六条西班牙语练习消息？打开西班牙语六步练习。 想练一条不编造事实的工作更新，或核查一项资料？打开工作更新六步练习或研究核查六步练习。 今天先不讲术语，也不要求你先打开 codex。选一张卡，把方括号里的内容换成你自己的小任务：先自己试一次，再让 ai 只帮你解决一个明确问题。 > 只使用虚构、公开或已获授权的文字。不要粘贴密码、令牌、私人聊天、客户资料、未公开文件或生产系统内容。 先选一张：七个马上能做的小练习 西班牙语：先自己开口，再要纠错 预期：先保留你的原句，再拿到一条有限、可检查的纠错。不要让模型一开始就替你完成对话。 西班牙语：把同一能力换一个场景 预期：练习“提出一个简单请求”，而不是背上一轮的标准答案。 工作表达：把散乱要点变成可发送的更新 预期：同一批事实可以有不同语气；模型不能替你补出不存在的进度。 工作判断：先问清楚，再给建议 预期：当关键条件缺失时，一个好回复会先暴露未知，而不是装作已经知道答案。 研究起步：把“大问题”缩成一个可核查的问题 预期：你先得到研究计划，而不是一篇看起来很完整、却无从核查的结论。 研究核对：让来源支持一句具体的话 预期：链接存在不等于它真的支持你的结论；模型的任务是帮助你准备核对表。 分享前检查：先缩小内容和对象，再决定是否发送 预期：先分清“我想分享什么”和“我被允许分享什么”。这张卡只帮你整理判断，不会替你上传、发送或公开内容。 只做四步，别把第一次练习做复杂 选一张与今天最接近的卡。 先写出你自己的短尝试，或填入你已知的事实。 把回答和你的原始版本并排看，检查它是否越过了你的限制。 留下一个最小记录：任务、原始尝试、使用的帮助、你最终保留的版本、仍未知的部分。 如果模型给出的是完整答案而你本来想练习，请要求它退回到“一条提示”；如果它编造事实、来源或承诺，请停止使用该回答，并把未核查部分保留为未知。 练习回执：把一次对话留下来 完成任意一张卡后，只保留这一小段记录。它让你下次能看清自己练了什么，也让“我觉得有用”不至于被写成没有证据的结论。 practised 只表示保存了一次有记录的练习；它不表示流利、掌握、效率提升或来源已被完整验证。 这次练习算完成了吗？ 完成一张卡，最多只能说明你保存了一次带条件的尝试。若想说“我在这项任务上表现出来了”，还需要预先写好的标准和可检查的结果；若要谈保持或迁移，还需要延迟和变式任务。当前这七张卡都没有 prysai 学习者运行、独立评分或跨模型比较证据。 这是一组中文起步卡，独立语言审校仍待完成；它不是“万能提示词”。它没有跨模型运行记录，不能证明效率提升、学习效果、模型优劣或各平台行为相同。涉及文件、工具、浏览、账号、外部发布或真实数据时，先停下并转到相应的有来源平台说明。 [ ] 我只使用了虚构、公开或获授权的文本。 [ ] 我在收到完整答案前留下了自己的尝试或已知事实。 [ ] 我检查了模型是否新增了事实、承诺或来源。 [ ] 我知道本次结果不能证明效率、掌握、流利或模型优劣。 [ ] 需要文件、浏览、外部行动或敏感资料时，我已经停止并换到有边界的流程。 接下来读什么 想理解“模型、gpt 与 codex 分别是什么”：读第 1 章：先理解 gpt，再理解 codex。 想把提示卡变成一个有验收标准的任务：读第 3 章：把愿望变成任务协议。 想练一次安全、可回退的真实文件改动：做实验 001：第一个安全任务。 想让练习产生可解释的证据：读学习练习契约。 来源与边界 这些提示卡是 prysai 的原创练习材料。其设计边界和来源记录目前只保存在语言中立研究档案中，因此本中文阅读路线不直接打开它们。这些记录解释为何采用“先尝试、再限制性反馈、最后留记录”的候选设计；它们不证明提示卡、模型或课程的效果。",
+        "es": "tarjetas de práctica para principiantes: decir lo que necesitas con claridad tarjetas de práctica para principiantes: decir lo que necesitas con claridad para una práctica breve y guiada, abre el ciclo de actualización de trabajo o el ciclo de comprobación de investigación. estado: draft · evidencia de aprendizaje: notrun · uso previsto: prácticas de bajo riesgo y sin datos sensibles en un chat de texto con un llm. ¿quieres seis mensajes listos para copiar? abre la práctica de español en seis pasos. no necesitas abrir codex ni dominar términos hoy. escoge una tarjeta, reemplaza los corchetes con una tarea pequeña, intenta primero por tu cuenta y pide ayuda para un solo problema concreto. > usa texto ficticio, público o autorizado. no pegues contraseñas, tokens, chats > privados, datos de clientes, archivos no publicados ni sistemas de producción. siete tarjetas que puedes usar ahora español: habla primero y pide una corrección limitada espera conservar tu frase y recibir una corrección pequeña, no que el modelo haga la conversación por ti. español: cambia de situación, no memorices una respuesta actualización de trabajo: ordena hechos sin inventar avance decisión de trabajo: pregunta antes de aconsejar inicio de investigación: reduce una pregunta grande comprobación de fuente: haz que el material sostenga una frase precisa antes de compartir: reduce el contenido y la audiencia antes de decidir esta tarjeta separa «quiero compartir algo» de «estoy autorizado a compartirlo». solo ordena una decisión: no envía, no sube nada y no crea enlaces. solo cuatro pasos elige la tarjeta más cercana a tu necesidad de hoy. escribe tu propio intento corto o los hechos que ya conoces. compara respuesta y versión original: ¿la ia cruzó tus límites? conserva tarea, intento original, ayuda usada, versión retenida y desconocidos. si el modelo da una respuesta completa cuando querías practicar, pídele una sola pista. si inventa un hecho, fuente o promesa, deja de usar esa respuesta y conserva lo no comprobado como desconocido. recibo de práctica: conserva una conversación comprobable después de cualquier tarjeta, guarda solo este registro breve. te permite ver qué practicaste la próxima vez y evita convertir «me pareció útil» en una afirmación sin evidencia. practised solo significa que guardaste una práctica con registro; no significa fluidez, dominio, eficiencia mayor ni fuentes verificadas por completo. ¿ya terminaste? completar una tarjeta solo demuestra que guardaste un intento condicionado. para afirmar rendimiento hacen falta criterios definidos y un resultado revisable; para retención o transferencia hacen falta tareas posteriores y variadas. estas tarjetas no tienen ejecuciones de aprendices de prysai, puntuación independiente ni comparación entre modelos. este es un conjunto inicial en español con revisión lingüística independiente pendiente, no una colección de «prompts universales». no prueba eficiencia, aprendizaje, fluidez, calidad de modelo ni comportamiento igual entre plataformas. si necesitas archivos, herramientas, navegación, cuentas, publicación externa o datos reales, detente y usa un flujo con límites y fuentes adecuados. [ ] usé solo texto ficticio, público o autorizado. [ ] dejé mi propio intento o hechos conocidos antes de recibir respuesta completa. [ ] revisé si el modelo añadió hechos, promesas o fuentes. [ ] sé que el resultado no prueba eficiencia, dominio, fluidez ni calidad de modelo. dónde seguir capítulo 1: gpt y codex capítulo 3: protocolo de tarea lab 001: primera tarea segura fuentes y límite estas tarjetas son material didáctico original de prysai. sus registros de diseño y fuentes se conservan en inglés. explican una elección candidata de «intento primero, retroalimentación limitada, registro al final»; no prueban la eficacia de las tarjetas, del modelo ni del curso.",
+        "ja": "初心者の練習カード：必要なことをはっきり伝える 初心者の練習カード：必要なことをはっきり伝える 短く順番に練習したい場合は、業務報告の練習 または リサーチ確認の練習 を開いてください。 状態： draft · 学習者の根拠： notrun · 対象： テキストチャット型 llm で行う、 低リスクかつ非機微な練習。 すぐにコピーできる六つのメッセージは、スペイン語の六段階練習にあります。 今日は codex を開く必要も用語を覚える必要もありません。カードを一つ選び、角括弧を小さな タスクに置き換え、先に自分で試し、ai には一つの明確な問題だけを手伝わせます。 > 架空、公開、または共有許可のある文章だけを使います。パスワード、トークン、非公開の会話、 > 顧客データ、未公開ファイル、本番システムの内容を貼り付けないでください。 今すぐ使える七つのカード スペイン語：先に話し、限定した訂正をもらう 自分の文を残し、小さく確認できる訂正を受けます。最初からモデルに会話を代行させません。 スペイン語：答えを暗記せず、場面を変える 仕事の更新：事実を並べ、進捗を作らない 仕事の判断：助言の前に質問する 調査の開始：大きな問いを確認可能な問いへ縮める 出典確認：材料が一つの文を本当に支えるか確かめる 共有前の確認：送る前に内容と相手を小さくする 「共有したい」と「共有を許可されている」を分けます。このカードは判断を整理するだけで、送信、アップロード、リンク作成はしません。 最初の練習は四歩だけ 今日の必要に最も近いカードを選ぶ。 自分の短い試み、または既知の事実を先に書く。 回答と元の文を並べ、ai が制限を越えたか確認する。 課題、元の試み、使った助け、残した版、未知を記録する。 練習したいのに完全な答えが出たら、一つのヒントへ戻すよう求めます。事実、出典、約束を 作ったら、その回答を使うのを止め、未確認部分を未知として残します。 練習レシート：一回の対話を残す どのカードの後でも、この短い記録だけを残します。次回何を練習したかが分かり、「役立った気がする」を根拠のない結論にしません。 practised は記録付きで一度練習したことだけを意味します。流暢さ、習得、効率向上、出典の完全な検証を意味しません。 これで終わりですか カードを終えても、条件つきの試みを保存したことしか示しません。課題での成果を言うには 事前に決めた基準と検査可能な結果が必要です。定着や転移には後日の別の 課題が必要です。このカードには prysai 学習者の実行記録、独立採点、モデル比較がありません。 これは日本語の起動カードであり、完全訳でも「万能プロンプト」でもありません。効率、学習、 流暢さ、モデル品質、プラットフォーム間で同じ動作をすることを証明しません。ファイル、ツール、 ブラウザー、アカウント、外部公開、実データが必要なら止まり、境界と出典のある手順を使ってください。 [ ] 架空、公開、または許可された text だけを使った。 [ ] 完全な答えの前に自分の試みまたは既知事実を残した。 [ ] モデルが事実、約束、出典を追加していないか確認した。 [ ] 結果が効率、習熟、流暢さ、モデル品質を証明しないと分かる。 次に読むもの 第 1 章：gpt と codex 第 3 章：タスク・プロトコル lab 001：最初の安全なタスク 出典と境界 これらは prysai のオリジナル教材です。設計と出典記録は現在英語にあります。それらは 「先に試す、限定したフィードバック、最後に記録」という候補設計を説明しますが、カード、 モデル、コースの効果を証明しません。",
+        "ko": "초보자 연습 카드: 필요한 것을 분명하게 말하기 초보자 연습 카드: 필요한 것을 분명하게 말하기 짧고 순서 있는 연습을 원하면 업무 업데이트 연습 또는 리서치 확인 연습을 여세요. 상태: draft · 학습자 근거: notrun · 대상: 텍스트 채팅형 llm에서 하는 저위험·비민감 연습입니다. 바로 복사할 여섯 메시지는 스페인어 여섯 단계 연습에 있습니다. 오늘 codex를 열거나 용어를 외울 필요는 없습니다. 카드 하나를 고르고 대괄호를 작은 과제로 바꾼 뒤, 먼저 직접 시도하고 ai에게는 한 가지 분명한 문제만 도와 달라고 요청하세요. > 가상, 공개 또는 공유 허가를 받은 글만 사용하세요. 비밀번호, 토큰, 비공개 대화, 고객 데이터, > 미공개 파일, 운영 중인 시스템의 내용을 붙여 넣지 마세요. 지금 바로 쓸 수 있는 일곱 장 스페인어: 먼저 말하고, 제한된 교정을 받기 내 문장을 남긴 채 작고 확인 가능한 교정을 받습니다. 처음부터 모델이 대화를 대신하게 하지 않습니다. 스페인어: 답을 외우지 말고 상황 바꾸기 업무 업데이트: 사실을 정리하되 진척을 만들어 내지 않기 업무 판단: 조언하기 전에 질문하기 조사 시작: 큰 질문을 확인 가능한 질문으로 줄이기 출처 확인: 자료가 한 문장을 실제로 뒷받침하는지 살피기 공유 전 확인: 보내기 전에 내용과 대상을 줄이기 “공유하고 싶다”와 “공유해도 된다”를 구분합니다. 이 카드는 판단만 정리하며 보내기, 업로드, 링크 만들기를 하지 않습니다. 첫 연습은 네 단계면 됩니다 오늘 필요한 일에 가장 가까운 카드를 고릅니다. 내 짧은 시도 또는 이미 아는 사실을 먼저 씁니다. 답변과 원문을 나란히 놓고 ai가 제한을 넘었는지 확인합니다. 과제, 원래 시도, 받은 도움, 남긴 버전, 모르는 것을 기록합니다. 연습하고 싶은데 완성된 답이 나오면, 힌트 하나로 돌아가 달라고 요청하세요. 사실, 출처 또는 약속을 지어 냈다면 그 답을 쓰지 말고 확인하지 못한 부분은 모르는 것으로 남기세요. 연습 영수증: 한 번의 대화를 남기기 어느 카드를 마친 뒤에도 이 짧은 기록만 남기세요. 다음에 무엇을 연습했는지 알 수 있고, “도움이 된 것 같다”를 근거 없는 결론으로 바꾸지 않게 합니다. practised는 기록을 남긴 한 번의 연습만 뜻합니다. 유창함, 숙달, 효율 향상 또는 출처의 완전한 검증을 뜻하지 않습니다. 이걸로 끝인가요? 카드를 마쳐도 조건이 붙은 시도를 저장했다는 사실만 보여 줍니다. 과제에서의 성과를 말하려면 미리 정한 기준과 점검 가능한 결과가 필요합니다. 유지나 전이를 말하려면 나중에 다른 과제도 필요합니다. 이 카드에는 prysai 학습자의 실행 기록, 독립 채점, 모델 비교가 없습니다. 이것은 한국어 시작 카드이지 완역이나 “만능 프롬프트”가 아닙니다. 효율, 학습, 유창함, 모델 품질, 플랫폼 사이의 같은 동작을 증명하지 않습니다. 파일, 도구, 브라우저, 계정, 외부 공개, 실제 데이터가 필요하면 멈추고 경계와 출처가 있는 흐름을 사용하세요. [ ] 가상, 공개 또는 허가된 텍스트만 사용했다. [ ] 완성된 답을 받기 전에 내 시도 또는 알고 있던 사실을 남겼다. [ ] 모델이 사실, 약속 또는 출처를 추가하지 않았는지 확인했다. [ ] 결과가 효율, 숙달, 유창함 또는 모델 품질을 증명하지 않는다는 것을 안다. 다음에 읽을 것 1장: gpt와 codex 3장: 과제 프로토콜 lab 001: 첫 번째 안전한 과제 출처와 경계 이 카드는 prysai의 독창적인 학습 자료입니다. 설계와 출처 기록은 현재 영어로만 있습니다. 그 기록은 “먼저 시도하고, 제한된 피드백을 받고, 마지막에 기록한다”는 후보 설계를 설명할 뿐, 카드·모델·과정의 효과를 증명하지 않습니다.",
+        "de": "einstiegskarten: klar sagen, was du brauchst einstiegskarten: klar sagen, was du brauchst für eine kurze übung in klaren schritten öffne den arbeitsupdate-ablauf oder den rechercheprüfungs-ablauf. status: draft · lernnachweis: notrun · geeignet für: risikoarme übungen ohne sensible daten in einem textchat mit einem llm. sechs direkt kopierbare nachrichten findest du in der spanischübung mit sechs schritten. du musst heute weder codex öffnen noch begriffe auswendig lernen. wähle eine karte, ersetze die klammern durch eine kleine aufgabe, probiere zuerst selbst etwas aus und bitte die ki nur um hilfe bei einem klar abgegrenzten problem. > verwende nur erfundene, öffentliche oder freigegebene texte. füge keine passwörter, > tokens, privaten chats, kundendaten, unveröffentlichten dateien oder inhalte aus > produktionssystemen ein. sieben karten für den sofortigen start spanisch: erst selbst sprechen, dann begrenzte korrektur erhalten dein eigener satz bleibt erhalten; du bekommst eine kleine, überprüfbare korrektur. das modell soll das gespräch nicht von anfang an für dich führen. spanisch: die situation wechseln statt eine antwort auswendig zu lernen arbeits-update: fakten ordnen, ohne fortschritt zu erfinden arbeitsentscheidung: vor dem rat zuerst fragen recherchebeginn: eine große frage kleiner und prüfbar machen quellenprüfung: prüfen, ob das material einen satz wirklich stützt vor dem teilen: inhalt und publikum verkleinern, bevor du entscheidest diese karte trennt „ich möchte etwas teilen“ von „ich darf es teilen“. sie ordnet nur eine entscheidung; sie versendet nichts, lädt nichts hoch und erstellt keinen link. die erste übung hat nur vier schritte wähle die karte, die deinem heutigen bedarf am nächsten kommt. schreibe zuerst deinen kurzen versuch oder die fakten auf, die du schon kennst. lege antwort und original nebeneinander: hat die ki deine grenzen überschritten? bewahre aufgabe, ursprünglichen versuch, genutzte hilfe, behaltene fassung und offene punkte auf. wenn du üben möchtest, aber eine vollständige antwort erhältst, bitte um genau einen hinweis. erfindet das modell einen fakt, eine quelle oder ein versprechen, verwende diese antwort nicht weiter und halte das ungeprüfte als offen fest. übungsbeleg: ein gespräch prüfbar festhalten bewahre nach jeder karte nur diese kurze notiz auf. so siehst du beim nächsten mal, was du geübt hast, und machst aus „es fühlte sich hilfreich an“ keine unbelegte aussage. practised bedeutet nur, dass ein dokumentierter übungsversuch vorliegt. es bedeutet weder sprachflüssigkeit noch beherrschung, höhere effizienz oder vollständig geprüfte quellen. bin ich damit fertig? nach einer karte hast du nur einen versuch mit bedingungen festgehalten. um leistung in einer aufgabe zu behaupten, braucht es vorher festgelegte kriterien und ein überprüfbares ergebnis. für behalten oder übertragung sind spätere, andere aufgaben nötig. für diese karten gibt es keine prysai-lernläufe, keine unabhängige bewertung und keinen modellvergleich. dies sind deutsche einstiegskarten mit noch ausstehender unabhängiger sprachprüfung, keine „universal-prompts“. sie beweisen weder effizienz noch lernen, sprachflüssigkeit, modellqualität oder gleiches verhalten auf verschiedenen plattformen. sobald dateien, tools, browser, konten, externe veröffentlichung oder echte daten nötig sind, halte an und verwende einen ablauf mit passenden grenzen und quellen. [ ] ich habe nur erfundene, öffentliche oder freigegebene texte verwendet. [ ] ich habe meinen eigenen versuch oder bekannte fakten vor einer vollständigen antwort festgehalten. [ ] ich habe geprüft, ob das modell fakten, versprechen oder quellen ergänzt hat. [ ] ich weiß, dass das ergebnis weder effizienz noch beherrschung, sprachflüssigkeit oder modellqualität beweist. als nächstes lesen kapitel 1: gpt und codex kapitel 3: aufgabenprotokoll lab 001: die erste sichere aufgabe quellen und grenzen diese karten sind originales lehrmaterial von prysai. die design- und quellenaufzeichnungen liegen derzeit auf englisch vor. sie erläutern die kandidatenentscheidung „zuerst versuchen, begrenztes feedback, am ende festhalten“; sie beweisen nicht die wirksamkeit der karten, des modells oder des kurses."
       },
       "search_aliases": {}
     },
@@ -4036,11 +4036,173 @@ window.CODEX_SEARCH_INDEX = {
       "search_aliases": {}
     },
     {
+      "content_id": "work-update-practice-loop",
+      "kind": "practice-pack",
+      "number": null,
+      "route": null,
+      "order": 49,
+      "status": "candidate",
+      "available_locales": [
+        "en",
+        "zh",
+        "es",
+        "ja",
+        "ko",
+        "de"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/work-update-practice-loop-EN.md",
+          "exists": true,
+          "ready": true,
+          "title": "Six messages for a truthful work-update practice loop",
+          "snippet": "six messages for a truthful work-update practice loop six messages for a truthful work-update practice loop use fictional facts only. this is a text-only practice loop for making one short update easier to inspect. it does not establish that an update is accur",
+          "content_status": "candidate",
+          "translation_status": "source"
+        },
+        "zh": {
+          "path": "book/work-update-practice-loop-ZH.md",
+          "exists": true,
+          "ready": true,
+          "title": "工作更新小练习：六条不编造事实的消息",
+          "snippet": "工作更新小练习：六条不编造事实的消息 工作更新小练习：六条不编造事实的消息 只使用虚构事实。这是一套文字练习，用来让一条短更新更容易核对；它不证明更新准确、专业、已获批准或适用于真实工作。需要私人、客户、雇佣、财务或生产信息时立即停止。 先定读者和事实 先写，不看范文 找一个关键缺口 用自己的话修改 更换读者 留下一张小回执 把两版草稿和回执放在一起。一次有记录的循环只是练习，不是独立测评，也不能证明 ai 的反馈正确。",
+          "content_status": "candidate",
+          "translation_status": "in-progress"
+        },
+        "es": {
+          "path": "book/work-update-practice-loop-ES.md",
+          "exists": true,
+          "ready": true,
+          "title": "Seis mensajes para practicar una actualización de trabajo sin inventar hechos",
+          "snippet": "seis mensajes para practicar una actualización de trabajo sin inventar hechos seis mensajes para practicar una actualización de trabajo sin inventar hechos usa solo hechos ficticios. este ciclo de texto ayuda a revisar una actualización breve; no demuestra que",
+          "content_status": "candidate",
+          "translation_status": "in-progress"
+        },
+        "ja": {
+          "path": "book/work-update-practice-loop-JA.md",
+          "exists": true,
+          "ready": true,
+          "title": "事実を作らない業務報告：六つの練習メッセージ",
+          "snippet": "事実を作らない業務報告：六つの練習メッセージ 事実を作らない業務報告：六つの練習メッセージ 架空の事実だけを使います。短い報告を確認しやすくする文字だけの練習であり、正確さ、専門性、承認、実務での利用可否を証明するものではありません。私的情報、顧客情報、雇用情報、財務情報、本番情報が必要になったら止めてください。 読み手と事実を決める 見本の前に書く 重要な抜けを一つ探す 自分の言葉で直す 読み手を変える 小さな記録を残す 二つの下書きと記録を一緒に保存してください。記録された一周は練習であり、独立評価でもモデルの",
+          "content_status": "candidate",
+          "translation_status": "in-progress"
+        },
+        "ko": {
+          "path": "book/work-update-practice-loop-KO.md",
+          "exists": true,
+          "ready": true,
+          "title": "사실을 꾸며내지 않는 업무 업데이트: 여섯 가지 연습 메시지",
+          "snippet": "사실을 꾸며내지 않는 업무 업데이트: 여섯 가지 연습 메시지 사실을 꾸며내지 않는 업무 업데이트: 여섯 가지 연습 메시지 가상의 사실만 사용하세요. 짧은 업데이트를 점검하기 쉽게 만드는 텍스트 연습이며, 정확성·전문성·승인·실제 업무 적합성을 증명하지 않습니다. 개인정보, 고객 정보, 고용 정보, 재무 정보 또는 운영 환경 정보가 필요하면 멈추세요. 독자와 사실 정하기 예시를 보기 전에 쓰기 중요한 빈틈 하나 찾기 내 말로 고치기 독자 바꾸기 작은 기록 남기기 ",
+          "content_status": "candidate",
+          "translation_status": "in-progress"
+        },
+        "de": {
+          "path": "book/work-update-practice-loop-DE.md",
+          "exists": true,
+          "ready": true,
+          "title": "Arbeitsupdate ohne erfundene Fakten: sechs Übungsnachrichten",
+          "snippet": "arbeitsupdate ohne erfundene fakten: sechs übungsnachrichten arbeitsupdate ohne erfundene fakten: sechs übungsnachrichten nutze nur erfundene fakten. diese reine textübung macht ein kurzes update besser prüfbar; sie belegt weder richtigkeit, professionalität, ",
+          "content_status": "candidate",
+          "translation_status": "in-progress"
+        }
+      },
+      "search": {
+        "en": "six messages for a truthful work-update practice loop six messages for a truthful work-update practice loop use fictional facts only. this is a text-only practice loop for making one short update easier to inspect. it does not establish that an update is accurate, professional, approved, or suitable for real work. stop if the task needs private, customer, employment, financial, or production information. set the reader and the facts write before seeing a model version find one material gap revise in my own words change the audience leave a small receipt keep the receipt with the two drafts. one recorded loop is practice, not an independent assessment or proof that an ai's feedback was correct.",
+        "zh": "工作更新小练习：六条不编造事实的消息 工作更新小练习：六条不编造事实的消息 只使用虚构事实。这是一套文字练习，用来让一条短更新更容易核对；它不证明更新准确、专业、已获批准或适用于真实工作。需要私人、客户、雇佣、财务或生产信息时立即停止。 先定读者和事实 先写，不看范文 找一个关键缺口 用自己的话修改 更换读者 留下一张小回执 把两版草稿和回执放在一起。一次有记录的循环只是练习，不是独立测评，也不能证明 ai 的反馈正确。",
+        "es": "seis mensajes para practicar una actualización de trabajo sin inventar hechos seis mensajes para practicar una actualización de trabajo sin inventar hechos usa solo hechos ficticios. este ciclo de texto ayuda a revisar una actualización breve; no demuestra que sea exacta, profesional, aprobada ni apta para el trabajo real. detente si necesitas datos privados, de clientes, laborales, financieros o de producción. define lector y hechos escribe antes de ver una versión modelo encuentra una carencia importante reviso con mis propias palabras cambia de lector guarda un recibo breve conserva el recibo junto a ambos borradores. un ciclo registrado es práctica, no evaluación independiente ni prueba de que la ayuda del modelo sea correcta.",
+        "ja": "事実を作らない業務報告：六つの練習メッセージ 事実を作らない業務報告：六つの練習メッセージ 架空の事実だけを使います。短い報告を確認しやすくする文字だけの練習であり、正確さ、専門性、承認、実務での利用可否を証明するものではありません。私的情報、顧客情報、雇用情報、財務情報、本番情報が必要になったら止めてください。 読み手と事実を決める 見本の前に書く 重要な抜けを一つ探す 自分の言葉で直す 読み手を変える 小さな記録を残す 二つの下書きと記録を一緒に保存してください。記録された一周は練習であり、独立評価でもモデルの助言が正しい証明でもありません。",
+        "ko": "사실을 꾸며내지 않는 업무 업데이트: 여섯 가지 연습 메시지 사실을 꾸며내지 않는 업무 업데이트: 여섯 가지 연습 메시지 가상의 사실만 사용하세요. 짧은 업데이트를 점검하기 쉽게 만드는 텍스트 연습이며, 정확성·전문성·승인·실제 업무 적합성을 증명하지 않습니다. 개인정보, 고객 정보, 고용 정보, 재무 정보 또는 운영 환경 정보가 필요하면 멈추세요. 독자와 사실 정하기 예시를 보기 전에 쓰기 중요한 빈틈 하나 찾기 내 말로 고치기 독자 바꾸기 작은 기록 남기기 두 초안과 기록을 함께 보관하세요. 기록된 한 번의 순환은 연습일 뿐, 독립 평가나 모델 피드백의 정확성 증거가 아닙니다.",
+        "de": "arbeitsupdate ohne erfundene fakten: sechs übungsnachrichten arbeitsupdate ohne erfundene fakten: sechs übungsnachrichten nutze nur erfundene fakten. diese reine textübung macht ein kurzes update besser prüfbar; sie belegt weder richtigkeit, professionalität, freigabe noch eignung für die reale arbeit. stoppe, sobald private, kunden-, beschäftigungs-, finanz- oder produktionsdaten nötig wären. leserschaft und fakten festlegen vor dem muster selbst schreiben eine wesentliche lücke finden mit eigenen worten überarbeiten leserschaft wechseln einen kurzen beleg festhalten bewahre beleg und beide entwürfe zusammen auf. ein dokumentierter durchlauf ist übung, keine unabhängige bewertung und kein beweis für korrekte modellrückmeldung."
+      },
+      "search_aliases": {}
+    },
+    {
+      "content_id": "research-check-practice-loop",
+      "kind": "practice-pack",
+      "number": null,
+      "route": null,
+      "order": 50,
+      "status": "candidate",
+      "available_locales": [
+        "en",
+        "zh",
+        "es",
+        "ja",
+        "ko",
+        "de"
+      ],
+      "locales": {
+        "en": {
+          "path": "book/research-check-practice-loop-EN.md",
+          "exists": true,
+          "ready": true,
+          "title": "Six messages for a bounded research check",
+          "snippet": "six messages for a bounded research check six messages for a bounded research check use this loop only with public or authorized material you can inspect. it helps you keep a small research question and its evidence separate. it does not browse, prove a source",
+          "content_status": "candidate",
+          "translation_status": "source"
+        },
+        "zh": {
+          "path": "book/research-check-practice-loop-ZH.md",
+          "exists": true,
+          "ready": true,
+          "title": "研究核查小练习：六条有边界的消息",
+          "snippet": "研究核查小练习：六条有边界的消息 研究核查小练习：六条有边界的消息 只对你能检查的公开或已获授权材料使用这套流程。它帮助你把一个小研究问题与证据分开；它不会浏览、证明来源真实、确认当前事实或替你作高风险决定。需要秘密、未授权材料、私人数据，或发布、购买、雇佣、诊断和行动授权时停止。 固定一个决定 写下主张和来源所有者 读我提供的材料，不想象来源 核查一句话 寻找会改变决定的例外 用停止回执结束 这张回执只是有边界的记录，不能证明 llm 正确完成了研究，也不能证明结论应被采取。",
+          "content_status": "candidate",
+          "translation_status": "in-progress"
+        },
+        "es": {
+          "path": "book/research-check-practice-loop-ES.md",
+          "exists": true,
+          "ready": true,
+          "title": "Seis mensajes para una comprobación de investigación acotada",
+          "snippet": "seis mensajes para una comprobación de investigación acotada seis mensajes para una comprobación de investigación acotada usa este ciclo solo con material público o autorizado que puedas inspeccionar. ayuda a separar una pregunta pequeña de su evidencia; no na",
+          "content_status": "candidate",
+          "translation_status": "in-progress"
+        },
+        "ja": {
+          "path": "book/research-check-practice-loop-JA.md",
+          "exists": true,
+          "ready": true,
+          "title": "範囲を決めたリサーチ確認：六つのメッセージ",
+          "snippet": "範囲を決めたリサーチ確認：六つのメッセージ 範囲を決めたリサーチ確認：六つのメッセージ 自分で確認できる公開資料または許可された資料だけに使ってください。小さな問いと証拠を分けるためのもので、閲覧、情報源の真偽証明、最新事実の確認、高影響な決定は行いません。秘密、無許可の資料、個人データ、公開・購入・採用・診断・行動の許可が必要なら止めてください。 一つの決定を固定する 主張と情報源の所有者を挙げる 与えた資料を読み、想像上の資料を使わない 一文を確認する 決定を変える例外を探す 停止の記録で終える この記録は範囲",
+          "content_status": "candidate",
+          "translation_status": "in-progress"
+        },
+        "ko": {
+          "path": "book/research-check-practice-loop-KO.md",
+          "exists": true,
+          "ready": true,
+          "title": "범위를 정한 리서치 확인: 여섯 가지 메시지",
+          "snippet": "범위를 정한 리서치 확인: 여섯 가지 메시지 범위를 정한 리서치 확인: 여섯 가지 메시지 직접 확인할 수 있는 공개 또는 허가된 자료에만 사용하세요. 작은 질문과 증거를 분리하는 데 도움이 되지만, 탐색, 출처의 진위 증명, 최신 사실 확인, 고위험 의사결정은 하지 않습니다. 비밀, 허가 없는 자료, 개인 데이터 또는 게시·구매·채용·진단·행동 권한이 필요하면 멈추세요. 결정 하나 고정하기 주장과 출처 소유자 적기 제공한 자료를 읽고 상상한 출처를 쓰지 않기 한",
+          "content_status": "candidate",
+          "translation_status": "in-progress"
+        },
+        "de": {
+          "path": "book/research-check-practice-loop-DE.md",
+          "exists": true,
+          "ready": true,
+          "title": "Abgegrenzte Rechercheprüfung: sechs Nachrichten",
+          "snippet": "abgegrenzte rechercheprüfung: sechs nachrichten abgegrenzte rechercheprüfung: sechs nachrichten nutze diesen ablauf nur mit öffentlichen oder berechtigten materialien, die du selbst prüfen kannst. er trennt eine kleine recherchefrage von ihren belegen; er durc",
+          "content_status": "candidate",
+          "translation_status": "in-progress"
+        }
+      },
+      "search": {
+        "en": "six messages for a bounded research check six messages for a bounded research check use this loop only with public or authorized material you can inspect. it helps you keep a small research question and its evidence separate. it does not browse, prove a source true, establish current facts, or make a high-stakes decision. stop if the task requires secrets, unlicensed material, a private person's data, or permission to publish, buy, hire, diagnose, or act. freeze one decision name claims and source owners read supplied material, not imagined sources test one sentence look for a decision-changing exception end with a stop receipt the receipt is a bounded record, not proof that an llm researched correctly or that a conclusion should be acted on.",
+        "zh": "研究核查小练习：六条有边界的消息 研究核查小练习：六条有边界的消息 只对你能检查的公开或已获授权材料使用这套流程。它帮助你把一个小研究问题与证据分开；它不会浏览、证明来源真实、确认当前事实或替你作高风险决定。需要秘密、未授权材料、私人数据，或发布、购买、雇佣、诊断和行动授权时停止。 固定一个决定 写下主张和来源所有者 读我提供的材料，不想象来源 核查一句话 寻找会改变决定的例外 用停止回执结束 这张回执只是有边界的记录，不能证明 llm 正确完成了研究，也不能证明结论应被采取。",
+        "es": "seis mensajes para una comprobación de investigación acotada seis mensajes para una comprobación de investigación acotada usa este ciclo solo con material público o autorizado que puedas inspeccionar. ayuda a separar una pregunta pequeña de su evidencia; no navega, demuestra que una fuente sea cierta, confirma hechos actuales ni toma decisiones de alto impacto. detente ante secretos, material sin permiso, datos privados o autorización para publicar, comprar, contratar, diagnosticar o actuar. fija una decisión nombra afirmaciones y responsables de fuente lee el material dado, no fuentes imaginadas prueba una frase busca una excepción que cambie la decisión termina con un recibo de parada el recibo es un registro acotado, no prueba de que un llm investigó bien ni de que se deba actuar según la conclusión.",
+        "ja": "範囲を決めたリサーチ確認：六つのメッセージ 範囲を決めたリサーチ確認：六つのメッセージ 自分で確認できる公開資料または許可された資料だけに使ってください。小さな問いと証拠を分けるためのもので、閲覧、情報源の真偽証明、最新事実の確認、高影響な決定は行いません。秘密、無許可の資料、個人データ、公開・購入・採用・診断・行動の許可が必要なら止めてください。 一つの決定を固定する 主張と情報源の所有者を挙げる 与えた資料を読み、想像上の資料を使わない 一文を確認する 決定を変える例外を探す 停止の記録で終える この記録は範囲を決めたメモであり、llm が正しく調査したことや結論に従って行動すべきことの証明ではありません。",
+        "ko": "범위를 정한 리서치 확인: 여섯 가지 메시지 범위를 정한 리서치 확인: 여섯 가지 메시지 직접 확인할 수 있는 공개 또는 허가된 자료에만 사용하세요. 작은 질문과 증거를 분리하는 데 도움이 되지만, 탐색, 출처의 진위 증명, 최신 사실 확인, 고위험 의사결정은 하지 않습니다. 비밀, 허가 없는 자료, 개인 데이터 또는 게시·구매·채용·진단·행동 권한이 필요하면 멈추세요. 결정 하나 고정하기 주장과 출처 소유자 적기 제공한 자료를 읽고 상상한 출처를 쓰지 않기 한 문장 확인하기 결정을 바꿀 예외 찾기 중단 영수증으로 끝내기 이 영수증은 범위가 있는 기록일 뿐, llm이 제대로 조사했다는 증거나 결론에 따라 행동해야 한다는 증거가 아닙니다.",
+        "de": "abgegrenzte rechercheprüfung: sechs nachrichten abgegrenzte rechercheprüfung: sechs nachrichten nutze diesen ablauf nur mit öffentlichen oder berechtigten materialien, die du selbst prüfen kannst. er trennt eine kleine recherchefrage von ihren belegen; er durchsucht nichts, beweist keine quelle als wahr, bestätigt keine aktuellen fakten und trifft keine folgenreichen entscheidungen. stoppe bei geheimnissen, unberechtigtem material, privaten daten oder einer freigabe zum veröffentlichen, kaufen, einstellen, diagnostizieren oder handeln. eine entscheidung festhalten aussagen und quelleninhaber benennen vorgelegtes material lesen, keine quellen erfinden einen satz prüfen eine entscheidungsändernde ausnahme suchen mit einem stoppbeleg enden der beleg ist ein abgegrenzter datensatz, kein nachweis korrekter llm-recherche oder dass nach der schlussfolgerung gehandelt werden sollte."
+      },
+      "search_aliases": {}
+    },
+    {
       "content_id": "reader-evidence-library",
       "kind": "reader-reference",
       "number": null,
       "route": null,
-      "order": 49,
+      "order": 51,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -4121,7 +4283,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "lab",
       "number": 17,
       "route": null,
-      "order": 50,
+      "order": 52,
       "status": "draft",
       "available_locales": [
         "en",
@@ -4202,7 +4364,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "field-note",
       "number": null,
       "route": null,
-      "order": 51,
+      "order": 53,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -4283,7 +4445,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "field-note",
       "number": null,
       "route": null,
-      "order": 52,
+      "order": 54,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -4364,7 +4526,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "field-note",
       "number": null,
       "route": null,
-      "order": 53,
+      "order": 55,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -4445,7 +4607,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "field-note",
       "number": null,
       "route": null,
-      "order": 54,
+      "order": 56,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -4526,7 +4688,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "field-note",
       "number": null,
       "route": null,
-      "order": 55,
+      "order": 57,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -4607,7 +4769,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "field-note",
       "number": null,
       "route": null,
-      "order": 56,
+      "order": 58,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -4688,7 +4850,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "field-note",
       "number": null,
       "route": null,
-      "order": 57,
+      "order": 59,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -4769,7 +4931,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "field-note",
       "number": null,
       "route": null,
-      "order": 58,
+      "order": 60,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -4850,7 +5012,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "field-note",
       "number": null,
       "route": null,
-      "order": 59,
+      "order": 61,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -4931,7 +5093,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 60,
+      "order": 62,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -5012,7 +5174,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 61,
+      "order": 63,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -5093,7 +5255,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 62,
+      "order": 64,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -5174,7 +5336,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 63,
+      "order": 65,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -5255,7 +5417,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 64,
+      "order": 66,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -5336,7 +5498,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 65,
+      "order": 67,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -5417,7 +5579,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 66,
+      "order": 68,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -5498,7 +5660,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 67,
+      "order": 69,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -5579,7 +5741,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 68,
+      "order": 70,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -5660,7 +5822,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 69,
+      "order": 71,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -5741,7 +5903,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 70,
+      "order": 72,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -5822,7 +5984,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 71,
+      "order": 73,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -5903,7 +6065,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 72,
+      "order": 74,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -5984,7 +6146,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 73,
+      "order": 75,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -6065,7 +6227,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 74,
+      "order": 76,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -6146,7 +6308,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 75,
+      "order": 77,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -6227,7 +6389,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 76,
+      "order": 78,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -6308,7 +6470,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 77,
+      "order": 79,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -6389,7 +6551,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 78,
+      "order": 80,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -6470,7 +6632,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 79,
+      "order": 81,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -6551,7 +6713,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 80,
+      "order": 82,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -6632,7 +6794,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 81,
+      "order": 83,
       "status": "candidate",
       "available_locales": [
         "en",
@@ -6713,7 +6875,7 @@ window.CODEX_SEARCH_INDEX = {
       "kind": "skill",
       "number": null,
       "route": null,
-      "order": 82,
+      "order": 84,
       "status": "candidate",
       "available_locales": [
         "en",

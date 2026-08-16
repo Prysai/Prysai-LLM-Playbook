@@ -2779,6 +2779,110 @@ window.CODEX_LOCALE_MANIFEST = {
         }
       }
     },
+    "work-update-practice-loop": {
+      "kind": "practice-pack",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
+      "stem": "book/work-update-practice-loop",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "book/work-update-practice-loop-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/work-update-practice-loop-ZH.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "es": {
+          "path": "book/work-update-practice-loop-ES.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "ja": {
+          "path": "book/work-update-practice-loop-JA.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "ko": {
+          "path": "book/work-update-practice-loop-KO.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "de": {
+          "path": "book/work-update-practice-loop-DE.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        }
+      }
+    },
+    "research-check-practice-loop": {
+      "kind": "practice-pack",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
+      "stem": "book/research-check-practice-loop",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "book/research-check-practice-loop-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/research-check-practice-loop-ZH.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "es": {
+          "path": "book/research-check-practice-loop-ES.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "ja": {
+          "path": "book/research-check-practice-loop-JA.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "ko": {
+          "path": "book/research-check-practice-loop-KO.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "de": {
+          "path": "book/research-check-practice-loop-DE.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        }
+      }
+    },
     "reader-evidence-library": {
       "kind": "reader-reference",
       "reader_type": "project-document",
@@ -4931,6 +5035,18 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/spanish-practice-loop-JA.md": "spanish-practice-loop",
     "book/spanish-practice-loop-KO.md": "spanish-practice-loop",
     "book/spanish-practice-loop-DE.md": "spanish-practice-loop",
+    "book/work-update-practice-loop-EN.md": "work-update-practice-loop",
+    "book/work-update-practice-loop-ZH.md": "work-update-practice-loop",
+    "book/work-update-practice-loop-ES.md": "work-update-practice-loop",
+    "book/work-update-practice-loop-JA.md": "work-update-practice-loop",
+    "book/work-update-practice-loop-KO.md": "work-update-practice-loop",
+    "book/work-update-practice-loop-DE.md": "work-update-practice-loop",
+    "book/research-check-practice-loop-EN.md": "research-check-practice-loop",
+    "book/research-check-practice-loop-ZH.md": "research-check-practice-loop",
+    "book/research-check-practice-loop-ES.md": "research-check-practice-loop",
+    "book/research-check-practice-loop-JA.md": "research-check-practice-loop",
+    "book/research-check-practice-loop-KO.md": "research-check-practice-loop",
+    "book/research-check-practice-loop-DE.md": "research-check-practice-loop",
     "book/evidence-library-EN.md": "reader-evidence-library",
     "book/evidence-library-ZH.md": "reader-evidence-library",
     "book/evidence-library-ES.md": "reader-evidence-library",

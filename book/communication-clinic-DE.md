@@ -2,6 +2,8 @@
 
 # Einstiegskarten: Klar sagen, was du brauchst
 
+Für eine kurze Übung in klaren Schritten öffne den [Arbeitsupdate-Ablauf](work-update-practice-loop-DE.md) oder den [Rechercheprüfungs-Ablauf](research-check-practice-loop-DE.md).
+
 **Status:** `draft` · **Lernnachweis:** `not_run` · **Geeignet für:** risikoarme
 Übungen ohne sensible Daten in einem Textchat mit einem LLM.
 

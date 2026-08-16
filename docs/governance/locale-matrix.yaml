@@ -811,6 +811,36 @@
       }
     },
     {
+      "content_id": "work-update-practice-loop",
+      "kind": "practice-pack",
+      "stem": "book/work-update-practice-loop",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-16",
+      "locales": {
+        "EN": {"path": "book/work-update-practice-loop-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/work-update-practice-loop-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "run_status": "not_run", "reason": "Localized prompt pack exists; independent Simplified Chinese language review and learner-run evidence remain pending."},
+        "ES": {"path": "book/work-update-practice-loop-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "run_status": "not_run", "reason": "Localized prompt pack exists; independent Spanish language review and learner-run evidence remain pending."},
+        "JA": {"path": "book/work-update-practice-loop-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "run_status": "not_run", "reason": "Localized prompt pack exists; independent Japanese language review and learner-run evidence remain pending."},
+        "KO": {"path": "book/work-update-practice-loop-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "run_status": "not_run", "reason": "Localized prompt pack exists; independent Korean language review and learner-run evidence remain pending."},
+        "DE": {"path": "book/work-update-practice-loop-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "run_status": "not_run", "reason": "Localized prompt pack exists; independent German language review and learner-run evidence remain pending."}
+      }
+    },
+    {
+      "content_id": "research-check-practice-loop",
+      "kind": "practice-pack",
+      "stem": "book/research-check-practice-loop",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-16",
+      "locales": {
+        "EN": {"path": "book/research-check-practice-loop-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full", "run_status": "not_run"},
+        "ZH": {"path": "book/research-check-practice-loop-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "run_status": "not_run", "reason": "Localized prompt pack exists; independent Simplified Chinese language review and learner-run evidence remain pending."},
+        "ES": {"path": "book/research-check-practice-loop-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "run_status": "not_run", "reason": "Localized prompt pack exists; independent Spanish language review and learner-run evidence remain pending."},
+        "JA": {"path": "book/research-check-practice-loop-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "run_status": "not_run", "reason": "Localized prompt pack exists; independent Japanese language review and learner-run evidence remain pending."},
+        "KO": {"path": "book/research-check-practice-loop-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "run_status": "not_run", "reason": "Localized prompt pack exists; independent Korean language review and learner-run evidence remain pending."},
+        "DE": {"path": "book/research-check-practice-loop-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "run_status": "not_run", "reason": "Localized prompt pack exists; independent German language review and learner-run evidence remain pending."}
+      }
+    },
+    {
       "content_id": "reader-evidence-library",
       "kind": "reader-reference",
       "stem": "book/evidence-library",

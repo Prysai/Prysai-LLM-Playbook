@@ -2,6 +2,8 @@
 
 # Tarjetas de práctica para principiantes: decir lo que necesitas con claridad
 
+Para una práctica breve y guiada, abre el [ciclo de actualización de trabajo](work-update-practice-loop-ES.md) o el [ciclo de comprobación de investigación](research-check-practice-loop-ES.md).
+
 **Estado:** `draft` · **Evidencia de aprendizaje:** `not_run` · **Uso previsto:**
 prácticas de bajo riesgo y sin datos sensibles en un chat de texto con un LLM.
 

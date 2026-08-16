@@ -2,6 +2,8 @@
 
 # 초보자 연습 카드: 필요한 것을 분명하게 말하기
 
+짧고 순서 있는 연습을 원하면 [업무 업데이트 연습](work-update-practice-loop-KO.md) 또는 [리서치 확인 연습](research-check-practice-loop-KO.md)을 여세요.
+
 **상태:** `draft` · **학습자 근거:** `not_run` · **대상:** 텍스트 채팅형 LLM에서 하는
 저위험·비민감 연습입니다.
 

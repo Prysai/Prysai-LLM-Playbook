@@ -2,6 +2,8 @@
 
 # 初心者の練習カード：必要なことをはっきり伝える
 
+短く順番に練習したい場合は、[業務報告の練習](work-update-practice-loop-JA.md) または [リサーチ確認の練習](research-check-practice-loop-JA.md) を開いてください。
+
 **状態：** `draft` · **学習者の根拠：** `not_run` · **対象：** テキストチャット型 LLM で行う、
 低リスクかつ非機微な練習。
 
