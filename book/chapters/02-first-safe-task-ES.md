@@ -413,5 +413,7 @@ cambien.
 El registro de problemas contiene informes de usuarios y sugerencias de
 comunidad, no causas oficiales confirmadas. Este capítulo sigue siendo
 `candidate`; Lab 001 es `draft / not_run` hasta que un recorrido nuevo y
-acotado produzca la evidencia declarada. La siguiente unidad traducida aún no
-está disponible: no trates una ruta inglesa como una continuación española.
+acotado produzca la evidencia declarada. Cuando hayas terminado, continúa con
+el [Capítulo 3: convierte un deseo en un protocolo de tarea](03-task-protocol-ES.md).
+La siguiente transición se mantiene en español; no trates una ruta inglesa como
+su continuación.

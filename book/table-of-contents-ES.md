@@ -4,7 +4,7 @@
 
 Esta es una ruta de lectura en español, no una traducción completa del libro.
 El catálogo canónico tiene 22 capítulos `candidate` y 18 Labs `draft`; en este
-momento existen 3 capítulos y 3 Labs en español. Cada enlace de esta página
+momento existen 4 capítulos y 4 Labs en español. Cada enlace de esta página
 apunta al mismo contenido en español. Cuando no hay un archivo `-ES`, se indica
 como no disponible en vez de enlazar a otro capítulo o cambiar de idioma.
 
@@ -15,9 +15,11 @@ como no disponible en vez de enlazar a otro capítulo o cambiar de idioma.
 2. [Capítulo 1: entender GPT antes de entender Codex](chapters/01-gpt-and-codex-ES.md)
    → [Lab 011: separar GPT, Codex, herramientas y Agents](labs/lab-011-gpt-codex-boundaries-ES.md).
 3. [Capítulo 2: completar una primera tarea segura y verificable](chapters/02-first-safe-task-ES.md)
-   → [Lab 001: primera tarea segura](labs/lab-001-first-safe-task-ES.md).
-4. [Capítulo 4: contexto, permisos y límites de acción del Agent](chapters/04-context-permissions-and-agent-ES.md)
-   → [Lab 007: límites de acción](labs/lab-007-action-boundaries-ES.md).
+    → [Lab 001: primera tarea segura](labs/lab-001-first-safe-task-ES.md).
+4. [Capítulo 3: convertir un deseo en un protocolo de tarea](chapters/03-task-protocol-ES.md)
+   → [Lab 002: protocolo de tarea](labs/lab-002-task-protocol-ES.md).
+5. [Capítulo 4: contexto, permisos y límites de acción del Agent](chapters/04-context-permissions-and-agent-ES.md)
+    → [Lab 007: límites de acción](labs/lab-007-action-boundaries-ES.md).
 
 Estos materiales siguen en `candidate` o `draft / not_run`. Que una ruta exista
 no prueba calidad de traducción, ejecución de modelos, aprendizaje ni
@@ -29,7 +31,7 @@ transferencia.
 | --- | --- |
 | 01 — Entender GPT antes de entender cómo funciona Codex | [Disponible: capítulo 01](chapters/01-gpt-and-codex-ES.md) · `candidate / in-progress` |
 | 02 — Completar una primera tarea segura y verificable | [Disponible: capítulo 02](chapters/02-first-safe-task-ES.md) · `candidate / in-progress` |
-| 03 — Convertir un deseo en un protocolo de tarea | Aún no existe archivo español. |
+| 03 — Convertir un deseo en un protocolo de tarea | [Disponible: capítulo 03](chapters/03-task-protocol-ES.md) · `candidate / in-progress` |
 | 04 — Contexto, permisos y límites de acción del Agent | [Disponible: capítulo 04](chapters/04-context-permissions-and-agent-ES.md) · `candidate / in-progress` |
 | 05 — Elegir la superficie correcta de Codex | Aún no existe archivo español. |
 | 06 — Elegir un modelo no es venerar un modelo | Aún no existe archivo español. |
@@ -55,7 +57,7 @@ transferencia.
 | Lab canónico | Estado de la ruta en español |
 | --- | --- |
 | 001 — Primera tarea segura | [Disponible: Lab 001](labs/lab-001-first-safe-task-ES.md) · `draft / not_run` |
-| 002 — Protocolo de tarea | Aún no existe archivo español. |
+| 002 — Protocolo de tarea | [Disponible: Lab 002](labs/lab-002-task-protocol-ES.md) · `draft / not_run` |
 | 003 — Revisión de evidencia | Aún no existe archivo español. |
 | 004 — Elegir la capacidad mínima útil | Aún no existe archivo español. |
 | 005 — Convertir un método repetido en un Skill acotado | Aún no existe archivo español. |
