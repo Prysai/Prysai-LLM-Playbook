@@ -1,0 +1,4 @@
+interface:
+  display_name: "Language Partner"
+  short_description: "One bounded typed exchange in the learner's target language."
+  default_prompt: "Use $prysai-language-partner to run one short typed practice exchange in the language I name."
