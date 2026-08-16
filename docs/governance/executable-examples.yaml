@@ -129,7 +129,7 @@
       "learner_run_status": "not_run",
       "transfer_status": "not_run",
       "replay": {
-        "fixture_manifest_sha256": "2d9e2c4334ae8090ef20d21c5af2129dc603a6ecf2b05779c5789e898e32c060",
+        "fixture_manifest_sha256": "3eceab209a67fa4e87a087fed0da47ec97107f2d9a708c794e54215e954b8c99",
         "packet_attestation_sha256": "4dd0b32df49f78e26ba566868b89771e24cc912252d0fe5b07cd2627968df36a",
         "output_subdir": "examples/lab-013-reference",
         "runner_argv": [

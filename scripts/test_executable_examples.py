@@ -23,6 +23,7 @@ def main() -> int:
     no_assert = copy.deepcopy(data); no_assert["records"][0]["verification_classes"].remove("asserted"); cases.append(no_assert)
     no_limits = copy.deepcopy(data); no_limits["records"][0]["known_blind_spots"] = []; cases.append(no_limits)
     bad_digest = copy.deepcopy(data); bad_digest["records"][0]["replay"]["fixture_manifest_sha256"] = "0" * 64; cases.append(bad_digest)
+    second_bad_digest = copy.deepcopy(data); second_bad_digest["records"][1]["replay"]["fixture_manifest_sha256"] = "0" * 64; cases.append(second_bad_digest)
     missing_runner = copy.deepcopy(data); missing_runner["records"][0]["replay"]["runner_argv"][1] = "scripts/missing.py"; cases.append(missing_runner)
     fixture_drift = copy.deepcopy(data); fixture_drift["records"][0]["negative_fixtures"] = ["invented-fixture"]; cases.append(fixture_drift)
     unsafe_output = copy.deepcopy(data); unsafe_output["records"][0]["replay"]["output_subdir"] = "../escape"; cases.append(unsafe_output)
@@ -45,7 +46,7 @@ def main() -> int:
         print("EXECUTABLE_EXAMPLE_FIXTURES_FAILED")
         for failure in failures: print(f"- {failure}")
         return 1
-    print("EXECUTABLE_EXAMPLE_FIXTURES_OK negative=9")
+    print("EXECUTABLE_EXAMPLE_FIXTURES_OK negative=10")
     return 0
 
 
