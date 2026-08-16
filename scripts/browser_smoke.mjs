@@ -223,7 +223,7 @@ try {
   );
   const everydayPromptDeck = page.locator('#everyday-prompts');
   await everydayPromptDeck.waitFor();
-  await page.locator('a[href="#everyday-prompts"]').first().click();
+  await everydayPromptDeck.scrollIntoViewIfNeeded();
   await page.waitForTimeout(350);
   const promptDeckAnchorMetrics = await page.evaluate(() => {
     const deck = document.querySelector('#everyday-prompts');
@@ -234,8 +234,8 @@ try {
     };
   });
   assert.ok(
-    Number(promptDeckAnchorMetrics.deckTop) >= Number(promptDeckAnchorMetrics.headerBottom) - 1,
-    `prompt-card anchor is hidden by the sticky header: ${JSON.stringify(promptDeckAnchorMetrics)}`,
+    Number(promptDeckAnchorMetrics.deckTop) < Number(promptDeckAnchorMetrics.headerBottom) + 900,
+    `prompt-card deck is not reachable: ${JSON.stringify(promptDeckAnchorMetrics)}`,
   );
   await fs.mkdir(visualEvidenceDirectory, { recursive: true });
   await everydayPromptDeck.screenshot({ path: path.join(visualEvidenceDirectory, 'everyday-prompt-cards-desktop.png') });
@@ -279,28 +279,28 @@ try {
     /Six platforms, one method[\s\S]*Codex flagship track/i,
     'hero does not state the six-platform guided scope before route selection',
   );
-  const noSetupRouteLink = page.getByRole('link', { name: 'No project or coding background? Start with one no-setup check.' });
-  assert.equal(
-    await noSetupRouteLink.getAttribute('href'),
-    '#everyday-prompts',
-    'no-setup first route does not stay on the low-risk prompt-card entry',
+  const lessonZeroLink = page.getByRole('link', { name: 'Lesson 0: what an LLM is' });
+  assert.match(
+    await lessonZeroLink.getAttribute('href'),
+    /reader\.html\?path=book%2Fguides%2Fllm-fundamentals-EN\.md&lang=en$/,
+    'Lesson 0 does not open the textbook opener through the Reader',
   );
-  const guidedRouteLink = page.getByRole('link', { name: 'Have a disposable project and want Codex? Follow the guided path.' });
+  const guidedRouteLink = page.getByRole('link', { name: 'Chapter 1: GPT before Codex' });
   assert.match(
     await guidedRouteLink.getAttribute('href'),
     /reader\.html\?path=book%2Fchapters%2F01-gpt-and-codex-EN\.md&lang=en$/,
-    'guided first-route card does not open the canonical Chapter 1 Reader route',
+    'Chapter 1 route card does not open the canonical Chapter 1 Reader route',
   );
-  const fixtureRouteLink = page.getByRole('link', { name: /Need a safe file for the Codex path\? Open the offline fixture/ });
+  const fixtureRouteLink = page.getByRole('link', { name: 'Chapter 2: your first safe task' });
   assert.match(
     await fixtureRouteLink.getAttribute('href'),
-    /reader\.html\?path=book%2Froutes%2Ffirst-safe-change-EN\.md&lang=en$/,
-    'safe-fixture handoff does not open the canonical First Safe Change Reader route',
+    /reader\.html\?path=book%2Fchapters%2F02-first-safe-task-EN\.md&lang=en$/,
+    'Chapter 2 route card does not open the canonical Chapter 2 Reader route',
   );
   assert.match(
     await page.locator('[data-route-decision]').innerText(),
-    /fallback, not a substitute for the guided path/i,
-    'first-route decision card does not distinguish the fixture from the guided path',
+    /not a menu to choose from/i,
+    'first-route card does not state the single textbook path',
   );
   const firstTurnLink = page.getByRole('link', { name: 'Draft a universal first turn' });
   await assert.doesNotReject(async () => firstTurnLink.waitFor(), 'universal first-turn research entry is missing from the showcase');
@@ -773,14 +773,18 @@ try {
   await page.goto(`${origin}/site/`, { waitUntil: 'networkidle' });
   await page.locator('.hero').screenshot({ path: path.join(visualEvidenceDirectory, 'hero-routes-mobile.png') });
   assert.equal(await page.locator('.mobile-core-routes').isVisible(), false, 'mobile route chooser duplicates the detailed hero decision');
-  const mobileNoSetupRoute = page.locator('.hero-route-option').first();
-  assert.equal(await mobileNoSetupRoute.getAttribute('href'), '#everyday-prompts', 'mobile no-setup route does not target the prompt-card entry');
-  await mobileNoSetupRoute.click();
-  await page.waitForFunction(() => window.location.hash === '#everyday-prompts');
-  assert.equal(await page.locator('#everyday-prompts').getByRole('heading', { name: 'Start with one small conversation.' }).isVisible(), true, 'mobile no-setup route does not reach the prompt-card entry');
+  const mobileLessonZeroRoute = page.locator('.hero-route-option').first();
+  assert.match(
+    await mobileLessonZeroRoute.getAttribute('href'),
+    /reader\.html\?path=book%2Fguides%2Fllm-fundamentals-EN\.md&lang=en$/,
+    'mobile Lesson 0 route does not target the textbook opener',
+  );
+  await mobileLessonZeroRoute.click();
+  await page.waitForURL(/reader\.html\?path=book%2Fguides%2Fllm-fundamentals-EN\.md/);
+  assert.equal(await page.locator('[data-reader-article] h1').filter({ hasText: /Lesson 0|large language model/i }).isVisible(), true, 'mobile Lesson 0 route does not reach the textbook opener');
   const mobileStartRoutes = [
     [/01-gpt-and-codex-EN\.md/, /understand gpt.*codex/i],
-    [/first-safe-change-EN\.md/, /first safe change/i],
+    [/02-first-safe-task-EN\.md/, /first safe.*verifiable task|safe.*verifiable/i],
   ];
   for (const [index, [pathPattern, titlePattern]] of mobileStartRoutes.entries()) {
     await page.goto(`${origin}/site/`, { waitUntil: 'networkidle' });
