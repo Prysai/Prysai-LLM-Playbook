@@ -111,7 +111,7 @@ Prysai LLM Playbook（Prysai 大模型实战手册）不是把 skills 平铺在�
 当前中文候选路径不是只有语言入口。它包括：
 
 - `README-ZH.md`、`book/README-ZH.md`、`book/preface-ZH.md` 与本目录；
-- [中文新手提示卡](book/communication-clinic-ZH.md)：七张可直接复制的低风险文字练习卡；它是中文起步切片，不是完整中文译本，也没有效果或跨模型运行证据；
+- [中文新手提示卡](book/communication-clinic-ZH.md)：七张可直接复制的低风险文字练习卡；独立语言审校、学习效果与跨模型运行证据仍待完成；
 - [第 1 章](book/chapters/01-gpt-and-codex-ZH.md) → [实验 011](book/labs/lab-011-gpt-codex-boundaries-ZH.md) → [第 2 章](book/chapters/02-first-safe-task-ZH.md) → [第一次安全改动夹具](book/routes/first-safe-change-ZH.md) → [实验 001](book/labs/lab-001-first-safe-task-ZH.md) → [第 3 章](book/chapters/03-task-protocol-ZH.md) → [实验 002](book/labs/lab-002-task-protocol-ZH.md)；
 - [第 4 章](book/chapters/04-context-permissions-and-agent-ZH.md) → [实验 007](book/labs/lab-007-action-boundaries-ZH.md) → [第 5 章](book/chapters/05-choose-the-codex-surface-ZH.md) → [第 6 章](book/chapters/06-model-selection-ZH.md) → [第 7 章](book/chapters/07-skills-plugins-and-tools-ZH.md) → [实验 004：选择最小有用能力](book/labs/lab-004-skill-selection-ZH.md) → [第 8 章](book/chapters/08-full-lifecycle-workflow-ZH.md) → [实验 013](book/labs/lab-013-l3-vertical-slice-ZH.md) → [第 9 章](book/chapters/09-verification-and-recovery-ZH.md) → [实验 003](book/labs/lab-003-evidence-review-ZH.md) → [第 10 章](book/chapters/10-planning-and-slicing-ZH.md)。
 
