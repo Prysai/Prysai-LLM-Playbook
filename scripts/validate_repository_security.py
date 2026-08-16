@@ -159,8 +159,11 @@ def validate_workflow_text(text: str, label: str) -> list[str]:
     errors: list[str] = []
     if PULL_REQUEST_TARGET_RE.search(text):
         errors.append(f"{label}: pull_request_target is forbidden by the repository policy")
-    if SECRETS_CONTEXT_RE.search(text):
-        errors.append(f"{label}: repository workflow must not reference the secrets context")
+    # A deployment-only workflow may need a scoped secret on a protected push.
+    # The untrusted boundary is a pull-request trigger: there, a secret context
+    # could be exposed to contributor-controlled workflow or repository content.
+    if PULL_REQUEST_RE.search(text) and SECRETS_CONTEXT_RE.search(text):
+        errors.append(f"{label}: pull-request workflow must not reference the secrets context")
     if UNSAFE_PIPE_RE.search(text):
         errors.append(f"{label}: downloads must not be piped directly into a shell")
     for action, ref in USES_RE.findall(text):
