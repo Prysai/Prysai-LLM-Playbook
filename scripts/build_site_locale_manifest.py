@@ -249,8 +249,6 @@ def build_lab_navigation_payload(
             "path": path,
             "content_id": content_id,
         }
-        if isinstance(item.get("title_zh"), str) and item["title_zh"].strip():
-            record["title_zh"] = item["title_zh"]
         labs.append(record)
     return {
         "sequence_boundary": navigation.get("policy", {}).get("sequence_boundary"),

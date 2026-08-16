@@ -35,8 +35,10 @@ def main() -> int:
         require(len(labs) == 18, f"Reader manifest projects {len(labs)} Labs instead of 18")
         require([lab["number"] for lab in labs] == list(range(1, 19)), "Lab numbers are not the complete 1-18 sequence")
         require(labs[0]["content_id"] == "lab-001-first-safe-task", "Lab 001 is not the first Reader entry")
-        require(labs[1]["title_zh"] == "把一个愿望变成任务协议", "Lab 002 Chinese navigation title is missing")
-        require(labs[3]["title_zh"] == "选择最小有用能力", "Lab 004 Chinese navigation title is missing")
+        lab002_zh = manifest["contents"]["lab-002-task-protocol"]["locales"]["zh"]
+        lab004_zh = manifest["contents"]["lab-004-skill-selection"]["locales"]["zh"]
+        require(lab002_zh["title"] == "实验 002：把一个愿望变成任务协议", "Lab 002 Chinese source title is missing")
+        require(lab004_zh["title"] == "实验 004：选择最小有用能力", "Lab 004 Chinese source title is missing")
         require(labs[8]["content_id"] == "lab-009-engineering-lifecycle", "Lab 009 is not the middle fixture")
         require(labs[-1]["content_id"] == "lab-018-language-transfer", "Lab 018 is not the last Reader entry")
 
@@ -44,7 +46,7 @@ def main() -> int:
         for required in (
             "function labForSelection(selection)",
             "function labPath(lab)",
-            "function labHasLocalizedTitle(lab)",
+            "function localizedLabTitle(lab)",
             "function labNavigationTitle(lab)",
             "function labProgressLabel(lab)",
             "Catalog order, not a prerequisite chain",
@@ -62,6 +64,10 @@ def main() -> int:
             "'candidate', 'in-progress', 'verified'",
         ):
             require(required in reader, f"Reader Lab contract is missing: {required}")
+        require(
+            "title_zh" not in json.dumps(labs, ensure_ascii=False),
+            "English Lab navigation contract still carries localized display text",
+        )
         require(
             "if (!bookNav || !bookProgress || !chapterList || !pagination) return;" not in reader,
             "Lab navigation is still coupled to chapter-only rail nodes",
