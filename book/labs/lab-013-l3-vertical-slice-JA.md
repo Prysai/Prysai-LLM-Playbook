@@ -49,5 +49,5 @@ hash、checkpoint、diff、log、出力、失敗、主張・証拠表、引き�
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Labナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-012-team-capability-migration-JA.md">← 前へ<br><strong>Lab 012 · チーム能力の移行</strong></a></td><td align="right"><a data-lab-nav="next" href="../README-JA.md">次は準備中 →<br><strong>Lab 014の提供状況を見る</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Labナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-012-team-capability-migration-JA.md">← 前へ<br><strong>Lab 012 · チーム能力の移行</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-014-resume-reconciliation-JA.md">次へ →<br><strong>Lab 014 · 再開時の照合</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

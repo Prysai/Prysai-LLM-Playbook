@@ -49,5 +49,5 @@ Conserva hashes, checkpoints, diff, log, salida, fallo, tabla afirmación-eviden
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Navegación de Labs"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-012-team-capability-migration-ES.md">← Anterior<br><strong>Lab 012 · migración de capacidades de equipo</strong></a></td><td align="right"><a data-lab-nav="next" href="../README-ES.md">Siguiente pendiente →<br><strong>Ver disponibilidad del Lab 014</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Navegación de Labs"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-012-team-capability-migration-ES.md">← Anterior<br><strong>Lab 012 · migración de capacidades de equipo</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-014-resume-reconciliation-ES.md">Siguiente →<br><strong>Lab 014 · conciliación al reanudar</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

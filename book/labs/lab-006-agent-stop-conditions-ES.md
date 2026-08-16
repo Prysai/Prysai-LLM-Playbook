@@ -71,7 +71,7 @@ El fixture es local y sintético. Pasarlo no demuestra que todos los modelos, ho
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-lab-nav="previous" href="lab-005-design-a-skill-ES.md">← Anterior<br><strong>Lab 005 · Convertir un método repetido en un Skill acotado</strong></a></td>
-      <td align="right"><a data-lab-nav="next" href="../table-of-contents-ES.md">Siguiente pendiente →<br><strong>Ver disponibilidad del Lab 007</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-007-action-boundaries-ES.md">Siguiente →<br><strong>Lab 007 · límites de acción</strong></a></td>
     </tr>
   </table>
 </nav>

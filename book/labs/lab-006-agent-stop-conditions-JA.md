@@ -69,6 +69,6 @@ hard_stop: 不明な副作用、権限不足、または新しい証拠のない
 <hr>
 <nav class="lab-navigation" aria-label="Lab のナビゲーション"><table role="presentation" width="100%"><tr>
 <td align="left"><a data-lab-nav="previous" href="lab-005-design-a-skill-JA.md">← 前の Lab<br><strong>Lab 005 · 繰り返す方法を境界のある Skill にする</strong></a></td>
-<td align="right"><a data-lab-nav="next" href="../table-of-contents-JA.md">次の Lab は準備中 →<br><strong>Lab 007 の提供状況を見る</strong></a></td>
+<td align="right"><a data-lab-nav="next" href="lab-007-browse-safely-JA.md">次へ →<br><strong>Lab 007 · 安全にブラウズする</strong></a></td>
 </tr></table></nav>
 <!-- lab-navigation:end -->

@@ -47,5 +47,5 @@ Conserva ambas versiones, hashes, permisos, registros, notas, diff, matriz, roll
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Navegación de Labs"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-011-gpt-codex-boundaries-ES.md">← Anterior<br><strong>Lab 011 · separar GPT, Codex, herramientas y Agents</strong></a></td><td align="right"><a data-lab-nav="next" href="../README-ES.md">Siguiente pendiente →<br><strong>Ver disponibilidad del Lab 013</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Navegación de Labs"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-011-gpt-codex-boundaries-ES.md">← Anterior<br><strong>Lab 011 · separar GPT, Codex, herramientas y Agents</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-013-l3-vertical-slice-ES.md">Siguiente →<br><strong>Lab 013 · corte vertical auditable</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

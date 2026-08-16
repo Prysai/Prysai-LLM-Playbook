@@ -48,5 +48,5 @@ Transfiere el sobre a navegador o MCP sin escribir: identifica solicitud confirm
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Navegación de Labs"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-013-l3-vertical-slice-ES.md">← Anterior<br><strong>Lab 013 · corte vertical auditable</strong></a></td><td align="right"><a data-lab-nav="next" href="../README-ES.md">Siguiente pendiente →<br><strong>Ver disponibilidad del Lab 015</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Navegación de Labs"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-013-l3-vertical-slice-ES.md">← Anterior<br><strong>Lab 013 · corte vertical auditable</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-015-evidence-delivery-ES.md">Siguiente →<br><strong>Lab 015 · entrega con evidencia</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

@@ -48,5 +48,5 @@ transfer_limitations: "使い捨てfixtureは実アカウント、リモート�
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Labナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-013-l3-vertical-slice-JA.md">← 前へ<br><strong>Lab 013 · 監査可能な縦方向スライス</strong></a></td><td align="right"><a data-lab-nav="next" href="../README-JA.md">次は準備中 →<br><strong>Lab 015の提供状況を見る</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Labナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-013-l3-vertical-slice-JA.md">← 前へ<br><strong>Lab 013 · 監査可能な縦方向スライス</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-015-evidence-delivery-JA.md">次へ →<br><strong>Lab 015 · 証拠を添えた引き渡し</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

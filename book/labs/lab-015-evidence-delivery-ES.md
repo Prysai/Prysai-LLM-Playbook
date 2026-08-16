@@ -58,5 +58,5 @@ Transfiere la tabla a un sitio estático: distingue archivos fuente, artefacto c
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Navegación de Labs"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-014-resume-reconciliation-ES.md">← Anterior<br><strong>Lab 014 · reconciliación al reanudar</strong></a></td><td align="right"><a data-lab-nav="next" href="../README-ES.md">Siguiente pendiente →<br><strong>Ver disponibilidad del Lab 016</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Navegación de Labs"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-014-resume-reconciliation-ES.md">← Anterior<br><strong>Lab 014 · reconciliación al reanudar</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-016-side-effect-boundary-ES.md">Siguiente →<br><strong>Lab 016 · detenerse en el límite de efectos externos</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

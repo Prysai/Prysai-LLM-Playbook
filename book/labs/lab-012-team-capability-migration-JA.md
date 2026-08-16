@@ -47,5 +47,5 @@ AとBは同じパッケージを新しい文脈で受け取り、作者のチャ
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Labナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-011-gpt-codex-boundaries-JA.md">← 前へ<br><strong>Lab 011 · GPT、Codex、ツール、Agentを分ける</strong></a></td><td align="right"><a data-lab-nav="next" href="../README-JA.md">次は準備中 →<br><strong>Lab 013の提供状況を見る</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Labナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-011-gpt-codex-boundaries-JA.md">← 前へ<br><strong>Lab 011 · GPT、Codex、ツール、Agentを分ける</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-013-l3-vertical-slice-JA.md">次へ →<br><strong>Lab 013 · 監査可能な縦方向スライス</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

@@ -3,7 +3,7 @@
 # Prysai LLM Playbook: Lab Index
 
 <!-- language-switcher:start -->
-**Languages:** [English](README-EN.md) | [简体中文（迁移源）](README.md) | Español（translation pending） | 日本語（translation pending） | 한국어（translation pending） | Deutsch（translation pending）
+**Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md)
 <!-- language-switcher:end -->
 
 Labs are where you test whether a way of asking an LLM helps you do real work

@@ -49,5 +49,5 @@ GitHub push、ブラウザform、Skill導入、データexportに行列を適用
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Labナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-015-evidence-delivery-JA.md">← 前へ<br><strong>Lab 015 · 証拠を添えた引き渡し</strong></a></td><td align="right"><a data-lab-nav="next" href="../README-JA.md">次は準備中 →<br><strong>Lab 017の提供状況を見る</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Labナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-015-evidence-delivery-JA.md">← 前へ<br><strong>Lab 015 · 証拠を添えた引き渡し</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-017-skill-discovery-audit-JA.md">次へ →<br><strong>Lab 017 · Skill発見の監査</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

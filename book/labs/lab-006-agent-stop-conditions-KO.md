@@ -69,6 +69,6 @@ hard_stop: 알 수 없는 부작용, 권한 부재, 새 증거 없는 반복 실
 <hr>
 <nav class="lab-navigation" aria-label="Lab 탐색"><table role="presentation" width="100%"><tr>
 <td align="left"><a data-lab-nav="previous" href="lab-005-design-a-skill-KO.md">← 이전 Lab<br><strong>Lab 005 · 반복되는 방법을 경계가 분명한 Skill로 만들기</strong></a></td>
-<td align="right"><a data-lab-nav="next" href="../table-of-contents-KO.md">다음 Lab 준비 중 →<br><strong>Lab 007 제공 상태 보기</strong></a></td>
+<td align="right"><a data-lab-nav="next" href="lab-007-browse-safely-KO.md">다음 →<br><strong>Lab 007 · 안전하게 탐색하기</strong></a></td>
 </tr></table></nav>
 <!-- lab-navigation:end -->

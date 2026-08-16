@@ -49,5 +49,5 @@ Transfiere la matriz a un push de GitHub, formulario de navegador, instalación 
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="Navegación de Labs"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-015-evidence-delivery-ES.md">← Anterior<br><strong>Lab 015 · entrega con evidencia</strong></a></td><td align="right"><a data-lab-nav="next" href="../README-ES.md">Siguiente pendiente →<br><strong>Ver disponibilidad del Lab 017</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="Navegación de Labs"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-015-evidence-delivery-ES.md">← Anterior<br><strong>Lab 015 · entrega con evidencia</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-017-skill-discovery-audit-ES.md">Siguiente →<br><strong>Lab 017 · auditoría del descubrimiento de Skills</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->
