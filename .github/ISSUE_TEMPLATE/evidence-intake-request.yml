@@ -1,0 +1,54 @@
+name: Restricted evidence intake request
+description: Ask whether a named study or private evidence path is available without uploading any study data.
+title: "[Evidence intake]: "
+labels: ["evidence-intake"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form only to request a private, authorized discussion about contributing real learner or model evidence.
+
+        Do **not** paste a learner answer, chat transcript, prompt, model output, score, screenshot, consent record, email address, account or organization detail, private repository material, or any result in this public issue. This form is not enrollment, permission to collect data, a promise of a private channel, or evidence that a study has run.
+  - type: dropdown
+    id: evidence_kind
+    attributes:
+      label: Evidence you want to discuss
+      options:
+        - Learner practice or transfer observation
+        - Model-output evaluation under a fixed protocol
+        - Independent scoring or language review
+        - Other authorized evidence question
+    validations:
+      required: true
+  - type: dropdown
+    id: protocol
+    attributes:
+      label: Named protocol or route
+      description: Choose the existing protocol if known. Selecting one does not authorize collection.
+      options:
+        - First Win experienced-reader pilot v2
+        - Newcomer entry observation v1
+        - Shift Handoff pilot v1
+        - Translation review protocol
+        - Unknown — request scope before proceeding
+    validations:
+      required: true
+  - type: textarea
+    id: bounded_question
+    attributes:
+      label: Bounded question for the maintainer
+      description: State the study or review question, target cohort or reviewer role in general terms, and what decision the evidence could inform. Do not include data, names, contact details, prompts, transcripts, scores, or results.
+      placeholder: "Can an adult beginner who has not previously used a chat model be considered for the newcomer-entry protocol? I want to understand eligibility and the required independent review before any data is collected."
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety_boundary
+    attributes:
+      label: Public-intake boundary
+      options:
+        - label: I did not include participant data, raw prompts or outputs, results, private material, credentials, or identifying details.
+          required: true
+        - label: I will not collect, publish, or submit evidence unless a maintainer identifies an applicable protocol, authorized owner, privacy and retention path, and required review roles.
+          required: true
+        - label: I understand this request does not establish learning, model, safety, productivity, IQ, or release evidence.
+          required: true

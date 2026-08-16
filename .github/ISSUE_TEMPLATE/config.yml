@@ -6,3 +6,6 @@ contact_links:
   - name: Field report guidance
     url: https://github.com/Prysai/Prysai-LLM-Playbook/blob/main/docs/quality/first-task-pilot-protocol-v1.md
     about: Submit only sanitized observations; a report is intake, not proof of a verified platform result or project fix.
+  - name: Restricted evidence contribution protocol
+    url: https://github.com/Prysai/Prysai-LLM-Playbook/blob/main/docs/quality/community-evidence-contribution-protocol-v1.md
+    about: Ask about authorized private evidence intake; never upload learner data, model outputs, consent records, or results to GitHub.
