@@ -1,8 +1,10 @@
-<!-- content_id: communication-clinic | locale: ZH | language: zh-CN | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-15 -->
+<!-- content_id: communication-clinic | locale: ZH | language: zh-CN | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
-# 新手提示卡：把话说清
+# 通用 LLM 新手提示卡：语言、工作与研究
 
 状态：`draft` ｜ 学习者运行证据：`not_run` ｜ 适用范围：任何文字聊天式 LLM 工作台中的低风险、非敏感练习。
+
+你现在处于中文说明路径：本页所有说明、判断和导航都使用中文；其中“西班牙语”是**可选择的练习目标**，不是页面误跳转，也不表示你必须学习西班牙语。
 
 想直接复制六条西班牙语练习消息？打开[西班牙语六步练习](spanish-practice-loop-ZH.md)。
 想练一条不编造事实的工作更新，或核查一项资料？打开[工作更新六步练习](work-update-practice-loop-ZH.md)或[研究核查六步练习](research-check-practice-loop-ZH.md)。
@@ -11,7 +13,11 @@
 
 > 只使用虚构、公开或已获授权的文字。不要粘贴密码、令牌、私人聊天、客户资料、未公开文件或生产系统内容。
 
-## 先选一张：七个马上能做的小练习
+## 先按目的选：语言练习、工作表达或研究核查
+
+你不需要从第一张开始。只选今天最接近的一类：想练外语时看 A；想把工作说清楚时看 B；想核对一项主张或分享边界时看 C。
+
+## A. 语言练习
 
 ### 1. 西班牙语：先自己开口，再要纠错
 
@@ -41,6 +47,8 @@
 先让我自己写一句。我的句子出现后，请按“能否被对方理解”给出通过 / 需要修改，
 并最多指出一处需要修改的地方。不要把这次结果称为流利、掌握或语言等级。
 ```
+
+## B. 工作表达与判断
 
 ### 3. 工作表达：把散乱要点变成可发送的更新
 
@@ -75,6 +83,8 @@
 然后给我一个两列表格，分别写“现有证据支持什么”和“仍不能判断什么”。
 如果缺少关键事实，请明确建议我暂停，而不是猜测。
 ```
+
+## C. 研究与分享前核查
 
 ### 5. 研究起步：把“大问题”缩成一个可核查的问题
 

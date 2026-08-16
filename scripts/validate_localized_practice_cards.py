@@ -28,6 +28,48 @@ REQUIRED_MARKERS = {
     "DE": ("Status: template_selected | practised | not_run | blocked", "Sende nichts, lade nichts hoch und erstelle keinen Link"),
 }
 
+# A localized starter pack may offer a foreign-language exercise, but it must
+# never make that exercise look like a broken locale path.  Readers need to
+# see, before the first card, that this is a multi-purpose pack and that the
+# surrounding explanation remains in their selected language.
+ROUTE_CONTEXT_MARKERS = {
+    "ZH": (
+        "通用 LLM 新手提示卡：语言、工作与研究",
+        "你现在处于中文说明路径",
+        "A. 语言练习",
+        "B. 工作表达与判断",
+        "C. 研究与分享前核查",
+    ),
+    "ES": (
+        "Tarjetas iniciales para LLM: idioma, trabajo e investigación",
+        "Estás en la ruta explicada en español",
+        "A. Práctica de idioma",
+        "B. Expresión y decisiones de trabajo",
+        "C. Investigación y revisión antes de compartir",
+    ),
+    "JA": (
+        "LLM 初心者カード：言語・仕事・調査",
+        "ここは日本語で説明する学習ルートです",
+        "A. 言語練習",
+        "B. 仕事の表現と判断",
+        "C. 調査と共有前の確認",
+    ),
+    "KO": (
+        "LLM 초보자 카드: 언어, 업무, 리서치",
+        "지금 보고 있는 것은 한국어 설명 경로입니다",
+        "A. 언어 연습",
+        "B. 업무 표현과 판단",
+        "C. 리서치와 공유 전 확인",
+    ),
+    "DE": (
+        "LLM-Einstiegskarten: Sprache, Arbeit und Recherche",
+        "Du befindest dich auf dem deutsch erklärten Lernpfad",
+        "A. Sprachübung",
+        "B. Ausdruck und Entscheidungen bei der Arbeit",
+        "C. Recherche und Prüfung vor dem Teilen",
+    ),
+}
+
 
 def main() -> int:
     errors: list[str] = []
@@ -43,6 +85,11 @@ def main() -> int:
         for marker in REQUIRED_MARKERS[locale]:
             if marker not in text:
                 errors.append(f"{path.relative_to(ROOT)}: missing required reader boundary {marker!r}")
+        for marker_index, marker in enumerate(ROUTE_CONTEXT_MARKERS[locale], start=1):
+            if marker not in text:
+                errors.append(
+                    f"{path.relative_to(ROOT)}: missing route-context marker #{marker_index}"
+                )
         if "not_run" not in text:
             errors.append(f"{path.relative_to(ROOT)}: missing not_run evidence boundary")
 

@@ -1,11 +1,13 @@
 <!-- content_id: communication-clinic | locale: ES | language: es | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
-# Tarjetas de práctica para principiantes: decir lo que necesitas con claridad
+# Tarjetas iniciales para LLM: idioma, trabajo e investigación
 
 Para una práctica breve y guiada, abre el [ciclo de actualización de trabajo](work-update-practice-loop-ES.md) o el [ciclo de comprobación de investigación](research-check-practice-loop-ES.md).
 
 **Estado:** `draft` · **Evidencia de aprendizaje:** `not_run` · **Uso previsto:**
 prácticas de bajo riesgo y sin datos sensibles en un chat de texto con un LLM.
+
+Estás en la ruta explicada en español: las explicaciones, decisiones y enlaces de esta página están en español. “Español” es una meta opcional de práctica, no un cambio accidental de idioma ni una obligación.
 
 ¿Quieres seis mensajes listos para copiar? Abre la [práctica de español en seis pasos](spanish-practice-loop-ES.md).
 
@@ -16,7 +18,11 @@ solo problema concreto.
 > Usa texto ficticio, público o autorizado. No pegues contraseñas, tokens, chats
 > privados, datos de clientes, archivos no publicados ni sistemas de producción.
 
-## Siete tarjetas que puedes usar ahora
+## Elige por objetivo: idioma, trabajo o investigación
+
+No tienes que empezar por la primera tarjeta. Elige A para practicar un idioma, B para expresar o decidir algo en el trabajo y C para comprobar una afirmación o un límite antes de compartir.
+
+## A. Práctica de idioma
 
 ### 1. Español: habla primero y pide una corrección limitada
 
@@ -41,6 +47,8 @@ Déjame escribir primero. Después indica solo «se entiende» o «necesita camb
 señala como máximo una cosa. No llames el resultado fluidez, dominio ni nivel.
 ```
 
+## B. Expresión y decisiones de trabajo
+
 ### 3. Actualización de trabajo: ordena hechos sin inventar avance
 
 ```text
@@ -60,6 +68,8 @@ No decidas por mí. Haz como máximo tres preguntas que cambiarían la conclusi�
 Después crea dos columnas: «qué apoya la evidencia actual» y «qué aún no se puede
 decidir». Si falta un hecho clave, recomienda detenerse en vez de adivinar.
 ```
+
+## C. Investigación y revisión antes de compartir
 
 ### 5. Inicio de investigación: reduce una pregunta grande
 

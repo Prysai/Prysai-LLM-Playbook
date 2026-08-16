@@ -1,11 +1,13 @@
 <!-- content_id: communication-clinic | locale: DE | language: de | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
-# Einstiegskarten: Klar sagen, was du brauchst
+# LLM-Einstiegskarten: Sprache, Arbeit und Recherche
 
 Für eine kurze Übung in klaren Schritten öffne den [Arbeitsupdate-Ablauf](work-update-practice-loop-DE.md) oder den [Rechercheprüfungs-Ablauf](research-check-practice-loop-DE.md).
 
 **Status:** `draft` · **Lernnachweis:** `not_run` · **Geeignet für:** risikoarme
 Übungen ohne sensible Daten in einem Textchat mit einem LLM.
+
+Du befindest dich auf dem deutsch erklärten Lernpfad: Erklärungen, Entscheidungen und Links auf dieser Seite sind auf Deutsch. „Spanisch“ ist ein optionales Übungsziel, kein versehentlicher Sprachwechsel und keine Pflicht.
 
 Sechs direkt kopierbare Nachrichten findest du in der [Spanischübung mit sechs Schritten](spanish-practice-loop-DE.md).
 
@@ -17,7 +19,11 @@ bitte die KI nur um Hilfe bei einem klar abgegrenzten Problem.
 > Tokens, privaten Chats, Kundendaten, unveröffentlichten Dateien oder Inhalte aus
 > Produktionssystemen ein.
 
-## Sieben Karten für den sofortigen Start
+## Nach Ziel wählen: Sprache, Arbeit oder Recherche
+
+Du musst nicht mit der ersten Karte anfangen. Wähle A für eine Sprachübung, B für Ausdruck oder Entscheidungen bei der Arbeit und C für die Prüfung einer Behauptung oder Grenze vor dem Teilen.
+
+## A. Sprachübung
 
 ### 1. Spanisch: Erst selbst sprechen, dann begrenzte Korrektur erhalten
 
@@ -44,6 +50,8 @@ Danach sage nur „verständlich“ oder „Korrektur nötig“ und nenne höchs
 Nenne dieses Ergebnis nicht fließend, beherrscht oder Sprachniveau.
 ```
 
+## B. Ausdruck und Entscheidungen bei der Arbeit
+
 ### 3. Arbeits-Update: Fakten ordnen, ohne Fortschritt zu erfinden
 
 ```text
@@ -64,6 +72,8 @@ Schlussfolgerung verändern würde. Erstelle danach zwei Spalten: „Was die akt
 trägt“ und „Was noch nicht entschieden werden kann“. Fehlt ein wichtiger Fakt, empfiehl
 anzuhalten statt zu raten.
 ```
+
+## C. Recherche und Prüfung vor dem Teilen
 
 ### 5. Recherchebeginn: Eine große Frage kleiner und prüfbar machen
 
