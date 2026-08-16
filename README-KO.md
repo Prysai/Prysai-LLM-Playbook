@@ -4,7 +4,7 @@
 > LLM 실전 플레이북: 첫 번째 작업에서 신뢰할 수 있는 업무까지
 
 <!-- language-switcher:start -->
-**언어:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
+**언어:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md)
 <!-- language-switcher:end -->
 
 ## 교과서 순서로 시작하세요: 이해한 뒤에 연습합니다
@@ -81,7 +81,7 @@ GPT 이해 → Codex 이해 → 안전한 준비 → 작업 표현 → 컨텍스
 
 ## 현재 상태
 
-영어 정식 소스에는 `candidate` 22장, `draft` 18개 Lab, `candidate` 상태의 프로젝트 자체 Skill 23개, `candidate` 평가 fixture 40개가 있습니다. 구조 검사가 통과해도 학습, 전이, 반복 평가, 독립 검토 결과를 대신하지는 않습니다.
+영어 정식 소스에는 `candidate` 22장, `draft` 18개 Lab, `candidate` 상태의 프로젝트 자체 Skill 25개, `candidate` 평가 fixture 40개가 있습니다. 구조 검사가 통과해도 학습, 전이, 반복 평가, 독립 검토 결과를 대신하지는 않습니다.
 
 한국어 22개 장과 18개 Lab에는 후보 파일과 같은 언어 경로가 있으며 모두 `in-progress`입니다. 이 구조적 범위는 완전한 한국어 과정, 독립적인 언어 검토, 문화적 적합성 또는 학습 성과를 뜻하지 않습니다. 외부 자료는 출처, 라이선스, 내용 검토 없이 주 학습 경로에 직접 넣지 않습니다.
 

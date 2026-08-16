@@ -4,7 +4,7 @@ Licencia: el texto del curso y los materiales didácticos están bajo CC BY 4.0;
 > Manual práctico de LLM: de la primera tarea al trabajo fiable.
 
 <!-- language-switcher:start -->
-**Idiomas:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
+**Idiomas:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md)
 <!-- language-switcher:end -->
 
 ## Empieza como un libro: comprende antes de practicar
@@ -101,7 +101,7 @@ instalaciones no demuestra dominio.
 ## Estado actual
 
 La fuente canónica en inglés contiene 22 capítulos `candidate`, 18 Labs
-`draft`, 23 Skills propias `candidate` y 40 fixtures de evaluación
+`draft`, 25 Skills propias `candidate` y 40 fixtures de evaluación
 `candidate`. Las comprobaciones estructurales existen, pero no sustituyen
 resultados de aprendizaje, transferencia, evaluación repetida ni revisión
 independiente. Los 22 capítulos y 18 Labs españoles tienen archivos candidatos

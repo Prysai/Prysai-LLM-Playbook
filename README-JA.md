@@ -4,7 +4,7 @@
 > LLM 実践ガイド：最初のタスクから、信頼できる仕事へ
 
 <!-- language-switcher:start -->
-**言語：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
+**言語：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md)
 <!-- language-switcher:end -->
 
 ## 教科書の順番で始める：理解してから練習する
@@ -73,7 +73,7 @@ GPTを知る → Codexを知る → 安全に準備する → タスクを表現
 ## 現在の状態
 
 英語の正規ソースには、`candidate` の 22 章、`draft` の 18 Labs、
-`candidate` の自作 Skill 23 件、`candidate` の評価 fixture 40 件があります。
+`candidate` の自作 Skill 25 件、`candidate` の評価 fixture 40 件があります。
 構造チェックが通っていても、学習、転移、反復評価、独立レビューの結果を
 置き換えるものではありません。日本語の 22 章と 18 Labs には候補ファイルと
 同一言語の経路がありますが、いずれも `in-progress` です。この構造上の網羅性は、
