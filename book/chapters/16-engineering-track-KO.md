@@ -49,6 +49,48 @@ timeout까지 출력 없음, 누락된 test 의존성, 알 수 없는 worktree �
 
 중단을 흉내 냈다면 계속하기 전에 worktree, diff, log, test 상태를 검사합니다. 실제 기록과 독립 review가 있기 전까지 `candidate / not_run`입니다. 특정 권한 없이 install, publish, deploy, restart하지 마세요.
 
+## 요청을 엔지니어링 작업 카드로 바꾸기
+
+“export 기능을 추가해”는 코딩 시작 조건이 아닙니다. unknown은 모델이 정하지 않고 질문으로 남깁니다.
+
+```text
+사용자 행동: <페이지/명령>에서 <명확한 데이터 범위>를 export한다.
+성공: <형식>과 <필드>를 만들고 <관찰 가능한 결과>를 보여 준다.
+실패: 권한, 빈 데이터, 잘못된 입력, 쓰기 실패를 어떻게 돌려줄까?
+비목표: history migration, publish, 권한 변경, 외부 서비스 연결을 하지 않는다.
+범위: read/write path, 허용 command, network와 secret 경계.
+수용: test, 한 번의 local run, human check와 각각의 coverage.
+복구: 원래 상태, 임시 산출물, read-back, 중지 조건.
+```
+
+다른 개발자가 goal과 non-goal을 되풀이할 수 있을 때 첫 slice를 고릅니다. format, overwrite, permission이 unknown이면 가장 작은 slice는 조용한 write가 아니라 read-only preview일 수 있습니다.
+
+| 증거 | 말할 수 있는 것 | 말할 수 없는 것 |
+|---|---|---|
+| build 성공 | 지정 config로 compile/package 가능 | 사용자 흐름이나 deploy 정확성 |
+| test 통과 | 그 environment에서 assertion 통과 | 미포함 error, browser, permission, 실제 입력 |
+| local run | 지정 input이 관찰된 result 생성 | production, 모든 account, performance |
+| remote read-back | 지정 revision/record가 remote에 있음 | 사용자 수용, monitoring, safe rollback |
+
+## 작은 실험: JSON 세로 슬라이스
+
+버릴 수 있는 디렉터리에서 `input.json`의 문자열 목록을 읽어 중복을 제거하고 `output.json`에 씁니다. read/write는 그 디렉터리 안에서만 하며 network, install, login, commit, push, publish는 하지 않습니다.
+
+1. 작업 카드와 baseline을 씁니다: normal, empty, duplicate, missing field/invalid JSON.
+2. normal과 duplicate만 먼저 구현하고 diff와 command output을 보관합니다.
+3. empty와 invalid를 추가합니다. 매번 설명 가능한 한 지점만 바꾸고 선언된 check를 실행합니다.
+4. 독립 command로 `output.json`을 읽고 version, input, exit status, raw output, scope를 남깁니다.
+5. interruption을 흉내 냅니다. 계속하기 전에 status, diff, log, output을 읽고 continue/recover/checkpoint를 결정합니다.
+
+출력이 없거나 dependency가 없거나 PATH 변경, runtime 재설치, log 업로드, deploy, restart가 제안되면 중지하고 부족한 authorization과 recovery를 밝힙니다.
+
+## 스스로 확인하기
+
+- [ ] 사용자 행동, 성공/실패, 비목표, 범위, 수용, 복구를 썼다.
+- [ ] slice마다 diff, command, exit status, input/output, unknown을 남긴다.
+- [ ] build, test, local run, remote, 사용자 수용을 혼동하지 않는다.
+- [ ] interruption 뒤에는 재시도 전에 state를 확인한다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-KO.md">← 이전<br><strong>15장 · 연구 트랙, 질문에서 감사 가능한 지식까지</strong></a></td><td align="right"><a data-chapter-nav="next" href="17-marketing-track-KO.md">다음 →<br><strong>17장 · 마케팅 트랙, 제품 이해에서 성장 실험까지</strong></a></td></tr></table></nav>

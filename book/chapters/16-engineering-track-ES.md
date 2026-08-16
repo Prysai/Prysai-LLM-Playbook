@@ -49,6 +49,44 @@ Elige una función de bajo riesgo, por ejemplo deduplicar una lista local y escr
 
 Simula una interrupción: detente, inspecciona worktree, diff, logs y estado de pruebas antes de seguir. El ejercicio sigue `candidate / not_run` hasta que haya registros reales e independientes; no instales, publiques, despliegues ni reinicies sin autorización específica.
 
+## Convierte una petición en una tarjeta de ingeniería
+
+«Añade exportación» no permite empezar a programar. Escribe una tarjeta y deja lo desconocido como pregunta:
+
+```text
+Acción de usuario; resultado visible de éxito; salida para permiso, vacío,
+entrada inválida y fallo de escritura; no objetivos; rutas y permisos;
+tests, una ejecución local e inspección humana; estado original y recuperación.
+```
+
+Solo cuando otra persona puede repetir objetivo y no objetivo eliges el primer corte. Si formato, sobrescritura o permiso son desconocidos, el corte puede ser una vista previa de lectura, no una escritura silenciosa.
+
+| Evidencia | Permite afirmar | No permite afirmar |
+|---|---|---|
+| Build verde | Compila o empaqueta con esa configuración | Flujo de usuario o despliegue |
+| Tests verdes | Esas aserciones pasan en ese entorno | Errores, navegador, permisos o entradas no cubiertas |
+| Ejecución local | Ese input dio ese resultado observado | Producción, todas las cuentas o rendimiento |
+| Remoto leído | Aparece la revisión o registro indicado | Aceptación, monitorización o rollback seguro |
+
+## Experimento: un corte vertical JSON
+
+En un directorio desechable, lee una lista de cadenas de `input.json`, elimina duplicados y escribe `output.json`. Solo se lee y escribe allí; no hay red, instalación, login, commit, push ni publicación.
+
+1. Escribe tarjeta y línea base: lista normal, vacía, duplicada, campo ausente o JSON inválido.
+2. Implementa primero normal y duplicado; conserva diff y salida.
+3. Añade vacío e inválido, cambiando un punto explicable cada vez y ejecutando los checks declarados.
+4. Lee `output.json` con un comando independiente; registra versión, entrada, salida, código y alcance.
+5. Simula interrupción: antes de continuar, lee estado, diff, logs y salida; no añadas otra petición a un estado desconocido.
+
+Si no hay salida, falta una dependencia o se propone cambiar PATH, reinstalar, subir logs, desplegar o reiniciar, detente y declara autorización y recuperación faltantes.
+
+## Comprobación propia
+
+- [ ] Escribo acción, éxito/fallo, no objetivos, alcance, aceptación y recuperación.
+- [ ] Guardo diff, comando, salida, entradas y desconocidos por corte.
+- [ ] No confundo build, tests, ejecución, remoto o aceptación de usuario.
+- [ ] Tras interrupción inspecciono estado antes de reintentar.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-ES.md">← Anterior<br><strong>Capítulo 15 · ruta de investigación, de la pregunta al conocimiento auditable</strong></a></td><td align="right"><a data-chapter-nav="next" href="17-marketing-track-ES.md">Siguiente →<br><strong>Capítulo 17 · ruta de marketing, de entender el producto a experimentar con crecimiento</strong></a></td></tr></table></nav>

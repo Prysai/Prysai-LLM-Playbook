@@ -49,6 +49,48 @@ Wähle eine risikoarme Funktion, etwa eine lokale Liste zu deduplizieren und JSO
 
 Simuliere eine Unterbrechung und prüfe Worktree, Diff, Logs und Teststatus, bevor du fortsetzt. Bis reale Aufzeichnungen und unabhängiges Review existieren, bleibt die Übung `candidate / not_run`. Ohne spezifische Autorisierung wird nicht installiert, veröffentlicht, deployt oder neu gestartet.
 
+## Eine Anforderung in eine Engineering-Karte verwandeln
+
+„Export hinzufügen“ ist noch kein Startsignal zum Programmieren. Unbekanntes bleibt eine Frage, die das Modell nicht selbst entscheidet.
+
+```text
+Nutzeraktion: In <Seite/Befehl> <klaren Datenbereich> exportieren.
+Erfolg: <Format> mit <Feldern> erzeugen und <beobachtbares Ergebnis> zeigen.
+Fehler: Was passiert bei Recht, leeren Daten, ungültiger Eingabe und Schreibfehler?
+Nicht-Ziele: keine Historienmigration, Veröffentlichung, Rechteänderung oder externer Dienst.
+Umfang: Lese-/Schreibpfade, erlaubte Befehle, Netzwerk- und Geheimnisgrenze.
+Abnahme: Tests, ein lokaler Lauf, menschlicher Check und jeweiliger Umfang.
+Wiederherstellung: Ausgangszustand, temporäre Artefakte, Read-back, Stoppsignal.
+```
+
+Erst wenn eine zweite Person Ziel und Nicht-Ziel wiederholen kann, wählst du den ersten Schnitt. Sind Format, Überschreiben oder Berechtigung unbekannt, kann der kleinste Schnitt eine reine Lesevorschau sein, kein stilles Schreiben.
+
+| Evidenz | Erlaubt zu sagen | Erlaubt nicht zu sagen |
+|---|---|---|
+| Build erfolgreich | Mit dieser Konfiguration kompilier- oder paketierbar | Nutzerpfad oder Deployment korrekt |
+| Tests erfolgreich | Diese Assertions gelten in dieser Umgebung | Nicht abgedeckte Fehler, Browser, Rechte oder reale Eingaben |
+| Lokaler Lauf | Dieses Input erzeugte dieses beobachtete Resultat | Produktion, alle Konten oder Performance |
+| Remote-Read-back | Die benannte Revision/Aufzeichnung ist remote sichtbar | Nutzerakzeptanz, Monitoring, sicheres Rollback |
+
+## Kleines Experiment: ein JSON-Vertikalschnitt
+
+Lies in einem wegwerfbaren Verzeichnis eine String-Liste aus `input.json`, entferne Duplikate und schreibe `output.json`. Lesen und Schreiben sind nur dort erlaubt; kein Netzwerk, Installieren, Login, Commit, Push oder Veröffentlichen.
+
+1. Schreibe Karte und Baseline: normal, leer, Duplikate, fehlendes Feld/ungültiges JSON.
+2. Implementiere zuerst normal und Duplikate; bewahre Diff und Befehlsausgabe auf.
+3. Ergänze leer und ungültig. Ändere jeweils nur einen erklärbaren Punkt und führe deklarierte Checks aus.
+4. Lies `output.json` mit einem unabhängigen Befehl; notiere Version, Input, Exit-Status, Roh-Ausgabe und Umfang.
+5. Simuliere Unterbrechung: lies vor dem Fortsetzen Status, Diff, Logs und Ausgabe und entscheide über Continue, Wiederherstellung oder Checkpoint.
+
+Fehlt Ausgabe oder Abhängigkeit oder werden PATH-Änderung, Runtime-Reinstall, Log-Upload, Deployment oder Neustart vorgeschlagen, stoppe und nenne fehlende Autorisierung und Wiederherstellung.
+
+## Eigene Abnahme
+
+- [ ] Ich schrieb Nutzeraktion, Erfolg/Fehler, Nicht-Ziele, Umfang, Abnahme und Wiederherstellung auf.
+- [ ] Ich bewahre je Schnitt Diff, Befehl, Exit-Status, Input/Output und Unbekanntes auf.
+- [ ] Ich verwechsle Build, Test, lokalen Lauf, Remote und Nutzerakzeptanz nicht.
+- [ ] Nach Unterbrechung prüfe ich den Zustand vor einem Retry.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-DE.md">← Vorheriges<br><strong>Kapitel 15 · Forschungspfad, von der Frage zu prüfbarem Wissen</strong></a></td><td align="right"><a data-chapter-nav="next" href="17-marketing-track-DE.md">Nächstes →<br><strong>Kapitel 17 · Marketing-Pfad, vom Produktverständnis zu Wachstumsexperimenten</strong></a></td></tr></table></nav>
