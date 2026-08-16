@@ -49,6 +49,46 @@ Parte de una pregunta amplia, prepara una fuente oficial, un informe de campo co
 
 Entrega `candidate` si falta evidencia clave: hechos conocidos, desconocidos, conflictos, alcance, motivo de parada y siguiente paso de bajo riesgo. El ejercicio no demuestra investigación completa hasta que las fuentes clave se abran, localicen y revisen independientemente.
 
+## De un tema amplio a una entrega auditable
+
+«¿Qué LLM es mejor para mi equipo?» no se puede responder aún: faltan tareas, cuenta, presupuesto, fecha y aceptación. Reescríbelo así:
+
+```text
+Pregunta: a fecha de <fecha y zona horaria>, para <tres tareas nombradas>,
+¿qué fuentes públicas primarias describen capacidades declaradas, límites e
+incógnitas de cuenta o región de <productos candidatos>?
+No responde: cuál es “mejor”, precios no publicados ni rendimiento no probado.
+Entrega: tabla afirmación → fuente → alcance → desconocido, sin ranking total.
+Parada: página clave inaccesible, alcance incierto o necesidad de cuenta/datos privados/pago.
+```
+
+Prepara consultas de tarea o síntoma, límite y entorno. No busques solo el producto que esperas que gane más «best». Cada fila conserva consulta, fecha, zona, alcance de fuente, inclusión y exclusión; snippets y enlaces del modelo son pistas.
+
+| Campo | Forma segura |
+|---|---|
+| Afirmación | «La página X describía Y el día de acceso» |
+| Evidencia | URL original/final, título, ubicación y fecha |
+| Alcance | Superficie, versión, región y cuenta; o desconocido |
+| Nivel | Oficial / mantenedor / informe de usuario / pista |
+| No implica | Disponibilidad en mi cuenta, éxito de tarea o mejor elección |
+
+## Experimento: paquete conflictivo e inaccesible
+
+Usa una página oficial accesible, un informe de usuario fechado y un enlace que redirige, exige login o falla. No subas logs, cookies, tokens, contactos ni archivos privados.
+
+1. Escribe tres preguntas candidatas, elige una y fija alcance, corte, zona, inclusión y parada.
+2. Registra URL original/final, resultado de acceso, organización, fecha y ubicación; una página inaccesible queda `inaccessible`, no se completa con snippet.
+3. Haz una consulta inversa para cada afirmación clave: busca límites, otro entorno o contraejemplo. No encontrarlo no confirma.
+4. Si dos páginas chocan, compara versión, superficie, cuenta, región y definición; conserva ambas y limita la entrega si no se resuelve.
+5. Entrega una página `candidate`: conocido, desconocido, conflicto, no afirmado, parada y siguiente paso seguro.
+
+## Comprobación propia
+
+- [ ] Convierto «cuál es mejor» en una pregunta con tarea, alcance, fecha, fuentes y entrega.
+- [ ] Conservo URLs, acceso y ubicación; no trato un snippet como lectura.
+- [ ] Busco límites o contraejemplos y anoto lo que no prueban.
+- [ ] No comprimo conflicto oficial, cuenta, región e informe de usuario en una regla universal.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-ES.md">← Anterior<br><strong>Capítulo 14 · descubrir, instalar y auditar Skills externos</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-ES.md">Siguiente →<br><strong>Capítulo 16 · ruta de ingeniería, de la idea al software fiable</strong></a></td></tr></table></nav>

@@ -49,6 +49,46 @@ AI가 그럴듯하게 만든 인용도 증거가 아닙니다. 출처를 열고 
 
 핵심 증거가 없으면 알려진 사실, unknown, 충돌, 범위, 중단 이유, 저위험 다음 단계를 담은 `candidate`를 전달합니다. 핵심 자료를 열고 위치를 확인하고 독립 검토하기 전까지 이 연습은 완전한 연구의 증거가 아닙니다.
 
+## 넓은 주제를 감사 가능한 전달물로 바꾸기
+
+“어떤 LLM이 우리 팀에 가장 좋은가?”는 바로 답할 수 없습니다. 작업, 계정 조건, 예산, 시간, 수용 조건이 빠져 있습니다. 다음처럼 고칩니다.
+
+```text
+질문: <날짜와 시간대> 기준, <이름 있는 세 작업>에 대해
+<후보 제품>의 선언된 능력, 한계, 계정/지역 unknown을 설명하는
+공개 1차 출처는 무엇인가?
+답하지 않음: “최고” 순위, 공개되지 않은 가격, 실행하지 않은 성능.
+전달: 주장 → 출처 → 범위 → unknown 표, 전체 순위 없음.
+중지: 핵심 페이지 접근 불가, 범위 불명확, 계정/사적 데이터/결제가 필요함.
+```
+
+작업/증상, 경계, 환경 query를 준비합니다. 이기기를 바라는 제품과 `best`만 검색하지 않습니다. query, 날짜, 시간대, 출처 범위, 포함/제외를 남깁니다. snippet과 모델 링크는 단서입니다.
+
+| 항목 | 안전한 표현 |
+|---|---|
+| 원자 주장 | “페이지 X는 접근일에 Y를 설명했다” |
+| 증거 | 원래/최종 URL, 제목, 위치, 접근일 |
+| 범위 | surface, version, region, account 또는 unknown |
+| 수준 | official / maintainer / user report / lead |
+| 뜻하지 않음 | 내 계정 사용 가능, 작업 성공, 최고 선택 |
+
+## 작은 실험: 충돌과 접근 불가 출처 다루기
+
+접근 가능한 공식 페이지 하나, 날짜와 URL이 있는 사용자 보고 하나, redirect/login/error가 나는 링크 하나를 준비합니다. 로그, cookie, token, 연락처, private 파일을 올리지 않습니다.
+
+1. 후보 질문 세 개를 쓰고 하나를 골라 범위, cutoff, 시간대, 포함/제외, 중지를 정합니다.
+2. 원래/최종 URL, 접근 결과, 조직, 날짜, 위치를 기록합니다. 열 수 없으면 `inaccessible`이며 snippet으로 채우지 않습니다.
+3. 핵심 주장마다 역방향 query 하나로 한계, 다른 환경, 반례를 찾습니다. 못 찾았다고 증명되지는 않습니다.
+4. 페이지가 충돌하면 version, surface, account, region, definition을 비교합니다. 해결되지 않으면 양쪽을 남기고 전달 범위를 줄입니다.
+5. known, unknown, conflict, not claimed, 중지 이유, 다음 안전 행동이 있는 한 페이지 `candidate`를 전달합니다.
+
+## 스스로 확인하기
+
+- [ ] “무엇이 최고인가”를 작업, 범위, 날짜, 출처, 전달물이 있는 질문으로 바꾼다.
+- [ ] URL, 접근, 위치를 남기며 snippet을 읽은 증거로 쓰지 않는다.
+- [ ] 한계와 반례를 찾고 무엇을 증명하지 않는지도 적는다.
+- [ ] 공식 충돌, 계정, 지역, 사용자 보고를 보편 규칙으로 압축하지 않는다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-KO.md">← 이전<br><strong>14장 · 외부 Skill 찾기, 설치하기, 감사하기</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-KO.md">다음 →<br><strong>16장 · 엔지니어링 트랙, 아이디어에서 신뢰할 수 있는 소프트웨어까지</strong></a></td></tr></table></nav>

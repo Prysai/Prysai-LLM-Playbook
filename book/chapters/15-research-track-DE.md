@@ -49,6 +49,46 @@ Beginne mit einem breiten Thema und bereite eine offizielle Quelle, einen Feldbe
 
 Fehlt Schlüsselevidenz, liefere `candidate` mit Bekanntem, Unbekanntem, Konflikten, Umfang, Stoppgrund und nächstem risikoarmen Schritt. Bis Schlüsselquellen geöffnet, lokalisiert und unabhängig geprüft sind, ist die Übung kein Beweis vollständiger Forschung.
 
+## Ein breites Thema in eine prüfbare Übergabe verwandeln
+
+„Welches LLM ist für mein Team am besten?“ ist noch nicht beantwortbar: Aufgabe, Kontobedingung, Budget, Zeitpunkt und Abnahme fehlen. Formuliere es so:
+
+```text
+Frage: Welche öffentlichen Primärquellen beschreiben zum <Datum mit Zeitzone>
+für <drei benannte Aufgaben> die erklärten Fähigkeiten, Grenzen und Konto-/Regions-Unknowns
+der <Kandidatenprodukte>?
+Antwortet nicht: Gesamtrang „am besten“, nicht veröffentlichte Preise oder nicht getestete Leistung.
+Übergabe: Behauptung → Quelle → Umfang → unbekannt, ohne Gesamtrang.
+Stopp: Schlüsselseite unzugänglich, Umfang unklar oder Konto/private Daten/Zahlung nötig.
+```
+
+Bereite Queries für Aufgabe/Symptom, Grenze und Umgebung vor. Suche nicht nur nach dem Produkt, das gewinnen soll, plus `best`. Bewahre Query, Datum, Zeitzone, Quellenumfang sowie Ein- und Ausschluss auf. Snippets und Modell-Links sind Hinweise.
+
+| Feld | Sichere Form |
+|---|---|
+| Atomare Behauptung | „Seite X beschrieb Y am Zugriffstag“ |
+| Evidenz | Original-/Final-URL, Titel, Fundstelle, Zugriffstag |
+| Umfang | Surface, Version, Region, Konto oder unknown |
+| Stufe | official / maintainer / user report / lead |
+| Nicht impliziert | Verfügbarkeit für mein Konto, Aufgabenerfolg, beste Wahl |
+
+## Kleines Experiment: Konflikt und unzugängliche Quelle
+
+Nutze eine zugängliche offizielle Seite, einen datierten Nutzerbericht und einen Link mit Redirect/Login/Fehler. Lade keine Logs, Cookies, Tokens, Kontakte oder privaten Dateien hoch.
+
+1. Schreibe drei Kandidatenfragen, wähle eine und bestimme Umfang, Cutoff, Zeitzone, Ein-/Ausschluss und Stopp.
+2. Notiere Original-/Final-URL, Zugriffsergebnis, Organisation, Datum und Fundstelle. Nicht geöffnete Seiten bleiben `inaccessible`, nicht mit Snippet ergänzt.
+3. Suche zu jeder Schlüsselbehauptung mit einer Gegenquery nach Grenze, anderer Umgebung oder Gegenbeispiel. Nicht gefunden ist kein Beweis.
+4. Bei Konflikt vergleiche Version, Surface, Konto, Region und Definition. Bleibt er bestehen, behalte beide Seiten und grenze die Übergabe ein.
+5. Übergib eine Seite `candidate` mit Bekanntem, Unbekanntem, Konflikt, Nichtbehauptetem, Stoppgrund und nächster sicherer Aktion.
+
+## Eigene Abnahme
+
+- [ ] Ich mache aus „was ist am besten“ eine Frage mit Aufgabe, Umfang, Datum, Quellen und Übergabe.
+- [ ] Ich bewahre URLs, Zugriff und Fundstelle auf und behandle ein Snippet nicht als Lese-Evidenz.
+- [ ] Ich suche Grenzen oder Gegenbeispiele und notiere, was sie nicht beweisen.
+- [ ] Ich verdichte offiziellen Konflikt, Konto, Region und Nutzerbericht nicht zu einer allgemeinen Regel.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-DE.md">← Vorheriges<br><strong>Kapitel 14 · Externe Skills finden, installieren und prüfen</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-DE.md">Nächstes →<br><strong>Kapitel 16 · Engineering-Pfad, von der Idee zu zuverlässiger Software</strong></a></td></tr></table></nav>

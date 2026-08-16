@@ -49,6 +49,46 @@ AI が整えた引用も証拠ではありません。ソースを開き、該�
 
 重要証拠がなければ、既知、未知、衝突、範囲、停止理由、低リスクの次手を含む `candidate` を納品します。重要資料が開かれ、位置が確認され、独立レビューされるまで、この練習は完全な調査の証拠ではありません。
 
+## 広い topic を監査可能な delivery に変える
+
+「どの LLM が team に最適か」は、そのまま答えられません。task、account 条件、budget、time、acceptance がありません。次のように書き換えます。
+
+```text
+question: <date と time zone> 時点で、<名前を付けた三つの task> に対し、
+<candidate product> の declared capability、limit、account/region unknown を
+説明する public primary source は何か。
+not answering: 「最適」の順位、未公開 price、未試行の実行性能。
+delivery: claim → source → scope → unknown table。総合 ranking はしない。
+stop: key page にアクセスできない、scope が不明、account/private data/payment が必要。
+```
+
+task/symptom、boundary、environment の query を用意します。勝たせたい product と `best` だけを検索しません。query、date、time zone、source scope、include/exclude を残します。snippet と model の link は lead です。
+
+| field | 安全な書き方 |
+|---|---|
+| atomic claim | 「page X は access date に Y を説明した」 |
+| evidence | original/final URL、title、location、access date |
+| scope | surface、version、region、account。なければ unknown |
+| level | official / maintainer / user report / lead |
+| not implied | 自分の account で使えること、task success、best choice |
+
+## 小実験：conflict と inaccessible source を扱う
+
+access できる official page、一つの dated user report、redirect/login/error になる link を用意します。log、cookie、token、contact、private file は upload しません。
+
+1. candidate question を三つ書き、一つを選び scope、cutoff、time zone、include/exclude、stop を決める。
+2. original/final URL、access result、organization、date、location を記録する。開けなければ `inaccessible` とし snippet で補完しない。
+3. key claim ごとに reverse query を一つ行い、limit、別 environment、counterexample を探す。見つからないことは証明ではない。
+4. page が conflict するときは version、surface、account、region、definition を比べる。解決しなければ両方を残し delivery を狭める。
+5. known、unknown、conflict、not claimed、stop reason、next safe action を持つ一ページの `candidate` を渡す。
+
+## 自己確認
+
+- [ ] 「どれが最適か」を task、scope、date、source、delivery を持つ問いに変えられる。
+- [ ] URL、access、location を残し、snippet を読解証拠にしない。
+- [ ] limit や counterexample を探し、それが証明しないことも書く。
+- [ ] official conflict、account、region、user report を universal rule に圧縮しない。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-JA.md">← 前の章<br><strong>第14章 · 外部 Skill を見つけ、導入前に監査する</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-JA.md">次へ →<br><strong>第16章 · エンジニアリング・トラック、着想から信頼できるソフトウェアへ</strong></a></td></tr></table></nav>
