@@ -30,6 +30,29 @@ Si la última respuesta es sí, elimina el detalle añadido o pide una sola corr
 
 Este es un ejercicio candidato, no una fórmula universal de prompts ni una afirmación de resultados. No tiene evidencia de ejecución entre modelos, de aprendizaje ni de efectividad.
 
+## Si quieres practicar una sola frase de español
+
+Después de la primera tarea, puedes probar esta práctica escrita y ficticia.
+No envíes el resultado a una persona real ni lo uses como prueba de nivel:
+
+```text
+Quiero practicar una sola frase escrita para pedir un billete de tren en español.
+Por ahora solo conozco estas palabras: [hola, por favor, un billete, para, gracias].
+
+Haz de persona de taquilla y espera a que escriba mi frase. No me des una frase modelo.
+Cuando responda:
+1. di solamente «se entiende» o «hay que revisar»;
+2. señala como máximo un cambio que afecte a la comprensión;
+3. explica ese cambio en [mi idioma de apoyo];
+4. espera a que yo mismo reescriba la frase.
+
+No me asignes un nivel, no afirmes que hablo con fluidez y no añadas vocabulario sin preguntarme.
+```
+
+Guarda tu primera frase, la única corrección y tu revisión. Eso conserva un
+intento escrito; no demuestra aprendizaje, pronunciación, conversación,
+retención ni transferencia.
+
 ## Construye la base a partir de esa primera tarea
 
 Después de un intento, usa las cuatro unidades siguientes para entender por qué la petición pequeña tenía un resultado, material, comprobación y línea de parada. Son aún más importantes cuando la tarea deja de ser un intercambio solo de texto.

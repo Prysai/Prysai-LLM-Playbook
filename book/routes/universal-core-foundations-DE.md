@@ -30,6 +30,29 @@ Wenn die letzte Antwort ja lautet, entferne das hinzugefügte Detail oder bitte 
 
 Dies ist eine Übung im Kandidatenstatus, keine universelle Prompt-Formel und keine Ergebnisaussage. Es gibt keine Evidenz aus produktübergreifenden Läufen, von Lernenden oder zur Wirksamkeit.
 
+## Wenn du einen einzigen spanischen Satz üben möchtest
+
+Nach der ersten Aufgabe kannst du diese fiktive Schreibübung versuchen. Sende
+das Ergebnis nicht an eine reale Person und nutze es nicht als Sprachnachweis:
+
+```text
+Ich möchte einen einzigen geschriebenen Satz üben, um auf Spanisch eine Zugfahrkarte zu erbitten.
+Im Moment kenne ich nur diese Wörter: [hola, por favor, un billete, para, gracias].
+
+Spiele nur die Person am Schalter und warte, bis ich meinen Satz schreibe. Gib mir vorher keinen Mustersatz.
+Nachdem ich geschrieben habe:
+1. sage nur „verständlich“ oder „prüfen“;
+2. nenne höchstens eine Änderung, die das Verstehen beeinflusst;
+3. erkläre diese Änderung auf Deutsch;
+4. warte auf meine eigene Überarbeitung.
+
+Ordne mir kein Niveau zu, behaupte keine Flüssigkeit und füge keine neuen Wörter hinzu, ohne zu fragen.
+```
+
+Bewahre deinen ersten Satz, die eine Korrektur und deine Überarbeitung auf.
+Das hält einen schriftlichen Versuch fest; es belegt weder Lernen noch
+Aussprache, Gesprächsfähigkeit, Behalten oder Transfer.
+
 ## Von der ersten Aufgabe zu den vier Grundlagen
 
 Nach einem Versuch helfen dir die folgenden vier Einheiten zu verstehen, warum auch die kleine Anfrage ein Ergebnis, Material, eine Prüfung und eine Stopp-Zeile hatte. Sobald eine Aufgabe über einen reinen Textaustausch hinausgeht, werden diese Entscheidungen noch wichtiger.
