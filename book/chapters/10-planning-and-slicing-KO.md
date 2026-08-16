@@ -4,7 +4,7 @@
 
 **상태:** `candidate`. 계획과 예시는 교육 자료입니다. Agent가 작업을 실행했거나 어느 저장소에서나 슬라이스가 동작함을 증명하지 않습니다.
 
-## 문제
+## 이 장에서 해결하는 문제
 
 자세해 보이는 계획도 끝날 때까지 누구도 결과를 검사할 수 없게 만들 수 있습니다. 모든 데이터, API, UI를 차례대로 끝내는 수평 계획은 틀린 가정을 늦게 발견합니다. 수직 슬라이스는 작아도 입력에서 증거까지 통과하는 결과를 만듭니다.
 
@@ -13,6 +13,14 @@
 ```
 
 이는 한 번에 모두 바꾸라는 뜻이 아닙니다. 검토와 되돌리기가 가능한 범위에서 가장 비싼 위험을 일찍 발견하는 방법입니다.
+
+## 학습 목표
+
+큰 project를 작고 관찰 가능한 slice로 바꾸고, edit 전에 dependency와 stop point를 기록하며, 실패한 시도를 다음 사람이 scope나 permission을 추측하지 않고 이어갈 수 있게 handoff합니다. 이 연습은 일반 속도, model quality, 장기 학습을 측정하지 않습니다.
+
+## 실제 문제: 자세한 plan도 확인 가능한 결과를 만들지 못할 수 있다
+
+plan이 많은 file, phase, tool을 나열해도 누군가 확인할 수 있는 첫 state를 주지 못할 수 있습니다. 실제 risk는 긴 가정의 연쇄입니다. 없는 file, 모르는 permission, 모호한 acceptance가 확인 불가능한 작업을 쌓은 뒤 드러납니다. vertical slice는 다음 보이는 step을 막는 dependency를 먼저 확인합니다.
 
 ## 편집 전에 슬라이스 설계하기
 
@@ -42,9 +50,19 @@
 
 ## 실험과 한계
 
+### 준비
+
+remote, secret, external account가 없는 local disposable copy를 준비합니다. 짧은 원문, 알려진 change, 고정 acceptance question을 고르고 baseline revision을 보존합니다. 시작 전 stop rule을 정하고 install, publish, 전송을 하지 않습니다.
+
+### 작업
+
 버려도 되는 복사본에서 같은 작은 변경의 수평 계획과 수직 계획을 비교합니다. 초기 계획, 기준 revision, 명령, diff, 검사, 결정이 바뀐 지점을 보관합니다. 없는 의존성이나 모호한 수용 조건을 넣습니다. 수직 계획은 검사 불가능한 변경을 쌓기 전에 차단을 드러내면 통과입니다.
 
 한 작업으로 일반적인 속도나 품질을 측정하지 않습니다. 관찰하지 않은 시간, 비용, 결과는 `unavailable`, `unknown`, `not_run`으로 남깁니다.
+
+### 증거
+
+두 plan, 고정 input, 선택한 slice, dependency와 permission 가정, diff, check output, stop point, handoff card를 보존합니다. 실행하지 않은 시도는 `not_run`으로 남으며 그럴듯한 plan은 result를 대신하지 않습니다.
 
 - [ ] 결과, 입력, 범위, 수용 조건을 관찰할 수 있다.
 - [ ] 슬라이스에 검사와 복구 출처가 있다.
@@ -114,12 +132,16 @@
 응답이 일반적인 생산성이나 모델 우위를 증명하지는 않습니다. 이 연습의 목적은 편집 전에 어떤
 정보가 빠졌는지, 결과를 검토할 수 있는지를 관찰하는 것입니다.
 
-## 안전한 실패와 되돌아보기
+## 안전한 실패와 경계
 
 **어떻게 확인하는지**를 일부러 지우거나 존재하지 않는 파일을 지정합니다. 첫 실패는 내용이
 부족한지 입력이 틀렸는지 알려줘야 합니다. 실패를 숨기려고 의존성이나 권한을 늘리지 않습니다.
 관찰한 것, 아직 증명하지 못한 것, 다음 안전한 행동 하나를 적습니다. 이 장은 `candidate`입니다.
 이 연습 하나만으로 효과, 속도, 장기 학습을 측정할 수 없습니다.
+
+## 회고
+
+horizontal plan이었다면 마지막에 발견했을 dependency는 무엇인가요? vertical slice를 확인 가능하게 한 evidence는 무엇이며 check 뒤에도 scope 밖으로 남은 claim은 무엇인가요?
 
 ## dependency를 보이는 순서로 놓기
 
@@ -182,7 +204,21 @@ question 또는 smaller outcome으로 돌아갑니다.
 failure는 plan 실패가 아니라 첫 expensive assumption이 드러난 record입니다. 첫 unsupported claim,
 actual diff, 마지막 accepted state, one safe next action을 handoff에 남깁니다.
 
-## 전이와 sources
+## 전이 과제
+
+같은 slice를 research, language practice, content review에 맞게 plan합니다. result, 고정 input, allowed와 forbidden action, check, recovery는 유지합니다. language에서는 acceptance에 유창한 assisted reply뿐 아니라 나중의 미지·무도움 recall을 넣습니다. 새 연습이 증명하지 않는 것도 적습니다.
+
+## 수용 체크리스트
+
+- [ ] result, input, scope, acceptance가 관찰 가능하다.
+- [ ] slice에 check, stop rule, recovery source가 있다.
+- [ ] 실패한 시도도 review할 evidence를 남긴다.
+- [ ] 명시적 authority 없는 external side effect는 scope 밖에 둔다.
+- [ ] handoff가 changed, verified, blocked, not proven을 나눈다.
+
+## 출처 및 유지보수 경계
+
+vertical slice, dependency 순서, stop point는 이 project의 안정적인 teaching method입니다. product feature, permission, model availability, community symptom은 변합니다. 현재 claim은 [공식 사실 카드](../evidence-library-KO.md#source-notes)와 [현장 문제 색인](../evidence-library-KO.md#source-notes)에서 확인하세요. 이는 local run이나 독립 learning observation을 대신하지 않습니다.
 
 같은 template를 research memo, marketing copy, design review에 씁니다. 다만 acceptance를 domain에
 맞게 바꿉니다. research에는 source scope와 citation, copy에는 supplied facts와 audience rule, design

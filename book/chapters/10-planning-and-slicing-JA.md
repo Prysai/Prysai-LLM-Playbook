@@ -4,7 +4,7 @@
 
 **状態：** `candidate`。plan と example は teaching material です。Agent が実行したことや、どの repository でも slice が働くことを証明しません。
 
-## 問題
+## この章が解決する問題
 
 detail に見える plan でも、最後まで誰も結果を確認できないことがあります。すべての data、API、UI を順に終える横割りは、誤った前提を遅く発見します。vertical slice は小さくても input から evidence まで通る結果を作ります。
 
@@ -13,6 +13,14 @@ one input → smallest change → observable action → focused check → eviden
 ```
 
 これは一度に全部を変える口実ではありません。review と rollback ができる scope で、最も高価な risk を早く見つける方法です。
+
+## 学習目標
+
+大きな project を小さく観察可能な slice に翻訳し、edit 前に dependency と stop point を記録し、失敗した試行を次の人が scope や permission を推測せずに続けられる形で handoff できます。この練習は一般的な speed、model quality、長期の学習を測りません。
+
+## 現実の問題：詳しい plan でも確認可能な結果が出ない
+
+plan が多くの file、phase、tool を列挙しても、誰かが確認できる最初の state を示さないことがあります。risk は長い仮定の連鎖です。存在しない file、不明な permission、曖昧な acceptance が、確認不能な作業を積んだ後に現れます。vertical slice は次の見える step を止める dependency を先に確かめます。
 
 ## edit 前に slice を設計する
 
@@ -42,9 +50,19 @@ task list を promise にしません。task を実行しても outcome が出�
 
 ## 実験と境界
 
+### 準備
+
+remote、secret、external account のない local disposable copy を用意します。短い原文、既知の change、固定した acceptance question を選び、baseline revision を保存します。開始前に stop rule を決め、install、publish、送信をしません。
+
+### タスク
+
 disposable copy で同じ小さな change に対する horizontal plan と vertical plan を比べます。initial plan、baseline revision、command、diff、check、decision が変わった点を保存します。missing dependency または ambiguous acceptance を入れます。vertical plan は、確認不能な change を積む前に block を露出できれば通過です。
 
 一 task から general speed や quality を測りません。観測していない time、cost、result は `unavailable`、`unknown`、`not_run` と記します。
+
+### 証拠
+
+二つの plan、固定 input、選んだ slice、dependency と permission の仮定、diff、check output、stop point、handoff card を保存します。run していない試行は `not_run` のままであり、もっともらしい plan は result の代わりになりません。
 
 - [ ] outcome、input、scope、acceptance が観測可能である。
 - [ ] slice に check と recovery source がある。
@@ -115,12 +133,16 @@ text、model、tool、使える時間、読者の check を固定します。両
 きれいな文章一つでは、一般的な productivity や model superiority は証明しません。この練習は、
 edit 前に何が欠けていたか、結果を review できるかを観測するためのものです。
 
-## 安全な失敗と振り返り
+## 安全な失敗と境界
 
 **どう確認するか** をわざと消すか、存在しない file を指定します。最初の failure は、content が
 足りないのか input が誤っているのかを示すはずです。failure を隠すために dependency や
 permission を増やしません。観測したこと、まだ証明されないこと、安全な次の一 action を書きます。
 この章は `candidate` のままです。この練習だけで effectiveness、speed、長期 learning は測れません。
+
+## 振り返り
+
+horizontal plan なら最後に見つけていた dependency は何か。vertical slice を確認可能にした evidence は何か。check 後も scope 外に残った claim は何か。
 
 ## dependency を見える順に並べる
 
@@ -182,7 +204,21 @@ question、または smaller outcome に戻します。
 failure は plan の失敗ではなく、最初の expensive assumption が見えた record です。最初の
 unsupported claim、actual diff、last accepted state、one safe next action を handoff に残します。
 
-## transfer と sources
+## 移行タスク
+
+同じ slice を research、language practice、content review のために plan します。result、固定 input、allowed と forbidden action、check、recovery は保ちます。language では、acceptance に流暢な assisted reply だけでなく、後の未見・無支援 recall を入れます。新しい練習が証明しないことも書きます。
+
+## 受け入れチェックリスト
+
+- [ ] result、input、scope、acceptance が観察可能である。
+- [ ] slice に check、stop rule、recovery source がある。
+- [ ] failure attempt も review できる evidence を残す。
+- [ ] explicit authority がない external side effect は scope 外である。
+- [ ] handoff が changed、verified、blocked、not proven を分ける。
+
+## 出典と保守の境界
+
+vertical slice、dependency の順序、stop point はこの project の安定した teaching method です。product feature、permission、model availability、community symptom は変わります。現在の claim は[公式ファクトカード](../evidence-library-JA.md#source-notes)と[フィールド問題索引](../evidence-library-JA.md#source-notes)で確認してください。これらは local run や独立した learning observation の代わりにはなりません。
 
 同じ template を research memo、marketing copy、design review に使います。ただし acceptance を
 domain に合わせて変えます。research なら source scope と citation、copy なら supplied facts と
