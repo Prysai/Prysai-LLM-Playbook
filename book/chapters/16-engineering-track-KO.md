@@ -91,6 +91,33 @@ timeout까지 출력 없음, 누락된 test 의존성, 알 수 없는 worktree �
 - [ ] build, test, local run, remote, 사용자 수용을 혼동하지 않는다.
 - [ ] interruption 뒤에는 재시도 전에 state를 확인한다.
 
+## 엔지니어링 작업 카드: 수용 가능한 최소 change
+
+이 카드는 본인이 소유하거나 허가받은 disposable project copy용입니다. 먼저 문제를 제한한 다음 어떤 LLM이든 read, plan, edit를 돕게 합니다. install, network, commit, push, publish, production data 접근을 허가하지 않습니다.
+
+```text
+goal: [하나의 구체적인 action] 뒤 사용자가 볼 수 있는 확인 가능한 결과는 무엇인가?
+scope: [path]를 read; 확인 뒤 [path]만 edit; [path]는 edit하지 않음.
+baseline: 현재 branch / commit, 기존 change, test / command의 원래 결과.
+source of truth: 어떤 specification, existing behavior, test, interface, design이 이 사실을 소유하는가?
+minimum slice: 이번에 바꿀 observable behavior 하나는 무엇인가?
+acceptance: file scope, focused check, runtime observation, human read가 각각 무엇을 확인하는가?
+forbidden: install, network, delete, commit, push, publish, external message, secret read.
+stop: path, specification, authority, recovery, acceptance rule이 불분명하면 pause.
+delivery: diff, 실제 command와 output, passed / failed / not_run, unknown, 가장 작은 다음 check.
+```
+
+### 네 개의 green은 네 가지 다른 결론입니다
+
+| signal | 최대한 말할 수 있는 것 | 아직 말할 수 없는 것 |
+|---|---|---|
+| small diff | 비교 범위의 text change가 작음 | requirement 충족 또는 runtime 정확성 |
+| static check passed | 기록한 environment에서 그 check가 통과함 | 모든 path와 user가 동작함 |
+| local run passed | 하나의 명시된 run scenario를 관찰함 | deploy, performance, security, external integration |
+| human acceptance | 지정 reader가 지정 rule로 결과를 봄 | maintenance, transfer, 넓은 adoption |
+
+하나라도 빠지면 delivery에 `not_run`, `blocked`, `unknown`을 남기세요. green을 얻기 위해 permission을 넓히거나 environment를 바꾸거나 specification을 다시 쓰지 않습니다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-KO.md">← 이전<br><strong>15장 · 연구 트랙, 질문에서 감사 가능한 지식까지</strong></a></td><td align="right"><a data-chapter-nav="next" href="17-marketing-track-KO.md">다음 →<br><strong>17장 · 마케팅 트랙, 제품 이해에서 성장 실험까지</strong></a></td></tr></table></nav>

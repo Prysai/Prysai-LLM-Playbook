@@ -91,6 +91,33 @@ output がない、dependency がない、PATH change、runtime reinstall、log 
 - [ ] build、test、local run、remote、user acceptance を混同しない。
 - [ ] interruption 後は retry 前に state を確認する。
 
+## engineering task card：受け入れ可能な最小 change
+
+この card は、自分が所有または許可された disposable project copy 用です。先に問題を限定し、その後で任意の LLM に read、plan、edit を手伝わせます。install、network、commit、push、publish、production data へのアクセスは許可しません。
+
+```text
+goal: [一つの具体的な action] の後、利用者が見る確認可能な結果は何か。
+scope: [path] を read；確認後は [path] だけを edit；[path] は edit しない。
+baseline: 現在の branch / commit、既存 change、test / command の元の結果。
+source of truth: どの specification、existing behavior、test、interface、design がこの事実を持つか。
+minimum slice: 今回変える observable behavior は一つだけ何か。
+acceptance: file scope、focused check、runtime observation、human read がそれぞれ何を確認するか。
+forbidden: install、network、delete、commit、push、publish、external message、secret read。
+stop: path、specification、authority、recovery、acceptance rule が不明なら pause。
+delivery: diff、実際の command と output、passed / failed / not_run、unknown、最小の次の check。
+```
+
+### 四つの green は四つの別の結論
+
+| signal | 最大で言えること | まだ言えないこと |
+|---|---|---|
+| small diff | 比較範囲の text change が小さい | requirement が満たされた、runtime が正しい |
+| static check passed | 記録した environment でその check が通った | 全 path、全 user が動く |
+| local run passed | 一つの明示した run scenario を観察した | deploy、performance、security、external integration |
+| human acceptance | 指定 reader が指定 rule で結果を見た | maintenance、transfer、広い adoption |
+
+一つでも欠ければ delivery に `not_run`、`blocked`、`unknown` を残します。green にするために permission を広げたり、environment を置き換えたり、specification を書き換えたりしません。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-JA.md">← 前の章<br><strong>第15章 · 調査トラック、問いから監査可能な知識へ</strong></a></td><td align="right"><a data-chapter-nav="next" href="17-marketing-track-JA.md">次へ →<br><strong>第17章 · マーケティング・トラック、製品理解から成長実験へ</strong></a></td></tr></table></nav>

@@ -87,6 +87,33 @@ Si no hay salida, falta una dependencia o se propone cambiar PATH, reinstalar, s
 - [ ] No confundo build, tests, ejecución, remoto o aceptación de usuario.
 - [ ] Tras interrupción inspecciono estado antes de reintentar.
 
+## Tarjeta de ingeniería: un cambio mínimo que se puede aceptar
+
+Esta tarjeta sirve para una copia descartable de un proyecto propio o autorizado. Primero limita el problema y después deja que cualquier LLM ayude a leer, planear o editar; no autoriza instalar, usar red, confirmar cambios, publicar ni tocar datos de producción.
+
+```text
+Objetivo: tras [una acción concreta], ¿qué resultado comprobable verá la persona?
+Alcance: leer [rutas]; tras confirmar, editar solo [rutas]; no tocar [rutas].
+Línea base: rama/commit actual, cambios previos y resultado original de pruebas o comandos.
+Fuente de verdad: ¿qué especificación, comportamiento, prueba, interfaz o diseño posee este hecho?
+Corte mínimo: ¿qué único comportamiento observable cambia ahora?
+Aceptación: ¿qué comprueban por separado el alcance de archivos, el check dirigido, la ejecución y la lectura humana?
+Acciones prohibidas: instalar, red, borrar, commit, push, publicar, mensajes externos, leer secretos.
+Parada: pausar si ruta, especificación, autorización, recuperación o regla de aceptación no están claras.
+Entrega: diff, comandos y salidas reales, aprobado/fallido/no ejecutado, incógnitas y siguiente paso mínimo.
+```
+
+### Cuatro luces verdes son cuatro conclusiones distintas
+
+| Señal | Como máximo demuestra | Aún no demuestra |
+|---|---|---|
+| diff pequeño | el texto cambió poco en el rango comparado | requisito satisfecho o ejecución correcta |
+| check estático aprobado | ese check pasó en el entorno registrado | todas las rutas y personas funcionan |
+| ejecución local aprobada | un escenario concreto fue observable | despliegue, rendimiento, seguridad o integración externa |
+| aceptación humana | una persona vio el resultado con la regla indicada | mantenimiento, transferencia o adopción general |
+
+Si falta una luz, conserva `not_run`, `blocked` o `unknown` en la entrega. No amplíes permisos, sustituyas el entorno ni reescribas la especificación para obtener verde.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-ES.md">← Anterior<br><strong>Capítulo 15 · ruta de investigación, de la pregunta al conocimiento auditable</strong></a></td><td align="right"><a data-chapter-nav="next" href="17-marketing-track-ES.md">Siguiente →<br><strong>Capítulo 17 · ruta de marketing, de entender el producto a experimentar con crecimiento</strong></a></td></tr></table></nav>

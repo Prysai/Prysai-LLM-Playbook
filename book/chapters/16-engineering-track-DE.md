@@ -91,6 +91,33 @@ Fehlt Ausgabe oder Abhängigkeit oder werden PATH-Änderung, Runtime-Reinstall, 
 - [ ] Ich verwechsle Build, Test, lokalen Lauf, Remote und Nutzerakzeptanz nicht.
 - [ ] Nach Unterbrechung prüfe ich den Zustand vor einem Retry.
 
+## Engineering-Karte: Eine abnahmefähige minimale Änderung
+
+Diese Karte gilt für eine wegwerfbare Kopie eines eigenen oder autorisierten Projekts. Zuerst begrenzt sie das Problem; danach darf jedes LLM beim Lesen, Planen oder Ändern helfen. Sie erlaubt keine Installation, kein Netzwerk, keinen Commit, Push, keine Veröffentlichung und keinen Zugriff auf Produktionsdaten.
+
+```text
+Ziel: Welches prüfbare Ergebnis soll eine Person nach [einer konkreten Aktion] sehen?
+Umfang: [Pfade] lesen; nach Bestätigung nur [Pfade] ändern; [Pfade] nicht ändern.
+Baseline: Aktueller Branch/Commit, vorhandene Änderungen, ursprüngliche Test- oder Befehlsergebnisse.
+Quelle der Wahrheit: Welche Spezifikation, welches bestehende Verhalten, welcher Test, welche Schnittstelle oder welches Design besitzt diese Tatsache?
+Minimaler Schnitt: Welches einzelne beobachtbare Verhalten ändert sich jetzt?
+Abnahme: Was prüfen Dateiumfang, fokussierter Check, Laufzeitbeobachtung und menschliches Lesen jeweils?
+Verboten: Installieren, Netzwerk, Löschen, Commit, Push, Veröffentlichung, externe Nachrichten, Geheimnisse lesen.
+Stopp: Pausieren, wenn Pfad, Spezifikation, Berechtigung, Wiederherstellung oder Abnahmeregel unklar sind.
+Übergabe: Diff, echte Befehle und Ausgaben, bestanden/fehlgeschlagen/nicht ausgeführt, Unbekanntes und kleinste nächste Prüfung.
+```
+
+### Vier grüne Signale sind vier verschiedene Schlussfolgerungen
+
+| Signal | Belegt höchstens | Belegt noch nicht |
+|---|---|---|
+| kleiner Diff | Textänderung im Vergleichsumfang ist klein | Anforderung erfüllt oder Laufzeit korrekt |
+| statischer Check bestanden | dieser Check lief im protokollierten Umfeld durch | alle Pfade und Nutzenden funktionieren |
+| lokaler Lauf bestanden | ein benanntes Laufszenario war beobachtbar | Deployment, Leistung, Sicherheit oder externe Integration |
+| menschliche Abnahme | eine benannte Person sah das Ergebnis nach der Regel | Wartung, Transfer oder breite Übernahme |
+
+Fehlt ein Signal, bleibt `not_run`, `blocked` oder `unknown` in der Übergabe. Erweitere weder Berechtigungen noch ersetze die Umgebung oder schreibe die Spezifikation um, nur um Grün zu erhalten.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="15-research-track-DE.md">← Vorheriges<br><strong>Kapitel 15 · Forschungspfad, von der Frage zu prüfbarem Wissen</strong></a></td><td align="right"><a data-chapter-nav="next" href="17-marketing-track-DE.md">Nächstes →<br><strong>Kapitel 17 · Marketing-Pfad, vom Produktverständnis zu Wachstumsexperimenten</strong></a></td></tr></table></nav>
