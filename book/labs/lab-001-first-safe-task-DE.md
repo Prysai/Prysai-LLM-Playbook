@@ -24,6 +24,38 @@ transfer_limitations: "Dieses Lab lehrt eine risikoarme lokale Grenze; es beweis
 
 # Lab 001: Eine sichere README-Änderung vornehmen
 
+## Vor dem README: Prompt-Vergleich ohne Dateien
+
+Du brauchst weder Git noch Codex oder ein Terminal, um zu beginnen. Öffne ein
+Modell, das du bereits nutzt, und verwende diese fiktive Notiz oder eine eigene
+Notiz ohne sensible Daten:
+
+```text
+Montag: Einen Tippfehler in der Einsteigeranleitung korrigiert.
+Dienstag: Eine Veröffentlichungs-Checkliste entworfen; sie wartet noch auf Review.
+Mittwoch: Keinen lokalen Format-Check ausgeführt, weil der richtige Befehl unbekannt ist.
+Nächster Schritt: Maya nach dem nötigen Check vor der Veröffentlichung fragen.
+```
+
+Erstelle mit demselben Modell und derselben Notiz zwei neue Gespräche. Bitte
+zuerst: „Mach daraus ein gutes Projektupdate.“ Bitte anschließend:
+
+```text
+Aufgabe: Diese Notizen in ein Projektupdate umwandeln.
+Leserin/Leser: eine Person im Team, die den nächsten Schritt entscheiden muss.
+Nur diese Notizen verwenden.
+Enthalten: Erledigtes, wartende Freigabe, Unknown und eine nächste zuständige Aktion.
+Nicht erfinden: Tests, Freigaben, Daten oder Gründe, die nicht in den Notizen stehen.
+Format: Done, Waiting, Unknown, Next step.
+Vorher: Fehlende Fakten nennen, die das Update verändern würden.
+```
+
+Vergleiche, ob die vier Fakten erhalten sind, ob das Format stimmt, Unbekanntes
+sichtbar bleibt und wie viele Überarbeitungen du brauchst. Erkläre nicht nach
+einer Antwort einen Prompt oder ein Modell zum „besseren“. Haben sich Modell,
+Verlauf, Eingabe oder Kriterium geändert, notiere `not_comparable`. Der Einstieg
+zeigt einen beobachtbaren Unterschied ohne Datei- oder Service-Berechtigung.
+
 ## Wofür dieses Lab da ist
 
 Dieses Lab führt von der statischen Grenzkarte aus Kapitel 1 zu einer echten,

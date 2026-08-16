@@ -24,6 +24,35 @@ transfer_limitations: "이 Lab은 저위험 로컬 경계를 가르칠 뿐이며
 
 # Lab 001: 안전한 README 변경 하나 만들기
 
+## README 전에: 파일 없이 하는 prompt 비교
+
+Git, Codex, terminal이 없어도 시작할 수 있습니다. 평소 쓰는 어떤 model에서 아래의 가상
+note 또는 비밀이 없는 자신의 note를 사용하세요.
+
+```text
+월요일: 초보자 안내의 오타 하나를 고쳤다.
+화요일: 게시 checklist를 작성했다. reviewer 승인을 기다린다.
+수요일: 올바른 command를 몰라 local format check를 실행하지 않았다.
+다음: 게시 전에 필요한 check를 Maya에게 확인한다.
+```
+
+같은 model과 같은 note로 새 conversation 두 개를 만듭니다. 먼저 “이것을 좋은 project update로
+바꿔 주세요”라고 요청합니다. 다음에는 아래처럼 요청합니다.
+
+```text
+task: 이 note를 project update로 바꾼다.
+reader: 다음 행동을 결정할 teammate 한 명.
+사용: 주어진 note만.
+포함: 완료, 승인 대기, unknown, 다음 owner/action 하나.
+만들지 말 것: note에 없는 test, approval, date, reason.
+format: Done, Waiting, Unknown, Next step.
+쓰기 전: 이 update를 바꿀 수 있는 빠진 fact를 나열한다.
+```
+
+네 가지 사실 보존, 형식, unknown 명시, 쓸 수 있을 때까지의 수정 횟수를 비교합니다. 한 번의
+응답으로 prompt나 model이 “더 낫다”고 말하지 않습니다. model, history, input, criterion을 바꾸면
+`not_comparable`로 기록합니다. 이 입구는 파일이나 service 권한 없이 관찰 가능한 차이를 만듭니다.
+
 ## 이 실습의 목적
 
 이 실습은 1장의 정적인 경계 지도를 실제이지만 통제된 파일 변경으로 옮깁니다.

@@ -24,6 +24,36 @@ transfer_limitations: "この Lab は低リスクなローカル境界を教え�
 
 # Lab 001: 安全な README の変更を一つ行う
 
+## README の前：file を使わない prompt 比較
+
+Git、Codex、terminal がなくても始められます。普段使う任意の model を開き、次の架空の
+note、または秘密を含まない自分の note を貼ります。
+
+```text
+月曜：初心者向けガイドの誤字を一つ直した。
+火曜：公開 checklist を下書きした。reviewer の承認待ちである。
+水曜：正しい command が分からず、local format check は実行していない。
+次：公開前に必要な check を Maya に確認する。
+```
+
+同じ model、同じ note で二つの新しい conversation を作ります。最初は「これを良い project
+update にして」と頼みます。次に以下を頼みます。
+
+```text
+task: この note を project update にする。
+reader: 次の action を決める teammate 一人。
+使うのはこの note だけ。
+含める: 完了、承認待ち、unknown、一つの next owner/action。
+作らない: note にない test、approval、date、reason。
+format: Done、Waiting、Unknown、Next step。
+書く前に、この update を変え得る不足 fact を列挙する。
+```
+
+四つの fact が残ったか、format、unknown の明示、使えるまでの修正回数を比べます。一回の
+response から prompt や model が「より良い」とは言いません。model、history、input、criterion
+を変えたら `not_comparable` と記録します。この入口は file や service の permission を与えずに、
+観測できる違いを作ります。
+
 ## この Lab の目的
 
 これは第 1 章の静的な境界図から、実際だが制御されたファイル変更へ進む L1 の

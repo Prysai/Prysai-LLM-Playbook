@@ -24,6 +24,37 @@ transfer_limitations: "Este Lab enseña un límite local de bajo riesgo; no prue
 
 # Lab 001: Haz un cambio seguro de README
 
+## Antes del README: una comparación de prompts sin archivos
+
+No necesitas Git, Codex ni una terminal para empezar. Abre cualquier modelo que
+ya uses y pega esta nota ficticia, o una nota propia sin datos sensibles:
+
+```text
+Lunes: corregí una errata de la guía inicial.
+Martes: redacté una lista de publicación; aún espera aprobación.
+Miércoles: no ejecuté el formato local porque no conozco el comando correcto.
+Siguiente: preguntar a Maya qué comprobación es necesaria antes de publicar.
+```
+
+Haz dos conversaciones nuevas con el mismo modelo y la misma nota. Primero pide
+«convierte esto en una buena actualización». Después pide:
+
+```text
+Tarea: convierte estas notas en una actualización de proyecto.
+Lector: una compañera que debe decidir el siguiente paso.
+Usa solo las notas dadas.
+Incluye: hecho, pendiente de aprobación, una incógnita y siguiente responsable/acción.
+No inventes pruebas, aprobaciones, fechas ni causas.
+Formato: Hecho, En espera, Desconocido y Siguiente paso.
+Antes de escribir, lista qué dato ausente cambiaría esta actualización.
+```
+
+Compara conservación de los cuatro hechos, formato, incógnitas declaradas y
+rondas de corrección hasta que te resulte utilizable. No declares que un prompt
+o modelo «es mejor» por una sola respuesta: si cambiaste modelo, historial,
+entrada o criterio, anota `not_comparable`. Este primer paso muestra una mejora
+observable sin dar acceso a archivos ni servicios.
+
 ## Para qué sirve este Lab
 
 Este Lab es el puente L1 entre el mapa de límites estático del Capítulo 1 y un
