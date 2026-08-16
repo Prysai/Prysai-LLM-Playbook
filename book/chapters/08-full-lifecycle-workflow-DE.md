@@ -62,5 +62,5 @@ Vergleiche in einem wegwerfbaren Ordner eine direkte Bitte mit einem Protokoll, 
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="07-skills-plugins-and-tools-DE.md">← Vorheriges<br><strong>Kapitel 7 · Skills, Plugins, MCP und Tools</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-DE.md">Nächstes Kapitel in Arbeit →<br><strong>Verfügbarkeit von Kapitel 9 ansehen</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="07-skills-plugins-and-tools-DE.md">← Vorheriges<br><strong>Kapitel 7 · Skills, Plugins, MCP und Tools</strong></a></td><td align="right"><a data-chapter-nav="next" href="09-verification-and-recovery-DE.md">Weiter →<br><strong>Kapitel 9 · Überprüfung, Zweifel und Wiederherstellung</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->
