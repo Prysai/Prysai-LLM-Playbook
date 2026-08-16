@@ -4,7 +4,7 @@
 
 **Status:** `candidate`. Plan und Beispiele sind Lehrmaterial. Sie beweisen weder einen Agent-Lauf noch, dass ein Schnitt in jedem Repository funktioniert.
 
-## Das Problem
+## Das Problem dieses Kapitels
 
 Auch ein detaillierter Plan kann verbergen, dass bis zum Ende niemand ein Ergebnis prüfen kann. Ein horizontaler Ablauf – alle Daten, dann API, dann UI – entdeckt falsche Annahmen spät. Ein vertikaler Schnitt führt ein kleines Ergebnis von der Eingabe bis zum Beleg.
 
@@ -13,6 +13,14 @@ eine Eingabe → kleinste Änderung → beobachtbare Aktion → fokussierter Che
 ```
 
 Das ist kein Freibrief, alles gleichzeitig zu ändern. Der Schnitt entdeckt das teuerste Risiko früh und bleibt prüf- und rücksetzbar.
+
+## Lernziele
+
+Du kannst ein großes Vorhaben in einen kleinen, beobachtbaren Schnitt übersetzen, seine Abhängigkeiten und Stopppunkte vor dem Edit festhalten und einen fehlgeschlagenen Versuch so übergeben, dass keine Person Umfang oder Rechte erraten muss. Die Übung misst nicht allgemeine Geschwindigkeit, Modellqualität oder dauerhaften Lernerfolg.
+
+## Praxisfälle: Wenn ein detaillierter Plan kein überprüfbares Ergebnis hervorbringt
+
+Ein Plan kann viele Dateien, Phasen und Werkzeuge nennen und trotzdem keinen ersten Zustand liefern, den jemand prüfen kann. Das reale Risiko ist eine lange Kette aus Annahmen: fehlende Datei, unbekannte Berechtigung oder unklare Abnahme werden erst sichtbar, nachdem nicht prüfbare Arbeit gewachsen ist. Ein vertikaler Schnitt prüft zuerst die Abhängigkeit, die den nächsten sichtbaren Schritt blockiert.
 
 ## Schnitt vor der Änderung entwerfen
 
@@ -42,9 +50,19 @@ Eine Aufgabenliste ist kein Versprechen. Ausgeführte Aufgaben können ohne Erge
 
 ## Experiment und Grenze
 
+### Vorbereitung
+
+Lege eine wegwerfbare lokale Kopie ohne Remote, Geheimnisse oder externe Konten an. Wähle einen kleinen Ausgangstext, eine bekannte Änderung und eine feste Abnahmefrage. Sichere die Basisrevision und lege vorab eine Stoppregel fest; installiere, veröffentliche oder sende nichts.
+
+### Aufgabe
+
 Vergleiche in einer wegwerfbaren Kopie einen horizontalen und vertikalen Plan für dieselbe kleine Änderung. Bewahre Ausgangsplan, Basisrevision, Befehle, Diffs, Checks und geänderte Entscheidungen auf. Füge eine fehlende Abhängigkeit oder unklare Abnahme ein. Der vertikale Plan besteht, wenn er die Blockade zeigt, bevor nicht prüfbare Änderungen anwachsen.
 
 Miss aus einer Aufgabe keine allgemeine Geschwindigkeit oder Qualität. Nicht beobachtete Zeit, Kosten und Ergebnisse bleiben `unavailable`, `unknown` oder `not_run`.
+
+### Belege
+
+Bewahre beide Pläne, die feste Eingabe, den gewählten Schnitt, Abhängigkeits- und Rechteannahmen, Diff, Check-Ausgabe, Stopppunkt und Übergabekarte auf. Ist ein Versuch nicht gelaufen, bleibt er `not_run`; ein plausibler Plan ersetzt kein Ergebnis.
 
 - [ ] Ergebnis, Eingabe, Umfang und Abnahme sind beobachtbar.
 - [ ] Der Schnitt hat einen Check und eine Wiederherstellungsquelle.
@@ -122,7 +140,7 @@ Variable, notiere `not_comparable`. Eine schnellere oder schönere Antwort bewei
 weder allgemeine Produktivität noch Modellüberlegenheit. Die Übung macht sichtbar,
 welche Information vor dem Edit fehlte und ob das Ergebnis prüfbar ist.
 
-## Sicheres Scheitern und Rückblick
+## Sicheres Scheitern und Grenze
 
 Lösche absichtlich **So prüfst du es** oder nenne eine nicht vorhandene Datei.
 Der erste Fehler soll zeigen, ob Inhalt fehlt oder die Eingabe falsch ist. Füge
@@ -130,6 +148,26 @@ keine Abhängigkeit oder Berechtigung hinzu, um ihn zu verdecken. Notiere, was d
 beobachtet hast, was unbewiesen bleibt und was die eine sichere nächste Aktion ist.
 Dieses Kapitel bleibt `candidate`: Die Übung misst für sich keine Wirksamkeit,
 Geschwindigkeit oder dauerhaftes Lernen.
+
+## Reflexion
+
+Welche Abhängigkeit hättest du im horizontalen Plan zuletzt entdeckt? Welcher Beleg machte den vertikalen Schnitt prüfbar, und welche Behauptung blieb auch nach dem Check außerhalb des Umfangs?
+
+## Transferaufgabe
+
+Plane denselben Schnitt für eine Recherche, eine Sprachübung oder eine Inhaltsüberarbeitung. Halte Ergebnis, feste Eingabe, erlaubte und verbotene Aktionen, Check und Rückweg bei. Für Sprache soll die Abnahme eine spätere, unbekannte Abrufaufgabe ohne Hilfe enthalten, nicht nur eine flüssige assistierte Antwort. Notiere, was die neue Übung nicht beweist.
+
+## Abnahme-Checkliste
+
+- [ ] Ergebnis, Eingabe, Umfang und Abnahme sind beobachtbar.
+- [ ] Der Schnitt hat einen Check, eine Stoppregel und eine Wiederherstellungsquelle.
+- [ ] Auch ein fehlgeschlagener Versuch hinterlässt prüfbare Evidenz.
+- [ ] Externe Nebenwirkungen ohne ausdrückliche Autorität bleiben außerhalb des Umfangs.
+- [ ] Die Übergabe trennt geändert, verifiziert, blockiert und nicht bewiesen.
+
+## Quellen und Wartungsgrenze
+
+Vertikale Schnitte, Abhängigkeitsreihenfolge und Stopppunkte sind die stabile Lehrmethode dieses Projekts. Produktfunktionen, Berechtigungen, Modellverfügbarkeit und Community-Symptome ändern sich. Prüfe aktuelle Behauptungen gegen die [offiziellen Faktenkarten](../evidence-library-DE.md#source-notes) und den [Feldproblemindex](../evidence-library-DE.md#source-notes). Diese ersetzen weder eine lokale Ausführung noch eine unabhängige Lernbeobachtung.
 
 <!-- chapter-navigation:start -->
 <hr>
