@@ -64,11 +64,12 @@ and high-confidence credential signatures. The project-root entry uses the same
 `site/` source through a relative base path, so the local `/site/` route remains
 useful for development.
 
-The workflow can build the artifact in any repository, but GitHub Pages itself
-may be unavailable for a private repository on the current account plan. Check
-the repository's Pages settings or API state before calling the site deployed.
-The workflow's success is not, by itself, proof that Pages is enabled or that
-the public URL is reachable.
+On qualifying pushes to `main`, the workflow builds the artifact and requests
+a GitHub Pages deployment. GitHub Pages must remain enabled in the repository
+settings for the deployment job to publish it. A successful workflow is
+deployment evidence for that run, but it is not proof that the public URL is
+currently reachable to readers, indexed, or ranked; check the deployment URL
+and a fresh HTTP request separately.
 
 ## Docs mirror
 
@@ -79,11 +80,12 @@ archive only, validates its paths and file types, and atomically changes the
 published release. The deployment key is stored as the protected
 `DOCS_DEPLOY_SSH_KEY` GitHub Environment secret and is never committed here.
 
-The workflow is named **Build Prysai LLM Playbook Pages candidate artifact**. With
-the default `deploy: false`, its summary records
-`deployment_status=not_deployed`; a green run means only that the bounded
-review artifact was built and uploaded. Deployment requires an explicit
-`deploy: true` dispatch and remains a separate observable job.
+The workflow is named **Build and publish Prysai LLM Playbook site**. A
+qualifying push to `main` builds the bounded artifact, deploys it to GitHub
+Pages, and requests the atomic Docs mirror publish. Manual dispatch defaults
+to `deploy: true`; choosing `false` builds only the bounded review artifact.
+The GitHub Pages and Docs mirror jobs are separate observable jobs. A green
+build alone does not prove either public origin now serves the new files.
 
 ## Search metadata and public URL
 

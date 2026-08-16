@@ -238,6 +238,12 @@ def main() -> int:
         ):
             if required not in site_markup:
                 raise AssertionError(f"localized-seo: missing static locale entry '{required}'")
+        # A versioned application asset is required for a newly deployed
+        # localized route to fetch the matching UI and metadata behavior.
+        # The query is a deployment cache boundary, not a claim of browser
+        # cache invalidation across every intermediary.
+        if not re.search(r'<script src="app\.js\?v=[A-Za-z0-9-]+" defer></script>', site_markup):
+            raise AssertionError("localized-seo: app.js must use a non-empty immutable cache version")
         fixtures += 1
 
         reader_styles = (Path(__file__).resolve().parents[1] / "site/styles.css").read_text(encoding="utf-8")
