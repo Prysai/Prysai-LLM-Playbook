@@ -4,11 +4,19 @@
 
 **Status:** `candidate`. **Experimentstatus:** `draft / not_run`. Dieses Kapitel lehrt Forschungsdisziplin; öffentliche Fälle sind Lehrmaterial, keine lokale Reproduktion oder offizielle Ursachenfeststellung.
 
-## Das Problem
+## Das Problem dieses Kapitels
 
 „Bitte recherchiere das“ kann Fakten finden, Optionen vergleichen, Literatur prüfen, eine Forschungsfrage bilden, einen Bericht schreiben oder einen Entwurf prüfen heißen. Ohne vorherige Eingrenzung kann ein Agent Suchausschnitte als Schlussfolgerung ausgeben, eine unzugängliche URL als gelesen behandeln oder eine Anweisung in einem externen Dokument befolgen.
 
 > Die Fähigkeit ist nicht eine längere Literaturübersicht. Sie ist eine Kette, in der jede wichtige Behauptung zu einer Frage, Quelle, Fundstelle, Evidenzstufe und menschlichen Prüfung zurückverfolgt werden kann.
+
+## Lernziele
+
+Du formulierst eine enge Forschungsfrage, protokollierst zugängliche Quellen und Grenzen, und übergibst Schlussfolgerungen nur in dem Umfang, den die Fundstellen tatsächlich stützen.
+
+## Praxisfälle: Eine plausible Antwort ohne überprüfbare Quelle
+
+Bei der Auswahl eines Modells, einer Lernmethode oder eines Tools kann eine flüssige Zusammenfassung Links, Versionen und Berichte vermischen. Die praktische Entscheidung ist nicht, welche Antwort überzeugender klingt, sondern welche Behauptung für die erklärte Aufgabe, Zeit und Umgebung belegt ist.
 
 ## Das Thema in eine beantwortbare Frage verwandeln
 
@@ -74,6 +82,12 @@ Bereite Queries für Aufgabe/Symptom, Grenze und Umgebung vor. Suche nicht nur n
 
 ## Kleines Experiment: Konflikt und unzugängliche Quelle
 
+### Vorbereitung
+
+Lege drei zulässige öffentliche oder lokale Übungseinträge bereit: eine zugängliche offizielle Seite, einen datierten Nutzerbericht und einen absichtlich nicht lesbaren oder widersprüchlichen Link. Verwende keine Cookies, Tokens, privaten Logs oder Kontaktdaten.
+
+### Aufgabe
+
 Nutze eine zugängliche offizielle Seite, einen datierten Nutzerbericht und einen Link mit Redirect/Login/Fehler. Lade keine Logs, Cookies, Tokens, Kontakte oder privaten Dateien hoch.
 
 1. Schreibe drei Kandidatenfragen, wähle eine und bestimme Umfang, Cutoff, Zeitzone, Ein-/Ausschluss und Stopp.
@@ -81,6 +95,29 @@ Nutze eine zugängliche offizielle Seite, einen datierten Nutzerbericht und eine
 3. Suche zu jeder Schlüsselbehauptung mit einer Gegenquery nach Grenze, anderer Umgebung oder Gegenbeispiel. Nicht gefunden ist kein Beweis.
 4. Bei Konflikt vergleiche Version, Surface, Konto, Region und Definition. Bleibt er bestehen, behalte beide Seiten und grenze die Übergabe ein.
 5. Übergib eine Seite `candidate` mit Bekanntem, Unbekanntem, Konflikt, Nichtbehauptetem, Stoppgrund und nächster sicherer Aktion.
+
+### Belege
+
+Bewahre Frage, Cutoff mit Zeitzone, Queries, Original- und finale URLs, Zugriffsresultate, Fundstellen und eine atomare Behauptungstabelle auf. Ein Snippet, ein Titel oder ein Link ohne gelesene Fundstelle bleibt ein Hinweis und keine Zitation.
+
+### Reflexion
+
+Welche Aussage wurde schwächer, als du Quelle, Zeitpunkt oder Umfang getrennt hast? Welche nächste Prüfung wäre klein genug, ohne neue Rechte oder private Daten zu verlangen?
+
+## Transferaufgabe
+
+Übertrage die Karte auf „Welche Lernressourcen unterstützen meine nächste Woche Spanisch-Übung?“. Definiere Aufgabe, Zeitraum, zulässige Quellen und eine Aussage, die du ausdrücklich nicht behauptest: keine siebentägige Beherrschung oder garantierte Sprachkompetenz.
+
+## Abnahme-Checkliste
+
+- [ ] Meine Frage nennt Aufgabe, Umfang, Datum und Ausstiegsbedingung.
+- [ ] Jede Schlüsselbehauptung hat Quelle, Fundstelle, Zugriffsstatus und Grenze.
+- [ ] Ich halte Bericht, Hypothese, offizielle Aussage und Unknown getrennt.
+- [ ] Bei Konflikt oder unzugänglicher Quelle liefere ich `candidate`, nicht erfundene Gewissheit.
+
+## Quellen und Wartungsgrenze
+
+Fragen, Evidenzketten und Konfliktprotokolle sind stabile Methoden. Verfügbare Seiten, Produktfakten, Forenbeiträge und Suchergebnisse ändern sich; protokolliere Zugriffstag, Umfang und nächste Prüfung statt sie als zeitlose Fakten zu behandeln.
 
 ## Eigene Abnahme
 

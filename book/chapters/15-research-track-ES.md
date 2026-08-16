@@ -4,11 +4,15 @@
 
 **Estado:** `candidate`. **Experimento:** `draft / not_run`. Este capítulo enseña disciplina de investigación; sus casos públicos son entradas didácticas, no reproducciones locales ni dictámenes oficiales.
 
-## El problema
+## El problema que resuelve este capítulo
 
 «Investiga esto» puede querer decir hallar hechos, comparar opciones, revisar bibliografía, formular una pregunta, escribir un informe o auditar un borrador. Sin acotar primero, un Agent puede convertir fragmentos de búsqueda en conclusiones, tratar una URL inaccesible como leída o obedecer una instrucción escondida en un documento externo.
 
 > La capacidad no es producir una revisión más larga. Es dejar una cadena en la que cada afirmación importante se pueda rastrear hasta una pregunta, fuente, ubicación, nivel de evidencia y revisión humana.
+
+## Objetivos de aprendizaje
+
+Podrás formular una pregunta acotada, registrar fuentes accesibles y límites, y entregar conclusiones solo dentro del alcance que el texto localizado respalda.
 
 ## Convierte el tema en una pregunta respondible
 
@@ -74,6 +78,12 @@ Prepara consultas de tarea o síntoma, límite y entorno. No busques solo el pro
 
 ## Experimento: paquete conflictivo e inaccesible
 
+### Preparación
+
+Reúne una página oficial accesible, un informe de usuario fechado y un enlace deliberadamente inaccesible o conflictivo. No uses cookies, tokens, registros privados ni contactos.
+
+### Tarea
+
 Usa una página oficial accesible, un informe de usuario fechado y un enlace que redirige, exige login o falla. No subas logs, cookies, tokens, contactos ni archivos privados.
 
 1. Escribe tres preguntas candidatas, elige una y fija alcance, corte, zona, inclusión y parada.
@@ -81,6 +91,33 @@ Usa una página oficial accesible, un informe de usuario fechado y un enlace que
 3. Haz una consulta inversa para cada afirmación clave: busca límites, otro entorno o contraejemplo. No encontrarlo no confirma.
 4. Si dos páginas chocan, compara versión, superficie, cuenta, región y definición; conserva ambas y limita la entrega si no se resuelve.
 5. Entrega una página `candidate`: conocido, desconocido, conflicto, no afirmado, parada y siguiente paso seguro.
+
+### Evidencia
+
+Guarda pregunta, fecha de corte con zona horaria, consultas, URL original y final, resultado de acceso, ubicación leída y una tabla de afirmaciones atómicas. Un título o snippet sin texto localizado sigue siendo una pista, no una cita.
+
+### Reflexión
+
+¿Qué afirmación tuvo que reducirse al separar fuente, fecha y alcance? ¿Cuál es la siguiente comprobación mínima que no exige datos privados ni permisos nuevos?
+
+## Problemas reales: una respuesta fluida sin fuente comprobable
+
+Al elegir un modelo, método de estudio o herramienta, un resumen puede mezclar enlaces, versiones e informes. La decisión útil no es qué frase parece convincente, sino qué afirmación tiene respaldo para la tarea, fecha y entorno declarados.
+
+## Tarea de transferencia
+
+Usa la tarjeta para «qué recursos apoyan mi práctica de español la próxima semana». Define tarea, plazo, fuentes permitidas y una afirmación que no harás: no prometer dominio en siete días ni competencia garantizada.
+
+## Lista de aceptación
+
+- [ ] Mi pregunta declara tarea, alcance, fecha y condición de parada.
+- [ ] Cada afirmación clave tiene fuente, ubicación, acceso y límite.
+- [ ] Distingo informe, hipótesis, declaración oficial e incógnita.
+- [ ] Con conflicto o fuente inaccesible entrego `candidate`, no certeza inventada.
+
+## Fuentes y límite de mantenimiento
+
+Las preguntas, cadenas de evidencia y registros de conflicto son métodos estables. Páginas, hechos de producto, foros y búsquedas cambian; registra fecha de acceso, alcance y próxima comprobación.
 
 ## Comprobación propia
 

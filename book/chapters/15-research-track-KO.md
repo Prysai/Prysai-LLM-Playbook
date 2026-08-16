@@ -4,11 +4,15 @@
 
 **상태:** `candidate`. **실험:** `draft / not_run`. 이 장은 연구 규율을 가르치며 공개 사례는 학습 입력일 뿐 로컬 재현이나 공식 원인 판정이 아닙니다.
 
-## 문제
+## 이 장에서 해결하는 문제
 
 “이것을 조사해 줘”는 사실 찾기, 대안 비교, 문헌 검토, 연구 질문 만들기, 보고서 작성, 기존 초안 감사 중 무엇을 뜻할 수 있습니다. 먼저 범위를 좁히지 않으면 Agent는 검색 조각을 결론으로 포장하거나, 접근할 수 없는 URL을 읽었다고 하거나, 외부 문서의 지시를 연구 지시로 받아들일 수 있습니다.
 
 > 필요한 능력은 더 긴 문헌 검토가 아닙니다. 중요한 주장마다 질문, 출처, 위치, 증거 수준, 사람의 검토 기록까지 추적할 수 있는 사슬입니다.
+
+## 학습 목표
+
+범위가 좁은 연구 질문을 만들고, 접근한 source와 limit을 기록하며, 읽어 찾은 문장이 뒷받침하는 범위 안에서만 conclusion을 전달할 수 있습니다.
 
 ## 주제를 답할 수 있는 질문으로 만들기
 
@@ -74,6 +78,12 @@ AI가 그럴듯하게 만든 인용도 증거가 아닙니다. 출처를 열고 
 
 ## 작은 실험: 충돌과 접근 불가 출처 다루기
 
+### 준비
+
+접근 가능한 공식 페이지, 날짜가 있는 사용자 보고, 의도적으로 접근 불가하거나 충돌하는 링크를 준비합니다. cookie, token, 개인 log, contact는 사용하지 않습니다.
+
+### 작업
+
 접근 가능한 공식 페이지 하나, 날짜와 URL이 있는 사용자 보고 하나, redirect/login/error가 나는 링크 하나를 준비합니다. 로그, cookie, token, 연락처, private 파일을 올리지 않습니다.
 
 1. 후보 질문 세 개를 쓰고 하나를 골라 범위, cutoff, 시간대, 포함/제외, 중지를 정합니다.
@@ -81,6 +91,33 @@ AI가 그럴듯하게 만든 인용도 증거가 아닙니다. 출처를 열고 
 3. 핵심 주장마다 역방향 query 하나로 한계, 다른 환경, 반례를 찾습니다. 못 찾았다고 증명되지는 않습니다.
 4. 페이지가 충돌하면 version, surface, account, region, definition을 비교합니다. 해결되지 않으면 양쪽을 남기고 전달 범위를 줄입니다.
 5. known, unknown, conflict, not claimed, 중지 이유, 다음 안전 행동이 있는 한 페이지 `candidate`를 전달합니다.
+
+### 증거
+
+질문, 시간대를 포함한 cutoff, query, original/final URL, access result, 읽은 location, atomic claim table을 보관합니다. 위치를 읽지 않은 title이나 snippet은 citation이 아니라 lead입니다.
+
+### 회고
+
+source, date, scope를 나누자 어떤 claim을 낮춰야 했나요? 개인 data나 새 permission 없이 할 수 있는 가장 작은 다음 check는 무엇인가요?
+
+## 실제 문제: 확인 가능한 source 없는 그럴듯한 답변
+
+model, 학습법, tool을 고를 때 summary는 link, version, report를 섞을 수 있습니다. 중요한 것은 문장의 설득력이 아니라 선언한 task, date, environment에 어떤 claim이 뒷받침되는가입니다.
+
+## 전이 과제
+
+“다음 주 Spanish practice를 지원할 resource는 무엇인가”에 카드를 적용합니다. task, 기간, 허용 source와 함께 7일 숙달이나 보장된 fluency를 주장하지 않는다고 씁니다.
+
+## 수용 체크리스트
+
+- [ ] 질문에 task, scope, date, stop condition이 있다.
+- [ ] key claim마다 source, location, access, limit이 있다.
+- [ ] report, hypothesis, official statement, unknown을 구분한다.
+- [ ] conflict나 접근 불가 source에서는 확신을 만들지 않고 `candidate`로 전달한다.
+
+## 출처 및 유지보수 경계
+
+질문, evidence chain, conflict log는 안정적인 방법입니다. page, product fact, forum, search result는 변하므로 access date, scope, next check를 기록합니다.
 
 ## 스스로 확인하기
 

@@ -4,11 +4,15 @@
 
 **状態：** `candidate`。**実験：** `draft / not_run`。この章は調査の規律を教えます。公開事例は教材であり、ローカル再現や公式の原因判断ではありません。
 
-## 問題
+## この章が解決する問題
 
 「これを調べて」は、事実収集、選択肢比較、文献レビュー、問いの設定、レポート作成、既存下書きの監査のどれを指すか不明です。最初に絞らなければ、Agent は検索断片を結論にしたり、読めない URL を読んだ扱いにしたり、外部資料内の指示に従ったりします。
 
 > 必要なのは長い文献レビューではありません。重要な主張を、問い、情報源、位置、証拠レベル、人のレビューまで追跡できる連鎖です。
+
+## 学習目標
+
+範囲の狭い research question を作り、読めた source と limit を記録し、location が支える scope だけで conclusion を渡せます。
 
 ## テーマを答えられる問いにする
 
@@ -74,6 +78,12 @@ task/symptom、boundary、environment の query を用意します。勝たせ�
 
 ## 小実験：conflict と inaccessible source を扱う
 
+### 準備
+
+読める official page、日付のある user report、意図的に読めないか conflict する link を用意します。cookie、token、private log、contact は使いません。
+
+### タスク
+
 access できる official page、一つの dated user report、redirect/login/error になる link を用意します。log、cookie、token、contact、private file は upload しません。
 
 1. candidate question を三つ書き、一つを選び scope、cutoff、time zone、include/exclude、stop を決める。
@@ -81,6 +91,33 @@ access できる official page、一つの dated user report、redirect/login/er
 3. key claim ごとに reverse query を一つ行い、limit、別 environment、counterexample を探す。見つからないことは証明ではない。
 4. page が conflict するときは version、surface、account、region、definition を比べる。解決しなければ両方を残し delivery を狭める。
 5. known、unknown、conflict、not claimed、stop reason、next safe action を持つ一ページの `candidate` を渡す。
+
+### 証拠
+
+問い、time zone を含む cutoff、query、original/final URL、access result、読んだ location、atomic claim table を残します。location を読んでいない title や snippet は citation ではなく lead のままです。
+
+### 振り返り
+
+source、date、scope を分けたとき、どの claim を弱めましたか。private data や新しい permission を必要としない最小の次の check は何ですか。
+
+## 現実の問題：確認できる source がない流暢な答え
+
+model、学習法、tool を選ぶとき、summary は link、version、report を混ぜることがあります。大事なのは説得力ではなく、宣言した task、date、environment に対してどの claim が支えられるかです。
+
+## 移行タスク
+
+「来週の Spanish practice を支える resource は何か」に card を使います。task、期間、許可された source と、七日での習得や保証された fluency を主張しないことを書きます。
+
+## 受け入れチェックリスト
+
+- [ ] 問いに task、scope、date、stop condition がある。
+- [ ] key claim に source、location、access、limit がある。
+- [ ] report、hypothesis、official statement、unknown を分ける。
+- [ ] conflict や inaccessible source では確信を作らず `candidate` を渡す。
+
+## 出典と保守の境界
+
+問い、evidence chain、conflict log は安定した方法です。page、product fact、forum、search result は変わるため、access date、scope、next check を記録します。
 
 ## 自己確認
 
