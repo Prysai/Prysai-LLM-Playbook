@@ -706,16 +706,18 @@ const localeIsReady = (record) => record?.exists && ['source', 'verified', 'prod
 const localeCanRender = (record) => record?.exists && ['source', 'candidate', 'in-progress', 'verified', 'production-ready'].includes(record.translation_status);
 const localeCourseCoverage = (language) => localeManifest.localization_coverage?.[language];
 const localeCoverageLabel = (language) => {
+  // The manifest counts locally routed translated units; this label deliberately
+  // says "local files" until independent language review is recorded.
   const coverage = localeCourseCoverage(language);
   if (!coverage) return '';
   const units = `${coverage.available_units}/${coverage.total_units}`;
   const ui = {
-    en: { source: `Course: ${units} source units`, reviewPending: 'independent language review pending', registered: 'registered localized units', translated: `Course: ${units} translated units` },
-    zh: { source: `课程：${units} 个源语言单元`, reviewPending: '独立语言审校待完成', registered: '已登记本地化单元', translated: `课程：${units} 个翻译单元` },
-    es: { source: `Curso: ${units} unidades fuente`, reviewPending: 'revisión lingüística independiente pendiente', registered: 'unidades localizadas registradas', translated: `Curso: ${units} unidades traducidas` },
-    ja: { source: `コース：${units} のソース言語ユニット`, reviewPending: '独立した言語レビュー待ち', registered: '登録済みローカライズユニット', translated: `コース：${units} の翻訳ユニット` },
-    ko: { source: `코스: ${units} 소스 언어 유닛`, reviewPending: '독립 언어 검토 대기 중', registered: '등록된 현지화 유닛', translated: `코스: ${units} 번역 유닛` },
-    de: { source: `Kurs: ${units} Quell-Einheiten`, reviewPending: 'unabhängige Sprachprüfung ausstehend', registered: 'registrierte lokalisierte Einheiten', translated: `Kurs: ${units} übersetzte Einheiten` },
+    en: { source: `Course: ${units} source units`, reviewPending: 'independent language review pending', registered: 'registered localized units', translated: `Course route: ${units} local files` },
+    zh: { source: `课程：${units} 个源语言单元`, reviewPending: '独立语言审校待完成', registered: '已登记本地化单元', translated: `课程路线：${units} 个本地文件` },
+    es: { source: `Curso: ${units} unidades fuente`, reviewPending: 'revisión lingüística independiente pendiente', registered: 'unidades localizadas registradas', translated: `Ruta del curso: ${units} archivos locales` },
+    ja: { source: `コース：${units} のソース言語ユニット`, reviewPending: '独立した言語レビュー待ち', registered: '登録済みローカライズユニット', translated: `コースルート：${units} のローカルファイル` },
+    ko: { source: `코스: ${units} 소스 언어 유닛`, reviewPending: '독립 언어 검토 대기 중', registered: '등록된 현지화 유닛', translated: `코스 경로: ${units}개 로컬 파일` },
+    de: { source: `Kurs: ${units} Quell-Einheiten`, reviewPending: 'unabhängige Sprachprüfung ausstehend', registered: 'registrierte lokalisierte Einheiten', translated: `Kursroute: ${units} lokale Dateien` },
   }[effectiveUiLanguage] || { source: '', reviewPending: '', registered: '', translated: '' };
   if (coverage.source_units === coverage.total_units) return ui.source;
   if (coverage.candidate_translation_units || coverage.reviewed_translation_units) {
