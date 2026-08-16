@@ -56,7 +56,7 @@ does not close this gate.
 ## Adoption record
 
 On 2026-08-16 the project owner adopted the attribution-first split proposed in
-[`docs/strategy/license-and-contribution-options-2026-08-15.md`](../../strategy/license-and-contribution-options-2026-08-15.md):
+[`docs/strategy/license-and-contribution-options-2026-08-15.md`](../strategy/license-and-contribution-options-2026-08-15.md):
 content under CC BY 4.0, code under Apache-2.0. All historical commits are by
 the project owner, so no external relicense permission was required. This
 adoption does not relicense third-party assets listed in the asset register.
