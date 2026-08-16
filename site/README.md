@@ -1,9 +1,9 @@
 # Prysai LLM Playbook 展示页
 
-这是 Prysai LLM Playbook 的静态展示页实现，范围仅限 `site/`。页面采用 Swiss editorial 方向：白色/中性背景、近黑文字、单一 Swiss Red `#E4002B`、可见细线网格和左对齐编辑层级。公开页默认英文，支持六个 locale 入口；仓库正在迁移六种内容语言，但运行时 UI 字典目前仍只提供 EN / 中文，ES / JA / KO / DE 会显示明确的 English UI 与内容 fallback 状态，页面不会把入口切片说成整本书或完整 UI 已经六语种化。学习路径面板由 `docs/governance/learning-path.yaml`、`docs/governance/content-status.yaml` 和 `site/content-catalog.json` 生成，`site/learning-path-data.js` 是提交到仓库的生成物；内容身份、语言文件存在性和 fallback 路径由 `site/locale-manifest.js` 生成，两个生成物都不应手工编辑。页面的核心交互是：
+这是 Prysai LLM Playbook 的静态展示页实现，范围仅限 `site/`。页面采用 Swiss editorial 方向：白色/中性背景、近黑文字、单一 Swiss Red `#E4002B`、可见细线网格和左对齐编辑层级。公开页默认英文，并提供 EN、ZH、ES、JA、KO、DE 六种完整界面语言与对应课程路径。首页先让读者选择今天要完成的事、生成一条可直接使用的提示词，再展示课程索引与项目资料；它不会要求新用户先理解仓库目录。学习路径面板由 `docs/governance/learning-path.yaml`、`docs/governance/content-status.yaml` 和 `site/content-catalog.json` 生成，`site/learning-path-data.js` 是提交到仓库的生成物；内容身份和语言路径由 `site/locale-manifest.js` 生成，两个生成物都不应手工编辑。页面的核心交互是：
 
-- 六语言菜单支持 `?lang=en|zh|es|ja|ko|de`。URL 是可分享的第一优先级，`localStorage` 只是没有显式参数时的便利；菜单切换会保留当前路径、查询参数和 hash。EN / 中文会更新 UI 字典，其他 locale 会保留目标内容 locale 并明确提示 UI/内容 fallback；
-- 章节、实验和学习路径链接通过 `content_id + locale` manifest 解析；目标文件缺失时回退到 English source，并通过页面 banner 与链接状态标记 pending。fallback 不等于翻译完成；
+- 六语言菜单支持 `?lang=en|zh|es|ja|ko|de`。URL 是可分享的第一优先级，`localStorage` 只是没有显式参数时的便利；菜单切换会保留当前路径、查询参数和 hash；
+- 章节、实验和学习路径链接通过 `content_id + locale` manifest 解析，并始终停留在所选语言路径；Reader 不会静默把正文切回英文；
 - L0—L6 成长路径标签切换，会更新当前等级的说明与章节入口，并支持方向键、Home/End；
 - 22 章路线按 A—D 四条路线筛选，并保留章节折叠；
 - 实验区展示当前实际存在的 18 个实验，并链接到英文实验索引；

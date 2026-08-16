@@ -129,6 +129,11 @@ try {
 
   await page.goto(`${origin}/`, { waitUntil: 'networkidle' });
   assert.equal(searchRequests.length, 0, 'initial page load fetched the full search index');
+  assert.equal(
+    await page.locator('#start').evaluate((section) => section.previousElementSibling?.id),
+    'top',
+    'the project catalogue appears before the first useful result instead of after it',
+  );
   await noHorizontalOverflow(page, 'desktop showcase');
   // A new reader must see the actual first action without having to discover
   // it by scrolling past the opening explanation. Use a short desktop height

@@ -4307,6 +4307,13 @@ const goalTemplateFor = (goalKey) => (
   || goalTemplates.en?.[goalKey]
 );
 
+// A first-time reader comes here with a purpose, not a need to inspect the
+// repository. Keep the catalogue available, but put it after the first useful
+// result instead of between the hero and the action that the hero promises.
+const projectMap = document.querySelector('#project-map');
+const startSection = document.querySelector('#start');
+if (projectMap && startSection) startSection.after(projectMap);
+
 function wizardCopyKey(goalKey) {
   return { language: 'wizardGoalLanguage', work: 'wizardGoalWork', research: 'wizardGoalResearch', interview: 'wizardGoalInterview', task: 'wizardGoalTask', codex: 'wizardGoalCodex' }[goalKey] || 'wizardGoalLanguage';
 }
