@@ -55,6 +55,7 @@ REQUIRED_COMMANDS = {
     "repository-security-policy": ("{python}", "scripts/validate_repository_security.py"),
     "repository-security-policy-fixtures": ("{python}", "scripts/test_validate_repository_security.py"),
     "locale-release-paths": ("{python}", "scripts/audit_locale_release_paths.py"),
+    "localized-practice-cards": ("{python}", "scripts/validate_localized_practice_cards.py"),
     "universal-seam-fixture": ("{python}", "scripts/validate_universal_seam_fixture.py"),
     "universal-seam-fixture-tests": ("{python}", "scripts/test_universal_seam_fixture.py"),
     "three-task-smoke-fixture": ("{python}", "scripts/test_three_task_smoke_fixture.py"),
