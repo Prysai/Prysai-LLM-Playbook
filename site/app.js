@@ -4706,6 +4706,24 @@ Object.assign(copy.en, {
   first30Title: 'See why a clear prompt needs a human check.',
   first30Intro: 'Use any chat model. You will give it one small rewriting task, then check whether it preserved the facts instead of making helpful-sounding details up.'
 });
+Object.assign(copy.en, {
+  heroScope: 'One transferable method, with Codex as the current flagship practice track. Named platforms need their own current sources and runnable evidence before they become lessons.'
+});
+Object.assign(copy.zh, {
+  heroScope: '一套可迁移的方法，以 Codex 为当前旗舰实践轨道。命名平台在成为课程前，都需要各自最新的来源与可运行证据。'
+});
+Object.assign(copy.es, {
+  heroScope: 'Un método transferible, con Codex como la actual pista práctica principal. Las plataformas nombradas necesitan fuentes actuales propias y evidencia ejecutable antes de convertirse en lecciones.'
+});
+Object.assign(copy.ja, {
+  heroScope: '移行可能な方法を一つ、現在の主要な実践トラックは Codex です。名前を挙げた各プラットフォームは、レッスンになる前に独自の最新ソースと実行可能な証拠を必要とします。'
+});
+Object.assign(copy.ko, {
+  heroScope: '전이 가능한 방법 하나와 현재의 대표 실습 트랙인 Codex를 제공합니다. 이름을 언급한 플랫폼은 수업이 되기 전에 각자의 최신 출처와 실행 가능한 증거가 필요합니다.'
+});
+Object.assign(copy.de, {
+  heroScope: 'Eine übertragbare Methode mit Codex als aktuellem zentralen Übungsweg. Benannte Plattformen benötigen eigene aktuelle Quellen und ausführbare Nachweise, bevor sie zu Lektionen werden.'
+});
 Object.assign(copy.zh, {
   navFirst30: '5 分钟提示词练习',
   first30Eyebrow: '5 分钟 LLM 提示词练习',
