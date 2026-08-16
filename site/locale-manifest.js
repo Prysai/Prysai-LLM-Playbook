@@ -2993,6 +2993,110 @@ window.CODEX_LOCALE_MANIFEST = {
         }
       }
     },
+    "platform-adapter-guide-route": {
+      "kind": "learning-route",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
+      "stem": "book/routes/platform-adapter-guide",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "book/routes/platform-adapter-guide-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/routes/platform-adapter-guide-ZH.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "es": {
+          "path": "book/routes/platform-adapter-guide-ES.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "ja": {
+          "path": "book/routes/platform-adapter-guide-JA.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "ko": {
+          "path": "book/routes/platform-adapter-guide-KO.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "de": {
+          "path": "book/routes/platform-adapter-guide-DE.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "worktree-2026-08-16"
+        }
+      }
+    },
+    "french-practice-loop": {
+      "kind": "supplemental-guide",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
+      "stem": "book/french-practice-loop",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "book/french-practice-loop-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/french-practice-loop-ZH.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "es": {
+          "path": "book/french-practice-loop-ES.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "ja": {
+          "path": "book/french-practice-loop-JA.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "ko": {
+          "path": "book/french-practice-loop-KO.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "de": {
+          "path": "book/french-practice-loop-DE.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "worktree-2026-08-16"
+        }
+      }
+    },
     "field-problems-index-2026-08-10": {
       "kind": "field-note",
       "reader_type": "field-note",
@@ -4656,6 +4760,110 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         }
       }
+    },
+    "prysai-language-partner": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-language-partner/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-language-partner/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-language-partner/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-language-partner/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-language-partner/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-language-partner/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-language-partner/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-interview-rehearsal": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-interview-rehearsal/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-interview-rehearsal/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-interview-rehearsal/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-interview-rehearsal/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-interview-rehearsal/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-interview-rehearsal/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-interview-rehearsal/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
     }
   },
   "aliases": {
@@ -5059,6 +5267,18 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-017-skill-discovery-audit-JA.md": "lab-017-skill-discovery-audit",
     "book/labs/lab-017-skill-discovery-audit-KO.md": "lab-017-skill-discovery-audit",
     "book/labs/lab-017-skill-discovery-audit-DE.md": "lab-017-skill-discovery-audit",
+    "book/routes/platform-adapter-guide-EN.md": "platform-adapter-guide-route",
+    "book/routes/platform-adapter-guide-ZH.md": "platform-adapter-guide-route",
+    "book/routes/platform-adapter-guide-ES.md": "platform-adapter-guide-route",
+    "book/routes/platform-adapter-guide-JA.md": "platform-adapter-guide-route",
+    "book/routes/platform-adapter-guide-KO.md": "platform-adapter-guide-route",
+    "book/routes/platform-adapter-guide-DE.md": "platform-adapter-guide-route",
+    "book/french-practice-loop-EN.md": "french-practice-loop",
+    "book/french-practice-loop-ZH.md": "french-practice-loop",
+    "book/french-practice-loop-ES.md": "french-practice-loop",
+    "book/french-practice-loop-JA.md": "french-practice-loop",
+    "book/french-practice-loop-KO.md": "french-practice-loop",
+    "book/french-practice-loop-DE.md": "french-practice-loop",
     "docs/research/field-problems-index-2026-08-10.md": "field-problems-index-2026-08-10",
     "docs/research/field-problems-forums-2026-08-10.md": "field-problems-forums-2026-08-10",
     "docs/research/codex-field-cases-current-review-2026-08-12.md": "codex-field-cases-current-review-2026-08-12",
@@ -5090,7 +5310,9 @@ window.CODEX_LOCALE_MANIFEST = {
     "skills/prysai-practice-target/SKILL.md": "prysai-practice-target",
     "skills/prysai-interruption-checkpoint/SKILL.md": "prysai-interruption-checkpoint",
     "skills/prysai-shift-handoff/SKILL.md": "prysai-shift-handoff",
-    "skills/prysai-platform-observation-record/SKILL.md": "prysai-platform-observation-record"
+    "skills/prysai-platform-observation-record/SKILL.md": "prysai-platform-observation-record",
+    "skills/prysai-language-partner/SKILL.md": "prysai-language-partner",
+    "skills/prysai-interview-rehearsal/SKILL.md": "prysai-interview-rehearsal"
   },
   "routed_status_counts": {
     "chapters": 22,
