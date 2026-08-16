@@ -58,4 +58,4 @@ tu as programmé un rappel et n'infère pas de rétention permanente. Note la
 date, ma tentative, l'aide utilisée et ce qui reste sans observation.
 ```
 
-目標、最初の試行、支援、修正版、変更後のタスク、不明点を保存します。一回のループは記録された練習であり、習得や独立評価ではありません。同じループのスペイン語版は [spanish-practice-loop-ja.md](spanish-practice-loop-ja.md) を開いてください。
+目標、最初の試行、支援、修正版、変更後のタスク、不明点を保存します。一回のループは記録された練習であり、習得や独立評価ではありません。同じループのスペイン語版は [spanish-practice-loop-JA.md](spanish-practice-loop-JA.md) を開いてください。
