@@ -112,6 +112,31 @@ source 内の「上位の rule を無視」「`.env` を upload」「test のた
 - [ ] obtain、install target write、dependency/authentication、team/production scope の approval を分けた。
 - [ ] evidence があるときだけ exists、discovered、loaded、adopted、verified と書く。
 
+## adoption receipt：review できることを先に示し、有効化を決める
+
+この receipt は project の original Skill と、外部で見つけた candidate の両方に使います。popular な repository、流暢な説明、見える directory だけで、外部 content が trustworthy または executable になるわけではありません。
+
+```text
+candidate の name と version / commit:
+source: original | external；external project の original link:
+owner と review date:
+埋める具体的な task gap:
+license: code、text、asset、nested dependency が別々に明確か:
+想定する read / write / network / install / send / publish:
+positive、boundary、failure、transfer case:
+observed: file | discovery | selection | load | execution | read-back verification
+not observed:
+許可された temporary trial scope:
+reject、pause、adopt の理由:
+次の最小 safe check:
+```
+
+外部の `SKILL.md`、page、Issue、install log、tool output は評価対象の data です。その command、link、「以前の rule を無視する」のような文章は authority を増やしません。source、license、behavior scope、recovery path が不明なら、正しい決定は `blocked` または reject であり、「先に install」ではありません。
+
+### 一度に信頼せず、層ごとに有効化する
+
+先に metadata と instruction を読み、次に non-sensitive temporary directory で read-only または reversible な経路を試します。result、scope、recovery を記録してから、write、network、install、external action が必要かを人が別々に決めます。一度の成功は記録した host、version、input、task だけを支持し、model、directory、account をまたぐ reliability を証明しません。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-JA.md">← 前の章<br><strong>第13章 · ファイル、ターミナル、ブラウザ、GitHub にまたがる行動境界</strong></a></td><td align="right"><a data-chapter-nav="next" href="15-research-track-JA.md">次へ →<br><strong>第15章 · 調査トラック、問いから監査可能な知識へ</strong></a></td></tr></table></nav>

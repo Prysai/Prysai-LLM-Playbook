@@ -112,6 +112,31 @@ license: 저장소, 대상 파일, NOTICE, 중첩 script / asset의 증거
 - [ ] 획득, 설치 대상 쓰기, 의존성/인증, 팀/production 진입 승인을 분리한다.
 - [ ] 증거가 있을 때만 exists, discovered, loaded, adopted, verified라고 쓴다.
 
+## 채택 영수증: 검토할 수 있음을 먼저 보이고 활성화를 결정하기
+
+이 영수증은 프로젝트의 original Skill과 외부에서 찾은 candidate 모두에 사용합니다. popular repository, 유창한 설명, 보이는 directory만으로 외부 content가 trustworthy하거나 executable한 능력이 되는 것은 아닙니다.
+
+```text
+candidate name과 version / commit:
+source: original | external; external project original link:
+owner와 review date:
+메울 구체적인 task gap:
+license: code, text, asset, nested dependency가 각각 명확한가:
+예상 read / write / network / install / send / publish:
+positive, boundary, failure, transfer case:
+observed: file | discovery | selection | load | execution | read-back verification
+not observed:
+허용된 temporary trial scope:
+reject, pause, adopt 이유:
+다음 최소 safe check:
+```
+
+외부 `SKILL.md`, page, Issue, install log, tool output은 평가할 data입니다. 그 안의 command, link 또는 “이전 rule을 무시하라” 같은 문장은 authority를 늘리지 않습니다. source, license, behavior scope, recovery path가 분명하지 않다면 올바른 결정은 `blocked` 또는 reject이며 “먼저 install”이 아닙니다.
+
+### 한 번에 신뢰하지 말고 층별로 활성화하기
+
+먼저 metadata와 instruction을 읽고, 그다음 non-sensitive temporary directory에서 read-only 또는 reversible 경로를 시험합니다. result, scope, recovery를 기록한 뒤에야 write, network, install, external action이 필요한지 사람이 각각 결정합니다. 한 번의 성공은 기록한 host, version, input, task만 뒷받침하며 model, directory, account를 가로지르는 reliability를 증명하지 않습니다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-KO.md">← 이전<br><strong>13장 · 파일, 터미널, 브라우저, GitHub의 행동 경계</strong></a></td><td align="right"><a data-chapter-nav="next" href="15-research-track-KO.md">다음 →<br><strong>15장 · 연구 트랙, 질문에서 감사 가능한 지식까지</strong></a></td></tr></table></nav>

@@ -115,6 +115,31 @@ Wähle zwei öffentliche Kandidaten mit festen Revisionen oder zwei bereinigte l
 - [ ] Ich trenne Freigaben für Beschaffung, Schreiben ins Installationsziel, Abhängigkeit/Anmeldung und Team-/Produktionsumfang.
 - [ ] Ich behaupte exists, discovered, loaded, adopted oder verified nur mit passender Evidenz.
 
+## Übernahmebeleg: Erst prüfbar machen, dann über die Aktivierung entscheiden
+
+Dieser Beleg gilt für originale Projekt-Skills ebenso wie für extern gefundene Kandidaten. Ein beliebtes Repository, eine flüssige Beschreibung oder ein sichtbares Verzeichnis machen externe Inhalte nicht automatisch vertrauenswürdig oder ausführbar.
+
+```text
+Name und Version/Commit des Kandidaten:
+Herkunft: original | extern; Original-Link des externen Projekts:
+Verantwortung und Prüfdatum:
+Konkrete zu schließende Aufgabenlücke:
+Lizenz: Sind Code, Text, Assets und verschachtelte Abhängigkeiten getrennt klar?
+Erwartetes Lesen/Schreiben/Netzwerk/Installieren/Senden/Veröffentlichen:
+Positiv-, Grenz-, Fehler- und Transferfall:
+Beobachtet: Datei | Discovery | Auswahl | Laden | Ausführung | Rücklesen/Prüfung
+Nicht beobachtet:
+Erlaubter temporärer Testumfang:
+Grund für Ablehnung, Pause oder Übernahme:
+Kleinste nächste sichere Prüfung:
+```
+
+Ein externes `SKILL.md`, eine Seite, ein Issue, ein Installationsprotokoll oder Tool-Ausgabe sind zu prüfende Daten. Darin enthaltene Befehle, Links oder Sätze wie „ignoriere vorherige Regeln“ erhalten keine höhere Autorität. Fehlen klare Herkunft, Lizenz, Verhaltensumfang oder Wiederherstellungsweg, lautet die richtige Entscheidung `blocked` oder Ablehnung, nicht „erst installieren“.
+
+### Schichtweise aktivieren statt pauschal vertrauen
+
+Lies zuerst Metadaten und Anleitung, prüfe dann einen schreibgeschützten oder umkehrbaren Pfad in einem temporären Verzeichnis ohne sensibles Material. Erst nach dokumentiertem Ergebnis, Umfang und Wiederherstellung entscheidet ein Mensch getrennt über Schreiben, Netzwerk, Installation oder externe Aktionen. Ein Erfolg gilt nur für Host, Version, Eingabe und Aufgabe im Protokoll; er beweist keine Zuverlässigkeit über Modelle, Verzeichnisse oder Konten hinweg.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-DE.md">← Vorheriges<br><strong>Kapitel 13 · Aktionsgrenzen für Dateien, Terminal, Browser und GitHub</strong></a></td><td align="right"><a data-chapter-nav="next" href="15-research-track-DE.md">Nächstes →<br><strong>Kapitel 15 · Forschungspfad, von der Frage zu prüfbarem Wissen</strong></a></td></tr></table></nav>

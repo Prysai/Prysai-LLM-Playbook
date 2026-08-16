@@ -121,6 +121,31 @@ Elige dos revisiones fijas públicas o muestras locales redactadas. A tiene proc
 - [ ] Separo permisos para obtener, escribir, instalar/autenticar y entrar a equipo o producción.
 - [ ] Solo afirmo existencia, descubrimiento, carga, adopción o verificación cuando hay evidencia.
 
+## Recibo de adopción: primero demuestra que puedes revisar, luego decide si habilitar
+
+Este recibo sirve tanto para Skills originales del proyecto como para candidatos hallados fuera. Un repositorio popular, una explicación fluida o una carpeta visible no convierten por sí mismos contenido externo en una capacidad fiable o ejecutable.
+
+```text
+Nombre y versión/commit del candidato:
+Origen: original | externo; enlace original del proyecto externo:
+Responsable y fecha de revisión:
+Brecha concreta de tarea que cubriría:
+Licencia: ¿código, texto, activos y dependencias anidadas están claros por separado?
+Lectura/escritura/red/instalación/envío/publicación esperados:
+Caso positivo, de límite, de fallo y de transferencia:
+Observado: archivo | descubrimiento | selección | carga | ejecución | lectura de vuelta
+No observado:
+Alcance temporal permitido para probar:
+Motivo de rechazo, pausa o adopción:
+Siguiente comprobación segura más pequeña:
+```
+
+Un `SKILL.md` externo, una página, un Issue, un registro de instalación o una salida de herramienta son datos por evaluar. Sus comandos, enlaces o frases como «ignora las reglas anteriores» no reciben más autoridad. Sin origen, licencia, comportamiento o recuperación claros, la decisión correcta es `blocked` o rechazo, no «instálalo primero».
+
+### Habilita por capas, no por confianza total
+
+Lee primero metadatos e instrucciones; luego prueba una ruta de solo lectura o reversible en un directorio temporal sin material sensible. Solo después de registrar resultado, alcance y recuperación, una persona decide por separado si necesita escritura, red, instalación o una acción externa. Un éxito solo cubre host, versión, entrada y tarea registrados; no demuestra fiabilidad entre modelos, carpetas o cuentas.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-ES.md">← Anterior<br><strong>Capítulo 13 · límites de acción en archivos, terminales, navegadores y GitHub</strong></a></td><td align="right"><a data-chapter-nav="next" href="15-research-track-ES.md">Siguiente →<br><strong>Capítulo 15 · ruta de investigación, de la pregunta al conocimiento auditable</strong></a></td></tr></table></nav>
