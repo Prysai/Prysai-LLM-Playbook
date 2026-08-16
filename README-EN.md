@@ -6,8 +6,9 @@
 
 # Prysai LLM Playbook — From First Task to Reliable Work
 
-License: curriculum text and teaching assets are CC BY-NC 4.0 unless a file
-states otherwise. See [`LICENSE`](LICENSE) and the [licensing boundary](docs/sources/licensing.md).
+License: curriculum text and teaching assets are CC BY 4.0; scripts and
+tooling are Apache-2.0, unless a file states otherwise. See [`LICENSE`](LICENSE),
+[`LICENSE-CODE`](LICENSE-CODE), and the [licensing boundary](docs/sources/licensing.md).
 
 > Learn a transferable method for reliable work with language models, then
 > practise it most deeply in Codex, the project's flagship track.
