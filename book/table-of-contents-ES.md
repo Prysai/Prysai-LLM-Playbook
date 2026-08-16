@@ -4,7 +4,7 @@
 
 Esta es una ruta de lectura en español, no una traducción completa del libro.
 El catálogo canónico tiene 22 capítulos `candidate` y 18 Labs `draft`; en este
-momento existen 13 capítulos y 11 Labs en español. Cada enlace de esta página
+momento existen 14 capítulos y 11 Labs en español. Cada enlace de esta página
 apunta al mismo contenido en español. Cuando no hay un archivo `-ES`, se indica
 como no disponible en vez de enlazar a otro capítulo o cambiar de idioma.
 
@@ -47,7 +47,7 @@ transferencia.
 | 11 — Diseñar un Skill realmente útil | [Disponible: capítulo 11](chapters/11-designing-a-skill-ES.md) · `candidate / in-progress` |
 | 12 — El bucle, el estado y las condiciones de parada del Agent | [Disponible: capítulo 12](chapters/12-agent-loop-and-stop-ES.md) · `candidate / in-progress` |
 | 13 — Límites de acción para archivos, terminal, navegador y GitHub | [Disponible: capítulo 13](chapters/13-action-boundaries-ES.md) · `candidate / in-progress` |
-| 14 — Descubrir, instalar y auditar Skills externos | Aún no existe archivo español. |
+| 14 — Descubrir, instalar y auditar Skills externos | [Disponible: capítulo 14](chapters/14-discover-and-audit-skills-ES.md) · `candidate / in-progress` |
 | 15 — Ruta de investigación: de la pregunta al conocimiento auditable | Aún no existe archivo español. |
 | 16 — Ruta de ingeniería: de la idea al software fiable | Aún no existe archivo español. |
 | 17 — Ruta de marketing: de entender el producto a experimentar con crecimiento | Aún no existe archivo español. |

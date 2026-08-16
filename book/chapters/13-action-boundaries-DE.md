@@ -49,5 +49,5 @@ Bewahre Grenzkarte, Ausgangszustand, Diff, Check-Ausgabe, nicht ausgeführte D/E
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop-DE.md">← Vorheriges<br><strong>Kapitel 12 · Agent-Schleife, Zustand und Stoppbedingungen</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-DE.md">Nächstes Kapitel in Arbeit →<br><strong>Verfügbarkeit von Kapitel 14 ansehen</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop-DE.md">← Vorheriges<br><strong>Kapitel 12 · Agent-Schleife, Zustand und Stoppbedingungen</strong></a></td><td align="right"><a data-chapter-nav="next" href="14-discover-and-audit-skills-DE.md">Nächstes →<br><strong>Kapitel 14 · Externe Skills finden, installieren und prüfen</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->

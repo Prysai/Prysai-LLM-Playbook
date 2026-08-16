@@ -49,5 +49,5 @@ Agent はファイルを読み、編集し、コマンドを実行し、commit�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop-JA.md">← 前の章<br><strong>第12章 · Agent のループ、状態、停止条件</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-JA.md">次の章は準備中 →<br><strong>第14章の提供状況を見る</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop-JA.md">← 前の章<br><strong>第12章 · Agent のループ、状態、停止条件</strong></a></td><td align="right"><a data-chapter-nav="next" href="14-discover-and-audit-skills-JA.md">次へ →<br><strong>第14章 · 外部 Skill を見つけ、導入前に監査する</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->
