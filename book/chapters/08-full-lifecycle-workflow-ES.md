@@ -4,7 +4,7 @@
 
 **Estado:** `candidate`. Este capítulo describe un flujo que conserva evidencia y reglas de recuperación. El experimento comparativo sigue `not_run`: el material enseña un método, no registra una ejecución real de Codex, un cliente ni una publicación.
 
-## El problema
+## El problema que resuelve este capítulo
 
 Pedir a un modelo que empiece a escribir es fácil. Terminar un trabajo útil es otra tarea. Un resultado puede parecer sano mientras el objetivo sigue siendo vago, las comprobaciones apuntan al archivo equivocado o nadie sabe cuál fue el último cambio aceptado.
 
@@ -25,6 +25,10 @@ Al terminar podrás:
 - conservar el último estado bueno y reintentar solo bajo una condición definida;
 - distinguir evidencia de compilación, ejecución, aspecto visual, fuentes, seguridad y aceptación de usuarios; y
 - entregar un resumen que diga tanto lo realizado como lo no realizado.
+
+## Problemas reales: el flujo puede fallar entre dos éxitos visibles
+
+Un inicio de sesión, un selector de modelo o una comprobación que empezó pueden parecer avance cuando todavía falta el siguiente estado necesario. Los síntomas públicos que se tratan más abajo no diagnostican un producto ni reproducen esta ejecución: ayudan a elegir una primera observación segura, como revisar ruta y diff tras una interrupción, distinguir el intercambio del cliente tras el navegador o pedir autorización nueva antes de una modificación persistente.
 
 ## 1. Las fases transportan evidencia
 
@@ -226,11 +230,31 @@ Para comparar «pide al modelo que edite» con «escribe primero el protocolo»,
 
 ## Experimento y caso de fallo
 
-En una carpeta desechable, toma una tarea de documentación pequeña. Ejecuta dos variantes: una petición directa y otra con el contrato, los puntos de control y una comprobación elegida. Guarda ambos primeros intentos, diffs, órdenes, códigos de salida, duración real y cualquier corrección. No inventes tiempos o costes ausentes: escribe `unavailable`.
+### Preparación
+
+En una carpeta desechable, sin remoto, secretos ni datos de clientes, guarda un texto inicial, una pregunta de aceptación y un checkpoint local. Acordad antes un límite de espera y una forma segura de interrumpir. No instales nada, no inicies sesión y no envíes nada a terceros.
+
+### Tarea
+
+Toma una tarea de documentación pequeña. Ejecuta dos variantes: una petición directa y otra con el contrato, los puntos de control y una comprobación elegida. Guarda ambos primeros intentos, diffs, órdenes, códigos de salida, duración real y cualquier corrección. No inventes tiempos o costes ausentes: escribe `unavailable`.
 
 Provoca un timeout, una entrada cambiada, un permiso bloqueado o una salida de escritura local desconocida. Conserva el intento interrumpido, revisa el destino antes de repetir y marca la comparación `not_comparable` si cambiaron condiciones congeladas. Un éxito posterior no repara retroactivamente la comparabilidad.
 
 Tres tareas pequeñas no prueban eficiencia general, calidad universal ni superioridad de un modelo. Un enlace que se resuelve tampoco prueba aprendizaje, publicación o adopción.
+
+### Evidencia
+
+Conserva para cada intento la entrada y aceptación congeladas, acciones permitidas, número de checkpoint, petición o protocolo, rutas cambiadas, diff, orden con directorio y código de salida, nota de revisión y observaciones ausentes. Si no se ejecutó una variante, registra `not_run`; una respuesta fluida no reconstruye una ejecución ausente.
+
+### Reflexión
+
+- ¿En qué checkpoint se conocía realmente el estado y cuál solo se suponía?
+- ¿Qué afirmación apoyaba un diff y cuál exigía una ejecución o una persona lectora?
+- ¿Qué efecto secundario habría exigido una autorización nueva y acotada?
+
+## Tarea de transferencia
+
+Aplica el mismo recorrido a una tarea no técnica: mejora un texto propio, revisa una lista pequeña de fuentes o planifica práctica de idioma. Conserva objetivo, entradas permitidas, efectos prohibidos, checkpoints y entrega. Cambia solo la aceptación específica: claridad para una lectora, fuente e incertidumbre para investigación, o recuperación diferida sin ayuda para práctica de idioma. Escribe también lo que la práctica no demuestra.
 
 ## Lista de aceptación
 
@@ -240,6 +264,10 @@ Tres tareas pequeñas no prueban eficiencia general, calidad universal ni superi
 - [ ] Puedo separar compilación, ejecución, visual, fuente, seguridad y aceptación de usuarios.
 - [ ] Puedo detener una instalación, reinicio, despliegue o escritura externa no solicitados.
 - [ ] Puedo entregar lo completado, lo no realizado, lo bloqueado y lo no verificado.
+
+## Fuentes y límite de mantenimiento
+
+La secuencia de flujo, los checkpoints y la separación entre afirmación y evidencia son el método estable de este proyecto. Las superficies de producto, el comportamiento de cuentas y herramientas, la disponibilidad de modelos y los síntomas comunitarios son hechos cambiantes. Revisa las [tarjetas oficiales](../evidence-library-ES.md#source-notes) y el [índice de problemas de campo](../evidence-library-ES.md#source-notes) antes de afirmar algo actual sobre un producto. Esas fuentes no sustituyen una ejecución local ni una observación independiente de aprendizaje.
 
 <!-- chapter-navigation:start -->
 <hr>
