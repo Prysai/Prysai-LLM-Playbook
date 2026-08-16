@@ -989,6 +989,26 @@ try {
   await noHorizontalOverflow(chineseLab004Page, 'mobile Chinese Lab 004 Reader');
   await chineseLab004Page.close();
 
+  const chineseBookEntryPage = await context.newPage();
+  await chineseBookEntryPage.setViewportSize({ width: 390, height: 844 });
+  await chineseBookEntryPage.goto(`${origin}/site/reader.html?path=book%2FREADME-ZH.md&lang=zh`, { waitUntil: 'networkidle' });
+  await chineseBookEntryPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.equal(await chineseBookEntryPage.locator('[data-reader-language]').inputValue(), 'zh', 'Chinese book entry loses the requested interface language');
+  const chineseFirstChapterLink = chineseBookEntryPage.locator('[data-reader-article] a[href*="book%2Fchapters%2F01-gpt-and-codex-ZH.md&lang=zh"]');
+  assert.equal(await chineseFirstChapterLink.isVisible(), true, 'Chinese book entry does not route the first chapter to its available Chinese source');
+  assert.match(await chineseBookEntryPage.locator('[data-reader-article]').innerText(), /不会自动切换到英文正文/, 'Chinese book entry does not state the no-English-content-fallback boundary');
+  await noHorizontalOverflow(chineseBookEntryPage, 'mobile Chinese book entry');
+  await chineseBookEntryPage.close();
+
+  const chineseSafeFixturePage = await context.newPage();
+  await chineseSafeFixturePage.setViewportSize({ width: 390, height: 844 });
+  await chineseSafeFixturePage.goto(`${origin}/site/reader.html?path=book%2Froutes%2Ffirst-safe-change-ZH.md&lang=zh`, { waitUntil: 'networkidle' });
+  await chineseSafeFixturePage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  const chineseLab001Link = chineseSafeFixturePage.locator('[data-reader-article] a[href*="book%2Flabs%2Flab-001-first-safe-task-ZH.md&lang=zh"]');
+  assert.equal(await chineseLab001Link.isVisible(), true, 'Chinese safe-fixture route does not continue to the available Chinese Lab 001');
+  await noHorizontalOverflow(chineseSafeFixturePage, 'mobile Chinese safe-fixture route');
+  await chineseSafeFixturePage.close();
+
   const chineseSearchPage = await context.newPage();
   await chineseSearchPage.setViewportSize({ width: 390, height: 844 });
   await chineseSearchPage.goto(`${origin}/site/index.html?lang=zh`, { waitUntil: 'networkidle' });

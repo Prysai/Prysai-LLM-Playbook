@@ -26,7 +26,7 @@ assets do not fill those gaps.
 | No observable first-task feedback loop | [Field Report form](../../.github/ISSUE_TEMPLATE/field-report.yml) and [first-task pilot protocol](first-task-pilot-protocol-v1.md) record only sanitized, bounded observations. | A working public feedback channel, activation rate, demand, satisfaction, or learner outcome. |
 | Lab 018 had weak delayed/unseen control | [Pre-authored delayed card pool](lab-018-delayed-card-pool-v1.md), fixed delay window, assignment record, exposure record, and condition-blind second-score rule. | Equivalent task difficulty, rubric reliability, language fluency, durable retention, or an AI-tutor effect. |
 | Home page buried the primary action and repeated visual cards | The primary route is compacted, mobile routes are reduced to one action plus one exploration path, and homepage visual cards are reduced to two complementary originals. | Reader comprehension, accessibility in assistive technology, browser compatibility, or conversion. |
-| Locale picker over-signalled coverage | ES/JA/KO/DE visibly declare an English-UI fallback before selection. | Reviewed translations or six-language parity. |
+| Locale picker over-signalled coverage | ES/JA/KO/DE visibly declare partial coverage before selection; unavailable course units now remain in the selected locale instead of silently rendering English content. | Reviewed translations or six-language parity. |
 
 ## P2 — unresolved, correctly visible work
 

@@ -24,7 +24,7 @@ translations are not completed pages?
 | Reader and search exposed Lab front matter as reader-facing text | A leading content-identity comment prevented first-line-only front-matter detection | Allowed leading HTML comments before the opening front-matter fence in both consumers and added regression assertions |
 | Lab number looked like learning progression | Number order crosses L2, L3, L4, L5, and L6 placements | Added visible `catalog order, not a prerequisite chain` language and kept learning-path ownership separate |
 | Lab index conflated exercise level with path placement | Labs 008 and 010 showed L3 while first used at L4 and L6 | Split `Exercise level` from `First used in path` |
-| Labs 001, 002, 006, and 014–017 claimed nonexistent translations were `in-progress / full` | Locale records named missing files | Changed missing locales to `not-started / route-only` with explicit English fallback |
+| Labs 001, 002, 006, and 014–017 claimed nonexistent translations were `in-progress / full` | Locale records named missing files | Changed missing locales to `not-started / route-only`; the current Reader uses an explicit same-locale unavailable state, never an English-content fallback |
 | Chinese indexes stopped before Lab 018 or claimed only 13 Labs | `book/labs/README.md` and Chinese TOC | Added 014–018 as English-source entries without claiming Chinese translation |
 | New Labs lacked direct chapter practice routes | Governance mappings existed without reader-facing entry points | Linked Labs 014, 016, 017, and 015 from Chapters 10, 13, 14, and 19 |
 
@@ -36,10 +36,11 @@ order, not a prerequisite chain`; the shell used `Lab catalog navigation`, no
 embedded Lab footer was duplicated, and no horizontal overflow occurred.
 
 At 390 × 844, Lab 009 exposed the pre-article Lab sequence, progress, Previous,
-and Next controls without horizontal overflow. A Chinese request for Lab 018
-displayed the English source, set requested/effective locales to `zh`/`en`, and
-showed the Chinese fallback notice. The browser recorded no console or page
-errors during these checks.
+and Next controls without horizontal overflow. This historical observation was
+superseded by the current same-locale Reader rule: a request for an unavailable
+Chinese Lab now remains `zh`, shows an explicit unavailable state, and links
+back to the Chinese overview instead of rendering English content. The browser
+recorded no console or page errors during the original checks.
 
 The repository-level `test_reader_lab_navigation.py` fixture now protects the
 18-item manifest sequence, first/middle/last identities, desktop and mobile

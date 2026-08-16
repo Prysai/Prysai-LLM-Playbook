@@ -2,7 +2,7 @@
 
 # Prysai 大模型实战手册：书稿
 
-> 简体中文书稿入口（`ZH`）。入口、序言、目录、十章、七项实验和一条新手安全路线已有中文候选译文；这不代表整本书已经完成中文或六语言翻译。
+> 简体中文书稿入口（`ZH`）。入口、序言、目录、12 章、9 项实验和一条新手安全路线已有中文候选译文；这不代表整本书已经完成中文或六语言翻译。
 
 <!-- language-switcher:start -->
 **语言：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
@@ -34,9 +34,9 @@
 
 | 位置 | 内容 | 当前语言迁移状态 |
 |---|---|---|
-| `book/chapters/` | 22 章主线章节 | 22 章英文源文件齐全；当前第 1–10 章有简体中文候选译文，独立语言审校仍待完成 |
-| `book/labs/` | 18 个实验 | 18 个英文源文件齐全；当前实验 001、002、003、004、007、011、013 有简体中文候选译文，独立语言审校仍待完成 |
-| `book/table-of-contents-ZH.md` | 中文阅读目录与章节入口 | 已列出第 1–10 章与七项 Lab 的中文候选入口；其他正文仍在迁移中 |
+| `book/chapters/` | 22 章主线章节 | 22 章英文源文件齐全；当前第 1–12 章有简体中文候选译文，独立语言审校仍待完成 |
+| `book/labs/` | 18 个实验 | 18 个英文源文件齐全；当前实验 001–007（不含 008）、011、013 有简体中文候选译文，独立语言审校仍待完成 |
+| `book/table-of-contents-ZH.md` | 中文阅读目录与章节入口 | 已列出第 1–12 章与九项 Lab 的中文候选入口；其他正文仍在迁移中 |
 | `book/routes/first-safe-change-ZH.md` | 中文新手安全路线 | 完整初稿，迁移状态为 `in-progress`；独立语言审校待完成 |
 | `book/README-ZH.md` | 本中文书稿入口 | 迁移状态为 `in-progress` |
 | `book/preface-ZH.md` | 中文序言 | 迁移状态为 `in-progress` |
@@ -47,28 +47,28 @@
 
 如果你是第一次使用这套材料，按这一条候选路径阅读：
 
-第 1 章：先理解 GPT，再理解 Codex（中文版本尚未提供） →
-实验 011：GPT 与 Codex 边界（中文版本尚未提供） →
-第 2 章：第一个安全、可验证的任务（中文版本尚未提供） →
+[第 1 章：先理解 GPT，再理解 Codex](chapters/01-gpt-and-codex-ZH.md) →
+[实验 011：GPT 与 Codex 边界](labs/lab-011-gpt-codex-boundaries-ZH.md) →
+[第 2 章：第一个安全、可验证的任务](chapters/02-first-safe-task-ZH.md) →
 [第一次安全改动](routes/first-safe-change-ZH.md) →
-实验 001：做一次安全的 README 改动（中文版本尚未提供） →
-第 3 章：任务协议（中文版本尚未提供） →
-实验 002：任务协议（中文版本尚未提供） →
-第 4 章：上下文、权限与 Agent 行动边界（中文版本尚未提供） →
-实验 007：行动边界（中文版本尚未提供） →
-第 5 章：选择正确的 Codex 工作面（中文版本尚未提供） →
-第 6 章：模型选择不是模型崇拜（中文版本尚未提供） →
-第 7 章：Skill、Plugin、MCP 和工具如何分工（中文版本尚未提供） →
-实验 004：选择最小有用能力（中文版本尚未提供） →
-第 8 章：从定义到交付（中文版本尚未提供） →
-实验 013：完成一个完整的竖向切片（中文版本尚未提供） →
-第 9 章：验证、怀疑与恢复（中文版本尚未提供） →
-实验 003：审计一条完成声明（中文版本尚未提供） →
-第 10 章：规划与竖向切片（中文版本尚未提供）。
+[实验 001：做一次安全的 README 改动](labs/lab-001-first-safe-task-ZH.md) →
+[第 3 章：任务协议](chapters/03-task-protocol-ZH.md) →
+[实验 002：任务协议](labs/lab-002-task-protocol-ZH.md) →
+[第 4 章：上下文、权限与 Agent 行动边界](chapters/04-context-permissions-and-agent-ZH.md) →
+[实验 007：行动边界](labs/lab-007-action-boundaries-ZH.md) →
+[第 5 章：选择正确的 Codex 工作面](chapters/05-choose-the-codex-surface-ZH.md) →
+[第 6 章：模型选择不是模型崇拜](chapters/06-model-selection-ZH.md) →
+[第 7 章：Skill、Plugin、MCP 和工具如何分工](chapters/07-skills-plugins-and-tools-ZH.md) →
+[实验 004：选择最小有用能力](labs/lab-004-skill-selection-ZH.md) →
+[第 8 章：从定义到交付](chapters/08-full-lifecycle-workflow-ZH.md) →
+[实验 013：完成一个完整的竖向切片](labs/lab-013-l3-vertical-slice-ZH.md) →
+[第 9 章：验证、怀疑与恢复](chapters/09-verification-and-recovery-ZH.md) →
+[实验 003：审计一条完成声明](labs/lab-003-evidence-review-ZH.md) →
+[第 10 章：规划与竖向切片](chapters/10-planning-and-slicing-ZH.md)。
 
-这条路线覆盖 40 个课程单元中的 17 个，且所有翻译仍为 `in-progress`。中文目录中的其余章节会明确回退到英文源文件；那是当前状态，不是翻译完成。[`evals/task-set-v1.yaml`（机器可读文件，未做 `-ZH` 副本）](../evals/task-set-v1.yaml)已提交为固定夹具集，但没有把静态定义变成已完成评测。
+这条路线目前穿过 40 个课程单元中已提供的 21 个中文单元，且所有翻译仍为 `in-progress`。缺少中文版的单元会显示同语言、明确的“暂未提供”状态，不会自动切换到英文正文；那是不完整状态，不是翻译完成。[`evals/task-set-v1.yaml`（机器可读文件，未做 `-ZH` 副本）](../evals/task-set-v1.yaml)已提交为固定夹具集，但没有把静态定义变成已完成评测。
 
-当前可用的中文实验是实验 001：第一个安全任务（中文版本尚未提供）、实验 002：任务协议（中文版本尚未提供）、实验 003：审计一条完成声明（中文版本尚未提供）、实验 004：选择最小有用能力（中文版本尚未提供）、实验 007：行动边界（中文版本尚未提供）、实验 011：GPT 与 Codex 边界（中文版本尚未提供）和实验 013：完成一个完整的竖向切片（中文版本尚未提供）。它们均为 `draft / not_run`，翻译亦尚未独立审校。
+当前可用的中文实验是实验 001–007（不含 008）、实验 011 和实验 013。它们均为 `draft / not_run`，翻译亦尚未独立审校。
 
 相关入口：
 
