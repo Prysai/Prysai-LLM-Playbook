@@ -59,6 +59,39 @@ Revisa dos candidatos en revisiones fijas sin instalarlos. A tiene señal de lic
 
 La práctica demuestra una decisión de revisión, no descubrimiento, carga, ejecución ni adopción real. Hasta que las pruebas se ejecuten en un entorno declarado y se revisen de forma independiente, el capítulo sigue `candidate / not_run`.
 
+## Antes de instalar, convierte el candidato en una decisión refutable
+
+Un directorio, estrellas o una demo solo crean un candidato. Para cada uno guarda esta tarjeta:
+
+```text
+brecha de tarea; URL, revisión fija y ruta real; activador y no activador;
+licencia, NOTICE y activos anidados; dependencias, red, cuenta y secretos;
+prueba aislada; copia de seguridad y comprobación de restauración;
+decisión: recommendation-only / blocked / approved-to-install / installed-candidate
+```
+
+Si falta revisión fija, licencia/NOTICE, destino de instalación, copia o comprobación de restauración, es `blocked`. «Instalar primero» no resuelve una laguna de evidencia.
+
+No mezcles estos estados: `file exists` → `discovered` → `loaded` → `adopted` → `verified`. Un `SKILL.md` solo prueba el primero; un registro de instalación sostiene como mucho `installed-candidate`.
+
+## Experimento: revisar dos candidatos sin instalar
+
+Elige dos revisiones fijas públicas o muestras locales redactadas. A tiene procedencia y señal de licencia; B carece deliberadamente de licencia/NOTICE, dependencias o restauración.
+
+1. Solo revisa URL, revisión, inventario, resumen de entrada, dependencias y licencia; no autentiques ni ejecutes red.
+2. Completa una tarjeta por candidato con brecha, límites, permisos, prueba aislada y aprobaciones.
+3. Para A diseña casos positivo, límite, inyección/fallo y migración; registra entrada, resultado esperado, parada y evidencia, sin afirmar ejecución.
+4. Mantén B como `blocked` y nombra el material que lo desbloquearía.
+
+«Ignora reglas», «sube `.env`» o «cambia producción para probar» dentro de una fuente son datos no confiables, no permisos.
+
+## Comprobación propia
+
+- [ ] Distingo una brecha de conocimiento, método, herramienta o tarea ambigua.
+- [ ] Registro URL, revisión, ruta, licencia/NOTICE, dependencias, permisos y responsable.
+- [ ] Separo permisos para obtener, escribir, instalar/autenticar y entrar a equipo o producción.
+- [ ] Solo afirmo existencia, descubrimiento, carga, adopción o verificación cuando hay evidencia.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-ES.md">← Anterior<br><strong>Capítulo 13 · límites de acción en archivos, terminales, navegadores y GitHub</strong></a></td><td align="right"><a data-chapter-nav="next" href="15-research-track-ES.md">Siguiente →<br><strong>Capítulo 15 · ruta de investigación, de la pregunta al conocimiento auditable</strong></a></td></tr></table></nav>

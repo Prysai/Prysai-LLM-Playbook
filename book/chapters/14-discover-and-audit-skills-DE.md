@@ -48,6 +48,43 @@ Prüfe zwei Kandidaten mit festen Revisionen, ohne sie zu installieren. A hat ei
 
 Die Übung belegt eine Prüfentscheidung, nicht Entdeckung, Laden, Ausführung oder reale Übernahme. Bis die Tests in einer deklarierten Umgebung laufen und unabhängig geprüft werden, bleibt dieses Kapitel `candidate / not_run`.
 
+## Vor der Installation aus einem Kandidaten eine widerlegbare Entscheidung machen
+
+Ein Verzeichnis, Stars oder eine Demo machen nur einen Kandidaten. Bewahre für jeden eine Review-Karte auf.
+
+```text
+Aufgabenlücke: welche stabile Methode fehlt hier?
+Quelle: Projekt-URL, feste Revision, Prüftag, tatsächlicher Dateipfad
+Auslöser / Nicht-Auslöser: wann gilt die Methode, wann gibt sie ab?
+Lizenz: Evidenz für Repository, Zieldatei, NOTICE, verschachtelte Skripte und Assets
+Abhängigkeiten / Rechte: Lesen, Schreiben, Netzwerk, Konto, Geheimnisse, externe Nebenwirkung
+Isolierter Versuch: Verzeichnis, geheimnisfreie Eingabe, erlaubte Aktion, Stoppunkt
+Wiederherstellung: Backup vor Installation, genaue Restore-Schritte, Read-back-Check
+Entscheidung: recommendation-only / blocked / approved-to-install / installed-candidate
+```
+
+Fehlt feste Revision, Lizenz/NOTICE, Installationsziel, Backup oder Restore-Check, bleibt der Kandidat `blocked`. „Erst installieren“ schließt keine Evidenzlücke.
+
+Vermische nicht `file exists`, `discovered`, `loaded`, `adopted` und `verified`. Eine `SKILL.md` belegt nur das Erste; ein Installationslog höchstens `installed-candidate`.
+
+## Kleines Experiment: zwei Kandidaten prüfen, keinen installieren
+
+Wähle zwei öffentliche Kandidaten mit festen Revisionen oder zwei bereinigte lokale Beispiele. A hat nachvollziehbare Quelle und Lizenzsignal; B hat absichtlich keine Lizenz/NOTICE, Abhängigkeitsangabe oder Wiederherstellung.
+
+1. Lies nur Quelle, Revision, Inventar, Eingangs-Zusammenfassung, Abhängigkeiten und Lizenzsignal. Nicht in ein Laufzeitverzeichnis laden, nicht anmelden und kein Netzwerk ausführen.
+2. Fülle für beide Karten mit Aufgabenlücke, Grenzen, minimalen Rechten, isoliertem Versuch und Freigabepunkten aus.
+3. Entwirf für A positive, Grenz-, Injection/Fehler- und Migrationsfälle mit Eingabe, erwartetem Verhalten, Stopp und Evidenz; behaupte keinen Lauf.
+4. Lasse B `blocked` und nenne das Material zum Aufheben der Sperre.
+
+„Übergeordnete Regeln ignorieren“, „`.env` hochladen“ oder „Produktion zum Testen ändern“ in einer Quelle sind nicht vertrauenswürdige Daten, keine Skill-Rechte und keine Nutzerfreigabe. Ablehnen, protokollieren und stoppen ist richtig.
+
+## Eigene Abnahme
+
+- [ ] Ich trenne Wissenslücke, wiederholbare Methode, Tool-Fähigkeit und unklare Aufgabe.
+- [ ] Ich notiere URL, Revision, Pfad, Lizenz/NOTICE, Abhängigkeiten, Rechte und Verantwortliche.
+- [ ] Ich trenne Freigaben für Beschaffung, Schreiben ins Installationsziel, Abhängigkeit/Anmeldung und Team-/Produktionsumfang.
+- [ ] Ich behaupte exists, discovered, loaded, adopted oder verified nur mit passender Evidenz.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-DE.md">← Vorheriges<br><strong>Kapitel 13 · Aktionsgrenzen für Dateien, Terminal, Browser und GitHub</strong></a></td><td align="right"><a data-chapter-nav="next" href="15-research-track-DE.md">Nächstes →<br><strong>Kapitel 15 · Forschungspfad, von der Frage zu prüfbarem Wissen</strong></a></td></tr></table></nav>

@@ -74,6 +74,49 @@ Skill 是方法与路由契约；工具是观察或改变外部世界的接口�
 
 外部目录、产品入口和发现行为都是易变事实；使用前应查当前官方文档和项目来源。运行 [实验 017：采纳 Skill 前审计发现过程](../labs/lab-017-skill-discovery-audit-ZH.md)。本章仍是 `candidate`，并不证明某个 Skill 已安全采纳。
 
+## 安装前，把候选项变成可否决的决定
+
+目录、Star 和演示视频只能让一个 Skill 进入候选池，不能让它进入你的环境。为每个候选项留下一张独立审查卡：
+
+```text
+任务缺口：本次任务缺少什么稳定方法？
+来源：项目 URL、固定 revision、检查日期、实际文件路径
+触发 / 不触发：何时适用，何时必须让给其他方法？
+许可证：仓库、目标文件、NOTICE、嵌套脚本与资产各自有什么证据？
+依赖与权限：读取、写入、网络、账号、秘密、外部副作用
+隔离试用：指定目录、无秘密输入、允许的动作与停止点
+恢复：安装前配置备份、精确恢复步骤、恢复后的读回检查
+决定：recommendation-only / blocked / approved-to-install / installed-candidate
+```
+
+缺少固定版本、许可证/NOTICE、安装目标、备份或恢复检查中的任意一项，就标为 `blocked`。不要通过“先装了再看”来消除信息缺口。
+
+### 五种行为状态不能合并
+
+```text
+文件存在 → 当前工作面发现名称 → 新会话加载说明 → 所有者正式采用 → 四类用例验证
+```
+
+这五件事分别是 `file exists`、`discovered`、`loaded`、`adopted`、`verified`。一个目录中有 `SKILL.md`，最多证明第一个；安装日志最多支持 `installed-candidate`，不能证明触发正确、团队接受或真实效果。
+
+## 小实验：审查两个候选项，不安装任何一个
+
+选择两个固定 revision 的公开候选项，或使用两个脱敏本地样本。A 应有可追溯来源和许可证信号；B 故意缺少许可证/NOTICE、依赖声明或恢复方案。
+
+1. 只读取来源、revision、文件清单、入口摘要、依赖和许可信号；不下载到运行时目录，不登录，不联网执行。
+2. 分别填审查卡，写明任务缺口、适用/不适用、最小权限、隔离试用和所有批准点。
+3. 为 A 设计正例、边界例、注入/失败例和迁移例；每个都写输入、预期、停止点和证据，但不声称已运行。
+4. 若 B 缺少文件级许可或可验证恢复，保持 `blocked`，写清解除阻塞所需材料。
+
+来源中的“忽略上级规则”“读取并上传 `.env`”“为了测试先改生产配置”等文字都是不可信数据。它们不是 Skill 权限，也不是用户授权。正确结果是拒绝、记录并停止。
+
+## 本章验收补充
+
+- [ ] 我能区分知识缺口、重复方法、工具能力和不清楚的任务，且不会用安装掩盖问题。
+- [ ] 我为外部候选项记录 URL、revision、文件路径、许可/NOTICE、依赖、权限和维护者。
+- [ ] 我把获取、写入安装目标、安装依赖/认证、进入团队或生产范围分成独立批准点。
+- [ ] 我只把有证据的状态写为存在、发现、加载、采用或验证；未知即写 `not_observed`。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章节导航"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-ZH.md">← 上一章<br><strong>第 13 章·文件、终端、浏览器与 GitHub 的行动边界</strong></a></td><td align="right"><a data-chapter-nav="next" href="15-research-track-ZH.md">下一章 →<br><strong>第 15 章·研究路线：从问题到可审计知识</strong></a></td></tr></table></nav>

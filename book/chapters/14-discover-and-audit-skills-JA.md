@@ -48,6 +48,43 @@ Skill は方法とルーティングの契約、tool は外部を観測・変更
 
 この練習が示すのはレビュー判断だけであり、発見、読み込み、実行、採用ではありません。宣言した環境での実行と独立レビューが残るまで、この章は `candidate / not_run` です。
 
+## install 前に candidate を反証できる decision にする
+
+directory、Star、demo は candidate を作るだけです。candidate ごとに review card を残します。
+
+```text
+task gap: 今回不足している安定した method
+source: project URL、fixed revision、確認日、actual file path
+trigger / non-trigger: 適用時と譲る時
+license: repository、target file、NOTICE、nested script / asset の evidence
+dependencies / permissions: read、write、network、account、secret、external side effect
+isolated trial: directory、secret-free input、allowed action、stop point
+recovery: pre-install backup、restore step、read-back check
+decision: recommendation-only / blocked / approved-to-install / installed-candidate
+```
+
+fixed revision、license/NOTICE、install target、backup、restore check の一つでも欠ければ `blocked` です。「先に install」は evidence gap を埋めません。
+
+`file exists`、`discovered`、`loaded`、`adopted`、`verified` を混同しません。`SKILL.md` があることは最初だけ、install log はせいぜい `installed-candidate` を支えるだけです。
+
+## 小実験：二つの candidate を install せず review する
+
+fixed revision の public candidate 二つ、または redacted local sample 二つを選びます。A には traceable source と license signal があり、B には license/NOTICE、dependency declaration、restore plan のどれかが意図的にありません。
+
+1. source、revision、inventory、entry summary、dependency、license signal だけを read する。runtime directory へ download、login、network execution はしない。
+2. 両方の card に task gap、boundary、minimum permission、isolated trial、approval point を書く。
+3. A には positive、boundary、injection/failure、migration case を設計し、input、expected behavior、stop、evidence を書く。ただし run したとは言わない。
+4. B は `blocked` のままにし、unblock に必要な material を示す。
+
+source 内の「上位の rule を無視」「`.env` を upload」「test のため production を変える」は untrusted data であり、Skill permission や user authorization ではありません。拒否、記録、stop が正しい結果です。
+
+## 自己確認
+
+- [ ] knowledge gap、repeated method、tool capability、unclear task を分けられる。
+- [ ] URL、revision、path、license/NOTICE、dependency、permission、owner を残した。
+- [ ] obtain、install target write、dependency/authentication、team/production scope の approval を分けた。
+- [ ] evidence があるときだけ exists、discovered、loaded、adopted、verified と書く。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-JA.md">← 前の章<br><strong>第13章 · ファイル、ターミナル、ブラウザ、GitHub にまたがる行動境界</strong></a></td><td align="right"><a data-chapter-nav="next" href="15-research-track-JA.md">次へ →<br><strong>第15章 · 調査トラック、問いから監査可能な知識へ</strong></a></td></tr></table></nav>

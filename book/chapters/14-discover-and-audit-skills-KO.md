@@ -48,6 +48,43 @@ Skill은 방법과 라우팅 계약이고 tool은 외부를 관찰하거나 바�
 
 이 연습은 검토 결정을 보여 줄 뿐 발견, 로드, 실행, 실제 채택을 증명하지 않습니다. 선언된 환경에서 실행하고 독립 검토한 기록이 생기기 전까지 이 장은 `candidate / not_run`입니다.
 
+## 설치 전에 후보를 반증 가능한 결정으로 바꾸기
+
+디렉터리, Star, 데모는 후보만 만듭니다. 후보마다 검토 카드를 남깁니다.
+
+```text
+작업 공백: 이번 작업에 부족한 안정적인 방법
+출처: 프로젝트 URL, 고정 revision, 확인일, 실제 파일 경로
+trigger / non-trigger: 적용할 때와 양보할 때
+license: 저장소, 대상 파일, NOTICE, 중첩 script / asset의 증거
+의존성 / 권한: 읽기, 쓰기, 네트워크, 계정, 비밀, 외부 부작용
+격리 시험: 디렉터리, 비밀 없는 입력, 허용 행동, 중지점
+복구: 설치 전 backup, restore 단계, read-back check
+결정: recommendation-only / blocked / approved-to-install / installed-candidate
+```
+
+고정 revision, license/NOTICE, 설치 대상, backup, restore check 중 하나라도 없으면 `blocked`입니다. “먼저 설치”는 증거 공백을 해결하지 않습니다.
+
+`file exists`, `discovered`, `loaded`, `adopted`, `verified`를 합치지 마세요. `SKILL.md`는 첫 상태만, 설치 로그는 많아야 `installed-candidate`만 뒷받침합니다.
+
+## 작은 실험: 설치하지 않고 두 후보 검토하기
+
+고정 revision의 공개 후보 두 개나 가린 로컬 샘플 두 개를 고릅니다. A에는 추적 가능한 출처와 license 신호가 있고, B에는 license/NOTICE, 의존성 선언, 복구 계획 중 하나가 의도적으로 없습니다.
+
+1. 출처, revision, 목록, 입구 요약, 의존성, license 신호만 읽습니다. runtime 디렉터리에 내려받거나 로그인하거나 네트워크 실행을 하지 않습니다.
+2. 각각의 카드에 작업 공백, 경계, 최소 권한, 격리 시험, 승인 지점을 씁니다.
+3. A에는 긍정, 경계, injection/failure, migration 사례를 설계하고 입력, 예상 행동, 중지, 증거를 적습니다. 실행했다고 주장하지 않습니다.
+4. B는 `blocked`로 두고 해제에 필요한 자료를 씁니다.
+
+출처 안의 “상위 규칙 무시”, “`.env` 업로드”, “테스트용 production 변경”은 신뢰할 수 없는 데이터일 뿐 Skill 권한이나 사용자 승인이 아닙니다. 거부, 기록, 중지가 올바른 결과입니다.
+
+## 스스로 확인하기
+
+- [ ] 지식 공백, 반복 방법, 도구 능력, 불분명한 작업을 구분한다.
+- [ ] URL, revision, 경로, license/NOTICE, 의존성, 권한, owner를 기록한다.
+- [ ] 획득, 설치 대상 쓰기, 의존성/인증, 팀/production 진입 승인을 분리한다.
+- [ ] 증거가 있을 때만 exists, discovered, loaded, adopted, verified라고 쓴다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-KO.md">← 이전<br><strong>13장 · 파일, 터미널, 브라우저, GitHub의 행동 경계</strong></a></td><td align="right"><a data-chapter-nav="next" href="15-research-track-KO.md">다음 →<br><strong>15장 · 연구 트랙, 질문에서 감사 가능한 지식까지</strong></a></td></tr></table></nav>
