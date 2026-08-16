@@ -230,6 +230,11 @@ def artifact_findings(artifact: Path) -> list[str]:
             if not target.is_file():
                 findings.append(f"{page_label}:{element.line}: missing generated target: {reference}")
                 continue
+            # Reader fragments belong to the Markdown document named by its
+            # ``path`` query parameter, not to reader.html's static shell.
+            # The reader validates and renders that document at runtime.
+            if target.name == "reader.html" and parsed.query and "path=" in parsed.query:
+                continue
             if fragment and target.suffix.lower() == ".html":
                 target_parser = parse_html(target.read_text(encoding="utf-8"))
                 target_ids = {item.attrs.get("id") for item in target_parser.elements if item.attrs.get("id")}

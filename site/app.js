@@ -4470,5 +4470,65 @@ Object.assign(copy.de, {
   heroRouteBoundary: 'Lies der Reihe nach. Nach Lektion 0 und Kapitel 1 ist das ganze Buch ein einziger Weg — kein Menü zum Auswählen.'
 });
 
+// Keep the reader-facing homepage focused on learning. Detailed evidence and
+// release records remain available in the linked governance material.
+Object.assign(copy.en, {
+  heroProofStatus: 'Try it in your own chat',
+  repositoryStripIntro: 'Start with the lesson, then use the exercises and reusable methods when you are ready to practise.',
+  repositoryChapters: '22 chapters, from foundations to reliable work',
+  repositoryLabs: '18 guided exercises for safe practice',
+  repositorySkills: '25 reusable methods for recurring work',
+  repositoryDocs: 'Sources, contribution guides, and project notes',
+  fileChaptersBody: '22 chapters that build the method step by step.',
+  fileLabsTitle: 'Guided practice',
+  fileLabsBody: '18 low-risk exercises with clear checks and reflection.',
+  localeTitle: 'Read in your language',
+  localeIntro: 'Choose the language you read most naturally. Each route stays in that language as you move through the book.',
+  localeEnglish: 'English', localeChinese: 'Simplified Chinese', localeSpanish: 'Spanish', localeGerman: 'German', localeJapanese: 'Japanese', localeKorean: 'Korean',
+  localeRule: 'Use the language menu at the top of the page whenever you want to switch.',
+  researchBoundary: 'Read the sources alongside the teaching notes, and treat them as starting points for your own investigation.',
+  visualCaseBoundary: 'Use these diagrams to understand the method, then test it on a small task of your own.',
+  starterBoundaryLab: 'Label the boundary: Lab 011', starterPractice: 'Run Lab 001: work with files and Git', openExercise: 'Open exercise'
+});
+Object.assign(copy.zh, {
+  heroProofStatus: '在你自己的对话中试一试',
+  repositoryStripIntro: '先从课程开始；准备练习时，再使用练习和可复用的方法。',
+  repositoryChapters: '22 个章节，从基础走向可靠工作', repositoryLabs: '18 个安全练习，带你一步一步做', repositorySkills: '25 个可复用的方法，应对重复工作', repositoryDocs: '来源、贡献指南与项目说明',
+  fileChaptersBody: '22 个章节，循序建立方法。', fileLabsTitle: '引导练习', fileLabsBody: '18 个低风险练习，提供清晰检查与复盘。',
+  localeTitle: '用你的语言阅读', localeIntro: '选择你最自然的阅读语言。沿着课程前进时，整条路线都会保持该语言。',
+  localeEnglish: 'English', localeChinese: '简体中文', localeSpanish: 'Español', localeGerman: 'Deutsch', localeJapanese: '日本語', localeKorean: '한국어',
+  localeRule: '需要切换时，使用页面顶部的语言菜单。',
+  researchBoundary: '把来源与教学说明一起阅读，并把它们当作你自己继续研究的起点。', visualCaseBoundary: '用这些图理解方法，然后在自己的小任务上试一试。',
+  starterBoundaryLab: '标注边界：实验 011', starterPractice: '运行实验 001：处理文件与 Git', openExercise: '打开练习'
+});
+Object.assign(copy.es, {
+  heroProofStatus: 'Pruébalo en tu propio chat', repositoryStripIntro: 'Empieza por la lección y usa los ejercicios y métodos reutilizables cuando estés listo para practicar.',
+  repositoryChapters: '22 capítulos, de los fundamentos al trabajo fiable', repositoryLabs: '18 ejercicios guiados para practicar con seguridad', repositorySkills: '25 métodos reutilizables para tareas recurrentes', repositoryDocs: 'Fuentes, guías de contribución y notas del proyecto',
+  fileChaptersBody: '22 capítulos que construyen el método paso a paso.', fileLabsTitle: 'Práctica guiada', fileLabsBody: '18 ejercicios de bajo riesgo con comprobaciones y reflexión claras.',
+  localeTitle: 'Lee en tu idioma', localeIntro: 'Elige el idioma que lees con mayor naturalidad. La ruta se mantiene en ese idioma mientras avanzas por el libro.', localeEnglish: 'Inglés', localeChinese: 'Chino simplificado', localeSpanish: 'Español', localeGerman: 'Alemán', localeJapanese: 'Japonés', localeKorean: 'Coreano', localeRule: 'Usa el menú de idioma de la parte superior cuando quieras cambiar.',
+  researchBoundary: 'Lee las fuentes junto con las notas didácticas y úsalas como punto de partida para tu propia investigación.', visualCaseBoundary: 'Usa estos diagramas para entender el método y después pruébalo en una tarea pequeña propia.', starterBoundaryLab: 'Marca el límite: laboratorio 011', starterPractice: 'Haz el laboratorio 001: archivos y Git', openExercise: 'Abrir ejercicio'
+});
+Object.assign(copy.ja, {
+  heroProofStatus: '自分のチャットで試してみる', repositoryStripIntro: 'まずレッスンから始め、練習の準備ができたら演習と再利用可能な方法を使ってください。',
+  repositoryChapters: '基礎から信頼できる仕事まで、全22章', repositoryLabs: '安全に練習するためのガイド付き演習18本', repositorySkills: '繰り返しの仕事に使える方法25個', repositoryDocs: '出典、貢献ガイド、プロジェクトノート',
+  fileChaptersBody: '方法を段階的に身につける22章。', fileLabsTitle: 'ガイド付き練習', fileLabsBody: '明確な確認と振り返りを含む低リスクの演習18本。',
+  localeTitle: '自分の言語で読む', localeIntro: '最も自然に読める言語を選んでください。本を進む間も、その言語で読み続けられます。', localeEnglish: '英語', localeChinese: '簡体中国語', localeSpanish: 'スペイン語', localeGerman: 'ドイツ語', localeJapanese: '日本語', localeKorean: '韓国語', localeRule: '切り替えたいときは、ページ上部の言語メニューを使ってください。',
+  researchBoundary: '教材の説明と合わせて出典を読み、自分で調べるための出発点として使ってください。', visualCaseBoundary: 'この図で方法を理解したら、自分の小さなタスクで試してみましょう。', starterBoundaryLab: '境界を見分ける：Lab 011', starterPractice: 'Lab 001 を行う：ファイルと Git', openExercise: '演習を開く'
+});
+Object.assign(copy.ko, {
+  heroProofStatus: '내 채팅에서 직접 해보기', repositoryStripIntro: '먼저 레슨을 시작하고, 연습할 준비가 되면 연습 문제와 재사용 가능한 방법을 활용하세요.',
+  repositoryChapters: '기초부터 신뢰할 수 있는 작업까지, 22개 장', repositoryLabs: '안전한 연습을 위한 안내형 실습 18개', repositorySkills: '반복 작업에 쓰는 재사용 가능한 방법 25개', repositoryDocs: '출처, 기여 가이드, 프로젝트 노트',
+  fileChaptersBody: '방법을 단계별로 쌓는 22개 장.', fileLabsTitle: '안내형 연습', fileLabsBody: '명확한 확인과 성찰이 있는 저위험 실습 18개.',
+  localeTitle: '내 언어로 읽기', localeIntro: '가장 편하게 읽는 언어를 고르세요. 책을 따라가는 동안 그 언어로 계속 읽을 수 있습니다.', localeEnglish: '영어', localeChinese: '간체 중국어', localeSpanish: '스페인어', localeGerman: '독일어', localeJapanese: '일본어', localeKorean: '한국어', localeRule: '언어를 바꾸고 싶을 때는 페이지 위쪽의 언어 메뉴를 사용하세요.',
+  researchBoundary: '학습 설명과 함께 출처를 읽고, 직접 조사하기 위한 출발점으로 활용하세요.', visualCaseBoundary: '이 도표로 방법을 이해한 다음, 자신의 작은 작업에서 시험해 보세요.', starterBoundaryLab: '경계 표시: Lab 011', starterPractice: 'Lab 001 실행: 파일과 Git', openExercise: '연습 열기'
+});
+Object.assign(copy.de, {
+  heroProofStatus: 'Im eigenen Chat ausprobieren', repositoryStripIntro: 'Beginne mit der Lektion und nutze die Übungen und wiederverwendbaren Methoden, sobald du üben möchtest.',
+  repositoryChapters: '22 Kapitel – von den Grundlagen zu zuverlässiger Arbeit', repositoryLabs: '18 angeleitete Übungen für sichere Praxis', repositorySkills: '25 wiederverwendbare Methoden für wiederkehrende Aufgaben', repositoryDocs: 'Quellen, Beitragsleitfäden und Projektnotizen',
+  fileChaptersBody: '22 Kapitel, die die Methode Schritt für Schritt aufbauen.', fileLabsTitle: 'Angeleitete Praxis', fileLabsBody: '18 risikoarme Übungen mit klaren Prüfungen und Reflexion.',
+  localeTitle: 'In deiner Sprache lesen', localeIntro: 'Wähle die Sprache, die du am natürlichsten liest. Auf deinem Weg durch das Buch bleibt die Route in dieser Sprache.', localeEnglish: 'Englisch', localeChinese: 'Vereinfachtes Chinesisch', localeSpanish: 'Spanisch', localeGerman: 'Deutsch', localeJapanese: 'Japanisch', localeKorean: 'Koreanisch', localeRule: 'Wenn du wechseln möchtest, verwende das Sprachmenü oben auf der Seite.',
+  researchBoundary: 'Lies die Quellen zusammen mit den Lehrnotizen und nutze sie als Ausgangspunkt für deine eigene Recherche.', visualCaseBoundary: 'Nutze diese Diagramme, um die Methode zu verstehen, und probiere sie dann an einer eigenen kleinen Aufgabe aus.', starterBoundaryLab: 'Grenze markieren: Lab 011', starterPractice: 'Lab 001 durchführen: Dateien und Git', openExercise: 'Übung öffnen'
+});
+
 initializeSearch();
 applyLanguage(currentLanguage, { updateUrl: hasExplicitLanguageParam && !hasValidLanguageParam });

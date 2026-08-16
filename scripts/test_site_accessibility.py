@@ -182,7 +182,7 @@ def main() -> int:
         if "accepted_on_this_check" in site_script or "acceptance:" in site_script:
             raise AssertionError("first-win-copy-feedback: self-reported judgments must not claim acceptance")
         for required in (
-            'href="../book/guides/llm-fundamentals-EN.md"',
+            'href="reader.html?path=book%2Fguides%2Fllm-fundamentals-EN.md&amp;lang=en"',
             'data-content-id="chapter-01"',
             'data-content-id="chapter-02"',
             'data-route-decision',
@@ -277,18 +277,14 @@ def main() -> int:
         fixtures += 1
 
         for expected in (
-            f"{skill_count} reusable Skills · candidate",
+            f"{skill_count} reusable methods for recurring work",
             f"<strong>{skill_count}</strong><span data-i18n=\"mobileIndexSkills\">Skills</span>",
-            f"Skills · {skill_count}",
         ):
             if expected not in site_markup:
                 raise AssertionError(f"homepage-skill-inventory: missing markup count '{expected}'")
         for expected in (
-            f"{skill_count} project Skills with triggers, boundaries, and evidence contracts.",
-            f"ledgerSkills: 'Skills · {skill_count}'",
-            f"{skill_count} \\u4e2a\\u9879\\u76ee Skill",
-            f"ledgerSkills: 'Skill \\u00b7 {skill_count}'",
-            f"{skill_count} 个可复用 Skill · candidate",
+            f"repositorySkills: '{skill_count} reusable methods for recurring work'",
+            f"repositorySkills: '{skill_count} 个可复用的方法，应对重复工作'",
         ):
             if expected not in site_script:
                 raise AssertionError(f"homepage-skill-inventory: missing localized count '{expected}'")
