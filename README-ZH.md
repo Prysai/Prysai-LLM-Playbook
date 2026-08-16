@@ -53,11 +53,11 @@ Prysai LLM Playbook（Prysai 大模型实战手册）不是把 skills 平铺在�
 |---|---|---|---|
 | 书稿 | [`book/`](book/) | 章节、序言、目录和实验 | 用连贯内容建立概念、方法和判断力 |
 | 实验室 | [`book/labs/`](book/labs/) | 低风险、可观察的练习 | 让学习者留下可检查的操作证据 |
-| 能力包 | [`skills/`](skills/) | Codex 可执行的工作指导 | 把成熟方法变成可复用能力 |
-| 评测 | [`docs/quality/`](docs/quality/)、[`evals/`](evals/) | 质量标准、任务夹具和审查记录 | 判断内容、Skill 和学习结果是否真的有效 |
-| 治理 | [`docs/governance/`](docs/governance/) | 权限、来源、状态、更新和贡献规则 | 管理变化与责任边界 |
-| 研究 | [`docs/research/`](docs/research/) | 官方事实与真实问题研究 | 为易变断言和现实案例保留证据边界 |
-| 展示页 | [`site/`](site/) | 公开展示页及其说明 | 让读者从项目概览进入学习路径 |
+| 能力包 | `skills/` | Codex 可执行的工作指导 | 把成熟方法变成可复用能力 |
+| 评测 | `docs/quality/`、`evals/` | 质量标准、任务夹具和审查记录 | 判断内容、Skill 和学习结果是否真的有效 |
+| 治理 | `docs/governance/` | 权限、来源、状态、更新和贡献规则 | 管理变化与责任边界 |
+| 研究 | `docs/research/` | 官方事实与真实问题研究 | 为易变断言和现实案例保留证据边界 |
+| 展示页 | `site/` | 公开展示页及其说明 | 让读者从项目概览进入学习路径 |
 | 自动检查 | [`scripts/`](scripts/) | 项目、链接、状态和学习路径验证器 | 把约定变成可重复运行的检查 |
 
 ## 这套系统如何判断“学会了”
@@ -97,28 +97,15 @@ Prysai LLM Playbook（Prysai 大模型实战手册）不是把 skills 平铺在�
 - 本项目是独立维护的学习与实践项目，不是 OpenAI 官方文档或官方产品页面。
 - 示例、研究和实验不得放入 token、密码、API key、私钥、Cookie 或 `.env` 文件。
 
-## 文档入口
+## 中文资料入口
 
-下面的链接分为两类：已经有同语言文件的入口直接指向 `-ZH` 文件；仍未迁移的目标会在链接文字中明确说明，并指向当前原始文件。这里没有把未迁移目标偷偷替换成英文。
-
-- [领域词汇（尚未迁移为 `CONTEXT-ZH.md`，当前原始文件）](CONTEXT.md)
-- [产品章程（尚未迁移为 `charter-ZH.md`，当前原始文件）](docs/charter.md)
-- [书籍架构（尚未迁移为 `book-architecture-ZH.md`，当前原始文件）](docs/book-architecture.md)
-- [学习模型（尚未迁移为 `learning-model-ZH.md`，当前原始文件）](docs/learning-model.md)
-- [来源与许可证台账（尚未迁移为 `asset-register-ZH.md`，当前原始文件）](docs/sources/asset-register.md)
-- [内容更新与审查（尚未迁移为 `content-lifecycle-ZH.md`，当前原始文件）](docs/governance/content-lifecycle.md)
-- [当前状态源（机器可读治理文件，未做 `-ZH` 副本）](docs/governance/content-status.yaml)
-- [当前状态审查（尚未迁移为 `current-state-review-...-ZH.md`，当前原始文件）](docs/quality/current-state-review-2026-08-09.md)
-- [Skill 质量标准（尚未迁移为 `skill-quality-standard-ZH.md`，当前原始文件）](docs/quality/skill-quality-standard.md)
-- [学习与运行评测框架（尚未迁移为 `evaluation-framework-ZH.md`，当前原始文件）](docs/quality/evaluation-framework.md)
-- [评测任务集 v1（机器可读评测文件，未做 `-ZH` 副本）](evals/task-set-v1.yaml)
-- [真实问题研究（尚未迁移为 `field-problems-codex-ZH.md`，当前原始文件）](docs/research/field-problems-codex.md)
-- [真实问题研究索引（尚未迁移为对应 `-ZH` 文件，当前原始文件）](docs/research/field-problems-index-2026-08-10.md)
+- [中文书籍导读](book/README-ZH.md)
+- [中文前言](book/preface-ZH.md)
 - [中文书籍目录](book/table-of-contents-ZH.md)
-- [Codex Coach（Skill 文档尚未迁移为 `SKILL-ZH.md`，当前原始文件）](skills/prysai-codex-coach/SKILL.md)
-- [外部 Skill 候选目录（尚未迁移为 `skill-candidate-catalog-ZH.md`，当前原始文件）](docs/sources/skill-candidate-catalog.md)
-- [展示页说明（尚未迁移为 `site/README-ZH.md`，当前原始文件）](site/README.md)
-- [locale 后缀与迁移决策记录（ADR，治理记录未做 `-ZH` 副本）](docs/adr/0010-locale-suffixed-content.md)
+- [通用 LLM 第一任务](book/routes/universal-core-foundations-ZH.md)
+- [中文新手提示卡](book/communication-clinic-ZH.md)
+
+术语表、治理规则、来源台账、评测定义、研究档案和 Skill 说明尚未提供中文文件。为保证这条路线始终使用中文，本入口不再把它们链接到原始语言页面；相应内容翻译并审校后，才会在这里开放。
 
 ## 中文候选学习路径
 

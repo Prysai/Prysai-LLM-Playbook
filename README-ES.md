@@ -122,32 +122,18 @@ traducción o verificación en navegador.
 - Este proyecto de aprendizaje y práctica es independiente. No es
   documentación oficial de OpenAI ni una página oficial del producto.
 
-## Entradas de documentación
+## Entradas disponibles en español
 
-- [Vocabulario del dominio (migración ES en curso; fuente actual)](CONTEXT.md)
-- [Carta del producto (migración ES en curso; fuente actual)](docs/charter.md)
-- [Arquitectura del libro (migración ES en curso; fuente actual)](docs/book-architecture.md)
-- [Modelo de aprendizaje (migración ES en curso; fuente actual)](docs/learning-model.md)
-- [Registro de fuentes y licencias (migración ES en curso; fuente actual)](docs/sources/asset-register.md)
-- [Ciclo de vida y revisión del contenido (migración ES en curso; fuente actual)](docs/governance/content-lifecycle.md)
-- [Fuente del estado actual (migración ES en curso; fuente actual)](docs/governance/content-status.yaml)
-- [Revisión del estado actual (migración ES en curso; fuente actual)](docs/quality/current-state-review-2026-08-09.md)
-- [Estándar de calidad de Skills (migración ES en curso; fuente actual)](docs/quality/skill-quality-standard.md)
-- [Marco de evaluación de aprendizaje y ejecución (migración ES en curso; fuente actual)](docs/quality/evaluation-framework.md)
-- [Conjunto de tareas de evaluación v1 (migración ES en curso; fuente actual)](evals/task-set-v1.yaml)
-- [Investigación de problemas reales (migración ES en curso; fuente actual)](docs/research/field-problems-codex.md)
-- [Índice del libro en español](book/table-of-contents-ES.md)
+- [Guía de lectura en español](book/README-ES.md)
 - [Prefacio en español](book/preface-ES.md)
-- [Guía de lectura del libro en español](book/README-ES.md)
-- [Codex Coach (migración ES en curso; fuente actual)](skills/prysai-codex-coach/SKILL.md)
-- [Catálogo de Skills externas candidatas (migración ES en curso; fuente actual)](docs/sources/skill-candidate-catalog.md)
-- [Página pública de presentación (migración ES en curso; fuente actual)](site/README.md)
+- [Índice del libro en español](book/table-of-contents-ES.md)
+- [Primera tarea universal de LLM](book/routes/universal-core-foundations-ES.md)
 
-Los destinos marcados como «migración ES en curso» son rutas locales
-compartidas que todavía no tienen una variante `-ES`; se enlazan aquí de forma
-explícita para que el lector no confunda la fuente actual con una traducción
-terminada. Las páginas españolas existentes enlazan primero con sus destinos
-`-ES`.
+El vocabulario, la gobernanza, el registro de fuentes, las evaluaciones, la
+investigación y la documentación de Skills todavía no tienen archivos en
+español. Para mantener esta ruta en un solo idioma, esta entrada no los enlaza
+con páginas de la fuente original; se abrirán aquí cuando exista una traducción
+revisada.
 
 ## Nota sobre el nombre
 

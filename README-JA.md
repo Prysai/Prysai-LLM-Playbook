@@ -78,27 +78,14 @@ GPTを知る → Codexを知る → 安全に準備する → タスクを表現
 - このプロジェクトは Prysai が独立して保守する学習・実践プロジェクトであり、OpenAI の公式ドキュメントでも公式製品ページでもありません。
 - トークン、パスワード、API キー、秘密鍵、Cookie、`.env` ファイルをリポジトリや学習例に入れません。権限は、読み取り専用・低リスク・ロールバック可能な範囲から始めます。
 
-## ドキュメント入口
+## 日本語で読める入口
 
-日本語の移行先を先に予約しています。`移行中` と表示されたリンクは、対応する `-JA` ファイルが正規の移行先として決まっているものの、現時点ではまだ作成されていないことを示します。未作成の翻訳を黙って別言語へ切り替えることはしません。
-
-- [領域用語（移行中）](CONTEXT.md)
-- [製品憲章（移行中）](docs/charter.md)
-- [書籍アーキテクチャ（移行中）](docs/book-architecture.md)
-- [学習モデル（移行中）](docs/learning-model.md)
-- [出典とライセンス台帳（移行中）](docs/sources/asset-register.md)
-- [コンテンツの更新とレビュー（移行中）](docs/governance/content-lifecycle.md)
-- [現在の状態のソース（移行中）](docs/governance/content-status.yaml)
-- [現在の状態レビュー（移行中）](docs/quality/current-state-review-2026-08-09.md)
-- [Skill 品質基準（移行中）](docs/quality/skill-quality-standard.md)
-- [学習と実行の評価フレームワーク（移行中）](docs/quality/evaluation-framework.md)
-- [評価タスクセット v1（移行中）](evals/task-set-v1.yaml)
-- [現実の問題に関する調査（移行中）](docs/research/field-problems-codex.md)
 - [日本語版の書籍入口](book/README-JA.md)
 - [日本語版の序文](book/preface-JA.md)
-- [Codex Coach（移行中）](skills/prysai-codex-coach/SKILL.md)
-- [外部 Skill 候補目録（移行中）](docs/sources/skill-candidate-catalog.md)
-- [ショーケース（移行中）](site/README.md)
+- [日本語版の目次](book/table-of-contents-JA.md)
+- [最初の汎用 LLM タスク](book/routes/universal-core-foundations-JA.md)
+
+用語、ガバナンス、出典台帳、評価、調査、Skill の説明には、まだ日本語ファイルがありません。この経路を一つの言語で保つため、ここから原文ページへはリンクしません。翻訳があり、レビューが済んだ資料だけをこの入口に追加します。
 
 ## 名前と翻訳の説明
 

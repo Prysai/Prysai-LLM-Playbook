@@ -25,9 +25,9 @@
 - 목표 언어: 영어(`EN`), 간체 중국어(`ZH`), 스페인어(`ES`), 일본어(`JA`), 한국어(`KO`), 독일어(`DE`)
 - 현재 이관 범위: `README-KO.md`, `book/README-KO.md`, `book/preface-KO.md`, 범용 첫 과제 경로
 - 번역 상태: `in-progress` — 구조와 링크를 확인했지만, 한국어 전문 감수와 독립적인 브라우저 검증은 아직 완료되지 않았습니다.
-- 다른 문서: 한국어 `-KO` 파일이 아직 없으므로, 아래 링크는 현재 원본으로 연결하고 링크 문구에 `한국어 이관 중`을 표시합니다.
+- 다른 문서: 한국어 `-KO` 파일이 아직 없으면, 이 읽기 경로에서는 원문으로 연결하지 않습니다.
 
-같은 내용을 가리키는 번역 파일은 안정적인 파일명 줄기(stem)를 공유하고 locale suffix만 다르게 갖습니다. 한국어 페이지에서 한국어 대상 파일이 존재하는 경우에는 반드시 그 `-KO` 파일을 우선합니다. 이 규칙과 단계적 이전의 세부 결정은 [locale-suffixed content 결정문(한국어 이관 중)](docs/adr/0010-locale-suffixed-content.md)에서 확인할 수 있습니다.
+같은 내용을 가리키는 번역 파일은 안정적인 파일명 줄기(stem)를 공유하고 locale suffix만 다르게 갖습니다. 한국어 페이지에서 한국어 대상 파일이 존재하는 경우에는 반드시 그 `-KO` 파일을 우선합니다. 이 규칙의 세부 거버넌스 기록은 아직 한국어로 제공되지 않으므로, 이 입구에서는 원문 페이지로 연결하지 않습니다.
 
 ## 이 프로젝트가 해결하려는 문제
 
@@ -76,28 +76,16 @@ GPT 이해 → Codex 이해 → 안전한 준비 → 작업 표현 → 컨텍스
 
 이 한국어 파일들은 위 상태를 바꾸지 않습니다. 한국어 입구를 먼저 제공하는 **이관 중인 문서**이며, 한국어 전체 콘텐츠, 번역 검토, 런타임 또는 브라우저 검증의 완료를 의미하지 않습니다.
 
-## 문서 입구
-
-한국어 대상이 이미 있는 항목은 같은 언어의 `-KO` 파일로 연결합니다. 아직 대상 파일이 없는 항목은 현재 원본으로 연결하며, 각 링크에 한국어 이관 상태를 명시합니다.
+## 한국어로 읽을 수 있는 입구
 
 - [한국어 책 입구](book/README-KO.md)
 - [한국어 서문](book/preface-KO.md)
-- [용어집 — 한국어 이관 중](CONTEXT.md)
-- [제품 헌장 — 한국어 이관 중](docs/charter.md)
-- [책 구조 — 한국어 이관 중](docs/book-architecture.md)
-- [학습 모델 — 한국어 이관 중](docs/learning-model.md)
-- [출처 및 라이선스 대장 — 한국어 이관 중](docs/sources/asset-register.md)
-- [콘텐츠 업데이트와 검토 — 한국어 이관 중](docs/governance/content-lifecycle.md)
-- [현재 상태 원본 — 한국어 이관 중](docs/governance/content-status.yaml)
-- [현재 상태 검토 — 한국어 이관 중](docs/quality/current-state-review-2026-08-09.md)
-- [Skill 품질 기준 — 한국어 이관 중](docs/quality/skill-quality-standard.md)
-- [학습 및 실행 평가 프레임워크 — 한국어 이관 중](docs/quality/evaluation-framework.md)
-- [평가 작업 세트 v1 — 한국어 이관 중](evals/task-set-v1.yaml)
-- [실제 문제 연구 — 한국어 이관 중](docs/research/field-problems-codex.md)
 - [한국어 책 목차](book/table-of-contents-KO.md)
-- [Codex Coach — 한국어 이관 중](skills/prysai-codex-coach/SKILL.md)
-- [외부 Skill 후보 목록 — 한국어 이관 중](docs/sources/skill-candidate-catalog.md)
-- [공개 쇼케이스 — 한국어 이관 중](site/README.md)
+- [첫 범용 LLM 작업](book/routes/universal-core-foundations-KO.md)
+
+용어집, 거버넌스, 출처 대장, 평가, 연구, Skill 설명은 아직 한국어 파일로
+제공되지 않습니다. 이 읽기 경로를 한 언어로 유지하기 위해 여기서는 원문 페이지로
+연결하지 않습니다. 번역과 검토가 끝난 자료만 이 입구에 추가합니다.
 
 ## 중요한 경계
 
