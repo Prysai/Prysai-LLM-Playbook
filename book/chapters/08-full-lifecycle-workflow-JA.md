@@ -208,6 +208,77 @@ next: 一つの安全な action
 不明なら、次の action は edit ではなく質問または read-only check です。この章と比較実験は
 run record と review ができるまで `candidate` と `not_run` のままです。
 
+## worked case：一つの Markdown chapter を review する
+
+production repository ではなく disposable copy で、七段階を一周する例です。目的は「文章を
+よく見せる」ことではなく、reader が local start step と check の方法を区別して読めるようにする
+ことです。
+
+```text
+Reader: 初めて local copy を開いた人
+Goal: named Markdown file の start section に、最初の action と check を一つずつ明記する
+Fixed input: target file、project rule、一つの supplied acceptance note
+Allowed: read、plan、target file だけの text edit、existing local link check
+Not allowed: link rewrite、install、network、commit、push、publish、別 file の edit
+Acceptance: 二つの heading と指定された local command text がある。broken local link を増やさない
+Rollback: pre-edit copy と baseline diff
+```
+
+この definition が書けないなら、build を始めません。「もっと professional に」は reader、target、
+acceptance、non-goal のどれも決めていないため task ではありません。
+
+### Capability decision と plan
+
+この case に必要なのは新しい Skill、browser automation、external source ではなく、local file を
+read し一つの text edit を review する能力だけです。
+
+1. target と acceptance note を read し、missing heading または command を report する。
+2. edit 前に、changed line、expected diff、check を proposal として見せる。
+3. approval 後に target だけを edit し、diff と existing local check を保存する。
+
+plan が別 file、install、network、publish を必要としたら、同じ slice ではありません。原因を記録し、
+scope を広げずに stop または別 decision に分けます。
+
+### Stage exits と recovery
+
+| stage | 続けるための evidence | evidence がない場合 |
+| --- | --- | --- |
+| Define | target、reader、acceptance、allowed scope | question を一つに絞って ask |
+| Plan | proposed diff と named check | edit を許可しない |
+| Build | target だけの actual diff | scope を review し rollback を決める |
+| Verify | directory を含む check output、または manual read-back | `unverified` で handoff |
+| Review | claim が diff/check の scope を越えない | claim を downgrade |
+| Deliver | changed/not changed/not proven/next を分けた note | “complete” を使わない |
+| Maintain | owner と next fact/check review | future claim をしない |
+
+check が timeout したら、first response は retry ではありません。last output、process state、diff、
+target read-back を残します。state が分からなければ `unknown` とし、potentially completed write を
+blind repeat しません。
+
+### Truthful delivery
+
+```text
+Completed: target Markdown の start section を一か所更新した。
+Evidence: baseline と exact diff、<named command> の output、working directory。
+Not changed: code、dependencies、external service、repository history。
+Not proven: 初学者の理解、browser render、publish、他 environment の runtime。
+Next: 必要なら一人の reader に最初の action を言えるか聞く。external action は新しい decision が必要。
+```
+
+## maintain は次の change を安全にする
+
+workflow の終わりは「永久に正しい」ではありません。volatile な product fact、command、link、
+permission、source は owner と次の review date を持たせます。stable method は残し、product-specific
+instruction は source、access date、scope とともに更新します。古い事実を見つけたら全 corpus を
+機械的に置換せず、affected reader path、acceptance、permission、license、rollback を一つずつ review
+します。
+
+- [ ] case の各 stage に、実在する exit evidence または stop record がある。
+- [ ] one local check を reader outcome、security、publish の証拠にしていない。
+- [ ] timeout 後に最後の accepted checkpoint を確認している。
+- [ ] delivery が changed、not changed、not proven、next を分けている。
+- [ ] future maintenance に owner と review trigger がある。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション">

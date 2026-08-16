@@ -175,6 +175,74 @@ next: 안전한 행동 하나
 불명확하면 다음 행동은 edit가 아니라 질문 또는 read-only check입니다. 실행 기록과 review가
 생기기 전까지 이 장과 비교 실험은 `candidate`, `not_run`입니다.
 
+## worked case: Markdown chapter 하나 검토하기
+
+production repository가 아니라 disposable copy에서 일곱 단계를 한 바퀴 도는 예입니다. 목표는 “글을
+더 좋아 보이게” 하는 것이 아니라 reader가 local start step과 check 방법을 구분해 읽게 하는 것입니다.
+
+```text
+Reader: 처음 local copy를 연 사람
+Goal: named Markdown file의 start section에 첫 action과 check를 하나씩 명시한다
+Fixed input: target file, project rule, supplied acceptance note 하나
+Allowed: read, plan, target file만 text edit, existing local link check
+Not allowed: link rewrite, install, network, commit, push, publish, 다른 file edit
+Acceptance: 두 heading과 지정한 local command text가 있다. broken local link를 늘리지 않는다
+Rollback: pre-edit copy와 baseline diff
+```
+
+이 definition을 쓸 수 없다면 build를 시작하지 않습니다. “더 professional하게”는 reader, target,
+acceptance, non-goal 어느 것도 정하지 않았으므로 task가 아닙니다.
+
+### Capability decision과 plan
+
+이 case에 필요한 것은 새 Skill, browser automation, external source가 아니라 local file을 read하고
+text edit 하나를 review하는 능력입니다.
+
+1. target과 acceptance note를 read하고 missing heading 또는 command를 report한다.
+2. edit 전에 changed line, expected diff, check를 proposal로 보여 준다.
+3. approval 뒤 target만 edit하고 diff와 existing local check를 보관한다.
+
+plan에 다른 file, install, network, publish가 필요하면 같은 slice가 아닙니다. 원인을 기록하고 scope를
+넓히지 말고 stop하거나 별도 decision으로 나눕니다.
+
+### Stage exits와 recovery
+
+| stage | 계속하기 위한 evidence | evidence가 없을 때 |
+| --- | --- | --- |
+| Define | target, reader, acceptance, allowed scope | question 하나로 좁혀 ask |
+| Plan | proposed diff와 named check | edit를 허용하지 않음 |
+| Build | target만 바꾼 actual diff | scope를 review하고 rollback 결정 |
+| Verify | directory를 포함한 check output 또는 manual read-back | `unverified`로 handoff |
+| Review | claim이 diff/check scope를 넘지 않음 | claim을 downgrade |
+| Deliver | changed/not changed/not proven/next를 나눈 note | “complete”를 쓰지 않음 |
+| Maintain | owner와 next fact/check review | 미래 claim을 하지 않음 |
+
+check가 timeout되면 첫 response는 retry가 아닙니다. last output, process state, diff, target read-back을
+보관합니다. state를 모르면 `unknown`으로 두고 potentially completed write를 blind repeat하지 않습니다.
+
+### Truthful delivery
+
+```text
+Completed: target Markdown의 start section 한 곳을 업데이트했다.
+Evidence: baseline과 exact diff, <named command> output, working directory.
+Not changed: code, dependencies, external service, repository history.
+Not proven: 초보자 이해, browser render, publish, 다른 environment의 runtime.
+Next: 필요하면 reader 한 명에게 첫 action을 말할 수 있는지 묻는다. external action은 새 decision이 필요하다.
+```
+
+## maintain은 다음 change를 안전하게 만든다
+
+workflow의 끝은 “영원히 맞다”가 아닙니다. volatile product fact, command, link, permission, source에는
+owner와 다음 review date가 필요합니다. stable method는 남기고 product-specific instruction은 source,
+access date, scope와 함께 업데이트합니다. 오래된 fact를 발견하면 전체 corpus를 기계적으로 바꾸지 말고,
+affected reader path, acceptance, permission, license, rollback을 하나씩 review합니다.
+
+- [ ] case의 각 stage에 실제 exit evidence 또는 stop record가 있다.
+- [ ] one local check를 reader outcome, security, publish evidence로 쓰지 않았다.
+- [ ] timeout 뒤 마지막 accepted checkpoint를 확인했다.
+- [ ] delivery가 changed, not changed, not proven, next를 나눈다.
+- [ ] future maintenance에 owner와 review trigger가 있다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="07-skills-plugins-and-tools-KO.md">← 이전<br><strong>7장 · Skills, Plugins, MCP, 도구</strong></a></td><td align="right"><a data-chapter-nav="next" href="09-verification-and-recovery-KO.md">다음 →<br><strong>9장 · 검증, 의심, 복구</strong></a></td></tr></table></nav>
