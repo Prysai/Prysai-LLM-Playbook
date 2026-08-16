@@ -3766,14 +3766,14 @@ copy.de = {
 
 Object.assign(copy.en, {
   'localeTitle': 'Six-language route',
-  'localeIntro': 'Six repository entry locales are registered, and every reader-facing page is available in all six: English, 简体中文, Español, 日本語, 한국어, Deutsch. No route needs an English fallback anymore.',
+  'localeIntro': 'Six repository entry locales are registered. Each has a same-language route for the 22 chapters and 18 Labs: English, 简体中文, Español, 日本語, 한국어, Deutsch. Skills, research, and governance material keep their own translation status; an unavailable page stays visible as unavailable instead of silently switching its course text to English.',
   'localeEnglish': 'available · default',
   'localeChinese': 'available · 简体中文',
   'localeSpanish': 'available · Español',
   'localeGerman': 'available · Deutsch',
   'localeJapanese': 'available · 日本語',
   'localeKorean': 'available · 한국어',
-  'localeRule': 'Route rule: every translated artifact carries a locale suffix and links to the same locale. A route token now equals a completed, suffixed translation set.',
+  'localeRule': 'Route rule: every translated course unit carries a locale suffix and links to the same locale. A route token means a complete 40-unit chapter-and-Lab path, not that every supplemental document has been translated or independently reviewed.',
   'mobileIndexUpdates': 'Update areas',
   'mobileIndexTrust': 'Trust families',
   'menuCloseAria': 'Close navigation'
@@ -3781,14 +3781,14 @@ Object.assign(copy.en, {
 
 Object.assign(copy.zh, {
   'localeTitle': '六语种路线',
-  'localeIntro': '仓库已登记六种入口语言，所有面向读者的页面均提供六语种版本：English、简体中文、Español、日本語、한국어、Deutsch。任何语言路由都不再需要英文回退。',
+  'localeIntro': '仓库已登记六种入口语言。每种语言都有 22 章和 18 个实验的同语言路线：English、简体中文、Español、日本語、한국어、Deutsch。Skill、研究和治理材料各自保留翻译状态；页面不可用时会明确说明，不会悄悄将课程正文切换为英文。',
   'localeEnglish': '可用 · 默认',
   'localeChinese': '可用 · 简体中文',
   'localeSpanish': '可用 · Español',
   'localeGerman': '可用 · Deutsch',
   'localeJapanese': '可用 · 日本語',
   'localeKorean': '可用 · 한국어',
-  'localeRule': '路由规则：每个翻译产物都带语言后缀并链接到同一语言；语言路由即完整的带后缀翻译集。',
+  'localeRule': '路由规则：每个翻译课程单元都带语言后缀并链接到同一语言；语言路由指完整的 40 单元章节与实验路线，不表示所有补充文档都已翻译或独立审校。',
   'mobileIndexUpdates': '更新区域',
   'mobileIndexTrust': '可信度类型',
   'menuCloseAria': '关闭导航'
@@ -3797,56 +3797,56 @@ Object.assign(copy.zh, {
 Object.assign(copy.es, {
   heroProofAria: 'Ejemplo de prompt de cinco minutos', heroProofKicker: 'EJEMPLO DE CINCO MINUTOS', heroProofTitle: 'Mira cómo un prompt pequeño puede cambiar el resultado.', heroProofLink: 'Prueba la práctica de prompt de cinco minutos',
   'localeTitle': 'Ruta de seis idiomas',
-  'localeIntro': 'Seis idiomas de entrada están registrados y todas las páginas para lectores existen en los seis: English, 简体中文, Español, 日本語, 한국어, Deutsch. Ninguna ruta necesita ya un respaldo en inglés.',
+  'localeIntro': 'Seis idiomas de entrada están registrados. Cada uno tiene una ruta en el mismo idioma para los 22 capítulos y 18 Labs: English, 简体中文, Español, 日本語, 한국어, Deutsch. Skills, investigación y gobernanza conservan su propio estado de traducción; una página no disponible se indica como tal y no cambia silenciosamente el texto del curso al inglés.',
   'localeEnglish': 'disponible · por defecto',
   'localeChinese': 'disponible · 简体中文',
   'localeSpanish': 'disponible · Español',
   'localeGerman': 'disponible · Deutsch',
   'localeJapanese': 'disponible · 日本語',
   'localeKorean': 'disponible · 한국어',
-  'localeRule': 'Regla de rutas: cada artefacto traducido lleva el sufijo de idioma y enlaza al mismo idioma; una ruta equivale a un conjunto completo de traducciones con sufijo.',
+  'localeRule': 'Regla de rutas: cada unidad de curso traducida lleva el sufijo de idioma y enlaza al mismo idioma; una ruta significa el recorrido completo de 40 unidades de capítulos y Labs, no que cada documento suplementario esté traducido o revisado de forma independiente.',
   'menuCloseAria': 'Cerrar navegación'
 });
 
 Object.assign(copy.ja, {
   heroProofAria: '5分間のプロンプト例', heroProofKicker: '5分間の例', heroProofTitle: '小さなプロンプトが結果をどう変えるか見てみよう。', heroProofLink: '5分間のプロンプト練習を試す',
   'localeTitle': '6言語ルート',
-  'localeIntro': '6つの入り口言語が登録され、すべての読者向けページが6言語で存在します：English、简体中文、Español、日本語、한국어、Deutsch。どの言語ルートも英語へのフォールバックは不要になりました。',
+  'localeIntro': '6つの入り口言語が登録されています。各言語には22章と18件のLabを同じ言語で読むルートがあります：English、简体中文、Español、日本語、한국어、Deutsch。Skill、調査、ガバナンス資料にはそれぞれ翻訳状態があります。利用できないページはその旨を表示し、コース本文を黙って英語へ切り替えません。',
   'localeEnglish': '利用可能 · デフォルト',
   'localeChinese': '利用可能 · 简体中文',
   'localeSpanish': '利用可能 · Español',
   'localeGerman': '利用可能 · Deutsch',
   'localeJapanese': '利用可能 · 日本語',
   'localeKorean': '利用可能 · 한국어',
-  'localeRule': 'ルート規則：翻訳された成果物はすべて言語サフィックスを持ち、同じ言語へリンクします。言語ルート＝完全な接尾辞付き翻訳セットです。',
+  'localeRule': 'ルート規則：翻訳されたコース単位は言語サフィックスを持ち、同じ言語へリンクします。言語ルートは40単位の章とLabの完全な経路を意味し、補助文書がすべて翻訳済み・独立レビュー済みという意味ではありません。',
   'menuCloseAria': 'ナビゲーションを閉じる'
 });
 
 Object.assign(copy.ko, {
   heroProofAria: '5분 프롬프트 예시', heroProofKicker: '5분 예시', heroProofTitle: '작은 프롬프트가 결과를 어떻게 바꾸는지 확인해 보세요.', heroProofLink: '5분 프롬프트 연습 해보기',
   'localeTitle': '6개 언어 루트',
-  'localeIntro': '6개의 진입 언어가 등록되어 있으며 모든 독자용 페이지가 6개 언어로 제공됩니다: English, 简体中文, Español, 日本語, 한국어, Deutsch. 이제 어떤 언어 루트도 영어 폴백이 필요하지 않습니다.',
+  'localeIntro': '6개의 진입 언어가 등록되어 있습니다. 각 언어에는 22개 장과 18개 Lab을 같은 언어로 읽는 경로가 있습니다: English, 简体中文, Español, 日本語, 한국어, Deutsch. Skill, 연구, 거버넌스 자료는 각각의 번역 상태를 유지합니다. 이용할 수 없는 페이지는 이용 불가로 표시하며 과정 본문을 조용히 영어로 바꾸지 않습니다.',
   'localeEnglish': '사용 가능 · 기본값',
   'localeChinese': '사용 가능 · 简体中文',
   'localeSpanish': '사용 가능 · Español',
   'localeGerman': '사용 가능 · Deutsch',
   'localeJapanese': '사용 가능 · 日本語',
   'localeKorean': '사용 가능 · 한국어',
-  'localeRule': '루트 규칙: 번역된 산출물은 모두 언어 접미사를 가지며 같은 언어로 연결됩니다. 언어 루트 = 완전한 접미사 번역 세트.',
+  'localeRule': '루트 규칙: 번역된 과정 단위는 언어 접미사를 가지며 같은 언어로 연결됩니다. 언어 루트는 40개 장과 Lab 단위의 완전한 경로를 뜻하며, 모든 보조 문서가 번역되었거나 독립 검토되었다는 뜻은 아닙니다.',
   'menuCloseAria': '내비게이션 닫기'
 });
 
 Object.assign(copy.de, {
   heroProofAria: 'Fünf-Minuten-Prompt-Beispiel', heroProofKicker: 'FÜNF-MINUTEN-BEISPIEL', heroProofTitle: 'Sieh, wie ein kleiner Prompt das Ergebnis verändern kann.', heroProofLink: 'Die Fünf-Minuten-Prompt-Übung ausprobieren',
   'localeTitle': 'Sechs-Sprachen-Route',
-  'localeIntro': 'Sechs Einstiegssprachen sind registriert, und jede leserorientierte Seite liegt in allen sechs Sprachen vor: English, 简体中文, Español, 日本語, 한국어, Deutsch. Keine Route braucht mehr einen englischen Fallback.',
+  'localeIntro': 'Sechs Einstiegssprachen sind registriert. Jede hat einen gleichsprachigen Weg für die 22 Kapitel und 18 Labs: English, 简体中文, Español, 日本語, 한국어, Deutsch. Skills, Forschung und Governance behalten ihren eigenen Übersetzungsstatus; eine nicht verfügbare Seite wird als solche angezeigt und ersetzt den Kurstext nicht stillschweigend durch Englisch.',
   'localeEnglish': 'verfügbar · Standard',
   'localeChinese': 'verfügbar · 简体中文',
   'localeSpanish': 'verfügbar · Español',
   'localeGerman': 'verfügbar · Deutsch',
   'localeJapanese': 'verfügbar · 日本語',
   'localeKorean': 'verfügbar · 한국어',
-  'localeRule': 'Routenregel: Jedes übersetzte Artefakt trägt das Sprachsuffix und verlinkt auf dieselbe Sprache; eine Sprachroute entspricht einem vollständigen, suffigierten Übersetzungssatz.',
+  'localeRule': 'Routenregel: Jede übersetzte Kurseinheit trägt das Sprachsuffix und verlinkt auf dieselbe Sprache. Eine Sprachroute bedeutet den vollständigen Pfad mit 40 Kapitel- und Lab-Einheiten, nicht dass jedes Zusatzdokument übersetzt oder unabhängig geprüft ist.',
   'menuCloseAria': 'Navigation schließen'
 });
 
