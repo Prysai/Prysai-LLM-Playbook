@@ -245,7 +245,7 @@ that this repository has run a model comparison.
 
 Choose two candidates that have `surface_available: yes` on the same surface.
 Use the versioned, offline
-[`three-task-smoke-v1` fixture](../../evals/candidates/three-task-smoke-v1/README.md)
+[`three-task-smoke-v1` fixture](../../evals/candidates/three-task-smoke-v1/README-EN.md)
 instead of recreating inputs from memory. It contains synthetic, non-sensitive
 input plus a local validator; it does not contain model runs. Do not use
 production data, real secrets, external writes, publication, push, deployment,
@@ -359,7 +359,7 @@ for evaluation evidence.
 | CLI surface and local repository workflow | [Codex CLI](https://learn.chatgpt.com/docs/cli.md) | 2026-08-11 | Official CLI documentation; not this session’s effective configuration | `facts-maintainer` / 2026-09-11 |
 | Cloud environment, setup, logs, and review boundaries | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-11 | Official Cloud documentation; setup is not agent-stage completion | `facts-maintainer` / 2026-09-11 |
 | Public model/provider, capacity, and long-wait symptoms | [Field problem record](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) | 2026-08-11 | User reports and project guidance; no local reproduction or official root-cause claim | `curriculum-maintainer` / 2026-09-11 |
-| Fixed-task comparison method | [Evaluation chapter](19-evaluate-models-and-workflows-EN.md) and the [versioned fixture](../../evals/candidates/three-task-smoke-v1/README.md) | 2026-08-14 | Playbook method and local fixture validator; no completed model runs yet | `evaluation-maintainer` / 2026-09-11 |
+| Fixed-task comparison method | [Evaluation chapter](19-evaluate-models-and-workflows-EN.md) and the [versioned fixture](../../evals/candidates/three-task-smoke-v1/README-EN.md) | 2026-08-14 | Playbook method and local fixture validator; no completed model runs yet | `evaluation-maintainer` / 2026-09-11 |
 
 Model IDs, surface matrices, prices, capacity, configuration syntax, provider
 support, effort controls, and deprecation notices can change. When they do,

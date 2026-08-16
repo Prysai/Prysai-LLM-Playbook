@@ -117,7 +117,7 @@ Antes de la primera ejecución congela entradas y versión, superficie, entrada,
 
 **Estado del experimento:** `not_run`. Es un protocolo de práctica, no evidencia de que este repositorio haya comparado modelos.
 
-Elige dos candidatos con `surface_available: yes` en la misma superficie. Usa el fixture offline y versionado [`three-task-smoke-v1`](../../evals/candidates/three-task-smoke-v1/README.md), con entradas sintéticas y validador local; no contiene ejecuciones de modelo. No uses datos de producción, secretos, escrituras externas, publicación, push, despliegue ni conectores de pago. Ejecuta cada tarea una vez y permite como máximo una revisión controlada, declarada de antemano y con el mismo formato.
+Elige dos candidatos con `surface_available: yes` en la misma superficie. Usa el fixture offline y versionado [`three-task-smoke-v1`](../../evals/candidates/three-task-smoke-v1/README-ES.md), con entradas sintéticas y validador local; no contiene ejecuciones de modelo. No uses datos de producción, secretos, escrituras externas, publicación, push, despliegue ni conectores de pago. Ejecuta cada tarea una vez y permite como máximo una revisión controlada, declarada de antemano y con el mismo formato.
 
 Las tareas fijas son `extract-01`, `markdown-02` y `gap-review-03`: extracción estructurada, transformación Markdown bajo restricciones y revisión de huecos de evidencia. No cambies una tarea por una demostración más vistosa para un candidato. Si cambian entrada, instrucción, esquema o aceptación, crea versión nueva y repite ambos lados.
 

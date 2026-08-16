@@ -189,7 +189,7 @@ conclusion_status: not_run | candidate | disputed
 
 ### 准备
 
-选择同一工作面上 `surface_available: yes` 的两个候选项。使用版本化、离线的 [`three-task-smoke-v1` fixture](../../evals/candidates/three-task-smoke-v1/README.md)，不要凭记忆重新造输入。它包含合成、非敏感输入和本地验证器，但不包含模型运行记录。不要使用生产数据、真实秘密信息、外部写入、发布、推送、部署或付费连接器。每个任务初始只运行一次，至多允许一次预先声明、格式相同的返工。
+选择同一工作面上 `surface_available: yes` 的两个候选项。使用版本化、离线的 [`three-task-smoke-v1` fixture](../../evals/candidates/three-task-smoke-v1/README-ZH.md)，不要凭记忆重新造输入。它包含合成、非敏感输入和本地验证器，但不包含模型运行记录。不要使用生产数据、真实秘密信息、外部写入、发布、推送、部署或付费连接器。每个任务初始只运行一次，至多允许一次预先声明、格式相同的返工。
 
 冻结 `task_set_version: three-task-smoke-v1`、两张候选卡、一份验收量表、原始输出位置、日志位置，以及针对不可用、容量中断、权限不匹配、输入漂移或工具版本漂移的停止条件。
 
@@ -270,7 +270,7 @@ comparable | not_comparable_reason | raw_evidence
 | CLI 工作面与本地仓库工作流 | [Codex CLI](https://learn.chatgpt.com/docs/cli.md) | 2026-08-11 | 官方 CLI 文档；不是本会话的实际配置 | `facts-maintainer` / 2026-09-11 |
 | Cloud 环境、设置、日志和审查边界 | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-11 | 官方 Cloud 文档；设置不等于 Agent 阶段完成 | `facts-maintainer` / 2026-09-11 |
 | 公开模型/提供商、容量和长等待症状 | [现场问题记录](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) | 2026-08-11 | 用户报告和项目指导；没有本地复现或官方根因主张 | `curriculum-maintainer` / 2026-09-11 |
-| 固定任务比较方法 | [中文课程目录中的评测章节状态](../table-of-contents-ZH.md) 与[版本化 fixture（共享材料，英文原文）](../../evals/candidates/three-task-smoke-v1/README.md) | 2026-08-14 | Playbook 方法和本地 fixture 验证器；中文课程译文已提供，但固定评测材料保留英文原文，且没有任何已完成模型运行 | `evaluation-maintainer` / 2026-09-11 |
+| 固定任务比较方法 | [中文课程目录中的评测章节状态](../table-of-contents-ZH.md) 与[版本化 fixture（中文说明）](../../evals/candidates/three-task-smoke-v1/README-ZH.md) | 2026-08-14 | Playbook 方法和本地 fixture 验证器；固定数据仍为共享材料，且没有任何已完成模型运行 | `evaluation-maintainer` / 2026-09-11 |
 
 模型 ID、工作面矩阵、价格、容量、配置语法、提供商支持、推理控制和弃用通知都可能变化。发生变化时，先刷新第一方来源，再更新事实影响登记、研究记录、本章、受影响评测 fixture 和状态源。将官方定位、用户症状与本地运行时证据写在不同句子中。
 

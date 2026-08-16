@@ -112,7 +112,7 @@ This is a low-risk, offline, reproducible smoke experiment. It answers only whet
 ### Setup
 
 In a temporary copy, use the fixed
-[`three-task-smoke-v1` package](../../evals/candidates/three-task-smoke-v1/README.md).
+[`three-task-smoke-v1` package](../../evals/candidates/three-task-smoke-v1/README-EN.md).
 It includes frozen synthetic inputs, expected outputs, input hashes, a
 run-record template, and an offline validator. Choose one comparison variable:
 when comparing models, fix the workflow; when comparing workflows, fix the

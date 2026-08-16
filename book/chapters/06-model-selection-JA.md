@@ -144,7 +144,7 @@ context、tool、effort、permission を良くしてはいけません。契約�
 ありません。
 
 同じ作業面で `surface_available: yes` の候補を二つ選びます。synthetic input とローカル validator
-だけで構成された版管理済み fixture [`three-task-smoke-v1`](../../evals/candidates/three-task-smoke-v1/README.md)
+だけで構成された版管理済み fixture [`three-task-smoke-v1`](../../evals/candidates/three-task-smoke-v1/README-JA.md)
 を使います。そこにはモデル実行は含まれません。production data、secret、外部書き込み、公開、push、
 deploy、有料 connector を使わないでください。各タスクは一度だけ実行し、事前に定めた同形式の
 制御された再試行だけを最大一回許します。

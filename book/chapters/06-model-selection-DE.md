@@ -157,7 +157,7 @@ beide Seiten.
 dieses Repository Modelle verglichen hat.
 
 Wähle zwei Kandidaten mit `surface_available: yes` auf derselben Arbeitsfläche. Nutze
-das versionierte Offline-Fixture [`three-task-smoke-v1`](../../evals/candidates/three-task-smoke-v1/README.md)
+das versionierte Offline-Fixture [`three-task-smoke-v1`](../../evals/candidates/three-task-smoke-v1/README-DE.md)
 mit synthetischen Eingaben und lokalem Validator; es enthält keine Modellläufe. Nutze
 keine Produktionsdaten, Geheimnisse, externen Schreibzugriff, Veröffentlichung,
 Push, Deployment oder kostenpflichtige Connectoren. Führe jede Aufgabe einmal aus

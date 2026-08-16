@@ -67,13 +67,14 @@ def check_reader_links(path: Path, locale: str, problems: list[str]) -> None:
             target_relative = target_path.relative_to(ROOT)
         except ValueError:
             continue
+        fixture_directory = target_relative.parts[:2]
         is_localized_fixture = (
-            target_relative.parts[:2] in {
+            fixture_directory in {
                 ("examples", "universal-seam-v1"),
                 ("examples", "lab-001-v1"),
             }
-            and target_relative.suffix.lower() == ".md"
-        )
+            or target_relative.parts[:3] == ("evals", "candidates", "three-task-smoke-v1")
+        ) and target_relative.suffix.lower() == ".md"
         if not target_relative.parts or (target_relative.parts[0] != "book" and not is_localized_fixture):
             continue
         if not target_path.is_file():

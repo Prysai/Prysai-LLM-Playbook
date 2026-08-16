@@ -138,7 +138,7 @@ tool, effort, permission을 좋게 만들지 마세요. 계약이 달라지면 �
 **실험 상태:** `not_run`. 이는 연습 프로토콜이며 이 저장소가 모델을 비교했다는 증거가 아닙니다.
 
 같은 작업면에서 `surface_available: yes`인 후보 둘을 고릅니다. synthetic input과 로컬 validator만
-있는 버전 고정 fixture [`three-task-smoke-v1`](../../evals/candidates/three-task-smoke-v1/README.md)를
+있는 버전 고정 fixture [`three-task-smoke-v1`](../../evals/candidates/three-task-smoke-v1/README-KO.md)를
 사용하세요. 모델 실행은 포함되어 있지 않습니다. production data, secret, 외부 쓰기, 게시, push,
 deploy, 유료 connector를 사용하지 마세요. 각 작업은 한 번 실행하고 사전에 정한 같은 형식의
 통제된 재시도만 최대 한 번 허용합니다.
