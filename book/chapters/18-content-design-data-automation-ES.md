@@ -43,6 +43,47 @@ Usa un contexto sintético de informe de producto, datos estructurados desidenti
 
 Conserva tabla A–D, render final, diccionario de datos, validación, respuestas a entradas inválidas, logs, permisos, registros de retry, estado sandbox y evidencia explícita de que no hubo release público. Si hay timeout tras una escritura simulada, conserva trace, consulta estado parcial y no repitas una acción no idempotente. Hasta tener evidencia real de forma final y revisión independiente, el capítulo sigue `candidate / not_run`.
 
+## Contrato de automatización: datos antes que acciones
+
+Ejemplo offline: convertir conteos agregados en un informe de una página. Solo lee JSON sintético y escribe un directorio desechable; no usa red, login ni envío.
+
+```text
+Entrada: report-input.json con date, category, count; count entero no negativo.
+Límite: sin nombre, email, IP, chat, token ni ID externo.
+Transformación: sumar por category y guardar versión de entrada y script.
+Salida: report.md con ventana, denominador, campos ausentes y estado vacío.
+Validación: releer salida y comprobar totales, categorías, hash y casos vacío/erróneo.
+Retry: solo con la misma idempotency key y salida leíble; una escritura desconocida se consulta antes.
+Parada: esquema inválido, dato sensible, directorio incierto u overwrite sin confirmar.
+```
+
+Un código 0 solo muestra que el script terminó según su definición; no prueba mapeo, etiquetas, audiencia ni sistema externo.
+
+| Entregable | Revisar al abrir | Fallo olvidado |
+|---|---|---|
+| Documento/PDF | Jerarquía, páginas, enlaces, vacío, texto seleccionable | Exportación rota |
+| Sitio | 390px/escritorio, teclado, vacío/error, enlaces | Botón o idioma incorrecto |
+| Gráfico | Unidad, denominador, etiquetas, contraste, alt, derechos | Bonito pero engañoso |
+| Hoja | Fórmulas, filtros, vacíos, unidades, recálculo | Fórmula sobrescrita |
+| Flujo | Esquemas, logs, lote, clave, lectura posterior | Duplicado tras timeout |
+
+## Experimento: informe offline y dos fallos
+
+1. Prepara datos sintéticos normales, vacíos, sin `count`, negativos y extremos; no uses datos reales.
+2. Genera Markdown, revisa ventana, total, categorías y vacío; si renderizas PDF/PNG, revisa forma final.
+3. Conserva hash, versión, ruta, salida, log y lectura posterior por ejecución.
+4. Simula timeout tras escritura: antes de repetir, lee con el mismo lote si existe informe parcial; si es desconocido, entrega `unverified` y para.
+5. Con columna ausente o datos malos, explica el bloqueo; no inventes ceros, gráfico ni éxito.
+
+Enviar a correo, CRM, nube o web sería otra acción externa con cuenta de prueba o borrador, destino/audiencia, aprobación, lote, retirada y lectura en línea; este ejercicio no la autoriza.
+
+## Comprobación propia
+
+- [ ] Defino campos, límite sensible, versión, salida, validación, retry y parada.
+- [ ] Abro la forma final y reviso vacío/error/acceso, no solo script.
+- [ ] Ante timeout consulto lote y salida antes de repetir posible escritura.
+- [ ] Distingo generado local, borrador, enviado, publicado y leído en línea.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="17-marketing-track-ES.md">← Anterior<br><strong>Capítulo 17 · ruta de marketing, de entender el producto a experimentar con crecimiento</strong></a></td><td align="right"><a data-chapter-nav="next" href="19-evaluate-models-and-workflows-ES.md">Siguiente →<br><strong>Capítulo 19 · evaluar modelos y flujos de trabajo, de impresiones a evidencia</strong></a></td></tr></table></nav>

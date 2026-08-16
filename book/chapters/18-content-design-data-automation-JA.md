@@ -43,6 +43,47 @@ level は、低リスクのローカル読み取り、可逆な project work、�
 
 A–D 表、最終 render、data dictionary、validation、無効入力への応答、log、permission、retry、sandbox 状態、公開がなかった証拠を残します。模擬書込み後 timeout なら trace を保存して部分状態を照会し、非冪等操作を繰り返しません。実際の最終形の証拠と独立 review までは `candidate / not_run` です。
 
+## automation contract：action より先に data を定義する
+
+offline の「aggregate count から一ページ report を作る」例です。synthetic JSON を read し disposable directory に write するだけで、network、login、send はしません。
+
+```text
+input: report-input.json。date、category、count。count は non-negative integer。
+sensitive boundary: name、email、IP、chat、token、external ID を受け取らない。
+transform: category ごとに count を集計し、input/version と script version を残す。
+output: report.md。time window、denominator、missing field、empty state を含める。
+validation: output を read back し total、category、hash、empty/bad input を確認。
+retry: 同じ idempotency key と read-back 可能な output のときだけ。unknown write は先に query。
+stop: schema 不一致、sensitive data、directory 不明、overwrite rule 未確認。
+```
+
+exit code 0 は script が自身の定義で終わったことだけを示します。field mapping、label、audience、external system は証明しません。
+
+| deliverable | 開いた後に見るもの | 見落としやすい failure |
+|---|---|---|
+| document/PDF | hierarchy、page、link、empty、selectable text | export の崩れ |
+| website | 390px/desktop、keyboard、empty/error、link | button または language の誤り |
+| chart | unit、denominator、label、contrast、alt、rights | きれいでも誤解を招く |
+| sheet | formula、filter、empty、unit、recalculate | formula の上書き |
+| flow | schema、log、batch、key、read-back | timeout 後の二重 write |
+
+## 小実験：offline report flow と二つの failure
+
+1. normal、empty、`count` 欠落、negative、extreme の synthetic input を作る。real customer/personal/production data は使わない。
+2. Markdown report を作り window、total、category、empty state を確認する。PDF/PNG を render するなら final form を確認する。
+3. run ごとに input hash、transform version、output path、exit status、raw log、read-back を残す。
+4. write 後 timeout を模擬する。すぐ再 write せず同じ batch で partial report を読む。unknown なら `unverified` として stop。
+5. missing column/bad data では block reason を示し、zero、chart、success を作らない。
+
+email、CRM、cloud drive、website への送信は別の external write です。test account/draft endpoint、target/audience、approval、batch、withdrawal/rollback、online read-back が必要で、この exercise は許可しません。
+
+## 自己確認
+
+- [ ] input field、sensitive boundary、version、output、validation、retry、stop を書いた。
+- [ ] final form を開き、empty/error/accessibility を script 以外で確認する。
+- [ ] timeout では batch/output を query してから write を繰り返す。
+- [ ] local generated、draft、sent、published、online read-back を分ける。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="17-marketing-track-JA.md">← 前の章<br><strong>第17章 · マーケティング・トラック、製品理解から成長実験へ</strong></a></td><td align="right"><a data-chapter-nav="next" href="19-evaluate-models-and-workflows-JA.md">次へ →<br><strong>第19章 · モデルとワークフローを評価する、印象から証拠へ</strong></a></td></tr></table></nav>

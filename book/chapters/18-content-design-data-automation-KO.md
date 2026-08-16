@@ -43,6 +43,47 @@ timeout, retry, backoff, idempotency key; log, trace ID, error 분류;
 
 A–D 표, 최종 render, data dictionary, validation, 잘못된 입력 응답, log, permission, retry, sandbox 상태, 공개하지 않았다는 증거를 보관합니다. 모의 쓰기 뒤 timeout이면 trace를 보존하고 부분 상태를 조회하며 비멱등 행동을 반복하지 않습니다. 실제 최종 형식 증거와 독립 review 전까지 `candidate / not_run`입니다.
 
+## 자동화 계약: 행동보다 먼저 데이터 정의하기
+
+오프라인 “집계 count를 한 페이지 report로 만들기” 예입니다. 합성 JSON을 읽고 버릴 수 있는 디렉터리에 쓸 뿐 network, login, send는 하지 않습니다.
+
+```text
+입력: report-input.json, date·category·count; count는 0 이상 정수.
+민감 경계: name, email, IP, chat, token, external ID는 받지 않음.
+변환: category별 count 합계와 input/script version 보존.
+출력: report.md, time window, denominator, missing field, empty state 포함.
+검증: output을 다시 읽고 total, category, hash, empty/bad input 확인.
+재시도: 같은 idempotency key와 읽을 수 있는 output에서만; unknown write는 먼저 query.
+중지: schema 불일치, 민감 데이터, 디렉터리 불명확, overwrite rule 미확인.
+```
+
+exit code 0은 script가 자신의 정의로 끝났다는 뜻일 뿐 field mapping, label, audience, external system을 증명하지 않습니다.
+
+| 전달물 | 열어서 볼 것 | 놓치기 쉬운 failure |
+|---|---|---|
+| 문서/PDF | hierarchy, page, link, empty, 선택 가능 text | export 깨짐 |
+| website | 390px/desktop, keyboard, empty/error, link | button/language 오류 |
+| chart | unit, denominator, label, contrast, alt, rights | 예쁘지만 오도함 |
+| sheet | formula, filter, empty, unit, recalculate | formula 덮어쓰기 |
+| flow | schema, log, batch, key, read-back | timeout 뒤 중복 write |
+
+## 작은 실험: 오프라인 report flow와 두 failure
+
+1. normal, empty, `count` 누락, negative, extreme 합성 input을 만듭니다. 실제 customer/personal/production data는 쓰지 않습니다.
+2. Markdown report를 만들고 window, total, category, empty state를 확인합니다. PDF/PNG를 render하면 final form을 검사합니다.
+3. 실행마다 input hash, transform version, output path, exit status, raw log, read-back을 보관합니다.
+4. write 후 timeout을 흉내 냅니다. 바로 다시 쓰지 말고 같은 batch로 partial report를 읽습니다. unknown이면 `unverified`로 전달하고 중지합니다.
+5. missing column/bad data에서는 block reason을 보여 주고 zero, chart, success를 만들지 않습니다.
+
+email, CRM, cloud drive, website 전송은 별도 external write입니다. test account/draft endpoint, target/audience, approval, batch, withdrawal/rollback, online read-back이 필요하며 이 연습은 허가하지 않습니다.
+
+## 스스로 확인하기
+
+- [ ] input field, 민감 경계, version, output, validation, retry, stop을 썼다.
+- [ ] final form을 열어 empty/error/accessibility를 script 외에 확인한다.
+- [ ] timeout에서 batch/output을 query한 뒤 write를 재시도한다.
+- [ ] local generated, draft, sent, published, online read-back을 구분한다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="17-marketing-track-KO.md">← 이전<br><strong>17장 · 마케팅 트랙, 제품 이해에서 성장 실험까지</strong></a></td><td align="right"><a data-chapter-nav="next" href="19-evaluate-models-and-workflows-KO.md">다음 →<br><strong>19장 · 모델과 워크플로 평가하기, 인상에서 증거로</strong></a></td></tr></table></nav>
