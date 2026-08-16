@@ -362,8 +362,8 @@ window.CODEX_LEARNING_PATH = {
         {
           "id": "lab-018",
           "name": {
-            "en": "Language transfer",
-            "zh": "语言迁移练习"
+            "en": "Typed language transfer",
+            "zh": "文字语言迁移练习"
           },
           "href": "../book/labs/lab-018-language-transfer-EN.md",
           "relation": "supporting",

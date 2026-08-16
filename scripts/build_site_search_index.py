@@ -13,7 +13,11 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_FILE = ROOT / "site/search-index.js"
 LOCALES = ("en", "zh", "es", "ja", "ko", "de")
-READY_TRANSLATIONS = {"source", "verified", "production-ready"}
+# The Reader deliberately renders candidate and in-progress translations while
+# disclosing their review state. Search must follow that same availability rule:
+# otherwise a Chinese search can point to English even when the Reader can
+# already present the declared Chinese candidate file.
+READY_TRANSLATIONS = {"source", "candidate", "in-progress", "verified", "production-ready"}
 MAX_SEARCH_CHARS = 9000
 MAX_SNIPPET_CHARS = 260
 
@@ -75,6 +79,100 @@ def item_number(content_id: str, kind: str) -> int | None:
     return None
 
 
+def add_catalog_search_targets(manifest: dict[str, Any], documents: list[dict[str, Any]]) -> None:
+    """Project a small, source-governed section target into the document index.
+
+    A document result remains useful for broad discovery. A target exists only
+    where the catalog names one intentional learner destination, so a broad
+    word elsewhere cannot accidentally redirect a reader to an unrelated
+    heading. Targets inherit a real Reader path and locale record rather than
+    creating a second content source.
+    """
+    catalog = load_json(ROOT / "site" / "content-catalog.json")
+    guides = catalog.get("supplemental_guides", {})
+    if not isinstance(guides, dict):
+        raise ValueError("site/content-catalog.json supplemental_guides must be an object")
+
+    source_order = {document["content_id"]: document["order"] for document in documents}
+    for content_id, guide in guides.items():
+        if not isinstance(guide, dict):
+            raise ValueError(f"search-target guide {content_id} must be an object")
+        targets = guide.get("search_targets", [])
+        if targets is None:
+            continue
+        if not isinstance(targets, list):
+            raise ValueError(f"search_targets for {content_id} must be a list")
+        if not targets:
+            continue
+
+        content = manifest["contents"].get(content_id)
+        if not isinstance(content, dict) or content_id not in source_order:
+            raise ValueError(f"search target {content_id} must name a routed source document")
+        for offset, target in enumerate(targets, start=1):
+            if not isinstance(target, dict):
+                raise ValueError(f"search target {content_id} must be an object")
+            target_id = target.get("id")
+            locale = target.get("locale")
+            title = target.get("title")
+            snippet = target.get("snippet")
+            anchor = target.get("anchor")
+            aliases = target.get("aliases", [])
+            if not isinstance(target_id, str) or not re.fullmatch(r"[a-z0-9][a-z0-9-]{1,80}", target_id):
+                raise ValueError(f"search target {content_id} has an invalid id")
+            if locale not in LOCALES:
+                raise ValueError(f"search target {content_id}/{target_id} has an unsupported locale")
+            if not isinstance(title, str) or not title.strip() or not isinstance(snippet, str) or not snippet.strip():
+                raise ValueError(f"search target {content_id}/{target_id} needs a title and snippet")
+            if not isinstance(anchor, str) or not re.fullmatch(r"[a-z0-9][a-z0-9-]{1,120}", anchor):
+                raise ValueError(f"search target {content_id}/{target_id} has an invalid heading anchor")
+            if not isinstance(aliases, list) or any(not isinstance(alias, str) or not alias.strip() for alias in aliases):
+                raise ValueError(f"search target {content_id}/{target_id} aliases must be non-empty strings")
+
+            locale_record = content.get("locales", {}).get(locale)
+            if not isinstance(locale_record, dict) or not locale_record.get("exists") or not isinstance(locale_record.get("path"), str):
+                raise ValueError(f"search target {content_id}/{target_id} needs an existing {locale} source")
+            path = locale_record["path"]
+            if not (ROOT / path).is_file():
+                raise ValueError(f"search target {content_id}/{target_id} source is missing: {path}")
+            body = (ROOT / path).read_text(encoding="utf-8")
+            if not re.search(rf'<span\s+id="{re.escape(anchor)}"></span>', body) and not re.search(rf"(?m)^##+\s+.*?\{{#{re.escape(anchor)}\}}\s*$", body):
+                # Reader generates conventional heading IDs. Require the
+                # declared slug to match its source heading, without relying
+                # on an invisible hand-maintained fragment map.
+                heading_slugs = {
+                    re.sub(r"[^a-z0-9]+", "-", normalize_text(match.group(1))).strip("-")
+                    for match in re.finditer(r"(?m)^##+\s+(.+?)\s*$", body)
+                }
+                if anchor not in heading_slugs:
+                    raise ValueError(f"search target {content_id}/{target_id} anchor is not a source heading: {anchor}")
+
+            localized = {
+                locale: {
+                    "path": f"{path}#{anchor}",
+                    "exists": True,
+                    "ready": locale_record.get("translation_status") in READY_TRANSLATIONS,
+                    "title": title.strip(),
+                    "snippet": snippet.strip(),
+                    "content_status": locale_record.get("content_status"),
+                    "translation_status": locale_record.get("translation_status"),
+                }
+            }
+            documents.append(
+                {
+                    "content_id": f"{content_id}--{target_id}",
+                    "kind": "document",
+                    "number": None,
+                    "route": None,
+                    "order": source_order[content_id] + (offset / 100),
+                    "status": locale_record.get("content_status"),
+                    "available_locales": [locale],
+                    "locales": localized,
+                    "search": {locale: normalize_text(" ".join([title, snippet, *aliases]))},
+                    "search_aliases": {},
+                }
+            )
+
+
 def build_index() -> dict[str, Any]:
     sys.path.insert(0, str(ROOT / "scripts"))
     import build_site_locale_manifest  # pylint: disable=import-outside-toplevel
@@ -116,7 +214,7 @@ def build_index() -> dict[str, Any]:
             }
             # Search can use an existing source even while its translation is
             # still under review. The UI selects ready content for display and
-            # labels an English fallback; hiding an existing source would make
+            # labels its candidate status; hiding an existing source would make
             # the migration state impossible to discover.
             searchable[locale] = search_text
 
@@ -153,6 +251,8 @@ def build_index() -> dict[str, Any]:
             }
         )
 
+    add_catalog_search_targets(manifest, documents)
+
     return {
         "schema_version": "1",
         "default_locale": "en",
@@ -166,6 +266,7 @@ def build_index() -> dict[str, Any]:
             "book/chapters",
             "book/labs",
             "book/README*.md",
+            "site/content-catalog.json",
         ],
         "documents": documents,
     }

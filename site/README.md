@@ -102,8 +102,8 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 
 1. 默认打开 `http://127.0.0.1:4173/`，确认页面为英文，`document.documentElement.lang` 为 `en`；
 2. 访问 `?lang=en`、`?lang=zh`、`?lang=es`、`?lang=ja`、`?lang=ko`、`?lang=de`，确认菜单高亮、banner 状态和 URL 保持；显式 URL 必须优先于旧的 `localStorage` 值；
-3. 在 EN / ZH 下确认正文、标题、description、aria-label 和 `lang` 同步；在 ES / JA / KO / DE 下确认英文 UI 与目标 locale fallback 都被明确标出；
-4. 点击章节、实验和学习路径入口，确认它们解析到当前 locale 的存在文件，或带 pending 标记的 English fallback；确认路径、查询参数和 hash 不丢失；
+3. 在每一种语言下确认正文、标题、description、aria-label 和 `lang` 同步；缺失单元必须显示该语言的不可用提示，不得静默切换到英文或其他语言；
+4. 点击章节、实验和学习路径入口，确认它们解析到当前 locale 的存在文件，或显示该 locale 的待翻译不可用状态；确认路径、查询参数和 hash 不丢失；
 5. 检查导航锚点、章节筛选、章节折叠和 L0—L6 切换；用方向键、Home/End 操作等级标签；
 6. 检查 18 个实验卡片、索引链接和窄屏布局与菜单展开；菜单打开后按 Escape，确认焦点回到菜单按钮；Reader 还要检查跳到正文、加载状态、错误状态和中文外壳文案；
 7. 分别在 320px、390px、820px、980px 宽度检查无横向溢出、触控目标可用、中文不被截断；

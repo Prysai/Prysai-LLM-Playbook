@@ -67,6 +67,10 @@ currently `draft` with `run_status: not_run`.
 - [Preface: This Is Not a Prompt Catalogue](preface-EN.md)
 - [English book table of contents](table-of-contents-EN.md)
 - [Beginner Practice Pack: turn a broad wish into one practical route for learning, research, decisions, or creation](communication-clinic-EN.md#first-practice-intake) — supplemental candidate; complete learner run `not_run`; an intake, templates, and evidence contracts exist
+- [Six short Spanish practice messages](communication-clinic-EN.md#six-short-spanish-messages) — immediate text-only entry; six original prompts for one fictional four-turn typed exchange, not a fluency or retention claim
+- [Six short research messages](communication-clinic-EN.md#six-short-research-messages) — immediate text-only entry; six original prompts for a source-supported decision check, not a browsing or research-completion claim
+- [Source-set scope check](communication-clinic-EN.md#retrieval-scope-receipt) — immediate text-only entry; three original prompts that label a supplied fictional source list against an explicit rule, not a complete-retrieval or source-quality claim
+- [Share Check](communication-clinic-EN.md#share-check) — immediate text-only entry; three original prompts that choose a smaller fictional item to share or stop before any link, upload, or message is created
 - [Project map — where chapters, labs, Skills, research, and checks live](../docs/project-map-EN.md)
 - [Canonical chapter navigation source](../docs/governance/book-navigation.yaml)
 - [Evaluation framework — locale-neutral governance](../docs/quality/evaluation-framework.md)

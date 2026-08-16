@@ -35,6 +35,8 @@ def main() -> int:
         require(len(labs) == 18, f"Reader manifest projects {len(labs)} Labs instead of 18")
         require([lab["number"] for lab in labs] == list(range(1, 19)), "Lab numbers are not the complete 1-18 sequence")
         require(labs[0]["content_id"] == "lab-001-first-safe-task", "Lab 001 is not the first Reader entry")
+        require(labs[1]["title_zh"] == "把一个愿望变成任务协议", "Lab 002 Chinese navigation title is missing")
+        require(labs[3]["title_zh"] == "选择最小有用能力", "Lab 004 Chinese navigation title is missing")
         require(labs[8]["content_id"] == "lab-009-engineering-lifecycle", "Lab 009 is not the middle fixture")
         require(labs[-1]["content_id"] == "lab-018-language-transfer", "Lab 018 is not the last Reader entry")
 
@@ -42,6 +44,8 @@ def main() -> int:
         for required in (
             "function labForSelection(selection)",
             "function labPath(lab)",
+            "function labHasLocalizedTitle(lab)",
+            "function labNavigationTitle(lab)",
             "function labProgressLabel(lab)",
             "Catalog order, not a prerequisite chain",
             "const currentLab = labForSelection(selection);",
@@ -53,6 +57,9 @@ def main() -> int:
             "updateLabPagination(nextLink, nextTitle, next, 'next');",
             "const generatedBlockStart = line.trim().match(/^<!--\\s*(chapter-navigation|lab-navigation|language-switcher):start\\s*-->$/i);",
             "const h1BeforeFrontMatter = fragment.childNodes.length === 1 && fragment.firstChild?.tagName === 'H1';",
+            "function translationReviewPending(record)",
+            "translationInProgress:",
+            "'candidate', 'in-progress', 'verified'",
         ):
             require(required in reader, f"Reader Lab contract is missing: {required}")
         require(
@@ -70,9 +77,22 @@ def main() -> int:
             require("id: fixture" not in search_body, "search index retained front-matter metadata")
         require("${generatedBlockKind}:end" in reader, "Reader does not strip matching generated metadata blocks")
 
+        search_documents = search_index.build_index()["documents"]
+        spanish_target = next(
+            (record for record in search_documents if record["content_id"] == "communication-clinic--spanish-practice"),
+            None,
+        )
+        require(spanish_target is not None, "controlled Spanish-practice search target is missing")
+        spanish_record = spanish_target["locales"].get("en", {})
+        require(
+            spanish_record.get("path") == "book/communication-clinic-EN.md#six-short-spanish-messages",
+            "Spanish-practice search target does not preserve its Reader heading fragment",
+        )
+        require("spanish practice" in spanish_target["search"].get("en", ""), "Spanish-practice search alias is missing")
+
         matrix = json.loads(LOCALE_MATRIX_PATH.read_text(encoding="utf-8"))
         records = {record["content_id"]: record for record in matrix["content"]}
-        fallback_routes = 0
+        unavailable_routes = 0
         for number in range(1, 19):
             prefix = f"lab-{number:03d}-"
             content_id = next((key for key in records if key.startswith(prefix)), None)
@@ -81,16 +101,16 @@ def main() -> int:
                 localized = records[content_id]["locales"][locale]
                 if (ROOT / localized["path"]).exists():
                     continue
-                fallback_routes += 1
-                require(localized["translation_status"] == "not-started", f"{content_id} {locale} is not fallback-only")
+                unavailable_routes += 1
+                require(localized["translation_status"] == "not-started", f"{content_id} {locale} missing file has an inconsistent translation status")
                 require(localized["coverage"] == "route-only", f"{content_id} {locale} overstates translation coverage")
-                require("English" in localized.get("reason", ""), f"{content_id} {locale} lacks an explicit English fallback reason")
+                require(localized.get("reason"), f"{content_id} {locale} lacks an explicit missing-translation reason")
     except (AssertionError, KeyError, OSError, UnicodeError, ValueError, StopIteration) as exc:
         print("READER_LAB_NAVIGATION_TESTS_FAILED")
         print(f"- {exc}")
         return 1
 
-    print(f"READER_LAB_NAVIGATION_TESTS_OK labs=18 boundaries=3 fallback_routes={fallback_routes}")
+    print(f"READER_LAB_NAVIGATION_TESTS_OK labs=18 boundaries=3 unavailable_routes={unavailable_routes}")
     return 0
 
 

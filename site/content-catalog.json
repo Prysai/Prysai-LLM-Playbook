@@ -41,11 +41,25 @@
     "lab-015": {"name": {"en": "Evidence delivery", "zh": "证据交付"}},
     "lab-016": {"name": {"en": "Side-effect boundary", "zh": "副作用边界"}},
     "lab-017": {"name": {"en": "Skill discovery audit", "zh": "Skill 发现审计"}},
-    "lab-018": {"name": {"en": "Language transfer", "zh": "语言迁移练习"}}
+    "lab-018": {"name": {"en": "Typed language transfer", "zh": "文字语言迁移练习"}}
   },
   "supplemental_guides": {
     "first-safe-change-route": {"name": {"en": "First Safe Change", "zh": "第一次安全改动"}, "status": "candidate", "run_status": "not_run"},
-    "communication-clinic": {"name": {"en": "Beginner Practice Pack", "zh": "初学者实践包"}, "status": "candidate", "run_status": "not_run"},
+    "communication-clinic": {
+      "name": {"en": "Beginner Practice Pack", "zh": "初学者实践包"},
+      "status": "candidate",
+      "run_status": "not_run",
+      "search_targets": [
+        {
+          "id": "spanish-practice",
+          "locale": "en",
+          "title": "Six short Spanish practice messages",
+          "snippet": "Candidate text-only practice sequence; no learner or cross-model run is recorded.",
+          "anchor": "six-short-spanish-messages",
+          "aliases": ["Spanish practice", "Spanish prompts", "Spanish messages"]
+        }
+      ]
+    },
     "learning-practice-contract": {"name": {"en": "Learning Practice Contract", "zh": "学习练习契约"}, "status": "draft", "run_status": "not_run"}
   },
   "skills": {
@@ -62,7 +76,14 @@
     "prysai-source-investigator": {"name": {"en": "Source Investigator", "zh": "来源调查 Source Investigator"}},
     "prysai-field-signal-curator": {"name": {"en": "Field Signal Curator", "zh": "现场信号整理 Field Signal Curator"}},
     "prysai-platform-adapter-review": {"name": {"en": "Platform Adapter Review", "zh": "平台适配审查 Platform Adapter Review"}},
+    "prysai-platform-fact-watch": {"name": {"en": "Platform Fact Watch", "zh": "平台事实巡检 Platform Fact Watch"}},
     "prysai-communication-failure-triage": {"name": {"en": "Communication Failure Triage", "zh": "沟通失败诊断 Communication Failure Triage"}},
-    "prysai-prompt-card-editor": {"name": {"en": "Prompt Card Editor", "zh": "提示卡编辑器 Prompt Card Editor"}}
+    "prysai-prompt-card-editor": {"name": {"en": "Prompt Card Editor", "zh": "提示卡编辑器 Prompt Card Editor"}},
+    "prysai-adversarial-project-review": {"name": {"en": "Adversarial Project Review", "zh": "对抗式项目审查 Adversarial Project Review"}},
+    "prysai-interruption-checkpoint": {"name": {"en": "Interruption Checkpoint", "zh": "中断检查点 Interruption Checkpoint"}},
+    "prysai-practice-target": {"name": {"en": "Practice Target", "zh": "练习目标 Practice Target"}},
+    "prysai-request-escalation": {"name": {"en": "Request Escalation", "zh": "请求升级 Request Escalation"}},
+    "prysai-shift-handoff": {"name": {"en": "Shift Handoff", "zh": "工作交接 Shift Handoff"}},
+    "prysai-llm-comparison-protocol": {"name": {"en": "LLM Comparison Protocol", "zh": "LLM 对比协议 LLM Comparison Protocol"}}
   }
 }

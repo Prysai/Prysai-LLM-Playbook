@@ -41,8 +41,8 @@ Arbeitsumgebung anschließt; und wie Kontext, Tools, Skills, Berechtigungen und
 eine beobachtbare Agent-Schleife das Ergebnis beeinflussen.
 **content_status:** `candidate`
 
-- Kapitel: [Kapitel-1-Quelle auf DE](chapters/01-gpt-and-codex-DE.md)
-- Experiment: [lab-011-Quelle auf DE](labs/lab-011-gpt-codex-boundaries-DE.md)
+- Kapitel: Kapitel-1-Quelle auf DE (deutsche Fassung noch nicht verfügbar)
+- Experiment: lab-011-Quelle auf DE (deutsche Fassung noch nicht verfügbar)
 
 ### Kapitel 2 — Eine erste sichere, überprüfbare Aufgabe erledigen
 
@@ -50,32 +50,32 @@ Eine risikoarme Aufgabe auswählen, ein erstes Aufgabenprotokoll schreiben,
 Bestätigungspunkte setzen und Übergabenachweise hinterlassen.
 **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/02-first-safe-task.md)
-- Experiment: [lab-001 · Migration läuft · aktueller Quellpfad](labs/lab-001-first-safe-task.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Experiment: [lab-001 · Erste sichere Aufgabe](labs/lab-001-first-safe-task-DE.md) · `draft` · `not_run` · unabhängige Sprachprüfung ausstehend
 
 ### Kapitel 3 — Aus einem Wunsch ein Aufgabenprotokoll machen
 
 Ziel, Hintergrund, Eingaben, Einschränkungen, erlaubte Aktionen, Abnahme,
 Fehlerbehandlung und Lieferformat definieren. **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/03-task-protocol.md)
-- Experiment: [lab-002 · Migration läuft · aktueller Quellpfad](labs/lab-002-task-protocol.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Experiment: lab-002 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
 
 ### Kapitel 4 — Kontext, Berechtigungen und Aktionsgrenzen des Agents
 
 Kontextschichten, Vertrauensgrenzen, Sandbox, Freigaben, externe
 Nebenwirkungen und beobachtbares Verhalten. **content_status:** `candidate`
 
-- Kapitel: [Kapitel 4 · DE-Quelle](chapters/04-context-permissions-and-agent-DE.md)
-- Experiment: [Lab 007 · DE-Quelle](labs/lab-007-action-boundaries-DE.md)
+- Kapitel: Kapitel 4 · DE-Quelle (deutsche Fassung noch nicht verfügbar)
+- Experiment: Lab 007 · DE-Quelle (deutsche Fassung noch nicht verfügbar)
 
 ### Kapitel 5 — Die richtige Codex-Oberfläche auswählen
 
 Aufgaben passend zwischen Desktop-App, CLI, IDE, Cloud und Remote auswählen.
 **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/05-choose-the-codex-surface.md)
-- Experiment: [Lab 007 · DE-Quelle](labs/lab-007-action-boundaries-DE.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Experiment: Lab 007 · DE-Quelle (deutsche Fassung noch nicht verfügbar)
 
 ### Kapitel 6 — Modellauswahl ist keine Modellverehrung
 
@@ -84,7 +84,7 @@ Modelle anhand von Aufgabenset, Kosten, Geschwindigkeit, Stabilität und
 **content_status:** `candidate` · zugehörige volatile Aussage:
 `claim_status: disputed`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/06-model-selection.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
 - Forschung: [OpenAI/Codex-Baseline — locale-neutrale Forschung](../docs/research/openai-codex-baseline.md)
 
 ## Teil II: Vom Nutzer zum Workflow-Designer
@@ -94,41 +94,41 @@ Modelle anhand von Aufgabenset, Kosten, Geschwindigkeit, Stabilität und
 Methoden-, Verbindungs-, Ausführungs- und Verteilungsebene verstehen und die
 kleinste wirksame Kombination auswählen. **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/07-skills-plugins-and-tools.md)
-- Experiment: [lab-004 · Migration läuft · aktueller Quellpfad](labs/lab-004-skill-selection.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Experiment: lab-004 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
 
 ### Kapitel 8 — Der vollständige Lebenszyklus von der Definition bis zur Lieferung
 
 Definition, Planung, Aufbau, Prüfung, Review, Lieferung und Wartung mit
 überprüfbaren vertikalen Schnitten. **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/08-full-lifecycle-workflow.md)
-- Primäre Übung: [lab-013 · Migration läuft · aktueller Quellpfad](labs/lab-013-l3-vertical-slice.md)
-- Unterstützende Übung: [lab-009 · Migration läuft · aktueller Quellpfad](labs/lab-009-engineering-lifecycle.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Primäre Übung: lab-013 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Unterstützende Übung: lab-009 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
 
 ### Kapitel 9 — Überprüfung, Zweifel und Wiederherstellung
 
 Fertigstellungsbehauptungen in Behauptung und Nachweis zerlegen; Unsicherheit,
 Fehler und Wiederherstellung bearbeiten. **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/09-verification-and-recovery.md)
-- Experiment: [lab-003 · Migration läuft · aktueller Quellpfad](labs/lab-003-evidence-review.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Experiment: lab-003 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
 
 ### Kapitel 10 — Planung und vertikale Schnitte
 
 Ein großes Ziel in Lieferabschnitte mit klaren Abhängigkeiten, ausführbaren
 Schritten und prüfbaren Kontrollen zerlegen. **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/10-planning-and-slicing.md)
-- Experimente: [lab-002 · Migration läuft · aktueller Quellpfad](labs/lab-002-task-protocol.md) · [lab-013 · Migration läuft · aktueller Quellpfad](labs/lab-013-l3-vertical-slice.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Experimente: lab-002 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar) · lab-013 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
 
 ### Kapitel 11 — Einen wirklich nützlichen Skill entwerfen
 
 Auslösegrenzen, progressive Offenlegung, Ressourcen, Skripte, Ausgaben,
 Fehlerbeispiele, Evaluation und Versionierung. **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/11-designing-a-skill.md)
-- Experiment: [lab-005 · Migration läuft · aktueller Quellpfad](labs/lab-005-design-a-skill.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Experiment: lab-005 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
 
 ### Kapitel 12 — Schleife, Zustand und Stoppbedingungen des Agents
 
@@ -136,16 +136,16 @@ Beobachten, planen, handeln, Feedback, Wiederholung, Bestätigung und Stopp;
 Verhalten erklären, ohne verborgene Schlussfolgerungen zu erfinden.
 **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/12-agent-loop-and-stop.md)
-- Experiment: [lab-006 · Migration läuft · aktueller Quellpfad](labs/lab-006-agent-stop-conditions.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Experiment: lab-006 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
 
 ### Kapitel 13 — Aktionsgrenzen für Dateien, Terminal, Browser und GitHub
 
 Nur-Lese-Prüfungen, Bearbeitung, Befehle, Browsing, Commits, Pushes, externe
 Nachrichten und Rollback. **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/13-action-boundaries.md)
-- Experiment: [Lab 007 · DE-Quelle](labs/lab-007-action-boundaries-DE.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Experiment: Lab 007 · DE-Quelle (deutsche Fassung noch nicht verfügbar)
 
 ## Teil III: Skills, Tools und professionelle Praxis
 
@@ -154,40 +154,40 @@ Nachrichten und Rollback. **content_status:** `candidate`
 Vom Index zur vertrauenswürdigen Fähigkeit: Quelle, Lizenz, Abhängigkeiten,
 Authentifizierung, Trigger und Wartung. **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/14-discover-and-audit-skills.md)
-- Experimente: [lab-004 · Migration läuft · aktueller Quellpfad](labs/lab-004-skill-selection.md) · [lab-005 · Migration läuft · aktueller Quellpfad](labs/lab-005-design-a-skill.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Experimente: lab-004 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar) · lab-005 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
 
 ### Kapitel 15 — Forschungspfad: Von der Frage zu prüfbarem Wissen
 
 Die Forschungsfrage eingrenzen und Quellen, Zitate, Methode, Gegenprüfung,
 Offenlegung und Vollständigkeit behandeln. **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/15-research-track.md)
-- Experiment: [lab-008 · Migration läuft · aktueller Quellpfad](labs/lab-008-research-question.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Experiment: lab-008 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
 
 ### Kapitel 16 — Engineering-Pfad: Von der Idee zu zuverlässiger Software
 
 Anforderungen, Spezifikationen, Planung, inkrementelle Umsetzung, Tests,
 Debugging, Review, Veröffentlichung und Migration. **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/16-engineering-track.md)
-- Experiment: [lab-009 · Migration läuft · aktueller Quellpfad](labs/lab-009-engineering-lifecycle.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Experiment: lab-009 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
 
 ### Kapitel 17 — Marketing-Pfad: Vom Produktverständnis zu Wachstumsexperimenten
 
 Produktkontext, Zielgruppe, Positionierung, Inhalte, Konversion, Messung und
 Attribution. **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/17-marketing-track.md)
-- Experiment: [lab-010 · Migration läuft · aktueller Quellpfad](labs/lab-010-product-context.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Experiment: lab-010 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
 
 ### Kapitel 18 — Pfad für Inhalte, Design, Daten und Automatisierung
 
 Das externe Ökosystem nach Aufgabenfähigkeiten nutzen, statt blind alle Skills
 zu installieren. **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/18-content-design-data-automation.md)
-- Experiment: [lab-004 · Migration läuft · aktueller Quellpfad](labs/lab-004-skill-selection.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Experiment: lab-004 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
 
 ## Teil IV: Von geübter Nutzung zur Organisation
 
@@ -196,8 +196,8 @@ zu installieren. **content_status:** `candidate`
 Aufgabensets erstellen, Experimente wiederholen, menschlich bewerten und Fehler
 klassifizieren. **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/19-evaluate-models-and-workflows.md)
-- Experimente: [lab-003 · Migration läuft · aktueller Quellpfad](labs/lab-003-evidence-review.md) · [lab-009 · Migration läuft · aktueller Quellpfad](labs/lab-009-engineering-lifecycle.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Experimente: lab-003 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar) · lab-009 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
 - Evaluationsrahmen: [locale-neutrale Governance](../docs/quality/evaluation-framework.md)
 
 ### Kapitel 20 — Ein persönliches Codex-Arbeitssystem aufbauen
@@ -205,16 +205,16 @@ klassifizieren. **content_status:** `candidate`
 Projektkontext, Gedächtnis, Vorlagen, wiederkehrende Abläufe und Retrospektiven.
 **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/20-personal-codex-work-system.md)
-- Experimente: [lab-001 · Migration läuft · aktueller Quellpfad](labs/lab-001-first-safe-task.md) · [lab-010 · Migration läuft · aktueller Quellpfad](labs/lab-010-product-context.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Experimente: [lab-001 · Erste sichere Aufgabe](labs/lab-001-first-safe-task-DE.md) · `draft` · `not_run` · unabhängige Sprachprüfung ausstehend · lab-010 · Migration läuft · deutsche Fassung noch nicht verfügbar
 
 ### Kapitel 21 — Ein Team-Fähigkeitssystem aufbauen
 
 Gemeinsame Skills, `AGENTS.md`, Berechtigungen, Evaluation, Review, Beiträge und
 Versionierung. **content_status:** `candidate`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/21-team-capability-system.md)
-- Experiment: [lab-012 · Migration läuft · aktueller Quellpfad](labs/lab-012-team-capability-migration.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Experiment: lab-012 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
 
 ### Kapitel 22 — Kontinuierliche Aktualisierung und Zukunftssicherheit
 
@@ -222,8 +222,8 @@ Veränderliche Fakten erkennen, Quellen aktualisieren, Modelle migrieren, Tools
 prüfen und veraltete Fähigkeiten entfernen. **content_status:** `candidate` ·
 zugehörige volatile Aussage: `claim_status: current | disputed`
 
-- Kapitel: [Migration läuft · aktueller Quellpfad](chapters/22-continuous-update-and-future-proofing.md)
-- Experimente: [lab-008 · Migration läuft · aktueller Quellpfad](labs/lab-008-research-question.md) · [lab-010 · Migration läuft · aktueller Quellpfad](labs/lab-010-product-context.md)
+- Kapitel: Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
+- Experimente: lab-008 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar) · lab-010 · Migration läuft · aktueller Quellpfad (deutsche Fassung noch nicht verfügbar)
 
 ## Experimentindex und Statusgrenzen
 
@@ -233,23 +233,23 @@ kein Nachweis dafür, dass Experiment oder Lernergebnis verifiziert sind.
 
 | Experiment | Schwerpunkt | Status | Einstieg |
 |---|---|---|---|
-| lab-001 | Erste sichere Aufgabe | `draft` · `not_run` | [Migration läuft · aktuelle Quelle](labs/lab-001-first-safe-task.md) |
-| lab-002 | Aufgabenprotokoll | `draft` · `not_run` | [Migration läuft · aktuelle Quelle](labs/lab-002-task-protocol.md) |
-| lab-003 | Evidenzprüfung | `draft` · `not_run` | [Migration läuft · aktuelle Quelle](labs/lab-003-evidence-review.md) |
-| lab-004 | Skill-Auswahl | `draft` · `not_run` | [Migration läuft · aktuelle Quelle](labs/lab-004-skill-selection.md) |
-| lab-005 | Skill-Design | `draft` · `not_run` | [Migration läuft · aktuelle Quelle](labs/lab-005-design-a-skill.md) |
-| lab-006 | Stoppbedingungen des Agents | `draft` · `not_run` | [Migration läuft · aktuelle Quelle](labs/lab-006-agent-stop-conditions.md) |
-| lab-007 | Aktionsgrenzen | `draft` · `not_run` | [DE-Quelle](labs/lab-007-action-boundaries-DE.md) |
-| lab-008 | Forschungsfrage | `draft` · `not_run` | [Migration läuft · aktuelle Quelle](labs/lab-008-research-question.md) |
-| lab-009 | Engineering-Lebenszyklus | `draft` · `not_run` | [Migration läuft · aktuelle Quelle](labs/lab-009-engineering-lifecycle.md) |
-| lab-010 | Produktkontext | `draft` · `not_run` | [Migration läuft · aktuelle Quelle](labs/lab-010-product-context.md) |
-| lab-011 | GPT, Codex, Tools und Agents | `draft` · `not_run` | [DE-Quelle](labs/lab-011-gpt-codex-boundaries-DE.md) |
-| lab-012 | Migration von Teamfähigkeiten | `draft` · `not_run` | [Migration läuft · aktuelle Quelle](labs/lab-012-team-capability-migration.md) |
-| lab-013 | Prüfbarer L3-Vertikalschnitt | `draft` · `not_run` | [Migration läuft · aktuelle Quelle](labs/lab-013-l3-vertical-slice.md) |
+| lab-001 | Erste sichere Aufgabe | `draft` · `not_run` | [deutsche Kandidatenübersetzung](labs/lab-001-first-safe-task-DE.md) · unabhängige Sprachprüfung ausstehend |
+| lab-002 | Aufgabenprotokoll | `draft` · `not_run` | Migration läuft · aktuelle Quelle (deutsche Fassung noch nicht verfügbar) |
+| lab-003 | Evidenzprüfung | `draft` · `not_run` | Migration läuft · aktuelle Quelle (deutsche Fassung noch nicht verfügbar) |
+| lab-004 | Skill-Auswahl | `draft` · `not_run` | Migration läuft · aktuelle Quelle (deutsche Fassung noch nicht verfügbar) |
+| lab-005 | Skill-Design | `draft` · `not_run` | Migration läuft · aktuelle Quelle (deutsche Fassung noch nicht verfügbar) |
+| lab-006 | Stoppbedingungen des Agents | `draft` · `not_run` | Migration läuft · aktuelle Quelle (deutsche Fassung noch nicht verfügbar) |
+| lab-007 | Aktionsgrenzen | `draft` · `not_run` | DE-Quelle (deutsche Fassung noch nicht verfügbar) |
+| lab-008 | Forschungsfrage | `draft` · `not_run` | Migration läuft · aktuelle Quelle (deutsche Fassung noch nicht verfügbar) |
+| lab-009 | Engineering-Lebenszyklus | `draft` · `not_run` | Migration läuft · aktuelle Quelle (deutsche Fassung noch nicht verfügbar) |
+| lab-010 | Produktkontext | `draft` · `not_run` | Migration läuft · aktuelle Quelle (deutsche Fassung noch nicht verfügbar) |
+| lab-011 | GPT, Codex, Tools und Agents | `draft` · `not_run` | DE-Quelle (deutsche Fassung noch nicht verfügbar) |
+| lab-012 | Migration von Teamfähigkeiten | `draft` · `not_run` | Migration läuft · aktuelle Quelle (deutsche Fassung noch nicht verfügbar) |
+| lab-013 | Prüfbarer L3-Vertikalschnitt | `draft` · `not_run` | Migration läuft · aktuelle Quelle (deutsche Fassung noch nicht verfügbar) |
 
 ## Evaluation, Status und Forschung zu realen Problemen
 
-- [Experimentindex — Migration läuft · aktuelle Quelle](labs/README.md): 13 echte Experimente, Stufen, Bereiche, Migrationsfokus und `lab_status`.
+- Experimentindex — Migration läuft · aktuelle Quelle (deutsche Fassung noch nicht verfügbar): 13 echte Experimente, Stufen, Bereiche, Migrationsfokus und `lab_status`.
 - [Inhaltsintegrationsmatrix — locale-neutrale Governance](../docs/content-matrix.md): Fähigkeitszuordnungen und zusätzliche Fähigkeiten bei thematischer Wiederholung.
 - [Evaluationsrahmen — locale-neutrale Governance](../docs/quality/evaluation-framework.md): Abnahmeschwellen für Inhalte und Fähigkeiten.
 - [Lernpfad-Vertrag — locale-neutrale Governance](../docs/governance/learning-path.yaml): Stufen, primäre und unterstützende Experimente sowie Aufstiegskriterien.
@@ -258,4 +258,4 @@ kein Nachweis dafür, dass Experiment oder Lernergebnis verifiziert sind.
 - [Foren- und öffentliche-Issue-Forschung — locale-neutrale Forschung](../docs/research/field-problems-forums-2026-08-10.md): zuverlässig erreichbare Stack-Overflow-API/Seiten und GitHub-Issue-Zusammenfassungen.
 - [Forschungsarchiv der offiziellen Baseline — locale-neutrale Forschung](../docs/research/openai-codex-baseline.md): Quellenbegrenzung für volatile Aussagen.
 
-Die unabhängigen primären Experimente für L0, L3 und L6 sind [lab-011 · DE-Quelle](labs/lab-011-gpt-codex-boundaries-DE.md), [lab-013 · Migration läuft](labs/lab-013-l3-vertical-slice.md) und [lab-012 · Migration läuft](labs/lab-012-team-capability-migration.md).
+Die unabhängigen primären Experimente für L0, L3 und L6 sind lab-011 · DE-Quelle (deutsche Fassung noch nicht verfügbar), lab-013 · Migration läuft (deutsche Fassung noch nicht verfügbar) und lab-012 · Migration läuft (deutsche Fassung noch nicht verfügbar).

@@ -19,6 +19,13 @@ SKILL_REGISTRY_FILE = ROOT / "docs/governance/skill-registry.yaml"
 OUTPUT_FILE = ROOT / "site/locale-manifest.js"
 LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE")
 ROUTED_STATUS_SECTIONS = ("chapters", "labs")
+RENDERABLE_TRANSLATION_STATUSES = {
+    "source",
+    "candidate",
+    "in-progress",
+    "verified",
+    "production-ready",
+}
 READER_PRESENTATION = {
     "chapter": ("chapter", "index.html"),
     "lab": ("lab", "index.html#labs"),
@@ -215,19 +222,64 @@ def build_lab_navigation_payload(
         content_id = path_index.get(path)
         if not content_id:
             raise ValueError(f"Lab navigation entry is not indexed: {item.get('id')}")
-        labs.append(
-            {
-                "id": item["id"],
-                "number": item["number"],
-                "title": item["title"],
-                "path": path,
-                "content_id": content_id,
-            }
-        )
+        record = {
+            "id": item["id"],
+            "number": item["number"],
+            "title": item["title"],
+            "path": path,
+            "content_id": content_id,
+        }
+        if isinstance(item.get("title_zh"), str) and item["title_zh"].strip():
+            record["title_zh"] = item["title_zh"]
+        labs.append(record)
     return {
         "sequence_boundary": navigation.get("policy", {}).get("sequence_boundary"),
         "labs": labs,
     }
+
+
+def build_localization_coverage(contents: dict[str, dict[str, Any]]) -> dict[str, dict[str, int]]:
+    """Summarize actual course-unit availability without calling it completion.
+
+    The selector needs a small, factual distinction between a registered
+    locale, a readable translation slice, and a full course. Count only
+    chapters and Labs: project entry pages and neutral research/Skill content
+    would otherwise make a partial course look more complete than it is.
+    """
+
+    course_records = [
+        content
+        for content in contents.values()
+        if content.get("kind") in {"chapter", "lab"}
+    ]
+    coverage: dict[str, dict[str, int]] = {}
+    for suffix in LOCALES:
+        token = suffix.lower()
+        locale_records = [content["locales"][token] for content in course_records]
+        available = [
+            record
+            for record in locale_records
+            if record.get("exists")
+            and record.get("translation_status") in RENDERABLE_TRANSLATION_STATUSES
+        ]
+        coverage[token] = {
+            "total_units": len(course_records),
+            "available_units": len(available),
+            "source_units": sum(
+                1 for record in available if record.get("translation_status") == "source"
+            ),
+            "candidate_translation_units": sum(
+                1
+                for record in available
+                if record.get("translation_status") in {"candidate", "in-progress"}
+            ),
+            "reviewed_translation_units": sum(
+                1
+                for record in available
+                if record.get("translation_status") in {"verified", "production-ready"}
+            ),
+        }
+    return coverage
 
 
 def build_manifest() -> dict[str, Any]:
@@ -304,6 +356,7 @@ def build_manifest() -> dict[str, Any]:
         "aliases": aliases,
         "path_index": path_index,
         "routed_status_counts": routed_counts,
+        "localization_coverage": build_localization_coverage(contents),
         "book_navigation": build_navigation_payload(navigation, path_index, title_records),
         "lab_navigation": build_lab_navigation_payload(lab_navigation, path_index),
     }

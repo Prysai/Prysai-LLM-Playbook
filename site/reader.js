@@ -47,14 +47,36 @@
   const readerCopy = {
     en: {
       skip: 'Skip to content', back: 'Back to overview', language: 'Language', languageAria: 'Choose reading language', detailsAria: 'Page details', bookChaptersAria: 'Chapters in this part', bookChapters: 'Chapters in this part', chapterList: 'Chapter list', labSequence: 'Lab sequence', skillMethod: 'Skill method', fieldNote: 'Field note', projectDocument: 'Project document', pageDetails: 'Page details', trustRecord: 'Evidence note for this page', trustScope: 'Declared scope', trustReviewed: 'Last evidence review', trustReview: 'Next scheduled review', trustLimitations: 'One declared limitation', trustBoundary: 'A scheduled review is not a freshness guarantee. This note is not a complete risk assessment.', scopeUniversal: 'General method', scopePlatform: 'Product-specific guidance', scopeMixed: 'General method with product examples', trustUnavailable: 'unavailable', trustUnavailableDetail: 'The evidence registry could not be loaded. This is a data failure, not evidence that the page has no record.', chapterNavigationAria: 'Chapter navigation', labNavigationAria: 'Lab catalog navigation', previousChapter: 'Previous chapter', nextChapter: 'Next chapter', previousLab: 'Previous Lab', nextLab: 'Next Lab', onThisPageAria: 'On this page', onThisPage: 'On this page', readingRoute: 'Content type', sourcePath: 'Source path', contentIdentity: 'Content identity', openSource: 'Open source file ↗', footer: 'Source remains Markdown; this page is a static reading view', loading: 'Loading the source page…', copyPrompt: 'Copy prompt', copiedPrompt: 'Prompt copied', copyFailed: 'Copy failed', openVisual: 'Open full-size visual', wideTable: 'Wide table: swipe sideways to read every column.', wideTableAria: (columns) => `${columns}-column table. Scroll horizontally to read every column.`,
-      fallbackEnglish: (name) => `${name} is not available for this page yet. Showing the current English source.`, fallbackSource: (name, source) => `${name} is not available for this page yet. Showing the current ${source} source.`, invalidPath: 'This reader URL does not name an allowed project source file. Return to the overview and choose a page from the guide.', loadError: (status) => `The source page could not be loaded (${status}).`, loadTimeout: 'The source page took too long to respond.', loadNetwork: 'The source page could not be reached.', retry: 'Try loading again'
+      missingTranslation: (name) => `${name} is not available for this page yet. The Reader will not switch you to another language; return to the overview and choose an available unit.`, invalidPath: 'This reader URL does not name an allowed project source file. Return to the overview and choose a page from the guide.', loadError: (status) => `The source page could not be loaded (${status}).`, loadTimeout: 'The source page took too long to respond.', loadNetwork: 'The source page could not be reached.', retry: 'Try loading again'
     },
     zh: {
       skip: '跳到正文', back: '返回总览', language: '语言', languageAria: '选择阅读语言', detailsAria: '页面详情', bookChaptersAria: '本部分章节', bookChapters: '本部分章节', chapterList: '章节列表', labSequence: '实验编号导航', skillMethod: 'Skill 方法', fieldNote: '现场研究记录', projectDocument: '项目文档', pageDetails: '页面详情', trustRecord: '本页证据说明', trustScope: '声明范围', trustReviewed: '最近一次证据复核', trustReview: '下次计划复核', trustLimitations: '一项已声明的限制', trustBoundary: '计划复核日期不保证内容目前仍然有效。这不是完整的风险评估。', scopeUniversal: '通用方法', scopePlatform: '特定产品说明', scopeMixed: '通用方法与产品示例', trustUnavailable: '不可用', trustUnavailableDetail: '证据登记表加载失败。这是数据故障，不代表本页没有登记记录。', chapterNavigationAria: '章节导航', labNavigationAria: '实验目录导航', previousChapter: '上一章', nextChapter: '下一章', previousLab: '上一个实验', nextLab: '下一个实验', onThisPageAria: '本页目录', onThisPage: '本页目录', readingRoute: '内容类型', sourcePath: '源文件路径', contentIdentity: '内容身份', openSource: '打开源文件 ↗', footer: '源文件仍是 Markdown；此页面是静态阅读视图', loading: '正在加载源文件……', copyPrompt: '复制提示词', copiedPrompt: '提示词已复制', copyFailed: '复制失败', openVisual: '打开完整尺寸图示', wideTable: '宽表格：左右滑动以阅读所有列。', wideTableAria: (columns) => `${columns}列表格。请水平滚动以阅读所有列。`,
-      fallbackEnglish: (name) => `此页面暂时没有${name}版本，当前显示英文源文件。`, fallbackSource: (name, source) => `此页面暂时没有${name}版本，当前显示${source}源文件。`, invalidPath: '这个阅读链接没有指向允许的项目源文件。请返回总览，从指南中选择页面。', loadError: (status) => `源文件加载失败（${status}）。`, loadTimeout: '源文件响应时间过长。', loadNetwork: '无法连接到源文件。', retry: '重新加载'
+      missingTranslation: (name) => `此页面暂时没有${name}版本。阅读器不会自动切换到其他语言；请返回总览并选择已提供的单元。`, invalidPath: '这个阅读链接没有指向允许的项目源文件。请返回总览，从指南中选择页面。', loadError: (status) => `源文件加载失败（${status}）。`, loadTimeout: '源文件响应时间过长。', loadNetwork: '无法连接到源文件。', retry: '重新加载'
     }
   };
-  const uiLanguage = () => (activeLocale || requestedLocale) === 'zh' ? 'zh' : 'en';
+
+  Object.assign(readerCopy.en, {
+    translationInProgress: (name) => `${name} translation is available as a candidate and is awaiting independent language review. It is not a verified translation.`,
+  });
+  Object.assign(readerCopy.zh, {
+    translationInProgress: (name) => `${name}候选译文已可阅读，仍待独立语言审校；它不是已验证译文。`,
+  });
+  // Keep the Reader's controls in the language the reader selected. Course
+  // coverage may still be partial, but an available candidate translation
+  // should not be surrounded by an English-only shell.
+  readerCopy.es = Object.assign({}, readerCopy.en, {
+    skip: 'Saltar al contenido', back: 'Volver a la vista general', language: 'Idioma', languageAria: 'Elegir idioma de lectura', detailsAria: 'Detalles de la página', bookChaptersAria: 'Capítulos de esta parte', bookChapters: 'Capítulos de esta parte', chapterList: 'Lista de capítulos', labSequence: 'Secuencia de Labs', pageDetails: 'Detalles de la página', chapterNavigationAria: 'Navegación por capítulos', labNavigationAria: 'Navegación del catálogo de Labs', previousChapter: 'Capítulo anterior', nextChapter: 'Capítulo siguiente', previousLab: 'Lab anterior', nextLab: 'Lab siguiente', onThisPageAria: 'En esta página', onThisPage: 'En esta página', readingRoute: 'Tipo de contenido', sourcePath: 'Ruta del archivo fuente', contentIdentity: 'Identidad del contenido', openSource: 'Abrir archivo fuente ↗', footer: 'La fuente sigue siendo Markdown; esta página es una vista de lectura estática', loading: 'Cargando la página fuente…', copyPrompt: 'Copiar prompt', copiedPrompt: 'Prompt copiado', copyFailed: 'No se pudo copiar', openVisual: 'Abrir visual a tamaño completo', wideTable: 'Tabla ancha: desliza lateralmente para leer todas las columnas.', wideTableAria: (columns) => `Tabla de ${columns} columnas. Desplázate horizontalmente para leer todas las columnas.`, missingTranslation: (name) => `${name} todavía no está disponible para esta página. El lector no cambiará a otro idioma; vuelve a la vista general y elige una unidad disponible.`, invalidPath: 'La URL del lector no indica un archivo fuente permitido. Vuelve a la vista general y elige una página de la guía.', loadError: (status) => `No se pudo cargar la página fuente (${status}).`, loadTimeout: 'La página fuente tardó demasiado en responder.', loadNetwork: 'No se pudo acceder a la página fuente.', retry: 'Intentar cargar de nuevo', translationInProgress: () => 'La traducción al español está disponible como candidata y espera una revisión lingüística independiente. No es una traducción verificada.',
+  });
+  readerCopy.ja = Object.assign({}, readerCopy.en, {
+    skip: '本文へ移動', back: '概要に戻る', language: '言語', languageAria: '閲覧言語を選択', detailsAria: 'ページの詳細', chapterList: '章の一覧', labSequence: 'Lab の順序', pageDetails: 'ページの詳細', previousChapter: '前の章', nextChapter: '次の章', previousLab: '前の Lab', nextLab: '次の Lab', onThisPageAria: 'このページの目次', onThisPage: 'このページの目次', openSource: 'ソースファイルを開く ↗', loading: 'ソースページを読み込んでいます…', copyPrompt: 'プロンプトをコピー', copiedPrompt: 'プロンプトをコピーしました', copyFailed: 'コピーできませんでした', retry: 'もう一度読み込む', translationInProgress: () => '日本語訳は候補として利用できますが、独立した言語レビュー待ちです。検証済みの翻訳ではありません。',
+  });
+  readerCopy.ko = Object.assign({}, readerCopy.en, {
+    skip: '본문으로 건너뛰기', back: '개요로 돌아가기', language: '언어', languageAria: '읽기 언어 선택', detailsAria: '페이지 세부 정보', chapterList: '장 목록', labSequence: 'Lab 순서', pageDetails: '페이지 세부 정보', previousChapter: '이전 장', nextChapter: '다음 장', previousLab: '이전 Lab', nextLab: '다음 Lab', onThisPageAria: '이 페이지의 목차', onThisPage: '이 페이지의 목차', openSource: '원본 파일 열기 ↗', loading: '원본 페이지를 불러오는 중…', copyPrompt: '프롬프트 복사', copiedPrompt: '프롬프트를 복사했습니다', copyFailed: '복사하지 못했습니다', retry: '다시 불러오기', translationInProgress: () => '한국어 번역은 후보 상태로 제공되며 독립 언어 검토를 기다리고 있습니다. 검증된 번역이 아닙니다.',
+  });
+  readerCopy.de = Object.assign({}, readerCopy.en, {
+    skip: 'Zum Inhalt springen', back: 'Zur Übersicht', language: 'Sprache', languageAria: 'Lesesprache wählen', detailsAria: 'Seitendetails', chapterList: 'Kapitelliste', labSequence: 'Lab-Reihenfolge', pageDetails: 'Seitendetails', previousChapter: 'Vorheriges Kapitel', nextChapter: 'Nächstes Kapitel', previousLab: 'Vorheriges Lab', nextLab: 'Nächstes Lab', onThisPageAria: 'Auf dieser Seite', onThisPage: 'Auf dieser Seite', openSource: 'Quelldatei öffnen ↗', loading: 'Quellseite wird geladen…', copyPrompt: 'Prompt kopieren', copiedPrompt: 'Prompt kopiert', copyFailed: 'Kopieren fehlgeschlagen', retry: 'Erneut laden', translationInProgress: () => 'Die deutsche Übersetzung ist als Kandidat verfügbar und wartet auf eine unabhängige Sprachprüfung. Sie ist keine verifizierte Übersetzung.',
+  });
+  const uiLanguage = () => readerCopy[activeLocale || requestedLocale] ? activeLocale || requestedLocale : 'en';
   const currentReaderCopy = () => readerCopy[uiLanguage()];
   const applyReaderChrome = () => {
     const strings = currentReaderCopy();
@@ -70,9 +92,14 @@
     });
     const loading = document.querySelector('[data-reader-loading]');
     if (loading) loading.textContent = strings.loading;
-    const optionLabels = uiLanguage() === 'zh'
-      ? { en: '英语', zh: '简体中文', es: '西班牙语', ja: '日语', ko: '韩语', de: '德语' }
-      : { en: 'English', zh: 'Simplified Chinese', es: 'Spanish', ja: 'Japanese', ko: 'Korean', de: 'German' };
+    const optionLabels = {
+      en: { en: 'English', zh: 'Simplified Chinese', es: 'Spanish', ja: 'Japanese', ko: 'Korean', de: 'German' },
+      zh: { en: '英语', zh: '简体中文', es: '西班牙语', ja: '日语', ko: '韩语', de: '德语' },
+      es: { en: 'Inglés', zh: 'Chino simplificado', es: 'Español', ja: 'Japonés', ko: 'Coreano', de: 'Alemán' },
+      ja: { en: '英語', zh: '簡体字中国語', es: 'スペイン語', ja: '日本語', ko: '韓国語', de: 'ドイツ語' },
+      ko: { en: '영어', zh: '중국어 간체', es: '스페인어', ja: '일본어', ko: '한국어', de: '독일어' },
+      de: { en: 'Englisch', zh: 'Vereinfachtes Chinesisch', es: 'Spanisch', ja: 'Japanisch', ko: 'Koreanisch', de: 'Deutsch' },
+    }[uiLanguage()] || {};
     document.querySelectorAll('[data-reader-language] option').forEach((option) => {
       option.textContent = optionLabels[option.value] || option.textContent;
     });
@@ -87,11 +114,11 @@
     ? Math.max(100, window.CODEX_READER_FETCH_TIMEOUT_MS)
     : 8_000;
 
-  async function fetchWithTimeout(url, consume = null) {
+  async function fetchWithTimeout(url, consume = null, requestOptions = {}) {
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), fetchTimeoutMs);
     try {
-      const response = await fetch(url, { signal: controller.signal });
+      const response = await fetch(url, { ...requestOptions, signal: controller.signal });
       return consume ? await consume(response) : response;
     } finally {
       window.clearTimeout(timeout);
@@ -156,10 +183,7 @@ function canonicalChapterTitle(chapter) {
   function chapterPath(chapter) {
     const record = manifest.contents?.[chapter.content_id];
     const requested = record?.locales?.[activeLocale];
-    if (ready(requested)) return requested.path;
-    const english = record?.locales?.en;
-    if (ready(english)) return english.path;
-    return chapter.legacy_path || chapter.english_path;
+    return requested?.path || chapter.legacy_path || chapter.english_path;
   }
 
   function chapterLink(chapter) {
@@ -177,13 +201,26 @@ function canonicalChapterTitle(chapter) {
   function labPath(lab) {
     const record = manifest.contents?.[lab.content_id];
     const requested = record?.locales?.[activeLocale];
-    if (ready(requested)) return requested.path;
-    const english = record?.locales?.en;
-    return ready(english) ? english.path : lab.path;
+    return requested?.path || lab.path;
+  }
+
+  function labHasLocalizedTitle(lab) {
+    const record = manifest.contents?.[lab.content_id];
+    return uiLanguage() === 'zh' && ready(record?.locales?.[activeLocale]) && Boolean(lab.title_zh);
+  }
+
+  function labNavigationTitle(lab) {
+    const number = String(lab.number).padStart(3, '0');
+    if (labHasLocalizedTitle(lab)) return `实验 ${number} · ${lab.title_zh}`;
+    return `Lab ${number} · ${lab.title}`;
   }
 
   function labProgressLabel(lab) {
     if (uiLanguage() === 'zh') return `实验 ${String(lab.number).padStart(3, '0')} / 共 ${labNavigation.labs.length} 个 · 按编号浏览，不代表先修顺序`;
+    if (uiLanguage() === 'es') return `Lab ${String(lab.number).padStart(3, '0')} de ${labNavigation.labs.length} · Orden de catálogo, no una cadena de requisitos previos`;
+    if (uiLanguage() === 'ja') return `Lab ${String(lab.number).padStart(3, '0')} / ${labNavigation.labs.length} · カタログ順であり、前提条件の連鎖ではありません`;
+    if (uiLanguage() === 'ko') return `Lab ${String(lab.number).padStart(3, '0')} / ${labNavigation.labs.length} · 카탈로그 순서이며 선수 조건 체인이 아닙니다`;
+    if (uiLanguage() === 'de') return `Lab ${String(lab.number).padStart(3, '0')} von ${labNavigation.labs.length} · Katalogreihenfolge, keine Voraussetzungskette`;
     return `Lab ${String(lab.number).padStart(3, '0')} of ${labNavigation.labs.length} · Catalog order, not a prerequisite chain`;
   }
 
@@ -225,7 +262,7 @@ function canonicalChapterTitle(chapter) {
         if (!lab) { link.hidden = true; link.href = '#'; link.textContent = ''; return; }
         link.hidden = false;
         link.href = readerHref(labPath(lab), '', activeLocale);
-        link.textContent = `${direction === 'previous' ? '←' : '→'} Lab ${String(lab.number).padStart(3, '0')} · ${lab.title}`;
+        link.textContent = `${direction === 'previous' ? '←' : '→'} ${labNavigationTitle(lab)}`;
         link.setAttribute('aria-label', direction === 'previous' ? strings.previousLab : strings.nextLab);
       };
       updateLabLink(mobilePrevious, previous, 'previous');
@@ -235,7 +272,7 @@ function canonicalChapterTitle(chapter) {
         link.hidden = false;
         link.href = readerHref(labPath(lab), '', activeLocale);
         link.querySelector('.reader-pagination-kicker').textContent = direction === 'previous' ? strings.previousLab : strings.nextLab;
-        titleNode.textContent = `Lab ${String(lab.number).padStart(3, '0')} · ${lab.title}`;
+        titleNode.textContent = labNavigationTitle(lab);
       };
       updateLabPagination(previousLink, previousTitle, previous, 'previous');
       updateLabPagination(nextLink, nextTitle, next, 'next');
@@ -375,9 +412,12 @@ function canonicalChapterTitle(chapter) {
           visualLink.target = '_blank';
           visualLink.rel = 'noreferrer';
           visualLink.setAttribute('aria-label', `${currentReaderCopy().openVisual}: ${label}`);
-          const teachingVisual = Boolean(resolved && resolved.startsWith('assets/teaching/'));
-          if (teachingVisual) visualLink.classList.add('reader-teaching-visual');
-          if (teachingVisual) {
+          const denseVisual = Boolean(resolved && (
+            resolved.startsWith('assets/teaching/')
+            || resolved.startsWith('docs/quality/verification-stability-')
+          ));
+          if (denseVisual) visualLink.classList.add('reader-teaching-visual');
+          if (denseVisual) {
             const thesis = document.createElement('span');
             thesis.className = 'reader-visual-thesis';
             thesis.textContent = label;
@@ -777,7 +817,9 @@ function canonicalChapterTitle(chapter) {
         chapterCard.hidden = false;
         return;
       }
-      chapterLabel.textContent = `Lab ${String(lab.number).padStart(3, '0')} · ${lab.title}`;
+      chapterLabel.textContent = selection.effective !== 'en'
+        ? title
+        : `Lab ${String(lab.number).padStart(3, '0')} · ${lab.title}`;
       chapterStatus.textContent = `${chapterStatusFor(selection)} · ${uiLanguage() === 'zh' ? '编号仅用于目录浏览' : 'catalog order only'}`;
       chapterCard.hidden = false;
       return;
@@ -791,28 +833,41 @@ function canonicalChapterTitle(chapter) {
   }
 
   function ready(record) {
-    return Boolean(record?.exists && ['source', 'verified', 'production-ready'].includes(record.translation_status));
+    // A readable candidate translation and an independently reviewed
+    // translation are separate facts. Do not hide an existing candidate file
+    // behind a different-language fallback, and do not label it verified.
+    return Boolean(record?.exists && ['source', 'candidate', 'in-progress', 'verified'].includes(record.translation_status));
+  }
+
+  function translationReviewPending(record) {
+    return Boolean(record?.exists && ['candidate', 'in-progress'].includes(record.translation_status));
   }
 
   function choosePath(path, locale) {
     const record = contentRecord(path);
     const readerType = record.content?.reader_type || 'project-document';
     const overviewTarget = record.content?.overview_target || 'index.html';
-    if (!record.content) return { path, contentId: null, readerType, overviewTarget, fallback: locale !== 'en', requested: locale, effective: 'en' };
+    if (!record.content) return { path, contentId: null, readerType, overviewTarget, requested: locale, effective: locale, missingTranslation: false };
     const requested = record.content.locales?.[locale];
-    if (ready(requested)) return { path: requested.path, contentId: record.contentId, readerType, overviewTarget, fallback: false, requested: locale, effective: locale };
-    const english = record.content.locales?.en;
-    if (ready(english)) return { path: english.path, contentId: record.contentId, readerType, overviewTarget, fallback: locale !== 'en', requested: locale, effective: 'en' };
-    const sourceLocale = record.content.source_locale || 'en';
-    const legacyPath = record.content.legacy_paths?.[0];
-    return {
-      path: sourceLocale === 'zh' ? legacyPath || english?.path || path : english?.path || path,
+    if (ready(requested)) return {
+      path: requested.path,
       contentId: record.contentId,
       readerType,
       overviewTarget,
-      fallback: sourceLocale !== locale,
+      fallback: false,
       requested: locale,
-      effective: sourceLocale,
+      effective: locale,
+      translationStatus: requested.translation_status,
+      translationReviewPending: translationReviewPending(requested),
+    };
+    return {
+      path: requested?.path || path,
+      contentId: record.contentId,
+      readerType,
+      overviewTarget,
+      missingTranslation: true,
+      requested: locale,
+      effective: locale,
     };
   }
 
@@ -947,6 +1002,10 @@ function canonicalChapterTitle(chapter) {
     const selection = choosePath(requestedPath, locale);
     activeLocale = locale;
     applyReaderChrome();
+    if (selection.missingTranslation) {
+      showError(currentReaderCopy().missingTranslation(locales[locale]?.display_name || locale));
+      return;
+    }
     if (readerAside) readerAside.hidden = false;
     article.replaceChildren();
     const loading = document.createElement('p');
@@ -961,6 +1020,9 @@ function canonicalChapterTitle(chapter) {
       response = await fetchWithTimeout(
         directHref(selection.path),
         async (result) => ({ response: result, source: result.ok ? await result.text() : '' }),
+        // A reader must show the current Markdown after a repository/site update.
+        // Source: https://developer.mozilla.org/en-US/docs/Web/API/Request/cache
+        { cache: 'no-store' },
       );
     } catch (error) {
       showError(error?.name === 'AbortError' ? currentReaderCopy().loadTimeout : currentReaderCopy().loadNetwork, { retry: true });
@@ -989,7 +1051,15 @@ function canonicalChapterTitle(chapter) {
     (openingParagraph || articleHeading)?.after(orientation, mobilePageToc);
     addPromptCopyControls(selection.path);
     article.setAttribute('aria-busy', 'false');
-    const title = chapter ? canonicalChapterTitle(chapter) : lab ? `Lab ${String(lab.number).padStart(3, '0')}: ${lab.title}` : article.querySelector('h1')?.textContent?.trim() || selection.path;
+    const effectiveLocale = selection.effective || locale;
+    const renderedTitle = article.querySelector('h1')?.textContent?.trim();
+    const title = effectiveLocale !== 'en' && renderedTitle
+      ? renderedTitle
+      : chapter
+        ? canonicalChapterTitle(chapter)
+        : lab
+          ? `Lab ${String(lab.number).padStart(3, '0')}: ${lab.title}`
+          : renderedTitle || selection.path;
     buildTableOfContents();
     updateChapterRail(selection, title);
     updateOverviewLinks(selection);
@@ -998,24 +1068,22 @@ function canonicalChapterTitle(chapter) {
     if (selection.contentId) void loadTrustRecord(selection.contentId).then(renderTrustRecord);
     document.title = `${title} · Prysai LLM Playbook`;
     document.querySelector('meta[name="description"]').setAttribute('content', `Read ${title} with source-aware navigation and explicit evidence limits.`);
-    const effectiveLocale = selection.effective || locale;
     document.documentElement.lang = locales[effectiveLocale]?.html_lang || effectiveLocale;
     article.lang = locales[effectiveLocale]?.html_lang || effectiveLocale;
     article.dataset.readerRequestedLocale = selection.requested;
     article.dataset.readerEffectiveLocale = effectiveLocale;
     article.dataset.readerFallback = selection.fallback ? 'true' : 'false';
+    article.dataset.readerTranslationStatus = selection.translationStatus || 'source';
     article.setAttribute('data-reader-requested-locale', selection.requested);
     article.setAttribute('data-reader-effective-locale', effectiveLocale);
     article.setAttribute('data-reader-fallback', selection.fallback ? 'true' : 'false');
+    article.setAttribute('data-reader-translation-status', selection.translationStatus || 'source');
     sourcePathNode.textContent = selection.path;
     contentIdNode.textContent = selection.contentId || 'unindexed source';
     sourceLink.href = directHref(selection.path);
     languageSelect.value = locale;
-    if (selection.fallback) {
-      const effectiveName = locales[effectiveLocale]?.display_name || effectiveLocale;
-      setReaderStatus(effectiveLocale === 'en'
-        ? currentReaderCopy().fallbackEnglish(locales[locale]?.display_name || locale)
-        : currentReaderCopy().fallbackSource(locales[locale]?.display_name || locale, effectiveName));
+    if (selection.translationReviewPending) {
+      setReaderStatus(currentReaderCopy().translationInProgress(locales[locale]?.display_name || locale));
     } else setReaderStatus('');
     await restoreHashPosition();
     if (selection.contentId) {
@@ -1029,7 +1097,7 @@ function canonicalChapterTitle(chapter) {
     const current = contentRecord(requestedPath);
     const content = current.content;
     const requested = content?.locales?.[locale];
-    const target = ready(requested) ? requested.path : content?.locales?.en?.path || requestedPath;
+    const target = requested?.path || requestedPath;
     window.location.href = readerHref(target, window.location.hash, locale);
   });
 

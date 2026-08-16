@@ -65,9 +65,23 @@ Prysai LLM Playbook（Prysai 大模型实战手册）不是把 skills 平铺在�
 
 ## 当前状态
 
-当前项目处于 v0.1 的产品地基阶段：六个输入来源已完成目录级审计，22 章书籍结构、17 个实验、真实问题研究、7 个候选 Skill 和 40 项评测夹具已经建立。
+当前项目处于 v0.1 的产品地基阶段：22 章书籍结构、18 个实验、真实问题研究、22 个候选 Skill 和约 40 项评测夹具已经建立。目录、结构与静态契约检查不等于学习者已经完成、迁移或掌握这些内容。
 
-书籍正文当前仍以简体中文为主；公开展示页默认 English，并提供中文切换。多语言架构的目标是让每个 reader-facing 语言文件都带有明确后缀，并让同一内容 ID 的链接保持在当前语言中；但本次只新增了三个 `-ZH` 入口文件，不能据此声称全仓库已经完成 `EN`、`ZH`、`ES`、`JA`、`KO`、`DE` 六语言迁移，也不能声称所有页面都已经实现跨页语言状态保持。
+书籍规范源为 English（`EN`），公开展示页默认 English，并提供中文切换。简体中文目前是一条正在形成的候选学习路径，而不是完整中文课程：项目与书稿入口、序言、目录、第 1–10 章、lab-001、lab-002、lab-003、lab-004、lab-007、lab-011、lab-013 和第一次安全改动夹具已有 `-ZH` 文件；其他正文、实验、Skill、评测与研究档案仍在迁移中。多语言架构要求每个 reader-facing 文件带明确后缀，同一内容 ID 的链接保持当前语言；在独立语言审校完成前，现有中文译文保持 `in-progress`，不能被宣传为完整六语言支持。
+
+### 实际课程覆盖率（22 章 + 18 个 Lab）
+
+| 语言 | 当前可读课程单元 | 这代表什么 |
+|---|---:|---|
+| English | 40 / 40 | 规范源语言；不等于学习效果已经验证。 |
+| 简体中文 | 21 / 40 | 已有连续的候选起步路径、能力选择与设计、完整工作流切片、Agent 停止条件、证据审查和规划练习；第 11、12 章仍待与英文规范稿对齐，并待独立语言审校。 |
+| Español | 6 / 40 | 已有入口、安全练习路线及第一个章节/实验对；独立语言审校待完成。 |
+| 日本語 | 5 / 40 | 有入口、分散翻译切片和第一个安全任务实验；独立语言审校待完成。 |
+| 한국어 | 5 / 40 | 有入口、分散翻译切片和第一个安全任务实验；独立语言审校待完成。 |
+| Deutsch | 5 / 40 | 有入口、分散翻译切片和第一个安全任务实验；独立语言审校待完成。 |
+
+“提供六种语言入口”只描述路由与迁移架构，**不**表示六种语言都完成了课程翻译。页面中的
+`available / 40` 是路径数量，不是准确度、自然程度、文化适配、学习效果或发行状态的分数。
 
 章节 19–22、全部候选 Skill 和模型/工作流评测仍需要 fresh-context 前测与运行日志。外部材料不会未经来源、许可证和内容审查直接进入主线；真实问题研究记录的是用户报告或社区建议，不自动等同于官方根因，也不等同于本地复现。
 
@@ -105,15 +119,15 @@ Prysai LLM Playbook（Prysai 大模型实战手册）不是把 skills 平铺在�
 - [展示页说明（尚未迁移为 `site/README-ZH.md`，当前原始文件）](site/README.md)
 - [locale 后缀与迁移决策记录（ADR，治理记录未做 `-ZH` 副本）](docs/adr/0010-locale-suffixed-content.md)
 
-## 关于这三个中文入口
+## 中文候选学习路径
 
-本次只新增以下三个文件：
+当前中文候选路径不是只有语言入口。它包括：
 
-- `README-ZH.md`：项目级中文入口、目录职责、当前状态和安全边界；
-- `book/README-ZH.md`：书稿中文入口、阅读方式和评测边界；
-- `book/preface-ZH.md`：书稿中文序言。
+- `README-ZH.md`、`book/README-ZH.md`、`book/preface-ZH.md` 与本目录；
+- [第 1 章](book/chapters/01-gpt-and-codex-ZH.md) → [实验 011](book/labs/lab-011-gpt-codex-boundaries-ZH.md) → [第 2 章](book/chapters/02-first-safe-task-ZH.md) → [第一次安全改动夹具](book/routes/first-safe-change-ZH.md) → [实验 001](book/labs/lab-001-first-safe-task-ZH.md) → [第 3 章](book/chapters/03-task-protocol-ZH.md) → [实验 002](book/labs/lab-002-task-protocol-ZH.md)；
+- [第 4 章](book/chapters/04-context-permissions-and-agent-ZH.md) → [实验 007](book/labs/lab-007-action-boundaries-ZH.md) → [第 5 章](book/chapters/05-choose-the-codex-surface-ZH.md) → [第 6 章](book/chapters/06-model-selection-ZH.md) → [第 7 章](book/chapters/07-skills-plugins-and-tools-ZH.md) → [实验 004：选择最小有用能力](book/labs/lab-004-skill-selection-ZH.md) → [第 8 章](book/chapters/08-full-lifecycle-workflow-ZH.md) → [实验 013](book/labs/lab-013-l3-vertical-slice-ZH.md) → [第 9 章](book/chapters/09-verification-and-recovery-ZH.md) → [实验 003](book/labs/lab-003-evidence-review-ZH.md) → [第 10 章](book/chapters/10-planning-and-slicing-ZH.md)。
 
-它们是迁移中的 `ZH` 入口，不代表其他章节、实验、Skill、研究档案或治理文件已经完成同内容 ID 的 `-ZH` 版本。后续迁移应继续使用同一内容 ID、明确语言后缀和同语言链接，并在状态与验证证据实际存在后再提升状态。
+它们都是迁移中的 `ZH` 候选内容，不代表其他章节、实验、Skill、研究档案或治理文件已完成同内容 ID 的中文版本，也不代表语言质量已由独立审校者确认。后续迁移必须继续使用同一内容 ID、明确语言后缀和同语言链接；只有文件、审校与对应证据都存在时才可提升状态。
 
 ## 名称说明
 

@@ -98,7 +98,8 @@ button, input, select, textarea { font: inherit; }
 .hero-copy { grid-column: 1; align-self: center; }
 .eyebrow { margin: 0 0 1rem; color: var(--red); font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .hero h1 { max-width: 780px; margin: 0 0 1.5rem; font-size: clamp(3.5rem, 6vw, 6.25rem); font-weight: 700; letter-spacing: -.09em; line-height: .9; }
-.hero-lede { max-width: 600px; margin: 0 0 2.2rem; color: #4d4d4d; font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.65; }
+.hero-lede { max-width: 600px; margin: 0 0 1rem; color: #4d4d4d; font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.65; }
+.hero-scope { max-width: 600px; margin: 0 0 2.2rem; padding: .7rem 0; border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); color: var(--ink); font-size: .72rem; font-weight: 700; line-height: 1.45; }
 .hero-actions, .next-actions { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
 .button { display: inline-flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 46px; padding: .8rem 1.05rem; border: 1px solid transparent; color: var(--ink); font-size: .78rem; font-weight: 700; transition: transform .2s ease, background .2s ease, color .2s ease; }
 .button:hover, .button:focus-visible { transform: translateY(-2px); }
@@ -109,9 +110,10 @@ button, input, select, textarea { font: inherit; }
 .text-link span:last-child, .section-link span:last-child { color: var(--red); }
 .hero-route-decision { max-width: 680px; margin-top: 2rem; border-top: 3px solid var(--ink); border-bottom: 1px solid var(--line-dark); }
 .hero-route-kicker { margin: .8rem 0; color: var(--red); font-size: .62rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-.hero-route-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line-dark); }
-.hero-route-option { display: grid; grid-template-columns: 1.7rem minmax(0, 1fr) auto; gap: .65rem; min-height: 8rem; padding: 1rem 1rem 1rem 0; border-right: 1px solid var(--line-dark); color: var(--ink); }
-.hero-route-option + .hero-route-option { padding-left: 1rem; border-right: 0; }
+.hero-route-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line-dark); }
+.hero-route-option { display: grid; grid-template-columns: 1.7rem minmax(0, 1fr) auto; gap: .65rem; min-height: 9rem; padding: 1rem; border-right: 1px solid var(--line-dark); color: var(--ink); }
+.hero-route-option:first-child { padding-left: 0; }
+.hero-route-option:last-child { padding-right: 0; border-right: 0; }
 .hero-route-option:hover, .hero-route-option:focus-visible { color: var(--red); background: #fff; }
 .hero-route-index { color: var(--red); font: 700 .68rem/1.4 Consolas, 'Courier New', monospace; }
 .hero-route-option strong { display: block; font-size: .88rem; letter-spacing: -.025em; line-height: 1.2; }
@@ -167,16 +169,22 @@ button, input, select, textarea { font: inherit; }
 .problem-card-practice p { color: #bcbcbc; }
 .problem-card-practice .card-link { border-top-color: #505050; }
 
-/* Swiss editorial deck: the prompt is the artefact, so the companion board
-   explains the boundary instead of using decorative AI imagery. */
+/* Swiss editorial deck: the prompt is the artefact. The six-field panel keeps
+   the boundary readable in the page instead of shrinking a teaching board. */
 .everyday-prompt-deck { margin: 0 0 clamp(3rem, 6vw, 5rem); scroll-margin-top: 6rem; border-top: 5px solid var(--ink); }
 .everyday-prompt-head { display: grid; grid-template-columns: minmax(0, .85fr) minmax(260px, 1.15fr); gap: clamp(1.5rem, 5vw, 5rem); padding: clamp(1.4rem, 3vw, 2.6rem) 0; border-bottom: 1px solid var(--ink); }
 .everyday-prompt-head h3 { max-width: 680px; margin: 0; font-size: clamp(1.7rem, 3.5vw, 3.5rem); letter-spacing: -.075em; line-height: .96; }
 .everyday-prompt-head > div > p:last-child { max-width: 620px; margin: 1rem 0 0; color: var(--muted); font-size: .84rem; line-height: 1.6; }
-.everyday-prompt-visual { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .75rem 1rem; align-items: end; align-self: end; padding-top: .5rem; color: var(--ink); font-size: .68rem; font-weight: 700; line-height: 1.35; }
-.everyday-prompt-visual img { grid-column: 1 / -1; display: block; width: 100%; border: 1px solid var(--ink); background: #fff; transition: transform .18s ease, box-shadow .18s ease; }
-.everyday-prompt-visual b { color: var(--red); font-size: 1rem; }
-.everyday-prompt-visual:hover img, .everyday-prompt-visual:focus-visible img { transform: translateY(-3px); box-shadow: 6px 6px 0 var(--red); }
+.prompt-contract-panel { align-self: end; border: 1px solid var(--ink); background: #fff; }
+.prompt-contract-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; padding: .9rem 1rem; border-bottom: 1px solid var(--ink); }
+.prompt-contract-kicker { margin: 0 0 .45rem; color: var(--red); font: 700 .62rem/1 Consolas, 'Courier New', monospace; letter-spacing: .07em; text-transform: uppercase; }
+.prompt-contract-head h4 { margin: 0; font-size: 1rem; letter-spacing: -.035em; line-height: 1.1; }
+.prompt-contract-head .text-link { flex: 0 0 auto; font-size: .68rem; }
+.prompt-contract-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin: 0; padding: 0; list-style: none; background: var(--ink); }
+.prompt-contract-grid li { display: grid; grid-template-columns: 1.55rem minmax(0, 1fr); grid-template-rows: auto auto; gap: .18rem .45rem; min-width: 0; min-height: 88px; padding: .7rem; background: #fff; }
+.prompt-contract-grid b { grid-row: 1 / -1; color: var(--red); font: 700 .6rem/1.2 Consolas, 'Courier New', monospace; }
+.prompt-contract-grid strong { font-size: .71rem; line-height: 1.2; }
+.prompt-contract-grid span { color: var(--muted); font-size: .63rem; line-height: 1.35; }
 .everyday-prompt-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); background: var(--ink); }
 .everyday-prompt-card { min-width: 0; padding: clamp(1.2rem, 2.5vw, 2.25rem); color: var(--ink); background: #fff; }
 .everyday-prompt-card + .everyday-prompt-card { border-left: 1px solid var(--ink); }
@@ -186,6 +194,10 @@ button, input, select, textarea { font: inherit; }
 .everyday-prompt-card h4 { max-width: 520px; margin: clamp(1.6rem, 4vw, 4rem) 0 .8rem; font-size: clamp(1.55rem, 2.6vw, 2.55rem); letter-spacing: -.065em; line-height: .96; }
 .everyday-prompt-card > p:not(.everyday-prompt-status) { max-width: 550px; margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.55; }
 .everyday-prompt-card-ink > p:not(.everyday-prompt-status) { color: #c2c2bd; }
+.everyday-prompt-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .65rem; margin: 1.2rem 0 0; padding: 0; list-style: none; }
+.everyday-prompt-steps li { display: grid; grid-template-columns: 1.3rem minmax(0, 1fr); gap: .45rem; align-items: start; min-width: 0; font-size: .72rem; line-height: 1.45; }
+.everyday-prompt-steps b { display: grid; place-items: center; width: 1.25rem; height: 1.25rem; color: #fff; background: var(--ink); font: 700 .62rem/1 Consolas, 'Courier New', monospace; }
+.everyday-prompt-steps-inverse b { color: var(--ink); background: var(--highlight-lime); }
 .everyday-prompt-actions { display: flex; align-items: center; gap: 1rem 1.4rem; margin: 1.35rem 0; flex-wrap: wrap; }
 .everyday-prompt-actions .button { cursor: pointer; }
 .everyday-prompt-card-ink .text-link { color: #fff; }
@@ -193,6 +205,16 @@ button, input, select, textarea { font: inherit; }
 .everyday-prompt-card pre code { font: inherit; }
 .everyday-prompt-status { min-height: 2.8em; margin: 1rem 0 0; color: var(--muted); font-size: .68rem; line-height: 1.45; }
 .everyday-prompt-card-ink .everyday-prompt-status { color: #c2c2bd; }
+.everyday-prompt-card-skill { display: grid; grid-column: 1 / -1; grid-template-columns: minmax(0, .9fr) minmax(320px, 1.1fr); column-gap: clamp(1.5rem, 5vw, 5rem); border-top: 1px solid var(--ink); border-left: 0; background: var(--highlight-lime); }
+.everyday-prompt-card-skill .everyday-prompt-card-head { grid-column: 1 / -1; }
+.compact-prompt-copy { min-width: 0; }
+.compact-prompt-copy h4 { max-width: 560px; }
+.compact-prompt-artifact { min-width: 0; align-self: end; }
+.compact-prompt-artifact .everyday-prompt-actions { margin-top: 0; }
+.compact-prompt-details { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.compact-prompt-details summary { padding: .8rem 0; cursor: pointer; font-size: .74rem; font-weight: 700; }
+.compact-prompt-details[open] summary { border-bottom: 1px solid var(--ink); }
+.compact-prompt-details pre { min-height: 0; max-height: 19rem; margin: 0; border: 0; }
 
 .first-30-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, .85fr); gap: clamp(2rem, 8vw, 8rem); align-items: start; }
 .task-steps { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-dark); }
@@ -446,8 +468,8 @@ button, input, select, textarea { font: inherit; }
   .button { justify-content: space-between; }
   .hero-route-decision { margin-top: 1.5rem; }
   .hero-route-grid { grid-template-columns: 1fr; }
-  .hero-route-option, .hero-route-option + .hero-route-option { min-height: 0; padding: .9rem 0; border-right: 0; border-bottom: 1px solid var(--line-dark); }
-  .hero-route-option + .hero-route-option { border-bottom: 0; }
+  .hero-route-option, .hero-route-option:first-child, .hero-route-option:last-child { min-height: 0; padding: .9rem 0; border-right: 0; border-bottom: 1px solid var(--line-dark); }
+  .hero-route-option:last-child { border-bottom: 0; }
   .hero-footer { flex-direction: column; }
   .problem-grid, .contract-grid, .lab-grid, .skill-grid, .status-grid { grid-template-columns: 1fr; }
   .problem-card { min-height: 210px; }
@@ -510,11 +532,16 @@ button, input, select, textarea { font: inherit; }
   .hero { min-height: auto; padding-bottom: 2.2rem; }
   .hero-index { margin-bottom: 1.4rem; }
   .hero-lede { margin-bottom: 1.35rem; }
-  .hero-actions, .hero-brief, .hero-footer { display: none; }
+  /* A phone reader should see one explicit action before needing to decode the
+     three route cards below. The cards remain available for the fuller choice. */
+  .hero-actions { display: flex; }
+  .hero-brief, .hero-footer { display: none; }
   .hero-proof-card { margin-top: 1.2rem; }
   .hero-proof-card h2 { font-size: 1.45rem; }
   .hero-proof-status { max-width: 9.5rem; }
-  .mobile-core-routes { display: grid; margin-top: 1rem; border-top: 4px solid var(--ink); }
+  /* The expanded route cards above already give a phone reader the condition,
+     action, and boundary. A second abbreviated copy only repeats the choice. */
+  .mobile-core-routes { display: none; }
   .mobile-core-routes a { display: grid; grid-template-columns: 2rem minmax(0, 1fr) auto; gap: .65rem; align-items: baseline; padding: .72rem 0; border-bottom: 1px solid var(--ink); color: var(--ink); }
   .mobile-core-routes span, .mobile-core-routes b { color: var(--red); font-size: .72rem; }
   .mobile-core-routes strong { font-size: .8rem; line-height: 1.35; }
@@ -715,7 +742,7 @@ button, input, select, textarea { font: inherit; }
 .visual-case-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line-dark); }
 .visual-case-links a { position: relative; display: flex; min-height: 10.5rem; flex-direction: column; justify-content: space-between; gap: .85rem; padding: 1.2rem; background: var(--ink); transition: color .15s ease, background .15s ease; }
 .visual-case-links a:hover strong, .visual-case-links a:focus-visible strong { color: var(--red); }
-.visual-case-card img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 1px solid rgba(255, 255, 255, .18); background: #fff; opacity: .88; transition: opacity .15s ease, transform .15s ease; }
+.visual-case-card img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: contain; object-position: center; border: 1px solid rgba(255, 255, 255, .18); background: #f6f6f2; opacity: .88; transition: opacity .15s ease, transform .15s ease; }
 .visual-case-card:hover img, .visual-case-card:focus-visible img { opacity: 1; transform: translateY(-2px); }
 .visual-case-links strong { color: #fff; font-size: .8rem; line-height: 1.35; }
 .visual-case-links small { color: #aaa; font-size: .7rem; line-height: 1.5; }
@@ -744,10 +771,14 @@ button, input, select, textarea { font: inherit; }
 @media (max-width: 760px) {
   .everyday-prompt-head, .everyday-prompt-grid { grid-template-columns: 1fr; }
   .everyday-prompt-head { gap: 1.4rem; }
-  .everyday-prompt-visual { max-width: none; }
+  .prompt-contract-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .prompt-contract-grid li { min-height: 76px; }
   .everyday-prompt-card + .everyday-prompt-card { border-top: 1px solid var(--ink); border-left: 0; }
   .everyday-prompt-card h4 { margin-top: 2.1rem; }
+  .everyday-prompt-steps { grid-template-columns: 1fr; gap: .55rem; }
   .everyday-prompt-card pre { min-height: 0; max-height: 24rem; font-size: .68rem; }
+  .everyday-prompt-card-skill { grid-template-columns: 1fr; row-gap: 1.35rem; }
+  .compact-prompt-artifact .everyday-prompt-actions { margin-bottom: 1rem; }
 }
 
 @media (max-width: 800px) {
@@ -759,6 +790,14 @@ button, input, select, textarea { font: inherit; }
 }
 
 @media (max-width: 480px) {
+  .prompt-contract-head { align-items: start; flex-direction: column; }
+  .prompt-contract-kicker { font-size: .7rem; }
+  .prompt-contract-head h4 { font-size: 1.15rem; }
+  .prompt-contract-head .text-link { font-size: .75rem; }
+  .prompt-contract-grid li { min-height: 94px; padding: .75rem .65rem; }
+  .prompt-contract-grid b { font-size: .68rem; }
+  .prompt-contract-grid strong { font-size: .82rem; }
+  .prompt-contract-grid span { font-size: .73rem; line-height: 1.4; }
   .hero-brief { grid-template-columns: 1fr; }
   .brief-item, .brief-item:first-child, .brief-item:nth-child(3) { padding: .85rem 0; border-right: 0; border-bottom: 1px solid var(--line); }
   .brief-item:last-child { padding-bottom: .85rem; border-bottom: 0; }

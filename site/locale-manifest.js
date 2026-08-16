@@ -66,37 +66,37 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/routes/first-safe-change-ZH.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "not-started",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-14"
         },
         "es": {
           "path": "book/routes/first-safe-change-ES.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "not-started",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-14"
         },
         "ja": {
           "path": "book/routes/first-safe-change-JA.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "not-started",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-14"
         },
         "ko": {
           "path": "book/routes/first-safe-change-KO.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "not-started",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-14"
         },
         "de": {
           "path": "book/routes/first-safe-change-DE.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "not-started",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-14"
         }
       }
@@ -652,17 +652,17 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/02-first-safe-task-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "source_revision": "worktree-2026-08-15"
         },
         "es": {
           "path": "book/chapters/02-first-safe-task-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "source_revision": "worktree-2026-08-15"
         },
         "ja": {
           "path": "book/chapters/02-first-safe-task-JA.md",
@@ -706,10 +706,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/03-task-protocol-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "source_revision": "1c6e6f95d691dc4a522fc6a6be9d41c4aea508ae"
         },
         "es": {
           "path": "book/chapters/03-task-protocol-ES.md",
@@ -814,10 +814,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/05-choose-the-codex-surface-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "75ae63be087590c77a1ff3556415e272046489fc"
         },
         "es": {
           "path": "book/chapters/05-choose-the-codex-surface-ES.md",
@@ -868,7 +868,7 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/06-model-selection-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-11"
@@ -922,7 +922,7 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/07-skills-plugins-and-tools-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-11"
@@ -976,7 +976,7 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/08-full-lifecycle-workflow-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-11"
@@ -1030,7 +1030,7 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/09-verification-and-recovery-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-11"
@@ -1084,7 +1084,7 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/10-planning-and-slicing-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-11"
@@ -1138,7 +1138,7 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/11-designing-a-skill-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-11"
@@ -1192,10 +1192,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/12-agent-loop-and-stop-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-15"
         },
         "es": {
           "path": "book/chapters/12-agent-loop-and-stop-ES.md",
@@ -1840,38 +1840,38 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/labs/lab-001-first-safe-task-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15"
         },
         "es": {
           "path": "book/labs/lab-001-first-safe-task-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15"
         },
         "ja": {
           "path": "book/labs/lab-001-first-safe-task-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15"
         },
         "ko": {
           "path": "book/labs/lab-001-first-safe-task-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15"
         },
         "de": {
           "path": "book/labs/lab-001-first-safe-task-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15"
         }
       }
     },
@@ -1894,10 +1894,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/labs/lab-002-task-protocol-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "1c6e6f95d691dc4a522fc6a6be9d41c4aea508ae"
         },
         "es": {
           "path": "book/labs/lab-002-task-protocol-ES.md",
@@ -1948,9 +1948,9 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/labs/lab-003-evidence-review-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
+          "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-12"
         },
         "es": {
@@ -2002,9 +2002,9 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/labs/lab-004-skill-selection-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
+          "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-12"
         },
         "es": {
@@ -2056,9 +2056,9 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/labs/lab-005-design-a-skill-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
+          "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-12"
         },
         "es": {
@@ -2326,9 +2326,9 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/labs/lab-013-l3-vertical-slice-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
+          "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-12"
         },
         "es": {
@@ -2380,10 +2380,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/labs/lab-006-agent-stop-conditions-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15"
         },
         "es": {
           "path": "book/labs/lab-006-agent-stop-conditions-ES.md",
@@ -3041,6 +3041,58 @@ window.CODEX_LOCALE_MANIFEST = {
         }
       }
     },
+    "field-case-capacity-interruption-checkpoint-2026-08-14": {
+      "kind": "field-note",
+      "reader_type": "field-note",
+      "overview_target": "index.html#field-research",
+      "stem": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
     "community-tutorial-intake-and-foundations-2026-08-14": {
       "kind": "field-note",
       "reader_type": "field-note",
@@ -3294,6 +3346,58 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "de": {
           "path": "skills/prysai-platform-adapter-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-platform-fact-watch": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-platform-fact-watch/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-platform-fact-watch/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-platform-fact-watch/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-platform-fact-watch/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-platform-fact-watch/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-platform-fact-watch/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-platform-fact-watch/SKILL.md",
           "exists": true,
           "content_status": "candidate",
           "translation_status": "not-started",
@@ -3872,6 +3976,370 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         }
       }
+    },
+    "prysai-adversarial-project-review": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-adversarial-project-review/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-adversarial-project-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-adversarial-project-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-adversarial-project-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-adversarial-project-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-adversarial-project-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-adversarial-project-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-request-escalation": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-request-escalation/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-request-escalation/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-request-escalation/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-request-escalation/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-request-escalation/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-request-escalation/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-request-escalation/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-llm-comparison-protocol": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-llm-comparison-protocol/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-llm-comparison-protocol/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-llm-comparison-protocol/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-llm-comparison-protocol/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-llm-comparison-protocol/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-llm-comparison-protocol/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-llm-comparison-protocol/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-practice-target": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-practice-target/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-practice-target/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-practice-target/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-practice-target/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-practice-target/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-practice-target/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-practice-target/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-interruption-checkpoint": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-interruption-checkpoint/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-interruption-checkpoint/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-interruption-checkpoint/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-interruption-checkpoint/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-interruption-checkpoint/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-interruption-checkpoint/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-interruption-checkpoint/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-shift-handoff": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-shift-handoff/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-shift-handoff/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-shift-handoff/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-shift-handoff/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-shift-handoff/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-shift-handoff/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-shift-handoff/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
+    },
+    "prysai-platform-observation-record": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/prysai-platform-observation-record/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/prysai-platform-observation-record/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/prysai-platform-observation-record/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/prysai-platform-observation-record/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/prysai-platform-observation-record/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/prysai-platform-observation-record/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/prysai-platform-observation-record/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
     }
   },
   "aliases": {
@@ -4258,11 +4726,13 @@ window.CODEX_LOCALE_MANIFEST = {
     "docs/research/field-case-external-instruction-authority-2026-08-13.md": "field-case-external-instruction-authority-2026-08-13",
     "docs/research/field-case-blocked-network-boundary-2026-08-14.md": "field-case-blocked-network-boundary-2026-08-14",
     "docs/research/field-case-agent-handoff-receipt-2026-08-14.md": "field-case-agent-handoff-receipt-2026-08-14",
+    "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md": "field-case-capacity-interruption-checkpoint-2026-08-14",
     "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md": "community-tutorial-intake-and-foundations-2026-08-14",
     "skills/prysai-dialogue-brief/SKILL.md": "prysai-dialogue-brief",
     "skills/prysai-first-turn-check/SKILL.md": "prysai-first-turn-check",
     "skills/prysai-field-signal-curator/SKILL.md": "prysai-field-signal-curator",
     "skills/prysai-platform-adapter-review/SKILL.md": "prysai-platform-adapter-review",
+    "skills/prysai-platform-fact-watch/SKILL.md": "prysai-platform-fact-watch",
     "skills/prysai-communication-failure-triage/SKILL.md": "prysai-communication-failure-triage",
     "skills/prysai-codex-coach/SKILL.md": "prysai-codex-coach",
     "skills/prysai-task-protocol/SKILL.md": "prysai-task-protocol",
@@ -4273,11 +4743,62 @@ window.CODEX_LOCALE_MANIFEST = {
     "skills/prysai-product-context/SKILL.md": "prysai-product-context",
     "skills/prysai-learning-coach/SKILL.md": "prysai-learning-coach",
     "skills/prysai-source-investigator/SKILL.md": "prysai-source-investigator",
-    "skills/prysai-prompt-card-editor/SKILL.md": "prysai-prompt-card-editor"
+    "skills/prysai-prompt-card-editor/SKILL.md": "prysai-prompt-card-editor",
+    "skills/prysai-adversarial-project-review/SKILL.md": "prysai-adversarial-project-review",
+    "skills/prysai-request-escalation/SKILL.md": "prysai-request-escalation",
+    "skills/prysai-llm-comparison-protocol/SKILL.md": "prysai-llm-comparison-protocol",
+    "skills/prysai-practice-target/SKILL.md": "prysai-practice-target",
+    "skills/prysai-interruption-checkpoint/SKILL.md": "prysai-interruption-checkpoint",
+    "skills/prysai-shift-handoff/SKILL.md": "prysai-shift-handoff",
+    "skills/prysai-platform-observation-record/SKILL.md": "prysai-platform-observation-record"
   },
   "routed_status_counts": {
     "chapters": 22,
     "labs": 18
+  },
+  "localization_coverage": {
+    "en": {
+      "total_units": 40,
+      "available_units": 40,
+      "source_units": 40,
+      "candidate_translation_units": 0,
+      "reviewed_translation_units": 0
+    },
+    "zh": {
+      "total_units": 40,
+      "available_units": 21,
+      "source_units": 0,
+      "candidate_translation_units": 21,
+      "reviewed_translation_units": 0
+    },
+    "es": {
+      "total_units": 40,
+      "available_units": 6,
+      "source_units": 0,
+      "candidate_translation_units": 6,
+      "reviewed_translation_units": 0
+    },
+    "ja": {
+      "total_units": 40,
+      "available_units": 5,
+      "source_units": 0,
+      "candidate_translation_units": 5,
+      "reviewed_translation_units": 0
+    },
+    "ko": {
+      "total_units": 40,
+      "available_units": 5,
+      "source_units": 0,
+      "candidate_translation_units": 5,
+      "reviewed_translation_units": 0
+    },
+    "de": {
+      "total_units": 40,
+      "available_units": 5,
+      "source_units": 0,
+      "candidate_translation_units": 5,
+      "reviewed_translation_units": 0
+    }
   },
   "book_navigation": {
     "parts": [
@@ -4655,49 +5176,56 @@ window.CODEX_LOCALE_MANIFEST = {
         "number": 1,
         "title": "Make one safe README change",
         "path": "book/labs/lab-001-first-safe-task-EN.md",
-        "content_id": "lab-001-first-safe-task"
+        "content_id": "lab-001-first-safe-task",
+        "title_zh": "完成一次安全的 README 改动"
       },
       {
         "id": "lab-002",
         "number": 2,
         "title": "Turn one wish into a task protocol",
         "path": "book/labs/lab-002-task-protocol-EN.md",
-        "content_id": "lab-002-task-protocol"
+        "content_id": "lab-002-task-protocol",
+        "title_zh": "把一个愿望变成任务协议"
       },
       {
         "id": "lab-003",
         "number": 3,
         "title": "Audit a completion claim",
         "path": "book/labs/lab-003-evidence-review-EN.md",
-        "content_id": "lab-003-evidence-review"
+        "content_id": "lab-003-evidence-review",
+        "title_zh": "审计一条完成声明"
       },
       {
         "id": "lab-004",
         "number": 4,
         "title": "Choose the smallest useful capability",
         "path": "book/labs/lab-004-skill-selection-EN.md",
-        "content_id": "lab-004-skill-selection"
+        "content_id": "lab-004-skill-selection",
+        "title_zh": "选择最小有用能力"
       },
       {
         "id": "lab-005",
         "number": 5,
         "title": "Turn a repeated method into a narrow Skill",
         "path": "book/labs/lab-005-design-a-skill-EN.md",
-        "content_id": "lab-005-design-a-skill"
+        "content_id": "lab-005-design-a-skill",
+        "title_zh": "把重复方法沉淀为边界明确的 Skill"
       },
       {
         "id": "lab-006",
         "number": 6,
         "title": "Design Agent stop conditions",
         "path": "book/labs/lab-006-agent-stop-conditions-EN.md",
-        "content_id": "lab-006-agent-stop-conditions"
+        "content_id": "lab-006-agent-stop-conditions",
+        "title_zh": "设计 Agent 的停止条件"
       },
       {
         "id": "lab-007",
         "number": 7,
         "title": "Put One README Task Behind Three Action Boundaries",
         "path": "book/labs/lab-007-action-boundaries-EN.md",
-        "content_id": "lab-007-action-boundaries"
+        "content_id": "lab-007-action-boundaries",
+        "title_zh": "把一个 README 任务放进三个行动边界"
       },
       {
         "id": "lab-008",
@@ -4725,7 +5253,8 @@ window.CODEX_LOCALE_MANIFEST = {
         "number": 11,
         "title": "Separate GPT, Codex, tools, and Agents",
         "path": "book/labs/lab-011-gpt-codex-boundaries-EN.md",
-        "content_id": "lab-011-gpt-codex-boundaries"
+        "content_id": "lab-011-gpt-codex-boundaries",
+        "title_zh": "分清 GPT、Codex、工具与 Agent"
       },
       {
         "id": "lab-012",
@@ -4739,7 +5268,8 @@ window.CODEX_LOCALE_MANIFEST = {
         "number": 13,
         "title": "Run one complete vertical slice",
         "path": "book/labs/lab-013-l3-vertical-slice-EN.md",
-        "content_id": "lab-013-l3-vertical-slice"
+        "content_id": "lab-013-l3-vertical-slice",
+        "title_zh": "完成一个完整的竖向切片"
       },
       {
         "id": "lab-014",
@@ -4772,7 +5302,7 @@ window.CODEX_LOCALE_MANIFEST = {
       {
         "id": "lab-018",
         "number": 18,
-        "title": "Test a beginner travel exchange for retention and transfer",
+        "title": "Test a typed beginner travel exchange for retention and transfer",
         "path": "book/labs/lab-018-language-transfer-EN.md",
         "content_id": "lab-018-language-transfer"
       }

@@ -1,7 +1,8 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; form-action 'self'; frame-src 'none'" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="An evidence-led LLM playbook for turning a first task into bounded, checkable work. Start with the Codex Practice Track." />
     <meta name="theme-color" content="#f6f6f3" />
@@ -18,10 +19,10 @@
     <meta name="twitter:image:alt" content="Prysai LLM Playbook with define, context, act, verify, and transfer checkpoints" />
     <title>Prysai LLM Playbook — From First Task to Reliable Work</title>
     <link rel="icon" type="image/png" href="../assets/branding/prysai-lab-mark-black-96.png" />
-    <link rel="stylesheet" href="styles.css?v=20260813-mobile-visual-case" />
+    <link rel="stylesheet" href="styles.css?v=20260815-beginner-action" />
     <script src="locale-manifest.js?v=20260813-integrity"></script>
     <script src="learning-path-data.js?v=20260813-integrity"></script>
-    <script src="app.js?v=20260813-first-win-check-record" defer></script>
+    <script src="app.js?v=20260815-beginner-action" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main" data-i18n="skipToContent">Skip to main content</a>
@@ -85,32 +86,39 @@
           <span>01</span><span>—</span><span data-i18n="heroIndex">LLM / PRACTICE SYSTEM</span>
         </div>
         <div class="hero-copy">
-          <p class="eyebrow" data-i18n="heroEyebrow">Candidate guide · basic structure and checks pass</p>
+          <p class="eyebrow" data-i18n="heroEyebrow">Start small · one task, one visible check</p>
           <h1 id="hero-title" data-i18n="heroTitle">Turn a first LLM task into real work.</h1>
           <p class="hero-lede" data-i18n="heroLede">Learn one practical method for working with language models, then practise it deeply in the Codex Practice Track: define the outcome, control context and authority, inspect the work, recover from failure, and keep evidence.</p>
+          <p class="hero-scope" data-i18n="heroScope">Current guided scope: transferable core + Codex Practice Track. Claude Code and Grok are not runnable routes yet.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="../book/chapters/01-gpt-and-codex-EN.md" data-content-id="chapter-01"><span data-i18n="heroPrimary">Start the Codex Practice Track</span><span aria-hidden="true">↗</span></a>
-            <a class="text-link" href="#everyday-prompts"><span data-i18n="heroSecondary">Try a five-minute prompt card</span><span aria-hidden="true">↓</span></a>
+            <a class="button button-primary" href="#everyday-prompts"><span data-i18n="heroPrimary">Start with a no-setup LLM check</span><span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="../book/chapters/01-gpt-and-codex-EN.md" data-content-id="chapter-01"><span data-i18n="heroSecondary">Start the Codex Practice Track</span><span aria-hidden="true">↗</span></a>
           </div>
-          <aside class="hero-route-decision" data-route-decision aria-label="Choose the recommended first route" data-i18n-attr="aria-label:heroRouteAria">
-            <p class="hero-route-kicker" data-i18n="heroRouteKicker">Choose by your starting condition</p>
+          <aside class="hero-route-decision" data-route-decision aria-label="Choose a first route by readiness" data-i18n-attr="aria-label:heroRouteAria">
+            <p class="hero-route-kicker" data-i18n="heroRouteKicker">Choose by what you have today</p>
             <div class="hero-route-grid">
-              <a class="hero-route-option" href="../book/chapters/01-gpt-and-codex-EN.md" data-content-id="chapter-01">
+              <a class="hero-route-option" href="#everyday-prompts">
                 <span class="hero-route-index">01</span>
-                <span><strong data-i18n="heroRouteGuidedTitle">Have a disposable project? Follow the guided path.</strong><small data-i18n="heroRouteGuidedBody">Start with Chapter 1. The first local edit comes after its scope and evidence boundary are visible.</small></span>
+                <span><strong data-i18n="heroRouteNoSetupTitle">No project or coding background? Start with one no-setup check.</strong><small data-i18n="heroRouteNoSetupBody">Use any chat model and a fictional message. No files, tools, account connection, or private data.</small></span>
+                <b aria-hidden="true">↓</b>
+              </a>
+              <a class="hero-route-option" href="../book/chapters/01-gpt-and-codex-EN.md" data-content-id="chapter-01">
+                <span class="hero-route-index">02</span>
+                <span><strong data-i18n="heroRouteGuidedTitle">Have a disposable project and want Codex? Follow the guided path.</strong><small data-i18n="heroRouteGuidedBody">Start with Chapter 1. The first local edit comes after its scope and evidence boundary are visible.</small></span>
                 <b aria-hidden="true">↗</b>
               </a>
               <a class="hero-route-option" href="../book/routes/first-safe-change-EN.md" data-content-id="first-safe-change-route">
-                <span class="hero-route-index">02</span>
-                <span><strong data-i18n="heroRouteFixtureTitle">No disposable project yet? Use the safe fixture at the Chapter 2 decision.</strong><small data-i18n="heroRouteFixtureBody">It supplies one offline target and check. It does not replace the guided Codex path.</small></span>
+                <span class="hero-route-index">03</span>
+                <span><strong data-i18n="heroRouteFixtureTitle">Need a safe file for the Codex path? Open the offline fixture.</strong><small data-i18n="heroRouteFixtureBody">It supplies one target and check after Chapter 2. It is a fallback, not a substitute for the guided path.</small></span>
                 <b aria-hidden="true">↗</b>
               </a>
             </div>
-            <p class="hero-route-boundary" data-i18n="heroRouteBoundary">Candidate means the basic structure and checks pass; first-time reader outcomes are still unmeasured.</p>
+            <p class="hero-route-boundary" data-i18n="heroRouteBoundary">All three entries are candidate: the structure is checked, but reader outcomes are not yet measured.</p>
           </aside>
           <nav class="mobile-core-routes" aria-label="Choose your next move" data-i18n-attr="aria-label:mobileRoutesAria">
-            <a href="../book/chapters/01-gpt-and-codex-EN.md" data-content-id="chapter-01"><span>01</span><strong data-i18n="mobileRouteTask">Start the Codex path</strong><b aria-hidden="true">↗</b></a>
-            <a href="../book/routes/first-safe-change-EN.md" data-content-id="first-safe-change-route"><span>02</span><strong data-i18n="mobileRouteFixture">Need a safe file? Open the fixture</strong><b aria-hidden="true">↗</b></a>
+            <a href="#everyday-prompts"><span>01</span><strong data-i18n="mobileRouteNoSetup">No project? Start with the no-setup check</strong><b aria-hidden="true">↗</b></a>
+            <a href="../book/chapters/01-gpt-and-codex-EN.md" data-content-id="chapter-01"><span>02</span><strong data-i18n="mobileRouteTask">Have a disposable project? Start Codex</strong><b aria-hidden="true">↗</b></a>
+            <a href="../book/routes/first-safe-change-EN.md" data-content-id="first-safe-change-route"><span>03</span><strong data-i18n="mobileRouteFixture">Need a safe file? Open the fixture</strong><b aria-hidden="true">↗</b></a>
           </nav>
         </div>
         <aside class="hero-proof-card" aria-label="First Win proof card" data-i18n-attr="aria-label:heroProofAria">
@@ -170,7 +178,7 @@
             </a>
             <a class="brief-item" href="#skills" role="listitem">
               <span class="brief-index">03</span>
-              <span class="brief-copy"><strong><code>skills/</code></strong><small data-i18n="repositorySkills">15 reusable Skills · candidate</small></span>
+              <span class="brief-copy"><strong><code>skills/</code></strong><small data-i18n="repositorySkills">23 reusable Skills · candidate</small></span>
               <span class="brief-arrow" aria-hidden="true">↗</span>
             </a>
             <a class="brief-item" href="#updates" role="listitem">
@@ -182,10 +190,10 @@
           <nav class="mobile-index-rail" aria-label="Complete project indexes" data-i18n-attr="aria-label:mobileIndexAria">
             <a href="../book/table-of-contents-EN.md"><strong>22</strong><span data-i18n="mobileIndexChapters">chapters</span></a>
             <a href="../book/labs/README-EN.md"><strong>18</strong><span data-i18n="mobileIndexLabs">labs</span></a>
-            <a href="../docs/skill-registry.md"><strong>15</strong><span data-i18n="mobileIndexSkills">Skills</span></a>
+            <a href="../docs/skill-registry.md"><strong>23</strong><span data-i18n="mobileIndexSkills">Skills</span></a>
             <a href="../docs/research/field-problems-index-2026-08-10.md"><strong>03</strong><span data-i18n="mobileIndexCases">field cases</span></a>
             <a href="../docs/governance/locale-matrix.yaml"><strong>06</strong><span data-i18n="mobileIndexLocales">locale records</span></a>
-            <a href="../assets/teaching/README.md"><strong>07</strong><span data-i18n="mobileIndexVisuals">teaching boards</span></a>
+            <a href="../assets/teaching/README.md"><strong>19</strong><span data-i18n="mobileIndexVisuals">teaching boards</span></a>
             <a href="../docs/governance/update-map.md"><strong>18</strong><span data-i18n="mobileIndexUpdates">update areas</span></a>
             <a href="../docs/governance/page-trust-registry.yaml"><strong>04</strong><span data-i18n="mobileIndexTrust">trust families</span></a>
           </nav>
@@ -197,7 +205,7 @@
                 <a class="file-map-row" href="README.md"><code>site/</code><span><strong data-i18n="fileSiteTitle">Public showcase</strong><small data-i18n="fileSiteBody">index.html, styles.css, app.js, and generated learning-path data.</small></span><b aria-hidden="true">↗</b></a>
                 <a class="file-map-row" href="../book/table-of-contents-EN.md"><code>book/chapters/</code><span><strong data-i18n="fileChaptersTitle">Core learning text</strong><small data-i18n="fileChaptersBody">22 English chapter sources; current artifact status: candidate.</small></span><b aria-hidden="true">↗</b></a>
                 <a class="file-map-row" href="../book/labs/README-EN.md"><code>book/labs/</code><span><strong data-i18n="fileLabsTitle">Observable practice</strong><small data-i18n="fileLabsBody">18 labs; current status: draft; run status: not_run.</small></span><b aria-hidden="true">↗</b></a>
-                <a class="file-map-row" href="../docs/skill-registry.md"><code>skills/</code><span><strong data-i18n="fileSkillsTitle">Reusable methods</strong><small data-i18n="fileSkillsBody">15 project Skills with triggers, boundaries, and evidence contracts.</small></span><b aria-hidden="true">↗</b></a>
+                <a class="file-map-row" href="../docs/skill-registry.md"><code>skills/</code><span><strong data-i18n="fileSkillsTitle">Reusable methods</strong><small data-i18n="fileSkillsBody">23 project Skills with triggers, boundaries, and evidence contracts.</small></span><b aria-hidden="true">↗</b></a>
                 <a class="file-map-row" href="../docs/governance/update-map.md"><code>docs/</code><span><strong data-i18n="fileDocsTitle">Governance and research</strong><small data-i18n="fileDocsBody">Status, sources, field reports, update rules, and quality records.</small></span><b aria-hidden="true">↗</b></a>
               </div>
             </article>
@@ -209,7 +217,7 @@
                   <li><span data-i18n="ledgerProject">Project</span><strong class="status-badge status-badge-candidate">candidate</strong></li>
                   <li><span data-i18n="ledgerChapters">Chapters · 22</span><strong class="status-badge status-badge-candidate">candidate</strong></li>
                   <li><span data-i18n="ledgerLabs">Labs · 18</span><strong class="status-badge status-badge-draft">draft</strong><small>reference 2 · learner 0 · transfer 0</small></li>
-                  <li><span data-i18n="ledgerSkills">Skills · 15</span><strong class="status-badge status-badge-candidate">candidate</strong></li>
+                  <li><span data-i18n="ledgerSkills">Skills · 23</span><strong class="status-badge status-badge-candidate">candidate</strong></li>
                   <li><span data-i18n="ledgerResearch">Field research</span><strong class="status-badge status-badge-candidate">candidate</strong><small data-i18n="ledgerResearchNote">user reports; not locally reproduced</small></li>
                 </ul>
                 <a class="index-source-link" href="../docs/governance/content-status.yaml"><span data-i18n="ledgerSource">Open the current status source</span><span aria-hidden="true">↗</span></a>
@@ -270,33 +278,53 @@
               <div>
                 <p class="eyebrow" data-i18n="promptDeckEyebrow">Optional prompt cards · five minutes</p>
                 <h3 id="everyday-prompts-title" data-i18n="promptDeckTitle">Start with one small conversation.</h3>
-                <p data-i18n="promptDeckIntro">Copy one original, text-only card. Replace only the brackets, inspect the response yourself, and keep the claim small: one attempt is not fluency, research, or a finished answer.</p>
+                <p data-i18n="promptDeckIntro">Copy one original, text-only card. The language card needs no editing; the research card has two brackets. Inspect the response yourself, and keep the claim small: one attempt is not fluency, research, or a finished answer.</p>
               </div>
-              <a class="everyday-prompt-visual" href="../docs/research/universal-first-turn-prompt-contract-2026-08-13.md">
-                <img src="../assets/teaching/first-turn-contract-card.svg" alt="Six visible fields for a bounded first request" data-i18n-attr="alt:promptDeckVisualAlt" loading="lazy" />
-                <span data-i18n="promptDeckVisualLabel">See the six-field check before you send</span><b aria-hidden="true">↗</b>
-              </a>
+              <aside class="prompt-contract-panel" aria-labelledby="prompt-contract-title">
+                <div class="prompt-contract-head">
+                  <div>
+                    <p class="prompt-contract-kicker" data-i18n="promptContractKicker">Before you send</p>
+                    <h4 id="prompt-contract-title" data-i18n="promptContractTitle">Make six parts visible.</h4>
+                  </div>
+                  <a class="text-link" href="../docs/research/universal-first-turn-prompt-contract-2026-08-13.md"><span data-i18n="promptContractLink">Read the rationale</span><span aria-hidden="true">↗</span></a>
+                </div>
+                <ol class="prompt-contract-grid" data-i18n-attr="aria-label:promptContractGridAria">
+                  <li><b aria-hidden="true">01</b><strong data-i18n="promptContractOutcomeLabel">Outcome</strong><span data-i18n="promptContractOutcomeBody">One small, observable result.</span></li>
+                  <li><b aria-hidden="true">02</b><strong data-i18n="promptContractContextLabel">Starting context</strong><span data-i18n="promptContractContextBody">What you know or supply.</span></li>
+                  <li><b aria-hidden="true">03</b><strong data-i18n="promptContractResponseLabel">Requested response</strong><span data-i18n="promptContractResponseBody">The shape, length, or sequence.</span></li>
+                  <li><b aria-hidden="true">04</b><strong data-i18n="promptContractLimitsLabel">Limits</strong><span data-i18n="promptContractLimitsBody">Data and actions that stay out.</span></li>
+                  <li><b aria-hidden="true">05</b><strong data-i18n="promptContractCheckLabel">Check</strong><span data-i18n="promptContractCheckBody">What you will inspect yourself.</span></li>
+                  <li><b aria-hidden="true">06</b><strong data-i18n="promptContractStopLabel">Stop and receipt</strong><span data-i18n="promptContractStopBody">When to stop and what to keep.</span></li>
+                </ol>
+              </aside>
             </div>
             <div class="everyday-prompt-grid">
               <article class="everyday-prompt-card" data-prompt-card>
                 <div class="everyday-prompt-card-head"><span data-i18n="spanishCardIndex">01 / LANGUAGE PRACTICE</span><small data-i18n="promptCardScope">text only · no tool authority</small></div>
-                <h4 data-i18n="spanishCardTitle">Write one short Spanish reply.</h4>
-                <p data-i18n="spanishCardIntro">Use an ordinary, non-sensitive situation. The model waits for your attempt, suggests no more than two changes, and asks for a revision.</p>
+                <h4 data-i18n="spanishCardTitle">Complete one short typed Spanish hotel check-in.</h4>
+                <p data-i18n="spanishCardIntro">This text-only card uses fictional travel details, waits for your typed attempt, and limits help to one meaning-blocking error.</p>
+                <ol class="everyday-prompt-steps">
+                  <li><b aria-hidden="true">1</b><span data-i18n="spanishCardStepOne">Copy the card exactly as written. It already sets a fictional typed hotel check-in.</span></li>
+                  <li><b aria-hidden="true">2</b><span data-i18n="spanishCardStepTwo">Paste it into any text chat. Do not add a real name, booking, passport, or payment detail.</span></li>
+                  <li><b aria-hidden="true">3</b><span data-i18n="spanishCardStepThree">Type the first answer yourself. A rough attempt is the point; do not ask for the answer first.</span></li>
+                </ol>
                 <div class="everyday-prompt-actions"><button class="button button-primary" type="button" data-copy-everyday-prompt aria-describedby="spanish-prompt-status"><span data-i18n="promptCardCopy">Copy prompt</span></button><a class="text-link" href="../book/communication-clinic-EN.md#language-practice-route"><span data-i18n="spanishCardLink">Read the practice boundary</span><span aria-hidden="true">↗</span></a></div>
-                <pre><code data-everyday-prompt data-i18n="spanishPromptText">I have five minutes for beginner Spanish practice.
+                <pre><code data-everyday-prompt data-i18n="spanishPromptText">Run one four-minute typed Spanish hotel check-in with exactly four learner turns. You are the receptionist and write first. Use only short present-tense questions. I will type one answer after each question.
 
-Outcome: I want to write one polite two-sentence reply for [a simple situation].
-Starting context: [words I know, a self-written attempt, or "unknown"].
+Fictional guest card: Ana Torres; two nights; single room; breakfast included; ask whether breakfast starts at 7:00 or 7:30. I may use the card and look up at most three single words. Do not request or accept a real name, booking number, passport, address, contact, or payment detail.
 
-Give me one short situation and wait for my reply. Do not assign a level or claim that I have learned Spanish. After I reply, point out at most two changes that would most affect meaning or politeness. For each change, say whether you are uncertain. Ask me for one revision.
-
-Do not use personal information, browse, contact anyone, or turn this into a study plan. End by listing: my first reply, my revision, help used, one thing I should check elsewhere, and the smallest next practice or stop condition.</code></pre>
-                <p class="everyday-prompt-status" id="spanish-prompt-status" data-prompt-card-status aria-live="polite" data-i18n="spanishCardBoundary">Candidate practice only: one session cannot show fluency, accuracy, retention, or independent performance.</p>
+Before turn one, show this fixed rubric: four learner turns; name and two-night stay communicated; single room and breakfast communicated; 7:00/7:30 ambiguity resolved; Spanish understandable enough to continue. Do not teach, translate, or show a model answer before I reply. Preserve my first attempt and record lookups. Correct only the first meaning-blocking error: name the error type, then give a partial cue, then one worked fragment only if I still cannot continue. Ask me to correct it. Keep both attempts and do not call one successful exchange fluency, spoken conversation, or listening/pronunciation evidence.</code></pre>
+                <p class="everyday-prompt-status" id="spanish-prompt-status" data-prompt-card-status aria-live="polite" data-i18n="spanishCardBoundary">Candidate text practice only: one typed session cannot show spoken conversation, pronunciation, listening, fluency, accuracy, retention, or independent performance.</p>
               </article>
               <article class="everyday-prompt-card everyday-prompt-card-ink" data-prompt-card>
                 <div class="everyday-prompt-card-head"><span data-i18n="researchCardIndex">02 / RESEARCH PREP</span><small data-i18n="promptCardScope">text only · no browsing assumed</small></div>
                 <h4 data-i18n="researchCardTitle">Prepare a source check, not a verdict.</h4>
                 <p data-i18n="researchCardIntro">Turn one narrow question and the material you supplied into a small ledger of claims, gaps, and the next question.</p>
+                <ol class="everyday-prompt-steps everyday-prompt-steps-inverse">
+                  <li><b aria-hidden="true">1</b><span data-i18n="researchCardStepOne">Copy the card, then replace only its two brackets.</span></li>
+                  <li><b aria-hidden="true">2</b><span data-i18n="researchCardStepTwo">Supply only material you may share. Leave personal, private, or high-stakes material out.</span></li>
+                  <li><b aria-hidden="true">3</b><span data-i18n="researchCardStepThree">Treat its table as preparation. Open and match sources yourself before relying on a claim.</span></li>
+                </ol>
                 <div class="everyday-prompt-actions"><button class="button button-light" type="button" data-copy-everyday-prompt aria-describedby="research-prompt-status"><span data-i18n="promptCardCopy">Copy prompt</span></button><a class="text-link" href="../book/communication-clinic-EN.md#bounded-research-route"><span data-i18n="researchCardLink">Read the research boundary</span><span aria-hidden="true">↗</span></a></div>
                 <pre><code data-everyday-prompt data-i18n="researchPromptText">I have five minutes to prepare a research check, not a final answer.
 
@@ -307,6 +335,34 @@ First, restate the question and name what evidence would be needed. Then make a 
 
 End with: sources actually supplied, unknowns, and one question I should answer before continuing.</code></pre>
                 <p class="everyday-prompt-status" id="research-prompt-status" data-prompt-card-status aria-live="polite" data-i18n="researchCardBoundary">It cannot prove a source exists, is current, or supports a claim. A generated table is not evidence on its own.</p>
+              </article>
+              <article class="everyday-prompt-card everyday-prompt-card-skill" data-prompt-card>
+                <div class="everyday-prompt-card-head"><span data-i18n="skillCardIndex">03 / SKILL PRACTICE</span><small data-i18n="skillCardScope">fictional plan · no tool authority</small></div>
+                <div class="compact-prompt-copy">
+                  <h4 data-i18n="skillCardTitle">Practise one small planning skill before asking for help.</h4>
+                  <p data-i18n="skillCardIntro">Make a short fictional park-visit plan yourself. The model must wait, give one small hint, and then test the same skill under one changed limit.</p>
+                  <ol class="everyday-prompt-steps">
+                    <li><b aria-hidden="true">1</b><span data-i18n="skillCardStepOne">Copy the card into any text chat. It contains a fictional situation and needs no account, file, tool, or personal detail.</span></li>
+                    <li><b aria-hidden="true">2</b><span data-i18n="skillCardStepTwo">Write the first plan yourself within four minutes. Do not ask for a model plan or a polished replacement first.</span></li>
+                    <li><b aria-hidden="true">3</b><span data-i18n="skillCardStepThree">Accept one short hint, correct your own plan, then try the changed time limit without help.</span></li>
+                  </ol>
+                </div>
+                <div class="compact-prompt-artifact">
+                  <div class="everyday-prompt-actions"><button class="button button-primary" type="button" data-copy-everyday-prompt aria-describedby="skill-prompt-status"><span data-i18n="promptCardCopy">Copy prompt</span></button><a class="text-link" href="../book/communication-clinic-EN.md#route-b--one-observable-non-language-skill"><span data-i18n="skillCardLink">Read the skill-practice boundary</span><span aria-hidden="true">↗</span></a></div>
+                  <details class="compact-prompt-details">
+                    <summary data-i18n="promptCardShow">Show the prompt</summary>
+                    <pre><code data-everyday-prompt data-i18n="skillPromptText">Help me practise making a small plan. Do not make the plan first.
+
+Practice task: plan a fictional 45-minute visit to a city park for one adult. Include a water bottle, a weather check, and one return-time reminder. This is not a real booking, travel decision, or weather forecast.
+
+Before I write, show this fixed check: 3–5 steps; all three constraints appear; no unsupported local facts; and a person could follow the plan. Give me four minutes to write it. Do not show a model plan, expand it, or grade it before I respond.
+
+After my first attempt, name one consequential omission only. Ask one question or give a hint of no more than 12 words, then wait for my correction. Preserve both attempts. Then change only the visit length from 45 minutes to 20 minutes and ask for one new plan without help, using the same check.
+
+End with exactly one status: practised, demonstrated_on_this_task, transferred_to_time_limit_variation, or not_run. One session does not establish planning ability, judgement, safety, or independent performance.</code></pre>
+                  </details>
+                  <p class="everyday-prompt-status" id="skill-prompt-status" data-prompt-card-status aria-live="polite" data-i18n="skillCardBoundary">Candidate practice only: a short fictional plan cannot prove planning ability, judgement, transfer, retention, safety, or independent performance.</p>
+                </div>
               </article>
             </div>
           </article>
@@ -495,17 +551,18 @@ Do not add any fact that is absent from the source. If the source does not conta
 
       <section class="section section-red" id="skills" aria-labelledby="skills-title">
         <div class="shell">
-          <div class="section-heading heading-split heading-light"><div><span class="section-number">08</span><p class="eyebrow" data-i18n="skillsEyebrow">Capability layer</p><h2 id="skills-title" data-i18n="skillsTitle">Fifteen Skills. Distinct jobs.</h2></div><p class="section-intro" data-i18n="skillsIntro">A Skill is a method with a trigger, an input check, boundaries, stop conditions, an output contract, and a way to verify it.</p></div>
+          <div class="section-heading heading-split heading-light"><div><span class="section-number">08</span><p class="eyebrow" data-i18n="skillsEyebrow">Capability layer</p><h2 id="skills-title" data-i18n="skillsTitle">Twenty-three Skills. Distinct jobs.</h2></div><p class="section-intro" data-i18n="skillsIntro">A Skill is a method with a trigger, an input check, boundaries, stop conditions, an output contract, and a way to verify it.</p></div>
           <aside class="skill-starter" aria-labelledby="skill-starter-title">
             <div class="skill-starter-heading"><p class="eyebrow" data-i18n="skillStarterEyebrow">Choose by situation</p><h3 id="skill-starter-title" data-i18n="skillStarterTitle">Start here if the names mean nothing yet.</h3><p data-i18n="skillStarterIntro">These are starting routes, not automatic diagnoses. Open one method, check its required inputs, and stop if the boundary does not fit.</p></div>
             <div class="skill-starter-grid">
-              <a href="../skills/prysai-dialogue-brief/SKILL.md"><span>00</span><strong data-i18n="skillRouteBrief">I need to write one clear first message.</strong><small><b>Dialogue Brief</b><i data-i18n="skillRouteBriefResult">Returns one low-risk, copy-ready first turn with a check and a stop boundary.</i></small></a>
-              <a href="../skills/prysai-first-turn-check/SKILL.md"><span>01</span><strong data-i18n="skillRouteFirstTurnCheck">I already wrote a first request and want to inspect it.</strong><small><b>First-Turn Check</b><i data-i18n="skillRouteFirstTurnCheckResult">Labels material gaps without drafting a replacement prompt.</i></small></a>
-              <a href="../skills/prysai-task-protocol/SKILL.md"><span>02</span><strong data-i18n="skillRouteUnclear">My task is still unclear.</strong><small><b>Task Protocol</b><i data-i18n="skillRouteUnclearResult">Returns a bounded goal, inputs, actions, acceptance, and stop condition.</i></small></a>
-              <a href="../skills/prysai-codex-coach/SKILL.md"><span>03</span><strong data-i18n="skillRouteLearnCodex">I need to learn Codex.</strong><small><b>Codex Coach</b><i data-i18n="skillRouteLearnCodexResult">Returns a Codex learning level, experiment, evidence check, and reflection.</i></small></a>
-              <a href="../skills/prysai-learning-coach/SKILL.md"><span>04</span><strong data-i18n="skillRouteLearnOther">I need to practise another capability.</strong><small><b>Learning Coach</b><i data-i18n="skillRouteLearnOtherResult">Returns a baseline, correction, changed-case transfer attempt, and review cue.</i></small></a>
-              <a href="../skills/prysai-communication-failure-triage/SKILL.md"><span>05</span><strong data-i18n="skillRouteFailed">A preserved request and reply already failed.</strong><small><b>Communication Failure Triage</b><i data-i18n="skillRouteFailedResult">Returns one evidence-based diagnosis and a smallest comparable repair.</i></small></a>
-              <a href="../skills/prysai-evidence-review/SKILL.md"><span>06</span><strong data-i18n="skillRouteVerify">I need to check an existing claim.</strong><small><b>Evidence Review</b><i data-i18n="skillRouteVerifyResult">Returns what the evidence proves, misses, and requires next.</i></small></a>
+              <a href="../skills/prysai-request-escalation/SKILL.md"><span>00</span><strong data-i18n="skillRouteEscalation">I am not sure what kind of help I need yet.</strong><small><b>Request Escalation</b><i data-i18n="skillRouteEscalationResult">Chooses the smallest safe lane before drafting, researching, or acting.</i></small></a>
+              <a href="../skills/prysai-dialogue-brief/SKILL.md"><span>01</span><strong data-i18n="skillRouteBrief">I need to write one clear first message.</strong><small><b>Dialogue Brief</b><i data-i18n="skillRouteBriefResult">Returns one low-risk, copy-ready first turn with a check and a stop boundary.</i></small></a>
+              <a href="../skills/prysai-first-turn-check/SKILL.md"><span>02</span><strong data-i18n="skillRouteFirstTurnCheck">I already wrote a first request and want to inspect it.</strong><small><b>First-Turn Check</b><i data-i18n="skillRouteFirstTurnCheckResult">Labels material gaps without drafting a replacement prompt.</i></small></a>
+              <a href="../skills/prysai-task-protocol/SKILL.md"><span>03</span><strong data-i18n="skillRouteUnclear">My task is still unclear.</strong><small><b>Task Protocol</b><i data-i18n="skillRouteUnclearResult">Returns a bounded goal, inputs, actions, acceptance, and stop condition.</i></small></a>
+              <a href="../skills/prysai-codex-coach/SKILL.md"><span>04</span><strong data-i18n="skillRouteLearnCodex">I need to learn Codex.</strong><small><b>Codex Coach</b><i data-i18n="skillRouteLearnCodexResult">Returns a Codex learning level, experiment, evidence check, and reflection.</i></small></a>
+              <a href="../skills/prysai-learning-coach/SKILL.md"><span>05</span><strong data-i18n="skillRouteLearnOther">I need to practise another capability.</strong><small><b>Learning Coach</b><i data-i18n="skillRouteLearnOtherResult">Returns a baseline, correction, changed-case transfer attempt, and review cue.</i></small></a>
+              <a href="../skills/prysai-communication-failure-triage/SKILL.md"><span>06</span><strong data-i18n="skillRouteFailed">A preserved request and reply already failed.</strong><small><b>Communication Failure Triage</b><i data-i18n="skillRouteFailedResult">Returns one evidence-based diagnosis and a smallest comparable repair.</i></small></a>
+              <a href="../skills/prysai-evidence-review/SKILL.md"><span>07</span><strong data-i18n="skillRouteVerify">I need to check an existing claim.</strong><small><b>Evidence Review</b><i data-i18n="skillRouteVerifyResult">Returns what the evidence proves, misses, and requires next.</i></small></a>
             </div>
           </aside>
           <div class="skill-grid">
@@ -520,14 +577,22 @@ Do not add any fact that is absent from the source. If the source does not conta
             <a href="../skills/prysai-source-investigator/SKILL.md"><span>09</span><strong data-i18n="skillSourceName">Source Investigator</strong><small data-i18n="skillSource">Turn broad searches into bounded source-backed investigations.</small><b>↗</b></a>
             <a href="../skills/prysai-field-signal-curator/SKILL.md"><span>10</span><strong data-i18n="skillSignalName">Field Signal Curator</strong><small data-i18n="skillSignal">Turn public reports into bounded demand evidence.</small><b>↗</b></a>
             <a href="../skills/prysai-platform-adapter-review/SKILL.md"><span>11</span><strong data-i18n="skillAdapterName">Platform Adapter Review</strong><small data-i18n="skillAdapter">Reject platform lessons without a sourced, runnable delta.</small><b>↗</b></a>
-            <a href="../skills/prysai-communication-failure-triage/SKILL.md"><span>12</span><strong data-i18n="skillTriageName">Communication Failure Triage</strong><small data-i18n="skillTriage">Diagnose one failed interaction and retest the smallest repair.</small><b>↗</b></a>
-            <a href="../skills/prysai-dialogue-brief/SKILL.md"><span>13</span><strong data-i18n="skillBriefName">Dialogue Brief</strong><small data-i18n="skillBrief">Turn one untried low-risk request into a copy-ready first message.</small><b>↗</b></a>
-            <a href="../skills/prysai-first-turn-check/SKILL.md"><span>14</span><strong data-i18n="skillFirstTurnCheckName">First-Turn Check</strong><small data-i18n="skillFirstTurnCheck">Inspect an unsent low-risk request for visible boundaries.</small><b>↗</b></a>
-            <a href="../skills/prysai-prompt-card-editor/SKILL.md"><span>15</span><strong data-i18n="skillPromptCardName">Prompt Card Editor</strong><small data-i18n="skillPromptCard">Turn one authorized prompt idea into a source-aware teaching card.</small><b>↗</b></a>
+            <a href="../skills/prysai-platform-fact-watch/SKILL.md"><span>12</span><strong data-i18n="skillFactWatchName">Platform Fact Watch</strong><small data-i18n="skillFactWatch">Map a changing product claim before a named step misleads readers.</small><b>↗</b></a>
+            <a href="../skills/prysai-communication-failure-triage/SKILL.md"><span>13</span><strong data-i18n="skillTriageName">Communication Failure Triage</strong><small data-i18n="skillTriage">Diagnose one failed interaction and retest the smallest repair.</small><b>↗</b></a>
+            <a href="../skills/prysai-dialogue-brief/SKILL.md"><span>14</span><strong data-i18n="skillBriefName">Dialogue Brief</strong><small data-i18n="skillBrief">Turn one untried low-risk request into a copy-ready first message.</small><b>↗</b></a>
+            <a href="../skills/prysai-first-turn-check/SKILL.md"><span>15</span><strong data-i18n="skillFirstTurnCheckName">First-Turn Check</strong><small data-i18n="skillFirstTurnCheck">Inspect an unsent low-risk request for visible boundaries.</small><b>↗</b></a>
+            <a href="../skills/prysai-prompt-card-editor/SKILL.md"><span>16</span><strong data-i18n="skillPromptCardName">Prompt Card Editor</strong><small data-i18n="skillPromptCard">Turn one authorized prompt idea into a source-aware teaching card.</small><b>↗</b></a>
+            <a href="../skills/prysai-adversarial-project-review/SKILL.md"><span>17</span><strong data-i18n="skillAdversarialName">Adversarial Project Review</strong><small data-i18n="skillAdversarial">Rank material weaknesses before a publication or release decision.</small><b>↗</b></a>
+            <a href="../skills/prysai-request-escalation/SKILL.md"><span>18</span><strong data-i18n="skillEscalationName">Request Escalation</strong><small data-i18n="skillEscalation">Choose the smallest safe lane before drafting, researching, or acting.</small><b>↗</b></a>
+            <a href="../skills/prysai-llm-comparison-protocol/SKILL.md"><span>19</span><strong data-i18n="skillComparisonName">LLM Comparison Protocol</strong><small data-i18n="skillComparison">Plan a fair two-candidate comparison without inventing a leaderboard.</small><b>↗</b></a>
+            <a href="../skills/prysai-practice-target/SKILL.md"><span>20</span><strong data-i18n="skillPracticeTargetName">Practice Target</strong><small data-i18n="skillPracticeTarget">Turn a broad learning wish into one observable first attempt.</small><b>↗</b></a>
+            <a href="../skills/prysai-interruption-checkpoint/SKILL.md"><span>21</span><strong data-i18n="skillInterruptionName">Interruption Checkpoint</strong><small data-i18n="skillInterruption">Preserve what is known before a retry, a model switch, or a new task.</small><b>↗</b></a>
+            <a href="../skills/prysai-shift-handoff/SKILL.md"><span>22</span><strong data-i18n="skillHandoffName">Shift Handoff</strong><small data-i18n="skillHandoff">Separate reusable rules from today’s supplied work item.</small><b>↗</b></a>
+            <a href="../skills/prysai-platform-observation-record/SKILL.md"><span>23</span><strong>Platform Observation Record</strong><small>Record one visible platform surface without turning it into a capability claim.</small><b>↗</b></a>
             <div class="skill-boundary"><span>RULE</span><strong data-i18n="skillBoundaryName">Original methods first.</strong><small data-i18n="skillBoundary">External Skills must retain the source-project URL and license boundary.</small></div>
           </div>
-          <a class="section-link skill-index-link" href="../docs/skill-registry.md"><span data-i18n="skillIndexLink">Open the Skill registry and all 15 methods</span><span aria-hidden="true">↗</span></a>
-          <p class="skill-footnote" data-i18n="skillFootnote">All 15 project Skills pass structural checks and remain candidate; fresh-task evidence is partial, and Prompt Card Editor has one isolated forward test only.</p>
+          <a class="section-link skill-index-link" href="../docs/skill-registry.md"><span data-i18n="skillIndexLink">Open the Skill registry and all 23 methods</span><span aria-hidden="true">↗</span></a>
+          <p class="skill-footnote" data-i18n="skillFootnote">All 23 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Shift Handoff separates stable criteria from one new item; it does not execute or assume model memory. Interruption Checkpoint preserves a task receipt; it does not retry or recover work. Practice Target sets up one first attempt; it does not prove learning. Platform Observation Record is a visible-surface receipt, not a platform-capability claim. Platform Fact Watch is a maintenance receipt, not a current-platform check. LLM Comparison Protocol is an unrun comparison method, not a model ranking. Adversarial Project Review is not an external review.</p>
         </div>
       </section>
 

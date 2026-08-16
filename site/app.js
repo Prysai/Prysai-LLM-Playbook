@@ -1,4 +1,4 @@
-﻿const copy = {
+const copy = {
   en: {
     skipToContent: 'Skip to main content',
     wordmarkAria: 'Prysai LLM Playbook home',
@@ -20,7 +20,7 @@
     levelL0Name: 'Observer', levelL0Short: 'Notice what happened', levelL1Name: 'Safe user', levelL1Short: 'Complete a low-risk task', levelL2Name: 'Task designer', levelL2Short: 'Write a task protocol', levelL3Name: 'Workflow designer', levelL3Short: 'Move from definition to delivery', levelL4Name: 'Capability builder', levelL4Short: 'Choose the smallest useful set', levelL5Name: 'Evidence reviewer', levelL5Short: 'Test completion claims', levelL6Name: 'Team coach', levelL6Short: 'Turn method into a system',
     chaptersEyebrow: 'The reading routes', chaptersTitle: '22 chapters. Four ways in.', chaptersIntro: 'Read in order to build the model. Jump by route when a real task is blocking you. Every route returns to practice and evidence.', filterAll: 'All chapters', filterA: 'A · First contact', filterB: 'B · Real work', filterC: 'C · Capability', filterD: 'D · Team practice', routeATitle: 'First contact with Codex', routeADesc: '01—06 · finish a first safe task', routeBTitle: 'Codex for real work', routeBDesc: '07—13 · design a verifiable workflow', routeCTitle: 'Capability and Agent collaboration', routeCDesc: '14—18 · choose the smallest useful combination', routeDTitle: 'From fluency to team practice', routeDDesc: '19—22 · turn personal method into team capability', candidateStatus: 'candidate', chapter01: 'Understand GPT before Codex', chapter02: 'Complete a safe, verifiable task', chapter03: 'Turn a wish into a task protocol', chapter04: 'Context, permissions, and Agent boundaries', chapter05: 'Choose the right Codex surface', chapter06: 'Model choice is not model worship', chapter07: 'How Skills, Plugins, MCP, and tools divide the work', chapter08: 'The full lifecycle from definition to delivery', chapter09: 'Verification, doubt, and recovery', chapter10: 'Planning and vertical slices', chapter11: 'Design a Skill that earns its place', chapter12: 'The Agent loop, state, and stop conditions', chapter13: 'Action boundaries across files, terminals, browsers, and GitHub', chapter14: 'Discover, install, and audit an external Skill', chapter15: 'Research: from question to auditable knowledge', chapter16: 'Engineering: from idea to reliable software', chapter17: 'Marketing: from product context to experiments', chapter18: 'Content, design, data, and automation', chapter19: 'Evaluate models and workflows', chapter20: 'Build a personal Codex work system', chapter21: 'Build a team capability system', chapter22: 'Keep the system current and recoverable',
     labsEyebrow: 'The lab', labsTitle: 'Make the principle observable.', labsIntro: 'Labs are low-risk, reproducible tasks. Each one names setup, evidence, a failure variant, a secret boundary, and a reflection.', draftStatus: 'draft', startingLab: 'starting lab', lab01Title: 'First safe task', lab01Body: 'In a sandbox project, ask Codex to inspect before editing. Turn “done” into a checkable diff.', lab02Title: 'Task protocol', lab02Body: 'Break a vague request into goal, inputs, constraints, acceptance, and failure handling.', lab03Title: 'Evidence review', lab03Body: 'Find a result that looks complete but has no evidence for its claim.', lab04Title: 'Skill selection', lab04Body: 'Explain the choice and refuse to use directory size as a proxy for fit.', lab05Title: 'Design a Skill', lab05Body: 'Turn a stable method into a capability with boundaries, evidence, and failure cases.', lab06Title: 'Agent stop conditions', lab06Body: 'Define stop points for success, missing input, recoverable failure, and permission conflict.', lab07Title: 'Action boundaries', lab07Body: 'Compare the evidence needed for reading, editing, running, committing, pushing, and publishing.', lab08Title: 'Research question', lab08Body: 'Turn a broad topic into a question, source plan, and minimum evidence table.', lab09Title: 'Engineering lifecycle', lab09Body: 'Compare direct implementation with a full lifecycle and record the rework evidence.', lab10Title: 'Shared product context', lab10Body: 'Version a shared product understanding and separate facts from hypotheses.', lab11Title: 'GPT and Codex boundaries', lab11Body: 'Use static task cards to separate generation, execution, verification, and external effects.', lab12Title: 'Team capability migration', lab12Body: 'Create a contract for version, owner, permissions, independent reproduction, and rollback.', labsIndexLink: 'Open the lab rules and all 18 entries',
-    skillsEyebrow: 'Capability layer', skillsTitle: 'Fourteen Skills. Distinct jobs.', skillsIntro: 'A Skill is a method with a trigger, an input check, boundaries, stop conditions, an output contract, and a way to verify it.', skillCoach: 'Choose a learning path and practice boundary.', skillProtocol: 'Turn a vague request into an executable contract.', skillEvidence: 'Split completion claims into checkable evidence.', skillSelector: 'Choose a minimum viable capability set.', skillWorkflow: 'Manage stages, checkpoints, and hand-off.', skillResearch: 'Converge a question into auditable knowledge.', skillContext: 'Keep stable principles separate from changing facts.', skillLearningName: 'Learning Coach', skillLearning: 'Practise with recall, correction, delayed review, and transfer.', skillSourceName: 'Source Investigator', skillSource: 'Turn broad searches into bounded source-backed investigations.', skillSignalName: 'Field Signal Curator', skillSignal: 'Turn public reports into bounded demand evidence.', skillAdapterName: 'Platform Adapter Review', skillAdapter: 'Reject platform lessons without a sourced, runnable delta.', skillTriageName: 'Communication Failure Triage', skillTriage: 'Diagnose one failed interaction and retest the smallest repair.', skillBriefName: 'Dialogue Brief', skillBrief: 'Turn one untried low-risk request into a copy-ready first message.', skillFirstTurnCheckName: 'First-Turn Check', skillFirstTurnCheck: 'Inspect an unsent low-risk request for visible boundaries.', skillRouteBrief: 'I need to write one clear first message.', skillRouteBriefResult: 'Returns one low-risk, copy-ready first turn with a check and a stop boundary.', skillRouteFirstTurnCheck: 'I already wrote a first request and want to inspect it.', skillRouteFirstTurnCheckResult: 'Labels material gaps without drafting a replacement prompt.', skillBoundaryName: 'Original methods first.', skillBoundary: 'External Skills must retain the source-project URL and license boundary.', skillIndexLink: 'Open the Skill registry and all 14 methods', mobileIndexAria: 'Complete project indexes', mobileIndexChapters: 'chapters', mobileIndexLabs: 'labs', mobileIndexSkills: 'Skills', mobileIndexCases: 'field cases', mobileIndexLocales: 'locale records', mobileIndexVisuals: 'teaching boards', mobileIndexUpdates: 'update areas', mobileIndexTrust: 'trust families', skillFootnote: 'All 14 project Skills pass structural checks and remain candidate; fresh-task evidence is partial, and First-Turn Check has structural evidence only.', lab13Status: 'maintainer reference accepted · learner not run',
+    skillsEyebrow: 'Capability layer', skillsTitle: 'Twenty-two Skills. Distinct jobs.', skillsIntro: 'A Skill is a method with a trigger, an input check, boundaries, stop conditions, an output contract, and a way to verify it.', skillCoach: 'Choose a learning path and practice boundary.', skillProtocol: 'Turn a vague request into an executable contract.', skillEvidence: 'Split completion claims into checkable evidence.', skillSelector: 'Choose a minimum viable capability set.', skillWorkflow: 'Manage stages, checkpoints, and hand-off.', skillResearch: 'Converge a question into auditable knowledge.', skillContext: 'Keep stable principles separate from changing facts.', skillLearningName: 'Learning Coach', skillLearning: 'Practise with recall, correction, delayed review, and transfer.', skillSourceName: 'Source Investigator', skillSource: 'Turn broad searches into bounded source-backed investigations.', skillSignalName: 'Field Signal Curator', skillSignal: 'Turn public reports into bounded demand evidence.', skillAdapterName: 'Platform Adapter Review', skillAdapter: 'Reject platform lessons without a sourced, runnable delta.', skillTriageName: 'Communication Failure Triage', skillTriage: 'Diagnose one failed interaction and retest the smallest repair.', skillBriefName: 'Dialogue Brief', skillBrief: 'Turn one untried low-risk request into a copy-ready first message.', skillFirstTurnCheckName: 'First-Turn Check', skillFirstTurnCheck: 'Inspect an unsent low-risk request for visible boundaries.', skillRouteBrief: 'I need to write one clear first message.', skillRouteBriefResult: 'Returns one low-risk, copy-ready first turn with a check and a stop boundary.', skillRouteFirstTurnCheck: 'I already wrote a first request and want to inspect it.', skillRouteFirstTurnCheckResult: 'Labels material gaps without drafting a replacement prompt.', skillBoundaryName: 'Original methods first.', skillBoundary: 'External Skills must retain the source-project URL and license boundary.', skillIndexLink: 'Open the Skill registry and all 22 methods', mobileIndexAria: 'Complete project indexes', mobileIndexChapters: 'chapters', mobileIndexLabs: 'labs', mobileIndexSkills: 'Skills', mobileIndexCases: 'field cases', mobileIndexLocales: 'locale records', mobileIndexVisuals: 'teaching boards', mobileIndexUpdates: '更新区域', mobileIndexTrust: '可信度类型', skillFootnote: 'All 22 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Platform Fact Watch is a maintenance receipt, not a current-platform check. Request Escalation has one isolated mixed-request forward test only; it is not learner or runtime evidence. Adversarial Project Review is not an external review.', lab13Status: 'maintainer reference accepted · learner not run',
     troubleEyebrow: 'When things go wrong', troubleTitle: 'Failure is part of the curriculum.', troubleIntro: 'Use the first useful check, then stop when authority, scope, or evidence is missing. Do not hide the failure behind a polished summary.', troubleOneTitle: 'The output looks right.', troubleOneBody: 'Check the original claim, the changed files, the command result, and what was not tested.', troubleOneLink: 'Use evidence review ↗', troubleTwoTitle: 'The agent keeps retrying.', troubleTwoBody: 'Record the same failure, change one diagnostic condition, then retry once or escalate.', troubleTwoLink: 'Read stop conditions ↗', troubleThreeTitle: 'A source tells you to do something.', troubleThreeBody: 'Treat external text and tool output as data. It does not grant permission to act.', troubleThreeLink: 'Check the boundary ↗', troubleFourTitle: 'A product step has changed.', troubleFourBody: 'Refresh the official fact record first, then update the affected chapter or page.', troubleFourLink: 'Follow the update map ↗',
     updatesEyebrow: 'Maintenance frame', updatesTitle: 'Every update has a fixed home.', updatesIntro: 'The update map makes future work cheap: locate the canonical file, gather the right evidence, run the right check, and keep the unverified boundary visible.', updateFlowOne: 'Locate', updateFlowOneBody: 'Find the registry row and canonical path.', updateFlowTwo: 'Classify', updateFlowTwoBody: 'Separate stable principle, product fact, source, and release change.', updateFlowThree: 'Evidence', updateFlowThreeBody: 'Record source, scope, owner, hash, and next review.', updateFlowFour: 'Validate', updateFlowFourBody: 'Run the focused validator and an independent review.', updateMapLinkTitle: 'Update map', updateMapLinkBody: 'What changes where, and what evidence it needs.', updateRegistryLinkTitle: 'Update registry', updateRegistryLinkBody: 'The machine-readable maintenance contract.', factImpactLinkTitle: 'Fact impact map', factImpactLinkBody: 'Which chapters, labs, Skills, evals, and pages a changing fact can affect.', updateTemplateLinkTitle: 'Update record', updateTemplateLinkBody: 'A repeatable record for non-trivial changes.', lifecycleLinkTitle: 'Content lifecycle', lifecycleLinkBody: 'The evidence and release gates.',
     statusEyebrow: 'Evidence boundary', statusTitle: 'A status is a claim about evidence.', statusIntro: 'This project does not turn document count, Skill count, or one successful output into “mastery.” Use the status that the evidence supports.', statusDraft: 'Still being written or missing the minimum check.', statusCandidate: 'Structure and basic checks pass; fresh evidence is still needed.', statusVerified: 'The declared scope has positive, boundary, failure, and transfer evidence.', statusProduction: 'Safety, maintenance, version, license, and release gates also pass.', statusSourceBefore: 'Current evidence is recorded in', statusSourceLink: 'the current status source', statusReviewBefore: ' and explained by ', statusReviewLink: 'the current-state review', statusSourceAfter: '; the page itself remains candidate until browser review is recorded.', nextEyebrow: 'Next action', nextTitle: 'Bring one small problem.', nextBody: 'Open the task contract, choose a reversible first step, and keep the diff. That is the shortest useful way to begin.', nextPrimary: 'Open chapter 2', nextSecondary: 'Then run lab 001', footerTagline: 'A practical learning and practice system for Codex.', mobileRouteFixture: 'Need a safe file? Open the fixture', visualCaseIntro: 'Two original boards show the core loop: make the work inspectable, then practise it under changed conditions.', visualCaseBoundary: 'project-authored teaching visuals · not runtime or learner evidence', footerMeta: 'candidate · evidence boundary reviewed 2026-08-13'
@@ -37,7 +37,7 @@
     labFirstSeen: '首次引入', labReused: '复用自', labCapability: '新增能力', labArtifact: '新增产物', labAcceptance: '新增验收',
     chaptersEyebrow: '阅读路线', chaptersTitle: '22 章，四种进入方式。', chaptersIntro: '顺读建立心智模型；被真实任务卡住时按路线跳读。每条路线都会回到练习和证据。', filterAll: '全部章节', filterA: 'A · 初识 Codex', filterB: 'B · 真实工作', filterC: 'C · 能力扩展', filterD: 'D · 团队实践', routeATitle: '第一次接触 Codex', routeADesc: '01—06 · 完成第一个安全任务', routeBTitle: '把 Codex 用于真实工作', routeBDesc: '07—13 · 设计可验证工作流', routeCTitle: '能力与 Agent 协作', routeCDesc: '14—18 · 选择最小有效组合', routeDTitle: '从熟练到团队实践', routeDDesc: '19—22 · 把个人方法变成团队能力', candidateStatus: 'candidate', chapter01: '先理解 GPT，再理解 Codex', chapter02: '完成安全、可验证的任务', chapter03: '把愿望变成任务协议', chapter04: '上下文、权限与 Agent 边界', chapter05: '选择正确的 Codex 工作面', chapter06: '模型选择不是模型崇拜', chapter07: 'Skill、Plugin、MCP 与工具如何分工', chapter08: '从定义到交付的完整生命周期', chapter09: '验证、怀疑与恢复', chapter10: '规划与竖向切片', chapter11: '设计一个真正有用的 Skill', chapter12: 'Agent 的循环、状态与停止条件', chapter13: '文件、终端、浏览器与 GitHub 的行动边界', chapter14: '发现、安装和审查外部 Skill', chapter15: '研究：从问题到可审查知识', chapter16: '工程：从想法到可靠软件', chapter17: '营销：从产品理解到增长实验', chapter18: '内容、设计、数据与自动化', chapter19: '评估模型和工作流', chapter20: '建立个人 Codex 工作系统', chapter21: '建立团队能力系统', chapter22: '保持系统更新并可恢复',
     labsEyebrow: '实验室', labsTitle: '把原理变成可观察的动作。', labsIntro: '实验是低风险、可复现的任务。每个实验都写清设置、证据、失败变体、秘密边界和复盘。', draftStatus: 'draft', startingLab: '起点实验', lab01Title: '第一个安全任务', lab01Body: '在沙盒项目中，让 Codex 先检查再编辑，把“完成了”变成可检查的差异。', lab02Title: '任务协议', lab02Body: '把模糊请求拆成目标、输入、约束、验收和失败处理。', lab03Title: '证据审查', lab03Body: '发现一个看似完成却没有证据支撑声明的结果。', lab04Title: 'Skill 选择', lab04Body: '解释选择理由，拒绝用目录大小代替适配判断。', lab05Title: '设计一个 Skill', lab05Body: '把稳定方法变成有边界、有证据、有失败案例的能力包。', lab06Title: 'Agent 停止条件', lab06Body: '为成功、缺失输入、可恢复失败和权限冲突定义停点。', lab07Title: '行动边界', lab07Body: '比较读取、编辑、运行、提交、推送和发布需要的证据。', lab08Title: '研究问题', lab08Body: '把宽泛主题变成问题、来源计划和最小证据表。', lab09Title: '工程生命周期', lab09Body: '比较直接实现与完整生命周期，并记录返工证据。', lab10Title: '共享产品上下文', lab10Body: '版本化共享产品理解，并区分事实与假设。', lab11Title: 'GPT 与 Codex 边界', lab11Body: '用静态任务卡分清生成、执行、验证和外部副作用。', lab12Title: '团队能力迁移', lab12Body: '为版本、负责人、权限、独立复现和回滚建立契约。', labsIndexLink: '打开实验规则和全部 18 个入口',
-    skillsEyebrow: '能力层', skillsTitle: '十四个 Skill，各有职责。', skillsIntro: 'Skill 是带触发器、输入检查、边界、停止条件、输出契约和验证方式的方法包。', skillCoach: '选择学习路径和练习边界。', skillProtocol: '把模糊请求变成可执行契约。', skillEvidence: '把完成声明拆成可检查证据。', skillSelector: '选择最小有效能力组合。', skillWorkflow: '管理阶段、检查点和交接。', skillResearch: '把问题收敛为可审查知识。', skillContext: '分开稳定原则和易变事实。', skillLearningName: '学习教练', skillLearning: '通过回忆、纠错、延迟复习和迁移进行练习。', skillSourceName: '来源调查', skillSource: '把宽泛搜索变成有边界、有来源的调查。', skillSignalName: '现场信号整理', skillSignal: '把公开报告整理成有边界的需求证据。', skillAdapterName: '平台适配审查', skillAdapter: '拒绝没有来源、运行和真实差异的平台教程。', skillTriageName: '沟通故障分诊', skillTriage: '诊断一次失败交互，并复测最小修复。', skillBriefName: '对话 Brief', skillBrief: '把一次尚未发送的低风险请求整理成可复制的首轮消息。', skillFirstTurnCheckName: '首轮请求检查', skillFirstTurnCheck: '检查尚未发送的低风险请求是否明确了边界。', skillRouteBrief: '我需要写一条清晰的首轮消息。', skillRouteBriefResult: '产出带检查与停止边界的低风险、可复制首轮消息。', skillRouteFirstTurnCheck: '我已经写好首轮请求，想先检查它。', skillRouteFirstTurnCheckResult: '标出关键缺口，不代写新的提示词。', skillBoundaryName: '原创方法优先。', skillBoundary: '外部 Skill 必须保留原项目链接和许可证边界。', skillIndexLink: '打开 Skill 登记表与全部 14 个方法', mobileIndexAria: '完整项目索引', mobileIndexChapters: '章', mobileIndexLabs: '实验', mobileIndexSkills: 'Skill', mobileIndexCases: '现场案例', mobileIndexLocales: '语言记录', mobileIndexVisuals: '教学图板', mobileIndexUpdates: '更新区域', mobileIndexTrust: '可信度类型', skillFootnote: '14 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整，首轮请求检查目前只有结构性证据。', lab13Status: '维护者参考运行已接受 · 学习者尚未运行',
+    skillsEyebrow: '能力层', skillsTitle: '二十二个 Skill，各有职责。', skillsIntro: 'Skill 是带触发器、输入检查、边界、停止条件、输出契约和验证方式的方法包。', skillCoach: '选择学习路径和练习边界。', skillProtocol: '把模糊请求变成可执行契约。', skillEvidence: '把完成声明拆成可检查证据。', skillSelector: '选择最小有效能力组合。', skillWorkflow: '管理阶段、检查点和交接。', skillResearch: '把问题收敛为可审查知识。', skillContext: '分开稳定原则和易变事实。', skillLearningName: '学习教练', skillLearning: '通过回忆、纠错、延迟复习和迁移进行练习。', skillSourceName: '来源调查', skillSource: '把宽泛搜索变成有边界、有来源的调查。', skillSignalName: '现场信号整理', skillSignal: '把公开报告整理成有边界的需求证据。', skillAdapterName: '平台适配审查', skillAdapter: '拒绝没有来源、运行和真实差异的平台教程。', skillTriageName: '沟通故障分诊', skillTriage: '诊断一次失败交互，并复测最小修复。', skillBriefName: '对话 Brief', skillBrief: '把一次尚未发送的低风险请求整理成可复制的首轮消息。', skillFirstTurnCheckName: '首轮请求检查', skillFirstTurnCheck: '检查尚未发送的低风险请求是否明确了边界。', skillRouteBrief: '我需要写一条清晰的首轮消息。', skillRouteBriefResult: '产出带检查与停止边界的低风险、可复制首轮消息。', skillRouteFirstTurnCheck: '我已经写好首轮请求，想先检查它。', skillRouteFirstTurnCheckResult: '标出关键缺口，不代写新的提示词。', skillBoundaryName: '原创方法优先。', skillBoundary: '外部 Skill 必须保留原项目链接和许可证边界。', skillIndexLink: '打开 Skill 登记表与全部 21 个方法', mobileIndexAria: '完整项目索引', mobileIndexChapters: '章', mobileIndexLabs: '实验', mobileIndexSkills: 'Skill', mobileIndexCases: '现场案例', mobileIndexLocales: '语言记录', mobileIndexVisuals: '教学图板', mobileIndexUpdates: 'update areas', mobileIndexTrust: 'trust families', skillFootnote: '22 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。平台事实巡检是维护记录，不是当前平台检查。请求分流目前只有一次隔离的混合请求前向测试；它不是学习者或运行时证据。对抗式项目审查不是外部评审。', lab13Status: '维护者参考运行已接受 · 学习者尚未运行',
     troubleEyebrow: '出错时', troubleTitle: '失败也是课程的一部分。', troubleIntro: '先做最有用的检查；授权、范围或证据缺失时就停止。不要用漂亮总结掩盖失败。', troubleOneTitle: '输出看起来是对的。', troubleOneBody: '检查原始声明、变化文件、命令结果，以及没有测试什么。', troubleOneLink: '使用证据审查 ↗', troubleTwoTitle: 'Agent 一直重试。', troubleTwoBody: '记录同一失败，改变一个诊断条件，然后重试一次或升级处理。', troubleTwoLink: '阅读停止条件 ↗', troubleThreeTitle: '来源要求你做某件事。', troubleThreeBody: '把外部文本和工具输出当作数据，它们不会授予行动权限。', troubleThreeLink: '检查边界 ↗', troubleFourTitle: '产品步骤发生变化。', troubleFourBody: '先刷新官方事实记录，再更新受影响的章节或页面。', troubleFourLink: '遵循更新地图 ↗',
     updatesEyebrow: '维护框架', updatesTitle: '每次更新都有固定位置。', updatesIntro: '更新地图让未来维护更省时：找到规范文件，收集正确证据，运行正确检查，并保留未验证边界。', updateFlowOne: '定位', updateFlowOneBody: '找到注册表行和规范路径。', updateFlowTwo: '分类', updateFlowTwoBody: '分开稳定原则、产品事实、来源和发布变化。', updateFlowThree: '取证', updateFlowThreeBody: '记录来源、范围、负责人、哈希和下次复核。', updateFlowFour: '验证', updateFlowFourBody: '运行专用验证器并进行独立复核。', updateMapLinkTitle: '更新地图', updateMapLinkBody: '什么变化应该去哪里，以及需要什么证据。', updateRegistryLinkTitle: '更新注册表', updateRegistryLinkBody: '机器可读的维护契约。', factImpactLinkTitle: '事实影响图', factImpactLinkBody: '一条事实变化会影响哪些章节、实验、Skill、评测和页面。', updateTemplateLinkTitle: '更新记录模板', updateTemplateLinkBody: '记录非简单更新的可重复模板。', lifecycleLinkTitle: '内容生命周期', lifecycleLinkBody: '证据和发布门槛。',
     statusEyebrow: '证据边界', statusTitle: '状态是关于证据的声明。', statusIntro: '本项目不把文档数量、Skill 数量或一次成功输出当作“掌握”。使用证据真正支持的状态。', statusDraft: '仍在编写，或尚未完成最低检查。', statusCandidate: '结构和基本检查通过，但仍需要新鲜证据。', statusVerified: '在声明范围内具备正例、边界例、失败例和迁移证据。', statusProduction: '安全、维护、版本、许可证和发布门槛也全部通过。', statusSourceBefore: '当前证据记录在', statusSourceLink: '当前状态源', statusReviewBefore: '，说明见', statusReviewLink: '当前状态审查记录', statusSourceAfter: '；在浏览器验收记录前，页面自身仍为 candidate。', nextEyebrow: '下一步', nextTitle: '带一个小问题来。', nextBody: '打开任务协议，选择可回滚的第一步并保留差异。这是最短的有效起点。', nextPrimary: '打开第 2 章', nextSecondary: '然后运行实验 001', footerTagline: '一套面向 Codex 的实用学习与实践系统。', mobileRouteExplore: '探索练习路线与完整索引', visualCaseIntro: '两张原创教学图展示核心闭环：让工作可检查，再在变化条件下练习。', visualCaseBoundary: '项目原创教学图 · 不是运行或学习者证据', footerMeta: '候选 · 证据边界复核于 2026-08-13'
@@ -207,10 +207,10 @@ Object.assign(copy.en, {
   fileSiteTitle: 'Public showcase', fileSiteBody: 'index.html, styles.css, app.js, and generated learning-path data.',
   fileChaptersTitle: 'Core learning text', fileChaptersBody: '22 chapters; current artifact status: candidate.',
   fileLabsTitle: 'Observable practice', fileLabsBody: '18 labs; current status: draft; run status: not_run.',
-  fileSkillsTitle: 'Reusable methods', fileSkillsBody: '14 project Skills with triggers, boundaries, and evidence contracts.',
+  fileSkillsTitle: 'Reusable methods', fileSkillsBody: '23 project Skills with triggers, boundaries, and evidence contracts.',
   fileDocsTitle: 'Governance and research', fileDocsBody: 'Status, sources, field reports, update rules, and quality records.',
   ledgerTitle: 'Content state', ledgerIntro: 'A compact reading of the current status source. Status describes evidence, not ambition.',
-  ledgerProject: 'Project', ledgerChapters: 'Chapters · 22', ledgerLabs: 'Labs · 18', ledgerSkills: 'Skills · 14', ledgerResearch: 'Field research', ledgerResearchNote: 'user reports; not locally reproduced', ledgerSource: 'Open the current status source',
+  ledgerProject: 'Project', ledgerChapters: 'Chapters · 22', ledgerLabs: 'Labs · 18', ledgerSkills: 'Skills · 23', ledgerResearch: 'Field research', ledgerResearchNote: 'user reports; not locally reproduced', ledgerSource: 'Open the current status source',
   localeTitle: 'Six-language route', localeIntro: 'Six repository entry locales are registered. All six route tokens are exposed; EN / 中文 UI is reviewed, while the other locales use an explicit English UI fallback during migration.',
   localeEnglish: 'available · default', localeChinese: 'available · current toggle', localeSpanish: 'route exposed · UI fallback', localeGerman: 'route exposed · UI fallback', localeJapanese: 'route exposed · UI fallback', localeKorean: 'route exposed · UI fallback', localeRule: 'Route rule: translated artifacts carry a locale suffix and link to the same locale. A route token is not the same as a completed translation or reviewed UI.',
   researchTitle: 'Real problems, with the boundary attached.', researchIntro: 'The research index turns public Codex issues, first-party safety guidance, and forum reports into symptoms, source-scoped boundaries, safe checks, and teaching links. It does not claim an official root cause or local reproduction.', researchBoundary: 'source-scoped guidance and public reports · no local reproduction recorded', researchIndexLink: 'Open the field-problems index', researchIndexBody: 'Codex, surfaces, handoffs, authentication, worktrees, and verification symptoms.', researchForumsLink: 'Read the forum case notes', researchForumsBody: 'Sandbox network allowlists, Windows spawn failures, approvals, encoding, and private paths.', researchLiveLink: 'Review three current field cases', researchLiveBody: 'Worktree target, hidden evidence, and verification scope; all remain unverified locally.', researchSafetyLink: 'Read the AI collaboration safety boundaries', researchSafetyBody: 'Prompt injection, minimum necessary input, action authority, and verification; source-backed candidate research.', researchReceiptsLink: 'Read the AI safety field signals', researchReceiptsBody: 'Public reports, claim classification, and a checkpoint for long research tasks; candidate research.', researchFirstTurnLink: 'Draft a universal first turn', researchFirstTurnBody: 'A six-field, text-only Spanish or research card; candidate research, not platform equivalence or an outcome claim.', researchPublicInterestLink: 'Run the public-interest safety inquiry', researchPublicInterestBody: 'A fixed fictional case: people, data boundary, human control, evidence, and stop; candidate / not_run.', problemPublicInterestSafetyTitle: 'I need to assess an AI idea that could affect people.', problemPublicInterestSafetyBody: 'Name one decision, the people it could burden, necessary data, human recourse, evidence, and the point where the work must stop.', problemPublicInterestSafetyLink: 'Run the fixed safety inquiry · candidate · not_run ↗',
@@ -222,10 +222,10 @@ Object.assign(copy.zh, {
   fileSiteTitle: '\u516c\u5f00\u5c55\u793a', fileSiteBody: 'index.html\u3001styles.css\u3001app.js \u4e0e\u751f\u6210\u7684\u5b66\u4e60\u8def\u5f84\u6570\u636e\u3002',
   fileChaptersTitle: '\u6838\u5fc3\u6559\u7a0b\u6b63\u6587', fileChaptersBody: '22 \u7ae0\uff1b\u5f53\u524d\u6587\u4ef6\u72b6\u6001\uff1acandidate\u3002',
   fileLabsTitle: '\u53ef\u89c2\u5bdf\u7684\u5b9e\u8df5', fileLabsBody: '18 \u4e2a\u5b9e\u9a8c\uff1b\u5f53\u524d\u72b6\u6001\uff1adraft\uff1b\u8fd0\u884c\u72b6\u6001\uff1anot_run\u3002',
-  fileSkillsTitle: '\u53ef\u590d\u7528\u65b9\u6cd5', fileSkillsBody: '14 \u4e2a\u9879\u76ee Skill\uff0c\u5305\u542b\u89e6\u53d1\u3001\u8fb9\u754c\u4e0e\u8bc1\u636e\u5951\u7ea6\u3002',
+  fileSkillsTitle: '\u53ef\u590d\u7528\u65b9\u6cd5', fileSkillsBody: '21 \u4e2a\u9879\u76ee Skill\uff0c\u5305\u542b\u89e6\u53d1\u3001\u8fb9\u754c\u4e0e\u8bc1\u636e\u5951\u7ea6\u3002',
   fileDocsTitle: '\u6cbb\u7406\u4e0e\u7814\u7a76', fileDocsBody: '\u72b6\u6001\u3001\u6765\u6e90\u3001\u73b0\u5b9e\u95ee\u9898\u3001\u66f4\u65b0\u89c4\u5219\u4e0e\u8d28\u91cf\u8bb0\u5f55\u3002',
   ledgerTitle: '\u5185\u5bb9\u72b6\u6001', ledgerIntro: '\u5f53\u524d\u72b6\u6001\u6e90\u7684\u7b80\u8bfb\u7248\u3002\u72b6\u6001\u63cf\u8ff0\u8bc1\u636e\uff0c\u4e0d\u63cf\u8ff0\u613f\u666f\u3002',
-  ledgerProject: '\u9879\u76ee', ledgerChapters: '\u7ae0\u8282 \u00b7 22', ledgerLabs: '\u5b9e\u9a8c \u00b7 18', ledgerSkills: 'Skill \u00b7 14', ledgerResearch: '\u73b0\u5b9e\u95ee\u9898\u7814\u7a76', ledgerResearchNote: '\u7528\u6237\u62a5\u544a\uff1b\u672c\u5730\u672a\u590d\u73b0', ledgerSource: '\u6253\u5f00\u5f53\u524d\u72b6\u6001\u6e90',
+  ledgerProject: '\u9879\u76ee', ledgerChapters: '\u7ae0\u8282 \u00b7 22', ledgerLabs: '\u5b9e\u9a8c \u00b7 18', ledgerSkills: 'Skill \u00b7 21', ledgerResearch: '\u73b0\u5b9e\u95ee\u9898\u7814\u7a76', ledgerResearchNote: '\u7528\u6237\u62a5\u544a\uff1b\u672c\u5730\u672a\u590d\u73b0', ledgerSource: '\u6253\u5f00\u5f53\u524d\u72b6\u6001\u6e90',
   localeTitle: '\u516d\u8bed\u79cd\u8def\u7ebf', localeIntro: '\u4ed3\u5e93\u5df2\u767b\u8bb0\u516d\u79cd\u5165\u53e3\u8bed\u8a00\u3002\u5f53\u524d\u5c55\u793a\u9875\u53ea\u80fd\u5207\u6362 EN / \u4e2d\u6587\uff1b\u5176\u4ed6\u5165\u53e3\u5207\u7247\u4ecd\u5728\u8fc1\u79fb\u5ba1\u67e5\u4e2d\u3002',
   localeEnglish: '\u53ef\u7528 \u00b7 \u9ed8\u8ba4', localeChinese: '\u53ef\u7528 \u00b7 \u5f53\u524d\u5207\u6362', localeSpanish: '\u5165\u53e3\u5207\u7247 \u00b7 UI \u56de\u9000', localeGerman: '\u5165\u53e3\u5207\u7247 \u00b7 UI \u56de\u9000', localeJapanese: '\u5165\u53e3\u5207\u7247 \u00b7 UI \u56de\u9000', localeKorean: '\u5165\u53e3\u5207\u7247 \u00b7 UI \u56de\u9000', localeRule: '\u8def\u7531\u89c4\u5219\uff1a\u7ffb\u8bd1\u6587\u4ef6\u4f7f\u7528\u8bed\u8a00\u540e\u7f00\u5e76\u94fe\u5230\u540c\u4e00\u8bed\u8a00\u3002\u5f53\u524d\u8fc1\u79fb\u8986\u76d6\u5165\u53e3\u5207\u7247\uff0c\u4e0d\u4ee3\u8868\u6574\u672c\u4e66\u6216\u8fd0\u884c\u65f6 UI \u5df2\u5b8c\u6210\u516d\u8bed\u79cd\u652f\u6301\u3002',
   researchTitle: '\u628a\u73b0\u5b9e\u95ee\u9898\u548c\u8bc1\u636e\u8fb9\u754c\u4e00\u8d77\u653e\u4e0a\u3002', researchIntro: '\u7814\u7a76\u7d22\u5f15\u628a\u516c\u5f00 Codex issue\u3001\u4e00\u624b\u5b89\u5168\u6307\u5f15\u4e0e\u8bba\u575b\u62a5\u544a\u6574\u7406\u6210\u75c7\u72b6\u3001\u6709\u6765\u6e90\u8303\u56f4\u7684\u8fb9\u754c\u3001\u5b89\u5168\u68c0\u67e5\u4e0e\u6559\u5b66\u94fe\u63a5\u3002\u5b83\u4e0d\u58f0\u79f0\u5b98\u65b9\u6839\u56e0\u6216\u672c\u5730\u590d\u73b0\u3002', researchBoundary: '\u6709\u6765\u6e90\u8303\u56f4\u7684\u6307\u5f15\u4e0e\u516c\u5f00\u62a5\u544a \u00b7 \u6ca1\u6709\u672c\u5730\u590d\u73b0\u8bb0\u5f55', researchIndexLink: '\u6253\u5f00\u73b0\u5b9e\u95ee\u9898\u7d22\u5f15', researchIndexBody: 'Codex\u3001\u5de5\u4f5c\u9762\u3001\u4ea4\u63a5\u3001\u8ba4\u8bc1\u3001worktree \u4e0e\u9a8c\u8bc1\u75c7\u72b6\u3002', researchForumsLink: '\u9605\u8bfb\u8bba\u575b\u6848\u4f8b\u7b14\u8bb0', researchForumsBody: 'sandbox \u7f51\u7edc allowlist\u3001Windows spawn \u5931\u8d25\u3001\u5ba1\u6279\u3001\u7f16\u7801\u4e0e\u79c1\u5bc6\u8def\u5f84\u3002', researchLiveLink: '\u590d\u6838\u4e09\u4e2a\u5f53\u524d\u73b0\u573a\u6848\u4f8b', researchLiveBody: 'Worktree \u76ee\u6807\u3001\u9690\u85cf\u8bc1\u636e\u4e0e\u9a8c\u8bc1\u8d8a\u754c\uff1b\u672c\u5730\u5747\u672a\u590d\u73b0\u3002', researchSafetyLink: '\u9605\u8bfb AI \u534f\u4f5c\u5b89\u5168\u8fb9\u754c', researchSafetyBody: '\u63d0\u793a\u6ce8\u5165\u3001\u6700\u5c0f\u5fc5\u8981\u8f93\u5165\u3001\u884c\u52a8\u6743\u9650\u4e0e\u9a8c\u8bc1\uff1b\u6709\u6765\u6e90\u8303\u56f4\u7684 candidate \u7814\u7a76\u3002', researchReceiptsLink: '\u9605\u8bfb AI \u5b89\u5168\u73b0\u573a\u4fe1\u53f7', researchReceiptsBody: '\u516c\u5f00\u62a5\u544a\u3001\u65ad\u8a00\u5206\u7c7b\u4e0e\u957f\u4efb\u52a1\u7814\u7a76\u68c0\u67e5\u70b9\uff1b candidate \u7814\u7a76\u3002', researchFirstTurnLink: '\u8d77\u8349\u4e00\u6b21\u901a\u7528\u9996\u8f6e\u8bf7\u6c42', researchFirstTurnBody: '\u516d\u4e2a\u5b57\u6bb5\u7684\u7eaf\u6587\u672c\u897f\u73ed\u7259\u8bed\u6216\u7814\u7a76\u5361\uff1bcandidate \u7814\u7a76，\u4e0d\u4ee3\u8868\u5e73\u53f0\u7b49\u4ef7\u6216\u5b66\u4e60\u7ed3\u679c\u3002', researchPublicInterestLink: '\u8fd0\u884c\u516c\u5171\u5229\u76ca\u5b89\u5168\u8be2\u95ee', researchPublicInterestBody: '\u56fa\u5b9a\u865a\u6784\u6848\u4f8b：\u4eba\u3001\u6570\u636e\u8fb9\u754c\u3001\u4eba\u7c7b\u63a7\u5236\u3001\u8bc1\u636e\u548c\u505c\u6b62；candidate / not_run\u3002', problemPublicInterestSafetyTitle: '\u6211\u9700\u8981\u8bc4\u4f30\u4e00\u4e2a\u53ef\u80fd\u5f71\u54cd\u4ed6\u4eba\u7684 AI \u60f3\u6cd5\u3002', problemPublicInterestSafetyBody: '\u5199\u4e0b\u4e00\u4e2a\u51b3\u7b56\u3001\u53ef\u80fd\u627f\u62c5\u5f71\u54cd\u7684\u4eba\u3001\u5fc5\u8981\u6570\u636e\u3001\u4eba\u7c7b\u6551\u6d4e\u3001\u8bc1\u636e，\u4ee5\u53ca\u5fc5\u987b\u505c\u4e0b\u7684\u65f6\u70b9\u3002', problemPublicInterestSafetyLink: '\u8fd0\u884c\u56fa\u5b9a\u5b89\u5168\u8be2\u95ee \u00b7 candidate \u00b7 not_run \u2197'
@@ -312,7 +312,7 @@ Object.assign(copy.en, {
   repositoryStripIntro: 'The public reader is rendered from site/. The canonical learning and maintenance sources below keep their current evidence boundary visible.',
   repositoryChapters: '22 chapters · candidate',
   repositoryLabs: '18 labs · 2 maintainer references · 0 learner runs',
-  repositorySkills: '14 reusable Skills · candidate',
+  repositorySkills: '23 reusable Skills · candidate',
   repositoryDocs: 'Governance and field research · candidate; reports not locally reproduced',
 });
 
@@ -372,52 +372,136 @@ Object.assign(copy.zh, {
   repositoryStripIntro: '公开阅读页面由 site/ 渲染。下面是教程与维护的规范源目录，它们保留当前证据边界。',
   repositoryChapters: '22 章 · candidate',
   repositoryLabs: '18 个实验 · 2 个维护者参考运行 · 0 个学习者运行',
-  repositorySkills: '14 个可复用 Skill · candidate',
+  repositorySkills: '23 个可复用 Skill · candidate',
   repositoryDocs: '治理与现实研究 · candidate；报告尚未在本地复现',
 });
 
 Object.assign(copy.en, {
-  skillsTitle: 'Fifteen Skills. Distinct jobs.',
-  skillPromptCardName: 'Prompt Card Editor',
-  skillPromptCard: 'Turn one authorized prompt idea into a source-aware teaching card.',
-  skillIndexLink: 'Open the Skill registry and all 15 methods',
-  skillFootnote: 'All 15 project Skills pass structural checks and remain candidate; fresh-task evidence is partial, and Prompt Card Editor has one isolated forward test only.',
-  fileSkillsBody: '15 project Skills with triggers, boundaries, and evidence contracts.',
-  ledgerSkills: 'Skills · 15',
-  repositorySkills: '15 reusable Skills · candidate',
+  skillCardIndex: '03 / SKILL PRACTICE',
+  skillCardScope: 'fictional plan · no tool authority',
+  skillCardTitle: 'Practise one small planning skill before asking for help.',
+  skillCardIntro: 'Make a short fictional park-visit plan yourself. The model must wait, give one small hint, and then test the same skill under one changed limit.',
+  skillCardStepOne: 'Copy the card into any text chat. It contains a fictional situation and needs no account, file, tool, or personal detail.',
+  skillCardStepTwo: 'Write the first plan yourself within four minutes. Do not ask for a model plan or a polished replacement first.',
+  skillCardStepThree: 'Accept one short hint, correct your own plan, then try the changed time limit without help.',
+  skillCardLink: 'Read the skill-practice boundary',
+  skillCardBoundary: 'Candidate practice only: a short fictional plan cannot prove planning ability, judgement, transfer, retention, safety, or independent performance.',
+  skillPromptText: 'Help me practise making a small plan. Do not make the plan first.\n\nPractice task: plan a fictional 45-minute visit to a city park for one adult. Include a water bottle, a weather check, and one return-time reminder. This is not a real booking, travel decision, or weather forecast.\n\nBefore I write, show this fixed check: 3–5 steps; all three constraints appear; no unsupported local facts; and a person could follow the plan. Give me four minutes to write it. Do not show a model plan, expand it, or grade it before I respond.\n\nAfter my first attempt, name one consequential omission only. Ask one question or give a hint of no more than 12 words, then wait for my correction. Preserve both attempts. Then change only the visit length from 45 minutes to 20 minutes and ask for one new plan without help, using the same check.\n\nEnd with exactly one status: practised, demonstrated_on_this_task, transferred_to_time_limit_variation, or not_run. One session does not establish planning ability, judgement, safety, or independent performance.',
+  promptCardShow: 'Show the prompt',
 });
 
 Object.assign(copy.zh, {
-  skillsTitle: '十五个 Skill，各有职责。',
+  skillCardIndex: '03 / 技能练习',
+  skillCardScope: '虚构计划 · 不授予工具权限',
+  skillCardTitle: '先自己练一次小型计划，再请求帮助。',
+  skillCardIntro: '先自己完成一个虚构的公园访问计划。模型必须等待、只给一个小提示，再用一个变化后的限制检查同一项技能。',
+  skillCardStepOne: '把卡片复制到任意纯文本对话。它使用虚构情境，不需要账号、文件、工具或个人信息。',
+  skillCardStepTwo: '在四分钟内先自己写出计划。不要先索要模型计划或润色后的替代答案。',
+  skillCardStepThree: '接受一个简短提示，自己修改计划，然后在没有帮助的情况下尝试变化后的时间限制。',
+  skillCardLink: '阅读技能练习边界',
+  skillCardBoundary: '仅为 candidate 练习：一份简短的虚构计划不能证明计划能力、判断力、迁移、记忆保持、安全或独立表现。',
+  skillPromptText: '帮助我练习制定一个小计划。不要先替我制定计划。\n\n练习任务：为一名成年人制定一次虚构的 45 分钟城市公园访问计划。计划中要有水瓶、天气检查和一项返回时间提醒。这不是真实预订、出行决策或天气预报。\n\n在我写之前，先展示固定检查项：3–5 个步骤；三个限制都出现；不写未经证实的本地事实；并且一个人能够照着计划执行。给我四分钟写计划。在我回答前，不要展示示范计划、扩写或评分。\n\n在我的第一次尝试后，只指出一个重要遗漏。问一个问题或给出不超过 12 个词的提示，然后等待我自己修改。保留两次尝试。随后只把访问时长从 45 分钟改为 20 分钟，并用相同检查项要求我在没有帮助的情况下写一份新计划。\n\n最后只能给出一种状态：practised、demonstrated_on_this_task、transferred_to_time_limit_variation 或 not_run。一次练习不能证明计划能力、判断力、安全或独立表现。',
+  promptCardShow: '显示提示词',
+});
+
+Object.assign(copy.en, {
+  skillsTitle: 'Twenty-three Skills. Distinct jobs.',
+  skillPromptCardName: 'Prompt Card Editor',
+  skillPromptCard: 'Turn one authorized prompt idea into a source-aware teaching card.',
+  skillAdversarialName: 'Adversarial Project Review',
+  skillAdversarial: 'Rank material weaknesses before a publication or release decision.',
+  skillEscalationName: 'Request Escalation',
+  skillEscalation: 'Choose the smallest safe lane before drafting, researching, or acting.',
+  skillComparisonName: 'LLM Comparison Protocol',
+  skillComparison: 'Plan a fair two-candidate comparison without inventing a leaderboard.',
+  skillPracticeTargetName: 'Practice Target',
+  skillPracticeTarget: 'Turn a broad learning wish into one observable first attempt.',
+  skillFactWatchName: 'Platform Fact Watch',
+  skillFactWatch: 'Map a changing product claim before a named step misleads readers.',
+  troubleFourBody: 'Keep the task goal; pause only the named step, then refresh the official fact record before resuming.',
+  skillRouteEscalation: 'I am not sure what kind of help I need yet.',
+  skillRouteEscalationResult: 'Chooses the smallest safe lane before drafting, researching, or acting.',
+  skillIndexLink: 'Open the Skill registry and all 23 methods',
+  skillFootnote: 'All 23 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Practice Target sets up one first attempt; it does not prove learning. Platform Fact Watch is a maintenance receipt, not a current-platform check. LLM Comparison Protocol is an unrun comparison method, not a model ranking. Adversarial Project Review is not an external review.',
+  fileSkillsBody: '23 project Skills with triggers, boundaries, and evidence contracts.',
+  ledgerSkills: 'Skills · 23',
+  repositorySkills: '23 reusable Skills · candidate',
+});
+
+Object.assign(copy.zh, {
+  skillsTitle: '二十二个 Skill，各有职责。',
   skillPromptCardName: '提示卡编辑器 Prompt Card Editor',
   skillPromptCard: '把一个已授权的提示想法整理成带来源边界的教学卡。',
-  skillIndexLink: '打开 Skill 登记表与全部 15 个方法',
-  skillFootnote: '15 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整，提示卡编辑器仅有一次独立前向测试。',
-  fileSkillsBody: '15 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
-  ledgerSkills: 'Skill \u00b7 15',
-  repositorySkills: '15 个可复用 Skill · candidate',
+  skillAdversarialName: '对抗式项目审查',
+  skillAdversarial: '在发布或发行决定前排序最关键的项目弱点。',
+  skillEscalationName: '请求分流',
+  skillEscalation: '在起草、研究或行动前选择最小且安全的路径。',
+  skillComparisonName: 'LLM 比较协议',
+  skillComparison: '用固定条件规划两候选比较，不制造排行榜。',
+  skillPracticeTargetName: '练习目标',
+  skillPracticeTarget: '把宽泛的学习愿望变成一次可观察的首次尝试。',
+  skillRouteEscalation: '我还不确定自己需要哪一种帮助。',
+  skillRouteEscalationResult: '在起草、研究或行动前选择最小且安全的路径。',
+  skillIndexLink: '打开 Skill 登记表与全部 21 个方法',
+  skillFootnote: '22 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。练习目标用于准备一次首次尝试，不能证明学习结果。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
+  fileSkillsBody: '21 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
+  ledgerSkills: 'Skill \u00b7 21',
+  repositorySkills: '22 个可复用 Skill · candidate',
+});
+
+Object.assign(copy.zh, {
+  skillsTitle: '二十二个 Skill，各有职责。',
+  skillFactWatchName: '平台事实巡检 Platform Fact Watch',
+  skillFactWatch: '在命名步骤误导读者之前，先定位变化的产品事实。',
+  skillIndexLink: '打开 Skill 登记表与全部 21 个方法',
+  skillFootnote: '22 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。练习目标用于准备一次首次尝试，不能证明学习结果。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
+  fileSkillsBody: '22 个项目 Skill，包含触发、边界与证据契约。',
+  ledgerSkills: 'Skill · 22',
+  repositorySkills: '22 个可复用 Skill · candidate',
+  mobileIndexUpdates: '更新区域',
+  mobileIndexTrust: '可信度类型',
+  troubleFourBody: '保留任务目标；只暂停命名步骤，然后刷新官方事实记录再继续。',
+});
+
+Object.assign(copy.zh, {
+  fileSkillsBody: '21 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
+  ledgerSkills: 'Skill \u00b7 21',
 });
 
 Object.assign(copy.en, {
   heroSecondary: 'Try a five-minute prompt card',
   promptDeckEyebrow: 'Optional prompt cards · five minutes',
   promptDeckTitle: 'Start with one small conversation.',
-  promptDeckIntro: 'Copy one original, text-only card. Replace only the brackets, inspect the response yourself, and keep the claim small: one attempt is not fluency, research, or a finished answer.',
-  promptDeckVisualAlt: 'Six visible fields for a bounded first request',
-  promptDeckVisualLabel: 'See the six-field check before you send',
+  promptDeckIntro: 'Copy one original, text-only card. The language card needs no editing; the research card has two brackets. Inspect the response yourself, and keep the claim small: one attempt is not fluency, research, or a finished answer.',
+  promptContractKicker: 'Before you send',
+  promptContractTitle: 'Make six parts visible.',
+  promptContractLink: 'Read the rationale',
+  promptContractGridAria: 'Six fields to inspect in a first LLM request',
+  promptContractOutcomeLabel: 'Outcome', promptContractOutcomeBody: 'One small, observable result.',
+  promptContractContextLabel: 'Starting context', promptContractContextBody: 'What you know or supply.',
+  promptContractResponseLabel: 'Requested response', promptContractResponseBody: 'The shape, length, or sequence.',
+  promptContractLimitsLabel: 'Limits', promptContractLimitsBody: 'Data and actions that stay out.',
+  promptContractCheckLabel: 'Check', promptContractCheckBody: 'What you will inspect yourself.',
+  promptContractStopLabel: 'Stop and receipt', promptContractStopBody: 'When to stop and what to keep.',
   promptCardScope: 'text only · no tool authority',
   promptCardCopy: 'Copy prompt',
-  promptCardCopied: 'Prompt copied. Replace only the brackets, then inspect the reply yourself.',
+  promptCardCopied: 'Prompt copied. Follow the three steps, then inspect the reply yourself.',
   promptCardCopyFailed: 'Could not copy the prompt. Select the text manually.',
   spanishCardIndex: '01 / LANGUAGE PRACTICE',
-  spanishCardTitle: 'Write one short Spanish reply.',
-  spanishCardIntro: 'Use an ordinary, non-sensitive situation. The model waits for your attempt, suggests no more than two changes, and asks for a revision.',
+  spanishCardTitle: 'Complete one short typed Spanish hotel check-in.',
+  spanishCardIntro: 'This text-only card uses fictional travel details, waits for your typed attempt, and limits help to one meaning-blocking error.',
+  spanishCardStepOne: 'Copy the card exactly as written. It already sets a fictional typed hotel check-in.',
+  spanishCardStepTwo: 'Paste it into any text chat. Do not add a real name, booking, passport, or payment detail.',
+  spanishCardStepThree: 'Type the first answer yourself. A rough attempt is the point; do not ask for the answer first.',
   spanishCardLink: 'Read the practice boundary',
-  spanishCardBoundary: 'Candidate practice only: one session cannot show fluency, accuracy, retention, or independent performance.',
-  spanishPromptText: 'I have five minutes for beginner Spanish practice.\n\nOutcome: I want to write one polite two-sentence reply for [a simple situation].\nStarting context: [words I know, a self-written attempt, or "unknown"].\n\nGive me one short situation and wait for my reply. Do not assign a level or claim that I have learned Spanish. After I reply, point out at most two changes that would most affect meaning or politeness. For each change, say whether you are uncertain. Ask me for one revision.\n\nDo not use personal information, browse, contact anyone, or turn this into a study plan. End by listing: my first reply, my revision, help used, one thing I should check elsewhere, and the smallest next practice or stop condition.',
+  spanishCardBoundary: 'Candidate text practice only: one typed session cannot show spoken conversation, pronunciation, listening, fluency, accuracy, retention, or independent performance.',
+  spanishPromptText: 'Run one four-minute typed Spanish hotel check-in with exactly four learner turns. You are the receptionist and write first. Use only short present-tense questions. I will type one answer after each question.\n\nFictional guest card: Ana Torres; two nights; single room; breakfast included; ask whether breakfast starts at 7:00 or 7:30. I may use the card and look up at most three single words. Do not request or accept a real name, booking number, passport, address, contact, or payment detail.\n\nBefore turn one, show this fixed rubric: four learner turns; name and two-night stay communicated; single room and breakfast communicated; 7:00/7:30 ambiguity resolved; Spanish understandable enough to continue. Do not teach, translate, or show a model answer before I reply. Preserve my first attempt and record lookups. Correct only the first meaning-blocking error: name the error type, then give a partial cue, then one worked fragment only if I still cannot continue. Ask me to correct it. Keep both attempts and do not call one successful exchange fluency, spoken conversation, or listening/pronunciation evidence.',
   researchCardIndex: '02 / RESEARCH PREP',
   researchCardTitle: 'Prepare a source check, not a verdict.',
   researchCardIntro: 'Turn one narrow question and the material you supplied into a small ledger of claims, gaps, and the next question.',
+  researchCardStepOne: 'Copy the card, then replace only its two brackets.',
+  researchCardStepTwo: 'Supply only material you may share. Leave personal, private, or high-stakes material out.',
+  researchCardStepThree: 'Treat its table as preparation. Open and match sources yourself before relying on a claim.',
   researchCardLink: 'Read the research boundary',
   researchCardBoundary: 'It cannot prove a source exists, is current, or supports a claim. A generated table is not evidence on its own.',
   researchPromptText: 'I have five minutes to prepare a research check, not a final answer.\n\nQuestion: [one narrow question].\nMaterial I supplied: [URLs, titles, excerpts, or "none"].\n\nFirst, restate the question and name what evidence would be needed. Then make a three-row table with: possible claim, supplied source or "missing", and what would need checking. Do not invent citations, state that you opened a source you cannot access, or give a recommendation. Separate fact, report, and inference. If the material is missing, contradictory, personal, or high stakes, stop and tell me the smallest safe next step.\n\nEnd with: sources actually supplied, unknowns, and one question I should answer before continuing.',
@@ -427,42 +511,60 @@ Object.assign(copy.zh, {
   heroSecondary: '试用一张 5 分钟提示词卡',
   promptDeckEyebrow: '可选提示词卡 · 五分钟',
   promptDeckTitle: '先完成一次小对话。',
-  promptDeckIntro: '复制一张项目原创的纯文本卡，只替换方括号中的内容，然后自行检查回复。保持结论很小：一次尝试不代表学会语言、完成研究或得到最终答案。',
-  promptDeckVisualAlt: '一条有边界的首轮请求包含的六个可见字段',
-  promptDeckVisualLabel: '发送前查看六字段检查',
+  promptDeckIntro: '复制一张项目原创的纯文本卡。语言卡无需修改；研究卡只有两个方括号需要替换。自行检查回复，保持结论很小：一次尝试不代表学会语言、完成研究或得到最终答案。',
+  promptContractKicker: '发送前',
+  promptContractTitle: '把六个部分写清楚。',
+  promptContractLink: '阅读设计理由',
+  promptContractGridAria: '首轮大模型请求中需要检查的六个字段',
+  promptContractOutcomeLabel: '结果', promptContractOutcomeBody: '一个小而可观察的结果。',
+  promptContractContextLabel: '起始上下文', promptContractContextBody: '你知道或提供的内容。',
+  promptContractResponseLabel: '请求的回答', promptContractResponseBody: '回答的形式、长度或顺序。',
+  promptContractLimitsLabel: '限制', promptContractLimitsBody: '不提供的数据，不允许的行动。',
+  promptContractCheckLabel: '检查', promptContractCheckBody: '你要亲自核对的内容。',
+  promptContractStopLabel: '停止和记录', promptContractStopBody: '何时停止，要保留什么。',
   promptCardScope: '纯文本 · 不授予工具权限',
   promptCardCopy: '复制提示词',
-  promptCardCopied: '提示词已复制。只替换方括号中的内容，然后自行检查回复。',
+  promptCardCopied: '提示词已复制。按三步操作，再自行检查回复。',
   promptCardCopyFailed: '无法复制提示词，请手动选择文字。',
   spanishCardIndex: '01 / 语言练习',
-  spanishCardTitle: '写一条简短的西班牙语回复。',
-  spanishCardIntro: '只用于普通、非敏感的情境。模型会等你先尝试，最多提出两项修改，再请你修订。',
+  spanishCardTitle: '完成一次简短的文字版西班牙语酒店入住对话。',
+  spanishCardIntro: '这张纯文字卡可以原样复制：它使用虚构旅行信息，先等待你的文字尝试，并且只处理一个阻碍含义的错误。',
+  spanishCardStepOne: '原样复制整张卡。它已经设定了虚构的文字版酒店入住情境。',
+  spanishCardStepTwo: '粘贴到任何纯文本对话中。不要加入真实姓名、预订号、护照或支付信息。',
+  spanishCardStepThree: '自己先打字回答第一个问题。粗略尝试才是重点；不要先索要答案。',
   spanishCardLink: '阅读练习边界',
-  spanishCardBoundary: '仅为 candidate 练习：一次对话不能证明流利度、准确性、记忆保持或独立表现。',
-  spanishPromptText: '我有五分钟练习初级西班牙语。\n\n目标：我想为[一个简单情境]写一条礼貌的两句回复。\n起始背景：[我认识的词、我自己写的尝试，或“未知”]。\n\n请给我一个简短情境，然后等待我的回复。不要给我定级，也不要声称我已经学会西班牙语。等我回复后，最多指出两项最影响含义或礼貌的修改。对于每项修改，请说明你是否不确定。请我完成一次修订。\n\n不要使用个人信息、浏览网页、联系任何人，也不要把它变成学习计划。最后列出：我的第一次回复、我的修订、使用过的帮助、我应在别处核对的一件事，以及下一次最小练习或停止条件。',
+  spanishCardBoundary: '仅为 candidate 纯文字练习：一次打字对话不能证明真实口语、发音、听力、流利度、准确性、记忆保持或独立表现。',
+  spanishPromptText: '进行一次四分钟文字版西班牙语酒店入住对话，学习者恰好打字回答四轮。你是前台接待员并先用文字提问。只用简短的现在时问题。我会在每个问题后打字回答一次。\n\n虚构住客卡：Ana Torres；住两晚；单人房；包含早餐；询问早餐在 7:00 还是 7:30 开始。我可以使用这张卡，并最多查询三个单词。不要索要或接受真实姓名、预订号、护照、地址、联系方式或支付信息。\n\n第一轮前先展示固定量规：四轮学习者回答；姓名和两晚住宿表达清楚；单人房和早餐表达清楚；解决 7:00/7:30 的歧义；西班牙语足以继续文字对话。不要在我回答前教学、翻译或展示模型答案。保留我的初次尝试并记录查询。只纠正第一个阻碍含义的错误：指出错误类型，然后给出部分提示；只有我仍无法继续时才给出一个示范片段。请我自行改正。保留两次尝试，不要把一次成功对话称为流利、真实口语或听力/发音证据。',
   researchCardIndex: '02 / 研究准备',
   researchCardTitle: '准备一次来源检查，不要索要裁决。',
   researchCardIntro: '把一个狭窄问题和你提供的材料变成一份小型台账：可能的声明、缺口和下一个问题。',
+  researchCardStepOne: '复制这张卡，然后只替换其中两个方括号。',
+  researchCardStepTwo: '只提供你可以分享的材料。不要放入个人、私密或高风险材料。',
+  researchCardStepThree: '把表格当作准备工作。在依赖某项声明前，亲自打开并核对来源。',
   researchCardLink: '阅读研究边界',
   researchCardBoundary: '它不能证明来源存在、仍然有效，或确实支持某项声明。生成的表格本身不是证据。',
   researchPromptText: '我有五分钟准备一次研究检查，而不是得到最终答案。\n\n问题：[一个狭窄问题]。\n我提供的材料：[网址、标题、摘录，或“无”]。\n\n先复述问题，并说明需要哪些证据。然后做一个三行表格，包含：可能的声明、我提供的来源或“缺失”、以及需要核对的内容。不要虚构引用，不要声称你打开了无法访问的来源，也不要给出建议。区分事实、报告和推断。如果材料缺失、相互矛盾、涉及个人信息或高风险，请停止并告诉我最小的安全下一步。\n\n最后列出：实际提供的来源、未知之处，以及我继续前应回答的一个问题。',
 });
 
 Object.assign(copy.en, {
-  heroPrimary: 'Start the Codex Practice Track',
-  heroSecondary: 'See the optional no-setup warm-up',
-  heroRouteAria: 'Choose the recommended first route',
-  heroRouteKicker: 'Choose by your starting condition',
-  heroRouteGuidedTitle: 'Have a disposable project? Follow the guided path.',
+  heroPrimary: 'Start with a no-setup LLM check',
+  heroSecondary: 'Start the Codex Practice Track',
+  heroScope: 'Current guided scope: transferable core + Codex Practice Track. Claude Code and Grok are not runnable routes yet.',
+  heroRouteAria: 'Choose a first route by readiness',
+  heroRouteKicker: 'Choose by what you have today',
+  heroRouteNoSetupTitle: 'No project or coding background? Start with one no-setup check.',
+  heroRouteNoSetupBody: 'Use any chat model and a fictional message. No files, tools, account connection, or private data.',
+  heroRouteGuidedTitle: 'Have a disposable project and want Codex? Follow the guided path.',
   heroRouteGuidedBody: 'Start with Chapter 1. The first local edit comes after its scope and evidence boundary are visible.',
-  heroRouteFixtureTitle: 'No disposable project yet? Use the safe fixture at the Chapter 2 decision.',
-  heroRouteFixtureBody: 'It supplies one offline target and check. It does not replace the guided Codex path.',
-  heroEyebrow: 'Candidate guide · basic structure and checks pass',
-  heroRouteBoundary: 'Candidate means the basic structure and checks pass; first-time reader outcomes are still unmeasured.',
+  heroRouteFixtureTitle: 'Need a safe file for the Codex path? Open the offline fixture.',
+  heroRouteFixtureBody: 'It supplies one target and check after Chapter 2. It is a fallback, not a substitute for the guided path.',
+  heroEyebrow: 'Start small · one task, one visible check',
+  heroRouteBoundary: 'All three entries are candidate: the structure is checked, but reader outcomes are not yet measured.',
   heroProofAria: 'Optional warm-up proof card',
   heroProofKicker: 'OPTIONAL WARM-UP / INSPECTABLE EXAMPLE',
   heroProofLink: 'Open the optional 15-minute check',
-  mobileRouteTask: 'Start the Codex Practice Track',
+  mobileRouteNoSetup: 'No project? Start with the no-setup check',
+  mobileRouteTask: 'Have a disposable project? Start Codex',
   mobileRouteFixture: 'Need a safe file? Open the fixture',
   startIntro: 'For a real local Codex task, begin with one candidate path: boundary map, boundary lab, bounded task, then one reversible lab. Pick another route only when that path does not fit.',
   problemStartTitle: 'I want one safe Codex path.',
@@ -473,20 +575,24 @@ Object.assign(copy.en, {
 });
 
 Object.assign(copy.zh, {
-  heroPrimary: '开始 Codex 旗舰实践路线',
-  heroSecondary: '查看可选的免设置热身',
-  heroRouteAria: '选择推荐的第一条路线',
-  heroRouteKicker: '按你的起始条件选择',
-  heroRouteGuidedTitle: '有可丢弃的项目？沿着引导路径开始。',
+  heroPrimary: '先做一次免设置的 LLM 检查',
+  heroSecondary: '开始 Codex 旗舰实践路线',
+  heroScope: '当前可直接跟练的范围：通用协作核心 + Codex 实践路线。Claude Code 和 Grok 暂无可运行路线。',
+  heroRouteAria: '按准备程度选择第一条路线',
+  heroRouteKicker: '按你今天手头的条件选择',
+  heroRouteNoSetupTitle: '没有项目或编程背景？先做一次免设置检查。',
+  heroRouteNoSetupBody: '使用任意聊天模型和虚构消息；不需要文件、工具、账户连接或私人数据。',
+  heroRouteGuidedTitle: '有可丢弃的项目，而且想练 Codex？走引导路径。',
   heroRouteGuidedBody: '从第 1 章开始。第一次本地编辑会在范围和证据边界清楚之后出现。',
-  heroRouteFixtureTitle: '还没有可丢弃的项目？在第 2 章的决策点使用安全夹具。',
-  heroRouteFixtureBody: '它提供一个离线目标和检查，不替代有引导的 Codex 路径。',
-  heroEyebrow: '候选指南 · 基础结构和检查已通过',
-  heroRouteBoundary: '候选表示基础结构和检查已通过；首次读者的学习结果仍未测量。',
+  heroRouteFixtureTitle: 'Codex 路径需要安全文件？打开离线夹具。',
+  heroRouteFixtureBody: '它在第 2 章之后提供一个目标和检查，是回退方案，不替代引导路径。',
+  heroEyebrow: '从小处开始 · 一个任务，一项可见检查',
+  heroRouteBoundary: '三条入口都还是 candidate：结构已检查，读者结果尚未测量。',
   heroProofAria: '可选热身证据卡',
   heroProofKicker: '可选热身 / 可检查示例',
   heroProofLink: '打开可选的 15 分钟检查',
-  mobileRouteTask: '开始 Codex 旗舰实践路线',
+  mobileRouteNoSetup: '没有项目？先做免设置检查',
+  mobileRouteTask: '有可丢弃项目？开始 Codex',
   mobileRouteFixture: '需要安全文件？打开夹具',
   startIntro: '要完成真实的本地 Codex 任务，先走一条候选路径：理解边界、标注边界、确定任务、再做一次可回滚的实验。只有不适用时再选择其他路线。',
   problemStartTitle: '我想走一条安全的 Codex 路径。',
@@ -538,11 +644,82 @@ if (!hasExplicitLanguageParam) {
 currentLanguage = localeTokens.includes(currentLanguage) ? currentLanguage : localeManifest.default_locale;
 let effectiveUiLanguage = uiLocales.has(currentLanguage) ? currentLanguage : 'en';
 
+Object.assign(copy.en, {
+  promptDeckIntro: 'Choose one original, text-only card. The language and planning cards need no editing; the research card has two brackets. Inspect the response yourself, and keep the claim small: one attempt is not fluency, research, or a finished answer.',
+});
+
+Object.assign(copy.zh, {
+  promptDeckIntro: '选择一张项目原创的纯文本卡。语言卡和计划卡无需修改；研究卡只有两个方括号需要替换。自行检查回复，保持结论很小：一次尝试不代表学会语言、完成研究或得到最终答案。',
+});
+
+Object.assign(copy.en, {
+  skillsTitle: 'Twenty-three Skills. Distinct jobs.',
+  skillInterruptionName: 'Interruption Checkpoint',
+  skillInterruption: 'Preserve what is known before a retry, a model switch, or a new task.',
+  skillIndexLink: 'Open the Skill registry and all 23 methods',
+  skillFootnote: 'All 23 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Interruption Checkpoint preserves a task receipt; it does not retry or recover work. Practice Target sets up one first attempt; it does not prove learning. Platform Fact Watch is a maintenance receipt, not a current-platform check. LLM Comparison Protocol is an unrun comparison method, not a model ranking. Adversarial Project Review is not an external review.',
+  fileSkillsBody: '23 project Skills with triggers, boundaries, and evidence contracts.',
+  ledgerSkills: 'Skills · 23',
+  repositorySkills: '23 reusable Skills · candidate',
+});
+
+Object.assign(copy.zh, {
+  skillsTitle: '二十二个 Skill，各有职责。',
+  skillInterruptionName: '中断检查点',
+  skillInterruption: '在重试、切换模型或创建新任务前，保留已经知道的事实。',
+  skillIndexLink: '打开 Skill 登记表与全部 21 个方法',
+  skillFootnote: '22 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。中断检查点只保留任务回执，不会重试或恢复工作。练习目标用于准备一次首次尝试，不能证明学习结果。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
+  fileSkillsBody: '21 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
+  ledgerSkills: 'Skill \u00b7 21',
+  repositorySkills: '22 个可复用 Skill · candidate',
+});
+
+Object.assign(copy.en, {
+  skillsTitle: 'Twenty-three Skills. Distinct jobs.',
+  skillHandoffName: 'Shift Handoff',
+  skillHandoff: 'Separate reusable rules from today’s supplied work item.',
+  skillIndexLink: 'Open the Skill registry and all 23 methods',
+  skillFootnote: 'All 23 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Shift Handoff separates stable criteria from one new item; it does not execute or assume model memory. Interruption Checkpoint preserves a task receipt; it does not retry or recover work. Practice Target sets up one first attempt; it does not prove learning. Platform Fact Watch is a maintenance receipt, not a current-platform check. LLM Comparison Protocol is an unrun comparison method, not a model ranking. Adversarial Project Review is not an external review.',
+  fileSkillsBody: '23 project Skills with triggers, boundaries, and evidence contracts.',
+  ledgerSkills: 'Skills · 23',
+  repositorySkills: '23 reusable Skills · candidate',
+});
+
+Object.assign(copy.zh, {
+  skillsTitle: '二十二个 Skill，各有职责。',
+  skillHandoffName: '工作交接',
+  skillHandoff: '把稳定准则与当天提供的工作项分开。',
+  skillIndexLink: '打开 Skill 登记表与全部 22 个方法',
+  skillFootnote: '22 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。工作交接会拆开稳定准则与当天这项内容，不会执行任务或假设模型记得上一轮。中断检查点只保留任务回执，不会重试或恢复工作。练习目标用于准备一次首次尝试，不能证明学习结果。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
+  fileSkillsBody: '22 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
+  ledgerSkills: 'Skill \u00b7 22',
+  repositorySkills: '22 个可复用 Skill · candidate',
+});
+
 const currentCopy = () => copy[effectiveUiLanguage] || copy.en;
 const dataLanguage = () => effectiveUiLanguage === 'zh' ? 'zh' : 'en';
 const localeDisplayName = (language) => localeManifest.locales[language]?.display_name || language;
 const localeHasUiCopy = (language) => uiLocales.has(language);
 const localeIsReady = (record) => record?.exists && ['source', 'verified', 'production-ready'].includes(record.translation_status);
+const localeCanRender = (record) => record?.exists && ['source', 'candidate', 'in-progress', 'verified', 'production-ready'].includes(record.translation_status);
+const localeCourseCoverage = (language) => localeManifest.localization_coverage?.[language];
+const localeCoverageLabel = (language) => {
+  const coverage = localeCourseCoverage(language);
+  if (!coverage) return '';
+  const units = `${coverage.available_units}/${coverage.total_units}`;
+  if (coverage.source_units === coverage.total_units) {
+    return effectiveUiLanguage === 'zh' ? `课程：${units} 个源语言单元` : `Course: ${units} source units`;
+  }
+  if (coverage.candidate_translation_units || coverage.reviewed_translation_units) {
+    const review = coverage.candidate_translation_units
+      ? (effectiveUiLanguage === 'zh' ? '独立语言审校待完成' : 'independent language review pending')
+      : (effectiveUiLanguage === 'zh' ? '已登记本地化单元' : 'registered localized units');
+    return effectiveUiLanguage === 'zh'
+      ? `课程：${units} 个翻译单元；${review}`
+      : `Course: ${units} translated units · ${review}`;
+  }
+  return effectiveUiLanguage === 'zh' ? `课程：${units} 个翻译单元` : `Course: ${units} translated units`;
+};
 const pagesArtifactMode = Boolean(window.CODEX_PAGES_ARTIFACT);
 let searchIndex = window.CODEX_SEARCH_INDEX || null;
 let searchIndexLoadPromise = null;
@@ -568,12 +745,18 @@ const pagesHref = (href, language = currentLanguage) => {
   return `reader.html?path=${encodeURIComponent(path)}${localeQuery}${hash}`;
 };
 const contentFor = (contentId) => localeManifest.contents?.[contentId];
+// Some older cards carry short catalog IDs (for example, "chapter-02").
+// Normalize them before looking up a localized file, otherwise a readable
+// candidate translation is incorrectly replaced by its English source.
+const canonicalContentId = (contentId) => localeManifest.aliases?.[contentId] || contentId;
 const contentIdForHref = (href) => localeManifest.path_index?.[pathFromHref(href) || ''];
 const localizedContentHref = (contentId, fallbackHref) => {
   const content = contentFor(contentId);
   if (!content) return fallbackHref || '';
   const requested = content.locales?.[currentLanguage];
-  const target = localeIsReady(requested) ? requested : content.locales?.en;
+  // Do not silently swap the reader to English. A registered missing unit is
+  // rendered as an explicit same-locale unavailable state by Reader.
+  const target = requested;
   if (!target?.path) return fallbackHref || '';
   const hash = fallbackHref?.includes('#') ? fallbackHref.slice(fallbackHref.indexOf('#')) : '';
   return `../${target.path}${hash}`;
@@ -582,7 +765,7 @@ const localizeReaderLinks = () => {
   document.querySelectorAll('a[href]').forEach((anchor) => {
     if (anchor.closest('[data-language-switcher]')) return;
     const sourceHref = anchor.dataset.sourceHref || anchor.getAttribute('href');
-    const contentId = anchor.dataset.contentId || contentIdForHref(sourceHref);
+    const contentId = canonicalContentId(anchor.dataset.contentId || contentIdForHref(sourceHref));
     if (!contentId) {
       if (pagesPathFromHref(sourceHref)?.endsWith('.md')) {
         anchor.dataset.sourceHref = sourceHref;
@@ -594,9 +777,11 @@ const localizeReaderLinks = () => {
     anchor.dataset.contentId = contentId;
     const requested = contentFor(contentId)?.locales?.[currentLanguage];
     anchor.href = pagesHref(localizedContentHref(contentId, sourceHref));
-    anchor.dataset.localeFallback = localeIsReady(requested) ? 'false' : 'true';
-    if (!localeIsReady(requested) && currentLanguage !== 'en') {
-      anchor.title = `${localeDisplayName(currentLanguage)} translation pending · current available source`;
+    anchor.dataset.localeFallback = 'false';
+    if (!localeCanRender(requested) && currentLanguage !== 'en') {
+      anchor.title = `${localeDisplayName(currentLanguage)} translation pending · this link remains in the selected language`;
+    } else if (!localeIsReady(requested) && currentLanguage !== 'en') {
+      anchor.title = `${localeDisplayName(currentLanguage)} candidate translation · independent language review pending`;
     } else {
       anchor.removeAttribute('title');
     }
@@ -636,7 +821,7 @@ const loadSearchIndex = () => {
   if (searchIndexLoadPromise) return searchIndexLoadPromise;
   searchIndexLoadPromise = new Promise((resolve, reject) => {
     const script = document.createElement('script');
-    script.src = 'search-index.js?v=20260813-lazy-search';
+    script.src = 'search-index.js?v=20260815-search-target';
     script.async = true;
     script.dataset.searchIndexLoader = '';
     script.addEventListener('load', () => {
@@ -898,7 +1083,19 @@ const applyLanguage = (language, { updateUrl = true } = {}) => {
     const fallback = !localeHasUiCopy(element.dataset.languageOption);
     element.classList.toggle('is-fallback', fallback);
     const fallbackLabel = element.querySelector('[data-language-fallback]');
-    if (fallbackLabel) fallbackLabel.textContent = fallback ? (strings.localeOptionFallback || 'English UI fallback') : '';
+    const labelParts = [
+      fallback ? (strings.localeOptionFallback || 'English UI fallback') : '',
+      localeCoverageLabel(element.dataset.languageOption),
+    ].filter(Boolean);
+    if (fallbackLabel) fallbackLabel.textContent = labelParts.join(' · ');
+    else if (labelParts.length) {
+      const coverageLabel = document.createElement('small');
+      coverageLabel.dataset.languageFallback = '';
+      coverageLabel.textContent = labelParts.join(' · ');
+      element.append(coverageLabel);
+    }
+    if (labelParts.length) element.setAttribute('aria-label', `${localeDisplayName(element.dataset.languageOption)}. ${labelParts.join('. ')}`);
+    else element.removeAttribute('aria-label');
     const url = new URL(window.location.href);
     url.searchParams.set('lang', element.dataset.languageOption);
     element.href = `${url.pathname}${url.search}${url.hash}`;
@@ -1189,6 +1386,30 @@ firstWinCopyRecord?.addEventListener('click', async () => {
   }
 });
 renderFirstWinRecord();
+
+// Keep the reader-facing inventory synchronized with the registered Skill
+// source. Locale-specific course coverage remains governed by the matrix; this
+// count does not imply that every Skill has runtime or learner evidence.
+Object.assign(copy.en, {
+  skillsTitle: 'Twenty-three Skills. Distinct jobs.',
+  skillIndexLink: 'Open the Skill registry and all 23 methods',
+  skillFootnote: 'All 23 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Platform Observation Record documents one visible surface; it is not a capability or safety claim. Practice Target sets up one first attempt; it does not prove learning. Interruption Checkpoint preserves a task receipt; it does not retry or recover work. Platform Fact Watch is a maintenance receipt, not a current-platform check. LLM Comparison Protocol is an unrun comparison method, not a model ranking. Adversarial Project Review is not an external review.',
+  fileSkillsBody: '23 project Skills with triggers, boundaries, and evidence contracts.',
+  ledgerSkills: 'Skills · 23',
+  repositorySkills: '23 reusable Skills · candidate',
+});
+Object.assign(copy.zh, {
+  skillsTitle: '二十三个 Skill，各有职责。',
+  skillIndexLink: '打开 Skill 登记表与全部 23 个方法',
+  skillFootnote: '23 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。平台观察记录只记录一个可见工作面，不是能力或安全性声明。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
+  fileSkillsBody: '23 个项目 Skill，包含触发、边界与证据契约。',
+  ledgerSkills: 'Skill · 23',
+  repositorySkills: '23 个可复用 Skill · candidate',
+});
+Object.assign(copy.zh, {
+  fileSkillsBody: '23 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
+  ledgerSkills: 'Skill \u00b7 23',
+});
 
 initializeSearch();
 applyLanguage(currentLanguage, { updateUrl: hasExplicitLanguageParam && !hasValidLanguageParam });

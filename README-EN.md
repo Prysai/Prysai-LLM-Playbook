@@ -30,12 +30,31 @@ catalogue before beginning.
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-[Start the recommended Codex path](#the-recommended-first-codex-path) · [Prepare a safe offline fixture](book/routes/first-safe-change-EN.md) · [Try the optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required)
+[Start the recommended Codex path](#the-recommended-first-codex-path) · [Practise one Spanish exchange](book/communication-clinic-EN.md#six-short-spanish-messages) · [Run one research check](book/communication-clinic-EN.md#six-short-research-messages) · [Choose a safe share boundary](book/communication-clinic-EN.md#share-check) · [Prepare a safe offline fixture](book/routes/first-safe-change-EN.md) · [Try the optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required)
 
 README language links switch repository entry files. The interactive showcase is
 a local contributor preview; follow [`site/README.md`](site/README.md) to serve
 it. It uses `?lang=` routes and may show an explicit fallback when a translation
 is not available.
+
+### Actual course-language coverage
+
+This table counts only the 22 chapters and 18 Labs. It separates a readable
+translation slice from a complete course and does not measure translation
+quality, learner outcomes, or release readiness.
+
+| Locale | Readable course units | Current boundary |
+|---|---:|---|
+| English | 40 / 40 | Canonical source language. |
+| Simplified Chinese | 21 / 40 | Candidate route through Chapter 12, including nine Labs; English-source alignment and independent language review pending. |
+| Spanish | 6 / 40 | Entry, a safe-practice route, and the first chapter/Lab pair; independent language review pending. |
+| Japanese | 5 / 40 | Entry, scattered translation slices, and the first safe-task Lab; independent language review pending. |
+| Korean | 5 / 40 | Entry, scattered translation slices, and the first safe-task Lab; independent language review pending. |
+| German | 5 / 40 | Entry, scattered translation slices, and the first safe-task Lab; independent language review pending. |
+
+Six locale choices therefore describe routing and migration support, **not** six
+complete courses. The reader exposes the same `available / 40` count in its
+language selector.
 
 > **Project status:** `candidate` · **Default locale:** English · **Scope:**
 > book, labs, Skills, research, evaluation, and team practice
@@ -51,7 +70,9 @@ requirements, unfamiliar repositories, changing products, limited
 permissions, deadlines, and outputs that can look finished before they are
 actually checked.
 
-The repository does not claim that every platform behaves the same or that
+**Current guided scope:** the transferable core plus the Codex Practice Track.
+Claude Code, Grok, and other named platforms are not runnable routes yet. The
+repository does not claim that every platform behaves the same or that
 non-Codex platform tracks are complete. Product-specific commands, authority,
 persistence, and failure modes belong in evidence-gated adapters.
 
@@ -109,6 +130,7 @@ checking habit; it is not a substitute for the Codex path.
 
 | What you need now | Start here | Leave with |
 |---|---|---|
+| No project or coding background yet | [No-setup LLM check](#optional-15-minute-warm-up-no-git-required) | One fictional message, three human checks, and a bounded receipt; use any chat model, no files, tools, account connection, or private data |
 | Make a first reversible local Codex change | [Recommended Codex path](#the-recommended-first-codex-path) | Needs a disposable project by Chapter 2; leaves with one bounded task card, a small diff, a focused check, and an explicit unverified list |
 | Need a safe local file before using a project | [First Safe Change fixture](book/routes/first-safe-change-EN.md) | One seeded README failure, one permitted README edit, and one local acceptance result; candidate · learner run `not_run` |
 | Rehearse the checking habit without project setup | [Optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) | One fictional message, three human checks, and a bounded receipt; optional, not the local Codex path |
@@ -130,9 +152,12 @@ tool, browser, account, or external action without first setting a new boundary.
 
 | I want to… | Start with this card | The card can help you make visible | It does not establish |
 |---|---|---|---|
-| practise a short Spanish exchange | [Card A1 — hotel baseline and correction](book/communication-clinic-EN.md#language-practice-route) | One fictional four-turn attempt, disclosed help, and a learner revision. | Fluency, a language level, correct real-world wording, retention, or transfer. |
-| practise one skill for a real situation | [Card B1 — define and attempt the performance](book/communication-clinic-EN.md#general-skill-practice-route) | One small performance, allowed aids, visible criteria, and a first attempt. | Improvement, job readiness, independent performance, or mastery. |
-| prepare a reliable research check | [Card C1 — decision, question, and source plan](book/communication-clinic-EN.md#bounded-research-route) | One decision question, material-claim owners, and a stop rule before searching. | Browsing, source access, citation validity, a recommendation, or complete research. |
+| complete a short typed Spanish exchange | [Six short Spanish practice messages](book/communication-clinic-EN.md#six-short-spanish-messages) | One fictional four-turn typed attempt, disclosed help, a learner revision, and an optional changed-case route. | Spoken conversation, pronunciation, listening ability, fluency, a language level, correct real-world wording, retention, or transfer. |
+| practise one skill for a real situation | [Card B1 plus six short work-update messages](book/communication-clinic-EN.md#six-short-work-update-messages) | One small performance, allowed aids, visible criteria, a learner-authored revision, and a changed-audience attempt. | Improvement, job readiness, independent performance, or mastery. |
+| prepare a reliable research check | [Six short research messages](book/communication-clinic-EN.md#six-short-research-messages) | One decision question, material-claim owners, an inspectable source record, and a stop rule before a conclusion. | Browsing, source access, citation validity, a recommendation, or complete research. |
+| check an answer that looks cited | [Card D1 — source-record check](book/communication-clinic-EN.md#source-check-route) | One fictional claim, visible missing source fields, and a permitted next check or stop. | That a claim is true or false, that a source is valid, or that research is complete. |
+| check whether a visible source list followed my rule | [Card C3 — source-set scope check](book/communication-clinic-EN.md#retrieval-scope-receipt) | A stated source-selection rule, a supplied-list boundary, one disposition per fictional source, and a stop reason. | Complete retrieval, source quality, a factual conclusion, product behavior, or research completion. |
+| decide whether to share an AI answer or conversation | [Share Check](book/communication-clinic-EN.md#share-check) | A fictional item choice, audience boundary, smaller-excerpt decision, and stop condition before any link or message is created. | That a real recipient, product, link, or organization handles sharing safely. |
 
 Each card has a fuller boundary, failure case, receipt, and follow-up below its
 anchor. If you do not yet know which one fits, use the [Beginner Practice Pack
@@ -467,7 +492,7 @@ records what can be used as research, what can be adapted, and what must not be 
 
 ## Current state
 
-This is a transparent snapshot as of **2026-08-13**. Counts describe the
+This is a transparent snapshot as of **2026-08-14**. Counts describe the
 repository; they do not describe learning outcomes.
 
 | Area | Current state | What the state means |
@@ -475,7 +500,7 @@ repository; they do not describe learning outcomes.
 | Project | `candidate` | The product skeleton and core contracts exist; broad independent evidence is still being built |
 | Chapters | 22 structured chapters · `candidate` | Canonical English sources exist, but runtime exercises and broad independent review remain incomplete |
 | Labs | 18 labs · `draft` · `run_status: not_run` | The contracts exist; the repository does not claim that every lab has been freshly executed |
-| Skills | 14 project Skills · `candidate` | Structural checks pass; fresh-context evidence is partial and remains visible in the registry |
+| Skills | 23 project Skills · `candidate` | Structural checks pass; fresh-context evidence is partial and remains visible in the registry |
 | Evaluation fixtures | 40 fixtures · `candidate` · `not_run` | The task set is defined; model execution logs are not being implied |
 | Public showcase | `candidate` | English default and Chinese runtime toggle are implemented; broader visual and locale coverage remains work |
 | Locale rollout | EN source plus five translation entries in progress | Six entry locales are registered; the whole book is not yet six-language complete |
@@ -559,6 +584,12 @@ $py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\depend
 & $py scripts\validate_content_status.py
 & $py scripts\audit_input_archives.py
 ```
+
+The six original input archives are optional local review material and are not
+stored in this repository. If they are not in the historical `D:\downloads`
+location, pass `--archive-dir <directory>` to the archive audit or set
+`PRYSAI_INPUT_ARCHIVE_DIR`. A missing archive means that audit is incomplete;
+it does not remove the source and license review requirement.
 
 See the [contribution model](docs/governance/contribution-model.md) and
 [release checklist](docs/release-checklist.md) for the full review boundary.
