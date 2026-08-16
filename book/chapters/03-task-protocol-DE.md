@@ -484,7 +484,7 @@ benenne eine Behauptung, die noch Laufzeitevidenz braucht.
 - [ ] Übergabe listet getane und nicht getane Aktionen, Belege, Unbekannte und nächsten kleinsten Check.
 - [ ] Eine zweite Person oder ein Agent kann das Protokoll ohne Raten ausführen.
 
-## Transferübung
+## Transferaufgabe
 
 Schreibe je eine Anfrage für eine reproduzierbare Regression ohne öffentliche
 API-Änderung, Recherche mit Primärquellen und Uneinigkeitstabelle, lokalisierte
@@ -494,7 +494,7 @@ welche Felder wiederverwendbar sind und welche domänenspezifische Belege brauch
 Ein Protokoll, das gut klingt, aber nicht sagen kann, wo ein Teamkollege stoppt,
 ist nicht vollständig.
 
-## Quellen und Prüfgrenze
+## Quellen und Wartungsgrenze
 
 Die stabile Methode ist eine eigene Synthese. Produktverhalten, Berechtigungsnamen,
 UI-Steuerung, Befehlssyntax, Modellnamen und externe Dienste sind volatil. Prüfe

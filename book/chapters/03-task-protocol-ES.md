@@ -386,7 +386,7 @@ Una sesión fluida solo respalda «practiqué hoy», no fluidez, retención dura
 ni transferencia. El método candidato y su límite de fuentes constan en la
 [investigación sobre aprendizaje duradero asistido por LLM](../evidence-library-ES.md#source-notes).
 
-## Patrones de fallo del mundo real
+## Problemas reales: patrones de fallo
 
 Los informes de campo muestran por qué importan estos campos: una espera o
 reintento puede aparentar actividad sin probar que llegó la instrucción o que
@@ -471,7 +471,7 @@ declaración que aún requiera evidencia de runtime.
 - [ ] La entrega enumera acciones tomadas y no tomadas, evidencia, incógnitas y siguiente comprobación.
 - [ ] Una segunda persona o agente puede ejecutar el protocolo sin adivinar.
 
-## Ejercicio de transferencia
+## Tarea de transferencia
 
 Reescribe una petición para: ingeniería (regresión reproducible sin cambiar API
 pública), investigación (fuentes de primera parte y desacuerdos), contenido
@@ -481,7 +481,7 @@ lectura con archivos distintos y tabla de evidencia). Marca qué campos se
 reutilizan y cuáles exigen evidencia del ámbito. Un protocolo que se lee bien
 pero no sabe dónde detenerse no está completo.
 
-## Fuentes y límite de revisión
+## Fuentes y límite de mantenimiento
 
 El método estable es síntesis original. Comportamiento de producto, permisos,
 controles de interfaz, sintaxis de comandos, modelos y servicios externos son
