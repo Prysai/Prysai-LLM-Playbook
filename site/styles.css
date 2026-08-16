@@ -812,3 +812,43 @@ button, input, select, textarea { font: inherit; }
   .locale-list { grid-template-columns: 1fr 1fr; }
   .research-panel { padding: 1.2rem; }
 }
+
+/* GitHub project badge in the site header (top-right of every page). */
+.github-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+.github-badge:hover,
+.github-badge:focus-visible {
+  border-color: var(--red);
+  background: var(--red);
+  color: var(--white);
+  outline: none;
+}
+.github-badge-mark {
+  display: block;
+  flex: 0 0 auto;
+}
+@media (max-width: 720px) {
+  .github-badge {
+    padding: 0.4rem;
+    font-size: 0;
+    gap: 0;
+  }
+  .github-badge .github-badge-mark {
+    width: 18px;
+    height: 18px;
+  }
+}
