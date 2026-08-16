@@ -4,7 +4,7 @@
 
 Dies ist ein deutscher Leseweg, keine vollständige Übersetzung des Buchs. Der
 kanonische Katalog enthält 22 Kapitel im Status `candidate` und 18 Labs im
-Status `draft`. Derzeit stehen einundzwanzig Kapitel und elf Labs auf Deutsch bereit.
+Status `draft`. Derzeit stehen zweiundzwanzig Kapitel und elf Labs auf Deutsch bereit.
 Jeder Link auf dieser Seite führt zum entsprechenden deutschen Inhalt. Fehlt
 eine `-DE`-Datei, wird sie als nicht verfügbar ausgewiesen, statt auf ein
 anderes Kapitel oder in eine andere Sprache zu verweisen.
@@ -56,7 +56,7 @@ Transfer.
 | 19 — Modelle und Workflows evaluieren | [Verfügbar: Kapitel 19](chapters/19-evaluate-models-and-workflows-DE.md) · `candidate / in-progress` |
 | 20 — Ein persönliches Codex-Arbeitssystem aufbauen | [Verfügbar: Kapitel 20](chapters/20-personal-codex-work-system-DE.md) · `candidate / in-progress` |
 | 21 — Ein Team-Fähigkeitssystem aufbauen | [Verfügbar: Kapitel 21](chapters/21-team-capability-system-DE.md) · `candidate / in-progress` |
-| 22 — Kontinuierliche Aktualisierung und Zukunftssicherheit | Deutsche Datei noch nicht vorhanden. |
+| 22 — Kontinuierliche Aktualisierung und Zukunftssicherheit | [Verfügbar: Kapitel 22](chapters/22-continuous-update-and-future-proofing-DE.md) · `candidate / in-progress` |
 
 ## Verfügbarkeit nach Lab
 

@@ -71,5 +71,5 @@ manifest에는 `id`, `version`, `owner`, `status`, 출처와 라이선스, 다�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-KO.md">← 이전<br><strong>20장 · Codex 개인 작업 시스템 만들기</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-KO.md">다음 장 준비 중 →<br><strong>22장 제공 상태 보기</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-KO.md">← 이전<br><strong>20장 · Codex 개인 작업 시스템 만들기</strong></a></td><td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing-KO.md">다음 →<br><strong>22장 · 지속적인 업데이트와 미래 대비</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->

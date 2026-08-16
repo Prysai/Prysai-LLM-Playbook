@@ -71,5 +71,5 @@ manifestには `id`、`version`、`owner`、`status`、出典とライセンス�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-JA.md">← 前の章<br><strong>第20章 · Codexで使う個人の作業システムを作る</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-JA.md">次の章は準備中 →<br><strong>第22章の提供状況を見る</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-JA.md">← 前の章<br><strong>第20章 · Codexで使う個人の作業システムを作る</strong></a></td><td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing-JA.md">次へ →<br><strong>第22章 · 継続的な更新と将来への備え</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->

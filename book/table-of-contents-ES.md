@@ -4,7 +4,7 @@
 
 Esta es una ruta de lectura en español, no una traducción completa del libro.
 El catálogo canónico tiene 22 capítulos `candidate` y 18 Labs `draft`; en este
-momento existen 21 capítulos y 11 Labs en español. Cada enlace de esta página
+momento existen 22 capítulos y 11 Labs en español. Cada enlace de esta página
 apunta al mismo contenido en español. Cuando no hay un archivo `-ES`, se indica
 como no disponible en vez de enlazar a otro capítulo o cambiar de idioma.
 
@@ -55,7 +55,7 @@ transferencia.
 | 19 — Evaluar modelos y flujos de trabajo | [Disponible: capítulo 19](chapters/19-evaluate-models-and-workflows-ES.md) · `candidate / in-progress` |
 | 20 — Construir un sistema personal de trabajo con Codex | [Disponible: capítulo 20](chapters/20-personal-codex-work-system-ES.md) · `candidate / in-progress` |
 | 21 — Construir un sistema de capacidades para el equipo | [Disponible: capítulo 21](chapters/21-team-capability-system-ES.md) · `candidate / in-progress` |
-| 22 — Actualización continua y preparación para el futuro | Aún no existe archivo español. |
+| 22 — Actualización continua y preparación para el futuro | [Disponible: capítulo 22](chapters/22-continuous-update-and-future-proofing-ES.md) · `candidate / in-progress` |
 
 ## Disponibilidad por Lab
 

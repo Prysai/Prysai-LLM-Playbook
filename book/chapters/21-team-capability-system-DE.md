@@ -71,5 +71,5 @@ Berechtigungen, Connectoren und Produktoberflächen sind veränderliche Fakten. 
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-DE.md">← Vorheriges<br><strong>Kapitel 20 · ein persönliches Codex-Arbeitssystem aufbauen</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-DE.md">Nächstes Kapitel in Arbeit →<br><strong>Verfügbarkeit von Kapitel 22 ansehen</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-DE.md">← Vorheriges<br><strong>Kapitel 20 · ein persönliches Codex-Arbeitssystem aufbauen</strong></a></td><td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing-DE.md">Weiter →<br><strong>Kapitel 22 · kontinuierliche Aktualisierung und Zukunftssicherheit</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->
