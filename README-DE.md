@@ -104,8 +104,10 @@ getrennte Angaben:
 | `not_run` | Für den betreffenden Lauf existiert kein Ausführungsprotokoll. Das ist kein Erfolgsbeleg. |
 
 Der Stand dieses deutschen Einstiegs ist `content_status: candidate` und
-`translation_status: in-progress`: Die Struktur und die statischen Inhalte
-sind angelegt, eine unabhängige deutsche Sprachprüfung steht aber noch aus.
+`translation_status: in-progress`: Für alle 22 Kapitel und 18 Labs liegen
+deutsche Kandidatendateien mit gleichsprachigen Wegen vor. Diese strukturelle
+Abdeckung ersetzt weder eine unabhängige deutsche Sprachprüfung noch eine
+kulturelle Anpassung oder Lernnachweise.
 `reader_runtime_status: not_run` bedeutet, dass für diese Übersetzung kein
 Browser-, Runtime- oder Leserakzeptanzprotokoll vorliegt. Im zugrunde liegenden
 Projekt sind 22 Kapitel `candidate`, 18 Labs `draft` mit

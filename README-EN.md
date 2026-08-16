@@ -46,15 +46,17 @@ quality, learner outcomes, or release readiness.
 | Locale | Readable course units | Current boundary |
 |---|---:|---|
 | English | 40 / 40 | Canonical source language. |
-| Simplified Chinese | 27 / 40 | Candidate coverage through Chapter 12, including fifteen Labs and a Chinese starter-card subset; independent language review pending. |
-| Spanish | 6 / 40 | Entry, a safe-practice route, and the first chapter/Lab pair; independent language review pending. |
-| Japanese | 5 / 40 | Entry, scattered translation slices, and the first safe-task Lab; independent language review pending. |
-| Korean | 5 / 40 | Entry, scattered translation slices, and the first safe-task Lab; independent language review pending. |
-| German | 5 / 40 | Entry, scattered translation slices, and the first safe-task Lab; independent language review pending. |
+| Simplified Chinese | 40 / 40 | Candidate translations exist for every chapter and Lab; independent language review pending. |
+| Spanish | 40 / 40 | Candidate translations exist for every chapter and Lab; independent language review pending. |
+| Japanese | 40 / 40 | Candidate translations exist for every chapter and Lab; independent language review pending. |
+| Korean | 40 / 40 | Candidate translations exist for every chapter and Lab; independent language review pending. |
+| German | 40 / 40 | Candidate translations exist for every chapter and Lab; independent language review pending. |
 
-Six locale choices therefore describe routing and migration support, **not** six
-complete courses. The reader exposes the same `available / 40` count in its
-language selector.
+Six locale choices now provide a complete **file and route path** for the 22
+chapters and 18 Labs. That structural coverage is not six independently
+reviewed, culturally adapted, or learner-validated courses. Supplemental
+reader material still has its own coverage and review status; the reader
+exposes the same `available / 40` course-unit count in its language selector.
 
 > **Project status:** `candidate` · **Default locale:** English · **Scope:**
 > book, labs, Skills, research, evaluation, and team practice
@@ -503,7 +505,7 @@ repository; they do not describe learning outcomes.
 | Skills | 23 project Skills · `candidate` | Structural checks pass; fresh-context evidence is partial and remains visible in the registry |
 | Evaluation fixtures | 40 fixtures · `candidate` · `not_run` | The task set is defined; model execution logs are not being implied |
 | Public showcase | `candidate` | English default and Chinese runtime toggle are implemented; broader visual and locale coverage remains work |
-| Locale rollout | EN source plus five translation entries in progress | Six entry locales are registered; the whole book is not yet six-language complete |
+| Locale rollout | EN source plus five candidate translations in progress | Every locale has 40 / 40 chapter-and-Lab files and same-locale routes; independent language review and supplemental-material coverage remain incomplete |
 
 The [current status source](docs/governance/content-status.yaml) is authoritative
 for evidence-backed maturity. The [current-state review](docs/quality/current-state-review-2026-08-09.md)

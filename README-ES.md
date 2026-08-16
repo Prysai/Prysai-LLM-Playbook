@@ -93,9 +93,10 @@ La fuente canónica en inglés contiene 22 capítulos `candidate`, 18 Labs
 `draft`, 23 Skills propias `candidate` y 40 fixtures de evaluación
 `candidate`. Las comprobaciones estructurales existen, pero no sustituyen
 resultados de aprendizaje, transferencia, evaluación repetida ni revisión
-independiente. Esta entrada y las unidades españolas disponibles siguen en
-`in-progress`; no constituyen un curso completo en español ni una revisión
-lingüística independiente. Los materiales externos no entran en la ruta
+independiente. Los 22 capítulos y 18 Labs españoles tienen archivos candidatos
+y rutas en el mismo idioma, pero siguen `in-progress`: esa cobertura estructural
+no constituye una revisión lingüística independiente, adaptación cultural ni
+evidencia de aprendizaje. Los materiales externos no entran en la ruta
 principal sin revisar antes su fuente, licencia y contenido.
 
 Los identificadores de estado `candidate`, `draft` y `not_run` se mantienen
