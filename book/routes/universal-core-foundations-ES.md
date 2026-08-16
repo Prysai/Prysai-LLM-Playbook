@@ -66,7 +66,7 @@ Las instrucciones de un producto con nombre pertenecen a un adaptador de platafo
 
 ## Practica una unión antes de elegir plataforma
 
-El [fixture compartido de uniones universales (evidencia compartida, original en inglés)](../../examples/universal-seam-v1/README.md) contiene cuatro registros ficticios sobre una solicitud reciente que no coincide, un destino equivocado, un recibo de herramienta ausente y un valor estructurado cambiado. En cada uno, indica qué no demuestra el texto visible, elige la comprobación segura más pequeña y detente antes de que un comportamiento real requiera un adaptador. Es material de evidencia compartido y señalado como tal, no una página de curso traducida de forma implícita.
+El [ejercicio de uniones universales](../../examples/universal-seam-v1/README-ES.md) contiene cuatro registros ficticios sobre una solicitud reciente que no coincide, un destino equivocado, un recibo de herramienta ausente y un valor estructurado cambiado. En cada uno, indica qué no demuestra el texto visible, elige la comprobación segura más pequeña y detente antes de que un comportamiento real requiera un adaptador. La explicación se mantiene en español; los datos fijos siguen siendo material ficticio y compartido.
 
 ![Cuatro enlaces de evidencia: identidad de tarea, identidad de destino, recibo de ejecución y recorrido de ida y vuelta estructurado; cada uno termina en una comprobación o una parada.](../../assets/teaching/universal-seams-red-black.svg)
 

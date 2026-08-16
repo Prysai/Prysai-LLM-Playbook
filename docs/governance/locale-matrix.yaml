@@ -16,6 +16,7 @@
   "locale_neutral_paths": [
     "AGENTS.md",
     "CONTEXT.md",
+    "examples/",
     "docs/",
     "evals/",
     "scripts/",

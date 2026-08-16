@@ -62,7 +62,7 @@ belong in application routes.
 
 ## Practise one seam before choosing a platform
 
-Open the [Universal Seam Fixture](../../examples/universal-seam-v1/README.md):
+Open the [Universal Seam Fixture](../../examples/universal-seam-v1/README-EN.md):
 four fictional records covering a latest-request mismatch, wrong target,
 missing tool receipt, and changed structured value. For each, name what the
 visible text fails to prove, choose the smallest safe check, and stop before a

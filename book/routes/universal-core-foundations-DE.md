@@ -66,7 +66,7 @@ Anweisungen für namentlich genannte Produkte gehören in einen Plattformadapter
 
 ## Übe eine Nahtstelle, bevor du eine Plattform auswählst
 
-Das [Universal Seam Fixture (gemeinsames Evidenzmaterial, englisches Original)](../../examples/universal-seam-v1/README.md) enthält vier fiktive Einträge: eine nicht passende letzte Anfrage, ein falsches Ziel, einen fehlenden Werkzeugbeleg und einen veränderten strukturierten Wert. Benenne für jeden Eintrag, was der sichtbare Text nicht belegt, wähle die kleinste sichere Prüfung und stoppe, bevor für ein reales Verhalten ein Adapter nötig wird. Es ist ausdrücklich gekennzeichnetes gemeinsames Evidenzmaterial und keine stillschweigend übersetzte Kursseite.
+Das [Universal-Seam-Übungsset](../../examples/universal-seam-v1/README-DE.md) enthält vier fiktive Einträge: eine nicht passende letzte Anfrage, ein falsches Ziel, einen fehlenden Werkzeugbeleg und einen veränderten strukturierten Wert. Benenne für jeden Eintrag, was der sichtbare Text nicht belegt, wähle die kleinste sichere Prüfung und stoppe, bevor für ein reales Verhalten ein Adapter nötig wird. Die Erläuterung bleibt auf Deutsch; die festen Daten sind weiterhin fiktives, gemeinsames Lernmaterial.
 
 ![Vier Nachweis-Nahtstellen: Aufgabenidentität, Zielidentität, Ausführungsbeleg und strukturierter Hin- und Rückweg; jede endet an einem Prüf- oder Stoppunkt.](../../assets/teaching/universal-seams-red-black.svg)
 
