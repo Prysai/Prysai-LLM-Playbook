@@ -31,7 +31,7 @@ oder dass bereits jemand die Methode gelernt hat.
 ## Aktueller Stand
 
 Der Katalog enthält 18 feste Kennungen. Alle sind `draft`; der Lernenden-Status ist
-`not_run`. In dieser deutschen Route sind fünfzehn Labs lokal verfügbar: 001–015.
+`not_run`. In dieser deutschen Route sind sechzehn Labs lokal verfügbar: 001–016.
 Die übrigen werden von dieser Seite nicht auf Englisch verlinkt, bis ihre eigene
 deutsche Datei und ihr Übersetzungsstatus vorliegen.
 
@@ -54,7 +54,7 @@ deutsche Datei und ihr Übersetzungsstatus vorliegen.
 | 013 | Prüffähiger vertikaler Schnitt | L3 | [Lab 013 öffnen](lab-013-l3-vertical-slice-DE.md) |
 | 014 | Abgleich beim Fortsetzen | L3 | [Lab 014 öffnen](lab-014-resume-reconciliation-DE.md) |
 | 015 | Übergabe mit Evidenz | L5 | [Lab 015 öffnen](lab-015-evidence-delivery-DE.md) |
-| 016 | Grenze von Nebenwirkungen | L3 | Noch nicht auf Deutsch verfügbar |
+| 016 | Grenze von Nebenwirkungen | L3 | [Lab 016 öffnen](lab-016-side-effect-boundary-DE.md) |
 | 017 | Audit der Skill-Erkennung | L4 | Noch nicht auf Deutsch verfügbar |
 | 018 | Sprachtransfer mit festem Übungsvertrag | L2 | Noch nicht auf Deutsch verfügbar |
 

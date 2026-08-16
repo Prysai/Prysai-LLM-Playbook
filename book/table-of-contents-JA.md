@@ -75,7 +75,7 @@
 | 013 — 完全な垂直スライスを実行する | [利用可能: Lab 013](labs/lab-013-l3-vertical-slice-JA.md) · `draft / in-progress` |
 | 014 — 再開したタスクを続ける前に照合する | [利用可能: Lab 014](labs/lab-014-resume-reconciliation-JA.md) · `draft / in-progress` |
 | 015 — 完了の言葉ではなく証拠を渡す | [利用可能: Lab 015](labs/lab-015-evidence-delivery-JA.md) · `draft / in-progress` |
-| 016 — 外部への影響が始まる境界で止まる | 日本語ファイルはまだありません。 |
+| 016 — 外部への影響が始まる境界で止まる | [利用可能: Lab 016](labs/lab-016-side-effect-boundary-JA.md) · `draft / in-progress` |
 | 017 — Skill を採用する前に発見経路を監査する | 日本語ファイルはまだありません。 |
 | 018 — 定めた練習契約で言語間の転移を試す | 日本語ファイルはまだありません。 |
 

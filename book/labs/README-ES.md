@@ -32,7 +32,7 @@ cada superficie de Codex, ni que una persona ya haya aprendido el método.
 
 El catálogo tiene 18 identidades estables. Todas siguen en `draft` y el estado de
 ejecución de aprendices es `not_run`. Esta ruta española ya ofrece doce Labs locales:
-001–015. Los que aún faltan no se enlazan en inglés desde esta página; aparecerán
+001–016. Los que aún faltan no se enlazan en inglés desde esta página; aparecerán
 cuando exista su propio archivo español y su estado de traducción se haya registrado.
 
 ## Mapa de Labs en español
@@ -54,7 +54,7 @@ cuando exista su propio archivo español y su estado de traducción se haya regi
 | 013 | Corte vertical auditable | L3 | [Abrir Lab 013](lab-013-l3-vertical-slice-ES.md) |
 | 014 | Reconciliación al reanudar | L3 | [Abrir Lab 014](lab-014-resume-reconciliation-ES.md) |
 | 015 | Entrega con evidencia | L5 | [Abrir Lab 015](lab-015-evidence-delivery-ES.md) |
-| 016 | Límite de efectos secundarios | L3 | Aún no disponible en español |
+| 016 | Límite de efectos secundarios | L3 | [Abrir Lab 016](lab-016-side-effect-boundary-ES.md) |
 | 017 | Auditoría del descubrimiento de Skills | L4 | Aún no disponible en español |
 | 018 | Transferencia de idioma con práctica fija | L2 | Aún no disponible en español |
 

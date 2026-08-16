@@ -76,7 +76,7 @@ transferencia.
 | 013 — Ejecutar un corte vertical completo | [Disponible: Lab 013](labs/lab-013-l3-vertical-slice-ES.md) · `draft / in-progress` |
 | 014 — Conciliar una tarea reanudada antes de continuar | [Disponible: Lab 014](labs/lab-014-resume-reconciliation-ES.md) · `draft / in-progress` |
 | 015 — Entregar evidencia, no una frase de finalización | [Disponible: Lab 015](labs/lab-015-evidence-delivery-ES.md) · `draft / in-progress` |
-| 016 — Detenerse en el límite de efectos externos | Aún no existe archivo español. |
+| 016 — Detenerse en el límite de efectos externos | [Disponible: Lab 016](labs/lab-016-side-effect-boundary-ES.md) · `draft / in-progress` |
 | 017 — Auditar el descubrimiento antes de adoptar un Skill | Aún no existe archivo español. |
 | 018 — Probar una práctica escrita de viaje para retención y transferencia | Aún no existe archivo español. |
 
