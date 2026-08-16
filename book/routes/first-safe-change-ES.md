@@ -39,7 +39,7 @@ personales.
 ## Decisión
 
 Cuando todavía no tengas un proyecto local descartable, usa el
-[fixture Primer cambio seguro](../../examples/lab-001-v1/README.md) que
+[fixture Primer cambio seguro](../../examples/lab-001-v1/README-ES.md) que
 incluye este proyecto. Copia toda la carpeta del fixture en `.work/` o en otra
 ubicación temporal para que su error inicial siga disponible para la siguiente
 persona. No edites el fixture original del repositorio.

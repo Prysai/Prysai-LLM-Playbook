@@ -39,7 +39,7 @@ Daten zu benötigen.
 ## Entscheidung
 
 Wenn du noch kein wegwerfbares lokales Projekt hast, verwende das
-projektinterne [Fixture „Erste sichere Änderung“](../../examples/lab-001-v1/README.md).
+projektinterne [Fixture „Erste sichere Änderung“](../../examples/lab-001-v1/README-DE.md).
 Kopiere den gesamten Fixture-Ordner nach `.work/` oder an einen anderen
 temporären Ort. Bearbeite nicht das Original im Repository, sonst bleibt der
 vorbereitete Fehler für die nächste Person nicht erhalten.

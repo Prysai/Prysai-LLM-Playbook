@@ -32,7 +32,7 @@ network access, installation, Git, commit, push, publication, or personal data.
 
 ## Decision
 
-Use the project-owned [First Safe Change fixture](../../examples/lab-001-v1/README.md)
+Use the project-owned [First Safe Change fixture](../../examples/lab-001-v1/README-EN.md)
 when you do not already have a disposable local project. Copy the entire
 fixture into `.work/` or another throwaway directory, so its seeded mistake
 remains available for the next reader.

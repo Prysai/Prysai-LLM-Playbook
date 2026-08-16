@@ -68,7 +68,10 @@ def check_reader_links(path: Path, locale: str, problems: list[str]) -> None:
         except ValueError:
             continue
         is_localized_fixture = (
-            target_relative.parts[:2] == ("examples", "universal-seam-v1")
+            target_relative.parts[:2] in {
+                ("examples", "universal-seam-v1"),
+                ("examples", "lab-001-v1"),
+            }
             and target_relative.suffix.lower() == ".md"
         )
         if not target_relative.parts or (target_relative.parts[0] != "book" and not is_localized_fixture):
