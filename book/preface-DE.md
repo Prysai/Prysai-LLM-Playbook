@@ -131,9 +131,9 @@ Anweisung.
 Dieses Vorwort und der deutsche Buchleitfaden sind deutsche Einstiegspunkte mit
 `content_status: candidate` und `translation_status: in-progress`. Die
 deutsche Sprachreview und die Leser-/Runtime-Prüfung haben
-`reader_runtime_status: not_run`. Der Hauptteil der Kapitel ist weiterhin
-überwiegend auf Simplified Chinese verfasst; ein deutscher Einstieg darf daher
-nicht als vollständig deutsche Buchausgabe verstanden werden.
+`reader_runtime_status: not_run`. Alle 22 Kapitel und 18 Labs haben inzwischen
+deutsche Lesepfade; das ist jedoch noch kein Nachweis für unabhängige
+Sprachreview oder Lernerfolg.
 
 Im Gesamtprojekt sind 22 Kapitel `candidate`, 18 Labs `draft` mit
 `run_status: not_run` und 40 Evaluations-Fixtures `candidate` mit

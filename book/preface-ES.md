@@ -102,7 +102,7 @@ mejorar y enseñar.
 ## Empieza por un problema real
 
 Si no quieres leer en orden, elige un capítulo desde el [índice del libro en
-español (migración ES en curso; fuente actual)](table-of-contents.md) y entra después
+español](table-of-contents-ES.md) y entra después
 en los casos de problemas reales, la especificación de fixtures de evaluación
 y el archivo de investigación que ese capítulo enumera. Los capítulos 19–22
 siguen en estado `draft` —el texto está escrito, pero espera la prueba previa—
@@ -111,6 +111,6 @@ y los recorridos de evaluación que aún no tienen registros permanecen en
 significan que el capítulo o la evaluación ya hayan sido verificados.
 
 Para volver a la guía del manuscrito en español, usa la [entrada del libro en
-español (migración ES en curso; fuente actual)](README.md). Los destinos locales que todavía no tienen una
-variante `-ES` llevan la marca «migración ES en curso» para distinguir
-honestamente la fuente compartida de una traducción disponible.
+español](README-ES.md). Los materiales compartidos que no son páginas de lectura
+—por ejemplo, fuentes, fixtures y registros de gobernanza— conservan su idioma
+original y se presentan como evidencia, no como una traducción silenciosa.
