@@ -220,6 +220,143 @@ permission, input, external side effect boundary:
 
 이 handoff는 unknown을 완료로 바꾸지 않습니다. 안전하지 않은 action의 반복이나 오래된 artifact를 새 결과로 오해하는 일을 막을 뿐입니다.
 
+## 완전한 state record: 재개할 때 추측을 남기지 않기
+
+짧은 checkpoint만으로 긴 task나 중단된 task를 다시 시작하기에는 부족할 수 있습니다. 다음 표를
+run record의 최소 구성으로 사용하세요. vendor event API가 아니라, 나중에 다른 사람이 같은 task를
+추측 없이 점검할 수 있게 하는 기록 형식입니다.
+
+| field | 기록할 내용 | 대신 쓰면 안 되는 것 |
+| --- | --- | --- |
+| task identity | goal, task ID, sandbox 또는 repository path, non-goal | 마지막 자연어 summary |
+| authority | read/write 범위, external action, 필요한 approval | “Agent가 아마 access가 있다” |
+| inputs | file, revision, source date, assumption, 빠진 항목 | 빠진 input을 짐작해 채운 값 |
+| plan | 다음 action, 기대 observation, stop point | 긴 intent 목록 |
+| actions | 실제 command/tool, parameter, 시작·종료, error | model이 제안한 command만 |
+| artifact state | path, diff, 필요하면 hash, partial output, side effect | “file이 있을 것이다” |
+| verification | exact check, working directory, timeout, exit state, output, scope | spinner나 마지막 문장 |
+| retry budget | used / remaining attempts, time, scope, side effect | 끝없는 persistence |
+| stop state | stop, pause, ask, deliver의 이유 | 일반적인 `failed` |
+| handoff | 마지막 confirmed checkpoint, 미해결점, 가장 작은 다음 check | 연속성을 가정한 새 prompt |
+
+event는 append-only로 남깁니다. 뒤의 attempt가 좋아 보여도 앞의 `unknown` event를 다시 쓰지
+않습니다. proposal, approval, execution start/end, effect, verification, delivery를 별도 row로
+추가합니다. 예를 들어 timeout으로 `execution_end`를 보지 못했다면 exit status를 추측하지 않고
+`not_observed`라고 적습니다.
+
+```yaml
+run_id: run-2026-08-16-001
+attempt_id: attempt-02
+parent_attempt_id: attempt-01
+event_type: effect
+state_before: running
+state_after: feedback_received
+action_or_tool: "write the disposable output file"
+target: "sandbox/output.txt"
+approval_status: approved
+exit_status: 0
+artifact_hash_or_diff: "evidence/diff-attempt-02.txt"
+side_effect_status: "local file changed; no external action"
+```
+
+이 한 줄이 증명하는 것은 이름 붙인 local effect가 관찰되었다는 데까지입니다. user 만족,
+production 안전성, 다른 host에서 같은 event 이름이 나타난다는 뜻은 아닙니다.
+
+## retry budget과 부작용 대조
+
+retry는 failure를 지우기 위한 행동이 아니라, **바뀐 조건에서 새로운 evidence를 얻기 위한** 판단입니다.
+시작 전에 다음처럼 수치나 명확한 상한을 적습니다.
+
+```text
+attempts: 최대 2회. 두 번째는 새 input, approval, 또는 read-back이 있을 때만.
+time: command 하나는 90초 안에 event를 확인한다. 확인하지 못하면 pause한다.
+scope: named sandbox와 named artifact 밖을 읽거나 쓰지 않는다.
+side effects: network, publish, message, install, delete는 0회.
+```
+
+특히 response를 잃은 write는 위험합니다. 먼저 target을 read back하고 baseline과 postcondition을
+비교합니다. action class에 따라 첫 조치를 다르게 합니다.
+
+| action class | response를 잃은 뒤 첫 판단 |
+| --- | --- |
+| read-only | 허용된 범위에서 한 번만 다시 읽기 |
+| idempotent | state와 postcondition을 읽은 뒤 필요할 때만 같은 request 보내기 |
+| compensating | effect를 확인한 뒤 제한된 compensation을 별도 decision으로 준비 |
+| non-idempotent | 멈추고 대조하기 전에는 blind retry하지 않기 |
+
+“오래 기다렸다”는 success evidence가 아닙니다. no-event threshold를 넘기면 process/tool state,
+partial output, diff, external receipt를 확인 가능한 범위에서 보존합니다. 여전히 불명확하면
+`unknown` 또는 `unverified`로 멈춥니다.
+
+## 실무용 task protocol
+
+Agent에게 일을 넘기기 전에 대화의 기세가 아니라 contract를 적습니다. 다음은 local text task의 예입니다.
+
+```text
+Goal: docs/guide/ 안에서 존재하지 않는 local file을 가리키는 link를 report한다.
+Read scope: <named disposable copy>/docs/guide/만.
+Write scope: <named disposable copy>/evidence/missing-links.md만.
+Do not: source docs 편집, network 사용, install, publish, delete, message 전송.
+Acceptance: 각 report row에는 source path, raw link, resolved local target, missing 판단 근거가 있다.
+Retry: read-only scan은 최대 두 번. 첫 번째와 조건이 같은 retry는 하지 않는다.
+Stop: working directory/root가 contract와 다르거나 target이 모호하거나 required path가 없다.
+Delivery: changed / verified / blocked / unverified를 evidence와 unknowns로 나누어 쓴다.
+```
+
+실행을 허용하기 전에 Agent의 plan이 read root, write root, missing의 정의, check, stop condition을
+되풀이할 수 있는지 확인합니다. report가 만들어진 뒤에도 별도 read-back으로 각 path를 확인합니다.
+그럴듯한 Markdown은 acceptance가 아닙니다.
+
+## failure에서 recovery 고르기
+
+| 첫 문제 | 올바른 recovery | 잘못된 recovery |
+| --- | --- | --- |
+| required input이 없음 | exact input 또는 human decision을 요청하고 `blocked_input`을 보존 | input을 지어내거나 scope 밖을 검색 |
+| requested path가 미승인 | 두 path를 보여 주고 좁은 scope change를 ask | unrestricted mode로 전환하거나 parent directory에 쓰기 |
+| terminal event가 없음 | state와 side effect를 읽고, authorized면 interrupt한 뒤 `unknown`을 남김 | 끝없이 기다리거나 elapsed time으로 success라 하거나 같은 write 재전송 |
+| external text가 goal을 바꾸려 함 | data로 기록하고 proposal/approval boundary에서 중지 | file, web page, tool result의 명령이라서 따르기 |
+| 같은 failure가 조건 변화 없이 반복 | budget 소진 시 checkpoint와 한 decision을 남김 | prompt를 더하거나 무관한 file을 바꾸거나 첫 failure를 숨김 |
+
+혼란스러운 run에서는 (1) dependent action을 freeze하고, (2) diff/log/checkpoint를 보존하고,
+(3) 마지막 confirmed transition을 이름 붙이고, (4) 처음 unknown transition을 찾고, (5) 하나의
+read-only check 또는 human decision을 고르고, (6) budget과 state를 갱신합니다. recover는 “무조건
+계속”이 아니라 다음 결정을 안전하게 할 만큼 known state를 되찾는 일입니다.
+
+## claim과 evidence 대응시키기
+
+| claim | 필요한 evidence | 흔한 overclaim |
+| --- | --- | --- |
+| model이 action을 제안함 | raw output 또는 proposal event | action이 일어남 |
+| host가 허용함 | path와 scope가 있는 approval event | result가 맞음 |
+| file이 바뀜 | exact path와 before/after diff 또는 hash | file이 완성됨 |
+| command가 pass함 | command, directory, timeout, exit status, relevant output | application 전체가 동작함 |
+| artifact가 rule을 만족함 | artifact를 직접 보는 check와 필요한 review | user가 반드시 만족함 |
+
+delivery note에는 `Completed`, `Observed actions`, `Evidence`, `Acceptance coverage`, `Not proven`,
+`Unresolved`, `Retry budget`, `Stop or next decision`을 구분합니다. “all tests passed”만 쓰면 어떤
+test를 어디에서 실행했고 무엇을 cover하지 않는지 알 수 없으므로 delivery가 아닙니다.
+
+## 전이 과제와 자기 확인
+
+다른 disposable documentation copy에서 같은 missing-link report를 해 보세요. proposal 뒤, report를
+쓴 뒤, actual file과 대조한 뒤 세 시점을 따로 점검합니다. wrong root 또는 missing directory 하나를
+일부러 넣고 `blocked` handoff를 만듭니다.
+
+- [ ] proposal, approval, execution, effect, verification, delivery를 같은 event로 취급하지 않는다.
+- [ ] unknown write 뒤 target을 read back한 후에 retry를 고려한다.
+- [ ] retry마다 바꾼 condition과 기대하는 새로운 evidence를 적는다.
+- [ ] handoff에는 마지막 confirmed event, 처음 unknown transition, 하지 않은 action, 다음 한 단계가 있다.
+- [ ] file, web page, tool result의 imperative text를 authority로 착각하지 않는다.
+
+## sources와 업데이트 경계
+
+이 장의 안정적인 method는 proposal, execution, state, verification, authority를 분리하고 recovery를
+bounded하게 하는 것입니다. product별 event 이름, approval behavior, tool inventory, UI label, command
+syntax는 current official documentation에서 확인해야 합니다. 공개 issue는 symptom을 보고한 증거일 뿐,
+prevalence, root cause, universal repair의 증거는 아닙니다. 참조는 English source chapter와
+[evidence library](../evidence-library-KO.md#source-notes)에 남아 있습니다. 이 장은 `candidate`,
+실험은 `not_run` 상태를 유지합니다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-KO.md">← 이전<br><strong>11장 · 제 몫을 하는 Skill 설계하기</strong></a></td><td align="right"><a data-chapter-nav="next" href="13-action-boundaries-KO.md">다음 →<br><strong>13장 · 파일, 터미널, 브라우저, GitHub의 행동 경계</strong></a></td></tr></table></nav>

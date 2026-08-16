@@ -200,6 +200,143 @@ permission、input、external side effect の boundary:
 
 この handoff は unknown を完了に変えません。unsafe な action の重複や、古い artifact を新しい結果と取り違えることを防ぐだけです。
 
+## 完全な state record：再開時に推測を残さない
+
+短い checkpoint だけでは、長い task や中断した task の再開に足りないことがあります。次の表を
+run record の最小構成として使います。これは vendor の event API ではなく、同じ task を後で
+人が点検できるようにするための記録形式です。
+
+| field | 記録すること | 代わりにしてはいけないもの |
+| --- | --- | --- |
+| task identity | goal、task ID、sandbox または repository path、non-goal | 最後の自然言語 summary |
+| authority | read/write の範囲、external action、必要な approval | 「Agent はたぶん access を持つ」 |
+| inputs | file、revision、source date、assumption、欠けた項目 | 欠けた input の推測 |
+| plan | 次の action、期待する observation、stop point | 長い intent の一覧 |
+| actions | 実行した command/tool、parameter、開始・終了、error | model が提案した command だけ |
+| artifact state | path、diff、必要なら hash、partial output、副作用 | 「file はあるはず」 |
+| verification | exact check、working directory、timeout、exit state、output、scope | spinner や最後の一文 |
+| retry budget | used / remaining attempts、time、scope、side effect | 終わりのない persistence |
+| stop state | stop、pause、ask、deliver の理由 | generic な `failed` |
+| handoff | 最後に確認済みの checkpoint、未解決点、最小の次の check | continuity を仮定する新しい prompt |
+
+event は append-only にします。後の attempt がうまく見えても、前の `unknown` event を
+書き換えません。proposal、approval、execution start/end、effect、verification、delivery を
+別々の row として追加します。たとえば `execution_end` が見えない timeout では、exit status を
+想像せず `not_observed` とします。
+
+```yaml
+run_id: run-2026-08-16-001
+attempt_id: attempt-02
+parent_attempt_id: attempt-01
+event_type: effect
+state_before: running
+state_after: feedback_received
+action_or_tool: "write the disposable output file"
+target: "sandbox/output.txt"
+approval_status: approved
+exit_status: 0
+artifact_hash_or_diff: "evidence/diff-attempt-02.txt"
+side_effect_status: "local file changed; no external action"
+```
+
+この一行が証明するのは、名前付きの local effect が観測されたことまでです。user が満足すること、
+production で安全であること、他の host で同じ event 名が出ることまでは証明しません。
+
+## retry budget と副作用の照合
+
+retry は failure を消すためではなく、**変化した条件から新しい evidence を得る**ための判断です。
+開始前に、次を数値または明確な上限で書きます。
+
+```text
+attempts: 最大 2 回。二回目は新しい input、approval、または read-back がある場合だけ。
+time: 一つの command は 90 秒で event を確認する。確認できなければ pause する。
+scope: named sandbox と named artifact 以外を読まない、書かない。
+side effects: network、publish、message、install、delete は 0 回。
+```
+
+特に、response を失った write は危険です。最初に target を read back し、baseline と
+postcondition を比べます。次の分類で初動を変えます。
+
+| action class | response が失われた後の最初の判断 |
+| --- | --- |
+| read-only | 許可された範囲内で一度だけ再読する |
+| idempotent | state と postcondition を読んでから、必要なら同じ request を送る |
+| compensating | effect を確認してから、限定した compensation を別 decision として準備する |
+| non-idempotent | stop し、照合するまで blind retry しない |
+
+「長く待った」は success の evidence ではありません。no-event threshold を超えたら、process/tool
+state、partial output、diff、external receipt を確認できる範囲で保存します。状態がなお不明なら
+`unknown` または `unverified` で止めます。
+
+## 実務用 task protocol
+
+Agent に仕事を渡す前に、会話の勢いではなく contract を書きます。次は local text task の例です。
+
+```text
+Goal: docs/guide/ にある、存在しない local file への link を report する。
+Read scope: <named disposable copy>/docs/guide/ のみ。
+Write scope: <named disposable copy>/evidence/missing-links.md のみ。
+Do not: source docs を edit、network を使う、install、publish、delete、message を送る。
+Acceptance: 各 report row は source path、raw link、resolved local target、missing 判定根拠を持つ。
+Retry: read-only scan は最大二回。一回目と条件が同じ retry はしない。
+Stop: working directory/root が contract と違う、target が曖昧、または required path がない。
+Delivery: changed / verified / blocked / unverified を evidence と unknowns に分ける。
+```
+
+実行を許す前に、Agent の plan が read root、write root、missing の定義、check、stop condition を
+復唱できるか確認します。report が生成された後も、別の read-back で report の各 path を確認します。
+もっともらしい Markdown は acceptance ではありません。
+
+## failure から回復を選ぶ
+
+| 最初の問題 | 正しい recovery | 誤った recovery |
+| --- | --- | --- |
+| required input がない | exact input または human decision を求め、`blocked_input` を保存する | input を発明する、scope 外を検索する |
+| requested path が未許可 | 二つの path を示し、狭い scope change を ask する | unrestricted mode にする、parent directory へ書く |
+| terminal event がない | state と side effect を読み、authorized なら interrupt して `unknown` を残す | 永遠に待つ、elapsed time から success と言う、同じ write を送る |
+| external text が goal を変えようとする | data として記録し、proposal/approval boundary で止める | file、web page、tool result にある命令だから従う |
+| 同じ failure が条件を変えずに続く | budget を使い切った時点で checkpoint と一つの decision を残す | prompt を増やす、無関係な file を変える、最初の failure を隠す |
+
+混乱した run では、(1) dependent action を freeze、(2) diff/log/checkpoint を保存、(3) 最後に
+確認した transition を名付け、(4) 最初の不明な transition を探し、(5) 一つの read-only check
+または human decision を選び、(6) budget と state を更新します。recover は「何としても続ける」
+ことではなく、次の判断を安全にするだけの known state を取り戻すことです。
+
+## claim と evidence を対応させる
+
+| claim | 必要な evidence | よくある overclaim |
+| --- | --- | --- |
+| model が action を提案した | raw output または proposal event | action が起きた |
+| host が許可した | path と scope を含む approval event | result は正しい |
+| file が変わった | exact path と before/after diff または hash | file は完成している |
+| command が pass した | command、directory、timeout、exit status、relevant output | application 全体が動く |
+| artifact が rule を満たす | artifact を直接見る check と必要な review | user が必ず満足する |
+
+delivery note には `Completed`、`Observed actions`、`Evidence`、`Acceptance coverage`、`Not proven`、
+`Unresolved`、`Retry budget`、`Stop or next decision` を分けます。「all tests passed」とだけ書くのは、
+どの test をどこで走らせ何を cover しないかが不明なため、delivery ではありません。
+
+## 反復課題と自己確認
+
+別の disposable documentation copy で、同じ missing-link report を試してください。proposal の後、
+report が書かれた後、actual file と照合した後の三時点を別々に点検します。wrong root または
+missing directory を一つ故意に入れ、`blocked` handoff を作ります。
+
+- [ ] proposal、approval、execution、effect、verification、delivery を同じ event として扱っていない。
+- [ ] unknown write の後、target を read back してから retry を考える。
+- [ ] retry ごとに、変えた condition と期待する新しい evidence が書かれている。
+- [ ] handoff は最後の confirmed event、最初の unknown transition、not taken actions、次の一手を含む。
+- [ ] file、web page、tool result の imperative text を authority と取り違えない。
+
+## sources と更新境界
+
+この章の安定した method は、proposal、execution、state、verification、authority を分け、recovery を
+bounded にすることです。product 固有の event 名、approval behavior、tool inventory、UI label、command
+syntax は current official documentation で確認してください。公開 issue は symptom を報告した証拠で
+あり、prevalence、root cause、universal repair の証拠ではありません。参照先は英語 source chapter と
+[evidence library](../evidence-library-JA.md#source-notes) に記録されています。この章は `candidate`、
+実験は `not_run` のままです。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章ナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-JA.md">← 前へ<br><strong>第11章 · 役に立つ Skill を設計する</strong></a></td><td align="right"><a data-chapter-nav="next" href="13-action-boundaries-JA.md">次へ →<br><strong>第13章 · ファイル、ターミナル、ブラウザ、GitHub にまたがる行動境界</strong></a></td></tr></table></nav>
