@@ -712,7 +712,7 @@
       "ko",
       "de"
     ],
-    "repository_locale_status": "release",
+    "repository_locale_status": "migration",
     "locale_matrix": "docs/governance/locale-matrix.yaml",
     "browser_review": "completed",
     "owner": "site-maintainer",
@@ -741,7 +741,8 @@
       "scripts/validate_site_i18n.py",
       "docs/adr/0015-locale-aware-site-routing.md",
       "docs/governance/locale-matrix.yaml",
-      "site/locale-manifest.js"
+      "site/locale-manifest.js",
+      "docs/quality/translation-depth-release-audit-2026-08-16.md"
     ]
   },
   "sources_and_licenses": {
