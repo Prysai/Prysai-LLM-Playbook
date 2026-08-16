@@ -161,6 +161,50 @@ Diese Beobachtung gilt nur für die dokumentierte Umgebung. Sie beweist nicht di
 - Auffindbarkeit mit Zuverlässigkeit verwechseln: Metadaten, Auswahl, Laden, Aktionen und Evidenz getrennt prüfen.
 - Unbekanntes verstecken: „Remote-Link nicht geprüft“ ist ein wichtiges Ergebnis des Berichts.
 
+## Geführte Übung: Einen wiederholbaren Check in einen Skill verwandeln
+
+Wähle eine kleine Aufgabe, die du mindestens zweimal gemacht hast: lokale Links
+in einer Markdown-Datei prüfen, Quelle und Datum in einem Bericht kontrollieren
+oder eine Übergabe mit Diff und Testbefehl vorbereiten. Wähle nicht „mach es
+besser“; diese Aussage enthält keine Entscheidung, die jemand anders wiederholen
+kann.
+
+Führe die Aufgabe zunächst einmal ohne Skill aus und bewahre nur Ziel,
+Eingabedatei, erlaubte Aktionen, Ergebnis, Evidenz und Stoppunkt auf. Markiere
+anschließend die Entscheidung, die auch bei einer anderen Aufgabe nötig wäre.
+Nicht Dateinamen oder eine schöne Antwort, sondern diese Entscheidung ist ein
+Kandidat für den Skill.
+
+```text
+wann: Eine benannte Markdown-Datei soll auf lokale Links geprüft werden
+nicht_wann: Textüberarbeitung, Weblinks, Veröffentlichung oder Massenreparatur
+benötigt: Datei, Linkbasis, Nur-Lesen-Umfang und Abnahme
+liefert: bestätigte, mögliche und unbekannte Links getrennt
+stoppt: Datei/Basis fehlt oder Netzwerk, Installation oder Schreiben nötig wird
+```
+
+Lass das Modell diesen Vertrag kritisieren, bevor ein `SKILL.md` entsteht:
+Welche Eingabe würde es erfinden? Welche ähnliche Anfrage muss einem anderen
+Verfahren weichen? Womit kann ein Review das Ergebnis prüfen? „Der Skill
+automatisiert alles“ ist keine ausreichende Antwort. Eine brauchbare Regel nennt
+Entscheidung, Grenze und ein prüfbares Signal.
+
+## Vier Fälle vor der Übernahme
+
+Bereite ein minimales Set ohne Zugangsdaten und Netzwerk vor:
+
+| Fall | Eingabe | Korrektes Ergebnis |
+|---|---|---|
+| Positiv | Datei und Basis sind klar | Bericht zu lokalen Links mit Lese-Evidenz |
+| Grenze | Bitte nur den Text zu glätten | Nicht auslösen; es ist kein Link-Review |
+| Fehler | Datei oder Basis fehlt | Frage oder `blocked`; keinen Pfad erraten |
+| Transfer | Anderer lokaler Bericht mit anderer Struktur | Methode behalten, Basis und Abnahme neu entscheiden |
+
+Bewahre Skill-Version, nicht sensible Eingabe, geladene Ressourcen, Ausgabe und
+ersten Stoppunkt auf. Dass eine Datei im Verzeichnis liegt, beweist weder
+Discovery noch Laden oder Ausführung im Host. Bis diese Aufzeichnungen vorliegen,
+bleiben Kapitel `candidate` und Experiment `not_run`.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-DE.md">← Vorheriges<br><strong>Kapitel 10 · Planung und vertikale Schnitte</strong></a></td><td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-DE.md">Nächstes →<br><strong>Kapitel 12 · Agent-Schleife, Zustand und Stoppbedingungen</strong></a></td></tr></table></nav>

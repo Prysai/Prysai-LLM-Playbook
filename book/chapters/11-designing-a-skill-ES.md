@@ -162,6 +162,49 @@ El resultado solo describe el entorno registrado. No demuestra descubrimiento, s
 - Confundir descubrimiento con fiabilidad: verifica por separado metadatos, selección, carga, acciones y evidencia.
 - Ocultar desconocidos: «no se revisó la red» también es un resultado útil.
 
+## Práctica guiada: convierte una comprobación repetible en un Skill
+
+Elige una tarea pequeña que hayas hecho al menos dos veces: revisar enlaces
+locales de un archivo Markdown, comprobar que un informe nombra fuente y fecha,
+o preparar una entrega con diff y comando de prueba. No elijas «hacerlo mejor»:
+no es una decisión que otra persona pueda repetir.
+
+Primero trabaja una vez sin Skill y guarda solo estos datos: objetivo, archivo
+de entrada, acciones permitidas, resultado, evidencia y punto de parada. Después
+subraya la parte que seguiría siendo necesaria en otra tarea. Esa parte, no los
+nombres de archivos ni una respuesta bonita, es la candidata a convertirse en
+Skill.
+
+```text
+cuándo usarlo: se nombró un archivo Markdown y se pide revisar enlaces locales
+no usarlo: reescritura, enlaces web, publicación o reparación masiva
+debe recibir: archivo, base de los enlaces, alcance de solo lectura y aceptación
+debe devolver: enlaces confirmados, candidatos y desconocidos por separado
+debe parar: falta el archivo o la base; se pide red, instalación o escritura
+```
+
+Pide al modelo que critique este contrato antes de escribir un `SKILL.md`: ¿qué
+entrada inventaría?, ¿qué solicitud cercana debe ceder a otro método?, ¿qué
+evidencia permitiría a un revisor comprobar el resultado? No aceptes «el Skill
+automatiza todo» como respuesta: una regla útil nombra una decisión, un límite y
+una señal revisable.
+
+## Cuatro casos antes de adoptar
+
+Prepara un conjunto mínimo, sin credenciales ni red:
+
+| Caso | Entrada | Resultado correcto |
+|---|---|---|
+| Positivo | Un archivo y base claros | Informe de enlaces locales y evidencia de lectura |
+| Límite | Una petición de pulir el texto | No se activa; explica que no es auditoría de enlaces |
+| Fallo | Falta el archivo o la base | Pregunta o `blocked`; no adivina la ruta |
+| Transferencia | Otro informe local con distinta estructura | Conserva el método, vuelve a decidir la base y aceptación |
+
+Conserva la versión del Skill, la entrada no sensible, los recursos cargados,
+la salida y el primer punto de detención. Que un archivo aparezca en una carpeta
+no prueba descubrimiento, carga ni ejecución en un host. Este capítulo sigue
+siendo `candidate` y el experimento `not_run` hasta que esos registros existan.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-ES.md">← Anterior<br><strong>Capítulo 10 · planificación y cortes verticales</strong></a></td><td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-ES.md">Siguiente →<br><strong>Capítulo 12 · el ciclo, el estado y las condiciones de parada del Agent</strong></a></td></tr></table></nav>

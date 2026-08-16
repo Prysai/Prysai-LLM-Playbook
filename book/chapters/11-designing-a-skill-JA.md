@@ -160,6 +160,44 @@ scope: local relative path only; remote availability not checked
 - discovery を reliability と混同する。metadata、selection、load、action、evidence を別々に確認する。
 - unknown を隠す。「remote link は未確認」は失敗ではなく report の重要な結果である。
 
+## ガイド付き練習：繰り返せる check を Skill にする
+
+少なくとも二回行った小さな task を選びます。たとえば Markdown file の local link review、
+report に source と date があるかの確認、diff と test command を含む handoff の準備です。
+「もっと良くする」は選びません。ほかの人が同じ decision を繰り返せないからです。
+
+まず Skill なしで一度行い、goal、input file、allowed action、result、evidence、stop point
+だけを残します。次の task でも必要な判断に下線を引きます。file name や見栄えのよい
+response ではなく、その判断が Skill にする候補です。
+
+```text
+いつ使うか: 指定 Markdown file の local link review を頼まれたとき
+使わない: rewrite、web link、publish、bulk repair
+必要な入力: file、link base、read-only scope、acceptance
+返すもの: confirmed、candidate、unknown を分けた report
+停止: file/base がない。network、install、write が必要になる
+```
+
+`SKILL.md` を書く前に、モデルへこの contract を批判させます。何を勝手に補うか、どの似た
+request を別の method に譲るか、reviewer は何で result を確認できるかを尋ねます。
+「すべてを自動化する」は受け取りません。役立つ rule には decision、boundary、reviewable
+signal が必要です。
+
+## 採用前の四つの case
+
+credential と network を使わない最小セットを用意します。
+
+| case | input | 正しい結果 |
+|---|---|---|
+| positive | file と base が明確 | local link report と read-back evidence |
+| boundary | text を整えるだけの依頼 | trigger せず、link review ではないと説明 |
+| failure | file または base がない | 質問または `blocked`。path を推測しない |
+| transfer | 構造の異なる別の local report | method は保ち、base と acceptance を再決定 |
+
+Skill version、非機密 input、load した resource、output、最初の stop point を保存します。
+directory に file があることは、host での discovery、loading、execution の証明ではありません。
+記録ができるまで、この章は `candidate`、experiment は `not_run` のままです。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-JA.md">← 前の章<br><strong>第 10 章 · 計画と垂直スライス</strong></a></td><td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-JA.md">次へ →<br><strong>第 12 章 · Agent のループ、状態、停止条件</strong></a></td></tr></table></nav>
