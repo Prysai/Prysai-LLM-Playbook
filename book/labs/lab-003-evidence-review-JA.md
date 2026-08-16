@@ -88,7 +88,7 @@ command output、test name、date、environment、exit code のない「全テ�
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-lab-nav="previous" href="lab-002-task-protocol-JA.md" aria-label="前の Lab：Lab 002 · 願いをタスク・プロトコルに変える">← 前の Lab<br><strong>Lab 002 · タスク・プロトコル</strong></a></td>
-      <td align="right"><a data-lab-nav="next" href="../table-of-contents-JA.md" aria-label="日本語目次へ戻る：Lab 004 はまだ翻訳されていません">次の Lab は準備中 →<br><strong>Lab 004 の提供状況を見る</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-004-skill-selection-JA.md" aria-label="次の Lab：Lab 004 · 最小限で有効な能力を選ぶ">次へ →<br><strong>Lab 004 · 最小限で有効な能力を選ぶ</strong></a></td>
     </tr>
   </table>
 </nav>
