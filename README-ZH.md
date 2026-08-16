@@ -12,7 +12,7 @@
 
 你不必先弄懂所有模型、Agent 或 Skill。先选一个不需要账号权限、文件操作或私人资料的小练习：
 
-- 想用 AI 协助练语言：做[西班牙语六步练习](book/spanish-practice-loop-ZH.md)。
+- 想用 AI 协助练语言：做[西班牙语六步练习](book/spanish-practice-loop-ZH.md)或[法语六步练习](book/french-practice-loop-ZH.md)。
 - 想把散乱事实写成一条可信的工作更新：做[工作更新六步练习](book/work-update-practice-loop-ZH.md)。
 - 想查资料却不想被漂亮结论带偏：做[研究核查六步练习](book/research-check-practice-loop-ZH.md)。
 
