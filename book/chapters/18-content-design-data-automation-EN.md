@@ -70,6 +70,25 @@ Human approval point and stop condition:
 
 Moving up a level requires a written reason, new permissions, new risks, new evidence, and a recovery plan. If the task does not need a higher level, do not enable it.
 
+## Your first ten minutes: turn a vague request into a checkable draft
+
+Do this before choosing a new tool or connecting an account. Use a fictional brief and a disposable local file. For example: “Write a one-page update about three invented event registrations.” The point is not to make the model sound impressive. The point is to see whether a small request can be made precise enough to check.
+
+1. Write five lines: **reader**, **final form**, **facts supplied**, **forbidden data/actions**, and **what would count as acceptable**.
+2. Give the model this bounded prompt, replacing the brackets:
+
+   ```text
+   Create a [final form] for [reader] using only these supplied facts: [facts].
+   Do not invent numbers, sources, names, or results. If information is missing, mark it as [missing] and ask one question.
+   Return a draft only; do not send, publish, log in, or call external services.
+   Acceptance checks: [three observable checks].
+   ```
+
+3. Open the draft as the reader would. Check each supplied fact, each `[missing]` marker, the heading order, and the stated acceptance checks.
+4. Save the brief, prompt, output, and a three-line note: **passed**, **failed**, and **unknown**. If the result needs real data, distribution, or a new permission, stop and write that as the next decision rather than silently expanding the task.
+
+One clean draft does not show that a prompt is universally better, that work became faster, or that a workflow is safe for production. It gives you a small, inspectable comparison point for the next revision.
+
 ## Concrete evidence table
 
 | Evidence item | Concrete artifact | What it supports | What it does not support |

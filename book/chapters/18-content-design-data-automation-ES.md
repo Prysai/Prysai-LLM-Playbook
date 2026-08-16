@@ -35,6 +35,25 @@ aprobación humana y condición de parada.
 
 «La API conectó» solo prueba conectividad; no prueba mapeo de campos, completitud, duplicados, alcance de permiso ni corrección posterior. Antes de escribir en producción usa cuenta de prueba, sandbox o simulación local; conserva hashes de entrada/salida e ID de lote cuando corresponda.
 
+## Tus primeros diez minutos: convertir una petición vaga en un borrador comprobable
+
+Haz esto antes de elegir otra herramienta o conectar una cuenta. Usa un encargo ficticio y un archivo local desechable; por ejemplo: «Redacta una actualización de una página sobre tres inscripciones inventadas a un evento». El objetivo no es que el modelo parezca brillante, sino comprobar si una petición pequeña puede quedar lo bastante clara como para revisarla.
+
+1. Escribe cinco líneas: **lector**, **forma final**, **hechos proporcionados**, **datos o acciones prohibidos** y **qué sería aceptable**.
+2. Sustituye los corchetes en este prompt:
+
+   ```text
+   Crea un/a [forma final] para [lector] usando solo estos hechos proporcionados: [hechos].
+   No inventes cifras, fuentes, nombres ni resultados. Si falta información, márcala como [falta] y haz una sola pregunta.
+   Devuelve solo un borrador; no envíes, publiques, inicies sesión ni llames a servicios externos.
+   Comprobaciones de aceptación: [tres comprobaciones observables].
+   ```
+
+3. Abre el borrador como lo haría el lector. Comprueba cada hecho, cada marca `[falta]`, la jerarquía de títulos y las comprobaciones declaradas.
+4. Guarda el encargo, el prompt, la salida y una nota de tres líneas: **aprobado**, **falló** y **desconocido**. Si el resultado exige datos reales, distribución o un permiso nuevo, detente y anótalo como la siguiente decisión; no amplíes la tarea en silencio.
+
+Un borrador limpio no demuestra que un prompt sea mejor en general, que el trabajo sea más rápido ni que el flujo sea seguro para producción. Solo deja un punto de comparación pequeño e inspeccionable para la siguiente revisión.
+
 Hay cuatro niveles: lectura local de bajo riesgo; trabajo de proyecto reversible; conexión externa controlada con aprobación y logs; y escritura de producción o release público con autorización explícita, revisión de privacidad/licencia, preview, rollback y verificación en línea. Subir de nivel requiere nueva razón, permiso, riesgo, evidencia y recuperación.
 
 ## Práctica y límite

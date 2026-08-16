@@ -35,6 +35,25 @@ timeout, retry, backoff, idempotency key; log, trace ID, error 분류;
 
 “API가 연결됨”은 연결성만 증명합니다. field mapping, 완전성, 중복, permission 범위, 하류 정확성을 증명하지 않습니다. 프로덕션 쓰기 전에는 test account, sandbox, 로컬 simulation을 사용하고 필요하면 input/output hash와 batch ID를 남깁니다.
 
+## 처음 10분: 모호한 요청을 확인 가능한 초안으로 바꾸기
+
+새 tool을 고르거나 account를 연결하기 전에 먼저 해 봅니다. 가상의 brief와 버려도 되는 local file을 씁니다. 예를 들면 “가상의 행사 신청 세 건을 한 페이지로 업데이트하기”입니다. model이 그럴듯해 보이게 하는 것이 아니라, 작은 요청을 실제로 확인할 만큼 분명하게 만들 수 있는지 보는 연습입니다.
+
+1. **reader**, **final form**, **제공한 사실**, **금지 data/action**, **합격 기준**을 다섯 줄로 씁니다.
+2. 아래 prompt의 대괄호를 자신의 과제로 바꿉니다.
+
+   ```text
+   [reader]를 위한 [final form]을 만드세요. 다음 제공 사실만 사용하세요: [facts].
+   숫자, source, 이름, 결과를 지어내지 마세요. 정보가 부족하면 [missing]으로 표시하고 질문은 하나만 하세요.
+   draft만 반환하세요. 전송, 게시, login, 외부 service 호출은 하지 마세요.
+   acceptance check: [관찰 가능한 확인 항목 세 가지].
+   ```
+
+3. reader처럼 draft를 열어 제공 사실, 각 `[missing]`, 제목 순서, 적어 둔 acceptance check를 확인합니다.
+4. brief, prompt, output과 **passed**, **failed**, **unknown** 세 줄 기록을 남깁니다. 실제 data, 배포, 새 permission이 필요하면 멈추고 다음 decision으로 적습니다. task를 조용히 넓히지 않습니다.
+
+깔끔한 draft 하나가 prompt가 언제나 더 낫다거나, 일이 더 빨라졌다거나, flow가 프로덕션에 안전하다는 뜻은 아닙니다. 다음 수정과 비교할 수 있는 작고 점검 가능한 evidence일 뿐입니다.
+
 단계는 저위험 로컬 읽기, 되돌릴 수 있는 project 작업, 승인과 log가 있는 통제 외부 연결, 명시적 권한·privacy/license review·preview·rollback·online verification을 가진 프로덕션 쓰기 또는 공개의 네 가지입니다. 상위로 갈 때마다 새 이유, permission, risk, evidence, 복구 계획이 필요합니다.
 
 ## 연습과 경계

@@ -35,6 +35,25 @@ menschlicher Freigabepunkt und Stoppsignal.
 
 „Die API war verbunden“ beweist nur Konnektivität. Es beweist kein Feldmapping, keine Vollständigkeit, kein Duplikatverhalten, keinen Berechtigungsumfang und keine nachgelagerte Richtigkeit. Vor Produktionsschreiben verwende Testkonto, Sandbox oder lokale Simulation und bewahre bei Bedarf Input-/Output-Hashes und Batch-ID auf.
 
+## Die ersten zehn Minuten: aus einer vagen Bitte einen prüfbaren Entwurf machen
+
+Mach dies, bevor du ein weiteres Tool auswählst oder ein Konto verbindest. Nutze einen erfundenen Auftrag und eine wegwerfbare lokale Datei, etwa: „Schreibe ein einseitiges Update über drei erfundene Event-Anmeldungen.“ Es geht nicht darum, dass das Modell beeindruckend klingt. Prüfe, ob sich eine kleine Bitte präzise genug formulieren lässt, um sie zu kontrollieren.
+
+1. Schreibe fünf Zeilen: **Leser**, **Endform**, **bereitgestellte Fakten**, **verbotene Daten oder Aktionen** und **was akzeptabel wäre**.
+2. Ersetze die Klammern in diesem Prompt:
+
+   ```text
+   Erstelle eine/n [Endform] für [Leser] nur mit diesen bereitgestellten Fakten: [Fakten].
+   Erfinde keine Zahlen, Quellen, Namen oder Ergebnisse. Fehlt Information, markiere sie als [fehlt] und stelle genau eine Frage.
+   Gib nur einen Entwurf zurück; nicht senden, veröffentlichen, anmelden oder externe Dienste aufrufen.
+   Abnahmeprüfungen: [drei beobachtbare Prüfungen].
+   ```
+
+3. Öffne den Entwurf wie der Leser ihn öffnen würde. Prüfe jeden Fakt, jede Marke `[fehlt]`, die Überschriftenhierarchie und die genannten Prüfungen.
+4. Bewahre Auftrag, Prompt, Ausgabe und eine dreizeilige Notiz auf: **bestanden**, **fehlgeschlagen**, **unbekannt**. Braucht das Ergebnis echte Daten, Verteilung oder neue Rechte, stoppe und schreibe dies als nächste Entscheidung auf; erweitere die Aufgabe nicht stillschweigend.
+
+Ein sauberer Entwurf zeigt weder, dass ein Prompt allgemein besser ist, noch, dass die Arbeit schneller wurde oder der Ablauf für Produktion sicher ist. Er liefert nur einen kleinen, prüfbaren Vergleichspunkt für die nächste Änderung.
+
 Es gibt vier Stufen: risikoarmes lokales Lesen; reversible Projektarbeit; kontrollierte externe Verbindung mit Freigabe und Logs; Produktionsschreiben oder öffentliche Veröffentlichung mit expliziter Autorisierung, Datenschutz-/Lizenzprüfung, Vorschau, Rollback und Online-Verifikation. Jede höhere Stufe braucht neuen Grund, neue Rechte, Risiken, Evidenz und Wiederherstellung.
 
 ## Übung und Grenze

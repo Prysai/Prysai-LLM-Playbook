@@ -35,6 +35,25 @@ timeout、retry、backoff、idempotency key; log、trace ID、error 分類;
 
 「API が接続した」は接続性だけを示します。field mapping、完全性、重複、permission 範囲、下流の正しさは示しません。本番書込みの前は test account、sandbox、ローカル simulation を使い、必要なら input/output hash と batch ID を残します。
 
+## 最初の10分：曖昧な依頼を確認できる draft にする
+
+新しい tool を選んだり account を接続したりする前に、まずここから始めます。架空の brief と捨てられる local file を使います。例は「架空のイベント申込3件について一ページの更新を書く」です。model を立派に見せることではなく、小さな依頼を確認可能な形まで具体化できるかを見る練習です。
+
+1. **reader**、**final form**、**提供済みの事実**、**禁止する data/action**、**合格条件**を5行で書きます。
+2. 次の prompt の角括弧を自分の課題に置き換えます。
+
+   ```text
+   [reader] 向けに [final form] を作成してください。使ってよいのは次の事実だけです: [facts]。
+   数字、source、名前、結果を作らないでください。情報が足りないときは [missing] と表示し、質問は一つだけにします。
+   draft だけを返してください。送信、公開、login、外部 service の呼び出しはしません。
+   acceptance check: [観察できる確認項目を3つ]。
+   ```
+
+3. reader として draft を開き、提供した事実、各 `[missing]`、見出しの順序、書いた acceptance check を確認します。
+4. brief、prompt、output と、**passed**、**failed**、**unknown** の3行メモを残します。実データ、配布、新しい permission が必要なら止まり、それを次の decision として書きます。黙って task を広げません。
+
+一つのきれいな draft は、prompt が常に優れていること、作業が速くなったこと、production で安全なことを示しません。次の修正と比べられる小さな evidence になるだけです。
+
 level は、低リスクのローカル読み取り、可逆な project work、承認と log を持つ制御済み外部接続、明示的許可・privacy/license review・preview・rollback・online verification を持つ本番書込み／公開の四つです。上位に移るには新しい理由、permission、risk、evidence、回復計画が必要です。
 
 ## 練習と境界
