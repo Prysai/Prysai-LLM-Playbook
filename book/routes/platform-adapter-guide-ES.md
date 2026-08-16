@@ -31,8 +31,8 @@ sobre una plataforma, hazte tres preguntas:
 
 Si no puedes responder a las tres, deja la afirmación como `unknown` y anota la
 siguiente comprobación. Consulta la
-[Platform Adapter Review Skill](../../skills/prysai-platform-adapter-review/SKILL.md)
-y [Platform Fact Watch](../../skills/prysai-platform-fact-watch/SKILL.md) para
+Platform Adapter Review Skill
+y Platform Fact Watch para
 conocer el método de mantenimiento que hay detrás de esta regla.
 
 ## El mapa de plataformas en una página
@@ -85,7 +85,7 @@ arriba. Después anota una diferencia de plataforma que puedas observar de
 verdad: ¿la respuesta menciona la navegación, la memoria o un enlace de uso
 compartido? Registra lo que viste, no lo que supongas. Para una comprobación
 respaldada por fuentes de una afirmación sobre ChatGPT, usa la
-[Source Investigator Skill](../../skills/prysai-source-investigator/SKILL.md)
+Source Investigator Skill
 con las páginas de ayuda oficiales de OpenAI como propietarias de los hechos
 del producto.
 
@@ -146,9 +146,9 @@ hábito de inspeccionar antes de editar te resulte cómodo.
 - Quieres una práctica inicial solo de texto: [Beginner Practice Pack](../communication-clinic-ES.md).
 - Quieres la ruta insignia en profundidad con archivos y herramientas: [First Safe Change](first-safe-change-ES.md).
 - Quieres primero la base neutral de plataforma: [Universal Core Foundations](universal-core-foundations-ES.md).
-- Quieres comparar dos plataformas de forma justa: [LLM Comparison Protocol](../../skills/prysai-llm-comparison-protocol/SKILL.md).
+- Quieres comparar dos plataformas de forma justa: LLM Comparison Protocol.
 - Quieres saber si una lección de plataforma pertenece al plan de estudios:
-  [Platform Adapter Review](../../skills/prysai-platform-adapter-review/SKILL.md).
+  Platform Adapter Review.
 
 ## Estado de la evidencia y límite
 
@@ -157,8 +157,8 @@ pero no hay ningún intento de aprendiz, ninguna ejecución entre plataformas ni
 ninguna revisión independiente registrada. Las descripciones por plataforma de
 arriba son orientación derivada de documentación de primera parte y recibos de
 investigación con fecha
-([cross-LLM beginner prompting source receipt](../../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md),
-[platform teaching boundary card](../../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md)).
+(cross-LLM beginner prompting source receipt,
+platform teaching boundary card).
 No son evidencia de que ninguna plataforma se comporte de forma idéntica, de
 que una tarea vaya a tener éxito en todas partes ni de que las funciones de los
 productos sean equivalentes. Los comandos, permisos, precios y disponibilidad
