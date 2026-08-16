@@ -26,8 +26,8 @@ Playbook 的主打练习路径是 Codex，但方法并不绑定某一家厂商�
 
 如果三个问题你都无法回答，就把该说法标为 `unknown`，并记下下一次核查
 的时间。关于这条规则背后的维护方法，请参阅
-[Platform Adapter Review Skill](../skills/prysai-platform-adapter-review/SKILL.md)
-和 [Platform Fact Watch](../skills/prysai-platform-fact-watch/SKILL.md)。
+[Platform Adapter Review Skill](../../skills/prysai-platform-adapter-review/SKILL.md)
+和 [Platform Fact Watch](../../skills/prysai-platform-fact-watch/SKILL.md)。
 
 ## 一页平台总览
 
@@ -73,7 +73,7 @@ Playbook 的主打练习路径是 Codex，但方法并不绑定某一家厂商�
 打开任意一个 ChatGPT 界面，运行上面的首个安全任务。然后记下一个你实际
 能观察到的平台差异：回复是否提到了联网搜索、记忆或分享链接？记录你看到
 的，而不是你假设的。要对 ChatGPT 的说法做有来源支撑的核查，请使用
-[Source Investigator Skill](../skills/prysai-source-investigator/SKILL.md)，
+[Source Investigator Skill](../../skills/prysai-source-investigator/SKILL.md)，
 以 OpenAI 官方帮助页面作为产品事实的权威来源。
 
 ## Claude Code 首个任务
@@ -121,17 +121,17 @@ Codex 是 Playbook 的主打路径，因为它把完整的循环摊开在你面�
 - 你想要纯文本的入门练习：[Beginner Practice Pack](../communication-clinic-ZH.md)。
 - 你想要涉及文件和工具的深度主打路径：[First Safe Change](first-safe-change-ZH.md)。
 - 你想先打好与平台无关的基础：[Universal Core Foundations](universal-core-foundations-ZH.md)。
-- 你想公平地比较两个平台：[LLM Comparison Protocol](../skills/prysai-llm-comparison-protocol/SKILL.md)。
+- 你想公平地比较两个平台：[LLM Comparison Protocol](../../skills/prysai-llm-comparison-protocol/SKILL.md)。
 - 你想知道某个平台课程是否应该纳入课程体系：
-  [Platform Adapter Review](../skills/prysai-platform-adapter-review/SKILL.md)。
+  [Platform Adapter Review](../../skills/prysai-platform-adapter-review/SKILL.md)。
 
 ## 证据状态与边界
 
 本路线为 `candidate / not_run`：结构与检查项已经就位，但还没有任何
 学习者运行、跨平台运行或独立评审的记录。上面各平台的描述，是根据官方
 文档和带日期的研究凭据整理出的定位参考
-（[cross-LLM beginner prompting source receipt](../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md)、
-[platform teaching boundary card](../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md)）。
+（[cross-LLM beginner prompting source receipt](../../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md)、
+[platform teaching boundary card](../../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md)）。
 它们不是任何平台行为一致、任务在所有平台都会成功、或产品功能彼此等价
 的证据。平台特有的命令、权限、价格和可用性都是易变事实：在依赖它们
 之前，请核对官方来源并记录访问日期。
