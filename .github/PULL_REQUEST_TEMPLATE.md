@@ -18,7 +18,7 @@
 - Route: [ ] Standard review [ ] Fast material review [ ] Restricted evidence intake / do not merge public data
 - Receipt or protocol path (or `not applicable`):
 - Requested reviewer role:
-- Commit sign-off: [ ] I have the right to submit this work under the current repository license and signed off my commits.
+- Commit sign-off: [ ] I have the right to submit this work under the repository licenses (CC BY 4.0 for content, Apache-2.0 for code) and signed off my commits.
 
 ## Translation details (complete only for a translation or language-review PR)
 
