@@ -318,6 +318,51 @@ sichtbar macht, die ein Prompt oft implizit lässt.
 
 ## Kleines Experiment: Aufgabe festhalten, eine Eingabe ändern
 
+## Erstes Gespräch: drei Prompts für sofort
+
+Du musst nicht zuerst schwierige Begriffe auswendig lernen. Wähle ein kleines Ziel ohne persönliche Daten und ohne externen Write und kopiere einen der folgenden Texte in den LLM, den du tatsächlich nutzt. Ersetze die eckigen Klammern. Es sind keine Zauberformeln: Sie machen Verständnis, Grenzen und den nächsten Schritt sichtbar. Ergebnisse können sich zwischen Modellen und Oberflächen unterscheiden.
+
+### 1. Eine Sprache oder kleine Fähigkeit lernen
+
+```text
+Ich lerne [Spanisch / eine Fähigkeit]. Das kann ich derzeit ehrlich: [aktueller Stand].
+Erstelle eine 10-Minuten-Übung für genau ein Ziel; setze keine anderen Kenntnisse voraus.
+Zeige zuerst ein Beispiel und lass mich dann antworten. Korrigiere nur ein oder zwei Punkte, die das Verständnis am stärksten beeinflussen.
+Schreibe zum Schluss drei Zeilen: Was gelang, was ich als Nächstes übe und was diese einzelne Sitzung nicht belegt.
+Stelle eine Unterhaltung nicht als Nachweis dar, dass ich die Fähigkeit beherrsche.
+```
+
+Das verspricht nicht, eine Sprache in sieben Tagen zu lernen. Eine Sitzung hinterlässt nur diese Antwort und dieses Feedback; Behalten, Transfer in eine neue Situation und echte Gesprächsfähigkeit prüfst du später getrennt. Bei nicht prüfbaren Fakten, zu großer Aufgabe oder einer Bitte um persönliche Daten: Aufgabe verkleinern, Quelle verlangen oder Gespräch stoppen.
+
+### 2. Öffentliche Quellen schnell ordnen
+
+```text
+Ich muss diese Frage beantworten: [Frage].
+Nutze nur die Quellen, die ich unten gebe; füge keine nicht gelieferten Fakten hinzu.
+Nenne zuerst Titel, Datum (falls vorhanden) und möglichen Beitrag jeder Quelle; schreibe danach eine kurze Zusammenfassung mit Quellenmarkierung.
+Trenne „Quelle sagt ausdrücklich“, „plausible Schlussfolgerung“ und „noch unbekannt“.
+Wenn Quellen widersprechen, veraltet sind oder eine Schlüsseltatsache fehlt, stoppe bei einer Fragenliste; rate nicht.
+```
+
+So wird aus „ich habe viel gefunden“ ein Ergebnis, das zur Quelle zurückverfolgt werden kann. Bei Recherche mit Netzwerk, kostenpflichtiger Datenbank oder echtem Konto prüfst du vorher Produktrechte, Quellenlizenz und Datenumfang. Eine sichtbare Antwort bedeutet nicht, dass die Recherche abgeschlossen ist.
+
+### 3. Einen unklaren Auftrag vor der Aktion klären
+
+```text
+Ich möchte [Ergebnis] für [Zielgruppe oder Datei] erreichen.
+Bekannte Eingabe: [Material]. Unbekannt: [Unklarheiten].
+Noch nichts ausführen, senden, veröffentlichen, installieren oder bearbeiten.
+Gib nur Ziel-Neufassung, fehlende Informationen, kleinsten reversiblen Schritt,
+Abnahmebeleg und Stoppbedingung aus.
+Wenn Secret, Netzwerk, Konto, externer Write oder größerer Umfang nötig ist, markiere blocked und nenne die nötige Bestätigung.
+```
+
+Prüfe auch bei einer gut klingenden Antwort, ob sie diese Felder wirklich beantwortet. Überspringt sie Unbekanntes, erklärt Vorschläge zu Ergebnissen oder erweitert unautorisierte Aktionen, ist das ein beobachtbarer Fehler. Lass nicht weiter raten.
+
+## Drei Schritte zum Zurücklesen
+
+Frage nach jedem Prompt eine Minute lang: **Was wurde gelesen? Was wurde tatsächlich getan? Was kann ich prüfen?** Bei einer reinen Chat-Aufgabe sind meist nur Eingabe und Ausgabe prüfbar. Bei Datei-, Browser- oder Code-Aufgaben brauchst du zusätzlich Ziel, Diff, Befehlsausgabe oder externes Read-back. So trennst du vom ersten Tag an „ich kann chatten“ von „ich kann zuverlässig liefern“.
+
 ### Vorbereitung
 
 Verwende eine wegwerfbare lokale Kopie, die nur eine README und eine kurze

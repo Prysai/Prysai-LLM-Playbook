@@ -142,6 +142,32 @@ Das Protokoll ist nützlich, weil jedes vage Verb in ein Objekt, eine
 Autoritätsgrenze und einen Beleg übersetzt wird. Es ist kein magischer Prompt
 und ersetzt nicht das menschliche Urteil.
 
+## Vom Chat-Prompt zur ersten sicheren Aufgabe
+
+Die Prompts aus dem vorigen Kapitel helfen beim Sprachenlernen, Ordnen von Quellen oder Klären einer Anfrage. Hier darf aus „Hilf mir“ nicht sofort „Erledige alles“ werden. Wähle ein Objekt, das sichtbar, rückgängig machbar und ohne Auswirkung auf andere ist. Für den ersten Versuch genügt diese Karte:
+
+```text
+Ziel: [einen eigenen nicht sensiblen Text / eine lokale README] verständlicher machen.
+Eingabe: nur [eingefügter Text / benannte Datei] verwenden; nicht gelieferte Fakten als unbekannt markieren.
+Erlaubte Aktion: zuerst lesen und vorschlagen; nach Bestätigung nur [eine benannte Datei] bearbeiten.
+Verboten: kein Netzwerk, Installieren, Sign-in, Senden, Commit, Veröffentlichen oder Lesen von Secrets.
+Abnahme: Vorher-/Nachher-Diff zeigen und erklären, wie jede Änderung dem Ziel dient.
+Stopp: Wenn weitere Dateien, Konto, Netzwerk, externer Write oder nicht prüfbare Fakten nötig sind, anhalten und fragen.
+```
+
+Für Spanisch oder eine andere Fähigkeit ersetzt du „benannte Datei“ durch fünf bis zehn eigene Sätze. Das Modell darf üben, Feedback und Änderungsvorschläge geben, aber keine Beherrschung erklären. Beim Ordnen von Material ersetzt du die Eingabe durch erlaubte Quellenauszüge; es darf nicht bereitgestellten Webinhalt oder Vermutungen nicht zu Fakten machen. Objekt und Abnahmebeleg ändern sich je nach Bereich, nicht die Reihenfolge: Umfang begrenzen, dann Ergebnis prüfen.
+
+### So fragst du in der ersten Runde
+
+Lass zuerst die Grenze wiederholen, nicht sofort bearbeiten:
+
+```text
+Wiederhole vor jeder Aktion Ziel, Eingabe zum Lesen, Aktionen, die du nicht ausführst,
+Abnahmebeleg und Stoppbedingung. Fehlt ein Feld, stelle nur die minimal nötigen Rückfragen.
+```
+
+Lies die Antwort und bestätige, dass der Umfang nicht gewachsen ist. Erlaube erst dann eine kleine Aktion. So unterscheidest du eine überzeugende Antwort von Plan, Vorschlag oder einem Ergebnis mit Evidenz.
+
 ## Drei Bestätigungspunkte
 
 ### Vor der ersten Aktion

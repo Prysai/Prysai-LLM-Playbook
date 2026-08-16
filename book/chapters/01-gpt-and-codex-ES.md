@@ -320,6 +320,51 @@ Antes de pedirle a Codex que actúe, escribe esta pequeña tarjeta de tarea:
 Esta tarjeta es más valiosa que un prompt largo porque hace visibles las
 decisiones que un prompt suele dejar implícitas.
 
+## Primera conversación: tres prompts que puedes usar ahora
+
+No necesitas memorizar términos difíciles primero. Elige un objetivo pequeño que no contenga datos personales ni implique escritura externa y pega uno de estos textos en el LLM que uses. Sustituye los corchetes por tu caso. No son frases mágicas: hacen visibles comprensión, límites y siguiente paso. Los resultados cambian entre modelos y superficies.
+
+### 1. Aprender un idioma o una habilidad pequeña
+
+```text
+Estoy aprendiendo [español / una habilidad] y ahora puedo hacer lo siguiente: [nivel real].
+Crea una práctica de 10 minutos para un solo objetivo; no supongas que ya domino lo demás.
+Primero muestra un ejemplo y luego déjame responder. Corrige solo uno o dos puntos que afecten más a la comprensión.
+Al final escribe tres líneas: qué hice bien, qué practicar después y qué no se puede concluir de esta sesión.
+No presentes una conversación como prueba de que ya domino la habilidad.
+```
+
+No promete aprender un idioma en siete días. Una sesión conserva solo esa respuesta y ese feedback; retención, transferencia a una situación nueva y conversación real se comprueban después por separado. Si aparecen hechos no comprobables, una carga excesiva o una petición de datos personales, reduce la tarea, pide fuente o detén la conversación.
+
+### 2. Ordenar fuentes públicas con rapidez
+
+```text
+Necesito responder esta pregunta: [pregunta].
+Usa solo las fuentes que incluyo abajo; no añadas hechos que no proporcioné.
+Primero enumera título, fecha (si existe) y posible aporte de cada fuente; después redacta un resumen corto con marcas de fuente.
+Separa «la fuente afirma», «inferencia razonable» y «todavía desconocido».
+Si las fuentes chocan, están desactualizadas o falta un hecho clave, detente en una lista de preguntas; no adivines la respuesta.
+```
+
+Convierte «encontré mucho» en una conclusión que puede volver a la fuente. Para investigación que necesita red, base de datos de pago o cuenta real, confirma antes permisos del producto, licencia de la fuente y alcance de los datos. Que aparezca una respuesta no significa que la investigación terminó.
+
+### 3. Aclarar una petición ambigua antes de actuar
+
+```text
+Quiero lograr: [resultado], para [audiencia o archivo].
+La entrada conocida es: [material]; lo desconocido es: [incógnitas].
+Todavía no ejecutes, envíes, publiques, instales ni edites nada.
+Devuelve solo: reformulación del objetivo, información faltante, paso mínimo reversible,
+evidencia de aceptación y condición de parada.
+Si necesitas secreto, red, cuenta, escritura externa o más alcance, marca blocked y di quién debe confirmarlo.
+```
+
+Incluso si la respuesta parece buena, comprueba que conteste esos campos. Si inventa lo desconocido, llama «hecho» a una propuesta o amplía acciones no autorizadas, es un fallo observable: no le pidas que siga adivinando.
+
+## Lectura de vuelta en tres pasos
+
+Después de cada prompt, dedica un minuto a preguntar: **¿qué leyó?, ¿qué hizo realmente?, ¿qué puedo comprobar?** En una tarea de chat normalmente solo puedes comprobar entrada y salida. En archivo, navegador o código también necesitas objetivo, diff, salida de comando o lectura externa. Así separas desde el primer día «puedo conversar» de «puedo entregar con confianza».
+
 ## Experimento pequeño: mantén la tarea y cambia una entrada
 
 ### Preparación

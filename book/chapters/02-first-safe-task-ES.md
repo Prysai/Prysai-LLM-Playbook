@@ -132,6 +132,32 @@ La tarjeta sirve porque transforma cada verbo ambiguo en objeto, límite de
 autoridad y requisito de evidencia. No es un prompt mágico y no elimina el
 juicio humano.
 
+## Del prompt de chat a la primera tarea segura
+
+Los prompts del capítulo anterior sirven para aprender idiomas, ordenar fuentes o aclarar una petición. Aquí la clave es no convertir «ayúdame» directamente en «hazlo todo». Elige un objeto que puedas ver, revertir y que no afecte a nadie más. Para el primer intento basta esta tarjeta:
+
+```text
+Objetivo: hacer más claro [un texto propio no sensible / un README local].
+Entrada: usar solo [texto pegado / archivo nombrado]; marcar como desconocido todo hecho no aportado.
+Acción permitida: primero leer y proponer; tras confirmación, editar solo [un archivo nombrado].
+Prohibido: sin red, instalación, inicio de sesión, envío, commit, publicación ni lectura de secretos.
+Aceptación: mostrar diff antes/después y explicar cómo cada cambio sirve al objetivo.
+Parada: si hacen falta más archivos, cuenta, red, escritura externa o hechos no verificables, parar y preguntar.
+```
+
+Para practicar español u otra habilidad, cambia «archivo nombrado» por cinco a diez frases escritas por ti. El modelo puede dar práctica, feedback y sugerencias, no declarar dominio. Para ordenar materiales, cambia la entrada por extractos de fuentes autorizadas; no puede convertir contenido web no aportado ni conjeturas en hechos. El objeto y la evidencia cambian por dominio; el orden de limitar alcance y comprobar resultado no.
+
+### Qué pedir en la primera vuelta
+
+Haz que repita el límite antes de editar:
+
+```text
+Antes de cualquier acción, repite el objetivo, la entrada que leerás, las acciones que no harás,
+la evidencia de aceptación y la condición de parada. Si falta un campo, formula solo las preguntas mínimas.
+```
+
+Lee la respuesta y confirma que no amplió el alcance. Solo entonces permite una acción pequeña. Así distingues una respuesta convincente de un plan, una propuesta o un resultado con evidencia.
+
 ## Tres puntos de confirmación
 
 ### Antes de la primera acción
