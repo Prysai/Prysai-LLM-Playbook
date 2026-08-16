@@ -3,9 +3,23 @@
   "generated_at": "2026-08-13",
   "description": "Single current-state source for curriculum, labs, Skills, evaluations, and the public site.",
   "status_vocabulary": {
-    "artifact_status": ["draft", "candidate", "verified", "production-ready"],
-    "fact_status": ["current", "stale", "disputed", "removed"],
-    "run_projection_status": ["not_run", "partial", "completed"],
+    "artifact_status": [
+      "draft",
+      "candidate",
+      "verified",
+      "production-ready"
+    ],
+    "fact_status": [
+      "current",
+      "stale",
+      "disputed",
+      "removed"
+    ],
+    "run_projection_status": [
+      "not_run",
+      "partial",
+      "completed"
+    ],
     "legacy_run_status_semantics": "run_status is a compatibility alias for learner_run_status and never reflects maintainer reference or transfer evidence"
   },
   "project": {
@@ -99,28 +113,116 @@
       "docs/quality/real-world-case-integration-review-2026-08-10.md"
     ],
     "items": [
-      {"id": "chapter-01", "path": "book/chapters/01-gpt-and-codex-EN.md", "status": "candidate"},
-      {"id": "chapter-02", "path": "book/chapters/02-first-safe-task-EN.md", "status": "candidate"},
-      {"id": "chapter-03", "path": "book/chapters/03-task-protocol-EN.md", "status": "candidate"},
-      {"id": "chapter-04", "path": "book/chapters/04-context-permissions-and-agent-EN.md", "status": "candidate"},
-      {"id": "chapter-05", "path": "book/chapters/05-choose-the-codex-surface-EN.md", "status": "candidate"},
-      {"id": "chapter-06", "path": "book/chapters/06-model-selection-EN.md", "status": "candidate"},
-      {"id": "chapter-07", "path": "book/chapters/07-skills-plugins-and-tools-EN.md", "status": "candidate"},
-      {"id": "chapter-08", "path": "book/chapters/08-full-lifecycle-workflow-EN.md", "status": "candidate"},
-      {"id": "chapter-09", "path": "book/chapters/09-verification-and-recovery-EN.md", "status": "candidate"},
-      {"id": "chapter-10", "path": "book/chapters/10-planning-and-slicing-EN.md", "status": "candidate"},
-      {"id": "chapter-11", "path": "book/chapters/11-designing-a-skill-EN.md", "status": "candidate"},
-      {"id": "chapter-12", "path": "book/chapters/12-agent-loop-and-stop-EN.md", "status": "candidate"},
-      {"id": "chapter-13", "path": "book/chapters/13-action-boundaries-EN.md", "status": "candidate"},
-      {"id": "chapter-14", "path": "book/chapters/14-discover-and-audit-skills-EN.md", "status": "candidate"},
-      {"id": "chapter-15", "path": "book/chapters/15-research-track-EN.md", "status": "candidate"},
-      {"id": "chapter-16", "path": "book/chapters/16-engineering-track-EN.md", "status": "candidate"},
-      {"id": "chapter-17", "path": "book/chapters/17-marketing-track-EN.md", "status": "candidate"},
-      {"id": "chapter-18", "path": "book/chapters/18-content-design-data-automation-EN.md", "status": "candidate"},
-      {"id": "chapter-19", "path": "book/chapters/19-evaluate-models-and-workflows-EN.md", "status": "candidate"},
-      {"id": "chapter-20", "path": "book/chapters/20-personal-codex-work-system-EN.md", "status": "candidate"},
-      {"id": "chapter-21", "path": "book/chapters/21-team-capability-system-EN.md", "status": "candidate"},
-      {"id": "chapter-22", "path": "book/chapters/22-continuous-update-and-future-proofing-EN.md", "status": "candidate"}
+      {
+        "id": "chapter-01",
+        "path": "book/chapters/01-gpt-and-codex-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-02",
+        "path": "book/chapters/02-first-safe-task-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-03",
+        "path": "book/chapters/03-task-protocol-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-04",
+        "path": "book/chapters/04-context-permissions-and-agent-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-05",
+        "path": "book/chapters/05-choose-the-codex-surface-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-06",
+        "path": "book/chapters/06-model-selection-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-07",
+        "path": "book/chapters/07-skills-plugins-and-tools-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-08",
+        "path": "book/chapters/08-full-lifecycle-workflow-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-09",
+        "path": "book/chapters/09-verification-and-recovery-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-10",
+        "path": "book/chapters/10-planning-and-slicing-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-11",
+        "path": "book/chapters/11-designing-a-skill-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-12",
+        "path": "book/chapters/12-agent-loop-and-stop-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-13",
+        "path": "book/chapters/13-action-boundaries-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-14",
+        "path": "book/chapters/14-discover-and-audit-skills-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-15",
+        "path": "book/chapters/15-research-track-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-16",
+        "path": "book/chapters/16-engineering-track-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-17",
+        "path": "book/chapters/17-marketing-track-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-18",
+        "path": "book/chapters/18-content-design-data-automation-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-19",
+        "path": "book/chapters/19-evaluate-models-and-workflows-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-20",
+        "path": "book/chapters/20-personal-codex-work-system-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-21",
+        "path": "book/chapters/21-team-capability-system-EN.md",
+        "status": "candidate"
+      },
+      {
+        "id": "chapter-22",
+        "path": "book/chapters/22-continuous-update-and-future-proofing-EN.md",
+        "status": "candidate"
+      }
     ]
   },
   "labs": {
@@ -159,28 +261,172 @@
       "docs/quality/real-world-case-integration-review-2026-08-10.md"
     ],
     "items": [
-      {"id": "lab-001", "path": "book/labs/lab-001-first-safe-task-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
-      {"id": "lab-002", "path": "book/labs/lab-002-task-protocol-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
-      {"id": "lab-003", "path": "book/labs/lab-003-evidence-review-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
-      {"id": "lab-004", "path": "book/labs/lab-004-skill-selection-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
-      {"id": "lab-005", "path": "book/labs/lab-005-design-a-skill-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
-      {"id": "lab-006", "path": "book/labs/lab-006-agent-stop-conditions-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
-      {"id": "lab-007", "path": "book/labs/lab-007-action-boundaries-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
-      {"id": "lab-008", "path": "book/labs/lab-008-research-question-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "completed", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
-      {"id": "lab-009", "path": "book/labs/lab-009-engineering-lifecycle-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
-      {"id": "lab-010", "path": "book/labs/lab-010-product-context-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
-      {"id": "lab-011", "path": "book/labs/lab-011-gpt-codex-boundaries-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
-      {"id": "lab-012", "path": "book/labs/lab-012-team-capability-migration-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
-      {"id": "lab-013", "path": "book/labs/lab-013-l3-vertical-slice-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "completed", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
-      {"id": "lab-014", "path": "book/labs/lab-014-resume-reconciliation-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
-      {"id": "lab-015", "path": "book/labs/lab-015-evidence-delivery-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
-      {"id": "lab-016", "path": "book/labs/lab-016-side-effect-boundary-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
-      {"id": "lab-017", "path": "book/labs/lab-017-skill-discovery-audit-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"},
-      {"id": "lab-018", "path": "book/labs/lab-018-language-transfer-EN.md", "status": "draft", "run_status": "not_run", "reference_run_status": "not_run", "learner_run_status": "not_run", "transfer_run_status": "not_run"}
+      {
+        "id": "lab-001",
+        "path": "book/labs/lab-001-first-safe-task-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "reference_run_status": "not_run",
+        "learner_run_status": "not_run",
+        "transfer_run_status": "not_run"
+      },
+      {
+        "id": "lab-002",
+        "path": "book/labs/lab-002-task-protocol-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "reference_run_status": "not_run",
+        "learner_run_status": "not_run",
+        "transfer_run_status": "not_run"
+      },
+      {
+        "id": "lab-003",
+        "path": "book/labs/lab-003-evidence-review-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "reference_run_status": "not_run",
+        "learner_run_status": "not_run",
+        "transfer_run_status": "not_run"
+      },
+      {
+        "id": "lab-004",
+        "path": "book/labs/lab-004-skill-selection-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "reference_run_status": "not_run",
+        "learner_run_status": "not_run",
+        "transfer_run_status": "not_run"
+      },
+      {
+        "id": "lab-005",
+        "path": "book/labs/lab-005-design-a-skill-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "reference_run_status": "not_run",
+        "learner_run_status": "not_run",
+        "transfer_run_status": "not_run"
+      },
+      {
+        "id": "lab-006",
+        "path": "book/labs/lab-006-agent-stop-conditions-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "reference_run_status": "not_run",
+        "learner_run_status": "not_run",
+        "transfer_run_status": "not_run"
+      },
+      {
+        "id": "lab-007",
+        "path": "book/labs/lab-007-action-boundaries-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "reference_run_status": "not_run",
+        "learner_run_status": "not_run",
+        "transfer_run_status": "not_run"
+      },
+      {
+        "id": "lab-008",
+        "path": "book/labs/lab-008-research-question-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "reference_run_status": "completed",
+        "learner_run_status": "not_run",
+        "transfer_run_status": "not_run"
+      },
+      {
+        "id": "lab-009",
+        "path": "book/labs/lab-009-engineering-lifecycle-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "reference_run_status": "not_run",
+        "learner_run_status": "not_run",
+        "transfer_run_status": "not_run"
+      },
+      {
+        "id": "lab-010",
+        "path": "book/labs/lab-010-product-context-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "reference_run_status": "not_run",
+        "learner_run_status": "not_run",
+        "transfer_run_status": "not_run"
+      },
+      {
+        "id": "lab-011",
+        "path": "book/labs/lab-011-gpt-codex-boundaries-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "reference_run_status": "not_run",
+        "learner_run_status": "not_run",
+        "transfer_run_status": "not_run"
+      },
+      {
+        "id": "lab-012",
+        "path": "book/labs/lab-012-team-capability-migration-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "reference_run_status": "not_run",
+        "learner_run_status": "not_run",
+        "transfer_run_status": "not_run"
+      },
+      {
+        "id": "lab-013",
+        "path": "book/labs/lab-013-l3-vertical-slice-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "reference_run_status": "completed",
+        "learner_run_status": "not_run",
+        "transfer_run_status": "not_run"
+      },
+      {
+        "id": "lab-014",
+        "path": "book/labs/lab-014-resume-reconciliation-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "reference_run_status": "not_run",
+        "learner_run_status": "not_run",
+        "transfer_run_status": "not_run"
+      },
+      {
+        "id": "lab-015",
+        "path": "book/labs/lab-015-evidence-delivery-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "reference_run_status": "not_run",
+        "learner_run_status": "not_run",
+        "transfer_run_status": "not_run"
+      },
+      {
+        "id": "lab-016",
+        "path": "book/labs/lab-016-side-effect-boundary-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "reference_run_status": "not_run",
+        "learner_run_status": "not_run",
+        "transfer_run_status": "not_run"
+      },
+      {
+        "id": "lab-017",
+        "path": "book/labs/lab-017-skill-discovery-audit-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "reference_run_status": "not_run",
+        "learner_run_status": "not_run",
+        "transfer_run_status": "not_run"
+      },
+      {
+        "id": "lab-018",
+        "path": "book/labs/lab-018-language-transfer-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "reference_run_status": "not_run",
+        "learner_run_status": "not_run",
+        "transfer_run_status": "not_run"
+      }
     ]
   },
   "skills": {
-    "count": 23,
+    "count": 25,
     "status": "candidate",
     "validator_status": "structural_checks_passed",
     "fresh_context_status": "2_isolated_single_turn_observations; broader trigger, repeated-runtime, learner, and transfer evidence remains partial or not_run",
@@ -210,29 +456,156 @@
       "evals/candidates/three-task-smoke-v1/README.md"
     ],
     "items": [
-      {"id": "prysai-codex-coach", "path": "skills/prysai-codex-coach", "status": "candidate", "fresh_context_status": "static_contract_reviewed; runtime_pretest_pending"},
-      {"id": "prysai-dialogue-brief", "path": "skills/prysai-dialogue-brief", "status": "candidate", "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"},
-      {"id": "prysai-first-turn-check", "path": "skills/prysai-first-turn-check", "status": "candidate", "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"},
-      {"id": "prysai-task-protocol", "path": "skills/prysai-task-protocol", "status": "candidate", "fresh_context_status": "basic_pretest_passed"},
-      {"id": "prysai-evidence-review", "path": "skills/prysai-evidence-review", "status": "candidate", "fresh_context_status": "editorial_single_turn_method_loaded_handoff_observation; authenticated_receipt_automatic_trigger_and_repeated_runtime_pending"},
-      {"id": "prysai-skill-selector", "path": "skills/prysai-skill-selector", "status": "candidate", "fresh_context_status": "basic_pretest_passed"},
-      {"id": "prysai-workflow-orchestrator", "path": "skills/prysai-workflow-orchestrator", "status": "candidate", "fresh_context_status": "static_contract_reviewed; runtime_pretest_pending"},
-      {"id": "prysai-research-router", "path": "skills/prysai-research-router", "status": "candidate", "fresh_context_status": "static_contract_reviewed; runtime_pretest_pending"},
-      {"id": "prysai-product-context", "path": "skills/prysai-product-context", "status": "candidate", "fresh_context_status": "static_contract_reviewed_blocked; runtime_pretest_pending"},
-      {"id": "prysai-learning-coach", "path": "skills/prysai-learning-coach", "status": "candidate", "fresh_context_status": "observed_single_turn_baseline_response; learner_attempt_multi_turn_delayed_transfer_pending"},
-      {"id": "prysai-source-investigator", "path": "skills/prysai-source-investigator", "status": "candidate", "fresh_context_status": "minimal_fresh_task_pretest_passed; search_completeness_and_adversarial_routing_pending"}
-      ,{"id": "prysai-field-signal-curator", "path": "skills/prysai-field-signal-curator", "status": "candidate", "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"}
-      ,{"id": "prysai-platform-adapter-review", "path": "skills/prysai-platform-adapter-review", "status": "candidate", "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"}
-      ,{"id": "prysai-platform-fact-watch", "path": "skills/prysai-platform-fact-watch", "status": "candidate", "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"}
-      ,{"id": "prysai-communication-failure-triage", "path": "skills/prysai-communication-failure-triage", "status": "candidate", "fresh_context_status": "three_minimal_blind_pretests_passed; cross_model_and_runtime_validation_pending"}
-      ,{"id": "prysai-prompt-card-editor", "path": "skills/prysai-prompt-card-editor", "status": "candidate", "fresh_context_status": "isolated_forward_test_packet_reviewed; automatic_trigger, runtime, learner, and transfer evidence pending"}
-      ,{"id": "prysai-adversarial-project-review", "path": "skills/prysai-adversarial-project-review", "status": "candidate", "fresh_context_status": "structural_candidate_only; independent-review, automatic_trigger, runtime, and repair-effect evidence pending"}
-      ,{"id": "prysai-request-escalation", "path": "skills/prysai-request-escalation", "status": "candidate", "fresh_context_status": "one_isolated_explicit_mixed-request_forward_test_recorded; automatic trigger, repeated runtime, learner, and transfer evidence pending"}
-      ,{"id": "prysai-llm-comparison-protocol", "path": "skills/prysai-llm-comparison-protocol", "status": "candidate", "fresh_context_status": "structural_candidate_only; fixture and routing checks are static, while model runtime, automatic trigger, learner, and transfer evidence remain not_run"}
-      ,{"id": "prysai-practice-target", "path": "skills/prysai-practice-target", "status": "candidate", "fresh_context_status": "structural_candidate_only; target-setting contract and routing fixtures pass, while automatic trigger, learner completion, retention, and transfer evidence remain not_run"}
-      ,{"id": "prysai-interruption-checkpoint", "path": "skills/prysai-interruption-checkpoint", "status": "candidate", "fresh_context_status": "structural_candidate_only; checkpoint and routing fixtures pass, while automatic trigger, runtime, learner, recovery, and transfer evidence remain not_run"}
-      ,{"id": "prysai-shift-handoff", "path": "skills/prysai-shift-handoff", "status": "candidate", "fresh_context_status": "structural_candidate_only; stable/current handoff and routing fixtures pass, while automatic trigger, runtime, repeated-work, learner, and transfer evidence remain not_run"}
-      ,{"id": "prysai-platform-observation-record", "path": "skills/prysai-platform-observation-record", "status": "candidate", "fresh_context_status": "structural_candidate_only; observation receipt and routing fixtures are static, while automatic trigger, platform runtime, learner comprehension, and transfer evidence remain not_run"}
+      {
+        "id": "prysai-codex-coach",
+        "path": "skills/prysai-codex-coach",
+        "status": "candidate",
+        "fresh_context_status": "static_contract_reviewed; runtime_pretest_pending"
+      },
+      {
+        "id": "prysai-dialogue-brief",
+        "path": "skills/prysai-dialogue-brief",
+        "status": "candidate",
+        "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"
+      },
+      {
+        "id": "prysai-first-turn-check",
+        "path": "skills/prysai-first-turn-check",
+        "status": "candidate",
+        "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"
+      },
+      {
+        "id": "prysai-task-protocol",
+        "path": "skills/prysai-task-protocol",
+        "status": "candidate",
+        "fresh_context_status": "basic_pretest_passed"
+      },
+      {
+        "id": "prysai-evidence-review",
+        "path": "skills/prysai-evidence-review",
+        "status": "candidate",
+        "fresh_context_status": "editorial_single_turn_method_loaded_handoff_observation; authenticated_receipt_automatic_trigger_and_repeated_runtime_pending"
+      },
+      {
+        "id": "prysai-skill-selector",
+        "path": "skills/prysai-skill-selector",
+        "status": "candidate",
+        "fresh_context_status": "basic_pretest_passed"
+      },
+      {
+        "id": "prysai-workflow-orchestrator",
+        "path": "skills/prysai-workflow-orchestrator",
+        "status": "candidate",
+        "fresh_context_status": "static_contract_reviewed; runtime_pretest_pending"
+      },
+      {
+        "id": "prysai-research-router",
+        "path": "skills/prysai-research-router",
+        "status": "candidate",
+        "fresh_context_status": "static_contract_reviewed; runtime_pretest_pending"
+      },
+      {
+        "id": "prysai-product-context",
+        "path": "skills/prysai-product-context",
+        "status": "candidate",
+        "fresh_context_status": "static_contract_reviewed_blocked; runtime_pretest_pending"
+      },
+      {
+        "id": "prysai-learning-coach",
+        "path": "skills/prysai-learning-coach",
+        "status": "candidate",
+        "fresh_context_status": "observed_single_turn_baseline_response; learner_attempt_multi_turn_delayed_transfer_pending"
+      },
+      {
+        "id": "prysai-source-investigator",
+        "path": "skills/prysai-source-investigator",
+        "status": "candidate",
+        "fresh_context_status": "minimal_fresh_task_pretest_passed; search_completeness_and_adversarial_routing_pending"
+      },
+      {
+        "id": "prysai-field-signal-curator",
+        "path": "skills/prysai-field-signal-curator",
+        "status": "candidate",
+        "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"
+      },
+      {
+        "id": "prysai-platform-adapter-review",
+        "path": "skills/prysai-platform-adapter-review",
+        "status": "candidate",
+        "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"
+      },
+      {
+        "id": "prysai-platform-fact-watch",
+        "path": "skills/prysai-platform-fact-watch",
+        "status": "candidate",
+        "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"
+      },
+      {
+        "id": "prysai-communication-failure-triage",
+        "path": "skills/prysai-communication-failure-triage",
+        "status": "candidate",
+        "fresh_context_status": "three_minimal_blind_pretests_passed; cross_model_and_runtime_validation_pending"
+      },
+      {
+        "id": "prysai-prompt-card-editor",
+        "path": "skills/prysai-prompt-card-editor",
+        "status": "candidate",
+        "fresh_context_status": "isolated_forward_test_packet_reviewed; automatic_trigger, runtime, learner, and transfer evidence pending"
+      },
+      {
+        "id": "prysai-adversarial-project-review",
+        "path": "skills/prysai-adversarial-project-review",
+        "status": "candidate",
+        "fresh_context_status": "structural_candidate_only; independent-review, automatic_trigger, runtime, and repair-effect evidence pending"
+      },
+      {
+        "id": "prysai-request-escalation",
+        "path": "skills/prysai-request-escalation",
+        "status": "candidate",
+        "fresh_context_status": "one_isolated_explicit_mixed-request_forward_test_recorded; automatic trigger, repeated runtime, learner, and transfer evidence pending"
+      },
+      {
+        "id": "prysai-llm-comparison-protocol",
+        "path": "skills/prysai-llm-comparison-protocol",
+        "status": "candidate",
+        "fresh_context_status": "structural_candidate_only; fixture and routing checks are static, while model runtime, automatic trigger, learner, and transfer evidence remain not_run"
+      },
+      {
+        "id": "prysai-practice-target",
+        "path": "skills/prysai-practice-target",
+        "status": "candidate",
+        "fresh_context_status": "structural_candidate_only; target-setting contract and routing fixtures pass, while automatic trigger, learner completion, retention, and transfer evidence remain not_run"
+      },
+      {
+        "id": "prysai-interruption-checkpoint",
+        "path": "skills/prysai-interruption-checkpoint",
+        "status": "candidate",
+        "fresh_context_status": "structural_candidate_only; checkpoint and routing fixtures pass, while automatic trigger, runtime, learner, recovery, and transfer evidence remain not_run"
+      },
+      {
+        "id": "prysai-shift-handoff",
+        "path": "skills/prysai-shift-handoff",
+        "status": "candidate",
+        "fresh_context_status": "structural_candidate_only; stable/current handoff and routing fixtures pass, while automatic trigger, runtime, repeated-work, learner, and transfer evidence remain not_run"
+      },
+      {
+        "id": "prysai-platform-observation-record",
+        "path": "skills/prysai-platform-observation-record",
+        "status": "candidate",
+        "fresh_context_status": "structural_candidate_only; observation receipt and routing fixtures are static, while automatic trigger, platform runtime, learner comprehension, and transfer evidence remain not_run"
+      },
+      {
+        "id": "prysai-language-partner",
+        "path": "skills/prysai-language-partner",
+        "status": "candidate",
+        "fresh_context_status": "static_contract_reviewed; runtime_pretest_pending"
+      },
+      {
+        "id": "prysai-interview-rehearsal",
+        "path": "skills/prysai-interview-rehearsal",
+        "status": "candidate",
+        "fresh_context_status": "static_contract_reviewed; runtime_pretest_pending"
+      }
     ]
   },
   "supplemental_guides": {
@@ -265,10 +638,34 @@
       "docs/sources/asset-register.md"
     ],
     "items": [
-      {"id": "first-safe-change-route", "path": "book/routes/first-safe-change-EN.md", "status": "candidate", "run_status": "not_run", "role": "novice_fixture_route"},
-      {"id": "communication-clinic", "path": "book/communication-clinic-EN.md", "status": "candidate", "run_status": "not_run", "role": "supplemental_practice_route"},
-      {"id": "learning-practice-contract", "path": "book/guides/learning-practice-contract-EN.md", "status": "draft", "run_status": "not_run", "role": "canonical_application_guide"},
-      {"id": "universal-seam-fixture-route", "path": "book/routes/universal-core-foundations-EN.md", "status": "candidate", "run_status": "not_run", "role": "offline_universal_fixture_route"}
+      {
+        "id": "first-safe-change-route",
+        "path": "book/routes/first-safe-change-EN.md",
+        "status": "candidate",
+        "run_status": "not_run",
+        "role": "novice_fixture_route"
+      },
+      {
+        "id": "communication-clinic",
+        "path": "book/communication-clinic-EN.md",
+        "status": "candidate",
+        "run_status": "not_run",
+        "role": "supplemental_practice_route"
+      },
+      {
+        "id": "learning-practice-contract",
+        "path": "book/guides/learning-practice-contract-EN.md",
+        "status": "draft",
+        "run_status": "not_run",
+        "role": "canonical_application_guide"
+      },
+      {
+        "id": "universal-seam-fixture-route",
+        "path": "book/routes/universal-core-foundations-EN.md",
+        "status": "candidate",
+        "run_status": "not_run",
+        "role": "offline_universal_fixture_route"
+      }
     ],
     "claim_boundary": "Supplemental routes and application guides do not change the canonical 22-chapter order. These records have structural editorial status only; the Universal Seam Fixture checks fixed fictional data, not a product run. Prompt effectiveness, learner outcomes, delayed transfer, retention, security outcomes, and platform equivalence remain untested."
   },
@@ -291,9 +688,30 @@
   "public_site": {
     "status": "candidate",
     "language_default": "en",
-    "language_options": ["en", "zh", "es", "ja", "ko", "de"],
-    "ui_language_options": ["en", "zh", "es", "ja", "ko", "de"],
-    "repository_content_locales": ["en", "zh", "es", "ja", "ko", "de"],
+    "language_options": [
+      "en",
+      "zh",
+      "es",
+      "ja",
+      "ko",
+      "de"
+    ],
+    "ui_language_options": [
+      "en",
+      "zh",
+      "es",
+      "ja",
+      "ko",
+      "de"
+    ],
+    "repository_content_locales": [
+      "en",
+      "zh",
+      "es",
+      "ja",
+      "ko",
+      "de"
+    ],
     "repository_locale_status": "release",
     "locale_matrix": "docs/governance/locale-matrix.yaml",
     "browser_review": "completed",
