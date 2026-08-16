@@ -53,4 +53,4 @@ tu as programmé un rappel et n'infère pas de rétention permanente. Note la
 date, ma tentative, l'aide utilisée et ce qui reste sans observation.
 ```
 
-Guarda el objetivo, el primer intento, la ayuda, la corrección, la tarea modificada y las incógnitas. Un bucle es un intento de práctica registrado, no un dominio del idioma ni una evaluación independiente. Para la versión en español del mismo bucle, abre [spanish-practice-loop-es.md](spanish-practice-loop-es.md).
+Guarda el objetivo, el primer intento, la ayuda, la corrección, la tarea modificada y las incógnitas. Un bucle es un intento de práctica registrado, no un dominio del idioma ni una evaluación independiente. Para la versión en español del mismo bucle, abre [spanish-practice-loop-ES.md](spanish-practice-loop-ES.md).
