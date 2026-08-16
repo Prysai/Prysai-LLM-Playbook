@@ -90,6 +90,25 @@ Si el modelo da una respuesta completa cuando querías practicar, pídele una so
 pista. Si inventa un hecho, fuente o promesa, deja de usar esa respuesta y conserva
 lo no comprobado como desconocido.
 
+## Recibo de práctica: conserva una conversación comprobable
+
+Después de cualquier tarjeta, guarda solo este registro breve. Te permite ver qué
+practicaste la próxima vez y evita convertir «me pareció útil» en una afirmación sin
+evidencia.
+
+```text
+tarea:
+mi primer intento o hechos conocidos:
+ayuda de la IA (pista / corrección / plan de fuentes):
+versión que conservo:
+lo que comprobé personalmente:
+lo que sigue desconocido o en disputa:
+estado: template_selected | practised | not_run | blocked
+```
+
+`practised` solo significa que guardaste una práctica con registro; no significa
+fluidez, dominio, eficiencia mayor ni fuentes verificadas por completo.
+
 ## ¿Ya terminaste?
 
 Completar una tarjeta solo demuestra que guardaste un intento condicionado. Para

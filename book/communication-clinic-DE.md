@@ -96,6 +96,22 @@ Wenn du üben möchtest, aber eine vollständige Antwort erhältst, bitte um gen
 Hinweis. Erfindet das Modell einen Fakt, eine Quelle oder ein Versprechen, verwende diese
 Antwort nicht weiter und halte das Ungeprüfte als offen fest.
 
+## Übungsbeleg: ein Gespräch prüfbar festhalten
+
+Bewahre nach jeder Karte nur diese kurze Notiz auf. So siehst du beim nächsten Mal, was du geübt hast, und machst aus „es fühlte sich hilfreich an“ keine unbelegte Aussage.
+
+```text
+Aufgabe:
+mein erster Versuch oder bekannte Fakten:
+Hilfe der KI (Hinweis / Korrektur / Quellenplan):
+behaltene Fassung:
+was ich selbst geprüft habe:
+was offen oder strittig bleibt:
+Status: template_selected | practised | not_run | blocked
+```
+
+`practised` bedeutet nur, dass ein dokumentierter Übungsversuch vorliegt. Es bedeutet weder Sprachflüssigkeit noch Beherrschung, höhere Effizienz oder vollständig geprüfte Quellen.
+
 ## Bin ich damit fertig?
 
 Nach einer Karte hast du nur einen Versuch mit Bedingungen festgehalten. Um Leistung in
