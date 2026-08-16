@@ -226,8 +226,11 @@ def check_navigation(
                 errors.append(f"{item_id}: English navigation path is missing: {english_path}")
             elif normalize(english_path) not in matrix_by_path:
                 errors.append(f"{item_id}: English navigation path is not in locale matrix: {english_path}")
-        if not isinstance(legacy_path, str) or not (ROOT / normalize(legacy_path)).is_file():
-            errors.append(f"{item_id}: legacy navigation path is missing: {legacy_path}")
+        if legacy_path is not None:
+            if not isinstance(legacy_path, str) or not legacy_path.strip():
+                errors.append(f"{item_id}: legacy navigation path must be a non-empty string")
+            elif not (ROOT / normalize(legacy_path)).is_file():
+                errors.append(f"{item_id}: legacy navigation path is missing: {legacy_path}")
     if numbers != list(range(1, 23)):
         errors.append("book-navigation chapter numbers must be 1 through 22 in order")
 

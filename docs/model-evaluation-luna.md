@@ -71,6 +71,6 @@
 
 - [评测框架与任务夹具规范](quality/evaluation-framework.md)：定义任务字段、评测层级、固定条件和证据要求。
 - [研究档案：OpenAI Codex 官方基线](research/openai-codex-baseline.md)：保存易变产品事实的权威来源入口。
-- [第 19 章：评估模型和工作流](../book/chapters/19-evaluate-models-and-workflows.md)：将本实验设计转为学习者可执行的工作流评估。
+- [第 19 章：评估模型和工作流](../book/chapters/19-evaluate-models-and-workflows-EN.md)：将本实验设计转为学习者可执行的工作流评估。
 
 `evals/task-set-v1.yaml` 已提供 38 个固定任务和标准库校验脚本，但当前仍没有模型运行日志；它是可执行夹具，不是已完成评测的证明。

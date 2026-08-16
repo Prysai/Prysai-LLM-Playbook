@@ -6,14 +6,13 @@
   "description": "Canonical reading order for the 22-chapter Prysai LLM Playbook.",
   "owner": "curriculum-maintainer",
   "default_locale": "EN",
-  "legacy_locale": "ZH",
   "generator": "scripts/build_book_navigation.py",
   "generated_block": "<!-- chapter-navigation:start --> ... <!-- chapter-navigation:end -->",
   "policy": {
     "order_source": "This file owns chapter order; filenames, directory enumeration, and page-local links do not.",
     "title_roles": "canonical_title_en and canonical_title_zh own the exact H1 body without the chapter-number prefix. title_en and title_zh are intentional compact labels for TOCs, rails, and previous/next navigation. Unregistered page-local aliases are not canonical titles.",
-    "english_navigation": "Use the English source when it exists. If it does not exist, link to the legacy current source and label the transition migration pending.",
-    "legacy_navigation": "Use the current unsuffixed chapter source so the existing Simplified Chinese reading path remains continuous.",
+    "english_navigation": "Every chapter uses its six locale-suffixed source files; navigation always targets the selected locale path.",
+    "legacy_navigation": "Legacy unsuffixed chapter drafts were removed during release cleanup; no page links to an unsuffixed chapter path anymore.",
     "footer": "The generated footer contains only previous and next chapter links. The table of contents remains the dedicated route index.",
     "boundary": "This source controls chapter navigation only. Learning-level ownership remains in learning-path.yaml, translation identity remains in locale-matrix.yaml, and supplemental routes never change the 22-chapter order."
   },
@@ -95,7 +94,6 @@
       "canonical_title_en": "Understand GPT before you trust Codex",
       "canonical_title_zh": "先理解 GPT，再理解 Codex",
       "english_path": "book/chapters/01-gpt-and-codex-EN.md",
-      "legacy_path": "book/chapters/01-gpt-and-codex.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -108,7 +106,6 @@
       "canonical_title_en": "Complete your first safe, verifiable task",
       "canonical_title_zh": "完成第一个安全、可验证的任务",
       "english_path": "book/chapters/02-first-safe-task-EN.md",
-      "legacy_path": "book/chapters/02-first-safe-task.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -121,7 +118,6 @@
       "canonical_title_en": "Turn a wish into a task protocol",
       "canonical_title_zh": "把愿望变成任务协议",
       "english_path": "book/chapters/03-task-protocol-EN.md",
-      "legacy_path": "book/chapters/03-task-protocol.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -134,7 +130,6 @@
       "canonical_title_en": "Context, Permissions, and the Agent Action Boundary",
       "canonical_title_zh": "上下文、权限与 Agent 的行动边界",
       "english_path": "book/chapters/04-context-permissions-and-agent-EN.md",
-      "legacy_path": "book/chapters/04-context-permissions-and-agent.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -147,7 +142,6 @@
       "canonical_title_en": "Choose the Right Codex Surface",
       "canonical_title_zh": "选择正确的 Codex 工作面",
       "english_path": "book/chapters/05-choose-the-codex-surface-EN.md",
-      "legacy_path": "book/chapters/05-choose-the-codex-surface.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -160,7 +154,6 @@
       "canonical_title_en": "Model Choice Is Not Model Worship",
       "canonical_title_zh": "模型选择不是模型崇拜",
       "english_path": "book/chapters/06-model-selection-EN.md",
-      "legacy_path": "book/chapters/06-model-selection.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -173,7 +166,6 @@
       "canonical_title_en": "How Skills, Plugins, MCP, and Tools Divide the Work",
       "canonical_title_zh": "Skill、Plugin、MCP 和工具如何分工",
       "english_path": "book/chapters/07-skills-plugins-and-tools-EN.md",
-      "legacy_path": "book/chapters/07-skills-plugins-and-tools.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -186,7 +178,6 @@
       "canonical_title_en": "From Definition to Delivery",
       "canonical_title_zh": "从定义到交付的完整生命周期",
       "english_path": "book/chapters/08-full-lifecycle-workflow-EN.md",
-      "legacy_path": "book/chapters/08-full-lifecycle-workflow.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -199,7 +190,6 @@
       "canonical_title_en": "Verification, Doubt, and Recovery",
       "canonical_title_zh": "验证、怀疑与恢复",
       "english_path": "book/chapters/09-verification-and-recovery-EN.md",
-      "legacy_path": "book/chapters/09-verification-and-recovery.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -212,7 +202,6 @@
       "canonical_title_en": "Planning and vertical slicing",
       "canonical_title_zh": "把大目标拆成可交付切片",
       "english_path": "book/chapters/10-planning-and-slicing-EN.md",
-      "legacy_path": "book/chapters/10-planning-and-slicing.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -225,7 +214,6 @@
       "canonical_title_en": "Designing a Skill That Earns Its Place",
       "canonical_title_zh": "设计一个真正有用的 Skill",
       "english_path": "book/chapters/11-designing-a-skill-EN.md",
-      "legacy_path": "book/chapters/11-designing-a-skill.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -238,7 +226,6 @@
       "canonical_title_en": "The Agent Loop, State, and Stop Conditions",
       "canonical_title_zh": "Agent 的循环、状态和停止条件",
       "english_path": "book/chapters/12-agent-loop-and-stop-EN.md",
-      "legacy_path": "book/chapters/12-agent-loop-and-stop.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -251,7 +238,6 @@
       "canonical_title_en": "Action Boundaries Across Files, Terminals, Browsers, and GitHub",
       "canonical_title_zh": "文件、终端、浏览器与 GitHub 的行动边界",
       "english_path": "book/chapters/13-action-boundaries-EN.md",
-      "legacy_path": "book/chapters/13-action-boundaries.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -264,7 +250,6 @@
       "canonical_title_en": "Discover, Install, and Audit External Skills",
       "canonical_title_zh": "如何发现、安装和审查外部 Skill",
       "english_path": "book/chapters/14-discover-and-audit-skills-EN.md",
-      "legacy_path": "book/chapters/14-discover-and-audit-skills.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -277,7 +262,6 @@
       "canonical_title_en": "Research Track — From Question to Auditable Knowledge",
       "canonical_title_zh": "研究轨——从问题到可审查知识",
       "english_path": "book/chapters/15-research-track-EN.md",
-      "legacy_path": "book/chapters/15-research-track.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -290,7 +274,6 @@
       "canonical_title_en": "Engineering Track — From Idea to Reliable Software",
       "canonical_title_zh": "工程轨——从想法到可靠软件",
       "english_path": "book/chapters/16-engineering-track-EN.md",
-      "legacy_path": "book/chapters/16-engineering-track.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -303,7 +286,6 @@
       "canonical_title_en": "Marketing Track — From Product Understanding to Growth Experiments",
       "canonical_title_zh": "营销轨——从产品理解到增长实验",
       "english_path": "book/chapters/17-marketing-track-EN.md",
-      "legacy_path": "book/chapters/17-marketing-track.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -316,7 +298,6 @@
       "canonical_title_en": "Content, Design, Data, and Automation Track",
       "canonical_title_zh": "内容、设计、数据与自动化轨",
       "english_path": "book/chapters/18-content-design-data-automation-EN.md",
-      "legacy_path": "book/chapters/18-content-design-data-automation.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -329,7 +310,6 @@
       "canonical_title_en": "Evaluate Models and Workflows — From Impressions to Evidence",
       "canonical_title_zh": "评估模型和工作流——从感觉到证据",
       "english_path": "book/chapters/19-evaluate-models-and-workflows-EN.md",
-      "legacy_path": "book/chapters/19-evaluate-models-and-workflows.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -342,7 +322,6 @@
       "canonical_title_en": "Build a Personal Codex Work System",
       "canonical_title_zh": "建立个人 Codex 工作系统",
       "english_path": "book/chapters/20-personal-codex-work-system-EN.md",
-      "legacy_path": "book/chapters/20-personal-codex-work-system.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -355,7 +334,6 @@
       "canonical_title_en": "Build a Team Capability System",
       "canonical_title_zh": "建立团队能力系统",
       "english_path": "book/chapters/21-team-capability-system-EN.md",
-      "legacy_path": "book/chapters/21-team-capability-system.md",
       "english_status": "source",
       "status": "candidate"
     },
@@ -368,7 +346,6 @@
       "canonical_title_en": "Continuous Update and Future-Proofing",
       "canonical_title_zh": "持续更新与未来适应",
       "english_path": "book/chapters/22-continuous-update-and-future-proofing-EN.md",
-      "legacy_path": "book/chapters/22-continuous-update-and-future-proofing.md",
       "english_status": "source",
       "status": "candidate"
     }

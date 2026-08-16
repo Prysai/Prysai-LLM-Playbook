@@ -90,7 +90,7 @@
     {"path": "assets/cases", "role": "Rendered screenshots and other bounded case evidence.", "entry": "assets/cases/README.md"},
     {"path": "assets/teaching", "role": "Original SVG teaching cards used in the book and showcase.", "entry": "assets/teaching/README.md"},
     {"path": "book/chapters", "role": "One file per chapter identity, with explicit locale suffixes where authored.", "entry": "book/chapters/README.md"},
-    {"path": "book/labs", "role": "Low-risk experiments with observable output, failure variants, and transfer tasks.", "entry": "book/labs/README.md"},
+    {"path": "book/labs", "role": "Low-risk experiments with observable output, failure variants, and transfer tasks.", "entry": "book/labs/README-EN.md"},
     {"path": "docs/adr", "role": "Architecture decisions and their trade-offs.", "entry": "docs/adr/README.md"},
     {"path": "docs/governance", "role": "Machine-readable contracts for order, status, locale, updates, and ownership.", "entry": "docs/governance/README.md"},
     {"path": "docs/quality", "role": "Acceptance standards and review records.", "entry": "docs/quality/README.md"},

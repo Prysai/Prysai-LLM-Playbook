@@ -13,9 +13,9 @@
 
 | 文件 | 改动 | 仍未证明 |
 |---|---|---|
-| [`book/chapters/08-full-lifecycle-workflow.md`](../../book/chapters/08-full-lifecycle-workflow.md) | 增加 Markdown 章节审查的完整案例：目标、非目标、能力取舍、阶段依赖、退出证据、checkpoint、回滚、命令卡、交接、正例/失败例/边界例和诚实交付 | 学习者能否在 fresh context 中独立执行；真实链接检查和人工审查输出 |
-| [`book/chapters/02-first-safe-task.md`](../../book/chapters/02-first-safe-task.md) | 增加从只读观察到安全编辑的六项过渡清单和现场恢复决策卡 | 学习者能否不依赖口头补充完成一次受限 diff |
-| [`book/labs/lab-001-first-safe-task.md`](../../book/labs/lab-001-first-safe-task.md) | 将实验记录字段与贯穿案例对齐，区分已完成、未完成、证据、阻塞和下一次检查 | 实验本身仍未运行 |
+| [`book/chapters/08-full-lifecycle-workflow-EN.md`](../../book/chapters/08-full-lifecycle-workflow-EN.md) | 增加 Markdown 章节审查的完整案例：目标、非目标、能力取舍、阶段依赖、退出证据、checkpoint、回滚、命令卡、交接、正例/失败例/边界例和诚实交付 | 学习者能否在 fresh context 中独立执行；真实链接检查和人工审查输出 |
+| [`book/chapters/02-first-safe-task-EN.md`](../../book/chapters/02-first-safe-task-EN.md) | 增加从只读观察到安全编辑的六项过渡清单和现场恢复决策卡 | 学习者能否不依赖口头补充完成一次受限 diff |
+| [`book/labs/lab-001-first-safe-task-EN.md`](../../book/labs/lab-001-first-safe-task-EN.md) | 将实验记录字段与贯穿案例对齐，区分已完成、未完成、证据、阻塞和下一次检查 | 实验本身仍未运行 |
 
 ## 证据边界
 

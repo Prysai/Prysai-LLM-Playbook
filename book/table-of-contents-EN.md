@@ -1,4 +1,4 @@
-﻿<!-- content_id: book-table-of-contents | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: dd08a68 -->
+<!-- content_id: book-table-of-contents | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: dd08a68 -->
 
 # Prysai LLM Playbook: Table of Contents v0.2
 
@@ -8,8 +8,9 @@ It begins with one fictional, text-only rewrite before mapping four extracted
 units. It remains `candidate / not_run`; the route does not establish
 cross-platform behavior, learner outcomes, or completion time.
 
-> English source-locale directory page. This migration slice is based on the
-> existing unsuffixed `book/table-of-contents.md`. It keeps all 22 chapters,
+> English source-locale directory page. The legacy unsuffixed draft was
+> removed during release cleanup; `book/table-of-contents-EN.md` is the
+> canonical English table of contents. It keeps all 22 chapters,
 > 18 experiments, maturity boundaries, and real-user problem research
 > entrances visible without claiming that the chapter or lab corpus is already
 > translated or runtime-verified.

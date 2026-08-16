@@ -153,12 +153,12 @@ Microsoft 单课页显示 learning goals、代码样例、视频、额外学习�
 | P0 | [`scripts/build_learning_path_site.py`](../../scripts/build_learning_path_site.py) | 将上面的内容契约纳入生成流程，保持 `site/learning-path-data.js` 为生成物；避免站点文案与治理文件各自维护 level、状态和入口。 | `--check`、项目验证、生成物 diff 审查。 |
 | P1 | [`site/app.js`](../../site/app.js) | 增加按任务/能力/证据的筛选或分组；为卡片显示前置条件、实战产物、失败变体和下一步；保留语言切换，并让筛选状态可分享。补齐 tab 键盘模型、菜单 Escape、焦点返回和 reduced-motion 行为。 | 鼠标、键盘、屏幕阅读器语义、刷新/分享 URL、`prefers-reduced-motion` 检查。 |
 | P1 | [`site/styles.css`](../../site/styles.css) | 建立状态/证据/level 的稳定视觉语义；提高中文辅助文字的字号、行高和对比度；为 evidence row、failure card、next-step card 建立克制的组件样式；补 `:focus-visible` 和窄屏布局。 | 桌面与 320/390px 截图；对比度、换行、无横向溢出、焦点可见性。 |
-| P1 | [`book/table-of-contents.md`](../../book/table-of-contents.md) | 将推荐路线、任务跳读、实验和迁移入口写成与站点相同的索引合同；每个章节明确下一步与证据。 | 目录链接与站点卡片双向一致；随机抽取章节验证前置/下一步。 |
-| P1 | [`book/labs/README.md`](../../book/labs/README.md) | 补全 12 个实际实验的直接索引，显示 level、领域、状态、前置章节、失败变体和迁移焦点；不要让四张精选卡片承担“全部入口”承诺。 | `lab-*.md` 文件计数、链接检查、状态和 frontmatter 对齐。 |
+| P1 | [`book/table-of-contents-EN.md`](../../book/table-of-contents-EN.md) | 将推荐路线、任务跳读、实验和迁移入口写成与站点相同的索引合同；每个章节明确下一步与证据。 | 目录链接与站点卡片双向一致；随机抽取章节验证前置/下一步。 |
+| P1 | [`book/labs/README-EN.md`](../../book/labs/README-EN.md) | 补全 12 个实际实验的直接索引，显示 level、领域、状态、前置章节、失败变体和迁移焦点；不要让四张精选卡片承担“全部入口”承诺。 | `lab-*.md` 文件计数、链接检查、状态和 frontmatter 对齐。 |
 
 ### 推荐的后续垂直切片
 
-先只做一条完整路径：`site/index.html` 的“第一个安全任务” → `book/chapters/02-first-safe-task.md` → `book/labs/lab-001-first-safe-task.md` → 一条证据/验收记录 → 下一步章节。该切片应同时证明：起点可找、卡片可判断、正文可读、实验可执行、失败可见、证据可核查。通过后再扩展到 L0–L6 和全部实验。
+先只做一条完整路径：`site/index.html` 的“第一个安全任务” → `book/chapters/02-first-safe-task-EN.md` → `book/labs/lab-001-first-safe-task-EN.md` → 一条证据/验收记录 → 下一步章节。该切片应同时证明：起点可找、卡片可判断、正文可读、实验可执行、失败可见、证据可核查。通过后再扩展到 L0–L6 和全部实验。
 
 ## 研究边界与引用记录
 

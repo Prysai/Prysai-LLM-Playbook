@@ -9,7 +9,7 @@
 | 范围 | 当前数量 | 当前状态 | 运行/复核边界 | 规范入口 |
 |---|---:|---|---|---|
 | 章节 | 22 | `candidate` | 内容契约与路径可检查；学习者前测未闭环 | [`book/chapters/`](../../book/chapters/) |
-| 实验 | 12 | `draft` | `run_status: not_run`；没有运行日志就不能称为已验证 | [`book/labs/README.md`](../../book/labs/README.md) |
+| 实验 | 12 | `draft` | `run_status: not_run`；没有运行日志就不能称为已验证 | [`book/labs/README-EN.md`](../../book/labs/README-EN.md) |
 | 项目 Skill | 7 | `candidate` | 结构检查通过；3/7 完成基础独立上下文前测，全部仍需更完整证据 | [`docs/skill-registry.md`](../skill-registry.md) |
 | 评测夹具 | 38 项 / 15 轨道 | `candidate` | `run_status: not_run`；当前只有固定夹具结构 | [`evals/task-set-v1.yaml`](../../evals/task-set-v1.yaml) |
 | 展示页 | 1 | `candidate` | 英文默认、中文切换已写入；`browser_review: pending` | [`site/README.md`](../../site/README.md) |

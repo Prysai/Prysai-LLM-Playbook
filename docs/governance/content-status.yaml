@@ -77,7 +77,7 @@
     "next_review": "2026-11-09",
     "path": "book/chapters",
     "evidence": [
-      "book/table-of-contents.md",
+      "book/table-of-contents-EN.md",
       "docs/content-matrix.md",
       "docs/quality/current-state-review-2026-08-09.md",
       "docs/quality/review-codex-facts-refresh-2026-08-10.md",
@@ -136,7 +136,7 @@
     "next_review": "2026-11-09",
     "path": "book/labs",
     "evidence": [
-      "book/labs/README.md",
+      "book/labs/README-EN.md",
       "docs/quality/current-state-review-2026-08-09.md",
       "docs/quality/review-codex-facts-refresh-2026-08-10.md",
       "docs/quality/review-workflow-vertical-slice-2026-08-10.md",
