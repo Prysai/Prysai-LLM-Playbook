@@ -34,6 +34,10 @@ LANGUAGE_SWITCHER = re.compile(
     r"<!--\s*language-switcher:start\s*-->.*?<!--\s*language-switcher:end\s*-->",
     re.DOTALL,
 )
+SILENT_ENGLISH_FALLBACK = re.compile(
+    r"English fallback|English source fallback|英文回退|英语回退|英語.*(?:回退|戻(?:って|り)|読(?:んで|む))",
+    re.IGNORECASE,
+)
 
 
 def check_reader_links(path: Path, locale: str, problems: list[str]) -> None:
@@ -45,6 +49,10 @@ def check_reader_links(path: Path, locale: str, problems: list[str]) -> None:
     quietly change language.
     """
     text = path.read_text(encoding="utf-8")
+    if locale != "EN" and SILENT_ENGLISH_FALLBACK.search(text):
+        problems.append(
+            f"{path.relative_to(ROOT)}: localized reader route contains an English fallback instruction"
+        )
     for link_match in MARKDOWN_LINK.finditer(text):
         # A language switcher is an explicit, reader-chosen locale change, not
         # a silent fallback. Every other local reader link must preserve the
