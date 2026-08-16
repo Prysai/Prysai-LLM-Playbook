@@ -4,7 +4,7 @@
 
 **Status:** `candidate`. Dieses Kapitel bietet eine quellenbasierte Entscheidungsmethode, aber keinen unabhängigen Lerner-Vortest. Es belegt weder Kontofähigkeiten noch einen Cloud-Lauf oder Modellvergleich.
 
-## Das Problem
+## Das Problem dieses Kapitels
 
 Dasselbe Ziel kann im Desktop, in der CLI, IDE oder im Web beginnen und lokal, in einem Git-Worktree oder in Cloud laufen. Das sind getrennte Entscheidungen:
 
@@ -22,7 +22,7 @@ Eine *Arbeitsfläche* ist der Ort der Ausführung und Änderung. Ein *Einstieg* 
 - Cloud-`setup` und `agent`, Netzwerk und Geheimnis-Lebensdauer getrennt dokumentieren; und
 - sicher stoppen, wenn der nächste Beleg breitere Autorität verlangt.
 
-## Öffentliche Symptome, keine Laufzeitbeweise
+## Praxisfälle: öffentliche Symptome, keine Laufzeitbeweise
 
 Öffentliche Berichte sind Diagnosematerial, nicht lokale Reproduktion, offizielle Ursache oder garantierte Lösung.
 
@@ -110,15 +110,21 @@ reviewer:
 
 Setup darf Abhängigkeiten mit Netz installieren; Agent ist normalerweise offline, sofern die Umgebung nicht anders konfiguriert ist. Ein Geheimnis kann im Setup vorhanden und vor Agent entfernt sein. „Paket installiert“ belegt Setup, nicht Agent-Zugriff. Externe Aufrufe bleiben pausiert, bis Phase und Datenweg belegt sind.
 
-## 6. Beobachtbares Mini-Experiment
+## Experiment: beobachtbares Mini-Experiment
 
 **Experimentstatus:** `not_run`. Dies ist ein Übungsentwurf, kein Bericht über einen Lauf dieses Repositories in Local, Worktree oder Cloud.
 
+### Vorbereitung
+
 Lege eine wegwerfbare Markdown-Datei, kurze Abnahmeliste und ein temporäres Git-Repository ohne Remote an. Nutze keine Geheimnisse, privaten Daten, Installation, Nachricht, Pushes oder Produktion.
+
+### Aufgabe
 
 > Lies `brief.md`, ändere eine benannte Formulierung in `draft.md`, führe einen lesenden Formatcheck aus und berichte den Diff. Ändere nichts anderes.
 
 Fülle Local-, Worktree- und Cloud-Karte vorher aus. Notiere absoluten Pfad, Ziel-Lesen, Tool-Inventar, Modellsichtbarkeit und erlaubte Nebenwirkung. Wähle höchstens eine Karte; die anderen sind `rejected`, `blocked` oder `not_observed`. Sichere Diff, Check-Ausgabe, Run-ID und exakte Fläche/Einstieg. Bei geändertem Pfad-, Tool-, Ziel- oder Phasenbeleg halte an und bewahre den Checkpoint.
+
+### Belege
 
 ~~~
 run_id | surface | entry | checkout_or_environment
@@ -127,7 +133,7 @@ setup_status | agent_status | network_phase | secret_lifetime
 decision | diff_path | check_output | reviewer
 ~~~
 
-## 7. Sichere Rückstufung
+## 7. Fehler und sichere Rückstufung
 
 | Fehler | Richtige Reaktion |
 |---|---|
@@ -137,9 +143,23 @@ decision | diff_path | check_output | reviewer
 | Setup bestanden, Agent scheitert | Setup `passed`, Agent `failed`/`not_observed`, Task `blocked` |
 | Netz blockiert | Anfrage eingrenzen, Fehler sichern, kein unbeschränktes Netz |
 
-## Reflexion und Quellen
+## Reflexion
 
-Welches Tor änderte deine Wahl? Welcher vorgelagerte Erfolg wäre leicht zu überbehaupten? Übertrage die Methode auf Recherche mit Browser für öffentliche Quellen, lokaler Shell für geschwärzte Belege und isolierter Umgebung für sensible Dateien.
+Welches Tor änderte deine Wahl? Welcher vorgelagerte Erfolg wäre leicht zu überbehaupten? Begründe die Antwort mit deiner Entscheidungskarte, nicht mit einer Erinnerung an eine Oberfläche.
+
+## Transferaufgabe
+
+Übertrage die Methode auf eine Rechercheaufgabe: Nutze einen Browser nur für öffentliche Quellen, eine lokale Shell nur für geschwärzte Belege und eine isolierte Umgebung für sensible Dateien. Fülle neue Karten aus; übernimm die Flächenwahl aus diesem Kapitel nicht automatisch. Markiere, welche Quelle, welcher Pfad und welche Nebenwirkung die neue Wahl begründen.
+
+## Abnahme-Checkliste
+
+- [ ] Ich kann `Local`, `Worktree` und `Cloud` von Desktop, CLI, IDE und Web als Einstieg unterscheiden.
+- [ ] Meine Karte trennt Kontofreigabe, Lesezugriff, Modellsichtbarkeit, Tool-Verfügbarkeit und Ergebnisprüfung.
+- [ ] Ich habe eine Option mit einem überprüfbaren Grund ausgewählt und die anderen als `rejected`, `blocked` oder `not_observed` dokumentiert.
+- [ ] Für Cloud habe ich Setup und Agent, Netzwerkphase und Geheimnislebensdauer getrennt erfasst oder ehrlich als nicht beobachtet markiert.
+- [ ] Bei einem widersprüchlichen Pfad oder fehlenden Beleg stoppe ich, statt Rechte auszuweiten.
+
+## Quellen und Wartungsgrenze
 
 | Veränderliche Tatsache | Quelle | Zugriff | Grenze |
 |---|---|---|---|
