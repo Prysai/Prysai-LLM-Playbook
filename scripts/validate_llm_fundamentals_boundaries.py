@@ -74,6 +74,15 @@ ACCURACY_MARKERS = {
     "DE": ("endliches Kontextfenster", "ein Cutoff allein entscheidet die Frage nicht"),
 }
 
+MICRO_EXPERIMENT_MARKERS = {
+    "EN": ("A five-minute boundary check", "The city library will close at 6 p.m. today."),
+    "ZH": ("五分钟边界检查", "市图书馆今天下午 6 点关门"),
+    "ES": ("Comprobación de límites en cinco minutos", "La biblioteca municipal cerrará hoy a las 18:00"),
+    "JA": ("5分の境界チェック", "市立図書館は今日18時に閉館する"),
+    "KO": ("5분 경계 점검", "시립 도서관은 오늘 오후 6시에 문을 닫습니다"),
+    "DE": ("Fünf-Minuten-Grenzcheck", "Die Stadtbibliothek schließt heute um 18 Uhr"),
+}
+
 FORBIDDEN_MARKERS = {
     "EN": ("This removed the short-window bottleneck.", "The model is frozen at its training cutoff"),
     "ZH": ("短窗口这个瓶颈就此被打破", "模型冻结在它的训练截止日期"),
@@ -98,6 +107,9 @@ def main() -> int:
         for marker in ACCURACY_MARKERS[locale]:
             if marker not in text:
                 errors.append(f"{path.relative_to(ROOT)}: missing accuracy marker {marker!r}")
+        for marker in MICRO_EXPERIMENT_MARKERS[locale]:
+            if marker not in text:
+                errors.append(f"{path.relative_to(ROOT)}: missing Lesson 0 micro-experiment marker {marker!r}")
         for marker in FORBIDDEN_MARKERS[locale]:
             if marker in text:
                 errors.append(f"{path.relative_to(ROOT)}: contains superseded absolute claim {marker!r}")

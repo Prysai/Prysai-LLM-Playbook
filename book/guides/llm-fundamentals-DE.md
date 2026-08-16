@@ -224,10 +224,27 @@ Die Methode des Playbooks folgt direkt aus den Abschnitten 0.5 und 0.6:
    Belege zu einer Handlung, einer Zahlung, einer Veröffentlichung oder einer
    Überzeugung wird.
 
-Wenn du das in zehn Minuten spüren willst, mach den
-[ersten Check ohne Setup](../communication-clinic-DE.md#share-check): eine
-fiktive Nachricht, drei menschliche Prüfungen, eine kleine Quittung. Wenn du
-ein fundierteres Fundament willst, fahre fort mit
+### Fünf-Minuten-Grenzcheck
+
+Bevor du weitermachst, verwende in einem beliebigen Textchat diese fiktive
+Behauptung. Aktiviere keine Suche, lade keine Datei hoch und gib keine privaten
+Informationen ein.
+
+```text
+Ich habe diese Behauptung erhalten: „Die Stadtbibliothek schließt heute um 18 Uhr.“
+Bevor du antwortest, ordne ich ein, was ein reines Textmodell feststellen kann und was nicht.
+
+Bitte lass mich zuerst meine Einordnung schreiben. Weise danach nur auf eine Grenze hin,
+die ich übersehen habe: Generierung, aktuelle Fakten, Quellenprüfung oder eine Handlung in der realen Welt.
+Suche nichts und erfinde keine Quelle.
+```
+
+Bewahre deine erste Einordnung und die eine Korrektur auf. Es geht nicht darum,
+einen Zauberprompt zu lernen oder die Genauigkeit eines Modells zu beweisen.
+Beobachte vielmehr den Unterschied zwischen einem plausiblen Satz und der
+Prüfung einer aktuellen Behauptung.
+
+Fahre danach fort mit
 [Kapitel 1: Verstehe GPT, bevor du Codex vertraust](../chapters/01-gpt-and-codex-DE.md).
 
 ## 0.8 Quellen und Grenzen

@@ -201,10 +201,25 @@ The Playbook's method follows directly from Sections 0.5 and 0.6:
 5. **Keep the boundary** — do not let a plausible answer become an action, a
    payment, a publication, or a belief without evidence.
 
-If you want to feel this in ten minutes, do the
-[no-setup first check](../communication-clinic-EN.md#share-check): one
-fictional message, three human checks, one small receipt. If you want the
-fuller foundation, continue to
+### A five-minute boundary check
+
+Before you continue, use any text chat with this fictional claim. Do not turn
+on search, upload a file, or give it private information.
+
+```text
+I received this claim: "The city library will close at 6 p.m. today."
+Before you answer, I will label what a text-only model can and cannot establish.
+
+Ask me for my labels first. Then point out only one boundary I missed:
+generation, current facts, source checking, or an action in the real world.
+Do not look anything up and do not invent a source.
+```
+
+Save your first labels and the one correction. The point is not to learn a
+magic prompt or prove that a model is accurate. It is to observe the difference
+between producing a plausible sentence and checking a present-world claim.
+
+Then continue to
 [Chapter 1: Understand GPT before you trust Codex](../chapters/01-gpt-and-codex-EN.md).
 
 ## 0.8 Sources and boundary

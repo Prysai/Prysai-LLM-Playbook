@@ -220,10 +220,25 @@ El método del Playbook se deduce directamente de las secciones 0.5 y 0.6:
 5. **Mantén la frontera** — no dejes que una respuesta plausible se convierta
    en una acción, un pago, una publicación o una creencia sin pruebas.
 
-Si quieres sentirlo en diez minutos, haz la
-[primera comprobación sin configuración](../communication-clinic-ES.md#share-check):
-un mensaje ficticio, tres comprobaciones humanas, un recibo pequeño. Si
-quieres una base más completa, continúa con el
+### Comprobación de límites en cinco minutos
+
+Antes de continuar, usa cualquier chat de texto con esta afirmación ficticia.
+No actives búsqueda, no subas un archivo ni aportes información privada.
+
+```text
+Recibí esta afirmación: «La biblioteca municipal cerrará hoy a las 18:00».
+Antes de que respondas, señalaré qué puede y qué no puede establecer un modelo solo de texto.
+
+Pídeme primero mis etiquetas. Después señala solo un límite que omití: generación,
+hechos actuales, comprobación de fuentes o una acción en el mundo real.
+No busques información ni inventes una fuente.
+```
+
+Guarda tus primeras etiquetas y la única corrección. El objetivo no es aprender
+un prompt mágico ni demostrar que el modelo es exacto; es observar la diferencia
+entre producir una frase plausible y comprobar una afirmación actual.
+
+Después continúa con el
 [Capítulo 1: Entiende GPT antes de confiar en Codex](../chapters/01-gpt-and-codex-ES.md).
 
 ## 0.8 Fuentes y alcance
