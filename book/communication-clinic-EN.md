@@ -1,6 +1,6 @@
 <!-- content_id: communication-clinic | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-13 -->
 
-# Beginner Practice Pack: Spanish practice, research, and first attempts
+# Beginner Practice Pack: first prompts for real work
 
 **Status:** `candidate` · **Learner evidence:** `not_run` · **Designed for:**
 low-risk, text-only chat. No cross-model run evidence exists; product-specific
@@ -8,23 +8,27 @@ actions require a sourced adapter.
 
 <span id="practice-route-chooser"></span>
 
-## Start here — choose one small route
+## Start here — do one useful thing
 
-Pick the work you want to do **right now**. Open one first card, make your own
-attempt, then return for the explanation only if you need it. Do not try to
-complete this whole page in one conversation. Each card is a candidate
-template, not evidence that it works for every learner or model.
+Choose the situation closest to what you need **today**. Open one card, make
+your own small attempt, and return for explanation only if you need it. You do
+not need to read the whole pack before using it.
 
-- **A — practise four typed Spanish replies.**
-  [Open Card A1: fictional hotel check-in](#card-a1-hotel-baseline-and-correction).
-- **B — practise one observable non-language skill.**
-  [Open Card B1: define and make your own first attempt](#card-b1-define-and-attempt-the-performance).
-- **C — prepare one source-supported research decision.**
-  [Open Card C1: turn a topic into a checkable question](#card-c1-decision-question-and-source-plan).
-- **D — inspect an answer that looks cited.**
-  [Open Card D1: find the missing source record](#card-d1-source-record-check).
-- **E — continue after a correction without carrying a stale assumption.**
-  [Open Card E1: make a user-declared continuity receipt](#card-e1-user-declared-continuity-receipt).
+- **Practise a Spanish reply.** Start with the fictional,
+  [four-turn hotel check-in](#card-a1-hotel-baseline-and-correction). You try
+  first; the model corrects one consequential mistake instead of giving a long
+  lesson.
+- **Get help with a real skill without handing over the answer.** Start with
+  [one small performance attempt](#card-b1-define-and-attempt-the-performance),
+  such as explaining an idea or drafting a work update.
+- **Check a claim before you repeat it.** Start with a
+  [decision and source plan](#card-c1-decision-question-and-source-plan), then
+  keep the conclusion narrow when the sources are missing or disagree.
+
+These are candidate templates, not proof that they work for every learner,
+model, or situation. The later cards cover source checks, recovery after a
+missed reply, safe sharing, and continuity when one of those is your real
+problem.
 
 Already have a reply that missed the task? Use the [recovery route](#recovery-route).
 Not sure which card fits? Use the short [first-practice intake](#first-practice-intake).
