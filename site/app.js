@@ -4072,5 +4072,30 @@ Object.assign(copy.de, {
   skillInterview: 'Probt eine beobachtbare Antwort unter Zeitlimit.'
 });
 
+Object.assign(copy.en, {
+  githubBadge: 'GitHub',
+  githubBadgeAria: 'View project on GitHub'
+});
+Object.assign(copy.zh, {
+  githubBadge: 'GitHub',
+  githubBadgeAria: '在 GitHub 上查看项目'
+});
+Object.assign(copy.es, {
+  githubBadge: 'GitHub',
+  githubBadgeAria: 'Ver proyecto en GitHub'
+});
+Object.assign(copy.ja, {
+  githubBadge: 'GitHub',
+  githubBadgeAria: 'GitHub でプロジェクトを見る'
+});
+Object.assign(copy.ko, {
+  githubBadge: 'GitHub',
+  githubBadgeAria: 'GitHub에서 프로젝트 보기'
+});
+Object.assign(copy.de, {
+  githubBadge: 'GitHub',
+  githubBadgeAria: 'Projekt auf GitHub ansehen'
+});
+
 initializeSearch();
 applyLanguage(currentLanguage, { updateUrl: hasExplicitLanguageParam && !hasValidLanguageParam });
