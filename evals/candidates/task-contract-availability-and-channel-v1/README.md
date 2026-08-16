@@ -216,7 +216,7 @@ release-license decision. The source boundary is also recorded in
 Run:
 
 ```powershell
-$py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+$py = (Get-Command python -ErrorAction Stop).Source
 & $py scripts\validate_task_contract_conditions_candidate.py
 ```
 

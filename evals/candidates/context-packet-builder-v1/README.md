@@ -37,7 +37,7 @@ cannot silently add authority. It does **not** run a model or infer that a
 model would follow these decisions.
 
 ```powershell
-$py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+$py = (Get-Command python -ErrorAction Stop).Source
 & $py scripts\validate_context_packet_builder_candidate.py
 & $py scripts\test_context_packet_builder_candidate.py
 ```

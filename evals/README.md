@@ -29,7 +29,7 @@ v1 包含 40 项任务，覆盖以下轨道：
 在仓库根目录运行：
 
 ```powershell
-$py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+$py = (Get-Command python -ErrorAction Stop).Source
 & $py scripts\validate_eval_tasks.py
 ```
 

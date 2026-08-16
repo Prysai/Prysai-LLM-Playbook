@@ -83,6 +83,10 @@ transfer_limitations: "可访问的公开来源仍可能不完整、过期、有
 <!-- lab-navigation:start -->
 <hr>
 <nav class="lab-navigation" aria-label="实验导航">
-  <p>相邻实验的中文版本尚未全部完成；为避免跳转到英文或无效页面，这里暂不提供跨语言导航。</p>
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="right"><a data-lab-nav="next" href="lab-009-engineering-lifecycle-ZH.md" aria-label="下一个实验：实验 009 · 比较直接实施与完整工程生命周期">下一个 →<br><strong>实验 009 · 比较直接实施与完整工程生命周期</strong></a></td>
+    </tr>
+  </table>
 </nav>
 <!-- lab-navigation:end -->
