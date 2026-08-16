@@ -5,9 +5,14 @@ on:
     branches: [main]
     paths:
       - "book/**"
-      - "docs/governance/**"
+      - "docs/**"
       - "site/**"
       - "skills/**"
+      - "assets/**"
+      - "examples/**"
+      - "evals/**"
+      - "AGENTS.md"
+      - "CONTEXT.md"
       - "scripts/build_*.py"
       - "scripts/validate_*.py"
       - "README*.md"
@@ -88,3 +93,50 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
+
+  docs-prysai-deploy:
+    needs: build
+    if: ${{ github.event_name == 'push' || inputs.deploy }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: docs-prysai-production
+      url: https://docs.prysai.com/llm-playbook/
+    permissions:
+      contents: read
+    concurrency:
+      group: docs-prysai-production
+      cancel-in-progress: false
+    steps:
+      - name: Check out the reviewed source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
+      - name: Build the bounded deployment artifact
+        run: python scripts/build_pages_artifact.py --output _site
+
+      - name: Configure the restricted deployment key
+        env:
+          DOCS_DEPLOY_SSH_KEY: ${{ secrets.DOCS_DEPLOY_SSH_KEY }}
+        run: |
+          test -n "$DOCS_DEPLOY_SSH_KEY"
+          install -d -m 0700 "$HOME/.ssh"
+          printf '%s\n' "$DOCS_DEPLOY_SSH_KEY" > "$HOME/.ssh/id_ed25519"
+          chmod 0600 "$HOME/.ssh/id_ed25519"
+          printf '%s\n' 'docs.prysai.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHupie01tDV2nKK5N74smhAjkkugyKj3bG4qTk5WY0le' > "$HOME/.ssh/known_hosts"
+          chmod 0600 "$HOME/.ssh/known_hosts"
+
+      - name: Publish atomically to Docs
+        run: >-
+          tar --create --directory=_site --file=- . |
+          ssh -i "$HOME/.ssh/id_ed25519"
+          -o BatchMode=yes
+          -o StrictHostKeyChecking=yes
+          -o UserKnownHostsFile="$HOME/.ssh/known_hosts"
+          prysai-docs-deploy@docs.prysai.com

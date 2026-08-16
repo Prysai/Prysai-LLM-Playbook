@@ -70,6 +70,15 @@ the repository's Pages settings or API state before calling the site deployed.
 The workflow's success is not, by itself, proof that Pages is enabled or that
 the public URL is reachable.
 
+## Docs mirror
+
+The same bounded artifact is also mirrored to
+`https://docs.prysai.com/llm-playbook/` after a qualifying push to `main`.
+The mirror is served by a restricted deployment account: it accepts a static
+archive only, validates its paths and file types, and atomically changes the
+published release. The deployment key is stored as the protected
+`DOCS_DEPLOY_SSH_KEY` GitHub Environment secret and is never committed here.
+
 The workflow is named **Build Prysai LLM Playbook Pages candidate artifact**. With
 the default `deploy: false`, its summary records
 `deployment_status=not_deployed`; a green run means only that the bounded
