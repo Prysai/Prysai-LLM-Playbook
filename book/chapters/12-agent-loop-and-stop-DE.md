@@ -4,11 +4,19 @@
 
 **Status:** `candidate`. **Experimentstatus:** `not_run`. Dieses Kapitel erklärt eine beobachtbare Schleife; es beweist nicht das Verhalten eines bestimmten Hosts, Modells oder Tools.
 
-## Das Problem
+## Das Problem dieses Kapitels
 
 „Der Agent soll das erledigen“ klingt wie eine Aktion. Tatsächlich folgen Modellvorschlag, Host-Entscheidung, Werkzeugausführung oder Ablehnung, Beobachtung, Zustandsaktualisierung, Überprüfung und die Entscheidung zum Fortsetzen oder Stoppen. Ein selbstsicherer Schlusssatz ersetzt diese Ereignisse nicht.
 
 > Eine Modellausgabe ist ein Vorschlag. Ein Tool-Ergebnis ist eine Beobachtung. Eine verifizierte Übergabe braucht Evidenz aus der Zielumgebung.
+
+## Lernziele
+
+Du kannst Vorschlag, Freigabe, Ausführung, beobachteten Effekt und Abnahme auseinanderhalten; Stopps für Eingabe, Autorität, Evidenz und Budget vor dem Start definieren; und eine unterbrochene Aufgabe so übergeben, dass niemand einen möglicherweise erfolgten Schreibvorgang blind wiederholt. Die Übung beweist kein allgemeines Agent- oder Host-Verhalten.
+
+## Praxisfälle: Eine sichtbare Schleife ist noch kein abgeschlossenes Ergebnis
+
+Ein vorgeschlagener Befehl, ein `Working`-Label oder eine Zusammenfassung kann sichtbar sein, obwohl Ausführung, Read-back oder Abnahme fehlen. Das ist keine Diagnose eines bestimmten Produkts. Es zeigt nur, warum ein Incident an der ersten unbeobachteten Stufe angehalten wird: etwa Tool-Start, Zielzustand oder Check-Ausgabe.
 
 ## Die beobachtbare Schleife
 
@@ -81,11 +89,21 @@ Lege Budgets für Versuche, Zeit, veränderbare Dateien, externe Nebenwirkungen,
 | Kompensierbar | Effekt bestätigen und begrenzte Kompensation vorbereiten |
 | Nicht idempotent | Stoppen und abgleichen, bevor erneut versucht wird |
 
-## Übung und Grenze
+## Experiment und Grenze
+
+### Vorbereitung
+
+Lege ein wegwerfbares lokales Verzeichnis mit `input.txt` an. Erlaube Lesen und Schreiben nur dort, keine Zugangsdaten, Installation, Netzwerk, Veröffentlichung oder Löschung. Schreibe Ziel, Pfadgrenze, Abnahme und ein Retry-Budget von eins auf, bevor ein Modell eine Aktion vorschlägt.
+
+### Aufgabe
 
 Bitte einen Agenten in einem wegwerfbaren Verzeichnis, Links zu fehlenden Dateien zu melden, ohne Quelldokumente zu ändern. Bestimme Lese- und Schreibwurzeln, die Definition eines fehlenden Links, den Check, zwei reine Leseversuche und einen absichtlichen Fehler, etwa eine falsche Wurzel. Prüfe Vorschlag, Bericht und Check getrennt.
 
 Die Übung gelingt, wenn du jeden Übergang erklären und mit Evidenz als `verified`, `partial`, `blocked` oder `unverified` übergeben kannst. Bis ein unabhängiger Lauf gespeichert ist, bleibt dieses Kapitel `candidate / not_run`.
+
+### Belege
+
+Sichere Aufgabenvertrag, Ereigniskarte, Freigabeentscheidung, ausgeführte Befehle mit Verzeichnis und Endstatus, Diff oder Read-back, Abnahme und Übergabe. Fehlt ein Übergang, notiere `not_observed` statt ihn aus der Modellantwort zu ergänzen.
 
 ## Den Stopp vor dem Start der Schleife festlegen
 
@@ -132,6 +150,26 @@ Lege in einem wegwerfbaren Verzeichnis eine `input.txt` mit drei unsortierten Ze
 - [ ] Meine Übergabe trennt Belegtes, Unbekanntes, Nichtbehauptetes und den nächsten sicheren Schritt.
 
 Ereignisnamen und Berechtigungen unterscheiden sich je nach Host. Prüfe sie mit offizieller Dokumentation und aktueller Beobachtung. Öffentliche Berichte helfen beim Entwurf von Checks, ersetzen aber keinen eigenen Lauf.
+
+## Reflexion
+
+Welche Stufe in deiner Ereigniskarte wäre am leichtesten durch einen überzeugenden Text zu überspringen? Wann wäre Wiederholung sicher, wann müsste sie wegen eines unbekannten möglichen Effekts stoppen? Welche Behauptung bleibt nach einem Read-back noch außerhalb des Check-Umfangs?
+
+## Transferaufgabe
+
+Wende dieselbe Schleife auf eine Sprachübung oder Quellenrecherche an. Bei Sprache sind Modellkorrektur, Lernendenantwort, spätere unassistierte Abrufaufgabe und Rückmeldung getrennte Ereignisse; ein flüssiger Dialog ist kein Mastery-Nachweis. Bei Recherche sind Fund, Lektüre, Quellenprüfung und Schlussfolgerung getrennt. Behalte Stoppbudgets und ehrliche Übergabe bei.
+
+## Abnahme-Checkliste
+
+- [ ] Ich trenne Vorschlag, Host-Entscheidung, Ausführung, Beobachtung und Abnahme.
+- [ ] Ich kann in einer „fertig“-Behauptung den ersten unbelegten Übergang zeigen.
+- [ ] Ich habe Stoppregeln für Eingabe, Autorität, Evidenz und Budget geschrieben.
+- [ ] Bei verlorener Antwort lese ich Zustand und Nachbedingung, bevor ich erneut schreibe.
+- [ ] Meine Übergabe trennt Belegtes, Unbekanntes, Nichtbehauptetes und den nächsten sicheren Schritt.
+
+## Quellen und Wartungsgrenze
+
+Die beobachtbare Schleife, Statusbegriffe und Stoppmethoden sind die stabile Lehre dieses Projekts. Konkrete Agent-Oberflächen, Toolnamen, Berechtigungen und Laufzeitverhalten sind veränderlich. Prüfe aktuelle Fakten in den [offiziellen Faktenkarten](../evidence-library-DE.md#source-notes) und nutze den [Feldproblemindex](../evidence-library-DE.md#source-notes) nur als Symptommaterial. Beides ersetzt keinen eigenen aufgezeichneten Lauf.
 
 ## Geführte Übung: vier sichere Stopps in derselben Aufgabe
 
