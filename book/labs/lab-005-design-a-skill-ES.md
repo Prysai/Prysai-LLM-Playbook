@@ -110,7 +110,7 @@ solo hizo más largas las instrucciones?
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-lab-nav="previous" href="lab-004-skill-selection-ES.md" aria-label="Lab anterior: Lab 004 · Elegir la capacidad útil más pequeña">← Anterior<br><strong>Lab 004 · Elegir la capacidad útil más pequeña</strong></a></td>
-      <td align="right"><a data-lab-nav="next" href="../table-of-contents-ES.md" aria-label="Volver al índice en español: el Lab 006 aún no está traducido">Siguiente pendiente →<br><strong>Ver disponibilidad del Lab 006</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-006-agent-stop-conditions-ES.md" aria-label="Siguiente Lab: Lab 006 · Diseñar condiciones de parada para un Agent">Siguiente →<br><strong>Lab 006 · Diseñar condiciones de parada para un Agent</strong></a></td>
     </tr>
   </table>
 </nav>
