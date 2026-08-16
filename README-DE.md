@@ -131,11 +131,9 @@ Bericht ist aber nur ein Beleg dafür, dass jemand ein Problem berichtet hat:
   plausible Antwort ist kein Ausführungsbeleg.
 
 Quelle, Datum, Evidenzstufe, betroffene Umgebung und lokaler
-Reproduktionsstatus müssen deshalb sichtbar bleiben. Die
-[Übersicht der Real-Problem-Forschung — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](docs/research/field-problems-index-2026-08-10.md)
-und die
-[Codex-Problemforschung — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](docs/research/field-problems-codex.md)
-führen diese Grenze weiter.
+Reproduktionsstatus müssen deshalb sichtbar bleiben. Die zugehörigen
+Forschungsakten sind noch nicht auf Deutsch verfügbar; diese Einstiegsseite
+verweist deshalb nicht auf ihre Originalsprache.
 
 ## Sechs Locales und Dateinamen
 
@@ -168,39 +166,29 @@ englischen oder chinesischen Varianten. Das gilt auch für Inhaltsverzeichnisse,
 Vor-/Zurück-Links, Kapitel-Lab-Verweise und Sprachumschalter.
 
 Gibt es ein `-DE`-Ziel noch nicht, wird kein englisches oder altes
-unsuffixiertes Dokument als stiller Ersatz verwendet. Ein solcher Link trägt
-im sichtbaren Linktext ausdrücklich den Hinweis „deutsche Migration in Arbeit“
-und nennt, falls er auf den aktuellen Originalpfad zeigt, dass dieser Pfad
-unsuffixiert oder locale-neutral ist. So bleibt die fehlende Übersetzung
-erkennbar.
+unsuffixiertes Dokument als Ersatz verlinkt. Der deutsche Buchindex zeigt
+dann „Deutsche Datei noch nicht vorhanden“. So bleibt die fehlende Übersetzung
+erkennbar, ohne die Lesesprache zu wechseln.
 
 ### Deutsche Einstiege
 
 - [Deutscher Buchleitfaden](book/README-DE.md)
 - [Deutsches Vorwort](book/preface-DE.md)
 - [Deutsches Inhaltsverzeichnis](book/table-of-contents-DE.md)
+- [Erste universelle LLM-Aufgabe](book/routes/universal-core-foundations-DE.md)
 
 ### Projektverträge und Status
 
-- [Terminologie und stabile Projektgrenzen — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](CONTEXT.md)
-- [Projektcharta — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](docs/charter.md)
-- [Bucharchitektur — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](docs/book-architecture.md)
-- [Lernmodell — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](docs/learning-model.md)
-- [Content-Lebenszyklus — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](docs/governance/content-lifecycle.md)
-- [Aktuelle Statusquelle — deutsche Migration in Arbeit; locale-neutrale maschinenlesbare Datei](docs/governance/content-status.yaml)
-- [Locale-Matrix — deutsche Migration in Arbeit; locale-neutrale Governance-Datei](docs/governance/locale-matrix.yaml)
-- [Locale-Entscheidung und Migrationsregeln — deutsche Migration in Arbeit; derzeitiger locale-neutraler ADR-Pfad](docs/adr/0010-locale-suffixed-content.md)
-- [Qualitätsreview — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](docs/quality/current-state-review-2026-08-09.md)
-- [Skill-Qualitätsstandard — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](docs/quality/skill-quality-standard.md)
-- [Evaluationsrahmen — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](docs/quality/evaluation-framework.md)
-- [Evaluationsaufgaben v1 — deutsche Migration in Arbeit; locale-neutrale maschinenlesbare Datei](evals/task-set-v1.yaml)
+Terminologie, Charta, Lernmodell, Statusquelle, Qualitätsstandard,
+Evaluationsrahmen und Locale-Governance sind noch nicht als deutsche Dateien
+veröffentlicht. Sie bleiben aus diesem Leseweg heraus, bis eine geprüfte
+deutsche Fassung existiert.
 
 ### Forschung und Herkunft
 
-- [Quellen- und Lizenzregister — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](docs/sources/asset-register.md)
-- [Offizielle Codex-Baseline-Forschung — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](docs/research/openai-codex-baseline.md)
-- [Öffentliche Showcase-Dokumentation — deutsche Migration in Arbeit; derzeitiger unsuffixierter Originalpfad](site/README.md)
-- [Codex Coach — deutsche Migration in Arbeit; derzeitiger unsuffixierter Skill-Pfad](skills/prysai-codex-coach/SKILL.md)
+Quellenregister, Produktforschungsakten, Showcase-Dokumentation und Skill-
+Anweisungen sind ebenfalls noch nicht auf Deutsch verfügbar. Dieser Einstieg
+behauptet nicht, dass sie übersetzt oder sprachlich geprüft seien.
 
 ## Nicht verhandelbare Grenzen
 
@@ -221,9 +209,9 @@ erkennbar.
 
 ## Umfang dieses ersten deutschen Schnitts
 
-Diese erste Migration schreibt genau drei deutsche reader-facing Einstiege:
-`README-DE.md`, `book/README-DE.md` und `book/preface-DE.md`. Sie macht weder
-die Kapitel, Labs, Skills, Forschungsakten noch die öffentliche Website zu
-vollständigen deutschen Übersetzungen. Die sichtbaren Hinweise an fehlenden
-`-DE`-Zielen bleiben deshalb Teil der Navigation, bis die jeweiligen
-content IDs tatsächlich migriert und geprüft wurden.
+Der deutsche Leseweg umfasst den Projekteinstieg, Buchleitfaden, das Vorwort,
+den Buchindex, die universelle erste Aufgabe, die Kapitel 1 und 4 sowie die
+Labs 001, 007 und 011. Er macht weder die übrigen Kapitel und Labs noch Skills,
+Forschungsakten oder die öffentliche Website zu vollständigen deutschen
+Übersetzungen. Fehlende `-DE`-Ziele bleiben im Buchindex sichtbar, bis die
+jeweilige content ID tatsächlich übersetzt und geprüft wurde.

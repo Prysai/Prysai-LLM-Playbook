@@ -50,8 +50,9 @@ sichtbar machen:
 - aktuelle Fakten mit Quelle und Prüfungsumfang; und
 - einen Reife- und Aktualisierungsstatus, der die Belege nicht übertreibt.
 
-Die Mindestanforderung beschreibt der
-[Evaluationsrahmen — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](../docs/quality/evaluation-framework.md).
+Die Mindestanforderung beschreibt der Evaluationsrahmen. Eine deutsche
+Lesefassung dieses Rahmens steht noch nicht bereit und wird von hier nicht in
+der Originalsprache geöffnet.
 Eine Gliederung, ein bestandener Struktur-Checker oder eine gut aussehende
 generierte Antwort reicht nicht aus, um ein Kapitel `verified` zu nennen.
 
@@ -84,10 +85,10 @@ Diese Angaben sind nicht austauschbar. Eine Übersetzung kann strukturell
 
 - [Deutsches Vorwort](preface-DE.md)
 - [Deutsches Inhaltsverzeichnis](table-of-contents-DE.md)
-- [Evaluationsrahmen — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](../docs/quality/evaluation-framework.md)
-- [Luna-Modellevaluation — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](../docs/model-evaluation-luna.md)
-- [Codex-Baseline-Forschung — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](../docs/research/openai-codex-baseline.md)
-- [Index der Real-Problem-Forschung — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](../docs/research/field-problems-index-2026-08-10.md)
+
+Evaluationsrahmen, Luna-Modellevaluation und Forschungsakten haben noch keine
+deutsche Lesefassung. Dieser Buchleitfaden verlinkt daher nicht auf ihre
+Originalsprache.
 
 Das deutsche Inhaltsverzeichnis liegt jetzt unter
 `table-of-contents-DE.md`. Kapitel und Labs haben noch keine vollständige
@@ -110,10 +111,8 @@ der Lauf `not_run`; eine plausible Antwort oder ein statischer Check ersetzt
 keinen Laufbeleg. Quelle, Datum, Evidenzstufe, Umfang und Reproduktionsstatus
 müssen zusammen gelesen werden.
 
-Für die Ausgangsdokumente siehe den
-[Real-Problem-Forschungsindex — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](../docs/research/field-problems-index-2026-08-10.md)
-und die
-[Codex-Problemforschung — deutsche Migration in Arbeit; derzeitiger locale-neutraler Originalpfad](../docs/research/field-problems-codex.md).
+Die Ausgangsdokumente dieser Forschung liegen noch nicht auf Deutsch vor; die
+deutsche Lesestrecke bleibt deshalb auf ihre verfügbaren Einheiten begrenzt.
 
 ## Struktur des Buches
 

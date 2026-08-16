@@ -45,10 +45,10 @@ L3 の横断的な練習は、実験 013：監査可能な垂直スライス（�
 
 - [日本語版の序文](preface-JA.md)
 - [書籍目次（移行中）](table-of-contents-JA.md)
-- [評価フレームワーク（移行中）](../docs/quality/evaluation-framework.md)
-- [Luna 評価実験（移行中）](../docs/model-evaluation-luna.md)
-- [研究アーカイブ（移行中）](../docs/research/openai-codex-baseline.md)
 - [日本語版のプロジェクト入口](../README-JA.md)
+
+評価フレームワーク、Luna 評価実験、研究アーカイブには、まだ日本語の
+閲覧用ファイルがありません。この導入ページから原文へは移動しません。
 
 ## 翻訳状態と出典境界
 

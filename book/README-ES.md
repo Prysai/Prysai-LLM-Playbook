@@ -42,8 +42,8 @@ Cada capítulo debe incluir:
 - el estado de actualización.
 
 Antes de entrar en la ruta principal, cada borrador de capítulo debe superar
-el umbral mínimo de `docs/quality/evaluation-framework.md` (documento
-compartido; migración ES en curso).
+el umbral mínimo del marco de evaluación. Ese marco todavía no tiene un archivo
+en español, por lo que no se abre desde esta ruta de lectura.
 
 ## Entrada de lectura actual
 
@@ -63,11 +63,9 @@ Reúne protocolo, línea base, checkpoints, verificación, fallo intencional y
 transferencia en una misma ruta de bajo riesgo.
 
 Entrada rápida: [prefacio en español](preface-ES.md) · [índice del libro
-en español](table-of-contents-ES.md) · [marco de
-evaluación (migración ES en curso; fuente actual)](../docs/quality/evaluation-framework.md)
-· [evaluación de Luna (migración ES en curso; fuente actual)](../docs/model-evaluation-luna.md)
-· [archivo de investigación de referencia de OpenAI Codex (migración ES en
-curso; fuente actual)](../docs/research/openai-codex-baseline.md)
+en español](table-of-contents-ES.md). El marco de evaluación, la evaluación de
+Luna y la investigación de referencia todavía no tienen versiones en español;
+esta guía no redirige a la fuente original.
 
 El índice del libro ya tiene una entrada `-ES`. Los capítulos, laboratorios y
 documentos compartidos que todavía no tienen una variante `-ES` mantienen el
