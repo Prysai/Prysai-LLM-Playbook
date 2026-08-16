@@ -384,53 +384,53 @@
         },
         "ZH": {
           "path": "book/communication-clinic-ZH.md",
-          "content_status": "candidate",
-          "translation_status": "candidate",
+          "content_status": "draft",
+          "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-15",
-          "coverage": "full",
+          "coverage": "starter-card subset",
           "run_status": "not_run",
-          "reason": "Simplified Chinese pack is aligned with the English starter-pack structure; independent language review remains pending."
+          "reason": "A Simplified Chinese starter-card subset exists; it is not a complete translation of the full English pack and independent language review remains pending."
         },
         "ES": {
           "path": "book/communication-clinic-ES.md",
-          "content_status": "candidate",
-          "translation_status": "candidate",
+          "content_status": "draft",
+          "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-16",
-          "coverage": "full",
+          "coverage": "starter-card subset",
           "run_status": "not_run",
-          "reason": "Spanish pack is aligned with the English starter-pack structure; independent language review remains pending."
+          "reason": "A Spanish starter-card subset exists; it is not a complete translation of the full English pack and independent language review remains pending."
         },
         "JA": {
           "path": "book/communication-clinic-JA.md",
-          "content_status": "candidate",
-          "translation_status": "candidate",
+          "content_status": "draft",
+          "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-16",
-          "coverage": "full",
+          "coverage": "starter-card subset",
           "run_status": "not_run",
-          "reason": "Japanese pack is aligned with the English starter-pack structure; independent language review remains pending."
+          "reason": "A Japanese starter-card subset exists; it is not a complete translation of the full English pack and independent language review remains pending."
         },
         "KO": {
           "path": "book/communication-clinic-KO.md",
-          "content_status": "candidate",
-          "translation_status": "candidate",
+          "content_status": "draft",
+          "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-16",
-          "coverage": "full",
+          "coverage": "starter-card subset",
           "run_status": "not_run",
-          "reason": "Korean pack is aligned with the English starter-pack structure; independent language review remains pending."
+          "reason": "A Korean starter-card subset exists; it is not a complete translation of the full English pack and independent language review remains pending."
         },
         "DE": {
           "path": "book/communication-clinic-DE.md",
-          "content_status": "candidate",
-          "translation_status": "candidate",
+          "content_status": "draft",
+          "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-16",
-          "coverage": "full",
+          "coverage": "starter-card subset",
           "run_status": "not_run",
-          "reason": "German pack is aligned with the English starter-pack structure; independent language review remains pending."
+          "reason": "A German starter-card subset exists; it is not a complete translation of the full English pack and independent language review remains pending."
         }
       }
     },
