@@ -180,7 +180,7 @@ def validate_contract(contract: dict[str, Any]) -> list[str]:
     if neighbors != intents: errors.append(f"near-neighbor fixtures must cover all intents: missing={sorted(intents-neighbors)}")
     for required in ("mixed", "explicit", "safety"):
         if required not in kinds: errors.append(f"fixtures need kind: {required}")
-    for new_skill in ("prysai-dialogue-brief", "prysai-first-turn-check", "prysai-field-signal-curator", "prysai-platform-adapter-review", "prysai-communication-failure-triage", "prysai-prompt-card-editor"):
+    for new_skill in ("prysai-dialogue-brief", "prysai-first-turn-check", "prysai-field-signal-curator", "prysai-platform-adapter-review", "prysai-platform-fact-watch", "prysai-communication-failure-triage", "prysai-interruption-checkpoint", "prysai-shift-handoff", "prysai-prompt-card-editor", "prysai-adversarial-project-review"):
         if new_skill not in explicit_owners: errors.append(f"new Skill needs explicit fixture: {new_skill}")
         if new_skill not in safety_owners: errors.append(f"new Skill needs safety fixture: {new_skill}")
         if new_skill != "prysai-dialogue-brief" and new_skill not in mixed_owners: errors.append(f"new Skill needs mixed-owner fixture: {new_skill}")
@@ -188,6 +188,8 @@ def validate_contract(contract: dict[str, Any]) -> list[str]:
         "boundary-dialogue-brief-local-repository": "prysai-task-protocol",
         "boundary-dialogue-brief-current-rules": "prysai-source-investigator",
         "boundary-prompt-card-editor-personal-first-turn": "prysai-dialogue-brief",
+        "boundary-interruption-checkpoint-preserved-interaction": "prysai-communication-failure-triage",
+        "boundary-shift-handoff-stable-product-context": "prysai-product-context",
     }
     if boundary_owners != expected_boundaries:
         errors.append(f"boundary fixtures must preserve personal, file, and current-fact ownership: {boundary_owners}")

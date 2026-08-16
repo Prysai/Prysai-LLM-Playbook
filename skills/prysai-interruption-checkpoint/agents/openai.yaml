@@ -1,0 +1,4 @@
+interface:
+  display_name: "Interruption Checkpoint"
+  short_description: "Preserve what is known before retrying an interrupted LLM task."
+  default_prompt: "Use $prysai-interruption-checkpoint to make a receipt before retrying this interrupted task."

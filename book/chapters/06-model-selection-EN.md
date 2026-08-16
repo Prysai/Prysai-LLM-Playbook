@@ -244,9 +244,13 @@ that this repository has run a model comparison.
 ### Setup
 
 Choose two candidates that have `surface_available: yes` on the same surface.
-Use synthetic, non-sensitive input. Do not use production data, real secrets,
-external writes, publication, push, deployment, or a paid connector. Run each
-task once initially and allow at most one pre-declared, same-format rework.
+Use the versioned, offline
+[`three-task-smoke-v1` fixture](../../evals/candidates/three-task-smoke-v1/README.md)
+instead of recreating inputs from memory. It contains synthetic, non-sensitive
+input plus a local validator; it does not contain model runs. Do not use
+production data, real secrets, external writes, publication, push, deployment,
+or a paid connector. Run each task once initially and allow at most one
+pre-declared, same-format rework.
 
 Freeze `task_set_version: three-task-smoke-v1`, both candidate cards, one
 acceptance rubric, raw-output locations, log locations, and a stop condition for
@@ -255,14 +259,15 @@ tool-version drift.
 
 ### Fixed tasks
 
-| ID | Synthetic input | Required output | Frozen acceptance |
-|---|---|---|---|
-| `smoke-1-extract` | Text containing `owner: Lin`, `due: 2026-08-15`, `status: candidate`, and two irrelevant sentences | JSON containing only `owner`, `due`, and `status` | Parseable JSON; all three values exact; no extra fields or prose |
-| `smoke-2-transform` | Three Markdown release notes: add an export, fix an empty heading, and a known limitation that PDF is unsupported | A three-column table: `type / content / status` | All three facts retained; the limitation remains a limitation; only the requested table is emitted |
-| `smoke-3-evidence` | Claims that “the build succeeded, so the feature is live” and “login succeeded, so the repository is readable,” with build and login evidence but no deployment or repository-read evidence | An audit table: `claim / evidence present / gap / status` | Neither claim is marked verified; the missing deployment and resource-read evidence are named; status is `candidate` or `unconfirmed` |
+The canonical task IDs are `extract-01`, `markdown-02`, and `gap-review-03`.
+They cover structured extraction, constrained Markdown transformation, and
+evidence-gap review. Each task directory contains an instruction, one frozen
+input, one expected output, and a validator. The package publishes the exact
+input SHA-256 values in `fixture.json` so a reviewer can detect drift.
 
-Do not replace a task with a prettier demo for one candidate. If an input must
-change, increment the task-set version and rerun both sides.
+Do not replace a task with a prettier demo for one candidate. If an input,
+instruction, output schema, or acceptance rule must change, create a new
+task-set version and rerun both sides.
 
 ### Task
 
@@ -354,7 +359,7 @@ for evaluation evidence.
 | CLI surface and local repository workflow | [Codex CLI](https://learn.chatgpt.com/docs/cli.md) | 2026-08-11 | Official CLI documentation; not this session’s effective configuration | `facts-maintainer` / 2026-09-11 |
 | Cloud environment, setup, logs, and review boundaries | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-11 | Official Cloud documentation; setup is not agent-stage completion | `facts-maintainer` / 2026-09-11 |
 | Public model/provider, capacity, and long-wait symptoms | [Field problem record](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) | 2026-08-11 | User reports and project guidance; no local reproduction or official root-cause claim | `curriculum-maintainer` / 2026-09-11 |
-| Fixed-task comparison method | [Evaluation chapter](19-evaluate-models-and-workflows-EN.md) and this chapter’s `three-task-smoke-v1` | 2026-08-11 | Playbook method; no completed model runs yet | `evaluation-maintainer` / 2026-09-11 |
+| Fixed-task comparison method | [Evaluation chapter](19-evaluate-models-and-workflows-EN.md) and the [versioned fixture](../../evals/candidates/three-task-smoke-v1/README.md) | 2026-08-14 | Playbook method and local fixture validator; no completed model runs yet | `evaluation-maintainer` / 2026-09-11 |
 
 Model IDs, surface matrices, prices, capacity, configuration syntax, provider
 support, effort controls, and deprecation notices can change. When they do,

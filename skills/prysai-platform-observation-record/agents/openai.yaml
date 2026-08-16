@@ -1,0 +1,4 @@
+interface:
+  display_name: "Platform Observation Record"
+  short_description: "Record one safe first-use platform observation."
+  default_prompt: "Use $prysai-platform-observation-record to record one safe platform observation without making capability claims."

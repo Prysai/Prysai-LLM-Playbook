@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shift Handoff"
+  short_description: "Separate reusable rules from this work item."
+  default_prompt: "Use $prysai-shift-handoff to prepare one clean brief for the current item in this recurring workflow. Do not execute the task."

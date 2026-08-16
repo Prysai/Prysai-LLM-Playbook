@@ -1,0 +1,4 @@
+interface:
+  display_name: "Platform Fact Watch"
+  short_description: "Track source drift in named-platform teaching claims."
+  default_prompt: "Use $prysai-platform-fact-watch to review which current platform claims need rechecking."

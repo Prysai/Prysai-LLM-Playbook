@@ -17,10 +17,29 @@ def main() -> int:
     baseline = registry.load_object(registry.ROOT / registry.REGISTRY_PATH)
     if registry.validate(registry.ROOT, baseline):
         raise AssertionError("baseline registry is invalid")
+    skill_count = len(baseline["records"])
+    stale_count = skill_count - 1
 
     missing = copy.deepcopy(baseline)
     missing["records"].pop()
     require_error(missing, "unregistered Skill directory")
+    require_error(missing, "routing matrix Skill missing from registry")
+
+    frontdoor_documents = {
+        path: (registry.ROOT / path).read_text(encoding="utf-8")
+        for path in registry.FRONTDOOR_SKILL_COUNT_PATTERNS
+    }
+    stale_frontdoor = dict(frontdoor_documents)
+    stale_frontdoor["README.md"] = stale_frontdoor["README.md"].replace(
+        f"{skill_count} project-owned `candidate` Skills",
+        f"{stale_count} project-owned `candidate` Skills",
+        1,
+    )
+    if not any(
+        f"README.md: project Skill count must be {skill_count}, not {stale_count}" in error
+        for error in registry.frontdoor_skill_count_errors(skill_count, stale_frontdoor)
+    ):
+        raise AssertionError("stale README Skill count was not rejected")
 
     orphan = copy.deepcopy(baseline)
     orphan["records"][0]["id"] = "prysai-orphan"
@@ -65,7 +84,7 @@ def main() -> int:
     bad_maintenance["records"][0]["owner"] = "someone-else"
     require_error(bad_maintenance, "maintenance owner differs from registry")
 
-    print("SKILL_REGISTRY_TESTS_OK fixtures=11")
+    print("SKILL_REGISTRY_TESTS_OK fixtures=12")
     return 0
 
 

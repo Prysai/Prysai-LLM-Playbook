@@ -18,6 +18,14 @@ ASSET_PATH = Path("docs/sources/asset-register.md")
 HUMAN_PATH = Path("docs/skill-registry.md")
 ROUTING_PATH = Path("docs/governance/skill-routing-contract.yaml")
 ROUTING_MATRIX_PATH = Path("docs/quality/skill-routing-matrix.md")
+FRONTDOOR_SKILL_COUNT_PATTERNS = {
+    "README.md": re.compile(
+        r"\|\s*Skills\s*\|\s*(?P<count>\d+)\s+project-owned\s+`candidate`\s+Skills\s*\|"
+    ),
+    "README-EN.md": re.compile(
+        r"\|\s*Skills\s*\|\s*(?P<count>\d+)\s+project\s+Skills\s+·\s+`candidate`\s*\|"
+    ),
+}
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+$")
 SOURCE_ID_RE = re.compile(r"^S\d+$")
@@ -63,6 +71,23 @@ def normalize_visible_value(value: object) -> str:
 
 def asset_ids(text: str) -> set[str]:
     return set(re.findall(r"(?m)^\| (S\d+) \|", text))
+
+
+def frontdoor_skill_count_errors(
+    expected_count: int, documents: dict[str, str]
+) -> list[str]:
+    errors: list[str] = []
+    for path, pattern in FRONTDOOR_SKILL_COUNT_PATTERNS.items():
+        text = documents.get(path, "")
+        match = pattern.search(text)
+        if not match:
+            errors.append(f"{path}: missing current project Skill count reference")
+        elif int(match.group("count")) != expected_count:
+            errors.append(
+                f"{path}: project Skill count must be {expected_count}, "
+                f"not {match.group('count')}"
+            )
+    return errors
 
 
 def validate(root: Path, registry: dict[str, Any] | None = None) -> list[str]:
@@ -194,6 +219,19 @@ def validate(root: Path, registry: dict[str, Any] | None = None) -> list[str]:
         errors.append(f"registry Skill missing from routing matrix: {missing}")
     for orphan in sorted(matrix_ids - registry_ids):
         errors.append(f"routing matrix Skill missing from registry: {orphan}")
+    normalized_matrix = re.sub(r"\s+", " ", matrix)
+    expected_matrix_count = f"and the {len(registry_ids)} registered Skill files."
+    if expected_matrix_count not in normalized_matrix:
+        errors.append(
+            "routing matrix must state the current registered Skill count: "
+            f"{expected_matrix_count}"
+        )
+    frontdoor_documents = {
+        path: (root / path).read_text(encoding="utf-8")
+        for path in FRONTDOOR_SKILL_COUNT_PATTERNS
+        if (root / path).is_file()
+    }
+    errors.extend(frontdoor_skill_count_errors(len(registry_ids), frontdoor_documents))
     return errors
 
 

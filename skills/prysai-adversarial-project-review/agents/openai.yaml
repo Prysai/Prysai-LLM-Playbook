@@ -1,0 +1,4 @@
+interface:
+  display_name: "Adversarial Project Review"
+  short_description: "Find material weaknesses before LLM project publication."
+  default_prompt: "Use $prysai-adversarial-project-review to assess this candidate LLM learning project and rank evidence-backed weaknesses."

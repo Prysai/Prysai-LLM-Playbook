@@ -1,0 +1,4 @@
+interface:
+  display_name: "Request Escalation"
+  short_description: "Choose the smallest safe LLM work route."
+  default_prompt: "Use $prysai-request-escalation to route this request before drafting, researching, or acting."

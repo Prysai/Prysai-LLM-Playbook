@@ -1,0 +1,4 @@
+interface:
+  display_name: "Practice Target"
+  short_description: "Turn a broad learning wish into one honest first attempt."
+  default_prompt: "Use $prysai-practice-target to turn my learning goal into one small first practice target."

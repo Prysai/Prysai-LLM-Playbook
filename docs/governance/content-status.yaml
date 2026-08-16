@@ -180,7 +180,7 @@
     ]
   },
   "skills": {
-    "count": 15,
+    "count": 23,
     "status": "candidate",
     "validator_status": "structural_checks_passed",
     "fresh_context_status": "2_isolated_single_turn_observations; broader trigger, repeated-runtime, learner, and transfer evidence remains partial or not_run",
@@ -190,6 +190,7 @@
     "path": "skills",
     "evidence": [
       "docs/skill-registry.md",
+      "docs/research/six-prompt-learning-claims-and-user-friction-2026-08-14.md",
       "docs/quality/review-skills-current-2026-08-09.md",
       "docs/quality/forward-test-2026-08-09.md",
       "docs/quality/skill-contract-review-2026-08-10.md",
@@ -198,10 +199,15 @@
       "docs/research/original-skill-overlap-and-controlled-evidence-patterns-2026-08-13.md",
       "docs/research/entry-level-llm-collaboration-for-language-and-research-2026-08-13.md",
       "docs/research/prompt-card-editor-capability-and-beginner-entry-2026-08-14.md",
+      "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md",
+      "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md",
+      "docs/research/durable-beginner-text-first-llm-communication-2026-08-13.md",
+      "docs/quality/request-escalation-forward-test-2026-08-14.md",
       "docs/governance/skill-registry.yaml",
       "scripts/validate_skill_registry.py",
       "evals/candidates/evidence-review-v1/README.md",
-      "evals/candidates/learning-practice-contract-v1/README.md"
+      "evals/candidates/learning-practice-contract-v1/README.md",
+      "evals/candidates/three-task-smoke-v1/README.md"
     ],
     "items": [
       {"id": "prysai-codex-coach", "path": "skills/prysai-codex-coach", "status": "candidate", "fresh_context_status": "static_contract_reviewed; runtime_pretest_pending"},
@@ -217,15 +223,23 @@
       {"id": "prysai-source-investigator", "path": "skills/prysai-source-investigator", "status": "candidate", "fresh_context_status": "minimal_fresh_task_pretest_passed; search_completeness_and_adversarial_routing_pending"}
       ,{"id": "prysai-field-signal-curator", "path": "skills/prysai-field-signal-curator", "status": "candidate", "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"}
       ,{"id": "prysai-platform-adapter-review", "path": "skills/prysai-platform-adapter-review", "status": "candidate", "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"}
+      ,{"id": "prysai-platform-fact-watch", "path": "skills/prysai-platform-fact-watch", "status": "candidate", "fresh_context_status": "structural_candidate_only; fresh_task_pretest_pending"}
       ,{"id": "prysai-communication-failure-triage", "path": "skills/prysai-communication-failure-triage", "status": "candidate", "fresh_context_status": "three_minimal_blind_pretests_passed; cross_model_and_runtime_validation_pending"}
       ,{"id": "prysai-prompt-card-editor", "path": "skills/prysai-prompt-card-editor", "status": "candidate", "fresh_context_status": "isolated_forward_test_packet_reviewed; automatic_trigger, runtime, learner, and transfer evidence pending"}
+      ,{"id": "prysai-adversarial-project-review", "path": "skills/prysai-adversarial-project-review", "status": "candidate", "fresh_context_status": "structural_candidate_only; independent-review, automatic_trigger, runtime, and repair-effect evidence pending"}
+      ,{"id": "prysai-request-escalation", "path": "skills/prysai-request-escalation", "status": "candidate", "fresh_context_status": "one_isolated_explicit_mixed-request_forward_test_recorded; automatic trigger, repeated runtime, learner, and transfer evidence pending"}
+      ,{"id": "prysai-llm-comparison-protocol", "path": "skills/prysai-llm-comparison-protocol", "status": "candidate", "fresh_context_status": "structural_candidate_only; fixture and routing checks are static, while model runtime, automatic trigger, learner, and transfer evidence remain not_run"}
+      ,{"id": "prysai-practice-target", "path": "skills/prysai-practice-target", "status": "candidate", "fresh_context_status": "structural_candidate_only; target-setting contract and routing fixtures pass, while automatic trigger, learner completion, retention, and transfer evidence remain not_run"}
+      ,{"id": "prysai-interruption-checkpoint", "path": "skills/prysai-interruption-checkpoint", "status": "candidate", "fresh_context_status": "structural_candidate_only; checkpoint and routing fixtures pass, while automatic trigger, runtime, learner, recovery, and transfer evidence remain not_run"}
+      ,{"id": "prysai-shift-handoff", "path": "skills/prysai-shift-handoff", "status": "candidate", "fresh_context_status": "structural_candidate_only; stable/current handoff and routing fixtures pass, while automatic trigger, runtime, repeated-work, learner, and transfer evidence remain not_run"}
+      ,{"id": "prysai-platform-observation-record", "path": "skills/prysai-platform-observation-record", "status": "candidate", "fresh_context_status": "structural_candidate_only; observation receipt and routing fixtures are static, while automatic trigger, platform runtime, learner comprehension, and transfer evidence remain not_run"}
     ]
   },
   "supplemental_guides": {
     "count": 4,
     "status": "candidate",
     "owner": "curriculum-maintainer",
-    "last_reviewed": "2026-08-13",
+    "last_reviewed": "2026-08-14",
     "next_review": "2026-09-12",
     "evidence": [
       "book/routes/first-safe-change-EN.md",
@@ -239,9 +253,14 @@
       "scripts/test_universal_seam_fixture.py",
       "docs/research/beginner-first-practice-friction-2026-08-13.md",
       "docs/research/entry-level-llm-collaboration-for-language-and-research-2026-08-13.md",
+      "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md",
+      "docs/research/first-turn-language-practice-and-verification-source-receipt-2026-08-15.md",
+      "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md",
       "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
       "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
       "docs/research/public-interest-ai-safety-research-2026-08-13.md",
+      "docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md",
+      "docs/research/user-declared-context-continuity-public-friction-source-receipt-2026-08-15.md",
       "docs/sources/asset-register.md"
     ],
     "items": [
@@ -278,7 +297,7 @@
     "locale_matrix": "docs/governance/locale-matrix.yaml",
     "browser_review": "completed",
     "owner": "site-maintainer",
-    "last_reviewed": "2026-08-13",
+    "last_reviewed": "2026-08-14",
     "next_review": "2026-09-09",
     "path": "site",
     "evidence": [
@@ -294,6 +313,8 @@
       "docs/adr/0028-page-trust-families-and-reader-projection.md",
       "docs/adr/0018-generated-search-index.md",
       "scripts/build_site_search_index.py",
+      "scripts/browser_smoke.mjs",
+      "docs/quality/visual-asset-audit-addendum-2026-08-14.md",
       "site/search-index.js",
       "scripts/validate_content_status.py",
       "scripts/validate_localization.py",

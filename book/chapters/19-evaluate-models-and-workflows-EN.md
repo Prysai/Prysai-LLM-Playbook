@@ -111,7 +111,12 @@ This is a low-risk, offline, reproducible smoke experiment. It answers only whet
 
 ### Setup
 
-In a temporary copy, create the fixed task set `three-task-smoke-v1`. Choose one comparison variable: when comparing models, fix the workflow; when comparing workflows, fix the model. Do not change both in the same round.
+In a temporary copy, use the fixed
+[`three-task-smoke-v1` package](../../evals/candidates/three-task-smoke-v1/README.md).
+It includes frozen synthetic inputs, expected outputs, input hashes, a
+run-record template, and an offline validator. Choose one comparison variable:
+when comparing models, fix the workflow; when comparing workflows, fix the
+model. Do not change both in the same round.
 
 The inputs below are **synthetic evaluation fixtures**, not production records, customer data, benchmark results, or model run results:
 
@@ -121,7 +126,14 @@ The inputs below are **synthetic evaluation fixtures**, not production records, 
 | `markdown-02` | Convert the same input into Markdown with only “Completed” and “Unverified” level-two headings | Correct headings and fact classification; preserve unknowns; add no claims |
 | `gap-review-03` | Review “The feature is complete because the code exists and the build passes” | Identify missing runtime and user-effect evidence; do not downgrade build evidence or claim verification |
 
-Freeze the three task texts, inputs, output schema, acceptance table, and SHA-256 hashes as `task_set_version: v1`. Both candidates use the same surface, context, tools, permissions, network condition, time budget, and reviewer. If the surface is the comparison variable, fix the model and workflow instead. Run each candidate once per task, with at most one pre-declared controlled rework. Do not use production data, real secrets, network writes, commits, pushes, or publication.
+Freeze the three task texts, inputs, output schema, acceptance table, and
+SHA-256 hashes as `task_set_version: v1`. The package’s local validator checks
+only the frozen answer contract; it is not a model-quality score. Both
+candidates use the same surface, context, tools, permissions, network
+condition, time budget, and reviewer. If the surface is the comparison variable,
+fix the model and workflow instead. Run each candidate once per task, with at
+most one pre-declared controlled rework. Do not use production data, real
+secrets, network writes, commits, pushes, or publication.
 
 ### Task
 

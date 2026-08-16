@@ -1,0 +1,4 @@
+interface:
+  display_name: "LLM Comparison Protocol"
+  short_description: "Compare two LLM workflows with frozen conditions and evidence."
+  default_prompt: "Use $prysai-llm-comparison-protocol to plan a bounded comparison of two named LLM candidates."
