@@ -67,6 +67,39 @@ Falla deliberadamente sustituyendo un nombre de modelo en todo el material sin r
 
 Los nombres, permisos y comportamientos de producto son hechos cambiantes: revisa fuentes oficiales actuales. El capítulo sigue siendo `candidate`; este ejercicio no prueba comportamiento de producción ni impacto de equipo.
 
+## Tarjeta mínima de actualización antes de publicar
+
+No reemplaces todo el libro porque aparezca un nombre nuevo o una captura de una página. Primero limita el cambio con una tarjeta reversible: deja claro qué cambia, por qué solo eso y qué conclusiones aún no se pueden afirmar.
+
+```yaml
+update_id: update-22-example
+trigger: "la fuente ya no es accesible o su alcance contradice la explicación actual"
+claim_status_before: disputed
+affected_units: ["chapter", "lab", "skill", "permission-note", "task-set"]
+safe_action: "suspender formulación definitiva; cambiar solo estado y nota del fixture temporal"
+validation: "checks estáticos pertinentes o not_run"
+unverified: ["comportamiento de cuenta real", "permisos de producción", "efecto en estudiantes"]
+rollback_target: "hash base de la copia temporal"
+release_decision: blocked
+```
+
+`release_decision: blocked` no es fracaso: evita que una conjetura llegue a la versión pública cuando falta segunda fuente, responsable, evidencia o rollback. El estado solo cambia cuando se cierran con evidencia real los puntos no verificados.
+
+## Extensión: rechazar el reemplazo global
+
+Coloca un nombre ficticio de modelo o herramienta en cinco consumidores de un fixture temporal: capítulo, Lab, Skill, nota de permisos y task set. Antes de cambiarlo, clasifica cada aparición como principio estable, uso de producto, método de dominio o hecho concreto.
+
+1. Solo los hechos concretos entran en la cola de revisión de fuentes; un principio estable no se reescribe por cambio de nombre.
+2. Cada consumidor necesita riesgo y acción mínima propios; «reemplazar todo» no es análisis de impacto.
+3. Si un consumidor no tiene fuente, registro de licencia o rollback, sigue `blocked`; el pase de otras páginas no lo compensa.
+4. Cambia un solo fixture, guarda el diff y al final restaura base o descarta la copia temporal.
+
+## Comprobación propia
+
+- [ ] Puedo indicar trigger, alcance, acción mínima, incógnitas y rollback para cualquier afirmación cambiante.
+- [ ] No convierto fuente actualizada, archivo existente o CI verde en comportamiento real, efecto en usuarios o release verificado.
+- [ ] Sé cuándo detener un release en vez de hacer reemplazo global para «seguir actualizado».
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="21-team-capability-system-ES.md">← Anterior<br><strong>Capítulo 21 · construir un sistema de capacidades para el equipo</strong></a></td><td align="right"></td></tr></table></nav>

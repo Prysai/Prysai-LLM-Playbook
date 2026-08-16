@@ -67,6 +67,39 @@ claim_status: "current | stale | disputed | removed"
 
 製品名、権限、挙動は変動します。最新の公式情報を確認してください。この章は `candidate` のままであり、演習は本番挙動やチーム効果を証明しません。
 
+## 公開前の最小 update card
+
+新しい名前やページの screenshot を見つけても、書籍全体を一括置換しません。まず rollback できる card で変更を狭めます。何を変えるか、なぜそこだけか、まだ言えない結論は何かを次の maintainer に渡せます。
+
+```yaml
+update_id: update-22-example
+trigger: "source にアクセスできない、または scope が現在の説明と矛盾する"
+claim_status_before: disputed
+affected_units: ["chapter", "lab", "skill", "permission-note", "task-set"]
+safe_action: "断定を止め、temporary fixture の status と note だけを変える"
+validation: "関連する static check、または not_run"
+unverified: ["実際の account behavior", "production permission", "learner effect"]
+rollback_target: "temporary copy の baseline hash"
+release_decision: blocked
+```
+
+`release_decision: blocked` は失敗ではありません。第二 source、owner、evidence、rollback がないとき、推測を公開版へ入れないための判断です。未確認項目が実際の evidence で閉じて初めて状態を変えられます。
+
+## 小実験の追加：全体置換を拒む
+
+架空の model または tool 名を、temporary fixture の五つの consumer に置きます。chapter、Lab、Skill、permission note、task set です。名前を変える前に、各出現を stable principle、product usage、domain method、instance fact に分類します。
+
+1. source review に入るのは instance fact だけです。stable principle は製品名の変更で書き直しません。
+2. 各 consumer には固有の risk と minimal action が必要です。「全文置換」は impact analysis ではありません。
+3. source、license record、rollback がない consumer は `blocked` のままです。他ページの pass で補えません。
+4. fixture を一つだけ変え、diff を保存し、最後に baseline を戻すか temporary copy を捨てます。
+
+## 自分で確かめる
+
+- [ ] 任意の変動 claim について trigger、影響範囲、最小行動、unknown、rollback target を書ける。
+- [ ] source refresh、file の存在、緑の CI を runtime、learner effect、verified release に言い換えていない。
+- [ ] 「更新に追いつく」ための全体置換より、release を止めるべき時を判断できる。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="21-team-capability-system-JA.md">← 前の章<br><strong>第21章 · チーム能力システムを作る</strong></a></td><td align="right"></td></tr></table></nav>

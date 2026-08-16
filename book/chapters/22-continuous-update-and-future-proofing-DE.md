@@ -67,6 +67,39 @@ Führe bewusst einen Fehler herbei, indem du einen Modellnamen überall ersetzt,
 
 Produktnamen, Berechtigungen und Verhalten sind flüchtige Fakten. Prüfe aktuelle offizielle Quellen. Dieses Kapitel bleibt `candidate`; die Übung beweist weder Produktionsverhalten noch Teamwirkung.
 
+## Minimale Update Card vor der Veröffentlichung
+
+Ein neuer Name oder Screenshot rechtfertigt keine globale Ersetzung im ganzen Buch. Begrenze die Änderung zuerst mit einer rückrollbaren Card: Sie zeigt der nächsten Wartungsperson, was sich ändert, warum nur das und welche Schlüsse weiterhin nicht zulässig sind.
+
+```yaml
+update_id: update-22-example
+trigger: "Quelle ist nicht mehr erreichbar oder ihr Umfang widerspricht der aktuellen Erklärung"
+claim_status_before: disputed
+affected_units: ["chapter", "lab", "skill", "permission-note", "task-set"]
+safe_action: "definitive Formulierung aussetzen; nur Status und Hinweis im temporary Fixture ändern"
+validation: "relevante static checks oder not_run"
+unverified: ["echtes Account-Verhalten", "Production-Berechtigung", "Learner-Effekt"]
+rollback_target: "Baseline-hash der temporary copy"
+release_decision: blocked
+```
+
+`release_decision: blocked` ist kein Fehlschlag. Fehlen zweite Quelle, Owner, Evidenz oder Rollback, verhindert es, dass eine Vermutung in die öffentliche Version gelangt. Der Status kann sich erst ändern, wenn die unbestätigten Punkte durch echte Evidenz geschlossen sind.
+
+## Übungsergänzung: globale Ersetzung ablehnen
+
+Lege einen erfundenen Modell- oder Toolnamen in fünf Consumer eines temporary Fixture: Chapter, Lab, Skill, Permission Note und Task Set. Vor der Änderung ordnest du jedes Vorkommen stabilem Prinzip, Produktnutzung, Fachmethode oder Instanzfakt zu.
+
+1. Nur Instanzfakten gelangen in die Quellprüfung; ein stabiles Prinzip wird nicht wegen einer Umbenennung neu geschrieben.
+2. Jeder Consumer braucht eigenes Risiko und Minimalaktion. „Alles ersetzen“ ist keine Impact Analysis.
+3. Fehlen Quelle, Lizenzrecord oder Rollback, bleibt der Consumer `blocked`; ein Pass anderer Seiten gleicht das nicht aus.
+4. Ändere nur ein Fixture, sichere den Diff und stelle anschließend die Baseline wieder her oder verwerfe die temporary copy.
+
+## Selbstcheck
+
+- [ ] Ich kann für jede flüchtige Aussage Trigger, Wirkungsbereich, Minimalaktion, Unbekannte und Rollback-Ziel nennen.
+- [ ] Ich mache aus Quell-Refresh, vorhandener Datei oder grüner CI kein Runtime-Verhalten, keinen Learner-Effekt und kein verifiziertes Release.
+- [ ] Ich weiß, wann ein Release zu stoppen ist, statt zur „Aktualität“ global zu ersetzen.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="21-team-capability-system-DE.md">← Vorheriges<br><strong>Kapitel 21 · ein Team-Fähigkeitssystem aufbauen</strong></a></td><td align="right"></td></tr></table></nav>

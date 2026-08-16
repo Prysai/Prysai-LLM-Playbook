@@ -45,6 +45,39 @@ claim_status: "current | stale | disputed | removed"
 
 产品名、权限和行为都是易变事实，应查当前官方来源。本章保持 `candidate`；练习不证明生产行为或团队效果。
 
+## 发布前的最小更新卡
+
+不要因为发现一个新名称或网页截图，就批量替换整本书。先用一张更新卡把改动限制在可回滚范围内：它告诉下一位维护者改了什么、为什么只改这些，以及哪些结论仍不能说。
+
+```yaml
+update_id: update-22-example
+trigger: "来源不再可访问，或范围与当前说明冲突"
+claim_status_before: disputed
+affected_units: ["chapter", "lab", "skill", "permission-note", "task-set"]
+safe_action: "暂停确定表述；只更新临时 fixture 的状态与提示"
+validation: "相关静态检查，或 not_run"
+unverified: ["真实账户行为", "生产权限", "学习者效果"]
+rollback_target: "临时副本的基线哈希"
+release_decision: blocked
+```
+
+`release_decision: blocked` 不是失败，而是在缺少第二来源、负责人、证据或回滚时避免把猜测带入公开版本。只有卡片中的未确认项被实际证据关闭，状态才可能变化。
+
+## 小练习补充：拒绝全局替换
+
+把一个虚构的模型或工具名称放进临时 fixture 的五种消费者中：章节、Lab、Skill、权限说明和任务集。先不改名称，而是逐项写出它是否属于稳定原则、产品用法、领域方法或实例事实。
+
+1. 实例事实才能进入来源复核队列；稳定原则不因产品改名而重写。
+2. 每个消费者必须有自己的风险和最小行动，不能用“全文替换”代替影响分析。
+3. 某个消费者没有来源、许可证记录或回滚时，保留 `blocked`，不要靠其他页面的通过结果补足。
+4. 只修改一项 fixture 后保存 diff；验证结束后恢复基线或丢弃临时副本。
+
+## 本章验收补充
+
+- [ ] 我能给任何易变主张列出触发、影响范围、最小行动、未知项和回滚目标。
+- [ ] 我不会把来源刷新、文件存在或 CI 通过写成运行时、用户效果或发布已验证。
+- [ ] 我知道何时应停止发布，而不是为了“跟上更新”做全局替换。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章节导航"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="21-team-capability-system-ZH.md">← 上一章<br><strong>第 21 章·构建团队能力系统</strong></a></td><td align="right"></td></tr></table></nav>

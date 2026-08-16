@@ -67,6 +67,39 @@ claim_status: "current | stale | disputed | removed"
 
 제품 이름, 권한, 동작은 변합니다. 최신 공식 자료를 확인하십시오. 이 장은 `candidate`이며 실험은 운영 동작이나 팀 효과를 증명하지 않습니다.
 
+## 게시 전 최소 update card
+
+새 이름이나 페이지 screenshot을 보았다고 책 전체를 일괄 치환하지 않습니다. 먼저 rollback 가능한 card로 변경 범위를 좁힙니다. 무엇을 바꾸는지, 왜 그것만 바꾸는지, 아직 어떤 결론을 말할 수 없는지 다음 maintainer가 알 수 있게 합니다.
+
+```yaml
+update_id: update-22-example
+trigger: "source에 접근할 수 없거나 scope가 현재 설명과 충돌함"
+claim_status_before: disputed
+affected_units: ["chapter", "lab", "skill", "permission-note", "task-set"]
+safe_action: "단정 표현을 멈추고 temporary fixture의 status와 note만 변경"
+validation: "관련 static check 또는 not_run"
+unverified: ["실제 account behavior", "production permission", "learner effect"]
+rollback_target: "temporary copy의 baseline hash"
+release_decision: blocked
+```
+
+`release_decision: blocked`는 실패가 아닙니다. 두 번째 source, owner, evidence, rollback이 없을 때 추측이 공개 버전으로 들어가지 않게 하는 결정입니다. unverified 항목이 실제 evidence로 해소되어야 상태가 바뀔 수 있습니다.
+
+## 작은 실험 추가: 전체 치환 거부하기
+
+가상의 model 또는 tool 이름을 temporary fixture의 다섯 consumer에 둡니다. chapter, Lab, Skill, permission note, task set입니다. 이름을 바꾸기 전에 각 항목이 stable principle, product usage, domain method, instance fact 중 무엇인지 분류합니다.
+
+1. source review 대기열에는 instance fact만 들어갑니다. stable principle은 제품 이름 변경 때문에 다시 쓰지 않습니다.
+2. consumer마다 risk와 minimal action이 있어야 합니다. “전체 바꾸기”는 impact analysis가 아닙니다.
+3. source, license record, rollback이 없는 consumer는 `blocked`로 남습니다. 다른 페이지의 pass가 이를 메우지 못합니다.
+4. fixture 하나만 바꾸고 diff를 저장한 뒤 baseline을 복원하거나 temporary copy를 버립니다.
+
+## 스스로 확인하기
+
+- [ ] 어떤 변동 claim에도 trigger, 영향 범위, 최소 행동, unknown, rollback target을 적을 수 있다.
+- [ ] source refresh, 파일 존재, 초록 CI를 runtime, learner effect, verified release로 바꾸어 말하지 않는다.
+- [ ] “업데이트를 따라가기” 위한 전체 치환보다 release를 멈춰야 할 때를 안다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="21-team-capability-system-KO.md">← 이전<br><strong>21장 · 팀 역량 시스템 만들기</strong></a></td><td align="right"></td></tr></table></nav>
