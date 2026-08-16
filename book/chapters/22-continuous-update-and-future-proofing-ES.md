@@ -31,6 +31,18 @@ No confundas estados: la madurez de contenido es `draft | candidate | verified |
 
 Un cambio sin responsable, evidencia o rollback está `blocked`.
 
+## El problema que resuelve este capítulo
+
+Un nombre nuevo de modelo, captura o enlace puede provocar un reemplazo global. Sin fuente, alcance, consumidores afectados y rollback, la enseñanza se vuelve obsoleta o incorrecta.
+
+## Objetivos de aprendizaje
+
+Clasificarás el cambio por capa, mantendrás una afirmación discutida en pausa y actualizarás solo el ámbito mínimo reversible.
+
+## Problemas reales
+
+Una página de producto disponible o CI verde no prueba acceso de cuenta ni comportamiento en ejecución. El problema de mantenimiento real es detener una afirmación antes de que se propague como hecho por capítulos, Labs y Skills.
+
 ## Acción: registros de afirmación y matriz de impacto
 
 ```yaml
@@ -49,11 +61,41 @@ Para migrar un modelo o Skill, vuelve a revisar primer intento, errores, context
 
 ## Experimento: procesar un cambio hipotético
 
+### Preparación
+
+Crea una copia desechable, hash base, fixture sintético y matriz de impacto vacía. La URL inválida es solo dato: no hay cuenta, escritura de red ni acceso de producto en el ejercicio.
+
+### Tarea
+
+Marca la afirmación como `disputed`, asigna cinco consumidores y cambia solo el fixture. Detente en vez de publicar si falta fuente, responsable, revisor o rollback.
+
+### Evidencia
+
+Conserva registro de afirmación, fuente o ausencia, alcance, hash, diff, matriz, log de checks, incógnitas y objetivo de rollback.
+
 En una copia temporal crea `update-impact-demo-v1` con una afirmación ficticia y discutida sobre `https://example.invalid/public-doc`. Ese dominio está deliberadamente inaccesible: no lo visites ni lo trates como evidencia. Guarda hash de base, inventario, diff previo y `run_id`.
 
 Supón que la descripción pública cambió pero no hay segunda fuente fiable. Mantén `disputed`, suspende enseñanza definitiva y crea una matriz con filas para capítulo, Skill, Lab, nota de permisos y conjunto de tareas. En cada fila registra consumidor, riesgo, acción mínima, evidencia, responsable y estado. Cambia únicamente el fixture, ejecuta solo comprobaciones relevantes y guarda comando, salida o `not_run`, diff, elementos sin verificar y rollback. La tarjeta debe nombrar `decision_owner`, `delivery_target` temporal, `reviewer` y `rollback_target`; sin uno de ellos queda `blocked`.
 
 El paquete de evidencia contiene afirmación, fuente o registro de ausencia, alcance, responsable, revisión, hashes o diff, matriz, log y lista de incógnitas. El rollback debe restaurar el hash temporal o descartar la copia; «parece restaurado» no es prueba.
+
+### Reflexión
+
+¿Qué consumidor se omitió primero? ¿Qué incertidumbre justifica `blocked` en vez de renombrar todo?
+
+## Tarea de transferencia
+
+Revisa una recomendación antigua de aprendizaje de idiomas con la misma tarjeta: mantenla `disputed` hasta que fuente, público y una tarea independiente diferida sostengan la afirmación. Una respuesta fluida del modelo no prueba aprendizaje.
+
+## Lista de aceptación
+
+- [ ] Toda afirmación cambiante tiene fuente, alcance, responsable, revisión y estado.
+- [ ] La matriz incluye capítulos, Skills, Labs, tareas y permisos.
+- [ ] Un diff reversible no se presenta como resultado de producción ni aprendizaje.
+
+## Fuentes y límite de mantenimiento
+
+Análisis de impacto, estado y rollback son métodos estables. Nombres, permisos y comportamiento de producto son hechos cambiantes y necesitan fuentes autorizadas actuales.
 
 ## Fallo, transferencia y aceptación
 

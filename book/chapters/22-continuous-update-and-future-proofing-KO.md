@@ -4,7 +4,7 @@
 
 **상태:** `candidate`. **실험:** `draft / not_run`. 임시 사본이나 격리 브랜치에서만 합니다. 운영 접근, 실제 자격 증명, push, release, 외부 일괄 치환은 사용하지 않습니다.
 
-## 이 장이 푸는 문제
+## 이 장에서 해결하는 문제
 
 모델, Codex 진입점, 권한, Skill, 외부 서비스는 바뀝니다. 출처, 범위, 검토일, 마이그레이션 계획, rollback이 없는 워크플로는 몇 달 후 오해를 낳을 수 있습니다. 지속 보수는 새 기능을 모두 받아들이는 경쟁이 아닙니다. 무엇이 안정적이고 무엇을 재확인하며 언제 유지ㆍ차단ㆍ이전ㆍ폐기할지를 규율 있게 결정하는 일입니다.
 
@@ -31,6 +31,14 @@
 
 담당자, 증거, rollback이 하나라도 없으면 `blocked`입니다.
 
+## 학습 목표
+
+변경을 층별로 구분하고 `disputed` 주장을 보류하며, 가장 작은 되돌릴 수 있는 범위만 업데이트할 수 있습니다.
+
+## 실제 문제
+
+찾을 수 있는 제품 페이지나 green CI는 account access나 runtime behavior를 증명하지 않습니다. 실제 유지보수 문제는 한 주장이 장, Lab, Skill 전체에 사실처럼 퍼지기 전에 멈추는 것입니다.
+
 ## 행동: 주장 기록과 영향 행렬
 
 ```yaml
@@ -49,11 +57,41 @@ claim_status: "current | stale | disputed | removed"
 
 ## 실험: 가상 제품 변경 처리하기
 
+### 준비
+
+버릴 수 있는 사본, baseline hash, synthetic fixture, 빈 impact matrix를 만듭니다. 유효하지 않은 URL은 데이터일 뿐이며 account, network write, 제품 접근을 사용하지 않습니다.
+
+### 작업
+
+주장을 `disputed`로 표시하고 다섯 consumer를 기록한 뒤 fixture만 바꿉니다. source, owner, reviewer, rollback이 없으면 게시하지 말고 중단합니다.
+
+### 증거
+
+claim record, source 또는 부재 기록, scope, hash, diff, matrix, check log, unknown, rollback target을 보관합니다.
+
 임시 사본에 `update-impact-demo-v1`을 만들고 `https://example.invalid/public-doc`에 관한 가상 `disputed` 주장을 둡니다. 이 도메인은 의도적으로 사용할 수 없습니다. 접근하거나 지시를 실행하거나 실제 제품 증거로 취급하지 마십시오. 기준 hash, 목록, 변경 전 diff, `run_id`를 보관합니다.
 
 공개 설명은 바뀌었지만 두 번째 신뢰 가능한 출처가 없다고 가정합니다. `disputed`를 유지하고 단정적 설명을 멈춥니다. 장, Skill, Lab, 권한 메모, 작업 세트별로 소비자, 위험, 최소 조치, 증거, 담당자, 상태를 둔 영향 행렬을 작성합니다. fixture만 고치고 관련 검사만 실행하여 결과 또는 `not_run`, diff, 미검증 항목, rollback을 기록합니다. `decision_owner`, 임시 `delivery_target`, `reviewer`, `rollback_target` 중 하나라도 빠지면 `blocked`입니다.
 
 증거 패키지에는 주장, 출처 또는 부재 기록, 범위, 담당자, 검토일, hash 또는 diff, 영향 행렬, log, 미확인 목록이 있어야 합니다. rollback은 임시 hash 복원이나 사본 폐기 절차여야 합니다.
+
+### 회고
+
+가장 먼저 놓친 consumer는 무엇입니까? 전체 치환 대신 `blocked`가 타당한 unknown은 무엇입니까?
+
+## 전이 과제
+
+오래된 언어 학습 조언을 같은 card로 검토합니다. source, 대상, 지연된 독립 과제가 주장을 뒷받침할 때까지 `disputed`로 둡니다. 유창한 model response는 학습 효과 증거가 아닙니다.
+
+## 수용 체크리스트
+
+- [ ] 변동 claim에 source, scope, owner, review, status가 있다.
+- [ ] matrix에 chapter, Skill, Lab, task, permission이 포함된다.
+- [ ] 되돌릴 수 있는 diff를 production이나 learner effect 증거로 취급하지 않는다.
+
+## 출처 및 유지보수 경계
+
+impact analysis, status, rollback은 안정된 방법입니다. 이름, permission, product behavior는 변하는 사실이므로 현재 권위 있는 source가 필요합니다.
 
 ## 실패, 전이, 수용
 

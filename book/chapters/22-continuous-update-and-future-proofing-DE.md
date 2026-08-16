@@ -31,6 +31,18 @@ Inhaltliche Reife `draft | candidate | verified | production-ready`, Status flü
 
 Ohne Verantwortliche Person, Evidenz oder Rollback ist die Arbeit `blocked`.
 
+## Das Problem dieses Kapitels
+
+Ein neuer Modellname, Screenshot oder Link verleitet zu einer globalen Ersetzung. Ohne Quelle, Umfang, betroffene Verbraucher und Rollback wird daraus veralteter oder falscher Unterricht.
+
+## Lernziele
+
+Du ordnest Änderungen einer Ebene zu, hältst eine umstrittene Behauptung zurück und aktualisierst nur den kleinsten reversiblen Bereich.
+
+## Praxisfälle
+
+Eine auffindbare Produktseite oder eine grüne CI beweisen weder Kontozugriff noch Laufzeitverhalten. Das reale Wartungsproblem ist, eine Behauptung zu stoppen, bevor sie sich als Tatsache über Kapitel, Labs und Skills ausbreitet.
+
 ## Aktion: Aussageprotokoll und Wirkungsmatrix
 
 ```yaml
@@ -49,11 +61,41 @@ Bei einer Modell- oder Skill-Migration werden Erstversuch, Fehler, Kontext, Tool
 
 ## Experiment: hypothetische Produktänderung bearbeiten
 
+### Vorbereitung
+
+Erstelle eine wegwerfbare Kopie, Basis-Hash, synthetisches Fixture und eine leere Wirkungsmatrix. Die absichtlich ungültige URL bleibt Datenmaterial; kein Konto, Netzwerk-Write oder Produktzugriff ist Teil der Übung.
+
+### Aufgabe
+
+Markiere die Behauptung `disputed`, ordne fünf Verbraucher zu und ändere nur das Fixture. Stoppe statt zu veröffentlichen, wenn Quelle, Owner, Reviewer oder Rollback fehlen.
+
+### Belege
+
+Bewahre Behauptungsrecord, Quell- oder Abwesenheitsrecord, Scope, Hash, Diff, Matrix, Check-Log, Unbekannte und Rollbackziel auf.
+
 Erstelle in einer temporären Kopie `update-impact-demo-v1` mit einer erfundenen, `disputed` Aussage zu `https://example.invalid/public-doc`. Diese Adresse ist absichtlich nicht verfügbar. Nicht aufrufen, keine Anweisungen ausführen und nicht als Produktsbeleg behandeln. Bewahre Basis-hash, Inventar, Vorher-diff und `run_id` auf.
 
 Nimm an, eine öffentliche Beschreibung ändere sich, aber es gibt keine zweite vertrauenswürdige Quelle. Belasse `disputed` und stoppe definitive Lehrformulierungen. Erstelle für Kapitel, Skill, Lab, Berechtigungsnotiz und Task-Set eine Wirkungsmatrix mit Verbraucher, Risiko, Minimalaktion, Evidenz, Eigentümer und Status. Ändere nur das Fixture, führe nur relevante Checks aus und notiere Ergebnis oder `not_run`, diff, unbestätigte Punkte und Rollback. Ohne `decision_owner`, temporäres `delivery_target`, `reviewer` und `rollback_target` bleibt der Status `blocked`.
 
 Das Evidenzpaket enthält Aussage, Quelle oder Abwesenheitsprotokoll, Umfang, Verantwortliche Person, Prüftermin, hash oder diff, Wirkungsmatrix, Log und Liste unbestätigter Punkte. Rollback muss die temporäre Kopie auf den hash zurückführen oder sie verwerfen können.
+
+### Reflexion
+
+Welcher Verbraucher wurde zuerst übersehen? Welche Unsicherheit rechtfertigt `blocked` statt einer globalen Umbenennung?
+
+## Transferaufgabe
+
+Prüfe eine veraltete Sprachlernempfehlung mit derselben Karte: Behalte sie `disputed`, bis Quelle, Zielgruppe und eine zeitverzögerte, unabhängige Aufgabe die Aussage tragen. Eine flüssige Modellantwort ist keine Lernwirksamkeit.
+
+## Abnahme-Checkliste
+
+- [ ] Jede veränderliche Aussage hat Quelle, Scope, Owner, Review und Status.
+- [ ] Die Matrix enthält Kapitel, Skills, Labs, Tasks und Rechte.
+- [ ] Der reversible Diff ersetzt keine Behauptung über Produktion oder Lernerfolg.
+
+## Quellen und Wartungsgrenze
+
+Impact Analysis, Status und Rollback sind stabile Methoden. Namen, Rechte und Produktverhalten sind flüchtige Fakten und benötigen aktuelle autoritative Quellen.
 
 ## Fehler, Transfer und Abnahme
 

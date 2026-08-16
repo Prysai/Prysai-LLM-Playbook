@@ -4,7 +4,7 @@
 
 **状態:** `candidate`。**実験:** `draft / not_run`。使うのは一時コピーまたは隔離ブランチだけです。本番、実際の認証情報、push、release、外部の一括置換は使いません。
 
-## この章の問題
+## この章が解決する問題
 
 モデル、Codexの入口、権限、Skill、外部サービスは変わります。出典、適用範囲、確認日、移行計画、rollbackがないワークフローは、数か月後に誤解を招きます。継続保守は新機能を追いかける競争ではありません。何が安定し、何を確認し、いつ維持、停止、移行、廃止するかを規律をもって決めることです。
 
@@ -31,6 +31,14 @@
 
 担当、証拠、rollbackのいずれかがなければ `blocked` です。
 
+## 学習目標
+
+変更を層ごとに分け、`disputed` の主張を保留し、最小の可逆範囲だけを更新できる。
+
+## 現実の問題
+
+見つかった製品ページや green CI は account access や runtime behavior を示しません。本当の保守問題は、一つの主張が章、Lab、Skill に事実として広がる前に止めることです。
+
 ## 行動: 主張記録と影響行列
 
 ```yaml
@@ -49,11 +57,41 @@ claim_status: "current | stale | disputed | removed"
 
 ## 実験: 仮想の製品変更を処理する
 
+### 準備
+
+破棄可能なコピー、baseline hash、synthetic fixture、空の impact matrix を用意します。無効な URL はデータであり、account、network write、製品アクセスは使いません。
+
+### タスク
+
+主張を `disputed` とし、五つの consumer を記録して fixture だけを変更します。source、owner、reviewer、rollback がなければ公開せず止めます。
+
+### 証拠
+
+claim record、source または不在記録、scope、hash、diff、matrix、check log、unknown、rollback target を保存します。
+
 一時コピーに `update-impact-demo-v1` を作り、`https://example.invalid/public-doc` に関する架空で `disputed` の主張を置きます。これは意図的に使えないドメインです。アクセスも実行も、実製品の証拠扱いもしません。基準hash、目録、変更前diff、`run_id` を残します。
 
 公開説明が変わったが二つ目の信頼できる出典がないと想定します。`disputed` を保ち、断定的な教示を止めます。章、Skill、Lab、権限注記、タスクセットに対し、利用者、リスク、最小対応、証拠、担当、状態を持つ影響行列を作ります。fixtureだけを変更し、関連チェックだけを実行して結果または `not_run`、diff、未検証項目、rollbackを記録します。`decision_owner`、一時的な `delivery_target`、`reviewer`、`rollback_target` がなければ `blocked` のままです。
 
 証拠には主張、出典または不在記録、範囲、担当、確認日、hashまたはdiff、影響行列、log、未知の一覧を含めます。rollbackは一時hashへ戻すかコピーを捨てる手順でなければなりません。
+
+### 振り返り
+
+最初に見落とした consumer は何ですか。全体置換ではなく `blocked` が妥当になる unknown は何ですか。
+
+## 移行タスク
+
+古い語学学習の助言を同じ card で見直します。source、対象者、遅延した独立課題が主張を支えるまで `disputed` にします。流暢な model response は学習効果の証拠ではありません。
+
+## 受け入れチェックリスト
+
+- [ ] 変動 claim に source、scope、owner、review、status がある。
+- [ ] matrix が chapter、Skill、Lab、task、permission を含む。
+- [ ] 可逆 diff を production や learner effect の証拠として扱わない。
+
+## 出典と保守の境界
+
+impact analysis、status、rollback は安定した方法です。名前、permission、product behavior は変動する事実なので、現在の権威ある source が必要です。
 
 ## 失敗例、移行、受入
 
