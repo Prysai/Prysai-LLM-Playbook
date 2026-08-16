@@ -67,7 +67,9 @@ The official skill validator is at
 `H:\Codex\home\skills\.system\skill-creator\scripts\quick_validate.py`.
 If its YAML dependency is unavailable, use the bundled workspace Python runtime
 with a temporary PyYAML target and do not add that dependency to this project
-just for validation.
+just for validation. On Windows, invoke it with `-X utf8` (or an equivalent
+UTF-8 mode); the upstream validator reads `SKILL.md` using the process default
+encoding, and a GBK default can misreport a valid UTF-8 Skill as unreadable.
 
 ## Definition of done
 
