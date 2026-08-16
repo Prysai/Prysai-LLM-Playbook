@@ -116,8 +116,8 @@ archivo, detente. Es una decisión nueva, no parte de este fixture.
 
 ## Continuar
 
-El siguiente elemento registrado es Lab 001: realizar un cambio seguro de
-README. Su traducción española todavía se está preparando y sigue en estado
+El siguiente elemento registrado es [Lab 001: realizar un cambio seguro de
+README](../labs/lab-001-first-safe-task-ES.md). Su traducción española todavía se está preparando y sigue en estado
 `draft / not_run`. Esta ruta contiene una práctica completa por sí misma; no
 te enviará silenciosamente a otra lengua ni presentará una fuente inglesa como
 una traducción terminada.

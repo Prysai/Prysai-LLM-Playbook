@@ -1009,6 +1009,30 @@ try {
   await noHorizontalOverflow(chineseSafeFixturePage, 'mobile Chinese safe-fixture route');
   await chineseSafeFixturePage.close();
 
+  const localizedSafeFixtureRoutes = [
+    ['es', 'Primer cambio seguro', 'Haz un cambio seguro de README'],
+    ['ja', '最初の安全な変更', '安全な README の変更を一つ行う'],
+    ['ko', '첫 번째 안전한 변경', '안전한 README 변경 하나 만들기'],
+    ['de', 'Die erste sichere Änderung', 'Eine sichere README-Änderung vornehmen'],
+  ];
+  for (const [locale, heading, labHeading] of localizedSafeFixtureRoutes) {
+    const localizedRoutePage = await context.newPage();
+    await localizedRoutePage.setViewportSize({ width: 390, height: 844 });
+    await localizedRoutePage.goto(`${origin}/site/reader.html?path=book%2Froutes%2Ffirst-safe-change-${locale.toUpperCase()}.md&lang=${locale}`, { waitUntil: 'networkidle' });
+    await localizedRoutePage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+    assert.equal(await localizedRoutePage.locator('[data-reader-language]').inputValue(), locale, `${locale} safe-fixture route loses the requested interface language`);
+    assert.match(await localizedRoutePage.locator('[data-reader-article] h1').innerText(), new RegExp(heading), `${locale} safe-fixture route does not render its localized source`);
+    const nextLocalizedLab = localizedRoutePage.locator(`[data-reader-article] a[href*="book%2Flabs%2Flab-001-first-safe-task-${locale.toUpperCase()}.md&lang=${locale}"]`);
+    assert.equal(await nextLocalizedLab.isVisible(), true, `${locale} safe-fixture route does not expose the same-locale Lab 001 continuation`);
+    await nextLocalizedLab.click();
+    await localizedRoutePage.waitForURL(new RegExp(`reader\\.html\\?path=book%2Flabs%2Flab-001-first-safe-task-${locale.toUpperCase()}\\.md&lang=${locale}$`));
+    await localizedRoutePage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+    assert.match(await localizedRoutePage.locator('[data-reader-article] h1').innerText(), new RegExp(labHeading), `${locale} safe-fixture continuation does not render the localized Lab 001 source`);
+    assert.equal(await localizedRoutePage.locator('[data-reader-language]').inputValue(), locale, `${locale} safe-fixture continuation changes the requested interface language`);
+    await noHorizontalOverflow(localizedRoutePage, `mobile ${locale} safe-fixture and Lab 001 continuation`);
+    await localizedRoutePage.close();
+  }
+
   const chineseSearchPage = await context.newPage();
   await chineseSearchPage.setViewportSize({ width: 390, height: 844 });
   await chineseSearchPage.goto(`${origin}/site/index.html?lang=zh`, { waitUntil: 'networkidle' });

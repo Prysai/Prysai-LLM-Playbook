@@ -120,8 +120,8 @@ dieses Fixtures.
 
 ## Weiter
 
-Die nächste registrierte Einheit ist Lab 001: Eine sichere README-Änderung
-vornehmen. Die deutsche Übersetzung wird noch vorbereitet und bleibt
+Die nächste registrierte Einheit ist [Lab 001: Eine sichere README-Änderung
+vornehmen](../labs/lab-001-first-safe-task-DE.md). Die deutsche Übersetzung wird noch vorbereitet und bleibt
 `draft / not_run`. Diese Route ist eine in sich geschlossene Übung; sie führt
 nicht stillschweigend in eine andere Sprache und stellt keine englische Quelle
 als abgeschlossene deutsche Übersetzung dar.
