@@ -4,7 +4,7 @@
 
 **상태:** `candidate`. **실험:** `not_run`. 이 장은 완료 주장을 증거와 맞추고 불확실한 작업 흐름을 복구하는 법을 설명합니다. 로컬 재현, 공식 진단, 운영 증거가 아닙니다.
 
-## 문제
+## 이 장에서 해결하는 문제
 
 Agent는 틀렸거나 범위를 벗어났거나 실행하지 않았거나 잘못된 환경에서 확인한 결과에도 그럴듯한 완료 요약을 쓸 수 있습니다. 맹신이나 끝없는 의심 대신, 요약을 독립 주장으로 나누고 선언한 범위에서 이를 지지할 가장 작은 증거를 붙입니다.
 
@@ -17,6 +17,14 @@ Agent는 틀렸거나 범위를 벗어났거나 실행하지 않았거나 잘못
 | 사실이 공식 출처에 있다 | 권위 URL, 접근 날짜, 범위, 검토 담당자 | 이 계정의 접근이나 로컬 설정 |
 
 약한 증거 하나가 나머지 모두를 대신할 수 없습니다. 빌드 통과는 실행을, 캡처는 수요를, 공식 URL은 접근을 증명하지 않습니다.
+
+## 학습 목표
+
+완료 summary를 개별로 확인 가능한 claim으로 나누고, 각 claim에 맞는 최소 evidence를 고르며, 처음 근거가 끊긴 지점을 찾고, 안전한 다음 check 또는 정직한 handoff를 쓸 수 있습니다. 이 연습만으로 제품 신뢰성이나 학습 효과를 증명하지 않으며 독립 run과 review가 필요합니다.
+
+## 실제 문제: 그럴듯한 summary에 대응 evidence가 없다
+
+reply는 diff, test output, reader 관찰 없이도 “완료”, “모든 test 통과”, “reader가 이해함”이라고 말할 수 있습니다. 이는 특정 model 진단이 아닙니다. request, authorization, tool, action, result, review 사이에서 처음 빠진 단계만 확인해야 하는 이유입니다.
 
 ## 첫 단절을 찾기
 
@@ -81,9 +89,19 @@ receipt가 결과를 고치거나 원인을 증명하지는 않습니다. `아�
 
 ## 실험과 경계
 
+### 준비
+
+local disposable folder에 정리한 summary, diff, test output, source link, 의도적으로 빠진 evidence 하나를 둡니다. secret, production, install, sign-in, external change는 사용하지 않습니다.
+
+### 작업
+
 정제한 요약, diff, 테스트 출력, 출처 링크, 의도적으로 빠진 증거 하나를 준비합니다. Lab 003으로 주장, 범위, 증거, 상태, 다음 단계를 표로 만들고 출력 없는 “모든 테스트 통과”를 안전한 말투여도 거절합니다. 사실 주장, 실행 주장, 사용자 효과 주장을 하나씩 넣고 약한 증거 하나를 공유할 수 없는 이유를 설명합니다. 운영 서비스에 연결하거나 외부 시스템을 바꾸지 않습니다.
 
 복구가 상태를 다시 관찰 가능하게 해도 자동으로 `verified`가 되지는 않습니다. 이 장은 `candidate`, 실험은 `not_run`입니다.
+
+### 증거
+
+claim-evidence table, 이름 붙은 path와 output, 각 행 status, 첫 단절, 안전한 다음 check를 보존합니다. run이 없으면 `not_run`으로 적고 자신 있는 tone에서 test output을 만들어 내지 않습니다.
 
 ## 따라 하기: 자신 있는 요약을 그대로 믿지 않기
 
@@ -207,9 +225,9 @@ recovery로 control을 되찾아도 completion claim이 참이 되는 것은 아
 이는 product status label을 정하는 것이 아닙니다. delivery claim이 실제로 보존한 evidence보다 강해지지
 않게 하는 vocabulary입니다.
 
-## 전이 과제와 acceptance checklist
+## 전이 과제
 
-고정 source를 쓰는 research memo나 static page review에 같은 method를 옮깁니다. fact claim,
+고정 source를 쓰는 research memo나 static page review에 같은 method를 옮깁니다. language practice에서는 assisted reply와 나중의 미지·무도움 recall을 구분합니다. fact claim,
 execution claim, reader-effect claim을 하나씩 쓰고 각각에 다른 evidence를 요구합니다. citation, diff,
 output 중 하나를 일부러 빼고 claim을 downgrade한 뒤 한 가지 safe next check를 고릅니다.
 
@@ -219,7 +237,14 @@ output 중 하나를 일부러 빼고 claim을 downgrade한 뒤 한 가지 safe 
 - [ ] recovery state와 completion state를 따로 전달한다.
 - [ ] `verified`는 exact acceptance check 기록이 있는 row에만 쓴다.
 
-## sources와 업데이트 경계
+## 수용 체크리스트
+
+- [ ] 각 completion claim에 scope, evidence 또는 `unverified`가 있다.
+- [ ] diff, test output, runtime observation, render review, user observation을 구분한다.
+- [ ] 첫 근거 없는 단계를 찾아 안전한 next check 하나만 골랐다.
+- [ ] handoff에 change, evidence, unknown, 실행하지 않은 side effect를 적었다.
+
+## 출처와 갱신 경계
 
 이 장의 method는 project-authored teaching framework입니다. product-specific behavior, command, approval,
 UI status는 volatile하므로 current official documentation과 actual environment에서 확인해야 합니다. 공개
@@ -233,6 +258,10 @@ field report는 symptom의 teaching input일 뿐 local reproduction, root cause,
 주장을 표시하고 정직한 상태로 고칩니다. 그다음 상태를 바꾸려면 필요한 최소 증거와,
 그래도 범위 밖으로 남는 사실을 설명합니다. 답을 diff와 함께 보관하세요. 실행 기록과
 검토가 생기기 전까지 이 장은 `candidate`, 이 연습은 `not_run`입니다.
+
+## 회고
+
+표에서 가장 과장하고 싶었던 문장은 무엇이었나요? 어떤 최소 check가 그 문장을 더 좁게 지지하며, 그 check 뒤에도 어떤 중요한 주장이 열린 채로 남나요?
 
 <!-- chapter-navigation:start -->
 <hr>

@@ -4,7 +4,7 @@
 
 **状態：** `candidate`。**実験：** `not_run`。この章は完了 claim と evidence を対応させ、不確かな workflow を復旧する方法を教えます。ローカル再現、公式診断、production evidence ではありません。
 
-## 問題
+## この章が解決する問題
 
 Agent は、誤り、scope 外、未実行、誤った environment で確認した結果についても、もっともらしい完了 summary を書けます。blind trust と永久の疑いの代わりに、summary を独立した claim に分け、宣言した scope で支えられる最小の evidence を割り当てます。
 
@@ -17,6 +17,14 @@ Agent は、誤り、scope 外、未実行、誤った environment で確認し�
 | fact が公式 source にある | authority URL、access date、scope、review owner | この account の access や local configuration |
 
 弱い一つの proof は残りすべての代わりになりません。passing build は runtime を、screenshot は demand を、公式 URL は access を証明しません。
+
+## 学習目標
+
+完了 summary を個別に確認できる claim に分け、各 claim に合う最小 evidence を選び、最初に根拠が切れた地点を見つけ、安全な次の check または正直な handoff を書けるようになります。この練習だけでは、製品の信頼性や学習効果を証明しません。独立した run と review が必要です。
+
+## 現実の問題：もっともらしい summary に対応する evidence がない
+
+reply は diff、test output、reader の観察がないまま「完了」「すべての test が通った」「reader は理解した」と言えます。これは特定の model の診断ではありません。request、authorization、tool、action、result、review の間で最初に欠ける段階だけを確認すべき理由です。
 
 ## 最初の切れ目を見つける
 
@@ -81,9 +89,19 @@ receipt は result を修正せず、cause も証明しません。`maybe` を `
 
 ## 実験と境界
 
+### 準備
+
+local の disposable folder に、整えた summary、diff、test output、source link、意図的に欠けた evidence 一つを置きます。secret、production、install、sign-in、external change は使いません。
+
+### タスク
+
 redacted summary、diff、test output、source link、意図的に欠けた evidence を用意します。Lab 003 で claim、scope、evidence、status、next check の表を作り、output のない「all tests passed」を安全な口調でも拒否します。fact claim、execution claim、user-effect claim を一つずつ含め、一つの弱い evidence を共有できない理由を説明します。production service には接続せず、external system を変更しません。
 
 復旧によって state が再び観測可能になっても、claim が自動で `verified` になるわけではありません。この章は `candidate`、実験は `not_run` のままです。
+
+### 証拠
+
+claim-evidence table、名前のある path と output、各行の status、最初の切れ目、安全な次の check を保存します。run がなければ `not_run` と書き、自信のある tone から test output を作りません。
 
 ## ガイド付き練習：自信のある summary をそのまま受け取らない
 
@@ -210,9 +228,9 @@ recovery で control を取り戻しても、completion claim が真になると
 これは product の status label を定義するものではありません。自分の delivery claim が、実際に
 保存した evidence より強くならないための vocabulary です。
 
-## transfer と acceptance checklist
+## 移行タスク
 
-固定 source を使う research memo または static page review に同じ method を移します。事実 claim、
+固定 source を使う research memo または static page review に同じ method を移します。language practice では、assisted reply と後の未見・無支援 recall を分けます。事実 claim、
 execution claim、reader-effect claim を一つずつ書き、それぞれに別の evidence を要求します。意図的に
 一つの citation、diff、または output を外し、claim を downgrade してから一つの safe next check を
 選びます。
@@ -223,7 +241,14 @@ execution claim、reader-effect claim を一つずつ書き、それぞれに別
 - [ ] recovery state と completion state を別々に delivery する。
 - [ ] `verified` は exact acceptance check の記録がある row にだけ使う。
 
-## sources と更新境界
+## 受け入れチェックリスト
+
+- [ ] 各 completion claim に scope、evidence、または `unverified` がある。
+- [ ] diff、test output、runtime observation、render review、user observation を分けられる。
+- [ ] 最初の根拠なしの段階を見つけ、安全な next check を一つだけ選んだ。
+- [ ] handoff に change、evidence、unknown、未実行の side effect を書いた。
+
+## 出典と更新境界
 
 この章の method は project-authored の teaching framework です。product-specific behavior、command、
 approval、UI status は volatile であり、current official documentation と actual environment で確認します。
