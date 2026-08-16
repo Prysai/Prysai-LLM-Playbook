@@ -50,5 +50,5 @@ Skill은 방법과 라우팅 계약이고 tool은 외부를 관찰하거나 바�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-KO.md">← 이전<br><strong>13장 · 파일, 터미널, 브라우저, GitHub의 행동 경계</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-KO.md">다음 장 준비 중 →<br><strong>15장 제공 상태 보기</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-KO.md">← 이전<br><strong>13장 · 파일, 터미널, 브라우저, GitHub의 행동 경계</strong></a></td><td align="right"><a data-chapter-nav="next" href="15-research-track-KO.md">다음 →<br><strong>15장 · 연구 트랙, 질문에서 감사 가능한 지식까지</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->
