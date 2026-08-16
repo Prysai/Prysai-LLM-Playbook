@@ -54,5 +54,5 @@ redacted summary、diff、test output、source link、意図的に欠けた evid
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-JA.md">← 前の章<br><strong>第 8 章 · 定義から引き渡しまで</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-JA.md">次の章は準備中 →<br><strong>第 10 章の提供状況を見る</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-JA.md">← 前の章<br><strong>第 8 章 · 定義から引き渡しまで</strong></a></td><td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-JA.md">次の章へ →<br><strong>第 10 章 · 計画と垂直スライス</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->
