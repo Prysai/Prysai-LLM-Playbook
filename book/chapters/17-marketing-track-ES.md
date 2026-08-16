@@ -40,5 +40,5 @@ Conserva solicitudes, versión de contexto, variantes, tabla de hipótesis, mét
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="16-engineering-track-ES.md">← Anterior<br><strong>Capítulo 16 · ruta de ingeniería, de la idea al software fiable</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-ES.md">Siguiente pendiente →<br><strong>Ver disponibilidad del Capítulo 18</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="16-engineering-track-ES.md">← Anterior<br><strong>Capítulo 16 · ruta de ingeniería, de la idea al software fiable</strong></a></td><td align="right"><a data-chapter-nav="next" href="18-content-design-data-automation-ES.md">Siguiente →<br><strong>Capítulo 18 · ruta de contenido, diseño, datos y automatización</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->

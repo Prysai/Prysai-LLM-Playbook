@@ -40,5 +40,5 @@ account への access も、特定 organization のデータ利用許可では�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="16-engineering-track-JA.md">← 前の章<br><strong>第16章 · エンジニアリング・トラック、着想から信頼できるソフトウェアへ</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-JA.md">次の章は準備中 →<br><strong>第18章の提供状況を見る</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="16-engineering-track-JA.md">← 前の章<br><strong>第16章 · エンジニアリング・トラック、着想から信頼できるソフトウェアへ</strong></a></td><td align="right"><a data-chapter-nav="next" href="18-content-design-data-automation-JA.md">次へ →<br><strong>第18章 · コンテンツ、デザイン、データ、自動化トラック</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->
