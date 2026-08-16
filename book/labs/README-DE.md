@@ -1,0 +1,84 @@
+<!-- content_id: book-labs-readme | locale: DE | language: de | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
+
+# Prysai LLM Playbook: Lab-Übersicht
+
+<!-- language-switcher:start -->
+**Sprachen:** [English](../README-EN.md) | [简体中文](../README-ZH.md) | [Español](../README-ES.md) | [日本語](../README-JA.md) | [한국어](../README-KO.md) | [Deutsch](README-DE.md)
+<!-- language-switcher:end -->
+
+In den Labs prüfst du selbst, ob eine Art, ein LLM um Hilfe zu bitten, reale Arbeit
+klarer macht. Sie sind weder ein separater Papierkurs noch verlangen sie Codex Cloud
+oder Programmierung. Jedes Lab beginnt mit einer sichtbaren Frage: Bleibt die Antwort
+bei den Fakten, hält sie die verlangte Form ein, zeigt sie Unbekanntes oder hinterlässt
+sie eine Änderung, die jemand anderes prüfen kann?
+
+Dies ist die deutsche Einstiegsseite, nicht die Behauptung, dass alle Labs auf Deutsch
+vorliegen. Ein Link öffnet nur eine `-DE`-Datei. Fehlt sie noch, wird das genannt statt
+unbemerkt auf Englisch weiterzuleiten.
+
+## Mit einer kleinen Übung beginnen
+
+Für den Unterschied zwischen einer vagen und einer prüfbaren Anfrage öffne
+[Lab 001: Die erste sichere Aufgabe](lab-001-first-safe-task-DE.md). Ohne ein
+wegwerfbares Projekt darfst du den Arbeitsbereichsteil auslassen. Wenn du eine
+wiederholbare Methode ohne Installation auswählen willst, gehe weiter zu
+[Lab 004: Skill-Auswahl](lab-004-skill-selection-DE.md).
+
+Ein Lab mit `draft` ist ein Lernvertrag: Es beschreibt Versuch, Aufzeichnung und
+Stopp-Punkt. Es beweist nicht, dass die Übung auf jeder Codex-Oberfläche frisch lief
+oder dass bereits jemand die Methode gelernt hat.
+
+## Aktueller Stand
+
+Der Katalog enthält 18 feste Kennungen. Alle sind `draft`; der Lernenden-Status ist
+`not_run`. In dieser deutschen Route sind nur die Labs 001–004 lokal verfügbar.
+Die übrigen werden von dieser Seite nicht auf Englisch verlinkt, bis ihre eigene
+deutsche Datei und ihr Übersetzungsstatus vorliegen.
+
+## Deutsche Lab-Karte
+
+| Lab | Fähigkeit | Stufe | Stand der deutschen Route |
+|---|---|---:|---|
+| 001 | Die erste Anfrage brauchbar machen | L1 | [Lab 001 öffnen](lab-001-first-safe-task-DE.md) |
+| 002 | Aufgabenprotokoll | L2 | [Lab 002 öffnen](lab-002-task-protocol-DE.md) |
+| 003 | Evidenzprüfung | L3 | [Lab 003 öffnen](lab-003-evidence-review-DE.md) |
+| 004 | Skill-Auswahl | L4 | [Lab 004 öffnen](lab-004-skill-selection-DE.md) |
+| 005 | Skill entwerfen | L4 | Noch nicht auf Deutsch verfügbar |
+| 006 | Agent-Stoppbedingungen | L5 | Noch nicht auf Deutsch verfügbar |
+| 007 | Handlungsgrenzen | L3 | Noch nicht auf Deutsch verfügbar |
+| 008 | Forschungsfrage | L3 | Noch nicht auf Deutsch verfügbar |
+| 009 | Engineering-Lebenszyklus | L3 | Noch nicht auf Deutsch verfügbar |
+| 010 | Gemeinsamer Produktkontext | L3 | Noch nicht auf Deutsch verfügbar |
+| 011 | Grenzen von GPT und Codex | L0 | Noch nicht auf Deutsch verfügbar |
+| 012 | Migration von Teamfähigkeiten | L6 | Noch nicht auf Deutsch verfügbar |
+| 013 | Prüffähiger vertikaler Schnitt | L3 | Noch nicht auf Deutsch verfügbar |
+| 014 | Abgleich beim Fortsetzen | L3 | Noch nicht auf Deutsch verfügbar |
+| 015 | Übergabe mit Evidenz | L5 | Noch nicht auf Deutsch verfügbar |
+| 016 | Grenze von Nebenwirkungen | L3 | Noch nicht auf Deutsch verfügbar |
+| 017 | Audit der Skill-Erkennung | L4 | Noch nicht auf Deutsch verfügbar |
+| 018 | Sprachtransfer mit festem Übungsvertrag | L2 | Noch nicht auf Deutsch verfügbar |
+
+Die Nummern sind Katalogkennungen, keine Pflichtreihenfolge. Den Fortschritt bestimmt
+der Lernpfad; diese Übersicht zeigt nur, was sich heute auf Deutsch öffnen lässt.
+
+## Ein Lab sicher durchführen
+
+1. Nutze einen wegwerfbaren Ordner, eine feste Eingabeversion und keine echten Zugangsdaten.
+2. Lies vor dem Handeln die Berechtigungs- und Nebenwirkungsgrenze.
+3. Bewahre Ausgangslage, Befehle, Ausgaben, Diff, Fehlerzweig und Unbekanntes auf.
+4. Stoppe, wenn Ziel, Autorität, Quelle oder Wiederherstellungsweg nicht beobachtbar sind.
+5. Bearbeite die Übertragungsaufgabe erst, nachdem die ursprüngliche Übung dokumentiert ist.
+
+## Statusgrenze
+
+`draft` bedeutet, dass die vom Projekt verlangte Evidenz noch fehlt, bevor ein Lab
+`candidate`, `verified` oder `production-ready` heißen darf. `run_status: not_run`
+bedeutet, dass dieses Repository kein Ergebnis eines Lernendenlaufs für das Lab enthält.
+Eine vorhandene Datei, eine offene Seite oder ein bestandener lokaler Linkcheck beweisen
+weder Lernen noch Modellverhalten oder Wirksamkeit in einer anderen Umgebung.
+
+## Zur deutschen Route zurück
+
+- [Deutscher Buch-Einstieg](../README-DE.md)
+- [Deutsches Inhaltsverzeichnis](../table-of-contents-DE.md)
+- [Einstiegskarten](../communication-clinic-DE.md)
