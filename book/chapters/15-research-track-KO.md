@@ -154,6 +154,44 @@ known, unknown, conflict, not claimed, 중지 이유, 다음 저위험 행동을
 
 표현을 낮추는 일은 연구를 약하게 만드는 것이 아니라, 출처 존재를 입증된 결론으로 착각하지 않게 합니다.
 
+## 연구 결정 카드: 질문에서 중단 영수증까지
+
+“이것을 조사해 주세요”라는 요청을 받으면 구체적인 결정을 바꿀 수 있는 질문부터 시작하세요. 이 카드는 직접 열어 확인할 수 있는 공개 또는 허가된 자료용입니다. 페이지의 진실, 웹 전체 탐색, 건강·법률·고용·금전처럼 영향이 큰 결정을 증명하거나 대신하지 않습니다.
+
+### 결정과 질문 고정하기
+```text
+결정: [날짜]까지 [사람/그룹]을 위해 무엇을 결정해야 하는가?
+질문: 어떤 답할 수 있는 질문이 이 결정을 바꾸는가?
+범위: 포함할 것, 제외할 것, 날짜/시간/장소의 경계.
+중지: 어떤 source, authority, definition이 빠지면 pause해야 하는가?
+```
+### 주장마다 source owner 두기
+
+| 주장 | 예상 source owner | direct support | conflict / unknown | 다음으로 허용된 check |
+|---|---|---|---|---|
+| [확인 가능한 한 문장] | official page / primary research / law or policy / first-party data / named institution | quote 또는 passage | 지지되지 않는 부분·다른 version | 작은 check 하나 |
+
+forum 경험은 symptom과 질문을 발견하는 데 도움이 될 수 있지만, root cause나 모든 사용자의 경험을 자동으로 증명하지 않습니다. AI가 만든 link, title, date, citation도 original material에서 다시 확인해야 합니다.
+
+### 결론 전에 역방향 check 하기
+
+예정한 문장마다 material이 직접 말한 것인지 내가 inference한 것인지 나눕니다. 더 새로운 version, exception, conflicting source가 있는지, access date가 decision의 시간 범위 안인지, 다른 reader가 ledger에서 같은 support를 찾을 수 있는지 확인하세요. 하나라도 답할 수 없다면 문장을 좁히거나 `unknown`으로 남기며, 자신감 있는 말로 빈틈을 채우지 않습니다.
+
+### 10분 중단 영수증
+```text
+decision과 question:
+열어 확인한 material:
+direct support:
+interpretation / inference:
+conflict와 unknown:
+access date와 scope:
+다음 최소 check:
+stop reason:
+status: research_plan | scope_checked_for_supplied_list | blocked | not_run
+```
+
+이 receipt는 기록한 scope 안에서 일어난 일만 보여 줍니다. “조사 완료”, 최신 사실, model의 올바른 retrieval, 행동 권한을 뜻하지 않습니다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-KO.md">← 이전<br><strong>14장 · 외부 Skill 찾기, 설치하기, 감사하기</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-KO.md">다음 →<br><strong>16장 · 엔지니어링 트랙, 아이디어에서 신뢰할 수 있는 소프트웨어까지</strong></a></td></tr></table></nav>

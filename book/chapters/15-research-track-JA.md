@@ -155,6 +155,44 @@ evidence が必要です。一つの link で二つを証明しません。
 
 downgrade は research を弱くするのでなく、source があることを結論の証明と取り違えないためです。
 
+## research decision card：問いから stop receipt へ
+
+「これを調べて」と言われたら、具体的な decision を変えうる問いから始めます。この card は自分で開いて確認できる public または authorized material 用です。page の真実、web 全体の検索、health、law、employment、money のような高影響な decision は証明・代行しません。
+
+### decision と問いを固定する
+```text
+decision: [date] までに [person/group] のために何を決めるか。
+question: どの答えられる問いがこの decision を変えるか。
+scope: 含めるもの、除くもの、date / time / place の境界。
+stop: どの source、authority、definition が欠けたら pause するか。
+```
+### claim ごとに source owner を置く
+
+| claim | 想定する source owner | direct support | conflict / unknown | 次に許可された check |
+|---|---|---|---|---|
+| [確認可能な一文] | official page / primary research / law or policy / first-party data / named institution | quote または passage | 支持されない点・別 version | 小さな check 一つ |
+
+forum の experience は symptom や質問を見つける助けになりますが、root cause や全利用者の経験を自動的に証明しません。AI が出した link、title、date、citation も original material に戻って確認します。
+
+### 結論の前に逆向き check をする
+
+予定している一文ごとに、material が直接述べたのか、自分が inference したのかを分けます。より新しい version、exception、conflicting source はないか、access date は decision の時間範囲にあるか、別の reader が ledger から同じ support を見つけられるかを確認します。一つでも答えられなければ文を狭めるか `unknown` にし、自信のある言い方で穴を埋めません。
+
+### 十分の stop receipt
+```text
+decision と question:
+開いて確認した material:
+direct support:
+interpretation / inference:
+conflict と unknown:
+access date と scope:
+次の最小 check:
+stop reason:
+status: research_plan | scope_checked_for_supplied_list | blocked | not_run
+```
+
+receipt は記録した scope 内の出来事だけを示します。「調査完了」、最新事実、model の正しい retrieval、行動の許可を意味しません。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-JA.md">← 前の章<br><strong>第14章 · 外部 Skill を見つけ、導入前に監査する</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-JA.md">次へ →<br><strong>第16章 · エンジニアリング・トラック、着想から信頼できるソフトウェアへ</strong></a></td></tr></table></nav>

@@ -162,6 +162,44 @@ Arbeitsoberfläche. Ein Link ersetzt nicht zwei Belege.
 Abschwächen macht Forschung nicht schwächer. Es verhindert, dass das Vorliegen
 einer Quelle mit einer bewiesenen Schlussfolgerung verwechselt wird.
 
+## Forschungskarte: Von der Frage zum Stoppbeleg
+
+Beginne bei „Recherchiere das“ mit einer Frage, die eine konkrete Entscheidung ändern könnte. Diese Karte gilt nur für öffentliche oder berechtigte Materialien, die du selbst öffnen und prüfen kannst. Sie beweist keine Seite als wahr, durchsucht nicht das gesamte Web und entscheidet nicht über Gesundheit, Recht, Beschäftigung oder Geld.
+
+### Entscheidung und Frage festhalten
+```text
+Entscheidung: Was muss ich bis [Datum] für [Person/Gruppe] entscheiden?
+Frage: Welche beantwortbare Frage würde diese Entscheidung ändern?
+Umfang: Was gehört dazu, was nicht, und welche Zeit-, Orts- und Datengrenze gilt?
+Stopp: Welche fehlende Quelle, Berechtigung oder Definition verlangt eine Pause?
+```
+### Jeder Behauptung einen Quelleninhaber zuordnen
+
+| Behauptung | Wahrscheinlicher Quelleninhaber | Direkte Stütze | Konflikt oder Unbekanntes | Nächste erlaubte Prüfung |
+|---|---|---|---|---|
+| [ein prüfbarer Satz] | offizielle Seite / Primärforschung / Gesetz oder Richtlinie / Erstanbieterdaten / benannte Institution | Zitat oder Passage | nicht gestützter Teil oder andere Version | eine kleine Prüfung |
+
+Forumserfahrungen können Symptome und Fragen sichtbar machen, beweisen aber nicht automatisch eine Ursache oder dieselbe Erfahrung für alle. Auch von KI erzeugte Links, Titel, Daten und Zitate müssen am Originalmaterial geprüft werden.
+
+### Vor der Schlussfolgerung gegenprüfen
+
+Frage für jeden geplanten Satz: Sagt das Material ihn direkt, oder leite ich ihn ab? Gibt es eine neuere Version, Ausnahme oder widersprechende Quelle? Liegt das Zugriffsdatum noch im Zeithorizont der Entscheidung? Würde eine andere Person im Protokoll dieselbe Stütze finden? Fehlt eine Antwort, grenze den Satz ein oder markiere ihn `unknown`; fülle die Lücke nicht mit einem selbstsicheren Ton.
+
+### Zehn-Minuten-Stoppbeleg
+```text
+Entscheidung und Frage:
+Geöffnetes und prüfbares Material:
+Direkte Stütze:
+Interpretation oder Schlussfolgerung:
+Konflikte und Unbekanntes:
+Zugriffsdatum und Umfang:
+Kleinste nächste Prüfung:
+Stoppgrund:
+Status: research_plan | scope_checked_for_supplied_list | blocked | not_run
+```
+
+Der Beleg zeigt nur Ereignisse im dokumentierten Umfang. Er bedeutet nicht „Recherche abgeschlossen“, aktuelle Fakten, korrekte Modellrecherche oder eine Handlungsfreigabe.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-DE.md">← Vorheriges<br><strong>Kapitel 14 · Externe Skills finden, installieren und prüfen</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-DE.md">Nächstes →<br><strong>Kapitel 16 · Engineering-Pfad, von der Idee zu zuverlässiger Software</strong></a></td></tr></table></nav>

@@ -161,6 +161,44 @@ Un enlace no sustituye dos evidencias.
 Rebajar no debilita la investigación: evita que la existencia de una fuente se
 confunda con una conclusión demostrada.
 
+## Tarjeta de decisión de investigación: de la pregunta al recibo de parada
+
+Ante «investiga esto», empieza por una pregunta que pueda cambiar una decisión concreta. Esta tarjeta sirve para material público o autorizado que tú puedas abrir y revisar; no prueba que una página sea cierta, no navega toda la web ni decide asuntos de salud, derecho, empleo o dinero.
+
+### Fija la decisión y la pregunta
+```text
+Decisión: ¿qué debo decidir antes de [fecha] para [persona o grupo]?
+Pregunta: ¿qué pregunta respondible cambiaría esa decisión?
+Alcance: ¿qué entra, qué queda fuera y cuál es el límite de fecha, hora y lugar?
+Parada: ¿qué fuente, autorización o definición faltante obliga a pausar?
+```
+### Asigna un responsable de fuente a cada afirmación
+
+| Afirmación | Propietario probable | Apoyo directo | Conflicto o desconocido | Siguiente comprobación permitida |
+|---|---|---|---|---|
+| [una frase comprobable] | página oficial / estudio primario / ley o política / datos propios / institución identificada | cita o pasaje | parte no apoyada o versión distinta | una comprobación pequeña |
+
+La experiencia de un foro puede ayudar a descubrir síntomas y preguntas, pero no prueba por sí sola una causa ni que todos tendrán el mismo problema. Los enlaces, títulos, fechas y citas generados por IA también se deben comprobar contra el material original.
+
+### Haz una comprobación inversa antes de concluir
+
+Para cada frase prevista, pregunta: ¿el material la dice directamente o la infiero? ¿hay una revisión más nueva, excepción o fuente en conflicto? ¿la fecha de acceso sigue dentro del horizonte de la decisión? ¿otra persona encontraría el mismo apoyo con el registro? Si una respuesta falta, reduce la frase o marca `unknown`; no rellenes el hueco con seguridad retórica.
+
+### Recibo de parada de diez minutos
+```text
+Decisión y pregunta:
+Material abierto y comprobable:
+Apoyo directo:
+Interpretación o inferencia:
+Conflictos y desconocidos:
+Fechas de acceso y alcance:
+Siguiente comprobación más pequeña:
+Motivo de parada:
+Estado: research_plan | scope_checked_for_supplied_list | blocked | not_run
+```
+
+El recibo solo registra lo ocurrido dentro de su alcance; no significa «investigación terminada», hechos actuales, recuperación correcta por un modelo ni autorización para actuar.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-ES.md">← Anterior<br><strong>Capítulo 14 · descubrir, instalar y auditar Skills externos</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-ES.md">Siguiente →<br><strong>Capítulo 16 · ruta de ingeniería, de la idea al software fiable</strong></a></td></tr></table></nav>
