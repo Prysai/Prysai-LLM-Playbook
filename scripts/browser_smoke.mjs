@@ -1052,6 +1052,11 @@ try {
   const mobileSkillsPage = await context.newPage();
   await mobileSkillsPage.setViewportSize({ width: 390, height: 844 });
   await mobileSkillsPage.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
+  assert.equal(
+    await mobileSkillsPage.locator('.site-header').evaluate((header) => getComputedStyle(header).position),
+    'static',
+    'mobile home header remains sticky and consumes the reading viewport',
+  );
   const mobileSkillsSection = mobileSkillsPage.locator('#skills');
   await mobileSkillsSection.scrollIntoViewIfNeeded();
   await noHorizontalOverflow(mobileSkillsPage, 'mobile Skill index');

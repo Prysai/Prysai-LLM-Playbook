@@ -428,9 +428,13 @@ button, input, select, textarea { font: inherit; }
 @media (max-width: 800px) {
   .site-search { order: 3; width: 100%; margin: 1rem 0 0; }
   .header-inner { flex-wrap: wrap; padding-block: .7rem; }
-  .search-panel { scroll-margin-top: 11rem; }
+  /* The expanded search bar makes this header tall on a phone. Keeping that
+     tall header sticky cuts the reading viewport roughly in half, especially
+     in the long Skills directory. The menu and search remain first in normal
+     document order; anchors no longer need to reserve sticky-header space. */
+  .site-header { position: static; }
+  .search-panel { scroll-margin-top: 1rem; }
   .search-results { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .site-header { position: sticky; }
   .hero { min-height: auto; grid-template-columns: 1fr; gap: 3rem; padding-top: 4rem; }
   .hero-index { margin-bottom: 2rem; }
   .hero-copy, .hero-proof-card { grid-column: 1; }
