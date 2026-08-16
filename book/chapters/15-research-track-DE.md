@@ -89,6 +89,43 @@ Nutze eine zugängliche offizielle Seite, einen datierten Nutzerbericht und eine
 - [ ] Ich suche Grenzen oder Gegenbeispiele und notiere, was sie nicht beweisen.
 - [ ] Ich verdichte offiziellen Konflikt, Konto, Region und Nutzerbericht nicht zu einer allgemeinen Regel.
 
+## Eine echte, risikoarme Forschungskarte
+
+Beginne nicht mit „Welches Modell ist am besten?“. Formuliere eine Frage, die
+geprüft und auch zurückgewiesen werden kann:
+
+```text
+frage: Wie beschreiben öffentliche Primärquellen zum [Datum mit Zeitzone] die
+erklärten Fähigkeiten, Grenzen und Unknowns von [zwei Modellen] für [eine konkrete
+Aufgabe, etwa nicht sensiblen Text in klare Aufgaben umwandeln]?
+beantwortet_nicht: Gesamtrang, nicht getesteten Erfolg, Zugang meines Kontos oder versteckte Preise.
+quellen: offizielle Seiten, Release Notes und öffentliche Dokumentation.
+übergabe: claim → URL → Fundstelle → Zugriffstag → Umfang → unknown.
+stopp: Schlüsselseite unzugänglich, Login/Zahlung/private Daten nötig oder unerklärter Konflikt.
+```
+
+Lass das Modell Quellen und Queries vorschlagen, behandle jeden Link aber als
+Hinweis. Nach dem Öffnen bewahrst du Titel, Original- und End-URL, Fundstelle,
+Zugriffsergebnis und erklärten Umfang auf. Sagt das Modell „offiziell unterstützt“,
+du findest den Text aber nicht, wird die Aussage `citation_unverified`. Eine
+überzeugende Bibliografie füllt keine Lücke.
+
+## Ein Gegencheck pro Behauptung
+
+Ergänze jede wichtige Aussage um eine Frage, die sie einschränken könnte. Nach
+„die Seite beschreibt X“ suchst du Limits, Konto-/Regionsunterschiede,
+Versionsvoraussetzungen und öffentliche Gegenbeispiele. Kein Gegenbeispiel zu
+finden beweist keine Universalregel; es dokumentiert nur die Suche im Umfang.
+
+| Behauptung | Direkte Quelle | Gegencheck | Kann stützen | Bleibt unknown |
+|---|---|---|---|---|
+| Seite beschrieb X an diesem Tag | URL und Fundstelle | Limit-/Region-/Versionsquery | öffentliche Formulierung damals | eigenes Konto, echter Erfolg, beste Wahl |
+
+Übergib eine Seite `candidate` mit Bekanntem, Unknowns, Konflikten,
+Nichtbehauptetem, Stoppgrund und nächster risikoarmer Aktion. Das ist kein
+Benchmark, keine Nutzerstudie und keine Kaufempfehlung; Kapitel und Experiment
+bleiben `candidate` und `not_run`.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-DE.md">← Vorheriges<br><strong>Kapitel 14 · Externe Skills finden, installieren und prüfen</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-DE.md">Nächstes →<br><strong>Kapitel 16 · Engineering-Pfad, von der Idee zu zuverlässiger Software</strong></a></td></tr></table></nav>

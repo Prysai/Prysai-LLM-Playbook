@@ -89,6 +89,39 @@ access できる official page、一つの dated user report、redirect/login/er
 - [ ] limit や counterexample を探し、それが証明しないことも書く。
 - [ ] official conflict、account、region、user report を universal rule に圧縮しない。
 
+## 実際にできる低リスク research card
+
+「どの model が最適か」から始めません。review も reject もできる問いに変えます。
+
+```text
+question: [date と time zone] 時点で、public primary source は [二つの model] について、
+[non-sensitive text を明確な task に直す等の一 task] の declared capability、limit、unknown を
+どう説明しているか。
+not answering: general ranking、未実行の success、私の account access、非公開 price。
+priority sources: official page、release note、public documentation。
+delivery: claim → URL → location → access date → scope → unknown。
+stop: key page が開けない、login/payment/private data が必要、説明できない conflict。
+```
+
+モデルには source 候補と query を出してもらえますが、link は lead として扱います。開いたら
+title、original/final URL、読める location、access result、宣言された scope を残します。
+モデルが「officially supports」と言っても本文を見つけられないなら `citation_unverified` に
+下げます。もっともらしい bibliography で穴を埋めません。
+
+## claim ごとに一つの逆向き check
+
+重要な conclusion ごとに、それを狭め得る問いを一つ追加します。「page が X を説明した」の後に、
+limit、account/region difference、version prerequisite、public counterexample を探します。見つから
+ないことは universal rule の証明ではなく、宣言した scope で見つからなかったという記録です。
+
+| claim | direct source | reverse check | 支えられること | unknown のままのこと |
+|---|---|---|---|---|
+| page はその日に X を説明した | URL と location | limit/region/version query | 当時の public wording | 自分の account、実 task success、best choice |
+
+known、unknown、conflict、not claimed、stop reason、低リスクの next action を一枚の `candidate` に
+します。これは benchmark、user study、purchase advice ではありません。chapter と experiment は
+`candidate` と `not_run` のままです。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-JA.md">← 前の章<br><strong>第14章 · 外部 Skill を見つけ、導入前に監査する</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-JA.md">次へ →<br><strong>第16章 · エンジニアリング・トラック、着想から信頼できるソフトウェアへ</strong></a></td></tr></table></nav>

@@ -89,6 +89,38 @@ AI가 그럴듯하게 만든 인용도 증거가 아닙니다. 출처를 열고 
 - [ ] 한계와 반례를 찾고 무엇을 증명하지 않는지도 적는다.
 - [ ] 공식 충돌, 계정, 지역, 사용자 보고를 보편 규칙으로 압축하지 않는다.
 
+## 실제로 할 수 있는 저위험 연구 카드
+
+“어느 model이 최고인가?”로 시작하지 않습니다. 검토하고 거절할 수 있는 질문으로 바꿉니다.
+
+```text
+질문: [날짜와 시간대] 기준, 공개 1차 출처는 [두 model]의
+[비민감 글을 명확한 할 일로 바꾸기 같은 한 작업]에 대한 선언된 능력, 한계, unknown을
+어떻게 설명하는가?
+답하지 않음: 일반 순위, 실행하지 않은 성공률, 내 account 접근, 비공개 가격.
+우선 출처: 공식 페이지, release note, 공개 문서.
+전달: claim → URL → 위치 → 접근 날짜 → 범위 → unknown.
+중지: 핵심 페이지 접근 불가, login/payment/private data 필요, 설명 못 하는 conflict.
+```
+
+모델에게 출처 후보와 query를 받되, 링크는 단서로 다룹니다. 열어 본 뒤 title, 원래/최종 URL,
+읽을 수 있는 위치, 접근 결과, 선언된 범위를 남깁니다. 모델이 “공식 지원”이라고 해도 본문을
+찾지 못하면 `citation_unverified`로 낮춥니다. 그럴듯한 bibliography로 빈칸을 메우지 않습니다.
+
+## 주장마다 한 번의 역방향 검사
+
+중요한 결론마다 범위를 줄일 수 있는 질문을 하나 더합니다. “페이지가 X를 설명했다” 뒤에는
+한계, account/region 차이, version 전제, 공개 반례를 찾습니다. 못 찾았다고 보편 규칙이
+증명되지는 않습니다. 선언한 범위에서 발견하지 못했다는 기록일 뿐입니다.
+
+| 주장 | 직접 출처 | 역방향 검사 | 뒷받침하는 것 | 여전히 unknown |
+|---|---|---|---|---|
+| 페이지가 그날 X를 설명함 | URL과 위치 | 한계/지역/version query | 당시 공개 문구 | 내 account, 실제 작업 성공, 최고 선택 |
+
+known, unknown, conflict, not claimed, 중지 이유, 다음 저위험 행동을 한 장의 `candidate`로
+전달합니다. 이것은 benchmark, 사용자 연구, 구매 조언이 아니며 장과 실험은 `candidate`,
+`not_run`입니다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-KO.md">← 이전<br><strong>14장 · 외부 Skill 찾기, 설치하기, 감사하기</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-KO.md">다음 →<br><strong>16장 · 엔지니어링 트랙, 아이디어에서 신뢰할 수 있는 소프트웨어까지</strong></a></td></tr></table></nav>

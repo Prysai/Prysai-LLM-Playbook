@@ -89,6 +89,43 @@ Usa una página oficial accesible, un informe de usuario fechado y un enlace que
 - [ ] Busco límites o contraejemplos y anoto lo que no prueban.
 - [ ] No comprimo conflicto oficial, cuenta, región e informe de usuario en una regla universal.
 
+## Una tarjeta de investigación real y de bajo riesgo
+
+No empieces con «¿qué modelo es mejor?». Convierte la pregunta en algo que se
+pueda revisar y también rechazar:
+
+```text
+pregunta: a fecha de [día y zona horaria], ¿cómo describen fuentes públicas
+primarias las capacidades declaradas, límites y desconocidos de [dos modelos]
+para [una tarea concreta, por ejemplo convertir un texto no sensible en tareas claras]?
+no responde: ranking general, éxito no probado, acceso de mi cuenta ni precios ocultos.
+fuentes prioritarias: páginas oficiales, notas de versión, documentación pública.
+entrega: claim → URL → ubicación → fecha de acceso → alcance → unknown.
+parar: página clave inaccesible, login/pago/dato privado necesario o conflicto sin explicación.
+```
+
+Pide al modelo sugerencias de fuentes y búsquedas, pero trata cada enlace como
+una pista. Al abrirlo, conserva título, URL original y final, ubicación legible,
+resultado de acceso y alcance declarado. Si el modelo dice «oficialmente admite»
+pero no puedes localizar el texto, baja la frase a `citation_unverified`; una
+bibliografía convincente no rellena un hueco.
+
+## Una comprobación inversa por afirmación
+
+Para cada conclusión importante añade una pregunta que podría limitarla. Tras
+«la página declara X», busca límites, diferencias de cuenta o región, requisitos
+de versión y contraejemplos públicos. No hallar un contraejemplo no prueba una
+regla universal; solo registra que no apareció en el alcance declarado.
+
+| Afirmación | Fuente directa | Check inverso | Puede sostener | Sigue desconocido |
+|---|---|---|---|---|
+| La página describía X ese día | URL y ubicación | búsqueda de límite/región/versión | expresión pública de esa página | cuenta propia, éxito real, mejor elección |
+
+Entrega una página `candidate` con conocido, desconocido, conflicto, no afirmado,
+motivo de parada y siguiente acción de bajo riesgo. No es un benchmark, estudio
+de usuarios ni consejo de compra; capítulo y experimento siguen `candidate` y
+`not_run`.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-ES.md">← Anterior<br><strong>Capítulo 14 · descubrir, instalar y auditar Skills externos</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-ES.md">Siguiente →<br><strong>Capítulo 16 · ruta de ingeniería, de la idea al software fiable</strong></a></td></tr></table></nav>
