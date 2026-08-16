@@ -52,6 +52,55 @@ Bereite eine bereinigte Zusammenfassung, Diff, Testausgabe, Quellenlinks und ein
 
 Halte Fakt-, Ausführungs- und Nutzerwirkungsbehauptung getrennt und erkläre, warum sie keinen schwachen Beleg teilen. Keine Produktionsdienste verbinden oder externe Systeme ändern. Wiederherstellung kann einen Zustand wieder beobachtbar machen, macht ihn aber nicht automatisch `verified`.
 
+## Geführte Übung: Eine sichere Zusammenfassung ist noch kein Nachweis
+
+Stell dir vor, du bittest um Folgendes: „Überarbeite diesen Text mit höchstens
+90 Wörtern, damit eine neue Person den ersten Schritt versteht. Ändere keine
+Fakten und veröffentliche nichts.“ Das Modell antwortet: „Erledigt; der Text ist
+klar und alle Checks sind bestanden.“ Bevor du das übernimmst, bitte um eine
+prüfbare Übergabe:
+
+1. Welcher genaue Text oder welche Datei änderte sich? Fordere Diff oder beide
+   Textversionen an.
+2. Welcher Check lief wirklich? Fordere Befehl, Verzeichnis, Exit-Code und die
+   relevante Ausgabe an.
+3. Was blieb ungeprüft? Etwa das Verständnis einer neuen Person oder die
+   Darstellung auf einer Website.
+4. Was ist der nächste sichere Check? Hier: die Textversionen vergleichen und
+   eine neue Leserin oder einen neuen Leser nur nach dem ersten Schritt fragen.
+
+Du musst das Modell nicht als unehrlich bezeichnen. Es reicht, die breite
+Aussage in überprüfbare Behauptungen zu zerlegen. Ohne Testausgabe bleibt
+„alle Checks bestanden“ `unverified`. Wurde nur der Text verglichen, lautet die
+ehrliche Übergabe: „Textänderung geprüft; Verständnis von Lesenden ungeprüft.“
+
+## Wiederherstellungskarte für den Einstieg
+
+Wenn das Ergebnis unklar ist, fügst du nicht planlos weitere Anweisungen hinzu.
+Trage nur Beobachtungen ein:
+
+```text
+ziel: Den ersten Schritt verständlicher machen, ohne Veröffentlichung
+letzte_bestätigte_beobachtung: Entwurf und Diff existieren
+erste_lücke: Kein Beleg dafür, dass eine neue Person ihn versteht
+sicherer_nächster_check: Eine Person nur nach dem ersten Schritt fragen
+stopp_wenn: Veröffentlichung, Installation oder andere Dateien nötig werden
+ehrliche_übergabe: Textreview vorhanden; Leseverständnis unverified
+```
+
+Die Karte macht aus „es hat nicht funktioniert“ einen untersuchbaren nächsten
+Schritt. Sie beweist nicht die Wirksamkeit eines Modells, Skills oder Kurses.
+Sie trennt nur Beobachtung, Lücke und weiterhin sichere Handlung.
+
+## Absichtlicher Fehler und Rückblick
+
+Schreibe einmal eine Übergabe mit „Lesende verstehen den Text“, obwohl niemand
+befragt wurde. Markiere die Behauptung, die über ihren Beleg hinausgeht, und
+formuliere sie ehrlich um. Erkläre danach, welcher kleinste Nachweis den Status
+ändern könnte und was trotzdem außerhalb des Umfangs bliebe. Bewahre die Antwort
+beim Diff auf. Ohne Lauf- und Review-Aufzeichnungen bleibt dieses Kapitel
+`candidate` und diese Übung `not_run`.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-DE.md">← Vorheriges<br><strong>Kapitel 8 · Von der Definition zur Übergabe</strong></a></td><td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-DE.md">Weiter →<br><strong>Kapitel 10 · Planung und vertikale Schnitte</strong></a></td></tr></table></nav>

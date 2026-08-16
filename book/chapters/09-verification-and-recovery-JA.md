@@ -52,6 +52,46 @@ redacted summary、diff、test output、source link、意図的に欠けた evid
 
 復旧によって state が再び観測可能になっても、claim が自動で `verified` になるわけではありません。この章は `candidate`、実験は `not_run` のままです。
 
+## ガイド付き練習：自信のある summary をそのまま受け取らない
+
+90 語程度の案内文について、「初めての人が最初の一歩を理解できるように直して。
+事実は変えず、公開もしないで」と依頼した場面を考えます。モデルが「完了しました。
+分かりやすく、すべての check を通しました」と返しても、すぐに完了にしません。
+
+1. どの file または本文が変わったか。diff か変更前後の本文を確認する。
+2. どの check を実行したか。command、directory、exit code、必要な output を確認する。
+3. 何をまだ確認していないか。初学者の理解、Web での見え方、公開後の反応を分ける。
+4. 次の安全な check は何か。この例では二つの本文を比較し、初めて読む人に
+   「最初に何をする？」と一問だけ尋ねる。
+
+モデルを嘘つきと決める必要はありません。広い一文を claim の表に変えれば十分です。
+test output がなければ「すべての check が通った」は `unverified` です。本文比較しか
+していないなら、「本文の差分はあるが、読者の理解は未確認」が正確な handoff です。
+
+## 初学者向けの復旧カード
+
+期待どおりでないとき、指示を無計画に足しません。観測したことだけを書きます。
+
+```text
+goal: 最初の一歩を分かりやすくする。公開しない
+last_confirmed: 下書きと diff はある
+first_breakpoint: 初めての読者が理解した evidence がない
+safe_next_check: 一問だけの読者確認を依頼する
+stop_if: 公開、install、別 file の変更が必要になる
+honest_handoff: 本文 review はある。読者理解は unverified
+```
+
+このカードは「動かなかった」を調べられる次の一歩に変えます。model、Skill、course の
+効果を証明するものではありません。観測したこと、欠けていること、安全な次の行動だけを
+分けて残します。
+
+## 意図的な失敗と振り返り
+
+読者に尋ねていないのに「読者は理解した」と書いた handoff を一度作ります。その claim が
+evidence を越える箇所を印し、正直な状態に書き換えます。次に、状態を変える最小の
+evidence と、それでも scope 外に残ることを説明します。diff と一緒に保存してください。
+実行記録と review がない限り、この章は `candidate`、この練習は `not_run` のままです。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-JA.md">← 前の章<br><strong>第 8 章 · 定義から引き渡しまで</strong></a></td><td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-JA.md">次の章へ →<br><strong>第 10 章 · 計画と垂直スライス</strong></a></td></tr></table></nav>
