@@ -10,7 +10,7 @@
 
 모든 model, Agent, Skill을 이해한 뒤에 시작할 필요는 없습니다. account permission, file 작업, private data가 필요 없는 연습 하나를 고르세요.
 
-- AI와 language를 연습하고 싶다면 [스페인어 여섯 단계 연습](book/spanish-practice-loop-KO.md)을 여세요.
+- AI와 language를 연습하고 싶다면 [스페인어 여섯 단계 연습](book/spanish-practice-loop-KO.md) 또는 [프랑스어 여섯 단계 연습](book/french-practice-loop-KO.md)을 여세요.
 - 흩어진 사실을 믿을 수 있는 work update로 만들고 싶다면 [업무 업데이트 여섯 단계 연습](book/work-update-practice-loop-KO.md)을 여세요.
 - 그럴듯한 결론에 끌리지 않고 research claim을 확인하고 싶다면 [리서치 확인 여섯 단계 연습](book/research-check-practice-loop-KO.md)을 여세요.
 
