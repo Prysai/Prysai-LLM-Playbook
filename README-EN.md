@@ -72,17 +72,23 @@ requirements, unfamiliar repositories, changing products, limited
 permissions, deadlines, and outputs that can look finished before they are
 actually checked.
 
-**Current guided scope:** the transferable core plus the Codex Practice Track.
-Claude Code, Grok, and other named platforms are not runnable routes yet. The
-repository does not claim that every platform behaves the same or that
-non-Codex platform tracks are complete. Product-specific commands, authority,
-persistence, and failure modes belong in evidence-gated adapters.
+**Current guided scope:** the transferable core, the Codex Practice Track as
+flagship, and a growing set of evidence-gated platform adapters for ChatGPT,
+Claude / Claude Code, Gemini, DeepSeek, and Grok. The
+[Choose your LLM platform route](book/routes/platform-adapter-guide-EN.md)
+gives every platform a safe first task and a visible difference list; the
+[French practice loop](book/french-practice-loop-EN.md) and the
+[Beginner Practice Pack](book/communication-clinic-EN.md) give beginners
+copy-ready prompts that work in any text LLM. The repository still does not
+claim that every platform behaves the same or that non-Codex platform tracks
+are complete: product-specific commands, authority, persistence, and failure
+modes belong in evidence-gated adapters with first-party sources.
 
-[Open the first mapped universal-core route](book/routes/universal-core-foundations-EN.md)
+[Open the universal-core route](book/routes/universal-core-foundations-EN.md)
 to study four extracted units, then use its fictional four-seam fixture to
 practise task, target, receipt, and structured-state checks before choosing an
-adapter. It is a `candidate / not_run` route, not a completed cross-platform
-curriculum.
+adapter. Adapter routes are `candidate / not_run`: the structure exists, the
+learner and cross-platform runs are still missing.
 
 The central promise is simple:
 
