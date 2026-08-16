@@ -71,7 +71,7 @@ Agent 可以读文件、编辑文件、运行命令、创建提交、推送分�
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="12-agent-loop-and-stop-ZH.md" aria-label="上一章：第 12 章·Agent 循环、状态与停止条件">← 上一章<br><strong>第 12 章·Agent 循环、状态与停止条件</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="../table-of-contents-ZH.md#第三篇和第四篇中文单元的当前边界" aria-label="第 14 章尚无中文正文：返回中文目录">下一章待中文化 →<br><strong>返回中文目录查看状态</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="14-discover-and-audit-skills-ZH.md" aria-label="下一章：第 14 章·发现、安装与审计外部 Skill">下一章 →<br><strong>第 14 章·发现、安装与审计外部 Skill</strong></a></td>
     </tr>
   </table>
 </nav>

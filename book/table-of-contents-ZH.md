@@ -11,7 +11,7 @@
 - 想做一次低风险的真实文件练习：进入[第一次安全改动路线](routes/first-safe-change-ZH.md)，再做[实验 001](labs/lab-001-first-safe-task-ZH.md)。
 - 想查看所有已提供与未提供的中文单元：继续阅读本页。
 
-**当前中文覆盖：**28 / 40 个课程单元（13 / 22 章，15 / 18 个实验）。所有中文译文均为 `in-progress`，独立语言审校与学习者运行记录仍待完成。课程文件的存在或链接检查通过，不等于学习效果、翻译质量或平台行为已经验证。
+**当前中文覆盖：**32 / 40 个课程单元（16 / 22 章，16 / 18 个实验）。所有中文译文均为 `in-progress`，独立语言审校与学习者运行记录仍待完成。课程文件的存在或链接检查通过，不等于学习效果、翻译质量或平台行为已经验证。
 
 ## 第一篇：认识模型，做出第一个安全任务
 
@@ -46,11 +46,14 @@
 
 ## 第三篇和第四篇：中文单元的当前边界
 
-第 13 章已经提供；第 14–22 章尚未提供中文正文。缺失单元的中文路径会在阅读器中显示同语言的“暂未提供”状态；本目录不把它们替换为英文链接。
+第 14–16 章已经提供；第 17–22 章尚未提供中文正文。缺失单元的中文路径会在阅读器中显示同语言的“暂未提供”状态；本目录不把它们替换为英文链接。
 
 | 单元 | 中文入口 | 状态 |
 |---|---|---|
 | 第 13 章：文件、终端、浏览器与 GitHub 的行动边界 | [阅读第 13 章](chapters/13-action-boundaries-ZH.md) | `candidate` / `in-progress` |
+| 第 14 章：发现、安装与审计外部 Skill | [阅读第 14 章](chapters/14-discover-and-audit-skills-ZH.md) | `candidate` / `in-progress` |
+| 第 15 章：研究路线——从问题到可审计知识 | [阅读第 15 章](chapters/15-research-track-ZH.md) | `candidate` / `in-progress` |
+| 第 16 章：工程路线——从想法到可靠软件 | [阅读第 16 章](chapters/16-engineering-track-ZH.md) | `candidate` / `in-progress` |
 
 以下中文实验已经提供，可在完成前两篇之后按你的任务选择：
 
@@ -62,8 +65,9 @@
 | 实验 014：恢复任务前的状态对账 | [打开实验 014](labs/lab-014-resume-reconciliation-ZH.md) | `draft` / `not_run` |
 | 实验 015：证据化交付 | [打开实验 015](labs/lab-015-evidence-delivery-ZH.md) | `draft` / `not_run` |
 | 实验 016：副作用边界 | [打开实验 016](labs/lab-016-side-effect-boundary-ZH.md) | `draft` / `not_run` |
+| 实验 017：采纳 Skill 前审计发现过程 | [打开实验 017](labs/lab-017-skill-discovery-audit-ZH.md) | `draft` / `not_run` |
 
-实验 012、017、018 尚未提供中文文件。
+实验 012、018 尚未提供中文文件。
 
 ## 阅读与状态边界
 
