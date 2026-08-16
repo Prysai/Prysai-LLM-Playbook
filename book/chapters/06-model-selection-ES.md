@@ -40,7 +40,7 @@ Al terminar este capítulo, deberías ser capaz de:
   prolongada como evidencia; y
 - decir qué prueba el experimento, qué no prueba y cuándo detenerse.
 
-## Un punto de entrada real: la elección de modelo falla de maneras ordinarias
+## Problemas reales: la elección de modelo falla de maneras ordinarias
 
 La [investigación de campo de Codex](../evidence-library-ES.md#source-notes)
 del proyecto recoge Issues públicos de GitHub y otros debates públicos. Estos
@@ -359,7 +359,7 @@ Responde desde las tarjetas y la evidencia cruda, no de memoria:
 - Si solo tienes una demo atractiva, ¿qué impide exactamente una clasificación
   general?
 
-## Transferencia
+## Tarea de transferencia
 
 Lleva los mismos campos de comparación a una de estas tareas:
 
@@ -402,7 +402,7 @@ hechos, el registro de investigación, este capítulo, los fixtures de evaluaci�
 afectados y la fuente de estado. Mantén el posicionamiento oficial, los
 síntomas de los usuarios y la evidencia local de ejecución en frases separadas.
 
-## Lista de verificación de aceptación
+## Lista de aceptación
 
 - [ ] Puedo definir la tarea, el riesgo, la superficie, el proveedor y la
       rúbrica de aceptación antes de nombrar un modelo.

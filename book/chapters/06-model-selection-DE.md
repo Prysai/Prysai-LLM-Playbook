@@ -23,7 +23,7 @@ Am Ende dieses Kapitels solltest du in der Lage sein:
 - Kapazitäts-, Provider-Fehlzuordnungs- und Langzeit-Wartefehler als Belege zu sichern; und
 - zu benennen, was das Experiment beweist, was es nicht beweist und wann man aufhört.
 
-## Einstieg aus der Praxis: Modellauswahl scheitert auf ganz gewöhnliche Weise
+## Reale Probleme: Modellauswahl scheitert auf ganz gewöhnliche Weise
 
 Die [Codex-Feldrecherche](../evidence-library-DE.md#source-notes) des Projekts sammelt öffentliche GitHub Issues und andere öffentliche Diskussionen. Diese Berichte sind Symptome, keine offiziellen Diagnosen und keine lokalen Reproduktionen. Sie sind wertvoll, weil sie die Annahmen sichtbar machen, die Menschen treffen, wenn eine Modellauswahl schiefgeht.
 
