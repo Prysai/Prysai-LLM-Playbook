@@ -223,38 +223,38 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/routes/universal-core-foundations-ZH.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15"
         },
         "es": {
           "path": "book/routes/universal-core-foundations-ES.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15"
         },
         "ja": {
           "path": "book/routes/universal-core-foundations-JA.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15"
         },
         "ko": {
           "path": "book/routes/universal-core-foundations-KO.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15"
         },
         "de": {
           "path": "book/routes/universal-core-foundations-DE.md",
-          "exists": false,
-          "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15"
         }
       }
     },
