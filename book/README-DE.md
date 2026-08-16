@@ -19,6 +19,11 @@ Navigation:
 
 ## Zwei erste lokalisierte Praxisschritte
 
+Wenn du nur mit Textchat beginnen willst, öffne die [Einstiegskarten](communication-clinic-DE.md).
+Sie enthalten sechs kopierbare Nachrichten für Sprache, Updates, Entscheidungen, Recherche und
+Quellenprüfung. Dieser Pfad ist `draft / not_run` und verspricht weder Sprachflüssigkeit,
+Effizienz noch Lernerfolg.
+
 Wenn du noch kein Projekt hast und die KI nichts außerhalb des Chats tun soll,
 beginne mit der [universellen LLM-Erstaufgabe](routes/universal-core-foundations-DE.md).
 Du schreibst eine fiktive Mitteilung um und hältst Prüfung und Stopp-Punkt
