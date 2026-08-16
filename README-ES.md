@@ -10,7 +10,7 @@
 
 No necesitas entender todos los modelos, Agents o Skills antes de probar algo. Elige una práctica que no pide permisos de cuenta, archivos ni datos privados:
 
-- Para practicar un idioma con ayuda de IA: abre el [ciclo de español en seis pasos](book/spanish-practice-loop-ES.md).
+- Para practicar un idioma con ayuda de IA: abre el [ciclo de español en seis pasos](book/spanish-practice-loop-ES.md) o el [ciclo de francés en seis pasos](book/french-practice-loop-ES.md).
 - Para convertir hechos dispersos en una actualización de trabajo fiable: abre el [ciclo de actualización de trabajo](book/work-update-practice-loop-ES.md).
 - Para comprobar una afirmación de investigación sin dejarte llevar por una conclusión elegante: abre el [ciclo de comprobación de investigación](book/research-check-practice-loop-ES.md).
 
