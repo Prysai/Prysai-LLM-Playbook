@@ -51,5 +51,5 @@ AI가 그럴듯하게 만든 인용도 증거가 아닙니다. 출처를 열고 
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-KO.md">← 이전<br><strong>14장 · 외부 Skill 찾기, 설치하기, 감사하기</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-KO.md">다음 장 준비 중 →<br><strong>16장 제공 상태 보기</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-KO.md">← 이전<br><strong>14장 · 외부 Skill 찾기, 설치하기, 감사하기</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-KO.md">다음 →<br><strong>16장 · 엔지니어링 트랙, 아이디어에서 신뢰할 수 있는 소프트웨어까지</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->

@@ -51,5 +51,5 @@ AI が整えた引用も証拠ではありません。ソースを開き、該�
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-JA.md">← 前の章<br><strong>第14章 · 外部 Skill を見つけ、導入前に監査する</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-JA.md">次の章は準備中 →<br><strong>第16章の提供状況を見る</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-JA.md">← 前の章<br><strong>第14章 · 外部 Skill を見つけ、導入前に監査する</strong></a></td><td align="right"><a data-chapter-nav="next" href="16-engineering-track-JA.md">次へ →<br><strong>第16章 · エンジニアリング・トラック、着想から信頼できるソフトウェアへ</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->
