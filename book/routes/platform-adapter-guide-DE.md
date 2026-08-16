@@ -33,8 +33,8 @@ Behauptung über eine Plattform weitergibst, stelle drei Fragen:
 Wenn du nicht alle drei beantworten kannst, behandle die Behauptung als
 `unknown` und notiere die nächste Prüfung. Die Pflegemethode hinter dieser
 Regel beschreiben der
-[Platform Adapter Review Skill](../../skills/prysai-platform-adapter-review/SKILL.md)
-und der [Platform Fact Watch](../../skills/prysai-platform-fact-watch/SKILL.md).
+Platform Adapter Review Skill
+und der Platform Fact Watch.
 
 ## Die Plattformübersicht auf einer Seite
 
@@ -92,7 +92,7 @@ oben aus. Notiere dann einen Plattform-Unterschied, den du tatsächlich
 beobachtest: Erwähnt die Antwort Browsing, Speicher oder einen Share-Link?
 Halte fest, was du gesehen hast, nicht was du annimmst. Für eine
 quellengestützte Prüfung einer ChatGPT-Behauptung nutze den
-[Source Investigator Skill](../../skills/prysai-source-investigator/SKILL.md) –
+Source Investigator Skill –
 die offiziellen OpenAI-Hilfeseiten sind der Eigentümer der Produktfakten.
 
 <span id="claude-code-first-task"></span>
@@ -161,9 +161,9 @@ dir die Gewohnheit vertraut ist, erst zu prüfen und dann zu bearbeiten.
 - Du willst den Flaggschiff-Übungsstrang mit Dateien und Werkzeugen in der
   Tiefe: [First Safe Change](first-safe-change-DE.md).
 - Du willst zuerst das plattformneutrale Fundament: [Universal Core Foundations](universal-core-foundations-DE.md).
-- Du willst zwei Plattformen fair vergleichen: [LLM Comparison Protocol](../../skills/prysai-llm-comparison-protocol/SKILL.md).
+- Du willst zwei Plattformen fair vergleichen: LLM Comparison Protocol.
 - Du willst wissen, ob eine Plattform-Lektion in den Lehrplan gehört:
-  [Platform Adapter Review](../../skills/prysai-platform-adapter-review/SKILL.md).
+  Platform Adapter Review.
 
 ## Belegstand und Grenzen
 
@@ -172,8 +172,8 @@ aber es ist kein Lernenden-Lauf, kein plattformübergreifender Lauf und keine
 unabhängige Prüfung dokumentiert. Die Beschreibungen der einzelnen Plattformen
 oben sind Orientierung, abgeleitet aus Dokumentation des Anbieters und
 datierten Forschungsbelegen
-([cross-LLM beginner prompting source receipt](../../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md),
-[platform teaching boundary card](../../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md)).
+(cross-LLM beginner prompting source receipt,
+platform teaching boundary card).
 Sie sind kein Beleg dafür, dass sich Plattformen identisch verhalten, dass eine
 Aufgabe überall gelingt oder dass Produktfunktionen gleichwertig sind.
 Plattformspezifische Befehle, Berechtigungen, Preise und Verfügbarkeit sind
