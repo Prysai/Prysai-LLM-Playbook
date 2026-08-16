@@ -49,6 +49,19 @@ def path_is_neutral(path: str, neutral_prefixes: list[str]) -> bool:
     return any(normalized == prefix.rstrip("/") or normalized.startswith(prefix) for prefix in neutral_prefixes)
 
 
+def is_unlocalized_reader_target(path: str) -> bool:
+    """Return whether a target would leave a non-English entry route.
+
+    Governance, evaluation, research, Skills, and site source files can remain
+    locale-neutral in the repository, but a localized entry page must not use
+    them as a fallback. A same-language availability page can describe the
+    absence without changing the reader's language.
+    """
+
+    normalized = path.replace("\\", "/").lstrip("./")
+    return normalized == "CONTEXT.md" or normalized.startswith(("docs/", "evals/", "site/", "skills/"))
+
+
 def iter_workspace_files() -> list[Path]:
     """Walk the project while pruning machine-local work directories early."""
 
@@ -213,6 +226,23 @@ def main() -> int:
         source_identity = path_to_identity.get(path_string)
         source_content_id = source_identity[0] if source_identity else legacy_path_to_identity.get(path_string)
         is_localized_toc = path_string.startswith("book/table-of-contents-") and locale not in {None, "EN"}
+        is_localized_entry_page = locale not in {None, "EN"} and (
+            is_readme
+            or path_string.startswith("book/routes/")
+            or path_string in {
+                "book/communication-clinic-ZH.md",
+                "book/preface-ZH.md",
+                "book/preface-ES.md",
+                "book/preface-JA.md",
+                "book/preface-KO.md",
+                "book/preface-DE.md",
+                "book/table-of-contents-ZH.md",
+                "book/table-of-contents-ES.md",
+                "book/table-of-contents-JA.md",
+                "book/table-of-contents-KO.md",
+                "book/table-of-contents-DE.md",
+            }
+        )
         switcher_locale_counts = {registered_locale: 0 for registered_locale in LOCALES}
         for link_match in LINK_RE.finditer(text):
             link_label = link_match.group(0).split("](", 1)[0].lstrip("[")
@@ -226,6 +256,10 @@ def main() -> int:
             except ValueError:
                 errors.append(f"{path_string} links outside workspace: {target}")
                 continue
+            if is_localized_entry_page and is_unlocalized_reader_target(target_relative):
+                errors.append(
+                    f"{path_string} links from a localized entry page to an untranslated target: {target_relative}"
+                )
             if target_relative in path_to_identity:
                 target_content_id, target_locale = path_to_identity[target_relative]
                 if is_localized_toc:
