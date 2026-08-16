@@ -94,6 +94,20 @@ secret, 실제 customer data, 허가 없는 model output, 재배포할 수 없�
 4. maintainer는 link와 test 전에 license, data scope, permission, rollback을 먼저 확인합니다.
 5. scope가 명확하고 evidence를 찾을 수 있으며 check가 통과하고 permission을 넓히지 않는 변경만 빠른 merge 후보입니다. 나머지는 clarification을 요청하거나 `candidate`로 둡니다.
 
+### 그대로 따라 할 수 있는 작은 test PR
+
+예를 들어 lesson이 “build 통과”를 “기능 완료”라고 썼다고 합시다. 막연히 반박하거나 열 개 장을 한꺼번에 고치지 않습니다. 작은 PR을 열어 공개 가능한 synthetic input 하나를 추가합니다. 기대 결과는 “build 통과”를 build evidence로, “user acceptance”를 미검증으로 남깁니다. 실패하면 maintainer는 어느 경계가 깨졌는지 알 수 있고, 통과해도 그 규칙이 계속 검사된다는 뜻일 뿐입니다.
+
+```text
+제목: test: keep build success separate from user acceptance
+범위: fixture 하나와 assertion 하나; 제품 사실과 permission은 바꾸지 않음
+재현: <최소 command>
+기대: build = verified; user acceptance = unverified
+자료: 직접 쓴 synthetic text; account, customer data, secret, 제한된 screenshot 없음
+```
+
+작아서 빠르게 merge되는 것이 아닙니다. scope, license, 예상 failure, command를 몇 분 안에 확인할 수 있기 때문입니다. 이 정보를 낼 수 없다면 먼저 discussion을 열거나 `blocked`로 두세요. maintainer가 추정을 보완하게 하지 않습니다.
+
 ## 스스로 확인하기
 
 - [ ] 제안을 “더 좋게 해 달라”가 아니라 하나의 problem, 고정 input, 확인 가능한 result로 쓸 수 있다.

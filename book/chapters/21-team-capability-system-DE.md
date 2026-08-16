@@ -94,6 +94,20 @@ Füge keine Secrets, echten Kundendaten, unautorisierten Model Output oder nicht
 4. Der Maintainer prüft Lizenz, Datenumfang, Berechtigungen und Rollback vor Links, Struktur und passenden Tests.
 5. Nur Änderungen mit klarem Umfang, auffindbarer Evidenz, bestandenen Checks und ohne Rechteausweitung kommen für schnellen Merge infrage; sonst folgt Klärung oder der Status bleibt `candidate`.
 
+### Ein Test-PR, den du nachbauen kannst
+
+Angenommen, eine Lektion nennt einen erfolgreichen Build „fertige Funktion“. Reiche keinen vagen Einwand ein und ändere nicht zehn Kapitel zugleich. Öffne einen kleinen PR: Füge einen öffentlichen, synthetischen Input hinzu, dessen erwartete Ausgabe „Build bestanden“ als Build-Evidenz und „Nutzerabnahme“ als unverifiziert behandelt. Bei einem Fehler sieht die Wartung sofort, welche Grenze gebrochen wurde; bei Erfolg ist nur diese Regel weiterhin geprüft.
+
+```text
+Titel: test: keep build success separate from user acceptance
+Umfang: ein Fixture und seine Assertion; keine Produktfakten, keine neuen Rechte
+Reproduktion: <minimaler Befehl>
+Erwartet: Build = verified; Nutzerabnahme = unverified
+Material: originaler synthetischer Text; keine Konten, Kundendaten, Secrets oder eingeschränkten Screenshots
+```
+
+Der PR ist nicht allein wegen seiner Größe schnell mergebar, sondern weil Umfang, Lizenz, erwarteter Fehler und Befehl in Minuten prüfbar sind. Fehlen diese Angaben, eröffne zuerst eine Diskussion oder markiere `blocked`; der Maintainer soll deine Annahmen nicht ergänzen.
+
 ## Selbstcheck
 
 - [ ] Ich kann einen Vorschlag als ein Problem, festen Input und prüfbares Ergebnis formulieren statt als „mach es besser“.

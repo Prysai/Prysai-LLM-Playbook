@@ -94,6 +94,20 @@ secret、実際の customer data、無許可の model output、再配布でき�
 4. maintainer は link や test の前に license、data scope、permission、rollback を確認します。
 5. scope が明確で、evidence をたどれ、check が通り、permission を広げない変更だけが fast merge の候補です。それ以外は clarification を求めるか `candidate` のままにします。
 
+### そのまま使える小さな test PR
+
+たとえば lesson が「build が通った」を「機能が完成した」と書いているとします。曖昧な反論を送ったり、十章を一度に変えたりしません。小さな PR を作り、公開できる synthetic input を一つ追加します。期待する出力では「build が通った」は build の evidence、「user acceptance」は未確認のままです。失敗すれば maintainer はどの境界が壊れたか分かり、成功してもその規則が検査され続けることしか示しません。
+
+```text
+タイトル：test: keep build success separate from user acceptance
+範囲：一つの fixture と assertion。製品の事実も permission も変えない。
+再現：<最小 command>
+期待：build = verified; user acceptance = unverified
+材料：自作の synthetic text。account、customer data、secret、制限された screenshot は含めない。
+```
+
+小さいから速く merge できるのではありません。scope、license、想定する failure、command を数分で確認できるからです。これらを出せないなら、先に discussion を開くか `blocked` とします。maintainer に仮定を補わせません。
+
 ## 自分で確かめる
 
 - [ ] 提案を「より良くして」ではなく、一つの problem、固定 input、確認可能な result にできる。

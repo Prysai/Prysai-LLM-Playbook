@@ -96,6 +96,20 @@ No pegues secretos, datos reales de clientes, salidas no autorizadas ni material
 4. El mantenedor revisa primero licencia, datos, permisos y rollback; después enlaces, estructura y pruebas pertinentes.
 5. Solo los cambios de alcance claro, evidencia localizable, checks aprobados y sin ampliación de permisos son candidatos a fusión rápida; los demás piden aclaración o siguen `candidate`.
 
+### Un PR de prueba que puedes imitar
+
+Supón que una lección llama «función terminada» a un build que pasa. No envíes una objeción vaga ni cambies diez capítulos a la vez. Abre un PR pequeño: añade un input sintético y público cuya salida esperada conserva «build que pasa» como evidencia de build y «aceptación de usuario» como no verificada. Si falla, el mantenedor sabe qué límite se rompió; si pasa, solo demuestra que esa regla sigue comprobándose.
+
+```text
+Título: test: keep build success separate from user acceptance
+Alcance: un fixture y su aserción; sin hechos de producto ni permisos nuevos
+Reproducción: <comando mínimo>
+Esperado: build = verified; aceptación de usuario = unverified
+Material: texto sintético original; sin cuentas, clientes, secretos ni capturas restringidas
+```
+
+No se fusiona rápido solo por ser pequeño, sino porque se pueden comprobar alcance, licencia, fallo esperado y comando en minutos. Si no puedes aportar esos datos, abre una discusión o usa `blocked`; no dejes que el mantenedor complete tus supuestos.
+
 ## Comprobación propia
 
 - [ ] Puedo convertir una propuesta en problema único, input fijo y resultado comprobable, no «hazlo mejor».
