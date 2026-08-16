@@ -57,11 +57,15 @@ define the task → choose a bounded action → inspect the result → keep evid
 ```
 
 The stable method applies beyond one product. **The current guided scope is
-the transferable core plus the Codex track**: files, tools, Skills, Agents,
-verification, and team adoption. Claude Code, Grok, and other named platforms
-are not runnable Playbook routes yet. A familiar name is not a reason to
-pretend its controls or permissions are the same; a named platform earns a
-source-backed adapter before the Playbook teaches its actions as fact.
+the transferable core, the Codex flagship track, and evidence-gated adapters
+for ChatGPT, Claude / Claude Code, Gemini, DeepSeek, and Grok**: files, tools,
+Skills, Agents, verification, and team adoption. The
+[Choose your LLM platform route](book/routes/platform-adapter-guide-EN.md)
+gives every platform a safe first task; the
+[Beginner Practice Pack](book/communication-clinic-EN.md) gives copy-ready
+prompts that work in any text LLM. A familiar name is still not a reason to
+pretend its controls or permissions are the same; every named platform keeps a
+source-backed adapter boundary until its own evidence exists.
 
 <mark>Do not stop at a plausible output.</mark> Ask what changed, what was
 checked, and what remains unproven.
