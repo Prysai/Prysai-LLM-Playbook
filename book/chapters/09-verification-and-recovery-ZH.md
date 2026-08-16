@@ -316,7 +316,7 @@ list_windows() 调用会出现 spawn EPERM；浏览器弹窗与 DOM 可读，但
 - [ ] 我能说明本章仍是 candidate，实验仍是 not_run，直到存在运行记录和审查证据。
 
 本简体中文译文是可读的 in-progress 翻译切片，独立语言审校尚未完成；它不是已验证译文，
-也不代表完整中文课程。
+也不表示课程已经通过独立中文审校或学习者验证。
 
 <!-- chapter-navigation:start -->
 <hr>

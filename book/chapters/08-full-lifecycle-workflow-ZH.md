@@ -469,7 +469,7 @@ next: human review of the evidence paths before any local commit
       直到存在运行记录和审查证据。
 
 本简体中文译文是可读的 `in-progress` 翻译切片，独立语言审校尚未完成；
-它不是已验证译文，也不代表完整中文课程。
+它不是已验证译文，也不表示课程已经通过独立中文审校或学习者验证。
 
 <!-- chapter-navigation:start -->
 <hr>

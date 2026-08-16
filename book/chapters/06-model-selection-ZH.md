@@ -284,7 +284,7 @@ comparable | not_comparable_reason | raw_evidence
 - [ ] 我只能报告任务范围内的观察，并能解释为什么一次演示不能证明总体排名或性价比。
 - [ ] 我能说明本章仍为 `candidate`，实验与模型评测仍为 `not_run`。
 
-本简体中文译文是可读的 `in-progress` 翻译切片，独立语言审校尚未完成；它不是已验证译文，也不代表完整中文课程。
+本简体中文译文是可读的 `in-progress` 翻译单元，独立语言审校尚未完成；它不是已验证译文，也不表示课程已经通过学习者验证。
 
 <!-- chapter-navigation:start -->
 <hr>

@@ -344,7 +344,7 @@ decision | diff_path | check_output | reviewer
 diff、检查输出与审查者，才能改变这些声明。
 
 本简体中文译文为可读的 `in-progress` 翻译切片，独立语言审校尚未完成；它不是已验证译文，
-也不代表完整中文课程。
+也不表示课程已经通过独立中文审校或学习者验证。
 
 <!-- chapter-navigation:start -->
 <hr>
