@@ -45,6 +45,23 @@ Crea esta tabla:
 
 Los estados son `supported`, `partial`, `disputed`, `unknown` u `out_of_scope`. Redacta solo cuando cada oración material tenga una fila o esté etiquetada claramente como análisis. Termina con la fuente o experimento más pequeño que reduciría la incertidumbre importante.
 
+## Escribe una tarjeta de pregunta antes de buscar o usar el modelo
+
+Imagina que quieres saber si un LLM sirve para ordenar materiales. Aún no puedes buscar «cuál es mejor», ni preguntárselo directamente al modelo. Primero redúcelo a una tarjeta:
+
+```text
+Decisión: para material público de un club de lectura, ¿probamos un modelo para crear primero un índice de títulos y puntos?
+Objeto: un documento Markdown ya público, sin datos personales.
+Tiempo: solo documentación oficial accesible hoy; no comparar precio ni calidad a largo plazo.
+Fuentes: una página oficial del producto y un debate público etiquetado como experiencia de usuario.
+Excluir: no inferir privacidad, exactitud ni eficiencia de equipo; no usar snippets como evidencia.
+Parada: si la fuente oficial no abre o las dos fuentes no hablan de la misma superficie, la conclusión queda en unknown.
+```
+
+Solo entonces pide una tarea limitada al modelo: **«Con esta tarjeta, enumera la evidencia que falta y coloca cada posible afirmación en apoyo, inferencia o desconocido; no busques, cites ni concluyas por mí».** Su respuesta es un borrador de plan, no una fuente. Abre tú las fuentes, registra ubicación y fecha, y después decide el estado de la tabla.
+
+Así «usar IA para investigar» se vuelve colaboración comprobable: el modelo ayuda a descubrir preguntas y huecos, las fuentes sostienen hechos y tú delimitas la conclusión.
+
 ## Evidencia y caso de fallo
 
 Conserva tema original, tres preguntas, razón de selección, plan de fuentes, fragmentos o ubicaciones precisas, fechas de acceso, tabla de afirmaciones, borrador y límites. Una URL sola no prueba qué decía una fuente en esa fecha.

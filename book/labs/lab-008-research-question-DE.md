@@ -43,6 +43,23 @@ Wähle eine Frage und erkläre, warum die anderen zu breit, zu vage oder mit den
 
 Statuswerte sind `supported`, `partial`, `disputed`, `unknown`, `out_of_scope`. Schreibe erst, wenn jeder wesentliche Satz eine Zeile hat oder klar als Analyse markiert ist. Nenne zum Schluss die kleinste Quelle oder das kleinste Experiment, das die wichtigste offene Unsicherheit verringert.
 
+## Erst eine Fragekarte schreiben, dann suchen oder das Modell nutzen
+
+Angenommen, du möchtest wissen, ob ein LLM beim Ordnen von Material hilft. Das ist noch keine Suchfrage, und du fragst das Modell nicht einfach nach dem „besten“. Zuerst grenzt du die Frage in einer Karte ein:
+
+```text
+Entscheidung: Sollen wir für öffentliche Unterlagen eines Lesekreises ein Modell zunächst für eine Gliederung aus Titeln und Stichpunkten ausprobieren?
+Objekt: Ein bereits öffentliches Markdown-Dokument ohne personenbezogene Daten.
+Zeit: Nur heute erreichbare offizielle Produktdokumentation; kein Preis- oder Langzeitqualitätsvergleich.
+Quellen: Eine offizielle Produktseite und eine öffentliche, klar als Nutzererfahrung markierte Diskussion.
+Ausschluss: Keine Rückschlüsse auf Datenschutz, Genauigkeit oder Teameffizienz; Suchsnippets sind keine Evidenz.
+Stopp: Öffnet die offizielle Quelle nicht oder sprechen die Quellen über unterschiedliche Oberflächen, bleibt die Schlussfolgerung unknown.
+```
+
+Erst danach gibst du dem Modell eine begrenzte Aufgabe: **„Nenne anhand dieser Fragekarte fehlende Evidenz und ordne mögliche Behauptungen als Stützung, Schlussfolgerung oder unbekannt ein; suche, zitiere und entscheide nicht für mich.“** Die Antwort ist ein Planentwurf, keine Quelle. Du öffnest die Quellen selbst, notierst Fundstelle und Datum und entscheidest dann über den Tabellenstatus.
+
+So wird „KI für Recherche nutzen“ zu prüfbarer Zusammenarbeit: Das Modell macht Fragen und Lücken sichtbar, Quellen stützen Tatsachen, und du begrenzt die Schlussfolgerung.
+
 ## Belege und Fehlerfall
 
 Bewahre Thema, drei Fragen, Auswahlgrund, Quellenplan, genaue Fundstellen, Zugriffsdatum, Behauptungstabelle, Entwurf und Grenzen auf. Eine URL allein beweist nicht, was eine Quelle am Zugriffstag sagte.
