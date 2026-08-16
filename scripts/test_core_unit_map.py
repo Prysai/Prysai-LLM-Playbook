@@ -32,11 +32,20 @@ def main() -> int:
     invalid_consumer["units"][0]["consumer_paths"] = ["book/chapters/does-not-exist-EN.md"]
     require(any("invalid consumer path" in item for item in core.validate_document(invalid_consumer)), "invalid consumer was accepted")
 
+    route_text = (core.ROOT / document["route_path"]).read_text(encoding="utf-8")
+    require(core.route_projection_errors(route_text) == [], "current first-task route was rejected")
+    require(
+        core.route_projection_errors(route_text + "\n" + ("filler " * 901)) == [
+            "route must remain a bounded first-task projection, not copied chapter prose"
+        ],
+        "a chapter-scale first-task route was accepted",
+    )
+
     mixed_page_promotion = copy.deepcopy(document)
     mixed_page_promotion["units"][0]["owner_path"] = "book/chapters/05-choose-the-codex-surface-EN.md"
     require(any("duplicate owner_path" in item or "owner needs" in item for item in core.validate_document(mixed_page_promotion)), "mixed page was promoted without a bounded range")
 
-    print("CORE_UNIT_MAP_TESTS_OK fixtures=5")
+    print("CORE_UNIT_MAP_TESTS_OK fixtures=6")
     return 0
 
 

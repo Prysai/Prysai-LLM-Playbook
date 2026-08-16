@@ -182,24 +182,25 @@ def main() -> int:
         if "accepted_on_this_check" in site_script or "acceptance:" in site_script:
             raise AssertionError("first-win-copy-feedback: self-reported judgments must not claim acceptance")
         for required in (
-            'href="../README.md#choose-your-starting-point"',
+            'href="../book/guides/llm-fundamentals-EN.md"',
             'data-content-id="chapter-01"',
             'data-content-id="chapter-02"',
-            'data-content-id="lab-001-first-safe-task"',
             'data-route-decision',
-            'data-content-id="first-safe-change-route"',
-            'heroRouteFixtureBody',
-            'mobileRouteFixture',
+            'heroRouteLessonZero',
+            'heroRouteLessonZeroBody',
+            'heroRouteChapterOne',
+            'heroRouteChapterTwo',
         ):
             if required not in site_markup:
-                raise AssertionError(f"recommended-codex-route: missing {required}")
+                raise AssertionError(f"textbook-route: missing {required}")
         for required in (
-            "heroRouteGuidedTitle: 'Have a disposable project? Follow the guided path.'",
-            "heroRouteFixtureBody: 'It supplies one offline target and check. It does not replace the guided Codex path.'",
-            "heroRouteFixtureBody: '它提供一个离线目标和检查，不替代有引导的 Codex 路径。'",
+            "heroRouteLessonZero: '0 · Lesson 0: what an LLM is'",
+            "heroRouteChapterOne: '1 · Chapter 1: GPT before Codex'",
+            "heroRouteChapterTwo: '2 · Chapter 2: your first safe task'",
+            "heroRouteLessonZero: '0 · 第 0 课：LLM 是什么'",
         ):
             if required not in site_script:
-                raise AssertionError(f"recommended-codex-route: missing route distinction '{required}'")
+                raise AssertionError(f"textbook-route: missing route distinction '{required}'")
         fixtures += 2
 
         reader_styles = (Path(__file__).resolve().parents[1] / "site/styles.css").read_text(encoding="utf-8")

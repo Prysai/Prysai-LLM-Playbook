@@ -41,6 +41,19 @@ def extract_range(text: str, start: str, end: str) -> str | None:
     return text[start_index:end_index]
 
 
+def route_projection_errors(text: str) -> list[str]:
+    """Keep the route's owned first task compact without erasing it.
+
+    The route is intentionally more than a link list: a first-time reader needs
+    the complete offline prompt and its three checks in the same place. This
+    limit rejects copied chapter-scale prose, while keeping that usable task.
+    """
+    fenced_words = sum(len(block.split()) for block in re.findall(r"```.*?```", text, re.DOTALL))
+    if fenced_words > 120 or len(text.split()) > 900:
+        return ["route must remain a bounded first-task projection, not copied chapter prose"]
+    return []
+
+
 def has_cycle(edges: dict[str, list[str]]) -> bool:
     visiting: set[str] = set()
     visited: set[str] = set()
@@ -149,9 +162,7 @@ def validate_document(document: dict[str, Any], *, root: Path = ROOT) -> list[st
         missing_links = expected_links - route_links
         if missing_links:
             errors.append("route is missing canonical unit links: " + ", ".join(sorted(missing_links)))
-        fenced_words = sum(len(block.split()) for block in re.findall(r"```.*?```", route_text, re.DOTALL))
-        if fenced_words > 20 or len(route_text.split()) > 360:
-            errors.append("route must remain a compact link projection, not copied teaching prose")
+        errors.extend(route_projection_errors(route_text))
     return errors
 
 
