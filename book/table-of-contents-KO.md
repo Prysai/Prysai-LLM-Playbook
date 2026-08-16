@@ -74,7 +74,7 @@
 | 011 — GPT, Codex, 도구, Agent 구분하기 | [제공됨: Lab 011](labs/lab-011-gpt-codex-boundaries-KO.md) · `draft / not_run` |
 | 012 — 개인 방법을 팀 역량으로 바꾸기 | [사용 가능: Lab 012](labs/lab-012-team-capability-migration-KO.md) · `draft / in-progress` |
 | 013 — 완전한 수직 슬라이스 실행하기 | [사용 가능: Lab 013](labs/lab-013-l3-vertical-slice-KO.md) · `draft / in-progress` |
-| 014 — 다시 시작한 작업을 계속하기 전에 조정하기 | 아직 한국어 파일이 없습니다. |
+| 014 — 다시 시작한 작업을 계속하기 전에 조정하기 | [사용 가능: Lab 014](labs/lab-014-resume-reconciliation-KO.md) · `draft / in-progress` |
 | 015 — 완료 문구가 아니라 증거 전달하기 | 아직 한국어 파일이 없습니다. |
 | 016 — 외부 영향 경계에서 멈추기 | 아직 한국어 파일이 없습니다. |
 | 017 — Skill을 채택하기 전에 발견 경로 감사하기 | 아직 한국어 파일이 없습니다. |
