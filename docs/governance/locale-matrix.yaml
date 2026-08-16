@@ -3685,6 +3685,72 @@
           "reason": "German French-loop translation exists; independent language review remains pending."
         }
       }
+    },
+    {
+      "content_id": "llm-fundamentals-guide",
+      "kind": "application-guide",
+      "stem": "book/guides/llm-fundamentals",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-16",
+      "locales": {
+        "EN": {
+          "path": "book/guides/llm-fundamentals-EN.md",
+          "content_status": "candidate",
+          "translation_status": "source",
+          "coverage": "full",
+          "run_status": "not_run"
+        },
+        "ZH": {
+          "path": "book/guides/llm-fundamentals-ZH.md",
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "coverage": "full",
+          "run_status": "not_run",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-16",
+          "reason": "Simplified Chinese Lesson 0 exists; independent language review remains pending."
+        },
+        "ES": {
+          "path": "book/guides/llm-fundamentals-ES.md",
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "coverage": "full",
+          "run_status": "not_run",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-16",
+          "reason": "Spanish Lesson 0 exists; independent language review remains pending."
+        },
+        "JA": {
+          "path": "book/guides/llm-fundamentals-JA.md",
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "coverage": "full",
+          "run_status": "not_run",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-16",
+          "reason": "Japanese Lesson 0 exists; independent language review remains pending."
+        },
+        "KO": {
+          "path": "book/guides/llm-fundamentals-KO.md",
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "coverage": "full",
+          "run_status": "not_run",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-16",
+          "reason": "Korean Lesson 0 exists; independent language review remains pending."
+        },
+        "DE": {
+          "path": "book/guides/llm-fundamentals-DE.md",
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "coverage": "full",
+          "run_status": "not_run",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-16",
+          "reason": "German Lesson 0 exists; independent language review remains pending."
+        }
+      }
     }
   ]
 }
