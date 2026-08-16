@@ -4,7 +4,7 @@
 
 Esta es una ruta de lectura en español, no una traducción completa del libro.
 El catálogo canónico tiene 22 capítulos `candidate` y 18 Labs `draft`; en este
-momento existen 6 capítulos y 6 Labs en español. Cada enlace de esta página
+momento existen 7 capítulos y 6 Labs en español. Cada enlace de esta página
 apunta al mismo contenido en español. Cuando no hay un archivo `-ES`, se indica
 como no disponible en vez de enlazar a otro capítulo o cambiar de idioma.
 
@@ -24,6 +24,7 @@ como no disponible en vez de enlazar a otro capítulo o cambiar de idioma.
    → [Lab 003: auditar una declaración de finalización](labs/lab-003-evidence-review-ES.md).
 7. [Capítulo 6: elegir un modelo no es venerar un modelo](chapters/06-model-selection-ES.md)
    → [Lab 004: elegir la capacidad mínima útil](labs/lab-004-skill-selection-ES.md).
+8. [Capítulo 7: cómo se reparten el trabajo los Skills, los Plugins, MCP y las herramientas](chapters/07-skills-plugins-and-tools-ES.md).
 
 Estos materiales siguen en `candidate` o `draft / not_run`. Que una ruta exista
 no prueba calidad de traducción, ejecución de modelos, aprendizaje ni
@@ -39,7 +40,7 @@ transferencia.
 | 04 — Contexto, permisos y límites de acción del Agent | [Disponible: capítulo 04](chapters/04-context-permissions-and-agent-ES.md) · `candidate / in-progress` |
 | 05 — Elegir la superficie correcta de Codex | [Disponible: capítulo 05](chapters/05-choose-the-codex-surface-ES.md) · `candidate / in-progress` |
 | 06 — Elegir un modelo no es venerar un modelo | [Disponible: capítulo 06](chapters/06-model-selection-ES.md) · `candidate / in-progress` |
-| 07 — Skills, Plugins, MCP y herramientas | Aún no existe archivo español. |
+| 07 — Skills, Plugins, MCP y herramientas | [Disponible: capítulo 07](chapters/07-skills-plugins-and-tools-ES.md) · `candidate / in-progress` |
 | 08 — El ciclo de vida completo, de la definición a la entrega | Aún no existe archivo español. |
 | 09 — Verificación, duda y recuperación | Aún no existe archivo español. |
 | 10 — Planificación y cortes verticales | Aún no existe archivo español. |

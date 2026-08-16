@@ -169,7 +169,7 @@ ID de modelos, precios, capacidad, soporte de proveedor, sintaxis y controles pu
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="05-choose-the-codex-surface-ES.md" aria-label="Capítulo anterior: Capítulo 5 · Elegir la superficie de trabajo adecuada de Codex">← Anterior<br><strong>Capítulo 5 · Elegir la superficie de trabajo adecuada de Codex</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="../table-of-contents-ES.md" aria-label="Volver al índice en español: el Capítulo 7 aún no está traducido">Siguiente pendiente →<br><strong>Ver disponibilidad del Capítulo 7</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="07-skills-plugins-and-tools-ES.md" aria-label="Capítulo siguiente: Capítulo 7 · Skills, Plugins, MCP y herramientas">Siguiente →<br><strong>Capítulo 7 · Skills, Plugins, MCP y herramientas</strong></a></td>
     </tr>
   </table>
 </nav>
