@@ -82,6 +82,8 @@ GPT 이해 → Codex 이해 → 안전한 준비 → 작업 표현 → 컨텍스
 - [한국어 서문](book/preface-KO.md)
 - [한국어 책 목차](book/table-of-contents-KO.md)
 - [첫 범용 LLM 작업](book/routes/universal-core-foundations-KO.md)
+- [초보자 연습 카드](book/communication-clinic-KO.md): 언어, 업무 업데이트, 판단, 출처 확인을 위한 바로 복사할 수 있는 여섯 가지 짧은 메시지입니다. `draft / not_run` 경로이며 유창함, 효율 또는 학습 성과를 약속하지 않습니다.
+- [한국어 Lab 목차](book/labs/README-KO.md): 저위험 실습 열여덟 개를 각각 한국어 `-KO` 파일과 경로로 열 수 있습니다.
 
 용어집, 거버넌스, 출처 대장, 평가, 연구, Skill 설명은 아직 한국어 파일로
 제공되지 않습니다. 이 읽기 경로를 한 언어로 유지하기 위해 여기서는 원문 페이지로

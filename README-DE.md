@@ -178,6 +178,8 @@ erkennbar, ohne die Lesesprache zu wechseln.
 - [Deutsches Vorwort](book/preface-DE.md)
 - [Deutsches Inhaltsverzeichnis](book/table-of-contents-DE.md)
 - [Erste universelle LLM-Aufgabe](book/routes/universal-core-foundations-DE.md)
+- [Einstiegskarten](book/communication-clinic-DE.md): sechs direkt kopierbare kurze Nachrichten für Sprache, Update, Entscheidung und Quellencheck. Es ist eine Route `draft / not_run`, keine Zusage zu Flüssigkeit, Effizienz oder Lernerfolg.
+- [Deutsche Lab-Übersicht](book/labs/README-DE.md): achtzehn risikoarme Übungen, jeweils mit einer deutschen `-DE`-Datei und einem deutschen Pfad.
 
 ### Projektverträge und Status
 
