@@ -37,6 +37,53 @@ Bewerte Faktenrichtigkeit, Feldvollständigkeit, Umfangstreue, Evidenzbezug und 
 
 Sind sechs Run Records unvollständig, sind nur `continue_test`, `blocked` oder `not_run` ehrlich. Ein bestandener Smoke-Test heißt nur „Ausweitung prüfen“, nicht „bestes Modell“ oder „höhere Produktivität“.
 
+## Die Decision Card vor dem Lauf ausfüllen
+
+„Zwei Modelle vergleichen“ muss zuerst zu einer begrenzten Entscheidung werden: Beim Modellvergleich bleibt der Workflow fest; beim Workflowvergleich bleibt das Modell fest. Ändere nicht beides in derselben Runde.
+
+```yaml
+decision_id: DEC-19-local-smoke-v1
+question: "Welcher Kandidat erfüllt Qualitäts- und Sicherheitsgates bei drei festen synthetischen Tasks?"
+candidates: [A-baseline, B-protocol]
+fixed_conditions: input_hashes, surface, tools, permissions, offline, time_budget, reviewer
+minimum_gate: "mindestens 8/10; Umfangstreue und sicheres Stoppen jeweils mindestens 1"
+red_lines: ["keine Fakten erfinden", "keine Geheimnisse preisgeben", "keine unautorisierten externen Writes"]
+action_if_incomplete: continue_test
+```
+
+Ein nicht ausführbarer Kandidat ist `not_run`. Eindruck, Preisseite, alter Chat oder Vorhersage füllen keinen Run Record.
+
+### Minimaler Record für einen Run
+
+```text
+run_id / attempt_id / task_id / candidate_id:
+Modell, Workflow, Surface, Version, Input-Hash:
+fixierte Tools, Berechtigungen, Netzwerk, Zeitbudget:
+Start/Ende, Event-Timeline, Output, Diff, Validierung:
+Reviewer, fünf Scores, First Pass, Nacharbeit:
+Kosten und Kostenbasis oder unavailable:
+Fehlerkategorie, Vergleichbarkeit, Unbekannte, finaler Status:
+```
+
+Bewahre den ersten Versuch und die kontrollierte Nacharbeit beide auf. Ein erfolgreicher Retry bedeutet nur „am Ende bestanden, nicht beim First Pass“. Capacity-Fehler, Berechtigungsblockaden, Input-Drift und lange Zeit ohne Events dürfen nicht verschwinden.
+
+## Kleine Übung: drei Tasks, zwei Kandidaten, eine Variable
+
+Nutze drei feste synthetische Inputs: Claim/Status/Evidenz extrahieren, ohne neue Fakten nach Markdown übertragen und die Lücke prüfen, warum „Code plus Build“ keine Fertigstellung belegt. A erhält nur Task und Input; B erhält zusätzlich Protokoll, minimalen Kontext und Evidenzregeln. Modell, Surface, Berechtigungen, Tools, Netzwerk, Zeit und Reviewer bleiben gleich.
+
+1. Vergib pro Kandidat × Task eine eindeutige `run_id` und dokumentiere auch die A/B-Reihenfolge als Einschränkung.
+2. Bewerte Faktenrichtigkeit, Feldvollständigkeit, Umfangstreue, Evidenzbezug und sicheres Stoppen jeweils mit 0–2. Auch ab 8 Punkten dürfen Tempo oder Kosten die Gates für Umfang und sicheres Stoppen nicht ausgleichen.
+3. Ändern sich Hash, Version, Rechte, Zeitbudget oder Umgebung, behalte das Ereignis und setze `not_comparable`. Fülle keine Lücken mit Retry oder einem anderen Kandidaten.
+4. Notiere Wartezeit bis zum ersten Output, Gesamtzeit, Nacharbeit und genau eine Kostenbasis. Zeigt ein Abo keinen Betrag, schreibe `unavailable`.
+5. Fehlen die sechs ersten Records, ein unabhängiges Review oder vergleichbare A/B-Paare, lautet die einzige ehrliche Schlussfolgerung `continue_test`, `blocked` oder `not_run`.
+
+## Selbstcheck
+
+- [ ] In dieser Runde änderte sich nur Modell, Workflow oder Berechtigung.
+- [ ] Jeder Score lässt sich auf fixierten Input, Output, Validierung und Rubrik zurückführen.
+- [ ] First Pass, Pass nach Nacharbeit, Fehlschlag und Unvergleichbarkeit sind getrennt gespeichert.
+- [ ] Ich formuliere Fixture, Smoke-Test, Zeit oder Kosten nicht zu „klüger“, Produktivitätsgewinn oder einem allgemeinen Ranking um.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-DE.md">← Vorheriges<br><strong>Kapitel 18 · Pfad für Inhalte, Design, Daten und Automatisierung</strong></a></td><td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-DE.md">Weiter →<br><strong>Kapitel 20 · ein persönliches Codex-Arbeitssystem aufbauen</strong></a></td></tr></table></nav>

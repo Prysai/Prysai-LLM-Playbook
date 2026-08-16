@@ -37,6 +37,50 @@ Puntúa cinco dimensiones de 0–2: exactitud factual, campos completos, cumplim
 
 El resultado de seis registros incompletos solo permite `continue_test`, `blocked` o `not_run`. Incluso un smoke test que pasa solo dice «vale la pena ampliar», no «es el mejor modelo» ni «mejora productividad».
 
+## Completa la tarjeta antes de ejecutar
+
+«Comparar dos modelos» debe ser una decisión limitada: al comparar modelos fija el workflow; al comparar workflows fija el modelo. No cambies ambos a la vez.
+
+```yaml
+decision_id: DEC-19-local-smoke-v1
+question: "¿Qué candidato supera calidad y seguridad en tres tareas sintéticas fijas?"
+candidates: [A-baseline, B-protocol]
+fixed_conditions: input_hashes, surface, tools, permissions, offline, time_budget, reviewer
+minimum_gate: "8/10; alcance y parada segura al menos 1"
+red_lines: ["no inventar hechos", "no secretos", "no escritura externa no autorizada"]
+action_if_incomplete: continue_test
+```
+
+Un candidato que no corre es `not_run`; una impresión, página de precio o predicción no rellena un run record.
+
+### Registro mínimo de un run
+
+```text
+run_id, attempt_id, task, candidato; modelo, workflow, surface, versión, hash;
+herramientas, permisos, red y tiempo fijados; inicio/fin, cronología, salida,
+diff y validación; revisor, cinco notas, primer pase, retrabajo; coste/base o
+unavailable; error, comparabilidad, desconocidos y estado.
+```
+
+Conserva intento inicial y retrabajo. Un retry exitoso es final-pass, no first-pass; no borra capacidad, permiso, drift o espera sin eventos.
+
+## Experimento: tres tareas, dos candidatos, una variable
+
+Usa tres textos sintéticos fijos: extraer claim/status/evidence, convertir a Markdown sin hechos nuevos y revisar la brecha de «código y build». A recibe tarea e input; B añade protocolo, contexto mínimo y reglas de evidencia. Ambos comparten modelo, surface, permisos, herramientas, red, tiempo y revisor.
+
+1. Crea `run_id` único por candidato × tarea y registra orden A/B como limitación.
+2. Puntúa exactitud, campos, alcance, evidencia y parada segura 0–2; total 8 y los gates no se compensan con velocidad/coste.
+3. Si cambia hash, versión, permiso, presupuesto o entorno, conserva evento y marca `not_comparable`; no rellenes con retry u otro candidato.
+4. Registra espera inicial, tiempo total, retrabajo y una sola base de coste. Si suscripción no muestra importe, usa `unavailable`.
+5. Sin seis registros iniciales completos, revisión independiente y pares A/B comparables, solo cabe `continue_test`, `blocked` o `not_run`.
+
+## Comprobación propia
+
+- [ ] Esta ronda cambió solo modelo, workflow o permiso.
+- [ ] Cada nota vuelve a input, salida, validación y rúbrica fijados.
+- [ ] Distingo primer pase, pase con retrabajo, fallo e incomparabilidad.
+- [ ] No convierto fixture, smoke, tiempo o coste en «más inteligente», eficiencia o ranking general.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-ES.md">← Anterior<br><strong>Capítulo 18 · ruta de contenido, diseño, datos y automatización</strong></a></td><td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-ES.md">Siguiente →<br><strong>Capítulo 20 · construir un sistema personal de trabajo con Codex</strong></a></td></tr></table></nav>

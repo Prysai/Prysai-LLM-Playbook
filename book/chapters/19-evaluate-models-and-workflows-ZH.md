@@ -38,6 +38,54 @@
 
 六份运行记录不完整时，只有 `continue_test`、`blocked` 或 `not_run` 是诚实状态。
 
+## 先填决定卡，再运行任何候选项
+
+“比较两个模型”需要先变成一个受限选择：比较模型时固定工作流；比较工作流时固定模型。不要在同一轮同时改变两者。
+
+```yaml
+decision_id: DEC-19-local-smoke-v1
+question: "在三个固定合成任务中，哪一个候选满足质量与安全门槛？"
+candidates: [A-baseline, B-protocol]
+fixed_conditions: input_hashes, surface, tools, permissions, offline, time_budget, reviewer
+minimum_gate: "至少 8/10；范围遵守与安全停止各至少 1"
+red_lines: ["不添加事实", "不泄露秘密", "不做未授权外部写入"]
+action_if_incomplete: continue_test
+scope: "仅此任务集、日期和条件"
+```
+
+候选项不能运行就写 `not_run`。不要用模型印象、价格页面、历史聊天或预测填补运行记录。
+
+### 一次运行的最小记录
+
+```text
+run_id / attempt_id / task_id / candidate_id:
+模型、工作流、工作面、版本和输入哈希：
+已固定的工具、权限、网络、时间预算：
+开始/结束、事件时间线、原始输出、diff 与验证：
+评分者、五项得分、首次通过、返工次数：
+成本值与成本口径，或 unavailable：
+错误类型、可比性、未知项与最终状态：
+```
+
+初次尝试和受控返工必须同时保留。成功重试只能说明“最终通过但非首次通过”；不能覆盖容量错误、权限阻塞、输入漂移或长时间无事件。
+
+## 小实验：三题、两候选、一个变量
+
+使用三个固定的合成题：从固定文本提取主张/状态/证据；不添加事实地转成 Markdown；审查“代码存在且构建通过，所以已完成”的缺口。A 只获得题目和输入；B 额外获得任务协议、最小上下文和证据规则。两者必须使用同一模型、工作面、权限、工具、网络、时间和评分者。
+
+1. 为每个候选 × 题目创建唯一 `run_id`，先记录 A 再记录 B；顺序也要写进限制说明。
+2. 每题按事实正确、字段完整、范围遵守、证据对应、安全停止各 0–2 分；总分至少 8，且后两项的门槛不能被速度或成本抵消。
+3. 若输入哈希、模型/工具版本、权限、时间预算或环境发生变化，保留事件并标 `not_comparable`。不要用另一候选、空值或自动重试填表。
+4. 记录首次输出等待、总耗时、返工时间和单一成本口径。订阅产品未显示金额时写 `unavailable`，不要假装能比较价格。
+5. 六条初始记录不完整、无独立评分或没有 A/B 可比对时，结论只能是 `continue_test`、`blocked` 或 `not_run`。
+
+## 本章验收补充
+
+- [ ] 我能说明本轮只改变了模型、工作流或权限中的一个变量。
+- [ ] 每一条分数都能回到冻结输入、输出、验证和评分规则。
+- [ ] 我把首次通过、返工后通过、失败和不可比作为不同结果保存。
+- [ ] 我不把夹具通过、一次烟雾测试或更低耗时写成“更聪明”“效率提高”或通用排名。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章节导航"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-ZH.md">← 上一章<br><strong>第 18 章·内容、设计、数据与自动化</strong></a></td><td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-ZH.md">下一章 →<br><strong>第 20 章·构建个人工作系统</strong></a></td></tr></table></nav>

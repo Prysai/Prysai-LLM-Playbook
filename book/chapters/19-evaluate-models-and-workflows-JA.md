@@ -37,6 +37,53 @@ task text、redacted input、context、model ID、surface、tool、network、per
 
 六つの run record が欠けていれば `continue_test`、`blocked`、`not_run` だけが誠実です。smoke が通っても「拡大する価値がある」だけで、「最良のモデル」や「生産性向上」の証明ではありません。
 
+## 実行前に decision card を埋める
+
+「二つのモデルを比べる」を、範囲のある選択に直します。モデルを比べるなら workflow を固定し、workflow を比べるならモデルを固定します。同じラウンドで両方は変えません。
+
+```yaml
+decision_id: DEC-19-local-smoke-v1
+question: "三つの固定 synthetic task で、品質と安全の gate を満たす候補はどれか？"
+candidates: [A-baseline, B-protocol]
+fixed_conditions: input_hashes, surface, tools, permissions, offline, time_budget, reviewer
+minimum_gate: "8/10 以上。scope と safe stop は各 1 以上"
+red_lines: ["事実を作らない", "秘密を出さない", "未許可の外部書き込みをしない"]
+action_if_incomplete: continue_test
+```
+
+実行できない候補は `not_run` です。モデルの印象、料金ページ、過去の会話、予測で run record を埋めてはいけません。
+
+### 一回の run に残す最小記録
+
+```text
+run_id / attempt_id / task_id / candidate_id:
+model、workflow、surface、version、input hash:
+固定した tool、permission、network、time budget:
+開始/終了、event timeline、output、diff、validation:
+reviewer、五つの score、first pass、rework:
+cost と cost basis、または unavailable:
+error category、comparability、unknown、final status:
+```
+
+初回 attempt と管理した rework は両方保存します。成功した retry は「最終的には pass、first pass ではない」と示すだけです。capacity error、permission block、input drift、長い無イベント待機を消してはいけません。
+
+## 小実験：三 task、二候補、一変数
+
+固定した三つの synthetic input を使います。claim/status/evidence の抽出、事実を増やさない Markdown 化、「code と build だけでは完了を示さない」という抜けのレビューです。A には task と input のみ、B には protocol、最小 context、evidence rule を追加します。model、surface、permission、tool、network、時間、reviewer は同じにします。
+
+1. 候補 × task ごとに固有の `run_id` を作り、A/B の順序も制約として記録します。
+2. factual accuracy、field completeness、scope adherence、evidence mapping、safe stop を各 0–2 で採点します。8 点以上でも、scope と safe stop の gate は速さや cost で相殺できません。
+3. hash、version、permission、time budget、environment が変われば event を残して `not_comparable` にします。retry や別候補で空欄を埋めません。
+4. 初回 output までの待機、総時間、rework、単一の cost basis を記録します。subscription に金額がなければ `unavailable` と書きます。
+5. 六つの初回 record、独立 review、比較可能な A/B pair がそろわなければ、結論は `continue_test`、`blocked`、`not_run` のどれかです。
+
+## 自分で確かめる
+
+- [ ] このラウンドで変えたのは model、workflow、permission の一つだけである。
+- [ ] 各 score は固定 input、output、validation、rubric に戻って確認できる。
+- [ ] first pass、rework 後の pass、failure、incomparable を別の結果として残した。
+- [ ] fixture、smoke、時間、cost を「より賢い」「効率向上」や一般順位に言い換えていない。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-JA.md">← 前の章<br><strong>第18章 · コンテンツ、デザイン、データ、自動化トラック</strong></a></td><td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-JA.md">次へ →<br><strong>第20章 · Codexで使う個人の作業システムを作る</strong></a></td></tr></table></nav>
