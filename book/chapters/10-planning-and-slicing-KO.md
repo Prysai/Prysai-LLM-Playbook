@@ -121,6 +121,80 @@
 관찰한 것, 아직 증명하지 못한 것, 다음 안전한 행동 하나를 적습니다. 이 장은 `candidate`입니다.
 이 연습 하나만으로 효과, 속도, 장기 학습을 측정할 수 없습니다.
 
+## dependency를 보이는 순서로 놓기
+
+plan의 순서는 file 이름이나 team 담당 순서가 아니라, 가장 위험한 가정을 먼저 줄일 수 있는 순서로
+정합니다. 각 dependency에 “이것이 없으면 무엇을 할 수 없는가”와 “read-only로 확인할 수 있는가”를
+적습니다.
+
+| dependency | 먼저 확인하는 이유 | 가장 작은 check | 미확인일 때 할 일 |
+| --- | --- | --- | --- |
+| target file identity | 다른 copy를 edit하면 outcome이 무의미함 | absolute path와 baseline 읽기 | stop하고 correct root를 ask |
+| acceptance rule | “좋게 하기”만으로는 review 불가 | reader-visible rule을 한 문장으로 쓰기 | outcome을 다시 작게 만들기 |
+| required input | input 없이는 proposal을 비교할 수 없음 | named file/source revision 읽기 | `blocked_input`으로 남기기 |
+| authority | write나 external action은 task 의미를 바꿈 | allowed path/action을 task card와 대조 | approval을 ask하고 widen하지 않기 |
+| verification source | check가 없으면 delivery claim을 만들 수 없음 | command, manual rule, read-back 정하기 | `unverified`로 handoff |
+
+dependency graph가 완벽한 그림일 필요는 없습니다. 중요한 것은 unknown을 뒤에 숨기지 않고, 첫
+vertical slice가 그 unknown을 안전하게 드러내게 하는 것입니다.
+
+## worked slice: reader path 하나 고치기
+
+예를 들어 local chapter 첫 120단어가 “무엇을 할지”와 “어떻게 확인할지”를 보여 주지 않는다고
+가정합니다. 목표를 “과정 전체 개선”이 아니라 다음처럼 줄입니다.
+
+```text
+Outcome: 처음 읽는 사람이 두 제목을 찾고 첫 action 하나를 말할 수 있다.
+Fixed input: disposable copy의 named chapter file 하나.
+Allowed change: 그 file의 local text만. edit 전에는 proposal만.
+Acceptance: “What changed”와 “How to check”가 있고 둘 다 120단어 안 section에 있다.
+Evidence: baseline, exact diff, manual read-back, not-proven list.
+Stop: 다른 file, link, publish, install 또는 reader data가 필요해진다.
+```
+
+이 slice의 value는 과정이 완성되는 데 있지 않습니다. task contract가 충분한지, target이 맞는지,
+check가 reader-visible rule을 직접 보는지를 낮은 cost로 발견하는 데 있습니다. acceptance를
+만족해도 이해, conversion, retention, 일반 quality는 `not proven`으로 남습니다.
+
+## plan review: 시작 전과 변경 뒤에 묻기
+
+editor를 열기 전과 slice 하나가 끝난 뒤에 같은 다섯 가지를 review합니다.
+
+1. 이 outcome을 한 문장으로 말할 수 있는가? 누가 무엇을 관찰하는가?
+2. 첫 check는 만든 artifact가 아니라 acceptance를 보는가?
+3. 어떤 assumption이 false이면 이 plan은 즉시 멈춰야 하는가?
+4. failure해도 다음 사람이 baseline과 attempted scope를 review할 수 있는가?
+5. 다음 slice는 새 evidence를 요구하는가, 아니면 같은 promise를 크게 만들기만 하는가?
+
+yes/no만으로 답할 수 없다면 그 plan은 아직 실행 순서가 아니라 희망입니다. read-only probe,
+question 또는 smaller outcome으로 돌아갑니다.
+
+## failure를 evidence로 만들기
+
+| failure | safe result |
+| --- | --- |
+| target file이 없음 | target을 만들지 않고 `blocked_input`으로 기록 |
+| acceptance가 “더 좋게”로 남음 | reader-visible rule을 ask하고 edit하지 않음 |
+| first slice가 세 system을 바꿈 | one local artifact로 돌아감 |
+| check가 install/network를 요구 | new authority를 ask하거나 `unverified`로 stop |
+| diff가 allowed file을 넘음 | extra change를 review하고 rollback/decision 없이 계속하지 않음 |
+
+failure는 plan 실패가 아니라 첫 expensive assumption이 드러난 record입니다. 첫 unsupported claim,
+actual diff, 마지막 accepted state, one safe next action을 handoff에 남깁니다.
+
+## 전이와 sources
+
+같은 template를 research memo, marketing copy, design review에 씁니다. 다만 acceptance를 domain에
+맞게 바꿉니다. research에는 source scope와 citation, copy에는 supplied facts와 audience rule, design
+review에는 viewport와 observation이 필요합니다. platform-specific command, model behavior, speed, cost는
+current source와 actual run 없이는 assertion으로 쓰지 않습니다.
+
+- [ ] outcome은 작고 observer가 분명하다.
+- [ ] 첫 high-risk dependency에 read-only check 또는 stop rule이 있다.
+- [ ] one slice가 one reviewable artifact와 evidence를 남긴다.
+- [ ] failure와 unknown을 delivery에서 지우지 않았다.
+- [ ] next slice는 scope expansion이 아니라 새 decision이다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-KO.md">← 이전<br><strong>9장 · 검증, 의심, 복구</strong></a></td><td align="right"><a data-chapter-nav="next" href="11-designing-a-skill-KO.md">다음 →<br><strong>11장 · 쓸모 있는 Skill 설계하기</strong></a></td></tr></table></nav>
