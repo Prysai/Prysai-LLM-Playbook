@@ -101,10 +101,17 @@ This is an independent curriculum and practical playbook. It is not OpenAI's
 official documentation, an official Codex product page, or a catalogue of
 copied prompts and Skills.
 
-## The recommended first Codex path
+## The textbook path — read it in order
 
-If your goal is to make a real local change with Codex, do not choose among the
-full catalogue yet. Follow one L0 → L1 sequence:
+This project is a book. Start at the beginning; do not choose among the
+catalogue on your first visit.
+
+**Step 0 — what an LLM actually is.** Read
+[Lesson 0 — What Is a Large Language Model](book/guides/llm-fundamentals-EN.md):
+20 minutes on tokens, context windows, capabilities, and the honest limits.
+This is the foundation every later chapter builds on.
+
+**Steps 1–2 — the first safe task.** Then continue the sequence:
 
 1. [Chapter 1 — Understand GPT before Codex](book/chapters/01-gpt-and-codex-EN.md)
    establishes the boundary between generation, tools, actions, and evidence.
@@ -117,6 +124,11 @@ full catalogue yet. Follow one L0 → L1 sequence:
    optional offline fixture when you do not yet have a disposable project.
 5. [Lab 001 — Make one safe README change](book/labs/lab-001-first-safe-task-EN.md)
    turns that contract into an inspect-first, edit-once, diff-and-check run.
+
+**After Chapter 2**, the book keeps one order: Chapter 3 (task protocols),
+Chapter 4 (context and permissions), and so on through Chapter 22. The
+[table of contents](book/table-of-contents-EN.md) is the map; practice cards
+and language loops are exercises you reach later, not entry points.
 
 The fixture is `candidate / not_run`; Labs 011 and 001 remain `draft / not_run`.
 This is the complete candidate path
