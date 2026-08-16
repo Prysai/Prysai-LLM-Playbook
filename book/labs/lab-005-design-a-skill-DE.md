@@ -102,7 +102,7 @@ nur länger?
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-lab-nav="previous" href="lab-004-skill-selection-DE.md" aria-label="Vorheriges Lab: Lab 004 · Die kleinste nützliche Fähigkeit auswählen">← Vorheriges<br><strong>Lab 004 · Die kleinste nützliche Fähigkeit auswählen</strong></a></td>
-      <td align="right"><a data-lab-nav="next" href="../table-of-contents-DE.md" aria-label="Zum deutschen Inhaltsverzeichnis: Lab 006 ist noch nicht übersetzt">Nächstes Lab in Arbeit →<br><strong>Verfügbarkeit von Lab 006 ansehen</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-006-agent-stop-conditions-DE.md" aria-label="Nächstes Lab: Lab 006 · Stoppbedingungen für einen Agent entwerfen">Weiter →<br><strong>Lab 006 · Stoppbedingungen für einen Agent entwerfen</strong></a></td>
     </tr>
   </table>
 </nav>
