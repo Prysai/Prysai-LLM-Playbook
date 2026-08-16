@@ -156,7 +156,7 @@ def validate(root: Path, registry: dict[str, Any] | None = None) -> list[str]:
         if not isinstance(license_record, dict):
             errors.append(f"{skill_id}: license must be an object")
         else:
-            if license_record.get("expression") not in {"CC-BY-NC-4.0"}:
+            if license_record.get("expression") not in {"CC-BY-4.0", "CC-BY-NC-4.0"}:
                 errors.append(f"{skill_id}: unknown or unsupported license expression")
             if not isinstance(license_record.get("boundary"), str) or not license_record["boundary"].strip():
                 errors.append(f"{skill_id}: license boundary is required")
