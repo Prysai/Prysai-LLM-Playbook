@@ -4,7 +4,7 @@
 
 **Status:** `candidate`. Dieses Kapitel vermittelt einen Workflow mit prüfbaren Belegen und Wiederherstellungsregeln. Der Vergleichsversuch ist `not_run`; es ist kein Bericht über einen echten Codex-Lauf, Kundenauftrag oder Produktionsrelease.
 
-## Das Problem
+## Das Problem dieses Kapitels
 
 Ein Modell anfangen zu lassen ist nicht dasselbe wie nutzbare Arbeit zu Ende zu bringen. Ein Ziel kann vage sein, der Umfang wachsen oder ein Check das falsche Ziel prüfen, während die Oberfläche gesund aussieht.
 
@@ -13,6 +13,14 @@ define → plan → build → verify → review → deliver → maintain
 ```
 
 Jeder Übergang verlangt eine Entscheidung. Eine Phase endet nicht, weil ein Agent „fertig“ sagt, sondern weil andere ihren Beleg prüfen können.
+
+## Lernziele
+
+Nach diesem Kapitel kannst du einen kleinen LLM-unterstützten Auftrag als überprüfbare Kette von `define` bis `maintain` beschreiben, einen Checkpoint vor einem Retry sichern und eine Übergabe schreiben, die Handlung, Beleg und Unbekanntes nicht vermischt. Du wirst nicht beweisen, dass ein Modell allgemein zuverlässig ist; der Versuch bleibt auf seine Eingabe, Umgebung und Rubrik begrenzt.
+
+## Praxisfälle: Wenn der Workflow zwischen sichtbaren Erfolgen bricht
+
+Ein Login, eine sichtbare Modellliste oder ein gestarteter Check kann als Fortschritt erscheinen, obwohl der nächste notwendige Zustand fehlt. Die öffentlichen Symptome in den folgenden Wiederherstellungsmustern sind keine Diagnosen des Produkts und keine lokale Reproduktion. Sie dienen dazu, die erste sichere Beobachtung zu wählen: Pfad und Diff nach einer Unterbrechung, Client-Austausch nach einem Browser-Login oder explizite Zustimmung vor einer dauerhaften Umgebungsänderung.
 
 ## Phasen mit Belegen
 
@@ -126,11 +134,21 @@ Durchlaufe die sieben Phasen: Leserschaft und Ergebnis definieren; eine Änderun
 
 Willst du „Modell sofort bearbeiten lassen“ mit „erst ein Protokoll schreiben“ vergleichen, friere Ausgangstext, Ziel, erlaubte Aktionen, Zeitlimit und Checkregel ein. Bewahre erste Ausgabe, echte Dauer, Nacharbeit, Diff, Checkergebnis und Unbekannte auf. Ändern sich Text, Modell, Tool, Rechte oder Umgebung, schreibe `not_comparable`. Ein einmal schnelleres oder hübscheres Ergebnis beweist weder allgemeine Effizienz noch ein besseres Modell.
 
-## Checkpoints, Versuch und Grenze
+## Experiment: Checkpoints, Versuch und Grenze
 
 Vor einem Retry notiere fehlgeschlagene Phase, Fehlerklasse, letzten akzeptierten Checkpoint, bekannte Änderungen, Retry-Bedingung und Fallback. „Weiter“ ist kein Wiederherstellungsplan. Wenn ein Befehl in `Working` bleibt, ist Stille eine Beobachtung, kein Erfolg.
 
-Vergleiche in einem wegwerfbaren Ordner eine direkte Bitte mit einem Protokoll, Checkpoints und fokussiertem Check. Bewahre erste Ausgabe, Diff, Befehl, Exit-Code, reale Dauer und Nacharbeit auf; fehlende Zeit oder Kosten bleiben `unavailable`. Erzeuge einen Timeout, geänderten Input, Berechtigungsblock oder unbekanntes lokales Schreibergebnis. Ändern sich feste Bedingungen, markiere `not_comparable`. Wenige kleine Aufgaben beweisen keine allgemeine Effizienz, Qualität oder Modellrangfolge.
+### Vorbereitung
+
+Lege einen wegwerfbaren Ordner ohne Remote, Geheimnisse oder Kundendaten an. Speichere einen Ausgangstext, eine Abnahmefrage und einen lokalen Checkpoint. Vereinbare vorab ein Zeitlimit und den sicheren Abbruchschritt. Installiere nichts, melde dich nicht an und sende keine Nachricht an Dritte.
+
+### Aufgabe
+
+Vergleiche in diesem Ordner eine direkte Bitte mit einem Protokoll, Checkpoints und fokussiertem Check. Bewahre erste Ausgabe, Diff, Befehl, Exit-Code, reale Dauer und Nacharbeit auf; fehlende Zeit oder Kosten bleiben `unavailable`. Erzeuge einen Timeout, geänderten Input, Berechtigungsblock oder unbekanntes lokales Schreibergebnis. Ändern sich feste Bedingungen, markiere `not_comparable`. Wenige kleine Aufgaben beweisen keine allgemeine Effizienz, Qualität oder Modellrangfolge.
+
+### Belege
+
+Sichere für jeden Versuch: Ausgangseingabe und Abnahme, erlaubte Aktionen, Checkpoint-Nummer, Prompt oder Protokoll, geänderte Pfade, Diff, ausgeführten Befehl mit Verzeichnis und Exit-Code, Review-Notiz und fehlende Beobachtungen. Ein fehlender Lauf wird `not_run`, nicht nachträglich aus einer überzeugenden Ausgabe rekonstruiert.
 
 ## Mit Checkpoints einen vollständigen Kreis schließen
 
@@ -180,6 +198,28 @@ Das ist stärker als „alles fertig“. Sind Ziel, Autorität oder Wiederherste
 quelle unklar, ist die nächste Aktion eine Frage oder ein Read-only-Check, kein
 Edit. Kapitel und Vergleich bleiben bis zu Laufprotokoll und Review `candidate`
 und `not_run`.
+
+## Reflexion
+
+- An welchem Checkpoint war der letzte Zustand tatsächlich bekannt, und welcher nur vermutet?
+- Welche Behauptung hätte ein Diff gestützt, welche hätte einen Lauf oder eine Leserin gebraucht?
+- Welche Nebenwirkung hätte eine neue, eng begrenzte Zustimmung verlangt?
+
+## Transferaufgabe
+
+Übertrage denselben Ablauf auf einen nicht-technischen Auftrag: verbessere einen kurzen eigenen Text, prüfe eine kleine Quellenliste oder plane eine Sprachübung. Behalte Ziel, erlaubte Eingaben, verbotene Nebenwirkungen, Checkpoints und Übergabe bei. Ersetze nur die domänenspezifische Abnahme: etwa Verständlichkeit für eine Leserin, Quelle und Unsicherheit für Recherche oder eine verzögerte, unbeantwortete Abrufaufgabe für Sprachpraxis. Notiere ausdrücklich, was die Übung nicht beweist.
+
+## Abnahme-Checkliste
+
+- [ ] Ich kann für jede Phase einen Ausstiegsbeleg und einen Stoppgrund nennen.
+- [ ] Ich habe vor dem ersten Edit Ziel, Umfang, erlaubte Aktionen, Abnahme und Rückweg festgehalten.
+- [ ] Meine zwei Versuche haben dieselbe Eingabe, Rubrik und Grenze oder sind als `not_comparable` markiert.
+- [ ] Ich habe Diff, Check-Ausgabe und unbekannte Zustände getrennt übergeben.
+- [ ] Ich behaupte weder Veröffentlichung noch Nutzerwert, wenn der zugehörige Beleg fehlt.
+
+## Quellen und Wartungsgrenze
+
+Die Workflow-Reihenfolge, Checkpoints und Claim-Evidence-Trennung sind die stabile Lehrmethode dieses Projekts. Produktoberflächen, Konto- und Toolverhalten, Modellverfügbarkeit und Community-Symptome sind veränderliche Fakten. Prüfe die datierten [offiziellen Faktenkarten](../evidence-library-DE.md#source-notes) und den [Feldproblemindex](../evidence-library-DE.md#source-notes), bevor du eine aktuelle Produktbehauptung übernimmst. Diese Quellen ersetzen weder einen lokalen Lauf noch eine unabhängige Lernbeobachtung.
 
 <!-- chapter-navigation:start -->
 <hr>
