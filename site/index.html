@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="styles.css?v=20260815-mobile-viewport" />
     <script src="locale-manifest.js?v=20260813-integrity"></script>
     <script src="learning-path-data.js?v=20260813-integrity"></script>
+    <script src="goal-templates.js?v=20260816"></script>
     <script src="app.js?v=20260815-beginner-action" defer></script>
   </head>
   <body>
@@ -274,6 +275,43 @@
             <div><span class="section-number">02</span><p class="eyebrow" data-i18n="startEyebrow">Start here · choose by problem</p><h2 id="start-title" data-i18n="startTitle">What do you need to do?</h2></div>
             <p class="section-intro" data-i18n="startIntro">Choose the closest real problem. Each route names a first action, points to one canonical chapter or lab, and keeps the current evidence status visible.</p>
           </div>
+<article class="goal-wizard" id="goal-wizard" aria-labelledby="goal-wizard-title">
+  <div class="goal-wizard-head">
+    <p class="eyebrow" data-i18n="wizardEyebrow">Pick today's goal</p>
+    <h3 id="goal-wizard-title" data-i18n="wizardTitle">What do you want to get done today?</h3>
+    <p data-i18n="wizardIntro">Choose one goal, fill the smallest form, and copy a ready-to-use prompt. No account, no files, no setup — paste it into any chat model.</p>
+  </div>
+  <div class="goal-wizard-body" data-goal-wizard>
+    <ol class="goal-wizard-steps" data-wizard-steps aria-hidden="true">
+      <li data-wizard-step-indicator="1" class="is-active"><span data-i18n="wizardStepOne">1 · Choose a goal</span></li>
+      <li data-wizard-step-indicator="2"><span data-i18n="wizardStepTwo">2 · Add details</span></li>
+      <li data-wizard-step-indicator="3"><span data-i18n="wizardStepThree">3 · Copy your prompt</span></li>
+    </ol>
+    <div class="goal-wizard-panel" data-wizard-panel="goals">
+      <div class="goal-wizard-options" data-goal-options role="list"></div>
+    </div>
+    <div class="goal-wizard-panel" data-wizard-panel="fields" hidden>
+      <form class="goal-wizard-form" data-goal-form>
+        <div data-goal-fields></div>
+        <div class="goal-wizard-nav">
+          <button class="button button-light" type="button" data-wizard-back><span data-i18n="wizardBack">Back</span></button>
+          <button class="button button-primary" type="submit" data-wizard-next><span data-i18n="wizardNext">Build my prompt</span></button>
+        </div>
+      </form>
+    </div>
+    <div class="goal-wizard-panel" data-wizard-panel="prompt" hidden>
+      <p class="goal-wizard-prompt-label" data-i18n="wizardPromptLabel">Your ready-to-use prompt</p>
+      <pre class="goal-wizard-prompt" data-goal-prompt></pre>
+      <div class="goal-wizard-actions">
+        <button class="button button-primary" type="button" data-goal-copy><span data-i18n="wizardCopy">Copy prompt</span></button>
+        <button class="button button-light" type="button" data-wizard-reset><span data-i18n="wizardReset">Start over</span></button>
+        <a class="text-link" href="#" data-goal-path><span data-i18n="wizardPathLabel">Go deeper</span><span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="goal-wizard-status" data-goal-copy-status aria-live="polite"></p>
+      <p class="goal-wizard-boundary" data-i18n="wizardBoundary">One copied prompt is a practice attempt, not proof of learning, fluency, research quality, or model behaviour.</p>
+    </div>
+  </div>
+</article>
           <article class="everyday-prompt-deck" id="everyday-prompts" aria-labelledby="everyday-prompts-title">
             <div class="everyday-prompt-head">
               <div>
