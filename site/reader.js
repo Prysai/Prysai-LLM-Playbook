@@ -847,11 +847,35 @@ function canonicalChapterTitle(chapter) {
     return Boolean(record?.exists && ['candidate', 'in-progress'].includes(record.translation_status));
   }
 
+  function hasRequestedLocaleSource(path, locale) {
+    // The locale manifest registers course units, but research, governance,
+    // and other Reader pages can also be linked from a localized source.
+    // A locale-suffixed file is an explicit localized source; an unsuffixed
+    // Markdown file is not. Do not render that English source under a
+    // non-English Reader shell merely because it is reachable from a link.
+    const suffix = String(path).match(/-([A-Z]{2})\.md$/)?.[1];
+    return suffix === String(locale).toUpperCase();
+  }
+
   function choosePath(path, locale) {
     const record = contentRecord(path);
     const readerType = record.content?.reader_type || 'project-document';
     const overviewTarget = record.content?.overview_target || 'index.html';
-    if (!record.content) return { path, contentId: null, readerType, overviewTarget, requested: locale, effective: locale, missingTranslation: false };
+    if (!record.content) {
+      const isNonEnglish = locale !== (manifest.default_locale || 'en');
+      if (isNonEnglish && !hasRequestedLocaleSource(path, locale)) {
+        return {
+          path,
+          contentId: null,
+          readerType,
+          overviewTarget,
+          missingTranslation: true,
+          requested: locale,
+          effective: locale,
+        };
+      }
+      return { path, contentId: null, readerType, overviewTarget, requested: locale, effective: locale, missingTranslation: false };
+    }
     const requested = record.content.locales?.[locale];
     if (ready(requested)) return {
       path: requested.path,

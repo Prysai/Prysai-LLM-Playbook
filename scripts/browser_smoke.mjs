@@ -752,6 +752,16 @@ try {
   await universalSeamRawPage.screenshot({ path: path.join(visualEvidenceDirectory, 'universal-seams-mobile-visual-route.png') });
   await universalSeamRawPage.close();
 
+  // This board is linked from both English and Chinese Chapter 9. Keep its
+  // standalone reading route phone-fitted instead of silently restoring a
+  // wide desktop-only asset after the Reader hides dense SVGs on mobile.
+  const evidenceRecoveryRawPage = await context.newPage();
+  await evidenceRecoveryRawPage.setViewportSize({ width: 390, height: 844 });
+  await evidenceRecoveryRawPage.goto(`${origin}/assets/teaching/evidence-recovery-ladder.svg`, { waitUntil: 'networkidle' });
+  await noHorizontalOverflow(evidenceRecoveryRawPage, 'mobile evidence-recovery full-size visual');
+  await evidenceRecoveryRawPage.screenshot({ path: path.join(visualEvidenceDirectory, 'evidence-recovery-mobile-visual-route.png') });
+  await evidenceRecoveryRawPage.close();
+
   await page.setViewportSize({ width: 390, height: 844 });
   await noHorizontalOverflow(page, 'mobile showcase');
   await page.goto(`${origin}/site/`, { waitUntil: 'networkidle' });
@@ -999,6 +1009,39 @@ try {
   assert.match(await chineseBookEntryPage.locator('[data-reader-article]').innerText(), /不会自动切换到英文正文/, 'Chinese book entry does not state the no-English-content-fallback boundary');
   await noHorizontalOverflow(chineseBookEntryPage, 'mobile Chinese book entry');
   await chineseBookEntryPage.close();
+
+  // A localized chapter may reference an English-only research record. The
+  // Reader must preserve the selected locale and render its local unavailable
+  // state rather than silently presenting the English Markdown as Chinese.
+  const chineseResearchBoundaryPage = await context.newPage();
+  await chineseResearchBoundaryPage.setViewportSize({ width: 390, height: 844 });
+  await chineseResearchBoundaryPage.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F01-gpt-and-codex-ZH.md&lang=zh`, { waitUntil: 'networkidle' });
+  await chineseResearchBoundaryPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  const chineseResearchLink = chineseResearchBoundaryPage.locator('[data-reader-article] a').filter({ hasText: 'OpenAI Codex 官方事实基线' }).first();
+  assert.equal(await chineseResearchLink.isVisible(), true, 'Chinese Chapter 1 does not expose its research-record link');
+  await chineseResearchLink.click();
+  await chineseResearchBoundaryPage.waitForURL(/reader\.html\?path=docs%2Fresearch%2Fopenai-codex-baseline\.md&lang=zh$/);
+  const localizedUnavailable = chineseResearchBoundaryPage.locator('[data-reader-article] [role="alert"]');
+  await localizedUnavailable.waitFor();
+  assert.match(await localizedUnavailable.innerText(), /暂时没有.*版本|不会自动切换到其他语言/, 'Chinese research route does not explain the same-locale unavailable state');
+  assert.equal(await chineseResearchBoundaryPage.locator('[data-reader-article] h1').count(), 0, 'Chinese research route renders the English-only document body');
+  const localizedResearchRecovery = localizedUnavailable.getByRole('link', { name: '返回总览' });
+  assert.match(await localizedResearchRecovery.getAttribute('href'), /index\.html\?lang=zh$/, 'Chinese research boundary recovery does not preserve the selected locale');
+  await noHorizontalOverflow(chineseResearchBoundaryPage, 'mobile Chinese research unavailable state');
+  await chineseResearchBoundaryPage.close();
+
+  // The same protection is a Reader contract for every non-English route,
+  // including locales that currently have only their starter path translated.
+  for (const locale of ['zh', 'es', 'ja', 'ko', 'de']) {
+    const untranslatedProjectPage = await context.newPage();
+    await untranslatedProjectPage.goto(`${origin}/site/reader.html?path=docs%2Fresearch%2Fopenai-codex-baseline.md&lang=${locale}`, { waitUntil: 'networkidle' });
+    await untranslatedProjectPage.locator('[data-reader-article] [role="alert"]').waitFor();
+    assert.equal(await untranslatedProjectPage.locator('[data-reader-language]').inputValue(), locale, `${locale} untranslated project route loses the selected locale`);
+    assert.equal(await untranslatedProjectPage.locator('[data-reader-article] h1').count(), 0, `${locale} untranslated project route renders an English document body`);
+    const recovery = untranslatedProjectPage.locator('[data-reader-article] [role="alert"]').getByRole('link');
+    assert.match(await recovery.getAttribute('href'), new RegExp(`index\\.html\\?lang=${locale}$`), `${locale} untranslated project route loses its local overview recovery`);
+    await untranslatedProjectPage.close();
+  }
 
   const chineseSafeFixturePage = await context.newPage();
   await chineseSafeFixturePage.setViewportSize({ width: 390, height: 844 });

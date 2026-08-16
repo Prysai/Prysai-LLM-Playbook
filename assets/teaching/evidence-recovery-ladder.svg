@@ -1,25 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-  <title id="title">Stop at the first missing proof</title>
-  <desc id="desc">A literal five-step evidence staircase rises from source scope to release evidence. A missing target observation breaks the third step and routes to a bounded recovery decision.</desc>
-  <rect width="1600" height="900" fill="#111315"/><rect width="34" height="900" fill="#e43b2f"/>
-  <g font-family="Arial, Helvetica, sans-serif">
-    <text x="76" y="76" fill="#e43b2f" font-size="18" font-weight="700" letter-spacing="4">EVIDENCE LADDER / RECOVERY / 09</text>
-    <text x="76" y="170" fill="#f0ebe1" font-size="68" font-weight="800" letter-spacing="-3">STOP AT THE FIRST MISSING PROOF.</text>
-    <text x="80" y="216" fill="#a9adb0" font-size="21">Claim strength rises only when a separately scoped observation exists.</text>
-    <path d="M76 260H1524" stroke="#f0ebe1" stroke-opacity=".28"/>
-    <g transform="translate(76 296)">
-      <rect x="0" y="320" width="270" height="130" fill="#f0ebe1"/><rect x="270" y="240" width="270" height="210" fill="#24272a" stroke="#55595c"/>
-      <rect x="540" y="160" width="270" height="290" fill="#e43b2f"/><rect x="810" y="80" width="270" height="370" fill="#24272a" stroke="#55595c"/>
-      <rect x="1080" width="292" height="450" fill="#f0ebe1"/>
-      <text x="24" y="356" fill="#e43b2f" font-size="14" font-weight="700" letter-spacing="2">01 / SOURCE</text><text x="24" y="394" fill="#151719" font-size="24" font-weight="800">SCOPE EXISTS</text><text x="24" y="425" fill="#55595c" font-size="15">diff / path / hash</text>
-      <text x="294" y="276" fill="#e43b2f" font-size="14" font-weight="700" letter-spacing="2">02 / RUN</text><text x="294" y="314" fill="#f0ebe1" font-size="24" font-weight="800">CHECK RAN</text><text x="294" y="345" fill="#b8b6b0" font-size="15">command / exit code</text>
-      <text x="564" y="196" fill="#151719" font-size="14" font-weight="800" letter-spacing="2">03 / TARGET</text><text x="564" y="234" fill="#fff8ed" font-size="24" font-weight="800">STATE OBSERVED</text><text x="564" y="265" fill="#211719" font-size="15">runtime / read-back</text>
-      <path d="M540 302H660L690 270L720 334L750 302H810" fill="none" stroke="#111315" stroke-width="12"/><text x="564" y="374" fill="#151719" font-size="17" font-weight="800">FIRST GAP</text><text x="564" y="405" fill="#fff8ed" font-size="15">do not infer acceptance</text>
-      <text x="834" y="116" fill="#e43b2f" font-size="14" font-weight="700" letter-spacing="2">04 / ACCEPTANCE</text><text x="834" y="154" fill="#f0ebe1" font-size="22" font-weight="800">USER TASK</text><text x="834" y="181" fill="#f0ebe1" font-size="22" font-weight="800">PASSED</text><text x="834" y="214" fill="#b8b6b0" font-size="15">sample / criteria / feedback</text><text x="834" y="412" fill="#777b7e" font-size="13">LOCKED UNTIL STEP 03 EXISTS</text>
-      <text x="1104" y="36" fill="#e43b2f" font-size="14" font-weight="700" letter-spacing="2">05 / RELEASE</text><text x="1104" y="74" fill="#151719" font-size="24" font-weight="800">READY TO SHIP</text><text x="1104" y="105" fill="#55595c" font-size="15">version / rollback / owner</text><text x="1104" y="412" fill="#777b7e" font-size="13">LOCKED UNTIL STEP 04 EXISTS</text>
-    </g>
-    <path d="M751 598V720H660" fill="none" stroke="#e43b2f" stroke-width="6"/>
-    <g transform="translate(76 826)"><rect y="-54" width="602" height="76" fill="#e43b2f"/><text x="24" y="-19" fill="#151719" font-size="17" font-weight="800">LABEL THE GAP / partial · unverified · blocked</text><text x="24" y="7" fill="#fff8ed" font-size="14">Preserve the error, scope, state, and last checkpoint.</text><rect x="622" y="-54" width="826" height="76" fill="#24272a" stroke="#e43b2f"/><text x="646" y="-19" fill="#e43b2f" font-size="17" font-weight="800">RECOVER / run one safe check — or stop clearly</text><text x="646" y="7" fill="#b8b6b0" font-size="14">Change one condition only; retry when authority and state permit.</text></g>
-    <text x="1524" y="860" text-anchor="end" fill="#74787b" font-size="14">PRYSAI LAB / CLAIM-SCOPED TEACHING MODEL</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence recovery: stop at the first missing proof</title>
+  <desc id="desc">A vertical teaching board with four steps: name the claim, inspect the record, label the first gap, then run one safe check or stop clearly.</desc>
+  <rect width="900" height="1400" fill="#f6f6f2"/>
+  <rect x="40" y="30" width="820" height="10" fill="#161616"/>
+  <text x="40" y="96" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700" letter-spacing="2">RECOVERY CARD / EVIDENCE FIRST</text>
+  <text x="40" y="162" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900">STOP AT THE FIRST</text>
+  <text x="40" y="216" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900">MISSING PROOF.</text>
+  <text x="40" y="258" fill="#514f49" font-family="Arial, Helvetica, sans-serif" font-size="22">A polished summary is not a receipt. Keep the first gap visible,</text>
+  <text x="40" y="290" fill="#514f49" font-family="Arial, Helvetica, sans-serif" font-size="22">then choose one permitted check—or stop without inventing success.</text>
+  <line x1="82" y1="360" x2="82" y2="1128" stroke="#d71920" stroke-width="8"/>
+  <g transform="translate(126 338)"><rect width="734" height="150" fill="#161616"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / CLAIM</text><text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">NAME WHAT “DONE” MEANS.</text><text x="24" y="116" fill="#c8c8c1" font-family="Arial, Helvetica, sans-serif" font-size="20">A file, answer, test, delivery, or decision—not a confident sentence.</text></g>
+  <g transform="translate(126 510)"><rect width="734" height="150" fill="#ffffff" stroke="#161616" stroke-width="3"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / RECORD</text><text x="24" y="78" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">INSPECT THE ACTUAL TRACE.</text><text x="24" y="116" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="20">Read the diff, exit code, source, screenshot, log, or reviewer note.</text></g>
+  <g transform="translate(126 682)"><rect width="734" height="150" fill="#d71920"/><text x="24" y="34" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / FIRST GAP</text><text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">LABEL WHAT IS MISSING.</text><text x="24" y="116" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="20">Use partial, unverified, blocked, or unknown. Do not infer acceptance.</text></g>
+  <g transform="translate(126 854)"><rect width="734" height="150" fill="#ffffff" stroke="#161616" stroke-width="3"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / NEXT DECISION</text><text x="24" y="78" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">RUN ONE SAFE CHECK—OR STOP.</text><text x="24" y="116" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="20">Change one condition only. Do not widen authority to make a result pass.</text></g>
+  <rect x="40" y="1086" width="820" height="184" fill="#161616"/><rect x="40" y="1086" width="14" height="184" fill="#d71920"/>
+  <text x="82" y="1132" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">KEEP THE RECEIPT</text><text x="82" y="1176" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">PRESERVE THE ERROR, SCOPE,</text><text x="82" y="1210" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">STATE, AND LAST CHECKPOINT.</text><text x="82" y="1248" fill="#c8c8c1" font-family="Arial, Helvetica, sans-serif" font-size="19">The record can support a narrow next step. It cannot turn an unknown into proof.</text>
+  <text x="40" y="1344" fill="#514f49" font-family="Arial, Helvetica, sans-serif" font-size="18">A recovery card is a decision aid, not evidence that a task, model, or learner succeeded.</text>
 </svg>
