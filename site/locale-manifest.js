@@ -3097,6 +3097,58 @@ window.CODEX_LOCALE_MANIFEST = {
         }
       }
     },
+    "llm-fundamentals-guide": {
+      "kind": "application-guide",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
+      "stem": "book/guides/llm-fundamentals",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "book/guides/llm-fundamentals-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/guides/llm-fundamentals-ZH.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "es": {
+          "path": "book/guides/llm-fundamentals-ES.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "ja": {
+          "path": "book/guides/llm-fundamentals-JA.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "ko": {
+          "path": "book/guides/llm-fundamentals-KO.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "de": {
+          "path": "book/guides/llm-fundamentals-DE.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "worktree-2026-08-16"
+        }
+      }
+    },
     "field-problems-index-2026-08-10": {
       "kind": "field-note",
       "reader_type": "field-note",
@@ -5279,6 +5331,12 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/french-practice-loop-JA.md": "french-practice-loop",
     "book/french-practice-loop-KO.md": "french-practice-loop",
     "book/french-practice-loop-DE.md": "french-practice-loop",
+    "book/guides/llm-fundamentals-EN.md": "llm-fundamentals-guide",
+    "book/guides/llm-fundamentals-ZH.md": "llm-fundamentals-guide",
+    "book/guides/llm-fundamentals-ES.md": "llm-fundamentals-guide",
+    "book/guides/llm-fundamentals-JA.md": "llm-fundamentals-guide",
+    "book/guides/llm-fundamentals-KO.md": "llm-fundamentals-guide",
+    "book/guides/llm-fundamentals-DE.md": "llm-fundamentals-guide",
     "docs/research/field-problems-index-2026-08-10.md": "field-problems-index-2026-08-10",
     "docs/research/field-problems-forums-2026-08-10.md": "field-problems-forums-2026-08-10",
     "docs/research/codex-field-cases-current-review-2026-08-12.md": "codex-field-cases-current-review-2026-08-12",
