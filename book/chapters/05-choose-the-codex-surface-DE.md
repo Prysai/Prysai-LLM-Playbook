@@ -156,7 +156,7 @@ Die [Faktenkarten](../../docs/research/openai-codex-facts-refresh-2026-08-09.md)
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="04-context-permissions-and-agent-DE.md" aria-label="Vorheriges Kapitel: Kapitel 4 · Kontext, Berechtigungen und die Aktionsgrenze des Agents">← Vorheriges<br><strong>Kapitel 4 · Kontext, Berechtigungen und die Aktionsgrenze des Agents</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="../table-of-contents-DE.md" aria-label="Zum deutschen Inhaltsverzeichnis: Kapitel 6 ist noch nicht übersetzt">Nächstes Kapitel in Arbeit →<br><strong>Verfügbarkeit von Kapitel 6 ansehen</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="06-model-selection-DE.md" aria-label="Nächstes Kapitel: Kapitel 6 · Modellauswahl ist keine Modellverehrung">Weiter →<br><strong>Kapitel 6 · Modellauswahl ist keine Modellverehrung</strong></a></td>
     </tr>
   </table>
 </nav>
