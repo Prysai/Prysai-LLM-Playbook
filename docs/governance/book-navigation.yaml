@@ -52,6 +52,24 @@
       "run_status": "not_run",
       "placement": "supplemental_practice",
       "boundary": "Supporting Lab registered at L2; it does not change chapter order or prove fluency, mastery, retention, transfer, or platform effectiveness."
+    },
+    {
+      "id": "platform-adapter-guide",
+      "title_en": "Choose your LLM platform",
+      "english_path": "book/routes/platform-adapter-guide-EN.md",
+      "status": "candidate",
+      "run_status": "not_run",
+      "placement": "platform_adapter_guide",
+      "boundary": "Orientation route for six platforms with a shared safe first task; not chapter 23, not platform equivalence, and not learner or cross-platform run evidence."
+    },
+    {
+      "id": "french-practice-loop",
+      "title_en": "French Practice Loop",
+      "english_path": "book/french-practice-loop-EN.md",
+      "status": "candidate",
+      "run_status": "not_run",
+      "placement": "supplemental_practice",
+      "boundary": "Six-message typed French exchange; not chapter 23 and not evidence of fluency, retention, or model feedback quality."
     }
   ],
   "parts": [
@@ -64,7 +82,14 @@
       "title_ja": "GPT の理解から最初の安全な利用まで",
       "title_ko": "GPT 이해부터 첫 안전한 사용까지",
       "title_de": "Vom Verständnis von GPT bis zur ersten sicheren Nutzung",
-      "chapters": ["chapter-01", "chapter-02", "chapter-03", "chapter-04", "chapter-05", "chapter-06"]
+      "chapters": [
+        "chapter-01",
+        "chapter-02",
+        "chapter-03",
+        "chapter-04",
+        "chapter-05",
+        "chapter-06"
+      ]
     },
     {
       "id": "part-2",
@@ -75,7 +100,15 @@
       "title_ja": "ユーザーからワークフロー設計者へ",
       "title_ko": "사용자에서 워크플로 설계자로",
       "title_de": "Vom Anwender zum Workflow-Designer",
-      "chapters": ["chapter-07", "chapter-08", "chapter-09", "chapter-10", "chapter-11", "chapter-12", "chapter-13"]
+      "chapters": [
+        "chapter-07",
+        "chapter-08",
+        "chapter-09",
+        "chapter-10",
+        "chapter-11",
+        "chapter-12",
+        "chapter-13"
+      ]
     },
     {
       "id": "part-3",
@@ -86,7 +119,13 @@
       "title_ja": "Skill、ツール、専門的な実践",
       "title_ko": "Skill, 도구, 전문적 실무",
       "title_de": "Skills, Werkzeuge und professionelle Praxis",
-      "chapters": ["chapter-14", "chapter-15", "chapter-16", "chapter-17", "chapter-18"]
+      "chapters": [
+        "chapter-14",
+        "chapter-15",
+        "chapter-16",
+        "chapter-17",
+        "chapter-18"
+      ]
     },
     {
       "id": "part-4",
@@ -97,7 +136,12 @@
       "title_ja": "熟達した利用から組織の能力へ",
       "title_ko": "숙련된 사용에서 조직 역량으로",
       "title_de": "Von geübter Nutzung zur organisatorischen Fähigkeit",
-      "chapters": ["chapter-19", "chapter-20", "chapter-21", "chapter-22"]
+      "chapters": [
+        "chapter-19",
+        "chapter-20",
+        "chapter-21",
+        "chapter-22"
+      ]
     }
   ],
   "chapters": [
