@@ -4,7 +4,7 @@
 
 **Estado:** `candidate`. El plan y los ejemplos son material de enseñanza. No prueban que un Agent haya ejecutado el trabajo ni que un corte funcione en todos los repositorios.
 
-## El problema
+## El problema que resuelve este capítulo
 
 Un plan puede sonar detallado y aun así ocultar que nadie puede comprobar un resultado hasta el final. Terminar primero todos los datos, luego toda la API y después toda la interfaz retrasa el descubrimiento de una suposición equivocada. Un corte vertical busca un resultado pequeño que atraviese el camino completo.
 
@@ -13,6 +13,14 @@ una entrada → cambio mínimo → acción observable → comprobación enfocada
 ```
 
 No es una excusa para cambiar todo a la vez. Es una forma de descubrir pronto el riesgo más caro con un alcance que se pueda revisar y revertir.
+
+## Objetivos de aprendizaje
+
+Podrás traducir un proyecto grande a un corte pequeño y observable, registrar sus dependencias y puntos de parada antes de editar y entregar un intento fallido sin que otra persona tenga que adivinar alcance o permisos. El ejercicio no mide velocidad general, calidad de modelo ni aprendizaje duradero.
+
+## Problemas reales: un plan detallado no siempre produce un resultado comprobable
+
+Un plan puede enumerar muchos archivos, fases y herramientas y aun así no dar un primer estado que alguien pueda comprobar. El riesgo real es una cadena larga de supuestos: un archivo ausente, un permiso desconocido o una aceptación ambigua aparecen después de acumular trabajo no comprobable. Un corte vertical prueba primero la dependencia que bloquea el siguiente paso visible.
 
 ## Diseña el corte antes de editar
 
@@ -42,17 +50,19 @@ No conviertas una lista de tareas en una promesa. Las tareas pueden ejecutarse y
 
 ## El experimento
 
+### Preparación
+
+Prepara una copia local desechable sin remoto, secretos ni cuentas externas. Elige un texto inicial pequeño, un cambio conocido y una pregunta de aceptación fija. Guarda la revisión base y fija una regla de parada antes de empezar; no instales, publiques ni envíes nada.
+
+### Tarea
+
 En una copia desechable, compara dos planes para el mismo cambio pequeño: uno horizontal y uno vertical. Conserva el plan inicial, la revisión de base, las órdenes, los diffs, los checks y los puntos donde cambió una decisión. Introduce una dependencia ausente o una aceptación ambigua. El plan vertical pasa si expone el bloqueo antes de acumular cambios no comprobables.
 
 No midas velocidad o calidad general a partir de una tarea. Marca tiempos, costes y resultados que no hayas observado como `unavailable`, `unknown` o `not_run`.
 
-## Lista de aceptación
+### Evidencia
 
-- [ ] El resultado, la entrada, el alcance y la aceptación son observables.
-- [ ] El corte tiene una comprobación y una fuente de recuperación definidas.
-- [ ] La evidencia permite revisar incluso un intento fallido.
-- [ ] Los efectos externos siguen fuera del alcance salvo autorización explícita.
-- [ ] El resumen diferencia cambio realizado, verificado, bloqueado y no demostrado.
+Conserva ambos planes, la entrada fija, el corte elegido, supuestos de dependencias y permisos, diff, salida de check, punto de parada y tarjeta de entrega. Si un intento no se ejecutó, sigue siendo `not_run`; un plan plausible no sustituye un resultado.
 
 ## Hoja de tres planes: elige por la primera evidencia
 
@@ -124,7 +134,7 @@ rápida o más bonita no demuestra productividad general ni superioridad de un
 modelo. El valor del ejercicio es observar qué información faltaba antes de
 editar y si el resultado se puede revisar.
 
-## Fallo seguro y reflexión
+## Fallo seguro y límite
 
 Quita deliberadamente **Cómo comprobarlo** o usa un archivo que no existe. El
 primer fallo debe decirte si falta contenido o si la entrada es equivocada. No
@@ -132,6 +142,26 @@ añadas dependencias ni abras permisos para ocultarlo. Escribe qué viste, qué
 parte sigue sin demostrar y cuál es la única acción segura siguiente. El capítulo
 sigue en `candidate`: este ejercicio no mide por sí mismo eficacia, velocidad ni
 aprendizaje duradero.
+
+## Reflexión
+
+¿Qué dependencia habrías descubierto al final en el plan horizontal? ¿Qué evidencia hizo comprobable el corte vertical y qué afirmación siguió fuera de alcance incluso después del check?
+
+## Tarea de transferencia
+
+Planifica el mismo corte para investigación, práctica de idioma o revisión de contenido. Conserva resultado, entrada fija, acciones permitidas y prohibidas, check y recuperación. Para idioma, la aceptación debe incluir una recuperación posterior y no vista sin ayuda, no solo una respuesta asistida fluida. Escribe qué no demuestra el nuevo ejercicio.
+
+## Lista de aceptación
+
+- [ ] El resultado, la entrada, el alcance y la aceptación son observables.
+- [ ] El corte tiene una comprobación, una regla de parada y una fuente de recuperación definidas.
+- [ ] La evidencia permite revisar incluso un intento fallido.
+- [ ] Los efectos externos siguen fuera del alcance salvo autorización explícita.
+- [ ] El resumen diferencia cambio realizado, verificado, bloqueado y no demostrado.
+
+## Fuentes y límite de mantenimiento
+
+Los cortes verticales, el orden de dependencias y los puntos de parada son el método estable de este proyecto. Las funciones de producto, permisos, disponibilidad de modelos y síntomas comunitarios cambian. Contrasta una afirmación actual con las [tarjetas oficiales](../evidence-library-ES.md#source-notes) y el [índice de problemas de campo](../evidence-library-ES.md#source-notes). No sustituyen una ejecución local ni una observación independiente de aprendizaje.
 
 <!-- chapter-navigation:start -->
 <hr>
