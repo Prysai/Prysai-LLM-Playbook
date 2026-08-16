@@ -28,6 +28,26 @@ Ein Lab mit `draft` ist ein Lernvertrag: Es beschreibt Versuch, Aufzeichnung und
 Stopp-Punkt. Es beweist nicht, dass die Übung auf jeder Codex-Oberfläche frisch lief
 oder dass bereits jemand die Methode gelernt hat.
 
+## Wähle nach dem Ergebnis, das du heute brauchst
+
+Beginne nicht nur wegen der kleinsten Nummer mit Lab 001. Wähle das kleinste
+beobachtbare Ergebnis, das zu deiner Lage passt. Jede Option hinterlässt etwas,
+das du selbst prüfen kannst; du musst einem Modell nicht glauben, nur weil es
+sicher klingt.
+
+| Wenn du heute … | Starte hier | Vor dem Anhalten solltest du sehen können |
+| --- | --- | --- |
+| ohne Code oder Projektordner merken willst, ob eine klarere Anfrage hilft | [Lab 001, Teil A](lab-001-first-safe-task-DE.md#vor-dem-readme-prompt-vergleich-ohne-dateien) | zwei Antworten auf dieselben harmlosen Notizen und einen kurzen Vergleichsbeleg |
+| verstehen willst, was GPT, Arbeitsoberfläche, Tool und Agent jeweils tun | [Lab 011](lab-011-gpt-codex-boundaries-DE.md) | eine Grenzkarte, die einen Vorschlag von einer ausgeführten und geprüften Aktion trennt |
+| aus „Hilf mir damit“ eine überprüfbare Anfrage machen willst | [Lab 002](lab-002-task-protocol-DE.md) | eine Aufgabenkarte mit Ziel, Quellenrahmen, erlaubter Aktion, Abnahme und Stoppbedingung |
+| eine Rechercheantwort mit festen Quellen prüfen willst, ohne Vollständigkeit vorzutäuschen | [Lab 008](lab-008-research-question-DE.md) | eine Quellenliste, eine begrenzte Aussage und eine ausdrückliche Liste offener Punkte |
+| eine kleine lokale Dateiänderung machen willst | [Erste sichere Änderung](../routes/first-safe-change-DE.md), dann [Lab 001, Arbeitsbereich](lab-001-first-safe-task-DE.md#wofür-dieses-lab-da-ist) | einen geprüften README-Diff und einen gezielten lokalen Check in einer wegwerfbaren Kopie |
+
+Wenn du heute nur ein Chatfenster hast, genügt die erste Zeile. Installiere keine
+Werkzeuge, erstelle kein Konto und nutze kein echtes Projekt, nur um dem Katalog zu
+folgen. Wechsle erst zur Arbeitsbereichsübung, wenn du einen wegwerfbaren Ordner,
+ein einziges erlaubtes Ziel und die aufzubewahrende Evidenz benennen kannst.
+
 ## Aktueller Stand
 
 Der Katalog enthält 18 feste Kennungen. Alle sind `draft`; der Lernenden-Status ist

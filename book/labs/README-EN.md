@@ -1,4 +1,4 @@
-<!-- content_id: book-labs-readme | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-11 -->
+<!-- content_id: book-labs-readme | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-16 -->
 
 # Prysai LLM Playbook: Lab Index
 
@@ -19,6 +19,25 @@ workspace half is optional until you have a disposable project. Use the later
 Labs when you need the same discipline for files, tools, research, Skills, or
 team work. A lab marked `draft` is a teaching contract; it is not proof that
 the exercise has been freshly run in every Codex surface.
+
+## Choose by the result you want today
+
+Do not begin at Lab 001 merely because it has the smallest number. Begin with
+the smallest outcome that matches your situation. Each choice below has a
+visible result; none requires you to trust a model because it sounds confident.
+
+| If you want to… | Start here | What you should be able to see before you stop |
+| --- | --- | --- |
+| Notice whether a clearer request helps, without code or a project folder | [Lab 001, Part A](lab-001-first-safe-task-EN.md#part-a--a-ten-minute-prompt-comparison) | Two replies to the same harmless notes and a small comparison receipt |
+| Understand what GPT, a workbench, a tool, and an Agent each do | [Lab 011](lab-011-gpt-codex-boundaries-EN.md) | A boundary map that separates a proposed action from an executed and checked action |
+| Turn “help me with this” into a request another person could check | [Lab 002](lab-002-task-protocol-EN.md) | One task card with a goal, source boundary, allowed action, acceptance, and stop condition |
+| Check a fixed-source research answer without pretending it is complete | [Lab 008](lab-008-research-question-EN.md) | A source list, a bounded claim, and an explicit unknowns list |
+| Make a small local file change | [First Safe Change](../routes/first-safe-change-EN.md), then [Lab 001, Part B](lab-001-first-safe-task-EN.md#part-b--take-the-same-discipline-into-a-workspace) | One reviewed README diff and a focused local check in a disposable copy |
+
+If you only have a chat window today, the first row is enough. Do not install
+tools, create an account, or use a real project merely to keep up with the
+catalogue. Move to a workspace exercise only when you can name a disposable
+folder, one permitted target, and the evidence you will keep.
 
 ## Current state
 

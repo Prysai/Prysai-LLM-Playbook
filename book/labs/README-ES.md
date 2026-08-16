@@ -29,6 +29,25 @@ Un Lab marcado `draft` es un contrato de enseñanza: describe qué probar, qué 
 y cuándo detenerse. No demuestra que el ejercicio se haya ejecutado recientemente en
 cada superficie de Codex, ni que una persona ya haya aprendido el método.
 
+## Elige según el resultado que buscas hoy
+
+No empieces por el Lab 001 solo porque tiene el número menor. Empieza por el
+resultado más pequeño que encaje con tu situación. Cada opción deja algo visible
+que puedes revisar; no exige creer a un modelo porque su respuesta suene segura.
+
+| Si hoy quieres… | Empieza aquí | Antes de parar deberías poder ver |
+| --- | --- | --- |
+| Notar si una petición más clara ayuda, sin código ni carpeta de proyecto | [Lab 001, parte A](lab-001-first-safe-task-ES.md#parte-a--comparacion-de-prompts-de-diez-minutos) | Dos respuestas a las mismas notas inocuas y una ficha breve de comparación |
+| Entender qué hacen GPT, un espacio de trabajo, una herramienta y un Agent | [Lab 011](lab-011-gpt-codex-boundaries-ES.md) | Un mapa de límites que separe una acción propuesta de una acción ejecutada y comprobada |
+| Convertir «ayúdame con esto» en una petición que otra persona pueda revisar | [Lab 002](lab-002-task-protocol-ES.md) | Una tarjeta con objetivo, límite de fuentes, acción permitida, aceptación y condición de parada |
+| Revisar una respuesta de investigación con fuentes fijas sin fingir que está completa | [Lab 008](lab-008-research-question-ES.md) | Una lista de fuentes, una conclusión acotada y una lista explícita de incógnitas |
+| Hacer un cambio local pequeño en un archivo | [Primer cambio seguro](../routes/first-safe-change-ES.md), después [Lab 001, parte B](lab-001-first-safe-task-ES.md#parte-b--lleva-la-misma-disciplina-a-un-espacio-de-trabajo) | Un diff de README revisado y una comprobación local concreta en una copia desechable |
+
+Si hoy solo tienes una ventana de chat, la primera fila basta. No instales herramientas,
+crees una cuenta ni uses un proyecto real solo para seguir el catálogo. Pasa a un ejercicio
+de espacio de trabajo cuando puedas nombrar una carpeta desechable, un único destino
+permitido y la evidencia que vas a guardar.
+
 ## Estado actual
 
 El catálogo tiene 18 identidades estables. Todas siguen en `draft` y el estado de
