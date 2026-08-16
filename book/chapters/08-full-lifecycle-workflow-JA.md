@@ -4,7 +4,7 @@
 
 **状態：** `candidate`。この章は evidence を伴う workflow と復旧規則を教えます。比較実験は `not_run` のままであり、実際の Codex 実行、顧客対応、production release の記録ではありません。
 
-## 問題
+## この章が解決する問題
 
 モデルに書き始めてもらうことと、別の人が使える仕事を終えることは別です。goal が曖昧でも、scope が膨張しても、check が違う file を見ていても、画面は順調に見えることがあります。最後に受理した change が不明なまま retry すると、未完成の state に後続作業を重ねる危険もあります。
 
@@ -14,13 +14,17 @@ define → plan → build → verify → review → deliver → maintain
 
 各矢印は判断点です。Agent が「完了」と言ったからではなく、その段階を他者が確認できる evidence があるときだけ進みます。
 
-## 到達目標
+## 学習目標
 
 - edit 前に scope、non-goal、acceptance、authority、rollback を書く。
 - 大きな request を、早く evidence を出す vertical slice に変える。
 - 最後の受理済み state を残し、条件付きでだけ retry する。
 - build、runtime、visual、source、security、user acceptance の evidence を区別する。
 - 完了と未完了を混ぜない handoff を書く。
+
+## 現実の問題：見える成功の間で workflow が壊れる
+
+login、model picker、開始した check は、次に必要な state が欠けていても進行に見えます。下の公開症状は、この実行の再現でも製品診断でもありません。中断後に path と diff を読む、browser のあとに client exchange を分ける、永続的 change の前に新しい許可を求める、といった最初の安全な観察を選ぶ材料です。
 
 ## evidence を運ぶ七段階
 
@@ -81,11 +85,27 @@ fallback: output がなければ stop して handoff
 
 「続けて」は recovery plan ではありません。最後に受理した state も duplicate side effect の防止も示しません。
 
-## 実験、失敗、受け入れ
+## 実験：失敗と受け入れ
 
-disposable folder で小さな documentation task を二通り試します。一方は直接の request、もう一方は protocol、checkpoint、focused check を使います。初回 output、diff、command、exit code、実際の duration、rework を残します。ない time や cost は推定せず `unavailable` と書きます。
+### 準備
+
+remote、secret、顧客データのない disposable folder を作ります。原文、acceptance question、local checkpoint を保存し、待機上限と安全な中断手順を先に決めます。install、sign-in、第三者への送信はしません。
+
+### タスク
+
+小さな documentation task を二通り試します。一方は直接の request、もう一方は protocol、checkpoint、focused check を使います。初回 output、diff、command、exit code、実際の duration、rework を残します。ない time や cost は推定せず `unavailable` と書きます。
 
 timeout、input hash の変更、permission block、local write result の不明を一つ起こします。中断試行を残し、retry 前に target を読み、固定条件が変われば `not_comparable` にします。後の成功は比較可能性を遡って直しません。三つの小課題は一般的な efficiency、quality、model ranking を証明せず、link check は学習、公開、adoption を証明しません。
+
+### 証拠
+
+各試行について、固定した input と acceptance、allowed action、checkpoint 番号、request または protocol、changed path、diff、directory と exit code を含む command、review note、欠けた観察を保存します。実行しなかった variant は `not_run` と書き、流暢な output から実行記録を作りません。
+
+### 振り返り
+
+- どの checkpoint で state は実際に分かり、どこから推測だったか。
+- diff が支える claim と、runtime または reader が必要な claim はどれか。
+- どの side effect が新しく限定した approval を必要としたか。
 
 - [ ] edit 前に scope、non-goal、acceptance、authority、rollback を書ける。
 - [ ] 大きな request を early evidence を出す vertical slice に変えられる。
@@ -208,6 +228,10 @@ next: 一つの安全な action
 不明なら、次の action は edit ではなく質問または read-only check です。この章と比較実験は
 run record と review ができるまで `candidate` と `not_run` のままです。
 
+## 移行タスク
+
+同じ workflow を、技術以外の task に移します。自分の短い文章を直す、小さな source list を確認する、または language practice を計画する task です。goal、allowed input、禁止 side effect、checkpoint、handoff は保ちます。acceptance だけを domain に合わせて替えます。たとえば reader の理解、research の source と unknown、language practice の遅延した無支援の recall です。この練習が証明しないことも書きます。
+
 ## worked case：一つの Markdown chapter を review する
 
 production repository ではなく disposable copy で、七段階を一周する例です。目的は「文章を
@@ -278,6 +302,19 @@ instruction は source、access date、scope とともに更新します。古�
 - [ ] timeout 後に最後の accepted checkpoint を確認している。
 - [ ] delivery が changed、not changed、not proven、next を分けている。
 - [ ] future maintenance に owner と review trigger がある。
+
+## 受け入れチェックリスト
+
+- [ ] edit 前に scope、non-goal、acceptance、authority、rollback を書ける。
+- [ ] 大きな request を early evidence を出す vertical slice に変えられる。
+- [ ] retry 前に last accepted checkpoint を言える。
+- [ ] build、runtime、visual、source、security、user acceptance を分けられる。
+- [ ] 求められていない install、restart、deployment、external write を止められる。
+- [ ] completed、not done、blocked、unverified を分けて handoff できる。
+
+## 出典と保守の境界
+
+workflow の順序、checkpoint、claim と evidence の分離は、このプロジェクトの安定した教え方です。製品の作業面、account と tool の挙動、model の可用性、community symptom は変わる事実です。現在の製品主張を採用する前に、日付付きの[公式ファクトカード](../evidence-library-JA.md#source-notes)と[フィールド問題索引](../evidence-library-JA.md#source-notes)を確認してください。どちらも local run や独立した学習観察の代わりにはなりません。
 
 <!-- chapter-navigation:start -->
 <hr>
