@@ -152,6 +152,59 @@ permission_boundary: edición local reversible y comprobaciones de lectura
 
 Entregar no termina el ciclo. Si el resultado depende de un modelo, permiso, comando o servicio cambiante, registra fuente oficial, fecha de consulta, alcance, responsable y próxima revisión.
 
+## Patrones de recuperación ante interrupciones reales
+
+Los informes públicos de usuarios pueden mostrar un síntoma útil, pero no sustituyen
+una causa oficial ni una reproducción local. Úsalos para elegir la primera comprobación
+segura, no para adivinar qué ocurrió dentro del producto.
+
+### Capacidad o disponibilidad interrumpida
+
+**Síntoma observado:** el modelo elegido deja de estar disponible y la tarea se detiene.
+
+**Primer paso seguro:** congela las peticiones que dependían de esa tarea, guarda el diff,
+la salida y el último checkpoint aceptado, y comprueba si el artefacto objetivo quedó
+parcial. Después decide entre un único reintento acotado, otra superficie permitida o un
+handoff.
+
+**No concluyas:** que una tarea en cola terminó, que el modelo fue la única causa, o que
+repetir «continúa» recuperó evidencia que no existe.
+
+### Una comprobación permanece en `Working`
+
+**Síntoma observado:** un formateador, prueba o análisis no produce señal de terminación.
+
+**Primer paso seguro:** aplica la espera y la regla de interrupción acordadas; conserva
+comando, directorio, tiempo, salida y estado del proceso; revisa el diff antes de clasificar
+el resultado como completo, parcial, fallido o desconocido.
+
+**No concluyas:** que el silencio significa aprobación, ni que no ver un error demuestra
+que terminó un subproceso.
+
+### La página de acceso funciona, pero el cliente falla después
+
+**Síntoma observado:** el navegador muestra éxito al iniciar sesión y el cliente falla al
+intercambiar un token o hacer su primera petición.
+
+**Primer paso seguro:** registra por separado página de autorización, callback, intercambio
+del cliente y primera petición correcta. Comprueba solo el siguiente estado que falte.
+
+**No concluyas:** que el navegador prueba autenticación del cliente, permiso de cuenta,
+aprobación de un conector o disponibilidad de una herramienta.
+
+### Verificar propone un cambio persistente
+
+**Síntoma observado:** el Agent propone reinstalar, reiniciar o modificar el entorno para
+hacer pasar una comprobación.
+
+**Primer paso seguro:** detente y nombra el efecto propuesto, su destino, el artefacto que
+lo motivó y la recuperación disponible. Separa edición local, prueba, instalación, reinicio,
+despliegue y verificación en vivo; pide una decisión nueva antes de cualquier cambio
+persistente.
+
+**No concluyas:** que «asegúrate de que funciona» autoriza una instalación, una escritura en
+red o una publicación.
+
 ## Completa primero un corte pequeño y entero
 
 No hace falta empezar con un sitio, código o publicación. Elige un texto corto que puedas revisar, un README local o un conjunto de fuentes públicas ya autorizadas. La meta no es que el modelo «haga mucho», sino completar una vuelta visible desde definición hasta entrega.

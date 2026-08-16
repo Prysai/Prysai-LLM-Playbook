@@ -57,6 +57,53 @@ rollback: 기록한 편집 전 복사본 또는 clean checkpoint로 돌아간다
 
 재시도 전에는 `failed_stage`, `failure_class`, `last_accepted_checkpoint`, `changes_since_checkpoint`, `retry_condition`, `fallback`을 남깁니다. “계속해”는 복구 계획이 아닙니다. 명령이 `Working`에 머물면 침묵은 성공이 아니라 관찰입니다.
 
+## 실제 중단에 대비하는 복구 패턴
+
+공개 사용자 보고서는 유용한 증상을 보여 줄 수 있지만 공식 원인이나 로컬 재현을 대신하지는
+않습니다. 제품 내부를 추측하기 위해서가 아니라 첫 번째 안전한 점검을 고르기 위해 사용하세요.
+
+### capacity 또는 availability 중단
+
+**관찰된 증상:** 선택한 model을 사용할 수 없게 되어 task가 멈춥니다.
+
+**첫 번째 안전한 대응:** 그 task에 의존하는 다음 prompt를 멈추고 diff, output, 마지막으로
+수용한 checkpoint를 보관합니다. target artifact가 부분 state인지 확인한 다음 한 번의 bounded
+retry, 허용된 다른 surface, handoff 중 하나를 선택합니다.
+
+**말하면 안 되는 것:** queue의 task가 끝났다고, model만 원인이었다고, 또는 “계속”을 반복하면
+없던 evidence가 복구됐다고 말할 수 없습니다.
+
+### check가 `Working`에 머무름
+
+**관찰된 증상:** formatter, test, analysis가 완료 signal을 내지 않습니다.
+
+**첫 번째 안전한 대응:** 미리 정한 대기 시간과 interruption rule을 적용하고 command, directory,
+elapsed time, output, process state를 남깁니다. diff를 확인한 뒤 complete, partial, failed,
+unknown 중 하나로 분류합니다.
+
+**말하면 안 되는 것:** silence가 pass를 뜻하지 않으며 화면에 error가 없다고 child process가
+끝난 것은 아닙니다.
+
+### browser login은 성공했지만 client가 뒤에서 실패함
+
+**관찰된 증상:** browser는 login 성공을 표시하지만 client는 token exchange나 첫 request에서 실패합니다.
+
+**첫 번째 안전한 대응:** authorization page, callback, client exchange, 처음 성공한 request를
+각각 기록합니다. 빠진 다음 state만 점검합니다.
+
+**말하면 안 되는 것:** browser 성공은 client authentication, account entitlement, connector approval,
+tool availability의 증거가 아닙니다.
+
+### verify가 영속 change를 제안함
+
+**관찰된 증상:** Agent가 check를 통과시키기 위해 reinstall, restart, environment 변경을 제안합니다.
+
+**첫 번째 안전한 대응:** 제안된 side effect, target, 이를 촉발한 artifact, 가능한 recovery를
+명시하고 멈춥니다. local edit, test, installation, restart, deployment, live verification을 나누고
+영속 change 전에는 새 판단을 요청합니다.
+
+**말하면 안 되는 것:** “작동하는지 확인해”는 installation, network write, publish를 허용하는 말이 아닙니다.
+
 ## 먼저 작고 완전한 slice 하나 끝내기
 
 처음부터 site, code, release로 시작할 필요는 없습니다. 직접 확인할 수 있는 짧은 글, local README 하나, 이미 사용 허가된 공개 source 묶음을 고르세요. 목표는 model이 “많이 하게” 하는 것이 아니라 define부터 handoff까지 보이는 한 바퀴를 끝내는 것입니다.

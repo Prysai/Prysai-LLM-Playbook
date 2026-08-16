@@ -94,6 +94,55 @@ timeout、input hash の変更、permission block、local write result の不明
 - [ ] 求められていない install、restart、deployment、external write を止められる。
 - [ ] completed、not done、blocked、unverified を分けて handoff できる。
 
+## 実際の中断に備える recovery pattern
+
+公開された利用者報告は有用な症状を示すことがありますが、公式の原因説明やローカル再現の
+代わりにはなりません。製品内部を推測するためでなく、最初の安全な確認を選ぶために使います。
+
+### capacity または availability の中断
+
+**観測された症状：** 選んだ model が利用できなくなり、task が止まる。
+
+**最初の安全な対応：** その task に依存する後続 prompt を止め、diff、output、最後に受理した
+checkpoint を残します。target artifact が途中の state ではないか確認してから、一回だけの
+bounded retry、許可された別 surface、handoff のいずれかを選びます。
+
+**言ってはいけないこと：** queue 中の task が終わった、model だけが原因だった、または
+「続けて」を繰り返せば欠けた evidence が戻った、とは言えません。
+
+### check が `Working` のままになる
+
+**観測された症状：** formatter、test、analysis が完了 signal を返さない。
+
+**最初の安全な対応：** あらかじめ決めた待機時間と interruption rule を適用し、command、
+directory、elapsed time、output、process state を残します。diff を確認してから complete、
+partial、failed、unknown のどれかに分類します。
+
+**言ってはいけないこと：** silence は pass を意味せず、画面に error がないからといって
+child process が終わったとは限りません。
+
+### browser の login は成功したが client が続かない
+
+**観測された症状：** browser は login 成功を示すのに、client は token exchange または最初の
+request で失敗する。
+
+**最初の安全な対応：** authorization page、callback、client exchange、最初に成功した request
+を別々の行に記録します。欠けている次の state だけを確認します。
+
+**言ってはいけないこと：** browser の成功は client authentication、account entitlement、
+connector approval、tool availability の証明ではありません。
+
+### verify が永続的な change を提案する
+
+**観測された症状：** Agent が check を通すために reinstall、restart、environment の変更を提案する。
+
+**最初の安全な対応：** 提案された side effect、target、それを促した artifact、利用できる recovery
+を明記して止まります。local edit、test、installation、restart、deployment、live verification を
+分け、永続 change の前には新しい判断を求めます。
+
+**言ってはいけないこと：** 「動くことを確認して」は installation、network write、publish の
+許可にはなりません。
+
 ## まず小さく完結する slice を一つ終える
 
 最初から site、code、release を扱う必要はありません。自分で確認できる短い文章、一つの local README、またはすでに使用許可のある公開 source 一式を選びます。目的は model に「たくさんさせる」ことではなく、define から handoff まで見える一周を終えることです。

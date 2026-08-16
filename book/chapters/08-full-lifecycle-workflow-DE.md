@@ -54,6 +54,59 @@ rollback: aufgezeichnete Vorversion oder sauberer Checkpoint
 
 Nutze statt eines horizontalen Plans einen vertikalen Schnitt: `eine Eingabe → kleinste Änderung → beobachtbare Aktion → fokussierter Check`. Netzwerk, Authentifizierung, Installation, Neustart, Deployment oder externe Nachricht benötigen einen ausdrücklichen Auftrag.
 
+## Wiederherstellungsmuster bei echten Unterbrechungen
+
+Öffentliche Nutzerberichte können ein nützliches Symptom zeigen, ersetzen aber weder eine
+offizielle Ursachenanalyse noch eine lokale Reproduktion. Nutze sie, um den ersten sicheren
+Check zu wählen, nicht um Vorgänge innerhalb des Produkts zu erraten.
+
+### Unterbrechung durch capacity oder availability
+
+**Beobachtetes Symptom:** Das gewählte Model ist nicht mehr verfügbar und die Aufgabe stoppt.
+
+**Erste sichere Reaktion:** Halte Folgeprompts an, die von dieser Aufgabe abhängen, sichere
+Diff, Ausgabe und den letzten akzeptierten Checkpoint und prüfe, ob das Zielartefakt teilweise
+geändert wurde. Wähle erst dann einen einzigen begrenzten Retry, eine erlaubte andere Surface
+oder eine Übergabe.
+
+**Nicht behaupten:** dass eine Warteschlangenaufgabe fertig wurde, das Model die einzige Ursache
+war oder wiederholtes „Weiter“ fehlende Evidenz wiederhergestellt hat.
+
+### Ein Check bleibt in `Working`
+
+**Beobachtetes Symptom:** Formatter, Test oder Analyse liefert kein Abschluss-Signal.
+
+**Erste sichere Reaktion:** Wende die vereinbarte Warte- und Unterbrechungsregel an; bewahre
+Befehl, Verzeichnis, Dauer, Ausgabe und Prozesszustand auf. Prüfe den Diff und klassifiziere
+erst dann als vollständig, teilweise, fehlgeschlagen oder unbekannt.
+
+**Nicht behaupten:** dass Stille ein Pass ist oder dass kein sichtbarer Fehler beweist, dass ein
+Unterprozess beendet wurde.
+
+### Browser-Login gelingt, der Client scheitert danach
+
+**Beobachtetes Symptom:** Der Browser zeigt einen erfolgreichen Login, doch der Client scheitert
+beim Token-Austausch oder bei der ersten Anfrage.
+
+**Erste sichere Reaktion:** Notiere Autorisierungsseite, Callback, Client-Austausch und erste
+erfolgreiche Anfrage getrennt. Prüfe nur den nächsten fehlenden Zustand.
+
+**Nicht behaupten:** dass Browser-Erfolg Client-Authentifizierung, Account-Berechtigung,
+Connector-Freigabe oder Tool-Verfügbarkeit beweist.
+
+### Verifikation schlägt eine dauerhafte Änderung vor
+
+**Beobachtetes Symptom:** Ein Agent schlägt Reinstallation, Neustart oder eine
+Umgebungsänderung vor, damit ein Check besteht.
+
+**Erste sichere Reaktion:** Stoppe und benenne die vorgeschlagene Nebenwirkung, ihr Ziel,
+das auslösende Artefakt und die verfügbare Wiederherstellung. Trenne lokalen Edit, Test,
+Installation, Neustart, Deployment und Live-Verifikation; verlange vor einer dauerhaften
+Änderung eine neue Entscheidung.
+
+**Nicht behaupten:** dass „stell sicher, dass es funktioniert“ Installation, Netzwerkschreiben
+oder Veröffentlichung autorisiert.
+
 ## Zuerst einen kleinen vollständigen Slice abschließen
 
 Du musst nicht mit einer Website, Code oder einem Release beginnen. Wähle einen kurzen Text, den du selbst prüfen kannst, eine lokale README oder eine bereits erlaubte Sammlung öffentlicher Quellen. Ziel ist nicht, dass das Modell „viel erledigt“, sondern eine sichtbare Schleife von Definition bis Übergabe zu schließen.
