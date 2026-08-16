@@ -64,9 +64,8 @@ generierte Antwort reicht nicht aus, um ein Kapitel `verified` zu nennen.
 ## Aktueller Lesestatus
 
 Das Repository enthält 22 strukturierte Kapitel. Ihr aufgezeichneter
-Inhaltsstatus ist `candidate`. Für die Kapitel 19–22 existieren Entwürfe; ihr
-Status bleibt jedoch „Entwurf geschrieben, Fresh-Context-Vortest ausstehend“.
-Die Dateien sind vorhanden, aber Ausführungs- und Prüfbelege fehlen noch.
+Inhaltsstatus ist `candidate`; dazu gehören auch die Kapitel 19–22. Für sie
+fehlen weiterhin Fresh-Context-Vortests sowie Ausführungs- und Prüfbelege.
 
 Die Evaluations-Fixtures umfassen 40 feste Aufgaben in 16 Spuren. Sie sind
 `candidate`, ihr `run_status` ist `not_run`, und die Prüfung bleibt bis zu

@@ -53,8 +53,8 @@ modelo ni de aprendizaje.
 
 ## Entrada de lectura actual
 
-Los capítulos 19–22 ya tienen borradores; su estado común es `draft`: el texto
-está escrito, pero todavía espera una prueba previa. Desde el [índice del
+Los capítulos 19–22, igual que los demás capítulos, están en estado `candidate`.
+Sus pruebas con contexto nuevo y sus evidencias de ejecución todavía faltan. Desde el [índice del
 libro en español](table-of-contents-ES.md) se puede
 entrar en los casos de problemas reales, las especificaciones de fixtures de
 evaluación y los archivos de investigación de cada capítulo. El archivo

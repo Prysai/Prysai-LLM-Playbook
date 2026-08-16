@@ -72,7 +72,7 @@ transfer_limitations: "静态矩阵不能证明真实环境有有效回滚，也
 <nav class="lab-navigation" aria-label="实验导航">
   <table role="presentation" width="100%"><tr>
     <td align="left"><a data-lab-nav="previous" href="lab-015-evidence-delivery-ZH.md" aria-label="上一个实验：实验 015 · 交付证据，而不只是一句完成声明">← 上一个<br><strong>实验 015 · 交付证据，而不只是一句完成声明</strong></a></td>
-    <td align="right"><p>实验 017 的中文版本仍在翻译；为避免跳转到英文或无效页面，本页在此结束。</p></td>
+    <td align="right"><a data-lab-nav="next" href="lab-017-skill-discovery-audit-ZH.md" aria-label="下一个实验：实验 017 · 采纳 Skill 前审计发现过程">下一个 →<br><strong>实验 017 · 采纳 Skill 前审计发现过程</strong></a></td>
   </tr></table>
 </nav>
 <!-- lab-navigation:end -->
