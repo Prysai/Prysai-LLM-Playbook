@@ -238,7 +238,7 @@ support, proof of a bug, or learner-outcome evidence; see the
 |---|---|---|
 | English chapters | 22 canonical sources | Reader learning, retention, or transfer |
 | Labs | 18 labs, all `draft / not_run` | Learner runs and independent reruns |
-| Skills | 23 project-owned `candidate` Skills | Broad trigger reliability or learner outcomes |
+| Skills | 25 project-owned `candidate` Skills | Broad trigger reliability or learner outcomes |
 | Evaluation | 40 fixtures, `not_run / static_structure_only` | Scored executions and reviewer records |
 | Locales | English source plus five migration routes | Complete, independently reviewed translations |
 | Release | `candidate` | Public deployment, a release tag, or production readiness |
