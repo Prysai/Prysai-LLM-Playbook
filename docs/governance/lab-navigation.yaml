@@ -16,7 +16,7 @@
     "footer": "The first Lab exposes only Next, middle Labs expose Previous and Next, and the last Lab exposes only Previous. README-EN.md remains the dedicated Lab index."
   },
   "labs": [
-    {"id":"lab-001","number":1,"title":"Make one safe README change","path":"book/labs/lab-001-first-safe-task-EN.md"},
+    {"id":"lab-001","number":1,"title":"Make the first request usable","path":"book/labs/lab-001-first-safe-task-EN.md"},
     {"id":"lab-002","number":2,"title":"Turn one wish into a task protocol","path":"book/labs/lab-002-task-protocol-EN.md"},
     {"id":"lab-003","number":3,"title":"Audit a completion claim","path":"book/labs/lab-003-evidence-review-EN.md"},
     {"id":"lab-004","number":4,"title":"Choose the smallest useful capability","path":"book/labs/lab-004-skill-selection-EN.md"},

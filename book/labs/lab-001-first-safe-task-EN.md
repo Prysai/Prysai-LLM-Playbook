@@ -2,13 +2,14 @@
 
 ---
 id: lab-001-first-safe-task
-title: "Complete one bounded README change and prove what happened"
+title: "Make the first request usable"
 level: L1
 domain: general
-goal: "Practice inspect-before-edit, least authority, diff review, focused verification, and honest recovery"
-setup: "A disposable or non-production Git project with a README and a real local run-script source; no secrets, customer data, production files, or external writes"
-task: "Ask Codex to inspect first, wait for confirmation, edit README.md only, and record the actual diff and focused check"
+goal: "Observe how a clearer request changes an inspectable result, then practise inspect-before-edit, least authority, diff review, focused verification, and honest recovery"
+setup: "Part A needs any LLM workbench and fictional or non-sensitive notes. Part B needs a disposable or non-production Git project with a README and a real local run-script source; no secrets, customer data, production files, or external writes"
+task: "Run one fixed-input prompt comparison without external actions; then, only if a safe project is available, ask Codex to inspect first, wait for confirmation, edit README.md only, and record the actual diff and focused check"
 evidence:
+  - "Two saved replies from the same fixed input: a vague request and a structured request, plus the learner's checks for factual coverage, requested format, revision turns, and unknowns"
   - "A task card with goal, inputs, allowed actions, forbidden actions, acceptance, stop condition, and delivery format"
   - "The pre-edit baseline, Codex's plan, the actual diff, and the command source used for verification"
   - "A run record that separates actions done, actions not done, verification result, unknowns, and next check"
@@ -22,13 +23,104 @@ transfer_evidence: "Save both protocols, the changed evidence fields, one failur
 transfer_limitations: "This lab teaches a low-risk local boundary; it does not prove account authority, production safety, external publishing, or runtime behavior of every Codex surface"
 ---
 
-# Lab 001: Make one safe README change
+# Lab 001: Make the first request usable
 
-## What this lab is for
+## Start with the result you want to feel
 
-This lab is the L1 bridge from Chapter 1's static boundary map to a real but
-controlled file change. It is not a deployment test, a connector test, or a
-proof that your current Codex permission label is effective everywhere.
+First compare two requests in any LLM workbench. Then, only if you have a safe
+project, use the same method for one README change with Codex.
+
+This is not a test of whether you can edit a README. It is the first practical
+lesson in using an LLM workbench well: give the same small input two different
+requests, then inspect whether the second request gives you a result that is
+easier to use, check, and revise.
+
+Part A works in a normal text chat or workbench. You may use GPT, Grok,
+Gemini, Kimi, Codex, or another model that is available to you. Do not treat
+the result as a ranking of models: keep the same model, input, and task for
+both rounds. Part B is the optional Codex/workspace version of the same idea.
+It teaches what changes once an answer can affect a real file.
+
+## Part A — a ten-minute prompt comparison
+
+### Why do this first?
+
+Typing more words is not the point. A useful request lets you check whether the
+answer used the right material, followed the required shape, exposed what it
+did not know, and reduced the next revision you need to make. Those are things
+you can see immediately, before you grant file, terminal, browser, or network
+access.
+
+### Use one fixed, harmless input
+
+Use your own non-sensitive notes, or copy this fictional update into a new
+conversation:
+
+```text
+Monday: fixed a typo in the onboarding note.
+Tuesday: drafted the release checklist; it still needs reviewer approval.
+Wednesday: local formatting check was not run because the command is unknown.
+Next: ask Maya which check is required before release.
+```
+
+Run both requests in separate fresh conversations if you can. Do not change
+the notes between rounds.
+
+**Round A — vague request**
+
+```text
+Turn these notes into a good project update.
+```
+
+**Round B — a checkable request**
+
+```text
+Task: turn the notes below into a project update.
+Audience: a teammate who needs to decide the next action.
+Use only: the supplied notes.
+Must include: completed work, work still awaiting approval, one explicitly
+unverified item, and the next owner/action.
+Do not invent: a test result, approval, date, or cause that is absent.
+Format: four bullets headed Done, Waiting, Unknown, and Next.
+Before drafting: list any missing fact that would change the update.
+
+Notes:
+<paste the same notes here>
+```
+
+### Inspect, do not merely prefer
+
+Save both replies and compare them with this small receipt. A number is only
+your observation for this one run; it is not proof that a prompt pattern or
+model is universally more efficient.
+
+| Check | Round A | Round B |
+| --- | --- | --- |
+| All four source facts retained (0–4) |  |  |
+| Required four-part format present (yes/no) |  |  |
+| An unknown is named rather than invented (yes/no) |  |  |
+| Extra revision turns before you would use it |  |  |
+| Time you actually recorded (optional) |  |  |
+
+If Round B is not better, keep that result. Check whether you accidentally
+changed the input, model, conversation history, or acceptance rule before
+rewriting the conclusion. The useful lesson is not “this magic prompt always
+wins.” It is that a task, source boundary, output shape, and check give you
+something concrete to improve.
+
+## Part B — take the same discipline into a workspace
+
+Once an answer can change a file, “looks useful” is no longer enough. This
+second part adds a narrow editable target, an inspect-before-edit step, a diff,
+and a focused check. It is the Codex practice track, not the definition of the
+whole Playbook.
+
+## What this workspace exercise is for
+
+This workspace exercise is the L1 bridge from Chapter 1's static boundary map
+to a real but controlled file change. It is not a deployment test, a connector
+test, or a proof that your current Codex permission label is effective
+everywhere.
 
 The required run must stay within a disposable or non-production project. Do
 not paste credentials, tokens, cookies, private keys, `.env` files, customer

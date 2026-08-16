@@ -6,10 +6,19 @@
 **Languages:** [English](README-EN.md) | [简体中文（迁移源）](README.md) | Español（translation pending） | 日本語（translation pending） | 한국어（translation pending） | Deutsch（translation pending）
 <!-- language-switcher:end -->
 
-The labs turn the book's decisions into small, observable practice. Every lab
-names its setup, allowed scope, evidence, failure variant, transfer task, and
-current maturity. A lab marked `draft` is a teaching contract; it is not proof
-that the exercise has been freshly run in every Codex surface.
+Labs are where you test whether a way of asking an LLM helps you do real work
+more clearly. They are not a separate course in paperwork, and they are not a
+claim that every exercise needs Codex Cloud or code. Each lab starts from a
+visible question—can this answer retain the facts, follow the requested shape,
+show its unknowns, or leave a reviewable change?—then makes the evidence and
+failure case explicit.
+
+Start with [Lab 001](lab-001-first-safe-task-EN.md) if you want to feel the
+difference between a vague and a checkable request in any LLM workbench. Its
+workspace half is optional until you have a disposable project. Use the later
+Labs when you need the same discipline for files, tools, research, Skills, or
+team work. A lab marked `draft` is a teaching contract; it is not proof that
+the exercise has been freshly run in every Codex surface.
 
 ## Current state
 
@@ -24,7 +33,7 @@ outcome.
 
 | Lab | Capability | Exercise level | First used in path | English entry |
 |---|---|---:|---:|---|
-| 001 | First safe task | L1 | L1 primary | [Open](lab-001-first-safe-task-EN.md) |
+| 001 | Make the first request usable | L1 | L1 primary | [Open](lab-001-first-safe-task-EN.md) |
 | 002 | Task protocol | L2 | L2 primary | [Open](lab-002-task-protocol-EN.md) |
 | 003 | Evidence review | L3 | L3 supporting | [Open](lab-003-evidence-review-EN.md) |
 | 004 | Skill selection | L4 | L4 primary | [Open](lab-004-skill-selection-EN.md) |

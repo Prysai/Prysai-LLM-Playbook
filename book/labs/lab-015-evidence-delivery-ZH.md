@@ -103,7 +103,7 @@ stop condition:
 <nav class="lab-navigation" aria-label="实验导航">
   <table role="presentation" width="100%"><tr>
     <td align="left"><a data-lab-nav="previous" href="lab-014-resume-reconciliation-ZH.md" aria-label="上一个实验：实验 014 · 继续之前，先核对恢复的任务">← 上一个<br><strong>实验 014 · 继续之前，先核对恢复的任务</strong></a></td>
-    <td align="right"><p>实验 016 的中文版本仍在翻译；为避免跳转到英文或无效页面，本页在此结束。</p></td>
+    <td align="right"><a data-lab-nav="next" href="lab-016-side-effect-boundary-ZH.md" aria-label="下一个实验：实验 016 · 在副作用边界停下">下一个 →<br><strong>实验 016 · 在副作用边界停下</strong></a></td>
   </tr></table>
 </nav>
 <!-- lab-navigation:end -->

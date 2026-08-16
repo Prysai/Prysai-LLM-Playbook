@@ -201,7 +201,7 @@ Answer in your run record:
 <nav class="lab-navigation" aria-label="Lab navigation">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-lab-nav="previous" href="lab-001-first-safe-task-EN.md" aria-label="Previous Lab: Lab 001 · Make one safe README change">← Previous<br><strong>Lab 001 · Make one safe README change</strong></a></td>
+      <td align="left"><a data-lab-nav="previous" href="lab-001-first-safe-task-EN.md" aria-label="Previous Lab: Lab 001 · Make the first request usable">← Previous<br><strong>Lab 001 · Make the first request usable</strong></a></td>
       <td align="right"><a data-lab-nav="next" href="lab-003-evidence-review-EN.md" aria-label="Next Lab: Lab 003 · Audit a completion claim">Next →<br><strong>Lab 003 · Audit a completion claim</strong></a></td>
     </tr>
   </table>

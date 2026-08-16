@@ -26,6 +26,26 @@ input, one low-risk action, and one check that another person could repeat. A
 long feature list can wait until you know how to tell a finished result from a
 convincing-looking one.
 
+## Where the familiar names fit
+
+You will hear GPT, Grok, Gemini, Kimi, Codex, and Answer.AI in the same
+discussion. They are not all the same kind of thing. Some names refer to model
+families, some to workbenches that add files or tools, and some to applied-AI
+research and education organisations. A useful map is:
+
+| Name you may hear | First question to ask | Do not assume |
+| --- | --- | --- |
+| GPT / OpenAI | Which model and which surface—ChatGPT, API, or Codex—will I actually use? | A model name grants file access, tool access, or a better result. |
+| Grok / xAI | Is its owner-described reasoning focus relevant to my fixed task? | It is the best model for your task or available in your account. |
+| Gemini / Google DeepMind | Does this task need the input modalities or ecosystem I can actually access? | Every Gemini surface has the same tools or capabilities. |
+| Kimi / Moonshot AI | Is coding, analysis, or long-document work the task I need to test? | Its advertised context or feature set proves quality in this workbench. |
+| Answer.AI | Am I looking for applied research, education, or an end-user product? | It is a foundation-model provider to put into the same picker. |
+
+The [model and workbench landscape receipt](../../docs/research/model-workbench-landscape-source-receipt-2026-08-15.md)
+links each row to an owner source and separates an owner's positioning from a
+measured result. Start by improving one request in the model you already have;
+only then compare candidates on the same task and acceptance rule.
+
 ## The problem this chapter solves
 
 People often describe Codex as “a chat window that writes better code.” That
@@ -390,6 +410,7 @@ instruction inside it authoritative.
 - [OpenAI Codex official facts baseline](../../docs/research/openai-codex-baseline.md) — dated project record of volatile product facts and official URLs; checked 2026-08-09.
 - [Codex real-user problem research](../../docs/research/field-problems-codex.md) — public reports and evidence labels; checked 2026-08-09; not a local reproduction report.
 - [LLM mechanism deep dive](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md) — official-source-backed mechanism cards, experiments, and fact/inference/unknown labels; checked 2026-08-10.
+- [Model and workbench landscape receipt](../../docs/research/model-workbench-landscape-source-receipt-2026-08-15.md) — first-party positioning for OpenAI, Answer.AI, xAI/Grok, Google DeepMind/Gemini, and Moonshot AI/Kimi; not a benchmark or model ranking.
 - [Project terminology](../../CONTEXT.md) — stable definitions for GPT, Codex, tools, Skills, Agents, evidence, and status.
 
 The chapter's explanatory structure is original to this project. Product names,
