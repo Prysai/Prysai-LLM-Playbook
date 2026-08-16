@@ -4097,5 +4097,268 @@ Object.assign(copy.de, {
   githubBadgeAria: 'Projekt auf GitHub ansehen'
 });
 
+Object.assign(copy.en, {
+  wizardEyebrow: 'Pick today\'s goal',
+  wizardTitle: 'What do you want to get done today?',
+  wizardIntro: 'Choose one goal, fill the smallest form, and copy a ready-to-use prompt. No account, no files, no setup — paste it into any chat model.',
+  wizardStepOne: '1 · Choose a goal',
+  wizardStepTwo: '2 · Add details',
+  wizardStepThree: '3 · Copy your prompt',
+  wizardGoalLanguage: 'Practise a language',
+  wizardGoalWork: 'Write a work update',
+  wizardGoalResearch: 'Check a research claim',
+  wizardGoalInterview: 'Rehearse an interview answer',
+  wizardGoalTask: 'Turn a task into a clear request',
+  wizardGoalCodex: 'Start learning Codex',
+  wizardBack: 'Back',
+  wizardNext: 'Build my prompt',
+  wizardCopy: 'Copy prompt',
+  wizardCopied: 'Copied. Paste it into any chat model.',
+  wizardReset: 'Start over',
+  wizardPathLabel: 'Go deeper',
+  wizardPromptLabel: 'Your ready-to-use prompt',
+  wizardBoundary: 'One copied prompt is a practice attempt, not proof of learning, fluency, research quality, or model behaviour.'
+});
+Object.assign(copy.zh, {
+  wizardEyebrow: '选择今天的目标',
+  wizardTitle: '你今天想完成什么？',
+  wizardIntro: '选一个目标，填写最少的字段，复制一条立即可用的提示词。无需账号、文件或配置——粘贴到任意聊天模型即可。',
+  wizardStepOne: '1 · 选择目标',
+  wizardStepTwo: '2 · 补充细节',
+  wizardStepThree: '3 · 复制提示词',
+  wizardGoalLanguage: '练习一门语言',
+  wizardGoalWork: '写一条工作更新',
+  wizardGoalResearch: '核查一条研究主张',
+  wizardGoalInterview: '演练一个面试回答',
+  wizardGoalTask: '把任务变成清晰请求',
+  wizardGoalCodex: '开始学习 Codex',
+  wizardBack: '返回',
+  wizardNext: '生成提示词',
+  wizardCopy: '复制提示词',
+  wizardCopied: '已复制。粘贴到任意聊天模型即可。',
+  wizardReset: '重新开始',
+  wizardPathLabel: '深入学习',
+  wizardPromptLabel: '你的立即可用提示词',
+  wizardBoundary: '一条复制的提示词只是一次练习尝试，不证明学习、流利、研究质量或模型行为。'
+});
+Object.assign(copy.es, {
+  wizardEyebrow: 'Elige tu objetivo de hoy',
+  wizardTitle: '¿Qué quieres conseguir hoy?',
+  wizardIntro: 'Elige un objetivo, completa el formulario más pequeño y copia un prompt listo para usar. Sin cuenta, sin archivos, sin configuración: pégalo en cualquier modelo de chat.',
+  wizardStepOne: '1 · Elige un objetivo',
+  wizardStepTwo: '2 · Añade los detalles',
+  wizardStepThree: '3 · Copia tu prompt',
+  wizardGoalLanguage: 'Practicar un idioma',
+  wizardGoalWork: 'Escribir una actualización de trabajo',
+  wizardGoalResearch: 'Verificar una afirmación de investigación',
+  wizardGoalInterview: 'Ensayar una respuesta de entrevista',
+  wizardGoalTask: 'Convertir una tarea en una petición clara',
+  wizardGoalCodex: 'Empezar a aprender Codex',
+  wizardBack: 'Atrás',
+  wizardNext: 'Crear mi prompt',
+  wizardCopy: 'Copiar prompt',
+  wizardCopied: 'Copiado. Pégalo en cualquier modelo de chat.',
+  wizardReset: 'Empezar de nuevo',
+  wizardPathLabel: 'Profundizar',
+  wizardPromptLabel: 'Tu prompt listo para usar',
+  wizardBoundary: 'Un prompt copiado es un intento de práctica, no una prueba de aprendizaje, fluidez, calidad de investigación o comportamiento del modelo.'
+});
+Object.assign(copy.ja, {
+  wizardEyebrow: '今日の目標を選ぶ',
+  wizardTitle: '今日は何を成し遂げたいですか？',
+  wizardIntro: '目標を一つ選び、最小限の項目を埋めて、すぐ使えるプロンプトをコピーします。アカウントもファイルも設定も不要で、任意のチャットモデルに貼り付けるだけです。',
+  wizardStepOne: '1 · 目標を選ぶ',
+  wizardStepTwo: '2 · 詳細を入力',
+  wizardStepThree: '3 · プロンプトをコピー',
+  wizardGoalLanguage: '言語を練習する',
+  wizardGoalWork: '仕事の更新を書く',
+  wizardGoalResearch: '研究の主張を確認する',
+  wizardGoalInterview: '面接の回答を練習する',
+  wizardGoalTask: 'タスクを明確な依頼にする',
+  wizardGoalCodex: 'Codex を学び始める',
+  wizardBack: '戻る',
+  wizardNext: 'プロンプトを作成',
+  wizardCopy: 'プロンプトをコピー',
+  wizardCopied: 'コピーしました。任意のチャットモデルに貼り付けてください。',
+  wizardReset: '最初から',
+  wizardPathLabel: 'さらに学ぶ',
+  wizardPromptLabel: 'すぐ使えるプロンプト',
+  wizardBoundary: 'コピーしたプロンプトは練習の試行であり、学習・流暢さ・調査品質・モデルの挙動の証明ではありません。'
+});
+Object.assign(copy.ko, {
+  wizardEyebrow: '오늘의 목표 고르기',
+  wizardTitle: '오늘 무엇을 이루고 싶나요?',
+  wizardIntro: '목표 하나를 고르고, 최소한의 항목만 채운 뒤 바로 쓸 수 있는 프롬프트를 복사하세요. 계정도 파일도 설정도 필요 없습니다. 아무 채팅 모델에 붙여넣으면 됩니다.',
+  wizardStepOne: '1 · 목표 고르기',
+  wizardStepTwo: '2 · 세부 정보 입력',
+  wizardStepThree: '3 · 프롬프트 복사',
+  wizardGoalLanguage: '언어 연습하기',
+  wizardGoalWork: '업무 업데이트 작성하기',
+  wizardGoalResearch: '연구 주장 확인하기',
+  wizardGoalInterview: '면접 답변 연습하기',
+  wizardGoalTask: '작업을 명확한 요청으로 만들기',
+  wizardGoalCodex: 'Codex 배우기 시작하기',
+  wizardBack: '뒤로',
+  wizardNext: '프롬프트 만들기',
+  wizardCopy: '프롬프트 복사',
+  wizardCopied: '복사되었습니다. 아무 채팅 모델에 붙여넣으세요.',
+  wizardReset: '다시 시작',
+  wizardPathLabel: '더 깊이 배우기',
+  wizardPromptLabel: '바로 쓸 수 있는 프롬프트',
+  wizardBoundary: '복사한 프롬프트는 연습 시도일 뿐, 학습·유창함·연구 품질·모델 동작을 증명하지 않습니다.'
+});
+Object.assign(copy.de, {
+  wizardEyebrow: 'Wähle dein heutiges Ziel',
+  wizardTitle: 'Was möchtest du heute erreichen?',
+  wizardIntro: 'Wähle ein Ziel, fülle das kleinste Formular aus und kopiere einen sofort nutzbaren Prompt. Kein Konto, keine Dateien, keine Einrichtung — füge ihn in ein beliebiges Chat-Modell ein.',
+  wizardStepOne: '1 · Ziel wählen',
+  wizardStepTwo: '2 · Details ergänzen',
+  wizardStepThree: '3 · Prompt kopieren',
+  wizardGoalLanguage: 'Eine Sprache üben',
+  wizardGoalWork: 'Ein Arbeits-Update schreiben',
+  wizardGoalResearch: 'Eine Forschungsaussage prüfen',
+  wizardGoalInterview: 'Eine Interview-Antwort proben',
+  wizardGoalTask: 'Eine Aufgabe in eine klare Anfrage verwandeln',
+  wizardGoalCodex: 'Mit dem Lernen von Codex beginnen',
+  wizardBack: 'Zurück',
+  wizardNext: 'Prompt erstellen',
+  wizardCopy: 'Prompt kopieren',
+  wizardCopied: 'Kopiert. Füge ihn in ein beliebiges Chat-Modell ein.',
+  wizardReset: 'Neu starten',
+  wizardPathLabel: 'Tiefer einsteigen',
+  wizardPromptLabel: 'Dein sofort nutzbarer Prompt',
+  wizardBoundary: 'Ein kopierter Prompt ist ein Übungsversuch, kein Beweis für Lernen, Sprachgewandtheit, Recherchequalität oder Modellverhalten.'
+});
+
+// Goal wizard: pick a goal, fill the smallest form, copy a ready-to-use prompt.
+const goalTemplates = window.GOAL_TEMPLATES || {};
+const goalWizard = document.querySelector('[data-goal-wizard]');
+let wizardState = { goal: null };
+const wizardGoalKeys = ['language', 'work', 'research', 'interview', 'task', 'codex'];
+
+function wizardCopyKey(goalKey) {
+  return { language: 'wizardGoalLanguage', work: 'wizardGoalWork', research: 'wizardGoalResearch', interview: 'wizardGoalInterview', task: 'wizardGoalTask', codex: 'wizardGoalCodex' }[goalKey] || 'wizardGoalLanguage';
+}
+
+function renderGoalOptions() {
+  const container = document.querySelector('[data-goal-options]');
+  if (!container) return;
+  container.replaceChildren();
+  const copyTable = currentCopy();
+  wizardGoalKeys.forEach((key, index) => {
+    const goal = goalTemplates[currentLanguage]?.[key] || goalTemplates.en?.[key];
+    if (!goal) return;
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'goal-wizard-option';
+    button.dataset.goalKey = key;
+    const num = document.createElement('span');
+    num.className = 'goal-wizard-option-num';
+    num.textContent = String(index + 1).padStart(2, '0');
+    const label = document.createElement('strong');
+    label.textContent = copyTable[wizardCopyKey(key)] || key;
+    const count = document.createElement('small');
+    count.textContent = goal.fields.length ? `${goal.fields.length} ${copyTable.wizardStepTwo || 'fields'}` : '';
+    button.append(num, label, count);
+    button.addEventListener('click', () => {
+      wizardState.goal = key;
+      renderGoalFields();
+    });
+    container.append(button);
+  });
+}
+
+function renderGoalFields() {
+  const goal = goalTemplates[currentLanguage]?.[wizardState.goal] || goalTemplates.en?.[wizardState.goal];
+  if (!goal) return;
+  const fieldsBox = document.querySelector('[data-goal-fields]');
+  fieldsBox.replaceChildren();
+  goal.fields.forEach((field) => {
+    const wrap = document.createElement('label');
+    wrap.className = 'goal-wizard-field';
+    const label = document.createElement('span');
+    label.textContent = field.label;
+    const input = document.createElement(field.key === 'facts' ? 'textarea' : 'input');
+    if (input.tagName === 'TEXTAREA') { input.rows = 3; }
+    else { input.type = 'text'; }
+    input.placeholder = field.placeholder || '';
+    input.dataset.fieldKey = field.key;
+    input.required = true;
+    wrap.append(label, input);
+    fieldsBox.append(wrap);
+  });
+  showWizardPanel('fields');
+  const first = fieldsBox.querySelector('input, textarea');
+  if (first) first.focus();
+}
+
+function buildGoalPrompt() {
+  const goal = goalTemplates[currentLanguage]?.[wizardState.goal] || goalTemplates.en?.[wizardState.goal];
+  if (!goal) return '';
+  let prompt = goal.template;
+  document.querySelectorAll('[data-goal-fields] [data-field-key]').forEach((input) => {
+    const value = input.value.trim();
+    prompt = prompt.split('{' + input.dataset.fieldKey + '}').join(value || '[missing]');
+  });
+  return prompt;
+}
+
+function showWizardPanel(name) {
+  document.querySelectorAll('[data-wizard-panel]').forEach((panel) => {
+    panel.hidden = panel.dataset.wizardPanel !== name;
+  });
+  document.querySelectorAll('[data-wizard-step-indicator]').forEach((indicator) => {
+    const step = Number(indicator.dataset.wizardStepIndicator);
+    const active = (name === 'goals' && step === 1) || (name === 'fields' && step === 2) || (name === 'prompt' && step === 3);
+    indicator.classList.toggle('is-active', active);
+  });
+}
+
+function renderGoalPrompt() {
+  const prompt = buildGoalPrompt();
+  const pre = document.querySelector('[data-goal-prompt]');
+  pre.textContent = prompt;
+  const goal = goalTemplates[currentLanguage]?.[wizardState.goal] || goalTemplates.en?.[wizardState.goal];
+  const pathLink = document.querySelector('[data-goal-path]');
+  if (goal && goal.path) pathLink.setAttribute('href', goal.path);
+  const status = document.querySelector('[data-goal-copy-status]');
+  if (status) status.textContent = '';
+  showWizardPanel('prompt');
+}
+
+function initGoalWizard() {
+  if (!goalWizard) return;
+  renderGoalOptions();
+  const form = document.querySelector('[data-goal-form]');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    renderGoalPrompt();
+  });
+  const back = document.querySelector('[data-wizard-back]');
+  back.addEventListener('click', () => {
+    if (wizardState.goal) { wizardState.goal = null; renderGoalOptions(); }
+    showWizardPanel('goals');
+  });
+  const reset = document.querySelector('[data-wizard-reset]');
+  reset.addEventListener('click', () => {
+    wizardState.goal = null;
+    document.querySelector('[data-goal-form]').reset();
+    renderGoalOptions();
+    showWizardPanel('goals');
+  });
+  const copy = document.querySelector('[data-goal-copy]');
+  copy.addEventListener('click', async () => {
+    const prompt = document.querySelector('[data-goal-prompt]').textContent;
+    const status = document.querySelector('[data-goal-copy-status]');
+    try {
+      await navigator.clipboard.writeText(prompt);
+      if (status) status.textContent = currentCopy().wizardCopied || 'Copied.';
+    } catch (_) {
+      if (status) status.textContent = 'Copy failed. Select the prompt text manually.';
+    }
+  });
+}
+
+initGoalWizard();
 initializeSearch();
 applyLanguage(currentLanguage, { updateUrl: hasExplicitLanguageParam && !hasValidLanguageParam });
