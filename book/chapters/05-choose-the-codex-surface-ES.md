@@ -414,7 +414,7 @@ revisor antes de cambiar esas afirmaciones.
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="04-context-permissions-and-agent-ES.md" aria-label="Capítulo anterior: Capítulo 4 · Contexto, permisos y límites de acción del Agent">← Anterior<br><strong>Capítulo 4 · Contexto, permisos y límites de acción del Agent</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="../table-of-contents-ES.md" aria-label="Volver al índice en español: el Capítulo 6 aún no está traducido">Siguiente pendiente →<br><strong>Ver disponibilidad del Capítulo 6</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="06-model-selection-ES.md" aria-label="Capítulo siguiente: Capítulo 6 · Elegir un modelo no es venerar un modelo">Siguiente →<br><strong>Capítulo 6 · Elegir un modelo no es venerar un modelo</strong></a></td>
     </tr>
   </table>
 </nav>
