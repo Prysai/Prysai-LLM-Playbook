@@ -6,7 +6,7 @@
 
 ## Dos primeros pasos localizados
 
-Para una práctica únicamente de texto, consulta las [tarjetas para principiantes](communication-clinic-ES.md): seis mensajes copiables para practicar una frase, una actualización, una decisión o una comprobación de fuentes. Es una ruta `draft / not_run`, no una promesa de fluidez, eficiencia o aprendizaje demostrado.
+Para una práctica únicamente de texto, consulta las [tarjetas para principiantes](communication-clinic-ES.md): siete mensajes copiables para practicar una frase, una actualización, una decisión, una comprobación de fuentes o un límite antes de compartir. Es una ruta `draft / not_run`, no una promesa de fluidez, eficiencia o aprendizaje demostrado.
 
 Si todavía no tienes un proyecto ni quieres que la IA actúe fuera del chat,
 empieza con la [primera tarea universal de LLM](routes/universal-core-foundations-ES.md):

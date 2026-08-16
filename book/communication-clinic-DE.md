@@ -13,7 +13,7 @@ bitte die KI nur um Hilfe bei einem klar abgegrenzten Problem.
 > Tokens, privaten Chats, Kundendaten, unveröffentlichten Dateien oder Inhalte aus
 > Produktionssystemen ein.
 
-## Sechs Karten für den sofortigen Start
+## Sieben Karten für den sofortigen Start
 
 ### 1. Spanisch: Erst selbst sprechen, dann begrenzte Korrektur erhalten
 
@@ -82,6 +82,25 @@ Link oder Literaturangabe: [URL / Zitat]
 Antworte in drei Spalten: „direkt gestützt“, „nicht gesagt oder widersprüchlich“ und
 „was ich in der Originalquelle selbst öffnen und prüfen muss“. Nenne einen nicht geöffneten
 Link nicht verifiziert und ergänze keine fehlenden Fakten.
+```
+
+### 7. Vor dem Teilen: Inhalt und Publikum verkleinern, bevor du entscheidest
+
+Diese Karte trennt „Ich möchte etwas teilen“ von „Ich darf es teilen“. Sie ordnet nur
+eine Entscheidung; sie versendet nichts, lädt nichts hoch und erstellt keinen Link.
+
+```text
+Ich überlege, eine KI-Antwort oder einen Gesprächsauszug zu teilen.
+Mein Zweck: [zum Beispiel eine Kollegin um Prüfung eines Satzes bitten].
+Mögliches Publikum: [Rolle oder Gruppe].
+Was ich teilen möchte: [Beschreibung in einem Satz; keine Geheimnisse oder privaten Daten einfügen].
+Was ich nicht teilen werde: [Kundendaten, Passwörter, gesamter Chat, unveröffentlichte Datei].
+
+Sende nichts, lade nichts hoch und erstelle keinen Link. Gib mir zuerst:
+1. den kleinsten Auszug, der für diesen Zweck nötig ist;
+2. Publikum, Inhalt und Berechtigung, die ich selbst prüfen muss;
+3. welche Unbekannten mich anhalten lassen sollten, statt das Teilen anzunehmen.
+Wenn Publikum oder Berechtigung fehlen, empfehle nur anzuhalten und benenne das Fehlende.
 ```
 
 ## Die erste Übung hat nur vier Schritte

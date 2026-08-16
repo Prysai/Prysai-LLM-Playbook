@@ -129,7 +129,7 @@ traducción o verificación en navegador.
 - [Prefacio en español](book/preface-ES.md)
 - [Índice del libro en español](book/table-of-contents-ES.md)
 - [Primera tarea universal de LLM](book/routes/universal-core-foundations-ES.md)
-- [Tarjetas de práctica para principiantes](book/communication-clinic-ES.md): seis mensajes copiables para una práctica breve de idioma, actualización, decisión o comprobación de fuentes. Son una ruta `draft / not_run`, no una promesa de fluidez, eficiencia o aprendizaje demostrado.
+- [Tarjetas de práctica para principiantes](book/communication-clinic-ES.md): siete mensajes copiables para una práctica breve de idioma, actualización, decisión, comprobación de fuentes o límite antes de compartir. Son una ruta `draft / not_run`, no una promesa de fluidez, eficiencia o aprendizaje demostrado.
 - [Índice de Labs en español](book/labs/README-ES.md): dieciocho ejercicios de bajo riesgo, cada uno con un archivo `-ES` y una ruta en español.
 
 El vocabulario, la gobernanza, el registro de fuentes, las evaluaciones, la

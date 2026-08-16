@@ -85,7 +85,7 @@ GPTを知る → Codexを知る → 安全に準備する → タスクを表現
 - [日本語版の序文](book/preface-JA.md)
 - [日本語版の目次](book/table-of-contents-JA.md)
 - [最初の汎用 LLM タスク](book/routes/universal-core-foundations-JA.md)
-- [初心者の練習カード](book/communication-clinic-JA.md)：言語、更新、判断、出典確認を試すための、すぐにコピーできる六つの短いメッセージです。`draft / not_run` の経路であり、流暢さ、効率、学習成果を約束しません。
+- [初心者の練習カード](book/communication-clinic-JA.md)：言語、更新、判断、出典確認、共有前の境界を試すための、すぐにコピーできる七つの短いメッセージです。`draft / not_run` の経路であり、流暢さ、効率、学習成果を約束しません。
 - [日本語の Lab 目次](book/labs/README-JA.md)：低リスクの十八件の練習を、日本語の `-JA` ファイルと経路で開けます。
 
 用語、ガバナンス、出典台帳、評価、調査、Skill の説明には、まだ日本語ファイルがありません。この経路を一つの言語で保つため、ここから原文ページへはリンクしません。翻訳があり、レビューが済んだ資料だけをこの入口に追加します。

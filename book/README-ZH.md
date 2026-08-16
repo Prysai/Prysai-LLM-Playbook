@@ -39,7 +39,7 @@
 | `book/chapters/` | 22 章主线章节 | 22 章均有简体中文候选译文；独立语言审校仍待完成 |
 | `book/labs/` | 18 个实验 | 18 个实验均有简体中文候选译文；独立语言审校与学习者运行记录仍待完成 |
 | `book/table-of-contents-ZH.md` | 中文阅读目录与章节入口 | 已列出 22 章与 18 项实验的中文候选入口 |
-| `book/communication-clinic-ZH.md` | 中文新手提示卡 | 六张低风险文字练习卡；是起步切片，不代表学习效果已验证 |
+| `book/communication-clinic-ZH.md` | 中文新手提示卡 | 七张低风险文字练习卡；是起步切片，不代表学习效果已验证 |
 | `book/routes/first-safe-change-ZH.md` | 中文新手安全路线 | 完整初稿，迁移状态为 `in-progress`；独立语言审校待完成 |
 | `book/README-ZH.md` | 本中文书稿入口 | 迁移状态为 `in-progress` |
 | `book/preface-ZH.md` | 中文序言 | 迁移状态为 `in-progress` |

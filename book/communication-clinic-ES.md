@@ -12,7 +12,7 @@ solo problema concreto.
 > Usa texto ficticio, público o autorizado. No pegues contraseñas, tokens, chats
 > privados, datos de clientes, archivos no publicados ni sistemas de producción.
 
-## Seis tarjetas que puedes usar ahora
+## Siete tarjetas que puedes usar ahora
 
 ### 1. Español: habla primero y pide una corrección limitada
 
@@ -77,6 +77,25 @@ Enlace o referencia: [URL / cita]
 Devuelve tres columnas: soporte directo; lo que no dice o contradice; lo que debo
 abrir y comprobar personalmente. No llames verificado a un enlace que no se abrió
 y no completes hechos ausentes.
+```
+
+### 7. Antes de compartir: reduce el contenido y la audiencia antes de decidir
+
+Esta tarjeta separa «quiero compartir algo» de «estoy autorizado a compartirlo».
+Solo ordena una decisión: no envía, no sube nada y no crea enlaces.
+
+```text
+Estoy pensando en compartir una respuesta de IA o un fragmento de conversación.
+Mi propósito es: [por ejemplo, pedir a una colega que revise una frase].
+Posible audiencia: [rol o grupo].
+Lo que planeo compartir: [descripción de una frase; no pegues secretos ni datos privados].
+Lo que no compartiré: [datos de clientes, contraseñas, chat completo, archivo no publicado].
+
+No envíes, subas ni crees enlaces. Primero dame:
+1. el extracto mínimo necesario para este propósito;
+2. la audiencia, el contenido y la autorización que debo confirmar yo;
+3. qué incógnitas deben hacerme detenerme en vez de asumir que puedo compartir.
+Si no indico audiencia o autorización, recomienda solo detenerme y decir qué falta.
 ```
 
 ## Solo cuatro pasos
