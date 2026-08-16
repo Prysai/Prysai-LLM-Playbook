@@ -16,6 +16,8 @@
 - [中文通用 LLM 首练习：安全文字任务](routes/universal-core-foundations-ZH.md)
 - [中文新手安全路线：第一次安全改动](routes/first-safe-change-ZH.md)
 - [中文新手提示卡：把话说清](communication-clinic-ZH.md)
+- [中文工作更新六步练习](work-update-practice-loop-ZH.md)
+- [中文研究核查六步练习](research-check-practice-loop-ZH.md)
 
 这里放 Prysai LLM Playbook 的原创主线书稿。书稿不是六个外部项目的拼接，而是按照学习者的成长顺序重新编排的内容系统。
 

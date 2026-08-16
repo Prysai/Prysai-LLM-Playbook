@@ -24,6 +24,8 @@ Sie enthalten sieben kopierbare Nachrichten für Sprache, Updates, Entscheidunge
 Quellenprüfung und Grenzen vor dem Teilen. Dieser Pfad ist `draft / not_run` und verspricht weder Sprachflüssigkeit,
 Effizienz noch Lernerfolg.
 
+Für einen einzigen unmittelbaren Versuch kannst du den [sechsstufigen Arbeitsupdate-Ablauf](work-update-practice-loop-DE.md) oder den [sechsstufigen Rechercheprüfungs-Ablauf](research-check-practice-loop-DE.md) wählen. Du bewahrst einen eigenen ersten Versuch, einen begrenzten Hinweis und einen Beleg auf; damit werden weder Produktivität noch Recherchequalität oder Arbeitsreife bewiesen.
+
 Wenn du noch kein Projekt hast und die KI nichts außerhalb des Chats tun soll,
 beginne mit der [universellen LLM-Erstaufgabe](routes/universal-core-foundations-DE.md).
 Du schreibst eine fiktive Mitteilung um und hältst Prüfung und Stopp-Punkt

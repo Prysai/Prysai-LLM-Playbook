@@ -69,6 +69,8 @@ currently `draft` with `run_status: not_run`.
 - [English book table of contents](table-of-contents-EN.md)
 - [Beginner Practice Pack: turn a broad wish into one practical route for learning, research, decisions, or creation](communication-clinic-EN.md#first-practice-intake) — supplemental candidate; complete learner run `not_run`; an intake, templates, and evidence contracts exist
 - [Six short Spanish practice messages](communication-clinic-EN.md#six-short-spanish-messages) — immediate text-only entry; six original prompts for one fictional four-turn typed exchange, not a fluency or retention claim
+- [Truthful work-update practice loop](work-update-practice-loop-EN.md) — six original prompts for preserving facts, one revision, a changed reader, and a receipt; not a workplace-readiness or productivity claim
+- [Bounded research-check practice loop](research-check-practice-loop-EN.md) — six original prompts for a supplied-material claim check; not browsing, exhaustive research, or a high-stakes decision
 - [Six short research messages](communication-clinic-EN.md#six-short-research-messages) — immediate text-only entry; six original prompts for a source-supported decision check, not a browsing or research-completion claim
 - [Source-set scope check](communication-clinic-EN.md#retrieval-scope-receipt) — immediate text-only entry; three original prompts that label a supplied fictional source list against an explicit rule, not a complete-retrieval or source-quality claim
 - [Share Check](communication-clinic-EN.md#share-check) — immediate text-only entry; three original prompts that choose a smaller fictional item to share or stop before any link, upload, or message is created

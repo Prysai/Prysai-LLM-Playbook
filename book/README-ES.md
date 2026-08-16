@@ -8,6 +8,8 @@
 
 Para una práctica únicamente de texto, consulta las [tarjetas para principiantes](communication-clinic-ES.md): siete mensajes copiables para practicar una frase, una actualización, una decisión, una comprobación de fuentes o un límite antes de compartir. Es una ruta `draft / not_run`, no una promesa de fluidez, eficiencia o aprendizaje demostrado.
 
+También puedes empezar directamente por el [ciclo de actualización de trabajo](work-update-practice-loop-ES.md) o el [ciclo de comprobación de investigación](research-check-practice-loop-ES.md). Son seis mensajes con una primera respuesta propia, una corrección limitada y un recibo; no demuestran productividad, calidad de investigación ni preparación profesional.
+
 Si todavía no tienes un proyecto ni quieres que la IA actúe fuera del chat,
 empieza con la [primera tarea universal de LLM](routes/universal-core-foundations-ES.md):
 reescribirás un aviso ficticio con una comprobación visible y un punto de
