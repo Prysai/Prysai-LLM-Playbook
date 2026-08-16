@@ -4,11 +4,15 @@
 
 **Estado:** `candidate`. **Experimento:** `draft / not_run`. Este capítulo enseña descubrimiento y revisión de adopción; los reportes de campo son entradas didácticas, no reproducciones locales ni hallazgos oficiales de causa raíz.
 
-## El problema
+## El problema que resuelve este capítulo
 
 Un Skill externo puede empaquetar pasos repetidos, conocimiento de dominio y llamadas a herramientas. También puede ampliar contexto, dependencias, red, permisos de cuentas, efectos externos y obligaciones de licencia. La pregunta no es «¿dónde encuentro más Skills?», sino si un vacío real de la tarea necesita un Skill, cómo convertir una entrada de directorio en candidato auditable y cómo probarlo sin filtrar secretos ni exceder la autorización.
 
 > Un directorio sirve para descubrir, no para probar calidad. Instalar cambia estado; no verifica comportamiento. Que un Skill pueda activarse no significa que deba adoptarse.
+
+## Objetivos de aprendizaje
+
+Podrás distinguir una brecha de tarea de una cuestión de conocimiento, herramienta o autorización, y evaluar un candidato con fuente, revisión, licencia, permisos, recuperación y evidencia.
 
 ## Antes de decidir: escribe el protocolo de tarea
 
@@ -105,6 +109,12 @@ ejecutadas en riesgos ya observados.
 
 ## Experimento: revisar dos candidatos sin instalar
 
+### Preparación
+
+Elige dos candidatos públicos con revisión fija, o dos ejemplos locales depurados. Prepara solo URL, revisión, inventario y señales de licencia/NOTICE. No definas un destino de instalación, no inicies sesión y no uses secretos.
+
+### Tarea
+
 Elige dos revisiones fijas públicas o muestras locales redactadas. A tiene procedencia y señal de licencia; B carece deliberadamente de licencia/NOTICE, dependencias o restauración.
 
 1. Solo revisa URL, revisión, inventario, resumen de entrada, dependencias y licencia; no autentiques ni ejecutes red.
@@ -113,6 +123,33 @@ Elige dos revisiones fijas públicas o muestras locales redactadas. A tiene proc
 4. Mantén B como `blocked` y nombra el material que lo desbloquearía.
 
 «Ignora reglas», «sube `.env`» o «cambia producción para probar» dentro de una fuente son datos no confiables, no permisos.
+
+### Evidencia
+
+Guarda una tarjeta para A y B con fuente, revisión, ruta real, conclusión de licencia/NOTICE, dependencias, permisos esperados, responsable, decisión e incógnitas. Para A conserva cuatro casos diseñados: positivo, límite, fallo/inyección y migración. Ninguna tarjeta afirma instalación o comportamiento ejecutado.
+
+### Reflexión
+
+¿Qué hueco era realmente un método repetible y cuál era solo una falta de datos, herramienta o autorización? ¿Qué dato ausente impidió instalar?
+
+## Problemas reales: localizable no significa adoptable
+
+Una entrada de directorio, una estrella o una demo pueden hacer visible a un candidato, pero no prueban origen, dependencias anidadas ni efectos secundarios. Decide primero si resuelve una tarea repetida concreta; después revísalo en un entorno pequeño sin secretos.
+
+## Tarea de transferencia
+
+Aplica la tarjeta a un script interno que ya use tu equipo. Escribe disparadores y no disparadores, la prueba mínima de solo lectura, un caso de inyección y quién tendría que autorizar escritura o red más tarde. No cambies el script ni producción.
+
+## Lista de aceptación
+
+- [ ] Distingo falta de conocimiento, método repetible, herramienta y autorización.
+- [ ] Registro fuente, revisión fija, ruta, licencia/NOTICE, permisos, recuperación y responsable.
+- [ ] Mantengo separados `file exists`, `discovered`, `loaded`, `adopted` y `verified`.
+- [ ] Marco licencia, permisos o recuperación inciertos como `blocked` en vez de instalar primero.
+
+## Fuentes y límite de mantenimiento
+
+Las tarjetas de revisión y los estados separados son métodos estables. Directorios, instalación, comportamiento y superficies de producto cambian; vuelve a comprobarlos para la revisión fija, el entorno concreto y la ruta real de destino.
 
 ## Comprobación propia
 

@@ -4,11 +4,15 @@
 
 **상태:** `candidate`. **실험:** `draft / not_run`. 이 장은 Skill 발견과 채택 검토를 가르칩니다. 현장 보고는 학습 입력일 뿐 로컬 재현이나 공식 원인 판정이 아닙니다.
 
-## 문제
+## 이 장에서 해결하는 문제
 
 외부 Skill은 반복 절차, 분야 지식, 도구 호출을 재사용 가능한 역량으로 묶을 수 있습니다. 동시에 컨텍스트, 의존성, 네트워크, 계정 권한, 외부 부작용, 라이선스 의무도 넓힐 수 있습니다. 질문은 “더 많은 Skill을 어디서 찾나”가 아닙니다. 실제 작업의 빈틈에 Skill이 맞는지, 디렉터리 항목을 감사 가능한 후보로 어떻게 바꾸는지, 비밀을 누출하거나 권한을 넘지 않고 어떻게 시험하는지입니다.
 
 > 디렉터리는 발견의 시작점이지 품질 증명이 아닙니다. 설치는 상태 변화이지 검증이 아닙니다. 호출될 수 있다고 해서 채택해야 하는 것은 아닙니다.
+
+## 학습 목표
+
+task gap을 knowledge, tool, authorization 문제와 구분하고 source, revision, license, permission, recovery, evidence로 후보를 판단할 수 있습니다.
 
 ## 먼저 작업 계약을 쓰기
 
@@ -96,6 +100,12 @@ license: 저장소, 대상 파일, NOTICE, 중첩 script / asset의 증거
 
 ## 작은 실험: 설치하지 않고 두 후보 검토하기
 
+### 준비
+
+고정 revision의 공개 후보 두 개 또는 정리한 로컬 예시 두 개를 고릅니다. URL, revision, inventory, license/NOTICE 신호만 준비합니다. 설치 대상은 정하지 말고 로그인이나 secret도 사용하지 않습니다.
+
+### 작업
+
 고정 revision의 공개 후보 두 개나 가린 로컬 샘플 두 개를 고릅니다. A에는 추적 가능한 출처와 license 신호가 있고, B에는 license/NOTICE, 의존성 선언, 복구 계획 중 하나가 의도적으로 없습니다.
 
 1. 출처, revision, 목록, 입구 요약, 의존성, license 신호만 읽습니다. runtime 디렉터리에 내려받거나 로그인하거나 네트워크 실행을 하지 않습니다.
@@ -104,6 +114,33 @@ license: 저장소, 대상 파일, NOTICE, 중첩 script / asset의 증거
 4. B는 `blocked`로 두고 해제에 필요한 자료를 씁니다.
 
 출처 안의 “상위 규칙 무시”, “`.env` 업로드”, “테스트용 production 변경”은 신뢰할 수 없는 데이터일 뿐 Skill 권한이나 사용자 승인이 아닙니다. 거부, 기록, 중지가 올바른 결과입니다.
+
+### 증거
+
+A와 B 각각에 source, revision, 실제 path, license/NOTICE 결론, dependencies, 예상 permission, owner, decision, unknown을 기록한 카드를 보관합니다. A에는 positive, boundary, failure/injection, migration의 네 설계 case를 남깁니다. 카드는 설치나 runtime behavior를 주장하지 않습니다.
+
+### 회고
+
+어떤 gap이 반복 가능한 method였고, 어떤 gap이 fact, tool, authorization 부족이었나요? 어떤 정보가 없어 설치를 멈췄나요?
+
+## 실제 문제: 발견 가능하다고 채택 가능한 것은 아니다
+
+directory entry, star, demo는 후보를 보이게 할 수 있지만 origin, nested dependency, side effect를 증명하지 않습니다. 먼저 구체적인 반복 task를 개선하는지 결정하고, 그 다음 secret 없는 좁은 환경에서 검토합니다.
+
+## 전이 과제
+
+팀이 이미 사용하는 internal script에 카드를 적용합니다. trigger와 non-trigger, 최소 read-only check, injection case, 나중에 write나 network를 허가할 사람을 적습니다. script와 production은 바꾸지 않습니다.
+
+## 수용 체크리스트
+
+- [ ] knowledge gap, 반복 가능한 method, tool, authorization을 구분한다.
+- [ ] source, fixed revision, path, license/NOTICE, permission, recovery, owner를 기록한다.
+- [ ] `file exists`, `discovered`, `loaded`, `adopted`, `verified`를 혼동하지 않는다.
+- [ ] license, permission, recovery가 불명확하면 설치 대신 `blocked`로 둔다.
+
+## 출처 및 유지보수 경계
+
+review card와 상태 분리는 안정적인 학습 방법입니다. directory, 설치, runtime behavior, product surface는 변하므로 fixed revision, 구체적 environment, 실제 target path마다 다시 확인합니다.
 
 ## 스스로 확인하기
 

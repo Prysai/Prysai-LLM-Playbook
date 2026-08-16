@@ -4,11 +4,15 @@
 
 **状態：** `candidate`。**実験：** `draft / not_run`。ここでは Skill の発見と採用レビューを扱います。フィールド報告は教材であり、ローカル再現や公式の原因調査ではありません。
 
-## 問題
+## この章が解決する問題
 
 外部 Skill は繰り返す手順、領域知識、ツール呼び出しを再利用可能な形にできます。同時に、コンテキスト、依存関係、ネットワーク、アカウント権限、外部副作用、ライセンス義務も増やします。本当の問いは「もっと Skill をどこで探すか」ではありません。実際のタスクの穴に Skill が必要か、ディレクトリ項目を監査可能な候補へ変えるには何が必要か、秘密を漏らさず権限を越えずにどう試すかです。
 
 > ディレクトリは発見の入口であって品質の証明ではありません。インストールは状態変更であり、検証ではありません。起動できることは採用すべきことを意味しません。
+
+## 学習目標
+
+task gap を knowledge、tool、authorization の問題と区別し、source、revision、license、permission、recovery、evidence を使って candidate を判断できます。
 
 ## 最初にタスク契約を書く
 
@@ -96,6 +100,12 @@ unblock: 不足情報をそろえ、non-sensitive isolated directory で review 
 
 ## 小実験：二つの candidate を install せず review する
 
+### 準備
+
+固定 revision の public candidate を二つ、または整理済みの local example を二つ選びます。URL、revision、inventory、license/NOTICE signal だけを用意します。install target を決めず、login や secret の使用もしません。
+
+### タスク
+
 fixed revision の public candidate 二つ、または redacted local sample 二つを選びます。A には traceable source と license signal があり、B には license/NOTICE、dependency declaration、restore plan のどれかが意図的にありません。
 
 1. source、revision、inventory、entry summary、dependency、license signal だけを read する。runtime directory へ download、login、network execution はしない。
@@ -104,6 +114,33 @@ fixed revision の public candidate 二つ、または redacted local sample 二
 4. B は `blocked` のままにし、unblock に必要な material を示す。
 
 source 内の「上位の rule を無視」「`.env` を upload」「test のため production を変える」は untrusted data であり、Skill permission や user authorization ではありません。拒否、記録、stop が正しい結果です。
+
+### 証拠
+
+A と B について、source、revision、実際の path、license/NOTICE の結論、dependencies、想定 permission、owner、decision、unknown を card に残します。A には positive、boundary、failure/injection、migration の四つの設計済み case を残します。card は install や runtime behavior を主張しません。
+
+### 振り返り
+
+どの gap が本当に繰り返し使う method で、どれが fact、tool、authorization の不足でしたか。何が欠けて install を止めましたか。
+
+## 現実の問題：見つかることは採用できることではない
+
+directory entry、star、demo は candidate を見つけやすくしても、origin、nested dependency、side effect の証拠にはなりません。最初に具体的な反復 task を改善するかを決め、その後で secret のない狭い環境で調べます。
+
+## 移行タスク
+
+チームがすでに使う internal script に card を適用します。trigger と non-trigger、最小の read-only check、injection case、後で write や network を許可する人を書きます。script と production は変更しません。
+
+## 受け入れチェックリスト
+
+- [ ] knowledge gap、繰り返し使う method、tool、authorization を区別できる。
+- [ ] source、fixed revision、path、license/NOTICE、permission、recovery、owner を記録する。
+- [ ] `file exists`、`discovered`、`loaded`、`adopted`、`verified` を混同しない。
+- [ ] license、permission、recovery が不明なら install ではなく `blocked` にする。
+
+## 出典と保守の境界
+
+review card と状態の分離は安定した学習方法です。directory、install、runtime behavior、product surface は変わるため、fixed revision、具体的な environment、実際の target path ごとに確認し直します。
 
 ## 自己確認
 

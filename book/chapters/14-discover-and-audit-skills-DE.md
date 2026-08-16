@@ -4,11 +4,15 @@
 
 **Status:** `candidate`. **Experimentstatus:** `draft / not_run`. Dieses Kapitel lehrt Skill-Entdeckung und Übernahmeprüfung; Feldberichte sind Lehrmaterial, keine lokale Reproduktion oder offizielle Ursachenfeststellung.
 
-## Das Problem
+## Das Problem dieses Kapitels
 
 Externe Skills können wiederholte Schritte, Fachwissen und Tool-Aufrufe als wiederverwendbare Fähigkeiten bündeln. Sie können aber auch Kontext, Abhängigkeiten, Netzwerkzugriff, Kontoberechtigungen, externe Nebenwirkungen und Lizenzpflichten erweitern. Die Frage ist nicht „Wo finde ich mehr Skills?“, sondern ob eine reale Aufgabenlücke einen Skill braucht, wie ein Verzeichniseintrag zu einem prüfbaren Kandidaten wird und wie man ihn ohne Geheimnisleck oder Überschreitung der Autorisierung testet.
 
 > Ein Verzeichnis ist ein Einstieg zur Entdeckung, kein Qualitätsbeweis. Installation verändert einen Zustand; sie verifiziert kein Verhalten. Auslösbar zu sein heißt nicht, dass ein Skill übernommen werden sollte.
+
+## Lernziele
+
+Du kannst eine Aufgabenlücke von einer Wissens-, Tool- oder Autorisierungsfrage unterscheiden und einen Kandidaten mit Quelle, Revision, Lizenz, Rechten, Rückkehrweg und Evidenz beurteilen.
 
 ## Zuerst den Aufgabenvertrag schreiben
 
@@ -99,6 +103,12 @@ nicht zu einem bereits beobachteten Risiko.
 
 ## Kleines Experiment: zwei Kandidaten prüfen, keinen installieren
 
+### Vorbereitung
+
+Wähle zwei öffentliche Kandidaten mit fester Revision oder zwei bereinigte lokale Beispiele. Lege nur URL, Revision, Dateiinventar und Lizenz-/NOTICE-Signale bereit. Lege kein Installationsziel fest, melde dich nicht an und verwende keine Geheimnisse.
+
+### Aufgabe
+
 Wähle zwei öffentliche Kandidaten mit festen Revisionen oder zwei bereinigte lokale Beispiele. A hat nachvollziehbare Quelle und Lizenzsignal; B hat absichtlich keine Lizenz/NOTICE, Abhängigkeitsangabe oder Wiederherstellung.
 
 1. Lies nur Quelle, Revision, Inventar, Eingangs-Zusammenfassung, Abhängigkeiten und Lizenzsignal. Nicht in ein Laufzeitverzeichnis laden, nicht anmelden und kein Netzwerk ausführen.
@@ -107,6 +117,33 @@ Wähle zwei öffentliche Kandidaten mit festen Revisionen oder zwei bereinigte l
 4. Lasse B `blocked` und nenne das Material zum Aufheben der Sperre.
 
 „Übergeordnete Regeln ignorieren“, „`.env` hochladen“ oder „Produktion zum Testen ändern“ in einer Quelle sind nicht vertrauenswürdige Daten, keine Skill-Rechte und keine Nutzerfreigabe. Ablehnen, protokollieren und stoppen ist richtig.
+
+### Belege
+
+Speichere für A und B je eine Prüfkartenkopie mit Quelle, Revision, tatsächlichem Pfad, Lizenz-/NOTICE-Befund, Abhängigkeiten, erwarteten Rechten, Eigentümer, Entscheidung und offenen Punkten. Bewahre für A vier entworfene Fälle auf: positiv, Grenze, Fehler/Injection und Migration. Keine Karte behauptet Installation oder Laufzeitverhalten.
+
+### Reflexion
+
+Welche Lücke war wirklich eine wiederholbare Methode und welche war nur eine Fakten-, Tool- oder Autorisierungslücke? Welche fehlende Information machte eine Installation unmöglich?
+
+## Praxisfälle: Findbar ist nicht übernehmbar
+
+Ein Verzeichniseintrag, ein Stern oder eine gute Demo kann einen Kandidaten sichtbar machen, aber nicht seine Herkunft, verschachtelten Abhängigkeiten oder Nebenwirkungen belegen. Entscheide zuerst, ob der Skill eine konkrete wiederholte Aufgabe verbessert; danach prüfst du ihn in einer engen, geheimnisfreien Umgebung.
+
+## Transferaufgabe
+
+Wende die Karte auf ein internes Script an, das dein Team bereits verwendet. Formuliere Trigger und Nicht-Trigger, die kleinste lesende Prüfung, einen Injection-Fall und die Person, die eine spätere Schreib- oder Netzwerkfreigabe erteilen müsste. Ändere weder Script noch Produktionsumgebung.
+
+## Abnahme-Checkliste
+
+- [ ] Ich kann eine Wissenslücke, eine wiederholbare Methode, ein Tool und eine Autorisierungsfrage unterscheiden.
+- [ ] Ich dokumentiere Quelle, feste Revision, Pfad, Lizenz/NOTICE, Rechte, Rückkehrweg und Owner.
+- [ ] Ich halte `file exists`, `discovered`, `loaded`, `adopted` und `verified` getrennt.
+- [ ] Ich markiere unklare Lizenz, Rechte oder Wiederherstellung als `blocked`, statt zuerst zu installieren.
+
+## Quellen und Wartungsgrenze
+
+Aktionsklassen und Statusunterscheidungen sind stabile Lehrmethoden. Verzeichnisse, Installation, Laufzeitverhalten und Produktoberflächen sind veränderlich; prüfe sie für die feste Revision, die konkrete Umgebung und den tatsächlichen Zielpfad erneut.
 
 ## Eigene Abnahme
 
