@@ -281,36 +281,36 @@ window.CODEX_LOCALE_MANIFEST = {
         "zh": {
           "path": "book/communication-clinic-ZH.md",
           "exists": true,
-          "content_status": "candidate",
-          "translation_status": "candidate",
+          "content_status": "draft",
+          "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-15"
         },
         "es": {
           "path": "book/communication-clinic-ES.md",
           "exists": true,
-          "content_status": "candidate",
-          "translation_status": "candidate",
+          "content_status": "draft",
+          "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/communication-clinic-JA.md",
           "exists": true,
-          "content_status": "candidate",
-          "translation_status": "candidate",
+          "content_status": "draft",
+          "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/communication-clinic-KO.md",
           "exists": true,
-          "content_status": "candidate",
-          "translation_status": "candidate",
+          "content_status": "draft",
+          "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/communication-clinic-DE.md",
           "exists": true,
-          "content_status": "candidate",
-          "translation_status": "candidate",
+          "content_status": "draft",
+          "translation_status": "in-progress",
           "source_revision": "worktree-2026-08-16"
         }
       }
