@@ -1,18 +1,51 @@
+# Prysai LLM Playbook — Content License
+
 Copyright (c) 2026 Prysai Lab
 
-Unless a file states a different license, the written curriculum, diagrams,
-screenshots, and other teaching assets in this repository are licensed under
-the Creative Commons Attribution-NonCommercial 4.0 International License.
+## Default license: CC BY 4.0
 
-You may share and adapt those materials for non-commercial purposes when you
-give appropriate credit, link to the license, and indicate whether changes
-were made. You may not use them for commercial training, paid redistribution,
-or a competing commercial product without separate written permission.
+Unless a file states a different license, the written curriculum, diagrams,
+teaching assets, Skill instructions, and other project-owned content in this
+repository are licensed under the
+**Creative Commons Attribution 4.0 International License (CC BY 4.0)**.
+
+You are free to:
+
+- **Share** — copy and redistribute the material in any medium or format;
+- **Adapt** — remix, transform, and build upon the material for any purpose,
+  even commercially.
+
+Under the following terms:
+
+- **Attribution** — you must give appropriate credit, provide a link to the
+  license, and indicate if changes were made. You may do so in any reasonable
+  manner, but not in any way that suggests the licensor endorses you or your
+  use.
+- **No additional restrictions** — you may not apply legal terms or
+  technological measures that legally restrict others from doing anything the
+  license permits.
 
 The full license text is available at:
-https://creativecommons.org/licenses/by-nc/4.0/legalcode
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+## Code and generated files
+
+Scripts, static-site code, evaluation tooling, and other software-like files
+in this repository are licensed under the
+**Apache License, Version 2.0** — see [LICENSE-CODE](LICENSE-CODE).
+
+## Trademarks and third-party material
 
 This notice does not grant permission to use the Prysai name, logos, or other
-trademarks. It also does not relicense third-party material. See
-`docs/sources/licensing.md` and `docs/sources/asset-register.md` for the
-repository's asset and source boundaries.
+trademarks. It also does not relicense third-party material: external sources
+keep their own licenses and remain outside the project default unless the
+[asset register](docs/sources/asset-register.md) records otherwise. See
+[docs/sources/licensing.md](docs/sources/licensing.md) for the full asset and
+source boundary.
+
+## Contributions
+
+Contributors submit work they own or are authorized to adapt. By contributing,
+you agree that your contribution is licensed under the same terms as the
+affected files (CC BY 4.0 for content, Apache-2.0 for code), and you disclose
+any third-party restrictions. See [CONTRIBUTING.md](CONTRIBUTING.md).
