@@ -4,11 +4,19 @@
 
 **상태:** `candidate`. **실험:** `not_run`. 이 장은 관찰 가능한 루프를 설명하며 특정 호스트, 모델, 도구의 동작을 증명하지 않습니다.
 
-## 이 장이 해결하는 문제
+## 이 장에서 해결하는 문제
 
 “Agent에게 맡기자”는 한 번의 행동처럼 들립니다. 실제로는 모델 제안, 호스트 판단, 도구의 실행 또는 거부, 관찰, 상태 갱신, 검증, 계속할지 멈출지의 판단이 이어집니다. 자신감 있는 최종 문장은 이 사건들을 대신하지 못합니다.
 
 > 모델 출력은 제안입니다. 도구 결과는 관찰입니다. 검증된 전달에는 대상 환경의 증거가 필요합니다.
+
+## 학습 목표
+
+proposal, approval, execution, 관찰한 effect, acceptance를 구분하고, input, authority, evidence, budget의 stop을 시작 전에 정하며, 일어났을 수 있는 write를 다음 사람이 blind repeat하지 않는 handoff를 쓸 수 있습니다. 이 연습은 일반 Agent나 host behavior를 증명하지 않습니다.
+
+## 실제 문제: 보이는 loop는 완료 result가 아니다
+
+제안한 command, `Working` label, summary는 execution, read-back, acceptance가 없어도 보일 수 있습니다. 이는 제품 진단이 아닙니다. tool start, target state, check output 등 처음 관찰하지 못한 stage에서 멈춰야 하는 이유입니다.
 
 ## 관찰 가능한 루프
 
@@ -79,11 +87,21 @@ next_safe_action: "입력 파일 요청"
 | 보상 가능 | 효과 확인 후 제한된 보상 준비 |
 | 비멱등 | 멈추고 대조한 뒤 재시도 |
 
-## 연습과 경계
+## 실험과 경계
+
+### 준비
+
+`input.txt`가 있는 local disposable directory를 준비합니다. read와 write는 그곳에서만 하고 credential, install, network, publish, delete를 사용하지 않습니다. model이 action을 제안하기 전에 goal, path boundary, acceptance, 한 번의 retry budget을 적습니다.
+
+### 작업
 
 일회용 디렉터리에서 원본 문서를 바꾸지 않고 존재하지 않는 파일을 가리키는 링크를 보고하도록 Agent에게 요청하세요. 읽기·쓰기 루트, 누락 링크의 정의, check, 읽기 전용 재시도 두 번, 잘못된 루트 같은 의도적 실패를 정합니다. 제안, 보고서, check를 따로 검토하세요.
 
 각 전환을 설명하고 증거와 함께 `verified`, `partial`, `blocked`, `unverified` 중 하나로 전달할 수 있으면 연습은 성공입니다. 독립적인 실행 기록이 남기 전까지 이 장은 `candidate / not_run`입니다.
+
+### 증거
+
+task contract, event card, approval decision, directory와 종료 상태를 포함한 실행 command, diff 또는 read-back, acceptance, handoff를 보존합니다. transition이 없으면 model output으로 채우지 말고 `not_observed`로 적습니다.
 
 ## 루프를 시작하기 전에 중지를 정하기
 
@@ -184,6 +202,26 @@ claim_scope: 로컬 텍스트 파일 하나
 그다음 `output.txt` read-back을 일부러 빼고 인계문에 “완료”라고 써 보세요. 처음으로 근거가
 없는 전환을 찾아 `unverified`로 고칩니다. 이것은 Agent, model, host의 일반 성능을 증명하지
 않으며, 이 장과 실험은 기록과 검토 전까지 `candidate / not_run`입니다.
+
+## 회고
+
+event card의 어느 stage가 그럴듯한 text로 가장 쉽게 건너뛰어질까요? retry는 언제 안전하고 unknown effect 때문에 언제 stop해야 하나요? read-back 뒤에도 check scope 밖에 남는 claim은 무엇인가요?
+
+## 전이 과제
+
+같은 loop를 language practice나 source research에 적용합니다. language에서는 model correction, learner answer, 나중의 무도움 recall, feedback이 별 event이며 유창한 dialogue는 mastery 증거가 아닙니다. research에서는 발견, 읽기, source check, conclusion을 나눕니다. stop budget과 정직한 handoff를 유지합니다.
+
+## 수용 체크리스트
+
+- [ ] proposal, host decision, execution, observation, acceptance를 구분한다.
+- [ ] “완료” claim의 첫 미증거 transition을 보일 수 있다.
+- [ ] input, authority, evidence, budget의 stop을 정했다.
+- [ ] response를 잃은 뒤 write를 반복하기 전에 state와 postcondition을 읽는다.
+- [ ] handoff가 proven, unknown, not claimed, next safe action을 나눈다.
+
+## 출처와 갱신 경계
+
+관찰 가능한 loop, state, stop method는 project의 안정적인 teaching method입니다. 구체 Agent surface, tool name, permission, runtime behavior는 변합니다. 현재 fact는 [공식 사실 카드](../evidence-library-KO.md#source-notes)에서 확인하고 [field-problem index](../evidence-library-KO.md#source-notes)는 symptom material로만 사용합니다. 어느 것도 기록한 own run을 대신하지 않습니다.
 
 ## 실행 handoff: 다음 reader가 사실에서 이어 가도록 하기
 

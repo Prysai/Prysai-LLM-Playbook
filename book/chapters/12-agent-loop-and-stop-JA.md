@@ -4,11 +4,19 @@
 
 **状態：** `candidate`。**実験：** `not_run`。ここでは観測可能なループを説明します。特定のホスト、モデル、ツールの動作を証明するものではありません。
 
-## この章の問題
+## この章が解決する問題
 
 「Agent に任せる」は一つの操作に聞こえます。しかし実際には、モデルの提案、ホストの判断、ツールの実行または拒否、観測、状態更新、検証、継続または停止の判断があります。自信のある結論文は、これらの出来事の代わりにはなりません。
 
 > モデル出力は提案です。ツール結果は観測です。検証済みの納品には、対象環境の証拠が必要です。
+
+## 学習目標
+
+proposal、approval、execution、観察した effect、acceptance を分け、input、authority、evidence、budget の stop を開始前に決め、起きたかもしれない write を次の人が blind repeat しない handoff を書けます。この練習は一般的な Agent や host の behavior を証明しません。
+
+## 現実の問題：見える loop は完了した result ではない
+
+提案された command、`Working` label、summary は、execution、read-back、acceptance がなくても見えます。これは製品診断ではありません。tool start、target state、check output など、最初に観察されていない stage で止める理由です。
 
 ## 観測可能なループ
 
@@ -79,11 +87,21 @@ next_safe_action: "入力ファイルを依頼する"
 | 補償可能 | 効果を確認し、限定した補償を準備 |
 | 非冪等 | 停止して照合してから再試行 |
 
-## 練習と境界
+## 実験と境界
+
+### 準備
+
+`input.txt` を含む local disposable directory を用意します。read と write はそこだけにし、credential、install、network、publish、delete を使いません。model が action を提案する前に、goal、path boundary、acceptance、retry budget 一回を書きます。
+
+### タスク
 
 使い捨てディレクトリで、元文書を編集せず、存在しないファイルを指すリンクを報告するよう Agent に依頼します。読み書きルート、欠落リンクの定義、check、読み取り専用の再試行二回、誤ったルートなどの意図的失敗を決めます。提案、レポート、check を別々に確認してください。
 
 各遷移を説明でき、証拠付きで `verified`、`partial`、`blocked`、または `unverified` を納品できれば練習は成功です。独立した実行記録が残るまで、この章は `candidate / not_run` のままです。
+
+### 証拠
+
+task contract、event card、approval decision、directory と終了状態を含む実行 command、diff または read-back、acceptance、handoff を保存します。transition が欠けたら、model output で補わず `not_observed` と書きます。
 
 ## ループを始める前に stop を決める
 
@@ -164,6 +182,26 @@ one next safe action:
 この練習は、すべての Agent や host が同じに動くこと、または efficiency を証明しません。
 もっともらしい conversation を execution claim にしない方法を教えます。実行記録と review が
 できるまで、chapter は `candidate`、experiment は `not_run` のままです。
+
+## 振り返り
+
+event card のどの stage が、もっともらしい text で最も飛ばされやすいか。retry はいつ安全で、unknown な effect のためにいつ stop すべきか。read-back 後も check scope 外に残る claim は何か。
+
+## 移行タスク
+
+同じ loop を language practice または source research に適用します。language では、model の correction、learner の answer、後の無支援 recall、feedback は別 event であり、流暢な dialogue は mastery の証拠ではありません。research では、発見、読解、source check、conclusion を分けます。stop budget と正直な handoff を保ちます。
+
+## 受け入れチェックリスト
+
+- [ ] proposal、host decision、execution、observation、acceptance を分ける。
+- [ ] 「完了」という claim の最初の未証拠 transition を示せる。
+- [ ] input、authority、evidence、budget の stop を決めた。
+- [ ] response を失った後、write を繰り返す前に state と postcondition を読む。
+- [ ] handoff が proven、unknown、not claimed、next safe action を分ける。
+
+## 出典と更新境界
+
+観測可能な loop、state、stop method は project の安定した teaching method です。具体的な Agent surface、tool name、permission、runtime behavior は変わります。現在の fact は[公式ファクトカード](../evidence-library-JA.md#source-notes)で確認し、[field-problem index](../evidence-library-JA.md#source-notes)は symptom material としてだけ使います。どちらも記録した own run の代わりにはなりません。
 
 ## 実行の handoff：次の reader が事実から続けるために
 
