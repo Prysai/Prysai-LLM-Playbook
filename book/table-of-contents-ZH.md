@@ -11,7 +11,7 @@
 - 想做一次低风险的真实文件练习：进入[第一次安全改动路线](routes/first-safe-change-ZH.md)，再做[实验 001](labs/lab-001-first-safe-task-ZH.md)。
 - 想查看所有已提供与未提供的中文单元：继续阅读本页。
 
-**当前中文覆盖：**32 / 40 个课程单元（16 / 22 章，16 / 18 个实验）。所有中文译文均为 `in-progress`，独立语言审校与学习者运行记录仍待完成。课程文件的存在或链接检查通过，不等于学习效果、翻译质量或平台行为已经验证。
+**当前中文覆盖：**40 / 40 个课程单元（22 / 22 章，18 / 18 个实验）。所有中文译文均为 `in-progress`，独立语言审校与学习者运行记录仍待完成。课程文件的存在或链接检查通过，不等于学习效果、翻译质量或平台行为已经验证。
 
 ## 第一篇：认识模型，做出第一个安全任务
 
@@ -19,6 +19,7 @@
 |---|---|---|
 | 第 1 章：先理解 GPT，再理解 Codex | [阅读第 1 章](chapters/01-gpt-and-codex-ZH.md) | `candidate` / `in-progress` |
 | 实验 011：GPT、Codex、工具与 Agent 的边界 | [打开实验 011](labs/lab-011-gpt-codex-boundaries-ZH.md) | `draft` / `not_run` |
+| 实验 012：把个人方法迁移为团队能力 | [打开实验 012](labs/lab-012-team-capability-migration-ZH.md) | `draft` / `not_run` |
 | 第 2 章：完成第一个安全、可验证的任务 | [阅读第 2 章](chapters/02-first-safe-task-ZH.md) | `candidate` / `in-progress` |
 | 实验 001：第一个安全任务 | [打开实验 001](labs/lab-001-first-safe-task-ZH.md) | `draft` / `not_run` |
 | 第 3 章：把愿望变成任务协议 | [阅读第 3 章](chapters/03-task-protocol-ZH.md) | `candidate` / `in-progress` |
@@ -44,9 +45,7 @@
 | 第 12 章：Agent 的循环、状态和停止条件 | [阅读第 12 章](chapters/12-agent-loop-and-stop-ZH.md) | `candidate` / `in-progress` |
 | 实验 006：Agent 停止条件 | [打开实验 006](labs/lab-006-agent-stop-conditions-ZH.md) | `draft` / `not_run` |
 
-## 第三篇和第四篇：中文单元的当前边界
-
-第 14–16 章已经提供；第 17–22 章尚未提供中文正文。缺失单元的中文路径会在阅读器中显示同语言的“暂未提供”状态；本目录不把它们替换为英文链接。
+## 第三篇和第四篇：应用、评估与维护
 
 | 单元 | 中文入口 | 状态 |
 |---|---|---|
@@ -54,6 +53,12 @@
 | 第 14 章：发现、安装与审计外部 Skill | [阅读第 14 章](chapters/14-discover-and-audit-skills-ZH.md) | `candidate` / `in-progress` |
 | 第 15 章：研究路线——从问题到可审计知识 | [阅读第 15 章](chapters/15-research-track-ZH.md) | `candidate` / `in-progress` |
 | 第 16 章：工程路线——从想法到可靠软件 | [阅读第 16 章](chapters/16-engineering-track-ZH.md) | `candidate` / `in-progress` |
+| 第 17 章：营销路线——从产品理解到增长实验 | [阅读第 17 章](chapters/17-marketing-track-ZH.md) | `candidate` / `in-progress` |
+| 第 18 章：内容、设计、数据与自动化 | [阅读第 18 章](chapters/18-content-design-data-automation-ZH.md) | `candidate` / `in-progress` |
+| 第 19 章：评估模型与工作流——从印象走向证据 | [阅读第 19 章](chapters/19-evaluate-models-and-workflows-ZH.md) | `candidate` / `in-progress` |
+| 第 20 章：构建个人 LLM 工作系统 | [阅读第 20 章](chapters/20-personal-codex-work-system-ZH.md) | `candidate` / `in-progress` |
+| 第 21 章：构建团队能力系统 | [阅读第 21 章](chapters/21-team-capability-system-ZH.md) | `candidate` / `in-progress` |
+| 第 22 章：持续更新与面向未来 | [阅读第 22 章](chapters/22-continuous-update-and-future-proofing-ZH.md) | `candidate` / `in-progress` |
 
 以下中文实验已经提供，可在完成前两篇之后按你的任务选择：
 
@@ -66,8 +71,8 @@
 | 实验 015：证据化交付 | [打开实验 015](labs/lab-015-evidence-delivery-ZH.md) | `draft` / `not_run` |
 | 实验 016：副作用边界 | [打开实验 016](labs/lab-016-side-effect-boundary-ZH.md) | `draft` / `not_run` |
 | 实验 017：采纳 Skill 前审计发现过程 | [打开实验 017](labs/lab-017-skill-discovery-audit-ZH.md) | `draft` / `not_run` |
+| 实验 018：用初学者旅行打字对话测试保持与迁移 | [打开实验 018](labs/lab-018-language-transfer-ZH.md) | `draft` / `not_run` |
 
-实验 012、018 尚未提供中文文件。
 
 ## 阅读与状态边界
 
