@@ -1,12 +1,23 @@
-name: Build Prysai LLM Playbook Pages candidate artifact
+name: Build and publish Prysai LLM Playbook site
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "book/**"
+      - "docs/governance/**"
+      - "site/**"
+      - "skills/**"
+      - "scripts/build_*.py"
+      - "scripts/validate_*.py"
+      - "README*.md"
+      - ".github/workflows/pages.yml"
   workflow_dispatch:
     inputs:
       deploy:
         description: "Deploy after building (requires Pages to be enabled for this repository)"
         required: true
-        default: false
+        default: true
         type: boolean
 
 permissions:
@@ -18,9 +29,10 @@ concurrency:
 
 jobs:
   build:
-    # This private repository's current GitHub plan does not support Pages.
-    # Keep the workflow available for an explicit run after the repository is
-    # public or the account plan changes, instead of failing every main push.
+    # Builds the bounded site artifact on every content push; deploys to
+    # GitHub Pages when Pages is enabled for the repository (public
+    # repositories on the free plan support it). The build job stays
+    # green even when Pages is not yet enabled, so deployment is opt-in.
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -32,7 +44,7 @@ jobs:
           python-version: "3.12"
 
       - name: Set up GitHub Pages
-        if: inputs.deploy
+        if: ${{ inputs.deploy || github.event_name == 'push' }}
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
 
       - name: Build the bounded Pages artifact
@@ -41,7 +53,7 @@ jobs:
       - name: Record deployment boundary
         shell: bash
         run: |
-          if [ "${{ inputs.deploy }}" = "true" ]; then
+          if [ "${{ inputs.deploy }}" = "true" ] || [ "${{ github.event_name }}" = "push" ]; then
             echo "deployment_status=requested" | tee -a "$GITHUB_STEP_SUMMARY"
           else
             echo "deployment_status=not_deployed" | tee -a "$GITHUB_STEP_SUMMARY"
@@ -57,14 +69,14 @@ jobs:
           retention-days: 14
 
       - name: Upload Pages deployment artifact
-        if: inputs.deploy
+        if: ${{ inputs.deploy || github.event_name == 'push' }}
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
         with:
           path: _site
 
   deploy:
     needs: build
-    if: inputs.deploy
+    if: ${{ inputs.deploy || github.event_name == 'push' }}
     permissions:
       pages: write
       id-token: write
