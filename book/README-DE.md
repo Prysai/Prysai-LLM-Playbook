@@ -25,17 +25,17 @@ Navigation:
 - [Universelle LLM-Erstaufgabe — sichere Textübung](routes/universal-core-foundations-DE.md)
 - [Die erste sichere Änderung — vollständiger deutscher Übungsentwurf](routes/first-safe-change-DE.md)
 
-## Zwei erste lokalisierte Praxisschritte
+## Optionale Anwendungen nach dem Fundament
 
-Wenn du nur mit Textchat beginnen willst, öffne die [Einstiegskarten](communication-clinic-DE.md).
+Wenn du die drei Schritte oben abgeschlossen hast und mit Textchat anwenden willst, öffne die [Anwendungskarten](communication-clinic-DE.md).
 Sie enthalten sieben kopierbare Nachrichten für Sprache, Updates, Entscheidungen, Recherche,
 Quellenprüfung und Grenzen vor dem Teilen. Dieser Pfad ist `draft / not_run` und verspricht weder Sprachflüssigkeit,
 Effizienz noch Lernerfolg.
 
-Für einen einzigen unmittelbaren Versuch kannst du den [sechsstufigen Arbeitsupdate-Ablauf](work-update-practice-loop-DE.md) oder den [sechsstufigen Rechercheprüfungs-Ablauf](research-check-practice-loop-DE.md) wählen. Du bewahrst einen eigenen ersten Versuch, einen begrenzten Hinweis und einen Beleg auf; damit werden weder Produktivität noch Recherchequalität oder Arbeitsreife bewiesen.
+Für eine einzelne Anwendung nach dem Fundament kannst du den [sechsstufigen Arbeitsupdate-Ablauf](work-update-practice-loop-DE.md) oder den [sechsstufigen Rechercheprüfungs-Ablauf](research-check-practice-loop-DE.md) wählen. Du bewahrst einen eigenen ersten Versuch, einen begrenzten Hinweis und einen Beleg auf; damit werden weder Produktivität noch Recherchequalität oder Arbeitsreife bewiesen.
 
-Wenn du noch kein Projekt hast und die KI nichts außerhalb des Chats tun soll,
-beginne mit der [universellen LLM-Erstaufgabe](routes/universal-core-foundations-DE.md).
+Wenn du nach dem Fundament noch kein Projekt hast und die KI nichts außerhalb des Chats tun soll,
+fahre mit der [universellen LLM-Erstaufgabe](routes/universal-core-foundations-DE.md) fort.
 Du schreibst eine fiktive Mitteilung um und hältst Prüfung und Stopp-Punkt
 sichtbar. Das ist eine Übung `candidate / not_run`; sie beweist weder
 Lernergebnisse noch gleiches Verhalten auf verschiedenen Plattformen.

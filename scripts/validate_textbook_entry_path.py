@@ -6,6 +6,7 @@ it does not assess translation quality, learner outcomes, or model behavior.
 
 from __future__ import annotations
 
+import re
 import sys
 from pathlib import Path
 
@@ -21,6 +22,41 @@ OPTIONAL_MARKERS = {
     "KO": "선택 응용 연습",
     "DE": "optionale Anwendungsübung",
 }
+
+START_HERE_HEADING = {
+    "ES": "## Empieza aquí",
+    "JA": "## まずここから",
+    "KO": "## 여기서 시작하세요",
+    "DE": "## Hier beginnen",
+}
+
+
+def visible_start_number_errors(text: str, locale: str) -> list[str]:
+    """Return visible-numbering errors for a localized ``Start here`` list.
+
+    Markdown accepts repeated list numbers, but readers see the source on GitHub
+    and can reasonably treat a duplicate number as a broken route.  This helper
+    deliberately checks only the introductory list in the four localized books
+    that use explicit ordered-list numbers.  It is a navigation check, not a
+    translation-quality assessment.
+    """
+    heading = START_HERE_HEADING.get(locale)
+    if heading is None:
+        return []
+    start = text.find(heading)
+    if start < 0:
+        return ["missing localized start heading"]
+    section = text[start + len(heading):]
+    next_heading = re.search(r"^##\s+", section, flags=re.MULTILINE)
+    if next_heading:
+        section = section[:next_heading.start()]
+    numbers = [int(value) for value in re.findall(r"^\s*(\d+)\.\s+\[", section, flags=re.MULTILINE)]
+    if len(numbers) < 3:
+        return ["start list must contain at least Lesson 0, Chapter 1, and Chapter 2"]
+    expected = list(range(1, len(numbers) + 1))
+    if numbers != expected:
+        return [f"start-list numbers must be sequential: found {numbers}, expected {expected}"]
+    return []
 
 
 def path_for(kind: str, locale: str) -> Path:
@@ -58,6 +94,9 @@ def main() -> int:
                 marker = OPTIONAL_MARKERS[locale]
                 if marker not in text:
                     errors.append(f"{path.relative_to(ROOT)}: missing optional-practice boundary {marker!r}")
+            else:
+                for error in visible_start_number_errors(text, locale):
+                    errors.append(f"{path.relative_to(ROOT)}: {error}")
     if errors:
         print("TEXTBOOK_ENTRY_PATH_FAILED")
         for error in errors:

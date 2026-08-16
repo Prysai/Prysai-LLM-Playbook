@@ -12,14 +12,14 @@
 
 Las tarjetas, los idiomas, las actualizaciones de trabajo y la investigación son **práctica de aplicación opcional** después de esta secuencia; no sustituyen la base sobre LLM.
 
-## Dos primeros pasos localizados
+## Aplicaciones opcionales después de la base
 
-Para una práctica únicamente de texto, consulta las [tarjetas para principiantes](communication-clinic-ES.md): siete mensajes copiables para practicar una frase, una actualización, una decisión, una comprobación de fuentes o un límite antes de compartir. Es una ruta `draft / not_run`, no una promesa de fluidez, eficiencia o aprendizaje demostrado.
+Después de los tres pasos anteriores, puedes consultar las [tarjetas de aplicación](communication-clinic-ES.md): siete mensajes copiables para practicar una frase, una actualización, una decisión, una comprobación de fuentes o un límite antes de compartir. Es una ruta `draft / not_run`, no una promesa de fluidez, eficiencia o aprendizaje demostrado.
 
-También puedes empezar directamente por el [ciclo de actualización de trabajo](work-update-practice-loop-ES.md) o el [ciclo de comprobación de investigación](research-check-practice-loop-ES.md). Son seis mensajes con una primera respuesta propia, una corrección limitada y un recibo; no demuestran productividad, calidad de investigación ni preparación profesional.
+Como aplicación posterior, puedes elegir el [ciclo de actualización de trabajo](work-update-practice-loop-ES.md) o el [ciclo de comprobación de investigación](research-check-practice-loop-ES.md). Son seis mensajes con una primera respuesta propia, una corrección limitada y un recibo; no demuestran productividad, calidad de investigación ni preparación profesional.
 
-Si todavía no tienes un proyecto ni quieres que la IA actúe fuera del chat,
-empieza con la [primera tarea universal de LLM](routes/universal-core-foundations-ES.md):
+Si ya has terminado la base y todavía no tienes un proyecto ni quieres que la IA actúe fuera del chat,
+puedes continuar con la [primera tarea universal de LLM](routes/universal-core-foundations-ES.md):
 reescribirás un aviso ficticio con una comprobación visible y un punto de
 parada. Es un ejercicio `candidate / not_run`; no prueba resultados de
 aprendizaje ni que las plataformas se comporten igual.

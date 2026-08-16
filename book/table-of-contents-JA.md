@@ -16,13 +16,13 @@
 4. [最初の汎用 LLM タスク](routes/universal-core-foundations-JA.md) — 基礎の後に行う任意の応用練習です。
 5. [第 3 章：願いをタスク・プロトコルに変える](chapters/03-task-protocol-JA.md)
    → [Lab 002：タスク・プロトコル](labs/lab-002-task-protocol-JA.md)。
-5. [第 4 章：コンテキスト、権限、Agent の行動境界](chapters/04-context-permissions-and-agent-JA.md)
+6. [第 4 章：コンテキスト、権限、Agent の行動境界](chapters/04-context-permissions-and-agent-JA.md)
     → [Lab 007：行動境界](labs/lab-007-action-boundaries-JA.md)。
-6. [第 5 章：適切な Codex の作業面を選ぶ](chapters/05-choose-the-codex-surface-JA.md)
+7. [第 5 章：適切な Codex の作業面を選ぶ](chapters/05-choose-the-codex-surface-JA.md)
    → [Lab 003：完了宣言を監査する](labs/lab-003-evidence-review-JA.md)。
-7. [第 6 章：モデル選択はモデル崇拝ではない](chapters/06-model-selection-JA.md)
+8. [第 6 章：モデル選択はモデル崇拝ではない](chapters/06-model-selection-JA.md)
    → [Lab 004：最小限で有効な能力を選ぶ](labs/lab-004-skill-selection-JA.md)。
-8. [第 7 章：Skill、Plugin、MCP、ツールは仕事をどう分けるか](chapters/07-skills-plugins-and-tools-JA.md)。
+9. [第 7 章：Skill、Plugin、MCP、ツールは仕事をどう分けるか](chapters/07-skills-plugins-and-tools-JA.md)。
 
 これらの資料は `candidate` または `draft / not_run` のままです。読める経路が
 あることは、翻訳品質、モデル実行、学習効果、転移が検証済みであることを示しません。
