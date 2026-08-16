@@ -114,6 +114,28 @@ Lege in einem wegwerfbaren Verzeichnis eine `input.txt` mit drei unsortierten Ze
 
 Ereignisnamen und Berechtigungen unterscheiden sich je nach Host. Prüfe sie mit offizieller Dokumentation und aktueller Beobachtung. Öffentliche Berichte helfen beim Entwurf von Checks, ersetzen aber keinen eigenen Lauf.
 
+## Eine Zusammenfassung mit einer Ereignisspur prüfen
+
+Halte bei derselben wegwerfbaren Textaufgabe einen einzigen Sortierversuch fest.
+Schreibe jeweils eine Zeile für Vorschlag, Freigabe oder Ablehnung,
+Ausführungsbeginn, Ausführungsende, Read-back der Datei, Check und Übergabe.
+Ein nicht beobachtetes Ereignis bleibt `not_observed`.
+
+```text
+event: effect
+before: running
+after: feedback_received | unknown
+target: sandbox/output.txt
+evidence: Pfad zum Diff oder Read-back
+claim_scope: eine lokale Textdatei
+```
+
+Lass anschließend absichtlich das Read-back von `output.txt` weg und schreibe
+in die Übergabe „fertig“. Finde den ersten Übergang ohne Beleg und korrigiere
+die Übergabe zu `unverified`. Das beweist weder allgemeine Agent- oder
+Modellleistung noch Host-Verhalten. Kapitel und Übung bleiben bis zu protokollierten
+Läufen und Review `candidate / not_run`.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-DE.md">← Vorheriges<br><strong>Kapitel 11 · Einen Skill entwerfen, der seinen Platz verdient</strong></a></td><td align="right"><a data-chapter-nav="next" href="13-action-boundaries-DE.md">Nächstes →<br><strong>Kapitel 13 · Aktionsgrenzen für Dateien, Terminal, Browser und GitHub</strong></a></td></tr></table></nav>

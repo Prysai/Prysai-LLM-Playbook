@@ -114,6 +114,25 @@ next_safe_action: "target을 읽고 나서 새 쓰기를 허용할지 결정"
 
 이벤트 이름과 권한은 host마다 달라집니다. 공식 문서와 현재 관찰로 확인하세요. 공개 보고서는 점검 설계에 도움을 줄 뿐, 자신의 실행을 대신하지 않습니다.
 
+## 사건 기록으로 요약 검토하기
+
+같은 일회용 텍스트 작업에서 한 번의 정렬 시도를 기록하세요. 제안, 승인 또는 거부, 실행 시작,
+실행 종료, 파일 read-back, 검사, 인계에 각각 한 줄을 씁니다. 보지 못한 사건은
+`not_observed`로 남깁니다.
+
+```text
+event: effect
+before: running
+after: feedback_received | unknown
+target: sandbox/output.txt
+evidence: diff 또는 read-back 경로
+claim_scope: 로컬 텍스트 파일 하나
+```
+
+그다음 `output.txt` read-back을 일부러 빼고 인계문에 “완료”라고 써 보세요. 처음으로 근거가
+없는 전환을 찾아 `unverified`로 고칩니다. 이것은 Agent, model, host의 일반 성능을 증명하지
+않으며, 이 장과 실험은 기록과 검토 전까지 `candidate / not_run`입니다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-KO.md">← 이전<br><strong>11장 · 제 몫을 하는 Skill 설계하기</strong></a></td><td align="right"><a data-chapter-nav="next" href="13-action-boundaries-KO.md">다음 →<br><strong>13장 · 파일, 터미널, 브라우저, GitHub의 행동 경계</strong></a></td></tr></table></nav>
