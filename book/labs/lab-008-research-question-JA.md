@@ -8,8 +8,17 @@ domain: research
 goal: "広いテーマを、確認できる出典で主張を支持・限定・未解決のままにできる範囲付きの問いへ変える"
 setup: "低リスクの公開テーマ、開ける一次資料、権威が不確かな資料一つ、空の主張—証拠表"
 task: "候補の問いを書き、範囲付きの一つを選び、出典計画と主張の対応表を作り、検証不能な資料で穴を埋めない"
+evidence:
+  - "三つの問い、選択理由、範囲を絞った最終の問い"
+  - "source plan と access date・限界を含む claim-evidence table"
+failure_variant: "アクセス不能、無関係、弱い source を加え、claim を作らず範囲を狭める"
+reflection: "どの制約が問いを答えられるものにしたか。最も弱い claim は何で、何が結論を変えるか。"
 status: draft
 last_verified: "Maintainer reference run accepted 2026-08-13; learner run not run"
+transfer_task: "同じ問いと evidence protocol を別の低リスク領域に適用する"
+transfer_domain: "product research、engineering investigation、content checking"
+transfer_evidence: "問いの版、source record、claim mapping、限界、次の調査を保存する"
+transfer_limitations: "公開 source は不完全、古い、偏っている可能性がある"
 ---
 
 # Lab 008：大きなテーマを答えられる調査の問いに絞る

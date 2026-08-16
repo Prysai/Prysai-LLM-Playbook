@@ -8,8 +8,17 @@ domain: research
 goal: "Convertir un tema amplio en una pregunta delimitada cuyas afirmaciones puedan apoyarse, limitarse o quedar sin resolver con fuentes inspeccionables"
 setup: "Un tema público y de bajo riesgo, una fuente primaria accesible, una fuente de autoridad incierta y una tabla de afirmación-evidencia vacía"
 task: "Escribir preguntas candidatas, elegir una con alcance explícito, planificar fuentes, mapear afirmaciones a evidencia y no rellenar huecos con una fuente no verificable"
+evidence:
+  - "Tres preguntas candidatas, razón de elección y pregunta final acotada"
+  - "Plan de fuentes y tabla afirmación-evidencia con fecha de acceso y límites"
+failure_variant: "Añadir una fuente inaccesible, irrelevante o débil y limitar la afirmación afectada en vez de inventarla"
+reflection: "¿Qué restricción hizo respondible la pregunta, qué afirmación tiene apoyo más débil y qué cambiaría la conclusión?"
 status: draft
 last_verified: "Maintainer reference run accepted 2026-08-13; learner run not run"
+transfer_task: "Aplicar el mismo protocolo de pregunta y evidencia a un segundo ámbito de bajo riesgo"
+transfer_domain: "investigación de producto, investigación de ingeniería o verificación de contenido"
+transfer_evidence: "Conservar versión de pregunta, registro de fuentes, mapeo de afirmaciones, límites y siguiente investigación"
+transfer_limitations: "Las fuentes públicas accesibles pueden estar incompletas, desactualizadas o sesgadas"
 ---
 
 # Lab 008: reducir un tema a una pregunta de investigación respondible

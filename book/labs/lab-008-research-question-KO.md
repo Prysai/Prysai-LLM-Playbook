@@ -8,8 +8,17 @@ domain: research
 goal: "넓은 주제를, 확인 가능한 출처로 주장을 뒷받침·제한·미해결 상태로 남길 수 있는 범위 있는 질문으로 바꾼다"
 setup: "저위험 공개 주제, 열 수 있는 1차 출처, 권위가 불확실한 출처 하나, 빈 주장-증거 표"
 task: "후보 질문을 쓰고 범위가 있는 하나를 고르며 출처 계획과 주장 대응표를 만들고 검증 못 한 출처로 빈틈을 메우지 않는다"
+evidence:
+  - "세 후보 질문, 선택 이유, 범위를 좁힌 최종 질문"
+  - "접근 날짜와 한계가 있는 source plan 및 claim-evidence 표"
+failure_variant: "접근 불가, 무관, 약한 source를 넣고 주장을 꾸미지 말고 범위를 줄인다"
+reflection: "어떤 제약이 질문을 답할 수 있게 했는가? 가장 약한 claim은 무엇이며 무엇이 결론을 바꾸는가?"
 status: draft
 last_verified: "Maintainer reference run accepted 2026-08-13; learner run not run"
+transfer_task: "같은 질문과 evidence protocol을 다른 저위험 영역에 적용한다"
+transfer_domain: "product research, engineering investigation 또는 content checking"
+transfer_evidence: "질문 버전, source record, claim mapping, 한계, 다음 조사를 보관한다"
+transfer_limitations: "공개 source는 불완전하거나 오래되거나 편향될 수 있다"
 ---
 
 # Lab 008: 큰 주제를 답할 수 있는 조사 질문으로 좁히기
@@ -22,7 +31,7 @@ last_verified: "Maintainer reference run accepted 2026-08-13; learner run not ru
 
 공개된 저위험 주제를 고릅니다. 개인 데이터와 법률·의료·금융 조언은 제외합니다. 오늘 열 수 있는 1차 또는 권위 있는 출처 하나와 권위나 접근이 불확실한 후보 하나를 준비하고 메모하기 전에 URL과 접근 날짜를 기록합니다.
 
-## 과제와 실험
+## 작업과 실험
 
 후보 질문 세 개를 쓰고 각각에 다음을 기록합니다.
 

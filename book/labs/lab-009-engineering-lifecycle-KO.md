@@ -8,8 +8,17 @@ domain: engineering
 goal: "작은 비교를 보편적 우위의 증거로 포장하지 않고, 정의·계획·검증·검토·전달이 어느 지점에서 재작업을 줄이는지 측정한다"
 setup: "버려도 되는 로컬 저장소, 고정한 저위험 과제 세 개, 기준 리비전, 고정 도구, 운영 또는 외부 부작용 없음"
 task: "같은 세 과제를 직접 방식과 수명 주기 방식으로 실행하고, 첫 결과·조건 변화·증거 품질·재작업을 비교한다"
+evidence:
+  - "두 경로의 baseline revision, 고정 task, 순서, input hash"
+  - "첫 result, 통제된 rework, diff, check output, rework count"
+failure_variant: "baseline을 복원하지 않거나 build pass를 user acceptance라고 부르고 not comparable 또는 unverified로 표시한다"
+reflection: "어떤 phase가 가장 큰 근거 없는 claim이나 rework를 막았으며 어떤 교란 요인이 남는가?"
 status: draft
 last_verified: "not run"
+transfer_task: "같은 baseline으로 작은 documentation 또는 research workflow에 비교를 옮긴다"
+transfer_domain: "engineering, research 또는 documentation"
+transfer_evidence: "고정 input, 두 run record, diff, check, 비교, 한계를 보관한다"
+transfer_limitations: "세 로컬 task는 일반적인 model이나 process 우위를 증명하지 않는다"
 ---
 
 # Lab 009: 바로 구현하기와 전체 엔지니어링 수명 주기 비교하기

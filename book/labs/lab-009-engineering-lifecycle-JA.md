@@ -8,8 +8,17 @@ domain: engineering
 goal: "小さな比較で普遍的優位を装わず、定義、計画、検証、レビュー、交付がどこで手戻りを減らすかを測る"
 setup: "捨てられるローカルリポジトリ、固定した低リスク課題三つ、基準リビジョン、固定ツール、本番または外部副作用なし"
 task: "同じ三課題を直接とライフサイクルの流れで実行し、初回結果、条件変化、証拠品質、手戻りを比較する"
+evidence:
+  - "両方の経路の baseline revision、固定 task、順序、input hash"
+  - "最初の result、制御した rework、diff、check output、rework count"
+failure_variant: "baseline を戻さない、または build pass を user acceptance と呼び、not comparable か unverified にする"
+reflection: "どの phase が最大の未裏付け claim や rework を防いだか。どんな交絡が残るか。"
 status: draft
 last_verified: "not run"
+transfer_task: "同じ baseline で小さな documentation または research workflow に比較を移す"
+transfer_domain: "engineering、research、documentation"
+transfer_evidence: "固定 input、二つの run record、diff、check、比較、限界を保存する"
+transfer_limitations: "三つのローカル task は一般的な model や process の優位を証明しない"
 ---
 
 # Lab 009：直接実装と完全なエンジニアリング・ライフサイクルを比べる

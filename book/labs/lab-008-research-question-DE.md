@@ -8,8 +8,17 @@ domain: research
 goal: "Ein breites Thema in eine abgegrenzte Frage überführen, deren Aussagen mit prüfbaren Quellen gestützt, begrenzt oder offen gelassen werden können"
 setup: "Ein öffentliches risikoarmes Thema, eine zugängliche Primärquelle, eine Quelle mit unklarer Autorität und eine leere Behauptung-Evidenz-Tabelle"
 task: "Fragekandidaten schreiben, eine Frage mit explizitem Umfang auswählen, Quellen planen, Aussagen Belegen zuordnen und Lücken nicht mit nicht prüfbaren Quellen füllen"
+evidence:
+  - "Drei Fragekandidaten, Auswahlgrund und eingegrenzte Endfrage"
+  - "Quellenplan und Behauptung-Evidenz-Tabelle mit Zugriffsdatum und Grenzen"
+failure_variant: "Eine unzugängliche, irrelevante oder schwache Quelle hinzufügen und die betroffene Aussage begrenzen statt sie zu erfinden"
+reflection: "Welche Einschränkung machte die Frage beantwortbar, welche Aussage ist am schwächsten gestützt und was würde die Schlussfolgerung ändern?"
 status: draft
 last_verified: "Maintainer reference run accepted 2026-08-13; learner run not run"
+transfer_task: "Dasselbe Frage- und Evidenzprotokoll in einem zweiten risikoarmen Bereich anwenden"
+transfer_domain: "Produktrecherche, Engineering-Untersuchung oder Inhaltsprüfung"
+transfer_evidence: "Frageversion, Quellenrecord, Behauptungszuordnung, Grenzen und nächste Untersuchung aufbewahren"
+transfer_limitations: "Zugängliche öffentliche Quellen können unvollständig, veraltet, verzerrt oder für Entscheidungen ungeeignet sein"
 ---
 
 # Lab 008: Ein großes Thema zu einer beantwortbaren Forschungsfrage eingrenzen

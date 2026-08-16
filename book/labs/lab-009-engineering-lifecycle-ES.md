@@ -8,8 +8,17 @@ domain: engineering
 goal: "Medir dónde definición, planificación, verificación, revisión y entrega reducen retrabajo sin fingir que un banco pequeño prueba superioridad universal"
 setup: "Un repositorio local desechable, tres tareas congeladas de bajo riesgo, una revisión base y herramientas fijas sin efectos externos o de producción"
 task: "Ejecutar las mismas tres tareas con flujo directo y de ciclo completo, conservar primeros intentos, clasificar deriva de condiciones y comparar evidencia y retrabajo"
+evidence:
+  - "Revisión base, tareas fijas, orden y hash de entrada para ambos caminos"
+  - "Primer resultado, retrabajo controlado, diff, salida de check y recuento de retrabajo"
+failure_variant: "No restaurar la base o llamar aceptación de usuario a un build aprobado; marcarlo not comparable o unverified"
+reflection: "¿Qué fase evitó la mayor afirmación sin apoyo o retrabajo, y qué factores siguen confundiendo el resultado?"
 status: draft
 last_verified: "not run"
+transfer_task: "Trasladar la comparación a un flujo pequeño de documentación o investigación con la misma base"
+transfer_domain: "ingeniería, investigación o documentación"
+transfer_evidence: "Conservar inputs, dos registros, diffs, checks, comparación y límites"
+transfer_limitations: "Tres tareas locales no prueban superioridad general de modelo o proceso"
 ---
 
 # Lab 009: comparar implementación directa con un ciclo completo de ingeniería

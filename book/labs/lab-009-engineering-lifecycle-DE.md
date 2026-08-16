@@ -8,8 +8,17 @@ domain: engineering
 goal: "Ohne aus einem kleinen Vergleich eine allgemeine Überlegenheit abzuleiten messen, wo Definition, Planung, Prüfung, Review und Übergabe Nacharbeit verringern"
 setup: "Ein wegwerfbares lokales Repository, drei eingefrorene risikoarme Aufgaben, eine Basisrevision, feste Werkzeuge und keine Produktions- oder externen Nebenwirkungen"
 task: "Dieselben drei Aufgaben direkt und mit Lebenszyklus ausführen und Erstversuche, veränderte Bedingungen, Belegqualität und Nacharbeit vergleichen"
+evidence:
+  - "Basisrevision, feste Aufgaben, Reihenfolge und Eingabe-hash für beide Wege"
+  - "Erstergebnis, kontrollierte Nacharbeit, Diff, Check-Ausgabe und Nacharbeitszählung"
+failure_variant: "Die Basis nicht wiederherstellen oder Build-Erfolg als Nutzerabnahme ausgeben; Ergebnis als not comparable oder unverified markieren"
+reflection: "Welche Phase verhinderte die größte unbelegte Behauptung oder Nacharbeit, und welche Störfaktoren bleiben?"
 status: draft
 last_verified: "not run"
+transfer_task: "Den Vergleich auf einen kleinen Dokumentations- oder Rechercheablauf mit gleicher Baseline übertragen"
+transfer_domain: "Engineering, Recherche oder Dokumentation"
+transfer_evidence: "Feste Inputs, beide Laufprotokolle, Diffs, Checks, Vergleich und Grenzen aufbewahren"
+transfer_limitations: "Drei lokale Aufgaben beweisen keine allgemeine Modell- oder Prozessüberlegenheit"
 ---
 
 # Lab 009: Direkte Umsetzung mit einem vollständigen Engineering-Lebenszyklus vergleichen
