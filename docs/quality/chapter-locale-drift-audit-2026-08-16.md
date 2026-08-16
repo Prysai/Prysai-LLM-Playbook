@@ -275,6 +275,7 @@ H2 heading counts per locale, with the difference against the English source:
 ## Repair plan (priority order)
 
 1. **Chapter 1** — done 2026-08-16 (beginner opener aligned in all six locales).
+2. **Chapter 21 (ZH)** — realigned 2026-08-16 (commit 7c03720); 11/11 H2 sections match the English source.
 2. **Chapters 6, 13, 17-22** — re-translate the missing EN sections into
    ZH/ES/JA/KO/DE (these locales predate recent English expansions).
 3. **Chapters 8-12** — reconcile section order; decide whether EN gained or
