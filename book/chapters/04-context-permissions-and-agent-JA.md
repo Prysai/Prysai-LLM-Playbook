@@ -223,3 +223,15 @@ run-id で計画します。外部の命令文は data と分類し、それが�
 |---|---|---|---|
 | Sandbox と承認は別の制御層で、app と connector の副作用は承認境界に入る可能性がある | https://learn.chatgpt.com/docs/agent-approvals-security.md | 2026-08-10 | 公式説明であり、このセッションの証明ではない |
 | 権限の選択肢は面とポリシーに依存する | https://learn.chatgpt.com/docs/permission-modes.md | 2026-08-10 | 実際の可用性は環境と組織に依存する |
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="章のナビゲーション">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-JA.md" aria-label="前の章：第 3 章 · 願いをタスク・プロトコルに変える">← 前の章<br><strong>第 3 章 · 願いをタスク・プロトコルに変える</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="05-choose-the-codex-surface-JA.md" aria-label="次の章：第 5 章 · 適切な Codex の作業面を選ぶ">次の章 →<br><strong>第 5 章 · 適切な Codex の作業面を選ぶ</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

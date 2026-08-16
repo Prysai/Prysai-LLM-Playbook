@@ -4,7 +4,7 @@
 
 これは日本語で読める入口であり、書籍全体の翻訳ではありません。正規の
 カタログには `candidate` の章が 22、本書の実験である `draft` の Lab が 18
-あります。現在、日本語で読めるのは 4 章と 4 Lab です。このページのリンクは
+あります。現在、日本語で読めるのは 5 章と 5 Lab です。このページのリンクは
 すべて対応する日本語コンテンツを指します。`-JA` ファイルがなければ、別の章や
 別の言語へ飛ばさず「未提供」と明記します。
 
@@ -20,6 +20,8 @@
    → [Lab 002：タスク・プロトコル](labs/lab-002-task-protocol-JA.md)。
 5. [第 4 章：コンテキスト、権限、Agent の行動境界](chapters/04-context-permissions-and-agent-JA.md)
     → [Lab 007：行動境界](labs/lab-007-action-boundaries-JA.md)。
+6. [第 5 章：適切な Codex の作業面を選ぶ](chapters/05-choose-the-codex-surface-JA.md)
+   → [Lab 003：完了宣言を監査する](labs/lab-003-evidence-review-JA.md)。
 
 これらの資料は `candidate` または `draft / not_run` のままです。読める経路が
 あることは、翻訳品質、モデル実行、学習効果、転移が検証済みであることを示しません。
@@ -32,7 +34,7 @@
 | 02 — 最初の安全で検証可能なタスクを完了する | [提供中：第 2 章](chapters/02-first-safe-task-JA.md) · `candidate / in-progress` |
 | 03 — 願いをタスク・プロトコルに変える | [提供中：第 3 章](chapters/03-task-protocol-JA.md) · `candidate / in-progress` |
 | 04 — コンテキスト、権限、Agent の行動境界 | [提供中：第 4 章](chapters/04-context-permissions-and-agent-JA.md) · `candidate / in-progress` |
-| 05 — 適切な Codex の作業面を選ぶ | 日本語ファイルはまだありません。 |
+| 05 — 適切な Codex の作業面を選ぶ | [提供中：第 5 章](chapters/05-choose-the-codex-surface-JA.md) · `candidate / in-progress` |
 | 06 — モデル選択はモデル崇拝ではない | 日本語ファイルはまだありません。 |
 | 07 — Skills、Plugins、MCP、ツール | 日本語ファイルはまだありません。 |
 | 08 — 定義から納品までの完全なライフサイクル | 日本語ファイルはまだありません。 |
@@ -57,7 +59,7 @@
 | --- | --- |
 | 001 — 最初の安全なタスク | [提供中：Lab 001](labs/lab-001-first-safe-task-JA.md) · `draft / not_run` |
 | 002 — タスク・プロトコル | [提供中：Lab 002](labs/lab-002-task-protocol-JA.md) · `draft / not_run` |
-| 003 — 証拠レビュー | 日本語ファイルはまだありません。 |
+| 003 — 証拠レビュー | [提供中：Lab 003](labs/lab-003-evidence-review-JA.md) · `draft / not_run` |
 | 004 — 最小限で有効な能力を選ぶ | 日本語ファイルはまだありません。 |
 | 005 — 繰り返す方法を範囲のある Skill にする | 日本語ファイルはまだありません。 |
 | 006 — Agent の停止条件を設計する | 日本語ファイルはまだありません。 |
