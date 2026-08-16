@@ -50,9 +50,10 @@ A language model is not a new idea. The lineage:
   powered early phone keyboards and machine translation. The weakness: they
   could only see a short window of context.
 - **2017 — the Transformer.** A research paper called *Attention Is All You
-  Need* introduced an architecture that lets a model weigh all the words in a
-  text at once, instead of reading left to right. This removed the short-window
-  bottleneck.
+  Need* introduced an architecture in which tokens can attend to other tokens
+  in the available context. It made long-range relationships easier to model
+  and scale, but did not remove context limits: practical models still have a
+  finite context window.
 - **2018–2022 — scale and the "next-token" trick.** Companies trained
   Transformer models on enormous corpora with one objective: predict the next
   token (a token is roughly a word fragment). With enough data and compute,
@@ -89,9 +90,10 @@ Think of three stages:
 
 Three practical consequences:
 
-- **The model is frozen at its training cutoff** unless the provider adds
-  retrieval or the model is updated. Always ask what the cutoff is for
-  time-sensitive questions.
+- **A particular model version has a training cutoff.** A product may later
+  update that version or add retrieval, search, files, memory, or tools. For a
+  time-sensitive answer, check the product's current documentation, the source
+  it used, and the date rather than relying on the cutoff alone.
 - **Every request costs tokens.** Both the input you provide and the output
   generated count. Long context is useful but not free.
 - **The same model can behave differently** depending on system prompts,

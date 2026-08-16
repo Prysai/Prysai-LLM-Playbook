@@ -56,9 +56,10 @@ Ein Sprachmodell ist keine neue Idee. Der Stammbaum:
   Übersetzung an. Die Schwäche: Sie konnten nur ein kurzes Kontextfenster
   sehen.
 - **2017 — der Transformer.** Ein Forschungspapier namens *Attention Is All
-  You Need* stellte eine Architektur vor, die es einem Modell erlaubt, alle
-  Wörter eines Texts gleichzeitig zu gewichten, statt von links nach rechts
-  zu lesen. Damit fiel der Engpass des kurzen Fensters weg.
+  You Need* stellte eine Architektur vor, in der Tokens andere Tokens im
+  verfügbaren Kontext beachten können. Sie machte es leichter, weit entfernte
+  Beziehungen zu modellieren und zu skalieren, hob Kontextgrenzen aber nicht
+  auf: Praktische Modelle haben weiterhin ein endliches Kontextfenster.
 - **2018–2022 — Skalierung und der „Next-Token“-Trick.** Unternehmen
   trainierten Transformer-Modelle auf riesigen Korpora mit einem einzigen
   Ziel: den nächsten Token vorherzusagen (ein Token ist grob gesagt ein
@@ -100,9 +101,10 @@ Denk an drei Phasen:
 
 Drei praktische Konsequenzen:
 
-- **Das Modell ist an seinem Trainings-Cutoff eingefroren**, sofern der
-  Anbieter kein Retrieval ergänzt oder das Modell aktualisiert wird. Frag bei
-  zeitkritischen Fragen immer nach dem Cutoff.
+- **Eine konkrete Modellversion hat einen Trainings-Cutoff.** Ein Produkt kann
+  sie später aktualisieren oder Retrieval, Suche, Dateien, Speicher oder Tools
+  ergänzen. Prüfe bei zeitkritischen Antworten aktuelle Produktdokumentation,
+  verwendete Quelle und Datum; ein Cutoff allein entscheidet die Frage nicht.
 - **Jede Anfrage kostet Tokens.** Sowohl die Eingabe, die du lieferst, als
   auch die erzeugte Ausgabe zählen. Ein langer Kontext ist nützlich, aber
   nicht umsonst.

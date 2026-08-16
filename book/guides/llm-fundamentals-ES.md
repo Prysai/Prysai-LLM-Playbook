@@ -57,9 +57,10 @@ Un modelo de lenguaje no es una idea nueva. El linaje:
   teléfono y la traducción automática. Su debilidad: solo podían ver una
   ventana corta de contexto.
 - **2017 — el Transformer.** Un artículo de investigación titulado *Attention
-  Is All You Need* introdujo una arquitectura que permite al modelo ponderar
-  todas las palabras de un texto a la vez, en lugar de leer de izquierda a
-  derecha. Esto eliminó el cuello de botella de la ventana corta.
+  Is All You Need* introdujo una arquitectura en la que los tokens pueden
+  atender a otros tokens del contexto disponible. Facilitó modelar y escalar
+  relaciones lejanas, pero no eliminó los límites de contexto: los modelos
+  prácticos siguen teniendo una ventana de contexto finita.
 - **2018–2022 — escala y el truco del «siguiente token».** Las empresas
   entrenaron modelos Transformer con corpus enormes y un único objetivo:
   predecir el siguiente token (un token es, a grandes rasgos, un fragmento de
@@ -101,9 +102,11 @@ Piensa en tres etapas:
 
 Tres consecuencias prácticas:
 
-- **El modelo queda congelado en su fecha de corte del entrenamiento** a menos
-  que el proveedor añada recuperación o el modelo se actualice. Pregunta
-  siempre cuál es esa fecha para cuestiones sensibles al tiempo.
+- **Una versión concreta del modelo tiene una fecha de corte de entrenamiento.**
+  El producto puede actualizarla después o añadir recuperación, búsqueda,
+  archivos, memoria o herramientas. Para una respuesta sensible al tiempo,
+  comprueba la documentación actual, la fuente usada y la fecha; no te bases
+  solo en la fecha de corte.
 - **Cada petición cuesta tokens.** Cuentan tanto la entrada que proporcionas
   como la salida generada. El contexto largo es útil, pero no gratis.
 - **El mismo modelo puede comportarse de forma distinta** según las

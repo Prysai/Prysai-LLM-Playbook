@@ -61,6 +61,28 @@ REQUIRED_MARKERS = {
     ),
 }
 
+# These were attractive simplifications, but they teach the wrong mental model:
+# attention does not make context unlimited, and a product's freshness cannot
+# be inferred from a cutoff label alone. Keep the correction visible in every
+# locale and reject the previous absolute wording when it returns.
+ACCURACY_MARKERS = {
+    "EN": ("finite context window", "rather than relying on the cutoff alone"),
+    "ZH": ("有限的上下文窗口", "不能只凭截止日期下结论"),
+    "ES": ("ventana de contexto finita", "solo en la fecha de corte"),
+    "JA": ("有限のcontext window", "カットオフだけで判断せず"),
+    "KO": ("유한한 context window", "cutoff만으로 판단하지 말고"),
+    "DE": ("endliches Kontextfenster", "ein Cutoff allein entscheidet die Frage nicht"),
+}
+
+FORBIDDEN_MARKERS = {
+    "EN": ("This removed the short-window bottleneck.", "The model is frozen at its training cutoff"),
+    "ZH": ("短窗口这个瓶颈就此被打破", "模型冻结在它的训练截止日期"),
+    "ES": ("Esto eliminó el cuello de botella de la ventana corta.", "El modelo queda congelado en su fecha de corte"),
+    "JA": ("これで短い窓というボトルネックが取り除かれました", "モデルは学習カットオフの時点で固定されています"),
+    "KO": ("짧은 범위라는 병목이 사라졌습니다", "모델은 학습 cutoff 시점에 고정됩니다"),
+    "DE": ("Damit fiel der Engpass des kurzen Fensters weg.", "Das Modell ist an seinem Trainings-Cutoff eingefroren"),
+}
+
 
 def main() -> int:
     errors: list[str] = []
@@ -73,6 +95,12 @@ def main() -> int:
         for marker in markers:
             if marker not in text:
                 errors.append(f"{path.relative_to(ROOT)}: missing boundary marker {marker!r}")
+        for marker in ACCURACY_MARKERS[locale]:
+            if marker not in text:
+                errors.append(f"{path.relative_to(ROOT)}: missing accuracy marker {marker!r}")
+        for marker in FORBIDDEN_MARKERS[locale]:
+            if marker in text:
+                errors.append(f"{path.relative_to(ROOT)}: contains superseded absolute claim {marker!r}")
 
     if errors:
         print("LLM_FUNDAMENTALS_BOUNDARIES_FAILED")
