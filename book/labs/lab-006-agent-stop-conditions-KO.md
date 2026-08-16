@@ -8,8 +8,17 @@ domain: general
 goal: "관찰 가능한 사건, 제한된 재시도, 인계 기록으로 Agent가 계속·질문·복구·중단할지 판단한다"
 setup: "자격 증명, 네트워크, 운영 파일, 되돌릴 수 없는 명령이 없는 폐기 가능한 로컬 텍스트 과제"
 task: "경계가 있는 실패 분기와 응답 유실 조정을 수행하고 사건, 증거, 최종 결정을 남긴다"
+evidence:
+  - "각 제한 분기의 baseline, event, run record"
+  - "응답 손실 뒤 read-back과 첫 unknown이 담긴 handoff"
+failure_variant: "허용 root 밖 write 또는 새 조건 없는 retry를 요구하고 행동 전에 중단한다"
+reflection: "계속, retry, stop을 뒷받침하는 관찰은 무엇이며 최소 read check는 어떤 unknown을 줄이는가?"
 status: draft
 last_verified: "not run"
+transfer_task: "중단 protocol을 버릴 수 있는 문서 사본의 로컬 link review로 옮긴다"
+transfer_domain: "documentation 또는 저위험 engineering review"
+transfer_evidence: "event log, read-back, 제한된 diff, handoff, unknown을 보관한다"
+transfer_limitations: "로컬 fixture는 실제 제품의 같은 event, permission, stop을 증명하지 않는다"
 ---
 
 # Lab 006: Agent 중단 조건 설계하기

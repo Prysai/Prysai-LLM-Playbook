@@ -8,8 +8,17 @@ domain: general
 goal: "繰り返す流れが Skill に値するか決め、どこでも発火するのでなく作業を絞ることを確かめる"
 setup: "少なくとも二回終えた低リスクの流れ、別の練習ディレクトリ、機微情報を除いた四つのケース、公式 Skill バリデーター"
 task: "安定した判断を取り出し、最小の有用な Skill を書き、正例・境界・失敗・転移を試し、インストールせず採用判断を残す"
+evidence:
+  - "二つの元実行記録と、安定した判断と偶然の詳細の表"
+  - "候補 Skill、source と license record、validator 出力、四つのテスト"
+failure_variant: "プロジェクト固有の詳細または許可が不明な資料を入れ、決定を blocked にする"
+reflection: "どの判断が Skill に安定しているか、何を context に残すか、候補は trigger を広げず漏れを減らしたか?"
 status: draft
 last_verified: "not run"
+transfer_task: "同じ抽出と四つのテストを別の繰り返し作業に適用する"
+transfer_domain: "研究、engineering、marketing、content review"
+transfer_evidence: "比較、候補 revision、validator 結果、テスト、決定を保存する"
+transfer_limitations: "構造検証は production reliability、採用、license approval を証明しない"
 ---
 
 # Lab 005：繰り返す方法を境界のある Skill にする

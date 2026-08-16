@@ -8,8 +8,17 @@ domain: general
 goal: "반복 흐름이 Skill이 될 가치가 있는지 판단하고, 어디서나 작동하는 대신 작업을 좁히는지 확인한다"
 setup: "두 번 이상 끝낸 저위험 흐름, 분리된 연습 폴더, 민감 정보를 뺀 네 사례, 공식 Skill 검사기"
 task: "안정된 판단을 뽑아 가장 작은 유용한 Skill을 쓰고, 긍정·경계·실패·전이 사례를 시험한 뒤 설치 없이 채택 결정을 남긴다"
+evidence:
+  - "두 원본 실행 기록과 안정된 결정 대 우연한 세부 정보 표"
+  - "후보 Skill, source와 license record, validator 출력, 네 가지 테스트"
+failure_variant: "프로젝트 전용 세부 정보나 허가가 불명확한 자료를 넣고 결정을 blocked로 남긴다"
+reflection: "어떤 결정이 Skill로 안정적인가, 무엇을 context에 남기는가, 후보가 trigger를 넓히지 않고 누락을 줄였는가?"
 status: draft
 last_verified: "not run"
+transfer_task: "같은 추출과 네 테스트를 다른 반복 작업에 적용한다"
+transfer_domain: "연구, engineering, marketing 또는 content review"
+transfer_evidence: "비교, 후보 revision, validator 결과, 테스트, 결정을 보관한다"
+transfer_limitations: "구조 검증은 production reliability, 채택, license approval을 증명하지 않는다"
 ---
 
 # Lab 005: 반복되는 방법을 경계가 분명한 Skill로 만들기

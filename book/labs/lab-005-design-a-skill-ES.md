@@ -8,8 +8,17 @@ domain: general
 goal: "Decidir si un flujo repetido merece un Skill y comprobar que el Skill acota el trabajo en vez de activarse en todas partes"
 setup: "Un flujo de bajo riesgo completado al menos dos veces, un directorio de práctica separado, cuatro casos sin datos sensibles y el validador oficial de Skills"
 task: "Extraer las decisiones estables, escribir el Skill útil más pequeño, probar casos positivo, límite, fallo y transferencia, y producir una decisión de adopción sin instalarlo"
+evidence:
+  - "Dos registros fuente y una tabla de decisiones estables frente a incidentales"
+  - "Skill candidato, registro de fuente y licencia, salida del validador y cuatro pruebas"
+failure_variant: "Incluir un detalle específico de proyecto o material sin permiso claro y dejar la decisión como blocked"
+reflection: "¿Qué decisión es estable para codificar, qué permanece como contexto y el candidato reduce omisiones sin activar demasiado?"
 status: draft
 last_verified: "not run"
+transfer_task: "Aplicar la extracción y cuatro pruebas a un flujo repetido de otro dominio"
+transfer_domain: "investigación, ingeniería, marketing o revisión de contenido"
+transfer_evidence: "Conservar comparación, revisión candidata, resultado del validador, pruebas y decisión"
+transfer_limitations: "La validación estructural no demuestra fiabilidad de producción, adopción ni aprobación de licencia"
 ---
 
 # Lab 005: convertir un método repetido en un Skill acotado

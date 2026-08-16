@@ -8,8 +8,17 @@ domain: general
 goal: "Usar eventos observables, reintentos acotados y una entrega para decidir si un Agent continúa, pregunta, recupera o se detiene"
 setup: "Una tarea de texto local desechable sin credenciales, red, archivos de producción ni órdenes irreversibles"
 task: "Recorrer fallos acotados y una conciliación de respuesta perdida, registrando evidencia y decisión final"
+evidence:
+  - "Línea base, eventos y registros de ejecución para cada rama limitada"
+  - "Lectura posterior tras respuesta perdida y relevo con el primer evento desconocido"
+failure_variant: "Pedir una escritura fuera de la raíz permitida o un reintento sin condición nueva y detenerse antes de actuar"
+reflection: "¿Qué observación justifica continuar, reintentar o detenerse, y qué lectura mínima reduce la incertidumbre?"
 status: draft
 last_verified: "not run"
+transfer_task: "Trasladar el protocolo de parada a una revisión local de enlaces en una copia desechable"
+transfer_domain: "documentación o revisión de ingeniería de bajo riesgo"
+transfer_evidence: "Conservar log de eventos, lectura posterior, diff limitado, relevo e incógnitas"
+transfer_limitations: "El fixture local no prueba eventos, permisos o paradas iguales en un producto real"
 ---
 
 # Lab 006: diseñar condiciones de parada para un Agent

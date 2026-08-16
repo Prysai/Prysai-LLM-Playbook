@@ -8,8 +8,17 @@ domain: general
 goal: "観察できるイベント、回数を限った再試行、交接記録で、Agent が続行・質問・復旧・停止すべきか決める"
 setup: "認証情報、ネットワーク、本番ファイル、不可逆なコマンドを使わない、捨てられるローカルのテキスト課題"
 task: "境界のある失敗分岐と応答喪失後の照合を行い、イベント、証拠、最終判断を残す"
+evidence:
+  - "各分岐の baseline、event、run record"
+  - "応答喪失後の read-back と最初の unknown を示す handoff"
+failure_variant: "許可外 root の write または新条件なしの retry を要求し、行動前に停止する"
+reflection: "継続、retry、stop を支える観測は何か。最小の read check はどの unknown を減らすか。"
 status: draft
 last_verified: "not run"
+transfer_task: "停止 protocol を破棄可能な文書コピーのローカル link review に移す"
+transfer_domain: "documentation または低リスク engineering review"
+transfer_evidence: "event log、read-back、限定 diff、handoff、unknown を保存する"
+transfer_limitations: "ローカル fixture は実製品で同じ event、permission、stop があることを示さない"
 ---
 
 # Lab 006：Agent の停止条件を設計する

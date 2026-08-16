@@ -8,8 +8,18 @@ domain: general
 goal: "Entscheiden, ob ein wiederholter Ablauf einen Skill verdient, und prüfen, dass der Skill Arbeit begrenzt statt überall auszulösen"
 setup: "Ein mindestens zweimal ausgeführter risikoarmer Ablauf, ein getrenntes Übungsverzeichnis, vier bereinigte Fixtures und der offizielle Skill-Validator"
 task: "Stabile Entscheidungen herausarbeiten, den kleinsten nützlichen Skill schreiben, positive, Grenz-, Fehler- und Transferfälle prüfen und ohne Installation eine Adoptionsentscheidung treffen"
+evidence:
+  - "Zwei Quellprotokolle und eine Tabelle stabiler gegenüber zufälligen Entscheidungen"
+  - "Kandidat, Quellen- und Lizenzrecord, Validatorausgabe und vier Verhaltenstests"
+  - "Adoptionsentscheidung mit Owner, Rechtegrenze, Rollback und offenen Risiken"
+failure_variant: "Ein projektspezifisches Detail oder Material ohne geklärte Erlaubnis einfügen und die Entscheidung als blocked festhalten"
+reflection: "Welche Entscheidung ist stabil genug für den Skill, was bleibt Projektkontext, und verringert der Kandidat Auslassungen ohne breiter auszulösen?"
 status: draft
 last_verified: "not run"
+transfer_task: "Dieselbe Extraktion und vier Verhaltenstests auf einen wiederholten Ablauf in einem anderen Bereich anwenden"
+transfer_domain: "Recherche, Engineering, Marketing oder Inhaltsreview"
+transfer_evidence: "Workflowvergleich, Kandidatenrevision, Validatorresultat, vier Tests und Entscheidung aufbewahren"
+transfer_limitations: "Strukturprüfung und ein frischer Test beweisen keine Produktionszuverlässigkeit, Teameinführung oder Lizenzfreigabe"
 ---
 
 # Lab 005: Eine wiederholte Methode in einen klar begrenzten Skill überführen

@@ -8,8 +8,17 @@ domain: general
 goal: "Mit beobachtbaren Ereignissen, begrenzten Wiederholungen und einer Übergabe entscheiden, ob ein Agent fortsetzt, fragt, wiederherstellt oder stoppt"
 setup: "Eine wegwerfbare lokale Textaufgabe ohne Zugangsdaten, Netzwerk, Produktionsdateien oder irreversible Befehle"
 task: "Begrenzte Fehlerzweige und eine Abstimmung nach verlorener Antwort durchlaufen und Ereignisse, Belege und Entscheidung festhalten"
+evidence:
+  - "Baseline, Events und Run-Records für jeden begrenzten Zweig"
+  - "Read-back nach verlorener Antwort und eine Handoff mit erstem unbekannten Ereignis"
+failure_variant: "Einen Write außerhalb der erlaubten Wurzel oder einen Wiederholungsversuch ohne neue Bedingung verlangen und vor der Aktion stoppen"
+reflection: "Welche Beobachtung begründet Fortsetzen, Retry oder Stop, und welcher kleinste Lesecheck reduziert die wichtigste Unbekannte?"
 status: draft
 last_verified: "not run"
+transfer_task: "Das Stoppprotokoll auf einen lokalen Link-Review in einer wegwerfbaren Dokumentationskopie übertragen"
+transfer_domain: "Dokumentation oder risikoarmer Engineering-Review"
+transfer_evidence: "Ereignislog, Read-back, begrenzter Diff, Handoff und unbekannte Punkte aufbewahren"
+transfer_limitations: "Das künstliche lokale Fixture beweist keine gleichen Ereignisse, Rechte oder Stoppbedingungen in einem echten Produkt"
 ---
 
 # Lab 006: Stoppbedingungen für einen Agent entwerfen
