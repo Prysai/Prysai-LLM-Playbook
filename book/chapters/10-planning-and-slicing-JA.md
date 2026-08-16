@@ -52,6 +52,42 @@ disposable copy で同じ小さな change に対する horizontal plan と verti
 - [ ] explicit authority がない external side effect は scope 外である。
 - [ ] handoff が changed、verified、blocked、not proven を分ける。
 
+## 最初の完結した slice を作る
+
+「course 全体を改善する」から始めません。初めての人が読む、120 語以内の local text を一つ
+選びます。この slice の outcome は控えめです。**何を変えたか** と **どう確認するか** という
+二つの見出しを見えるようにし、publish、install、他の file の edit はしません。
+
+最初にモデルへ「まだ edit しない」と伝え、次のカードを渡します。
+
+```text
+outcome: 読者が変更内容と確認方法を読める
+fixed input: 120 語以内の local file 一つ
+allowed: text の提案。確認後はその file だけを edit
+forbidden: publish、install、link 変更、他 file の変更
+acceptance: 二つの見出しがあり、人が見つけられる
+stop if: file がない、別 file が必要、依頼が曖昧になる
+```
+
+その後、define → 三段階の plan を頼む → edit 前に scope を確認 → 小さく edit → 前後を比較
+→ 二つの見出しを読む → 正直に handoff、の順に進めます。モデルが作業を広げようとしたら
+カードに戻ります。新しい decision なしに scope を広げることは「より役立つ」ことではありません。
+
+## metric を作らずに、二つの頼み方を比べる
+
+direct request（「分かりやすくして」）と、このカードを使う request を一度ずつ試せます。
+text、model、tool、使える時間、読者の check を固定します。両方の prompt、version、読者の
+質問、error を保存します。変数が変われば `not_comparable` と記録します。速く見える response や
+きれいな文章一つでは、一般的な productivity や model superiority は証明しません。この練習は、
+edit 前に何が欠けていたか、結果を review できるかを観測するためのものです。
+
+## 安全な失敗と振り返り
+
+**どう確認するか** をわざと消すか、存在しない file を指定します。最初の failure は、content が
+足りないのか input が誤っているのかを示すはずです。failure を隠すために dependency や
+permission を増やしません。観測したこと、まだ証明されないこと、安全な次の一 action を書きます。
+この章は `candidate` のままです。この練習だけで effectiveness、speed、長期 learning は測れません。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-JA.md">← 前の章<br><strong>第 9 章 · 検証、疑い、復旧</strong></a></td><td align="right"><a data-chapter-nav="next" href="11-designing-a-skill-JA.md">次の章へ →<br><strong>第 11 章 · 役に立つ Skill を設計する</strong></a></td></tr></table></nav>

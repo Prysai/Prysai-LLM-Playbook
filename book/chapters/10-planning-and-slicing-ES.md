@@ -54,6 +54,49 @@ No midas velocidad o calidad general a partir de una tarea. Marca tiempos, coste
 - [ ] Los efectos externos siguen fuera del alcance salvo autorización explícita.
 - [ ] El resumen diferencia cambio realizado, verificado, bloqueado y no demostrado.
 
+## Haz tu primer corte completo
+
+No empieces por «mejora todo el curso». Elige un texto local de un máximo de
+120 palabras que una persona nueva deba entender. El resultado de este corte es
+modesto: dos secciones visibles, **Qué cambió** y **Cómo comprobarlo**, sin
+publicar, instalar ni editar otros archivos.
+
+Primero pide al modelo que no edite todavía. Dale esta tarjeta:
+
+```text
+resultado: un lector ve qué cambió y cómo comprobarlo
+entrada fija: un solo archivo local de hasta 120 palabras
+permitido: proponer el texto y editar solo ese archivo tras confirmación
+prohibido: publicar, instalar, cambiar enlaces o tocar otros archivos
+aceptación: las dos secciones existen y una lectura humana puede encontrarlas
+alto si: falta el archivo, el cambio exige otro archivo o la petición deja de ser clara
+```
+
+Después recorre: definir → pedir un plan de tres pasos → comprobar el alcance
+antes de editar → hacer un cambio pequeño → comparar antes y después → leer las
+dos secciones → dejar una entrega honesta. Si el modelo propone ampliar el
+trabajo, vuelve a la tarjeta; ampliar alcance no es «ser más útil» sin una nueva
+decisión.
+
+## Compara dos formas de pedir ayuda, sin inventar una métrica
+
+Puedes probar una vez el pedido directo («hazlo más claro») y una vez la tarjeta
+anterior. Congela texto, modelo, herramienta, tiempo disponible y criterio de
+lectura. Conserva ambos prompts, versiones, preguntas del lector y cualquier
+error. Si una variable cambia, registra `not_comparable`; una respuesta más
+rápida o más bonita no demuestra productividad general ni superioridad de un
+modelo. El valor del ejercicio es observar qué información faltaba antes de
+editar y si el resultado se puede revisar.
+
+## Fallo seguro y reflexión
+
+Quita deliberadamente **Cómo comprobarlo** o usa un archivo que no existe. El
+primer fallo debe decirte si falta contenido o si la entrada es equivocada. No
+añadas dependencias ni abras permisos para ocultarlo. Escribe qué viste, qué
+parte sigue sin demostrar y cuál es la única acción segura siguiente. El capítulo
+sigue en `candidate`: este ejercicio no mide por sí mismo eficacia, velocidad ni
+aprendizaje duradero.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-ES.md">← Anterior<br><strong>Capítulo 9 · verificación, duda y recuperación</strong></a></td><td align="right"><a data-chapter-nav="next" href="11-designing-a-skill-ES.md">Siguiente →<br><strong>Capítulo 11 · diseñar un Skill que se gane su lugar</strong></a></td></tr></table></nav>
