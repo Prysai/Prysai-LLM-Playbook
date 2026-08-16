@@ -43,6 +43,40 @@ project map、task protocol、state log、evidence index、reflection の五記�
 
 古い command と古い directory を fixture として加え、stale と記録して再利用を止めます。四つの log がそろい、秘密・外部副作用がなく、acceptance が review されて初めて実験は通ります。それでも Skill や実際の memory 動作の検証にはなりません。
 
+## 個人の習慣を確認できる引き継ぎにする
+
+個人用システムは、すべてを書き留める場所ではありません。次の task の開始時に、短時間で三つに答えるためのものです。何を deliver するのか。何が実際に確認済みか。どこで人に聞くため止まるべきか。記録がこの三つに役立たないなら、積み上げずに減らします。
+
+```yaml
+handoff_id: personal-system-20-example
+goal: "四つの問題報告を安全に次段階へ進められるか判断する"
+read: ["project rules", "task input", "current state"]
+changed: []
+verified: ["input hash", "current branch", "external write がない"]
+not_verified: ["実際の sign-in entry", "build に対する user acceptance"]
+blocked_by: ["version、entry、error log がない"]
+next_owner_action: "不足 input を補い、再分類する"
+recovery: "temporary record を削除し、clean copy を復元する"
+```
+
+`verified` には実際に確認したことだけを書きます。plan、予測、「以前は動いた」は `not_verified` または `blocked_by` に置きます。これで次の人が handoff を完了報告と取り違えません。
+
+## 小実験の追加：古い情報を先に見つける
+
+A/B 実行の前に、実行せず `project-map` に古い command と存在しない directory を一つ置きます。source、最後の確認日、現在の状態、安全な確認方法を書かせます。正しい対応は「もう一度実行」ではありません。許可された範囲で current state を読み、`stale` と記録し、不確実性を残します。
+
+1. 現在の状態を確認できなければ `blocked` とし、command が有効だと推測しません。
+2. directory があっても目的が不明なら観察だけを記録し、write target にしません。
+3. account、network、external write が必要なら止まり、明確な authorization を求めます。
+4. reflection には「開始時に source と日付を確認する」のような移植可能な規則だけを残し、古い command を恒久 template にしません。
+
+## 自分で確かめる
+
+- [ ] 初めて読む人でも口頭補足なしに goal、evidence、block を見つけられる。
+- [ ] 一つの record が `stale` である理由と、現在の事実に戻る最小の行動を説明できる。
+- [ ] 個人メモを秘密保管、製品 memory の保証、verified Skill として扱っていない。
+- [ ] input 不足、実行可能、人の確認が必要な状態を分けている。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章のナビゲーション"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows-JA.md">← 前の章<br><strong>第19章 · モデルとワークフローを評価する、印象から証拠へ</strong></a></td><td align="right"><a data-chapter-nav="next" href="21-team-capability-system-JA.md">次へ →<br><strong>第21章 · チーム能力システムを作る</strong></a></td></tr></table></nav>

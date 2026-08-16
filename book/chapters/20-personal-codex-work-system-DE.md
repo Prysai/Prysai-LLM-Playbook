@@ -43,6 +43,40 @@ Klassifiziere in einer temporären Kopie vier feste Hinweise: mobilen Überlauf 
 
 Füge einen alten Befehl und ein altes Verzeichnis als Fixture hinzu, markiere beides `stale` und stoppe die Wiederverwendung. Erst vier vollständige Logs ohne Geheimnisse oder externe Nebenwirkungen und geprüftes Acceptance lassen das Experiment bestehen. Auch dann werden Skill oder echtes Memory-Verhalten nicht verifiziert.
 
+## Persönliche Gewohnheit in eine prüfbare Übergabe verwandeln
+
+Ein persönliches Arbeitssystem ist kein Ort, an dem alles notiert wird. Es soll beim Start der nächsten Aufgabe rasch drei Fragen beantworten: Was ist zu liefern? Welche Tatsachen wurden tatsächlich geprüft? Wo muss die Arbeit anhalten, um einen Menschen zu fragen? Hilft ein Record dabei nicht, wird er gekürzt statt weiter angehäuft.
+
+```yaml
+handoff_id: personal-system-20-example
+goal: "Entscheiden, ob vier Problemberichte sicher weitergehen können"
+read: ["Projektregeln", "Task-Input", "aktueller Zustand"]
+changed: []
+verified: ["Input-Hash", "aktueller Branch", "keine externen Writes"]
+not_verified: ["echter Sign-in-Einstieg", "Nutzerabnahme des Builds"]
+blocked_by: ["Version, Einstieg und Error-Log fehlen"]
+next_owner_action: "fehlenden Input ergänzen und neu klassifizieren"
+recovery: "temporäre Records löschen und saubere Kopie wiederherstellen"
+```
+
+In `verified` steht nur, was wirklich geprüft wurde. Pläne, Vorhersagen und „hat früher funktioniert“ gehören nach `not_verified` oder `blocked_by`. So verwechselt die nächste Person die Übergabe nicht mit einer Fertigmeldung.
+
+## Ergänzung zur Übung: veraltete Information zuerst erkennen
+
+Lege vor einem A/B-Lauf einen alten Befehl und ein nicht mehr vorhandenes Verzeichnis in die `project-map`, ohne sie auszuführen. Lass Quelle, letztes Bestätigungsdatum, aktuellen Status und sichere Prüfmethode notieren. Die richtige Reaktion ist nicht „noch einmal ausführen“: Lies den aktuellen Zustand innerhalb der Berechtigung, markiere `stale` und erhalte die Unsicherheit.
+
+1. Ist der aktuelle Zustand nicht prüfbar, setze `blocked`; vermute nicht, dass der Befehl noch gilt.
+2. Existiert das Verzeichnis, ist sein Zweck aber unklar, dokumentiere nur die Beobachtung und benutze es nicht als Write-Ziel.
+3. Sind Account, Netzwerk oder externer Write nötig, halte an und fordere klare Autorisierung an.
+4. Behalte in der Reflexion nur eine übertragbare Regel wie „Quelle und Datum beim Start prüfen“, nicht den alten Befehl als dauerhafte Vorlage.
+
+## Selbstcheck
+
+- [ ] Eine neue Person findet Ziel, Evidenz und Blockade ohne mündliche Ergänzung.
+- [ ] Ich kann erklären, warum ein Record `stale` ist und welche Minimalaktion zum aktuellen Fakt zurückführt.
+- [ ] Ich behandle persönliche Notizen nicht als Geheimnisspeicher, Produkt-Memory-Garantie oder verifizierten Skill.
+- [ ] Ich unterscheide fehlenden Input, mögliche Ausführung und nötige menschliche Bestätigung.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Kapitelnavigation"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows-DE.md">← Vorheriges<br><strong>Kapitel 19 · Modelle und Workflows evaluieren, von Eindrücken zu Evidenz</strong></a></td><td align="right"><a data-chapter-nav="next" href="21-team-capability-system-DE.md">Weiter →<br><strong>Kapitel 21 · ein Team-Fähigkeitssystem aufbauen</strong></a></td></tr></table></nav>

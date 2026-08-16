@@ -43,6 +43,40 @@ En una copia temporal clasifica cuatro avisos fijos: desborde móvil con captura
 
 Añade un comando viejo y un directorio antiguo como fixture. El resultado correcto es marcarlos obsoletos y detener su reutilización. El experimento solo pasa con cuatro logs completos, sin secretos ni efectos externos y con aceptación revisada; aun así no verifica el Skill ni un comportamiento real de memoria.
 
+## Convertir un hábito personal en una entrega comprobable
+
+Un sistema personal no consiste en anotarlo todo. Debe permitir que la siguiente tarea responda pronto: ¿qué hay que entregar?, ¿qué hechos se comprobaron? y ¿dónde hay que detenerse para preguntar a una persona? Si un registro no ayuda a responder esas preguntas, redúcelo; no lo sigas acumulando.
+
+```yaml
+handoff_id: personal-system-20-example
+goal: "Decidir si cuatro reportes pueden avanzar con seguridad"
+read: ["reglas del proyecto", "entrada de tarea", "estado actual"]
+changed: []
+verified: ["hash de entrada", "rama actual", "sin escritura externa"]
+not_verified: ["entrada real de inicio de sesión", "aceptación del build por usuario"]
+blocked_by: ["faltan versión, entrada y log de error"]
+next_owner_action: "completar entrada y clasificar de nuevo"
+recovery: "borrar registros temporales y restaurar la copia limpia"
+```
+
+En `verified` solo van comprobaciones reales. Planes, predicciones y «funcionó antes» pertenecen a `not_verified` o `blocked_by`; así nadie confunde la entrega con una declaración de finalización.
+
+## Extensión: detectar primero información obsoleta
+
+Antes de una ejecución A/B, añade al `project-map` un comando antiguo y un directorio que ya no existe, sin ejecutarlos. Pide anotar fuente, última fecha de confirmación, estado actual y forma segura de comprobarlo. La respuesta correcta no es «probar otra vez»: inspecciona el estado autorizado, marca `stale` y conserva la incertidumbre.
+
+1. Si no puedes confirmar el estado actual, usa `blocked`; no supongas que el comando sigue siendo válido.
+2. Si el directorio existe pero su propósito no está claro, registra la observación y no lo trates como destino escribible.
+3. Si hace falta cuenta, red o escritura externa, detente y pide autorización explícita.
+4. En la reflexión conserva una regla transferible —«comprueba fuente y fecha al empezar»—, no el comando viejo como plantilla permanente.
+
+## Comprobación propia
+
+- [ ] Una persona nueva encuentra objetivo, evidencia y bloqueo sin explicación oral.
+- [ ] Puedo explicar por qué un record es `stale` y cuál es la acción mínima para volver al hecho actual.
+- [ ] No convierto notas personales en almacén secreto, promesa de memoria de producto ni Skill verificado.
+- [ ] Distingo entre falta de entrada, ejecución posible y confirmación humana necesaria.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navegación de capítulos"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows-ES.md">← Anterior<br><strong>Capítulo 19 · evaluar modelos y flujos de trabajo, de impresiones a evidencia</strong></a></td><td align="right"><a data-chapter-nav="next" href="21-team-capability-system-ES.md">Siguiente →<br><strong>Capítulo 21 · construir un sistema de capacidades para el equipo</strong></a></td></tr></table></nav>

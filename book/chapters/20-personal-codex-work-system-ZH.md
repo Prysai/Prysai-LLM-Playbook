@@ -35,6 +35,40 @@
 
 即使四份日志完整，真实 Skill 或记忆行为仍需要独立证据；本章保持 `candidate`。
 
+## 把个人习惯变成可检查的交接
+
+个人工作系统不是“把所有事都记下来”。它的作用是让下一次任务开始时，能用很短的时间回答三个问题：现在要交付什么？哪些事实已经核实？哪里必须停下来问人？如果记录不能帮助回答这三个问题，就应删减，而不是继续堆叠。
+
+```yaml
+handoff_id: personal-system-20-example
+goal: "判断四条问题报告能否安全进入下一步"
+read: ["项目规则", "任务输入", "当前状态"]
+changed: []
+verified: ["输入哈希", "当前分支", "没有外部写入"]
+not_verified: ["真实登录入口", "用户是否接受构建结果"]
+blocked_by: ["缺少版本、入口和错误日志"]
+next_owner_action: "补齐缺失输入后重新分类"
+recovery: "删除临时记录并恢复干净副本"
+```
+
+这里的 `verified` 只能写已经检查过的事；计划、推测和“以前好像成功过”应留在 `not_verified` 或 `blocked_by`。这能避免下一位读者把交接误认为完成报告。
+
+## 小实验补充：先发现过期信息
+
+在一次 A/B 运行前，故意在 `project-map` 放入一条旧命令和一个已不存在的目录，但不要执行它们。让参与者先写出：这条记录的来源、最后确认日期、当前状态，以及怎样安全确认是否已过期。正确动作不是“再试一次”，而是读取当前允许范围内的状态，标记 `stale`，并保留不确定性。
+
+1. 若当前状态无法确认，写 `blocked`，不要猜测命令仍然有效。
+2. 若目录存在但用途不明，记录观察结果，不把它当作可写入目标。
+3. 若需要账户、网络或外部写入才可确认，停止并请求明确授权。
+4. 反思时只保留可迁移规则，例如“开始前检查来源和日期”；不要把具体旧命令做成永久模板。
+
+## 本章验收补充
+
+- [ ] 我的交接能让陌生读者在不听口头补充的情况下找到目标、证据和阻塞点。
+- [ ] 我能说出一条记录为什么是 `stale`，以及恢复到当前事实的最小动作。
+- [ ] 我没有把个人笔记当作秘密库、产品记忆保证或已验证的 Skill。
+- [ ] 我把需要更多输入、可以执行、需要人工确认分别处理。
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="章节导航"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows-ZH.md">← 上一章<br><strong>第 19 章·评估模型与工作流</strong></a></td><td align="right"><a data-chapter-nav="next" href="21-team-capability-system-ZH.md">下一章 →<br><strong>第 21 章·构建团队能力系统</strong></a></td></tr></table></nav>

@@ -43,6 +43,40 @@ project map, task protocol, state log, evidence index, reflection 다섯 기록�
 
 낡은 command와 directory를 fixture로 넣어 stale로 표시하고 재사용을 멈춥니다. 네 log가 완전하고 비밀·외부 부작용이 없으며 acceptance를 review해야 실험이 통과합니다. 그래도 Skill이나 실제 memory 동작을 검증하지는 않습니다.
 
+## 개인 습관을 확인 가능한 인계로 바꾸기
+
+개인 작업 시스템은 모든 것을 적어 두는 곳이 아닙니다. 다음 task를 시작할 때 짧은 시간 안에 세 가지를 답하게 해야 합니다. 무엇을 deliver해야 하는가? 어떤 사실을 실제로 확인했는가? 어디서 사람에게 물어보기 위해 멈춰야 하는가? 이 질문에 도움이 안 되는 record라면 더 쌓지 말고 줄입니다.
+
+```yaml
+handoff_id: personal-system-20-example
+goal: "네 개의 문제 보고를 안전하게 다음 단계로 보낼 수 있는지 판단"
+read: ["project rules", "task input", "current state"]
+changed: []
+verified: ["input hash", "current branch", "external write 없음"]
+not_verified: ["실제 sign-in entry", "build에 대한 user acceptance"]
+blocked_by: ["version, entry, error log 누락"]
+next_owner_action: "누락 input을 채운 뒤 다시 분류"
+recovery: "temporary record를 지우고 clean copy 복원"
+```
+
+`verified`에는 실제로 확인한 것만 씁니다. plan, 예측, “전에 됐음”은 `not_verified`나 `blocked_by`에 둡니다. 그러면 다음 사람이 handoff를 완료 보고로 오해하지 않습니다.
+
+## 작은 실험 추가: 오래된 정보를 먼저 찾기
+
+A/B 실행 전에 실행하지 않은 오래된 command 하나와 존재하지 않는 directory 하나를 `project-map`에 넣습니다. source, 마지막 확인 날짜, 현재 상태, 안전한 확인 방법을 쓰게 합니다. 올바른 행동은 “다시 실행”이 아닙니다. 허용 범위에서 current state를 읽고 `stale`로 표시하며 불확실성을 남깁니다.
+
+1. 현재 상태를 확인할 수 없으면 `blocked`로 두고 command가 아직 유효하다고 추정하지 않습니다.
+2. directory가 있어도 목적이 불명확하면 관찰만 기록하고 write target으로 삼지 않습니다.
+3. account, network, external write가 필요하면 멈추고 명확한 authorization을 요청합니다.
+4. reflection에는 “시작 전에 source와 날짜를 확인” 같은 옮길 수 있는 규칙만 남기며 낡은 command를 영구 template로 만들지 않습니다.
+
+## 스스로 확인하기
+
+- [ ] 처음 읽는 사람도 구두 설명 없이 goal, evidence, block을 찾을 수 있다.
+- [ ] 어떤 record가 `stale`인지와 현재 사실로 돌아갈 최소 행동을 설명할 수 있다.
+- [ ] 개인 노트를 비밀 보관소, 제품 memory 보장, verified Skill로 취급하지 않았다.
+- [ ] input 부족, 실행 가능, 사람 확인 필요 상태를 구분했다.
+
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows-KO.md">← 이전<br><strong>19장 · 모델과 워크플로 평가하기, 인상에서 증거로</strong></a></td><td align="right"><a data-chapter-nav="next" href="21-team-capability-system-KO.md">다음 →<br><strong>21장 · 팀 역량 시스템 만들기</strong></a></td></tr></table></nav>
