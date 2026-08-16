@@ -3,7 +3,7 @@
 # Prysai LLM Playbook: índice de Labs
 
 <!-- language-switcher:start -->
-**Idiomas:** [English](../README-EN.md) | [简体中文](../README-ZH.md) | [Español](README-ES.md) | [日本語](../README-JA.md) | [한국어](../README-KO.md) | [Deutsch](../README-DE.md)
+**Idiomas:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md)
 <!-- language-switcher:end -->
 
 Los Labs son el lugar para comprobar si una forma de pedir ayuda a un LLM te permite
