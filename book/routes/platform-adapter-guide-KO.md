@@ -6,7 +6,7 @@
 
 ChatGPT, Claude, Gemini, DeepSeek, Grok, Codex 모두 대화로 당신에게 응답하지만,
 같은 제품은 아닙니다. 이 루트는
-[Universal Core Foundations 루트](universal-core-foundations-ko.md)에서
+[Universal Core Foundations 루트](universal-core-foundations-KO.md)에서
 재사용 가능한 핵심을 유지한 채, 정직한 어댑터를 한 번에 하나씩 더합니다:
 플랫폼별로 실제로 무엇이 다른지, 각 플랫폼에서 오늘 안전하게 시도할 수 있는
 것이 무엇인지, 그리고 플랫폼 특정 주장을 신뢰하기 전에 공식 출처에서
@@ -29,8 +29,8 @@ Playbook의 대표 실습 트랙은 Codex이지만, 이 방법은 한 벤더에 
 
 세 질문에 모두 답할 수 없다면 해당 주장을 `unknown`으로 두고 다음 확인
 시점을 기록하십시오. 이 규칙 뒤에 있는 유지보수 방법은
-[Platform Adapter Review Skill](../skills/prysai-platform-adapter-review/SKILL.md)과
-[Platform Fact Watch](../skills/prysai-platform-fact-watch/SKILL.md)를 참고하십시오.
+[Platform Adapter Review Skill](../../skills/prysai-platform-adapter-review/SKILL.md)과
+[Platform Fact Watch](../../skills/prysai-platform-fact-watch/SKILL.md)를 참고하십시오.
 
 ## 한 페이지 플랫폼 지도
 
@@ -41,7 +41,7 @@ Playbook의 대표 실습 트랙은 Codex이지만, 이 방법은 한 벤더에 
 | Gemini | 웹 채팅, 앱, API | Google 계정 범위, Google Workspace 통합, 앱 확장 | [Gemini 첫 과제](#gemini-first-task) |
 | DeepSeek | 웹 채팅, 앱, API | 모델 선택과 컨텍스트 창은 릴리스마다 다름; 공식 모델 페이지 확인 | [DeepSeek 첫 과제](#deepseek-first-task) |
 | Grok | 웹 채팅, 앱 | X 계정 연동, 실시간 게시물 접근, 모델 릴리스 주기 | [Grok 첫 과제](#grok-first-task) |
-| Codex | 데스크톱, CLI, IDE, 클라우드, API | Playbook의 대표 트랙: 파일, 도구, Skills, Agents, 권한 | [Codex 경로](../routes/first-safe-change-ko.md) |
+| Codex | 데스크톱, CLI, IDE, 클라우드, API | Playbook의 대표 트랙: 파일, 도구, Skills, Agents, 권한 | [Codex 경로](../routes/first-safe-change-KO.md) |
 
 이 표는 방향 안내이지 동등성의 증거가 아닙니다. 각 행도 수업이 의존하기
 전에 그 자체의 최신 출처가 필요합니다. 표면 제공 여부, 가격, 권한 기본값은
@@ -81,7 +81,7 @@ Playbook의 대표 실습 트랙은 Codex이지만, 이 방법은 한 벤더에 
 메모리, 또는 공유 링크를 언급하는가? 추측한 것이 아니라 본 것을 기록하십시오.
 ChatGPT 주장에 대한 출처 기반 확인은 제품 사실의 소유자로서 공식 OpenAI
 도움말 페이지를 사용하는
-[Source Investigator Skill](../skills/prysai-source-investigator/SKILL.md)을
+[Source Investigator Skill](../../skills/prysai-source-investigator/SKILL.md)을
 활용하십시오.
 
 ## Claude Code 첫 과제
@@ -94,7 +94,7 @@ Claude Code는 터미널 에이전트입니다: 시작한 프로젝트 안에서
 `CLAUDE.md` 파일을 읽습니다. 거기에 쓰인 모든 것은 모델이 따를 수 있는
 지시이므로, 프로젝트 규칙처럼 검토하십시오. 자격 증명, 운영 데이터, 또는
 파괴적 명령이 있는 실제 저장소에서 Claude Code를 시작하지 마십시오.
-[First Safe Change 루트](first-safe-change-ko.md)의 규율을 완료하기 전까지는
+[First Safe Change 루트](first-safe-change-KO.md)의 규율을 완료하기 전까지는
 말입니다.
 
 ## Gemini 첫 과제
@@ -126,27 +126,27 @@ Grok 답변은 플랫폼의 검색(retrieval) 동작에 대한 주장이므로, 
 
 Codex는 컨텍스트, 도구, 권한, Skills, Agents, 검증이라는 전체 루프를
 드러내기 때문에 Playbook의 대표 트랙입니다. 임시 프로젝트에서
-[First Safe Change 루트](first-safe-change-ko.md)와
-[Lab 001](../labs/lab-001-first-safe-task-ko.md)부터 시작하십시오.
+[First Safe Change 루트](first-safe-change-KO.md)와
+[Lab 001](../labs/lab-001-first-safe-task-KO.md)부터 시작하십시오.
 검사 후 편집(inspect-before-edit) 습관이 익숙해지기 전까지 클라우드
 표면이나 실제 저장소로 건너뛰지 마십시오.
 
 ## 첫 과제 이후: 어떤 트랙을 따라야 하는가?
 
-- 텍스트 전용 입문 연습을 원한다면: [Beginner Practice Pack](../communication-clinic-ko.md).
-- 파일과 도구가 있는 심화 대표 트랙을 원한다면: [First Safe Change](first-safe-change-ko.md).
-- 먼저 플랫폼 중립 기초를 원한다면: [Universal Core Foundations](universal-core-foundations-ko.md).
-- 두 플랫폼을 공정하게 비교하고 싶다면: [LLM Comparison Protocol](../skills/prysai-llm-comparison-protocol/SKILL.md).
+- 텍스트 전용 입문 연습을 원한다면: [Beginner Practice Pack](../communication-clinic-KO.md).
+- 파일과 도구가 있는 심화 대표 트랙을 원한다면: [First Safe Change](first-safe-change-KO.md).
+- 먼저 플랫폼 중립 기초를 원한다면: [Universal Core Foundations](universal-core-foundations-KO.md).
+- 두 플랫폼을 공정하게 비교하고 싶다면: [LLM Comparison Protocol](../../skills/prysai-llm-comparison-protocol/SKILL.md).
 - 플랫폼 수업이 커리큘럼에 들어갈 자격이 있는지 알고 싶다면:
-  [Platform Adapter Review](../skills/prysai-platform-adapter-review/SKILL.md).
+  [Platform Adapter Review](../../skills/prysai-platform-adapter-review/SKILL.md).
 
 ## 증거 상태와 경계
 
 이 루트는 `candidate / not_run`입니다: 구조와 검사 항목은 존재하지만,
 학습자 실행, 플랫폼 간 실행, 또는 독립 검토는 기록되지 않았습니다. 위의
 플랫폼별 설명은 1차 문서와 날짜가 찍힌 연구 영수증
-([cross-LLM beginner prompting source receipt](../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md),
-[platform teaching boundary card](../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md))에서
+([cross-LLM beginner prompting source receipt](../../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md),
+[platform teaching boundary card](../../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md))에서
 파생된 방향 안내입니다. 이것은 어떤 플랫폼이 동일하게 동작한다거나, 과제가
 어디서나 성공한다거나, 제품 기능이 동등하다는 증거가 아닙니다. 플랫폼별
 명령, 권한, 가격, 제공 여부는 변동성 높은 사실입니다. 의존하기 전에 접근
