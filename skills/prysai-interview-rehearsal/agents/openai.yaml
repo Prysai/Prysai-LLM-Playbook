@@ -1,0 +1,4 @@
+interface:
+  display_name: "Interview Rehearsal"
+  short_description: "Rehearse one observable interview answer under a time limit."
+  default_prompt: "Use $prysai-interview-rehearsal to rehearse one interview answer with a visible check and one changed question."
