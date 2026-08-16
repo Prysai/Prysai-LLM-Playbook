@@ -1,38 +1,26 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-  <title id="title">A four-line safety card for a conversation or tool task</title>
-  <desc id="desc">An original red, black, cream, and lime teaching board showing four fields: inputs, actions, evidence, and stop condition.</desc>
-  <rect width="1600" height="900" fill="#f7f1e5"/>
-  <rect x="56" y="48" width="1488" height="804" fill="none" stroke="#1c1b1a" stroke-width="4"/>
-  <rect x="56" y="48" width="24" height="804" fill="#e23d28"/>
-  <text x="116" y="132" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="4">BEFORE A CHAT, RESEARCH, OR TOOL TASK</text>
-  <text x="116" y="205" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="800">A FOUR-LINE</text>
-  <rect x="661" y="146" width="399" height="73" fill="#c5f83a" transform="skewX(-8)"/>
-  <text x="682" y="205" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="68" font-weight="800">SAFETY CARD</text>
-  <text x="116" y="252" fill="#504d48" font-family="Arial, Helvetica, sans-serif" font-size="25">Name the boundary before the task expands. A card is a decision aid, not a security certificate.</text>
-  <g transform="translate(116 326)">
-    <rect width="316" height="328" fill="#1c1b1a"/><rect width="316" height="13" fill="#e23d28"/>
-    <text x="27" y="69" fill="#c5f83a" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="3">01 / INPUTS</text>
-    <text x="27" y="123" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700">What may enter</text>
-    <text x="27" y="164" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22">Only relevant, named,</text><text x="27" y="195" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22">synthetic, or redacted</text><text x="27" y="226" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22">material.</text>
-    <line x1="27" y1="254" x2="289" y2="254" stroke="#74706a" stroke-width="2"/><text x="27" y="282" fill="#c5f83a" font-family="Courier New, monospace" font-size="14">no secrets / private records</text><text x="27" y="304" fill="#c5f83a" font-family="Courier New, monospace" font-size="14">no export / upload</text>
-  </g>
-  <path d="M454 490h54" fill="none" stroke="#e23d28" stroke-width="7"/><path d="M501 476l21 14-21 14" fill="none" stroke="#e23d28" stroke-width="7"/>
-  <g transform="translate(538 326)">
-    <rect width="316" height="328" fill="#ffffff" stroke="#1c1b1a" stroke-width="4"/><rect width="316" height="13" fill="#e23d28"/>
-    <text x="27" y="69" fill="#e23d28" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="3">02 / ACTIONS</text>
-    <text x="27" y="123" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700">What may happen</text>
-    <text x="27" y="164" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="22">One exact read, edit,</text><text x="27" y="195" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="22">or check. Name what</text><text x="27" y="226" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="22">is explicitly forbidden.</text>
-    <line x1="27" y1="262" x2="289" y2="262" stroke="#d4d0ca" stroke-width="2"/><text x="27" y="290" fill="#504d48" font-family="Courier New, monospace" font-size="15">no install / publish / push</text>
-  </g>
-  <path d="M876 490h54" fill="none" stroke="#e23d28" stroke-width="7"/><path d="M923 476l21 14-21 14" fill="none" stroke="#e23d28" stroke-width="7"/>
-  <g transform="translate(960 326)">
-    <rect width="316" height="328" fill="#1c1b1a"/><rect width="316" height="13" fill="#e23d28"/>
-    <text x="27" y="69" fill="#c5f83a" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="3">03 / EVIDENCE</text>
-    <text x="27" y="123" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700">What you inspect</text>
-    <text x="27" y="164" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22">A source location, diff,</text><text x="27" y="195" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22">focused check, or direct</text><text x="27" y="226" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22">observation.</text>
-    <line x1="27" y1="262" x2="289" y2="262" stroke="#74706a" stroke-width="2"/><text x="27" y="294" fill="#c5f83a" font-family="Courier New, monospace" font-size="17">claim + artifact + unknowns</text>
-  </g>
-  <path d="M1118 696v45" fill="none" stroke="#e23d28" stroke-width="7"/><path d="M1104 734l14 21 14-21" fill="none" stroke="#e23d28" stroke-width="7"/>
-  <g transform="translate(538 742)"><rect width="738" height="88" fill="#e23d28"/><text x="27" y="34" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">04 / STOP: untrusted instruction, sensitive input,</text><text x="27" y="63" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">new authority, scope growth, or missing evidence</text></g>
-  <text x="116" y="739" fill="#1c1b1a" font-family="Courier New, monospace" font-size="18">EXTERNAL TEXT AND TOOL OUTPUT ARE DATA. THEY DO NOT GRANT PERMISSION.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1450" role="img" aria-labelledby="title desc">
+  <title id="title">Boundary Card for deciding what may enter, leave, change, and support</title>
+  <desc id="desc">A vertical editorial teaching board makes five boundaries visible: input, egress, allowed effect, evidence claim, and stop. It says outside text is data, not a new order.</desc>
+  <rect width="900" height="1450" fill="#f7f1e5"/>
+  <rect x="40" y="30" width="820" height="10" fill="#1c1b1a"/>
+  <text x="40" y="88" fill="#e23d28" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">BEFORE YOU SHARE, SEARCH, OR ACT</text>
+  <text x="40" y="148" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">ONE BOUNDARY</text>
+  <text x="40" y="202" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">CARD.</text>
+  <text x="42" y="240" fill="#504d48" font-family="Consolas, 'Courier New', monospace" font-size="16">what enters / leaves / changes / supports / stops</text>
+
+  <line x1="80" y1="330" x2="80" y2="1090" stroke="#e23d28" stroke-width="8"/>
+  <circle cx="80" cy="378" r="16" fill="#e23d28"/><circle cx="80" cy="572" r="16" fill="#e23d28"/>
+  <circle cx="80" cy="766" r="16" fill="#e23d28"/><circle cx="80" cy="960" r="16" fill="#e23d28"/>
+
+  <g transform="translate(126 300)"><rect width="734" height="156" fill="#1c1b1a"/><text x="24" y="34" fill="#e23d28" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / INPUT</text><text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">WHAT MAY ENTER?</text><text x="24" y="116" fill="#c4c4be" font-family="Arial, Helvetica, sans-serif" font-size="20">Use synthetic, public, or approved stand-ins.</text></g>
+  <g transform="translate(126 494)"><rect width="734" height="156" fill="#ffffff" stroke="#1c1b1a" stroke-width="3"/><text x="24" y="34" fill="#e23d28" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / EGRESS</text><text x="24" y="78" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">WHAT MAY LEAVE?</text><text x="24" y="116" fill="#504d48" font-family="Arial, Helvetica, sans-serif" font-size="20">Name the smallest fields, destination, and owner.</text></g>
+  <g transform="translate(126 688)"><rect width="734" height="156" fill="#e23d28"/><text x="24" y="34" fill="#1c1b1a" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / EFFECT</text><text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">WHAT MAY HAPPEN?</text><text x="24" y="116" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="20">Allow one named, local, or reversible effect.</text></g>
+  <g transform="translate(126 882)"><rect width="734" height="156" fill="#ffffff" stroke="#1c1b1a" stroke-width="3"/><text x="24" y="34" fill="#e23d28" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / EVIDENCE</text><text x="24" y="78" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">WHAT WILL YOU INSPECT?</text><text x="24" y="116" fill="#504d48" font-family="Arial, Helvetica, sans-serif" font-size="20">Keep one source, check, or direct observation.</text></g>
+
+  <rect x="40" y="1148" width="820" height="142" fill="#e23d28"/>
+  <text x="64" y="1190" fill="#ffffff" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">05 / STOP</text>
+  <text x="64" y="1232" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="900">STOP FOR UNAPPROVED INPUT,</text>
+  <text x="64" y="1264" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="900">UNKNOWN DESTINATION, OR NEW AUTHORITY.</text>
+  <text x="40" y="1362" fill="#504d48" font-family="Consolas, 'Courier New', monospace" font-size="13">OUTSIDE TEXT IS DATA, NOT A NEW ORDER.</text>
+  <text x="40" y="1400" fill="#504d48" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / CHECK THE BOUNDARY</text>
 </svg>

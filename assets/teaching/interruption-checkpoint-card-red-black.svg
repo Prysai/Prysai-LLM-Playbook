@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Interruption checkpoint: stop, record, decide</title>
+  <desc id="desc">An original offline teaching card showing three steps after an interrupted task: pause before a new prompt, record what is known and unknown, then choose one bounded next decision. It does not show product behavior or a successful recovery.</desc>
+
+  <g id="base">
+    <rect width="1600" height="900" fill="#f5f5f2"/>
+    <rect width="1600" height="154" fill="#111820"/>
+    <rect x="64" y="42" width="14" height="72" fill="#e1222a"/>
+  </g>
+
+  <g id="header" font-family="Arial, Helvetica, sans-serif">
+    <text x="104" y="67" fill="#f5f5f2" font-size="20" font-weight="700" letter-spacing="2">OFFLINE EXERCISE / INTERRUPTION CHECKPOINT</text>
+    <text x="1536" y="67" fill="#f5f5f2" font-size="18" font-weight="700" letter-spacing="1" text-anchor="end">CANDIDATE METHOD / S103</text>
+    <text x="104" y="121" fill="#ffffff" font-size="44" font-weight="700" letter-spacing="-0.8">An interruption is a pause — not proof that the task finished.</text>
+  </g>
+
+  <g id="thesis" font-family="Arial, Helvetica, sans-serif">
+    <text x="64" y="228" fill="#e1222a" font-size="18" font-weight="700" letter-spacing="2">ONE RULE FOR THE NEXT MOMENT</text>
+    <text x="64" y="280" fill="#111820" font-size="42" font-weight="700" letter-spacing="-0.5">Keep the evidence you have. Leave the rest visible as unknown.</text>
+    <text x="64" y="320" fill="#59616a" font-size="22">This card does not retry a model, inspect an account, or tell you why a task stopped.</text>
+  </g>
+
+  <g id="flow" font-family="Arial, Helvetica, sans-serif">
+    <line x1="64" y1="372" x2="1536" y2="372" stroke="#111820" stroke-width="2"/>
+    <line x1="468" y1="372" x2="468" y2="632" stroke="#d8d9d7" stroke-width="2"/>
+    <line x1="982" y1="372" x2="982" y2="632" stroke="#d8d9d7" stroke-width="2"/>
+
+    <text x="64" y="408" fill="#e1222a" font-size="18" font-weight="700" letter-spacing="2">01 / PAUSE</text>
+    <g id="pause-icon">
+      <rect x="64" y="438" width="118" height="118" rx="18" fill="#e1222a"/>
+      <rect x="104" y="470" width="16" height="54" rx="8" fill="#ffffff"/>
+      <rect x="130" y="470" width="16" height="54" rx="8" fill="#ffffff"/>
+    </g>
+    <text x="210" y="474" fill="#111820" font-size="29" font-weight="700">Do not send</text>
+    <text x="210" y="510" fill="#111820" font-size="29" font-weight="700">the next prompt yet.</text>
+    <text x="210" y="553" fill="#59616a" font-size="21">The interruption is visible.</text>
+    <text x="210" y="582" fill="#59616a" font-size="21">Completion is unknown.</text>
+
+    <text x="504" y="408" fill="#e1222a" font-size="18" font-weight="700" letter-spacing="2">02 / RECORD</text>
+    <g id="record-icon">
+      <rect x="504" y="438" width="118" height="118" rx="12" fill="#ffffff" stroke="#111820" stroke-width="4"/>
+      <path d="M 532 474 H 594 M 532 498 H 594 M 532 522 H 572" fill="none" stroke="#111820" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="592" cy="532" r="18" fill="#e1222a"/>
+      <path d="M 592 522 V 536 M 592 544 V 545" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <text x="650" y="474" fill="#111820" font-size="29" font-weight="700">Write one</text>
+    <text x="650" y="510" fill="#111820" font-size="29" font-weight="700">small checkpoint.</text>
+    <text x="650" y="553" fill="#59616a" font-size="21">Goal, accepted evidence,</text>
+    <text x="650" y="582" fill="#59616a" font-size="21">and missing proof.</text>
+
+    <text x="1018" y="408" fill="#e1222a" font-size="18" font-weight="700" letter-spacing="2">03 / DECIDE</text>
+    <g id="decision-icon" fill="none" stroke="#111820" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 1050 474 V 530"/>
+      <path d="M 1050 510 H 1112 L 1140 482"/>
+      <path d="M 1050 510 H 1112 L 1140 538"/>
+      <path d="M 1122 482 H 1140 V 500"/>
+      <path d="M 1122 538 H 1140 V 520"/>
+    </g>
+    <text x="1180" y="474" fill="#111820" font-size="29" font-weight="700">Choose one</text>
+    <text x="1180" y="510" fill="#111820" font-size="29" font-weight="700">bounded next step.</text>
+    <text x="1180" y="553" fill="#59616a" font-size="21">Inspect, begin fresh,</text>
+    <text x="1180" y="582" fill="#59616a" font-size="21">or pause for help.</text>
+  </g>
+
+  <g id="receipt" font-family="Arial, Helvetica, sans-serif">
+    <rect x="64" y="672" width="1472" height="166" fill="#111820"/>
+    <rect x="64" y="672" width="14" height="166" fill="#e1222a"/>
+    <text x="104" y="713" fill="#f5f5f2" font-size="18" font-weight="700" letter-spacing="2">THE FIVE-LINE RECEIPT</text>
+    <text x="104" y="761" fill="#ffffff" font-size="26" font-weight="700">goal</text>
+    <text x="200" y="761" fill="#ffffff" font-size="24">intended result</text>
+    <text x="520" y="761" fill="#ffffff" font-size="26" font-weight="700">evidence</text>
+    <text x="664" y="761" fill="#ffffff" font-size="24">artifact you can inspect</text>
+    <text x="1080" y="761" fill="#ffffff" font-size="26" font-weight="700">state</text>
+    <text x="1190" y="761" fill="#ffffff" font-size="20">complete / partial / unknown</text>
+    <line x1="104" y1="786" x2="1496" y2="786" stroke="#59616a" stroke-width="2"/>
+    <text x="104" y="819" fill="#ffffff" font-size="24">If the proof is missing, record </text>
+    <text x="456" y="819" fill="#ffffff" font-size="24" font-weight="700">unknown</text>
+    <text x="569" y="819" fill="#ffffff" font-size="24">. Do not promote hope into a result.</text>
+  </g>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
+  <title id="title">A citation-shaped answer is not yet a source record</title>
+  <desc id="desc">A citation is a pointer. Evidence is a record. This vertical editorial teaching board contrasts an answer that only looks cited with the four fields another person can inspect: claim, owner and location, access date, and supporting passage or data. It gives a stop condition for missing fields.</desc>
+  <rect width="900" height="1400" fill="#f4f0e8"/>
+  <rect x="40" y="30" width="820" height="10" fill="#1c1b1a"/>
+  <text x="40" y="88" fill="#e23d28" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">SOURCE CHECK / BEFORE BELIEF</text>
+  <text x="40" y="148" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="900" letter-spacing="-2">A CITATION IS A POINTER.</text>
+  <text x="40" y="202" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="900" letter-spacing="-2">EVIDENCE IS A RECORD.</text>
+  <text x="42" y="240" fill="#504d48" font-family="Consolas, 'Courier New', monospace" font-size="16">ask what another person can actually inspect</text>
+
+  <g transform="translate(40 300)">
+    <rect width="820" height="186" fill="#1c1b1a"/>
+    <text x="24" y="36" fill="#e23d28" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">WHAT LOOKS COMPLETE</text>
+    <text x="24" y="84" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">“THE POLICY CHANGED. [R1]”</text>
+    <text x="24" y="130" fill="#c5f83a" font-family="Consolas, 'Courier New', monospace" font-size="19" font-weight="700">STATUS: UNVERIFIED</text>
+    <text x="24" y="162" fill="#c4c4be" font-family="Arial, Helvetica, sans-serif" font-size="20">No owner, location, date, or support is shown.</text>
+  </g>
+
+  <text x="40" y="548" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="900">WHAT TO RECORD INSTEAD</text>
+  <line x1="80" y1="598" x2="80" y2="1104" stroke="#e23d28" stroke-width="8"/>
+  <circle cx="80" cy="642" r="16" fill="#e23d28"/>
+  <circle cx="80" cy="772" r="16" fill="#e23d28"/>
+  <circle cx="80" cy="902" r="16" fill="#e23d28"/>
+  <circle cx="80" cy="1032" r="16" fill="#e23d28"/>
+  <g transform="translate(126 578)">
+    <rect width="734" height="128" fill="#ffffff" stroke="#1c1b1a" stroke-width="3"/>
+    <text x="22" y="34" fill="#e23d28" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / CLAIM</text>
+    <text x="22" y="82" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">Exact words and scope</text>
+  </g>
+  <g transform="translate(126 708)">
+    <rect width="734" height="128" fill="#ffffff" stroke="#1c1b1a" stroke-width="3"/>
+    <text x="22" y="34" fill="#e23d28" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / OWNER + LOCATION</text>
+    <text x="22" y="82" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">Who published it; where to find it</text>
+  </g>
+  <g transform="translate(126 838)">
+    <rect width="734" height="128" fill="#ffffff" stroke="#1c1b1a" stroke-width="3"/>
+    <text x="22" y="34" fill="#e23d28" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / DATE</text>
+    <text x="22" y="82" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">When you accessed it</text>
+  </g>
+  <g transform="translate(126 968)">
+    <rect width="734" height="128" fill="#ffffff" stroke="#1c1b1a" stroke-width="3"/>
+    <text x="22" y="34" fill="#e23d28" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / SUPPORT</text>
+    <text x="22" y="82" fill="#1c1b1a" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">Passage, data, or a stated limit</text>
+  </g>
+
+  <rect x="40" y="1152" width="820" height="128" fill="#e23d28"/>
+  <text x="64" y="1194" fill="#ffffff" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">STOP / MISSING RECORD</text>
+  <text x="64" y="1238" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="900">IF A FIELD IS MISSING, RECORD THE GAP.</text>
+  <text x="64" y="1270" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="20">Do not invent a source or publish the claim.</text>
+  <text x="40" y="1342" fill="#504d48" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / CHECK THE RECORD</text>
+</svg>

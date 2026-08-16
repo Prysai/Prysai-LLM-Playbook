@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -95,7 +96,7 @@ def main() -> int:
         if "setReaderStatus('');" not in reader_script:
             raise AssertionError("reader-error-announcement: stale status banner is not cleared after an actionable error")
         for required in (
-            "async function fetchWithTimeout(url, consume = null)",
+            "async function fetchWithTimeout(url, consume = null",
             "controller.abort()",
             "error?.name === 'AbortError' ? currentReaderCopy().loadTimeout : currentReaderCopy().loadNetwork",
             "retryButton.addEventListener('click', () => { void load(); }",
@@ -130,7 +131,6 @@ def main() -> int:
             raise AssertionError("lazy-search-index: full-text index blocks the initial document")
         for required in (
             "const loadSearchIndex = () => {",
-            "script.src = 'search-index.js?v=20260813-lazy-search';",
             "searchNodes.input.addEventListener('input'",
             "if (searchIntentObserved || !searchNodes.input.value.trim()) return;",
             "await loadSearchIndex();",
@@ -139,10 +139,18 @@ def main() -> int:
         ):
             if required not in site_script:
                 raise AssertionError(f"lazy-search-index: missing {required}")
+        if not re.search(r"script\.src = 'search-index\.js\?v=[^']+';", site_script):
+            raise AssertionError("lazy-search-index: missing a cache-busted generated search-index loader")
         fixtures += 2
 
         if "document.documentElement.lang = localeManifest.locales[effectiveUiLanguage]?.html_lang || 'en';" not in site_script:
             raise AssertionError("locale-fallback-language: the document language must follow the rendered UI language")
+        for required in (
+            "const canonicalContentId = (contentId) => localeManifest.aliases?.[contentId] || contentId;",
+            "const contentId = canonicalContentId(anchor.dataset.contentId || contentIdForHref(sourceHref));",
+        ):
+            if required not in site_script:
+                raise AssertionError(f"locale-alias-routing: missing {required}")
         fixtures += 1
 
         for required in (
@@ -201,11 +209,16 @@ def main() -> int:
             raise AssertionError("mobile-teaching-boards: project-owned visual previews are hidden")
         if "#project-map .visual-case-links { grid-template-columns: 1fr; }" not in reader_styles:
             raise AssertionError("mobile-teaching-boards: visual previews must retain a readable one-column layout")
+        preview_rule = re.search(r"\.visual-case-card img\s*\{(?P<body>[^}]*)\}", reader_styles)
+        if not preview_rule or not re.search(r"aspect-ratio:\s*3\s*/\s*4", preview_rule.group("body")) or "object-fit: contain" not in preview_rule.group("body"):
+            raise AssertionError("teaching-board-preview: vertical teaching boards must show their full composition instead of a cropped 16:9 slice")
         for required in (
             "skillMethod: 'Skill method'",
             "fieldNote: 'Field note'",
             "selection.readerType",
-            "fallback: locale !== 'en', requested: locale, effective: 'en'",
+            "missingTranslation: true",
+            "requested: locale,",
+            "effective: locale,",
             "selection.overviewTarget || 'index.html'",
         ):
             if required not in reader_script:
@@ -237,6 +250,15 @@ def main() -> int:
         skill_ids = {content_id for content_id, kind in kinds.items() if kind == "skill"}
         field_note_ids = {content_id for content_id, kind in kinds.items() if kind == "field-note"}
         root = Path(__file__).resolve().parents[1]
+        locale_matrix = json.loads((root / "docs/governance/locale-matrix.yaml").read_text(encoding="utf-8"))
+        declared_field_notes = [
+            record
+            for record in locale_matrix.get("reader_content", [])
+            if record.get("kind") == "field-note"
+        ]
+        declared_field_note_ids = {record.get("content_id") for record in declared_field_notes}
+        if len(declared_field_note_ids) != len(declared_field_notes):
+            raise AssertionError("reader-content-identity: locale matrix has duplicate Field note identities")
         skill_registry = json.loads((root / "docs/governance/skill-registry.yaml").read_text(encoding="utf-8"))
         content_status = json.loads((root / "docs/governance/content-status.yaml").read_text(encoding="utf-8"))
         skill_count = len(skill_registry.get("records", []))
@@ -246,8 +268,11 @@ def main() -> int:
             raise AssertionError(
                 f"reader-content-identity: expected {skill_count} Skills, got {len(skill_ids)}"
             )
-        if field_note_ids != {"field-problems-index-2026-08-10", "field-problems-forums-2026-08-10", "codex-field-cases-current-review-2026-08-12", "ai-safety-field-signals-and-research-receipts-2026-08-13", "field-case-external-instruction-authority-2026-08-13", "field-case-blocked-network-boundary-2026-08-14", "field-case-agent-handoff-receipt-2026-08-14", "community-tutorial-intake-and-foundations-2026-08-14"}:
-            raise AssertionError(f"reader-content-identity: unexpected public Field notes: {sorted(field_note_ids)}")
+        if field_note_ids != declared_field_note_ids:
+            raise AssertionError(
+                "reader-content-identity: generated Field notes differ from locale matrix "
+                f"(declared={sorted(declared_field_note_ids)}, generated={sorted(field_note_ids)})"
+            )
         fixtures += 1
 
         for expected in (

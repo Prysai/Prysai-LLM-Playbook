@@ -1,22 +1,39 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import { spawn } from 'node:child_process';
 import { spawnSync } from 'node:child_process';
 import { createServer } from 'node:net';
 import { get as httpGet } from 'node:http';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import os from 'node:os';
 import path from 'node:path';
 
 const playwrightModule = process.env.PLAYWRIGHT_MODULE
   ? await import(pathToFileURL(process.env.PLAYWRIGHT_MODULE).href)
   : await import('playwright');
-const { chromium } = playwrightModule;
+// `import()` wraps CommonJS Playwright packages under `default`; native ESM
+// packages expose `chromium` directly. Support both so this check stays
+// portable across the project's bundled and contributor-installed runtimes.
+const { chromium } = playwrightModule.default ?? playwrightModule;
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const artifact = path.join(root, '_site');
 const evidenceDirectory = path.join(root, '.work', 'browser-smoke');
 const visualEvidenceDirectory = path.join(root, 'output', 'playwright');
-const python = process.env.PYTHON || process.env.PYTHON_PATH || 'python';
+const contentStatus = JSON.parse(await fs.readFile(path.join(root, 'docs', 'governance', 'content-status.yaml'), 'utf8'));
+const governedSkillCount = contentStatus?.skills?.count;
+assert.equal(Number.isInteger(governedSkillCount) && governedSkillCount > 0, true, 'content-status does not provide a positive Skill inventory count');
+const bundledPython = path.join(
+  os.homedir(),
+  '.cache',
+  'codex-runtimes',
+  'codex-primary-runtime',
+  'dependencies',
+  'python',
+  process.platform === 'win32' ? 'python.exe' : 'python',
+);
+const python = process.env.PYTHON || process.env.PYTHON_PATH || (existsSync(bundledPython) ? bundledPython : 'python');
 const testTimeoutMs = 90_000;
 const testTimeout = setTimeout(() => {
   console.error(`BROWSER_SMOKE_FAILED timeout_ms=${testTimeoutMs}`);
@@ -113,32 +130,162 @@ try {
   await page.goto(`${origin}/`, { waitUntil: 'networkidle' });
   assert.equal(searchRequests.length, 0, 'initial page load fetched the full search index');
   await noHorizontalOverflow(page, 'desktop showcase');
+  await fs.mkdir(visualEvidenceDirectory, { recursive: true });
+  await page.locator('.hero').screenshot({ path: path.join(visualEvidenceDirectory, 'hero-routes-desktop.png') });
+  const skillsSection = page.locator('#skills');
+  const adversarialReviewLink = skillsSection.getByRole('link', { name: 'Adversarial Project Review' });
+  await adversarialReviewLink.waitFor();
+  const comparisonProtocolLink = skillsSection.getByRole('link', { name: 'LLM Comparison Protocol' });
+  await comparisonProtocolLink.waitFor();
+  const practiceTargetSkillLink = skillsSection.getByRole('link', { name: 'Practice Target' });
+  await practiceTargetSkillLink.waitFor();
+  const interruptionCheckpointLink = skillsSection.getByRole('link', { name: 'Interruption Checkpoint' });
+  await interruptionCheckpointLink.waitFor();
+  assert.equal(await skillsSection.locator('.skill-grid > a').count(), governedSkillCount, `Skill index does not expose the governed inventory of ${governedSkillCount} methods`);
+  assert.match(
+    await adversarialReviewLink.getAttribute('href'),
+    /reader\.html\?path=skills%2Fprysai-adversarial-project-review%2FSKILL\.md&lang=en$/,
+    'Adversarial Project Review does not resolve through the canonical English Reader route',
+  );
+  const requestEscalationLink = skillsSection.locator('.skill-grid a').filter({ hasText: 'Request Escalation' });
+  assert.match(
+    await requestEscalationLink.getAttribute('href'),
+    /reader\.html\?path=skills%2Fprysai-request-escalation%2FSKILL\.md&lang=en$/,
+    'Request Escalation does not resolve through the canonical English Reader route',
+  );
+  assert.match(
+    await comparisonProtocolLink.getAttribute('href'),
+    /reader\.html\?path=skills%2Fprysai-llm-comparison-protocol%2FSKILL\.md&lang=en$/,
+    'LLM Comparison Protocol does not resolve through the canonical English Reader route',
+  );
+  assert.match(
+    await practiceTargetSkillLink.getAttribute('href'),
+    /reader\.html\?path=skills%2Fprysai-practice-target%2FSKILL\.md&lang=en$/,
+    'Practice Target does not resolve through the canonical English Reader route',
+  );
+  assert.match(
+    await interruptionCheckpointLink.getAttribute('href'),
+    /reader\.html\?path=skills%2Fprysai-interruption-checkpoint%2FSKILL\.md&lang=en$/,
+    'Interruption Checkpoint does not resolve through the canonical English Reader route',
+  );
+  const factWatchLink = skillsSection.getByRole('link', { name: 'Platform Fact Watch' });
+  await factWatchLink.waitFor();
+  assert.match(
+    await factWatchLink.getAttribute('href'),
+    /reader\.html\?path=skills%2Fprysai-platform-fact-watch%2FSKILL\.md&lang=en$/,
+    'Platform Fact Watch does not resolve through the canonical English Reader route',
+  );
+  assert.equal(
+    await skillsSection.locator('.skill-starter-grid a').filter({ hasText: 'I am not sure what kind of help I need yet.' }).isVisible(),
+    true,
+    'Skill starter does not expose Request Escalation to an unsure beginner',
+  );
+  assert.match(
+    await skillsSection.locator('.skill-footnote').innerText(),
+    /not an external review/i,
+    'Skill index does not retain the new review method\'s evidence boundary',
+  );
+  assert.match(
+    await skillsSection.locator('.skill-footnote').innerText(),
+    /unrun comparison method, not a model ranking/i,
+    'Skill index does not retain the LLM comparison evidence boundary',
+  );
+  assert.match(
+    await skillsSection.locator('.skill-footnote').innerText(),
+    /maintenance receipt, not a current-platform check/i,
+    'Skill index does not retain the platform-fact maintenance boundary',
+  );
+  assert.match(
+    await skillsSection.locator('.skill-footnote').innerText(),
+    /sets up one first attempt; it does not prove learning/i,
+    'Skill index does not retain the Practice Target evidence boundary',
+  );
+  assert.match(
+    await skillsSection.locator('.skill-footnote').innerText(),
+    /preserves a task receipt; it does not retry or recover work/i,
+    'Skill index does not retain the Interruption Checkpoint evidence boundary',
+  );
+  await skillsSection.screenshot({ path: path.join(visualEvidenceDirectory, 'skills-desktop.png') });
+  await page.locator('a[href="#skills"]').first().click();
+  await page.waitForFunction(() => window.location.hash === '#skills');
+  await page.waitForTimeout(350);
+  const skillsAnchorMetrics = await page.evaluate(() => {
+    const section = document.querySelector('#skills');
+    const header = document.querySelector('.site-header');
+    return {
+      sectionTop: section?.getBoundingClientRect().top,
+      headerBottom: header?.getBoundingClientRect().bottom,
+    };
+  });
+  assert.ok(
+    Number(skillsAnchorMetrics.sectionTop) >= Number(skillsAnchorMetrics.headerBottom) - 1,
+    `Skill index anchor is hidden by the sticky header: ${JSON.stringify(skillsAnchorMetrics)}`,
+  );
   const everydayPromptDeck = page.locator('#everyday-prompts');
   await everydayPromptDeck.waitFor();
+  await page.locator('a[href="#everyday-prompts"]').first().click();
+  await page.waitForTimeout(350);
+  const promptDeckAnchorMetrics = await page.evaluate(() => {
+    const deck = document.querySelector('#everyday-prompts');
+    const header = document.querySelector('.site-header');
+    return {
+      deckTop: deck?.getBoundingClientRect().top,
+      headerBottom: header?.getBoundingClientRect().bottom,
+    };
+  });
+  assert.ok(
+    Number(promptDeckAnchorMetrics.deckTop) >= Number(promptDeckAnchorMetrics.headerBottom) - 1,
+    `prompt-card anchor is hidden by the sticky header: ${JSON.stringify(promptDeckAnchorMetrics)}`,
+  );
   await fs.mkdir(visualEvidenceDirectory, { recursive: true });
   await everydayPromptDeck.screenshot({ path: path.join(visualEvidenceDirectory, 'everyday-prompt-cards-desktop.png') });
   assert.equal(await everydayPromptDeck.getByRole('heading', { name: 'Start with one small conversation.' }).isVisible(), true, 'everyday prompt-card entry is missing');
   const everydayPromptButtons = everydayPromptDeck.getByRole('button', { name: 'Copy prompt' });
-  assert.equal(await everydayPromptButtons.count(), 2, 'everyday prompt deck does not expose two copy controls');
+  assert.equal(await everydayPromptButtons.count(), 3, 'everyday prompt deck does not expose three copy controls');
   assert.match(
     await everydayPromptDeck.locator('[data-everyday-prompt]').first().innerText(),
-    /Do not assign a level or claim that I have learned Spanish/i,
-    'Spanish prompt card omits its no-fluency boundary',
+    /typed Spanish hotel check-in[\s\S]*do not call one successful exchange fluency, spoken conversation, or listening\/pronunciation evidence/i,
+    'Spanish prompt card omits its text-only or spoken-language boundary',
   );
+  assert.equal(await everydayPromptDeck.locator('.everyday-prompt-steps').count(), 3, 'everyday prompt cards do not expose their three-step use instructions');
+  assert.match(await everydayPromptDeck.locator('.everyday-prompt-steps').first().innerText(), /Copy the card exactly as written[\s\S]*fictional typed hotel check-in/i, 'Spanish card does not provide a no-setup first action');
   assert.match(
     await everydayPromptDeck.locator('[data-everyday-prompt]').nth(1).innerText(),
     /Do not invent citations|give a recommendation/i,
     'research prompt card omits its source and recommendation boundary',
   );
+  const skillPracticeCard = everydayPromptDeck.locator('.everyday-prompt-card-skill');
+  assert.equal(await skillPracticeCard.count(), 1, 'fictional skill-practice card is missing');
+  assert.match(
+    await skillPracticeCard.locator('[data-everyday-prompt]').textContent(),
+    /Do not make the plan first[\s\S]*one consequential omission[\s\S]*change only the visit length/i,
+    'skill-practice card omits its attempt-first, bounded-help, or changed-case boundary',
+  );
+  const skillPromptDetails = skillPracticeCard.locator('.compact-prompt-details');
+  assert.equal(await skillPromptDetails.count(), 1, 'skill-practice prompt lacks progressive disclosure');
+  assert.equal(await skillPromptDetails.getAttribute('open'), null, 'skill-practice prompt should remain collapsed at first view');
   await everydayPromptButtons.first().click();
-  await everydayPromptDeck.locator('#spanish-prompt-status').getByText(/Prompt copied\. Replace only the brackets/i).waitFor();
-  const guidedRouteLink = page.getByRole('link', { name: 'Have a disposable project? Follow the guided path.' });
+  await everydayPromptDeck.locator('#spanish-prompt-status').getByText(/Prompt copied\. Follow the three steps/i).waitFor();
+  await everydayPromptButtons.nth(2).click();
+  await everydayPromptDeck.locator('#skill-prompt-status').getByText(/Prompt copied\. Follow the three steps/i).waitFor();
+  assert.match(
+    await page.locator('.hero-scope').innerText(),
+    /transferable core \+ Codex Practice Track[\s\S]*Claude Code and Grok are not runnable routes yet/i,
+    'hero does not state the current guided platform scope before route selection',
+  );
+  const noSetupRouteLink = page.getByRole('link', { name: 'No project or coding background? Start with one no-setup check.' });
+  assert.equal(
+    await noSetupRouteLink.getAttribute('href'),
+    '#everyday-prompts',
+    'no-setup first route does not stay on the low-risk prompt-card entry',
+  );
+  const guidedRouteLink = page.getByRole('link', { name: 'Have a disposable project and want Codex? Follow the guided path.' });
   assert.match(
     await guidedRouteLink.getAttribute('href'),
     /reader\.html\?path=book%2Fchapters%2F01-gpt-and-codex-EN\.md&lang=en$/,
     'guided first-route card does not open the canonical Chapter 1 Reader route',
   );
-  const fixtureRouteLink = page.getByRole('link', { name: /No disposable project yet\? Use the safe fixture/ });
+  const fixtureRouteLink = page.getByRole('link', { name: /Need a safe file for the Codex path\? Open the offline fixture/ });
   assert.match(
     await fixtureRouteLink.getAttribute('href'),
     /reader\.html\?path=book%2Froutes%2Ffirst-safe-change-EN\.md&lang=en$/,
@@ -146,7 +293,7 @@ try {
   );
   assert.match(
     await page.locator('[data-route-decision]').innerText(),
-    /does not replace the guided Codex path/i,
+    /fallback, not a substitute for the guided path/i,
     'first-route decision card does not distinguish the fixture from the guided path',
   );
   const firstTurnLink = page.getByRole('link', { name: 'Draft a universal first turn' });
@@ -172,6 +319,205 @@ try {
   assert.equal(await firstTurnPage.getByRole('link', { name: /open full-size visual: make the boundary visible/i }).isVisible(), true, 'First-turn visual lacks an accessible mobile full-size route');
   await noHorizontalOverflow(firstTurnPage, 'mobile universal first-turn record');
   await firstTurnPage.close();
+
+  const verificationStabilityPage = await context.newPage();
+  await verificationStabilityPage.setViewportSize({ width: 390, height: 844 });
+  await verificationStabilityPage.goto(`${origin}/site/reader.html?path=docs%2Fquality%2Fverification-stability-2026-08-15.md&lang=en`, { waitUntil: 'networkidle' });
+  await verificationStabilityPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.match(await verificationStabilityPage.locator('[data-reader-article] h1').innerText(), /five repeated local verification runs/i, 'Reader did not render the verification-stability record');
+  const verificationStabilityVisual = verificationStabilityPage.locator('img[alt*="Median duration for five repeated local verification runs"]');
+  assert.match(await verificationStabilityVisual.getAttribute('src'), /docs\/quality\/verification-stability-2026-08-15\.svg$/, 'Verification-stability record does not retain its original chart');
+  const verificationStabilityVisualLink = verificationStabilityPage.locator('.reader-image-link').filter({ has: verificationStabilityVisual });
+  assert.match(await verificationStabilityVisualLink.locator('.reader-visual-thesis').innerText(), /median duration for five repeated local verification runs/i, 'Verification-stability chart lacks a mobile-readable thesis');
+  assert.equal(await verificationStabilityVisual.isVisible(), false, 'Mobile Reader shrinks the dense verification-stability chart instead of offering a full-size route');
+  assert.equal(await verificationStabilityPage.getByRole('link', { name: /open full-size visual: median duration for five repeated local verification runs/i }).isVisible(), true, 'Verification-stability chart lacks an accessible mobile full-size route');
+  assert.match(await verificationStabilityPage.locator('[data-reader-article]').innerText(), /use the table below for the exact values/i, 'Verification-stability record does not direct mobile readers to the exact-value table');
+  await noHorizontalOverflow(verificationStabilityPage, 'mobile verification-stability record');
+  await verificationStabilityVisualLink.screenshot({ path: path.join(visualEvidenceDirectory, 'verification-stability-mobile-visual-route.png') });
+  await verificationStabilityPage.screenshot({ path: path.join(visualEvidenceDirectory, 'verification-stability-mobile.png') });
+  await verificationStabilityPage.close();
+
+  const requestEscalationPage = await context.newPage();
+  await requestEscalationPage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#request-escalation`, { waitUntil: 'networkidle' });
+  await requestEscalationPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.match(await requestEscalationPage.locator('[data-reader-article] h1').innerText(), /beginner practice pack/i, 'Reader did not render the Beginner Practice Pack for request escalation');
+  const requestEscalationHeading = requestEscalationPage.getByRole('heading', { name: /before you ask — choose the lane/i });
+  assert.equal(await requestEscalationHeading.isVisible(), true, 'Request escalation card is not discoverable in Reader');
+  assert.equal(await requestEscalationPage.locator('#request-escalation').count(), 1, 'Reader did not preserve the request-escalation fragment target');
+  const requestEscalationPosition = await requestEscalationPage.locator('#request-escalation').evaluate((target) => target.getBoundingClientRect().top);
+  assert.ok(requestEscalationPosition >= 0 && requestEscalationPosition < 260, `Reader did not restore the request-escalation fragment into the first visible reading band: ${requestEscalationPosition}`);
+  const requestEscalationSkill = requestEscalationPage.getByRole('link', { name: /request escalation skill/i });
+  assert.match(await requestEscalationSkill.getAttribute('href'), /reader\.html\?path=skills%2Fprysai-request-escalation%2FSKILL\.md&lang=en$/, 'Request Escalation card does not open the canonical Skill Reader route');
+  const requestEscalationResearch = requestEscalationPage.getByRole('link', { name: /source-and-action escalation record/i });
+  assert.match(await requestEscalationResearch.getAttribute('href'), /reader\.html\?path=docs%2Fresearch%2Fprompt-escalation-boundary-source-and-action-2026-08-14\.md&lang=en$/, 'Request escalation card does not expose its dated source boundary');
+  assert.match(await requestEscalationPage.locator('[data-reader-article]').innerText(), /candidate\s*\/\s*not_run/i, 'Request escalation card omits its candidate and not-run boundary');
+  await noHorizontalOverflow(requestEscalationPage, 'desktop request escalation card');
+  await requestEscalationPage.screenshot({ path: path.join(visualEvidenceDirectory, 'request-escalation-desktop.png') });
+  await requestEscalationPage.setViewportSize({ width: 390, height: 844 });
+  await requestEscalationPage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#request-escalation`, { waitUntil: 'networkidle' });
+  await requestEscalationPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  const mobileRequestEscalationHeadingTop = await requestEscalationHeading.evaluate((heading) => heading.getBoundingClientRect().top);
+  assert.ok(mobileRequestEscalationHeadingTop >= 0 && mobileRequestEscalationHeadingTop < 260, `Mobile Reader did not restore the request-escalation heading into the first visible reading band: ${mobileRequestEscalationHeadingTop}`);
+  await noHorizontalOverflow(requestEscalationPage, 'mobile request escalation card');
+  await requestEscalationPage.screenshot({ path: path.join(visualEvidenceDirectory, 'request-escalation-mobile.png') });
+  await requestEscalationPage.close();
+
+  const sourceCheckPage = await context.newPage();
+  await sourceCheckPage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#source-check-route`, { waitUntil: 'networkidle' });
+  await sourceCheckPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  const sourceCheckHeading = sourceCheckPage.getByRole('heading', { name: /source check — when an answer looks cited/i });
+  assert.equal(await sourceCheckHeading.isVisible(), true, 'Source-record check is not discoverable in Reader');
+  assert.equal(await sourceCheckPage.locator('#source-check-route').count(), 1, 'Reader did not preserve the source-check fragment target');
+  const sourceCheckPosition = await sourceCheckPage.locator('#source-check-route').evaluate((target) => target.getBoundingClientRect().top);
+  assert.ok(sourceCheckPosition >= 0 && sourceCheckPosition < 260, `Reader did not restore the source-check fragment into the first visible reading band: ${sourceCheckPosition}`);
+  assert.match(await sourceCheckPage.locator('[data-reader-article]').innerText(), /unverified — source record missing/i, 'Source-record check omits its missing-evidence status');
+  const sourceCheckResearch = sourceCheckPage.getByRole('link', { name: /source-shaped-answer research record/i });
+  assert.match(
+    await sourceCheckResearch.getAttribute('href'),
+    /reader\.html\?path=docs%2Fresearch%2Fsource-shaped-answers-and-beginner-checks-2026-08-14\.md&lang=en$/,
+    'Source-record check does not expose its dated research boundary',
+  );
+  const sourceCheckVisual = sourceCheckPage.locator('img[alt*="citation is a pointer"]');
+  assert.match(await sourceCheckVisual.getAttribute('src'), /assets\/teaching\/source-check-before-belief-red-black\.svg$/, 'Source-record check does not retain its original teaching visual');
+  await noHorizontalOverflow(sourceCheckPage, 'desktop source-record check');
+  await sourceCheckPage.screenshot({ path: path.join(visualEvidenceDirectory, 'source-record-check-desktop.png') });
+  await sourceCheckPage.setViewportSize({ width: 390, height: 844 });
+  await sourceCheckPage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#source-check-route`, { waitUntil: 'networkidle' });
+  await sourceCheckPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  const mobileSourceCheckHeadingTop = await sourceCheckHeading.evaluate((heading) => heading.getBoundingClientRect().top);
+  assert.ok(mobileSourceCheckHeadingTop >= 0 && mobileSourceCheckHeadingTop < 260, `Mobile Reader did not restore the source-check heading into the first visible reading band: ${mobileSourceCheckHeadingTop}`);
+  assert.equal(await sourceCheckVisual.isVisible(), false, 'Mobile Reader shrinks the dense source-record board instead of offering a full-size route');
+  assert.equal(await sourceCheckPage.getByRole('link', { name: /open full-size visual: a citation is a pointer/i }).isVisible(), true, 'Source-record check lacks an accessible mobile full-size route');
+  await noHorizontalOverflow(sourceCheckPage, 'mobile source-record check');
+  await sourceCheckPage.screenshot({ path: path.join(visualEvidenceDirectory, 'source-record-check-mobile.png') });
+  await sourceCheckPage.close();
+
+  const directStarterCardPage = await context.newPage();
+  await directStarterCardPage.setViewportSize({ width: 390, height: 844 });
+  await directStarterCardPage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#card-a1-hotel-baseline-and-correction`, { waitUntil: 'networkidle' });
+  await directStarterCardPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  const directStarterHeading = directStarterCardPage.getByRole('heading', { name: /card a1 — hotel baseline and correction/i });
+  await directStarterHeading.waitFor();
+  const directStarterTop = await directStarterHeading.evaluate((heading) => heading.getBoundingClientRect().top);
+  assert.ok(directStarterTop >= 0 && directStarterTop < 260, `Beginner route A1 does not land on its copy-ready card: ${directStarterTop}`);
+  const directStarterPrompt = directStarterCardPage.locator('pre').filter({ hasText: 'Run one four-minute' }).first();
+  assert.match(await directStarterPrompt.innerText(), /Run one four-minute typed Spanish hotel check-in/i, 'Beginner route A1 does not retain its first copy-ready prompt');
+  assert.doesNotMatch(await directStarterPrompt.innerText(), /\*\*typed\*\*/, 'Beginner route A1 leaks Markdown markup into the copied prompt');
+  await noHorizontalOverflow(directStarterCardPage, 'mobile direct beginner starter card');
+  await directStarterCardPage.close();
+
+  const practiceTargetPage = await context.newPage();
+  await practiceTargetPage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#practice-target-route`, { waitUntil: 'networkidle' });
+  await practiceTargetPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  const practiceTargetHeading = practiceTargetPage.getByRole('heading', { name: /make the first try small/i });
+  assert.equal(await practiceTargetHeading.isVisible(), true, 'Practice Target route is not discoverable in Reader');
+  assert.equal(await practiceTargetPage.locator('#practice-target-route').count(), 1, 'Reader did not preserve the practice-target fragment target');
+  const practiceTargetPosition = await practiceTargetPage.locator('#practice-target-route').evaluate((target) => target.getBoundingClientRect().top);
+  assert.ok(practiceTargetPosition >= 0 && practiceTargetPosition < 260, `Reader did not restore the Practice Target fragment into the first visible reading band: ${practiceTargetPosition}`);
+  const practiceTargetSkill = practiceTargetHeading.locator('xpath=following::a[normalize-space()="Practice Target Skill"][1]');
+  assert.match(await practiceTargetSkill.getAttribute('href'), /reader\.html\?path=skills%2Fprysai-practice-target%2FSKILL\.md&lang=en$/, 'Practice Target route does not open the canonical Skill Reader route');
+  const practiceTargetVisual = practiceTargetPage.locator('img[alt*="learning wish becomes one ordinary situation"]');
+  assert.match(await practiceTargetVisual.getAttribute('src'), /assets\/teaching\/practice-target-to-first-attempt-red-black\.svg$/, 'Practice Target route does not retain its original teaching visual');
+  await noHorizontalOverflow(practiceTargetPage, 'desktop Practice Target route');
+  await practiceTargetPage.screenshot({ path: path.join(visualEvidenceDirectory, 'practice-target-desktop.png') });
+  await practiceTargetPage.setViewportSize({ width: 390, height: 844 });
+  await practiceTargetPage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#practice-target-route`, { waitUntil: 'networkidle' });
+  await practiceTargetPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.equal(await practiceTargetVisual.isVisible(), false, 'Mobile Reader shrinks the dense Practice Target board instead of offering a full-size route');
+  assert.equal(await practiceTargetPage.getByRole('link', { name: /open full-size visual: a learning wish becomes one ordinary situation/i }).isVisible(), true, 'Practice Target route lacks an accessible mobile full-size route');
+  await noHorizontalOverflow(practiceTargetPage, 'mobile Practice Target route');
+  await practiceTargetPage.screenshot({ path: path.join(visualEvidenceDirectory, 'practice-target-mobile.png') });
+  await practiceTargetPage.close();
+
+  const sixMessagePage = await context.newPage();
+  await sixMessagePage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#six-short-spanish-messages`, { waitUntil: 'networkidle' });
+  await sixMessagePage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  const sixMessageHeading = sixMessagePage.getByRole('heading', { name: /six short messages for one Spanish practice loop/i });
+  assert.equal(await sixMessageHeading.isVisible(), true, 'Six-message Spanish practice route is not discoverable in Reader');
+  assert.match(await sixMessagePage.locator('[data-reader-article]').innerText(), /six separate copy-ready messages, not six magic prompts/i, 'Six-message route omits its no-magic-prompt boundary');
+  assert.equal(await sixMessagePage.getByText('1. Set one target', { exact: true }).isVisible(), true, 'Six-message route omits the first usable prompt');
+  await noHorizontalOverflow(sixMessagePage, 'desktop six-message Spanish practice route');
+  await sixMessagePage.setViewportSize({ width: 390, height: 844 });
+  await sixMessagePage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#six-short-spanish-messages`, { waitUntil: 'networkidle' });
+  await sixMessagePage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  await noHorizontalOverflow(sixMessagePage, 'mobile six-message Spanish practice route');
+  await sixMessagePage.screenshot({ path: path.join(visualEvidenceDirectory, 'six-message-spanish-mobile.png') });
+  await sixMessagePage.close();
+
+  const workUpdatePage = await context.newPage();
+  await workUpdatePage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#six-short-work-update-messages`, { waitUntil: 'networkidle' });
+  await workUpdatePage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  const workUpdateHeading = workUpdatePage.getByRole('heading', { name: /six short messages for a work-update practice loop/i });
+  assert.equal(await workUpdateHeading.isVisible(), true, 'Six-message work-update route is not discoverable in Reader');
+  assert.equal(await workUpdatePage.locator('#six-short-work-update-messages').count(), 1, 'Reader did not preserve the six-message work-update fragment target');
+  assert.match(await workUpdatePage.locator('[data-reader-article]').innerText(), /not a promise that an LLM can assess writing/i, 'Six-message work-update route omits its evidence boundary');
+  assert.equal(await workUpdatePage.getByText('1. Freeze a fictional update brief', { exact: true }).isVisible(), true, 'Six-message work-update route omits the first usable prompt');
+  await noHorizontalOverflow(workUpdatePage, 'desktop six-message work-update route');
+  await workUpdatePage.screenshot({ path: path.join(visualEvidenceDirectory, 'six-message-work-update-desktop.png') });
+  await workUpdatePage.setViewportSize({ width: 390, height: 844 });
+  await workUpdatePage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#six-short-work-update-messages`, { waitUntil: 'networkidle' });
+  await workUpdatePage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  await noHorizontalOverflow(workUpdatePage, 'mobile six-message work-update route');
+  await workUpdatePage.screenshot({ path: path.join(visualEvidenceDirectory, 'six-message-work-update-mobile.png') });
+  await workUpdatePage.close();
+
+  const sixResearchPage = await context.newPage();
+  await sixResearchPage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#six-short-research-messages`, { waitUntil: 'networkidle' });
+  await sixResearchPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  const sixResearchHeading = sixResearchPage.getByRole('heading', { name: /six short messages for one research check/i });
+  assert.equal(await sixResearchHeading.isVisible(), true, 'Six-message research route is not discoverable in Reader');
+  assert.equal(await sixResearchPage.locator('#six-short-research-messages').count(), 1, 'Reader did not preserve the six-message research fragment target');
+  assert.match(await sixResearchPage.locator('[data-reader-article]').innerText(), /not a promise that an LLM can search correctly/i, 'Six-message research route omits its evidence boundary');
+  assert.equal(await sixResearchPage.getByText('1. Freeze one decision', { exact: true }).isVisible(), true, 'Six-message research route omits the first usable prompt');
+  const sixResearchVisual = sixResearchPage.locator('img[alt*="research question becomes a decision"]');
+  assert.match(await sixResearchVisual.getAttribute('src'), /assets\/teaching\/research-question-to-source-record-red-black\.svg$/, 'Six-message research route does not retain its original teaching visual');
+  await noHorizontalOverflow(sixResearchPage, 'desktop six-message research route');
+  await sixResearchPage.screenshot({ path: path.join(visualEvidenceDirectory, 'six-message-research-desktop.png') });
+  await sixResearchPage.setViewportSize({ width: 390, height: 844 });
+  await sixResearchPage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#six-short-research-messages`, { waitUntil: 'networkidle' });
+  await sixResearchPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.equal(await sixResearchVisual.isVisible(), false, 'Mobile Reader shrinks the dense research-record board instead of offering a full-size route');
+  assert.equal(await sixResearchPage.getByRole('link', { name: /open full-size visual: a research question becomes a decision/i }).isVisible(), true, 'Six-message research route lacks an accessible mobile full-size route');
+  await noHorizontalOverflow(sixResearchPage, 'mobile six-message research route');
+  await sixResearchPage.screenshot({ path: path.join(visualEvidenceDirectory, 'six-message-research-mobile.png') });
+  await sixResearchPage.close();
+
+  const platformFactWatchPage = await context.newPage();
+  await platformFactWatchPage.goto(`${origin}/site/reader.html?path=skills%2Fprysai-platform-fact-watch%2FSKILL.md&lang=en`, { waitUntil: 'networkidle' });
+  await platformFactWatchPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.match(await platformFactWatchPage.locator('[data-reader-article] h1').innerText(), /platform fact watch/i, 'Reader did not render Platform Fact Watch');
+  assert.match(
+    await platformFactWatchPage.locator('[data-reader-article]').innerText(),
+    /does not prove current product behavior, account access, permission safety, runtime success, adapter admission, model quality, learner outcome, or cross-platform equivalence/i,
+    'Platform Fact Watch Reader page omits its evidence boundary',
+  );
+  await noHorizontalOverflow(platformFactWatchPage, 'desktop Platform Fact Watch Reader page');
+  await platformFactWatchPage.close();
+
+  const typedLanguagePage = await context.newPage();
+  await typedLanguagePage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#language-practice-route`, { waitUntil: 'networkidle' });
+  await typedLanguagePage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  const typedLanguageHeading = typedLanguagePage.getByRole('heading', { name: /typed beginner Spanish travel exchange/i });
+  assert.equal(await typedLanguageHeading.isVisible(), true, 'Typed language route is not discoverable in Reader');
+  assert.equal(await typedLanguagePage.locator('#language-practice-route').count(), 1, 'Reader did not preserve the language-practice-route fragment target');
+  const typedLanguagePosition = await typedLanguagePage.locator('#language-practice-route').evaluate((target) => target.getBoundingClientRect().top);
+  assert.ok(typedLanguagePosition >= 0 && typedLanguagePosition < 260, `Reader did not restore the typed language fragment into the first visible reading band: ${typedLanguagePosition}`);
+  const modalityBoundary = typedLanguagePage.getByRole('heading', { name: /keep the evidence surface honest/i });
+  assert.equal(await modalityBoundary.isVisible(), true, 'Typed language route omits the modality boundary');
+  assert.match(await typedLanguagePage.locator('[data-reader-article]').innerText(), /does not observe speech, listening, pronunciation, pace, or repair/i, 'Typed language route does not name the unobserved spoken evidence');
+  const modalityRecord = typedLanguagePage.getByRole('link', { name: /typed-rehearsal boundary record/i });
+  assert.match(await modalityRecord.getAttribute('href'), /reader\.html\?path=docs%2Fresearch%2Fai-assisted-language-practice-boundaries-2026-08-14\.md&lang=en$/, 'Typed language route does not expose its modality-boundary research record');
+  await noHorizontalOverflow(typedLanguagePage, 'desktop typed language route');
+  await typedLanguagePage.screenshot({ path: path.join(visualEvidenceDirectory, 'typed-language-route-desktop.png') });
+  await typedLanguagePage.setViewportSize({ width: 390, height: 844 });
+  await typedLanguagePage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#language-practice-route`, { waitUntil: 'networkidle' });
+  await typedLanguagePage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  const mobileTypedLanguageHeadingTop = await typedLanguageHeading.evaluate((heading) => heading.getBoundingClientRect().top);
+  assert.ok(mobileTypedLanguageHeadingTop >= 0 && mobileTypedLanguageHeadingTop < 260, `Mobile Reader did not restore the typed language heading into the first visible reading band: ${mobileTypedLanguageHeadingTop}`);
+  await noHorizontalOverflow(typedLanguagePage, 'mobile typed language route');
+  await typedLanguagePage.screenshot({ path: path.join(visualEvidenceDirectory, 'typed-language-route-mobile.png') });
+  await typedLanguagePage.close();
+
   const pilotProtocolPage = await context.newPage();
   await pilotProtocolPage.goto(`${origin}/site/reader.html?path=docs%2Fquality%2Ffirst-win-pilot-protocol-v2.md&lang=en`, { waitUntil: 'networkidle' });
   await pilotProtocolPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
@@ -186,6 +532,15 @@ try {
   assert.equal(await pilotConditionList.count(), 1, 'Pilot protocol uses a dense fixed-condition block instead of a mobile-readable list');
   assert.equal(await pilotConditionList.locator('li').count(), 6, 'Pilot protocol fixed conditions do not expose six scannable records');
   await pilotProtocolPage.close();
+  const newcomerProtocolPage = await context.newPage();
+  await newcomerProtocolPage.goto(`${origin}/site/reader.html?path=docs%2Fquality%2Fnewcomer-entry-observation-protocol-v1.md&lang=en`, { waitUntil: 'networkidle' });
+  await newcomerProtocolPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.match(await newcomerProtocolPage.locator('[data-reader-article] h1').innerText(), /newcomer entry observation protocol v1/i, 'Reader did not render the newcomer-entry protocol');
+  assert.match(await newcomerProtocolPage.locator('[data-reader-article]').innerText(), /have you sent a prompt to a generative chat model/i, 'newcomer-entry protocol lacks its explicit cohort screen');
+  assert.match(await newcomerProtocolPage.locator('[data-reader-article]').innerText(), /no recruitment, participant run, or result is recorded/i, 'newcomer-entry protocol omits its not-run boundary');
+  await newcomerProtocolPage.setViewportSize({ width: 390, height: 844 });
+  await noHorizontalOverflow(newcomerProtocolPage, 'mobile newcomer-entry protocol');
+  await newcomerProtocolPage.close();
   assert.equal(await page.getByRole('button', { name: 'Compare with one acceptable shape' }).isDisabled(), true, 'First Win comparison is available before all three judgments');
   assert.match(await page.locator('[data-first-win-receipt]').innerText(), /judgment_state: incomplete/i, 'First Win does not expose an incomplete local record before checks');
   await page.locator('[data-first-win-check="facts_kept"][value="FAIL"]').check();
@@ -254,6 +609,24 @@ try {
   assert.match(await fieldSignalsPage.locator('[data-reader-article]').innerText(), /not a security log, audit certificate, chain-of-thought record, or proof that the research is complete/i, 'research checkpoint is missing its evidence boundary');
   await fieldSignalsPage.close();
 
+  const surfaceChapterPage = await context.newPage();
+  await surfaceChapterPage.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F05-choose-the-codex-surface-EN.md&lang=en`, { waitUntil: 'networkidle' });
+  await surfaceChapterPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.match(await surfaceChapterPage.locator('[data-reader-article] h1').innerText(), /choose the right codex surface/i, 'Reader did not render the surface-decision chapter');
+  const fieldSignalVisual = surfaceChapterPage.locator('img[alt*="Field signals mapped to the smallest safe response"]');
+  assert.match(await fieldSignalVisual.getAttribute('src'), /assets\/teaching\/field-signal-to-safe-degradation-red-black\.svg$/, 'surface-decision chapter does not retain its teaching visual');
+  assert.equal(await fieldSignalVisual.isVisible(), true, 'Desktop Reader does not show the field-signal teaching visual');
+  const fieldSignalVisualLink = surfaceChapterPage.locator('.reader-image-link').filter({ has: fieldSignalVisual });
+  assert.equal(await fieldSignalVisualLink.getAttribute('target'), '_blank', 'field-signal teaching visual does not offer a full-size route');
+  assert.equal(await fieldSignalVisualLink.evaluate((link) => link.classList.contains('reader-teaching-visual')), true, 'field-signal visual is not rendered as a deliberate visual break');
+  await fieldSignalVisualLink.screenshot({ path: path.join(visualEvidenceDirectory, 'field-signal-surface-desktop.png') });
+  await noHorizontalOverflow(surfaceChapterPage, 'desktop surface-decision chapter');
+  await surfaceChapterPage.setViewportSize({ width: 390, height: 844 });
+  assert.equal(await fieldSignalVisual.isVisible(), false, 'Mobile Reader shrinks the dense field-signal board instead of offering a full-size route');
+  assert.equal(await surfaceChapterPage.getByRole('link', { name: /open full-size visual: field signals mapped to the smallest safe response/i }).isVisible(), true, 'field-signal visual lacks an accessible mobile full-size route');
+  await noHorizontalOverflow(surfaceChapterPage, 'mobile surface-decision chapter');
+  await surfaceChapterPage.close();
+
   await searchInput.fill('task receipt');
   await page.getByRole('button', { name: 'Search', exact: true }).click();
   const handoffSearchResult = page.locator('[data-search-results] .search-result').filter({ hasText: 'created sub-agent is not a task receipt' }).first();
@@ -276,6 +649,32 @@ try {
   await noHorizontalOverflow(handoffCasePage, 'mobile agent-handoff field case');
   await handoffCasePage.close();
 
+  await searchInput.fill('capacity interruption');
+  await page.getByRole('button', { name: 'Search', exact: true }).click();
+  const capacitySearchResult = page.locator('[data-search-results] .search-result').filter({ hasText: 'pause before retrying an interrupted task' }).first();
+  await capacitySearchResult.waitFor();
+  const capacityCaseHref = await capacitySearchResult.locator('a').getAttribute('href');
+  assert.match(capacityCaseHref, /reader\.html\?path=docs%2Fresearch%2Ffield-case-capacity-interruption-checkpoint-2026-08-14\.md&lang=en$/, 'Capacity-interruption case is not exposed through the English Reader route');
+  const capacityCasePage = await context.newPage();
+  await capacityCasePage.goto(new URL(capacityCaseHref, `${origin}/site/`).href, { waitUntil: 'networkidle' });
+  await capacityCasePage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.match(await capacityCasePage.locator('[data-reader-article] h1').innerText(), /pause before retrying an interrupted task/i, 'Reader did not render the capacity-interruption field case');
+  assert.equal(await capacityCasePage.getByRole('heading', { name: /start here: do not make the interruption invisible/i }).isVisible(), true, 'Capacity-interruption case does not lead with the beginner pause boundary');
+  assert.match(await capacityCasePage.locator('[data-reader-article]').innerText(), /does not send a prompt, retry a model, change a model, inspect an account, or establish how any provider will behave/i, 'Capacity-interruption case omits its offline scope boundary');
+  const capacityVisual = capacityCasePage.locator('img[alt*="Interruption checkpoint"]');
+  assert.match(await capacityVisual.getAttribute('src'), /assets\/teaching\/interruption-checkpoint-card-red-black\.svg$/, 'Capacity-interruption case does not retain its project-owned checkpoint visual');
+  const capacityVisualLink = capacityCasePage.locator('.reader-image-link').filter({ has: capacityVisual });
+  assert.equal(await capacityVisualLink.getAttribute('target'), '_blank', 'Capacity-interruption visual does not offer a full-size reading route');
+  await capacityVisualLink.screenshot({ path: path.join(visualEvidenceDirectory, 'interruption-checkpoint-card.png') });
+  await noHorizontalOverflow(capacityCasePage, 'desktop capacity-interruption field case');
+  await capacityCasePage.screenshot({ path: path.join(visualEvidenceDirectory, 'capacity-interruption-desktop.png') });
+  await capacityCasePage.setViewportSize({ width: 390, height: 844 });
+  assert.equal(await capacityVisual.isVisible(), false, 'Mobile Reader shrinks the dense interruption-checkpoint board instead of offering a full-size route');
+  assert.equal(await capacityCasePage.getByRole('link', { name: /open full-size visual: interruption checkpoint/i }).isVisible(), true, 'Capacity-interruption visual lacks an accessible mobile full-size route');
+  await noHorizontalOverflow(capacityCasePage, 'mobile capacity-interruption field case');
+  await capacityCasePage.screenshot({ path: path.join(visualEvidenceDirectory, 'capacity-interruption-mobile.png') });
+  await capacityCasePage.close();
+
   await searchInput.fill('better beginner opening');
   await page.getByRole('button', { name: 'Search', exact: true }).click();
   const tutorialIntakeSearchResult = page.locator('[data-search-results] .search-result').filter({ hasText: 'Community tutorial intake' }).first();
@@ -296,17 +695,17 @@ try {
   let retryRequests = 0;
   await retryPage.route('**/search-index.js*', async (route) => {
     retryRequests += 1;
-    if (retryRequests <= 2) await route.abort('failed');
+    if (retryRequests === 1) await route.abort('failed');
     else await route.continue();
   });
   await retryPage.goto(`${origin}/`, { waitUntil: 'networkidle' });
   const retryInput = retryPage.getByRole('searchbox', { name: 'Search the Playbook' });
-  await retryInput.fill('verification');
+  await retryInput.evaluate((input) => { input.value = 'verification'; });
   await retryPage.getByRole('button', { name: 'Search', exact: true }).click();
   await retryPage.getByText(/submit again to retry/i).waitFor();
   await retryPage.getByRole('button', { name: 'Search', exact: true }).click();
   await retryPage.locator('[data-search-results] .search-result').first().waitFor();
-  assert.equal(retryRequests, 3, 'search failure did not retry after input prefetch and submitted search');
+  assert.equal(retryRequests, 2, 'search failure did not retry after the submitted search failed');
   await retryPage.close();
 
   const desktopRecoveryHref = await page.locator('.problem-card-practice[data-source-href$="#recovery-route"]').getAttribute('href');
@@ -346,15 +745,30 @@ try {
   await noHorizontalOverflow(universalSeamPage, 'mobile universal-core route');
   await universalSeamPage.close();
 
+  const universalSeamRawPage = await context.newPage();
+  await universalSeamRawPage.setViewportSize({ width: 390, height: 844 });
+  await universalSeamRawPage.goto(`${origin}/assets/teaching/universal-seams-red-black.svg`, { waitUntil: 'networkidle' });
+  await noHorizontalOverflow(universalSeamRawPage, 'mobile universal-seam full-size visual');
+  await universalSeamRawPage.screenshot({ path: path.join(visualEvidenceDirectory, 'universal-seams-mobile-visual-route.png') });
+  await universalSeamRawPage.close();
+
   await page.setViewportSize({ width: 390, height: 844 });
   await noHorizontalOverflow(page, 'mobile showcase');
+  await page.goto(`${origin}/site/`, { waitUntil: 'networkidle' });
+  await page.locator('.hero').screenshot({ path: path.join(visualEvidenceDirectory, 'hero-routes-mobile.png') });
+  assert.equal(await page.locator('.mobile-core-routes').isVisible(), false, 'mobile route chooser duplicates the detailed hero decision');
+  const mobileNoSetupRoute = page.locator('.hero-route-option').first();
+  assert.equal(await mobileNoSetupRoute.getAttribute('href'), '#everyday-prompts', 'mobile no-setup route does not target the prompt-card entry');
+  await mobileNoSetupRoute.click();
+  await page.waitForFunction(() => window.location.hash === '#everyday-prompts');
+  assert.equal(await page.locator('#everyday-prompts').getByRole('heading', { name: 'Start with one small conversation.' }).isVisible(), true, 'mobile no-setup route does not reach the prompt-card entry');
   const mobileStartRoutes = [
     [/01-gpt-and-codex-EN\.md/, /understand gpt.*codex/i],
     [/first-safe-change-EN\.md/, /first safe change/i],
   ];
   for (const [index, [pathPattern, titlePattern]] of mobileStartRoutes.entries()) {
     await page.goto(`${origin}/site/`, { waitUntil: 'networkidle' });
-    const route = page.locator('.mobile-core-routes a').nth(index);
+    const route = page.locator('.hero-route-option').nth(index + 1);
     const label = (await route.innerText()).replace(/\s+/g, ' ').trim();
     assert.ok(label, `mobile start route ${index + 1} has no visible label`);
     const href = await route.getAttribute('href');
@@ -364,11 +778,61 @@ try {
     await page.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
     assert.match(await page.locator('[data-reader-article] h1').innerText(), titlePattern, `${label}: Reader did not render the intended first page`);
   }
-  await page.goto(`${origin}/site/`, { waitUntil: 'networkidle' });
-  await page.locator('#everyday-prompts').scrollIntoViewIfNeeded();
+  await page.goto(`${origin}/site/#everyday-prompts`, { waitUntil: 'networkidle' });
+  await page.waitForTimeout(350);
+  const mobilePromptDeckAnchorMetrics = await page.evaluate(() => {
+    const deck = document.querySelector('#everyday-prompts');
+    const header = document.querySelector('.site-header');
+    return {
+      deckTop: deck?.getBoundingClientRect().top,
+      headerBottom: header?.getBoundingClientRect().bottom,
+    };
+  });
+  assert.ok(
+    Number(mobilePromptDeckAnchorMetrics.deckTop) >= Number(mobilePromptDeckAnchorMetrics.headerBottom) - 1,
+    `mobile prompt-card anchor is hidden by the sticky header: ${JSON.stringify(mobilePromptDeckAnchorMetrics)}`,
+  );
   await page.locator('#everyday-prompts').screenshot({ path: path.join(visualEvidenceDirectory, 'everyday-prompt-cards-mobile-en.png') });
   assert.equal(await page.locator('#everyday-prompts').getByRole('button', { name: 'Copy prompt' }).first().isVisible(), true, 'mobile prompt-card copy control is hidden');
   await noHorizontalOverflow(page, 'mobile prompt-card deck');
+  const chinesePromptPage = await context.newPage();
+  await chinesePromptPage.setViewportSize({ width: 390, height: 844 });
+  await chinesePromptPage.goto(`${origin}/site/?lang=zh#everyday-prompts`, { waitUntil: 'networkidle' });
+  await chinesePromptPage.locator('#everyday-prompts').waitFor();
+  await chinesePromptPage.waitForTimeout(350);
+  await noHorizontalOverflow(chinesePromptPage, 'mobile Chinese prompt-card deck');
+  assert.equal(
+    await chinesePromptPage.getByRole('heading', { name: '完成一次简短的文字版西班牙语酒店入住对话。' }).isVisible(),
+    true,
+    'mobile Chinese language prompt-card heading is missing',
+  );
+  assert.equal(
+    await chinesePromptPage.getByRole('button', { name: '复制提示词' }).first().isVisible(),
+    true,
+    'mobile Chinese prompt-card copy control is hidden',
+  );
+  const chinesePromptContract = chinesePromptPage.locator('.prompt-contract-panel');
+  assert.equal(await chinesePromptContract.getByRole('listitem').count(), 6, 'mobile prompt contract does not expose all six visible fields');
+  assert.deepEqual(
+    await chinesePromptContract.locator('strong').allTextContents(),
+    ['结果', '起始上下文', '请求的回答', '限制', '检查', '停止和记录'],
+    'mobile Chinese prompt contract is not fully localized',
+  );
+  const chinesePromptContractMetrics = await chinesePromptContract.evaluate((panel) => {
+    const grid = panel.querySelector('.prompt-contract-grid');
+    const cards = [...panel.querySelectorAll('li')];
+    return {
+      panelRight: panel.getBoundingClientRect().right,
+      viewport: window.innerWidth,
+      columns: getComputedStyle(grid).gridTemplateColumns.split(' ').filter(Boolean).length,
+      cardsFit: cards.every((card) => card.getBoundingClientRect().right <= window.innerWidth + 1),
+    };
+  });
+  assert.equal(chinesePromptContractMetrics.columns, 2, `mobile prompt contract should keep two readable columns: ${JSON.stringify(chinesePromptContractMetrics)}`);
+  assert.ok(chinesePromptContractMetrics.cardsFit && chinesePromptContractMetrics.panelRight <= chinesePromptContractMetrics.viewport + 1, `mobile prompt contract overflows the viewport: ${JSON.stringify(chinesePromptContractMetrics)}`);
+  await chinesePromptPage.locator('#everyday-prompts').screenshot({ path: path.join(visualEvidenceDirectory, 'everyday-prompt-cards-mobile-zh.png') });
+  await chinesePromptPage.close();
+  await page.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
   assert.match(await page.getByRole('link', { name: 'Open every problem route' }).getAttribute('href'), /reader\.html\?path=README-EN\.md&lang=en#choose-your-starting-point$/, 'mobile route index link does not target the canonical English README route section');
   assert.equal(await page.getByRole('button', { name: 'Copy rescue prompt' }).isVisible(), true, 'mobile rescue control is hidden');
   assert.equal(await page.getByRole('button', { name: 'Copy my local check record' }).isVisible(), true, 'mobile local record control is hidden');
@@ -442,6 +906,60 @@ try {
   const mobileTableWidth = await mobileWideTable.evaluate((wrap) => ({ viewport: wrap.clientWidth, content: wrap.querySelector('table').scrollWidth }));
   assert.ok(mobileTableWidth.content > mobileTableWidth.viewport, `mobile wide table is still compressed instead of scrollable: ${JSON.stringify(mobileTableWidth)}`);
   await noHorizontalOverflow(page, 'mobile Reader');
+
+  // Navigation must keep the requested locale when the next candidate file
+  // exists, then enter the explicit fallback path at the first missing one.
+  const chineseChapterNavigationPage = await context.newPage();
+  await chineseChapterNavigationPage.setViewportSize({ width: 390, height: 844 });
+  await chineseChapterNavigationPage.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F06-model-selection-ZH.md&lang=zh`, { waitUntil: 'networkidle' });
+  await chineseChapterNavigationPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  await chineseChapterNavigationPage.locator('[data-reader-next]').click();
+  await chineseChapterNavigationPage.waitForURL(/reader\.html\?path=book%2Fchapters%2F07-skills-plugins-and-tools-ZH\.md&lang=zh$/);
+  await chineseChapterNavigationPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.equal(await chineseChapterNavigationPage.locator('[data-reader-language]').inputValue(), 'zh', 'Chinese chapter navigation loses the requested interface language');
+  assert.match(await chineseChapterNavigationPage.locator('[data-reader-article] h1').innerText(), /Skill、Plugin、MCP 和工具如何分工/, 'Chinese chapter navigation does not open the available Chapter 7 candidate translation');
+  assert.equal(
+    (await chineseChapterNavigationPage.locator('[data-reader-banner]').innerText()).includes('\u72ec\u7acb\u8bed\u8a00\u5ba1\u6821'),
+    true,
+    'Chinese Chapter 7 does not disclose pending independent language review',
+  );
+  await chineseChapterNavigationPage.locator('[data-reader-next]').click();
+  await chineseChapterNavigationPage.waitForURL(/reader\.html\?path=book%2Fchapters%2F08-full-lifecycle-workflow-ZH\.md&lang=zh$/);
+  await chineseChapterNavigationPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.match(
+    await chineseChapterNavigationPage.locator('[data-reader-article] h1').innerText(),
+    /从定义到交付/,
+    'Chinese chapter navigation does not open the available Chapter 8 candidate translation',
+  );
+  assert.equal(
+    (await chineseChapterNavigationPage.locator('[data-reader-banner]').innerText()).includes('\u72ec\u7acb\u8bed\u8a00\u5ba1\u6821'),
+    true,
+    'Chinese Chapter 8 does not disclose pending independent language review',
+  );
+  await chineseChapterNavigationPage.locator('[data-reader-next]').click();
+  await chineseChapterNavigationPage.waitForURL(/reader\.html\?path=book%2Fchapters%2F09-verification-and-recovery-ZH\.md&lang=zh$/);
+  await chineseChapterNavigationPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.match(
+    await chineseChapterNavigationPage.locator('[data-reader-article] h1').innerText(),
+    /验证、怀疑与恢复/,
+    'Chinese chapter navigation does not open the available Chapter 9 candidate translation',
+  );
+  await chineseChapterNavigationPage.locator('[data-reader-next]').click();
+  await chineseChapterNavigationPage.waitForURL(/reader\.html\?path=book%2Fchapters%2F10-planning-and-slicing-ZH\.md&lang=zh$/);
+  await chineseChapterNavigationPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.match(
+    await chineseChapterNavigationPage.locator('[data-reader-article] h1').innerText(),
+    /规划与竖向切片/,
+    'Chinese chapter navigation does not open the available Chapter 10 candidate translation',
+  );
+  assert.equal(
+    (await chineseChapterNavigationPage.locator('[data-reader-banner]').innerText()).includes('\u72ec\u7acb\u8bed\u8a00\u5ba1\u6821'),
+    true,
+    'Chinese Chapter 10 does not disclose pending independent language review',
+  );
+  await noHorizontalOverflow(chineseChapterNavigationPage, 'mobile Chinese Chapter 10 Reader');
+  await chineseChapterNavigationPage.close();
+
   await page.getByText('Evidence note for this page').click();
   assert.equal(await page.locator('[data-reader-trust-reviewed]').getAttribute('datetime'), '2026-08-12', 'Reader omits the last actual evidence review date');
   assert.match(await page.locator('.reader-trust-boundary').innerText(), /not a freshness guarantee/i, 'Reader does not bound the scheduled review date');
@@ -450,7 +968,26 @@ try {
   await chineseLabPage.goto(`${origin}/site/reader.html?path=book%2Flabs%2Flab-001-first-safe-task-EN.md&lang=zh`, { waitUntil: 'networkidle' });
   await chineseLabPage.locator('[data-reader-article][aria-busy="false"]').waitFor();
   assert.equal(await chineseLabPage.locator('[data-reader-next] .reader-pagination-kicker').innerText(), '下一个实验', 'Chinese Lab navigation labels the next Lab as previous');
+  assert.equal(await chineseLabPage.locator('[data-reader-next-title]').innerText(), '实验 002 · 把一个愿望变成任务协议', 'Chinese Lab navigation does not use the localized adjacent Lab title');
+  assert.match(await chineseLabPage.title(), /^实验 001：/, 'Chinese Lab keeps an English browser-tab title after the localized source is rendered');
+  assert.match(await chineseLabPage.locator('[data-reader-chapter-label]').innerText(), /^实验 001：/, 'Chinese Lab keeps an English reading-route label after the localized source is rendered');
   await chineseLabPage.close();
+
+  const chineseLab004Page = await context.newPage();
+  await chineseLab004Page.setViewportSize({ width: 390, height: 844 });
+  await chineseLab004Page.goto(`${origin}/site/reader.html?path=book%2Flabs%2Flab-004-skill-selection-ZH.md&lang=zh`, { waitUntil: 'networkidle' });
+  await chineseLab004Page.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.equal(await chineseLab004Page.locator('[data-reader-language]').inputValue(), 'zh', 'Chinese Lab 004 loses the requested interface language');
+  assert.match(await chineseLab004Page.title(), /^实验 004：选择最小有用能力/, 'Chinese Lab 004 keeps an English browser-tab title');
+  assert.equal(await chineseLab004Page.locator('[data-reader-next] .reader-pagination-kicker').innerText(), '下一个实验', 'Chinese Lab 004 does not label the adjacent Lab in Chinese');
+  assert.equal(await chineseLab004Page.locator('[data-reader-next-title]').innerText(), '实验 005 · 把重复方法沉淀为边界明确的 Skill', 'Chinese Lab 004 exposes the adjacent Chinese title before the same-locale unavailable state');
+  assert.equal(
+    (await chineseLab004Page.locator('[data-reader-banner]').innerText()).includes('\u72ec\u7acb\u8bed\u8a00\u5ba1\u6821'),
+    true,
+    'Chinese Lab 004 does not disclose pending independent language review',
+  );
+  await noHorizontalOverflow(chineseLab004Page, 'mobile Chinese Lab 004 Reader');
+  await chineseLab004Page.close();
 
   const chineseSearchPage = await context.newPage();
   await chineseSearchPage.setViewportSize({ width: 390, height: 844 });
@@ -459,11 +996,11 @@ try {
   await chineseSearchPage.locator('[data-site-search] button[type="submit"]').click();
   const chineseFirstResult = chineseSearchPage.locator('[data-search-results] .search-result').first();
   await chineseFirstResult.waitFor();
-  assert.match(await chineseFirstResult.innerText(), /Complete your first safe, verifiable task/i, 'Chinese task search does not put the Chapter 2 fallback first');
+  assert.match(await chineseFirstResult.innerText(), /完成第一个安全、可验证的任务/i, 'Chinese task search does not put the Chapter 2 candidate translation first');
   assert.match(
     await chineseFirstResult.locator('a').getAttribute('href'),
-    /reader\.html\?path=book%2Fchapters%2F02-first-safe-task-EN\.md&lang=zh$/,
-    'Chinese task search does not preserve the Chinese Reader interface for the English fallback',
+    /reader\.html\?path=book%2Fchapters%2F02-first-safe-task-ZH\.md&lang=zh$/,
+    'Chinese task search does not open the available Chapter 2 candidate translation',
   );
   const chineseSearchPosition = await chineseSearchPage.evaluate(() => {
     const header = document.querySelector('[data-header]');
@@ -479,18 +1016,47 @@ try {
   );
   await noHorizontalOverflow(chineseSearchPage, 'mobile Chinese search');
   await chineseFirstResult.locator('a').click();
-  await chineseSearchPage.waitForURL(/reader\.html\?path=book%2Fchapters%2F02-first-safe-task-EN\.md&lang=zh$/);
+  await chineseSearchPage.waitForURL(/reader\.html\?path=book%2Fchapters%2F02-first-safe-task-ZH\.md&lang=zh$/);
   await chineseSearchPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
-  assert.equal(await chineseSearchPage.locator('[data-reader-language]').inputValue(), 'zh', 'Chinese fallback Reader loses the requested interface language');
-  const chineseFallbackStatus = chineseSearchPage.locator('[data-reader-banner]');
-  await chineseFallbackStatus.waitFor();
+  assert.equal(await chineseSearchPage.locator('[data-reader-language]').inputValue(), 'zh', 'Chinese candidate Reader loses the requested interface language');
+  const chineseCandidateStatus = chineseSearchPage.locator('[data-reader-banner]');
+  await chineseCandidateStatus.waitFor();
   assert.equal(
-    (await chineseFallbackStatus.innerText()).includes('\u82f1\u6587\u6e90\u6587\u4ef6'),
+    (await chineseCandidateStatus.innerText()).includes('\u72ec\u7acb\u8bed\u8a00\u5ba1\u6821'),
     true,
-    'Chinese fallback Reader does not explain that the English source is shown',
+    'Chinese candidate Reader does not disclose pending independent language review',
   );
-  await noHorizontalOverflow(chineseSearchPage, 'mobile Chinese fallback Reader');
+  await noHorizontalOverflow(chineseSearchPage, 'mobile Chinese candidate Reader');
   await chineseSearchPage.close();
+
+  const mobileSkillsPage = await context.newPage();
+  await mobileSkillsPage.setViewportSize({ width: 390, height: 844 });
+  await mobileSkillsPage.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
+  const mobileSkillsSection = mobileSkillsPage.locator('#skills');
+  await mobileSkillsSection.scrollIntoViewIfNeeded();
+  await noHorizontalOverflow(mobileSkillsPage, 'mobile Skill index');
+  assert.equal(
+    await mobileSkillsSection.getByRole('link', { name: 'Adversarial Project Review' }).isVisible(),
+    true,
+    'mobile Skill index hides Adversarial Project Review',
+  );
+  assert.equal(
+    await mobileSkillsSection.locator('.skill-grid a').filter({ hasText: 'Request Escalation' }).isVisible(),
+    true,
+    'mobile Skill index hides Request Escalation',
+  );
+  assert.equal(
+    await mobileSkillsSection.locator('.skill-grid a').filter({ hasText: 'LLM Comparison Protocol' }).isVisible(),
+    true,
+    'mobile Skill index hides LLM Comparison Protocol',
+  );
+  assert.equal(
+    await mobileSkillsSection.locator('.skill-grid a').filter({ hasText: 'Platform Fact Watch' }).isVisible(),
+    true,
+    'mobile Skill index hides Platform Fact Watch',
+  );
+  await mobileSkillsSection.screenshot({ path: path.join(visualEvidenceDirectory, 'skills-mobile.png') });
+  await mobileSkillsPage.close();
 
   await page.goto(`${origin}/site/reader.html?path=book%2Froutes%2Ffirst-safe-change-EN.md&lang=en`, { waitUntil: 'networkidle' });
   await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
@@ -502,7 +1068,7 @@ try {
   await page.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#recovery-route`, { waitUntil: 'networkidle' });
   await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
   assert.match(await page.locator('[data-reader-article] h1').innerText(), /beginner practice pack/i, 'Reader did not render the public Beginner Practice Pack name');
-  assert.match(await page.locator('[data-reader-article]').innerText(), /learner-outcome evidence:\s*none/i, 'Beginner Practice Pack does not expose its learner-evidence boundary');
+  assert.match(await page.locator('[data-reader-article]').innerText(), /learner evidence:\s*not_run/i, 'Beginner Practice Pack does not expose its learner-evidence boundary');
   assert.equal(await page.getByRole('heading', { name: /recovery route — when the reply already missed/i }).isVisible(), true, 'Post-failure recovery route is not discoverable');
   assert.equal(await page.locator('#recovery-route').count(), 1, 'Reader did not preserve the recovery-route fragment target');
   const recoveryFragmentPosition = await page.locator('#recovery-route').evaluate((target) => ({
@@ -526,6 +1092,28 @@ try {
   assert.equal(await page.getByRole('link', { name: /coaching-process evaluation candidate/i }).isVisible(), true, 'Related coaching-process evaluation is not discoverable');
   assert.equal(await page.getByRole('link', { name: /task-contract availability and channel study/i }).isVisible(), true, 'Separate task-contract study is not discoverable');
   await noHorizontalOverflow(page, 'mobile Beginner Practice Pack');
+
+  const boundaryCardPage = await context.newPage();
+  await boundaryCardPage.setViewportSize({ width: 390, height: 844 });
+  await boundaryCardPage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#four-line-safety-card`, { waitUntil: 'networkidle' });
+  await boundaryCardPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  const boundaryCardHeading = boundaryCardPage.getByRole('heading', { name: /boundary card — before you share, search, or act/i });
+  assert.equal(await boundaryCardHeading.isVisible(), true, 'Boundary Card is not discoverable in Reader');
+  assert.equal(await boundaryCardPage.locator('#four-line-safety-card').count(), 1, 'Reader did not preserve the legacy Boundary Card fragment');
+  const boundaryCardPosition = await boundaryCardPage.locator('#four-line-safety-card').evaluate((target) => target.getBoundingClientRect().top);
+  assert.ok(boundaryCardPosition >= 0 && boundaryCardPosition < 260, `Reader did not restore the Boundary Card fragment into the first visible reading band: ${boundaryCardPosition}`);
+  assert.match(await boundaryCardPage.locator('[data-reader-article]').innerText(), /input status: \[authorized instruction \| external data \| unknown\]/i, 'Boundary Card omits the input-status boundary');
+  assert.match(await boundaryCardPage.locator('[data-reader-article]').innerText(), /unknown destination/i, 'Boundary Card omits the data-egress stop');
+  const boundaryCardVisual = boundaryCardPage.locator('img[alt*="Boundary Card for deciding what may enter"]');
+  assert.match(await boundaryCardVisual.getAttribute('src'), /assets\/teaching\/conversation-safety-card-red-black\.svg$/, 'Boundary Card does not retain its original teaching visual');
+  const boundaryCardVisualLink = boundaryCardPage.locator('.reader-image-link').filter({ has: boundaryCardVisual });
+  assert.match(await boundaryCardVisualLink.locator('.reader-visual-thesis').innerText(), /Boundary Card for deciding what may enter/i, 'Boundary Card lacks a mobile-readable visual thesis');
+  assert.equal(await boundaryCardVisual.isVisible(), false, 'Mobile Reader shrinks the dense Boundary Card instead of offering a focused full-size route');
+  assert.equal(await boundaryCardPage.getByRole('link', { name: /open full-size visual: a boundary card for deciding what may enter/i }).isVisible(), true, 'Boundary Card lacks an accessible full-size visual route');
+  assert.equal(await boundaryCardPage.getByRole('link', { name: /cross-platform boundary card source receipt/i }).isVisible(), true, 'Boundary Card does not expose its source receipt');
+  await noHorizontalOverflow(boundaryCardPage, 'mobile Boundary Card');
+  await boundaryCardVisualLink.screenshot({ path: path.join(visualEvidenceDirectory, 'boundary-card-mobile-visual-route.png') });
+  await boundaryCardPage.close();
 
   const stalledImagePage = await context.newPage();
   await stalledImagePage.route('**/assets/teaching/failed-interaction-recovery-red-black.svg', async (route) => {
@@ -597,7 +1185,7 @@ try {
   assert.deepEqual(consoleErrors, [], `browser console errors: ${consoleErrors.join(' | ')}`);
   assert.deepEqual(pageErrors, [], `browser page errors: ${pageErrors.join(' | ')}`);
   await context.tracing.stop();
-  console.log('BROWSER_SMOKE_OK initial_search_requests=0 lazy_search_requests=1 desktop=1280 mobile=390 readers=chapter-02,first-safe-change,beginner-practice-pack,ai-safety-field-signals,universal-first-turn,first-win-pilot-protocol invalid_path=blocked');
+  console.log('BROWSER_SMOKE_OK initial_search_requests=0 lazy_search_requests=1 desktop=1280 mobile=390 readers=chapter-02,first-safe-change,beginner-practice-pack,boundary-card,ai-safety-field-signals,universal-first-turn,first-win-pilot-protocol,newcomer-entry-protocol,capacity-interruption-case invalid_path=blocked');
 } catch (error) {
   await fs.mkdir(evidenceDirectory, { recursive: true });
   if (page) await page.screenshot({ path: path.join(evidenceDirectory, 'failure.png'), fullPage: true }).catch(() => {});

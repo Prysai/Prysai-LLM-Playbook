@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
+  <title id="title">Turn one research decision into an inspectable source record</title>
+  <desc id="desc">A vertical editorial teaching board shows four steps: name a decision, ask one answerable question, open a source owned by the publisher, and record support, limits, and unknowns. It states that a link is a lead, not a result.</desc>
+  <rect width="900" height="1400" fill="#f6f6f2"/>
+  <rect x="40" y="30" width="820" height="10" fill="#161616"/>
+  <text x="40" y="88" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">RESEARCH START / SOURCE RECORD</text>
+  <text x="40" y="148" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="900" letter-spacing="-2">DO NOT SEARCH A TOPIC.</text>
+  <text x="40" y="202" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="900" letter-spacing="-2">CHECK A DECISION.</text>
+  <text x="42" y="240" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="16">one question / one source owner / one honest record</text>
+
+  <line x1="80" y1="332" x2="80" y2="1086" stroke="#d71920" stroke-width="8"/>
+  <circle cx="80" cy="378" r="16" fill="#d71920"/>
+  <circle cx="80" cy="572" r="16" fill="#d71920"/>
+  <circle cx="80" cy="766" r="16" fill="#d71920"/>
+  <circle cx="80" cy="960" r="16" fill="#d71920"/>
+
+  <g transform="translate(126 300)">
+    <rect width="734" height="156" fill="#161616"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / DECISION</text>
+    <text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">NAME WHAT COULD CHANGE.</text>
+    <text x="24" y="116" fill="#c4c4be" font-family="Arial, Helvetica, sans-serif" font-size="21">Keep one owner, date, and real choice visible.</text>
+  </g>
+  <g transform="translate(126 494)">
+    <rect width="734" height="156" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / QUESTION</text>
+    <text x="24" y="78" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">ASK ONE CHECKABLE THING.</text>
+    <text x="24" y="116" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="21">State what is outside the question too.</text>
+  </g>
+  <g transform="translate(126 688)">
+    <rect width="734" height="156" fill="#d71920"/>
+    <text x="24" y="34" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / OPENED SOURCE</text>
+    <text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">WHO OWNS THE FACT?</text>
+    <text x="24" y="116" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="21">Keep the URL, access date, scope, and passage.</text>
+  </g>
+  <g transform="translate(126 882)">
+    <rect width="734" height="156" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / CLAIM RECORD</text>
+    <text x="24" y="78" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">WRITE SUPPORT, LIMIT, UNKNOWN.</text>
+    <text x="24" y="116" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="21">Stop when a source cannot change the decision.</text>
+  </g>
+
+  <rect x="40" y="1148" width="820" height="154" fill="#161616"/>
+  <text x="64" y="1190" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">STOP / EVIDENCE LIMIT</text>
+  <text x="64" y="1236" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">A LINK IS A LEAD.</text>
+  <text x="64" y="1274" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="900">AN OPENED, MATCHED SOURCE CAN SUPPORT A CLAIM.</text>
+  <text x="40" y="1342" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / INSPECT THE SOURCE RECORD</text>
+</svg>

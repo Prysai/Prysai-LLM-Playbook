@@ -1,61 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1450" role="img" aria-labelledby="title desc">
   <title id="title">Four evidence seams before a platform adapter</title>
-  <desc id="desc">An editorial grid of four fictional seams: request identity, target identity, execution receipt, and structured round trip. Each seam pairs an attractive but insufficient signal with the smallest safe check and a stop boundary.</desc>
-  <rect width="1600" height="900" fill="#F3F0E9"/>
-  <g font-family="Arial, Helvetica, sans-serif" fill="#11151A">
-    <text x="72" y="68" font-size="17" font-weight="700" letter-spacing="4">PRYSAI LAB / UNIVERSAL CORE / FIXED FICTIONAL RECORDS</text>
-    <text x="72" y="172" font-size="78" font-weight="800" letter-spacing="-3">FOUR SEAMS.</text>
-    <text x="72" y="252" font-size="78" font-weight="800" letter-spacing="-3">ONE RULE:</text>
-    <text x="72" y="332" font-size="78" font-weight="800" letter-spacing="-3" fill="#D62828">VISIBLE ≠ VERIFIED.</text>
-    <text x="1518" y="68" font-size="14" text-anchor="end" font-weight="700" letter-spacing="2">STATUS / CANDIDATE · NOT A PRODUCT RUN</text>
-  </g>
-  <path d="M72 382H1528" stroke="#11151A" stroke-width="2"/>
+  <desc id="desc">A vertical editorial teaching board. Four fictional seams—request identity, target identity, execution receipt, and structured round trip—each pair an insufficient signal with a small check and stop boundary. The final panel states that a platform adapter is required for live product behavior.</desc>
+  <rect width="900" height="1450" fill="#F3F0E9"/>
   <g font-family="Arial, Helvetica, sans-serif">
-    <g>
-      <rect x="72" y="430" width="332" height="300" fill="#11151A"/>
-      <rect x="72" y="430" width="332" height="12" fill="#D62828"/>
-      <text x="96" y="486" fill="#F3F0E9" font-size="16" font-weight="700" letter-spacing="2">01 / REQUEST IDENTITY</text>
-      <text x="96" y="538" fill="#F3F0E9" font-size="29" font-weight="700">A reply follows</text>
-      <text x="96" y="574" fill="#F3F0E9" font-size="29" font-weight="700">the earlier task.</text>
-      <text x="96" y="622" fill="#B8BBB9" font-size="16">CHECK / compare latest request,</text>
-      <text x="96" y="648" fill="#B8BBB9" font-size="16">checkpoint, and reply topic.</text>
-      <text x="96" y="694" fill="#D62828" font-size="15" font-weight="800" letter-spacing="1">STOP / TASKS DISAGREE</text>
+    <text x="56" y="68" fill="#D62828" font-size="20" font-weight="700" letter-spacing="2">PRYSAI LAB / UNIVERSAL CORE</text>
+    <text x="56" y="136" fill="#11151A" font-size="55" font-weight="800" letter-spacing="-2">VISIBLE IS NOT</text>
+    <text x="56" y="196" fill="#D62828" font-size="55" font-weight="800" letter-spacing="-2">VERIFIED.</text>
+    <text x="56" y="234" fill="#4E5353" font-size="23">Check before you infer live behavior.</text>
+    <path d="M56 270H844" stroke="#11151A" stroke-width="3"/>
+    <g transform="translate(56 310)">
+      <rect width="788" height="210" fill="#11151A"/><rect width="14" height="210" fill="#D62828"/>
+      <text x="42" y="43" fill="#F3F0E9" font-size="20" font-weight="700" letter-spacing="1">01 / REQUEST IDENTITY</text>
+      <text x="42" y="91" fill="#FFFFFF" font-size="36" font-weight="800">A reply follows an earlier task.</text>
+      <text x="42" y="136" fill="#C8CBC9" font-size="23">CHECK / compare request, checkpoint, and reply.</text>
+      <text x="42" y="178" fill="#FF4B4B" font-size="20" font-weight="800">STOP / TASKS DISAGREE</text>
     </g>
-    <g>
-      <rect x="444" y="430" width="332" height="300" fill="#F3F0E9" stroke="#11151A" stroke-width="3"/>
-      <rect x="444" y="430" width="332" height="12" fill="#D62828"/>
-      <text x="468" y="486" fill="#11151A" font-size="16" font-weight="700" letter-spacing="2">02 / TARGET IDENTITY</text>
-      <text x="468" y="538" fill="#11151A" font-size="29" font-weight="700">A branch label</text>
-      <text x="468" y="574" fill="#11151A" font-size="29" font-weight="700">matches the wrong root.</text>
-      <text x="468" y="622" fill="#5E6161" font-size="16">CHECK / compare repository root</text>
-      <text x="468" y="648" fill="#5E6161" font-size="16">as well as branch label.</text>
-      <text x="468" y="694" fill="#D62828" font-size="15" font-weight="800" letter-spacing="1">STOP / ROOT DIFFERS</text>
+    <g transform="translate(56 550)">
+      <rect width="788" height="210" fill="#F3F0E9" stroke="#11151A" stroke-width="3"/><rect width="14" height="210" fill="#D62828"/>
+      <text x="42" y="43" fill="#11151A" font-size="20" font-weight="700" letter-spacing="1">02 / TARGET IDENTITY</text>
+      <text x="42" y="91" fill="#11151A" font-size="36" font-weight="800">A branch label matches the wrong root.</text>
+      <text x="42" y="136" fill="#4E5353" font-size="23">CHECK / compare root and branch label.</text>
+      <text x="42" y="178" fill="#D62828" font-size="20" font-weight="800">STOP / ROOT DIFFERS</text>
     </g>
-    <g>
-      <rect x="816" y="430" width="332" height="300" fill="#11151A"/>
-      <rect x="816" y="430" width="332" height="12" fill="#D62828"/>
-      <text x="840" y="486" fill="#F3F0E9" font-size="16" font-weight="700" letter-spacing="2">03 / EXECUTION RECEIPT</text>
-      <text x="840" y="538" fill="#F3F0E9" font-size="29" font-weight="700">Tool-shaped text</text>
-      <text x="840" y="574" fill="#F3F0E9" font-size="29" font-weight="700">has no read-back.</text>
-      <text x="840" y="622" fill="#B8BBB9" font-size="16">CHECK / receipt plus expected</text>
-      <text x="840" y="648" fill="#B8BBB9" font-size="16">state; do not call it done.</text>
-      <text x="840" y="694" fill="#D62828" font-size="15" font-weight="800" letter-spacing="1">STATUS / NOT RUN</text>
+    <g transform="translate(56 790)">
+      <rect width="788" height="210" fill="#11151A"/><rect width="14" height="210" fill="#D62828"/>
+      <text x="42" y="43" fill="#F3F0E9" font-size="20" font-weight="700" letter-spacing="1">03 / EXECUTION RECEIPT</text>
+      <text x="42" y="91" fill="#FFFFFF" font-size="36" font-weight="800">Tool-shaped text has no read-back.</text>
+      <text x="42" y="136" fill="#C8CBC9" font-size="23">CHECK / compare the receipt with expected state.</text>
+      <text x="42" y="178" fill="#FF4B4B" font-size="20" font-weight="800">STATUS / NOT RUN</text>
     </g>
-    <g>
-      <rect x="1188" y="430" width="340" height="300" fill="#F3F0E9" stroke="#11151A" stroke-width="3"/>
-      <rect x="1188" y="430" width="340" height="12" fill="#D62828"/>
-      <text x="1212" y="486" fill="#11151A" font-size="16" font-weight="700" letter-spacing="2">04 / ROUND TRIP</text>
-      <text x="1212" y="538" fill="#11151A" font-size="29" font-weight="700">Parser success</text>
-      <text x="1212" y="574" fill="#11151A" font-size="29" font-weight="700">changes the value.</text>
-      <text x="1212" y="622" fill="#5E6161" font-size="16">CHECK / compare exact fields</text>
-      <text x="1212" y="648" fill="#5E6161" font-size="16">before replay or follow-up.</text>
-      <text x="1212" y="694" fill="#D62828" font-size="15" font-weight="800" letter-spacing="1">ADAPTER / REQUIRED LATER</text>
+    <g transform="translate(56 1030)">
+      <rect width="788" height="210" fill="#F3F0E9" stroke="#11151A" stroke-width="3"/><rect width="14" height="210" fill="#D62828"/>
+      <text x="42" y="43" fill="#11151A" font-size="20" font-weight="700" letter-spacing="1">04 / STRUCTURED ROUND TRIP</text>
+      <text x="42" y="91" fill="#11151A" font-size="36" font-weight="800">Parser success can still change value.</text>
+      <text x="42" y="136" fill="#4E5353" font-size="23">CHECK / compare exact fields before replay.</text>
+      <text x="42" y="178" fill="#D62828" font-size="20" font-weight="800">STOP / FIELDS CHANGED</text>
     </g>
-  </g>
-  <g font-family="Arial, Helvetica, sans-serif">
-    <path d="M72 792H1528" stroke="#11151A" stroke-width="2"/>
-    <text x="72" y="844" fill="#11151A" font-size="21" font-weight="700">THE FIXTURE CHECKS ITS OWN FICTIONAL RECORDS.</text>
-    <text x="72" y="872" fill="#5E6161" font-size="16">It does not reproduce a report, diagnose a product, or prove learning, safety, or cross-platform equivalence.</text>
-    <text x="1528" y="844" text-anchor="end" fill="#D62828" font-size="16" font-weight="800" letter-spacing="2">CHECK → STOP → ADAPTER</text>
+    <rect x="56" y="1270" width="788" height="116" fill="#D62828"/>
+    <text x="84" y="1312" fill="#FFFFFF" font-size="20" font-weight="700" letter-spacing="1">NEXT DECISION</text>
+    <text x="84" y="1355" fill="#FFFFFF" font-size="31" font-weight="800">Live behavior needs a platform adapter.</text>
+    <text x="56" y="1424" fill="#4E5353" font-size="17">Fictional checks do not compare platforms or prove learning.</text>
   </g>
 </svg>

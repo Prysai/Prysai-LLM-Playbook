@@ -1,5 +1,10 @@
 # Visual asset independent audit
 
+> **Historical snapshot.** This report records pixels inspected on 2026-08-12.
+> It is not a current-state verdict for boards replaced or remediated after
+> that date. See the [2026-08-14 current-board addendum](visual-asset-audit-addendum-2026-08-14.md)
+> before relying on the P0/P1 calls below.
+
 **Audit date:** 2026-08-12  
 **Scope:** image and SVG assets referenced by the public READMEs, `site/`, and
 `docs/`, plus their repository-local display derivatives  
@@ -7,6 +12,20 @@
 **Target language:** red/black, hard-edged Swiss editorial system with visible
 human typographic judgement, accurate instructional meaning, and no generic
 AI-deck mannerisms
+
+## Follow-up: 2026-08-14
+
+The `field-signal-to-safe-degradation-red-black.svg` finding has been
+remediated without changing the historical audit: live-looking issue numbers,
+a snapshot date, and fixed case IDs were removed from the pixels. The board now
+names durable failure patterns and points readers to source record S43, where
+dated report identifiers, scope, and review conditions can be maintained. The
+Reader's browser smoke now checks its desktop rendering, mobile full-size route,
+and horizontal-overflow boundary. The 2026-08-14 readability pass also replaces
+the dense three-by-three audit-table treatment with three short reading bands:
+signal, unsupported inference, and first safe move. This follow-up is a visual
+and static-route correction only; it does not reproduce the field reports,
+establish their current status, or prove learner comprehension.
 
 ## Verdict
 
@@ -56,7 +75,7 @@ and P2 as distribution or maintenance cleanup.
 
 | Asset | Public references | Decision | Priority | Exact assessment |
 |---|---|---:|---:|---|
-| `assets/readme/codex-field-guide-header.svg` | Top of `README.md` and `README-EN.md`; `og:image` in `site/index.html` and `site/reader.html` | refine | P0 | Strong asymmetric split, excellent title hierarchy, useful problem→decision→action→evidence framing, and correct red/near-black direction. The glowing free-form wave on the left encodes no value, has detached dots in the related working board, and reads as an AI-added “tech signal.” Replace it with hard-edged rule/step geometry that carries an explicit sequence. The tiny “ENGLISH-FIRST / SIX LOCALES” line is volatile product metadata embedded in artwork and will age silently. |
+| `assets/readme/prysai-llm-playbook-header.svg` (then `codex-field-guide-header.svg`) | Top of `README.md` and `README-EN.md`; `og:image` in `site/index.html` and `site/reader.html` | refine | P0 | Strong asymmetric split, excellent title hierarchy, useful problem→decision→action→evidence framing, and correct red/near-black direction. The glowing free-form wave on the left encodes no value, has detached dots in the related working board, and reads as an AI-added “tech signal.” Replace it with hard-edged rule/step geometry that carries an explicit sequence. The tiny “ENGLISH-FIRST / SIX LOCALES” line is volatile product metadata embedded in artwork and will age silently. |
 | `assets/teaching/task-to-evidence-red-black.svg` | Inline in both public English READMEs; featured in `site/index.html` | refine | P1 | Good Swiss two-zone grid and strong claim/proof/limit panel. The four-stage copy is useful and accurately bounded. The glowing wave and floating dots are ornamental, visually softer than every other element, and imply data without a scale. Rebuild only that diagram region as a hard checkpoint sequence; retain the typography and right-hand proof model. “HAND OFF” should be reconciled with the project’s reader-facing use of “handoff.” |
 | `assets/teaching/four-evidence-lenses-red-black.svg` | Inline in `README-EN.md`; featured in `site/index.html` | keep | — | The strongest teaching board. It has an immediate thesis, disciplined four-column grid, no decorative illustration, and a clear warning. It survives thumbnail reduction better than the other boards. Before localization, review the semantic boundary between `READY` (“reader can use it safely”) and release/production readiness; the visual itself does not overclaim. |
 | `assets/teaching/field-signal-to-safe-degradation-red-black.svg` | Inline in both English READMEs; featured in `site/index.html` | refine | P0 | Strongest information design: every row maps observation→forbidden inference→safe action, with excellent hierarchy and no fake decoration. Accuracy is the issue. The artwork asserts “three public Codex issue signals” and “issues remain open” but shows neither issue IDs nor source URLs, while embedding a date that will become stale. Add human-readable source identifiers and a “checked on” boundary, or remove live status from the pixels and keep it in adjacent maintained text. |

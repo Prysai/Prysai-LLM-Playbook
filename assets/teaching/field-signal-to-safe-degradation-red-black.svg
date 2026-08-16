@@ -1,59 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
-  <title id="title">Field signal to safe degradation</title>
-  <desc id="desc">Three public Codex issue reports, identified as 34352, 34951, and 37677, mapped to unsupported inferences and the smallest safe response. The report details are a dated research snapshot accessed on 12 August 2026; see source record S43 for links, scope, and limits.</desc>
-  <rect width="1600" height="900" fill="#f7f7f8"/>
-  <rect x="0" y="0" width="1600" height="112" fill="#111820"/>
-  <rect x="64" y="48" width="16" height="16" fill="#d3262e"/>
-  <text x="104" y="70" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" letter-spacing="1">FIELD SIGNAL → SAFE DEGRADATION</text>
-  <text x="1536" y="70" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="end">RESEARCH SNAPSHOT · 12 AUG 2026</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1450" role="img" aria-labelledby="title desc">
+  <title id="title">From field signal to the first safe move</title>
+  <desc id="desc">A vertical editorial teaching board presents three field signals, the unsupported inference to avoid, and the first safe move. It ends by instructing the reader to preserve the signal and narrow the next check. Source scope and limits are maintained in source record S43.</desc>
+  <rect width="900" height="1450" fill="#f6f6f2"/>
+  <rect x="40" y="30" width="820" height="10" fill="#161616"/>
+  <text x="40" y="88" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">FIELD NOTE / ACTION UNDER UNCERTAINTY</text>
+  <text x="40" y="148" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">A SIGNAL TELLS YOU</text>
+  <text x="40" y="202" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">WHAT TO CHECK—</text>
+  <text x="40" y="256" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">NOT WHAT TO CLAIM.</text>
+  <text x="42" y="294" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="16">keep the observation / refuse the leap / take the smallest safe move</text>
 
-  <line x1="64" y1="158" x2="1536" y2="158" stroke="#111820" stroke-width="2"/>
-  <line x1="522" y1="158" x2="522" y2="760" stroke="#111820" stroke-width="2"/>
-  <line x1="1014" y1="158" x2="1014" y2="760" stroke="#111820" stroke-width="2"/>
-  <line x1="64" y1="356" x2="1536" y2="356" stroke="#111820" stroke-width="1"/>
-  <line x1="64" y1="558" x2="1536" y2="558" stroke="#111820" stroke-width="1"/>
-  <line x1="64" y1="760" x2="1536" y2="760" stroke="#111820" stroke-width="2"/>
+  <line x1="80" y1="370" x2="80" y2="1128" stroke="#d71920" stroke-width="8"/>
+  <circle cx="80" cy="412" r="16" fill="#d71920"/><circle cx="80" cy="664" r="16" fill="#d71920"/><circle cx="80" cy="916" r="16" fill="#d71920"/>
 
-  <text x="64" y="196" fill="#d3262e" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="2">PUBLIC SIGNAL</text>
-  <text x="554" y="196" fill="#d3262e" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="2">DO NOT INFER</text>
-  <text x="1046" y="196" fill="#d3262e" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="2">SMALLEST SAFE MOVE</text>
-
-  <g font-family="Arial, Helvetica, sans-serif" fill="#111820">
-    <text x="64" y="264" font-size="64" font-weight="700">01</text>
-    <text x="164" y="247" font-size="24" font-weight="700">#34352 / WORKTREE LABEL</text>
-    <text x="164" y="285" font-size="22">One target is shown;</text>
-    <text x="164" y="317" font-size="22">runtime points elsewhere.</text>
-    <text x="554" y="258" font-size="28" font-weight="700">UI STATE = CWD</text>
-    <text x="554" y="298" font-size="21">A label does not prove Git root,</text>
-    <text x="554" y="328" font-size="21">branch, HEAD, or writable root.</text>
-    <text x="1046" y="250" font-size="28" font-weight="700">COMPARE TARGETS</text>
-    <text x="1046" y="290" font-size="21">cwd / Git top-level / worktree /</text>
-    <text x="1046" y="320" font-size="21">branch / writable root. Stop on mismatch.</text>
-
-    <text x="64" y="466" font-size="64" font-weight="700">02</text>
-    <text x="164" y="449" font-size="22" font-weight="700">#34951 / OUTPUT DISAPPEARS</text>
-    <text x="164" y="487" font-size="22">A command may finish;</text>
-    <text x="164" y="519" font-size="22">audit evidence is hidden.</text>
-    <text x="554" y="460" font-size="28" font-weight="700">RAN = VERIFIED</text>
-    <text x="554" y="500" font-size="21">Exit, output, artifact, read-back,</text>
-    <text x="554" y="530" font-size="21">and reviewer decision are separate.</text>
-    <text x="1046" y="452" font-size="28" font-weight="700">PRESERVE CHANNELS</text>
-    <text x="1046" y="492" font-size="21">Keep authorized exit / event / artifact /</text>
-    <text x="1046" y="522" font-size="21">read-back. Missing proof = unverified.</text>
-
-    <text x="64" y="668" font-size="64" font-weight="700">03</text>
-    <text x="164" y="651" font-size="24" font-weight="700">#37677 / VERIFY → REINSTALL</text>
-    <text x="164" y="689" font-size="22">A check expands into a</text>
-    <text x="164" y="721" font-size="22">persistent mutation.</text>
-    <text x="554" y="662" font-size="28" font-weight="700">CAPABLE = AUTHORIZED</text>
-    <text x="554" y="702" font-size="21">Sandbox, approval, credentials, and</text>
-    <text x="554" y="732" font-size="21">task authority answer different questions.</text>
-    <text x="1046" y="654" font-size="28" font-weight="700">STOP + RE-AUTHORIZE</text>
-    <text x="1046" y="694" font-size="21">Name target, effect, artifact, dirty state,</text>
-    <text x="1046" y="724" font-size="21">rollback, and blocked evidence first.</text>
+  <g transform="translate(126 336)">
+    <rect width="734" height="206" fill="#161616"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / FIELD SIGNAL</text>
+    <text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">TARGETS DIFFER.</text>
+    <text x="24" y="112" fill="#c4c4be" font-family="Arial, Helvetica, sans-serif" font-size="21">A label and the runtime disagree.</text>
+    <line x1="24" y1="136" x2="710" y2="136" stroke="#52524d" stroke-width="2"/>
+    <text x="24" y="166" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="700">DO NOT INFER</text>
+    <text x="194" y="166" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="20">Label = runtime target.</text>
+  </g>
+  <g transform="translate(126 588)">
+    <rect width="734" height="206" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / FIELD SIGNAL</text>
+    <text x="24" y="78" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">OUTPUT IS MISSING.</text>
+    <text x="24" y="112" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="21">A command ended; proof is absent.</text>
+    <line x1="24" y1="136" x2="710" y2="136" stroke="#c9c9c4" stroke-width="2"/>
+    <text x="24" y="166" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="700">DO NOT INFER</text>
+    <text x="194" y="166" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="20">Command = verified result.</text>
+  </g>
+  <g transform="translate(126 840)">
+    <rect width="734" height="206" fill="#d71920"/>
+    <text x="24" y="34" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / FIELD SIGNAL</text>
+    <text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">A CHECK WRITES.</text>
+    <text x="24" y="112" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="21">A diagnostic step changes state.</text>
+    <line x1="24" y1="136" x2="710" y2="136" stroke="#f48589" stroke-width="2"/>
+    <text x="24" y="166" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="700">DO NOT INFER</text>
+    <text x="194" y="166" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="20">Can do = authorized.</text>
   </g>
 
-  <rect x="64" y="800" width="16" height="16" fill="#d3262e"/>
-  <text x="104" y="815" fill="#111820" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">DATED PUBLIC REPORTS · NO LOCAL REPRODUCTION · NO OFFICIAL ROOT-CAUSE CONFIRMATION</text>
-  <text x="1536" y="850" fill="#111820" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="end">FC-WORKTREE-01 · FC-EVIDENCE-01 · FC-SCOPE-01</text>
+  <rect x="40" y="1124" width="820" height="184" fill="#161616"/>
+  <text x="64" y="1162" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">FIRST SAFE MOVE / ALL THREE CASES</text>
+  <text x="64" y="1204" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="900">PRESERVE THE SIGNAL. NAME THE</text>
+  <text x="64" y="1236" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="900">TARGET, EFFECT, AND NEXT CHECK.</text>
+  <text x="64" y="1272" fill="#c4c4be" font-family="Arial, Helvetica, sans-serif" font-size="19">Check cwd/root/branch · keep exit/artifact/read-back · stop on mismatch.</text>
+  <text x="40" y="1374" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / SOURCE BOUNDARY S43</text>
 </svg>

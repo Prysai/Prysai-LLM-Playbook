@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
+  <title id="title">Turn a learning wish into one small first attempt</title>
+  <desc id="desc">A vertical editorial teaching board turns a broad learning wish into one ordinary situation, one observable target, and one short first attempt. It states that choosing a target starts practice but does not prove a result.</desc>
+  <rect width="900" height="1400" fill="#f6f6f2"/>
+  <rect x="40" y="30" width="820" height="10" fill="#161616"/>
+  <text x="40" y="88" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">PRACTICE TARGET / FIRST TRY</text>
+  <text x="40" y="148" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="900" letter-spacing="-2">MAKE THE FIRST</text>
+  <text x="40" y="202" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="900" letter-spacing="-2">TRY SMALL.</text>
+  <text x="42" y="240" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="16">one scene / one visible move / no hidden promise</text>
+
+  <line x1="80" y1="332" x2="80" y2="1086" stroke="#d71920" stroke-width="8"/>
+  <circle cx="80" cy="378" r="16" fill="#d71920"/>
+  <circle cx="80" cy="572" r="16" fill="#d71920"/>
+  <circle cx="80" cy="766" r="16" fill="#d71920"/>
+  <circle cx="80" cy="960" r="16" fill="#d71920"/>
+
+  <g transform="translate(126 300)">
+    <rect width="734" height="156" fill="#161616"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / WISH</text>
+    <text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">KEEP YOUR WORDS.</text>
+    <text x="24" y="116" fill="#c4c4be" font-family="Arial, Helvetica, sans-serif" font-size="21">“I want Spanish to feel easier.”</text>
+  </g>
+  <g transform="translate(126 494)">
+    <rect width="734" height="156" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / SITUATION</text>
+    <text x="24" y="78" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">CHOOSE ONE REAL SCENE.</text>
+    <text x="24" y="116" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="21">A fictional hotel check-in is enough.</text>
+  </g>
+  <g transform="translate(126 688)">
+    <rect width="734" height="156" fill="#d71920"/>
+    <text x="24" y="34" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / TARGET</text>
+    <text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">NAME ONE VISIBLE MOVE.</text>
+    <text x="24" y="116" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="21">Give a name, a stay, and one question.</text>
+  </g>
+  <g transform="translate(126 882)">
+    <rect width="734" height="156" fill="#ffffff" stroke="#161616" stroke-width="3"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / FIRST TRY</text>
+    <text x="24" y="78" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">WRITE FOUR TYPED TURNS.</text>
+    <text x="24" y="116" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="21">Keep the attempt. Give one hint only if needed.</text>
+  </g>
+
+  <rect x="40" y="1148" width="820" height="132" fill="#161616"/>
+  <text x="64" y="1190" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">STOP / CLAIM LIMIT</text>
+  <text x="64" y="1236" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">A TARGET STARTS PRACTICE.</text>
+  <text x="64" y="1272" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">IT DOES NOT PROVE A RESULT.</text>
+  <text x="40" y="1342" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / INSPECT THE ATTEMPT</text>
+</svg>

@@ -1,37 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
   <title id="title">A claim can travel only as far as its evidence</title>
-  <desc id="desc">A hard-edged editorial evidence file showing request, scope, action, observation, and claim limit as one horizontal chain, ending at an explicit unknown boundary.</desc>
-  <rect width="1600" height="900" fill="#F3F0E9"/>
-  <g fill="#11151A" font-family="Arial,Helvetica,sans-serif">
-    <text x="72" y="70" font-size="18" font-weight="700" letter-spacing="4">PRYSAI LAB / EVIDENCE FILE 02 / REV. B</text>
-    <text x="72" y="190" font-size="86" font-weight="800" letter-spacing="-4">A CLAIM TRAVELS</text>
-    <text x="72" y="278" font-size="86" font-weight="800" letter-spacing="-4">ONLY AS FAR AS ITS</text>
-    <text x="72" y="366" font-size="86" font-weight="800" letter-spacing="-4" fill="#D62828">EVIDENCE.</text>
-    <text x="1210" y="80" font-size="14" font-weight="700" letter-spacing="2">OWNER / EVIDENCE REVIEW</text>
-    <text x="1210" y="108" font-size="14">STATUS / CANDIDATE</text>
-  </g>
-  <path d="M72 430H1528" stroke="#11151A" stroke-width="2"/>
-  <g font-family="Arial,Helvetica,sans-serif">
-    <g fill="#11151A" font-size="15" font-weight="700" letter-spacing="2">
-      <text x="72" y="492">01 / REQUEST</text><text x="348" y="492">02 / SCOPE</text><text x="624" y="492">03 / ACTION</text><text x="900" y="492">04 / OBSERVATION</text><text x="1190" y="492">05 / CLAIM LIMIT</text>
-    </g>
-    <g fill="#11151A" font-size="30" font-weight="700">
-      <text x="72" y="555">One result</text><text x="348" y="555">Named target</text><text x="624" y="555">Actual event</text><text x="900" y="555">Read-back</text><text x="1190" y="555">Narrow sentence</text>
-    </g>
-    <g fill="#5E6161" font-size="17">
-      <text x="72" y="600"><tspan x="72">“Update the page”</tspan><tspan x="72" dy="27">is still incomplete.</tspan></text>
-      <text x="348" y="600"><tspan x="348">Path, account,</tspan><tspan x="348" dy="27">authority, stop.</tspan></text>
-      <text x="624" y="600"><tspan x="624">Edit, command,</tspan><tspan x="624" dy="27">or submitted call.</tspan></text>
-      <text x="900" y="600"><tspan x="900">Diff, exit, log,</tspan><tspan x="900" dy="27">screenshot, source.</tspan></text>
-      <text x="1190" y="600"><tspan x="1190">State only what</tspan><tspan x="1190" dy="27">the record supports.</tspan></text>
-    </g>
-  </g>
-  <path d="M72 700H1340" stroke="#11151A" stroke-width="10"/>
-  <path d="M1340 700H1450" stroke="#D62828" stroke-width="10" stroke-dasharray="18 14"/>
-  <path d="M1450 665V735" stroke="#D62828" stroke-width="10"/>
-  <g fill="#D62828"><rect x="64" y="686" width="28" height="28"/><rect x="340" y="686" width="28" height="28"/><rect x="616" y="686" width="28" height="28"/><rect x="892" y="686" width="28" height="28"/><rect x="1182" y="686" width="28" height="28"/></g>
-  <g font-family="Arial,Helvetica,sans-serif"><text x="1465" y="690" fill="#D62828" font-size="18" font-weight="800" letter-spacing="2">UNKNOWN</text><text x="1465" y="718" fill="#11151A" font-size="15">STOP HERE</text></g>
-  <path d="M72 790H1528" stroke="#11151A" stroke-width="1"/>
-  <text x="72" y="835" fill="#11151A" font-family="Arial,Helvetica,sans-serif" font-size="17" font-weight="700">REJECTED ASSUMPTION / A CONFIDENT SUMMARY IS NOT AN OBSERVATION.</text>
-  <text x="1528" y="835" text-anchor="end" fill="#5E6161" font-family="Arial,Helvetica,sans-serif" font-size="15">SOURCE / CH. 9 · CORE-EVIDENCE-RECOVERY</text>
+  <desc id="desc">A vertical editorial teaching board moves from one request through scope, action, and observation to a narrow claim. It ends at an explicit unknown boundary and says that a confident summary is not an observation.</desc>
+  <rect width="900" height="1400" fill="#f6f6f2"/>
+  <rect x="40" y="30" width="820" height="10" fill="#161616"/>
+  <text x="40" y="88" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">EVIDENCE FILE / REQUEST TO CLAIM</text>
+  <text x="40" y="148" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="49" font-weight="900" letter-spacing="-2">A CLAIM TRAVELS</text>
+  <text x="40" y="202" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="49" font-weight="900" letter-spacing="-2">ONLY AS FAR AS ITS</text>
+  <text x="40" y="256" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="49" font-weight="900" letter-spacing="-2">EVIDENCE.</text>
+  <text x="42" y="294" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="16">one named result / one read-back / no expanded claim</text>
+  <line x1="80" y1="364" x2="80" y2="1080" stroke="#d71920" stroke-width="8"/>
+  <circle cx="80" cy="402" r="16" fill="#d71920"/><circle cx="80" cy="560" r="16" fill="#d71920"/><circle cx="80" cy="718" r="16" fill="#d71920"/><circle cx="80" cy="876" r="16" fill="#d71920"/><circle cx="80" cy="1034" r="16" fill="#d71920"/>
+  <g transform="translate(126 330)"><rect width="734" height="144" fill="#161616"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / REQUEST</text><text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">NAME ONE RESULT.</text><text x="24" y="116" fill="#c4c4be" font-family="Arial, Helvetica, sans-serif" font-size="21">“Update the page” is still incomplete.</text></g>
+  <g transform="translate(126 488)"><rect width="734" height="144" fill="#ffffff" stroke="#161616" stroke-width="3"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / SCOPE</text><text x="24" y="78" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">MAKE THE LIMIT VISIBLE.</text><text x="24" y="116" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="21">Path, authority, allowed action, and stop.</text></g>
+  <g transform="translate(126 646)"><rect width="734" height="144" fill="#d71920"/><text x="24" y="34" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / ACTION</text><text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">RECORD THE ACTUAL EVENT.</text><text x="24" y="116" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="21">Edit, command, or submitted call—not a plan.</text></g>
+  <g transform="translate(126 804)"><rect width="734" height="144" fill="#ffffff" stroke="#161616" stroke-width="3"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / OBSERVATION</text><text x="24" y="78" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">READ IT BACK.</text><text x="24" y="116" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="21">Inspect a diff, exit, log, screenshot, or source.</text></g>
+  <g transform="translate(126 962)"><rect width="734" height="144" fill="#161616"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">05 / CLAIM LIMIT</text><text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">SAY ONLY WHAT THE</text><text x="24" y="112" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">RECORD SUPPORTS.</text></g>
+  <rect x="40" y="1174" width="820" height="132" fill="#d71920"/>
+  <text x="64" y="1214" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">UNKNOWN / STOP HERE</text>
+  <text x="64" y="1258" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">A CONFIDENT SUMMARY IS NOT</text><text x="64" y="1290" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">AN OBSERVATION.</text>
+  <text x="40" y="1360" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / INSPECT BEFORE YOU CLAIM</text>
 </svg>

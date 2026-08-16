@@ -14,10 +14,15 @@ see before the reader works through the prose.
 - [Field signal to safe degradation](field-signal-to-safe-degradation-red-black.svg)
 - [Beginner practice loop](beginner-practice-loop-red-black.svg)
 - [Failed-interaction recovery](failed-interaction-recovery-red-black.svg)
-- [Four-line conversation safety card](conversation-safety-card-red-black.svg)
+- [Boundary Card: input, egress, effect, evidence, and stop](conversation-safety-card-red-black.svg)
 - [Beginner safety stop card](beginner-safety-stop-card.svg)
 - [Public-interest safety research](public-interest-safety-research-red-black.svg)
+- [Source check before belief](source-check-before-belief-red-black.svg)
+- [Practice target to first attempt](practice-target-to-first-attempt-red-black.svg)
+- [Research question to source record](research-question-to-source-record-red-black.svg)
 - [First-turn contract](first-turn-contract-card.svg)
+- [Agent handoff receipt checkpoints](agent-handoff-receipt-checkpoints-red-black.svg)
+- [Interruption checkpoint](interruption-checkpoint-card-red-black.svg)
 - [Universal seams](universal-seams-red-black.svg)
 
 The cards are visual explanations, not benchmark results. Their scope,
@@ -27,3 +32,8 @@ ownership, and reuse boundary are recorded in the
 Dense boards belong in full-width reader material. A card preview must retain
 one legible thesis and one clear action at its rendered size; otherwise link to
 the full board instead of shrinking the whole lesson into a thumbnail.
+
+Run `python scripts/validate_teaching_assets.py` before adding or renaming a
+card. It checks the catalog, source-register path, public mobile inventory
+count, and minimal SVG text alternatives; it does not assess comprehension,
+visual quality, or runtime behavior.

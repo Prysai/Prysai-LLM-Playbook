@@ -1,52 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1500" role="img" aria-labelledby="title desc">
   <title id="title">Six fields for a bounded first request</title>
-  <desc id="desc">An editorial teaching board lists outcome, starting context, requested response, limits, check, and stop plus receipt. It warns that visible fields are not a safety or correctness certificate.</desc>
-  <rect width="1600" height="900" fill="#f6f6f2"/>
-  <rect x="64" y="56" width="1472" height="10" fill="#161616"/>
-  <text x="64" y="126" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="4">FIRST TURN / A BOUNDED REQUEST</text>
-  <text x="64" y="212" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="900" letter-spacing="-4">MAKE THE BOUNDARY VISIBLE.</text>
-  <text x="66" y="256" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="20">one small request / six fields / no hidden authority added</text>
+  <desc id="desc">A vertical editorial board lists outcome, starting context, requested response, limits, check, and stop plus receipt. It warns that visible fields are not a safety or correctness certificate.</desc>
+  <rect width="900" height="1500" fill="#f6f6f2"/>
+  <rect x="40" y="30" width="820" height="10" fill="#161616"/>
+  <text x="40" y="88" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">FIRST TURN / A BOUNDED REQUEST</text>
+  <text x="40" y="148" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">MAKE THE BOUNDARY</text>
+  <text x="40" y="202" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">VISIBLE.</text>
+  <text x="42" y="240" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="16">one small request / six fields / no authority added</text>
 
-  <g transform="translate(64 322)">
-    <rect width="462" height="146" fill="#161616"/>
-    <text x="24" y="38" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="17" font-weight="700">01 / OUTCOME</text>
-    <text x="24" y="83" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="33" font-weight="900">What small result?</text>
-    <text x="24" y="117" fill="#c4c4be" font-family="Arial, Helvetica, sans-serif" font-size="17">Name one inspectable result for this session.</text>
-  </g>
-  <g transform="translate(569 322)">
-    <rect width="462" height="146" fill="#ffffff" stroke="#161616" stroke-width="3"/>
-    <text x="24" y="38" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="17" font-weight="700">02 / STARTING CONTEXT</text>
-    <text x="24" y="83" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="33" font-weight="900">What may it use?</text>
-    <text x="24" y="117" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="17">Supply text, facts, sources, or say “unknown.”</text>
-  </g>
-  <g transform="translate(1074 322)">
-    <rect width="462" height="146" fill="#d71920"/>
-    <text x="24" y="38" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="17" font-weight="700">03 / REQUESTED RESPONSE</text>
-    <text x="24" y="83" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="33" font-weight="900">What shape fits?</text>
-    <text x="24" y="117" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="17">Ask for a form, length, or small sequence.</text>
-  </g>
+  <line x1="80" y1="318" x2="80" y2="1190" stroke="#d71920" stroke-width="8"/>
+  <circle cx="80" cy="360" r="15" fill="#d71920"/><circle cx="80" cy="508" r="15" fill="#d71920"/>
+  <circle cx="80" cy="656" r="15" fill="#d71920"/><circle cx="80" cy="804" r="15" fill="#d71920"/>
+  <circle cx="80" cy="952" r="15" fill="#d71920"/><circle cx="80" cy="1100" r="15" fill="#d71920"/>
 
-  <g transform="translate(64 492)">
-    <rect width="462" height="146" fill="#ffffff" stroke="#161616" stroke-width="3"/>
-    <text x="24" y="38" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="17" font-weight="700">04 / LIMITS</text>
-    <text x="24" y="83" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="33" font-weight="900">What must not widen?</text>
-    <text x="24" y="117" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="17">Name data, actions, or help you do not want.</text>
-  </g>
-  <g transform="translate(569 492)">
-    <rect width="462" height="146" fill="#d71920"/>
-    <text x="24" y="38" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="17" font-weight="700">05 / CHECK</text>
-    <text x="24" y="83" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="33" font-weight="900">How will you inspect?</text>
-    <text x="24" y="117" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="17">Ask for uncertainty, sources, or a revision check.</text>
-  </g>
-  <g transform="translate(1074 492)">
-    <rect width="462" height="146" fill="#161616"/>
-    <text x="24" y="38" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="17" font-weight="700">06 / STOP + RECEIPT</text>
-    <text x="24" y="83" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="33" font-weight="900">When does it end?</text>
-    <text x="24" y="117" fill="#c4c4be" font-family="Arial, Helvetica, sans-serif" font-size="17">Keep one small record of unknowns and next step.</text>
-  </g>
+  <g transform="translate(126 300)"><rect width="734" height="120" fill="#161616"/><text x="22" y="31" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="700">01 / OUTCOME</text><text x="22" y="70" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">What small result?</text><text x="22" y="100" fill="#c4c4be" font-family="Arial, Helvetica, sans-serif" font-size="18">Name one inspectable result for this turn.</text></g>
+  <g transform="translate(126 448)"><rect width="734" height="120" fill="#ffffff" stroke="#161616" stroke-width="3"/><text x="22" y="31" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="700">02 / STARTING CONTEXT</text><text x="22" y="70" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">What may it use?</text><text x="22" y="100" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="18">Supply text, facts, sources, or say unknown.</text></g>
+  <g transform="translate(126 596)"><rect width="734" height="120" fill="#d71920"/><text x="22" y="31" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="700">03 / REQUESTED RESPONSE</text><text x="22" y="70" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">What shape fits?</text><text x="22" y="100" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18">Ask for a form, length, or small sequence.</text></g>
+  <g transform="translate(126 744)"><rect width="734" height="120" fill="#ffffff" stroke="#161616" stroke-width="3"/><text x="22" y="31" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="700">04 / LIMITS</text><text x="22" y="70" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">What must not widen?</text><text x="22" y="100" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="18">Name data, actions, or help you do not want.</text></g>
+  <g transform="translate(126 892)"><rect width="734" height="120" fill="#d71920"/><text x="22" y="31" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="700">05 / CHECK</text><text x="22" y="70" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">How will you inspect?</text><text x="22" y="100" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18">Ask for uncertainty, sources, or a revision check.</text></g>
+  <g transform="translate(126 1040)"><rect width="734" height="120" fill="#161616"/><text x="22" y="31" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="700">06 / STOP + RECEIPT</text><text x="22" y="70" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">When does it end?</text><text x="22" y="100" fill="#c4c4be" font-family="Arial, Helvetica, sans-serif" font-size="18">Keep unknowns and one next permitted step.</text></g>
 
-  <rect x="64" y="692" width="1472" height="128" fill="#161616"/>
-  <text x="92" y="735" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="17" font-weight="700">BEFORE SEND / INSPECT THE DRAFT</text>
-  <text x="92" y="790" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">VISIBLE FIELDS ≠ A SAFETY, CORRECTNESS, OR COMPLETION CERTIFICATE.</text>
-  <text x="64" y="864" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="14">PRYSAI LAB / ORIGINAL TEACHING BOARD / CANDIDATE / 2026-08-13</text>
+  <rect x="40" y="1250" width="820" height="132" fill="#161616"/>
+  <text x="64" y="1290" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="700">BEFORE SEND / INSPECT THE DRAFT</text>
+  <text x="64" y="1332" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="900">VISIBLE FIELDS ARE NOT A SAFETY,</text>
+  <text x="64" y="1362" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="900">CORRECTNESS, OR COMPLETION CERTIFICATE.</text>
+  <text x="40" y="1440" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / INSPECT THE DRAFT</text>
 </svg>

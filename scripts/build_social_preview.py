@@ -10,6 +10,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "assets/readme/prysai-llm-playbook-social.png"
+BRAND_MARK = ROOT / "assets/branding/prysai-lab-mark-white-512.png"
 WIDTH, HEIGHT = 1200, 630
 INK = "#11151a"
 PAPER = "#f3f0e9"
@@ -39,8 +40,10 @@ def build() -> Image.Image:
     draw.line((0, 526, WIDTH, 526), fill="#34383d", width=1)
     draw.line((842, 0, 842, HEIGHT), fill="#34383d", width=1)
 
-    draw.rectangle((58, 51, 76, 69), fill=RED)
-    spaced(draw, (94, 48), "PRYSAI LAB / LLM PLAYBOOK", size=16, fill=PAPER, gap=3)
+    mark = Image.open(BRAND_MARK).convert("RGBA")
+    mark.thumbnail((28, 28), Image.Resampling.LANCZOS)
+    image.paste(mark, (55, 46), mark)
+    spaced(draw, (101, 48), "PRYSAI LAB / LLM PLAYBOOK", size=16, fill=PAPER, gap=3)
     draw.text((58, 166), "LLM", font=font(86, True), fill=PAPER, stroke_width=0)
     draw.text((58, 264), "PLAYBOOK", font=font(92, True), fill=PAPER)
     spaced(draw, (63, 363), "FROM FIRST TASK TO RELIABLE WORK", size=16, fill=RED, gap=3)
