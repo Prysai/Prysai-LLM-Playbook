@@ -76,7 +76,7 @@ Transfer.
 | 012 — Eine persönliche Methode in Teamfähigkeit überführen | [Verfügbar: Lab 012](labs/lab-012-team-capability-migration-DE.md) · `draft / in-progress` |
 | 013 — Einen vollständigen vertikalen Schnitt ausführen | [Verfügbar: Lab 013](labs/lab-013-l3-vertical-slice-DE.md) · `draft / in-progress` |
 | 014 — Eine fortgesetzte Aufgabe vor dem Weiterarbeiten abgleichen | [Verfügbar: Lab 014](labs/lab-014-resume-reconciliation-DE.md) · `draft / in-progress` |
-| 015 — Evidenz statt einer Fertigmeldung übergeben | Deutsche Datei noch nicht vorhanden. |
+| 015 — Evidenz statt einer Fertigmeldung übergeben | [Verfügbar: Lab 015](labs/lab-015-evidence-delivery-DE.md) · `draft / in-progress` |
 | 016 — An der Grenze externer Auswirkungen stoppen | Deutsche Datei noch nicht vorhanden. |
 | 017 — Die Entdeckung prüfen, bevor ein Skill übernommen wird | Deutsche Datei noch nicht vorhanden. |
 | 018 — Sprachtransfer mit einem festen Übungsvertrag testen | Deutsche Datei noch nicht vorhanden. |
