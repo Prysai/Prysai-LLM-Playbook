@@ -5,6 +5,8 @@
 **Status:** `draft` · **Lernnachweis:** `not_run` · **Geeignet für:** risikoarme
 Übungen ohne sensible Daten in einem Textchat mit einem LLM.
 
+Sechs direkt kopierbare Nachrichten findest du in der [Spanischübung mit sechs Schritten](spanish-practice-loop-DE.md).
+
 Du musst heute weder Codex öffnen noch Begriffe auswendig lernen. Wähle eine Karte,
 ersetze die Klammern durch eine kleine Aufgabe, probiere zuerst selbst etwas aus und
 bitte die KI nur um Hilfe bei einem klar abgegrenzten Problem.

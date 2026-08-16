@@ -6,6 +6,8 @@
 low-risk, text-only chat. No cross-model run evidence exists; product-specific
 actions require a sourced adapter.
 
+Need a short, copy-ready language route? Open the [six-message Spanish practice loop](spanish-practice-loop-EN.md).
+
 <span id="practice-route-chooser"></span>
 
 ## Start here — do one useful thing

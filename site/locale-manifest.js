@@ -2727,6 +2727,58 @@ window.CODEX_LOCALE_MANIFEST = {
         }
       }
     },
+    "spanish-practice-loop": {
+      "kind": "practice-pack",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
+      "stem": "book/spanish-practice-loop",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "book/spanish-practice-loop-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/spanish-practice-loop-ZH.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "es": {
+          "path": "book/spanish-practice-loop-ES.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "ja": {
+          "path": "book/spanish-practice-loop-JA.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "ko": {
+          "path": "book/spanish-practice-loop-KO.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "de": {
+          "path": "book/spanish-practice-loop-DE.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        }
+      }
+    },
     "reader-evidence-library": {
       "kind": "reader-reference",
       "reader_type": "project-document",
@@ -4873,6 +4925,12 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-016-side-effect-boundary-JA.md": "lab-016-side-effect-boundary",
     "book/labs/lab-016-side-effect-boundary-KO.md": "lab-016-side-effect-boundary",
     "book/labs/lab-016-side-effect-boundary-DE.md": "lab-016-side-effect-boundary",
+    "book/spanish-practice-loop-EN.md": "spanish-practice-loop",
+    "book/spanish-practice-loop-ZH.md": "spanish-practice-loop",
+    "book/spanish-practice-loop-ES.md": "spanish-practice-loop",
+    "book/spanish-practice-loop-JA.md": "spanish-practice-loop",
+    "book/spanish-practice-loop-KO.md": "spanish-practice-loop",
+    "book/spanish-practice-loop-DE.md": "spanish-practice-loop",
     "book/evidence-library-EN.md": "reader-evidence-library",
     "book/evidence-library-ZH.md": "reader-evidence-library",
     "book/evidence-library-ES.md": "reader-evidence-library",

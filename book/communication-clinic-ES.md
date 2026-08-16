@@ -5,6 +5,8 @@
 **Estado:** `draft` · **Evidencia de aprendizaje:** `not_run` · **Uso previsto:**
 prácticas de bajo riesgo y sin datos sensibles en un chat de texto con un LLM.
 
+¿Quieres seis mensajes listos para copiar? Abre la [práctica de español en seis pasos](spanish-practice-loop-ES.md).
+
 No necesitas abrir Codex ni dominar términos hoy. Escoge una tarjeta, reemplaza los
 corchetes con una tarea pequeña, intenta primero por tu cuenta y pide ayuda para un
 solo problema concreto.
