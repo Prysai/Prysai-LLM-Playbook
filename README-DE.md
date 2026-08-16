@@ -2,7 +2,7 @@
 
 # Prysai LLM Playbook — From First Task to Reliable Work
 
-Lizenz: Kurstexte und Lehrmaterialien stehen unter CC BY 4.0; Skripte und Werkzeuge unter Apache-2.0, sofern eine Datei nichts anderes angibt. Siehe [`LICENSE`](LICENSE), [`LICENSE-CODE`](LICENSE-CODE) und die Lizenzgrenze ([licensing boundary](docs/sources/licensing.md)).
+Lizenz: Kurstexte und Lehrmaterialien stehen unter CC BY 4.0; Skripte und Werkzeuge unter Apache-2.0, sofern eine Datei nichts anderes angibt. Siehe [`LICENSE`](LICENSE), [`LICENSE-CODE`](LICENSE-CODE) und die Lizenzgrenze (licensing boundary document).
 > Deutscher Einstiegspunkt — die deutsche Migration der reader-facing Inhalte
 > ist in Arbeit.
 
