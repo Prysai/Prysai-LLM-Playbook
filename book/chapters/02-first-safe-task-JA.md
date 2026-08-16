@@ -127,6 +127,32 @@ OpenAI の現行ドキュメントは sandbox の能力と承認ポリシーを�
 このプロトコルが役立つのは、曖昧な動詞を対象、権限境界、証拠要件に変えるからです。
 魔法のプロンプトではなく、人間の判断を不要にするものでもありません。
 
+## chat の prompt を最初の安全な task に変える
+
+前章の prompt は言語学習、source の整理、依頼の明確化に使えます。ここで大切なのは「手伝って」をそのまま「全部終えて」にしないことです。見えて、戻せて、ほかの人へ影響しない対象を一つ選びます。最初の練習には、次の card で十分です。
+
+```text
+goal: [自分の非機密の短い文章 / 一つの local README] を分かりやすくする。
+input: [貼った文章 / 指定 file] だけを使う。与えていない事実は unknown とする。
+allowed action: まず読んで提案する。確認後も [指定した一 file] だけを編集する。
+forbidden: network、install、sign-in、送信、commit、publish、secret の読み取りはしない。
+acceptance: before/after diff と、各変更が goal に対応する説明を出す。
+stop: 追加 file、account、network、external write、確認できない事実が必要なら止まり、質問する。
+```
+
+スペイン語などの skill を練習するなら、「指定 file」を自分で書いた五〜十文に替えます。model ができるのは練習、feedback、修正案であって、習得を宣言することではありません。資料を整理するなら、input を使用許可のある source 抜粋に替えます。与えていない web の内容や推測を事実にしてはいけません。領域で変わるのは対象と acceptance evidence であり、scope を決めてから結果を確かめる順序ではありません。
+
+### 最初の一回はこう聞く
+
+編集の前に、まず boundary を復唱させます。
+
+```text
+action の前に、goal、読む input、しない action、acceptance evidence、stop condition を復唱してください。
+field が欠けていれば、最小限の clarification question だけを出してください。
+```
+
+返答を読み、scope が広がっていないことを確認してから、小さな action を一つだけ許可します。これにより、もっともらしい答えでも plan、proposal、evidence のある結果を区別できます。
+
 ## 3つの確認ポイント
 
 ### 最初の行動の前

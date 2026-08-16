@@ -124,6 +124,32 @@ OpenAI의 현재 문서는 sandbox 능력과 승인 정책을 구분하며, 승�
 이 프로토콜이 유용한 이유는 모호한 동사를 대상, 권한 경계, 증거 요구사항으로 바꾸기
 때문입니다. 마법의 프롬프트도 아니고 사람의 판단을 없애는 장치도 아닙니다.
 
+## chat prompt를 첫 안전 task로 바꾸기
+
+앞 장의 prompt는 언어 학습, source 정리, 요청 명확화에 쓸 수 있습니다. 여기서 중요한 점은 “도와줘”를 바로 “전부 끝내 줘”로 바꾸지 않는 것입니다. 볼 수 있고 되돌릴 수 있으며 다른 사람에게 영향을 주지 않는 대상 하나를 고르세요. 첫 연습에는 아래 card면 충분합니다.
+
+```text
+goal: [내 비민감 짧은 글 / 하나의 local README]를 더 분명하게 만든다.
+input: [붙인 글 / 지정 file]만 사용한다. 제공하지 않은 사실은 unknown으로 표시한다.
+allowed action: 먼저 읽고 제안한다. 확인 뒤에도 [지정한 한 file]만 편집한다.
+forbidden: network, install, sign-in, 전송, commit, publish, secret 읽기를 하지 않는다.
+acceptance: before/after diff와 각 변경이 goal에 맞는 이유를 보여 준다.
+stop: 추가 file, account, network, external write, 확인할 수 없는 사실이 필요하면 멈추고 질문한다.
+```
+
+스페인어 같은 skill을 연습한다면 “지정 file”을 직접 쓴 다섯~열 문장으로 바꿉니다. model이 할 수 있는 것은 연습, feedback, 수정 제안이지 숙달 선언이 아닙니다. 자료를 정리한다면 input을 사용 허가된 source 발췌로 바꿉니다. 제공하지 않은 web 내용이나 추측을 사실로 만들면 안 됩니다. 분야에 따라 달라지는 것은 대상과 acceptance evidence이지, scope를 정한 뒤 결과를 확인하는 순서가 아닙니다.
+
+### 첫 번째에는 이렇게 묻기
+
+편집 전에 먼저 boundary를 다시 말하게 합니다.
+
+```text
+action 전에 goal, 읽을 input, 하지 않을 action, acceptance evidence, stop condition을 다시 말해 주세요.
+field가 빠졌다면 최소한의 clarification question만 출력하세요.
+```
+
+답을 읽고 scope가 넓어지지 않았음을 확인한 뒤 작은 action 하나만 허용합니다. 그러면 그럴듯한 답도 plan, proposal, evidence가 있는 결과로 구분할 수 있습니다.
+
 ## 세 가지 확인 지점
 
 ### 첫 행동 전
