@@ -48,8 +48,8 @@ Synthese dieses Projekts. Es ergänzt explizite Felder für Stopp, Wiederherstel
 und Belege, weil eine erzeugte Antwort und ein verifiziertes Arbeitsergebnis
 verschiedene Behauptungen sind.
 
-Siehe die [offizielle Codex-Faktenbasis](../../docs/research/chapter-03-official-baseline-2026-08-10.md)
-und die [Recherche zu Prompt-Mustern für echte Arbeit](../../docs/research/prompt-patterns-for-real-work-2026-08-10.md)
+Siehe die [offizielle Codex-Faktenbasis](../evidence-library-DE.md#source-notes)
+und die [Recherche zu Prompt-Mustern für echte Arbeit](../evidence-library-DE.md#source-notes)
 für Geltungsbereich und Zugriffstag pro Quelle.
 
 <a id="core-task-contract"></a>
@@ -395,7 +395,7 @@ Bewahre Basislinie, erste Versuche, genutzte Hinweise, korrigierte Versuche,
 Fehlerprotokoll, verzögerte Wiederholung, unbekannte Aufgabe und Bewertungskriterien.
 Eine glatte Sitzung stützt nur „heute geübt“, nicht Flüssigkeit, dauerhafte
 Behaltung oder Transfer. Die Kandidatenmethode und Quellengrenze stehen in der
-[Recherche zu dauerhaftem LLM-gestütztem Lernen](../../docs/research/durable-llm-assisted-learning-and-skill-candidates-2026-08-12.md).
+[Recherche zu dauerhaftem LLM-gestütztem Lernen](../evidence-library-DE.md#source-notes).
 
 ## Fehlerbilder aus der Praxis
 
@@ -408,8 +408,8 @@ Organisation, Repository oder Connector. Ein Community-Workaround kann auf einer
 anderen Version oder Plattform unsicher oder ungültig sein.
 
 Das sind Nutzerberichte, keine universellen Produktursachen. Nutze den
-[Feldproblemindex](../../docs/research/field-problems-index-2026-08-10.md) und
-den [Fallbericht zu Coding-Agents](../../docs/research/field-problems-coding-agents-2026-08-10.md):
+[Feldproblemindex](../evidence-library-DE.md#source-notes) und
+den [Fallbericht zu Coding-Agents](../evidence-library-DE.md#source-notes):
 Symptom und Umgebung erfassen, den kleinsten sicheren Check ausführen, an der
 Grenze stoppen und nur behaupten, was die Belege tragen.
 
@@ -500,10 +500,10 @@ Die stabile Methode ist eine eigene Synthese. Produktverhalten, Berechtigungsnam
 UI-Steuerung, Befehlssyntax, Modellnamen und externe Dienste sind volatil. Prüfe
 die Primärquellen vor einer aktuellen Aufgabe erneut.
 
-- [OpenAI/Codex-Faktenbasis](../../docs/research/chapter-03-official-baseline-2026-08-10.md)
-- [Prompt-Muster für echte Arbeit](../../docs/research/prompt-patterns-for-real-work-2026-08-10.md)
-- [Praxisfälle zu Coding-Agents](../../docs/research/field-problems-coding-agents-2026-08-10.md)
-- [Index realer Probleme](../../docs/research/field-problems-index-2026-08-10.md)
+- [OpenAI/Codex-Faktenbasis](../evidence-library-DE.md#source-notes)
+- [Prompt-Muster für echte Arbeit](../evidence-library-DE.md#source-notes)
+- [Praxisfälle zu Coding-Agents](../evidence-library-DE.md#source-notes)
+- [Index realer Probleme](../evidence-library-DE.md#source-notes)
 
 **Status:** `candidate`. Kapitelstruktur und Quellenakten existieren; das
 Begleit-Lab und unabhängige Leserlauf bleiben `draft`/`not_run`. Wähle die nächste

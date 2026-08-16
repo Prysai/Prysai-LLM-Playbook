@@ -149,7 +149,7 @@ Codex에 붙여 넣도록 요구하지 않습니다. 결과물은 다듬어진 �
 핵심은 정확히 어떤 계층이 실패했는지 밝히는 것입니다. 스키마 결과, 검색 적중 또는
 눈에 보이는 문자열이 의미적 정확성, 완전한 컨텍스트 또는 권한의 증거가 자동으로
 되는 것은 아닙니다. 출처를 근거로 한 경계는 [LLM 메커니즘
-연구](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md)를 참조하세요.
+연구](../evidence-library-KO.md#source-notes)를 참조하세요.
 이 실험은 실제 제공자를 실행하지 않습니다.
 
 ## 파트 4: 중단 규칙 연습하기
@@ -168,7 +168,7 @@ Codex에 붙여 넣도록 요구하지 않습니다. 결과물은 다듬어진 �
 권한을 요청하는 것입니다. 작업 공간을 지우거나, 의존성을 강제로 설치하거나, 다음
 대기 지침을 보내는 것이 아닙니다.
 
-이러한 실패 형태는 [Codex 현장 문제 연구](../../docs/research/field-problems-codex.md)의
+이러한 실패 형태는 [Codex 현장 문제 연구](../evidence-library-KO.md#source-notes)의
 공개 보고를 바탕으로 합니다. 이는 사용자 증거이지 공식 근본 원인 확인이 아니며,
 이 실험은 로컬 재현을 주장하지 않습니다.
 
@@ -220,10 +220,10 @@ Codex에 붙여 넣도록 요구하지 않습니다. 결과물은 다듬어진 �
 
 ## 출처 및 유지보수
 
-- [프로젝트 용어](../../CONTEXT.md) — 이 실험의 안정적인 경계.
-- [OpenAI Codex 공식 사실 기준선](../../docs/research/openai-codex-baseline.md) — 날짜가 명시된 제품 사실과 권한 경계, 2026-08-09 확인.
-- [Codex 실제 사용자 문제 연구](../../docs/research/field-problems-codex.md) — 공개 보고, 출처 링크, 증거 라벨, 2026-08-09 확인.
-- [LLM 메커니즘 심층 연구](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md) — 공식 출처를 근거로 한 메커니즘 카드와 실패 실험, 2026-08-10 확인.
+- [프로젝트 용어](../evidence-library-KO.md#core-terms) — 이 실험의 안정적인 경계.
+- [OpenAI Codex 공식 사실 기준선](../evidence-library-KO.md#source-notes) — 날짜가 명시된 제품 사실과 권한 경계, 2026-08-09 확인.
+- [Codex 실제 사용자 문제 연구](../evidence-library-KO.md#source-notes) — 공개 보고, 출처 링크, 증거 라벨, 2026-08-09 확인.
+- [LLM 메커니즘 심층 연구](../evidence-library-KO.md#source-notes) — 공식 출처를 근거로 한 메커니즘 카드와 실패 실험, 2026-08-10 확인.
 - [제1장 — Codex를 신뢰하기 전에 GPT 이해하기](../chapters/01-gpt-and-codex-KO.md) — 이 실험을 위한 개념과 현장 사례 컨텍스트.
 
 이 실험은 독자적으로 작성되었습니다. 외부 프롬프트, 로그, 자격 증명 또는 Skill

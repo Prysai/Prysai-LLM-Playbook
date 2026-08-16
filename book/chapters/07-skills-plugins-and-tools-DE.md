@@ -27,7 +27,7 @@ verbirgt Abhängigkeiten und erweitert externe Nebenwirkungen unbemerkt.
 
 ## Ein realer Einstieg: Entdeckung kann vor der Aufgabe scheitern
 
-Die [Codex-Feldrecherche](../../docs/research/field-problems-codex.md) enthält
+Die [Codex-Feldrecherche](../evidence-library-DE.md#source-notes) enthält
 öffentliche Symptome, keine offizielle Ursache und keine lokale Reproduktion.
 
 | Symptom | Beobachtung | Beweist nicht | Sichere Reaktion |
@@ -247,8 +247,8 @@ Skript sein sollte.
 | Plugin-Komposition, Flächen, Installation und Approval | [Plugins](https://learn.chatgpt.com/docs/plugins.md) | 2026-08-09 | Zugriff kann je Konto/Organisation wechseln |
 | MCP-Server, Tools/Ressourcen/Prompts und Allow/Deny | [MCP](https://learn.chatgpt.com/docs/extend/mcp.md) | 2026-08-09 | Authentifizierung, Tools und Policy brauchen eigene Prüfung |
 | Connector-/MCP-Aktionen und Approval-Grenze | [Agent approvals and security](https://learn.chatgpt.com/docs/agent-approvals-security.md) | 2026-08-09 | Keine Runtime-Konfiguration hier |
-| Link-Entdeckung und explizite Invocation | [Codex-Feldrecherche](../../docs/research/field-problems-codex.md) | 2026-08-09 | Öffentliche Berichte ohne Reproduktion oder offizielle Ursache |
-| Kandidatenarchiv und Lizenzsignale | [Skill-Kandidatenkatalog](../../docs/sources/skill-candidate-catalog.md) | 2026-08-09 | Inventar, keine Installationsfreigabe |
+| Link-Entdeckung und explizite Invocation | [Codex-Feldrecherche](../evidence-library-DE.md#source-notes) | 2026-08-09 | Öffentliche Berichte ohne Reproduktion oder offizielle Ursache |
+| Kandidatenarchiv und Lizenzsignale | [Skill-Kandidatenkatalog](../evidence-library-DE.md#source-notes) | 2026-08-09 | Inventar, keine Installationsfreigabe |
 
 Details zu Skills, Plugins, Connectors, MCP, Manifesten, Authentifizierung und
 Invocation können sich ändern. Aktualisiere zuerst Primärquellen und prüfe danach

@@ -23,7 +23,7 @@ Si un candidato no está disponible en la superficie elegida, o si las dos ejecu
 
 ## Informes públicos: síntomas, no soluciones mágicas
 
-La [investigación de campo de Codex](../../docs/research/field-problems-codex.md) recoge Issues y debates públicos. Son síntomas, no diagnósticos oficiales ni reproducciones locales.
+La [investigación de campo de Codex](../evidence-library-ES.md#source-notes) recoge Issues y debates públicos. Son síntomas, no diagnósticos oficiales ni reproducciones locales.
 
 | Síntoma | Observación | No demuestra | Respuesta segura |
 |---|---|---|---|
@@ -31,7 +31,7 @@ La [investigación de campo de Codex](../../docs/research/field-problems-codex.m
 | El modelo está a capacidad | La tarea se detiene antes de terminar y el siguiente intento puede heredar estado parcial | Baja calidad del modelo o que reintentar signifique que el primer intento acabó | Guarda checkpoint, diff, logs y pruebas; clasifica el estado antes de continuar |
 | Un comando queda en `Working` | La interfaz muestra actividad sin salida comprobable | Que formateador, Agent o modelo sigan trabajando bien | Aplica límite de tiempo, interrumpe con seguridad, inspecciona worktree y ejecuta solo una comprobación acotada |
 
-El registro de [selección de modelos](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) contiene enlaces, fechas y límites. Para cada informe separa: lo que dijo una persona, si hay informe independiente, confirmación oficial y lo que este Playbook reprodujo. Un informe sin reproducción no se convierte en una solución garantizada.
+El registro de [selección de modelos](../evidence-library-ES.md#source-notes) contiene enlaces, fechas y límites. Para cada informe separa: lo que dijo una persona, si hay informe independiente, confirmación oficial y lo que este Playbook reprodujo. Un informe sin reproducción no se convierte en una solución garantizada.
 
 ## 1. Elegir modelo es elegir configuración
 
@@ -159,7 +159,7 @@ La entrega prevista son dos tarjetas, conjunto y rúbrica congelados, ejecucione
 | Posicionamiento, razonamiento y límites de modelos | [Codex models](https://learn.chatgpt.com/docs/models.md) | 2026-08-11 |
 | Flujo CLI y repositorio local | [Codex CLI](https://learn.chatgpt.com/docs/cli.md) | 2026-08-11 |
 | Entorno y revisión Cloud | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-11 |
-| Síntomas públicos de modelo/proveedor/capacidad | [Registro de campo](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) | 2026-08-11 |
+| Síntomas públicos de modelo/proveedor/capacidad | [Registro de campo](../evidence-library-ES.md#source-notes) | 2026-08-11 |
 
 ID de modelos, precios, capacidad, soporte de proveedor, sintaxis y controles pueden cambiar. Actualiza primero fuentes de primera parte y conserva en frases separadas posición oficial, síntoma de usuario y evidencia local.
 

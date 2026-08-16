@@ -33,7 +33,7 @@ Eine *Arbeitsfläche* ist der Ort der Ausführung und Änderung. Ein *Einstieg* 
 | Worktree und Checkout weichen ab | UI, `cwd`, IDE-Root oder Git-Metadaten stimmen nicht überein | Dass der editierende Prozess isoliert ist | Absoluten Pfad, `.git`, Workspace-Root und `git status` vergleichen |
 | Setup geht, Agent erreicht Dienst nicht | Setup installiert, Agent hat kein Netz oder Geheimnis | Dass beide Phasen dieselben Rechte haben | Setup-/Agent-Logs, Netzwerkphase, Geheimnis-Lebensdauer und Diff getrennt sichern |
 
-Siehe [Feldproblem-Index](../../docs/research/field-problems-index-2026-08-10.md), [Arbeitsflächenforschung](../../docs/research/field-problems-surface-2026-08-10.md) und [Forenforschung](../../docs/research/field-problems-forums-2026-08-10.md). Der Worktree-Fall [FC-WORKTREE-01](../../docs/research/field-case-worktree-target-mismatch-2026-08-12.md) lehrt: Nach einer Local-zu-Worktree-Übergabe Checkout, Shell-`cwd`, Git-Top-Level, Worktree-Liste, Branch/HEAD und schreibbare Wurzeln vergleichen. Bei Abweichung nicht schreiben.
+Siehe [Feldproblem-Index](../evidence-library-DE.md#source-notes), [Arbeitsflächenforschung](../evidence-library-DE.md#source-notes) und [Forenforschung](../evidence-library-DE.md#source-notes). Der Worktree-Fall [FC-WORKTREE-01](../evidence-library-DE.md#source-notes) lehrt: Nach einer Local-zu-Worktree-Übergabe Checkout, Shell-`cwd`, Git-Top-Level, Worktree-Liste, Branch/HEAD und schreibbare Wurzeln vergleichen. Bei Abweichung nicht schreiben.
 
 ## 1. Arbeitsfläche und Einstieg
 
@@ -148,7 +148,7 @@ Welches Tor änderte deine Wahl? Welcher vorgelagerte Erfolg wäre leicht zu üb
 | Netz und Geheimnis-Lebensdauer haben getrennte Grenzen | https://learn.chatgpt.com/docs/cloud/internet-access.md | 2026-08-09 | Policy und Runtime-Beleg bleiben nötig |
 | Berechtigung und Approval sind getrennt | https://learn.chatgpt.com/docs/agent-approvals-security.md | 2026-08-09 | Belegt nicht die wirksame Sitzungskonfiguration |
 
-Die [Faktenkarten](../../docs/research/openai-codex-facts-refresh-2026-08-09.md) und [Feldproblemakten](../../docs/research/field-problems-codex.md) ersetzen keine aktuelle Konto- oder Runtime-Beobachtung. Dieses Kapitel bleibt `candidate`, sein Experiment `not_run`.
+Die [Faktenkarten](../evidence-library-DE.md#source-notes) und [Feldproblemakten](../evidence-library-DE.md#source-notes) ersetzen keine aktuelle Konto- oder Runtime-Beobachtung. Dieses Kapitel bleibt `candidate`, sein Experiment `not_run`.
 
 <!-- chapter-navigation:start -->
 <hr>

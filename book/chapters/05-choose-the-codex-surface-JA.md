@@ -64,16 +64,16 @@
 | Cloud setup は成功したが秘密やネットワークを使えない | 依存関係の install や setup の印はあるが Agent がサービスへ届かない | setup と Agent のネットワークや秘密が同じ能力であること | setup log、Agent log、ネットワーク段階、秘密の寿命、diff を別々に残す |
 | allowlist が GitHub などをブロックする | proxy、sandbox、企業ネットワーク方針下で要求が失敗する | 全ネットワーク開放が正しい、または承認済みであること | 狭い変更を求める前に sandbox、allowlist、DNS/TLS、firewall の仮説を分ける |
 
-元のリンクと日付は[フィールド問題の索引](../../docs/research/field-problems-index-2026-08-10.md)、
-[作業面の調査](../../docs/research/field-problems-surface-2026-08-10.md)、
-[フォーラム調査](../../docs/research/field-problems-forums-2026-08-10.md)で確認してください。
+元のリンクと日付は[フィールド問題の索引](../evidence-library-JA.md#source-notes)、
+[作業面の調査](../evidence-library-JA.md#source-notes)、
+[フォーラム調査](../evidence-library-JA.md#source-notes)で確認してください。
 調査記録は、このプロジェクトが再現しなかったことも意図的に明記しています。
 
 ### フィールドケース：最初の書き込み前に対象を確かめる
 
 ![フィールド信号と最小の安全な対応](../../assets/teaching/field-signal-to-safe-degradation-red-black.svg)
 
-境界を定めた[FC-WORKTREE-01](../../docs/research/field-case-worktree-target-mismatch-2026-08-12.md)
+境界を定めた[FC-WORKTREE-01](../evidence-library-JA.md#source-notes)
 は、worktree に関する日付付き公開報告を対象同一性の練習に変えます。2026-08-12 の
 調査スナップショットには、公開された maintainer の根本原因確認はなく、このプロジェクト
 も報告を再現していません。教訓は狭いものです。Local から Worktree へ渡した後、編集、
@@ -357,9 +357,9 @@ source record を使ってください。
 | Local の permission と approval は別層 | https://learn.chatgpt.com/docs/agent-approvals-security.md | 2026-08-09 | 公式 security model。現在の session の有効設定を証明しない |
 | CLI、IDE、Cloud、model support は作業面ごとに異なる | https://learn.chatgpt.com/docs/codex/cli.md; https://learn.chatgpt.com/docs/codex/ide.md; https://learn.chatgpt.com/docs/cloud.md; https://learn.chatgpt.com/docs/models.md | 2026-08-09 | account、workspace、rollout、version で可用性は変わり得る |
 
-[公式ファクトカード](../../docs/research/openai-codex-facts-refresh-2026-08-09.md)
+[公式ファクトカード](../evidence-library-JA.md#source-notes)
 には、このプロジェクトの日付付き要約と限界があります。
-[フィールド問題の調査](../../docs/research/field-problems-codex.md)と関連する作業面・
+[フィールド問題の調査](../evidence-library-JA.md#source-notes)と関連する作業面・
 forum record には公開報告があります。いずれも現在の account-level または runtime の
 観測に代わるものではありません。
 

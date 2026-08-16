@@ -25,7 +25,7 @@ Skill 的价值不在于长度、术语或目录数量，而在于它能否在�
 
 ## 现实问题入口
 
-[FP-06](../../docs/research/field-problems-codex.md#fp-06：skill-discovery-忽略文件-symlink)记录了普通文件与 symlink 在发现行为上的用户报告；[FP-07](../../docs/research/field-problems-codex.md#fp-07：显式-skill-调用错误地依赖隐式可见列表)记录了显式调用与隐式可见列表混淆的报告。两条记录都没有官方确认或本地复现，不能当成所有版本的固定行为；它们提醒我们：Skill 目录里“存在一个文件”，不等于运行时已经发现、解析、触发、加载并验证它。
+[FP-06](../evidence-library-ZH.md#source-notes)记录了普通文件与 symlink 在发现行为上的用户报告；[FP-07](../evidence-library-ZH.md#source-notes)记录了显式调用与隐式可见列表混淆的报告。两条记录都没有官方确认或本地复现，不能当成所有版本的固定行为；它们提醒我们：Skill 目录里“存在一个文件”，不等于运行时已经发现、解析、触发、加载并验证它。
 
 ## 1. 先写触发契约
 
@@ -156,7 +156,7 @@ references/scripts/assets：只有在当前分支需要时才加载或执行
 
 ## 来源与更新提示
 
-Skill 的触发契约、渐进披露、失败处理、任务集评测和证据边界是稳定方法；具体调用语法、发现范围、目录结构、插件能力和资源加载行为属于易变事实。产品事实请以[OpenAI Codex 官方基线](../../docs/research/openai-codex-baseline.md)及其中列出的当前官方文档为准；现实问题请回到[现场研究记录](../../docs/research/field-problems-codex.md)查看证据等级、原始 URL 和调查限制。吸收外部 Skill、代码或资产前，按项目的[资产与来源台账](../../docs/sources/asset-register.md)记录来源、许可、适用范围和复核日期。
+Skill 的触发契约、渐进披露、失败处理、任务集评测和证据边界是稳定方法；具体调用语法、发现范围、目录结构、插件能力和资源加载行为属于易变事实。产品事实请以[OpenAI Codex 官方基线](../evidence-library-ZH.md#source-notes)及其中列出的当前官方文档为准；现实问题请回到[现场研究记录](../evidence-library-ZH.md#source-notes)查看证据等级、原始 URL 和调查限制。吸收外部 Skill、代码或资产前，按项目的[资产与来源台账](../evidence-library-ZH.md#source-notes)记录来源、许可、适用范围和复核日期。
 
 ## 一次可观察的设计流程
 

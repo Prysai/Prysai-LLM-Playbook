@@ -86,7 +86,7 @@ run_id | 日期 | 目标语言 | card_id | 五分钟限制 | 允许帮助
 
 - [学习实践契约](../guides/learning-practice-contract-ZH.md) — 本实验使用的证据与答案泄露规则。
 - [初学者练习包](../communication-clinic-ZH.md) — 三阶段语言练习路线。
-- [延迟复测卡池](../../docs/quality/lab-018-delayed-card-pool-v1.md) — 本项目编写的预先声明卡片和评分控制过程。
+- [延迟复测卡池](../evidence-library-ZH.md#method-and-status) — 本项目编写的预先声明卡片和评分控制过程。
 
 研究支持回忆、反馈、延迟检查和迁移的设计选择；它不证明本实验提高学习效果，也不证明任何模型或平台是有效老师。状态仍为 `draft / not_run`。
 

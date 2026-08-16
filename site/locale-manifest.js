@@ -171,38 +171,43 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/labs/lab-018-language-transfer-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "实验 018：用初学者旅行打字对话测试保持与迁移"
         },
         "es": {
           "path": "book/labs/lab-018-language-transfer-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 018: probar un intercambio escrito de viaje para retención y transferencia"
         },
         "ja": {
           "path": "book/labs/lab-018-language-transfer-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 018: 初心者向け旅行会話の入力練習で保持と転移を試す"
         },
         "ko": {
           "path": "book/labs/lab-018-language-transfer-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 018: 초보자 여행 입력 대화로 유지와 전이 시험하기"
         },
         "de": {
           "path": "book/labs/lab-018-language-transfer-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 018: Einen getippten Reiseaustausch für Anfänger auf Behalten und Transfer testen"
         }
       }
     },
@@ -282,31 +287,31 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/communication-clinic-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/communication-clinic-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/communication-clinic-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/communication-clinic-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -491,38 +496,38 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/labs/README-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "es": {
           "path": "book/labs/README-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/labs/README-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/labs/README-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/labs/README-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -667,24 +672,24 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "ja": {
           "path": "book/chapters/02-first-safe-task-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "source_revision": "worktree-2026-08-15"
         },
         "ko": {
           "path": "book/chapters/02-first-safe-task-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "source_revision": "worktree-2026-08-15"
         },
         "de": {
           "path": "book/chapters/02-first-safe-task-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "source_revision": "worktree-2026-08-15"
         }
       }
     },
@@ -714,31 +719,31 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/chapters/03-task-protocol-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "source_revision": "worktree-2026-08-15"
         },
         "ja": {
           "path": "book/chapters/03-task-protocol-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "source_revision": "worktree-2026-08-15"
         },
         "ko": {
           "path": "book/chapters/03-task-protocol-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "source_revision": "worktree-2026-08-15"
         },
         "de": {
           "path": "book/chapters/03-task-protocol-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-10"
+          "source_revision": "worktree-2026-08-15"
         }
       }
     },
@@ -822,31 +827,31 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/chapters/05-choose-the-codex-surface-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-15"
         },
         "ja": {
           "path": "book/chapters/05-choose-the-codex-surface-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-15"
         },
         "ko": {
           "path": "book/chapters/05-choose-the-codex-surface-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-15"
         },
         "de": {
           "path": "book/chapters/05-choose-the-codex-surface-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -876,31 +881,31 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/chapters/06-model-selection-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/chapters/06-model-selection-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/chapters/06-model-selection-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/chapters/06-model-selection-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -930,31 +935,31 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/chapters/07-skills-plugins-and-tools-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/chapters/07-skills-plugins-and-tools-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/chapters/07-skills-plugins-and-tools-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/chapters/07-skills-plugins-and-tools-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -984,31 +989,31 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/chapters/08-full-lifecycle-workflow-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/chapters/08-full-lifecycle-workflow-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/chapters/08-full-lifecycle-workflow-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/chapters/08-full-lifecycle-workflow-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -1038,31 +1043,31 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/chapters/09-verification-and-recovery-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/chapters/09-verification-and-recovery-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/chapters/09-verification-and-recovery-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/chapters/09-verification-and-recovery-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -1092,31 +1097,31 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/chapters/10-planning-and-slicing-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/chapters/10-planning-and-slicing-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/chapters/10-planning-and-slicing-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/chapters/10-planning-and-slicing-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -1146,31 +1151,31 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/chapters/11-designing-a-skill-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/chapters/11-designing-a-skill-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/chapters/11-designing-a-skill-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/chapters/11-designing-a-skill-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -1200,31 +1205,31 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/chapters/12-agent-loop-and-stop-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/chapters/12-agent-loop-and-stop-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/chapters/12-agent-loop-and-stop-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/chapters/12-agent-loop-and-stop-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -1247,38 +1252,38 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/13-action-boundaries-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "es": {
           "path": "book/chapters/13-action-boundaries-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/chapters/13-action-boundaries-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/chapters/13-action-boundaries-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/chapters/13-action-boundaries-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -1301,38 +1306,38 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/14-discover-and-audit-skills-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "es": {
           "path": "book/chapters/14-discover-and-audit-skills-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/chapters/14-discover-and-audit-skills-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/chapters/14-discover-and-audit-skills-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/chapters/14-discover-and-audit-skills-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -1355,38 +1360,38 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/15-research-track-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "es": {
           "path": "book/chapters/15-research-track-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/chapters/15-research-track-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/chapters/15-research-track-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/chapters/15-research-track-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -1409,38 +1414,38 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/16-engineering-track-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "es": {
           "path": "book/chapters/16-engineering-track-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/chapters/16-engineering-track-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/chapters/16-engineering-track-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/chapters/16-engineering-track-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -1463,38 +1468,38 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/17-marketing-track-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "es": {
           "path": "book/chapters/17-marketing-track-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/chapters/17-marketing-track-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/chapters/17-marketing-track-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/chapters/17-marketing-track-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -1517,38 +1522,38 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/18-content-design-data-automation-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "es": {
           "path": "book/chapters/18-content-design-data-automation-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/chapters/18-content-design-data-automation-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/chapters/18-content-design-data-automation-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/chapters/18-content-design-data-automation-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -1571,38 +1576,38 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/19-evaluate-models-and-workflows-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "es": {
           "path": "book/chapters/19-evaluate-models-and-workflows-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/chapters/19-evaluate-models-and-workflows-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/chapters/19-evaluate-models-and-workflows-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/chapters/19-evaluate-models-and-workflows-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -1625,38 +1630,38 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/20-personal-codex-work-system-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "es": {
           "path": "book/chapters/20-personal-codex-work-system-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/chapters/20-personal-codex-work-system-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/chapters/20-personal-codex-work-system-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/chapters/20-personal-codex-work-system-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -1679,38 +1684,38 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/21-team-capability-system-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "es": {
           "path": "book/chapters/21-team-capability-system-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/chapters/21-team-capability-system-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/chapters/21-team-capability-system-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/chapters/21-team-capability-system-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -1733,38 +1738,38 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/chapters/22-continuous-update-and-future-proofing-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "es": {
           "path": "book/chapters/22-continuous-update-and-future-proofing-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ja": {
           "path": "book/chapters/22-continuous-update-and-future-proofing-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "ko": {
           "path": "book/chapters/22-continuous-update-and-future-proofing-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         },
         "de": {
           "path": "book/chapters/22-continuous-update-and-future-proofing-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "worktree-2026-08-11"
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -1916,31 +1921,35 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/labs/lab-002-task-protocol-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15",
+          "title": "Lab 002: Convierte un deseo en un protocolo de tarea"
         },
         "ja": {
           "path": "book/labs/lab-002-task-protocol-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15",
+          "title": "Lab 002：願いをタスク・プロトコルに変える"
         },
         "ko": {
           "path": "book/labs/lab-002-task-protocol-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15",
+          "title": "Lab 002: 바람을 작업 프로토콜로 바꾸기"
         },
         "de": {
           "path": "book/labs/lab-002-task-protocol-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15",
+          "title": "Lab 002: Einen Wunsch in ein Aufgabenprotokoll verwandeln"
         }
       }
     },
@@ -1972,31 +1981,35 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/labs/lab-003-evidence-review-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15",
+          "title": "Lab 003: Auditar una declaración de finalización"
         },
         "ja": {
           "path": "book/labs/lab-003-evidence-review-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15",
+          "title": "Lab 003：完了宣言を監査する"
         },
         "ko": {
           "path": "book/labs/lab-003-evidence-review-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-15",
+          "title": "Lab 003: 완료 주장을 감사하기"
         },
         "de": {
           "path": "book/labs/lab-003-evidence-review-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 003: Eine Fertigmeldung prüfen"
         }
       }
     },
@@ -2028,31 +2041,35 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/labs/lab-004-skill-selection-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 004: Elegir la capacidad mínima útil"
         },
         "ja": {
           "path": "book/labs/lab-004-skill-selection-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 004：最小限で有効な能力を選ぶ"
         },
         "ko": {
           "path": "book/labs/lab-004-skill-selection-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 004: 가장 작은 유효 역량 고르기"
         },
         "de": {
           "path": "book/labs/lab-004-skill-selection-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 004: Die kleinste wirksame Fähigkeit auswählen"
         }
       }
     },
@@ -2084,31 +2101,35 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/labs/lab-005-design-a-skill-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 005: convertir un método repetido en un Skill acotado"
         },
         "ja": {
           "path": "book/labs/lab-005-design-a-skill-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 005：繰り返す方法を境界のある Skill にする"
         },
         "ko": {
           "path": "book/labs/lab-005-design-a-skill-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 005: 반복되는 방법을 경계가 분명한 Skill로 만들기"
         },
         "de": {
           "path": "book/labs/lab-005-design-a-skill-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 005: Eine wiederholte Methode in einen klar begrenzten Skill überführen"
         }
       }
     },
@@ -2140,31 +2161,35 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/labs/lab-008-research-question-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 008: reducir un tema a una pregunta de investigación respondible"
         },
         "ja": {
           "path": "book/labs/lab-008-research-question-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 008：大きなテーマを答えられる調査の問いに絞る"
         },
         "ko": {
           "path": "book/labs/lab-008-research-question-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 008: 큰 주제를 답할 수 있는 조사 질문으로 좁히기"
         },
         "de": {
           "path": "book/labs/lab-008-research-question-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 008: Ein großes Thema zu einer beantwortbaren Forschungsfrage eingrenzen"
         }
       }
     },
@@ -2196,31 +2221,35 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/labs/lab-009-engineering-lifecycle-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 009: comparar implementación directa con un ciclo completo de ingeniería"
         },
         "ja": {
           "path": "book/labs/lab-009-engineering-lifecycle-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 009：直接実装と完全なエンジニアリング・ライフサイクルを比べる"
         },
         "ko": {
           "path": "book/labs/lab-009-engineering-lifecycle-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 009: 바로 구현하기와 전체 엔지니어링 수명 주기 비교하기"
         },
         "de": {
           "path": "book/labs/lab-009-engineering-lifecycle-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 009: Direkte Umsetzung mit einem vollständigen Engineering-Lebenszyklus vergleichen"
         }
       }
     },
@@ -2252,31 +2281,35 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/labs/lab-010-product-context-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 010: crear un contexto de producto compartido que sirva para dos tareas"
         },
         "ja": {
           "path": "book/labs/lab-010-product-context-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 010：二つのタスクに使い回せる共有プロダクト文脈を作る"
         },
         "ko": {
           "path": "book/labs/lab-010-product-context-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 010: 두 작업에도 이어지는 공유 제품 맥락 만들기"
         },
         "de": {
           "path": "book/labs/lab-010-product-context-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 010: Gemeinsamen Produktkontext erstellen, der zwei Aufgaben übersteht"
         }
       }
     },
@@ -2300,38 +2333,43 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/labs/lab-012-team-capability-migration-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "实验 012：把个人方法迁移为团队能力"
         },
         "es": {
           "path": "book/labs/lab-012-team-capability-migration-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 012: convertir un método personal en capacidad de equipo"
         },
         "ja": {
           "path": "book/labs/lab-012-team-capability-migration-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 012: 個人の方法をチーム能力に変える"
         },
         "ko": {
           "path": "book/labs/lab-012-team-capability-migration-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 012: 개인 방법을 팀 역량으로 바꾸기"
         },
         "de": {
           "path": "book/labs/lab-012-team-capability-migration-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 012: Eine persönliche Methode in Teamfähigkeit überführen"
         }
       }
     },
@@ -2363,31 +2401,35 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/labs/lab-013-l3-vertical-slice-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 013: ejecutar un corte vertical completo"
         },
         "ja": {
           "path": "book/labs/lab-013-l3-vertical-slice-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 013: 完全な垂直スライスを実行する"
         },
         "ko": {
           "path": "book/labs/lab-013-l3-vertical-slice-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 013: 완전한 수직 슬라이스 실행하기"
         },
         "de": {
           "path": "book/labs/lab-013-l3-vertical-slice-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-12"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 013: Einen vollständigen vertikalen Schnitt ausführen"
         }
       }
     },
@@ -2419,31 +2461,35 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/labs/lab-006-agent-stop-conditions-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 006: diseñar condiciones de parada para un Agent"
         },
         "ja": {
           "path": "book/labs/lab-006-agent-stop-conditions-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 006：Agent の停止条件を設計する"
         },
         "ko": {
           "path": "book/labs/lab-006-agent-stop-conditions-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 006: Agent 중단 조건 설계하기"
         },
         "de": {
           "path": "book/labs/lab-006-agent-stop-conditions-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 006: Stoppbedingungen für einen Agent entwerfen"
         }
       }
     },
@@ -2533,31 +2579,35 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/labs/lab-014-resume-reconciliation-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 014: conciliar una tarea reanudada antes de continuar"
         },
         "ja": {
           "path": "book/labs/lab-014-resume-reconciliation-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 014: 再開したタスクを続ける前に照合する"
         },
         "ko": {
           "path": "book/labs/lab-014-resume-reconciliation-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 014: 다시 시작한 작업을 계속하기 전에 조정하기"
         },
         "de": {
           "path": "book/labs/lab-014-resume-reconciliation-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 014: Eine fortgesetzte Aufgabe vor dem Weiterarbeiten abgleichen"
         }
       }
     },
@@ -2587,31 +2637,35 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/labs/lab-015-evidence-delivery-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 015: entregar evidencia, no una frase de finalización"
         },
         "ja": {
           "path": "book/labs/lab-015-evidence-delivery-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 015: 完了の言葉ではなく証拠を渡す"
         },
         "ko": {
           "path": "book/labs/lab-015-evidence-delivery-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 015: 완료 문구가 아니라 증거 전달하기"
         },
         "de": {
           "path": "book/labs/lab-015-evidence-delivery-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 015: Evidenz statt einer Fertigmeldung übergeben"
         }
       }
     },
@@ -2641,31 +2695,87 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "book/labs/lab-016-side-effect-boundary-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 016: detenerse en el límite de efectos externos"
         },
         "ja": {
           "path": "book/labs/lab-016-side-effect-boundary-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 016: 外部への影響が始まる境界で止まる"
         },
         "ko": {
           "path": "book/labs/lab-016-side-effect-boundary-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 016: 외부 영향 경계에서 멈추기"
         },
         "de": {
           "path": "book/labs/lab-016-side-effect-boundary-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 016: An der Grenze externer Auswirkungen stoppen"
+        }
+      }
+    },
+    "reader-evidence-library": {
+      "kind": "reader-reference",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
+      "stem": "book/evidence-library",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "book/evidence-library-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": null
+        },
+        "zh": {
+          "path": "book/evidence-library-ZH.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "es": {
+          "path": "book/evidence-library-ES.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "ja": {
+          "path": "book/evidence-library-JA.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "ko": {
+          "path": "book/evidence-library-KO.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
+        },
+        "de": {
+          "path": "book/evidence-library-DE.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16"
         }
       }
     },
@@ -2687,38 +2797,43 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "book/labs/lab-017-skill-discovery-audit-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "实验 017：在采纳 Skill 前审计发现过程"
         },
         "es": {
           "path": "book/labs/lab-017-skill-discovery-audit-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 017: auditar el descubrimiento antes de adoptar un Skill"
         },
         "ja": {
           "path": "book/labs/lab-017-skill-discovery-audit-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 017: Skill を採用する前に発見経路を監査する"
         },
         "ko": {
           "path": "book/labs/lab-017-skill-discovery-audit-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 017: Skill을 채택하기 전에 발견 경로 감사하기"
         },
         "de": {
           "path": "book/labs/lab-017-skill-discovery-audit-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
-          "translation_status": "not-started",
-          "source_revision": "worktree-2026-08-13"
+          "translation_status": "in-progress",
+          "source_revision": "worktree-2026-08-16",
+          "title": "Lab 017: Die Entdeckung prüfen, bevor ein Skill übernommen wird"
         }
       }
     },
@@ -4758,6 +4873,12 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-016-side-effect-boundary-JA.md": "lab-016-side-effect-boundary",
     "book/labs/lab-016-side-effect-boundary-KO.md": "lab-016-side-effect-boundary",
     "book/labs/lab-016-side-effect-boundary-DE.md": "lab-016-side-effect-boundary",
+    "book/evidence-library-EN.md": "reader-evidence-library",
+    "book/evidence-library-ZH.md": "reader-evidence-library",
+    "book/evidence-library-ES.md": "reader-evidence-library",
+    "book/evidence-library-JA.md": "reader-evidence-library",
+    "book/evidence-library-KO.md": "reader-evidence-library",
+    "book/evidence-library-DE.md": "reader-evidence-library",
     "book/labs/lab-017-skill-discovery-audit-EN.md": "lab-017-skill-discovery-audit",
     "book/labs/lab-017-skill-discovery-audit-ZH.md": "lab-017-skill-discovery-audit",
     "book/labs/lab-017-skill-discovery-audit-ES.md": "lab-017-skill-discovery-audit",
@@ -4811,37 +4932,37 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "zh": {
       "total_units": 40,
-      "available_units": 27,
+      "available_units": 40,
       "source_units": 0,
-      "candidate_translation_units": 27,
+      "candidate_translation_units": 40,
       "reviewed_translation_units": 0
     },
     "es": {
       "total_units": 40,
-      "available_units": 6,
+      "available_units": 40,
       "source_units": 0,
-      "candidate_translation_units": 6,
+      "candidate_translation_units": 40,
       "reviewed_translation_units": 0
     },
     "ja": {
       "total_units": 40,
-      "available_units": 5,
+      "available_units": 40,
       "source_units": 0,
-      "candidate_translation_units": 5,
+      "candidate_translation_units": 40,
       "reviewed_translation_units": 0
     },
     "ko": {
       "total_units": 40,
-      "available_units": 5,
+      "available_units": 40,
       "source_units": 0,
-      "candidate_translation_units": 5,
+      "candidate_translation_units": 40,
       "reviewed_translation_units": 0
     },
     "de": {
       "total_units": 40,
-      "available_units": 5,
+      "available_units": 40,
       "source_units": 0,
-      "candidate_translation_units": 5,
+      "candidate_translation_units": 40,
       "reviewed_translation_units": 0
     }
   },

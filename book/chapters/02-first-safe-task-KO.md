@@ -83,7 +83,7 @@
 
 ## 공식적인 경계가 말해 주는 것과 말해 주지 않는 것
 
-날짜가 기록된 [2장 공식 기준선](../../docs/research/chapter-02-official-baseline-2026-08-10.md)은
+날짜가 기록된 [2장 공식 기준선](../evidence-library-KO.md#source-notes)은
 이 장에서 사용한 제품 및 Git 출처를 기록합니다. 특정 메뉴 라벨보다 안정적인 교육 규칙이
 더 중요합니다.
 
@@ -190,7 +190,7 @@ Codex에게 다음을 말하게 하세요.
 
 ## 현장 사례: 가벼운 가정이 무너지는 곳
 
-다음은 [2장 현장 문제 연구](../../docs/research/chapter-02-field-problems-2026-08-10.md)에
+다음은 [2장 현장 문제 연구](../evidence-library-KO.md#source-notes)에
 모은 공개 보고를 짧게 요약한 것입니다. 공식 근본 원인 보고서가 아니며 이 프로젝트에서
 로컬로 재현하지 않았습니다.
 
@@ -445,10 +445,10 @@ README 변경 하나 만들기](../labs/lab-001-first-safe-task-KO.md)입니다.
 
 작업 프로토콜, 증거 계층, 복구 순서는 이 프로젝트의 안정적인 교육 방법입니다. 제품별
 권한, sandbox 기본값, CLI 명령, 검토 표면, 모델 이름, UI 상태는 변하기 쉬운 사실입니다.
-이 사실이 바뀌면 [2장 공식 기준선](../../docs/research/chapter-02-official-baseline-2026-08-10.md)과
-[콘텐츠 수명 주기](../../docs/governance/content-lifecycle.md)를 다시 확인하세요.
+이 사실이 바뀌면 [2장 공식 기준선](../evidence-library-KO.md#source-notes)과
+[콘텐츠 수명 주기](../evidence-library-KO.md#method-and-status)를 다시 확인하세요.
 
-[현장 문제 기록](../../docs/research/chapter-02-field-problems-2026-08-10.md)은 사용자 보고와
+[현장 문제 기록](../evidence-library-KO.md#source-notes)은 사용자 보고와
 커뮤니티 제안을 담은 것이며 공식 근본 원인 확인이 아닙니다. 이 장은 `candidate`, 실험은
 `draft / not_run`으로 유지합니다. 새롭고 범위가 제한된 실행이 선언한 증거를 만들기 전에는
 학습자가 완료했다고 다루지 않습니다. 다음은 [3장: 바람을 작업 프로토콜로 바꾸기](03-task-protocol-KO.md)입니다.

@@ -58,9 +58,9 @@
 | Skill | 트리거, 입력, 경계, 단계, 증거를 갖춘 재사용 가능한 방법 | 새로운 모델, 권한 부여 또는 검증의 대체물 |
 | Agent | 관찰, 행동, 피드백, 재시도, 중단을 둘러싼 관찰 가능한 다단계 루프 | 숨겨진 추론에 대한 접근이나 무한히 재시도할 권한 |
 
-프로젝트의 안정적인 용어는 [CONTEXT.md](../../CONTEXT.md)에 정의되어 있습니다.
+프로젝트의 안정적인 용어는 [CONTEXT.md](../evidence-library-KO.md#core-terms)에 정의되어 있습니다.
 모델 이름, 호출 구문, 기본 권한과 같은 제품 세부 사항은 변동 가능한 사실입니다.
-날짜가 명시된 [공식 기준선](../../docs/research/openai-codex-baseline.md)을
+날짜가 명시된 [공식 기준선](../evidence-library-KO.md#source-notes)을
 사용하고, 이에 의존하기 전에 링크된 1차 공식 문서를 다시 확인하세요.
 
 ## 언어 모델이 답변을 생성하는 방식
@@ -159,7 +159,7 @@ JSON Schema 또는 타입이 지정된 응답은 형태, 필수 필드, 일부 �
 예를 들어 `{ "status": "approved" }`는 유효한 JSON이고 스키마를 충족할 수
 있지만, 승인이 잘못된 프로젝트에 속할 수 있습니다. 원시 모델 출력, 스키마 결과,
 비즈니스 규칙 결과, 외부 검증을 별도의 증거로 보존하세요. [LLM 메커니즘
-연구](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md#机制卡-d-structured-output-把语法错误变成语义错误)는
+연구](../evidence-library-KO.md#source-notes)는
 이를 모든 제공자가 같은 구현을 사용한다는 주장이 아니라 교육을 위한 경계로
 기록합니다.
 
@@ -182,7 +182,7 @@ JSON Schema 또는 타입이 지정된 응답은 형태, 필수 필드, 일부 �
 방어의 실용적인 형태입니다. 데이터 출처를 식별하고, 도구 경계를 제한하고, 시도된
 행동을 기록에 보존하세요.
 
-이 세 가지 함정은 [메커니즘 심층 연구](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md)에서
+이 세 가지 함정은 [메커니즘 심층 연구](../evidence-library-KO.md#source-notes)에서
 제공자별 출처와 저위험 실험을 통해 다룹니다.
 
 ## Agent 루프가 실제로 의미하는 것
@@ -233,7 +233,7 @@ Agent는 관찰 가능한 흔적을 남기는 상태 머신으로 가르치는 �
 4. 어떤 상태를 기준으로 삼을지 결정한 뒤에만 이름 붙인 체크포인트에서 재개하거나
    깨끗한 실행을 시작합니다.
 
-출처 및 증거 라벨: [현장 연구의 FP-09](../../docs/research/field-problems-codex.md#fp-09-模型容量错误中断任务，并可能让排队后续任务接在半成品上).
+출처 및 증거 라벨: [현장 연구의 FP-09](../evidence-library-KO.md#source-notes).
 
 ### 사례 FP-10: “Working”은 진행의 증거가 아니다
 
@@ -246,7 +246,7 @@ Working/running 상태에 머물렀다고 보고했습니다. 이 보고는 명�
 diff를 검사하고 범위를 좁힌 검사를 독립적으로 실행하세요. “UI에 아직 Working이라고
 표시된다”를 “포매터가 완료되었다”로 바꾸지 마세요.
 
-출처 및 증거 라벨: [현장 연구의 FP-10](../../docs/research/field-problems-codex.md#fp-10格式化验证命令让-windows-cli-agent-长时间停在-working).
+출처 및 증거 라벨: [현장 연구의 FP-10](../evidence-library-KO.md#source-notes).
 
 ### 사례 FP-11: 검증이 의도치 않게 작업을 확장할 수 있다
 
@@ -259,7 +259,7 @@ diff를 검사하고 범위를 좁힌 검사를 독립적으로 실행하세요.
 중단하고 새로운 결정을 요청하세요. “검사가 실패했다”는 사실이 권한 확대를 허용하지
 않습니다.
 
-증거 분류와 관련 장/실험 매핑은 [현장 문제 인덱스](../../docs/research/field-problems-index-2026-08-10.md)를
+증거 분류와 관련 장/실험 매핑은 [현장 문제 인덱스](../evidence-library-KO.md#source-notes)를
 참조하세요.
 
 ## 실제 작업을 위한 결정 규칙
@@ -398,10 +398,10 @@ secret, network, account, external write, 더 넓은 scope가 필요하면 block
 ## 출처 및 유지보수 경계
 
 - [Transformer 아키텍처 논문(Vaswani 외, 2017)](https://arxiv.org/abs/1706.03762) — 어텐션 기반 시퀀스 모델에 대한 1차 연구 참고문헌, 2026-08-10 열람.
-- [OpenAI Codex 공식 사실 기준선](../../docs/research/openai-codex-baseline.md) — 변동 가능한 제품 사실과 공식 URL에 대한 날짜가 명시된 프로젝트 기록, 2026-08-09 확인.
-- [Codex 실제 사용자 문제 연구](../../docs/research/field-problems-codex.md) — 공개 보고와 증거 라벨, 2026-08-09 확인, 로컬 재현 보고서가 아님.
-- [LLM 메커니즘 심층 연구](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md) — 공식 출처를 근거로 한 메커니즘 카드, 실험, 사실/추론/미확인 라벨, 2026-08-10 확인.
-- [프로젝트 용어](../../CONTEXT.md) — GPT, Codex, 도구, Skill, Agent, 증거, 상태에 대한 안정적인 정의.
+- [OpenAI Codex 공식 사실 기준선](../evidence-library-KO.md#source-notes) — 변동 가능한 제품 사실과 공식 URL에 대한 날짜가 명시된 프로젝트 기록, 2026-08-09 확인.
+- [Codex 실제 사용자 문제 연구](../evidence-library-KO.md#source-notes) — 공개 보고와 증거 라벨, 2026-08-09 확인, 로컬 재현 보고서가 아님.
+- [LLM 메커니즘 심층 연구](../evidence-library-KO.md#source-notes) — 공식 출처를 근거로 한 메커니즘 카드, 실험, 사실/추론/미확인 라벨, 2026-08-10 확인.
+- [프로젝트 용어](../evidence-library-KO.md#core-terms) — GPT, Codex, 도구, Skill, Agent, 증거, 상태에 대한 안정적인 정의.
 
 이 장의 설명 구조는 이 프로젝트가 독자적으로 작성한 것입니다. 제품 이름, 호출
 구문, 모델 가용성, 권한, 서비스 동작은 현재 사실로 취급하기 전에 최신 1차 출처와

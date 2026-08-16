@@ -417,10 +417,10 @@ owner：[个人或团队]
 
 | 主题 | 来源与访问日期 | 证据边界 | 负责人 / 下次复核 |
 |---|---|---|---|
-| 任务协议应包含目标、上下文、约束、验收、停止、恢复和交付 | [真实工作提示模式](../../docs/research/prompt-patterns-for-real-work-2026-08-10.md)，访问于 2026-08-11 | 项目研究综合；不是厂商规定的提示格式 | curriculum-maintainer / 2026-09-11 |
-| 容量中断和长时间验证会让状态不明确 | [现场问题与提示模式 P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md) 与 [现场问题深度分析](../../docs/research/field-problems-deep-dive-2026-08-11.md)，访问于 2026-08-11 | 公开用户报告；不主张普遍原因、修复或本地复现 | curriculum-maintainer / 2026-09-11 |
-| 外部检查点、竖向切片和完整交接是高价值课程补充 | [内容价值升级计划 P2](../../docs/research/content-value-upgrade-plan-p2-2026-08-11.md)，访问于 2026-08-11 | 项目规划建议；拟议实验仍为 not_run | curriculum-maintainer / 2026-09-11 |
-| 当前 Codex 入口、权限、模型、命令参数和 UI 状态 | [OpenAI Codex 基线](../../docs/research/openai-codex-baseline.md) 与 [官方 Codex 文档](https://developers.openai.com/codex/)，复核于 2026-08-11 | 易变产品事实；复制命令或菜单名称前应重新核查官方来源 | curriculum-maintainer / 2026-09-11 |
+| 任务协议应包含目标、上下文、约束、验收、停止、恢复和交付 | [真实工作提示模式](../evidence-library-ZH.md#source-notes)，访问于 2026-08-11 | 项目研究综合；不是厂商规定的提示格式 | curriculum-maintainer / 2026-09-11 |
+| 容量中断和长时间验证会让状态不明确 | [现场问题与提示模式 P2](../evidence-library-ZH.md#source-notes) 与 [现场问题深度分析](../evidence-library-ZH.md#source-notes)，访问于 2026-08-11 | 公开用户报告；不主张普遍原因、修复或本地复现 | curriculum-maintainer / 2026-09-11 |
+| 外部检查点、竖向切片和完整交接是高价值课程补充 | [内容价值升级计划 P2](../evidence-library-ZH.md#source-notes)，访问于 2026-08-11 | 项目规划建议；拟议实验仍为 not_run | curriculum-maintainer / 2026-09-11 |
+| 当前 Codex 入口、权限、模型、命令参数和 UI 状态 | [OpenAI Codex 基线](../evidence-library-ZH.md#source-notes) 与 [官方 Codex 文档](https://developers.openai.com/codex/)，复核于 2026-08-11 | 易变产品事实；复制命令或菜单名称前应重新核查官方来源 | curriculum-maintainer / 2026-09-11 |
 
 不要复制链接报告中的文字、截图、代码或 Skill 指令。本章只把它们的发现作为研究输入，并以
 原创文字记录项目的规划方法。实验命令刻意局限于本地且不联网；它们不建立每一个 Codex

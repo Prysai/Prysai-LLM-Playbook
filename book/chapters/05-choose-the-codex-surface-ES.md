@@ -74,9 +74,9 @@ para detectar qué afirmaciones suelen confundirse.
 | Cloud prepara dependencias, pero la tarea no usa secreto o red | Se instala una dependencia o aparece una marca de setup, luego el Agent no llega al servicio | Que red y secretos de setup y Agent sean la misma capacidad | Registra por separado logs de setup y Agent, fase de red, vida del secreto y diff |
 | Un allowlist bloquea GitHub u otro host | La petición falla bajo proxy, sandbox o política empresarial | Que abrir toda la red sea correcto o esté aprobado | Separa hipótesis de sandbox, allowlist, DNS/TLS y firewall antes de pedir un cambio acotado |
 
-Consulta el [índice de problemas de campo](../../docs/research/field-problems-index-2026-08-10.md),
-la [investigación sobre superficies](../../docs/research/field-problems-surface-2026-08-10.md)
-y la [investigación de foros](../../docs/research/field-problems-forums-2026-08-10.md)
+Consulta el [índice de problemas de campo](../evidence-library-ES.md#source-notes),
+la [investigación sobre superficies](../evidence-library-ES.md#source-notes)
+y la [investigación de foros](../evidence-library-ES.md#source-notes)
 para ver enlaces y fechas originales. El registro explica deliberadamente qué
 no reprodujo este proyecto.
 
@@ -84,7 +84,7 @@ no reprodujo este proyecto.
 
 ![Señales de campo y la respuesta segura más pequeña](../../assets/teaching/field-signal-to-safe-degradation-red-black.svg)
 
-El caso acotado [FC-WORKTREE-01](../../docs/research/field-case-worktree-target-mismatch-2026-08-12.md)
+El caso acotado [FC-WORKTREE-01](../evidence-library-ES.md#source-notes)
 convierte un informe fechado sobre un worktree en un ejercicio de identidad del
 objetivo. La instantánea de investigación del 2026-08-12 no encontró una
 confirmación pública de causa raíz por parte de mantenedores, y este proyecto
@@ -393,9 +393,9 @@ una afirmación actual.
 | Permisos locales y aprobaciones son capas distintas | https://learn.chatgpt.com/docs/agent-approvals-security.md | 2026-08-09 | Modelo de seguridad oficial; no prueba configuración efectiva de esta sesión |
 | CLI, IDE, Cloud y soporte de modelos difieren por superficie | https://learn.chatgpt.com/docs/codex/cli.md; https://learn.chatgpt.com/docs/codex/ide.md; https://learn.chatgpt.com/docs/cloud.md; https://learn.chatgpt.com/docs/models.md | 2026-08-09 | Cuenta, espacio, despliegue y versión pueden cambiar disponibilidad |
 
-Las [tarjetas de hechos oficiales](../../docs/research/openai-codex-facts-refresh-2026-08-09.md)
+Las [tarjetas de hechos oficiales](../evidence-library-ES.md#source-notes)
 recogen los resúmenes fechados y límites del proyecto. La
-[investigación de problemas de campo](../../docs/research/field-problems-codex.md)
+[investigación de problemas de campo](../evidence-library-ES.md#source-notes)
 y los registros relacionados aportan informes públicos. Ninguno sustituye una
 observación actual de cuenta o runtime.
 

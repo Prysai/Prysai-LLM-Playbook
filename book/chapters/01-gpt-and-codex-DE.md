@@ -66,10 +66,10 @@ seine eigenen Belege.
 | Skill | Eine wiederverwendbare Methode mit Auslösern, Eingaben, Grenzen, Schritten und Belegen | Ein neues Modell, eine Berechtigungsgewährung oder ein Ersatz für Verifizierung |
 | Agent | Eine beobachtbare mehrstufige Schleife aus Beobachtung, Aktion, Feedback, Wiederholung und Stopp | Zugriff auf verborgene Schlussfolgerungen oder die Berechtigung, ewig zu wiederholen |
 
-Die stabile Terminologie des Projekts ist in [CONTEXT.md](../../CONTEXT.md)
+Die stabile Terminologie des Projekts ist in [CONTEXT.md](../evidence-library-DE.md#core-terms)
 definiert. Produktdetails wie Modellnamen, Aufrufsyntax und Standardwerte für
 Berechtigungen sind veränderliche Fakten; verwende die datierte [offizielle
-Baseline](../../docs/research/openai-codex-baseline.md) und prüfe die verlinkte
+Baseline](../evidence-library-DE.md#source-notes) und prüfe die verlinkte
 Dokumentation des jeweiligen Anbieters erneut, bevor du dich darauf stützt.
 
 ## Wie ein Sprachmodell eine Antwort erzeugt
@@ -178,7 +178,7 @@ Zum Beispiel kann `{ "status": "approved" }` gültiges JSON sein und ein Schema
 erfüllen, während die Genehmigung zum falschen Projekt gehört. Bewahre die rohe
 Modellausgabe, das Schemaergebnis, das Ergebnis der Geschäftsregelprüfung und
 die externe Verifizierung als getrennte Belege auf. Die [LLM-
-Mechanismusforschung](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md#机制卡-d-structured-output-把语法错误变成语义错误)
+Mechanismusforschung](../evidence-library-DE.md#source-notes)
 dokumentiert dies als Lehrgrenze, nicht als Behauptung, dass jeder Anbieter
 dieselbe Implementierung verwendet.
 
@@ -206,7 +206,7 @@ die Datenquelle, begrenze die Tool-Grenze und bewahre die versuchte Aktion im
 Protokoll auf.
 
 Diese drei Fallen werden mit anbieterspezifischen Quellen und risikoarmen
-Experimenten in der [Mechanismus-Vertiefung](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md)
+Experimenten in der [Mechanismus-Vertiefung](../evidence-library-DE.md#source-notes)
 behandelt.
 
 ## Was eine Agent-Schleife wirklich bedeutet
@@ -264,7 +264,7 @@ Die kleinste sichere Reaktion ist:
    erst, nachdem du entschieden hast, welcher Zustand maßgeblich ist.
 
 Quellen- und Belegkennzeichnung: [FP-09 in der
-Feldforschung](../../docs/research/field-problems-codex.md#fp-09-模型容量错误中断任务，并可能让排队后续任务接在半成品上).
+Feldforschung](../evidence-library-DE.md#source-notes).
 
 ### Fall FP-10: „Working“ ist kein Beweis für Fortschritt
 
@@ -281,7 +281,7 @@ fokussierte Prüfung unabhängig aus. Verwandle „Die Benutzeroberfläche zeigt
 noch Working“ nicht in „Der Formatter ist fertig“.
 
 Quellen- und Belegkennzeichnung: [FP-10 in der
-Feldforschung](../../docs/research/field-problems-codex.md#fp-10格式化验证命令让-windows-cli-agent-长时间停在-working).
+Feldforschung](../evidence-library-DE.md#source-notes).
 
 ### Fall FP-11: Eine Verifizierung kann die Aufgabe unbeabsichtigt erweitern
 
@@ -296,7 +296,7 @@ Paketneuinstallation oder ein Zugangsdaten erfordert, stoppe und fordere eine
 neue Entscheidung an. „Die Prüfung ist fehlgeschlagen“ gewährt keine Erlaubnis
 zur Eskalation.
 
-Siehe den [Index der Feldprobleme](../../docs/research/field-problems-index-2026-08-10.md)
+Siehe den [Index der Feldprobleme](../evidence-library-DE.md#source-notes)
 für die Evidenzklassifikation und die Zuordnung zu verwandten Kapiteln und
 Labs.
 
@@ -451,10 +451,10 @@ autorisiert.
 ## Quellen und Wartungsgrenze
 
 - [Transformer-Architekturpapier (Vaswani et al., 2017)](https://arxiv.org/abs/1706.03762) — primäre Forschungsreferenz für das aufmerksamkeitsbasierte Sequenzmodell; abgerufen am 2026-08-10.
-- [Offizielle OpenAI-Codex-Faktenbaseline](../../docs/research/openai-codex-baseline.md) — datierter Projektvermerk zu veränderlichen Produktfakten und offiziellen URLs; geprüft am 2026-08-09.
-- [Forschung zu realen Codex-Nutzerproblemen](../../docs/research/field-problems-codex.md) — öffentliche Berichte und Belegkennzeichnungen; geprüft am 2026-08-09; kein Bericht über eine lokale Reproduktion.
-- [Vertiefung zu LLM-Mechanismen](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md) — auf offiziellen Quellen beruhende Mechanismuskarten, Experimente und Kennzeichnungen für Fakten, Schlussfolgerungen und Unbekanntes; geprüft am 2026-08-10.
-- [Projektterminologie](../../CONTEXT.md) — stabile Definitionen für GPT, Codex, Tools, Skills, Agents, Belege und Status.
+- [Offizielle OpenAI-Codex-Faktenbaseline](../evidence-library-DE.md#source-notes) — datierter Projektvermerk zu veränderlichen Produktfakten und offiziellen URLs; geprüft am 2026-08-09.
+- [Forschung zu realen Codex-Nutzerproblemen](../evidence-library-DE.md#source-notes) — öffentliche Berichte und Belegkennzeichnungen; geprüft am 2026-08-09; kein Bericht über eine lokale Reproduktion.
+- [Vertiefung zu LLM-Mechanismen](../evidence-library-DE.md#source-notes) — auf offiziellen Quellen beruhende Mechanismuskarten, Experimente und Kennzeichnungen für Fakten, Schlussfolgerungen und Unbekanntes; geprüft am 2026-08-10.
+- [Projektterminologie](../evidence-library-DE.md#core-terms) — stabile Definitionen für GPT, Codex, Tools, Skills, Agents, Belege und Status.
 
 Die erklärende Struktur des Kapitels ist für dieses Projekt originär. Produktnamen,
 Aufrufsyntax, Modellverfügbarkeit, Berechtigungen und Dienstverhalten müssen

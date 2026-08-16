@@ -33,7 +33,7 @@
 
 这些是有来源支持的建议，并不保证模型会遵守未写明的规则。下面的八部分协议是本项目的原创操作性综合；它额外写出停止、恢复和证据字段，因为“生成了一份回答”和“交付了经验证的工作结果”是两项不同的声明。
 
-逐条来源范围与访问日期见[Codex 官方事实基线](../../docs/research/chapter-03-official-baseline-2026-08-10.md)和[真实工作提示模式研究](../../docs/research/prompt-patterns-for-real-work-2026-08-10.md)。
+逐条来源范围与访问日期见[Codex 官方事实基线](../evidence-library-ZH.md#source-notes)和[真实工作提示模式研究](../evidence-library-ZH.md#source-notes)。
 
 <a id="core-task-contract"></a>
 
@@ -321,7 +321,7 @@
 
 ### 保存什么
 
-保存基线、首次尝试、所用提示、修正尝试、错误账本、延迟复习、未见任务和评分标准。一次顺利会话只能支持“今天练习过”，不能证明流利、持久保持或迁移。完整候选方法与来源边界见[LLM 辅助持久学习研究](../../docs/research/durable-llm-assisted-learning-and-skill-candidates-2026-08-12.md)。
+保存基线、首次尝试、所用提示、修正尝试、错误账本、延迟复习、未见任务和评分标准。一次顺利会话只能支持“今天练习过”，不能证明流利、持久保持或迁移。完整候选方法与来源边界见[LLM 辅助持久学习研究](../evidence-library-ZH.md#source-notes)。
 
 ## 真实世界的失败模式
 
@@ -332,7 +332,7 @@
 - 浏览器登录成功或能看到工具名称，不能证明目标账户、组织、仓库或连接器已获授权；以及
 - 社区绕过方案也许只适用于某个版本或平台，甚至可能不安全。
 
-这些是用户报告和社区观察，不是通用产品根因。用[现场问题索引](../../docs/research/field-problems-index-2026-08-10.md)和[编码 Agent 案例报告](../../docs/research/field-problems-coding-agents-2026-08-10.md)练习同一响应模式：记录症状与环境，做最小安全检查，在边界处停止，只声明证据真正支持的内容。
+这些是用户报告和社区观察，不是通用产品根因。用[现场问题索引](../evidence-library-ZH.md#source-notes)和[编码 Agent 案例报告](../evidence-library-ZH.md#source-notes)练习同一响应模式：记录症状与环境，做最小安全检查，在边界处停止，只声明证据真正支持的内容。
 
 ## 多 Agent：交接本身也是协议
 
@@ -405,9 +405,9 @@
 
 本章稳定方法是原创综合。产品行为、权限名称、界面控件、命令语法、模型名称和外部服务行为属于易变事实；用于当前任务前，应重新检查链接的一手来源。
 
-- [OpenAI / Codex 官方事实基线](../../docs/research/chapter-03-official-baseline-2026-08-10.md)
-- [真实工作提示模式](../../docs/research/prompt-patterns-for-real-work-2026-08-10.md)
-- [编码 Agent 现场案例](../../docs/research/field-problems-coding-agents-2026-08-10.md)
-- [真实问题索引](../../docs/research/field-problems-index-2026-08-10.md)
+- [OpenAI / Codex 官方事实基线](../evidence-library-ZH.md#source-notes)
+- [真实工作提示模式](../evidence-library-ZH.md#source-notes)
+- [编码 Agent 现场案例](../evidence-library-ZH.md#source-notes)
+- [真实问题索引](../evidence-library-ZH.md#source-notes)
 
 **状态：** `candidate`——章节结构和来源记录已存在；配套实验与独立读者运行仍为 `draft` / `not_run`。本简体中文译文可阅读，但仍是 `in-progress`，等待独立语言审校；它不是已验证译文，也不表示课程已经通过学习者验证。

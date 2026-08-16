@@ -89,7 +89,7 @@ lingüística independiente, ejecución por aprendices ni eficacia del curso.
 
 ## Qué puede y qué no puede decir una señal de producto
 
-La [línea base oficial del Capítulo 2](../../docs/research/chapter-02-official-baseline-2026-08-10.md)
+La [línea base oficial del Capítulo 2](../evidence-library-ES.md#source-notes)
 registra las fuentes de producto y Git consultadas. La regla estable importa más
 que el texto de un menú concreto:
 
@@ -191,7 +191,7 @@ sinónimos.
 ## Casos de campo: dónde fallan los supuestos casuales
 
 Estos son resúmenes originales y acotados de informes públicos en el
-[estudio de problemas del Capítulo 2](../../docs/research/chapter-02-field-problems-2026-08-10.md).
+[estudio de problemas del Capítulo 2](../evidence-library-ES.md#source-notes).
 No son informes oficiales de causa raíz ni reproducciones locales del proyecto.
 
 ### CH2-01: ningún evento visible no es un resultado
@@ -433,7 +433,7 @@ el método.
 El protocolo, las capas de evidencia y la secuencia de recuperación son método
 estable del proyecto. Permisos, valores de sandbox, comandos CLI, modelos y
 estados de interfaz son hechos volátiles: revisa la línea base oficial y el
-[ciclo de vida de contenido](../../docs/governance/content-lifecycle.md) cuando
+[ciclo de vida de contenido](../evidence-library-ES.md#method-and-status) cuando
 cambien.
 
 El registro de problemas contiene informes de usuarios y sugerencias de

@@ -33,7 +33,7 @@
 
 仓库还提供一个可丢弃、项目自有的案例，把同一纪律带到非代码交付物：
 一张虚构的、以首次购房者为先的房地产概念页。在看截图前先读
-[案例记录](../../docs/research/skill-case-product-context-real-estate-2026-08-11.md)。
+[案例记录](../evidence-library-ZH.md#source-notes)。
 其中标明合成输入、本地渲染命令、记录的视口，以及这张图不能支持的断言。
 
 [![合成首次购房者指南的一次本地渲染](../../assets/cases/product-context-real-estate-thumbnail.png)](../../assets/cases/product-context-real-estate-desktop.png)
@@ -55,7 +55,7 @@
 
 ## 现实问题入口：工作流可能在两个界面之间失败
 
-项目的 [Codex 现场研究](../../docs/research/field-problems-codex.md) 记录公开用户报告。
+项目的 [Codex 现场研究](../evidence-library-ZH.md#source-notes) 记录公开用户报告。
 这些报告是有用的症状，不是官方根因分析，也不是本地复现。
 
 | 报告的症状 | 报告能够支持什么 | 它**不能**证明什么 | 第一个安全响应 |
@@ -133,7 +133,7 @@ delivery: local review packet; state whether commit and push were not performed
 任务跨越产品边界时尤其如此。官方安全记录将 sandbox 与审批描述为两种不同控制，
 也将有副作用的 Connector 或 MCP 动作置于审批边界。因此工作流既要记录技术能力，
 也要记录使用它的语义许可。相关的日期化产品边界见
-[官方事实刷新记录](../../docs/research/openai-codex-facts-refresh-2026-08-09.md)
+[官方事实刷新记录](../evidence-library-ZH.md#source-notes)
 和[事实影响登记表](../../docs/governance/fact-impact-registry.yaml)。
 
 ## 3. 围绕竖向切片来计划
@@ -463,12 +463,12 @@ next: human review of the evidence paths before any local commit
 
 | 事实或边界 | 来源 | 访问日期 | 适用范围 | 负责人 / 下次复核 |
 |---|---|---:|---|---|
-| Sandbox 与审批是不同控制；Connector/MCP 副作用可属于审批边界 | [Agent approvals and security](https://learn.chatgpt.com/docs/agent-approvals-security.md) 和[官方事实刷新记录](../../docs/research/openai-codex-facts-refresh-2026-08-09.md) | 2026-08-09 | 当日官方产品描述；不证明本仓库的运行时策略 | `facts-maintainer` / 2026-09-09 |
+| Sandbox 与审批是不同控制；Connector/MCP 副作用可属于审批边界 | [Agent approvals and security](https://learn.chatgpt.com/docs/agent-approvals-security.md) 和[官方事实刷新记录](../evidence-library-ZH.md#source-notes) | 2026-08-09 | 当日官方产品描述；不证明本仓库的运行时策略 | `facts-maintainer` / 2026-09-09 |
 | Cloud 工作有不同的设置、Agent、审查和后续边界 | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-09 | 产品说明；账户、组织、环境和当前 UI 仍需另行检查 | `facts-maintainer` / 2026-09-09 |
-| 容量中断可能让依赖任务状态不明 | [FP-09 / issue #33865](https://github.com/openai/codex/issues/33865) 与[现场研究](../../docs/research/field-problems-codex.md) | 2026-08-09 | 公开用户报告；没有本地复现或普遍队列结论 | `curriculum-maintainer` / 2026-09-09 |
-| 长时间验证可能让完成状态不明 | [FP-10 / issue #34325](https://github.com/openai/codex/issues/34325) 与[现场研究](../../docs/research/field-problems-codex.md) | 2026-08-09 | 公开用户报告；根因和版本范围未知 | `curriculum-maintainer` / 2026-09-09 |
-| 认证应记录为不同的可观察阶段 | [FP-01、FP-02](../../docs/research/field-problems-codex.md) | 2026-08-09 | 用于证据纪律的用户报告；不是官方修复建议 | `curriculum-maintainer` / 2026-09-09 |
-| 验证不得静默扩大为安装或持久环境改动 | [FP-11 / issue #37677](https://github.com/openai/codex/issues/37677) 与[现场研究](../../docs/research/field-problems-codex.md) | 2026-08-09 | 公开用户报告；不是官方策略或本地复现 | `curriculum-maintainer` / 2026-09-09 |
+| 容量中断可能让依赖任务状态不明 | [FP-09 / issue #33865](https://github.com/openai/codex/issues/33865) 与[现场研究](../evidence-library-ZH.md#source-notes) | 2026-08-09 | 公开用户报告；没有本地复现或普遍队列结论 | `curriculum-maintainer` / 2026-09-09 |
+| 长时间验证可能让完成状态不明 | [FP-10 / issue #34325](https://github.com/openai/codex/issues/34325) 与[现场研究](../evidence-library-ZH.md#source-notes) | 2026-08-09 | 公开用户报告；根因和版本范围未知 | `curriculum-maintainer` / 2026-09-09 |
+| 认证应记录为不同的可观察阶段 | [FP-01、FP-02](../evidence-library-ZH.md#source-notes) | 2026-08-09 | 用于证据纪律的用户报告；不是官方修复建议 | `curriculum-maintainer` / 2026-09-09 |
+| 验证不得静默扩大为安装或持久环境改动 | [FP-11 / issue #37677](https://github.com/openai/codex/issues/37677) 与[现场研究](../evidence-library-ZH.md#source-notes) | 2026-08-09 | 公开用户报告；不是官方策略或本地复现 | `curriculum-maintainer` / 2026-09-09 |
 
 生命周期原则应当相对稳定；产品工作面、模型名称、审批默认值、命令参数、认证行为和
 外部服务属于易变事实。任一项变化时，刷新第一方记录，然后审查本章、相关 Lab、Skill、

@@ -165,7 +165,7 @@ Behauptungsprotokoll:
 Der Punkt ist, die genaue fehlgeschlagene Ebene zu benennen. Ein Schemaergebnis,
 ein Retrieval-Treffer oder eine sichtbare Zeichenfolge ist nicht automatisch ein
 Beweis für semantische Korrektheit, vollständigen Kontext oder Autorität. Siehe
-die [LLM-Mechanismusforschung](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md)
+die [LLM-Mechanismusforschung](../evidence-library-DE.md#source-notes)
 für die quellenbasierten Grenzen; dieses Lab führt keinen Live-Anbieter aus.
 
 ## Teil 4: Die Stoppregel üben
@@ -188,7 +188,7 @@ Abhängigkeiten zwangsweise zu installieren oder die nächste eingereihte
 Anweisung zu senden.
 
 Diese Fehlerformen basieren auf öffentlichen Berichten in der [Codex-
-Forschung zu Feldproblemen](../../docs/research/field-problems-codex.md). Sie
+Forschung zu Feldproblemen](../evidence-library-DE.md#source-notes). Sie
 sind Nutzerbelege und keine offizielle Bestätigung der Ursache; dieses Lab
 behauptet keine lokale Reproduktion.
 
@@ -248,10 +248,10 @@ explizitem Umfang und expliziter Bestätigung.
 
 ## Quellen und Wartung
 
-- [Projektterminologie](../../CONTEXT.md) — stabile Grenzen für das Lab.
-- [Offizielle OpenAI-Codex-Faktenbaseline](../../docs/research/openai-codex-baseline.md) — datierte Produktfakten und Berechtigungsgrenzen; geprüft am 2026-08-09.
-- [Forschung zu realen Codex-Nutzerproblemen](../../docs/research/field-problems-codex.md) — öffentliche Berichte, Quelllinks und Belegkennzeichnungen; geprüft am 2026-08-09.
-- [Vertiefung zu LLM-Mechanismen](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md) — auf offiziellen Quellen beruhende Mechanismuskarten und Fehlerexperimente; geprüft am 2026-08-10.
+- [Projektterminologie](../evidence-library-DE.md#core-terms) — stabile Grenzen für das Lab.
+- [Offizielle OpenAI-Codex-Faktenbaseline](../evidence-library-DE.md#source-notes) — datierte Produktfakten und Berechtigungsgrenzen; geprüft am 2026-08-09.
+- [Forschung zu realen Codex-Nutzerproblemen](../evidence-library-DE.md#source-notes) — öffentliche Berichte, Quelllinks und Belegkennzeichnungen; geprüft am 2026-08-09.
+- [Vertiefung zu LLM-Mechanismen](../evidence-library-DE.md#source-notes) — auf offiziellen Quellen beruhende Mechanismuskarten und Fehlerexperimente; geprüft am 2026-08-10.
 - [Kapitel 1 — Verstehe GPT, bevor du Codex vertraust](../chapters/01-gpt-and-codex-DE.md) — konzeptioneller und fallbezogener Kontext für dieses Lab.
 
 Dies ist eine originäre Übung. Sie kopiert keine externen Prompts, Protokolle,

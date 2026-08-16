@@ -23,7 +23,7 @@ Nach diesem Kapitel kannst du:
 
 ## Einstieg über reale Probleme
 
-Die öffentlichen Berichte in der [Codex-Recherche zu Feldproblemen](../../docs/research/field-problems-codex.md)
+Die öffentlichen Berichte in der [Codex-Recherche zu Feldproblemen](../evidence-library-DE.md#source-notes)
 zeigen immer wieder denselben Kategorienfehler: Der Browser meldet Erfolg, die
 CLI ist eingeloggt oder ein Verzeichnis ist technisch beschreibbar, und daraus
 wird geschlossen, dass die nächste Aktion autorisiert und verifiziert sei.
@@ -82,7 +82,7 @@ Diese Felder werden getrennt erfasst:
 | task_authorization | Was hat der Nutzer genau verlangt? | Dass eine Produkteinstellung stillschweigend mehr erlaubt |
 
 Offizielle Details zu Sandbox und Genehmigung ändern sich nach Oberfläche und
-Version. Die [offizielle Codex-Basis](../../docs/research/openai-codex-baseline.md)
+Version. Die [offizielle Codex-Basis](../evidence-library-DE.md#source-notes)
 grenzt veränderliche Fakten ab, beweist aber nicht die Konfiguration dieser Sitzung.
 
 ### Matrix der kleinsten Autorität
@@ -232,7 +232,7 @@ Stopbedingung erstellen kannst.
 
 Kontext-, Vertrauens- und Evidenzmethoden sind stabil. Codex-Berechtigungen,
 Sandbox, Tools, Connectoren und Oberflächen sind veränderliche Fakten. Prüfe vor
-konkreten Aussagen die [offizielle Basis](../../docs/research/openai-codex-baseline.md)
+konkreten Aussagen die [offizielle Basis](../evidence-library-DE.md#source-notes)
 und notiere URL, Datum, Bereich, Owner und nächste Prüfung. Offizielle Dokumentation
 ersetzt keine Beobachtung des aktuellen Laufs.
 

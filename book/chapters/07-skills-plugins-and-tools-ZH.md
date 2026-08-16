@@ -25,7 +25,7 @@
 
 ## 现实问题入口：任务开始前，发现机制就可能失败
 
-项目的 [Codex 现场研究](../../docs/research/field-problems-codex.md) 记录了两份公开报告。它们适合作为症状，而不是官方根因分析或本地复现：
+项目的 [Codex 现场研究](../evidence-library-ZH.md#source-notes) 记录了两份公开报告。它们适合作为症状，而不是官方根因分析或本地复现：
 
 | 公开症状 | 报告者观察到什么 | 它**不能**证明什么 | 第一个安全响应 |
 |---|---|---|---|
@@ -212,12 +212,12 @@ permission_boundary | next_review
 
 | 事实或边界 | 来源 | 访问日期 | 适用范围 | 负责人 / 下次复核 |
 |---|---|---:|---|---|
-| 作为任务或工作流指令及支持资源的 Skills，包括显式选择 | [Skills and Plugins](https://learn.chatgpt.com/docs/skills-and-plugins.md) 与[事实刷新记录](../../docs/research/openai-codex-facts-refresh-2026-08-09.md) | 2026-08-09 | 访问当日的官方产品描述；不是某个 Skill 在此处已启用或加载的证明 | `facts-maintainer` / 2026-09-09 |
+| 作为任务或工作流指令及支持资源的 Skills，包括显式选择 | [Skills and Plugins](https://learn.chatgpt.com/docs/skills-and-plugins.md) 与[事实刷新记录](../evidence-library-ZH.md#source-notes) | 2026-08-09 | 访问当日的官方产品描述；不是某个 Skill 在此处已启用或加载的证明 | `facts-maintainer` / 2026-09-09 |
 | Plugin 的组合、支持工作面、安装、连接器认证和独立审批 | [Plugins](https://learn.chatgpt.com/docs/plugins.md) 与[事实影响登记表](../../docs/governance/fact-impact-registry.yaml) | 2026-08-09 | 官方支持说明；目录内容与账户或组织访问可能变化 | `facts-maintainer` / 2026-09-09 |
 | MCP 服务器、暴露的工具/资源/提示词，以及工具允许/拒绝或审批配置 | [MCP](https://learn.chatgpt.com/docs/extend/mcp.md) | 2026-08-09 | 官方 Codex 宿主配置；服务器的认证、工具与组织策略仍须分别检查 | `facts-maintainer` / 2026-09-09 |
 | 有副作用的连接器或 MCP 动作可属于审批边界 | [Agent approvals and security](https://learn.chatgpt.com/docs/agent-approvals-security.md) | 2026-08-09 | 官方审批模型；不是本仓库当前运行时配置 | `facts-maintainer` / 2026-09-09 |
-| 与符号链接和显式 Skill 调用有关的发现症状 | [Codex 现场研究](../../docs/research/field-problems-codex.md) | 2026-08-09 | 公开用户报告；没有本地复现或官方根因声明 | `curriculum-maintainer` / 2026-09-09 |
-| 候选归档库存与许可证信号 | [Skill 候选目录](../../docs/sources/skill-candidate-catalog.md) 与[资产登记表](../../docs/sources/asset-register.md) | 2026-08-09 | 项目库存与审查边界；不是批准安装任何外部 Skill | `source-maintainer` / 2026-11-09 |
+| 与符号链接和显式 Skill 调用有关的发现症状 | [Codex 现场研究](../evidence-library-ZH.md#source-notes) | 2026-08-09 | 公开用户报告；没有本地复现或官方根因声明 | `curriculum-maintainer` / 2026-09-09 |
+| 候选归档库存与许可证信号 | [Skill 候选目录](../evidence-library-ZH.md#source-notes) 与[资产登记表](../evidence-library-ZH.md#source-notes) | 2026-08-09 | 项目库存与审查边界；不是批准安装任何外部 Skill | `source-maintainer` / 2026-11-09 |
 
 Skill、Plugin、连接器、MCP、manifest、认证和调用细节都可能变化。官方页面或当前工作面发生变化时，先刷新第一方记录，再审查事实影响登记表、本章、相关 Labs、Skills、评测 fixture 和站点路径。将官方产品描述、社区症状和本地运行时证据写在不同句子中。
 

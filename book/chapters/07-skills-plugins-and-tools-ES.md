@@ -31,7 +31,7 @@ La pregunta útil no es «¿qué directorio tiene más Skills?», sino:
 
 ## Un punto de entrada real: el descubrimiento falla antes de empezar
 
-La [investigación de campo de Codex](../../docs/research/field-problems-codex.md)
+La [investigación de campo de Codex](../evidence-library-ES.md#source-notes)
 registra informes públicos. Son síntomas, no una causa oficial ni reproducción local.
 
 | Síntoma público | Qué observó la persona | Qué **no** demuestra | Primera respuesta segura |
@@ -278,8 +278,8 @@ ser un script.
 | Plugins: composición, superficies, instalación, autenticación y aprobación | [Plugins](https://learn.chatgpt.com/docs/plugins.md) | 2026-08-09 | El acceso puede cambiar por cuenta u organización |
 | Servidores MCP, herramientas/recursos/prompts y permitir/denegar | [MCP](https://learn.chatgpt.com/docs/extend/mcp.md) | 2026-08-09 | Autenticación, herramientas y política requieren revisión separada |
 | Efectos de conectores o MCP y aprobación | [Agent approvals and security](https://learn.chatgpt.com/docs/agent-approvals-security.md) | 2026-08-09 | No es la configuración runtime de este repositorio |
-| Síntomas de descubrimiento por enlace e invocación explícita | [Campo Codex](../../docs/research/field-problems-codex.md) | 2026-08-09 | Informes públicos, sin reproducción ni causa oficial |
-| Inventario y señales de licencia de candidatos | [Catálogo de candidatos](../../docs/sources/skill-candidate-catalog.md) | 2026-08-09 | Inventario, no autorización de instalación |
+| Síntomas de descubrimiento por enlace e invocación explícita | [Campo Codex](../evidence-library-ES.md#source-notes) | 2026-08-09 | Informes públicos, sin reproducción ni causa oficial |
+| Inventario y señales de licencia de candidatos | [Catálogo de candidatos](../evidence-library-ES.md#source-notes) | 2026-08-09 | Inventario, no autorización de instalación |
 
 Skills, Plugins, conectores, MCP, manifests, autenticación e invocación cambian.
 Actualiza primero fuentes primarias y revisa registro de impacto, capítulo, Labs,

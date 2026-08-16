@@ -20,7 +20,7 @@ Agent は、すべての扉を開けば信頼できるようになるわけで�
 
 ## 現実の問題から始める
 
-[Codex の実問題研究](../../docs/research/field-problems-codex.md)に記録された
+[Codex の実問題研究](../evidence-library-JA.md#source-notes)に記録された
 公開報告には、同じ分類ミスが繰り返し現れます。ブラウザが認証成功を表示
 した、CLI がログイン済みと表示した、またはディレクトリが技術的に書き込み
 可能だった、という事実から、次の行動も認可され検証されると推測してしまう
@@ -77,7 +77,7 @@ Agent は、すべての扉を開けば信頼できるようになるわけで�
 | task_authorization | 利用者が今回のタスクに何を頼んだか | 製品設定がより広い行動を黙って許可すること |
 
 Sandbox と承認の公式仕様は、作業面とバージョンで変化します。[公式 Codex
-基準](../../docs/research/openai-codex-baseline.md)は変動事実の境界ですが、
+基準](../evidence-library-JA.md#source-notes)は変動事実の境界ですが、
 現在のセッション設定の証拠ではありません。
 
 ### 最小権限マトリクス
@@ -215,7 +215,7 @@ run-id で計画します。外部の命令文は data と分類し、それが�
 ## 出典と更新境界
 
 コンテキスト、信頼、証拠の方法は安定しています。Codex の権限モード、sandbox、
-ツール、connector、入口は変動します。具体的な製品主張の前に[公式基準](../../docs/research/openai-codex-baseline.md)
+ツール、connector、入口は変動します。具体的な製品主張の前に[公式基準](../evidence-library-JA.md#source-notes)
 を確認し、URL、日付、適用範囲、担当者、次回確認日を記録してください。公式文書
 は現在の実行観測の代わりにはなりません。
 

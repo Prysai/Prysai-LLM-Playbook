@@ -117,6 +117,7 @@ REQUIRED = (
     "scripts/validate_project_structure.py",
     "scripts/validate_content_completeness.py",
     "scripts/audit_locale_release_paths.py",
+    "scripts/localize_reader_evidence_links.py",
     "scripts/validate_localized_practice_cards.py",
     "scripts/audit_translation_depth.py",
     "scripts/test_validate_site_i18n.py",

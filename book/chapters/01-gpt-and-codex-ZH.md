@@ -19,7 +19,7 @@ Answer.AI。它们经常出现在同一段讨论里，但并不是同一类东�
 | Kimi / Moonshot AI | 我需要测试的是代码、分析，还是长文档工作？ | 宣传的上下文或功能已经证明它在此工作台中更好。 |
 | Answer.AI | 我是在寻找应用研究、教育内容还是终端产品？ | 它是可以和其他模型一起放进选择器的基础模型提供商。 |
 
-[模型与工作台方向图](../../docs/research/model-workbench-landscape-source-receipt-2026-08-15.md)
+[模型与工作台方向图](../evidence-library-ZH.md#source-notes)
 为每一行保留了所有者的一手来源，并把“厂商的定位”与“实际测得的结果”分开。
 先把你手上已有模型的一次请求用好；只有在相同任务和相同验收规则下，才比较不同候选项。
 
@@ -68,7 +68,7 @@ Answer.AI。它们经常出现在同一段讨论里，但并不是同一类东�
 | Skill | 包含触发条件、输入、边界、步骤和证据的可复用方法 | 新模型、权限授予或验证的替代品 |
 | Agent | 围绕观察、行动、反馈、重试和停止形成的可观察多步循环 | 可以访问隐藏推理，或有权无限重试 |
 
-项目的稳定术语定义见 [CONTEXT.md](../../CONTEXT.md)。模型名称、调用语法和默认权限等产品细节属于易变事实；请使用带日期的[官方基线](../../docs/research/openai-codex-baseline.md)，并在依赖这些事实之前重新核对其中链接的一手文档。
+项目的稳定术语定义见 [CONTEXT.md](../evidence-library-ZH.md#core-terms)。模型名称、调用语法和默认权限等产品细节属于易变事实；请使用带日期的[官方基线](../evidence-library-ZH.md#source-notes)，并在依赖这些事实之前重新核对其中链接的一手文档。
 
 ## 语言模型如何生成回答
 
@@ -140,7 +140,7 @@ JSON Schema 或带类型的回答可以约束形状、必填字段和某些类�
 schema/类型检查 → 业务规则检查 → 来源/状态检查
 ```
 
-例如，`{ "status": "approved" }` 可能是有效 JSON，也符合 schema，但该批准属于错误的项目。应把原始模型输出、schema 结果、业务规则结果和外部验证保存为彼此独立的证据。[LLM 机制研究](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md#机制卡-d-structured-output-把语法错误变成语义错误)将其记录为一项教学边界，而不是断言所有提供商都采用相同实现。
+例如，`{ "status": "approved" }` 可能是有效 JSON，也符合 schema，但该批准属于错误的项目。应把原始模型输出、schema 结果、业务规则结果和外部验证保存为彼此独立的证据。[LLM 机制研究](../evidence-library-ZH.md#source-notes)将其记录为一项教学边界，而不是断言所有提供商都采用相同实现。
 
 ### 2. 检索负责选择材料，但不保证完整使用
 
@@ -150,7 +150,7 @@ schema/类型检查 → 业务规则检查 → 来源/状态检查
 
 网页、附件、issue 正文、工具结果、数据库字段和 MCP 资源中，可能包含“忽略之前的规则”之类的文字。某个字符串不会仅仅因为看起来像系统指令就获得权威。应把它当作不可信数据，默认保持外部动作只读，并在它能够影响工具调用之前另行决策。对于初学者，这是提示注入防御的实用形式：识别数据来源、限制工具边界，并在记录中保留其试图影响的动作。
 
-这三个陷阱及其面向具体提供商的来源和低风险实验，均收录于[机制深挖](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md)。
+这三个陷阱及其面向具体提供商的来源和低风险实验，均收录于[机制深挖](../evidence-library-ZH.md#source-notes)。
 
 ## Agent 循环的真正含义
 
@@ -190,7 +190,7 @@ schema/类型检查 → 业务规则检查 → 来源/状态检查
 3. 对当前状态运行最小范围的可用检查；
 4. 只有在决定哪个状态具有权威后，才从有名称的检查点恢复，或开始一次干净的运行。
 
-来源和证据标签：[现场研究中的 FP-09](../../docs/research/field-problems-codex.md#fp-09-模型容量错误中断任务，并可能让排队后续任务接在半成品上)。
+来源和证据标签：[现场研究中的 FP-09](../evidence-library-ZH.md#source-notes)。
 
 ### 案例 FP-10：“Working” 不是进度证明
 
@@ -198,7 +198,7 @@ schema/类型检查 → 业务规则检查 → 来源/状态检查
 
 记录命令、进程状态、经过时间、输出和中断点。然后检查 diff，并在安全时独立运行针对性检查。不要把“界面仍显示 Working”变成“格式化程序已经完成”。
 
-来源和证据标签：[现场研究中的 FP-10](../../docs/research/field-problems-codex.md#fp-10格式化验证命令让-windows-cli-agent-长时间停在-working)。
+来源和证据标签：[现场研究中的 FP-10](../evidence-library-ZH.md#source-notes)。
 
 ### 案例 FP-11：验证可能意外扩大任务范围
 
@@ -206,7 +206,7 @@ schema/类型检查 → 业务规则检查 → 来源/状态检查
 
 如果某项检查需要破坏性重置、网络调用、重新安装软件包或凭据，就应停止并请求新的决定。“检查失败”并不会授予升级操作的权限。
 
-证据分类和相关章节/实验映射见[现场问题索引](../../docs/research/field-problems-index-2026-08-10.md)。
+证据分类和相关章节/实验映射见[现场问题索引](../evidence-library-ZH.md#source-notes)。
 
 ## 真实任务的决策规则
 
@@ -326,10 +326,10 @@ schema/类型检查 → 业务规则检查 → 来源/状态检查
 ## 来源与维护边界
 
 - [Transformer 架构论文（Vaswani 等，2017）](https://arxiv.org/abs/1706.03762) — 基于注意力的序列模型的一手研究参考；访问于 2026-08-10。
-- [OpenAI Codex 官方事实基线](../../docs/research/openai-codex-baseline.md) — 项目对易变产品事实和官方 URL 的带日期记录；核对于 2026-08-09。
-- [Codex 真实用户问题研究](../../docs/research/field-problems-codex.md) — 公开报告和证据标签；核对于 2026-08-09；不是本地复现报告。
-- [LLM 机制深挖](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md) — 有官方来源支持的机制卡、实验以及事实/推断/未知标签；核对于 2026-08-10。
-- [模型与工作台方向图](../../docs/research/model-workbench-landscape-source-receipt-2026-08-15.md) — OpenAI、Answer.AI、xAI/Grok、Google DeepMind/Gemini 和 Moonshot AI/Kimi 的一手定位；不是基准测试或模型排名。
-- [项目术语](../../CONTEXT.md) — GPT、Codex、工具、Skill、Agent、证据和状态的稳定定义。
+- [OpenAI Codex 官方事实基线](../evidence-library-ZH.md#source-notes) — 项目对易变产品事实和官方 URL 的带日期记录；核对于 2026-08-09。
+- [Codex 真实用户问题研究](../evidence-library-ZH.md#source-notes) — 公开报告和证据标签；核对于 2026-08-09；不是本地复现报告。
+- [LLM 机制深挖](../evidence-library-ZH.md#source-notes) — 有官方来源支持的机制卡、实验以及事实/推断/未知标签；核对于 2026-08-10。
+- [模型与工作台方向图](../evidence-library-ZH.md#source-notes) — OpenAI、Answer.AI、xAI/Grok、Google DeepMind/Gemini 和 Moonshot AI/Kimi 的一手定位；不是基准测试或模型排名。
+- [项目术语](../evidence-library-ZH.md#core-terms) — GPT、Codex、工具、Skill、Agent、证据和状态的稳定定义。
 
 本章的解释结构是本项目原创内容。产品名称、调用语法、模型可用性、权限和服务行为在被视为当前事实之前，必须重新对照最新的一手来源。本章状态仍为 candidate；在存在真实运行记录和独立审查之前，所链接实验的状态仍为 draft 和 not_run。

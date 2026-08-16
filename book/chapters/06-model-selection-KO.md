@@ -28,7 +28,7 @@
 
 ## 공개 보고: 마법의 해결책이 아니라 증상
 
-[Codex 현장 조사](../../docs/research/field-problems-codex.md)는 공개 Issue와 토론을 모읍니다.
+[Codex 현장 조사](../evidence-library-KO.md#source-notes)는 공개 Issue와 토론을 모읍니다.
 이는 증상이지 공식 진단이나 로컬 재현이 아닙니다.
 
 | 증상 | 관찰 | 그것만으로 증명하지 않는 것 | 안전한 대응 |
@@ -37,7 +37,7 @@
 | 모델이 용량 제한에 걸림 | 작업이 끝나기 전 멈추고 다음 시도가 부분 상태를 물려받을 수 있음 | 모델 품질이 낮음, 재시도가 첫 시도 완료를 뜻함 | checkpoint, diff, log, check를 보존하고 상태를 분류 |
 | 명령이 `Working`에서 멈춤 | UI 활동 표시가 검증 가능한 출력은 아님 | formatter, Agent, 모델이 정상 진행 중 | 시간 한도를 적용해 중단하고 worktree를 검사한 뒤 좁은 check 하나 수행 |
 
-[모델 선택 기록](../../docs/research/codex-model-selection-official-facts-2026-08-11.md)에서 링크, 날짜,
+[모델 선택 기록](../evidence-library-KO.md#source-notes)에서 링크, 날짜,
 한계를 확인하세요. 각 보고에서 개인의 말, 독립 보고 유무, 공식 확인, 이 Playbook의 재현을
 나눕니다. 재현 없는 보고를 보장된 해결책으로 바꾸지 마세요.
 
@@ -188,7 +188,7 @@ reconciliation, read-only tool 코드 조사에 옮길 수 있습니다. 새 세
 | 모델 포지셔닝, reasoning, 한계 | [Codex models](https://learn.chatgpt.com/docs/models.md) | 2026-08-11 |
 | CLI와 로컬 repository 흐름 | [Codex CLI](https://learn.chatgpt.com/docs/cli.md) | 2026-08-11 |
 | Cloud 환경과 검토 | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-11 |
-| model/provider/capacity 공개 증상 | [현장 기록](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) | 2026-08-11 |
+| model/provider/capacity 공개 증상 | [현장 기록](../evidence-library-KO.md#source-notes) | 2026-08-11 |
 
 모델 ID, 가격, 용량, provider 지원, 문법, control은 바뀔 수 있습니다. 먼저 일차 출처를 갱신하고
 공식 포지셔닝, 사용자 보고, 로컬 증거를 별 문장으로 기록하세요.

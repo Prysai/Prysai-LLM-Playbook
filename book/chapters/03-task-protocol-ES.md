@@ -44,8 +44,8 @@ implícita. El protocolo de ocho partes es una síntesis operativa original del
 proyecto. Añade parada, recuperación y evidencia porque una respuesta generada
 y un resultado verificado son declaraciones distintas.
 
-Consulta la [línea base de hechos oficiales de Codex](../../docs/research/chapter-03-official-baseline-2026-08-10.md)
-y la [investigación de patrones de prompts para trabajo real](../../docs/research/prompt-patterns-for-real-work-2026-08-10.md)
+Consulta la [línea base de hechos oficiales de Codex](../evidence-library-ES.md#source-notes)
+y la [investigación de patrones de prompts para trabajo real](../evidence-library-ES.md#source-notes)
 para ver alcance y fecha de acceso de cada fuente.
 
 <a id="core-task-contract"></a>
@@ -384,7 +384,7 @@ Guarda línea base, primeros intentos, pistas usadas, intentos corregidos,
 registro de errores, repaso diferido, tarea no vista y criterios de puntuación.
 Una sesión fluida solo respalda «practiqué hoy», no fluidez, retención duradera
 ni transferencia. El método candidato y su límite de fuentes constan en la
-[investigación sobre aprendizaje duradero asistido por LLM](../../docs/research/durable-llm-assisted-learning-and-skill-candidates-2026-08-12.md).
+[investigación sobre aprendizaje duradero asistido por LLM](../evidence-library-ES.md#source-notes).
 
 ## Patrones de fallo del mundo real
 
@@ -395,8 +395,8 @@ aplicar al runtime actual; un inicio de sesión visible no prueba la autorizaci�
 de cuenta, organización, repositorio o conector; y una solución comunitaria
 puede ser insegura o inválida en otra versión o plataforma.
 
-Son informes de usuarios, no causas raíz universales. Usa el [índice de problemas de campo](../../docs/research/field-problems-index-2026-08-10.md)
-y el [informe de casos de agentes de programación](../../docs/research/field-problems-coding-agents-2026-08-10.md):
+Son informes de usuarios, no causas raíz universales. Usa el [índice de problemas de campo](../evidence-library-ES.md#source-notes)
+y el [informe de casos de agentes de programación](../evidence-library-ES.md#source-notes):
 registra síntoma y entorno, haz la comprobación segura más pequeña, detente en
 el límite y declara solo lo que sostenga la evidencia.
 
@@ -488,10 +488,10 @@ controles de interfaz, sintaxis de comandos, modelos y servicios externos son
 volátiles: vuelve a comprobar las fuentes de primera parte antes de una tarea
 actual.
 
-- [Línea base oficial de OpenAI/Codex](../../docs/research/chapter-03-official-baseline-2026-08-10.md)
-- [Patrones de prompts para trabajo real](../../docs/research/prompt-patterns-for-real-work-2026-08-10.md)
-- [Casos de agentes de programación](../../docs/research/field-problems-coding-agents-2026-08-10.md)
-- [Índice de problemas del mundo real](../../docs/research/field-problems-index-2026-08-10.md)
+- [Línea base oficial de OpenAI/Codex](../evidence-library-ES.md#source-notes)
+- [Patrones de prompts para trabajo real](../evidence-library-ES.md#source-notes)
+- [Casos de agentes de programación](../evidence-library-ES.md#source-notes)
+- [Índice de problemas del mundo real](../evidence-library-ES.md#source-notes)
 
 **Estado:** `candidate`. Estructura y registros de fuentes existen; el Lab
 complementario y una ejecución independiente por lectores siguen

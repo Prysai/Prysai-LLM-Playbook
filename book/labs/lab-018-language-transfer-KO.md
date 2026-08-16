@@ -78,7 +78,7 @@ hint 없이 쓴 문장은 무엇인가요? C1로 바뀐 뒤 가장 불안정했�
 
 - [학습 실습 계약](../guides/learning-practice-contract-KO.md) — evidence와 answer leakage 규칙.
 - [초보자 연습 팩](../communication-clinic-KO.md) — 세 단계 언어 연습 경로.
-- [지연 확인 카드 풀](../../docs/quality/lab-018-delayed-card-pool-v1.md) — 이 프로젝트가 작성한 사전 선언 card와 채점 통제 절차.
+- [지연 확인 카드 풀](../evidence-library-KO.md#method-and-status) — 이 프로젝트가 작성한 사전 선언 card와 채점 통제 절차.
 
 조사는 회상, feedback, 지연 확인, transfer 설계 판단을 뒷받침합니다. 이 Lab이 학습을 개선하거나 어떤 model/platform이 효과적인 교사임을 증명하지 않습니다. 상태는 `draft / not_run`입니다.
 

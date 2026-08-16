@@ -85,7 +85,7 @@
 
 ## 公式の境界が言えること、言えないこと
 
-日付のある[第2章の公式基準線](../../docs/research/chapter-02-official-baseline-2026-08-10.md)
+日付のある[第2章の公式基準線](../evidence-library-JA.md#source-notes)
 には、この章で使った製品情報と Git の出典が記録されています。安定した教え方は、
 どの一つのメニュー表示より重要です。
 
@@ -194,7 +194,7 @@ commit、push、公開、メッセージ送信、外部サービスの変更は�
 
 ## 現場事例：気軽な思い込みが崩れる場所
 
-以下は[第2章の現場問題研究](../../docs/research/chapter-02-field-problems-2026-08-10.md)
+以下は[第2章の現場問題研究](../evidence-library-JA.md#source-notes)
 に収録した公開報告の短い、原文のコピーではない要約です。公式の根本原因報告ではなく、
 このプロジェクトでもローカル再現していません。
 
@@ -457,10 +457,10 @@ status: passed | failed | stopped
 
 タスクプロトコル、証拠の層、復旧の順序は、このプロジェクトの安定した教育方法です。
 製品固有の権限、sandbox の既定値、CLI コマンド、レビュー画面、モデル名、UI 状態は
-変わりやすい事実です。変更時は[第2章の公式基準線](../../docs/research/chapter-02-official-baseline-2026-08-10.md)
-と[コンテンツのライフサイクル](../../docs/governance/content-lifecycle.md)を再確認します。
+変わりやすい事実です。変更時は[第2章の公式基準線](../evidence-library-JA.md#source-notes)
+と[コンテンツのライフサイクル](../evidence-library-JA.md#method-and-status)を再確認します。
 
-[現場問題の記録](../../docs/research/chapter-02-field-problems-2026-08-10.md)は利用者の
+[現場問題の記録](../evidence-library-JA.md#source-notes)は利用者の
 報告とコミュニティの提案を含み、公式の根本原因確認ではありません。本章は `candidate`、
 実験は `draft / not_run` のままです。新しい、境界付きの実行が宣言した証拠を作るまで、
 学習者が完了したとは扱いません。次は[第3章：願いをタスク・プロトコルに変える](03-task-protocol-JA.md)

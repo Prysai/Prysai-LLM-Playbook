@@ -124,7 +124,7 @@ transfer_limitations: "本实验教授可观察边界；它不能证明特定模
 - **检索命中，但缺少例外：** 选中了一段宽泛的政策内容，但缺少特定版本的例外条款。加入查询、过滤条件、选中的片段和缺失证据字段。
 - **具有指令形态的数据：** README 或工具结果要求忽略任务的安全规则。继续将其作为数据处理，拒绝外部副作用，并记录来源和它试图产生的影响。
 
-重点是准确说出失败发生在哪一层。Schema 结果、检索命中或可见字符串都不会自动证明语义正确、上下文完整或具备权限。有关带来源支持的边界，请参阅 [LLM 机制研究](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md)；本实验不会运行实时提供商服务。
+重点是准确说出失败发生在哪一层。Schema 结果、检索命中或可见字符串都不会自动证明语义正确、上下文完整或具备权限。有关带来源支持的边界，请参阅 [LLM 机制研究](../evidence-library-ZH.md#source-notes)；本实验不会运行实时提供商服务。
 
 ## 第四部分：练习停止规则
 
@@ -140,7 +140,7 @@ transfer_limitations: "本实验教授可观察边界；它不能证明特定模
 
 正确的恢复方式通常是检查当前状态、保留记录、缩小下一项检查的范围，或请求授权。正确做法不是清除工作区、强制安装依赖，或发送下一条排队指令。
 
-这些失败形态来自 [Codex 现场问题研究](../../docs/research/field-problems-codex.md)中的公开报告。它们属于用户证据，不是官方根因确认，本实验也不声称已在本地复现。
+这些失败形态来自 [Codex 现场问题研究](../evidence-library-ZH.md#source-notes)中的公开报告。它们属于用户证据，不是官方根因确认，本实验也不声称已在本地复现。
 
 ## 证据包
 
@@ -180,10 +180,10 @@ transfer_limitations: "本实验教授可观察边界；它不能证明特定模
 
 ## 来源与维护
 
-- [项目术语](../../CONTEXT.md) — 本实验的稳定边界。
-- [OpenAI Codex 官方事实基线](../../docs/research/openai-codex-baseline.md) — 带日期的产品事实和权限边界；核对于 2026-08-09。
-- [Codex 真实用户问题研究](../../docs/research/field-problems-codex.md) — 公开报告、来源链接和证据标签；核对于 2026-08-09。
-- [LLM 机制深挖](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md) — 有官方来源支持的机制卡和失败实验；核对于 2026-08-10。
+- [项目术语](../evidence-library-ZH.md#core-terms) — 本实验的稳定边界。
+- [OpenAI Codex 官方事实基线](../evidence-library-ZH.md#source-notes) — 带日期的产品事实和权限边界；核对于 2026-08-09。
+- [Codex 真实用户问题研究](../evidence-library-ZH.md#source-notes) — 公开报告、来源链接和证据标签；核对于 2026-08-09。
+- [LLM 机制深挖](../evidence-library-ZH.md#source-notes) — 有官方来源支持的机制卡和失败实验；核对于 2026-08-10。
 - [第一章：先理解 GPT，再信任 Codex](../chapters/01-gpt-and-codex-ZH.md) — 本实验的概念和现场案例背景。
 
 这是一个原创实验。它不复制外部提示词、日志、凭据或 Skill 指令。使用实时工作面之前，请重新核对易变产品事实；在声明的证据出现之前，状态保持 draft。

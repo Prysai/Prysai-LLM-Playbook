@@ -40,8 +40,8 @@
 プロジェクト独自の運用的な統合です。生成された回答と検証済みの成果物は別の主張なので、
 停止、復旧、証拠の欄を明示的に加えます。
 
-出典ごとの範囲とアクセス日については、[Codex の公式事実ベースライン](../../docs/research/chapter-03-official-baseline-2026-08-10.md)
-と[実務向け prompt パターン研究](../../docs/research/prompt-patterns-for-real-work-2026-08-10.md)
+出典ごとの範囲とアクセス日については、[Codex の公式事実ベースライン](../evidence-library-JA.md#source-notes)
+と[実務向け prompt パターン研究](../evidence-library-JA.md#source-notes)
 を確認してください。
 
 <a id="core-task-contract"></a>
@@ -354,7 +354,7 @@ Skill、コピーした runbook、成功したローカル build に、これら
 
 基準、最初の試行、使った手掛かり、訂正試行、誤り台帳、遅延復習、未見タスク、採点基準を
 残します。一回の滑らかなセッションが支えるのは「今日練習した」だけで、流暢さ、長期保持、
-転移を示しません。候補の方法と出典境界は、[LLM 支援学習の持続性研究](../../docs/research/durable-llm-assisted-learning-and-skill-candidates-2026-08-12.md)
+転移を示しません。候補の方法と出典境界は、[LLM 支援学習の持続性研究](../evidence-library-JA.md#source-notes)
 に記録されています。
 
 ## 実世界の失敗パターン
@@ -365,8 +365,8 @@ Skill、コピーした runbook、成功したローカル build に、これら
 アカウント、組織、リポジトリ、接続先が許可済みである証拠ではありません。コミュニティの
 回避策は、別のバージョンやプラットフォームでは安全でない、または無効なことがあります。
 
-これらは利用者報告であって、普遍的な製品根本原因ではありません。[現場問題索引](../../docs/research/field-problems-index-2026-08-10.md)
-と[コーディング Agent の事例報告](../../docs/research/field-problems-coding-agents-2026-08-10.md)
+これらは利用者報告であって、普遍的な製品根本原因ではありません。[現場問題索引](../evidence-library-JA.md#source-notes)
+と[コーディング Agent の事例報告](../evidence-library-JA.md#source-notes)
 を使い、症状と環境を記録し、最小の安全な確認を行い、境界で止まり、証拠が支えることだけを
 主張する、という応答を教えます。
 
@@ -449,10 +449,10 @@ Codex には、確認質問とプロトコル草案だけを求めます。編�
 この章の安定した方法は独自の統合です。製品挙動、権限名、画面操作、コマンド構文、モデル名、
 外部サービス挙動は変わります。現在のタスクに使う前に、一次出典を再確認してください。
 
-- [OpenAI/Codex 公式事実ベースライン](../../docs/research/chapter-03-official-baseline-2026-08-10.md)
-- [実務向け prompt パターン](../../docs/research/prompt-patterns-for-real-work-2026-08-10.md)
-- [コーディング Agent の現場事例](../../docs/research/field-problems-coding-agents-2026-08-10.md)
-- [実世界問題索引](../../docs/research/field-problems-index-2026-08-10.md)
+- [OpenAI/Codex 公式事実ベースライン](../evidence-library-JA.md#source-notes)
+- [実務向け prompt パターン](../evidence-library-JA.md#source-notes)
+- [コーディング Agent の現場事例](../evidence-library-JA.md#source-notes)
+- [実世界問題索引](../evidence-library-JA.md#source-notes)
 
 **状態:** `candidate`。章構造と出典記録はありますが、付属 Lab と独立した読者実行は
 `draft`/`not_run` のままです。次の日本語単元は、別言語のページではなく[日本語目次](../table-of-contents-JA.md)

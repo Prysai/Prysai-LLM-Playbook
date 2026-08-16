@@ -40,6 +40,7 @@ $py = (Get-Command python -ErrorAction Stop).Source
 & $py scripts\validate_teaching_assets.py
 & $py scripts\test_validate_teaching_assets.py
 & $py scripts\validate_localization.py
+& $py scripts\localize_reader_evidence_links.py --check
 & $py scripts\build_book_navigation.py --check
 & $py scripts\test_book_navigation_titles.py
 & $py scripts\build_book_title_map.py --check

@@ -63,7 +63,7 @@
 
 ## 官方边界说明什么，又没有说明什么
 
-带日期的[第 2 章官方基线](../../docs/research/chapter-02-official-baseline-2026-08-10.md)记录了本章使用的产品和 Git 来源。稳定教学规则比任何一个菜单标签更重要：
+带日期的[第 2 章官方基线](../evidence-library-ZH.md#source-notes)记录了本章使用的产品和 Git 来源。稳定教学规则比任何一个菜单标签更重要：
 
 | 事件 | 它可以证明什么 | 它单独不能证明什么 |
 |---|---|---|
@@ -156,7 +156,7 @@ OpenAI 当前文档将沙盒能力与审批策略分开，并说明审批不会�
 
 ## 现场案例：随意假设会在哪里失效
 
-下面是项目从[第 2 章现场问题研究](../../docs/research/chapter-02-field-problems-2026-08-10.md)整理的公开报告摘要。它们不是官方根因报告，本项目也未在本地复现。
+下面是项目从[第 2 章现场问题研究](../evidence-library-ZH.md#source-notes)整理的公开报告摘要。它们不是官方根因报告，本项目也未在本地复现。
 
 ### 案例 CH2-01：没有可见事件，不等于有结果
 
@@ -359,6 +359,6 @@ status: passed | failed | stopped
 
 ## 来源与维护边界
 
-任务协议、证据层和恢复顺序是本项目稳定的教学方法。产品具体权限、沙盒默认值、CLI 命令、审查工作面、模型名称和 UI 状态属于易变事实。相关事实变化时，重新检查[第 2 章官方基线](../../docs/research/chapter-02-official-baseline-2026-08-10.md)和[内容生命周期](../../docs/governance/content-lifecycle.md)。
+任务协议、证据层和恢复顺序是本项目稳定的教学方法。产品具体权限、沙盒默认值、CLI 命令、审查工作面、模型名称和 UI 状态属于易变事实。相关事实变化时，重新检查[第 2 章官方基线](../evidence-library-ZH.md#source-notes)和[内容生命周期](../evidence-library-ZH.md#method-and-status)。
 
-[现场问题记录](../../docs/research/chapter-02-field-problems-2026-08-10.md)包含用户报告和社区建议，不是官方根因确认。本章保持 `candidate`，实验保持 `draft / not_run`，直到新的、有边界的运行产生所声明的证据。
+[现场问题记录](../evidence-library-ZH.md#source-notes)包含用户报告和社区建议，不是官方根因确认。本章保持 `candidate`，实验保持 `draft / not_run`，直到新的、有边界的运行产生所声明的证据。

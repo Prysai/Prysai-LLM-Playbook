@@ -86,7 +86,7 @@ transfer_limitations: "一次本地切片不证明远端发布、生产行为或
 项目现有一份适用于此夹具、已接受的确定性维护者参考包。它保留 CP0–CP4、一次实际
 失败的检查、失败产物、精确的恢复 diff、一次通过的检查、最终 diff、清理回执和交接。
 参见[可执行示例契约](../../docs/governance/executable-examples.yaml)和
-[独立重新提交审查](../../docs/quality/lab-013-reference-run-resubmission-review-2026-08-12.md)。
+[独立重新提交审查](../evidence-library-ZH.md#method-and-status)。
 
 该参考包由本地确定性运行器产生，不是学习者或模型产生的记录。它不建立学习者独立性、
 Codex 行为、迁移、发布、回滚演练或生产就绪性。学习者和迁移运行仍为

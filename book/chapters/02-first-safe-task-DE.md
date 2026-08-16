@@ -97,7 +97,7 @@ unabhängige Sprachprüfung noch Lernläufe oder die Wirksamkeit des Kurses.
 
 ## Was ein Produktsignal sagen kann und was nicht
 
-Die [offizielle Baseline für Kapitel 2](../../docs/research/chapter-02-official-baseline-2026-08-10.md)
+Die [offizielle Baseline für Kapitel 2](../evidence-library-DE.md#source-notes)
 erfasst die verwendeten Produkt- und Git-Quellen. Die stabile Regel ist
 wichtiger als der genaue Text eines Menüs:
 
@@ -213,7 +213,7 @@ und `live verified` sind verschiedene Statuswörter. Fasse sie in der
 
 ## Praxisfälle: Wo beiläufige Annahmen brechen
 
-Die folgenden kurzen Fälle stammen aus der [Feldstudie zu Kapitel 2](../../docs/research/chapter-02-field-problems-2026-08-10.md).
+Die folgenden kurzen Fälle stammen aus der [Feldstudie zu Kapitel 2](../evidence-library-DE.md#source-notes).
 Sie sind keine offiziellen Ursachenberichte, und dieses Projekt hat sie nicht
 lokal reproduziert.
 
@@ -494,10 +494,10 @@ Aufgabenprotokoll, Evidenzschichten und Wiederherstellungsfolge sind die
 stabile Lehrmethode dieses Projekts. Produktspezifische Berechtigungen,
 Sandbox-Defaults, CLI-Kommandos, Review-Flächen, Modellnamen und UI-Zustände
 sind veränderliche Fakten. Prüfe bei Änderungen die [offizielle Baseline zu
-Kapitel 2](../../docs/research/chapter-02-official-baseline-2026-08-10.md) und
-den [Content-Lebenszyklus](../../docs/governance/content-lifecycle.md) erneut.
+Kapitel 2](../evidence-library-DE.md#source-notes) und
+den [Content-Lebenszyklus](../evidence-library-DE.md#method-and-status) erneut.
 
-Die [Aufzeichnung der Feldprobleme](../../docs/research/chapter-02-field-problems-2026-08-10.md)
+Die [Aufzeichnung der Feldprobleme](../evidence-library-DE.md#source-notes)
 enthält Nutzerberichte und Community-Vorschläge, keine offiziellen
 Root-Cause-Bestätigungen. Dieses Kapitel bleibt `candidate`, das Experiment
 `draft / not_run`, bis ein frischer, begrenzter Lauf die erklärten Belege

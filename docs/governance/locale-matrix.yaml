@@ -796,6 +796,21 @@
       }
     },
     {
+      "content_id": "reader-evidence-library",
+      "kind": "reader-reference",
+      "stem": "book/evidence-library",
+      "source_locale": "EN",
+      "source_revision": "worktree-2026-08-16",
+      "locales": {
+        "EN": {"path": "book/evidence-library-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full"},
+        "ZH": {"path": "book/evidence-library-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "reason": "Localized evidence navigation exists; independent Simplified Chinese language review remains pending."},
+        "ES": {"path": "book/evidence-library-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "reason": "Localized evidence navigation exists; independent Spanish language review remains pending."},
+        "JA": {"path": "book/evidence-library-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "reason": "Localized evidence navigation exists; independent Japanese language review remains pending."},
+        "KO": {"path": "book/evidence-library-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "reason": "Localized evidence navigation exists; independent Korean language review remains pending."},
+        "DE": {"path": "book/evidence-library-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-16", "coverage": "full", "reason": "Localized evidence navigation exists; independent German language review remains pending."}
+      }
+    },
+    {
       "content_id": "lab-017-skill-discovery-audit",
       "kind": "lab",
       "stem": "book/labs/lab-017-skill-discovery-audit",

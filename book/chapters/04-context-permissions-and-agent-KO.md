@@ -20,7 +20,7 @@ Agent는 모든 문을 열어 준다고 신뢰할 수 있게 되지 않습니다
 
 ## 실제 문제에서 시작하기
 
-[Codex 실제 문제 연구](../../docs/research/field-problems-codex.md)에 모은 공개
+[Codex 실제 문제 연구](../evidence-library-KO.md#source-notes)에 모은 공개
 보고에는 반복되는 분류 오류가 있습니다. 브라우저가 인증 성공을 보이거나,
 CLI가 로그인 상태이거나, 디렉터리가 기술적으로 쓰기 가능하다는 사실에서
 다음 행동도 승인되었고 검증될 것이라고 추론하는 것입니다. 서로 다른 주장입니다.
@@ -74,7 +74,7 @@ CLI가 로그인 상태이거나, 디렉터리가 기술적으로 쓰기 가능�
 | task_authorization | 사용자가 이번 작업에 무엇을 요청했는가? | 제품 설정이 더 넓은 행동을 묵시적으로 승인한다는 사실 |
 
 Sandbox와 승인에 관한 공식 세부사항은 작업면과 버전에 따라 달라집니다.
-[공식 Codex 기준](../../docs/research/openai-codex-baseline.md)은 변동 사실의
+[공식 Codex 기준](../evidence-library-KO.md#source-notes)은 변동 사실의
 출처이지만 현재 세션 설정의 증거는 아닙니다.
 
 ### 최소 권한 매트릭스
@@ -211,7 +211,7 @@ owner, 확인, rollback, 부작용 증거의 부족을 적고 거부합니다.
 ## 출처와 갱신 경계
 
 컨텍스트, 신뢰, 증거 방법은 안정적입니다. Codex의 권한 모드, sandbox, 도구,
-connector, 진입면은 변동 사실입니다. 구체적인 제품 사실을 쓰기 전에 [공식 기준](../../docs/research/openai-codex-baseline.md)을
+connector, 진입면은 변동 사실입니다. 구체적인 제품 사실을 쓰기 전에 [공식 기준](../evidence-library-KO.md#source-notes)을
 확인하고 URL, 날짜, 범위, 담당자, 다음 검토일을 기록하십시오. 공식 문서는 현재
 실행의 증거를 대신하지 않습니다.
 

@@ -63,16 +63,16 @@ Git worktree 또는 Cloud 환경에서 실행될 수도 있습니다. 이것들�
 | Cloud setup은 성공했지만 비밀 또는 네트워크를 못 씀 | 의존성을 설치하거나 setup 표시가 생긴 뒤 Agent가 서비스에 닿지 못함 | setup과 Agent의 네트워크·비밀이 같은 능력 | setup/Agent 로그, 네트워크 단계, 비밀 수명, diff를 따로 기록 |
 | allowlist가 GitHub 등 host를 막음 | proxy, sandbox, 기업 네트워크 정책에서 요청 실패 | 모든 네트워크 권한 확대가 맞거나 승인됨 | 좁은 변경을 요청하기 전 sandbox, allowlist, DNS/TLS, firewall 가설을 분리 |
 
-원래 링크와 날짜는 [현장 문제 색인](../../docs/research/field-problems-index-2026-08-10.md),
-[작업면 조사](../../docs/research/field-problems-surface-2026-08-10.md),
-[포럼 조사](../../docs/research/field-problems-forums-2026-08-10.md)에서 확인하세요.
+원래 링크와 날짜는 [현장 문제 색인](../evidence-library-KO.md#source-notes),
+[작업면 조사](../evidence-library-KO.md#source-notes),
+[포럼 조사](../evidence-library-KO.md#source-notes)에서 확인하세요.
 조사 기록은 이 프로젝트가 재현하지 않은 내용도 의도적으로 밝힙니다.
 
 ### 현장 사례: 첫 쓰기 전에 대상을 확인한다
 
 ![현장 신호와 가장 작은 안전 응답](../../assets/teaching/field-signal-to-safe-degradation-red-black.svg)
 
-범위를 정한 [FC-WORKTREE-01](../../docs/research/field-case-worktree-target-mismatch-2026-08-12.md)은
+범위를 정한 [FC-WORKTREE-01](../evidence-library-KO.md#source-notes)은
 worktree 관련 공개 보고를 대상 동일성 연습으로 바꿉니다. 2026-08-12 조사
 스냅샷에는 공개된 maintainer의 근본 원인 확인이 없었고, 프로젝트도 그 보고를
 재현하지 않았습니다. 교훈은 더 좁습니다. Local에서 Worktree로 넘긴 뒤 편집,
@@ -353,8 +353,8 @@ lifecycle, 도구 가용성, 진입점 지원은 변할 수 있습니다. 현재
 | Local 권한과 승인은 별 계층임 | https://learn.chatgpt.com/docs/agent-approvals-security.md | 2026-08-09 | 공식 보안 모델이며 현재 세션의 유효 설정을 증명하지 않음 |
 | CLI, IDE, Cloud, 모델 지원은 작업면마다 다름 | https://learn.chatgpt.com/docs/codex/cli.md; https://learn.chatgpt.com/docs/codex/ide.md; https://learn.chatgpt.com/docs/cloud.md; https://learn.chatgpt.com/docs/models.md | 2026-08-09 | account, workspace, rollout, version에 따라 가용성이 바뀔 수 있음 |
 
-[공식 사실 카드](../../docs/research/openai-codex-facts-refresh-2026-08-09.md)는 프로젝트의
-날짜별 요약과 한계를 제공합니다. [현장 문제 조사](../../docs/research/field-problems-codex.md)와
+[공식 사실 카드](../evidence-library-KO.md#source-notes)는 프로젝트의
+날짜별 요약과 한계를 제공합니다. [현장 문제 조사](../evidence-library-KO.md#source-notes)와
 관련 작업면/포럼 기록은 공개 사용자 보고를 제공합니다. 어느 것도 현재 account-level 또는
 runtime 관찰을 대신하지 않습니다.
 

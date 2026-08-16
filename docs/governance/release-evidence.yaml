@@ -73,6 +73,7 @@
         {"id": "repository-security-policy-fixtures", "argv": ["{python}", "scripts/test_validate_repository_security.py"]},
         {"id": "localization", "argv": ["{python}", "scripts/validate_localization.py"]},
         {"id": "locale-release-paths", "argv": ["{python}", "scripts/audit_locale_release_paths.py"]},
+        {"id": "localized-evidence-links", "argv": ["{python}", "scripts/localize_reader_evidence_links.py", "--check"]},
         {"id": "localized-practice-cards", "argv": ["{python}", "scripts/validate_localized_practice_cards.py"]},
         {"id": "translation-depth", "argv": ["{python}", "scripts/audit_translation_depth.py"]},
         {"id": "site-i18n", "argv": ["{python}", "scripts/validate_site_i18n.py"]},

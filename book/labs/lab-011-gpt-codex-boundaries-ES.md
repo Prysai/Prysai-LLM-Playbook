@@ -165,7 +165,7 @@ afirmaciones:
 El objetivo es nombrar la capa exacta que falló. El resultado de un esquema,
 una coincidencia de recuperación o una cadena visible no demuestran
 automáticamente que la semántica sea correcta, que el contexto esté completo o
-que exista autoridad. Consulta la [investigación sobre los mecanismos de los LLM](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md)
+que exista autoridad. Consulta la [investigación sobre los mecanismos de los LLM](../evidence-library-ES.md#source-notes)
 para conocer los límites respaldados por fuentes; este laboratorio no ejecuta
 un proveedor en vivo.
 
@@ -188,7 +188,7 @@ No consiste en borrar el espacio de trabajo, forzar la instalación de
 dependencias ni enviar la siguiente instrucción en cola.
 
 Estas formas de fallo se basan en informes públicos de la
-[investigación sobre problemas de campo de Codex](../../docs/research/field-problems-codex.md).
+[investigación sobre problemas de campo de Codex](../evidence-library-ES.md#source-notes).
 Constituyen evidencia de usuarios, no una confirmación oficial de la causa
 raíz, y este laboratorio no afirma haberlas reproducido localmente.
 
@@ -251,10 +251,10 @@ crees un nuevo protocolo de tarea con alcance y confirmación explícitos.
 
 ## Fuentes y mantenimiento
 
-- [Terminología del proyecto](../../CONTEXT.md) — límites estables para el laboratorio.
-- [Línea base de hechos oficiales de OpenAI Codex](../../docs/research/openai-codex-baseline.md) — hechos fechados del producto y límites de permisos; comprobado el 2026-08-09.
-- [Investigación sobre problemas reales de usuarios de Codex](../../docs/research/field-problems-codex.md) — informes públicos, enlaces a las fuentes y etiquetas de evidencia; comprobado el 2026-08-09.
-- [Análisis detallado de mecanismos de los LLM](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md) — fichas de mecanismos y experimentos de fallo respaldados por fuentes oficiales; comprobado el 2026-08-10.
+- [Terminología del proyecto](../evidence-library-ES.md#core-terms) — límites estables para el laboratorio.
+- [Línea base de hechos oficiales de OpenAI Codex](../evidence-library-ES.md#source-notes) — hechos fechados del producto y límites de permisos; comprobado el 2026-08-09.
+- [Investigación sobre problemas reales de usuarios de Codex](../evidence-library-ES.md#source-notes) — informes públicos, enlaces a las fuentes y etiquetas de evidencia; comprobado el 2026-08-09.
+- [Análisis detallado de mecanismos de los LLM](../evidence-library-ES.md#source-notes) — fichas de mecanismos y experimentos de fallo respaldados por fuentes oficiales; comprobado el 2026-08-10.
 - [Capítulo 1 — Entender GPT antes de confiar en Codex](../chapters/01-gpt-and-codex-ES.md) — contexto conceptual y de casos de campo para este laboratorio.
 
 Este es un ejercicio original. No copia prompts, registros, credenciales ni

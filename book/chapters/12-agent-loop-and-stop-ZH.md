@@ -295,7 +295,7 @@ stop_if: 没有终止事件、副作用未知、或范围扩大
 - [OpenAI：运行 Agents](https://developers.openai.com/api/docs/guides/agents/running-agents)（访问于 2026-08-10）：描述 OpenAI Agents runtime，不保证每个 Codex 工作面或其他宿主相同。
 - [OpenAI：结果与中断](https://developers.openai.com/api/docs/guides/agents/results)（访问于 2026-08-10）：先检查实际集成，不能泛化为所有产品行为。
 - [OpenAI：Guardrails 与审批](https://developers.openai.com/api/docs/guides/agents/guardrails-approvals)（访问于 2026-08-10）：说明审批边界，不证明某次运行已经显示或获得审批。
-- [项目现场问题研究](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)：公开报告与原始总结，不证明普遍性、根因或供应商认可。
+- [项目现场问题研究](../evidence-library-ZH.md#source-notes)：公开报告与原始总结，不证明普遍性、根因或供应商认可。
 
 <!-- chapter-navigation:start -->
 <hr>

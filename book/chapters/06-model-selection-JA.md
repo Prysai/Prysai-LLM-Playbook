@@ -28,7 +28,7 @@
 
 ## 公開報告：魔法の解決策ではなく症状
 
-[Codex のフィールド調査](../../docs/research/field-problems-codex.md)には、公開 Issue と議論が
+[Codex のフィールド調査](../evidence-library-JA.md#source-notes)には、公開 Issue と議論が
 集められています。これは症状であり、公式診断やローカル再現ではありません。
 
 | 症状 | 観測 | それだけでは証明しないこと | 安全な対応 |
@@ -37,7 +37,7 @@
 | モデルが容量制限にかかる | タスクは完了前に止まり、次の試行は部分的な状態を引き継ぐことがある | モデルの品質が低いこと、再試行が最初の完了を意味すること | checkpoint、diff、log、check を保存し、続ける前に状態を分類する |
 | コマンドが `Working` のままになる | UI に活動表示があっても確認可能な出力がない | formatter、Agent、モデルが正しく進んでいること | 時間制限を適用し、安全に中断して worktree を確認し、一つだけ絞った check を行う |
 
-[モデル選択の記録](../../docs/research/codex-model-selection-official-facts-2026-08-11.md)にはリンク、日付、
+[モデル選択の記録](../evidence-library-JA.md#source-notes)にはリンク、日付、
 境界があります。各報告について「誰かが述べたこと」「独立報告の有無」「公式確認」「本 Playbook
 で再現したこと」を分けます。再現していない報告を、保証された解決策に変えてはいけません。
 
@@ -196,7 +196,7 @@ demo は評価の代わりになりません。
 | モデルの位置づけ、reasoning、制限 | [Codex models](https://learn.chatgpt.com/docs/models.md) | 2026-08-11 |
 | CLI とローカル repository の流れ | [Codex CLI](https://learn.chatgpt.com/docs/cli.md) | 2026-08-11 |
 | Cloud の環境とレビュー | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-11 |
-| model/provider/capacity の公開症状 | [フィールド記録](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) | 2026-08-11 |
+| model/provider/capacity の公開症状 | [フィールド記録](../evidence-library-JA.md#source-notes) | 2026-08-11 |
 
 モデル ID、価格、容量、provider support、構文、control は変わり得ます。まず一次情報源を更新し、
 公式の位置づけ、ユーザー報告、ローカル根拠を別々の文で残してください。

@@ -25,7 +25,7 @@
 
 ## 现实问题入口：模型选择会在日常情境中失败
 
-项目的 [Codex 现场研究](../../docs/research/field-problems-codex.md) 汇集公开 GitHub Issue 和其他公开讨论。这些记录是症状，不是官方诊断或本地复现；它们的价值在于暴露模型选择出错时人们常作出的假设。
+项目的 [Codex 现场研究](../evidence-library-ZH.md#source-notes) 汇集公开 GitHub Issue 和其他公开讨论。这些记录是症状，不是官方诊断或本地复现；它们的价值在于暴露模型选择出错时人们常作出的假设。
 
 | 公开症状 | 报告者观察到什么 | 它**不能**证明什么 | 第一个安全响应 |
 |---|---|---|---|
@@ -33,7 +33,7 @@
 | 所选模型处于容量限制 | 任务在得到完整结果前停止，后续提示可能面对部分状态 | 模型质量低，或重试就代表第一次已经完成 | 保存检查点、diff、日志和测试；继续前先分类该状态 |
 | Windows 命令持续显示 `Working` | 界面显示仍在活动，却没有可验证输出 | 格式化器、Agent 或模型仍在进行有用工作 | 采用超时/停止规则，安全中断，检查 worktree，只重跑有界检查 |
 
-原始链接、日期、版本、证据等级和不确定性说明见[模型选择研究记录](../../docs/research/codex-model-selection-official-facts-2026-08-11.md)。本项目没有执行这些报告中出现的命令或解决方案。
+原始链接、日期、版本、证据等级和不确定性说明见[模型选择研究记录](../evidence-library-ZH.md#source-notes)。本项目没有执行这些报告中出现的命令或解决方案。
 
 ### 怎样使用真实报告，而不把它变成传说
 
@@ -269,7 +269,7 @@ comparable | not_comparable_reason | raw_evidence
 | 官方模型定位、推理指导、本地默认值、Cloud 模型边界和弃用说明 | [Codex models](https://learn.chatgpt.com/docs/models.md) | 2026-08-11 | 访问当日的官方文档；不是账户级可用性证明或基准测试 | `facts-maintainer` / 2026-09-11 |
 | CLI 工作面与本地仓库工作流 | [Codex CLI](https://learn.chatgpt.com/docs/cli.md) | 2026-08-11 | 官方 CLI 文档；不是本会话的实际配置 | `facts-maintainer` / 2026-09-11 |
 | Cloud 环境、设置、日志和审查边界 | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-11 | 官方 Cloud 文档；设置不等于 Agent 阶段完成 | `facts-maintainer` / 2026-09-11 |
-| 公开模型/提供商、容量和长等待症状 | [现场问题记录](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) | 2026-08-11 | 用户报告和项目指导；没有本地复现或官方根因主张 | `curriculum-maintainer` / 2026-09-11 |
+| 公开模型/提供商、容量和长等待症状 | [现场问题记录](../evidence-library-ZH.md#source-notes) | 2026-08-11 | 用户报告和项目指导；没有本地复现或官方根因主张 | `curriculum-maintainer` / 2026-09-11 |
 | 固定任务比较方法 | [中文课程目录中的评测章节状态](../table-of-contents-ZH.md) 与[版本化 fixture（中文说明）](../../evals/candidates/three-task-smoke-v1/README-ZH.md) | 2026-08-14 | Playbook 方法和本地 fixture 验证器；固定数据仍为共享材料，且没有任何已完成模型运行 | `evaluation-maintainer` / 2026-09-11 |
 
 模型 ID、工作面矩阵、价格、容量、配置语法、提供商支持、推理控制和弃用通知都可能变化。发生变化时，先刷新第一方来源，再更新事实影响登记、研究记录、本章、受影响评测 fixture 和状态源。将官方定位、用户症状与本地运行时证据写在不同句子中。

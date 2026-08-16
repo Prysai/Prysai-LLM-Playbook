@@ -40,8 +40,8 @@
 프로토콜은 이 프로젝트의 독자적인 운영 종합입니다. 생성된 답변과 검증된 작업 결과는
 다른 주장이므로 중단, 복구, 증거 필드를 명시적으로 더합니다.
 
-출처별 범위와 접근 날짜는 [Codex 공식 사실 기준선](../../docs/research/chapter-03-official-baseline-2026-08-10.md)과
-[실무용 프롬프트 패턴 연구](../../docs/research/prompt-patterns-for-real-work-2026-08-10.md)를
+출처별 범위와 접근 날짜는 [Codex 공식 사실 기준선](../evidence-library-KO.md#source-notes)과
+[실무용 프롬프트 패턴 연구](../evidence-library-KO.md#source-notes)를
 확인하세요.
 
 <a id="core-task-contract"></a>
@@ -348,7 +348,7 @@ Skill, 복사한 runbook, 성공한 로컬 build가 이 필드를 조용히 채�
 
 기준, 첫 시도, 사용한 힌트, 교정 시도, 오류 장부, 지연 복습, 미지 과제, 채점 기준을
 보관하세요. 매끄러운 세션 하나가 뒷받침하는 것은 “오늘 연습했다”뿐이며, 유창함, 장기 유지,
-전이를 증명하지 않습니다. 후보 방법과 출처 경계는 [LLM 지원 학습의 지속성 연구](../../docs/research/durable-llm-assisted-learning-and-skill-candidates-2026-08-12.md)에 있습니다.
+전이를 증명하지 않습니다. 후보 방법과 출처 경계는 [LLM 지원 학습의 지속성 연구](../evidence-library-KO.md#source-notes)에 있습니다.
 
 ## 실제 세계의 실패 패턴
 
@@ -358,8 +358,8 @@ Skill, 복사한 runbook, 성공한 로컬 build가 이 필드를 조용히 채�
 대상 계정, 조직, 저장소, 커넥터가 허가되었다는 증거가 아닙니다. 커뮤니티 해결책은 다른
 버전이나 플랫폼에서 안전하지 않거나 무효일 수 있습니다.
 
-이것은 사용자 보고이며 보편적 제품 근본 원인이 아닙니다. [현장 문제 색인](../../docs/research/field-problems-index-2026-08-10.md)과
-[코딩 Agent 사례 보고](../../docs/research/field-problems-coding-agents-2026-08-10.md)를
+이것은 사용자 보고이며 보편적 제품 근본 원인이 아닙니다. [현장 문제 색인](../evidence-library-KO.md#source-notes)과
+[코딩 Agent 사례 보고](../evidence-library-KO.md#source-notes)를
 사용해 증상과 환경을 기록하고, 가장 작은 안전 확인을 하고, 경계에서 멈추며, 증거가 지지하는
 것만 주장하는 방법을 가르치세요.
 
@@ -440,10 +440,10 @@ Codex에는 확인 질문과 프로토콜 초안만 요구합니다. 편집, ins
 안정적인 방법은 독자적인 종합입니다. 제품 동작, 권한 이름, UI 제어, 명령 문법, 모델 이름,
 외부 서비스 동작은 변합니다. 현재 작업에 쓰기 전 일차 출처를 다시 확인하세요.
 
-- [OpenAI/Codex 공식 사실 기준선](../../docs/research/chapter-03-official-baseline-2026-08-10.md)
-- [실무용 프롬프트 패턴](../../docs/research/prompt-patterns-for-real-work-2026-08-10.md)
-- [코딩 Agent 현장 사례](../../docs/research/field-problems-coding-agents-2026-08-10.md)
-- [실제 세계 문제 색인](../../docs/research/field-problems-index-2026-08-10.md)
+- [OpenAI/Codex 공식 사실 기준선](../evidence-library-KO.md#source-notes)
+- [실무용 프롬프트 패턴](../evidence-library-KO.md#source-notes)
+- [코딩 Agent 현장 사례](../evidence-library-KO.md#source-notes)
+- [실제 세계 문제 색인](../evidence-library-KO.md#source-notes)
 
 **상태:** `candidate`. 장 구조와 출처 기록은 있지만 부속 Lab과 독립 학습자 실행은
 `draft`/`not_run`입니다. 다음 한국어 단원은 다른 언어 페이지가 아닌 [한국어 목차](../table-of-contents-KO.md)에서 고르세요.

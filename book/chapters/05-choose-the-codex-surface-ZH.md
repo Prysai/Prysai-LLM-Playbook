@@ -59,16 +59,16 @@ CLI、IDE、桌面端和网页端不是 Local、Worktree、Cloud 的可互换别
 | Cloud setup 看似成功，任务却不能使用秘密或网络 | 依赖安装或出现 setup 标记，随后 agent 阶段无法访问服务 | setup 网络、秘密和 agent 网络是同一种能力 | 分开记录 setup 日志、agent 日志、网络阶段、秘密生命周期和结果 diff |
 | GitHub 或其他 host 被 allowlist 拦截 | 请求在代理、沙盒或企业网络策略下失败 | 开放全部网络是正确或获准的修复 | 在申请狭窄变更前，区分沙盒策略、代理 allowlist、DNS/TLS 和企业防火墙假设 |
 
-阅读[现场问题索引](../../docs/research/field-problems-index-2026-08-10.md)、
-[工作面研究](../../docs/research/field-problems-surface-2026-08-10.md)和
-[论坛研究](../../docs/research/field-problems-forums-2026-08-10.md)，获取原始链接和日期。
+阅读[现场问题索引](../evidence-library-ZH.md#source-notes)、
+[工作面研究](../evidence-library-ZH.md#source-notes)和
+[论坛研究](../evidence-library-ZH.md#source-notes)，获取原始链接和日期。
 研究记录刻意写明本项目没有复现什么。
 
 ### 现场案例：第一次写入前先核验目标
 
 ![将现场信号映射到最小安全响应](../../assets/teaching/field-signal-to-safe-degradation-red-black.svg)
 
-有边界的案例 [FC-WORKTREE-01](../../docs/research/field-case-worktree-target-mismatch-2026-08-12.md)
+有边界的案例 [FC-WORKTREE-01](../evidence-library-ZH.md#source-notes)
 把 issue #34352 中带日期的公开报告变成目标身份练习。2026-08-12 的研究快照没有记录到
 公开维护者对根因的确认，本项目也没有复现该报告。它的价值更窄：每次从 Local 交接到
 Worktree 后，在编辑、分支操作、构建或测试前，对比预期 checkout 与 shell `cwd`、Git 顶层、
@@ -333,8 +333,8 @@ decision | diff_path | check_output | reviewer
 | Local 权限与批准层不同 | https://learn.chatgpt.com/docs/agent-approvals-security.md | 2026-08-09 | 官方安全模型；不证明本会话的实际配置 |
 | CLI、IDE、Cloud 与模型支持随工作面而不同 | https://learn.chatgpt.com/docs/codex/cli.md; https://learn.chatgpt.com/docs/codex/ide.md; https://learn.chatgpt.com/docs/cloud.md; https://learn.chatgpt.com/docs/models.md | 2026-08-09 | 官方产品页；账户、工作区、灰度和版本会影响可用性 |
 
-[官方事实卡](../../docs/research/openai-codex-facts-refresh-2026-08-09.md)提供项目中带日期的摘要与限制。
-[现场问题研究](../../docs/research/field-problems-codex.md)及相关工作面/论坛记录提供公开用户报告；
+[官方事实卡](../evidence-library-ZH.md#source-notes)提供项目中带日期的摘要与限制。
+[现场问题研究](../evidence-library-ZH.md#source-notes)及相关工作面/论坛记录提供公开用户报告；
 它们都不能替代当前账户级或运行时观察。
 
 ## 本章证据边界

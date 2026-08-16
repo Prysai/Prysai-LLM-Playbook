@@ -29,9 +29,9 @@ Agent 可以为错误、超出范围、从未执行，或在错误环境检查�
 
 ## 现实入口：重新取得控制，不等于证明结果正确
 
-项目的 [Codex 现场研究](../../docs/research/field-problems-codex.md) 记录了容量中断、
+项目的 [Codex 现场研究](../evidence-library-ZH.md#source-notes) 记录了容量中断、
 命令持续停在 Working，以及验证扩大为持久重装的报告。后续
-[跟进研究](../../docs/research/field-problems-follow-up-2026-08-10.md)还记录了会话可用
+[跟进研究](../evidence-library-ZH.md#source-notes)还记录了会话可用
 但目标工具未注册，以及长请求最终报错并重试的情形。
 
 这些报告有用，是因为它们暴露了工作流可观察的断点；但它们不建立普遍服务原因、
@@ -58,13 +58,13 @@ Agent 可以为错误、超出范围、从未执行，或在错误环境检查�
 | 非 BMP 字符粘贴到 TUI 编辑框后消失（[#37578](https://github.com/openai/codex/issues/37578)） | 编辑框回显不等于输入完整性 | 在发送有后果的请求前，用无害夹具比较预期与实际接收字符串 | 编辑、提交或发送未被保留的输入 |
 | 很长的检查点引用让 Windows Git 报 bad ref 或 Filename too long（[#37559](https://github.com/openai/codex/issues/37559)） | 内部 Agent 状态不等于普通项目状态 | 在获批诊断范围内记录 git status、git show-ref、git fsck --full、git worktree list 与精确 ref 路径 | 未备份、未授权就删除 .git 材料、改 Git 配置、抓取或修复引用 |
 
-详见[Windows 输入与证据现场问题](../../docs/research/field-problems-input-and-evidence-p3-2026-08-11.md)。
+详见[Windows 输入与证据现场问题](../evidence-library-ZH.md#source-notes)。
 实用规则是：**重试前先捕获最小持久产物**——输出文件、收到输入的比较、diff、哈希、
 命令日志或脱敏交接。社区变通方法可以帮助分诊，却不是官方修复，也不授权持久环境改动。
 
 ### 现场案例：命令完成，声明仍可能不可审查
 
-有界案例 [FC-EVIDENCE-01](../../docs/research/field-case-hidden-verification-output-2026-08-12.md)
+有界案例 [FC-EVIDENCE-01](../evidence-library-ZH.md#source-notes)
 使用 issue #34951 区分执行与审计证据。该 issue 仍公开、没有维护者诊断，也未在此复现。
 若必需输出隐藏或缺失，只保留已经授权的退出码、事件、diff、产物、哈希或回读证据；
 把审计声明标为 unverified，并写明缺失通道。不要只为找回呈现输出而重跑有后果动作、
@@ -245,7 +245,7 @@ HTTP 状态、长上下文、网络等待、模型推理或上游服务故障可
 公开报告描述了可见的 Computer Use 和 node_repl 工作面，其只读 list_apps() 或
 list_windows() 调用会出现 spawn EPERM；浏览器弹窗与 DOM 可读，但点击超时；以及
 自定义提供商可接受配置，却未必暴露预期的多 Agent 能力。这些是 2026-08-10 用户报告，
-不是本地复现或官方根因。参见[网页现场研究](../../docs/research/web-field-problems-2026-08-10.md)
+不是本地复现或官方根因。参见[网页现场研究](../evidence-library-ZH.md#source-notes)
 中的 WF-08—WF-11。这个命名产品例子不属于上面的通用所有者范围。
 
 ## 实验：审计一条完成声明
@@ -290,17 +290,17 @@ list_windows() 调用会出现 spawn EPERM；浏览器弹窗与 DOM 可读，但
 ## 来源与维护边界
 
 证据纪律和状态词汇是稳定方法；命令、入口、模型行为、提供商行为和公开 issue 状态是
-易变事实。具体操作应对照[评测框架](../../docs/quality/evaluation-framework.md)、
-[官方基线](../../docs/research/openai-codex-baseline.md)和
-[网页现场研究](../../docs/research/web-field-problems-2026-08-10.md)。
+易变事实。具体操作应对照[评测框架](../evidence-library-ZH.md#method-and-status)、
+[官方基线](../evidence-library-ZH.md#source-notes)和
+[网页现场研究](../evidence-library-ZH.md#source-notes)。
 
 | 事实或边界 | 来源 | 访问日期 | 适用范围 | 负责人 / 下次复核 |
 |---|---|---:|---|---|
-| 容量中断会让依赖任务状态不明 | [FP-09 / issue #33865](../../docs/research/field-problems-codex.md) | 2026-08-09 | 公开用户报告；没有本地复现或普遍队列结论 | curriculum-maintainer / 2026-09-09 |
-| 长时间验证会让完成状态不明 | [FP-10 / issue #34325](../../docs/research/field-problems-codex.md) | 2026-08-09 | 公开用户报告；根因和版本范围未知 | curriculum-maintainer / 2026-09-09 |
-| 认证、工具可用性、执行与外部结果是独立声明 | [FP-01—FP-02](../../docs/research/field-problems-codex.md) 与 [WF-08—WF-11](../../docs/research/web-field-problems-2026-08-10.md) | 2026-08-09 / 2026-08-10 | 报告症状的证据纪律；不是官方修复建议 | curriculum-maintainer / 2026-09-09 |
-| 验证不得静默扩大为安装或持久环境改动 | [FP-11 / issue #37677](../../docs/research/field-problems-codex.md) | 2026-08-09 | 公开用户报告；不是官方策略或本地复现 | curriculum-maintainer / 2026-09-09 |
-| Agent 交接、工具注册、工作区权限和重试可能在不同阶段失败 | [FUP-01—FUP-05](../../docs/research/field-problems-follow-up-2026-08-10.md) | 2026-08-10 | 公开报告；账户、版本、提供商和本地运行时差异仍重要 | curriculum-maintainer / 2026-09-09 |
+| 容量中断会让依赖任务状态不明 | [FP-09 / issue #33865](../evidence-library-ZH.md#source-notes) | 2026-08-09 | 公开用户报告；没有本地复现或普遍队列结论 | curriculum-maintainer / 2026-09-09 |
+| 长时间验证会让完成状态不明 | [FP-10 / issue #34325](../evidence-library-ZH.md#source-notes) | 2026-08-09 | 公开用户报告；根因和版本范围未知 | curriculum-maintainer / 2026-09-09 |
+| 认证、工具可用性、执行与外部结果是独立声明 | [FP-01—FP-02](../evidence-library-ZH.md#source-notes) 与 [WF-08—WF-11](../evidence-library-ZH.md#source-notes) | 2026-08-09 / 2026-08-10 | 报告症状的证据纪律；不是官方修复建议 | curriculum-maintainer / 2026-09-09 |
+| 验证不得静默扩大为安装或持久环境改动 | [FP-11 / issue #37677](../evidence-library-ZH.md#source-notes) | 2026-08-09 | 公开用户报告；不是官方策略或本地复现 | curriculum-maintainer / 2026-09-09 |
+| Agent 交接、工具注册、工作区权限和重试可能在不同阶段失败 | [FUP-01—FUP-05](../evidence-library-ZH.md#source-notes) | 2026-08-10 | 公开报告；账户、版本、提供商和本地运行时差异仍重要 | curriculum-maintainer / 2026-09-09 |
 
 本章用这些报告来教授证据在哪里中断；不会把一条 issue、变通方法、标签或社区回答变成
 产品保证。

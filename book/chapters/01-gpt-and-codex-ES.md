@@ -68,9 +68,9 @@ flecha necesita su propia evidencia.
 | Agent | Un bucle observable de varios pasos en torno a la observación, la acción, el feedback, los reintentos y la parada | Acceso a razonamientos ocultos o permiso para reintentar indefinidamente |
 
 La terminología estable del proyecto se define en
-[CONTEXT.md](../../CONTEXT.md). Los detalles del producto, como los nombres de
+[CONTEXT.md](../evidence-library-ES.md#core-terms). Los detalles del producto, como los nombres de
 los modelos, la sintaxis de invocación y los permisos predeterminados, son
-hechos volátiles; utiliza la [línea base oficial](../../docs/research/openai-codex-baseline.md)
+hechos volátiles; utiliza la [línea base oficial](../evidence-library-ES.md#source-notes)
 fechada y vuelve a comprobar la documentación de primera parte enlazada antes
 de depender de ellos.
 
@@ -184,7 +184,7 @@ Por ejemplo, `{ "status": "approved" }` puede ser JSON válido y satisfacer un
 esquema aunque la aprobación pertenezca al proyecto equivocado. Conserva por
 separado como evidencia el resultado bruto del modelo, el resultado del
 esquema, el resultado de las reglas de negocio y la verificación externa. La
-[investigación sobre los mecanismos de los LLM](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md#机制卡-d-structured-output-把语法错误变成语义错误)
+[investigación sobre los mecanismos de los LLM](../evidence-library-ES.md#source-notes)
 lo registra como un límite didáctico, no como una afirmación de que todos los
 proveedores utilicen la misma implementación.
 
@@ -214,7 +214,7 @@ identificar la fuente de los datos, limitar el ámbito de la herramienta y
 conservar en el registro el intento de acción.
 
 Estas tres trampas se tratan con fuentes específicas de cada proveedor y
-experimentos de bajo riesgo en el [análisis detallado de mecanismos](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md).
+experimentos de bajo riesgo en el [análisis detallado de mecanismos](../evidence-library-ES.md#source-notes).
 
 ## Qué significa realmente un bucle de Agent
 
@@ -270,7 +270,7 @@ La respuesta segura más pequeña es:
 4. reanudar desde un checkpoint identificado o iniciar una ejecución limpia
    solo después de decidir qué estado es el autoritativo.
 
-Etiquetas de fuente y evidencia: [FP-09 en la investigación de campo](../../docs/research/field-problems-codex.md#fp-09-模型容量错误中断任务，并可能让排队后续任务接在半成品上).
+Etiquetas de fuente y evidencia: [FP-09 en la investigación de campo](../evidence-library-ES.md#source-notes).
 
 ### Caso FP-10: «Working» no demuestra que haya progreso
 
@@ -286,7 +286,7 @@ el punto de interrupción. Después, inspecciona el diff y ejecuta de forma
 independiente una comprobación específica si es seguro hacerlo. No conviertas
 «la interfaz sigue diciendo Working» en «el formateador terminó».
 
-Etiquetas de fuente y evidencia: [FP-10 en la investigación de campo](../../docs/research/field-problems-codex.md#fp-10格式化验证命令让-windows-cli-agent-长时间停在-working).
+Etiquetas de fuente y evidencia: [FP-10 en la investigación de campo](../evidence-library-ES.md#source-notes).
 
 ### Caso FP-11: la validación puede ampliar la tarea por accidente
 
@@ -300,7 +300,7 @@ Si una comprobación necesita un restablecimiento destructivo, una llamada de
 red, la reinstalación de un paquete o una credencial, detente y solicita una
 nueva decisión. «La comprobación falló» no concede permiso para escalar.
 
-Consulta el [índice de problemas de campo](../../docs/research/field-problems-index-2026-08-10.md)
+Consulta el [índice de problemas de campo](../evidence-library-ES.md#source-notes)
 para ver la clasificación de la evidencia y las correspondencias con capítulos
 y laboratorios relacionados.
 
@@ -456,10 +456,10 @@ cada instrucción que contiene en una autoridad.
 ## Fuentes y límite de mantenimiento
 
 - [Artículo sobre la arquitectura Transformer (Vaswani et al., 2017)](https://arxiv.org/abs/1706.03762) — referencia de investigación primaria sobre el modelo de secuencia basado en atención; consultado el 2026-08-10.
-- [Línea base de hechos oficiales de OpenAI Codex](../../docs/research/openai-codex-baseline.md) — registro fechado del proyecto sobre hechos volátiles del producto y URL oficiales; comprobado el 2026-08-09.
-- [Investigación sobre problemas reales de usuarios de Codex](../../docs/research/field-problems-codex.md) — informes públicos y etiquetas de evidencia; comprobado el 2026-08-09; no es un informe de reproducción local.
-- [Análisis detallado de mecanismos de los LLM](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md) — fichas de mecanismos, experimentos y etiquetas de hecho/inferencia/incógnita respaldados por fuentes oficiales; comprobado el 2026-08-10.
-- [Terminología del proyecto](../../CONTEXT.md) — definiciones estables de GPT, Codex, herramientas, Skills, Agents, evidencia y estado.
+- [Línea base de hechos oficiales de OpenAI Codex](../evidence-library-ES.md#source-notes) — registro fechado del proyecto sobre hechos volátiles del producto y URL oficiales; comprobado el 2026-08-09.
+- [Investigación sobre problemas reales de usuarios de Codex](../evidence-library-ES.md#source-notes) — informes públicos y etiquetas de evidencia; comprobado el 2026-08-09; no es un informe de reproducción local.
+- [Análisis detallado de mecanismos de los LLM](../evidence-library-ES.md#source-notes) — fichas de mecanismos, experimentos y etiquetas de hecho/inferencia/incógnita respaldados por fuentes oficiales; comprobado el 2026-08-10.
+- [Terminología del proyecto](../evidence-library-ES.md#core-terms) — definiciones estables de GPT, Codex, herramientas, Skills, Agents, evidencia y estado.
 
 La estructura explicativa del capítulo es original de este proyecto. Los
 nombres de productos, la sintaxis de invocación, la disponibilidad de modelos,

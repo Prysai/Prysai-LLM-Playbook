@@ -28,7 +28,7 @@ template, document는 서로 다른 문제를 풉니다. 이들을 바꿔 쓸 �
 
 ## 실제 진입점: 발견은 작업 시작 전에도 실패한다
 
-[Codex 현장 조사](../../docs/research/field-problems-codex.md)는 공개 보고를 기록합니다.
+[Codex 현장 조사](../evidence-library-KO.md#source-notes)는 공개 보고를 기록합니다.
 이는 증상이지 공식 원인 분석이나 로컬 재현이 아닙니다.
 
 | 공개 증상 | 보고자가 관찰한 것 | **증명하지 않는 것** | 첫 안전 대응 |
@@ -251,8 +251,8 @@ script가 되어야 할 결정적 변환을 찾습니다.
 | Plugin composition, surface, install, connector authentication, approval | [Plugins](https://learn.chatgpt.com/docs/plugins.md) | 2026-08-09 | account/organization별 access 변경 가능 |
 | MCP server, tool/resource/prompt, allow/deny configuration | [MCP](https://learn.chatgpt.com/docs/extend/mcp.md) | 2026-08-09 | authentication, tool, policy는 별도 review 필요 |
 | connector/MCP action의 approval boundary | [Agent approvals and security](https://learn.chatgpt.com/docs/agent-approvals-security.md) | 2026-08-09 | 이 repository의 runtime configuration 아님 |
-| symbolic link와 explicit invocation discovery symptom | [Codex field research](../../docs/research/field-problems-codex.md) | 2026-08-09 | 공개 보고, 재현 또는 공식 root cause 없음 |
-| candidate archive inventory와 license signal | [Skill candidate catalog](../../docs/sources/skill-candidate-catalog.md) | 2026-08-09 | project inventory, 외부 Skill 설치 승인 아님 |
+| symbolic link와 explicit invocation discovery symptom | [Codex field research](../evidence-library-KO.md#source-notes) | 2026-08-09 | 공개 보고, 재현 또는 공식 root cause 없음 |
+| candidate archive inventory와 license signal | [Skill candidate catalog](../evidence-library-KO.md#source-notes) | 2026-08-09 | project inventory, 외부 Skill 설치 승인 아님 |
 
 Skill, Plugin, connector, MCP, manifest, authentication, invocation 세부 사항은 바뀝니다. first-party
 record를 먼저 갱신하고 fact impact registry, 이 장, Labs, Skills, fixtures, site route를 검토하세요.

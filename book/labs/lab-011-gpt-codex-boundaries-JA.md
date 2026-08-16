@@ -143,7 +143,7 @@ transfer_limitations: "この実験で学ぶのは観測可能な境界である
 
 重要なのは、失敗した層を正確に名付けることです。スキーマの結果、検索のヒット、目に見える文字列は、
 意味的な正しさ、完全なコンテキスト、権限の証拠に自動的になるわけではありません。出典に基づく境界については、
-[LLM メカニズム研究](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md)を参照してください。
+[LLM メカニズム研究](../evidence-library-JA.md#source-notes)を参照してください。
 この実験では、実際のプロバイダーを使いません。
 
 ## パート4：停止規則を実践する
@@ -161,7 +161,7 @@ transfer_limitations: "この実験で学ぶのは観測可能な境界である
 適切な復旧とは通常、現在の状態を確認し、記録を保存し、次のチェックを絞り込むか、権限を求めることです。
 ワークスペースを消去したり、依存関係を強制インストールしたり、次のキュー済み指示を送ったりすることではありません。
 
-これらの失敗の形は、[Codex の現場問題に関する調査](../../docs/research/field-problems-codex.md)の
+これらの失敗の形は、[Codex の現場問題に関する調査](../evidence-library-JA.md#source-notes)の
 公開報告に基づいています。これはユーザーによる証拠であり、公式な根本原因の確認ではありません。また、
 この実験はローカルで再現したとは主張しません。
 
@@ -210,10 +210,10 @@ transfer_limitations: "この実験で学ぶのは観測可能な境界である
 
 ## 出典と保守
 
-- [プロジェクト用語](../../CONTEXT.md) — この実験で使う安定した境界。
-- [OpenAI Codex 公式事実の基準線](../../docs/research/openai-codex-baseline.md) — 日付付きの製品事実と権限境界。2026-08-09 確認。
-- [Codex の実利用者問題に関する調査](../../docs/research/field-problems-codex.md) — 公開報告、出典リンク、証拠ラベル。2026-08-09 確認。
-- [LLM メカニズムの詳細研究](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md) — 公式情報源に基づくメカニズムカードと失敗実験。2026-08-10 確認。
+- [プロジェクト用語](../evidence-library-JA.md#core-terms) — この実験で使う安定した境界。
+- [OpenAI Codex 公式事実の基準線](../evidence-library-JA.md#source-notes) — 日付付きの製品事実と権限境界。2026-08-09 確認。
+- [Codex の実利用者問題に関する調査](../evidence-library-JA.md#source-notes) — 公開報告、出典リンク、証拠ラベル。2026-08-09 確認。
+- [LLM メカニズムの詳細研究](../evidence-library-JA.md#source-notes) — 公式情報源に基づくメカニズムカードと失敗実験。2026-08-10 確認。
 - [第1章 — Codex を信頼する前に GPT を理解する](../chapters/01-gpt-and-codex-JA.md) — この実験の概念と現場事例のコンテキスト。
 
 これは独自に作成された実験です。外部のプロンプト、ログ、認証情報、Skill の指示をコピーしていません。

@@ -29,7 +29,7 @@ connector、script、template、document は別の問題を解きます。交換
 
 ## 現実の入口：発見はタスク開始前に失敗し得る
 
-[Codex のフィールド調査](../../docs/research/field-problems-codex.md)には公開報告があります。
+[Codex のフィールド調査](../evidence-library-JA.md#source-notes)には公開報告があります。
 これは症状であり、公式の原因説明でもローカル再現でもありません。
 
 | 公開症状 | 報告者の観測 | **証明しない**こと | 最初の安全な対応 |
@@ -255,8 +255,8 @@ connection、script にすべき決定的変換を特定します。
 | Plugin の composition、surface、install、connector authentication、approval | [Plugins](https://learn.chatgpt.com/docs/plugins.md) | 2026-08-09 | account/organization により access は変わる |
 | MCP server、tool/resource/prompt、allow/deny configuration | [MCP](https://learn.chatgpt.com/docs/extend/mcp.md) | 2026-08-09 | authentication、tool、policy は別 review が必要 |
 | connector/MCP action の approval boundary | [Agent approvals and security](https://learn.chatgpt.com/docs/agent-approvals-security.md) | 2026-08-09 | この repository の runtime configuration ではない |
-| symbolic link と explicit invocation の discovery symptom | [Codex field research](../../docs/research/field-problems-codex.md) | 2026-08-09 | 公開報告。再現または公式 root cause なし |
-| candidate archive inventory と license signal | [Skill candidate catalog](../../docs/sources/skill-candidate-catalog.md) | 2026-08-09 | project inventory。外部 Skill の install 承認ではない |
+| symbolic link と explicit invocation の discovery symptom | [Codex field research](../evidence-library-JA.md#source-notes) | 2026-08-09 | 公開報告。再現または公式 root cause なし |
+| candidate archive inventory と license signal | [Skill candidate catalog](../evidence-library-JA.md#source-notes) | 2026-08-09 | project inventory。外部 Skill の install 承認ではない |
 
 Skill、Plugin、connector、MCP、manifest、authentication、invocation の詳細は変わります。まず
 first-party record を更新し、それから fact impact registry、本章、Lab、Skill、fixture、site route を

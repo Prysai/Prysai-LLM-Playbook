@@ -24,7 +24,7 @@ Al terminar podrás:
 
 ## Entrada desde problemas reales
 
-Los informes públicos resumidos en la [investigación de problemas de Codex](../../docs/research/field-problems-codex.md)
+Los informes públicos resumidos en la [investigación de problemas de Codex](../evidence-library-ES.md#source-notes)
 repiten un error de clasificación: el navegador muestra autenticación, la CLI
 aparece conectada o un directorio permite escribir, y la persona infiere que
 la siguiente acción está autorizada y será verificada. Son afirmaciones
@@ -87,7 +87,7 @@ Registra por separado estas capas:
 | task_authorization | ¿Qué pidió exactamente el usuario? | Que un ajuste del producto conceda acciones más amplias |
 
 Los detalles oficiales de sandbox y aprobación cambian por superficie y versión.
-Consulta la [línea base oficial de Codex](../../docs/research/openai-codex-baseline.md)
+Consulta la [línea base oficial de Codex](../evidence-library-ES.md#source-notes)
 para los hechos volátiles, pero no la uses como prueba de la configuración de
 esta sesión.
 
@@ -240,7 +240,7 @@ riesgo, dueño, evidencia y condición de parada.
 
 El modelo de contexto, la confianza y la disciplina de evidencia son métodos
 estables. Los modos de permiso, sandbox, herramientas, conectores y superficies
-de Codex son hechos volátiles. Revisa la [línea base oficial](../../docs/research/openai-codex-baseline.md),
+de Codex son hechos volátiles. Revisa la [línea base oficial](../evidence-library-ES.md#source-notes),
 anota URL, fecha, alcance, responsable y próxima revisión, y no confundas la
 documentación con evidencia de ejecución local.
 

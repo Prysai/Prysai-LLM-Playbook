@@ -78,7 +78,7 @@ C1 は別 record にし、修正後の B1 を新しい baseline にしません�
 
 - [学習実践契約](../guides/learning-practice-contract-JA.md) — evidence と answer leakage の規則。
 - [初心者練習パック](../communication-clinic-JA.md) — 三段階の言語練習ルート。
-- [遅延チェックカードプール](../../docs/quality/lab-018-delayed-card-pool-v1.md) — 本プロジェクト作成の事前宣言 card と採点手順。
+- [遅延チェックカードプール](../evidence-library-JA.md#method-and-status) — 本プロジェクト作成の事前宣言 card と採点手順。
 
 調査は想起、feedback、遅延確認、transfer の設計判断を支えます。本 Lab が学習を改善することや、どの model/platform も有効な教師であることは証明しません。状態は `draft / not_run` のままです。
 

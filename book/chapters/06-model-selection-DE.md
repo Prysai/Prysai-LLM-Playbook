@@ -32,7 +32,7 @@ erzeugte; sie begründet keine allgemeine Rangliste.
 
 ## Öffentliche Berichte: Symptome statt Zauberlösungen
 
-Die [Codex-Feldrecherche](../../docs/research/field-problems-codex.md) sammelt
+Die [Codex-Feldrecherche](../evidence-library-DE.md#source-notes) sammelt
 öffentliche Issues und Diskussionen. Sie enthält Symptome, keine offizielle
 Diagnose und keine lokale Reproduktion.
 
@@ -42,7 +42,7 @@ Diagnose und keine lokale Reproduktion.
 | Modell ist ausgelastet | Task stoppt vor Ende; der nächste Versuch kann Teilzustand erben | Schlechte Modellqualität oder dass Wiederholung den ersten Lauf abschließt | Checkpoint, Diff, Logs und Checks sichern; Zustand vor Fortsetzung einordnen |
 | Befehl bleibt auf `Working` | Die Oberfläche zeigt Aktivität ohne überprüfbare Ausgabe | Dass Formatter, Agent oder Modell korrekt weiterarbeiten | Zeitgrenze anwenden, sicher abbrechen, Worktree prüfen und genau einen begrenzten Check ausführen |
 
-Der [Datensatz zur Modellauswahl](../../docs/research/codex-model-selection-official-facts-2026-08-11.md)
+Der [Datensatz zur Modellauswahl](../evidence-library-DE.md#source-notes)
 enthält Links, Daten und Grenzen. Trenne bei jedem Bericht: Aussage einer Person,
 unabhängige Meldung, offizielle Bestätigung und lokale Reproduktion durch dieses
 Playbook. Ein Bericht ohne Reproduktion wird nicht zur garantierten Lösung.
@@ -214,7 +214,7 @@ oder eine einzelne Demo ersetzen keine Evaluation.
 | Modellpositionierung, Reasoning und Grenzen | [Codex models](https://learn.chatgpt.com/docs/models.md) | 2026-08-11 |
 | CLI und lokaler Repository-Ablauf | [Codex CLI](https://learn.chatgpt.com/docs/cli.md) | 2026-08-11 |
 | Cloud-Umgebung und Review | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-11 |
-| Öffentliche Symptome zu Modell/Provider/Kapazität | [Feldakte](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) | 2026-08-11 |
+| Öffentliche Symptome zu Modell/Provider/Kapazität | [Feldakte](../evidence-library-DE.md#source-notes) | 2026-08-11 |
 
 Modell-IDs, Preise, Kapazität, Provider-Support, Syntax und Controls können sich
 ändern. Aktualisiere zuerst Primärquellen und bewahre offizielle Positionierung,
