@@ -61,6 +61,21 @@ recovery: "borrar registros temporales y restaurar la copia limpia"
 
 En `verified` solo van comprobaciones reales. Planes, predicciones y «funcionó antes» pertenecen a `not_verified` o `blocked_by`; así nadie confunde la entrega con una declaración de finalización.
 
+## Empieza en diez minutos: deja una tarjeta para la próxima tarea
+
+No necesitas construir primero un «segundo cerebro». Antes de pedir al modelo que edite documentación, ordene fuentes o revise código, dedica tres minutos a esta tarjeta y dos más al terminar. Es más fácil de revisar y de entregar que un historial de chat interminable.
+
+```text
+Objetivo: ¿qué resultado concreto necesito?
+Entrada: ¿qué archivos, textos o enlaces están permitidos?
+Límites: ¿qué no puede cambiarse y qué requiere preguntar antes?
+Aceptación: ¿qué archivo, prueba, página o registro lo comprobará?
+Resultado: ¿qué cambió realmente, qué comandos corrieron y qué evidencia falta?
+Siguiente paso: ¿quién continúa y bajo qué condición?
+```
+
+«Mejora el README» aún no es una tarea transferible. Cámbialo por «reescribe solo los tres primeros párrafos de `README.md`; no cambies licencia, enlaces ni afirmaciones factuales; comprueba enlaces locales; deja los hechos de producto sin revisar como pendientes». Así cualquiera sabe qué puede hacer el modelo, qué no y qué debe quedar al final. Las sugerencias del modelo van primero a «por verificar», no directamente a «resultado».
+
 ## Extensión: detectar primero información obsoleta
 
 Antes de una ejecución A/B, añade al `project-map` un comando antiguo y un directorio que ya no existe, sin ejecutarlos. Pide anotar fuente, última fecha de confirmación, estado actual y forma segura de comprobarlo. La respuesta correcta no es «probar otra vez»: inspecciona el estado autorizado, marca `stale` y conserva la incertidumbre.

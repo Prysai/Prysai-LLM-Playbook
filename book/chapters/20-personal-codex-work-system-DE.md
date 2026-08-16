@@ -61,6 +61,21 @@ recovery: "temporäre Records löschen und saubere Kopie wiederherstellen"
 
 In `verified` steht nur, was wirklich geprüft wurde. Pläne, Vorhersagen und „hat früher funktioniert“ gehören nach `not_verified` oder `blocked_by`. So verwechselt die nächste Person die Übergabe nicht mit einer Fertigmeldung.
 
+## In zehn Minuten starten: eine Karte für die nächste Aufgabe
+
+Du musst nicht zuerst ein kompliziertes „zweites Gehirn“ bauen. Bevor du das Modell Dokumentation ändern, Quellen ordnen oder Code prüfen lässt, füllst du diese Karte in drei Minuten aus und ergänzt sie nach der Arbeit in zwei weiteren Minuten. Sie ist leichter zu prüfen und zu übergeben als ein langer Chatverlauf.
+
+```text
+Ziel: Welches konkrete Ergebnis wird benötigt?
+Input: Welche Dateien, Texte oder Links dürfen verwendet werden?
+Grenzen: Was darf nicht geändert werden, und wofür muss vorher gefragt werden?
+Abnahme: Welche Datei, welcher Test, welche Seite oder welcher Record prüft das Ergebnis?
+Ergebnis: Was änderte sich wirklich, welche Befehle liefen, welche Evidenz fehlt?
+Nächster Schritt: Wer macht unter welcher Bedingung weiter?
+```
+
+„README verbessern“ ist noch keine übergebbare Aufgabe. Formuliere stattdessen: „Nur die ersten drei Absätze von `README.md` umschreiben; Lizenz, Links und Faktenbehauptungen nicht ändern; lokale Links prüfen; ungeprüfte Produktfakten als offen markieren.“ Dann ist klar, was das Modell tun darf, was nicht, und was am Ende bleiben muss. Vorschläge des Modells gehören zunächst nach „zu prüfen“, nicht direkt nach „Ergebnis“.
+
 ## Ergänzung zur Übung: veraltete Information zuerst erkennen
 
 Lege vor einem A/B-Lauf einen alten Befehl und ein nicht mehr vorhandenes Verzeichnis in die `project-map`, ohne sie auszuführen. Lass Quelle, letztes Bestätigungsdatum, aktuellen Status und sichere Prüfmethode notieren. Die richtige Reaktion ist nicht „noch einmal ausführen“: Lies den aktuellen Zustand innerhalb der Berechtigung, markiere `stale` und erhalte die Unsicherheit.
