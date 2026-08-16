@@ -4,7 +4,7 @@
 
 **Estado:** `candidate`. **Experimento:** `draft / not_run`. La práctica es una simulación estática: no autoriza conexiones, envíos, escrituras, pushes, publicaciones ni demuestra que un servicio funcione en producción.
 
-## El problema
+## El problema que resuelve este capítulo
 
 Una persona puede guiar una tarea con experiencia propia. Un equipo necesita algo que sobreviva a esa persona: lenguaje común, método, evidencia y responsables. Sin ello, las buenas costumbres se transmiten oralmente, los permisos se amplían sin revisión y nadie sabe qué retirar cuando una fuente o un proceso queda obsoleto.
 
@@ -49,7 +49,35 @@ capability-pack/
 
 El manifiesto debe nombrar `id`, `version`, `owner`, `status`, fuente y licencia, `next_review`, alcance permitido y rollback. Una versión identifica un cambio; no demuestra comportamiento verificado.
 
+## Objetivos de aprendizaje
+
+Podrás limitar un paquete de equipo para que otra persona lo revise, lo detenga y lo reproduzca sin ampliar permisos de forma tácita.
+
+## Problemas reales
+
+Un build verde, una carpeta Skill conocida o una cuenta existente no aclaran autorización ni aceptación de usuario. El equipo necesita decidir quién puede actuar, con qué alcance y con qué evidencia.
+
 ## Experimento: entregar y reproducir un paquete
+
+### Preparación
+
+Crea dos copias desechables, input sintético, una versión y una matriz de permisos vacía. No uses cuentas, cargas, push ni secretos duraderos.
+
+### Tarea
+
+A documenta una revisión pequeña; B la ejecuta en la segunda copia sin explicación oral y se detiene si falta autorización. Cambia una sola capa y repite la comparación.
+
+### Evidencia
+
+Guarda hash de input, versión, archivos leídos, cambios reales, comandos y códigos de salida, diff, revisor, incógnitas y estado.
+
+## Tarea de transferencia
+
+Lleva el paquete a una práctica breve de idioma: una persona define objetivo y límite de corrección; la otra revisa un intento visible y una recuperación diferida. Una conversación fluida no prueba dominio.
+
+## Fuentes y límite de mantenimiento
+
+Contrato de equipo, evidencia y rollback son métodos estables. Permisos, conectores y superficies cambian; solo se afirman tras comprobar fuente oficial actual y autorización local.
 
 En un repositorio temporal, dos personas usan la tarea fija «revisión de documento antes de release» o «orientación de un nuevo miembro». El input incluye elementos terminados, elementos sin verificar, un comando obsoleto y un permiso que exige confirmación. A ejecuta el protocolo y guarda hash y log; B recibe solo el paquete y el input, trabaja en otra copia y registra lo leído, acciones, paradas, diff, validación y lagunas de conocimiento implícito. A modifica una sola capa, cambia `0.1.0` a `0.1.1` y B repite.
 

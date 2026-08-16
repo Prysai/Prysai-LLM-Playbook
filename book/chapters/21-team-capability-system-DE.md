@@ -4,7 +4,7 @@
 
 **Status:** `candidate`. **Experiment:** `draft / not_run`. Die Übung ist eine statische Simulation: Sie autorisiert weder Verbindungen noch Senden, Schreiben, Pushes oder Veröffentlichungen und beweist keine Produktionsverbindung.
 
-## Das Problem
+## Das Problem dieses Kapitels
 
 Eine Person kann Codex mit eigener Erfahrung durch eine Aufgabe führen. Ein Team muss zusätzlich klären: Wer besitzt die Regel? Welchem Skill darf man vertrauen? Wer aktualisiert oder zieht ihn zurück? Ohne gemeinsame Sprache, Methode, Evidenz und Verantwortung verteilt ein Team nur undurchsichtige persönliche Gewohnheiten.
 
@@ -49,7 +49,35 @@ capability-pack/
 
 Das Manifest enthält `id`, `version`, `owner`, `status`, Quelle und Lizenz, nächsten Prüftermin, erlaubten Umfang und Rollback. Eine Version macht Änderungen nachvollziehbar, sie beweist kein verifiziertes Verhalten.
 
+## Lernziele
+
+Du kannst ein Team-Paket so begrenzen, dass eine andere Person es prüfen, stoppen und ohne stillschweigende Rechteerweiterung reproduzieren kann.
+
+## Praxisfälle
+
+Ein grüner Build, ein bekanntes Skill-Verzeichnis oder ein vorhandenes Konto klären weder Freigabe noch Nutzerabnahme. Ein Team braucht eine sichtbare Entscheidung darüber, wer was mit welcher Evidenz ausführen darf.
+
 ## Experiment: ein Paket übergeben und unabhängig reproduzieren
+
+### Vorbereitung
+
+Lege zwei wegwerfbare Kopien, einen synthetischen Input, eine Versionsnummer und eine leere Berechtigungsmatrix an. Keine Konten, Uploads, Pushes oder dauerhaften Geheimnisse.
+
+### Aufgabe
+
+A dokumentiert eine kleine Dokumentenprüfung; B führt sie ohne mündliche Ergänzung in der zweiten Kopie aus und stoppt bei fehlender Freigabe. Ändere genau eine Paketebene und wiederhole den Vergleich.
+
+### Belege
+
+Speichere Eingabe-Hash, Version, gelesene Dateien, tatsächliche Änderungen, Befehle samt Exit-Code, Diff, Reviewer, unbekannte Punkte und Status.
+
+## Transferaufgabe
+
+Übertrage das Paket auf eine kurze Sprachlernübung: eine Person definiert Ziel und Feedbackgrenze, die zweite prüft eine sichtbare Übung und eine verzögerte Wiederholung. Keine Behauptung von Beherrschung aus einem Gespräch.
+
+## Quellen und Wartungsgrenze
+
+Teamvertrag, Evidenz und Rollback sind stabile Methoden. Produktrechte, Connectoren und Oberflächen sind veränderlich und werden nur nach aktueller offizieller Quelle und lokaler Freigabe behauptet.
 
 Wählt in einem temporären Repository „Dokumentenreview vor Release“ oder „Projektorientierung für neue Mitglieder“ als feste Aufgabe. Die Eingabe enthält erledigte und unbestätigte Punkte, einen veralteten Befehl und eine Berechtigung, die Bestätigung verlangt. A führt das Protokoll aus und speichert hash und Log. B erhält nur Paket und Eingabe, arbeitet in einer zweiten Kopie und protokolliert Gelesenes, Aktionen, Stopps, Diff, Validierung und implizite Wissenslücken. A ändert nur eine Ebene, erhöht von `0.1.0` auf `0.1.1`, dann führt B erneut aus.
 
