@@ -102,7 +102,7 @@ unverified / unblock_conditions:
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-lab-nav="previous" href="lab-004-skill-selection-JA.md" aria-label="前の Lab：Lab 004 · 最小の有用な能力を選ぶ">← 前の Lab<br><strong>Lab 004 · 最小の有用な能力を選ぶ</strong></a></td>
-      <td align="right"><a data-lab-nav="next" href="../table-of-contents-JA.md" aria-label="日本語目次へ戻る：Lab 006 はまだ翻訳されていません">次の Lab は準備中 →<br><strong>Lab 006 の提供状況を見る</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-006-agent-stop-conditions-JA.md" aria-label="次の Lab：Lab 006 · Agent の停止条件を設計する">次へ →<br><strong>Lab 006 · Agent の停止条件を設計する</strong></a></td>
     </tr>
   </table>
 </nav>
