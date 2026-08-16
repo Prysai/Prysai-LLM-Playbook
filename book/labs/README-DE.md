@@ -12,9 +12,9 @@ oder Programmierung. Jedes Lab beginnt mit einer sichtbaren Frage: Bleibt die An
 bei den Fakten, hält sie die verlangte Form ein, zeigt sie Unbekanntes oder hinterlässt
 sie eine Änderung, die jemand anderes prüfen kann?
 
-Dies ist die deutsche Einstiegsseite, nicht die Behauptung, dass alle Labs auf Deutsch
-vorliegen. Ein Link öffnet nur eine `-DE`-Datei. Fehlt sie noch, wird das genannt statt
-unbemerkt auf Englisch weiterzuleiten.
+Dies ist der deutsche Einstieg für den vollständigen Lab-Katalog. Ein Link öffnet nur
+eine `-DE`-Datei und leitet nicht unbemerkt auf Englisch weiter. Dass alle achtzehn
+Dateien vorliegen, ersetzt keine unabhängige Sprachprüfung oder Lernendenausführung.
 
 ## Mit einer kleinen Übung beginnen
 

@@ -12,9 +12,10 @@ programación. Cada Lab parte de una pregunta visible: ¿la respuesta conserva l
 hechos?, ¿respeta la forma solicitada?, ¿muestra lo que no sabe?, ¿deja un cambio que
 otra persona pueda revisar?
 
-Esta es una traducción de la página de entrada, no una afirmación de que todos los
-Labs estén disponibles en español. Un enlace abre solo un archivo `-ES`; cuando aún
-no existe, el estado lo dice y no te desvía al inglés sin avisar.
+Esta es la entrada española del catálogo completo de Labs. Cada enlace abre solo
+un archivo `-ES`; no te desvía al inglés sin avisar. Que los dieciocho archivos
+existan no sustituye una revisión lingüística independiente ni una ejecución por
+aprendices.
 
 ## Empieza con una práctica pequeña
 
