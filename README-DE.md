@@ -9,6 +9,16 @@
 **Sprachen:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
+## Heute nur eine kleine Sache ausprobieren
+
+Du musst nicht erst jedes Modell, jeden Agent und jeden Skill verstehen. Wähle eine Übung, die keine Kontoberechtigung, Dateien oder private Daten benötigt:
+
+- Für Sprachpraxis mit KI: den [Spanisch-Ablauf in sechs Schritten](book/spanish-practice-loop-DE.md).
+- Um verstreute Fakten in ein verlässliches Arbeitsupdate zu verwandeln: den [Arbeitsupdate-Ablauf in sechs Schritten](book/work-update-practice-loop-DE.md).
+- Um eine Forschungsbehauptung zu prüfen, ohne einer eleganten Schlussfolgerung zu vertrauen: den [Rechercheprüfungs-Ablauf in sechs Schritten](book/research-check-practice-loop-DE.md).
+
+Jede Route bewahrt den ersten Versuch, bearbeitet nur ein sichtbares Problem und endet mit einem Beleg. Es sind Kandidatenübungen; sie garantieren weder Effizienz noch Sprachflüssigkeit, korrekte Forschung oder Kompetenzzuwachs.
+
 ## Beginne mit einer sicheren Textaufgabe, nicht mit einer Installation
 
 Wenn du heute nur einen gewöhnlichen Textchat ausprobieren möchtest, öffne

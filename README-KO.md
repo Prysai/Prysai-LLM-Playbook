@@ -6,6 +6,16 @@
 **언어:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
+## 오늘은 작은 일 하나만 해 보세요
+
+모든 model, Agent, Skill을 이해한 뒤에 시작할 필요는 없습니다. account permission, file 작업, private data가 필요 없는 연습 하나를 고르세요.
+
+- AI와 language를 연습하고 싶다면 [스페인어 여섯 단계 연습](book/spanish-practice-loop-KO.md)을 여세요.
+- 흩어진 사실을 믿을 수 있는 work update로 만들고 싶다면 [업무 업데이트 여섯 단계 연습](book/work-update-practice-loop-KO.md)을 여세요.
+- 그럴듯한 결론에 끌리지 않고 research claim을 확인하고 싶다면 [리서치 확인 여섯 단계 연습](book/research-check-practice-loop-KO.md)을 여세요.
+
+각 route는 첫 시도를 보존하고 보이는 문제 하나만 다룬 뒤 receipt로 끝납니다. candidate 연습이므로 효율, 유창성, 조사 정확성, 역량 향상을 보장하지 않습니다.
+
 ## 설치보다 안전한 텍스트 과제부터 시작하세요
 
 오늘은 일반 텍스트 채팅만 써 보고 싶다면

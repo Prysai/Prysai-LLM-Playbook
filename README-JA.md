@@ -6,6 +6,16 @@
 **言語：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
+## 今日、一つだけ小さく試す
+
+すべての model、Agent、Skill を理解してから始める必要はありません。account permission、file 操作、private data が要らない練習を一つ選びます。
+
+- AI と language を練習したい： [スペイン語の六段階練習](book/spanish-practice-loop-JA.md)。
+- ばらばらの事実を信頼できる work update にしたい： [業務報告の六段階練習](book/work-update-practice-loop-JA.md)。
+- もっともらしい結論に流されず research claim を確認したい： [リサーチ確認の六段階練習](book/research-check-practice-loop-JA.md)。
+
+どの route も最初の試みを残し、見える問題を一つだけ扱い、receipt で終えます。candidate の練習であり、効率、流暢さ、調査の正しさ、能力向上を保証しません。
+
 ## インストールではなく、安全なテキスト課題から始める
 
 今日は普通のテキストチャットを試したいだけなら、まず

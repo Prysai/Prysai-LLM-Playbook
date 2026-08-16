@@ -6,6 +6,16 @@
 **Idiomas:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
+## Empieza hoy con una cosa pequeña
+
+No necesitas entender todos los modelos, Agents o Skills antes de probar algo. Elige una práctica que no pide permisos de cuenta, archivos ni datos privados:
+
+- Para practicar un idioma con ayuda de IA: abre el [ciclo de español en seis pasos](book/spanish-practice-loop-ES.md).
+- Para convertir hechos dispersos en una actualización de trabajo fiable: abre el [ciclo de actualización de trabajo](book/work-update-practice-loop-ES.md).
+- Para comprobar una afirmación de investigación sin dejarte llevar por una conclusión elegante: abre el [ciclo de comprobación de investigación](book/research-check-practice-loop-ES.md).
+
+Cada ruta conserva tu primer intento, trata un solo problema visible y termina con un recibo. Son prácticas candidatas; no garantizan eficiencia, fluidez, investigación correcta ni mejora de capacidad.
+
 ## Empieza con una tarea de texto segura, sin instalación
 
 Si hoy solo quieres probar un chat de texto, abre la
