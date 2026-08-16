@@ -54,5 +54,5 @@ next_check: 고정한 폴더와 revision에서 승인된 명령만 실행
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-KO.md">← 이전<br><strong>8장 · 정의에서 전달까지</strong></a></td><td align="right"><a data-chapter-nav="next" href="../table-of-contents-KO.md">다음 장 준비 중 →<br><strong>10장 제공 상태 보기</strong></a></td></tr></table></nav>
+<nav class="chapter-navigation" aria-label="장 탐색"><table role="presentation" width="100%"><tr><td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-KO.md">← 이전<br><strong>8장 · 정의에서 전달까지</strong></a></td><td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-KO.md">다음 →<br><strong>10장 · 계획과 수직 슬라이스</strong></a></td></tr></table></nav>
 <!-- chapter-navigation:end -->
