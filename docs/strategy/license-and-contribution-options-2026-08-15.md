@@ -1,6 +1,6 @@
 # License and contribution options — 2026-08-15
 
-**Status:** `proposal / not adopted`
+**Status:** `adopted 2026-08-16 (attribution-first split)`
 **Decision owner:** Prysai Lab
 **Scope:** the repository's project-owned material only
 
@@ -12,10 +12,12 @@ training, redistributors, and contributors who expect standard open-source
 reuse of scripts and test infrastructure. It also treats curriculum text and
 software-like artifacts as one licensing surface.
 
-This proposal does **not** change the current license, relicense earlier
-contributions, or grant rights in the Prysai name or logos. It is not legal
-advice; adopt a choice only after the owner reviews the applicable rights and
-the provenance of every affected file.
+This proposal does **not** relicense third-party material or grant rights in
+the Prysai name or logos. It is not legal advice. **Adoption record:** on
+2026-08-16 the project owner adopted the attribution-first split (content CC
+BY 4.0, code Apache-2.0). All historical commits are by the project owner, so
+no external relicense permission was required; the change applies
+retroactively to project-owned material.
 
 ## Options
 
