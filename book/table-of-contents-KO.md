@@ -4,7 +4,7 @@
 
 이 문서는 한국어로 읽을 수 있는 길잡이이지, 책 전체 번역본은 아닙니다. 정식
 카탈로그에는 `candidate` 상태의 장 22개와 `draft` 상태의 Lab 18개가 있습니다.
-현재 한국어로 읽을 수 있는 것은 장 7개와 Lab 11개입니다. 이 페이지의 모든 링크는
+현재 한국어로 읽을 수 있는 것은 장 8개와 Lab 11개입니다. 이 페이지의 모든 링크는
 대응하는 한국어 콘텐츠를 가리킵니다. `-KO` 파일이 없으면 다른 장이나 다른 언어로
 보내지 않고, 아직 제공되지 않음을 분명히 표시합니다.
 
@@ -41,7 +41,7 @@
 | 05 — 알맞은 Codex 작업면 선택하기 | [제공됨: 5장](chapters/05-choose-the-codex-surface-KO.md) · `candidate / in-progress` |
 | 06 — 모델 선택은 모델 숭배가 아니다 | [제공됨: 6장](chapters/06-model-selection-KO.md) · `candidate / in-progress` |
 | 07 — Skills, Plugins, MCP, 도구 | [제공됨: 7장](chapters/07-skills-plugins-and-tools-KO.md) · `candidate / in-progress` |
-| 08 — 정의에서 전달까지의 전체 수명 주기 | 아직 한국어 파일이 없습니다. |
+| 08 — 정의에서 전달까지의 전체 수명 주기 | [제공됨: 8장](chapters/08-full-lifecycle-workflow-KO.md) · `candidate / in-progress` |
 | 09 — 검증, 의심, 복구 | 아직 한국어 파일이 없습니다. |
 | 10 — 계획과 수직 슬라이스 | 아직 한국어 파일이 없습니다. |
 | 11 — 실제로 유용한 Skill 설계하기 | 아직 한국어 파일이 없습니다. |
