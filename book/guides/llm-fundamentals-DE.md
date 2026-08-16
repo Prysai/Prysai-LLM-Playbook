@@ -30,9 +30,11 @@ Diese eine Idee erklärt mehr, als du erwarten würdest:
 
 - warum ein LLM über fast alles flüssig schreiben kann (es hat enorme Mengen
   an Text gesehen);
-- warum es manchmal Fakten erfindet (es sagt plausiblen Text voraus und
-  schlägt Fakten nicht in einer Datenbank nach);
-- warum es deine privaten Daten nicht „kennt“ (es hat sie nie gesehen);
+- warum es manchmal Fakten erfindet (ein Basismodell sagt plausiblen Text
+  voraus, statt Fakten selbst nachzuschlagen);
+- warum ein Chat-Produkt mehr als das Basismodell leisten kann (es kann Suche,
+  Dateien, Speicher, Retrieval oder Tools ergänzen, jeweils mit eigenen Daten-
+  und Berechtigungsgrenzen);
 - warum es sich ändert, wenn Modelle aktualisiert werden (der Trainingstext
   ändert sich).
 
@@ -166,13 +168,17 @@ Alle seriösen Quellen — von Microsofts LLM-Grundlagen über das Glossar von
 Anthropic bis zu unabhängigem Lehrmaterial — kommen zu denselben Grenzen.
 Ein Modell:
 
-- **holt keine Fakten aus einer Datenbank.** Es erzeugt Text, der *konsistent
-  mit* seinen Trainingsdaten ist. Es kann überzeugt klingen und falsch
-  liegen. Das nennt man Halluzination, und sie ist ein Merkmal des
-  Mechanismus, kein Fehler, den du per Prompt vollständig „wegprompten“
-  kannst.
-- **kennt die Gegenwart nicht.** Es kennt nur seinen Trainings-Cutoff plus
-  das, was der Anbieter ergänzt (Suche, Dateien, Tools). Prüfe Daten.
+- **schlägt Fakten nicht selbst nach.** Ein Basismodell erzeugt Text, der
+  *konsistent mit* seinen Trainingsdaten ist. Ein Produkt kann Suche,
+  Retrieval, Dateien, Speicher oder Tools ergänzen; das sind getrennte
+  Oberflächen mit eigenen Daten- und Berechtigungsgrenzen. Auch zurückgegebenes
+  Material kann veraltet, unvollständig oder falsch sein: Prüfe Originalquelle
+  und Datum.
+- **kennt weder die Gegenwart noch deine privaten Daten automatisch.** Es hat
+  einen Trainings-Cutoff und erhält nur, was du, ein verbundenes Produkt,
+  Kontospeicher, ein Retrieval-System, eine Datei oder ein Tool bereitstellt.
+  Prüfe vor dem Einfügen, Hochladen oder Aktivieren einer Verbindung, was die
+  aktuelle Oberfläche verlassen darf und wer dies autorisiert hat.
 - **kann nicht zuverlässig rechnen.** Große Modelle lösen Textaufgaben über
   Muster, nicht über Berechnung; lange oder knifflige Mathematik braucht
   einen Taschenrechner, Code oder ein Tool.
@@ -183,19 +189,21 @@ Ein Modell:
   Dateien, Konten oder Berechtigungen, es sei denn, eine Tool-Ebene stellt
   sie explizit bereit. Ein Login, ein Button oder eine
   Agenten-Zusammenfassung beweisen nicht, dass eine Aktion stattgefunden hat.
-- **behält nichts von dir**, sofern der Anbieter nicht den
-  Gesprächsverlauf speichert, und keine Datenschutzgarantien über das hinaus,
-  was der Anbieter zusagt.
-- **ist keine Suchmaschine, kein Taschenrechner, keine Datenbank und keine
-  Person.** Es wie eines davon zu behandeln, ist der Anfang der meisten
-  realen Fehlschläge.
+- **hat keine eingebaute Erinnerung an dich.** Ein Produkt kann Chatverlauf
+  oder Kontospeicher aufbewahren; Datenschutz, Aufbewahrung und Löschung hängen
+  vom Produkt und seinen Einstellungen ab. Nimm nicht an, dass ein Chat privat
+  ist oder erinnert wird, sondern lies die geltende Richtlinie.
+- **ist für sich genommen keine Suchmaschine, kein Taschenrechner, keine
+  Datenbank und keine Person.** Ein Produkt kann solche Fähigkeiten verbinden,
+  doch dadurch wird nicht jede Antwort aktuell, richtig, autorisiert oder
+  privat.
 
-Ein nützliches mentales Modell: **Ein LLM ist ein brillanter, belesener
-Praktikant, der kein Internet, keinen Taschenrechner, keine Erinnerung an
-gestern und die Neigung hat, Lücken selbstbewusst aufzufüllen.** Einen
-solchen Praktikanten würdest du kein Rechtsgutachten ungeprüft
-veröffentlichen lassen; du würdest ihm eine klar abgegrenzte Aufgabe geben
-und seine Arbeit prüfen. Genau so nutzt man ein LLM.
+Ein nützliches mentales Modell: **Ein Basis-LLM ist ein brillanter, belesener
+Praktikant, der gut entwerfen kann, aber Lücken selbstbewusst füllt. Ein
+Chat-Produkt kann diesem Praktikanten zusätzlich Suchergebnisse, Dateien,
+einen Taschenrechner, Speicher oder Tools geben.** Du entscheidest trotzdem,
+was er lesen oder senden darf, prüfst Quelle und Ergebnis und würdest kein
+Rechtsgutachten ungeprüft veröffentlichen lassen. Genau so nutzt man ein LLM.
 
 ## 0.7 Wie das deinen Umgang damit verändert
 

@@ -31,9 +31,11 @@ Esa única idea explica más de lo que cabría esperar:
 
 - por qué un LLM puede escribir con fluidez sobre casi cualquier tema (ha
   visto cantidades enormes de texto);
-- por qué a veces inventa hechos (predice texto plausible, no busca hechos en
-  una base de datos);
-- por qué no «conoce» tus datos privados (nunca los ha visto);
+- por qué a veces inventa hechos (un modelo base predice texto plausible; no
+  busca hechos por sí solo);
+- por qué un producto de chat puede hacer más que el modelo base (puede añadir
+  búsqueda, archivos, memoria, recuperación o herramientas, cada una con sus
+  propios límites de datos y permisos);
 - por qué cambia cuando se actualizan los modelos (cambia el texto de
   entrenamiento).
 
@@ -165,13 +167,16 @@ Toda fuente seria — desde los fundamentos de LLM de Microsoft hasta el
 glosario de Anthropic y el material didáctico independiente — coincide en los
 mismos límites. Un modelo:
 
-- **no recupera hechos de una base de datos.** Genera texto *coherente con*
-  sus datos de entrenamiento. Puede sonar seguro y estar equivocado. Esto se
-  llama alucinación, y es una característica del mecanismo, no un error que
-  puedas «eliminar con el prompt» por completo.
-- **no conoce el presente.** Solo conoce su fecha de corte de entrenamiento
-  más lo que el proveedor añada (búsqueda, archivos, herramientas). Comprueba
-  las fechas.
+- **no busca hechos por sí solo.** Un modelo base genera texto *coherente con*
+  sus datos de entrenamiento. Un producto puede añadir búsqueda, recuperación,
+  archivos, memoria o herramientas; son superficies distintas, con límites de
+  datos y permisos propios. El material devuelto aún puede estar desactualizado,
+  incompleto o equivocado: comprueba la fuente original y la fecha.
+- **no conoce automáticamente el presente ni tus datos privados.** Tiene una
+  fecha de corte y solo recibe lo que le proporcionen tú, un producto conectado,
+  la memoria de la cuenta, un sistema de recuperación, un archivo o una
+  herramienta. Antes de pegar, subir o activar una conexión, comprueba qué puede
+  salir de la superficie actual y quién lo autorizó.
 - **no puede hacer aritmética de forma fiable.** Los modelos grandes resuelven
   problemas con palabras por patrones, no por cálculo; las matemáticas largas
   o delicadas necesitan una calculadora, código o una herramienta.
@@ -182,18 +187,20 @@ mismos límites. Un modelo:
   archivos, cuentas ni permisos a menos que una capa de herramientas se los
   proporcione explícitamente. Un inicio de sesión, un botón o un resumen de un
   agente no demuestran que una acción haya ocurrido.
-- **no tiene memoria de ti** a menos que el proveedor almacene el historial de
-  la conversación, ni garantías de privacidad más allá de lo que el proveedor
-  declare.
-- **no es un buscador, una calculadora, una base de datos ni una persona.**
-  Tratarlo como cualquiera de esas cosas es donde empiezan la mayoría de los
-  fallos en el mundo real.
+- **no tiene memoria inherente de ti.** Un producto puede conservar el historial
+  del chat o memoria de cuenta; su privacidad, conservación y borrado dependen
+  del producto y de su configuración. No supongas que un chat es privado o que
+  se recordará: lee la política aplicable.
+- **no es, por sí solo, un buscador, una calculadora, una base de datos ni una
+  persona.** Un producto puede conectar esas capacidades, pero esa conexión no
+  vuelve cada respuesta actual, correcta, autorizada ni privada.
 
-Un modelo mental útil: **un LLM es un becario brillante y muy leído que no
-tiene internet, ni calculadora, ni memoria del día anterior, y que tiende a
-rellenar los huecos con total confianza.** A un becario así no le dejarías
-publicar un dictamen legal sin revisarlo; le darías una tarea bien acotada y
-le comprobarías el trabajo. Exactamente así es como hay que usar un LLM.
+Un modelo mental útil: **un LLM base es un becario brillante y muy leído que
+puede redactar, pero tiende a rellenar huecos con confianza. Un producto de
+chat puede además darle resultados de búsqueda, archivos, calculadora, memoria
+o herramientas.** Tú sigues decidiendo qué puede leer o enviar, comprobando la
+fuente y el resultado, y no publicarías un dictamen legal sin revisarlo. Así
+es como hay que usar un LLM.
 
 ## 0.7 Cómo cambia esto la forma de usarlo
 

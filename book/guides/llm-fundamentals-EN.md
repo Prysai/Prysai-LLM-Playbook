@@ -27,9 +27,11 @@ That single idea explains more than you might expect:
 
 - why an LLM can write fluently about almost anything (it has seen enormous
   amounts of text);
-- why it sometimes invents facts (it is predicting plausible text, not looking
-  facts up in a database);
-- why it does not "know" your private data (it never saw it);
+- why it sometimes invents facts (a base model predicts plausible text rather
+  than independently looking facts up);
+- why a chat product may handle more than the base model (it can add search,
+  files, memory, retrieval, or tools — each with its own data and permission
+  boundary);
 - why it changes as models are updated (the training text changes).
 
 The most intuitive modern explanation of the machinery is Grant Sanderson's
@@ -149,12 +151,16 @@ Every serious source — from Microsoft's LLM fundamentals to Anthropic's
 glossary and independent teaching material — converges on the same limits.
 A model:
 
-- **does not retrieve facts from a database.** It generates text that is
-  *consistent with* its training data. It can sound certain and be wrong. This
-  is called hallucination, and it is a feature of the mechanism, not a bug you
-  can "prompt away" completely.
-- **does not know the present.** It knows only its training cutoff plus
-  whatever the provider adds (search, files, tools). Check dates.
+- **does not independently look facts up.** A base model generates text that
+  is *consistent with* its training data. A product may add search, retrieval,
+  files, memory, or tools; those are separate surfaces, with separate data and
+  permission boundaries. Returned material can still be stale, incomplete, or
+  wrong, so check the original source and date.
+- **does not automatically know the present or your private data.** It has a
+  training cutoff and receives only what you, a connected product, account
+  memory, retrieval system, file, or tool provides. Before pasting, uploading,
+  or enabling a connection, check what may leave the current surface and who
+  authorized it.
 - **cannot do arithmetic reliably.** Large models solve word problems by
   pattern, not calculation; long or tricky math needs a calculator, code, or a
   tool.
@@ -164,16 +170,19 @@ A model:
 - **cannot act on the world by itself.** A chat model has no files, accounts,
   or permissions unless a tool layer explicitly provides them. A login, a
   button, or an agent summary does not prove an action happened.
-- **has no memory of you** unless the provider stores conversation history,
-  and no privacy guarantees beyond what the provider states.
-- **is not a search engine, a calculator, a database, or a person.** Treating
-  it as any of those is where most real-world failures begin.
+- **has no inherent memory of you.** A product may retain chat history or
+  account memory; its privacy, retention, and deletion behavior depend on that
+  product and its settings. Read the applicable policy rather than assuming
+  that a chat is private or remembered.
+- **is not, by itself, a search engine, calculator, database, or person.** A
+  product can connect those capabilities, but a connection does not make every
+  answer current, correct, authorized, or private.
 
-A useful mental model: **an LLM is a brilliant, well-read intern who has no
-internet, no calculator, no memory of yesterday, and a tendency to confidently
-fill in gaps.** You would not let such an intern publish a legal opinion
-unchecked; you would hand them a well-scoped task and check their work. That
-is exactly how to use an LLM.
+A useful mental model: **a base LLM is a brilliant, well-read intern who can
+draft but may confidently fill in gaps. A chat product may also hand that
+intern search results, files, a calculator, memory, or tools.** You would
+still decide what they may read or send, inspect the source and result, and
+not publish a legal opinion unchecked. That is exactly how to use an LLM.
 
 ## 0.7 How this changes how you use one
 

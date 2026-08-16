@@ -119,6 +119,7 @@ REQUIRED = (
     "scripts/audit_locale_release_paths.py",
     "scripts/localize_reader_evidence_links.py",
     "scripts/validate_localized_practice_cards.py",
+    "scripts/validate_llm_fundamentals_boundaries.py",
     "scripts/audit_translation_depth.py",
     "scripts/test_validate_site_i18n.py",
     "scripts/validate_teaching_assets.py",
