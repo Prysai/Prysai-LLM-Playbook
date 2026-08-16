@@ -79,7 +79,7 @@ Transfer.
 | 015 — Evidenz statt einer Fertigmeldung übergeben | [Verfügbar: Lab 015](labs/lab-015-evidence-delivery-DE.md) · `draft / in-progress` |
 | 016 — An der Grenze externer Auswirkungen stoppen | [Verfügbar: Lab 016](labs/lab-016-side-effect-boundary-DE.md) · `draft / in-progress` |
 | 017 — Die Entdeckung prüfen, bevor ein Skill übernommen wird | [Verfügbar: Lab 017](labs/lab-017-skill-discovery-audit-DE.md) · `draft / in-progress` |
-| 018 — Sprachtransfer mit einem festen Übungsvertrag testen | Deutsche Datei noch nicht vorhanden. |
+| 018 — Sprachtransfer mit einem festen Übungsvertrag testen | [Verfügbar: Lab 018](labs/lab-018-language-transfer-DE.md) · `draft / in-progress` |
 
 ## Grenzen und nächster Schritt
 

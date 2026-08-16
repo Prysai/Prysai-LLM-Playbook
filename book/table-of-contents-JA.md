@@ -77,7 +77,7 @@
 | 015 — 完了の言葉ではなく証拠を渡す | [利用可能: Lab 015](labs/lab-015-evidence-delivery-JA.md) · `draft / in-progress` |
 | 016 — 外部への影響が始まる境界で止まる | [利用可能: Lab 016](labs/lab-016-side-effect-boundary-JA.md) · `draft / in-progress` |
 | 017 — Skill を採用する前に発見経路を監査する | [利用可能: Lab 017](labs/lab-017-skill-discovery-audit-JA.md) · `draft / in-progress` |
-| 018 — 定めた練習契約で言語間の転移を試す | 日本語ファイルはまだありません。 |
+| 018 — 定めた練習契約で言語間の転移を試す | [利用可能: Lab 018](labs/lab-018-language-transfer-JA.md) · `draft / in-progress` |
 
 ## 境界と次の一歩
 

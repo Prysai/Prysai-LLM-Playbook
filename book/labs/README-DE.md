@@ -31,9 +31,8 @@ oder dass bereits jemand die Methode gelernt hat.
 ## Aktueller Stand
 
 Der Katalog enthält 18 feste Kennungen. Alle sind `draft`; der Lernenden-Status ist
-`not_run`. In dieser deutschen Route sind siebzehn Labs lokal verfügbar: 001–017.
-Die übrigen werden von dieser Seite nicht auf Englisch verlinkt, bis ihre eigene
-deutsche Datei und ihr Übersetzungsstatus vorliegen.
+`not_run`. In dieser deutschen Route sind alle achtzehn Labs lokal verfügbar: 001–018.
+Jedes Lab hat eine eigene deutsche Datei; diese Route verlinkt nicht auf Englisch.
 
 ## Deutsche Lab-Karte
 
@@ -56,7 +55,7 @@ deutsche Datei und ihr Übersetzungsstatus vorliegen.
 | 015 | Übergabe mit Evidenz | L5 | [Lab 015 öffnen](lab-015-evidence-delivery-DE.md) |
 | 016 | Grenze von Nebenwirkungen | L3 | [Lab 016 öffnen](lab-016-side-effect-boundary-DE.md) |
 | 017 | Audit der Skill-Erkennung | L4 | [Lab 017 öffnen](lab-017-skill-discovery-audit-DE.md) |
-| 018 | Sprachtransfer mit festem Übungsvertrag | L2 | Noch nicht auf Deutsch verfügbar |
+| 018 | Sprachtransfer mit festem Übungsvertrag | L2 | [Lab 018 öffnen](lab-018-language-transfer-DE.md) |
 
 Die Nummern sind Katalogkennungen, keine Pflichtreihenfolge. Den Fortschritt bestimmt
 der Lernpfad; diese Übersicht zeigt nur, was sich heute auf Deutsch öffnen lässt.

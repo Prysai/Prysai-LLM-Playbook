@@ -78,7 +78,7 @@ transferencia.
 | 015 — Entregar evidencia, no una frase de finalización | [Disponible: Lab 015](labs/lab-015-evidence-delivery-ES.md) · `draft / in-progress` |
 | 016 — Detenerse en el límite de efectos externos | [Disponible: Lab 016](labs/lab-016-side-effect-boundary-ES.md) · `draft / in-progress` |
 | 017 — Auditar el descubrimiento antes de adoptar un Skill | [Disponible: Lab 017](labs/lab-017-skill-discovery-audit-ES.md) · `draft / in-progress` |
-| 018 — Probar una práctica escrita de viaje para retención y transferencia | Aún no existe archivo español. |
+| 018 — Probar una práctica escrita de viaje para retención y transferencia | [Disponible: Lab 018](labs/lab-018-language-transfer-ES.md) · `draft / in-progress` |
 
 ## Límites y siguientes pasos
 

@@ -31,9 +31,8 @@ cada superficie de Codex, ni que una persona ya haya aprendido el método.
 ## Estado actual
 
 El catálogo tiene 18 identidades estables. Todas siguen en `draft` y el estado de
-ejecución de aprendices es `not_run`. Esta ruta española ya ofrece doce Labs locales:
-001–017. Los que aún faltan no se enlazan en inglés desde esta página; aparecerán
-cuando exista su propio archivo español y su estado de traducción se haya registrado.
+ejecución de aprendices es `not_run`. Esta ruta española ya ofrece los dieciocho
+Labs locales: 001–018. Ningún Lab de esta ruta enlaza a inglés.
 
 ## Mapa de Labs en español
 
@@ -56,7 +55,7 @@ cuando exista su propio archivo español y su estado de traducción se haya regi
 | 015 | Entrega con evidencia | L5 | [Abrir Lab 015](lab-015-evidence-delivery-ES.md) |
 | 016 | Límite de efectos secundarios | L3 | [Abrir Lab 016](lab-016-side-effect-boundary-ES.md) |
 | 017 | Auditoría del descubrimiento de Skills | L4 | [Abrir Lab 017](lab-017-skill-discovery-audit-ES.md) |
-| 018 | Transferencia de idioma con práctica fija | L2 | Aún no disponible en español |
+| 018 | Transferencia de idioma con práctica fija | L2 | [Abrir Lab 018](lab-018-language-transfer-ES.md) |
 
 Los números son identidades de catálogo, no una promesa de que el número siguiente
 sea un requisito o pertenezca al siguiente nivel. La ruta de aprendizaje define la
