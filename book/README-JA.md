@@ -4,7 +4,13 @@
 **言語：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-## 日本語で完結する最初の実践
+## 日本語で行う二つの最初の実践
+
+まだプロジェクトがなく、AI にチャット外の操作をさせたくない場合は、まず
+[汎用 LLM の最初の課題](routes/universal-core-foundations-JA.md)を行ってください。
+架空の案内を書き直し、確認方法と停止点を明示します。これは
+`candidate / not_run` の練習であり、学習効果やプラットフォーム間の同一動作を
+証明するものではありません。
 
 インストールを探したり自分のプロジェクトを使ったりする前に、
 [最初の安全な変更](routes/first-safe-change-JA.md)を行ってください。破棄できる

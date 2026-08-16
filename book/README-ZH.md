@@ -13,8 +13,9 @@
 - [返回中文项目入口](../README-ZH.md)
 - [中文序言](preface-ZH.md)
 - [中文书籍目录](table-of-contents-ZH.md)
+- [中文通用 LLM 首练习：安全文字任务](routes/universal-core-foundations-ZH.md)
 - [中文新手安全路线：第一次安全改动](routes/first-safe-change-ZH.md)
-- [中文新手提示卡：先把一件小事说清楚](communication-clinic-ZH.md)
+- [中文新手提示卡：把话说清](communication-clinic-ZH.md)
 
 这里放 Prysai LLM Playbook 的原创主线书稿。书稿不是六个外部项目的拼接，而是按照学习者的成长顺序重新编排的内容系统。
 
@@ -46,6 +47,8 @@
 “章节正文仍在迁移中”是明确的迁移状态，不是把未翻译文件伪装成中文，也不是对缺失翻译做静默回退。目录页会在每个仍使用原始章节文件的链接文字中保留这一边界。
 
 ## 当前阅读入口
+
+如果你还没有项目，也不准备让 AI 操作文件，先做[通用 LLM 首练习](routes/universal-core-foundations-ZH.md)：它只使用一则虚构通知，练习把目标、材料、检查和停止点写清楚。它是候选练习，不代表不同平台行为相同，也不证明学习效果。
 
 如果你是第一次使用这套材料，按这一条候选路径阅读：
 

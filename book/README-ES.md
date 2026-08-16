@@ -4,7 +4,13 @@
 **Idiomas:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-## Primer paso práctico localizado
+## Dos primeros pasos localizados
+
+Si todavía no tienes un proyecto ni quieres que la IA actúe fuera del chat,
+empieza con la [primera tarea universal de LLM](routes/universal-core-foundations-ES.md):
+reescribirás un aviso ficticio con una comprobación visible y un punto de
+parada. Es un ejercicio `candidate / not_run`; no prueba resultados de
+aprendizaje ni que las plataformas se comporten igual.
 
 Antes de buscar una instalación o usar un proyecto propio, completa
 [Primer cambio seguro](routes/first-safe-change-ES.md): una copia local

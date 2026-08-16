@@ -8,7 +8,13 @@
 **언어:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-## 한국어로 끝낼 수 있는 첫 실습
+## 한국어로 할 수 있는 두 가지 첫 실습
+
+아직 프로젝트가 없고 AI가 채팅 밖에서 행동하게 하고 싶지 않다면 먼저
+[범용 LLM 첫 과제](routes/universal-core-foundations-KO.md)를 해보세요. 가상의
+안내문을 다시 쓰며 확인 방법과 중단 지점을 분명히 합니다. 이것은
+`candidate / not_run` 연습이며 학습 효과나 플랫폼 간 동일한 동작을 증명하지
+않습니다.
 
 설치를 찾거나 자신의 프로젝트를 사용하기 전에
 [첫 번째 안전한 변경](routes/first-safe-change-KO.md)을 진행하세요. 폐기 가능한

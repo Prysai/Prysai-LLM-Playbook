@@ -14,9 +14,16 @@ Navigation:
 - [Zum deutschen Projekt-Einstieg](../README-DE.md)
 - [Deutsches Vorwort](preface-DE.md)
 - [Deutsches Inhaltsverzeichnis](table-of-contents-DE.md)
+- [Universelle LLM-Erstaufgabe — sichere Textübung](routes/universal-core-foundations-DE.md)
 - [Die erste sichere Änderung — vollständiger deutscher Übungsentwurf](routes/first-safe-change-DE.md)
 
-## Erster lokalisierter Praxisschritt
+## Zwei erste lokalisierte Praxisschritte
+
+Wenn du noch kein Projekt hast und die KI nichts außerhalb des Chats tun soll,
+beginne mit der [universellen LLM-Erstaufgabe](routes/universal-core-foundations-DE.md).
+Du schreibst eine fiktive Mitteilung um und hältst Prüfung und Stopp-Punkt
+sichtbar. Das ist eine Übung `candidate / not_run`; sie beweist weder
+Lernergebnisse noch gleiches Verhalten auf verschiedenen Plattformen.
 
 Bevor du eine Installation suchst oder dein eigenes Projekt verwendest,
 bearbeite [Die erste sichere Änderung](routes/first-safe-change-DE.md): eine

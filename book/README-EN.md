@@ -23,8 +23,9 @@ the problem closest to your current situation, and let the later chapters fill
 in the vocabulary when it becomes useful. If you have never made a safe local
 change, take the Codex path from Chapter 1. If you do not have a disposable
 project, use **First Safe Change** before Lab 001. If your task is not about
-Codex, begin with the universal-core route, then stop at its stated boundary
-until a source-backed platform adapter exists.
+Codex, begin with the [Universal LLM first-task route](routes/universal-core-foundations-EN.md):
+one fictional, text-only rewrite with a visible check and stop point. Then
+stop at its stated boundary until a source-backed platform adapter exists.
 
 The aim is not to make you sound fluent in product names. It is to help you
 make one decision you can explain, inspect, and improve.
@@ -62,7 +63,7 @@ currently `draft` with `run_status: not_run`.
 
 ## Where to enter the book
 
-- [First mapped universal-core route](routes/universal-core-foundations-EN.md) — four extracted units; `candidate / not_run`; context selection, reuse, evaluation, and team governance remain incomplete
+- [Universal LLM first-task route](routes/universal-core-foundations-EN.md) — begin with one fictional, text-only rewrite; then learn four transferable foundations. `candidate / not_run`; it does not establish cross-platform behavior or learner outcomes.
 - [First Safe Change](routes/first-safe-change-EN.md) — optional offline bridge from Chapter 2 to Lab 001; candidate fixture route · learner run `not_run`
 - [Preface: This Is Not a Prompt Catalogue](preface-EN.md)
 - [English book table of contents](table-of-contents-EN.md)

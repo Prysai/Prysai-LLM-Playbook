@@ -3,9 +3,10 @@
 # Prysai LLM Playbook: Table of Contents v0.2
 
 Readers who want the platform-neutral method first can open the
-[first mapped universal-core route](routes/universal-core-foundations-EN.md).
-It covers four extracted units and remains `candidate / not_run`; context
-selection, reuse, evaluation, and team governance are not yet complete.
+[Universal LLM first-task route](routes/universal-core-foundations-EN.md).
+It begins with one fictional, text-only rewrite before mapping four extracted
+units. It remains `candidate / not_run`; the route does not establish
+cross-platform behavior, learner outcomes, or completion time.
 
 > English source-locale directory page. This migration slice is based on the
 > existing unsuffixed `book/table-of-contents.md`. It keeps all 22 chapters,
@@ -38,6 +39,7 @@ selection, reuse, evaluation, and team governance are not yet complete.
 - [Preface — EN](preface-EN.md)
 - [Learning path contract — locale-neutral](../docs/governance/learning-path.yaml)
 - [Locale matrix — locale-neutral](../docs/governance/locale-matrix.yaml)
+- [Universal LLM first task — EN](routes/universal-core-foundations-EN.md)
 - [First Safe Change — optional offline fixture before Lab 001](routes/first-safe-change-EN.md)
 
 ## Part I: From understanding GPT to the first safe use

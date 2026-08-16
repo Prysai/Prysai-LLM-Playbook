@@ -386,35 +386,35 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "dd08a68"
+          "source_revision": "worktree-2026-08-15"
         },
         "es": {
           "path": "book/README-ES.md",
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "dd08a68"
+          "source_revision": "worktree-2026-08-15"
         },
         "ja": {
           "path": "book/README-JA.md",
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "dd08a68"
+          "source_revision": "worktree-2026-08-15"
         },
         "ko": {
           "path": "book/README-KO.md",
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "dd08a68"
+          "source_revision": "worktree-2026-08-15"
         },
         "de": {
           "path": "book/README-DE.md",
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "source_revision": "dd08a68"
+          "source_revision": "worktree-2026-08-15"
         }
       }
     },

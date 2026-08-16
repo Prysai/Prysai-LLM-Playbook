@@ -130,15 +130,15 @@
       "kind": "book-entry",
       "stem": "book/README",
       "source_locale": "EN",
-      "source_revision": "dd08a68",
+      "source_revision": "worktree-2026-08-15",
       "legacy_paths": ["book/README.md"],
       "locales": {
         "EN": {"path": "book/README-EN.md", "content_status": "candidate", "translation_status": "source", "coverage": "full"},
-        "ZH": {"path": "book/README-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "dd08a68", "coverage": "full", "reason": "Initial translation slice; independent language review pending."},
-        "ES": {"path": "book/README-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "dd08a68", "coverage": "full", "reason": "Initial translation slice; independent language review pending."},
-        "JA": {"path": "book/README-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "dd08a68", "coverage": "full", "reason": "Initial translation slice; independent language review pending."},
-        "KO": {"path": "book/README-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "dd08a68", "coverage": "full", "reason": "Initial translation slice; independent language review pending."},
-        "DE": {"path": "book/README-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "dd08a68", "coverage": "full", "reason": "Initial translation slice; independent language review pending."}
+        "ZH": {"path": "book/README-ZH.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-15", "coverage": "full", "reason": "Initial translation slice; independent language review pending."},
+        "ES": {"path": "book/README-ES.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-15", "coverage": "full", "reason": "Initial translation slice; independent language review pending."},
+        "JA": {"path": "book/README-JA.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-15", "coverage": "full", "reason": "Initial translation slice; independent language review pending."},
+        "KO": {"path": "book/README-KO.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-15", "coverage": "full", "reason": "Initial translation slice; independent language review pending."},
+        "DE": {"path": "book/README-DE.md", "content_status": "candidate", "translation_status": "in-progress", "translated_from": "EN", "source_revision": "worktree-2026-08-15", "coverage": "full", "reason": "Initial translation slice; independent language review pending."}
       }
     },
     {
