@@ -59,7 +59,7 @@ Al terminar podrás:
 - detenerte de forma segura cuando la siguiente prueba exija más autoridad de
   la que la tarea justifica.
 
-## Una entrada de la vida real: la etapa da la pista
+## Problemas reales: la etapa da la pista
 
 La investigación de campo del proyecto reúne informes públicos de GitHub
 Issues, Stack Exchange y otros debates. Son informes de síntomas, no
@@ -378,7 +378,7 @@ Estás listo para continuar cuando puedas:
 - registrar por separado setup, Agent, fase de red y vida del secreto en Cloud; y
 - detenerte o degradar cuando la siguiente prueba exija más autoridad que la tarea.
 
-## Fuentes y límite de actualización
+## Fuentes y actualización
 
 El método de decisión es estable. Superficies de producto, matrices de modelo,
 modos de permiso, ciclo de Cloud, disponibilidad de herramientas y puntos de
