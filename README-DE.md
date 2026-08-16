@@ -13,7 +13,7 @@
 
 Du musst nicht erst jedes Modell, jeden Agent und jeden Skill verstehen. Wähle eine Übung, die keine Kontoberechtigung, Dateien oder private Daten benötigt:
 
-- Für Sprachpraxis mit KI: den [Spanisch-Ablauf in sechs Schritten](book/spanish-practice-loop-DE.md).
+- Für Sprachpraxis mit KI: den [Spanisch-Ablauf in sechs Schritten](book/spanish-practice-loop-DE.md) oder den [Französisch-Ablauf in sechs Schritten](book/french-practice-loop-DE.md).
 - Um verstreute Fakten in ein verlässliches Arbeitsupdate zu verwandeln: den [Arbeitsupdate-Ablauf in sechs Schritten](book/work-update-practice-loop-DE.md).
 - Um eine Forschungsbehauptung zu prüfen, ohne einer eleganten Schlussfolgerung zu vertrauen: den [Rechercheprüfungs-Ablauf in sechs Schritten](book/research-check-practice-loop-DE.md).
 
