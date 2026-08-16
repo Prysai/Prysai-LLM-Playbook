@@ -1,6 +1,6 @@
 <!-- content_id: llm-fundamentals-guide | locale: ZH | language: zh-CN | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
-# 第 0 课：什么是大语言模型？
+# 第 0 章：什么是大语言模型？
 
 **阅读时间：** 约 20 分钟。先掌握一句话心智模型，再用一次五分钟对话练习检验它的边界。
 

@@ -8,7 +8,7 @@
 
 ## まずここから
 
-1. [レッスン 0：大規模言語モデルとは何か](guides/llm-fundamentals-JA.md)。
+1. [第0章：大規模言語モデルとは何か](guides/llm-fundamentals-JA.md)。
 2. [第 1 章：Codex を理解する前に GPT を理解する](chapters/01-gpt-and-codex-JA.md)
    → [Lab 011：GPT、Codex、ツール、Agent を区別する](labs/lab-011-gpt-codex-boundaries-JA.md)。
 3. [第 2 章：最初の安全で検証可能なタスクを完了する](chapters/02-first-safe-task-JA.md)

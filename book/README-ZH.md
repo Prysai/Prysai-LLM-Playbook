@@ -10,7 +10,7 @@
 
 ## 先按教材主线阅读
 
-1. [第 0 课：什么是大语言模型](guides/llm-fundamentals-ZH.md)
+1. [第 0 章：什么是大语言模型](guides/llm-fundamentals-ZH.md)
 2. [第 1 章：先理解 GPT，再理解 Codex](chapters/01-gpt-and-codex-ZH.md)
 3. [第 2 章：完成第一个安全、可验证的任务](chapters/02-first-safe-task-ZH.md)
 

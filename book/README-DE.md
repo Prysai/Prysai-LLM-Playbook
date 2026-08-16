@@ -11,7 +11,7 @@
 
 ## Zuerst dem Lehrbuchpfad folgen
 
-1. [Lektion 0: Was ist ein großes Sprachmodell?](guides/llm-fundamentals-DE.md)
+1. [Kapitel 0: Was ist ein großes Sprachmodell?](guides/llm-fundamentals-DE.md)
 2. [Kapitel 1: GPT vor Codex verstehen](chapters/01-gpt-and-codex-DE.md)
 3. [Kapitel 2: Die erste sichere, überprüfbare Aufgabe](chapters/02-first-safe-task-DE.md)
 

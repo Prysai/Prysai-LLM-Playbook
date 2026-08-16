@@ -1,4 +1,4 @@
-"""Keep Lesson 0's base-model versus connected-product boundary explicit.
+"""Keep Chapter 0's base-model versus connected-product boundary explicit.
 
 This is a wording-presence check for a safety-critical introductory concept.
 It cannot evaluate translation quality, privacy compliance, product behavior,
@@ -98,7 +98,7 @@ def main() -> int:
     for locale, markers in REQUIRED_MARKERS.items():
         path = ROOT / f"book/guides/llm-fundamentals-{locale}.md"
         if not path.is_file():
-            errors.append(f"missing Lesson 0 locale: {path.relative_to(ROOT)}")
+            errors.append(f"missing Chapter 0 locale: {path.relative_to(ROOT)}")
             continue
         text = re.sub(r"\s+", " ", path.read_text(encoding="utf-8"))
         for marker in markers:
@@ -109,7 +109,7 @@ def main() -> int:
                 errors.append(f"{path.relative_to(ROOT)}: missing accuracy marker {marker!r}")
         for marker in MICRO_EXPERIMENT_MARKERS[locale]:
             if marker not in text:
-                errors.append(f"{path.relative_to(ROOT)}: missing Lesson 0 micro-experiment marker {marker!r}")
+                errors.append(f"{path.relative_to(ROOT)}: missing Chapter 0 micro-experiment marker {marker!r}")
         for marker in FORBIDDEN_MARKERS[locale]:
             if marker in text:
                 errors.append(f"{path.relative_to(ROOT)}: contains superseded absolute claim {marker!r}")

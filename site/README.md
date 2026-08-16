@@ -85,6 +85,19 @@ the default `deploy: false`, its summary records
 review artifact was built and uploaded. Deployment requires an explicit
 `deploy: true` dispatch and remains a separate observable job.
 
+## Search metadata and public URL
+
+`site/seo-config.json` is the single source for the intended public site URL
+and the six supported language routes. The Pages artifact generator uses it to
+create `robots.txt` and `sitemap.xml`; the home page uses the same route shape
+for canonical, alternate-language, Open Graph, Twitter, and structured-data
+metadata. If the project moves to a custom domain, change only
+`public_site_url`, then rebuild the artifact.
+
+These files make a deployment ready for crawlers. They do not prove that Pages
+is enabled, that the URL is publicly reachable, that a crawler has indexed the
+site, or that the site will rank for a query.
+
 The showcase rewrites Markdown links to `reader.html?path=...` both in local
 `/site/` development and in the Pages artifact. The reader fetches the original
 Markdown source and renders a bounded, dependency-free reading view; the source

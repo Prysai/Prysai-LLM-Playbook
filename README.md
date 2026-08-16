@@ -75,7 +75,7 @@ a universal efficiency claim.
 
 This is a textbook, not a menu. Start at the beginning and read in order.
 
-**Step 0.** [Lesson 0 — What Is a Large Language Model](book/guides/llm-fundamentals-EN.md):
+**Step 0.** [Chapter 0 — What Is a Large Language Model](book/guides/llm-fundamentals-EN.md):
 20 minutes on what an LLM is, its capabilities, and its honest limits.
 
 **Then the first safe task, in this order:**
@@ -108,10 +108,10 @@ check, or a no-side-effect boundary.
 > project. If you do not have a safe local target when Chapter 2 asks you to
 > choose one, use the [First Safe Change fixture](book/routes/first-safe-change-EN.md)
 > before Lab 001. It supplies one offline target and checker; it does not
-> replace the guided path. The warm-up below is optional and text-only.
+> replace the guided path. The prompt practice below is optional and text-only.
 
-The warm-up below is optional and text-only. It rehearses one checking habit;
-it does not replace the local Codex task.
+The five-minute exercise below makes one LLM limit visible: a fluent answer can
+still add facts it was never given. It does not replace the local Codex task.
 
 <details>
 <summary>Other routes — open this only when you already know your next need</summary>
@@ -169,65 +169,46 @@ small task; it does not certify a tool, model, or workflow.
 
 <a id="optional-15-minute-warm-up-no-git-required"></a>
 
-## Optional 15-minute warm-up — no Git required
+## A five-minute LLM prompt practice — no setup required
 
-Use any chat model. The source message is already filled in, so your first job
-is to judge one result rather than invent files, commands, or acceptance tests.
-
-```text
-You are revising a fictional short message. Do not use tools, files, browsing, or outside facts.
-
-Source message:
-"Hi, the workshop changed. It starts Friday at 10. Bring the draft. Tell me if you cannot come."
-
-Rewrite it as a clear message to workshop participants. Preserve every fact in the source. Do not invent a calendar date, time zone, venue, deadline, sender, reason for the change, contact method, or any other detail. If a detail is missing, leave it unstated rather than guessing.
-
-Return only the revised message. The reader will check it.
-```
-
-Before comparing with an example, record three independent judgments about
-your answer: facts kept, action kept, and nothing invented. Mark each one
-`PASS`, `FAIL`, or `UNSURE`. Keep the answer and the words that support each
-judgment in your own chat; this repository does not receive them.
-
-If one check fails, copy this rescue prompt:
+This is not a Codex lab. It is a short way to see one important LLM behavior:
+the model can make wording sound helpful while also adding details it was never
+given. Use any chat model; no files, account connection, or technical setup is
+needed.
 
 ```text
-Keep the fictional source and your previous answer in view.
+Please rewrite the message below so it is clear and friendly.
 
-My first failed or uncertain check is: [paste check 1, 2, or 3 here].
+Keep every fact exactly the same. Do not add a date, place, reason, contact detail, or any other information that is not in the original.
 
-Do three things only:
-1. quote the words in your previous answer that caused the failure or uncertainty;
-2. explain the mismatch in one sentence;
-3. return one corrected message, changing only what is necessary.
+Original message:
+"The workshop changed. It starts Friday at 10. Bring the draft. Tell me if you cannot come."
 
-Do not add any fact that is absent from the source. If the source does not contain a detail, leave it unstated rather than guessing.
+Return only the rewritten message.
 ```
+
+Now read the answer and ask three ordinary questions:
+
+1. Does it still say **Friday at 10**?
+2. Does it still ask people to **bring the draft** and **reply if they cannot come**?
+3. Did it avoid adding a date, place, reason, or contact detail?
 
 <details>
-<summary>Compare with one acceptable shape after you record your three checks</summary>
+<summary>One acceptable result</summary>
 
-One acceptable shape is: “The workshop starts Friday at 10. Please bring your
-draft. If you cannot attend, please reply.” Your wording may differ. This is
-an illustration, not a score for your answer or evidence that you learned the
-method.
+One acceptable result is: “The workshop starts Friday at 10. Please bring your
+draft. If you cannot attend, please reply.” Different wording is fine. The
+facts and requested action are what matter.
 </details>
 
-The 15-minute label is a target; beginner completion time has not been measured.
-Your receipt is deliberately modest: attempted; checked here; help used;
-corrected; and not proven. This exercise records one checked attempt. It does
-not prove learning, transfer, general writing ability, or model superiority.
+Why this matters: an LLM predicts useful-sounding text. It does not
+automatically know that missing details must remain unknown. A clear prompt and
+a quick human check make that limit visible. This small illustration does not
+prove learning, transfer, general writing ability, or model superiority.
 For a real local Codex task, return to the
 [recommended path](#the-recommended-first-codex-path): Chapter 1 → Lab 011
 → Chapter 2 → First Safe Change fixture → Lab 001. The [Beginner Practice Pack](book/communication-clinic-EN.md#first-practice-intake)
 is a separate supplemental route for language, research, or a small work task.
-
-If you are an authorised pilot participant, use the
-[Field Report form](https://github.com/Prysai/Prysai-LLM-Playbook/issues/new?template=field-report.yml)
-to share a sanitized first-task observation. It is a private intake route, not
-support, proof of a bug, or learner-outcome evidence; see the
-[feedback contract](docs/quality/public-beta-feedback-contract-v1.md).
 
 <!-- starter-task-contract:end -->
 

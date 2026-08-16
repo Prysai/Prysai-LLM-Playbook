@@ -7,7 +7,7 @@ Para una práctica breve y guiada, abre el [ciclo de actualización de trabajo](
 **Estado:** `draft` · **Evidencia de aprendizaje:** `not_run` · **Uso previsto:**
 prácticas de bajo riesgo y sin datos sensibles en un chat de texto con un LLM.
 
-**Úsalas después de la base del libro:** [Lección 0](guides/llm-fundamentals-ES.md)
+**Úsalas después de la base del libro:** [Capítulo 0](guides/llm-fundamentals-ES.md)
 → [Capítulo 1](chapters/01-gpt-and-codex-ES.md) →
 [Capítulo 2](chapters/02-first-safe-task-ES.md). Estas tarjetas aplican el
 método; no son una introducción a lo que es un LLM.

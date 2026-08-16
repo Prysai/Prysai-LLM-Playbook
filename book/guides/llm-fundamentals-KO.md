@@ -1,6 +1,6 @@
 <!-- content_id: llm-fundamentals-guide | locale: KO | language: ko | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
-# Lesson 0: 대형 언어 모델(LLM)이란 무엇인가?
+# 0장: 대형 언어 모델(LLM)이란 무엇인가?
 
 **읽는 시간:** 약 20분. 먼저 한 문장으로 핵심을 잡고, 5분짜리 채팅 연습으로 그 한계를 확인합니다.
 

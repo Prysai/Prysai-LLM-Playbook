@@ -74,7 +74,7 @@ def visible_start_number_errors(text: str, locale: str) -> list[str]:
         section = section[:next_heading.start()]
     numbers = [int(value) for value in re.findall(r"^\s*(\d+)\.\s+\[", section, flags=re.MULTILINE)]
     if len(numbers) < 3:
-        return ["start list must contain at least Lesson 0, Chapter 1, and Chapter 2"]
+        return ["start list must contain at least Chapter 0, Chapter 1, and Chapter 2"]
     expected = list(range(1, len(numbers) + 1))
     if numbers != expected:
         return [f"start-list numbers must be sequential: found {numbers}, expected {expected}"]
@@ -115,9 +115,9 @@ def main() -> int:
             lesson, chapter_one, chapter_two = required_links(locale, prefix)
             positions = [text.find(value) for value in (lesson, chapter_one, chapter_two)]
             if any(position < 0 for position in positions):
-                errors.append(f"{path.relative_to(ROOT)}: missing same-locale Lesson 0, Chapter 1, or Chapter 2 link")
+                errors.append(f"{path.relative_to(ROOT)}: missing same-locale Chapter 0, Chapter 1, or Chapter 2 link")
             elif positions != sorted(positions):
-                errors.append(f"{path.relative_to(ROOT)}: textbook links must appear Lesson 0, Chapter 1, Chapter 2")
+                errors.append(f"{path.relative_to(ROOT)}: textbook links must appear Chapter 0, Chapter 1, Chapter 2")
             if kind != "toc":
                 marker = OPTIONAL_MARKERS[locale]
                 if marker not in text:

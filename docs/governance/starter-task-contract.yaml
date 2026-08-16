@@ -1,16 +1,16 @@
 {
-  "schema_version": "3",
+  "schema_version": "4",
   "content_id": "starter-task-contract",
   "status": "candidate",
   "owner": "curriculum-maintainer",
   "reviewed_at": "2026-08-13",
   "next_review": "2026-09-13",
   "audience": ["absolute-beginner"],
-  "duration": "15 minutes",
+  "duration": "5 minutes",
   "platform": "universal chat",
   "risk_scope": "fictional text revision without files, Git, credentials, tools, browsing, production, or external side effects",
-  "input_text": "Hi, the workshop changed. It starts Friday at 10. Bring the draft. Tell me if you cannot come.",
-  "prompt": "You are revising a fictional short message. Do not use tools, files, browsing, or outside facts.\n\nSource message:\n\"Hi, the workshop changed. It starts Friday at 10. Bring the draft. Tell me if you cannot come.\"\n\nRewrite it as a clear message to workshop participants. Preserve every fact in the source. Do not invent a calendar date, time zone, venue, deadline, sender, reason for the change, contact method, or any other detail. If a detail is missing, leave it unstated rather than guessing.\n\nReturn only the revised message. The reader will check it.",
+  "input_text": "The workshop changed. It starts Friday at 10. Bring the draft. Tell me if you cannot come.",
+  "prompt": "Please rewrite the message below so it is clear and friendly.\n\nKeep every fact exactly the same. Do not add a date, place, reason, contact detail, or any other information that is not in the original.\n\nOriginal message:\n\"The workshop changed. It starts Friday at 10. Bring the draft. Tell me if you cannot come.\"\n\nReturn only the rewritten message.",
   "example_output": "The workshop starts Friday at 10. Please bring your draft. If you cannot attend, please reply.",
   "expected_characteristics": [
     "addresses workshop participants clearly",
@@ -20,33 +20,15 @@
     "does not invent a venue, deadline, sender, or reason"
   ],
   "human_checks": [
-    "Facts kept — Friday at 10 and the instruction to bring the draft are still present: PASS / FAIL / UNSURE.",
-    "Action kept — anyone who cannot attend is asked to reply: PASS / FAIL / UNSURE.",
-    "Nothing invented — no date, time zone, venue, deadline, sender, reason, contact method, or other new fact appears: PASS / FAIL / UNSURE."
+    "Does the answer still say Friday at 10?",
+    "Does it still ask people to bring the draft and reply if they cannot come?",
+    "Did it avoid adding a date, place, reason, or contact detail?"
   ],
-  "comparison_gate": {
-    "rule": "record_all_three_judgments_before_comparison",
-    "accepted_judgments": ["PASS", "FAIL", "UNSURE"],
-    "storage_boundary": "temporary page state only; the page does not collect, transmit, or retain the reader's answer or check record",
-    "comparison_boundary": "The example is illustrative and must not score the reader or establish learning."
-  },
-  "rescue_prompt": "Keep the fictional source and your previous answer in view.\n\nMy first failed or uncertain check is: [paste check 1, 2, or 3 here].\n\nDo three things only:\n1. quote the words in your previous answer that caused the failure or uncertainty;\n2. explain the mismatch in one sentence;\n3. return one corrected message, changing only what is necessary.\n\nDo not add any fact that is absent from the source. If the source does not contain a detail, leave it unstated rather than guessing.",
-  "receipt_fields": ["attempted", "checked_here", "help_used", "corrected", "not_proven"],
-  "receipt": {
-    "attempted": "yes or no",
-    "checked_here": "the three stated checks only",
-    "help_used": "first prompt, rescue prompt, both, or neither",
-    "corrected": "yes, no, or not needed",
-    "not_proven": "general writing ability, learning, transfer, or model superiority"
-  },
-  "check_record": {
-    "fields": ["facts_kept", "action_kept", "nothing_invented", "help_used", "correction_status"],
-    "copy_boundary": "A copied record contains selected statuses and claim limits only; it must not include the reader's chat answer or personal data."
-  },
+  "teaching_point": "An LLM can generate useful-sounding text, but it does not automatically know that missing details must remain unknown. A clear instruction plus a quick human check makes that limit visible.",
   "progression": {
     "practice_next": "book/communication-clinic-EN.md#first-practice-intake",
     "git_next": "book/labs/lab-001-first-safe-task-EN.md",
     "recovery_next": "book/chapters/09-verification-and-recovery-EN.md"
   },
-  "evidence_boundary": "The 15-minute label is a target, not measured beginner completion evidence. Completing and checking this fixed exercise records one attempt under three local checks. It does not prove learning, transfer, general writing ability, model superiority, Codex behavior, or platform reliability. Learner and transfer evidence remain not_run."
+  "evidence_boundary": "This is a short illustration of one prompt-and-check habit. It does not prove learning, transfer, general writing ability, model superiority, Codex behavior, or platform reliability. Learner and transfer evidence remain not_run."
 }

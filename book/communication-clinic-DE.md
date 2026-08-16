@@ -7,7 +7,7 @@ Für eine kurze Übung in klaren Schritten öffne den [Arbeitsupdate-Ablauf](wor
 **Status:** `draft` · **Lernnachweis:** `not_run` · **Geeignet für:** risikoarme
 Übungen ohne sensible Daten in einem Textchat mit einem LLM.
 
-**Nutze diese Karten erst nach dem Lehrbuchfundament:** [Lektion 0](guides/llm-fundamentals-DE.md)
+**Nutze diese Karten erst nach dem Lehrbuchfundament:** [Kapitel 0](guides/llm-fundamentals-DE.md)
 → [Kapitel 1](chapters/01-gpt-and-codex-DE.md) →
 [Kapitel 2](chapters/02-first-safe-task-DE.md). Die Karten wenden die Methode
 an; sie führen nicht in die Frage ein, was ein LLM ist.

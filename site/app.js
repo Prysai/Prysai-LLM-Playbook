@@ -1057,8 +1057,7 @@ const applyLanguage = (language, { updateUrl = true } = {}) => {
   const strings = currentCopy();
   const metadata = localeManifest.locales[currentLanguage] || localeManifest.locales.en;
   document.documentElement.lang = localeManifest.locales[effectiveUiLanguage]?.html_lang || 'en';
-  document.title = localePageMeta[effectiveUiLanguage]?.title || localePageMeta.en.title;
-  document.querySelector('meta[name="description"]').content = localePageMeta[effectiveUiLanguage]?.description || localePageMeta.en.description;
+  updateSeoMetadata(effectiveUiLanguage);
   document.querySelectorAll('[data-i18n]').forEach((element) => {
     const value = strings[element.dataset.i18n];
     if (value !== undefined) setText(element, value);
@@ -1114,7 +1113,6 @@ const applyLanguage = (language, { updateUrl = true } = {}) => {
   // visible step after a language change so its labels, fields, and deep link
   // never remain in the language that was active at page load.
   if (typeof refreshGoalWizardForLanguage === 'function') refreshGoalWizardForLanguage();
-  if (typeof renderFirstWinRecord === 'function') renderFirstWinRecord();
   if (searchNodes.form && searchIndexAvailable()) renderSearch(searchNodes.input.value);
   const banner = document.querySelector('[data-locale-banner]');
   const pageFallback = currentLanguage !== 'en' && !localeHasUiCopy(currentLanguage);
@@ -1284,53 +1282,7 @@ document.addEventListener('keydown', (event) => {
 const starterCopyButton = document.querySelector('[data-copy-starter]');
 const starterPrompt = document.querySelector('[data-starter-prompt]');
 const everydayPromptCopyButtons = [...document.querySelectorAll('[data-copy-everyday-prompt]')];
-const rescueCopyButton = document.querySelector('[data-copy-rescue]');
-const rescuePrompt = document.querySelector('[data-rescue-prompt]');
 const starterCopyStatus = document.querySelector('[data-copy-starter-status]');
-const firstWinChecks = [...document.querySelectorAll('[data-first-win-check]')];
-const firstWinCompare = document.querySelector('[data-first-win-compare]');
-const firstWinComparison = document.querySelector('[data-first-win-comparison]');
-const firstWinReceipt = document.querySelector('[data-first-win-receipt]');
-const firstWinGate = document.querySelector('[data-first-win-check-gate]');
-const firstWinCopyRecord = document.querySelector('[data-copy-first-win-record]');
-const firstWinRecordStatus = document.querySelector('[data-first-win-record-status]');
-const firstWinHelp = document.querySelector('[data-first-win-help]');
-const firstWinCorrection = document.querySelector('[data-first-win-correction]');
-const firstWinRecoveryLink = document.querySelector('[data-first-win-recovery-link]');
-
-const firstWinRecord = () => {
-  const values = Object.fromEntries(['facts_kept', 'action_kept', 'nothing_invented'].map((name) => [
-    name,
-    document.querySelector(`[data-first-win-check="${name}"]:checked`)?.value || 'NOT_RECORDED',
-  ]));
-  const firstNonPass = Object.entries(values).find(([, value]) => value !== 'PASS')?.[0] || 'none';
-  const complete = Object.values(values).every((value) => value !== 'NOT_RECORDED');
-  const accepted = complete && firstNonPass === 'none';
-  return { ...values, firstNonPass, complete, accepted };
-};
-
-const renderFirstWinRecord = () => {
-  if (!firstWinReceipt || !firstWinGate) return;
-  const record = firstWinRecord();
-  const help = firstWinHelp?.value || 'not_recorded';
-  const correction = firstWinCorrection?.value || 'not_recorded';
-  firstWinReceipt.textContent = [
-    'task: fictional-workshop-message',
-    `facts_kept: ${record.facts_kept.toLowerCase()}`,
-    `action_kept: ${record.action_kept.toLowerCase()}`,
-    `nothing_invented: ${record.nothing_invented.toLowerCase()}`,
-    `first_nonpass: ${record.firstNonPass}`,
-    `help_used: ${help}`,
-    `correction: ${correction}`,
-    `judgment_state: ${record.accepted ? 'all_checks_marked_pass' : record.complete ? 'not_all_checks_marked_pass' : 'incomplete'}`,
-    'claim_limit: one self-recorded checked attempt; not evidence of learning, transfer, or model quality',
-  ].join('\n');
-  firstWinCompare.disabled = !record.complete;
-  firstWinRecoveryLink.hidden = !record.complete || record.accepted;
-  if (!record.complete) firstWinGate.textContent = currentCopy().starterCheckGate;
-  else if (record.accepted) firstWinGate.textContent = currentCopy().starterCheckReady;
-  else firstWinGate.textContent = currentCopy().starterCheckRecovery;
-};
 
 // Progressive enhancement keeps the first task ahead of the maintainer map.
 // Source order remains readable when JavaScript is unavailable.
@@ -1350,21 +1302,6 @@ starterCopyButton?.addEventListener('click', async () => {
   try {
     await navigator.clipboard.writeText(starterPrompt?.textContent || '');
     starterCopyStatus.textContent = currentCopy().starterCopied;
-    if (firstWinHelp && firstWinHelp.value === 'not_recorded') firstWinHelp.value = 'first_prompt';
-    renderFirstWinRecord();
-  } catch {
-    starterCopyStatus.textContent = currentCopy().starterCopyFailed;
-  }
-});
-
-rescueCopyButton?.addEventListener('click', async () => {
-  try {
-    await navigator.clipboard.writeText(rescuePrompt?.textContent || '');
-    starterCopyStatus.textContent = currentCopy().starterRescueCopied;
-    if (firstWinHelp) {
-      firstWinHelp.value = firstWinHelp.value === 'first_prompt' ? 'both' : 'rescue_prompt';
-    }
-    renderFirstWinRecord();
   } catch {
     starterCopyStatus.textContent = currentCopy().starterCopyFailed;
   }
@@ -1383,24 +1320,6 @@ everydayPromptCopyButtons.forEach((button) => {
     }
   });
 });
-
-firstWinChecks.forEach((input) => input.addEventListener('change', renderFirstWinRecord));
-firstWinHelp?.addEventListener('change', renderFirstWinRecord);
-firstWinCorrection?.addEventListener('change', renderFirstWinRecord);
-firstWinCompare?.addEventListener('click', () => {
-  if (firstWinCompare.disabled) return;
-  firstWinComparison.hidden = false;
-  firstWinCompare.setAttribute('aria-expanded', 'true');
-});
-firstWinCopyRecord?.addEventListener('click', async () => {
-  try {
-    await navigator.clipboard.writeText(firstWinReceipt?.textContent || '');
-    firstWinRecordStatus.textContent = currentCopy().starterRecordCopied;
-  } catch {
-    firstWinRecordStatus.textContent = currentCopy().starterRecordCopyFailed;
-  }
-});
-renderFirstWinRecord();
 
 // Keep the reader-facing inventory synchronized with the registered Skill
 // source. Locale-specific course coverage remains governed by the matrix; this
@@ -1427,12 +1346,41 @@ Object.assign(copy.zh, {
 });
 
 const localePageMeta = {
-  'en': '{\'title\': \'Prysai LLM Playbook — From First Task to Reliable Work\', \'description\': \'Learn a practical language-model collaboration method, then practise it deeply in the Codex Practice Track.\'}',
-  'zh': '{\'title\': \'Prysai 大模型实战手册：从第一个任务到可靠交付\', \'description\': \'学习可迁移的大语言模型协作方法，并在 Codex 旗舰轨道中深入实践。\'}',
-  'es': '{\'title\': \'Prysai LLM Playbook — del primer encargo al trabajo fiable\', \'description\': \'Aprende un método práctico de colaboración con modelos de lenguaje y practícalo en profundidad en la vía Codex.\'}',
-  'ja': '{\'title\': \'Prysai LLM プレイブック — 最初のタスクから信頼できる仕事へ\', \'description\': \'言語モデルと協働する実践的な方法を学び、Codex プラクティストラックで深く練習します。\'}',
-  'ko': '{\'title\': \'Prysai LLM 플레이북 — 첫 과제부터 신뢰할 수 있는 업무까지\', \'description\': \'언어 모델과 협업하는 실용적인 방법을 배우고 Codex 플래그십 트랙에서 깊이 연습하세요.\'}',
-  'de': '{\'title\': \'Prysai LLM Playbook — vom ersten Auftrag zur verlässlichen Arbeit\', \'description\': \'Lerne eine praktische Methode der Zusammenarbeit mit Sprachmodellen und übe sie vertieft im Codex-Track.\'}',
+  en: { title: 'Prysai LLM Playbook — LLM Guide, Prompts, and Reliable AI Work', description: 'Learn what LLMs are, write clearer prompts, and turn a first AI task into bounded, checkable work. Codex is the flagship practice track.' },
+  zh: { title: 'Prysai 大模型实战手册：LLM 入门、提示词与可靠 AI 工作', description: '从理解大语言模型开始，学习写清提示词，并把第一次 AI 任务变成有边界、可检查的工作。Codex 是旗舰实践路线。' },
+  es: { title: 'Prysai LLM Playbook — guía de LLM, prompts y trabajo fiable con IA', description: 'Aprende qué son los LLM, escribe prompts más claros y convierte una primera tarea de IA en trabajo acotado y comprobable.' },
+  ja: { title: 'Prysai LLM プレイブック — LLM 入門、プロンプト、信頼できる AI 活用', description: 'LLM とは何かを学び、より明確なプロンプトを書き、最初の AI タスクを境界が明確で確認可能な仕事に変えます。' },
+  ko: { title: 'Prysai LLM 플레이북 — LLM 입문, 프롬프트, 신뢰할 수 있는 AI 작업', description: 'LLM이 무엇인지 배우고 더 명확한 프롬프트를 작성하며 첫 AI 과제를 경계가 분명하고 확인 가능한 작업으로 바꾸세요.' },
+  de: { title: 'Prysai LLM Playbook — LLM-Guide, Prompts und verlässliche KI-Arbeit', description: 'Lerne, was LLMs sind, schreibe klarere Prompts und mache aus einer ersten KI-Aufgabe begrenzte, überprüfbare Arbeit.' },
+};
+
+const seoBaseUrl = 'https://prysai.github.io/Prysai-LLM-Playbook/';
+const seoLocaleHref = (language) => language === 'en' ? seoBaseUrl : `${seoBaseUrl}?lang=${language}`;
+const setMetaContent = (selector, value) => {
+  const element = document.querySelector(selector);
+  if (element) element.setAttribute('content', value);
+};
+const updateSeoMetadata = (language) => {
+  const locale = uiLocales.has(language) ? language : 'en';
+  const metadata = localePageMeta[locale] || localePageMeta.en;
+  const url = seoLocaleHref(locale);
+  document.title = metadata.title;
+  setMetaContent('meta[name="description"]', metadata.description);
+  setMetaContent('meta[property="og:url"]', url);
+  setMetaContent('meta[property="og:title"]', metadata.title);
+  setMetaContent('meta[property="og:description"]', metadata.description);
+  setMetaContent('meta[name="twitter:title"]', metadata.title);
+  setMetaContent('meta[name="twitter:description"]', metadata.description);
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical) canonical.setAttribute('href', url);
+  const structuredData = document.querySelector('#site-structured-data');
+  if (structuredData) {
+    const value = JSON.parse(structuredData.textContent || '{}');
+    value.url = url;
+    value.description = metadata.description;
+    value.inLanguage = localeManifest.locales[locale]?.html_lang || locale;
+    structuredData.textContent = JSON.stringify(value);
+  }
 };
 
 copy.es = {
@@ -4467,13 +4415,13 @@ function refreshGoalWizardForLanguage() {
 initGoalWizard();
 Object.assign(copy.en, {
   heroIndex: 'A TEXTBOOK FOR USING LLMS',
-  heroEyebrow: 'Start at Lesson 0 · read chapter by chapter',
+  heroEyebrow: 'Start at Chapter 0 · read chapter by chapter',
   heroTitle: 'What are LLMs, and how do you use them well?',
-  heroLede: 'This is a textbook: Lesson 0 explains what a large language model is, then each chapter teaches one layer of using it - tasks, context, tools, verification. Read in order, do the small experiments, and learn to check what a model tells you.',
-  heroPrimary: 'Start Lesson 0: what is a large language model',
+  heroLede: 'This is a textbook: Chapter 0 explains what a large language model is, then each chapter teaches one layer of using it - tasks, context, tools, verification. Read in order, do the small experiments, and learn to check what a model tells you.',
+  heroPrimary: 'Start Chapter 0: what is a large language model',
   heroSecondary: 'Read the table of contents',
   heroRouteKicker: 'One reading path - follow it from the start',
-  heroRouteLessonZero: '0 · Lesson 0: what an LLM is',
+  heroRouteLessonZero: '0 · Chapter 0: what an LLM is',
   heroRouteLessonZeroBody: '20 minutes. Tokens, context, capabilities, and the honest limits.',
   heroRouteChapterOne: '1 · Chapter 1: GPT before Codex',
   heroRouteChapterOneBody: 'Separate a model, a tool, and an agent before trusting either.',
@@ -4482,13 +4430,13 @@ Object.assign(copy.en, {
 });
 Object.assign(copy.zh, {
   heroIndex: 'LLM 使用教科书',
-  heroEyebrow: '从第 0 课开始 · 逐章阅读',
+  heroEyebrow: '从第 0 章开始 · 逐章阅读',
   heroTitle: '大语言模型是什么，以及如何用好它？',
-  heroLede: '这是一本教科书：第 0 课讲清什么是大语言模型，随后每章教授使用它的一个层次——任务、上下文、工具、验证。按顺序阅读，做小实验，学会检查模型告诉你的一切。',
-  heroPrimary: '开始第 0 课：什么是大语言模型',
+  heroLede: '这是一本教科书：第 0 章讲清什么是大语言模型，随后每章教授使用它的一个层次——任务、上下文、工具、验证。按顺序阅读，做小实验，学会检查模型告诉你的一切。',
+  heroPrimary: '开始第 0 章：什么是大语言模型',
   heroSecondary: '查看完整目录',
   heroRouteKicker: '一条阅读主线——从头开始',
-  heroRouteLessonZero: '0 · 第 0 课：LLM 是什么',
+  heroRouteLessonZero: '0 · 第 0 章：LLM 是什么',
   heroRouteLessonZeroBody: '20 分钟。token、上下文、能力与诚实的边界。',
   heroRouteChapterOne: '1 · 第 1 章：先理解 GPT，再理解 Codex',
   heroRouteChapterOneBody: '在信任之前，分清模型、工具与 Agent。',
@@ -4497,13 +4445,13 @@ Object.assign(copy.zh, {
 });
 Object.assign(copy.es, {
   heroIndex: 'UN MANUAL PARA USAR LLMs',
-  heroEyebrow: 'Empieza en la Lección 0 · lee capítulo a capítulo',
+  heroEyebrow: 'Empieza en el Capítulo 0 · lee capítulo a capítulo',
   heroTitle: '¿Qué son los LLM y cómo usarlos bien?',
-  heroLede: 'Esto es un manual: la Lección 0 explica qué es un modelo de lenguaje grande, y cada capítulo enseña una capa de su uso: tareas, contexto, herramientas, verificación. Lee en orden, haz los pequeños experimentos y aprende a comprobar lo que el modelo te dice.',
-  heroPrimary: 'Empezar la Lección 0: qué es un LLM',
+  heroLede: 'Esto es un manual: el Capítulo 0 explica qué es un modelo de lenguaje grande, y cada capítulo enseña una capa de su uso: tareas, contexto, herramientas, verificación. Lee en orden, haz los pequeños experimentos y aprende a comprobar lo que el modelo te dice.',
+  heroPrimary: 'Empezar el Capítulo 0: qué es un LLM',
   heroSecondary: 'Leer el índice completo',
   heroRouteKicker: 'Una sola ruta de lectura: síguela desde el principio',
-  heroRouteLessonZero: '0 · Lección 0: qué es un LLM',
+  heroRouteLessonZero: '0 · Capítulo 0: qué es un LLM',
   heroRouteLessonZeroBody: '20 minutos. Tokens, contexto, capacidades y los límites honestos.',
   heroRouteChapterOne: '1 · Capítulo 1: GPT antes de Codex',
   heroRouteChapterOneBody: 'Separa un modelo, una herramienta y un agente antes de confiar en ellos.',
@@ -4512,13 +4460,13 @@ Object.assign(copy.es, {
 });
 Object.assign(copy.ja, {
   heroIndex: 'LLM を使いこなすための教科書',
-  heroEyebrow: 'レッスン 0 から始める · 章ごとに読む',
+  heroEyebrow: '第0章から始める · 章ごとに読む',
   heroTitle: '大規模言語モデルとは何か、そしてどう使えばよいのか？',
-  heroLede: 'これは教科書です。レッスン 0 で大規模言語モデルとは何かを説明し、各章で使い方の層——タスク、コンテキスト、ツール、検証——を一つずつ教えます。順番に読み、小さな実験をやり、モデルが伝えることを確認する習慣を身につけてください。',
-  heroPrimary: 'レッスン 0 を始める：LLM とは何か',
+  heroLede: 'これは教科書です。第0章で大規模言語モデルとは何かを説明し、各章で使い方の層——タスク、コンテキスト、ツール、検証——を一つずつ教えます。順番に読み、小さな実験をやり、モデルが伝えることを確認する習慣を身につけてください。',
+  heroPrimary: '第0章を始める：LLM とは何か',
   heroSecondary: '目次を読む',
   heroRouteKicker: '一つの読書経路——最初からたどる',
-  heroRouteLessonZero: '0 · レッスン 0：LLM とは',
+  heroRouteLessonZero: '0 · 第0章：LLM とは',
   heroRouteLessonZeroBody: '20分。トークン、コンテキスト、能力、そして正直な限界。',
   heroRouteChapterOne: '1 · 第1章：Codex より先に GPT を理解する',
   heroRouteChapterOneBody: 'モデル・ツール・エージェントを区別してから信頼する。',
@@ -4527,13 +4475,13 @@ Object.assign(copy.ja, {
 });
 Object.assign(copy.ko, {
   heroIndex: 'LLM 사용 교과서',
-  heroEyebrow: '레슨 0부터 시작 · 장마다 읽기',
+  heroEyebrow: '0장부터 시작 · 장마다 읽기',
   heroTitle: 'LLM이란 무엇이고, 어떻게 잘 쓸까?',
-  heroLede: '이것은 교과서입니다. 레슨 0에서 대규모 언어 모델이 무엇인지 설명하고, 각 장에서 사용의 한 층(과제, 컨텍스트, 도구, 검증)을 가르칩니다. 순서대로 읽고, 작은 실험을 하고, 모델이 말하는 것을 확인하는 습관을 기르세요.',
-  heroPrimary: '레슨 0 시작하기: LLM이란 무엇인가',
+  heroLede: '이것은 교과서입니다. 0장에서 대규모 언어 모델이 무엇인지 설명하고, 각 장에서 사용의 한 층(과제, 컨텍스트, 도구, 검증)을 가르칩니다. 순서대로 읽고, 작은 실험을 하고, 모델이 말하는 것을 확인하는 습관을 기르세요.',
+  heroPrimary: '0장 시작하기: LLM이란 무엇인가',
   heroSecondary: '전체 목차 읽기',
   heroRouteKicker: '하나의 읽기 경로 — 처음부터 따라가기',
-  heroRouteLessonZero: '0 · 레슨 0: LLM이란',
+  heroRouteLessonZero: '0 · 0장: LLM이란',
   heroRouteLessonZeroBody: '20분. 토큰, 컨텍스트, 능력, 그리고 정직한 한계.',
   heroRouteChapterOne: '1 · 1장: Codex 전에 GPT 이해하기',
   heroRouteChapterOneBody: '모델·도구·에이전트를 구분한 뒤 신뢰하세요.',
@@ -4542,13 +4490,13 @@ Object.assign(copy.ko, {
 });
 Object.assign(copy.de, {
   heroIndex: 'EIN LEHRBUCH FÜR DEN LLM-EINSATZ',
-  heroEyebrow: 'Beginne mit Lektion 0 · lies Kapitel für Kapitel',
+  heroEyebrow: 'Beginne mit Kapitel 0 · lies Kapitel für Kapitel',
   heroTitle: 'Was sind LLMs und wie nutzt man sie gut?',
-  heroLede: 'Dies ist ein Lehrbuch: Lektion 0 erklärt, was ein großes Sprachmodell ist, und jedes Kapitel lehrt eine Ebene seiner Nutzung - Aufgaben, Kontext, Werkzeuge, Verifikation. Lies der Reihe nach, mach die kleinen Experimente und lerne, zu prüfen, was ein Modell dir sagt.',
-  heroPrimary: 'Lektion 0 beginnen: Was ist ein LLM',
+  heroLede: 'Dies ist ein Lehrbuch: Kapitel 0 erklärt, was ein großes Sprachmodell ist, und jedes Kapitel lehrt eine Ebene seiner Nutzung - Aufgaben, Kontext, Werkzeuge, Verifikation. Lies der Reihe nach, mach die kleinen Experimente und lerne, zu prüfen, was ein Modell dir sagt.',
+  heroPrimary: 'Kapitel 0 beginnen: Was ist ein LLM',
   heroSecondary: 'Inhaltsverzeichnis lesen',
   heroRouteKicker: 'Ein Lese-Pfad - von Anfang an folgen',
-  heroRouteLessonZero: '0 · Lektion 0: Was ist ein LLM',
+  heroRouteLessonZero: '0 · Kapitel 0: Was ist ein LLM',
   heroRouteLessonZeroBody: '20 Minuten. Tokens, Kontext, Fähigkeiten und die ehrlichen Grenzen.',
   heroRouteChapterOne: '1 · Kapitel 1: GPT vor Codex verstehen',
   heroRouteChapterOneBody: 'Trenne Modell, Werkzeug und Agent, bevor du ihnen vertraust.',
@@ -4557,22 +4505,22 @@ Object.assign(copy.de, {
 });
 
 Object.assign(copy.en, {
-  heroRouteBoundary: 'Read in order. After Lesson 0 and Chapter 1, the whole book is one path — not a menu to choose from.'
+  heroRouteBoundary: 'Read in order. Chapter 0 and Chapter 1 lead into one book-length path — not a menu to choose from.'
 });
 Object.assign(copy.zh, {
-  heroRouteBoundary: '按顺序阅读。第 0 课与第 1 章之后，整本书就是一条路径——不是让你选择的菜单。'
+  heroRouteBoundary: '按顺序阅读。第 0 章与第 1 章通向同一条完整主线——不是让你选择的菜单。'
 });
 Object.assign(copy.es, {
-  heroRouteBoundary: 'Lee en orden. Tras la Lección 0 y el Capítulo 1, todo el libro es un solo camino, no un menú para elegir.'
+  heroRouteBoundary: 'Lee en orden. El Capítulo 0 y el Capítulo 1 llevan a un único recorrido por el libro, no a un menú para elegir.'
 });
 Object.assign(copy.ja, {
-  heroRouteBoundary: '順番に読みましょう。レッスン0と第1章の後、本全体は一つの道です——選ぶためのメニューではありません。'
+  heroRouteBoundary: '順番に読みましょう。第0章と第1章は、本全体へ続く一つの道です——選ぶためのメニューではありません。'
 });
 Object.assign(copy.ko, {
-  heroRouteBoundary: '순서대로 읽으세요. 레슨 0과 1장 이후, 책 전체는 하나의 길입니다 — 고르는 메뉴가 아닙니다.'
+  heroRouteBoundary: '순서대로 읽으세요. 0장과 1장은 책 전체로 이어지는 하나의 길입니다 — 고르는 메뉴가 아닙니다.'
 });
 Object.assign(copy.de, {
-  heroRouteBoundary: 'Lies der Reihe nach. Nach Lektion 0 und Kapitel 1 ist das ganze Buch ein einziger Weg — kein Menü zum Auswählen.'
+  heroRouteBoundary: 'Lies der Reihe nach. Kapitel 0 und Kapitel 1 führen in einen einzigen Weg durch das Buch — kein Menü zum Auswählen.'
 });
 
 // Keep the reader-facing homepage focused on learning. Detailed evidence and
@@ -4678,6 +4626,146 @@ Object.assign(copy.de, {
   startIntro: 'Wähle einen echten Zweck. In weniger als einer Minute erhältst du einen einsatzbereiten Prompt und einen klaren nächsten Schritt; du musst nicht zuerst das ganze Buch verstehen.',
   wizardEyebrow: 'Dein erstes nützliches Ergebnis', wizardTitle: 'Wähle eine Sache, bei der du jetzt Hilfe möchtest.',
   wizardIntro: 'Wähle einen Zweck, ergänze nur die nötigen Angaben und kopiere einen Prompt für jedes Chatmodell. Kein Konto, keine Dateien und keine Einrichtung nötig.'
+});
+
+// The home page is a place to begin, not a release dashboard. Evidence and
+// availability remain explicit in the status and Reader views; action cards
+// say what the reader can do next.
+Object.assign(copy.en, {
+  localeOptionFallback: '',
+  localeBannerFallback: 'This language route is selected. If a requested page is unavailable, Reader keeps this language and explains the next step; it never substitutes an English course page without saying so.',
+  localeTitle: 'Read in your language',
+  localeIntro: 'Choose the language you read most naturally. The interface and the course route stay in that language as you move through the book.',
+  localeRule: 'Switch languages from the menu at the top whenever you need to.',
+  problemStartLink: 'Start Chapter 1 → Lab 011 → Chapter 2 → Lab 001 ↗',
+  problemWrongFileLink: 'Learn the recovery check ↗', problemSkillLink: 'Learn how to choose a Skill ↗', problemUpdateLink: 'Learn the safe update path ↗',
+  problemIntakeLink: 'Choose a first practice ↗', problemLanguageLink: 'Start a language practice ↗', problemGeneralSkillLink: 'Choose a skill practice ↗',
+  problemResearchLink: 'Start the research route ↗', problemRecoveryLink: 'Repair one failed exchange ↗', problemPublicInterestSafetyLink: 'Run the safety inquiry ↗',
+  footerMeta: 'Start small. Check what matters. Learn more with each task.'
+});
+Object.assign(copy.zh, {
+  localeOptionFallback: '',
+  localeBannerFallback: '当前已选择此语言路线。若所请求的页面暂不可用，Reader 会保持当前语言并说明下一步；不会在未说明的情况下替换为英文课程页面。',
+  localeTitle: '用你的语言阅读', localeIntro: '选择你最自然的阅读语言。沿着课程前进时，界面与课程路线都会保持该语言。', localeRule: '需要切换时，使用页面顶部的语言菜单。',
+  problemStartLink: '从第 1 章 → 实验 011 → 第 2 章 → 实验 001 开始 ↗',
+  problemWrongFileLink: '学习如何恢复与检查 ↗', problemSkillLink: '学习如何选择 Skill ↗', problemUpdateLink: '学习安全更新路径 ↗',
+  problemIntakeLink: '选择第一次练习 ↗', problemLanguageLink: '开始语言练习 ↗', problemGeneralSkillLink: '选择一项技能练习 ↗',
+  problemResearchLink: '开始研究路线 ↗', problemRecoveryLink: '修复一次失败的对话 ↗', problemPublicInterestSafetyLink: '开始安全询问 ↗',
+  footerMeta: '从小处开始。检查重要之处。每完成一个任务，多学会一点。'
+});
+Object.assign(copy.es, {
+  localeOptionFallback: '',
+  localeBannerFallback: 'Esta ruta de idioma está seleccionada. Si una página solicitada no está disponible, Reader conserva este idioma y explica el siguiente paso; nunca sustituye sin avisar una página del curso en inglés.',
+  localeTitle: 'Lee en tu idioma', localeIntro: 'Elige el idioma que lees con mayor naturalidad. La interfaz y la ruta del curso se mantienen en ese idioma mientras avanzas.', localeRule: 'Usa el menú de idioma de la parte superior cuando quieras cambiar.',
+  problemStartLink: 'Empieza por el Capítulo 1 → Lab 011 → Capítulo 2 → Lab 001 ↗',
+  problemWrongFileLink: 'Aprende la comprobación de recuperación ↗', problemSkillLink: 'Aprende a elegir un Skill ↗', problemUpdateLink: 'Aprende la ruta de actualización segura ↗',
+  problemIntakeLink: 'Elige una primera práctica ↗', problemLanguageLink: 'Empieza una práctica de idioma ↗', problemGeneralSkillLink: 'Elige una práctica de habilidad ↗',
+  problemResearchLink: 'Empieza la ruta de investigación ↗', problemRecoveryLink: 'Repara un intercambio fallido ↗', problemPublicInterestSafetyLink: 'Realiza la indagación de seguridad ↗',
+  footerMeta: 'Empieza poco a poco. Comprueba lo importante. Aprende con cada tarea.'
+});
+Object.assign(copy.ja, {
+  localeOptionFallback: '',
+  localeBannerFallback: 'この言語ルートが選択されています。リクエストしたページが利用できない場合、Reader はこの言語を維持して次の手順を説明します。説明なく英語のコースページに置き換えることはありません。',
+  localeTitle: '自分の言語で読む', localeIntro: '最も自然に読める言語を選んでください。進行中も、画面とコースルートはその言語のままです。', localeRule: '切り替えたいときは、ページ上部の言語メニューを使ってください。',
+  problemStartLink: '第1章 → Lab 011 → 第2章 → Lab 001 から始める ↗',
+  problemWrongFileLink: '復旧チェックを学ぶ ↗', problemSkillLink: 'Skill の選び方を学ぶ ↗', problemUpdateLink: '安全な更新経路を学ぶ ↗',
+  problemIntakeLink: '最初の練習を選ぶ ↗', problemLanguageLink: '語学練習を始める ↗', problemGeneralSkillLink: 'スキル練習を選ぶ ↗',
+  problemResearchLink: 'リサーチルートを始める ↗', problemRecoveryLink: '失敗した対話を修復する ↗', problemPublicInterestSafetyLink: '安全性の調査を行う ↗',
+  footerMeta: '小さく始める。大事なことを確かめる。一つのタスクごとに学ぶ。'
+});
+Object.assign(copy.ko, {
+  localeOptionFallback: '',
+  localeBannerFallback: '이 언어 경로가 선택되었습니다. 요청한 페이지를 이용할 수 없으면 Reader는 이 언어를 유지한 채 다음 단계를 설명합니다. 알리지 않고 영어 코스 페이지로 바꾸지 않습니다.',
+  localeTitle: '내 언어로 읽기', localeIntro: '가장 편하게 읽는 언어를 고르세요. 진행하는 동안 인터페이스와 코스 경로는 그 언어로 유지됩니다.', localeRule: '언어를 바꾸고 싶을 때는 페이지 위쪽의 언어 메뉴를 사용하세요.',
+  problemStartLink: '챕터 1 → Lab 011 → 챕터 2 → Lab 001 시작 ↗',
+  problemWrongFileLink: '복구 점검 배우기 ↗', problemSkillLink: 'Skill 고르는 법 배우기 ↗', problemUpdateLink: '안전한 업데이트 경로 배우기 ↗',
+  problemIntakeLink: '첫 연습 선택 ↗', problemLanguageLink: '언어 연습 시작 ↗', problemGeneralSkillLink: '기술 연습 선택 ↗',
+  problemResearchLink: '조사 경로 시작 ↗', problemRecoveryLink: '실패한 대화 복구하기 ↗', problemPublicInterestSafetyLink: '안전성 조사 실행 ↗',
+  footerMeta: '작게 시작하세요. 중요한 것을 확인하세요. 과제마다 더 배우세요.'
+});
+Object.assign(copy.de, {
+  localeOptionFallback: '',
+  localeBannerFallback: 'Diese Sprachroute ist ausgewählt. Wenn eine angeforderte Seite nicht verfügbar ist, bleibt Reader in dieser Sprache und erklärt den nächsten Schritt; es ersetzt sie nicht ohne Hinweis durch eine englische Kursseite.',
+  localeTitle: 'In deiner Sprache lesen', localeIntro: 'Wähle die Sprache, die du am natürlichsten liest. Oberfläche und Kursroute bleiben beim Lesen in dieser Sprache.', localeRule: 'Zum Wechseln nutze jederzeit das Sprachmenü oben auf der Seite.',
+  problemStartLink: 'Kapitel 1 → Lab 011 → Kapitel 2 → Lab 001 beginnen ↗',
+  problemWrongFileLink: 'Den Recovery-Check lernen ↗', problemSkillLink: 'Lernen, ein Skill auszuwählen ↗', problemUpdateLink: 'Den sicheren Update-Pfad lernen ↗',
+  problemIntakeLink: 'Eine erste Übung wählen ↗', problemLanguageLink: 'Eine Sprachübung beginnen ↗', problemGeneralSkillLink: 'Eine Übung für Fertigkeiten wählen ↗',
+  problemResearchLink: 'Die Recherche-Route beginnen ↗', problemRecoveryLink: 'Einen fehlgeschlagenen Austausch reparieren ↗', problemPublicInterestSafetyLink: 'Die Sicherheitsprüfung durchführen ↗',
+  footerMeta: 'Klein anfangen. Wichtiges prüfen. Mit jeder Aufgabe mehr lernen.'
+});
+
+Object.assign(copy.en, {
+  navFirst30: 'Five-minute prompt practice',
+  first30Eyebrow: 'A five-minute LLM prompt practice',
+  first30Title: 'See why a clear prompt needs a human check.',
+  first30Intro: 'Use any chat model. You will give it one small rewriting task, then check whether it preserved the facts instead of making helpful-sounding details up.'
+});
+Object.assign(copy.zh, {
+  navFirst30: '5 分钟提示词练习',
+  first30Eyebrow: '5 分钟 LLM 提示词练习',
+  first30Title: '亲眼看看：清楚的提示词为什么还需要人工检查。',
+  first30Intro: '任意聊天模型都可以。你会给它一个很小的改写任务，再检查它是否保留事实，而不是补出听起来很合理的细节。'
+});
+Object.assign(copy.es, {
+  navFirst30: 'Práctica de prompt de cinco minutos',
+  first30Eyebrow: 'Práctica de prompt para LLM de cinco minutos',
+  first30Title: 'Comprueba por qué un prompt claro necesita revisión humana.',
+  first30Intro: 'Usa cualquier modelo de chat. Le darás una pequeña tarea de reescritura y comprobarás si conservó los hechos en lugar de inventar detalles que suenan útiles.'
+});
+Object.assign(copy.ja, {
+  navFirst30: '5分間のプロンプト練習',
+  first30Eyebrow: '5分間の LLM プロンプト練習',
+  first30Title: '明確なプロンプトにも人の確認が必要な理由を確かめる。',
+  first30Intro: 'どのチャットモデルでも使えます。小さな書き換えを依頼し、もっともらしい詳細を足さずに事実を保てたか確認します。'
+});
+Object.assign(copy.ko, {
+  navFirst30: '5분 프롬프트 연습',
+  first30Eyebrow: '5분 LLM 프롬프트 연습',
+  first30Title: '명확한 프롬프트에도 사람의 확인이 필요한 이유를 살펴보세요.',
+  first30Intro: '어떤 채팅 모델이든 사용할 수 있습니다. 작은 다시 쓰기 작업을 요청하고, 그럴듯한 세부 정보를 지어내지 않고 사실을 지켰는지 확인합니다.'
+});
+Object.assign(copy.de, {
+  navFirst30: 'Fünf-Minuten-Prompt-Übung',
+  first30Eyebrow: 'Fünf-Minuten-LLM-Prompt-Übung',
+  first30Title: 'Sieh, warum ein klarer Prompt eine menschliche Prüfung braucht.',
+  first30Intro: 'Nutze ein beliebiges Chatmodell. Du gibst ihm eine kleine Umschreibaufgabe und prüfst, ob es Fakten bewahrt statt hilfreich klingende Details zu erfinden.'
+});
+
+// First prompt practice: teach one visible LLM behavior before introducing
+// tracking vocabulary, lab records, or recovery workflows.
+Object.assign(copy.en, {
+  starterEyebrow: 'Your first prompt practice', starterTitle: 'Ask the model to improve a message without inventing facts.',
+  starterIntro: 'This shows why prompts matter. A model can make a message sound better, but it may also add details you never supplied. Give one clear instruction, then check whether it followed it.',
+  starterStepOne: '01 · READ THE ORIGINAL', starterSource: 'The workshop changed. It starts Friday at 10. Bring the draft. Tell me if you cannot come.',
+  starterStepTwo: '02 · COPY THIS PROMPT INTO ANY CHAT MODEL', starterCopy: 'Copy prompt', starterCopied: 'Prompt copied. Paste it into a chat model, then read the answer against the three questions.', starterCopyFailed: 'Copy failed. Select the prompt text manually.',
+  starterPrompt: 'Please rewrite the message below so it is clear and friendly.\n\nKeep every fact exactly the same. Do not add a date, place, reason, contact detail, or any other information that is not in the original.\n\nOriginal message:\n"The workshop changed. It starts Friday at 10. Bring the draft. Tell me if you cannot come."\n\nReturn only the rewritten message.',
+  starterStepThree: '03 · READ THE ANSWER AND ASK THREE QUESTIONS', starterCheckOne: 'Does it still say Friday at 10?', starterCheckTwo: 'Does it still ask people to bring the draft and reply if they cannot come?', starterCheckThree: 'Did it avoid adding a date, place, reason, or contact detail?',
+  starterCopiedHint: 'If all three answers are yes, the model followed this small instruction. If not, tell it exactly which fact it changed or invented, then try again.',
+  starterExampleLabel: 'ONE ACCEPTABLE RESULT', starterExample: '“The workshop starts Friday at 10. Please bring your draft. If you cannot attend, please reply.”', starterExampleNote: 'The wording can differ. What matters is that the facts and the requested action stay the same.',
+  starterWhyLabel: 'WHY THIS MATTERS', starterWhy: 'An LLM predicts useful-sounding text; it does not automatically know which missing details must stay unknown. A clear prompt and a quick check help you catch that difference.'
+});
+Object.assign(copy.zh, {
+  starterEyebrow: '你的第一条提示词练习', starterTitle: '让模型把消息写得更清楚，但不要编造事实。',
+  starterIntro: '这一步是为了让你亲眼看到：提示词为什么重要。模型能把消息写得更顺，但也可能补上你没有提供的细节。你只要给出一条清楚的要求，再检查它是否遵守即可。',
+  starterStepOne: '01 · 先读原文', starterSource: '“工作坊改期了。周五 10 点开始。请带上草稿。如果你不能参加，请告诉我。”',
+  starterStepTwo: '02 · 把这条提示词复制到任意聊天模型', starterCopy: '复制提示词', starterCopied: '提示词已复制。粘贴到聊天模型后，用下面三个问题检查答案。', starterCopyFailed: '复制失败，请手动选择提示词文本。',
+  starterPrompt: '请把下面这条消息改写得清楚、友好。\n\n所有事实必须完全保留。不要添加原文没有的日期、地点、原因、联系方式或任何其他信息。\n\n原始消息：\n“工作坊改期了。周五 10 点开始。请带上草稿。如果你不能参加，请告诉我。”\n\n只返回改写后的消息。',
+  starterStepThree: '03 · 阅读答案，再问自己三个问题', starterCheckOne: '它还保留了“周五 10 点开始”吗？', starterCheckTwo: '它还保留了“带上草稿”和“不能参加请回复”吗？', starterCheckThree: '它有没有额外编造日期、地点、原因或联系方式？',
+  starterCopiedHint: '三个问题都是“有 / 没有”后，说明模型遵守了这次小要求。只要有一项不对，就直接告诉它改动或编造了哪条事实，再让它重写一次。',
+  starterExampleLabel: '一种合格的结果', starterExample: '“工作坊将于周五 10 点开始。请带上草稿；如果不能参加，请回复告知。”', starterExampleNote: '措辞可以不同。关键是事实和需要对方完成的行动没有变。',
+  starterWhyLabel: '为什么要做这一步', starterWhy: '大语言模型会生成听起来有用的文字，却不会自动知道哪些缺失的信息必须保持未知。一条清楚的提示词加一次快速检查，能帮你发现这个区别。'
+});
+Object.assign(copy.es, {
+  starterEyebrow: 'Tu primera práctica de prompt', starterTitle: 'Pide al modelo que mejore un mensaje sin inventar hechos.', starterIntro: 'Esto muestra por qué importan los prompts. Un modelo puede mejorar un mensaje, pero también puede añadir detalles que no diste. Da una instrucción clara y comprueba si la siguió.', starterStepOne: '01 · LEE EL ORIGINAL', starterSource: '“El taller cambió. Empieza el viernes a las 10. Trae el borrador. Avísame si no puedes venir.”', starterStepTwo: '02 · COPIA ESTE PROMPT EN CUALQUIER MODELO DE CHAT', starterCopy: 'Copiar prompt', starterCopied: 'Prompt copiado. Pégalo en un modelo de chat y revisa la respuesta con las tres preguntas.', starterCopyFailed: 'No se pudo copiar. Selecciona el texto manualmente.', starterPrompt: 'Reescribe el siguiente mensaje para que sea claro y amable.\n\nConserva todos los hechos exactamente igual. No añadas una fecha, lugar, motivo, contacto ni ninguna información que no esté en el original.\n\nMensaje original:\n“El taller cambió. Empieza el viernes a las 10. Trae el borrador. Avísame si no puedes venir.”\n\nDevuelve solo el mensaje reescrito.', starterStepThree: '03 · LEE LA RESPUESTA Y HAZ TRES PREGUNTAS', starterCheckOne: '¿Sigue diciendo viernes a las 10?', starterCheckTwo: '¿Sigue pidiendo traer el borrador y avisar si no se puede asistir?', starterCheckThree: '¿Evita añadir fecha, lugar, motivo o contacto?', starterCopiedHint: 'Si las tres respuestas son sí, el modelo siguió esta instrucción pequeña. Si no, dile exactamente qué hecho cambió o inventó y vuelve a intentarlo.', starterExampleLabel: 'UN RESULTADO ACEPTABLE', starterExample: '“El taller empieza el viernes a las 10. Por favor, trae tu borrador. Si no puedes asistir, avísame.”', starterExampleNote: 'La redacción puede variar. Lo importante es conservar los hechos y la acción solicitada.', starterWhyLabel: 'POR QUÉ IMPORTA', starterWhy: 'Un LLM predice texto que suena útil; no sabe automáticamente qué detalles ausentes deben seguir siendo desconocidos. Un prompt claro y una comprobación rápida ayudan a detectar la diferencia.'
+});
+Object.assign(copy.ja, {
+  starterEyebrow: '最初のプロンプト練習', starterTitle: '事実を作り足さずに、モデルにメッセージを分かりやすくしてもらう。', starterIntro: 'プロンプトがなぜ重要かを確かめる小さな練習です。モデルは文章を整えられますが、与えていない詳細を加えることもあります。明確に指示し、守られたかを確認します。', starterStepOne: '01 · 原文を読む', starterSource: '「ワークショップの予定が変わりました。金曜日の10時に始まります。下書きを持参してください。参加できない場合は知らせてください。」', starterStepTwo: '02 · このプロンプトを任意のチャットモデルにコピー', starterCopy: 'プロンプトをコピー', starterCopied: 'プロンプトをコピーしました。チャットモデルに貼り付け、三つの質問で答えを確認してください。', starterCopyFailed: 'コピーできませんでした。プロンプトを手動で選択してください。', starterPrompt: '次のメッセージを、分かりやすく親しみやすい文章に書き直してください。\n\nすべての事実を完全にそのまま残してください。原文にない日付、場所、理由、連絡先、その他の情報を追加しないでください。\n\n原文：\n「ワークショップの予定が変わりました。金曜日の10時に始まります。下書きを持参してください。参加できない場合は知らせてください。」\n\n書き直したメッセージだけを返してください。', starterStepThree: '03 · 答えを読み、三つの質問をする', starterCheckOne: '金曜日の10時と書かれていますか？', starterCheckTwo: '下書きの持参と、不参加なら知らせることが残っていますか？', starterCheckThree: '日付、場所、理由、連絡先を追加していませんか？', starterCopiedHint: '三つとも問題なければ、この小さな指示に従えています。違う場合は、変更・追加された事実を具体的に伝えて、もう一度試してください。', starterExampleLabel: '許容できる結果の一例', starterExample: '「ワークショップは金曜日の10時に始まります。下書きを持参してください。参加できない場合はお知らせください。」', starterExampleNote: '表現は異なって構いません。事実と求める行動が変わらないことが重要です。', starterWhyLabel: 'なぜ大切か', starterWhy: 'LLM は役に立ちそうな文章を予測しますが、欠けている詳細を未知のままにすべきだと自動で判断するわけではありません。明確なプロンプトと短い確認が、この違いを見つける助けになります。'
+});
+Object.assign(copy.ko, {
+  starterEyebrow: '첫 번째 프롬프트 연습', starterTitle: '사실을 지어내지 않고 모델에게 메시지를 더 분명하게 고쳐 달라고 요청하세요.', starterIntro: '프롬프트가 왜 중요한지 보여 주는 작은 연습입니다. 모델은 메시지를 더 자연스럽게 만들 수 있지만, 제공하지 않은 세부 정보를 덧붙일 수도 있습니다. 한 가지를 분명히 지시하고 지켰는지 확인하세요.', starterStepOne: '01 · 원문 읽기', starterSource: '“워크숍 일정이 바뀌었습니다. 금요일 10시에 시작합니다. 초안을 가져오세요. 참석할 수 없으면 알려 주세요.”', starterStepTwo: '02 · 이 프롬프트를 원하는 채팅 모델에 복사', starterCopy: '프롬프트 복사', starterCopied: '프롬프트를 복사했습니다. 채팅 모델에 붙여 넣은 뒤 세 가지 질문으로 답을 확인하세요.', starterCopyFailed: '복사하지 못했습니다. 프롬프트 텍스트를 직접 선택하세요.', starterPrompt: '아래 메시지를 명확하고 친절하게 다시 작성해 주세요.\n\n모든 사실은 정확히 그대로 유지하세요. 원문에 없는 날짜, 장소, 이유, 연락처 또는 다른 정보를 추가하지 마세요.\n\n원문 메시지:\n“워크숍 일정이 바뀌었습니다. 금요일 10시에 시작합니다. 초안을 가져오세요. 참석할 수 없으면 알려 주세요.”\n\n다시 작성한 메시지만 반환하세요.', starterStepThree: '03 · 답을 읽고 세 가지를 확인하세요', starterCheckOne: '여전히 금요일 10시라고 되어 있나요?', starterCheckTwo: '초안을 가져오고 참석할 수 없으면 알리라는 요청이 남아 있나요?', starterCheckThree: '날짜, 장소, 이유 또는 연락처를 덧붙이지 않았나요?', starterCopiedHint: '세 가지 모두 맞으면 모델이 이 작은 지시를 따른 것입니다. 아니라면 무엇을 바꾸거나 지어냈는지 정확히 말하고 다시 시도하세요.', starterExampleLabel: '허용 가능한 결과 한 가지', starterExample: '“워크숍은 금요일 10시에 시작합니다. 초안을 가져와 주세요. 참석할 수 없으면 알려 주세요.”', starterExampleNote: '표현은 달라도 됩니다. 사실과 요청한 행동이 그대로인 것이 중요합니다.', starterWhyLabel: '왜 중요한가', starterWhy: 'LLM은 유용해 보이는 문장을 예측하지만, 빠진 세부 정보를 계속 모른 채 두어야 한다는 것을 자동으로 알지는 못합니다. 분명한 프롬프트와 빠른 점검이 그 차이를 찾아내는 데 도움을 줍니다.'
+});
+Object.assign(copy.de, {
+  starterEyebrow: 'Deine erste Prompt-Übung', starterTitle: 'Bitte das Modell, eine Nachricht klarer zu machen, ohne Fakten zu erfinden.', starterIntro: 'Diese kleine Übung zeigt, warum Prompts wichtig sind. Ein Modell kann eine Nachricht besser formulieren, aber auch Details ergänzen, die du nie genannt hast. Gib eine klare Anweisung und prüfe, ob es ihr gefolgt ist.', starterStepOne: '01 · LIES DEN ORIGINALTEXT', starterSource: '„Der Workshop wurde verschoben. Er beginnt am Freitag um 10 Uhr. Bring den Entwurf mit. Gib Bescheid, wenn du nicht kommen kannst.“', starterStepTwo: '02 · KOPIERE DIESEN PROMPT IN EIN BELIEBIGES CHATMODELL', starterCopy: 'Prompt kopieren', starterCopied: 'Prompt kopiert. Füge ihn in ein Chatmodell ein und prüfe die Antwort mit den drei Fragen.', starterCopyFailed: 'Kopieren fehlgeschlagen. Wähle den Prompt-Text manuell aus.', starterPrompt: 'Schreibe die folgende Nachricht klar und freundlich um.\n\nErhalte alle Fakten exakt. Füge kein Datum, keinen Ort, keinen Grund, keine Kontaktangabe und keine andere Information hinzu, die nicht im Original steht.\n\nOriginalnachricht:\n„Der Workshop wurde verschoben. Er beginnt am Freitag um 10 Uhr. Bring den Entwurf mit. Gib Bescheid, wenn du nicht kommen kannst.“\n\nGib nur die umgeschriebene Nachricht zurück.', starterStepThree: '03 · LIES DIE ANTWORT UND STELLE DREI FRAGEN', starterCheckOne: 'Steht dort weiterhin Freitag um 10 Uhr?', starterCheckTwo: 'Bleibt die Bitte, den Entwurf mitzubringen und bei Abwesenheit Bescheid zu geben, erhalten?', starterCheckThree: 'Wurden kein Datum, Ort, Grund oder Kontakt ergänzt?', starterCopiedHint: 'Wenn alle drei Antworten ja sind, hat das Modell diese kleine Anweisung befolgt. Wenn nicht, benenne genau die geänderte oder erfundene Tatsache und versuche es erneut.', starterExampleLabel: 'EIN AKZEPTABLES ERGEBNIS', starterExample: '„Der Workshop beginnt am Freitag um 10 Uhr. Bitte bring deinen Entwurf mit. Wenn du nicht kommen kannst, gib bitte Bescheid.“', starterExampleNote: 'Die Formulierung darf abweichen. Wichtig ist, dass Fakten und gewünschte Handlung gleich bleiben.', starterWhyLabel: 'WARUM DAS WICHTIG IST', starterWhy: 'Ein LLM sagt nützlich klingenden Text voraus; es weiß nicht automatisch, welche fehlenden Details unbekannt bleiben müssen. Ein klarer Prompt und eine schnelle Prüfung helfen dir, den Unterschied zu erkennen.'
 });
 
 initializeSearch();

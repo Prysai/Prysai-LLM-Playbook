@@ -1,6 +1,6 @@
 <!-- content_id: llm-fundamentals-guide | locale: JA | language: ja | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
-# レッスン0: 大規模言語モデルとは何か
+# 第0章：大規模言語モデルとは何か
 
 **読了時間:** 約20分。まず一文で捉え、次に5分間のチャット演習でその限界を確かめます。
 

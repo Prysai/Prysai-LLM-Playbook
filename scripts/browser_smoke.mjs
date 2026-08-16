@@ -178,6 +178,29 @@ try {
   );
   await noHorizontalOverflow(page, 'Chinese goal wizard');
   await page.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
+  // The home page must lead with outcomes, not internal development labels.
+  // Evidence remains available in the dedicated status section and Reader.
+  for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de']) {
+    await page.goto(`${origin}/site/?lang=${locale}`, { waitUntil: 'networkidle' });
+    await page.locator('[data-current-language]').waitFor();
+    await page.waitForFunction((expectedLocale) => document.querySelector('[data-current-language]')?.textContent?.trim() === expectedLocale, locale.toUpperCase());
+    assert.equal(
+      await page.locator('.problem-grid .card-link').evaluateAll((links) => links.some((link) => /candidate|draft|not_run/i.test(link.textContent || ''))),
+      false,
+      `${locale} home-page action links expose internal development labels instead of the next action`,
+    );
+    assert.equal(
+      await page.locator('[data-current-language]').innerText(), locale.toUpperCase(),
+      `${locale} interface does not retain the selected language route`,
+    );
+    assert.equal(
+      await page.locator('[data-language-option] [data-language-fallback]').evaluateAll((labels) => labels.some((label) => /fallback/i.test(label.textContent || ''))),
+      false,
+      `${locale} language menu still claims an ordinary English UI fallback`,
+    );
+  }
+  await page.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
+  await page.waitForFunction(() => document.querySelector('[data-current-language]')?.textContent?.trim() === 'EN');
   const skillsSection = page.locator('#skills');
   const adversarialReviewLink = skillsSection.getByRole('link', { name: 'Adversarial Project Review' });
   await adversarialReviewLink.waitFor();
@@ -325,11 +348,11 @@ try {
     /One transferable method[\s\S]*Codex[\s\S]*current sources[\s\S]*runnable evidence/i,
     'hero overstates named-platform coverage or omits the adapter evidence boundary',
   );
-  const lessonZeroLink = page.getByRole('link', { name: 'Lesson 0: what an LLM is' });
+  const lessonZeroLink = page.getByRole('link', { name: 'Chapter 0: what an LLM is' });
   assert.match(
     await lessonZeroLink.getAttribute('href'),
     /reader\.html\?path=book%2Fguides%2Fllm-fundamentals-EN\.md&lang=en$/,
-    'Lesson 0 does not open the textbook opener through the Reader',
+    'Chapter 0 does not open the textbook opener through the Reader',
   );
   const guidedRouteLink = page.getByRole('link', { name: 'Chapter 1: GPT before Codex' });
   assert.match(
@@ -593,32 +616,25 @@ try {
   await newcomerProtocolPage.setViewportSize({ width: 390, height: 844 });
   await noHorizontalOverflow(newcomerProtocolPage, 'mobile newcomer-entry protocol');
   await newcomerProtocolPage.close();
-  assert.equal(await page.getByRole('button', { name: 'Compare with one acceptable shape' }).isDisabled(), true, 'First Win comparison is available before all three judgments');
-  assert.match(await page.locator('[data-first-win-receipt]').innerText(), /judgment_state: incomplete/i, 'First Win does not expose an incomplete local record before checks');
-  await page.locator('[data-first-win-check="facts_kept"][value="FAIL"]').check();
-  await page.locator('[data-first-win-check="action_kept"][value="PASS"]').check();
-  await page.locator('[data-first-win-check="nothing_invented"][value="PASS"]').check();
-  assert.equal(await page.getByRole('button', { name: 'Compare with one acceptable shape' }).isEnabled(), true, 'First Win comparison remains disabled after three judgments');
-  assert.match(await page.locator('[data-first-win-receipt]').innerText(), /first_nonpass: facts_kept[\s\S]*judgment_state: not_all_checks_marked_pass/i, 'First Win does not retain a recovery-needed local record');
-  const firstWinRecoveryHref = await page.getByRole('link', { name: 'Open recovery handoff', exact: true }).getAttribute('href');
-  assert.match(firstWinRecoveryHref, /reader\.html\?path=book%2Fcommunication-clinic-EN\.md&lang=en#recovery-route$/, 'First Win recovery handoff is not a direct bounded route');
-  await page.getByRole('button', { name: 'Copy my local check record' }).click();
-  await page.locator('[data-first-win-record-status]').getByText(/statuses only, not your answer/i).waitFor();
-  await page.getByRole('button', { name: 'Compare with one acceptable shape' }).click();
-  assert.equal(await page.locator('[data-first-win-comparison]').isVisible(), true, 'First Win comparison does not reveal after three judgments');
-  await page.locator('[data-first-win-check="facts_kept"][value="PASS"]').check();
-  assert.match(await page.locator('[data-first-win-receipt]').innerText(), /first_nonpass: none[\s\S]*judgment_state: all_checks_marked_pass/i, 'First Win does not distinguish an all-pass local check');
-  const firstWinFinalState = await page.evaluate(() => ({
-    checks: [...document.querySelectorAll('[data-first-win-check]')].map((input) => ({ name: input.name, value: input.value, checked: input.checked })),
-    recoveryHidden: document.querySelector('[data-first-win-recovery-link]')?.hidden,
-    receipt: document.querySelector('[data-first-win-receipt]')?.textContent,
-  }));
-  assert.equal(firstWinFinalState.recoveryHidden, true, `First Win recovery handoff remains visible after all-pass check: ${JSON.stringify(firstWinFinalState)}`);
-  await page.getByRole('button', { name: 'Copy first prompt' }).click();
-  await page.locator('[data-copy-starter-status]').getByText('First prompt copied.', { exact: false }).waitFor();
-  await page.getByRole('button', { name: 'Copy rescue prompt' }).click();
-  await page.locator('[data-copy-starter-status]').getByText('Rescue prompt copied.', { exact: false }).waitFor();
+  assert.equal(await page.locator('[data-first-win-check]').count(), 0, 'first prompt practice still exposes a scoring form');
+  assert.equal(await page.locator('[data-first-win-receipt]').count(), 0, 'first prompt practice still exposes a machine-style receipt');
+  assert.match(await page.locator('[data-starter-prompt]').innerText(), /Do not add a date, place, reason, contact detail/i, 'first prompt does not name the no-invention boundary');
+  assert.equal(await page.locator('.first-win-checks li').count(), 3, 'first prompt practice does not expose three plain-language checks');
+  await page.locator('[data-copy-starter]').click();
+  await page.locator('[data-copy-starter-status]').getByText('Prompt copied.', { exact: false }).waitFor();
+  for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de']) {
+    const localePage = await context.newPage();
+    await localePage.goto(`${origin}/site/index.html?lang=${locale}`, { waitUntil: 'networkidle' });
+    const expectedUrl = locale === 'en'
+      ? 'https://prysai.github.io/Prysai-LLM-Playbook/'
+      : `https://prysai.github.io/Prysai-LLM-Playbook/?lang=${locale}`;
+    assert.equal(await localePage.locator('link[rel="canonical"]').getAttribute('href'), expectedUrl, `${locale} canonical metadata is incorrect`);
+    assert.ok((await localePage.locator('meta[name="description"]').getAttribute('content'))?.trim(), `${locale} is missing a localized description`);
+    assert.equal(await localePage.locator('.problem-grid .card-link').evaluateAll((links) => links.some((link) => /candidate|draft|not_run/i.test(link.textContent || ''))), false, `${locale} problem cards expose development statuses`);
+    await localePage.close();
+  }
 
+  await page.goto(`${origin}/site/index.html?lang=en`, { waitUntil: 'networkidle' });
   const searchInput = page.getByRole('searchbox', { name: 'Search the Playbook' });
   await searchInput.focus();
   await page.waitForTimeout(100);
@@ -827,11 +843,11 @@ try {
   assert.match(
     await mobileLessonZeroRoute.getAttribute('href'),
     /reader\.html\?path=book%2Fguides%2Fllm-fundamentals-EN\.md&lang=en$/,
-    'mobile Lesson 0 route does not target the textbook opener',
+    'mobile Chapter 0 route does not target the textbook opener',
   );
   await mobileLessonZeroRoute.click();
   await page.waitForURL(/reader\.html\?path=book%2Fguides%2Fllm-fundamentals-EN\.md/);
-  assert.equal(await page.locator('[data-reader-article] h1').filter({ hasText: /Lesson 0|large language model/i }).isVisible(), true, 'mobile Lesson 0 route does not reach the textbook opener');
+  assert.equal(await page.locator('[data-reader-article] h1').filter({ hasText: /Chapter 0|large language model/i }).isVisible(), true, 'mobile Chapter 0 route does not reach the textbook opener');
   const mobileStartRoutes = [
     [/01-gpt-and-codex-EN\.md/, /understand gpt.*codex/i],
     [/02-first-safe-task-EN\.md/, /first safe.*verifiable task|safe.*verifiable/i],
@@ -904,8 +920,7 @@ try {
   await chinesePromptPage.close();
   await page.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
   assert.match(await page.getByRole('link', { name: 'Open every problem route' }).getAttribute('href'), /reader\.html\?path=README-EN\.md&lang=en#choose-your-starting-point$/, 'mobile route index link does not target the canonical English README route section');
-  assert.equal(await page.getByRole('button', { name: 'Copy rescue prompt' }).isVisible(), true, 'mobile rescue control is hidden');
-  assert.equal(await page.getByRole('button', { name: 'Copy my local check record' }).isVisible(), true, 'mobile local record control is hidden');
+  assert.equal(await page.locator('[data-copy-rescue], [data-copy-first-win-record], [data-first-win-check]').count(), 0, 'mobile first prompt practice still exposes a rescue or scoring record');
   await page.getByRole('button', { name: 'Open navigation' }).click();
   const closeMenuButton = page.getByRole('button', { name: 'Close navigation' });
   assert.equal(await closeMenuButton.getByText('Close', { exact: true }).isVisible(), true, 'mobile menu does not visibly identify its close action');

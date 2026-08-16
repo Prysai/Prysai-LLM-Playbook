@@ -9,7 +9,7 @@ Inhalt und wechselt nicht die Sprache.
 
 ## Hier beginnen
 
-1. [Lektion 0: Was ist ein großes Sprachmodell?](guides/llm-fundamentals-DE.md).
+1. [Kapitel 0: Was ist ein großes Sprachmodell?](guides/llm-fundamentals-DE.md).
 2. [Kapitel 1: GPT verstehen, bevor man Codex versteht](chapters/01-gpt-and-codex-DE.md)
    → [Lab 011: GPT, Codex, Tools und Agents unterscheiden](labs/lab-011-gpt-codex-boundaries-DE.md).
 3. [Kapitel 2: Die erste sichere und überprüfbare Aufgabe erledigen](chapters/02-first-safe-task-DE.md)

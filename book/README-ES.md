@@ -6,7 +6,7 @@
 
 ## Lee primero la ruta del libro
 
-1. [Lección 0: qué es un modelo de lenguaje grande](guides/llm-fundamentals-ES.md)
+1. [Capítulo 0: qué es un modelo de lenguaje grande](guides/llm-fundamentals-ES.md)
 2. [Capítulo 1: entiende GPT antes de Codex](chapters/01-gpt-and-codex-ES.md)
 3. [Capítulo 2: completa una primera tarea segura y verificable](chapters/02-first-safe-task-ES.md)
 

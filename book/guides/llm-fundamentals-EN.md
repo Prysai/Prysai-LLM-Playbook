@@ -1,6 +1,6 @@
 <!-- content_id: llm-fundamentals-guide | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-16 -->
 
-# Lesson 0: What Is a Large Language Model?
+# Chapter 0: What Is a Large Language Model?
 
 **Reading time:** about 20 minutes. Start with the one-sentence model, then test its limits in a five-minute chat exercise.
 

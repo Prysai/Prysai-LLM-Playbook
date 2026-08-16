@@ -76,12 +76,12 @@ ROUTE_CONTEXT_MARKERS = {
 }
 
 FOUNDATION_MARKERS = {
-    "EN": ("Lesson 0](guides/llm-fundamentals-EN.md)", "they are not an introduction to what an LLM is"),
-    "ZH": ("第 0 课](guides/llm-fundamentals-ZH.md)", "它们不是解释“大语言模型是什么”的入门课"),
-    "ES": ("Lección 0](guides/llm-fundamentals-ES.md)", "no son una introducción a lo que es un LLM"),
-    "JA": ("レッスン 0](guides/llm-fundamentals-JA.md)", "LLMとは何かを説明する入門ではありません"),
-    "KO": ("레슨 0](guides/llm-fundamentals-KO.md)", "LLM이 무엇인지 설명하는 입문 과정이 아닙니다"),
-    "DE": ("Lektion 0](guides/llm-fundamentals-DE.md)", "sie führen nicht in die Frage ein, was ein LLM ist"),
+    "EN": ("Chapter 0](guides/llm-fundamentals-EN.md)", "they are not an introduction to what an LLM is"),
+    "ZH": ("第 0 章](guides/llm-fundamentals-ZH.md)", "它们不是解释“大语言模型是什么”的入门课"),
+    "ES": ("Capítulo 0](guides/llm-fundamentals-ES.md)", "no son una introducción a lo que es un LLM"),
+    "JA": ("第0章](guides/llm-fundamentals-JA.md)", "LLMとは何かを説明する入門ではありません"),
+    "KO": ("0장](guides/llm-fundamentals-KO.md)", "LLM이 무엇인지 설명하는 입문 과정이 아닙니다"),
+    "DE": ("Kapitel 0](guides/llm-fundamentals-DE.md)", "sie führen nicht in die Frage ein, was ein LLM ist"),
 }
 
 

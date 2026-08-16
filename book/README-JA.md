@@ -6,7 +6,7 @@
 
 ## まず教科書の主線を読む
 
-1. [レッスン 0：大規模言語モデルとは何か](guides/llm-fundamentals-JA.md)
+1. [第0章：大規模言語モデルとは何か](guides/llm-fundamentals-JA.md)
 2. [第 1 章：Codex の前に GPT を理解する](chapters/01-gpt-and-codex-JA.md)
 3. [第 2 章：最初の安全で検証可能なタスク](chapters/02-first-safe-task-JA.md)
 

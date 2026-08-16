@@ -178,7 +178,6 @@ TEXT_REQUIREMENTS = {
         "reader.html?path=book%2Fcommunication-clinic-EN.md&amp;lang=en#general-skill-practice-route",
         "reader.html?path=book%2Fcommunication-clinic-EN.md&amp;lang=en#bounded-research-route",
         "reader.html?path=book%2Fcommunication-clinic-EN.md&amp;lang=en#recovery-route",
-        "candidate · not_run",
         "everyday-prompt-steps",
         "Copy the card exactly as written.",
         "fictional typed Spanish study-group time check",

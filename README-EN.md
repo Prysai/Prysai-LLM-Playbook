@@ -31,7 +31,7 @@ catalogue before beginning.
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-[Start with Lesson 0](book/guides/llm-fundamentals-EN.md) · [Continue to Chapter 1](book/chapters/01-gpt-and-codex-EN.md) · [Then Chapter 2](book/chapters/02-first-safe-task-EN.md) · [Prepare a safe offline fixture](book/routes/first-safe-change-EN.md)
+[Start with Chapter 0](book/guides/llm-fundamentals-EN.md) · [Continue to Chapter 1](book/chapters/01-gpt-and-codex-EN.md) · [Then Chapter 2](book/chapters/02-first-safe-task-EN.md) · [Prepare a safe offline fixture](book/routes/first-safe-change-EN.md)
 
 The Spanish, work-update, and research cards are **optional application practice** after the textbook path; they are not the first lesson.
 
@@ -109,7 +109,7 @@ This project is a book. Start at the beginning; do not choose among the
 catalogue on your first visit.
 
 **Step 0 — what an LLM actually is.** Read
-[Lesson 0 — What Is a Large Language Model](book/guides/llm-fundamentals-EN.md):
+[Chapter 0 — What Is a Large Language Model](book/guides/llm-fundamentals-EN.md):
 20 minutes on tokens, context windows, capabilities, and the honest limits.
 This is the foundation every later chapter builds on.
 
@@ -144,19 +144,19 @@ side effect.
 > project. If you do not have a safe local target when Chapter 2 asks you to
 > choose one, use the [First Safe Change fixture](book/routes/first-safe-change-EN.md)
 > before Lab 001. It supplies one offline target and checker; it does not
-> replace the guided path. The warm-up below is optional and text-only.
+> replace the guided path. The prompt practice below is optional and text-only.
 
-The 15-minute exercise below is an optional, text-only warm-up. It rehearses a
-checking habit; it is not a substitute for the Codex path.
+The five-minute exercise below makes one LLM limit visible: a fluent answer can
+still add facts it was never given. It is not a substitute for the Codex path.
 
 ## Start with a real outcome
 
 | What you need now | Start here | Leave with |
 |---|---|---|
-| No project or coding background yet | [No-setup LLM check](#optional-15-minute-warm-up-no-git-required) | One fictional message, three human checks, and a bounded receipt; use any chat model, no files, tools, account connection, or private data |
+| No project or coding background yet | [Five-minute LLM prompt practice](#optional-15-minute-warm-up-no-git-required) | One fictional message, three plain-language questions, and a visible example; use any chat model, no files, tools, account connection, or private data |
 | Make a first reversible local Codex change | [Recommended Codex path](#the-recommended-first-codex-path) | Needs a disposable project by Chapter 2; leaves with one bounded task card, a small diff, a focused check, and an explicit unverified list |
 | Need a safe local file before using a project | [First Safe Change fixture](book/routes/first-safe-change-EN.md) | One seeded README failure, one permitted README edit, and one local acceptance result; candidate · learner run `not_run` |
-| Rehearse the checking habit without project setup | [Optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required) | One fictional message, three human checks, and a bounded receipt; optional, not the local Codex path |
+| See why prompts need checking | [Five-minute LLM prompt practice](#optional-15-minute-warm-up-no-git-required) | One fictional message, three plain-language questions, and a visible example; optional, not the local Codex path |
 | Turn a vague request into something an Agent can execute | [Chapter 3 — task protocol](book/chapters/03-task-protocol-EN.md) + [Lab 002](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop conditions, and failure handling |
 | Turn a broad learning or research wish into a first attempt | [Beginner Practice Pack intake](book/communication-clinic-EN.md#first-practice-intake) | Ask one decision at a time, select one existing route, and leave with a bounded receipt; supplemental candidate · complete learner run `not_run` |
 | Assess an AI idea that could affect other people | [Public-interest safety inquiry](book/communication-clinic-EN.md#public-interest-safety-route) | A fixed fictional case for decision ownership, affected people, input limits, recourse, evidence, and a stop receipt; candidate · `not_run` |
@@ -199,65 +199,46 @@ completion, and learning effects have not been measured.
 
 <a id="optional-15-minute-warm-up-no-git-required"></a>
 
-## Optional 15-minute warm-up — no Git required
+## A five-minute LLM prompt practice — no setup required
 
-Use any chat model. The source message is already filled in, so your first job
-is to judge one result rather than invent files, commands, or acceptance tests.
-
-```text
-You are revising a fictional short message. Do not use tools, files, browsing, or outside facts.
-
-Source message:
-"Hi, the workshop changed. It starts Friday at 10. Bring the draft. Tell me if you cannot come."
-
-Rewrite it as a clear message to workshop participants. Preserve every fact in the source. Do not invent a calendar date, time zone, venue, deadline, sender, reason for the change, contact method, or any other detail. If a detail is missing, leave it unstated rather than guessing.
-
-Return only the revised message. The reader will check it.
-```
-
-Before comparing with an example, record three independent judgments about
-your answer: facts kept, action kept, and nothing invented. Mark each one
-`PASS`, `FAIL`, or `UNSURE`. Keep the answer and the words that support each
-judgment in your own chat; this repository does not receive them.
-
-If one check fails, copy this rescue prompt:
+This is not a Codex lab. It is a short way to see one important LLM behavior:
+the model can make wording sound helpful while also adding details it was never
+given. Use any chat model; no files, account connection, or technical setup is
+needed.
 
 ```text
-Keep the fictional source and your previous answer in view.
+Please rewrite the message below so it is clear and friendly.
 
-My first failed or uncertain check is: [paste check 1, 2, or 3 here].
+Keep every fact exactly the same. Do not add a date, place, reason, contact detail, or any other information that is not in the original.
 
-Do three things only:
-1. quote the words in your previous answer that caused the failure or uncertainty;
-2. explain the mismatch in one sentence;
-3. return one corrected message, changing only what is necessary.
+Original message:
+"The workshop changed. It starts Friday at 10. Bring the draft. Tell me if you cannot come."
 
-Do not add any fact that is absent from the source. If the source does not contain a detail, leave it unstated rather than guessing.
+Return only the rewritten message.
 ```
+
+Now read the answer and ask three ordinary questions:
+
+1. Does it still say **Friday at 10**?
+2. Does it still ask people to **bring the draft** and **reply if they cannot come**?
+3. Did it avoid adding a date, place, reason, or contact detail?
 
 <details>
-<summary>Compare with one acceptable shape after you record your three checks</summary>
+<summary>One acceptable result</summary>
 
-One acceptable shape is: “The workshop starts Friday at 10. Please bring your
-draft. If you cannot attend, please reply.” Your wording may differ. This is
-an illustration, not a score for your answer or evidence that you learned the
-method.
+One acceptable result is: “The workshop starts Friday at 10. Please bring your
+draft. If you cannot attend, please reply.” Different wording is fine. The
+facts and requested action are what matter.
 </details>
 
-The 15-minute label is a target; beginner completion time has not been measured.
-Your receipt is deliberately modest: attempted; checked here; help used;
-corrected; and not proven. This exercise records one checked attempt. It does
-not prove learning, transfer, general writing ability, or model superiority.
+Why this matters: an LLM predicts useful-sounding text. It does not
+automatically know that missing details must remain unknown. A clear prompt and
+a quick human check make that limit visible. This small illustration does not
+prove learning, transfer, general writing ability, or model superiority.
 For a real local Codex task, return to the
 [recommended path](#the-recommended-first-codex-path): Chapter 1 → Lab 011
 → Chapter 2 → First Safe Change fixture → Lab 001. The [Beginner Practice Pack](book/communication-clinic-EN.md#first-practice-intake)
 is a separate supplemental route for language, research, or a small work task.
-
-If you are an authorised pilot participant, use the
-[Field Report form](https://github.com/Prysai/Prysai-LLM-Playbook/issues/new?template=field-report.yml)
-to share a sanitized first-task observation. It is a private intake route, not
-support, proof of a bug, or learner-outcome evidence; see the
-[feedback contract](docs/quality/public-beta-feedback-contract-v1.md).
 
 <!-- starter-task-contract:end -->
 

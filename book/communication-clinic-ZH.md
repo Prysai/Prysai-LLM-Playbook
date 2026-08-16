@@ -4,7 +4,7 @@
 
 状态：`draft` ｜ 学习者运行证据：`not_run` ｜ 适用范围：任何文字聊天式 LLM 工作台中的低风险、非敏感练习。
 
-**请在完成教材基础主线后再使用：**[第 0 课](guides/llm-fundamentals-ZH.md)
+**请在完成教材基础主线后再使用：**[第 0 章](guides/llm-fundamentals-ZH.md)
 → [第 1 章](chapters/01-gpt-and-codex-ZH.md) →
 [第 2 章](chapters/02-first-safe-task-ZH.md)。这些卡片用于应用已经学到的方法；它们不是解释“大语言模型是什么”的入门课。
 

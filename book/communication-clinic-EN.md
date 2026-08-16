@@ -6,7 +6,7 @@
 low-risk, text-only chat. No cross-model run evidence exists; product-specific
 actions require a sourced adapter.
 
-**Use this after the textbook foundation:** [Lesson 0](guides/llm-fundamentals-EN.md)
+**Use this after the textbook foundation:** [Chapter 0](guides/llm-fundamentals-EN.md)
 → [Chapter 1](chapters/01-gpt-and-codex-EN.md) →
 [Chapter 2](chapters/02-first-safe-task-EN.md). These cards apply the method;
 they are not an introduction to what an LLM is.

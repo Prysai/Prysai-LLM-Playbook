@@ -180,9 +180,9 @@ def validate_candidate_sources(contract: dict[str, Any], candidate_sha: str) -> 
         starter = json.loads(source_bytes[contract["starter_contract_path"]].decode("utf-8"))
     except json.JSONDecodeError as exc:
         raise ValueError(f"candidate starter contract is not valid JSON: {exc}") from exc
-    if not isinstance(starter, dict) or starter.get("schema_version") != "3" or starter.get("status") != "candidate":
-        raise ValueError("candidate starter contract must remain schema 3 and candidate")
-    for key in ("input_text", "prompt", "rescue_prompt", "human_checks", "evidence_boundary"):
+    if not isinstance(starter, dict) or starter.get("schema_version") != "4" or starter.get("status") != "candidate":
+        raise ValueError("candidate starter contract must remain schema 4 and candidate")
+    for key in ("input_text", "prompt", "human_checks", "teaching_point", "evidence_boundary"):
         if not starter.get(key):
             raise ValueError(f"candidate starter contract is missing {key}")
     return candidate_contract, source_bytes, starter
@@ -246,8 +246,8 @@ feature, or perform an external action. You can stop at any time.
 ## Part 0 — public surface observation
 
 Starting from the study entry, without help, find the recommended local Codex
-path, the optional First Win warm-up, the candidate boundary, and the three
-checks. Do not open the comparison example yet. Tell the moderator when you
+path, the five-minute prompt practice, the candidate boundary, and the three
+checks. Tell the moderator when you
 have found each item or when you want to stop.
 
 ## Part 1 — unaided baseline
@@ -265,25 +265,18 @@ Do not ask for a hint.
 
 ## Part 2 — First Win method
 
-The moderator now opens the commit-bound First Win source. Use its fictional
-workshop message and the following fixed prompt. Preserve the first model
-answer before making any repair. For every check, record `PASS`, `FAIL`, or
-`UNSURE` and the exact words that support your judgment. Lock all three
-judgments before viewing the illustrative comparison.
+The moderator now opens the commit-bound prompt-practice source. Use its
+fictional workshop message and the following fixed prompt. Preserve the first
+model answer before making any repair. Answer the three questions in your own
+words, then compare the result with the illustrative example.
 
 ```text
 {starter["prompt"]}
 ```
 
-Checks to complete before comparison:
+Questions to ask about the answer:
 
 {checks}
-
-If a check is `FAIL` or `UNSURE`, use this bounded rescue prompt:
-
-```text
-{starter["rescue_prompt"]}
-```
 
 If the first answer has no observable failure, record
 `not_observable_no_failure`; the moderator will then use the separate seeded

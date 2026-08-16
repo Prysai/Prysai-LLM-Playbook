@@ -7,7 +7,7 @@
 **상태:** `draft` · **학습자 근거:** `not_run` · **대상:** 텍스트 채팅형 LLM에서 하는
 저위험·비민감 연습입니다.
 
-**교과서 기초를 마친 뒤 사용하세요:** [레슨 0](guides/llm-fundamentals-KO.md)
+**교과서 기초를 마친 뒤 사용하세요:** [0장](guides/llm-fundamentals-KO.md)
 → [1장](chapters/01-gpt-and-codex-KO.md) →
 [2장](chapters/02-first-safe-task-KO.md). 이 카드는 배운 방법을 적용하는 것이며 LLM이 무엇인지 설명하는 입문 과정이 아닙니다.
 

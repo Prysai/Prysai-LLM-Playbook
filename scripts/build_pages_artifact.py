@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import shutil
 import sys
@@ -31,6 +32,7 @@ REQUIRED_PUBLISH_FILES = (
     "assets/branding/prysai-lab-mark-white-96.png",
     "assets/readme/prysai-llm-playbook-social.png",
 )
+SEO_CONFIG = ROOT / "site/seo-config.json"
 FORBIDDEN_PUBLISH_FILENAMES = {
     ".env",
     "credentials.json",
@@ -87,11 +89,34 @@ def validate_source() -> None:
         ROOT / "site/reader.html",
         ROOT / "site/reader.css",
         ROOT / "site/reader.js",
+        SEO_CONFIG,
         *(ROOT / path for path in REQUIRED_PUBLISH_FILES),
     )
     missing = [path.relative_to(ROOT).as_posix() for path in required if not path.is_file()]
     if missing:
         raise FileNotFoundError("missing Pages source files: " + ", ".join(missing))
+
+
+def load_seo_config() -> dict[str, object]:
+    value = json.loads(SEO_CONFIG.read_text(encoding="utf-8"))
+    if not isinstance(value, dict):
+        raise ValueError("site/seo-config.json must contain an object")
+    base_url = value.get("public_site_url")
+    locales = value.get("locales")
+    if not isinstance(base_url, str) or not base_url.startswith("https://") or not base_url.endswith("/"):
+        raise ValueError("site/seo-config.json public_site_url must be an absolute HTTPS URL ending in /")
+    if locales != ["en", "zh", "es", "ja", "ko", "de"]:
+        raise ValueError("site/seo-config.json locales must list the six supported locales in canonical order")
+    return value
+
+
+def seo_files(config: dict[str, object]) -> tuple[str, str]:
+    base_url = str(config["public_site_url"])
+    locale_urls = [base_url, *(f"{base_url}?lang={locale}" for locale in config["locales"] if locale != "en")]
+    robots = "User-agent: *\nAllow: /\nSitemap: " + base_url + "sitemap.xml\n"
+    sitemap_items = "".join(f"  <url><loc>{url}</loc></url>\n" for url in locale_urls)
+    sitemap = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n" + sitemap_items + "</urlset>\n"
+    return robots, sitemap
 
 
 def source_symlinks(candidates: list[Path] | None = None) -> list[str]:
@@ -133,7 +158,7 @@ def artifact_secret_findings(output: Path) -> list[str]:
 
 
 def validate_artifact(output: Path) -> None:
-    expected = (output / "index.html", output / ".nojekyll")
+    expected = (output / "index.html", output / ".nojekyll", output / "robots.txt", output / "sitemap.xml")
     missing = [path.name for path in expected if not path.is_file()]
     if missing:
         raise FileNotFoundError("Pages artifact is missing: " + ", ".join(missing))
@@ -174,6 +199,12 @@ def validate_artifact(output: Path) -> None:
     reader_text = (output / "site/reader.html").read_text(encoding="utf-8")
     if "window.CODEX_PAGES_ARTIFACT = true" not in reader_text:
         raise ValueError("Pages Reader must retain artifact routing mode")
+    config = load_seo_config()
+    robots, sitemap = seo_files(config)
+    if (output / "robots.txt").read_text(encoding="utf-8") != robots:
+        raise ValueError("Pages artifact robots.txt must be generated from site/seo-config.json")
+    if (output / "sitemap.xml").read_text(encoding="utf-8") != sitemap:
+        raise ValueError("Pages artifact sitemap.xml must be generated from site/seo-config.json")
 
     integrity_findings = artifact_findings(output)
     if integrity_findings:
@@ -191,6 +222,9 @@ def build_into(output: Path) -> None:
     (output / "index.html").write_text(root_index(ROOT / "site/index.html"), encoding="utf-8", newline="\n")
     (output / "site/reader.html").write_text(pages_reader(ROOT / "site/reader.html"), encoding="utf-8", newline="\n")
     (output / ".nojekyll").write_text("", encoding="utf-8")
+    robots, sitemap = seo_files(load_seo_config())
+    (output / "robots.txt").write_text(robots, encoding="utf-8", newline="\n")
+    (output / "sitemap.xml").write_text(sitemap, encoding="utf-8", newline="\n")
     validate_artifact(output)
 
 

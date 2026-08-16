@@ -8,7 +8,7 @@ de esta página apunta al mismo contenido en español, sin cambiar de idioma.
 
 ## Empieza aquí
 
-1. [Lección 0: qué es un modelo de lenguaje grande](guides/llm-fundamentals-ES.md).
+1. [Capítulo 0: qué es un modelo de lenguaje grande](guides/llm-fundamentals-ES.md).
 2. [Capítulo 1: entender GPT antes de entender Codex](chapters/01-gpt-and-codex-ES.md)
    → [Lab 011: separar GPT, Codex, herramientas y Agents](labs/lab-011-gpt-codex-boundaries-ES.md).
 3. [Capítulo 2: completar una primera tarea segura y verificable](chapters/02-first-safe-task-ES.md)

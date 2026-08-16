@@ -7,7 +7,7 @@
 **状態：** `draft` · **学習者の根拠：** `not_run` · **対象：** テキストチャット型 LLM で行う、
 低リスクかつ非機微な練習。
 
-**書籍の基礎を終えてから使います：**[レッスン 0](guides/llm-fundamentals-JA.md)
+**書籍の基礎を終えてから使います：**[第0章](guides/llm-fundamentals-JA.md)
 → [第 1 章](chapters/01-gpt-and-codex-JA.md) →
 [第 2 章](chapters/02-first-safe-task-JA.md)。このカードは学んだ方法を応用するもので、LLMとは何かを説明する入門ではありません。
 

@@ -10,7 +10,7 @@
 
 ## Read the textbook path first
 
-1. [Lesson 0 — What Is a Large Language Model](guides/llm-fundamentals-EN.md)
+1. [Chapter 0 — What Is a Large Language Model](guides/llm-fundamentals-EN.md)
 2. [Chapter 1 — Understand GPT before Codex](chapters/01-gpt-and-codex-EN.md)
 3. [Chapter 2 — Complete a safe, verifiable task](chapters/02-first-safe-task-EN.md)
 

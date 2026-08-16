@@ -271,7 +271,8 @@ def main() -> int:
                         )
                     if chapter_match:
                         chapter_number = next(group for group in chapter_match.groups() if group is not None)
-                        if not target_content_id.startswith(f"chapter-{int(chapter_number):02d}-"):
+                        expected_prefix = "llm-fundamentals-" if int(chapter_number) == 0 else f"chapter-{int(chapter_number):02d}-"
+                        if not target_content_id.startswith(expected_prefix):
                             errors.append(
                                 f"{path_string} labels chapter {int(chapter_number):02d} but links to {target_content_id}"
                             )

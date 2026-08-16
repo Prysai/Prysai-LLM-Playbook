@@ -1,6 +1,6 @@
 <!-- content_id: llm-fundamentals-guide | locale: DE | language: de | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
-# Lektion 0: Was ist ein großes Sprachmodell?
+# Kapitel 0: Was ist ein großes Sprachmodell?
 
 **Lesezeit:** etwa 20 Minuten. Beginne mit einem Ein-Satz-Modell und prüfe seine Grenzen anschließend in einer fünfminütigen Chat-Übung.
 

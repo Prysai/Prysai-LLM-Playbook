@@ -1,6 +1,6 @@
 <!-- content_id: llm-fundamentals-guide | locale: ES | language: es | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
-# Lección 0: ¿Qué es un modelo de lenguaje grande?
+# Capítulo 0: ¿Qué es un modelo de lenguaje grande?
 
 **Tiempo de lectura:** unos 20 minutos. Empieza con un modelo mental de una frase y después prueba sus límites con un ejercicio de chat de cinco minutos.
 

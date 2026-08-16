@@ -155,32 +155,23 @@ def main() -> int:
 
         for required in (
             "data-copy-starter",
-            "data-copy-rescue",
             "data-starter-prompt",
-            "data-rescue-prompt",
-            "data-first-win-check",
-            "data-first-win-compare",
-            "data-first-win-receipt",
-            "data-copy-first-win-record",
-            "data-first-win-comparison",
+            "starterStepOne",
+            "starterStepTwo",
+            "starterStepThree",
+            "starterWhy",
             'aria-live="polite"',
         ):
             if required not in site_markup:
-                raise AssertionError(f"first-win-controls: missing {required}")
-        if site_markup.count("data-human-check") != 3:
-            raise AssertionError("first-win-controls: exactly three human checks are required")
+                raise AssertionError(f"first-prompt-practice: missing {required}")
+        if site_markup.count("data-first-win-check") != 0 or site_markup.count("data-first-win-receipt") != 0:
+            raise AssertionError("first-prompt-practice: homepage must not expose lab-style self-scoring records")
         for required in (
-            "rescueCopyButton?.addEventListener('click'",
             "starterCopyButton?.addEventListener('click'",
-            "starterRescueCopied",
-            "const renderFirstWinRecord = () => {",
-            "judgment_state:",
-            "firstWinCompare.disabled = !record.complete;",
+            "await navigator.clipboard.writeText(starterPrompt?.textContent || '');",
         ):
             if required not in site_script:
-                raise AssertionError(f"first-win-copy-feedback: missing {required}")
-        if "accepted_on_this_check" in site_script or "acceptance:" in site_script:
-            raise AssertionError("first-win-copy-feedback: self-reported judgments must not claim acceptance")
+                raise AssertionError(f"first-prompt-practice: missing {required}")
         for required in (
             'href="reader.html?path=book%2Fguides%2Fllm-fundamentals-EN.md&amp;lang=en"',
             'data-content-id="chapter-01"',
@@ -194,14 +185,25 @@ def main() -> int:
             if required not in site_markup:
                 raise AssertionError(f"textbook-route: missing {required}")
         for required in (
-            "heroRouteLessonZero: '0 · Lesson 0: what an LLM is'",
+            "heroRouteLessonZero: '0 · Chapter 0: what an LLM is'",
             "heroRouteChapterOne: '1 · Chapter 1: GPT before Codex'",
             "heroRouteChapterTwo: '2 · Chapter 2: your first safe task'",
-            "heroRouteLessonZero: '0 · 第 0 课：LLM 是什么'",
+            "heroRouteLessonZero: '0 · 第 0 章：LLM 是什么'",
         ):
             if required not in site_script:
                 raise AssertionError(f"textbook-route: missing route distinction '{required}'")
         fixtures += 2
+
+        for required in (
+            "const updateSeoMetadata = (language) => {",
+            "link[rel=\"canonical\"]",
+            "meta[property=\"og:url\"]",
+            "meta[name=\"twitter:description\"]",
+            "#site-structured-data",
+        ):
+            if required not in site_script:
+                raise AssertionError(f"localized-seo: missing {required}")
+        fixtures += 1
 
         reader_styles = (Path(__file__).resolve().parents[1] / "site/styles.css").read_text(encoding="utf-8")
         if ".skill-grid > a:nth-child(n + 5) { display: none; }" in reader_styles:
