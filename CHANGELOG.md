@@ -6,6 +6,16 @@ Playbook is ready for public production use.
 
 ## Unreleased
 
+### Changed
+
+- **Open licenses adopted.** Project-owned content (curriculum, diagrams,
+  teaching assets, Skill instructions) moves from CC BY-NC 4.0 to **CC BY 4.0**,
+  and scripts/tooling move to **Apache-2.0** (new `LICENSE-CODE`). Reuse,
+  adaptation, and commercial use are now allowed with attribution; the Prysai
+  name and logos stay project-owned, and third-party assets keep their own
+  licenses. All historical commits are by the project owner, so no external
+  relicense permission was needed.
+
 ### Added
 
 - **Six-platform adapter guide** (book/routes/platform-adapter-guide-EN.md and
