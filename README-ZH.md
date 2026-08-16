@@ -9,22 +9,22 @@
 **语言：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-## 今天先做一件小事
+## 按教材顺序开始：先理解，再动手
 
-你不必先弄懂所有模型、Agent 或 Skill。先选一个不需要账号权限、文件操作或私人资料的小练习：
+第一次来这里，不必在提示词卡、Skill 和不同产品之间做选择。先沿同一条中文主线学习：
 
-- 想用 AI 协助练语言：做[西班牙语六步练习](book/spanish-practice-loop-ZH.md)或[法语六步练习](book/french-practice-loop-ZH.md)。
-- 想把散乱事实写成一条可信的工作更新：做[工作更新六步练习](book/work-update-practice-loop-ZH.md)。
-- 想查资料却不想被漂亮结论带偏：做[研究核查六步练习](book/research-check-practice-loop-ZH.md)。
+1. [第 0 课：什么是大语言模型](book/guides/llm-fundamentals-ZH.md)
+2. [第 1 章：先理解 GPT，再理解 Codex](book/chapters/01-gpt-and-codex-ZH.md)
+3. [第 2 章：完成第一个安全、可验证的任务](book/chapters/02-first-safe-task-ZH.md)
 
-每条路线都先保留你的第一次尝试，再只处理一个可见问题，最后留下回执。它们是候选练习，不保证效率、流利度、研究正确性或能力提升。
+西班牙语、工作更新和研究核查卡是学完主线后的**可选应用练习**，不是理解大语言模型的第一课，也不保证效率、流利度或能力提升。
 
 中文入口导航：
 
 - [中文书稿入口](book/README-ZH.md)
 - [中文序言](book/preface-ZH.md)
 - [中文书籍目录](book/table-of-contents-ZH.md)
-- [中文新手提示卡：先把一件小事说清楚](book/communication-clinic-ZH.md)
+- [中文新手提示卡：可选应用练习](book/communication-clinic-ZH.md)
 
 ## 这是什么项目
 

@@ -8,6 +8,14 @@
 **语言：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
+## 先按教材主线阅读
+
+1. [第 0 课：什么是大语言模型](guides/llm-fundamentals-ZH.md)
+2. [第 1 章：先理解 GPT，再理解 Codex](chapters/01-gpt-and-codex-ZH.md)
+3. [第 2 章：完成第一个安全、可验证的任务](chapters/02-first-safe-task-ZH.md)
+
+提示卡、语言练习、工作更新和研究核查是主线之后的**可选应用练习**，不替代 LLM 基础课。
+
 导航：
 
 - [返回中文项目入口](../README-ZH.md)
@@ -15,7 +23,7 @@
 - [中文书籍目录](table-of-contents-ZH.md)
 - [中文通用 LLM 首练习：安全文字任务](routes/universal-core-foundations-ZH.md)
 - [中文新手安全路线：第一次安全改动](routes/first-safe-change-ZH.md)
-- [中文新手提示卡：把话说清](communication-clinic-ZH.md)
+- [中文新手提示卡：可选应用练习](communication-clinic-ZH.md)
 - [中文工作更新六步练习](work-update-practice-loop-ZH.md)
 - [中文研究核查六步练习](research-check-practice-loop-ZH.md)
 

@@ -7,15 +7,15 @@
 **언어:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-## 오늘은 작은 일 하나만 해 보세요
+## 교과서 순서로 시작하세요: 이해한 뒤에 연습합니다
 
-모든 model, Agent, Skill을 이해한 뒤에 시작할 필요는 없습니다. account permission, file 작업, private data가 필요 없는 연습 하나를 고르세요.
+처음 방문했다면 카드, Skill, 제품 중에서 고르지 마세요. 먼저 한국어 주 학습 경로를 따르세요.
 
-- AI와 language를 연습하고 싶다면 [스페인어 여섯 단계 연습](book/spanish-practice-loop-KO.md) 또는 [프랑스어 여섯 단계 연습](book/french-practice-loop-KO.md)을 여세요.
-- 흩어진 사실을 믿을 수 있는 work update로 만들고 싶다면 [업무 업데이트 여섯 단계 연습](book/work-update-practice-loop-KO.md)을 여세요.
-- 그럴듯한 결론에 끌리지 않고 research claim을 확인하고 싶다면 [리서치 확인 여섯 단계 연습](book/research-check-practice-loop-KO.md)을 여세요.
+1. [레슨 0: 대규모 언어 모델이란 무엇인가](book/guides/llm-fundamentals-KO.md)
+2. [1장: Codex보다 먼저 GPT 이해하기](book/chapters/01-gpt-and-codex-KO.md)
+3. [2장: 첫 번째 안전하고 검증 가능한 작업](book/chapters/02-first-safe-task-KO.md)
 
-각 route는 첫 시도를 보존하고 보이는 문제 하나만 다룬 뒤 receipt로 끝납니다. candidate 연습이므로 효율, 유창성, 조사 정확성, 역량 향상을 보장하지 않습니다.
+스페인어, 업무 업데이트, 리서치 확인 카드는 이 경로 뒤에 하는 **선택 응용 연습**입니다. LLM을 이해하는 첫 수업이 아니며 효율, 유창성, 역량 향상을 약속하지 않습니다.
 
 ## 설치보다 안전한 텍스트 과제부터 시작하세요
 

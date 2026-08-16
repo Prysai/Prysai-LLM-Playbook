@@ -7,15 +7,15 @@ Licencia: el texto del curso y los materiales didácticos están bajo CC BY 4.0;
 **Idiomas:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-## Empieza hoy con una cosa pequeña
+## Empieza como un libro: comprende antes de practicar
 
-No necesitas entender todos los modelos, Agents o Skills antes de probar algo. Elige una práctica que no pide permisos de cuenta, archivos ni datos privados:
+Si es tu primera visita, no elijas todavía entre tarjetas, Skills o productos. Sigue esta ruta en español:
 
-- Para practicar un idioma con ayuda de IA: abre el [ciclo de español en seis pasos](book/spanish-practice-loop-ES.md) o el [ciclo de francés en seis pasos](book/french-practice-loop-ES.md).
-- Para convertir hechos dispersos en una actualización de trabajo fiable: abre el [ciclo de actualización de trabajo](book/work-update-practice-loop-ES.md).
-- Para comprobar una afirmación de investigación sin dejarte llevar por una conclusión elegante: abre el [ciclo de comprobación de investigación](book/research-check-practice-loop-ES.md).
+1. [Lección 0: qué es un modelo de lenguaje grande](book/guides/llm-fundamentals-ES.md)
+2. [Capítulo 1: entiende GPT antes de Codex](book/chapters/01-gpt-and-codex-ES.md)
+3. [Capítulo 2: completa una primera tarea segura y verificable](book/chapters/02-first-safe-task-ES.md)
 
-Cada ruta conserva tu primer intento, trata un solo problema visible y termina con un recibo. Son prácticas candidatas; no garantizan eficiencia, fluidez, investigación correcta ni mejora de capacidad.
+Los ciclos de español, actualización de trabajo e investigación son **práctica de aplicación opcional** después de esta ruta; no son la primera lección sobre LLM ni prometen eficiencia, fluidez o mejora de capacidad.
 
 ## Empieza con una tarea de texto segura, sin instalación
 

@@ -8,13 +8,13 @@
 
 ## 여기서 시작하세요
 
-1. [첫 범용 LLM 작업](routes/universal-core-foundations-KO.md) —
-   가상의 텍스트만 쓰며 설치나 외부 작업이 필요 없는 연습입니다.
+1. [레슨 0: 대규모 언어 모델이란 무엇인가](guides/llm-fundamentals-KO.md).
 2. [1장: Codex를 이해하기 전에 GPT 이해하기](chapters/01-gpt-and-codex-KO.md)
    → [Lab 011: GPT, Codex, 도구, Agent 구분하기](labs/lab-011-gpt-codex-boundaries-KO.md).
 3. [2장: 첫 안전하고 검증 가능한 작업 완료하기](chapters/02-first-safe-task-KO.md)
    → [Lab 001: 첫 안전 작업](labs/lab-001-first-safe-task-KO.md).
-4. [3장: 바람을 작업 프로토콜로 바꾸기](chapters/03-task-protocol-KO.md)
+4. [첫 범용 LLM 작업](routes/universal-core-foundations-KO.md) — 기초 뒤에 하는 선택 응용 연습입니다.
+5. [3장: 바람을 작업 프로토콜로 바꾸기](chapters/03-task-protocol-KO.md)
    → [Lab 002: 바람을 작업 프로토콜로 바꾸기](labs/lab-002-task-protocol-KO.md).
 5. [4장: 컨텍스트, 권한, Agent 행동 경계](chapters/04-context-permissions-and-agent-KO.md)
     → [Lab 007: 행동 경계](labs/lab-007-action-boundaries-KO.md).

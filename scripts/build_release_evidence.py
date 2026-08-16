@@ -58,6 +58,7 @@ REQUIRED_COMMANDS = {
     "localized-evidence-links": ("{python}", "scripts/localize_reader_evidence_links.py", "--check"),
     "localized-practice-cards": ("{python}", "scripts/validate_localized_practice_cards.py"),
     "llm-fundamentals-boundaries": ("{python}", "scripts/validate_llm_fundamentals_boundaries.py"),
+    "textbook-entry-path": ("{python}", "scripts/validate_textbook_entry_path.py"),
     "translation-depth": ("{python}", "scripts/audit_translation_depth.py"),
     "universal-seam-fixture": ("{python}", "scripts/validate_universal_seam_fixture.py"),
     "universal-seam-fixture-tests": ("{python}", "scripts/test_universal_seam_fixture.py"),

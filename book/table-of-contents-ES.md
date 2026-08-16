@@ -8,13 +8,13 @@ de esta página apunta al mismo contenido en español, sin cambiar de idioma.
 
 ## Empieza aquí
 
-1. [Primera tarea universal de LLM](routes/universal-core-foundations-ES.md) —
-   un ejercicio de texto ficticio, sin instalación ni acción externa.
+1. [Lección 0: qué es un modelo de lenguaje grande](guides/llm-fundamentals-ES.md).
 2. [Capítulo 1: entender GPT antes de entender Codex](chapters/01-gpt-and-codex-ES.md)
    → [Lab 011: separar GPT, Codex, herramientas y Agents](labs/lab-011-gpt-codex-boundaries-ES.md).
 3. [Capítulo 2: completar una primera tarea segura y verificable](chapters/02-first-safe-task-ES.md)
     → [Lab 001: primera tarea segura](labs/lab-001-first-safe-task-ES.md).
-4. [Capítulo 3: convertir un deseo en un protocolo de tarea](chapters/03-task-protocol-ES.md)
+4. [Primera tarea universal de LLM](routes/universal-core-foundations-ES.md) — práctica de aplicación opcional después de los fundamentos.
+5. [Capítulo 3: convertir un deseo en un protocolo de tarea](chapters/03-task-protocol-ES.md)
    → [Lab 002: protocolo de tarea](labs/lab-002-task-protocol-ES.md).
 5. [Capítulo 4: contexto, permisos y límites de acción del Agent](chapters/04-context-permissions-and-agent-ES.md)
     → [Lab 007: límites de acción](labs/lab-007-action-boundaries-ES.md).

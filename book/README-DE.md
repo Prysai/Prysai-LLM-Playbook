@@ -9,6 +9,14 @@
 **Sprachen:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
+## Zuerst dem Lehrbuchpfad folgen
+
+1. [Lektion 0: Was ist ein großes Sprachmodell?](guides/llm-fundamentals-DE.md)
+2. [Kapitel 1: GPT vor Codex verstehen](chapters/01-gpt-and-codex-DE.md)
+3. [Kapitel 2: Die erste sichere, überprüfbare Aufgabe](chapters/02-first-safe-task-DE.md)
+
+Karten, Sprachübungen, Arbeitsupdates und Recherche sind **optionale Anwendungsübung** nach dieser Reihenfolge; sie ersetzen nicht die LLM-Grundlagen.
+
 Navigation:
 
 - [Zum deutschen Projekt-Einstieg](../README-DE.md)

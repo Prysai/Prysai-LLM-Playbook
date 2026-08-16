@@ -8,6 +8,14 @@
 **언어:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
+## 먼저 교과서 주 학습 경로를 읽으세요
+
+1. [레슨 0: 대규모 언어 모델이란 무엇인가](guides/llm-fundamentals-KO.md)
+2. [1장: Codex보다 먼저 GPT 이해하기](chapters/01-gpt-and-codex-KO.md)
+3. [2장: 첫 번째 안전하고 검증 가능한 작업](chapters/02-first-safe-task-KO.md)
+
+카드, 언어, 업무 업데이트, 리서치 확인은 이 순서 뒤에 하는 **선택 응용 연습**이며 LLM 기초 수업을 대신하지 않습니다.
+
 ## 한국어로 할 수 있는 두 가지 첫 실습
 
 텍스트 채팅만으로 시작하고 싶다면 [초보자 연습 카드](communication-clinic-KO.md)를 여세요.

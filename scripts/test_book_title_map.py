@@ -39,7 +39,7 @@ def main() -> int:
         "### Chapter 1 — Wrong compact title",
         1,
     )
-    require(title_map.expected_toc(broken_toc, expected, "en") != broken_toc, "TOC title drift was accepted")
+    require(title_map.expected_toc(broken_toc, expected) != broken_toc, "TOC title drift was accepted")
 
     duplicate = copy.deepcopy(expected)
     duplicate["chapters"][1]["id"] = duplicate["chapters"][0]["id"]

@@ -8,13 +8,13 @@
 
 ## まずここから
 
-1. [最初の汎用 LLM タスク](routes/universal-core-foundations-JA.md) —
-   架空のテキストだけを使う、インストールも外部操作も不要な練習です。
+1. [レッスン 0：大規模言語モデルとは何か](guides/llm-fundamentals-JA.md)。
 2. [第 1 章：Codex を理解する前に GPT を理解する](chapters/01-gpt-and-codex-JA.md)
    → [Lab 011：GPT、Codex、ツール、Agent を区別する](labs/lab-011-gpt-codex-boundaries-JA.md)。
 3. [第 2 章：最初の安全で検証可能なタスクを完了する](chapters/02-first-safe-task-JA.md)
    → [Lab 001：最初の安全なタスク](labs/lab-001-first-safe-task-JA.md)。
-4. [第 3 章：願いをタスク・プロトコルに変える](chapters/03-task-protocol-JA.md)
+4. [最初の汎用 LLM タスク](routes/universal-core-foundations-JA.md) — 基礎の後に行う任意の応用練習です。
+5. [第 3 章：願いをタスク・プロトコルに変える](chapters/03-task-protocol-JA.md)
    → [Lab 002：タスク・プロトコル](labs/lab-002-task-protocol-JA.md)。
 5. [第 4 章：コンテキスト、権限、Agent の行動境界](chapters/04-context-permissions-and-agent-JA.md)
     → [Lab 007：行動境界](labs/lab-007-action-boundaries-JA.md)。

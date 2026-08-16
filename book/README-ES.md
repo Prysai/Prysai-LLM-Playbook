@@ -4,6 +4,14 @@
 **Idiomas:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
+## Lee primero la ruta del libro
+
+1. [Lección 0: qué es un modelo de lenguaje grande](guides/llm-fundamentals-ES.md)
+2. [Capítulo 1: entiende GPT antes de Codex](chapters/01-gpt-and-codex-ES.md)
+3. [Capítulo 2: completa una primera tarea segura y verificable](chapters/02-first-safe-task-ES.md)
+
+Las tarjetas, los idiomas, las actualizaciones de trabajo y la investigación son **práctica de aplicación opcional** después de esta secuencia; no sustituyen la base sobre LLM.
+
 ## Dos primeros pasos localizados
 
 Para una práctica únicamente de texto, consulta las [tarjetas para principiantes](communication-clinic-ES.md): siete mensajes copiables para practicar una frase, una actualización, una decisión, una comprobación de fuentes o un límite antes de compartir. Es una ruta `draft / not_run`, no una promesa de fluidez, eficiencia o aprendizaje demostrado.

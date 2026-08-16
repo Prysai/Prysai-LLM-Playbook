@@ -83,6 +83,14 @@
       "first_read": "tasks/todo.md",
       "canonical_sources": ["tasks/plan.md", "tasks/todo.md"],
       "generated_outputs": []
+    },
+    {
+      "path": "tests",
+      "role": "Standard-library test-discovery entry points for tools that do not inspect focused script fixtures.",
+      "entry": "tests/README.md",
+      "first_read": "tests/README.md",
+      "canonical_sources": ["scripts/validate_textbook_entry_path.py"],
+      "generated_outputs": []
     }
   ],
   "subdirectories": [

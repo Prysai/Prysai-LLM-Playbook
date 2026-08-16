@@ -7,15 +7,15 @@
 **言語：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-## 今日、一つだけ小さく試す
+## 教科書の順番で始める：理解してから練習する
 
-すべての model、Agent、Skill を理解してから始める必要はありません。account permission、file 操作、private data が要らない練習を一つ選びます。
+初めて読むときは、カード、Skill、製品から選ばないでください。まず日本語の主線をたどります。
 
-- AI と language を練習したい： [スペイン語の六段階練習](book/spanish-practice-loop-JA.md) または [フランス語の六段階練習](book/french-practice-loop-JA.md)。
-- ばらばらの事実を信頼できる work update にしたい： [業務報告の六段階練習](book/work-update-practice-loop-JA.md)。
-- もっともらしい結論に流されず research claim を確認したい： [リサーチ確認の六段階練習](book/research-check-practice-loop-JA.md)。
+1. [レッスン 0：大規模言語モデルとは何か](book/guides/llm-fundamentals-JA.md)
+2. [第 1 章：Codex の前に GPT を理解する](book/chapters/01-gpt-and-codex-JA.md)
+3. [第 2 章：最初の安全で検証可能なタスク](book/chapters/02-first-safe-task-JA.md)
 
-どの route も最初の試みを残し、見える問題を一つだけ扱い、receipt で終えます。candidate の練習であり、効率、流暢さ、調査の正しさ、能力向上を保証しません。
+スペイン語、業務報告、リサーチ確認のカードは、この主線の後に行う**任意の応用練習**です。LLM を理解する最初の授業ではなく、効率、流暢さ、能力向上も約束しません。
 
 ## インストールではなく、安全なテキスト課題から始める
 

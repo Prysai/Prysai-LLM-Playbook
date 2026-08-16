@@ -31,7 +31,9 @@ catalogue before beginning.
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-[Start the recommended Codex path](#the-recommended-first-codex-path) · [Practise one Spanish exchange](book/communication-clinic-EN.md#six-short-spanish-messages) · [Run one research check](book/communication-clinic-EN.md#six-short-research-messages) · [Choose a safe share boundary](book/communication-clinic-EN.md#share-check) · [Prepare a safe offline fixture](book/routes/first-safe-change-EN.md) · [Try the optional 15-minute warm-up](#optional-15-minute-warm-up-no-git-required)
+[Start with Lesson 0](book/guides/llm-fundamentals-EN.md) · [Continue to Chapter 1](book/chapters/01-gpt-and-codex-EN.md) · [Then Chapter 2](book/chapters/02-first-safe-task-EN.md) · [Prepare a safe offline fixture](book/routes/first-safe-change-EN.md)
+
+The Spanish, work-update, and research cards are **optional application practice** after the textbook path; they are not the first lesson.
 
 README language links switch repository entry files. The interactive showcase is
 a local contributor preview; follow [`site/README.md`](site/README.md) to serve

@@ -33,6 +33,9 @@ cross-platform behavior, learner outcomes, or completion time.
 
 ## Start here
 
+- [Lesson 0 — What Is a Large Language Model](guides/llm-fundamentals-EN.md)
+- [Chapter 1 — Understand GPT before Codex](chapters/01-gpt-and-codex-EN.md)
+- [Chapter 2 — Complete a safe, verifiable task](chapters/02-first-safe-task-EN.md)
 - [Project entry — EN](../README-EN.md)
 - [Book guide — EN](README-EN.md)
 - [Project map — EN](../docs/project-map-EN.md)
@@ -40,7 +43,7 @@ cross-platform behavior, learner outcomes, or completion time.
 - [Preface — EN](preface-EN.md)
 - [Learning path contract — locale-neutral](../docs/governance/learning-path.yaml)
 - [Locale matrix — locale-neutral](../docs/governance/locale-matrix.yaml)
-- [Universal LLM first task — EN](routes/universal-core-foundations-EN.md)
+- [Universal LLM first task — EN, optional application after Lesson 0 through Chapter 2](routes/universal-core-foundations-EN.md)
 - [First Safe Change — optional offline fixture before Lab 001](routes/first-safe-change-EN.md)
 
 ## Part I: From understanding GPT to the first safe use

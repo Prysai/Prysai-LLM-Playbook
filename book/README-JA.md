@@ -4,6 +4,14 @@
 **言語：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
+## まず教科書の主線を読む
+
+1. [レッスン 0：大規模言語モデルとは何か](guides/llm-fundamentals-JA.md)
+2. [第 1 章：Codex の前に GPT を理解する](chapters/01-gpt-and-codex-JA.md)
+3. [第 2 章：最初の安全で検証可能なタスク](chapters/02-first-safe-task-JA.md)
+
+カード、語学、業務報告、リサーチ確認はこの順序の後に行う**任意の応用練習**であり、LLM の基礎を置き換えません。
+
 ## 日本語で行う二つの最初の実践
 
 テキストチャットだけで試すなら、[初心者の練習カード](communication-clinic-JA.md)を開いてください。

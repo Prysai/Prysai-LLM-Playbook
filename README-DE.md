@@ -10,15 +10,15 @@ Lizenz: Kurstexte und Lehrmaterialien stehen unter CC BY 4.0; Skripte und Werkze
 **Sprachen:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-## Heute nur eine kleine Sache ausprobieren
+## Wie ein Lehrbuch beginnen: erst verstehen, dann üben
 
-Du musst nicht erst jedes Modell, jeden Agent und jeden Skill verstehen. Wähle eine Übung, die keine Kontoberechtigung, Dateien oder private Daten benötigt:
+Wenn du zum ersten Mal hier bist, wähle noch nicht zwischen Karten, Skills und Produkten. Folge zuerst diesem deutschen Hauptpfad:
 
-- Für Sprachpraxis mit KI: den [Spanisch-Ablauf in sechs Schritten](book/spanish-practice-loop-DE.md) oder den [Französisch-Ablauf in sechs Schritten](book/french-practice-loop-DE.md).
-- Um verstreute Fakten in ein verlässliches Arbeitsupdate zu verwandeln: den [Arbeitsupdate-Ablauf in sechs Schritten](book/work-update-practice-loop-DE.md).
-- Um eine Forschungsbehauptung zu prüfen, ohne einer eleganten Schlussfolgerung zu vertrauen: den [Rechercheprüfungs-Ablauf in sechs Schritten](book/research-check-practice-loop-DE.md).
+1. [Lektion 0: Was ist ein großes Sprachmodell?](book/guides/llm-fundamentals-DE.md)
+2. [Kapitel 1: GPT vor Codex verstehen](book/chapters/01-gpt-and-codex-DE.md)
+3. [Kapitel 2: Die erste sichere, überprüfbare Aufgabe](book/chapters/02-first-safe-task-DE.md)
 
-Jede Route bewahrt den ersten Versuch, bearbeitet nur ein sichtbares Problem und endet mit einem Beleg. Es sind Kandidatenübungen; sie garantieren weder Effizienz noch Sprachflüssigkeit, korrekte Forschung oder Kompetenzzuwachs.
+Die Karten für Spanisch, Arbeitsupdates und Recherche sind **optionale Anwendungsübung** nach diesem Pfad. Sie sind nicht die erste LLM-Lektion und versprechen weder Effizienz, Sprachflüssigkeit noch Kompetenzzuwachs.
 
 ## Beginne mit einer sicheren Textaufgabe, nicht mit einer Installation
 

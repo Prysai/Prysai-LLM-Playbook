@@ -8,6 +8,14 @@
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
+## Read the textbook path first
+
+1. [Lesson 0 — What Is a Large Language Model](guides/llm-fundamentals-EN.md)
+2. [Chapter 1 — Understand GPT before Codex](chapters/01-gpt-and-codex-EN.md)
+3. [Chapter 2 — Complete a safe, verifiable task](chapters/02-first-safe-task-EN.md)
+
+The prompt cards and language loops are **optional application practice** after this sequence, not a replacement for the LLM foundation.
+
 This directory contains the original main-line book for the `Prysai LLM
 Playbook`. Its stable collaboration method is intended to transfer
 across language-model tools; Codex is the deepest current worked track, not a
