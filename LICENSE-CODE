@@ -1,0 +1,20 @@
+# Prysai LLM Playbook — Code License
+
+Copyright (c) 2026 Prysai Lab
+
+Scripts, static-site code, evaluation tooling, build generators, and other
+software-like files in this repository are licensed under the
+**Apache License, Version 2.0**.
+
+You may use, reproduce, modify, and distribute the code under the terms of the
+Apache License, Version 2.0. You must retain the original copyright notices
+and attribute changes you make; a copy of the license text must be included
+with any substantial portion of the code.
+
+The full license text is available at:
+https://www.apache.org/licenses/LICENSE-2.0
+
+The Prysai name, logos, and marks remain project-owned and are not licensed by
+this notice. Curriculum text, diagrams, and teaching assets are governed by
+[LICENSE](LICENSE) (CC BY 4.0). Third-party material keeps its own license; see
+[docs/sources/asset-register.md](docs/sources/asset-register.md).
