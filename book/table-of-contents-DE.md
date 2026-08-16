@@ -4,7 +4,7 @@
 
 Dies ist ein deutscher Leseweg, keine vollständige Übersetzung des Buchs. Der
 kanonische Katalog enthält 22 Kapitel im Status `candidate` und 18 Labs im
-Status `draft`. Derzeit stehen sieben Kapitel und sechs Labs auf Deutsch bereit.
+Status `draft`. Derzeit stehen sieben Kapitel und elf Labs auf Deutsch bereit.
 Jeder Link auf dieser Seite führt zum entsprechenden deutschen Inhalt. Fehlt
 eine `-DE`-Datei, wird sie als nicht verfügbar ausgewiesen, statt auf ein
 anderes Kapitel oder in eine andere Sprache zu verweisen.
@@ -66,12 +66,12 @@ Transfer.
 | 002 — Aufgabenprotokoll | [Verfügbar: Lab 002](labs/lab-002-task-protocol-DE.md) · `draft / not_run` |
 | 003 — Evidenzprüfung | [Verfügbar: Lab 003](labs/lab-003-evidence-review-DE.md) · `draft / not_run` |
 | 004 — Die kleinste wirksame Fähigkeit auswählen | [Verfügbar: Lab 004](labs/lab-004-skill-selection-DE.md) · `draft / not_run` |
-| 005 — Eine wiederholte Methode in einen abgegrenzten Skill verwandeln | Deutsche Datei noch nicht vorhanden. |
-| 006 — Stoppbedingungen für einen Agent entwerfen | Deutsche Datei noch nicht vorhanden. |
+| 005 — Eine wiederholte Methode in einen abgegrenzten Skill verwandeln | [Verfügbar: Lab 005](labs/lab-005-design-a-skill-DE.md) · `draft / not_run` |
+| 006 — Stoppbedingungen für einen Agent entwerfen | [Verfügbar: Lab 006](labs/lab-006-agent-stop-conditions-DE.md) · `draft / not_run` |
 | 007 — Aktionsgrenzen für eine README-Aufgabe | [Verfügbar: Lab 007](labs/lab-007-action-boundaries-DE.md) · `draft / not_run` |
-| 008 — Ein Thema auf eine untersuchbare Frage eingrenzen | Deutsche Datei noch nicht vorhanden. |
-| 009 — Direkte Umsetzung und Engineering-Lebenszyklus vergleichen | Deutsche Datei noch nicht vorhanden. |
-| 010 — Gemeinsamen Produktkontext erstellen | Deutsche Datei noch nicht vorhanden. |
+| 008 — Ein Thema auf eine untersuchbare Frage eingrenzen | [Verfügbar: Lab 008](labs/lab-008-research-question-DE.md) · `draft / not_run` |
+| 009 — Direkte Umsetzung und Engineering-Lebenszyklus vergleichen | [Verfügbar: Lab 009](labs/lab-009-engineering-lifecycle-DE.md) · `draft / not_run` |
+| 010 — Gemeinsamen Produktkontext erstellen | [Verfügbar: Lab 010](labs/lab-010-product-context-DE.md) · `draft / not_run` |
 | 011 — GPT, Codex, Tools und Agents unterscheiden | [Verfügbar: Lab 011](labs/lab-011-gpt-codex-boundaries-DE.md) · `draft / not_run` |
 | 012 — Eine persönliche Methode in Teamfähigkeit überführen | Deutsche Datei noch nicht vorhanden. |
 | 013 — Einen vollständigen vertikalen Schnitt ausführen | Deutsche Datei noch nicht vorhanden. |

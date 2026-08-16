@@ -4,7 +4,7 @@
 
 これは日本語で読める入口であり、書籍全体の翻訳ではありません。正規の
 カタログには `candidate` の章が 22、本書の実験である `draft` の Lab が 18
-あります。現在、日本語で読めるのは 7 章と 6 Lab です。このページのリンクは
+あります。現在、日本語で読めるのは 7 章と 11 Lab です。このページのリンクは
 すべて対応する日本語コンテンツを指します。`-JA` ファイルがなければ、別の章や
 別の言語へ飛ばさず「未提供」と明記します。
 
@@ -64,12 +64,12 @@
 | 002 — タスク・プロトコル | [提供中：Lab 002](labs/lab-002-task-protocol-JA.md) · `draft / not_run` |
 | 003 — 証拠レビュー | [提供中：Lab 003](labs/lab-003-evidence-review-JA.md) · `draft / not_run` |
 | 004 — 最小限で有効な能力を選ぶ | [提供中：Lab 004](labs/lab-004-skill-selection-JA.md) · `draft / not_run` |
-| 005 — 繰り返す方法を範囲のある Skill にする | 日本語ファイルはまだありません。 |
-| 006 — Agent の停止条件を設計する | 日本語ファイルはまだありません。 |
+| 005 — 繰り返す方法を範囲のある Skill にする | [提供中：Lab 005](labs/lab-005-design-a-skill-JA.md) · `draft / not_run` |
+| 006 — Agent の停止条件を設計する | [提供中：Lab 006](labs/lab-006-agent-stop-conditions-JA.md) · `draft / not_run` |
 | 007 — README タスクの行動境界 | [提供中：Lab 007](labs/lab-007-action-boundaries-JA.md) · `draft / not_run` |
-| 008 — テーマを調査可能な問いまで絞る | 日本語ファイルはまだありません。 |
-| 009 — 直接実装とエンジニアリングのライフサイクルを比べる | 日本語ファイルはまだありません。 |
-| 010 — 共有する製品コンテキストを作る | 日本語ファイルはまだありません。 |
+| 008 — テーマを調査可能な問いまで絞る | [提供中：Lab 008](labs/lab-008-research-question-JA.md) · `draft / not_run` |
+| 009 — 直接実装とエンジニアリングのライフサイクルを比べる | [提供中：Lab 009](labs/lab-009-engineering-lifecycle-JA.md) · `draft / not_run` |
+| 010 — 共有する製品コンテキストを作る | [提供中：Lab 010](labs/lab-010-product-context-JA.md) · `draft / not_run` |
 | 011 — GPT、Codex、ツール、Agent を区別する | [提供中：Lab 011](labs/lab-011-gpt-codex-boundaries-JA.md) · `draft / not_run` |
 | 012 — 個人の方法をチーム能力に変える | 日本語ファイルはまだありません。 |
 | 013 — 完全な垂直スライスを実行する | 日本語ファイルはまだありません。 |

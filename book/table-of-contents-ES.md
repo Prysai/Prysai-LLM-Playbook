@@ -4,7 +4,7 @@
 
 Esta es una ruta de lectura en español, no una traducción completa del libro.
 El catálogo canónico tiene 22 capítulos `candidate` y 18 Labs `draft`; en este
-momento existen 7 capítulos y 6 Labs en español. Cada enlace de esta página
+momento existen 7 capítulos y 11 Labs en español. Cada enlace de esta página
 apunta al mismo contenido en español. Cuando no hay un archivo `-ES`, se indica
 como no disponible en vez de enlazar a otro capítulo o cambiar de idioma.
 
@@ -65,12 +65,12 @@ transferencia.
 | 002 — Protocolo de tarea | [Disponible: Lab 002](labs/lab-002-task-protocol-ES.md) · `draft / not_run` |
 | 003 — Revisión de evidencia | [Disponible: Lab 003](labs/lab-003-evidence-review-ES.md) · `draft / not_run` |
 | 004 — Elegir la capacidad mínima útil | [Disponible: Lab 004](labs/lab-004-skill-selection-ES.md) · `draft / not_run` |
-| 005 — Convertir un método repetido en un Skill acotado | Aún no existe archivo español. |
-| 006 — Diseñar condiciones de parada del Agent | Aún no existe archivo español. |
+| 005 — Convertir un método repetido en un Skill acotado | [Disponible: Lab 005](labs/lab-005-design-a-skill-ES.md) · `draft / not_run` |
+| 006 — Diseñar condiciones de parada del Agent | [Disponible: Lab 006](labs/lab-006-agent-stop-conditions-ES.md) · `draft / not_run` |
 | 007 — Límites de acción para una tarea README | [Disponible: Lab 007](labs/lab-007-action-boundaries-ES.md) · `draft / not_run` |
-| 008 — Acotar un tema hasta una pregunta investigable | Aún no existe archivo español. |
-| 009 — Comparar implementación directa y ciclo de vida de ingeniería | Aún no existe archivo español. |
-| 010 — Crear contexto compartido de producto | Aún no existe archivo español. |
+| 008 — Acotar un tema hasta una pregunta investigable | [Disponible: Lab 008](labs/lab-008-research-question-ES.md) · `draft / not_run` |
+| 009 — Comparar implementación directa y ciclo de vida de ingeniería | [Disponible: Lab 009](labs/lab-009-engineering-lifecycle-ES.md) · `draft / not_run` |
+| 010 — Crear contexto compartido de producto | [Disponible: Lab 010](labs/lab-010-product-context-ES.md) · `draft / not_run` |
 | 011 — Separar GPT, Codex, herramientas y Agents | [Disponible: Lab 011](labs/lab-011-gpt-codex-boundaries-ES.md) · `draft / not_run` |
 | 012 — Convertir un método personal en capacidad de equipo | Aún no existe archivo español. |
 | 013 — Ejecutar un corte vertical completo | Aún no existe archivo español. |
