@@ -136,8 +136,8 @@ retención o transferencia hacen falta tareas posteriores y variadas. Estas tarj
 no tienen ejecuciones de aprendices de Prysai, puntuación independiente ni
 comparación entre modelos.
 
-Este es un conjunto inicial en español, no una traducción completa ni «prompts
-universales». No prueba eficiencia, aprendizaje, fluidez, calidad de modelo ni
+Este es un conjunto inicial en español con revisión lingüística independiente
+pendiente, no una colección de «prompts universales». No prueba eficiencia, aprendizaje, fluidez, calidad de modelo ni
 comportamiento igual entre plataformas. Si necesitas archivos, herramientas,
 navegación, cuentas, publicación externa o datos reales, detente y usa un flujo con
 límites y fuentes adecuados.

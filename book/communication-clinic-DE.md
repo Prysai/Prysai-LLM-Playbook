@@ -138,8 +138,8 @@ einer Aufgabe zu behaupten, braucht es vorher festgelegte Kriterien und ein übe
 Ergebnis. Für Behalten oder Übertragung sind spätere, andere Aufgaben nötig. Für diese
 Karten gibt es keine Prysai-Lernläufe, keine unabhängige Bewertung und keinen Modellvergleich.
 
-Dies sind deutsche Einstiegskarten, keine vollständige Übersetzung und keine „Universal-
-Prompts“. Sie beweisen weder Effizienz noch Lernen, Sprachflüssigkeit, Modellqualität oder
+Dies sind deutsche Einstiegskarten mit noch ausstehender unabhängiger Sprachprüfung,
+keine „Universal-Prompts“. Sie beweisen weder Effizienz noch Lernen, Sprachflüssigkeit, Modellqualität oder
 gleiches Verhalten auf verschiedenen Plattformen. Sobald Dateien, Tools, Browser, Konten,
 externe Veröffentlichung oder echte Daten nötig sind, halte an und verwende einen Ablauf mit
 passenden Grenzen und Quellen.
