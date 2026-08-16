@@ -7,7 +7,7 @@
 ChatGPT, Claude, Gemini, DeepSeek, Grok y Codex te hablan en
 conversación, pero no son el mismo producto. Esta ruta conserva el
 núcleo transferible de la
-[Universal Core Foundations route](universal-core-foundations-es.md) y añade
+[Universal Core Foundations route](universal-core-foundations-ES.md) y añade
 un adaptador honesto a la vez: qué es lo que realmente difiere, qué puedes
 probar con seguridad hoy en cada plataforma y qué debes comprobar en fuentes
 oficiales antes de confiar en una afirmación específica de una plataforma.
@@ -31,8 +31,8 @@ sobre una plataforma, hazte tres preguntas:
 
 Si no puedes responder a las tres, deja la afirmación como `unknown` y anota la
 siguiente comprobación. Consulta la
-[Platform Adapter Review Skill](../skills/prysai-platform-adapter-review/SKILL.md)
-y [Platform Fact Watch](../skills/prysai-platform-fact-watch/SKILL.md) para
+[Platform Adapter Review Skill](../../skills/prysai-platform-adapter-review/SKILL.md)
+y [Platform Fact Watch](../../skills/prysai-platform-fact-watch/SKILL.md) para
 conocer el método de mantenimiento que hay detrás de esta regla.
 
 ## El mapa de plataformas en una página
@@ -44,7 +44,7 @@ conocer el método de mantenimiento que hay detrás de esta regla.
 | Gemini | chat web, app, API | alcance de cuenta de Google, integración con Google Workspace, extensión de app | [Primera tarea en Gemini](#gemini-first-task) |
 | DeepSeek | chat web, app, API | la elección de modelo y la ventana de contexto varían según la versión; consulta la página oficial del modelo | [Primera tarea en DeepSeek](#deepseek-first-task) |
 | Grok | chat web, app | integración con la cuenta de X, acceso a publicaciones en tiempo real, cadencia de lanzamiento de modelos | [Primera tarea en Grok](#grok-first-task) |
-| Codex | escritorio, CLI, IDE, nube, API | la ruta insignia del Playbook: archivos, herramientas, Skills, Agents, permisos | [Ruta de Codex](../routes/first-safe-change-es.md) |
+| Codex | escritorio, CLI, IDE, nube, API | la ruta insignia del Playbook: archivos, herramientas, Skills, Agents, permisos | [Ruta de Codex](../routes/first-safe-change-ES.md) |
 
 Esta tabla es orientación, no equivalencia. Cada fila necesita también su propia
 fuente actual antes de que una lección dependa de ella. La disponibilidad de
@@ -85,7 +85,7 @@ arriba. Después anota una diferencia de plataforma que puedas observar de
 verdad: ¿la respuesta menciona la navegación, la memoria o un enlace de uso
 compartido? Registra lo que viste, no lo que supongas. Para una comprobación
 respaldada por fuentes de una afirmación sobre ChatGPT, usa la
-[Source Investigator Skill](../skills/prysai-source-investigator/SKILL.md)
+[Source Investigator Skill](../../skills/prysai-source-investigator/SKILL.md)
 con las páginas de ayuda oficiales de OpenAI como propietarias de los hechos
 del producto.
 
@@ -101,7 +101,7 @@ cualquier cosa escrita allí como instrucciones que un modelo puede seguir, así
 que revísalo como cualquier regla del proyecto. No inicies Claude Code en un
 repositorio real con credenciales, datos de producción o comandos destructivos
 hasta que hayas completado la disciplina de la
-[First Safe Change route](first-safe-change-es.md).
+[First Safe Change route](first-safe-change-ES.md).
 
 ## Primera tarea en Gemini
 
@@ -136,19 +136,19 @@ las páginas de ayuda oficiales de X/Grok antes de repetirla.
 
 Codex es la ruta insignia del Playbook porque expone el bucle completo:
 contexto, herramientas, permisos, Skills, Agents y verificación. Empieza con la
-[First Safe Change route](first-safe-change-es.md) y
-[Lab 001](../labs/lab-001-first-safe-task-es.md) en un proyecto desechable.
+[First Safe Change route](first-safe-change-ES.md) y
+[Lab 001](../labs/lab-001-first-safe-task-ES.md) en un proyecto desechable.
 No saltes a una superficie en la nube ni a un repositorio real hasta que el
 hábito de inspeccionar antes de editar te resulte cómodo.
 
 ## Después de la primera tarea: ¿qué ruta deberías seguir?
 
-- Quieres una práctica inicial solo de texto: [Beginner Practice Pack](../communication-clinic-es.md).
-- Quieres la ruta insignia en profundidad con archivos y herramientas: [First Safe Change](first-safe-change-es.md).
-- Quieres primero la base neutral de plataforma: [Universal Core Foundations](universal-core-foundations-es.md).
-- Quieres comparar dos plataformas de forma justa: [LLM Comparison Protocol](../skills/prysai-llm-comparison-protocol/SKILL.md).
+- Quieres una práctica inicial solo de texto: [Beginner Practice Pack](../communication-clinic-ES.md).
+- Quieres la ruta insignia en profundidad con archivos y herramientas: [First Safe Change](first-safe-change-ES.md).
+- Quieres primero la base neutral de plataforma: [Universal Core Foundations](universal-core-foundations-ES.md).
+- Quieres comparar dos plataformas de forma justa: [LLM Comparison Protocol](../../skills/prysai-llm-comparison-protocol/SKILL.md).
 - Quieres saber si una lección de plataforma pertenece al plan de estudios:
-  [Platform Adapter Review](../skills/prysai-platform-adapter-review/SKILL.md).
+  [Platform Adapter Review](../../skills/prysai-platform-adapter-review/SKILL.md).
 
 ## Estado de la evidencia y límite
 
@@ -157,8 +157,8 @@ pero no hay ningún intento de aprendiz, ninguna ejecución entre plataformas ni
 ninguna revisión independiente registrada. Las descripciones por plataforma de
 arriba son orientación derivada de documentación de primera parte y recibos de
 investigación con fecha
-([cross-LLM beginner prompting source receipt](../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md),
-[platform teaching boundary card](../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md)).
+([cross-LLM beginner prompting source receipt](../../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md),
+[platform teaching boundary card](../../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md)).
 No son evidencia de que ninguna plataforma se comporte de forma idéntica, de
 que una tarea vaya a tener éxito en todas partes ni de que las funciones de los
 productos sean equivalentes. Los comandos, permisos, precios y disponibilidad
