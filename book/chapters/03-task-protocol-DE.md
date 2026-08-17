@@ -76,7 +76,7 @@ Verbessere die Startseite des Projekts.
 Stärker:
 
 ```text
-Erstelle einen englischsprachigen Einstieg ins Repository, über den neue Leser
+Erstelle einen leserorientierten Einstieg ins Repository, über den neue Leser
 eine von vier Routen wählen, die Quelle der Wahrheit finden, die erste sichere
 Aufgabe öffnen und sehen können, welche Aussagen noch candidate oder unverified sind.
 ```
@@ -459,7 +459,7 @@ den Edit-Satz ausweitet oder ohne Belege Fertigstellung meldet.
 
 Ersetze danach vage Worte durch beobachtbare Kriterien, etwa:
 
-- „Die englische README hat einen sichtbaren Sprachwechsler mit sechs registrierten Einträgen“; und
+- „Die Repository-README hat einen sichtbaren Sprachwechsler mit sechs registrierten Einträgen“; und
 - „Der lokale Link-Check meldet null defekte Repository-Links“.
 
 Die Kriterien brauchen weiterhin den tatsächlichen Validator und Reviewumfang.
