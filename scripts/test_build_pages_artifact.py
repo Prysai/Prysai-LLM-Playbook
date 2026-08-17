@@ -3,10 +3,11 @@
 from __future__ import annotations
 
 import os
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from build_pages_artifact import artifact_secret_findings, source_symlinks
+from build_pages_artifact import artifact_secret_findings, load_seo_config, seo_files, sitemap_index_file, sitemap_urls, source_symlinks
 
 
 def require(condition: bool, message: str) -> None:
@@ -15,6 +16,21 @@ def require(condition: bool, message: str) -> None:
 
 
 def main() -> int:
+    config = load_seo_config()
+    robots, sitemap = seo_files(config)
+    root = ET.fromstring(sitemap)
+    namespace = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
+    urls = [item.text for item in root.findall(f"{namespace}url/{namespace}loc")]
+    require(len(urls) > len(config["locales"]), "sitemap regressed to locale entry pages only")
+    require(config["public_site_url"] in urls, "sitemap omitted the canonical English entry")
+    require(any("reader.html?path=book%2Fchapters%2F" in url and "&lang=en" in url for url in urls), "sitemap omitted an English chapter Reader route")
+    require(any("reader.html?path=book%2Fchapters%2F" in url and "&lang=zh" in url for url in urls), "sitemap omitted a Chinese chapter Reader route")
+    require("Sitemap: " + config["public_site_url"] + "sitemap.xml" in robots, "robots.txt does not point to the canonical sitemap")
+    index = ET.fromstring(sitemap_index_file(config))
+    index_urls = [item.text for item in index.findall(f"{namespace}sitemap/{namespace}loc")]
+    require(index_urls == [config["public_site_url"] + "sitemap.xml"], "sitemap_index.xml does not point to the canonical sitemap")
+    require(len(sitemap_urls(config)) == len(urls), "sitemap URL generation is not deterministic")
+
     with TemporaryDirectory(prefix="pages-artifact-fixtures-") as temporary:
         artifact = Path(temporary) / "artifact"
         artifact.mkdir()
@@ -56,7 +72,7 @@ def main() -> int:
         else:
             require(source_symlinks([source]) == ["source/outside-link.txt"], "published source symlink was not found")
 
-    print("PAGES_ARTIFACT_TESTS_OK fixtures=5 secret-patterns=3 symlink=guarded")
+    print(f"PAGES_ARTIFACT_TESTS_OK fixtures=10 secret-patterns=3 symlink=guarded sitemap={len(urls)}")
     return 0
 
 
