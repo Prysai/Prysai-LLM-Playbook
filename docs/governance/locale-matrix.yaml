@@ -3768,12 +3768,12 @@
         "KO": {
           "path": "book/guides/llm-fundamentals-KO.md",
           "content_status": "candidate",
-          "translation_status": "stale",
-          "coverage": "stale",
+          "translation_status": "candidate",
+          "coverage": "full",
           "run_status": "not_run",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-17",
-          "reason": "The English foundation guide was substantially revised in worktree-2026-08-17; this Korean file has not been retranslated and is withheld from the sitemap until reviewed."
+          "source_revision": "worktree-2026-08-17-foundation-map",
+          "reason": "The guide now mirrors the current English foundation contract in Korean; independent language review and learner-run evidence remain pending."
         },
         "DE": {
           "path": "book/guides/llm-fundamentals-DE.md",
