@@ -37,6 +37,18 @@
   const chapterCard = document.querySelector('[data-reader-chapter-card]');
   const chapterLabel = document.querySelector('[data-reader-chapter-label]');
   const chapterStatus = document.querySelector('[data-reader-chapter-status]');
+  const coreCard = document.querySelector('[data-reader-core-card]');
+  const coreCurrentTitle = document.querySelector('[data-reader-core-current-title]');
+  const coreProgress = document.querySelector('[data-reader-core-progress]');
+  const coreUnitsList = document.querySelector('[data-reader-core-units]');
+  const coreForm = document.querySelector('[data-reader-core-form]');
+  const coreAttempted = document.querySelector('[data-reader-core-attempted]');
+  const coreArtifact = document.querySelector('[data-reader-core-artifact]');
+  const coreLimit = document.querySelector('[data-reader-core-limit]');
+  const coreSave = document.querySelector('[data-reader-core-save]');
+  const coreCopy = document.querySelector('[data-reader-core-copy]');
+  const coreClear = document.querySelector('[data-reader-core-clear]');
+  const coreStatus = document.querySelector('[data-reader-core-status]');
   const trustCard = document.querySelector('[data-reader-trust-card]');
   const trustScope = document.querySelector('[data-reader-trust-scope]');
   const trustReviewed = document.querySelector('[data-reader-trust-reviewed]');
@@ -83,6 +95,164 @@
   readerCopy.de = Object.assign({}, readerCopy.en, {
     skip: 'Zum Inhalt springen', back: 'Zur Übersicht', githubBadgeAria: 'Projekt auf GitHub ansehen', language: 'Sprache', languageAria: 'Lesesprache wählen', detailsAria: 'Seitendetails', bookChaptersAria: 'Kapitel in diesem Teil', bookChapters: 'Kapitel in diesem Teil', chapterList: 'Kapitelliste', labSequence: 'Übungsreihenfolge', skillMethod: 'Wiederverwendbare Methode', fieldNote: 'Feldnotiz', projectDocument: 'Projektdokument', pageDetails: 'Seitendetails', trustRecord: 'Evidenzhinweis für diese Seite', trustScope: 'Erklärter Geltungsbereich', trustReviewed: 'Letzte Evidenzprüfung', trustReview: 'Nächste geplante Prüfung', trustLimitations: 'Eine erklärte Einschränkung', trustBoundary: 'Ein geplanter Prüfungstermin ist keine Aktualitätsgarantie. Dieser Hinweis ist keine vollständige Risikobewertung.', scopeUniversal: 'Allgemeine Methode', scopePlatform: 'Produktspezifische Anleitung', scopeMixed: 'Allgemeine Methode mit Produktbeispielen', trustUnavailable: 'nicht verfügbar', trustUnavailableDetail: 'Das Evidenzregister konnte nicht geladen werden. Dies ist ein Datenfehler und kein Beleg dafür, dass die Seite keinen Eintrag hat.', chapterNavigationAria: 'Kapitelnavigation', labNavigationAria: 'Übungskatalognavigation', previousChapter: 'Vorheriges Kapitel', nextChapter: 'Nächstes Kapitel', previousLab: 'Vorherige Übung', nextLab: 'Nächste Übung', onThisPageAria: 'Auf dieser Seite', onThisPage: 'Auf dieser Seite', readingRoute: 'Inhaltstyp', sourcePath: 'Quellpfad', contentIdentity: 'Inhaltskennung', openSource: 'Quelldatei öffnen ↗', footer: 'Die Quelle bleibt Markdown; diese Seite ist eine statische Leseansicht', loading: 'Quellseite wird geladen…', copyPrompt: 'Anweisung kopieren', copiedPrompt: 'Anweisung kopiert', copyFailed: 'Kopieren fehlgeschlagen', openVisual: 'Visualisierung in voller Größe öffnen', wideTable: 'Breite Tabelle: Horizontal scrollen, um alle Spalten zu lesen.', wideTableAria: (columns) => `${columns}-spaltige Tabelle. Horizontal scrollen, um alle Spalten zu lesen.`, chapterProgress: (number, total, partNumber, partLabel) => `Kapitel ${number} von ${total} · Redaktionsreihenfolge · Teil ${partNumber} · ${partLabel}`.trim(), labProgress: (number, total) => `Übung ${number} von ${total} · Katalogreihenfolge, keine Voraussetzungskette`, chapterCard: (number, label) => `Kapitel ${number} · ${label}`, labCard: (number, title) => `Übung ${number} · ${title}`, catalogOrderOnly: 'nur Katalogreihenfolge', contentStatus: { source: 'Original', candidate: 'Kandidat', 'in-progress': 'Übersetzung in Arbeit', verified: 'geprüft', 'unindexed source': 'nicht indexiertes Original' }, fallbackSourceShown: (name) => `${name}-Quelle wird angezeigt`, missingTranslation: (name) => `${name} ist für diese Seite noch nicht verfügbar. Der Reader wechselt nicht automatisch in eine andere Sprache. Kehre zur Übersicht zurück und wähle eine verfügbare Einheit.`, invalidPath: 'Diese Reader-URL verweist nicht auf eine erlaubte Projektquelldatei. Kehre zur Übersicht zurück und wähle eine Seite aus dem Leitfaden.', loadError: (status) => `Die Quellseite konnte nicht geladen werden (${status}).`, loadTimeout: 'Die Quellseite hat zu lange nicht geantwortet.', loadNetwork: 'Die Quellseite konnte nicht erreicht werden.', retry: 'Erneut laden', translationInProgress: () => 'Die deutsche Übersetzung ist als Kandidat verfügbar und wartet auf eine unabhängige Sprachprüfung. Sie ist keine verifizierte Übersetzung.',
   });
+  const coreReaderCopy = {
+    en: {
+      coreCourseLabel: 'LLM Foundation Core v1', coreCourseIntro: 'Local-only progress. Saving a receipt does not mark learning complete.', coreProgress: (done, total) => `${done} of ${total} units marked attempted locally`, coreAttemptedLabel: 'I made an attempt on this unit', coreArtifactLabel: 'What I kept (non-sensitive)', coreArtifactPlaceholder: 'Example: task card and first response saved locally', coreLimitLabel: 'Help or limit to remember', coreLimitPlaceholder: 'Example: no source check; transfer not observed', coreSave: 'Save local receipt', coreCopy: 'Copy receipt', coreClear: 'Clear local receipt', coreSaved: 'Saved locally. This is not a completion claim.', coreCopied: 'Receipt copied. Check it before sharing.', coreCopyFailed: 'Copy failed. Select the receipt text manually.', coreCleared: 'Local receipt cleared.', corePrivacy: 'Do not paste private data. Nothing is uploaded.', coreStatusAttempted: 'attempt recorded locally', coreStatusNotStarted: 'no local attempt recorded', coreReceiptHeader: 'LLM Foundation Core v1 local receipt', coreReceiptStatus: 'Status', coreReceiptStatusValue: 'candidate / not_run', coreReceiptBoundary: 'Local self-report only; not a completion, learning, retention, transfer, or safety claim.', coreReceiptUpdated: 'Updated', coreReceiptNoData: 'No unit has a local receipt.', coreStorageError: 'This browser did not allow local storage; nothing was saved.'
+    },
+    zh: {
+      coreCourseLabel: 'LLM 基础核心 v1', coreCourseIntro: '进度只保存在本地。保存回执不代表完成学习。', coreProgress: (done, total) => `${total} 个单元中有 ${done} 个已在本地记录尝试`, coreAttemptedLabel: '我已尝试这个单元', coreArtifactLabel: '我保留了什么（不要写敏感信息）', coreArtifactPlaceholder: '例如：任务卡和第一次回答已保存在本地', coreLimitLabel: '使用的帮助或仍有限制', coreLimitPlaceholder: '例如：没有做来源检查；尚未观察迁移', coreSave: '保存本地回执', coreCopy: '复制回执', coreClear: '清除本地回执', coreSaved: '已保存在本地。这不是完成声明。', coreCopied: '回执已复制。分享前请自行检查。', coreCopyFailed: '复制失败，请手动选择回执文本。', coreCleared: '本地回执已清除。', corePrivacy: '不要粘贴私密数据。任何内容都不会上传。', coreStatusAttempted: '已在本地记录尝试', coreStatusNotStarted: '尚未记录本地尝试', coreReceiptHeader: 'LLM 基础核心 v1 本地回执', coreReceiptStatus: '状态', coreReceiptStatusValue: 'candidate / not_run', coreReceiptBoundary: '仅是本地自我记录；不代表完成、学习、保持、迁移或安全性声明。', coreReceiptUpdated: '更新时间', coreReceiptNoData: '还没有单元保存本地回执。', coreStorageError: '此浏览器不允许本地存储；没有保存任何内容。'
+    },
+    es: {
+      coreCourseLabel: 'Núcleo de fundamentos LLM v1', coreCourseIntro: 'El progreso solo se guarda localmente. Guardar un recibo no marca el aprendizaje como completado.', coreProgress: (done, total) => `${done} de ${total} unidades tienen un intento local`, coreAttemptedLabel: 'Hice un intento en esta unidad', coreArtifactLabel: 'Qué conservé (sin datos sensibles)', coreArtifactPlaceholder: 'Ejemplo: guardé localmente la tarjeta y la primera respuesta', coreLimitLabel: 'Ayuda usada o límite pendiente', coreLimitPlaceholder: 'Ejemplo: no comprobé fuentes; la transferencia no se observó', coreSave: 'Guardar recibo local', coreCopy: 'Copiar recibo', coreClear: 'Borrar recibo local', coreSaved: 'Guardado localmente. No es una declaración de finalización.', coreCopied: 'Recibo copiado. Revísalo antes de compartirlo.', coreCopyFailed: 'No se pudo copiar; selecciona el texto manualmente.', coreCleared: 'Recibo local borrado.', corePrivacy: 'No pegues datos privados. Nada se sube.', coreStatusAttempted: 'intento registrado localmente', coreStatusNotStarted: 'sin intento local registrado', coreReceiptHeader: 'Recibo local del núcleo de fundamentos LLM v1', coreReceiptStatus: 'Estado', coreReceiptStatusValue: 'candidate / not_run', coreReceiptBoundary: 'Solo es un registro personal local; no declara finalización, aprendizaje, retención, transferencia ni seguridad.', coreReceiptUpdated: 'Actualizado', coreReceiptNoData: 'Ninguna unidad tiene un recibo local.', coreStorageError: 'Este navegador no permitió el almacenamiento local; no se guardó nada.'
+    },
+    ja: {
+      coreCourseLabel: 'LLM 基礎コア v1', coreCourseIntro: '進捗はこのブラウザー内だけに保存されます。レシートの保存は学習完了を意味しません。', coreProgress: (done, total) => `${total}ユニット中${done}ユニットでローカルに試行を記録`, coreAttemptedLabel: 'このユニットを試した', coreArtifactLabel: '残したもの（機密情報なし）', coreArtifactPlaceholder: '例：タスクカードと最初の回答をローカルに保存', coreLimitLabel: '使った助け、または残る限界', coreLimitPlaceholder: '例：出典確認なし、転移は未観察', coreSave: 'ローカルレシートを保存', coreCopy: 'レシートをコピー', coreClear: 'ローカルレシートを消去', coreSaved: 'ローカルに保存しました。完了の主張ではありません。', coreCopied: 'レシートをコピーしました。共有前に確認してください。', coreCopyFailed: 'コピーできません。レシートを手動で選択してください。', coreCleared: 'ローカルレシートを消去しました。', corePrivacy: '個人情報を貼り付けないでください。アップロードは行いません。', coreStatusAttempted: 'ローカルに試行を記録済み', coreStatusNotStarted: 'ローカルの試行記録なし', coreReceiptHeader: 'LLM 基礎コア v1 ローカルレシート', coreReceiptStatus: 'ステータス', coreReceiptStatusValue: 'candidate / not_run', coreReceiptBoundary: 'ローカルの自己記録にすぎません。完了、学習、保持、転移、安全性を主張するものではありません。', coreReceiptUpdated: '更新', coreReceiptNoData: 'ローカルレシートがあるユニットはありません。', coreStorageError: 'このブラウザーはローカル保存を許可しませんでした。何も保存していません。'
+    },
+    ko: {
+      coreCourseLabel: 'LLM 기초 코어 v1', coreCourseIntro: '진행 상태는 이 브라우저에만 저장됩니다. 기록을 저장해도 학습 완료를 의미하지 않습니다.', coreProgress: (done, total) => `${total}개 단원 중 ${done}개에 로컬 시도가 기록됨`, coreAttemptedLabel: '이 단원을 시도했습니다', coreArtifactLabel: '남긴 것 (민감 정보 제외)', coreArtifactPlaceholder: '예: 작업 카드와 첫 응답을 로컬에 저장', coreLimitLabel: '사용한 도움 또는 남은 한계', coreLimitPlaceholder: '예: 출처 확인 없음; 전이는 관찰하지 않음', coreSave: '로컬 기록 저장', coreCopy: '기록 복사', coreClear: '로컬 기록 지우기', coreSaved: '로컬에 저장했습니다. 완료를 주장하는 기록이 아닙니다.', coreCopied: '기록을 복사했습니다. 공유하기 전에 확인하세요.', coreCopyFailed: '복사하지 못했습니다. 기록을 직접 선택하세요.', coreCleared: '로컬 기록을 지웠습니다.', corePrivacy: '개인 정보를 붙여넣지 마세요. 업로드되지 않습니다.', coreStatusAttempted: '로컬 시도 기록 있음', coreStatusNotStarted: '로컬 시도 기록 없음', coreReceiptHeader: 'LLM 기초 코어 v1 로컬 기록', coreReceiptStatus: '상태', coreReceiptStatusValue: 'candidate / not_run', coreReceiptBoundary: '로컬 자기 기록일 뿐이며 완료, 학습, 유지, 전이 또는 안전성 주장이 아닙니다.', coreReceiptUpdated: '업데이트', coreReceiptNoData: '로컬 기록이 있는 단원이 없습니다.', coreStorageError: '이 브라우저는 로컬 저장을 허용하지 않았습니다. 아무것도 저장하지 않았습니다.'
+    },
+    de: {
+      coreCourseLabel: 'LLM-Grundlagenkern v1', coreCourseIntro: 'Der Fortschritt bleibt lokal. Ein gespeicherter Beleg markiert das Lernen nicht als abgeschlossen.', coreProgress: (done, total) => `${done} von ${total} Einheiten lokal als versucht markiert`, coreAttemptedLabel: 'Ich habe diese Einheit versucht', coreArtifactLabel: 'Was ich behalten habe (keine sensiblen Daten)', coreArtifactPlaceholder: 'Beispiel: Aufgabenkarte und erste Antwort lokal gespeichert', coreLimitLabel: 'Verwendete Hilfe oder offene Grenze', coreLimitPlaceholder: 'Beispiel: keine Quellenprüfung; Transfer nicht beobachtet', coreSave: 'Lokalen Beleg speichern', coreCopy: 'Beleg kopieren', coreClear: 'Lokalen Beleg löschen', coreSaved: 'Lokal gespeichert. Dies ist keine Abschlussbehauptung.', coreCopied: 'Beleg kopiert. Vor dem Teilen prüfen.', coreCopyFailed: 'Kopieren fehlgeschlagen; Beleg manuell auswählen.', coreCleared: 'Lokaler Beleg gelöscht.', corePrivacy: 'Keine privaten Daten einfügen. Es wird nichts hochgeladen.', coreStatusAttempted: 'Versuch lokal erfasst', coreStatusNotStarted: 'kein lokaler Versuch erfasst', coreReceiptHeader: 'Lokaler Beleg für LLM-Grundlagenkern v1', coreReceiptStatus: 'Status', coreReceiptStatusValue: 'candidate / not_run', coreReceiptBoundary: 'Nur ein lokaler Selbstbericht; keine Aussage über Abschluss, Lernen, Behalten, Transfer oder Sicherheit.', coreReceiptUpdated: 'Aktualisiert', coreReceiptNoData: 'Für keine Einheit gibt es einen lokalen Beleg.', coreStorageError: 'Dieser Browser erlaubt keine lokale Speicherung; nichts wurde gespeichert.'
+    },
+  };
+  Object.entries(coreReaderCopy).forEach(([locale, copy]) => Object.assign(readerCopy[locale], copy));
+
+  const coreUnits = [
+    { id: 'core-first-success', contentId: 'llm-foundation-core-v1', path: 'book/routes/llm-foundation-core-v1-EN.md', titles: { en: 'Start with one safe attempt', zh: '从一次安全尝试开始', es: 'Empieza con un intento seguro', ja: '安全な試行から始める', ko: '안전한 시도 하나로 시작하기', de: 'Mit einem sicheren Versuch beginnen' } },
+    { id: 'core-first-generation', contentId: 'llm-core-first-generation', path: 'book/routes/llm-core-first-generation-EN.md', titles: { en: 'Context, instruction, and a first generation', zh: '上下文、指令与第一次生成', es: 'Contexto, instrucción y primera generación', ja: 'コンテキスト、指示、最初の生成', ko: '맥락, 지시, 첫 생성', de: 'Kontext, Anweisung und erste Ausgabe' } },
+    { id: 'core-visible-failures', contentId: 'llm-core-visible-failures', path: 'book/routes/llm-core-visible-failures-EN.md', titles: { en: 'Recognize visible failure modes', zh: '识别可见的失败模式', es: 'Reconocer fallos visibles', ja: '見える失敗パターンを認識する', ko: '눈에 보이는 실패 유형 알아보기', de: 'Sichtbare Fehlerarten erkennen' } },
+    { id: 'core-check-repair', contentId: 'llm-core-check-repair', path: 'book/routes/llm-core-check-repair-EN.md', titles: { en: 'Check, repair, and state limits', zh: '检查、修正并说明限制', es: 'Comprobar, reparar y declarar límites', ja: '確認、修正、限界の明示', ko: '확인하고 고치며 한계 밝히기', de: 'Prüfen, reparieren und Grenzen nennen' } },
+    { id: 'core-unseen-transfer', contentId: 'llm-core-unseen-transfer', path: 'book/routes/llm-core-unseen-transfer-EN.md', titles: { en: 'Repeat the method on an unseen task', zh: '在未见任务上重复方法', es: 'Repetir el método en una tarea nueva', ja: '未知の課題で方法を繰り返す', ko: '새 과제에서 방법 반복하기', de: 'Die Methode auf eine neue Aufgabe übertragen' } },
+  ];
+  const coreStorageKey = 'prysai-llm-foundation-core-receipt-v1';
+  const coreReceiptVersion = 1;
+  let coreStorageAvailable = true;
+  let coreReceipts = {};
+  let coreCurrentUnitId = null;
+
+  function sanitizeCoreText(value) {
+    return typeof value === 'string' ? value.trim().slice(0, 500) : '';
+  }
+
+  function sanitizeCoreEntry(entry) {
+    if (!entry || typeof entry !== 'object') return null;
+    const updatedAt = typeof entry.updatedAt === 'string' && !Number.isNaN(Date.parse(entry.updatedAt))
+      ? entry.updatedAt
+      : '';
+    return {
+      attempted: entry.attempted === true,
+      artifact: sanitizeCoreText(entry.artifact),
+      limit: sanitizeCoreText(entry.limit),
+      updatedAt,
+    };
+  }
+
+  function readCoreReceipts() {
+    let raw = null;
+    try {
+      if (!window.localStorage) throw new Error('local storage unavailable');
+      raw = window.localStorage.getItem(coreStorageKey);
+    } catch (_) {
+      coreStorageAvailable = false;
+      return {};
+    }
+    if (!raw) return {};
+    try {
+      const parsed = JSON.parse(raw);
+      if (parsed?.version !== coreReceiptVersion || !parsed.units || typeof parsed.units !== 'object') return {};
+      return Object.fromEntries(coreUnits
+        .map((unit) => [unit.id, sanitizeCoreEntry(parsed.units[unit.id])])
+        .filter(([, entry]) => entry));
+    } catch (_) {
+      return {};
+    }
+  }
+
+  function writeCoreReceipts() {
+    try {
+      if (!window.localStorage) throw new Error('local storage unavailable');
+      window.localStorage.setItem(coreStorageKey, JSON.stringify({ version: coreReceiptVersion, units: coreReceipts }));
+      coreStorageAvailable = true;
+      return true;
+    } catch (_) {
+      coreStorageAvailable = false;
+      return false;
+    }
+  }
+
+  function clearCoreReceipts() {
+    try {
+      if (!window.localStorage) throw new Error('local storage unavailable');
+      window.localStorage.removeItem(coreStorageKey);
+      coreReceipts = {};
+      coreStorageAvailable = true;
+      return true;
+    } catch (_) {
+      coreStorageAvailable = false;
+      return false;
+    }
+  }
+
+  function coreUnitTitle(unit) {
+    return unit.titles?.[uiLanguage()] || unit.titles?.en || unit.id;
+  }
+
+  function coreReceiptText() {
+    const strings = currentReaderCopy();
+    const lines = [
+      strings.coreReceiptHeader,
+      `${strings.coreReceiptStatus}: ${strings.coreReceiptStatusValue}`,
+      strings.coreReceiptBoundary,
+      `${strings.coreReceiptUpdated}: ${new Date().toISOString()}`,
+      '',
+    ];
+    coreUnits.forEach((unit, index) => {
+      const entry = coreReceipts[unit.id];
+      lines.push(`${index + 1}. ${coreUnitTitle(unit)} — ${entry?.attempted ? strings.coreStatusAttempted : strings.coreStatusNotStarted}`);
+      if (entry?.artifact) lines.push(`   ${strings.coreArtifactLabel}: ${entry.artifact}`);
+      if (entry?.limit) lines.push(`   ${strings.coreLimitLabel}: ${entry.limit}`);
+    });
+    if (Object.keys(coreReceipts).length === 0) lines.push('', strings.coreReceiptNoData);
+    return lines.join('\n');
+  }
+
+  function renderCoreTracker(selection) {
+    if (!coreCard || !coreUnitsList || !coreForm) return;
+    const currentUnit = coreUnits.find((unit) => unit.contentId === selection?.contentId);
+    if (!currentUnit) {
+      coreCurrentUnitId = null;
+      coreCard.hidden = true;
+      return;
+    }
+    coreCurrentUnitId = currentUnit.id;
+    const strings = currentReaderCopy();
+    coreCard.hidden = false;
+    coreCurrentTitle.textContent = coreUnitTitle(currentUnit);
+    const attemptedCount = coreUnits.filter((unit) => coreReceipts[unit.id]?.attempted === true).length;
+    coreProgress.textContent = strings.coreProgress(attemptedCount, coreUnits.length);
+    coreUnitsList.replaceChildren();
+    coreUnits.forEach((unit, index) => {
+      const item = document.createElement('li');
+      item.className = unit.id === currentUnit.id ? 'is-current' : '';
+      const link = document.createElement('a');
+      link.href = readerHref(unit.path, '', activeLocale);
+      link.textContent = `${index + 1}. ${coreUnitTitle(unit)}`;
+      if (unit.id === currentUnit.id) link.setAttribute('aria-current', 'page');
+      const status = document.createElement('span');
+      status.textContent = coreReceipts[unit.id]?.attempted === true
+        ? strings.coreStatusAttempted
+        : strings.coreStatusNotStarted;
+      item.append(link, status);
+      coreUnitsList.append(item);
+    });
+    const entry = coreReceipts[currentUnit.id] || {};
+    coreAttempted.checked = entry.attempted === true;
+    coreArtifact.value = entry.artifact || '';
+    coreLimit.value = entry.limit || '';
+    coreStatus.textContent = coreStorageAvailable ? '' : strings.coreStorageError;
+  }
+
+  coreReceipts = readCoreReceipts();
   const uiLanguage = () => readerCopy[activeLocale || requestedLocale] ? activeLocale || requestedLocale : 'en';
   const currentReaderCopy = () => readerCopy[uiLanguage()];
   const applyReaderChrome = () => {
@@ -947,6 +1117,8 @@ function canonicalChapterTitle(chapter) {
     article.dataset.readerFallback = 'false';
     article.replaceChildren();
     if (readerAside) readerAside.hidden = true;
+    if (coreCard) coreCard.hidden = true;
+    coreCurrentUnitId = null;
     if (orientation) orientation.hidden = true;
     if (mobilePageToc) mobilePageToc.hidden = true;
     if (pagination) pagination.hidden = true;
@@ -1122,6 +1294,7 @@ function canonicalChapterTitle(chapter) {
     contentIdNode.textContent = selection.contentId || 'unindexed source';
     sourceLink.href = directHref(selection.path);
     languageSelect.value = locale;
+    renderCoreTracker(selection);
     if (selection.translationReviewPending) {
       setReaderStatus(currentReaderCopy().translationInProgress(locales[locale]?.display_name || locale));
     } else setReaderStatus('');
@@ -1139,6 +1312,44 @@ function canonicalChapterTitle(chapter) {
     const requested = content?.locales?.[locale];
     const target = requested?.path || requestedPath;
     window.location.href = readerHref(target, window.location.hash, locale);
+  });
+
+  coreSave?.addEventListener('click', () => {
+    const unit = coreUnits.find((candidate) => candidate.id === coreCurrentUnitId);
+    if (!unit) return;
+    coreReceipts[unit.id] = {
+      attempted: coreAttempted.checked === true,
+      artifact: sanitizeCoreText(coreArtifact.value),
+      limit: sanitizeCoreText(coreLimit.value),
+      updatedAt: new Date().toISOString(),
+    };
+    if (!writeCoreReceipts()) {
+      coreStatus.textContent = currentReaderCopy().coreStorageError;
+      return;
+    }
+    renderCoreTracker({ contentId: unit.contentId });
+    coreStatus.textContent = currentReaderCopy().coreSaved;
+  });
+
+  coreCopy?.addEventListener('click', async () => {
+    const strings = currentReaderCopy();
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('clipboard unavailable');
+      await navigator.clipboard.writeText(coreReceiptText());
+      coreStatus.textContent = strings.coreCopied;
+    } catch (_) {
+      coreStatus.textContent = strings.coreCopyFailed;
+    }
+  });
+
+  coreClear?.addEventListener('click', () => {
+    if (!clearCoreReceipts()) {
+      coreStatus.textContent = currentReaderCopy().coreStorageError;
+      return;
+    }
+    const currentUnit = coreUnits.find((unit) => unit.id === coreCurrentUnitId);
+    if (currentUnit) renderCoreTracker({ contentId: currentUnit.contentId });
+    coreStatus.textContent = currentReaderCopy().coreCleared;
   });
 
   load().catch((error) => showError(`The source page could not be rendered: ${error.message}`));
