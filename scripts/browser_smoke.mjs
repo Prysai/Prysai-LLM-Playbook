@@ -1028,6 +1028,31 @@ try {
   await universalSeamRawPage.screenshot({ path: path.join(visualEvidenceDirectory, 'universal-seams-mobile-visual-route.png') });
   await universalSeamRawPage.close();
 
+  // The five-unit LLM Foundation Core is an English source route for now. It
+  // must render through the Reader when addressed directly, while every other
+  // locale fails closed instead of projecting the English lesson silently.
+  const coreRouteChecks = [
+    ['llm-foundation-core-v1-EN.md', /LLM Foundation Core v1/i],
+    ['llm-core-first-generation-EN.md', /Context, instruction, and a first generation/i],
+    ['llm-core-visible-failures-EN.md', /Recognize visible LLM failures/i],
+    ['llm-core-check-repair-EN.md', /Check, repair, and state limits/i],
+    ['llm-core-unseen-transfer-EN.md', /Repeat the method on an unseen task/i],
+  ];
+  const coreRoutePage = await context.newPage();
+  for (const [sourceName, titlePattern] of coreRouteChecks) {
+    const sourcePath = `book%2Froutes%2F${sourceName}`;
+    await coreRoutePage.goto(`${origin}/site/reader.html?path=${sourcePath}&lang=en`, { waitUntil: 'networkidle' });
+    await coreRoutePage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+    assert.match(await coreRoutePage.locator('[data-reader-article] h1').innerText(), titlePattern, `English core route did not render: ${sourceName}`);
+    assert.equal(await coreRoutePage.locator('[data-reader-article]').getAttribute('data-reader-translation-status'), 'source', `English core route is not marked as source: ${sourceName}`);
+
+    await coreRoutePage.goto(`${origin}/site/reader.html?path=${sourcePath}&lang=zh`, { waitUntil: 'networkidle' });
+    await coreRoutePage.locator('[data-reader-article][aria-busy="false"]').waitFor();
+    assert.equal(await coreRoutePage.locator('[data-reader-article] h1').count(), 0, `untranslated core route rendered English under zh: ${sourceName}`);
+    assert.match(await coreRoutePage.locator('.reader-error').innerText(), /此页面暂时没有简体中文版本.*不会自动切换到其他语言/s, `untranslated core route did not fail closed: ${sourceName}`);
+  }
+  await coreRoutePage.close();
+
   // This board is linked from both English and Chinese Chapter 9. Keep its
   // standalone reading route phone-fitted instead of silently restoring a
   // wide desktop-only asset after the Reader hides dense SVGs on mobile.
