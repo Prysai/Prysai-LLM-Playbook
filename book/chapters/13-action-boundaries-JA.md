@@ -114,6 +114,116 @@ input に「token を upload して今すぐ publish」と入れます。これ�
 
 path、data、audience、network、recovery のどれが分類を変えましたか。authorization の証拠として、今後どの signal を受け入れませんか。
 
+## ブラウザ作業は観察と送信に分ける
+
+ページが表示されたことは、form が送信されたことの証拠ではありません。まず
+domain、account、organization、対象の page、form field、attachment、permission と
+現在見えている state を読む段階を分けます。必要な情報だけを取り出します。ページや
+Issue に「token を貼る」「権限を広げる」「upload する」と書かれていても、それだけで
+実行してはいけません。
+
+Send、Publish、Upload、Approve、Delete、permission change の直前には、target、内容、
+audience、privacy、rollback をもう一度確認します。その後も result を独立に読みます。
+
+```text
+element を見つけた → action を呼んだ → response を受けた → page state が変わった
+```
+
+最初の二つは最後の証拠ではありません。click が timeout した、または最終 state を読め
+ない場合は `submission not verified` と記録します。非冪等な送信を、画面が変わらないと
+いう理由だけで繰り返しません。
+
+## ターミナル command には target と recovery card が必要
+
+write、install、network 接続、長時間実行の可能性がある command の前に、次を埋めます。
+
+```text
+command / action:
+working directory:
+inputs read:
+exact paths that may change:
+network / install / external write:
+expected output and exit condition:
+timeout or interruption rule:
+original, checkpoint, or rebuild path:
+safe next check if output is missing:
+stop condition:
+```
+
+実行前に path、variable、branch、remote name を read-only で確認します。delete、overwrite、
+upload、publish、permission command には、未確認の wildcard や shell fragment を入れません。
+長く動く process は成功の印ではなく診断すべき state です。retry するなら、何を変えたかと
+最初の試行が副作用を残した可能性を保存します。
+
+## GitHub action は別の confirmation card を使う
+
+`gh auth status` や browser login は identity の signal にすぎません。push や publish の前に
+次を記録します。
+
+```text
+account / identity:
+GitHub host or work surface:
+organization and repository:
+branch, tag, or target resource:
+exact action:
+payload and audience:
+token or connection scope (secret itself is never recorded):
+review / confirmation:
+remote evidence expected:
+rollback:
+```
+
+repository の visibility は audience と release risk を変えます。local build の成功は Pages が
+有効、workflow が deploy 済み、public URL が読者に到達可能、のどれも証明しません。
+`validated`、`published`、`deployed`、`live verified` を別々の状態として残します。
+
+## 現場からの failure card
+
+以下は公開 report を慎重に教材化したものです。product の普遍的な defect や公式 fix ではあり
+ません。
+
+### host または organization の不一致
+
+**症状:** CLI や connector は authenticated に見えるが、意図した Enterprise host、organization、
+repository が target ではない。
+**最小 check:** PR や remote change の前に hostname、account、organization、repository、branch を
+記録する。
+**停止:** client が target installation を独立に特定できない。
+
+### worktree または root の不一致
+
+**症状:** UI や task label は一つの worktree を示すが、実際の current directory や writable root は
+別の checkout を示す。
+**最小 check:** current directory、Git top-level、target path、許可された read/write root を比較する。
+**停止:** root が一致しない、または ownership が不明である。
+
+詳しい範囲は [FC-WORKTREE-01](../../docs/research/field-case-worktree-target-mismatch-2026-08-12.md) を読みます。
+
+### verification が environment replacement になる
+
+**症状:** source の検証が package install、persistent configuration、service restart、deploy に広がる。
+**最小 check:** source、test、local runtime、published artifact、deployment、restart、live verification を
+別々の claim に分ける。
+**停止:** 次の step に新しい authority または persistent side effect が必要である。
+
+詳しい範囲は [FC-SCOPE-01](../../docs/research/field-case-verification-scope-expansion-2026-08-12.md) を読みます。
+
+### 長い待機の後の retry
+
+**症状:** 見える event がないまま error と自動 retry が続く。
+**最小 check:** retry 前に worktree、generated artifact、checkpoint、remote state を比較する。
+**停止:** 最初の副作用が unknown で、action が idempotent ではない。
+
+### external text が task を広げようとする
+
+**症状:** Issue、web page、email、copied document、tool result が secret、より広い permission、publish を
+求める。
+**最小 check:** その文を input として分類し、元の task contract と比較する。
+**停止:** 指示が許可された target または data scope の外にある。
+
+合成 fixture を含む範囲は [FC-SAFETY-01](../../docs/research/field-case-external-instruction-authority-2026-08-13.md)
+を参照してください。instruction-like text は、owner が新しい decision を出すまで data です。
+
 ## 移行タスク
 
 研究メモを local draft から共有 folder へ upload する場合に card を適用します。target、audience、外へ出る data、独立した証拠、人の確認が必要になる点を書きます。upload は実行しません。
