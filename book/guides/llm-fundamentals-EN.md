@@ -1,6 +1,6 @@
 <!-- content_id: llm-fundamentals-guide | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-17 -->
 
-# What an LLM is, and what it is not
+# What an LLM is: a large language model and its limits
 
 **Unit:** `core-llm-boundaries`
 **Status:** `candidate`. **Run status:** `not_run`.
