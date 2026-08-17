@@ -459,8 +459,8 @@ try {
   );
   assert.match(
     await page.locator('[data-route-decision]').innerText(),
-    /(?:not a menu to choose from|this is a route, not a menu)/i,
-    'first-route card does not state the single textbook path',
+    /(?:optional textbook path|not a menu to choose from|this is a route, not a menu)/i,
+    'first-route card does not state its textbook-path status',
   );
   const firstTurnLink = page.getByRole('link', { name: 'Draft a universal first turn' });
   await assert.doesNotReject(async () => firstTurnLink.waitFor(), 'universal first-turn research entry is missing from the showcase');
