@@ -167,8 +167,14 @@ def main() -> int:
 
         if "document.documentElement.lang = localeManifest.locales[effectiveUiLanguage]?.html_lang || 'en';" not in site_script:
             raise AssertionError("locale-fallback-language: the document language must follow the rendered UI language")
-        if "localStorage" in site_script or "localStorage" in reader_script:
-            raise AssertionError("locale-url-authority: browser storage must not override an English or shared locale URL")
+        if "localStorage" in site_script:
+            raise AssertionError("locale-url-authority: showcase browser storage must not override an English or shared locale URL")
+        # The Reader may keep an explicitly opt-in, local-only learning
+        # receipt. It must never use browser storage as a language preference;
+        # check the storage call sites rather than banning unrelated local data.
+        for line in reader_script.splitlines():
+            if "localStorage" in line and re.search(r"language|locale", line, re.IGNORECASE):
+                raise AssertionError("locale-url-authority: Reader browser storage must not override an English or shared locale URL")
         for required in (
             "const hasExplicitLanguageParam = languageParam !== null;",
             "currentLanguage = localeTokens.includes(currentLanguage) ? currentLanguage : localeManifest.default_locale;",
