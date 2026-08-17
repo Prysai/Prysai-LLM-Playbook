@@ -10,6 +10,8 @@ import shutil
 import sys
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from urllib.parse import quote
+from xml.sax.saxutils import escape as xml_escape
 
 from validate_site_accessibility import artifact_findings
 
@@ -46,6 +48,14 @@ FORBIDDEN_PUBLISH_SUFFIXES = (".pem", ".key", ".p12", ".pfx")
 TEXT_PUBLISH_SUFFIXES = {
     ".css", ".csv", ".html", ".js", ".json", ".md", ".svg", ".toml", ".txt", ".xml", ".yaml", ".yml",
 }
+RENDERABLE_TRANSLATION_STATUSES = {
+    "source",
+    "candidate",
+    "in-progress",
+    "verified",
+    "production-ready",
+}
+SITEMAP_INDEX_FILENAME = "sitemap_index.xml"
 # Deliberately narrow credential signatures. This detects publishable secrets,
 # not ordinary instructional prose about tokens, keys, or passwords.
 SECRET_SIGNATURES = (
@@ -192,13 +202,51 @@ def load_seo_config() -> dict[str, object]:
     return value
 
 
+def sitemap_urls(config: dict[str, object]) -> list[str]:
+    """Return crawlable, same-host entry and Reader URLs from the manifest."""
+
+    base_url = str(config["public_site_url"])
+    urls = [base_url, *(f"{base_url}{locale}.html" for locale in config["locales"] if locale != "en")]
+    # Keep the sitemap tied to the same canonical locale/content manifest as
+    # the Reader. A missing or non-renderable translation is not an indexable
+    # page and must not silently become an English URL.
+    import build_site_locale_manifest  # pylint: disable=import-outside-toplevel
+
+    manifest = build_site_locale_manifest.build_manifest()
+    for content in manifest.get("contents", {}).values():
+        for locale in config["locales"]:
+            record = content.get("locales", {}).get(locale)
+            if not isinstance(record, dict):
+                continue
+            if not record.get("exists") or record.get("translation_status") not in RENDERABLE_TRANSLATION_STATUSES:
+                continue
+            path = str(record.get("path", ""))
+            if not path.endswith(".md"):
+                continue
+            urls.append(
+                f"{base_url}site/reader.html?path={quote(path, safe='')}&lang={quote(str(locale), safe='')}"
+            )
+    return list(dict.fromkeys(urls))
+
+
 def seo_files(config: dict[str, object]) -> tuple[str, str]:
     base_url = str(config["public_site_url"])
-    locale_urls = [base_url, *(f"{base_url}{locale}.html" for locale in config["locales"] if locale != "en")]
     robots = "User-agent: *\nAllow: /\nSitemap: " + base_url + "sitemap.xml\n"
-    sitemap_items = "".join(f"  <url><loc>{url}</loc></url>\n" for url in locale_urls)
+    sitemap_items = "".join(f"  <url><loc>{xml_escape(url)}</loc></url>\n" for url in sitemap_urls(config))
     sitemap = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n" + sitemap_items + "</urlset>\n"
     return robots, sitemap
+
+
+def sitemap_index_file(config: dict[str, object]) -> str:
+    """Return a standard index alias for clients that expect sitemap_index.xml."""
+
+    sitemap_url = xml_escape(f"{config['public_site_url']}sitemap.xml")
+    return (
+        "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+        "<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n"
+        f"  <sitemap><loc>{sitemap_url}</loc></sitemap>\n"
+        "</sitemapindex>\n"
+    )
 
 
 def source_symlinks(candidates: list[Path] | None = None) -> list[str]:
@@ -240,7 +288,13 @@ def artifact_secret_findings(output: Path) -> list[str]:
 
 
 def validate_artifact(output: Path, versions: dict[str, str] | None = None) -> None:
-    expected = (output / "index.html", output / ".nojekyll", output / "robots.txt", output / "sitemap.xml")
+    expected = (
+        output / "index.html",
+        output / ".nojekyll",
+        output / "robots.txt",
+        output / "sitemap.xml",
+        output / SITEMAP_INDEX_FILENAME,
+    )
     missing = [path.name for path in expected if not path.is_file()]
     if missing:
         raise FileNotFoundError("Pages artifact is missing: " + ", ".join(missing))
@@ -350,6 +404,8 @@ def validate_artifact(output: Path, versions: dict[str, str] | None = None) -> N
         raise ValueError("Pages artifact robots.txt must be generated from site/seo-config.json")
     if (output / "sitemap.xml").read_text(encoding="utf-8") != sitemap:
         raise ValueError("Pages artifact sitemap.xml must be generated from site/seo-config.json")
+    if (output / SITEMAP_INDEX_FILENAME).read_text(encoding="utf-8") != sitemap_index_file(config):
+        raise ValueError(f"Pages artifact {SITEMAP_INDEX_FILENAME} must point to the canonical sitemap")
 
     integrity_findings = artifact_findings(output)
     if integrity_findings:
@@ -381,6 +437,7 @@ def build_into(output: Path) -> None:
     robots, sitemap = seo_files(seo_config)
     (output / "robots.txt").write_text(robots, encoding="utf-8", newline="\n")
     (output / "sitemap.xml").write_text(sitemap, encoding="utf-8", newline="\n")
+    (output / SITEMAP_INDEX_FILENAME).write_text(sitemap_index_file(seo_config), encoding="utf-8", newline="\n")
     validate_artifact(output, versions)
 
 
