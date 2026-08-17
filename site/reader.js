@@ -578,15 +578,22 @@ function canonicalChapterTitle(chapter) {
   }
 
   function appendInline(parent, value, path) {
-    const pattern = /(<mark\b[^>]*>.*?<\/mark>|!?\[[^\]]*\]\([^)]*\)|\[[^\]]+\]\([^)]*\)|`[^`]+`|\*\*[^*]+\*\*|__[^_]+__|\*[^*]+\*|_[^_]+_|<https?:\/\/[^>]+>|https?:\/\/[^\s<]+)/gi;
+    const pattern = /(<(?:a|span)\s+id="[a-z][a-z0-9-]*"\s*><\/(?:a|span)>|<mark\b[^>]*>.*?<\/mark>|!?\[[^\]]*\]\([^)]*\)|\[[^\]]+\]\([^)]*\)|`[^`]+`|\*\*[^*]+\*\*|__[^_]+__|\*[^*]+\*|_[^_]+_|<https?:\/\/[^>]+>|https?:\/\/[^\s<]+)/gi;
     let cursor = 0;
     for (const match of String(value).matchAll(pattern)) {
       if (match.index > cursor) parent.append(document.createTextNode(value.slice(cursor, match.index)));
       const token = match[0];
+      const emptyInlineAnchor = token.match(/^<(?:a|span)\s+id="([a-z][a-z0-9-]*)"\s*><\/(?:a|span)>$/i);
       const highlight = token.match(/^<mark\b([^>]*)>(.*?)<\/mark>$/i);
       const image = token.match(/^!\[([^\]]*)\]\((.*)\)$/);
       const link = token.match(/^\[([^\]]+)\]\((.*)\)$/);
-      if (highlight) {
+      if (emptyInlineAnchor) {
+        const anchor = document.createElement('span');
+        anchor.id = emptyInlineAnchor[1];
+        anchor.className = 'reader-anchor';
+        anchor.setAttribute('aria-hidden', 'true');
+        parent.append(anchor);
+      } else if (highlight) {
         const element = document.createElement('mark');
         const variant = highlight[1].match(/\bhighlight-(lime|yellow|pink|cyan|orange)\b/i)?.[1]?.toLowerCase() || 'lime';
         element.className = `highlight-text highlight-${variant}`;
