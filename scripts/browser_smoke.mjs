@@ -192,10 +192,28 @@ try {
     en: /Hi, the workshop changed/, zh: /你好，工作坊改期了/, es: /El taller cambió/,
     ja: /ワークショップの予定が変わりました/, ko: /워크숍 일정이 바뀌었습니다/, de: /Der Workshop wurde verschoben/,
   };
+  const localizedHeroTitles = {
+    en: 'What are LLMs, and how do you use them well?',
+    zh: '大语言模型是什么，以及如何用好它？',
+    es: '¿Qué son los LLM y cómo usarlos bien?',
+    ja: '大規模言語モデルとは何か、そしてどう使えばよいのか？',
+    ko: 'LLM이란 무엇이고, 어떻게 잘 쓸까?',
+    de: 'Was sind LLMs und wie nutzt man sie gut?',
+  };
   for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de']) {
     await page.goto(`${origin}/site/?lang=${locale}`, { waitUntil: 'networkidle' });
     await page.locator('[data-current-language]').waitFor();
     await page.waitForFunction((expectedLocale) => document.querySelector('[data-current-language]')?.textContent?.trim() === expectedLocale, locale.toUpperCase());
+    assert.equal(
+      (await page.locator('#hero-title').innerText()).trim(),
+      localizedHeroTitles[locale],
+      `${locale} home page leaks a different-language hero instead of its selected locale`,
+    );
+    assert.match(
+      await page.locator('.hero-proof-source blockquote').innerText(),
+      localizedHeroSources[locale],
+      `${locale} home page leaks a different-language prompt example instead of its selected locale`,
+    );
     assert.equal(
       await page.locator('.problem-grid .card-link').evaluateAll((links) => links.some((link) => /candidate|draft|not_run/i.test(link.textContent || ''))),
       false,
