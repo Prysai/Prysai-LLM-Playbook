@@ -90,7 +90,17 @@ def main() -> int:
         "stale public locale coverage was accepted or reported unclearly",
     )
 
-    print("SITE_I18N_TESTS_OK fixtures=7")
+    translated = i18n.translation_keys(
+        "Object.assign(copy.es, { skillPlatformObservationName: 'Registro' });",
+        "es",
+        {"skillPlatformObservationName", "skillPlatformObservation"},
+    )
+    require(
+        translated == {"skillPlatformObservationName"},
+        "localized dictionary extraction hid a missing public-page key",
+    )
+
+    print("SITE_I18N_TESTS_OK fixtures=8")
     return 0
 
 

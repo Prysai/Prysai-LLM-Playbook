@@ -43,11 +43,15 @@ PUBLIC_COURSE_COVERAGE_TABLES = {
 
 
 def keys_for(block: str, expected: set[str]) -> set[str]:
-    """Find only unquoted object keys, avoiding colons inside copy strings."""
+    """Find expected object keys without mistaking colons in copy for keys."""
     return {
         key
         for key in expected
-        if re.search(rf"(?:^|,)\s*{re.escape(key)}\s*:", block, re.MULTILINE)
+        if re.search(
+            rf"(?:^|,)\s*(?:['\"]{re.escape(key)}['\"]|{re.escape(key)})\s*:",
+            block,
+            re.MULTILINE,
+        )
     }
 
 
@@ -56,8 +60,14 @@ def translation_keys(app: str, language: str, html_keys: set[str]) -> set[str]:
     blocks: list[str] = []
     if language == "en":
         match = re.search(r"\n  en: \{(?P<body>.*?)\n  \},\n  zh: \{", app, re.DOTALL)
-    else:
+    elif language == "zh":
         match = re.search(r"\n  zh: \{(?P<body>.*?)\n  \}\n\};", app, re.DOTALL)
+    else:
+        match = re.search(
+            rf"\ncopy\.{re.escape(language)}\s*=\s*\{{(?P<body>.*?)\n\}};",
+            app,
+            re.DOTALL,
+        )
     if match:
         blocks.append(match.group("body"))
     blocks.extend(
@@ -315,11 +325,10 @@ def main() -> int:
     else:
         english_keys = translation_keys(app, "en", html_keys)
         chinese_keys = translation_keys(app, "zh", html_keys)
-        if not english_keys:
-            errors.append("English translation dictionary is empty or malformed")
-        if not chinese_keys:
-            errors.append("Chinese translation dictionary is empty or malformed")
-        for language, keys in (("en", english_keys), ("zh", chinese_keys)):
+        for language in sorted(LOCALE_TOKENS):
+            keys = translation_keys(app, language, html_keys)
+            if not keys:
+                errors.append(f"{language} translation dictionary is empty or malformed")
             for key in sorted(html_keys - keys):
                 errors.append(f"{language} dictionary is missing HTML key: {key}")
 

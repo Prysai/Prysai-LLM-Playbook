@@ -1324,6 +1324,8 @@ Object.assign(copy.en, {
   fileSkillsBody: '25 project Skills with triggers, boundaries, and evidence contracts.',
   ledgerSkills: 'Skills · 25',
   repositorySkills: '25 reusable Skills · candidate',
+  skillPlatformObservationName: 'Platform Observation Record',
+  skillPlatformObservation: 'Record one visible platform surface without turning it into a capability claim.',
 });
 Object.assign(copy.zh, {
   skillsTitle: '二十五个 Skill，各有职责。',
@@ -1332,6 +1334,24 @@ Object.assign(copy.zh, {
   fileSkillsBody: '25 个项目 Skill，包含触发、边界与证据契约。',
   ledgerSkills: 'Skill · 25',
   repositorySkills: '25 个可复用 Skill · candidate',
+  skillPlatformObservationName: '平台观察记录',
+  skillPlatformObservation: '记录一个可见的平台界面，不把它推断成能力声明。',
+});
+Object.assign(copy.es, {
+  skillPlatformObservationName: 'Registro de observación de plataforma',
+  skillPlatformObservation: 'Registra una superficie visible de una plataforma sin convertirla en una afirmación de capacidad.',
+});
+Object.assign(copy.ja, {
+  skillPlatformObservationName: 'プラットフォーム観察記録',
+  skillPlatformObservation: '見えているプラットフォームの画面を一つ記録し、能力についての主張に変えない。',
+});
+Object.assign(copy.ko, {
+  skillPlatformObservationName: '플랫폼 관찰 기록',
+  skillPlatformObservation: '보이는 플랫폼 화면 하나를 기록하되, 이를 역량 주장으로 바꾸지 마세요.',
+});
+Object.assign(copy.de, {
+  skillPlatformObservationName: 'Plattformbeobachtungsprotokoll',
+  skillPlatformObservation: 'Dokumentiere eine sichtbare Plattformoberfläche, ohne daraus eine Fähigkeitsbehauptung abzuleiten.',
 });
 Object.assign(copy.zh, {
   fileSkillsBody: '25 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
