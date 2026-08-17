@@ -83,6 +83,7 @@ def static_locale_page(site_index: Path, config: dict[str, object], locale: str)
     text = re.sub(r'(<meta name="description" content=")[^"]*(" />)', rf'\g<1>{metadata["description"]}\2', text, count=1)
     text = re.sub(r'(<link rel="canonical" href=")[^"]*(" />)', rf'\g<1>{page_url}\2', text, count=1)
     text = re.sub(r'(<meta property="og:url" content=")[^"]*(" />)', rf'\g<1>{page_url}\2', text, count=1)
+    text = re.sub(r'(<meta property="og:locale" content=")[^"]*(" />)', rf'\g<1>{metadata["og_locale"]}\2', text, count=1)
     text = re.sub(r'(<meta property="og:title" content=")[^"]*(" />)', rf'\g<1>{metadata["title"]}\2', text, count=1)
     text = re.sub(r'(<meta property="og:description" content=")[^"]*(" />)', rf'\g<1>{metadata["description"]}\2', text, count=1)
     text = re.sub(r'(<meta name="twitter:title" content=")[^"]*(" />)', rf'\g<1>{metadata["title"]}\2', text, count=1)
@@ -144,11 +145,11 @@ def load_seo_config() -> dict[str, object]:
     expected_pages = {locale for locale in locales if locale != "en"}
     if not isinstance(locale_pages, dict) or set(locale_pages) != expected_pages:
         raise ValueError("site/seo-config.json static_locale_pages must define each non-English locale")
-    if not isinstance(home_page, dict) or not all(isinstance(home_page.get(key), str) and home_page[key].strip() for key in ("html_lang", "title", "description")):
-        raise ValueError("site/seo-config.json home_page needs html_lang, title, and description")
+    if not isinstance(home_page, dict) or not all(isinstance(home_page.get(key), str) and home_page[key].strip() for key in ("html_lang", "og_locale", "title", "description")):
+        raise ValueError("site/seo-config.json home_page needs html_lang, og_locale, title, and description")
     for locale, metadata in locale_pages.items():
-        if not isinstance(metadata, dict) or not all(isinstance(metadata.get(key), str) and metadata[key].strip() for key in ("html_lang", "title", "description")):
-            raise ValueError(f"site/seo-config.json static_locale_pages[{locale}] needs html_lang, title, and description")
+        if not isinstance(metadata, dict) or not all(isinstance(metadata.get(key), str) and metadata[key].strip() for key in ("html_lang", "og_locale", "title", "description")):
+            raise ValueError(f"site/seo-config.json static_locale_pages[{locale}] needs html_lang, og_locale, title, and description")
     return value
 
 
@@ -245,7 +246,7 @@ def validate_artifact(output: Path) -> None:
     home_page = config["home_page"]
     assert isinstance(home_page, dict)
     source_index = (ROOT / "site/index.html").read_text(encoding="utf-8")
-    for key in ("title", "description"):
+    for key in ("title", "description", "og_locale"):
         if str(home_page[key]) not in source_index:
             raise ValueError(f"site/index.html {key} must match site/seo-config.json home_page")
     source_structured_data = re.search(r'<script type="application/ld\+json" id="site-structured-data">(.*?)</script>', source_index)
@@ -264,14 +265,15 @@ def validate_artifact(output: Path) -> None:
         text = page.read_text(encoding="utf-8")
         expected_url = f"{config['public_site_url']}{locale}.html"
         hreflang = config["static_locale_pages"][locale]["html_lang"]
+        metadata = config["static_locale_pages"][locale]
+        assert isinstance(metadata, dict)
         if (
             expected_url not in text
             or f'<html lang="{hreflang}" data-prysai-static-locale="{locale}">' not in text
             or f'window.PRYSAI_STATIC_LOCALE = "{locale}"' not in text
+            or f'<meta property="og:locale" content="{metadata["og_locale"]}" />' not in text
         ):
             raise ValueError(f"Pages artifact localized SEO entry is incomplete: {page.name}")
-        metadata = config["static_locale_pages"][locale]
-        assert isinstance(metadata, dict)
         structured_data = re.search(r'<script type="application/ld\+json" id="site-structured-data">(.*?)</script>', text)
         if not structured_data:
             raise ValueError(f"Pages artifact localized SEO structured data is missing: {page.name}")

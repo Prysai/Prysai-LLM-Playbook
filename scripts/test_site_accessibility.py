@@ -244,6 +244,7 @@ def main() -> int:
             'hreflang="zh-Hans" href="https://docs.prysai.com/llm-playbook/zh.html"',
             'href="../zh.html" data-language-option="zh"',
             'href="../de.html" data-language-option="de"',
+            'property="og:locale" content="en_US"',
         ):
             if required not in site_markup:
                 raise AssertionError(f"localized-seo: missing static locale entry '{required}'")
