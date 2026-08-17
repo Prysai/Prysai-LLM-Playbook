@@ -30,6 +30,8 @@ Du musst nicht mit der ersten Karte anfangen. Beginne mit B für Ausdruck oder E
 
 **Wenn du zum ersten Mal hier bist und kein Spanisch üben möchtest, beginne mit Karte 3 in B.** Sie hilft dir, vorhandene Stichpunkte in ein sendbares Arbeits-Update zu ordnen, ohne Fakten zu erfinden. A zeigt nur anhand von Spanisch die Methode „erst selbst versuchen, dann eine begrenzte Korrektur erbitten“.
 
+<span id="language-practice-route"></span>
+
 ## A. Optionale Sprachübung (nur wenn du Spanisch üben möchtest)
 
 ### 1. Optionales Sprachbeispiel (Spanisch): Erst selbst sprechen, dann begrenzte Korrektur erhalten

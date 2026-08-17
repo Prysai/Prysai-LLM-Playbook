@@ -185,6 +185,31 @@ try {
     'Chinese task goal deep link does not stay on the Chinese route',
   );
   await noHorizontalOverflow(page, 'Chinese goal wizard');
+  // Every localized language-practice prompt must land on an actual anchor in
+  // its own Reader document. A same-locale filename with a stale English
+  // fragment silently sends readers to the article top, which defeats the
+  // concrete next step promised by the goal wizard.
+  for (const locale of ['zh', 'es', 'ja', 'ko', 'de']) {
+    await page.goto(`${origin}/site/?lang=${locale}`, { waitUntil: 'networkidle' });
+    const localizedWizard = page.locator('[data-goal-wizard]');
+    await localizedWizard.locator('[data-goal-key="language"]').click();
+    const localizedFields = localizedWizard.locator('[data-goal-fields] input, [data-goal-fields] textarea');
+    for (let index = 0; index < await localizedFields.count(); index += 1) {
+      await localizedFields.nth(index).fill('test');
+    }
+    await localizedWizard.locator('[data-wizard-next]').click();
+    const localizedPromptHref = await localizedWizard.locator('[data-goal-path]').getAttribute('href');
+    assert.match(
+      localizedPromptHref,
+      new RegExp(`book%2Fcommunication-clinic-${locale.toUpperCase()}\\.md&lang=${locale}#language-practice-route$`),
+      `${locale} language goal does not stay on its local route`,
+    );
+    await page.goto(new URL(localizedPromptHref, `${origin}/site/`).href, { waitUntil: 'networkidle' });
+    await page.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+    assert.equal(await page.locator('#language-practice-route').count(), 1, `${locale} language goal points to a missing local anchor`);
+    const localizedAnchorTop = await page.locator('#language-practice-route').evaluate((target) => target.getBoundingClientRect().top);
+    assert.ok(localizedAnchorTop >= 0 && localizedAnchorTop < 260, `${locale} language goal does not restore its local anchor into the reading band: ${localizedAnchorTop}`);
+  }
   await page.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
   // The home page must lead with outcomes, not internal development labels.
   // Evidence remains available in the dedicated status section and Reader.

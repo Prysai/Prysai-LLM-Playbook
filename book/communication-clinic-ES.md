@@ -29,6 +29,8 @@ No tienes que empezar por la primera tarjeta. Empieza por B si quieres expresar 
 
 **Si es tu primera visita y no quieres practicar español, empieza por la tarjeta 3 de B.** Te ayuda a convertir apuntes existentes en una actualización que puedas enviar sin inventar hechos. La sección A solo usa el español para mostrar el método de «intenta primero; pide después una corrección limitada».
 
+<span id="language-practice-route"></span>
+
 ## A. Práctica opcional de idioma (solo si quieres practicar español)
 
 ### 1. Ejemplo opcional de idioma (español): habla primero y pide una corrección limitada
