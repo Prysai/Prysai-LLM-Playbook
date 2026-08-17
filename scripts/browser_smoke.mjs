@@ -425,6 +425,8 @@ try {
   const skillPromptDetails = skillPracticeCard.locator('.compact-prompt-details');
   assert.equal(await skillPromptDetails.count(), 1, 'skill-practice prompt lacks progressive disclosure');
   assert.equal(await skillPromptDetails.getAttribute('open'), null, 'skill-practice prompt should remain collapsed at first view');
+  const skillPracticeHref = await skillPracticeCard.getByRole('link', { name: /skill-practice boundary/i }).getAttribute('href');
+  assert.match(skillPracticeHref, /reader\.html\?path=book%2Fcommunication-clinic-EN\.md&lang=en#general-skill-practice-route$/, 'skill-practice card does not target its explicit route anchor');
   await everydayPromptButtons.first().click();
   await everydayPromptDeck.locator('#spanish-prompt-status').getByText(/Prompt copied\. Follow the three steps/i).waitFor();
   await everydayPromptButtons.nth(2).click();
@@ -1368,6 +1370,7 @@ try {
   assert.match(await page.locator('[data-reader-article] h1').innerText(), /optional application practice: language, work, and research/i, 'Reader did not render the public optional application practice title');
   assert.match(await page.locator('[data-reader-article]').innerText(), /learner evidence:\s*not_run/i, 'Beginner Practice Pack does not expose its learner-evidence boundary');
   assert.equal(await page.getByRole('heading', { name: /recovery route — when the reply already missed/i }).isVisible(), true, 'Post-failure recovery route is not discoverable');
+  assert.equal(await page.locator('[data-reader-article] a[href="#general-skill-practice-route"]').count(), 1, 'recovery route retains a stale Route B anchor');
   assert.equal(await page.locator('#recovery-route').count(), 1, 'Reader did not preserve the recovery-route fragment target');
   const recoveryFragmentPosition = await page.locator('#recovery-route').evaluate((target) => ({
     top: target.getBoundingClientRect().top,
