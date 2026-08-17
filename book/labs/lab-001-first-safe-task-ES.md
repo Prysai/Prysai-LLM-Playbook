@@ -6,9 +6,10 @@ title: "Completa un cambio acotado de README y demuestra qué ocurrió"
 level: L1
 domain: general
 goal: "Practicar inspección antes de editar, mínima autoridad, revisión de diff, verificación enfocada y recuperación honesta"
-setup: "Un proyecto Git descartable o no productivo con README y una fuente real de comando local; sin secretos, datos de clientes, archivos de producción ni escrituras externas"
-task: "Pide a Codex que inspeccione primero, espera confirmación, edita solo README.md y registra el diff real y el check enfocado"
+setup: "La Parte A necesita cualquier espacio de trabajo de un LLM y notas ficticias o no sensibles. La Parte B necesita un proyecto Git descartable o no productivo con README y una fuente real de comando local; sin secretos, datos de clientes, archivos de producción ni escrituras externas"
+task: "Haz una comparación con entrada fija y sin acciones externas; solo si existe un proyecto seguro, pide a Codex que inspeccione primero, espera confirmación, edita solo README.md y registra el diff real y el check enfocado"
 evidence:
+  - "Dos respuestas guardadas con la misma entrada fija: una petición vaga y otra estructurada, junto con la comprobación de cobertura factual, formato solicitado, rondas de revisión e incógnitas"
   - "Una tarjeta de tarea con objetivo, entradas, acciones permitidas y prohibidas, aceptación, condición de parada y formato de entrega"
   - "Línea base previa, plan de Codex, diff real y fuente del comando usada para verificar"
   - "Registro que separe acciones hechas, no hechas, resultado de verificación, incógnitas y siguiente check"
