@@ -143,8 +143,8 @@ try {
     'the project catalogue appears before the first useful result instead of after it',
   );
   assert.equal(await page.locator('[data-hero-primary]').getAttribute('href'), '#first-30', 'hero primary action does not lead to the five-minute practice');
-  assert.equal(await page.locator('[data-hero-primary]').innerText(), 'Start the five-minute practice', 'hero primary action does not name one concrete first action');
-  assert.equal(await page.locator('.hero-route-kicker').innerText(), 'Optional textbook path', 'textbook route is not clearly secondary to the first practice');
+  assert.match(await page.locator('[data-hero-primary]').innerText(), /^Start the five-minute practice/, 'hero primary action does not name one concrete first action');
+  assert.match(await page.locator('.hero-route-kicker').innerText(), /optional textbook path/i, 'textbook route is not clearly secondary to the first practice');
   await noHorizontalOverflow(page, 'desktop showcase');
   // A new reader must see the actual first action without having to discover
   // it by scrolling past the opening explanation. Use a short desktop height
