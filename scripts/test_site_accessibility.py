@@ -110,6 +110,22 @@ def main() -> int:
         ):
             if required not in reader_script:
                 raise AssertionError(f"reader-recovery-contract: missing {required}")
+        # Non-English course files must not be wrapped in an English-only
+        # Reader. These dynamic labels previously leaked from the default
+        # dictionary, despite the page's static controls being translated.
+        for locale, required in {
+            "es": ("Capítulo ${number} de ${total}", "Práctica ${number} de ${total}", "solo para navegar por el catálogo"),
+            "ja": ("第${number}章 / 全${total}章", "練習 ${number} / ${total}", "カタログ閲覧用の番号です"),
+            "ko": ("제${number}장 / 전체 ${total}장", "연습 ${number} / ${total}", "카탈로그 탐색용 번호"),
+            "de": ("Kapitel ${number} von ${total}", "Übung ${number} von ${total}", "nur Katalogreihenfolge"),
+        }.items():
+            for marker in required:
+                if marker not in reader_script:
+                    raise AssertionError(f"reader-locale-chrome: {locale} is missing '{marker}'")
+        if "return `Chapter ${chapter.number} of ${bookNavigation.chapters.length}" in reader_script:
+            raise AssertionError("reader-locale-chrome: non-Chinese chapter progress still falls back to English")
+        if "'catalog order only'" in reader_script.split("function updateChapterRail", 1)[1]:
+            raise AssertionError("reader-locale-chrome: chapter rail still falls back to English catalog copy")
         fixtures += 2
 
         site_script = (Path(__file__).resolve().parents[1] / "site/app.js").read_text(encoding="utf-8")
