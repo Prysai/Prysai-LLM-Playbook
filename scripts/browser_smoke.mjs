@@ -188,6 +188,10 @@ try {
   await page.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
   // The home page must lead with outcomes, not internal development labels.
   // Evidence remains available in the dedicated status section and Reader.
+  const localizedHeroSources = {
+    en: /Hi, the workshop changed/, zh: /你好，工作坊改期了/, es: /El taller cambió/,
+    ja: /ワークショップの予定が変わりました/, ko: /워크숍 일정이 바뀌었습니다/, de: /Der Workshop wurde verschoben/,
+  };
   for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de']) {
     await page.goto(`${origin}/site/?lang=${locale}`, { waitUntil: 'networkidle' });
     await page.locator('[data-current-language]').waitFor();
@@ -639,6 +643,7 @@ try {
     assert.equal(await localePage.locator('link[rel="canonical"]').getAttribute('href'), expectedUrl, `${locale} canonical metadata is incorrect`);
     assert.ok((await localePage.locator('meta[name="description"]').getAttribute('content'))?.trim(), `${locale} is missing a localized description`);
     assert.equal(await localePage.locator('.problem-grid .card-link').evaluateAll((links) => links.some((link) => /candidate|draft|not_run/i.test(link.textContent || ''))), false, `${locale} problem cards expose development statuses`);
+    assert.match(await localePage.locator('.hero-proof-source blockquote').innerText(), localizedHeroSources[locale], `${locale} hero teaching example leaks an English source message`);
     await localePage.close();
   }
 
