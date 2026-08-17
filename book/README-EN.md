@@ -10,13 +10,13 @@
 
 ## Read the LLM foundation core first
 
-1. [Core course contract](../docs/product/core-course-contract.md)
-2. [What Is a Large Language Model](guides/llm-fundamentals-EN.md)
-3. [Understand GPT before Codex](chapters/01-gpt-and-codex-EN.md) — boundary only; Codex is optional
-4. [Core content inventory](../docs/governance/core-content-inventory.yaml)
+1. [What Is a Large Language Model](guides/llm-fundamentals-EN.md)
+2. [Understand GPT before Codex](chapters/01-gpt-and-codex-EN.md) — boundary only; Codex is optional
+3. [Complete a first safe, verifiable task](chapters/02-first-safe-task-EN.md)
+4. [Core course contract](../docs/product/core-course-contract.md)
+5. [Core content inventory](../docs/governance/core-content-inventory.yaml)
 
-The prompt cards, language loops, Codex labs, and Skills are **optional application
-practice** after the foundation. They are not a replacement for the LLM core and
+The prompt cards, language loops, Codex labs, and Skills are **optional application practice** after the foundation. They are not a replacement for the LLM core and
 their `candidate`/`not_run` status remains visible.
 
 This directory contains the original book and optional application material for
