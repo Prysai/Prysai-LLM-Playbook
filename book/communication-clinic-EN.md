@@ -15,6 +15,38 @@ Need a short, copy-ready language route? Open the [six-message Spanish practice 
 Need a short work or research route? Open the [truthful work-update loop](work-update-practice-loop-EN.md)
 or the [bounded research-check loop](research-check-practice-loop-EN.md).
 
+## Start here — one small result, then stop
+
+If this is your first visit, do only these four moves. You do not need to read
+the rest of this pack before trying them:
+
+1. **Name one result.** Replace “help me learn” with one thing you can do or
+   decide today.
+2. **Give only the starting context.** Supply the facts, audience, time limit,
+   and material the model may use. Keep private or high-stakes material out.
+3. **Ask for a checkable response.** Specify the shape you want and one fact or
+   criterion you will inspect yourself.
+4. **Stop on a boundary.** If the model lacks an input, source, authority, or
+   safe next step, keep the gap visible and ask one question instead of adding
+   a longer prompt.
+
+Copy-ready first message:
+
+```text
+Help me with one small result: [what I want to do or decide].
+Starting context: [only the facts and material you may use].
+Return: [the exact shape, length, or one question you need from me].
+Limits: do not invent facts, cite sources you did not inspect, or take an
+external action. I will check [one fact, criterion, or source passage].
+If a required input or permission is missing, say what is missing and stop.
+```
+
+Keep the original request and the reply. After this first check, choose one
+route below, or leave the pack and continue with the textbook. The Boundary
+Card, source checks, public-interest inquiry, recovery route, and continuity
+receipt are **advanced optional material**; they are useful when a task widens
+or a reply fails, not prerequisites for a first text-only practice.
+
 <span id="practice-route-chooser"></span>
 
 ## Choose an application after the foundation
@@ -257,6 +289,12 @@ is a local observation, not evidence that the intake improves learning.
 - [ ] The receipt says `template_selected` and `not_run` until an attempt or
       source check actually exists.
 
+## Advanced optional checks
+
+Use the following sections when your first task involves outside material, a
+source, sharing, people who may be affected, or a reply that already failed.
+They protect the evidence boundary; they are not a longer beginner prompt.
+
 ## Read the evidence state first
 
 | State | Minimum evidence | What it does not mean |
@@ -273,7 +311,7 @@ Selecting a card earns only `template_selected`. Keep this curriculum artifact
 
 <span id="four-line-safety-card"></span>
 
-## Boundary Card — before you share, search, or act
+## Advanced — Boundary Card before you share, search, or act
 
 **Learning objective:** state the smallest input, outbound transfer, allowed
 effect, evidence claim, and stop boundary before a task can widen through a
@@ -476,7 +514,7 @@ separate source before a real action.
 
 <span id="public-interest-safety-route"></span>
 
-## Public-interest safety research — before a system affects people
+## Advanced — public-interest safety research before a system affects people
 
 **Learning objective:** turn the vague question “Is this AI safe?” into a
 small, reviewable inquiry about one proposed decision, the people who may bear
@@ -1145,7 +1183,7 @@ before relying on it.
 
 <span id="source-check-route"></span>
 
-## Source check — when an answer looks cited
+## Advanced — source check when an answer looks cited
 
 **Learning objective:** distinguish a citation-shaped marker from a source
 record another person could inspect. This is a fictional, text-only decision
@@ -1242,7 +1280,7 @@ For the source rationale and non-claims, read the
 
 <span id="recovery-route"></span>
 
-## Recovery route — when the reply already missed
+## Advanced — recovery route when the reply already missed
 
 **Learning objective:** diagnose an observable mismatch without guessing at
 hidden reasoning, make the smallest request repair, and run a one-variable
