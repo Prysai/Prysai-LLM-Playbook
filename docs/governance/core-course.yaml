@@ -34,13 +34,13 @@
       "run_status": "not_run",
       "estimated_minutes": 25,
       "depends_on": [],
-      "new_concepts": ["context", "next-token prediction", "model/product boundary"],
+      "new_concepts": ["context", "controlled observation", "model/product/tool boundary"],
       "content_paths": ["book/guides/llm-fundamentals-EN.md"],
       "route_marker": "unit-1-llm-boundaries",
-      "learner_artifact": "an explanation card and two model/product boundary decisions",
-      "operation": "Explain the supplied notice in your own words, then classify two capabilities without using Codex, Git, or a tool.",
+      "learner_artifact": "an explanation card, a three-observation table, and two model/product boundary decisions",
+      "operation": "Explain the supplied notice in your own words, then run bounded context, repeated-generation, and tool-boundary observations without using Codex, Git, or a real tool.",
       "failure_boundary": "Stop if the explanation treats fluent text as proof, assigns agency to the model, or needs a product-specific claim.",
-      "evidence_requirements": ["own words", "one uncertainty reason", "two boundary decisions"]
+      "evidence_requirements": ["own words", "one uncertainty reason", "observation conditions", "shared and different output note", "generated/source/tool distinction", "two boundary decisions"]
     },
     {
       "id": "core-first-generation",
