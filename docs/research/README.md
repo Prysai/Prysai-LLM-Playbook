@@ -24,6 +24,8 @@ Useful indexes:
 
 - [Assisted practice is not demonstrated learning](assisted-practice-evidence-boundary-2026-08-16.md) — a source-bounded four-state evidence model for a learner attempt, changed task, delayed unseen task, and task-scoped evaluation. It keeps a clear prompt or fluent answer separate from learning, proficiency, certification, and general effectiveness claims.
 
+- [`claude-code-from-source`: external repository audit](claude-code-from-source-repository-audit-2026-08-16.md) — a read-only, rights-bounded audit of an external Claude Code architecture book. It records structure and stable concept candidates that could be independently rewritten, while retaining the source-map provenance, internal-product assertions, unlicensed assets, security/performance claims, and learner claims as unverified or reference-only.
+
 - [Model and workbench landscape: source receipt](model-workbench-landscape-source-receipt-2026-08-15.md) — first-party owner positioning for OpenAI, Answer.AI, xAI/Grok, Google DeepMind/Gemini, and Moonshot AI/Kimi. It distinguishes model families, workbenches, and applied-AI organisations; it is not a benchmark, account-availability check, or model ranking.
 
 - [Localization review and document-language declaration: source receipt](localization-review-and-language-declaration-source-receipt-2026-08-15.md) — three first-party sources on HTML language declarations, translation-friendly source writing, and reviewable pull requests. It supports a candidate small-slice localization workflow and visible course-unit counts; it does not establish translation quality, language review, completeness, learning outcomes, or release readiness.
