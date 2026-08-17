@@ -4549,11 +4549,11 @@ window.CODEX_SEARCH_INDEX = {
         "zh": {
           "path": "book/guides/llm-fundamentals-ZH.md",
           "exists": true,
-          "ready": false,
+          "ready": true,
           "title": "什么是 LLM：一个有用答案背后的层次",
           "snippet": "什么是 llm：一个有用答案背后的层次 什么是 llm：一个有用答案背后的层次 单元： core-llm-boundaries 状态： candidate。运行状态： notrun。 时间： 约 25 分钟。前置条件： 无。你不需要 codex、git、付费账户或工具。 这是 playbook 的基础课。在选择平台、连接文件、安装 skill 或让 agent 行动之前， 你需要先有一个足够小、足够准确的心智模型。目标不是背一串缩写，而是知道哪一层 做出了声明、哪一层能够采取行动，以及在信任结果前需要什么回执。 每",
           "content_status": "candidate",
-          "translation_status": "stale"
+          "translation_status": "candidate"
         },
         "es": {
           "path": "book/guides/llm-fundamentals-ES.md",
