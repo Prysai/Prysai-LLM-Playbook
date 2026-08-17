@@ -14,8 +14,9 @@ learner result.
 
 The route scores exactly five outcomes, in this order:
 
-1. `explain` - explain an LLM and distinguish a model from a product, tool, or
-   Agent without treating fluent text as proof.
+1. `explain` - explain an LLM, distinguish a model from a product, tool, or
+   Agent without treating fluent text as proof, and record what changes when
+   context, repeated runs, or an execution receipt changes.
 2. `initiate` - write a bounded request with a goal, relevant context,
    constraints, and an observable response shape.
 3. `identify` - point to an omission, unsupported addition, forced ambiguity,
@@ -47,9 +48,10 @@ learner's own check or explanation.
 - `0`: calls the model a database, person, or autonomous actor; or treats a
   polished sentence as evidence that it is true.
 - `1`: describes context-based generation but leaves the model/product/tool
-  boundary or the uncertainty boundary unclear.
-- `2`: uses their own words to describe context-based generation, separates
-  model from product and external tools, and names one reason to verify.
+  boundary, observation conditions, or uncertainty boundary unclear.
+- `2`: uses their own words to describe context-based generation, records the
+  conditions and a shared/different observation, separates generated text from
+  supplied source and tool evidence, and names one reason to verify.
 
 ### Initiate
 
