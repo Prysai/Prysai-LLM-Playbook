@@ -239,6 +239,24 @@ try {
     const localizedAnchorTop = await page.locator('#language-practice-route').evaluate((target) => target.getBoundingClientRect().top);
     assert.ok(localizedAnchorTop >= 0 && localizedAnchorTop < 260, `${locale} language goal does not restore its local anchor into the reading band: ${localizedAnchorTop}`);
   }
+  // The selected language must also be present during the loading state, not
+  // only after the localized Markdown fetch completes.
+  const loadingLanguagePage = await context.newPage();
+  await loadingLanguagePage.route('**/book/guides/llm-fundamentals-*.md', async (route) => {
+    await new Promise((resolve) => setTimeout(resolve, 400));
+    await route.continue();
+  });
+  const readerHtmlLanguages = { en: 'en', zh: 'zh-CN', es: 'es', ja: 'ja', ko: 'ko', de: 'de' };
+  for (const locale of Object.keys(readerHtmlLanguages)) {
+    const source = `book/guides/llm-fundamentals-${locale.toUpperCase()}.md`;
+    await loadingLanguagePage.goto(`${origin}/site/reader.html?path=${encodeURIComponent(source)}&lang=${locale}`, { waitUntil: 'domcontentloaded' });
+    assert.equal(
+      await loadingLanguagePage.locator('html').getAttribute('lang'),
+      readerHtmlLanguages[locale],
+      `${locale} Reader exposes the English language during its loading state`,
+    );
+  }
+  await loadingLanguagePage.close();
   // The localized application guide is intentionally a starter-card subset.
   // Do not preserve an English-only detailed fragment when the local document
   // cannot satisfy it: link to the selected-language overview and say why.
