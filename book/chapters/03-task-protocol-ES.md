@@ -73,7 +73,7 @@ Más fuerte:
 
 ```text
 Crea una portada del repositorio orientada a lectores que deje a una persona nueva elegir
-una de cuatro rutas, localizar la fuente de verdad, abrir la primera tarea
+una de cuatro rutas, localizar la fuente autorizada, abrir la primera tarea
 segura y ver qué afirmaciones siguen candidate o unverified.
 ```
 

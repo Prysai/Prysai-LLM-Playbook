@@ -26,8 +26,10 @@ deinem Telefon vor — aber trainiert auf einer Bibliothek aus Millionen von
 Büchern, Artikeln, Code-Repositories und Gesprächen und enorm hochskaliert.
 Die Autovervollständigung schlägt ein Wort vor; ein LLM kann einen Absatz
 fortsetzen, eine Frage beantworten, übersetzen, gliedern, Code debuggen oder
-ein Gespräch führen — denn all diese Aufgaben lassen sich umformulieren als
-„angesichts des bisherigen Texts: Was kommt als Nächstes?“
+ein Gespräch führen. Bei der Texterzeugung lassen sich viele dieser
+Verhaltensweisen als wiederholte Schätzung des nächsten Tokens im verfügbaren
+Kontext beschreiben; das Trainingsziel allein erklärt jedoch nicht das gesamte
+Verhalten eines modernen Produkts.
 
 Diese eine Idee erklärt mehr, als du erwarten würdest:
 
@@ -111,8 +113,9 @@ Drei praktische Konsequenzen:
 
 - **Ein Anbieter kann für ein bestimmtes Modell oder eine Oberfläche einen
   Cutoff dokumentieren.** Bedeutung und Umfang hängen von Anbieter und Version
-  ab. Prüfe bei zeitkritischen Antworten aktuelle Produktdokumentation,
-  verwendete Quelle und Datum; ein Cutoff allein entscheidet die Frage nicht.
+  ab. Ohne aktuelle Belege gilt eine zeitkritische Behauptung als nicht belegt;
+  prüfe die aktuelle Produktdokumentation, die verwendete Quelle und das Datum;
+  ein Cutoff allein entscheidet die Frage nicht.
 - **Token-Abrechnung hängt vom Produkt ab.** Viele APIs messen Eingabe- und
   Ausgabe-Tokens für Limits oder Abrechnung, aber Preis, Caching, versteckte
   Anweisungen und Zählweise können variieren. Langer Kontext ist nützlich und
@@ -133,7 +136,8 @@ stark abweichen.
 
 **Context window.** Die maximale Textmenge, die das Modell auf einmal
 berücksichtigen kann — deine Anweisungen plus jedes Gespräch oder Dokument,
-das du einfügst. Es ist ein Maß für das Arbeitsgedächtnis, nicht für
+das du einfügst. Die konkrete Grenze hängt vom Modell und von der Oberfläche
+ab. Es ist ein Maß für das Arbeitsgedächtnis, nicht für
 Intelligenz. Ein größeres Fenster erlaubt es, längere Dokumente
 einzufügen, aber das Modell behandelt das gesamte Fenster weiterhin als
 „Dinge, die es zu beachten gilt“, nicht als verifizierte Fakten.
@@ -189,11 +193,15 @@ Ein Modell:
   Oberflächen mit eigenen Daten- und Berechtigungsgrenzen. Auch zurückgegebenes
   Material kann veraltet, unvollständig oder falsch sein: Prüfe Originalquelle
   und Datum.
-- **kennt weder die Gegenwart noch deine privaten Daten automatisch.** Es hat
-  einen Trainings-Cutoff und erhält nur, was du, ein verbundenes Produkt,
-  Kontospeicher, ein Retrieval-System, eine Datei oder ein Tool bereitstellt.
-  Prüfe vor dem Einfügen, Hochladen oder Aktivieren einer Verbindung, was die
-  aktuelle Oberfläche verlassen darf und wer dies autorisiert hat.
+- **kennt weder die Gegenwart noch deine privaten Daten automatisch.** Ein
+  Anbieter kann für ein bestimmtes Modell oder eine Oberfläche einen
+  Trainings-Cutoff dokumentieren. Daraus folgt nicht, dass das Produkt jede
+  Tatsache nach diesem Datum nicht verarbeiten kann: Suche, Retrieval, Dateien,
+  Speicher oder Tools können späteres Material bereitstellen. Es erhält nur,
+  was du, ein verbundenes Produkt, Kontospeicher, ein Retrieval-System, eine
+  Datei oder ein Tool bereitstellt. Prüfe vor dem Einfügen, Hochladen oder
+  Aktivieren einer Verbindung, was die aktuelle Oberfläche verlassen darf und
+  wer dies autorisiert hat.
 - **kann nicht zuverlässig rechnen.** Große Modelle lösen Textaufgaben über
   Muster, nicht über Berechnung; lange oder knifflige Mathematik braucht
   einen Taschenrechner, Code oder ein Tool.

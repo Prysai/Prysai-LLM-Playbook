@@ -77,7 +77,7 @@ Stärker:
 
 ```text
 Erstelle einen leserorientierten Einstieg ins Repository, über den neue Leser
-eine von vier Routen wählen, die Quelle der Wahrheit finden, die erste sichere
+eine von vier Routen wählen, die maßgebliche Quelle finden, die erste sichere
 Aufgabe öffnen und sehen können, welche Aussagen noch candidate oder unverified sind.
 ```
 

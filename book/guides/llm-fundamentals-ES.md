@@ -26,9 +26,11 @@ La imagen que lo hace concreto: imagina el autocompletado de tu teléfono, pero
 entrenado con una biblioteca de millones de libros, artículos, repositorios de
 código y conversaciones, y ampliado de forma descomunal. El autocompletado
 sugiere una palabra; un LLM puede continuar un párrafo, responder una
-pregunta, traducir, esbozar, depurar código o mantener una conversación —
-porque todas esas tareas pueden reformularse como «dado el texto hasta ahora,
-¿qué viene después?».
+pregunta, traducir, esbozar, depurar código o mantener una conversación. En la
+generación de texto, muchos de estos comportamientos pueden describirse como
+estimar repetidamente qué token debe seguir al contexto disponible, aunque el
+objetivo de entrenamiento por sí solo no explica todo el comportamiento de un
+producto moderno.
 
 Esa única idea explica más de lo que cabría esperar:
 
@@ -111,9 +113,9 @@ Tres consecuencias prácticas:
 
 - **Un proveedor puede documentar una fecha de corte para un modelo o una
   superficie concretos.** El significado y el alcance dependen del proveedor y
-  de la versión. Para una respuesta sensible al tiempo, comprueba la
-  documentación actual, la fuente usada y la fecha, sin basarte solo en la
-  fecha de corte.
+  de la versión. Sin evidencia actual, trata una afirmación sensible al tiempo
+  como no establecida; comprueba la documentación actual, la fuente usada y la
+  fecha, sin basarte solo en la fecha de corte.
 - **La contabilidad de tokens depende del producto.** Muchas API miden tokens
   de entrada y salida para límites o facturación, pero pueden variar el precio,
   la caché, las instrucciones ocultas y qué se cuenta. El contexto largo es útil
@@ -134,7 +136,8 @@ cierta prosa inglesa; otros idiomas y formatos pueden diferir mucho.
 
 **Ventana de contexto.** La cantidad máxima de texto que el modelo puede
 considerar a la vez — tus instrucciones más cualquier conversación o documento
-que pegues. Es una medida de memoria de trabajo, no de inteligencia. Una
+que pegues. El límite concreto depende del modelo y de la superficie. Es una
+medida de memoria de trabajo, no de inteligencia. Una
 ventana más grande te permite pegar documentos más largos, pero el modelo
 sigue tratando toda la ventana como «cosas a las que prestar atención», no
 como hechos verificados.
@@ -188,11 +191,15 @@ mismos límites. Un modelo:
   archivos, memoria o herramientas; son superficies distintas, con límites de
   datos y permisos propios. El material devuelto aún puede estar desactualizado,
   incompleto o equivocado: comprueba la fuente original y la fecha.
-- **no conoce automáticamente el presente ni tus datos privados.** Tiene una
-  fecha de corte y solo recibe lo que le proporcionen tú, un producto conectado,
-  la memoria de la cuenta, un sistema de recuperación, un archivo o una
-  herramienta. Antes de pegar, subir o activar una conexión, comprueba qué puede
-  salir de la superficie actual y quién lo autorizó.
+- **no conoce automáticamente el presente ni tus datos privados.** Un proveedor
+  puede documentar una fecha de corte de entrenamiento para un modelo o una
+  superficie concretos. Eso no significa que el producto ignore toda
+  información posterior a esa fecha: la búsqueda, la recuperación, los
+  archivos, la memoria o las herramientas pueden aportar material más reciente.
+  Solo recibe lo que le proporcionen tú, un producto conectado, la memoria de
+  la cuenta, un sistema de recuperación, un archivo o una herramienta. Antes de
+  pegar, subir o activar una conexión, comprueba qué puede salir de la
+  superficie actual y quién lo autorizó.
 - **no puede hacer aritmética de forma fiable.** Los modelos grandes resuelven
   problemas con palabras por patrones, no por cálculo; las matemáticas largas
   o delicadas necesitan una calculadora, código o una herramienta.
