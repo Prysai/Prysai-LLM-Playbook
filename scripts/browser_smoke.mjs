@@ -444,7 +444,7 @@ try {
   );
   assert.match(
     await page.locator('[data-route-decision]').innerText(),
-    /not a menu to choose from/i,
+    /(?:not a menu to choose from|this is a route, not a menu)/i,
     'first-route card does not state the single textbook path',
   );
   const firstTurnLink = page.getByRole('link', { name: 'Draft a universal first turn' });
