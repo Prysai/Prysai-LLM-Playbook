@@ -1,9 +1,9 @@
 {
   "schema_version": "1",
   "owner": "release-maintainer",
-  "release_version": "unreleased",
-  "rollback_target": "unavailable",
-  "rollback_reason": "No signed or reviewed release tag has been declared for this unpublished candidate.",
+  "release_version": "v0.1.0-alpha",
+  "rollback_target": "v0.1.0-alpha",
+  "rollback_reason": "The public alpha tag is a reviewed rollback reference; no bounded rollback rehearsal has been recorded.",
   "status_source": "docs/governance/content-status.yaml",
   "quality_source": "docs/governance/quality-register.yaml",
   "readiness_source": "docs/governance/release-readiness.yaml",
