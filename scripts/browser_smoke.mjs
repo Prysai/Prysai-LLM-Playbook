@@ -278,6 +278,10 @@ try {
   await page.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
   await page.waitForFunction(() => document.querySelector('[data-current-language]')?.textContent?.trim() === 'EN');
   const skillsSection = page.locator('#skills');
+  const desktopSkillCatalog = skillsSection.locator('.skill-catalog');
+  assert.equal(await desktopSkillCatalog.getAttribute('open'), null, 'desktop Skill registry is expanded before a reader asks for it');
+  await desktopSkillCatalog.locator('summary').click();
+  assert.equal(await desktopSkillCatalog.getAttribute('open'), '', 'desktop Skill registry does not open from its summary');
   const adversarialReviewLink = skillsSection.getByRole('link', { name: 'Adversarial Project Review' });
   await adversarialReviewLink.waitFor();
   const comparisonProtocolLink = skillsSection.getByRole('link', { name: 'LLM Comparison Protocol' });
@@ -1319,6 +1323,10 @@ try {
   const mobileSkillsSection = mobileSkillsPage.locator('#skills');
   await mobileSkillsSection.scrollIntoViewIfNeeded();
   await noHorizontalOverflow(mobileSkillsPage, 'mobile Skill index');
+  const mobileSkillCatalog = mobileSkillsSection.locator('.skill-catalog');
+  assert.equal(await mobileSkillCatalog.getAttribute('open'), null, 'mobile Skill registry is expanded before a reader asks for it');
+  assert.equal(await mobileSkillsSection.getByRole('link', { name: 'Adversarial Project Review' }).isVisible(), false, 'mobile Skill registry exposes the full inventory before it is opened');
+  await mobileSkillCatalog.locator('summary').click();
   assert.equal(
     await mobileSkillsSection.getByRole('link', { name: 'Adversarial Project Review' }).isVisible(),
     true,
