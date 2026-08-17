@@ -1,297 +1,292 @@
-<!-- content_id: llm-fundamentals-guide | locale: DE | language: de | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-16 -->
+<!-- content_id: llm-fundamentals-guide | locale: DE | language: de | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-17-foundation-map -->
 
-# Kapitel 0: Was ist ein großes Sprachmodell?
+# Was ist ein LLM? Die Schichten hinter einer nützlichen Antwort
 
-**Lesezeit:** etwa 20 Minuten. Beginne mit einem Ein-Satz-Modell und prüfe seine Grenzen anschließend in einer fünfminütigen Chat-Übung.
+**Einheit:** `core-llm-boundaries`
+**Status:** `candidate`. **Laufstatus:** `not_run`.
+**Zeit:** etwa 25 Minuten. **Voraussetzung:** keine. Du brauchst weder Codex,
+Git, ein kostenpflichtiges Konto noch ein Tool.
 
-Dies ist die erste Lektion des Playbooks. Wenn du nicht sicher bist, was ein
-„Large Language Model“ (LLM) wirklich ist — jenseits des Marketings —, beginne
-hier. Wir bauen uns ein mentales Modell auf, Schicht für Schicht, so wie eine
-Professorin oder ein Professor ein neues Thema einführen würde: zuerst das
-Wesentliche, dann die Mechanik, dann die ehrlichen Grenzen. Alles in dieser
-Lektion ist eine allgemeinverständliche Nacherzählung der am Ende aufgeführten
-öffentlichen Quellen; sie ist keine Kopie eines einzelnen Dokuments.
+Dies ist das Fundament des Playbooks. Bevor du eine Plattform auswählst, eine
+Datei verbindest, ein Skill installierst oder einen Agenten handeln lässt,
+brauchst du ein kleines Modell davon, was passiert. Es geht nicht darum,
+Abkürzungen auswendig zu lernen. Du sollst erkennen, welche Schicht eine
+Behauptung erzeugt, welche Schicht außerhalb des Modells handeln kann und
+welcher Beleg die Behauptung prüfbar macht.
 
-## 0.1 Ein Satz, dann ein Bild
+Bei jeder neuen KI-Funktion helfen vier Fragen:
 
-**Ein modernes Text-LLM ist ein Modell, das Tokenfolgen schätzt und erzeugt;
-viele autoregressive LLMs sagen aus dem Kontext den nächsten Token voraus,
-während nachträgliches Training und Produktschichten die Antwort weiter formen.**
+1. **Was soll das Modell erzeugen?**
+2. **Welcher Kontext wurde für diese Anfrage tatsächlich bereitgestellt?**
+3. **Welches Produkt oder Tool kann außerhalb des Modells etwas beobachten oder
+   verändern?**
+4. **Welcher Beleg würde einer anderen Person die Prüfung ermöglichen?**
+
+Wenn du eine Frage nicht beantworten kannst, behandle das Ergebnis als Entwurf
+oder Hypothese. Fülle die Lücke nicht mit einer selbstsicher klingenden Erklärung.
+
+## Das Ergebnis, das du aufbewahrst
+
+Schreibe am Ende eine Erklärungskarte in deinen eigenen Worten und triff zwei
+Grenzentscheidungen. Die Karte soll zeigen:
+
+- wie ein Text-LLM aus dem Kontext einer Anfrage generiert;
+- was **LLM**, **Token**, **Kontext**, **Prompt**, **Tool**, **MCP**, **Agent**
+  und **Skill** für eine sichere erste Aufgabe mindestens bedeuten;
+- warum flüssiger Text allein kein Beleg für Wahrheit ist; und
+- welche Teile zum Modell, zum Chatprodukt oder zu einem externen Tool gehören.
+
+Das ist eine begrenzte Erklärungsaufgabe, kein Test aller Fähigkeiten eines
+KI-Produkts. Plattformspezifische Verfahren kommen später.
+
+## 0.1 Ein Arbeitsmodell in einem Satz
+
+Ein modernes Text-LLM ist ein Modell, das Tokenfolgen schätzt und erzeugt.
+Viele autoregressive Modelle erzeugen Schritt für Schritt, indem sie aus dem
+verfügbaren Kontext das nächste Token vorhersagen. Zusätzliches Training und
+Produktschichten formen die Antwort weiter.
 
 Das ist ein nützliches Arbeitsmodell, aber keine vollständige Definition jedes
-Sprach-, multimodalen oder eingesetzten Systems, das LLM genannt wird.
+Sprach-, multimodalen oder eingesetzten Systems, das LLM genannt wird. Es
+erklärt, warum ein System Text fortsetzen, übersetzen, zusammenfassen, Felder
+extrahieren oder Entwürfe erstellen kann. Es bedeutet nicht, dass jede Ausgabe
+wahr ist oder dass alle Produkte dieselben Fähigkeiten haben. **Vorhersagen**
+beschreibt die Erzeugung; es sagt nicht, dass das Modell die Welt geprüft, einen
+Menschen verstanden oder eine Handlung autorisiert hat. Auch eine hilfreiche
+Antwort muss geprüft werden.
 
-Das Bild, das das konkret macht: Stell dir die Autovervollständigung auf
-deinem Telefon vor — aber trainiert auf einer Bibliothek aus Millionen von
-Büchern, Artikeln, Code-Repositories und Gesprächen und enorm hochskaliert.
-Die Autovervollständigung schlägt ein Wort vor; ein LLM kann einen Absatz
-fortsetzen, eine Frage beantworten, übersetzen, gliedern, Code debuggen oder
-ein Gespräch führen. Bei der Texterzeugung lassen sich viele dieser
-Verhaltensweisen als wiederholte Schätzung des nächsten Tokens im verfügbaren
-Kontext beschreiben; das Trainingsziel allein erklärt jedoch nicht das gesamte
-Verhalten eines modernen Produkts.
+## 0.2 Acht Begriffe, jeder in seiner Spur
 
-Diese eine Idee erklärt mehr, als du erwarten würdest:
+Das sind Arbeitsdefinitionen für einen sicheren Einstieg. Anbieter verwenden
+die Wörter nicht immer genau gleich.
 
-- warum ein LLM über fast alles flüssig schreiben kann (das Training zeigt ihm
-  viele Muster; Flüssigkeit beweist aber weder Fachwissen, Abdeckung noch
-  Wahrheit);
-- warum es manchmal Fakten erfindet (ein Basismodell sagt plausiblen Text
-  voraus, statt Fakten selbst nachzuschlagen);
-- warum ein Chat-Produkt mehr als das Basismodell leisten kann (es kann Suche,
-  Dateien, Speicher, Retrieval oder Tools ergänzen, jeweils mit eigenen Daten-
-  und Berechtigungsgrenzen);
-- warum sich das Verhalten zwischen Versionen oder Produkten ändert (Anbieter
-  können Gewichte, nachträgliches Training, Systemanweisungen,
-  Sicherheitskontrollen, Retrieval, Tools, Routing oder die Oberfläche ändern,
-  nicht nur den Trainingstext).
+| Begriff | Mindestens nützliche Bedeutung | Was du nicht folgern darfst |
+|---|---|---|
+| **LLM / Modell** | Gelernte Parameter erzeugen aus einem Eingabekontext eine Antwort. Ein Basismodell erzeugt Text; ein Produkt kann weitere Schichten ergänzen. | Eine verifizierte Datenbank, eine Person oder ein Akteur mit Berechtigung. |
+| **Token / Tokenizer** | Ein Tokenizer wandelt Text in modellspezifische Token-IDs und zurück. Ein Token ist oft ein Wortfragment. | Ein universelles Verhältnis von Token zu Wort oder Zeichen. Grenze, Kosten und Geschwindigkeit hängen vom Produkt ab. |
+| **Kontext** | Für eine Anfrage verfügbare Information: Anweisungen, Gespräch, bereitgestelltes Material, abgerufene Passagen und gegebenenfalls Tool-Ergebnisse. Ein Produkt kann Suche, Retrieval, Dateien, Speicher oder Tools ergänzen. | Dass alles im Kontext wahr, relevant oder richtig verwendet ist. |
+| **Context Window** | Die Menge tokenisierter Ein- und Ausgabe, die ein bestimmtes Modell oder Produkt in einer Interaktion verarbeiten kann; sie bleibt ein **endliches Kontextfenster**. | Eine stabile Zahl für alle Modelle, Konten oder Oberflächen. Ein größeres Fenster ersetzt keine Quellenauswahl und Prüfung. |
+| **Prompt** | Anfrage und Material mit Ziel, Einschränkungen und gewünschter Antwortform. | Ein Zauberspruch. Ein längerer Prompt ist nicht automatisch besser. |
+| **User-Prompt / System- oder Entwickleranweisung** | Der Nutzer beschreibt die unmittelbare Aufgabe. Der Host kann unsichtbare Anweisungen höherer Priorität anwenden. | Dass Nutzer Hostregeln überschreiben können oder alle Produkte dieselben Ebenen zeigen. |
+| **Tool / Retrieval** | Ein Host kann Rechner, Suche, Dateileser, Datenbank oder andere externe Fähigkeiten bereitstellen. Das Modell kann einen Aufruf vorschlagen; Host oder Tool führen ihn aus. | Dass Vorschlag, Schaltfläche oder Zusammenfassung beweisen, dass die Aktion stattfand oder korrekt ist. |
+| **MCP / Agent / Skill** | MCP verbindet einen kompatiblen Host mit Kontext oder Tools. Ein Agent ist eine beobachtbare Mehrschleife; ein Skill ein wiederverwendbares Verfahren. | Universelle Kompatibilität, Vertrauen, sichtbares Denken, Berechtigung oder erfolgreiche Fertigstellung. |
 
-Die intuitivste moderne Erklärung der Mechanik ist Grant Sandersons
-(3Blue1Brown) animierte Reihe über GPT und Attention; sie ist in den Quellen
-verlinkt. Wenn du nur eines ansiehst, dann dieses.
+Zwei Unterscheidungen gehören in jede weitere Lektion:
 
-## 0.2 Woher LLMs kommen: ein dreißigjähriger Schnelldurchlauf
+1. **Fähigkeit, Berechtigung und Beleg sind verschieden.** Eine Aktion vorschlagen,
+   sie versuchen dürfen und sie tatsächlich abgeschlossen haben sind drei
+   unterschiedliche Beobachtungen.
+2. **Eine höhere Schicht repariert nicht automatisch die darunterliegende.** Suche
+   kann eine alte Seite liefern, ein Dateitool die falsche Datei lesen, ein Agent
+   zu früh stoppen und ein Skill eine ungeeignete Regel enthalten. Jede Schicht
+   braucht ihren eigenen Check.
 
-Ein Sprachmodell ist keine neue Idee. Der Stammbaum:
+### Häufige Verwechslungen
 
-- **1950er–1980er — Regeln und Statistik.** Frühe Systeme nutzten
-  handgeschriebene Grammatikregeln oder einfache
-  Worthäufigkeits-Statistiken („wenn das Wort `bank` auf `river` folgt, meint
-  es wahrscheinlich das Flussufer“).
-- **1990er–2010er — statistische Sprachmodelle.** Forschende bauten Modelle,
-  die dem nächsten Wort eine Wahrscheinlichkeit zuordnen, basierend auf den
-  vorherigen Wörtern. Sie trieben frühe Handy-Tastaturen und maschinelle
-  Übersetzung an. Die Schwäche: Sie konnten nur ein kurzes Kontextfenster
-  sehen.
-- **2017 — der Transformer.** Ein Forschungspapier namens *Attention Is All
-  You Need* stellte eine Architektur vor, in der Tokens andere Tokens im
-  verfügbaren Kontext beachten können. Sie machte es leichter, weit entfernte
-  Beziehungen zu modellieren und zu skalieren, hob Kontextgrenzen aber nicht
-  auf: Praktische Modelle haben weiterhin ein endliches Kontextfenster.
-- **2018–2022 — große Transformer-Sprachmodelle.** Unternehmen trainierten
-  Transformer-Modelle auf riesigen Korpora, oft mit dem Ziel, den nächsten Token
-  vorherzusagen (ein Token ist grob gesagt ein Wortfragment). Die Fähigkeiten
-  entstehen aus dem Zusammenspiel von Architektur, Datenqualität und -abdeckung,
-  Optimierung, Skalierung und späterem Training; Ziel und Größe allein erklären
-  sie nicht vollständig.
-- **2022–heute — Instruction Tuning und Alignment.** Rohe Next-Token-Modelle
-  können Texte fortsetzen, aber nicht gut Anfragen befolgen. Anbieter
-  trainieren Modelle deshalb darauf, Anweisungen zu befolgen (Instruction
-  Tuning) und hilfreiche, harmlose Antworten zu bevorzugen (Alignment, oft
-  über menschliches oder KI-Feedback). Das ist der Unterschied zwischen
-  „einem Modell, das einen Satz vervollständigen kann“ und „einem Chatbot,
-  der tut, was du fragst“.
+**Kontext ist kein dauerhaftes Gedächtnis.** Kontext ist, was der Host für diese
+Anfrage bereitstellt. Verlauf, Einstellungen, Dateien oder Embeddings können
+gespeichert und später abgerufen werden; das ist eine eigene Speicher- und
+Retrievalentscheidung. Ein gespeicherter Eintrag kann veraltet, unvollständig
+oder diesmal gar nicht im Kontext sein. Prüfe, was jetzt geliefert wurde.
 
-Das technische Herz — Attention — erklärt 3Blue1Browns Lektion *Transformer
-attention* visuell, und die offizielle Modelldokumentation von OpenAI,
-Anthropic und Google erklärt es in verständlichem Text. Für einen guten
-Umgang mit LLMs brauchen wir die Mathematik nicht. Wichtig ist aber: Die
-Vorhersage des nächsten Tokens ist ein wichtiges Trainingsziel, keine
-vollständige Erklärung jedes Modells oder Produkts.
+**Retrieval ist ein Evidenzweg, keine Wahrheitsgarantie.** Suche oder RAG wählen
+Passagen für den Kontext. Dabei kann die beste Quelle fehlen, eine Kopie oder alte
+Version ausgewählt werden. Bewahre URL, Datum und die Zuordnung von Behauptung zu
+Quelle auf. Mehr Kontext schafft Kapazität, aber keine Richtigkeit.
 
-## 0.3 Wie ein modernes LLM entsteht: trainieren, ausrichten, bereitstellen
+**Ein Prompt ist ein Vertrag, kein Zauber.** Eine erste Anfrage nennt Ergebnis,
+Ausgangsmaterial, Grenzen, Antwortform, Prüfung und Stopplinie. Ein zitiertes
+Dokument kann nicht vertrauenswürdige Anweisungen enthalten. Behandle gelieferten
+Text als Daten, außer die Aufgabe macht ihn ausdrücklich zur Anweisung.
 
-Denk an drei Phasen:
+**Ein Tool-Aufruf hat zwei Urheber.** Das Modell kann einen strukturierten Aufruf
+vorschlagen. Der Host entscheidet über die Erlaubnis, das Tool führt aus. Notiere
+Ziel, Autorität, beabsichtigte Wirkung, Ergebnis und Rücklese. Ein Toolname in
+einer Antwort ist kein Beleg.
 
-1. **Pre-Training.** Das Modell wird auf einem riesigen Korpus darauf
-   optimiert, den nächsten Token vorherzusagen, und erwirbt dabei viele
-   statistische Verknüpfungen für die Generierung. Das Ergebnis ist keine
-   verifizierte Faktendatenbank. Datenqualität, Abdeckung, Filterung,
-   Optimierung und späteres Training beeinflussen blinde Flecken; ein Anbieter
-   kann das Modell außerdem aktualisieren oder Retrieval, Suche, Dateien,
-   Speicher und Tools ergänzen.
-2. **Alignment / Instruction Tuning.** Das Modell wird weiter trainiert,
-   Anfragen zu befolgen, schädliche abzulehnen und menschlichen Präferenzen
-   zu entsprechen. Deshalb können sich zwei Modelle mit ähnlichem
-   Pre-Training im Gespräch sehr unterschiedlich anfühlen.
-3. **Bereitstellung und Sicherheitsebenen.** Wenn du in ein Chat-Fenster
-   tippst, wird dein Text tokenisiert, durch das Modell geleitet, und der
-   Anbieter kann Filter, System-Prompts, Retrieval oder Tool-Zugriff darum
-   herum ergänzen. Was du erlebst, ist das Modell plus diese Ebenen.
+**MCP verkleinert ein Integrationsproblem, beseitigt aber keine Governance.**
+Authentifizierung, Serverimplementierung, Zustimmung, Netzwerkbereich,
+Datenabfluss und Ergebnisprüfung bleiben eigene Entscheidungen. „MCP-fähig“
+heißt nicht „sicher“ oder „unbegrenzter Zugriff“.
 
-Drei praktische Konsequenzen:
+**Ein Agent ist eine prüfbare Schleife, keine Person.** Lehre sichtbare Zustände:
+Eingang, Plan, vorgeschlagene Aktion, Zustimmung oder Ablehnung, Ergebnis,
+Verifikation, Wiederholung, Übergabe und Stopp. Behaupte nicht, einen verborgenen
+Gedankengang zu kennen. Das Ende von Text beweist nicht das Ende einer externen Arbeit.
 
-- **Ein Anbieter kann für ein bestimmtes Modell oder eine Oberfläche einen
-  Cutoff dokumentieren.** Bedeutung und Umfang hängen von Anbieter und Version
-  ab. Ohne aktuelle Belege gilt eine zeitkritische Behauptung als nicht belegt;
-  prüfe die aktuelle Produktdokumentation, die verwendete Quelle und das Datum;
-  ein Cutoff allein entscheidet die Frage nicht.
-- **Token-Abrechnung hängt vom Produkt ab.** Viele APIs messen Eingabe- und
-  Ausgabe-Tokens für Limits oder Abrechnung, aber Preis, Caching, versteckte
-  Anweisungen und Zählweise können variieren. Langer Kontext ist nützlich und
-  kann Kosten verursachen.
-- **Dasselbe Modell kann sich unterschiedlich verhalten**, je nach
-  System-Prompts, Einstellungen (temperature) und umgebenden Tools. Eine
-  Verhaltensänderung ist nicht automatisch eine Änderung des Modells.
+**Ein Skill ist ein Methodenpaket, keine Berechtigung.** Es nennt Anwendung,
+benötigte Eingaben, Verbote, Stopbedingungen und den zurückgegebenen Beleg. Das
+Laden von Anweisungen verleiht keinen Datei-, Terminal-, Browser-, Konto- oder
+Veröffentlichungszugriff.
 
-## 0.4 Vier Konzepte, denen du überall begegnest
+## 0.3 Was während einer Anfrage geschieht
 
-**Token.** Eine Einheit, die ein bestimmter Tokenizer erzeugt und die das Modell
-liest oder generiert. Ein Token ist oft ein Wortfragment, kein ganzes Wort:
-„ChatGPT“ kann aus zwei oder drei Tokens bestehen. Preise, Kontextgrenzen und
-Geschwindigkeit werden oft in Tokens angegeben, aber die Zählweise hängt von
-Anbieter und Oberfläche ab. 100 Tokens ≈ 75 englische Wörter ist nur eine grobe
-Schätzung für bestimmte englische Prosa; andere Sprachen und Formate können
-stark abweichen.
-
-**Context window.** Die maximale Textmenge, die das Modell auf einmal
-berücksichtigen kann — deine Anweisungen plus jedes Gespräch oder Dokument,
-das du einfügst. Die konkrete Grenze hängt vom Modell und von der Oberfläche
-ab. Es ist ein Maß für das Arbeitsgedächtnis, nicht für
-Intelligenz. Ein größeres Fenster erlaubt es, längere Dokumente
-einzufügen, aber das Modell behandelt das gesamte Fenster weiterhin als
-„Dinge, die es zu beachten gilt“, nicht als verifizierte Fakten.
-
-**Temperature (und Sampling).** Eine providerabhängige Dekodiersteuerung.
-Niedrige Werte machen wiederholte Ausgaben oft vorhersehbarer, höhere können die
-Varianz erhöhen. Temperature ist kein Wahrheitsregler: Auch ein niedriger Wert
-kann falsch liegen. Für Fakten und Code muss die Aufgabe prüfbar sein und das
-Ergebnis verifiziert werden; beim Brainstorming kann mehr Varianz helfen.
-
-**Parameter und Skalierung.** „Milliarden von Parametern“ beschreibt die
-Größe des Modells. Die Größe korreliert mit der Leistungsfähigkeit,
-garantiert aber keine Qualität bei deiner Aufgabe; ein kleineres Modell kann
-ein größeres bei einer engen, klar definierten Aufgabe schlagen. Beurteile
-Modelle nach den Ergebnissen bei deinen eigenen Aufgaben, nicht nach der
-Parameteranzahl.
-
-## 0.5 Worin LLMs wirklich gut sind
-
-Gemessen daran, wie diese Systeme in offiziellen Dokumentationen und
-Lehrmaterialien beschrieben und eingesetzt werden, sind die verlässlichen
-Stärken:
-
-- **Umformulieren und Zusammenfassen** von Texten, die du lieferst, mit
-  vorgegebenem Ton, Umfang oder Zielpublikum;
-- **Erklären und Unterrichten**: ein Konzept in Schritte zerlegen, Beispiele
-  geben, Rückfragen in anderen Worten beantworten;
-- **Entwerfen**: Gliederungen, E-Mails, Pläne, Code-Gerüste und erste
-  Versionen, die du anschließend überarbeitest;
-- **Übersetzen und Sprachübungen** zwischen wichtigen Sprachen in brauchbarer
-  Qualität;
-- **Informationen strukturieren**: Notizen in Tabellen, Listen oder
-  Zusammenfassungen verwandeln; Felder aus Text extrahieren;
-- **Code erzeugen und gemeinsam debuggen**: kleine Funktionen schreiben,
-  Fehler erklären und Code-Ausschnitte prüfen — immer gegen deine Tests;
-- **Planen und Vergleichen**: Optionen und Kriterien aufzählen, solange du
-  die Fakten lieferst und die Entscheidung triffst.
-
-Der gemeinsame Nenner: LLMs sind am stärksten, wenn die Aufgabe **Text rein,
-Text raus** ist, **mit einem klaren Ziel, das du prüfen kannst**. Am
-schwächsten sind sie, wenn die Aufgabe heimlich von Fakten, mathematischer
-Präzision oder Handlungen in der realen Welt abhängt.
-
-## 0.6 Was LLMs nicht können (die ehrliche Liste)
-
-Alle seriösen Quellen — von Microsofts LLM-Grundlagen über das Glossar von
-Anthropic bis zu unabhängigem Lehrmaterial — kommen zu denselben Grenzen.
-Ein Modell:
-
-- **schlägt Fakten nicht selbst nach.** Ein Basismodell erzeugt Text, der
-  *konsistent mit* seinen Trainingsdaten ist. Ein Produkt kann Suche,
-  Retrieval, Dateien, Speicher oder Tools ergänzen; das sind getrennte
-  Oberflächen mit eigenen Daten- und Berechtigungsgrenzen. Auch zurückgegebenes
-  Material kann veraltet, unvollständig oder falsch sein: Prüfe Originalquelle
-  und Datum.
-- **kennt weder die Gegenwart noch deine privaten Daten automatisch.** Ein
-  Anbieter kann für ein bestimmtes Modell oder eine Oberfläche einen
-  Trainings-Cutoff dokumentieren. Daraus folgt nicht, dass das Produkt jede
-  Tatsache nach diesem Datum nicht verarbeiten kann: Suche, Retrieval, Dateien,
-  Speicher oder Tools können späteres Material bereitstellen. Es erhält nur,
-  was du, ein verbundenes Produkt, Kontospeicher, ein Retrieval-System, eine
-  Datei oder ein Tool bereitstellt. Prüfe vor dem Einfügen, Hochladen oder
-  Aktivieren einer Verbindung, was die aktuelle Oberfläche verlassen darf und
-  wer dies autorisiert hat.
-- **kann nicht zuverlässig rechnen.** Große Modelle lösen Textaufgaben über
-  Muster, nicht über Berechnung; lange oder knifflige Mathematik braucht
-  einen Taschenrechner, Code oder ein Tool.
-- **kann nicht verifizieren.** Ein Modell kann dir nicht sagen, ob ein Zitat
-  echt ist, eine Website existiert oder eine Behauptung stimmt. Nur du (oder
-  ein Tool, das für dich handelt) kannst das prüfen.
-- **kann nicht von sich aus in der Welt handeln.** Ein Chat-Modell hat keine
-  Dateien, Konten oder Berechtigungen, es sei denn, eine Tool-Ebene stellt
-  sie explizit bereit. Ein Login, ein Button oder eine
-  Agenten-Zusammenfassung beweisen nicht, dass eine Aktion stattgefunden hat.
-- **hat keine eingebaute Erinnerung an dich.** Ein Produkt kann Chatverlauf
-  oder Kontospeicher aufbewahren; Datenschutz, Aufbewahrung und Löschung hängen
-  vom Produkt und seinen Einstellungen ab. Nimm nicht an, dass ein Chat privat
-  ist oder erinnert wird, sondern lies die geltende Richtlinie.
-- **ist für sich genommen keine Suchmaschine, kein Taschenrechner, keine
-  Datenbank und keine Person.** Ein Produkt kann solche Fähigkeiten verbinden,
-  doch dadurch wird nicht jede Antwort aktuell, richtig, autorisiert oder
-  privat.
-
-Ein nützliches mentales Modell: **Ein Basis-LLM ist ein brillanter, belesener
-Praktikant, der gut entwerfen kann, aber Lücken selbstbewusst füllt. Ein
-Chat-Produkt kann diesem Praktikanten zusätzlich Suchergebnisse, Dateien,
-einen Taschenrechner, Speicher oder Tools geben.** Du entscheidest trotzdem,
-was er lesen oder senden darf, prüfst Quelle und Ergebnis und würdest kein
-Rechtsgutachten ungeprüft veröffentlichen lassen. Genau so nutzt man ein LLM.
-
-## 0.7 Wie das deinen Umgang damit verändert
-
-Die Methode des Playbooks folgt direkt aus den Abschnitten 0.5 und 0.6:
-
-1. **Definiere die Aufgabe in Textform** — welches Ergebnis, mit welcher
-   Eingabe und welchen Einschränkungen (Kapitel 3 behandelt den vollständigen
-   Auftrag).
-2. **Liefere den Kontext** — füge das Material ein, benenne das Publikum,
-   lege die Grenzen fest. Das Modell arbeitet mit dem, was du ihm gibst.
-3. **Verlange eine prüfbare Form** — eine Tabelle, einen Diff, eine Liste,
-   einen umgeschriebenen Absatz; etwas, das du inspizieren kannst.
-4. **Prüfe selbst** — gleiche Fakten mit Quellen ab, führe Tests am Code aus,
-   lies den Diff, bevor du ihn akzeptierst.
-5. **Halte die Grenze ein** — lass nicht zu, dass eine plausible Antwort ohne
-   Belege zu einer Handlung, einer Zahlung, einer Veröffentlichung oder einer
-   Überzeugung wird.
-
-### Fünf-Minuten-Grenzcheck
-
-Bevor du weitermachst, verwende in einem beliebigen Textchat diese fiktive
-Behauptung. Aktiviere keine Suche, lade keine Datei hoch und gib keine privaten
-Informationen ein.
+Für einen einfachen Textaustausch genügt dieses beobachtbare Modell:
 
 ```text
-Ich habe diese Behauptung erhalten: „Die Stadtbibliothek schließt heute um 18 Uhr.“
-Bevor du antwortest, ordne ich ein, was ein reines Textmodell feststellen kann und was nicht.
-
-Bitte lass mich zuerst meine Einordnung schreiben. Weise danach nur auf eine Grenze hin,
-die ich übersehen habe: Generierung, aktuelle Fakten, Quellenprüfung oder eine Handlung in der realen Welt.
-Suche nichts und erfinde keine Quelle.
+deine Anfrage + bereitgestelltes Material
+          ↓
+der Host stellt Anweisungen und Kontext zusammen
+          ↓
+das Modell erzeugt eine Tokenfolge
+          ↓
+der Host zeigt Text oder schlägt einen Tool-Aufruf vor
+          ↓
+das Tool läuft nur bei erlaubter Autorität
+          ↓
+eine Person prüft Text, Ergebnis und Grenzen
 ```
 
-Bewahre deine erste Einordnung und die eine Korrektur auf. Es geht nicht darum,
-einen Zauberprompt zu lernen oder die Genauigkeit eines Modells zu beweisen.
-Beobachte vielmehr den Unterschied zwischen einem plausiblen Satz und der
-Prüfung einer aktuellen Behauptung.
+Modelltext kann einen Aufruf beschreiben, ohne dass er ausgeführt wurde. Suche
+nach Tool-Ereignis, zurückgegebenen Daten, Dateidiff, Kommandoausgabe oder einem
+anderen passenden Beleg, bevor du eine Aktion als abgeschlossen bezeichnest.
 
-Fahre danach fort mit
+Bei einem Agenten wiederholst du den Check an jeder Grenze:
+
+```text
+Zustand beobachtet → Aktion vorgeschlagen → Autorität geprüft → ausgeführt
+→ Ergebnis gelesen → Abnahme geprüft → fortsetzen, übergeben oder stoppen
+```
+
+Wenn der Zustand nach Timeout oder Unterbrechung unbekannt ist, wiederhole nicht
+blind eine Aktion, die senden, veröffentlichen, löschen, bezahlen oder ein Konto
+ändern könnte. Lies das Ziel zuerst oder übergib die Unsicherheit einem Menschen.
+
+## 0.4 Ein wenig Geschichte, ohne sie zur Garantie zu machen
+
+Das Paper *Attention Is All You Need* von 2017 stellte die Transformer-Architektur
+vor, die viel spätere Sprachmodellarbeit beeinflusste. Attention machte es leichter,
+Beziehungen zwischen Tokens in einer bereitgestellten Sequenz zu modellieren, aber
+der Kontext wurde nicht unendlich. Moderne Produkte ergänzen Datenauswahl,
+Optimierung, Instruction Tuning, Sicherheitskontrollen, Retrieval, Tools und
+Oberfläche. Kein historischer Name erklärt das Verhalten jedes heutigen Dienstes.
+
+## 0.5 Was LLMs allein nicht feststellen können
+
+Ein Modell hilft bei klaren Text-zu-Text-Zielen: bereitgestellten Text umschreiben,
+ein Konzept erklären, Gliederungen erstellen, Felder extrahieren oder Code vorschlagen,
+den du anschließend testest. Das sind nützliche Muster, keine Garantien.
+
+Ohne passende Quelle oder Tool kann es nicht feststellen, ob ein Zitat echt ist,
+eine Website noch existiert, eine aktuelle Behauptung stimmt oder eine vorgeschlagene
+Aktion stattgefunden hat. Suche kann hinzugefügt werden, aber das gefundene Material
+kann veraltet, unvollständig oder falsch sein: **Prüfe Originalquelle und Datum.**
+
+Vor dem Einfügen, Hochladen oder Verbinden von Daten prüfe **was die aktuelle Oberfläche
+verlassen darf und wer dies autorisiert hat**. Verwandle einen plausiblen
+Entwurf nicht ohne ausdrückliche Grenze und Beleg in Zahlung, Veröffentlichung,
+Löschung, Kontenänderung oder Überzeugung.
+
+Training formt die Parameter vor der Nutzung; die aktuelle Anfrage liefert neuen
+Kontext. Ein Cutoff ist keine Livequelle. Für aktuelle Behauptungen brauchst du
+eine Quelle, **ein Cutoff allein entscheidet die Frage nicht**. Speicher, Suche,
+Datei und Tool sind unterschiedliche Evidenzwege mit eigener Aktualität und Autorität.
+
+## 0.6 Fünf-Minuten-Grenzcheck
+
+Dies ist eine reine Textbeobachtung. Aktiviere keine Suche, lade keine Datei hoch
+und gib keine privaten Informationen ein.
+
+Vervollständige zuerst, ohne ein Modell zu fragen:
+
+> Die Stadtbibliothek schließt heute um 18 Uhr.
+
+Schreibe zwei mögliche Fortsetzungen und markiere, welche davon die Aussage stützt.
+Korrekt ist: Es werden weder eine zusätzliche Uhrzeit noch ein Grund genannt.
+Plausibilität ist kein Beleg.
+
+Sende anschließend nur diese fiktive Mitteilung:
+
+```text
+Mitteilung: „Der Club trifft sich Dienstag um 18:00 Uhr. Bring ein Notizbuch mit.
+Die Raumnummer wird später bestätigt.“
+
+Aufgabe: Schreibe die Mitteilung für ein neues Mitglied in zwei Sätzen um. Erhalte
+jede genannte Tatsache. Setze fehlende Details in [Klammern]. Liste anschließend
+die erhaltenen Fakten auf.
+Prüfung: Vergleiche jede Aussage mit der Mitteilung. Erfinde keine Raumnummer,
+Gebühr, Kontaktangabe, Zusage oder neue Uhrzeit.
+Stopp: Nicht browsen, senden, veröffentlichen oder unbekannte Details annehmen.
+```
+
+Bewahre die Anfrage und die erste Antwort auf und prüfe:
+
+| Check | Frage |
+|---|---|
+| Quellenübereinstimmung | Kannst du jede Tatsache in der Mitteilung zeigen? |
+| Form | Hat die Antwort zwei Sätze und eine Faktenliste? |
+| Unbekanntes | Bleibt die Raumnummer `[unbekannt]`, statt erfunden zu werden? |
+
+Wenn eine Nummer erfunden wird, markiere die Behauptung mit `FAIL`. Eine Antwort
+beweist nicht, dass ein Modell immer unzuverlässig ist; sie zeigt eine mögliche
+sichtbare Abweichung in einer Aufgabe.
+
+Schreibe außerdem auf, was ein Textmodell über **„Die Stadtbibliothek schließt
+heute um 18 Uhr“** vor einer Suche feststellen kann. Die aktuelle Wahrheit braucht
+eine Quelle. Bitte erfinde keine Quelle.
+
+### Ein tragbares Muster für die erste Anfrage
+
+Fülle bei einer risikoarmen echten Aufgabe diese sechs Zeilen aus:
+
+```text
+Ergebnis: [ein beobachtbares Ergebnis]
+Ausgangskontext: [Fakten oder Text, den ich liefere]
+Erlaubte Hilfe: [was das Modell tun darf]
+Grenzen: [was gleich bleiben muss oder nicht passieren darf]
+Antwort und Check: [prüfbare Form und meine Prüfmethode]
+Stopp: [fehlende Eingabe, Autorität, Quelle oder Evidenz]
+```
+
+Nutze am Anfang fiktiven oder nicht sensiblen Kontext. Bitte zuerst um Entwurf
+oder Klassifikation, bevor du ein Tool verlangst. Bewahre Anfrage und Antwort auf;
+sonst ist nicht erkennbar, ob eine spätere Umschreibung repariert oder verdeckt hat.
+
+## 0.7 Der einzige Abschlusscheck dieser Einheit
+
+Schreibe ohne Kopieren dieser Seite eine Karte:
+
+```text
+Meine Erklärung:
+
+LLM-Grenze:
+Token- oder Kontextgrenze:
+Grenze zwischen Prompt, Produkt und Tool:
+Grenze zwischen Kontext und Speicher:
+Grenze zwischen Tool, MCP, Agent und Skill:
+Ein Grund, warum eine flüssige Antwort falsch sein kann:
+
+Entscheidung 1 (belegt / nicht belegt):
+Beleg:
+Entscheidung 2 (Modell / Produkt / Tool):
+Beleg:
+```
+
+`0` behandelt flüssigen Text als Beweis, schreibt dem Modell Autorität zu oder
+hat keinen Beleg. `1` erwähnt kontextbasierte Erzeugung, lässt aber eine Grenze
+oder den Prüfgrund offen. `2` verwendet eigene Worte, trennt Modell und Produkt
+oder Tool und nennt einen Prüfgrund für diese Aufgabe.
+
+Bewahre Karte, erste Antwort und einen Satz über das Unbekannte auf. Behaupte aus
+diesem Selbstcheck weder Lernerfolg noch Kursabschluss. Weiter geht es mit
 [Kapitel 1: Verstehe GPT, bevor du Codex vertraust](../chapters/01-gpt-and-codex-DE.md).
 
-## 0.8 Quellen und Grenzen
+## Quellen und Grenzen
 
-Diese Lektion ist eine originäre, allgemeinverständliche Nacherzählung. Die
-zugrunde liegenden öffentlichen Quellen (geprüft am 2026-08-16) sind:
+Diese Lektion ist eine originäre, allgemeinverständliche Neufassung. Es wurden
+keine Quellensätze, Prompts, Diagramme oder Modellausgaben kopiert. Prüfdatum
+dieser Überarbeitung: 2026-08-17.
 
-- **Microsoft Learn — LLM Fundamentals** (Agent-Framework-Journey):
-  https://learn.microsoft.com/en-gb/agent-framework/journey/llm-fundamentals —
-  beschreibt, was LLMs sind, Tokens, Kontext und womit LLMs sich schwer tun.
-- **3Blue1Brown — How large language models work** (animierte Reihe):
-  https://www.3blue1brown.com/lessons/attention — die klarste visuelle
-  Erklärung von Token-Vorhersage und Attention.
-- **Claude Platform Docs — Glossary**:
-  https://platform.claude.com/docs/en/about-claude/glossary — offizielle
-  Definitionen von Modell, Context Window, Token und verwandten Begriffen.
-- **Educative — Limitations of large language models**:
-  https://www.educative.io/blog/limitations-of-llms — eine gut lesbare
-  Zusammenfassung von Halluzination, veralteten Daten und mathematischen
-  Grenzen.
-- **Attention Is All You Need** (Vaswani et al., 2017): das ursprüngliche
-  Transformer-Papier, verlinkt für den Geschichtsabschnitt.
+- Microsoft Learn, [LLM fundamentals](https://learn.microsoft.com/en-gb/agent-framework/journey/llm-fundamentals) — Konzepte und Grenzen; produktbezogene Anleitung.
+- Anthropic, [Claude glossary](https://platform.claude.com/docs/en/about-claude/glossary) — Token- und Kontextbegriffe; veränderliche Produktinformation.
+- Model Context Protocol, [Specification](https://modelcontextprotocol.io/specification/2025-06-18) — Protokollumfang; beweist keine Host- oder Serverkonfiguration.
+- OpenAI, [Prompt engineering](https://platform.openai.com/docs/guides/prompt-engineering) — Anleitung eines Anbieters; keine plattformübergreifende Garantie.
+- Vaswani et al., [Attention Is All You Need](https://arxiv.org/abs/1706.03762) — historische Transformer-Arbeit.
+- NIST, [AI 600-1 Generative AI Profile](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf) — Risiko- und Informationsintegritätskontext; kein Produkttest.
+- 3Blue1Brown, [Attention in transformers](https://www.3blue1brown.com/lessons/attention) — unabhängige visuelle Erklärung.
 
-Zugriffsdaten, Modellversionen und Produktfakten ändern sich; behandle alles
-Produktspezifische in dieser Lektion als `stale after 2026-11-09`, bis es
-anhand offizieller Quellen aktualisiert wird. Die Lektion behauptet nicht,
-dass ein Modell, ein Anbieter oder ein Benchmark-Ergebnis das beste,
-schnellste oder sicherste ist. Sie ist ein Kandidat: Quellen und Struktur
-wurden geprüft, Lernergebnisse wurden jedoch noch nicht gemessen.
+Veränderliche Produktfakten brauchen in ihrem eigenen Quellenregister URL,
+Zugriffsdatum, Geltungsbereich, Verantwortliche und nächste Prüfung. Diese Seite
+behauptet weder ein bestes Modell noch universelles Verhalten, Lernerfolg,
+Retention, Transfer oder Produktionsreife. Die Übersetzung ist `candidate` und
+braucht weiterhin unabhängige Sprachprüfung und einen Lauf mit Lesenden.
