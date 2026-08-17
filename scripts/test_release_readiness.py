@@ -16,13 +16,22 @@ def main() -> int:
     contract = readiness.load_contract()
     require(not readiness.validate_contract(contract), "checked-in not_ready contract is invalid")
     require("release_evidence" in readiness.readiness_blockers(contract), "candidate evidence blocker was not reported")
-    require("rollback" in readiness.readiness_blockers(contract), "rollback rehearsal blocker was not reported")
+    require("rollback" not in readiness.readiness_blockers(contract), "recorded rollback rehearsal was still treated as missing")
+    require(contract["rollback"]["status"] == "rehearsed", "rollback rehearsal status was not recorded")
+    require(contract["rollback"]["rehearsal_record"].endswith("rollback-rehearsal-v0.1.0-alpha-2026-08-17.md"), "rollback rehearsal record path changed unexpectedly")
     require(contract["release_tag"]["status"] == "reviewed", "public alpha tag review was not recorded")
     require(contract["version"]["status"] == "declared", "candidate version was not declared")
     require(contract["changelog"]["status"] == "current", "candidate changelog was not recorded")
 
     false_ready = copy.deepcopy(contract)
     false_ready["decision"] = "ready"
+    false_ready["rollback"] = {
+        "status": "unavailable",
+        "target": "v0.1.0-alpha",
+        "rehearsal_record": "",
+        "rehearsed_at": "",
+        "reviewed_by": "",
+    }
     false_ready_errors = readiness.validate_contract(false_ready, inspect_git=False)
     require(not any("ready decision requires release_tag" in error for error in false_ready_errors), "reviewed alpha tag was treated as missing")
     require(any("ready decision requires release_evidence" in error for error in false_ready_errors), "ready accepted without release evidence")
