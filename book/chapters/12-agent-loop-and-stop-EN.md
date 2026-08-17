@@ -132,8 +132,47 @@ uses these exact names. It shows the points where evidence can be collected.
                     ▼                              ▼
                   DELIVER                    one changed, bounded retry
                                                    │
-                                                   └──────► loop
+                                                  └──────► loop
 ```
+
+## Architecture patterns worth carrying forward
+
+The audited [`claude-code-from-source` study](../../docs/research/claude-code-from-source-repository-audit-2026-08-16.md)
+is reference-only, not an official implementation record. Its useful
+contribution is a set of design questions that can be rewritten without
+depending on Claude Code internals:
+
+- **Make every tool call a contract.** Before execution, state the input
+  schema, target and scope, side-effect class, authority needed, failure modes,
+  output, and acceptance evidence. A tool name is not a safety policy.
+- **Order by dependency, not excitement.** Independent read-only observations
+  can sometimes run concurrently. Writes, reads-after-writes, and actions that
+  share state stay ordered until conflicts are resolved. Parallelism is a
+  safety decision first and a performance decision second.
+- **Delegate with a sealed brief.** A sub-Agent gets a bounded goal, context,
+  tools, permissions, budget, stop condition, and handoff format. Delegation
+  does not inherit unlimited authority; the parent still reviews the result and
+  its evidence.
+- **Treat memory as inspectable context.** Persist only facts or procedures
+  with a source, timestamp, owner, freshness rule, and conflict rule. Context
+  can guide generation; it does not enforce permissions. Downgrade or remove
+  stale memory instead of silently trusting it.
+- **Separate capability from control.** Skills, adapters, and scripts provide
+  methods. Hooks, policies, sandboxes, and approval gates control when a method
+  may run. Loading a Skill or instruction file is not proof that an action is
+  authorized.
+- **Measure performance against a workload.** Report startup, latency, context
+  size, cost, correctness, and failure/retry counts separately on a frozen
+  fixture. Never turn an internal percentage or token figure from an
+  unverified study into a product promise.
+
+When teaching Claude Code, Gemini CLI, Codex, or another host, name the exact
+surface, version, operating system, and mode; link the first-party source; and
+record a local run before claiming behavior. The universal core should still
+make sense if the adapter is removed. Use this review card before approving a
+consequential step: **What is the contract? Who may authorize it? What can
+change? What observation returns? What check stops the loop? Which boundary is
+still unknown?**
 
 ### Four things that are commonly collapsed
 
@@ -933,6 +972,8 @@ current product documentation before being used as an operational instruction.
 | Cross-case state and recovery synthesis | [Field-problem deep dive](../../docs/research/field-problems-deep-dive-p2-2026-08-11.md) | 2026-08-11 | Teaching inferences from public reports; issue state and product behavior may change | `curriculum-maintainer` / 2026-09-11 |
 | Tutorial structure and experiment design | [Practical Agent guide benchmark](../../docs/research/practical-ai-agent-guide-benchmark-2026-08-10.md) | 2026-08-10 | Original comparison of public tutorials; not evidence of learning outcomes | `curriculum-maintainer` / 2026-09-10 |
 | Mechanism notes used by this chapter | [LLM mechanism deep dive](../../docs/research/llm-mechanism-deep-dive-2026-08-10.md) | 2026-08-10 | Separates official facts, inferences, unknowns, and teaching experiments; review before treating a product claim as current | `curriculum-maintainer` / 2026-09-10 |
+| External architecture study used for the pattern rewrite | [`claude-code-from-source` repository audit](../../docs/research/claude-code-from-source-repository-audit-2026-08-16.md) | 2026-08-16 | Reference-only concept intake; no copied prose, code, diagrams, images, brand assets, internal claim, performance figure, or licence assumption | `platform-adapter-maintainer` / 2026-09-16 |
+| Claude Code and Gemini CLI adapter boundary | [Adapter admission source receipt](../../docs/research/claude-code-and-gemini-cli-adapter-admission-source-receipt-2026-08-16.md) | 2026-08-16 | First-party documentation is scoped to named products; no local run, learner evidence, parity, or public adapter admission exists yet | `platform-adapter-maintainer` / 2026-09-16 |
 
 The source boundary matters. A public issue proves that a reporter described a
 symptom. It does not prove prevalence, root cause, or a repair. An official
