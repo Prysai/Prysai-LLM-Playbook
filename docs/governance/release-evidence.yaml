@@ -3,7 +3,7 @@
   "owner": "release-maintainer",
   "release_version": "v0.1.0-alpha",
   "rollback_target": "v0.1.0-alpha",
-  "rollback_reason": "The public alpha tag is a reviewed rollback reference; no bounded rollback rehearsal has been recorded.",
+  "rollback_reason": "A bounded static rehearsal restored the public alpha tag in an isolated worktree and rebuilt a temporary Pages artifact; production deployment controls, cache invalidation, and live rollback remain untested.",
   "status_source": "docs/governance/content-status.yaml",
   "quality_source": "docs/governance/quality-register.yaml",
   "readiness_source": "docs/governance/release-readiness.yaml",
