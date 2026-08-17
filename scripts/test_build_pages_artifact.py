@@ -6,7 +6,9 @@ import os
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from urllib.parse import parse_qs, urlparse
 
+import build_site_locale_manifest
 from build_pages_artifact import artifact_secret_findings, load_seo_config, seo_files, sitemap_index_file, sitemap_urls, source_symlinks
 
 
@@ -24,7 +26,25 @@ def main() -> int:
     require(len(urls) > len(config["locales"]), "sitemap regressed to locale entry pages only")
     require(config["public_site_url"] in urls, "sitemap omitted the canonical English entry")
     require(any("reader.html?path=book%2Fchapters%2F" in url and "&lang=en" in url for url in urls), "sitemap omitted an English chapter Reader route")
-    require(any("reader.html?path=book%2Fchapters%2F" in url and "&lang=zh" in url for url in urls), "sitemap omitted a Chinese chapter Reader route")
+    require(any("reader.html?path=book%2Froutes%2F" in url and "&lang=zh" in url for url in urls), "sitemap omitted an indexable translated Reader route")
+    manifest = build_site_locale_manifest.build_manifest()
+    records_by_route = {
+        (str(record.get("path")), locale): record
+        for content in manifest["contents"].values()
+        for locale, record in content.get("locales", {}).items()
+        if isinstance(record, dict)
+    }
+    reader_urls = [url for url in urls if "/site/reader.html?" in url]
+    require(reader_urls, "sitemap omitted all Reader routes")
+    for url in reader_urls:
+        query = parse_qs(urlparse(url).query)
+        path = query.get("path", [""])[0]
+        locale = query.get("lang", [""])[0]
+        record = records_by_route.get((path, locale))
+        require(record is not None, f"sitemap contains an unregistered Reader route: {url}")
+        require(record.get("content_status") in {"candidate", "verified", "production-ready"}, f"sitemap contains draft content: {url}")
+        require(record.get("translation_status") in {"source", "candidate", "verified", "production-ready"}, f"sitemap contains an in-progress translation: {url}")
+    require(not any("lab-018-language-transfer" in url for url in urls), "sitemap exposed a draft lab")
     require("Sitemap: " + config["public_site_url"] + "sitemap.xml" in robots, "robots.txt does not point to the canonical sitemap")
     index = ET.fromstring(sitemap_index_file(config))
     index_urls = [item.text for item in index.findall(f"{namespace}sitemap/{namespace}loc")]
