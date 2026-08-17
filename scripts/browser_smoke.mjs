@@ -1152,6 +1152,11 @@ try {
     assert.match(href, /reader\.html\?path=/, `${label}: mobile start route does not open Reader`);
     assert.match(href, pathPattern, `${label}: mobile start route does not preserve its canonical source`);
     await route.click();
+    // A same-tab Reader navigation can briefly retain the previous article
+    // while the new document starts loading. Wait for the route's canonical
+    // URL before inspecting the article so a stale H1 cannot satisfy the
+    // readiness selector.
+    await page.waitForURL((url) => pathPattern.test(url.href));
     await page.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
     assert.match(await page.locator('[data-reader-article] h1').innerText(), titlePattern, `${label}: Reader did not render the intended first page`);
   }
