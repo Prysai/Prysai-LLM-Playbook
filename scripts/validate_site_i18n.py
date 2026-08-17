@@ -287,8 +287,10 @@ def main() -> int:
             "homepage first-turn contract is missing visible fields: "
             + ", ".join(missing_first_turn_fields)
         )
-    if "URLSearchParams" not in app or "get('lang')" not in app or "searchParams.set('lang'" not in app or "localStorage" not in app:
-        errors.append("language state must support a shareable lang parameter and localStorage preference")
+    if "URLSearchParams" not in app or "get('lang')" not in app or "searchParams.set('lang'" not in app:
+        errors.append("language state must support a shareable lang parameter")
+    if "localStorage" in app:
+        errors.append("language state must not let browser storage override a shared locale URL")
     if "document.documentElement.lang" not in app:
         errors.append("language switching must update document.documentElement.lang")
     if "const localeCanRender" not in app:

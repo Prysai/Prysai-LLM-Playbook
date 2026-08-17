@@ -110,6 +110,12 @@ try {
     viewport: { width: 1280, height: 900 },
     permissions: ['clipboard-read', 'clipboard-write'],
   });
+  // Shared URLs must be deterministic. A previous visitor's preference must
+  // not turn the unparameterized English entry or Reader into Chinese.
+  await context.addInitScript(() => {
+    localStorage.setItem('prysai-llm-playbook-language', 'zh');
+    localStorage.setItem('codex-field-guide-language', 'zh');
+  });
   await context.tracing.start({ screenshots: true, snapshots: true, sources: true });
   page = await context.newPage();
   const consoleErrors = [];
@@ -128,6 +134,8 @@ try {
   });
 
   await page.goto(`${origin}/`, { waitUntil: 'networkidle' });
+  assert.equal(await page.locator('html').getAttribute('lang'), 'en', 'unparameterized English entry inherits a browser language preference');
+  assert.match(await page.locator('h1').innerText(), /What are LLMs, and how do you use them well/i, 'unparameterized English entry does not render English content');
   assert.equal(searchRequests.length, 0, 'initial page load fetched the full search index');
   assert.equal(
     await page.locator('#start').evaluate((section) => section.previousElementSibling?.id),
@@ -662,6 +670,12 @@ try {
   assert.equal(await labIndexPage.getByText('<!-- language-switcher:end -->', { exact: true }).count(), 0, 'Reader rendered a source language-switcher comment');
   assert.equal(await labIndexPage.getByText(/^Languages:/, { exact: false }).count(), 0, 'Reader rendered a duplicate source language selector');
   await labIndexPage.close();
+  const defaultReaderPage = await context.newPage();
+  await defaultReaderPage.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md`, { waitUntil: 'networkidle' });
+  await defaultReaderPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.equal(await defaultReaderPage.locator('html').getAttribute('lang'), 'en', 'unparameterized English Reader inherits a browser language preference');
+  assert.match(await defaultReaderPage.locator('[data-reader-article] h1').innerText(), /Understand GPT before you trust Codex/i, 'unparameterized English Reader does not render English source');
+  await defaultReaderPage.close();
   await searchInput.fill('research checkpoint');
   await page.getByRole('button', { name: 'Search', exact: true }).click();
   await page.locator('[data-search-results] .search-result').filter({ hasText: 'AI safety field signals' }).first().waitFor();

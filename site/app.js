@@ -628,22 +628,11 @@ const localeManifestAvailable = Boolean(
 );
 const localeTokens = Object.keys(localeManifest.locales);
 const uiLocales = new Set(['en', 'zh', 'es', 'ja', 'ko', 'de']);
-const languageStorageKey = 'prysai-llm-playbook-language';
-const legacyLanguageStorageKey = 'codex-field-guide-language';
 const languageParam = new URLSearchParams(window.location.search).get('lang');
 const staticLocale = window.PRYSAI_STATIC_LOCALE || document.documentElement.dataset.prysaiStaticLocale || null;
 const hasExplicitLanguageParam = languageParam !== null;
 const hasValidLanguageParam = localeTokens.includes(languageParam);
 let currentLanguage = hasValidLanguageParam ? languageParam : (localeTokens.includes(staticLocale) ? staticLocale : null);
-if (!hasExplicitLanguageParam && !staticLocale) {
-  try {
-    currentLanguage = localStorage.getItem(languageStorageKey);
-    if (!currentLanguage) {
-      currentLanguage = localStorage.getItem(legacyLanguageStorageKey);
-      if (currentLanguage) localStorage.setItem(languageStorageKey, currentLanguage);
-    }
-  } catch (_) { currentLanguage = null; }
-}
 currentLanguage = localeTokens.includes(currentLanguage) ? currentLanguage : localeManifest.default_locale;
 let effectiveUiLanguage = uiLocales.has(currentLanguage) ? currentLanguage : 'en';
 
@@ -1136,7 +1125,6 @@ const applyLanguage = (language, { updateUrl = true } = {}) => {
     url.searchParams.set('lang', currentLanguage);
     window.history.replaceState({}, '', url);
   }
-  try { localStorage.setItem(languageStorageKey, currentLanguage); } catch (_) { /* Persistence is optional. */ }
 };
 
 const localizedField = (data, key) => data?.[key]?.[effectiveUiLanguage] || data?.[key]?.en || '';

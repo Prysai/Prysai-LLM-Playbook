@@ -7,8 +7,6 @@
   const params = new URLSearchParams(window.location.search);
   const requestedLocale = validLocales.includes(params.get('lang')) ? params.get('lang') : null;
   const requestedPath = normalizeRepoPath(params.get('path') || 'book/chapters/01-gpt-and-codex-EN.md');
-  const languageStorageKey = 'prysai-llm-playbook-language';
-  const legacyLanguageStorageKey = 'codex-field-guide-language';
   let activeLocale = requestedLocale;
   const article = document.querySelector('[data-reader-article]');
   const banner = document.querySelector('[data-reader-banner]');
@@ -1030,17 +1028,10 @@ function canonicalChapterTitle(chapter) {
       showError(currentReaderCopy().invalidPath);
       return;
     }
-    let locale = requestedLocale;
-    if (!locale) {
-      try {
-        locale = localStorage.getItem(languageStorageKey);
-        if (!locale) {
-          locale = localStorage.getItem(legacyLanguageStorageKey);
-          if (locale) localStorage.setItem(languageStorageKey, locale);
-        }
-      } catch (_) { locale = null; }
-    }
-    locale = validLocales.includes(locale) ? locale : manifest.default_locale || 'en';
+    // A URL is the source of truth. Reading an old browser preference here
+    // can turn an English link into another language and makes shared links
+    // non-deterministic.
+    const locale = validLocales.includes(requestedLocale) ? requestedLocale : manifest.default_locale || 'en';
     const selection = choosePath(requestedPath, locale);
     activeLocale = locale;
     applyReaderChrome();

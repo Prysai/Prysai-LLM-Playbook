@@ -40,10 +40,10 @@ public-site route index that joins them.
    or the documented English migration path and expose a visible pending
    banner/title. A fallback is evidence of a missing translation, not a
    translation claim.
-5. Keep `?lang=en|zh|es|ja|ko|de` as the shareable language state. Use
-   `localStorage` only when the URL has no explicit language parameter. An
-   invalid explicit parameter is normalized to the default instead of being
-   allowed to silently inherit an old preference.
+5. Keep `?lang=en|zh|es|ja|ko|de` as the shareable language state. The URL is
+   the only language source: an absent or invalid parameter resolves to the
+   English default. Do not read a browser preference, because it can make a
+   shared English URL render a different language.
 6. Keep the language switcher as the only intentional cross-locale navigation.
    Ordinary links preserve the current locale and the current path/query/hash
    where applicable.

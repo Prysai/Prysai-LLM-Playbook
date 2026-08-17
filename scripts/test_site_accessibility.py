@@ -145,6 +145,15 @@ def main() -> int:
 
         if "document.documentElement.lang = localeManifest.locales[effectiveUiLanguage]?.html_lang || 'en';" not in site_script:
             raise AssertionError("locale-fallback-language: the document language must follow the rendered UI language")
+        if "localStorage" in site_script or "localStorage" in reader_script:
+            raise AssertionError("locale-url-authority: browser storage must not override an English or shared locale URL")
+        for required in (
+            "const hasExplicitLanguageParam = languageParam !== null;",
+            "currentLanguage = localeTokens.includes(currentLanguage) ? currentLanguage : localeManifest.default_locale;",
+            "const locale = validLocales.includes(requestedLocale) ? requestedLocale : manifest.default_locale || 'en';",
+        ):
+            if required not in (site_script + reader_script):
+                raise AssertionError(f"locale-url-authority: missing URL-default contract '{required}'")
         for required in (
             "const canonicalContentId = (contentId) => localeManifest.aliases?.[contentId] || contentId;",
             "const contentId = canonicalContentId(anchor.dataset.contentId || contentIdForHref(sourceHref));",
@@ -244,6 +253,8 @@ def main() -> int:
         # cache invalidation across every intermediary.
         if not re.search(r'<script src="app\.js\?v=[A-Za-z0-9-]+" defer></script>', site_markup):
             raise AssertionError("localized-seo: app.js must use a non-empty immutable cache version")
+        if not re.search(r'<script src="reader\.js\?v=[A-Za-z0-9-]+" defer></script>', reader_markup):
+            raise AssertionError("locale-url-authority: reader.js must use a non-empty immutable cache version")
         fixtures += 1
 
         reader_styles = (Path(__file__).resolve().parents[1] / "site/styles.css").read_text(encoding="utf-8")
