@@ -375,10 +375,9 @@ state, not a marketing promise.
 | **L5 · Evidence reviewer** | Test completion claims with positive, boundary, failure, and transfer cases | [Chapter 19 — English source](book/chapters/19-evaluate-models-and-workflows-EN.md) · [Evaluation framework](docs/quality/evaluation-framework.md) |
 | **L6 · Team coach** | Turn a personal method into a versioned team capability with ownership and rollback | [Chapters 20–22 — English sources](book/table-of-contents-EN.md) · [Contribution model](docs/governance/contribution-model.md) |
 
-“Migration pending” remains explicit wherever an English source has not yet
-been authored. All 22 chapters and all 18 labs now have canonical `-EN`
-sources. That closes the source-locale path gap; it does not supply runtime or
-independent-review evidence for the labs.
+All 22 chapters and all 18 labs now have canonical `-EN` sources. The English
+source path is complete; that does not supply runtime or independent-review
+evidence for the labs.
 
 ## What a chapter, lab, or Skill must contain
 
@@ -560,9 +559,9 @@ the [locale-suffixed content decision](docs/adr/0010-locale-suffixed-content.md)
 
 On a localized page, links to reader-facing content stay in that locale. When
 the target translation does not exist, the page says so and points to the
-current source with an explicit migration notice. It never silently presents
-English as a completed translation. Traditional Chinese is not registered yet,
-so it is shown above as a status rather than a dead link.
+current source with an explicit source-locale notice. It never silently
+presents English as a completed translation. Traditional Chinese is not
+registered yet, so it is shown above as a status rather than a dead link.
 
 ## How to update the project
 
