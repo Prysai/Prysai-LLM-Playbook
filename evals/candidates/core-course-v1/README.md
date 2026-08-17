@@ -34,7 +34,7 @@ reviewers, disagreements, and limits.
 
 ## Files
 
-- `fixture.json` — ten synthetic cases covering all three case types and all five outcomes.
+- `fixture.json` — eleven synthetic cases covering all three case types and all five outcomes, including a controlled observation boundary.
 - `scoring-rubric.json` — machine-readable scoring anchors and forbidden claims.
 - `run-record-template.json` — fields required before a future run can be called an observation.
 - [`docs/quality/core-course-rubric-v1.md`](../../../docs/quality/core-course-rubric-v1.md) — reviewer-facing prose rubric.
