@@ -1337,22 +1337,6 @@ Object.assign(copy.zh, {
   skillPlatformObservationName: '平台观察记录',
   skillPlatformObservation: '记录一个可见的平台界面，不把它推断成能力声明。',
 });
-Object.assign(copy.es, {
-  skillPlatformObservationName: 'Registro de observación de plataforma',
-  skillPlatformObservation: 'Registra una superficie visible de una plataforma sin convertirla en una afirmación de capacidad.',
-});
-Object.assign(copy.ja, {
-  skillPlatformObservationName: 'プラットフォーム観察記録',
-  skillPlatformObservation: '見えているプラットフォームの画面を一つ記録し、能力についての主張に変えない。',
-});
-Object.assign(copy.ko, {
-  skillPlatformObservationName: '플랫폼 관찰 기록',
-  skillPlatformObservation: '보이는 플랫폼 화면 하나를 기록하되, 이를 역량 주장으로 바꾸지 마세요.',
-});
-Object.assign(copy.de, {
-  skillPlatformObservationName: 'Plattformbeobachtungsprotokoll',
-  skillPlatformObservation: 'Dokumentiere eine sichtbare Plattformoberfläche, ohne daraus eine Fähigkeitsbehauptung abzuleiten.',
-});
 Object.assign(copy.zh, {
   fileSkillsBody: '25 \u4e2a\u9879\u76ee Skill，包含触发、边界与证据契约。',
   ledgerSkills: 'Skill \u00b7 25',
@@ -4801,6 +4785,23 @@ Object.assign(copy.ko, {
 });
 Object.assign(copy.de, {
   starterEyebrow: 'Deine erste Prompt-Übung', starterTitle: 'Bitte das Modell, eine Nachricht klarer zu machen, ohne Fakten zu erfinden.', starterIntro: 'Diese kleine Übung zeigt, warum Prompts wichtig sind. Ein Modell kann eine Nachricht besser formulieren, aber auch Details ergänzen, die du nie genannt hast. Gib eine klare Anweisung und prüfe, ob es ihr gefolgt ist.', starterStepOne: '01 · LIES DEN ORIGINALTEXT', starterSource: '„Der Workshop wurde verschoben. Er beginnt am Freitag um 10 Uhr. Bring den Entwurf mit. Gib Bescheid, wenn du nicht kommen kannst.“', starterStepTwo: '02 · KOPIERE DIESEN PROMPT IN EIN BELIEBIGES CHATMODELL', starterCopy: 'Prompt kopieren', starterCopied: 'Prompt kopiert. Füge ihn in ein Chatmodell ein und prüfe die Antwort mit den drei Fragen.', starterCopyFailed: 'Kopieren fehlgeschlagen. Wähle den Prompt-Text manuell aus.', starterPrompt: 'Schreibe die folgende Nachricht klar und freundlich um.\n\nErhalte alle Fakten exakt. Füge kein Datum, keinen Ort, keinen Grund, keine Kontaktangabe und keine andere Information hinzu, die nicht im Original steht.\n\nOriginalnachricht:\n„Der Workshop wurde verschoben. Er beginnt am Freitag um 10 Uhr. Bring den Entwurf mit. Gib Bescheid, wenn du nicht kommen kannst.“\n\nGib nur die umgeschriebene Nachricht zurück.', starterStepThree: '03 · LIES DIE ANTWORT UND STELLE DREI FRAGEN', starterCheckOne: 'Steht dort weiterhin Freitag um 10 Uhr?', starterCheckTwo: 'Bleibt die Bitte, den Entwurf mitzubringen und bei Abwesenheit Bescheid zu geben, erhalten?', starterCheckThree: 'Wurden kein Datum, Ort, Grund oder Kontakt ergänzt?', starterCopiedHint: 'Wenn alle drei Antworten ja sind, hat das Modell diese kleine Anweisung befolgt. Wenn nicht, benenne genau die geänderte oder erfundene Tatsache und versuche es erneut.', starterExampleLabel: 'EIN AKZEPTABLES ERGEBNIS', starterExample: '„Der Workshop beginnt am Freitag um 10 Uhr. Bitte bring deinen Entwurf mit. Wenn du nicht kommen kannst, gib bitte Bescheid.“', starterExampleNote: 'Die Formulierung darf abweichen. Wichtig ist, dass Fakten und gewünschte Handlung gleich bleiben.', starterWhyLabel: 'WARUM DAS WICHTIG IST', starterWhy: 'Ein LLM sagt nützlich klingenden Text voraus; es weiß nicht automatisch, welche fehlenden Details unbekannt bleiben müssen. Ein klarer Prompt und eine schnelle Prüfung helfen dir, den Unterschied zu erkennen.'
+});
+
+Object.assign(copy.es, {
+  skillPlatformObservationName: 'Registro de observación de plataforma',
+  skillPlatformObservation: 'Registra una superficie visible de una plataforma sin convertirla en una afirmación de capacidad.',
+});
+Object.assign(copy.ja, {
+  skillPlatformObservationName: 'プラットフォーム観察記録',
+  skillPlatformObservation: '見えているプラットフォームの画面を一つ記録し、能力についての主張に変えない。',
+});
+Object.assign(copy.ko, {
+  skillPlatformObservationName: '플랫폼 관찰 기록',
+  skillPlatformObservation: '보이는 플랫폼 화면 하나를 기록하되, 이를 역량 주장으로 바꾸지 마세요.',
+});
+Object.assign(copy.de, {
+  skillPlatformObservationName: 'Plattformbeobachtungsprotokoll',
+  skillPlatformObservation: 'Dokumentiere eine sichtbare Plattformoberfläche, ohne daraus eine Fähigkeitsbehauptung abzuleiten.',
 });
 
 initializeSearch();
