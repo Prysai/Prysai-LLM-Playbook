@@ -55,6 +55,17 @@ RENDERABLE_TRANSLATION_STATUSES = {
     "verified",
     "production-ready",
 }
+# Reader/search may expose an in-progress translation with an explicit
+# disclosure, but a public sitemap should contain only pages that are ready to
+# be treated as indexable content. Keep maturity and translation readiness
+# separate: a candidate source can be indexed, while a draft or incomplete
+# translation cannot.
+SITEMAP_CONTENT_STATUSES = {
+    "candidate",
+    "verified",
+    "production-ready",
+}
+SITEMAP_TRANSLATION_STATUSES = RENDERABLE_TRANSLATION_STATUSES - {"in-progress"}
 SITEMAP_INDEX_FILENAME = "sitemap_index.xml"
 # Deliberately narrow credential signatures. This detects publishable secrets,
 # not ordinary instructional prose about tokens, keys, or passwords.
@@ -218,7 +229,11 @@ def sitemap_urls(config: dict[str, object]) -> list[str]:
             record = content.get("locales", {}).get(locale)
             if not isinstance(record, dict):
                 continue
-            if not record.get("exists") or record.get("translation_status") not in RENDERABLE_TRANSLATION_STATUSES:
+            if (
+                not record.get("exists")
+                or record.get("content_status") not in SITEMAP_CONTENT_STATUSES
+                or record.get("translation_status") not in SITEMAP_TRANSLATION_STATUSES
+            ):
                 continue
             path = str(record.get("path", ""))
             if not path.endswith(".md"):
