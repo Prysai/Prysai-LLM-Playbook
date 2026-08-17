@@ -51,7 +51,12 @@
     "evals/",
     "scripts/",
     "site/",
-    "skills/"
+    "skills/",
+    "book/routes/llm-foundation-core-v1-EN.md",
+    "book/routes/llm-core-first-generation-EN.md",
+    "book/routes/llm-core-visible-failures-EN.md",
+    "book/routes/llm-core-check-repair-EN.md",
+    "book/routes/llm-core-unseen-transfer-EN.md"
   ],
   "reader_content": [
     {
@@ -106,6 +111,36 @@
       "content_id": "community-tutorial-intake-and-foundations-2026-08-14",
       "kind": "field-note",
       "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md",
+      "content_status": "candidate"
+    },
+    {
+      "content_id": "llm-foundation-core-v1",
+      "kind": "learning-route",
+      "path": "book/routes/llm-foundation-core-v1-EN.md",
+      "content_status": "candidate"
+    },
+    {
+      "content_id": "llm-core-first-generation",
+      "kind": "learning-route",
+      "path": "book/routes/llm-core-first-generation-EN.md",
+      "content_status": "candidate"
+    },
+    {
+      "content_id": "llm-core-visible-failures",
+      "kind": "learning-route",
+      "path": "book/routes/llm-core-visible-failures-EN.md",
+      "content_status": "candidate"
+    },
+    {
+      "content_id": "llm-core-check-repair",
+      "kind": "learning-route",
+      "path": "book/routes/llm-core-check-repair-EN.md",
+      "content_status": "candidate"
+    },
+    {
+      "content_id": "llm-core-unseen-transfer",
+      "kind": "learning-route",
+      "path": "book/routes/llm-core-unseen-transfer-EN.md",
       "content_status": "candidate"
     }
   ],
