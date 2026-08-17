@@ -48,7 +48,7 @@ boundary. Do not skip ahead to a platform adapter to complete this route.
 2. <span id="unit-2-first-generation"></span>[Context, instruction, and a first generation](llm-core-first-generation-EN.md) — make the goal, material, constraints, and response shape explicit.
 3. <span id="unit-3-visible-failures"></span>[Recognize visible failure modes](llm-core-visible-failures-EN.md) — label omissions, unsupported additions, forced ambiguity, and overconfidence with source evidence.
 4. <span id="unit-4-check-repair"></span>[Check, repair, and state limits](llm-core-check-repair-EN.md) — use `PASS` / `FAIL` / `UNSURE`, make a minimum correction, and record the limit.
-5. <span id="unit-5-unseen-transfer"></span>[Repeat the method on an unseen task](../../docs/product/core-course-contract.md) — define, attempt, check, repair, and state limits without a complete template.
+5. <span id="unit-5-unseen-transfer"></span>[Repeat the method on an unseen task](llm-core-unseen-transfer-EN.md) — define, attempt, check, repair, and state limits without a complete template.
 
 ## Evidence boundary
 

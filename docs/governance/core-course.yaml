@@ -105,7 +105,7 @@
       "estimated_minutes": 25,
       "depends_on": ["core-check-repair"],
       "new_concepts": ["unseen task", "help disclosure", "stop condition"],
-      "content_paths": ["docs/product/core-course-contract.md"],
+      "content_paths": ["book/routes/llm-core-unseen-transfer-EN.md"],
       "route_marker": "unit-5-unseen-transfer",
       "learner_artifact": "an independent task receipt covering define, attempt, check, repair, and limits",
       "operation": "Choose a changed fictional notice, write your own bounded request, inspect the first response, repair it, and record any help.",

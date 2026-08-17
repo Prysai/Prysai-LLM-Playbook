@@ -68,6 +68,7 @@ REQUIRED = (
     "book/routes/llm-core-first-generation-EN.md",
     "book/routes/llm-core-visible-failures-EN.md",
     "book/routes/llm-core-check-repair-EN.md",
+    "book/routes/llm-core-unseen-transfer-EN.md",
     "docs/governance/contribution-model.md",
     "docs/quality/skill-quality-standard.md",
     "docs/quality/evaluation-framework.md",

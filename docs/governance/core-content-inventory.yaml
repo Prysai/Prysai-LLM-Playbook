@@ -48,7 +48,7 @@
       "class": "core",
       "title": "Unseen task practice",
       "outcome": "transfer",
-      "source_paths": ["docs/product/core-course-contract.md"],
+      "source_paths": ["book/routes/llm-core-unseen-transfer-EN.md"],
       "learner_artifact": "independent unseen-task receipt with help disclosure",
       "status": "candidate"
     }
