@@ -24,6 +24,21 @@ PRACTICE_BOARD = ROOT / "assets/teaching/beginner-practice-loop-red-black.svg"
 SOURCE_CHECK_BOARD = ROOT / "assets/teaching/source-check-before-belief-red-black.svg"
 RESEARCH_RECORD_BOARD = ROOT / "assets/teaching/research-question-to-source-record-red-black.svg"
 
+CANONICAL_PRACTICE_LOOPS = {
+    ROOT / "book/spanish-practice-loop-EN.md": (
+        "# Six messages for a small Spanish practice loop",
+        ("Choose a target", "Try first", "Find one gap", "Repair it", "Change the scene", "Check later"),
+    ),
+    ROOT / "book/work-update-practice-loop-EN.md": (
+        "# Six messages for a truthful work-update practice loop",
+        ("Set the reader and the facts", "Write before seeing a model version", "Find one material gap", "Revise in my own words", "Change the audience", "Leave a small receipt"),
+    ),
+    ROOT / "book/research-check-practice-loop-EN.md": (
+        "# Six messages for a bounded research check",
+        ("Freeze one decision", "Name claims and source owners", "Read supplied material, not imagined sources", "Test one sentence", "Look for a decision-changing exception", "End with a stop receipt"),
+    ),
+}
+
 TEXT_REQUIREMENTS = {
     GUIDE: [
         "before the baseline",
@@ -81,9 +96,8 @@ TEXT_REQUIREMENTS = {
         'id="six-short-work-update-messages"',
         "Six short messages for a work-update practice loop",
         "not a promise that an LLM can assess writing",
-        "Freeze a fictional update brief",
-        "Change one condition, not the whole task",
-        "transferred_to_manager_audience",
+        "canonical six messages",
+        "truthful work-update loop",
         "Card C1",
         "Card C2",
         "Model should",
@@ -133,10 +147,7 @@ TEXT_REQUIREMENTS = {
         'id="six-short-research-messages"',
         "Six short messages for one research check",
         "not a promise that an LLM can search correctly",
-        "Authorize one narrow public lookup, or stop",
-        "A link or citation marker without an opened matching passage is",
-        "Do not call the research exhaustive",
-        "research-question-to-source-record-red-black.svg",
+        "bounded research-check loop",
         "universal-first-turn-prompt-contract-2026-08-13.md",
         "cross-platform-learner-needs-and-prompt-patterns-2026-08-13.md",
         'id="retrieval-scope-receipt"',
@@ -235,6 +246,17 @@ def main() -> int:
             normalized_needle = " ".join(needle.split())
             if normalized_needle.lower() not in text.lower():
                 errors.append(f"{path.relative_to(ROOT)}: missing contract text {needle!r}")
+
+    for path, (title, headings) in CANONICAL_PRACTICE_LOOPS.items():
+        if not path.is_file():
+            errors.append(f"missing canonical practice loop: {path.relative_to(ROOT)}")
+            continue
+        text = " ".join(path.read_text(encoding="utf-8").split())
+        if title.lower() not in text.lower():
+            errors.append(f"{path.relative_to(ROOT)}: missing canonical loop title")
+        for heading in headings:
+            if f"{heading}".lower() not in text.lower():
+                errors.append(f"{path.relative_to(ROOT)}: missing canonical message heading {heading!r}")
 
     if CLINIC.is_file():
         clinic_text = CLINIC.read_text(encoding="utf-8")

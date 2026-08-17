@@ -8,6 +8,8 @@ browse, prove a source true, establish current facts, or make a high-stakes
 decision. Stop if the task requires secrets, unlicensed material, a private
 person's data, or permission to publish, buy, hire, diagnose, or act.
 
+![A research question becomes a decision, an opened source, and a claim record](../assets/teaching/research-question-to-source-record-red-black.svg)
+
 ## 1. Freeze one decision
 ```text
 I need to make this decision: [decision]. Help me turn it into one answerable

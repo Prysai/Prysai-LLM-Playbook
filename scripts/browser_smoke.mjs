@@ -598,7 +598,15 @@ try {
   const sixMessageHeading = sixMessagePage.getByRole('heading', { name: /six short messages for one Spanish practice loop/i });
   assert.equal(await sixMessageHeading.isVisible(), true, 'Six-message Spanish practice route is not discoverable in Reader');
   assert.match(await sixMessagePage.locator('[data-reader-article]').innerText(), /six separate copy-ready messages, not six magic prompts/i, 'Six-message route omits its no-magic-prompt boundary');
-  assert.equal(await sixMessagePage.getByText('1. Set one target', { exact: true }).isVisible(), true, 'Six-message route omits the first usable prompt');
+  assert.equal(await sixMessagePage.getByRole('link', { name: /Spanish practice loop/i }).count(), 1, 'Six-message route does not expose its canonical loop');
+  const spanishCanonicalPage = await context.newPage();
+  await spanishCanonicalPage.goto(`${origin}/site/reader.html?path=book%2Fspanish-practice-loop-EN.md&lang=en`, { waitUntil: 'networkidle' });
+  await spanishCanonicalPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.equal(await spanishCanonicalPage.getByRole('heading', { name: /six messages for a small Spanish practice loop/i }).isVisible(), true, 'Canonical Spanish loop did not render');
+  for (const message of ['Choose a target', 'Try first', 'Find one gap', 'Repair it', 'Change the scene', 'Check later']) {
+    assert.equal(await spanishCanonicalPage.getByRole('heading', { name: new RegExp(`^\\d+\\. ${message}$`, 'i') }).isVisible(), true, `Canonical Spanish loop omits ${message}`);
+  }
+  await noHorizontalOverflow(spanishCanonicalPage, 'desktop canonical Spanish loop');
   await noHorizontalOverflow(sixMessagePage, 'desktop six-message Spanish practice route');
   await sixMessagePage.setViewportSize({ width: 390, height: 844 });
   await sixMessagePage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#six-short-spanish-messages`, { waitUntil: 'networkidle' });
@@ -606,6 +614,7 @@ try {
   await noHorizontalOverflow(sixMessagePage, 'mobile six-message Spanish practice route');
   await sixMessagePage.screenshot({ path: path.join(visualEvidenceDirectory, 'six-message-spanish-mobile.png') });
   await sixMessagePage.close();
+  await spanishCanonicalPage.close();
 
   const workUpdatePage = await context.newPage();
   await workUpdatePage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#six-short-work-update-messages`, { waitUntil: 'networkidle' });
@@ -614,7 +623,15 @@ try {
   assert.equal(await workUpdateHeading.isVisible(), true, 'Six-message work-update route is not discoverable in Reader');
   assert.equal(await workUpdatePage.locator('#six-short-work-update-messages').count(), 1, 'Reader did not preserve the six-message work-update fragment target');
   assert.match(await workUpdatePage.locator('[data-reader-article]').innerText(), /not a promise that an LLM can assess writing/i, 'Six-message work-update route omits its evidence boundary');
-  assert.equal(await workUpdatePage.getByText('1. Freeze a fictional update brief', { exact: true }).isVisible(), true, 'Six-message work-update route omits the first usable prompt');
+  assert.equal(await workUpdatePage.getByRole('link', { name: /truthful work-update loop/i }).count(), 1, 'Six-message work-update route does not expose its canonical loop');
+  const workCanonicalPage = await context.newPage();
+  await workCanonicalPage.goto(`${origin}/site/reader.html?path=book%2Fwork-update-practice-loop-EN.md&lang=en`, { waitUntil: 'networkidle' });
+  await workCanonicalPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.equal(await workCanonicalPage.getByRole('heading', { name: /six messages for a truthful work-update practice loop/i }).isVisible(), true, 'Canonical work-update loop did not render');
+  for (const message of ['Set the reader and the facts', 'Write before seeing a model version', 'Find one material gap', 'Revise in my own words', 'Change the audience', 'Leave a small receipt']) {
+    assert.equal(await workCanonicalPage.getByRole('heading', { name: new RegExp(`^\\d+\\. ${message}$`, 'i') }).isVisible(), true, `Canonical work-update loop omits ${message}`);
+  }
+  await noHorizontalOverflow(workCanonicalPage, 'desktop canonical work-update loop');
   await noHorizontalOverflow(workUpdatePage, 'desktop six-message work-update route');
   await workUpdatePage.screenshot({ path: path.join(visualEvidenceDirectory, 'six-message-work-update-desktop.png') });
   await workUpdatePage.setViewportSize({ width: 390, height: 844 });
@@ -623,6 +640,7 @@ try {
   await noHorizontalOverflow(workUpdatePage, 'mobile six-message work-update route');
   await workUpdatePage.screenshot({ path: path.join(visualEvidenceDirectory, 'six-message-work-update-mobile.png') });
   await workUpdatePage.close();
+  await workCanonicalPage.close();
 
   const sixResearchPage = await context.newPage();
   await sixResearchPage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#six-short-research-messages`, { waitUntil: 'networkidle' });
@@ -632,18 +650,33 @@ try {
   assert.equal(await sixResearchPage.locator('#six-short-research-messages').count(), 1, 'Reader did not preserve the six-message research fragment target');
   assert.match(await sixResearchPage.locator('[data-reader-article]').innerText(), /not a promise that an LLM can search correctly/i, 'Six-message research route omits its evidence boundary');
   assert.equal(await sixResearchPage.getByText('1. Freeze one decision', { exact: true }).isVisible(), true, 'Six-message research route omits the first usable prompt');
-  const sixResearchVisual = sixResearchPage.locator('img[alt*="research question becomes a decision"]');
-  assert.match(await sixResearchVisual.getAttribute('src'), /assets\/teaching\/research-question-to-source-record-red-black\.svg$/, 'Six-message research route does not retain its original teaching visual');
+  assert.equal(await sixResearchPage.getByRole('link', { name: /bounded research-check loop/i }).count(), 1, 'Six-message research route does not expose its canonical loop');
+  const sixResearchCanonicalPage = await context.newPage();
+  await sixResearchCanonicalPage.goto(`${origin}/site/reader.html?path=book%2Fresearch-check-practice-loop-EN.md&lang=en`, { waitUntil: 'networkidle' });
+  await sixResearchCanonicalPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.equal(await sixResearchCanonicalPage.getByRole('heading', { name: /six messages for a bounded research check/i }).isVisible(), true, 'Canonical research loop did not render');
+  for (const message of ['Freeze one decision', 'Name claims and source owners', 'Read supplied material, not imagined sources', 'Test one sentence', 'Look for a decision-changing exception', 'End with a stop receipt']) {
+    assert.equal(await sixResearchCanonicalPage.getByRole('heading', { name: new RegExp(`^\\d+\\. ${message}$`, 'i') }).isVisible(), true, `Canonical research loop omits ${message}`);
+  }
+  const sixResearchVisual = sixResearchCanonicalPage.locator('img[alt*="research question becomes a decision"]');
+  assert.match(await sixResearchVisual.getAttribute('src'), /assets\/teaching\/research-question-to-source-record-red-black\.svg$/, 'Canonical research loop does not retain its teaching visual');
+  await noHorizontalOverflow(sixResearchCanonicalPage, 'desktop canonical research loop');
   await noHorizontalOverflow(sixResearchPage, 'desktop six-message research route');
   await sixResearchPage.screenshot({ path: path.join(visualEvidenceDirectory, 'six-message-research-desktop.png') });
+  assert.equal(await sixResearchPage.locator('img[alt*="research question becomes a decision"]').count(), 0, 'Legacy research pointer retained a duplicate teaching visual');
+  await sixResearchCanonicalPage.setViewportSize({ width: 390, height: 844 });
+  await sixResearchCanonicalPage.goto(`${origin}/site/reader.html?path=book%2Fresearch-check-practice-loop-EN.md&lang=en`, { waitUntil: 'networkidle' });
+  await sixResearchCanonicalPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.equal(await sixResearchVisual.isVisible(), false, 'Mobile Reader shrinks the canonical research-record board instead of offering a full-size route');
+  assert.equal(await sixResearchCanonicalPage.getByRole('link', { name: /open full-size visual: a research question becomes a decision/i }).isVisible(), true, 'Canonical research loop lacks an accessible mobile full-size route');
+  await noHorizontalOverflow(sixResearchCanonicalPage, 'mobile canonical research loop');
   await sixResearchPage.setViewportSize({ width: 390, height: 844 });
   await sixResearchPage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#six-short-research-messages`, { waitUntil: 'networkidle' });
   await sixResearchPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
-  assert.equal(await sixResearchVisual.isVisible(), false, 'Mobile Reader shrinks the dense research-record board instead of offering a full-size route');
-  assert.equal(await sixResearchPage.getByRole('link', { name: /open full-size visual: a research question becomes a decision/i }).isVisible(), true, 'Six-message research route lacks an accessible mobile full-size route');
   await noHorizontalOverflow(sixResearchPage, 'mobile six-message research route');
   await sixResearchPage.screenshot({ path: path.join(visualEvidenceDirectory, 'six-message-research-mobile.png') });
   await sixResearchPage.close();
+  await sixResearchCanonicalPage.close();
 
   const platformFactWatchPage = await context.newPage();
   await platformFactWatchPage.goto(`${origin}/site/reader.html?path=skills%2Fprysai-platform-fact-watch%2FSKILL.md&lang=en`, { waitUntil: 'networkidle' });
