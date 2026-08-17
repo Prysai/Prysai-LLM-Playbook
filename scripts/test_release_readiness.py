@@ -15,14 +15,17 @@ def require(condition: bool, message: str) -> None:
 def main() -> int:
     contract = readiness.load_contract()
     require(not readiness.validate_contract(contract), "checked-in not_ready contract is invalid")
-    require("release_tag" in readiness.readiness_blockers(contract), "missing tag was not reported")
+    require("release_evidence" in readiness.readiness_blockers(contract), "candidate evidence blocker was not reported")
+    require("rollback" in readiness.readiness_blockers(contract), "rollback rehearsal blocker was not reported")
+    require(contract["release_tag"]["status"] == "reviewed", "public alpha tag review was not recorded")
     require(contract["version"]["status"] == "declared", "candidate version was not declared")
     require(contract["changelog"]["status"] == "current", "candidate changelog was not recorded")
 
     false_ready = copy.deepcopy(contract)
     false_ready["decision"] = "ready"
     false_ready_errors = readiness.validate_contract(false_ready, inspect_git=False)
-    require(any("ready decision requires release_tag" in error for error in false_ready_errors), "ready accepted without release tag")
+    require(not any("ready decision requires release_tag" in error for error in false_ready_errors), "reviewed alpha tag was treated as missing")
+    require(any("ready decision requires release_evidence" in error for error in false_ready_errors), "ready accepted without release evidence")
     require(any("ready decision requires rollback" in error for error in false_ready_errors), "ready accepted without rollback")
     require(any("cannot retain known_gaps" in error for error in false_ready_errors), "ready accepted known gaps")
 
