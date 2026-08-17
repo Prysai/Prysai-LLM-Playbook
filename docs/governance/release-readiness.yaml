@@ -3,7 +3,7 @@
   "owner": "release-maintainer",
   "decision": "not_ready",
   "reviewed_at": "2026-08-14",
-  "next_review": "2026-08-21",
+  "next_review": "2026-08-24",
   "version": {
     "status": "declared",
     "value": "0.1.0-candidate.1"
@@ -13,20 +13,20 @@
     "path": "CHANGELOG.md"
   },
   "release_tag": {
-    "status": "absent",
-    "name": "",
-    "commit_sha": "",
-    "reviewed_by": "",
-    "reviewed_at": ""
+    "status": "reviewed",
+    "name": "v0.1.0-alpha",
+    "commit_sha": "abd343d032ea1ad344b9ae9ccaecf5c1a2fbf5e9",
+    "reviewed_by": "Prysai",
+    "reviewed_at": "2026-08-17"
   },
   "release_evidence": {
     "status": "candidate_only",
-    "candidate_sha": "",
-    "workflow_run_url": ""
+    "candidate_sha": "8c91d002fa552b6458828ae617c37db776ca06ca",
+    "workflow_run_url": "https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32076423361"
   },
   "rollback": {
     "status": "unavailable",
-    "target": "",
+    "target": "v0.1.0-alpha",
     "rehearsal_record": "",
     "rehearsed_at": "",
     "reviewed_by": ""
@@ -38,9 +38,8 @@
     "release_checklist_path": "docs/release-checklist.md"
   },
   "known_gaps": [
-    "The declared candidate version is not a public release or immutable tag.",
-    "No reviewed immutable release tag exists.",
+    "The current main candidate is newer than the public v0.1.0-alpha tag and is not itself a release.",
     "Commit-bound candidate evidence exists only in workflow artifacts and has not been accepted as release evidence.",
-    "No rollback target or bounded rollback rehearsal record exists."
+    "The v0.1.0-alpha tag is a rollback reference, but no bounded rollback rehearsal record exists."
   ]
 }
