@@ -8,21 +8,23 @@
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
 <!-- language-switcher:end -->
 
-## Read the textbook path first
+## Read the LLM foundation core first
 
-1. [Chapter 0 — What Is a Large Language Model](guides/llm-fundamentals-EN.md)
-2. [Chapter 1 — Understand GPT before Codex](chapters/01-gpt-and-codex-EN.md)
-3. [Chapter 2 — Complete a safe, verifiable task](chapters/02-first-safe-task-EN.md)
+1. [Core course contract](../docs/product/core-course-contract.md)
+2. [What Is a Large Language Model](guides/llm-fundamentals-EN.md)
+3. [Understand GPT before Codex](chapters/01-gpt-and-codex-EN.md) — boundary only; Codex is optional
+4. [Core content inventory](../docs/governance/core-content-inventory.yaml)
 
-The prompt cards and language loops are **optional application practice** after this sequence, not a replacement for the LLM foundation.
+The prompt cards, language loops, Codex labs, and Skills are **optional application
+practice** after the foundation. They are not a replacement for the LLM core and
+their `candidate`/`not_run` status remains visible.
 
-This directory contains the original main-line book for the `Prysai LLM
-Playbook`. Its stable collaboration method is intended to transfer
-across language-model tools; Codex is the deepest current worked track, not a
-claim that every platform behaves identically. The book is arranged around the
-learner's growth, not assembled as a collection of unrelated external
-projects. It explains the ideas, then makes the reader exercise the decisions
-that make those ideas reliable in real work.
+This directory contains the original book and optional application material for
+the `Prysai LLM Playbook`. The default learner path starts with LLM boundaries,
+context, visible failure, checking, and an unseen task. Codex is the deepest
+current worked track after that foundation, not a claim that every platform
+behaves identically. The book is arranged around learner evidence, not a
+collection of unrelated external projects.
 
 ## Before you choose a chapter
 

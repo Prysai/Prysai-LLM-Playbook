@@ -1,0 +1,68 @@
+{
+  "schema_version": "1",
+  "status": "candidate",
+  "reviewed_at": "2026-08-17",
+  "next_review": "2026-09-17",
+  "owner": "curriculum-maintainer",
+  "claim_boundary": "Classification and routing only. This inventory does not prove learner completion, transfer, model behavior, or content quality.",
+  "classes": ["core", "advanced", "reference", "experimental"],
+  "core_units": [
+    {
+      "id": "core-llm-boundaries",
+      "class": "core",
+      "title": "What an LLM is and is not",
+      "outcome": "explain",
+      "source_paths": ["book/guides/llm-fundamentals-EN.md", "book/chapters/01-gpt-and-codex-EN.md"],
+      "learner_artifact": "explanation card plus model/product boundary decisions",
+      "status": "candidate"
+    },
+    {
+      "id": "core-first-generation",
+      "class": "core",
+      "title": "Context, instruction, and a first generation",
+      "outcome": "initiate",
+      "source_paths": ["book/chapters/02-first-safe-task-EN.md", "book/chapters/03-task-protocol-EN.md", "docs/governance/starter-task-contract.yaml"],
+      "learner_artifact": "four-field task card, first input, and preserved first output",
+      "status": "candidate"
+    },
+    {
+      "id": "core-visible-failures",
+      "class": "core",
+      "title": "Omission, invention, ambiguity, and overconfidence",
+      "outcome": "identify",
+      "source_paths": ["book/communication-clinic-EN.md", "book/chapters/01-gpt-and-codex-EN.md"],
+      "learner_artifact": "four labeled failures with quoted source evidence",
+      "status": "candidate"
+    },
+    {
+      "id": "core-check-repair",
+      "class": "core",
+      "title": "Check, repair, and state limits",
+      "outcome": "repair",
+      "source_paths": ["book/chapters/09-verification-and-recovery-EN.md", "book/labs/lab-003-evidence-review-EN.md"],
+      "learner_artifact": "PASS/FAIL/UNSURE check, before/after difference, and one limit",
+      "status": "candidate"
+    },
+    {
+      "id": "core-unseen-transfer",
+      "class": "core",
+      "title": "Unseen task practice",
+      "outcome": "transfer",
+      "source_paths": ["docs/product/core-course-contract.md"],
+      "learner_artifact": "independent unseen-task receipt with help disclosure",
+      "status": "candidate"
+    }
+  ],
+  "advanced": [
+    {"id": "codex-flagship", "title": "Codex Practice Track", "source_paths": ["book/chapters/01-gpt-and-codex-EN.md"]},
+    {"id": "tools-agents-skills", "title": "Tools, Agents, Skills, and team governance", "source_paths": ["book/chapters/07-skills-plugins-and-tools-EN.md", "book/chapters/12-agent-loop-and-stop-EN.md"]},
+    {"id": "professional-tracks", "title": "Engineering, research, marketing, content, and design tracks", "source_paths": ["book/chapters/15-research-track-EN.md", "book/chapters/16-engineering-track-EN.md"]}
+  ],
+  "reference": [
+    {"id": "research-records", "title": "Dated research and source receipts", "source_paths": ["docs/research"]},
+    {"id": "governance-records", "title": "Release, status, and maintenance contracts", "source_paths": ["docs/governance"]}
+  ],
+  "experimental": [
+    {"id": "learner-observation", "title": "Core-course learner observation and evaluation", "source_paths": ["evals/candidates", "docs/quality"]}
+  ]
+}

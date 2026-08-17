@@ -6,16 +6,16 @@
 
 # Prysai LLM Playbook — From First Task to Reliable Work
 
-> Learn a transferable method for reliable work with language models, then
-> practise it most deeply in Codex, the project's flagship track.
+> First understand what an LLM can and cannot support. Then practise one small
+> result, check it, and only afterwards choose a Codex or other platform track.
 
 <!-- language-switcher:start -->
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md)
 <!-- language-switcher:end -->
 
-**New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) — choose one small task, get a bounded prompt, then follow the book path. The repository is the auditable source, not the recommended first screen.
+**New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) — start the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. The repository is the auditable source, not the recommended first screen.
 
-[No project? Start with the no-setup check](#optional-15-minute-warm-up-no-git-required) · [Practise a Spanish exchange](book/communication-clinic-EN.md#six-short-spanish-messages) · [Run a research check](book/communication-clinic-EN.md#six-short-research-messages) · [Received a citation-shaped answer? Check the source record](book/communication-clinic-EN.md#source-check-route) · [Need to share an AI answer? Run the Share Check](book/communication-clinic-EN.md#share-check) · [Ready to make a local Codex change? Start the Codex path](#the-recommended-first-codex-path) · [Need a disposable fixture?](book/routes/first-safe-change-EN.md) · [Read the full English guide](README-EN.md)
+[Start the LLM foundation route](README-EN.md#llm-foundation-core) · [Try the no-setup check](#optional-15-minute-warm-up-no-git-required) · [Read the full English guide](README-EN.md) · [Continue to the optional Codex track](#the-recommended-first-codex-path)
 
 > **Status:** `candidate` · **Default locale:** English · **Maintained by:** Prysai Lab
 
@@ -31,10 +31,11 @@ and independent review are still pending.
 ## What this is
 
 You may have heard people mention Codex, Claude Code, Agents, or Skills and
-wondered which one you are supposed to learn first. You are in the right
-place. We will not start with a product contest or a long feature list. We
-will start with one small question, make one bounded attempt, and keep enough
-evidence to tell what happened.
+wondered which one you are supposed to learn first. Start one layer earlier:
+understand how a language model uses context to generate an answer, why a fluent
+answer can still be wrong, and how to inspect the result before trusting it.
+The advanced platform material remains available, but it is not a prerequisite
+for the LLM foundation.
 
 This is an independent, book-shaped curriculum for working with language
 models responsibly. Start with one beginner question: when a tool says it is
@@ -45,16 +46,12 @@ repeatable loop:
 define the task → choose a bounded action → inspect the result → keep evidence → state the limit
 ```
 
-The stable method applies beyond one product. **The current guided scope is
-the transferable core, the Codex flagship track, and evidence-gated adapters
-for ChatGPT, Claude / Claude Code, Gemini, DeepSeek, and Grok**: files, tools,
-Skills, Agents, verification, and team adoption. The
-[Choose your LLM platform route](book/routes/platform-adapter-guide-EN.md)
-gives every platform a safe first task; the
-[Beginner Practice Pack](book/communication-clinic-EN.md) gives copy-ready
-prompts that work in any text LLM. A familiar name is still not a reason to
-pretend its controls or permissions are the same; every named platform keeps a
-source-backed adapter boundary until its own evidence exists.
+The stable method applies beyond one product. The current default is the
+[LLM foundation core](README-EN.md#llm-foundation-core): explain, initiate,
+identify, repair, and transfer. Codex, tools, Skills, Agents, professional
+tracks, and named-platform adapters are later layers. They remain useful
+reference material, but their current structure is not learner evidence and
+does not establish cross-platform equivalence.
 
 <mark>Do not stop at a plausible output.</mark> Ask what changed, what was
 checked, and what remains unproven.
@@ -73,9 +70,29 @@ future result must keep its commit, conditions, raw de-identified records, and
 scorer disagreements; it remains a small, descriptive observation rather than
 a universal efficiency claim.
 
+## LLM foundation core
+
+The core route is the only default starting path. It has five units:
+
+1. explain what an LLM is and is not;
+2. write a small request with goal, context, limits, and output shape;
+3. identify omission, invention, forced ambiguity, and overconfidence;
+4. check and minimally repair an answer while stating one limit; and
+5. repeat the method on an unseen task without a complete prompt template.
+
+Each unit must leave a learner-authored artifact. A copied prompt, a polished
+model answer, or a green structural check is not proof of learning. See the
+[core course contract](docs/product/core-course-contract.md),
+[scope freeze](docs/governance/core-release-scope.md), and
+[core content inventory](docs/governance/core-content-inventory.yaml) for the
+current boundary. The route is `candidate`; learner completion, transfer, and
+long-term retention are `not_run`.
+
 ## Start here — read it like a book
 
-This is a textbook, not a menu. Start at the beginning and read in order.
+The full repository is a textbook and reference library, not a required menu.
+Start with the five-unit core. Do not enter Codex, Skills, or professional
+tracks until the core route says to continue.
 
 **Step 0.** [Chapter 0 — What Is a Large Language Model](book/guides/llm-fundamentals-EN.md):
 20 minutes on what an LLM is, its capabilities, and its honest limits.

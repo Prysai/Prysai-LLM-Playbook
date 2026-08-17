@@ -10,8 +10,8 @@ License: curriculum text and teaching assets are CC BY 4.0; scripts and
 tooling are Apache-2.0, unless a file states otherwise. See [`LICENSE`](LICENSE),
 [`LICENSE-CODE`](LICENSE-CODE), and the [licensing boundary](docs/sources/licensing.md).
 
-> Learn a transferable method for reliable work with language models, then
-> practise it most deeply in Codex, the project's flagship track.
+> First understand what an LLM can and cannot support. Then practise one small
+> result, check it, and only afterwards choose a Codex or other platform track.
 
 ## A quick welcome
 
@@ -31,9 +31,9 @@ catalogue before beginning.
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md)
 <!-- language-switcher:end -->
 
-**New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) for one clear first task. This repository remains the auditable source.
+**New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) for the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. This repository remains the auditable source.
 
-[Start with Chapter 0](book/guides/llm-fundamentals-EN.md) · [Continue to Chapter 1](book/chapters/01-gpt-and-codex-EN.md) · [Then Chapter 2](book/chapters/02-first-safe-task-EN.md) · [Prepare a safe offline fixture](book/routes/first-safe-change-EN.md)
+[Start the LLM foundation core](#llm-foundation-core) · [Try the no-setup practice](#optional-15-minute-warm-up-no-git-required) · [Continue to the optional Codex track](#the-recommended-first-codex-path)
 
 The Spanish, work-update, and research cards are **optional application practice** after the textbook path; they are not the first lesson.
 
@@ -68,26 +68,19 @@ exposes the same `available / 40` course-unit count in its language selector.
 
 ## The short version
 
-This repository is a book-shaped learning and practice system with two clear
-layers: a stable collaboration core that transfers across language-model
-tools, and a Codex flagship track for the deepest current practice with files,
-tools, Skills, Agents, verification, and team adoption. It is designed for
-people who need useful results under real constraints: incomplete
-requirements, unfamiliar repositories, changing products, limited
-permissions, deadlines, and outputs that can look finished before they are
-actually checked.
+This repository is a book-shaped learning and practice system with one default
+layer and several later layers. The default is a small LLM foundation core for
+people who need to understand context, request shape, failure, checking, and
+limits before they touch tools. The Codex flagship track and the later Skills,
+Agents, professional, and team material remain available for readers who have
+completed that foundation.
 
-**Current guided scope:** the transferable core, the Codex Practice Track as
-flagship, and a growing set of evidence-gated platform adapters for ChatGPT,
-Claude / Claude Code, Gemini, DeepSeek, and Grok. The
-[Choose your LLM platform route](book/routes/platform-adapter-guide-EN.md)
-gives every platform a safe first task and a visible difference list; the
-[French practice loop](book/french-practice-loop-EN.md) and the
-[Beginner Practice Pack](book/communication-clinic-EN.md) give beginners
-copy-ready prompts that work in any text LLM. The repository still does not
-claim that every platform behaves the same or that non-Codex platform tracks
-are complete: product-specific commands, authority, persistence, and failure
-modes belong in evidence-gated adapters with first-party sources.
+**Current guided scope:** the LLM foundation core. The Codex Practice Track,
+platform adapters, application cards, and professional material are optional
+follow-on layers. The repository still does not claim that every platform
+behaves the same or that any prompt guarantees an outcome: product-specific
+commands, authority, persistence, and failure modes belong in evidence-gated
+adapters with first-party sources.
 
 [Open the universal-core route](book/routes/universal-core-foundations-EN.md)
 to study four extracted units, then use its fictional four-seam fixture to
@@ -105,10 +98,29 @@ This is an independent curriculum and practical playbook. It is not OpenAI's
 official documentation, an official Codex product page, or a catalogue of
 copied prompts and Skills.
 
+## LLM foundation core
+
+The core route is the only default starting path. It has five units:
+
+1. explain what an LLM is and is not;
+2. write a small request with goal, context, limits, and output shape;
+3. identify omission, invention, forced ambiguity, and overconfidence;
+4. check and minimally repair an answer while stating one limit; and
+5. repeat the method on an unseen task without a complete prompt template.
+
+Each unit must leave a learner-authored artifact. A copied prompt, a polished
+model answer, or a green structural check is not proof of learning. See the
+[core course contract](docs/product/core-course-contract.md),
+[scope freeze](docs/governance/core-release-scope.md), and
+[core content inventory](docs/governance/core-content-inventory.yaml) for the
+current boundary. The route is `candidate`; learner completion, transfer, and
+long-term retention are `not_run`.
+
 ## The textbook path — read it in order
 
-This project is a book. Start at the beginning; do not choose among the
-catalogue on your first visit.
+This project is also a book, but the complete catalogue is not the beginner
+path. Start with the five-unit core; choose Codex and other tracks only after
+the core route says to continue.
 
 **Step 0 — what an LLM actually is.** Read
 [Chapter 0 — What Is a Large Language Model](book/guides/llm-fundamentals-EN.md):

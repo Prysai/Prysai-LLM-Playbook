@@ -1,6 +1,6 @@
 {
   "schema_version": "1",
-  "last_reviewed": "2026-08-12",
+  "last_reviewed": "2026-08-17",
   "description": "The canonical directory map for reader-facing material, practice, research, governance, assets, tooling, and release work.",
   "excluded_workdirs": [".git", ".work", ".codex-temp", "tmp", "_site", "output", ".pytest_cache", "node_modules"],
   "top_level": [
@@ -101,6 +101,7 @@
     {"path": "book/labs", "role": "Low-risk experiments with observable output, failure variants, and transfer tasks.", "entry": "book/labs/README-EN.md"},
     {"path": "docs/adr", "role": "Architecture decisions and their trade-offs.", "entry": "docs/adr/README.md"},
     {"path": "docs/governance", "role": "Machine-readable contracts for order, status, locale, updates, and ownership.", "entry": "docs/governance/README.md"},
+    {"path": "docs/product", "role": "Human-readable product and curriculum contracts that define the default learning promise.", "entry": "docs/product/README.md"},
     {"path": "docs/quality", "role": "Acceptance standards and review records.", "entry": "docs/quality/README.md"},
     {"path": "docs/research", "role": "Official fact records, structure studies, and dated field-problem reports.", "entry": "docs/research/README.md"},
     {"path": "docs/sources", "role": "External-source, archive, asset, license, and attribution boundaries.", "entry": "docs/sources/README.md"},
