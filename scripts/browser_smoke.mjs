@@ -1062,6 +1062,49 @@ try {
       assert.equal(await localePage.locator('.reader-error').count(), 1, `untranslated core route did not fail closed: ${sourceName}/${locale}`);
     }));
   }
+
+  // The receipt is an opt-in, local-only self-report. It must survive a
+  // refresh without turning into a completion claim, and saving it must not
+  // create a network request containing the user's notes.
+  const coreReceiptPage = await context.newPage();
+  const receiptNetworkDuringSave = [];
+  let recordingReceiptNetwork = false;
+  coreReceiptPage.on('request', (request) => {
+    if (recordingReceiptNetwork) receiptNetworkDuringSave.push({ url: request.url(), postData: request.postData() || '' });
+  });
+  await coreReceiptPage.goto(`${origin}/site/reader.html?path=book%2Froutes%2Fllm-foundation-core-v1-EN.md&lang=en`, { waitUntil: 'networkidle' });
+  const coreReceiptCard = coreReceiptPage.locator('[data-reader-core-card]');
+  await coreReceiptCard.waitFor({ state: 'visible' });
+  assert.match(await coreReceiptPage.locator('[data-reader-core-current-title]').innerText(), /start with one safe attempt/i, 'core receipt panel does not identify the current unit');
+  await coreReceiptPage.evaluate(() => localStorage.removeItem('prysai-llm-foundation-core-receipt-v1'));
+  await coreReceiptPage.reload({ waitUntil: 'networkidle' });
+  await coreReceiptCard.waitFor({ state: 'visible' });
+  await coreReceiptPage.locator('[data-reader-core-attempted]').check();
+  await coreReceiptPage.locator('[data-reader-core-artifact]').fill('A short non-sensitive task note');
+  await coreReceiptPage.locator('[data-reader-core-limit]').fill('No source check yet');
+  recordingReceiptNetwork = true;
+  await coreReceiptPage.getByRole('button', { name: /save local receipt/i }).click();
+  await coreReceiptPage.waitForTimeout(100);
+  recordingReceiptNetwork = false;
+  assert.equal(receiptNetworkDuringSave.length, 0, 'saving a local receipt created a network request');
+  assert.match(await coreReceiptPage.locator('[data-reader-core-status]').innerText(), /not a completion claim/i, 'save feedback omits the non-completion boundary');
+  const savedCoreState = await coreReceiptPage.evaluate(() => JSON.parse(localStorage.getItem('prysai-llm-foundation-core-receipt-v1')));
+  assert.equal(savedCoreState.version, 1, 'local receipt has no schema version');
+  assert.equal(savedCoreState.units['core-first-success'].attempted, true, 'local receipt did not save the opt-in attempt');
+  await coreReceiptPage.getByRole('button', { name: /copy receipt/i }).click();
+  const copiedReceipt = await coreReceiptPage.evaluate(() => navigator.clipboard.readText());
+  assert.match(copiedReceipt, /candidate \/ not_run/, 'copied receipt does not expose candidate / not_run status');
+  assert.match(copiedReceipt, /No source check yet/, 'copied receipt omits the declared limit');
+  await coreReceiptPage.reload({ waitUntil: 'networkidle' });
+  await coreReceiptCard.waitFor({ state: 'visible' });
+  assert.equal(await coreReceiptPage.locator('[data-reader-core-attempted]').isChecked(), true, 'local receipt did not restore after refresh');
+  assert.match(await coreReceiptPage.locator('[data-reader-core-progress]').innerText(), /1 of 5 units/i, 'core progress does not reflect the saved attempt');
+  await coreReceiptPage.getByRole('button', { name: /clear local receipt/i }).click();
+  assert.equal(await coreReceiptPage.evaluate(() => localStorage.getItem('prysai-llm-foundation-core-receipt-v1')), null, 'clear did not remove the local receipt');
+  assert.equal(await coreReceiptPage.locator('[data-reader-core-attempted]').isChecked(), false, 'clear did not reset the current unit form');
+  await coreReceiptPage.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&lang=en`, { waitUntil: 'networkidle' });
+  assert.equal(await coreReceiptPage.locator('[data-reader-core-card]').isHidden(), true, 'core receipt panel leaked onto a non-core Reader route');
+  await coreReceiptPage.close();
   await coreRoutePage.close();
   await Promise.all(unavailableCoreLocalePages.map(({ page: localePage }) => localePage.close()));
 
