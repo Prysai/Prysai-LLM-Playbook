@@ -36,6 +36,38 @@ Aufgabenvertrag → Zustand lesen → Modellvorschlag → Host-Freigabe
 
 Zwischen „Ich aktualisiere die Datei und teste“ und „fertig“ müssen Freigabe, Befehl, Endstatus, Diff und Testumfang liegen. Fehlen sie, lautet die Klassifikation `unverified`. Notiere zuerst den nicht gestützten Übergang, statt vage von Halluzination zu sprechen.
 
+## Architektur-Muster, die sich übertragen lassen
+
+Die geprüfte [Studie zu `claude-code-from-source`](../../docs/research/claude-code-from-source-repository-audit-2026-08-16.md)
+ist nur Referenzmaterial und keine offizielle Implementierungsquelle. Für eine
+plattformübergreifende Lehre bleiben daraus diese neu formulierten
+Designfragen:
+
+- **Jeden Tool-Aufruf als Vertrag beschreiben:** Eingabeschema, Ziel und
+  Umfang, Nebenwirkungsart, benötigte Autorität, Fehler, Ausgabe und
+  Abnahmeevidenz vor dem Start nennen.
+- **Nach Abhängigkeit ordnen:** Unabhängige, schreibgeschützte Beobachtungen
+  können manchmal parallel laufen; Writes, Read-after-write und gemeinsam
+  genutzter Zustand bleiben geordnet, bis Konflikte geprüft sind.
+- **Delegation begrenzen:** Ein Sub-Agent erhält Ziel, Kontext, Tools,
+  Berechtigungen, Budget, Stoppregel und Übergabeformat. Der Parent prüft
+  Ergebnis und Belege weiter.
+- **Memory prüfbar halten:** Gespeicherte Fakten brauchen Quelle, Zeitpunkt,
+  Verantwortliche, Frische- und Konfliktregel. Kontext steuert Vorschläge,
+  erzwingt aber keine Berechtigung.
+- **Fähigkeit und Kontrolle trennen:** Skills und Adapter liefern Methoden;
+  Policies, Hooks, Sandboxes und Freigaben begrenzen ihre Ausführung.
+- **Leistung an einer Aufgabe messen:** Startup, Latenz, Kontextgröße, Kosten,
+  Korrektheit sowie Fehler und Retries auf einem festen Fixture getrennt
+  berichten; fremde Prozent- oder Tokenwerte nicht als Versprechen übernehmen.
+
+Bei Claude Code, Gemini CLI, Codex oder einem anderen Host müssen Oberfläche,
+Version, Betriebssystem und Modus genannt, eine First-Party-Quelle verlinkt
+und ein lokaler Lauf aufgezeichnet werden. Frage vor einer folgenreichen
+Aktion: **Welcher Vertrag gilt, wer darf freigeben, was kann sich ändern,
+welche Beobachtung kommt zurück, welcher Check beendet die Schleife und welche
+Grenze bleibt unbekannt?**
+
 ## Zustand aufschreiben
 
 Ein kurzer Checkpoint macht eine Unterbrechung wiederaufnehmbar:
