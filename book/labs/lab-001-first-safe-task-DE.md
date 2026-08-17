@@ -6,9 +6,10 @@ title: "Eine begrenzte README-Änderung durchführen und zeigen, was passiert is
 level: L1
 domain: general
 goal: "Prüfen vor dem Editieren, minimale Berechtigung, Diff-Review, gezielte Verifikation und ehrliche Wiederherstellung üben"
-setup: "Ein wegwerfbares oder nicht-produktives Git-Projekt mit README und einer echten Quelle für lokale Startbefehle; keine Geheimnisse, Kundendaten, Produktionsdateien oder externen Schreibvorgänge"
-task: "Codex zuerst prüfen und planen lassen, nach Bestätigung nur README.md ändern und den tatsächlichen Diff sowie die gezielte Prüfung festhalten"
+setup: "Teil A benötigt eine beliebige LLM-Oberfläche und fiktive oder nicht sensible Notizen. Teil B benötigt ein wegwerfbares oder nicht-produktives Git-Projekt mit README und einer echten Quelle für lokale Startbefehle; keine Geheimnisse, Kundendaten, Produktionsdateien oder externen Schreibvorgänge"
+task: "Einen Vergleich mit fester Eingabe ohne externe Aktionen durchführen; nur wenn ein sicheres Projekt vorhanden ist, Codex zuerst prüfen und planen lassen, nach Bestätigung nur README.md ändern und den tatsächlichen Diff sowie die gezielte Prüfung festhalten"
 evidence:
+  - "Zwei gespeicherte Antworten aus derselben festen Eingabe: eine vage und eine strukturierte Anfrage, ergänzt um die Prüfung von Faktenabdeckung, gewünschtem Format, Überarbeitungsrunden und Unbekanntem"
   - "Eine Aufgabenkarte mit Ziel, Eingaben, erlaubten und verbotenen Aktionen, Abnahme, Stoppbedingung und Übergabeformat"
   - "Ausgangszustand, Plan, tatsächlicher Diff und die Quelle des Prüfkommandos"
   - "Ein Laufprotokoll, das ausgeführte und nicht ausgeführte Aktionen, Prüfergebnis, Unbekanntes und nächsten Check trennt"
