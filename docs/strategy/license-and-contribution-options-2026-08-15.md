@@ -4,12 +4,13 @@
 **Decision owner:** Prysai Lab
 **Scope:** the repository's project-owned material only
 
-## Problem
+## Problem (historical context)
 
-The current repository-wide default is CC BY-NC 4.0. It protects against
-commercial reuse, but creates friction for enterprise learning, commercial
-training, redistributors, and contributors who expect standard open-source
-reuse of scripts and test infrastructure. It also treats curriculum text and
+Before this decision, the repository treated its project-owned material as a
+single CC BY-NC 4.0 surface. That boundary protected against commercial reuse,
+but created friction for enterprise learning, commercial training,
+redistributors, and contributors who expected standard open-source reuse of
+scripts and test infrastructure. It also treated curriculum text and
 software-like artifacts as one licensing surface.
 
 This proposal does **not** relicense third-party material or grant rights in
@@ -27,37 +28,42 @@ retroactively to project-owned material.
 | Split, attribution-first (recommended) | CC BY 4.0 | Apache-2.0 | Lets teams reuse and translate the curriculum with attribution while giving code contributors a standard patent-aware software license. |
 | Split, reciprocity-first | CC BY-SA 4.0 | Apache-2.0 | Allows commercial reuse but asks adapted curriculum copies to retain the same sharing terms. |
 
-The Prysai name, logos, and marks should remain excluded from every option.
-Skills need an explicit owner decision: retain them as curriculum under the
-chosen content license, or classify them as reusable operational artifacts
-under Apache-2.0. Do not leave that boundary implicit.
+The Prysai name, logos, and marks remain excluded from every option. The
+adopted decision classifies project-authored Skill instructions as curriculum
+under CC BY 4.0; they are not separately licensed executable libraries.
 
-## Recommended adoption sequence
+## Adoption record and remaining work
 
-1. Choose one option in writing and create an accepted ADR; do not treat this
-   proposal as permission to change the license.
-2. Inventory project-owned versus third-party or contributor-owned paths.
-3. Add `LICENSE-CONTENT`, `LICENSE-CODE`, and explicit directory notices;
-   retain third-party notices separately.
-4. Ask existing external contributors for the necessary relicense permission;
-   do not assume a new license applies retroactively to their work.
-5. Update `LICENSE`, `CONTRIBUTING.md`, `docs/sources/licensing.md`, the asset
-   register, PR template, release review, and public description together.
-6. Turn on the host-side protection configuration only when the organization
-   plan actually supports enforcement, then verify its live state separately.
+The project owner adopted the attribution-first split on 2026-08-16: project-
+owned curriculum, diagrams, screenshots, Skill instructions, and other teaching
+assets use CC BY 4.0; project-owned scripts, static-site code, evaluation
+tooling, and build generators use Apache-2.0. The binding boundary is recorded
+in [`docs/sources/licensing.md`](../sources/licensing.md), `LICENSE`, and
+`LICENSE-CODE`.
 
-## Contribution ownership until a decision is adopted
+Remaining release work is operational rather than a pending license choice:
 
-Until the owner adopts a new policy, every contributor must have the right to
-submit the work under the current repository default. The fast test-material
-route requires a commit sign-off and an explicit PR declaration of authorship,
-source boundary, and license acceptance. Those declarations support review;
-they are not an automatically enforced CLA, a transfer of trademark rights, or
-a substitute for legal review.
+1. Keep third-party and contributor-owned material under its own recorded
+   terms; do not infer a relicense from the repository default.
+2. Preserve source, attribution, and adaptation records in the asset register.
+3. Add or retain file-level notices whenever a path cannot be classified by
+   the default boundary.
+4. Recheck the boundary when a new external Skill, asset, or contributor is
+   admitted.
+
+## Contribution ownership under the adopted boundary
+
+Contributors must submit work they own or are authorized to adapt, disclose
+material third-party restrictions, and state whether the contribution is
+content (CC BY 4.0) or code/tooling (Apache-2.0). The fast test-material route
+requires a commit sign-off and an explicit PR declaration of authorship, source
+boundary, and license acceptance. Those declarations support review; they are
+not an automatically enforced CLA, a transfer of trademark rights, or a
+substitute for legal review.
 
 ## References
 
-- Current project license: [CC BY-NC 4.0 legal code](https://creativecommons.org/licenses/by-nc/4.0/legalcode)
+- Historical repository option: [CC BY-NC 4.0 legal code](https://creativecommons.org/licenses/by-nc/4.0/legalcode)
 - Attribution-first option: [CC BY 4.0 legal code](https://creativecommons.org/licenses/by/4.0/legalcode)
 - Reciprocity-first option: [CC BY-SA 4.0 legal code](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 - Code option: [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)

@@ -60,7 +60,7 @@ before relying on a result.
 
 ## Provenance in plain sight
 
-All 23 current entries are original Prysai Lab methods; none is copied or
+All 25 current entries are original Prysai Lab methods; none is copied or
 installed from another project. The generated registry lists original methods
 first. If a future entry is adapted or vendored, its **Origin** cell must link
 to the canonical upstream project, and its source record and license boundary

@@ -25,7 +25,7 @@ def valid_receipt() -> dict[str, object]:
         "base_commit": "a" * 40,
         "scope": "fictional_text_only",
         "authorship": "original",
-        "license_boundary": "CC-BY-NC-4.0-current-repository-default",
+        "license_boundary": "CC-BY-4.0-project-owned-fictional-content",
         "review_route": "fast_material_review",
         "test_material_paths": ["evals/contributions/CE-20260815-safe-fixture/fixture.json"],
         "validation_commands": ["python scripts/validate_contributed_test_material.py"],

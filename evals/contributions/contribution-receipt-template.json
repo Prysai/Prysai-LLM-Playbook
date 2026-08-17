@@ -7,7 +7,7 @@
   "base_commit": "0000000000000000000000000000000000000000",
   "scope": "fictional_text_only",
   "authorship": "original",
-  "license_boundary": "CC-BY-NC-4.0-current-repository-default",
+  "license_boundary": "CC-BY-4.0-project-owned-fictional-content",
   "review_route": "fast_material_review",
   "test_material_paths": [
     "evals/contributions/CE-YYYYMMDD-short-topic/fixture.json"

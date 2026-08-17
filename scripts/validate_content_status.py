@@ -20,7 +20,6 @@ BROWSER_REVIEW_STATUSES = {"pending", "completed"}
 REPOSITORY_LOCALES = ["en", "zh", "es", "ja", "ko", "de"]
 LOCALE_MIGRATION_STATUSES = {"migration", "release"}
 LICENSE_REVIEW_STATUSES = {
-    "cc_by_nc_4_0_mixed_content_candidate_code_split_unresolved",
     "file_level_release_boundaries_reviewed",
 }
 FORBIDDEN_LEGACY_LICENSE_REVIEW = "repository_mit_third_party_scope_recorded"
@@ -350,7 +349,7 @@ def validate_document(document: dict[str, Any]) -> list[str]:
         require_status(sources, "status", "sources_and_licenses", errors)
         license_review = require_text(sources, "license_review", "sources_and_licenses", errors)
         if license_review == FORBIDDEN_LEGACY_LICENSE_REVIEW:
-            errors.append("sources_and_licenses: legacy MIT review value is forbidden because the repository default is CC BY-NC 4.0")
+            errors.append("sources_and_licenses: legacy MIT review value is forbidden because the repository uses an explicit content/code license split")
         elif license_review is not None and license_review not in LICENSE_REVIEW_STATUSES:
             errors.append(
                 "sources_and_licenses: license_review must be one of "

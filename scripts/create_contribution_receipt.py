@@ -87,7 +87,7 @@ def create_scaffold(root: Path, contribution_id: str, kind: str, fixture_id: str
         "base_commit": base_commit,
         "scope": "fictional_text_only",
         "authorship": "original",
-        "license_boundary": "CC-BY-NC-4.0-current-repository-default",
+        "license_boundary": "CC-BY-4.0-project-owned-fictional-content",
         "review_route": "fast_material_review",
         "test_material_paths": material_paths,
         "validation_commands": validation_commands,

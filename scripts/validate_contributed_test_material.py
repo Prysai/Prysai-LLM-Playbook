@@ -122,8 +122,8 @@ def validate_receipt(data: Any, label: str) -> list[str]:
         errors.append(f"{label}.scope must remain fictional_text_only")
     if data.get("authorship") != "original":
         errors.append(f"{label}.authorship must remain original on the fast route")
-    if data.get("license_boundary") != "CC-BY-NC-4.0-current-repository-default":
-        errors.append(f"{label}.license_boundary must name the current repository default")
+    if data.get("license_boundary") != "CC-BY-4.0-project-owned-fictional-content":
+        errors.append(f"{label}.license_boundary must name the current content license boundary")
     if data.get("review_route") != "fast_material_review":
         errors.append(f"{label}.review_route must remain fast_material_review")
     for field in ("test_material_paths", "validation_commands"):

@@ -748,7 +748,7 @@
   "sources_and_licenses": {
     "status": "candidate",
     "archive_count": 6,
-    "license_review": "cc_by_nc_4_0_mixed_content_candidate_code_split_unresolved",
+    "license_review": "file_level_release_boundaries_reviewed",
     "owner": "source-maintainer",
     "last_reviewed": "2026-08-13",
     "next_review": "2026-11-09",
