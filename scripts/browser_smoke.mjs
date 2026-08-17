@@ -1038,7 +1038,15 @@ try {
     ['llm-core-check-repair-EN.md', /Check, repair, and state limits/i],
     ['llm-core-unseen-transfer-EN.md', /Repeat the method on an unseen task/i],
   ];
+  const unavailableCoreLocales = { zh: 'zh-CN', es: 'es', ja: 'ja', ko: 'ko', de: 'de' };
   const coreRoutePage = await context.newPage();
+  const unavailableCoreLocalePages = await Promise.all(
+    Object.entries(unavailableCoreLocales).map(async ([locale, htmlLang]) => ({
+      locale,
+      htmlLang,
+      page: await context.newPage(),
+    })),
+  );
   for (const [sourceName, titlePattern] of coreRouteChecks) {
     const sourcePath = `book%2Froutes%2F${sourceName}`;
     await coreRoutePage.goto(`${origin}/site/reader.html?path=${sourcePath}&lang=en`, { waitUntil: 'networkidle' });
@@ -1046,12 +1054,16 @@ try {
     assert.match(await coreRoutePage.locator('[data-reader-article] h1').innerText(), titlePattern, `English core route did not render: ${sourceName}`);
     assert.equal(await coreRoutePage.locator('[data-reader-article]').getAttribute('data-reader-translation-status'), 'source', `English core route is not marked as source: ${sourceName}`);
 
-    await coreRoutePage.goto(`${origin}/site/reader.html?path=${sourcePath}&lang=zh`, { waitUntil: 'networkidle' });
-    await coreRoutePage.locator('[data-reader-article][aria-busy="false"]').waitFor();
-    assert.equal(await coreRoutePage.locator('[data-reader-article] h1').count(), 0, `untranslated core route rendered English under zh: ${sourceName}`);
-    assert.match(await coreRoutePage.locator('.reader-error').innerText(), /此页面暂时没有简体中文版本.*不会自动切换到其他语言/s, `untranslated core route did not fail closed: ${sourceName}`);
+    await Promise.all(unavailableCoreLocalePages.map(async ({ locale, htmlLang, page: localePage }) => {
+      await localePage.goto(`${origin}/site/reader.html?path=${sourcePath}&lang=${locale}`, { waitUntil: 'domcontentloaded' });
+      await localePage.locator('[data-reader-article][aria-busy="false"]').waitFor();
+      assert.equal(await localePage.locator('html').getAttribute('lang'), htmlLang, `untranslated core route changed the document language: ${sourceName}/${locale}`);
+      assert.equal(await localePage.locator('[data-reader-article] h1').count(), 0, `untranslated core route rendered English under ${locale}: ${sourceName}`);
+      assert.equal(await localePage.locator('.reader-error').count(), 1, `untranslated core route did not fail closed: ${sourceName}/${locale}`);
+    }));
   }
   await coreRoutePage.close();
+  await Promise.all(unavailableCoreLocalePages.map(({ page: localePage }) => localePage.close()));
 
   // This board is linked from both English and Chinese Chapter 9. Keep its
   // standalone reading route phone-fitted instead of silently restoring a
