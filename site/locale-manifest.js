@@ -4383,6 +4383,266 @@ window.CODEX_LOCALE_MANIFEST = {
         }
       }
     },
+    "llm-foundation-core-v1": {
+      "kind": "learning-route",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
+      "stem": "book/routes/llm-foundation-core-v1",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "book/routes/llm-foundation-core-v1-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "book/routes/llm-foundation-core-v1-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "book/routes/llm-foundation-core-v1-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "book/routes/llm-foundation-core-v1-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "book/routes/llm-foundation-core-v1-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "book/routes/llm-foundation-core-v1-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
+    "llm-core-first-generation": {
+      "kind": "learning-route",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
+      "stem": "book/routes/llm-core-first-generation",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "book/routes/llm-core-first-generation-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "book/routes/llm-core-first-generation-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "book/routes/llm-core-first-generation-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "book/routes/llm-core-first-generation-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "book/routes/llm-core-first-generation-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "book/routes/llm-core-first-generation-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
+    "llm-core-visible-failures": {
+      "kind": "learning-route",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
+      "stem": "book/routes/llm-core-visible-failures",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "book/routes/llm-core-visible-failures-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "book/routes/llm-core-visible-failures-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "book/routes/llm-core-visible-failures-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "book/routes/llm-core-visible-failures-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "book/routes/llm-core-visible-failures-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "book/routes/llm-core-visible-failures-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
+    "llm-core-check-repair": {
+      "kind": "learning-route",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
+      "stem": "book/routes/llm-core-check-repair",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "book/routes/llm-core-check-repair-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "book/routes/llm-core-check-repair-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "book/routes/llm-core-check-repair-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "book/routes/llm-core-check-repair-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "book/routes/llm-core-check-repair-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "book/routes/llm-core-check-repair-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
+    "llm-core-unseen-transfer": {
+      "kind": "learning-route",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
+      "stem": "book/routes/llm-core-unseen-transfer",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "book/routes/llm-core-unseen-transfer-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "book/routes/llm-core-unseen-transfer-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "book/routes/llm-core-unseen-transfer-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "book/routes/llm-core-unseen-transfer-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "book/routes/llm-core-unseen-transfer-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "book/routes/llm-core-unseen-transfer-EN.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
     "prysai-dialogue-brief": {
       "kind": "skill",
       "reader_type": "skill",
@@ -6112,6 +6372,11 @@ window.CODEX_LOCALE_MANIFEST = {
     "docs/research/field-case-agent-handoff-receipt-2026-08-14.md": "field-case-agent-handoff-receipt-2026-08-14",
     "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md": "field-case-capacity-interruption-checkpoint-2026-08-14",
     "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md": "community-tutorial-intake-and-foundations-2026-08-14",
+    "book/routes/llm-foundation-core-v1-EN.md": "llm-foundation-core-v1",
+    "book/routes/llm-core-first-generation-EN.md": "llm-core-first-generation",
+    "book/routes/llm-core-visible-failures-EN.md": "llm-core-visible-failures",
+    "book/routes/llm-core-check-repair-EN.md": "llm-core-check-repair",
+    "book/routes/llm-core-unseen-transfer-EN.md": "llm-core-unseen-transfer",
     "skills/prysai-dialogue-brief/SKILL.md": "prysai-dialogue-brief",
     "skills/prysai-first-turn-check/SKILL.md": "prysai-first-turn-check",
     "skills/prysai-field-signal-curator/SKILL.md": "prysai-field-signal-curator",
