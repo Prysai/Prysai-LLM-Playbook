@@ -21,9 +21,12 @@ or channel where declining could carry a penalty. Do not enroll minors or
 collect health, financial, identity, account, employer, repository, or other
 sensitive information.
 
-The repository is currently private and has no public Pages deployment. A
-private issue form and this protocol are preparation for feedback, not evidence
-of a public program or an invitation that anyone can currently use.
+The repository is public and the candidate site is available at
+<https://docs.prysai.com/llm-playbook/>. Public availability is not evidence of
+a public pilot, learner outcome, or support service. This protocol remains
+preparation for feedback: do not recruit or collect observations until an
+authorizer records the cohort, channel, privacy owner, retention end, and
+independent reviewer.
 
 ## Participants and sampling boundary
 
