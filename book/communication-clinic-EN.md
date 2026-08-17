@@ -1384,7 +1384,7 @@ For the source rationale and non-claims, read the
 **Learning objective:** diagnose an observable mismatch without guessing at
 hidden reasoning, make the smallest request repair, and run a one-variable
 comparison. This route starts only after a real reply or artifact exists. For
-an untried vague request, return to [Route B](#route-b--one-observable-non-language-skill)
+an untried vague request, return to [Route B](#general-skill-practice-route)
 or the [task protocol](chapters/03-task-protocol-EN.md).
 
 ![Preserve the failed interaction, change one line, and rerun one variable](../assets/teaching/failed-interaction-recovery-red-black.svg)
