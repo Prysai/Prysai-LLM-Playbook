@@ -25,13 +25,16 @@ or independent language review.
 
 - All six routes contain **40 / 40** locally addressable chapter-and-Lab
   files, and same-locale path checks pass.
-- The depth audit examined 200 non-English chapter/Lab pairs and flagged
-  **51** attention items using its declared short-text or missing-heading
+- The depth audit examined 200 non-English chapter/Lab pairs and currently
+  flags **26** attention items using its declared short-text or missing-heading
   thresholds.
-- The most severe character-ratio signals include Chapter 15 in Simplified
-  Chinese (0.13), Chapter 13 in Simplified Chinese (0.18), and Chapter 11 in
-  Korean (0.19). These are triage signals, not verdicts on individual
-  translators or languages.
+- The current signals include Chapter 15 in Simplified Chinese (0.19), Chapter
+  11 in Simplified Chinese (0.22), and Chapter 15 in Japanese (0.22). These
+  are triage signals, not verdicts on individual translators or languages.
+
+The count is deliberately recorded as a dated observation, not a release
+metric: it can change when the audit thresholds, source text, or localized
+files change. Re-run the command above before quoting it in a release decision.
 
 ## Decision
 
