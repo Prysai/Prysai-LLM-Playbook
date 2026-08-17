@@ -7380,7 +7380,9 @@ window.CODEX_SEARCH_INDEX = {
       "search": {
         "en": "six short spanish practice messages candidate text-only practice sequence; no learner or cross-model run is recorded. spanish practice spanish prompts spanish messages"
       },
-      "search_aliases": {}
+      "search_aliases": {
+        "en": "spanish practice spanish prompts spanish messages"
+      }
     }
   ]
 };

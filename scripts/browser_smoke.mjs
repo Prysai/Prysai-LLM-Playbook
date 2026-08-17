@@ -737,6 +737,20 @@ try {
   await page.locator('[data-search-results] .search-result').first().waitFor();
   const safeTaskResults = await page.locator('[data-search-results] .search-result strong').allTextContents();
   assert.match(safeTaskResults[0], /safe.*task/i, 'search did not put a safe-task learning page first');
+  await searchInput.fill('spanish practice');
+  await page.getByRole('button', { name: 'Search', exact: true }).click();
+  const spanishPracticeResult = page.locator('[data-search-results] .search-result').first();
+  await spanishPracticeResult.waitFor();
+  assert.match(
+    await spanishPracticeResult.locator('strong').innerText(),
+    /six short spanish practice messages/i,
+    'Spanish practice search did not put the declared copy-ready card first',
+  );
+  assert.match(
+    await spanishPracticeResult.locator('a').getAttribute('href'),
+    /reader\.html\?path=book%2Fcommunication-clinic-EN\.md&lang=en#six-short-spanish-messages$/,
+    'Spanish practice search did not open the exact learner-facing card anchor',
+  );
   const labIndexPage = await context.newPage();
   await labIndexPage.goto(`${origin}/site/reader.html?path=book%2Flabs%2FREADME-EN.md&lang=en`, { waitUntil: 'networkidle' });
   await labIndexPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();

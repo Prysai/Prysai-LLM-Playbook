@@ -168,7 +168,12 @@ def add_catalog_search_targets(manifest: dict[str, Any], documents: list[dict[st
                     "available_locales": [locale],
                     "locales": localized,
                     "search": {locale: normalize_text(" ".join([title, snippet, *aliases]))},
-                    "search_aliases": {},
+                    # Keep the catalog's short learner-facing labels separate
+                    # from the body search text.  The UI gives an exact or
+                    # partial alias match a deliberate ranking boost, so a
+                    # query such as "Spanish practice" reaches the declared
+                    # card anchor before the broader source document.
+                    "search_aliases": {locale: normalize_text(" ".join(aliases))},
                 }
             )
 
