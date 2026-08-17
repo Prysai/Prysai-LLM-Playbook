@@ -1008,7 +1008,14 @@ const initializeSearch = () => {
     renderSearch('');
     searchNodes.input.focus();
   });
-  if (initialQuery) void runSearch(initialQuery);
+  // A bookmarked/search-engine URL can start with ?q= before the lazy index
+  // is loaded. Seed the visible input first; runSearch uses it to discard
+  // stale asynchronous results, and an empty input would otherwise make the
+  // initial query look stale and leave the panel stuck on Loading.
+  if (initialQuery) {
+    searchNodes.input.value = initialQuery;
+    void runSearch(initialQuery);
+  }
 };
 
 const evaluationTypeLabels = (types) => types.map((type) => currentCopy()[type] || type).join(' · ');

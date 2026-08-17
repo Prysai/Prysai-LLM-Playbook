@@ -751,6 +751,17 @@ try {
     /reader\.html\?path=book%2Fcommunication-clinic-EN\.md&lang=en#six-short-spanish-messages$/,
     'Spanish practice search did not open the exact learner-facing card anchor',
   );
+  const directSearchPage = await context.newPage();
+  await directSearchPage.goto(`${origin}/site/index.html?q=spanish+practice&lang=en`, { waitUntil: 'networkidle' });
+  const directSearchResult = directSearchPage.locator('[data-search-results] .search-result').first();
+  await directSearchResult.waitFor();
+  assert.match(
+    await directSearchResult.locator('strong').innerText(),
+    /six short spanish practice messages/i,
+    'direct search URL left the lazy search panel loading instead of rendering results',
+  );
+  assert.equal(await directSearchPage.locator('[data-site-search-input]').inputValue(), 'spanish practice', 'direct search URL did not seed the visible query');
+  await directSearchPage.close();
   const labIndexPage = await context.newPage();
   await labIndexPage.goto(`${origin}/site/reader.html?path=book%2Flabs%2FREADME-EN.md&lang=en`, { waitUntil: 'networkidle' });
   await labIndexPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
