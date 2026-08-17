@@ -9,6 +9,13 @@
   const requestedPath = normalizeRepoPath(params.get('path') || 'book/chapters/01-gpt-and-codex-EN.md');
   let activeLocale = requestedLocale;
   const article = document.querySelector('[data-reader-article]');
+  // Set the document language before the asynchronous source fetch starts.
+  // Otherwise a slow localized Reader briefly exposes the English shell to
+  // assistive technology and to users who can see the loading state.
+  const initialLocale = requestedLocale || manifest.default_locale || 'en';
+  const initialHtmlLanguage = locales[initialLocale]?.html_lang || initialLocale;
+  document.documentElement.lang = initialHtmlLanguage;
+  if (article) article.lang = initialHtmlLanguage;
   const banner = document.querySelector('[data-reader-banner]');
   const readerAside = document.querySelector('.reader-aside');
   const languageSelect = document.querySelector('[data-reader-language]');
