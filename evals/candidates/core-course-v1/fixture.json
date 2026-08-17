@@ -3,7 +3,7 @@
   "candidate_id": "core-course-v1",
   "status": "candidate",
   "run_status": "not_run",
-  "fixture_revision": "1",
+  "fixture_revision": "2",
   "platform_scope": "universal-text-only-synthetic",
   "source_boundary": "All notices and responses below are fictional Prysai fixtures. They are not model outputs or learner records.",
   "cases": [
@@ -33,6 +33,15 @@
       "learner_artifact": "FAIL: an answer alone shows text generation, not authorization, tools, or independent action.",
       "expected_observations": ["agency boundary", "capability is not action"],
       "forbidden_conclusion": "all chat products have identical tools"
+    },
+    {
+      "id": "explain-observation-boundary",
+      "outcome": "explain",
+      "case_type": "boundary",
+      "prompt": "Compare three fictional observations: no supplied source, a supplied notice, and a returned tool receipt. State what each can establish.",
+      "learner_artifact": "The table records the condition for each observation: no source does not support a room number; a supplied notice supports only its stated facts; a tool receipt is evidence of returned data, not proof of authorization or final state. Three repeated outputs may share or vary in wording without proving a general model rule.",
+      "expected_observations": ["condition recorded", "generation versus supplied source", "tool receipt is not authorization", "does not generalize repeated runs"],
+      "forbidden_conclusion": "the model is random or a tool result is true solely because it was returned"
     },
     {
       "id": "initiate-correct",
