@@ -411,6 +411,12 @@ try {
   );
   const skillPracticeCard = everydayPromptDeck.locator('.everyday-prompt-card-skill');
   assert.equal(await skillPracticeCard.count(), 1, 'fictional skill-practice card is missing');
+  const skillPracticeBoundaryLink = skillPracticeCard.getByRole('link', { name: 'Read the skill-practice boundary' });
+  assert.match(
+    await skillPracticeBoundaryLink.getAttribute('href'),
+    /reader\.html\?path=book%2Fcommunication-clinic-EN\.md&lang=en#general-skill-practice-route$/,
+    'skill-practice card does not target its authored Reader fragment',
+  );
   assert.match(
     await skillPracticeCard.locator('[data-everyday-prompt]').textContent(),
     /Do not make the plan first[\s\S]*one consequential omission[\s\S]*change only the visit length/i,
