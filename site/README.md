@@ -96,6 +96,17 @@ for canonical, alternate-language, Open Graph, Twitter, and structured-data
 metadata. If the project moves to a custom domain, change only
 `public_site_url`, then rebuild the artifact.
 
+The generated artifact also exposes `sitemap_index.xml` as a compatibility
+entry point. The canonical project URLs are under the configured public prefix:
+`https://docs.prysai.com/llm-playbook/sitemap.xml` and
+`https://docs.prysai.com/llm-playbook/sitemap_index.xml`. The main sitemap lists
+the six crawlable locale entries plus Reader URLs whose source file exists and
+whose locale status is renderable; missing translations and non-renderable
+records are excluded. The domain-root URL
+`https://docs.prysai.com/sitemap_index.xml` belongs to the host-level site, not
+this repository's `/llm-playbook/` artifact, so changing this project cannot
+create or repair that root-level endpoint.
+
 The same configuration defines the public site name and the discovery alias
 `LLMPlaybook`, emitted as Schema.org `WebSite.name` and `alternateName` on each
 language entry. This helps a crawler associate the spelling with the site; it
