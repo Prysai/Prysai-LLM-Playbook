@@ -51,7 +51,7 @@
       "estimated_minutes": 20,
       "depends_on": ["core-llm-boundaries"],
       "new_concepts": ["goal and context", "constraints", "response shape"],
-      "content_paths": ["book/chapters/02-first-safe-task-EN.md", "book/chapters/03-task-protocol-EN.md"],
+      "content_paths": ["book/routes/llm-core-first-generation-EN.md", "book/chapters/03-task-protocol-EN.md"],
       "route_marker": "unit-2-first-generation",
       "learner_artifact": "a four-field task card, the first input, the preserved first output, and unknowns",
       "operation": "Use a fictional notice to request a two-sentence rewrite with a visible check and stop line; preserve the first response.",

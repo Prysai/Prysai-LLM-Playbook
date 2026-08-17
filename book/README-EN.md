@@ -74,6 +74,8 @@ currently `draft` with `run_status: not_run`.
 ## Where to enter the book
 
 - [Universal LLM first-task route](routes/universal-core-foundations-EN.md) — begin with one fictional, text-only rewrite; then learn four transferable foundations. `candidate / not_run`; it does not establish cross-platform behavior or learner outcomes.
+- [LLM Foundation Core v1](routes/llm-foundation-core-v1-EN.md) — the proposed five-unit route: explain, initiate, identify, repair, then transfer. `candidate / not_run`; it is the default contract under construction.
+- [Core Unit 2: Context, instruction, and a first generation](routes/llm-core-first-generation-EN.md) — a universal text-only task card and first-response receipt; no Codex or tool setup required.
 - [First Safe Change](routes/first-safe-change-EN.md) — optional offline bridge from Chapter 2 to Lab 001; candidate fixture route · learner run `not_run`
 - [Preface: This Is Not a Prompt Catalogue](preface-EN.md)
 - [English book table of contents](table-of-contents-EN.md)

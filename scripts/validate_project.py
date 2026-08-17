@@ -65,6 +65,7 @@ REQUIRED = (
     "docs/governance/core-course.yaml",
     "book/routes/universal-core-foundations-EN.md",
     "book/routes/llm-foundation-core-v1-EN.md",
+    "book/routes/llm-core-first-generation-EN.md",
     "docs/governance/contribution-model.md",
     "docs/quality/skill-quality-standard.md",
     "docs/quality/evaluation-framework.md",

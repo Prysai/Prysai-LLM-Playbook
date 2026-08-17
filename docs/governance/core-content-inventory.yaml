@@ -21,7 +21,7 @@
       "class": "core",
       "title": "Context, instruction, and a first generation",
       "outcome": "initiate",
-      "source_paths": ["book/chapters/02-first-safe-task-EN.md", "book/chapters/03-task-protocol-EN.md", "docs/governance/starter-task-contract.yaml"],
+      "source_paths": ["book/routes/llm-core-first-generation-EN.md", "book/chapters/03-task-protocol-EN.md"],
       "learner_artifact": "four-field task card, first input, and preserved first output",
       "status": "candidate"
     },
