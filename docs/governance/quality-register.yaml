@@ -163,8 +163,8 @@
       "finding": "The current main candidate has a newer commit than the reviewed public v0.1.0-alpha tag, but it still has no accepted release evidence or tested rollback rehearsal.",
       "required_evidence": "A version decision, reviewed immutable tag, release evidence packet, rollback target, and rollback rehearsal or bounded recovery record.",
       "status": "in_progress",
-      "evidence_paths": ["CHANGELOG.md", "docs/release-checklist.md", "docs/governance/release-evidence.yaml", "docs/governance/release-readiness.yaml", "scripts/validate_release_readiness.py", "scripts/test_release_readiness.py", "docs/adr/0021-commit-bound-release-evidence.md", "docs/adr/0026-machine-readable-release-readiness.md"],
-      "resolution_scope": "Candidate version 0.1.0-candidate.1 and CHANGELOG.md give reviewers a declared, non-release baseline. The public v0.1.0-alpha tag is reviewed as an older rollback reference, while the current main candidate has commit-bound workflow evidence that remains candidate_only. Release readiness stays machine-readable not_ready until accepted evidence and a bounded rollback rehearsal exist; Q-011 remains open."
+      "evidence_paths": ["CHANGELOG.md", "docs/release-checklist.md", "docs/governance/release-evidence.yaml", "docs/governance/release-readiness.yaml", "docs/quality/rollback-rehearsal-v0.1.0-alpha-2026-08-17.md", "scripts/validate_release_readiness.py", "scripts/test_release_readiness.py", "docs/adr/0021-commit-bound-release-evidence.md", "docs/adr/0026-machine-readable-release-readiness.md"],
+      "resolution_scope": "Candidate version 0.1.0-candidate.1 and CHANGELOG.md give reviewers a declared, non-release baseline. The public v0.1.0-alpha tag is reviewed as an older rollback reference, and a bounded static rehearsal restored that tag in an isolated worktree and rebuilt a temporary Pages artifact. The current main candidate has commit-bound workflow evidence that remains candidate_only; production deployment rollback, cache invalidation, and accepted release evidence remain open, so Q-011 remains in progress."
     },
     {
       "id": "Q-012",
