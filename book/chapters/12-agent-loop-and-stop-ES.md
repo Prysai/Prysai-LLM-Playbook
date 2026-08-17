@@ -38,6 +38,37 @@ No confundas estas capas:
 
 «Actualizaré el archivo y ejecutaré pruebas» seguido de «hecho» es `unverified` si no hay autorización, comando, salida, diff y alcance de prueba. Registra el primer salto no sustentado en vez de atribuirlo vagamente a una alucinación.
 
+## Patrones de arquitectura que conviene trasladar
+
+El [estudio auditado de `claude-code-from-source`](../../docs/research/claude-code-from-source-repository-audit-2026-08-16.md)
+es material de referencia, no una fuente oficial de implementación. Reescrito
+para un curso independiente de plataformas, deja estas preguntas de diseño:
+
+- **Trata cada llamada a una herramienta como un contrato:** declara esquema
+  de entrada, objetivo y alcance, tipo de efecto secundario, autoridad,
+  errores, salida y evidencia de aceptación antes de ejecutarla.
+- **Ordena por dependencia:** observaciones independientes de solo lectura
+  quizá puedan ejecutarse en paralelo; escrituras, lecturas posteriores a una
+  escritura y estado compartido deben conservar el orden hasta revisar los
+  conflictos.
+- **Delega con un encargo cerrado:** un sub-Agent recibe objetivo, contexto,
+  herramientas, permisos, presupuesto, parada y formato de entrega. El Agent
+  principal sigue revisando el resultado y sus pruebas.
+- **Haz inspeccionable la memoria:** cada hecho persistente necesita fuente,
+  fecha, responsable y reglas de vigencia y conflicto. El contexto orienta la
+  generación, pero no aplica permisos.
+- **Separa capacidad y control:** Skills, adaptadores y scripts aportan
+  métodos; políticas, hooks, sandbox y aprobaciones deciden cuándo se ejecutan.
+- **Mide el rendimiento con una tarea fija:** informa por separado de inicio,
+  latencia, tamaño de contexto, coste, corrección, errores y reintentos. No
+  conviertas porcentajes o cifras de tokens ajenos en promesas del producto.
+
+Al enseñar Claude Code, Gemini CLI, Codex u otro host, fija superficie, versión,
+sistema operativo y modo, enlaza la fuente oficial y registra una ejecución
+local antes de afirmar un comportamiento. Antes de una acción importante,
+pregunta: **¿cuál es el contrato, quién autoriza, qué puede cambiar, qué
+observación volverá, qué check detiene el ciclo y qué límite sigue desconocido?**
+
 ## Escribe el estado
 
 Un checkpoint breve hace que una interrupción sea recuperable:
