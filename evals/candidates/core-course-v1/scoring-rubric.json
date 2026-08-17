@@ -12,11 +12,11 @@
   "outcomes": [
     {
       "id": "explain",
-      "artifact": "explanation card and two model/product boundary decisions",
+      "artifact": "explanation card, three-observation table, and two model/product boundary decisions",
       "anchors": {
         "0": "Treats fluent text as proof or calls the model a database, person, or autonomous actor.",
-        "1": "Mentions context-based generation but leaves an important boundary or uncertainty reason unclear.",
-        "2": "Uses own words, separates model from product or tool, and names one reason to verify."
+        "1": "Mentions context-based generation but leaves an important boundary, observation condition, or uncertainty reason unclear.",
+        "2": "Uses own words, records a context/repeated-run observation, separates generated text from supplied source and tool evidence, and names one reason to verify."
       }
     },
     {
