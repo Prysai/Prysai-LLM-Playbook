@@ -135,7 +135,7 @@ try {
 
   await page.goto(`${origin}/`, { waitUntil: 'networkidle' });
   assert.equal(await page.locator('html').getAttribute('lang'), 'en', 'unparameterized English entry inherits a browser language preference');
-  assert.match(await page.locator('h1').innerText(), /What are LLMs, and how do you use them well/i, 'unparameterized English entry does not render English content');
+  assert.equal(await page.locator('h1').innerText(), 'Turn a first LLM task into real work.', 'unparameterized English entry does not render English content');
   assert.equal(searchRequests.length, 0, 'initial page load fetched the full search index');
   assert.equal(
     await page.locator('#start').evaluate((section) => section.previousElementSibling?.id),
@@ -239,12 +239,12 @@ try {
     ja: /ワークショップの予定が変わりました/, ko: /워크숍 일정이 바뀌었습니다/, de: /Der Workshop wurde verschoben/,
   };
   const localizedHeroTitles = {
-    en: 'What are LLMs, and how do you use them well?',
-    zh: '大语言模型是什么，以及如何用好它？',
-    es: '¿Qué son los LLM y cómo usarlos bien?',
-    ja: '大規模言語モデルとは何か、そしてどう使えばよいのか？',
-    ko: 'LLM이란 무엇이고, 어떻게 잘 쓸까?',
-    de: 'Was sind LLMs und wie nutzt man sie gut?',
+    en: 'Turn a first LLM task into real work.',
+    zh: '让第一项 LLM 任务变成真实工作。',
+    es: 'Convierte una primera tarea de LLM en trabajo real.',
+    ja: '最初の LLM タスクを本物の仕事にする。',
+    ko: '첫 LLM 과제를 실제 작업으로 만드세요.',
+    de: 'Mache aus einer ersten LLM-Aufgabe echte Arbeit.',
   };
   for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de']) {
     await page.goto(`${origin}/site/?lang=${locale}`, { waitUntil: 'networkidle' });
