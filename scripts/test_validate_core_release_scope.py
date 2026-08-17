@@ -45,6 +45,13 @@ def main() -> int:
         "unsupported outcome was accepted",
     )
 
+    duplicate_classification = copy.deepcopy(inventory)
+    duplicate_classification["advanced"][0]["source_paths"] = ["book/guides/llm-fundamentals-EN.md"]
+    require(
+        any("multiple primary owners" in error for error in validator.validate_inventory(duplicate_classification)),
+        "a source classified as both core and advanced was accepted",
+    )
+
     incomplete_scope = validator.SCOPE.read_text(encoding="utf-8").replace("## 停止条件", "## removed", 1)
     require(
         any("停止条件" in error for error in validator.validate_contract_text(contract_text=validator.CONTRACT.read_text(encoding="utf-8"), scope_text=incomplete_scope)),

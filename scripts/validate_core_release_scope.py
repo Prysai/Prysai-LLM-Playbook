@@ -60,6 +60,7 @@ def validate_inventory(document: dict[str, Any], *, root: Path = ROOT) -> list[s
         units = units if isinstance(units, list) else []
     ids: set[str] = set()
     outcomes: set[str] = set()
+    classified_paths: dict[str, str] = {}
     for index, unit in enumerate(units, start=1):
         label = f"core_units[{index}]"
         if not isinstance(unit, dict):
@@ -92,6 +93,12 @@ def validate_inventory(document: dict[str, Any], *, root: Path = ROOT) -> list[s
                 errors.append(f"{label}.source_paths contains an empty path")
             elif not (root / path_value).exists():
                 errors.append(f"{label}.source path is missing: {path_value}")
+            if isinstance(path_value, str) and path_value.strip():
+                owner = classified_paths.get(path_value)
+                if owner and owner != label:
+                    errors.append(f"source path has multiple primary owners: {path_value} ({owner}, {label})")
+                else:
+                    classified_paths[path_value] = label
     if outcomes != EXPECTED_OUTCOMES:
         errors.append("core units must cover explain, initiate, identify, repair, and transfer exactly")
 
@@ -99,6 +106,21 @@ def validate_inventory(document: dict[str, Any], *, root: Path = ROOT) -> list[s
         values = document.get(section)
         if not isinstance(values, list) or not values:
             errors.append(f"{section} must retain at least one classified item")
+        for item_index, item in enumerate(values if isinstance(values, list) else [], start=1):
+            if not isinstance(item, dict):
+                continue
+            paths = item.get("source_paths")
+            if not isinstance(paths, list):
+                continue
+            owner_label = f"{section}[{item_index}]"
+            for path_value in paths:
+                if not isinstance(path_value, str) or not path_value.strip():
+                    continue
+                owner = classified_paths.get(path_value)
+                if owner and owner != owner_label:
+                    errors.append(f"source path has multiple primary owners: {path_value} ({owner}, {owner_label})")
+                else:
+                    classified_paths[path_value] = owner_label
     return errors
 
 
