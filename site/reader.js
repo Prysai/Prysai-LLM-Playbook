@@ -173,11 +173,13 @@
   }
 
 function chapterTitle(chapter) {
-    return chapter.title?.[uiLanguage()] || chapter.title?.en || chapter.title_en || '';
+    const locale = uiLanguage();
+    return chapter[`title_${locale}`] || chapter.title?.[locale] || chapter.title_en || chapter.title?.en || '';
 }
 
 function canonicalChapterTitle(chapter) {
-    return chapter.canonical_title?.[uiLanguage()] || chapter.canonical_title?.en || chapter.canonical_title_en || '';
+    const locale = uiLanguage();
+    return chapter[`canonical_title_${locale}`] || chapter.canonical_title?.[locale] || chapter.canonical_title_en || chapter.canonical_title?.en || '';
 }
 
   function chapterPath(chapter) {

@@ -126,6 +126,12 @@ def main() -> int:
             raise AssertionError("reader-locale-chrome: non-Chinese chapter progress still falls back to English")
         if "'catalog order only'" in reader_script.split("function updateChapterRail", 1)[1]:
             raise AssertionError("reader-locale-chrome: chapter rail still falls back to English catalog copy")
+        for required in (
+            "chapter[`title_${locale}`]",
+            "chapter[`canonical_title_${locale}`]",
+        ):
+            if required not in reader_script:
+                raise AssertionError(f"reader-locale-chrome: localized generated chapter title is not read: {required}")
         fixtures += 2
 
         site_script = (Path(__file__).resolve().parents[1] / "site/app.js").read_text(encoding="utf-8")
