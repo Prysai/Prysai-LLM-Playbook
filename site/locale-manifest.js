@@ -3881,9 +3881,9 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/guides/llm-fundamentals-ES.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "stale",
-          "coverage": "stale",
-          "source_revision": "worktree-2026-08-17",
+          "translation_status": "candidate",
+          "coverage": "full",
+          "source_revision": "worktree-2026-08-17-foundation-map",
           "explicit_anchors": []
         },
         "ja": {
