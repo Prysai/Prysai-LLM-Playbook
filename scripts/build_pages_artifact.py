@@ -93,6 +93,8 @@ def static_locale_page(site_index: Path, config: dict[str, object], locale: str)
         raise ValueError(f"{site_index.relative_to(ROOT)} is missing site structured data")
     value = json.loads(structured_data.group(2))
     value["url"] = page_url
+    value["name"] = str(config["site_name"])
+    value["alternateName"] = str(config["alternate_name"])
     value["description"] = metadata["description"]
     value["inLanguage"] = metadata["html_lang"]
     text = text[:structured_data.start(2)] + json.dumps(value, ensure_ascii=False, separators=(",", ":")) + text[structured_data.end(2):]
@@ -138,6 +140,9 @@ def load_seo_config() -> dict[str, object]:
     locales = value.get("locales")
     if not isinstance(base_url, str) or not base_url.startswith("https://") or not base_url.endswith("/"):
         raise ValueError("site/seo-config.json public_site_url must be an absolute HTTPS URL ending in /")
+    for key in ("site_name", "alternate_name"):
+        if not isinstance(value.get(key), str) or not value[key].strip():
+            raise ValueError(f"site/seo-config.json {key} must be a non-empty string")
     if locales != ["en", "zh", "es", "ja", "ko", "de"]:
         raise ValueError("site/seo-config.json locales must list the six supported locales in canonical order")
     locale_pages = value.get("static_locale_pages")
@@ -254,7 +259,13 @@ def validate_artifact(output: Path) -> None:
         raise ValueError("site/index.html is missing site structured data")
     source_structured_value = json.loads(source_structured_data.group(1))
     expected_site_languages = ["en", *(config["static_locale_pages"][locale]["html_lang"] for locale in config["locales"] if locale != "en")]
-    if source_structured_value.get("url") != config["public_site_url"] or source_structured_value.get("inLanguage") != expected_site_languages or source_structured_value.get("description") != home_page["description"]:
+    if (
+        source_structured_value.get("url") != config["public_site_url"]
+        or source_structured_value.get("name") != config["site_name"]
+        or source_structured_value.get("alternateName") != config["alternate_name"]
+        or source_structured_value.get("inLanguage") != expected_site_languages
+        or source_structured_value.get("description") != home_page["description"]
+    ):
         raise ValueError("site/index.html structured data must match site/seo-config.json home_page")
     for locale in config["locales"]:
         if locale == "en":
@@ -278,7 +289,13 @@ def validate_artifact(output: Path) -> None:
         if not structured_data:
             raise ValueError(f"Pages artifact localized SEO structured data is missing: {page.name}")
         value = json.loads(structured_data.group(1))
-        if value.get("url") != expected_url or value.get("inLanguage") != hreflang or value.get("description") != metadata["description"]:
+        if (
+            value.get("url") != expected_url
+            or value.get("name") != config["site_name"]
+            or value.get("alternateName") != config["alternate_name"]
+            or value.get("inLanguage") != hreflang
+            or value.get("description") != metadata["description"]
+        ):
             raise ValueError(f"Pages artifact localized SEO structured data is incorrect: {page.name}")
     robots, sitemap = seo_files(config)
     if (output / "robots.txt").read_text(encoding="utf-8") != robots:

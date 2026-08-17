@@ -636,12 +636,16 @@ try {
   await page.locator('[data-copy-starter-status]').getByText('Prompt copied.', { exact: false }).waitFor();
   for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de']) {
     const localePage = await context.newPage();
-    await localePage.goto(`${origin}/site/index.html?lang=${locale}`, { waitUntil: 'networkidle' });
+    const localeEntry = locale === 'en' ? `${origin}/site/index.html` : `${origin}/${locale}.html`;
+    await localePage.goto(localeEntry, { waitUntil: 'networkidle' });
     const expectedUrl = locale === 'en'
       ? 'https://docs.prysai.com/llm-playbook/'
       : `https://docs.prysai.com/llm-playbook/${locale}.html`;
     assert.equal(await localePage.locator('link[rel="canonical"]').getAttribute('href'), expectedUrl, `${locale} canonical metadata is incorrect`);
     assert.ok((await localePage.locator('meta[name="description"]').getAttribute('content'))?.trim(), `${locale} is missing a localized description`);
+    assert.equal(await localePage.locator('html').getAttribute('lang'), locale === 'zh' ? 'zh-CN' : locale, `${locale} static entry does not render in its selected document language`);
+    const structuredData = JSON.parse(await localePage.locator('#site-structured-data').textContent());
+    assert.equal(structuredData.alternateName, 'LLMPlaybook', `${locale} structured data omits the LLMPlaybook discovery alias`);
     assert.equal(await localePage.locator('.problem-grid .card-link').evaluateAll((links) => links.some((link) => /candidate|draft|not_run/i.test(link.textContent || ''))), false, `${locale} problem cards expose development statuses`);
     assert.match(await localePage.locator('.hero-proof-source blockquote').innerText(), localizedHeroSources[locale], `${locale} hero teaching example leaks an English source message`);
     await localePage.close();

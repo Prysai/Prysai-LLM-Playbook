@@ -1,5 +1,7 @@
 {
   "public_site_url": "https://docs.prysai.com/llm-playbook/",
+  "site_name": "Prysai LLM Playbook",
+  "alternate_name": "LLMPlaybook",
   "default_locale": "en",
   "locales": ["en", "zh", "es", "ja", "ko", "de"],
   "home_page": {

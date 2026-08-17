@@ -96,6 +96,12 @@ for canonical, alternate-language, Open Graph, Twitter, and structured-data
 metadata. If the project moves to a custom domain, change only
 `public_site_url`, then rebuild the artifact.
 
+The same configuration defines the public site name and the discovery alias
+`LLMPlaybook`, emitted as Schema.org `WebSite.name` and `alternateName` on each
+language entry. This helps a crawler associate the spelling with the site; it
+does not create a ranking, guarantee indexing, or replace useful content and
+independent links.
+
 These files make a deployment ready for crawlers. They do not prove that Pages
 is enabled, that the URL is publicly reachable, that a crawler has indexed the
 site, or that the site will rank for a query.
