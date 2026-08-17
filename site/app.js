@@ -1349,6 +1349,8 @@ everydayPromptCopyButtons.forEach((button) => {
 // count does not imply that every Skill has runtime or learner evidence.
 Object.assign(copy.en, {
   skillsTitle: 'Twenty-five Skills. Distinct jobs.',
+  skillCatalogSummary: 'Browse the complete Skill registry',
+  skillCatalogIntro: 'These methods are optional. Start with the situation above; open the full registry when you know what kind of work you need to support.',
   skillIndexLink: 'Open the Skill registry and all 25 methods',
   skillFootnote: 'All 25 project Skills pass structural checks and remain candidate; fresh-task evidence is partial. Platform Observation Record documents one visible surface; it is not a capability or safety claim. Practice Target sets up one first attempt; it does not prove learning. Interruption Checkpoint preserves a task receipt; it does not retry or recover work. Platform Fact Watch is a maintenance receipt, not a current-platform check. LLM Comparison Protocol is an unrun comparison method, not a model ranking. Adversarial Project Review is not an external review.',
   fileSkillsBody: '25 project Skills with triggers, boundaries, and evidence contracts.',
@@ -1359,6 +1361,8 @@ Object.assign(copy.en, {
 });
 Object.assign(copy.zh, {
   skillsTitle: '二十五个 Skill，各有职责。',
+  skillCatalogSummary: '浏览完整 Skill 登记表',
+  skillCatalogIntro: '这些方法都是可选的。先从上面的具体情境开始；明确需要支持哪类工作后，再打开完整登记表。',
   skillIndexLink: '打开 Skill 登记表与全部 25 个方法',
   skillFootnote: '25 个项目 Skill 均通过结构检查并保持 candidate；新鲜任务证据仍不完整。平台观察记录只记录一个可见工作面，不是能力或安全性声明。平台事实巡检是维护记录，不是当前平台检查。LLM 比较协议尚未运行，不是模型排行榜。对抗式项目审查不代表外部评审。',
   fileSkillsBody: '25 个项目 Skill，包含触发、边界与证据契约。',
@@ -3798,7 +3802,9 @@ Object.assign(copy.en, {
   'localeRule': 'Route rule: every translated course unit carries a locale suffix and links to the same locale. A route token means a complete 40-unit chapter-and-Lab path, not that every supplemental document has been translated or independently reviewed.',
   'mobileIndexUpdates': 'Update areas',
   'mobileIndexTrust': 'Trust families',
-  'menuCloseAria': 'Close navigation'
+  'menuCloseAria': 'Close navigation',
+  'skillCatalogSummary': 'Browse the complete Skill registry',
+  'skillCatalogIntro': 'These methods are optional. Start with the situation above; open the full registry when you know what kind of work you need to support.'
 });
 
 Object.assign(copy.zh, {
@@ -3813,7 +3819,9 @@ Object.assign(copy.zh, {
   'localeRule': '路由规则：每个翻译课程单元都带语言后缀并链接到同一语言；语言路由指完整的 40 单元章节与实验路线，不表示所有补充文档都已翻译或独立审校。',
   'mobileIndexUpdates': '更新区域',
   'mobileIndexTrust': '可信度类型',
-  'menuCloseAria': '关闭导航'
+  'menuCloseAria': '关闭导航',
+  'skillCatalogSummary': '浏览完整 Skill 登记表',
+  'skillCatalogIntro': '这些方法是可选的。先从上面的情境开始；明确需要支持哪类工作后，再打开完整登记表。'
 });
 
 Object.assign(copy.es, {
@@ -3827,7 +3835,9 @@ Object.assign(copy.es, {
   'localeJapanese': 'disponible · 日本語',
   'localeKorean': 'disponible · 한국어',
   'localeRule': 'Regla de rutas: cada unidad de curso traducida lleva el sufijo de idioma y enlaza al mismo idioma; una ruta significa el recorrido completo de 40 unidades de capítulos y Labs, no que cada documento suplementario esté traducido o revisado de forma independiente.',
-  'menuCloseAria': 'Cerrar navegación'
+  'menuCloseAria': 'Cerrar navegación',
+  'skillCatalogSummary': 'Ver el registro completo de Skills',
+  'skillCatalogIntro': 'Estos métodos son opcionales. Empieza con la situación de arriba y abre el registro completo cuando sepas qué trabajo necesitas apoyar.'
 });
 
 Object.assign(copy.ja, {
@@ -3841,7 +3851,9 @@ Object.assign(copy.ja, {
   'localeJapanese': '利用可能 · 日本語',
   'localeKorean': '利用可能 · 한국어',
   'localeRule': 'ルート規則：翻訳されたコース単位は言語サフィックスを持ち、同じ言語へリンクします。言語ルートは40単位の章とLabの完全な経路を意味し、補助文書がすべて翻訳済み・独立レビュー済みという意味ではありません。',
-  'menuCloseAria': 'ナビゲーションを閉じる'
+  'menuCloseAria': 'ナビゲーションを閉じる',
+  'skillCatalogSummary': 'Skill 登録全体を見る',
+  'skillCatalogIntro': 'これらの方法は任意です。まず上の状況から始め、支援したい作業の種類が分かったら全登録を開いてください。'
 });
 
 Object.assign(copy.ko, {
@@ -3855,7 +3867,9 @@ Object.assign(copy.ko, {
   'localeJapanese': '사용 가능 · 日本語',
   'localeKorean': '사용 가능 · 한국어',
   'localeRule': '루트 규칙: 번역된 과정 단위는 언어 접미사를 가지며 같은 언어로 연결됩니다. 언어 루트는 40개 장과 Lab 단위의 완전한 경로를 뜻하며, 모든 보조 문서가 번역되었거나 독립 검토되었다는 뜻은 아닙니다.',
-  'menuCloseAria': '내비게이션 닫기'
+  'menuCloseAria': '내비게이션 닫기',
+  'skillCatalogSummary': '전체 Skill 레지스트리 보기',
+  'skillCatalogIntro': '이 방법들은 선택 사항입니다. 먼저 위의 상황에서 시작하고, 어떤 작업을 지원해야 하는지 알게 되면 전체 레지스트리를 여세요.'
 });
 
 Object.assign(copy.de, {
@@ -3869,7 +3883,9 @@ Object.assign(copy.de, {
   'localeJapanese': 'verfügbar · 日本語',
   'localeKorean': 'verfügbar · 한국어',
   'localeRule': 'Routenregel: Jede übersetzte Kurseinheit trägt das Sprachsuffix und verlinkt auf dieselbe Sprache. Eine Sprachroute bedeutet den vollständigen Pfad mit 40 Kapitel- und Lab-Einheiten, nicht dass jedes Zusatzdokument übersetzt oder unabhängig geprüft ist.',
-  'menuCloseAria': 'Navigation schließen'
+  'menuCloseAria': 'Navigation schließen',
+  'skillCatalogSummary': 'Vollständiges Skill-Register anzeigen',
+  'skillCatalogIntro': 'Diese Methoden sind optional. Beginne mit der Situation oben und öffne das vollständige Register, sobald du weißt, welche Arbeit du unterstützen möchtest.'
 });
 
 Object.assign(copy.en, {
@@ -4003,6 +4019,8 @@ Object.assign(copy.zh, {
 });
 Object.assign(copy.es, {
   skillsTitle: 'Veinticinco Skills. Trabajos distintos.',
+  skillCatalogSummary: 'Explorar el registro completo de Skills',
+  skillCatalogIntro: 'Estos métodos son opcionales. Empieza por la situación de arriba; abre el registro completo cuando sepas qué tipo de trabajo necesitas apoyar.',
   skillIndexLink: 'Abrir el registro de Skills y los 25 métodos',
   skillFootnote: 'Los 25 Skills del proyecto pasan las comprobaciones estructurales y siguen siendo candidate; la evidencia de tareas nuevas es parcial. Language Partner ejecuta un intercambio escrito; no enseña un idioma ni promete fluidez. Interview Rehearsal entrena una respuesta; no predice preguntas de entrevista ni promete un resultado. Interruption Checkpoint conserva un recibo de tarea; no reintenta ni recupera trabajo. Practice Target prepara un primer intento; no demuestra aprendizaje. Platform Fact Watch es un recibo de mantenimiento, no una comprobación de la plataforma actual. LLM Comparison Protocol es un método de comparación sin ejecutar, no una clasificación de modelos. Adversarial Project Review no es una revisión externa.',
   fileSkillsBody: '25 Skills del proyecto con disparadores, límites y contratos de evidencia.',
@@ -4019,6 +4037,8 @@ Object.assign(copy.es, {
 });
 Object.assign(copy.ja, {
   skillsTitle: '25のSkill。それぞれ役割が違います。',
+  skillCatalogSummary: 'Skill レジストリ全体を見る',
+  skillCatalogIntro: 'これらのメソッドは任意です。まず上の状況から始め、支援したい仕事の種類がわかったら全体のレジストリを開いてください。',
   skillIndexLink: 'Skill レジストリと全25メソッドを開く',
   skillFootnote: 'プロジェクトの25のSkill はすべて構造チェックに合格し candidate のままです。新しいタスクのエビデンスは部分的です。Language Partner は文字会話を1回実行するだけで、言語を教えたり流暢さを約束したりしません。Interview Rehearsal は回答を1つ練習するだけで、面接問題を予測したり結果を約束したりしません。Interruption Checkpoint はタスクのレシートを保存するもので、作業の再試行や復旧は行いません。Practice Target は最初の試行を設定するもので、学習を証明するものではありません。Platform Fact Watch はメンテナンスのレシートであり、現在のプラットフォームのチェックではありません。LLM Comparison Protocol は未実行の比較メソッドであり、モデルランキングではありません。Adversarial Project Review は外部レビューではありません。',
   fileSkillsBody: 'プロジェクトの25のSkill（トリガー、境界、エビデンス契約付き）。',
@@ -4035,6 +4055,8 @@ Object.assign(copy.ja, {
 });
 Object.assign(copy.ko, {
   skillsTitle: '스물다섯 개의 Skill. 역할이 각각 다릅니다.',
+  skillCatalogSummary: '전체 Skill 레지스트리 보기',
+  skillCatalogIntro: '이 메서드들은 선택 사항입니다. 먼저 위의 상황에서 시작하고, 어떤 작업을 지원할지 정한 뒤 전체 레지스트리를 여세요.',
   skillIndexLink: 'Skill 레지스트리와 25개 메서드 열기',
   skillFootnote: '프로젝트의 25개 Skill 모두 구조 검사를 통과했으며 candidate로 유지됩니다. 신규 과제 증거는 일부만 있습니다. 언어 파트너는 문자 대화를 한 번 실행할 뿐, 언어를 가르치거나 유창함을 약속하지 않습니다. 면접 리허설은 답변 하나를 코칭할 뿐, 면접 문제를 예측하거나 결과를 약속하지 않습니다. 중단 체크포인트는 과제 기록을 보존할 뿐, 작업을 재시도하거나 복구하지 않습니다. 연습 목표는 첫 시도 하나를 준비할 뿐, 학습을 증명하지 않습니다. 플랫폼 사실 관찰은 유지보수 기록이지 현재 플랫폼 점검이 아닙니다. LLM 비교 프로토콜은 실행되지 않은 비교 메서드이지 모델 순위가 아닙니다. 적대적 프로젝트 검토는 외부 검토가 아닙니다.',
   fileSkillsBody: '트리거, 경계, 증거 계약을 갖춘 프로젝트 Skill 25개.',
@@ -4051,6 +4073,8 @@ Object.assign(copy.ko, {
 });
 Object.assign(copy.de, {
   skillsTitle: 'Fünfundzwanzig Skills. Klar getrennte Aufgaben.',
+  skillCatalogSummary: 'Das vollständige Skill-Register öffnen',
+  skillCatalogIntro: 'Diese Methoden sind optional. Beginnen Sie mit der Situation oben und öffnen Sie das vollständige Register, sobald klar ist, welche Arbeit Sie unterstützen möchten.',
   skillIndexLink: 'Skill-Register und alle 25 Methoden öffnen',
   skillFootnote: 'Alle 25 Projekt-Skills bestehen die Strukturprüfungen und bleiben candidate; die Belege aus frischen Aufgaben sind lückenhaft. Language Partner führt einen schriftlichen Austausch durch; es unterrichtet keine Sprache und verspricht keine Flüssigkeit. Interview Rehearsal trainiert eine Antwort; es sagt keine Interviewfragen voraus und verspricht kein Ergebnis. Interruption Checkpoint bewahrt eine Aufgabenquittung; es wiederholt oder rettet keine Arbeit. Practice Target richtet einen ersten Versuch ein; es beweist kein Lernen. Platform Fact Watch ist eine Wartungsquittung, keine Prüfung der aktuellen Plattform. LLM Comparison Protocol ist eine nicht ausgeführte Vergleichsmethode, kein Modellranking. Adversarial Project Review ist keine externe Prüfung.',
   fileSkillsBody: '25 Projekt-Skills mit Triggern, Grenzen und Beleg-Verträgen.',
