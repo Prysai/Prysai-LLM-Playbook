@@ -14,9 +14,12 @@ Lektion ist eine allgemeinverständliche Nacherzählung der am Ende aufgeführte
 
 ## 0.1 Ein Satz, dann ein Bild
 
-**Ein LLM ist eine Maschine, die das nächste Textstück vorhersagt, auf einer
-enormen Menge menschlicher Texte trainiert und anschließend darauf abgestimmt
-ist, Anweisungen zu befolgen.**
+**Ein modernes Text-LLM ist ein Modell, das Tokenfolgen schätzt und erzeugt;
+viele autoregressive LLMs sagen aus dem Kontext den nächsten Token voraus,
+während nachträgliches Training und Produktschichten die Antwort weiter formen.**
+
+Das ist ein nützliches Arbeitsmodell, aber keine vollständige Definition jedes
+Sprach-, multimodalen oder eingesetzten Systems, das LLM genannt wird.
 
 Das Bild, das das konkret macht: Stell dir die Autovervollständigung auf
 deinem Telefon vor — aber trainiert auf einer Bibliothek aus Millionen von
@@ -28,15 +31,18 @@ ein Gespräch führen — denn all diese Aufgaben lassen sich umformulieren als
 
 Diese eine Idee erklärt mehr, als du erwarten würdest:
 
-- warum ein LLM über fast alles flüssig schreiben kann (es hat enorme Mengen
-  an Text gesehen);
+- warum ein LLM über fast alles flüssig schreiben kann (das Training zeigt ihm
+  viele Muster; Flüssigkeit beweist aber weder Fachwissen, Abdeckung noch
+  Wahrheit);
 - warum es manchmal Fakten erfindet (ein Basismodell sagt plausiblen Text
   voraus, statt Fakten selbst nachzuschlagen);
 - warum ein Chat-Produkt mehr als das Basismodell leisten kann (es kann Suche,
   Dateien, Speicher, Retrieval oder Tools ergänzen, jeweils mit eigenen Daten-
   und Berechtigungsgrenzen);
-- warum es sich ändert, wenn Modelle aktualisiert werden (der Trainingstext
-  ändert sich).
+- warum sich das Verhalten zwischen Versionen oder Produkten ändert (Anbieter
+  können Gewichte, nachträgliches Training, Systemanweisungen,
+  Sicherheitskontrollen, Retrieval, Tools, Routing oder die Oberfläche ändern,
+  nicht nur den Trainingstext).
 
 Die intuitivste moderne Erklärung der Mechanik ist Grant Sandersons
 (3Blue1Brown) animierte Reihe über GPT und Attention; sie ist in den Quellen
@@ -60,12 +66,12 @@ Ein Sprachmodell ist keine neue Idee. Der Stammbaum:
   verfügbaren Kontext beachten können. Sie machte es leichter, weit entfernte
   Beziehungen zu modellieren und zu skalieren, hob Kontextgrenzen aber nicht
   auf: Praktische Modelle haben weiterhin ein endliches Kontextfenster.
-- **2018–2022 — Skalierung und der „Next-Token“-Trick.** Unternehmen
-  trainierten Transformer-Modelle auf riesigen Korpora mit einem einzigen
-  Ziel: den nächsten Token vorherzusagen (ein Token ist grob gesagt ein
-  Wortfragment). Mit genug Daten und Rechenleistung begannen Modelle, Fragen
-  zu beantworten, Code zu schreiben und Anweisungen zu befolgen, ohne für
-  jede Aufgabe explizit programmiert zu sein.
+- **2018–2022 — große Transformer-Sprachmodelle.** Unternehmen trainierten
+  Transformer-Modelle auf riesigen Korpora, oft mit dem Ziel, den nächsten Token
+  vorherzusagen (ein Token ist grob gesagt ein Wortfragment). Die Fähigkeiten
+  entstehen aus dem Zusammenspiel von Architektur, Datenqualität und -abdeckung,
+  Optimierung, Skalierung und späterem Training; Ziel und Größe allein erklären
+  sie nicht vollständig.
 - **2022–heute — Instruction Tuning und Alignment.** Rohe Next-Token-Modelle
   können Texte fortsetzen, aber nicht gut Anfragen befolgen. Anbieter
   trainieren Modelle deshalb darauf, Anweisungen zu befolgen (Instruction
@@ -77,19 +83,21 @@ Ein Sprachmodell ist keine neue Idee. Der Stammbaum:
 Das technische Herz — Attention — erklärt 3Blue1Browns Lektion *Transformer
 attention* visuell, und die offizielle Modelldokumentation von OpenAI,
 Anthropic und Google erklärt es in verständlichem Text. Für einen guten
-Umgang mit LLMs brauchen wir die Mathematik nicht, aber zu wissen, dass der
-Kern darin besteht, „den nächsten Token vorherzusagen und das Verhalten
-anschließend auszurichten“, erklärt das meiste von dem, was folgt.
+Umgang mit LLMs brauchen wir die Mathematik nicht. Wichtig ist aber: Die
+Vorhersage des nächsten Tokens ist ein wichtiges Trainingsziel, keine
+vollständige Erklärung jedes Modells oder Produkts.
 
 ## 0.3 Wie ein modernes LLM entsteht: trainieren, ausrichten, bereitstellen
 
 Denk an drei Phasen:
 
-1. **Pre-Training.** Das Modell liest ein riesiges Korpus und lernt, den
-   nächsten Token vorherzusagen. Hier wird der Großteil des „Wissens“ (als
-   statistische Muster) gespeichert. Hier entstehen auch die blinden Flecken
-   des Modells: Endet das Korpus 2025, kennt das Modell die Ereignisse von
-   2026 nicht.
+1. **Pre-Training.** Das Modell wird auf einem riesigen Korpus darauf
+   optimiert, den nächsten Token vorherzusagen, und erwirbt dabei viele
+   statistische Verknüpfungen für die Generierung. Das Ergebnis ist keine
+   verifizierte Faktendatenbank. Datenqualität, Abdeckung, Filterung,
+   Optimierung und späteres Training beeinflussen blinde Flecken; ein Anbieter
+   kann das Modell außerdem aktualisieren oder Retrieval, Suche, Dateien,
+   Speicher und Tools ergänzen.
 2. **Alignment / Instruction Tuning.** Das Modell wird weiter trainiert,
    Anfragen zu befolgen, schädliche abzulehnen und menschlichen Präferenzen
    zu entsprechen. Deshalb können sich zwei Modelle mit ähnlichem
@@ -101,23 +109,27 @@ Denk an drei Phasen:
 
 Drei praktische Konsequenzen:
 
-- **Eine konkrete Modellversion hat einen Trainings-Cutoff.** Ein Produkt kann
-  sie später aktualisieren oder Retrieval, Suche, Dateien, Speicher oder Tools
-  ergänzen. Prüfe bei zeitkritischen Antworten aktuelle Produktdokumentation,
+- **Ein Anbieter kann für ein bestimmtes Modell oder eine Oberfläche einen
+  Cutoff dokumentieren.** Bedeutung und Umfang hängen von Anbieter und Version
+  ab. Prüfe bei zeitkritischen Antworten aktuelle Produktdokumentation,
   verwendete Quelle und Datum; ein Cutoff allein entscheidet die Frage nicht.
-- **Jede Anfrage kostet Tokens.** Sowohl die Eingabe, die du lieferst, als
-  auch die erzeugte Ausgabe zählen. Ein langer Kontext ist nützlich, aber
-  nicht umsonst.
+- **Token-Abrechnung hängt vom Produkt ab.** Viele APIs messen Eingabe- und
+  Ausgabe-Tokens für Limits oder Abrechnung, aber Preis, Caching, versteckte
+  Anweisungen und Zählweise können variieren. Langer Kontext ist nützlich und
+  kann Kosten verursachen.
 - **Dasselbe Modell kann sich unterschiedlich verhalten**, je nach
   System-Prompts, Einstellungen (temperature) und umgebenden Tools. Eine
   Verhaltensänderung ist nicht automatisch eine Änderung des Modells.
 
 ## 0.4 Vier Konzepte, denen du überall begegnest
 
-**Token.** Die Einheit, die das Modell liest und schreibt. Ein Token ist oft
-ein Wortfragment, kein ganzes Wort: „ChatGPT“ kann aus zwei oder drei Tokens
-bestehen. Preise, Kontextgrenzen und Geschwindigkeit werden in Tokens
-gemessen. Grob gesagt: 100 Tokens ≈ 75 englische Wörter.
+**Token.** Eine Einheit, die ein bestimmter Tokenizer erzeugt und die das Modell
+liest oder generiert. Ein Token ist oft ein Wortfragment, kein ganzes Wort:
+„ChatGPT“ kann aus zwei oder drei Tokens bestehen. Preise, Kontextgrenzen und
+Geschwindigkeit werden oft in Tokens angegeben, aber die Zählweise hängt von
+Anbieter und Oberfläche ab. 100 Tokens ≈ 75 englische Wörter ist nur eine grobe
+Schätzung für bestimmte englische Prosa; andere Sprachen und Formate können
+stark abweichen.
 
 **Context window.** Die maximale Textmenge, die das Modell auf einmal
 berücksichtigen kann — deine Anweisungen plus jedes Gespräch oder Dokument,
@@ -126,10 +138,11 @@ Intelligenz. Ein größeres Fenster erlaubt es, längere Dokumente
 einzufügen, aber das Modell behandelt das gesamte Fenster weiterhin als
 „Dinge, die es zu beachten gilt“, nicht als verifizierte Fakten.
 
-**Temperature (und Sampling).** Eine Einstellung, die steuert, wie zufällig
-die Ausgabe ist. Niedrige Temperatur → vorhersehbarer, repetitiver; hohe
-Temperatur → abwechslungsreicher, manchmal kreativer. Für Fakten und Code
-nimm lieber niedrige Werte; beim Brainstorming kann ein höherer Wert helfen.
+**Temperature (und Sampling).** Eine providerabhängige Dekodiersteuerung.
+Niedrige Werte machen wiederholte Ausgaben oft vorhersehbarer, höhere können die
+Varianz erhöhen. Temperature ist kein Wahrheitsregler: Auch ein niedriger Wert
+kann falsch liegen. Für Fakten und Code muss die Aufgabe prüfbar sein und das
+Ergebnis verifiziert werden; beim Brainstorming kann mehr Varianz helfen.
 
 **Parameter und Skalierung.** „Milliarden von Parametern“ beschreibt die
 Größe des Modells. Die Größe korreliert mit der Leistungsfähigkeit,

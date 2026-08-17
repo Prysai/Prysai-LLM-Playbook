@@ -14,9 +14,13 @@ de ningún documento concreto.
 
 ## 0.1 Una frase, luego una imagen
 
-**Un LLM es una máquina que predice el siguiente fragmento de texto,
-entrenada con una cantidad enorme de escritos humanos y ajustada después para
-seguir instrucciones.**
+**Un LLM de texto moderno es un modelo que estima y genera secuencias de
+tokens; muchos LLM autorregresivos predicen el token siguiente a partir del
+contexto, y el entrenamiento posterior y las capas del producto dan forma a
+su respuesta.**
+
+Es un modelo de trabajo útil, no una definición completa de todo sistema de
+lenguaje, multimodal o desplegado que pueda llamarse LLM.
 
 La imagen que lo hace concreto: imagina el autocompletado de tu teléfono, pero
 entrenado con una biblioteca de millones de libros, artículos, repositorios de
@@ -28,15 +32,18 @@ porque todas esas tareas pueden reformularse como «dado el texto hasta ahora,
 
 Esa única idea explica más de lo que cabría esperar:
 
-- por qué un LLM puede escribir con fluidez sobre casi cualquier tema (ha
-  visto cantidades enormes de texto);
+- por qué un LLM puede escribir con fluidez sobre casi cualquier tema (el
+  entrenamiento le expone a muchos patrones, pero la fluidez no demuestra
+  experiencia, cobertura ni verdad);
 - por qué a veces inventa hechos (un modelo base predice texto plausible; no
   busca hechos por sí solo);
 - por qué un producto de chat puede hacer más que el modelo base (puede añadir
   búsqueda, archivos, memoria, recuperación o herramientas, cada una con sus
   propios límites de datos y permisos);
-- por qué cambia cuando se actualizan los modelos (cambia el texto de
-  entrenamiento).
+- por qué cambia el comportamiento entre versiones o productos (el proveedor
+  puede cambiar pesos, entrenamiento posterior, instrucciones del sistema,
+  controles de seguridad, recuperación, herramientas, enrutamiento o interfaz,
+  y no solo el texto de entrenamiento).
 
 La explicación moderna más intuitiva de la maquinaria es la serie animada de
 Grant Sanderson (3Blue1Brown) sobre GPT y la atención; está enlazada en las
@@ -60,12 +67,12 @@ Un modelo de lenguaje no es una idea nueva. El linaje:
   atender a otros tokens del contexto disponible. Facilitó modelar y escalar
   relaciones lejanas, pero no eliminó los límites de contexto: los modelos
   prácticos siguen teniendo una ventana de contexto finita.
-- **2018–2022 — escala y el truco del «siguiente token».** Las empresas
-  entrenaron modelos Transformer con corpus enormes y un único objetivo:
+- **2018–2022 — grandes modelos de lenguaje Transformer.** Las empresas
+  entrenaron modelos Transformer en corpus enormes, a menudo con un objetivo de
   predecir el siguiente token (un token es, a grandes rasgos, un fragmento de
-  palabra). Con suficientes datos y cómputo, los modelos empezaron a responder
-  preguntas, escribir código y seguir instrucciones sin estar programados
-  explícitamente para cada tarea.
+  palabra). Las capacidades reflejan la interacción entre arquitectura,
+  calidad y cobertura de los datos, optimización, escala y entrenamiento
+  posterior; el objetivo y la escala por sí solos no lo explican todo.
 - **2022–hoy — ajuste por instrucciones y alineación.** Los modelos crudos de
   predicción de tokens son buenos continuando texto, pero no siguiendo
   peticiones. Los proveedores entrenan entonces a los modelos para seguir
@@ -77,19 +84,20 @@ Un modelo de lenguaje no es una idea nueva. El linaje:
 El corazón técnico — la atención — se explica visualmente en la lección
 *Transformer attention* de 3Blue1Brown y en texto llano en la documentación
 oficial de modelos de OpenAI, Anthropic y Google. No necesitamos las
-matemáticas para usar bien los LLM, pero saber que el núcleo es «predecir el
-siguiente token y luego alinear el comportamiento» explica casi todo lo que
-sigue.
+matemáticas para usar bien los LLM, pero conviene recordar que predecir el
+siguiente token es un objetivo de entrenamiento importante, no una explicación
+completa de cada modelo o producto.
 
 ## 0.3 Cómo se construye un LLM moderno: entrenar, alinear, servir
 
 Piensa en tres etapas:
 
-1. **Preentrenamiento.** El modelo lee un corpus enorme y aprende a predecir
-   el siguiente token. Aquí es donde se almacena la mayor parte del
-   «conocimiento» (como patrones estadísticos). También es donde se fijan los
-   puntos ciegos del modelo: si el corpus termina en 2025, el modelo no sabe
-   nada de los acontecimientos de 2026.
+1. **Preentrenamiento.** El modelo se optimiza en un corpus enorme para
+   predecir el siguiente token y adquiere muchas asociaciones estadísticas que
+   usa al generar. El resultado no es una base de datos de hechos verificados.
+   La calidad, cobertura, filtrado, optimización y entrenamiento posterior de
+   los datos influyen en sus puntos ciegos; un proveedor también puede actualizar
+   el modelo o añadir recuperación, búsqueda, archivos, memoria y herramientas.
 2. **Alineación / ajuste por instrucciones.** El modelo se entrena además para
    seguir peticiones, rechazar las dañinas y ajustarse a las preferencias
    humanas. Por eso dos modelos con un preentrenamiento similar pueden
@@ -101,13 +109,15 @@ Piensa en tres etapas:
 
 Tres consecuencias prácticas:
 
-- **Una versión concreta del modelo tiene una fecha de corte de entrenamiento.**
-  El producto puede actualizarla después o añadir recuperación, búsqueda,
-  archivos, memoria o herramientas. Para una respuesta sensible al tiempo,
-  comprueba la documentación actual, la fuente usada y la fecha; no te bases
-  solo en la fecha de corte.
-- **Cada petición cuesta tokens.** Cuentan tanto la entrada que proporcionas
-  como la salida generada. El contexto largo es útil, pero no gratis.
+- **Un proveedor puede documentar una fecha de corte para un modelo o una
+  superficie concretos.** El significado y el alcance dependen del proveedor y
+  de la versión. Para una respuesta sensible al tiempo, comprueba la
+  documentación actual, la fuente usada y la fecha, sin basarte solo en la
+  fecha de corte.
+- **La contabilidad de tokens depende del producto.** Muchas API miden tokens
+  de entrada y salida para límites o facturación, pero pueden variar el precio,
+  la caché, las instrucciones ocultas y qué se cuenta. El contexto largo es útil
+  y puede tener coste.
 - **El mismo modelo puede comportarse de forma distinta** según las
   indicaciones de sistema, la configuración (temperatura) y las herramientas
   que lo rodean. Un cambio de comportamiento no es automáticamente un cambio
@@ -115,10 +125,12 @@ Tres consecuencias prácticas:
 
 ## 0.4 Cuatro conceptos que verás en todas partes
 
-**Token.** La unidad que el modelo lee y escribe. Un token suele ser un
-fragmento de palabra, no una palabra completa: «ChatGPT» puede ser dos o tres
-tokens. Los precios, los límites de contexto y la velocidad se miden en
-tokens. A grandes rasgos, 100 tokens ≈ 75 palabras en inglés.
+**Token.** Una unidad producida por un tokenizador concreto que el modelo lee o
+genera. Suele ser un fragmento de palabra, no una palabra completa: «ChatGPT»
+puede ser dos o tres tokens. Los precios, límites y velocidad suelen expresarse
+en tokens, pero la contabilidad depende del proveedor y la superficie. La regla
+de 100 tokens ≈ 75 palabras inglesas es solo una estimación aproximada para
+cierta prosa inglesa; otros idiomas y formatos pueden diferir mucho.
 
 **Ventana de contexto.** La cantidad máxima de texto que el modelo puede
 considerar a la vez — tus instrucciones más cualquier conversación o documento
@@ -127,10 +139,12 @@ ventana más grande te permite pegar documentos más largos, pero el modelo
 sigue tratando toda la ventana como «cosas a las que prestar atención», no
 como hechos verificados.
 
-**Temperatura (y muestreo).** Un ajuste que controla lo aleatoria que es la
-salida. Temperatura baja → salida más predecible y repetitiva; temperatura
-alta → más variada, a veces más creativa. Para datos y código, prefiere baja;
-para lluvia de ideas, una más alta puede ayudar.
+**Temperatura (y muestreo).** Un control de decodificación cuyo comportamiento
+exacto depende del proveedor. Los valores bajos suelen hacer más predecibles las
+salidas repetidas y los altos pueden aumentar la variedad; la temperatura no es
+un interruptor de veracidad: un valor bajo también puede equivocarse. Para datos
+y código, haz que la tarea sea comprobable y verifica el resultado; para lluvia
+de ideas, una variación mayor puede ayudar.
 
 **Parámetros y escala.** «Miles de millones de parámetros» describe el tamaño
 del modelo. El tamaño se correlaciona con la capacidad, pero no garantiza
