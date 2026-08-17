@@ -2,7 +2,7 @@
   "schema_version": "1",
   "owner": "release-maintainer",
   "decision": "not_ready",
-  "reviewed_at": "2026-08-14",
+  "reviewed_at": "2026-08-17",
   "next_review": "2026-08-24",
   "version": {
     "status": "declared",
@@ -21,8 +21,8 @@
   },
   "release_evidence": {
     "status": "candidate_only",
-    "candidate_sha": "8c91d002fa552b6458828ae617c37db776ca06ca",
-    "workflow_run_url": "https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32076423361"
+    "candidate_sha": "d6bf75f2621ef1c9c8c871d35c679142671a93dd",
+    "workflow_run_url": "https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32077857456"
   },
   "rollback": {
     "status": "unavailable",
@@ -38,8 +38,8 @@
     "release_checklist_path": "docs/release-checklist.md"
   },
   "known_gaps": [
-    "The current main candidate is newer than the public v0.1.0-alpha tag and is not itself a release.",
-    "Commit-bound candidate evidence exists only in workflow artifacts and has not been accepted as release evidence.",
+    "The current main candidate may be newer than the last successful workflow evidence and is not itself a release.",
+    "The recorded candidate evidence is bound to the last successful workflow commit and remains candidate_only, not accepted release evidence.",
     "The v0.1.0-alpha tag is a rollback reference, but no bounded rollback rehearsal record exists."
   ]
 }
