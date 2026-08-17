@@ -142,6 +142,9 @@ try {
     'top',
     'the project catalogue appears before the first useful result instead of after it',
   );
+  assert.equal(await page.locator('[data-hero-primary]').getAttribute('href'), '#first-30', 'hero primary action does not lead to the five-minute practice');
+  assert.equal(await page.locator('[data-hero-primary]').innerText(), 'Start the five-minute practice', 'hero primary action does not name one concrete first action');
+  assert.equal(await page.locator('.hero-route-kicker').innerText(), 'Optional textbook path', 'textbook route is not clearly secondary to the first practice');
   await noHorizontalOverflow(page, 'desktop showcase');
   // A new reader must see the actual first action without having to discover
   // it by scrolling past the opening explanation. Use a short desktop height
@@ -598,7 +601,7 @@ try {
   const sixMessageHeading = sixMessagePage.getByRole('heading', { name: /six short messages for one Spanish practice loop/i });
   assert.equal(await sixMessageHeading.isVisible(), true, 'Six-message Spanish practice route is not discoverable in Reader');
   assert.match(await sixMessagePage.locator('[data-reader-article]').innerText(), /six separate copy-ready messages, not six magic prompts/i, 'Six-message route omits its no-magic-prompt boundary');
-  assert.equal(await sixMessagePage.getByRole('link', { name: /Spanish practice loop/i }).count(), 1, 'Six-message route does not expose its canonical loop');
+  assert.ok(await sixMessagePage.getByRole('link', { name: 'Spanish practice loop', exact: true }).count() >= 1, 'Six-message route does not expose its canonical loop');
   const spanishCanonicalPage = await context.newPage();
   await spanishCanonicalPage.goto(`${origin}/site/reader.html?path=book%2Fspanish-practice-loop-EN.md&lang=en`, { waitUntil: 'networkidle' });
   await spanishCanonicalPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
@@ -623,7 +626,7 @@ try {
   assert.equal(await workUpdateHeading.isVisible(), true, 'Six-message work-update route is not discoverable in Reader');
   assert.equal(await workUpdatePage.locator('#six-short-work-update-messages').count(), 1, 'Reader did not preserve the six-message work-update fragment target');
   assert.match(await workUpdatePage.locator('[data-reader-article]').innerText(), /not a promise that an LLM can assess writing/i, 'Six-message work-update route omits its evidence boundary');
-  assert.equal(await workUpdatePage.getByRole('link', { name: /truthful work-update loop/i }).count(), 1, 'Six-message work-update route does not expose its canonical loop');
+  assert.ok(await workUpdatePage.getByRole('link', { name: 'truthful work-update loop', exact: true }).count() >= 1, 'Six-message work-update route does not expose its canonical loop');
   const workCanonicalPage = await context.newPage();
   await workCanonicalPage.goto(`${origin}/site/reader.html?path=book%2Fwork-update-practice-loop-EN.md&lang=en`, { waitUntil: 'networkidle' });
   await workCanonicalPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
@@ -649,8 +652,8 @@ try {
   assert.equal(await sixResearchHeading.isVisible(), true, 'Six-message research route is not discoverable in Reader');
   assert.equal(await sixResearchPage.locator('#six-short-research-messages').count(), 1, 'Reader did not preserve the six-message research fragment target');
   assert.match(await sixResearchPage.locator('[data-reader-article]').innerText(), /not a promise that an LLM can search correctly/i, 'Six-message research route omits its evidence boundary');
-  assert.equal(await sixResearchPage.getByText('1. Freeze one decision', { exact: true }).isVisible(), true, 'Six-message research route omits the first usable prompt');
-  assert.equal(await sixResearchPage.getByRole('link', { name: /bounded research-check loop/i }).count(), 1, 'Six-message research route does not expose its canonical loop');
+  assert.equal(await sixResearchPage.getByRole('link', { name: 'Freeze one decision', exact: true }).isVisible(), true, 'Six-message research route omits the first usable prompt');
+  assert.ok(await sixResearchPage.getByRole('link', { name: 'bounded research-check loop', exact: true }).count() >= 1, 'Six-message research route does not expose its canonical loop');
   const sixResearchCanonicalPage = await context.newPage();
   await sixResearchCanonicalPage.goto(`${origin}/site/reader.html?path=book%2Fresearch-check-practice-loop-EN.md&lang=en`, { waitUntil: 'networkidle' });
   await sixResearchCanonicalPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
