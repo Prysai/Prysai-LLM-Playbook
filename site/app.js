@@ -4473,69 +4473,69 @@ initGoalWizard();
 // deliberate Chapter 0 -> Chapter 1 -> Chapter 2 reading path.
 Object.assign(copy.en, {
   heroRouteAria: 'The textbook reading path',
-  heroRouteKicker: 'One reading path — follow it from the start',
+  heroRouteKicker: 'Optional textbook path',
   heroRouteLessonZero: '0 · Chapter 0: what an LLM is',
   heroRouteLessonZeroBody: '20 minutes. Tokens, context, capabilities, and the honest limits.',
   heroRouteChapterOne: '1 · Chapter 1: GPT before Codex',
   heroRouteChapterOneBody: 'Separate a model, a tool, and an agent before trusting either.',
   heroRouteChapterTwo: '2 · Chapter 2: your first safe task',
   heroRouteChapterTwoBody: 'One small task, one visible check, one receipt.',
-  heroRouteBoundary: 'Read in order. Chapter 0, Chapter 1, and Chapter 2 lead into the rest of the book — this is a route, not a menu.',
+  heroRouteBoundary: 'Use this route when you want the full foundation before trying a task. The five-minute practice remains the quickest first step.',
 });
 Object.assign(copy.zh, {
   heroRouteAria: '教科书阅读路径',
-  heroRouteKicker: '一条阅读主线——从头开始',
+  heroRouteKicker: '可选的教科书路径',
   heroRouteLessonZero: '0 · 第 0 章：LLM 是什么',
   heroRouteLessonZeroBody: '20 分钟。token、上下文、能力与诚实的边界。',
   heroRouteChapterOne: '1 · 第 1 章：先理解 GPT，再理解 Codex',
   heroRouteChapterOneBody: '在信任之前，分清模型、工具与 Agent。',
   heroRouteChapterTwo: '2 · 第 2 章：你的第一个安全任务',
   heroRouteChapterTwoBody: '一个小任务、一个可见检查、一份回执。',
-  heroRouteBoundary: '按顺序阅读。第 0、1、2 章会带你进入全书；这是一条路线，不是一组随意菜单。',
+  heroRouteBoundary: '想先打好完整基础时，再使用这条路径。5 分钟练习仍然是最快的第一步。',
 });
 Object.assign(copy.es, {
   heroRouteAria: 'Ruta de lectura del manual',
-  heroRouteKicker: 'Una sola ruta de lectura: síguela desde el principio',
+  heroRouteKicker: 'Ruta opcional del manual',
   heroRouteLessonZero: '0 · Capítulo 0: qué es un LLM',
   heroRouteLessonZeroBody: '20 minutos. Tokens, contexto, capacidades y límites honestos.',
   heroRouteChapterOne: '1 · Capítulo 1: GPT antes de Codex',
   heroRouteChapterOneBody: 'Separa un modelo, una herramienta y un agente antes de confiar en ellos.',
   heroRouteChapterTwo: '2 · Capítulo 2: tu primera tarea segura',
   heroRouteChapterTwoBody: 'Una tarea pequeña, una comprobación visible, un recibo.',
-  heroRouteBoundary: 'Lee en orden. Los capítulos 0, 1 y 2 abren el resto del libro: es una ruta, no un menú.',
+  heroRouteBoundary: 'Usa esta ruta si quieres los fundamentos completos antes de probar una tarea. La práctica de cinco minutos sigue siendo el primer paso más rápido.',
 });
 Object.assign(copy.ja, {
   heroRouteAria: '教科書の読書経路',
-  heroRouteKicker: '一つの読書経路——最初からたどる',
+  heroRouteKicker: '任意の教科書ルート',
   heroRouteLessonZero: '0 · 第0章：LLM とは',
   heroRouteLessonZeroBody: '20分。トークン、コンテキスト、能力、そして正直な限界。',
   heroRouteChapterOne: '1 · 第1章：Codex より先に GPT を理解する',
   heroRouteChapterOneBody: 'モデル・ツール・エージェントを区別してから信頼する。',
   heroRouteChapterTwo: '2 · 第2章：最初の安全なタスク',
   heroRouteChapterTwoBody: '小さなタスク、見えるチェック、レシート。',
-  heroRouteBoundary: '順番に読みましょう。第0章、第1章、第2章が本全体へ続きます。選ぶためのメニューではありません。',
+  heroRouteBoundary: 'タスクを試す前に基礎を通して学びたいときに使います。最初の一歩としては5分間の練習が最短です。',
 });
 Object.assign(copy.ko, {
   heroRouteAria: '교과서 읽기 경로',
-  heroRouteKicker: '하나의 읽기 경로 — 처음부터 따라가기',
+  heroRouteKicker: '선택 가능한 교과서 경로',
   heroRouteLessonZero: '0 · 0장: LLM이란',
   heroRouteLessonZeroBody: '20분. 토큰, 컨텍스트, 능력, 그리고 정직한 한계.',
   heroRouteChapterOne: '1 · 1장: Codex 전에 GPT 이해하기',
   heroRouteChapterOneBody: '모델·도구·에이전트를 구분한 뒤 신뢰하세요.',
   heroRouteChapterTwo: '2 · 2장: 첫 번째 안전한 과제',
   heroRouteChapterTwoBody: '작은 과제 하나, 보이는 확인 하나, 영수증 하나.',
-  heroRouteBoundary: '순서대로 읽으세요. 0장, 1장, 2장이 책 전체로 이어집니다. 고르는 메뉴가 아닙니다.',
+  heroRouteBoundary: '과제를 시도하기 전에 기초를 모두 읽고 싶을 때 사용하세요. 가장 빠른 첫 단계는 5분 연습입니다.',
 });
 Object.assign(copy.de, {
   heroRouteAria: 'Lehrbuch-Lesepfad',
-  heroRouteKicker: 'Ein Leseweg — von Anfang an folgen',
+  heroRouteKicker: 'Optionaler Lehrbuchpfad',
   heroRouteLessonZero: '0 · Kapitel 0: Was ist ein LLM',
   heroRouteLessonZeroBody: '20 Minuten. Tokens, Kontext, Fähigkeiten und ehrliche Grenzen.',
   heroRouteChapterOne: '1 · Kapitel 1: GPT vor Codex verstehen',
   heroRouteChapterOneBody: 'Trenne Modell, Werkzeug und Agent, bevor du ihnen vertraust.',
   heroRouteChapterTwo: '2 · Kapitel 2: deine erste sichere Aufgabe',
   heroRouteChapterTwoBody: 'Eine kleine Aufgabe, ein sichtbarer Check, eine Quittung.',
-  heroRouteBoundary: 'Lies der Reihe nach. Kapitel 0, 1 und 2 führen in das ganze Buch; dies ist ein Weg, kein Menü.',
+  heroRouteBoundary: 'Nutze diesen Pfad, wenn du vor einer Aufgabe zuerst die Grundlagen vollständig lesen möchtest. Die Fünf-Minuten-Übung bleibt der schnellste erste Schritt.',
 });
 
 // Keep the reader-facing homepage focused on learning. Detailed evidence and
@@ -4598,45 +4598,46 @@ Object.assign(copy.de, {
   researchBoundary: 'Lies die Quellen zusammen mit den Lehrnotizen und nutze sie als Ausgangspunkt für deine eigene Recherche.', visualCaseBoundary: 'Nutze diese Diagramme, um die Methode zu verstehen, und probiere sie dann an einer eigenen kleinen Aufgabe aus.', starterBoundaryLab: 'Grenze markieren: Lab 011', starterPractice: 'Lab 001 durchführen: Dateien und Git', openExercise: 'Übung öffnen'
 });
 
-// The first screen should answer a reader's immediate question: what can I do
-// with an LLM today? Keep the full curriculum one step away, not in the way.
+// The first screen offers one unambiguous first action. The wizard, textbook
+// route, and problem cards remain available after that action, but do not
+// compete with it in the opening viewport.
 Object.assign(copy.en, {
-  heroPrimary: 'Choose what you want to do today', heroSecondary: 'First, understand what an LLM is',
+  heroPrimary: 'Start the five-minute practice', heroSecondary: 'Read the foundation first',
   startEyebrow: 'Start here · one useful result today', startTitle: 'What do you want the model to help you do?',
   startIntro: 'Pick one real purpose. In under a minute, you will get a ready-to-use prompt and one clear next step; you do not need to understand the whole book first.',
   wizardEyebrow: 'Your first useful result', wizardTitle: 'Choose one thing you want help with now.',
   wizardIntro: 'Choose a purpose, add only the details that matter, then copy a prompt you can use in any chat model. No account, files, or setup required.'
 });
 Object.assign(copy.zh, {
-  heroPrimary: '选择你今天要完成的事', heroSecondary: '先理解 LLM 是什么',
+  heroPrimary: '开始 5 分钟练习', heroSecondary: '先读基础章节',
   startEyebrow: '从这里开始 · 今天得到一个有用结果', startTitle: '你想让大模型现在帮你做什么？',
   startIntro: '选择一个真实目的。不到一分钟，你会得到一条可直接使用的提示词和一个清晰的下一步；不必先读完整本书。',
   wizardEyebrow: '你的第一个有用结果', wizardTitle: '选择一件你现在想获得帮助的事。',
   wizardIntro: '选择目的，只补充必要信息，然后复制一条能用于任何聊天模型的提示词。不需要账号、文件或设置。'
 });
 Object.assign(copy.es, {
-  heroPrimary: 'Elige lo que quieres hacer hoy', heroSecondary: 'Primero, entiende qué es un LLM',
+  heroPrimary: 'Empieza la práctica de cinco minutos', heroSecondary: 'Lee primero los fundamentos',
   startEyebrow: 'Empieza aquí · un resultado útil hoy', startTitle: '¿En qué quieres que te ayude el modelo ahora?',
   startIntro: 'Elige un propósito real. En menos de un minuto tendrás un prompt listo para usar y un siguiente paso claro; no necesitas entender todo el libro primero.',
   wizardEyebrow: 'Tu primer resultado útil', wizardTitle: 'Elige una cosa para la que necesitas ayuda ahora.',
   wizardIntro: 'Elige un propósito, añade solo los datos necesarios y copia un prompt que puedas usar en cualquier modelo de chat. No necesitas cuenta, archivos ni configuración.'
 });
 Object.assign(copy.ja, {
-  heroPrimary: '今日やりたいことを選ぶ', heroSecondary: 'まず LLM とは何かを知る',
+  heroPrimary: '5分間の練習を始める', heroSecondary: 'まず基礎を読む',
   startEyebrow: 'ここから始める · 今日ひとつ役立つ結果を得る', startTitle: '今、モデルに何を手伝ってほしいですか？',
   startIntro: '実際の目的を一つ選んでください。1分以内に、そのまま使えるプロンプトと明確な次の一歩が得られます。本全体を先に理解する必要はありません。',
   wizardEyebrow: '最初の役立つ結果', wizardTitle: '今助けてほしいことを一つ選んでください。',
   wizardIntro: '目的を選び、必要な情報だけを加えて、どのチャットモデルでも使えるプロンプトをコピーします。アカウント、ファイル、設定は不要です。'
 });
 Object.assign(copy.ko, {
-  heroPrimary: '오늘 하고 싶은 일을 고르기', heroSecondary: '먼저 LLM이 무엇인지 이해하기',
+  heroPrimary: '5분 연습 시작하기', heroSecondary: '먼저 기초 읽기',
   startEyebrow: '여기서 시작 · 오늘 유용한 결과 하나', startTitle: '지금 모델이 무엇을 도와주면 좋겠나요?',
   startIntro: '실제 목적 하나를 고르세요. 1분 안에 바로 쓸 수 있는 프롬프트와 명확한 다음 단계가 생깁니다. 먼저 책 전체를 이해할 필요는 없습니다.',
   wizardEyebrow: '첫 번째 유용한 결과', wizardTitle: '지금 도움받고 싶은 일 하나를 고르세요.',
   wizardIntro: '목적을 고르고 필요한 정보만 추가한 뒤, 어떤 채팅 모델에도 쓸 수 있는 프롬프트를 복사하세요. 계정, 파일, 설정이 필요 없습니다.'
 });
 Object.assign(copy.de, {
-  heroPrimary: 'Wähle, was du heute tun möchtest', heroSecondary: 'Zuerst verstehen, was ein LLM ist',
+  heroPrimary: 'Mit der Fünf-Minuten-Übung beginnen', heroSecondary: 'Zuerst die Grundlagen lesen',
   startEyebrow: 'Hier beginnen · heute ein nützliches Ergebnis', startTitle: 'Wobei soll dir das Modell jetzt helfen?',
   startIntro: 'Wähle einen echten Zweck. In weniger als einer Minute erhältst du einen einsatzbereiten Prompt und einen klaren nächsten Schritt; du musst nicht zuerst das ganze Buch verstehen.',
   wizardEyebrow: 'Dein erstes nützliches Ergebnis', wizardTitle: 'Wähle eine Sache, bei der du jetzt Hilfe möchtest.',
