@@ -25,11 +25,11 @@
     "workflow_run_url": "https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32077857456"
   },
   "rollback": {
-    "status": "unavailable",
+    "status": "rehearsed",
     "target": "v0.1.0-alpha",
-    "rehearsal_record": "",
-    "rehearsed_at": "",
-    "reviewed_by": ""
+    "rehearsal_record": "docs/quality/rollback-rehearsal-v0.1.0-alpha-2026-08-17.md",
+    "rehearsed_at": "2026-08-17",
+    "reviewed_by": "Prysai"
   },
   "maintenance": {
     "status": "candidate",
@@ -40,6 +40,6 @@
   "known_gaps": [
     "The current main candidate may be newer than the last successful workflow evidence and is not itself a release.",
     "The recorded candidate evidence is bound to the last successful workflow commit and remains candidate_only, not accepted release evidence.",
-    "The v0.1.0-alpha tag is a rollback reference, but no bounded rollback rehearsal record exists."
+    "The rollback rehearsal covers only isolated snapshot restoration and a temporary Pages rebuild; production deployment controls, cache invalidation, and live rollback remain untested."
   ]
 }
