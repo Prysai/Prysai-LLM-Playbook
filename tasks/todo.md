@@ -1,36 +1,76 @@
-# Multilingual release hardening checklist
+# LLM 基础核心重构执行清单
 
-## Baseline
+## Phase 0：方向与止损
 
-- [ ] Reconcile license files, source register, and governance claims.
-- [ ] Record current public/release/Pages/CI state without treating it as a
-      learning or quality result.
+- [ ] Task 1：统一章程、路线图和 README 的核心产品契约。
+- [ ] Task 2：冻结新章节、Lab、Skill、平台、语言和非核心治理扩张。
+- [ ] Task 3：将现有资产分类为核心、选修、参考和归档候选。
 
-## Six-language first path
+### Checkpoint A
 
-- [ ] Verify English, 简体中文, Español, 日本語, 한국어, and Deutsch entries.
-- [ ] Verify same-locale Reader links, anchors, search results, and fallbacks.
-- [ ] Review the fundamentals → boundaries → first safe task sequence in all
-      six locales.
+- [ ] 一分钟内可说明首要用户、五项核心结果和暂不做事项。
+- [ ] 每项当前工作都能映射到一个核心结果和学习者证据。
 
-## Content and draft boundary
+## Phase 1：定义学习证据
 
-- [ ] Remove reader-facing draft detours from the default route.
-- [ ] Keep draft/not-run evidence in governance and label it accurately.
-- [ ] Remove repetition, unsupported guarantees, and AI-sounding filler found
-      during the first-path review.
+- [ ] Task 4：建立五项核心能力的 0–2 级 rubric 和固定评分夹具。
+- [ ] Task 5：建立五单元核心路线机器可读契约及负例测试。
 
-## Skills and sources
+## Phase 2：五个竖向教学单元
 
-- [ ] Validate every project Skill and its machine contract.
-- [ ] Confirm external Skill records include target URL and license boundary.
-- [ ] Add a Skill only when a documented gap and focused evaluation exist.
+- [ ] Task 6：完成“LLM 是什么、又不是什么”。
+- [ ] Task 7：完成“上下文、指令与第一次生成”。
+- [ ] Task 8：完成“遗漏、编造、歧义和过度自信”。
+- [ ] Task 9：完成“检查、最小修正与限制说明”。
+- [ ] Task 10：完成无完整模板的未见任务综合实践。
 
-## Visual and release gates
+### Checkpoint B
 
-- [ ] Run `npm run test:browser` and inspect desktop/mobile evidence.
-- [ ] Run the full Python validation suite and `git diff --check`.
-- [ ] Generate commit-bound release evidence.
-- [ ] Confirm rollback and maintenance ownership before any ready claim.
-- [ ] Commit and push each reviewed slice; report local, remote, and CI states
-      separately.
+- [ ] 从零到综合实践无需进入 Codex、Agent 或 Skill 文档。
+- [ ] 五个单元均产生可评分学习产物。
+- [ ] 内部完整试跑时间为 90–120 分钟，卡点已记录。
+
+## Phase 3：入口与产品体验
+
+- [ ] Task 11：首页只保留一个主要行动——开始第一次 LLM 实践。
+- [ ] Task 12：Reader 显示核心进度、学习产物和本地回执。
+- [ ] Task 13：把 22 章、Labs、Skills 和专业轨重组为分层参考入口。
+
+### Checkpoint C
+
+- [ ] 桌面与 390px 视口均可完成核心路线。
+- [ ] 旧深链接有效或有明确迁移路径。
+- [ ] 高级材料可访问但不再阻断初学者。
+
+## Phase 4：验证与学习者观察
+
+- [ ] Task 14：建立一条核心路线阻断门禁并运行完整回归。
+- [ ] Task 15：获得明确授权后执行 5–8 人首轮可用性观察。
+- [ ] Task 16：根据首轮证据修订，并用新参与者执行第二轮门禁。
+
+### Checkpoint D
+
+- [ ] 工程通过与学习效果未知在报告中明确分开。
+- [ ] 两名评分者的原始评分和分歧均被保留。
+- [ ] 退出、缺失和求助不会被包装为独立成功。
+
+## Phase 5：候选发布与有限恢复
+
+- [ ] Task 17：发布 commit-bound 的“LLM 基础核心 v1”候选版。
+- [ ] Task 18：按用户需求、负责人和验证计划恢复翻译或进阶轨。
+
+## 当前禁止事项
+
+- [ ] 不新增章节、Lab、Skill、平台适配器或语言。
+- [ ] 不以文件数、CI 通过或页面可访问宣称学习有效。
+- [ ] 不在核心路线稳定前继续全量六语言同步。
+- [ ] 不把 Codex、Agent、MCP、Plugin 或 Skill 作为理解 LLM 的前置知识。
+- [ ] 不以增加内容解决学习者完成率或理解问题。
+
+## 最终完成门槛
+
+- [ ] 默认入口已变成 LLM 基础与实践。
+- [ ] 五项核心能力均有解释、操作、检查和未见任务证据。
+- [ ] 两轮真实学习者观察完成，限制公开。
+- [ ] 候选标签、证据包、公开站点和回滚目标指向同一 commit。
+- [ ] 高级内容不再与核心主线争夺优先级。

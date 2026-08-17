@@ -1,214 +1,606 @@
-# Implementation plan: multilingual release hardening
+# 项目质量提升完整计划：重新聚焦 LLM 理解与上手实践
 
-## Overview
+## 1. 裁决与目标
 
-Make the candidate Playbook easier to start, safer to trust, and honest about
-what has and has not been validated. The release slice is intentionally
-vertical: a reader should be able to choose a language, follow one coherent
-30–60 minute first path, perform a low-risk task, and inspect the evidence and
-limits without being sent through unrelated draft material.
+当前项目的问题不是缺少内容，而是产品优先级失衡：22 章、18 个 Lab、25 个
+Skills、六语言路线、评测框架和发布治理同时发展，导致“让普通读者理解 LLM，
+并亲手完成第一次可靠实践”没有成为唯一清晰的入口和最先被验证的产品能力。
 
-This plan covers the public learning surface and its governance. It does not
-claim that six machine-assisted translations are native-reviewed, that labs
-have learner evidence, or that the product is ready merely because structural
-checks pass.
+本计划把项目重新定义为：
 
-## Architecture decisions
+> 一套面向初学者的 LLM 基础与实践课程。读者先理解语言模型能做什么、为什么会
+> 出错、怎样给出上下文以及怎样检查结果；然后才进入 Codex、工具、Agent、Skill
+> 和团队工作流。
 
-- Keep English as the canonical source and keep explicit `-EN`, `-ZH`, `-ES`,
-  `-JA`, `-KO`, and `-DE` content identities. A locale path must never silently
-  substitute another language.
-- Treat the first path as a small deterministic route: LLM fundamentals →
-  model/tool/agent boundaries → first safe task → first-safe-change fixture →
-  Lab 001. Optional labs remain available but are not presented as completed
-  learner evidence.
-- Preserve research, audit, and run records even when reader-facing draft
-  detours are removed. Evidence is not reader copy and must not be deleted to
-  make status look better.
-- Keep project-owned Skills separate from imported references. Every external
-  reference needs a target URL, license/provenance record, and a bounded
-  trigger; no Skill is added solely to increase the count.
-- Use existing red/black editorial visuals. Fix information hierarchy, labels,
-  and responsive behavior before considering new artwork.
+计划不删除已有高级内容和历史证据。它改变的是优先级、默认入口、课程层级和发布
+门槛。在核心课程通过真实学习者测试之前，停止以章节数、Skill 数、语言文件数和
+验证脚本数扩大产品范围。
 
-## Task list
+## 2. 产品北极星
 
-### Phase 1: Release baseline and license boundary
+### 2.1 首要用户
 
-#### Task 1: Reconcile release status and licensing
+主要用户是使用过 ChatGPT 或类似聊天产品、但不能清楚解释 LLM 工作边界，也没有
+系统验证输出习惯的成年人。开发者、研究者和团队负责人是后续进阶用户，不再决定
+第一条学习路径的复杂度。
 
-**Description:** Compare the public README, license files, source register, and
-governance status. Resolve only evidence-backed contradictions and record any
-remaining blockers explicitly.
+### 2.2 核心承诺
 
-**Acceptance criteria:**
+一名初学者应能在 15 分钟内获得第一次可检查结果，在 90–120 分钟内完成核心路线，
+并留下以下五类可审查证据：
 
-- [ ] `LICENSE`, `LICENSE-CODE`, `docs/sources/licensing.md`, and the asset
-      register describe the same content/code boundary.
-- [ ] No claim says `verified` or `production-ready` without the named evidence.
-- [ ] Release readiness still names tag, evidence, rollback, and maintenance
-      blockers when they are absent.
+1. 用自己的话解释 LLM 是基于上下文预测输出的模型，而不是事实数据库或行动主体；
+2. 区分模型、聊天产品、工具和 Agent，不把产品能力误归因给模型本身；
+3. 写出包含目标、必要上下文、约束和输出要求的简短指令；
+4. 发现一次遗漏、无依据添加或错误完成声明，并完成最小修正；
+5. 在一个未见任务中独立重复“定义 → 尝试 → 检查 → 修正 → 说明限制”。
 
-**Verification:** `validate_content_status.py`, `validate_release_readiness.py`,
-`validate_project.py`, and `git diff --check`.
+这五项只代表“完成 LLM 基础核心路线”，不代表长期掌握、职业能力、生产力提升或
+跨领域迁移。
 
-**Dependencies:** None
+### 2.3 不再作为首发门槛的内容
 
-### Phase 2: Six-language first path
+- Codex 安装、界面和高级工作面；
+- Plugin、MCP、Skill 设计与安装；
+- 多 Agent 编排、团队治理和发布流程；
+- 工程、研究、营销、设计等专业轨；
+- 六语言完全同步；
+- 大规模评测框架和新的治理自动化。
 
-#### Task 2: Make every public locale entry purposeful
+这些内容保留为 `advanced`、`reference` 或 `experimental`，只有在核心路线通过门禁
+后才继续扩展。
 
-**Description:** Ensure each supported language has a real entry surface,
-same-language navigation, a localized first-path summary, and a clear fallback
-when a translation is not independently reviewed.
+## 3. 新课程架构
 
-**Acceptance criteria:**
+### 3.1 课程层级
 
-- [ ] Six locale entries expose the same first-path sequence and language
-      identity.
-- [ ] English paths contain no reader-facing non-English prose or links.
-- [ ] Missing or in-progress translations are labelled rather than silently
-      presented as complete.
+```text
+第一次成功（5–15 分钟）
+        ↓
+LLM 基础核心（必修，90–120 分钟）
+        ├── 1. LLM 是什么、又不是什么
+        ├── 2. 上下文、指令与第一次生成
+        ├── 3. 为什么会遗漏、编造和不确定
+        ├── 4. 如何检查、修正和说明限制
+        └── 5. 未见任务综合实践
+        ↓
+平台实践轨（选修）
+        ├── 通用聊天模型
+        └── Codex 旗舰轨
+        ↓
+专业与组织进阶（参考）
+        ├── 工程 / 研究 / 内容等专业轨
+        └── Tool / Agent / Skill / 团队治理
+```
 
-**Verification:** `audit_locale_release_paths.py`,
-`audit_first_path_localization.py`, `validate_site_i18n.py`, local-link checks,
-and the real-browser smoke suite at desktop and 390px widths.
+### 3.2 五个必修单元
 
-**Dependencies:** Task 1
+| 单元 | 学习问题 | 必须产生的学习者证据 | 主要复用内容 |
+|---|---|---|---|
+| 1. 认识 LLM | 它如何生成文字，为什么流畅不等于真实？ | 解释卡和概念边界判断 | Chapter 0、Chapter 1 |
+| 2. 第一次生成 | 上下文和指令怎样改变输出？ | 原始输入、第一次输出、四字段任务卡 | Chapter 2、Chapter 3、First Win |
+| 3. 认识失败 | 遗漏、无依据添加、歧义和过度自信怎样出现？ | 对固定错误答案的标注 | Communication Clinic、Lab 011 |
+| 4. 检查与修正 | 怎样用来源、验收项和最小修改检查结果？ | 检查表、修正前后差异、限制说明 | Chapter 9、Lab 003 |
+| 5. 综合实践 | 能否在没有范例的情况下重复方法？ | 未见任务的完整学习回执 | First Win pilot 的即时迁移任务 |
 
-#### Task 3: Audit and tighten the first-path teaching units
+### 3.3 Codex 的位置
 
-**Description:** Review the fundamentals guide, Chapters 1–2, first-safe-change
-route, Lab 001, Lab 011, and Communication Clinic in all six locales. Fix only
-demonstrable drift: missing objective, impossible prompt, wrong status word,
-cross-locale link, unsupported platform claim, repetition, or AI-sounding
-filler.
+Codex 不再是理解 LLM 的前置条件。完成核心路线后，读者可以进入 Codex 旗舰轨，
+把同一方法用于文件、终端、浏览器和 Git。Codex 轨的第一个成果仍可以是 First Safe
+Change，但它是平台实践，不再承担解释整个 LLM 基础的责任。
 
-**Acceptance criteria:**
+## 4. 强制范围控制
 
-- [ ] Each first-path unit states a problem, action, observable evidence,
-      failure/boundary, and acceptance check.
-- [ ] Copy-ready prompts include a user goal, context, constraints, and a
-      request for uncertainty or evidence; none promise guaranteed outcomes.
-- [ ] Terminology and status vocabulary remain consistent across locales.
+从计划获批到核心课程 v1 完成首轮学习者测试期间执行以下冻结：
 
-**Verification:** localized learning-contract and translation-depth audits,
-focused content review, and the six-locale browser smoke path.
+- 不新增章节、Lab、Skill、平台适配器或语言；
+- 不新增与核心路线无直接关系的治理契约和验证脚本；
+- 非阻断性的高级内容、视觉美化和 SEO 工作进入 backlog；
+- 六语言现有页面继续可访问，但除英语核心源和必要的中文校对外，只修复事实错误、
+  断链和安全问题；
+- 任何任务必须回答“它改善五项核心学习结果中的哪一项”，否则不进入当前迭代。
 
-**Dependencies:** Task 2
+解除冻结需要同时满足：核心路线可完整运行、至少 5 名目标学习者完成首轮观察、
+关键失败得到修正、两名评分者能够使用同一 rubric、项目没有把试验结果写成普遍效果。
 
-### Phase 3: Public draft boundary and capability registry
+## 5. 依赖关系
 
-#### Task 4: Remove reader-facing draft detours
+```text
+北极星与范围冻结
+        ↓
+资产分流清单 ──→ 学习结果与评分规则
+        ↓                   ↓
+新导航与课程契约 ──────────┘
+        ↓
+五个必修单元（逐个竖向完成）
+        ↓
+核心综合实践与学习回执
+        ↓
+首页 / Reader 默认入口重构
+        ↓
+自动检查与真实浏览器 QA
+        ↓
+5–8 人首轮观察 → 修订 → 第二轮门禁
+        ↓
+核心 v1 候选发布 → 恢复选定的进阶工作
+```
 
-**Description:** Keep draft labs and unrun evidence in governance, but stop
-presenting them as the default route or as validated exercises. Make the
-optional status visible where a reader can reach the item.
+## 6. 分阶段任务
 
-**Acceptance criteria:**
+### Phase 0：止损与基线
 
-- [ ] Homepage and locale routes lead to candidate first-path material first.
-- [ ] Draft/not-run labels remain accurate in source and registry data.
-- [ ] Research notes and audit records remain intact and discoverable to
-      contributors.
+#### Task 1：确立核心课程产品契约
 
-**Verification:** content-status validation, first-path audit, site accessibility
-and browser navigation checks.
+**说明：** 更新章程和路线图，明确首要用户、五项核心结果、90–120 分钟核心路线及
+Codex/Skills/Agent 的选修地位。建立一份一页式产品契约，作为后续内容和功能的准入
+依据。
 
-**Dependencies:** Task 3
+**验收标准：**
 
-#### Task 5: Tighten Skill provenance and routing
+- [ ] 章程、路线图和 README 对首要用户与核心承诺使用同一表述；
+- [ ] 每项核心结果都有可观察的学习者证据，不使用“精通”等不可验收词；
+- [ ] 高级内容被明确标为核心之后的选修或参考材料。
 
-**Description:** Audit the Skill registry and selected project-owned Skills for
-triggers, exclusions, inputs/outputs, failure handling, and provenance. Add no
-new Skill unless it closes a documented beginner or maintainer gap.
+**验证：** 人工对照三份入口文档；运行 `validate_project.py`、本地链接检查和
+`git diff --check`。
 
-**Acceptance criteria:**
+**依赖：** 无
 
-- [ ] Every listed Skill has a valid machine contract and quality metadata.
-- [ ] Imported references include their target URL and license boundary.
-- [ ] Beginner routing explains why a Skill fits and when it should not run.
+**可能涉及：** `docs/charter.md`、`docs/roadmap.md`、`README.md`、
+`docs/product/core-course-contract.md`
 
-**Verification:** `validate_skills.py`, the official Skill validator,
-`validate_skill_registry.py`, `validate_skill_routing_contract.py`, and a
-fresh-context adversarial review.
+**规模：** M
 
-**Dependencies:** Task 4
+#### Task 2：建立范围冻结和工作准入规则
 
-### Phase 4: Visual and release evidence
+**说明：** 将暂停事项、允许的维护事项、解除冻结门槛和 backlog 入口写成可审查规则，
+防止计划执行期间继续增加无验证的横向范围。
 
-#### Task 6: Perform visual and interaction QA
+**验收标准：**
 
-**Description:** Inspect the homepage, localized entry points, first-path
-reader, practice pack, and representative teaching visuals in a real browser.
-Prefer layout and hierarchy fixes over generated artwork.
+- [ ] 新内容必须映射到一项核心学习结果和一个学习者证据；
+- [ ] 新 Skill、平台、语言和专业轨默认不进入当前里程碑；
+- [ ] 安全、事实错误、断链和数据损坏仍有明确的例外处理路径。
 
-**Acceptance criteria:**
+**验证：** 用三个允许案例和三个拒绝案例人工走查准入规则。
 
-- [ ] No horizontal overflow, dead arrows, random jumps, or console errors at
-      desktop and mobile widths.
-- [ ] The first action and route purpose are understandable without reading the
-      repository.
-- [ ] Visual assets use the existing restrained red/black editorial system and
-      remain legible on small screens.
+**依赖：** Task 1
 
-**Verification:** `npm run test:browser`, screenshot inspection, and
-`validate_site_accessibility.py`.
+**可能涉及：** `CONTRIBUTING.md`、`docs/governance/core-release-scope.md`
 
-**Dependencies:** Tasks 2–4
+**规模：** S
 
-#### Task 7: Build release evidence and a reversible handoff
+#### Task 3：把现有资产分为核心、选修、参考和归档候选
 
-**Description:** Re-run all relevant validators, generate commit-bound release
-evidence, and document the exact remaining blockers. Do not create a release
-tag or claim readiness until the evidence and rollback target exist.
+**说明：** 逐项盘点 22 章、18 Labs、25 Skills、补充路线和首页入口。只做分类和依赖
+记录，不在此任务中重写内容或删除证据。
 
-**Acceptance criteria:**
+**验收标准：**
 
-- [ ] Local validators and browser checks pass or their failures are recorded.
-- [ ] The evidence packet names the exact commit, checks, blind spots, and
-      rollback boundary.
-- [ ] A release candidate can be reverted to a known commit without deleting
-      user data or pretending that unrun labs are verified.
+- [ ] 每项公开教学资产只有一个主分类和一个明确入口；
+- [ ] 五个核心单元只引用完成其学习结果所需的最少材料；
+- [ ] 重复、失去归属或无法解释价值的内容进入归档候选，而不是继续占据默认导航。
 
-**Verification:** full project test suite, `validate_release_readiness.py`,
-`build_release_evidence.py --check`, remote workflow status, and a final
-critical review.
+**验证：** 分类数量与现有注册表一致；随机抽查每类至少三项；本地链接保持有效。
 
-**Dependencies:** Tasks 1–6
+**依赖：** Tasks 1–2
 
-## Checkpoints
+**可能涉及：** `docs/governance/core-content-inventory.yaml`、
+`docs/governance/book-navigation.yaml`、`docs/governance/content-status.yaml`
 
-### Checkpoint A: Baseline
+**规模：** M
 
-- [ ] License/status boundary is internally consistent.
-- [ ] The working tree is clean before the first content slice.
+### Checkpoint A：产品方向
 
-### Checkpoint B: First path
+- [ ] 任意维护者能在一分钟内说明项目首要用户、核心结果和暂不做事项；
+- [ ] 首页、课程、Codex 和 Skills 的层级不再互相冲突；
+- [ ] 后续每个任务都能追溯到核心产品契约。
 
-- [ ] Six locales expose the same purpose and sequence.
-- [ ] The first path works in a real browser at 390px and desktop widths.
+### Phase 1：定义“学会”的证据
 
-### Checkpoint C: Release handoff
+#### Task 4：建立核心能力与评分 rubric
 
-- [ ] Draft and not-run evidence remains honest and out of the default route.
-- [ ] All required checks and remote workflow results are reported separately.
+**说明：** 为五项学习结果定义 0–2 级评分、可接受辅助、失败类型和停止条件。评分重点
+是解释、操作、检查和迁移，不评价文风、信心或 Prompt 长度。
 
-## Risks and mitigations
+**验收标准：**
 
-| Risk | Impact | Mitigation |
+- [ ] 每项结果都有 `未表现 / 部分表现 / 独立表现` 的可观察描述；
+- [ ] 正确答案、错误答案和边界答案各至少有一个评分夹具；
+- [ ] 两名试评分者对固定夹具的分歧能够被记录而不是平均隐藏。
+
+**验证：** 运行 rubric fixture 测试；人工双评分至少六份固定答案。
+
+**依赖：** Task 1
+
+**可能涉及：** `docs/quality/core-course-rubric-v1.md`、
+`evals/candidates/core-course-v1/`
+
+**规模：** M
+
+#### Task 5：建立核心课程机器可读契约
+
+**说明：** 建立独立于 22 章完整导航的核心路线契约，记录单元顺序、预计时间、前置条件、
+输入、产物、失败分支、通过证据和下一步。
+
+**验收标准：**
+
+- [ ] 五个单元及第一次成功入口具有唯一顺序和唯一内容身份；
+- [ ] 每单元最多引入三个新概念，并以一次操作结束；
+- [ ] 缺失产物、错误顺序或指向高级草稿时，契约验证失败。
+
+**验证：** 新增正例与负例 fixture；运行核心契约、导航和链接检查。
+
+**依赖：** Tasks 3–4
+
+**可能涉及：** `docs/governance/core-course.yaml`、
+`scripts/validate_core_course.py`、`scripts/test_core_course.py`
+
+**规模：** M
+
+### Phase 2：竖向完成五个必修单元
+
+每个单元必须同时完成教学正文、练习、学习回执和验证，不能先批量写完全部正文再补实践。
+
+#### Task 6：单元 1——LLM 是什么、又不是什么
+
+**说明：** 将现有 Chapter 0 和 Chapter 1 压缩成一个初学者可完成的基础单元：预测生成、
+token、上下文、训练与当前对话的区别，以及“流畅不等于事实”。模型、产品、工具、Agent
+只讲能避免误解的最低边界。
+
+**验收标准：**
+
+- [ ] 读者无需 Codex、Git 或终端即可完成；
+- [ ] 单元包含一个预测小实验和一个模型/产品边界判断；
+- [ ] 结尾要求学习者用自己的话作答，而不是复制定义。
+
+**验证：** 学习契约检查、内容评审、固定概念题走查和桌面/移动 Reader 检查。
+
+**依赖：** Task 5
+
+**可能涉及：** `book/guides/llm-fundamentals-EN.md`、核心练习与 Reader 投影文件
+
+**规模：** M
+
+#### Task 7：单元 2——上下文、指令与第一次生成
+
+**说明：** 用一个无账户私密数据、无外部副作用的文本任务展示目标、上下文、约束和输出
+格式如何改变结果，并保留第一次输出以供后续比较。
+
+**验收标准：**
+
+- [ ] 学习者能用四字段任务卡发起一次真实模型对话；
+- [ ] 练习允许不同模型输出，不依赖某一产品按钮；
+- [ ] 回执保存输入、首次输出和未知项，不收集私人对话历史。
+
+**验证：** 使用至少两个不同合格输出和两个失败输出走查；验证回执字段完整性。
+
+**依赖：** Task 6
+
+**可能涉及：** `book/chapters/02-first-safe-task-EN.md`、
+`book/chapters/03-task-protocol-EN.md`、核心练习文件
+
+**规模：** M
+
+#### Task 8：单元 3——认识 LLM 的常见失败
+
+**说明：** 以固定短文本呈现遗漏、无依据添加、歧义强行补全和过度自信四种可见失败，
+避免在入门阶段扩展到庞大的安全或评测术语体系。
+
+**验收标准：**
+
+- [ ] 四种失败各有一个短例子和一个“为什么无法据此判断”的边界；
+- [ ] 学习者必须标出原文证据，不能只选择正确/错误；
+- [ ] 示例不把单次模型表现推广为某模型的整体质量。
+
+**验证：** 固定答案评分、负例测试和非技术读者语言审查。
+
+**依赖：** Task 7
+
+**可能涉及：** `book/communication-clinic-EN.md`、核心失败练习文件
+
+**规模：** M
+
+#### Task 9：单元 4——检查、修正与说明限制
+
+**说明：** 教授一个最小检查循环：逐项对照来源、标记 `PASS/FAIL/UNSURE`、修正最少内容、
+记录仍未证明部分。只引入完成练习所需的证据概念。
+
+**验收标准：**
+
+- [ ] 学习者能指出第一个失败检查并给出原文依据；
+- [ ] 修正结果不引入新的无依据事实；
+- [ ] 回执同时保存修正前后差异和一句限制声明。
+
+**验证：** 正例、遗漏、编造和无需修正四种 fixture；人工对照 rubric。
+
+**依赖：** Task 8
+
+**可能涉及：** `book/chapters/09-verification-and-recovery-EN.md`、
+`book/labs/lab-003-evidence-review-EN.md`、核心检查卡
+
+**规模：** M
+
+#### Task 10：单元 5——未见任务综合实践
+
+**说明：** 提供一个与教学例子领域不同、但难度相当的未见任务。学习者不能获得完整 Prompt
+或答案模板，必须独立完成定义、生成、检查、修正和限制说明。
+
+**验收标准：**
+
+- [ ] 综合任务在展示范例前锁定学习者首次答案；
+- [ ] 完成记录覆盖五项核心学习结果并允许记录求助；
+- [ ] 首次输出正确时，仍需有独立检查证据，不能自动算作学会。
+
+**验证：** 使用固定 rubric 双评分；测试示例提前暴露、缺失记录和正确首次输出三种分支。
+
+**依赖：** Tasks 4、9
+
+**可能涉及：** `evals/candidates/core-course-v1/`、核心综合练习和记录模板
+
+**规模：** M
+
+### Checkpoint B：完整学习闭环
+
+- [ ] 新读者可从零开始连续完成五个单元，不进入 Codex 或 Skills 文档；
+- [ ] 每单元都产生可评分产物，而不是只有阅读完成标记；
+- [ ] 完整路线在内部试跑中为 90–120 分钟，超时点有记录；
+- [ ] 核心之外的内容不再阻断、打断或伪装成必修步骤。
+
+### Phase 3：产品入口与交互
+
+#### Task 11：重构首页为单一首要行动
+
+**说明：** 首页首屏只回答“这是什么、我会学到什么、现在做什么”。将第一次成功和五单元
+核心路线放在主层；平台选择、Codex、Skills、专业轨和项目治理进入次级导航。
+
+**验收标准：**
+
+- [ ] 首屏只有一个主要 CTA：开始第一次 LLM 实践；
+- [ ] 用户不理解 Codex、Agent 或 Skill 也能开始；
+- [ ] 高级内容仍可访问，但不会出现在完成核心路线之前的必经路径。
+
+**验证：** 桌面与 390px 浏览器检查；键盘导航、控制台错误和入口点击路径检查。
+
+**依赖：** Tasks 5、10
+
+**可能涉及：** `site/index.html`、`site/app.js`、`site/styles.css`、站点数据文件
+
+**规模：** M
+
+#### Task 12：让 Reader 支持核心进度与学习回执
+
+**说明：** Reader 清楚显示当前单元、预计时间、需要提交的学习产物和下一步。进度只存储在
+本地浏览器，不上传个人输入；没有产物时不能仅凭点击宣称完成。
+
+**验收标准：**
+
+- [ ] 五单元顺序、当前状态和返回路径始终可见；
+- [ ] 学习者可以导出或复制自己的非敏感学习回执；
+- [ ] 刷新、语言切换和移动布局不会丢失或错指核心路线。
+
+**验证：** 浏览器 smoke、无 JavaScript 降级检查、移动/桌面人工 QA 和隐私边界评审。
+
+**依赖：** Task 11
+
+**可能涉及：** `site/reader.html`、`site/reader.js`、`site/reader.css`、核心路线数据
+
+**规模：** M
+
+#### Task 13：把完整目录改成分层参考入口
+
+**说明：** 保留 22 章、Labs、Skills 和研究档案，但默认目录先展示核心路线，再展示 Codex
+实践轨和高级参考。所有 `draft/not_run` 状态继续公开，不通过隐藏状态制造成熟度。
+
+**验收标准：**
+
+- [ ] 核心、平台实践、专业进阶和参考档案四层在导航中可区分；
+- [ ] 一项内容不会同时被标成核心必修和实验参考；
+- [ ] 所有旧深链接仍有效或有明确迁移目标。
+
+**验证：** 导航生成检查、本地链接、旧 URL fixture 和 Reader 浏览器回归。
+
+**依赖：** Tasks 3、11
+
+**可能涉及：** `docs/governance/book-navigation.yaml`、目录、站点 catalog 和搜索索引
+
+**规模：** M
+
+### Checkpoint C：核心产品体验
+
+- [ ] 桌面与 390px 视口均可从首页完成核心路线；
+- [ ] 旧深链接有效或具有明确迁移目标；
+- [ ] 高级材料仍可访问，但不会打断或阻断初学者；
+- [ ] 刷新、返回和语言切换不会错置当前核心单元。
+
+### Phase 4：验证与真实学习者证据
+
+#### Task 14：建立与产品目标成比例的核心质量门禁
+
+**说明：** 保留现有全仓库检查，但为核心路线建立一条短而明确的阻断门禁：内容身份、顺序、
+练习产物、状态诚实性、链接、可访问性和浏览器主流程。避免以 93 项工程检查掩盖核心学习
+流程不可用。
+
+**验收标准：**
+
+- [ ] 一条命令可验证核心路线的全部静态与浏览器契约；
+- [ ] 缺少学习产物、错误导航或把 `not_run` 写成完成会导致失败；
+- [ ] 输出明确区分工程通过与学习效果未知。
+
+**验证：** 正常运行和至少五个故障注入 fixture；完整测试套件保持通过。
+
+**依赖：** Tasks 5–13
+
+**可能涉及：** `scripts/validate_core_course.py`、`scripts/test_core_course.py`、
+`package.json`、CI workflow
+
+**规模：** M
+
+#### Task 15：执行 5–8 人首轮可用性观察
+
+**说明：** 使用现有 First Win protocol 的隐私和独立评分原则，但将研究对象改为完整五单元核心
+路线。首轮目的是发现工具和课程问题，不是证明课程有效。
+
+**验收标准：**
+
+- [ ] 固定同一 commit、入口、rubric、模型条件和数据保留期限；
+- [ ] 记录开始率、完成率、每单元耗时、首个卡点、帮助使用和未见任务表现；
+- [ ] 两名评分者独立评分，退出和缺失数据不会被算作成功或零分。
+
+**验证：** 试验包完整性检查、去标识化记录审计和评分分歧复核。
+
+**依赖：** Task 14；执行前需要项目所有者单独确认招募、隐私与人员角色
+
+**可能涉及：** `docs/quality/core-course-pilot-v1.md`、本地忽略的 pilot 包、去标识汇总
+
+**规模：** M
+
+#### Task 16：按证据修订并运行第二轮门禁
+
+**说明：** 将首轮问题按“课程内容、交互、测量工具、用户不匹配”分类，每次只修正一个可解释
+变量。第二轮仍使用 5–8 名未使用过该课程的目标用户，不复用首轮参与者制造进步表象。
+
+**验收标准：**
+
+- [ ] 每项修订都对应首轮观察，不新增无关范围；
+- [ ] 预先声明第二轮主要指标和停止条件；
+- [ ] 报告原始人数与分布，不把小样本写成普遍有效。
+
+**验证：** 版本差异审查、协议一致性检查和两轮描述性结果对照。
+
+**依赖：** Task 15
+
+**可能涉及：** 受影响的核心单元、pilot 协议、聚合报告
+
+**规模：** M
+
+### Checkpoint D：学习者证据
+
+- [ ] 工程检查通过与学习效果未知被明确分开；
+- [ ] 两轮观察保留人数、退出、帮助、原始评分和评分分歧；
+- [ ] 修订可以追溯到观察证据，而不是继续横向增加内容；
+- [ ] 结果没有被推广到未测试的人群、任务、模型或长期效果。
+
+### Phase 5：候选发布与后续恢复
+
+#### Task 17：发布“LLM 基础核心 v1”候选版
+
+**说明：** 只有在静态门禁、真实浏览器流程、首轮修订和第二轮门禁完成后，创建对应 commit 的
+候选发布证据。发布名称强调 LLM 基础核心，不把整个高级资料库声明为已验证。
+
+**验收标准：**
+
+- [ ] 发布标签、证据包和可回滚目标指向同一 commit；
+- [ ] 发布说明列出已观察结果、样本边界、已知缺点和未验证高级内容；
+- [ ] README、站点和治理状态使用一致的 `candidate` 或更保守状态。
+
+**验证：** 发布就绪检查、回滚演练、远端 Actions 和线上核心路径复测。
+
+**依赖：** Tasks 14–16
+
+**可能涉及：** release readiness、changelog、release evidence 和公开入口
+
+**规模：** M
+
+#### Task 18：按门禁恢复翻译和进阶轨
+
+**说明：** 核心 v1 稳定后，先把已验证的核心结构迁移到一个目标语言，并单独做母语审查与
+学习者观察；随后再决定恢复哪些 Codex、Skill 或专业轨工作。目录数量不是恢复依据。
+
+**验收标准：**
+
+- [ ] 每个恢复项有明确用户需求、负责人、维护成本和验证计划；
+- [ ] 翻译需要独立语言审查，不以文件数量代表完成；
+- [ ] 连续两个评审周期无使用或无负责人内容进入归档评估。
+
+**验证：** 恢复决策记录、语言审查证据和对应轨道的独立验收。
+
+**依赖：** Task 17
+
+**可能涉及：** roadmap、content status、locale matrix 和对应选修内容
+
+**规模：** S（每个恢复决定）；实施另行拆分
+
+## 7. 量化指标与发布门禁
+
+### 7.1 工程门禁
+
+- 核心路线静态检查和浏览器主流程全部通过；
+- 首页到综合实践不存在断链、循环导航或高级内容强制跳转；
+- 桌面和 390px 视口可完成核心路线；
+- 状态文件、页面声明、发布标签和实际 commit 一致；
+- 完整仓库测试无回归。
+
+### 7.2 首轮观察指标
+
+首轮 5–8 人只报告描述性数据：
+
+- 到达第一次练习人数 / 开始人数；
+- 完成每个单元人数与完整路线人数；
+- 每单元耗时中位数与范围；
+- 第一个卡点分布；
+- 使用帮助、返回范例和退出人数；
+- 五项 rubric 的原始分布；
+- 两名评分者逐项一致和分歧；
+- 未见任务独立完成、辅助完成和未完成人数。
+
+### 7.3 进入候选发布的最低门槛
+
+首轮是工具调试，不能单独触发发布。第二轮进入候选发布至少要求：
+
+- 入口和任务不存在使两名参与者产生不兼容解释的系统性歧义；
+- 不出现隐私、安全或示例提前暴露事件；
+- 至少 80% 开始者到达综合实践；
+- 至少 70% 开始者在允许的基础帮助下完成综合实践；
+- 多数完成者能在未见任务中提供独立检查证据，而不只得到正确模型输出；
+- 两名评分者对主要维度达到可解释的一致，所有分歧保留；
+- 不把这些小样本门槛描述为课程有效性的统计证明。
+
+未达到门槛时继续缩短和修正核心路线，不通过增加内容解决完成率问题。
+
+## 8. 停止条件
+
+出现以下任一情况时暂停当前路线并回到上一阶段：
+
+- 两名学习者无法理解同一个核心任务到底要做什么；
+- 90–120 分钟目标需要依赖维护者大量口头解释才能实现；
+- 核心练习要求私人文件、付费工具、特定模型或外部副作用；
+- 评分者无法稳定区分“模型答对”和“学习者完成检查”；
+- 首页或 Reader 仍先引导用户理解 Codex、Skill、Agent 等进阶术语；
+- 新工作继续增加目录规模，却没有改善五项核心结果中的任何一项。
+
+## 9. 风险与缓解
+
+| 风险 | 影响 | 缓解措施 |
 |---|---|---|
-| Treating file presence as translation quality | High | Keep translation status and independent review evidence separate |
-| Removing draft records to improve appearance | High | Hide reader detours while retaining governance and audit records |
-| Expanding Skills faster than they can be tested | Medium | Require a documented gap, contract, provenance, and focused cases |
-| Replacing editorial visuals with generic AI art | Medium | Fix hierarchy and responsive layout first; reuse owned SVG assets |
-| Calling public reach a product result | High | Report stars, Pages, CI, learning evidence, and release readiness separately |
+| 只重命名导航，没有真正删减认知负担 | 高 | 每单元限制新概念并要求一次实际操作 |
+| 将“初学者友好”理解为内容浅薄 | 中 | 保留机制边界和失败实验，减少术语而非减少判断 |
+| 为保留已有投入而继续把高级内容塞入主线 | 高 | 使用核心资产清单和强制准入规则 |
+| 将正确模型输出误当作学习者掌握 | 高 | 必须保存学习者的检查证据和未见任务表现 |
+| 小样本结果被用于宣传效果 | 高 | 首轮只做工具调试，第二轮仍只报告描述性观察 |
+| 六语言内容继续漂移 | 高 | 冻结扩张，核心结构稳定后逐语言迁移和独立审查 |
+| 单一维护者无法承担全部体系 | 高 | 核心优先、归档低价值内容、恢复进阶项时要求负责人 |
 
-## Open questions
+## 10. 完成定义
 
-- Which locale(s), if any, have a named independent language reviewer and a
-  review date? Until recorded, those translations remain candidate/in-progress.
-- Who owns the rollback target and maintenance review after the first public
-  release?
-- Which two or three first-path labs will receive real learner runs before the
-  status can move beyond candidate?
+这项重构只有同时满足以下条件才算完成：
+
+- 项目的默认入口明确是 LLM 基础与实践，不是 Codex 或 Skill 目录；
+- 一名目标初学者可以独立完成五单元核心路线；
+- 每个单元都有解释、操作、失败和检查证据；
+- 至少两轮真实学习者观察已经完成并公开边界；
+- 核心候选版有 commit-bound 证据、标签和回滚目标；
+- 高级内容保持可访问但不干扰核心路线；
+- 项目能够诚实回答“哪些有工程证据、哪些有学习者观察、哪些仍未知”。
+
+## 11. 建议执行节奏
+
+- 第 1 周：Tasks 1–5，完成方向、冻结、资产分流和核心契约；
+- 第 2–3 周：Tasks 6–10，逐个完成五个竖向教学单元；
+- 第 4 周：Tasks 11–14，重构入口、Reader 和核心门禁；
+- 第 5 周：Task 15，获得授权后执行首轮 5–8 人观察；
+- 第 6 周：Task 16，修订并执行第二轮门禁；
+- 第 7 周：Tasks 17–18，候选发布并决定有限恢复项。
+
+时间是工作量估计，不是发布承诺。若无法获得真实学习者或独立评分者，项目可以完成工程
+重构，但必须保持 `candidate / learner evidence pending`，不能跳过证据门禁。
