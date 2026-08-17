@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import shutil
@@ -65,6 +66,39 @@ def root_index(site_index: Path) -> str:
         raise ValueError(f"{site_index.relative_to(ROOT)} is missing a <head> element")
     base = '    <base href="site/" />\n    <script>window.CODEX_PAGES_ARTIFACT = true;</script>\n'
     return text.replace(marker, f"{marker}\n{base}", 1)
+
+
+VERSIONED_SITE_ASSETS = (
+    "styles.css",
+    "locale-manifest.js",
+    "learning-path-data.js",
+    "goal-templates.js",
+    "app.js",
+    "reader.css",
+    "reader.js",
+    "search-index.js",
+)
+
+
+def asset_versions() -> dict[str, str]:
+    """Return short content fingerprints for browser-cached public assets."""
+
+    return {
+        name: hashlib.sha256((ROOT / "site" / name).read_bytes()).hexdigest()[:16]
+        for name in VERSIONED_SITE_ASSETS
+    }
+
+
+def versioned_asset_references(text: str, versions: dict[str, str]) -> str:
+    """Replace hand-maintained query labels with content-addressed versions."""
+
+    for name, version in versions.items():
+        text = re.sub(
+            rf"({re.escape(name)}\?v=)[^\"'\s<>]+",
+            rf"\g<1>{version}",
+            text,
+        )
+    return text
 
 
 def static_locale_page(site_index: Path, config: dict[str, object], locale: str) -> str:
@@ -205,7 +239,7 @@ def artifact_secret_findings(output: Path) -> list[str]:
     return findings
 
 
-def validate_artifact(output: Path) -> None:
+def validate_artifact(output: Path, versions: dict[str, str] | None = None) -> None:
     expected = (output / "index.html", output / ".nojekyll", output / "robots.txt", output / "sitemap.xml")
     missing = [path.name for path in expected if not path.is_file()]
     if missing:
@@ -247,6 +281,20 @@ def validate_artifact(output: Path) -> None:
     reader_text = (output / "site/reader.html").read_text(encoding="utf-8")
     if "window.CODEX_PAGES_ARTIFACT = true" not in reader_text:
         raise ValueError("Pages Reader must retain artifact routing mode")
+    if versions:
+        public_texts = {
+            "index": root_text,
+            "reader": reader_text,
+            "app": (output / "site/app.js").read_text(encoding="utf-8"),
+        }
+        for name, version in versions.items():
+            expected = f"{name}?v={version}"
+            if name in {"styles.css", "locale-manifest.js", "learning-path-data.js", "goal-templates.js", "app.js"} and expected not in public_texts["index"]:
+                raise ValueError(f"Pages artifact index is missing content version for {name}")
+            if name in {"reader.css", "locale-manifest.js", "reader.js"} and expected not in public_texts["reader"]:
+                raise ValueError(f"Pages artifact Reader is missing content version for {name}")
+            if name == "search-index.js" and expected not in public_texts["app"]:
+                raise ValueError("Pages artifact search loader is missing a content version")
     config = load_seo_config()
     home_page = config["home_page"]
     assert isinstance(home_page, dict)
@@ -316,17 +364,24 @@ def build_into(output: Path) -> None:
     for filename in PUBLISH_ROOT_FILES:
         shutil.copy2(ROOT / filename, output / filename)
 
-    (output / "index.html").write_text(root_index(ROOT / "site/index.html"), encoding="utf-8", newline="\n")
+    versions = asset_versions()
+    source_index = ROOT / "site/index.html"
+    root_entry = versioned_asset_references(root_index(source_index), versions)
+    (output / "index.html").write_text(root_entry, encoding="utf-8", newline="\n")
     seo_config = load_seo_config()
     for locale in seo_config["locales"]:
         if locale != "en":
-            (output / f"{locale}.html").write_text(static_locale_page(ROOT / "site/index.html", seo_config, locale), encoding="utf-8", newline="\n")
-    (output / "site/reader.html").write_text(pages_reader(ROOT / "site/reader.html"), encoding="utf-8", newline="\n")
+            page = static_locale_page(source_index, seo_config, locale)
+            (output / f"{locale}.html").write_text(versioned_asset_references(page, versions), encoding="utf-8", newline="\n")
+    reader_entry = versioned_asset_references(pages_reader(ROOT / "site/reader.html"), versions)
+    (output / "site/reader.html").write_text(reader_entry, encoding="utf-8", newline="\n")
+    app_path = output / "site/app.js"
+    app_path.write_text(versioned_asset_references(app_path.read_text(encoding="utf-8"), versions), encoding="utf-8", newline="\n")
     (output / ".nojekyll").write_text("", encoding="utf-8")
     robots, sitemap = seo_files(seo_config)
     (output / "robots.txt").write_text(robots, encoding="utf-8", newline="\n")
     (output / "sitemap.xml").write_text(sitemap, encoding="utf-8", newline="\n")
-    validate_artifact(output)
+    validate_artifact(output, versions)
 
 
 def build(output: Path) -> None:
