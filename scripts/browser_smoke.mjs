@@ -1079,7 +1079,7 @@ try {
   await chinesePromptPage.locator('#everyday-prompts').screenshot({ path: path.join(visualEvidenceDirectory, 'everyday-prompt-cards-mobile-zh.png') });
   await chinesePromptPage.close();
   await page.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
-  assert.match(await page.getByRole('link', { name: 'Open every problem route' }).getAttribute('href'), /reader\.html\?path=README-EN\.md&lang=en#choose-your-starting-point$/, 'mobile route index link does not target the canonical English README route section');
+  assert.match(await page.getByRole('link', { name: 'Open every problem route' }).getAttribute('href'), /reader\.html\?path=README-EN\.md&lang=en#start-with-a-real-outcome$/, 'mobile route index link does not target the canonical English README route section');
   assert.equal(await page.locator('[data-copy-rescue], [data-copy-first-win-record], [data-first-win-check]').count(), 0, 'mobile first prompt practice still exposes a rescue or scoring record');
   await page.getByRole('button', { name: 'Open navigation' }).click();
   const closeMenuButton = page.getByRole('button', { name: 'Close navigation' });
