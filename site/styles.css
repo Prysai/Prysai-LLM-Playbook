@@ -107,6 +107,8 @@ button, input, select, textarea { font: inherit; }
 .button-light { color: var(--ink); background: #fff; }
 .text-link, .section-link { display: inline-flex; align-items: center; gap: .6rem; padding-bottom: .2rem; border-bottom: 1px solid var(--red); font-size: .78rem; font-weight: 700; }
 .text-link span:last-child, .section-link span:last-child { color: var(--red); }
+a[data-locale-anchor-unavailable="true"] { min-width: 0; max-width: 100%; flex-wrap: wrap; white-space: normal; }
+a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: block; align-self: stretch; width: 100%; flex-basis: 100%; min-width: 0; max-width: 100%; margin-left: 0; color: var(--muted); font-size: .66rem; font-weight: 500; line-height: 1.35; overflow-wrap: anywhere; }
 .hero-route-decision { max-width: 680px; margin-top: 2rem; border-top: 3px solid var(--ink); border-bottom: 1px solid var(--line-dark); }
 .hero-route-kicker { margin: .8rem 0; color: var(--red); font-size: .62rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .hero-route-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line-dark); }
@@ -156,8 +158,8 @@ button, input, select, textarea { font: inherit; }
 .data-warning { margin: -2rem 0 2rem; padding: .8rem 1rem; border-left: 4px solid var(--red); color: var(--ink); background: var(--soft-red); font-size: .8rem; line-height: 1.5; }
 .heading-light .section-intro, .section-red .section-intro, .section-dark .section-intro { color: var(--muted-dark); }
 
-.problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-.problem-card { display: flex; min-height: 270px; flex-direction: column; padding: 1.35rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; transition: transform .2s ease, background .2s ease; }
+.problem-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.problem-card { display: flex; min-width: 0; min-height: 270px; flex-direction: column; padding: 1.35rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; transition: transform .2s ease, background .2s ease; }
 .problem-card:hover, .problem-card:focus-visible { background: #fffafb; transform: translateY(-4px); }
 .card-number { color: var(--red); font-size: .72rem; font-weight: 700; }
 .problem-card strong { max-width: 250px; margin-top: 4rem; font-size: 1.1rem; letter-spacing: -.03em; line-height: 1.05; }

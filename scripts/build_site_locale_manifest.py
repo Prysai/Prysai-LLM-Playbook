@@ -82,6 +82,27 @@ def markdown_h1_title(path: str) -> str | None:
     return match.group(1).strip() if match else None
 
 
+EXPLICIT_ANCHOR_RE = re.compile(
+    r'<(?:a|span)\s+id="([a-z][a-z0-9-]*)"\s*></(?:a|span)>',
+    re.IGNORECASE,
+)
+
+
+def explicit_anchors(path: str) -> list[str]:
+    """Return authored Reader anchors that are safe deep-link contracts.
+
+    A localized file can exist while containing only a subset of an English
+    supplemental guide. Record explicit anchors, rather than guessing from a
+    filename or a translated heading, so the public site never promises a
+    precise local destination that the Reader cannot render.
+    """
+
+    source = ROOT / path
+    if not source.is_file():
+        return []
+    return sorted(set(EXPLICIT_ANCHOR_RE.findall(source.read_text(encoding="utf-8"))))
+
+
 def matrix_content(
     item: dict[str, Any],
     locale_records: dict[str, Any],
@@ -98,7 +119,9 @@ def matrix_content(
             "exists": (ROOT / path).is_file(),
             "content_status": record.get("content_status"),
             "translation_status": record.get("translation_status"),
+            "coverage": record.get("coverage"),
             "source_revision": record.get("source_revision"),
+            "explicit_anchors": explicit_anchors(path),
         }
         if item.get("kind") == "lab":
             title = markdown_h1_title(path)

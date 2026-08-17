@@ -8,7 +8,7 @@ const copy = {
     heroIndexAria: 'Page index',
     pathAria: 'Seven-level learning path',
     routesAria: 'Filter chapter routes',
-    menu: 'Menu', menuClose: 'Close', navStart: 'Start with a problem', navFirst30: 'First 15 minutes', navPath: 'Learning path', navIndex: 'Project index', navRoutes: 'Reading routes', navLabs: 'Labs', navSkills: 'Skills', navUpdates: 'Update map', localeBannerFallback: 'The {requested} route is selected, but some interface strings or course units are still in migration. When a course unit is absent, Reader keeps this language and names the unit unavailable; it does not silently switch the course text to English.', localeManifestError: 'Locale routing is unavailable because the generated manifest did not load. English remains available; rebuild the manifest before relying on other routes.', localeBannerReady: 'Reading in {language}.', localeMenuAria: 'Interface languages', languageNameEnglish: 'English', languageNameChinese: 'Simplified Chinese', languageNameSpanish: 'Spanish', languageNameJapanese: 'Japanese', languageNameKorean: 'Korean', languageNameGerman: 'German', localeOptionFallback: 'English UI fallback',
+    menu: 'Menu', menuClose: 'Close', navStart: 'Start with a problem', navFirst30: 'First 15 minutes', navPath: 'Learning path', navIndex: 'Project index', navRoutes: 'Reading routes', navLabs: 'Labs', navSkills: 'Skills', navUpdates: 'Update map', localeBannerFallback: 'The {requested} route is selected, but some interface strings or course units are still in migration. When a course unit is absent, Reader keeps this language and names the unit unavailable; it does not silently switch the course text to English.', localeManifestError: 'Locale routing is unavailable because the generated manifest did not load. English remains available; rebuild the manifest before relying on other routes.', localeBannerReady: 'Reading in {language}.', localeMenuAria: 'Interface languages', languageNameEnglish: 'English', languageNameChinese: 'Simplified Chinese', languageNameSpanish: 'Spanish', languageNameJapanese: 'Japanese', languageNameKorean: 'Korean', languageNameGerman: 'German', localeOptionFallback: 'English UI fallback', localePartialAnchorNotice: 'Local overview; this detailed section is not translated yet.',
     heroIndex: 'CODEX / LEARNING SYSTEM', heroEyebrow: 'Candidate guide · basic structure and checks pass', heroTitle: 'Practise checkable Codex work.', heroLede: 'Use a collaboration method designed to transfer across language-model tools, then practise it deeply in Codex: define the outcome, control context and authority, inspect the work, recover from failure, and keep evidence.', heroPrimary: 'Start the guided Codex path', heroSecondary: 'See the optional no-setup warm-up', heroRouteAria: 'Choose the recommended first route', heroRouteKicker: 'Choose by your starting condition', heroRouteGuidedTitle: 'Have a disposable project? Follow the guided path.', heroRouteGuidedBody: 'Start with Chapter 1. The first local edit comes after its scope and evidence boundary are visible.', heroRouteFixtureTitle: 'No disposable project yet? Use the safe fixture at the Chapter 2 decision.', heroRouteFixtureBody: 'It supplies one offline target and check. It does not replace the guided Codex path.', heroRouteBoundary: 'Candidate means the basic structure and checks pass; first-time reader outcomes are still unmeasured.', heroProofAria: 'First Win proof card', heroProofKicker: 'FIRST WIN / INSPECTABLE EXAMPLE', heroProofStatus: 'candidate · no participant run recorded', heroProofTitle: 'See what one checked result contains.', heroProofSourceLabel: 'SOURCE MESSAGE', heroProofSource: '“Hi, the workshop changed. It starts Friday at 10. Bring the draft. Tell me if you cannot come.”', heroProofPreserveLabel: 'PRESERVE FACTS', heroProofPreserve: 'Keep Friday at 10, the draft, and the reply request. Do not add a date, venue, reason, or contact method.', heroProofChecksLabel: 'THREE HUMAN CHECKS', heroProofCheckOne: 'Friday at 10 and the draft remain.', heroProofCheckTwo: 'People who cannot attend are asked to reply.', heroProofCheckThree: 'No unsupported detail appears.', heroProofReceiptLabel: 'BOUNDED RECEIPT', heroProofReceipt: 'One checked attempt can be recorded. It does not prove learning, transfer, or model performance.', heroProofLink: 'Open the full 15-minute check', heroFooter: 'Problem → protocol → action → evidence',
     startEyebrow: 'Start with the problem', startTitle: 'Do not start with a Skill.', startIntro: 'Start with the failure you need to avoid or the work you need to finish. Pick the smallest useful entry, then leave evidence.',
     problemStartTitle: 'I do not know where to start.', problemStartBody: 'Separate GPT, Codex, models, tools, Skills, and Agents before choosing a workflow.', problemStartLink: 'Open chapter 1 ↗', problemWrongFileTitle: 'Codex changed the wrong file.', problemWrongFileBody: 'Learn to inspect scope, diff, tests, and recovery before trusting a completion statement.', problemWrongFileLink: 'Open chapter 9 ↗', problemSkillTitle: 'I do not know which Skill to use.', problemSkillBody: 'Choose by task, risk, inputs, dependencies, and evidence—not by directory size.', problemSkillLink: 'Run lab 004 ↗', problemUpdateTitle: 'I need to update this safely.', problemUpdateBody: 'Use the fixed update map to find the canonical file, required source record, and validation gate.', problemUpdateLink: 'Open the update map ↗', problemIntakeTitle: 'I have a broad goal and do not know what to practise first.', problemIntakeBody: 'Ask one decision at a time. Pick one existing route, one checkable attempt, permitted help, and a smaller fallback.', problemIntakeLink: 'Open first-practice intake · candidate · not_run ↗', problemLanguageTitle: 'I want to practise one language skill.', problemLanguageBody: 'Define one observable performance, attempt it before instruction, correct one meaning-blocking error, then test a changed case.', problemLanguageLink: 'Open language route · candidate · not_run ↗', problemGeneralSkillTitle: 'I want to practise another real skill.', problemGeneralSkillBody: 'Turn an interview answer, explanation, or presentation into one timed performance, then retest it under a changed condition.', problemGeneralSkillLink: 'Open general skill route · candidate · not_run ↗', problemResearchTitle: 'I need to research one bounded question.', problemResearchBody: 'Tie the question to a decision, assign source owners, keep a claim ledger, search for disagreement, and stop on purpose.', problemResearchLink: 'Open research route · candidate · not_run ↗',
@@ -27,7 +27,7 @@ const copy = {
   },
   zh: {
     heroIndexAria: '页面索引',
-    skipToContent: '跳到主要内容', wordmarkAria: 'Prysai 大模型实战手册首页', languageToggleAria: '选择界面语言', menuAria: '打开导航', navAria: '主导航', pathAria: '七级学习路径', routesAria: '筛选章节路线', menu: '菜单', menuClose: '关闭', navStart: '从问题开始', navFirst30: '前 30 分钟', navPath: '学习路径', navIndex: '项目索引', navRoutes: '阅读路线', navLabs: '实验室', navSkills: 'Skills', navUpdates: '更新地图', localeBannerFallback: '当前已选择 {requested} 路由，但部分界面文字或课程单元仍在迁移中。若课程单元尚未提供，Reader 会保持当前语言并明确标为暂不可用；不会悄悄把课程正文切换成英文。', localeManifestError: '语言路由不可用，因为生成的 manifest 没有加载。英文仍可用；在依赖其他语言路由前，请先重新生成 manifest。', localeBannerReady: '当前阅读语言：{language}。', localeMenuAria: '界面语言', languageNameEnglish: '英语', languageNameChinese: '简体中文', languageNameSpanish: '西班牙语', languageNameJapanese: '日语', languageNameKorean: '韩语', languageNameGerman: '德语', localeOptionFallback: '英文界面回退',
+    skipToContent: '跳到主要内容', wordmarkAria: 'Prysai 大模型实战手册首页', languageToggleAria: '选择界面语言', menuAria: '打开导航', navAria: '主导航', pathAria: '七级学习路径', routesAria: '筛选章节路线', menu: '菜单', menuClose: '关闭', navStart: '从问题开始', navFirst30: '前 30 分钟', navPath: '学习路径', navIndex: '项目索引', navRoutes: '阅读路线', navLabs: '实验室', navSkills: 'Skills', navUpdates: '更新地图', localeBannerFallback: '当前已选择 {requested} 路由，但部分界面文字或课程单元仍在迁移中。若课程单元尚未提供，Reader 会保持当前语言并明确标为暂不可用；不会悄悄把课程正文切换成英文。', localeManifestError: '语言路由不可用，因为生成的 manifest 没有加载。英文仍可用；在依赖其他语言路由前，请先重新生成 manifest。', localeBannerReady: '当前阅读语言：{language}。', localeMenuAria: '界面语言', languageNameEnglish: '英语', languageNameChinese: '简体中文', languageNameSpanish: '西班牙语', languageNameJapanese: '日语', languageNameKorean: '韩语', languageNameGerman: '德语', localeOptionFallback: '英文界面回退', localePartialAnchorNotice: '本地概览；该详细专题尚未完成翻译。',
     heroIndex: 'CODEX / 学习系统', heroEyebrow: '候选指南 · 基础结构和检查已通过', heroTitle: '练习可检查的 Codex 工作。', heroLede: '使用一套旨在迁移到各类大语言模型工具的协作方法，再在 Codex 中深入实践：定义结果、控制上下文与权限、检查工作、从失败中恢复，并保留证据。', heroPrimary: '开始有引导的 Codex 路径', heroSecondary: '查看可选的免设置热身', heroRouteAria: '选择推荐的第一条路线', heroRouteKicker: '按你的起始条件选择', heroRouteGuidedTitle: '有可丢弃的项目？沿着引导路径开始。', heroRouteGuidedBody: '从第 1 章开始。第一次本地编辑会在范围和证据边界清楚之后出现。', heroRouteFixtureTitle: '还没有可丢弃的项目？在第 2 章的决策点使用安全夹具。', heroRouteFixtureBody: '它提供一个离线目标和检查，不替代有引导的 Codex 路径。', heroRouteBoundary: '候选表示基础结构和检查已通过；首次读者的学习结果仍未测量。', heroProofAria: 'First Win 证据卡', heroProofKicker: 'FIRST WIN / 可检查示例', heroProofStatus: '候选 · 尚无参与者运行记录', heroProofTitle: '看看一次可检查的结果包含什么。', heroProofSourceLabel: '原始消息', heroProofSource: '“你好，工作坊改期了。周五 10 点开始。请带上草稿。如果你不能参加，请告诉我。”', heroProofPreserveLabel: '保留事实', heroProofPreserve: '保留周五 10 点、草稿和回复要求；不要添加日期、地点、原因或联系方式。', heroProofChecksLabel: '三项人工检查', heroProofCheckOne: '周五 10 点和草稿仍然保留。', heroProofCheckTwo: '不能参加的人仍被要求回复。', heroProofCheckThree: '没有出现无依据的细节。', heroProofReceiptLabel: '有边界的回执', heroProofReceipt: '可以记录一次经过检查的尝试；它不证明已经学会、能够迁移，或模型表现。', heroProofLink: '打开完整的 15 分钟检查', heroFooter: '问题 → 协议 → 行动 → 证据',
     startEyebrow: '从问题开始', startTitle: '不要从 Skill 开始。', startIntro: '先说清楚你要避免的失败或要完成的工作。选择最小有效入口，然后留下证据。', problemStartTitle: '我不知道从哪里开始。', problemStartBody: '在选择工作流前，先分清 GPT、Codex、模型、工具、Skill 与 Agent。', problemStartLink: '打开第 1 章 ↗', problemWrongFileTitle: 'Codex 改错了文件。', problemWrongFileBody: '在相信完成声明前，检查范围、差异、测试与恢复方式。', problemWrongFileLink: '打开第 9 章 ↗', problemSkillTitle: '我不知道该用哪个 Skill。', problemSkillBody: '按任务、风险、输入、依赖和证据选择，不按目录大小选择。', problemSkillLink: '运行实验 004 ↗', problemUpdateTitle: '我需要安全地更新项目。', problemUpdateBody: '用固定更新地图找到规范文件、来源记录和验证门槛。', problemUpdateLink: '打开更新地图 ↗', problemIntakeTitle: '我的目标很宽泛，不知道先练什么。', problemIntakeBody: '一次只澄清一个决定：选一条已有路线、一次可检查尝试、允许的帮助和更小的回退。', problemIntakeLink: '打开首次练习入口 · candidate · not_run ↗',
     first30Eyebrow: '你的前 15 分钟', first30Title: '先判断一个答案，无需配置。', first30Intro: '原文、任务和检查标准都已经填好。任意聊天模型都可以；不需要文件、终端、Git、账户连接或专业词汇。', stepOneTitle: '选择可回滚的改动。', stepOneBody: '使用沙盒文件或小型文档修改。不要从凭据、生产环境或破坏性命令开始。', stepTwoTitle: '写任务协议。', stepTwoBody: '写清目标、上下文、允许行动、验收标准、证据和停止条件。', stepThreeTitle: '让 Codex 先检查。', stepThreeBody: '允许修改前，先让它说明相关文件和当前状态，保持范围可见。', stepFourTitle: '验证实际变化。', stepFourBody: '检查差异，运行最小相关检查，并记录没有测试什么。', checkCardLabel: '一个有用的任务协议', fieldGoalLabel: '目标', fieldGoal: '完成一个明确的改动。', fieldContextLabel: '上下文', fieldContext: '只提供完成任务所需的文件。', fieldInputsLabel: '输入', fieldInputs: '路径、当前行为、约束。', fieldAllowedLabel: '允许行动', fieldAllowed: '读取和编辑；外部副作用前暂停。', fieldAcceptanceLabel: '验收', fieldAcceptance: '明确的差异和检查结果。', fieldEvidenceLabel: '证据', fieldEvidence: '差异、命令、输出和限制。', fieldStopLabel: '停止条件', fieldStop: '范围、授权或证据缺失。', contractHighlight: '最安全的第一个任务应该足够小、可回滚，而且容易检查。', openChapterTwo: '打开第 2 章',
@@ -753,6 +753,15 @@ const contentFor = (contentId) => localeManifest.contents?.[contentId];
 // candidate translation is incorrectly replaced by its English source.
 const canonicalContentId = (contentId) => localeManifest.aliases?.[contentId] || contentId;
 const contentIdForHref = (href) => localeManifest.path_index?.[pathFromHref(href) || ''];
+const fragmentFromHref = (href) => href?.includes('#') ? href.slice(href.indexOf('#') + 1) : '';
+const withoutFragment = (href) => href?.split('#', 1)[0] || '';
+const localizedFragmentIsAvailable = (record, href) => {
+  const fragment = fragmentFromHref(href);
+  // A full local document may use Reader-generated heading identifiers. A
+  // declared subset is different: it may deliberately omit most of the
+  // English pack, so only its authored anchors are valid deep-link promises.
+  return !fragment || record?.coverage !== 'starter-card subset' || record?.explicit_anchors?.includes(fragment);
+};
 const localizedContentHref = (contentId, fallbackHref) => {
   const content = contentFor(contentId);
   if (!content) return fallbackHref || '';
@@ -779,9 +788,23 @@ const localizeReaderLinks = () => {
     anchor.dataset.sourceHref = sourceHref;
     anchor.dataset.contentId = contentId;
     const requested = contentFor(contentId)?.locales?.[currentLanguage];
-    anchor.href = pagesHref(localizedContentHref(contentId, sourceHref));
+    const fragmentAvailable = localizedFragmentIsAvailable(requested, sourceHref);
+    const localizedHref = localizedContentHref(contentId, fragmentAvailable ? sourceHref : withoutFragment(sourceHref));
+    anchor.href = pagesHref(localizedHref);
     anchor.dataset.localeFallback = 'false';
-    if (!localeCanRender(requested) && currentLanguage !== 'en') {
+    anchor.dataset.localeAnchorUnavailable = String(!fragmentAvailable && currentLanguage !== 'en');
+    anchor.querySelector('[data-locale-anchor-note]')?.remove();
+    if (!fragmentAvailable && currentLanguage !== 'en') {
+      anchor.title = currentCopy().localePartialAnchorNotice;
+      const note = document.createElement('small');
+      note.dataset.localeAnchorNote = '';
+      note.textContent = currentCopy().localePartialAnchorNotice;
+      // A problem card is a column flex container whose final label owns its
+      // bottom position. Keep the disclosure inside that label so it remains
+      // in the card's readable column instead of becoming a separate flex
+      // item after the label.
+      (anchor.matches('.problem-card') ? anchor.querySelector('.card-link') : null || anchor).append(note);
+    } else if (!localeCanRender(requested) && currentLanguage !== 'en') {
       anchor.title = `${localeDisplayName(currentLanguage)} translation pending · this link remains in the selected language`;
     } else if (!localeIsReady(requested) && currentLanguage !== 'en') {
       anchor.title = `${localeDisplayName(currentLanguage)} candidate translation · independent language review pending`;
@@ -4802,6 +4825,19 @@ Object.assign(copy.ko, {
 Object.assign(copy.de, {
   skillPlatformObservationName: 'Plattformbeobachtungsprotokoll',
   skillPlatformObservation: 'Dokumentiere eine sichtbare Plattformoberfläche, ohne daraus eine Fähigkeitsbehauptung abzuleiten.',
+});
+
+Object.assign(copy.es, {
+  localePartialAnchorNotice: 'Resumen local; esta sección detallada aún no está traducida.'
+});
+Object.assign(copy.ja, {
+  localePartialAnchorNotice: 'ローカル概要です。この詳細セクションはまだ翻訳されていません。'
+});
+Object.assign(copy.ko, {
+  localePartialAnchorNotice: '현지 언어 개요입니다. 이 상세 섹션은 아직 번역되지 않았습니다.'
+});
+Object.assign(copy.de, {
+  localePartialAnchorNotice: 'Lokale Übersicht; dieser Detailabschnitt ist noch nicht übersetzt.'
 });
 
 initializeSearch();
