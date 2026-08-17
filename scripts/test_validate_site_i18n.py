@@ -100,7 +100,22 @@ def main() -> int:
         "localized dictionary extraction hid a missing public-page key",
     )
 
-    print("SITE_I18N_TESTS_OK fixtures=8")
+    ordering_errors: list[str] = []
+    i18n.validate_copy_initialization_order(
+        "Object.assign(copy.es, { name: 'too early' });\ncopy.es = { name: 'ready' };",
+        ordering_errors,
+    )
+    require(
+        ordering_errors == [
+            "de primary translation dictionary is missing",
+            "es translation override appears before its primary dictionary",
+            "ja primary translation dictionary is missing",
+            "ko primary translation dictionary is missing",
+        ],
+        "an early locale override was accepted",
+    )
+
+    print("SITE_I18N_TESTS_OK fixtures=9")
     return 0
 
 

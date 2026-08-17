@@ -80,6 +80,19 @@ def translation_keys(app: str, language: str, html_keys: set[str]) -> set[str]:
     return set().union(*(keys_for(block, html_keys) for block in blocks)) if blocks else set()
 
 
+def validate_copy_initialization_order(app: str, errors: list[str]) -> None:
+    """Reject locale overrides that execute before their primary dictionaries exist."""
+
+    for language in sorted(LOCALE_TOKENS - {"en", "zh"}):
+        primary = re.search(rf"\ncopy\.{language}\s*=\s*\{{", app)
+        if not primary:
+            errors.append(f"{language} primary translation dictionary is missing")
+            continue
+        early_override = re.search(rf"Object\.assign\(copy\.{language},", app[: primary.start()])
+        if early_override:
+            errors.append(f"{language} translation override appears before its primary dictionary")
+
+
 def load_generated_manifest() -> dict:
     text = LOCALE_MANIFEST.read_text(encoding="utf-8")
     marker = "window.CODEX_LOCALE_MANIFEST ="
@@ -303,6 +316,7 @@ def main() -> int:
         errors.append("language state must not let browser storage override a shared locale URL")
     if "document.documentElement.lang" not in app:
         errors.append("language switching must update document.documentElement.lang")
+    validate_copy_initialization_order(app, errors)
     if "const localeCanRender" not in app:
         errors.append("candidate translation routes must be renderable without being marked reviewed")
     for marker in ("CODEX_LOCALE_MANIFEST", "contentFor", "localizedContentHref", "data-locale-fallback", "localeCoverageLabel", "translated units"):
