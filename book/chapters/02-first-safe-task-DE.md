@@ -91,9 +91,9 @@ Beantworte vor dem Editieren jede Zeile:
 | Abnahme | Eine Prüfung aus echter Datei, Konfiguration, Test oder Quelle | Vor weiteren Änderungen einen Check ergänzen |
 | Stoppbedingung | Regel für fehlende Eingabe, unklare Autorität, Timeout, Bereichswechsel oder Evidenzlücke | Stoppen; Vorbereitung nicht durch „erst einmal probieren“ ersetzen |
 
-Die Locale-Matrix zeigt, welche Einheiten in welcher Sprache existieren. Ein
-deutscher Entwurf mit `in-progress` ist lesbar, beweist aber weder eine
-unabhängige Sprachprüfung noch Lernläufe oder die Wirksamkeit des Kurses.
+Der entscheidende Übergang ist derselbe: erst lesen und prüfen, dann in einer
+begrenzten Umgebung editieren. Fehlt ein Detail, eine Berechtigung oder ein
+Beleg, bleibt die Aufgabe im Lesemodus.
 
 ## Was ein Produktsignal sagen kann und was nicht
 

@@ -83,9 +83,9 @@ una primera tarea: no tiene un límite ni una aceptación estables.
 | Aceptación | Un check que proceda del archivo, configuración, prueba o fuente real | Añade un check antes de seguir editando |
 | Condición de parada | Regla para dato faltante, autoridad ambigua, tiempo agotado, cambio de límite o falta de evidencia | Detente; no sustituyas preparación por «probar primero» |
 
-La matriz de locales registra qué unidades existen en cada idioma. Una versión
-en español `in-progress` permite leer el candidato; no demuestra revisión
-lingüística independiente, ejecución por aprendices ni eficacia del curso.
+La transición importante es la misma: primero lee y comprueba, y después edita
+en una superficie limitada. Si falta un dato, una autorización o una prueba,
+mantén la tarea en modo de lectura.
 
 ## Qué puede y qué no puede decir una señal de producto
 
