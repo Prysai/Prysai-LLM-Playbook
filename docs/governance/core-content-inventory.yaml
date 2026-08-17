@@ -12,7 +12,7 @@
       "class": "core",
       "title": "What an LLM is and is not",
       "outcome": "explain",
-      "source_paths": ["book/guides/llm-fundamentals-EN.md", "book/chapters/01-gpt-and-codex-EN.md"],
+      "source_paths": ["book/guides/llm-fundamentals-EN.md"],
       "learner_artifact": "explanation card plus model/product boundary decisions",
       "status": "candidate"
     },
