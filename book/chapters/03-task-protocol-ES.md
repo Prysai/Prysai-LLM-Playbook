@@ -72,7 +72,7 @@ Mejora la página principal del proyecto.
 Más fuerte:
 
 ```text
-Crea una portada de repositorio en inglés que deje a una persona nueva elegir
+Crea una portada del repositorio orientada a lectores que deje a una persona nueva elegir
 una de cuatro rutas, localizar la fuente de verdad, abrir la primera tarea
 segura y ver qué afirmaciones siguen candidate o unverified.
 ```
@@ -446,7 +446,7 @@ finalización sin evidencia.
 
 Sustituye después palabras vagas por criterios observables, por ejemplo:
 
-- «el README en inglés tiene un selector visible con seis idiomas registrados»; y
+- «el README del repositorio tiene un selector visible con seis idiomas registrados»; y
 - «la comprobación local de enlaces informa cero enlaces de repositorio rotos».
 
 Todavía hacen falta el validador real y el alcance de revisión. Son ejemplos de
