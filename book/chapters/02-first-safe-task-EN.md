@@ -83,11 +83,9 @@ Before editing, answer every row:
 | Acceptance | A check that comes from the real file, configuration, test, or source | Add a check before editing further |
 | Stop condition | A rule for missing input, unclear authority, timeout, boundary change, or evidence gap | Stop; do not replace preparation with “try first” |
 
-The current Chinese source chapter calls this transition from read-only
-observation to safe editing. The English source makes the same contract
-explicit while the other locale files are still in migration. See the
-[locale matrix](../../docs/governance/locale-matrix.yaml) for the actual
-translation state.
+These six preconditions make the transition from read-only observation to safe
+editing explicit. If any row is unanswered, stay read-only and resolve it
+before editing.
 
 ## What the official boundary does and does not say
 
@@ -542,8 +540,7 @@ The [field-problems record](../../docs/research/chapter-02-field-problems-2026-0
 contains user reports and community suggestions, not official root-cause
 confirmations. This chapter and its experiment remain `candidate`/`draft`, and
 the experiment is `not_run` until a fresh, bounded run produces the declared
-evidence. The next chapter remains on the current migration path:
-[Chapter 3 — task protocol](03-task-protocol-EN.md).
+evidence. Continue with [Chapter 3 — task protocol](03-task-protocol-EN.md).
 
 <!-- chapter-navigation:start -->
 <hr>
