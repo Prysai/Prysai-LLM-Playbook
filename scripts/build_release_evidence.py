@@ -61,6 +61,8 @@ REQUIRED_COMMANDS = {
     "textbook-entry-path": ("{python}", "scripts/validate_textbook_entry_path.py"),
     "foundation-route-structure": ("{python}", "scripts/validate_foundation_route_structure.py"),
     "translation-depth": ("{python}", "scripts/audit_translation_depth.py"),
+    "first-path-localization": ("{python}", "scripts/audit_first_path_localization.py"),
+    "first-path-localization-fixtures": ("{python}", "scripts/test_audit_first_path_localization.py"),
     "universal-seam-fixture": ("{python}", "scripts/validate_universal_seam_fixture.py"),
     "universal-seam-fixture-tests": ("{python}", "scripts/test_universal_seam_fixture.py"),
     "three-task-smoke-fixture": ("{python}", "scripts/test_three_task_smoke_fixture.py"),

@@ -154,7 +154,7 @@ def main() -> int:
     require("Decision: `not_ready`" in rendered, "readiness decision missing from packet summary")
     require("`rollback`" in rendered, "readiness blocker missing from packet summary")
 
-    print("RELEASE_EVIDENCE_TESTS_OK fixtures=25")
+    print("RELEASE_EVIDENCE_TESTS_OK fixtures=27")
     return 0
 
 
