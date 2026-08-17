@@ -146,6 +146,32 @@ try {
   assert.match(await page.locator('[data-hero-primary]').innerText(), /^Start the five-minute practice/, 'hero primary action does not name one concrete first action');
   assert.match(await page.locator('.hero-route-kicker').innerText(), /optional textbook path/i, 'textbook route is not clearly secondary to the first practice');
   await noHorizontalOverflow(page, 'desktop showcase');
+  // Every homepage Reader link with a fragment promises a concrete landing
+  // point. Check the rendered Markdown document, not just the shell URL: a
+  // typo in an authored anchor otherwise degrades to a plausible page top.
+  const homepageReaderFragments = await page.locator('a[href*="reader.html"][href*="#"]').evaluateAll((links) => (
+    [...new Set(links.map((link) => link.getAttribute('href')).filter(Boolean))]
+  ));
+  assert.ok(homepageReaderFragments.length > 0, 'homepage has no fragment-bearing Reader links to verify');
+  const fragmentPage = await context.newPage();
+  for (const href of homepageReaderFragments) {
+    await fragmentPage.goto(new URL(href, `${origin}/site/`).href, { waitUntil: 'networkidle' });
+    await fragmentPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+    const fragment = new URL(fragmentPage.url()).hash.slice(1);
+    assert.ok(fragment, `homepage Reader link has an empty fragment: ${href}`);
+    const targetMetrics = await fragmentPage.locator('[data-reader-article]').evaluate((article, id) => {
+      const target = article.ownerDocument.getElementById(id);
+      if (!target || !article.contains(target)) return { count: 0 };
+      return { count: 1 };
+    }, decodeURIComponent(fragment));
+    assert.equal(targetMetrics.count, 1, `homepage Reader link lands on a missing anchor: ${href}`);
+  }
+  await fragmentPage.close();
+  assert.deepEqual(
+    homepageReaderFragments.filter((href) => href.includes('route-b--one-observable-non-language-skill')),
+    [],
+    'homepage contains the retired double-hyphen Route B fragment',
+  );
   // A new reader must see the actual first action without having to discover
   // it by scrolling past the opening explanation. Use a short desktop height
   // because browser chrome commonly leaves less than a full 900px viewport.
