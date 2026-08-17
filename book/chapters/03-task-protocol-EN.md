@@ -86,7 +86,7 @@ Improve the project homepage.
 Stronger:
 
 ```text
-Create an English-first repository front door that lets a new reader choose
+Create a reader-facing repository front door that lets a new reader choose
 one of four routes, understand where the source of truth lives, open the first
 safe task, and see which claims remain candidate or unverified.
 ```
@@ -490,7 +490,7 @@ dependency, expands the edit set, or reports completion without evidence.
 
 Then replace vague words with observable criteria, such as:
 
-- “the English README has a visible locale switcher with six registered
+- “the repository README has a visible language switcher with six registered
   entries”; and
 - “the local link check reports zero broken repository links.”
 
