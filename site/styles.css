@@ -169,6 +169,16 @@ a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: bl
 .problem-card-practice:hover, .problem-card-practice:focus-visible { background: #242424; }
 .problem-card-practice p { color: #bcbcbc; }
 .problem-card-practice .card-link { border-top-color: #505050; }
+.optional-route-details { margin-top: 1.35rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.optional-route-details > summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 0; cursor: pointer; list-style: none; font-size: .8rem; font-weight: 800; }
+.optional-route-details > summary::-webkit-details-marker { display: none; }
+.optional-route-details > summary::after { content: '+'; color: var(--red); font-size: 1.25rem; line-height: 1; }
+.optional-route-details[open] > summary { border-bottom: 1px solid var(--line); }
+.optional-route-details[open] > summary::after { content: '−'; }
+.optional-route-details > summary:hover, .optional-route-details > summary:focus-visible { color: var(--red); }
+.optional-route-details > summary:focus-visible { outline: 2px solid var(--red); outline-offset: 4px; }
+.optional-route-intro { margin: .8rem 0 1rem; color: var(--muted); font-size: .8rem; line-height: 1.6; }
+.problem-grid-optional { margin-top: 0; }
 
 /* Swiss editorial deck: the prompt is the artefact. The six-field panel keeps
    the boundary readable in the page instead of shrinking a teaching board. */
