@@ -12,7 +12,7 @@
   },
   "static_locale_pages": {
     "zh": {
-      "html_lang": "zh-Hans",
+      "html_lang": "zh-CN",
       "og_locale": "zh_CN",
       "title": "Prysai 大模型实战手册：LLM 入门、提示词与可靠 AI 工作",
       "description": "从理解大语言模型开始，学习写清提示词，并把第一次 AI 任务变成有边界、可检查的工作。Codex 是旗舰实践路线。"
