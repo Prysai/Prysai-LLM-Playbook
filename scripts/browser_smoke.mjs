@@ -1076,6 +1076,8 @@ try {
   const coreReceiptCard = coreReceiptPage.locator('[data-reader-core-card]');
   await coreReceiptCard.waitFor({ state: 'visible' });
   assert.match(await coreReceiptPage.locator('[data-reader-core-current-title]').innerText(), /start with one safe attempt/i, 'core receipt panel does not identify the current unit');
+  assert.doesNotMatch(await coreReceiptPage.locator('[data-reader-article]').innerText(), /<span id="unit-/i, 'Reader leaked an inline anchor tag into core route prose');
+  assert.equal(await coreReceiptPage.locator('[data-reader-article] .reader-anchor#unit-1-llm-boundaries').count(), 1, 'Reader dropped the core route unit anchor while hiding its source markup');
   await coreReceiptPage.evaluate(() => localStorage.removeItem('prysai-llm-foundation-core-receipt-v1'));
   await coreReceiptPage.reload({ waitUntil: 'networkidle' });
   await coreReceiptCard.waitFor({ state: 'visible' });
@@ -1095,6 +1097,11 @@ try {
   const copiedReceipt = await coreReceiptPage.evaluate(() => navigator.clipboard.readText());
   assert.match(copiedReceipt, /candidate \/ not_run/, 'copied receipt does not expose candidate / not_run status');
   assert.match(copiedReceipt, /No source check yet/, 'copied receipt omits the declared limit');
+  await noHorizontalOverflow(coreReceiptPage, 'desktop core receipt panel');
+  await coreReceiptPage.screenshot({ path: path.join(visualEvidenceDirectory, 'core-receipt-desktop.png'), fullPage: true });
+  await coreReceiptPage.setViewportSize({ width: 390, height: 844 });
+  await noHorizontalOverflow(coreReceiptPage, 'mobile core receipt panel');
+  await coreReceiptPage.screenshot({ path: path.join(visualEvidenceDirectory, 'core-receipt-mobile.png'), fullPage: true });
   await coreReceiptPage.reload({ waitUntil: 'networkidle' });
   await coreReceiptCard.waitFor({ state: 'visible' });
   assert.equal(await coreReceiptPage.locator('[data-reader-core-attempted]').isChecked(), true, 'local receipt did not restore after refresh');
