@@ -39,7 +39,7 @@
       "class": "core",
       "title": "Check, repair, and state limits",
       "outcome": "repair",
-      "source_paths": ["book/chapters/09-verification-and-recovery-EN.md", "book/labs/lab-003-evidence-review-EN.md"],
+      "source_paths": ["book/routes/llm-core-check-repair-EN.md"],
       "learner_artifact": "PASS/FAIL/UNSURE check, before/after difference, and one limit",
       "status": "candidate"
     },
