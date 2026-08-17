@@ -12,16 +12,17 @@ This contract governs voluntary, sanitized observations from an **authorized
 pilot** of the First Win route. It applies only after a pilot authorizer has
 named the cohort, channel, roles, retention end, and deletion owner.
 
-The repository is currently private. It has no public Pages deployment, and
-this document is not an invitation for general public use. Until an owner
+The repository is public and the candidate site is available at
+<https://docs.prysai.com/llm-playbook/>. Public availability does not open a
+pilot, create a support service, or provide learner evidence. Until an owner
 authorizes a named pilot, no feedback collection or recruitment is active.
 
 | Current fact | Record |
 | --- | --- |
-| Repository boundary | `Prysai/Prysai-LLM-Playbook` is private; public deployment is not established. |
-| Authority | GitHub repository metadata: <https://github.com/Prysai/Prysai-LLM-Playbook>, accessed 2026-08-14. |
+| Repository boundary | `Prysai/Prysai-LLM-Playbook` is public; the candidate site is available at <https://docs.prysai.com/llm-playbook/>. |
+| Authority | GitHub repository metadata and candidate site smoke check, accessed 2026-08-17. |
 | Scope owner | `release-maintainer` for publication authorization; `quality-maintainer` for this feedback contract. |
-| Next review | Before any pilot authorization, repository visibility change, or public deployment decision. |
+| Next review | Before any pilot authorization, material site revision, or feedback-channel change. |
 
 This contract does not replace the controlled-study procedure. A named First
 Win pilot must use [First Win pilot protocol v2](first-win-pilot-protocol-v2.md)
