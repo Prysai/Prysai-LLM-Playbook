@@ -88,6 +88,25 @@
             <strong data-reader-chapter-label></strong>
             <span class="reader-chapter-status" data-reader-chapter-status></span>
           </div>
+          <section class="reader-aside-card reader-core-card" data-reader-core-card hidden aria-labelledby="reader-core-title">
+            <span class="reader-aside-label" data-reader-i18n="coreCourseLabel">LLM Foundation Core v1</span>
+            <strong id="reader-core-title" data-reader-core-current-title></strong>
+            <p class="reader-core-intro" data-reader-i18n="coreCourseIntro">Local-only progress. Saving a receipt does not mark learning complete.</p>
+            <p class="reader-core-progress" data-reader-core-progress></p>
+            <ol class="reader-core-units" data-reader-core-units></ol>
+            <form class="reader-core-form" data-reader-core-form>
+              <label class="reader-core-check"><input type="checkbox" data-reader-core-attempted /><span data-reader-i18n="coreAttemptedLabel">I made an attempt on this unit</span></label>
+              <label><span class="reader-aside-label" data-reader-i18n="coreArtifactLabel">What I kept (non-sensitive)</span><textarea data-reader-core-artifact maxlength="500" rows="3" data-reader-i18n-attr="placeholder:coreArtifactPlaceholder" placeholder="Example: task card and first response saved locally"></textarea></label>
+              <label><span class="reader-aside-label" data-reader-i18n="coreLimitLabel">Help or limit to remember</span><textarea data-reader-core-limit maxlength="500" rows="3" data-reader-i18n-attr="placeholder:coreLimitPlaceholder" placeholder="Example: no source check; transfer not observed"></textarea></label>
+              <div class="reader-core-actions">
+                <button type="button" class="reader-core-button reader-core-button-primary" data-reader-core-save data-reader-i18n="coreSave">Save local receipt</button>
+                <button type="button" class="reader-core-button" data-reader-core-copy data-reader-i18n="coreCopy">Copy receipt</button>
+                <button type="button" class="reader-core-button reader-core-button-quiet" data-reader-core-clear data-reader-i18n="coreClear">Clear local receipt</button>
+              </div>
+              <p class="reader-core-privacy" data-reader-i18n="corePrivacy">Do not paste private data. Nothing is uploaded.</p>
+              <p class="reader-core-status" data-reader-core-status role="status" aria-live="polite"></p>
+            </form>
+          </section>
           <details class="reader-aside-card reader-trust-card" data-reader-trust-card hidden>
             <summary data-reader-i18n="trustRecord">Evidence note for this page</summary>
             <div class="reader-detail-row">
