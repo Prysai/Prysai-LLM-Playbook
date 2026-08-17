@@ -10,9 +10,11 @@
 
 ## Read the LLM foundation core first
 
-1. [What Is a Large Language Model](guides/llm-fundamentals-EN.md)
-2. [Understand GPT before Codex](chapters/01-gpt-and-codex-EN.md) — boundary only; Codex is optional
-3. [Complete a first safe, verifiable task](chapters/02-first-safe-task-EN.md)
+The default order is one route, not a menu of competing first chapters:
+
+1. [LLM Foundation Core v1](routes/llm-foundation-core-v1-EN.md) — explain, initiate, identify, repair, then transfer
+2. [Unit 1 — LLM concepts](guides/llm-fundamentals-EN.md) — tokens, context, prompts, tools, MCP, Agents, and Skills
+3. [Unit 2 — first bounded request](routes/llm-core-first-generation-EN.md) — make the goal, context, limits, and answer shape visible
 4. [Core course contract](../docs/product/core-course-contract.md)
 5. [Core content inventory](../docs/governance/core-content-inventory.yaml)
 
@@ -26,16 +28,14 @@ current worked track after that foundation, not a claim that every platform
 behaves identically. The book is arranged around learner evidence, not a
 collection of unrelated external projects.
 
-## Before you choose a chapter
+## Before you choose a platform or application
 
-You do not need to understand the entire LLM landscape before starting. Pick
-the problem closest to your current situation, and let the later chapters fill
-in the vocabulary when it becomes useful. If you have never made a safe local
-change, take the Codex path from Chapter 1. If you do not have a disposable
-project, use **First Safe Change** before Lab 001. If your task is not about
-Codex, begin with the [Universal LLM first-task route](routes/universal-core-foundations-EN.md):
-one fictional, text-only rewrite with a visible check and stop point. Then
-stop at its stated boundary until a source-backed platform adapter exists.
+Complete the LLM Foundation Core before opening a Codex, Claude Code, Gemini,
+Grok, tool, Agent, Skill, or domain route. The core gives you the vocabulary
+and checks needed to tell a fluent answer from an evidenced result. After the
+core, use the [Universal LLM first-task route](routes/universal-core-foundations-EN.md)
+or the Codex track when its boundary and sources match your task. If you do not
+have a disposable project, use **First Safe Change** before Lab 001.
 
 The aim is not to make you sound fluent in product names. It is to help you
 make one decision you can explain, inspect, and improve.

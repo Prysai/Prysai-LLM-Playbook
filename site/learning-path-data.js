@@ -23,20 +23,20 @@ window.CODEX_LEARNING_PATH = {
         "de": "Wahrnehmen, was passiert ist"
       },
       "headline": {
-        "en": "Observe, do not guess.",
-        "zh": "观察，而不是猜测。",
-        "es": "Observa, no adivines.",
-        "ja": "推測せず、観察する。",
-        "ko": "관찰하라. 추측하지 마라.",
-        "de": "Beobachten, nicht raten."
+        "en": "Understand the model before you act.",
+        "zh": "先理解模型，再开始行动。",
+        "es": "Entiende el modelo antes de actuar.",
+        "ja": "行動する前にモデルを理解する。",
+        "ko": "행동하기 전에 모델을 이해하세요.",
+        "de": "Verstehe das Modell, bevor du handelst."
       },
       "description": {
-        "en": "Separate GPT, models, Codex, context, tools, Skills, and Agents before attributing an outcome.",
-        "zh": "在归因结果前，分清 GPT、模型、Codex、上下文、工具、Skill 与 Agent。",
-        "es": "Separa GPT, modelos, Codex, contexto, herramientas, Skills y Agents antes de atribuir un resultado.",
-        "ja": "結果を帰属させる前に、GPT・モデル・Codex・コンテキスト・ツール・Skill・Agent を区別できる。",
-        "ko": "결과를 원인에 귀속시키기 전에 GPT, 모델, Codex, 컨텍스트, 도구, Skill, Agent를 구분한다.",
-        "de": "GPT, Modelle, Codex, Kontext, Tools, Skills und Agents voneinander trennen, bevor man ein Ergebnis zuordnet."
+        "en": "Explain what an LLM, context, prompt, product, tool, Agent, and Skill can establish before choosing a platform.",
+        "zh": "在选择平台前，说明 LLM、上下文、提示词、产品、工具、Agent 与 Skill 各自能建立什么。",
+        "es": "Explica qué pueden establecer un LLM, el contexto, un prompt, un producto, una herramienta, un Agent y un Skill antes de elegir plataforma.",
+        "ja": "プラットフォームを選ぶ前に、LLM、コンテキスト、プロンプト、製品、ツール、Agent、Skill がそれぞれ何を確かめられるか説明する。",
+        "ko": "플랫폼을 선택하기 전에 LLM, 컨텍스트, 프롬프트, 제품, 도구, Agent, Skill이 각각 무엇을 확인할 수 있는지 설명하세요.",
+        "de": "Erkläre vor der Wahl einer Plattform, was ein LLM, Kontext, Prompt, Produkt, Werkzeug, Agent und Skill jeweils belegen können."
       },
       "chapters": [
         {
@@ -166,6 +166,20 @@ window.CODEX_LEARNING_PATH = {
         "de": "Der Lernende behandelt einen Modell-, Skill-, Login- oder Tool-Namen als Beleg für Zugriff oder Ausführung."
       },
       "status": "candidate",
+      "foundationRoute": {
+        "id": "llm-foundation-core-v1",
+        "content_id": "llm-foundation-core-v1",
+        "name": {
+          "en": "LLM Foundation Core",
+          "zh": "LLM 基础核心课",
+          "es": "Núcleo de fundamentos de LLM",
+          "ja": "LLM 基礎コア",
+          "ko": "LLM 기초 코어",
+          "de": "LLM-Grundlagenkern"
+        },
+        "href": "../book/routes/llm-foundation-core-v1-EN.md",
+        "relation": "primary"
+      },
       "next": {
         "chapter": {
           "id": "chapter-01",
@@ -398,6 +412,7 @@ window.CODEX_LEARNING_PATH = {
         "de": "Die Aufgabe berührt Zugangsdaten, Produktion, destruktive Aktionen oder eine nicht verfügbare Datei."
       },
       "status": "candidate",
+      "foundationRoute": null,
       "next": {
         "chapter": {
           "id": "chapter-02",
@@ -716,6 +731,7 @@ window.CODEX_LEARNING_PATH = {
         "de": "Eine fehlende Eingabe verändert Umfang, Risiko, Berechtigung oder Akzeptanz, und es gibt keine Bestätigung."
       },
       "status": "candidate",
+      "foundationRoute": null,
       "next": {
         "chapter": {
           "id": "chapter-03",
@@ -1231,6 +1247,7 @@ window.CODEX_LEARNING_PATH = {
         "de": "Der Workflow hat keinen nutzbaren Checkpoint oder kein Run-Protokoll, verlässt sich auf versteckte Berechtigungen, unzuverlässige Anweisungen, nicht protokollierte Wiederholungen oder eine Behauptung außerhalb seiner Belege."
       },
       "status": "candidate",
+      "foundationRoute": null,
       "next": {
         "chapter": {
           "id": "chapter-07",
@@ -1695,6 +1712,7 @@ window.CODEX_LEARNING_PATH = {
         "de": "Die Wahl wird nur durch Beliebtheit, Verzeichnisgröße oder eine ungeprüfte Leistungsbehauptung gerechtfertigt."
       },
       "status": "candidate",
+      "foundationRoute": null,
       "next": {
         "chapter": {
           "id": "chapter-11",
@@ -2043,6 +2061,7 @@ window.CODEX_LEARNING_PATH = {
         "de": "Es gibt keine festen Eingaben, kein Run-Protokoll, keinen unabhängigen Prüfer, oder die Belege können die Behauptung nicht stützen."
       },
       "status": "candidate",
+      "foundationRoute": null,
       "next": {
         "chapter": {
           "id": "chapter-12",
@@ -2351,6 +2370,7 @@ window.CODEX_LEARNING_PATH = {
         "de": "Die Methode hängt von einer einzelnen Person, versteckten Zugangsdaten, unklarer Lizenzierung oder einem Update-Pfad ohne Verantwortlichen ab."
       },
       "status": "candidate",
+      "foundationRoute": null,
       "next": {
         "chapter": {
           "id": "chapter-20",

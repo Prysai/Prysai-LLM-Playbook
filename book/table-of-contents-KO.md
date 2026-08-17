@@ -8,21 +8,18 @@
 
 ## 여기서 시작하세요
 
-1. [0장: 대규모 언어 모델이란 무엇인가](guides/llm-fundamentals-KO.md).
-2. [1장: Codex를 이해하기 전에 GPT 이해하기](chapters/01-gpt-and-codex-KO.md)
-   → [Lab 011: GPT, Codex, 도구, Agent 구분하기](labs/lab-011-gpt-codex-boundaries-KO.md).
-3. [2장: 첫 안전하고 검증 가능한 작업 완료하기](chapters/02-first-safe-task-KO.md)
-   → [Lab 001: 첫 안전 작업](labs/lab-001-first-safe-task-KO.md).
-4. [첫 범용 LLM 작업](routes/universal-core-foundations-KO.md) — 기초 뒤에 하는 선택 응용 연습입니다.
-5. [3장: 바람을 작업 프로토콜로 바꾸기](chapters/03-task-protocol-KO.md)
+1. [LLM 개념](guides/llm-fundamentals-KO.md).
+2. [첫 범용 LLM 작업](routes/universal-core-foundations-KO.md).
+3. [첫 안전 변경](routes/first-safe-change-KO.md).
+4. [3장: 바람을 작업 프로토콜로 바꾸기](chapters/03-task-protocol-KO.md)
    → [Lab 002: 바람을 작업 프로토콜로 바꾸기](labs/lab-002-task-protocol-KO.md).
-6. [4장: 컨텍스트, 권한, Agent 행동 경계](chapters/04-context-permissions-and-agent-KO.md)
+5. [4장: 컨텍스트, 권한, Agent 행동 경계](chapters/04-context-permissions-and-agent-KO.md)
     → [Lab 007: 행동 경계](labs/lab-007-action-boundaries-KO.md).
-7. [5장: 알맞은 Codex 작업면 선택하기](chapters/05-choose-the-codex-surface-KO.md)
+6. [5장: 알맞은 Codex 작업면 선택하기](chapters/05-choose-the-codex-surface-KO.md)
    → [Lab 003: 완료 주장을 감사하기](labs/lab-003-evidence-review-KO.md).
-8. [6장: 모델 선택은 모델 숭배가 아니다](chapters/06-model-selection-KO.md)
+7. [6장: 모델 선택은 모델 숭배가 아니다](chapters/06-model-selection-KO.md)
    → [Lab 004: 가장 작은 유효 역량 고르기](labs/lab-004-skill-selection-KO.md).
-9. [7장: Skills, Plugins, MCP, 도구는 어떻게 일을 나누는가](chapters/07-skills-plugins-and-tools-KO.md).
+8. [7장: Skills, Plugins, MCP, 도구는 어떻게 일을 나누는가](chapters/07-skills-plugins-and-tools-KO.md).
 
 이 자료는 여전히 `candidate` 또는 `draft / not_run` 상태입니다. 읽을 수 있는
 경로가 있다는 사실만으로 번역 품질, 모델 실행, 학습 효과 또는 전이가 검증되었다는

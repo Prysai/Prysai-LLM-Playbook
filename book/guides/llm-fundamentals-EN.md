@@ -4,7 +4,7 @@
 
 **Unit:** `core-llm-boundaries`  
 **Status:** `candidate`. **Run status:** `not_run`.  
-**Time:** about 20 minutes. **Prerequisite:** none. You do not need Codex,
+**Time:** about 25 minutes. **Prerequisite:** none. You do not need Codex,
 Git, a paid account, or a tool.
 
 This is the foundation for the rest of the Playbook. Before you choose a
@@ -12,6 +12,17 @@ platform, connect a file, install a Skill, or ask an Agent to act, you need a
 small model of what is happening. The goal is not to memorise a list of
 acronyms. It is to know which layer made a claim, which layer can take an
 action, and what evidence would be needed before you trust the result.
+
+Use four questions whenever a new AI feature is advertised:
+
+1. **What is the model being asked to generate?**
+2. **What context was actually supplied for this request?**
+3. **What product or tool, if any, can observe or change something outside the
+   model?**
+4. **What receipt would let another person check the claim?**
+
+If you cannot answer one of these, keep the result as a draft or hypothesis.
+Do not fill the gap with a confident-sounding explanation.
 
 ## The result you should keep
 
@@ -72,6 +83,49 @@ Two distinctions are worth carrying forward:
    stop early, and a Skill can contain an unsuitable rule. The new layer needs
    its own check.
 
+### The terms people most often collapse
+
+**Context is not permanent memory.** Context is what the host makes available
+for one request. A product may store conversation history, preferences, files,
+or embeddings and select some of them later; that product feature is a separate
+data store and retrieval decision. A remembered item can be stale, incomplete,
+or outside the current request. Ask what was supplied this time.
+
+**Retrieval is an evidence path, not a truth guarantee.** A search or RAG
+component chooses passages to add to the context. It can miss the best source,
+select a copy, or return an old version. Keep the source URL, date, and the
+claim-to-source match. A larger context window gives more capacity; it does
+not make every included passage relevant or correct.
+
+**A prompt is a contract, not a spell.** A useful first request names the
+outcome, starting material, constraints, response shape, check, and stop line.
+System or developer instructions may have higher priority than a user prompt,
+and a quoted document can contain untrusted instructions. Treat supplied text
+as data unless the task explicitly makes it an instruction.
+
+**A tool call has two different authors.** The model can propose a structured
+call. The host decides whether the call is allowed and the tool performs it.
+Record the target, authority, intended effect, returned result, and read-back
+or other evidence. A tool name in a response is not a receipt.
+
+**MCP narrows an integration problem; it does not remove governance.** Model
+Context Protocol can standardise parts of how a compatible host discovers and
+uses context or tools. Authentication, server implementation, user approval,
+network scope, data egress, and result checking remain separate. “Supports
+MCP” never means “every MCP server is compatible or safe”.
+
+**An Agent is a loop you can inspect, not a new kind of person.** For teaching,
+describe the visible states: intake, plan, proposed action, approval or denial,
+tool result, verification, retry, handoff, and stop. Do not claim to know a
+hidden chain of thought. A loop that ends with prose has not necessarily
+completed the external task.
+
+**A Skill is a method package, not a capability grant.** A good Skill says when
+it applies, what inputs it needs, what it must not do, how it stops, and what
+evidence it returns. Progressive loading can keep a large method out of the
+context until its trigger matches, but loading instructions does not grant a
+file, terminal, browser, account, or publication permission.
+
 ## 0.3 What happens during one request
 
 For a plain text exchange, a useful observable model is:
@@ -96,6 +150,17 @@ show where a common mistake happens: the model's words can describe a tool
 call without the tool having run. Look for a tool event, returned data, file
 diff, command output, or another appropriate receipt before calling an action
 complete.
+
+For a multi-step Agent, repeat the same check at every boundary:
+
+```text
+state observed → next action proposed → authority checked → action runs
+→ result read back → acceptance checked → continue, hand off, or stop
+```
+
+If the state is unknown after a timeout or interruption, do not blindly repeat
+an action that could send, publish, delete, pay, or change an account. Read the
+target first or hand the uncertainty to a person.
 
 ## 0.4 A little history, without turning history into a guarantee
 
@@ -174,6 +239,28 @@ about this sentence before you look anything up: **"The city library will
 close at 6 p.m. today."** A model can discuss the wording, but the sentence's
 current truth needs a source check. Do not ask it to invent a source.
 
+### A portable first-turn pattern
+
+When you are ready to try a real, low-risk task, fill these six lines before
+you ask for an answer. The labels work in any chat model; the product may add
+other instructions that you cannot see.
+
+```text
+Outcome: [one observable result]
+Starting context: [facts or text I am supplying]
+Allowed help: [what the model may do]
+Constraints: [what must stay true or must not happen]
+Response and check: [the shape I will inspect and how I will inspect it]
+Stop: [missing input, authority, source, or evidence that makes us pause]
+```
+
+For a first attempt, keep the context fictional or non-sensitive. Ask for a
+draft or classification before asking the system to use a tool. Preserve the
+first request and response; otherwise you cannot tell whether a later rewrite
+fixed the original problem or merely hid it. The next unit turns this pattern
+into a complete task card and a retained receipt: [Context, instruction, and a
+first generation](../routes/llm-core-first-generation-EN.md).
+
 ## 0.7 The only completion check for this unit
 
 Write a short explanation card without copying this page:
@@ -184,6 +271,8 @@ My explanation:
 LLM boundary:
 Token or context boundary:
 Prompt / product / tool boundary:
+Context / memory boundary:
+Tool / MCP / Agent / Skill boundary:
 One reason a fluent answer can still be wrong:
 
 Decision 1 (supported / not supported):

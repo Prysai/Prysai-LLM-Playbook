@@ -15,7 +15,7 @@
 
 **New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) — start the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. The repository is the auditable source, not the recommended first screen.
 
-[Start the LLM foundation route](README-EN.md#llm-foundation-core) · [Try the no-setup check](#optional-15-minute-warm-up-no-git-required) · [Read the full English guide](README-EN.md) · [Continue to the optional Codex track](#the-recommended-first-codex-path)
+[Start the LLM foundation route](README-EN.md#llm-foundation-core) · [Try the optional no-setup check](#optional-15-minute-warm-up-no-git-required) · [Read the full English guide](README-EN.md) · [Open the optional Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md)
 
 > **Status:** `candidate` · **Default locale:** English · **Maintained by:** Prysai Lab
 
@@ -94,27 +94,17 @@ The full repository is a textbook and reference library, not a required menu.
 Start with the five-unit core. Do not enter Codex, Skills, or professional
 tracks until the core route says to continue.
 
-**Step 0.** [Chapter 0 — What Is a Large Language Model](book/guides/llm-fundamentals-EN.md):
-20 minutes on what an LLM is, its capabilities, and its honest limits.
+1. [LLM Foundation Core v1](book/routes/llm-foundation-core-v1-EN.md) — explain,
+   initiate, identify, repair, and transfer the method.
+2. [LLM concepts](book/guides/llm-fundamentals-EN.md) — tokens, context,
+   prompts, tools, MCP, Agents, Skills, and their boundaries.
+3. [First bounded request](book/routes/llm-core-first-generation-EN.md) — make
+   the goal, context, limits, and answer shape visible.
 
-**Then the first safe task, in this order:**
-
-1. [Chapter 1](book/chapters/01-gpt-and-codex-EN.md) — separate a model,
-   Codex, tools, Skills, Agents, and evidence.
-2. [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) — label what a
-   static task card can and cannot establish.
-3. [Chapter 2](book/chapters/02-first-safe-task-EN.md) — define one reversible
-   local change and one acceptance check.
-4. [First Safe Change](book/routes/first-safe-change-EN.md) — an optional
-   offline fixture if you have no disposable project.
-5. [Lab 001](book/labs/lab-001-first-safe-task-EN.md) — inspect first, edit
-   once, keep the diff and the check.
-
-**After Chapter 2**, keep reading: Chapter 3 (task protocols) through Chapter
-22, with the [table of contents](book/table-of-contents-EN.md) as your map.
-The optional [15-minute no-setup check](#optional-15-minute-warm-up-no-git-required)
-and the practice cards are exercises you reach after the foundation — they are
-not the entry point.
+**After the core**, use the [table of contents](book/table-of-contents-EN.md)
+to choose Codex, tools, Skills, or professional tracks. The optional [15-minute
+no-setup check](#optional-15-minute-warm-up-no-git-required) and practice cards
+are application exercises, not the entry point.
 
 This is the complete candidate L0 → L1 route. The fixture is a supplemental
 bridge, not a chapter or Lab run. The fixture is `candidate / not_run`; Labs
@@ -123,11 +113,11 @@ that beginners complete them successfully. Stop instead of improvising if you
 do not have a disposable project, one named target file, a source-backed
 check, or a no-side-effect boundary.
 
-> **Choose by readiness:** start with Chapter 1 when you have a disposable
-> project. If you do not have a safe local target when Chapter 2 asks you to
-> choose one, use the [First Safe Change fixture](book/routes/first-safe-change-EN.md)
-> before Lab 001. It supplies one offline target and checker; it does not
-> replace the guided path. The prompt practice below is optional and text-only.
+> **Choose by readiness after the core:** if you have a disposable project,
+> continue to the Codex track. If you do not have a safe local target, use the
+> [First Safe Change fixture](book/routes/first-safe-change-EN.md) before Lab 001.
+> It supplies one offline target and checker; it does not replace the foundation
+> route. The prompt practice below is optional and text-only.
 
 The five-minute exercise below makes one LLM limit visible: a fluent answer can
 still add facts it was never given. It does not replace the local Codex task.
@@ -225,8 +215,8 @@ automatically know that missing details must remain unknown. A clear prompt and
 a quick human check make that limit visible. This small illustration does not
 prove learning, transfer, general writing ability, or model superiority.
 For a real local Codex task, return to the
-[recommended path](#the-recommended-first-codex-path): Chapter 1 → Lab 011
-→ Chapter 2 → First Safe Change fixture → Lab 001. The [Beginner Practice Pack](book/communication-clinic-EN.md#first-practice-intake)
+[LLM Foundation Core](book/routes/llm-foundation-core-v1-EN.md) before a
+platform task. The [Beginner Practice Pack](book/communication-clinic-EN.md#first-practice-intake)
 is a separate supplemental route for language, research, or a small work task.
 
 <!-- starter-task-contract:end -->

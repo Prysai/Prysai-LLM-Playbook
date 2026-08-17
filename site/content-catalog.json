@@ -476,12 +476,12 @@
     },
     "llm-fundamentals-guide": {
       "name": {
-        "en": "Chapter 0: What Is a Large Language Model",
-        "zh": "第 0 章：什么是大语言模型",
-        "es": "Capítulo 0: ¿Qué es un modelo de lenguaje grande?",
-        "ja": "第0章：大規模言語モデルとは何か",
-        "ko": "0장: 대형 언어 모델이란 무엇인가?",
-        "de": "Kapitel 0: Was ist ein großes Sprachmodell?"
+        "en": "Unit 1: What an LLM is",
+        "zh": "单元 1：什么是大语言模型",
+        "es": "Unidad 1: Qué es un modelo de lenguaje grande",
+        "ja": "ユニット1：LLMとは何か",
+        "ko": "단원 1: LLM이란 무엇인가",
+        "de": "Einheit 1: Was ist ein LLM?"
       }
     }
   },

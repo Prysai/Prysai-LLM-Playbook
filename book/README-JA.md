@@ -6,9 +6,12 @@
 
 ## まず教科書の主線を読む
 
-1. [第0章：大規模言語モデルとは何か](guides/llm-fundamentals-JA.md)
-2. [第 1 章：Codex の前に GPT を理解する](chapters/01-gpt-and-codex-JA.md)
-3. [第 2 章：最初の安全で検証可能なタスク](chapters/02-first-safe-task-JA.md)
+1. [LLM の基礎概念](guides/llm-fundamentals-JA.md)
+2. [最初の汎用 LLM タスク](routes/universal-core-foundations-JA.md)
+3. [最初の安全な変更](routes/first-safe-change-JA.md)
+
+新しい基礎コアの正規ソースは英語で、日本語版は再翻訳と独立レビューを待っています。
+そのため、ここでは日本語ファイルだけを入口として示します。
 
 カード、語学、業務報告、リサーチ確認はこの順序の後に行う**任意の応用練習**であり、LLM の基礎を置き換えません。
 

@@ -87,7 +87,7 @@ window.GOAL_TEMPLATES = {
    "codex": {
     "fields": [],
     "template": "I am new to AI coding tools. Give me one safe first task: a fictional, text-only exercise with a clear result, supplied material, a response shape, a check I can run myself, and a stop rule. Do not assume I have files, tools, accounts, or permissions. Do not teach a feature list first. End by asking me to make my own first attempt.",
-    "path": "../book/chapters/01-gpt-and-codex-EN.md"
+    "path": "../book/routes/llm-foundation-core-v1-EN.md"
    }
   },
   "zh": {

@@ -14,9 +14,13 @@ Lizenz: Kurstexte und Lehrmaterialien stehen unter CC BY 4.0; Skripte und Werkze
 
 Wenn du zum ersten Mal hier bist, wähle noch nicht zwischen Karten, Skills und Produkten. Folge zuerst diesem deutschen Hauptpfad:
 
-1. [Lektion 0: Was ist ein großes Sprachmodell?](book/guides/llm-fundamentals-DE.md)
-2. [Kapitel 1: GPT vor Codex verstehen](book/chapters/01-gpt-and-codex-DE.md)
-3. [Kapitel 2: Die erste sichere, überprüfbare Aufgabe](book/chapters/02-first-safe-task-DE.md)
+1. [LLM-Konzepte](book/guides/llm-fundamentals-DE.md)
+2. [Erste universelle LLM-Aufgabe](book/routes/universal-core-foundations-DE.md)
+3. [Erste sichere Änderung](book/routes/first-safe-change-DE.md)
+
+Der englische Grundlagenkern ist die kanonische Quelle; die deutsche
+Neuübersetzung wird noch erstellt und geprüft. Bis dahin bleibt dieser Einstieg
+vollständig auf deutsche Dateien begrenzt.
 
 Die Karten für Spanisch, Arbeitsupdates und Recherche sind **optionale Anwendungsübung** nach diesem Pfad. Sie sind nicht die erste LLM-Lektion und versprechen weder Effizienz, Sprachflüssigkeit noch Kompetenzzuwachs.
 

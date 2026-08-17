@@ -47,7 +47,7 @@ def english_root_route_number_errors(text: str) -> list[str]:
         return ["missing bounded English root route section"]
     section = text[start:end]
     numbers = [int(value) for value in re.findall(r"^\s*(\d+)\.\s+\[", section, flags=re.MULTILINE)]
-    expected = list(range(1, 6))
+    expected = list(range(1, 4))
     if numbers != expected:
         return [f"English root route must show steps {expected} exactly once: found {numbers}"]
     return []
@@ -74,7 +74,7 @@ def visible_start_number_errors(text: str, locale: str) -> list[str]:
         section = section[:next_heading.start()]
     numbers = [int(value) for value in re.findall(r"^\s*(\d+)\.\s+\[", section, flags=re.MULTILINE)]
     if len(numbers) < 3:
-        return ["start list must contain at least Chapter 0, Chapter 1, and Chapter 2"]
+        return ["start list must contain the foundation core, concepts, and first bounded request"]
     expected = list(range(1, len(numbers) + 1))
     if numbers != expected:
         return [f"start-list numbers must be sequential: found {numbers}, expected {expected}"]
@@ -90,10 +90,20 @@ def path_for(kind: str, locale: str) -> Path:
 
 
 def required_links(locale: str, prefix: str) -> tuple[str, str, str]:
+    # The English core route is the canonical five-unit source. The five
+    # non-English entry sets deliberately keep their same-locale guide and
+    # universal practice route visible while the core is being retranslated;
+    # they must not silently point to the English route.
+    if locale != "EN":
+        return (
+            f"{prefix}guides/llm-fundamentals-{locale}.md",
+            f"{prefix}routes/universal-core-foundations-{locale}.md",
+            f"{prefix}routes/first-safe-change-{locale}.md",
+        )
     return (
+        f"{prefix}routes/llm-foundation-core-v1-{locale}.md",
         f"{prefix}guides/llm-fundamentals-{locale}.md",
-        f"{prefix}chapters/01-gpt-and-codex-{locale}.md",
-        f"{prefix}chapters/02-first-safe-task-{locale}.md",
+        f"{prefix}routes/llm-core-first-generation-{locale}.md",
     )
 
 
@@ -115,9 +125,9 @@ def main() -> int:
             lesson, chapter_one, chapter_two = required_links(locale, prefix)
             positions = [text.find(value) for value in (lesson, chapter_one, chapter_two)]
             if any(position < 0 for position in positions):
-                errors.append(f"{path.relative_to(ROOT)}: missing same-locale Chapter 0, Chapter 1, or Chapter 2 link")
+                errors.append(f"{path.relative_to(ROOT)}: missing same-locale foundation core, concepts, or first bounded request link")
             elif positions != sorted(positions):
-                errors.append(f"{path.relative_to(ROOT)}: textbook links must appear Chapter 0, Chapter 1, Chapter 2")
+                errors.append(f"{path.relative_to(ROOT)}: foundation links must appear core, concepts, first bounded request")
             if kind != "toc":
                 marker = OPTIONAL_MARKERS[locale]
                 if marker not in text:

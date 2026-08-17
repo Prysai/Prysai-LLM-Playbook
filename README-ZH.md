@@ -13,9 +13,12 @@
 
 第一次来这里，不必在提示词卡、Skill 和不同产品之间做选择。先沿同一条中文主线学习：
 
-1. [第 0 课：什么是大语言模型](book/guides/llm-fundamentals-ZH.md)
-2. [第 1 章：先理解 GPT，再理解 Codex](book/chapters/01-gpt-and-codex-ZH.md)
-3. [第 2 章：完成第一个安全、可验证的任务](book/chapters/02-first-safe-task-ZH.md)
+1. [LLM 基础概念](book/guides/llm-fundamentals-ZH.md)
+2. [通用 LLM 首练习](book/routes/universal-core-foundations-ZH.md)
+3. [第一次安全改动](book/routes/first-safe-change-ZH.md)
+
+英文基础核心课是当前的规范源文件，中文版本正在重译和复核。在此之前，
+这个入口会保持整条路线只链接中文文件。
 
 西班牙语、工作更新和研究核查卡是学完主线后的**可选应用练习**，不是理解大语言模型的第一课，也不保证效率、流利度或能力提升。
 

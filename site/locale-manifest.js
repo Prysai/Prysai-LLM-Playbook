@@ -3872,45 +3872,45 @@ window.CODEX_LOCALE_MANIFEST = {
           "path": "book/guides/llm-fundamentals-ZH.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "candidate",
-          "coverage": "full",
-          "source_revision": "worktree-2026-08-16",
+          "translation_status": "stale",
+          "coverage": "stale",
+          "source_revision": "worktree-2026-08-17",
           "explicit_anchors": []
         },
         "es": {
           "path": "book/guides/llm-fundamentals-ES.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "candidate",
-          "coverage": "full",
-          "source_revision": "worktree-2026-08-16",
+          "translation_status": "stale",
+          "coverage": "stale",
+          "source_revision": "worktree-2026-08-17",
           "explicit_anchors": []
         },
         "ja": {
           "path": "book/guides/llm-fundamentals-JA.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "candidate",
-          "coverage": "full",
-          "source_revision": "worktree-2026-08-16",
+          "translation_status": "stale",
+          "coverage": "stale",
+          "source_revision": "worktree-2026-08-17",
           "explicit_anchors": []
         },
         "ko": {
           "path": "book/guides/llm-fundamentals-KO.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "candidate",
-          "coverage": "full",
-          "source_revision": "worktree-2026-08-16",
+          "translation_status": "stale",
+          "coverage": "stale",
+          "source_revision": "worktree-2026-08-17",
           "explicit_anchors": []
         },
         "de": {
           "path": "book/guides/llm-fundamentals-DE.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "candidate",
-          "coverage": "full",
-          "source_revision": "worktree-2026-08-16",
+          "translation_status": "stale",
+          "coverage": "stale",
+          "source_revision": "worktree-2026-08-17",
           "explicit_anchors": []
         }
       }

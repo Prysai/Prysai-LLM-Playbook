@@ -135,16 +135,16 @@ try {
 
   await page.goto(`${origin}/`, { waitUntil: 'networkidle' });
   assert.equal(await page.locator('html').getAttribute('lang'), 'en', 'unparameterized English entry inherits a browser language preference');
-  assert.equal(await page.locator('h1').innerText(), 'Turn a first LLM task into real work.', 'unparameterized English entry does not render English content');
+  assert.equal(await page.locator('h1').innerText(), 'Understand LLMs before you ask them to work.', 'unparameterized English entry does not render English content');
   assert.equal(searchRequests.length, 0, 'initial page load fetched the full search index');
   assert.equal(
     await page.locator('#start').evaluate((section) => section.previousElementSibling?.id),
     'top',
     'the project catalogue appears before the first useful result instead of after it',
   );
-  assert.equal(await page.locator('[data-hero-primary]').getAttribute('href'), '#first-30', 'hero primary action does not lead to the five-minute practice');
-  assert.match(await page.locator('[data-hero-primary]').innerText(), /^Start the five-minute practice/, 'hero primary action does not name one concrete first action');
-  assert.match(await page.locator('.hero-route-kicker').innerText(), /optional textbook path/i, 'textbook route is not clearly secondary to the first practice');
+  assert.match(await page.locator('[data-hero-primary]').getAttribute('href'), /reader\.html\?path=book%2Froutes%2Fllm-foundation-core-v1-EN\.md&lang=en$/, 'hero primary action does not lead to the LLM Foundation Core');
+  assert.match(await page.locator('[data-hero-primary]').innerText(), /^Start the LLM Foundation Core/, 'hero primary action does not name the required foundation');
+  assert.match(await page.locator('.hero-route-kicker').innerText(), /one required foundation route/i, 'foundation route is not clearly required before application practice');
   await noHorizontalOverflow(page, 'desktop showcase');
   // Every homepage Reader link with a fragment promises a concrete landing
   // point. Check the rendered Markdown document, not just the shell URL: a
@@ -286,12 +286,12 @@ try {
     ja: /ワークショップの予定が変わりました/, ko: /워크숍 일정이 바뀌었습니다/, de: /Der Workshop wurde verschoben/,
   };
   const localizedHeroTitles = {
-    en: 'Turn a first LLM task into real work.',
-    zh: '让第一项 LLM 任务变成真实工作。',
-    es: 'Convierte una primera tarea de LLM en trabajo real.',
-    ja: '最初の LLM タスクを本物の仕事にする。',
-    ko: '첫 LLM 과제를 실제 작업으로 만드세요.',
-    de: 'Mache aus einer ersten LLM-Aufgabe echte Arbeit.',
+    en: 'Understand LLMs before you ask them to work.',
+    zh: '先理解 LLM，再让它开始工作。',
+    es: 'Entiende los LLM antes de pedirles que trabajen.',
+    ja: 'LLMに仕事を頼む前に、その仕組みを理解する。',
+    ko: 'LLM에게 일을 맡기기 전에 먼저 이해하세요.',
+    de: 'Verstehe LLMs, bevor du sie arbeiten lässt.',
   };
   for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de']) {
     await page.goto(`${origin}/site/?lang=${locale}`, { waitUntil: 'networkidle' });
@@ -480,31 +480,31 @@ try {
   await everydayPromptDeck.locator('#skill-prompt-status').getByText(/Prompt copied\. Follow the three steps/i).waitFor();
   assert.match(
     await page.locator('.hero-scope').innerText(),
-    /One transferable method[\s\S]*Codex[\s\S]*current sources[\s\S]*runnable evidence/i,
+    /One transferable foundation[\s\S]*platform-specific practice[\s\S]*current sources[\s\S]*runnable evidence/i,
     'hero overstates named-platform coverage or omits the adapter evidence boundary',
   );
-  const lessonZeroLink = page.getByRole('link', { name: 'Chapter 0: what an LLM is' });
+  const lessonZeroLink = page.getByRole('link', { name: /LLM Foundation Core/i }).first();
   assert.match(
     await lessonZeroLink.getAttribute('href'),
-    /reader\.html\?path=book%2Fguides%2Fllm-fundamentals-EN\.md&lang=en$/,
-    'Chapter 0 does not open the textbook opener through the Reader',
+    /reader\.html\?path=book%2Froutes%2Fllm-foundation-core-v1-EN\.md&lang=en$/,
+    'LLM Foundation Core route does not open through the Reader',
   );
-  const guidedRouteLink = page.getByRole('link', { name: 'Chapter 1: GPT before Codex' });
+  const guidedRouteLink = page.getByRole('link', { name: /Unit 1: what an LLM is/i });
   assert.match(
     await guidedRouteLink.getAttribute('href'),
-    /reader\.html\?path=book%2Fchapters%2F01-gpt-and-codex-EN\.md&lang=en$/,
-    'Chapter 1 route card does not open the canonical Chapter 1 Reader route',
+    /reader\.html\?path=book%2Fguides%2Fllm-fundamentals-EN\.md&lang=en$/,
+    'LLM concept route card does not open the canonical foundation guide Reader route',
   );
-  const fixtureRouteLink = page.getByRole('link', { name: 'Chapter 2: your first safe task' });
+  const fixtureRouteLink = page.getByRole('link', { name: /Unit 2: your first bounded request/i });
   assert.match(
     await fixtureRouteLink.getAttribute('href'),
-    /reader\.html\?path=book%2Fchapters%2F02-first-safe-task-EN\.md&lang=en$/,
-    'Chapter 2 route card does not open the canonical Chapter 2 Reader route',
+    /reader\.html\?path=book%2Froutes%2Fllm-core-first-generation-EN\.md&lang=en$/,
+    'first bounded-request route card does not open the canonical Reader route',
   );
   assert.match(
     await page.locator('[data-route-decision]').innerText(),
-    /(?:optional textbook path|not a menu to choose from|this is a route, not a menu)/i,
-    'first-route card does not state its textbook-path status',
+    /finish the core route before entering codex/i,
+    'foundation route card does not state its platform boundary',
   );
   const firstTurnLink = page.getByRole('link', { name: 'Draft a universal first turn' });
   await assert.doesNotReject(async () => firstTurnLink.waitFor(), 'universal first-turn research entry is missing from the showcase');
@@ -861,10 +861,10 @@ try {
   assert.equal(await labIndexPage.getByText(/^Languages:/, { exact: false }).count(), 0, 'Reader rendered a duplicate source language selector');
   await labIndexPage.close();
   const defaultReaderPage = await context.newPage();
-  await defaultReaderPage.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md`, { waitUntil: 'networkidle' });
+  await defaultReaderPage.goto(`${origin}/site/reader.html`, { waitUntil: 'networkidle' });
   await defaultReaderPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
   assert.equal(await defaultReaderPage.locator('html').getAttribute('lang'), 'en', 'unparameterized English Reader inherits a browser language preference');
-  assert.match(await defaultReaderPage.locator('[data-reader-article] h1').innerText(), /Understand GPT before you trust Codex/i, 'unparameterized English Reader does not render English source');
+  assert.match(await defaultReaderPage.locator('[data-reader-article] h1').innerText(), /LLM Foundation Core v1/i, 'unparameterized Reader does not open the foundation route');
   await defaultReaderPage.close();
   await searchInput.fill('research checkpoint');
   await page.getByRole('button', { name: 'Search', exact: true }).click();
@@ -1133,15 +1133,15 @@ try {
   const mobileLessonZeroRoute = page.locator('.hero-route-option').first();
   assert.match(
     await mobileLessonZeroRoute.getAttribute('href'),
-    /reader\.html\?path=book%2Fguides%2Fllm-fundamentals-EN\.md&lang=en$/,
-    'mobile Chapter 0 route does not target the textbook opener',
+    /reader\.html\?path=book%2Froutes%2Fllm-foundation-core-v1-EN\.md&lang=en$/,
+    'mobile foundation route does not target the LLM Foundation Core',
   );
   await mobileLessonZeroRoute.click();
-  await page.waitForURL(/reader\.html\?path=book%2Fguides%2Fllm-fundamentals-EN\.md/);
-  assert.equal(await page.locator('[data-reader-article] h1').filter({ hasText: /Chapter 0|large language model/i }).isVisible(), true, 'mobile Chapter 0 route does not reach the textbook opener');
+  await page.waitForURL(/reader\.html\?path=book%2Froutes%2Fllm-foundation-core-v1-EN\.md/);
+  assert.equal(await page.locator('[data-reader-article] h1').filter({ hasText: /LLM Foundation Core v1/i }).isVisible(), true, 'mobile foundation route does not reach the LLM Foundation Core');
   const mobileStartRoutes = [
-    [/01-gpt-and-codex-EN\.md/, /understand gpt.*codex/i],
-    [/02-first-safe-task-EN\.md/, /first safe.*verifiable task|safe.*verifiable/i],
+    [/llm-fundamentals-EN\.md/, /what an llm is.*layers behind a useful answer/i],
+    [/llm-core-first-generation-EN\.md/, /context, instruction, and a first generation/i],
   ];
   for (const [index, [pathPattern, titlePattern]] of mobileStartRoutes.entries()) {
     await page.goto(`${origin}/site/`, { waitUntil: 'networkidle' });

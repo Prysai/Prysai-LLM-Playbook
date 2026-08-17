@@ -9,21 +9,18 @@ Inhalt und wechselt nicht die Sprache.
 
 ## Hier beginnen
 
-1. [Kapitel 0: Was ist ein großes Sprachmodell?](guides/llm-fundamentals-DE.md).
-2. [Kapitel 1: GPT verstehen, bevor man Codex versteht](chapters/01-gpt-and-codex-DE.md)
-   → [Lab 011: GPT, Codex, Tools und Agents unterscheiden](labs/lab-011-gpt-codex-boundaries-DE.md).
-3. [Kapitel 2: Die erste sichere und überprüfbare Aufgabe erledigen](chapters/02-first-safe-task-DE.md)
-   → [Lab 001: Erste sichere Aufgabe](labs/lab-001-first-safe-task-DE.md).
-4. [Erste universelle LLM-Aufgabe](routes/universal-core-foundations-DE.md) — optionale Anwendungsübung nach den Grundlagen.
-5. [Kapitel 3: Einen Wunsch in ein Aufgabenprotokoll verwandeln](chapters/03-task-protocol-DE.md)
+1. [LLM-Konzepte](guides/llm-fundamentals-DE.md).
+2. [Erste universelle LLM-Aufgabe](routes/universal-core-foundations-DE.md).
+3. [Erste sichere Änderung](routes/first-safe-change-DE.md).
+4. [Kapitel 3: Einen Wunsch in ein Aufgabenprotokoll verwandeln](chapters/03-task-protocol-DE.md)
    → [Lab 002: Einen Wunsch in ein Aufgabenprotokoll verwandeln](labs/lab-002-task-protocol-DE.md).
-6. [Kapitel 4: Kontext, Berechtigungen und die Aktionsgrenze des Agents](chapters/04-context-permissions-and-agent-DE.md)
+5. [Kapitel 4: Kontext, Berechtigungen und die Aktionsgrenze des Agents](chapters/04-context-permissions-and-agent-DE.md)
     → [Lab 007: Aktionsgrenzen](labs/lab-007-action-boundaries-DE.md).
-7. [Kapitel 5: Die richtige Codex-Arbeitsfläche wählen](chapters/05-choose-the-codex-surface-DE.md)
+6. [Kapitel 5: Die richtige Codex-Arbeitsfläche wählen](chapters/05-choose-the-codex-surface-DE.md)
    → [Lab 003: Eine Fertigmeldung prüfen](labs/lab-003-evidence-review-DE.md).
-8. [Kapitel 6: Modellauswahl ist keine Modellverehrung](chapters/06-model-selection-DE.md)
+7. [Kapitel 6: Modellauswahl ist keine Modellverehrung](chapters/06-model-selection-DE.md)
    → [Lab 004: Die kleinste wirksame Fähigkeit auswählen](labs/lab-004-skill-selection-DE.md).
-9. [Kapitel 7: Wie Skills, Plugins, MCP und Tools die Arbeit aufteilen](chapters/07-skills-plugins-and-tools-DE.md).
+8. [Kapitel 7: Wie Skills, Plugins, MCP und Tools die Arbeit aufteilen](chapters/07-skills-plugins-and-tools-DE.md).
 
 Diese Materialien bleiben `candidate` oder `draft / not_run`. Ein vorhandener
 Leseweg beweist weder Übersetzungsqualität noch Modellläufe, Lernerfolg oder

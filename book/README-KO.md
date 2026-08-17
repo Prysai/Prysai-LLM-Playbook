@@ -10,9 +10,12 @@
 
 ## 먼저 교과서 주 학습 경로를 읽으세요
 
-1. [0장: 대규모 언어 모델이란 무엇인가](guides/llm-fundamentals-KO.md)
-2. [1장: Codex보다 먼저 GPT 이해하기](chapters/01-gpt-and-codex-KO.md)
-3. [2장: 첫 번째 안전하고 검증 가능한 작업](chapters/02-first-safe-task-KO.md)
+1. [LLM 개념](guides/llm-fundamentals-KO.md)
+2. [첫 범용 LLM 작업](routes/universal-core-foundations-KO.md)
+3. [첫 안전 변경](routes/first-safe-change-KO.md)
+
+새 기초 코어의 정식 원문은 영어이며 한국어판은 재번역과 독립 검토를 기다리고 있습니다.
+따라서 이 책의 입구는 한국어 파일만 가리킵니다.
 
 카드, 언어, 업무 업데이트, 리서치 확인은 이 순서 뒤에 하는 **선택 응용 연습**이며 LLM 기초 수업을 대신하지 않습니다.
 

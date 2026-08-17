@@ -2,11 +2,11 @@
 
 # Prysai LLM Playbook: Table of Contents v0.2
 
-Readers who want the platform-neutral method first can open the
-[Universal LLM first-task route](routes/universal-core-foundations-EN.md).
-It begins with one fictional, text-only rewrite before mapping four extracted
-units. It remains `candidate / not_run`; the route does not establish
-cross-platform behavior, learner outcomes, or completion time.
+Every reader starts with the platform-neutral LLM Foundation Core. It teaches
+the concepts, one bounded request, visible failure, repair, and transfer before
+any Codex, tool, Agent, Skill, or application route. It remains `candidate /
+not_run`; the route does not establish cross-platform behavior, learner
+outcomes, or completion time.
 
 > English source-locale directory page. The legacy unsuffixed draft was
 > removed during release cleanup; `book/table-of-contents-EN.md` is the
@@ -33,9 +33,9 @@ cross-platform behavior, learner outcomes, or completion time.
 
 ## Start here
 
-- [Chapter 0 — What Is a Large Language Model](guides/llm-fundamentals-EN.md)
-- [Chapter 1 — Understand GPT before Codex](chapters/01-gpt-and-codex-EN.md)
-- [Chapter 2 — Complete a safe, verifiable task](chapters/02-first-safe-task-EN.md)
+- [LLM Foundation Core v1 — required first route](routes/llm-foundation-core-v1-EN.md)
+- [Unit 1 — LLM concepts](guides/llm-fundamentals-EN.md)
+- [Unit 2 — first bounded request](routes/llm-core-first-generation-EN.md)
 - [Project entry — EN](../README-EN.md)
 - [Book guide — EN](README-EN.md)
 - [Project map — EN](../docs/project-map-EN.md)
@@ -43,7 +43,7 @@ cross-platform behavior, learner outcomes, or completion time.
 - [Preface — EN](preface-EN.md)
 - [Learning path contract — locale-neutral](../docs/governance/learning-path.yaml)
 - [Locale matrix — locale-neutral](../docs/governance/locale-matrix.yaml)
-- [Universal LLM first task — EN, optional application after Chapter 0 through Chapter 2](routes/universal-core-foundations-EN.md)
+- [Universal LLM first task — optional transfer route after the foundation core](routes/universal-core-foundations-EN.md)
 - [First Safe Change — optional offline fixture before Lab 001](routes/first-safe-change-EN.md)
 
 ## Part I: From understanding GPT to the first safe use

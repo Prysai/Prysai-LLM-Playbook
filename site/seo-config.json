@@ -8,14 +8,14 @@
     "html_lang": "en",
     "og_locale": "en_US",
     "title": "Prysai LLM Playbook — LLM Guide, Prompts, and Reliable AI Work",
-    "description": "Learn what LLMs are, write clearer prompts, and turn a first AI task into bounded, checkable work. Codex is the flagship practice track."
+    "description": "Learn what LLMs are, write clearer prompts, and turn a first AI task into bounded, checkable work before choosing a platform-specific track."
   },
   "static_locale_pages": {
     "zh": {
       "html_lang": "zh-CN",
       "og_locale": "zh_CN",
       "title": "Prysai 大模型实战手册：LLM 入门、提示词与可靠 AI 工作",
-      "description": "从理解大语言模型开始，学习写清提示词，并把第一次 AI 任务变成有边界、可检查的工作。Codex 是旗舰实践路线。"
+      "description": "从理解大语言模型开始，学习写清提示词，并把第一次 AI 任务变成有边界、可检查的工作，再进入具体平台实践。"
     },
     "es": {
       "html_lang": "es",

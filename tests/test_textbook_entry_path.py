@@ -32,10 +32,10 @@ class TextbookEntryPathTests(unittest.TestCase):
     def test_localized_start_list_rejects_a_repeated_visible_number(self) -> None:
         text = """## Empieza aquí
 
-1. [Lección 0](lesson.md)
-2. [Capítulo 1](one.md)
-3. [Capítulo 2](two.md)
-3. [Capítulo 3](three.md)
+1. [Núcleo](core.md)
+2. [Conceptos](concepts.md)
+3. [Primera petición](request.md)
+3. [Transferencia](transfer.md)
 
 ## Disponibilidad
 """
@@ -48,11 +48,9 @@ class TextbookEntryPathTests(unittest.TestCase):
     def test_english_root_route_rejects_repeated_steps(self) -> None:
         text = """## Start here — read it like a book
 
-1. [Lesson 0](lesson.md)
-2. [Chapter 1](one.md)
-3. [Chapter 2](two.md)
-4. [Fixture](fixture.md)
-5. [Lab](lab.md)
+1. [Foundation core](core.md)
+2. [Concepts](concepts.md)
+3. [First request](request.md)
 2. [Chapter 1 again](one.md)
 
 <details>
@@ -60,7 +58,7 @@ class TextbookEntryPathTests(unittest.TestCase):
 """
         self.assertEqual(
             VALIDATOR.english_root_route_number_errors(text),
-            ["English root route must show steps [1, 2, 3, 4, 5] exactly once: found [1, 2, 3, 4, 5, 2]"],
+            ["English root route must show steps [1, 2, 3] exactly once: found [1, 2, 3, 2]"],
         )
 
 

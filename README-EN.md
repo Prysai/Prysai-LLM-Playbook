@@ -31,9 +31,15 @@ catalogue before beginning.
 **Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md)
 <!-- language-switcher:end -->
 
+## Start with the foundation
+
+1. [LLM Foundation Core v1](book/routes/llm-foundation-core-v1-EN.md)
+2. [LLM concepts](book/guides/llm-fundamentals-EN.md)
+3. [First bounded request](book/routes/llm-core-first-generation-EN.md)
+
 **New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) for the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. This repository remains the auditable source.
 
-[Start the LLM foundation core](#llm-foundation-core) · [Try the no-setup practice](#optional-15-minute-warm-up-no-git-required) · [Continue to the optional Codex track](#the-recommended-first-codex-path)
+[Start the LLM foundation core](#llm-foundation-core) · [Try the optional no-setup practice](#optional-15-minute-warm-up-no-git-required) · [Open the optional Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md)
 
 The Spanish, work-update, and research cards are **optional application practice** after the textbook path; they are not the first lesson.
 
@@ -51,15 +57,16 @@ quality, learner outcomes, or release readiness.
 | Locale | Readable course units | Current boundary |
 |---|---:|---|
 | English | 40 / 40 | Canonical source language. |
-| Simplified Chinese | 40 / 40 | Candidate translations exist for every chapter and Lab; independent language review pending. |
-| Spanish | 40 / 40 | Candidate translations exist for every chapter and Lab; independent language review pending. |
-| Japanese | 40 / 40 | Candidate translations exist for every chapter and Lab; independent language review pending. |
-| Korean | 40 / 40 | Candidate translations exist for every chapter and Lab; independent language review pending. |
-| German | 40 / 40 | Candidate translations exist for every chapter and Lab; independent language review pending. |
+| Simplified Chinese | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental LLM foundation guide is stale after the 2026-08-17 English revision and is withheld from the sitemap until retranslation and review. |
+| Spanish | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental LLM foundation guide is stale after the 2026-08-17 English revision and is withheld from the sitemap until retranslation and review. |
+| Japanese | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental LLM foundation guide is stale after the 2026-08-17 English revision and is withheld from the sitemap until retranslation and review. |
+| Korean | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental LLM foundation guide is stale after the 2026-08-17 English revision and is withheld from the sitemap until retranslation and review. |
+| German | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental LLM foundation guide is stale after the 2026-08-17 English revision and is withheld from the sitemap until retranslation and review. |
 
-Six locale choices now provide a complete **file and route path** for the 22
-chapters and 18 Labs. That structural coverage is not six independently
-reviewed, culturally adapted, or learner-validated courses. Supplemental
+Six locale choices provide a complete **file path** for the 22 chapters and 18
+Labs. The revised foundation guide is deliberately marked stale in the five
+non-English locales until it is retranslated. That structural coverage is not six independently reviewed, culturally adapted, or
+learner-validated courses. Supplemental
 reader material still has its own coverage and review status; the reader
 exposes the same `available / 40` course-unit count in its language selector.
 
@@ -71,9 +78,9 @@ exposes the same `available / 40` course-unit count in its language selector.
 This repository is a book-shaped learning and practice system with one default
 layer and several later layers. The default is a small LLM foundation core for
 people who need to understand context, request shape, failure, checking, and
-limits before they touch tools. The Codex flagship track and the later Skills,
-Agents, professional, and team material remain available for readers who have
-completed that foundation.
+limits before they touch tools. The Codex boundary chapter and the later Skills,
+Agents, professional, and team material remain available as optional follow-on
+routes after that foundation.
 
 **Current guided scope:** the LLM foundation core. The Codex Practice Track,
 platform adapters, application cards, and professional material are optional
@@ -119,56 +126,41 @@ long-term retention are `not_run`.
 ## The textbook path — read it in order
 
 This project is also a book, but the complete catalogue is not the beginner
-path. Start with the five-unit core; choose Codex and other tracks only after
-the core route says to continue.
+path. The five-unit LLM Foundation Core is the one default route; platform,
+tool, Skill, and application chapters are follow-on choices.
 
-**Step 0 — what an LLM actually is.** Read
-[Chapter 0 — What Is a Large Language Model](book/guides/llm-fundamentals-EN.md):
-20 minutes on tokens, context windows, capabilities, and the honest limits.
-This is the foundation every later chapter builds on.
+1. [LLM Foundation Core v1](book/routes/llm-foundation-core-v1-EN.md) — explain
+   the model boundary, make one bounded request, identify a visible failure,
+   repair it, and transfer the method.
+2. [Unit 1 — LLM concepts](book/guides/llm-fundamentals-EN.md) — learn LLMs,
+   tokens, context, context windows, prompts, instruction layers, tools, MCP,
+   Agents, and Skills without treating any of them as proof of access or truth.
+3. [Unit 2 — first bounded request](book/routes/llm-core-first-generation-EN.md)
+   — make the goal, material, constraints, response shape, evidence, and stop
+   line explicit.
+4. Continue through [visible failures](book/routes/llm-core-visible-failures-EN.md),
+   [check and repair](book/routes/llm-core-check-repair-EN.md), and
+   [unseen transfer](book/routes/llm-core-unseen-transfer-EN.md).
 
-**Steps 1–2 — the first safe task.** Then continue the sequence:
+Only after the core should you open the optional
+[GPT/Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md), a Skill,
+an Agent route, or a product-specific guide. If you have a disposable project,
+the [First Safe Change fixture](book/routes/first-safe-change-EN.md) and
+[Lab 001](book/labs/lab-001-first-safe-task-EN.md) provide the later local
+practice boundary; neither is a substitute for the foundation.
 
-1. [Chapter 1 — Understand GPT before Codex](book/chapters/01-gpt-and-codex-EN.md)
-   establishes the boundary between generation, tools, actions, and evidence.
-2. [Lab 011 — Map the GPT and Codex boundary](book/labs/lab-011-gpt-codex-boundaries-EN.md)
-   lets you label what a static task card can and cannot establish about
-   generation, execution, verification, and external effects.
-3. [Chapter 2 — Complete a safe, verifiable task](book/chapters/02-first-safe-task-EN.md)
-   defines one reversible local change and one source-backed acceptance check.
-4. [First Safe Change](book/routes/first-safe-change-EN.md) supplies an
-   optional offline fixture when you do not yet have a disposable project.
-5. [Lab 001 — Make one safe README change](book/labs/lab-001-first-safe-task-EN.md)
-   turns that contract into an inspect-first, edit-once, diff-and-check run.
-
-**After Chapter 2**, the book keeps one order: Chapter 3 (task protocols),
-Chapter 4 (context and permissions), and so on through Chapter 22. The
-[table of contents](book/table-of-contents-EN.md) is the map; practice cards
-and language loops are exercises you reach later, not entry points.
-
-The fixture is `candidate / not_run`; Labs 011 and 001 remain `draft / not_run`.
-This is the complete candidate path
-the project asks readers to test; it is not evidence that a beginner can
-complete it, learn the method, or transfer it elsewhere. Stop rather than
-improvise if the project is not disposable, the target is not one named file,
-the check is not sourced from the project, or the task would add an external
-side effect.
-
-> **Choose by readiness:** start with Chapter 1 when you have a disposable
-> project. If you do not have a safe local target when Chapter 2 asks you to
-> choose one, use the [First Safe Change fixture](book/routes/first-safe-change-EN.md)
-> before Lab 001. It supplies one offline target and checker; it does not
-> replace the guided path. The prompt practice below is optional and text-only.
-
-The five-minute exercise below makes one LLM limit visible: a fluent answer can
-still add facts it was never given. It is not a substitute for the Codex path.
+The core and fixture remain `candidate / not_run`, and Labs remain
+`draft / not_run`. These labels describe the evidence state; they do not claim
+that a beginner can complete the route, learn it, or transfer it elsewhere.
+Stop rather than improvise if the target, source, authority, acceptance check,
+or no-side-effect boundary is missing.
 
 ## Start with a real outcome
 
 | What you need now | Start here | Leave with |
 |---|---|---|
 | No project or coding background yet | [Five-minute LLM prompt practice](#optional-15-minute-warm-up-no-git-required) | One fictional message, three plain-language questions, and a visible example; use any chat model, no files, tools, account connection, or private data |
-| Make a first reversible local Codex change | [Recommended Codex path](#the-recommended-first-codex-path) | Needs a disposable project by Chapter 2; leaves with one bounded task card, a small diff, a focused check, and an explicit unverified list |
+| Make a first reversible local change after the core | [GPT/Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md) → [First Safe Change](book/routes/first-safe-change-EN.md) | Needs a disposable project; leaves with one bounded task card, a small diff, a focused check, and an explicit unverified list |
 | Need a safe local file before using a project | [First Safe Change fixture](book/routes/first-safe-change-EN.md) | One seeded README failure, one permitted README edit, and one local acceptance result; candidate · learner run `not_run` |
 | See why prompts need checking | [Five-minute LLM prompt practice](#optional-15-minute-warm-up-no-git-required) | One fictional message, three plain-language questions, and a visible example; optional, not the local Codex path |
 | Turn a vague request into something an Agent can execute | [Chapter 3 — task protocol](book/chapters/03-task-protocol-EN.md) + [Lab 002](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop conditions, and failure handling |
@@ -202,12 +194,11 @@ anchor. If you do not yet know which one fits, use the [Beginner Practice Pack
 intake](book/communication-clinic-EN.md#first-practice-intake) instead; it
 asks one question at a time and returns only one route.
 
-The candidate first slice is deliberately small: read Chapter 1, use Lab 011 to
-label the boundary, choose the bounded local task described in Chapter 2, use
-the First Safe Change fixture if you do not yet have a sandbox, then run Lab
-001. Keep the diff and command output, then write down what the run did not
-prove. Its time,
-completion, and learning effects have not been measured.
+The candidate first slice is deliberately small: complete the five core units,
+keep the explanation card and first response, then choose one optional platform
+route only when its authority, sources, and acceptance check are visible. Keep
+the diff or response receipt and write down what the run did not prove. Its
+time, completion, and learning effects have not been measured.
 
 <!-- starter-task-contract:start -->
 
@@ -249,9 +240,8 @@ Why this matters: an LLM predicts useful-sounding text. It does not
 automatically know that missing details must remain unknown. A clear prompt and
 a quick human check make that limit visible. This small illustration does not
 prove learning, transfer, general writing ability, or model superiority.
-For a real local Codex task, return to the
-[recommended path](#the-recommended-first-codex-path): Chapter 1 → Lab 011
-→ Chapter 2 → First Safe Change fixture → Lab 001. The [Beginner Practice Pack](book/communication-clinic-EN.md#first-practice-intake)
+Return to the [LLM Foundation Core](book/routes/llm-foundation-core-v1-EN.md)
+before a platform task; the [Beginner Practice Pack](book/communication-clinic-EN.md#first-practice-intake)
 is a separate supplemental route for language, research, or a small work task.
 
 <!-- starter-task-contract:end -->
@@ -270,7 +260,7 @@ and short landing pages inside the major directories. Use the contract when
 you are changing ownership, adding a directory, or deciding whether a file is
 source or generated.
 
-The Reader opens Chapter 1 when entered without a path. It is a dependency-free
+The Reader opens the LLM Foundation Core when entered without a path. It is a dependency-free
 reading view over the Markdown sources, with a chapter list, current-page
 outline, and previous/next controls. The public reading site is reachable at
 [docs.prysai.com/llm-playbook](https://docs.prysai.com/llm-playbook/).
@@ -379,8 +369,8 @@ state, not a marketing promise.
 
 | Level | Capability | Primary route |
 |---|---|---|
-| **L0 · Observer** | Separate GPT, models, Codex, context, tools, Skills, and Agents before attributing an outcome | [Chapter 1](book/chapters/01-gpt-and-codex-EN.md) · [Lab 011](book/labs/lab-011-gpt-codex-boundaries-EN.md) |
-| **L1 · Safe user** | Complete a reversible, observable task and distinguish a diff from proof | [Chapter 2 EN source](book/chapters/02-first-safe-task-EN.md) · [Lab 001 EN source](book/labs/lab-001-first-safe-task-EN.md) |
+| **L0 · Observer** | Explain LLMs, tokens, context, prompts, tools, Skills, and Agents before attributing an outcome | [LLM Foundation Core](book/routes/llm-foundation-core-v1-EN.md) · [Unit 1](book/guides/llm-fundamentals-EN.md) |
+| **L1 · Safe user** | Make one bounded request, inspect the response, and distinguish a correction from proof | [Core Unit 2](book/routes/llm-core-first-generation-EN.md) · [Core Unit 4](book/routes/llm-core-check-repair-EN.md) |
 | **L2 · Task designer** | Turn a wish into a protocol with relevant context, least authority, acceptance, and failure handling | [Chapter 3](book/chapters/03-task-protocol-EN.md) · [Lab 002](book/labs/lab-002-task-protocol-EN.md) |
 | **L3 · Workflow designer** | Run a complete workflow with stages, checkpoints, recovery, and delivery evidence | [Chapters 7–13 — English sources](book/table-of-contents-EN.md) · [Lab 013](book/labs/lab-013-l3-vertical-slice-EN.md) |
 | **L4 · Capability builder** | Select, compose, install, and improve Skills and tools by fit, risk, license, and verification cost | [Chapters 11 and 14–18 — English sources](book/table-of-contents-EN.md) · [Skill registry](docs/skill-registry.md) |

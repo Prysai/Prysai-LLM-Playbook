@@ -11,9 +11,13 @@
 
 ## Zuerst dem Lehrbuchpfad folgen
 
-1. [Kapitel 0: Was ist ein großes Sprachmodell?](guides/llm-fundamentals-DE.md)
-2. [Kapitel 1: GPT vor Codex verstehen](chapters/01-gpt-and-codex-DE.md)
-3. [Kapitel 2: Die erste sichere, überprüfbare Aufgabe](chapters/02-first-safe-task-DE.md)
+1. [LLM-Konzepte](guides/llm-fundamentals-DE.md)
+2. [Erste universelle LLM-Aufgabe](routes/universal-core-foundations-DE.md)
+3. [Erste sichere Änderung](routes/first-safe-change-DE.md)
+
+Der neue Grundlagenkern hat eine kanonische englische Quelle und wartet noch
+auf eine deutsche Neuübersetzung und unabhängige Prüfung. Deshalb verweisen
+die ersten Schritte hier nur auf deutsche Dateien.
 
 Karten, Sprachübungen, Arbeitsupdates und Recherche sind **optionale Anwendungsübung** nach dieser Reihenfolge; sie ersetzen nicht die LLM-Grundlagen.
 

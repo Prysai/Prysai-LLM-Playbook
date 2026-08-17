@@ -6,7 +6,7 @@
   const validLocales = Object.keys(locales);
   const params = new URLSearchParams(window.location.search);
   const requestedLocale = validLocales.includes(params.get('lang')) ? params.get('lang') : null;
-  const requestedPath = normalizeRepoPath(params.get('path') || 'book/chapters/01-gpt-and-codex-EN.md');
+  const requestedPath = normalizeRepoPath(params.get('path') || 'book/routes/llm-foundation-core-v1-EN.md');
   let activeLocale = requestedLocale;
   const article = document.querySelector('[data-reader-article]');
   // Set the document language before the asynchronous source fetch starts.

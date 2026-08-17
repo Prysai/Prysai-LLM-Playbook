@@ -10,10 +10,11 @@
 
 ## 先按教材主线阅读
 
-1. [第 0 章：什么是大语言模型](guides/llm-fundamentals-ZH.md)
-2. [第 1 章：先理解 GPT，再理解 Codex](chapters/01-gpt-and-codex-ZH.md)
-3. [第 2 章：完成第一个安全、可验证的任务](chapters/02-first-safe-task-ZH.md)
+1. [LLM 基础概念](guides/llm-fundamentals-ZH.md)
+2. [通用 LLM 首练习](routes/universal-core-foundations-ZH.md)
+3. [第一次安全改动](routes/first-safe-change-ZH.md)
 
+英文 Foundation Core 是规范源，中文重译完成并通过独立审校前不在中文主线中伪装可用。
 提示卡、语言练习、工作更新和研究核查是主线之后的**可选应用练习**，不替代 LLM 基础课。
 
 导航：

@@ -6,9 +6,13 @@
 
 ## Lee primero la ruta del libro
 
-1. [Capítulo 0: qué es un modelo de lenguaje grande](guides/llm-fundamentals-ES.md)
-2. [Capítulo 1: entiende GPT antes de Codex](chapters/01-gpt-and-codex-ES.md)
-3. [Capítulo 2: completa una primera tarea segura y verificable](chapters/02-first-safe-task-ES.md)
+1. [Conceptos de LLM](guides/llm-fundamentals-ES.md)
+2. [Primera tarea universal de LLM](routes/universal-core-foundations-ES.md)
+3. [Primera modificación segura](routes/first-safe-change-ES.md)
+
+La nueva versión del núcleo de fundamentos tiene una fuente canónica en inglés
+y todavía necesita una retraducción y una revisión independiente en español.
+Por eso este libro enlaza aquí solo contenido en español.
 
 Las tarjetas, los idiomas, las actualizaciones de trabajo y la investigación son **práctica de aplicación opcional** después de esta secuencia; no sustituyen la base sobre LLM.
 

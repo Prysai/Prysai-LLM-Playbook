@@ -11,9 +11,12 @@
 
 初めて読むときは、カード、Skill、製品から選ばないでください。まず日本語の主線をたどります。
 
-1. [レッスン 0：大規模言語モデルとは何か](book/guides/llm-fundamentals-JA.md)
-2. [第 1 章：Codex の前に GPT を理解する](book/chapters/01-gpt-and-codex-JA.md)
-3. [第 2 章：最初の安全で検証可能なタスク](book/chapters/02-first-safe-task-JA.md)
+1. [LLM の基礎概念](book/guides/llm-fundamentals-JA.md)
+2. [最初の汎用 LLM タスク](book/routes/universal-core-foundations-JA.md)
+3. [最初の安全な変更](book/routes/first-safe-change-JA.md)
+
+英語の基礎コアが現在の正規ソースで、日本語版は再翻訳とレビューを待っています。
+その間、この入口は日本語のファイルだけで読める経路を維持します。
 
 スペイン語、業務報告、リサーチ確認のカードは、この主線の後に行う**任意の応用練習**です。LLM を理解する最初の授業ではなく、効率、流暢さ、能力向上も約束しません。
 

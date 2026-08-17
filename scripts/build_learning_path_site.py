@@ -82,6 +82,37 @@ def build_lab_use(
     return asset
 
 
+def build_foundation_route(route: dict[str, Any] | None) -> dict[str, Any] | None:
+    """Build the explicit L0 foundation entry without changing chapter ownership.
+
+    Chapters remain the primary owners used by the progression validator. The
+    foundation route is a reader-facing prerequisite entry, so it is carried
+    separately and can be localized by its content identity at runtime.
+    """
+    if route is None:
+        return None
+    if not isinstance(route, dict):
+        raise ValueError("foundation_route must be an object")
+    route_id = route.get("id")
+    route_path = route.get("path")
+    route_name = route.get("name")
+    if not isinstance(route_id, str) or not route_id.strip():
+        raise ValueError("foundation_route.id must be non-empty")
+    if not isinstance(route_path, str) or not route_path.strip():
+        raise ValueError("foundation_route.path must be non-empty")
+    if not isinstance(route_name, dict):
+        raise ValueError("foundation_route.name must be an object")
+    if set(route_name) != set(LOCALE_KEYS) or not all(isinstance(value, str) and value.strip() for value in route_name.values()):
+        raise ValueError("foundation_route.name must contain non-empty text for all six locales")
+    return {
+        "id": route_id,
+        "content_id": route_id,
+        "name": localized(route_name),
+        "href": site_href(route_path, "routes"),
+        "relation": "primary",
+    }
+
+
 def build_payload() -> dict[str, Any]:
     contract = load_json(CONTRACT_FILE)
     status = load_json(STATUS_FILE)
@@ -99,6 +130,7 @@ def build_payload() -> dict[str, Any]:
     levels: dict[str, Any] = {}
     for level in contract.get("levels", []):
         level_id = level["id"]
+        foundation_route = build_foundation_route(level.get("foundation_route"))
         chapters = [build_asset(asset_id, "chapters", "primary", status_items["chapters"], catalog) for asset_id in level["primary_chapters"]]
         labs = [build_lab_use(use, status_items["labs"], catalog) for use in level["lab_uses"]]
         skills = [build_asset(asset_id, "skills", "supporting", status_items["skills"], catalog) for asset_id in level["supporting_skills"]]
@@ -119,6 +151,7 @@ def build_payload() -> dict[str, Any]:
             "graduation": localized(level["graduation_gate"]),
             "blocked": localized(level["blocked_when"]),
             "status": level["status"],
+            "foundationRoute": foundation_route,
             "next": {"chapter": next_chapter, "lab": next_lab},
         }
 

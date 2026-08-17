@@ -11,9 +11,13 @@ Licencia: el texto del curso y los materiales didácticos están bajo CC BY 4.0;
 
 Si es tu primera visita, no elijas todavía entre tarjetas, Skills o productos. Sigue esta ruta en español:
 
-1. [Lección 0: qué es un modelo de lenguaje grande](book/guides/llm-fundamentals-ES.md)
-2. [Capítulo 1: entiende GPT antes de Codex](book/chapters/01-gpt-and-codex-ES.md)
-3. [Capítulo 2: completa una primera tarea segura y verificable](book/chapters/02-first-safe-task-ES.md)
+1. [Conceptos de LLM](book/guides/llm-fundamentals-ES.md)
+2. [Primera tarea universal de LLM](book/routes/universal-core-foundations-ES.md)
+3. [Primera modificación segura](book/routes/first-safe-change-ES.md)
+
+El núcleo de fundamentos en inglés es la fuente canónica que se está
+retraduciendo; esta entrada en español mantiene una ruta completamente en
+español hasta que la nueva traducción pueda revisarse.
 
 Los ciclos de español, actualización de trabajo e investigación son **práctica de aplicación opcional** después de esta ruta; no son la primera lección sobre LLM ni prometen eficiencia, fluidez o mejora de capacidad.
 

@@ -6,9 +6,9 @@
 
 ## 先从哪里开始
 
-- 先读[第 0 章：什么是大语言模型](guides/llm-fundamentals-ZH.md)。
-- 接着读[第 1 章：先理解 GPT，再理解 Codex](chapters/01-gpt-and-codex-ZH.md)。
-- 然后读[第 2 章：完成第一个安全、可验证的任务](chapters/02-first-safe-task-ZH.md)。
+- 先读[LLM 基础概念](guides/llm-fundamentals-ZH.md)。
+- 接着做[通用 LLM 首练习](routes/universal-core-foundations-ZH.md)。
+- 需要安全文件时，打开[第一次安全改动路线](routes/first-safe-change-ZH.md)。
 - 完成前三步后，如想做低风险文件练习，进入[第一次安全改动路线](routes/first-safe-change-ZH.md)，再做[实验 001](labs/lab-001-first-safe-task-ZH.md)。
 - [新手提示卡](communication-clinic-ZH.md)是主线之后的可选应用练习，不是 LLM 基础课。
 - 想查看全部中文课程单元：继续阅读本页。

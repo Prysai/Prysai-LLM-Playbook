@@ -66,7 +66,7 @@ Object.assign(copy.zh, {
 
 // The generated contract is the source of truth; this fallback keeps a direct file open usable during local edits.
 const legacyLearningPath = {
-  L0: { title: ['Observe, do not guess.', '观察，而不是猜测。'], description: ['Separate GPT, models, Codex, context, tools, Skills, and Agents. Start with observable inputs, actions, states, and evidence.', '先分清 GPT、模型、Codex、上下文、工具、Skill 与 Agent。学习从可观察的输入、行动、状态和证据开始。'], chapters: [['Chapter 1: Understand GPT before Codex', '第 1 章：先理解 GPT，再理解 Codex', '../book/chapters/01-gpt-and-codex-EN.md']], labs: [['Lab 011 · GPT and Codex boundaries', '实验 011 · GPT 与 Codex 边界', '../book/labs/lab-011-gpt-codex-boundaries-EN.md']], skills: [['Codex Coach', 'Codex Coach', '../skills/prysai-codex-coach/SKILL.md']], evaluations: ['concept-gpt-codex-tools-001'], evaluationTypes: ['positive', 'boundary'], gate: { explain: ['Name at least three boundaries between GPT, Codex, and ordinary chat.', '说出 GPT、Codex 与普通聊天之间至少三条边界。'], operate: ['Label input, action, state, and evidence on a static task card.', '在静态任务卡上标注输入、行动、状态和证据。'], judge: ['Refuse to infer access from a model or tool name.', '不根据模型或工具名称臆测访问权。'], review: ['Record what the task card cannot prove about runtime behavior.', '记录任务卡无法证明的运行时行为。'] }, graduation: ['Advance only when the learner can explain the four layers and identify an unverified claim.', '只有能解释四层关系并指出一个未验证声明时，才进入下一阶段。'], blocked: ['The learner treats a model, Skill, login, or tool name as proof of access or execution.', '把模型、Skill、登录或工具名称当成已获访问权或已执行的证据。'], status: 'candidate', next: ['Open chapter 1', '打开第 1 章'] },
+  L0: { title: ['Understand the model before you act.', '先理解模型，再开始行动。'], description: ['Explain what an LLM, context, prompt, product, tool, Agent, and Skill can establish before choosing a platform.', '在选择平台前，说明 LLM、上下文、提示词、产品、工具、Agent 与 Skill 各自能建立什么。'], chapters: [['Chapter 1: Understand GPT before Codex', '第 1 章：先理解 GPT，再理解 Codex', '../book/chapters/01-gpt-and-codex-EN.md']], labs: [['Lab 011 · GPT and Codex boundaries', '实验 011 · GPT 与 Codex 边界', '../book/labs/lab-011-gpt-codex-boundaries-EN.md']], skills: [['Codex Coach', 'Codex Coach', '../skills/prysai-codex-coach/SKILL.md']], evaluations: ['concept-gpt-codex-tools-001'], evaluationTypes: ['positive', 'boundary'], gate: { explain: ['Name at least three boundaries between GPT, Codex, and ordinary chat.', '说出 GPT、Codex 与普通聊天之间至少三条边界。'], operate: ['Label input, action, state, and evidence on a static task card.', '在静态任务卡上标注输入、行动、状态和证据。'], judge: ['Refuse to infer access from a model or tool name.', '不根据模型或工具名称臆测访问权。'], review: ['Record what the task card cannot prove about runtime behavior.', '记录任务卡无法证明的运行时行为。'] }, graduation: ['Advance only when the learner can explain the four layers and identify an unverified claim.', '只有能解释四层关系并指出一个未验证声明时，才进入下一阶段。'], blocked: ['The learner treats a model, Skill, login, or tool name as proof of access or execution.', '把模型、Skill、登录或工具名称当成已获访问权或已执行的证据。'], status: 'candidate', next: ['Open the LLM Foundation Core', '打开 LLM 基础核心课'] },
   L1: { title: ['Start with a low-risk task.', '从低风险任务开始。'], description: ['Choose a reversible, observable task. Write the allowed actions and confirmation points, then complete a real but controlled delivery.', '选择可回滚、可观察的任务，写下允许行动和确认点，完成一个真实但受控的交付。'], chapters: [['Chapter 2: Complete a safe, verifiable task', '第 2 章：完成安全、可验证的任务', '../book/chapters/02-first-safe-task-EN.md']], labs: [['Lab 001 · First safe task', '实验 001 · 第一个安全任务', '../book/labs/lab-001-first-safe-task-EN.md']], skills: [['Task Protocol', 'Task Protocol', '../skills/prysai-task-protocol/SKILL.md']], evaluations: ['concept-evidence-and-mastery-002', 'protocol-vague-request-003', 'missing-input-no-file-021'], evaluationTypes: ['positive', 'boundary', 'failure'], gate: { explain: ['State the scope, allowed actions, acceptance check, and stop condition.', '说清范围、允许行动、验收检查和停止条件。'], operate: ['Inspect before editing in a sandbox and produce one named change.', '在沙盒中先检查再编辑，完成一个明确改动。'], judge: ['Compare the requested result with the actual diff and command output.', '将请求结果与实际差异、命令输出进行对照。'], review: ['Record untested scope and missing input instead of filling it in.', '记录未测试范围和缺失输入，不擅自补全。'] }, graduation: ['Advance with a task contract, pre-edit observation, diff, focused check, and explicit unverified list.', '提交任务协议、编辑前检查、差异、最小检查和明确的未验证列表后，才进入下一阶段。'], blocked: ['The task touches credentials, production, destructive actions, or an unavailable file.', '任务涉及凭据、生产环境、破坏性行动或不存在的文件。'], status: 'candidate', next: ['Open chapter 2', '打开第 2 章'] },
   L2: { title: ['Turn the wish into a protocol.', '把愿望写成协议。'], description: ['Write the goal, context, inputs, constraints, acceptance, failure handling, and delivery format so boundaries come before action.', '把目标、上下文、输入、约束、验收、失败处理与交付格式写清楚，让行动边界先于行动发生。'], chapters: [['Chapter 3 · Task protocol', '第 3 章 · 任务协议', '../book/chapters/03-task-protocol-EN.md'], ['Chapter 4 · Context and permissions', '第 4 章 · 上下文与权限', '../book/chapters/04-context-permissions-and-agent-EN.md'], ['Chapter 5 · Choose the surface', '第 5 章 · 选择工作面', '../book/chapters/05-choose-the-codex-surface-EN.md'], ['Chapter 6 · Model selection', '第 6 章 · 模型选择', '../book/chapters/06-model-selection-EN.md']], labs: [['Lab 002 · Task protocol', '实验 002 · 任务协议', '../book/labs/lab-002-task-protocol-EN.md']], skills: [['Task Protocol', 'Task Protocol', '../skills/prysai-task-protocol/SKILL.md'], ['Codex Coach', 'Codex Coach', '../skills/prysai-codex-coach/SKILL.md']], evaluations: ['protocol-reversible-first-step-004', 'skill-minimal-selection-005', 'context-minimum-relevant-007', 'permission-least-authority-009', 'evidence-runtime-vs-build-012', 'research-narrow-question-013', 'marketing-product-context-017', 'conversion-markdown-to-json-019', 'missing-input-auth-choice-022', 'conflict-source-vs-user-024', 'route-explicit-over-implicit-031', 'product-context-fact-hypothesis-034'], evaluationTypes: ['positive', 'boundary', 'failure'], gate: { explain: ['Explain why each input, constraint, and permission is necessary or excluded.', '解释每个输入、约束和权限为什么必要，或为什么排除。'], operate: ['Write and execute a small protocol without expanding scope.', '写出并执行一个小协议，不扩大允许范围。'], judge: ['Choose the smallest relevant context, Skill, tool, and check.', '选择最小相关上下文、Skill、工具和检查。'], review: ['Handle missing input, conflicting instructions, and evidence gaps.', '处理缺失输入、冲突指令和证据缺口。'] }, graduation: ['Advance when another person can execute the protocol and identify its stop conditions without guessing.', '当另一个人无需猜测就能执行协议并指出停止条件时，才进入下一阶段。'], blocked: ['A missing input changes scope, risk, authority, or acceptance and no confirmation is available.', '缺失输入会改变范围、风险、授权或验收，而又没有确认。'], status: 'candidate', next: ['Open chapter 3', '打开第 3 章'] },
   L3: { title: ['Make the workflow runnable and checkable.', '让工作流可运行、可检查。'], description: ['Organize work as define, plan, execute, verify, review, deliver, and maintain. Use vertical slices to keep evidence moving.', '沿着定义、计划、执行、验证、审查、交付和维护组织任务，用竖向切片持续产出证据。'], chapters: [['Chapter 8 · Full lifecycle', '第 8 章 · 完整生命周期', '../book/chapters/08-full-lifecycle-workflow-EN.md'], ['Chapter 9 · Verification and recovery', '第 9 章 · 验证与恢复', '../book/chapters/09-verification-and-recovery-EN.md'], ['Chapter 13 · Action boundaries', '第 13 章 · 行动边界', '../book/chapters/13-action-boundaries-EN.md']], labs: [['Lab 009 · Engineering lifecycle', '实验 009 · 工程生命周期', '../book/labs/lab-009-engineering-lifecycle-EN.md'], ['Lab 003 · Evidence review', '实验 003 · 证据审查', '../book/labs/lab-003-evidence-review-EN.md'], ['Lab 007 · Action boundaries', '实验 007 · 行动边界', '../book/labs/lab-007-action-boundaries-EN.md']], skills: [['Workflow Orchestrator', 'Workflow Orchestrator', '../skills/prysai-workflow-orchestrator/SKILL.md'], ['Evidence Review', 'Evidence Review', '../skills/prysai-evidence-review/SKILL.md'], ['Task Protocol', 'Task Protocol', '../skills/prysai-task-protocol/SKILL.md']], evaluations: ['skill-risk-aware-selection-006', 'context-untrusted-instructions-008', 'permission-destructive-data-010', 'evidence-claim-audit-011', 'research-source-conflict-014', 'engineering-plan-small-change-015', 'marketing-experiment-plan-018', 'conversion-table-to-learning-path-020', 'conflict-scope-vs-safety-023', 'failure-retry-budget-025', 'stop-missing-authority-027', 'stop-evidence-gap-028', 'route-ownership-boundaries-032', 'product-context-write-gate-033', 'evidence-scope-insufficient-stop-035', 'source-conflict-license-boundary-036'], evaluationTypes: ['positive', 'boundary', 'failure', 'transfer'], gate: { explain: ['Explain the dependency graph, stage boundaries, permission changes, and acceptance evidence.', '解释依赖图、阶段边界、权限变化和验收证据。'], operate: ['Run a vertical slice from definition to verification with an explicit checkpoint.', '用明确检查点跑通从定义到验证的一条竖向切片。'], judge: ['Stop or recover when authority, scope, source, or evidence is insufficient.', '授权、范围、来源或证据不足时，正确停止或恢复。'], review: ['Compare the plan, diff, logs, checks, failed attempt, and remaining limits.', '对照计划、差异、日志、检查、失败尝试和剩余限制。'] }, graduation: ['Advance with one complete workflow, one intentional failure or boundary case, and a transfer task in another domain.', '完成一条完整工作流、一个故意失败或边界案例，以及另一个领域的迁移任务后，才进入下一阶段。'], blocked: ['The workflow relies on hidden permissions, untrusted instructions, unrecorded retries, or a claim outside its evidence.', '工作流依赖隐藏权限、不可信指令、未记录的重试，或结论超出证据范围。'], status: 'candidate', next: ['Open chapter 8', '打开第 8 章'] },
@@ -79,6 +79,24 @@ const generatedLearningPath = window.CODEX_LEARNING_PATH?.levels;
 const learningPathLevels = ['L0', 'L1', 'L2', 'L3', 'L4', 'L5', 'L6'];
 const hasGeneratedLearningPath = Boolean(generatedLearningPath) && learningPathLevels.every((level) => generatedLearningPath[level]);
 const learningPath = hasGeneratedLearningPath ? generatedLearningPath : legacyLearningPath;
+
+// Keep the local fallback honest when a generated artifact is unavailable:
+// L0 still opens the transferable LLM foundation before the Codex-owned
+// chapter and Lab. The chapter remains the level's primary ownership record.
+legacyLearningPath.L0.foundationRoute = {
+  id: 'llm-foundation-core-v1',
+  content_id: 'llm-foundation-core-v1',
+  name: {
+    en: 'LLM Foundation Core',
+    zh: 'LLM 基础核心课',
+    es: 'Núcleo de fundamentos de LLM',
+    ja: 'LLM 基礎コア',
+    ko: 'LLM 기초 코어',
+    de: 'LLM-Grundlagenkern',
+  },
+  href: '../book/routes/llm-foundation-core-v1-EN.md',
+  relation: 'primary',
+};
 
 Object.assign(copy.en, {
   skillStarterEyebrow: 'Choose by situation', skillStarterTitle: 'Start here if the names mean nothing yet.', skillStarterIntro: 'These are starting routes, not automatic diagnoses. Open one method, check its required inputs, and stop if the boundary does not fit.', skillRouteUnclear: 'My task is still unclear.', skillRouteUnclearResult: 'Returns a bounded goal, inputs, actions, acceptance, and stop condition.', skillRouteLearnCodex: 'I need to learn Codex.', skillRouteLearnCodexResult: 'Returns a Codex learning level, experiment, evidence check, and reflection.', skillRouteLearnOther: 'I need to practise another capability.', skillRouteLearnOtherResult: 'Returns a baseline, correction, changed-case transfer attempt, and review cue.', skillRouteFailed: 'A preserved request and reply already failed.', skillRouteFailedResult: 'Returns one evidence-based diagnosis and a smallest comparable repair.', skillRouteVerify: 'I need to check an existing claim.', skillRouteVerifyResult: 'Returns what the evidence proves, misses, and requires next.',
@@ -108,8 +126,8 @@ Object.assign(copy.en, {
   starterReceiptLabel: 'Plain-language receipt',
   starterReceipt: 'Attempted · checked here · help used · corrected · not proven: learning, transfer, general writing ability, or model superiority.',
   navPath: 'Learning path',
-  heroPrimary: 'Get a first result in 15 minutes',
-  heroSecondary: 'Open the universal-core route',
+  heroPrimary: 'Start the LLM Foundation Core',
+  heroSecondary: 'Open the optional five-minute warm-up',
   routeStatusAll: 'Showing all 22 chapters.',
   routeStatusA: 'Showing 6 chapters in A · First contact.',
   routeStatusB: 'Showing 7 chapters in B · Real work.',
@@ -168,8 +186,8 @@ Object.assign(copy.zh, {
   starterReceiptLabel: '人话版记录',
   starterReceipt: '已尝试 · 本次检查项 · 使用的帮助 · 是否修正 · 不证明：学习、迁移、普遍写作能力或模型优越性。',
   navPath: '\u5b66\u4e60\u8def\u5f84',
-  heroPrimary: '15 分钟完成第一次可检查的结果',
-  heroSecondary: '打开通用核心路线',
+  heroPrimary: '开始 LLM 基础核心课',
+  heroSecondary: '打开可选的 5 分钟热身',
   routeStatusAll: '\u6b63\u5728\u663e\u793a\u5168\u90e8 22 \u7ae0\u3002',
   routeStatusA: '\u6b63\u5728\u663e\u793a A \u00b7 \u521d\u8bc6 Codex \u7684 6 \u7ae0\u3002',
   routeStatusB: '\u6b63\u5728\u663e\u793a B \u00b7 \u771f\u5b9e\u5de5\u4f5c\u7684 7 \u7ae0\u3002',
@@ -1162,6 +1180,7 @@ const updateLevel = (level, focus = false) => {
   const data = learningPath[level];
   const title = localizedField(data, 'headline') || localizedField(data, 'title');
   const description = localizedField(data, 'description') || localizedField(data, 'capability');
+  const nextPrimary = data.foundationRoute || data.next?.chapter || data.chapters[0];
   const nextChapter = data.next?.chapter || data.chapters[0];
   const nextLab = data.next?.lab || data.labs[0];
   document.querySelectorAll('[data-level-label]').forEach((element) => { element.textContent = level; });
@@ -1191,9 +1210,9 @@ const updateLevel = (level, focus = false) => {
   document.querySelector('[data-level-graduation]').textContent = localizedField(data, 'graduation');
   document.querySelector('[data-level-blocked]').textContent = localizedField(data, 'blocked');
   const link = document.querySelector('[data-level-link]');
-  link.href = hrefForItem(nextChapter);
-  link.dataset.contentId = nextChapter.content_id || localeManifest.aliases?.[nextChapter.id] || '';
-  link.querySelector('[data-level-link-text]').textContent = data.next?.label?.[effectiveUiLanguage] || data.next?.label?.en || (effectiveUiLanguage === 'zh' ? `打开${nextChapter.name?.zh || nextChapter[1]}` : `Open ${nextChapter.name?.en || nextChapter[0]}`);
+  link.href = hrefForItem(nextPrimary);
+  link.dataset.contentId = nextPrimary.content_id || localeManifest.aliases?.[nextPrimary.id] || '';
+  link.querySelector('[data-level-link-text]').textContent = data.next?.label?.[effectiveUiLanguage] || data.next?.label?.en || (effectiveUiLanguage === 'zh' ? `打开${nextPrimary.name?.zh || nextPrimary[1]}` : `Open ${nextPrimary.name?.en || nextPrimary[0]}`);
   const labLink = document.querySelector('[data-level-lab-link]');
   labLink.href = hrefForItem(nextLab);
   labLink.dataset.contentId = nextLab.content_id || localeManifest.aliases?.[nextLab.id] || '';
@@ -4469,73 +4488,144 @@ function refreshGoalWizardForLanguage() {
 
 initGoalWizard();
 
-// The hero keeps a practical first action while its secondary route remains a
-// deliberate Chapter 0 -> Chapter 1 -> Chapter 2 reading path.
+// The hero names one required foundation route. The no-setup prompt remains a
+// small optional warm-up, while Codex, tools, Agents, and Skills stay after
+// the transferable LLM concepts.
 Object.assign(copy.en, {
-  heroRouteAria: 'The textbook reading path',
-  heroRouteKicker: 'Optional textbook path',
-  heroRouteLessonZero: '0 · Chapter 0: what an LLM is',
-  heroRouteLessonZeroBody: '20 minutes. Tokens, context, capabilities, and the honest limits.',
-  heroRouteChapterOne: '1 · Chapter 1: GPT before Codex',
-  heroRouteChapterOneBody: 'Separate a model, a tool, and an agent before trusting either.',
-  heroRouteChapterTwo: '2 · Chapter 2: your first safe task',
-  heroRouteChapterTwoBody: 'One small task, one visible check, one receipt.',
-  heroRouteBoundary: 'Use this route when you want the full foundation before trying a task. The five-minute practice remains the quickest first step.',
+  heroRouteAria: 'The required LLM foundation route',
+  heroRouteKicker: 'One required foundation route',
+  heroRouteLessonZero: '1 · LLM Foundation Core',
+  heroRouteLessonZeroBody: 'About 90–120 minutes. Understand, attempt, inspect, repair, and transfer.',
+  heroRouteChapterOne: '2 · Unit 1: what an LLM is',
+  heroRouteChapterOneBody: 'Tokens, context, prompts, tools, MCP, Agents, and Skills in their lanes.',
+  heroRouteChapterTwo: '3 · Unit 2: your first bounded request',
+  heroRouteChapterTwoBody: 'Make the goal, context, constraints, and answer shape visible.',
+  heroRouteBoundary: 'Finish the core route before entering Codex, tools, Agents, or Skills. The five-minute warm-up is optional and does not replace the route.',
 });
 Object.assign(copy.zh, {
-  heroRouteAria: '教科书阅读路径',
-  heroRouteKicker: '可选的教科书路径',
-  heroRouteLessonZero: '0 · 第 0 章：LLM 是什么',
-  heroRouteLessonZeroBody: '20 分钟。token、上下文、能力与诚实的边界。',
-  heroRouteChapterOne: '1 · 第 1 章：先理解 GPT，再理解 Codex',
-  heroRouteChapterOneBody: '在信任之前，分清模型、工具与 Agent。',
-  heroRouteChapterTwo: '2 · 第 2 章：你的第一个安全任务',
-  heroRouteChapterTwoBody: '一个小任务、一个可见检查、一份回执。',
-  heroRouteBoundary: '想先打好完整基础时，再使用这条路径。5 分钟练习仍然是最快的第一步。',
+  heroRouteAria: '必修 LLM 基础路线',
+  heroRouteKicker: '一条必修基础路线',
+  heroRouteLessonZero: '1 · LLM 基础核心课',
+  heroRouteLessonZeroBody: '约 90–120 分钟：理解、尝试、检查、修正，再迁移。',
+  heroRouteChapterOne: '2 · 单元 1：什么是 LLM',
+  heroRouteChapterOneBody: '把 token、上下文、提示词、工具、MCP、Agent 与 Skill 放回各自的位置。',
+  heroRouteChapterTwo: '3 · 单元 2：你的第一条有边界请求',
+  heroRouteChapterTwoBody: '把目标、上下文、限制和回答形式写清楚。',
+  heroRouteBoundary: '完成核心路线后，再进入 Codex、工具、Agent 或 Skill。5 分钟热身是可选项，不能替代核心路线。',
 });
 Object.assign(copy.es, {
-  heroRouteAria: 'Ruta de lectura del manual',
-  heroRouteKicker: 'Ruta opcional del manual',
-  heroRouteLessonZero: '0 · Capítulo 0: qué es un LLM',
-  heroRouteLessonZeroBody: '20 minutos. Tokens, contexto, capacidades y límites honestos.',
-  heroRouteChapterOne: '1 · Capítulo 1: GPT antes de Codex',
-  heroRouteChapterOneBody: 'Separa un modelo, una herramienta y un agente antes de confiar en ellos.',
-  heroRouteChapterTwo: '2 · Capítulo 2: tu primera tarea segura',
-  heroRouteChapterTwoBody: 'Una tarea pequeña, una comprobación visible, un recibo.',
-  heroRouteBoundary: 'Usa esta ruta si quieres los fundamentos completos antes de probar una tarea. La práctica de cinco minutos sigue siendo el primer paso más rápido.',
+  heroRouteAria: 'Ruta obligatoria de fundamentos de LLM',
+  heroRouteKicker: 'Una ruta de fundamentos obligatoria',
+  heroRouteLessonZero: '1 · Núcleo de fundamentos de LLM',
+  heroRouteLessonZeroBody: 'Unos 90–120 minutos: entender, intentar, inspeccionar, reparar y transferir.',
+  heroRouteChapterOne: '2 · Unidad 1: qué es un LLM',
+  heroRouteChapterOneBody: 'Tokens, contexto, prompts, herramientas, MCP, agentes y Skills en su lugar.',
+  heroRouteChapterTwo: '3 · Unidad 2: tu primera petición acotada',
+  heroRouteChapterTwoBody: 'Haz visibles el objetivo, el contexto, los límites y la forma de respuesta.',
+  heroRouteBoundary: 'Termina la ruta central antes de entrar en Codex, herramientas, agentes o Skills. El calentamiento de cinco minutos es opcional y no sustituye la ruta.',
 });
 Object.assign(copy.ja, {
-  heroRouteAria: '教科書の読書経路',
-  heroRouteKicker: '任意の教科書ルート',
-  heroRouteLessonZero: '0 · 第0章：LLM とは',
-  heroRouteLessonZeroBody: '20分。トークン、コンテキスト、能力、そして正直な限界。',
-  heroRouteChapterOne: '1 · 第1章：Codex より先に GPT を理解する',
-  heroRouteChapterOneBody: 'モデル・ツール・エージェントを区別してから信頼する。',
-  heroRouteChapterTwo: '2 · 第2章：最初の安全なタスク',
-  heroRouteChapterTwoBody: '小さなタスク、見えるチェック、レシート。',
-  heroRouteBoundary: 'タスクを試す前に基礎を通して学びたいときに使います。最初の一歩としては5分間の練習が最短です。',
+  heroRouteAria: '必修 LLM 基礎ルート',
+  heroRouteKicker: '一つの必修基礎ルート',
+  heroRouteLessonZero: '1 · LLM 基礎コア',
+  heroRouteLessonZeroBody: '約90〜120分。理解、試行、確認、修正、転移を行います。',
+  heroRouteChapterOne: '2 · ユニット1：LLMとは何か',
+  heroRouteChapterOneBody: 'トークン、コンテキスト、プロンプト、ツール、MCP、Agent、Skillを役割ごとに整理します。',
+  heroRouteChapterTwo: '3 · ユニット2：最初の境界付きリクエスト',
+  heroRouteChapterTwoBody: '目的、コンテキスト、制約、回答形式を見えるようにします。',
+  heroRouteBoundary: 'Codex、ツール、Agent、Skillに進む前にコアを終えてください。5分間のウォームアップは任意で、代わりにはなりません。',
 });
 Object.assign(copy.ko, {
-  heroRouteAria: '교과서 읽기 경로',
-  heroRouteKicker: '선택 가능한 교과서 경로',
-  heroRouteLessonZero: '0 · 0장: LLM이란',
-  heroRouteLessonZeroBody: '20분. 토큰, 컨텍스트, 능력, 그리고 정직한 한계.',
-  heroRouteChapterOne: '1 · 1장: Codex 전에 GPT 이해하기',
-  heroRouteChapterOneBody: '모델·도구·에이전트를 구분한 뒤 신뢰하세요.',
-  heroRouteChapterTwo: '2 · 2장: 첫 번째 안전한 과제',
-  heroRouteChapterTwoBody: '작은 과제 하나, 보이는 확인 하나, 영수증 하나.',
-  heroRouteBoundary: '과제를 시도하기 전에 기초를 모두 읽고 싶을 때 사용하세요. 가장 빠른 첫 단계는 5분 연습입니다.',
+  heroRouteAria: '필수 LLM 기초 경로',
+  heroRouteKicker: '하나의 필수 기초 경로',
+  heroRouteLessonZero: '1 · LLM 기초 코어',
+  heroRouteLessonZeroBody: '약 90~120분. 이해하고, 시도하고, 점검하고, 고친 뒤 전이합니다.',
+  heroRouteChapterOne: '2 · 단원 1: LLM이란 무엇인가',
+  heroRouteChapterOneBody: '토큰, 컨텍스트, 프롬프트, 도구, MCP, Agent, Skill의 역할을 구분합니다.',
+  heroRouteChapterTwo: '3 · 단원 2: 첫 번째 범위 있는 요청',
+  heroRouteChapterTwoBody: '목표, 컨텍스트, 제한, 답변 형식을 보이게 만드세요.',
+  heroRouteBoundary: 'Codex, 도구, Agent, Skill로 가기 전에 코어 경로를 끝내세요. 5분 워밍업은 선택 사항이며 경로를 대신하지 않습니다.',
 });
 Object.assign(copy.de, {
-  heroRouteAria: 'Lehrbuch-Lesepfad',
-  heroRouteKicker: 'Optionaler Lehrbuchpfad',
-  heroRouteLessonZero: '0 · Kapitel 0: Was ist ein LLM',
-  heroRouteLessonZeroBody: '20 Minuten. Tokens, Kontext, Fähigkeiten und ehrliche Grenzen.',
-  heroRouteChapterOne: '1 · Kapitel 1: GPT vor Codex verstehen',
-  heroRouteChapterOneBody: 'Trenne Modell, Werkzeug und Agent, bevor du ihnen vertraust.',
-  heroRouteChapterTwo: '2 · Kapitel 2: deine erste sichere Aufgabe',
-  heroRouteChapterTwoBody: 'Eine kleine Aufgabe, ein sichtbarer Check, eine Quittung.',
-  heroRouteBoundary: 'Nutze diesen Pfad, wenn du vor einer Aufgabe zuerst die Grundlagen vollständig lesen möchtest. Die Fünf-Minuten-Übung bleibt der schnellste erste Schritt.',
+  heroRouteAria: 'Verbindlicher LLM-Grundlagenpfad',
+  heroRouteKicker: 'Ein verbindlicher Grundlagenpfad',
+  heroRouteLessonZero: '1 · LLM-Grundlagenkern',
+  heroRouteLessonZeroBody: 'Etwa 90–120 Minuten: verstehen, versuchen, prüfen, reparieren und übertragen.',
+  heroRouteChapterOne: '2 · Einheit 1: Was ist ein LLM?',
+  heroRouteChapterOneBody: 'Tokens, Kontext, Prompts, Werkzeuge, MCP, Agents und Skills in ihren Rollen.',
+  heroRouteChapterTwo: '3 · Einheit 2: deine erste begrenzte Anfrage',
+  heroRouteChapterTwoBody: 'Ziel, Kontext, Grenzen und Antwortform sichtbar machen.',
+  heroRouteBoundary: 'Beende den Kernpfad, bevor du Codex, Werkzeuge, Agents oder Skills öffnest. Die Fünf-Minuten-Aufwärmübung ist optional und ersetzt den Pfad nicht.',
+});
+
+// Keep the runtime copy aligned with the foundation-first HTML entry. These
+// values are deliberately repeated for every supported interface locale so a
+// language switch cannot resurrect the older Codex-first promise.
+Object.assign(copy.en, {
+  heroIndex: 'LLM / FOUNDATION SYSTEM',
+  heroEyebrow: 'Start with the model · then make one checked attempt',
+  heroTitle: 'Understand LLMs before you ask them to work.',
+  heroLede: 'Learn what a language model can and cannot establish, write one bounded request, inspect the answer, and repeat the method on a new task. Codex, tools, Agents, and Skills come after this foundation.',
+  heroScope: 'One transferable core, followed by platform-specific practice. Named platforms need their own current sources and runnable evidence before they become lessons.',
+  heroPrimary: 'Start the LLM Foundation Core',
+  heroSecondary: 'Try the optional five-minute warm-up',
+  starterProgressionAria: 'Continue from the LLM Foundation Core',
+  starterCodexPath: 'Continue the LLM Foundation Core',
+});
+Object.assign(copy.zh, {
+  heroIndex: 'LLM / 基础系统',
+  heroEyebrow: '先理解模型 · 再做一次可检查的尝试',
+  heroTitle: '先理解 LLM，再让它开始工作。',
+  heroLede: '先学会模型能建立什么、不能建立什么；写出一条有边界的请求，检查答案，再把方法迁移到新任务。Codex、工具、Agent 和 Skill 都在这条基础之后。',
+  heroScope: '一套可迁移的核心方法，之后再进入平台实践。命名平台只有在具备各自最新来源和可运行证据后，才会成为课程。',
+  heroPrimary: '开始 LLM 基础核心课',
+  heroSecondary: '试做可选的 5 分钟热身',
+  starterProgressionAria: '从 LLM 基础核心课继续',
+  starterCodexPath: '继续 LLM 基础核心课',
+});
+Object.assign(copy.es, {
+  heroIndex: 'LLM / SISTEMA DE FUNDAMENTOS',
+  heroEyebrow: 'Empieza por el modelo · después haz un intento comprobable',
+  heroTitle: 'Entiende los LLM antes de pedirles que trabajen.',
+  heroLede: 'Aprende qué puede y qué no puede establecer un modelo de lenguaje, escribe una petición acotada, inspecciona la respuesta y repite el método en una tarea nueva. Codex, las herramientas, los agentes y los Skills vienen después de estos fundamentos.',
+  heroScope: 'Un núcleo transferible seguido de práctica específica por plataforma. Las plataformas nombradas necesitan fuentes actuales propias y evidencia ejecutable antes de convertirse en lecciones.',
+  heroPrimary: 'Empieza el núcleo de fundamentos de LLM',
+  heroSecondary: 'Prueba el calentamiento opcional de cinco minutos',
+  starterProgressionAria: 'Continúa desde el núcleo de fundamentos de LLM',
+  starterCodexPath: 'Continúa con el núcleo de fundamentos de LLM',
+});
+Object.assign(copy.ja, {
+  heroIndex: 'LLM / 基礎システム',
+  heroEyebrow: 'まずモデルを理解する · 次に確認できる試行を一つ行う',
+  heroTitle: 'LLMに仕事を頼む前に、その仕組みを理解する。',
+  heroLede: '言語モデルが何を確かめられ、何を確かめられないかを学び、境界のあるリクエストを書き、回答を確認し、新しい課題で方法を繰り返します。Codex、ツール、Agent、Skillはこの基礎の後です。',
+  heroScope: '移行可能なコアの後に、プラットフォーム別の練習を行います。名前を挙げるプラットフォームは、各自の最新ソースと実行可能な証拠がそろってからレッスンになります。',
+  heroPrimary: 'LLM 基礎コアを始める',
+  heroSecondary: '任意の5分間ウォームアップを試す',
+  starterProgressionAria: 'LLM 基礎コアから続ける',
+  starterCodexPath: 'LLM 基礎コアを続ける',
+});
+Object.assign(copy.ko, {
+  heroIndex: 'LLM / 기초 시스템',
+  heroEyebrow: '모델부터 이해하세요 · 그다음 확인 가능한 시도 하나',
+  heroTitle: 'LLM에게 일을 맡기기 전에 먼저 이해하세요.',
+  heroLede: '언어 모델이 무엇을 확인할 수 있고 무엇을 확인할 수 없는지 배우고, 범위 있는 요청을 작성하고, 답변을 점검한 뒤 새 과제에 방법을 반복하세요. Codex, 도구, Agent, Skill은 이 기초 다음에 다룹니다.',
+  heroScope: '전이 가능한 코어 다음에 플랫폼별 실습이 이어집니다. 이름을 언급한 플랫폼은 각자의 최신 출처와 실행 가능한 증거가 있어야 수업이 됩니다.',
+  heroPrimary: 'LLM 기초 코어 시작하기',
+  heroSecondary: '선택 사항인 5분 워밍업 해보기',
+  starterProgressionAria: 'LLM 기초 코어에서 계속하기',
+  starterCodexPath: 'LLM 기초 코어 계속하기',
+});
+Object.assign(copy.de, {
+  heroIndex: 'LLM / GRUNDLAGENSYSTEM',
+  heroEyebrow: 'Mit dem Modell beginnen · dann einen prüfbaren Versuch machen',
+  heroTitle: 'Verstehe LLMs, bevor du sie arbeiten lässt.',
+  heroLede: 'Lerne, was ein Sprachmodell feststellen kann und was nicht, formuliere eine begrenzte Anfrage, prüfe die Antwort und wende die Methode auf eine neue Aufgabe an. Codex, Werkzeuge, Agents und Skills kommen erst nach diesen Grundlagen.',
+  heroScope: 'Ein übertragbarer Kern, gefolgt von plattformspezifischer Praxis. Benannte Plattformen brauchen eigene aktuelle Quellen und ausführbare Nachweise, bevor sie zu Lektionen werden.',
+  heroPrimary: 'LLM-Grundlagenkern beginnen',
+  heroSecondary: 'Optionale Fünf-Minuten-Aufwärmübung ausprobieren',
+  starterProgressionAria: 'Vom LLM-Grundlagenkern fortfahren',
+  starterCodexPath: 'LLM-Grundlagenkern fortsetzen',
 });
 
 // Keep the reader-facing homepage focused on learning. Detailed evidence and
@@ -4598,50 +4688,63 @@ Object.assign(copy.de, {
   researchBoundary: 'Lies die Quellen zusammen mit den Lehrnotizen und nutze sie als Ausgangspunkt für deine eigene Recherche.', visualCaseBoundary: 'Nutze diese Diagramme, um die Methode zu verstehen, und probiere sie dann an einer eigenen kleinen Aufgabe aus.', starterBoundaryLab: 'Grenze markieren: Lab 011', starterPractice: 'Lab 001 durchführen: Dateien und Git', openExercise: 'Übung öffnen'
 });
 
-// The first screen offers one unambiguous first action. The wizard, textbook
-// route, and problem cards remain available after that action, but do not
-// compete with it in the opening viewport.
+// The first screen offers one unambiguous first action: learn the transferable
+// LLM foundation before choosing a platform or application. The goal wizard,
+// prompt cards, and problem routes remain available for later practice, but
+// their copy must not imply that a beginner should skip the foundation.
 Object.assign(copy.en, {
-  heroPrimary: 'Start the five-minute practice', heroSecondary: 'Read the foundation first',
-  startEyebrow: 'Start here · one useful result today', startTitle: 'What do you want the model to help you do?',
-  startIntro: 'Pick one real purpose. In under a minute, you will get a ready-to-use prompt and one clear next step; you do not need to understand the whole book first.',
-  wizardEyebrow: 'Your first useful result', wizardTitle: 'Choose one thing you want help with now.',
-  wizardIntro: 'Choose a purpose, add only the details that matter, then copy a prompt you can use in any chat model. No account, files, or setup required.'
+  heroPrimary: 'Start the LLM Foundation Core', heroSecondary: 'See the optional five-minute example',
+  heroProofStatus: 'Optional example · not the foundation lesson', heroProofLink: 'See the optional warm-up below',
+  mobileRouteNoSetup: 'Start the LLM Foundation Core', mobileRouteTask: 'Learn the LLM concepts', mobileRouteFixture: 'Make your first bounded request',
+  startEyebrow: 'After the foundation · choose one purpose', startTitle: 'What do you want the model to help you do next?',
+  startIntro: 'Finish the LLM Foundation Core first. Then choose one real purpose, add only the details that matter, and copy a bounded prompt for any chat model.',
+  wizardEyebrow: 'Application practice after the core', wizardTitle: 'Choose one thing you want help with next.',
+  wizardIntro: 'After the foundation, choose a purpose, add only the details that matter, then copy a prompt you can inspect in any chat model. No account, files, or setup required.'
 });
 Object.assign(copy.zh, {
-  heroPrimary: '开始 5 分钟练习', heroSecondary: '先读基础章节',
-  startEyebrow: '从这里开始 · 今天得到一个有用结果', startTitle: '你想让大模型现在帮你做什么？',
-  startIntro: '选择一个真实目的。不到一分钟，你会得到一条可直接使用的提示词和一个清晰的下一步；不必先读完整本书。',
-  wizardEyebrow: '你的第一个有用结果', wizardTitle: '选择一件你现在想获得帮助的事。',
-  wizardIntro: '选择目的，只补充必要信息，然后复制一条能用于任何聊天模型的提示词。不需要账号、文件或设置。'
+  heroPrimary: '开始 LLM 基础核心课', heroSecondary: '查看可选的 5 分钟示例',
+  heroProofStatus: '可选示例 · 不是基础课程', heroProofLink: '查看下方可选热身',
+  mobileRouteNoSetup: '开始 LLM 基础核心课', mobileRouteTask: '学习 LLM 基础概念', mobileRouteFixture: '提出第一条有边界请求',
+  startEyebrow: '完成基础之后 · 选择一个目的', startTitle: '接下来你想让大模型帮你做什么？',
+  startIntro: '请先完成 LLM 基础核心课。之后选择一个真实目的，只补充必要信息，再复制一条可在任意聊天模型中检查的有边界提示词。',
+  wizardEyebrow: '核心课之后的应用练习', wizardTitle: '选择一件你接下来想获得帮助的事。',
+  wizardIntro: '完成基础后，选择一个目的，只补充必要信息，然后复制一条可以在任意聊天模型中检查的提示词。不需要账号、文件或设置。'
 });
 Object.assign(copy.es, {
-  heroPrimary: 'Empieza la práctica de cinco minutos', heroSecondary: 'Lee primero los fundamentos',
-  startEyebrow: 'Empieza aquí · un resultado útil hoy', startTitle: '¿En qué quieres que te ayude el modelo ahora?',
-  startIntro: 'Elige un propósito real. En menos de un minuto tendrás un prompt listo para usar y un siguiente paso claro; no necesitas entender todo el libro primero.',
-  wizardEyebrow: 'Tu primer resultado útil', wizardTitle: 'Elige una cosa para la que necesitas ayuda ahora.',
-  wizardIntro: 'Elige un propósito, añade solo los datos necesarios y copia un prompt que puedas usar en cualquier modelo de chat. No necesitas cuenta, archivos ni configuración.'
+  heroPrimary: 'Empieza el núcleo de fundamentos de LLM', heroSecondary: 'Ver el ejemplo opcional de cinco minutos',
+  heroProofStatus: 'Ejemplo opcional · no es la lección de fundamentos', heroProofLink: 'Ver el calentamiento opcional abajo',
+  mobileRouteNoSetup: 'Empieza el núcleo de fundamentos de LLM', mobileRouteTask: 'Aprende los conceptos de LLM', mobileRouteFixture: 'Haz tu primera petición acotada',
+  startEyebrow: 'Después de los fundamentos · elige un propósito', startTitle: '¿Qué quieres que te ayude a hacer el modelo después?',
+  startIntro: 'Completa primero el núcleo de fundamentos de LLM. Después elige un propósito real, añade solo los datos necesarios y copia un prompt acotado para cualquier modelo de chat.',
+  wizardEyebrow: 'Práctica de aplicación después del núcleo', wizardTitle: 'Elige una cosa para la que quieras ayuda después.',
+  wizardIntro: 'Después de los fundamentos, elige un propósito, añade solo los datos necesarios y copia un prompt que puedas inspeccionar en cualquier modelo de chat. No necesitas cuenta, archivos ni configuración.'
 });
 Object.assign(copy.ja, {
-  heroPrimary: '5分間の練習を始める', heroSecondary: 'まず基礎を読む',
-  startEyebrow: 'ここから始める · 今日ひとつ役立つ結果を得る', startTitle: '今、モデルに何を手伝ってほしいですか？',
-  startIntro: '実際の目的を一つ選んでください。1分以内に、そのまま使えるプロンプトと明確な次の一歩が得られます。本全体を先に理解する必要はありません。',
-  wizardEyebrow: '最初の役立つ結果', wizardTitle: '今助けてほしいことを一つ選んでください。',
-  wizardIntro: '目的を選び、必要な情報だけを加えて、どのチャットモデルでも使えるプロンプトをコピーします。アカウント、ファイル、設定は不要です。'
+  heroPrimary: 'LLM 基礎コアを始める', heroSecondary: '任意の5分間の例を見る',
+  heroProofStatus: '任意の例 · 基礎レッスンではありません', heroProofLink: '下の任意のウォームアップを見る',
+  mobileRouteNoSetup: 'LLM 基礎コアを始める', mobileRouteTask: 'LLM の概念を学ぶ', mobileRouteFixture: '最初の境界付きリクエストを作る',
+  startEyebrow: '基礎の後 · 目的を一つ選ぶ', startTitle: '次に、モデルに何を手伝ってほしいですか？',
+  startIntro: 'まず LLM 基礎コアを終えてください。その後、実際の目的を一つ選び、必要な情報だけを加え、どのチャットモデルでも確認できる境界付きプロンプトをコピーします。',
+  wizardEyebrow: 'コアの後の応用練習', wizardTitle: '次に助けてほしいことを一つ選んでください。',
+  wizardIntro: '基礎の後に目的を選び、必要な情報だけを加えて、どのチャットモデルでも確認できるプロンプトをコピーします。アカウント、ファイル、設定は不要です。'
 });
 Object.assign(copy.ko, {
-  heroPrimary: '5분 연습 시작하기', heroSecondary: '먼저 기초 읽기',
-  startEyebrow: '여기서 시작 · 오늘 유용한 결과 하나', startTitle: '지금 모델이 무엇을 도와주면 좋겠나요?',
-  startIntro: '실제 목적 하나를 고르세요. 1분 안에 바로 쓸 수 있는 프롬프트와 명확한 다음 단계가 생깁니다. 먼저 책 전체를 이해할 필요는 없습니다.',
-  wizardEyebrow: '첫 번째 유용한 결과', wizardTitle: '지금 도움받고 싶은 일 하나를 고르세요.',
-  wizardIntro: '목적을 고르고 필요한 정보만 추가한 뒤, 어떤 채팅 모델에도 쓸 수 있는 프롬프트를 복사하세요. 계정, 파일, 설정이 필요 없습니다.'
+  heroPrimary: 'LLM 기초 코어 시작하기', heroSecondary: '선택 사항인 5분 예시 보기',
+  heroProofStatus: '선택 사항인 예시 · 기초 레슨이 아님', heroProofLink: '아래의 선택 사항인 워밍업 보기',
+  mobileRouteNoSetup: 'LLM 기초 코어 시작하기', mobileRouteTask: 'LLM 개념 배우기', mobileRouteFixture: '첫 번째 범위 있는 요청 만들기',
+  startEyebrow: '기초 다음 · 목적 하나 고르기', startTitle: '다음에는 모델이 무엇을 도와주면 좋겠나요?',
+  startIntro: '먼저 LLM 기초 코어를 끝내세요. 그다음 실제 목적 하나를 고르고 필요한 정보만 추가한 뒤, 어떤 채팅 모델에서도 점검할 수 있는 범위 있는 프롬프트를 복사하세요.',
+  wizardEyebrow: '코어 이후의 응용 연습', wizardTitle: '다음에 도움받고 싶은 일 하나를 고르세요.',
+  wizardIntro: '기초를 마친 뒤 목적을 고르고 필요한 정보만 추가한 다음, 어떤 채팅 모델에서도 점검할 수 있는 프롬프트를 복사하세요. 계정, 파일, 설정이 필요 없습니다.'
 });
 Object.assign(copy.de, {
-  heroPrimary: 'Mit der Fünf-Minuten-Übung beginnen', heroSecondary: 'Zuerst die Grundlagen lesen',
-  startEyebrow: 'Hier beginnen · heute ein nützliches Ergebnis', startTitle: 'Wobei soll dir das Modell jetzt helfen?',
-  startIntro: 'Wähle einen echten Zweck. In weniger als einer Minute erhältst du einen einsatzbereiten Prompt und einen klaren nächsten Schritt; du musst nicht zuerst das ganze Buch verstehen.',
-  wizardEyebrow: 'Dein erstes nützliches Ergebnis', wizardTitle: 'Wähle eine Sache, bei der du jetzt Hilfe möchtest.',
-  wizardIntro: 'Wähle einen Zweck, ergänze nur die nötigen Angaben und kopiere einen Prompt für jedes Chatmodell. Kein Konto, keine Dateien und keine Einrichtung nötig.'
+  heroPrimary: 'LLM-Grundlagenkern beginnen', heroSecondary: 'Optionales Fünf-Minuten-Beispiel ansehen',
+  heroProofStatus: 'Optionales Beispiel · nicht die Grundlagenlektion', heroProofLink: 'Optionale Aufwärmübung unten ansehen',
+  mobileRouteNoSetup: 'LLM-Grundlagenkern beginnen', mobileRouteTask: 'LLM-Konzepte lernen', mobileRouteFixture: 'Die erste begrenzte Anfrage stellen',
+  startEyebrow: 'Nach den Grundlagen · einen Zweck wählen', startTitle: 'Wobei soll dir das Modell als Nächstes helfen?',
+  startIntro: 'Beende zuerst den LLM-Grundlagenkern. Wähle danach einen echten Zweck, ergänze nur die nötigen Angaben und kopiere einen begrenzten Prompt für jedes Chatmodell.',
+  wizardEyebrow: 'Anwendungspraxis nach dem Kern', wizardTitle: 'Wähle eine Sache, bei der du als Nächstes Hilfe möchtest.',
+  wizardIntro: 'Wähle nach den Grundlagen einen Zweck, ergänze nur die nötigen Angaben und kopiere einen Prompt, den du in jedem Chatmodell prüfen kannst. Kein Konto, keine Dateien und keine Einrichtung nötig.'
 });
 
 // The home page is a place to begin, not a release dashboard. Evidence and
@@ -4653,7 +4756,7 @@ Object.assign(copy.en, {
   localeTitle: 'Read in your language',
   localeIntro: 'Choose the language you read most naturally. The interface and the course route stay in that language as you move through the book.',
   localeRule: 'Switch languages from the menu at the top whenever you need to.',
-  problemStartLink: 'Start Chapter 1 → Lab 011 → Chapter 2 → Lab 001 ↗',
+  problemStartLink: 'Start the LLM Foundation Core → first bounded request ↗',
   problemWrongFileLink: 'Learn the recovery check ↗', problemSkillLink: 'Learn how to choose a Skill ↗', problemUpdateLink: 'Learn the safe update path ↗',
   problemIntakeLink: 'Choose a first practice ↗', problemLanguageLink: 'Start a language practice ↗', problemGeneralSkillLink: 'Choose a skill practice ↗',
   problemResearchLink: 'Start the research route ↗', problemRecoveryLink: 'Repair one failed exchange ↗', problemPublicInterestSafetyLink: 'Run the safety inquiry ↗',
@@ -4663,7 +4766,7 @@ Object.assign(copy.zh, {
   localeOptionFallback: '',
   localeBannerFallback: '当前已选择此语言路线。若所请求的页面暂不可用，Reader 会保持当前语言并说明下一步；不会在未说明的情况下替换为英文课程页面。',
   localeTitle: '用你的语言阅读', localeIntro: '选择你最自然的阅读语言。沿着课程前进时，界面与课程路线都会保持该语言。', localeRule: '需要切换时，使用页面顶部的语言菜单。',
-  problemStartLink: '从第 1 章 → 实验 011 → 第 2 章 → 实验 001 开始 ↗',
+  problemStartLink: '开始 LLM 基础核心课 → 第一条有边界请求 ↗',
   problemWrongFileLink: '学习如何恢复与检查 ↗', problemSkillLink: '学习如何选择 Skill ↗', problemUpdateLink: '学习安全更新路径 ↗',
   problemIntakeLink: '选择第一次练习 ↗', problemLanguageLink: '开始语言练习 ↗', problemGeneralSkillLink: '选择一项技能练习 ↗',
   problemResearchLink: '开始研究路线 ↗', problemRecoveryLink: '修复一次失败的对话 ↗', problemPublicInterestSafetyLink: '开始安全询问 ↗',
@@ -4717,22 +4820,22 @@ Object.assign(copy.en, {
   first30Intro: 'Use any chat model. You will give it one small rewriting task, then check whether it preserved the facts instead of making helpful-sounding details up.'
 });
 Object.assign(copy.en, {
-  heroScope: 'One transferable method, with Codex as the current flagship practice track. Named platforms need their own current sources and runnable evidence before they become lessons.'
+  heroScope: 'One transferable foundation, followed by platform-specific practice. Named platforms need their own current sources and runnable evidence before they become lessons.'
 });
 Object.assign(copy.zh, {
-  heroScope: '一套可迁移的方法，以 Codex 为当前旗舰实践轨道。命名平台在成为课程前，都需要各自最新的来源与可运行证据。'
+  heroScope: '一套可迁移的基础方法，之后再进入平台实践。命名平台在成为课程前，都需要各自最新的来源与可运行证据。'
 });
 Object.assign(copy.es, {
-  heroScope: 'Un método transferible, con Codex como la actual pista práctica principal. Las plataformas nombradas necesitan fuentes actuales propias y evidencia ejecutable antes de convertirse en lecciones.'
+  heroScope: 'Un núcleo transferible seguido de práctica específica por plataforma. Las plataformas nombradas necesitan fuentes actuales propias y evidencia ejecutable antes de convertirse en lecciones.'
 });
 Object.assign(copy.ja, {
-  heroScope: '移行可能な方法を一つ、現在の主要な実践トラックは Codex です。名前を挙げた各プラットフォームは、レッスンになる前に独自の最新ソースと実行可能な証拠を必要とします。'
+  heroScope: '移行可能な基礎の後に、プラットフォーム別の練習を行います。名前を挙げる各プラットフォームは、レッスンになる前に独自の最新ソースと実行可能な証拠を必要とします。'
 });
 Object.assign(copy.ko, {
-  heroScope: '전이 가능한 방법 하나와 현재의 대표 실습 트랙인 Codex를 제공합니다. 이름을 언급한 플랫폼은 수업이 되기 전에 각자의 최신 출처와 실행 가능한 증거가 필요합니다.'
+  heroScope: '전이 가능한 기초 다음에 플랫폼별 실습이 이어집니다. 이름을 언급한 플랫폼은 수업이 되기 전에 각자의 최신 출처와 실행 가능한 증거가 필요합니다.'
 });
 Object.assign(copy.de, {
-  heroScope: 'Eine übertragbare Methode mit Codex als aktuellem zentralen Übungsweg. Benannte Plattformen benötigen eigene aktuelle Quellen und ausführbare Nachweise, bevor sie zu Lektionen werden.'
+  heroScope: 'Ein übertragbarer Grundlagenkern, gefolgt von plattformspezifischer Praxis. Benannte Plattformen benötigen eigene aktuelle Quellen und ausführbare Nachweise, bevor sie zu Lektionen werden.'
 });
 Object.assign(copy.zh, {
   navFirst30: '5 分钟提示词练习',
@@ -4830,6 +4933,58 @@ Object.assign(copy.ko, {
 });
 Object.assign(copy.de, {
   localePartialAnchorNotice: 'Lokale Übersicht; dieser Detailabschnitt ist noch nicht übersetzt.'
+});
+
+// Final foundation-first copy guard. Earlier locale dictionaries retain legacy
+// Codex-first fallbacks for offline previews; these values are the public
+// contract after the generated manifest and current route have loaded.
+Object.assign(copy.en, {
+  problemStartTitle: 'I do not know where to start.',
+  problemStartBody: 'Begin with the LLM Foundation Core. It teaches the model boundary, one bounded request, visible failure, repair, and transfer before any platform route.',
+  problemStartLink: 'Start the LLM Foundation Core → first bounded request ↗',
+  stepThreeTitle: 'Let the model inspect first.',
+  stepThreeBody: 'Ask for the relevant material and current state before allowing an edit or external action. Keep the scope visible.',
+  footerTagline: 'A practical learning and practice system for language models.',
+});
+Object.assign(copy.zh, {
+  problemStartTitle: '我不知道从哪里开始。',
+  problemStartBody: '先完成 LLM 基础核心课：理解模型边界，提出第一条有边界请求，识别可见失败，修正并迁移，然后再进入平台路线。',
+  problemStartLink: '开始 LLM 基础核心课 → 第一条有边界请求 ↗',
+  stepThreeTitle: '先让模型检查。',
+  stepThreeBody: '允许编辑或外部行动前，先让它说明相关材料和当前状态，保持范围可见。',
+  footerTagline: '一套面向大语言模型的实用学习与实践系统。',
+});
+Object.assign(copy.es, {
+  problemStartTitle: 'No sé por dónde empezar.',
+  problemStartBody: 'Empieza por el núcleo de fundamentos de LLM: límites del modelo, primera petición acotada, fallos visibles, reparación y transferencia antes de cualquier plataforma.',
+  problemStartLink: 'Empieza el núcleo de fundamentos de LLM → primera petición acotada ↗',
+  stepThreeTitle: 'Haz que el modelo inspeccione primero.',
+  stepThreeBody: 'Antes de permitir una edición o una acción externa, pide el material relevante y el estado actual. Mantén visible el alcance.',
+  footerTagline: 'Un sistema práctico de aprendizaje y práctica para modelos de lenguaje.',
+});
+Object.assign(copy.ja, {
+  problemStartTitle: 'どこから始めればよいか分からない。',
+  problemStartBody: 'まず LLM 基礎コアでモデルの境界、最初の境界付きリクエスト、目に見える失敗、修正、転移を学び、その後で各プラットフォームに進みます。',
+  problemStartLink: 'LLM 基礎コア → 最初の境界付きリクエストを始める ↗',
+  stepThreeTitle: 'まずモデルに確認させる。',
+  stepThreeBody: '編集や外部操作を許可する前に、関連する材料と現在の状態を示させます。範囲を見えるようにします。',
+  footerTagline: '言語モデルのための実用的な学習・練習システム。',
+});
+Object.assign(copy.ko, {
+  problemStartTitle: '어디서 시작해야 할지 모르겠습니다.',
+  problemStartBody: '먼저 LLM 기초 코어에서 모델의 경계, 첫 범위 있는 요청, 보이는 실패, 수정과 전이를 익힌 뒤 플랫폼 경로로 이동하세요.',
+  problemStartLink: 'LLM 기초 코어 → 첫 범위 있는 요청 시작 ↗',
+  stepThreeTitle: '먼저 모델이 점검하게 하세요.',
+  stepThreeBody: '편집이나 외부 행동을 허용하기 전에 관련 자료와 현재 상태를 확인하게 하세요. 범위를 보이게 유지하세요.',
+  footerTagline: '언어 모델을 위한 실용적인 학습·연습 시스템.',
+});
+Object.assign(copy.de, {
+  problemStartTitle: 'Ich weiß nicht, wo ich anfangen soll.',
+  problemStartBody: 'Beginne mit dem LLM-Grundlagenkern: Modellgrenzen, erste begrenzte Anfrage, sichtbare Fehler, Reparatur und Übertragung vor jedem Plattformpfad.',
+  problemStartLink: 'LLM-Grundlagenkern → erste begrenzte Anfrage beginnen ↗',
+  stepThreeTitle: 'Das Modell zuerst prüfen lassen.',
+  stepThreeBody: 'Lass vor einer Bearbeitung oder externen Aktion das relevante Material und den aktuellen Zustand prüfen. Halte den Umfang sichtbar.',
+  footerTagline: 'Ein praktisches Lern- und Übungssystem für Sprachmodelle.',
 });
 
 initializeSearch();

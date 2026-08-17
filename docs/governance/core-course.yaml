@@ -13,6 +13,8 @@
     "title": "Make one safe, checkable text-only attempt",
     "path": "book/routes/llm-foundation-core-v1-EN.md",
     "estimated_minutes": 10,
+    "route_estimated_minutes": 120,
+    "estimated_minutes_note": "The entry estimate covers the first safe attempt; the five-unit route estimate is 120 minutes before independent practice and review.",
     "learner_artifact": "the supplied notice, first request, first response, and a three-item self-check",
     "stop_if": [
       "private or credential material is required",
@@ -30,7 +32,7 @@
       "scope_class": "core",
       "status": "candidate",
       "run_status": "not_run",
-      "estimated_minutes": 15,
+      "estimated_minutes": 25,
       "depends_on": [],
       "new_concepts": ["context", "next-token prediction", "model/product boundary"],
       "content_paths": ["book/guides/llm-fundamentals-EN.md"],

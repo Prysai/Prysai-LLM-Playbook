@@ -236,9 +236,10 @@ def main() -> int:
             if required not in site_script:
                 raise AssertionError(f"first-prompt-practice: missing {required}")
         for required in (
-            'href="reader.html?path=book%2Fguides%2Fllm-fundamentals-EN.md&amp;lang=en"',
-            'data-content-id="chapter-01"',
-            'data-content-id="chapter-02"',
+            'href="reader.html?path=book%2Froutes%2Fllm-foundation-core-v1-EN.md&amp;lang=en"',
+            'data-content-id="llm-foundation-core-v1"',
+            'data-content-id="llm-fundamentals-guide"',
+            'data-content-id="llm-core-first-generation"',
             'data-route-decision',
             'heroRouteLessonZero',
             'heroRouteLessonZeroBody',
@@ -248,10 +249,10 @@ def main() -> int:
             if required not in site_markup:
                 raise AssertionError(f"textbook-route: missing {required}")
         for required in (
-            "heroRouteLessonZero: '0 · Chapter 0: what an LLM is'",
-            "heroRouteChapterOne: '1 · Chapter 1: GPT before Codex'",
-            "heroRouteChapterTwo: '2 · Chapter 2: your first safe task'",
-            "heroRouteLessonZero: '0 · 第 0 章：LLM 是什么'",
+            "heroRouteLessonZero: '1 · LLM Foundation Core'",
+            "heroRouteChapterOne: '2 · Unit 1: what an LLM is'",
+            "heroRouteChapterTwo: '3 · Unit 2: your first bounded request'",
+            "heroRouteLessonZero: '1 · LLM 基础核心课'",
         ):
             if required not in site_script:
                 raise AssertionError(f"textbook-route: missing route distinction '{required}'")

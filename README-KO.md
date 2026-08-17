@@ -11,9 +11,12 @@
 
 처음 방문했다면 카드, Skill, 제품 중에서 고르지 마세요. 먼저 한국어 주 학습 경로를 따르세요.
 
-1. [레슨 0: 대규모 언어 모델이란 무엇인가](book/guides/llm-fundamentals-KO.md)
-2. [1장: Codex보다 먼저 GPT 이해하기](book/chapters/01-gpt-and-codex-KO.md)
-3. [2장: 첫 번째 안전하고 검증 가능한 작업](book/chapters/02-first-safe-task-KO.md)
+1. [LLM 개념](book/guides/llm-fundamentals-KO.md)
+2. [첫 범용 LLM 작업](book/routes/universal-core-foundations-KO.md)
+3. [첫 안전 변경](book/routes/first-safe-change-KO.md)
+
+영어 기초 코어가 현재의 정식 원문이며 한국어판은 재번역과 검토를 기다리고 있습니다.
+그동안 이 입구는 한국어 파일만으로 읽을 수 있는 경로를 유지합니다.
 
 스페인어, 업무 업데이트, 리서치 확인 카드는 이 경로 뒤에 하는 **선택 응용 연습**입니다. LLM을 이해하는 첫 수업이 아니며 효율, 유창성, 역량 향상을 약속하지 않습니다.
 
