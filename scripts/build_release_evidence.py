@@ -8,6 +8,7 @@ import os
 import re
 import subprocess
 import sys
+import tempfile
 from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -20,6 +21,8 @@ SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 MATURITY = ("draft", "candidate", "verified", "production-ready")
 VERIFIED_BLOCKING_SEVERITIES = {"P0", "P1"}
 PRODUCTION_READY_BLOCKING_SEVERITIES = {"P0", "P1", "P2"}
+PY_YAML_VERSION = "6.0.3"
+PY_YAML_TARGET = Path(tempfile.gettempdir()) / "prysai-pyyaml-release-evidence"
 
 
 def node_executable() -> str:
@@ -28,6 +31,44 @@ def node_executable() -> str:
         return configured
     bundled = Path.home() / ".cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe"
     return str(bundled) if bundled.is_file() else "node"
+
+
+def gate_environment() -> dict[str, str]:
+    """Provide PyYAML to validators without adding it to the repository.
+
+    A release packet must run the same YAML-backed Skill and GitHub-template
+    gates locally and in CI. Keep the dependency transient, pinned, and out of
+    the worktree so a missing local package cannot turn a content failure into
+    a misleading environment failure.
+    """
+
+    environment = os.environ.copy()
+    try:
+        import yaml  # noqa: F401
+    except ModuleNotFoundError:
+        if not (PY_YAML_TARGET / "yaml").is_dir():
+            PY_YAML_TARGET.mkdir(parents=True, exist_ok=True)
+            install = subprocess.run(
+                (
+                    sys.executable,
+                    "-m",
+                    "pip",
+                    "install",
+                    "--disable-pip-version-check",
+                    "--only-binary=:all:",
+                    f"PyYAML=={PY_YAML_VERSION}",
+                    "--target",
+                    str(PY_YAML_TARGET),
+                ),
+                cwd=ROOT,
+                check=False,
+            )
+            if install.returncode:
+                raise RuntimeError("could not prepare temporary PyYAML for release gates")
+        environment["PYTHONPATH"] = str(PY_YAML_TARGET) + os.pathsep + environment.get("PYTHONPATH", "")
+    return environment
+
+
 REQUIRED_COMMANDS = {
     "browser-smoke": ("{node}", "scripts/browser_smoke.mjs"),
     "teaching-asset-catalog": ("{python}", "scripts/validate_teaching_assets.py"),
@@ -252,6 +293,7 @@ def run_gates(contract: dict[str, Any], output_dir: Path) -> list[dict[str, Any]
     logs_dir = output_dir / "logs"
     logs_dir.mkdir(parents=True, exist_ok=True)
     dimensions: list[dict[str, Any]] = []
+    environment = gate_environment()
     for dimension in contract["dimensions"]:
         command_results: list[dict[str, Any]] = []
         for command in dimension["commands"]:
@@ -261,7 +303,7 @@ def run_gates(contract: dict[str, Any], output_dir: Path) -> list[dict[str, Any]
                 else value.replace("{evidence_dir}", str(output_dir))
                 for value in command["argv"]
             ]
-            command_environment = os.environ | {"PYTHON": sys.executable}
+            command_environment = environment | {"PYTHON": sys.executable}
             completed = subprocess.run(
                 argv,
                 cwd=ROOT,

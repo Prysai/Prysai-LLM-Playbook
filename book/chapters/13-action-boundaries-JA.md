@@ -197,7 +197,7 @@ repository が target ではない。
 **最小 check:** current directory、Git top-level、target path、許可された read/write root を比較する。
 **停止:** root が一致しない、または ownership が不明である。
 
-詳しい範囲は [FC-WORKTREE-01](../../docs/research/field-case-worktree-target-mismatch-2026-08-12.md) を読みます。
+詳しい範囲は [FC-WORKTREE-01](../evidence-library-JA.md#source-notes) を読みます。
 
 ### verification が environment replacement になる
 
@@ -206,7 +206,7 @@ repository が target ではない。
 別々の claim に分ける。
 **停止:** 次の step に新しい authority または persistent side effect が必要である。
 
-詳しい範囲は [FC-SCOPE-01](../../docs/research/field-case-verification-scope-expansion-2026-08-12.md) を読みます。
+詳しい範囲は [FC-SCOPE-01](../evidence-library-JA.md#source-notes) を読みます。
 
 ### 長い待機の後の retry
 
@@ -221,7 +221,7 @@ repository が target ではない。
 **最小 check:** その文を input として分類し、元の task contract と比較する。
 **停止:** 指示が許可された target または data scope の外にある。
 
-合成 fixture を含む範囲は [FC-SAFETY-01](../../docs/research/field-case-external-instruction-authority-2026-08-13.md)
+合成 fixture を含む範囲は [FC-SAFETY-01](../evidence-library-JA.md#source-notes)
 を参照してください。instruction-like text は、owner が新しい decision を出すまで data です。
 
 ## 移行タスク

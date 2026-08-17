@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import copy
 import subprocess
+import sys
 import tempfile
 from pathlib import Path
 
@@ -80,6 +81,9 @@ def main() -> int:
         require((Path(temp_dir) / dimensions[0]["commands"][0]["log"]).is_file(), "failure log was not preserved")
         require(evidence.derive_decision("candidate", dimensions, {"overdue": [], "invalid": []}) == "blocked", "failed gate did not block")
 
+    environment = evidence.gate_environment()
+    require("PYTHONPATH" in environment or "yaml" in sys.modules, "release gate environment does not prepare PyYAML")
+
     placeholder_contract = copy.deepcopy(contract)
     placeholder_contract["dimensions"] = [{
         "id": "placeholder-fixture", "label": "Placeholder fixture",
@@ -154,7 +158,7 @@ def main() -> int:
     require("Decision: `not_ready`" in rendered, "readiness decision missing from packet summary")
     require("`rollback`" in rendered, "readiness blocker missing from packet summary")
 
-    print("RELEASE_EVIDENCE_TESTS_OK fixtures=27")
+    print("RELEASE_EVIDENCE_TESTS_OK fixtures=28")
     return 0
 
 
