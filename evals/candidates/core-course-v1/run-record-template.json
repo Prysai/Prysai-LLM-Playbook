@@ -1,0 +1,21 @@
+{
+  "candidate_id": "core-course-v1",
+  "fixture_revision": "1",
+  "run_status": "not_run",
+  "model_and_surface": "",
+  "task_and_context": "",
+  "allowed_aids": [],
+  "first_artifact": "",
+  "rubric_scores": {
+    "explain": null,
+    "initiate": null,
+    "identify": null,
+    "repair": null,
+    "transfer": null
+  },
+  "help_disclosure": "",
+  "reviewers": [],
+  "disagreements": [],
+  "claim_status": "not_observed",
+  "limits": ""
+}

@@ -13,6 +13,7 @@ book, site, translations, status, and maintenance records aligned.
 | Change which chapters/labs can be routed by the public site | [`content-status.yaml`](content-status.yaml) | Regenerate [`site/locale-manifest.js`](../../site/locale-manifest.js) |
 | Change a learning level | [`learning-path.yaml`](learning-path.yaml) | Site data and learning-path validator |
 | Change the beginner course promise or default scope | [`../product/core-course-contract.md`](../product/core-course-contract.md) and [`core-release-scope.md`](core-release-scope.md) | Core-course route, inventory, rubric, and focused validator |
+| Change the core five-unit order, artifacts, or stop boundaries | [`core-course.yaml`](core-course.yaml) | [`book/routes/llm-foundation-core-v1-EN.md`](../../book/routes/llm-foundation-core-v1-EN.md), rubric, fixtures, and `scripts/validate_core_course.py` |
 | Classify core, advanced, reference, and experimental assets | [`core-content-inventory.yaml`](core-content-inventory.yaml) | Core-course route and asset admission review |
 | Propose or admit a chapter, lab, case, adapter, route, or reference unit | [`gold-content-admission.yaml`](gold-content-admission.yaml) | Hard-gate, family-contract, and admission-score validator |
 | Change an artifact's maturity | [`content-status.yaml`](content-status.yaml) | Status indexes and status validator |

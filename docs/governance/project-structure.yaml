@@ -113,6 +113,7 @@
     {"path": "examples/lab-013-v1", "role": "Frozen deterministic fixture and review contract for the Lab 013 maintainer reference run.", "entry": "examples/lab-013-v1/README.md"},
     {"path": "examples/universal-seam-v1", "role": "Fictional offline request, target, receipt, and structured-state seam fixture before a platform adapter is needed.", "entry": "examples/universal-seam-v1/README.md"},
     {"path": "evals/candidates/context-packet-builder-v1", "role": "Original fictional admission fixture for an unadmitted context-packet responsibility; it does not create a Skill or runtime evidence.", "entry": "evals/candidates/context-packet-builder-v1/README.md"},
+    {"path": "evals/candidates/core-course-v1", "role": "Synthetic scoring fixtures for the LLM Foundation Core route; static contract only and never a learner or model-evidence store.", "entry": "evals/candidates/core-course-v1/README.md"},
     {"path": "evals/candidates/shift-handoff-v1", "role": "Fictional candidate model-output study with frozen randomized prompt packets, manifest-bound records, and no checked-in result.", "entry": "evals/candidates/shift-handoff-v1/README.md"},
     {"path": "evals/contributions", "role": "Publicly reviewable fictional test-material receipts; never a raw learner or model-evidence store.", "entry": "evals/contributions/README.md"}
   ],

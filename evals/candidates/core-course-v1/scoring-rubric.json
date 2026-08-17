@@ -1,0 +1,71 @@
+{
+  "schema_version": "1",
+  "candidate_id": "core-course-v1",
+  "status": "candidate",
+  "run_status": "not_run",
+  "score_values": [0, 1, 2],
+  "score_labels": {
+    "0": "not_demonstrated",
+    "1": "partly_demonstrated",
+    "2": "independently_demonstrated_on_this_task"
+  },
+  "outcomes": [
+    {
+      "id": "explain",
+      "artifact": "explanation card and two model/product boundary decisions",
+      "anchors": {
+        "0": "Treats fluent text as proof or calls the model a database, person, or autonomous actor.",
+        "1": "Mentions context-based generation but leaves an important boundary or uncertainty reason unclear.",
+        "2": "Uses own words, separates model from product or tool, and names one reason to verify."
+      }
+    },
+    {
+      "id": "initiate",
+      "artifact": "four-field task card, first input, preserved first output, and unknowns",
+      "anchors": {
+        "0": "The request is unbounded, lacks a usable goal, or requires private material or an external effect.",
+        "1": "A goal and some context are present, but a material constraint or response shape is missing.",
+        "2": "Goal, relevant material, constraints, response shape, first output, and unknowns are retained."
+      }
+    },
+    {
+      "id": "identify",
+      "artifact": "four labeled failures with quoted supplied evidence",
+      "anchors": {
+        "0": "Labels an answer without source evidence or generalizes from one response to a model.",
+        "1": "Finds a mismatch but confuses an unknown with an error or misses a material boundary.",
+        "2": "Names the failure type, quotes supplied evidence, and states what the fixture cannot establish."
+      }
+    },
+    {
+      "id": "repair",
+      "artifact": "PASS/FAIL/UNSURE check, minimum before/after difference, and one limit",
+      "anchors": {
+        "0": "Rewrites broadly, adds an unsupported fact, or reports verified without a check.",
+        "1": "Marks a check and proposes a correction but changes too much or omits the remaining unknown.",
+        "2": "Uses the check statuses, makes the minimum correction, shows the difference, and states a limit."
+      }
+    },
+    {
+      "id": "transfer",
+      "artifact": "independent unseen-task receipt with help disclosure",
+      "anchors": {
+        "0": "Sees the answer first, repeats a near-copy, or calls one success mastery or retention.",
+        "1": "Completes a changed task with substantial prompting and records the missing step.",
+        "2": "Repeats define, attempt, check, repair, and limit on a changed task while disclosing help."
+      }
+    }
+  ],
+  "review_outcomes": ["pass_on_this_fixture", "partial", "fail", "not_observable"],
+  "forbidden_conclusions": [
+    "learned",
+    "mastered",
+    "fluent",
+    "retained",
+    "safe",
+    "productive",
+    "model_superior",
+    "cross-platform_equivalent",
+    "production_ready"
+  ]
+}

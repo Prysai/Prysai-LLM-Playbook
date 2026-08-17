@@ -1,0 +1,115 @@
+{
+  "schema_version": "1",
+  "candidate_id": "core-course-v1",
+  "status": "candidate",
+  "run_status": "not_run",
+  "fixture_revision": "1",
+  "platform_scope": "universal-text-only-synthetic",
+  "source_boundary": "All notices and responses below are fictional Prysai fixtures. They are not model outputs or learner records.",
+  "cases": [
+    {
+      "id": "explain-correct",
+      "outcome": "explain",
+      "case_type": "correct",
+      "prompt": "Explain why a fluent rewrite still needs a check.",
+      "learner_artifact": "The model generates text from the supplied context; a chat product may add tools, but neither makes a sentence true just because it sounds smooth.",
+      "expected_observations": ["own words", "model/product distinction", "verification reason"],
+      "forbidden_conclusion": "the learner understands all model behavior"
+    },
+    {
+      "id": "explain-boundary",
+      "outcome": "explain",
+      "case_type": "boundary",
+      "prompt": "Classify this statement: 'The model knows the room number because it wrote one.'",
+      "learner_artifact": "UNSURE: the notice did not supply a room number, so generation is not evidence of knowledge.",
+      "expected_observations": ["unknown remains unknown", "does not infer model memory"],
+      "forbidden_conclusion": "the model has no knowledge of any kind"
+    },
+    {
+      "id": "explain-failure",
+      "outcome": "explain",
+      "case_type": "failure",
+      "prompt": "Explain this claim: 'The chatbot is an autonomous agent because it answered.'",
+      "learner_artifact": "FAIL: an answer alone shows text generation, not authorization, tools, or independent action.",
+      "expected_observations": ["agency boundary", "capability is not action"],
+      "forbidden_conclusion": "all chat products have identical tools"
+    },
+    {
+      "id": "initiate-correct",
+      "outcome": "initiate",
+      "case_type": "correct",
+      "prompt": "Write a bounded request for the fictional room notice.",
+      "learner_artifact": "Goal: two-sentence member rewrite. Material: supplied notice only. Constraints: preserve facts and bracket unknowns. Shape: rewrite, then preserved-facts list. Stop: no browsing or sending.",
+      "expected_observations": ["goal", "material", "constraints", "shape", "stop"],
+      "forbidden_conclusion": "the prompt guarantees a correct answer"
+    },
+    {
+      "id": "initiate-failure",
+      "outcome": "initiate",
+      "case_type": "failure",
+      "prompt": "Ask the model to handle everything for the club.",
+      "learner_artifact": "The request has no bounded result, material, acceptance check, or action limit.",
+      "expected_observations": ["unbounded task", "missing context", "missing stop"],
+      "forbidden_conclusion": "a longer prompt would fix every ambiguity"
+    },
+    {
+      "id": "identify-boundary",
+      "outcome": "identify",
+      "case_type": "boundary",
+      "prompt": "The response says 'Room 4 is confirmed.' What can be identified?",
+      "learner_artifact": "Unsupported addition: the supplied notice says the room will be confirmed later. It does not prove which room will be used.",
+      "expected_observations": ["source quote", "unsupported addition", "unknown boundary"],
+      "forbidden_conclusion": "the model always hallucinates rooms"
+    },
+    {
+      "id": "identify-failure",
+      "outcome": "identify",
+      "case_type": "failure",
+      "prompt": "The response says 'Tuesday at 18:00, bring a notebook, and the room is 4.'",
+      "learner_artifact": "FAIL: the time and notebook match the notice; the room number is an addition with no supplied evidence.",
+      "expected_observations": ["claim-by-claim comparison", "quoted evidence", "partial match"],
+      "forbidden_conclusion": "the whole response is useless"
+    },
+    {
+      "id": "repair-correct",
+      "outcome": "repair",
+      "case_type": "correct",
+      "prompt": "Repair the room-number addition without rewriting the rest.",
+      "learner_artifact": "Before: 'The room is 4.' After: 'The room number will be confirmed later.' Limit: the notice does not establish a room number.",
+      "expected_observations": ["minimum diff", "source match", "limit"],
+      "forbidden_conclusion": "the repaired notice is verified for every future event"
+    },
+    {
+      "id": "repair-failure",
+      "outcome": "repair",
+      "case_type": "failure",
+      "prompt": "A reviewer replaces the entire notice and adds a contact email. Score the repair.",
+      "learner_artifact": "FAIL: the repair is broader than necessary and adds a contact not in the notice; the original and changed text are not separated.",
+      "expected_observations": ["over-editing", "unsupported addition", "receipt missing"],
+      "forbidden_conclusion": "any polished rewrite is an improvement"
+    },
+    {
+      "id": "transfer-boundary",
+      "outcome": "transfer",
+      "case_type": "boundary",
+      "prompt": "Use the same method on an unseen fictional library notice after the learner asks for one cue.",
+      "learner_artifact": "Help used: one cue naming the missing check. The learner then wrote a new four-field request, compared each claim, made one correction, and stated what the notice did not prove.",
+      "expected_observations": ["changed surface", "help disclosed", "full method"],
+      "forbidden_conclusion": "the learner has durable transfer"
+    }
+  ],
+  "required_run_fields": [
+    "fixture_revision",
+    "model_and_surface",
+    "task_and_context",
+    "allowed_aids",
+    "first_artifact",
+    "rubric_scores",
+    "help_disclosure",
+    "reviewers",
+    "disagreements",
+    "claim_status",
+    "limits"
+  ],
+  "claim_boundary": "A future passing fixture review would establish only a bounded observation for this synthetic case and rubric. It would not prove learner learning, retention, transfer, model behavior, or platform equivalence."
+}
