@@ -557,7 +557,7 @@ try {
   const sourceCheckPage = await context.newPage();
   await sourceCheckPage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#source-check-route`, { waitUntil: 'networkidle' });
   await sourceCheckPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
-  const sourceCheckHeading = sourceCheckPage.getByRole('heading', { name: /source check — when an answer looks cited/i });
+  const sourceCheckHeading = sourceCheckPage.getByRole('heading', { name: /advanced — source check when an answer looks cited/i });
   assert.equal(await sourceCheckHeading.isVisible(), true, 'Source-record check is not discoverable in Reader');
   assert.equal(await sourceCheckPage.locator('#source-check-route').count(), 1, 'Reader did not preserve the source-check fragment target');
   const sourceCheckPosition = await sourceCheckPage.locator('#source-check-route').evaluate((target) => target.getBoundingClientRect().top);
@@ -980,7 +980,7 @@ try {
   const desktopPublicInterestPage = await context.newPage();
   await desktopPublicInterestPage.goto(new URL(desktopPublicInterestHref, `${origin}/site/`).href, { waitUntil: 'networkidle' });
   await desktopPublicInterestPage.locator('[data-reader-article][aria-busy="false"]').waitFor();
-  assert.equal(await desktopPublicInterestPage.getByRole('heading', { name: /public-interest safety research — before a system affects people/i }).isVisible(), true, 'Public-interest safety inquiry is not discoverable in Reader');
+  assert.equal(await desktopPublicInterestPage.getByRole('heading', { name: /advanced — public-interest safety research before a system affects people/i }).isVisible(), true, 'Public-interest safety inquiry is not discoverable in Reader');
   assert.equal(await desktopPublicInterestPage.locator('#public-interest-safety-route').count(), 1, 'Reader did not preserve the public-interest-safety-route fragment target');
   const publicInterestTop = await desktopPublicInterestPage.locator('#public-interest-safety-route').evaluate((target) => target.getBoundingClientRect().top);
   assert.ok(publicInterestTop >= 0 && publicInterestTop < 260, `Desktop Reader did not restore the public-interest safety fragment: ${publicInterestTop}`);
@@ -1431,7 +1431,7 @@ try {
   await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
   assert.match(await page.locator('[data-reader-article] h1').innerText(), /optional application practice: language, work, and research/i, 'Reader did not render the public optional application practice title');
   assert.match(await page.locator('[data-reader-article]').innerText(), /learner evidence:\s*not_run/i, 'Beginner Practice Pack does not expose its learner-evidence boundary');
-  assert.equal(await page.getByRole('heading', { name: /recovery route — when the reply already missed/i }).isVisible(), true, 'Post-failure recovery route is not discoverable');
+  assert.equal(await page.getByRole('heading', { name: /advanced — recovery route when the reply already missed/i }).isVisible(), true, 'Post-failure recovery route is not discoverable');
   assert.equal(await page.locator('[data-reader-article] a[href="#general-skill-practice-route"]').count(), 1, 'recovery route retains a stale Route B anchor');
   assert.equal(await page.locator('#recovery-route').count(), 1, 'Reader did not preserve the recovery-route fragment target');
   const recoveryFragmentPosition = await page.locator('#recovery-route').evaluate((target) => ({
@@ -1460,7 +1460,7 @@ try {
   await boundaryCardPage.setViewportSize({ width: 390, height: 844 });
   await boundaryCardPage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#four-line-safety-card`, { waitUntil: 'networkidle' });
   await boundaryCardPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
-  const boundaryCardHeading = boundaryCardPage.getByRole('heading', { name: /boundary card — before you share, search, or act/i });
+  const boundaryCardHeading = boundaryCardPage.getByRole('heading', { name: /advanced — boundary card before you share, search, or act/i });
   assert.equal(await boundaryCardHeading.isVisible(), true, 'Boundary Card is not discoverable in Reader');
   assert.equal(await boundaryCardPage.locator('#four-line-safety-card').count(), 1, 'Reader did not preserve the legacy Boundary Card fragment');
   const boundaryCardPosition = await boundaryCardPage.locator('#four-line-safety-card').evaluate((target) => target.getBoundingClientRect().top);
