@@ -263,13 +263,17 @@ def main() -> int:
         if 'const seoLocaleHref = (language) => language === \'en\' ? seoBaseUrl : `${seoBaseUrl}${language}.html`;' not in site_script:
             raise AssertionError("localized-seo: non-English canonical URLs must have crawlable static entries")
         for required in (
-            'hreflang="zh-Hans" href="https://docs.prysai.com/llm-playbook/zh.html"',
+            'hreflang="zh-CN" href="https://docs.prysai.com/llm-playbook/zh.html"',
             'href="../zh.html" data-language-option="zh"',
             'href="../de.html" data-language-option="de"',
             'property="og:locale" content="en_US"',
         ):
             if required not in site_markup:
                 raise AssertionError(f"localized-seo: missing static locale entry '{required}'")
+        seo_config = json.loads((Path(__file__).resolve().parents[1] / "site/seo-config.json").read_text(encoding="utf-8"))
+        zh_seo = seo_config.get("static_locale_pages", {}).get("zh", {})
+        if zh_seo.get("html_lang") != "zh-CN":
+            raise AssertionError("localized-seo: Simplified Chinese must use the consistent zh-CN language tag")
         # A versioned application asset is required for a newly deployed
         # localized route to fetch the matching UI and metadata behavior.
         # The query is a deployment cache boundary, not a claim of browser
