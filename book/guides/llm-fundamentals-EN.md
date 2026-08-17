@@ -13,26 +13,34 @@ public sources listed at the end; it is not a copy of any single document.
 
 ## 0.1 One sentence, then one picture
 
-**An LLM is a machine that predicts the next piece of text, trained on an
-enormous amount of human writing, and then tuned to follow instructions.**
+**A modern text LLM is a model trained to estimate and generate sequences of
+tokens; many autoregressive LLMs do this by predicting a next token from a
+context, then additional training and product layers shape how they respond.**
+
+That is a useful working model, not a complete definition of every language,
+multimodal, or deployed system that may be called an LLM.
 
 The picture that makes this concrete: imagine the autocomplete on your phone,
-but trained on a library of millions of books, articles, code repositories,
-and conversations, and scaled up enormously. The autocomplete suggests one
-word; an LLM can continue a paragraph, answer a question, translate, outline,
-debug code, or hold a conversation — because all of those tasks can be
-rephrased as "given the text so far, what comes next?"
+but trained on a much broader and more varied collection of data and scaled up
+enormously. The autocomplete suggests one word; an LLM can continue a
+paragraph, answer a question, translate, outline, debug code, or hold a
+conversation. For text generation, many of these behaviors can be produced by
+repeatedly estimating what token should follow the available context, although
+the training objective alone does not explain all of the behavior of a modern
+product.
 
 That single idea explains more than you might expect:
 
-- why an LLM can write fluently about almost anything (it has seen enormous
-  amounts of text);
+- why an LLM can write fluently across many domains (training exposes it to
+  varied patterns, but fluency is not proof of expertise, coverage, or truth);
 - why it sometimes invents facts (a base model predicts plausible text rather
   than independently looking facts up);
 - why a chat product may handle more than the base model (it can add search,
   files, memory, retrieval, or tools — each with its own data and permission
   boundary);
-- why it changes as models are updated (the training text changes).
+- why behavior changes between versions or products (providers may change
+  weights, post-training, system instructions, safety controls, retrieval,
+  tools, routing, or the interface — not only the training text).
 
 The most intuitive modern explanation of the machinery is Grant Sanderson's
 (3Blue1Brown) animated series on GPT and attention; it is linked in the
@@ -54,32 +62,34 @@ A language model is not a new idea. The lineage:
   in the available context. It made long-range relationships easier to model
   and scale, but did not remove context limits: practical models still have a
   finite context window.
-- **2018–2022 — scale and the "next-token" trick.** Companies trained
-  Transformer models on enormous corpora with one objective: predict the next
-  token (a token is roughly a word fragment). With enough data and compute,
-  models began to answer questions, write code, and follow instructions
-  without being explicitly programmed for each task.
-- **2022–today — instruction tuning and alignment.** Raw next-token models are
-  good at continuing text but not at following requests. Providers then train
-  models to follow instructions (instruction tuning) and to prefer helpful,
-  harmless answers (alignment, often via human or AI feedback). This is the
-  difference between "a model that can complete a sentence" and "a chatbot
-  that does what you ask."
+- **2018–2022 — large Transformer language models.** Companies pre-trained
+  Transformer models on large corpora, often with a next-token objective (a
+  token is roughly a word fragment). New capabilities reflected an interaction
+  among architecture, data quality and coverage, optimization, scale, and
+  later training; scale and the objective alone are not a complete explanation.
+- **2022–today — instruction tuning and alignment.** A raw pretrained model
+  may continue text well, while request following depends on additional
+  instruction, preference, and safety training. Providers may also add system
+  prompts, policy layers, retrieval, or tools. This is why "a model that can
+  complete a sentence" and "a product that follows a request" are different
+  things.
 
 The technical heart — attention — is explained visually by 3Blue1Brown's
-*Transformer attention* lesson and in plain text by the official model
-documentation of OpenAI, Anthropic, and Google. We do not need the math to use
-LLMs well, but knowing that the core is "predict the next token, then align
-the behavior" explains most of what follows.
+*Transformer attention* lesson and in the original Transformer paper listed in
+the sources. We do not need the math to use LLMs well, but it helps to remember
+that next-token prediction is one important training objective, not a complete
+explanation of every model or product. Architecture, data, optimization,
+post-training, and the serving system all affect what users observe.
 
 ## 0.3 How a modern LLM is built: train, align, serve
 
 Think of three stages:
 
-1. **Pre-training.** The model reads a huge corpus and learns to predict the
-   next token. This is where most of the "knowledge" (as statistical patterns)
-   is stored. It is also where the model's blind spots are set: if the corpus
-   ends in 2025, the model does not know 2026 events.
+1. **Pre-training.** The model is optimized on a large corpus to predict the
+   next token and learn statistical regularities. Many associations used during
+   generation are acquired here, but the result is not a database of verified
+   facts. Data quality, coverage, filtering, optimization, and later training
+   all matter; a model's blind spots cannot be inferred from a single date.
 2. **Alignment / instruction tuning.** The model is further trained to follow
    requests, refuse harmful ones, and match human preferences. This is why two
    models with similar pre-training can feel very different in conversation.
@@ -90,33 +100,42 @@ Think of three stages:
 
 Three practical consequences:
 
-- **A particular model version has a training cutoff.** A product may later
-  update that version or add retrieval, search, files, memory, or tools. For a
-  time-sensitive answer, check the product's current documentation, the source
-  it used, and the date rather than relying on the cutoff alone.
-- **Every request costs tokens.** Both the input you provide and the output
-  generated count. Long context is useful but not free.
+- **A provider may document a cutoff for a particular model or surface.** The
+  meaning and scope of that date vary by provider and version. A product may
+  later update the model or add retrieval, search, files, memory, or tools. If
+  current evidence is not supplied, treat a time-sensitive claim as
+  unestablished; check the product's current documentation, the source it used,
+  and the date rather than relying on the cutoff alone.
+- **Token accounting varies by product.** Many APIs meter input and output
+  tokens for limits or billing, but pricing, caching, hidden instructions, and
+  what counts can differ. Long context is useful and may not be free.
 - **The same model can behave differently** depending on system prompts,
-  settings (temperature), and surrounding tools. A change in behavior is not
-  automatically a change in the model.
+  settings (including decoding controls such as temperature), and surrounding
+  tools. A change in behavior is not automatically a change in the model.
 
 ## 0.4 Four concepts you will meet everywhere
 
-**Token.** The unit the model reads and writes. A token is often a word
-fragment, not a whole word: "ChatGPT" may be two or three tokens. Prices,
-context limits, and speed are measured in tokens. Roughly, 100 tokens ≈ 75
-English words.
+**Token.** A unit produced by a particular tokenizer and consumed or generated
+by the model. A token is often a word fragment, not a whole word: "ChatGPT"
+may be two or three tokens depending on the tokenizer. Prices, context limits,
+and speed are often expressed in tokens, but the accounting is provider- and
+surface-specific. The rule of thumb that 100 tokens is about 75 English words
+is only a rough estimate for some English prose; other languages and formats
+can differ substantially.
 
-**Context window.** The maximum amount of text the model can consider at once
-— your instructions plus any conversation or document you paste. It is a
-measure of working memory, not intelligence. A larger window lets you paste
-longer documents, but the model still treats the whole window as "things to
-attend to," not as verified facts.
+**Context window.** A model- and interface-specific token budget for the
+information made available during a request — for example, instructions,
+conversation, pasted documents, retrieved passages, and tool results. It is a
+measure of working context, not intelligence, and remains a **finite context
+window** even when it is large. Being in context does not make a passage true
+or guarantee that the model will use it correctly.
 
-**Temperature (and sampling).** A setting that controls how random the
-output is. Low temperature → more predictable, repetitive; high temperature →
-more varied, sometimes more creative. For facts and code, prefer low; for
-brainstorming, higher can help.
+**Temperature (and sampling).** A decoding control whose exact behavior is
+provider-specific. Lower settings often make repeated outputs more predictable
+and higher settings can increase variety, but temperature is not a factuality
+switch: a low-temperature answer can still be wrong. For facts and code, make
+the task checkable and verify the result; use higher variation when
+brainstorming benefits from it.
 
 **Parameters and scale.** "Billions of parameters" describes the size of the
 model. Size correlates with capability but does not guarantee quality on your
@@ -125,8 +144,7 @@ Judge models by results on your own tasks, not by the parameter count.
 
 ## 0.5 What LLMs are genuinely good at
 
-Based on how these systems are used and described in official documentation
-and teaching material, the reliable strengths are:
+Common useful patterns — not guarantees — include:
 
 - **Rewriting and summarizing** text you supply, with a specified tone,
   length, or audience;
@@ -149,33 +167,36 @@ depends on facts, math precision, or actions in the real world.
 
 ## 0.6 What LLMs cannot do (the honest list)
 
-Every serious source — from Microsoft's LLM fundamentals to Anthropic's
-glossary and independent teaching material — converges on the same limits.
-A model:
+These are boundaries of a text-generation model. A connected product can add
+capabilities, but it does not remove the need to inspect sources, permissions,
+and results. A model:
 
 - **does not independently look facts up.** A base model generates text that
-  is *consistent with* its training data. A product may add search, retrieval,
-  files, memory, or tools; those are separate surfaces, with separate data and
-  permission boundaries. Returned material can still be stale, incomplete, or
-  wrong, so check the original source and date.
-- **does not automatically know the present or your private data.** It has a
-  training cutoff and receives only what you, a connected product, account
-  memory, retrieval system, file, or tool provides. Before pasting, uploading,
-  or enabling a connection, check what may leave the current surface and who
-  authorized it.
-- **cannot do arithmetic reliably.** Large models solve word problems by
-  pattern, not calculation; long or tricky math needs a calculator, code, or a
+  is *consistent with* learned patterns; it does not thereby establish that a
+  claim is true. A product may add search, retrieval, files, memory, or tools;
+  those are separate surfaces, with separate data and permission boundaries.
+  Returned material can still be stale, incomplete, or wrong, so check the
+  original source and date.
+- **does not automatically know the present or your private data.** A provider
+  may document a cutoff for a model, but the response also depends on what you,
+  a connected product, account memory, retrieval system, file, or tool provide.
+  Before pasting, uploading, or enabling a connection, check what may leave the
+  current surface and who authorized it.
+- **may produce arithmetic errors.** Large models can solve some word problems
+  by pattern, but exact or long calculations need a calculator, code, or a
   tool.
-- **cannot verify.** A model cannot tell you that a citation is real, a
-  website exists, or a claim is true. Only you (or a tool acting for you) can
-  check.
-- **cannot act on the world by itself.** A chat model has no files, accounts,
-  or permissions unless a tool layer explicitly provides them. A login, a
-  button, or an agent summary does not prove an action happened.
-- **has no inherent memory of you.** A product may retain chat history or
-  account memory; its privacy, retention, and deletion behavior depend on that
-  product and its settings. Read the applicable policy rather than assuming
-  that a chat is private or remembered.
+- **cannot independently verify a claim.** Text generation cannot establish
+  that a citation is real, a website exists, or a statement is true. Search or
+  another tool can provide evidence, but you still need to inspect the source,
+  date, scope, and result.
+- **cannot act on the world without an authorized tool or interface.** A chat
+  model has no files, accounts, or permissions by itself. A login, button,
+  tool-call proposal, or agent summary does not prove that an action happened.
+- **has no inherent personal memory.** A base model does not remember you as a
+  person between requests. A product may retain chat history or account
+  memory; its privacy, retention, and deletion behavior depend on that product
+  and its settings. Read the applicable policy rather than assuming that a
+  chat is private or remembered.
 - **is not, by itself, a search engine, calculator, database, or person.** A
   product can connect those capabilities, but a connection does not make every
   answer current, correct, authorized, or private.
@@ -193,7 +214,11 @@ The Playbook's method follows directly from Sections 0.5 and 0.6:
 1. **Define the task in text** — what result, with which input, and which
    constraints (Chapter 3 teaches the full contract).
 2. **Supply the context** — paste the material, name the audience, state the
-   limits. The model works with what you give it.
+   limits, and identify which sources or tools are allowed. A response depends
+   on the context assembled by the interface: system or developer
+   instructions, conversation history, user material, retrieval results, and
+   tool outputs where available. These inputs can be incomplete or wrong, and
+   the model may not use every item correctly.
 3. **Ask for a checkable shape** — a table, a diff, a list, a rewritten
    paragraph; something you can inspect.
 4. **Verify yourself** — check facts against sources, run tests on code, read
@@ -239,8 +264,14 @@ sources (checked 2026-08-16) are:
 - **Educative — Limitations of large language models**:
   https://www.educative.io/blog/limitations-of-llms — a readable summary of
   hallucination, staleness, and math limits.
+- **NIST AI 600-1 — Artificial Intelligence Risk Management Framework:
+  Generative Artificial Intelligence Profile**:
+  https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf — a public risk
+  management reference for confabulation, information integrity, and human
+  oversight.
 - **Attention Is All You Need** (Vaswani et al., 2017): the original
-  Transformer paper, linked for the history section.
+  Transformer paper:
+  https://arxiv.org/abs/1706.03762.
 
 Access dates, model versions, and product facts change; treat anything
 product-specific in this lesson as `stale after 2026-11-09` until refreshed
