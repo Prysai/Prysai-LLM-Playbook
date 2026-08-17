@@ -100,9 +100,12 @@ The generated artifact also exposes `sitemap_index.xml` as a compatibility
 entry point. The canonical project URLs are under the configured public prefix:
 `https://docs.prysai.com/llm-playbook/sitemap.xml` and
 `https://docs.prysai.com/llm-playbook/sitemap_index.xml`. The main sitemap lists
-the six crawlable locale entries plus Reader URLs whose source file exists and
-whose locale status is renderable; missing translations and non-renderable
-records are excluded. The domain-root URL
+the six crawlable locale entries plus Reader URLs whose source file exists, whose
+content status is at least `candidate`, and whose translation is not
+`in-progress`, `not-started`, or `stale`. This keeps draft and incomplete
+translations out of crawler discovery even though the Reader may display them
+with an explicit status notice for review. Missing translations and other
+non-renderable records are excluded. The domain-root URL
 `https://docs.prysai.com/sitemap_index.xml` belongs to the host-level site, not
 this repository's `/llm-playbook/` artifact, so changing this project cannot
 create or repair that root-level endpoint.
