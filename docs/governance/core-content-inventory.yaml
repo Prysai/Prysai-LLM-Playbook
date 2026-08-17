@@ -30,7 +30,7 @@
       "class": "core",
       "title": "Omission, invention, ambiguity, and overconfidence",
       "outcome": "identify",
-      "source_paths": ["book/communication-clinic-EN.md", "book/chapters/01-gpt-and-codex-EN.md"],
+      "source_paths": ["book/routes/llm-core-visible-failures-EN.md"],
       "learner_artifact": "four labeled failures with quoted source evidence",
       "status": "candidate"
     },
