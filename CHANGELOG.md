@@ -18,6 +18,10 @@ Playbook is ready for public production use.
 
 ### Added
 
+- **LLM Foundation Core v1 (candidate).** A five-unit, platform-neutral route
+  now teaches the observable sequence `explain -> initiate -> identify ->
+  repair -> transfer` with fictional offline tasks, retained receipts,
+  explicit stop boundaries, and no claim of learner or model performance.
 - **Lesson 0: What Is a Large Language Model** (book/guides/llm-fundamentals-EN.md + five translations): the textbook opener that explains tokens, context windows, capabilities, and limits before any product talk.
 - **Textbook reading path**: the homepage hero, the compact README, and the English README now lead with one ordered path (Lesson 0 -> Chapter 1 -> Chapter 2 -> ... -> Chapter 22) instead of a menu of choices; practice cards and language loops are exercises reached after the foundation.
 - **Goal wizard** (site/goal-templates.js + app.js): a six-language interactive tool that turns a picked goal into a ready-to-copy prompt; positioned as a practice tool, not the entry point.
