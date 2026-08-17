@@ -34,7 +34,10 @@ const bundledPython = path.join(
   process.platform === 'win32' ? 'python.exe' : 'python',
 );
 const python = process.env.PYTHON || process.env.PYTHON_PATH || (existsSync(bundledPython) ? bundledPython : 'python');
-const testTimeoutMs = 90_000;
+// This smoke covers every locale, multiple full Reader routes, visual
+// screenshots, and mobile navigation. Keep the guard above normal CI jitter
+// without hiding a genuinely stalled run.
+const testTimeoutMs = 180_000;
 const testTimeout = setTimeout(() => {
   console.error(`BROWSER_SMOKE_FAILED timeout_ms=${testTimeoutMs}`);
   process.exit(2);
