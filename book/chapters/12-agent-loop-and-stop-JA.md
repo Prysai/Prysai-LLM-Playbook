@@ -36,6 +36,35 @@ proposal、approval、execution、観察した effect、acceptance を分け、i
 
 「ファイルを更新してテストを実行する」と「完了」の間に、許可、コマンド、終了状態、差分、テスト範囲がなければ分類は `unverified` です。曖昧に「幻覚」と呼ぶ前に、最初の裏付けのない遷移を記録します。
 
+## 引き継げるアーキテクチャのパターン
+
+[監査した `claude-code-from-source` の研究](../../docs/research/claude-code-from-source-repository-audit-2026-08-16.md)
+は参照資料であり、公式の実装記録ではありません。特定製品に依存しない
+形に書き直すと、次の設計質問が残ります。
+
+- **Tool 呼び出しを契約にする：** 実行前に入力スキーマ、対象と範囲、
+  副作用の種類、必要な authority、エラー、出力、acceptance evidence を
+  書く。
+- **依存関係で順序を決める：** 独立した read-only の観測は並列化できる
+  場合があるが、write、write 後の read、共有 state は conflict を確認
+  するまで順序を保つ。
+- **委譲を封じた brief にする：** sub-Agent に goal、context、tool、
+  permission、budget、stop 条件、handoff 形式を渡し、親が結果と evidence
+  を再確認する。
+- **Memory を検査可能にする：** 保存する事実には source、timestamp、
+  owner、freshness と conflict の規則を付ける。context は生成を導くが、
+  permission を強制しない。
+- **Capability と control を分ける：** Skill、adapter、script は方法を
+  提供し、policy、hook、sandbox、approval は実行時の制約を決める。
+- **性能は workload と共に測る：** 固定した fixture で startup、latency、
+  context size、cost、correctness、failure/retry を分けて記録し、外部研究
+  の割合や token 数を製品の約束にしない。
+
+Claude Code、Gemini CLI、Codex などを教えるときは、surface、version、OS、
+mode を固定し、公式 source を示し、local run を記録してから挙動を主張します。
+重要な action の前に、**どの契約か、誰が許可できるか、何が変わるか、どの
+観測が返るか、どの check で止めるか、まだ未知の境界は何か**を確認します。
+
 ## 状態を書く
 
 短い checkpoint が中断からの安全な再開を可能にします。
