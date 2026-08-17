@@ -2,6 +2,11 @@
   "public_site_url": "https://docs.prysai.com/llm-playbook/",
   "default_locale": "en",
   "locales": ["en", "zh", "es", "ja", "ko", "de"],
+  "home_page": {
+    "html_lang": "en",
+    "title": "Prysai LLM Playbook — LLM Guide, Prompts, and Reliable AI Work",
+    "description": "Learn what LLMs are, write clearer prompts, and turn a first AI task into bounded, checkable work. Codex is the flagship practice track."
+  },
   "static_locale_pages": {
     "zh": {
       "html_lang": "zh-Hans",

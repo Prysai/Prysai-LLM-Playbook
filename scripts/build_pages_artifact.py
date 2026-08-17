@@ -77,7 +77,9 @@ def static_locale_page(site_index: Path, config: dict[str, object], locale: str)
     page_url = f"{base_url}{locale}.html"
     text = root_index(site_index)
     text = text.replace('<html lang="en">', f'<html lang="{metadata["html_lang"]}" data-prysai-static-locale="{locale}">', 1)
-    text = text.replace('<title>Prysai LLM Playbook — From First Task to Reliable Work</title>', f'<title>{metadata["title"]}</title>', 1)
+    home_page = config["home_page"]
+    assert isinstance(home_page, dict)
+    text = text.replace(f'<title>{home_page["title"]}</title>', f'<title>{metadata["title"]}</title>', 1)
     text = re.sub(r'(<meta name="description" content=")[^"]*(" />)', rf'\g<1>{metadata["description"]}\2', text, count=1)
     text = re.sub(r'(<link rel="canonical" href=")[^"]*(" />)', rf'\g<1>{page_url}\2', text, count=1)
     text = re.sub(r'(<meta property="og:url" content=")[^"]*(" />)', rf'\g<1>{page_url}\2', text, count=1)
@@ -85,6 +87,14 @@ def static_locale_page(site_index: Path, config: dict[str, object], locale: str)
     text = re.sub(r'(<meta property="og:description" content=")[^"]*(" />)', rf'\g<1>{metadata["description"]}\2', text, count=1)
     text = re.sub(r'(<meta name="twitter:title" content=")[^"]*(" />)', rf'\g<1>{metadata["title"]}\2', text, count=1)
     text = re.sub(r'(<meta name="twitter:description" content=")[^"]*(" />)', rf'\g<1>{metadata["description"]}\2', text, count=1)
+    structured_data = re.search(r'(<script type="application/ld\+json" id="site-structured-data">)(.*?)(</script>)', text)
+    if not structured_data:
+        raise ValueError(f"{site_index.relative_to(ROOT)} is missing site structured data")
+    value = json.loads(structured_data.group(2))
+    value["url"] = page_url
+    value["description"] = metadata["description"]
+    value["inLanguage"] = metadata["html_lang"]
+    text = text[:structured_data.start(2)] + json.dumps(value, ensure_ascii=False, separators=(",", ":")) + text[structured_data.end(2):]
     text = text.replace('window.CODEX_PAGES_ARTIFACT = true;', f'window.CODEX_PAGES_ARTIFACT = true; window.PRYSAI_STATIC_LOCALE = "{locale}";', 1)
     return text
 
@@ -130,9 +140,12 @@ def load_seo_config() -> dict[str, object]:
     if locales != ["en", "zh", "es", "ja", "ko", "de"]:
         raise ValueError("site/seo-config.json locales must list the six supported locales in canonical order")
     locale_pages = value.get("static_locale_pages")
+    home_page = value.get("home_page")
     expected_pages = {locale for locale in locales if locale != "en"}
     if not isinstance(locale_pages, dict) or set(locale_pages) != expected_pages:
         raise ValueError("site/seo-config.json static_locale_pages must define each non-English locale")
+    if not isinstance(home_page, dict) or not all(isinstance(home_page.get(key), str) and home_page[key].strip() for key in ("html_lang", "title", "description")):
+        raise ValueError("site/seo-config.json home_page needs html_lang, title, and description")
     for locale, metadata in locale_pages.items():
         if not isinstance(metadata, dict) or not all(isinstance(metadata.get(key), str) and metadata[key].strip() for key in ("html_lang", "title", "description")):
             raise ValueError(f"site/seo-config.json static_locale_pages[{locale}] needs html_lang, title, and description")
@@ -229,6 +242,19 @@ def validate_artifact(output: Path) -> None:
     if "window.CODEX_PAGES_ARTIFACT = true" not in reader_text:
         raise ValueError("Pages Reader must retain artifact routing mode")
     config = load_seo_config()
+    home_page = config["home_page"]
+    assert isinstance(home_page, dict)
+    source_index = (ROOT / "site/index.html").read_text(encoding="utf-8")
+    for key in ("title", "description"):
+        if str(home_page[key]) not in source_index:
+            raise ValueError(f"site/index.html {key} must match site/seo-config.json home_page")
+    source_structured_data = re.search(r'<script type="application/ld\+json" id="site-structured-data">(.*?)</script>', source_index)
+    if not source_structured_data:
+        raise ValueError("site/index.html is missing site structured data")
+    source_structured_value = json.loads(source_structured_data.group(1))
+    expected_site_languages = ["en", *(config["static_locale_pages"][locale]["html_lang"] for locale in config["locales"] if locale != "en")]
+    if source_structured_value.get("url") != config["public_site_url"] or source_structured_value.get("inLanguage") != expected_site_languages or source_structured_value.get("description") != home_page["description"]:
+        raise ValueError("site/index.html structured data must match site/seo-config.json home_page")
     for locale in config["locales"]:
         if locale == "en":
             continue
@@ -244,6 +270,14 @@ def validate_artifact(output: Path) -> None:
             or f'window.PRYSAI_STATIC_LOCALE = "{locale}"' not in text
         ):
             raise ValueError(f"Pages artifact localized SEO entry is incomplete: {page.name}")
+        metadata = config["static_locale_pages"][locale]
+        assert isinstance(metadata, dict)
+        structured_data = re.search(r'<script type="application/ld\+json" id="site-structured-data">(.*?)</script>', text)
+        if not structured_data:
+            raise ValueError(f"Pages artifact localized SEO structured data is missing: {page.name}")
+        value = json.loads(structured_data.group(1))
+        if value.get("url") != expected_url or value.get("inLanguage") != hreflang or value.get("description") != metadata["description"]:
+            raise ValueError(f"Pages artifact localized SEO structured data is incorrect: {page.name}")
     robots, sitemap = seo_files(config)
     if (output / "robots.txt").read_text(encoding="utf-8") != robots:
         raise ValueError("Pages artifact robots.txt must be generated from site/seo-config.json")
