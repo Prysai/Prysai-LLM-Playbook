@@ -18,6 +18,8 @@ No model call, learner record, personal data, or external action is stored.
 - a unit cannot silently point at `advanced`, `reference`, or `experimental`
   material;
 - the scoring set contains correct, boundary, and failure examples.
+- three bounded observation protocols cover context change, first-request
+  structure, and proposal/authority/execution/evidence boundaries.
 
 Run the static gate with:
 
@@ -36,6 +38,17 @@ reviewers, disagreements, and limits.
 - `scoring-rubric.json` — machine-readable scoring anchors and forbidden claims.
 - `run-record-template.json` — fields required before a future run can be called an observation.
 - [`docs/quality/core-course-rubric-v1.md`](../../../docs/quality/core-course-rubric-v1.md) — reviewer-facing prose rubric.
+- [`observations/README.md`](observations/README.md) — the three preparation
+  protocols and their shared privacy boundary.
+- [`observations/context-change-and-unknowns.md`](observations/context-change-and-unknowns.md)
+  — change the supplied context and keep unsupported details unknown.
+- [`observations/first-request-contract.md`](observations/first-request-contract.md)
+  — record goal, material, constraints, response shape, and stop conditions.
+- [`observations/tool-boundary-authority-evidence.md`](observations/tool-boundary-authority-evidence.md)
+  — separate a proposed action from authority, execution, and read-back proof.
+
+The observation files are preparation material only. They do not contain
+participant results and do not change the candidate's `run_status`.
 
 ## Claim boundary
 
