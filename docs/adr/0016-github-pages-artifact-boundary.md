@@ -29,10 +29,12 @@ deployment actions. Build the artifact with
 - the visual `site/` source and its generated data;
 - the `book/`, `docs/`, `skills/`, `assets/`, `examples/`, and `evals/`
   directories used by the showcase; and
-- a root entry that loads the source site through `<base href="site/">`.
+- a root entry that loads the source site through `<base href="site/index.html">`.
 
 The root entry keeps the public URL at the project site root while preserving
-the existing `/site/` path for local debugging. The builder rejects the
+the existing `/site/` path for local debugging. Using an explicit document
+base also prevents static hosts that redirect directory requests from sending
+fragment-only navigation to a provider route. The builder rejects the
 repository root as an output target and checks that `.git/`, `.work/`, `tmp/`,
 and other machine-local directories do not enter the artifact.
 

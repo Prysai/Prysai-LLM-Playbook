@@ -61,8 +61,9 @@ The repository includes a Pages workflow at
 `scripts/build_pages_artifact.py`, keeping the visual site and the reader-facing
 source directories while excluding `.git/`, `.work/`, `tmp/`, symbolic links,
 and high-confidence credential signatures. The project-root entry uses the same
-`site/` source through a relative base path, so the local `/site/` route remains
-useful for development.
+`site/` source through an explicit `site/index.html` base document. This keeps
+the local `/site/` route useful for development and prevents static hosts from
+treating fragment navigation as a directory request.
 
 On qualifying pushes to `main`, the workflow builds the artifact and requests
 a GitHub Pages deployment. GitHub Pages must remain enabled in the repository

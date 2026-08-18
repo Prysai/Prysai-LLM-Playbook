@@ -88,13 +88,19 @@ SECRET_SIGNATURES = (
 
 
 def root_index(site_index: Path) -> str:
-    """Return a root entry that loads the source site from the artifact."""
+    """Return a root entry that loads the source site from the artifact.
+
+    Use the generated document as the base URL rather than the ``site/``
+    directory.  Some static hosts redirect directory requests (including a
+    fragment-only navigation resolved against that directory) to a provider
+    route instead of serving ``site/index.html``.
+    """
 
     text = site_index.read_text(encoding="utf-8")
     marker = "<head>"
     if marker not in text:
         raise ValueError(f"{site_index.relative_to(ROOT)} is missing a <head> element")
-    base = '    <base href="site/" />\n    <script>window.CODEX_PAGES_ARTIFACT = true;</script>\n'
+    base = '    <base href="site/index.html" />\n    <script>window.CODEX_PAGES_ARTIFACT = true;</script>\n'
     return text.replace(marker, f"{marker}\n{base}", 1)
 
 
@@ -362,8 +368,8 @@ def validate_artifact(output: Path, versions: dict[str, str] | None = None) -> N
         raise ValueError("credential signature leaked into Pages artifact: " + ", ".join(secret_findings))
 
     root_text = (output / "index.html").read_text(encoding="utf-8")
-    if '<base href="site/" />' not in root_text or "window.CODEX_PAGES_ARTIFACT = true" not in root_text:
-        raise ValueError("root Pages entry must point relative assets and content through site/")
+    if '<base href="site/index.html" />' not in root_text or "window.CODEX_PAGES_ARTIFACT = true" not in root_text:
+        raise ValueError("root Pages entry must point relative assets and content through site/index.html")
     if not (output / "site/search-index.js").is_file():
         raise FileNotFoundError("Pages artifact is missing site/search-index.js")
     reader_text = (output / "site/reader.html").read_text(encoding="utf-8")

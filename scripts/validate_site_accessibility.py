@@ -185,7 +185,12 @@ def resolve_artifact_target(page: Path, artifact: Path, reference: str, base_hre
     start = page.parent
     if base_href:
         base_path = unquote(urlsplit(base_href).path)
-        start = (page.parent / base_path).resolve()
+        base_target = (page.parent / base_path).resolve()
+        # Browser URL resolution treats a base ending in a filename as a
+        # document URL and resolves relative references from its parent. The
+        # Pages artifact deliberately uses ``site/index.html`` so hosts do not
+        # reinterpret fragment-only links as a directory route.
+        start = base_target if base_path.endswith("/") else base_target.parent
     if reference_path.startswith("/"):
         target = artifact / reference_path.lstrip("/")
     elif reference_path:

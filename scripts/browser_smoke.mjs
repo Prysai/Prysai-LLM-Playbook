@@ -148,6 +148,30 @@ try {
   assert.match(await page.locator('[data-hero-primary]').getAttribute('href'), /reader\.html\?path=book%2Froutes%2Fllm-foundation-core-v1-EN\.md&lang=en$/, 'hero primary action does not lead to the LLM Foundation Core');
   assert.match(await page.locator('[data-hero-primary]').innerText(), /^Start the LLM Foundation Core/, 'hero primary action does not name the required foundation');
   assert.match(await page.locator('.hero-route-kicker').innerText(), /one required foundation route/i, 'foundation route is not clearly required before application practice');
+  assert.equal(
+    await page.locator('.site-header .wordmark').getAttribute('href'),
+    'https://docs.prysai.com/llm-playbook/',
+    'the Playbook logo does not point to the canonical Docs site',
+  );
+  assert.equal(await page.locator('.site-header .wordmark').getAttribute('target'), '_top', 'the Playbook logo does not leave a hosted iframe wrapper');
+  const homepageMenuTargets = {
+    'Start here': '#start',
+    'Learning path': '#path',
+    'Reading routes': '#chapters',
+    'Project index': '#project-map',
+  };
+  for (const [label, hash] of Object.entries(homepageMenuTargets)) {
+    await page.goto(`${origin}/`, { waitUntil: 'networkidle' });
+    const menuLink = page.getByRole('link', { name: label, exact: true });
+    assert.equal(await menuLink.getAttribute('href'), hash, `${label} menu link changed its authored anchor`);
+    assert.equal(
+      new URL(await menuLink.evaluate((link) => link.href)).pathname,
+      '/site/index.html',
+      `${label} menu link resolves through a directory route instead of the site document`,
+    );
+    await menuLink.click();
+    await page.waitForURL(`${origin}/site/index.html${hash}`);
+  }
   await noHorizontalOverflow(page, 'desktop showcase');
   // Every homepage Reader link with a fragment promises a concrete landing
   // point. Check the rendered Markdown document, not just the shell URL: a
