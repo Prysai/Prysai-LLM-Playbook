@@ -131,7 +131,19 @@ def main() -> int:
             "duplicate authored Reader IDs were accepted",
         )
 
-    print("HOMEPAGE_READER_FRAGMENT_TESTS_OK fixtures=10")
+    with tempfile.TemporaryDirectory(dir=ROOT) as temporary:
+        directory = Path(temporary)
+        homepage = homepage_with(
+            "reader.html?path=docs%2Fresearch%2Funiversal-first-turn-prompt-contract-2026-08-13.md&lang=en",
+            directory,
+        )
+        errors, checked = validator._validate(homepage, ROOT, manifest_paths=set())
+        require(
+            checked == 0 and len(errors) == 1 and "not registered" in errors[0],
+            "a Reader source outside the generated allow-list was accepted",
+        )
+
+    print("HOMEPAGE_READER_FRAGMENT_TESTS_OK fixtures=11")
     return 0
 
 
