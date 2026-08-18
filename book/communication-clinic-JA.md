@@ -1,4 +1,4 @@
-<!-- content_id: communication-clinic | locale: JA | language: ja | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
+<!-- content_id: communication-clinic | locale: JA | language: ja | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-18 -->
 
 # 任意の応用練習：言語・仕事・調査
 
@@ -7,9 +7,10 @@
 **状態：** `draft` · **学習者の根拠：** `not_run` · **対象：** テキストチャット型 LLM で行う、
 低リスクかつ非機微な練習。
 
-**書籍の基礎を終えてから使います：**[第0章](guides/llm-fundamentals-JA.md)
-→ [第 1 章](chapters/01-gpt-and-codex-JA.md) →
-[第 2 章](chapters/02-first-safe-task-JA.md)。このカードは学んだ方法を応用するもので、LLMとは何かを説明する入門ではありません。
+**LLM 基礎コアを終えてから使います：**[ユニット 1：LLM の概念](guides/llm-fundamentals-JA.md)
+→ [ユニット 2：最初の範囲付きリクエスト](routes/universal-core-foundations-JA.md)。
+このカードはコアの方法を応用するもので、LLM とは何かを説明する入門ではありません。
+まだコアを終えていない場合は、[LLM 基礎コア](routes/universal-core-foundations-JA.md)から始めてください。
 
 ここは日本語で説明する学習ルートです。このページの説明、判断、リンクは日本語です。カードに出てくるスペイン語は任意の語学練習の目標であり、誤った言語への移動でも必須科目でもありません。
 
