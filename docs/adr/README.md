@@ -58,3 +58,4 @@ Current entry points:
 - [ADR-0040: require a clean matching checkout for release evidence](0040-clean-checkout-release-evidence.md)
 - [ADR-0041: separate fictional contribution checks from full release evidence](0041-fictional-contribution-fast-check.md)
 - [ADR-0042: separate candidate quality from formal release gating](0042-separate-candidate-quality-from-release-gate.md)
+- [ADR-0043: expand repository sensitive-information tripwires](0043-expand-repository-sensitive-information-tripwires.md)

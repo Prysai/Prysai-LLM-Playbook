@@ -62,7 +62,8 @@
       "package-lock.json",
       "package.json",
       "SECURITY.md",
-      "docs/governance/repository-security-policy.yaml"
+      "docs/governance/repository-security-policy.yaml",
+      "docs/security/**"
     ],
     "heightened_review_rule": "A maintainer must review the diff, requested permission change, supply-chain source, rollback path, and declared evidence before merge. Automation may flag a change but must not approve, merge, comment on, or modify a pull request on its own."
   },
