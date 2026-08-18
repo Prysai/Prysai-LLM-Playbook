@@ -174,6 +174,19 @@ try {
   const hostedPopup = await hostedPopupPromise;
   assert.equal(hostedPopup.url(), 'https://docs.prysai.com/llm-playbook/', 'embedded Logo popup does not target the canonical Docs URL');
   await hostedPopup.close();
+  const hostedNavigationTargets = {
+    navStart: '#start',
+    navPath: '#path',
+    navRoutes: '#chapters',
+    navIndex: '#project-map',
+  };
+  for (const [translationKey, hash] of Object.entries(hostedNavigationTargets)) {
+    const hostedLink = hostedFrame.locator(`.site-nav a[data-i18n="${translationKey}"]`);
+    assert.equal(await hostedLink.getAttribute('href'), `https://docs.prysai.com/llm-playbook/${hash}`, `${translationKey} does not target the canonical Docs route when hosted`);
+    assert.equal(await hostedLink.getAttribute('target'), '_blank', `${translationKey} does not escape the hosted iframe`);
+    assert.equal(await hostedLink.getAttribute('rel'), 'noopener', `${translationKey} hosted navigation is missing noopener`);
+    assert.equal(await hostedLink.getAttribute('data-hosted-navigation'), 'new-tab', `${translationKey} hosted navigation is not marked`);
+  }
   await hostedWrapperPage.close();
   const homepageMenuTargets = {
     'Start here': '#start',
