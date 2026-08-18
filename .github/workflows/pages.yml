@@ -55,6 +55,33 @@ jobs:
       - name: Build the bounded Pages artifact
         run: python scripts/build_pages_artifact.py --output _site
 
+      - name: Detect Hugging Face publication configuration
+        id: huggingface-sync
+        if: ${{ inputs.deploy || github.event_name == 'push' }}
+        shell: bash
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          if [[ -n "$HF_TOKEN" ]]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+            echo "huggingface_sync=enabled" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "huggingface_sync=not_configured" >> "$GITHUB_STEP_SUMMARY"
+            echo "Add a fine-grained Hugging Face write token as the HF_TOKEN repository secret to enable publication." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Sync the built site to Hugging Face
+        if: steps.huggingface-sync.outputs.enabled == 'true'
+        uses: huggingface/hub-sync@6fbce0a787a7146710e588abe7a4fd5eca07f47c # v0.1.0
+        with:
+          github_repo_id: ${{ github.repository }}
+          huggingface_repo_id: Prysai/Prysai-LLM-Playbook
+          hf_token: ${{ secrets.HF_TOKEN }}
+          repo_type: space
+          space_sdk: static
+          subdirectory: _site
+
       - name: Record deployment boundary
         shell: bash
         run: |

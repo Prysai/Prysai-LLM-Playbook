@@ -36,6 +36,15 @@ REQUIRED_PUBLISH_FILES = (
     "assets/readme/prysai-llm-playbook-social.png",
 )
 SEO_CONFIG = ROOT / "site/seo-config.json"
+SPACE_README_FRONTMATTER = """---
+title: Prysai LLM Playbook
+emoji: "📖"
+colorFrom: gray
+colorTo: indigo
+sdk: static
+pinned: false
+---
+"""
 FORBIDDEN_PUBLISH_FILENAMES = {
     ".env",
     "credentials.json",
@@ -302,6 +311,13 @@ def artifact_secret_findings(output: Path) -> list[str]:
     return findings
 
 
+def space_readme(source: str) -> str:
+    """Add the Static Space metadata without changing the project README."""
+    if source.startswith("---\n"):
+        return source
+    return SPACE_README_FRONTMATTER + "\n" + source.lstrip()
+
+
 def validate_artifact(output: Path, versions: dict[str, str] | None = None) -> None:
     expected = (
         output / "index.html",
@@ -320,6 +336,9 @@ def validate_artifact(output: Path, versions: dict[str, str] | None = None) -> N
     for filename in PUBLISH_ROOT_FILES:
         if not (output / filename).is_file():
             raise FileNotFoundError(f"Pages artifact is missing root source: {filename}")
+    space_metadata = (output / "README.md").read_text(encoding="utf-8")
+    if not space_metadata.startswith(SPACE_README_FRONTMATTER):
+        raise ValueError("Pages artifact README.md must include Static Space metadata")
     for filename in REQUIRED_PUBLISH_FILES:
         if not (output / filename).is_file():
             raise FileNotFoundError(f"Pages artifact is missing required public asset: {filename}")
@@ -433,7 +452,10 @@ def build_into(output: Path) -> None:
     for directory in PUBLISH_DIRECTORIES:
         shutil.copytree(ROOT / directory, output / directory)
     for filename in PUBLISH_ROOT_FILES:
-        shutil.copy2(ROOT / filename, output / filename)
+        source = (ROOT / filename).read_text(encoding="utf-8")
+        if filename == "README.md":
+            source = space_readme(source)
+        (output / filename).write_text(source, encoding="utf-8", newline="\n")
 
     versions = asset_versions()
     source_index = ROOT / "site/index.html"

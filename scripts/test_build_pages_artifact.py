@@ -9,7 +9,16 @@ from tempfile import TemporaryDirectory
 from urllib.parse import parse_qs, urlparse
 
 import build_site_locale_manifest
-from build_pages_artifact import artifact_secret_findings, load_seo_config, seo_files, sitemap_index_file, sitemap_urls, source_symlinks
+from build_pages_artifact import (
+    SPACE_README_FRONTMATTER,
+    artifact_secret_findings,
+    load_seo_config,
+    seo_files,
+    sitemap_index_file,
+    sitemap_urls,
+    source_symlinks,
+    space_readme,
+)
 
 
 def require(condition: bool, message: str) -> None:
@@ -46,6 +55,9 @@ def main() -> int:
         require(record.get("translation_status") in {"source", "candidate", "verified", "production-ready"}, f"sitemap contains an in-progress translation: {url}")
     require(not any("lab-018-language-transfer" in url for url in urls), "sitemap exposed a draft lab")
     require("Sitemap: " + config["public_site_url"] + "sitemap.xml" in robots, "robots.txt does not point to the canonical sitemap")
+    card_readme = space_readme("# Prysai LLM Playbook\n")
+    require(card_readme.startswith(SPACE_README_FRONTMATTER), "Space README metadata was not added")
+    require("sdk: static" in card_readme, "Space README metadata did not select the static SDK")
     index = ET.fromstring(sitemap_index_file(config))
     index_urls = [item.text for item in index.findall(f"{namespace}sitemap/{namespace}loc")]
     require(index_urls == [config["public_site_url"] + "sitemap.xml"], "sitemap_index.xml does not point to the canonical sitemap")
