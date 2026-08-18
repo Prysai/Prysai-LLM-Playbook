@@ -3,8 +3,8 @@
   "policy_id": "repository-security-policy",
   "status": "candidate",
   "owner": "governance-maintainer",
-  "reviewed_at": "2026-08-14",
-  "next_review": "2026-09-14",
+  "reviewed_at": "2026-08-18",
+  "next_review": "2026-09-18",
   "scope": {
     "included": [
       "tracked and unignored candidate repository files",
@@ -37,9 +37,14 @@
       "tracked credential-shaped files",
       "common token and private-key markers",
       "unsafe shell-pipe patterns in workflows",
+      "high-confidence secret signatures and secret-like assignments",
+      "credential-bearing headers, URLs, and URL queries",
+      "machine-local paths and file URIs",
+      "private IPv4/hostname locations",
+      "MAC addresses and labeled device identifiers",
       "pinned binary-only Python validation dependency",
       "same-origin static-site Content-Security-Policy meta contract",
-      "policy fixture tests"
+      "policy fixture tests, including synthetic-path false-positive boundaries"
     ],
     "evidence_limit": "A passing check only establishes the declared static policy over the checked commit. It does not prove that no secret, vulnerability, unsafe dependency, account compromise, deployment risk, or host-side misconfiguration exists."
   },

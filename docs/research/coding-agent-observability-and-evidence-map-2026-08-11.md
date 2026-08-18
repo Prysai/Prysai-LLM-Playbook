@@ -219,8 +219,8 @@ The reports point to one compact artifact that can be reused across Codex, Claud
 |---|---|---|
 | `surface` | Which client, CLI, IDE, or cloud runner acted? | `Codex CLI 0.x / PowerShell` |
 | `task_id` | Which conversation or run is this? | `run-2026-08-11-004` |
-| `root` | Which filesystem root was effective? | `C:\work\fixture-b` |
-| `worktree` | Which checkout was active? | `C:\work\fixture-b-wt` |
+| `root` | Which filesystem root was effective? | `<fixture-root>/fixture-b` |
+| `worktree` | Which checkout was active? | `<fixture-root>/fixture-b-wt` |
 | `ref` | Which branch and commit were used? | `fix/demo @ abc1234` |
 | `scope` | Which files, records, or external resources were in scope? | `src/parser.ts`, fixture rows 1–10 |
 | `authorization` | What action was actually authorized? | `edit fixture only; no install/push` |

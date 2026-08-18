@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -19,7 +20,10 @@ RED = "#e12b2f"
 
 
 def font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
-    windows = Path("C:/Windows/Fonts")
+    windows_root = os.environ.get("WINDIR") or os.environ.get("SystemRoot")
+    if not windows_root:
+        raise RuntimeError("WINDIR or SystemRoot is required to render the Windows social-preview font")
+    windows = Path(windows_root) / "Fonts"
     name = "arialbd.ttf" if bold else "arial.ttf"
     return ImageFont.truetype(str(windows / name), size=size)
 

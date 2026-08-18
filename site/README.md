@@ -49,7 +49,7 @@ second rendering system without improving the published static artifact.
 在仓库根目录运行受限的预览服务：
 
 ```powershell
-$py = 'C:\\Users\\Administrator\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe'
+$py = (Get-Command python -ErrorAction Stop).Source
 & $py scripts\serve_pages_candidate.py --port 4173
 ```
 

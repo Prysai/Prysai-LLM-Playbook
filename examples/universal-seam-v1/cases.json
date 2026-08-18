@@ -25,8 +25,8 @@
       "title": "The branch label matches, but the repository root does not",
       "intended_outcome": "Inspect the stated documentation repository before any change.",
       "observed_state": {
-        "requested_repository_root": "D:/work/guide-docs",
-        "visible_repository_root": "D:/work/guide-site",
+        "requested_repository_root": "<requested-repository-root>/guide-docs",
+        "visible_repository_root": "<visible-repository-root>/guide-site",
         "requested_branch": "docs-refresh",
         "visible_branch": "docs-refresh"
       },

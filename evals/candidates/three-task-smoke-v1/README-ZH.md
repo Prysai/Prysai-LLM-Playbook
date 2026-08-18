@@ -25,7 +25,7 @@
 $py = (Get-Command python -ErrorAction Stop).Source
 & $py evals\candidates\three-task-smoke-v1\validate_submission.py `
   --task extract-01 `
-  --submission C:\temp\candidate-a-extract-01.json
+  --submission <candidate-output>/candidate-a-extract-01.json
 ```
 
 | 任务 | 提交 | 检查内容 |

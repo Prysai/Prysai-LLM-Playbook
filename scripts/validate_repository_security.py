@@ -7,6 +7,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+from urllib.parse import urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -59,9 +60,97 @@ FAST_MATERIAL_REQUIRED_FRAGMENTS = (
 )
 SECRET_PATTERNS = (
     re.compile(r"\b(?:ghp|gho|ghu|ghs|ghr)_[A-Za-z0-9]{20,}\b"),
-    re.compile(r"\bsk-[A-Za-z0-9_-]{20,}\b"),
+    re.compile(r"\bgithub_pat_[A-Za-z0-9_]{40,}\b"),
+    re.compile(r"\bsk-(?:proj-|ant-)?[A-Za-z0-9]{20,}\b"),
+    re.compile(r"\b(?:sk|rk)_(?:live|test)_[A-Za-z0-9]{16,}\b"),
     re.compile(r"\bAKIA[0-9A-Z]{16}\b"),
+    re.compile(r"\bASIA[0-9A-Z]{16}\b"),
+    re.compile(r"\bAIza[0-9A-Za-z_-]{20,}\b"),
+    re.compile(r"\b(?:hf|npm)_[A-Za-z0-9_-]{20,}\b"),
+    re.compile(r"\bxox[baprs]-[A-Za-z0-9-]{16,}\b"),
+    re.compile(r"\beyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\b"),
     re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
+)
+SUSPICIOUS_SECRET_ASSIGNMENT_RE = re.compile(
+    r"""(?ix)\b(?:api[_ -]?key|access[_ -]?token|refresh[_ -]?token|client[_ -]?secret|auth[_ -]?token|password|secret)\b
+    \s*[:=]\s*(?:"(?P<double>[^"\r\n]{16,})"|'(?P<single>[^'\r\n]{16,})'|(?P<bare>[A-Za-z0-9][A-Za-z0-9._~+/=-]{15,}))"""
+)
+AUTH_HEADER_VALUE_RE = re.compile(
+    r"(?i)\b(?:authorization|proxy-authorization|x-api-key|x-auth-token|cookie)\b\s*[:=]\s*(?:bearer|basic)?\s*[A-Za-z0-9._~+/=-]{16,}"
+)
+URL_USERINFO_RE = re.compile(
+    r"(?i)\b(?:https?|postgres(?:ql)?|mysql|redis|mongodb(?:\+srv)?):\/\/[^\/\s@:]+:[^\/\s@]+@[^\/\s]+"
+)
+URL_SECRET_QUERY_RE = re.compile(
+    r"(?i)[?&](?:api[_-]?key|access[_-]?token|refresh[_-]?token|client[_-]?secret|token|secret|password|session|sig(?:nature)?|x-amz-signature)=([^&\s\"'<>]+)"
+)
+WINDOWS_ABSOLUTE_PATH_RE = re.compile(
+    r"(?ix)(?<![A-Za-z0-9])(?P<path>[A-Za-z]:[\\/][^\s\"'`<>|]+)"
+)
+POSIX_USER_PATH_RE = re.compile(
+    r"(?ix)(?<![A-Za-z0-9])(?P<path>/(?:Users|home)/[^\s\"'`<>|]+)"
+)
+CODEX_LOCAL_PATH_RE = re.compile(
+    r"(?ix)(?<![A-Za-z0-9])(?P<path>(?:[A-Za-z]:[\\/]|/)[^\s\"'`<>|]*(?:codex-" + r"runtimes|codex[\\/](?:home|attachments))[^\s\"'`<>|]*)"
+)
+LOCAL_FILE_URI_RE = re.compile(
+    r"(?ix)(?<![A-Za-z0-9])file:" + r"///(?P<path>[^\s\"'<>]+)"
+)
+PRIVATE_IPV4_RE = re.compile(
+    r"(?<![0-9.])(?:10\.(?:[0-9]{1,3}\.){2}[0-9]{1,3}|192\.168\.(?:[0-9]{1,3}\.)[0-9]{1,3}|172\.(?:1[6-9]|2[0-9]|3[0-1])\.(?:[0-9]{1,3}\.)[0-9]{1,3}|169\.254\.169\.254)(?![0-9.])"
+)
+PRIVATE_HOSTNAME_RE = re.compile(
+    r"(?i)(?<![A-Za-z0-9.-])(?:[A-Za-z0-9-]+\.)+(?:internal|intranet|corp|lan|local)(?![A-Za-z0-9.-])"
+)
+MAC_ADDRESS_RE = re.compile(
+    r"(?i)(?<![A-Za-z0-9])(?:[0-9a-f]{2}[:-]){5}[0-9a-f]{2}(?![A-Za-z0-9])"
+)
+DEVICE_IDENTIFIER_RE = re.compile(
+    r"(?ix)\b(?:machine|device|hardware|serial|asset|installation)[ _-]?(?:id|number|serial)\b\s*[:=]\s*(?:\"[^\"\r\n]{8,}\"|'[^'\r\n]{8,}'|[A-Za-z0-9][A-Za-z0-9._:-]{7,})"
+)
+PLACEHOLDER_VALUES = {
+    "changeme",
+    "dummy",
+    "example",
+    "fake",
+    "fixture",
+    "placeholder",
+    "private",
+    "redacted",
+    "sample",
+    "secret",
+    "test",
+    "token",
+    "your-api-key",
+    "your_api_key",
+    "your-token",
+    "your_token",
+}
+SYNTHETIC_PATH_SEGMENTS = {
+    "candidate-a",
+    "example",
+    "examples",
+    "fixture",
+    "fixtures",
+    "me",
+    "placeholder",
+    "sample",
+    "samples",
+    "test",
+    "tests",
+    "user",
+    "username",
+}
+SYNTHETIC_HOSTS = {"example.com", "example.invalid", "example.test", "localhost"}
+SYNTHETIC_LINE_MARKERS = (
+    "synthetic",
+    "fixture",
+    "placeholder",
+    "pattern-definition",
+    "test-only",
+    "test only",
+    "redacted",
+    "dummy",
 )
 FORBIDDEN_FILENAMES = {"id_rsa", "id_dsa", "id_ecdsa", "id_ed25519"}
 FORBIDDEN_SUFFIXES = {".pem", ".p12", ".pfx", ".key"}
@@ -90,6 +179,111 @@ REQUIRED_PR_HEADINGS = {
 
 def relative(path: Path) -> str:
     return path.relative_to(ROOT).as_posix()
+
+
+def _line_containing(text: str, start: int, end: int) -> str:
+    line_start = text.rfind("\n", 0, start) + 1
+    line_end = text.find("\n", end)
+    if line_end == -1:
+        line_end = len(text)
+    return text[line_start:line_end]
+
+
+def _synthetic_context(line: str) -> bool:
+    lowered = line.casefold()
+    return any(marker in lowered for marker in SYNTHETIC_LINE_MARKERS)
+
+
+def _placeholder_value(value: str) -> bool:
+    cleaned = value.strip().strip("\"'").casefold()
+    return cleaned in PLACEHOLDER_VALUES or cleaned.startswith("your-") or cleaned.startswith("your_")
+
+
+def _synthetic_path(value: str, line: str) -> bool:
+    if _synthetic_context(line):
+        return True
+    normalized = value.replace("\\", "/").strip(".,;:)")
+    segments = {segment.casefold() for segment in normalized.split("/") if segment}
+    return bool(segments & SYNTHETIC_PATH_SEGMENTS) and not any(
+        segment.casefold() in {"administrator", "admin", "root"} for segment in segments
+    )
+
+
+def _synthetic_url(value: str, line: str) -> bool:
+    if _synthetic_context(line):
+        return True
+    try:
+        hostname = urlsplit(value).hostname
+    except ValueError:
+        return False
+    return hostname in SYNTHETIC_HOSTS
+
+
+def sensitive_information_scan(text: str) -> list[str]:
+    """Return rule IDs without echoing potentially sensitive matched values."""
+
+    findings: set[str] = set()
+    if any(pattern.search(text) for pattern in SECRET_PATTERNS):
+        findings.add("credential-signature")
+
+    for match in SUSPICIOUS_SECRET_ASSIGNMENT_RE.finditer(text):
+        line = _line_containing(text, match.start(), match.end())
+        value = next((group for group in match.groups() if group is not None), "")
+        if _placeholder_value(value) and _synthetic_context(line):
+            continue
+        findings.add("secret-like-assignment")
+        break
+
+    for match in AUTH_HEADER_VALUE_RE.finditer(text):
+        line = _line_containing(text, match.start(), match.end())
+        if _synthetic_context(line):
+            continue
+        findings.add("credential-bearing-header")
+        break
+
+    for match in URL_USERINFO_RE.finditer(text):
+        line = _line_containing(text, match.start(), match.end())
+        if _synthetic_url(match.group(0), line):
+            continue
+        findings.add("credential-bearing-url")
+        break
+
+    for match in URL_SECRET_QUERY_RE.finditer(text):
+        line = _line_containing(text, match.start(), match.end())
+        value = match.group(1)
+        if _placeholder_value(value) and any(host in line.casefold() for host in SYNTHETIC_HOSTS):
+            continue
+        if _synthetic_context(line):
+            continue
+        findings.add("secret-bearing-url-query")
+        break
+
+    for pattern in (WINDOWS_ABSOLUTE_PATH_RE, POSIX_USER_PATH_RE, CODEX_LOCAL_PATH_RE, LOCAL_FILE_URI_RE):
+        for match in pattern.finditer(text):
+            line = _line_containing(text, match.start(), match.end())
+            path = match.groupdict().get("path", match.group(0))
+            if _synthetic_path(path, line):
+                continue
+            findings.add("machine-local-path")
+            break
+        if "machine-local-path" in findings:
+            break
+
+    for pattern in (PRIVATE_IPV4_RE, PRIVATE_HOSTNAME_RE):
+        for match in pattern.finditer(text):
+            line = _line_containing(text, match.start(), match.end())
+            if _synthetic_context(line):
+                continue
+            findings.add("private-network-location")
+            break
+        if "private-network-location" in findings:
+            break
+
+    if any(match for match in MAC_ADDRESS_RE.finditer(text) if not _synthetic_context(_line_containing(text, match.start(), match.end()))):
+        findings.add("mac-address")
+    if any(match for match in DEVICE_IDENTIFIER_RE.finditer(text) if not _synthetic_context(_line_containing(text, match.start(), match.end()))):
+        findings.add("device-identifier")
+    return sorted(findings)
 
 
 def load_policy(path: Path = POLICY_PATH) -> tuple[dict[str, object] | None, list[str]]:
@@ -271,8 +465,11 @@ def secret_scan(paths: list[Path]) -> list[str]:
         if b"\x00" in data:
             continue
         text = data.decode("utf-8", errors="replace")
-        if any(pattern.search(text) for pattern in SECRET_PATTERNS):
-            errors.append(f"{label}: contains a credential-shaped value; remove it and rotate any real credential")
+        for rule_id in sensitive_information_scan(text):
+            if rule_id == "credential-signature":
+                errors.append(f"{label}: contains a credential-shaped value; remove it and rotate any real credential")
+            else:
+                errors.append(f"{label}: contains {rule_id}; remove the exposed value or replace it with a synthetic placeholder")
     return errors
 
 

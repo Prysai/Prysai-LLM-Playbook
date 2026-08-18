@@ -31,7 +31,7 @@ def main() -> int:
     route_text = ROUTE.read_text(encoding="utf-8")
     fixture_readme_text = (FIXTURE / "README.md").read_text(encoding="utf-8")
     for label, text in (("route", route_text), ("fixture README", fixture_readme_text)):
-        if "C:\\Users\\Administrator\\.cache\\codex-runtimes" in text:
+        if "python.exe" in text or "codex-runtimes" in text:
             failures.append(f"{label} exposes a maintainer-specific runtime path to learners")
         if "required_readme_strings" not in text:
             failures.append(f"{label} does not explain the no-runtime acceptance source")

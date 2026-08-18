@@ -6,7 +6,7 @@
 project status claim is changed by this note.
 
 **Audit date:** 2026-08-16 (America/Los_Angeles)  
-**Local material inspected:** `D:/downloads/claude-code-from-source-main/claude-code-from-source-main`  
+**Local material inspected:** user-provided local material (path intentionally omitted)
 **Public project links:** [GitHub repository](https://github.com/alejandrobalderas/claude-code-from-source), [project site](https://claude-code-from-source.com)  
 **Owner:** research-maintainer  
 **Next review:** 2026-09-16, or before any external wording, image, code,
@@ -137,4 +137,3 @@ source-backed, platform-neutral lesson after its own design and evidence
 review. It does not support copying, an official Claude Code guide, a security
 claim, a performance claim, cross-platform parity, learner benefit, or release
 readiness.
-

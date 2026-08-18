@@ -16,13 +16,13 @@ def require(condition: bool, message: str) -> None:
 
 def main() -> int:
     explicit_paths, explicit_dir, explicit_source = locations.archive_paths(
-        "E:/project-inputs"
+        "input-archives"
     )
-    require(explicit_dir == Path("E:/project-inputs"), "explicit archive directory changed")
+    require(explicit_dir == Path("input-archives"), "explicit archive directory changed")
     require(explicit_source == "command_line", "explicit archive directory lost precedence")
     require(
         explicit_paths["S01"]
-        == Path("E:/project-inputs/codex-orange-book-main.zip"),
+        == Path("input-archives/codex-orange-book-main.zip"),
         "S01 filename changed",
     )
     require(
@@ -30,13 +30,13 @@ def main() -> int:
         "source ID set changed",
     )
 
-    with patch.dict(os.environ, {locations.ENVIRONMENT_VARIABLE: "F:/shared-inputs"}, clear=False):
+    with patch.dict(os.environ, {locations.ENVIRONMENT_VARIABLE: "shared-inputs"}, clear=False):
         environment_paths, environment_dir, environment_source = locations.archive_paths()
-    require(environment_dir == Path("F:/shared-inputs"), "environment archive directory ignored")
+    require(environment_dir == Path("shared-inputs"), "environment archive directory ignored")
     require(environment_source == "environment", "environment source was not recorded")
     require(
         environment_paths["S06"]
-        == Path("F:/shared-inputs/awesome-codex-skills-master.zip"),
+        == Path("shared-inputs/awesome-codex-skills-master.zip"),
         "S06 filename changed",
     )
 

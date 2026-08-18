@@ -147,6 +147,46 @@ jobs:
             "common API-key shape was not recognized",
         )
         fixtures += 1
+
+        ordinary_url = "https://www.nist.gov/itl/ai-risk-management-framework/ai-rmf-playbook"
+        require(not policy.sensitive_information_scan(ordinary_url), "ordinary URL path was treated as an API key")
+        fixtures += 1
+
+        ordinary_filename = "docs/research/task-contract-availability-and-channel-v1"
+        require(not policy.sensitive_information_scan(ordinary_filename), "ordinary hyphenated filename was treated as an API key")
+        fixtures += 1
+
+        credential_url = "https://user:" + "not-a-real-secret-value" + "@service.example.org/api"
+        require("credential-bearing-url" in policy.sensitive_information_scan(credential_url), "credential-bearing URL was accepted")
+        fixtures += 1
+
+        secret_query = "https://service.example.org/callback?token=" + "not-a-real-token-value"
+        require("secret-bearing-url-query" in policy.sensitive_information_scan(secret_query), "secret-bearing URL query was accepted")
+        fixtures += 1
+
+        private_ip = "https://10." + "0.0.5/internal"
+        require("private-network-location" in policy.sensitive_information_scan(private_ip), "private network location was accepted")
+        fixtures += 1
+
+        mac = "mac address: " + ":".join(("00", "11", "22", "33", "44", "55"))
+        require("mac-address" in policy.sensitive_information_scan(mac), "MAC address was accepted")
+        fixtures += 1
+
+        device_id = "device" + "_id: " + "device-" + "12345678"
+        require("device-identifier" in policy.sensitive_information_scan(device_id), "device identifier was accepted")
+        fixtures += 1
+
+        synthetic_path = "# synthetic fixture path " + "C:" + "\\Users\\example\\fixture.txt"
+        require(not policy.sensitive_information_scan(synthetic_path), "explicit synthetic path was rejected")
+        fixtures += 1
+
+        local_path = "C:" + "\\" + "Users" + "\\alice\\private.txt"
+        require("machine-local-path" in policy.sensitive_information_scan(local_path), "machine-local path was accepted")
+        fixtures += 1
+
+        file_uri = "file:" + "//" + "/C:" + "/" + "Users" + "/alice/private.txt"
+        require("machine-local-path" in policy.sensitive_information_scan(file_uri), "local file URI was accepted")
+        fixtures += 1
     except AssertionError as exc:
         print("REPOSITORY_SECURITY_POLICY_TESTS_FAILED")
         print(f"- {exc}")
