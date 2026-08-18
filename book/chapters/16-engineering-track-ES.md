@@ -68,6 +68,21 @@ Solo cuando otra persona puede repetir objetivo y no objetivo eliges el primer c
 | Ejecución local | Ese input dio ese resultado observado | Producción, todas las cuentas o rendimiento |
 | Remoto leído | Aparece la revisión o registro indicado | Aceptación, monitorización o rollback seguro |
 
+## Web coding: llevar un resultado visible a un navegador real
+
+«Construye un sitio completo» mezcla audiencia, estados, archivos fuente, runtime,
+revisión en navegador y rollback. Empieza en una copia descartable de la
+`examples/skill-sandbox/product-context-real-estate`: lee README e `index.html`,
+cambia solo una frase visible de `index.html` y no añadas framework, imagen,
+formulario, API ni red. Si Python 3 ya está disponible, ejecuta desde la copia
+`python -m http.server 4182`, abre `http://127.0.0.1:4182/` y comprueba título,
+frase nueva, encabezado conservado, enlaces, consola y viewport de 390px.
+
+Guarda directorio, archivo permitido, URL, observación visible, diff y lo que no
+se verificó (despliegue, accesibilidad, otros navegadores y aceptación). El diff
+no muestra si cargó CSS, si una ruta relativa falla, si el móvil se corta o si hay
+un error de runtime; un render local no es un sitio desplegado.
+
 ## Experimento: un corte vertical JSON
 
 En un directorio desechable, lee una lista de cadenas de `input.json`, elimina duplicados y escribe `output.json`. Solo se lee y escribe allí; no hay red, instalación, login, commit, push ni publicación.
