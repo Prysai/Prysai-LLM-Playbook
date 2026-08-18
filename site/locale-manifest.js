@@ -5027,6 +5027,419 @@ window.CODEX_LOCALE_MANIFEST = {
         }
       }
     },
+    "universal-first-turn-prompt-contract-2026-08-13": {
+      "kind": "field-note",
+      "reader_type": "field-note",
+      "overview_target": "index.html#field-research",
+      "stem": "docs/research/universal-first-turn-prompt-contract-2026-08-13",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "zh-tw": {
+          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
+    "verification-stability-2026-08-15": {
+      "kind": "project-document",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
+      "stem": "docs/quality/verification-stability-2026-08-15",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "docs/quality/verification-stability-2026-08-15.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "docs/quality/verification-stability-2026-08-15.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "docs/quality/verification-stability-2026-08-15.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "docs/quality/verification-stability-2026-08-15.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "docs/quality/verification-stability-2026-08-15.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "docs/quality/verification-stability-2026-08-15.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "zh-tw": {
+          "path": "docs/quality/verification-stability-2026-08-15.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
+    "first-win-pilot-protocol-v2": {
+      "kind": "project-document",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
+      "stem": "docs/quality/first-win-pilot-protocol-v2",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "docs/quality/first-win-pilot-protocol-v2.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "docs/quality/first-win-pilot-protocol-v2.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "docs/quality/first-win-pilot-protocol-v2.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "docs/quality/first-win-pilot-protocol-v2.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "docs/quality/first-win-pilot-protocol-v2.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "docs/quality/first-win-pilot-protocol-v2.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "zh-tw": {
+          "path": "docs/quality/first-win-pilot-protocol-v2.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
+    "newcomer-entry-observation-protocol-v1": {
+      "kind": "project-document",
+      "reader_type": "project-document",
+      "overview_target": "index.html",
+      "stem": "docs/quality/newcomer-entry-observation-protocol-v1",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "docs/quality/newcomer-entry-observation-protocol-v1.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "docs/quality/newcomer-entry-observation-protocol-v1.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "docs/quality/newcomer-entry-observation-protocol-v1.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "docs/quality/newcomer-entry-observation-protocol-v1.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "docs/quality/newcomer-entry-observation-protocol-v1.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "docs/quality/newcomer-entry-observation-protocol-v1.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "zh-tw": {
+          "path": "docs/quality/newcomer-entry-observation-protocol-v1.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
+    "ai-assisted-language-practice-boundaries-2026-08-14": {
+      "kind": "field-note",
+      "reader_type": "field-note",
+      "overview_target": "index.html#field-research",
+      "stem": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "zh-tw": {
+          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
+    "prompt-escalation-boundary-source-and-action-2026-08-14": {
+      "kind": "field-note",
+      "reader_type": "field-note",
+      "overview_target": "index.html#field-research",
+      "stem": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "zh-tw": {
+          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
+    "source-shaped-answers-and-beginner-checks-2026-08-14": {
+      "kind": "field-note",
+      "reader_type": "field-note",
+      "overview_target": "index.html#field-research",
+      "stem": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "locale-matrix"
+        },
+        "zh": {
+          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "es": {
+          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ja": {
+          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "ko": {
+          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "de": {
+          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "zh-tw": {
+          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        }
+      }
+    },
     "llm-foundation-core-v1": {
       "kind": "learning-route",
       "reader_type": "project-document",
@@ -7312,6 +7725,13 @@ window.CODEX_LOCALE_MANIFEST = {
     "docs/research/field-case-agent-handoff-receipt-2026-08-14.md": "field-case-agent-handoff-receipt-2026-08-14",
     "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md": "field-case-capacity-interruption-checkpoint-2026-08-14",
     "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md": "community-tutorial-intake-and-foundations-2026-08-14",
+    "docs/research/universal-first-turn-prompt-contract-2026-08-13.md": "universal-first-turn-prompt-contract-2026-08-13",
+    "docs/quality/verification-stability-2026-08-15.md": "verification-stability-2026-08-15",
+    "docs/quality/first-win-pilot-protocol-v2.md": "first-win-pilot-protocol-v2",
+    "docs/quality/newcomer-entry-observation-protocol-v1.md": "newcomer-entry-observation-protocol-v1",
+    "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md": "ai-assisted-language-practice-boundaries-2026-08-14",
+    "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md": "prompt-escalation-boundary-source-and-action-2026-08-14",
+    "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md": "source-shaped-answers-and-beginner-checks-2026-08-14",
     "book/routes/llm-foundation-core-v1-EN.md": "llm-foundation-core-v1",
     "book/routes/llm-core-first-generation-EN.md": "llm-core-first-generation",
     "book/routes/llm-core-visible-failures-EN.md": "llm-core-visible-failures",
