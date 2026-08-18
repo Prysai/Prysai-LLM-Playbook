@@ -117,6 +117,7 @@ jobs:
         with:
           name: pages-candidate-${{ github.sha }}
           path: _site
+          include-hidden-files: true
           if-no-files-found: error
           retention-days: 14
 

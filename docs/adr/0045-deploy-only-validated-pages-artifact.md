@@ -25,8 +25,9 @@ The Docs deployment job downloads the `pages-candidate-${{ github.sha }}`
 artifact produced by the required `build` job and publishes that artifact
 without checking out source code or running the repository's build scripts.
 Its job token is limited to `actions: read`, and the artifact action is pinned
-to a full commit SHA. The artifact remains the single validated input for both
-publishing paths.
+to a full commit SHA. The candidate artifact explicitly includes hidden files,
+because the validated artifact contains the required `.nojekyll` marker. The
+artifact remains the single validated input for both publishing paths.
 
 ## Alternatives considered
 

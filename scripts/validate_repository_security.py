@@ -71,6 +71,11 @@ DOCS_DEPLOY_REQUIRED_FRAGMENTS = (
     "github-token: ${{ github.token }}",
 )
 DOCS_DEPLOY_ALLOWED_PERMISSIONS = {"actions": "read"}
+PAGES_CANDIDATE_ARTIFACT_REQUIRED = (
+    "name: pages-candidate-${{ github.sha }}",
+    "path: _site",
+    "include-hidden-files: true",
+)
 DOCS_DEPLOY_FORBIDDEN_FRAGMENTS = (
     "actions/checkout@",
     "actions/setup-python@",
@@ -481,6 +486,16 @@ def validate_docs_deploy_workflow(text: str, label: str) -> list[str]:
     return errors
 
 
+def validate_pages_candidate_artifact(text: str, label: str) -> list[str]:
+    """Keep the review artifact complete, including the validated .nojekyll file."""
+
+    errors = []
+    for fragment in PAGES_CANDIDATE_ARTIFACT_REQUIRED:
+        if fragment not in text:
+            errors.append(f"{label}: Pages candidate artifact must include hidden files: {fragment}")
+    return errors
+
+
 def validate_workflows() -> tuple[int, list[str]]:
     errors: list[str] = []
     workflows = sorted(WORKFLOW_DIR.glob("*.y*ml"))
@@ -512,7 +527,9 @@ def validate_workflows() -> tuple[int, list[str]]:
     if not PAGES_WORKFLOW.is_file():
         errors.append("missing .github/workflows/pages.yml")
     else:
-        errors.extend(validate_docs_deploy_workflow(PAGES_WORKFLOW.read_text(encoding="utf-8"), relative(PAGES_WORKFLOW)))
+        pages_text = PAGES_WORKFLOW.read_text(encoding="utf-8")
+        errors.extend(validate_docs_deploy_workflow(pages_text, relative(PAGES_WORKFLOW)))
+        errors.extend(validate_pages_candidate_artifact(pages_text, relative(PAGES_WORKFLOW)))
     return len(workflows), errors
 
 

@@ -180,9 +180,10 @@ The Docs deployment job previously checked out the repository, installed
 Python, and rebuilt the Pages artifact in the same job that loaded
 `DOCS_DEPLOY_SSH_KEY`. The build job already produced and validated the
 `pages-candidate-${{ github.sha }}` artifact. The workflow now downloads that exact
-artifact with a pinned `actions/download-artifact` action and grants the Docs
-job only `actions: read`; it no longer checks out source or executes the build
-scripts beside the deployment key. See ADR-0045.
+artifact with a pinned `actions/download-artifact` action, preserves the hidden
+`.nojekyll` marker in the candidate artifact, and grants the Docs job only
+`actions: read`; it no longer checks out source or executes the build scripts
+beside the deployment key. See ADR-0045.
 
 ### SIA-10 — Docs deployment environment protection — open outside this repository
 

@@ -134,6 +134,18 @@ jobs:
         )
         fixtures += 1
 
+        candidate_artifact = "\n".join(policy.PAGES_CANDIDATE_ARTIFACT_REQUIRED) + "\n"
+        require(
+            not policy.validate_pages_candidate_artifact(candidate_artifact, "pages.yml"),
+            "complete Pages candidate artifact was rejected",
+        )
+        fixtures += 1
+        require(
+            any("include hidden files" in error for error in policy.validate_pages_candidate_artifact(candidate_artifact.replace("include-hidden-files: true\n", ""), "pages.yml")),
+            "Pages candidate artifact without hidden files was accepted",
+        )
+        fixtures += 1
+
         extra_docs_permission = secure_docs_deploy.replace(
             "      actions: read\n",
             "      actions: read\n      contents: write\n",
