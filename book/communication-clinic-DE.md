@@ -1,4 +1,4 @@
-<!-- content_id: communication-clinic | locale: DE | language: de | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
+<!-- content_id: communication-clinic | locale: DE | language: de | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-18 -->
 
 # Optionale Anwendungsübung: Sprache, Arbeit und Recherche
 
@@ -7,10 +7,10 @@ Für eine kurze Übung in klaren Schritten öffne den [Arbeitsupdate-Ablauf](wor
 **Status:** `draft` · **Lernnachweis:** `not_run` · **Geeignet für:** risikoarme
 Übungen ohne sensible Daten in einem Textchat mit einem LLM.
 
-**Nutze diese Karten erst nach dem Lehrbuchfundament:** [Kapitel 0](guides/llm-fundamentals-DE.md)
-→ [Kapitel 1](chapters/01-gpt-and-codex-DE.md) →
-[Kapitel 2](chapters/02-first-safe-task-DE.md). Die Karten wenden die Methode
-an; sie führen nicht in die Frage ein, was ein LLM ist.
+**Nutze diese Karten nach dem LLM Foundation Core:** [Einheit 1 — LLM-Konzepte](guides/llm-fundamentals-DE.md)
+→ [Einheit 2 — die erste begrenzte Anfrage](routes/universal-core-foundations-DE.md).
+Die Karten wenden die Kernmethode an; sie führen nicht in die Frage ein, was
+ein LLM ist. Wenn du den Core noch nicht durchlaufen hast, beginne mit Einheit 1.
 
 Du befindest dich auf dem deutsch erklärten Lernpfad: Erklärungen, Entscheidungen und Links auf dieser Seite sind auf Deutsch. Das Spanische in den Karten ist ein optionales Ziel für eine Sprachübung, kein versehentlicher Sprachwechsel und keine Pflicht.
 
