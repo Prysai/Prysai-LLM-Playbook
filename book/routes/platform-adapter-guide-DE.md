@@ -85,8 +85,6 @@ Fähigkeit ist keine Anweisung, sie zu nutzen.
 
 <span id="chatgpt-first-task"></span>
 
-<span id="chatgpt-first-task"></span>
-
 ## Erste Aufgabe in ChatGPT
 
 Öffne eine beliebige ChatGPT-Oberfläche und führe die sichere erste Aufgabe von
@@ -96,8 +94,6 @@ Halte fest, was du gesehen hast, nicht was du annimmst. Für eine
 quellengestützte Prüfung einer ChatGPT-Behauptung nutze den
 Source Investigator Skill –
 die offiziellen OpenAI-Hilfeseiten sind der Eigentümer der Produktfakten.
-
-<span id="claude-code-first-task"></span>
 
 <span id="claude-code-first-task"></span>
 
@@ -114,8 +110,6 @@ Modell folgen kann, und prüfe sie wie jede Projektregel. Starte Claude Code
 erst dann in einem echten Repository mit Zugangsdaten, Produktionsdaten oder
 destruktiven Befehlen, wenn du die Disziplin der
 [First Safe Change route](first-safe-change-DE.md) abgeschlossen hast.
-
-<span id="gemini-first-task"></span>
 
 <span id="gemini-first-task"></span>
 

@@ -76,8 +76,6 @@ Platform Fact Watch를 참고하십시오.
 
 <span id="chatgpt-first-task"></span>
 
-<span id="chatgpt-first-task"></span>
-
 ## ChatGPT 첫 과제
 
 아무 ChatGPT 표면을 열고 위의 안전한 첫 과제를 실행하십시오. 그런 다음
@@ -87,8 +85,6 @@ ChatGPT 주장에 대한 출처 기반 확인은 제품 사실의 소유자로�
 도움말 페이지를 사용하는
 Source Investigator Skill을
 활용하십시오.
-
-<span id="claude-code-first-task"></span>
 
 <span id="claude-code-first-task"></span>
 
@@ -104,8 +100,6 @@ Claude Code는 터미널 에이전트입니다: 시작한 프로젝트 안에서
 파괴적 명령이 있는 실제 저장소에서 Claude Code를 시작하지 마십시오.
 [First Safe Change 루트](first-safe-change-KO.md)의 규율을 완료하기 전까지는
 말입니다.
-
-<span id="gemini-first-task"></span>
 
 <span id="gemini-first-task"></span>
 
