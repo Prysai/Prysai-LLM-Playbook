@@ -22,14 +22,14 @@ Playbook is ready for public production use.
   now teaches the observable sequence `explain -> initiate -> identify ->
   repair -> transfer` with fictional offline tasks, retained receipts,
   explicit stop boundaries, and no claim of learner or model performance.
-- **Lesson 0: What Is a Large Language Model** (book/guides/llm-fundamentals-EN.md + five translations): the textbook opener that explains tokens, context windows, capabilities, and limits before any product talk.
+- **Lesson 0: What Is a Large Language Model** (book/guides/llm-fundamentals-EN.md + six translations): the textbook opener that explains tokens, context windows, capabilities, and limits before any product talk.
 - **Textbook reading path**: the homepage hero, the compact README, and the English README now lead with one ordered path (Lesson 0 -> Chapter 1 -> Chapter 2 -> ... -> Chapter 22) instead of a menu of choices; practice cards and language loops are exercises reached after the foundation.
-- **Goal wizard** (site/goal-templates.js + app.js): a six-language interactive tool that turns a picked goal into a ready-to-copy prompt; positioned as a practice tool, not the entry point.
+- **Goal wizard** (site/goal-templates.js + app.js): a seven-language interactive tool that turns a picked goal into a ready-to-copy prompt; positioned as a practice tool, not the entry point.
 - **Six-platform adapter guide** (book/routes/platform-adapter-guide-EN.md and
-  five translations): a safe first task and a visible difference list for
+  six translations): a safe first task and a visible difference list for
   ChatGPT, Claude / Claude Code, Gemini, DeepSeek, Grok, and the Codex
   flagship track, with the universal core kept platform-neutral.
-- **French practice loop** (book/french-practice-loop-EN.md and five
+- **French practice loop** (book/french-practice-loop-EN.md and six
   translations): six copy-ready messages for a typed four-turn French café or
   hotel exchange, mirroring the Spanish loop.
 - **Language Partner Skill** (prysai-language-partner): one bounded typed
@@ -38,8 +38,8 @@ Playbook is ready for public production use.
 - **Interview Rehearsal Skill** (prysai-interview-rehearsal): one observable
   timed answer with a visible check, one material gap, and one changed
   question.
-- **Six-language site UI**: complete Spanish, Japanese, Korean, and German
-  interface dictionaries (506 keys each), six-language learning-path data,
+- **Seven-language site UI**: complete Spanish, Japanese, Korean, German, and
+  Traditional Chinese interface dictionaries (506 keys each), seven-language learning-path data,
   chapter/lab/part titles, and localized chapter navigation footers; no route
   uses an English UI fallback anymore.
 - Request Escalation, an original candidate Skill and beginner reader card
@@ -95,7 +95,7 @@ Playbook is ready for public production use.
 - The first public route now separates the recommended local Codex path from
   optional text-only practice, with fictional ready-to-copy prompt cards and
   visible data-minimization guidance.
-- The homepage now renders the first-turn prompt contract as six localized,
+- The homepage now renders the first-turn prompt contract as seven localized,
   readable fields instead of a dense image preview; the contract remains a
   candidate teaching aid, not a safety or learning guarantee.
 - Local source-archive audit and discovery scripts now require

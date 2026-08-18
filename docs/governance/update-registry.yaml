@@ -59,7 +59,7 @@
       "owner": "skills-maintainer",
       "triggers": ["new-workflow", "trigger-conflict", "dependency-change", "validator-change", "fresh-context-failure"],
       "required_inputs": ["trigger", "non-trigger", "inputs", "boundaries", "stop-conditions", "output-contract", "source-boundary", "tests"],
-      "validation_commands": ["scripts/validate_project.py", "scripts/validate_skills.py", "H:/Codex/home/skills/.system/skill-creator/scripts/quick_validate.py"],
+      "validation_commands": ["scripts/validate_project.py", "scripts/validate_skills.py", "<codex-home>/skills/.system/skill-creator/scripts/quick_validate.py"],
       "status_fields": ["skill_status", "validator_result", "fresh_context_status", "owner", "next_review"],
       "next_review": "2026-11-09"
     },

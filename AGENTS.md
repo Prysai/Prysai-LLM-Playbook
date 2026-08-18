@@ -48,7 +48,7 @@ verification, and team adoption.
 ## Verification commands
 
 ```powershell
-$py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+$py = 'python'
 & $py scripts\validate_project.py
 & $py scripts\validate_project_structure.py
 & $py scripts\validate_content_completeness.py
@@ -63,8 +63,9 @@ assets. Supply their location explicitly with
 missing archive is an incomplete audit, never a reason to skip the source and
 license boundary.
 
-The official skill validator is at
-`H:\Codex\home\skills\.system\skill-creator\scripts\quick_validate.py`.
+The official skill validator is the `skill-creator/scripts/quick_validate.py`
+file supplied by the local Codex skills runtime. Pass its local path explicitly
+when running it; do not record that machine-specific path in the repository.
 If its YAML dependency is unavailable, use the bundled workspace Python runtime
 with a temporary PyYAML target and do not add that dependency to this project
 just for validation. On Windows, invoke it with `-X utf8` (or an equivalent

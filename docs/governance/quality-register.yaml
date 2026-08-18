@@ -94,7 +94,7 @@
       "required_evidence": "Separate route, file, translation, and language-review states plus a generated missing-file report.",
       "status": "open",
       "evidence_paths": ["docs/governance/locale-matrix.yaml", "scripts/validate_localization.py", "scripts/audit_locale_release_paths.py", "scripts/audit_translation_depth.py", "docs/quality/translation-depth-release-audit-2026-08-16.md"],
-      "resolution_scope": "All six routes now contain 40 of 40 same-locale chapter and Lab files, and path checks pass. A 2026-08-16 depth audit flagged 51 of 200 non-English pairs for short-text or heading-count attention. Repository locale status was returned to migration and the UI labels non-English coverage as local route files pending independent language review. This is routing and disclosure progress, not completed translation, native review, or learner evidence."
+      "resolution_scope": "All seven routes now contain 40 of 40 same-locale chapter and Lab files, and path checks pass. The 2026-08-16 depth audit covered the earlier six-route snapshot and flagged 51 of 200 non-English pairs for short-text or heading-count attention. The current seven-route status remains migration: the UI labels non-English coverage as local route files pending independent language review. This is routing and disclosure progress, not completed translation, native review, or learner evidence."
     },
     {
       "id": "Q-007",

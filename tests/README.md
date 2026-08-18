@@ -7,7 +7,7 @@ look specifically for `tests/test_*.py`.
 Run the discovery suite with:
 
 ```powershell
-$py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+$py = 'python'
 & $py -m unittest discover -s tests -p "test_*.py"
 ```
 

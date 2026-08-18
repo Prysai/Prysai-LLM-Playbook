@@ -1,10 +1,25 @@
-import { chromium } from "file:///C:/Users/Administrator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/index.mjs";
+import fs from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
-const edgePath = "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe";
-const baseUrl = "http://127.0.0.1:4182/examples/skill-sandbox/product-context-real-estate/";
-const outputRoot = "C:\\Users\\Administrator\\Documents\\ChatGPT\\My Github\\assets\\cases";
+const playwrightModule = process.env.PLAYWRIGHT_MODULE
+  ? await import(pathToFileURL(path.resolve(process.env.PLAYWRIGHT_MODULE)).href)
+  : await import("playwright");
+const { chromium } = playwrightModule.default ?? playwrightModule;
 
-const browser = await chromium.launch({ executablePath: edgePath, headless: true });
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const browserExecutable = process.env.BROWSER_EXECUTABLE?.trim();
+const baseUrl = process.env.CASE_SCREENSHOT_BASE_URL?.trim()
+  || "http://127.0.0.1:4182/examples/skill-sandbox/product-context-real-estate/";
+const outputRoot = path.resolve(
+  process.env.CASE_SCREENSHOT_OUTPUT_DIR?.trim() || path.join(root, "assets", "cases"),
+);
+
+await fs.mkdir(outputRoot, { recursive: true });
+const browser = await chromium.launch({
+  ...(browserExecutable ? { executablePath: path.resolve(browserExecutable) } : {}),
+  headless: true,
+});
 
 for (const capture of [
   { name: "desktop", width: 1440, height: 1100 },

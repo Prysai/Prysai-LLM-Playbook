@@ -66,7 +66,8 @@ quality, learner outcomes, or release readiness.
 
 Seven locale choices provide a complete **file path** for the 22 chapters and 18
 Labs. The revised foundation guide is deliberately marked stale in the six
-non-English locales until it is retranslated. That structural coverage is not six independently reviewed, culturally adapted, or
+non-English locales until it is retranslated. That structural coverage is not
+seven independently reviewed, culturally adapted, or
 learner-validated courses. Supplemental
 reader material still has its own coverage and review status; the reader
 exposes the same `available / 40` course-unit count in its language selector.
@@ -513,8 +514,8 @@ repository; they do not describe learning outcomes.
 | Labs | 18 labs · `draft` · `run_status: not_run` | The contracts exist; the repository does not claim that every lab has been freshly executed |
 | Skills | 25 project Skills · `candidate` | Structural checks pass; fresh-context evidence is partial and remains visible in the registry |
 | Evaluation fixtures | 40 fixtures · `candidate` · `not_run` | The task set is defined; model execution logs are not being implied |
-| Public showcase | `candidate`, publicly reachable | Six localized entry URLs are deployed; indexing, reader acceptance, deployment evidence, and rollback remain unproven |
-| Locale rollout | EN source plus five candidate translations in progress | Every locale has 40 / 40 chapter-and-Lab files and same-locale routes; independent language review and supplemental-material coverage remain incomplete |
+| Public showcase | `candidate`, publicly reachable | Seven localized entry URLs are deployed; indexing, reader acceptance, deployment evidence, and rollback remain unproven |
+| Locale rollout | EN source plus six candidate translations in progress | Every locale has 40 / 40 chapter-and-Lab files and same-locale routes; independent language review and supplemental-material coverage remain incomplete |
 
 The [current status source](docs/governance/content-status.yaml) is authoritative
 for evidence-backed maturity. The [current-state review](docs/quality/current-state-review-2026-08-09.md)
