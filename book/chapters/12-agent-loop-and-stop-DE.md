@@ -38,7 +38,7 @@ Zwischen „Ich aktualisiere die Datei und teste“ und „fertig“ müssen Fre
 
 ## Architektur-Muster, die sich übertragen lassen
 
-Die geprüfte [Studie zu `claude-code-from-source`](../../docs/research/claude-code-from-source-repository-audit-2026-08-16.md)
+Die geprüfte [Studie zu `claude-code-from-source`](../evidence-library-DE.md#source-notes)
 ist nur Referenzmaterial und keine offizielle Implementierungsquelle. Für eine
 plattformübergreifende Lehre bleiben daraus diese neu formulierten
 Designfragen:

@@ -15,7 +15,7 @@ NAVIGATION_FILE = ROOT / "docs/governance/book-navigation.yaml"
 OUTPUT_FILE = ROOT / "book/title-map.json"
 ENGLISH_TOC = ROOT / "book/table-of-contents-EN.md"
 ENGLISH_HEADING_RE = re.compile(r"(?m)^### Chapter (\d+) — .+$")
-LOCALE_KEYS = ("en", "zh", "es", "ja", "ko", "de")
+LOCALE_KEYS = ("en", "zh", "es", "ja", "ko", "de", "zh-tw")
 
 
 def load_json(path: Path) -> Any:
@@ -85,7 +85,7 @@ def records_by_id(title_map: dict[str, Any]) -> dict[str, dict[str, Any]]:
                 isinstance(value.get(locale), str) and value[locale].strip()
                 for locale in LOCALE_KEYS
             ):
-                raise ValueError(f"title map {role} titles must be non-empty for all six locales: {item['id']}")
+                raise ValueError(f"title map {role} titles must be non-empty for all seven locales: {item['id']}")
         records[item["id"]] = item
     return records
 

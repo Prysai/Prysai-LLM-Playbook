@@ -40,7 +40,7 @@ No confundas estas capas:
 
 ## Patrones de arquitectura que conviene trasladar
 
-El [estudio auditado de `claude-code-from-source`](../../docs/research/claude-code-from-source-repository-audit-2026-08-16.md)
+El [estudio auditado de `claude-code-from-source`](../evidence-library-ES.md#source-notes)
 es material de referencia, no una fuente oficial de implementación. Reescrito
 para un curso independiente de plataformas, deja estas preguntas de diseño:
 

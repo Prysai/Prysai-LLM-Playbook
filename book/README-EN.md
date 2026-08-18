@@ -5,7 +5,7 @@
 > as runtime-verified until its evidence record exists.
 
 <!-- language-switcher:start -->
-**Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
+**Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md)
 <!-- language-switcher:end -->
 
 ## Read the LLM foundation core first
@@ -179,7 +179,7 @@ used when it is explicitly marked as migration pending, as above. See the
 [locale-suffixed content decision](../docs/adr/0010-locale-suffixed-content.md)
 for the canonical matrix and translation-status rules.
 
-The English entry files are source-locale files. All six locales now have
+The English entry files are source-locale files. All seven locales now have
 reader-facing paths for the 22 chapters and 18 Labs. That coverage still does
 not establish independent language review, semantic equivalence, learner
 outcomes, or platform behavior; those evidence types remain separate.

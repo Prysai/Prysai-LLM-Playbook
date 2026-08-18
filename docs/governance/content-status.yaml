@@ -694,7 +694,8 @@
       "es",
       "ja",
       "ko",
-      "de"
+      "de",
+      "zh-tw"
     ],
     "ui_language_options": [
       "en",
@@ -702,7 +703,8 @@
       "es",
       "ja",
       "ko",
-      "de"
+      "de",
+      "zh-tw"
     ],
     "repository_content_locales": [
       "en",
@@ -710,7 +712,8 @@
       "es",
       "ja",
       "ko",
-      "de"
+      "de",
+      "zh-tw"
     ],
     "repository_locale_status": "migration",
     "locale_matrix": "docs/governance/locale-matrix.yaml",

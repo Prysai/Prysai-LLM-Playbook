@@ -1110,9 +1110,11 @@ try {
   await universalSeamRawPage.screenshot({ path: path.join(visualEvidenceDirectory, 'universal-seams-mobile-visual-route.png') });
   await universalSeamRawPage.close();
 
-  // The five-unit LLM Foundation Core is an English source route for now. It
-  // must render through the Reader when addressed directly, while every other
-  // locale fails closed instead of projecting the English lesson silently.
+  // The five-unit LLM Foundation Core is the canonical English contract. Its
+  // non-English entry projections must resolve to an existing same-locale
+  // teaching page; the Reader must never show the English source under a
+  // translated shell. Truly unregistered project material is checked below
+  // for the separate fail-closed behavior.
   const coreRouteChecks = [
     ['llm-foundation-core-v1-EN.md', /LLM Foundation Core v1/i],
     ['llm-core-first-generation-EN.md', /Context, instruction, and a first generation/i],
@@ -1120,10 +1122,17 @@ try {
     ['llm-core-check-repair-EN.md', /Check, repair, and state limits/i],
     ['llm-core-unseen-transfer-EN.md', /Repeat the method on an unseen task/i],
   ];
-  const unavailableCoreLocales = { zh: 'zh-CN', es: 'es', ja: 'ja', ko: 'ko', de: 'de' };
+  const localeSuffix = { en: 'EN', zh: 'ZH', es: 'ES', ja: 'JA', ko: 'KO', de: 'DE', 'zh-tw': 'ZHTW' };
+  const coreProjectionStems = {
+    'llm-foundation-core-v1-EN.md': 'book/guides/llm-fundamentals',
+    'llm-core-first-generation-EN.md': 'book/routes/universal-core-foundations',
+    'llm-core-visible-failures-EN.md': 'book/communication-clinic',
+    'llm-core-check-repair-EN.md': 'book/chapters/09-verification-and-recovery',
+    'llm-core-unseen-transfer-EN.md': 'book/routes/first-safe-change',
+  };
   const coreRoutePage = await context.newPage();
-  const unavailableCoreLocalePages = await Promise.all(
-    Object.entries(unavailableCoreLocales).map(async ([locale, htmlLang]) => ({
+  const localizedCorePages = await Promise.all(
+    Object.entries({ zh: 'zh-CN', es: 'es', ja: 'ja', ko: 'ko', de: 'de', 'zh-tw': 'zh-TW' }).map(async ([locale, htmlLang]) => ({
       locale,
       htmlLang,
       page: await context.newPage(),
@@ -1136,12 +1145,19 @@ try {
     assert.match(await coreRoutePage.locator('[data-reader-article] h1').innerText(), titlePattern, `English core route did not render: ${sourceName}`);
     assert.equal(await coreRoutePage.locator('[data-reader-article]').getAttribute('data-reader-translation-status'), 'source', `English core route is not marked as source: ${sourceName}`);
 
-    await Promise.all(unavailableCoreLocalePages.map(async ({ locale, htmlLang, page: localePage }) => {
+    await Promise.all(localizedCorePages.map(async ({ locale, htmlLang, page: localePage }) => {
       await localePage.goto(`${origin}/site/reader.html?path=${sourcePath}&lang=${locale}`, { waitUntil: 'domcontentloaded' });
       await localePage.locator('[data-reader-article][aria-busy="false"]').waitFor();
-      assert.equal(await localePage.locator('html').getAttribute('lang'), htmlLang, `untranslated core route changed the document language: ${sourceName}/${locale}`);
-      assert.equal(await localePage.locator('[data-reader-article] h1').count(), 0, `untranslated core route rendered English under ${locale}: ${sourceName}`);
-      assert.equal(await localePage.locator('.reader-error').count(), 1, `untranslated core route did not fail closed: ${sourceName}/${locale}`);
+      assert.equal(await localePage.locator('html').getAttribute('lang'), htmlLang, `core route changed the document language: ${sourceName}/${locale}`);
+      assert.equal(await localePage.locator('.reader-error').count(), 0, `localized core route failed closed: ${sourceName}/${locale}`);
+      assert.equal(await localePage.locator('[data-reader-article] h1').count(), 1, `localized core route did not render a local teaching page: ${sourceName}/${locale}`);
+      const expectedPath = `${coreProjectionStems[sourceName]}-${localeSuffix[locale]}.md`;
+      // Source path lives inside a closed <details> panel by default.  Use
+      // textContent for this structural assertion; Playwright's innerText
+      // intentionally omits text in closed disclosure content even though
+      // the Reader has rendered the correct path.
+      assert.equal((await localePage.locator('[data-reader-path]').textContent()).trim(), expectedPath, `localized core route did not project to the declared same-locale page: ${sourceName}/${locale}`);
+      assert.equal(await localePage.locator('[data-reader-article]').getAttribute('data-reader-effective-locale'), locale, `localized core route rendered with the wrong effective locale: ${sourceName}/${locale}`);
     }));
   }
 
@@ -1195,7 +1211,7 @@ try {
   assert.equal(await coreReceiptPage.locator('[data-reader-core-card]').isHidden(), true, 'core receipt panel leaked onto a non-core Reader route');
   await coreReceiptPage.close();
   await coreRoutePage.close();
-  await Promise.all(unavailableCoreLocalePages.map(({ page: localePage }) => localePage.close()));
+  await Promise.all(localizedCorePages.map(({ page: localePage }) => localePage.close()));
 
   // This board is linked from both English and Chinese Chapter 9. Keep its
   // standalone reading route phone-fitted instead of silently restoring a

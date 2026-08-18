@@ -5,7 +5,7 @@
 > 简体中文书稿入口（`ZH`）。入口、序言、目录、22 章、18 项实验、两条新手路线和一组新手提示卡均已有中文候选内容；独立语言审校与学习者运行证据仍待完成。
 
 <!-- language-switcher:start -->
-**语言：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | 繁體中文（尚未提供）
+**语言：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md)
 <!-- language-switcher:end -->
 
 ## 先按教材主线阅读

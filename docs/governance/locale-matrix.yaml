@@ -41,6 +41,12 @@
       "url_token": "de",
       "html_lang": "de",
       "display_name": "Deutsch"
+    },
+    "ZHTW": {
+      "suffix": "ZHTW",
+      "url_token": "zh-tw",
+      "html_lang": "zh-TW",
+      "display_name": "繁體中文"
     }
   },
   "locale_neutral_paths": [
@@ -117,31 +123,71 @@
       "content_id": "llm-foundation-core-v1",
       "kind": "learning-route",
       "path": "book/routes/llm-foundation-core-v1-EN.md",
-      "content_status": "candidate"
+      "content_status": "candidate",
+      "localized_paths": {
+        "ZH": "book/guides/llm-fundamentals-ZH.md",
+        "ES": "book/guides/llm-fundamentals-ES.md",
+        "JA": "book/guides/llm-fundamentals-JA.md",
+        "KO": "book/guides/llm-fundamentals-KO.md",
+        "DE": "book/guides/llm-fundamentals-DE.md",
+        "ZHTW": "book/guides/llm-fundamentals-ZHTW.md"
+      }
     },
     {
       "content_id": "llm-core-first-generation",
       "kind": "learning-route",
       "path": "book/routes/llm-core-first-generation-EN.md",
-      "content_status": "candidate"
+      "content_status": "candidate",
+      "localized_paths": {
+        "ZH": "book/routes/universal-core-foundations-ZH.md",
+        "ES": "book/routes/universal-core-foundations-ES.md",
+        "JA": "book/routes/universal-core-foundations-JA.md",
+        "KO": "book/routes/universal-core-foundations-KO.md",
+        "DE": "book/routes/universal-core-foundations-DE.md",
+        "ZHTW": "book/routes/universal-core-foundations-ZHTW.md"
+      }
     },
     {
       "content_id": "llm-core-visible-failures",
       "kind": "learning-route",
       "path": "book/routes/llm-core-visible-failures-EN.md",
-      "content_status": "candidate"
+      "content_status": "candidate",
+      "localized_paths": {
+        "ZH": "book/communication-clinic-ZH.md",
+        "ES": "book/communication-clinic-ES.md",
+        "JA": "book/communication-clinic-JA.md",
+        "KO": "book/communication-clinic-KO.md",
+        "DE": "book/communication-clinic-DE.md",
+        "ZHTW": "book/communication-clinic-ZHTW.md"
+      }
     },
     {
       "content_id": "llm-core-check-repair",
       "kind": "learning-route",
       "path": "book/routes/llm-core-check-repair-EN.md",
-      "content_status": "candidate"
+      "content_status": "candidate",
+      "localized_paths": {
+        "ZH": "book/chapters/09-verification-and-recovery-ZH.md",
+        "ES": "book/chapters/09-verification-and-recovery-ES.md",
+        "JA": "book/chapters/09-verification-and-recovery-JA.md",
+        "KO": "book/chapters/09-verification-and-recovery-KO.md",
+        "DE": "book/chapters/09-verification-and-recovery-DE.md",
+        "ZHTW": "book/chapters/09-verification-and-recovery-ZHTW.md"
+      }
     },
     {
       "content_id": "llm-core-unseen-transfer",
       "kind": "learning-route",
       "path": "book/routes/llm-core-unseen-transfer-EN.md",
-      "content_status": "candidate"
+      "content_status": "candidate",
+      "localized_paths": {
+        "ZH": "book/routes/first-safe-change-ZH.md",
+        "ES": "book/routes/first-safe-change-ES.md",
+        "JA": "book/routes/first-safe-change-JA.md",
+        "KO": "book/routes/first-safe-change-KO.md",
+        "DE": "book/routes/first-safe-change-DE.md",
+        "ZHTW": "book/routes/first-safe-change-ZHTW.md"
+      }
     }
   ],
   "content": [
@@ -208,6 +254,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "German route translation exists; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/routes/first-safe-change-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -274,6 +330,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "Localized source draft exists; independent German language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/guides/learning-practice-contract-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -340,6 +406,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "German source exists; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/lab-018-language-transfer-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -400,6 +476,16 @@
           "source_revision": "worktree-2026-08-15",
           "coverage": "full",
           "reason": "Localized source draft exists; independent German language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/routes/universal-core-foundations-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -466,6 +552,16 @@
           "coverage": "starter-card subset",
           "run_status": "not_run",
           "reason": "A German starter-card subset exists; it is not a complete translation of the full English pack and independent language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/communication-clinic-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -529,6 +625,16 @@
           "source_revision": "dd08a68",
           "coverage": "full",
           "reason": "Initial translation slice; independent language review pending."
+        },
+        "ZHTW": {
+          "path": "README-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -592,6 +698,16 @@
           "source_revision": "worktree-2026-08-15",
           "coverage": "full",
           "reason": "Initial translation slice; independent language review pending."
+        },
+        "ZHTW": {
+          "path": "book/README-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -655,6 +771,16 @@
           "source_revision": "dd08a68",
           "coverage": "full",
           "reason": "Initial translation slice; independent language review pending."
+        },
+        "ZHTW": {
+          "path": "book/preface-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -718,6 +844,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "All 18 local German Lab files exist; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/README-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -781,6 +917,16 @@
           "source_revision": "dd08a68",
           "coverage": "full",
           "reason": "Initial translation slice; independent language review pending."
+        },
+        "ZHTW": {
+          "path": "book/table-of-contents-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -844,6 +990,16 @@
           "source_revision": "f521e29",
           "coverage": "full",
           "reason": "Initial translation slice; independent language review pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/01-gpt-and-codex-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -907,6 +1063,16 @@
           "source_revision": "worktree-2026-08-15",
           "coverage": "full",
           "reason": "German Chapter 2 translation is available; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/02-first-safe-task-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -970,6 +1136,16 @@
           "source_revision": "worktree-2026-08-15",
           "coverage": "full",
           "reason": "German Chapter 3 translation is available; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/03-task-protocol-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -1033,6 +1209,16 @@
           "source_revision": "worktree-2026-08-11",
           "coverage": "full",
           "reason": "English source slice is published first; German translation and review are pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/04-context-permissions-and-agent-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -1096,6 +1282,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "Localized source draft exists; independent German language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/05-choose-the-codex-surface-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -1159,6 +1355,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "Localized source draft exists; independent German language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/06-model-selection-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -1222,6 +1428,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "Localized source draft exists; independent German language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/07-skills-plugins-and-tools-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -1285,6 +1501,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "German source exists; independent language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/08-full-lifecycle-workflow-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -1348,6 +1574,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "German source exists; independent language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/09-verification-and-recovery-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -1411,6 +1647,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "German source exists; independent language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/10-planning-and-slicing-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -1474,6 +1720,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "German source exists; independent language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/11-designing-a-skill-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -1537,6 +1793,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "German source exists; independent language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/12-agent-loop-and-stop-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -1600,6 +1866,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "German source exists; independent language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/13-action-boundaries-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -1663,6 +1939,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "German source exists; independent language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/14-discover-and-audit-skills-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -1726,6 +2012,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "German source exists; independent language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/15-research-track-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -1789,6 +2085,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "German source exists; independent language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/16-engineering-track-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -1852,6 +2158,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "German source exists; independent language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/17-marketing-track-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -1915,6 +2231,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "German source exists; independent language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/18-content-design-data-automation-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -1978,6 +2304,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "German source exists; independent language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/19-evaluate-models-and-workflows-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -2041,6 +2377,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "German source exists; independent language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/20-personal-codex-work-system-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -2104,6 +2450,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "German source exists; independent language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/21-team-capability-system-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -2167,6 +2523,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "German source exists; independent language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/chapters/22-continuous-update-and-future-proofing-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -2236,6 +2602,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "Initial translation slice; independent language review pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/lab-011-gpt-codex-boundaries-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -2305,6 +2681,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "German candidate translation exists; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/lab-001-first-safe-task-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -2374,6 +2760,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "German Lab 002 translation is available; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/lab-002-task-protocol-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -2443,6 +2839,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "Localized source draft exists; independent German language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/lab-003-evidence-review-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -2512,6 +2918,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "Localized source draft exists; independent German language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/lab-004-skill-selection-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -2581,6 +2997,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "German source exists; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/lab-005-design-a-skill-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -2650,6 +3076,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "German source exists; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/lab-008-research-question-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -2719,6 +3155,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "German source exists; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/lab-009-engineering-lifecycle-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -2788,6 +3234,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "German source exists; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/lab-010-product-context-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -2857,6 +3313,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "German source exists; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/lab-012-team-capability-migration-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -2926,6 +3392,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "German source exists; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/lab-013-l3-vertical-slice-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -2995,6 +3471,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "German source exists; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/lab-006-agent-stop-conditions-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -3064,6 +3550,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "English source slice is published first; German translation and review are pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/lab-007-action-boundaries-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -3130,6 +3626,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "German source exists; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/lab-014-resume-reconciliation-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -3196,6 +3702,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "German source exists; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/lab-015-evidence-delivery-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -3262,6 +3778,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "German source exists; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/lab-016-side-effect-boundary-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -3328,6 +3854,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "Localized prompt pack exists; independent German language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/spanish-practice-loop-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -3394,6 +3930,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "Localized prompt pack exists; independent German language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/work-update-practice-loop-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -3460,6 +4006,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "Localized prompt pack exists; independent German language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/research-check-practice-loop-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -3520,6 +4076,16 @@
           "source_revision": "worktree-2026-08-16",
           "coverage": "full",
           "reason": "Localized evidence navigation exists; independent German language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/evidence-library-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -3586,6 +4152,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "German source exists; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/labs/lab-017-skill-discovery-audit-ZHTW.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -3652,6 +4228,16 @@
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-16",
           "reason": "German adapter guide exists; independent language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/routes/platform-adapter-guide-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -3718,6 +4304,16 @@
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-16",
           "reason": "German French-loop translation exists; independent language review remains pending."
+        },
+        "ZHTW": {
+          "path": "book/french-practice-loop-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
@@ -3784,6 +4380,16 @@
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-17-foundation-observations",
           "reason": "The guide now mirrors the current English foundation contract in German; independent language review and learner-run evidence remain pending."
+        },
+        "ZHTW": {
+          "path": "book/guides/llm-fundamentals-ZHTW.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "full",
+          "run_status": "not_run",
+          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     }

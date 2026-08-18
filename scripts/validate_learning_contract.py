@@ -66,26 +66,26 @@ CHAPTER_CONTRACT = {
     # Keep both headings valid: early chapters use the explicit teaching
     # heading, while later chapters use the shorter project convention.
     "problem": re.compile(
-        r"(?m)^##\s+(?:本章要解决的问题|问题(?:：.*)?|The problem this chapter solves|"
+        r"(?m)^##\s+(?:本章要解决的问题|本章要解決的問題|问题(?:：.*)?|問題(?:：.*)?|The problem this chapter solves|"
         r"Das Problem, das dieses Kapitel löst|Das Problem dieses Kapitels|"
-        r"El problema que resuelve este capítulo|この章が解決する問題|"
+        r"El problema que resuelve este capítulo|この章が解決する問題|本章要解決的問題|"
         r"이 장에서 해결하는 문제|이 장이 해결하는 문제)\s*$",
         re.IGNORECASE,
     ),
     "objective": re.compile(
-        r"(?m)^##\s+(?:学习目标|Learning objectives|Lernziele|Objetivos de aprendizaje|"
+        r"(?m)^##\s+(?:学习目标|學習目標|Learning objectives|Lernziele|Objetivos de aprendizaje|"
         r"学習目標|학습 목표)\s*$",
         re.IGNORECASE,
     ),
     "real_problem": re.compile(
-        r"现实问题入口|真实问题入口|field cases?|real[- ]world (?:problem|cases?|entry point)|"
-        r"现场案例|casos de campo|problemas reales|praxisfälle|reale Probleme|"
+        r"现实问题入口|現實問題入口|真实问题入口|真實問題入口|field cases?|real[- ]world (?:problem|cases?|entry point)|"
+        r"现场案例|現場案例|真實問題入口|casos de campo|problemas reales|praxisfälle|reale Probleme|"
         r"現場の事例|現実の問題|현장 사례|실제 문제",
         re.IGNORECASE,
     ),
     "experiment": re.compile(
-        r"(?:^##\s+.*(?:实验|experiment|experimento|実験|실험)|"
-        r"^###\s+.*(?:实验|experiment|experimento|実験|실험)|实验：)",
+        r"(?:^##\s+.*(?:实验|實驗|experiment|experimento|実験|실험)|"
+        r"^###\s+.*(?:实验|實驗|experiment|experimento|実験|실험)|实验：|實驗：)",
         re.MULTILINE | re.IGNORECASE,
     ),
     "setup": re.compile(
@@ -94,40 +94,40 @@ CHAPTER_CONTRACT = {
         re.MULTILINE | re.IGNORECASE,
     ),
     "task": re.compile(
-        r"(?:^###\s+.*(?:Task|任务|操作步骤|实验步骤|Aufgabe|Tarea|タスク|작업).*$)",
+        r"(?:^###\s+.*(?:Task|任务|任務|操作步骤|操作步驟|实验步骤|實驗步驟|Aufgabe|Tarea|タスク|작업).*$)",
         re.MULTILINE | re.IGNORECASE,
     ),
     "evidence": re.compile(
-        r"(?:^###\s+.*(?:Evidence|证据|记录|必须保存|Belege?|Evidencia|証拠|증거).*$)",
+        r"(?:^###\s+.*(?:Evidence|证据|證據|记录|記錄|必须保存|必須保存|Belege?|Evidencia|証拠|증거).*$)",
         re.MULTILINE | re.IGNORECASE,
     ),
     "boundary": re.compile(
         r"(?:^###\s+.*(?:Failure variant|失败|边界|Failure|failure|boundary|"
         r"Fehler|Grenze|Fallo|límite|失敗|境界|실패|경계)|"
         r"失败|边界|停止|风险|不适用|failure|boundary|stop|risk|limitation|"
-        r"Fehler|Grenze|Stopp|Risiko|Fallo|límite|detener|失敗|境界|停止|"
+        r"Fehler|Grenze|Stopp|Risiko|Fallo|límite|detener|失敗|境界|邊界|停止|風險|不適用|"
         r"リスク|실패|경계|중단|위험)",
         re.MULTILINE | re.IGNORECASE,
     ),
     "reflection": re.compile(
-        r"(?:^###\s+.*(?:Reflection|复盘|反思|Reflexion|Reflexión|振り返り|"
-        r"회고|성찰).*$|复盘|反思|reflection|reflexion|reflexión|振り返り|회고|성찰)",
+        r"(?:^###\s+.*(?:Reflection|复盘|復盤|覆盤|反思|Reflexion|Reflexión|振り返り|"
+        r"회고|성찰).*$|复盘|復盤|覆盤|反思|reflection|reflexion|reflexión|振り返り|회고|성찰)",
         re.MULTILINE | re.IGNORECASE,
     ),
     "transfer": re.compile(
-        r"(?m)^(?:##|###)\s+(?:迁移|迁移练习|Transfer|Transfer task|"
+        r"(?m)^(?:##|###)\s+(?:迁移|遷移|迁移练习|遷移練習|遷移任務|Transfer|Transfer task|"
         r"Transfer exercise|Transferaufgabe|Tarea de transferencia|"
         r"Transferencia|Übertragung|迁移任务|移行|移行タスク|전환|전이 과제)\s*$",
         re.IGNORECASE,
     ),
     "acceptance": re.compile(
-        r"^##\s+.*(?:本章验收|我真的学会了吗|验收清单|Acceptance checklist|"
+        r"^##\s+.*(?:本章验收|本章驗收|我真的学会了吗|我真的學會了嗎|验收清单|驗收清單|Acceptance checklist|"
         r"Abnahme-Checkliste|Abnahmecheckliste|Lista de aceptación|"
         r"受け入れチェックリスト|合格チェックリスト|수용 체크리스트|합격 체크리스트).*$",
         re.MULTILINE | re.IGNORECASE,
     ),
     "sources": re.compile(
-        r"来源与更新提示|易变事实与来源|稳定原则|治理的连接|Sources and maintenance boundary|"
+        r"来源与更新提示|來源與更新提示|來源與更新邊界|易变事实与来源|易變事實與來源|来源与维护边界|來源與維護邊界|來源與維護提示|稳定原则|治理的连接|Sources and maintenance boundary|"
         r"Sources and review boundary|Sources and update boundary|来源与维护边界|来源与更新边界|"
         r"Quellen und Wartungsgrenze|Quellen und Aktualitätsgrenze|Fuentes y límite de mantenimiento|"
         r"Fuentes y actualización|出典と保守の境界|出典と更新境界|출처 및 유지보수 경계|출처와 갱신 경계",

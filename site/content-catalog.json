@@ -7,7 +7,8 @@
         "es": "Comprende GPT antes que Codex",
         "ja": "GPT を理解してから Codex へ",
         "ko": "Codex 전에 GPT를 이해한다",
-        "de": "Erst GPT verstehen, dann Codex"
+        "de": "Erst GPT verstehen, dann Codex",
+        "zh-tw": "先理解 GPT，再理解 Codex"
       }
     },
     "chapter-02": {
@@ -17,7 +18,8 @@
         "es": "Completa una tarea segura y verificable",
         "ja": "安全で検証可能なタスクを完了する",
         "ko": "안전하고 검증 가능한 작업을 완료한다",
-        "de": "Eine sichere, verifizierbare Aufgabe abschließen"
+        "de": "Eine sichere, verifizierbare Aufgabe abschließen",
+        "zh-tw": "完成安全、可验证的任务"
       }
     },
     "chapter-03": {
@@ -27,7 +29,8 @@
         "es": "Convierte un deseo en un protocolo de tarea",
         "ja": "願いをタスクプロトコルにする",
         "ko": "바람을 작업 프로토콜로 바꾼다",
-        "de": "Einen Wunsch in ein Task-Protokoll verwandeln"
+        "de": "Einen Wunsch in ein Task-Protokoll verwandeln",
+        "zh-tw": "把愿望变成任务协议"
       }
     },
     "chapter-04": {
@@ -37,7 +40,8 @@
         "es": "Contexto, permisos y límites de Agent",
         "ja": "コンテキスト・権限・Agent の境界",
         "ko": "컨텍스트, 권한, Agent 경계",
-        "de": "Kontext, Berechtigungen und Agent-Grenzen"
+        "de": "Kontext, Berechtigungen und Agent-Grenzen",
+        "zh-tw": "上下文、权限与 Agent 边界"
       }
     },
     "chapter-05": {
@@ -47,7 +51,8 @@
         "es": "Elige la superficie correcta de Codex",
         "ja": "適切な Codex の利用面を選ぶ",
         "ko": "올바른 Codex 작업면을 고른다",
-        "de": "Die richtige Codex-Oberfläche wählen"
+        "de": "Die richtige Codex-Oberfläche wählen",
+        "zh-tw": "选择正确的 Codex 工作面"
       }
     },
     "chapter-06": {
@@ -57,7 +62,8 @@
         "es": "Elegir modelo no es adorar al modelo",
         "ja": "モデル選択はモデル崇拝ではない",
         "ko": "모델 선택은 모델 숭배가 아니다",
-        "de": "Modellwahl ist keine Modellverehrung"
+        "de": "Modellwahl ist keine Modellverehrung",
+        "zh-tw": "模型选择不是模型崇拜"
       }
     },
     "chapter-07": {
@@ -67,7 +73,8 @@
         "es": "Cómo dividen el trabajo Skills, Plugins, MCP y herramientas",
         "ja": "Skill・Plugin・MCP・ツールがどう作業を分担するか",
         "ko": "Skill, Plugin, MCP, 도구가 작업을 어떻게 나누는가",
-        "de": "Wie Skills, Plugins, MCP und Tools die Arbeit aufteilen"
+        "de": "Wie Skills, Plugins, MCP und Tools die Arbeit aufteilen",
+        "zh-tw": "Skill、Plugin、MCP 与工具如何分工"
       }
     },
     "chapter-08": {
@@ -77,7 +84,8 @@
         "es": "El ciclo de vida completo, de la definición a la entrega",
         "ja": "定義から納品までの完全なライフサイクル",
         "ko": "정의에서 전달까지의 전체 수명주기",
-        "de": "Der vollständige Lebenszyklus von der Definition bis zur Lieferung"
+        "de": "Der vollständige Lebenszyklus von der Definition bis zur Lieferung",
+        "zh-tw": "从定义到交付的完整生命周期"
       }
     },
     "chapter-09": {
@@ -87,7 +95,8 @@
         "es": "Verificación, duda y recuperación",
         "ja": "検証・疑い・リカバリ",
         "ko": "검증, 의심, 복구",
-        "de": "Verifikation, Zweifel und Recovery"
+        "de": "Verifikation, Zweifel und Recovery",
+        "zh-tw": "验证、怀疑与恢复"
       }
     },
     "chapter-10": {
@@ -97,7 +106,8 @@
         "es": "Planificación y slices verticales",
         "ja": "計画と垂直スライス",
         "ko": "계획과 수직 슬라이스",
-        "de": "Planung und vertikale Schnitte"
+        "de": "Planung und vertikale Schnitte",
+        "zh-tw": "规划与竖向切片"
       }
     },
     "chapter-11": {
@@ -107,7 +117,8 @@
         "es": "Diseña una Skill que se gane su lugar",
         "ja": "採用に値する Skill を設計する",
         "ko": "자리할 이유가 있는 Skill을 설계한다",
-        "de": "Einen Skill entwerfen, der seinen Platz verdient"
+        "de": "Einen Skill entwerfen, der seinen Platz verdient",
+        "zh-tw": "设计一个真正有用的 Skill"
       }
     },
     "chapter-12": {
@@ -117,7 +128,8 @@
         "es": "El loop de Agent, el estado y las condiciones de parada",
         "ja": "Agent のループ・状態・停止条件",
         "ko": "Agent 루프, 상태, 중지 조건",
-        "de": "Die Agent-Schleife, Zustand und Stoppbedingungen"
+        "de": "Die Agent-Schleife, Zustand und Stoppbedingungen",
+        "zh-tw": "Agent 的循环、状态与停止条件"
       }
     },
     "chapter-13": {
@@ -127,7 +139,8 @@
         "es": "Límites de acción en archivos, terminales, navegadores y GitHub",
         "ja": "ファイル・端末・ブラウザ・GitHub をまたぐ操作の境界",
         "ko": "파일, 터미널, 브라우저, GitHub 전반의 행동 경계",
-        "de": "Aktionsgrenzen bei Dateien, Terminals, Browsern und GitHub"
+        "de": "Aktionsgrenzen bei Dateien, Terminals, Browsern und GitHub",
+        "zh-tw": "文件、终端、浏览器与 GitHub 的行动边界"
       }
     },
     "chapter-14": {
@@ -137,7 +150,8 @@
         "es": "Descubre, instala y audita una Skill externa",
         "ja": "外部 Skill の発見・インストール・監査",
         "ko": "외부 Skill을 발견하고 설치하며 감사한다",
-        "de": "Einen externen Skill entdecken, installieren und prüfen"
+        "de": "Einen externen Skill entdecken, installieren und prüfen",
+        "zh-tw": "发现、安装与审查外部 Skill"
       }
     },
     "chapter-15": {
@@ -147,7 +161,8 @@
         "es": "Investigación: de la pregunta al conocimiento auditable",
         "ja": "リサーチ：質問から監査可能な知識へ",
         "ko": "연구: 질문에서 감사 가능한 지식까지",
-        "de": "Research: von der Frage zu prüfbarem Wissen"
+        "de": "Research: von der Frage zu prüfbarem Wissen",
+        "zh-tw": "研究：从问题到可审查知识"
       }
     },
     "chapter-16": {
@@ -157,7 +172,8 @@
         "es": "Ingeniería: de la idea al software confiable",
         "ja": "エンジニアリング：アイデアから信頼できるソフトウェアへ",
         "ko": "엔지니어링: 아이디어에서 신뢰할 수 있는 소프트웨어까지",
-        "de": "Engineering: von der Idee zu zuverlässiger Software"
+        "de": "Engineering: von der Idee zu zuverlässiger Software",
+        "zh-tw": "工程：从想法到可靠软件"
       }
     },
     "chapter-17": {
@@ -167,7 +183,8 @@
         "es": "Marketing: del contexto de producto a los experimentos",
         "ja": "マーケティング：プロダクトコンテキストから実験へ",
         "ko": "마케팅: 제품 컨텍스트에서 실험까지",
-        "de": "Marketing: vom Produktkontext zu Experimenten"
+        "de": "Marketing: vom Produktkontext zu Experimenten",
+        "zh-tw": "营销：从产品上下文到实验"
       }
     },
     "chapter-18": {
@@ -177,7 +194,8 @@
         "es": "Contenido, diseño, datos y automatización",
         "ja": "コンテンツ・デザイン・データ・自動化",
         "ko": "콘텐츠, 디자인, 데이터, 자동화",
-        "de": "Content, Design, Daten und Automatisierung"
+        "de": "Content, Design, Daten und Automatisierung",
+        "zh-tw": "内容、设计、数据与自动化"
       }
     },
     "chapter-19": {
@@ -187,7 +205,8 @@
         "es": "Evalúa modelos y flujos de trabajo",
         "ja": "モデルとワークフローを評価する",
         "ko": "모델과 워크플로를 평가한다",
-        "de": "Modelle und Workflows evaluieren"
+        "de": "Modelle und Workflows evaluieren",
+        "zh-tw": "评估模型与工作流"
       }
     },
     "chapter-20": {
@@ -197,7 +216,8 @@
         "es": "Construye un sistema de trabajo personal con Codex",
         "ja": "個人の Codex 仕事システムを構築する",
         "ko": "개인 Codex 작업 시스템을 구축한다",
-        "de": "Ein persönliches Codex-Arbeitssystem aufbauen"
+        "de": "Ein persönliches Codex-Arbeitssystem aufbauen",
+        "zh-tw": "建立个人 Codex 工作系统"
       }
     },
     "chapter-21": {
@@ -207,7 +227,8 @@
         "es": "Construye un sistema de capacidad de equipo",
         "ja": "チーム能力システムを構築する",
         "ko": "팀 역량 시스템을 구축한다",
-        "de": "Ein Team-Capability-System aufbauen"
+        "de": "Ein Team-Capability-System aufbauen",
+        "zh-tw": "建立团队能力系统"
       }
     },
     "chapter-22": {
@@ -217,7 +238,8 @@
         "es": "Mantén el sistema al día y recuperable",
         "ja": "システムを最新かつ復元可能に保つ",
         "ko": "시스템을 최신으로 유지하고 복구 가능하게 한다",
-        "de": "Das System aktuell und wiederherstellbar halten"
+        "de": "Das System aktuell und wiederherstellbar halten",
+        "zh-tw": "持续更新并保持可恢复"
       }
     }
   },
@@ -229,7 +251,8 @@
         "es": "Primera tarea segura",
         "ja": "最初の安全なタスク",
         "ko": "첫 번째 안전한 작업",
-        "de": "Erste sichere Aufgabe"
+        "de": "Erste sichere Aufgabe",
+        "zh-tw": "第一个安全任务"
       }
     },
     "lab-002": {
@@ -239,7 +262,8 @@
         "es": "Protocolo de tarea",
         "ja": "タスクプロトコル",
         "ko": "작업 프로토콜",
-        "de": "Task-Protokoll"
+        "de": "Task-Protokoll",
+        "zh-tw": "任务协议"
       }
     },
     "lab-003": {
@@ -249,7 +273,8 @@
         "es": "Revisión de evidencia",
         "ja": "証拠レビュー",
         "ko": "증거 리뷰",
-        "de": "Beleg-Prüfung"
+        "de": "Beleg-Prüfung",
+        "zh-tw": "证据审查"
       }
     },
     "lab-004": {
@@ -259,7 +284,8 @@
         "es": "Selección de Skill",
         "ja": "Skill の選択",
         "ko": "Skill 선택",
-        "de": "Skill-Auswahl"
+        "de": "Skill-Auswahl",
+        "zh-tw": "Skill 选择"
       }
     },
     "lab-005": {
@@ -269,7 +295,8 @@
         "es": "Diseña una Skill",
         "ja": "Skill の設計",
         "ko": "Skill 설계",
-        "de": "Einen Skill entwerfen"
+        "de": "Einen Skill entwerfen",
+        "zh-tw": "设计一个 Skill"
       }
     },
     "lab-006": {
@@ -279,7 +306,8 @@
         "es": "Condiciones de parada de Agent",
         "ja": "Agent の停止条件",
         "ko": "Agent 중지 조건",
-        "de": "Agent-Stoppbedingungen"
+        "de": "Agent-Stoppbedingungen",
+        "zh-tw": "Agent 停止条件"
       }
     },
     "lab-007": {
@@ -289,7 +317,8 @@
         "es": "Límites de acción",
         "ja": "操作の境界",
         "ko": "행동 경계",
-        "de": "Aktionsgrenzen"
+        "de": "Aktionsgrenzen",
+        "zh-tw": "行动边界"
       }
     },
     "lab-008": {
@@ -299,7 +328,8 @@
         "es": "Pregunta de investigación",
         "ja": "リサーチクエスチョン",
         "ko": "연구 질문",
-        "de": "Research-Frage"
+        "de": "Research-Frage",
+        "zh-tw": "研究问题"
       }
     },
     "lab-009": {
@@ -309,7 +339,8 @@
         "es": "Ciclo de vida de ingeniería",
         "ja": "エンジニアリングライフサイクル",
         "ko": "엔지니어링 수명주기",
-        "de": "Engineering-Lebenszyklus"
+        "de": "Engineering-Lebenszyklus",
+        "zh-tw": "工程生命周期"
       }
     },
     "lab-010": {
@@ -319,7 +350,8 @@
         "es": "Contexto de producto compartido",
         "ja": "共有プロダクトコンテキスト",
         "ko": "공유 제품 컨텍스트",
-        "de": "Gemeinsamer Produktkontext"
+        "de": "Gemeinsamer Produktkontext",
+        "zh-tw": "共享产品上下文"
       }
     },
     "lab-011": {
@@ -329,7 +361,8 @@
         "es": "Límites de GPT y Codex",
         "ja": "GPT と Codex の境界",
         "ko": "GPT와 Codex 경계",
-        "de": "GPT- und Codex-Grenzen"
+        "de": "GPT- und Codex-Grenzen",
+        "zh-tw": "GPT 与 Codex 边界"
       }
     },
     "lab-012": {
@@ -339,7 +372,8 @@
         "es": "Migración de capacidad de equipo",
         "ja": "チーム能力の移行",
         "ko": "팀 역량 마이그레이션",
-        "de": "Team-Capability-Migration"
+        "de": "Team-Capability-Migration",
+        "zh-tw": "团队能力迁移"
       }
     },
     "lab-013": {
@@ -349,7 +383,8 @@
         "es": "Slice vertical auditable",
         "ja": "監査可能な垂直スライス",
         "ko": "감사 가능한 수직 슬라이스",
-        "de": "Prüfbarer vertikaler Schnitt"
+        "de": "Prüfbarer vertikaler Schnitt",
+        "zh-tw": "可审计的竖向切片"
       }
     },
     "lab-014": {
@@ -359,7 +394,8 @@
         "es": "Conciliación de reanudación",
         "ja": "再開時の突き合わせ",
         "ko": "재개 대조",
-        "de": "Fortsetzungs-Abgleich"
+        "de": "Fortsetzungs-Abgleich",
+        "zh-tw": "恢复任务对账"
       }
     },
     "lab-015": {
@@ -369,7 +405,8 @@
         "es": "Entrega de evidencia",
         "ja": "証拠の納品",
         "ko": "증거 전달",
-        "de": "Beleglieferung"
+        "de": "Beleglieferung",
+        "zh-tw": "证据交付"
       }
     },
     "lab-016": {
@@ -379,7 +416,8 @@
         "es": "Límite de efectos secundarios",
         "ja": "副作用の境界",
         "ko": "부작용 경계",
-        "de": "Nebeneffekt-Grenze"
+        "de": "Nebeneffekt-Grenze",
+        "zh-tw": "副作用边界"
       }
     },
     "lab-017": {
@@ -389,7 +427,8 @@
         "es": "Auditoría de descubrimiento de Skill",
         "ja": "Skill 発見の監査",
         "ko": "Skill 발견 감사",
-        "de": "Skill-Entdeckungs-Audit"
+        "de": "Skill-Entdeckungs-Audit",
+        "zh-tw": "Skill 发现审计"
       }
     },
     "lab-018": {
@@ -399,7 +438,8 @@
         "es": "Transferencia de lenguaje escrito",
         "ja": "型付き言語の転移",
         "ko": "문자 언어 전이 연습",
-        "de": "Getippter Sprachtransfer"
+        "de": "Getippter Sprachtransfer",
+        "zh-tw": "文字语言迁移练习"
       }
     }
   },
@@ -411,7 +451,8 @@
         "es": "Primer cambio seguro",
         "ja": "最初の安全な変更",
         "ko": "첫 번째 안전한 변경",
-        "de": "Erste sichere Änderung"
+        "de": "Erste sichere Änderung",
+        "zh-tw": "第一次安全改动"
       },
       "status": "candidate",
       "run_status": "not_run"
@@ -423,7 +464,8 @@
         "es": "Paquete de práctica para principiantes",
         "ja": "初心者向けプラクティスパック",
         "ko": "초보자 연습 팩",
-        "de": "Praxis-Paket für Einsteiger"
+        "de": "Praxis-Paket für Einsteiger",
+        "zh-tw": "初学者实践包"
       },
       "status": "candidate",
       "run_status": "not_run",
@@ -449,7 +491,8 @@
         "es": "Contrato de práctica de aprendizaje",
         "ja": "学習プラクティス契約",
         "ko": "학습 연습 계약",
-        "de": "Lern-Praxisvertrag"
+        "de": "Lern-Praxisvertrag",
+        "zh-tw": "学习练习契约"
       },
       "status": "draft",
       "run_status": "not_run"
@@ -461,7 +504,8 @@
         "es": "Elige tu plataforma de LLM",
         "ja": "LLMプラットフォームの選び方",
         "ko": "LLM 플랫폼 선택하기",
-        "de": "Wähle deine LLM-Plattform"
+        "de": "Wähle deine LLM-Plattform",
+        "zh-tw": "选择你的 LLM 平台"
       }
     },
     "french-practice-loop": {
@@ -471,7 +515,8 @@
         "es": "Bucle de práctica de francés",
         "ja": "フランス語練習ループ",
         "ko": "프랑스어 연습 루프",
-        "de": "Französisch-Übungsschleife"
+        "de": "Französisch-Übungsschleife",
+        "zh-tw": "法语六步练习"
       }
     },
     "llm-fundamentals-guide": {
@@ -481,7 +526,8 @@
         "es": "Unidad 1: Qué es un modelo de lenguaje grande",
         "ja": "ユニット1：LLMとは何か",
         "ko": "단원 1: LLM이란 무엇인가",
-        "de": "Einheit 1: Was ist ein LLM?"
+        "de": "Einheit 1: Was ist ein LLM?",
+        "zh-tw": "单元 1：什么是大语言模型"
       }
     }
   },
@@ -493,7 +539,8 @@
         "es": "Dialogue Brief (resumen del diálogo)",
         "ja": "対話ブリーフ Dialogue Brief",
         "ko": "대화 브리핑",
-        "de": "Dialogue Brief"
+        "de": "Dialogue Brief",
+        "zh-tw": "首轮对话简报 Dialogue Brief"
       }
     },
     "prysai-first-turn-check": {
@@ -503,7 +550,8 @@
         "es": "First-Turn Check (comprobación del primer turno)",
         "ja": "初回ターンチェック First-Turn Check",
         "ko": "첫 턴 점검",
-        "de": "First-Turn Check"
+        "de": "First-Turn Check",
+        "zh-tw": "首轮请求检查 First-Turn Check"
       }
     },
     "prysai-codex-coach": {
@@ -513,7 +561,8 @@
         "es": "Codex Coach (coach de Codex)",
         "ja": "Codex コーチ Codex Coach",
         "ko": "Codex 코치",
-        "de": "Codex Coach"
+        "de": "Codex Coach",
+        "zh-tw": "Codex 学习教练"
       }
     },
     "prysai-task-protocol": {
@@ -523,7 +572,8 @@
         "es": "Task Protocol (protocolo de tarea)",
         "ja": "タスクプロトコル Task Protocol",
         "ko": "작업 프로토콜",
-        "de": "Task Protocol"
+        "de": "Task Protocol",
+        "zh-tw": "任务协议 Task Protocol"
       }
     },
     "prysai-evidence-review": {
@@ -533,7 +583,8 @@
         "es": "Evidence Review (revisión de evidencia)",
         "ja": "証拠レビュー Evidence Review",
         "ko": "증거 리뷰",
-        "de": "Evidence Review"
+        "de": "Evidence Review",
+        "zh-tw": "证据审查 Evidence Review"
       }
     },
     "prysai-skill-selector": {
@@ -543,7 +594,8 @@
         "es": "Skill Selector (selector de Skill)",
         "ja": "Skill セレクター Skill Selector",
         "ko": "Skill 선택기",
-        "de": "Skill Selector"
+        "de": "Skill Selector",
+        "zh-tw": "Skill 选择器 Skill Selector"
       }
     },
     "prysai-workflow-orchestrator": {
@@ -553,7 +605,8 @@
         "es": "Workflow Orchestrator (orquestador de flujos de trabajo)",
         "ja": "ワークフローオーケストレーター Workflow Orchestrator",
         "ko": "워크플로 오케스트레이터",
-        "de": "Workflow Orchestrator"
+        "de": "Workflow Orchestrator",
+        "zh-tw": "工作流编排 Workflow Orchestrator"
       }
     },
     "prysai-research-router": {
@@ -563,7 +616,8 @@
         "es": "Research Router (enrutador de investigación)",
         "ja": "リサーチルーター Research Router",
         "ko": "연구 라우터",
-        "de": "Research Router"
+        "de": "Research Router",
+        "zh-tw": "研究路由 Research Router"
       }
     },
     "prysai-product-context": {
@@ -573,7 +627,8 @@
         "es": "Product Context (contexto de producto)",
         "ja": "プロダクトコンテキスト Product Context",
         "ko": "제품 컨텍스트",
-        "de": "Product Context"
+        "de": "Product Context",
+        "zh-tw": "产品上下文 Product Context"
       }
     },
     "prysai-learning-coach": {
@@ -583,7 +638,8 @@
         "es": "Learning Coach (coach de aprendizaje)",
         "ja": "学習コーチ Learning Coach",
         "ko": "학습 코치",
-        "de": "Learning Coach"
+        "de": "Learning Coach",
+        "zh-tw": "学习教练 Learning Coach"
       }
     },
     "prysai-source-investigator": {
@@ -593,7 +649,8 @@
         "es": "Source Investigator (investigador de fuentes)",
         "ja": "情報源調査 Source Investigator",
         "ko": "출처 조사자",
-        "de": "Source Investigator"
+        "de": "Source Investigator",
+        "zh-tw": "来源调查 Source Investigator"
       }
     },
     "prysai-field-signal-curator": {
@@ -603,7 +660,8 @@
         "es": "Field Signal Curator (curador de señales de campo)",
         "ja": "現場シグナルキュレーター Field Signal Curator",
         "ko": "현장 신호 큐레이터",
-        "de": "Field Signal Curator"
+        "de": "Field Signal Curator",
+        "zh-tw": "现场信号整理 Field Signal Curator"
       }
     },
     "prysai-platform-adapter-review": {
@@ -613,7 +671,8 @@
         "es": "Platform Adapter Review (revisión del adaptador de plataforma)",
         "ja": "プラットフォームアダプターレビュー Platform Adapter Review",
         "ko": "플랫폼 어댑터 리뷰",
-        "de": "Platform Adapter Review"
+        "de": "Platform Adapter Review",
+        "zh-tw": "平台适配审查 Platform Adapter Review"
       }
     },
     "prysai-platform-fact-watch": {
@@ -623,7 +682,8 @@
         "es": "Platform Fact Watch (vigilancia de hechos de plataforma)",
         "ja": "プラットフォーム事実監視 Platform Fact Watch",
         "ko": "플랫폼 사실 감시",
-        "de": "Platform Fact Watch"
+        "de": "Platform Fact Watch",
+        "zh-tw": "平台事实巡检 Platform Fact Watch"
       }
     },
     "prysai-platform-observation-record": {
@@ -633,7 +693,8 @@
         "es": "Platform Observation Record (registro de observación de plataforma)",
         "ja": "プラットフォーム観察記録 Platform Observation Record",
         "ko": "플랫폼 관찰 기록",
-        "de": "Platform Observation Record"
+        "de": "Platform Observation Record",
+        "zh-tw": "平台观察记录 Platform Observation Record"
       }
     },
     "prysai-communication-failure-triage": {
@@ -643,7 +704,8 @@
         "es": "Communication Failure Triage (triaje de fallos de comunicación)",
         "ja": "コミュニケーション失敗トリアージ Communication Failure Triage",
         "ko": "커뮤니케이션 실패 진단",
-        "de": "Communication Failure Triage"
+        "de": "Communication Failure Triage",
+        "zh-tw": "沟通失败诊断 Communication Failure Triage"
       }
     },
     "prysai-prompt-card-editor": {
@@ -653,7 +715,8 @@
         "es": "Prompt Card Editor (editor de tarjetas de prompt)",
         "ja": "プロンプトカードエディター Prompt Card Editor",
         "ko": "프롬프트 카드 편집기",
-        "de": "Prompt Card Editor"
+        "de": "Prompt Card Editor",
+        "zh-tw": "提示卡编辑器 Prompt Card Editor"
       }
     },
     "prysai-adversarial-project-review": {
@@ -663,7 +726,8 @@
         "es": "Adversarial Project Review (revisión adversarial de proyectos)",
         "ja": "対抗的プロジェクトレビュー Adversarial Project Review",
         "ko": "적대적 프로젝트 리뷰",
-        "de": "Adversarial Project Review"
+        "de": "Adversarial Project Review",
+        "zh-tw": "对抗式项目审查 Adversarial Project Review"
       }
     },
     "prysai-interruption-checkpoint": {
@@ -673,7 +737,8 @@
         "es": "Interruption Checkpoint (punto de control de interrupciones)",
         "ja": "中断チェックポイント Interruption Checkpoint",
         "ko": "중단 체크포인트",
-        "de": "Interruption Checkpoint"
+        "de": "Interruption Checkpoint",
+        "zh-tw": "中断检查点 Interruption Checkpoint"
       }
     },
     "prysai-practice-target": {
@@ -683,7 +748,8 @@
         "es": "Practice Target (objetivo de práctica)",
         "ja": "プラクティスターゲット Practice Target",
         "ko": "연습 목표",
-        "de": "Practice Target"
+        "de": "Practice Target",
+        "zh-tw": "练习目标 Practice Target"
       }
     },
     "prysai-request-escalation": {
@@ -693,7 +759,8 @@
         "es": "Request Escalation (escalada de solicitudes)",
         "ja": "リクエストエスカレーション Request Escalation",
         "ko": "요청 에스컬레이션",
-        "de": "Request Escalation"
+        "de": "Request Escalation",
+        "zh-tw": "请求升级 Request Escalation"
       }
     },
     "prysai-shift-handoff": {
@@ -703,7 +770,8 @@
         "es": "Shift Handoff (traspaso de turno)",
         "ja": "シフト引き継ぎ Shift Handoff",
         "ko": "교대 인계",
-        "de": "Shift Handoff"
+        "de": "Shift Handoff",
+        "zh-tw": "工作交接 Shift Handoff"
       }
     },
     "prysai-llm-comparison-protocol": {
@@ -713,7 +781,8 @@
         "es": "LLM Comparison Protocol (protocolo de comparación de LLM)",
         "ja": "LLM 比較プロトコル LLM Comparison Protocol",
         "ko": "LLM 비교 프로토콜",
-        "de": "LLM Comparison Protocol"
+        "de": "LLM Comparison Protocol",
+        "zh-tw": "LLM 对比协议 LLM Comparison Protocol"
       }
     },
     "prysai-language-partner": {
@@ -723,7 +792,8 @@
         "es": "Language Partner (compañero de idiomas)",
         "ja": "言語パートナー Language Partner",
         "ko": "언어 파트너 Language Partner",
-        "de": "Language Partner (Sprachpartner)"
+        "de": "Language Partner (Sprachpartner)",
+        "zh-tw": "语言伙伴 Language Partner"
       }
     },
     "prysai-interview-rehearsal": {
@@ -733,7 +803,8 @@
         "es": "Interview Rehearsal (ensayo de entrevista)",
         "ja": "面接リハーサル Interview Rehearsal",
         "ko": "면접 리허설 Interview Rehearsal",
-        "de": "Interview Rehearsal (Vorstellungsgespräch-Probe)"
+        "de": "Interview Rehearsal (Vorstellungsgespräch-Probe)",
+        "zh-tw": "面试演练 Interview Rehearsal"
       }
     }
   }

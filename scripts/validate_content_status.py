@@ -17,7 +17,7 @@ ARTIFACT_STATUSES = {"draft", "candidate", "verified", "production-ready"}
 RUN_STATUSES = {"not_run", "running", "completed"}
 RUN_PROJECTION_STATUSES = {"not_run", "partial", "completed"}
 BROWSER_REVIEW_STATUSES = {"pending", "completed"}
-REPOSITORY_LOCALES = ["en", "zh", "es", "ja", "ko", "de"]
+REPOSITORY_LOCALES = ["en", "zh", "es", "ja", "ko", "de", "zh-tw"]
 LOCALE_MIGRATION_STATUSES = {"migration", "release"}
 LICENSE_REVIEW_STATUSES = {
     "file_level_release_boundaries_reviewed",
@@ -307,19 +307,16 @@ def validate_document(document: dict[str, Any]) -> list[str]:
             errors.append("public_site: language_default must be en")
         if site.get("language_options") != REPOSITORY_LOCALES:
             errors.append(
-                "public_site: language_options must be "
-                "['en', 'zh', 'es', 'ja', 'ko', 'de'] for the public route menu"
+                "public_site: language_options must match REPOSITORY_LOCALES for the public route menu"
             )
         if site.get("ui_language_options") != REPOSITORY_LOCALES:
             errors.append(
-                "public_site: ui_language_options must be "
-                "['en', 'zh', 'es', 'ja', 'ko', 'de'] when all six UI dictionaries ship"
+                "public_site: ui_language_options must match REPOSITORY_LOCALES when all UI dictionaries ship"
             )
         repository_locales = site.get("repository_content_locales")
         if repository_locales != REPOSITORY_LOCALES:
             errors.append(
-                "public_site: repository_content_locales must be "
-                "['en', 'zh', 'es', 'ja', 'ko', 'de']"
+                "public_site: repository_content_locales must match REPOSITORY_LOCALES"
             )
         locale_status = require_text(site, "repository_locale_status", "public_site", errors)
         if locale_status is not None and locale_status not in LOCALE_MIGRATION_STATUSES:
@@ -387,7 +384,7 @@ def main() -> int:
     )
     ui_dicts = ",".join(document["public_site"]["ui_language_options"])
     print(
-        "public_site=6-route-locales,"
+        "public_site=7-route-locales,"
         f"ui-dictionaries={ui_dicts},"
         f"repository_locale_status={document['public_site']['repository_locale_status']},"
         f"browser_review={document['public_site']['browser_review']}"

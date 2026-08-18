@@ -13,7 +13,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE")
+LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW")
 HEADING_RE = re.compile(r"^##\s+.+$", re.MULTILINE)
 CORE_STEMS = (
     "03-task-protocol",
@@ -51,7 +51,7 @@ def main() -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print("FOUNDATION_ROUTE_STRUCTURE_OK locales=EN,ZH,ES,JA,KO,DE sections=4 core_units=4")
+    print(f"FOUNDATION_ROUTE_STRUCTURE_OK locales={','.join(LOCALES)} sections=4 core_units=4")
     print("evidence_boundary=route-structure-not-translation-quality-or-learning-proof")
     return 0
 

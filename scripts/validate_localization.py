@@ -13,13 +13,13 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 MATRIX_PATH = ROOT / "docs/governance/locale-matrix.yaml"
-LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE")
+LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW")
 TRANSLATION_STATUSES = {"source", "not-started", "in-progress", "candidate", "verified", "stale"}
 CONTENT_STATUSES = {"draft", "candidate", "verified", "production-ready"}
-SUFFIX_RE = re.compile(r"-(EN|ZH|ES|JA|KO|DE)(\.[^/]+)$")
+SUFFIX_RE = re.compile(r"-(EN|ZH|ES|JA|KO|DE|ZHTW)(\.[^/]+)$")
 LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
-LOCALE_FILE_RE = re.compile(r"-(EN|ZH|ES|JA|KO|DE)\.[^/]+$")
-README_RE = re.compile(r"^(?:README|book/README)(?:-(EN|ZH|ES|JA|KO|DE))?\.md$")
+LOCALE_FILE_RE = re.compile(r"-(EN|ZH|ES|JA|KO|DE|ZHTW)\.[^/]+$")
+README_RE = re.compile(r"^(?:README|book/README)(?:-(EN|ZH|ES|JA|KO|DE|ZHTW))?\.md$")
 ROOT_EN_README = "README.md"
 LANGUAGE_SWITCHER_START = "<!-- language-switcher:start -->"
 LANGUAGE_SWITCHER_END = "<!-- language-switcher:end -->"
@@ -141,7 +141,7 @@ def main() -> int:
                 legacy_path_to_identity[normalized_legacy] = str(content_id)
         locales = item.get("locales")
         if not isinstance(locales, dict) or set(locales) != set(LOCALES):
-            errors.append(f"{label} ({content_id}) must declare all six locales")
+            errors.append(f"{label} ({content_id}) must declare all {len(LOCALES)} locales")
             locales = {}
         for locale in LOCALES:
             record = locales.get(locale, {})

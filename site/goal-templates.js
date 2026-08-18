@@ -1,4 +1,4 @@
-/* Generated from the six-language goal wizard templates. Do not edit by hand. */
+/* Generated from the seven-language goal wizard templates. Do not edit by hand. */
 window.GOAL_TEMPLATES = {
  "schema_version": "1",
  "generator": "scripts build helper",

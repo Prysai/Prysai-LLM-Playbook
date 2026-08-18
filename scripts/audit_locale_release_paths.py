@@ -19,10 +19,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MATRIX = ROOT / "docs/governance/locale-matrix.yaml"
 COURSE_KINDS = {"chapter", "lab"}
-LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE")
+LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW")
 MARKDOWN_LINK = re.compile(r"(?:href=\"|\]\()([^\"\)#]+\.md)(?:#[^\"\)]*)?", re.IGNORECASE)
 IDENTITY = re.compile(
-    r"<!--\s*content_id:\s*([^|\s]+)\s*\|\s*locale:\s*([A-Z]{2})\s*"
+    r"<!--\s*content_id:\s*([^|\s]+)\s*\|\s*locale:\s*([A-Z]{2,4})\s*"
     r"\|\s*language:\s*([^|\s]+)",
     re.IGNORECASE,
 )
@@ -200,9 +200,9 @@ def main() -> int:
         return 1
     if any(totals[locale]["missing"] for locale in LOCALES):
         print("LOCALE_RELEASE_PATHS_INCOMPLETE")
-        print("- Every registered locale needs 40 locally authored and reviewed course units before a full-six-language release.")
+        print("- Every registered locale needs 40 locally authored and reviewed course units before a full-locale release.")
         return 1
-    print("LOCALE_RELEASE_PATHS_OK units=40 locales=6")
+    print(f"LOCALE_RELEASE_PATHS_OK units=40 locales={len(LOCALES)}")
     return 0
 
 

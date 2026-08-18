@@ -14,7 +14,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-LOCALES = ("ZH", "ES", "JA", "KO", "DE")
+LOCALES = ("ZH", "ES", "JA", "KO", "DE", "ZHTW")
 CARD_RE = re.compile(r"^###\s+([1-7])\.\s+.+$", re.MULTILINE)
 
 # Keep this deliberately small and outcome-oriented.  The localized prose is
@@ -26,6 +26,7 @@ REQUIRED_MARKERS = {
     "JA": ("状態：template_selected | practised | not_run | blocked", "送信、アップロード、リンク作成はしないでください"),
     "KO": ("상태: template_selected | practised | not_run | blocked", "보내거나 업로드하거나 링크를 만들지 마세요"),
     "DE": ("Status: template_selected | practised | not_run | blocked", "Sende nichts, lade nichts hoch und erstelle keinen Link"),
+    "ZHTW": ("狀態：template_selected | practised | not_run | blocked", "不要傳送、上傳或生成連結"),
 }
 
 # A localized starter pack may offer a foreign-language exercise, but it must
@@ -73,6 +74,14 @@ ROUTE_CONTEXT_MARKERS = {
         "B. Hier beginnen: Ausdruck und Entscheidungen bei der Arbeit",
         "C. Recherche und Prüfung vor dem Teilen",
     ),
+    "ZHTW": (
+        "可選應用練習：語言、工作與研究",
+        "你現在處於繁體中文說明路徑",
+        "如果你只是第一次來、也不打算練西班牙語：先從 B 的第 3 張開始。",
+        "A. 可選外語練習",
+        "B. 推薦從這裡開始：工作表達與判斷",
+        "C. 研究與分享前核查",
+    ),
 }
 
 FOUNDATION_MARKERS = {
@@ -82,6 +91,7 @@ FOUNDATION_MARKERS = {
     "JA": ("第0章](guides/llm-fundamentals-JA.md)", "LLMとは何かを説明する入門ではありません"),
     "KO": ("0장](guides/llm-fundamentals-KO.md)", "LLM이 무엇인지 설명하는 입문 과정이 아닙니다"),
     "DE": ("Kapitel 0](guides/llm-fundamentals-DE.md)", "sie führen nicht in die Frage ein, was ein LLM ist"),
+    "ZHTW": ("第 0 章](guides/llm-fundamentals-ZHTW.md)", "不是解釋“大語言模型是什麼”的入門課"),
 }
 
 
@@ -116,7 +126,7 @@ def main() -> int:
             print(f"- {error}")
         return 1
     print("LOCALIZED_PRACTICE_CARDS_OK")
-    print("locales=ZH,ES,JA,KO,DE cards_per_locale=7")
+    print("locales=ZH,ES,JA,KO,DE,ZHTW cards_per_locale=7")
     print("evidence_boundary=structural-coverage-not-language-quality-or-learning-proof")
     return 0
 

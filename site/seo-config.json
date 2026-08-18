@@ -3,7 +3,7 @@
   "site_name": "Prysai LLM Playbook",
   "alternate_name": "LLMPlaybook",
   "default_locale": "en",
-  "locales": ["en", "zh", "es", "ja", "ko", "de"],
+  "locales": ["en", "zh", "es", "ja", "ko", "de", "zh-tw"],
   "home_page": {
     "html_lang": "en",
     "og_locale": "en_US",
@@ -40,6 +40,12 @@
       "og_locale": "de_DE",
       "title": "Prysai LLM Playbook — LLM-Guide, Prompts und verlässliche KI-Arbeit",
       "description": "Lerne, was LLMs sind, schreibe klarere Prompts und mache aus einer ersten KI-Aufgabe begrenzte, überprüfbare Arbeit."
+    },
+    "zh-tw": {
+      "html_lang": "zh-TW",
+      "og_locale": "zh_TW",
+      "title": "Prysai 大型語言模型實戰手冊：LLM 入門、提示詞與可靠的 AI 工作",
+      "description": "從理解大型語言模型開始，學會寫出更清楚的提示詞，並把第一次 AI 任務變成有邊界、可檢查的工作。"
     }
   }
 }

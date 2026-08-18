@@ -12,7 +12,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Observador",
         "ja": "観察者",
         "ko": "관찰자",
-        "de": "Beobachter"
+        "de": "Beobachter",
+        "zh-tw": "观察者"
       },
       "short": {
         "en": "Notice what happened",
@@ -20,7 +21,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Nota lo que ocurrió",
         "ja": "起きたことを把握する",
         "ko": "무슨 일이 있었는지 알아차린다",
-        "de": "Wahrnehmen, was passiert ist"
+        "de": "Wahrnehmen, was passiert ist",
+        "zh-tw": "知道发生了什么"
       },
       "headline": {
         "en": "Understand the model before you act.",
@@ -28,7 +30,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Entiende el modelo antes de actuar.",
         "ja": "行動する前にモデルを理解する。",
         "ko": "행동하기 전에 모델을 이해하세요.",
-        "de": "Verstehe das Modell, bevor du handelst."
+        "de": "Verstehe das Modell, bevor du handelst.",
+        "zh-tw": "先理解模型，再开始行动。"
       },
       "description": {
         "en": "Explain what an LLM, context, prompt, product, tool, Agent, and Skill can establish before choosing a platform.",
@@ -36,7 +39,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Explica qué pueden establecer un LLM, el contexto, un prompt, un producto, una herramienta, un Agent y un Skill antes de elegir plataforma.",
         "ja": "プラットフォームを選ぶ前に、LLM、コンテキスト、プロンプト、製品、ツール、Agent、Skill がそれぞれ何を確かめられるか説明する。",
         "ko": "플랫폼을 선택하기 전에 LLM, 컨텍스트, 프롬프트, 제품, 도구, Agent, Skill이 각각 무엇을 확인할 수 있는지 설명하세요.",
-        "de": "Erkläre vor der Wahl einer Plattform, was ein LLM, Kontext, Prompt, Produkt, Werkzeug, Agent und Skill jeweils belegen können."
+        "de": "Erkläre vor der Wahl einer Plattform, was ein LLM, Kontext, Prompt, Produkt, Werkzeug, Agent und Skill jeweils belegen können.",
+        "zh-tw": "在选择平台前，说明 LLM、上下文、提示词、产品、工具、Agent 与 Skill 各自能建立什么。"
       },
       "chapters": [
         {
@@ -47,7 +51,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Comprende GPT antes que Codex",
             "ja": "GPT を理解してから Codex へ",
             "ko": "Codex 전에 GPT를 이해한다",
-            "de": "Erst GPT verstehen, dann Codex"
+            "de": "Erst GPT verstehen, dann Codex",
+            "zh-tw": "先理解 GPT，再理解 Codex"
           },
           "href": "../book/chapters/01-gpt-and-codex-EN.md",
           "relation": "primary"
@@ -62,7 +67,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Límites de GPT y Codex",
             "ja": "GPT と Codex の境界",
             "ko": "GPT와 Codex 경계",
-            "de": "GPT- und Codex-Grenzen"
+            "de": "GPT- und Codex-Grenzen",
+            "zh-tw": "GPT 与 Codex 边界"
           },
           "href": "../book/labs/lab-011-gpt-codex-boundaries-EN.md",
           "relation": "primary",
@@ -73,7 +79,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Distingue generación, ejecución, verificación y efectos externos antes de inferir qué hizo Codex.",
             "ja": "Codex が何をしたかを推測する前に、生成・実行・検証・外部への影響を区別できる。",
             "ko": "Codex가 무엇을 했는지 추론하기 전에 생성, 실행, 검증, 외부 영향을 구분한다.",
-            "de": "Generierung, Ausführung, Verifikation und externe Effekte unterscheiden, bevor man ableitet, was Codex getan hat."
+            "de": "Generierung, Ausführung, Verifikation und externe Effekte unterscheiden, bevor man ableitet, was Codex getan hat.",
+            "zh-tw": "在推断 Codex 做了什么之前，区分生成、执行、验证和外部影响。"
           },
           "newArtifact": {
             "en": "An annotated static task card with input, action, state, evidence, and unsupported inference fields.",
@@ -81,7 +88,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Una tarjeta de tarea estática anotada con campos de entrada, acción, estado, evidencia e inferencia sin respaldo.",
             "ja": "入力・行動・状態・証拠・根拠なき推測のフィールドを注記した静的タスクカード。",
             "ko": "입력, 행동, 상태, 증거, 근거 없는 추론 필드가 표시된 정적 작업 카드.",
-            "de": "Eine annotierte statische Task-Karte mit Feldern für Eingabe, Aktion, Zustand, Beleg und ungestützte Schlussfolgerung."
+            "de": "Eine annotierte statische Task-Karte mit Feldern für Eingabe, Aktion, Zustand, Beleg und ungestützte Schlussfolgerung.",
+            "zh-tw": "一张标注输入、行动、状态、证据和无依据推断的静态任务卡。"
           },
           "newAcceptance": {
             "en": "Every observation is assigned to one field and at least one unsupported access or execution claim is rejected.",
@@ -89,7 +97,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Cada observación se asigna a un campo y se rechaza al menos una afirmación de acceso o ejecución sin respaldo.",
             "ja": "すべての観察が1つのフィールドに割り当てられ、根拠なきアクセスまたは実行の主張が少なくとも1つ却下される。",
             "ko": "모든 관찰이 하나의 필드에 배정되고, 근거 없는 접근 또는 실행 주장이 최소 하나 이상 기각된다.",
-            "de": "Jede Beobachtung wird einem Feld zugeordnet, und mindestens eine ungestützte Zugriffs- oder Ausführungsbehauptung wird verworfen."
+            "de": "Jede Beobachtung wird einem Feld zugeordnet, und mindestens eine ungestützte Zugriffs- oder Ausführungsbehauptung wird verworfen.",
+            "zh-tw": "每项观察都归入一个字段，并拒绝至少一项无依据的访问或执行声明。"
           }
         }
       ],
@@ -102,7 +111,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Codex Coach (coach de Codex)",
             "ja": "Codex コーチ Codex Coach",
             "ko": "Codex 코치",
-            "de": "Codex Coach"
+            "de": "Codex Coach",
+            "zh-tw": "Codex 学习教练"
           },
           "href": "../skills/prysai-codex-coach/SKILL.md",
           "relation": "supporting"
@@ -122,7 +132,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Nombra al menos tres límites entre GPT, Codex y el chat ordinario.",
           "ja": "GPT・Codex・通常のチャットの境界を3つ以上挙げられる。",
           "ko": "GPT, Codex, 일반 채팅 사이의 경계를 최소 세 가지 말한다.",
-          "de": "Mindestens drei Grenzen zwischen GPT, Codex und normalem Chat benennen."
+          "de": "Mindestens drei Grenzen zwischen GPT, Codex und normalem Chat benennen.",
+          "zh-tw": "说出 GPT、Codex 与普通聊天之间至少三条边界。"
         },
         "operate": {
           "en": "Use a static task card to label input, action, state, and evidence.",
@@ -130,7 +141,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Usa una tarjeta de tarea estática para etiquetar entrada, acción, estado y evidencia.",
           "ja": "静的タスクカードで入力・行動・状態・証拠をラベル付けできる。",
           "ko": "정적 작업 카드로 입력, 행동, 상태, 증거를 표시한다.",
-          "de": "Eine statische Task-Karte nutzen, um Eingabe, Aktion, Zustand und Beleg zu kennzeichnen."
+          "de": "Eine statische Task-Karte nutzen, um Eingabe, Aktion, Zustand und Beleg zu kennzeichnen.",
+          "zh-tw": "用静态任务卡标注输入、行动、状态和证据。"
         },
         "judge": {
           "en": "Refuse to infer tools, files, or permissions from the model name alone.",
@@ -138,7 +150,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Rechaza inferir herramientas, archivos o permisos solo a partir del nombre del modelo.",
           "ja": "モデル名だけでツール・ファイル・権限を推測しない。",
           "ko": "모델 이름만으로 도구, 파일, 권한을 추론하지 않는다.",
-          "de": "Sich weigern, Tools, Dateien oder Berechtigungen allein aus dem Modellnamen abzuleiten."
+          "de": "Sich weigern, Tools, Dateien oder Berechtigungen allein aus dem Modellnamen abzuleiten.",
+          "zh-tw": "不根据模型名称臆测工具、文件或权限。"
         },
         "review": {
           "en": "Record what the task card cannot prove about runtime behavior.",
@@ -146,7 +159,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Registra lo que la tarjeta de tarea no puede probar sobre el comportamiento en tiempo de ejecución.",
           "ja": "タスクカードが実行時の挙動について証明できないことを記録できる。",
           "ko": "작업 카드가 런타임 동작에 대해 증명하지 못하는 것을 기록한다.",
-          "de": "Festhalten, was die Task-Karte über das Laufzeitverhalten nicht belegen kann."
+          "de": "Festhalten, was die Task-Karte über das Laufzeitverhalten nicht belegen kann.",
+          "zh-tw": "记录任务卡无法证明的运行时行为。"
         }
       },
       "graduation": {
@@ -155,7 +169,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Solo avanza cuando quien aprende pueda explicar las cuatro capas e identificar una afirmación no verificada.",
         "ja": "学習者が4つのレイヤーを説明でき、未検証の主張を指摘できる場合にのみ進む。",
         "ko": "학습자가 네 계층을 설명하고 검증되지 않은 주장을 짚어낼 수 있을 때만 다음 단계로 진급한다.",
-        "de": "Erst weitergehen, wenn der Lernende die vier Ebenen erklären und eine ungeprüfte Behauptung benennen kann."
+        "de": "Erst weitergehen, wenn der Lernende die vier Ebenen erklären und eine ungeprüfte Behauptung benennen kann.",
+        "zh-tw": "只有能解释四层关系并指出一个未验证声明时，才进入下一阶段。"
       },
       "blocked": {
         "en": "The learner treats a model, Skill, login, or tool name as proof of access or execution.",
@@ -163,7 +178,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Quien aprende trata el nombre de un modelo, Skill, inicio de sesión o herramienta como prueba de acceso o ejecución.",
         "ja": "学習者がモデル名・Skill・ログイン・ツール名を、アクセスや実行の証明とみなしている場合。",
         "ko": "학습자가 모델, Skill, 로그인 또는 도구 이름을 접근이나 실행의 증거로 여길 때.",
-        "de": "Der Lernende behandelt einen Modell-, Skill-, Login- oder Tool-Namen als Beleg für Zugriff oder Ausführung."
+        "de": "Der Lernende behandelt einen Modell-, Skill-, Login- oder Tool-Namen als Beleg für Zugriff oder Ausführung.",
+        "zh-tw": "把模型、Skill、登录或工具名称当成已获访问权或已执行的证据。"
       },
       "status": "candidate",
       "foundationRoute": {
@@ -175,7 +191,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Núcleo de fundamentos de LLM",
           "ja": "LLM 基礎コア",
           "ko": "LLM 기초 코어",
-          "de": "LLM-Grundlagenkern"
+          "de": "LLM-Grundlagenkern",
+          "zh-tw": "LLM 基础核心课"
         },
         "href": "../book/routes/llm-foundation-core-v1-EN.md",
         "relation": "primary"
@@ -189,7 +206,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Comprende GPT antes que Codex",
             "ja": "GPT を理解してから Codex へ",
             "ko": "Codex 전에 GPT를 이해한다",
-            "de": "Erst GPT verstehen, dann Codex"
+            "de": "Erst GPT verstehen, dann Codex",
+            "zh-tw": "先理解 GPT，再理解 Codex"
           },
           "href": "../book/chapters/01-gpt-and-codex-EN.md",
           "relation": "primary"
@@ -202,7 +220,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Límites de GPT y Codex",
             "ja": "GPT と Codex の境界",
             "ko": "GPT와 Codex 경계",
-            "de": "GPT- und Codex-Grenzen"
+            "de": "GPT- und Codex-Grenzen",
+            "zh-tw": "GPT 与 Codex 边界"
           },
           "href": "../book/labs/lab-011-gpt-codex-boundaries-EN.md",
           "relation": "primary",
@@ -213,7 +232,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Distingue generación, ejecución, verificación y efectos externos antes de inferir qué hizo Codex.",
             "ja": "Codex が何をしたかを推測する前に、生成・実行・検証・外部への影響を区別できる。",
             "ko": "Codex가 무엇을 했는지 추론하기 전에 생성, 실행, 검증, 외부 영향을 구분한다.",
-            "de": "Generierung, Ausführung, Verifikation und externe Effekte unterscheiden, bevor man ableitet, was Codex getan hat."
+            "de": "Generierung, Ausführung, Verifikation und externe Effekte unterscheiden, bevor man ableitet, was Codex getan hat.",
+            "zh-tw": "在推断 Codex 做了什么之前，区分生成、执行、验证和外部影响。"
           },
           "newArtifact": {
             "en": "An annotated static task card with input, action, state, evidence, and unsupported inference fields.",
@@ -221,7 +241,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Una tarjeta de tarea estática anotada con campos de entrada, acción, estado, evidencia e inferencia sin respaldo.",
             "ja": "入力・行動・状態・証拠・根拠なき推測のフィールドを注記した静的タスクカード。",
             "ko": "입력, 행동, 상태, 증거, 근거 없는 추론 필드가 표시된 정적 작업 카드.",
-            "de": "Eine annotierte statische Task-Karte mit Feldern für Eingabe, Aktion, Zustand, Beleg und ungestützte Schlussfolgerung."
+            "de": "Eine annotierte statische Task-Karte mit Feldern für Eingabe, Aktion, Zustand, Beleg und ungestützte Schlussfolgerung.",
+            "zh-tw": "一张标注输入、行动、状态、证据和无依据推断的静态任务卡。"
           },
           "newAcceptance": {
             "en": "Every observation is assigned to one field and at least one unsupported access or execution claim is rejected.",
@@ -229,7 +250,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Cada observación se asigna a un campo y se rechaza al menos una afirmación de acceso o ejecución sin respaldo.",
             "ja": "すべての観察が1つのフィールドに割り当てられ、根拠なきアクセスまたは実行の主張が少なくとも1つ却下される。",
             "ko": "모든 관찰이 하나의 필드에 배정되고, 근거 없는 접근 또는 실행 주장이 최소 하나 이상 기각된다.",
-            "de": "Jede Beobachtung wird einem Feld zugeordnet, und mindestens eine ungestützte Zugriffs- oder Ausführungsbehauptung wird verworfen."
+            "de": "Jede Beobachtung wird einem Feld zugeordnet, und mindestens eine ungestützte Zugriffs- oder Ausführungsbehauptung wird verworfen.",
+            "zh-tw": "每项观察都归入一个字段，并拒绝至少一项无依据的访问或执行声明。"
           }
         }
       }
@@ -242,7 +264,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Usuario seguro",
         "ja": "安全なユーザー",
         "ko": "안전 사용자",
-        "de": "Sicherer Nutzer"
+        "de": "Sicherer Nutzer",
+        "zh-tw": "安全使用者"
       },
       "short": {
         "en": "Complete a low-risk task",
@@ -250,7 +273,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Completa una tarea de bajo riesgo",
         "ja": "低リスクのタスクを完了する",
         "ko": "저위험 작업을 완료한다",
-        "de": "Eine risikoarme Aufgabe abschließen"
+        "de": "Eine risikoarme Aufgabe abschließen",
+        "zh-tw": "完成低风险任务"
       },
       "headline": {
         "en": "Start with a low-risk task.",
@@ -258,7 +282,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Empieza con una tarea de bajo riesgo.",
         "ja": "低リスクのタスクから始める。",
         "ko": "저위험 작업부터 시작하라.",
-        "de": "Mit einer risikoarmen Aufgabe beginnen."
+        "de": "Mit einer risikoarmen Aufgabe beginnen.",
+        "zh-tw": "从低风险任务开始。"
       },
       "description": {
         "en": "Complete one reversible, observable task and distinguish the diff from the evidence of verification.",
@@ -266,7 +291,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Completa una tarea reversible y observable, y distingue el diff de la evidencia de verificación.",
         "ja": "可逆的で観察可能なタスクを1つ完了し、diff と検証の証拠を区別できる。",
         "ko": "되돌릴 수 있고 관찰 가능한 작업 하나를 완료하고, diff와 검증 증거를 구분한다.",
-        "de": "Eine umkehrbare, beobachtbare Aufgabe abschließen und den Diff von den Belegen der Verifikation unterscheiden."
+        "de": "Eine umkehrbare, beobachtbare Aufgabe abschließen und den Diff von den Belegen der Verifikation unterscheiden.",
+        "zh-tw": "完成一个可回滚、可观察的任务，并区分差异与验证证据。"
       },
       "chapters": [
         {
@@ -277,7 +303,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Completa una tarea segura y verificable",
             "ja": "安全で検証可能なタスクを完了する",
             "ko": "안전하고 검증 가능한 작업을 완료한다",
-            "de": "Eine sichere, verifizierbare Aufgabe abschließen"
+            "de": "Eine sichere, verifizierbare Aufgabe abschließen",
+            "zh-tw": "完成安全、可验证的任务"
           },
           "href": "../book/chapters/02-first-safe-task-EN.md",
           "relation": "primary"
@@ -292,7 +319,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Primera tarea segura",
             "ja": "最初の安全なタスク",
             "ko": "첫 번째 안전한 작업",
-            "de": "Erste sichere Aufgabe"
+            "de": "Erste sichere Aufgabe",
+            "zh-tw": "第一个安全任务"
           },
           "href": "../book/labs/lab-001-first-safe-task-EN.md",
           "relation": "primary",
@@ -303,7 +331,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Completa una edición local reversible separando el resultado solicitado, el diff real y la salida de verificación.",
             "ja": "依頼した結果・実際の diff・検証出力を区別しながら、可逆的なローカル編集を1つ完了できる。",
             "ko": "요청한 결과, 실제 diff, 검증 출력을 구분하면서 되돌릴 수 있는 로컬 편집 하나를 완료한다.",
-            "de": "Eine umkehrbare lokale Bearbeitung abschließen und dabei angefragtes Ergebnis, tatsächlichen Diff und Verifikationsausgabe trennen."
+            "de": "Eine umkehrbare lokale Bearbeitung abschließen und dabei angefragtes Ergebnis, tatsächlichen Diff und Verifikationsausgabe trennen.",
+            "zh-tw": "完成一次可回滚的本地编辑，同时区分请求结果、实际差异和验证输出。"
           },
           "newArtifact": {
             "en": "A pre-edit observation, one-file diff, focused check log, and explicit unverified list.",
@@ -311,7 +340,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Observación previa a la edición, diff de un archivo, registro de comprobación enfocada y lista explícita de lo no verificado.",
             "ja": "編集前の観察・1ファイルの diff・焦点を絞ったチェックログ・明示的な未検証リスト。",
             "ko": "편집 전 관찰, 단일 파일 diff, 집중 점검 로그, 명시적 미검증 목록.",
-            "de": "Beobachtung vor der Bearbeitung, Ein-Datei-Diff, fokussiertes Check-Protokoll und explizite Liste ungeprüfter Punkte."
+            "de": "Beobachtung vor der Bearbeitung, Ein-Datei-Diff, fokussiertes Check-Protokoll und explizite Liste ungeprüfter Punkte.",
+            "zh-tw": "编辑前观察、单文件差异、聚焦检查日志和明确的未验证列表。"
           },
           "newAcceptance": {
             "en": "The diff stays inside the declared sandbox and the completion statement cites the check that actually ran.",
@@ -319,7 +349,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "El diff permanece dentro del sandbox declarado y la declaración de finalización cita la comprobación que realmente se ejecutó.",
             "ja": "diff が宣言したサンドボックス内に収まり、完了報告が実際に実行されたチェックを引用している。",
             "ko": "diff가 선언된 샌드박스 안에 머물고, 완료 문구가 실제로 실행된 점검을 인용한다.",
-            "de": "Der Diff bleibt innerhalb der erklärten Sandbox, und die Abschlusserklärung nennt den Check, der tatsächlich gelaufen ist."
+            "de": "Der Diff bleibt innerhalb der erklärten Sandbox, und die Abschlusserklärung nennt den Check, der tatsächlich gelaufen ist.",
+            "zh-tw": "差异保持在声明的沙盒内，完成声明引用实际运行的检查。"
           }
         }
       ],
@@ -332,7 +363,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Task Protocol (protocolo de tarea)",
             "ja": "タスクプロトコル Task Protocol",
             "ko": "작업 프로토콜",
-            "de": "Task Protocol"
+            "de": "Task Protocol",
+            "zh-tw": "任务协议 Task Protocol"
           },
           "href": "../skills/prysai-task-protocol/SKILL.md",
           "relation": "supporting"
@@ -345,7 +377,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Learning Coach (coach de aprendizaje)",
             "ja": "学習コーチ Learning Coach",
             "ko": "학습 코치",
-            "de": "Learning Coach"
+            "de": "Learning Coach",
+            "zh-tw": "学习教练 Learning Coach"
           },
           "href": "../skills/prysai-learning-coach/SKILL.md",
           "relation": "supporting"
@@ -368,7 +401,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Expón el alcance de la tarea, las acciones permitidas, la comprobación de aceptación y la condición de parada.",
           "ja": "タスクの範囲・許可される操作・受け入れチェック・停止条件を述べられる。",
           "ko": "작업 범위, 허용 행동, 승인 점검, 중지 조건을 명시한다.",
-          "de": "Aufgabenumfang, erlaubte Aktionen, Akzeptanz-Check und Stoppbedingung benennen."
+          "de": "Aufgabenumfang, erlaubte Aktionen, Akzeptanz-Check und Stoppbedingung benennen.",
+          "zh-tw": "说清任务范围、允许行动、验收检查和停止条件。"
         },
         "operate": {
           "en": "Inspect before editing in a sandbox and produce one named change.",
@@ -376,7 +410,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Inspecciona antes de editar en un sandbox y produce un cambio con nombre.",
           "ja": "サンドボックス内で編集前に確認し、名前の付いた変更を1つ生み出せる。",
           "ko": "샌드박스에서 편집 전에 검사하고, 이름 있는 변경 하나를 만든다.",
-          "de": "In einer Sandbox vor der Bearbeitung prüfen und eine benannte Änderung erzeugen."
+          "de": "In einer Sandbox vor der Bearbeitung prüfen und eine benannte Änderung erzeugen.",
+          "zh-tw": "在沙盒中先检查再编辑，完成一个明确改动。"
         },
         "judge": {
           "en": "Compare the requested result with the actual diff and command output.",
@@ -384,7 +419,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Compara el resultado solicitado con el diff real y la salida del comando.",
           "ja": "依頼した結果と実際の diff・コマンド出力を照合できる。",
           "ko": "요청한 결과를 실제 diff 및 명령 출력과 대조한다.",
-          "de": "Das angefragte Ergebnis mit dem tatsächlichen Diff und der Befehlsausgabe vergleichen."
+          "de": "Das angefragte Ergebnis mit dem tatsächlichen Diff und der Befehlsausgabe vergleichen.",
+          "zh-tw": "将请求结果与实际差异、命令输出进行对照。"
         },
         "review": {
           "en": "Record untested scope and any missing input instead of filling it in.",
@@ -392,7 +428,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Registra el alcance no probado y cualquier entrada faltante en lugar de rellenarla.",
           "ja": "未テストの範囲や欠落した入力を補完せず記録できる。",
           "ko": "검증하지 못한 범위와 빠진 입력을 채워 넣지 말고 기록한다.",
-          "de": "Ungetesteten Umfang und fehlende Eingaben festhalten, statt sie zu ergänzen."
+          "de": "Ungetesteten Umfang und fehlende Eingaben festhalten, statt sie zu ergänzen.",
+          "zh-tw": "记录未测试范围和缺失输入，不擅自补全。"
         }
       },
       "graduation": {
@@ -401,7 +438,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Avanza con un contrato de tarea, observación previa a la edición, diff, comprobación enfocada y lista explícita de lo no verificado.",
         "ja": "タスク契約・編集前の観察・diff・焦点を絞ったチェック・明示的な未検証リストを揃えてから進む。",
         "ko": "작업 계약, 편집 전 관찰, diff, 집중 점검, 명시적 미검증 목록을 갖춰야 다음 단계로 진급한다.",
-        "de": "Erst weitergehen mit Aufgabenvertrag, Beobachtung vor der Bearbeitung, Diff, fokussiertem Check und expliziter Liste ungeprüfter Punkte."
+        "de": "Erst weitergehen mit Aufgabenvertrag, Beobachtung vor der Bearbeitung, Diff, fokussiertem Check und expliziter Liste ungeprüfter Punkte.",
+        "zh-tw": "提交任务协议、编辑前检查、差异、最小检查和明确的未验证列表后，才进入下一阶段。"
       },
       "blocked": {
         "en": "The task touches credentials, production, destructive actions, or an unavailable file.",
@@ -409,7 +447,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "La tarea toca credenciales, producción, acciones destructivas o un archivo no disponible.",
         "ja": "タスクが資格情報・本番環境・破壊的操作・利用できないファイルに触れる場合。",
         "ko": "작업이 자격 증명, 프로덕션, 파괴적 행동 또는 사용할 수 없는 파일을 건드릴 때.",
-        "de": "Die Aufgabe berührt Zugangsdaten, Produktion, destruktive Aktionen oder eine nicht verfügbare Datei."
+        "de": "Die Aufgabe berührt Zugangsdaten, Produktion, destruktive Aktionen oder eine nicht verfügbare Datei.",
+        "zh-tw": "任务涉及凭据、生产环境、破坏性行动或不存在的文件。"
       },
       "status": "candidate",
       "foundationRoute": null,
@@ -422,7 +461,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Completa una tarea segura y verificable",
             "ja": "安全で検証可能なタスクを完了する",
             "ko": "안전하고 검증 가능한 작업을 완료한다",
-            "de": "Eine sichere, verifizierbare Aufgabe abschließen"
+            "de": "Eine sichere, verifizierbare Aufgabe abschließen",
+            "zh-tw": "完成安全、可验证的任务"
           },
           "href": "../book/chapters/02-first-safe-task-EN.md",
           "relation": "primary"
@@ -435,7 +475,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Primera tarea segura",
             "ja": "最初の安全なタスク",
             "ko": "첫 번째 안전한 작업",
-            "de": "Erste sichere Aufgabe"
+            "de": "Erste sichere Aufgabe",
+            "zh-tw": "第一个安全任务"
           },
           "href": "../book/labs/lab-001-first-safe-task-EN.md",
           "relation": "primary",
@@ -446,7 +487,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Completa una edición local reversible separando el resultado solicitado, el diff real y la salida de verificación.",
             "ja": "依頼した結果・実際の diff・検証出力を区別しながら、可逆的なローカル編集を1つ完了できる。",
             "ko": "요청한 결과, 실제 diff, 검증 출력을 구분하면서 되돌릴 수 있는 로컬 편집 하나를 완료한다.",
-            "de": "Eine umkehrbare lokale Bearbeitung abschließen und dabei angefragtes Ergebnis, tatsächlichen Diff und Verifikationsausgabe trennen."
+            "de": "Eine umkehrbare lokale Bearbeitung abschließen und dabei angefragtes Ergebnis, tatsächlichen Diff und Verifikationsausgabe trennen.",
+            "zh-tw": "完成一次可回滚的本地编辑，同时区分请求结果、实际差异和验证输出。"
           },
           "newArtifact": {
             "en": "A pre-edit observation, one-file diff, focused check log, and explicit unverified list.",
@@ -454,7 +496,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Observación previa a la edición, diff de un archivo, registro de comprobación enfocada y lista explícita de lo no verificado.",
             "ja": "編集前の観察・1ファイルの diff・焦点を絞ったチェックログ・明示的な未検証リスト。",
             "ko": "편집 전 관찰, 단일 파일 diff, 집중 점검 로그, 명시적 미검증 목록.",
-            "de": "Beobachtung vor der Bearbeitung, Ein-Datei-Diff, fokussiertes Check-Protokoll und explizite Liste ungeprüfter Punkte."
+            "de": "Beobachtung vor der Bearbeitung, Ein-Datei-Diff, fokussiertes Check-Protokoll und explizite Liste ungeprüfter Punkte.",
+            "zh-tw": "编辑前观察、单文件差异、聚焦检查日志和明确的未验证列表。"
           },
           "newAcceptance": {
             "en": "The diff stays inside the declared sandbox and the completion statement cites the check that actually ran.",
@@ -462,7 +505,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "El diff permanece dentro del sandbox declarado y la declaración de finalización cita la comprobación que realmente se ejecutó.",
             "ja": "diff が宣言したサンドボックス内に収まり、完了報告が実際に実行されたチェックを引用している。",
             "ko": "diff가 선언된 샌드박스 안에 머물고, 완료 문구가 실제로 실행된 점검을 인용한다.",
-            "de": "Der Diff bleibt innerhalb der erklärten Sandbox, und die Abschlusserklärung nennt den Check, der tatsächlich gelaufen ist."
+            "de": "Der Diff bleibt innerhalb der erklärten Sandbox, und die Abschlusserklärung nennt den Check, der tatsächlich gelaufen ist.",
+            "zh-tw": "差异保持在声明的沙盒内，完成声明引用实际运行的检查。"
           }
         }
       }
@@ -475,7 +519,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Diseñador de tareas",
         "ja": "タスク設計者",
         "ko": "작업 설계자",
-        "de": "Task-Designer"
+        "de": "Task-Designer",
+        "zh-tw": "任务设计者"
       },
       "short": {
         "en": "Write a task protocol",
@@ -483,7 +528,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Escribe un protocolo de tarea",
         "ja": "タスクプロトコルを書く",
         "ko": "작업 프로토콜을 작성한다",
-        "de": "Ein Task-Protokoll schreiben"
+        "de": "Ein Task-Protokoll schreiben",
+        "zh-tw": "写出任务协议"
       },
       "headline": {
         "en": "Turn the wish into a protocol.",
@@ -491,7 +537,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Convierte el deseo en un protocolo.",
         "ja": "願いをプロトコルにする。",
         "ko": "바람을 프로토콜로 바꾸라.",
-        "de": "Den Wunsch in ein Protokoll verwandeln."
+        "de": "Den Wunsch in ein Protokoll verwandeln.",
+        "zh-tw": "把愿望写成协议。"
       },
       "description": {
         "en": "Turn a vague request into a bounded protocol with relevant context, least authority, acceptance, and failure handling.",
@@ -499,7 +546,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Convierte una solicitud vaga en un protocolo acotado con contexto relevante, autoridad mínima, aceptación y manejo de fallos.",
         "ja": "曖昧な依頼を、関連コンテキスト・最小権限・受け入れ条件・失敗処理を備えた境界のあるプロトコルにする。",
         "ko": "모호한 요청을 관련 컨텍스트, 최소 권한, 승인, 실패 처리를 갖춘 경계 있는 프로토콜로 바꾼다.",
-        "de": "Eine vage Anfrage in ein begrenztes Protokoll mit relevantem Kontext, minimalen Berechtigungen, Akzeptanz und Fehlerbehandlung verwandeln."
+        "de": "Eine vage Anfrage in ein begrenztes Protokoll mit relevantem Kontext, minimalen Berechtigungen, Akzeptanz und Fehlerbehandlung verwandeln.",
+        "zh-tw": "把模糊请求改写为包含相关上下文、最小授权、验收和失败处理的有边界协议。"
       },
       "chapters": [
         {
@@ -510,7 +558,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Convierte un deseo en un protocolo de tarea",
             "ja": "願いをタスクプロトコルにする",
             "ko": "바람을 작업 프로토콜로 바꾼다",
-            "de": "Einen Wunsch in ein Task-Protokoll verwandeln"
+            "de": "Einen Wunsch in ein Task-Protokoll verwandeln",
+            "zh-tw": "把愿望变成任务协议"
           },
           "href": "../book/chapters/03-task-protocol-EN.md",
           "relation": "primary"
@@ -523,7 +572,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Contexto, permisos y límites de Agent",
             "ja": "コンテキスト・権限・Agent の境界",
             "ko": "컨텍스트, 권한, Agent 경계",
-            "de": "Kontext, Berechtigungen und Agent-Grenzen"
+            "de": "Kontext, Berechtigungen und Agent-Grenzen",
+            "zh-tw": "上下文、权限与 Agent 边界"
           },
           "href": "../book/chapters/04-context-permissions-and-agent-EN.md",
           "relation": "primary"
@@ -536,7 +586,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Elige la superficie correcta de Codex",
             "ja": "適切な Codex の利用面を選ぶ",
             "ko": "올바른 Codex 작업면을 고른다",
-            "de": "Die richtige Codex-Oberfläche wählen"
+            "de": "Die richtige Codex-Oberfläche wählen",
+            "zh-tw": "选择正确的 Codex 工作面"
           },
           "href": "../book/chapters/05-choose-the-codex-surface-EN.md",
           "relation": "primary"
@@ -549,7 +600,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Elegir modelo no es adorar al modelo",
             "ja": "モデル選択はモデル崇拝ではない",
             "ko": "모델 선택은 모델 숭배가 아니다",
-            "de": "Modellwahl ist keine Modellverehrung"
+            "de": "Modellwahl ist keine Modellverehrung",
+            "zh-tw": "模型选择不是模型崇拜"
           },
           "href": "../book/chapters/06-model-selection-EN.md",
           "relation": "primary"
@@ -564,7 +616,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Protocolo de tarea",
             "ja": "タスクプロトコル",
             "ko": "작업 프로토콜",
-            "de": "Task-Protokoll"
+            "de": "Task-Protokoll",
+            "zh-tw": "任务协议"
           },
           "href": "../book/labs/lab-002-task-protocol-EN.md",
           "relation": "primary",
@@ -575,7 +628,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Convierte una solicitud vaga en un protocolo ejecutable sin inventar alcance, autoridad o aceptación faltantes.",
             "ja": "欠落した範囲・権限・受け入れ条件を捏造せず、曖昧な依頼を実行可能なプロトコルに変換できる。",
             "ko": "빠진 범위, 권한, 승인을 지어내지 않고 모호한 요청을 실행 가능한 프로토콜로 변환한다.",
-            "de": "Eine vage Anfrage in ein ausführbares Protokoll verwandeln, ohne fehlenden Umfang, fehlende Berechtigungen oder Akzeptanz zu erfinden."
+            "de": "Eine vage Anfrage in ein ausführbares Protokoll verwandeln, ohne fehlenden Umfang, fehlende Berechtigungen oder Akzeptanz zu erfinden.",
+            "zh-tw": "把模糊请求转成可执行协议，不臆造缺失的范围、授权或验收。"
           },
           "newArtifact": {
             "en": "A task protocol containing goal, inputs, constraints, allowed actions, acceptance, stop conditions, and failure handling.",
@@ -583,7 +637,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Un protocolo de tarea que contenga objetivo, entradas, restricciones, acciones permitidas, aceptación, condiciones de parada y manejo de fallos.",
             "ja": "目標・入力・制約・許可される操作・受け入れ条件・停止条件・失敗処理を含むタスクプロトコル。",
             "ko": "목표, 입력, 제약, 허용 행동, 승인, 중지 조건, 실패 처리를 담은 작업 프로토콜.",
-            "de": "Ein Task-Protokoll mit Ziel, Eingaben, Einschränkungen, erlaubten Aktionen, Akzeptanz, Stoppbedingungen und Fehlerbehandlung."
+            "de": "Ein Task-Protokoll mit Ziel, Eingaben, Einschränkungen, erlaubten Aktionen, Akzeptanz, Stoppbedingungen und Fehlerbehandlung.",
+            "zh-tw": "一份包含目标、输入、约束、允许行动、验收、停止条件和失败处理的任务协议。"
           },
           "newAcceptance": {
             "en": "A second person can identify the first safe action and every condition that requires confirmation or stopping.",
@@ -591,7 +646,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Una segunda persona puede identificar la primera acción segura y cada condición que exige confirmación o parada.",
             "ja": "別の人が最初の安全な操作と、確認または停止を要するすべての条件を指摘できる。",
             "ko": "두 번째 사람이 첫 안전 행동과 확인 또는 중지가 필요한 모든 조건을 짚어낼 수 있다.",
-            "de": "Eine zweite Person kann die erste sichere Aktion und jede Bedingung benennen, die Bestätigung oder Stopp erfordert."
+            "de": "Eine zweite Person kann die erste sichere Aktion und jede Bedingung benennen, die Bestätigung oder Stopp erfordert.",
+            "zh-tw": "第二个人能够指出第一个安全行动，以及所有需要确认或停止的条件。"
           }
         },
         {
@@ -602,7 +658,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Transferencia de lenguaje escrito",
             "ja": "型付き言語の転移",
             "ko": "문자 언어 전이 연습",
-            "de": "Getippter Sprachtransfer"
+            "de": "Getippter Sprachtransfer",
+            "zh-tw": "文字语言迁移练习"
           },
           "href": "../book/labs/lab-018-language-transfer-EN.md",
           "relation": "supporting",
@@ -613,7 +670,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Usa un contrato de práctica neutral respecto a la plataforma para separar una línea base sin ayuda, una corrección guiada, una demostración con caso cambiado, la retención diferida y la transferencia a casos no vistos.",
             "ja": "プラットフォーム非依存のプラクティス契約を1つ使い、助けなしのベースライン・指導後の修正・変形ケースでの実演・遅延保持・未見タスクへの転移を区別できる。",
             "ko": "플랫폼 중립의 연습 계약 하나로 무지원 기준선, 코칭 후 교정, 변형 사례 시연, 지연 보존, 미경험 전이를 구분한다.",
-            "de": "Einen plattformneutralen Praxisvertrag nutzen, um eine ungestützte Baseline, begleitete Korrektur, Leistung im abgewandelten Fall, verzögerte Behaltensleistung und ungesehenen Transfer zu trennen."
+            "de": "Einen plattformneutralen Praxisvertrag nutzen, um eine ungestützte Baseline, begleitete Korrektur, Leistung im abgewandelten Fall, verzögerte Behaltensleistung und ungesehenen Transfer zu trennen.",
+            "zh-tw": "使用一份平台中性的练习契约，区分无辅助基线、辅导后纠正、变式任务表现、延迟保持和未见任务迁移。"
           },
           "newArtifact": {
             "en": "A disposable language-practice record containing the fixed fixture revision, allowed aids, baseline, hint ledger, learner-authored correction, changed-case score, and a preserved delayed task.",
@@ -621,7 +679,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Un registro de práctica lingüística desechable que contenga la revisión fija del fixture, las ayudas permitidas, la línea base, el registro de pistas, la corrección escrita por quien aprende, la puntuación del caso cambiado y una tarea diferida conservada.",
             "ja": "固定フィクスチャリビジョン・許可された補助・ベースライン・ヒント台帳・学習者自身による修正・変形ケースのスコア・保存された遅延タスクを含む使い捨ての言語プラクティス記録。",
             "ko": "고정된 픽스처 리비전, 허용 보조 자료, 기준선, 힌트 원장, 학습자 작성 교정, 변형 사례 점수, 보존된 지연 과제를 담은 일회용 언어 연습 기록.",
-            "de": "Ein Wegwerf-Aufzeichnungsblatt der Sprachübung mit fester Fixture-Revision, erlaubten Hilfsmitteln, Baseline, Hinweis-Protokoll, eigener Korrektur des Lernenden, Punktzahl im abgewandelten Fall und einer aufbewahrten verzögerten Aufgabe."
+            "de": "Ein Wegwerf-Aufzeichnungsblatt der Sprachübung mit fester Fixture-Revision, erlaubten Hilfsmitteln, Baseline, Hinweis-Protokoll, eigener Korrektur des Lernenden, Punktzahl im abgewandelten Fall und einer aufbewahrten verzögerten Aufgabe.",
+            "zh-tw": "一份可丢弃的语言练习记录，包含固定夹具版本、允许辅助、基线、提示记录、学习者自行修正、变式评分和保留的延迟任务。"
           },
           "newAcceptance": {
             "en": "The immediate run is labelled only at its observed scope; fluency, mastery, retention, and transfer remain unverified until their separate evidence exists.",
@@ -629,7 +688,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "La ejecución inmediata solo se etiqueta según su alcance observado; la fluidez, el dominio, la retención y la transferencia siguen sin verificar hasta que exista evidencia propia para cada una.",
             "ja": "即時実行は観察された範囲でのみラベル付けされ、流暢さ・習得・保持・転移は、それぞれの証拠が揃うまで未検証のまま。",
             "ko": "즉시 실행은 관찰된 범위에서만 라벨링된다. 유창성, 숙달, 보존, 전이는 각각의 증거가 생기기 전까지 미검증으로 남는다.",
-            "de": "Der unmittelbare Durchlauf wird nur in seinem beobachteten Umfang gekennzeichnet; Flüssigkeit, Beherrschung, Behaltensleistung und Transfer bleiben ungeprüft, bis dafür getrennte Belege vorliegen."
+            "de": "Der unmittelbare Durchlauf wird nur in seinem beobachteten Umfang gekennzeichnet; Flüssigkeit, Beherrschung, Behaltensleistung und Transfer bleiben ungeprüft, bis dafür getrennte Belege vorliegen.",
+            "zh-tw": "即时运行只按已观察范围标记；在各自证据存在前，流利、掌握、保持和迁移仍为未验证。"
           }
         }
       ],
@@ -642,7 +702,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Task Protocol (protocolo de tarea)",
             "ja": "タスクプロトコル Task Protocol",
             "ko": "작업 프로토콜",
-            "de": "Task Protocol"
+            "de": "Task Protocol",
+            "zh-tw": "任务协议 Task Protocol"
           },
           "href": "../skills/prysai-task-protocol/SKILL.md",
           "relation": "supporting"
@@ -655,7 +716,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Codex Coach (coach de Codex)",
             "ja": "Codex コーチ Codex Coach",
             "ko": "Codex 코치",
-            "de": "Codex Coach"
+            "de": "Codex Coach",
+            "zh-tw": "Codex 学习教练"
           },
           "href": "../skills/prysai-codex-coach/SKILL.md",
           "relation": "supporting"
@@ -687,7 +749,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Explica por qué cada entrada, restricción y permiso es necesario o está excluido.",
           "ja": "各入力・制約・権限がなぜ必要か、またはなぜ除外されるかを説明できる。",
           "ko": "각 입력, 제약, 권한이 왜 필요하거나 배제되는지 설명한다.",
-          "de": "Erklären, warum jede Eingabe, Einschränkung und Berechtigung nötig oder ausgeschlossen ist."
+          "de": "Erklären, warum jede Eingabe, Einschränkung und Berechtigung nötig oder ausgeschlossen ist.",
+          "zh-tw": "解释每个输入、约束和权限为什么必要，或为什么排除。"
         },
         "operate": {
           "en": "Write and execute a small protocol without expanding the allowed scope.",
@@ -695,7 +758,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Escribe y ejecuta un protocolo pequeño sin ampliar el alcance permitido.",
           "ja": "許可された範囲を広げずに小さなプロトコルを書き、実行できる。",
           "ko": "허용 범위를 넓히지 않고 작은 프로토콜을 작성하고 실행한다.",
-          "de": "Ein kleines Protokoll schreiben und ausführen, ohne den erlaubten Umfang zu erweitern."
+          "de": "Ein kleines Protokoll schreiben und ausführen, ohne den erlaubten Umfang zu erweitern.",
+          "zh-tw": "写出并执行一个小协议，不扩大允许范围。"
         },
         "judge": {
           "en": "Choose the smallest relevant context, Skill, tool, and verification check.",
@@ -703,7 +767,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Elige el conjunto relevante más pequeño de contexto, Skill, herramienta y comprobación de verificación.",
           "ja": "最小限の関連コンテキスト・Skill・ツール・検証チェックを選べる。",
           "ko": "가장 작은 관련 컨텍스트, Skill, 도구, 검증 점검을 고른다.",
-          "de": "Den kleinstmöglichen relevanten Kontext, Skill, Tool und Verifikations-Check wählen."
+          "de": "Den kleinstmöglichen relevanten Kontext, Skill, Tool und Verifikations-Check wählen.",
+          "zh-tw": "选择最小相关上下文、Skill、工具和验证检查。"
         },
         "review": {
           "en": "Handle missing input, conflicting instructions, and runtime-versus-build evidence gaps.",
@@ -711,7 +776,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Gestiona entradas faltantes, instrucciones contradictorias y brechas de evidencia entre tiempo de ejecución y build.",
           "ja": "欠落した入力・矛盾する指示・実行時とビルド時の証拠のギャップを処理できる。",
           "ko": "빠진 입력, 충돌하는 지시, 런타임 대 빌드 증거 간 공백을 처리한다.",
-          "de": "Fehlende Eingaben, widersprüchliche Anweisungen und Lücken zwischen Laufzeit- und Build-Belegen behandeln."
+          "de": "Fehlende Eingaben, widersprüchliche Anweisungen und Lücken zwischen Laufzeit- und Build-Belegen behandeln.",
+          "zh-tw": "处理缺失输入、冲突指令以及运行时与构建证据之间的缺口。"
         }
       },
       "graduation": {
@@ -720,7 +786,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Avanza cuando otra persona pueda ejecutar el protocolo e identificar sus condiciones de parada sin adivinar.",
         "ja": "別の人が推測せずにプロトコルを実行し、その停止条件を指摘できる場合に進む。",
         "ko": "다른 사람이 추측 없이 프로토콜을 실행하고 중지 조건을 짚어낼 수 있을 때 다음 단계로 진급한다.",
-        "de": "Erst weitergehen, wenn eine andere Person das Protokoll ausführen und seine Stoppbedingungen ohne Raten benennen kann."
+        "de": "Erst weitergehen, wenn eine andere Person das Protokoll ausführen und seine Stoppbedingungen ohne Raten benennen kann.",
+        "zh-tw": "当另一个人无需猜测就能执行协议并指出停止条件时，才进入下一阶段。"
       },
       "blocked": {
         "en": "A missing input changes scope, risk, authority, or acceptance and no confirmation is available.",
@@ -728,7 +795,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Una entrada faltante cambia alcance, riesgo, autoridad o aceptación y no hay confirmación disponible.",
         "ja": "欠落した入力が範囲・リスク・権限・受け入れ条件を変えるのに、確認手段がない場合。",
         "ko": "빠진 입력이 범위, 위험, 권한 또는 승인을 바꾸는데 확인할 방법이 없을 때.",
-        "de": "Eine fehlende Eingabe verändert Umfang, Risiko, Berechtigung oder Akzeptanz, und es gibt keine Bestätigung."
+        "de": "Eine fehlende Eingabe verändert Umfang, Risiko, Berechtigung oder Akzeptanz, und es gibt keine Bestätigung.",
+        "zh-tw": "缺失输入会改变范围、风险、授权或验收，而又没有确认。"
       },
       "status": "candidate",
       "foundationRoute": null,
@@ -741,7 +809,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Convierte un deseo en un protocolo de tarea",
             "ja": "願いをタスクプロトコルにする",
             "ko": "바람을 작업 프로토콜로 바꾼다",
-            "de": "Einen Wunsch in ein Task-Protokoll verwandeln"
+            "de": "Einen Wunsch in ein Task-Protokoll verwandeln",
+            "zh-tw": "把愿望变成任务协议"
           },
           "href": "../book/chapters/03-task-protocol-EN.md",
           "relation": "primary"
@@ -754,7 +823,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Protocolo de tarea",
             "ja": "タスクプロトコル",
             "ko": "작업 프로토콜",
-            "de": "Task-Protokoll"
+            "de": "Task-Protokoll",
+            "zh-tw": "任务协议"
           },
           "href": "../book/labs/lab-002-task-protocol-EN.md",
           "relation": "primary",
@@ -765,7 +835,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Convierte una solicitud vaga en un protocolo ejecutable sin inventar alcance, autoridad o aceptación faltantes.",
             "ja": "欠落した範囲・権限・受け入れ条件を捏造せず、曖昧な依頼を実行可能なプロトコルに変換できる。",
             "ko": "빠진 범위, 권한, 승인을 지어내지 않고 모호한 요청을 실행 가능한 프로토콜로 변환한다.",
-            "de": "Eine vage Anfrage in ein ausführbares Protokoll verwandeln, ohne fehlenden Umfang, fehlende Berechtigungen oder Akzeptanz zu erfinden."
+            "de": "Eine vage Anfrage in ein ausführbares Protokoll verwandeln, ohne fehlenden Umfang, fehlende Berechtigungen oder Akzeptanz zu erfinden.",
+            "zh-tw": "把模糊请求转成可执行协议，不臆造缺失的范围、授权或验收。"
           },
           "newArtifact": {
             "en": "A task protocol containing goal, inputs, constraints, allowed actions, acceptance, stop conditions, and failure handling.",
@@ -773,7 +844,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Un protocolo de tarea que contenga objetivo, entradas, restricciones, acciones permitidas, aceptación, condiciones de parada y manejo de fallos.",
             "ja": "目標・入力・制約・許可される操作・受け入れ条件・停止条件・失敗処理を含むタスクプロトコル。",
             "ko": "목표, 입력, 제약, 허용 행동, 승인, 중지 조건, 실패 처리를 담은 작업 프로토콜.",
-            "de": "Ein Task-Protokoll mit Ziel, Eingaben, Einschränkungen, erlaubten Aktionen, Akzeptanz, Stoppbedingungen und Fehlerbehandlung."
+            "de": "Ein Task-Protokoll mit Ziel, Eingaben, Einschränkungen, erlaubten Aktionen, Akzeptanz, Stoppbedingungen und Fehlerbehandlung.",
+            "zh-tw": "一份包含目标、输入、约束、允许行动、验收、停止条件和失败处理的任务协议。"
           },
           "newAcceptance": {
             "en": "A second person can identify the first safe action and every condition that requires confirmation or stopping.",
@@ -781,7 +853,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Una segunda persona puede identificar la primera acción segura y cada condición que exige confirmación o parada.",
             "ja": "別の人が最初の安全な操作と、確認または停止を要するすべての条件を指摘できる。",
             "ko": "두 번째 사람이 첫 안전 행동과 확인 또는 중지가 필요한 모든 조건을 짚어낼 수 있다.",
-            "de": "Eine zweite Person kann die erste sichere Aktion und jede Bedingung benennen, die Bestätigung oder Stopp erfordert."
+            "de": "Eine zweite Person kann die erste sichere Aktion und jede Bedingung benennen, die Bestätigung oder Stopp erfordert.",
+            "zh-tw": "第二个人能够指出第一个安全行动，以及所有需要确认或停止的条件。"
           }
         }
       }
@@ -794,7 +867,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Diseñador de flujos de trabajo",
         "ja": "ワークフロー設計者",
         "ko": "워크플로 설계자",
-        "de": "Workflow-Designer"
+        "de": "Workflow-Designer",
+        "zh-tw": "工作流设计者"
       },
       "short": {
         "en": "Move from definition to delivery",
@@ -802,7 +876,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Pasa de la definición a la entrega",
         "ja": "定義から納品まで進める",
         "ko": "정의에서 전달로 나아간다",
-        "de": "Von der Definition zur Lieferung kommen"
+        "de": "Von der Definition zur Lieferung kommen",
+        "zh-tw": "从定义走到交付"
       },
       "headline": {
         "en": "Make the workflow runnable and checkable.",
@@ -810,7 +885,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Haz que el flujo de trabajo sea ejecutable y comprobable.",
         "ja": "ワークフローを実行可能で検証可能にする。",
         "ko": "워크플로를 실행 가능하고 점검 가능하게 만들어라.",
-        "de": "Den Workflow lauffähig und prüfbar machen."
+        "de": "Den Workflow lauffähig und prüfbar machen.",
+        "zh-tw": "让工作流可运行、可检查。"
       },
       "description": {
         "en": "Design a complete workflow with stages, checkpoints, action boundaries, recovery, and evidence that survives a real task.",
@@ -818,7 +894,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Diseña un flujo de trabajo completo con etapas, puntos de control, límites de acción, recuperación y evidencia que sobreviva a una tarea real.",
         "ja": "段階・チェックポイント・操作境界・リカバリ・証拠を備えた完全なワークフローを設計し、実際のタスクでも通用させる。",
         "ko": "단계, 체크포인트, 행동 경계, 복구, 실제 과제에서도 유효한 증거를 갖춘 완전한 워크플로를 설계한다.",
-        "de": "Einen vollständigen Workflow mit Phasen, Checkpoints, Aktionsgrenzen, Recovery und Belegen entwerfen, der einer echten Aufgabe standhält."
+        "de": "Einen vollständigen Workflow mit Phasen, Checkpoints, Aktionsgrenzen, Recovery und Belegen entwerfen, der einer echten Aufgabe standhält.",
+        "zh-tw": "设计包含阶段、检查点、行动边界、恢复和证据的完整工作流，并用于真实任务。"
       },
       "chapters": [
         {
@@ -829,7 +906,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Cómo dividen el trabajo Skills, Plugins, MCP y herramientas",
             "ja": "Skill・Plugin・MCP・ツールがどう作業を分担するか",
             "ko": "Skill, Plugin, MCP, 도구가 작업을 어떻게 나누는가",
-            "de": "Wie Skills, Plugins, MCP und Tools die Arbeit aufteilen"
+            "de": "Wie Skills, Plugins, MCP und Tools die Arbeit aufteilen",
+            "zh-tw": "Skill、Plugin、MCP 与工具如何分工"
           },
           "href": "../book/chapters/07-skills-plugins-and-tools-EN.md",
           "relation": "primary"
@@ -842,7 +920,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "El ciclo de vida completo, de la definición a la entrega",
             "ja": "定義から納品までの完全なライフサイクル",
             "ko": "정의에서 전달까지의 전체 수명주기",
-            "de": "Der vollständige Lebenszyklus von der Definition bis zur Lieferung"
+            "de": "Der vollständige Lebenszyklus von der Definition bis zur Lieferung",
+            "zh-tw": "从定义到交付的完整生命周期"
           },
           "href": "../book/chapters/08-full-lifecycle-workflow-EN.md",
           "relation": "primary"
@@ -855,7 +934,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Verificación, duda y recuperación",
             "ja": "検証・疑い・リカバリ",
             "ko": "검증, 의심, 복구",
-            "de": "Verifikation, Zweifel und Recovery"
+            "de": "Verifikation, Zweifel und Recovery",
+            "zh-tw": "验证、怀疑与恢复"
           },
           "href": "../book/chapters/09-verification-and-recovery-EN.md",
           "relation": "primary"
@@ -868,7 +948,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Planificación y slices verticales",
             "ja": "計画と垂直スライス",
             "ko": "계획과 수직 슬라이스",
-            "de": "Planung und vertikale Schnitte"
+            "de": "Planung und vertikale Schnitte",
+            "zh-tw": "规划与竖向切片"
           },
           "href": "../book/chapters/10-planning-and-slicing-EN.md",
           "relation": "primary"
@@ -881,7 +962,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Límites de acción en archivos, terminales, navegadores y GitHub",
             "ja": "ファイル・端末・ブラウザ・GitHub をまたぐ操作の境界",
             "ko": "파일, 터미널, 브라우저, GitHub 전반의 행동 경계",
-            "de": "Aktionsgrenzen bei Dateien, Terminals, Browsern und GitHub"
+            "de": "Aktionsgrenzen bei Dateien, Terminals, Browsern und GitHub",
+            "zh-tw": "文件、终端、浏览器与 GitHub 的行动边界"
           },
           "href": "../book/chapters/13-action-boundaries-EN.md",
           "relation": "primary"
@@ -896,7 +978,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Slice vertical auditable",
             "ja": "監査可能な垂直スライス",
             "ko": "감사 가능한 수직 슬라이스",
-            "de": "Prüfbarer vertikaler Schnitt"
+            "de": "Prüfbarer vertikaler Schnitt",
+            "zh-tw": "可审计的竖向切片"
           },
           "href": "../book/labs/lab-013-l3-vertical-slice-EN.md",
           "relation": "primary",
@@ -907,7 +990,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Ejecuta un slice vertical completo con puntos de control, manejo de fallos, recuperación y una transferencia acotada.",
             "ja": "チェックポイント・失敗処理・リカバリ・境界のある引き継ぎを備えた完全な垂直スライスを実行できる。",
             "ko": "체크포인트, 실패 처리, 복구, 경계 있는 인계를 갖춘 완전한 수직 슬라이스를 실행한다.",
-            "de": "Einen vollständigen vertikalen Schnitt mit Checkpoints, Fehlerbehandlung, Recovery und begrenzter Übergabe durchlaufen."
+            "de": "Einen vollständigen vertikalen Schnitt mit Checkpoints, Fehlerbehandlung, Recovery und begrenzter Übergabe durchlaufen.",
+            "zh-tw": "运行一条包含检查点、失败处理、恢复和有边界交接的完整竖向切片。"
           },
           "newArtifact": {
             "en": "A baseline hash, checkpoint log, diff, validation output, rollback target, and transfer record under one run ID.",
@@ -915,7 +999,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Un hash de línea base, registro de puntos de control, diff, salida de validación, objetivo de rollback y registro de transferencia bajo un mismo run ID.",
             "ja": "1つの実行 ID の下にあるベースラインハッシュ・チェックポイントログ・diff・検証出力・ロールバック対象・転移記録。",
             "ko": "하나의 실행 ID 아래의 기준선 해시, 체크포인트 로그, diff, 검증 출력, 롤백 대상, 전이 기록.",
-            "de": "Baseline-Hash, Checkpoint-Protokoll, Diff, Validierungsausgabe, Rollback-Ziel und Transfer-Aufzeichnung unter einer Run-ID."
+            "de": "Baseline-Hash, Checkpoint-Protokoll, Diff, Validierungsausgabe, Rollback-Ziel und Transfer-Aufzeichnung unter einer Run-ID.",
+            "zh-tw": "同一运行 ID 下的基线哈希、检查点日志、差异、验证输出、回滚目标和迁移记录。"
           },
           "newAcceptance": {
             "en": "The evidence chain preserves one intentional failure and supports each scoped delivery claim without rewriting history.",
@@ -923,7 +1008,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "La cadena de evidencia conserva un fallo intencional y respalda cada afirmación de entrega acotada sin reescribir el historial.",
             "ja": "証拠の連鎖が意図的な失敗を1件保持し、履歴を書き換えずに各範囲付きの納品主張を裏付けている。",
             "ko": "증거 체인이 의도적 실패 하나를 보존하고, 기록을 다시 쓰지 않으면서 각 범위 내 전달 주장을 뒷받침한다.",
-            "de": "Die Belegkette bewahrt einen absichtlichen Fehlschlag und stützt jede abgegrenzte Lieferbehauptung, ohne die Historie umzuschreiben."
+            "de": "Die Belegkette bewahrt einen absichtlichen Fehlschlag und stützt jede abgegrenzte Lieferbehauptung, ohne die Historie umzuschreiben.",
+            "zh-tw": "证据链保留一次故意失败，并在不改写历史的情况下支持每项有范围的交付声明。"
           }
         },
         {
@@ -934,7 +1020,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Revisión de evidencia",
             "ja": "証拠レビュー",
             "ko": "증거 리뷰",
-            "de": "Beleg-Prüfung"
+            "de": "Beleg-Prüfung",
+            "zh-tw": "证据审查"
           },
           "href": "../book/labs/lab-003-evidence-review-EN.md",
           "relation": "supporting",
@@ -945,7 +1032,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Vincula una declaración de finalización plausible con la evidencia que necesita e identifica la comprobación faltante más pequeña.",
             "ja": "もっともらしい完了報告を、それが必要とする証拠に対応づけ、最小の欠落チェックを指摘できる。",
             "ko": "그럴듯한 완료 문구를 필요한 증거에 매핑하고 가장 작은 누락 점검을 찾아낸다.",
-            "de": "Eine plausibel klingende Abschlusserklärung den benötigten Belegen zuordnen und den kleinsten fehlenden Check benennen."
+            "de": "Eine plausibel klingende Abschlusserklärung den benötigten Belegen zuordnen und den kleinsten fehlenden Check benennen.",
+            "zh-tw": "把看似可信的完成声明映射到所需证据，并找出最小缺失检查。"
           },
           "newArtifact": {
             "en": "A first-pass claim-to-evidence table with supported, partial, and unsupported rows.",
@@ -953,7 +1041,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Una primera tabla afirmación-evidencia con filas respaldadas, parciales y sin respaldo.",
             "ja": "裏付けあり・部分的・裏付けなしの行を含む初回版の主張―証拠テーブル。",
             "ko": "지지됨, 부분 지지, 미지지 행으로 구성된 1차 주장-증거 표.",
-            "de": "Eine erste Behauptungs-Beleg-Tabelle mit Zeilen für gestützt, teilweise gestützt und ungestützt."
+            "de": "Eine erste Behauptungs-Beleg-Tabelle mit Zeilen für gestützt, teilweise gestützt und ungestützt.",
+            "zh-tw": "一张首次断言—证据表，包含已支持、部分支持和不支持的行。"
           },
           "newAcceptance": {
             "en": "Every claim has a scope, evidence path or explicit gap, and one bounded next action.",
@@ -961,7 +1050,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Cada afirmación tiene un alcance, una ruta de evidencia o una brecha explícita, y una próxima acción acotada.",
             "ja": "すべての主張に、範囲・証拠パスまたは明示的なギャップ・境界のある次の行動が1つある。",
             "ko": "모든 주장에 범위, 증거 경로 또는 명시적 공백, 경계 있는 다음 행동 하나가 있다.",
-            "de": "Jede Behauptung hat einen Umfang, einen Belegpfad oder eine explizite Lücke und eine begrenzte nächste Aktion."
+            "de": "Jede Behauptung hat einen Umfang, einen Belegpfad oder eine explizite Lücke und eine begrenzte nächste Aktion.",
+            "zh-tw": "每项声明都有范围、证据路径或明确缺口，以及一个有边界的下一行动。"
           }
         },
         {
@@ -972,7 +1062,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Límites de acción",
             "ja": "操作の境界",
             "ko": "행동 경계",
-            "de": "Aktionsgrenzen"
+            "de": "Aktionsgrenzen",
+            "zh-tw": "行动边界"
           },
           "href": "../book/labs/lab-007-action-boundaries-EN.md",
           "relation": "supporting",
@@ -983,7 +1074,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Clasifica acciones de archivo, terminal, navegador y GitHub por autoridad, efecto secundario y costo de recuperación.",
             "ja": "ファイル・端末・ブラウザ・GitHub の操作を、権限・副作用・リカバリコストで分類できる。",
             "ko": "파일, 터미널, 브라우저, GitHub 행동을 권한, 부작용, 복구 비용 기준으로 분류한다.",
-            "de": "Datei-, Terminal-, Browser- und GitHub-Aktionen nach Berechtigung, Nebeneffekt und Recovery-Kosten einstufen."
+            "de": "Datei-, Terminal-, Browser- und GitHub-Aktionen nach Berechtigung, Nebeneffekt und Recovery-Kosten einstufen.",
+            "zh-tw": "按授权、副作用和恢复成本对文件、终端、浏览器和 GitHub 行动分级。"
           },
           "newArtifact": {
             "en": "An action-boundary matrix with read, edit, run, commit, push, and publish rows.",
@@ -991,7 +1083,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Una matriz de límites de acción con filas de lectura, edición, ejecución, commit, push y publicación.",
             "ja": "読み取り・編集・実行・コミット・プッシュ・公開の行を持つ操作境界マトリクス。",
             "ko": "읽기, 편집, 실행, 커밋, 푸시, 게시 행이 있는 행동 경계 행렬.",
-            "de": "Eine Aktionsgrenzen-Matrix mit Zeilen für Lesen, Bearbeiten, Ausführen, Commit, Push und Veröffentlichen."
+            "de": "Eine Aktionsgrenzen-Matrix mit Zeilen für Lesen, Bearbeiten, Ausführen, Commit, Push und Veröffentlichen.",
+            "zh-tw": "一张包含读取、编辑、运行、提交、推送和发布行的行动边界矩阵。"
           },
           "newAcceptance": {
             "en": "Each persistent or external action names its authorization, confirmation point, evidence, and recovery path.",
@@ -999,7 +1092,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Cada acción persistente o externa nombra su autorización, punto de confirmación, evidencia y ruta de recuperación.",
             "ja": "永続的または外部への操作がそれぞれ、承認・確認ポイント・証拠・リカバリ経路を明示している。",
             "ko": "모든 지속 또는 외부 행동이 권한, 확인 시점, 증거, 복구 경로를 명시한다.",
-            "de": "Jede persistente oder externe Aktion benennt ihre Autorisierung, ihren Bestätigungspunkt, ihre Belege und ihren Recovery-Pfad."
+            "de": "Jede persistente oder externe Aktion benennt ihre Autorisierung, ihren Bestätigungspunkt, ihre Belege und ihren Recovery-Pfad.",
+            "zh-tw": "每个持久或外部行动都明确授权、确认点、证据和恢复路径。"
           }
         },
         {
@@ -1010,7 +1104,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Ciclo de vida de ingeniería",
             "ja": "エンジニアリングライフサイクル",
             "ko": "엔지니어링 수명주기",
-            "de": "Engineering-Lebenszyklus"
+            "de": "Engineering-Lebenszyklus",
+            "zh-tw": "工程生命周期"
           },
           "href": "../book/labs/lab-009-engineering-lifecycle-EN.md",
           "relation": "supporting",
@@ -1021,7 +1116,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Compara la implementación directa con un ciclo de vida de ingeniería por etapas usando el retrabajo observado y no la preferencia.",
             "ja": "好みではなく観察された手戻りを使って、直接実装と段階的なエンジニアリングライフサイクルを比較できる。",
             "ko": "선호가 아니라 관찰된 재작업으로 직접 구현과 단계별 엔지니어링 수명주기를 비교한다.",
-            "de": "Direkte Umsetzung mit einem gestuften Engineering-Lebenszyklus anhand beobachteter Nacharbeit statt Präferenz vergleichen."
+            "de": "Direkte Umsetzung mit einem gestuften Engineering-Lebenszyklus anhand beobachteter Nacharbeit statt Präferenz vergleichen.",
+            "zh-tw": "用观察到的返工而非偏好，对比直接实现与分阶段工程生命周期。"
           },
           "newArtifact": {
             "en": "Two comparable run records with stage logs, checks, rework counts, and a decision note.",
@@ -1029,7 +1125,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Dos registros de ejecución comparables con registros de etapa, comprobaciones, conteos de retrabajo y una nota de decisión.",
             "ja": "段階ログ・チェック・手戻り回数・決定メモを含む、比較可能な実行記録2本。",
             "ko": "단계 로그, 점검, 재작업 횟수, 결정 메모가 있는 비교 가능한 실행 기록 두 개.",
-            "de": "Zwei vergleichbare Run-Aufzeichnungen mit Phasenprotokollen, Checks, Nacharbeitszahlen und einem Entscheidungsvermerk."
+            "de": "Zwei vergleichbare Run-Aufzeichnungen mit Phasenprotokollen, Checks, Nacharbeitszahlen und einem Entscheidungsvermerk.",
+            "zh-tw": "两份可比较的运行记录，包含阶段日志、检查、返工次数和决策说明。"
           },
           "newAcceptance": {
             "en": "The comparison keeps task and acceptance fixed and attributes only evidence-supported differences.",
@@ -1037,7 +1134,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "La comparación mantiene fijos la tarea y la aceptación y atribuye solo diferencias respaldadas por evidencia.",
             "ja": "比較はタスクと受け入れ条件を固定し、証拠で裏付けられた違いのみに帰属させる。",
             "ko": "비교는 작업과 승인을 고정하고 증거로 지지되는 차이만 원인으로 귀속한다.",
-            "de": "Der Vergleich hält Aufgabe und Akzeptanz konstant und führt nur beleggestützte Unterschiede an."
+            "de": "Der Vergleich hält Aufgabe und Akzeptanz konstant und führt nur beleggestützte Unterschiede an.",
+            "zh-tw": "比较保持任务和验收固定，只归因有证据支持的差异。"
           }
         },
         {
@@ -1048,7 +1146,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Conciliación de reanudación",
             "ja": "再開時の突き合わせ",
             "ko": "재개 대조",
-            "de": "Fortsetzungs-Abgleich"
+            "de": "Fortsetzungs-Abgleich",
+            "zh-tw": "恢复任务对账"
           },
           "href": "../book/labs/lab-014-resume-reconciliation-EN.md",
           "relation": "supporting",
@@ -1059,7 +1158,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Concilia objetivo, rama, permisos y estado de efectos secundarios antes de reanudar un trabajo interrumpido.",
             "ja": "中断した作業を再開する前に、対象・ブランチ・権限・副作用の状態を突き合わせられる。",
             "ko": "중단된 작업을 재개하기 전에 목표, 브랜치, 권한, 부작용 상태를 대조한다.",
-            "de": "Ziel, Branch, Berechtigungen und Nebeneffekt-Zustand abgleichen, bevor unterbrochene Arbeit fortgesetzt wird."
+            "de": "Ziel, Branch, Berechtigungen und Nebeneffekt-Zustand abgleichen, bevor unterbrochene Arbeit fortgesetzt wird.",
+            "zh-tw": "在恢复中断工作前，对账目标、分支、权限和副作用状态。"
           },
           "newArtifact": {
             "en": "A resume reconciliation record with last known good state, current unknowns, and next safe probe.",
@@ -1067,7 +1167,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Un registro de conciliación de reanudación con el último estado bueno conocido, las incógnitas actuales y la siguiente prueba segura.",
             "ja": "最後に確認できた正常状態・現在の不明点・次の安全な探査を含む、再開時の突き合わせ記録。",
             "ko": "마지막으로 알려진 정상 상태, 현재 미지 항목, 다음 안전 탐색이 있는 재개 대조 기록.",
-            "de": "Eine Fortsetzungs-Abgleichsaufzeichnung mit letztem bekannten guten Zustand, aktuellen Unbekannten und nächster sicherer Sonde."
+            "de": "Eine Fortsetzungs-Abgleichsaufzeichnung mit letztem bekannten guten Zustand, aktuellen Unbekannten und nächster sicherer Sonde.",
+            "zh-tw": "一份恢复对账记录，包含最后已知良好状态、当前未知项和下一个安全探针。"
           },
           "newAcceptance": {
             "en": "No action resumes until identity, authority, and prior external effects are either confirmed or explicitly blocked.",
@@ -1075,7 +1176,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Ninguna acción se reanuda hasta que la identidad, la autoridad y los efectos externos previos estén confirmados o bloqueados explícitamente.",
             "ja": "本人確認・権限・以前の外部への影響が確認されるか明示的にブロックされるまで、操作を再開しない。",
             "ko": "정체성, 권한, 이전 외부 영향이 확인되거나 명시적으로 차단되기 전에는 어떤 행동도 재개하지 않는다.",
-            "de": "Keine Aktion wird fortgesetzt, bis Identität, Autorisierung und frühere externe Effekte bestätigt oder explizit blockiert sind."
+            "de": "Keine Aktion wird fortgesetzt, bis Identität, Autorisierung und frühere externe Effekte bestätigt oder explizit blockiert sind.",
+            "zh-tw": "在身份、授权和先前外部影响得到确认或明确阻断前，不恢复任何行动。"
           }
         },
         {
@@ -1086,7 +1188,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Límite de efectos secundarios",
             "ja": "副作用の境界",
             "ko": "부작용 경계",
-            "de": "Nebeneffekt-Grenze"
+            "de": "Nebeneffekt-Grenze",
+            "zh-tw": "副作用边界"
           },
           "href": "../book/labs/lab-016-side-effect-boundary-EN.md",
           "relation": "supporting",
@@ -1097,7 +1200,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Separa el diagnóstico de la instalación, publicación, reinicio y otras acciones persistentes.",
             "ja": "診断を、インストール・公開・再起動などの永続的な操作から分離できる。",
             "ko": "진단을 설치, 게시, 재시작 및 기타 지속 행동과 분리한다.",
-            "de": "Diagnose von Installation, Veröffentlichung, Neustart und anderen persistenten Aktionen trennen."
+            "de": "Diagnose von Installation, Veröffentlichung, Neustart und anderen persistenten Aktionen trennen.",
+            "zh-tw": "把诊断与安装、发布、重启及其他持久行动分开。"
           },
           "newArtifact": {
             "en": "A side-effect ledger classifying read-only, reversible, compensating, and non-retryable actions.",
@@ -1105,7 +1209,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Un registro de efectos secundarios que clasifique acciones de solo lectura, reversibles, compensatorias y no reintentables.",
             "ja": "読み取り専用・可逆・補償・再試行不可の操作を分類する副作用台帳。",
             "ko": "읽기 전용, 되돌릴 수 있음, 보상 가능, 재시도 불가 행동으로 분류하는 부작용 원장.",
-            "de": "Ein Nebeneffekt-Buch, das Aktionen als schreibgeschützt, umkehrbar, kompensierend und nicht wiederholbar einstuft."
+            "de": "Ein Nebeneffekt-Buch, das Aktionen als schreibgeschützt, umkehrbar, kompensierend und nicht wiederholbar einstuft.",
+            "zh-tw": "一份副作用账本，对只读、可回滚、可补偿和不可重试行动进行分类。"
           },
           "newAcceptance": {
             "en": "The diagnostic endpoint is useful without performing an unapproved persistent action or hiding recovery cost.",
@@ -1113,7 +1218,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "El endpoint de diagnóstico es útil sin realizar una acción persistente no aprobada ni ocultar el costo de recuperación.",
             "ja": "未承認の永続的操作を実行せず、リカバリコストを隠さなくても、診断結果が有用である。",
             "ko": "진단 종료 지점이 승인되지 않은 지속 행동을 수행하지 않고도, 복구 비용을 숨기지 않고도 유용하다.",
-            "de": "Der Diagnose-Endpunkt ist nützlich, ohne eine nicht genehmigte persistente Aktion auszuführen oder Recovery-Kosten zu verbergen."
+            "de": "Der Diagnose-Endpunkt ist nützlich, ohne eine nicht genehmigte persistente Aktion auszuführen oder Recovery-Kosten zu verbergen.",
+            "zh-tw": "诊断终点在不执行未批准持久行动、也不隐藏恢复成本的情况下仍然有用。"
           }
         }
       ],
@@ -1126,7 +1232,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Workflow Orchestrator (orquestador de flujos de trabajo)",
             "ja": "ワークフローオーケストレーター Workflow Orchestrator",
             "ko": "워크플로 오케스트레이터",
-            "de": "Workflow Orchestrator"
+            "de": "Workflow Orchestrator",
+            "zh-tw": "工作流编排 Workflow Orchestrator"
           },
           "href": "../skills/prysai-workflow-orchestrator/SKILL.md",
           "relation": "supporting"
@@ -1139,7 +1246,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Evidence Review (revisión de evidencia)",
             "ja": "証拠レビュー Evidence Review",
             "ko": "증거 리뷰",
-            "de": "Evidence Review"
+            "de": "Evidence Review",
+            "zh-tw": "证据审查 Evidence Review"
           },
           "href": "../skills/prysai-evidence-review/SKILL.md",
           "relation": "supporting"
@@ -1152,7 +1260,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Task Protocol (protocolo de tarea)",
             "ja": "タスクプロトコル Task Protocol",
             "ko": "작업 프로토콜",
-            "de": "Task Protocol"
+            "de": "Task Protocol",
+            "zh-tw": "任务协议 Task Protocol"
           },
           "href": "../skills/prysai-task-protocol/SKILL.md",
           "relation": "supporting"
@@ -1165,7 +1274,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Communication Failure Triage (triaje de fallos de comunicación)",
             "ja": "コミュニケーション失敗トリアージ Communication Failure Triage",
             "ko": "커뮤니케이션 실패 진단",
-            "de": "Communication Failure Triage"
+            "de": "Communication Failure Triage",
+            "zh-tw": "沟通失败诊断 Communication Failure Triage"
           },
           "href": "../skills/prysai-communication-failure-triage/SKILL.md",
           "relation": "supporting"
@@ -1203,7 +1313,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Explica el grafo de dependencias, los límites de etapa, los cambios de permisos y la evidencia de aceptación.",
           "ja": "依存グラフ・段階の境界・権限の変更・受け入れの証拠を説明できる。",
           "ko": "의존성 그래프, 단계 경계, 권한 변경, 승인 증거를 설명한다.",
-          "de": "Abhängigkeitsgraph, Phasengrenzen, Berechtigungsänderungen und Akzeptanzbelege erklären."
+          "de": "Abhängigkeitsgraph, Phasengrenzen, Berechtigungsänderungen und Akzeptanzbelege erklären.",
+          "zh-tw": "解释依赖图、阶段边界、权限变化和验收证据。"
         },
         "operate": {
           "en": "Run a vertical slice from definition to verification with an explicit checkpoint.",
@@ -1211,7 +1322,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Ejecuta un slice vertical desde la definición hasta la verificación con un punto de control explícito.",
           "ja": "明示的なチェックポイントを置いて、定義から検証までの垂直スライスを実行できる。",
           "ko": "명시적 체크포인트로 정의에서 검증까지 수직 슬라이스를 실행한다.",
-          "de": "Einen vertikalen Schnitt von der Definition bis zur Verifikation mit explizitem Checkpoint durchlaufen."
+          "de": "Einen vertikalen Schnitt von der Definition bis zur Verifikation mit explizitem Checkpoint durchlaufen.",
+          "zh-tw": "用明确检查点跑通从定义到验证的一条竖向切片。"
         },
         "judge": {
           "en": "Stop or recover when authority, scope, source, or evidence is insufficient.",
@@ -1219,7 +1331,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Detente o recupérate cuando la autoridad, el alcance, la fuente o la evidencia sean insuficientes.",
           "ja": "権限・範囲・出典・証拠が不十分なとき、停止またはリカバリできる。",
           "ko": "권한, 범위, 출처 또는 증거가 부족하면 멈추거나 복구한다.",
-          "de": "Bei unzureichender Autorisierung, unzureichendem Umfang, unzureichender Quelle oder unzureichenden Belegen stoppen oder Recovery einleiten."
+          "de": "Bei unzureichender Autorisierung, unzureichendem Umfang, unzureichender Quelle oder unzureichenden Belegen stoppen oder Recovery einleiten.",
+          "zh-tw": "授权、范围、来源或证据不足时，正确停止或恢复。"
         },
         "review": {
           "en": "Compare the plan, diff, logs, checks, failed attempt, and remaining limits.",
@@ -1227,7 +1340,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Compara el plan, el diff, los registros, las comprobaciones, el intento fallido y los límites restantes.",
           "ja": "計画・diff・ログ・チェック・失敗した試み・残る制約を突き合わせられる。",
           "ko": "계획, diff, 로그, 점검, 실패한 시도, 남은 한계를 대조한다.",
-          "de": "Plan, Diff, Protokolle, Checks, fehlgeschlagenen Versuch und verbleibende Grenzen vergleichen."
+          "de": "Plan, Diff, Protokolle, Checks, fehlgeschlagenen Versuch und verbleibende Grenzen vergleichen.",
+          "zh-tw": "对照计划、差异、日志、检查、失败尝试和剩余限制。"
         }
       },
       "graduation": {
@@ -1236,7 +1350,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Avanza con un slice vertical completo registrado desde la definición hasta la revisión, un fallo intencional o caso límite, una tabla afirmación-evidencia y una tarea de transferencia en otro dominio.",
         "ja": "定義からレビューまで記録された完全な垂直スライス1本・意図的な失敗または境界ケース1件・主張―証拠テーブル・別領域での転移タスクを揃えてから進む。",
         "ko": "정의부터 리뷰까지 기록된 완전한 수직 슬라이스 하나, 의도적 실패 또는 경계 사례 하나, 주장-증거 표, 다른 도메인의 전이 과제를 갖춰야 다음 단계로 진급한다.",
-        "de": "Erst weitergehen mit einem vollständigen, von der Definition bis zur Prüfung dokumentierten vertikalen Schnitt, einem absichtlichen Fehlschlag oder Grenzfall, einer Behauptungs-Beleg-Tabelle und einer Transfer-Aufgabe in einem anderen Bereich."
+        "de": "Erst weitergehen mit einem vollständigen, von der Definition bis zur Prüfung dokumentierten vertikalen Schnitt, einem absichtlichen Fehlschlag oder Grenzfall, einer Behauptungs-Beleg-Tabelle und einer Transfer-Aufgabe in einem anderen Bereich.",
+        "zh-tw": "完成一条从定义到审查并留下记录的完整竖向切片、一个故意失败或边界案例、一张断言—证据表，以及另一个领域的迁移任务后，才进入下一阶段。"
       },
       "blocked": {
         "en": "The workflow has no usable checkpoint or run log, relies on hidden permissions, untrusted instructions, unrecorded retries, or a claim outside its evidence.",
@@ -1244,7 +1359,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "El flujo de trabajo no tiene un punto de control ni un registro de ejecución útiles, depende de permisos ocultos, instrucciones no confiables, reintentos no registrados o una afirmación fuera de su evidencia.",
         "ja": "ワークフローに使えるチェックポイントや実行ログがなく、隠れた権限・信頼できない指示・記録されない再試行に依存しているか、証拠の範囲外の主張がある場合。",
         "ko": "워크플로에 쓸 수 있는 체크포인트나 실행 로그가 없거나, 숨은 권한, 신뢰할 수 없는 지시, 기록되지 않은 재시도에 의존하거나 증거 범위 밖의 주장이 있을 때.",
-        "de": "Der Workflow hat keinen nutzbaren Checkpoint oder kein Run-Protokoll, verlässt sich auf versteckte Berechtigungen, unzuverlässige Anweisungen, nicht protokollierte Wiederholungen oder eine Behauptung außerhalb seiner Belege."
+        "de": "Der Workflow hat keinen nutzbaren Checkpoint oder kein Run-Protokoll, verlässt sich auf versteckte Berechtigungen, unzuverlässige Anweisungen, nicht protokollierte Wiederholungen oder eine Behauptung außerhalb seiner Belege.",
+        "zh-tw": "工作流缺少可用的检查点或运行记录，依赖隐藏权限、不可信指令、未记录的重试，或结论超出证据范围。"
       },
       "status": "candidate",
       "foundationRoute": null,
@@ -1257,7 +1373,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Cómo dividen el trabajo Skills, Plugins, MCP y herramientas",
             "ja": "Skill・Plugin・MCP・ツールがどう作業を分担するか",
             "ko": "Skill, Plugin, MCP, 도구가 작업을 어떻게 나누는가",
-            "de": "Wie Skills, Plugins, MCP und Tools die Arbeit aufteilen"
+            "de": "Wie Skills, Plugins, MCP und Tools die Arbeit aufteilen",
+            "zh-tw": "Skill、Plugin、MCP 与工具如何分工"
           },
           "href": "../book/chapters/07-skills-plugins-and-tools-EN.md",
           "relation": "primary"
@@ -1270,7 +1387,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Slice vertical auditable",
             "ja": "監査可能な垂直スライス",
             "ko": "감사 가능한 수직 슬라이스",
-            "de": "Prüfbarer vertikaler Schnitt"
+            "de": "Prüfbarer vertikaler Schnitt",
+            "zh-tw": "可审计的竖向切片"
           },
           "href": "../book/labs/lab-013-l3-vertical-slice-EN.md",
           "relation": "primary",
@@ -1281,7 +1399,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Ejecuta un slice vertical completo con puntos de control, manejo de fallos, recuperación y una transferencia acotada.",
             "ja": "チェックポイント・失敗処理・リカバリ・境界のある引き継ぎを備えた完全な垂直スライスを実行できる。",
             "ko": "체크포인트, 실패 처리, 복구, 경계 있는 인계를 갖춘 완전한 수직 슬라이스를 실행한다.",
-            "de": "Einen vollständigen vertikalen Schnitt mit Checkpoints, Fehlerbehandlung, Recovery und begrenzter Übergabe durchlaufen."
+            "de": "Einen vollständigen vertikalen Schnitt mit Checkpoints, Fehlerbehandlung, Recovery und begrenzter Übergabe durchlaufen.",
+            "zh-tw": "运行一条包含检查点、失败处理、恢复和有边界交接的完整竖向切片。"
           },
           "newArtifact": {
             "en": "A baseline hash, checkpoint log, diff, validation output, rollback target, and transfer record under one run ID.",
@@ -1289,7 +1408,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Un hash de línea base, registro de puntos de control, diff, salida de validación, objetivo de rollback y registro de transferencia bajo un mismo run ID.",
             "ja": "1つの実行 ID の下にあるベースラインハッシュ・チェックポイントログ・diff・検証出力・ロールバック対象・転移記録。",
             "ko": "하나의 실행 ID 아래의 기준선 해시, 체크포인트 로그, diff, 검증 출력, 롤백 대상, 전이 기록.",
-            "de": "Baseline-Hash, Checkpoint-Protokoll, Diff, Validierungsausgabe, Rollback-Ziel und Transfer-Aufzeichnung unter einer Run-ID."
+            "de": "Baseline-Hash, Checkpoint-Protokoll, Diff, Validierungsausgabe, Rollback-Ziel und Transfer-Aufzeichnung unter einer Run-ID.",
+            "zh-tw": "同一运行 ID 下的基线哈希、检查点日志、差异、验证输出、回滚目标和迁移记录。"
           },
           "newAcceptance": {
             "en": "The evidence chain preserves one intentional failure and supports each scoped delivery claim without rewriting history.",
@@ -1297,7 +1417,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "La cadena de evidencia conserva un fallo intencional y respalda cada afirmación de entrega acotada sin reescribir el historial.",
             "ja": "証拠の連鎖が意図的な失敗を1件保持し、履歴を書き換えずに各範囲付きの納品主張を裏付けている。",
             "ko": "증거 체인이 의도적 실패 하나를 보존하고, 기록을 다시 쓰지 않으면서 각 범위 내 전달 주장을 뒷받침한다.",
-            "de": "Die Belegkette bewahrt einen absichtlichen Fehlschlag und stützt jede abgegrenzte Lieferbehauptung, ohne die Historie umzuschreiben."
+            "de": "Die Belegkette bewahrt einen absichtlichen Fehlschlag und stützt jede abgegrenzte Lieferbehauptung, ohne die Historie umzuschreiben.",
+            "zh-tw": "证据链保留一次故意失败，并在不改写历史的情况下支持每项有范围的交付声明。"
           }
         }
       }
@@ -1310,7 +1431,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Constructor de capacidades",
         "ja": "能力構築者",
         "ko": "역량 구축자",
-        "de": "Capability-Builder"
+        "de": "Capability-Builder",
+        "zh-tw": "能力构建者"
       },
       "short": {
         "en": "Choose the smallest useful set",
@@ -1318,7 +1440,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Elige el conjunto útil más pequeño",
         "ja": "最小限で有効な組み合わせを選ぶ",
         "ko": "가장 작은 유용한 조합을 고른다",
-        "de": "Das kleinste sinnvolle Set wählen"
+        "de": "Das kleinste sinnvolle Set wählen",
+        "zh-tw": "选择最小有效组合"
       },
       "headline": {
         "en": "Choose the smallest useful capability.",
@@ -1326,7 +1449,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Elige la capacidad útil más pequeña.",
         "ja": "最小限で有効な能力を選ぶ。",
         "ko": "가장 작은 유용한 역량을 고르라.",
-        "de": "Die kleinste sinnvolle Capability wählen."
+        "de": "Die kleinste sinnvolle Capability wählen.",
+        "zh-tw": "只选择最小有效能力。"
       },
       "description": {
         "en": "Select, compose, and improve Skills and tools by trigger, fit, dependency, license, permission, and verification cost.",
@@ -1334,7 +1458,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Selecciona, compone y mejora Skills y herramientas según disparador, ajuste, dependencia, licencia, permiso y costo de verificación.",
         "ja": "トリガー・適合性・依存関係・ライセンス・権限・検証コストに基づいて Skill とツールを選択・組み合わせ・改善できる。",
         "ko": "트리거, 적합성, 의존성, 라이선스, 권한, 검증 비용 기준으로 Skill과 도구를 선택하고 구성하며 개선한다.",
-        "de": "Skills und Tools nach Auslöser, Passung, Abhängigkeit, Lizenz, Berechtigung und Verifikationskosten auswählen, kombinieren und verbessern."
+        "de": "Skills und Tools nach Auslöser, Passung, Abhängigkeit, Lizenz, Berechtigung und Verifikationskosten auswählen, kombinieren und verbessern.",
+        "zh-tw": "按触发、适配、依赖、许可证、权限和验证成本选择、组合并改进 Skill 与工具。"
       },
       "chapters": [
         {
@@ -1345,7 +1470,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Diseña una Skill que se gane su lugar",
             "ja": "採用に値する Skill を設計する",
             "ko": "자리할 이유가 있는 Skill을 설계한다",
-            "de": "Einen Skill entwerfen, der seinen Platz verdient"
+            "de": "Einen Skill entwerfen, der seinen Platz verdient",
+            "zh-tw": "设计一个真正有用的 Skill"
           },
           "href": "../book/chapters/11-designing-a-skill-EN.md",
           "relation": "primary"
@@ -1358,7 +1484,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Descubre, instala y audita una Skill externa",
             "ja": "外部 Skill の発見・インストール・監査",
             "ko": "외부 Skill을 발견하고 설치하며 감사한다",
-            "de": "Einen externen Skill entdecken, installieren und prüfen"
+            "de": "Einen externen Skill entdecken, installieren und prüfen",
+            "zh-tw": "发现、安装与审查外部 Skill"
           },
           "href": "../book/chapters/14-discover-and-audit-skills-EN.md",
           "relation": "primary"
@@ -1371,7 +1498,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Investigación: de la pregunta al conocimiento auditable",
             "ja": "リサーチ：質問から監査可能な知識へ",
             "ko": "연구: 질문에서 감사 가능한 지식까지",
-            "de": "Research: von der Frage zu prüfbarem Wissen"
+            "de": "Research: von der Frage zu prüfbarem Wissen",
+            "zh-tw": "研究：从问题到可审查知识"
           },
           "href": "../book/chapters/15-research-track-EN.md",
           "relation": "primary"
@@ -1384,7 +1512,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Ingeniería: de la idea al software confiable",
             "ja": "エンジニアリング：アイデアから信頼できるソフトウェアへ",
             "ko": "엔지니어링: 아이디어에서 신뢰할 수 있는 소프트웨어까지",
-            "de": "Engineering: von der Idee zu zuverlässiger Software"
+            "de": "Engineering: von der Idee zu zuverlässiger Software",
+            "zh-tw": "工程：从想法到可靠软件"
           },
           "href": "../book/chapters/16-engineering-track-EN.md",
           "relation": "primary"
@@ -1397,7 +1526,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Marketing: del contexto de producto a los experimentos",
             "ja": "マーケティング：プロダクトコンテキストから実験へ",
             "ko": "마케팅: 제품 컨텍스트에서 실험까지",
-            "de": "Marketing: vom Produktkontext zu Experimenten"
+            "de": "Marketing: vom Produktkontext zu Experimenten",
+            "zh-tw": "营销：从产品上下文到实验"
           },
           "href": "../book/chapters/17-marketing-track-EN.md",
           "relation": "primary"
@@ -1410,7 +1540,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Contenido, diseño, datos y automatización",
             "ja": "コンテンツ・デザイン・データ・自動化",
             "ko": "콘텐츠, 디자인, 데이터, 자동화",
-            "de": "Content, Design, Daten und Automatisierung"
+            "de": "Content, Design, Daten und Automatisierung",
+            "zh-tw": "内容、设计、数据与自动化"
           },
           "href": "../book/chapters/18-content-design-data-automation-EN.md",
           "relation": "primary"
@@ -1425,7 +1556,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Selección de Skill",
             "ja": "Skill の選択",
             "ko": "Skill 선택",
-            "de": "Skill-Auswahl"
+            "de": "Skill-Auswahl",
+            "zh-tw": "Skill 选择"
           },
           "href": "../book/labs/lab-004-skill-selection-EN.md",
           "relation": "primary",
@@ -1436,7 +1568,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Selecciona el conjunto más pequeño de Skills y herramientas útiles según ajuste, dependencia, permiso, licencia y costo de verificación.",
             "ja": "適合性・依存関係・権限・ライセンス・検証コストで、最小限で有効な Skill とツールの組み合わせを選べる。",
             "ko": "적합성, 의존성, 권한, 라이선스, 검증 비용 기준으로 가장 작은 유용한 Skill·도구 조합을 선택한다.",
-            "de": "Das kleinste sinnvolle Skill- und Tool-Set nach Passung, Abhängigkeit, Berechtigung, Lizenz und Verifikationskosten auswählen."
+            "de": "Das kleinste sinnvolle Skill- und Tool-Set nach Passung, Abhängigkeit, Berechtigung, Lizenz und Verifikationskosten auswählen.",
+            "zh-tw": "按适配、依赖、权限、许可证和验证成本选择最小有效 Skill 与工具组合。"
           },
           "newArtifact": {
             "en": "A candidate comparison and exclusion record for the chosen capability set.",
@@ -1444,7 +1577,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Un registro de comparación y exclusión de candidatos para el conjunto de capacidades elegido.",
             "ja": "選んだ能力セットに関する候補比較・除外記録。",
             "ko": "선택한 역량 조합에 대한 후보 비교 및 배제 기록.",
-            "de": "Eine Kandidatenvergleichs- und Ausschlussaufzeichnung für das gewählte Capability-Set."
+            "de": "Eine Kandidatenvergleichs- und Ausschlussaufzeichnung für das gewählte Capability-Set.",
+            "zh-tw": "一份所选能力组合的候选比较和排除记录。"
           },
           "newAcceptance": {
             "en": "Every selected capability earns its place and every rejected capability has a task-specific reason.",
@@ -1452,7 +1586,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Cada capacidad seleccionada se gana su lugar y cada capacidad rechazada tiene un motivo específico de la tarea.",
             "ja": "選ばれた能力にはすべて採用理由があり、却下された能力にはすべてタスク固有の理由がある。",
             "ko": "선택된 모든 역량이 자리할 이유가 있고, 기각된 모든 역량에 과제별 이유가 있다.",
-            "de": "Jede gewählte Capability hat ihren Platz verdient, und jede abgelehnte Capability hat einen aufgabenspezifischen Grund."
+            "de": "Jede gewählte Capability hat ihren Platz verdient, und jede abgelehnte Capability hat einen aufgabenspezifischen Grund.",
+            "zh-tw": "每个被选能力都有存在理由，每个被拒能力都有针对任务的理由。"
           }
         },
         {
@@ -1463,7 +1598,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Diseña una Skill",
             "ja": "Skill の設計",
             "ko": "Skill 설계",
-            "de": "Einen Skill entwerfen"
+            "de": "Einen Skill entwerfen",
+            "zh-tw": "设计一个 Skill"
           },
           "href": "../book/labs/lab-005-design-a-skill-EN.md",
           "relation": "supporting",
@@ -1474,7 +1610,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Empaqueta un método estable como un Skill acotado con disparadores, condiciones de parada, salida y verificación.",
             "ja": "安定した方法を、トリガー・停止条件・出力・検証を備えた境界のある Skill としてパッケージ化できる。",
             "ko": "안정된 방법을 트리거, 중지 조건, 출력, 검증을 갖춘 경계 있는 Skill로 패키징한다.",
-            "de": "Eine stabile Methode als begrenzten Skill mit Auslösern, Stoppbedingungen, Ausgabe und Verifikation verpacken."
+            "de": "Eine stabile Methode als begrenzten Skill mit Auslösern, Stoppbedingungen, Ausgabe und Verifikation verpacken.",
+            "zh-tw": "把稳定方法封装成包含触发、停止条件、输出和验证的有边界 Skill。"
           },
           "newArtifact": {
             "en": "An original Skill candidate plus positive, boundary, failure, and transfer fixtures.",
@@ -1482,7 +1619,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Un candidato de Skill original más fixtures de casos positivos, límite, fallo y transferencia.",
             "ja": "オリジナルの Skill 候補と、正例・境界例・失敗例・転移例のフィクスチャ。",
             "ko": "독창적인 Skill 후보와 정상, 경계, 실패, 전이 픽스처.",
-            "de": "Ein eigener Skill-Kandidat plus Fixtures für Positiv-, Grenz-, Fehler- und Transferfälle."
+            "de": "Ein eigener Skill-Kandidat plus Fixtures für Positiv-, Grenz-, Fehler- und Transferfälle.",
+            "zh-tw": "一个原创 Skill 候选，以及正例、边界例、失败例和迁移例夹具。"
           },
           "newAcceptance": {
             "en": "The Skill passes structural validation and a fresh-context review without silently expanding the task.",
@@ -1490,7 +1628,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "El Skill pasa la validación estructural y una revisión en contexto nuevo sin ampliar la tarea en silencio.",
             "ja": "Skill が構造検証と新しいコンテキストでのレビューを通過し、タスクを黙って拡張していない。",
             "ko": "Skill이 구조 검증과 새 컨텍스트 리뷰를 통과하고, 조용히 작업을 확장하지 않는다.",
-            "de": "Der Skill besteht die strukturelle Validierung und eine Prüfung in frischem Kontext, ohne die Aufgabe stillschweigend zu erweitern."
+            "de": "Der Skill besteht die strukturelle Validierung und eine Prüfung in frischem Kontext, ohne die Aufgabe stillschweigend zu erweitern.",
+            "zh-tw": "Skill 通过结构验证和新鲜上下文审查，且不静默扩大任务。"
           }
         },
         {
@@ -1501,7 +1640,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Pregunta de investigación",
             "ja": "リサーチクエスチョン",
             "ko": "연구 질문",
-            "de": "Research-Frage"
+            "de": "Research-Frage",
+            "zh-tw": "研究问题"
           },
           "href": "../book/labs/lab-008-research-question-EN.md",
           "relation": "supporting",
@@ -1512,7 +1652,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Convierte un tema amplio en una pregunta de investigación acotada, un plan de fuentes y una condición de parada.",
             "ja": "広いトピックを、境界のあるリサーチクエスチョン・情報源計画・停止条件に整理できる。",
             "ko": "넓은 주제를 경계 있는 연구 질문, 출처 계획, 중지 조건으로 라우팅한다.",
-            "de": "Ein breites Thema in eine begrenzte Forschungsfrage, einen Quellenplan und eine Stoppbedingung überführen."
+            "de": "Ein breites Thema in eine begrenzte Forschungsfrage, einen Quellenplan und eine Stoppbedingung überführen.",
+            "zh-tw": "把宽泛主题路由成有边界的研究问题、来源计划和停止条件。"
           },
           "newArtifact": {
             "en": "A research brief with question, source classes, claim table, access dates, and unresolved conflicts.",
@@ -1520,7 +1661,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Un informe de investigación con pregunta, clases de fuentes, tabla de afirmaciones, fechas de acceso y conflictos sin resolver.",
             "ja": "質問・情報源カテゴリ・主張テーブル・アクセス日・未解決の矛盾を含むリサーチブリーフ。",
             "ko": "질문, 출처 분류, 주장 표, 접근 날짜, 해결되지 않은 충돌이 있는 연구 브리핑.",
-            "de": "Ein Research-Brief mit Frage, Quellenklassen, Behauptungstabelle, Zugriffsdaten und ungelösten Konflikten."
+            "de": "Ein Research-Brief mit Frage, Quellenklassen, Behauptungstabelle, Zugriffsdaten und ungelösten Konflikten.",
+            "zh-tw": "一份包含问题、来源类别、声明表、访问日期和未解决冲突的研究简报。"
           },
           "newAcceptance": {
             "en": "Conclusions distinguish primary evidence, interpretation, contradiction, and missing evidence.",
@@ -1528,7 +1670,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Las conclusiones distinguen evidencia primaria, interpretación, contradicción y evidencia faltante.",
             "ja": "結論が一次情報・解釈・矛盾・欠落した証拠を区別している。",
             "ko": "결론이 1차 증거, 해석, 모순, 누락 증거를 구분한다.",
-            "de": "Schlussfolgerungen unterscheiden Primärbelege, Interpretation, Widerspruch und fehlende Belege."
+            "de": "Schlussfolgerungen unterscheiden Primärbelege, Interpretation, Widerspruch und fehlende Belege.",
+            "zh-tw": "结论区分一手证据、解释、矛盾和缺失证据。"
           }
         },
         {
@@ -1539,7 +1682,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Auditoría de descubrimiento de Skill",
             "ja": "Skill 発見の監査",
             "ko": "Skill 발견 감사",
-            "de": "Skill-Entdeckungs-Audit"
+            "de": "Skill-Entdeckungs-Audit",
+            "zh-tw": "Skill 发现审计"
           },
           "href": "../book/labs/lab-017-skill-discovery-audit-EN.md",
           "relation": "supporting",
@@ -1550,7 +1694,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Audita el descubrimiento, la carga, el comportamiento, la licencia y la adopción de un Skill externo como afirmaciones separadas.",
             "ja": "外部 Skill の発見・ロード・挙動・ライセンス・採用を別々の主張として監査できる。",
             "ko": "외부 Skill의 발견, 로딩, 동작, 라이선스, 채택을 별개의 주장으로 감사한다.",
-            "de": "Entdeckung, Laden, Verhalten, Lizenzierung und Übernahme externer Skills als getrennte Behauptungen prüfen."
+            "de": "Entdeckung, Laden, Verhalten, Lizenzierung und Übernahme externer Skills als getrennte Behauptungen prüfen.",
+            "zh-tw": "把外部 Skill 的发现、加载、行为、许可证和采用作为独立声明审查。"
           },
           "newArtifact": {
             "en": "A staged adoption audit with source, license, dependency, behavior, and rollback records.",
@@ -1558,7 +1703,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Una auditoría de adopción por etapas con registros de fuente, licencia, dependencia, comportamiento y rollback.",
             "ja": "出典・ライセンス・依存関係・挙動・ロールバックの記録を含む段階的な採用監査。",
             "ko": "출처, 라이선스, 의존성, 동작, 롤백 기록이 있는 단계별 채택 감사.",
-            "de": "Eine gestufte Übernahme-Prüfung mit Aufzeichnungen zu Quelle, Lizenz, Abhängigkeit, Verhalten und Rollback."
+            "de": "Eine gestufte Übernahme-Prüfung mit Aufzeichnungen zu Quelle, Lizenz, Abhängigkeit, Verhalten und Rollback.",
+            "zh-tw": "一份分阶段采用审查，包含来源、许可证、依赖、行为和回滚记录。"
           },
           "newAcceptance": {
             "en": "Existence or installation is never used as proof of loading, correct behavior, or team adoption.",
@@ -1566,7 +1712,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "La existencia o la instalación nunca se usan como prueba de carga, comportamiento correcto o adopción por el equipo.",
             "ja": "存在やインストールを、ロード・正しい挙動・チーム採用の証明として使わない。",
             "ko": "존재 또는 설치가 로딩, 올바른 동작, 팀 채택의 증거로 사용되지 않는다.",
-            "de": "Existenz oder Installation wird nie als Beleg für Laden, korrektes Verhalten oder Team-Übernahme verwendet."
+            "de": "Existenz oder Installation wird nie als Beleg für Laden, korrektes Verhalten oder Team-Übernahme verwendet.",
+            "zh-tw": "绝不把存在或安装当成加载、正确行为或团队采用的证明。"
           }
         }
       ],
@@ -1579,7 +1726,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Skill Selector (selector de Skill)",
             "ja": "Skill セレクター Skill Selector",
             "ko": "Skill 선택기",
-            "de": "Skill Selector"
+            "de": "Skill Selector",
+            "zh-tw": "Skill 选择器 Skill Selector"
           },
           "href": "../skills/prysai-skill-selector/SKILL.md",
           "relation": "supporting"
@@ -1592,7 +1740,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Research Router (enrutador de investigación)",
             "ja": "リサーチルーター Research Router",
             "ko": "연구 라우터",
-            "de": "Research Router"
+            "de": "Research Router",
+            "zh-tw": "研究路由 Research Router"
           },
           "href": "../skills/prysai-research-router/SKILL.md",
           "relation": "supporting"
@@ -1605,7 +1754,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Source Investigator (investigador de fuentes)",
             "ja": "情報源調査 Source Investigator",
             "ko": "출처 조사자",
-            "de": "Source Investigator"
+            "de": "Source Investigator",
+            "zh-tw": "来源调查 Source Investigator"
           },
           "href": "../skills/prysai-source-investigator/SKILL.md",
           "relation": "supporting"
@@ -1618,7 +1768,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Field Signal Curator (curador de señales de campo)",
             "ja": "現場シグナルキュレーター Field Signal Curator",
             "ko": "현장 신호 큐레이터",
-            "de": "Field Signal Curator"
+            "de": "Field Signal Curator",
+            "zh-tw": "现场信号整理 Field Signal Curator"
           },
           "href": "../skills/prysai-field-signal-curator/SKILL.md",
           "relation": "supporting"
@@ -1631,7 +1782,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Platform Adapter Review (revisión del adaptador de plataforma)",
             "ja": "プラットフォームアダプターレビュー Platform Adapter Review",
             "ko": "플랫폼 어댑터 리뷰",
-            "de": "Platform Adapter Review"
+            "de": "Platform Adapter Review",
+            "zh-tw": "平台适配审查 Platform Adapter Review"
           },
           "href": "../skills/prysai-platform-adapter-review/SKILL.md",
           "relation": "supporting"
@@ -1644,7 +1796,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Platform Observation Record (registro de observación de plataforma)",
             "ja": "プラットフォーム観察記録 Platform Observation Record",
             "ko": "플랫폼 관찰 기록",
-            "de": "Platform Observation Record"
+            "de": "Platform Observation Record",
+            "zh-tw": "平台观察记录 Platform Observation Record"
           },
           "href": "../skills/prysai-platform-observation-record/SKILL.md",
           "relation": "supporting"
@@ -1668,7 +1821,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Explica por qué cada capacidad seleccionada se gana su lugar y qué no cubre.",
           "ja": "選んだ各能力がなぜ採用に値するか、何をカバーしないかを説明できる。",
           "ko": "선택된 각 역량이 왜 자리할 이유가 있고 무엇을 다루지 않는지 설명한다.",
-          "de": "Erklären, warum jede gewählte Capability ihren Platz verdient und was sie nicht abdeckt."
+          "de": "Erklären, warum jede gewählte Capability ihren Platz verdient und was sie nicht abdeckt.",
+          "zh-tw": "解释每个被选能力为什么值得使用，以及它不覆盖什么。"
         },
         "operate": {
           "en": "Use the minimum useful combination and preserve an installation or rollback record.",
@@ -1676,7 +1830,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Usa la combinación útil mínima y conserva un registro de instalación o rollback.",
           "ja": "最小限で有効な組み合わせを使い、インストールまたはロールバックの記録を残せる。",
           "ko": "최소 유효 조합을 사용하고 설치 또는 롤백 기록을 보존한다.",
-          "de": "Die minimale sinnvolle Kombination nutzen und eine Installations- oder Rollback-Aufzeichnung bewahren."
+          "de": "Die minimale sinnvolle Kombination nutzen und eine Installations- oder Rollback-Aufzeichnung bewahren.",
+          "zh-tw": "使用最小有效组合，并保留安装或回滚记录。"
         },
         "judge": {
           "en": "Compare fit, dependency, permission, license, maintenance, and verification cost.",
@@ -1684,7 +1839,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Compara ajuste, dependencia, permiso, licencia, mantenimiento y costo de verificación.",
           "ja": "適合性・依存関係・権限・ライセンス・メンテナンス・検証コストを比較できる。",
           "ko": "적합성, 의존성, 권한, 라이선스, 유지보수, 검증 비용을 비교한다.",
-          "de": "Passung, Abhängigkeit, Berechtigung, Lizenz, Wartung und Verifikationskosten vergleichen."
+          "de": "Passung, Abhängigkeit, Berechtigung, Lizenz, Wartung und Verifikationskosten vergleichen.",
+          "zh-tw": "比较适配、依赖、权限、许可证、维护和验证成本。"
         },
         "review": {
           "en": "Test a positive case, a boundary case, a failure case, and a transfer case before calling a Skill reliable.",
@@ -1692,7 +1848,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Prueba un caso positivo, un caso límite, un caso de fallo y un caso de transferencia antes de llamar confiable a un Skill.",
           "ja": "Skill を信頼できると呼ぶ前に、正例・境界例・失敗例・転移例をテストできる。",
           "ko": "Skill을 신뢰할 수 있다고 판단하기 전에 정상 사례, 경계 사례, 실패 사례, 전이 사례를 테스트한다.",
-          "de": "Einen Positiv-, Grenz-, Fehler- und Transferfall testen, bevor ein Skill als zuverlässig gilt."
+          "de": "Einen Positiv-, Grenz-, Fehler- und Transferfall testen, bevor ein Skill als zuverlässig gilt.",
+          "zh-tw": "在称为可靠前，测试正例、边界例、失败例和迁移例。"
         }
       },
       "graduation": {
@@ -1701,7 +1858,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Avanza cuando un Skill reutilizable o una elección de capacidad tenga un contrato acotado, una ruta de rollback y un plan de evaluación de cuatro casos.",
         "ja": "再利用可能な Skill または能力の選択に、境界のある契約・ロールバック経路・4ケースの評価計画がある場合に進む。",
         "ko": "재사용 가능한 Skill 또는 역량 선택에 경계 있는 계약, 롤백 경로, 네 가지 사례 평가 계획이 있을 때 다음 단계로 진급한다.",
-        "de": "Erst weitergehen, wenn eine wiederverwendbare Skill- oder Capability-Wahl einen begrenzten Vertrag, einen Rollback-Pfad und einen Evaluationsplan für vier Fälle hat."
+        "de": "Erst weitergehen, wenn eine wiederverwendbare Skill- oder Capability-Wahl einen begrenzten Vertrag, einen Rollback-Pfad und einen Evaluationsplan für vier Fälle hat.",
+        "zh-tw": "当可复用 Skill 或能力选择具备边界契约、回滚路径和四类案例评测计划时，才进入下一阶段。"
       },
       "blocked": {
         "en": "The choice is justified only by popularity, directory size, or an unverified performance claim.",
@@ -1709,7 +1867,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "La elección solo se justifica por popularidad, tamaño del directorio o una afirmación de rendimiento no verificada.",
         "ja": "選択理由が人気・ディレクトリサイズ・未検証の性能主張だけの場合。",
         "ko": "선택이 인기도, 디렉토리 크기 또는 검증되지 않은 성능 주장으로만 정당화될 때.",
-        "de": "Die Wahl wird nur durch Beliebtheit, Verzeichnisgröße oder eine ungeprüfte Leistungsbehauptung gerechtfertigt."
+        "de": "Die Wahl wird nur durch Beliebtheit, Verzeichnisgröße oder eine ungeprüfte Leistungsbehauptung gerechtfertigt.",
+        "zh-tw": "选择理由只有流行度、目录大小或未经验证的性能断言。"
       },
       "status": "candidate",
       "foundationRoute": null,
@@ -1722,7 +1881,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Diseña una Skill que se gane su lugar",
             "ja": "採用に値する Skill を設計する",
             "ko": "자리할 이유가 있는 Skill을 설계한다",
-            "de": "Einen Skill entwerfen, der seinen Platz verdient"
+            "de": "Einen Skill entwerfen, der seinen Platz verdient",
+            "zh-tw": "设计一个真正有用的 Skill"
           },
           "href": "../book/chapters/11-designing-a-skill-EN.md",
           "relation": "primary"
@@ -1735,7 +1895,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Selección de Skill",
             "ja": "Skill の選択",
             "ko": "Skill 선택",
-            "de": "Skill-Auswahl"
+            "de": "Skill-Auswahl",
+            "zh-tw": "Skill 选择"
           },
           "href": "../book/labs/lab-004-skill-selection-EN.md",
           "relation": "primary",
@@ -1746,7 +1907,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Selecciona el conjunto más pequeño de Skills y herramientas útiles según ajuste, dependencia, permiso, licencia y costo de verificación.",
             "ja": "適合性・依存関係・権限・ライセンス・検証コストで、最小限で有効な Skill とツールの組み合わせを選べる。",
             "ko": "적합성, 의존성, 권한, 라이선스, 검증 비용 기준으로 가장 작은 유용한 Skill·도구 조합을 선택한다.",
-            "de": "Das kleinste sinnvolle Skill- und Tool-Set nach Passung, Abhängigkeit, Berechtigung, Lizenz und Verifikationskosten auswählen."
+            "de": "Das kleinste sinnvolle Skill- und Tool-Set nach Passung, Abhängigkeit, Berechtigung, Lizenz und Verifikationskosten auswählen.",
+            "zh-tw": "按适配、依赖、权限、许可证和验证成本选择最小有效 Skill 与工具组合。"
           },
           "newArtifact": {
             "en": "A candidate comparison and exclusion record for the chosen capability set.",
@@ -1754,7 +1916,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Un registro de comparación y exclusión de candidatos para el conjunto de capacidades elegido.",
             "ja": "選んだ能力セットに関する候補比較・除外記録。",
             "ko": "선택한 역량 조합에 대한 후보 비교 및 배제 기록.",
-            "de": "Eine Kandidatenvergleichs- und Ausschlussaufzeichnung für das gewählte Capability-Set."
+            "de": "Eine Kandidatenvergleichs- und Ausschlussaufzeichnung für das gewählte Capability-Set.",
+            "zh-tw": "一份所选能力组合的候选比较和排除记录。"
           },
           "newAcceptance": {
             "en": "Every selected capability earns its place and every rejected capability has a task-specific reason.",
@@ -1762,7 +1925,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Cada capacidad seleccionada se gana su lugar y cada capacidad rechazada tiene un motivo específico de la tarea.",
             "ja": "選ばれた能力にはすべて採用理由があり、却下された能力にはすべてタスク固有の理由がある。",
             "ko": "선택된 모든 역량이 자리할 이유가 있고, 기각된 모든 역량에 과제별 이유가 있다.",
-            "de": "Jede gewählte Capability hat ihren Platz verdient, und jede abgelehnte Capability hat einen aufgabenspezifischen Grund."
+            "de": "Jede gewählte Capability hat ihren Platz verdient, und jede abgelehnte Capability hat einen aufgabenspezifischen Grund.",
+            "zh-tw": "每个被选能力都有存在理由，每个被拒能力都有针对任务的理由。"
           }
         }
       }
@@ -1775,7 +1939,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Revisor de evidencia",
         "ja": "証拠レビュアー",
         "ko": "증거 검토자",
-        "de": "Evidence-Reviewer"
+        "de": "Evidence-Reviewer",
+        "zh-tw": "证据审查者"
       },
       "short": {
         "en": "Test completion claims",
@@ -1783,7 +1948,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Pon a prueba las afirmaciones de finalización",
         "ja": "完了報告を検証する",
         "ko": "완료 주장을 테스트한다",
-        "de": "Abschlussbehauptungen prüfen"
+        "de": "Abschlussbehauptungen prüfen",
+        "zh-tw": "检验完成声明"
       },
       "headline": {
         "en": "A completion claim needs evidence.",
@@ -1791,7 +1957,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Una afirmación de finalización necesita evidencia.",
         "ja": "完了報告には証拠が必要。",
         "ko": "완료 주장에는 증거가 필요하다.",
-        "de": "Eine Abschlussbehauptung braucht Belege."
+        "de": "Eine Abschlussbehauptung braucht Belege.",
+        "zh-tw": "完成声明必须有证据。"
       },
       "description": {
         "en": "Design bounded Agent loops and evaluate completion claims with positive, boundary, failure, and transfer evidence.",
@@ -1799,7 +1966,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Diseña loops de Agent acotados y evalúa afirmaciones de finalización con evidencia de casos positivos, límite, fallo y transferencia.",
         "ja": "境界のある Agent ループを設計し、正例・境界例・失敗例・転移例の証拠で完了報告を評価できる。",
         "ko": "경계 있는 Agent 루프를 설계하고 정상, 경계, 실패, 전이 증거로 완료 주장을 평가한다.",
-        "de": "Begrenzte Agent-Schleifen entwerfen und Abschlussbehauptungen mit Positiv-, Grenz-, Fehler- und Transferbelegen bewerten."
+        "de": "Begrenzte Agent-Schleifen entwerfen und Abschlussbehauptungen mit Positiv-, Grenz-, Fehler- und Transferbelegen bewerten.",
+        "zh-tw": "设计有边界的 Agent 循环，并用正例、边界例、失败例和迁移证据评估完成声明。"
       },
       "chapters": [
         {
@@ -1810,7 +1978,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "El loop de Agent, el estado y las condiciones de parada",
             "ja": "Agent のループ・状態・停止条件",
             "ko": "Agent 루프, 상태, 중지 조건",
-            "de": "Die Agent-Schleife, Zustand und Stoppbedingungen"
+            "de": "Die Agent-Schleife, Zustand und Stoppbedingungen",
+            "zh-tw": "Agent 的循环、状态与停止条件"
           },
           "href": "../book/chapters/12-agent-loop-and-stop-EN.md",
           "relation": "primary"
@@ -1823,7 +1992,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Evalúa modelos y flujos de trabajo",
             "ja": "モデルとワークフローを評価する",
             "ko": "모델과 워크플로를 평가한다",
-            "de": "Modelle und Workflows evaluieren"
+            "de": "Modelle und Workflows evaluieren",
+            "zh-tw": "评估模型与工作流"
           },
           "href": "../book/chapters/19-evaluate-models-and-workflows-EN.md",
           "relation": "primary"
@@ -1838,7 +2008,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Condiciones de parada de Agent",
             "ja": "Agent の停止条件",
             "ko": "Agent 중지 조건",
-            "de": "Agent-Stoppbedingungen"
+            "de": "Agent-Stoppbedingungen",
+            "zh-tw": "Agent 停止条件"
           },
           "href": "../book/labs/lab-006-agent-stop-conditions-EN.md",
           "relation": "primary",
@@ -1849,7 +2020,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Diseña un loop de Agent observable con transiciones de estado, presupuesto de reintentos, condiciones de parada y una transferencia segura.",
             "ja": "状態遷移・再試行予算・停止条件・安全な引き継ぎを備えた観察可能な Agent ループを設計できる。",
             "ko": "상태 전이, 재시도 예산, 중지 조건, 안전한 인계를 갖춘 관찰 가능한 Agent 루프를 설계한다.",
-            "de": "Eine beobachtbare Agent-Schleife mit Zustandsübergängen, Wiederholungsbudget, Stoppbedingungen und sicherer Übergabe entwerfen."
+            "de": "Eine beobachtbare Agent-Schleife mit Zustandsübergängen, Wiederholungsbudget, Stoppbedingungen und sicherer Übergabe entwerfen.",
+            "zh-tw": "设计包含状态转换、重试预算、停止条件和安全交接的可观察 Agent 循环。"
           },
           "newArtifact": {
             "en": "An event timeline, state ledger, retry record, stop decision, and handoff packet.",
@@ -1857,7 +2029,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Una línea de tiempo de eventos, un registro de estado, un historial de reintentos, una decisión de parada y un paquete de transferencia.",
             "ja": "イベントの時系列・状態台帳・再試行記録・停止の決定・引き継ぎパケット。",
             "ko": "이벤트 타임라인, 상태 원장, 재시도 기록, 중지 결정, 인계 패킷.",
-            "de": "Eine Ereignis-Zeitleiste, ein Zustandsbuch, eine Wiederholungsaufzeichnung, eine Stoppentscheidung und ein Übergabepaket."
+            "de": "Eine Ereignis-Zeitleiste, ein Zustandsbuch, eine Wiederholungsaufzeichnung, eine Stoppentscheidung und ein Übergabepaket.",
+            "zh-tw": "一份事件时间线、状态账本、重试记录、停止决策和交接包。"
           },
           "newAcceptance": {
             "en": "Repeated failure, missing authority, or unverifiable completion ends in a recorded stop or escalation instead of an unbounded retry.",
@@ -1865,7 +2038,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "El fallo repetido, la autoridad faltante o una finalización no verificable terminan en una parada o escalada registrada en lugar de un reintento ilimitado.",
             "ja": "繰り返しの失敗・権限の欠落・検証不能な完了は、際限のない再試行ではなく、記録された停止またはエスカレーションで終わる。",
             "ko": "반복 실패, 권한 부재, 검증 불가 완료는 무제한 재시도가 아니라 기록된 중지 또는 에스컬레이션으로 끝난다.",
-            "de": "Wiederholtes Scheitern, fehlende Autorisierung oder nicht verifizierbarer Abschluss enden in einem protokollierten Stopp oder einer Eskalation statt in einer unbegrenzten Wiederholung."
+            "de": "Wiederholtes Scheitern, fehlende Autorisierung oder nicht verifizierbarer Abschluss enden in einem protokollierten Stopp oder einer Eskalation statt in einer unbegrenzten Wiederholung.",
+            "zh-tw": "重复失败、缺失授权或无法验证的完成会以记录的停止或升级结束，而不是无限重试。"
           }
         },
         {
@@ -1876,7 +2050,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Revisión de evidencia",
             "ja": "証拠レビュー",
             "ko": "증거 리뷰",
-            "de": "Beleg-Prüfung"
+            "de": "Beleg-Prüfung",
+            "zh-tw": "证据审查"
           },
           "href": "../book/labs/lab-003-evidence-review-EN.md",
           "relation": "supporting",
@@ -1887,7 +2062,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Dictamina de forma independiente las afirmaciones de una ejecución anterior sin editar su evidencia ni heredar su conclusión.",
             "ja": "証拠を編集せず結論を引き継がずに、以前の実行の主張を独立して裁定できる。",
             "ko": "이전 실행의 증거를 편집하거나 결론을 그대로 받지 않고, 그 주장을 독립적으로 심판한다.",
-            "de": "Die Behauptungen eines früheren Runs unabhängig bewerten, ohne seine Belege zu verändern oder seine Schlussfolgerung zu übernehmen."
+            "de": "Die Behauptungen eines früheren Runs unabhängig bewerten, ohne seine Belege zu verändern oder seine Schlussfolgerung zu übernehmen.",
+            "zh-tw": "在不编辑原证据、不继承原结论的情况下，独立裁定先前运行的声明。"
           },
           "newArtifact": {
             "en": "A reviewer-owned adjudication table that references the L3 run and records disagreement, limits, and the next smallest check.",
@@ -1895,7 +2071,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Una tabla de dictamen propiedad del revisor que referencia la ejecución L3 y registra desacuerdos, límites y la siguiente comprobación más pequeña.",
             "ja": "L3 の実行を参照し、相違・制約・次の最小チェックを記録する、レビュアー所有の裁定テーブル。",
             "ko": "L3 실행을 참조하고 의견 차이, 한계, 다음 최소 점검을 기록하는 검토자 소유의 심판 표.",
-            "de": "Eine vom Prüfer geführte Bewertungstabelle, die den L3-Run referenziert und Widersprüche, Grenzen und den nächsten kleinsten Check festhält."
+            "de": "Eine vom Prüfer geführte Bewertungstabelle, die den L3-Run referenziert und Widersprüche, Grenzen und den nächsten kleinsten Check festhält.",
+            "zh-tw": "一张由审查者拥有的裁定表，引用 L3 运行并记录分歧、限制和下一个最小检查。"
           },
           "newAcceptance": {
             "en": "The reviewer classifies each claim as verified, partial, unverified, disputed, or unknowable and preserves the original run record.",
@@ -1903,7 +2080,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "El revisor clasifica cada afirmación como verificada, parcial, no verificada, disputada o incognoscible y conserva el registro original de la ejecución.",
             "ja": "レビュアーが各主張を検証済み・部分的・未検証・異議あり・判断不能に分類し、元の実行記録を保持する。",
             "ko": "검토자가 각 주장을 검증됨, 부분 검증, 미검증, 이의 제기, 판단 불가로 분류하고 원래 실행 기록을 보존한다.",
-            "de": "Der Prüfer ordnet jede Behauptung als verified, partial, unverified, disputed oder unknowable ein und bewahrt die ursprüngliche Run-Aufzeichnung."
+            "de": "Der Prüfer ordnet jede Behauptung als verified, partial, unverified, disputed oder unknowable ein und bewahrt die ursprüngliche Run-Aufzeichnung.",
+            "zh-tw": "审查者把每项声明分类为已验证、部分、未验证、有争议或范围内不可知，并保留原始运行记录。"
           }
         },
         {
@@ -1914,7 +2092,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Entrega de evidencia",
             "ja": "証拠の納品",
             "ko": "증거 전달",
-            "de": "Beleglieferung"
+            "de": "Beleglieferung",
+            "zh-tw": "证据交付"
           },
           "href": "../book/labs/lab-015-evidence-delivery-EN.md",
           "relation": "supporting",
@@ -1925,7 +2104,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Entrega una declaración de finalización limitada por evidencia que separe salidas, comprobaciones, incógnitas y próximas acciones.",
             "ja": "出力・チェック・不明点・次の行動を分けた、証拠の範囲内の完了報告を届けられる。",
             "ko": "출력, 점검, 미지 항목, 다음 행동을 구분하는 증거 범위 내 완료 문구를 전달한다.",
-            "de": "Eine belegbegrenzte Abschlusserklärung liefern, die Ausgaben, Checks, Unbekanntes und nächste Aktionen trennt."
+            "de": "Eine belegbegrenzte Abschlusserklärung liefern, die Ausgaben, Checks, Unbekanntes und nächste Aktionen trennt.",
+            "zh-tw": "交付一份受证据约束的完成声明，分开输出、检查、未知项和下一行动。"
           },
           "newArtifact": {
             "en": "A claim ledger and concise handoff with scope, evidence pointers, exclusions, and next check.",
@@ -1933,7 +2113,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Un registro de afirmaciones y una transferencia concisa con alcance, referencias de evidencia, exclusiones y siguiente comprobación.",
             "ja": "範囲・証拠へのポインタ・除外事項・次のチェックを含む主張台帳と簡潔な引き継ぎ。",
             "ko": "범위, 증거 포인터, 배제 항목, 다음 점검이 있는 주장 원장과 간결한 인계.",
-            "de": "Ein Behauptungsbuch und eine knappe Übergabe mit Umfang, Belegverweisen, Ausschlüssen und nächstem Check."
+            "de": "Ein Behauptungsbuch und eine knappe Übergabe mit Umfang, Belegverweisen, Ausschlüssen und nächstem Check.",
+            "zh-tw": "一份声明账本和简洁交接，包含范围、证据指针、排除项和下一检查。"
           },
           "newAcceptance": {
             "en": "No sentence claims broader runtime, deployment, user, or production evidence than the attached record supports.",
@@ -1941,7 +2122,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Ninguna oración afirma más evidencia de ejecución, despliegue, usuarios o producción de la que respalda el registro adjunto.",
             "ja": "添付された記録が裏付ける範囲を超えて、実行時・デプロイ・ユーザー・本番の証拠を主張する文がない。",
             "ko": "첨부된 기록이 지지하는 것보다 넓은 런타임, 배포, 사용자 또는 프로덕션 증거를 주장하는 문장이 없다.",
-            "de": "Kein Satz behauptet breitere Laufzeit-, Deployment-, Nutzer- oder Produktionsbelege, als die angehängte Aufzeichnung stützt."
+            "de": "Kein Satz behauptet breitere Laufzeit-, Deployment-, Nutzer- oder Produktionsbelege, als die angehängte Aufzeichnung stützt.",
+            "zh-tw": "没有句子声称超出附带记录支持范围的运行、部署、用户或生产证据。"
           }
         }
       ],
@@ -1954,7 +2136,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Evidence Review (revisión de evidencia)",
             "ja": "証拠レビュー Evidence Review",
             "ko": "증거 리뷰",
-            "de": "Evidence Review"
+            "de": "Evidence Review",
+            "zh-tw": "证据审查 Evidence Review"
           },
           "href": "../skills/prysai-evidence-review/SKILL.md",
           "relation": "supporting"
@@ -1967,7 +2150,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Workflow Orchestrator (orquestador de flujos de trabajo)",
             "ja": "ワークフローオーケストレーター Workflow Orchestrator",
             "ko": "워크플로 오케스트레이터",
-            "de": "Workflow Orchestrator"
+            "de": "Workflow Orchestrator",
+            "zh-tw": "工作流编排 Workflow Orchestrator"
           },
           "href": "../skills/prysai-workflow-orchestrator/SKILL.md",
           "relation": "supporting"
@@ -1980,7 +2164,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Communication Failure Triage (triaje de fallos de comunicación)",
             "ja": "コミュニケーション失敗トリアージ Communication Failure Triage",
             "ko": "커뮤니케이션 실패 진단",
-            "de": "Communication Failure Triage"
+            "de": "Communication Failure Triage",
+            "zh-tw": "沟通失败诊断 Communication Failure Triage"
           },
           "href": "../skills/prysai-communication-failure-triage/SKILL.md",
           "relation": "supporting"
@@ -1993,7 +2178,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Platform Adapter Review (revisión del adaptador de plataforma)",
             "ja": "プラットフォームアダプターレビュー Platform Adapter Review",
             "ko": "플랫폼 어댑터 리뷰",
-            "de": "Platform Adapter Review"
+            "de": "Platform Adapter Review",
+            "zh-tw": "平台适配审查 Platform Adapter Review"
           },
           "href": "../skills/prysai-platform-adapter-review/SKILL.md",
           "relation": "supporting"
@@ -2017,7 +2203,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Explica los estados observables, los presupuestos de reintentos, las condiciones de parada y la diferencia entre salida y prueba.",
           "ja": "観察可能な状態・再試行予算・停止条件・出力と証明の違いを説明できる。",
           "ko": "관찰 가능한 상태, 재시도 예산, 중지 조건, 출력과 증명의 차이를 설명한다.",
-          "de": "Beobachtbare Zustände, Wiederholungsbudgets, Stoppbedingungen und den Unterschied zwischen Ausgabe und Beweis erklären."
+          "de": "Beobachtbare Zustände, Wiederholungsbudgets, Stoppbedingungen und den Unterschied zwischen Ausgabe und Beweis erklären.",
+          "zh-tw": "解释可观察状态、重试预算、停止条件，以及输出与证明的区别。"
         },
         "operate": {
           "en": "Run a bounded comparison or review with fixed inputs, checkpoints, and logs.",
@@ -2025,7 +2212,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Ejecuta una comparación o revisión acotada con entradas fijas, puntos de control y registros.",
           "ja": "固定入力・チェックポイント・ログで、境界のある比較またはレビューを実行できる。",
           "ko": "고정 입력, 체크포인트, 로그로 경계 있는 비교 또는 리뷰를 실행한다.",
-          "de": "Einen begrenzten Vergleich oder eine begrenzte Prüfung mit festen Eingaben, Checkpoints und Protokollen durchführen."
+          "de": "Einen begrenzten Vergleich oder eine begrenzte Prüfung mit festen Eingaben, Checkpoints und Protokollen durchführen.",
+          "zh-tw": "用固定输入、检查点和日志完成一次有边界的对照或审查。"
         },
         "judge": {
           "en": "Classify claims as verified, partial, unverified, disputed, or unknowable within scope.",
@@ -2033,7 +2221,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Clasifica las afirmaciones como verificadas, parciales, no verificadas, disputadas o incognoscibles dentro del alcance.",
           "ja": "範囲内で、主張を検証済み・部分的・未検証・異議あり・判断不能に分類できる。",
           "ko": "범위 내에서 주장을 검증됨, 부분 검증, 미검증, 이의 제기, 판단 불가로 분류한다.",
-          "de": "Behauptungen innerhalb des Umfangs als verified, partial, unverified, disputed oder unknowable einstufen."
+          "de": "Behauptungen innerhalb des Umfangs als verified, partial, unverified, disputed oder unknowable einstufen.",
+          "zh-tw": "在声明范围内把结论分类为已验证、部分完成、未验证、有争议或无法判断。"
         },
         "review": {
           "en": "Produce an independent review that names evidence, gaps, limits, and the next smallest check.",
@@ -2041,7 +2230,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Produce una revisión independiente que nombre evidencia, brechas, límites y la siguiente comprobación más pequeña.",
           "ja": "証拠・ギャップ・制約・次の最小チェックを明示した独立レビューを作れる。",
           "ko": "증거, 공백, 한계, 다음 최소 점검을 명시하는 독립 리뷰를 만든다.",
-          "de": "Eine unabhängige Prüfung erstellen, die Belege, Lücken, Grenzen und den nächsten kleinsten Check benennt."
+          "de": "Eine unabhängige Prüfung erstellen, die Belege, Lücken, Grenzen und den nächsten kleinsten Check benennt.",
+          "zh-tw": "产出独立审查，指出证据、缺口、限制和下一个最小检查。"
         }
       },
       "graduation": {
@@ -2050,7 +2240,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Avanza con un registro de evaluación fijo y una revisión independiente que se niegue a sobreafirmar.",
         "ja": "固定された評価記録と、過剰な主張を拒否する独立レビューを揃えてから進む。",
         "ko": "고정 평가 기록과 과장 주장을 거부하는 독립 리뷰를 갖춰야 다음 단계로 진급한다.",
-        "de": "Erst weitergehen mit feststehender Evaluationsaufzeichnung und einer unabhängigen Prüfung, die Überbehauptungen ablehnt."
+        "de": "Erst weitergehen mit feststehender Evaluationsaufzeichnung und einer unabhängigen Prüfung, die Überbehauptungen ablehnt.",
+        "zh-tw": "提交固定评测记录和拒绝过度断言的独立审查后，才进入下一阶段。"
       },
       "blocked": {
         "en": "There are no fixed inputs, no run log, no independent reviewer, or the evidence cannot support the claim.",
@@ -2058,7 +2249,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "No hay entradas fijas, ni registro de ejecución, ni revisor independiente, o la evidencia no puede respaldar la afirmación.",
         "ja": "固定入力・実行ログ・独立レビュアーがないか、証拠が主張を裏付けられない場合。",
         "ko": "고정 입력, 실행 로그, 독립 검토자가 없거나 증거가 주장을 뒷받침하지 못할 때.",
-        "de": "Es gibt keine festen Eingaben, kein Run-Protokoll, keinen unabhängigen Prüfer, oder die Belege können die Behauptung nicht stützen."
+        "de": "Es gibt keine festen Eingaben, kein Run-Protokoll, keinen unabhängigen Prüfer, oder die Belege können die Behauptung nicht stützen.",
+        "zh-tw": "缺少固定输入、运行日志、独立复核，或证据无法支持声明。"
       },
       "status": "candidate",
       "foundationRoute": null,
@@ -2071,7 +2263,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "El loop de Agent, el estado y las condiciones de parada",
             "ja": "Agent のループ・状態・停止条件",
             "ko": "Agent 루프, 상태, 중지 조건",
-            "de": "Die Agent-Schleife, Zustand und Stoppbedingungen"
+            "de": "Die Agent-Schleife, Zustand und Stoppbedingungen",
+            "zh-tw": "Agent 的循环、状态与停止条件"
           },
           "href": "../book/chapters/12-agent-loop-and-stop-EN.md",
           "relation": "primary"
@@ -2084,7 +2277,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Condiciones de parada de Agent",
             "ja": "Agent の停止条件",
             "ko": "Agent 중지 조건",
-            "de": "Agent-Stoppbedingungen"
+            "de": "Agent-Stoppbedingungen",
+            "zh-tw": "Agent 停止条件"
           },
           "href": "../book/labs/lab-006-agent-stop-conditions-EN.md",
           "relation": "primary",
@@ -2095,7 +2289,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Diseña un loop de Agent observable con transiciones de estado, presupuesto de reintentos, condiciones de parada y una transferencia segura.",
             "ja": "状態遷移・再試行予算・停止条件・安全な引き継ぎを備えた観察可能な Agent ループを設計できる。",
             "ko": "상태 전이, 재시도 예산, 중지 조건, 안전한 인계를 갖춘 관찰 가능한 Agent 루프를 설계한다.",
-            "de": "Eine beobachtbare Agent-Schleife mit Zustandsübergängen, Wiederholungsbudget, Stoppbedingungen und sicherer Übergabe entwerfen."
+            "de": "Eine beobachtbare Agent-Schleife mit Zustandsübergängen, Wiederholungsbudget, Stoppbedingungen und sicherer Übergabe entwerfen.",
+            "zh-tw": "设计包含状态转换、重试预算、停止条件和安全交接的可观察 Agent 循环。"
           },
           "newArtifact": {
             "en": "An event timeline, state ledger, retry record, stop decision, and handoff packet.",
@@ -2103,7 +2298,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Una línea de tiempo de eventos, un registro de estado, un historial de reintentos, una decisión de parada y un paquete de transferencia.",
             "ja": "イベントの時系列・状態台帳・再試行記録・停止の決定・引き継ぎパケット。",
             "ko": "이벤트 타임라인, 상태 원장, 재시도 기록, 중지 결정, 인계 패킷.",
-            "de": "Eine Ereignis-Zeitleiste, ein Zustandsbuch, eine Wiederholungsaufzeichnung, eine Stoppentscheidung und ein Übergabepaket."
+            "de": "Eine Ereignis-Zeitleiste, ein Zustandsbuch, eine Wiederholungsaufzeichnung, eine Stoppentscheidung und ein Übergabepaket.",
+            "zh-tw": "一份事件时间线、状态账本、重试记录、停止决策和交接包。"
           },
           "newAcceptance": {
             "en": "Repeated failure, missing authority, or unverifiable completion ends in a recorded stop or escalation instead of an unbounded retry.",
@@ -2111,7 +2307,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "El fallo repetido, la autoridad faltante o una finalización no verificable terminan en una parada o escalada registrada en lugar de un reintento ilimitado.",
             "ja": "繰り返しの失敗・権限の欠落・検証不能な完了は、際限のない再試行ではなく、記録された停止またはエスカレーションで終わる。",
             "ko": "반복 실패, 권한 부재, 검증 불가 완료는 무제한 재시도가 아니라 기록된 중지 또는 에스컬레이션으로 끝난다.",
-            "de": "Wiederholtes Scheitern, fehlende Autorisierung oder nicht verifizierbarer Abschluss enden in einem protokollierten Stopp oder einer Eskalation statt in einer unbegrenzten Wiederholung."
+            "de": "Wiederholtes Scheitern, fehlende Autorisierung oder nicht verifizierbarer Abschluss enden in einem protokollierten Stopp oder einer Eskalation statt in einer unbegrenzten Wiederholung.",
+            "zh-tw": "重复失败、缺失授权或无法验证的完成会以记录的停止或升级结束，而不是无限重试。"
           }
         }
       }
@@ -2124,7 +2321,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Coach de equipo",
         "ja": "チームコーチ",
         "ko": "팀 코치",
-        "de": "Team-Coach"
+        "de": "Team-Coach",
+        "zh-tw": "团队教练"
       },
       "short": {
         "en": "Turn method into a system",
@@ -2132,7 +2330,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Convierte el método en un sistema",
         "ja": "方法をシステムにする",
         "ko": "방법을 시스템으로 바꾼다",
-        "de": "Methode in ein System verwandeln"
+        "de": "Methode in ein System verwandeln",
+        "zh-tw": "把方法变成系统"
       },
       "headline": {
         "en": "Turn personal method into team capability.",
@@ -2140,7 +2339,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Convierte el método personal en capacidad de equipo.",
         "ja": "個人の方法をチームの能力にする。",
         "ko": "개인 방법을 팀 역량으로 바꾸라.",
-        "de": "Persönliche Methode in Team-Capability verwandeln."
+        "de": "Persönliche Methode in Team-Capability verwandeln.",
+        "zh-tw": "把个人方法沉淀为团队能力。"
       },
       "description": {
         "en": "Turn personal practice into a versioned team capability package with sources, ownership, permissions, evaluation, maintenance, and rollback.",
@@ -2148,7 +2348,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Convierte la práctica personal en un paquete de capacidad de equipo versionado con fuentes, propietario, permisos, evaluación, mantenimiento y rollback.",
         "ja": "個人の実践を、出典・所有者・権限・評価・メンテナンス・ロールバックを備えたバージョン管理されたチーム能力パッケージにする。",
         "ko": "개인 실천을 출처, 소유권, 권한, 평가, 유지보수, 롤백을 갖춘 버전 관리되는 팀 역량 패키지로 바꾼다.",
-        "de": "Persönliche Praxis in ein versioniertes Team-Capability-Paket mit Quellen, Verantwortlichkeit, Berechtigungen, Evaluation, Wartung und Rollback verwandeln."
+        "de": "Persönliche Praxis in ein versioniertes Team-Capability-Paket mit Quellen, Verantwortlichkeit, Berechtigungen, Evaluation, Wartung und Rollback verwandeln.",
+        "zh-tw": "把个人实践沉淀为包含来源、负责人、权限、评测、维护和回滚的版本化团队能力包。"
       },
       "chapters": [
         {
@@ -2159,7 +2360,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Construye un sistema de trabajo personal con Codex",
             "ja": "個人の Codex 仕事システムを構築する",
             "ko": "개인 Codex 작업 시스템을 구축한다",
-            "de": "Ein persönliches Codex-Arbeitssystem aufbauen"
+            "de": "Ein persönliches Codex-Arbeitssystem aufbauen",
+            "zh-tw": "建立个人 Codex 工作系统"
           },
           "href": "../book/chapters/20-personal-codex-work-system-EN.md",
           "relation": "primary"
@@ -2172,7 +2374,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Construye un sistema de capacidad de equipo",
             "ja": "チーム能力システムを構築する",
             "ko": "팀 역량 시스템을 구축한다",
-            "de": "Ein Team-Capability-System aufbauen"
+            "de": "Ein Team-Capability-System aufbauen",
+            "zh-tw": "建立团队能力系统"
           },
           "href": "../book/chapters/21-team-capability-system-EN.md",
           "relation": "primary"
@@ -2185,7 +2388,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Mantén el sistema al día y recuperable",
             "ja": "システムを最新かつ復元可能に保つ",
             "ko": "시스템을 최신으로 유지하고 복구 가능하게 한다",
-            "de": "Das System aktuell und wiederherstellbar halten"
+            "de": "Das System aktuell und wiederherstellbar halten",
+            "zh-tw": "持续更新并保持可恢复"
           },
           "href": "../book/chapters/22-continuous-update-and-future-proofing-EN.md",
           "relation": "primary"
@@ -2200,7 +2404,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Migración de capacidad de equipo",
             "ja": "チーム能力の移行",
             "ko": "팀 역량 마이그레이션",
-            "de": "Team-Capability-Migration"
+            "de": "Team-Capability-Migration",
+            "zh-tw": "团队能力迁移"
           },
           "href": "../book/labs/lab-012-team-capability-migration-EN.md",
           "relation": "primary",
@@ -2211,7 +2416,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Migra un método personal a una capacidad de equipo versionada con propietario, permisos, evaluación, mantenimiento y rollback.",
             "ja": "個人の方法を、所有者・権限・評価・メンテナンス・ロールバックを備えたバージョン管理されたチーム能力に移行できる。",
             "ko": "개인 방법을 소유권, 권한, 평가, 유지보수, 롤백을 갖춘 버전 관리되는 팀 역량으로 마이그레이션한다.",
-            "de": "Eine persönliche Methode in eine versionierte Team-Capability mit Verantwortlichkeit, Berechtigungen, Evaluation, Wartung und Rollback migrieren."
+            "de": "Eine persönliche Methode in eine versionierte Team-Capability mit Verantwortlichkeit, Berechtigungen, Evaluation, Wartung und Rollback migrieren.",
+            "zh-tw": "把个人方法迁移成包含负责人、权限、评测、维护和回滚的版本化团队能力。"
           },
           "newArtifact": {
             "en": "A team capability package with owner, version, source boundary, permission table, review date, and rollback target.",
@@ -2219,7 +2425,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Un paquete de capacidad de equipo con propietario, versión, límite de fuentes, tabla de permisos, fecha de revisión y objetivo de rollback.",
             "ja": "所有者・バージョン・出典の境界・権限テーブル・レビュー日・ロールバック対象を含むチーム能力パッケージ。",
             "ko": "소유자, 버전, 출처 경계, 권한 표, 리뷰 날짜, 롤백 대상이 있는 팀 역량 패키지.",
-            "de": "Ein Team-Capability-Paket mit Verantwortlichem, Version, Quellengrenze, Berechtigungstabelle, Prüfdatum und Rollback-Ziel."
+            "de": "Ein Team-Capability-Paket mit Verantwortlichem, Version, Quellengrenze, Berechtigungstabelle, Prüfdatum und Rollback-Ziel.",
+            "zh-tw": "一个包含负责人、版本、来源边界、权限表、复核日期和回滚目标的团队能力包。"
           },
           "newAcceptance": {
             "en": "A second operator can reproduce or reject the package without hidden credentials, private context, or ownerless decisions.",
@@ -2227,7 +2434,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Un segundo operador puede reproducir o rechazar el paquete sin credenciales ocultas, contexto privado ni decisiones sin propietario.",
             "ja": "別のオペレーターが、隠れた資格情報・プライベートなコンテキスト・所有者のない決定なしに、パッケージを再現または却下できる。",
             "ko": "두 번째 운영자가 숨은 자격 증명, 개인 컨텍스트, 소유자 없는 결정 없이 패키지를 재현하거나 기각할 수 있다.",
-            "de": "Ein zweiter Operator kann das Paket ohne versteckte Zugangsdaten, privaten Kontext oder Entscheidungen ohne Verantwortlichen reproduzieren oder ablehnen."
+            "de": "Ein zweiter Operator kann das Paket ohne versteckte Zugangsdaten, privaten Kontext oder Entscheidungen ohne Verantwortlichen reproduzieren oder ablehnen.",
+            "zh-tw": "第二位操作者无需隐藏凭据、私人上下文或无负责人决策，就能复现或拒绝该能力包。"
           }
         },
         {
@@ -2238,7 +2446,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Contexto de producto compartido",
             "ja": "共有プロダクトコンテキスト",
             "ko": "공유 제품 컨텍스트",
-            "de": "Gemeinsamer Produktkontext"
+            "de": "Gemeinsamer Produktkontext",
+            "zh-tw": "共享产品上下文"
           },
           "href": "../book/labs/lab-010-product-context-EN.md",
           "relation": "supporting",
@@ -2249,7 +2458,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Mantén un contexto de producto compartido separando hechos estables, hechos volátiles, hipótesis y decisiones específicas de la tarea.",
             "ja": "安定した事実・変わりやすい事実・仮説・タスク固有の決定を分けながら、共有の Product Context を1つ維持できる。",
             "ko": "안정적 사실, 변동성 사실, 가설, 과제별 결정을 구분하면서 하나의 공유 제품 컨텍스트를 유지한다.",
-            "de": "Einen gemeinsamen Produktkontext pflegen und dabei stabile Fakten, volatile Fakten, Hypothesen und aufgabenspezifische Entscheidungen trennen."
+            "de": "Einen gemeinsamen Produktkontext pflegen und dabei stabile Fakten, volatile Fakten, Hypothesen und aufgabenspezifische Entscheidungen trennen.",
+            "zh-tw": "维护一份共享产品上下文，同时分开稳定事实、易变事实、假设和任务特定决策。"
           },
           "newArtifact": {
             "en": "A versioned Product Context revision consumed by two tasks with field-use and change-impact records.",
@@ -2257,7 +2467,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Una revisión versionada del Product Context consumida por dos tareas con registros de uso de campos e impacto de cambios.",
             "ja": "フィールド使用・変更影響の記録を伴い、2つのタスクが使用するバージョン管理された Product Context のリビジョン。",
             "ko": "두 작업이 소비하고 필드 사용·변경 영향 기록이 있는 버전 관리된 Product Context 리비전.",
-            "de": "Eine versionierte Product-Context-Revision, die von zwei Aufgaben genutzt wird, mit Aufzeichnungen zu Feldnutzung und Änderungsauswirkungen."
+            "de": "Eine versionierte Product-Context-Revision, die von zwei Aufgaben genutzt wird, mit Aufzeichnungen zu Feldnutzung und Änderungsauswirkungen.",
+            "zh-tw": "一份由两个任务消费的版本化 Product Context 修订，包含字段使用和变更影响记录。"
           },
           "newAcceptance": {
             "en": "Both tasks cite the same revision, name consumed fields, and trigger review when a changed field alters a decision.",
@@ -2265,7 +2476,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Ambas tareas citan la misma revisión, nombran los campos consumidos y disparan una revisión cuando un campo cambiado altera una decisión.",
             "ja": "両タスクが同じリビジョンを引用し、使用フィールドを明示し、変更されたフィールドが決定を変えるときにレビューをトリガーする。",
             "ko": "두 작업이 같은 리비전을 인용하고 소비한 필드를 명명하며, 변경된 필드가 결정을 바꾸면 리뷰를 트리거한다.",
-            "de": "Beide Aufgaben referenzieren dieselbe Revision, benennen genutzte Felder und stoßen eine Prüfung an, wenn ein geändertes Feld eine Entscheidung verändert."
+            "de": "Beide Aufgaben referenzieren dieselbe Revision, benennen genutzte Felder und stoßen eine Prüfung an, wenn ein geändertes Feld eine Entscheidung verändert.",
+            "zh-tw": "两个任务引用同一修订、明确使用字段，并在字段变更影响决策时触发复核。"
           }
         }
       ],
@@ -2278,7 +2490,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Product Context (contexto de producto)",
             "ja": "プロダクトコンテキスト Product Context",
             "ko": "제품 컨텍스트",
-            "de": "Product Context"
+            "de": "Product Context",
+            "zh-tw": "产品上下文 Product Context"
           },
           "href": "../skills/prysai-product-context/SKILL.md",
           "relation": "supporting"
@@ -2291,7 +2504,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Codex Coach (coach de Codex)",
             "ja": "Codex コーチ Codex Coach",
             "ko": "Codex 코치",
-            "de": "Codex Coach"
+            "de": "Codex Coach",
+            "zh-tw": "Codex 学习教练"
           },
           "href": "../skills/prysai-codex-coach/SKILL.md",
           "relation": "supporting"
@@ -2304,7 +2518,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Prompt Card Editor (editor de tarjetas de prompt)",
             "ja": "プロンプトカードエディター Prompt Card Editor",
             "ko": "프롬프트 카드 편집기",
-            "de": "Prompt Card Editor"
+            "de": "Prompt Card Editor",
+            "zh-tw": "提示卡编辑器 Prompt Card Editor"
           },
           "href": "../skills/prysai-prompt-card-editor/SKILL.md",
           "relation": "supporting"
@@ -2326,7 +2541,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Explica propiedad, versionado, permisos, límites de fuentes, disparadores de mantenimiento y rollback.",
           "ja": "所有者・バージョン管理・権限・出典の境界・メンテナンストリガー・ロールバックを説明できる。",
           "ko": "소유권, 버전 관리, 권한, 출처 경계, 유지보수 트리거, 롤백을 설명한다.",
-          "de": "Verantwortlichkeit, Versionierung, Berechtigungen, Quellengrenzen, Wartungsauslöser und Rollback erklären."
+          "de": "Verantwortlichkeit, Versionierung, Berechtigungen, Quellengrenzen, Wartungsauslöser und Rollback erklären.",
+          "zh-tw": "解释负责人、版本、权限、来源边界、维护触发器和回滚。"
         },
         "operate": {
           "en": "Migrate one personal method into a team-readable capability package without exposing secrets.",
@@ -2334,7 +2550,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Migra un método personal a un paquete de capacidad legible por el equipo sin exponer secretos.",
           "ja": "秘密を晒さずに、個人の方法をチームが読める能力パッケージへ移行できる。",
           "ko": "비밀을 노출하지 않고 개인 방법 하나를 팀이 읽을 수 있는 역량 패키지로 마이그레이션한다.",
-          "de": "Eine persönliche Methode in ein teamlesbares Capability-Paket migrieren, ohne Geheimnisse preiszugeben."
+          "de": "Eine persönliche Methode in ein teamlesbares Capability-Paket migrieren, ohne Geheimnisse preiszugeben.",
+          "zh-tw": "把一个个人方法迁移为团队可读的能力包，不暴露秘密。"
         },
         "judge": {
           "en": "Separate stable principles, volatile facts, hypotheses, runtime evidence, and release claims.",
@@ -2342,7 +2559,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Separa principios estables, hechos volátiles, hipótesis, evidencia de ejecución y afirmaciones de publicación.",
           "ja": "安定した原則・変わりやすい事実・仮説・実行時の証拠・リリースの主張を区別できる。",
           "ko": "안정적 원칙, 변동성 사실, 가설, 런타임 증거, 릴리스 주장을 구분한다.",
-          "de": "Stabile Prinzipien, volatile Fakten, Hypothesen, Laufzeitbelege und Release-Behauptungen trennen."
+          "de": "Stabile Prinzipien, volatile Fakten, Hypothesen, Laufzeitbelege und Release-Behauptungen trennen.",
+          "zh-tw": "分开稳定原则、易变事实、假设、运行时证据和发布声明。"
         },
         "review": {
           "en": "Run an independent reproduction or rollback review and record what remains unverified.",
@@ -2350,7 +2568,8 @@ window.CODEX_LEARNING_PATH = {
           "es": "Ejecuta una reproducción independiente o una revisión de rollback y registra lo que sigue sin verificar.",
           "ja": "独立した再現またはロールバックのレビューを実行し、未検証のままのものを記録できる。",
           "ko": "독립 재현 또는 롤백 리뷰를 실행하고 미검증으로 남은 것을 기록한다.",
-          "de": "Eine unabhängige Reproduktions- oder Rollback-Prüfung durchführen und festhalten, was ungeprüft bleibt."
+          "de": "Eine unabhängige Reproduktions- oder Rollback-Prüfung durchführen und festhalten, was ungeprüft bleibt.",
+          "zh-tw": "完成独立复现或回滚审查，并记录仍未验证的部分。"
         }
       },
       "graduation": {
@@ -2359,7 +2578,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "Este es el nivel terminal: el paquete no está completo hasta que su propietario, fecha de revisión, evidencia y objetivo de rollback sean explícitos.",
         "ja": "これが最終レベル。所有者・レビュー日・証拠・ロールバック対象が明示されるまで、パッケージは完成とみなさない。",
         "ko": "이것은 최종 레벨이다. 소유자, 리뷰 날짜, 증거, 롤백 대상이 명시되기 전까지 패키지는 완료되지 않는다.",
-        "de": "Dies ist die letzte Stufe: Das Paket ist erst vollständig, wenn Verantwortlicher, Prüfdatum, Belege und Rollback-Ziel explizit sind."
+        "de": "Dies ist die letzte Stufe: Das Paket ist erst vollständig, wenn Verantwortlicher, Prüfdatum, Belege und Rollback-Ziel explizit sind.",
+        "zh-tw": "这是终点等级：只有明确负责人、复核日期、证据和回滚目标，能力包才算完整。"
       },
       "blocked": {
         "en": "The method depends on one person, hidden credentials, unclear licensing, or an ownerless update path.",
@@ -2367,7 +2587,8 @@ window.CODEX_LEARNING_PATH = {
         "es": "El método depende de una sola persona, credenciales ocultas, licencias poco claras o una ruta de actualización sin propietario.",
         "ja": "方法が一人の人物・隠れた資格情報・不明瞭なライセンス・所有者のない更新経路に依存している場合。",
         "ko": "방법이 한 사람, 숨은 자격 증명, 불분명한 라이선스 또는 소유자 없는 업데이트 경로에 의존할 때.",
-        "de": "Die Methode hängt von einer einzelnen Person, versteckten Zugangsdaten, unklarer Lizenzierung oder einem Update-Pfad ohne Verantwortlichen ab."
+        "de": "Die Methode hängt von einer einzelnen Person, versteckten Zugangsdaten, unklarer Lizenzierung oder einem Update-Pfad ohne Verantwortlichen ab.",
+        "zh-tw": "方法依赖某一个人、隐藏凭据、许可证不清或没有负责人的更新路径。"
       },
       "status": "candidate",
       "foundationRoute": null,
@@ -2380,7 +2601,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Construye un sistema de trabajo personal con Codex",
             "ja": "個人の Codex 仕事システムを構築する",
             "ko": "개인 Codex 작업 시스템을 구축한다",
-            "de": "Ein persönliches Codex-Arbeitssystem aufbauen"
+            "de": "Ein persönliches Codex-Arbeitssystem aufbauen",
+            "zh-tw": "建立个人 Codex 工作系统"
           },
           "href": "../book/chapters/20-personal-codex-work-system-EN.md",
           "relation": "primary"
@@ -2393,7 +2615,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Migración de capacidad de equipo",
             "ja": "チーム能力の移行",
             "ko": "팀 역량 마이그레이션",
-            "de": "Team-Capability-Migration"
+            "de": "Team-Capability-Migration",
+            "zh-tw": "团队能力迁移"
           },
           "href": "../book/labs/lab-012-team-capability-migration-EN.md",
           "relation": "primary",
@@ -2404,7 +2627,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Migra un método personal a una capacidad de equipo versionada con propietario, permisos, evaluación, mantenimiento y rollback.",
             "ja": "個人の方法を、所有者・権限・評価・メンテナンス・ロールバックを備えたバージョン管理されたチーム能力に移行できる。",
             "ko": "개인 방법을 소유권, 권한, 평가, 유지보수, 롤백을 갖춘 버전 관리되는 팀 역량으로 마이그레이션한다.",
-            "de": "Eine persönliche Methode in eine versionierte Team-Capability mit Verantwortlichkeit, Berechtigungen, Evaluation, Wartung und Rollback migrieren."
+            "de": "Eine persönliche Methode in eine versionierte Team-Capability mit Verantwortlichkeit, Berechtigungen, Evaluation, Wartung und Rollback migrieren.",
+            "zh-tw": "把个人方法迁移成包含负责人、权限、评测、维护和回滚的版本化团队能力。"
           },
           "newArtifact": {
             "en": "A team capability package with owner, version, source boundary, permission table, review date, and rollback target.",
@@ -2412,7 +2636,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Un paquete de capacidad de equipo con propietario, versión, límite de fuentes, tabla de permisos, fecha de revisión y objetivo de rollback.",
             "ja": "所有者・バージョン・出典の境界・権限テーブル・レビュー日・ロールバック対象を含むチーム能力パッケージ。",
             "ko": "소유자, 버전, 출처 경계, 권한 표, 리뷰 날짜, 롤백 대상이 있는 팀 역량 패키지.",
-            "de": "Ein Team-Capability-Paket mit Verantwortlichem, Version, Quellengrenze, Berechtigungstabelle, Prüfdatum und Rollback-Ziel."
+            "de": "Ein Team-Capability-Paket mit Verantwortlichem, Version, Quellengrenze, Berechtigungstabelle, Prüfdatum und Rollback-Ziel.",
+            "zh-tw": "一个包含负责人、版本、来源边界、权限表、复核日期和回滚目标的团队能力包。"
           },
           "newAcceptance": {
             "en": "A second operator can reproduce or reject the package without hidden credentials, private context, or ownerless decisions.",
@@ -2420,7 +2645,8 @@ window.CODEX_LEARNING_PATH = {
             "es": "Un segundo operador puede reproducir o rechazar el paquete sin credenciales ocultas, contexto privado ni decisiones sin propietario.",
             "ja": "別のオペレーターが、隠れた資格情報・プライベートなコンテキスト・所有者のない決定なしに、パッケージを再現または却下できる。",
             "ko": "두 번째 운영자가 숨은 자격 증명, 개인 컨텍스트, 소유자 없는 결정 없이 패키지를 재현하거나 기각할 수 있다.",
-            "de": "Ein zweiter Operator kann das Paket ohne versteckte Zugangsdaten, privaten Kontext oder Entscheidungen ohne Verantwortlichen reproduzieren oder ablehnen."
+            "de": "Ein zweiter Operator kann das Paket ohne versteckte Zugangsdaten, privaten Kontext oder Entscheidungen ohne Verantwortlichen reproduzieren oder ablehnen.",
+            "zh-tw": "第二位操作者无需隐藏凭据、私人上下文或无负责人决策，就能复现或拒绝该能力包。"
           }
         }
       }

@@ -38,7 +38,7 @@ proposal、approval、execution、観察した effect、acceptance を分け、i
 
 ## 引き継げるアーキテクチャのパターン
 
-[監査した `claude-code-from-source` の研究](../../docs/research/claude-code-from-source-repository-audit-2026-08-16.md)
+[監査した `claude-code-from-source` の研究](../evidence-library-JA.md#source-notes)
 は参照資料であり、公式の実装記録ではありません。特定製品に依存しない
 形に書き直すと、次の設計質問が残ります。
 

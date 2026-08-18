@@ -147,7 +147,7 @@ delivery:   记录产物、diff、命令、结果与剩余限制
 
 ## 值得迁移的架构模式
 
-审查过的 [`claude-code-from-source` 研究](../../docs/research/claude-code-from-source-repository-audit-2026-08-16.md)
+审查过的 [`claude-code-from-source` 研究](../evidence-library-ZH.md#source-notes)
 只是参考材料，不是官方实现记录。把其中可迁移的设计问题重新写成跨平台
 课程后，可以保留以下原则：
 

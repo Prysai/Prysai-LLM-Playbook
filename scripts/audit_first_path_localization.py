@@ -1,4 +1,4 @@
-"""Guard the six-language first path against silent teaching-contract loss.
+"""Guard the seven-language first path against silent teaching-contract loss.
 
 This is deliberately narrower than a translation review. It verifies that the
 five reader-visible starting units retain the same observable learning loop and
@@ -18,7 +18,7 @@ import validate_learning_contract as contract
 
 ROOT = Path(__file__).resolve().parents[1]
 MATRIX = ROOT / "docs/governance/locale-matrix.yaml"
-LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE")
+LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW")
 FIRST_PATH_IDS = (
     "llm-fundamentals-guide",
     "chapter-01-gpt-and-codex",
@@ -28,7 +28,7 @@ FIRST_PATH_IDS = (
 )
 LESSON_ZERO_ID = "llm-fundamentals-guide"
 MARKDOWN_LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
-LOCALIZED_TARGET_RE = re.compile(r"-(EN|ZH|ES|JA|KO|DE)\.md$")
+LOCALIZED_TARGET_RE = re.compile(r"-(EN|ZH|ES|JA|KO|DE|ZHTW)\.md$")
 
 
 def load_records() -> dict[str, dict]:
@@ -76,13 +76,16 @@ def lesson_zero_gaps(text: str) -> list[str]:
     checks = {
         "definition": re.compile(r"(?mi)^##\s+0\.1\s+"),
         "capability_boundary": re.compile(
-            r"(?i)(what LLMs cannot|LLM 做不到|LLM.{0,4}できない|LLM이 할 수 없는|LLMs nicht können|LLM no pueden)"
+            r"(?i)(what LLMs cannot|LLM 做不到|LLM 自己无法建立什么|LLM 自己無法建立什麼|LLM.{0,8}(不能|無法|做不到)|"
+            r"LLMだけでは確立できないこと|LLM만으로 확립할 수 없는 것|Was LLMs allein nicht feststellen können|"
+            r"LLM.{0,4}できない|LLM이 할 수 없는|LLMs nicht können|LLM no pueden)"
         ),
         "observable_check": re.compile(
-            r"(?i)(five-minute boundary check|五分钟边界检查|5分の境界チェック|5분 경계 점검|Comprobación de límites en cinco minutos|Fünf-Minuten-Grenzcheck)"
+            r"(?i)(five-minute boundary check|五分钟边界检查|五分鐘邊界檢查|5分の境界チェック|5분 경계 점검|Comprobación de límites en cinco minutos|Fünf-Minuten-Grenzcheck)"
         ),
         "sources_boundary": re.compile(
-            r"(?i)(sources and boundary|资料来源与边界|情報源とその限界|출처와 경계|Fuentes y alcance|Quellen und Grenzen)"
+            r"(?i)(sources and boundary|资料来源与边界|来源与边界|來源與邊界|情報源とその限界|情報源と境界|"
+            r"출처와 경계|Fuentes y alcance|Fuentes y límites|Quellen und Grenzen|Quellen und Grenzen)"
         ),
         "next_unit": re.compile(r"(?i)(chapter.?1|第.?1.?章|第1章|1장|Kapitel.?1|Capítulo.?1)"),
     }

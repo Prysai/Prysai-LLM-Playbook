@@ -190,17 +190,17 @@ def main() -> int:
                 raise AssertionError(f"locale-alias-routing: missing {required}")
         fixtures += 1
 
-        # The six-language promise covers the declared 22-chapter / 18-Lab
+        # The seven-language promise covers the declared 22-chapter / 18-Lab
         # course route. Skills, research, and governance have separately
         # governed translation status, so the public locale panel must never
         # relabel that bounded path as every reader-facing document.
         for forbidden in (
-            "every reader-facing page is available in all six",
-            "所有面向读者的页面均提供六语种版本",
-            "todas las páginas para lectores existen en los seis",
-            "すべての読者向けページが6言語で存在します",
-            "모든 독자용 페이지가 6개 언어로 제공됩니다",
-            "jede leserorientierte Seite liegt in allen sechs Sprachen vor",
+            "every reader-facing page is available in all seven",
+            "所有面向读者的页面均提供七语种版本",
+            "todas las páginas para lectores existen en los siete",
+            "すべての読者向けページが7言語で存在します",
+            "모든 독자용 페이지가 7개 언어로 제공됩니다",
+            "jede leserorientierte Seite liegt in allen sieben Sprachen vor",
         ):
             if forbidden in site_script:
                 raise AssertionError(f"locale-coverage-boundary: overstates course-route coverage: {forbidden}")

@@ -38,7 +38,7 @@ proposal, approval, execution, 관찰한 effect, acceptance를 구분하고, inp
 
 ## 이어서 쓸 수 있는 아키텍처 패턴
 
-감사한 [`claude-code-from-source` 연구](../../docs/research/claude-code-from-source-repository-audit-2026-08-16.md)는
+감사한 [`claude-code-from-source` 연구](../evidence-library-KO.md#source-notes)는
 참고 자료일 뿐 공식 구현 기록이 아닙니다. 특정 제품에 종속되지 않도록
 다시 쓴 결과, 다음 설계 질문을 남깁니다.
 

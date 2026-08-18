@@ -4,7 +4,7 @@ Licencia: el texto del curso y los materiales didácticos están bajo CC BY 4.0;
 > Manual práctico de LLM: de la primera tarea al trabajo fiable.
 
 <!-- language-switcher:start -->
-**Idiomas:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md)
+**Idiomas:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md)
 <!-- language-switcher:end -->
 
 ## Empieza como un libro: comprende antes de practicar

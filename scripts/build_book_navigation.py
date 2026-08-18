@@ -30,7 +30,7 @@ def load_navigation() -> dict[str, Any]:
     return document
 
 
-LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE")
+LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW")
 
 
 def path_for(item: dict[str, Any], locale: str) -> str:
@@ -69,6 +69,7 @@ def link_markup(
         "JA": {"prev": "前の章", "next": "次の章", "prev_short": "← 前へ", "next_short": "次へ →", "sep": " · ", "pending": " · 移行待ち", "num": f"第 {number} 章"},
         "KO": {"prev": "이전 장", "next": "다음 장", "prev_short": "← 이전", "next_short": "다음 →", "sep": " · ", "pending": " · 전환 대기 중", "num": f"{number}장"},
         "DE": {"prev": "Vorheriges Kapitel", "next": "Nächstes Kapitel", "prev_short": "← Zurück", "next_short": "Weiter →", "sep": " · ", "pending": " · Migration ausstehend", "num": f"Kapitel {number}"},
+        "ZHTW": {"prev": "上一章", "next": "下一章", "prev_short": "← 上一章", "next_short": "下一章 →", "sep": " · ", "pending": " · 遷移待定", "num": f"第 {number} 章"},
     }[locale]
     prefix = copy["prev"] if direction == "previous" else copy["next"]
     label = f"{prefix}: {copy['num']}{copy['sep']}{title}"
@@ -90,7 +91,7 @@ def build_block(index: int, entries: list[dict[str, Any]], locale: str, source: 
     following = entries[index + 1] if index + 1 < len(entries) else None
     aria_labels = {
         "EN": "Chapter navigation", "ZH": "章节导航", "ES": "Navegación de capítulos",
-        "JA": "章ナビゲーション", "KO": "장 내비게이션", "DE": "Kapitelnavigation",
+        "JA": "章ナビゲーション", "KO": "장 내비게이션", "DE": "Kapitelnavigation", "ZHTW": "章節導覽",
     }
     aria_label = aria_labels.get(locale, "Chapter navigation")
     previous_cell = (

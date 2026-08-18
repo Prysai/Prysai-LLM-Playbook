@@ -7,7 +7,7 @@ Lizenz: Kurstexte und Lehrmaterialien stehen unter CC BY 4.0; Skripte und Werkze
 > ist in Arbeit.
 
 <!-- language-switcher:start -->
-**Sprachen:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md)
+**Sprachen:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md)
 <!-- language-switcher:end -->
 
 ## Wie ein Lehrbuch beginnen: erst verstehen, dann üben

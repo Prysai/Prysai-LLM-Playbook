@@ -8,7 +8,7 @@ const copy = {
     heroIndexAria: 'Page index',
     pathAria: 'Seven-level learning path',
     routesAria: 'Filter chapter routes',
-    menu: 'Menu', menuClose: 'Close', navStart: 'Start with a problem', navFirst30: 'First 15 minutes', navPath: 'Learning path', navIndex: 'Project index', navRoutes: 'Reading routes', navLabs: 'Labs', navSkills: 'Skills', navUpdates: 'Update map', localeBannerFallback: 'The {requested} route is selected, but some interface strings or course units are still in migration. When a course unit is absent, Reader keeps this language and names the unit unavailable; it does not silently switch the course text to English.', localeManifestError: 'Locale routing is unavailable because the generated manifest did not load. English remains available; rebuild the manifest before relying on other routes.', localeBannerReady: 'Reading in {language}.', localeMenuAria: 'Interface languages', languageNameEnglish: 'English', languageNameChinese: 'Simplified Chinese', languageNameSpanish: 'Spanish', languageNameJapanese: 'Japanese', languageNameKorean: 'Korean', languageNameGerman: 'German', localeOptionFallback: 'English UI fallback', localePartialAnchorNotice: 'Local overview; this detailed section is not translated yet.',
+    menu: 'Menu', menuClose: 'Close', navStart: 'Start with a problem', navFirst30: 'First 15 minutes', navPath: 'Learning path', navIndex: 'Project index', navRoutes: 'Reading routes', navLabs: 'Labs', navSkills: 'Skills', navUpdates: 'Update map', localeBannerFallback: 'The {requested} route is selected, but some interface strings or course units are still in migration. When a course unit is absent, Reader keeps this language and names the unit unavailable; it does not silently switch the course text to English.', localeManifestError: 'Locale routing is unavailable because the generated manifest did not load. English remains available; rebuild the manifest before relying on other routes.', localeBannerReady: 'Reading in {language}.', localeMenuAria: 'Interface languages', languageNameEnglish: 'English', languageNameChinese: 'Simplified Chinese', languageNameTraditionalChinese: 'Traditional Chinese', languageNameSpanish: 'Spanish', languageNameJapanese: 'Japanese', languageNameKorean: 'Korean', languageNameGerman: 'German', localeOptionFallback: 'English UI fallback', localePartialAnchorNotice: 'Local overview; this detailed section is not translated yet.',
     heroIndex: 'CODEX / LEARNING SYSTEM', heroEyebrow: 'Candidate guide · basic structure and checks pass', heroTitle: 'Practise checkable Codex work.', heroLede: 'Use a collaboration method designed to transfer across language-model tools, then practise it deeply in Codex: define the outcome, control context and authority, inspect the work, recover from failure, and keep evidence.', heroPrimary: 'Start the guided Codex path', heroSecondary: 'See the optional no-setup warm-up', heroRouteAria: 'Choose the recommended first route', heroRouteKicker: 'Choose by your starting condition', heroRouteGuidedTitle: 'Have a disposable project? Follow the guided path.', heroRouteGuidedBody: 'Start with Chapter 1. The first local edit comes after its scope and evidence boundary are visible.', heroRouteFixtureTitle: 'No disposable project yet? Use the safe fixture at the Chapter 2 decision.', heroRouteFixtureBody: 'It supplies one offline target and check. It does not replace the guided Codex path.', heroRouteBoundary: 'Candidate means the basic structure and checks pass; first-time reader outcomes are still unmeasured.', heroProofAria: 'First Win proof card', heroProofKicker: 'FIRST WIN / INSPECTABLE EXAMPLE', heroProofStatus: 'candidate · no participant run recorded', heroProofTitle: 'See what one checked result contains.', heroProofSourceLabel: 'SOURCE MESSAGE', heroProofSource: '“Hi, the workshop changed. It starts Friday at 10. Bring the draft. Tell me if you cannot come.”', heroProofPreserveLabel: 'PRESERVE FACTS', heroProofPreserve: 'Keep Friday at 10, the draft, and the reply request. Do not add a date, venue, reason, or contact method.', heroProofChecksLabel: 'THREE HUMAN CHECKS', heroProofCheckOne: 'Friday at 10 and the draft remain.', heroProofCheckTwo: 'People who cannot attend are asked to reply.', heroProofCheckThree: 'No unsupported detail appears.', heroProofReceiptLabel: 'BOUNDED RECEIPT', heroProofReceipt: 'One checked attempt can be recorded. It does not prove learning, transfer, or model performance.', heroProofLink: 'Open the full 15-minute check', heroFooter: 'Problem → protocol → action → evidence',
     startEyebrow: 'Start with the problem', startTitle: 'Do not start with a Skill.', startIntro: 'Start with the failure you need to avoid or the work you need to finish. Pick the smallest useful entry, then leave evidence.',
     problemStartTitle: 'I do not know where to start.', problemStartBody: 'Separate GPT, Codex, models, tools, Skills, and Agents before choosing a workflow.', problemStartLink: 'Open chapter 1 ↗', problemWrongFileTitle: 'Codex changed the wrong file.', problemWrongFileBody: 'Learn to inspect scope, diff, tests, and recovery before trusting a completion statement.', problemWrongFileLink: 'Open chapter 9 ↗', problemSkillTitle: 'I do not know which Skill to use.', problemSkillBody: 'Choose by task, risk, inputs, dependencies, and evidence—not by directory size.', problemSkillLink: 'Run lab 004 ↗', problemUpdateTitle: 'I need to update this safely.', problemUpdateBody: 'Use the fixed update map to find the canonical file, required source record, and validation gate.', problemUpdateLink: 'Open the update map ↗', problemIntakeTitle: 'I have a broad goal and do not know what to practise first.', problemIntakeBody: 'Ask one decision at a time. Pick one existing route, one checkable attempt, permitted help, and a smaller fallback.', problemIntakeLink: 'Open first-practice intake · candidate · not_run ↗', problemLanguageTitle: 'I want to practise one language skill.', problemLanguageBody: 'Define one observable performance, attempt it before instruction, correct one meaning-blocking error, then test a changed case.', problemLanguageLink: 'Open language route · candidate · not_run ↗', problemGeneralSkillTitle: 'I want to practise another real skill.', problemGeneralSkillBody: 'Turn an interview answer, explanation, or presentation into one timed performance, then retest it under a changed condition.', problemGeneralSkillLink: 'Open general skill route · candidate · not_run ↗', problemResearchTitle: 'I need to research one bounded question.', problemResearchBody: 'Tie the question to a decision, assign source owners, keep a claim ledger, search for disagreement, and stop on purpose.', problemResearchLink: 'Open research route · candidate · not_run ↗',
@@ -229,8 +229,8 @@ Object.assign(copy.en, {
   fileDocsTitle: 'Governance and research', fileDocsBody: 'Status, sources, field reports, update rules, and quality records.',
   ledgerTitle: 'Content state', ledgerIntro: 'A compact reading of the current status source. Status describes evidence, not ambition.',
   ledgerProject: 'Project', ledgerChapters: 'Chapters · 22', ledgerLabs: 'Labs · 18', ledgerSkills: 'Skills · 25', ledgerResearch: 'Field research', ledgerResearchNote: 'user reports; not locally reproduced', ledgerSource: 'Open the current status source',
-  localeTitle: 'Six-language route', localeIntro: 'Six repository entry locales are registered. All six route tokens are exposed; EN / 中文 UI is reviewed, while the other locales use an explicit English UI fallback during migration.',
-  localeEnglish: 'available · default', localeChinese: 'available · current toggle', localeSpanish: 'route exposed · UI fallback', localeGerman: 'route exposed · UI fallback', localeJapanese: 'route exposed · UI fallback', localeKorean: 'route exposed · UI fallback', localeRule: 'Route rule: translated artifacts carry a locale suffix and link to the same locale. A route token is not the same as a completed translation or reviewed UI.',
+  localeTitle: 'Seven-language route', localeIntro: 'Seven repository entry locales are registered. Each course route stays in its selected language; supplemental pages retain their own translation status and fail closed when a same-language page is unavailable.',
+  localeEnglish: 'available · default', localeChinese: 'available · 简体中文', localeTraditionalChinese: 'available · 繁體中文', localeSpanish: 'available · Español', localeGerman: 'available · Deutsch', localeJapanese: 'available · 日本語', localeKorean: 'available · 한국어', localeRule: 'Route rule: translated course units carry a locale suffix and link to the same locale. A route token means file/path coverage, not completed translation, independent review, or learner evidence.',
   researchTitle: 'Real problems, with the boundary attached.', researchIntro: 'The research index turns public Codex issues, first-party safety guidance, and forum reports into symptoms, source-scoped boundaries, safe checks, and teaching links. It does not claim an official root cause or local reproduction.', researchBoundary: 'source-scoped guidance and public reports · no local reproduction recorded', researchIndexLink: 'Open the field-problems index', researchIndexBody: 'Codex, surfaces, handoffs, authentication, worktrees, and verification symptoms.', researchForumsLink: 'Read the forum case notes', researchForumsBody: 'Sandbox network allowlists, Windows spawn failures, approvals, encoding, and private paths.', researchLiveLink: 'Review three current field cases', researchLiveBody: 'Worktree target, hidden evidence, and verification scope; all remain unverified locally.', researchSafetyLink: 'Read the AI collaboration safety boundaries', researchSafetyBody: 'Prompt injection, minimum necessary input, action authority, and verification; source-backed candidate research.', researchReceiptsLink: 'Read the AI safety field signals', researchReceiptsBody: 'Public reports, claim classification, and a checkpoint for long research tasks; candidate research.', researchFirstTurnLink: 'Draft a universal first turn', researchFirstTurnBody: 'A six-field, text-only Spanish or research card; candidate research, not platform equivalence or an outcome claim.', researchPublicInterestLink: 'Run the public-interest safety inquiry', researchPublicInterestBody: 'A fixed fictional case: people, data boundary, human control, evidence, and stop; candidate / not_run.', problemPublicInterestSafetyTitle: 'I need to assess an AI idea that could affect people.', problemPublicInterestSafetyBody: 'Name one decision, the people it could burden, necessary data, human recourse, evidence, and the point where the work must stop.', problemPublicInterestSafetyLink: 'Run the fixed safety inquiry · candidate · not_run ↗',
 });
 
@@ -629,6 +629,7 @@ const fallbackLocales = {
   ja: { suffix: 'JA', html_lang: 'ja', display_name: '日本語' },
   ko: { suffix: 'KO', html_lang: 'ko', display_name: '한국어' },
   de: { suffix: 'DE', html_lang: 'de', display_name: 'Deutsch' },
+  'zh-tw': { suffix: 'ZHTW', html_lang: 'zh-TW', display_name: '繁體中文' },
 };
 const loadedLocaleManifest = window.CODEX_LOCALE_MANIFEST;
 const localeManifest = loadedLocaleManifest || {
@@ -638,14 +639,14 @@ const localeManifest = loadedLocaleManifest || {
   aliases: {},
   path_index: {},
 };
-const requiredLocaleTokens = ['en', 'zh', 'es', 'ja', 'ko', 'de'];
+const requiredLocaleTokens = ['en', 'zh', 'es', 'ja', 'ko', 'de', 'zh-tw'];
 const localeManifestAvailable = Boolean(
   loadedLocaleManifest
   && requiredLocaleTokens.every((token) => loadedLocaleManifest.locales?.[token])
   && loadedLocaleManifest.default_locale === 'en'
 );
 const localeTokens = Object.keys(localeManifest.locales);
-const uiLocales = new Set(['en', 'zh', 'es', 'ja', 'ko', 'de']);
+const uiLocales = new Set(['en', 'zh', 'es', 'ja', 'ko', 'de', 'zh-tw']);
 const languageParam = new URLSearchParams(window.location.search).get('lang');
 const staticLocale = window.PRYSAI_STATIC_LOCALE || document.documentElement.dataset.prysaiStaticLocale || null;
 const hasExplicitLanguageParam = languageParam !== null;
@@ -726,6 +727,7 @@ const localeCoverageLabel = (language) => {
     ja: { source: `コース：${units} のソース言語ユニット`, reviewPending: '独立した言語レビュー待ち', registered: '登録済みローカライズユニット', translated: `コースルート：${units} のローカルファイル` },
     ko: { source: `코스: ${units} 소스 언어 유닛`, reviewPending: '독립 언어 검토 대기 중', registered: '등록된 현지화 유닛', translated: `코스 경로: ${units}개 로컬 파일` },
     de: { source: `Kurs: ${units} Quell-Einheiten`, reviewPending: 'unabhängige Sprachprüfung ausstehend', registered: 'registrierte lokalisierte Einheiten', translated: `Kursroute: ${units} lokale Dateien` },
+    'zh-tw': { source: `課程：${units} 個源語言單元`, reviewPending: '獨立語言審校待完成', registered: '已登記本地化單元', translated: `課程路線：${units} 個本地檔案` },
   }[effectiveUiLanguage] || { source: '', reviewPending: '', registered: '', translated: '' };
   if (coverage.source_units === coverage.total_units) return ui.source;
   if (coverage.candidate_translation_units || coverage.reviewed_translation_units) {
@@ -1435,6 +1437,7 @@ const localePageMeta = {
   ja: { title: 'Prysai LLM プレイブック — LLM 入門、プロンプト、信頼できる AI 活用', description: 'LLM とは何かを学び、より明確なプロンプトを書き、最初の AI タスクを境界が明確で確認可能な仕事に変えます。' },
   ko: { title: 'Prysai LLM 플레이북 — LLM 입문, 프롬프트, 신뢰할 수 있는 AI 작업', description: 'LLM이 무엇인지 배우고 더 명확한 프롬프트를 작성하며 첫 AI 과제를 경계가 분명하고 확인 가능한 작업으로 바꾸세요.' },
   de: { title: 'Prysai LLM Playbook — LLM-Guide, Prompts und verlässliche KI-Arbeit', description: 'Lerne, was LLMs sind, schreibe klarere Prompts und mache aus einer ersten KI-Aufgabe begrenzte, überprüfbare Arbeit.' },
+  'zh-tw': { title: 'Prysai 大型語言模型實戰手冊：LLM 入門、提示詞與可靠 AI 工作', description: '從理解大型語言模型開始，學習寫清楚提示詞，並把第一次 AI 任務變成有邊界、可檢查的工作。' },
 };
 
 const seoBaseUrl = 'https://docs.prysai.com/llm-playbook/';
@@ -1491,6 +1494,7 @@ copy.es = {
   'localeMenuAria': 'Idiomas de la interfaz',
   'languageNameEnglish': 'English',
   'languageNameChinese': 'Simplified Chinese',
+  'languageNameTraditionalChinese': 'Traditional Chinese',
   'languageNameSpanish': 'Spanish',
   'languageNameJapanese': 'Japanese',
   'languageNameKorean': 'Korean',
@@ -1917,15 +1921,16 @@ copy.es = {
   'ledgerResearch': 'Investigación de campo',
   'ledgerResearchNote': 'informes de usuarios; sin reproducción local',
   'ledgerSource': 'Abrir la fuente de estado actual',
-  'localeTitle': 'Ruta de seis idiomas',
-  'localeIntro': 'Se registran seis idiomas de entrada del repositorio. Los seis tokens de ruta están expuestos; la interfaz EN / 中文 está revisada, mientras que los demás idiomas usan un respaldo explícito de interfaz en inglés durante la migración.',
+  'localeTitle': 'Ruta de siete idiomas',
+  'localeIntro': 'Se registran siete idiomas de entrada del repositorio. Cada ruta del curso conserva el idioma seleccionado; las páginas suplementarias mantienen su estado de traducción y fallan de forma explícita si falta una página en el mismo idioma.',
   'localeEnglish': 'disponible · predeterminado',
   'localeChinese': 'disponible · conmutador actual',
   'localeSpanish': 'ruta expuesta · respaldo de interfaz',
   'localeGerman': 'ruta expuesta · respaldo de interfaz',
   'localeJapanese': 'ruta expuesta · respaldo de interfaz',
   'localeKorean': 'ruta expuesta · respaldo de interfaz',
-  'localeRule': 'Regla de ruta: los artefactos traducidos llevan un sufijo de idioma y enlazan al mismo idioma. Un token de ruta no equivale a una traducción completa ni a una interfaz revisada.',
+  'localeTraditionalChinese': 'disponible · 繁體中文',
+  'localeRule': 'Regla de ruta: las unidades traducidas llevan un sufijo de idioma y enlazan al mismo idioma. Un token indica cobertura de archivos y rutas, no una traducción terminada, revisión independiente ni evidencia de aprendizaje.',
   'researchTitle': 'Problemas reales, con el límite adjunto.',
   'researchIntro': 'El índice de investigación convierte los problemas públicos de Codex, la guía de seguridad de primera parte y los informes de foros en síntomas, límites con alcance de fuente, comprobaciones seguras y enlaces didácticos. No afirma una causa raíz oficial ni una reproducción local.',
   'researchBoundary': 'guía con alcance de fuente e informes públicos · sin reproducción local registrada',
@@ -2085,6 +2090,7 @@ copy.ja = {
   'localeMenuAria': 'インターフェース言語',
   'languageNameEnglish': '英語',
   'languageNameChinese': '簡体字中国語',
+  'languageNameTraditionalChinese': '繁体字中国語',
   'languageNameSpanish': 'スペイン語',
   'languageNameJapanese': '日本語',
   'languageNameKorean': '韓国語',
@@ -2511,15 +2517,16 @@ copy.ja = {
   'ledgerResearch': 'フィールドリサーチ',
   'ledgerResearchNote': 'ユーザーレポート。ローカルでは再現されていない',
   'ledgerSource': '現在のステータスソースを開く',
-  'localeTitle': '6言語ルート',
-  'localeIntro': 'リポジトリのエントリとして6つのロケールが登録されています。6つのルートトークンはすべて公開されています。EN / 中文 UI はレビュー済みで、他のロケールは移行中、明示的な英語 UI フォールバックを使用します。',
+  'localeTitle': '7言語ルート',
+  'localeIntro': 'リポジトリのエントリとして7つのロケールが登録されています。コースの各ルートは選択した言語を維持し、補助ページは翻訳状態を明示します。同じ言語のページがない場合、Reader は別言語へ黙って切り替えません。',
   'localeEnglish': '利用可能 · デフォルト',
   'localeChinese': '利用可能 · 現在のトグル',
   'localeSpanish': 'ルート公開 · UI フォールバック',
   'localeGerman': 'ルート公開 · UI フォールバック',
   'localeJapanese': 'ルート公開 · UI フォールバック',
   'localeKorean': 'ルート公開 · UI フォールバック',
-  'localeRule': 'ルートのルール:翻訳された成果物はロケールサフィックスを持ち、同じロケールにリンクします。ルートトークンは、完了した翻訳やレビュー済み UI と同じではありません。',
+  'localeTraditionalChinese': '利用可能 · 繁体字中国語',
+  'localeRule': 'ルートのルール:翻訳されたコース単位は言語サフィックスを持ち、同じ言語にリンクします。ルートトークンはファイルとパスのカバレッジを示すだけで、翻訳完了、独立レビュー、学習者の証拠を示しません。',
   'researchTitle': '実際の問題を、境界を添えて。',
   'researchIntro': 'リサーチインデックスは、公開されている Codex の issue、ファーストパーティの安全性ガイダンス、フォーラムのレポートを、症状、ソース範囲の境界、安全なチェック、ティーチングリンクに整理します。公式の根本原因やローカルでの再現を主張するものではありません。',
   'researchBoundary': 'ソース範囲のガイダンスと公開レポート · ローカルでの再現記録なし',
@@ -2679,6 +2686,7 @@ copy.ko = {
   'localeMenuAria': '인터페이스 언어',
   'languageNameEnglish': '영어',
   'languageNameChinese': '중국어(간체)',
+  'languageNameTraditionalChinese': '중국어(번체)',
   'languageNameSpanish': '스페인어',
   'languageNameJapanese': '일본어',
   'languageNameKorean': '한국어',
@@ -3105,15 +3113,16 @@ copy.ko = {
   'ledgerResearch': '현장 조사',
   'ledgerResearchNote': '사용자 보고 · 로컬 재현 안 됨',
   'ledgerSource': '현재 상태 출처 열기',
-  'localeTitle': '6개 언어 경로',
-  'localeIntro': '리포지토리 진입 로케일 6개가 등록되어 있습니다. 6개 경로 토큰 모두 노출됩니다. EN / 中文 UI는 검토되었으며, 나머지 로케일은 마이그레이션 중 명시적 영어 UI 폴백을 사용합니다.',
+  'localeTitle': '7개 언어 경로',
+  'localeIntro': '리포지토리 진입 로케일 7개가 등록되어 있습니다. 각 과정 경로는 선택한 언어를 유지하고, 보조 페이지는 번역 상태를 명시합니다. 같은 언어의 페이지가 없으면 Reader는 다른 언어로 조용히 바꾸지 않습니다.',
   'localeEnglish': '사용 가능 · 기본값',
   'localeChinese': '사용 가능 · 현재 토글',
   'localeSpanish': '경로 노출 · UI 폴백',
   'localeGerman': '경로 노출 · UI 폴백',
   'localeJapanese': '경로 노출 · UI 폴백',
   'localeKorean': '경로 노출 · UI 폴백',
-  'localeRule': '경로 규칙: 번역된 산출물은 로케일 접미사를 가지며 같은 로케일로 연결됩니다. 경로 토큰은 완료된 번역이나 검토된 UI와 다릅니다.',
+  'localeTraditionalChinese': '사용 가능 · 번체 중국어',
+  'localeRule': '경로 규칙: 번역된 과정 단위는 언어 접미사를 가지며 같은 언어로 연결됩니다. 경로 토큰은 파일과 경로 범위를 뜻할 뿐, 번역 완료·독립 검토·학습자 증거를 뜻하지 않습니다.',
   'researchTitle': '경계가 붙어 있는 실제 문제.',
   'researchIntro': '조사 색인은 공개된 Codex 이슈, 자사 안전 지침, 포럼 보고서를 증상, 출처 범위 경계, 안전 점검, 교육 링크로 바꿉니다. 공식 근본 원인이나 로컬 재현을 주장하지 않습니다.',
   'researchBoundary': '출처 범위 지침과 공개 보고서 · 로컬 재현 기록 없음',
@@ -3273,6 +3282,7 @@ copy.de = {
   'localeMenuAria': 'Oberflächensprachen',
   'languageNameEnglish': 'Englisch',
   'languageNameChinese': 'Chinesisch (vereinfacht)',
+  'languageNameTraditionalChinese': 'Chinesisch (traditionell)',
   'languageNameSpanish': 'Spanisch',
   'languageNameJapanese': 'Japanisch',
   'languageNameKorean': 'Koreanisch',
@@ -3699,15 +3709,16 @@ copy.de = {
   'ledgerResearch': 'Feldrecherche',
   'ledgerResearchNote': 'Nutzerberichte; nicht lokal reproduziert',
   'ledgerSource': 'Die aktuelle Statusquelle öffnen',
-  'localeTitle': 'Sechssprachige Route',
-  'localeIntro': 'Sechs Repository-Einstiegssprachen sind registriert. Alle sechs Routen-Tokens sind verfügbar; die EN- / 中文-Oberfläche ist geprüft, während die anderen Sprachen während der Migration einen expliziten englischen UI-Fallback verwenden.',
+  'localeTitle': 'Sieben-Sprachen-Route',
+  'localeIntro': 'Sieben Repository-Einstiegssprachen sind registriert. Jede Kursroute bleibt in der gewählten Sprache; Zusatzseiten behalten ihren Übersetzungsstatus und schließen ausdrücklich, wenn eine gleichsprachige Seite fehlt.',
   'localeEnglish': 'verfügbar · Standard',
   'localeChinese': 'verfügbar · aktuell ausgewählt',
   'localeSpanish': 'Route verfügbar · UI-Fallback',
   'localeGerman': 'Route verfügbar · UI-Fallback',
   'localeJapanese': 'Route verfügbar · UI-Fallback',
   'localeKorean': 'Route verfügbar · UI-Fallback',
-  'localeRule': 'Routenregel: übersetzte Artefakte tragen ein Sprach-Suffix und verlinken auf dieselbe Sprache. Ein Routen-Token ist nicht dasselbe wie eine abgeschlossene Übersetzung oder eine geprüfte Oberfläche.',
+  'localeTraditionalChinese': 'verfügbar · Traditionelles Chinesisch',
+  'localeRule': 'Routenregel: Übersetzte Kurseinheiten tragen ein Sprachsuffix und verlinken auf dieselbe Sprache. Ein Routen-Token bedeutet Datei- und Pfadabdeckung, nicht eine fertige Übersetzung, unabhängige Prüfung oder Lernnachweis.',
   'researchTitle': 'Echte Probleme, mit angehängter Grenze.',
   'researchIntro': 'Der Recherche-Index verwandelt öffentliche Codex-Issues, Sicherheitshinweise des Herstellers und Forenberichte in Symptome, quellenbezogene Grenzen, sichere Checks und Lehrmaterial-Links. Er beansprucht keine offizielle Ursache und keine lokale Reproduktion.',
   'researchBoundary': 'quellenbezogene Hinweise und öffentliche Berichte · keine lokale Reproduktion dokumentiert',
@@ -3843,15 +3854,16 @@ copy.de = {
 };
 
 Object.assign(copy.en, {
-  'localeTitle': 'Six-language route',
-  'localeIntro': 'Six repository entry locales are registered. Each has a same-language route for the 22 chapters and 18 Labs: English, 简体中文, Español, 日本語, 한국어, Deutsch. Skills, research, and governance material keep their own translation status; an unavailable page stays visible as unavailable instead of silently switching its course text to English.',
+  'localeTitle': 'Seven-language route',
+  'localeIntro': 'Seven repository entry locales are registered. Each course route covers 22 chapters and 18 Labs in its selected language; supplemental pages retain their own translation status and fail closed when a same-language page is unavailable.',
   'localeEnglish': 'available · default',
   'localeChinese': 'available · 简体中文',
+  'localeTraditionalChinese': 'available · 繁體中文',
   'localeSpanish': 'available · Español',
   'localeGerman': 'available · Deutsch',
   'localeJapanese': 'available · 日本語',
   'localeKorean': 'available · 한국어',
-  'localeRule': 'Route rule: every translated course unit carries a locale suffix and links to the same locale. A route token means a complete 40-unit chapter-and-Lab path, not that every supplemental document has been translated or independently reviewed.',
+  'localeRule': 'Route rule: translated course units carry a locale suffix and link to the same locale. A route token means file/path coverage, not completed translation, independent review, or learner evidence.',
   'mobileIndexUpdates': 'Update areas',
   'mobileIndexTrust': 'Trust families',
   'menuCloseAria': 'Close navigation',
@@ -3860,15 +3872,16 @@ Object.assign(copy.en, {
 });
 
 Object.assign(copy.zh, {
-  'localeTitle': '六语种路线',
-  'localeIntro': '仓库已登记六种入口语言。每种语言都有 22 章和 18 个实验的同语言路线：English、简体中文、Español、日本語、한국어、Deutsch。Skill、研究和治理材料各自保留翻译状态；页面不可用时会明确说明，不会悄悄将课程正文切换为英文。',
+  'localeTitle': '七语种路线',
+  'localeIntro': '仓库已登记七种入口语言。每条课程路线都覆盖 22 章和 18 个实验，并保持当前选择的语言；补充页面保留自己的翻译状态，缺少同语言页面时会明确失败关闭。',
   'localeEnglish': '可用 · 默认',
   'localeChinese': '可用 · 简体中文',
+  'localeTraditionalChinese': '可用 · 繁體中文',
   'localeSpanish': '可用 · Español',
   'localeGerman': '可用 · Deutsch',
   'localeJapanese': '可用 · 日本語',
   'localeKorean': '可用 · 한국어',
-  'localeRule': '路由规则：每个翻译课程单元都带语言后缀并链接到同一语言；语言路由指完整的 40 单元章节与实验路线，不表示所有补充文档都已翻译或独立审校。',
+  'localeRule': '路由规则：翻译课程单元带语言后缀并链接到同一语言。语言路线只表示文件与路径覆盖，不等于翻译完成、独立审校或学习者证据。',
   'mobileIndexUpdates': '更新区域',
   'mobileIndexTrust': '可信度类型',
   'menuCloseAria': '关闭导航',
@@ -3878,15 +3891,16 @@ Object.assign(copy.zh, {
 
 Object.assign(copy.es, {
   heroProofAria: 'Ejemplo de prompt de cinco minutos', heroProofKicker: 'EJEMPLO DE CINCO MINUTOS', heroProofTitle: 'Mira cómo un prompt pequeño puede cambiar el resultado.', heroProofLink: 'Prueba la práctica de prompt de cinco minutos',
-  'localeTitle': 'Ruta de seis idiomas',
-  'localeIntro': 'Seis idiomas de entrada están registrados. Cada uno tiene una ruta en el mismo idioma para los 22 capítulos y 18 Labs: English, 简体中文, Español, 日本語, 한국어, Deutsch. Skills, investigación y gobernanza conservan su propio estado de traducción; una página no disponible se indica como tal y no cambia silenciosamente el texto del curso al inglés.',
+  'localeTitle': 'Ruta de siete idiomas',
+  'localeIntro': 'Se registran siete idiomas de entrada. Cada ruta del curso cubre 22 capítulos y 18 Labs en el idioma seleccionado; las páginas suplementarias mantienen su estado de traducción y fallan de forma explícita si falta una página en el mismo idioma.',
   'localeEnglish': 'disponible · por defecto',
   'localeChinese': 'disponible · 简体中文',
+  'localeTraditionalChinese': 'disponible · 繁體中文',
   'localeSpanish': 'disponible · Español',
   'localeGerman': 'disponible · Deutsch',
   'localeJapanese': 'disponible · 日本語',
   'localeKorean': 'disponible · 한국어',
-  'localeRule': 'Regla de rutas: cada unidad de curso traducida lleva el sufijo de idioma y enlaza al mismo idioma; una ruta significa el recorrido completo de 40 unidades de capítulos y Labs, no que cada documento suplementario esté traducido o revisado de forma independiente.',
+  'localeRule': 'Regla de rutas: las unidades traducidas llevan un sufijo de idioma y enlazan al mismo idioma. Un token indica cobertura de archivos y rutas, no una traducción terminada, revisión independiente ni evidencia de aprendizaje.',
   'menuCloseAria': 'Cerrar navegación',
   'skillCatalogSummary': 'Ver el registro completo de Skills',
   'skillCatalogIntro': 'Estos métodos son opcionales. Empieza con la situación de arriba y abre el registro completo cuando sepas qué trabajo necesitas apoyar.'
@@ -3894,15 +3908,16 @@ Object.assign(copy.es, {
 
 Object.assign(copy.ja, {
   heroProofAria: '5分間のプロンプト例', heroProofKicker: '5分間の例', heroProofTitle: '小さなプロンプトが結果をどう変えるか見てみよう。', heroProofLink: '5分間のプロンプト練習を試す',
-  'localeTitle': '6言語ルート',
-  'localeIntro': '6つの入り口言語が登録されています。各言語には22章と18件のLabを同じ言語で読むルートがあります：English、简体中文、Español、日本語、한국어、Deutsch。Skill、調査、ガバナンス資料にはそれぞれ翻訳状態があります。利用できないページはその旨を表示し、コース本文を黙って英語へ切り替えません。',
+  'localeTitle': '7言語ルート',
+  'localeIntro': '7つの入り口言語が登録されています。コースの各ルートは22章と18件のLabを選択した言語でカバーし、補助ページは翻訳状態を明示します。同じ言語のページがない場合、Reader は別言語へ黙って切り替えません。',
   'localeEnglish': '利用可能 · デフォルト',
   'localeChinese': '利用可能 · 简体中文',
+  'localeTraditionalChinese': '利用可能 · 繁体字中国語',
   'localeSpanish': '利用可能 · Español',
   'localeGerman': '利用可能 · Deutsch',
   'localeJapanese': '利用可能 · 日本語',
   'localeKorean': '利用可能 · 한국어',
-  'localeRule': 'ルート規則：翻訳されたコース単位は言語サフィックスを持ち、同じ言語へリンクします。言語ルートは40単位の章とLabの完全な経路を意味し、補助文書がすべて翻訳済み・独立レビュー済みという意味ではありません。',
+  'localeRule': 'ルート規則：翻訳されたコース単位は言語サフィックスを持ち、同じ言語へリンクします。ルートトークンはファイルとパスのカバレッジを示すだけで、翻訳完了、独立レビュー、学習者の証拠を示しません。',
   'menuCloseAria': 'ナビゲーションを閉じる',
   'skillCatalogSummary': 'Skill 登録全体を見る',
   'skillCatalogIntro': 'これらの方法は任意です。まず上の状況から始め、支援したい作業の種類が分かったら全登録を開いてください。'
@@ -3910,15 +3925,16 @@ Object.assign(copy.ja, {
 
 Object.assign(copy.ko, {
   heroProofAria: '5분 프롬프트 예시', heroProofKicker: '5분 예시', heroProofTitle: '작은 프롬프트가 결과를 어떻게 바꾸는지 확인해 보세요.', heroProofLink: '5분 프롬프트 연습 해보기',
-  'localeTitle': '6개 언어 루트',
-  'localeIntro': '6개의 진입 언어가 등록되어 있습니다. 각 언어에는 22개 장과 18개 Lab을 같은 언어로 읽는 경로가 있습니다: English, 简体中文, Español, 日本語, 한국어, Deutsch. Skill, 연구, 거버넌스 자료는 각각의 번역 상태를 유지합니다. 이용할 수 없는 페이지는 이용 불가로 표시하며 과정 본문을 조용히 영어로 바꾸지 않습니다.',
+  'localeTitle': '7개 언어 루트',
+  'localeIntro': '7개의 진입 언어가 등록되어 있습니다. 각 과정 경로는 22개 장과 18개 Lab을 선택한 언어로 제공하며, 보조 페이지는 번역 상태를 명시합니다. 같은 언어의 페이지가 없으면 Reader는 다른 언어로 조용히 바꾸지 않습니다.',
   'localeEnglish': '사용 가능 · 기본값',
   'localeChinese': '사용 가능 · 简体中文',
+  'localeTraditionalChinese': '사용 가능 · 번체 중국어',
   'localeSpanish': '사용 가능 · Español',
   'localeGerman': '사용 가능 · Deutsch',
   'localeJapanese': '사용 가능 · 日本語',
   'localeKorean': '사용 가능 · 한국어',
-  'localeRule': '루트 규칙: 번역된 과정 단위는 언어 접미사를 가지며 같은 언어로 연결됩니다. 언어 루트는 40개 장과 Lab 단위의 완전한 경로를 뜻하며, 모든 보조 문서가 번역되었거나 독립 검토되었다는 뜻은 아닙니다.',
+  'localeRule': '루트 규칙: 번역된 과정 단위는 언어 접미사를 가지며 같은 언어로 연결됩니다. 경로 토큰은 파일과 경로 범위를 뜻할 뿐, 번역 완료·독립 검토·학습자 증거를 뜻하지 않습니다.',
   'menuCloseAria': '내비게이션 닫기',
   'skillCatalogSummary': '전체 Skill 레지스트리 보기',
   'skillCatalogIntro': '이 방법들은 선택 사항입니다. 먼저 위의 상황에서 시작하고, 어떤 작업을 지원해야 하는지 알게 되면 전체 레지스트리를 여세요.'
@@ -3926,15 +3942,16 @@ Object.assign(copy.ko, {
 
 Object.assign(copy.de, {
   heroProofAria: 'Fünf-Minuten-Prompt-Beispiel', heroProofKicker: 'FÜNF-MINUTEN-BEISPIEL', heroProofTitle: 'Sieh, wie ein kleiner Prompt das Ergebnis verändern kann.', heroProofLink: 'Die Fünf-Minuten-Prompt-Übung ausprobieren',
-  'localeTitle': 'Sechs-Sprachen-Route',
-  'localeIntro': 'Sechs Einstiegssprachen sind registriert. Jede hat einen gleichsprachigen Weg für die 22 Kapitel und 18 Labs: English, 简体中文, Español, 日本語, 한국어, Deutsch. Skills, Forschung und Governance behalten ihren eigenen Übersetzungsstatus; eine nicht verfügbare Seite wird als solche angezeigt und ersetzt den Kurstext nicht stillschweigend durch Englisch.',
+  'localeTitle': 'Sieben-Sprachen-Route',
+  'localeIntro': 'Sieben Einstiegssprachen sind registriert. Jede Kursroute umfasst 22 Kapitel und 18 Labs in der gewählten Sprache; Zusatzseiten behalten ihren Übersetzungsstatus und schließen ausdrücklich, wenn eine gleichsprachige Seite fehlt.',
   'localeEnglish': 'verfügbar · Standard',
   'localeChinese': 'verfügbar · 简体中文',
+  'localeTraditionalChinese': 'verfügbar · Traditionelles Chinesisch',
   'localeSpanish': 'verfügbar · Español',
   'localeGerman': 'verfügbar · Deutsch',
   'localeJapanese': 'verfügbar · 日本語',
   'localeKorean': 'verfügbar · 한국어',
-  'localeRule': 'Routenregel: Jede übersetzte Kurseinheit trägt das Sprachsuffix und verlinkt auf dieselbe Sprache. Eine Sprachroute bedeutet den vollständigen Pfad mit 40 Kapitel- und Lab-Einheiten, nicht dass jedes Zusatzdokument übersetzt oder unabhängig geprüft ist.',
+  'localeRule': 'Routenregel: Übersetzte Kurseinheiten tragen ein Sprachsuffix und verlinken auf dieselbe Sprache. Ein Routen-Token bedeutet Datei- und Pfadabdeckung, nicht eine fertige Übersetzung, unabhängige Prüfung oder Lernnachweis.',
   'menuCloseAria': 'Navigation schließen',
   'skillCatalogSummary': 'Vollständiges Skill-Register anzeigen',
   'skillCatalogIntro': 'Diese Methoden sind optional. Beginne mit der Situation oben und öffne das vollständige Register, sobald du weißt, welche Arbeit du unterstützen möchtest.'
@@ -5029,6 +5046,58 @@ Object.assign(copy.de, {
   stepThreeTitle: 'Das Modell zuerst prüfen lassen.',
   stepThreeBody: 'Lass vor einer Bearbeitung oder externen Aktion das relevante Material und den aktuellen Zustand prüfen. Halte den Umfang sichtbar.',
   footerTagline: 'Ein praktisches Lern- und Übungssystem für Sprachmodelle.',
+});
+
+// Traditional Chinese keeps the same complete interface contract as the
+// Simplified Chinese route, then replaces the reader-facing terms that differ
+// in Traditional Chinese. This is deliberately built at the end of the copy
+// composition so later Simplified Chinese additions cannot leave a missing UI
+// key in the seventh locale.
+copy['zh-tw'] = Object.assign({}, copy.zh);
+Object.assign(copy['zh-tw'], {
+  wordmarkAria: 'Prysai 大型語言模型實戰手冊首頁',
+  languageToggleAria: '選擇介面語言',
+  menuAria: '開啟導覽',
+  navAria: '主要導覽',
+  pathAria: '七級學習路徑',
+  routesAria: '篩選章節路線',
+  menu: '選單',
+  menuClose: '關閉',
+  navStart: '從問題開始',
+  navFirst30: '前 5 分鐘',
+  navPath: '學習路徑',
+  navIndex: '專案索引',
+  navRoutes: '閱讀路線',
+  navLabs: '實驗室',
+  navUpdates: '更新地圖',
+  localeTitle: '七語種路線',
+  localeIntro: '倉庫已登記七種入口語言。每種語言都有 22 章和 18 個實驗的同語言路線；Skill、研究和治理資料各自保留翻譯狀態。頁面不可用時會明確說明，不會悄悄將課程正文切換為英文。',
+  localeEnglish: '可用 · 預設',
+  localeChinese: '可用 · 簡體中文',
+  localeSpanish: '可用 · Español',
+  localeGerman: '可用 · Deutsch',
+  localeJapanese: '可用 · 日本語',
+  localeKorean: '可用 · 한국어',
+  localeRule: '路由規則：每個翻譯課程單元都帶語言後綴並連結到同一語言；語言路由指完整的 40 單元章節與實驗路線，不表示所有補充文件都已翻譯或獨立審校。',
+  languageNameEnglish: '英文',
+  languageNameChinese: '簡體中文',
+  languageNameTraditionalChinese: '繁體中文',
+  languageNameSpanish: '西班牙文',
+  languageNameJapanese: '日文',
+  languageNameKorean: '韓文',
+  languageNameGerman: '德文',
+  localeOptionFallback: '英文介面回退',
+  localePartialAnchorNotice: '本地概覽；這個詳細區段尚未完成翻譯。',
+  mobileIndexUpdates: '更新區域',
+  mobileIndexTrust: '可信度類型',
+  menuCloseAria: '關閉導覽',
+  skillCatalogSummary: '瀏覽完整 Skill 登記表',
+  skillCatalogIntro: '這些方法是可選的。先從上面的情境開始；明確需要支援哪類工作後，再打開完整登記表。',
+  navFirst30: '5 分鐘提示詞練習',
+  first30Eyebrow: '5 分鐘 LLM 提示詞練習',
+  first30Title: '親眼看看：清楚的提示詞為什麼仍需要人工檢查。',
+  first30Intro: '任意聊天模型都可以。你會給它一個很小的改寫任務，再檢查它是否保留事實，而不是補出聽起來合理的細節。',
+  footerTagline: '一套面向大型語言模型的實用學習與實踐系統。',
 });
 
 initializeSearch();

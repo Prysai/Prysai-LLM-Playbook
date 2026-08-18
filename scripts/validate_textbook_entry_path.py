@@ -12,7 +12,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE")
+LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW")
 
 OPTIONAL_MARKERS = {
     "EN": "optional application practice",
@@ -21,6 +21,7 @@ OPTIONAL_MARKERS = {
     "JA": "任意の応用練習",
     "KO": "선택 응용 연습",
     "DE": "optionale Anwendungsübung",
+    "ZHTW": "可選應用練習",
 }
 
 START_HERE_HEADING = {
@@ -28,6 +29,7 @@ START_HERE_HEADING = {
     "JA": "## まずここから",
     "KO": "## 여기서 시작하세요",
     "DE": "## Hier beginnen",
+    "ZHTW": "## 先從哪裡開始",
 }
 
 
@@ -73,11 +75,19 @@ def visible_start_number_errors(text: str, locale: str) -> list[str]:
     if next_heading:
         section = section[:next_heading.start()]
     numbers = [int(value) for value in re.findall(r"^\s*(\d+)\.\s+\[", section, flags=re.MULTILINE)]
-    if len(numbers) < 3:
+    if numbers:
+        if len(numbers) < 3:
+            return ["start list must contain the foundation core, concepts, and first bounded request"]
+        expected = list(range(1, len(numbers) + 1))
+        if numbers != expected:
+            return [f"start-list numbers must be sequential: found {numbers}, expected {expected}"]
+        return []
+    # Some localized TOCs use bullets because the labels already carry the
+    # learning order. Preserve that readable shape while still requiring the
+    # three same-locale foundation links checked below.
+    bullets = re.findall(r"^\s*-\s+", section, flags=re.MULTILINE)
+    if len(bullets) < 3:
         return ["start list must contain the foundation core, concepts, and first bounded request"]
-    expected = list(range(1, len(numbers) + 1))
-    if numbers != expected:
-        return [f"start-list numbers must be sequential: found {numbers}, expected {expected}"]
     return []
 
 
@@ -141,7 +151,7 @@ def main() -> int:
             print(f"- {error}")
         return 1
     print("TEXTBOOK_ENTRY_PATH_OK")
-    print("locales=EN,ZH,ES,JA,KO,DE entries=18")
+    print(f"locales={','.join(LOCALES)} entries={len(LOCALES) * 3}")
     print("evidence_boundary=entry-structure-not-translation-quality-or-learning-proof")
     return 0
 

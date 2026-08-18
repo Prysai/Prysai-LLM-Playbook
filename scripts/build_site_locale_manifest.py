@@ -18,8 +18,8 @@ TITLE_MAP_FILE = ROOT / "book/title-map.json"
 LAB_NAVIGATION_FILE = ROOT / "docs/governance/lab-navigation.yaml"
 SKILL_REGISTRY_FILE = ROOT / "docs/governance/skill-registry.yaml"
 OUTPUT_FILE = ROOT / "site/locale-manifest.js"
-LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE")
-LOCALE_KEYS = tuple(locale.lower() for locale in LOCALES)
+LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW")
+LOCALE_KEYS = ("en", "zh", "es", "ja", "ko", "de", "zh-tw")
 ROUTED_STATUS_SECTIONS = ("chapters", "labs")
 RENDERABLE_TRANSLATION_STATUSES = {
     "source",
@@ -144,20 +144,40 @@ def matrix_content(
     }
 
 
-def neutral_content(content_id: str, kind: str, path: str, status: str, path_index: dict[str, str], source_revision: str) -> dict[str, Any]:
-    """Build one English source identity with explicit fallback records."""
+def neutral_content(
+    content_id: str,
+    kind: str,
+    path: str,
+    status: str,
+    path_index: dict[str, str],
+    source_revision: str,
+    locale_records: dict[str, Any],
+    localized_paths: dict[str, str] | None = None,
+) -> dict[str, Any]:
+    """Build one source identity with explicit same-locale projections.
+
+    A newer English route can point at an already governed localized page
+    while its own translation is still being authored.  The projection is
+    explicit and same-locale; it is never an English fallback and does not
+    take ownership of the projected path in ``path_index``.
+    """
 
     source_path = normalize(path)
     localized = {}
+    localized_paths = localized_paths or {}
     for suffix in LOCALES:
-        token = suffix.lower()
+        token = next(record["url_token"] for key, record in locale_records.items() if key == suffix)
+        projected_path = source_path if suffix == "EN" else normalize(localized_paths.get(suffix, source_path))
+        projected_exists = (ROOT / projected_path).is_file()
         localized[token] = {
-            "path": source_path,
-            "exists": (ROOT / source_path).is_file(),
+            "path": projected_path,
+            "exists": projected_exists,
             "content_status": status,
-            "translation_status": "source" if suffix == "EN" else "not-started",
+            "translation_status": "source" if suffix == "EN" else "candidate" if projected_path != source_path and projected_exists else "not-started",
             "source_revision": source_revision,
         }
+        if projected_path != source_path and projected_exists:
+            localized[token]["coverage"] = "projected-existing-page"
     add_path_index(path_index, source_path, content_id)
     reader_type, overview_target = reader_presentation(kind)
     return {"kind": kind, "reader_type": reader_type, "overview_target": overview_target, "stem": stem_from_path(source_path), "source_locale": "en", "legacy_paths": [], "locales": localized}
@@ -295,12 +315,13 @@ def build_localization_coverage(contents: dict[str, dict[str, Any]]) -> dict[str
         if content.get("kind") in {"chapter", "lab"}
     ]
     coverage: dict[str, dict[str, int]] = {}
+    locale_config = load_json(MATRIX_FILE)["locales"]
     for suffix in LOCALES:
-        token = suffix.lower()
-        locale_records = [content["locales"][token] for content in course_records]
+        token = locale_config[suffix]["url_token"]
+        records_for_locale = [content["locales"][token] for content in course_records]
         available = [
             record
-            for record in locale_records
+            for record in records_for_locale
             if record.get("exists")
             and record.get("translation_status") in RENDERABLE_TRANSLATION_STATUSES
         ]
@@ -356,7 +377,19 @@ def build_manifest() -> dict[str, Any]:
         content_id = str(item["content_id"])
         if content_id in contents:
             raise ValueError(f"duplicate reader content identity: {content_id}")
-        contents[content_id] = neutral_content(content_id, str(item["kind"]), str(item["path"]), str(item["content_status"]), path_index, "locale-matrix")
+        localized_paths = item.get("localized_paths", {})
+        if not isinstance(localized_paths, dict):
+            raise ValueError(f"localized_paths for {content_id} must be an object")
+        contents[content_id] = neutral_content(
+            content_id,
+            str(item["kind"]),
+            str(item["path"]),
+            str(item["content_status"]),
+            path_index,
+            "locale-matrix",
+            locale_records,
+            localized_paths=localized_paths,
+        )
 
     status_skills = {str(item["id"]): item for item in status.get("skills", {}).get("items", [])}
     registry_skills = {str(item["id"]): item for item in skill_registry.get("records", [])}
@@ -364,7 +397,7 @@ def build_manifest() -> dict[str, Any]:
         raise ValueError("Skill registry and content status IDs must match")
     for content_id, item in registry_skills.items():
         path = f"{normalize(str(item['path']))}/SKILL.md"
-        contents[content_id] = neutral_content(content_id, "skill", path, str(status_skills[content_id]["status"]), path_index, "skill-registry")
+        contents[content_id] = neutral_content(content_id, "skill", path, str(status_skills[content_id]["status"]), path_index, "skill-registry", locale_records)
 
     aliases: dict[str, str] = {}
     for section in ROUTED_STATUS_SECTIONS:

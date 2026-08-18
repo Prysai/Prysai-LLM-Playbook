@@ -26,6 +26,7 @@ PUBLISH_ROOT_FILES = (
     "README-JA.md",
     "README-KO.md",
     "README-DE.md",
+    "README-ZHTW.md",
     "AGENTS.md",
     "CONTEXT.md",
 )
@@ -213,8 +214,8 @@ def load_seo_config() -> dict[str, object]:
     for key in ("site_name", "alternate_name"):
         if not isinstance(value.get(key), str) or not value[key].strip():
             raise ValueError(f"site/seo-config.json {key} must be a non-empty string")
-    if locales != ["en", "zh", "es", "ja", "ko", "de"]:
-        raise ValueError("site/seo-config.json locales must list the six supported locales in canonical order")
+    if locales != ["en", "zh", "es", "ja", "ko", "de", "zh-tw"]:
+        raise ValueError("site/seo-config.json locales must list the seven supported locales in canonical order")
     locale_pages = value.get("static_locale_pages")
     home_page = value.get("home_page")
     expected_pages = {locale for locale in locales if locale != "en"}

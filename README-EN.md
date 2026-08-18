@@ -28,7 +28,7 @@ catalogue before beginning.
 > This is a development candidate, not a finished course.
 
 <!-- language-switcher:start -->
-**Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md)
+**Languages:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md)
 <!-- language-switcher:end -->
 
 ## Start with the foundation
@@ -62,9 +62,10 @@ quality, learner outcomes, or release readiness.
 | Japanese | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental LLM foundation guide is stale after the 2026-08-17 English revision and is withheld from the sitemap until retranslation and review. |
 | Korean | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental LLM foundation guide is stale after the 2026-08-17 English revision and is withheld from the sitemap until retranslation and review. |
 | German | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental LLM foundation guide is stale after the 2026-08-17 English revision and is withheld from the sitemap until retranslation and review. |
+| Traditional Chinese | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; independent Traditional Chinese language review is still pending. |
 
-Six locale choices provide a complete **file path** for the 22 chapters and 18
-Labs. The revised foundation guide is deliberately marked stale in the five
+Seven locale choices provide a complete **file path** for the 22 chapters and 18
+Labs. The revised foundation guide is deliberately marked stale in the six
 non-English locales until it is retranslated. That structural coverage is not six independently reviewed, culturally adapted, or
 learner-validated courses. Supplemental
 reader material still has its own coverage and review status; the reader

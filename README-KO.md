@@ -4,7 +4,7 @@
 > LLM 실전 플레이북: 첫 번째 작업에서 신뢰할 수 있는 업무까지
 
 <!-- language-switcher:start -->
-**언어:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md)
+**언어:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md)
 <!-- language-switcher:end -->
 
 ## 교과서 순서로 시작하세요: 이해한 뒤에 연습합니다
