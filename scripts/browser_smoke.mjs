@@ -1509,9 +1509,10 @@ try {
     // A localized page may reference an English-only governance record. The
   // Reader must preserve the selected locale and render its local unavailable
   // state rather than silently presenting the English Markdown as Chinese.
+  const englishOnlyResearchPath = 'docs%2Fresearch%2Funiversal-first-turn-prompt-contract-2026-08-13.md';
   const chineseResearchBoundaryPage = await context.newPage();
   await chineseResearchBoundaryPage.setViewportSize({ width: 390, height: 844 });
-  await chineseResearchBoundaryPage.goto(`${origin}/site/reader.html?path=docs%2Fgovernance%2Flocale-matrix.yaml&lang=zh`, { waitUntil: 'networkidle' });
+  await chineseResearchBoundaryPage.goto(`${origin}/site/reader.html?path=${englishOnlyResearchPath}&lang=zh`, { waitUntil: 'networkidle' });
   await chineseResearchBoundaryPage.locator('[data-reader-article][aria-busy="false"]').waitFor();
   const localizedUnavailable = chineseResearchBoundaryPage.locator('[data-reader-article] [role="alert"]');
   await localizedUnavailable.waitFor();
@@ -1526,7 +1527,7 @@ try {
   // including locales that currently have only their starter path translated.
   for (const locale of ['zh', 'es', 'ja', 'ko', 'de']) {
     const untranslatedProjectPage = await context.newPage();
-    await untranslatedProjectPage.goto(`${origin}/site/reader.html?path=docs%2Fresearch%2Fopenai-codex-baseline.md&lang=${locale}`, { waitUntil: 'networkidle' });
+    await untranslatedProjectPage.goto(`${origin}/site/reader.html?path=${englishOnlyResearchPath}&lang=${locale}`, { waitUntil: 'networkidle' });
     await untranslatedProjectPage.locator('[data-reader-article] [role="alert"]').waitFor();
     assert.equal(await untranslatedProjectPage.locator('[data-reader-language]').inputValue(), locale, `${locale} untranslated project route loses the selected locale`);
     assert.equal(await untranslatedProjectPage.locator('[data-reader-article] h1').count(), 0, `${locale} untranslated project route renders an English document body`);
