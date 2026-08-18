@@ -229,7 +229,7 @@ is a separate supplemental route for language, research, or a small work task.
 | Labs | 18 labs, all `draft / not_run` | Learner runs and independent reruns |
 | Skills | 25 project-owned `candidate` Skills | Broad trigger reliability or learner outcomes |
 | Evaluation | 40 fixtures, `not_run / static_structure_only` | Scored executions and reviewer records |
-| Locales | English source plus five migration routes | Complete, independently reviewed translations |
+| Locales | English source plus six migration routes | Complete, independently reviewed translations |
 | Public site | Reachable at [docs.prysai.com/llm-playbook](https://docs.prysai.com/llm-playbook/) | Search indexing, reader acceptance, and deployment rollback evidence |
 | Release | `candidate` | Immutable release tag, accepted release evidence, rollback rehearsal, and production readiness |
 
