@@ -153,7 +153,11 @@ try {
     'https://docs.prysai.com/llm-playbook/',
     'the Playbook logo does not point to the canonical Docs site',
   );
-  assert.equal(await page.locator('.site-header .wordmark').getAttribute('target'), '_top', 'the Playbook logo does not leave a hosted iframe wrapper');
+  assert.equal(await page.locator('.site-header .wordmark').getAttribute('target'), '_blank', 'the Playbook logo does not open the canonical Docs site in a new tab');
+  assert.equal(await page.locator('.site-header .wordmark').getAttribute('rel'), 'noreferrer', 'the Playbook logo does not use the expected external-link relationship');
+  assert.equal(await page.locator('.site-footer .wordmark').getAttribute('href'), 'https://docs.prysai.com/llm-playbook/', 'the footer logo does not point to the canonical Docs site');
+  assert.equal(await page.locator('.site-footer .wordmark').getAttribute('target'), '_blank', 'the footer logo does not open the canonical Docs site in a new tab');
+  assert.equal(await page.locator('.site-footer .wordmark').getAttribute('rel'), 'noreferrer', 'the footer logo does not use the expected external-link relationship');
   const homepageMenuTargets = {
     'Start here': '#start',
     'Learning path': '#path',
