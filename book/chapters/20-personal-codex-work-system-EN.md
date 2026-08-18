@@ -63,6 +63,54 @@ A useful delivery record includes:
 
 Whether a product remembers anything, which files it loads, and how an entry point behaves are volatile product facts. Check the current first-party documentation and the actual authorized surface; do not turn personal habit into a product guarantee.
 
+### A practical continuity kit for AI-assisted programming
+
+The old conversation is not the project state. Keep the reusable rules, the
+current task, and the evidence of what actually happened in separate places.
+A small kit is usually enough:
+
+```text
+AGENTS.md or another reviewed project-rules file: stable local conventions,
+  commands, forbidden actions, and acceptance expectations.
+Task brief: the goal, target paths, allowed actions, non-goals, and stop rule
+  for this task only.
+Checkpoint: current branch/worktree, files changed, commands started or
+  completed, decisions, failures, and the next safe action.
+Evidence receipt: diff, test output, browser URL or screenshot, source record,
+  reviewer, and claims that remain unverified.
+```
+
+Treat the names as roles, not universal product features. Different clients
+may discover project instructions differently; inspect the current official
+surface and the actual loaded files before assuming that a rule was read. Keep
+secrets, cookies, private customer material, and unreviewed model conclusions
+out of all four records.
+
+Use version control as the recovery boundary. A commit or branch is a code
+state; editing, forking a conversation, archiving a chat, or starting a second
+session is not a code rollback. Before a risky change, record the current
+commit and working-tree status. After a small accepted slice, inspect the diff
+and commit it with a message that names the observable result. If the task
+must run in parallel, isolate writes in separate worktrees or another
+explicitly separated copy, then review the merge rather than assuming that
+parallel messages are independent.
+
+For a large change, plan before editing: list affected files, dependencies,
+failure cases, test commands, runtime checks, and the rollback target. Keep a
+side discussion or exploratory session read-only unless its output is
+explicitly copied into the task brief. If the task is interrupted, capacity is
+exhausted, or a command stops producing evidence, freeze the state and write a
+checkpoint before sending a new request. A new prompt cannot repair an
+unknown partial state by itself.
+
+Automation, browser control, mobile access, plugins, and computer-use surfaces
+belong to the same decision rule. They can widen the action space, but a
+schedule, connection, preview, or model proposal is not proof that a write,
+publication, or external action happened. Start with a local or draft target,
+minimum permissions, an explicit human approval point, an idempotency or
+rollback plan, and a receipt. Move to a real account or public release only
+when that new authority is separately authorized and verified.
+
 ## Experiment: establish a personal work system
 
 This is an offline comparison in a disposable copy. It must not connect to production, send messages, publish, read real secrets, or make external writes.
