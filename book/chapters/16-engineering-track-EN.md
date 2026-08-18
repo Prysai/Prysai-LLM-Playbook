@@ -70,6 +70,51 @@ Build evidence says that code can be built. Test evidence says that specified as
 
 No output until a timeout, an unavailable test dependency, an unknown worktree change, a request for real credentials, a persistent-environment modification, or a request to publish, deploy, or restart are all signals to stop and check scope. If validation requires package installation or runtime replacement, obtain explicit authorization first and record the artifact, target path, impact, and rollback. Without authorization, use an isolated environment, test account, or static check.
 
+### 6. Web coding is a visible delivery loop, not a one-shot prompt
+
+“Build me a website” hides several different jobs: deciding who the page is
+for, choosing the smallest visible state, changing source files, starting a
+local runtime, checking the page in a real browser, and deciding whether the
+result is ready to share. A generated HTML file is only one intermediate
+artifact. It is not proof that the page has the right content, works at the
+target viewport, preserves keyboard access, or can be deployed safely.
+
+For a first web-coding exercise, keep the surface deliberately small:
+
+1. **Result:** one static page with one heading, one short explanation, and
+   one visible status line.
+2. **Context:** the exact audience, supplied copy, target file, and local run
+   command. Do not let the model invent a framework, dependency, image, or
+   backend.
+3. **Change:** one permitted HTML or CSS edit. Inspect the current files before
+   editing and keep the diff small enough to read in one pass.
+4. **Browser check:** start the documented local server, open the actual
+   `http://127.0.0.1:<port>/` URL, and check the title, heading, status line,
+   link targets, console errors, and a narrow viewport if mobile matters.
+5. **Receipt:** retain the exact diff, URL, viewport, command result, and one
+   screenshot or written observation. Mark deployment, accessibility review,
+   cross-browser behavior, and user acceptance as unverified unless they were
+   actually checked.
+
+A useful first request is intentionally plain:
+
+```text
+Goal: make one visible copy change on the static page.
+Read first: index.html and styles.css; report the current heading and the
+local command documented in the project.
+Allowed edit: index.html only. Keep the existing structure and styles.
+Do not: install packages, add a framework, fetch an image, access the network,
+read secrets, change the server command, commit, push, or publish.
+Acceptance: the new sentence appears once in the browser, the old sentence is
+gone, the page title and heading remain, and the diff contains no other file.
+Stop: if the target path, command, or browser result is unclear.
+```
+
+The browser is part of the evidence because a source diff cannot show CSS
+loading, an incorrect relative path, a clipped mobile layout, a stale cached
+asset, or a runtime error. A local page that passes this check is a candidate
+web-coding result; it is not a deployed website.
+
 ## Observable experiment: compare direct implementation with a full lifecycle
 
 ### Setup
