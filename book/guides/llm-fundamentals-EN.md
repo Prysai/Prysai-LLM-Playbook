@@ -1,4 +1,4 @@
-<!-- content_id: llm-fundamentals-guide | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-17-foundation-map -->
+<!-- content_id: llm-fundamentals-guide | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-17-foundation-observations -->
 
 # What an LLM is: the layers behind a useful answer
 
