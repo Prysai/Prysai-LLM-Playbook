@@ -72,6 +72,20 @@ timeout까지 출력 없음, 누락된 test 의존성, 알 수 없는 worktree �
 | local run | 지정 input이 관찰된 result 생성 | production, 모든 account, performance |
 | remote read-back | 지정 revision/record가 remote에 있음 | 사용자 수용, monitoring, safe rollback |
 
+## Web coding: 보이는 결과를 실제 브라우저까지 가져가기
+
+“완성된 웹사이트를 만들어”는 독자, 상태, source file, runtime, browser review,
+rollback을 한 문장에 섞습니다. 먼저 `examples/skill-sandbox/product-context-real-estate`
+의 README와 `index.html`을 버릴 수 있는 복사본에서 읽고, `index.html`의 보이는 문장
+하나만 바꾸세요. framework, image, form, API, network는 추가하지 않습니다. Python 3가
+이미 있다면 복사본에서 `python -m http.server 4182`를 실행하고
+`http://127.0.0.1:4182/`를 열어 title, 새 문장, 유지된 헤딩, link, console, 390px
+viewport를 확인합니다.
+
+복사본, 허용 파일, URL, 보인 상태, diff와 deploy, accessibility, 다른 browser,
+사용자 수용의 미확인 항목을 기록하세요. source diff만으로 CSS, 상대 path, mobile
+clipping, runtime error를 알 수 없습니다. local render는 deploy가 아닙니다.
+
 ## 작은 실험: JSON 세로 슬라이스
 
 버릴 수 있는 디렉터리에서 `input.json`의 문자열 목록을 읽어 중복을 제거하고 `output.json`에 씁니다. read/write는 그 디렉터리 안에서만 하며 network, install, login, commit, push, publish는 하지 않습니다.
