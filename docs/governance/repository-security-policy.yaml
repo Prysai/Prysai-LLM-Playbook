@@ -84,6 +84,7 @@
   "host_ruleset": {
     "status": "active",
     "observed_at": "2026-08-18",
+    "observation_phase": "current-observation",
     "repository": "Prysai/Prysai-LLM-Playbook",
     "ruleset_id": 20903386,
     "name": "Prysai llm playbook",
@@ -102,7 +103,7 @@
     "bypass_list": [
       "RepositoryRole actor id 5 with bypass_mode always"
     ],
-    "evidence_limit": "The live GitHub API reports an active repository Ruleset. Its current bypass actor can always bypass the Ruleset, and this repository policy does not treat a passing workflow as proof that every write used a pull request."
+    "evidence_limit": "The live GitHub API reports an active repository Ruleset whose current bypass actor can always bypass it. No host-side bypass mutation is represented or implied by this repository policy, and a passing workflow is not proof that every write used a pull request."
   },
   "host_security_controls": {
     "observed_at": "2026-08-18",
