@@ -2,6 +2,9 @@
 
 from __future__ import annotations
 
+import tempfile
+from pathlib import Path
+
 import validate_repository_security as policy
 
 
@@ -186,6 +189,13 @@ jobs:
 
         file_uri = "file:" + "//" + "/C:" + "/" + "Users" + "/alice/private.txt"
         require("machine-local-path" in policy.sensitive_information_scan(file_uri), "local file URI was accepted")
+        fixtures += 1
+
+        with tempfile.TemporaryDirectory() as directory:
+            large_text = Path(directory) / "large-text-fixture.txt"
+            large_text.write_text("x" * (1_000_001) + "\nsk-" + ("a" * 24), encoding="utf-8")
+            errors = policy.secret_scan([large_text])
+        require(any("credential-shaped value" in error for error in errors), "large text file was skipped by the scan")
         fixtures += 1
     except AssertionError as exc:
         print("REPOSITORY_SECURITY_POLICY_TESTS_FAILED")

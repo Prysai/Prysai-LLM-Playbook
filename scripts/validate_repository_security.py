@@ -48,6 +48,7 @@ REQUIRED_SITE_CSP_DIRECTIVES = (
     "frame-src 'none'",
 )
 REQUIRED_PYYAML_INSTALL = "python -m pip install --disable-pip-version-check --only-binary=:all: PyYAML==6.0.3"
+MAX_TEXT_SCAN_BYTES = 25_000_000
 FAST_MATERIAL_WORKFLOW = WORKFLOW_DIR / "contribution-material.yml"
 FAST_MATERIAL_REQUIRED_FRAGMENTS = (
     "ref: ${{ github.event.pull_request.base.sha }}",
@@ -178,7 +179,18 @@ REQUIRED_PR_HEADINGS = {
 
 
 def relative(path: Path) -> str:
-    return path.relative_to(ROOT).as_posix()
+    """Return a stable label for repository files and test fixtures alike.
+
+    Production scans normally receive paths from ``git ls-files`` and therefore
+    stay under ``ROOT``.  Unit tests also pass isolated temporary fixtures so
+    they can exercise the scanner without mutating the checkout.  Keep those
+    diagnostics readable instead of raising before the policy can inspect the
+    fixture.
+    """
+    try:
+        return path.relative_to(ROOT).as_posix()
+    except ValueError:
+        return f"<outside-repository>/{path.name}"
 
 
 def _line_containing(text: str, start: int, end: int) -> str:
@@ -377,8 +389,8 @@ def validate_workflow_text(text: str, label: str) -> list[str]:
                 errors.append(f"{label}: pull-request workflow may grant only read-only contents or pull-requests permissions")
         if WRITE_PERMISSION_RE.search(text):
             errors.append(f"{label}: pull-request workflow must not grant write-scoped permissions")
-        if "actions/checkout@" in text and "persist-credentials: false" not in text:
-            errors.append(f"{label}: pull-request workflow must disable persisted checkout credentials")
+    if "actions/checkout@" in text and "persist-credentials: false" not in text:
+        errors.append(f"{label}: every checkout must disable persisted checkout credentials")
     return errors
 
 
@@ -456,7 +468,10 @@ def secret_scan(paths: list[Path]) -> list[str]:
             errors.append(f"{label}: credential-shaped file must not be tracked")
             continue
         try:
-            if path.stat().st_size > 1_000_000:
+            if path.stat().st_size > MAX_TEXT_SCAN_BYTES:
+                errors.append(
+                    f"{label}: text file exceeds the repository security scan limit; split or explicitly review it"
+                )
                 continue
             data = path.read_bytes()
         except OSError as exc:
