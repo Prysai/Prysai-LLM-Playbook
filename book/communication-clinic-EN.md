@@ -853,42 +853,17 @@ contains an unrun plan and limited process observations, not learner outcomes.
 ### Six short messages for one Spanish practice loop
 
 These are six separate copy-ready messages, not six magic prompts. The canonical
-prompts now live in the short [Spanish practice loop](spanish-practice-loop-EN.md);
-this anchor remains as a stable landing point for older links. Use messages 1–4
-for one short typed session, message 5 only after a learner-authored revision,
-and message 6 on a later date the learner chooses. The loop uses fictional
-details, needs no product-specific feature, and still records only a practice
-attempt—not fluency, a language level, or proof that model feedback was correct.
+messages live in the short [Spanish practice loop](spanish-practice-loop-EN.md);
+this anchor remains a stable landing point for older links. Open that file for
+the six-step sequence: set one target, try first, inspect one gap, repair it,
+change the scene, and check later.
 
-#### 1. Set one target
-
-[Open the canonical first message](spanish-practice-loop-EN.md) to choose the
-four-turn target, help limit, self-check, and smaller fallback.
-
-#### 2. Make the first attempt
-
-[Open the canonical second message](spanish-practice-loop-EN.md) to run the
-fictional typed exchange without a model answer.
-
-#### 3. Look at one material gap
-
-[Open the canonical third message](spanish-practice-loop-EN.md) to compare the
-preserved attempt with the visible check and name at most one gap.
-
-#### 4. Let the learner repair it
-
-[Open the canonical fourth message](spanish-practice-loop-EN.md) to request a
-partial cue and keep the original and revision separate.
-
-#### 5. Change the scene, not the skill
-
-[Open the canonical fifth message](spanish-practice-loop-EN.md) to switch to a
-fictional assignment-planning exchange without reusing earlier sentences.
-
-#### 6. Recheck later without pretending a reminder exists
-
-[Open the canonical sixth message](spanish-practice-loop-EN.md) only on the date
-you choose; it does not schedule a reminder or infer permanent retention.
+Use fictional details and keep the evidence boundary visible. Messages 1–4 are
+one short typed session; message 5 changes the situation without changing the
+underlying skill; message 6 is run only on a date the learner chooses. The loop
+records a practice attempt—not fluency, a language level, or proof that model
+feedback was correct. Do not copy a second version of the prompts into this
+pack: the canonical file is the place to update them.
 
 If the first target is still vague, begin with the [Practice Target Skill](../skills/prysai-practice-target/SKILL.md).
 If an attempt already exists, continue with [Learning Coach](../skills/prysai-learning-coach/SKILL.md)
@@ -959,12 +934,12 @@ an update professional, or prepare you for work. Use fictional facts only and
 never paste confidential status, customer information, credentials, or a message
 that could change a real project.
 
-1. [Freeze the reader and facts](work-update-practice-loop-EN.md)
-2. [Write before the model does](work-update-practice-loop-EN.md)
-3. [Check one consequential gap](work-update-practice-loop-EN.md)
-4. [Revise the update yourself](work-update-practice-loop-EN.md)
-5. [Change one audience condition](work-update-practice-loop-EN.md)
-6. [End with a small receipt](work-update-practice-loop-EN.md)
+The canonical file is the only copy of the six messages: freeze the reader and
+facts, write before seeing a model version, check one material gap, revise in
+your own words, change one audience condition, and leave a small receipt. Use
+that file when you need the prompt text, and return here for the evidence and
+safety boundary. Keeping one canonical sequence prevents future edits from
+drifting apart.
 
 Keep both drafts and the receipt. A changed-audience result is a candidate
 practice record, not evidence of job readiness, writing ability, or transfer.
@@ -1168,12 +1143,12 @@ authorize one read-only public lookup. Do not provide credentials, private
 records, unlicensed text, a high-stakes decision, or permission to submit,
 purchase, publish, contact, install, or change anything.
 
-1. [Freeze one decision](research-check-practice-loop-EN.md)
-2. [Name claims and source owners](research-check-practice-loop-EN.md)
-3. [Read supplied material, not imagined sources](research-check-practice-loop-EN.md)
-4. [Test one sentence](research-check-practice-loop-EN.md)
-5. [Look for a decision-changing exception](research-check-practice-loop-EN.md)
-6. [End with a stop receipt](research-check-practice-loop-EN.md)
+The canonical file is the only copy of the six messages: freeze one decision,
+name claims and source owners, read supplied material rather than imagined
+sources, test one sentence, look for a decision-changing exception, and end
+with a stop receipt. Open it for the copy-ready prompts and visual; use this
+section for routing and the permission boundary. A receipt is a bounded record,
+not a research result or evidence that a model searched correctly.
 
 For the full visual and source boundary, use the canonical loop. A useful
 receipt contains one decision, at least one `unknown` or limit, and one named
