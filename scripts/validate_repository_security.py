@@ -18,6 +18,7 @@ WORKFLOW_DIR = ROOT / ".github/workflows"
 SITE_ENTRYPOINTS = (ROOT / "site/index.html", ROOT / "site/reader.html")
 QUALITY_WORKFLOW = WORKFLOW_DIR / "quality.yml"
 PAGES_WORKFLOW = WORKFLOW_DIR / "pages.yml"
+CODEQL_WORKFLOW = WORKFLOW_DIR / "codeql.yml"
 
 SHA_RE = re.compile(r"^[0-9a-f]{40}$", re.IGNORECASE)
 USES_RE = re.compile(r"^\s*(?:-\s*)?uses:\s*([^@\s]+)@([^\s#]+)", re.MULTILINE)
@@ -80,6 +81,14 @@ DOCS_DEPLOY_FORBIDDEN_FRAGMENTS = (
     "actions/checkout@",
     "actions/setup-python@",
     "scripts/build_pages_artifact.py",
+)
+CODEQL_REQUIRED_FRAGMENTS = (
+    "github/codeql-action/init@f3712979fa5f215279b101dd0a2e3bdfb4353324",
+    "github/codeql-action/autobuild@f3712979fa5f215279b101dd0a2e3bdfb4353324",
+    "github/codeql-action/analyze@f3712979fa5f215279b101dd0a2e3bdfb4353324",
+    "security-events: write",
+    "languages: ${{ matrix.language }}",
+    "language: [javascript, python]",
 )
 SECRET_PATTERNS = (
     re.compile(r"\b(?:ghp|gho|ghu|ghs|ghr)_[A-Za-z0-9]{20,}\b"),
@@ -496,6 +505,22 @@ def validate_pages_candidate_artifact(text: str, label: str) -> list[str]:
     return errors
 
 
+def validate_codeql_workflow(text: str, label: str) -> list[str]:
+    """Keep CodeQL analysis pinned, secret-free, and limited to trusted refs."""
+
+    errors = []
+    for fragment in CODEQL_REQUIRED_FRAGMENTS:
+        if fragment not in text:
+            errors.append(f"{label}: CodeQL workflow is missing required boundary: {fragment}")
+    if PULL_REQUEST_RE.search(text):
+        errors.append(f"{label}: CodeQL workflow must not grant write permissions to pull_request runs")
+    if SECRETS_CONTEXT_RE.search(text):
+        errors.append(f"{label}: CodeQL workflow must not reference the secrets context")
+    if "persist-credentials: false" not in text:
+        errors.append(f"{label}: CodeQL checkout must disable persisted credentials")
+    return errors
+
+
 def validate_workflows() -> tuple[int, list[str]]:
     errors: list[str] = []
     workflows = sorted(WORKFLOW_DIR.glob("*.y*ml"))
@@ -530,6 +555,10 @@ def validate_workflows() -> tuple[int, list[str]]:
         pages_text = PAGES_WORKFLOW.read_text(encoding="utf-8")
         errors.extend(validate_docs_deploy_workflow(pages_text, relative(PAGES_WORKFLOW)))
         errors.extend(validate_pages_candidate_artifact(pages_text, relative(PAGES_WORKFLOW)))
+    if not CODEQL_WORKFLOW.is_file():
+        errors.append("missing .github/workflows/codeql.yml")
+    else:
+        errors.extend(validate_codeql_workflow(CODEQL_WORKFLOW.read_text(encoding="utf-8"), relative(CODEQL_WORKFLOW)))
     return len(workflows), errors
 
 

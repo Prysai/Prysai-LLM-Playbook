@@ -146,6 +146,23 @@ jobs:
         )
         fixtures += 1
 
+        secure_codeql = "\n".join(policy.CODEQL_REQUIRED_FRAGMENTS) + "\npersist-credentials: false\n"
+        require(
+            not policy.validate_codeql_workflow(secure_codeql, "codeql.yml"),
+            "pinned trusted-ref CodeQL workflow was rejected",
+        )
+        fixtures += 1
+        require(
+            any("write permissions" in error for error in policy.validate_codeql_workflow(secure_codeql + "  pull_request:\n", "codeql.yml")),
+            "CodeQL workflow with a pull-request write boundary was accepted",
+        )
+        fixtures += 1
+        require(
+            any("secrets context" in error for error in policy.validate_codeql_workflow(secure_codeql + "${{ secrets.EXAMPLE }}\n", "codeql.yml")),
+            "CodeQL workflow with a secrets context was accepted",
+        )
+        fixtures += 1
+
         extra_docs_permission = secure_docs_deploy.replace(
             "      actions: read\n",
             "      actions: read\n      contents: write\n",
