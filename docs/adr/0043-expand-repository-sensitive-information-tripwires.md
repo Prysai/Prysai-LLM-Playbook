@@ -73,6 +73,15 @@ confirmed.
 - The policy and this ADR require re-review when new secret formats, generated
   content, publishing targets, or host-side controls are introduced.
 
+## Current host-state correction
+
+The 2026-08-18 authenticated GitHub API audit supersedes the older local note
+that the repository Ruleset was unavailable on a private organization plan.
+The repository is public and now has an active Ruleset; Secret Scanning,
+Push Protection, and Actions SHA pinning are also enabled. Non-provider pattern
+scanning remained disabled after an attempted API update. The active Ruleset's
+always-bypass repository-role actor remains an explicit evidence limitation.
+
 ## Evidence boundary
 
 The implementation and fixture evidence are recorded in

@@ -22,6 +22,8 @@ SHA_RE = re.compile(r"^[0-9a-f]{40}$", re.IGNORECASE)
 USES_RE = re.compile(r"^\s*(?:-\s*)?uses:\s*([^@\s]+)@([^\s#]+)", re.MULTILINE)
 PULL_REQUEST_TARGET_RE = re.compile(r"^\s*pull_request_target\s*:", re.MULTILINE)
 PULL_REQUEST_RE = re.compile(r"^\s*pull_request\s*:", re.MULTILINE)
+WORKFLOW_DISPATCH_RE = re.compile(r"^\s*workflow_dispatch\s*:", re.MULTILINE)
+MAIN_REF_GUARD_RE = re.compile(r"github\.ref\s*==\s*['\"]refs/heads/main['\"]")
 PERMISSIONS_BLOCK_RE = re.compile(r"^permissions:\s*\n((?:^  [a-z-]+:\s*[a-z-]+\s*$\n?)+)", re.MULTILINE)
 PERMISSION_LINE_RE = re.compile(r"^  ([a-z-]+):\s*([a-z-]+)\s*$", re.MULTILINE)
 WRITE_PERMISSION_RE = re.compile(r"^\s+[a-z-]+:\s*write\s*$", re.MULTILINE)
@@ -341,8 +343,8 @@ def validate_policy(policy: dict[str, object]) -> list[str]:
             errors.append("automation must explicitly forbid unsafe pull-request workflow features")
 
     host_ruleset = policy.get("host_ruleset")
-    if not isinstance(host_ruleset, dict) or host_ruleset.get("status") != "unenforceable_on_private_organization_plan":
-        errors.append("host_ruleset must honestly record the current enforcement blocker")
+    if not isinstance(host_ruleset, dict) or host_ruleset.get("status") != "active":
+        errors.append("host_ruleset must honestly record the currently active host Ruleset")
 
     sources = policy.get("sources")
     if not isinstance(sources, list) or len(sources) < 3:
@@ -370,6 +372,8 @@ def validate_workflow_text(text: str, label: str) -> list[str]:
     # could be exposed to contributor-controlled workflow or repository content.
     if PULL_REQUEST_RE.search(text) and SECRETS_CONTEXT_RE.search(text):
         errors.append(f"{label}: pull-request workflow must not reference the secrets context")
+    if WORKFLOW_DISPATCH_RE.search(text) and SECRETS_CONTEXT_RE.search(text) and not MAIN_REF_GUARD_RE.search(text):
+        errors.append(f"{label}: workflow_dispatch secret use must be gated to refs/heads/main")
     if UNSAFE_PIPE_RE.search(text):
         errors.append(f"{label}: downloads must not be piped directly into a shell")
     for action, ref in USES_RE.findall(text):
@@ -463,7 +467,7 @@ def secret_scan(paths: list[Path]) -> list[str]:
     for path in paths:
         name = path.name.casefold()
         suffix = path.suffix.casefold()
-        label = relative(path)
+        label = relative(path) if path.is_relative_to(ROOT) else path.name
         if name in FORBIDDEN_FILENAMES or suffix in FORBIDDEN_SUFFIXES or (name.startswith(".env") and name != ".env.example"):
             errors.append(f"{label}: credential-shaped file must not be tracked")
             continue
@@ -552,7 +556,7 @@ def main() -> int:
     print(
         "REPOSITORY_SECURITY_POLICY_OK "
         f"workflows={workflow_count} candidate_files={len(candidates)} "
-        "host_ruleset=unenforceable_on_private_organization_plan"
+        "host_ruleset=active"
     )
     return 0
 

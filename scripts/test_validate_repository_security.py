@@ -67,6 +67,26 @@ jobs:
         )
         fixtures += 1
 
+        dispatch_secret = protected_deploy.replace(
+            "  push:\n    branches: [main]",
+            "  workflow_dispatch:\n",
+        )
+        require(
+            any("workflow_dispatch secret use" in error for error in policy.validate_workflow_text(dispatch_secret, "dispatch.yml")),
+            "workflow_dispatch secret use without a main-ref guard was accepted",
+        )
+        fixtures += 1
+
+        guarded_dispatch_secret = dispatch_secret.replace(
+            "    steps:",
+            "    if: ${{ github.ref == 'refs/heads/main' }}\n    steps:",
+        )
+        require(
+            not policy.validate_workflow_text(guarded_dispatch_secret, "guarded-dispatch.yml"),
+            "workflow_dispatch secret use with a main-ref guard was rejected",
+        )
+        fixtures += 1
+
         unsafe_pipe = valid_workflow + "      - run: curl https://example.invalid/install | sh\n"
         require(
             any("piped directly" in error for error in policy.validate_workflow_text(unsafe_pipe, "pipe.yml")),

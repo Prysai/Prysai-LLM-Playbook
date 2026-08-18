@@ -68,13 +68,13 @@ repository prose. These are useful tripwires, not a substitute for a human
 review, a dependency audit, security testing, secret rotation, runtime HTTP
 headers, or deployment configuration review.
 
-GitHub's official Rulesets screen is available, but it currently states that
-Rulesets will not be enforced for this private organization repository until
-the organization upgrades to GitHub Team. Until that host-side blocker changes,
-maintainers must not describe passing CI as branch protection or required human
-review. The policy records the exact future `main` configuration, including an
-empty default bypass list, human review, required checks, force-push blocking,
-and deletion restriction.
+The live GitHub API reported an active repository Ruleset on 2026-08-18. It
+blocks deletion and non-fast-forward updates, requires signed commits, requires
+one approving review with resolved threads, and carries CodeQL/code-quality
+rules. Its current repository-role bypass actor can always bypass the Ruleset,
+so passing CI is still not proof that every write used a pull request. The
+repository policy records the observed Ruleset, bypass, Secret Scanning,
+Push Protection, and Actions SHA-pinning boundaries.
 
 ## Sources and review
 

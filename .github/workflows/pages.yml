@@ -51,7 +51,7 @@ jobs:
           python-version: "3.12"
 
       - name: Set up GitHub Pages
-        if: ${{ inputs.deploy || github.event_name == 'push' }}
+        if: ${{ (inputs.deploy || github.event_name == 'push') && github.ref == 'refs/heads/main' }}
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
 
       - name: Build the bounded Pages artifact
@@ -59,7 +59,7 @@ jobs:
 
       - name: Detect Hugging Face publication configuration
         id: huggingface-sync
-        if: ${{ inputs.deploy || github.event_name == 'push' }}
+        if: ${{ (inputs.deploy || github.event_name == 'push') && github.ref == 'refs/heads/main' }}
         shell: bash
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
@@ -103,14 +103,14 @@ jobs:
           retention-days: 14
 
       - name: Upload Pages deployment artifact
-        if: ${{ inputs.deploy || github.event_name == 'push' }}
+        if: ${{ (inputs.deploy || github.event_name == 'push') && github.ref == 'refs/heads/main' }}
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1
         with:
           path: _site
 
   deploy:
     needs: build
-    if: ${{ inputs.deploy || github.event_name == 'push' }}
+    if: ${{ (inputs.deploy || github.event_name == 'push') && github.ref == 'refs/heads/main' }}
     permissions:
       pages: write
       id-token: write
@@ -125,7 +125,7 @@ jobs:
 
   docs-prysai-deploy:
     needs: build
-    if: ${{ github.event_name == 'push' || inputs.deploy }}
+    if: ${{ (github.event_name == 'push' || inputs.deploy) && github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     environment:

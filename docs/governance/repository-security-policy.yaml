@@ -68,23 +68,39 @@
     "heightened_review_rule": "A maintainer must review the diff, requested permission change, supply-chain source, rollback path, and declared evidence before merge. Automation may flag a change but must not approve, merge, comment on, or modify a pull request on its own."
   },
   "host_ruleset": {
-    "status": "unenforceable_on_private_organization_plan",
-    "observed_at": "2026-08-14",
-    "observation": "GitHub Settings > Rulesets displayed: Your rulesets won't be enforced on this private repository until you upgrade this organization account to GitHub Team.",
-    "configuration_state": "not_created",
-    "recommended_configuration_when_enforceable": {
-      "name": "protect-main",
-      "target_branches": ["main"],
-      "enforcement": "active",
-      "bypass_list": "empty by default; add a temporary emergency bypass only with a documented approval and removal date",
-      "rules": [
-        "Require a pull request before merging, with at least one approving human review and all review threads resolved.",
-        "Require the exact successful quality and repository-security status checks observed after the first CI run; do not guess check names.",
-        "Block force pushes on main.",
-        "Restrict deletions of main."
-      ]
+    "status": "active",
+    "observed_at": "2026-08-18",
+    "repository": "Prysai/Prysai-LLM-Playbook",
+    "ruleset_id": 20903386,
+    "name": "Prysai llm playbook",
+    "target": "branch",
+    "enforcement": "active",
+    "ref_include": ["~ALL"],
+    "configuration_state": "active",
+    "rules": [
+      "deletion",
+      "non_fast_forward",
+      "required_signatures",
+      "CodeQL high_or_higher security alerts and errors_and_warnings alert threshold",
+      "code quality errors",
+      "one approving review, stale-review dismissal, and resolved review threads"
+    ],
+    "bypass_list": [
+      "RepositoryRole actor id 5 with bypass_mode always"
+    ],
+    "evidence_limit": "The live GitHub API reports an active repository Ruleset. Its current bypass actor can always bypass the Ruleset, and this repository policy does not treat a passing workflow as proof that every write used a pull request."
+  },
+  "host_security_controls": {
+    "observed_at": "2026-08-18",
+    "secret_scanning": "enabled",
+    "secret_scanning_non_provider_patterns": "disabled",
+    "secret_scanning_push_protection": "enabled",
+    "actions": {
+      "enabled": true,
+      "allowed_actions": "all",
+      "sha_pinning_required": true
     },
-    "evidence_limit": "The current UI permits drafting a Ruleset but says it will not be enforced. This plan is not an enabled GitHub Ruleset, branch protection rule, required status check, or proof that direct pushes are blocked."
+    "evidence_limit": "These are repository-level GitHub settings observed through the authenticated API; GitHub did not enable non-provider pattern scanning in this request. Secret values, organization policy, hosted headers, and provider-side logs remain outside this repository record."
   },
   "sources": [
     {

@@ -90,7 +90,8 @@ modifiable state and is not an authority or proof of completion.
 | Reachable history | 840 commits scanned; 0 high-confidence credential-signature commit hits | Pattern scan of committed snapshots; not every provider-specific secret format |
 | Unreachable Git objects | 142 blobs across 15 unreachable commits; 0 high-confidence credential/private-key hits after regex tightening | Local object database only; object reachability/retention can change |
 | Git stash/reflog | No stash entries; reflog showed normal repository refs | Does not inspect remote provider backups or account logs |
-| Workflow permissions and action refs | Pass under the repository policy | Does not prove host-side Ruleset enforcement |
+| Workflow permissions and action refs | Pass; all checkout steps disable persisted credentials and all third-party refs use full SHAs | Does not prove every hosted runner or future workflow remains safe |
+| Host-side security controls | Secret Scanning and Push Protection enabled; Actions SHA pinning required; non-provider patterns disabled | Repository-level API settings only; Ruleset has an always-bypass repository role |
 | Static CSP | Pass under the repository policy | Meta CSP is not a substitute for runtime HTTP headers |
 
 ## Remaining limitations
@@ -102,6 +103,8 @@ modifiable state and is not an authority or proof of completion.
 - GitHub secret values, organization settings, hosting headers, deployment
   server access, dependency vulnerability databases, browser profile data, and
   external backups are outside the repository-only evidence collected here.
+- GitHub did not enable non-provider pattern scanning through the authenticated
+  API request; the repository-local detector remains the additional tripwire.
 - Regex checks can miss encoded, split, provider-specific, binary, or
   intentionally obfuscated secrets. They can also require a narrow fixture
   marker when demonstrating a sensitive shape.
