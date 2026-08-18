@@ -91,7 +91,7 @@
 本次运行：
 
 ```powershell
-$py = 'C:\Users\Administrator\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe'
+$py = 'python'
 & $py scripts\validate_localization.py
 ```
 

@@ -1,7 +1,7 @@
 # Six-locale contract audit
 
 **Date:** 2026-08-11  
-**Scope:** repository state in `C:\Users\Administrator\Documents\ChatGPT\My Github`  
+**Scope:** repository state in the working tree
 **Method:** read-only inspection of the locale matrix, generated manifest, build and validation scripts, Markdown filenames and links, README entry points, and the static reader/site code.  
 **Change policy:** this audit does not modify product files. The audit itself is the only file added for this request.
 

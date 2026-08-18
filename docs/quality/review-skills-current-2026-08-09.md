@@ -3,7 +3,7 @@
 > **数量修订说明（2026-08-09）：** 本报告中的旧任务集数量已按当前仓库修订为 38 项任务、15 个轨道。任务夹具存在不等于已经运行；本报告仍是静态审查和前测设计，不授予 `verified`。
 
 审查日期：2026-08-09  
-审查范围：7 个 skills/prysai-* 目录、docs/quality/skill-quality-standard.md、docs/skill-registry.md、evals/task-set-v1.yaml、H:\Codex\home\skills\.system\skill-creator\SKILL.md，以及目标 Skill 的 agents/openai.yaml。  
+审查范围：7 个 skills/prysai-* 目录、docs/quality/skill-quality-standard.md、docs/skill-registry.md、evals/task-set-v1.yaml、skill-creator/SKILL.md，以及目标 Skill 的 agents/openai.yaml。
 审查方式：只读静态审查、目录与命名盘点、评测任务映射、官方 validator 和项目验证脚本检查。  
 当前结论：7/7 保持 candidate；本报告不把结构校验通过或设计合理等同于 verified。  
 变更边界：本次只新增本报告；未修改任何现有 Skill 文件，未提交，未删除 .work。
@@ -40,7 +40,7 @@ docs/quality/skill-quality-standard.md:16-24 要求每个 SKILL.md 写清：
 
 ### 2.2 官方 Skill 指南要求
 
-H:\Codex\home\skills\.system\skill-creator\SKILL.md:58-80 将 SKILL.md、frontmatter 和可选 agents/openai.yaml 分开；79-80 强调只有 frontmatter 的 name 和 description 用于决定触发，正文是在触发后才加载。因此“不适用任务”和触发让位规则不能只藏在正文里。
+skill-creator/SKILL.md:58-80 将 SKILL.md、frontmatter 和可选 agents/openai.yaml 分开；79-80 强调只有 frontmatter 的 name 和 description 用于决定触发，正文是在触发后才加载。因此“不适用任务”和触发让位规则不能只藏在正文里。
 
 同文件 135-145 要求正文保持精简并使用渐进披露；218-221 要求引用资源直接从 SKILL.md 可发现、避免深层引用。236-242 要求小写、数字、连字符命名，目录名必须与 Skill 名相同。
 
@@ -64,7 +64,7 @@ H:\Codex\home\skills\.system\skill-creator\SKILL.md:58-80 将 SKILL.md、frontma
 | exact duplicate | 未发现 7 个 SKILL.md 的完全重复 | SHA-256 盘点 |
 | 项目结构验证 | 通过 | scripts/validate_project.py |
 | 输入归档审计 | 通过 | scripts/audit_input_archives.py |
-| 官方 quick_validate | 7/7 通过 | H:\Codex\home\skills\.system\skill-creator\scripts\quick_validate.py，使用 UTF-8 模式 |
+| 官方 quick_validate | 7/7 通过 | `skill-creator/scripts/quick_validate.py`，使用 UTF-8 模式 |
 | 本地 Markdown 链接 | 通过，检查 128 条 | scripts/check_local_links.py |
 
 官方 quick_validate 只覆盖 frontmatter 的 YAML、允许字段、name 格式/长度和 description 类型/长度；它不检查正文合同、agents/openai.yaml、隐式触发冲突、权限、停止行为或输出质量。

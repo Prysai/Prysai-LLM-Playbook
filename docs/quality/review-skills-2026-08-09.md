@@ -35,7 +35,7 @@
 
 ## 3. 官方 quick_validate 结果
 
-使用的验证器：`H:\Codex\home\skills\.system\skill-creator\scripts\quick_validate.py`。由于 bundled Python 初始缺少 PyYAML，按 `AGENTS.md` 规则将 PyYAML 临时安装到系统临时目录，并使用 `python -X utf8` 执行；没有向仓库添加依赖或修改项目文件。
+使用的验证器：本地 Codex skills runtime 提供的 `skill-creator/scripts/quick_validate.py`。由于 bundled Python 初始缺少 PyYAML，按 `AGENTS.md` 规则将 PyYAML 临时安装到系统临时目录，并使用 UTF-8 模式执行；没有向仓库添加依赖或修改项目文件。
 
 | Skill | quick_validate | 结果说明 |
 |---|---|---|

@@ -1,7 +1,7 @@
 # Tutorial and i18n architecture benchmark
 
 **Research date:** 2026-08-11 (America/Los_Angeles)
-**Repository in scope:** `C:\Users\Administrator\Documents\ChatGPT\My Github`
+**Repository in scope:** this working tree
 **Status:** candidate / reference-only
 **Question:** What information-architecture patterns from public tutorial and documentation projects are useful for this repository's file structure, table of contents, previous/next navigation, locale switching, search, and GitHub Pages publication?
 

@@ -21,7 +21,7 @@ content licence.
 
 ## Source and rights decision
 
-- **Local source:** `H:\Codex\home\attachments\d1a90ae7-ec40-4b8e-8c6e-afab43f8c3db\pasted-text.txt`
+- **Local source:** user-provided local attachment (path intentionally omitted)
 - **Observed source shape:** duplicated headings and voiceover blocks covering installation, project setup, permissions, Annotate, preview limits, model controls, Git, message editing, Fork, Worktree, Archive, `AGENTS.md`, Plan Mode, Side Chat, parallel sessions, Steer, Plugins, presentations, browser control, Computer Use, Skills, Automation, Mobile, workflow, FAQ, and summary.
 - **Observed external targets:** the old video and summary links point to `https://aitodo.co/video/BV1c9EK6KEW4`, `https://aitodo.co/content/02d8858d-3acb-4b65-bcec-70afdce75a13`, Bilibili, and screenshot mirrors. They are retained here only as provenance; they must not appear in reader routes.
 - **Rights classification:** `reference-only / rights-uncertain`. The local attachment did not provide a redistribution licence for its prose or media. The external targets are not treated as permission to copy.

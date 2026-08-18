@@ -1,7 +1,7 @@
 # Multilingual routing and six-locale study
 
 **Date:** 2026-08-11
-**Scope:** `C:\Users\Administrator\Documents\ChatGPT\My Github`
+**Scope:** this repository working tree
 **Status:** research note; recommendations are not implementation or runtime verification
 **Hard requirements under review:** English default; six locales; explicit locale suffixes on reader-facing files; same-language links; language state preserved across pages; visible missing-translation disclosure; chapter footer previous/next links.
 
