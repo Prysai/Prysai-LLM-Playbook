@@ -1,4 +1,4 @@
-<!-- content_id: llm-fundamentals-guide | locale: KO | language: ko | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-17-foundation-map -->
+<!-- content_id: llm-fundamentals-guide | locale: KO | language: ko | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-17-foundation-observations -->
 
 # LLM이란 무엇인가: 유용한 답변 뒤의 여러 층
 
