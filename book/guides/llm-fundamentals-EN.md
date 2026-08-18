@@ -239,6 +239,23 @@ about this sentence before you look anything up: **"The city library will
 close at 6 p.m. today."** A model can discuss the wording, but the sentence's
 current truth needs a source check. Do not ask it to invent a source.
 
+### Three bounded observations
+
+The checks above are small demonstrations, not evidence that a learner or a
+model will behave the same way on every task. To practise the same boundaries
+without using an account, private data, a tool, or a network request, use these
+fictional-record protocols:
+
+- [Context change and unknowns](../../evals/candidates/core-course-v1/observations/context-change-and-unknowns.md) — compare two supplied versions, label each claim `PASS`, `FAIL`, or `UNSURE`, and keep the room number unknown.
+- [First-request contract and controlled repeat](../../evals/candidates/core-course-v1/observations/first-request-contract.md) — write the goal, material, constraints, response shape, and stop condition before an answer; when a text surface is available, repeat the same request twice and record shared and different observations.
+- [Tool boundary, authority, and evidence](../../evals/candidates/core-course-v1/observations/tool-boundary-authority-evidence.md) — separate a proposed action, granted authority, tool execution, and read-back evidence.
+
+Each protocol asks for the first artifact before a cue, records help and
+unknowns, and defines a stop rule. Its status is `candidate / not_run`: a
+future run can describe only the named task, conditions, and rubric. It cannot
+establish course effectiveness, prompt superiority, model quality, retention,
+general transfer, platform equivalence, or production readiness.
+
 ### A portable first-turn pattern
 
 When you are ready to try a real, low-risk task, fill these six lines before
