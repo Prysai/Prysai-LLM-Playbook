@@ -43,11 +43,13 @@ artifact inside a sandboxed iframe, while the same files remain reachable at
 `/site/` for development. The homepage therefore writes its four section links
 as `index.html#...`, making the document target explicit in both entry modes.
 The header and footer wordmarks use `target="_top"` for the canonical Docs URL
-on ordinary pages. When the runtime detects an embedding frame, it changes
-only those brand links to a user-triggered `_blank` navigation with
-`rel="noopener"`: the HF sandbox does not grant `allow-top-navigation`, so a
-literal `_top` link can otherwise appear correct in source while doing nothing
-on click. The in-page menu remains inside the Space.
+on ordinary pages. When the runtime detects an embedding frame, it changes the
+brand links and the four primary section links to user-triggered `_blank`
+navigation with `rel="noopener"`: the HF sandbox does not grant
+`allow-top-navigation`, so a literal `_top` link can otherwise appear correct
+in source while doing nothing on click. Hosted primary links use the canonical
+Docs URL (and preserve `?lang=` when present), so they cannot be reinterpreted
+as a provider-relative `/site/` route.
 
 ## Alternatives considered
 
