@@ -78,6 +78,45 @@ comando solo para esta ruta. Usa la comprobación manual y registra
 local descartable, detente y usa el First Win de solo texto; no presentes la
 vista web de GitHub como si fuera una zona de pruebas local.
 
+## Puente de web coding: un cambio visible en un navegador real
+
+Si tu siguiente objetivo es el web coding, no empieces con «construye un sitio
+completo». Usa el [sandbox de Product Context](../../examples/skill-sandbox/product-context-real-estate/README-ES.md)
+como página estática descartable. Solo contiene texto ficticio: no hay anuncios
+reales, formulario, analítica, API ni imágenes externas.
+
+1. Copia toda la carpeta `examples/skill-sandbox/product-context-real-estate` a una
+   ubicación temporal y lee su README e `index.html`.
+2. Cambia **solo `index.html`**: sustituye una frase visible para la misma audiencia
+   ficticia. No cambies CSS, añadas un framework, descargues una imagen ni crees un
+   formulario.
+3. Si Python 3 ya está disponible, ejecuta desde la copia el servidor documentado:
+
+```powershell
+python -m http.server 4182
+```
+
+Abre `http://127.0.0.1:4182/` en un navegador. Comprueba el título, la frase nueva,
+el encabezado que no cambió, los enlaces, la consola y un viewport de 390px. Si no
+están claros el comando, el archivo o el resultado del navegador, detente; no
+instales un runtime para este ejercicio.
+
+Conserva este recibo breve:
+
+```text
+sandbox: <directorio copiado>
+allowed_change: index.html only
+url: http://127.0.0.1:4182/
+browser_check: frase nueva una vez; encabezado y enlaces conservados; consola observada
+diff: <diferencia revisada>
+unverified: despliegue, revisión de accesibilidad, otros navegadores, aceptación
+```
+
+Esto demuestra un estado renderizado local en un viewport, no un build de producción,
+la calidad responsive completa, la accesibilidad, la seguridad, el rendimiento ni el
+valor del producto. Para el ciclo completo, continúa con el
+[Capítulo 16](../chapters/16-engineering-track-ES.md).
+
 ## Evidencia
 
 Conserva únicamente este recibo breve:
