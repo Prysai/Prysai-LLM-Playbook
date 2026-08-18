@@ -78,6 +78,8 @@ Si el chat ofrece buscar, enviar, publicar, usar una herramienta o pide más
 material del que necesita este pequeño ejercicio, detente. La plataforma puede
 ser capaz de esas acciones; la capacidad no es una instrucción para usarlas.
 
+<span id="chatgpt-first-task"></span>
+
 ## Primera tarea en ChatGPT
 
 Abre cualquier superficie de ChatGPT y ejecuta la primera tarea segura de
@@ -88,6 +90,8 @@ respaldada por fuentes de una afirmación sobre ChatGPT, usa la
 Source Investigator Skill
 con las páginas de ayuda oficiales de OpenAI como propietarias de los hechos
 del producto.
+
+<span id="claude-code-first-task"></span>
 
 ## Primera tarea en Claude Code
 
@@ -102,6 +106,8 @@ que revísalo como cualquier regla del proyecto. No inicies Claude Code en un
 repositorio real con credenciales, datos de producción o comandos destructivos
 hasta que hayas completado la disciplina de la
 [First Safe Change route](first-safe-change-ES.md).
+
+<span id="gemini-first-task"></span>
 
 ## Primera tarea en Gemini
 
@@ -122,6 +128,8 @@ versiones; la página oficial del modelo es la propietaria de esos hechos.
 Registra el nombre del modelo que usaste realmente y la fecha, para que la
 ejecución siga siendo reproducible. No pegues claves de API, código privado ni
 documentos internos en un chat web.
+
+<span id="grok-first-task"></span>
 
 ## Primera tarea en Grok
 

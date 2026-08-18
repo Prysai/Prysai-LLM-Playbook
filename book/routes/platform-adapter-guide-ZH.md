@@ -68,6 +68,8 @@ Platform Adapter Review Skill
 所需的更多材料，请停下来。平台或许具备这些能力；有能力做，并不等于
 被要求去做。
 
+<span id="chatgpt-first-task"></span>
+
 ## ChatGPT 首个任务
 
 打开任意一个 ChatGPT 界面，运行上面的首个安全任务。然后记下一个你实际
@@ -75,6 +77,8 @@ Platform Adapter Review Skill
 的，而不是你假设的。要对 ChatGPT 的说法做有来源支撑的核查，请使用
 Source Investigator Skill，
 以 OpenAI 官方帮助页面作为产品事实的权威来源。
+
+<span id="claude-code-first-task"></span>
 
 ## Claude Code 首个任务
 
@@ -86,6 +90,8 @@ Claude Code 会读取 `CLAUDE.md` 文件；把里面写的内容都视为模型�
 的指令，所以像审阅任何项目规则一样审阅它。在完成
 [First Safe Change 路线](first-safe-change-ZH.md) 的练习纪律之前，不要在
 含有凭据、生产数据或破坏性命令的真实仓库里启动 Claude Code。
+
+<span id="gemini-first-task"></span>
 
 ## Gemini 首个任务
 
@@ -102,6 +108,8 @@ Claude Code 会读取 `CLAUDE.md` 文件；把里面写的内容都视为模型�
 会随版本变化；这些事实以官方模型页面为准。记下你实际使用的模型名称和
 日期，以便这次运行可以复现。不要把 API 密钥、私有代码或内部文档粘贴到
 网页聊天中。
+
+<span id="grok-first-task"></span>
 
 ## Grok 首个任务
 

@@ -78,6 +78,8 @@ Platform Fact Watchを
 それらの動作を実行できたとしても、能力があることはそれを使う指示では
 ありません。
 
+<span id="chatgpt-first-task"></span>
+
 ## ChatGPTの最初のタスク
 
 任意のChatGPTサーフェスを開き、上記の安全な最初のタスクを実行して
@@ -87,6 +89,8 @@ Platform Fact Watchを
 するには、製品事実の所有者として公式OpenAIヘルプページを使う
 Source Investigator Skillを
 利用してください。
+
+<span id="claude-code-first-task"></span>
 
 ## Claude Codeの最初のタスク
 
@@ -100,6 +104,8 @@ Claude Codeはターミナルエージェントです：起動したプロジェ
 ルールと同様にレビューしてください。資格情報、本番データ、破壊的なコマンド
 がある実際のリポジトリでは、[First Safe Changeルート](first-safe-change-JA.md)の
 規律を完了するまでClaude Codeを起動しないでください。
+
+<span id="gemini-first-task"></span>
 
 ## Geminiの最初のタスク
 
@@ -119,6 +125,8 @@ DeepSeekのチャットまたはアプリサーフェスで安全な最初のタ
 変わり、公式モデルページがそれらの事実の所有者です。実際に使用したモデル名
 と日付を記録し、実行が再現可能な状態を保ってください。APIキー、非公開
 コード、社内文書をウェブチャットに貼り付けないでください。
+
+<span id="grok-first-task"></span>
 
 ## Grokの最初のタスク
 

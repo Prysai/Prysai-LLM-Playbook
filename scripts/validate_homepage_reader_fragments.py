@@ -30,6 +30,21 @@ GENERATED_BLOCK_RE = re.compile(
     re.IGNORECASE,
 )
 GENERATED_END_TEMPLATE = r"^<!--\s*{kind}:end\s*-->$"
+MARKDOWN_LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+
+# These reader-facing sources use stable fragments from the homepage, README,
+# or a translated navigation table. Keep the check narrow: GitHub and other
+# Markdown renderers use different heading-slug rules than our Reader.
+BOOK_FRAGMENT_SOURCES = (
+    "book/communication-clinic-EN.md",
+    "book/routes/platform-adapter-guide-EN.md",
+    "book/routes/platform-adapter-guide-ZH.md",
+    "book/routes/platform-adapter-guide-ES.md",
+    "book/routes/platform-adapter-guide-JA.md",
+    "book/routes/platform-adapter-guide-KO.md",
+    "book/routes/platform-adapter-guide-DE.md",
+    "book/routes/platform-adapter-guide-ZHTW.md",
+)
 
 
 class _HomepageLinkParser(HTMLParser):
@@ -326,6 +341,83 @@ def validate_homepage_fragments(
     return errors
 
 
+def _markdown_link_target(value: str) -> str:
+    """Return the URL portion of a Markdown link, without an optional title."""
+
+    return value.strip().split(None, 1)[0].strip("<>")
+
+
+def _validate_markdown_file(path: Path, root: Path) -> tuple[list[str], int]:
+    """Validate Reader-style local fragments in one Markdown source."""
+
+    label = _relative_path(path, root)
+    try:
+        lines = path.read_text(encoding="utf-8").splitlines()
+    except (OSError, UnicodeError) as exc:
+        return [f"{label}: could not read Markdown source: {exc}"], 0
+
+    ids = _reader_ids("\n".join(lines))
+    errors: list[str] = []
+    checked = 0
+    in_fence = False
+    fence: str | None = None
+    for line_number, line in enumerate(lines, start=1):
+        stripped = line.strip()
+        if stripped.startswith(("```", "~~~")):
+            marker = stripped[:3]
+            if not in_fence:
+                in_fence, fence = True, marker
+            elif marker == fence:
+                in_fence, fence = False, None
+            continue
+        if in_fence:
+            continue
+        for match in MARKDOWN_LINK_RE.finditer(line):
+            target = _markdown_link_target(match.group(1))
+            parsed = urlsplit(target)
+            if parsed.scheme or parsed.netloc or not parsed.fragment:
+                continue
+            if parsed.path:
+                target_path = (path.parent / Path(*parsed.path.replace("\\", "/").split("/"))).resolve()
+            else:
+                target_path = path
+            try:
+                target_path.relative_to(root.resolve())
+            except ValueError:
+                errors.append(f"{label}:{line_number}: fragment target escapes the repository: {target}")
+                continue
+            if not target_path.is_file():
+                errors.append(f"{label}:{line_number}: fragment target does not exist: {target}")
+                continue
+            if target_path != path:
+                try:
+                    target_ids = _reader_ids(target_path.read_text(encoding="utf-8"))
+                except (OSError, UnicodeError) as exc:
+                    errors.append(f"{label}:{line_number}: could not read fragment target {target}: {exc}")
+                    continue
+            else:
+                target_ids = ids
+            checked += 1
+            fragment = unquote(parsed.fragment)
+            if fragment not in target_ids:
+                errors.append(
+                    f"{label}:{line_number}: Reader fragment #{fragment} is not rendered by "
+                    f"{_relative_path(target_path, root)}"
+                )
+    return errors, checked
+
+
+def validate_book_fragments() -> list[str]:
+    """Validate stable Reader fragments in the selected book entry points."""
+
+    errors: list[str] = []
+    for relative_path in BOOK_FRAGMENT_SOURCES:
+        path = ROOT / Path(*relative_path.split("/"))
+        file_errors, _ = _validate_markdown_file(path, ROOT)
+        errors.extend(file_errors)
+    return errors
+
+
 def main() -> int:
     argument_parser = argparse.ArgumentParser(
         description="Validate homepage Reader fragments against source Markdown."
@@ -338,12 +430,14 @@ def main() -> int:
     )
     args = argument_parser.parse_args()
     errors, checked = _validate(args.homepage, ROOT)
+    book_errors = validate_book_fragments()
+    errors.extend(book_errors)
     if errors:
         print("HOMEPAGE_READER_FRAGMENTS_FAILED")
         for error in errors:
             print(f"- {error}")
         return 1
-    print(f"HOMEPAGE_READER_FRAGMENTS_OK checked={checked}")
+    print(f"HOMEPAGE_READER_FRAGMENTS_OK checked={checked} book_sources={len(BOOK_FRAGMENT_SOURCES)}")
     return 0
 
 

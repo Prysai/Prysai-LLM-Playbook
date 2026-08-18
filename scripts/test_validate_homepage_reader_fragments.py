@@ -27,6 +27,10 @@ def main() -> int:
         validator.validate_homepage_fragments() == [],
         "the checked-in homepage contains an invalid Reader fragment",
     )
+    require(
+        validator.validate_book_fragments() == [],
+        "a reader-facing Markdown fragment is not rendered by its source",
+    )
 
     with tempfile.TemporaryDirectory(dir=ROOT) as temporary:
         directory = Path(temporary)
@@ -101,7 +105,21 @@ def main() -> int:
             "URL-encoded fragments or HTML entities were not decoded",
         )
 
-    print("HOMEPAGE_READER_FRAGMENT_TESTS_OK fixtures=8")
+        source.write_text(
+            "# Primera tarea en ChatGPT\n\n[Jump](#chatgpt-first-task)\n",
+            encoding="utf-8",
+        )
+        errors, checked = validator._validate_markdown_file(source, directory)
+        require(checked == 1 and errors, "a localized heading silently accepted an English fragment")
+        source.write_text(
+            '<span id="chatgpt-first-task"></span>\n\n'
+            "# Primera tarea en ChatGPT\n\n[Jump](#chatgpt-first-task)\n",
+            encoding="utf-8",
+        )
+        errors, checked = validator._validate_markdown_file(source, directory)
+        require(checked == 1 and not errors, "an explicit stable fragment was rejected")
+
+    print("HOMEPAGE_READER_FRAGMENT_TESTS_OK fixtures=10")
     return 0
 
 

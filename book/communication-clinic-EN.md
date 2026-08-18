@@ -902,6 +902,8 @@ Choose a performance another person can inspect: explain a concept without
 notes, answer one interview question, or revise one paragraph for a named
 audience. “Understand the topic” is not observable.
 
+<span id="card-b1-define-and-attempt-the-performance"></span>
+
 ### Card B1 — define and attempt the performance
 
 ```text
@@ -973,6 +975,8 @@ practice record, not evidence of job readiness, writing ability, or transfer.
 Research evidence is not learning evidence. The strongest ordinary claim is
 `source-supported within [scope/date]`, not “complete research,” universal
 truth, or freshness beyond the recorded access date.
+
+<span id="card-c1-decision-question-and-source-plan"></span>
 
 ### Card C1 — decision, question, and source plan
 
