@@ -3732,7 +3732,9 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "source",
           "coverage": "full",
           "source_revision": null,
-          "explicit_anchors": []
+          "explicit_anchors": [
+            "deepseek-first-task"
+          ]
         },
         "zh": {
           "path": "book/routes/platform-adapter-guide-ZH.md",
@@ -3741,7 +3743,9 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "candidate",
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
-          "explicit_anchors": []
+          "explicit_anchors": [
+            "deepseek-first-task"
+          ]
         },
         "es": {
           "path": "book/routes/platform-adapter-guide-ES.md",
@@ -3750,7 +3754,9 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "candidate",
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
-          "explicit_anchors": []
+          "explicit_anchors": [
+            "deepseek-first-task"
+          ]
         },
         "ja": {
           "path": "book/routes/platform-adapter-guide-JA.md",
@@ -3759,7 +3765,9 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "candidate",
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
-          "explicit_anchors": []
+          "explicit_anchors": [
+            "deepseek-first-task"
+          ]
         },
         "ko": {
           "path": "book/routes/platform-adapter-guide-KO.md",
@@ -3768,7 +3776,9 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "candidate",
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
-          "explicit_anchors": []
+          "explicit_anchors": [
+            "deepseek-first-task"
+          ]
         },
         "de": {
           "path": "book/routes/platform-adapter-guide-DE.md",
