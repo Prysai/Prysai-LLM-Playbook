@@ -136,7 +136,7 @@ Seite ist dafür kein Beleg.
 Für eine erste Aufgabe ohne Schlüssel und private Daten nutze die allgemeine
 sichere Aufgabe oben nur in einer Oberfläche, die du ausdrücklich verwenden
 darfst. Wenn ein API-Experiment ausdrücklich genehmigt ist, lies zuerst die
-[DeepSeek-API-Quellenquittung](../../docs/research/deepseek-api-source-receipt-2026-08-17.md)
+[offizielle DeepSeek-API-Dokumentation](https://api-docs.deepseek.com/)
 und befolge die gesonderte API-Grenze unten. Notiere das tatsächlich verwendete
 Modell und das Datum. Füge API-Schlüssel, privaten Code oder interne Dokumente
 weder in einen Chat noch in eine Anfrage ein.
