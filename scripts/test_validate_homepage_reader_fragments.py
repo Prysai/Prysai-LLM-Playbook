@@ -32,7 +32,7 @@ def main() -> int:
         "a reader-facing Markdown fragment is not rendered by its source",
     )
 
-    with tempfile.TemporaryDirectory(dir=ROOT) as temporary:
+    with tempfile.TemporaryDirectory(dir=ROOT / ".work") as temporary:
         directory = Path(temporary)
         source = directory / "anchors.md"
         source.write_text(
@@ -131,7 +131,7 @@ def main() -> int:
             "duplicate authored Reader IDs were accepted",
         )
 
-    with tempfile.TemporaryDirectory(dir=ROOT) as temporary:
+    with tempfile.TemporaryDirectory(dir=ROOT / ".work") as temporary:
         directory = Path(temporary)
         homepage = homepage_with(
             "reader.html?path=docs%2Fresearch%2Funiversal-first-turn-prompt-contract-2026-08-13.md&lang=en",
