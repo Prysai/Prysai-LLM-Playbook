@@ -225,6 +225,25 @@ Schreibe außerdem auf, was ein Textmodell über **„Die Stadtbibliothek schlie
 heute um 18 Uhr“** vor einer Suche feststellen kann. Die aktuelle Wahrheit braucht
 eine Quelle. Bitte erfinde keine Quelle.
 
+### Drei begrenzte Beobachtungen
+
+Die bisherigen Checks sind kleine Demonstrationen, kein Beleg dafür, dass ein
+Lernender oder ein Modell bei jeder Aufgabe gleich handelt. Übe dieselben
+Grenzen mit den folgenden Protokollen und fiktiven Aufzeichnungen, ohne Konto,
+private Daten, Tools oder Netzwerkanfragen zu verwenden (der vollständige Text
+ist derzeit nur auf Englisch verfügbar):
+
+- [Context change and unknowns (Kontextänderung und Unbekanntes)](../../evals/candidates/core-course-v1/observations/context-change-and-unknowns.md) — Vergleiche zwei Versionen der Eingabe, markiere jede Aussage mit `PASS`, `FAIL` oder `UNSURE` und lasse die Raumnummer unbekannt.
+- [First-request contract and controlled repeat (Vertrag der ersten Anfrage und kontrollierte Wiederholung)](../../evals/candidates/core-course-v1/observations/first-request-contract.md) — Notiere Ziel, Material, Grenzen, Antwortform und Stoppbedingung vor der Antwort; falls eine sichere Textoberfläche vorhanden ist, wiederhole dieselbe Anfrage zweimal und halte Gemeinsames und Unterschiede fest.
+- [Tool boundary, authority, and evidence (Toolgrenze, Autorität und Evidenz)](../../evals/candidates/core-course-v1/observations/tool-boundary-authority-evidence.md) — Trenne vorgeschlagene Handlung, erteilte Autorität, Tool-Ausführung und Evidenz aus dem Read-back.
+
+Jedes Protokoll verlangt das erste Ergebnis vor einem Hinweis und erfasst Hilfe,
+Unbekanntes und die Stoppregel. Der Status ist `candidate / not_run`: Eine spätere
+Durchführung kann nur die genannte Aufgabe, die Bedingungen und die Rubrik
+beschreiben. Sie beweist weder Kurswirksamkeit, Prompt-Überlegenheit,
+Modellqualität, Behalten, allgemeinen Transfer, Plattformgleichheit noch
+Produktionsreife.
+
 ### Ein tragbares Muster für die erste Anfrage
 
 Fülle bei einer risikoarmen echten Aufgabe diese sechs Zeilen aus:
