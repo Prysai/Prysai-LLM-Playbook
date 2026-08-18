@@ -73,21 +73,39 @@ jobs:
             echo "Add a fine-grained Hugging Face write token as the HF_TOKEN repository secret to enable publication." >> "$GITHUB_STEP_SUMMARY"
           fi
 
+      - name: Set up uv for Hugging Face publication
+        if: steps.huggingface-sync.outputs.enabled == 'true'
+        uses: astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86 # v5.4.2
+
       - name: Sync the built site to Hugging Face
         if: steps.huggingface-sync.outputs.enabled == 'true'
-        uses: huggingface/hub-sync@6fbce0a787a7146710e588abe7a4fd5eca07f47c # v0.1.0
-        with:
-          github_repo_id: ${{ github.repository }}
-          huggingface_repo_id: Prysai/Prysai-LLM-Playbook
-          hf_token: ${{ secrets.HF_TOKEN }}
-          repo_type: space
-          space_sdk: static
-          subdirectory: _site
+        shell: bash
+        env:
+          HF_REPO_ID: Prysai/Prysai-LLM-Playbook
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          REPO_TYPE: space
+          SPACE_SDK: static
+          SUBDIRECTORY: _site
+        run: |
+          set -euo pipefail
+          test -n "$HF_TOKEN"
+          test -d "$SUBDIRECTORY"
+          uvx hf repo create "$HF_REPO_ID" --repo-type "$REPO_TYPE" --exist-ok --space-sdk "$SPACE_SDK"
+          uvx hf upload "$HF_REPO_ID" "$SUBDIRECTORY" \
+            --repo-type "$REPO_TYPE" \
+            --exclude='.git*' \
+            --exclude='.github*' \
+            --delete='*' \
+            --commit-message='Sync from GitHub via Pages workflow'
 
       - name: Record deployment boundary
         shell: bash
+        env:
+          DEPLOY_INPUT: ${{ inputs.deploy }}
+          EVENT_NAME: ${{ github.event_name }}
+          REF_NAME: ${{ github.ref }}
         run: |
-          if [ "${{ inputs.deploy }}" = "true" ] || [ "${{ github.event_name }}" = "push" ]; then
+          if [[ ( "$DEPLOY_INPUT" = "true" || "$EVENT_NAME" = "push" ) && "$REF_NAME" = "refs/heads/main" ]]; then
             echo "deployment_status=requested" | tee -a "$GITHUB_STEP_SUMMARY"
           else
             echo "deployment_status=not_deployed" | tee -a "$GITHUB_STEP_SUMMARY"

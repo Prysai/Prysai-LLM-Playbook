@@ -168,6 +168,7 @@ REQUIRED_POLICY_KEYS = {
     "automation",
     "review_requirements",
     "host_ruleset",
+    "host_security_controls",
     "sources",
 }
 REQUIRED_PR_HEADINGS = {
@@ -320,7 +321,7 @@ def validate_policy(policy: dict[str, object]) -> list[str]:
     if policy.get("policy_id") != "repository-security-policy":
         errors.append("policy_id must be repository-security-policy")
     if policy.get("status") != "candidate":
-        errors.append("policy status must remain candidate until host-side enforcement exists")
+        errors.append("policy status must remain candidate until the declared evidence supports promotion")
 
     automation = policy.get("automation")
     if not isinstance(automation, dict):
@@ -345,6 +346,20 @@ def validate_policy(policy: dict[str, object]) -> list[str]:
     host_ruleset = policy.get("host_ruleset")
     if not isinstance(host_ruleset, dict) or host_ruleset.get("status") != "active":
         errors.append("host_ruleset must honestly record the currently active host Ruleset")
+
+    host_controls = policy.get("host_security_controls")
+    if not isinstance(host_controls, dict):
+        errors.append("host_security_controls must record live repository security settings")
+    else:
+        if host_controls.get("secret_scanning") != "enabled":
+            errors.append("host_security_controls.secret_scanning must be enabled")
+        if host_controls.get("secret_scanning_push_protection") != "enabled":
+            errors.append("host_security_controls.secret_scanning_push_protection must be enabled")
+        if host_controls.get("secret_scanning_non_provider_patterns") != "disabled":
+            errors.append("host_security_controls.secret_scanning_non_provider_patterns must record disabled")
+        actions = host_controls.get("actions")
+        if not isinstance(actions, dict) or actions.get("sha_pinning_required") is not True:
+            errors.append("host_security_controls.actions.sha_pinning_required must be true")
 
     sources = policy.get("sources")
     if not isinstance(sources, list) or len(sources) < 3:

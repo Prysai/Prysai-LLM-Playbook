@@ -2,7 +2,9 @@
 
 ## Executive summary
 
-This was a read-only, repository-grounded audit of the Prysai LLM Playbook.
+This was a repository-grounded audit of the Prysai LLM Playbook. The current
+remote `main` baseline is `14a96bd`; the follow-up hardening described below is
+still a local `candidate` until it is separately reviewed and published.
 No high-confidence API key, access token, private key, JWT, credential-bearing
 URL, device identifier, MAC address, or private-network location remains in the
 current tracked candidate file set after the fixes in this audit.
@@ -31,6 +33,8 @@ Checked on 2026-08-18 from the repository working tree:
   source records, and publishing configuration;
 - reachable Git history and the local Git object database's unreachable blobs;
 - the dedicated repository-security validator and its focused negative fixtures.
+- authenticated GitHub repository settings and recent workflow conclusions;
+  secret values were not read.
 
 The scan reports rule IDs and file paths only. It does not print matched values.
 Synthetic security-test inputs are assembled at runtime and are covered by
@@ -81,13 +85,33 @@ preferences. The audit did not find cookies, bearer headers, API keys, or
 account/session secrets in that storage path. Local storage is still browser-
 modifiable state and is not an authority or proof of completion.
 
+### SIA-04 — Large-file scan bypass — fixed in candidate
+
+Severity: Medium prevention gap.
+
+The previous validator silently skipped text files larger than 1,000,000
+bytes. The generated `site/search-index.js` is approximately 5.2 MiB, so that
+rule created a real blind spot for a repository-owned public artifact. The
+candidate validator scans files up to 25 MiB and fails closed above that limit;
+the focused fixture now proves that a credential-shaped value in a formerly
+skipped large text file is detected.
+
+### SIA-05 — Secret-bearing manual publication path — narrowed in candidate
+
+Severity: Medium workflow-hardening issue; no secret value was exposed.
+
+The Pages workflow has repository secrets for optional Hugging Face and Docs
+publication. The candidate workflow requires publication steps to run only
+when `github.ref == 'refs/heads/main'`, disables persisted checkout credentials
+on every checkout, and leaves non-main manual runs as review-artifact builds.
+
 ## Scan results
 
 | Surface | Result | Evidence boundary |
 | --- | --- | --- |
-| Current candidate files | Pass; 1,093 candidate files, 6 workflows | Static patterns and policy checks only |
-| Focused security fixtures | Pass; 27 fixtures | Detector behavior, including synthetic false-positive boundaries |
-| Reachable history | 840 commits scanned; 0 high-confidence credential-signature commit hits | Pattern scan of committed snapshots; not every provider-specific secret format |
+| Current candidate files | Pass; 1,094 candidate files, 6 workflows | Static patterns and policy checks only; the largest text artifact is approximately 5.2 MiB |
+| Focused security fixtures | Pass; 30 fixtures | Detector behavior, including synthetic false-positive boundaries and large-file coverage |
+| Reachable history | 843 commits reachable; 0 high-confidence credential-signature hits | Pattern scan of committed objects; not every provider-specific secret format |
 | Unreachable Git objects | 142 blobs across 15 unreachable commits; 0 high-confidence credential/private-key hits after regex tightening | Local object database only; object reachability/retention can change |
 | Git stash/reflog | No stash entries; reflog showed normal repository refs | Does not inspect remote provider backups or account logs |
 | Workflow permissions and action refs | Pass; all checkout steps disable persisted credentials and all third-party refs use full SHAs | Does not prove every hosted runner or future workflow remains safe |
@@ -118,7 +142,8 @@ modifiable state and is not an authority or proof of completion.
 2. Run a provider-aware secret scanner in an authorized CI or repository-host
    context if one is adopted; keep its logs redacted.
 3. Before a release, separately verify live HTTP headers, Pages/Docs deployment
-   state, GitHub Environment secret scope, and the host Ruleset status.
+   state, GitHub Environment secret scope, the active Ruleset bypass list, and
+   host-side Secret Scanning settings.
 4. If a real credential is ever found, stop public publication, rotate/revoke
    it at the provider, identify all reachable and hosted copies, and only then
    consider an explicitly authorized history-remediation plan.
@@ -130,3 +155,4 @@ modifiable state and is not an authority or proof of completion.
 - [`scripts/validate_repository_security.py`](../../scripts/validate_repository_security.py)
 - [`scripts/test_validate_repository_security.py`](../../scripts/test_validate_repository_security.py)
 - [`docs/adr/0043-expand-repository-sensitive-information-tripwires.md`](../adr/0043-expand-repository-sensitive-information-tripwires.md)
+- [`docs/adr/0044-live-host-security-controls-and-publishing-boundaries.md`](../adr/0044-live-host-security-controls-and-publishing-boundaries.md)

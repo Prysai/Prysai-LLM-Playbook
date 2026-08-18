@@ -11,6 +11,13 @@ avoidable contribution and automation risk; they do not certify the project,
 GitHub account, hosting configuration, dependencies, or a future deployment as
 secure.
 
+As observed on 2026-08-18, GitHub Secret Scanning and push protection are
+enabled for this public repository, Actions SHA pinning is required, and an
+active repository Ruleset exists. GitHub non-provider pattern scanning remains
+disabled, so the repository-local detector is still required. The active
+Ruleset includes an always-bypass repository-role actor; these controls do not
+turn a passing workflow into a security certification.
+
 ## Report a vulnerability privately
 
 Do **not** open a public issue for a suspected secret, workflow compromise,
