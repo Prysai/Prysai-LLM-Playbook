@@ -111,8 +111,8 @@ Claude Code 會讀取 `CLAUDE.md` 檔案；把裡面寫的內容都視為模型�
 結果；本頁的 API 憑據不能作為它們的證據。
 
 如果要做不需要金鑰、也不涉及私密資料的首個任務，請只在你獲准使用的介面
-中執行上面的通用安全任務。如果明確獲准進行 API 實驗，請先閱讀
-[DeepSeek API 來源憑據](../../docs/research/deepseek-api-source-receipt-2026-08-17.md)，
+中執行上面的通用安全任務。如果明確獲准進行 API 實驗，請先查看
+[DeepSeek 官方 API 文件](https://api-docs.deepseek.com/)，
 再遵守下面單獨列出的 API 邊界。記錄實際使用的模型名稱和日期；不要把 API
 金鑰、私有程式碼或內部文件貼到聊天或請求中。
 
