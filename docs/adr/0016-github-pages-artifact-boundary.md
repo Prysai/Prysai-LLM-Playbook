@@ -39,12 +39,15 @@ repository root as an output target and checks that `.git/`, `.work/`, `tmp/`,
 and other machine-local directories do not enter the artifact.
 
 Hosted wrappers add one more boundary: Hugging Face Static Spaces serve the
-artifact inside an iframe, while the same files remain reachable at `/site/`
-for development. The homepage therefore writes its four section links as
-`index.html#...`, making the document target explicit in both entry modes. The
-header and footer wordmarks use `target="_top"` for the canonical Docs URL so
-the logo returns the top-level browser window instead of opening a second tab
-inside an opaque wrapper.
+artifact inside a sandboxed iframe, while the same files remain reachable at
+`/site/` for development. The homepage therefore writes its four section links
+as `index.html#...`, making the document target explicit in both entry modes.
+The header and footer wordmarks use `target="_top"` for the canonical Docs URL
+on ordinary pages. When the runtime detects an embedding frame, it changes
+only those brand links to a user-triggered `_blank` navigation with
+`rel="noopener"`: the HF sandbox does not grant `allow-top-navigation`, so a
+literal `_top` link can otherwise appear correct in source while doing nothing
+on click. The in-page menu remains inside the Space.
 
 ## Alternatives considered
 
