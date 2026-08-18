@@ -69,6 +69,42 @@ Python을 사용할 수 없다면 이 경로만을 위해 런타임을 설치하
 복사본조차 만들 수 없다면 멈추고 텍스트 전용 First Win을 사용하세요. GitHub 웹
 보기를 로컬 샌드박스인 것처럼 취급하지 마세요.
 
+## Web coding 연결: 실제 브라우저에서 보이는 변경 하나 확인하기
+
+다음 목표가 Web coding이라도 “완성된 웹사이트를 만들어 줘”로 시작하지 마세요.
+프로젝트의 [Product Context sandbox](../../examples/skill-sandbox/product-context-real-estate/README-KO.md)를
+버릴 수 있는 정적 페이지로 사용합니다. 가상의 문구만 있으며 실제 매물, 폼, 분석,
+API, 외부 이미지는 없습니다.
+
+1. `examples/skill-sandbox/product-context-real-estate` 폴더 전체를 임시 위치에 복사하고
+   README와 `index.html`을 읽습니다.
+2. **`index.html`만** 수정합니다. 같은 가상 독자를 위한 보이는 문장 하나를 바꿉니다.
+   CSS, 프레임워크, 이미지, 폼을 추가하지 않습니다.
+3. Python 3가 이미 실행되는 경우에만 복사한 폴더에서 문서에 적힌 로컬 서버를 실행합니다.
+
+```powershell
+python -m http.server 4182
+```
+
+브라우저에서 `http://127.0.0.1:4182/`를 엽니다. 제목, 바뀐 문장, 유지된 헤딩,
+링크 대상, 콘솔, 390px 너비 뷰포트를 확인합니다. 명령, 대상 파일, 브라우저 결과가
+분명하지 않으면 중지하고, 이 연습을 위해 런타임을 설치하지 않습니다.
+
+짧은 영수증을 남깁니다.
+
+```text
+sandbox: <복사한 디렉터리>
+allowed_change: index.html only
+url: http://127.0.0.1:4182/
+browser_check: 새 문장 한 번; 헤딩과 링크 유지; 콘솔 관찰
+diff: <검토한 diff>
+unverified: 배포, 접근성 검토, 다른 브라우저, 사용자 수용
+```
+
+이는 한 뷰포트에서 한 번 렌더링된 로컬 상태만 증명합니다. production build, 모든
+반응형 상태, 접근성, 보안, 성능, 제품 가치는 증명하지 않습니다. 전체 엔지니어링
+수명주기는 [16장](../chapters/16-engineering-track-KO.md)으로 이어가세요.
+
 ## 증거
 
 다음의 짧은 영수증만 보관합니다.
