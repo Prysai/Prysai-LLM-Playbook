@@ -34,10 +34,12 @@ deprecation.
    Reader source-fetch targets.
 3. Replace user-influenced dynamic method lookup for localized Lab labels with
    an explicit language switch and a safe default.
-4. Run pinned CodeQL v4 analysis for JavaScript and Python on `main`, on a
-   weekly schedule, and through manual dispatch. The workflow has no secrets,
-   disables persisted checkout credentials, and grants only the permissions
-   needed to upload security results.
+4. Run pinned CodeQL v4 analysis for JavaScript and Python on pull requests,
+   `main`, a weekly schedule, and manual dispatch. The workflow has no secrets,
+   disables persisted checkout credentials, and uses exactly `actions: read`,
+   `contents: read`, `packages: read`, and `security-events: write`; the last
+   permission is the sole controlled pull-request write exception because CodeQL
+   must upload its own analysis results.
 5. Keep the regression fixtures for the source allow-list and explicit label
    mapping so a later refactor cannot silently restore either CodeQL finding.
 
