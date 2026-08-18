@@ -411,7 +411,7 @@
 - [編碼 Agent 現場案例](../evidence-library-ZHTW.md#source-notes)
 - [真實問題索引](../evidence-library-ZHTW.md#source-notes)
 
-**狀態：** `candidate`——章節結構和來源記錄已存在；配套實驗與獨立讀者執行仍為 `draft` / `not_run`。本簡體中文譯文可閱讀，但仍是 `in-progress`，等待獨立語言審校；它不是已驗證譯文，也不表示課程已經透過學習者驗證。
+**狀態：** `candidate`——章節結構和來源記錄已存在；配套實驗與獨立讀者執行仍為 `draft` / `not_run`。本繁體中文譯文可閱讀，但仍是 `in-progress`，等待獨立語言審校；它不是已驗證譯文，也不表示課程已經透過學習者驗證。
 
 <!-- chapter-navigation:start -->
 <hr>

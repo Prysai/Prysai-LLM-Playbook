@@ -20,7 +20,7 @@
 
 導航：
 
-- [返回中文專案入口](../README-ZHTW.md)
+- [返回繁體中文專案入口](../README-ZHTW.md)
 - [繁體中文序言](preface-ZHTW.md)
 - [繁體中文書籍目錄](table-of-contents-ZHTW.md)
 - [繁體中文通用 LLM 首練習：安全文字任務](routes/universal-core-foundations-ZHTW.md)

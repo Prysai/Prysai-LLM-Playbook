@@ -285,7 +285,7 @@ comparable | not_comparable_reason | raw_evidence
 - [ ] 我只能報告任務範圍內的觀察，並能解釋為什麼一次演示不能證明總體排名或價效比。
 - [ ] 我能說明本章仍為 `candidate`，實驗與模型評測仍為 `not_run`。
 
-本簡體中文譯文是可讀的 `in-progress` 翻譯單元，獨立語言審校尚未完成；它不是已驗證譯文，也不表示課程已經透過學習者驗證。
+本繁體中文譯文是可讀的 `in-progress` 翻譯單元，獨立語言審校尚未完成；它不是已驗證譯文，也不表示課程已經透過學習者驗證。
 
 <!-- chapter-navigation:start -->
 <hr>

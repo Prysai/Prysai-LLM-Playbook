@@ -105,7 +105,10 @@ def validate_copy_initialization_order(app: str, errors: list[str]) -> None:
 
     for language in sorted(LOCALE_TOKENS - {"en", "zh"}):
         primary = (
-            re.search(r"\ncopy\[['\"]zh-tw['\"]\]\s*=\s*Object\.assign\(\{\},\s*copy\.zh\)", app)
+            re.search(
+                r"\ncopy\[['\"]zh-tw['\"]\]\s*=\s*(?:Object\.assign\(\{\},\s*copy\.zh\)|typeof\s+window\.PRYSAI_TRADITIONALIZE\s*===\s*['\"]function['\"]\s*\n?\s*\?\s*window\.PRYSAI_TRADITIONALIZE\(copy\.zh\)\s*\n?\s*:\s*Object\.assign\(\{\},\s*copy\.zh\))",
+                app,
+            )
             if language == "zh-tw"
             else re.search(rf"\ncopy\.{language}\s*=\s*\{{", app)
         )

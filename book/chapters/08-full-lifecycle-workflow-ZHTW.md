@@ -225,7 +225,7 @@ fallback: stop and hand off if output remains absent or scope changes
 
 ~~~text
 claim: 第 8 章可從英文目錄到達
-evidence: table-of-contents-ZHTW.md link; local link checker exit 0
+evidence: table-of-contents-EN.md link; local link checker exit 0
 scope: recorded commit 的倉庫工作樹
 not_proven: GitHub 渲染、譯文連結、讀者理解
 
@@ -488,7 +488,7 @@ next: human review of the evidence paths before any local commit
 - [ ] 我能說明本章仍為 `candidate`，比較實驗仍為 `not_run`，
       直到存在執行記錄和審查證據。
 
-本簡體中文譯文是可讀的 `in-progress` 翻譯切片，獨立語言審校尚未完成；
+本繁體中文譯文是可讀的 `in-progress` 翻譯切片，獨立語言審校尚未完成；
 它不是已驗證譯文，也不表示課程已經透過獨立中文審校或學習者驗證。
 
 <!-- chapter-navigation:start -->

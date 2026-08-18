@@ -110,6 +110,7 @@ VERSIONED_SITE_ASSETS = (
     "locale-manifest.js",
     "learning-path-data.js",
     "goal-templates.js",
+    "traditional-chinese.js",
     "app.js",
     "reader.css",
     "reader.js",
@@ -191,6 +192,8 @@ def validate_source() -> None:
         ROOT / "site/app.js",
         ROOT / "site/locale-manifest.js",
         ROOT / "site/learning-path-data.js",
+        ROOT / "site/goal-templates.js",
+        ROOT / "site/traditional-chinese.js",
         ROOT / "site/search-index.js",
         ROOT / "site/reader.html",
         ROOT / "site/reader.css",
@@ -384,9 +387,9 @@ def validate_artifact(output: Path, versions: dict[str, str] | None = None) -> N
         }
         for name, version in versions.items():
             expected = f"{name}?v={version}"
-            if name in {"styles.css", "locale-manifest.js", "learning-path-data.js", "goal-templates.js", "app.js"} and expected not in public_texts["index"]:
+            if name in {"styles.css", "locale-manifest.js", "learning-path-data.js", "goal-templates.js", "traditional-chinese.js", "app.js"} and expected not in public_texts["index"]:
                 raise ValueError(f"Pages artifact index is missing content version for {name}")
-            if name in {"reader.css", "locale-manifest.js", "reader.js"} and expected not in public_texts["reader"]:
+            if name in {"reader.css", "locale-manifest.js", "traditional-chinese.js", "reader.js"} and expected not in public_texts["reader"]:
                 raise ValueError(f"Pages artifact Reader is missing content version for {name}")
             if name == "search-index.js" and expected not in public_texts["app"]:
                 raise ValueError("Pages artifact search loader is missing a content version")

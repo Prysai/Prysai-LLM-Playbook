@@ -344,7 +344,7 @@ decision | diff_path | check_output | reviewer
 驗證模型矩陣，也沒有復現每條公開報告。未來驗證需要儲存 run-id、環境、精確輸入、工具清單、
 diff、檢查輸出與審查者，才能改變這些宣告。
 
-本簡體中文譯文為可讀的 `in-progress` 翻譯切片，獨立語言審校尚未完成；它不是已驗證譯文，
+本繁體中文譯文為可讀的 `in-progress` 翻譯切片，獨立語言審校尚未完成；它不是已驗證譯文，
 也不表示課程已經透過獨立中文審校或學習者驗證。
 
 <!-- chapter-navigation:start -->

@@ -154,7 +154,7 @@
         "chapter-21",
         "chapter-22"
       ],
-      "title_zh-tw": "從熟练使用到组织化"
+      "title_zh-tw": "從熟練使用到組織化"
     }
   ],
   "chapters": [
@@ -199,8 +199,8 @@
       "english_path": "book/chapters/02-first-safe-task-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "完成第一个安全、可驗證的任務",
-      "canonical_title_zh-tw": "完成第一个安全、可驗證的任務"
+      "title_zh-tw": "完成第一個安全、可驗證的任務",
+      "canonical_title_zh-tw": "完成第一個安全、可驗證的任務"
     },
     {
       "id": "chapter-03",
@@ -221,8 +221,8 @@
       "english_path": "book/chapters/03-task-protocol-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "把愿望变成任務協議",
-      "canonical_title_zh-tw": "把愿望变成任務協議"
+      "title_zh-tw": "把願望變成任務協議",
+      "canonical_title_zh-tw": "把願望變成任務協議"
     },
     {
       "id": "chapter-04",
@@ -243,8 +243,8 @@
       "english_path": "book/chapters/04-context-permissions-and-agent-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "上下文、權限与 Agent 的行動邊界",
-      "canonical_title_zh-tw": "上下文、權限与 Agent 的行動边界"
+      "title_zh-tw": "上下文、權限與 Agent 的行動邊界",
+      "canonical_title_zh-tw": "上下文、權限與 Agent 的行動邊界"
     },
     {
       "id": "chapter-05",
@@ -266,7 +266,7 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "選擇正確的 Codex 工作面",
-      "canonical_title_zh-tw": "選擇正确的 Codex 工作面"
+      "canonical_title_zh-tw": "選擇正確的 Codex 工作面"
     },
     {
       "id": "chapter-06",
@@ -331,8 +331,8 @@
       "english_path": "book/chapters/08-full-lifecycle-workflow-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "从定义到交付的完整生命周期",
-      "canonical_title_zh-tw": "从定义到交付的完整生命周期"
+      "title_zh-tw": "從定義到交付的完整生命週期",
+      "canonical_title_zh-tw": "從定義到交付的完整生命週期"
     },
     {
       "id": "chapter-09",
@@ -353,8 +353,8 @@
       "english_path": "book/chapters/09-verification-and-recovery-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "驗證、怀疑与恢復",
-      "canonical_title_zh-tw": "驗證、怀疑与恢復"
+      "title_zh-tw": "驗證、懷疑與恢復",
+      "canonical_title_zh-tw": "驗證、懷疑與恢復"
     },
     {
       "id": "chapter-10",
@@ -375,8 +375,8 @@
       "english_path": "book/chapters/10-planning-and-slicing-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "規劃与竖向切片",
-      "canonical_title_zh-tw": "把大目标拆成可交付切片"
+      "title_zh-tw": "規劃與豎向切片",
+      "canonical_title_zh-tw": "把大目標拆成可交付切片"
     },
     {
       "id": "chapter-11",
@@ -397,8 +397,8 @@
       "english_path": "book/chapters/11-designing-a-skill-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "設計一个真正有用的 Skill",
-      "canonical_title_zh-tw": "設計一个真正有用的 Skill"
+      "title_zh-tw": "設計一個真正有用的 Skill",
+      "canonical_title_zh-tw": "設計一個真正有用的 Skill"
     },
     {
       "id": "chapter-12",
@@ -419,8 +419,8 @@
       "english_path": "book/chapters/12-agent-loop-and-stop-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "Agent 的循環、状态和停止條件",
-      "canonical_title_zh-tw": "Agent 的循環、状态和停止條件"
+      "title_zh-tw": "Agent 的循環、狀態和停止條件",
+      "canonical_title_zh-tw": "Agent 的循環、狀態和停止條件"
     },
     {
       "id": "chapter-13",
@@ -441,8 +441,8 @@
       "english_path": "book/chapters/13-action-boundaries-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "文件、终端、浏览器与 GitHub 的行動邊界",
-      "canonical_title_zh-tw": "文件、终端、浏览器与 GitHub 的行動边界"
+      "title_zh-tw": "檔案、終端、瀏覽器與 GitHub 的行動邊界",
+      "canonical_title_zh-tw": "檔案、終端、瀏覽器與 GitHub 的行動邊界"
     },
     {
       "id": "chapter-14",
@@ -463,8 +463,8 @@
       "english_path": "book/chapters/14-discover-and-audit-skills-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "如何發現、安装和审查外部 Skill",
-      "canonical_title_zh-tw": "如何發現、安装和审查外部 Skill"
+      "title_zh-tw": "如何發現、安裝和審查外部 Skill",
+      "canonical_title_zh-tw": "如何發現、安裝和審查外部 Skill"
     },
     {
       "id": "chapter-15",
@@ -485,8 +485,8 @@
       "english_path": "book/chapters/15-research-track-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "研究轨：从问题到可审查知识",
-      "canonical_title_zh-tw": "研究轨——从问题到可审查知识"
+      "title_zh-tw": "研究軌：從問題到可審查知識",
+      "canonical_title_zh-tw": "研究軌——從問題到可審查知識"
     },
     {
       "id": "chapter-16",
@@ -507,8 +507,8 @@
       "english_path": "book/chapters/16-engineering-track-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "工程轨：从想法到可靠软件",
-      "canonical_title_zh-tw": "工程轨——从想法到可靠软件"
+      "title_zh-tw": "工程軌：從想法到可靠軟體",
+      "canonical_title_zh-tw": "工程軌——從想法到可靠軟體"
     },
     {
       "id": "chapter-17",
@@ -529,8 +529,8 @@
       "english_path": "book/chapters/17-marketing-track-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "行銷轨：从产品理解到增长实验",
-      "canonical_title_zh-tw": "行銷轨——从产品理解到增长实验"
+      "title_zh-tw": "行銷軌：從產品理解到增長實驗",
+      "canonical_title_zh-tw": "行銷軌——從產品理解到增長實驗"
     },
     {
       "id": "chapter-18",
@@ -551,8 +551,8 @@
       "english_path": "book/chapters/18-content-design-data-automation-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "内容、設計、数据与自动化轨",
-      "canonical_title_zh-tw": "內容、設計、資料与自动化轨"
+      "title_zh-tw": "內容、設計、資料與自動化軌",
+      "canonical_title_zh-tw": "內容、設計、資料與自動化軌"
     },
     {
       "id": "chapter-19",
@@ -573,8 +573,8 @@
       "english_path": "book/chapters/19-evaluate-models-and-workflows-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "評估模型和工作流",
-      "canonical_title_zh-tw": "评估模型和工作流——从感觉到证据"
+      "title_zh-tw": "評估模型和工作流程",
+      "canonical_title_zh-tw": "評估模型和工作流程——從感覺到證據"
     },
     {
       "id": "chapter-20",
@@ -595,8 +595,8 @@
       "english_path": "book/chapters/20-personal-codex-work-system-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "建立个人 Codex 工作系統",
-      "canonical_title_zh-tw": "建立个人 Codex 工作系统"
+      "title_zh-tw": "建立個人 Codex 工作系統",
+      "canonical_title_zh-tw": "建立個人 Codex 工作系統"
     },
     {
       "id": "chapter-21",
@@ -618,7 +618,7 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "建立團隊能力系統",
-      "canonical_title_zh-tw": "建立團隊能力系统"
+      "canonical_title_zh-tw": "建立團隊能力系統"
     },
     {
       "id": "chapter-22",
@@ -639,8 +639,8 @@
       "english_path": "book/chapters/22-continuous-update-and-future-proofing-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "持续更新与未来适应",
-      "canonical_title_zh-tw": "持續更新与未來适应"
+      "title_zh-tw": "持續更新與未來適應",
+      "canonical_title_zh-tw": "持續更新與未來適應"
     }
   ]
 }

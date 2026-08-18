@@ -275,11 +275,26 @@ try {
     'Chinese task goal deep link does not stay on the Chinese route',
   );
   await noHorizontalOverflow(page, 'Chinese goal wizard');
+  // Traditional Chinese must use its own goal records, not the English
+  // fallback. The first generated prompt and its Reader route are both
+  // observable requirements of the seventh locale.
+  await page.goto(`${origin}/site/?lang=zh-tw`, { waitUntil: 'networkidle' });
+  const traditionalGoalWizard = page.locator('[data-goal-wizard]');
+  await traditionalGoalWizard.locator('[data-goal-key="task"]').click();
+  await traditionalGoalWizard.locator('[data-field-key="goal"]').fill('修復說明頁上的一個失效連結');
+  await traditionalGoalWizard.locator('[data-field-key="context"]').fill('檔案是 docs/help.md，我可以在本機修改。');
+  await traditionalGoalWizard.locator('[data-wizard-next]').click();
+  assert.match(await traditionalGoalWizard.locator('[data-goal-prompt]').innerText(), /允許行動[\s\S]*停止條件/, 'Traditional Chinese task goal does not render its local prompt');
+  assert.match(
+    await traditionalGoalWizard.locator('[data-goal-path]').getAttribute('href'),
+    /reader\.html\?path=book%2Fchapters%2F03-task-protocol-ZHTW\.md&lang=zh-tw#core-task-contract$/,
+    'Traditional Chinese task goal deep link does not stay on the ZHTW route',
+  );
   // Every localized language-practice prompt must land on an actual anchor in
   // its own Reader document. A same-locale filename with a stale English
   // fragment silently sends readers to the article top, which defeats the
   // concrete next step promised by the goal wizard.
-  for (const locale of ['zh', 'es', 'ja', 'ko', 'de']) {
+  for (const locale of ['zh', 'es', 'ja', 'ko', 'de', 'zh-tw']) {
     await page.goto(`${origin}/site/?lang=${locale}`, { waitUntil: 'networkidle' });
     const localizedWizard = page.locator('[data-goal-wizard]');
     await localizedWizard.locator('[data-goal-key="language"]').click();
@@ -289,9 +304,10 @@ try {
     }
     await localizedWizard.locator('[data-wizard-next]').click();
     const localizedPromptHref = await localizedWizard.locator('[data-goal-path]').getAttribute('href');
+    const suffix = locale === 'zh-tw' ? 'ZHTW' : locale.toUpperCase();
     assert.match(
       localizedPromptHref,
-      new RegExp(`book%2Fcommunication-clinic-${locale.toUpperCase()}\\.md&lang=${locale}#language-practice-route$`),
+      new RegExp(`book%2Fcommunication-clinic-${suffix}\\.md&lang=${locale}#language-practice-route$`),
       `${locale} language goal does not stay on its local route`,
     );
     await page.goto(new URL(localizedPromptHref, `${origin}/site/`).href, { waitUntil: 'networkidle' });

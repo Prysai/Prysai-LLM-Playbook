@@ -3,9 +3,7 @@
 
 # Prysai LLM Playbook：實驗目錄
 
-<!-- language-switcher:start -->
-**語言：** [English](README-EN.md) | [簡體中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md)
-<!-- language-switcher:end -->
+<!-- language-switcher:start --> **語言：** [English](README-EN.md) | [簡體中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md) <!-- language-switcher:end -->
 
 實驗是你親自檢查“一種向 LLM 求助的方式，是否能讓實際工作更清楚”的地方。它不是另一套
 文書流程，也不要求使用 Codex Cloud 或程式設計。每個實驗從一個看得見的問題開始：回答是否保留事實、
@@ -86,6 +84,6 @@
 
 ## 返回中文路徑
 
-- [繁體中文書籍入口](../README-ZHTW.md)
+- [中文書籍入口](../README-ZHTW.md)
 - [中文書籍目錄](../table-of-contents-ZHTW.md)
 - [新手提示卡](../communication-clinic-ZHTW.md)

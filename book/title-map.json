@@ -42,7 +42,7 @@
         "ja": "最初の安全で検証可能なタスクを完了する",
         "ko": "2장: 첫 번째 안전하고 검증 가능한 작업 완료하기",
         "de": "Die erste sichere und überprüfbare Aufgabe erledigen",
-        "zh-tw": "完成第一个安全、可驗證的任務"
+        "zh-tw": "完成第一個安全、可驗證的任務"
       },
       "display": {
         "en": "Complete a first safe, verifiable task",
@@ -51,7 +51,7 @@
         "ja": "最初の安全で検証可能なタスクを完了する",
         "ko": "2장: 첫 번째 안전하고 검증 가능한 작업 완료하기",
         "de": "Die erste sichere und überprüfbare Aufgabe erledigen",
-        "zh-tw": "完成第一个安全、可驗證的任務"
+        "zh-tw": "完成第一個安全、可驗證的任務"
       }
     },
     {
@@ -65,7 +65,7 @@
         "ja": "願いをタスク・プロトコルに変える",
         "ko": "3장: 바람을 작업 프로토콜로 바꾸기",
         "de": "Einen Wunsch in ein Aufgabenprotokoll verwandeln",
-        "zh-tw": "把愿望变成任務協議"
+        "zh-tw": "把願望變成任務協議"
       },
       "display": {
         "en": "Turn a wish into a task protocol",
@@ -74,7 +74,7 @@
         "ja": "願いをタスク・プロトコルに変える",
         "ko": "3장: 바람을 작업 프로토콜로 바꾸기",
         "de": "Einen Wunsch in ein Aufgabenprotokoll verwandeln",
-        "zh-tw": "把愿望变成任務協議"
+        "zh-tw": "把願望變成任務協議"
       }
     },
     {
@@ -88,7 +88,7 @@
         "ja": "コンテキスト、権限、Agent の行動境界",
         "ko": "4장: 컨텍스트, 권한, Agent의 행동 경계",
         "de": "Kontext, Berechtigungen und die Handlungsgrenze des Agents",
-        "zh-tw": "上下文、權限与 Agent 的行動边界"
+        "zh-tw": "上下文、權限與 Agent 的行動邊界"
       },
       "display": {
         "en": "Context, permissions, and the Agent action boundary",
@@ -97,7 +97,7 @@
         "ja": "コンテキスト、権限、Agent の行動境界",
         "ko": "4장: 컨텍스트, 권한, Agent의 행동 경계",
         "de": "Kontext, Berechtigungen und die Handlungsgrenze des Agents",
-        "zh-tw": "上下文、權限与 Agent 的行動邊界"
+        "zh-tw": "上下文、權限與 Agent 的行動邊界"
       }
     },
     {
@@ -111,7 +111,7 @@
         "ja": "適切な Codex の作業面を選ぶ",
         "ko": "5장: 알맞은 Codex 작업면 선택하기",
         "de": "Die richtige Codex-Arbeitsfläche wählen",
-        "zh-tw": "選擇正确的 Codex 工作面"
+        "zh-tw": "選擇正確的 Codex 工作面"
       },
       "display": {
         "en": "Choose the right Codex surface",
@@ -180,7 +180,7 @@
         "ja": "定義から引き渡しまで",
         "ko": "8장: 정의에서 전달까지",
         "de": "Von der Definition zur Übergabe",
-        "zh-tw": "从定义到交付的完整生命周期"
+        "zh-tw": "從定義到交付的完整生命週期"
       },
       "display": {
         "en": "The complete lifecycle from definition to delivery",
@@ -189,7 +189,7 @@
         "ja": "定義から引き渡しまで",
         "ko": "8장: 정의에서 전달까지",
         "de": "Von der Definition zur Übergabe",
-        "zh-tw": "从定义到交付的完整生命周期"
+        "zh-tw": "從定義到交付的完整生命週期"
       }
     },
     {
@@ -203,7 +203,7 @@
         "ja": "検証、疑い、復旧",
         "ko": "9장: 검증, 의심, 복구",
         "de": "Überprüfung, Zweifel und Wiederherstellung",
-        "zh-tw": "驗證、怀疑与恢復"
+        "zh-tw": "驗證、懷疑與恢復"
       },
       "display": {
         "en": "Verification, doubt, and recovery",
@@ -212,7 +212,7 @@
         "ja": "検証、疑い、復旧",
         "ko": "9장: 검증, 의심, 복구",
         "de": "Überprüfung, Zweifel und Wiederherstellung",
-        "zh-tw": "驗證、怀疑与恢復"
+        "zh-tw": "驗證、懷疑與恢復"
       }
     },
     {
@@ -226,7 +226,7 @@
         "ja": "計画と垂直スライス",
         "ko": "10장: 계획과 수직 슬라이스",
         "de": "Planung und vertikale Schnitte",
-        "zh-tw": "把大目标拆成可交付切片"
+        "zh-tw": "把大目標拆成可交付切片"
       },
       "display": {
         "en": "Planning and vertical slicing",
@@ -235,7 +235,7 @@
         "ja": "計画と垂直スライス",
         "ko": "10장: 계획과 수직 슬라이스",
         "de": "Planung und vertikale Schnitte",
-        "zh-tw": "規劃与竖向切片"
+        "zh-tw": "規劃與豎向切片"
       }
     },
     {
@@ -249,7 +249,7 @@
         "ja": "役に立つ Skill を設計する",
         "ko": "11장: 쓸모 있는 Skill 설계하기",
         "de": "Einen Skill entwerfen, der seinen Platz verdient",
-        "zh-tw": "設計一个真正有用的 Skill"
+        "zh-tw": "設計一個真正有用的 Skill"
       },
       "display": {
         "en": "Design a genuinely useful Skill",
@@ -258,7 +258,7 @@
         "ja": "役に立つ Skill を設計する",
         "ko": "11장: 쓸모 있는 Skill 설계하기",
         "de": "Einen Skill entwerfen, der seinen Platz verdient",
-        "zh-tw": "設計一个真正有用的 Skill"
+        "zh-tw": "設計一個真正有用的 Skill"
       }
     },
     {
@@ -272,7 +272,7 @@
         "ja": "Agent のループ、状態、停止条件",
         "ko": "12장: Agent 루프, 상태, 중지 조건",
         "de": "Agent-Schleife, Zustand und Stoppbedingungen",
-        "zh-tw": "Agent 的循環、状态和停止條件"
+        "zh-tw": "Agent 的循環、狀態和停止條件"
       },
       "display": {
         "en": "The Agent loop, state, and stopping conditions",
@@ -281,7 +281,7 @@
         "ja": "Agent のループ、状態、停止条件",
         "ko": "12장: Agent 루프, 상태, 중지 조건",
         "de": "Agent-Schleife, Zustand und Stoppbedingungen",
-        "zh-tw": "Agent 的循環、状态和停止條件"
+        "zh-tw": "Agent 的循環、狀態和停止條件"
       }
     },
     {
@@ -295,7 +295,7 @@
         "ja": "ファイル、ターミナル、ブラウザ、GitHub にまたがる行動境界",
         "ko": "파일, 터미널, 브라우저, GitHub의 행동 경계",
         "de": "Aktionsgrenzen für Dateien, Terminal, Browser und GitHub",
-        "zh-tw": "文件、终端、浏览器与 GitHub 的行動边界"
+        "zh-tw": "檔案、終端、瀏覽器與 GitHub 的行動邊界"
       },
       "display": {
         "en": "Action boundaries for files, terminals, browsers, and GitHub",
@@ -304,7 +304,7 @@
         "ja": "ファイル、ターミナル、ブラウザ、GitHub にまたがる行動境界",
         "ko": "파일, 터미널, 브라우저, GitHub의 행동 경계",
         "de": "Aktionsgrenzen für Dateien, Terminal, Browser und GitHub",
-        "zh-tw": "文件、终端、浏览器与 GitHub 的行動邊界"
+        "zh-tw": "檔案、終端、瀏覽器與 GitHub 的行動邊界"
       }
     },
     {
@@ -318,7 +318,7 @@
         "ja": "外部 Skill を見つけ、導入前に監査する",
         "ko": "14장: 외부 Skill 찾기, 설치하기, 감사하기",
         "de": "Externe Skills finden, installieren und prüfen",
-        "zh-tw": "如何發現、安装和审查外部 Skill"
+        "zh-tw": "如何發現、安裝和審查外部 Skill"
       },
       "display": {
         "en": "Discover, install, and audit external Skills",
@@ -327,7 +327,7 @@
         "ja": "外部 Skill を見つけ、導入前に監査する",
         "ko": "14장: 외부 Skill 찾기, 설치하기, 감사하기",
         "de": "Externe Skills finden, installieren und prüfen",
-        "zh-tw": "如何發現、安装和审查外部 Skill"
+        "zh-tw": "如何發現、安裝和審查外部 Skill"
       }
     },
     {
@@ -341,7 +341,7 @@
         "ja": "調査トラック、問いから監査可能な知識へ",
         "ko": "15장: 연구 트랙, 질문에서 감사 가능한 지식까지",
         "de": "Forschungspfad, von der Frage zu prüfbarem Wissen",
-        "zh-tw": "研究轨——从问题到可审查知识"
+        "zh-tw": "研究軌——從問題到可審查知識"
       },
       "display": {
         "en": "Research track: from question to auditable knowledge",
@@ -350,7 +350,7 @@
         "ja": "調査トラック、問いから監査可能な知識へ",
         "ko": "15장: 연구 트랙, 질문에서 감사 가능한 지식까지",
         "de": "Forschungspfad, von der Frage zu prüfbarem Wissen",
-        "zh-tw": "研究轨：从问题到可审查知识"
+        "zh-tw": "研究軌：從問題到可審查知識"
       }
     },
     {
@@ -364,7 +364,7 @@
         "ja": "エンジニアリング・トラック、着想から信頼できるソフトウェアへ",
         "ko": "16장: 엔지니어링 트랙, 아이디어에서 신뢰할 수 있는 소프트웨어까지",
         "de": "Engineering-Pfad, von der Idee zu zuverlässiger Software",
-        "zh-tw": "工程轨——从想法到可靠软件"
+        "zh-tw": "工程軌——從想法到可靠軟體"
       },
       "display": {
         "en": "Engineering track: from idea to reliable software",
@@ -373,7 +373,7 @@
         "ja": "エンジニアリング・トラック、着想から信頼できるソフトウェアへ",
         "ko": "16장: 엔지니어링 트랙, 아이디어에서 신뢰할 수 있는 소프트웨어까지",
         "de": "Engineering-Pfad, von der Idee zu zuverlässiger Software",
-        "zh-tw": "工程轨：从想法到可靠软件"
+        "zh-tw": "工程軌：從想法到可靠軟體"
       }
     },
     {
@@ -387,7 +387,7 @@
         "ja": "マーケティング・トラック、製品理解から成長実験へ",
         "ko": "17장: 마케팅 트랙, 제품 이해에서 성장 실험까지",
         "de": "Marketing-Pfad, vom Produktverständnis zu Wachstumsexperimenten",
-        "zh-tw": "行銷轨——从产品理解到增长实验"
+        "zh-tw": "行銷軌——從產品理解到增長實驗"
       },
       "display": {
         "en": "Marketing track: from product understanding to growth experiments",
@@ -396,7 +396,7 @@
         "ja": "マーケティング・トラック、製品理解から成長実験へ",
         "ko": "17장: 마케팅 트랙, 제품 이해에서 성장 실험까지",
         "de": "Marketing-Pfad, vom Produktverständnis zu Wachstumsexperimenten",
-        "zh-tw": "行銷轨：从产品理解到增长实验"
+        "zh-tw": "行銷軌：從產品理解到增長實驗"
       }
     },
     {
@@ -410,7 +410,7 @@
         "ja": "コンテンツ、デザイン、データ、自動化トラック",
         "ko": "18장: 콘텐츠, 디자인, 데이터, 자동화 트랙",
         "de": "Pfad für Inhalte, Design, Daten und Automatisierung",
-        "zh-tw": "內容、設計、資料与自动化轨"
+        "zh-tw": "內容、設計、資料與自動化軌"
       },
       "display": {
         "en": "Content, design, data, and automation track",
@@ -419,7 +419,7 @@
         "ja": "コンテンツ、デザイン、データ、自動化トラック",
         "ko": "18장: 콘텐츠, 디자인, 데이터, 자동화 트랙",
         "de": "Pfad für Inhalte, Design, Daten und Automatisierung",
-        "zh-tw": "内容、設計、数据与自动化轨"
+        "zh-tw": "內容、設計、資料與自動化軌"
       }
     },
     {
@@ -433,7 +433,7 @@
         "ja": "モデルとワークフローを評価する、印象から証拠へ",
         "ko": "19장: 모델과 워크플로 평가하기, 인상에서 증거로",
         "de": "Modelle und Workflows evaluieren, von Eindrücken zu Evidenz",
-        "zh-tw": "评估模型和工作流——从感觉到证据"
+        "zh-tw": "評估模型和工作流程——從感覺到證據"
       },
       "display": {
         "en": "Evaluate models and workflows",
@@ -442,7 +442,7 @@
         "ja": "モデルとワークフローを評価する、印象から証拠へ",
         "ko": "19장: 모델과 워크플로 평가하기, 인상에서 증거로",
         "de": "Modelle und Workflows evaluieren, von Eindrücken zu Evidenz",
-        "zh-tw": "評估模型和工作流"
+        "zh-tw": "評估模型和工作流程"
       }
     },
     {
@@ -456,7 +456,7 @@
         "ja": "個人用 Codex 作業システムを作る",
         "ko": "20장: 개인 Codex 작업 시스템 만들기",
         "de": "Ein persönliches Codex-Arbeitssystem aufbauen",
-        "zh-tw": "建立个人 Codex 工作系统"
+        "zh-tw": "建立個人 Codex 工作系統"
       },
       "display": {
         "en": "Build a personal Codex work system",
@@ -465,7 +465,7 @@
         "ja": "個人用 Codex 作業システムを作る",
         "ko": "20장: 개인 Codex 작업 시스템 만들기",
         "de": "Ein persönliches Codex-Arbeitssystem aufbauen",
-        "zh-tw": "建立个人 Codex 工作系統"
+        "zh-tw": "建立個人 Codex 工作系統"
       }
     },
     {
@@ -479,7 +479,7 @@
         "ja": "チーム能力システムを作る",
         "ko": "21장: 팀 역량 시스템 만들기",
         "de": "Ein Team-Fähigkeitssystem aufbauen",
-        "zh-tw": "建立團隊能力系统"
+        "zh-tw": "建立團隊能力系統"
       },
       "display": {
         "en": "Build a team capability system",
@@ -502,7 +502,7 @@
         "ja": "継続的な更新と将来への備え",
         "ko": "22장: 지속적인 업데이트와 미래 대비",
         "de": "Kontinuierliche Aktualisierung und Zukunftssicherheit",
-        "zh-tw": "持續更新与未來适应"
+        "zh-tw": "持續更新與未來適應"
       },
       "display": {
         "en": "Continuous update and future-proofing",
@@ -511,7 +511,7 @@
         "ja": "継続的な更新と将来への備え",
         "ko": "22장: 지속적인 업데이트와 미래 대비",
         "de": "Kontinuierliche Aktualisierung und Zukunftssicherheit",
-        "zh-tw": "持续更新与未来适应"
+        "zh-tw": "持續更新與未來適應"
       }
     }
   ]
