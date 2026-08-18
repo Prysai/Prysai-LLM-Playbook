@@ -1289,12 +1289,28 @@ nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () =>
 // That wrapper does not grant `allow-top-navigation`, so a literal
 // target="_top" link can be inert even though it is the correct target on the
 // source page. Keep the normal Docs experience in the same window, but make
-// the canonical home link actionable when the page is embedded: a user click
-// opens the canonical Docs URL in a new top-level tab permitted by the
-// wrapper. This is intentionally limited to the brand links; in-page menu
-// anchors must continue to stay inside the Space.
+// the canonical home and main navigation actionable when the page is embedded:
+// a user click opens a canonical Docs URL in a new top-level tab permitted by
+// the wrapper. This leaves the standalone site and its local anchors unchanged.
 if (window.top !== window.self) {
   document.querySelectorAll('a.wordmark[href="https://docs.prysai.com/llm-playbook/"]').forEach((link) => {
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.dataset.hostedNavigation = 'new-tab';
+  });
+  const hostedNavigationTargets = {
+    '#start': 'https://docs.prysai.com/llm-playbook/#start',
+    '#path': 'https://docs.prysai.com/llm-playbook/#path',
+    '#chapters': 'https://docs.prysai.com/llm-playbook/#chapters',
+    '#project-map': 'https://docs.prysai.com/llm-playbook/#project-map',
+  };
+  const hostedLocale = new URLSearchParams(window.location.search).get('lang');
+  document.querySelectorAll('.site-nav a[href^="index.html#"]').forEach((link) => {
+    const destination = hostedNavigationTargets[new URL(link.href).hash];
+    if (!destination) return;
+    link.href = hostedLocale && hostedLocale !== 'en'
+      ? `https://docs.prysai.com/llm-playbook/?lang=${encodeURIComponent(hostedLocale)}${new URL(destination).hash}`
+      : destination;
     link.target = '_blank';
     link.rel = 'noopener';
     link.dataset.hostedNavigation = 'new-tab';
