@@ -153,11 +153,11 @@ try {
     'https://docs.prysai.com/llm-playbook/',
     'the Playbook logo does not point to the canonical Docs site',
   );
-  assert.equal(await page.locator('.site-header .wordmark').getAttribute('target'), '_blank', 'the Playbook logo does not open the canonical Docs site from a hosted iframe');
-  assert.equal(await page.locator('.site-header .wordmark').getAttribute('rel'), 'noreferrer', 'the Playbook logo does not use the expected external-link relationship');
+  assert.equal(await page.locator('.site-header .wordmark').getAttribute('target'), '_top', 'the Playbook logo does not return the top-level window to the canonical Docs site');
+  assert.equal(await page.locator('.site-header .wordmark').getAttribute('rel'), null, 'the Playbook logo carries an unexpected external-link relationship');
   assert.equal(await page.locator('.site-footer .wordmark').getAttribute('href'), 'https://docs.prysai.com/llm-playbook/', 'the footer logo does not point to the canonical Docs site');
-  assert.equal(await page.locator('.site-footer .wordmark').getAttribute('target'), '_blank', 'the footer logo does not open the canonical Docs site from a hosted iframe');
-  assert.equal(await page.locator('.site-footer .wordmark').getAttribute('rel'), 'noreferrer', 'the footer logo does not use the expected external-link relationship');
+  assert.equal(await page.locator('.site-footer .wordmark').getAttribute('target'), '_top', 'the footer logo does not return the top-level window to the canonical Docs site');
+  assert.equal(await page.locator('.site-footer .wordmark').getAttribute('rel'), null, 'the footer logo carries an unexpected external-link relationship');
   const homepageMenuTargets = {
     'Start here': '#start',
     'Learning path': '#path',
@@ -167,7 +167,7 @@ try {
   for (const [label, hash] of Object.entries(homepageMenuTargets)) {
     await page.goto(`${origin}/`, { waitUntil: 'networkidle' });
     const menuLink = page.getByRole('link', { name: label, exact: true });
-    assert.equal(await menuLink.getAttribute('href'), hash, `${label} menu link changed its authored anchor`);
+    assert.equal(await menuLink.getAttribute('href'), `index.html${hash}`, `${label} menu link does not use an explicit site document`);
     assert.equal(
       new URL(await menuLink.evaluate((link) => link.href)).pathname,
       '/site/index.html',
