@@ -110,8 +110,8 @@ Claude Code 会读取 `CLAUDE.md` 文件；把里面写的内容都视为模型�
 API 凭据不能作为它们的证据。
 
 如果要做不需要密钥、也不涉及私密数据的首个任务，请只在你获准使用的界面
-中运行上面的通用安全任务。如果明确获准进行 API 实验，请先阅读
-[DeepSeek API 来源凭据](../../docs/research/deepseek-api-source-receipt-2026-08-17.md)，
+中运行上面的通用安全任务。如果明确获准进行 API 实验，请先查看
+[DeepSeek 官方 API 文档](https://api-docs.deepseek.com/)，
 再遵守下面单独列出的 API 边界。记录实际使用的模型名称和日期；不要把 API
 密钥、私有代码或内部文档粘贴到聊天或请求中。
 
