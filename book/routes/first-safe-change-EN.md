@@ -71,6 +71,46 @@ command just for this route. Use the no-runtime check and record
 local copy at all, stop and use the text-only First Win instead; do not pretend
 that a GitHub web view is a local sandbox.
 
+## Web-coding bridge: one visible change in a real browser
+
+If your next goal is web coding, do not begin with “build a complete website.”
+Use the project-owned [Product Context sandbox](../../examples/skill-sandbox/product-context-real-estate/README-EN.md)
+as a disposable static page. It contains fictional copy only and has no live
+listing, form, analytics, API, or external image.
+
+1. Copy the entire `examples/skill-sandbox/product-context-real-estate`
+   directory into a temporary location. Read its README and `index.html`.
+2. Change **only** `index.html`: replace one visible sentence with a sentence
+   you write for the same fictional audience. Do not change the CSS, add a
+   framework, fetch an image, or add a form.
+3. If Python 3 is already available, run the documented local server from the
+   copied directory:
+
+```powershell
+python -m http.server 4182
+```
+
+Open `http://127.0.0.1:4182/` in a browser. Check the title, changed sentence,
+unchanged heading, link targets, console, and a 390px-wide viewport. Stop if
+the command, target file, or browser result is unclear; do not install a
+runtime just for this exercise.
+
+Keep a short receipt:
+
+```text
+sandbox: <copied directory>
+allowed_change: index.html only
+url: http://127.0.0.1:4182/
+browser_check: changed sentence once; heading and links preserved; console observed
+diff: <reviewed diff>
+unverified: deployment, accessibility review, other browsers, user acceptance
+```
+
+This proves one local rendered state at one viewport. It does not prove a
+production build, responsive quality beyond the checked viewport, accessibility
+conformance, security, performance, or a useful product. For the full
+engineering lifecycle, continue to [Chapter 16](../chapters/16-engineering-track-EN.md).
+
 ## Evidence
 
 Keep only a modest receipt:
