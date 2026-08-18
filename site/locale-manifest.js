@@ -3874,7 +3874,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "candidate",
           "coverage": "full",
-          "source_revision": "worktree-2026-08-17-foundation-map",
+          "source_revision": "worktree-2026-08-17-foundation-observations",
           "explicit_anchors": []
         },
         "es": {
@@ -3883,7 +3883,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "candidate",
           "coverage": "full",
-          "source_revision": "worktree-2026-08-17-foundation-map",
+          "source_revision": "worktree-2026-08-17-foundation-observations",
           "explicit_anchors": []
         },
         "ja": {
@@ -3892,7 +3892,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "candidate",
           "coverage": "full",
-          "source_revision": "worktree-2026-08-17-foundation-map",
+          "source_revision": "worktree-2026-08-17-foundation-observations",
           "explicit_anchors": []
         },
         "ko": {
@@ -3901,7 +3901,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "candidate",
           "coverage": "full",
-          "source_revision": "worktree-2026-08-17-foundation-map",
+          "source_revision": "worktree-2026-08-17-foundation-observations",
           "explicit_anchors": []
         },
         "de": {
@@ -3910,7 +3910,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "candidate",
           "coverage": "full",
-          "source_revision": "worktree-2026-08-17-foundation-map",
+          "source_revision": "worktree-2026-08-17-foundation-observations",
           "explicit_anchors": []
         }
       }
