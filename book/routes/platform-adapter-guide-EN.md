@@ -40,7 +40,7 @@ the maintenance method behind this rule.
 | ChatGPT | web chat, app, API | account scope, memory settings, file upload, browsing toggle, share links | [ChatGPT first task](#chatgpt-first-task) |
 | Claude / Claude Code | web chat, CLI agent, IDE | terminal + file agent, permission prompts, CLAUDE.md project memory | [Claude Code first task](#claude-code-first-task) |
 | Gemini | web chat, app, API | Google account scope, Google Workspace integration, app extension | [Gemini first task](#gemini-first-task) |
-| DeepSeek | web chat, app, API | model choice and context window vary by release; check official model page | [DeepSeek first task](#deepseek-first-task) |
+| DeepSeek | web chat, app, API | the surface, model catalogue, context, and limits are product-specific and volatile; check the official source for the exact surface | [DeepSeek first task](#deepseek-first-task) |
 | Grok | web chat, app | X account integration, real-time posts access, model release cadence | [Grok first task](#grok-first-task) |
 | Codex | desktop, CLI, IDE, cloud, API | the Playbook's flagship track: files, tools, Skills, Agents, permissions | [Codex path](../routes/first-safe-change-EN.md) |
 
@@ -105,6 +105,8 @@ offered in the UI. An extension is an external effect: it can read or write on
 your behalf, so a Gemini lesson about extensions is a platform adapter topic,
 not a core topic. Do not enable extensions for a text-only practice task.
 
+<span id="deepseek-first-task"></span>
+
 ## DeepSeek first task
 
 Run the safe first task in the DeepSeek chat or app surface. Model naming,
@@ -112,6 +114,29 @@ context window, and availability change between releases; the official model
 page is the owner of those facts. Record the model name you actually used and
 the date, so the run stays reproducible. Do not paste API keys, private code,
 or internal documents into a web chat.
+
+### Optional API adapter boundary
+
+The DeepSeek API is a separate surface. If you have explicit authorization for
+an API experiment, read the [DeepSeek API source
+receipt](../../docs/research/deepseek-api-source-receipt-2026-08-17.md) first,
+then record the endpoint, account scope, model identifier, date, allowed data,
+and rollback or stop condition. The official [`GET /models`](https://api-docs.deepseek.com/api/list-models)
+page is the place to check the models that an authorized API account currently
+reports; do not hard-code a model name, price, context size, or quota from an
+old example.
+
+If the API returns a tool-call request, treat it as a proposal. Validate the
+arguments, decide permission separately, execute only the smallest approved
+operation, and record the returned evidence. A model request is not proof that
+an external tool ran. The [Tool Calls](https://api-docs.deepseek.com/guides/tool_calls)
+and [Thinking Mode](https://api-docs.deepseek.com/guides/thinking_mode) pages
+describe API-specific controls; they do not establish equivalent controls in
+web chat, another vendor, or every account.
+
+Stop before creating a key, sending private data, spending money, publishing,
+or changing an account when the scope is unclear. No API run is recorded in
+this repository, so this adapter remains `candidate / not_run`.
 
 ## Grok first task
 
@@ -148,7 +173,8 @@ learner run, cross-platform run, or independent review is recorded. The
 per-platform descriptions above are orientation derived from first-party
 documentation and dated research receipts
 ([cross-LLM beginner prompting source receipt](../../docs/research/cross-llm-beginner-prompting-and-platform-boundaries-source-receipt-2026-08-15.md),
-[platform teaching boundary card](../../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md)).
+[platform teaching boundary card](../../docs/research/cross-platform-teaching-boundary-card-source-receipt-2026-08-15.md),
+[DeepSeek API source receipt](../../docs/research/deepseek-api-source-receipt-2026-08-17.md)).
 They are not evidence that any platform behaves identically, that a task will
 succeed everywhere, or that product features are equivalent. Platform-specific
 commands, permissions, prices, and availability are volatile facts: check the
