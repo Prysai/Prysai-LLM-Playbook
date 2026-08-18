@@ -221,6 +221,25 @@ Para una segunda comprobación, escribe qué puede establecer un modelo de texto
 solo sobre **«La biblioteca municipal cerrará hoy a las 18:00»** antes de buscar.
 La verdad actual necesita una fuente. No le pidas que invente una.
 
+### Tres observaciones acotadas
+
+Las comprobaciones anteriores son demostraciones pequeñas, no pruebas de que un
+aprendiz o un modelo se comporte igual en todas las tareas. Para practicar los
+mismos límites sin usar una cuenta, datos privados, herramientas ni una petición
+de red, utiliza estos protocolos con registros ficticios (el texto completo aún
+está en inglés):
+
+- [Context change and unknowns (cambio de contexto y desconocidos)](../../evals/candidates/core-course-v1/observations/context-change-and-unknowns.md): compara dos versiones del material, marca cada afirmación `PASS`, `FAIL` o `UNSURE` y deja desconocido el número de sala.
+- [First-request contract and controlled repeat (contrato de la primera solicitud y repetición controlada)](../../evals/candidates/core-course-v1/observations/first-request-contract.md): escribe objetivo, material, restricciones, forma de respuesta y parada antes de recibir una respuesta; si hay una superficie de texto segura, repite la misma solicitud dos veces y registra lo común y lo diferente.
+- [Tool boundary, authority, and evidence (límite de herramienta, autoridad y evidencia)](../../evals/candidates/core-course-v1/observations/tool-boundary-authority-evidence.md): separa una acción propuesta, la autoridad concedida, la ejecución de la herramienta y la evidencia de lectura posterior.
+
+Cada protocolo exige guardar el primer resultado antes de recibir una pista y
+registra la ayuda, los desconocidos y la regla de parada. Su estado es
+`candidate / not_run`: una ejecución futura solo puede describir la tarea, las
+condiciones y la rúbrica indicadas. No puede demostrar eficacia del curso,
+superioridad de un prompt, calidad del modelo, retención, transferencia general,
+equivalencia entre plataformas ni preparación para producción.
+
 ### Patrón portátil para la primera solicitud
 
 Antes de una tarea real y de bajo riesgo, completa estas seis líneas:
