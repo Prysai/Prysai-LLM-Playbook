@@ -16,7 +16,9 @@ current tracked candidate file set after the fixes in this audit.
 ### Post-audit deployment verification — 2026-08-18
 
 The historical scan snapshot above is not the current publication receipt. The
-current repository `main` is `8a0ab55a7859ffedea24567319c260e1fabd3b0f`.
+repository state audited for this record is
+`8a0ab55a7859ffedea24567319c260e1fabd3b0f`; this audit file is a
+documentation-only follow-up commit.
 For the code verification snapshot, Security run
 [32195940061](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195940061),
 CodeQL run [32195940006](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195940006),
