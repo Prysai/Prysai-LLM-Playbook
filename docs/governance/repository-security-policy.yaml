@@ -84,7 +84,7 @@
   "host_ruleset": {
     "status": "active",
     "observed_at": "2026-08-18",
-    "observation_phase": "current-observation",
+    "observation_phase": "pre-final-mutation",
     "repository": "Prysai/Prysai-LLM-Playbook",
     "ruleset_id": 20903386,
     "name": "Prysai llm playbook",
@@ -101,9 +101,9 @@
       "one approving review, stale-review dismissal, and resolved review threads"
     ],
     "bypass_list": [
-      "RepositoryRole actor id 5 with bypass_mode always"
+      "Pre-final-mutation observation: RepositoryRole actor id 5 with bypass_mode always"
     ],
-    "evidence_limit": "The live GitHub API reports an active repository Ruleset whose current bypass actor can always bypass it. No host-side bypass mutation is represented or implied by this repository policy, and a passing workflow is not proof that every write used a pull request."
+    "evidence_limit": "This is the pre-final-mutation observation recorded before all repository files in the audit were pushed. The final host-side mutation removes this actor; verify the live Ruleset API after that mutation. This repository policy does not treat a passing workflow as proof that every write used a pull request."
   },
   "host_security_controls": {
     "observed_at": "2026-08-18",

@@ -46,6 +46,11 @@ were replaced with portable commands, generic placeholders, or intentionally
 omitted source locators. The security gate now checks these classes to prevent
 regression.
 
+The full reachable-object replay and its history counts below are bound to the
+code verification snapshot. The commits after that snapshot only reconcile
+audit and governance evidence; the latest repository-security workflow also
+revalidated the current candidate tree and policy.
+
 Status: `candidate` security posture. This report is not a penetration test,
 secret-management certification, release approval, or proof that a hosted
 origin is secure.
@@ -188,21 +193,30 @@ response headers at its edge/server; GitHub Pages cannot be configured from
 this repository, so the meta policy must remain there unless an edge proxy is
 introduced.
 
-### SIA-08 — Ruleset bypass and release-evidence boundary — open
+### SIA-08 — Ruleset bypass and release-evidence boundary — pre-final-mutation observation
 
 Severity: Medium governance risk; no secret exposure was observed.
 
-At the repository snapshot recorded by this report, the active GitHub Ruleset
-still lists a `RepositoryRole` actor with `bypass_mode=always`. The security
-changes were pushed directly to `main`; GitHub's push response explicitly
-reported that the push bypassed the pull-request requirement, verified-signature
-requirement, and Code Scanning wait. This confirms that the recorded Ruleset
-bypass was operational, not merely metadata.
+At the final repository-file snapshot recorded by this report, before the final
+host-side mutation, the active GitHub Ruleset still lists a `RepositoryRole`
+actor with `bypass_mode=always`. The security changes were pushed directly to
+`main`; GitHub's push response explicitly reported that the push bypassed the
+pull-request requirement, verified-signature requirement, and Code Scanning
+wait. This confirms that the recorded Ruleset bypass was operational, not
+merely metadata.
 
-Security, CodeQL, Quality, and Pages/Docs runs for the current SHA succeeded.
-The repository's separate formal release readiness remains `not_ready`. No
-host-side Ruleset mutation was performed; the bypass remains an open governance
-risk and must be rechecked before release.
+For the code verification snapshot, Security run `32195940061`, CodeQL run
+`32195940006`, and Quality run `32195939994` succeeded. CodeQL analyses
+`1637984890` (JavaScript) and `1637984317` (Python) each reported zero results;
+Quality uploaded artifact `9345927595`. The evidence-record Pages/Docs run
+`32196731775` also succeeded for the documentation-only snapshot, with Pages
+deployment `5973053344` and Docs deployment `5973053336`. The repository's
+separate formal release readiness remains `not_ready`.
+
+The permanent bypass is removed only after all repository file changes in this
+audit are pushed. The final live Ruleset API verification is recorded in the
+task handoff because a later host-side mutation cannot be represented by this
+pre-mutation repository snapshot.
 
 ### SIA-09 — Secret-bearing deployment job had redundant build authority — fixed
 
@@ -234,17 +248,17 @@ each release because environment settings are not versioned in this repository.
 | --- | --- | --- |
 | Current candidate files | Pass; 1,097 candidate files, 7 workflows | Static patterns and policy checks only; the largest text artifact is approximately 5.2 MiB |
 | Focused security fixtures | Pass; 42 fixtures | Detector behavior, including CodeQL PR permission boundaries, synthetic false-positive boundaries, large-file coverage, and secret-bearing deployment artifact boundaries |
-| All refs and reachable history | 20 refs; 888 reachable commits and 5,238 reachable blobs; current candidate files have 0 high-confidence credential, private-key, device, MAC, private-network, or authentication-URL matches; 1 older provider-shaped historical fixture is classified synthetic; historical path residue remains | Pattern scan of local branches, remote-tracking refs, and tag; not every provider-specific secret format |
+| All refs and reachable history | At the code verification snapshot: 20 refs; 888 reachable commits and 5,238 reachable blobs; current candidate files had 0 high-confidence credential, private-key, device, MAC, private-network, or authentication-URL matches; 1 older provider-shaped historical fixture is classified synthetic; historical path residue remains | Full pattern replay is bound to the code verification snapshot; later commits are documentation-only evidence reconciliations and the current-tree policy gate was rerun |
 | Unreachable Git objects | 142 blobs across 15 unreachable commits; the current detector found old machine-local path residue but 0 provider-shaped credential/private-key hits | Classified historical data; local object reachability/retention can change |
 | Git stash/reflog | No stash entries; reflog showed normal repository refs | Does not inspect remote provider backups or account logs |
 | Workflow permissions and action refs | Pass; all checkout steps disable persisted credentials, all third-party refs use full SHAs, the candidate artifact preserves hidden `.nojekyll`, and Docs deploy consumes the validated build artifact without checkout/build execution | Does not prove every hosted runner or future workflow remains safe |
-| Host-side security controls | Secret Scanning, Push Protection, Dependabot security updates, and Actions SHA pinning enabled; non-provider patterns disabled; Docs environment requires reviewer `uuzzrm` and branch policy `main` | Repository-level API settings only; the Ruleset bypass actor is the pre-mutation observation and non-provider patterns remain disabled |
+| Host-side security controls | Secret Scanning, Push Protection, Dependabot security updates, and Actions SHA pinning enabled; non-provider patterns disabled; Docs environment requires reviewer `uuzzrm` and branch policy `main` | Repository-level API settings only; the Ruleset bypass actor is the pre-final-mutation observation and non-provider patterns remain disabled |
 | Dependencies | Pass; `npm audit` reported 0 vulnerabilities and top-level dependency listing contains Playwright only | Local npm advisory snapshot; does not replace ongoing update review |
 | Native frontend and binary assets | Pass; no dangerous string execution/HTML sink found; 10 tracked PNG assets, no archives/databases/private-key files, no PNG text metadata findings | Static review and filename/byte checks; no image steganography or independent provider scanner |
-| Published surfaces | GitHub Pages and Docs returned 200; workflow `32196731775` completed build, Pages, Hugging Face, and Docs publication for the evidence-record snapshot; body scans found no sensitive rule IDs | Response-header hardening differs by host; live content and headers can change |
+| Published surfaces | GitHub Pages and Docs returned 200; workflow `32196731775` completed build, Pages, Hugging Face, and Docs publication for the evidence-record snapshot; Pages deployment `5973053344` and Docs deployment `5973053336` succeeded; body scans found no sensitive rule IDs | Response-header hardening differs by host; live content and headers can change |
 | Static CSP | Pass under the repository policy; an early meta CSP is present | Both live responses lacked a CSP response header; meta CSP is not a substitute for runtime HTTP headers |
 | External source archives | Incomplete; no archive directory was configured | Original archives were not supplied, so source/license audit coverage is incomplete |
-| Release evidence | Quality run `32195939994` for the code verification snapshot completed successfully and uploaded its packet; formal readiness remains `not_ready` | A passing check or uploaded packet is not release approval |
+| Release evidence | Quality run `32195939994` for the code verification snapshot completed successfully and uploaded artifact `9345927595`; its release-evidence decision remains blocked and formal readiness remains `not_ready` | A passing check or uploaded packet is not release approval |
 
 ## Remaining limitations
 
@@ -265,7 +279,8 @@ each release because environment settings are not versioned in this repository.
   every scanner or future change.
 - The `docs-prysai-production` Environment protection is host-side and is not
   versioned here; the current check observed a required reviewer and `main`
-  branch policy. The Ruleset bypass actor remains active.
+  branch policy. The Ruleset bypass actor is recorded only as a pre-final-
+  mutation observation; verify the post-mutation bypass list live.
 - The external archive audit remains incomplete because no
   `--archive-dir <directory>` was supplied.
 - Regex checks can miss encoded, split, provider-specific, binary, or
@@ -281,8 +296,8 @@ each release because environment settings are not versioned in this repository.
 2. Run a provider-aware secret scanner in an authorized CI or repository-host
    context if one is adopted; keep its logs redacted.
 3. Before a release, separately re-verify live HTTP headers, Pages/Docs
-   deployment state, GitHub Environment protection and secret scope, the active
-   Ruleset bypass list, and host-side Secret Scanning settings.
+   deployment state, GitHub Environment protection and secret scope, the final
+   empty Ruleset bypass list, and host-side Secret Scanning settings.
 4. If a real credential is ever found, stop public publication, rotate/revoke
    it at the provider, identify all reachable and hosted copies, and only then
    consider an explicitly authorized history-remediation plan.
