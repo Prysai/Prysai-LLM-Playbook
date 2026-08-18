@@ -1,4 +1,4 @@
-<!-- content_id: communication-clinic | locale: KO | language: ko | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
+<!-- content_id: communication-clinic | locale: KO | language: ko | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-18 -->
 
 # 선택 응용 연습: 언어, 업무, 리서치
 
@@ -7,9 +7,10 @@
 **상태:** `draft` · **학습자 근거:** `not_run` · **대상:** 텍스트 채팅형 LLM에서 하는
 저위험·비민감 연습입니다.
 
-**교과서 기초를 마친 뒤 사용하세요:** [0장](guides/llm-fundamentals-KO.md)
-→ [1장](chapters/01-gpt-and-codex-KO.md) →
-[2장](chapters/02-first-safe-task-KO.md). 이 카드는 배운 방법을 적용하는 것이며 LLM이 무엇인지 설명하는 입문 과정이 아닙니다.
+**LLM 기초 코어를 마친 뒤 사용하세요:** [단원 1: LLM 개념](guides/llm-fundamentals-KO.md)
+→ [단원 2: 첫 번째 범위 있는 요청](routes/universal-core-foundations-KO.md).
+이 카드는 코어 방법을 적용하는 것이며 LLM이 무엇인지 설명하는 입문 과정이 아닙니다.
+아직 코어를 마치지 않았다면 [LLM 기초 코어](routes/universal-core-foundations-KO.md)부터 시작하세요.
 
 지금 보고 있는 것은 한국어 설명 경로입니다. 이 페이지의 설명, 판단, 링크는 한국어로 제공됩니다. 카드에 나오는 스페인어는 선택할 수 있는 외국어 연습 목표일 뿐, 언어가 잘못 바뀐 것도 필수 과목도 아닙니다.
 
