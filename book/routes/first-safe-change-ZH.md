@@ -38,6 +38,42 @@ python .\seed\verify_readme.py
 
 如果没有 Python，不要为了这条路线安装运行时或换用其他命令。使用不运行程序的检查，并记录 `check: manual required_readme_strings 3/3`。如果连可丢弃的本地副本也无法创建，请停止，改做纯文本的 First Win；不要把 GitHub 网页预览假装成一个本地沙盒。
 
+## Web coding 桥接：在真实浏览器中观察一次可见改动
+
+如果下一步目标是 Web coding，不要从“构建完整网站”开始。把项目自带的
+[Product Context 沙盒](../../examples/skill-sandbox/product-context-real-estate/README-ZH.md)
+当作可丢弃的静态页面。它只有虚构文案，没有真实房源、表单、分析、API 或
+外部图片。
+
+1. 将整个 `examples/skill-sandbox/product-context-real-estate` 文件夹复制到临时
+   位置，先阅读其中的 README 和 `index.html`。
+2. **只改 `index.html`**：为同一个虚构受众替换一处可见句子。不要改 CSS、添加
+   框架、获取图片或添加表单。
+3. 如果电脑原本已有 Python 3，在复制后的目录运行文档中的本地服务器：
+
+```powershell
+python -m http.server 4182
+```
+
+在浏览器打开 `http://127.0.0.1:4182/`。检查标题、改动后的句子、未改动的标题、
+链接目标、控制台，以及 390px 宽视口。如果命令、目标文件或浏览器结果不清楚，
+停止；不要为了这项练习安装运行时。
+
+保留一份简短回执：
+
+```text
+sandbox: <复制后的目录>
+allowed_change: index.html only
+url: http://127.0.0.1:4182/
+browser_check: 句子出现一次；标题和链接保留；已观察控制台
+diff: <已检查的差异>
+unverified: 部署、无障碍审查、其他浏览器、用户验收
+```
+
+这只能证明一个视口下的一次本地渲染状态，不证明生产构建、其他响应式状态、
+无障碍合规、安全、性能或产品价值。完整工程生命周期见
+[第 16 章](../chapters/16-engineering-track-ZH.md)。
+
 ## 证据
 
 只保留这一份简短回执：
