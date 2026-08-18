@@ -372,6 +372,8 @@ window.CODEX_LOCALE_MANIFEST = {
           "explicit_anchors": [
             "bounded-research-route",
             "card-a1-study-group-baseline-and-correction",
+            "card-b1-define-and-attempt-the-performance",
+            "card-c1-decision-question-and-source-plan",
             "card-e1-user-declared-continuity-receipt",
             "first-practice-intake",
             "four-line-safety-card",
@@ -4260,7 +4262,11 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
           "explicit_anchors": [
-            "deepseek-first-task"
+            "chatgpt-first-task",
+            "claude-code-first-task",
+            "deepseek-first-task",
+            "gemini-first-task",
+            "grok-first-task"
           ]
         },
         "es": {
@@ -4271,7 +4277,11 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
           "explicit_anchors": [
-            "deepseek-first-task"
+            "chatgpt-first-task",
+            "claude-code-first-task",
+            "deepseek-first-task",
+            "gemini-first-task",
+            "grok-first-task"
           ]
         },
         "ja": {
@@ -4282,7 +4292,11 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
           "explicit_anchors": [
-            "deepseek-first-task"
+            "chatgpt-first-task",
+            "claude-code-first-task",
+            "deepseek-first-task",
+            "gemini-first-task",
+            "grok-first-task"
           ]
         },
         "ko": {
@@ -4293,7 +4307,11 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
           "explicit_anchors": [
-            "deepseek-first-task"
+            "chatgpt-first-task",
+            "claude-code-first-task",
+            "deepseek-first-task",
+            "gemini-first-task",
+            "grok-first-task"
           ]
         },
         "de": {
@@ -4319,7 +4337,11 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [
-            "deepseek-first-task"
+            "chatgpt-first-task",
+            "claude-code-first-task",
+            "deepseek-first-task",
+            "gemini-first-task",
+            "grok-first-task"
           ]
         }
       }
