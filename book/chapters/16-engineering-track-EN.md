@@ -115,6 +115,70 @@ loading, an incorrect relative path, a clipped mobile layout, a stale cached
 asset, or a runtime error. A local page that passes this check is a candidate
 web-coding result; it is not a deployed website.
 
+### 7. Visual feedback is a specification, not a replacement for one
+
+When a platform offers a way to point at a visible region, use that region as
+additional context rather than as a complete request. Name the target, the
+intended change, the parts that must remain unchanged, and the check that will
+decide whether the change is acceptable. A useful visual request has four
+parts:
+
+```text
+Target: the exact region, state, and viewport I am pointing at.
+Change: one observable difference I want.
+Preserve: content, behavior, layout, and paths that must not change.
+Check: what I will inspect in the rendered page and in the diff.
+```
+
+For example, “make the header better” is not a usable visual specification.
+“In the 390px view, move the search control below the title; keep the title,
+links, and focus order unchanged; check the rendered width, keyboard path, and
+the one-file diff” is small enough to execute and review. The same contract
+works with a screenshot, a browser inspector, a design file, or plain text.
+The affordance is platform-specific; the observable target and acceptance
+contract are the transferable method.
+
+### 8. A preview is a hypothesis about the runtime
+
+An embedded preview can differ from the environment a reader or customer will
+use. Storage, cookies, origin rules, network access, permissions, viewport,
+font loading, and asset paths may not match. When a control appears broken,
+separate two questions before changing code:
+
+1. Does the source and client logic contain a defect?
+2. Does this preview provide the same runtime conditions as the target?
+
+Use this order: read the console and network result that is in scope, repeat
+the smallest interaction in an independent local browser, compare the target
+origin and viewport, then change one condition or one file. Record which
+environment produced the observation. “It worked in preview” and “it works in
+the target runtime” are different claims; neither can stand in for the other.
+
+### 9. A practical AI-programming learning route
+
+Learning to program with an LLM is a sequence of evidence, not a promise to
+become a developer in a fixed number of days. Move forward only when the
+current kind of task is observable without hidden help:
+
+| Level | Practice | Minimum evidence before moving on |
+|---|---|---|
+| 1. Read | Ask for an explanation of one existing function or page | You can restate the inputs, output, and one boundary in your own words |
+| 2. Change | Make one visible edit in a disposable project | The diff contains only the allowed file and the browser/checker shows the change |
+| 3. Test | Add or run one focused check, including a failure case | You can explain what the check proves and what it leaves unknown |
+| 4. Slice | Deliver one vertical feature from contract to runtime | The feature works on the normal case and records an invalid or empty case |
+| 5. Recover | Resume after an interruption or failed check | You inspect the checkpoint before continuing and preserve the failed evidence |
+| 6. Collaborate | Use project rules, isolated work, review, and handoff | Another person can reproduce the decision from the written receipt |
+
+At every level, ask the model to inspect before editing, show the intended
+scope, state assumptions, and stop when a missing input changes risk or
+acceptance. A model-generated explanation is an aid to learning; it is not
+proof that you can diagnose, implement, or maintain the code independently.
+
+For a first practice cycle, keep a small record: task contract, your initial
+attempt, model assistance used, changed files, check output, one failure or
+boundary case, and the next skill to practise. This record makes progress
+visible without turning a single successful demo into a mastery claim.
+
 ## Observable experiment: compare direct implementation with a full lifecycle
 
 ### Setup
