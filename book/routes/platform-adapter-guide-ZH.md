@@ -94,6 +94,8 @@ Claude Code 会读取 `CLAUDE.md` 文件；把里面写的内容都视为模型�
 外部影响：它可以代表你读取或写入数据，因此关于扩展的 Gemini 课程属于
 平台适配主题，而不是核心主题。纯文本的练习任务不要启用扩展。
 
+<span id="deepseek-first-task"></span>
+
 ## DeepSeek 首个任务
 
 在 DeepSeek 聊天或应用界面运行首个安全任务。模型命名、上下文窗口和可用性
