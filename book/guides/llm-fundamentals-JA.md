@@ -1,4 +1,4 @@
-<!-- content_id: llm-fundamentals-guide | locale: JA | language: ja | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-17-foundation-map -->
+<!-- content_id: llm-fundamentals-guide | locale: JA | language: ja | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-17-foundation-observations -->
 
 # LLMとは何か：役に立つ回答の背後にある層
 
