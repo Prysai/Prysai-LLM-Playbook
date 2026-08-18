@@ -193,6 +193,22 @@ Agent에서는 각 경계에서 반복합니다.
 또한 **“시립 도서관은 오늘 오후 6시에 문을 닫습니다”**의 현재 진위를 찾아보기 전에
 텍스트 모델만으로 확립할 수 있는 것을 적어 보세요. 현재 사실에는 출처가 필요합니다.
 
+### 세 가지 제한된 관찰
+
+앞의 점검은 작은 시연일 뿐이며, 학습자나 모델이 모든 과제에서 같은 방식으로
+행동한다는 증거가 아닙니다. 계정, 개인 데이터, 도구 또는 네트워크 요청 없이 같은
+경계를 연습하려면 다음의 허구 기록 프로토콜을 사용하세요(전체 본문은 현재 영어로만
+제공됩니다).
+
+- [Context change and unknowns(문맥 변화와 미상)](../../evals/candidates/core-course-v1/observations/context-change-and-unknowns.md) — 두 입력 버전을 비교하고 각 주장을 `PASS`, `FAIL`, `UNSURE`로 표시하며 방 번호는 미상으로 남깁니다.
+- [First-request contract and controlled repeat(첫 요청 계약과 통제된 반복)](../../evals/candidates/core-course-v1/observations/first-request-contract.md) — 답변 전에 목표, 자료, 제약, 답변 형식, 중지 조건을 씁니다. 안전한 텍스트 화면이 있으면 같은 요청을 두 번 더 반복하고 공통점과 차이를 기록합니다.
+- [Tool boundary, authority, and evidence(도구 경계·권한·증거)](../../evals/candidates/core-course-v1/observations/tool-boundary-authority-evidence.md) — 제안된 행동, 부여된 권한, 도구 실행, 읽어 온 증거를 분리합니다.
+
+각 프로토콜은 단서를 받기 전에 첫 산출물을 보관하고 도움, 미상, 중지 규칙을 기록하게
+합니다. 상태는 `candidate / not_run`입니다. 나중에 실행하더라도 지정한 과제·조건·평가
+기준만 설명할 수 있으며, 과정의 효과, 프롬프트 우월성, 모델 품질, 기억 유지, 일반적
+전이, 플랫폼 동등성 또는 프로덕션 준비를 입증할 수 없습니다.
+
 ### 어떤 모델에서도 쓰는 첫 요청 형식
 
 낮은 위험의 실제 과제를 시작할 때 다음 여섯 줄을 채우세요.
