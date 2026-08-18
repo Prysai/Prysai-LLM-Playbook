@@ -2,14 +2,13 @@
 
 ## Executive summary
 
-This was a repository-grounded audit of the Prysai LLM Playbook. The current
-snapshot was refreshed on 2026-08-18 against committed
-`60f4aa3c7c84b69c31d44409b6f1cb60442e29ab`; the working tree was clean before
-this evidence refresh and `origin/main` resolved to the same commit. The code
-under review includes the exact CodeQL permission validator and its 42 focused
-fixtures, plus the preceding Reader and deployment-boundary fixes. This
-snapshot includes the CodeQL pull-request trigger with its narrowly scoped
-result-upload permission and the latest Reader allow-list regression tests.
+This was a repository-grounded audit of the Prysai LLM Playbook. The code
+verification snapshot was committed as
+`60f4aa3c7c84b69c31d44409b6f1cb60442e29ab`; the current evidence-record
+snapshot is `8a0ab55a7859ffedea24567319c260e1fabd3b0f`. The latter only updates
+this audit record, while retaining the verified CodeQL permission validator,
+its 42 focused fixtures, and the preceding Reader and deployment-boundary
+fixes. The working tree was clean before this evidence refresh.
 No high-confidence API key, access token, private key, JWT, credential-bearing
 URL, device identifier, MAC address, or private-network location remains in the
 current tracked candidate file set after the fixes in this audit.
@@ -17,14 +16,16 @@ current tracked candidate file set after the fixes in this audit.
 ### Post-audit deployment verification — 2026-08-18
 
 The historical scan snapshot above is not the current publication receipt. The
-current repository `main` is `60f4aa3c7c84b69c31d44409b6f1cb60442e29ab`.
-Its Security run [32195940061](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195940061),
+current repository `main` is `8a0ab55a7859ffedea24567319c260e1fabd3b0f`.
+For the code verification snapshot, Security run
+[32195940061](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195940061),
 CodeQL run [32195940006](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195940006),
 and Quality run [32195939994](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195939994)
-completed successfully. The Pages/Docs workflow
-[32195939999](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195939999)
+completed successfully. The evidence-record snapshot's Pages/Docs workflow
+[32196731775](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32196731775)
 also completed successfully after the required environment approval, with Docs
-deployment `5972974205` and Pages deployment `5972974204`. The
+deployment `5973053336`; its GitHub Pages deployment completed in the same run.
+The
 `docs-prysai-production` environment metadata shows a required `uuzzrm` reviewer
 and a `main` deployment-branch policy. This supersedes the earlier SIA-10
 observation for the current deployment, but does not certify the external host.
@@ -64,12 +65,13 @@ Checked on 2026-08-18 from the repository working tree:
   response-header presence and a redacted body scan.
 - authenticated GitHub repository settings and recent workflow conclusions;
   secret values were not read.
-- remote workflow receipts for the current repository snapshot: [security run
+- remote workflow receipts for the code verification snapshot: [security run
   32195940061](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195940061),
   [CodeQL run 32195940006](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195940006),
-  [quality run 32195939994](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195939994),
-  and [Pages/Docs run 32195939999](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195939999);
-  workflow logs were read without exposing secret values.
+  and [quality run 32195939994](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195939994);
+  the evidence-record publication receipt is [Pages/Docs run
+  32196731775](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32196731775).
+  Workflow logs were read without exposing secret values.
 - all local branches, remote-tracking branches, and tags recorded by
   `git for-each-ref`, plus unreachable blobs and commits reported by
   `git fsck --full --unreachable --no-reflogs`;
@@ -237,10 +239,10 @@ each release because environment settings are not versioned in this repository.
 | Host-side security controls | Secret Scanning, Push Protection, Dependabot security updates, and Actions SHA pinning enabled; non-provider patterns disabled; Docs environment requires reviewer `uuzzrm` and branch policy `main` | Repository-level API settings only; the Ruleset bypass actor is the pre-mutation observation and non-provider patterns remain disabled |
 | Dependencies | Pass; `npm audit` reported 0 vulnerabilities and top-level dependency listing contains Playwright only | Local npm advisory snapshot; does not replace ongoing update review |
 | Native frontend and binary assets | Pass; no dangerous string execution/HTML sink found; 10 tracked PNG assets, no archives/databases/private-key files, no PNG text metadata findings | Static review and filename/byte checks; no image steganography or independent provider scanner |
-| Published surfaces | GitHub Pages and Docs returned 200; workflow `32195939999` completed build, Pages, Hugging Face, and Docs publication for the current SHA; body scans found no sensitive rule IDs | Response-header hardening differs by host; live content and headers can change |
+| Published surfaces | GitHub Pages and Docs returned 200; workflow `32196731775` completed build, Pages, Hugging Face, and Docs publication for the evidence-record snapshot; body scans found no sensitive rule IDs | Response-header hardening differs by host; live content and headers can change |
 | Static CSP | Pass under the repository policy; an early meta CSP is present | Both live responses lacked a CSP response header; meta CSP is not a substitute for runtime HTTP headers |
 | External source archives | Incomplete; no archive directory was configured | Original archives were not supplied, so source/license audit coverage is incomplete |
-| Release evidence | Quality run `32195939994` for the current SHA completed successfully and uploaded its packet; formal readiness remains `not_ready` | A passing check or uploaded packet is not release approval |
+| Release evidence | Quality run `32195939994` for the code verification snapshot completed successfully and uploaded its packet; formal readiness remains `not_ready` | A passing check or uploaded packet is not release approval |
 
 ## Remaining limitations
 
@@ -292,4 +294,4 @@ each release because environment settings are not versioned in this repository.
 - [`docs/adr/0043-expand-repository-sensitive-information-tripwires.md`](../adr/0043-expand-repository-sensitive-information-tripwires.md)
 - [`docs/adr/0044-live-host-security-controls-and-publishing-boundaries.md`](../adr/0044-live-host-security-controls-and-publishing-boundaries.md)
 - [`docs/adr/0045-deploy-only-validated-pages-artifact.md`](../adr/0045-deploy-only-validated-pages-artifact.md)
-- [Current Pages/Docs workflow run 32195939999](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195939999)
+- [Evidence-record Pages/Docs workflow run 32196731775](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32196731775)
