@@ -307,9 +307,10 @@ try {
     await new Promise((resolve) => setTimeout(resolve, 400));
     await route.continue();
   });
-  const readerHtmlLanguages = { en: 'en', zh: 'zh-CN', es: 'es', ja: 'ja', ko: 'ko', de: 'de' };
+  const readerHtmlLanguages = { en: 'en', zh: 'zh-CN', es: 'es', ja: 'ja', ko: 'ko', de: 'de', 'zh-tw': 'zh-TW' };
   for (const locale of Object.keys(readerHtmlLanguages)) {
-    const source = `book/guides/llm-fundamentals-${locale.toUpperCase()}.md`;
+    const suffix = locale === 'zh-tw' ? 'ZHTW' : locale.toUpperCase();
+    const source = `book/guides/llm-fundamentals-${suffix}.md`;
     await loadingLanguagePage.goto(`${origin}/site/reader.html?path=${encodeURIComponent(source)}&lang=${locale}`, { waitUntil: 'domcontentloaded' });
     assert.equal(
       await loadingLanguagePage.locator('html').getAttribute('lang'),
@@ -345,6 +346,7 @@ try {
   const localizedHeroSources = {
     en: /Hi, the workshop changed/, zh: /你好，工作坊改期了/, es: /El taller cambió/,
     ja: /ワークショップの予定が変わりました/, ko: /워크숍 일정이 바뀌었습니다/, de: /Der Workshop wurde verschoben/,
+    'zh-tw': /嗨，工作坊改期了/,
   };
   const localizedHeroTitles = {
     en: 'Understand LLMs before you ask them to work.',
@@ -353,11 +355,13 @@ try {
     ja: 'LLMに仕事を頼む前に、その仕組みを理解する。',
     ko: 'LLM에게 일을 맡기기 전에 먼저 이해하세요.',
     de: 'Verstehe LLMs, bevor du sie arbeiten lässt.',
+    'zh-tw': '先理解 LLM，再讓它開始工作。',
   };
-  for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de']) {
+  for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de', 'zh-tw']) {
     await page.goto(`${origin}/site/?lang=${locale}`, { waitUntil: 'networkidle' });
     await page.locator('[data-current-language]').waitFor();
-    await page.waitForFunction((expectedLocale) => document.querySelector('[data-current-language]')?.textContent?.trim() === expectedLocale, locale.toUpperCase());
+    const expectedLanguageToken = locale === 'zh-tw' ? 'ZHTW' : locale.toUpperCase();
+    await page.waitForFunction((expectedLocale) => document.querySelector('[data-current-language]')?.textContent?.trim() === expectedLocale, expectedLanguageToken);
     assert.equal(
       (await page.locator('#hero-title').innerText()).trim(),
       localizedHeroTitles[locale],
@@ -374,7 +378,7 @@ try {
       `${locale} home-page action links expose internal development labels instead of the next action`,
     );
     assert.equal(
-      await page.locator('[data-current-language]').innerText(), locale.toUpperCase(),
+      await page.locator('[data-current-language]').innerText(), expectedLanguageToken,
       `${locale} interface does not retain the selected language route`,
     );
     assert.equal(
@@ -382,6 +386,11 @@ try {
       false,
       `${locale} language menu still claims an ordinary English UI fallback`,
     );
+    if (locale === 'zh-tw') {
+      const visibleText = await page.locator('body').innerText();
+      assert.doesNotMatch(visibleText, /跳到主要内容|基础系统|搜索|学习路径/, 'Traditional Chinese home page exposes high-confidence Simplified Chinese UI text');
+      assert.match(visibleText, /跳到主要內容|基礎系統|搜尋|學習路徑/, 'Traditional Chinese home page does not expose its localized UI vocabulary');
+    }
   }
   await page.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
   await page.waitForFunction(() => document.querySelector('[data-current-language]')?.textContent?.trim() === 'EN');
