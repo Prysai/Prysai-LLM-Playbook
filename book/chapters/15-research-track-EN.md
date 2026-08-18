@@ -45,6 +45,41 @@ A sound research question also states what counts as inclusion and exclusion, wh
 
 A query is a rule for drawing the research sample, not a request to “find the answer.” If the query encodes your suspected cause, search results can repeat that suspicion until it looks like consensus. Start with the symptom and work surface to find original reports, then compare several possible explanations.
 
+### A practical resource route for web coding and technical work
+
+“Resource list” is not a useful deliverable by itself. A link is useful only
+when a reader can tell why it is included, which version or surface it covers,
+what can be run or inspected, and when the link should be reviewed again. Build
+a resource route as a small research record:
+
+```text
+Need: the concrete question or blocked decision.
+Source owner: the project, standards body, maintainer, or author responsible.
+Artifact: documentation, repository, runnable example, issue, or discussion.
+Scope: language, framework, platform, version, license, and audience.
+Try: the smallest safe example or observation a reader can reproduce.
+Check: what output, test, browser state, or citation location counts as useful.
+Stop: what the resource cannot establish and when to leave it.
+Review: access date, source revision, owner, and next review trigger.
+```
+
+For a web-coding question, search in this order: the official language or
+framework documentation; a maintained example or test in the official
+repository; a minimal local reproduction; then community reports for failure
+signals and vocabulary. Do not turn a bookmark dump, search ranking, copied
+snippet, or old video into a recommended path without checking identity,
+license, version, and the actual runnable boundary. A community workaround may
+be worth recording as a lead, but it is not automatically safe, current, or
+official.
+
+When you publish a curated route, prefer five strong entries over a long list:
+one foundation, one current reference, one runnable example, one failure or
+troubleshooting case, and one independent check. Record exclusions too—an
+inaccessible, stale, rights-uncertain, or scope-mismatched source is useful
+research information. Stop when the route answers the stated question and a
+new search round adds no new source owner, counterexample, or runnable
+evidence. “More links” is not the same as more knowledge.
+
 | Query layer | Combination | Purpose and example |
 |---|---|---|
 | Symptom | Product/work surface + original error phrase or stage | Find locatable reports, such as `Codex "token exchange"` or `"spawn UNKNOWN" Codex VS Code` |
