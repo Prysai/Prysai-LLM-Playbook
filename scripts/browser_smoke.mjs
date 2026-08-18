@@ -825,11 +825,11 @@ try {
 
   // The platform map uses one stable authored fragment for every locale. A
   // translated heading alone is not a deep-link contract: its generated slug
-  // can change with wording or Reader rules. Keep the five non-English
-  // adapters fail-closed only for missing content, not for a missing target.
+  // can change with wording or Reader rules. Keep every localized adapter
+  // fail-closed only for missing content, not for a missing target.
   const platformAdapterPage = await context.newPage();
-  for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de']) {
-    const suffix = locale.toUpperCase();
+  for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de', 'zh-tw']) {
+    const suffix = locale === 'zh-tw' ? 'ZHTW' : locale.toUpperCase();
     const adapterSource = `book%2Froutes%2Fplatform-adapter-guide-${suffix}.md`;
     await platformAdapterPage.goto(`${origin}/site/reader.html?path=${adapterSource}&lang=${locale}#deepseek-first-task`, { waitUntil: 'networkidle' });
     await platformAdapterPage.locator('[data-reader-article][aria-busy="false"]').waitFor();
@@ -897,7 +897,7 @@ try {
   assert.equal(await page.locator('.first-win-checks li').count(), 3, 'first prompt practice does not expose three plain-language checks');
   await page.locator('[data-copy-starter]').click();
   await page.locator('[data-copy-starter-status]').getByText('Prompt copied.', { exact: false }).waitFor();
-  for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de']) {
+  for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de', 'zh-tw']) {
     const localePage = await context.newPage();
     const localeEntry = locale === 'en' ? `${origin}/site/index.html` : `${origin}/${locale}.html`;
     await localePage.goto(localeEntry, { waitUntil: 'networkidle' });
@@ -906,7 +906,8 @@ try {
       : `https://docs.prysai.com/llm-playbook/${locale}.html`;
     assert.equal(await localePage.locator('link[rel="canonical"]').getAttribute('href'), expectedUrl, `${locale} canonical metadata is incorrect`);
     assert.ok((await localePage.locator('meta[name="description"]').getAttribute('content'))?.trim(), `${locale} is missing a localized description`);
-    assert.equal(await localePage.locator('html').getAttribute('lang'), locale === 'zh' ? 'zh-CN' : locale, `${locale} static entry does not render in its selected document language`);
+    const expectedHtmlLang = locale === 'zh' ? 'zh-CN' : locale === 'zh-tw' ? 'zh-TW' : locale;
+    assert.equal(await localePage.locator('html').getAttribute('lang'), expectedHtmlLang, `${locale} static entry does not render in its selected document language`);
     const structuredData = JSON.parse(await localePage.locator('#site-structured-data').textContent());
     assert.equal(structuredData.alternateName, 'LLMPlaybook', `${locale} structured data omits the LLMPlaybook discovery alias`);
     assert.equal(await localePage.locator('.problem-grid .card-link').evaluateAll((links) => links.some((link) => /candidate|draft|not_run/i.test(link.textContent || ''))), false, `${locale} problem cards expose development statuses`);
