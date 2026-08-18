@@ -26,13 +26,26 @@
     "token_permissions": {"contents": "read"},
     "forbidden_workflow_features": [
       "pull_request_target",
-      "secrets context in repository workflows",
-      "write-scoped token permissions on pull_request workflows",
+      "secrets context in untrusted pull_request workflows",
+      "write-scoped token permissions on pull_request workflows except the controlled CodeQL exception below",
       "persisted checkout credentials on pull_request workflows",
       "unpinned third-party GitHub Actions"
     ],
+    "controlled_pr_write_permissions": [
+      {
+        "workflow_path": ".github/workflows/codeql.yml",
+        "permissions": {
+          "actions": "read",
+          "contents": "read",
+          "packages": "read",
+          "security-events": "write"
+        },
+        "reason": "CodeQL must upload its own pull-request analysis results without receiving any other write scope"
+      }
+    ],
     "checks": [
-      "pull-request event, explicit read-only permission, and checkout credential boundary",
+      "pull-request event, explicit least-privileged permission, and checkout credential boundary",
+      "CodeQL pull-request upload permission is restricted to the exact controlled exception",
       "full-SHA Action pinning",
       "tracked credential-shaped files",
       "common token and private-key markers",
