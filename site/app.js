@@ -4543,69 +4543,69 @@ initGoalWizard();
 // the transferable LLM concepts.
 Object.assign(copy.en, {
   heroRouteAria: 'The required LLM foundation route',
-  heroRouteKicker: 'One required foundation route',
+  heroRouteKicker: 'One required foundation route · follow 1 → 2 → 3',
   heroRouteLessonZero: '1 · LLM Foundation Core',
   heroRouteLessonZeroBody: 'About 90–120 minutes. Understand, attempt, inspect, repair, and transfer.',
   heroRouteChapterOne: '2 · Unit 1: what an LLM is',
   heroRouteChapterOneBody: 'Tokens, context, prompts, tools, MCP, Agents, and Skills in their lanes.',
   heroRouteChapterTwo: '3 · Unit 2: your first bounded request',
   heroRouteChapterTwoBody: 'Make the goal, context, constraints, and answer shape visible.',
-  heroRouteBoundary: 'Finish the core route before entering Codex, tools, Agents, or Skills. The five-minute warm-up is optional and does not replace the route.',
+  heroRouteBoundary: 'These are three ordered steps, not competing starting points. Finish the core route before entering Codex, tools, Agents, or Skills; the five-minute warm-up is optional.',
 });
 Object.assign(copy.zh, {
   heroRouteAria: '必修 LLM 基础路线',
-  heroRouteKicker: '一条必修基础路线',
+  heroRouteKicker: '一条必修基础路线 · 按 1 → 2 → 3 进行',
   heroRouteLessonZero: '1 · LLM 基础核心课',
   heroRouteLessonZeroBody: '约 90–120 分钟：理解、尝试、检查、修正，再迁移。',
   heroRouteChapterOne: '2 · 单元 1：什么是 LLM',
   heroRouteChapterOneBody: '把 token、上下文、提示词、工具、MCP、Agent 与 Skill 放回各自的位置。',
   heroRouteChapterTwo: '3 · 单元 2：你的第一条有边界请求',
   heroRouteChapterTwoBody: '把目标、上下文、限制和回答形式写清楚。',
-  heroRouteBoundary: '完成核心路线后，再进入 Codex、工具、Agent 或 Skill。5 分钟热身是可选项，不能替代核心路线。',
+  heroRouteBoundary: '这三项是有顺序的步骤，不是三个竞争性的起点。完成它们后再进入 Codex、工具、Agent 或 Skill；5 分钟热身是可选项。',
 });
 Object.assign(copy.es, {
   heroRouteAria: 'Ruta obligatoria de fundamentos de LLM',
-  heroRouteKicker: 'Una ruta de fundamentos obligatoria',
+  heroRouteKicker: 'Una ruta de fundamentos obligatoria · sigue 1 → 2 → 3',
   heroRouteLessonZero: '1 · Núcleo de fundamentos de LLM',
   heroRouteLessonZeroBody: 'Unos 90–120 minutos: entender, intentar, inspeccionar, reparar y transferir.',
   heroRouteChapterOne: '2 · Unidad 1: qué es un LLM',
   heroRouteChapterOneBody: 'Tokens, contexto, prompts, herramientas, MCP, agentes y Skills en su lugar.',
   heroRouteChapterTwo: '3 · Unidad 2: tu primera petición acotada',
   heroRouteChapterTwoBody: 'Haz visibles el objetivo, el contexto, los límites y la forma de respuesta.',
-  heroRouteBoundary: 'Termina la ruta central antes de entrar en Codex, herramientas, agentes o Skills. El calentamiento de cinco minutos es opcional y no sustituye la ruta.',
+  heroRouteBoundary: 'Son tres pasos ordenados, no tres puntos de partida. Termínalos antes de entrar en Codex, herramientas, agentes o Skills; el calentamiento de cinco minutos es opcional.',
 });
 Object.assign(copy.ja, {
   heroRouteAria: '必修 LLM 基礎ルート',
-  heroRouteKicker: '一つの必修基礎ルート',
+  heroRouteKicker: '一つの必修基礎ルート · 1 → 2 → 3 の順に進む',
   heroRouteLessonZero: '1 · LLM 基礎コア',
   heroRouteLessonZeroBody: '約90〜120分。理解、試行、確認、修正、転移を行います。',
   heroRouteChapterOne: '2 · ユニット1：LLMとは何か',
   heroRouteChapterOneBody: 'トークン、コンテキスト、プロンプト、ツール、MCP、Agent、Skillを役割ごとに整理します。',
   heroRouteChapterTwo: '3 · ユニット2：最初の境界付きリクエスト',
   heroRouteChapterTwoBody: '目的、コンテキスト、制約、回答形式を見えるようにします。',
-  heroRouteBoundary: 'Codex、ツール、Agent、Skillに進む前にコアを終えてください。5分間のウォームアップは任意で、代わりにはなりません。',
+  heroRouteBoundary: 'これは競合する入口ではなく、順番に進む3つのステップです。Codex、ツール、Agent、Skillに進む前に終えてください。5分間のウォームアップは任意です。',
 });
 Object.assign(copy.ko, {
   heroRouteAria: '필수 LLM 기초 경로',
-  heroRouteKicker: '하나의 필수 기초 경로',
+  heroRouteKicker: '하나의 필수 기초 경로 · 1 → 2 → 3 순서로 진행',
   heroRouteLessonZero: '1 · LLM 기초 코어',
   heroRouteLessonZeroBody: '약 90~120분. 이해하고, 시도하고, 점검하고, 고친 뒤 전이합니다.',
   heroRouteChapterOne: '2 · 단원 1: LLM이란 무엇인가',
   heroRouteChapterOneBody: '토큰, 컨텍스트, 프롬프트, 도구, MCP, Agent, Skill의 역할을 구분합니다.',
   heroRouteChapterTwo: '3 · 단원 2: 첫 번째 범위 있는 요청',
   heroRouteChapterTwoBody: '목표, 컨텍스트, 제한, 답변 형식을 보이게 만드세요.',
-  heroRouteBoundary: 'Codex, 도구, Agent, Skill로 가기 전에 코어 경로를 끝내세요. 5분 워밍업은 선택 사항이며 경로를 대신하지 않습니다.',
+  heroRouteBoundary: '세 항목은 경쟁하는 시작점이 아니라 순서가 있는 단계입니다. Codex, 도구, Agent, Skill로 가기 전에 끝내세요. 5분 워밍업은 선택 사항입니다.',
 });
 Object.assign(copy.de, {
   heroRouteAria: 'Verbindlicher LLM-Grundlagenpfad',
-  heroRouteKicker: 'Ein verbindlicher Grundlagenpfad',
+  heroRouteKicker: 'Ein verbindlicher Grundlagenpfad · in der Reihenfolge 1 → 2 → 3',
   heroRouteLessonZero: '1 · LLM-Grundlagenkern',
   heroRouteLessonZeroBody: 'Etwa 90–120 Minuten: verstehen, versuchen, prüfen, reparieren und übertragen.',
   heroRouteChapterOne: '2 · Einheit 1: Was ist ein LLM?',
   heroRouteChapterOneBody: 'Tokens, Kontext, Prompts, Werkzeuge, MCP, Agents und Skills in ihren Rollen.',
   heroRouteChapterTwo: '3 · Einheit 2: deine erste begrenzte Anfrage',
   heroRouteChapterTwoBody: 'Ziel, Kontext, Grenzen und Antwortform sichtbar machen.',
-  heroRouteBoundary: 'Beende den Kernpfad, bevor du Codex, Werkzeuge, Agents oder Skills öffnest. Die Fünf-Minuten-Aufwärmübung ist optional und ersetzt den Pfad nicht.',
+  heroRouteBoundary: 'Das sind drei aufeinanderfolgende Schritte, keine konkurrierenden Einstiege. Beende sie, bevor du Codex, Werkzeuge, Agents oder Skills öffnest; die Fünf-Minuten-Aufwärmübung ist optional.',
 });
 
 // Keep the runtime copy aligned with the foundation-first HTML entry. These

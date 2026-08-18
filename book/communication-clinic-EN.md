@@ -1150,6 +1150,13 @@ with a stop receipt. Open it for the copy-ready prompts and visual; use this
 section for routing and the permission boundary. A receipt is a bounded record,
 not a research result or evidence that a model searched correctly.
 
+Sequence: [Freeze one decision](research-check-practice-loop-EN.md) →
+[name claims and source owners](research-check-practice-loop-EN.md) →
+[read supplied material](research-check-practice-loop-EN.md) →
+[test one sentence](research-check-practice-loop-EN.md) →
+[look for an exception](research-check-practice-loop-EN.md) →
+[end with a stop receipt](research-check-practice-loop-EN.md).
+
 For the full visual and source boundary, use the canonical loop. A useful
 receipt contains one decision, at least one `unknown` or limit, and one named
 next check; it is not a research result, source-quality finding, or evidence
