@@ -72,6 +72,22 @@ Erst wenn eine zweite Person Ziel und Nicht-Ziel wiederholen kann, wählst du de
 | Lokaler Lauf | Dieses Input erzeugte dieses beobachtete Resultat | Produktion, alle Konten oder Performance |
 | Remote-Read-back | Die benannte Revision/Aufzeichnung ist remote sichtbar | Nutzerakzeptanz, Monitoring, sicheres Rollback |
 
+## Web-Coding: Ein sichtbares Ergebnis im echten Browser prüfen
+
+„Baue eine komplette Website“ vermischt Zielgruppe, Zustände, Quelldateien,
+Laufzeit, Browserprüfung und Rollback. Lies zuerst README und `index.html` in
+einer wegwerfbaren Kopie von `examples/skill-sandbox/product-context-real-estate`
+und ändere nur einen sichtbaren Satz in `index.html`. Füge kein Framework, Bild,
+Formular, API oder Netzwerk hinzu. Wenn Python 3 bereits vorhanden ist, starte
+aus der Kopie `python -m http.server 4182`, öffne `http://127.0.0.1:4182/` und
+prüfe Titel, neuen Satz, erhaltene Überschrift, Links, Konsole und einen 390px-
+Viewport.
+
+Bewahre Kopie, erlaubte Datei, URL, beobachteten Zustand, Diff sowie die nicht
+geprüften Punkte (Deployment, Accessibility, andere Browser, Nutzerabnahme) auf.
+Ein Quelldiff zeigt weder CSS-Laden, relative Pfade, mobile Abschneidung noch
+Laufzeitfehler; lokales Rendern ist kein Deployment.
+
 ## Kleines Experiment: ein JSON-Vertikalschnitt
 
 Lies in einem wegwerfbaren Verzeichnis eine String-Liste aus `input.json`, entferne Duplikate und schreibe `output.json`. Lesen und Schreiben sind nur dort erlaubt; kein Netzwerk, Installieren, Login, Commit, Push oder Veröffentlichen.
