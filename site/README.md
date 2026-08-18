@@ -8,7 +8,7 @@
 - 22 章路线按 A—D 四条路线筛选，并保留章节折叠；
 - 实验区展示当前实际存在的 18 个实验，并链接到英文实验索引；
 - 响应式导航在窄屏下折叠为菜单，支持 Escape 关闭和焦点返回；
-- 首页主菜单使用显式 `index.html#...` 入口，避免 Hugging Face Static Space 的 iframe、Pages 根入口和 `/site/` 开发入口把片段解析到不同文档；页眉与页脚 Logo 在普通 Docs 页面使用 `_top` 回到 canonical Docs 首页，在被 Hugging Face sandbox iframe 包裹时由运行时代码改为带 `noopener` 的用户触发新标签页，避免 `_top` 被宿主权限静默拦截；
+- 首页主菜单使用显式 `index.html#...` 入口，避免 Hugging Face Static Space 的 iframe、Pages 根入口和 `/site/` 开发入口把片段解析到不同文档；页眉与页脚 Logo 在普通 Docs 页面使用 `_top` 回到 canonical Docs 首页，在被 Hugging Face sandbox iframe 包裹时由运行时代码改为带 `noopener` 的用户触发新标签页；同一嵌入模式下，Start here、Learning path、Reading routes 和 Project index 也改为 canonical Docs 的新标签页入口，并保留当前 `lang` 参数，避免宿主把相对链接解析成错误的 `/site/` 路径；
 - 首页语言入口使用普通导航语义并标记当前页面；Reader 提供跳到正文、异步加载/错误状态、正文语言标记和高对比度下划线 fallback；
 - 所有 Markdown 章节、实验、Skill 与质量记录在本地展示页和 Pages artifact 中都先进入 Reader；Reader 仍从仓库内真实文件取源，chapter/lab 路由身份由 `content-status.yaml` 与 manifest 共同覆盖。非 Markdown 机器记录保留直接文件入口。
 - 全文搜索索引不会阻塞首屏。首次输入非空查询、提交查询，或用 `?q=` 打开页面时才加载；仅用键盘聚焦搜索框不会下载索引。加载失败会显示可重试的错误状态，不会伪装成零结果。
