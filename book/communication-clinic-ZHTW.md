@@ -1,13 +1,14 @@
 <!-- Traditional Chinese candidate generated from the Simplified Chinese source; independent language review pending. -->
-<!-- content_id: communication-clinic | locale: ZHTW | language: zh-TW | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
+<!-- content_id: communication-clinic | locale: ZHTW | language: zh-TW | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-18 -->
 
 # 可選應用練習：語言、工作與研究
 
 狀態：`draft` ｜ 學習者執行證據：`not_run` ｜ 適用範圍：任何文字聊天式 LLM 工作臺中的低風險、非敏感練習。
 
-**請在完成教材基礎主線後再使用：**[第 0 章](guides/llm-fundamentals-ZHTW.md)
-→ [第 1 章](chapters/01-gpt-and-codex-ZHTW.md) →
-[第 2 章](chapters/02-first-safe-task-ZHTW.md)。這些卡片用於應用已經學到的方法；它們不是解釋“大語言模型是什麼”的入門課。
+**請在完成 LLM 基礎核心課程後再使用：**[單元 1：LLM 基礎概念](guides/llm-fundamentals-ZHTW.md)
+→ [單元 2：第一次有界限的請求](routes/universal-core-foundations-ZHTW.md)。
+這些卡片用於應用核心方法；它們不是解釋“大語言模型是什麼”的入門課。
+如果你還沒有完成核心課程，請先從 [LLM 基礎核心課程](routes/universal-core-foundations-ZHTW.md) 開始。
 
 你現在處於繁體中文說明路徑：本頁所有說明、判斷和導航都使用繁體中文。頁面中的西班牙語只是**可選擇的外語練習目標**，不是頁面誤跳轉，也不表示你必須學習西班牙語。
 
