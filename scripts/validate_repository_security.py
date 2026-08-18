@@ -83,9 +83,9 @@ DOCS_DEPLOY_FORBIDDEN_FRAGMENTS = (
     "scripts/build_pages_artifact.py",
 )
 CODEQL_REQUIRED_FRAGMENTS = (
-    "github/codeql-action/init@f3712979fa5f215279b101dd0a2e3bdfb4353324",
-    "github/codeql-action/autobuild@f3712979fa5f215279b101dd0a2e3bdfb4353324",
-    "github/codeql-action/analyze@f3712979fa5f215279b101dd0a2e3bdfb4353324",
+    "github/codeql-action/init@ff2f1c621b7f889edc0d3c761ac2e6a3f8cdb0dd",
+    "github/codeql-action/autobuild@ff2f1c621b7f889edc0d3c761ac2e6a3f8cdb0dd",
+    "github/codeql-action/analyze@ff2f1c621b7f889edc0d3c761ac2e6a3f8cdb0dd",
     "security-events: write",
     "languages: ${{ matrix.language }}",
     "language: [javascript, python]",

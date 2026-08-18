@@ -61,3 +61,4 @@ Current entry points:
 - [ADR-0043: expand repository sensitive-information tripwires](0043-expand-repository-sensitive-information-tripwires.md)
 - [ADR-0044: bind live host security controls and publishing boundaries](0044-live-host-security-controls-and-publishing-boundaries.md)
 - [ADR-0045: deploy only the validated Pages artifact](0045-deploy-only-validated-pages-artifact.md)
+- [ADR-0046: constrain Reader source loading and maintain CodeQL v4](0046-reader-source-boundary-and-codeql-v4.md)
