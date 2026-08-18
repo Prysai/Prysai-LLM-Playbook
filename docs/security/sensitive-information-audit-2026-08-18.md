@@ -3,11 +3,12 @@
 ## Executive summary
 
 This was a repository-grounded audit of the Prysai LLM Playbook. The second
-round was refreshed on 2026-08-18 in a worktree whose committed base was
-`2eb257e`; it also included the uncommitted deployment-hardening and exact-
-permission-validator changes listed in this report. The report does not treat
-the earlier `1842b18` snapshot as evidence for SIA-09. The follow-up commit
-containing this report binds those changes to a reproducible repository state.
+round was refreshed on 2026-08-18 against the committed scan snapshot
+`dc5cba7`; no uncommitted deployment-hardening changes are included in the
+evidence. The snapshot contains the artifact-only Docs deployment and the
+hidden-file preservation fix. This report revision corrects its counts and
+records the resulting workflow evidence without treating the earlier
+`1842b18` snapshot as evidence for SIA-09.
 No high-confidence API key, access token, private key, JWT, credential-bearing
 URL, device identifier, MAC address, or private-network location remains in the
 current tracked candidate file set after the fixes in this audit.
@@ -46,6 +47,11 @@ Checked on 2026-08-18 from the repository working tree:
   response-header presence and a redacted body scan.
 - authenticated GitHub repository settings and recent workflow conclusions;
   secret values were not read.
+- remote workflow receipts for the `dc5cba7` snapshot: [security run
+  32184844125](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32184844125),
+  [Pages/Docs run 32184844197](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32184844197),
+  and [quality run 32184844218](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32184844218);
+  workflow logs were read without exposing secret values.
 - all local branches, remote-tracking branches, and tags recorded by
   `git for-each-ref`, plus unreachable blobs and commits reported by
   `git fsck --full --unreachable --no-reflogs`;
@@ -84,9 +90,10 @@ Severity: Medium prevention gap.
 
 The previous gate did not inspect local file URIs, authenticated URLs, secret
 query parameters, private IPv4/hostname locations, MAC addresses, or labeled
-device identifiers. The validator now detects these classes and has 30 focused
+device identifiers. The validator now detects these classes and has 36 focused
 fixtures, including false-positive checks for ordinary URLs, filenames,
-explicit synthetic paths, and large text files.
+explicit synthetic paths, large text files, and secret-bearing deployment
+artifact boundaries.
 
 ### SIA-03 — Static-site and workflow boundary — no issue observed
 
@@ -126,7 +133,7 @@ on every checkout, and leaves non-main manual runs as review-artifact builds.
 
 Severity: Informational historical residue; no live credential was established.
 
-The scan of 849 commits reachable from the audited `main` snapshot found one
+The scan of 865 commits reachable from the audited `main` snapshot found one
 provider-shaped
 match in the historical `scripts/test_build_pages_artifact.py` blob introduced
 by commit `6173a14`. The surrounding test was explicitly a negative fixture,
@@ -158,19 +165,21 @@ introduced.
 Severity: Medium governance risk; no secret exposure was observed.
 
 The active GitHub Ruleset still lists a `RepositoryRole` actor with
-`bypass_mode=always`. The final audit-report commit was pushed directly to
+`bypass_mode=always`. The audited hardening snapshot was pushed directly to
 `main`; GitHub's push response explicitly reported that the push bypassed the
 pull-request requirement, verified-signature requirement, and Code Scanning
 wait. This confirms that the recorded Ruleset bypass is operational, not merely
 metadata.
 
-The security and Pages workflows for the final commit succeeded. The quality
-workflow also concluded `success`, but its release-evidence step emitted
-`decision=blocked` under `continue-on-error`; the repository's formal release
-readiness therefore remains `not_ready`. Remove or narrow the permanent
-bypass, require signed reviewed changes, and run the formal release gate for a
-separately reviewed candidate before promoting the security policy or release
-status.
+The security and Pages workflows for `dc5cba7` succeeded. The Docs deployment
+also succeeded after consuming the candidate artifact. The quality workflow
+completed its unified regression and release-contract checks, then concluded
+with exit code 1 because its commit-bound release-evidence step emitted
+`decision=blocked` under `continue-on-error`; the evidence packet was still
+uploaded. The repository's formal release readiness therefore remains
+`not_ready`. Remove or narrow the permanent bypass, require signed reviewed
+changes, and run the formal release gate for a separately reviewed candidate
+before promoting the security policy or release status.
 
 ### SIA-09 — Secret-bearing deployment job had redundant build authority — fixed
 
@@ -200,19 +209,19 @@ administrator decision and is not represented as a repository file change.
 
 | Surface | Result | Evidence boundary |
 | --- | --- | --- |
-| Current candidate files | Pass; 1,096 candidate files, 6 workflows | Static patterns and policy checks only; the largest text artifact is approximately 5.2 MiB |
-| Focused security fixtures | Pass; 34 fixtures | Detector behavior, including synthetic false-positive boundaries, large-file coverage, and secret-bearing deployment permission boundaries |
-| All refs and reachable history | 20 refs; 863 reachable commits and 5,194 reachable blobs; current ref tips have 0 high-confidence credential, private-key, device, MAC, private-network, or authentication-URL matches; 1 older provider-shaped historical fixture is classified synthetic | Pattern scan of local branches, remote-tracking refs, and tag; not every provider-specific secret format |
+| Current candidate files | Pass; 1,095 candidate files, 6 workflows | Static patterns and policy checks only; the largest text artifact is approximately 5.2 MiB |
+| Focused security fixtures | Pass; 36 fixtures | Detector behavior, including synthetic false-positive boundaries, large-file coverage, and secret-bearing deployment permission and artifact boundaries |
+| All refs and reachable history | 20 refs; 865 reachable commits and 5,206 reachable blobs; current ref tips have 0 high-confidence credential, private-key, device, MAC, private-network, or authentication-URL matches; 1 older provider-shaped historical fixture is classified synthetic | Pattern scan of local branches, remote-tracking refs, and tag; not every provider-specific secret format |
 | Unreachable Git objects | 142 blobs across 15 unreachable commits; 1 old `example.test` negative-fixture object matched authentication-URL/query rules; 0 provider-shaped credential/private-key hits | Classified synthetic test data; local object reachability/retention can change |
 | Git stash/reflog | No stash entries; reflog showed normal repository refs | Does not inspect remote provider backups or account logs |
-| Workflow permissions and action refs | Pass; all checkout steps disable persisted credentials, all third-party refs use full SHAs, and Docs deploy consumes the validated build artifact without checkout/build execution | Does not prove every hosted runner or future workflow remains safe |
+| Workflow permissions and action refs | Pass; all checkout steps disable persisted credentials, all third-party refs use full SHAs, the candidate artifact preserves hidden `.nojekyll`, and Docs deploy consumes the validated build artifact without checkout/build execution | Does not prove every hosted runner or future workflow remains safe |
 | Host-side security controls | Secret Scanning, Push Protection, Dependabot security updates, and Actions SHA pinning enabled; non-provider patterns disabled; 1 repository secret and 1 Docs environment secret names observed without values | Repository-level API settings only; Ruleset has an always-bypass repository role and Docs environment protection is empty |
 | Dependencies | Pass; `npm audit` reported 0 vulnerabilities and top-level dependency listing contains Playwright only | Local npm advisory snapshot; does not replace ongoing update review |
 | Native frontend and binary assets | Pass; no dangerous string execution/HTML sink found; 10 tracked PNG assets, no archives/databases/private-key files, no PNG text metadata findings | Static review and filename/byte checks; no image steganography or independent provider scanner |
-| Published surfaces | GitHub Pages and Docs returned 200; body scans found no sensitive rule IDs | Response-header hardening differs by host; live content and headers can change |
+| Published surfaces | GitHub Pages and Docs returned 200; the `dc5cba7` Docs deployment reported `DOCS_SITEMAPS_OK root_urls=124 playbook_urls=123` and `DOCS_DEPLOY_OK`; body scans found no sensitive rule IDs | Response-header hardening differs by host; live content and headers can change |
 | Static CSP | Pass under the repository policy; an early meta CSP is present | Both live responses lacked a CSP response header; meta CSP is not a substitute for runtime HTTP headers |
 | External source archives | Incomplete; no archive directory was configured | Original archives were not supplied, so source/license audit coverage is incomplete |
-| Release evidence | Quality workflow succeeded, but its commit-bound release-evidence decision was `blocked`; formal readiness remains `not_ready` | A green workflow is not release approval |
+| Release evidence | Quality workflow completed the checks and uploaded its packet, but the job ended with `RELEASE_EVIDENCE_FAILED decision=blocked`; formal readiness remains `not_ready` | A passing check or uploaded packet is not release approval |
 
 ## Remaining limitations
 
