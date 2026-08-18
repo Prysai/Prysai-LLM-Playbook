@@ -119,6 +119,18 @@ def main() -> int:
         errors, checked = validator._validate_markdown_file(source, directory)
         require(checked == 1 and not errors, "an explicit stable fragment was rejected")
 
+        source.write_text(
+            '<span id="chatgpt-first-task"></span>\n'
+            '<span id="chatgpt-first-task"></span>\n'
+            "# Primera tarea en ChatGPT\n\n[Jump](#chatgpt-first-task)\n",
+            encoding="utf-8",
+        )
+        errors, checked = validator._validate_markdown_file(source, directory)
+        require(
+            checked == 1 and any("duplicate authored IDs" in error for error in errors),
+            "duplicate authored Reader IDs were accepted",
+        )
+
     print("HOMEPAGE_READER_FRAGMENT_TESTS_OK fixtures=10")
     return 0
 

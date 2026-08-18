@@ -140,6 +140,49 @@ def _html_block_ids(raw_lines: list[str]) -> set[str]:
     return parser.ids
 
 
+def _explicit_html_id_duplicates(markdown: str) -> list[str]:
+    """Return duplicate authored HTML IDs, excluding fenced examples.
+
+    Reader-generated heading IDs are handled separately by ``_reader_ids``.
+    Authored ``id`` attributes are a stronger contract: two of them in one
+    document make deep links ambiguous for the browser, screen readers, and
+    search indexes. Code examples are ignored because they are rendered as
+    code, not page markup.
+    """
+
+    visible_lines: list[str] = []
+    in_fence = False
+    fence: str | None = None
+    for line in markdown.splitlines():
+        stripped = line.strip()
+        if stripped.startswith(("```", "~~~")):
+            marker = stripped[:3]
+            if not in_fence:
+                in_fence, fence = True, marker
+            elif marker == fence:
+                in_fence, fence = False, None
+            continue
+        if not in_fence:
+            visible_lines.append(line)
+
+    parser = _HtmlIdParser()
+    parser.feed("\n".join(visible_lines))
+    parser.close()
+    ordered_ids: list[str] = []
+    # HTMLParser stores a set for normal validation; collect the ordered list
+    # here so a duplicate can be reported once and deterministically.
+    id_pattern = re.compile(r"\bid\s*=\s*([\"'])([^\"']+)\1", re.IGNORECASE)
+    for match in id_pattern.finditer("\n".join(visible_lines)):
+        ordered_ids.append(match.group(2))
+    seen: set[str] = set()
+    duplicates: list[str] = []
+    for identifier in ordered_ids:
+        if identifier in seen and identifier not in duplicates:
+            duplicates.append(identifier)
+        seen.add(identifier)
+    return duplicates
+
+
 def _reader_ids(markdown: str) -> set[str]:
     """Return IDs that renderBlocks can expose for a Markdown source."""
 
@@ -318,7 +361,14 @@ def _validate(homepage: Path, root: Path) -> tuple[list[str], int]:
 
         if source not in source_cache:
             try:
-                source_cache[source] = _reader_ids(source.read_text(encoding="utf-8"))
+                source_text = source.read_text(encoding="utf-8")
+                duplicate_ids = _explicit_html_id_duplicates(source_text)
+                if duplicate_ids:
+                    errors.append(
+                        f"{homepage_label}:{line_number}: Reader source has duplicate authored IDs in "
+                        f"{normalized}: {', '.join(duplicate_ids)}"
+                    )
+                source_cache[source] = _reader_ids(source_text)
             except (OSError, UnicodeError) as exc:
                 errors.append(
                     f"{homepage_label}:{line_number}: could not read Reader source {normalized}: {exc}"
@@ -358,6 +408,11 @@ def _validate_markdown_file(path: Path, root: Path) -> tuple[list[str], int]:
 
     ids = _reader_ids("\n".join(lines))
     errors: list[str] = []
+    duplicate_ids = _explicit_html_id_duplicates("\n".join(lines))
+    if duplicate_ids:
+        errors.append(
+            f"{label}: duplicate authored IDs: {', '.join(duplicate_ids)}"
+        )
     checked = 0
     in_fence = False
     fence: str | None = None
