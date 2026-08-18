@@ -158,6 +158,23 @@ try {
   assert.equal(await page.locator('.site-footer .wordmark').getAttribute('href'), 'https://docs.prysai.com/llm-playbook/', 'the footer logo does not point to the canonical Docs site');
   assert.equal(await page.locator('.site-footer .wordmark').getAttribute('target'), '_top', 'the footer logo does not return the top-level window to the canonical Docs site');
   assert.equal(await page.locator('.site-footer .wordmark').getAttribute('rel'), null, 'the footer logo carries an unexpected external-link relationship');
+  // Hugging Face Static Spaces wrap the site in a sandboxed iframe that does
+  // not allow top-level navigation. Verify the hosted fallback changes only
+  // the brand links to a user-initiated, escaped popup and that the popup is
+  // the canonical Docs URL.
+  const hostedWrapperPage = await context.newPage();
+  await hostedWrapperPage.setContent(`<iframe data-test-hosted-wrapper sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox" src="${origin}/site/index.html"></iframe>`);
+  const hostedFrame = hostedWrapperPage.frameLocator('iframe[data-test-hosted-wrapper]');
+  await hostedFrame.locator('.site-header .wordmark').waitFor();
+  assert.equal(await hostedFrame.locator('.site-header .wordmark').getAttribute('target'), '_blank', 'embedded Logo does not use the hosted navigation fallback');
+  assert.equal(await hostedFrame.locator('.site-header .wordmark').getAttribute('rel'), 'noopener', 'embedded Logo fallback is missing noopener');
+  assert.equal(await hostedFrame.locator('.site-header .wordmark').getAttribute('data-hosted-navigation'), 'new-tab', 'embedded Logo fallback is not marked');
+  const hostedPopupPromise = context.waitForEvent('page');
+  await hostedFrame.locator('.site-header .wordmark').click();
+  const hostedPopup = await hostedPopupPromise;
+  assert.equal(hostedPopup.url(), 'https://docs.prysai.com/llm-playbook/', 'embedded Logo popup does not target the canonical Docs URL');
+  await hostedPopup.close();
+  await hostedWrapperPage.close();
   const homepageMenuTargets = {
     'Start here': '#start',
     'Learning path': '#path',
