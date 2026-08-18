@@ -504,7 +504,7 @@ records what can be used as research, what can be adapted, and what must not be 
 
 ## Current state
 
-This is a transparent snapshot as of **2026-08-16**. Counts describe the
+This is a transparent snapshot as of **2026-08-18**. Counts describe the
 repository; they do not describe learning outcomes.
 
 | Area | Current state | What the state means |
@@ -539,7 +539,7 @@ that HTTP reachability is a semantic source review.
 
 English is the default public language and the first development priority.
 Every reader-facing localized file, including an English source, carries an
-explicit suffix: `-EN`, `-ZH`, `-ES`, `-JA`, `-KO`, or `-DE`.
+explicit suffix: `-EN`, `-ZH`, `-ES`, `-JA`, `-KO`, `-DE`, or `-ZHTW`.
 
 | Reader entry | Role | Current truth |
 |---|---|---|
@@ -550,6 +550,7 @@ explicit suffix: `-EN`, `-ZH`, `-ES`, `-JA`, `-KO`, or `-DE`.
 | `README-JA.md` | Japanese entry | Translation slice; independent language review pending |
 | `README-KO.md` | Korean entry | Translation slice; independent language review pending |
 | `README-DE.md` | German entry | Translation slice; independent language review pending |
+| `README-ZHTW.md` | Traditional Chinese entry | Translation slice; independent language review pending |
 
 `README.md` is intentionally English because GitHub uses it as the default
 repository face. It is not a second independent English translation:
@@ -564,8 +565,9 @@ the [locale-suffixed content decision](docs/adr/0010-locale-suffixed-content.md)
 On a localized page, links to reader-facing content stay in that locale. When
 the target translation does not exist, the page says so and points to the
 current source with an explicit source-locale notice. It never silently
-presents English as a completed translation. Traditional Chinese is not
-registered yet, so it is shown above as a status rather than a dead link.
+presents English as a completed translation. Traditional Chinese is registered
+in the locale matrix and has same-locale paths, but independent language review
+and supplemental-material coverage remain pending.
 
 ## How to update the project
 

@@ -8,6 +8,14 @@ Accepted
 
 2026-08-10
 
+## Current amendment
+
+The six-locale set below was the initial migration baseline. On 2026-08-18 the
+canonical matrix added `ZHTW` (`zh-tw`, `zh-TW`) as the seventh registered
+locale. Historical examples retain the original six-locale wording, but
+current requirements such as matrix completeness, switchers, validation, and
+release gates mean every locale registered in `docs/governance/locale-matrix.yaml`.
+
 ## Context
 
 The project is a book-like knowledge base and practice system, not only a
@@ -31,7 +39,7 @@ across languages. It also makes several important states ambiguous:
   GitHub navigation, and in-progress work.
 
 The project therefore needs a naming rule, a stable cross-language identity,
-an explicit six-locale target, a link rule, a migration path, and machine-
+an explicit locale target, a link rule, a migration path, and machine-
 readable translation status. The decision must also preserve the project's
 existing evidence language: a file being present or a checker passing does not
 prove that its content, translation, browser behavior, or volatile facts have
@@ -99,7 +107,7 @@ The rule applies to reader-facing Markdown and other localized content assets,
 including chapters, labs, Skills documentation where localized copies exist,
 the table of contents, and localized site content. Files that are deliberately
 locale-neutral, such as machine-readable governance data, source registers,
-validators, and ADRs, are not forced into six translated copies; they must be
+validators, and ADRs, are not forced into one translated copy per locale; they must be
 marked as locale-neutral in the matrix or excluded from reader-facing locale
 navigation.
 
@@ -113,7 +121,7 @@ is the normative target and no migration slice may invent a competing mapping.
 The matrix MUST contain, for every translatable `content_id`:
 
 - the stable content ID, kind, and shared filename stem;
-- one entry for all six required locales (`EN`, `ZH`, `ES`, `JA`, `KO`, `DE`);
+- one entry for every required locale registered in the matrix;
 - the exact canonical path for each entry, including the locale suffix;
 - the English `source_revision` that translations were produced from;
 - content maturity and translation status separately;
@@ -151,8 +159,8 @@ content:
 ```
 
 The example is a schema illustration, not a claim that the shown chapter or
-the six files already exist. A complete matrix row must include all six locale
-keys. During migration, an entry may be `not-started` or `in-progress`, but it
+the example files already exist. A complete matrix row must include every
+required locale key. During migration, an entry may be `not-started` or `in-progress`, but it
 must still be explicit; an omitted locale is a matrix error. Release mode
 requires a real path and an allowed status for every public translatable
 artifact.
@@ -192,7 +200,7 @@ switcher block:
 Links inside this marked block MAY cross locales, but each target MUST:
 
 1. belong to the same `content_id` as the page containing the switcher;
-2. use one of the six locales registered in the matrix; and
+2. use one of the locales registered in the matrix; and
 3. appear exactly once for every registered locale.
 
 An unavailable translation is shown as an unlinked status such as
@@ -202,7 +210,7 @@ translation gap from a broken language switch.
 
 The root `README.md` is a deliberate English (`EN`) GitHub facade retained for
 GitHub's default rendering and existing bookmarks. It carries an explicit
-`locale: EN` marker, exposes the six-locale switcher, and points to the
+`locale: EN` marker, exposes the registered-locale switcher, and points to the
 suffixed `README-EN.md` as the canonical English source. It is not a second
 independent English edition; changes to the facade and source must be reviewed
 together. The unsuffixed `book/README.md` remains a language-neutral
@@ -264,7 +272,7 @@ The repository will migrate in small, reviewable slices:
    the host supports redirects, or as thin compatibility stubs where it does
    not. A stub must name the canonical `-EN` path and any explicit locale
    alternatives; it must not maintain a second full copy of the content.
-6. **Strict release gate:** after all public artifacts have six completed
+6. **Strict release gate:** after all public artifacts have completed
    locale entries and link checks pass, deprecate legacy paths. Removing a
    legacy path requires a separate reviewed change with a link audit and a
    rollback plan.
@@ -317,10 +325,10 @@ The implementation will add or extend validators so that the architecture is
 enforceable rather than a naming convention maintained by memory. At minimum,
 the validation suite MUST check:
 
-- the default locale is `EN` and the six locale definitions match the matrix;
+- the default locale is `EN` and the registered locale definitions match the matrix;
 - every localized filename ends in exactly one allowed uppercase suffix,
   including `-EN`;
-- every translatable content ID has six matrix entries and no duplicate path;
+- every translatable content ID has one matrix entry per registered locale and no duplicate path;
 - each matrix path matches its content ID, shared stem, and locale suffix;
 - a claimed non-`not-started` file exists and is valid UTF-8 Markdown or the
   declared asset format;
@@ -342,7 +350,7 @@ Validation has two explicit modes:
 - **Migration mode** permits `not-started` and `in-progress` entries only when
   the matrix records them and no public navigation points to a missing file
   without a status notice.
-- **Release mode** requires all six locale files for every public translatable
+- **Release mode** requires all registered locale files for every public translatable
   artifact, same-locale links, complete metadata, and no unregistered legacy
   path.
 
@@ -403,7 +411,7 @@ small migration slices make the change reversible and auditable.
 
 ### Costs and risks
 
-- The repository will contain up to six files per public content identity, so
+- The repository will contain one file per registered locale for each public content identity, so
   navigation, search, and review volume will grow.
 - A source change can make several translations stale and require a focused
   update cycle.

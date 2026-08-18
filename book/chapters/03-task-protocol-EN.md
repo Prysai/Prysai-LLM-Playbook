@@ -490,7 +490,7 @@ dependency, expands the edit set, or reports completion without evidence.
 
 Then replace vague words with observable criteria, such as:
 
-- “the repository README has a visible language switcher with six registered
+- “the repository README has a visible language switcher with seven registered
   entries”; and
 - “the local link check reports zero broken repository links.”
 

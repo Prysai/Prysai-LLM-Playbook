@@ -11,7 +11,7 @@
   "policy": {
     "order_source": "This file owns chapter order; filenames, directory enumeration, and page-local links do not.",
     "title_roles": "canonical_title_en and canonical_title_zh own the exact H1 body without the chapter-number prefix. title_en and title_zh are intentional compact labels for TOCs, rails, and previous/next navigation. Unregistered page-local aliases are not canonical titles.",
-    "english_navigation": "Every chapter uses its six locale-suffixed source files; navigation always targets the selected locale path.",
+    "english_navigation": "Every chapter uses its seven locale-suffixed source files; navigation always targets the selected locale path.",
     "legacy_navigation": "Legacy unsuffixed chapter drafts were removed during release cleanup; no page links to an unsuffixed chapter path anymore.",
     "footer": "The generated footer contains only previous and next chapter links. The table of contents remains the dedicated route index.",
     "boundary": "This source controls chapter navigation only. Learning-level ownership remains in learning-path.yaml, translation identity remains in locale-matrix.yaml, and supplemental routes never change the 22-chapter order."

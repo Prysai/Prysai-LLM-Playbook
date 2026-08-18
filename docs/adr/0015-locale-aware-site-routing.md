@@ -10,8 +10,8 @@ Accepted for the migration phase
 
 ## Context
 
-The repository now has six registered reader locales and a visible language
-menu, but the public showcase also contains 22 chapters and 17 labs whose
+The repository now has seven registered reader locales and a visible language
+menu, but the public showcase also contains 22 chapters and 18 labs whose
 translation files are being migrated at different speeds. A language toggle
 alone is not enough: a reader who chooses Chinese and then opens a chapter can
 still be sent to an English-specific hard-coded path. Conversely, a missing
@@ -40,16 +40,16 @@ public-site route index that joins them.
    or the documented English migration path and expose a visible pending
    banner/title. A fallback is evidence of a missing translation, not a
    translation claim.
-5. Keep `?lang=en|zh|es|ja|ko|de` as the shareable language state. The URL is
+5. Keep `?lang=en|zh|es|ja|ko|de|zh-tw` as the shareable language state. The URL is
    the only language source: an absent or invalid parameter resolves to the
    English default. Do not read a browser preference, because it can make a
    shared English URL render a different language.
 6. Keep the language switcher as the only intentional cross-locale navigation.
    Ordinary links preserve the current locale and the current path/query/hash
    where applicable.
-7. Keep the public UI dictionaries limited to reviewed EN and ZH copy during
-   migration. ES, JA, KO, and DE remain routable content locales with explicit
-   English UI fallback until their UI copy is separately reviewed.
+7. Keep one explicit UI dictionary for each registered locale. The current site
+   exposes EN, ZH, ES, JA, KO, DE, and ZH-TW dictionaries; UI translation review
+   and reader evidence remain separate from route/file availability.
 
 ## Alternatives considered
 
@@ -84,8 +84,8 @@ same contracts rather than introduce a second routing system.
   manifest is regenerated and checked.
 - The static showcase has a small amount of runtime logic, but the routing
   rules remain deterministic and inspectable without a network service.
-- The site can truthfully show six locale choices while still reporting that
-  only EN/ZH UI copy and a subset of translated files are available.
+- The site can truthfully show seven locale choices while still reporting that
+  route/file availability and language review are separate claims.
 - The manifest is generated output. Its JSON is not an editing surface.
 
 ## Evidence boundary

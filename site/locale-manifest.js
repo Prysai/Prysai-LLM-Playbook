@@ -448,9 +448,9 @@ window.CODEX_LOCALE_MANIFEST = {
         "zh-tw": {
           "path": "book/communication-clinic-ZHTW.md",
           "exists": true,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "full",
+          "coverage": "starter-card subset",
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [
             "language-practice-route"

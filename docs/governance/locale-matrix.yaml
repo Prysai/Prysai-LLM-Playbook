@@ -555,13 +555,13 @@
         },
         "ZHTW": {
           "path": "book/communication-clinic-ZHTW.md",
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "2026-08-18-zhtw-bootstrap",
-          "coverage": "full",
+          "coverage": "starter-card subset",
           "run_status": "not_run",
-          "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+          "reason": "繁體中文起步卡片子集已建立；它不是完整英文練習包的翻譯，獨立語言審校與學習者執行證據仍待完成。"
         }
       }
     },
