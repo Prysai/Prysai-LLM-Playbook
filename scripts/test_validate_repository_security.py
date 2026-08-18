@@ -155,12 +155,12 @@ permissions:
   security-events: write
 """ + "\n".join(policy.CODEQL_REQUIRED_FRAGMENTS) + "\npersist-credentials: false\n"
         require(
-            not policy.validate_codeql_workflow(secure_codeql, "codeql.yml"),
+            not policy.validate_codeql_workflow(secure_codeql, ".github/workflows/codeql.yml"),
             "pinned PR CodeQL workflow with its scoped upload permission was rejected",
         )
         fixtures += 1
         require(
-            not policy.validate_workflow_text(secure_codeql, "codeql.yml"),
+            not policy.validate_workflow_text(secure_codeql, ".github/workflows/codeql.yml"),
             "CodeQL PR workflow was rejected by the general workflow validator",
         )
         fixtures += 1
@@ -178,18 +178,18 @@ permissions:
             "  security-events: write\n  id-token: write\n",
         )
         require(
-            any("exactly" in error for error in policy.validate_codeql_workflow(codeql_extra_permission, "codeql.yml")),
+            any("exactly" in error for error in policy.validate_codeql_workflow(codeql_extra_permission, ".github/workflows/codeql.yml")),
             "CodeQL workflow with an extra PR write permission was accepted",
         )
         fixtures += 1
         codeql_missing_upload_permission = secure_codeql.replace("  security-events: write\n", "")
         require(
-            any("security-events: write" in error for error in policy.validate_codeql_workflow(codeql_missing_upload_permission, "codeql.yml")),
+            any("security-events: write" in error for error in policy.validate_codeql_workflow(codeql_missing_upload_permission, ".github/workflows/codeql.yml")),
             "CodeQL workflow without its PR upload permission was accepted",
         )
         fixtures += 1
         require(
-            any("secrets context" in error for error in policy.validate_codeql_workflow(secure_codeql + "${{ secrets.EXAMPLE }}\n", "codeql.yml")),
+            any("secrets context" in error for error in policy.validate_codeql_workflow(secure_codeql + "${{ secrets.EXAMPLE }}\n", ".github/workflows/codeql.yml")),
             "CodeQL workflow with a secrets context was accepted",
         )
         fixtures += 1
