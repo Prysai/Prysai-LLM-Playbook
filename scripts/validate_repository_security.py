@@ -90,6 +90,12 @@ CODEQL_REQUIRED_FRAGMENTS = (
     "languages: ${{ matrix.language }}",
     "language: [javascript, python]",
 )
+CODEQL_PR_ALLOWED_PERMISSIONS = {
+    "actions": "read",
+    "contents": "read",
+    "packages": "read",
+    "security-events": "write",
+}
 SECRET_PATTERNS = (
     re.compile(r"\b(?:ghp|gho|ghu|ghs|ghr)_[A-Za-z0-9]{20,}\b"),
     re.compile(r"\bgithub_pat_[A-Za-z0-9_]{40,}\b"),
@@ -431,15 +437,28 @@ def validate_workflow_text(text: str, label: str) -> list[str]:
             errors.append(f"{label}: pull-request workflow must explicitly set read-only permissions")
         else:
             permissions = dict(PERMISSION_LINE_RE.findall(permission_match.group(0)))
-            if permissions.get("contents") != "read":
-                errors.append(f"{label}: pull-request workflow must grant contents: read")
-            if any(scope not in {"contents", "pull-requests"} or level != "read" for scope, level in permissions.items()):
-                errors.append(f"{label}: pull-request workflow may grant only read-only contents or pull-requests permissions")
-        if WRITE_PERMISSION_RE.search(text):
-            errors.append(f"{label}: pull-request workflow must not grant write-scoped permissions")
+            if _is_codeql_workflow_label(label):
+                if permissions != CODEQL_PR_ALLOWED_PERMISSIONS:
+                    errors.append(
+                        f"{label}: CodeQL pull-request workflow must declare exactly "
+                        "actions: read, contents: read, packages: read, and security-events: write"
+                    )
+            else:
+                if permissions.get("contents") != "read":
+                    errors.append(f"{label}: pull-request workflow must grant contents: read")
+                if any(scope not in {"contents", "pull-requests"} or level != "read" for scope, level in permissions.items()):
+                    errors.append(f"{label}: pull-request workflow may grant only read-only contents or pull-requests permissions")
+                if WRITE_PERMISSION_RE.search(text):
+                    errors.append(f"{label}: pull-request workflow must not grant write-scoped permissions")
     if "actions/checkout@" in text and "persist-credentials: false" not in text:
         errors.append(f"{label}: every checkout must disable persisted checkout credentials")
     return errors
+
+
+def _is_codeql_workflow_label(label: str) -> bool:
+    """Identify the one workflow allowed to upload PR CodeQL results."""
+
+    return label == relative(CODEQL_WORKFLOW) or Path(label).name == CODEQL_WORKFLOW.name
 
 
 def validate_quality_dependency_pin(text: str, label: str) -> list[str]:
@@ -513,7 +532,13 @@ def validate_codeql_workflow(text: str, label: str) -> list[str]:
         if fragment not in text:
             errors.append(f"{label}: CodeQL workflow is missing required boundary: {fragment}")
     if PULL_REQUEST_RE.search(text):
-        errors.append(f"{label}: CodeQL workflow must not grant write permissions to pull_request runs")
+        permission_match = PERMISSIONS_BLOCK_RE.search(text)
+        permissions = dict(PERMISSION_LINE_RE.findall(permission_match.group(0))) if permission_match else {}
+        if permissions != CODEQL_PR_ALLOWED_PERMISSIONS:
+            errors.append(
+                f"{label}: CodeQL pull-request workflow must declare exactly "
+                "actions: read, contents: read, packages: read, and security-events: write"
+            )
     if SECRETS_CONTEXT_RE.search(text):
         errors.append(f"{label}: CodeQL workflow must not reference the secrets context")
     if "persist-credentials: false" not in text:

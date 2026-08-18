@@ -146,15 +146,46 @@ jobs:
         )
         fixtures += 1
 
-        secure_codeql = "\n".join(policy.CODEQL_REQUIRED_FRAGMENTS) + "\npersist-credentials: false\n"
+        secure_codeql = """on:
+  pull_request:
+permissions:
+  actions: read
+  contents: read
+  packages: read
+  security-events: write
+""" + "\n".join(policy.CODEQL_REQUIRED_FRAGMENTS) + "\npersist-credentials: false\n"
         require(
             not policy.validate_codeql_workflow(secure_codeql, "codeql.yml"),
-            "pinned trusted-ref CodeQL workflow was rejected",
+            "pinned PR CodeQL workflow with its scoped upload permission was rejected",
         )
         fixtures += 1
         require(
-            any("write permissions" in error for error in policy.validate_codeql_workflow(secure_codeql + "  pull_request:\n", "codeql.yml")),
-            "CodeQL workflow with a pull-request write boundary was accepted",
+            not policy.validate_workflow_text(secure_codeql, "codeql.yml"),
+            "CodeQL PR workflow was rejected by the general workflow validator",
+        )
+        fixtures += 1
+        ordinary_pr_upload = valid_workflow.replace(
+            "  contents: read\n",
+            "  contents: read\n  security-events: write\n",
+        )
+        require(
+            any("write-scoped permissions" in error for error in policy.validate_workflow_text(ordinary_pr_upload, "security.yml")),
+            "ordinary PR workflow with CodeQL upload permission was accepted",
+        )
+        fixtures += 1
+        codeql_extra_permission = secure_codeql.replace(
+            "  security-events: write\n",
+            "  security-events: write\n  id-token: write\n",
+        )
+        require(
+            any("exactly" in error for error in policy.validate_codeql_workflow(codeql_extra_permission, "codeql.yml")),
+            "CodeQL workflow with an extra PR write permission was accepted",
+        )
+        fixtures += 1
+        codeql_missing_upload_permission = secure_codeql.replace("  security-events: write\n", "")
+        require(
+            any("security-events: write" in error for error in policy.validate_codeql_workflow(codeql_missing_upload_permission, "codeql.yml")),
+            "CodeQL workflow without its PR upload permission was accepted",
         )
         fixtures += 1
         require(

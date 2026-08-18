@@ -1,6 +1,14 @@
 name: Prysai LLM Playbook CodeQL
 
 on:
+  pull_request:
+    paths:
+      - "**.py"
+      - "**.js"
+      - "**.mjs"
+      - "**.ts"
+      - "**.tsx"
+      - ".github/workflows/codeql.yml"
   push:
     branches: [main]
     paths:
