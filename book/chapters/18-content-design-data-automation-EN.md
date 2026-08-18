@@ -70,6 +70,52 @@ Human approval point and stop condition:
 
 Moving up a level requires a written reason, new permissions, new risks, new evidence, and a recovery plan. If the task does not need a higher level, do not enable it.
 
+### 5. Map common AI application scenes to one deliverable
+
+“Use AI for everything” is not a route. Start with the final thing another
+person must read, run, decide, or approve, then choose the smallest capability
+that can help. The scene changes the acceptance check; it does not remove the
+need for one.
+
+| Scene | Small first deliverable | Human check before moving on |
+|---|---|---|
+| Writing and editing | A short draft using supplied facts | Compare every material claim with the source; mark missing details instead of filling them in |
+| Research and comparison | A claim table with source locations and unknowns | Open the sources, check scope and date, and separate fact from inference |
+| Web coding | One visible page state in a local browser | Inspect the target viewport, links, console, diff, and failure state |
+| Data and spreadsheets | A reproducible summary from a synthetic or authorised fixture | Check schema, formulas, units, blanks, denominator, and recalculation |
+| Images and presentations | One rendered page or slide for a named audience | Check hierarchy, text, contrast, factual content, attribution, and editability |
+| Documents and PDFs | A final-form export with the intended reading order | Render it, inspect pagination and links, then check selectable text and accessibility requirements |
+| Browser or computer action | A dry-run or draft state with an exact target | Confirm account, recipient, scope, side effect, and human approval before submission |
+| Automation | One idempotent test batch with a trace or run ID | Check partial completion, retry behavior, permissions, logs, and rollback |
+| Mobile or remote control | A read-only status or draft request | Verify which device, project, account, and network are in scope; do not infer that remote access is safe |
+
+These are application patterns, not promises that a particular vendor, model,
+Plugin, browser, or mobile client exposes the named capability. A product fact
+belongs in a dated adapter record. The stable lesson is to keep the deliverable
+and evidence visible while authority expands one level at a time.
+
+### 6. A cross-scene request card
+
+Before asking a model or tool to act, fill this compact card:
+
+```text
+Deliverable: what should exist or be decided at the end?
+Audience and surface: who will inspect it, and where will it run or appear?
+Inputs: which files, facts, sources, or fixture records are authorised?
+Allowed capability: draft, transform, inspect, run, connect, or publish?
+Constraints: facts to preserve, data to exclude, format, time, and budget.
+Acceptance: three checks another person can repeat.
+Failure and recovery: what counts as incomplete, and how will we restore state?
+Stop: which missing input, permission, source, or side effect pauses the task?
+```
+
+Then ask for a proposal or draft, not an irreversible action. Keep the first
+run local, synthetic, read-only, or reversible. If the next step needs a real
+account, upload, send, publish, payment, deletion, or persistent installation,
+split it into a new card and obtain the relevant authorization. This makes the
+same method useful for a document, web page, spreadsheet, image, automation,
+or remote device without pretending that their risks are identical.
+
 ## Your first ten minutes: turn a vague request into a checkable draft
 
 Do this before choosing a new tool or connecting an account. Use a fictional brief and a disposable local file. For example: “Write a one-page update about three invented event registrations.” The point is not to make the model sound impressive. The point is to see whether a small request can be made precise enough to check.
