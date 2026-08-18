@@ -18,6 +18,7 @@ LINK_RE = re.compile(r'<a[^>]+data-chapter-nav="([^"]+)"[^>]+href="([^"]+)"', re
 H1_RE = re.compile(r"(?m)^#\s+(.+?)\s*$")
 EN_H1_RE = re.compile(r"^Chapter\s+(\d+):\s+(.+)$")
 ZH_H1_RE = re.compile(r"^第([一二三四五六七八九十]+)章：(.+)$")
+LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW")
 
 
 def fail(errors: list[str]) -> int:
@@ -106,7 +107,7 @@ def main() -> int:
         if item.get("english_path"):
             english_target = ROOT / str(item["english_path"])
             targets.append((english_target, "EN"))
-            for locale in ("ZH", "ES", "JA", "KO", "DE"):
+            for locale in LOCALES[1:]:
                 localized_target = ROOT / str(item["english_path"]).replace("-EN.md", f"-{locale}.md")
                 if localized_target.is_file():
                     targets.append((localized_target, locale))
@@ -139,7 +140,7 @@ def main() -> int:
 
     if errors:
         return fail(errors)
-    print("BOOK_NAVIGATION_OK chapters=22 locales=EN,ZH")
+    print(f"BOOK_NAVIGATION_OK chapters=22 locales={','.join(LOCALES)}")
     return 0
 
 
