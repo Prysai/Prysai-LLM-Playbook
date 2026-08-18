@@ -153,6 +153,16 @@
 
 再做一次边界判断：在查任何资料前，写下纯文字模型对这句话能建立什么：**“市图书馆今天下午 6 点关门。”** 模型可以讨论句子表达，但这条当前事实需要来源检查。不要要求它编造来源。
 
+### 三个有边界的观察实验
+
+上面的检查只是小型演示，不是学习者或模型在所有任务中都会重复同样行为的证据。要在不使用账户、私人数据、工具或网络请求的情况下练习这些边界，请使用下面的虚构记录协议（协议正文目前为英文）：
+
+- [Context change and unknowns（上下文变化与未知项）](../../evals/candidates/core-course-v1/observations/context-change-and-unknowns.md) —— 比较两份输入版本，把每条声明标为 `PASS`、`FAIL` 或 `UNSURE`，并让房间号保持未知。
+- [First-request contract and controlled repeat（首轮请求合同与受控重复）](../../evals/candidates/core-course-v1/observations/first-request-contract.md) —— 在回答前写出目标、材料、限制、回答形状和停止条件；有安全的文字界面时，将同一请求再运行两次，记录共同点与差异。
+- [Tool boundary, authority, and evidence（工具边界、授权与证据）](../../evals/candidates/core-course-v1/observations/tool-boundary-authority-evidence.md) —— 区分提议的行动、获得的授权、工具执行和回读证据。
+
+每个协议都要求先保存第一次产物，再提供提示，并记录帮助、未知项和停止规则。状态为 `candidate / not_run`：未来运行只能描述指定任务、条件和评分标准，不能证明课程有效性、提示词优越性、模型质量、保持、普遍迁移、平台等价或生产就绪。
+
 ### 可迁移的首轮请求模板
 
 准备尝试一个低风险真实任务时，先填好下面六行。标签适用于任何聊天模型；产品仍可能加入你看不到的其他指令。
