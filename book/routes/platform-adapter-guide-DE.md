@@ -43,7 +43,7 @@ und der Platform Fact Watch.
 | ChatGPT | Web-Chat, App, API | Kontoumfang, Speichereinstellungen, Datei-Upload, Browsing-Schalter, Share-Links | [Erste Aufgabe in ChatGPT](#chatgpt-first-task) |
 | Claude / Claude Code | Web-Chat, CLI-Agent, IDE | Terminal- und Datei-Agent, Berechtigungsabfragen, CLAUDE.md-Projektspeicher | [Erste Aufgabe in Claude Code](#claude-code-first-task) |
 | Gemini | Web-Chat, App, API | Google-Kontoumfang, Google-Workspace-Integration, App-Erweiterung | [Erste Aufgabe in Gemini](#gemini-first-task) |
-| DeepSeek | Web-Chat, App, API | Modellwahl und Kontextfenster variieren je nach Release; offizielle Modellseite prüfen | [Erste Aufgabe in DeepSeek](#deepseek-first-task) |
+| DeepSeek | **Die Quellenquittung dieser Route deckt nur die API ab**; Web-Chat und App liegen außerhalb dieses Belegs | API-Modellliste, Kontolimits und Tool-Call-Steuerung sind oberflächenspezifisch und veränderlich; die genaue offizielle Quelle prüfen | [Erste Aufgabe in DeepSeek](#deepseek-first-task) |
 | Grok | Web-Chat, App | X-Konto-Integration, Zugriff auf Echtzeit-Beiträge, Rhythmus der Modell-Releases | [Erste Aufgabe in Grok](#grok-first-task) |
 | Codex | Desktop, CLI, IDE, Cloud, API | der Flaggschiff-Übungsstrang des Playbook: Dateien, Werkzeuge, Skills, Agents, Berechtigungen | [Codex-Pfad](../routes/first-safe-change-DE.md) |
 
@@ -126,12 +126,20 @@ für eine reine Textübung keine Erweiterungen.
 
 ## Erste Aufgabe in DeepSeek
 
-Führe die sichere erste Aufgabe in der DeepSeek-Chat- oder App-Oberfläche aus.
-Modellnamen, Kontextfenster und Verfügbarkeit ändern sich zwischen Releases;
-die offizielle Modellseite ist der Eigentümer dieser Fakten. Notiere den
-Modellnamen, den du tatsächlich verwendet hast, und das Datum, damit der Lauf
-reproduzierbar bleibt. Füge keine API-Schlüssel, keinen privaten Code und keine
-internen Dokumente in einen Web-Chat ein.
+Die quellengebundene DeepSeek-Anpassung auf dieser Seite deckt **nur die API**
+ab. Sie bestätigt weder die Verfügbarkeit noch das Verhalten von Web-Chat oder
+App, Kontextfenster, Preise oder Kontoberechtigungen. Wenn du Web-Chat oder App
+verwenden willst, prüfe die aktuelle Dokumentation des Anbieters für genau
+diese Oberfläche und halte das Ergebnis getrennt fest; die API-Quittung dieser
+Seite ist dafür kein Beleg.
+
+Für eine erste Aufgabe ohne Schlüssel und private Daten nutze die allgemeine
+sichere Aufgabe oben nur in einer Oberfläche, die du ausdrücklich verwenden
+darfst. Wenn ein API-Experiment ausdrücklich genehmigt ist, lies zuerst die
+[DeepSeek-API-Quellenquittung](../../docs/research/deepseek-api-source-receipt-2026-08-17.md)
+und befolge die gesonderte API-Grenze unten. Notiere das tatsächlich verwendete
+Modell und das Datum. Füge API-Schlüssel, privaten Code oder interne Dokumente
+weder in einen Chat noch in eine Anfrage ein.
 
 <span id="grok-first-task"></span>
 

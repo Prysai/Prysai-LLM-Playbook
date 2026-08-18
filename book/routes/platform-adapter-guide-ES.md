@@ -42,7 +42,7 @@ conocer el método de mantenimiento que hay detrás de esta regla.
 | ChatGPT | chat web, app, API | alcance de cuenta, ajustes de memoria, carga de archivos, conmutador de navegación, enlaces de uso compartido | [Primera tarea en ChatGPT](#chatgpt-first-task) |
 | Claude / Claude Code | chat web, agente CLI, IDE | agente de terminal y archivos, avisos de permisos, memoria de proyecto CLAUDE.md | [Primera tarea en Claude Code](#claude-code-first-task) |
 | Gemini | chat web, app, API | alcance de cuenta de Google, integración con Google Workspace, extensión de app | [Primera tarea en Gemini](#gemini-first-task) |
-| DeepSeek | chat web, app, API | la elección de modelo y la ventana de contexto varían según la versión; consulta la página oficial del modelo | [Primera tarea en DeepSeek](#deepseek-first-task) |
+| DeepSeek | **El recibo de fuentes de esta ruta solo cubre la API**; el chat web y la app quedan fuera de esa evidencia | el catálogo de modelos de la API, los límites de cuenta y los controles de tool calls son específicos y volátiles; consulta la fuente oficial de la superficie exacta | [Primera tarea en DeepSeek](#deepseek-first-task) |
 | Grok | chat web, app | integración con la cuenta de X, acceso a publicaciones en tiempo real, cadencia de lanzamiento de modelos | [Primera tarea en Grok](#grok-first-task) |
 | Codex | escritorio, CLI, IDE, nube, API | la ruta insignia del Playbook: archivos, herramientas, Skills, Agents, permisos | [Ruta de Codex](../routes/first-safe-change-ES.md) |
 
@@ -122,12 +122,20 @@ actives extensiones para una tarea de práctica solo de texto.
 
 ## Primera tarea en DeepSeek
 
-Ejecuta la primera tarea segura en la superficie de chat o app de DeepSeek. El
-nombre del modelo, la ventana de contexto y la disponibilidad cambian entre
-versiones; la página oficial del modelo es la propietaria de esos hechos.
-Registra el nombre del modelo que usaste realmente y la fecha, para que la
-ejecución siga siendo reproducible. No pegues claves de API, código privado ni
-documentos internos en un chat web.
+El adaptador de DeepSeek respaldado por fuentes en esta página cubre **solo la
+API**. No verifica la disponibilidad ni el comportamiento del chat web o de la
+app, las ventanas de contexto, los precios ni los permisos de una cuenta. Si
+quieres usar el chat web o la app, consulta la documentación oficial vigente de
+esa superficie exacta y registra el resultado por separado; este recibo de la
+API no es evidencia para ellas.
+
+Para una primera tarea sin clave ni datos privados, usa la tarea segura general
+de arriba solo en una superficie que tengas autorización para utilizar. Si se
+autoriza expresamente un experimento con la API, lee primero el [recibo de
+fuentes de la API de DeepSeek](../../docs/research/deepseek-api-source-receipt-2026-08-17.md)
+y sigue el límite de API que aparece abajo. Registra el modelo que usaste y la
+fecha. No pegues claves de API, código privado ni documentos internos en un
+chat o una solicitud.
 
 <span id="grok-first-task"></span>
 

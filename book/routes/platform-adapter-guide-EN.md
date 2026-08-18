@@ -40,7 +40,7 @@ the maintenance method behind this rule.
 | ChatGPT | web chat, app, API | account scope, memory settings, file upload, browsing toggle, share links | [ChatGPT first task](#chatgpt-first-task) |
 | Claude / Claude Code | web chat, CLI agent, IDE | terminal + file agent, permission prompts, CLAUDE.md project memory | [Claude Code first task](#claude-code-first-task) |
 | Gemini | web chat, app, API | Google account scope, Google Workspace integration, app extension | [Gemini first task](#gemini-first-task) |
-| DeepSeek | web chat, app, API | the surface, model catalogue, context, and limits are product-specific and volatile; check the official source for the exact surface | [DeepSeek first task](#deepseek-first-task) |
+| DeepSeek | **The source receipt for this route covers the API only**; web chat and app are outside that evidence | the API model catalogue, account limits, and tool-call controls are product-specific and volatile; check the official source for the exact surface | [DeepSeek first task](#deepseek-first-task) |
 | Grok | web chat, app | X account integration, real-time posts access, model release cadence | [Grok first task](#grok-first-task) |
 | Codex | desktop, CLI, IDE, cloud, API | the Playbook's flagship track: files, tools, Skills, Agents, permissions | [Codex path](../routes/first-safe-change-EN.md) |
 
@@ -115,11 +115,19 @@ not a core topic. Do not enable extensions for a text-only practice task.
 
 ## DeepSeek first task
 
-Run the safe first task in the DeepSeek chat or app surface. Model naming,
-context window, and availability change between releases; the official model
-page is the owner of those facts. Record the model name you actually used and
-the date, so the run stays reproducible. Do not paste API keys, private code,
-or internal documents into a web chat.
+The source-bounded DeepSeek adapter on this page covers the **API only**. It
+does not verify DeepSeek web-chat or app availability, behavior, context
+windows, prices, or account entitlements. If you want to use the web chat or
+app, check current first-party documentation for that exact surface and record
+the result separately; this API receipt is not evidence for it.
+
+For a first task with no key and no private data, use the generic safe task
+above only in a surface you are authorized to use. If an API experiment is
+explicitly authorized, read the [DeepSeek API source
+receipt](../../docs/research/deepseek-api-source-receipt-2026-08-17.md) first
+and follow the separate API boundary below. Record the model name actually
+used and the date. Do not paste API keys, private code, or internal documents
+into a chat or request.
 
 ### Optional API adapter boundary
 

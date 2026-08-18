@@ -37,7 +37,7 @@ Platform Adapter Review Skill
 | ChatGPT | 網頁聊天、應用、API | 賬號範圍、記憶設定、檔案上傳、聯網搜尋開關、分享連結 | [ChatGPT 首個任務](#chatgpt-first-task) |
 | Claude / Claude Code | 網頁聊天、CLI agent、IDE | 終端 + 檔案 agent、許可權提示、CLAUDE.md 專案記憶 | [Claude Code 首個任務](#claude-code-first-task) |
 | Gemini | 網頁聊天、應用、API | Google 賬號範圍、Google Workspace 整合、應用擴充套件 | [Gemini 首個任務](#gemini-first-task) |
-| DeepSeek | 網頁聊天、應用、API | 模型選擇與上下文視窗隨版本而異；以官方模型頁面為準 | [DeepSeek 首個任務](#deepseek-first-task) |
+| DeepSeek | **本路線目前的來源憑據只涵蓋 API**；網頁聊天與應用程式不在這份證據範圍內 | API 的模型清單、帳戶限制與工具呼叫控制具有產品特定性且會變動；請核對具體介面的官方來源 | [DeepSeek 首個任務](#deepseek-first-task) |
 | Grok | 網頁聊天、應用 | X 賬號整合、實時帖子訪問、模型釋出節奏 | [Grok 首個任務](#grok-first-task) |
 | Codex | 桌面端、CLI、IDE、雲端、API | Playbook 的主打路徑：檔案、工具、Skills、Agents、許可權 | [Codex 路徑](../routes/first-safe-change-ZHTW.md) |
 
@@ -105,10 +105,16 @@ Claude Code 會讀取 `CLAUDE.md` 檔案；把裡面寫的內容都視為模型�
 
 ## DeepSeek 首個任務
 
-在 DeepSeek 聊天或應用介面執行首個安全任務。模型命名、上下文視窗和可用性
-會隨版本變化；這些事實以官方模型頁面為準。記下你實際使用的模型名稱和
-日期，以便這次執行可以復現。不要把 API 金鑰、私有程式碼或內部文件貼上到
-網頁聊天中。
+本頁有來源依據的 DeepSeek 介面卡**只涵蓋 API**。它沒有核實 DeepSeek 網頁
+聊天或應用程式的可用性、行為、上下文視窗、價格或帳戶權限。如果你要使用
+網頁聊天或應用程式，請針對那個具體介面查閱目前的第一方資料，並另外記錄
+結果；本頁的 API 憑據不能作為它們的證據。
+
+如果要做不需要金鑰、也不涉及私密資料的首個任務，請只在你獲准使用的介面
+中執行上面的通用安全任務。如果明確獲准進行 API 實驗，請先閱讀
+[DeepSeek API 來源憑據](../../docs/research/deepseek-api-source-receipt-2026-08-17.md)，
+再遵守下面單獨列出的 API 邊界。記錄實際使用的模型名稱和日期；不要把 API
+金鑰、私有程式碼或內部文件貼到聊天或請求中。
 
 <span id="grok-first-task"></span>
 

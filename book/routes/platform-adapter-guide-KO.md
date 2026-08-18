@@ -39,7 +39,7 @@ Platform Fact Watch를 참고하십시오.
 | ChatGPT | 웹 채팅, 앱, API | 계정 범위, 메모리 설정, 파일 업로드, 브라우징 토글, 공유 링크 | [ChatGPT 첫 과제](#chatgpt-first-task) |
 | Claude / Claude Code | 웹 채팅, CLI 에이전트, IDE | 터미널 + 파일 에이전트, 권한 프롬프트, CLAUDE.md 프로젝트 메모리 | [Claude Code 첫 과제](#claude-code-first-task) |
 | Gemini | 웹 채팅, 앱, API | Google 계정 범위, Google Workspace 통합, 앱 확장 | [Gemini 첫 과제](#gemini-first-task) |
-| DeepSeek | 웹 채팅, 앱, API | 모델 선택과 컨텍스트 창은 릴리스마다 다름; 공식 모델 페이지 확인 | [DeepSeek 첫 과제](#deepseek-first-task) |
+| DeepSeek | **이 경로의 출처 영수증은 API만 다룹니다**; 웹 채팅과 앱은 그 증거 범위 밖입니다 | API 모델 목록, 계정 한도, tool call 제어는 제품별로 다르고 변동됩니다; 정확한 표면의 공식 출처를 확인하십시오 | [DeepSeek 첫 과제](#deepseek-first-task) |
 | Grok | 웹 채팅, 앱 | X 계정 연동, 실시간 게시물 접근, 모델 릴리스 주기 | [Grok 첫 과제](#grok-first-task) |
 | Codex | 데스크톱, CLI, IDE, 클라우드, API | Playbook의 대표 트랙: 파일, 도구, Skills, Agents, 권한 | [Codex 경로](../routes/first-safe-change-KO.md) |
 
@@ -115,11 +115,17 @@ Gemini 채팅 표면에서 안전한 첫 과제를 실행하십시오. 어떤 �
 
 ## DeepSeek 첫 과제
 
-DeepSeek 채팅 또는 앱 표면에서 안전한 첫 과제를 실행하십시오. 모델 이름,
-컨텍스트 창, 제공 여부는 릴리스 사이에 바뀌며, 공식 모델 페이지가 그러한
-사실의 소유자입니다. 실제로 사용한 모델 이름과 날짜를 기록해 실행이
-재현 가능하게 유지하십시오. 웹 채팅에 API 키, 비공개 코드, 내부 문서를
-붙여넣지 마십시오.
+이 페이지에서 출처로 범위를 정한 DeepSeek 어댑터는 **API뿐**입니다.
+DeepSeek 웹 채팅이나 앱의 제공 여부와 동작, 컨텍스트 창, 가격, 계정 권한을
+검증한 내용이 아닙니다. 웹 채팅이나 앱을 사용하려면 그 표면에 해당하는 최신
+공식 문서를 따로 확인하고 결과를 별도로 기록하십시오. 이 API 영수증은 그
+표면의 증거가 아닙니다.
+
+키와 비공개 데이터를 쓰지 않는 첫 과제라면 위의 공통 안전 과제를 사용 권한이
+있는 표면에서만 실행하십시오. API 실험을 명시적으로 승인받았다면 먼저
+[DeepSeek API 출처 영수증](../../docs/research/deepseek-api-source-receipt-2026-08-17.md)을
+읽고 아래의 API 경계를 따르십시오. 실제로 사용한 모델 이름과 날짜를 기록하고,
+API 키·비공개 코드·내부 문서를 채팅이나 요청에 붙여넣지 마십시오.
 
 <span id="grok-first-task"></span>
 
