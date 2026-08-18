@@ -13,6 +13,18 @@ No high-confidence API key, access token, private key, JWT, credential-bearing
 URL, device identifier, MAC address, or private-network location remains in the
 current tracked candidate file set after the fixes in this audit.
 
+### Post-audit deployment verification — 2026-08-18
+
+The historical scan snapshot above is not the current publication receipt. A
+follow-up check observed repository `main` at
+`6d27a52c6f7a630e6e1a270500734753f5e799c7` and workflow run
+[32194567583](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32194567583)
+completed successfully for build, GitHub Pages, Hugging Face sync, and Docs
+publication. The `docs-prysai-production` environment metadata then showed a
+required `uuzzrm` reviewer and a protected-branch policy. This supersedes the
+earlier SIA-10 observation for the current deployment, but does not rewrite
+the historical `dc5cba7` scan or certify the external host.
+
 The current-tree scan is clean. The reachable main history still contains one
 credential-shaped match in an older negative test fixture (`6173a14`); local
 inspection confirmed that it was synthetic test data, not a live credential.
@@ -194,7 +206,7 @@ artifact with a pinned `actions/download-artifact` action, preserves the hidden
 `actions: read`; it no longer checks out source or executes the build scripts
 beside the deployment key. See ADR-0045.
 
-### SIA-10 — Docs deployment environment protection — open outside this repository
+### SIA-10 — Docs deployment environment protection — historical observation
 
 Severity: Medium governance risk; no secret exposure was observed.
 
@@ -204,6 +216,11 @@ policy. The workflow itself restricts the job to `refs/heads/main`, but the
 environment should also require the intended reviewers and protected-branch
 policy at the GitHub host. Changing those settings requires an explicit host
 administrator decision and is not represented as a repository file change.
+
+The post-audit verification above observed both a required `uuzzrm` reviewer and
+a branch policy. Treat this finding as historical for the `dc5cba7` snapshot;
+repeat the host-side check before each release because these settings are not
+versioned in this repository.
 
 ## Scan results
 
@@ -239,9 +256,9 @@ administrator decision and is not represented as a repository file change.
   scanner.
 - Code Scanning alert API returned `no analysis found`; absence of an alert list
   is not evidence that CodeQL analysis has run.
-- The `docs-prysai-production` Environment has no protection rules or deployment
-  branch policy in the observed GitHub metadata; the repository workflow's
-  `main` guard is the only checked-in branch boundary.
+- The `docs-prysai-production` Environment protection is host-side and is not
+  versioned here. The historical `dc5cba7` observation found no protection; the
+  post-audit check for `6d27a52` observed a required reviewer and branch policy.
 - The external archive audit remains incomplete because no
   `--archive-dir <directory>` was supplied.
 - Regex checks can miss encoded, split, provider-specific, binary, or
@@ -256,9 +273,9 @@ administrator decision and is not represented as a repository file change.
    gate; review any pattern or allowlist change as a security-sensitive diff.
 2. Run a provider-aware secret scanner in an authorized CI or repository-host
    context if one is adopted; keep its logs redacted.
-3. Before a release, separately verify live HTTP headers, Pages/Docs deployment
-   state, GitHub Environment protection and secret scope, the active Ruleset
-   bypass list, and host-side Secret Scanning settings.
+3. Before a release, separately re-verify live HTTP headers, Pages/Docs
+   deployment state, GitHub Environment protection and secret scope, the active
+   Ruleset bypass list, and host-side Secret Scanning settings.
 4. If a real credential is ever found, stop public publication, rotate/revoke
    it at the provider, identify all reachable and hosted copies, and only then
    consider an explicitly authorized history-remediation plan.
@@ -272,3 +289,4 @@ administrator decision and is not represented as a repository file change.
 - [`docs/adr/0043-expand-repository-sensitive-information-tripwires.md`](../adr/0043-expand-repository-sensitive-information-tripwires.md)
 - [`docs/adr/0044-live-host-security-controls-and-publishing-boundaries.md`](../adr/0044-live-host-security-controls-and-publishing-boundaries.md)
 - [`docs/adr/0045-deploy-only-validated-pages-artifact.md`](../adr/0045-deploy-only-validated-pages-artifact.md)
+- [Post-audit Pages/Docs workflow run 32194567583](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32194567583)
