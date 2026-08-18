@@ -96,6 +96,53 @@ Group candidate skills by the decision they support:
 | Distribution and growth | Draft or sandbox batch | Channel scope, approval, rollback |
 | Measurement and attribution | Aggregate report and limitations | Event schema, data quality, causal limits |
 
+### 5. Programming learning and product experiments are one evidence loop
+
+An LLM can help a learner move from an idea to a small prototype, but a
+prototype is not a product and a polished landing page is not demand evidence.
+Use the same loop for programming practice and an early product experiment:
+
+```text
+problem noticed → user and context described → smallest testable slice
+→ learner or user attempts it → output and friction recorded
+→ one hypothesis changed → next decision or stop
+```
+
+For programming practice, begin with a task the learner can inspect: explain a
+function, change one visible state, add one focused test, or repair one known
+failure. Require the learner to predict the result before asking for a full
+solution, preserve the first attempt, and retest one changed input. The model
+may explain, ask questions, or provide a small hint; it should not quietly
+replace the evidence that the learner can make the change.
+
+For a product experiment, write the decision before writing the pitch. A
+useful one-page card names:
+
+```text
+Problem: whose repeated situation is painful, and what do they do now?
+Smallest promise: one outcome the prototype could make visible.
+Prototype: the minimum page, workflow, or manual service to test.
+Signal: an observable action that would change the next decision.
+Alternative explanation: what else could produce that signal?
+Cost and boundary: time, data, permissions, rights, and who may be contacted.
+Stop rule: what would make us delete, revise, or pause the experiment?
+```
+
+“People liked the demo,” “the page received clicks,” or “the model generated
+the app” are observations that need a denominator, comparison, audience,
+time window, and review record. They do not prove willingness to pay, product–
+market fit, recurring revenue, or a learning outcome. Monetisation is a
+hypothesis about a permitted exchange—such as a paid pilot, subscription,
+one-time purchase, or service—not a promise of income. Before accepting money,
+check the real offer, refund and support obligations, taxes, privacy, rights,
+and delivery capacity with the appropriate human or professional owner.
+
+Keep a short experiment receipt: versioned problem statement, prototype or
+script, exact audience and recruitment boundary, observed actions, exclusions,
+costs, objections, decision, and unknowns. If the only evidence is a generated
+mockup or an unscored model response, keep the conclusion `candidate` and
+choose a smaller test instead of increasing the claim.
+
 ## Concrete evidence table
 
 | Evidence item | Concrete artifact | What it supports | What it does not support |
