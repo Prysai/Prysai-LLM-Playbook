@@ -112,6 +112,8 @@ puede leer o escribir en tu nombre, así que una lección de Gemini sobre
 extensiones es un tema de adaptador de plataforma, no un tema del núcleo. No
 actives extensiones para una tarea de práctica solo de texto.
 
+<span id="deepseek-first-task"></span>
+
 ## Primera tarea en DeepSeek
 
 Ejecuta la primera tarea segura en la superficie de chat o app de DeepSeek. El
