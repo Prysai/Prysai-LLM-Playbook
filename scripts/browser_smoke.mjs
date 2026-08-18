@@ -768,6 +768,27 @@ try {
   await noHorizontalOverflow(platformFactWatchPage, 'desktop Platform Fact Watch Reader page');
   await platformFactWatchPage.close();
 
+  // The platform map uses one stable authored fragment for every locale. A
+  // translated heading alone is not a deep-link contract: its generated slug
+  // can change with wording or Reader rules. Keep the five non-English
+  // adapters fail-closed only for missing content, not for a missing target.
+  const platformAdapterPage = await context.newPage();
+  for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de']) {
+    const suffix = locale.toUpperCase();
+    const adapterSource = `book%2Froutes%2Fplatform-adapter-guide-${suffix}.md`;
+    await platformAdapterPage.goto(`${origin}/site/reader.html?path=${adapterSource}&lang=${locale}#deepseek-first-task`, { waitUntil: 'networkidle' });
+    await platformAdapterPage.locator('[data-reader-article][aria-busy="false"]').waitFor();
+    assert.equal(
+      await platformAdapterPage.locator('#deepseek-first-task').count(),
+      1,
+      `${locale} platform adapter lost the stable DeepSeek fragment`,
+    );
+    const adapterAnchorTop = await platformAdapterPage.locator('#deepseek-first-task').evaluate((target) => target.getBoundingClientRect().top);
+    assert.ok(adapterAnchorTop >= 0 && adapterAnchorTop < 260, `${locale} DeepSeek fragment did not restore the reading band: ${adapterAnchorTop}`);
+  }
+  await noHorizontalOverflow(platformAdapterPage, 'mobile-independent platform adapter route');
+  await platformAdapterPage.close();
+
   const typedLanguagePage = await context.newPage();
   await typedLanguagePage.goto(`${origin}/site/reader.html?path=book%2Fcommunication-clinic-EN.md&lang=en#language-practice-route`, { waitUntil: 'networkidle' });
   await typedLanguagePage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
