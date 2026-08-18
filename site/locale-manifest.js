@@ -4251,7 +4251,11 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": null,
           "explicit_anchors": [
-            "deepseek-first-task"
+            "chatgpt-first-task",
+            "claude-code-first-task",
+            "deepseek-first-task",
+            "gemini-first-task",
+            "grok-first-task"
           ]
         },
         "zh": {

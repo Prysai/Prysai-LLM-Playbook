@@ -80,6 +80,8 @@ Platform Fact Watchを
 
 <span id="chatgpt-first-task"></span>
 
+<span id="chatgpt-first-task"></span>
+
 ## ChatGPTの最初のタスク
 
 任意のChatGPTサーフェスを開き、上記の安全な最初のタスクを実行して
@@ -89,6 +91,8 @@ Platform Fact Watchを
 するには、製品事実の所有者として公式OpenAIヘルプページを使う
 Source Investigator Skillを
 利用してください。
+
+<span id="claude-code-first-task"></span>
 
 <span id="claude-code-first-task"></span>
 
@@ -104,6 +108,8 @@ Claude Codeはターミナルエージェントです：起動したプロジェ
 ルールと同様にレビューしてください。資格情報、本番データ、破壊的なコマンド
 がある実際のリポジトリでは、[First Safe Changeルート](first-safe-change-JA.md)の
 規律を完了するまでClaude Codeを起動しないでください。
+
+<span id="gemini-first-task"></span>
 
 <span id="gemini-first-task"></span>
 

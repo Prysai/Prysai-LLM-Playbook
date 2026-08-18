@@ -80,6 +80,8 @@ ser capaz de esas acciones; la capacidad no es una instrucción para usarlas.
 
 <span id="chatgpt-first-task"></span>
 
+<span id="chatgpt-first-task"></span>
+
 ## Primera tarea en ChatGPT
 
 Abre cualquier superficie de ChatGPT y ejecuta la primera tarea segura de
@@ -90,6 +92,8 @@ respaldada por fuentes de una afirmación sobre ChatGPT, usa la
 Source Investigator Skill
 con las páginas de ayuda oficiales de OpenAI como propietarias de los hechos
 del producto.
+
+<span id="claude-code-first-task"></span>
 
 <span id="claude-code-first-task"></span>
 
@@ -106,6 +110,8 @@ que revísalo como cualquier regla del proyecto. No inicies Claude Code en un
 repositorio real con credenciales, datos de producción o comandos destructivos
 hasta que hayas completado la disciplina de la
 [First Safe Change route](first-safe-change-ES.md).
+
+<span id="gemini-first-task"></span>
 
 <span id="gemini-first-task"></span>
 

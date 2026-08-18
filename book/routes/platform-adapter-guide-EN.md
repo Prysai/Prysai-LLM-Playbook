@@ -75,6 +75,8 @@ If the chat offers to search, send, publish, use a tool, or requests more
 material than this small exercise needs, stop. The platform may be capable of
 those actions; capability is not an instruction to use them.
 
+<span id="chatgpt-first-task"></span>
+
 ## ChatGPT first task
 
 Open any ChatGPT surface and run the safe first task above. Then note one
@@ -83,6 +85,8 @@ memory, or a share link? Record what you saw, not what you assume. For a
 source-backed check of a ChatGPT claim, use the
 [Source Investigator Skill](../../skills/prysai-source-investigator/SKILL.md)
 with the official OpenAI help pages as the owner of product facts.
+
+<span id="claude-code-first-task"></span>
 
 ## Claude Code first task
 
@@ -96,6 +100,8 @@ model may follow, so review it like any project rule. Do not start Claude Code
 in a real repository with credentials, production data, or destructive
 commands until you have completed the
 [First Safe Change route](first-safe-change-EN.md) discipline.
+
+<span id="gemini-first-task"></span>
 
 ## Gemini first task
 
@@ -137,6 +143,8 @@ web chat, another vendor, or every account.
 Stop before creating a key, sending private data, spending money, publishing,
 or changing an account when the scope is unclear. No API run is recorded in
 this repository, so this adapter remains `candidate / not_run`.
+
+<span id="grok-first-task"></span>
 
 ## Grok first task
 
