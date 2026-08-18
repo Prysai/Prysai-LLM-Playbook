@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import sys
 import unicodedata
@@ -12,6 +13,8 @@ from urllib.parse import parse_qs, unquote, urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
+MANIFEST_FILE = ROOT / "site/locale-manifest.js"
+MANIFEST_PREFIX = "window.CODEX_LOCALE_MANIFEST = "
 EMPTY_ANCHOR_RE = re.compile(
     r'^<(?:a|span)\s+id="([a-z][a-z0-9-]*)"\s*></(?:a|span)>$',
     re.IGNORECASE,
@@ -301,7 +304,28 @@ def _is_reader_link(href: str) -> bool:
     return path == "reader.html"
 
 
-def _validate(homepage: Path, root: Path) -> tuple[list[str], int]:
+def _load_manifest_paths() -> set[str]:
+    """Read the exact Markdown allow-list consumed by the public Reader."""
+
+    text = MANIFEST_FILE.read_text(encoding="utf-8")
+    marker = text.find(MANIFEST_PREFIX)
+    if marker < 0:
+        raise ValueError("site/locale-manifest.js is missing its generated manifest prefix")
+    payload = text[marker + len(MANIFEST_PREFIX):].strip()
+    if payload.endswith(";"):
+        payload = payload[:-1].rstrip()
+    manifest = json.loads(payload)
+    path_index = manifest.get("path_index")
+    if not isinstance(path_index, dict) or not all(isinstance(path, str) for path in path_index):
+        raise ValueError("site/locale-manifest.js has no valid path_index")
+    return set(path_index)
+
+
+def _validate(
+    homepage: Path,
+    root: Path,
+    manifest_paths: set[str] | None = None,
+) -> tuple[list[str], int]:
     errors: list[str] = []
     try:
         html = homepage.read_text(encoding="utf-8")
@@ -316,15 +340,17 @@ def _validate(homepage: Path, root: Path) -> tuple[list[str], int]:
         return [f"{_relative_path(homepage, root)}: could not parse homepage: {exc}"], 0
 
     homepage_label = _relative_path(homepage, root)
+    if manifest_paths is None and homepage.resolve() == (ROOT / "site/index.html").resolve():
+        try:
+            manifest_paths = _load_manifest_paths()
+        except (OSError, UnicodeError, ValueError, json.JSONDecodeError) as exc:
+            return [f"{homepage_label}: could not read Reader source allow-list: {exc}"], 0
     source_cache: dict[Path, set[str]] = {}
     checked = 0
     for line_number, href in parser.links:
         if not _is_reader_link(href):
             continue
         parsed = urlsplit(href)
-        if "#" not in href:
-            continue
-        checked += 1
         query = parse_qs(parsed.query, keep_blank_values=True)
         path_values = query.get("path", [])
         if len(path_values) != 1 or not path_values[0].strip():
@@ -332,17 +358,16 @@ def _validate(homepage: Path, root: Path) -> tuple[list[str], int]:
                 f"{homepage_label}:{line_number}: Reader link is missing a non-empty path query parameter: {href}"
             )
             continue
-        fragment = unquote(parsed.fragment)
-        if not fragment:
-            errors.append(
-                f"{homepage_label}:{line_number}: Reader link has an empty fragment: {href}"
-            )
-            continue
-
         normalized = _normalize_reader_path(path_values[0])
         if not normalized:
             errors.append(
                 f"{homepage_label}:{line_number}: Reader path resolves to an empty source path: {href}"
+            )
+            continue
+        if manifest_paths is not None and normalized not in manifest_paths:
+            errors.append(
+                f"{homepage_label}:{line_number}: Reader source is not registered in "
+                f"site/locale-manifest.js: {normalized}"
             )
             continue
         source = (root / Path(*normalized.split("/"))).resolve()
@@ -356,6 +381,16 @@ def _validate(homepage: Path, root: Path) -> tuple[list[str], int]:
         if not source.is_file():
             errors.append(
                 f"{homepage_label}:{line_number}: Reader source does not exist: {normalized}"
+            )
+            continue
+
+        if "#" not in href:
+            continue
+        checked += 1
+        fragment = unquote(parsed.fragment)
+        if not fragment:
+            errors.append(
+                f"{homepage_label}:{line_number}: Reader link has an empty fragment: {href}"
             )
             continue
 
