@@ -80,6 +80,44 @@ Check ohne Laufzeitumgebung und notiere
 wegwerfbare lokale Kopie erstellen kannst, stoppe und nutze das textbasierte
 First Win; eine GitHub-Webansicht ist keine lokale Sandbox.
 
+## Web-Coding-Brücke: Eine sichtbare Änderung im echten Browser
+
+Wenn dein nächstes Ziel Web-Coding ist, beginne nicht mit „Baue eine komplette Website“.
+Verwende die [Product-Context-Sandbox](../../examples/skill-sandbox/product-context-real-estate/README-DE.md)
+als wegwerfbare statische Seite. Sie enthält nur erfundene Texte, keine echten Angebote,
+kein Formular, keine Analyse, keine API und kein externes Bild.
+
+1. Kopiere den gesamten Ordner `examples/skill-sandbox/product-context-real-estate` an
+   einen temporären Ort und lies README sowie `index.html`.
+2. Ändere **nur `index.html`**: Ersetze einen sichtbaren Satz für dieselbe erfundene
+   Zielgruppe. Ändere weder CSS noch Framework, Bild oder Formular.
+3. Wenn Python 3 bereits verfügbar ist, starte im kopierten Ordner den dokumentierten
+   lokalen Server:
+
+```powershell
+python -m http.server 4182
+```
+
+Öffne `http://127.0.0.1:4182/` im Browser. Prüfe Titel, neuen Satz, erhaltene Überschrift,
+Linkziele, Konsole und einen 390px breiten Viewport. Wenn Befehl, Zieldatei oder
+Browserergebnis unklar sind, stoppe; installiere für diese Übung keine Laufzeit.
+
+Bewahre einen kurzen Beleg auf:
+
+```text
+sandbox: <kopierter Ordner>
+allowed_change: index.html only
+url: http://127.0.0.1:4182/
+browser_check: neuer Satz einmal; Überschrift und Links erhalten; Konsole beobachtet
+diff: <geprüfter Diff>
+unverified: Deployment, Accessibility-Review, andere Browser, Nutzerabnahme
+```
+
+Das belegt nur einen lokal gerenderten Zustand bei einem Viewport. Es belegt weder einen
+Produktions-Build noch alle responsiven Zustände, Barrierefreiheit, Sicherheit, Leistung
+oder Produktwert. Für den vollständigen Ablauf gehe zu
+[Kapitel 16](../chapters/16-engineering-track-DE.md).
+
 ## Beleg
 
 Bewahre nur diesen kurzen Nachweis auf:
