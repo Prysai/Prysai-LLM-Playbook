@@ -62,7 +62,7 @@ def main() -> int:
     root_entry = root_index(Path(__file__).resolve().parents[1] / "site/index.html")
     require('<base href="site/index.html" />' in root_entry, "Pages root entry must use an explicit site document as its base URL")
     require('<base href="site/" />' not in root_entry, "Pages root entry must not resolve fragment links through a directory route")
-    require('href="https://docs.prysai.com/llm-playbook/" target="_blank" rel="noreferrer"' in root_entry, "Playbook logo must open the canonical Docs URL from hosted wrappers")
+    require('href="https://docs.prysai.com/llm-playbook/" target="_top"' in root_entry, "Playbook logo must return the top-level window to the canonical Docs URL from hosted wrappers")
     index = ET.fromstring(sitemap_index_file(config))
     index_urls = [item.text for item in index.findall(f"{namespace}sitemap/{namespace}loc")]
     require(index_urls == [config["public_site_url"] + "sitemap.xml"], "sitemap_index.xml does not point to the canonical sitemap")
