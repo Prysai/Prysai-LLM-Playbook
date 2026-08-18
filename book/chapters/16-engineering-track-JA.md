@@ -72,6 +72,21 @@ recovery: original state、temporary artifact、read-back、stop condition。
 | local run | 指定 input が観測された result を出す | production、全 account、performance |
 | remote read-back | 指定 revision/record が remote にある | user acceptance、monitoring、safe rollback |
 
+## Web coding：表示できる結果を実ブラウザーまで運ぶ
+
+「完全なサイトを作る」は、読者、状態、source file、runtime、browser review、
+rollback を一つにしてしまいます。まず `examples/skill-sandbox/product-context-real-estate`
+の README と `index.html` を使い捨てコピーで読み、`index.html` の表示文を一つ
+だけ変えます。framework、画像、form、API、network は追加しません。Python 3 が
+すでに使えるなら、コピー先で `python -m http.server 4182` を実行し、
+`http://127.0.0.1:4182/` を開いて title、変更文、保持した見出し、link、console、
+幅 390px を確認します。
+
+コピー先、許可ファイル、URL、見えた状態、diff と、deploy、accessibility、他の
+browser、利用者受け入れの未確認項目を記録します。source diff では CSS、相対
+path、mobile clipping、runtime error は分かりません。local render は deploy では
+ありません。
+
 ## 小実験：JSON の vertical slice
 
 disposable directory で `input.json` の文字列 list を読み、重複を除いて `output.json` に書きます。read/write はその directory だけ。network、install、login、commit、push、publish はしません。
