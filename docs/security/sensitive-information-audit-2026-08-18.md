@@ -2,9 +2,10 @@
 
 ## Executive summary
 
-This was a repository-grounded audit of the Prysai LLM Playbook. The current
-remote `main` baseline is
-`daeffc9e441facca5d4928c75131d6aa07016e28`.
+This was a repository-grounded audit of the Prysai LLM Playbook. The audited
+`main` snapshot was
+`8d4fca8b4f580c6d78a8cfe9d85696a286add5e5`; this report refresh follows that
+snapshot as a documentation-only commit.
 No high-confidence API key, access token, private key, JWT, credential-bearing
 URL, device identifier, MAC address, or private-network location remains in the
 current tracked candidate file set after the fixes in this audit.
@@ -117,7 +118,8 @@ on every checkout, and leaves non-main manual runs as review-artifact builds.
 
 Severity: Informational historical residue; no live credential was established.
 
-The scan of 848 commits reachable from current `main` found one provider-shaped
+The scan of 849 commits reachable from the audited `main` snapshot found one
+provider-shaped
 match in the historical `scripts/test_build_pages_artifact.py` blob introduced
 by commit `6173a14`. The surrounding test was explicitly a negative fixture,
 and the values were synthetic. The current version keeps only redacted text and
@@ -143,13 +145,32 @@ response headers at its edge/server; GitHub Pages cannot be configured from
 this repository, so the meta policy must remain there unless an edge proxy is
 introduced.
 
+### SIA-08 — Ruleset bypass and release-evidence boundary — open
+
+Severity: Medium governance risk; no secret exposure was observed.
+
+The active GitHub Ruleset still lists a `RepositoryRole` actor with
+`bypass_mode=always`. The final audit-report commit was pushed directly to
+`main`; GitHub's push response explicitly reported that the push bypassed the
+pull-request requirement, verified-signature requirement, and Code Scanning
+wait. This confirms that the recorded Ruleset bypass is operational, not merely
+metadata.
+
+The security and Pages workflows for the final commit succeeded. The quality
+workflow also concluded `success`, but its release-evidence step emitted
+`decision=blocked` under `continue-on-error`; the repository's formal release
+readiness therefore remains `not_ready`. Remove or narrow the permanent
+bypass, require signed reviewed changes, and run the formal release gate for a
+separately reviewed candidate before promoting the security policy or release
+status.
+
 ## Scan results
 
 | Surface | Result | Evidence boundary |
 | --- | --- | --- |
 | Current candidate files | Pass; 1,094 candidate files, 6 workflows | Static patterns and policy checks only; the largest text artifact is approximately 5.2 MiB |
 | Focused security fixtures | Pass; 30 fixtures | Detector behavior, including synthetic false-positive boundaries and large-file coverage |
-| Reachable history | 848 commits reachable; 1 credential-shaped historical match, classified as a synthetic fixture; 0 unclassified matches | Pattern scan of committed objects; not every provider-specific secret format |
+| Reachable history | 849 commits reachable at the audited snapshot; 1 credential-shaped historical match, classified as a synthetic fixture; 0 unclassified matches | Pattern scan of committed objects; not every provider-specific secret format |
 | Unreachable Git objects | 142 blobs across 15 unreachable commits; 0 high-confidence credential/private-key hits after regex tightening | Local object database only; object reachability/retention can change |
 | Git stash/reflog | No stash entries; reflog showed normal repository refs | Does not inspect remote provider backups or account logs |
 | Workflow permissions and action refs | Pass; all checkout steps disable persisted credentials and all third-party refs use full SHAs | Does not prove every hosted runner or future workflow remains safe |
@@ -157,6 +178,7 @@ introduced.
 | Published surfaces | GitHub Pages and Docs returned 200; body scans found no sensitive rule IDs | Response-header hardening differs by host; live content and headers can change |
 | Static CSP | Pass under the repository policy; an early meta CSP is present | Both live responses lacked a CSP response header; meta CSP is not a substitute for runtime HTTP headers |
 | External source archives | Incomplete; no archive directory was configured | Original archives were not supplied, so source/license audit coverage is incomplete |
+| Release evidence | Quality workflow succeeded, but its commit-bound release-evidence decision was `blocked`; formal readiness remains `not_ready` | A green workflow is not release approval |
 
 ## Remaining limitations
 
