@@ -11,7 +11,7 @@ an authorized observation; they are not results.
 | Experiment | Question | Core outcome | Evidence kept by an authorized reviewer |
 | --- | --- | --- | --- |
 | [Context change and unknowns](context-change-and-unknowns.md) | Does the learner update a claim when the supplied context changes, while leaving unknowns unknown? | `identify` / `repair` | First classification, changed-context classification, source quotes, correction, help disclosure |
-| [First-request contract](first-request-contract.md) | Does the learner make a first request observable before asking for a polished answer? | `initiate` | First request, field map, first response or no-model fixture, stop decision |
+| [First-request contract and controlled repeat](first-request-contract.md) | Does the learner make a first request observable and describe shared/different results across three bounded runs? | `initiate` / `explain` | First request, field map, first response or no-model fixture, repeat conditions, shared/different observations, stop decision |
 | [Tool boundary, authority, and evidence](tool-boundary-authority-evidence.md) | Can the learner distinguish a proposed action, granted authority, execution, and read-back evidence? | `explain` / `transfer` | State-by-state classification, authority decision, evidence boundary, stop reason |
 
 ## Shared conditions
