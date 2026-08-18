@@ -2,10 +2,12 @@
 
 ## Executive summary
 
-This was a repository-grounded audit of the Prysai LLM Playbook. The audited
-`main` snapshot was
-`8d4fca8b4f580c6d78a8cfe9d85696a286add5e5`; this report refresh follows that
-snapshot as a documentation-only commit.
+This was a repository-grounded audit of the Prysai LLM Playbook. The second
+round was refreshed on 2026-08-18 in a worktree whose committed base was
+`2eb257e`; it also included the uncommitted deployment-hardening and exact-
+permission-validator changes listed in this report. The report does not treat
+the earlier `1842b18` snapshot as evidence for SIA-09. The follow-up commit
+containing this report binds those changes to a reproducible repository state.
 No high-confidence API key, access token, private key, JWT, credential-bearing
 URL, device identifier, MAC address, or private-network location remains in the
 current tracked candidate file set after the fixes in this audit.
@@ -44,6 +46,12 @@ Checked on 2026-08-18 from the repository working tree:
   response-header presence and a redacted body scan.
 - authenticated GitHub repository settings and recent workflow conclusions;
   secret values were not read.
+- all local branches, remote-tracking branches, and tags recorded by
+  `git for-each-ref`, plus unreachable blobs and commits reported by
+  `git fsck --full --unreachable --no-reflogs`;
+- tracked binary assets and archive/database/private-key filename classes;
+- `npm audit --json`, top-level `npm ls --depth=0`, native frontend security
+  sinks, and GitHub Environment/secret metadata without reading secret values.
 
 The scan reports rule IDs and file paths only. It does not print matched values.
 Synthetic security-test inputs are assembled at runtime and are covered by
@@ -164,17 +172,42 @@ bypass, require signed reviewed changes, and run the formal release gate for a
 separately reviewed candidate before promoting the security policy or release
 status.
 
+### SIA-09 — Secret-bearing deployment job had redundant build authority — fixed
+
+Severity: Medium workflow-hardening issue; no secret value was exposed.
+
+The Docs deployment job previously checked out the repository, installed
+Python, and rebuilt the Pages artifact in the same job that loaded
+`DOCS_DEPLOY_SSH_KEY`. The build job already produced and validated the
+`pages-candidate-${{ github.sha }}` artifact. The workflow now downloads that exact
+artifact with a pinned `actions/download-artifact` action and grants the Docs
+job only `actions: read`; it no longer checks out source or executes the build
+scripts beside the deployment key. See ADR-0045.
+
+### SIA-10 — Docs deployment environment protection — open outside this repository
+
+Severity: Medium governance risk; no secret exposure was observed.
+
+GitHub API metadata showed the `docs-prysai-production` environment has the
+`DOCS_DEPLOY_SSH_KEY` secret but no protection rules and no deployment branch
+policy. The workflow itself restricts the job to `refs/heads/main`, but the
+environment should also require the intended reviewers and protected-branch
+policy at the GitHub host. Changing those settings requires an explicit host
+administrator decision and is not represented as a repository file change.
+
 ## Scan results
 
 | Surface | Result | Evidence boundary |
 | --- | --- | --- |
-| Current candidate files | Pass; 1,094 candidate files, 6 workflows | Static patterns and policy checks only; the largest text artifact is approximately 5.2 MiB |
-| Focused security fixtures | Pass; 30 fixtures | Detector behavior, including synthetic false-positive boundaries and large-file coverage |
-| Reachable history | 849 commits reachable at the audited snapshot; 1 credential-shaped historical match, classified as a synthetic fixture; 0 unclassified matches | Pattern scan of committed objects; not every provider-specific secret format |
-| Unreachable Git objects | 142 blobs across 15 unreachable commits; 0 high-confidence credential/private-key hits after regex tightening | Local object database only; object reachability/retention can change |
+| Current candidate files | Pass; 1,096 candidate files, 6 workflows | Static patterns and policy checks only; the largest text artifact is approximately 5.2 MiB |
+| Focused security fixtures | Pass; 34 fixtures | Detector behavior, including synthetic false-positive boundaries, large-file coverage, and secret-bearing deployment permission boundaries |
+| All refs and reachable history | 20 refs; 863 reachable commits and 5,194 reachable blobs; current ref tips have 0 high-confidence credential, private-key, device, MAC, private-network, or authentication-URL matches; 1 older provider-shaped historical fixture is classified synthetic | Pattern scan of local branches, remote-tracking refs, and tag; not every provider-specific secret format |
+| Unreachable Git objects | 142 blobs across 15 unreachable commits; 1 old `example.test` negative-fixture object matched authentication-URL/query rules; 0 provider-shaped credential/private-key hits | Classified synthetic test data; local object reachability/retention can change |
 | Git stash/reflog | No stash entries; reflog showed normal repository refs | Does not inspect remote provider backups or account logs |
-| Workflow permissions and action refs | Pass; all checkout steps disable persisted credentials and all third-party refs use full SHAs | Does not prove every hosted runner or future workflow remains safe |
-| Host-side security controls | Secret Scanning and Push Protection enabled; Actions SHA pinning required; non-provider patterns disabled | Repository-level API settings only; Ruleset has an always-bypass repository role |
+| Workflow permissions and action refs | Pass; all checkout steps disable persisted credentials, all third-party refs use full SHAs, and Docs deploy consumes the validated build artifact without checkout/build execution | Does not prove every hosted runner or future workflow remains safe |
+| Host-side security controls | Secret Scanning, Push Protection, Dependabot security updates, and Actions SHA pinning enabled; non-provider patterns disabled; 1 repository secret and 1 Docs environment secret names observed without values | Repository-level API settings only; Ruleset has an always-bypass repository role and Docs environment protection is empty |
+| Dependencies | Pass; `npm audit` reported 0 vulnerabilities and top-level dependency listing contains Playwright only | Local npm advisory snapshot; does not replace ongoing update review |
+| Native frontend and binary assets | Pass; no dangerous string execution/HTML sink found; 10 tracked PNG assets, no archives/databases/private-key files, no PNG text metadata findings | Static review and filename/byte checks; no image steganography or independent provider scanner |
 | Published surfaces | GitHub Pages and Docs returned 200; body scans found no sensitive rule IDs | Response-header hardening differs by host; live content and headers can change |
 | Static CSP | Pass under the repository policy; an early meta CSP is present | Both live responses lacked a CSP response header; meta CSP is not a substitute for runtime HTTP headers |
 | External source archives | Incomplete; no archive directory was configured | Original archives were not supplied, so source/license audit coverage is incomplete |
@@ -194,6 +227,11 @@ status.
 - `gitleaks`, `trufflehog`, and `detect-secrets` were not installed in the local
   environment, so this audit did not include an independent provider-aware
   scanner.
+- Code Scanning alert API returned `no analysis found`; absence of an alert list
+  is not evidence that CodeQL analysis has run.
+- The `docs-prysai-production` Environment has no protection rules or deployment
+  branch policy in the observed GitHub metadata; the repository workflow's
+  `main` guard is the only checked-in branch boundary.
 - The external archive audit remains incomplete because no
   `--archive-dir <directory>` was supplied.
 - Regex checks can miss encoded, split, provider-specific, binary, or
@@ -209,8 +247,8 @@ status.
 2. Run a provider-aware secret scanner in an authorized CI or repository-host
    context if one is adopted; keep its logs redacted.
 3. Before a release, separately verify live HTTP headers, Pages/Docs deployment
-   state, GitHub Environment secret scope, the active Ruleset bypass list, and
-   host-side Secret Scanning settings.
+   state, GitHub Environment protection and secret scope, the active Ruleset
+   bypass list, and host-side Secret Scanning settings.
 4. If a real credential is ever found, stop public publication, rotate/revoke
    it at the provider, identify all reachable and hosted copies, and only then
    consider an explicitly authorized history-remediation plan.
@@ -223,3 +261,4 @@ status.
 - [`scripts/test_validate_repository_security.py`](../../scripts/test_validate_repository_security.py)
 - [`docs/adr/0043-expand-repository-sensitive-information-tripwires.md`](../adr/0043-expand-repository-sensitive-information-tripwires.md)
 - [`docs/adr/0044-live-host-security-controls-and-publishing-boundaries.md`](../adr/0044-live-host-security-controls-and-publishing-boundaries.md)
+- [`docs/adr/0045-deploy-only-validated-pages-artifact.md`](../adr/0045-deploy-only-validated-pages-artifact.md)

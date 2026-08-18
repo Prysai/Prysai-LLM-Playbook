@@ -115,6 +115,52 @@ jobs:
         )
         fixtures += 1
 
+        secure_docs_deploy = """  docs-prysai-deploy:
+    needs: build
+    permissions:
+      actions: read
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: pages-candidate-${{ github.sha }}
+          path: _site
+          github-token: ${{ github.token }}
+  another-job:
+    runs-on: ubuntu-latest
+"""
+        require(
+            not policy.validate_docs_deploy_workflow(secure_docs_deploy, "pages.yml"),
+            "artifact-only Docs deployment was rejected",
+        )
+        fixtures += 1
+
+        extra_docs_permission = secure_docs_deploy.replace(
+            "      actions: read\n",
+            "      actions: read\n      contents: write\n",
+        )
+        require(
+            any("exactly actions: read" in error for error in policy.validate_docs_deploy_workflow(extra_docs_permission, "pages.yml")),
+            "Docs deployment with an additional write permission was accepted",
+        )
+        fixtures += 1
+
+        source_in_secret_job = secure_docs_deploy.replace(
+            "      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093",
+            "      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+        )
+        require(
+            any("must not execute source/build code" in error for error in policy.validate_docs_deploy_workflow(source_in_secret_job, "pages.yml")),
+            "Docs deployment checkout beside secret was accepted",
+        )
+        fixtures += 1
+
+        missing_artifact = secure_docs_deploy.replace("name: pages-candidate-${{ github.sha }}\n", "name: wrong-artifact\n")
+        require(
+            any("must retain artifact boundary" in error for error in policy.validate_docs_deploy_workflow(missing_artifact, "pages.yml")),
+            "Docs deployment without the validated artifact was accepted",
+        )
+        fixtures += 1
+
         persisted_checkout = valid_workflow.replace("        with:\n          persist-credentials: false\n", "")
         require(
             any("persisted checkout credentials" in error for error in policy.validate_workflow_text(persisted_checkout, "checkout.yml")),

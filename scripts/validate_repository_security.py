@@ -17,6 +17,7 @@ PR_TEMPLATE = ROOT / ".github/PULL_REQUEST_TEMPLATE.md"
 WORKFLOW_DIR = ROOT / ".github/workflows"
 SITE_ENTRYPOINTS = (ROOT / "site/index.html", ROOT / "site/reader.html")
 QUALITY_WORKFLOW = WORKFLOW_DIR / "quality.yml"
+PAGES_WORKFLOW = WORKFLOW_DIR / "pages.yml"
 
 SHA_RE = re.compile(r"^[0-9a-f]{40}$", re.IGNORECASE)
 USES_RE = re.compile(r"^\s*(?:-\s*)?uses:\s*([^@\s]+)@([^\s#]+)", re.MULTILINE)
@@ -60,6 +61,20 @@ FAST_MATERIAL_REQUIRED_FRAGMENTS = (
     "gh api --paginate",
     "--repository-root \"$GITHUB_WORKSPACE/untrusted-submission\"",
     "--changed-paths-file \"$GITHUB_WORKSPACE/changed-paths.txt\"",
+)
+DOCS_DEPLOY_REQUIRED_FRAGMENTS = (
+    "needs: build",
+    "actions: read",
+    "uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093",
+    "name: pages-candidate-${{ github.sha }}",
+    "path: _site",
+    "github-token: ${{ github.token }}",
+)
+DOCS_DEPLOY_ALLOWED_PERMISSIONS = {"actions": "read"}
+DOCS_DEPLOY_FORBIDDEN_FRAGMENTS = (
+    "actions/checkout@",
+    "actions/setup-python@",
+    "scripts/build_pages_artifact.py",
 )
 SECRET_PATTERNS = (
     re.compile(r"\b(?:ghp|gho|ghu|ghs|ghr)_[A-Za-z0-9]{20,}\b"),
@@ -430,6 +445,42 @@ def validate_fast_material_workflow(text: str, label: str) -> list[str]:
     return errors
 
 
+def validate_docs_deploy_workflow(text: str, label: str) -> list[str]:
+    """Keep the secret-bearing Docs job limited to the validated artifact."""
+
+    match = re.search(
+        r"(?ms)^  docs-prysai-deploy:\s*\n(.*?)(?=^  [A-Za-z0-9_-]+:\s*$|\Z)",
+        text,
+    )
+    if not match:
+        return [f"{label}: missing docs-prysai-deploy job"]
+    job = match.group(0)
+    errors = []
+    for fragment in DOCS_DEPLOY_REQUIRED_FRAGMENTS:
+        if fragment not in job:
+            errors.append(f"{label}: Docs deployment must retain artifact boundary: {fragment}")
+    for fragment in DOCS_DEPLOY_FORBIDDEN_FRAGMENTS:
+        if fragment in job:
+            errors.append(f"{label}: Docs deployment must not execute source/build code beside its secret: {fragment}")
+    permissions_match = re.search(
+        r"(?ms)^    permissions:\s*\n(?P<body>(?:^      [a-z-]+:\s*[a-z-]+\s*$\n?)+)",
+        job,
+    )
+    if not permissions_match:
+        errors.append(f"{label}: Docs deployment must declare exactly actions: read permissions")
+    else:
+        permissions = dict(
+            re.findall(
+                r"^      ([a-z-]+):\s*([a-z-]+)\s*$",
+                permissions_match.group("body"),
+                re.MULTILINE,
+            )
+        )
+        if permissions != DOCS_DEPLOY_ALLOWED_PERMISSIONS:
+            errors.append(f"{label}: Docs deployment must declare exactly actions: read permissions")
+    return errors
+
+
 def validate_workflows() -> tuple[int, list[str]]:
     errors: list[str] = []
     workflows = sorted(WORKFLOW_DIR.glob("*.y*ml"))
@@ -458,6 +509,10 @@ def validate_workflows() -> tuple[int, list[str]]:
         errors.append("missing .github/workflows/contribution-material.yml")
     else:
         errors.extend(validate_fast_material_workflow(FAST_MATERIAL_WORKFLOW.read_text(encoding="utf-8"), relative(FAST_MATERIAL_WORKFLOW)))
+    if not PAGES_WORKFLOW.is_file():
+        errors.append("missing .github/workflows/pages.yml")
+    else:
+        errors.extend(validate_docs_deploy_workflow(PAGES_WORKFLOW.read_text(encoding="utf-8"), relative(PAGES_WORKFLOW)))
     return len(workflows), errors
 
 

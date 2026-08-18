@@ -44,6 +44,7 @@
       "MAC addresses and labeled device identifiers",
       "pinned binary-only Python validation dependency",
       "same-origin static-site Content-Security-Policy meta contract",
+      "secret-bearing Docs deployment consumes only the validated Pages artifact",
       "policy fixture tests, including synthetic-path false-positive boundaries"
     ],
     "evidence_limit": "A passing check only establishes the declared static policy over the checked commit. It does not prove that no secret, vulnerability, unsafe dependency, account compromise, deployment risk, or host-side misconfiguration exists."
