@@ -1,4 +1,4 @@
-<!-- content_id: communication-clinic | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-13 -->
+<!-- content_id: communication-clinic | locale: EN | language: en | default_locale: EN | translation_status: source | source_revision: worktree-2026-08-18 -->
 
 # Optional Application Practice: language, work, and research
 
@@ -6,10 +6,11 @@
 low-risk, text-only chat. No cross-model run evidence exists; product-specific
 actions require a sourced adapter.
 
-**Use this after the textbook foundation:** [Chapter 0](guides/llm-fundamentals-EN.md)
-→ [Chapter 1](chapters/01-gpt-and-codex-EN.md) →
-[Chapter 2](chapters/02-first-safe-task-EN.md). These cards apply the method;
-they are not an introduction to what an LLM is.
+**Use this after the LLM Foundation Core:** [Unit 1 — LLM concepts](guides/llm-fundamentals-EN.md)
+→ [Unit 2 — first bounded request](routes/llm-core-first-generation-EN.md).
+These cards apply the core method; they are not an introduction to what an LLM
+is. If you have not completed the core route, start with [LLM Foundation Core
+v1](routes/llm-foundation-core-v1-EN.md) instead.
 
 Need a short, copy-ready language route? Open the [six-message Spanish practice loop](spanish-practice-loop-EN.md).
 Need a short work or research route? Open the [truthful work-update loop](work-update-practice-loop-EN.md)
