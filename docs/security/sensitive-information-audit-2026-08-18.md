@@ -2,34 +2,39 @@
 
 ## Executive summary
 
-This was a repository-grounded audit of the Prysai LLM Playbook. The second
-round was refreshed on 2026-08-18 against the committed scan snapshot
-`dc5cba7`; no uncommitted deployment-hardening changes are included in the
-evidence. The snapshot contains the artifact-only Docs deployment and the
-hidden-file preservation fix. This report revision corrects its counts and
-records the resulting workflow evidence without treating the earlier
-`1842b18` snapshot as evidence for SIA-09.
+This was a repository-grounded audit of the Prysai LLM Playbook. The current
+snapshot was refreshed on 2026-08-18 against committed
+`60f4aa3c7c84b69c31d44409b6f1cb60442e29ab`; the working tree was clean before
+this evidence refresh and `origin/main` resolved to the same commit. The code
+under review includes the exact CodeQL permission validator and its 42 focused
+fixtures, plus the preceding Reader and deployment-boundary fixes. This
+snapshot includes the CodeQL pull-request trigger with its narrowly scoped
+result-upload permission and the latest Reader allow-list regression tests.
 No high-confidence API key, access token, private key, JWT, credential-bearing
 URL, device identifier, MAC address, or private-network location remains in the
 current tracked candidate file set after the fixes in this audit.
 
 ### Post-audit deployment verification — 2026-08-18
 
-The historical scan snapshot above is not the current publication receipt. A
-follow-up check observed repository `main` at
-`6d27a52c6f7a630e6e1a270500734753f5e799c7` and workflow run
-[32194567583](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32194567583)
-completed successfully for build, GitHub Pages, Hugging Face sync, and Docs
-publication. The `docs-prysai-production` environment metadata then showed a
-required `uuzzrm` reviewer and a protected-branch policy. This supersedes the
-earlier SIA-10 observation for the current deployment, but does not rewrite
-the historical `dc5cba7` scan or certify the external host.
+The historical scan snapshot above is not the current publication receipt. The
+current repository `main` is `60f4aa3c7c84b69c31d44409b6f1cb60442e29ab`.
+Its Security run [32195940061](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195940061),
+CodeQL run [32195940006](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195940006),
+and Quality run [32195939994](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195939994)
+completed successfully. The Pages/Docs workflow
+[32195939999](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195939999)
+also completed successfully after the required environment approval, with Docs
+deployment `5972974205` and Pages deployment `5972974204`. The
+`docs-prysai-production` environment metadata shows a required `uuzzrm` reviewer
+and a `main` deployment-branch policy. This supersedes the earlier SIA-10
+observation for the current deployment, but does not certify the external host.
 
-The current-tree scan is clean. The reachable main history still contains one
-credential-shaped match in an older negative test fixture (`6173a14`); local
-inspection confirmed that it was synthetic test data, not a live credential.
-The current test assembles its detector values at runtime, and no unclassified
-historical credential match was found.
+The current-tree scan is clean. A replay of the repository detector over the
+reachable object database found one provider-shaped match in an older negative
+test fixture (`6173a14`); local inspection confirmed that it was synthetic test
+data, not a live credential. Historical objects also retain old maintainer-local
+path text, but no current-tree or unreachable-object credential/private-key
+match was found. The current tests assemble detector values at runtime.
 
 The main confirmed issue was privacy hygiene rather than an active credential:
 reader-facing and research records contained maintainer-local paths, including
@@ -48,7 +53,7 @@ Checked on 2026-08-18 from the repository working tree:
 
 - tracked and unignored candidate files discovered by `git ls-files -co
   --exclude-standard -z`;
-- 6 GitHub Actions workflows, including PR permissions, checkout credentials,
+- 7 GitHub Actions workflows, including PR permissions, checkout credentials,
   action pinning, and secret-context boundaries;
 - static-site entrypoints and same-origin CSP text;
 - Python/JavaScript source, documentation, fixtures, generated site inputs,
@@ -59,10 +64,11 @@ Checked on 2026-08-18 from the repository working tree:
   response-header presence and a redacted body scan.
 - authenticated GitHub repository settings and recent workflow conclusions;
   secret values were not read.
-- remote workflow receipts for the `dc5cba7` snapshot: [security run
-  32184844125](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32184844125),
-  [Pages/Docs run 32184844197](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32184844197),
-  and [quality run 32184844218](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32184844218);
+- remote workflow receipts for the current repository snapshot: [security run
+  32195940061](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195940061),
+  [CodeQL run 32195940006](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195940006),
+  [quality run 32195939994](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195939994),
+  and [Pages/Docs run 32195939999](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195939999);
   workflow logs were read without exposing secret values.
 - all local branches, remote-tracking branches, and tags recorded by
   `git for-each-ref`, plus unreachable blobs and commits reported by
@@ -102,7 +108,7 @@ Severity: Medium prevention gap.
 
 The previous gate did not inspect local file URIs, authenticated URLs, secret
 query parameters, private IPv4/hostname locations, MAC addresses, or labeled
-device identifiers. The validator now detects these classes and has 36 focused
+device identifiers. The validator now detects these classes and has 42 focused
 fixtures, including false-positive checks for ordinary URLs, filenames,
 explicit synthetic paths, large text files, and secret-bearing deployment
 artifact boundaries.
@@ -113,8 +119,13 @@ The static site uses a restrictive same-origin CSP contract and the browser
 code does not expose an authentication system or production API client. The
 Pages workflow references secrets only as GitHub Actions secret contexts in the
 protected deployment path; no secret value is present in repository content.
-The PR security workflow remains read-only, uses `pull_request`, disables
-persisted checkout credentials, and pins third-party Actions to full SHAs.
+The repository security workflow remains read-only, uses `pull_request`,
+disables persisted checkout credentials, and pins third-party Actions to full
+SHAs. CodeQL also uses `pull_request`, has no secrets context, and is the only
+PR workflow allowed to request a write scope: exactly
+`security-events: write`, alongside `actions: read`, `contents: read`, and
+`packages: read`, so it can upload its own analysis results. Other PR
+workflows are rejected by the validator if they request any write scope.
 
 The site does use `localStorage` for non-secret learning receipts/language
 preferences. The audit did not find cookies, bearer headers, API keys, or
@@ -145,13 +156,14 @@ on every checkout, and leaves non-main manual runs as review-artifact builds.
 
 Severity: Informational historical residue; no live credential was established.
 
-The scan of 865 commits reachable from the audited `main` snapshot found one
-provider-shaped
+The scan of 888 commits and 5,238 reachable blobs found one provider-shaped
 match in the historical `scripts/test_build_pages_artifact.py` blob introduced
 by commit `6173a14`. The surrounding test was explicitly a negative fixture,
 and the values were synthetic. The current version keeps only redacted text and
 runtime string assembly, so the current-tree gate passes. No rotation or
-history rewrite is justified by this evidence.
+history rewrite is justified by this evidence. Historical path privacy residue
+is retained as audit context; it is not evidence of an active device or
+credential exposure.
 
 ### SIA-07 — Published response-header hardening gap — open outside this repository
 
@@ -176,22 +188,17 @@ introduced.
 
 Severity: Medium governance risk; no secret exposure was observed.
 
-The active GitHub Ruleset still lists a `RepositoryRole` actor with
-`bypass_mode=always`. The audited hardening snapshot was pushed directly to
-`main`; GitHub's push response explicitly reported that the push bypassed the
-pull-request requirement, verified-signature requirement, and Code Scanning
-wait. This confirms that the recorded Ruleset bypass is operational, not merely
-metadata.
+At the repository snapshot recorded by this report, the active GitHub Ruleset
+still lists a `RepositoryRole` actor with `bypass_mode=always`. The security
+changes were pushed directly to `main`; GitHub's push response explicitly
+reported that the push bypassed the pull-request requirement, verified-signature
+requirement, and Code Scanning wait. This confirms that the recorded Ruleset
+bypass was operational, not merely metadata.
 
-The security and Pages workflows for `dc5cba7` succeeded. The Docs deployment
-also succeeded after consuming the candidate artifact. The quality workflow
-completed its unified regression and release-contract checks, then concluded
-with exit code 1 because its commit-bound release-evidence step emitted
-`decision=blocked` under `continue-on-error`; the evidence packet was still
-uploaded. The repository's formal release readiness therefore remains
-`not_ready`. Remove or narrow the permanent bypass, require signed reviewed
-changes, and run the formal release gate for a separately reviewed candidate
-before promoting the security policy or release status.
+Security, CodeQL, Quality, and Pages/Docs runs for the current SHA succeeded.
+The repository's separate formal release readiness remains `not_ready`. No
+host-side Ruleset mutation was performed; the bypass remains an open governance
+risk and must be rechecked before release.
 
 ### SIA-09 — Secret-bearing deployment job had redundant build authority — fixed
 
@@ -206,39 +213,34 @@ artifact with a pinned `actions/download-artifact` action, preserves the hidden
 `actions: read`; it no longer checks out source or executes the build scripts
 beside the deployment key. See ADR-0045.
 
-### SIA-10 — Docs deployment environment protection — historical observation
+### SIA-10 — Docs deployment environment protection — fixed on host
 
 Severity: Medium governance risk; no secret exposure was observed.
 
-GitHub API metadata showed the `docs-prysai-production` environment has the
-`DOCS_DEPLOY_SSH_KEY` secret but no protection rules and no deployment branch
-policy. The workflow itself restricts the job to `refs/heads/main`, but the
-environment should also require the intended reviewers and protected-branch
-policy at the GitHub host. Changing those settings requires an explicit host
-administrator decision and is not represented as a repository file change.
-
-The post-audit verification above observed both a required `uuzzrm` reviewer and
-a branch policy. Treat this finding as historical for the `dc5cba7` snapshot;
-repeat the host-side check before each release because these settings are not
-versioned in this repository.
+GitHub API metadata now shows the `docs-prysai-production` environment has a
+required reviewer rule for `uuzzrm` and a custom deployment branch policy whose
+only policy is `main`. The workflow also restricts the deployment job to
+`refs/heads/main`. Secret values were not read; this is host-side protection
+evidence and is not represented as a repository file change. Re-verify it before
+each release because environment settings are not versioned in this repository.
 
 ## Scan results
 
 | Surface | Result | Evidence boundary |
 | --- | --- | --- |
-| Current candidate files | Pass; 1,095 candidate files, 6 workflows | Static patterns and policy checks only; the largest text artifact is approximately 5.2 MiB |
-| Focused security fixtures | Pass; 36 fixtures | Detector behavior, including synthetic false-positive boundaries, large-file coverage, and secret-bearing deployment permission and artifact boundaries |
-| All refs and reachable history | 20 refs; 865 reachable commits and 5,206 reachable blobs; current ref tips have 0 high-confidence credential, private-key, device, MAC, private-network, or authentication-URL matches; 1 older provider-shaped historical fixture is classified synthetic | Pattern scan of local branches, remote-tracking refs, and tag; not every provider-specific secret format |
-| Unreachable Git objects | 142 blobs across 15 unreachable commits; 1 old `example.test` negative-fixture object matched authentication-URL/query rules; 0 provider-shaped credential/private-key hits | Classified synthetic test data; local object reachability/retention can change |
+| Current candidate files | Pass; 1,097 candidate files, 7 workflows | Static patterns and policy checks only; the largest text artifact is approximately 5.2 MiB |
+| Focused security fixtures | Pass; 42 fixtures | Detector behavior, including CodeQL PR permission boundaries, synthetic false-positive boundaries, large-file coverage, and secret-bearing deployment artifact boundaries |
+| All refs and reachable history | 20 refs; 888 reachable commits and 5,238 reachable blobs; current candidate files have 0 high-confidence credential, private-key, device, MAC, private-network, or authentication-URL matches; 1 older provider-shaped historical fixture is classified synthetic; historical path residue remains | Pattern scan of local branches, remote-tracking refs, and tag; not every provider-specific secret format |
+| Unreachable Git objects | 142 blobs across 15 unreachable commits; the current detector found old machine-local path residue but 0 provider-shaped credential/private-key hits | Classified historical data; local object reachability/retention can change |
 | Git stash/reflog | No stash entries; reflog showed normal repository refs | Does not inspect remote provider backups or account logs |
 | Workflow permissions and action refs | Pass; all checkout steps disable persisted credentials, all third-party refs use full SHAs, the candidate artifact preserves hidden `.nojekyll`, and Docs deploy consumes the validated build artifact without checkout/build execution | Does not prove every hosted runner or future workflow remains safe |
-| Host-side security controls | Secret Scanning, Push Protection, Dependabot security updates, and Actions SHA pinning enabled; non-provider patterns disabled; 1 repository secret and 1 Docs environment secret names observed without values | Repository-level API settings only; Ruleset has an always-bypass repository role and Docs environment protection is empty |
+| Host-side security controls | Secret Scanning, Push Protection, Dependabot security updates, and Actions SHA pinning enabled; non-provider patterns disabled; Docs environment requires reviewer `uuzzrm` and branch policy `main` | Repository-level API settings only; the Ruleset bypass actor is the pre-mutation observation and non-provider patterns remain disabled |
 | Dependencies | Pass; `npm audit` reported 0 vulnerabilities and top-level dependency listing contains Playwright only | Local npm advisory snapshot; does not replace ongoing update review |
 | Native frontend and binary assets | Pass; no dangerous string execution/HTML sink found; 10 tracked PNG assets, no archives/databases/private-key files, no PNG text metadata findings | Static review and filename/byte checks; no image steganography or independent provider scanner |
-| Published surfaces | GitHub Pages and Docs returned 200; the `dc5cba7` Docs deployment reported `DOCS_SITEMAPS_OK root_urls=124 playbook_urls=123` and `DOCS_DEPLOY_OK`; body scans found no sensitive rule IDs | Response-header hardening differs by host; live content and headers can change |
+| Published surfaces | GitHub Pages and Docs returned 200; workflow `32195939999` completed build, Pages, Hugging Face, and Docs publication for the current SHA; body scans found no sensitive rule IDs | Response-header hardening differs by host; live content and headers can change |
 | Static CSP | Pass under the repository policy; an early meta CSP is present | Both live responses lacked a CSP response header; meta CSP is not a substitute for runtime HTTP headers |
 | External source archives | Incomplete; no archive directory was configured | Original archives were not supplied, so source/license audit coverage is incomplete |
-| Release evidence | Quality workflow completed the checks and uploaded its packet, but the job ended with `RELEASE_EVIDENCE_FAILED decision=blocked`; formal readiness remains `not_ready` | A passing check or uploaded packet is not release approval |
+| Release evidence | Quality run `32195939994` for the current SHA completed successfully and uploaded its packet; formal readiness remains `not_ready` | A passing check or uploaded packet is not release approval |
 
 ## Remaining limitations
 
@@ -254,11 +256,12 @@ versioned in this repository.
 - `gitleaks`, `trufflehog`, and `detect-secrets` were not installed in the local
   environment, so this audit did not include an independent provider-aware
   scanner.
-- Code Scanning alert API returned `no analysis found`; absence of an alert list
-  is not evidence that CodeQL analysis has run.
+- CodeQL analysis records for the current code snapshot exist for JavaScript and
+  Python, each with zero results; this does not certify the repository against
+  every scanner or future change.
 - The `docs-prysai-production` Environment protection is host-side and is not
-  versioned here. The historical `dc5cba7` observation found no protection; the
-  post-audit check for `6d27a52` observed a required reviewer and branch policy.
+  versioned here; the current check observed a required reviewer and `main`
+  branch policy. The Ruleset bypass actor remains active.
 - The external archive audit remains incomplete because no
   `--archive-dir <directory>` was supplied.
 - Regex checks can miss encoded, split, provider-specific, binary, or
@@ -289,4 +292,4 @@ versioned in this repository.
 - [`docs/adr/0043-expand-repository-sensitive-information-tripwires.md`](../adr/0043-expand-repository-sensitive-information-tripwires.md)
 - [`docs/adr/0044-live-host-security-controls-and-publishing-boundaries.md`](../adr/0044-live-host-security-controls-and-publishing-boundaries.md)
 - [`docs/adr/0045-deploy-only-validated-pages-artifact.md`](../adr/0045-deploy-only-validated-pages-artifact.md)
-- [Post-audit Pages/Docs workflow run 32194567583](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32194567583)
+- [Current Pages/Docs workflow run 32195939999](https://github.com/Prysai/Prysai-LLM-Playbook/actions/runs/32195939999)
