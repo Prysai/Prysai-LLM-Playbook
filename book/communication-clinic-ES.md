@@ -1,4 +1,4 @@
-<!-- content_id: communication-clinic | locale: ES | language: es | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
+<!-- content_id: communication-clinic | locale: ES | language: es | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-18 -->
 
 # Práctica de aplicación opcional: idioma, trabajo e investigación
 
@@ -7,10 +7,11 @@ Para una práctica breve y guiada, abre el [ciclo de actualización de trabajo](
 **Estado:** `draft` · **Evidencia de aprendizaje:** `not_run` · **Uso previsto:**
 prácticas de bajo riesgo y sin datos sensibles en un chat de texto con un LLM.
 
-**Úsalas después de la base del libro:** [Capítulo 0](guides/llm-fundamentals-ES.md)
-→ [Capítulo 1](chapters/01-gpt-and-codex-ES.md) →
-[Capítulo 2](chapters/02-first-safe-task-ES.md). Estas tarjetas aplican el
-método; no son una introducción a lo que es un LLM.
+**Úsalas después del núcleo fundamental de LLM:** [Unidad 1: conceptos de LLM](guides/llm-fundamentals-ES.md)
+→ [Unidad 2: primera petición acotada](routes/universal-core-foundations-ES.md).
+Estas tarjetas aplican el método central; no son una introducción a lo que es
+un LLM. Si aún no has terminado el núcleo, empieza por la [ruta fundamental de
+LLM](routes/universal-core-foundations-ES.md).
 
 Estás en la ruta explicada en español: las explicaciones, decisiones y enlaces de esta página están en español. El español que aparece en las tarjetas es una meta opcional de práctica de idiomas, no un cambio accidental de idioma ni una obligación.
 
