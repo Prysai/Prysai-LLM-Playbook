@@ -59,6 +59,12 @@ REQUIRED_MARKERS = {
         "was die aktuelle Oberfläche verlassen darf und wer dies autorisiert hat",
         "Prüfe Originalquelle und Datum",
     ),
+    "ZHTW": (
+        "基礎模型生成的是文字",
+        "搜尋、檢索、檔案、記憶或工具",
+        "哪些資料會離開當前介面，以及誰授權這樣做",
+        "核對原始來源和日期",
+    ),
 }
 
 # These were attractive simplifications, but they teach the wrong mental model:
@@ -72,6 +78,7 @@ ACCURACY_MARKERS = {
     "JA": ("有限のcontext window", "カットオフだけで判断せず"),
     "KO": ("유한한 context window", "cutoff만으로 판단하지 말고"),
     "DE": ("endliches Kontextfenster", "ein Cutoff allein entscheidet die Frage nicht"),
+    "ZHTW": ("有限的上下文視窗", "不能只憑截止日期下結論"),
 }
 
 MICRO_EXPERIMENT_MARKERS = {
@@ -81,6 +88,7 @@ MICRO_EXPERIMENT_MARKERS = {
     "JA": ("5分の境界チェック", "市立図書館は今日18時に閉館する"),
     "KO": ("5분 경계 점검", "시립 도서관은 오늘 오후 6시에 문을 닫습니다"),
     "DE": ("Fünf-Minuten-Grenzcheck", "Die Stadtbibliothek schließt heute um 18 Uhr"),
+    "ZHTW": ("五分鐘邊界檢查", "市圖書館今天下午 6 點關門"),
 }
 
 FORBIDDEN_MARKERS = {
@@ -90,6 +98,7 @@ FORBIDDEN_MARKERS = {
     "JA": ("これで短い窓というボトルネックが取り除かれました", "モデルは学習カットオフの時点で固定されています"),
     "KO": ("짧은 범위라는 병목이 사라졌습니다", "모델은 학습 cutoff 시점에 고정됩니다"),
     "DE": ("Damit fiel der Engpass des kurzen Fensters weg.", "Das Modell ist an seinem Trainings-Cutoff eingefroren"),
+    "ZHTW": ("短窗口這個瓶頸就此被打破", "模型凍結在它的訓練截止日期"),
 }
 
 
@@ -120,7 +129,7 @@ def main() -> int:
         return 1
 
     print("LLM_FUNDAMENTALS_BOUNDARIES_OK")
-    print("locales=EN,ZH,ES,JA,KO,DE")
+    print("locales=EN,ZH,ES,JA,KO,DE,ZHTW")
     print("evidence_boundary=wording-presence-not-language-review-product-behavior-or-learning-proof")
     return 0
 
