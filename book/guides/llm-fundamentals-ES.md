@@ -1,4 +1,4 @@
-<!-- content_id: llm-fundamentals-guide | locale: ES | language: es | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-17-foundation-map -->
+<!-- content_id: llm-fundamentals-guide | locale: ES | language: es | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-17-foundation-observations -->
 
 # Qué es un LLM: las capas detrás de una respuesta útil
 
