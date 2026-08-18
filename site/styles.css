@@ -552,15 +552,20 @@ a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: bl
 .mobile-index-rail { display: none; }
 .mobile-core-routes, .mobile-section-link { display: none; }
 .mobile-contract-details > summary { display: none; }
+
 @media (max-width: 480px) {
-  .hero { min-height: auto; padding-bottom: 2.2rem; }
-  .hero-index { margin-bottom: 1.4rem; }
-  .hero-lede { margin-bottom: 1.35rem; }
+  .hero { min-height: auto; gap: 1.25rem; padding-top: 1.75rem; padding-bottom: 1.6rem; }
+  .hero-index { margin-bottom: .7rem; }
+  .hero-copy .eyebrow { margin-bottom: .8rem; }
+  .hero h1 { margin-bottom: .7rem; font-size: clamp(2.5rem, 12.1vw, 3.5rem); line-height: .93; }
+  .hero-lede { margin-bottom: 1rem; line-height: 1.45; }
+  .hero-scope { margin-bottom: .8rem; padding-block: .35rem; }
+  .hero-route-decision { margin-top: 1rem; }
   /* A phone reader should see one explicit action before needing to decode the
      three route cards below. The cards remain available for the fuller choice. */
   .hero-actions { display: flex; }
   .hero-brief, .hero-footer { display: none; }
-  .hero-proof-card { margin-top: 1.2rem; }
+  .hero-proof-card { margin-top: .8rem; }
   .hero-proof-card h2 { font-size: 1.45rem; }
   .hero-proof-status { max-width: 9.5rem; }
   /* The expanded route cards above already give a phone reader the condition,
