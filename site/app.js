@@ -1284,6 +1284,23 @@ menuToggle.addEventListener('click', () => {
   if (open) nav.querySelector('a')?.focus();
 });
 nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => closeMenu()));
+
+// Hugging Face Static Spaces render the showcase inside a sandboxed iframe.
+// That wrapper does not grant `allow-top-navigation`, so a literal
+// target="_top" link can be inert even though it is the correct target on the
+// source page. Keep the normal Docs experience in the same window, but make
+// the canonical home link actionable when the page is embedded: a user click
+// opens the canonical Docs URL in a new top-level tab permitted by the
+// wrapper. This is intentionally limited to the brand links; in-page menu
+// anchors must continue to stay inside the Space.
+if (window.top !== window.self) {
+  document.querySelectorAll('a.wordmark[href="https://docs.prysai.com/llm-playbook/"]').forEach((link) => {
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.dataset.hostedNavigation = 'new-tab';
+  });
+}
+
 const languageToggle = document.querySelector('[data-language-toggle]');
 const languageMenu = document.querySelector('[data-language-menu]');
 const closeLanguageMenu = ({ returnFocus = false } = {}) => {
