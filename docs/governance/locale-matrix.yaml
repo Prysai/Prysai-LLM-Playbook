@@ -3726,7 +3726,7 @@
       "kind": "application-guide",
       "stem": "book/guides/llm-fundamentals",
       "source_locale": "EN",
-      "source_revision": "worktree-2026-08-17-foundation-map",
+      "source_revision": "worktree-2026-08-17-foundation-observations",
       "locales": {
         "EN": {
           "path": "book/guides/llm-fundamentals-EN.md",
@@ -3742,7 +3742,7 @@
           "coverage": "full",
           "run_status": "not_run",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-17-foundation-map",
+          "source_revision": "worktree-2026-08-17-foundation-observations",
           "reason": "The guide is structurally aligned with the current English foundation source; native-language review and learner-run evidence remain pending."
         },
         "ES": {
@@ -3752,7 +3752,7 @@
           "coverage": "full",
           "run_status": "not_run",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-17-foundation-map",
+          "source_revision": "worktree-2026-08-17-foundation-observations",
           "reason": "The guide now mirrors the current English foundation contract in Spanish; independent language review and learner-run evidence remain pending."
         },
         "JA": {
@@ -3762,7 +3762,7 @@
           "coverage": "full",
           "run_status": "not_run",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-17-foundation-map",
+          "source_revision": "worktree-2026-08-17-foundation-observations",
           "reason": "The guide now mirrors the current English foundation contract in Japanese; independent language review and learner-run evidence remain pending."
         },
         "KO": {
@@ -3772,7 +3772,7 @@
           "coverage": "full",
           "run_status": "not_run",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-17-foundation-map",
+          "source_revision": "worktree-2026-08-17-foundation-observations",
           "reason": "The guide now mirrors the current English foundation contract in Korean; independent language review and learner-run evidence remain pending."
         },
         "DE": {
@@ -3782,7 +3782,7 @@
           "coverage": "full",
           "run_status": "not_run",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-17-foundation-map",
+          "source_revision": "worktree-2026-08-17-foundation-observations",
           "reason": "The guide now mirrors the current English foundation contract in German; independent language review and learner-run evidence remain pending."
         }
       }
