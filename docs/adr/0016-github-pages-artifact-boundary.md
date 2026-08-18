@@ -38,6 +38,14 @@ fragment-only navigation to a provider route. The builder rejects the
 repository root as an output target and checks that `.git/`, `.work/`, `tmp/`,
 and other machine-local directories do not enter the artifact.
 
+Hosted wrappers add one more boundary: Hugging Face Static Spaces serve the
+artifact inside an iframe, while the same files remain reachable at `/site/`
+for development. The homepage therefore writes its four section links as
+`index.html#...`, making the document target explicit in both entry modes. The
+header and footer wordmarks use `target="_top"` for the canonical Docs URL so
+the logo returns the top-level browser window instead of opening a second tab
+inside an opaque wrapper.
+
 ## Alternatives considered
 
 ### Publish the whole repository
