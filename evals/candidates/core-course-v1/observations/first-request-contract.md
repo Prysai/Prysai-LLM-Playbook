@@ -57,11 +57,30 @@ locked:
 Ask only which claim needs checking and what the source actually says. This
 keeps the experiment runnable without an account or external request.
 
+## Controlled repeat extension
+
+If a text-only surface is available and the learner has safely recorded the
+first request, repeat that exact request two more times under the same stated
+conditions. Do not add a tool, private material, or a new instruction between
+runs. Record the three responses side by side and mark:
+
+- constraints or facts that remain common across all three responses;
+- wording, order, or omission differences; and
+- which differences cannot be explained from the visible record.
+
+If all three responses match, do not call the model deterministic. If they
+differ, do not call the model random. A three-run comparison is a local
+observation of one task, surface, and condition, not a probability estimate or
+a model ranking. Stop if the surface changes hidden settings, adds a tool, or
+asks for an external action; record the changed condition instead of silently
+continuing.
+
 ## Required record
 
 ```text
 candidate_sha | task_revision | first_request | field_map
 model_and_surface | first_response_or_no_model_surface | first_check
+repeat_conditions | repeat_responses | shared_and_different_observations
 help_used | stop_decision | reviewer_1 | reviewer_2
 disagreement | claim_status | limits
 ```
