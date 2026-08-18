@@ -131,8 +131,8 @@ API no es evidencia para ellas.
 
 Para una primera tarea sin clave ni datos privados, usa la tarea segura general
 de arriba solo en una superficie que tengas autorización para utilizar. Si se
-autoriza expresamente un experimento con la API, lee primero el [recibo de
-fuentes de la API de DeepSeek](../../docs/research/deepseek-api-source-receipt-2026-08-17.md)
+autoriza expresamente un experimento con la API, consulta primero la [documentación
+oficial de la API de DeepSeek](https://api-docs.deepseek.com/)
 y sigue el límite de API que aparece abajo. Registra el modelo que usaste y la
 fecha. No pegues claves de API, código privado ni documentos internos en un
 chat o una solicitud.
