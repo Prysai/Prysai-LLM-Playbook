@@ -123,7 +123,7 @@ DeepSeek 웹 채팅이나 앱의 제공 여부와 동작, 컨텍스트 창, 가�
 
 키와 비공개 데이터를 쓰지 않는 첫 과제라면 위의 공통 안전 과제를 사용 권한이
 있는 표면에서만 실행하십시오. API 실험을 명시적으로 승인받았다면 먼저
-[DeepSeek API 출처 영수증](../../docs/research/deepseek-api-source-receipt-2026-08-17.md)을
+[DeepSeek 공식 API 문서](https://api-docs.deepseek.com/)를
 읽고 아래의 API 경계를 따르십시오. 실제로 사용한 모델 이름과 날짜를 기록하고,
 API 키·비공개 코드·내부 문서를 채팅이나 요청에 붙여넣지 마십시오.
 
