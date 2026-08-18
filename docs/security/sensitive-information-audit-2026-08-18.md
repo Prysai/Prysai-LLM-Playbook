@@ -3,11 +3,17 @@
 ## Executive summary
 
 This was a repository-grounded audit of the Prysai LLM Playbook. The current
-remote `main` baseline is `14a96bd`; the follow-up hardening described below is
-still a local `candidate` until it is separately reviewed and published.
+remote `main` baseline is
+`daeffc9e441facca5d4928c75131d6aa07016e28`.
 No high-confidence API key, access token, private key, JWT, credential-bearing
 URL, device identifier, MAC address, or private-network location remains in the
 current tracked candidate file set after the fixes in this audit.
+
+The current-tree scan is clean. The reachable main history still contains one
+credential-shaped match in an older negative test fixture (`6173a14`); local
+inspection confirmed that it was synthetic test data, not a live credential.
+The current test assembles its detector values at runtime, and no unclassified
+historical credential match was found.
 
 The main confirmed issue was privacy hygiene rather than an active credential:
 reader-facing and research records contained maintainer-local paths, including
@@ -32,7 +38,9 @@ Checked on 2026-08-18 from the repository working tree:
 - Python/JavaScript source, documentation, fixtures, generated site inputs,
   source records, and publishing configuration;
 - reachable Git history and the local Git object database's unreachable blobs;
-- the dedicated repository-security validator and its focused negative fixtures.
+- the dedicated repository-security validator and its focused negative fixtures;
+- live GET responses from the GitHub Pages and Docs publishing URLs, including
+  response-header presence and a redacted body scan.
 - authenticated GitHub repository settings and recent workflow conclusions;
   secret values were not read.
 
@@ -67,9 +75,9 @@ Severity: Medium prevention gap.
 
 The previous gate did not inspect local file URIs, authenticated URLs, secret
 query parameters, private IPv4/hostname locations, MAC addresses, or labeled
-device identifiers. The validator now detects these classes and has 27 focused
-fixtures, including false-positive checks for ordinary URLs, filenames, and
-explicit synthetic paths.
+device identifiers. The validator now detects these classes and has 30 focused
+fixtures, including false-positive checks for ordinary URLs, filenames,
+explicit synthetic paths, and large text files.
 
 ### SIA-03 — Static-site and workflow boundary — no issue observed
 
@@ -85,25 +93,55 @@ preferences. The audit did not find cookies, bearer headers, API keys, or
 account/session secrets in that storage path. Local storage is still browser-
 modifiable state and is not an authority or proof of completion.
 
-### SIA-04 — Large-file scan bypass — fixed in candidate
+### SIA-04 — Large-file scan bypass — fixed on current main
 
 Severity: Medium prevention gap.
 
 The previous validator silently skipped text files larger than 1,000,000
 bytes. The generated `site/search-index.js` is approximately 5.2 MiB, so that
 rule created a real blind spot for a repository-owned public artifact. The
-candidate validator scans files up to 25 MiB and fails closed above that limit;
+validator now scans files up to 25 MiB and fails closed above that limit;
 the focused fixture now proves that a credential-shaped value in a formerly
 skipped large text file is detected.
 
-### SIA-05 — Secret-bearing manual publication path — narrowed in candidate
+### SIA-05 — Secret-bearing manual publication path — narrowed on current main
 
 Severity: Medium workflow-hardening issue; no secret value was exposed.
 
 The Pages workflow has repository secrets for optional Hugging Face and Docs
-publication. The candidate workflow requires publication steps to run only
+publication. The current workflow requires publication steps to run only
 when `github.ref == 'refs/heads/main'`, disables persisted checkout credentials
 on every checkout, and leaves non-main manual runs as review-artifact builds.
+
+### SIA-06 — Historical synthetic credential-shaped fixture — reviewed
+
+Severity: Informational historical residue; no live credential was established.
+
+The scan of 848 commits reachable from current `main` found one provider-shaped
+match in the historical `scripts/test_build_pages_artifact.py` blob introduced
+by commit `6173a14`. The surrounding test was explicitly a negative fixture,
+and the values were synthetic. The current version keeps only redacted text and
+runtime string assembly, so the current-tree gate passes. No rotation or
+history rewrite is justified by this evidence.
+
+### SIA-07 — Published response-header hardening gap — open outside this repository
+
+Severity: Low defense-in-depth gap; no sensitive data was observed in either
+published HTML response.
+
+On 2026-08-18, both published URLs returned HTTP 200 and the redacted body scan
+reported no repository-sensitive rule IDs. The GitHub Pages response exposed
+HSTS but no CSP, `X-Content-Type-Options`, `X-Frame-Options`,
+`Referrer-Policy`, or `Permissions-Policy` response header. The Docs response
+exposed `X-Content-Type-Options`, `X-Frame-Options`, and `Referrer-Policy`, but
+no CSP, HSTS, or `Permissions-Policy` response header.
+
+The repository does contain an early same-origin meta CSP. That is useful
+defense in depth, but it is not equivalent to an HTTP CSP header and cannot
+provide every header-only control. The Docs host should add the missing
+response headers at its edge/server; GitHub Pages cannot be configured from
+this repository, so the meta policy must remain there unless an edge proxy is
+introduced.
 
 ## Scan results
 
@@ -111,12 +149,14 @@ on every checkout, and leaves non-main manual runs as review-artifact builds.
 | --- | --- | --- |
 | Current candidate files | Pass; 1,094 candidate files, 6 workflows | Static patterns and policy checks only; the largest text artifact is approximately 5.2 MiB |
 | Focused security fixtures | Pass; 30 fixtures | Detector behavior, including synthetic false-positive boundaries and large-file coverage |
-| Reachable history | 843 commits reachable; 0 high-confidence credential-signature hits | Pattern scan of committed objects; not every provider-specific secret format |
+| Reachable history | 848 commits reachable; 1 credential-shaped historical match, classified as a synthetic fixture; 0 unclassified matches | Pattern scan of committed objects; not every provider-specific secret format |
 | Unreachable Git objects | 142 blobs across 15 unreachable commits; 0 high-confidence credential/private-key hits after regex tightening | Local object database only; object reachability/retention can change |
 | Git stash/reflog | No stash entries; reflog showed normal repository refs | Does not inspect remote provider backups or account logs |
 | Workflow permissions and action refs | Pass; all checkout steps disable persisted credentials and all third-party refs use full SHAs | Does not prove every hosted runner or future workflow remains safe |
 | Host-side security controls | Secret Scanning and Push Protection enabled; Actions SHA pinning required; non-provider patterns disabled | Repository-level API settings only; Ruleset has an always-bypass repository role |
-| Static CSP | Pass under the repository policy | Meta CSP is not a substitute for runtime HTTP headers |
+| Published surfaces | GitHub Pages and Docs returned 200; body scans found no sensitive rule IDs | Response-header hardening differs by host; live content and headers can change |
+| Static CSP | Pass under the repository policy; an early meta CSP is present | Both live responses lacked a CSP response header; meta CSP is not a substitute for runtime HTTP headers |
+| External source archives | Incomplete; no archive directory was configured | Original archives were not supplied, so source/license audit coverage is incomplete |
 
 ## Remaining limitations
 
@@ -129,6 +169,11 @@ on every checkout, and leaves non-main manual runs as review-artifact builds.
   external backups are outside the repository-only evidence collected here.
 - GitHub did not enable non-provider pattern scanning through the authenticated
   API request; the repository-local detector remains the additional tripwire.
+- `gitleaks`, `trufflehog`, and `detect-secrets` were not installed in the local
+  environment, so this audit did not include an independent provider-aware
+  scanner.
+- The external archive audit remains incomplete because no
+  `--archive-dir <directory>` was supplied.
 - Regex checks can miss encoded, split, provider-specific, binary, or
   intentionally obfuscated secrets. They can also require a narrow fixture
   marker when demonstrating a sensitive shape.
