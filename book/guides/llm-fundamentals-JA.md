@@ -201,6 +201,22 @@ instruction tuning、安全制御、retrieval、ツール、画面も加わり�
 もう一つ、**「市立図書館は今日18時に閉館する」**という文について、調べる前に
 テキストモデルだけで何を確立できるかを書きます。現在の真偽には資料が必要です。
 
+### 3つの限定された観察
+
+上の確認は小さなデモであり、学習者やモデルがどの課題でも同じように
+振る舞う証拠ではありません。アカウント、個人データ、ツール、ネットワーク要求を
+使わずに同じ境界を練習するには、次の架空記録プロトコルを使います（本文は現在
+英語のみです）。
+
+- [Context change and unknowns（コンテキストの変化と不明点）](../../evals/candidates/core-course-v1/observations/context-change-and-unknowns.md) — 2つの入力版を比較し、各主張を `PASS`、`FAIL`、`UNSURE` に分け、部屋番号は不明のままにします。
+- [First-request contract and controlled repeat（最初の依頼の契約と管理された反復）](../../evals/candidates/core-course-v1/observations/first-request-contract.md) — 回答の前に目的、資料、制約、回答形式、停止条件を書きます。安全なテキスト画面がある場合は同じ依頼を2回追加で行い、共通点と相違点を記録します。
+- [Tool boundary, authority, and evidence（ツールの境界、権限、証拠）](../../evals/candidates/core-course-v1/observations/tool-boundary-authority-evidence.md) — 提案された行動、付与された権限、ツールの実行、読み戻しの証拠を分けます。
+
+各プロトコルは、手がかりを受ける前に最初の成果物を保存し、支援、不明点、停止規則を
+記録します。状態は `candidate / not_run` です。将来の実行が示せるのは指定した課題、
+条件、評価基準だけであり、コースの有効性、プロンプトの優位性、モデル品質、保持、
+一般的な転移、プラットフォーム間の同等性、または本番利用の準備を証明するものではありません。
+
 ### どのモデルでも使える最初の型
 
 低リスクの実作業に進むときは、次の6行を埋めます。
