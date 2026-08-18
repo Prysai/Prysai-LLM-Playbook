@@ -3,6 +3,14 @@
 
   const manifest = window.CODEX_LOCALE_MANIFEST || { default_locale: 'en', locales: {}, contents: {}, path_index: {} };
   const locales = manifest.locales || {};
+  // Reader source requests are built only from the generated manifest. A URL
+  // query may choose one of these registered Markdown sources, but it must not
+  // choose an arbitrary same-origin path.
+  const readerSourceHrefByPath = new Map(
+    Object.keys(manifest.path_index || {})
+      .filter((path) => path.endsWith('.md'))
+      .map((path) => [path, `../${path}`]),
+  );
   const validLocales = Object.keys(locales);
   const params = new URLSearchParams(window.location.search);
   const requestedLocale = validLocales.includes(params.get('lang')) ? params.get('lang') : null;
@@ -409,15 +417,14 @@ function canonicalChapterTitle(chapter) {
     const number = String(lab.number).padStart(3, '0');
     const title = localizedLabTitle(lab);
     if (title) {
-      const labels = {
-        zh: (n, t) => `实验 ${n} · ${t}`,
-        es: (n, t) => `Práctica ${n} · ${t}`,
-        ja: (n, t) => `練習 ${n} · ${t}`,
-        ko: (n, t) => `연습 ${n} · ${t}`,
-        de: (n, t) => `Übung ${n} · ${t}`,
-        en: (n, t) => `Lab ${n} · ${t}`,
-      };
-      return (labels[uiLanguage()] || labels.en)(number, title);
+      switch (uiLanguage()) {
+        case 'zh': return `实验 ${number} · ${title}`;
+        case 'es': return `Práctica ${number} · ${title}`;
+        case 'ja': return `練習 ${number} · ${title}`;
+        case 'ko': return `연습 ${number} · ${title}`;
+        case 'de': return `Übung ${number} · ${title}`;
+        default: return `Lab ${number} · ${title}`;
+      }
     }
     return `Lab ${number} · ${lab.title}`;
   }
@@ -1220,7 +1227,7 @@ function canonicalChapterTitle(chapter) {
   }
 
   async function load() {
-    if (!requestedPath || requestedPath.includes('..') || !/^(?:(?:README(?:-[A-Z]{2})?|AGENTS|CONTEXT)\.md|(?:book|docs|skills|assets|examples|evals|site)\/)/.test(requestedPath)) {
+    if (!requestedPath || requestedPath.includes('..') || !readerSourceHrefByPath.has(requestedPath)) {
       showError(currentReaderCopy().invalidPath);
       return;
     }
@@ -1244,10 +1251,15 @@ function canonicalChapterTitle(chapter) {
     article.append(loading);
     article.setAttribute('aria-busy', 'true');
     setReaderStatus('');
+    const sourceHref = readerSourceHrefByPath.get(selection.path);
+    if (!sourceHref) {
+      showError(currentReaderCopy().invalidPath);
+      return;
+    }
     let response;
     try {
       response = await fetchWithTimeout(
-        directHref(selection.path),
+        sourceHref,
         async (result) => ({ response: result, source: result.ok ? await result.text() : '' }),
         // A reader must show the current Markdown after a repository/site update.
         // Source: https://developer.mozilla.org/en-US/docs/Web/API/Request/cache
