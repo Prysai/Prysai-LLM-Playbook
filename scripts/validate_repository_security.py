@@ -83,6 +83,7 @@ DOCS_DEPLOY_FORBIDDEN_FRAGMENTS = (
     "scripts/build_pages_artifact.py",
 )
 CODEQL_REQUIRED_FRAGMENTS = (
+    "pull_request:",
     "github/codeql-action/init@ff2f1c621b7f889edc0d3c761ac2e6a3f8cdb0dd",
     "github/codeql-action/autobuild@ff2f1c621b7f889edc0d3c761ac2e6a3f8cdb0dd",
     "github/codeql-action/analyze@ff2f1c621b7f889edc0d3c761ac2e6a3f8cdb0dd",
@@ -372,11 +373,22 @@ def validate_policy(policy: dict[str, object]) -> list[str]:
         forbidden = automation.get("forbidden_workflow_features")
         required_forbidden = {
             "pull_request_target",
-            "write-scoped token permissions on pull_request workflows",
+            "secrets context in untrusted pull_request workflows",
+            "write-scoped token permissions on pull_request workflows except the controlled CodeQL exception below",
             "persisted checkout credentials on pull_request workflows",
         }
         if not isinstance(forbidden, list) or not required_forbidden.issubset(forbidden):
             errors.append("automation must explicitly forbid unsafe pull-request workflow features")
+        controlled_permissions = automation.get("controlled_pr_write_permissions")
+        expected_controlled_permissions = [
+            {
+                "workflow_path": ".github/workflows/codeql.yml",
+                "permissions": CODEQL_PR_ALLOWED_PERMISSIONS,
+                "reason": "CodeQL must upload its own pull-request analysis results without receiving any other write scope",
+            }
+        ]
+        if controlled_permissions != expected_controlled_permissions:
+            errors.append("automation must declare the exact CodeQL pull-request permission exception")
 
     host_ruleset = policy.get("host_ruleset")
     if not isinstance(host_ruleset, dict) or host_ruleset.get("status") != "active":
@@ -458,7 +470,7 @@ def validate_workflow_text(text: str, label: str) -> list[str]:
 def _is_codeql_workflow_label(label: str) -> bool:
     """Identify the one workflow allowed to upload PR CodeQL results."""
 
-    return label == relative(CODEQL_WORKFLOW) or Path(label).name == CODEQL_WORKFLOW.name
+    return label == relative(CODEQL_WORKFLOW)
 
 
 def validate_quality_dependency_pin(text: str, label: str) -> list[str]:
