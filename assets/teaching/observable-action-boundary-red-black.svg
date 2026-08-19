@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
+  <title id="title">A model proposal is not a tool receipt</title>
+  <desc id="desc">A four-stage editorial teaching board separates a model proposal, host authorization, tool execution, and human read-back. It ends with a stop rule: without a receipt, keep the claim small.</desc>
+  <rect width="900" height="1400" fill="#f6f6f2"/>
+  <rect x="40" y="30" width="820" height="10" fill="#161616"/>
+  <text x="40" y="88" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">ACTION FILE / PROPOSAL TO RECEIPT</text>
+  <text x="40" y="148" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="47" font-weight="900" letter-spacing="-2">A MODEL PROPOSAL</text>
+  <text x="40" y="202" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="47" font-weight="900" letter-spacing="-2">IS NOT A TOOL</text>
+  <text x="40" y="256" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="47" font-weight="900" letter-spacing="-2">RECEIPT.</text>
+  <text x="42" y="294" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="16">one visible event / one read-back / no guessed completion</text>
+  <line x1="80" y1="364" x2="80" y2="1080" stroke="#d71920" stroke-width="8"/>
+  <circle cx="80" cy="402" r="16" fill="#d71920"/><circle cx="80" cy="560" r="16" fill="#d71920"/><circle cx="80" cy="718" r="16" fill="#d71920"/><circle cx="80" cy="876" r="16" fill="#d71920"/>
+  <g transform="translate(126 330)"><rect width="734" height="144" fill="#161616"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / MODEL PROPOSES</text><text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">WORDS CAN NAME AN ACTION.</text><text x="24" y="116" fill="#c4c4be" font-family="Arial, Helvetica, sans-serif" font-size="21">A plan or tool call is still a proposal.</text></g>
+  <g transform="translate(126 488)"><rect width="734" height="144" fill="#ffffff" stroke="#161616" stroke-width="3"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / HOST DECIDES</text><text x="24" y="78" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">CHECK TARGET AND AUTHORITY.</text><text x="24" y="116" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="21">The host and a person set the boundary.</text></g>
+  <g transform="translate(126 646)"><rect width="734" height="144" fill="#d71920"/><text x="24" y="34" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / TOOL RUNS</text><text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">LOOK FOR THE ACTUAL EVENT.</text><text x="24" y="116" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="21">Returned data is part of the receipt.</text></g>
+  <g transform="translate(126 804)"><rect width="734" height="144" fill="#ffffff" stroke="#161616" stroke-width="3"/><text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / PERSON READS BACK</text><text x="24" y="78" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">COMPARE THE RESULT.</text><text x="24" y="116" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="21">Use a diff, log, source, or acceptance rule.</text></g>
+  <rect x="40" y="1038" width="820" height="188" fill="#161616"/>
+  <text x="64" y="1080" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">CLAIM LIMIT / KEEP THE LAYERS SEPARATE</text>
+  <text x="64" y="1130" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">PROPOSAL ≠ AUTHORITY</text>
+  <text x="64" y="1170" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">AUTHORITY ≠ EXECUTION ≠ PROOF</text>
+  <rect x="40" y="1260" width="820" height="70" fill="#d71920"/>
+  <text x="64" y="1304" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="900">NO RECEIPT? KEEP THE CLAIM SMALL.</text>
+  <text x="40" y="1360" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / READ BACK BEFORE YOU CLAIM</text>
+</svg>

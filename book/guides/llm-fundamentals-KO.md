@@ -132,6 +132,10 @@ Agent에서는 각 경계에서 반복합니다.
 시간 초과나 중단 뒤 상태가 불명확하면 전송, 게시, 삭제, 결제, 계정 변경을 일으킬 수
 있는 행동을 맹목적으로 반복하지 마세요. 대상을 먼저 읽거나 사람에게 불확실성을 넘기세요.
 
+![여섯 필드 프롬프트 계약: 결과, 컨텍스트, 허용된 도움, 제한, 점검과 중지](../../assets/teaching/prompt-contract-six-fields-red-black.svg)
+
+![관찰 가능한 행동 경계: 제안, 권한, 실행, 사람의 결과 확인](../../assets/teaching/observable-action-boundary-red-black.svg)
+
 ## 0.4 역사는 보장이 아니다
 
 2017년 *Attention Is All You Need*는 이후 연구에 영향을 준 Transformer 아키텍처를

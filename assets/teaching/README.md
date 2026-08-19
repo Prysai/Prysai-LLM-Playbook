@@ -27,6 +27,8 @@ see before the reader works through the prose.
 - [Project evidence snapshot](project-evidence-snapshot-red-black.svg)
 - [From understanding to transfer](understanding-to-transfer-red-black.svg)
 - [Six LLM terms to one checked result](llm-six-terms-to-one-check.svg)
+- [Observable action boundary](observable-action-boundary-red-black.svg)
+- [Prompt contract: six fields](prompt-contract-six-fields-red-black.svg)
 
 The cards are visual explanations, not benchmark results. Their scope,
 ownership, and reuse boundary are recorded in the

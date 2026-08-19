@@ -107,6 +107,10 @@
 
 如果超時或中斷後狀態未知，不要盲目重複可能傳送、釋出、刪除、付款或改變賬戶的行動。先讀回目標，或者把不確定性交給人。
 
+![六欄位提示詞契約：結果、上下文、允許的協助、限制、檢查與停止](../../assets/teaching/prompt-contract-six-fields-red-black.svg)
+
+![可觀察行動邊界：提議、授權、執行與人工讀回](../../assets/teaching/observable-action-boundary-red-black.svg)
+
 ## 0.4 一點歷史，但不要把歷史當成保證
 
 2017 年的論文 *Attention Is All You Need* 提出了影響後來語言模型的 Transformer 架構。Attention 讓模型更容易關聯所提供序列中的 token，但沒有讓上下文變成無限長。現代產品還會加入資料選擇、最佳化、指令微調、安全控制、路由、檢索、工具和介面程式碼。沒有一個歷史標籤能解釋今天每個服務的行為。

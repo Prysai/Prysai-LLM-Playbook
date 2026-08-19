@@ -152,6 +152,10 @@ Wenn der Zustand nach Timeout oder Unterbrechung unbekannt ist, wiederhole nicht
 blind eine Aktion, die senden, veröffentlichen, löschen, bezahlen oder ein Konto
 ändern könnte. Lies das Ziel zuerst oder übergib die Unsicherheit einem Menschen.
 
+![Prompt-Vertrag mit sechs Feldern: Ergebnis, Kontext, erlaubte Hilfe, Grenzen, Prüfung und Stopp](../../assets/teaching/prompt-contract-six-fields-red-black.svg)
+
+![Beobachtbare Handlungsgrenze: Vorschlag, Autorität, Ausführung und menschliche Rücklese](../../assets/teaching/observable-action-boundary-red-black.svg)
+
 ## 0.4 Ein wenig Geschichte, ohne sie zur Garantie zu machen
 
 Das Paper *Attention Is All You Need* von 2017 stellte die Transformer-Architektur

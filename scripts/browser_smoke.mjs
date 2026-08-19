@@ -400,6 +400,50 @@ try {
     de: ['Token', 'Kontext', 'Kontextfenster', 'Prompt', 'Antwort', 'Tool / Agent'],
     'zh-tw': ['Token', '上下文', '上下文窗口', '提示詞', '回答', '工具 / Agent'],
   };
+  const localizedFoundationVisuals = {
+    en: {
+      heading: 'Two boundaries worth seeing.',
+      titles: ['Prompt contract: six fields', 'Observable action boundary'],
+      bodies: ['Result, context, allowed help, limits, check, and stop.', 'Proposal, authority, execution, and human read-back.'],
+      boundary: /Project-authored English boards/i,
+    },
+    zh: {
+      heading: '有两条边界，值得直接看图。',
+      titles: ['提示词契约：六个字段', '可观察的行动边界'],
+      bodies: ['结果、上下文、允许的帮助、限制、回答与检查、停止条件。', '提议、授权、执行和人工读回。'],
+      boundary: /项目原创英文图表/,
+    },
+    es: {
+      heading: 'Dos límites que conviene ver.',
+      titles: ['Contrato de prompt: seis campos', 'Límite de acción observable'],
+      bodies: ['Resultado, contexto, ayuda permitida, límites, comprobación y parada.', 'Propuesta, autoridad, ejecución y lectura humana del resultado.'],
+      boundary: /Tablas originales del proyecto en inglés/,
+    },
+    ja: {
+      heading: '見ておきたい2つの境界。',
+      titles: ['プロンプト契約：6つの項目', '観測可能な操作境界'],
+      bodies: ['結果、コンテキスト、許可された支援、制約、確認、停止。', '提案、権限、実行、人による読み戻し。'],
+      boundary: /プロジェクト作成の英語図/,
+    },
+    ko: {
+      heading: '눈으로 볼 가치가 있는 두 경계.',
+      titles: ['프롬프트 계약: 여섯 필드', '관찰 가능한 행동 경계'],
+      bodies: ['결과, 컨텍스트, 허용된 도움, 제한, 응답과 점검, 중지.', '제안, 권한, 실행, 사람의 결과 확인.'],
+      boundary: /프로젝트가 만든 영어 보드/,
+    },
+    de: {
+      heading: 'Zwei Grenzen, die man sehen sollte.',
+      titles: ['Prompt-Vertrag: sechs Felder', 'Beobachtbare Handlungsgrenze'],
+      bodies: ['Ergebnis, Kontext, erlaubte Hilfe, Grenzen, Prüfung und Stopp.', 'Vorschlag, Autorität, Ausführung und menschliche Rücklese.'],
+      boundary: /Projekt-eigene englische Tafeln/,
+    },
+    'zh-tw': {
+      heading: '值得直接看的兩條邊界。',
+      titles: ['提示詞契約：六個欄位', '可觀察的行動邊界'],
+      bodies: ['結果、起始脈絡、允許的協助、限制、回答與檢查、停止條件。', '提議、授權、執行與人工讀回。'],
+      boundary: /專案原創英文圖表/,
+    },
+  };
   const localizedMobileIndexDetails = {
     en: 'Open the detailed map',
     zh: '打开详细地图',
@@ -460,6 +504,50 @@ try {
       localizedFoundationConceptTitles[locale],
       `${locale} six-term concept map is not fully localized`,
     );
+    const foundationVisuals = page.locator('#foundation-visuals');
+    assert.equal(await foundationVisuals.count(), 1, `${locale} foundation teaching visual section is missing`);
+    assert.equal(await foundationVisuals.locator('.foundation-visual-card').count(), 2, `${locale} foundation teaching visual section lost a board`);
+    assert.equal(await foundationVisuals.locator('h3').innerText(), localizedFoundationVisuals[locale].heading, `${locale} foundation visual heading is not localized`);
+    assert.deepEqual(
+      await foundationVisuals.locator('.foundation-visual-card strong').allTextContents(),
+      localizedFoundationVisuals[locale].titles,
+      `${locale} foundation visual titles are not fully localized`,
+    );
+    assert.deepEqual(
+      await foundationVisuals.locator('.foundation-visual-card small').allTextContents(),
+      localizedFoundationVisuals[locale].bodies,
+      `${locale} foundation visual descriptions are not fully localized`,
+    );
+    assert.match(await foundationVisuals.locator('.foundation-visual-boundary').innerText(), localizedFoundationVisuals[locale].boundary, `${locale} foundation visual provenance boundary is not localized`);
+    assert.deepEqual(
+      await foundationVisuals.locator('img').evaluateAll((images) => images.map((image) => image.getAttribute('src'))),
+      [
+        '../assets/teaching/prompt-contract-six-fields-red-black.svg',
+        '../assets/teaching/observable-action-boundary-red-black.svg',
+      ],
+      `${locale} foundation visual assets changed unexpectedly`,
+    );
+    assert.deepEqual(
+      await foundationVisuals.locator('img').evaluateAll((images) => images.map((image) => image.getAttribute('alt'))),
+      {
+        en: ['Six-field prompt contract teaching board', 'Observable action boundary teaching board'],
+        zh: ['六字段提示词契约教学图', '可观察行动边界教学图'],
+        es: ['Tabla didáctica del contrato de prompt de seis campos', 'Tabla didáctica del límite de acción observable'],
+        ja: ['6項目のプロンプト契約を示す教材図', '観測可能な操作境界を示す教材図'],
+        ko: ['여섯 필드 프롬프트 계약 교육 보드', '관찰 가능한 행동 경계 교육 보드'],
+        de: ['Lehrtafel für einen Prompt-Vertrag mit sechs Feldern', 'Lehrtafel für eine beobachtbare Handlungsgrenze'],
+        'zh-tw': ['六欄位提示詞契約教學圖', '可觀察行動邊界教學圖'],
+      }[locale],
+      `${locale} foundation visual alt text is not localized`,
+    );
+    await foundationVisuals.scrollIntoViewIfNeeded();
+    await foundationVisuals.locator('img').first().waitFor();
+    await page.waitForTimeout(50);
+    assert.equal(
+      (await foundationVisuals.locator('img').evaluateAll((images) => images.map((image) => ({ complete: image.complete, width: image.naturalWidth })))).every((image) => image.complete && image.width > 0),
+      true,
+      `${locale} foundation teaching SVG did not load in the browser`,
+    );
     assert.match(
       await page.locator('.foundation-concept-head .text-link').innerText(),
       { en: /Open the complete English visual/i, zh: /打开完整英文图表/, es: /visual completo en inglés/i, ja: /英語の全体図/, ko: /전체 영어 도표/, de: /vollständige englische Grafik/i, 'zh-tw': /完整英文圖表/ }[locale],
@@ -494,6 +582,10 @@ try {
   await page.goto(`${origin}/site/?lang=zh`, { waitUntil: 'networkidle' });
   await noHorizontalOverflow(page, 'mobile localized six-term concept map');
   assert.equal(await page.locator('.foundation-concept-card').count(), 6, 'mobile six-term concept map is not discoverable');
+  assert.equal(await page.locator('#foundation-visuals .foundation-visual-card').count(), 2, 'mobile foundation visual section is not discoverable');
+  await page.locator('#foundation-visuals').scrollIntoViewIfNeeded();
+  await page.locator('#foundation-visuals').screenshot({ path: path.join(visualEvidenceDirectory, 'foundation-visuals-mobile.png') });
+  await noHorizontalOverflow(page, 'mobile foundation teaching visuals');
   const mobileProjectDetails = page.locator('.mobile-project-details');
   assert.equal(await mobileProjectDetails.isVisible(), true, 'mobile project map disclosure is not visible');
   assert.equal(await mobileProjectDetails.locator('nav').getAttribute('aria-label'), '详细项目地图', 'mobile project map disclosure aria label is not localized');

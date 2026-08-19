@@ -136,6 +136,10 @@ Agentでは各境界で繰り返します。
 つながる操作を盲目的に再実行しないでください。対象を読み直すか、人に不確実性を
 渡します。
 
+![6項目のプロンプト契約：結果、コンテキスト、許可された支援、制約、確認、停止](../../assets/teaching/prompt-contract-six-fields-red-black.svg)
+
+![観測可能な操作境界：提案、権限、実行、人による読み戻し](../../assets/teaching/observable-action-boundary-red-black.svg)
+
 ## 0.4 歴史は保証にしない
 
 2017年の *Attention Is All You Need* は、後の言語モデル研究に影響したTransformer

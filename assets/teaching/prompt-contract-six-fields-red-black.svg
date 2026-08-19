@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
+  <title id="title">A prompt is a small contract</title>
+  <desc id="desc">A six-field teaching board turns a vague request into a small contract: result, starting context, allowed help, limits, response and check, and stop condition.</desc>
+  <rect width="900" height="1400" fill="#f6f6f2"/>
+  <rect x="40" y="30" width="820" height="10" fill="#161616"/>
+  <text x="40" y="88" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">PROMPT FILE / SIX FIELDS</text>
+  <text x="40" y="148" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="49" font-weight="900" letter-spacing="-2">A PROMPT IS A</text>
+  <text x="40" y="202" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="49" font-weight="900" letter-spacing="-2">SMALL</text>
+  <text x="40" y="256" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="49" font-weight="900" letter-spacing="-2">CONTRACT.</text>
+  <text x="42" y="294" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="16">name the result / show the limits / define the stop</text>
+  <g transform="translate(40 344)"><rect width="820" height="118" fill="#161616"/><text x="24" y="38" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / RESULT</text><text x="24" y="82" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">What should exist at the end?</text></g>
+  <g transform="translate(40 478)"><rect width="820" height="118" fill="#ffffff" stroke="#161616" stroke-width="3"/><text x="24" y="38" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / STARTING CONTEXT</text><text x="24" y="82" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">Which facts or material are in scope?</text></g>
+  <g transform="translate(40 612)"><rect width="820" height="118" fill="#ffe5e9" stroke="#161616" stroke-width="3"/><text x="24" y="38" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / ALLOWED HELP</text><text x="24" y="82" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">What may the model or tool do?</text></g>
+  <g transform="translate(40 746)"><rect width="820" height="118" fill="#ffffff" stroke="#161616" stroke-width="3"/><text x="24" y="38" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / LIMITS</text><text x="24" y="82" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">What must stay unchanged or unknown?</text></g>
+  <g transform="translate(40 880)"><rect width="820" height="118" fill="#d71920"/><text x="24" y="38" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">05 / RESPONSE + CHECK</text><text x="24" y="82" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">What shape will you inspect?</text></g>
+  <g transform="translate(40 1014)"><rect width="820" height="118" fill="#161616"/><text x="24" y="38" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">06 / STOP</text><text x="24" y="82" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">When must the work pause?</text></g>
+  <rect x="40" y="1190" width="820" height="112" fill="#d71920"/>
+  <text x="64" y="1236" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">CHECK BEFORE YOU SEND</text>
+  <text x="64" y="1278" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="900">A LONGER PROMPT IS NOT A CLEARER CONTRACT.</text>
+  <text x="40" y="1360" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / DEFINE BEFORE YOU ASK</text>
+</svg>

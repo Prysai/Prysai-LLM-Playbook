@@ -146,6 +146,10 @@ Tras un tiempo de espera, si el estado es desconocido no repitas a ciegas algo
 que pueda enviar, publicar, borrar, pagar o cambiar una cuenta. Lee primero el
 objetivo o entrega la incertidumbre a una persona.
 
+![Contrato de prompt de seis campos: resultado, contexto, ayuda permitida, límites, comprobación y parada](../../assets/teaching/prompt-contract-six-fields-red-black.svg)
+
+![Límite de acción observable: propuesta, autoridad, ejecución y lectura humana](../../assets/teaching/observable-action-boundary-red-black.svg)
+
 ## 0.4 Un poco de historia, sin convertirla en garantía
 
 El artículo de 2017 *Attention Is All You Need* presentó la arquitectura

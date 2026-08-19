@@ -5307,6 +5307,73 @@ Object.assign(copy.de, {
   foundationConceptBoundary: 'Antwort ≠ Handlung ≠ verifiziertes Ergebnis. Vergleiche das Ergebnis vor einer Abschlussbehauptung mit Quelle, Diff, Test, Log oder Abnahmeregel.',
 });
 
+Object.assign(copy.en, {
+  foundationVisualsTitle: 'Two boundaries worth seeing.',
+  foundationVisualsIntro: 'Use these original boards as a quick reference. They answer two beginner questions: what makes a prompt inspectable, and what proves an action really happened?',
+  foundationPromptVisualAlt: 'Six-field prompt contract teaching board',
+  foundationPromptVisualTitle: 'Prompt contract: six fields',
+  foundationPromptVisualBody: 'Result, context, allowed help, limits, check, and stop.',
+  foundationActionVisualAlt: 'Observable action boundary teaching board',
+  foundationActionVisualTitle: 'Observable action boundary',
+  foundationActionVisualBody: 'Proposal, authority, execution, and human read-back.',
+  foundationVisualsBoundary: 'Project-authored English boards · the surrounding explanation and alt text stay localized.',
+});
+Object.assign(copy.zh, {
+  foundationVisualsTitle: '有两条边界，值得直接看图。',
+  foundationVisualsIntro: '把这两张原创图当作速查表。它们回答初学者的两个问题：怎样让提示词可以检查，以及什么证据能证明行动真的发生。',
+  foundationPromptVisualAlt: '六字段提示词契约教学图',
+  foundationPromptVisualTitle: '提示词契约：六个字段',
+  foundationPromptVisualBody: '结果、上下文、允许的帮助、限制、回答与检查、停止条件。',
+  foundationActionVisualAlt: '可观察行动边界教学图',
+  foundationActionVisualTitle: '可观察的行动边界',
+  foundationActionVisualBody: '提议、授权、执行和人工读回。',
+  foundationVisualsBoundary: '项目原创英文图表 · 周围说明和替代文字保持本地化。',
+});
+Object.assign(copy.es, {
+  foundationVisualsTitle: 'Dos límites que conviene ver.',
+  foundationVisualsIntro: 'Usa estas tablas originales como referencia rápida. Responden a dos preguntas: ¿qué hace inspeccionable un prompt y qué demuestra que una acción ocurrió?',
+  foundationPromptVisualAlt: 'Tabla didáctica del contrato de prompt de seis campos',
+  foundationPromptVisualTitle: 'Contrato de prompt: seis campos',
+  foundationPromptVisualBody: 'Resultado, contexto, ayuda permitida, límites, comprobación y parada.',
+  foundationActionVisualAlt: 'Tabla didáctica del límite de acción observable',
+  foundationActionVisualTitle: 'Límite de acción observable',
+  foundationActionVisualBody: 'Propuesta, autoridad, ejecución y lectura humana del resultado.',
+  foundationVisualsBoundary: 'Tablas originales del proyecto en inglés · la explicación y el texto alternativo se mantienen localizados.',
+});
+Object.assign(copy.ja, {
+  foundationVisualsTitle: '見ておきたい2つの境界。',
+  foundationVisualsIntro: 'このオリジナル図を早見表として使います。プロンプトを確認可能にするものと、操作が本当に起きたことを示すものを分けて見ます。',
+  foundationPromptVisualAlt: '6項目のプロンプト契約を示す教材図',
+  foundationPromptVisualTitle: 'プロンプト契約：6つの項目',
+  foundationPromptVisualBody: '結果、コンテキスト、許可された支援、制約、確認、停止。',
+  foundationActionVisualAlt: '観測可能な操作境界を示す教材図',
+  foundationActionVisualTitle: '観測可能な操作境界',
+  foundationActionVisualBody: '提案、権限、実行、人による読み戻し。',
+  foundationVisualsBoundary: 'プロジェクト作成の英語図 · 周囲の説明と代替テキストはローカライズされています。',
+});
+Object.assign(copy.ko, {
+  foundationVisualsTitle: '눈으로 볼 가치가 있는 두 경계.',
+  foundationVisualsIntro: '이 오리지널 보드를 빠른 참고표로 사용하세요. 프롬프트를 점검 가능하게 만드는 것과 행동이 실제로 일어났음을 보여 주는 증거를 구분합니다.',
+  foundationPromptVisualAlt: '여섯 필드 프롬프트 계약 교육 보드',
+  foundationPromptVisualTitle: '프롬프트 계약: 여섯 필드',
+  foundationPromptVisualBody: '결과, 컨텍스트, 허용된 도움, 제한, 응답과 점검, 중지.',
+  foundationActionVisualAlt: '관찰 가능한 행동 경계 교육 보드',
+  foundationActionVisualTitle: '관찰 가능한 행동 경계',
+  foundationActionVisualBody: '제안, 권한, 실행, 사람의 결과 확인.',
+  foundationVisualsBoundary: '프로젝트가 만든 영어 보드 · 주변 설명과 대체 텍스트는 현지화되어 있습니다.',
+});
+Object.assign(copy.de, {
+  foundationVisualsTitle: 'Zwei Grenzen, die man sehen sollte.',
+  foundationVisualsIntro: 'Nutze diese originalen Tafeln als Kurzreferenz. Sie beantworten zwei Anfängerfragen: Was macht einen Prompt prüfbar, und was belegt, dass eine Aktion wirklich passiert ist?',
+  foundationPromptVisualAlt: 'Lehrtafel für einen Prompt-Vertrag mit sechs Feldern',
+  foundationPromptVisualTitle: 'Prompt-Vertrag: sechs Felder',
+  foundationPromptVisualBody: 'Ergebnis, Kontext, erlaubte Hilfe, Grenzen, Prüfung und Stopp.',
+  foundationActionVisualAlt: 'Lehrtafel für eine beobachtbare Handlungsgrenze',
+  foundationActionVisualTitle: 'Beobachtbare Handlungsgrenze',
+  foundationActionVisualBody: 'Vorschlag, Autorität, Ausführung und menschliche Rücklese.',
+  foundationVisualsBoundary: 'Projekt-eigene englische Tafeln · Erklärung und Alternativtext bleiben lokalisiert.',
+});
+
 // Traditional Chinese keeps the same complete interface contract as the
 // Simplified Chinese route, then replaces the reader-facing terms that differ
 // in Traditional Chinese. This is deliberately built at the end of the copy
@@ -5382,6 +5449,15 @@ Object.assign(copy['zh-tw'], {
   visualLoopLink: '從理解到遷移',
   visualLoopBody: '理解、嘗試、檢查、修正、變化，並在未見過的任務上重複。',
   visualLoopAlt: '從理解到遷移的學習閉環教學圖板',
+  foundationVisualsTitle: '值得直接看的兩條邊界。',
+  foundationVisualsIntro: '把這兩張原創圖當作速查表。它們回答初學者的兩個問題：怎樣讓提示詞可以檢查，以及什麼證據能證明行動真的發生。',
+  foundationPromptVisualAlt: '六欄位提示詞契約教學圖',
+  foundationPromptVisualTitle: '提示詞契約：六個欄位',
+  foundationPromptVisualBody: '結果、起始脈絡、允許的協助、限制、回答與檢查、停止條件。',
+  foundationActionVisualAlt: '可觀察行動邊界教學圖',
+  foundationActionVisualTitle: '可觀察的行動邊界',
+  foundationActionVisualBody: '提議、授權、執行與人工讀回。',
+  foundationVisualsBoundary: '專案原創英文圖表 · 周圍說明和替代文字保持在地化。',
 });
 
 initializeSearch();

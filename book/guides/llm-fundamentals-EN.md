@@ -162,6 +162,10 @@ If the state is unknown after a timeout or interruption, do not blindly repeat
 an action that could send, publish, delete, pay, or change an account. Read the
 target first or hand the uncertainty to a person.
 
+![Six-field prompt contract: result, context, allowed help, limits, check, and stop](../../assets/teaching/prompt-contract-six-fields-red-black.svg)
+
+![Observable action boundary: proposal, authority, execution, and human read-back](../../assets/teaching/observable-action-boundary-red-black.svg)
+
 ## 0.4 A little history, without turning history into a guarantee
 
 The 2017 paper *Attention Is All You Need* introduced the Transformer
