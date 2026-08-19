@@ -391,6 +391,15 @@ try {
     de: ['Erzeugen', 'Rahmen', 'Erweitern', 'Koordinieren', 'Prüfen'],
     'zh-tw': ['生成', '定義', '擴展', '協作', '檢查'],
   };
+  const localizedFoundationConceptTitles = {
+    en: ['Token', 'Context', 'Context window', 'Prompt', 'Response', 'Tool / Agent'],
+    zh: ['Token', '上下文', '上下文窗口', '提示词', '回答', '工具 / Agent'],
+    es: ['Token', 'Contexto', 'Ventana de contexto', 'Prompt', 'Respuesta', 'Herramienta / agente'],
+    ja: ['トークン', 'コンテキスト', 'コンテキストウィンドウ', 'プロンプト', '回答', 'ツール / Agent'],
+    ko: ['토큰', '컨텍스트', '컨텍스트 윈도우', '프롬프트', '응답', '도구 / Agent'],
+    de: ['Token', 'Kontext', 'Kontextfenster', 'Prompt', 'Antwort', 'Tool / Agent'],
+    'zh-tw': ['Token', '上下文', '上下文窗口', '提示詞', '回答', '工具 / Agent'],
+  };
   const localizedMobileIndexDetails = {
     en: 'Open the detailed map',
     zh: '打开详细地图',
@@ -445,6 +454,17 @@ try {
       `${locale} foundation concept map is not fully localized`,
     );
     assert.equal(await page.locator('#foundation-lens .foundation-map-layer').count(), 5, `${locale} foundation concept map lost a layer`);
+    assert.equal(await page.locator('.foundation-concept-card').count(), 6, `${locale} six-term concept map lost a term`);
+    assert.deepEqual(
+      await page.locator('.foundation-concept-card strong').allTextContents(),
+      localizedFoundationConceptTitles[locale],
+      `${locale} six-term concept map is not fully localized`,
+    );
+    assert.match(
+      await page.locator('.foundation-concept-head .text-link').innerText(),
+      { en: /Open the complete English visual/i, zh: /打开完整英文图表/, es: /visual completo en inglés/i, ja: /英語の全体図/, ko: /전체 영어 도표/, de: /vollständige englische Grafik/i, 'zh-tw': /完整英文圖表/ }[locale],
+      `${locale} concept map visual link is not localized`,
+    );
     assert.equal(
       await page.locator('.mobile-project-details > summary').innerText(),
       localizedMobileIndexDetails[locale],
@@ -472,6 +492,8 @@ try {
   }
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(`${origin}/site/?lang=zh`, { waitUntil: 'networkidle' });
+  await noHorizontalOverflow(page, 'mobile localized six-term concept map');
+  assert.equal(await page.locator('.foundation-concept-card').count(), 6, 'mobile six-term concept map is not discoverable');
   const mobileProjectDetails = page.locator('.mobile-project-details');
   assert.equal(await mobileProjectDetails.isVisible(), true, 'mobile project map disclosure is not visible');
   assert.equal(await mobileProjectDetails.locator('nav').getAttribute('aria-label'), '详细项目地图', 'mobile project map disclosure aria label is not localized');

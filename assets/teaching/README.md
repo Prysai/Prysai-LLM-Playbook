@@ -26,6 +26,7 @@ see before the reader works through the prose.
 - [Universal seams](universal-seams-red-black.svg)
 - [Project evidence snapshot](project-evidence-snapshot-red-black.svg)
 - [From understanding to transfer](understanding-to-transfer-red-black.svg)
+- [Six LLM terms to one checked result](llm-six-terms-to-one-check.svg)
 
 The cards are visual explanations, not benchmark results. Their scope,
 ownership, and reuse boundary are recorded in the

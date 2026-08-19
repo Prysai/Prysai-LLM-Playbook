@@ -5223,6 +5223,90 @@ Object.assign(copy.de, {
   footerTagline: 'Ein praktisches Lern- und Übungssystem für Sprachmodelle.',
 });
 
+// The foundation map also names the six terms beginners commonly mix together.
+// Keep the full SVG as an explicitly English auxiliary, while this compact
+// explanation is localized in every supported interface language.
+Object.assign(copy.en, {
+  foundationConceptMapTitle: 'Six terms, one checked result.',
+  foundationConceptMapIntro: 'These terms describe different parts of one request. Keep them separate before you decide what the model has actually established.',
+  foundationConceptMapVisualLink: 'Open the complete English visual',
+  foundationConceptMapAria: 'Six LLM terms',
+  foundationConceptTokenTitle: 'Token',
+  foundationConceptTokenBody: 'A unit of text the model processes. Token counts vary by tokenizer; a token is not a fact or a permission.',
+  foundationConceptContextTitle: 'Context',
+  foundationConceptContextBody: 'The material available in this turn, such as your prompt, supplied text, or returned tool data. Missing material stays unknown.',
+  foundationConceptWindowTitle: 'Context window',
+  foundationConceptWindowBody: 'The amount of material a model can fit into one turn. The exact limit depends on the model and product.',
+  foundationConceptPromptTitle: 'Prompt',
+  foundationConceptPromptBody: 'The goal, context, constraints, and requested answer shape. A prompt frames work; it does not grant access.',
+  foundationConceptResponseTitle: 'Response',
+  foundationConceptResponseBody: 'Text proposed by the model for you to inspect. Fluency can make a mistake sound certain.',
+  foundationConceptToolTitle: 'Tool / Agent',
+  foundationConceptToolBody: 'A product may add reading, action, or coordination. Runtime permission and evidence still decide what happened.',
+  foundationConceptBoundary: 'Response ≠ action ≠ verified result. Compare the result with a source, diff, test, log, or acceptance rule before claiming completion.',
+});
+Object.assign(copy.zh, {
+  foundationConceptMapTitle: '六个词，最后都要落到一次检查。',
+  foundationConceptMapIntro: '这六个词描述同一条请求中的不同部分。先把它们分开，再判断模型究竟建立了什么。',
+  foundationConceptMapVisualLink: '打开完整英文图表',
+  foundationConceptAria: '六个 LLM 基础词', foundationConceptMapAria: '六个 LLM 基础词',
+  foundationConceptTokenTitle: 'Token', foundationConceptTokenBody: '模型处理的文本单位。数量会随 tokenizer 改变；Token 不是事实，也不是权限。',
+  foundationConceptContextTitle: '上下文', foundationConceptContextBody: '这一轮可用的材料，例如提示词、你提供的文字或工具返回的数据。没有提供的材料仍然未知。',
+  foundationConceptWindowTitle: '上下文窗口', foundationConceptWindowBody: '模型一次能容纳的材料范围，具体上限取决于模型和产品。',
+  foundationConceptPromptTitle: '提示词', foundationConceptPromptBody: '目标、上下文、限制和回答形式。提示词可以界定工作，但不会授予访问权。',
+  foundationConceptResponseTitle: '回答', foundationConceptResponseBody: '模型提出、供你检查的文字。流畅的表达也可能把错误说得很确定。',
+  foundationConceptToolTitle: '工具 / Agent', foundationConceptToolBody: '产品可能增加读取、行动或协作能力；最终发生了什么，仍由运行时权限和证据决定。',
+  foundationConceptBoundary: '回答 ≠ 行动 ≠ 已验证结果。声称完成前，要用来源、差异、测试、日志或验收规则对照结果。',
+});
+Object.assign(copy.es, {
+  foundationConceptMapTitle: 'Seis términos, un resultado comprobado.',
+  foundationConceptMapIntro: 'Estos términos describen partes distintas de una misma petición. Sepáralos antes de decidir qué ha establecido realmente el modelo.',
+  foundationConceptMapVisualLink: 'Abrir el visual completo en inglés', foundationConceptMapAria: 'Seis términos de LLM',
+  foundationConceptTokenTitle: 'Token', foundationConceptTokenBody: 'Una unidad de texto que procesa el modelo. El recuento cambia según el tokenizador; un token no es un hecho ni un permiso.',
+  foundationConceptContextTitle: 'Contexto', foundationConceptContextBody: 'El material disponible en este turno: tu prompt, texto aportado o datos devueltos por una herramienta. Lo que falta sigue siendo desconocido.',
+  foundationConceptWindowTitle: 'Ventana de contexto', foundationConceptWindowBody: 'La cantidad de material que cabe en un turno. El límite exacto depende del modelo y del producto.',
+  foundationConceptPromptTitle: 'Prompt', foundationConceptPromptBody: 'El objetivo, el contexto, los límites y la forma de respuesta. Un prompt encuadra el trabajo; no concede acceso.',
+  foundationConceptResponseTitle: 'Respuesta', foundationConceptResponseBody: 'Texto propuesto por el modelo para que lo inspecciones. La fluidez puede hacer que un error parezca seguro.',
+  foundationConceptToolTitle: 'Herramienta / agente', foundationConceptToolBody: 'Un producto puede añadir lectura, acción o coordinación. El permiso de ejecución y la evidencia siguen decidiendo qué ocurrió.',
+  foundationConceptBoundary: 'Respuesta ≠ acción ≠ resultado verificado. Compara el resultado con una fuente, diff, prueba, registro o regla de aceptación antes de afirmar que terminó.',
+});
+Object.assign(copy.ja, {
+  foundationConceptMapTitle: '6つの用語、確認できる1つの結果。',
+  foundationConceptMapIntro: 'これらは1つのリクエストの別々の部分を表します。モデルが実際に確かめたことを判断する前に分けて考えます。',
+  foundationConceptMapVisualLink: '英語の全体図を開く', foundationConceptMapAria: 'LLMの6つの用語',
+  foundationConceptTokenTitle: 'トークン', foundationConceptTokenBody: 'モデルが処理するテキストの単位。数え方はトークナイザーで変わり、事実や権限そのものではありません。',
+  foundationConceptContextTitle: 'コンテキスト', foundationConceptContextBody: 'このターンで利用できる材料。プロンプト、提示した文章、ツールの返却データなどです。不足した材料は未知のままです。',
+  foundationConceptWindowTitle: 'コンテキストウィンドウ', foundationConceptWindowBody: '1ターンに収められる材料の範囲。正確な上限はモデルと製品によって異なります。',
+  foundationConceptPromptTitle: 'プロンプト', foundationConceptPromptBody: '目的、コンテキスト、制約、求める回答形式。プロンプトは作業を枠づけますが、アクセス権は与えません。',
+  foundationConceptResponseTitle: '回答', foundationConceptResponseBody: '確認のためにモデルが提案するテキスト。流暢さによって誤りが確実に見えることがあります。',
+  foundationConceptToolTitle: 'ツール / Agent', foundationConceptToolBody: '製品は読み取り、操作、調整を追加できます。実行権限と証拠が何が起きたかを決めます。',
+  foundationConceptBoundary: '回答 ≠ 操作 ≠ 検証済みの結果。完了と主張する前に、出典、差分、テスト、ログ、受け入れ条件と照合します。',
+});
+Object.assign(copy.ko, {
+  foundationConceptMapTitle: '여섯 용어, 하나의 확인된 결과.',
+  foundationConceptMapIntro: '이 용어들은 하나의 요청을 이루는 서로 다른 부분입니다. 모델이 실제로 확인한 것을 판단하기 전에 구분하세요.',
+  foundationConceptMapVisualLink: '전체 영어 도표 열기', foundationConceptMapAria: 'LLM의 여섯 용어',
+  foundationConceptTokenTitle: '토큰', foundationConceptTokenBody: '모델이 처리하는 텍스트 단위입니다. 토크나이저에 따라 개수가 달라지며 사실이나 권한이 아닙니다.',
+  foundationConceptContextTitle: '컨텍스트', foundationConceptContextBody: '이번 턴에 이용할 수 있는 자료입니다. 프롬프트, 제공한 텍스트, 도구가 돌려준 데이터가 여기에 해당합니다. 빠진 자료는 여전히 알 수 없습니다.',
+  foundationConceptWindowTitle: '컨텍스트 윈도우', foundationConceptWindowBody: '한 번의 턴에 담을 수 있는 자료의 범위입니다. 정확한 한도는 모델과 제품에 따라 다릅니다.',
+  foundationConceptPromptTitle: '프롬프트', foundationConceptPromptBody: '목표, 컨텍스트, 제약, 원하는 답변 형식입니다. 프롬프트는 일을 정리하지만 접근 권한을 주지는 않습니다.',
+  foundationConceptResponseTitle: '응답', foundationConceptResponseBody: '모델이 제안하는 텍스트로, 사용자가 점검해야 합니다. 유창함 때문에 오류가 확실해 보일 수 있습니다.',
+  foundationConceptToolTitle: '도구 / Agent', foundationConceptToolBody: '제품은 읽기, 행동, 조정을 추가할 수 있습니다. 실제 권한과 증거가 무슨 일이 일어났는지를 결정합니다.',
+  foundationConceptBoundary: '응답 ≠ 행동 ≠ 검증된 결과. 완료를 주장하기 전에 출처, diff, 테스트, 로그 또는 수용 기준과 결과를 비교하세요.',
+});
+Object.assign(copy.de, {
+  foundationConceptMapTitle: 'Sechs Begriffe, ein geprüfter Ausgang.',
+  foundationConceptMapIntro: 'Diese Begriffe beschreiben verschiedene Teile einer Anfrage. Trenne sie, bevor du entscheidest, was das Modell tatsächlich festgestellt hat.',
+  foundationConceptMapVisualLink: 'Die vollständige englische Grafik öffnen', foundationConceptMapAria: 'Sechs LLM-Begriffe',
+  foundationConceptTokenTitle: 'Token', foundationConceptTokenBody: 'Eine Texteinheit, die das Modell verarbeitet. Die Anzahl hängt vom Tokenizer ab; ein Token ist weder Fakt noch Berechtigung.',
+  foundationConceptContextTitle: 'Kontext', foundationConceptContextBody: 'Das in diesem Turn verfügbare Material: Prompt, bereitgestellter Text oder Tool-Daten. Fehlendes Material bleibt unbekannt.',
+  foundationConceptWindowTitle: 'Kontextfenster', foundationConceptWindowBody: 'Die Materialmenge, die in einen Turn passt. Das genaue Limit hängt von Modell und Produkt ab.',
+  foundationConceptPromptTitle: 'Prompt', foundationConceptPromptBody: 'Ziel, Kontext, Grenzen und gewünschte Antwortform. Ein Prompt rahmt die Arbeit; er erteilt keinen Zugriff.',
+  foundationConceptResponseTitle: 'Antwort', foundationConceptResponseBody: 'Vom Modell vorgeschlagener Text, den du prüfen musst. Flüssigkeit kann einen Fehler sicher klingen lassen.',
+  foundationConceptToolTitle: 'Tool / Agent', foundationConceptToolBody: 'Ein Produkt kann Lesen, Handeln oder Koordination hinzufügen. Laufzeitberechtigung und Belege entscheiden weiterhin, was geschah.',
+  foundationConceptBoundary: 'Antwort ≠ Handlung ≠ verifiziertes Ergebnis. Vergleiche das Ergebnis vor einer Abschlussbehauptung mit Quelle, Diff, Test, Log oder Abnahmeregel.',
+});
+
 // Traditional Chinese keeps the same complete interface contract as the
 // Simplified Chinese route, then replaces the reader-facing terms that differ
 // in Traditional Chinese. This is deliberately built at the end of the copy
