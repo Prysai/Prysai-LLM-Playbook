@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
+  <title id="title">From understanding to transfer</title>
+  <desc id="desc">A six-step learning loop moves from understanding what a language model can establish, to making a bounded attempt, inspecting the answer, repairing one mismatch, varying one condition, and repeating the method on an unseen task. The board separates a practice route from proof of learning.</desc>
+  <rect width="900" height="1400" fill="#f6f6f2"/>
+  <rect x="44" y="34" width="812" height="10" fill="#171717"/>
+  <text x="44" y="92" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="3">LEARNING LOOP / FROM UNDERSTANDING TO TRANSFER</text>
+  <text x="44" y="158" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="900" letter-spacing="-2">DO NOT STOP AT</text>
+  <text x="44" y="212" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="900" letter-spacing="-2">A GOOD ANSWER.</text>
+  <text x="46" y="252" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="17">understand / attempt / inspect / repair / vary / transfer</text>
+
+  <line x1="76" y1="316" x2="76" y2="1126" stroke="#d71920" stroke-width="8"/>
+  <circle cx="76" cy="348" r="15" fill="#d71920"/>
+  <circle cx="76" cy="494" r="15" fill="#d71920"/>
+  <circle cx="76" cy="640" r="15" fill="#d71920"/>
+  <circle cx="76" cy="786" r="15" fill="#d71920"/>
+  <circle cx="76" cy="932" r="15" fill="#d71920"/>
+  <circle cx="76" cy="1078" r="15" fill="#d71920"/>
+
+  <g transform="translate(122 300)"><rect width="734" height="112" fill="#171717"/><text x="24" y="31" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / UNDERSTAND</text><text x="24" y="76" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">Name what the model can establish.</text></g>
+  <g transform="translate(122 446)"><rect width="734" height="112" fill="#ffffff" stroke="#171717" stroke-width="3"/><text x="24" y="31" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / ATTEMPT</text><text x="24" y="76" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">Write one bounded request.</text></g>
+  <g transform="translate(122 592)"><rect width="734" height="112" fill="#ffffff" stroke="#171717" stroke-width="3"/><text x="24" y="31" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / INSPECT</text><text x="24" y="76" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">Compare the answer with the facts.</text></g>
+  <g transform="translate(122 738)"><rect width="734" height="112" fill="#d71920"/><text x="24" y="31" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / REPAIR</text><text x="24" y="76" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">Name one mismatch. Try again.</text></g>
+  <g transform="translate(122 884)"><rect width="734" height="112" fill="#ffffff" stroke="#171717" stroke-width="3"/><text x="24" y="31" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">05 / VARY</text><text x="24" y="76" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">Change one condition.</text></g>
+  <g transform="translate(122 1030)"><rect width="734" height="112" fill="#171717"/><text x="24" y="31" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">06 / TRANSFER</text><text x="24" y="76" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">Repeat it on an unseen task.</text></g>
+
+  <rect x="44" y="1174" width="812" height="132" fill="#d71920"/>
+  <text x="68" y="1214" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">BOUNDARY / KEEP THE CLAIM SMALL</text>
+  <text x="68" y="1258" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="900">A PRACTICE ROUTE IS NOT A LEARNING RESULT.</text>
+  <text x="68" y="1290" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="21">Learner evidence still needs a recorded run and review.</text>
+  <text x="44" y="1360" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / TRANSFER BOUNDARY</text>
+</svg>

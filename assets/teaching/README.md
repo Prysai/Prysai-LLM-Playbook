@@ -24,6 +24,8 @@ see before the reader works through the prose.
 - [Agent handoff receipt checkpoints](agent-handoff-receipt-checkpoints-red-black.svg)
 - [Interruption checkpoint](interruption-checkpoint-card-red-black.svg)
 - [Universal seams](universal-seams-red-black.svg)
+- [Project evidence snapshot](project-evidence-snapshot-red-black.svg)
+- [From understanding to transfer](understanding-to-transfer-red-black.svg)
 
 The cards are visual explanations, not benchmark results. Their scope,
 ownership, and reuse boundary are recorded in the

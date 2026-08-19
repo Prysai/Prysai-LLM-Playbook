@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
+  <title id="title">Project evidence snapshot</title>
+  <desc id="desc">A project status snapshot: 22 chapters are candidate, 18 labs are draft with learner runs not run, 25 Skills are candidate, 40 evaluations are not run, and seven locales are in migration. The board says these are evidence states, not learning or release results.</desc>
+  <rect width="900" height="1400" fill="#f6f6f2"/>
+  <rect x="44" y="34" width="812" height="10" fill="#171717"/>
+  <text x="44" y="92" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="3">PROJECT STATUS / EVIDENCE SNAPSHOT</text>
+  <text x="44" y="158" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="900" letter-spacing="-2">COUNT THE WORK.</text>
+  <text x="44" y="212" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="900" letter-spacing="-2">NAME THE GAP.</text>
+  <text x="46" y="252" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="17">current repository record / not a learning result / not a release claim</text>
+
+  <line x1="76" y1="316" x2="76" y2="1126" stroke="#d71920" stroke-width="8"/>
+  <circle cx="76" cy="358" r="15" fill="#d71920"/>
+  <circle cx="76" cy="522" r="15" fill="#d71920"/>
+  <circle cx="76" cy="686" r="15" fill="#d71920"/>
+  <circle cx="76" cy="850" r="15" fill="#d71920"/>
+  <circle cx="76" cy="1014" r="15" fill="#d71920"/>
+
+  <g transform="translate(122 304)">
+    <rect width="734" height="128" fill="#171717"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">01 / CURRICULUM</text>
+    <text x="24" y="84" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="900">22 CHAPTERS</text>
+    <text x="510" y="82" fill="#deded8" font-family="Consolas, 'Courier New', monospace" font-size="18">candidate</text>
+  </g>
+  <g transform="translate(122 468)">
+    <rect width="734" height="128" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">02 / PRACTICE</text>
+    <text x="24" y="84" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="900">18 LABS</text>
+    <text x="360" y="70" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="16">draft</text>
+    <text x="360" y="94" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="16">learner: not_run</text>
+  </g>
+  <g transform="translate(122 632)">
+    <rect width="734" height="128" fill="#d71920"/>
+    <text x="24" y="34" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">03 / METHODS</text>
+    <text x="24" y="84" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="900">25 SKILLS</text>
+    <text x="510" y="82" fill="#ffffff" font-family="Consolas, 'Courier New', monospace" font-size="18">candidate</text>
+  </g>
+  <g transform="translate(122 796)">
+    <rect width="734" height="128" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">04 / EVALUATION</text>
+    <text x="24" y="84" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="900">40 TASKS</text>
+    <text x="430" y="82" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="18">not_run</text>
+  </g>
+  <g transform="translate(122 960)">
+    <rect width="734" height="128" fill="#171717"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">05 / LOCALIZATION</text>
+    <text x="24" y="84" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="900">7 LOCALES</text>
+    <text x="470" y="82" fill="#deded8" font-family="Consolas, 'Courier New', monospace" font-size="18">migration</text>
+  </g>
+
+  <rect x="44" y="1164" width="812" height="142" fill="#d71920"/>
+  <text x="68" y="1208" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">READ THE STATUS SOURCE</text>
+  <text x="68" y="1252" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="900">A COUNT IS NOT PROOF OF LEARNING.</text>
+  <text x="68" y="1285" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22">Open content-status.yaml before making a larger claim.</text>
+  <text x="44" y="1362" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / STATUS BOUNDARY</text>
+</svg>

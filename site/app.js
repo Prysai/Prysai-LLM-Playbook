@@ -4738,6 +4738,76 @@ Object.assign(copy.de, {
   researchBoundary: 'Lies die Quellen zusammen mit den Lehrnotizen und nutze sie als Ausgangspunkt für deine eigene Recherche.', visualCaseBoundary: 'Nutze diese Diagramme, um die Methode zu verstehen, und probiere sie dann an einer eigenen kleinen Aufgabe aus.', starterBoundaryLab: 'Grenze markieren: Lab 011', starterPractice: 'Lab 001 durchführen: Dateien und Git', openExercise: 'Übung öffnen'
 });
 
+// The visual index names four distinct teaching boards. Keep the labels in
+// the locale dictionaries so a language switch never leaves the new cards in
+// English or silently changes the claim boundary.
+Object.assign(copy.en, {
+  visualCaseIntro: 'Four original boards show the method, the evidence boundary, and the practice loop.',
+  visualModelAlt: 'Request to evidence teaching board',
+  visualCaseAlt: 'Attempt, correct, vary, and receipt beginner practice loop',
+  visualEvidenceLink: 'Project evidence snapshot',
+  visualEvidenceBody: 'Counts, statuses, and the gaps that a release claim must not hide.',
+  visualEvidenceAlt: 'Project evidence snapshot teaching board',
+  visualLoopLink: 'From understanding to transfer',
+  visualLoopBody: 'Understand, attempt, inspect, repair, vary, and repeat on an unseen task.',
+  visualLoopAlt: 'From understanding to transfer learning loop teaching board',
+});
+Object.assign(copy.zh, {
+  visualCaseIntro: '四张原创图板展示方法、证据边界与练习闭环。',
+  visualModelAlt: '从请求到证据的教学图板',
+  visualCaseAlt: '先尝试、修正、改变条件并保留回执的入门练习闭环',
+  visualEvidenceLink: '项目证据快照',
+  visualEvidenceBody: '数量、状态与发布声明不应隐藏的缺口。',
+  visualEvidenceAlt: '项目证据快照教学图板',
+  visualLoopLink: '从理解到迁移',
+  visualLoopBody: '理解、尝试、检查、修正、改变条件，并在未见过的任务上重复。',
+  visualLoopAlt: '从理解到迁移的学习闭环教学图板',
+});
+Object.assign(copy.es, {
+  visualCaseIntro: 'Cuatro tableros originales muestran el método, el límite de la evidencia y el bucle de práctica.',
+  visualModelAlt: 'Tablero didáctico de la solicitud a la evidencia',
+  visualCaseAlt: 'Bucle de práctica para principiantes: intentar, corregir, variar y conservar un recibo',
+  visualEvidenceLink: 'Panorama de evidencia del proyecto',
+  visualEvidenceBody: 'Cifras, estados y brechas que una afirmación de lanzamiento no debe ocultar.',
+  visualEvidenceAlt: 'Tablero del panorama de evidencia del proyecto',
+  visualLoopLink: 'De la comprensión a la transferencia',
+  visualLoopBody: 'Comprende, intenta, inspecciona, repara, varía y repite en una tarea nueva.',
+  visualLoopAlt: 'Tablero del bucle de aprendizaje de la comprensión a la transferencia',
+});
+Object.assign(copy.ja, {
+  visualCaseIntro: '4つのオリジナルボードで、方法、エビデンスの境界、練習ループを示します。',
+  visualModelAlt: 'リクエストからエビデンスまでの教学ボード',
+  visualCaseAlt: '試行、修正、条件変更、記録を行う初心者練習ループ',
+  visualEvidenceLink: 'プロジェクトのエビデンススナップショット',
+  visualEvidenceBody: 'リリースの主張が隠してはいけない数値、状態、ギャップ。',
+  visualEvidenceAlt: 'プロジェクトのエビデンススナップショット教学ボード',
+  visualLoopLink: '理解から転移へ',
+  visualLoopBody: '理解し、試し、確認し、修正し、条件を変え、未知の課題で繰り返します。',
+  visualLoopAlt: '理解から転移までの学習ループ教学ボード',
+});
+Object.assign(copy.ko, {
+  visualCaseIntro: '네 개의 독창적인 보드가 방법, 증거의 경계, 연습 루프를 보여 줍니다.',
+  visualModelAlt: '요청에서 증거까지를 보여 주는 교육 보드',
+  visualCaseAlt: '시도하고, 수정하고, 조건을 바꾸고, 기록을 남기는 초보 연습 루프',
+  visualEvidenceLink: '프로젝트 증거 스냅샷',
+  visualEvidenceBody: '출시 주장이 숨겨서는 안 되는 수량, 상태, 빈틈입니다.',
+  visualEvidenceAlt: '프로젝트 증거 스냅샷 교육 보드',
+  visualLoopLink: '이해에서 전이까지',
+  visualLoopBody: '이해하고, 시도하고, 점검하고, 수정하고, 조건을 바꾸어 새로운 과제에서 반복하세요.',
+  visualLoopAlt: '이해에서 전이까지의 학습 루프 교육 보드',
+});
+Object.assign(copy.de, {
+  visualCaseIntro: 'Vier originale Tafeln zeigen Methode, Beleggrenze und Übungsschleife.',
+  visualModelAlt: 'Lehrtafel von der Anfrage zum Beleg',
+  visualCaseAlt: 'Übungsschleife für Einsteiger: versuchen, korrigieren, variieren und Beleg behalten',
+  visualEvidenceLink: 'Evidenz-Schnappschuss des Projekts',
+  visualEvidenceBody: 'Zahlen, Zustände und Lücken, die eine Release-Aussage nicht verbergen darf.',
+  visualEvidenceAlt: 'Lehrtafel zum Evidenz-Schnappschuss des Projekts',
+  visualLoopLink: 'Vom Verstehen zum Transfer',
+  visualLoopBody: 'Verstehen, versuchen, prüfen, reparieren, variieren und an einer unbekannten Aufgabe wiederholen.',
+  visualLoopAlt: 'Lehrtafel zur Lernschleife vom Verstehen zum Transfer',
+});
+
 // The first screen offers one unambiguous first action: learn the transferable
 // LLM foundation before choosing a platform or application. The goal wizard,
 // prompt cards, and problem routes remain available for later practice, but
@@ -5106,6 +5176,15 @@ Object.assign(copy['zh-tw'], {
   heroProofCheckTwo: '無法參加的人仍被要求回覆。',
   heroProofCheckThree: '沒有出現無依據的細節。',
   footerTagline: '一套面向大型語言模型的實用學習與實踐系統。',
+  visualCaseIntro: '四張原創圖板展示方法、證據邊界與練習閉環。',
+  visualModelAlt: '從請求到證據的教學圖板',
+  visualCaseAlt: '先嘗試、修正、改變條件並保留回執的入門練習閉環',
+  visualEvidenceLink: '專案證據快照',
+  visualEvidenceBody: '數量、狀態與發布聲明不應隱藏的缺口。',
+  visualEvidenceAlt: '專案證據快照教學圖板',
+  visualLoopLink: '從理解到遷移',
+  visualLoopBody: '理解、嘗試、檢查、修正、變化，並在未見過的任務上重複。',
+  visualLoopAlt: '從理解到遷移的學習閉環教學圖板',
 });
 
 initializeSearch();
