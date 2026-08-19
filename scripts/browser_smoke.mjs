@@ -148,6 +148,10 @@ try {
   assert.match(await page.locator('[data-hero-primary]').getAttribute('href'), /reader\.html\?path=book%2Froutes%2Fllm-foundation-core-v1-EN\.md&lang=en$/, 'hero primary action does not lead to the LLM Foundation Core');
   assert.match(await page.locator('[data-hero-primary]').innerText(), /^Start the LLM Foundation Core/, 'hero primary action does not name the required foundation');
   assert.match(await page.locator('.hero-route-kicker').innerText(), /one required foundation route/i, 'foundation route is not clearly required before application practice');
+  assert.match(await page.locator('.hero-route-kicker').innerText(), /1.*2.*3.*4.*5/, 'foundation route preview does not name all five units');
+  assert.equal(await page.locator('.hero-route-continuation-list li').count(), 2, 'foundation route preview omits its final continuation nodes');
+  assert.match(await page.locator('.hero-route-continuation').innerText(), /visible failures/i, 'foundation route preview omits the visible-failures unit');
+  assert.match(await page.locator('.hero-route-continuation').innerText(), /check, repair, and transfer/i, 'foundation route preview omits the check-and-transfer units');
   assert.equal(
     await page.locator('.site-header .wordmark').getAttribute('href'),
     'https://docs.prysai.com/llm-playbook/',
@@ -373,6 +377,15 @@ try {
     de: 'Verstehe LLMs, bevor du sie arbeiten lässt.',
     'zh-tw': '先理解 LLM，再讓它開始工作。',
   };
+  const localizedRouteContinuation = {
+    en: 'Continue inside the core route',
+    zh: '在核心路线中继续',
+    es: 'Continúa dentro de la ruta principal',
+    ja: '基礎コアルートの中で続ける',
+    ko: '기초 코어 경로에서 계속하기',
+    de: 'Im Kernpfad fortfahren',
+    'zh-tw': '在核心路線中繼續',
+  };
   const localizedVisualCardTitles = {
     en: ['Request to evidence', 'Beginner practice loop', 'Project evidence snapshot', 'From understanding to transfer'],
     zh: ['从请求到证据', '入门实践循环', '项目证据快照', '从理解到迁移'],
@@ -467,6 +480,11 @@ try {
       await page.locator('.hero-proof-source blockquote').innerText(),
       localizedHeroSources[locale],
       `${locale} home page leaks a different-language prompt example instead of its selected locale`,
+    );
+    assert.equal(
+      (await page.locator('.hero-route-continuation-label').textContent()).trim(),
+      localizedRouteContinuation[locale],
+      `${locale} foundation route continuation leaks a different-language label`,
     );
     assert.equal(
       await page.locator('.problem-grid .card-link').evaluateAll((links) => links.some((link) => /candidate|draft|not_run/i.test(link.textContent || ''))),
@@ -803,7 +821,7 @@ try {
   );
   assert.match(
     await page.locator('[data-route-decision]').innerText(),
-    /finish the core route before entering codex/i,
+    /finish all five units before entering codex/i,
     'foundation route card does not state its platform boundary',
   );
   const firstTurnLink = page.getByRole('link', { name: 'Draft a universal first turn' });

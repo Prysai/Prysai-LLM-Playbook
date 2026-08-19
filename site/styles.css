@@ -120,6 +120,13 @@ a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: bl
 .hero-route-option strong { display: block; font-size: .88rem; letter-spacing: -.025em; line-height: 1.2; }
 .hero-route-option small { display: block; margin-top: .55rem; color: var(--muted); font-size: .7rem; line-height: 1.45; }
 .hero-route-option b { align-self: end; color: var(--red); font-size: 1rem; }
+.hero-route-continuation { border-top: 1px solid var(--line-dark); }
+.hero-route-continuation-label { margin: .7rem 0 .55rem; color: var(--muted); font-size: .6rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.hero-route-continuation-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line-dark); }
+.hero-route-continuation-list li { display: grid; grid-template-columns: 1.7rem minmax(0, 1fr); gap: .65rem; min-height: 6.2rem; padding: .8rem 1rem .8rem 0; border-right: 1px solid var(--line-dark); }
+.hero-route-continuation-list li:last-child { padding-left: 1rem; border-right: 0; }
+.hero-route-continuation-list strong { display: block; font-size: .78rem; letter-spacing: -.02em; line-height: 1.25; }
+.hero-route-continuation-list small { display: block; margin-top: .4rem; color: var(--muted); font-size: .65rem; line-height: 1.4; }
 .hero-route-boundary { margin: 0; padding: .7rem 0; border-top: 1px solid var(--line-dark); color: var(--muted); font-size: .66rem; line-height: 1.4; }
 .hero-proof-card { grid-column: 2; align-self: center; min-width: 0; border: 1px solid var(--ink); color: var(--ink); background: #fff; }
 .hero-proof-head { display: flex; align-items: flex-start; justify-content: space-between; gap: .8rem; padding: .85rem 1rem; border-bottom: 1px solid var(--ink); color: var(--red); font-size: .62rem; font-weight: 800; letter-spacing: .08em; }
@@ -497,6 +504,9 @@ a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: bl
   .hero-route-grid { grid-template-columns: 1fr; }
   .hero-route-option, .hero-route-option:first-child, .hero-route-option:last-child { min-height: 0; padding: .9rem 0; border-right: 0; border-bottom: 1px solid var(--line-dark); }
   .hero-route-option:last-child { border-bottom: 0; }
+  .hero-route-continuation-list { grid-template-columns: 1fr; }
+  .hero-route-continuation-list li, .hero-route-continuation-list li:last-child { min-height: 0; padding: .75rem 0; border-right: 0; border-bottom: 1px solid var(--line-dark); }
+  .hero-route-continuation-list li:last-child { border-bottom: 0; }
   .hero-footer { flex-direction: column; }
   .problem-grid, .contract-grid, .lab-grid, .skill-grid, .status-grid { grid-template-columns: 1fr; }
   .problem-card { min-height: 210px; }
@@ -566,8 +576,11 @@ a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: bl
   .hero-lede { margin-bottom: 1rem; line-height: 1.45; }
   .hero-scope { margin-bottom: .8rem; padding-block: .35rem; }
   .hero-route-decision { margin-top: 1rem; }
+  .hero-route-option small, .hero-route-continuation-list small { display: none; }
+  .hero-route-option, .hero-route-option:first-child, .hero-route-option:last-child { padding-block: .7rem; }
+  .hero-route-continuation-label { margin-block: .6rem .45rem; }
   /* A phone reader should see one explicit action before needing to decode the
-     three route cards below. The cards remain available for the fuller choice. */
+     route preview below. The cards remain available for the fuller choice. */
   .hero-actions { display: flex; }
   .hero-brief, .hero-footer { display: none; }
   .hero-proof-card { margin-top: .8rem; }

@@ -1,8 +1,9 @@
 # Foundation route visual check — 2026-08-19
 
 **Status:** candidate visual inspection
-**Scope:** local static site candidate after adding the foundation route map and
-four supporting check boards to `site/index.html`
+**Scope:** local static site candidate after adding the foundation route map,
+four supporting check boards, and a complete five-unit route preview to
+`site/index.html`
 **Viewports:** 1280 × 1000 and 390 × 844
 
 ## What was checked
@@ -17,10 +18,17 @@ four supporting check boards to `site/index.html`
   resources report a non-zero natural width in the browser smoke.
 - Seven interface locales render the same five-card order with localized
   headings, descriptions, and alternative text.
+- The homepage route preview now names all five core units: the first three
+  remain actionable links, while units 3–5 are shown as continuation nodes so
+  unsupported translated deep links are not fabricated.
+- At 390px, repeated route descriptions are hidden while the numbered labels
+  and boundary remain visible; this keeps the primary action and route map
+  scannable without horizontal overflow.
 
 ## Evidence
 
-- `npm run test:browser` passed with `desktop=1280 mobile=390`.
+- `npm run test:browser` passed with `desktop=1280 mobile=390` and checked the
+  five-unit route preview in all seven interface locales.
 - `python scripts/validate_teaching_assets.py` passed with `assets=25`.
 - Temporary screenshots and the local HTTP server used for inspection are not
   repository assets; they were removed after review.
