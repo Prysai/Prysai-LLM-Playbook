@@ -771,6 +771,8 @@ a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: bl
 .research-links b { position: absolute; top: .85rem; right: 0; }
 .visual-case-panel { display: grid; grid-template-columns: .8fr 1.2fr; gap: 3rem; margin-top: 1px; padding: 2.4rem 0 0; border-top: 1px solid var(--line-dark); }
 .visual-case-lead { max-width: 35rem; }
+.visual-case-sources { display: flex; gap: .9rem 1.2rem; flex-wrap: wrap; margin-top: 1rem; }
+.visual-case-sources .text-link { font-size: .7rem; }
 .visual-case-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line-dark); }
 .visual-case-links a { position: relative; display: flex; min-height: 10.5rem; flex-direction: column; justify-content: space-between; gap: .85rem; padding: 1.2rem; background: var(--ink); transition: color .15s ease, background .15s ease; }
 .visual-case-links a:hover strong, .visual-case-links a:focus-visible strong { color: var(--red); }

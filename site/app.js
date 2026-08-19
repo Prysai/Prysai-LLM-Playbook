@@ -4743,6 +4743,8 @@ Object.assign(copy.de, {
 // English or silently changes the claim boundary.
 Object.assign(copy.en, {
   visualCaseIntro: 'Four original boards show the method, the evidence boundary, and the practice loop.',
+  visualStatusSourceLink: 'Open the current status source',
+  visualLearningSourceLink: 'Open the foundation route',
   visualModelAlt: 'Request to evidence teaching board',
   visualCaseAlt: 'Attempt, correct, vary, and receipt beginner practice loop',
   visualEvidenceLink: 'Project evidence snapshot',
@@ -4754,6 +4756,8 @@ Object.assign(copy.en, {
 });
 Object.assign(copy.zh, {
   visualCaseIntro: '四张原创图板展示方法、证据边界与练习闭环。',
+  visualStatusSourceLink: '打开当前状态源',
+  visualLearningSourceLink: '打开基础路线',
   visualModelAlt: '从请求到证据的教学图板',
   visualCaseAlt: '先尝试、修正、改变条件并保留回执的入门练习闭环',
   visualEvidenceLink: '项目证据快照',
@@ -4765,6 +4769,8 @@ Object.assign(copy.zh, {
 });
 Object.assign(copy.es, {
   visualCaseIntro: 'Cuatro tableros originales muestran el método, el límite de la evidencia y el bucle de práctica.',
+  visualStatusSourceLink: 'Abrir la fuente de estado actual',
+  visualLearningSourceLink: 'Abrir la ruta de fundamentos',
   visualModelAlt: 'Tablero didáctico de la solicitud a la evidencia',
   visualCaseAlt: 'Bucle de práctica para principiantes: intentar, corregir, variar y conservar un recibo',
   visualEvidenceLink: 'Panorama de evidencia del proyecto',
@@ -4776,6 +4782,8 @@ Object.assign(copy.es, {
 });
 Object.assign(copy.ja, {
   visualCaseIntro: '4つのオリジナルボードで、方法、エビデンスの境界、練習ループを示します。',
+  visualStatusSourceLink: '現在のステータスソースを開く',
+  visualLearningSourceLink: '基礎ルートを開く',
   visualModelAlt: 'リクエストからエビデンスまでの教学ボード',
   visualCaseAlt: '試行、修正、条件変更、記録を行う初心者練習ループ',
   visualEvidenceLink: 'プロジェクトのエビデンススナップショット',
@@ -4787,6 +4795,8 @@ Object.assign(copy.ja, {
 });
 Object.assign(copy.ko, {
   visualCaseIntro: '네 개의 독창적인 보드가 방법, 증거의 경계, 연습 루프를 보여 줍니다.',
+  visualStatusSourceLink: '현재 상태 출처 열기',
+  visualLearningSourceLink: '기초 경로 열기',
   visualModelAlt: '요청에서 증거까지를 보여 주는 교육 보드',
   visualCaseAlt: '시도하고, 수정하고, 조건을 바꾸고, 기록을 남기는 초보 연습 루프',
   visualEvidenceLink: '프로젝트 증거 스냅샷',
@@ -4798,6 +4808,8 @@ Object.assign(copy.ko, {
 });
 Object.assign(copy.de, {
   visualCaseIntro: 'Vier originale Tafeln zeigen Methode, Beleggrenze und Übungsschleife.',
+  visualStatusSourceLink: 'Aktuelle Statusquelle öffnen',
+  visualLearningSourceLink: 'Grundlagenroute öffnen',
   visualModelAlt: 'Lehrtafel von der Anfrage zum Beleg',
   visualCaseAlt: 'Übungsschleife für Einsteiger: versuchen, korrigieren, variieren und Beleg behalten',
   visualEvidenceLink: 'Evidenz-Schnappschuss des Projekts',
@@ -5177,6 +5189,8 @@ Object.assign(copy['zh-tw'], {
   heroProofCheckThree: '沒有出現無依據的細節。',
   footerTagline: '一套面向大型語言模型的實用學習與實踐系統。',
   visualCaseIntro: '四張原創圖板展示方法、證據邊界與練習閉環。',
+  visualStatusSourceLink: '開啟目前狀態來源',
+  visualLearningSourceLink: '開啟基礎路線',
   visualModelAlt: '從請求到證據的教學圖板',
   visualCaseAlt: '先嘗試、修正、改變條件並保留回執的入門練習閉環',
   visualEvidenceLink: '專案證據快照',
