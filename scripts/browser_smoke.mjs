@@ -382,6 +382,15 @@ try {
     de: ['Von der Anfrage zum Beleg', 'Anfänger-Übungsschleife', 'Evidenz-Schnappschuss des Projekts', 'Vom Verstehen zum Transfer'],
     'zh-tw': ['從請求到證據', '入門實踐循環', '專案證據快照', '從理解到遷移'],
   };
+  const localizedFoundationLensTitles = {
+    en: ['Generate', 'Frame', 'Extend', 'Coordinate', 'Check'],
+    zh: ['生成', '定义', '扩展', '协作', '检查'],
+    es: ['Generar', 'Enmarcar', 'Ampliar', 'Coordinar', 'Comprobar'],
+    ja: ['生成', '枠組み', '拡張', '調整', '確認'],
+    ko: ['생성', '구성', '확장', '조정', '점검'],
+    de: ['Erzeugen', 'Rahmen', 'Erweitern', 'Koordinieren', 'Prüfen'],
+    'zh-tw': ['生成', '定義', '擴展', '協作', '檢查'],
+  };
   for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de', 'zh-tw']) {
     await page.goto(`${origin}/site/?lang=${locale}`, { waitUntil: 'networkidle' });
     await page.locator('[data-current-language]').waitFor();
@@ -421,12 +430,23 @@ try {
     const visualHrefs = await visualCards.evaluateAll((cards) => cards.map((card) => card.getAttribute('href')));
     assert.ok(visualHrefs.some((href) => /project-evidence-snapshot-red-black\.svg$/.test(href || '')), `${locale} project index lost the evidence snapshot board`);
     assert.ok(visualHrefs.some((href) => /understanding-to-transfer-red-black\.svg$/.test(href || '')), `${locale} project index lost the transfer board`);
+    assert.deepEqual(
+      await page.locator('.foundation-map-layer strong').allTextContents(),
+      localizedFoundationLensTitles[locale],
+      `${locale} foundation concept map is not fully localized`,
+    );
+    assert.equal(await page.locator('#foundation-lens .foundation-map-layer').count(), 5, `${locale} foundation concept map lost a layer`);
     if (locale === 'zh-tw') {
       const visibleText = await page.locator('body').innerText();
       assert.doesNotMatch(visibleText, /跳到主要内容|基础系统|搜索|学习路径/, 'Traditional Chinese home page exposes high-confidence Simplified Chinese UI text');
       assert.match(visibleText, /跳到主要內容|基礎系統|搜尋|學習路徑/, 'Traditional Chinese home page does not expose its localized UI vocabulary');
     }
   }
+  await page.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
+  assert.equal(await page.locator('#start').evaluate((section) => section.previousElementSibling?.id), 'top', 'the useful result is not immediately after the hero');
+  assert.equal(await page.locator('#first-30').evaluate((section) => section.previousElementSibling?.id), 'start', 'optional first practice is not placed after the useful result');
+  assert.equal(await page.locator('#foundation-lens').evaluate((section) => section.previousElementSibling?.id), 'first-30', 'foundation lens is not placed after the optional first practice');
+  assert.equal(await page.locator('#project-map').evaluate((section) => section.previousElementSibling?.id), 'foundation-lens', 'project catalogue is not placed after the foundation map');
   await page.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
   await page.waitForFunction(() => document.querySelector('[data-current-language]')?.textContent?.trim() === 'EN');
   const skillsSection = page.locator('#skills');

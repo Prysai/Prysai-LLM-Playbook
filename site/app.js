@@ -1361,12 +1361,6 @@ const starterPrompt = document.querySelector('[data-starter-prompt]');
 const everydayPromptCopyButtons = [...document.querySelectorAll('[data-copy-everyday-prompt]')];
 const starterCopyStatus = document.querySelector('[data-copy-starter-status]');
 
-// Progressive enhancement keeps the first task ahead of the maintainer map.
-// Source order remains readable when JavaScript is unavailable.
-const projectMapSection = document.querySelector('#project-map');
-const firstTaskSection = document.querySelector('#first-30');
-if (projectMapSection && firstTaskSection) firstTaskSection.insertAdjacentElement('afterend', projectMapSection);
-
 // Desktop opens the first route as an orientation aid. On a phone those six
 // rows consume a full screen before the four route choices are visible.
 if (window.matchMedia('(max-width: 480px)').matches) {
@@ -4380,11 +4374,16 @@ const goalTemplateFor = (goalKey) => (
 );
 
 // A first-time reader comes here with a purpose, not a need to inspect the
-// repository. Keep the catalogue available, but put it after the first useful
-// result instead of between the hero and the action that the hero promises.
+// repository. Put the no-setup result first, then the optional practice and
+// foundation map, and keep the catalogue after those choices. The source order
+// remains a readable no-JS fallback; this only improves the live reading order.
 const projectMap = document.querySelector('#project-map');
 const startSection = document.querySelector('#start');
-if (projectMap && startSection) startSection.after(projectMap);
+const firstTaskSection = document.querySelector('#first-30');
+const foundationLens = document.querySelector('#foundation-lens');
+if (startSection && firstTaskSection) startSection.after(firstTaskSection);
+if (firstTaskSection && foundationLens) firstTaskSection.after(foundationLens);
+if (foundationLens && projectMap) foundationLens.after(projectMap);
 
 function wizardCopyKey(goalKey) {
   return { language: 'wizardGoalLanguage', work: 'wizardGoalWork', research: 'wizardGoalResearch', interview: 'wizardGoalInterview', task: 'wizardGoalTask', codex: 'wizardGoalCodex' }[goalKey] || 'wizardGoalLanguage';
@@ -4818,6 +4817,50 @@ Object.assign(copy.de, {
   visualLoopLink: 'Vom Verstehen zum Transfer',
   visualLoopBody: 'Verstehen, versuchen, prüfen, reparieren, variieren und an einer unbekannten Aufgabe wiederholen.',
   visualLoopAlt: 'Lehrtafel zur Lernschleife vom Verstehen zum Transfer',
+});
+
+// The foundation lens is a compact, localized concept map. It deliberately
+// names stable roles rather than promising that every platform implements the
+// layers in the same way.
+Object.assign(copy.en, {
+  foundationLensEyebrow: 'The basic map',
+  foundationLensTitle: 'Put each LLM concept in its own lane.',
+  foundationLensIntro: 'Before you choose a product or copy a prompt, separate generation, framing, action, coordination, and checking. The same map works across chat models and agent tools.',
+  foundationLensPanelTitle: 'Five layers, five different questions.',
+  foundationLensPanelIntro: 'A fluent answer belongs to the generation layer. It does not, by itself, prove that a source was opened, a file changed, or a task was completed.',
+  foundationLensLink: 'Read the complete LLM fundamentals guide',
+  foundationLensAria: 'The five layers of an LLM workflow',
+  foundationLayerGenerate: 'Generate', foundationLayerGenerateTerm: 'LLM', foundationLayerGenerateBody: 'Predicts a useful continuation from the context it receives. Fluency is not verification.',
+  foundationLayerFrame: 'Frame', foundationLayerFrameTerm: 'Context + prompt', foundationLayerFrameBody: 'States the goal, relevant material, limits, and the shape of the answer you need.',
+  foundationLayerExtend: 'Extend', foundationLayerExtendTerm: 'Product + tools + Skills', foundationLayerExtendBody: 'May add files, browsing, commands, or reusable methods. Access and side effects are runtime facts.',
+  foundationLayerCoordinate: 'Coordinate', foundationLayerCoordinateTerm: 'Agent + workflow', foundationLayerCoordinateBody: 'Organises multiple observations and actions with checkpoints, retries, and stop conditions.',
+  foundationLayerCheck: 'Check', foundationLayerCheckTerm: 'Evidence + human judgment', foundationLayerCheckBody: 'Compares the result with a source, diff, test, log, or acceptance rule before making a claim.',
+  foundationLensBoundary: 'Do not infer a lower layer from a higher one: a model proposal is not a tool action, a tool action is not a verified result, and one checked result is not mastery.',
+});
+Object.assign(copy.zh, {
+  foundationLensEyebrow: '基础地图', foundationLensTitle: '把每个大模型概念放回自己的位置。', foundationLensIntro: '在选择产品或复制提示词之前，先分开生成、定义、行动、协作和检查。这张地图适用于聊天模型和 Agent 工具。',
+  foundationLensPanelTitle: '五层结构，五个不同问题。', foundationLensPanelIntro: '流畅回答只属于生成层。它本身不能证明来源已打开、文件已改变或任务已完成。', foundationLensLink: '阅读完整的 LLM 基础概念指南', foundationLensAria: '大模型工作流的五个层次',
+  foundationLayerGenerate: '生成', foundationLayerGenerateTerm: 'LLM', foundationLayerGenerateBody: '根据收到的上下文预测有用的后续文本。流畅不等于已验证。', foundationLayerFrame: '定义', foundationLayerFrameTerm: '上下文 + 提示词', foundationLayerFrameBody: '说明目标、相关材料、限制和你需要的回答形式。', foundationLayerExtend: '扩展', foundationLayerExtendTerm: '产品 + 工具 + Skill', foundationLayerExtendBody: '可能增加文件、浏览、命令或可复用方法；访问权和副作用必须以运行事实为准。', foundationLayerCoordinate: '协作', foundationLayerCoordinateTerm: 'Agent + 工作流', foundationLayerCoordinateBody: '用检查点、重试预算和停止条件组织多次观察与行动。', foundationLayerCheck: '检查', foundationLayerCheckTerm: '证据 + 人的判断', foundationLayerCheckBody: '在作出结论前，用来源、差异、测试、日志或验收规则对照结果。', foundationLensBoundary: '不要从高层推断低层：模型提出方案不等于工具已行动，工具行动不等于结果已验证，一次检查通过也不等于掌握。',
+});
+Object.assign(copy.es, {
+  foundationLensEyebrow: 'Mapa básico', foundationLensTitle: 'Pon cada concepto de LLM en su lugar.', foundationLensIntro: 'Antes de elegir un producto o copiar un prompt, separa generación, encuadre, acción, coordinación y comprobación. El mismo mapa sirve para chats y agentes.',
+  foundationLensPanelTitle: 'Cinco capas, cinco preguntas distintas.', foundationLensPanelIntro: 'Una respuesta fluida pertenece a la capa de generación. Por sí sola no demuestra que se abrió una fuente, cambió un archivo o terminó una tarea.', foundationLensLink: 'Leer la guía completa de fundamentos de LLM', foundationLensAria: 'Las cinco capas de un flujo de trabajo con LLM',
+  foundationLayerGenerate: 'Generar', foundationLayerGenerateTerm: 'LLM', foundationLayerGenerateBody: 'Predice una continuación útil a partir del contexto recibido. La fluidez no es verificación.', foundationLayerFrame: 'Enmarcar', foundationLayerFrameTerm: 'Contexto + prompt', foundationLayerFrameBody: 'Expone el objetivo, el material relevante, los límites y la forma de respuesta necesaria.', foundationLayerExtend: 'Ampliar', foundationLayerExtendTerm: 'Producto + herramientas + Skills', foundationLayerExtendBody: 'Puede añadir archivos, navegación, comandos o métodos reutilizables. El acceso y los efectos son hechos de ejecución.', foundationLayerCoordinate: 'Coordinar', foundationLayerCoordinateTerm: 'Agente + flujo', foundationLayerCoordinateBody: 'Organiza observaciones y acciones con puntos de control, reintentos y condiciones de parada.', foundationLayerCheck: 'Comprobar', foundationLayerCheckTerm: 'Evidencia + juicio humano', foundationLayerCheckBody: 'Compara el resultado con una fuente, diff, prueba, registro o regla de aceptación antes de afirmar algo.', foundationLensBoundary: 'No infieras una capa inferior desde una superior: una propuesta del modelo no es una acción de herramienta, una acción no es un resultado verificado y un resultado comprobado no es dominio.',
+});
+Object.assign(copy.ja, {
+  foundationLensEyebrow: '基本マップ', foundationLensTitle: 'LLM の概念をそれぞれの役割に戻す。', foundationLensIntro: '製品を選んだりプロンプトをコピーしたりする前に、生成、枠組み、操作、調整、確認を分けます。同じ地図をチャットモデルとエージェントで使えます。',
+  foundationLensPanelTitle: '5つの層、5つの異なる問い。', foundationLensPanelIntro: '流暢な回答は生成の層に属します。それだけでは、情報源を開いたこと、ファイルを変更したこと、作業を完了したことの証明にはなりません。', foundationLensLink: 'LLM 基礎ガイド全体を読む', foundationLensAria: 'LLM ワークフローの5つの層',
+  foundationLayerGenerate: '生成', foundationLayerGenerateTerm: 'LLM', foundationLayerGenerateBody: '受け取ったコンテキストから役立つ続きの文章を予測します。流暢さは検証ではありません。', foundationLayerFrame: '枠組み', foundationLayerFrameTerm: 'コンテキスト + プロンプト', foundationLayerFrameBody: '目的、関連資料、制約、必要な回答の形を示します。', foundationLayerExtend: '拡張', foundationLayerExtendTerm: '製品 + ツール + Skill', foundationLayerExtendBody: 'ファイル、閲覧、コマンド、再利用可能な方法を加えることがあります。アクセスと副作用は実行時の事実です。', foundationLayerCoordinate: '調整', foundationLayerCoordinateTerm: 'Agent + ワークフロー', foundationLayerCoordinateBody: 'チェックポイント、再試行、停止条件で複数の観察と操作を整理します。', foundationLayerCheck: '確認', foundationLayerCheckTerm: '証拠 + 人の判断', foundationLayerCheckBody: '主張する前に、情報源、差分、テスト、ログ、受け入れ条件と結果を照合します。', foundationLensBoundary: '上位の層から下位の層を推測しないでください。モデルの提案はツールの操作ではなく、操作は検証済みの結果ではなく、1回の確認は習得の証明ではありません。',
+});
+Object.assign(copy.ko, {
+  foundationLensEyebrow: '기본 지도', foundationLensTitle: 'LLM 개념을 각자의 역할에 놓으세요.', foundationLensIntro: '제품을 고르거나 프롬프트를 복사하기 전에 생성, 맥락 설정, 행동, 조정, 점검을 나누세요. 이 지도는 채팅 모델과 에이전트 도구 모두에 적용됩니다.',
+  foundationLensPanelTitle: '다섯 층, 서로 다른 다섯 질문.', foundationLensPanelIntro: '유창한 답변은 생성 층에 속합니다. 그것만으로 출처를 열었거나 파일을 바꿨거나 작업을 끝냈다는 증거가 되지 않습니다.', foundationLensLink: 'LLM 기초 안내서 전체 읽기', foundationLensAria: 'LLM 작업 흐름의 다섯 층',
+  foundationLayerGenerate: '생성', foundationLayerGenerateTerm: 'LLM', foundationLayerGenerateBody: '받은 맥락에서 유용한 다음 내용을 예측합니다. 유창함은 검증이 아닙니다.', foundationLayerFrame: '구성', foundationLayerFrameTerm: '맥락 + 프롬프트', foundationLayerFrameBody: '목표, 관련 자료, 제한, 필요한 답변 형식을 밝힙니다.', foundationLayerExtend: '확장', foundationLayerExtendTerm: '제품 + 도구 + Skill', foundationLayerExtendBody: '파일, 브라우징, 명령 또는 재사용 가능한 방법을 추가할 수 있습니다. 접근과 부작용은 실행 사실입니다.', foundationLayerCoordinate: '조정', foundationLayerCoordinateTerm: 'Agent + 워크플로', foundationLayerCoordinateBody: '체크포인트, 재시도, 중지 조건으로 여러 관찰과 행동을 조직합니다.', foundationLayerCheck: '점검', foundationLayerCheckTerm: '증거 + 사람의 판단', foundationLayerCheckBody: '주장하기 전에 출처, diff, 테스트, 로그 또는 수용 기준과 결과를 비교합니다.', foundationLensBoundary: '높은 층에서 낮은 층을 추론하지 마세요. 모델 제안은 도구 행동이 아니며, 도구 행동은 검증된 결과가 아니고, 한 번 점검한 결과는 숙련의 증거가 아닙니다.',
+});
+Object.assign(copy.de, {
+  foundationLensEyebrow: 'Grundkarte', foundationLensTitle: 'Ordne jeden LLM-Begriff seiner eigenen Ebene zu.', foundationLensIntro: 'Trenne vor der Produktwahl oder dem Kopieren eines Prompts Erzeugung, Rahmen, Handlung, Koordination und Prüfung. Die Karte gilt für Chatmodelle und Agent-Tools.',
+  foundationLensPanelTitle: 'Fünf Ebenen, fünf verschiedene Fragen.', foundationLensPanelIntro: 'Eine flüssige Antwort gehört zur Erzeugungsebene. Sie beweist für sich nicht, dass eine Quelle geöffnet, eine Datei geändert oder eine Aufgabe abgeschlossen wurde.', foundationLensLink: 'Den vollständigen LLM-Grundlagenleitfaden lesen', foundationLensAria: 'Die fünf Ebenen eines LLM-Arbeitsablaufs',
+  foundationLayerGenerate: 'Erzeugen', foundationLayerGenerateTerm: 'LLM', foundationLayerGenerateBody: 'Sagt eine nützliche Fortsetzung aus dem erhaltenen Kontext voraus. Flüssigkeit ist keine Prüfung.', foundationLayerFrame: 'Rahmen', foundationLayerFrameTerm: 'Kontext + Prompt', foundationLayerFrameBody: 'Macht Ziel, relevantes Material, Grenzen und gewünschte Antwortform sichtbar.', foundationLayerExtend: 'Erweitern', foundationLayerExtendTerm: 'Produkt + Tools + Skills', foundationLayerExtendBody: 'Kann Dateien, Browsing, Befehle oder wiederverwendbare Methoden hinzufügen. Zugriff und Nebenwirkungen sind Laufzeitfakten.', foundationLayerCoordinate: 'Koordinieren', foundationLayerCoordinateTerm: 'Agent + Workflow', foundationLayerCoordinateBody: 'Ordnet Beobachtungen und Handlungen mit Checkpoints, Wiederholungen und Stop-Bedingungen.', foundationLayerCheck: 'Prüfen', foundationLayerCheckTerm: 'Beleg + menschliches Urteil', foundationLayerCheckBody: 'Vergleicht das Ergebnis vor einer Behauptung mit Quelle, Diff, Test, Log oder Abnahmeregel.', foundationLensBoundary: 'Leite keine niedrigere Ebene aus einer höheren ab: Ein Modellvorschlag ist keine Tool-Aktion, eine Tool-Aktion ist kein verifiziertes Ergebnis und ein geprüfter Versuch ist keine Beherrschung.',
 });
 
 // The first screen offers one unambiguous first action: learn the transferable
