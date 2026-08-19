@@ -66,12 +66,18 @@ FAST_MATERIAL_REQUIRED_FRAGMENTS = (
 DOCS_DEPLOY_REQUIRED_FRAGMENTS = (
     "needs: build",
     "actions: read",
-    "uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093",
+    "uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c",
     "name: pages-candidate-${{ github.sha }}",
     "path: _site",
     "github-token: ${{ github.token }}",
 )
 DOCS_DEPLOY_ALLOWED_PERMISSIONS = {"actions": "read"}
+LEGACY_NODE20_ACTION_PINS = (
+    "actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b",
+    "actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093",
+    "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+    "astral-sh/setup-uv@d4b2f3b6ecc6e67c4457f6d3e41ec42d3d0fcb86",
+)
 PAGES_CANDIDATE_ARTIFACT_REQUIRED = (
     "name: pages-candidate-${{ github.sha }}",
     "path: _site",
@@ -204,6 +210,7 @@ REQUIRED_POLICY_KEYS = {
     "automation",
     "review_requirements",
     "host_ruleset",
+    "host_deployment_environment",
     "host_security_controls",
     "sources",
 }
@@ -393,6 +400,23 @@ def validate_policy(policy: dict[str, object]) -> list[str]:
     host_ruleset = policy.get("host_ruleset")
     if not isinstance(host_ruleset, dict) or host_ruleset.get("status") != "active":
         errors.append("host_ruleset must honestly record the currently active host Ruleset")
+    elif host_ruleset.get("bypass_list") != []:
+        errors.append("host_ruleset.bypass_list must record the verified empty bypass list")
+
+    deployment_environment = policy.get("host_deployment_environment")
+    if not isinstance(deployment_environment, dict):
+        errors.append("host_deployment_environment must record the protected Docs environment")
+    else:
+        if deployment_environment.get("name") != "docs-prysai-production":
+            errors.append("host_deployment_environment.name must be docs-prysai-production")
+        if deployment_environment.get("required_reviewers") != ["uuzzrm"]:
+            errors.append("host_deployment_environment.required_reviewers must be exactly uuzzrm")
+        if deployment_environment.get("can_admins_bypass") is not False:
+            errors.append("host_deployment_environment.can_admins_bypass must be false")
+        if deployment_environment.get("deployment_branch_policy") != "custom":
+            errors.append("host_deployment_environment.deployment_branch_policy must be custom")
+        if deployment_environment.get("allowed_branches") != ["main"]:
+            errors.append("host_deployment_environment.allowed_branches must be exactly main")
 
     host_controls = policy.get("host_security_controls")
     if not isinstance(host_controls, dict):
@@ -427,6 +451,9 @@ def validate_policy(policy: dict[str, object]) -> list[str]:
 
 def validate_workflow_text(text: str, label: str) -> list[str]:
     errors: list[str] = []
+    for action_pin in LEGACY_NODE20_ACTION_PINS:
+        if action_pin in text:
+            errors.append(f"{label}: legacy Node.js 20 Action pin must be upgraded: {action_pin}")
     if PULL_REQUEST_TARGET_RE.search(text):
         errors.append(f"{label}: pull_request_target is forbidden by the repository policy")
     # A deployment-only workflow may need a scoped secret on a protected push.
