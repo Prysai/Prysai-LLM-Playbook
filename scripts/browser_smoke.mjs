@@ -1252,6 +1252,28 @@ try {
   await page.setViewportSize({ width: 390, height: 844 });
   await noHorizontalOverflow(page, 'mobile showcase');
   await page.goto(`${origin}/site/`, { waitUntil: 'networkidle' });
+  const mobileHeroMetrics = await page.evaluate(() => {
+    const action = document.querySelector('[data-hero-primary]');
+    const title = document.querySelector('#hero-title');
+    if (!action || !title) return null;
+    const actionBox = action.getBoundingClientRect();
+    const titleBox = title.getBoundingClientRect();
+    return {
+      actionTop: actionBox.top,
+      actionBottom: actionBox.bottom,
+      titleHeight: titleBox.height,
+      viewportHeight: window.innerHeight,
+    };
+  });
+  assert.ok(mobileHeroMetrics, 'mobile hero is missing its title or primary action');
+  assert.ok(
+    mobileHeroMetrics.actionBottom <= mobileHeroMetrics.viewportHeight,
+    `mobile first action starts below the initial viewport: ${JSON.stringify(mobileHeroMetrics)}`,
+  );
+  assert.ok(
+    mobileHeroMetrics.titleHeight <= 150,
+    `mobile hero title regained an overly tall line box: ${JSON.stringify(mobileHeroMetrics)}`,
+  );
   await page.locator('.hero').screenshot({ path: path.join(visualEvidenceDirectory, 'hero-routes-mobile.png') });
   assert.equal(await page.locator('.mobile-core-routes').isVisible(), false, 'mobile route chooser duplicates the detailed hero decision');
   const mobileLessonZeroRoute = page.locator('.hero-route-option').first();
