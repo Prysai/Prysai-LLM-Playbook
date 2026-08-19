@@ -7,8 +7,10 @@ verification snapshot was committed as
 `60f4aa3c7c84b69c31d44409b6f1cb60442e29ab`; the current evidence-record
 snapshot is `8a0ab55a7859ffedea24567319c260e1fabd3b0f`. The latter only updates
 this audit record, while retaining the verified CodeQL permission validator,
-its 42 focused fixtures, and the preceding Reader and deployment-boundary
-fixes. The working tree was clean before this evidence refresh.
+its then-current 42 focused fixtures, and the preceding Reader and
+deployment-boundary fixes. This record also contains the later security
+follow-up and its 44-fixture regression suite. The working tree was clean
+before the evidence refresh.
 No high-confidence API key, access token, private key, JWT, credential-bearing
 URL, device identifier, MAC address, or private-network location remains in the
 current tracked candidate file set after the fixes in this audit.
@@ -50,8 +52,9 @@ provided; it is intentionally not represented as a pass. The live GitHub API
 was rechecked without reading secret values: Ruleset `20903386` is active with
 an empty bypass list; `docs-prysai-production` requires reviewer `uuzzrm` and
 the `main` deployment branch; GitHub non-provider pattern scanning remains
-disabled. The candidate has not been merged or published yet; its PR checks and
-post-merge Pages/Docs deployment must be verified separately.
+disabled. At preparation time, the follow-up had not yet been merged or
+published; the protected-main update and its Pages/Docs deployment must be
+verified against the final main-branch SHA separately.
 
 The current-tree scan is clean. A replay of the repository detector over the
 reachable object database found one provider-shaped match in an older negative
@@ -214,7 +217,7 @@ response headers at its edge/server; GitHub Pages cannot be configured from
 this repository, so the meta policy must remain there unless an edge proxy is
 introduced.
 
-### SIA-08 — Ruleset bypass and release-evidence boundary — pre-final-mutation observation
+### SIA-08 — Ruleset bypass and release-evidence boundary — historical observation
 
 Severity: Medium governance risk; no secret exposure was observed.
 

@@ -61,7 +61,7 @@ can drift independently of workflow files.
   the workflow still consumes only the validated Pages artifact.
 - The security report can cite both the historical pre-mutation observation
   and the current post-mutation receipt without conflating them.
-- The local security gate now has 43 focused fixtures and blocks the known
+- The local security gate now has 44 focused fixtures and blocks the known
   legacy Node.js 20 Action pins.
 
 ## Evidence boundary
