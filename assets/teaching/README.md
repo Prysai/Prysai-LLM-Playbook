@@ -5,6 +5,7 @@ see before the reader works through the prose.
 
 ## Current cards
 
+- [Smallest safe LLM loop](foundation-route-map-red-black.svg)
 - [Model choice is a test](model-choice-is-a-test.svg)
 - [Skill to observable output](skill-to-observable-output.svg)
 - [Lifecycle checkpoints](lifecycle-checkpoints.svg)

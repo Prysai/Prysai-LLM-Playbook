@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
+  <title id="title">The smallest safe LLM loop</title>
+  <desc id="desc">A five-step foundation route: define one result, supply relevant context, request a bounded response, check the result, then repair or transfer. Missing evidence means stop.</desc>
+  <rect width="900" height="1400" fill="#f6f6f2"/>
+  <rect x="40" y="30" width="820" height="10" fill="#161616"/>
+  <text x="40" y="88" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">FOUNDATION ROUTE / ONE LOOP</text>
+  <text x="40" y="150" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">START WITH THE</text>
+  <text x="40" y="206" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">SMALLEST SAFE LOOP.</text>
+  <text x="42" y="246" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="16">one result / one check / one honest stop</text>
+  <g transform="translate(40 300)">
+    <line x1="34" y1="78" x2="34" y2="820" stroke="#d71920" stroke-width="5"/>
+    <g transform="translate(0 0)">
+      <circle cx="34" cy="78" r="28" fill="#161616"/>
+      <text x="34" y="87" fill="#fff" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="700">01</text>
+      <rect x="92" y="18" width="728" height="120" fill="#161616"/>
+      <text x="120" y="58" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">DEFINE</text>
+      <text x="120" y="101" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">Name one observable result.</text>
+      <text x="120" y="124" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">If success cannot be checked, shrink the task.</text>
+    </g>
+    <g transform="translate(0 170)">
+      <circle cx="34" cy="78" r="28" fill="#d71920"/>
+      <text x="34" y="87" fill="#161616" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="700">02</text>
+      <rect x="92" y="18" width="728" height="120" fill="#fff" stroke="#161616" stroke-width="3"/>
+      <text x="120" y="58" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">CONTEXT</text>
+      <text x="120" y="101" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">Supply only relevant material.</text>
+      <text x="120" y="124" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="15">Missing facts stay unknown; private data stays out.</text>
+    </g>
+    <g transform="translate(0 340)">
+      <circle cx="34" cy="78" r="28" fill="#161616"/>
+      <text x="34" y="87" fill="#fff" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="700">03</text>
+      <rect x="92" y="18" width="728" height="120" fill="#ffe5e9" stroke="#161616" stroke-width="3"/>
+      <text x="120" y="58" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">REQUEST</text>
+      <text x="120" y="101" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">Ask for a bounded response.</text>
+      <text x="120" y="124" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="15">State the shape, limits, allowed help, and stop.</text>
+    </g>
+    <g transform="translate(0 510)">
+      <circle cx="34" cy="78" r="28" fill="#d71920"/>
+      <text x="34" y="87" fill="#161616" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="700">04</text>
+      <rect x="92" y="18" width="728" height="120" fill="#fff" stroke="#161616" stroke-width="3"/>
+      <text x="120" y="58" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">CHECK</text>
+      <text x="120" y="101" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">Compare output with evidence.</text>
+      <text x="120" y="124" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="15">Use a source, diff, test, log, or acceptance rule.</text>
+    </g>
+    <g transform="translate(0 680)">
+      <circle cx="34" cy="78" r="28" fill="#161616"/>
+      <text x="34" y="87" fill="#fff" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="700">05</text>
+      <rect x="92" y="18" width="728" height="120" fill="#d71920"/>
+      <text x="120" y="58" fill="#161616" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">DECIDE</text>
+      <text x="120" y="101" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="900">Repair, transfer, or stop.</text>
+      <text x="120" y="124" fill="#161616" font-family="Arial, Helvetica, sans-serif" font-size="15">Keep the receipt and name what remains unknown.</text>
+    </g>
+  </g>
+  <rect x="40" y="1200" width="820" height="112" fill="#161616"/>
+  <text x="64" y="1245" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">THE GATE</text>
+  <text x="64" y="1287" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="900">NO EVIDENCE? DO NOT UPGRADE THE CLAIM.</text>
+  <text x="40" y="1360" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / CHECK BEFORE YOU CLAIM</text>
+</svg>

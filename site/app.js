@@ -5374,6 +5374,88 @@ Object.assign(copy.de, {
   foundationVisualsBoundary: 'Projekt-eigene englische Tafeln · Erklärung und Alternativtext bleiben lokalisiert.',
 });
 
+// Keep the foundation visual shelf useful beyond the first two boundary cards:
+// recovery and source-check boards make the next decision visible without
+// adding another prerequisite chapter.
+Object.assign(copy.en, {
+  foundationVisualsTitle: 'Five foundation boards, one loop.',
+  foundationVisualsIntro: 'Start with the route map, then use the four check boards as a quick reference: prompt contract, action evidence, recovery when proof is missing, and source checks before belief.',
+  foundationRouteVisualAlt: 'Smallest safe LLM loop teaching board',
+  foundationRouteVisualTitle: 'The smallest safe LLM loop',
+  foundationRouteVisualBody: 'Define, supply context, request, check, then repair, transfer, or stop.',
+  foundationRecoveryVisualAlt: 'Evidence recovery ladder teaching board',
+  foundationRecoveryVisualTitle: 'Evidence recovery ladder',
+  foundationRecoveryVisualBody: 'Match claim strength to the next smallest check.',
+  foundationSourceVisualAlt: 'Source check before belief teaching board',
+  foundationSourceVisualTitle: 'Source check before belief',
+  foundationSourceVisualBody: 'Match claim, source, scope, and freshness before relying on it.',
+});
+Object.assign(copy.zh, {
+  foundationVisualsTitle: '五张基础图，串起一个闭环。',
+  foundationVisualsIntro: '先看路线图，再把另外四张图当作速查表：提示词契约、行动证据、证据不足时的恢复，以及相信一个来源前要做的检查。',
+  foundationRouteVisualAlt: '最小安全 LLM 闭环教学图',
+  foundationRouteVisualTitle: '最小安全 LLM 闭环',
+  foundationRouteVisualBody: '定义、提供上下文、提出请求、检查，然后修正、迁移或停止。',
+  foundationRecoveryVisualAlt: '证据恢复阶梯教学图',
+  foundationRecoveryVisualTitle: '证据恢复阶梯',
+  foundationRecoveryVisualBody: '让声明的强度匹配下一个最小检查。',
+  foundationSourceVisualAlt: '相信前先检查来源教学图',
+  foundationSourceVisualTitle: '相信前先检查来源',
+  foundationSourceVisualBody: '依赖信息前，对照声明、来源、范围和时效性。',
+});
+Object.assign(copy.es, {
+  foundationVisualsTitle: 'Cinco tablas, un solo bucle de fundamentos.',
+  foundationVisualsIntro: 'Empieza por el mapa de la ruta y usa las otras cuatro tablas como referencia: contrato del prompt, evidencia de la acción, recuperación cuando falta la prueba y comprobación de fuentes antes de creer.',
+  foundationRouteVisualAlt: 'Tabla didáctica del bucle LLM seguro más pequeño',
+  foundationRouteVisualTitle: 'El bucle LLM seguro más pequeño',
+  foundationRouteVisualBody: 'Define, aporta contexto, pide, comprueba y después repara, transfiere o detén.',
+  foundationRecoveryVisualAlt: 'Tabla didáctica de la escalera de recuperación de evidencia',
+  foundationRecoveryVisualTitle: 'Escalera de recuperación de evidencia',
+  foundationRecoveryVisualBody: 'Ajusta la fuerza de la afirmación a la siguiente comprobación mínima.',
+  foundationSourceVisualAlt: 'Tabla didáctica de comprobar la fuente antes de creer',
+  foundationSourceVisualTitle: 'Comprobar la fuente antes de creer',
+  foundationSourceVisualBody: 'Compara afirmación, fuente, alcance y vigencia antes de confiar.',
+});
+Object.assign(copy.ja, {
+  foundationVisualsTitle: '5つの基礎ボード、1つのループ。',
+  foundationVisualsIntro: 'まずルートマップを見て、残り4つのボードを早見表として使います。プロンプト契約、操作の証拠、証拠不足時の回復、信じる前の出典確認を扱います。',
+  foundationRouteVisualAlt: '最小の安全なLLMループを示す教材図',
+  foundationRouteVisualTitle: '最小の安全なLLMループ',
+  foundationRouteVisualBody: '定義、コンテキスト提供、依頼、確認、その後に修正、転移、または停止。',
+  foundationRecoveryVisualAlt: 'エビデンス回復ラダーを示す教材図',
+  foundationRecoveryVisualTitle: 'エビデンス回復ラダー',
+  foundationRecoveryVisualBody: '主張の強さを、次に行う最小の確認に合わせます。',
+  foundationSourceVisualAlt: '信じる前の出典確認を示す教材図',
+  foundationSourceVisualTitle: '信じる前に出典を確認',
+  foundationSourceVisualBody: '頼る前に、主張、出典、範囲、鮮度を照合します。',
+});
+Object.assign(copy.ko, {
+  foundationVisualsTitle: '다섯 기초 보드, 하나의 루프.',
+  foundationVisualsIntro: '먼저 경로 지도를 보고, 나머지 네 보드를 빠른 참고표로 사용하세요. 프롬프트 계약, 행동의 증거, 증거가 부족할 때의 복구, 믿기 전 출처 점검을 다룹니다.',
+  foundationRouteVisualAlt: '가장 작은 안전한 LLM 루프 교육 보드',
+  foundationRouteVisualTitle: '가장 작은 안전한 LLM 루프',
+  foundationRouteVisualBody: '정의하고, 맥락을 제공하고, 요청하고, 점검한 다음 수정·전이하거나 멈춥니다.',
+  foundationRecoveryVisualAlt: '증거 복구 사다리 교육 보드',
+  foundationRecoveryVisualTitle: '증거 복구 사다리',
+  foundationRecoveryVisualBody: '주장의 강도를 다음 최소 점검에 맞추세요.',
+  foundationSourceVisualAlt: '믿기 전 출처 점검 교육 보드',
+  foundationSourceVisualTitle: '믿기 전에 출처 점검',
+  foundationSourceVisualBody: '의존하기 전에 주장, 출처, 범위, 최신성을 맞춰 보세요.',
+});
+Object.assign(copy.de, {
+  foundationVisualsTitle: 'Fünf Grundtafeln, ein Ablauf.',
+  foundationVisualsIntro: 'Beginne mit der Routentafel und nutze die vier weiteren Tafeln als Kurzreferenz: Prompt-Vertrag, Handlungsbeleg, Wiederherstellung bei fehlendem Beleg und Quellenprüfung vor dem Vertrauen.',
+  foundationRouteVisualAlt: 'Lehrtafel zum kleinsten sicheren LLM-Ablauf',
+  foundationRouteVisualTitle: 'Der kleinste sichere LLM-Ablauf',
+  foundationRouteVisualBody: 'Definieren, Kontext liefern, anfragen, prüfen und dann reparieren, übertragen oder stoppen.',
+  foundationRecoveryVisualAlt: 'Lehrtafel zur Evidenz-Wiederherstellungsleiter',
+  foundationRecoveryVisualTitle: 'Evidenz-Wiederherstellungsleiter',
+  foundationRecoveryVisualBody: 'Passe die Stärke der Aussage an die nächste kleinste Prüfung an.',
+  foundationSourceVisualAlt: 'Lehrtafel zur Quellenprüfung vor dem Vertrauen',
+  foundationSourceVisualTitle: 'Quelle prüfen, bevor du vertraust',
+  foundationSourceVisualBody: 'Gleiche Aussage, Quelle, Umfang und Aktualität ab, bevor du dich darauf verlässt.',
+});
+
 // Traditional Chinese keeps the same complete interface contract as the
 // Simplified Chinese route, then replaces the reader-facing terms that differ
 // in Traditional Chinese. This is deliberately built at the end of the copy
@@ -5449,14 +5531,23 @@ Object.assign(copy['zh-tw'], {
   visualLoopLink: '從理解到遷移',
   visualLoopBody: '理解、嘗試、檢查、修正、變化，並在未見過的任務上重複。',
   visualLoopAlt: '從理解到遷移的學習閉環教學圖板',
-  foundationVisualsTitle: '值得直接看的兩條邊界。',
-  foundationVisualsIntro: '把這兩張原創圖當作速查表。它們回答初學者的兩個問題：怎樣讓提示詞可以檢查，以及什麼證據能證明行動真的發生。',
+  foundationVisualsTitle: '五張基礎圖，串起一個閉環。',
+  foundationVisualsIntro: '先看路線圖，再把另外四張圖當作速查表：提示詞契約、行動證據、證據不足時的恢復，以及相信來源前要做的檢查。',
+  foundationRouteVisualAlt: '最小安全 LLM 閉環教學圖',
+  foundationRouteVisualTitle: '最小安全 LLM 閉環',
+  foundationRouteVisualBody: '定義、提供脈絡、提出請求、檢查，然後修正、遷移或停止。',
   foundationPromptVisualAlt: '六欄位提示詞契約教學圖',
   foundationPromptVisualTitle: '提示詞契約：六個欄位',
   foundationPromptVisualBody: '結果、起始脈絡、允許的協助、限制、回答與檢查、停止條件。',
   foundationActionVisualAlt: '可觀察行動邊界教學圖',
   foundationActionVisualTitle: '可觀察的行動邊界',
   foundationActionVisualBody: '提議、授權、執行與人工讀回。',
+  foundationRecoveryVisualAlt: '證據恢復階梯教學圖',
+  foundationRecoveryVisualTitle: '證據恢復階梯',
+  foundationRecoveryVisualBody: '讓聲明的強度對應下一個最小檢查。',
+  foundationSourceVisualAlt: '相信前先檢查來源教學圖',
+  foundationSourceVisualTitle: '相信前先檢查來源',
+  foundationSourceVisualBody: '依賴資訊前，對照聲明、來源、範圍與時效性。',
   foundationVisualsBoundary: '專案原創英文圖表 · 周圍說明和替代文字保持在地化。',
 });
 

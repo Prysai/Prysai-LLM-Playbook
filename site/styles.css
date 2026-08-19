@@ -833,6 +833,7 @@ a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: bl
 .foundation-visuals-head .index-panel-intro { margin: 0; max-width: 42rem; }
 .foundation-visual-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line-dark); }
 .foundation-visual-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(10rem, .85fr) auto; gap: 1rem; align-items: center; min-width: 0; padding: 1rem; background: #fff; }
+.foundation-visual-card-wide { grid-column: 1 / -1; grid-template-columns: minmax(10rem, .42fr) minmax(0, 1.58fr) auto; }
 .foundation-visual-card:hover, .foundation-visual-card:focus-visible { background: #fffafb; }
 .foundation-visual-card img { display: block; width: 100%; aspect-ratio: 9 / 14; object-fit: contain; border: 1px solid var(--line); background: #f6f6f2; }
 .foundation-visual-card span { display: grid; gap: .45rem; min-width: 0; }
@@ -873,7 +874,7 @@ a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: bl
   .foundation-concept-card { min-height: auto; padding: .9rem; }
   .foundation-concept-index { margin-bottom: .55rem; }
   .foundation-visual-links { grid-template-columns: 1fr; }
-  .foundation-visual-card { grid-template-columns: minmax(0, 7rem) minmax(0, 1fr) auto; gap: .75rem; padding: .75rem; }
+  .foundation-visual-card, .foundation-visual-card-wide { grid-column: auto; grid-template-columns: minmax(0, 7rem) minmax(0, 1fr) auto; gap: .75rem; padding: .75rem; }
 }
 
 @media (max-width: 760px) {
