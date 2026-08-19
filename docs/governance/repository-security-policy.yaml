@@ -84,7 +84,7 @@
   "host_ruleset": {
     "status": "active",
     "observed_at": "2026-08-18",
-    "observation_phase": "pre-final-mutation",
+    "observation_phase": "post-final-mutation",
     "repository": "Prysai/Prysai-LLM-Playbook",
     "ruleset_id": 20903386,
     "name": "Prysai llm playbook",
@@ -100,10 +100,17 @@
       "code quality errors",
       "one approving review, stale-review dismissal, and resolved review threads"
     ],
-    "bypass_list": [
-      "Pre-final-mutation observation: RepositoryRole actor id 5 with bypass_mode always"
-    ],
-    "evidence_limit": "This is the pre-final-mutation observation recorded before all repository files in the audit were pushed. The final host-side mutation removes this actor; verify the live Ruleset API after that mutation. This repository policy does not treat a passing workflow as proof that every write used a pull request."
+    "bypass_list": [],
+    "evidence_limit": "Live GitHub API verification on 2026-08-18 observed an empty bypass-actor list after the final host-side mutation. This repository policy still does not treat a passing workflow as proof that every future write used a pull request; recheck the host before each release."
+  },
+  "host_deployment_environment": {
+    "name": "docs-prysai-production",
+    "observed_at": "2026-08-18",
+    "required_reviewers": ["uuzzrm"],
+    "can_admins_bypass": false,
+    "deployment_branch_policy": "custom",
+    "allowed_branches": ["main"],
+    "evidence_limit": "Live GitHub API verification on 2026-08-18 observed a required uuzzrm reviewer, can_admins_bypass=false, and a custom branch policy whose only allowed branch is main. This is host-side evidence and may drift independently of repository files."
   },
   "host_security_controls": {
     "observed_at": "2026-08-18",

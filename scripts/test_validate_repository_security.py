@@ -16,6 +16,11 @@ def require(condition: bool, message: str) -> None:
 def main() -> int:
     fixtures = 0
     try:
+        current_policy, policy_load_errors = policy.load_policy()
+        require(not policy_load_errors and current_policy is not None, "repository security policy could not be loaded")
+        require(not policy.validate_policy(current_policy), "repository security policy failed its live-boundary contract")
+        fixtures += 1
+
         valid_workflow = """on:
   pull_request:
 permissions:
@@ -34,6 +39,16 @@ jobs:
         require(
             any("full commit SHA" in error for error in policy.validate_workflow_text(floating_action, "floating.yml")),
             "floating Action tag was accepted",
+        )
+        fixtures += 1
+
+        legacy_node20_action = valid_workflow.replace(
+            "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b",
+        )
+        require(
+            any("legacy Node.js 20 Action pin" in error for error in policy.validate_workflow_text(legacy_node20_action, "legacy-node20.yml")),
+            "legacy Node.js 20 Action pin was accepted",
         )
         fixtures += 1
 
@@ -120,7 +135,7 @@ jobs:
     permissions:
       actions: read
     steps:
-      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
         with:
           name: pages-candidate-${{ github.sha }}
           path: _site
@@ -205,7 +220,7 @@ permissions:
         fixtures += 1
 
         source_in_secret_job = secure_docs_deploy.replace(
-            "      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093",
+            "      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c",
             "      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
         )
         require(

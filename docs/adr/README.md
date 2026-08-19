@@ -62,3 +62,4 @@ Current entry points:
 - [ADR-0044: bind live host security controls and publishing boundaries](0044-live-host-security-controls-and-publishing-boundaries.md)
 - [ADR-0045: deploy only the validated Pages artifact](0045-deploy-only-validated-pages-artifact.md)
 - [ADR-0046: constrain Reader source loading and maintain CodeQL v4](0046-reader-source-boundary-and-codeql-v4.md)
+- [ADR-0047: record the post-mutation host boundary receipt](0047-post-mutation-host-boundary-receipt.md)

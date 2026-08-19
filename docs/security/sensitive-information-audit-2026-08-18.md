@@ -32,6 +32,27 @@ The
 and a `main` deployment-branch policy. This supersedes the earlier SIA-10
 observation for the current deployment, but does not certify the external host.
 
+### Current security follow-up — 2026-08-18
+
+This follow-up is based on the verified remote security baseline
+`6eada6d974993805f75529f45e27f227310899aa` and is prepared as a separate
+protected-branch change. The Pages workflow now uses Node.js 24-based
+`configure-pages@v6.0.0`, `setup-uv@v10.0.1`, `upload-artifact@v7.0.1`, and
+`download-artifact@v8.0.1`, each pinned to the corresponding full commit SHA.
+The local security gate now rejects the known legacy Node.js 20 Action pins and
+the focused regression suite contains 44 fixtures.
+
+Local verification for this follow-up passed repository security, all 44
+security fixtures, project structure, content completeness, the canonical
+English learning contract, and `git diff --check`. The external source archive
+audit remains `not_configured` because no authorized archive directory was
+provided; it is intentionally not represented as a pass. The live GitHub API
+was rechecked without reading secret values: Ruleset `20903386` is active with
+an empty bypass list; `docs-prysai-production` requires reviewer `uuzzrm` and
+the `main` deployment branch; GitHub non-provider pattern scanning remains
+disabled. The candidate has not been merged or published yet; its PR checks and
+post-merge Pages/Docs deployment must be verified separately.
+
 The current-tree scan is clean. A replay of the repository detector over the
 reachable object database found one provider-shaped match in an older negative
 test fixture (`6173a14`); local inspection confirmed that it was synthetic test
@@ -246,13 +267,13 @@ each release because environment settings are not versioned in this repository.
 
 | Surface | Result | Evidence boundary |
 | --- | --- | --- |
-| Current candidate files | Pass; 1,097 candidate files, 7 workflows | Static patterns and policy checks only; the largest text artifact is approximately 5.2 MiB |
-| Focused security fixtures | Pass; 42 fixtures | Detector behavior, including CodeQL PR permission boundaries, synthetic false-positive boundaries, large-file coverage, and secret-bearing deployment artifact boundaries |
+| Current candidate files | Pass; 1,098 candidate files, 7 workflows for the follow-up candidate | Static patterns and policy checks only; the largest text artifact is approximately 5.2 MiB |
+| Focused security fixtures | Pass; 44 fixtures for the follow-up candidate | Detector behavior, including CodeQL PR permission boundaries, synthetic false-positive boundaries, large-file coverage, legacy Node.js 20 Action pin rejection, host-boundary policy enforcement, and secret-bearing deployment artifact boundaries |
 | All refs and reachable history | At the code verification snapshot: 20 refs; 888 reachable commits and 5,238 reachable blobs; current candidate files had 0 high-confidence credential, private-key, device, MAC, private-network, or authentication-URL matches; 1 older provider-shaped historical fixture is classified synthetic; historical path residue remains | Full pattern replay is bound to the code verification snapshot; later commits are documentation-only evidence reconciliations and the current-tree policy gate was rerun |
 | Unreachable Git objects | 142 blobs across 15 unreachable commits; the current detector found old machine-local path residue but 0 provider-shaped credential/private-key hits | Classified historical data; local object reachability/retention can change |
 | Git stash/reflog | No stash entries; reflog showed normal repository refs | Does not inspect remote provider backups or account logs |
 | Workflow permissions and action refs | Pass; all checkout steps disable persisted credentials, all third-party refs use full SHAs, the candidate artifact preserves hidden `.nojekyll`, and Docs deploy consumes the validated build artifact without checkout/build execution | Does not prove every hosted runner or future workflow remains safe |
-| Host-side security controls | Secret Scanning, Push Protection, Dependabot security updates, and Actions SHA pinning enabled; non-provider patterns disabled; Docs environment requires reviewer `uuzzrm` and branch policy `main` | Repository-level API settings only; the Ruleset bypass actor is the pre-final-mutation observation and non-provider patterns remain disabled |
+| Host-side security controls | Secret Scanning, Push Protection, Dependabot security updates, and Actions SHA pinning enabled; non-provider patterns disabled; Ruleset bypass list empty; Docs environment requires reviewer `uuzzrm` and branch policy `main` | Repository-level API settings only; non-provider patterns remain disabled |
 | Dependencies | Pass; `npm audit` reported 0 vulnerabilities and top-level dependency listing contains Playwright only | Local npm advisory snapshot; does not replace ongoing update review |
 | Native frontend and binary assets | Pass; no dangerous string execution/HTML sink found; 10 tracked PNG assets, no archives/databases/private-key files, no PNG text metadata findings | Static review and filename/byte checks; no image steganography or independent provider scanner |
 | Published surfaces | GitHub Pages and Docs returned 200; workflow `32196731775` completed build, Pages, Hugging Face, and Docs publication for the evidence-record snapshot; Pages deployment `5973053344` and Docs deployment `5973053336` succeeded; body scans found no sensitive rule IDs | Response-header hardening differs by host; live content and headers can change |

@@ -11,12 +11,13 @@ avoidable contribution and automation risk; they do not certify the project,
 GitHub account, hosting configuration, dependencies, or a future deployment as
 secure.
 
-As observed on 2026-08-18, GitHub Secret Scanning and push protection are
-enabled for this public repository, Actions SHA pinning is required, and an
-active repository Ruleset exists. GitHub non-provider pattern scanning remains
-disabled, so the repository-local detector is still required. The active
-Ruleset includes an always-bypass repository-role actor; these controls do not
-turn a passing workflow into a security certification.
+As rechecked on 2026-08-18, GitHub Secret Scanning and push protection are
+enabled for this public repository, Actions SHA pinning is required, and the
+active repository Ruleset has an empty bypass-actor list. GitHub non-provider
+pattern scanning remains disabled, so the repository-local detector is still
+required. The `docs-prysai-production` environment requires reviewer `uuzzrm`
+and permits only the `main` deployment branch. These controls do not turn a
+passing workflow into a security certification.
 
 ## Report a vulnerability privately
 
@@ -78,10 +79,10 @@ headers, or deployment configuration review.
 The live GitHub API reported an active repository Ruleset on 2026-08-18. It
 blocks deletion and non-fast-forward updates, requires signed commits, requires
 one approving review with resolved threads, and carries CodeQL/code-quality
-rules. Its current repository-role bypass actor can always bypass the Ruleset,
-so passing CI is still not proof that every write used a pull request. The
-repository policy records the observed Ruleset, bypass, Secret Scanning,
-Push Protection, and Actions SHA-pinning boundaries.
+rules. Its live bypass-actor list is empty, so ordinary repository writes must
+follow the protected review path. The repository policy records the observed
+Ruleset, Secret Scanning, Push Protection, environment, and Actions
+SHA-pinning boundaries.
 
 ## Sources and review
 
