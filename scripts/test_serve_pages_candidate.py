@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import functools
 import http.client
+import socket
 import sys
 import threading
 from pathlib import Path
@@ -28,6 +29,13 @@ def fetch(port: int, path: str) -> tuple[int, str]:
     return response.status, body
 
 
+def free_loopback_port() -> int:
+    """Reserve a currently unused loopback port for the CLI smoke test."""
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as probe:
+        probe.bind(("127.0.0.1", 0))
+        return int(probe.getsockname()[1])
+
+
 def main() -> int:
     # Verify the CLI server opts into daemon workers, so a slow local client
     # cannot keep the preview process alive after the user stops it.
@@ -45,9 +53,10 @@ def main() -> int:
         original_server = serve_pages_candidate.http.server.ThreadingHTTPServer
         original_output = serve_pages_candidate.DEFAULT_OUTPUT
         original_args = sys.argv
+        cli_port = free_loopback_port()
         serve_pages_candidate.http.server.ThreadingHTTPServer = InspectingServer
         serve_pages_candidate.DEFAULT_OUTPUT = artifact
-        sys.argv = ["serve_pages_candidate.py", "--skip-build", "--port", "4174"]
+        sys.argv = ["serve_pages_candidate.py", "--skip-build", "--port", str(cli_port)]
         try:
             if serve_main() != 0:
                 raise AssertionError("preview CLI did not exit cleanly after shutdown")

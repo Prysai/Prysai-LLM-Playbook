@@ -247,8 +247,11 @@ a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: bl
 .protocol-layout .section-intro { max-width: 560px; margin-top: 1.5rem; }
 .protocol-note { padding-top: 3rem; border-top: 8px solid var(--red); }
 .protocol-note > p { max-width: 580px; margin: 0; font-size: clamp(1.2rem, 2vw, 1.8rem); letter-spacing: -.04em; line-height: 1.35; }
-.protocol-rule { display: flex; align-items: center; gap: .7rem; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--red); font-size: .75rem; font-weight: 700; }
-.protocol-rule b { color: var(--ink); }
+.protocol-rule { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin: 3rem 0 0; padding: 0; border-top: 1px solid var(--line); list-style: none; background: var(--line); }
+.protocol-rule li { display: grid; grid-template-columns: 1.7rem minmax(0, 1fr); gap: .7rem; min-height: 8.5rem; padding: 1rem; background: var(--paper); }
+.protocol-rule-index { color: var(--red); font: 700 .68rem/1.3 Consolas, 'Courier New', monospace; }
+.protocol-rule strong { display: block; color: var(--ink); font-size: .92rem; letter-spacing: -.025em; }
+.protocol-rule p { margin: .7rem 0 0; color: var(--muted); font-size: .72rem; line-height: 1.45; }
 
 .path-layout { display: grid; grid-template-columns: minmax(250px, 390px) 1fr; border-top: 1px solid var(--line); }
 .level-list { border-right: 1px solid var(--line); }
@@ -504,7 +507,8 @@ a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: bl
   .status-card { min-height: 145px; }
   .panel-topline, .path-card-heading { align-items: flex-start; flex-direction: column; }
   .panel-next { grid-template-columns: 1fr; }
-  .protocol-rule { flex-wrap: wrap; }
+  .protocol-rule { grid-template-columns: 1fr; margin-top: 1.2rem; }
+  .protocol-rule li { min-height: 0; }
   .trouble-row { grid-template-columns: 32px 1fr; }
   .trouble-row a { grid-column: 2; }
 }
@@ -594,7 +598,8 @@ a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: bl
   #protocol { padding: 2.8rem 0; }
   #protocol h2 { font-size: 2rem; }
   #protocol .section-intro, #protocol .protocol-note > p { display: none; }
-  #protocol .protocol-rule { margin-top: 1rem; padding: .8rem; }
+  #protocol .protocol-rule { margin-top: 1rem; }
+  #protocol .protocol-rule p { margin-top: .45rem; }
   #path .section-heading { margin-bottom: 1.4rem; }
   #path .section-intro, .path-contract-grid, .path-evidence, .path-boundary-grid { display: none; }
   .level-panel { min-height: 0; padding: 1rem; }

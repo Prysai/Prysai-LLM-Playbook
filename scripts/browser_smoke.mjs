@@ -436,6 +436,20 @@ try {
       `${locale} foundation concept map is not fully localized`,
     );
     assert.equal(await page.locator('#foundation-lens .foundation-map-layer').count(), 5, `${locale} foundation concept map lost a layer`);
+    assert.equal(await page.locator('#protocol .protocol-rule li').count(), 4, `${locale} protocol boundary chart lost a step`);
+    assert.equal(
+      await page.locator('#protocol .protocol-rule').getAttribute('aria-label'),
+      {
+        en: 'Four questions for a bounded task',
+        zh: '有边界任务的四个问题',
+        es: 'Cuatro preguntas para una tarea acotada',
+        ja: '境界付きタスクの4つの問い',
+        ko: '범위가 정해진 작업을 위한 네 가지 질문',
+        de: 'Vier Fragen für eine begrenzte Aufgabe',
+        'zh-tw': '有邊界任務的四個問題',
+      }[locale],
+      `${locale} protocol boundary chart is not localized`,
+    );
     if (locale === 'zh-tw') {
       const visibleText = await page.locator('body').innerText();
       assert.doesNotMatch(visibleText, /跳到主要内容|基础系统|搜索|学习路径/, 'Traditional Chinese home page exposes high-confidence Simplified Chinese UI text');
@@ -447,6 +461,8 @@ try {
   assert.equal(await page.locator('#first-30').evaluate((section) => section.previousElementSibling?.id), 'start', 'optional first practice is not placed after the useful result');
   assert.equal(await page.locator('#foundation-lens').evaluate((section) => section.previousElementSibling?.id), 'first-30', 'foundation lens is not placed after the optional first practice');
   assert.equal(await page.locator('#project-map').evaluate((section) => section.previousElementSibling?.id), 'foundation-lens', 'project catalogue is not placed after the foundation map');
+  assert.equal(await page.locator('#protocol').evaluate((section) => section.previousElementSibling?.id), 'project-map', 'protocol frame is not placed after the project catalogue');
+  assert.deepEqual(await page.locator('#protocol .protocol-rule strong').allTextContents(), ['Define', 'Act', 'Verify', 'Hand off'], 'protocol boundary chart is not in action order');
   await page.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
   await page.waitForFunction(() => document.querySelector('[data-current-language]')?.textContent?.trim() === 'EN');
   const skillsSection = page.locator('#skills');
