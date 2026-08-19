@@ -304,6 +304,32 @@ def _is_reader_link(href: str) -> bool:
     return path == "reader.html"
 
 
+def _is_reader_source_bypass(href: str) -> bool:
+    """Return whether a homepage link opens a reader-owned Markdown source directly."""
+
+    parsed = urlsplit(href)
+    if parsed.scheme or parsed.netloc:
+        return False
+    path = parsed.path.replace("\\", "/")
+    while path.startswith("./"):
+        path = path[2:]
+    return path.startswith(("../book/", "../skills/")) and path.endswith(".md")
+
+
+def _is_registered_markdown_bypass(href: str, manifest_paths: set[str] | None) -> bool:
+    """Return whether a registered Markdown source is linked without the Reader."""
+
+    if not manifest_paths:
+        return False
+    parsed = urlsplit(href)
+    if parsed.scheme or parsed.netloc:
+        return False
+    path = parsed.path.replace("\\", "/")
+    if not path.startswith("../") or not path.endswith(".md"):
+        return False
+    return _normalize_reader_path(path) in manifest_paths
+
+
 def _load_manifest_paths() -> set[str]:
     """Read the exact Markdown allow-list consumed by the public Reader."""
 
@@ -348,6 +374,11 @@ def _validate(
     source_cache: dict[Path, set[str]] = {}
     checked = 0
     for line_number, href in parser.links:
+        if _is_reader_source_bypass(href) or _is_registered_markdown_bypass(href, manifest_paths):
+            errors.append(
+                f"{homepage_label}:{line_number}: homepage Markdown entry bypasses the Reader: {href}"
+            )
+            continue
         if not _is_reader_link(href):
             continue
         parsed = urlsplit(href)

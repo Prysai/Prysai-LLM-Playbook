@@ -13,6 +13,7 @@ import re
 import sys
 from pathlib import Path
 from typing import Any
+from urllib.parse import quote
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -243,7 +244,16 @@ def check_reader_entries(errors: list[str]) -> None:
             continue
         text = path.read_text(encoding="utf-8")
         for expected in expected_paths:
-            if expected not in text:
+            if expected in text:
+                continue
+            # Public showcase links may intentionally enter through the
+            # Reader instead of exposing a raw Markdown source. Keep the
+            # canonical path assertion while accepting that stable route.
+            reader_path = expected[3:] if expected.startswith("../") else expected
+            reader_entry = (
+                f"reader.html?path={quote(reader_path, safe='')}&amp;lang=en"
+            )
+            if reader_entry not in text:
                 errors.append(f"{relative_path}: missing canonical entry {expected}")
 
 

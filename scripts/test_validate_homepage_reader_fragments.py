@@ -34,6 +34,29 @@ def main() -> int:
 
     with tempfile.TemporaryDirectory(dir=ROOT / ".work") as temporary:
         directory = Path(temporary)
+        homepage = homepage_with("../book/chapters/01-gpt-and-codex-EN.md", directory)
+        errors = validator.validate_homepage_fragments(homepage)
+        require(
+            len(errors) == 1 and "bypasses the Reader" in errors[0],
+            "a direct homepage Markdown entry was accepted",
+        )
+
+        homepage = homepage_with(
+            "../docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
+            directory,
+        )
+        errors, checked = validator._validate(
+            homepage,
+            ROOT,
+            manifest_paths={"docs/research/universal-first-turn-prompt-contract-2026-08-13.md"},
+        )
+        require(
+            checked == 0 and len(errors) == 1 and "bypasses the Reader" in errors[0],
+            "a registered research Markdown entry was accepted without the Reader",
+        )
+
+    with tempfile.TemporaryDirectory(dir=ROOT / ".work") as temporary:
+        directory = Path(temporary)
         source = directory / "anchors.md"
         source.write_text(
             "# Anchor fixture\n\n<span id=\"known-anchor\"></span>\n",
@@ -143,7 +166,7 @@ def main() -> int:
             "a Reader source outside the generated allow-list was accepted",
         )
 
-    print("HOMEPAGE_READER_FRAGMENT_TESTS_OK fixtures=11")
+    print("HOMEPAGE_READER_FRAGMENT_TESTS_OK fixtures=12")
     return 0
 
 

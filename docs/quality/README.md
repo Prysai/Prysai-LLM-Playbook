@@ -32,6 +32,7 @@ the project can honestly claim.
 - [Reader teaching-card placement review](review-reader-teaching-card-placement-2026-08-13.md)
 - [Current teaching-board visual audit addendum](visual-asset-audit-addendum-2026-08-14.md)
 - [Foundation route visual check](foundation-route-visual-check-2026-08-19.md) — local desktop and mobile checks for the new five-step teaching map and supporting cards; visual evidence does not establish learner outcomes or release readiness
+- [Homepage Reader entry integrity](homepage-reader-entry-integrity-2026-08-19.md) — registered Markdown links enter through the Reader while governance and unindexed source files remain explicit source routes
 - [Lab 008 deterministic reference review](lab-008-reference-run-review-2026-08-13.md)
 - [Universal Seam Fixture](../../examples/universal-seam-v1/README.md)
 - [Project map](../project-map-EN.md)
