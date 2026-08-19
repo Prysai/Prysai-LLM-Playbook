@@ -24,11 +24,22 @@ four supporting check boards, and a complete five-unit route preview to
 - At 390px, repeated route descriptions are hidden while the numbered labels
   and boundary remain visible; this keeps the primary action and route map
   scannable without horizontal overflow.
+- The Reader's local core tracker now adds one compact `Next step` card below
+  the five-unit status list. Before an attempt it opens the current unit and
+  names that unit's declared artifact; after saving an attempt it points to
+  the next unit and names the next artifact. The card is informational only:
+  it does not change the local receipt schema or turn an attempt into a course
+  completion claim.
+- The next-step card was checked in English, Simplified Chinese, Traditional
+  Chinese, Spanish, Japanese, Korean, and German. It remains visible at the
+  phone width without horizontal overflow and keeps its link inside the
+  selected locale.
 
 ## Evidence
 
 - `npm run test:browser` passed with `desktop=1280 mobile=390` and checked the
-  five-unit route preview in all seven interface locales.
+  five-unit route preview, local next-step transitions, and all seven
+  interface locales.
 - `python scripts/validate_teaching_assets.py` passed with `assets=25`.
 - Temporary screenshots and the local HTTP server used for inspection are not
   repository assets; they were removed after review.
@@ -36,6 +47,6 @@ four supporting check boards, and a complete five-unit route preview to
 ## Boundary
 
 This is a local rendering and link-integrity check. It does not prove that a
-reader understands the diagrams, that a model or tool ran, that a source is
-correct, or that the course is production-ready. The new board is recorded as
-asset `S133` in `docs/sources/asset-register.md`.
+reader understands the diagrams or next-step copy, that a model or tool ran,
+that a source is correct, or that the course is production-ready. The new
+board is recorded as asset `S133` in `docs/sources/asset-register.md`.

@@ -1432,6 +1432,11 @@ try {
   const coreReceiptCard = coreReceiptPage.locator('[data-reader-core-card]');
   await coreReceiptCard.waitFor({ state: 'visible' });
   assert.match(await coreReceiptPage.locator('[data-reader-core-current-title]').innerText(), /start with one safe attempt/i, 'core receipt panel does not identify the current unit');
+  const coreNextCard = coreReceiptPage.locator('[data-reader-core-next]');
+  await coreNextCard.waitFor({ state: 'visible' });
+  assert.match(await coreNextCard.locator('[data-reader-core-next-title]').innerText(), /start with one safe attempt/i, 'core next-step card does not identify the current unit before an attempt');
+  assert.match(await coreNextCard.locator('[data-reader-core-next-body]').innerText(), /read this unit.*keep:/i, 'core next-step card does not name the first retained artifact');
+  assert.match(await coreNextCard.locator('[data-reader-core-next-link]').getAttribute('href'), /llm-foundation-core-v1-EN\.md&lang=en$/, 'core next-step card does not open the current unit before an attempt');
   assert.doesNotMatch(await coreReceiptPage.locator('[data-reader-article]').innerText(), /<span id="unit-/i, 'Reader leaked an inline anchor tag into core route prose');
   assert.equal(await coreReceiptPage.locator('[data-reader-article] .reader-anchor#unit-1-llm-boundaries').count(), 1, 'Reader dropped the core route unit anchor while hiding its source markup');
   await coreReceiptPage.evaluate(() => localStorage.removeItem('prysai-llm-foundation-core-receipt-v1'));
@@ -1449,6 +1454,9 @@ try {
   const savedCoreState = await coreReceiptPage.evaluate(() => JSON.parse(localStorage.getItem('prysai-llm-foundation-core-receipt-v1')));
   assert.equal(savedCoreState.version, 1, 'local receipt has no schema version');
   assert.equal(savedCoreState.units['core-first-success'].attempted, true, 'local receipt did not save the opt-in attempt');
+  assert.match(await coreNextCard.locator('[data-reader-core-next-title]').innerText(), /context, instruction, and a first generation/i, 'core next-step card does not advance after saving an attempt');
+  assert.match(await coreNextCard.locator('[data-reader-core-next-body]').innerText(), /continue to the next unit.*keep:/i, 'core next-step card does not name the next retained artifact');
+  assert.match(await coreNextCard.locator('[data-reader-core-next-link]').getAttribute('href'), /llm-core-first-generation-EN\.md&lang=en$/, 'core next-step card points to the wrong next unit');
   await coreReceiptPage.getByRole('button', { name: /copy receipt/i }).click();
   const copiedReceipt = await coreReceiptPage.evaluate(() => navigator.clipboard.readText());
   assert.match(copiedReceipt, /candidate \/ not_run/, 'copied receipt does not expose candidate / not_run status');
@@ -1462,6 +1470,13 @@ try {
   await coreReceiptCard.waitFor({ state: 'visible' });
   assert.equal(await coreReceiptPage.locator('[data-reader-core-attempted]').isChecked(), true, 'local receipt did not restore after refresh');
   assert.match(await coreReceiptPage.locator('[data-reader-core-progress]').innerText(), /1 of 5 units/i, 'core progress does not reflect the saved attempt');
+  const localizedNextMarkers = { zh: '下一步', es: 'Siguiente paso', ja: '次のステップ', ko: '다음 단계', de: 'Nächster Schritt', 'zh-tw': '下一步' };
+  for (const { locale, page: localePage } of localizedCorePages) {
+    await localePage.goto(`${origin}/site/reader.html?path=book%2Froutes%2Fllm-foundation-core-v1-EN.md&lang=${locale}`, { waitUntil: 'networkidle' });
+    await localePage.locator('[data-reader-core-card]').waitFor({ state: 'visible' });
+    assert.equal(await localePage.locator('[data-reader-core-next]').isVisible(), true, `localized core next-step card is hidden: ${locale}`);
+    assert.equal((await localePage.locator('[data-reader-core-next] .reader-aside-label').innerText()).trim().toLocaleLowerCase(), localizedNextMarkers[locale].toLocaleLowerCase(), `localized core next-step label leaked: ${locale}`);
+  }
   await coreReceiptPage.getByRole('button', { name: /clear local receipt/i }).click();
   assert.equal(await coreReceiptPage.evaluate(() => localStorage.getItem('prysai-llm-foundation-core-receipt-v1')), null, 'clear did not remove the local receipt');
   assert.equal(await coreReceiptPage.locator('[data-reader-core-attempted]').isChecked(), false, 'clear did not reset the current unit form');
