@@ -373,6 +373,15 @@ try {
     de: 'Verstehe LLMs, bevor du sie arbeiten lässt.',
     'zh-tw': '先理解 LLM，再讓它開始工作。',
   };
+  const localizedVisualCardTitles = {
+    en: ['Request to evidence', 'Beginner practice loop', 'Project evidence snapshot', 'From understanding to transfer'],
+    zh: ['从请求到证据', '入门实践循环', '项目证据快照', '从理解到迁移'],
+    es: ['De la solicitud a la evidencia', 'Bucle de práctica para principiantes', 'Panorama de evidencia del proyecto', 'De la comprensión a la transferencia'],
+    ja: ['リクエストからエビデンスへ', '初心者練習ループ', 'プロジェクトのエビデンススナップショット', '理解から転移へ'],
+    ko: ['요청에서 증거까지', '초보 연습 루프', '프로젝트 증거 스냅샷', '이해에서 전이까지'],
+    de: ['Von der Anfrage zum Beleg', 'Anfänger-Übungsschleife', 'Evidenz-Schnappschuss des Projekts', 'Vom Verstehen zum Transfer'],
+    'zh-tw': ['從請求到證據', '入門實踐循環', '專案證據快照', '從理解到遷移'],
+  };
   for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de', 'zh-tw']) {
     await page.goto(`${origin}/site/?lang=${locale}`, { waitUntil: 'networkidle' });
     await page.locator('[data-current-language]').waitFor();
@@ -402,6 +411,16 @@ try {
       false,
       `${locale} language menu still claims an ordinary English UI fallback`,
     );
+    const visualCards = page.locator('#visual-cases .visual-case-card');
+    assert.equal(await visualCards.count(), 4, `${locale} project index does not expose all four teaching boards`);
+    assert.deepEqual(
+      await visualCards.locator('strong').allTextContents(),
+      localizedVisualCardTitles[locale],
+      `${locale} project index teaching-board titles are not fully localized`,
+    );
+    const visualHrefs = await visualCards.evaluateAll((cards) => cards.map((card) => card.getAttribute('href')));
+    assert.ok(visualHrefs.some((href) => /project-evidence-snapshot-red-black\.svg$/.test(href || '')), `${locale} project index lost the evidence snapshot board`);
+    assert.ok(visualHrefs.some((href) => /understanding-to-transfer-red-black\.svg$/.test(href || '')), `${locale} project index lost the transfer board`);
     if (locale === 'zh-tw') {
       const visibleText = await page.locator('body').innerText();
       assert.doesNotMatch(visibleText, /跳到主要内容|基础系统|搜索|学习路径/, 'Traditional Chinese home page exposes high-confidence Simplified Chinese UI text');
