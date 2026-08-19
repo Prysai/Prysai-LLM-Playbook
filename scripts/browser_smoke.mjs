@@ -391,6 +391,15 @@ try {
     de: ['Erzeugen', 'Rahmen', 'Erweitern', 'Koordinieren', 'Prüfen'],
     'zh-tw': ['生成', '定義', '擴展', '協作', '檢查'],
   };
+  const localizedMobileIndexDetails = {
+    en: 'Open the detailed map',
+    zh: '打开详细地图',
+    es: 'Abrir el mapa detallado',
+    ja: '詳細な地図を開く',
+    ko: '상세 지도 열기',
+    de: 'Detaillierte Karte öffnen',
+    'zh-tw': '開啟詳細地圖',
+  };
   for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de', 'zh-tw']) {
     await page.goto(`${origin}/site/?lang=${locale}`, { waitUntil: 'networkidle' });
     await page.locator('[data-current-language]').waitFor();
@@ -436,6 +445,11 @@ try {
       `${locale} foundation concept map is not fully localized`,
     );
     assert.equal(await page.locator('#foundation-lens .foundation-map-layer').count(), 5, `${locale} foundation concept map lost a layer`);
+    assert.equal(
+      await page.locator('.mobile-project-details > summary').innerText(),
+      localizedMobileIndexDetails[locale],
+      `${locale} mobile project map disclosure is not localized`,
+    );
     assert.equal(await page.locator('#protocol .protocol-rule li').count(), 4, `${locale} protocol boundary chart lost a step`);
     assert.equal(
       await page.locator('#protocol .protocol-rule').getAttribute('aria-label'),
@@ -456,6 +470,34 @@ try {
       assert.match(visibleText, /跳到主要內容|基礎系統|搜尋|學習路徑/, 'Traditional Chinese home page does not expose its localized UI vocabulary');
     }
   }
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(`${origin}/site/?lang=zh`, { waitUntil: 'networkidle' });
+  const mobileProjectDetails = page.locator('.mobile-project-details');
+  assert.equal(await mobileProjectDetails.isVisible(), true, 'mobile project map disclosure is not visible');
+  assert.equal(await mobileProjectDetails.locator('nav').getAttribute('aria-label'), '详细项目地图', 'mobile project map disclosure aria label is not localized');
+  assert.match(
+    await mobileProjectDetails.locator('a[data-content-id="project-readme"]').getAttribute('href'),
+    /reader\.html\?path=README-ZH\.md&lang=zh$/,
+    'mobile project map canonical reading link does not stay on the selected Chinese route',
+  );
+  assert.match(
+    await page.locator('.mobile-index-rail a[data-content-id="book-table-of-contents"]').getAttribute('href'),
+    /reader\.html\?path=book%2Ftable-of-contents-ZH\.md&lang=zh$/,
+    'mobile chapter index does not stay on the selected Chinese route',
+  );
+  assert.match(
+    await page.locator('.mobile-index-rail a[data-content-id="book-labs-readme"]').getAttribute('href'),
+    /reader\.html\?path=book%2Flabs%2FREADME-ZH\.md&lang=zh$/,
+    'mobile lab index does not stay on the selected Chinese route',
+  );
+  assert.match(
+    await page.locator('.mobile-index-rail a[data-content-id="field-problems-index-2026-08-10"]').getAttribute('href'),
+    /reader\.html\?path=docs%2Fresearch%2Ffield-problems-index-2026-08-10\.md&lang=zh$/,
+    'mobile field-case index does not retain the selected Chinese locale',
+  );
+  await mobileProjectDetails.locator('summary').click();
+  assert.equal(await mobileProjectDetails.locator('a').count(), 3, 'mobile project map disclosure lost a source route');
+  await page.setViewportSize({ width: 1280, height: 900 });
   await page.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
   assert.equal(await page.locator('#start').evaluate((section) => section.previousElementSibling?.id), 'top', 'the useful result is not immediately after the hero');
   assert.equal(await page.locator('#first-30').evaluate((section) => section.previousElementSibling?.id), 'start', 'optional first practice is not placed after the useful result');

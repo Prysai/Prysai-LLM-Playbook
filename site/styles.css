@@ -554,6 +554,7 @@ a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: bl
 }
 
 .mobile-index-rail { display: none; }
+.mobile-project-details { display: none; }
 .mobile-core-routes, .mobile-section-link { display: none; }
 .mobile-contract-details > summary { display: none; }
 
@@ -651,6 +652,18 @@ a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: bl
   .mobile-index-rail a:nth-last-child(-n + 2) { border-bottom: 0; }
   .mobile-index-rail strong { color: var(--red); font-size: 1.15rem; }
   .mobile-index-rail span { font-size: .72rem; font-weight: 700; }
+  .mobile-project-details { display: block; margin-top: 1rem; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+  .mobile-project-details > summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .85rem 0; cursor: pointer; list-style: none; font-size: .74rem; font-weight: 800; }
+  .mobile-project-details > summary::-webkit-details-marker { display: none; }
+  .mobile-project-details > summary::after { content: '+'; color: var(--red); font-size: 1.1rem; line-height: 1; }
+  .mobile-project-details[open] > summary { border-bottom: 1px solid var(--ink); }
+  .mobile-project-details[open] > summary::after { content: '−'; }
+  .mobile-project-details > summary:hover, .mobile-project-details > summary:focus-visible { color: var(--red); }
+  .mobile-project-details > summary:focus-visible { outline: 2px solid var(--red); outline-offset: 4px; }
+  .mobile-project-details > p { margin: .8rem 0; color: var(--muted); font-size: .68rem; line-height: 1.5; }
+  .mobile-project-links { display: grid; margin-bottom: .8rem; border-top: 1px solid var(--line); }
+  .mobile-project-links a { display: flex; align-items: baseline; justify-content: space-between; gap: .8rem; padding: .7rem 0; border-bottom: 1px solid var(--line); color: var(--ink); font-size: .72rem; }
+  .mobile-project-links a span { color: var(--red); }
 }
 
 .starter-contract { margin-top: 2rem; padding: clamp(1.2rem, 3vw, 2rem); scroll-margin-top: 10rem; border: 1px solid #555; color: #fff; background: #151515; }
