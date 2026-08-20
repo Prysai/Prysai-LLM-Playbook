@@ -56,7 +56,7 @@ does not say that the model has checked the world, understood a person, or
 decided that an action is authorised. A response can be helpful and still need
 inspection.
 
-## 0.2 The stack: eight terms, kept in their lanes
+## 0.2 The stack: nine terms, kept in their lanes
 
 The following map is deliberately short. It is a set of working definitions,
 not a claim that every vendor uses the words in exactly the same way.

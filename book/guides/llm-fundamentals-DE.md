@@ -55,7 +55,7 @@ beschreibt die Erzeugung; es sagt nicht, dass das Modell die Welt geprüft, eine
 Menschen verstanden oder eine Handlung autorisiert hat. Auch eine hilfreiche
 Antwort muss geprüft werden.
 
-## 0.2 Acht Begriffe, klar voneinander getrennt
+## 0.2 Neun Begriffe, klar voneinander getrennt
 
 Das sind Arbeitsdefinitionen für einen sicheren Einstieg. Anbieter verwenden
 die Wörter nicht immer genau gleich.
@@ -69,7 +69,8 @@ die Wörter nicht immer genau gleich.
 | **Prompt** | Anfrage und Material mit Ziel, Einschränkungen und gewünschter Antwortform. | Ein Zauberspruch. Ein längerer Prompt ist nicht automatisch besser. |
 | **User-Prompt / System- oder Entwickleranweisung** | Der Nutzer beschreibt die unmittelbare Aufgabe. Der Host kann unsichtbare Anweisungen höherer Priorität anwenden. | Dass Nutzer Hostregeln überschreiben können oder alle Produkte dieselben Ebenen zeigen. |
 | **Tool / Retrieval** | Ein Host kann Rechner, Suche, Dateileser, Datenbank oder andere externe Fähigkeiten bereitstellen. Das Modell kann einen Aufruf vorschlagen; Host oder Tool führen ihn aus. | Dass Vorschlag, Schaltfläche oder Zusammenfassung beweisen, dass die Aktion stattfand oder korrekt ist. |
-| **MCP / Agent / Skill** | MCP verbindet einen kompatiblen Host mit Kontext oder Tools. Ein Agent ist ein beobachtbarer Ablauf in mehreren Schritten; ein Skill ist ein wiederverwendbares Verfahren. | Universelle Kompatibilität, Vertrauen, sichtbares Denken, Berechtigung oder erfolgreiche Fertigstellung. |
+| **MCP** | Das Model Context Protocol verbindet einen kompatiblen Host mit Tools oder Kontextanbietern. Es standardisiert Teile der Verbindung; Authentifizierung, Zustimmung, verfügbare Tools und Datengrenzen müssen separat geprüft werden. | Universelle Kompatibilität, Vertrauen oder uneingeschränkten Zugriff. Ein konfigurierter MCP-Server ist nicht automatisch sicher oder genehmigt. |
+| **Agent / Skill** | Ein Agent ist ein beobachtbarer Ablauf in mehreren Schritten rund um Modell, Kontext, Tools, Rückmeldung und Stopbedingungen. Ein Skill ist ein wiederverwendbares Verfahren oder Instruktionspaket, das der Host für eine Aufgabe laden kann. | Verborgene Schlussfolgerungen, menschliche Absicht, zusätzliche Berechtigung oder der Nachweis, dass der Ablauf erfolgreich beendet wurde. |
 
 Zwei Unterscheidungen gehören in jede weitere Lektion:
 
@@ -291,8 +292,9 @@ oder den Prüfgrund offen. `2` verwendet eigene Worte, trennt Modell und Produkt
 oder Tool und nennt einen Prüfgrund für diese Aufgabe.
 
 Bewahre Karte, erste Antwort und einen Satz über das Unbekannte auf. Behaupte aus
-diesem Selbstcheck weder Lernerfolg noch Kursabschluss. Weiter geht es mit
-[Kapitel 1: Verstehe GPT, bevor du Codex vertraust](../chapters/01-gpt-and-codex-DE.md).
+diesem Selbstcheck weder Lernerfolg noch Kursabschluss. Weiter geht es zuerst mit
+der [universellen LLM-Kollaborationsroute](../routes/universal-core-foundations-DE.md).
+Nach dieser Route folgt [Kapitel 1: Verstehe GPT, bevor du Codex vertraust](../chapters/01-gpt-and-codex-DE.md).
 
 ## Quellen und Grenzen
 

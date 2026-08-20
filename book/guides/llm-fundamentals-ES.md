@@ -47,7 +47,7 @@ sin afirmar que cada salida sea cierta ni que todos los productos sean iguales.
 **Predecir** describe cómo se produce una generación; no dice que el modelo
 haya comprobado el mundo, entendido a una persona o autorizado una acción.
 
-## 0.2 Ocho términos, cada uno en su lugar
+## 0.2 Nueve términos, cada uno en su lugar
 
 Son definiciones de trabajo; cada proveedor puede usar las palabras de otra
 forma.
@@ -61,7 +61,8 @@ forma.
 | **Prompt** | Petición y material que entregas: objetivo, restricciones y forma de respuesta. | Un hechizo. Un prompt más largo no es automáticamente mejor. |
 | **Prompt de usuario / instrucción de sistema o desarrollador** | El usuario expresa la tarea inmediata; el host puede aplicar reglas de mayor prioridad que no ves ni editas. | Que puedas anular las reglas del host o que dos productos expongan las mismas capas. |
 | **Herramienta / recuperación** | Un host puede ofrecer calculadora, búsqueda, lector de archivos, base de datos u otra capacidad externa. El modelo puede proponer una llamada; el host o la herramienta debe ejecutarla. | Que una propuesta, botón o resumen demuestre que la acción ocurrió o que el resultado es correcto. |
-| **MCP / Agent / Skill** | MCP conecta un host compatible con contexto o herramientas. Un Agent es un bucle observable de varios pasos. Un Skill es un procedimiento reutilizable. | Compatibilidad universal, confianza, razonamiento visible, permisos o finalización con éxito. |
+| **MCP** | Model Context Protocol conecta un host compatible con contexto o herramientas. Estandariza parte de la conexión; la autenticación, la aprobación, las herramientas disponibles y los límites de datos se revisan aparte. | Compatibilidad universal, confianza o acceso sin restricciones. Un servidor MCP configurado no es automáticamente seguro ni está aprobado. |
+| **Agent / Skill** | Un Agent es un bucle observable de varios pasos alrededor del modelo, el contexto, las herramientas, la retroalimentación y las condiciones de parada. Un Skill es un procedimiento o paquete de instrucciones reutilizable que el host puede cargar para una tarea. | Razonamiento oculto, intención humana, permisos adicionales o evidencia de que el bucle terminó correctamente. |
 
 Dos distinciones deben acompañarte:
 
@@ -287,7 +288,8 @@ separa modelo de producto o herramienta y nombra una razón para comprobar.
 
 Guarda la ficha, la primera respuesta y una frase sobre lo que sigue sin saber.
 No declares un resultado de aprendizaje a partir de este autochequeo. Continúa
-con [Capítulo 1: entiende GPT antes de confiar en Codex](../chapters/01-gpt-and-codex-ES.md).
+primero con la [ruta universal de colaboración con LLM](../routes/universal-core-foundations-ES.md).
+Cuando termines esa ruta, pasa al [Capítulo 1: entiende GPT antes de confiar en Codex](../chapters/01-gpt-and-codex-ES.md).
 
 ## Fuentes y límites
 
