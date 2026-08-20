@@ -7,25 +7,25 @@ aprendices:** `not_run`.
 **Estado de traducción:** borrador completo en español; falta una revisión
 lingüística independiente.
 
-Esta es la zona de pruebas inicial entre el Capítulo 2 y el Lab 001. Te da un
+Esta es la zona de pruebas inicial entre el Capítulo 2 y el Lab 001. Te ofrece un
 README deliberadamente incompleto, un único cambio local permitido y una
-comprobación muy limitada antes de que trabajes en tu propio proyecto. No es
+comprobación muy acotada antes de que trabajes en tu propio proyecto. No es
 un Capítulo 23, una Skill nueva, un ejercicio de Git ni evidencia de que un
 modelo haya terminado nada.
 
 Si es la primera vez que abres una carpeta de proyecto o ejecutas una
-comprobación, precisamente por eso existe esta ruta. No necesitas instalar
-nada, crear una cuenta ni arriesgar un proyecto real. El objetivo es lo bastante
+comprobación, esta ruta existe precisamente para eso. No necesitas instalar
+nada, crear una cuenta ni poner en riesgo un proyecto real. El objetivo es lo bastante
 pequeño como para ver todos los archivos relevantes y decidir si la
 comprobación responde realmente a la pregunta.
 
 ## Problema
 
 El Lab 001 pide un proyecto descartable, una fuente real de comandos y un
-cambio acotado de README. Esas condiciones son adecuadas cuando ya trabajas
+cambio acotado en el README. Esas condiciones son adecuadas cuando ya trabajas
 con un proyecto, pero el primer paso práctico puede sentirse circular: quien
-empieza todavía no tiene un proyecto seguro ni sabe qué fuente de comandos
-debe creer.
+empieza todavía no tiene un proyecto seguro ni sabe en qué fuente de comandos
+puede confiar.
 
 ## Concepto
 
@@ -41,13 +41,13 @@ personales.
 Cuando todavía no tengas un proyecto local descartable, usa el
 [fixture Primer cambio seguro](../../examples/lab-001-v1/README-ES.md) que
 incluye este proyecto. Copia toda la carpeta del fixture en `.work/` o en otra
-ubicación temporal para que su error inicial siga disponible para la siguiente
+ubicación temporal para que el error inicial siga disponible para la siguiente
 persona. No edites el fixture original del repositorio.
 
 ## Acción
 
 Primero crea una copia de trabajo privada. En el gestor de archivos, copia la
-carpeta completa `examples/lab-001-v1` a una ubicación que puedas descartar y
+carpeta completa `examples/lab-001-v1` a una ubicación que puedas eliminar y
 llama a la copia `first-safe-change`.
 
 Después elige una de estas dos comprobaciones:
@@ -65,14 +65,14 @@ Después elige una de estas dos comprobaciones:
 python .\seed\verify_readme.py
 ```
 
-El primer resultado opcional debe ser `FIRST_SAFE_CHANGE_FAILED`. Es el punto
-de partida intencional, no una instalación rota. Lee la tarjeta de tarea del
+El primer resultado opcional debe ser `FIRST_SAFE_CHANGE_FAILED`. Es el estado de
+partida intencional, no una instalación rota. Lee la tarjeta de tarea del
 README del fixture, inspecciona `seed/README.md` y propone el cambio más
 pequeño. Modifica **solo** ese README después de aprobar el plan. Repite la
 misma comprobación manual u opcional. El resultado opcional de paso es
 `FIRST_SAFE_CHANGE_OK`.
 
-Si Python no está disponible, no instales un runtime ni sustituyas otro
+Si Python no está disponible, no instales un entorno de ejecución ni sustituyas otro
 comando solo para esta ruta. Usa la comprobación manual y registra
 `check: manual required_readme_strings 3/3`. Si tampoco puedes crear una copia
 local descartable, detente y usa el First Win de solo texto; no presentes la
@@ -112,7 +112,7 @@ diff: <diferencia revisada>
 unverified: despliegue, revisión de accesibilidad, otros navegadores, aceptación
 ```
 
-Esto demuestra un estado renderizado local en un viewport, no un build de producción,
+Esto demuestra un estado renderizado local en un viewport, no una compilación de producción,
 la calidad responsive completa, la accesibilidad, la seguridad, el rendimiento ni el
 valor del producto. Para el ciclo completo, continúa con el
 [Capítulo 16](../chapters/16-engineering-track-ES.md).
@@ -135,13 +135,13 @@ unverified:
 ```
 
 El comprobador solo puede establecer que, en un momento concreto, este README
-sintético contiene las cadenas declaradas. Un paso no prueba una operación de
+sintético contiene las cadenas declaradas. Un resultado correcto no prueba una operación de
 Git, un navegador, permisos de cuenta, una revisión de seguridad ni que hayas
 aprendido el método.
 
 ## Fallo y caso límite
 
-No modifiques el comprobador, el archivo de aceptación ni otra ruta para
+No modifiques el comprobador, el archivo de aceptación ni ninguna otra ruta para
 obtener un paso. Si el arreglo propuesto requiere una instalación, una llamada
 de red, un secreto, una cuenta, una operación de repositorio o un segundo
 archivo, detente. Es una decisión nueva, no parte de este fixture.
@@ -156,7 +156,7 @@ archivo, detente. Es una decisión nueva, no parte de este fixture.
 ## Continuar
 
 El siguiente elemento registrado es [Lab 001: realizar un cambio seguro de
-README](../labs/lab-001-first-safe-task-ES.md). Su traducción española todavía se está preparando y sigue en estado
+README](../labs/lab-001-first-safe-task-ES.md). Su traducción española todavía está en preparación y sigue en estado
 `draft / not_run`. Esta ruta contiene una práctica completa por sí misma; no
 te enviará silenciosamente a otra lengua ni presentará una fuente inglesa como
 una traducción terminada.
