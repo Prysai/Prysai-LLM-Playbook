@@ -200,8 +200,8 @@ status: "pass | fail | blocked | not_run"
 <nav class="chapter-navigation" aria-label="章節導覽">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-ZHTW.md" aria-label="上一章: 第 20 章 · Build a personal Codex work system">← 上一章<br><strong>第 20 章 · Build a personal Codex work system</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing-ZHTW.md" aria-label="下一章: 第 22 章 · Continuous update and future-proofing">下一章 →<br><strong>第 22 章 · Continuous update and future-proofing</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-ZHTW.md" aria-label="上一章：第 20 章 · 構建個人 Codex 工作系統">← 上一章<br><strong>第 20 章 · 構建個人 Codex 工作系統</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing-ZHTW.md" aria-label="下一章：第 22 章 · 持續更新與面向未來">下一章 →<br><strong>第 22 章 · 持續更新與面向未來</strong></a></td>
     </tr>
   </table>
 </nav>
