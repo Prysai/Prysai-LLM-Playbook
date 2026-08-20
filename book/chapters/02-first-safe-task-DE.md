@@ -1,4 +1,4 @@
-<!-- content_id: chapter-02-first-safe-task | locale: DE | language: de | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-15 -->
+<!-- content_id: chapter-02-first-safe-task | locale: DE | language: de | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-20 -->
 
 # Kapitel 2: Die erste sichere und überprüfbare Aufgabe erledigen
 
@@ -10,9 +10,9 @@ Eine spektakuläre Aufgabe verdeckt sogar die wichtigste Lektion: Wenn sich zu
 viele Dateien, Berechtigungen und unbekannte Faktoren gleichzeitig ändern,
 kannst du nicht mehr erkennen, was den Erfolg oder den Fehler verursacht hat.
 
-In diesem Kapitel ist klein zu sein ein Vorteil. Wähle ein sichtbares Ziel,
-eine erlaubte Änderung und eine Prüfung, die du wiederholen kannst. Wenn du
-noch kein wegwerfbares Projekt hast, halte hier an und übe mit der Offline-
+In diesem Kapitel ist es ein Vorteil, klein anzufangen. Wähle ein sichtbares
+Ziel, eine klar erlaubte Änderung und eine Prüfung, die du wiederholen kannst.
+Wenn du noch kein temporäres Projekt hast, halte hier an und übe mit der Offline-
 [Übung für die erste sichere Änderung](../routes/first-safe-change-DE.md).
 So kannst du den Ablauf üben, bevor Lab 001 projektspezifische Fakten verlangt.
 
@@ -20,15 +20,16 @@ So kannst du den Ablauf üben, bevor Lab 001 projektspezifische Fakten verlangt.
 
 Deine erste echte Codex-Aufgabe sollte nicht lauten: „Ändere alles, was in
 einem wichtigen Repository nötig zu sein scheint.“ Sie sollte klein sein und
-bereits vor der ersten Änderung einen sichtbaren Umfang, ein überschaubares
-Risiko, einen Rückweg und überprüfbare Abnahmekriterien haben.
+bereits vor der ersten Änderung einen klar abgegrenzten Umfang, ein
+überschaubares Risiko, einen Wiederherstellungsweg und überprüfbare
+Abnahmekriterien haben.
 
-Das wirkt erst dann konservativ, wenn etwas schiefgeht. Nutzer haben lange
+Das wirkt erst dann konservativ, wenn etwas schiefgeht. Nutzer haben von langen
 Phasen ohne sichtbares Ereignis, Prüfkommandos im Zustand `Working`, scheinbar
-konfigurierte Berechtigungen ohne Wirkung auf die aktuelle Aufgabe und Agents
+konfigurierten Berechtigungen ohne Wirkung auf die aktuelle Aufgabe und Agents
 berichtet, die eine Prüfbitte als Erlaubnis zum Installieren oder Ersetzen
 einer dauerhaften Umgebung verstanden. Diese Berichte beweisen keinen
-einheitlichen Produktfehler. Sie zeigen aber, dass ein Abschlusslabel nicht
+einheitlichen Produktfehler. Sie zeigen aber, dass ein Abschlussstatus nicht
 die gesamte Behauptung tragen kann.
 
 Dieses Kapitel macht aus der ersten Aufgabe einen begrenzten Ablauf:
@@ -50,7 +51,7 @@ Nach diesem Kapitel solltest du in der Lage sein:
 - eine risikoarme, reversible Aufgabe mit objektiver Abnahmeprüfung auszuwählen;
 - die genaue Datei und Aktionsgrenze festzulegen, bevor Codex editieren soll;
 - Sandbox-Fähigkeit, Genehmigungszeitpunkt, tatsächlich geänderten Zustand und
-  Verifizierungsevidenz zu unterscheiden;
+  Verifizierungsnachweise zu unterscheiden;
 - dich von langem Warten oder einem fehlgeschlagenen Check zu erholen, ohne
   stillschweigend mehr Autorität zu beanspruchen;
 - vor dem Abschluss den Diff und eine fokussierte Prüfung zu kontrollieren; und
@@ -66,8 +67,8 @@ Wähle eine Aufgabe mit allen folgenden Eigenschaften:
 - die Änderung kann verworfen oder zurückgerollt werden;
 - sie benötigt keine Geheimnisse, Kundendaten, privaten Schlüssel,
   Produktionszugänge oder personenbezogenen Daten;
-- sie veröffentlicht, deployt, bezahlt, löscht, startet nichts neu und
-  benachrichtigt keine externe Person oder keinen externen Dienst; und
+- sie darf nichts veröffentlichen, deployen, bezahlen, löschen oder neu starten
+  und keine externe Person oder keinen externen Dienst benachrichtigen; und
 - die Abnahme kann aus einer Datei, einem Kommando, einem Test, einem
   Quellenvermerk oder einer klar beschriebenen manuellen Beobachtung geprüft
   werden.
@@ -87,9 +88,9 @@ Beantworte vor dem Editieren jede Zeile:
 | Arbeitsfläche | Wegwerfkopie oder nicht produktive Sandbox mit absolutem Pfad und aktuellem Zustand | Nur lesend bleiben und die fehlende Arbeitsfläche klären |
 | Ziel | Eine konkrete, nicht sensible Datei und ihr exakt erlaubter Pfad | Keine Datei aus ihrem Namen erraten |
 | Ausgangslage | Sauberer Checkpoint oder gesicherte Originaldatei; der vorherige Zustand ist bekannt | Bestehende Änderungen vor dem Eingriff erfassen |
-| Aktion | Eine enge Änderung und nur die nötigen Checks; keine Installation, kein Commit, Push oder Publish | Prüfen, ob diese Nebenwirkung wirklich autorisiert ist |
+| Aktion | Eine enge Änderung und nur die nötigen Checks; keine Installation, kein `commit`, `push` oder `publish` | Prüfen, ob diese Nebenwirkung wirklich autorisiert ist |
 | Abnahme | Eine Prüfung aus echter Datei, Konfiguration, Test oder Quelle | Vor weiteren Änderungen einen Check ergänzen |
-| Stoppbedingung | Regel für fehlende Eingabe, unklare Autorität, Timeout, Bereichswechsel oder Evidenzlücke | Stoppen; Vorbereitung nicht durch „erst einmal probieren“ ersetzen |
+| Stoppbedingung | Regel für fehlende Eingabe, unklare Autorität, ein Zeitlimit, Bereichswechsel oder eine Lücke im Nachweis | Stoppen; Vorbereitung nicht durch „erst einmal probieren“ ersetzen |
 
 Der entscheidende Übergang ist derselbe: erst lesen und prüfen, dann in einer
 begrenzten Umgebung editieren. Fehlt ein Detail, eine Berechtigung oder ein
@@ -97,7 +98,7 @@ Beleg, bleibt die Aufgabe im Lesemodus.
 
 ## Was ein Produktsignal sagen kann und was nicht
 
-Die [offizielle Baseline für Kapitel 2](../evidence-library-DE.md#source-notes)
+Die [offizielle Ausgangsbasis für Kapitel 2](../evidence-library-DE.md#source-notes)
 erfasst die verwendeten Produkt- und Git-Quellen. Die stabile Regel ist
 wichtiger als der genaue Text eines Menüs:
 
@@ -106,7 +107,7 @@ wichtiger als der genaue Text eines Menüs:
 | Ein Modell schlägt eine Änderung oder ein Kommando vor | Eine mögliche nächste Aktion wurde erzeugt | Dass sie erlaubt oder ausgeführt wurde |
 | Eine Sandbox oder ein Profil wird angezeigt | Eine technische Grenze wird beschrieben | Dass die aktuelle Aufgabe jeden erwarteten Pfad erreicht |
 | Eine Genehmigung wird akzeptiert | Ein konkretes Genehmigungsereignis fand statt | Dass ein größerer Datei-, Netzwerk- oder Produktionsumfang autorisiert wurde |
-| Ein Tool meldet Erfolg | Eine Tool-Antwort ist eingegangen | Dass das beabsichtigte Objekt korrekt geändert wurde |
+| Ein Tool gibt eine Erfolgsmeldung zurück | Eine Tool-Antwort ist eingegangen | Dass das beabsichtigte Objekt korrekt geändert wurde |
 | `git diff` zeigt eine Änderung | Text oder Baum unterscheiden sich in diesem Vergleich | Ausführung, Tests, Deployment oder Nutzerabnahme |
 | Ein Test endet mit Exit-Code null | Dieser Check ist in der beobachteten Umgebung durchgelaufen | Dass jeder Pfad, jede Umgebung, jeder Dienst oder Nutzerablauf funktioniert |
 | Die Oberfläche zeigt `Completed` oder `Working` | Ein sichtbarer Produktstatus existiert | Dass das Ergebnis geprüft, der Vorgang beendet oder das Ziel erreicht wurde |
@@ -128,8 +129,8 @@ Ziel: Für neue Beitragende einen korrekten Abschnitt „Lokaler Start“ in REA
 Kontext: Projekt-README, Paketmanifest und vorhandene Skriptdefinitionen.
 Eingaben: README.md, package.json und die Datei, die das Kommando definiert.
 Erlaubte Aktionen: Diese Dateien lesen; nach Bestätigung nur README.md bearbeiten.
-Verboten: Kein Codewechsel, keine Installation, kein Netzwerk, kein Commit,
-  Push, Publish, Produktionszugriff oder externe Nachricht.
+Verboten: Keine Codeänderung, keine Installation, kein Netzwerk, kein Commit,
+  Push, Publish, Zugriff auf die Produktion und keine externe Nachricht.
 Ausgangslage: Aktuellen Status und eine saubere Kopie/einen Hash von README.md erfassen.
 Abnahme: Jedes dokumentierte Kommando steht im echten Skript, und der Diff betrifft nur README.md.
 Fehlerbehandlung: Bei unklarem Kommando, hängendem Check oder Bereichswechsel Zustand
@@ -144,18 +145,19 @@ und ersetzt nicht das menschliche Urteil.
 
 ## Vom Chat-Prompt zur ersten sicheren Aufgabe
 
-Die Prompts aus dem vorigen Kapitel helfen beim Sprachenlernen, Ordnen von Quellen oder Klären einer Anfrage. Hier darf aus „Hilf mir“ nicht sofort „Erledige alles“ werden. Wähle ein Objekt, das sichtbar, rückgängig machbar und ohne Auswirkung auf andere ist. Für den ersten Versuch genügt diese Karte:
+Die Prompts aus dem vorigen Kapitel helfen beim Sprachenlernen, beim Ordnen von Quellen oder beim Klären einer Anfrage. Hier darf aus „Hilf mir“ nicht sofort „Erledige alles“ werden. Wähle ein Objekt, das sichtbar, rückgängig machbar und ohne Auswirkungen auf andere ist. Für den ersten Versuch genügt diese Karte:
 
 ```text
 Ziel: [einen eigenen nicht sensiblen Text / eine lokale README] verständlicher machen.
-Eingabe: nur [eingefügter Text / benannte Datei] verwenden; nicht gelieferte Fakten als unbekannt markieren.
+Eingabe: nur [eingefügter Text / benannte Datei] verwenden; nicht bereitgestellte Fakten als unbekannt markieren.
 Erlaubte Aktion: zuerst lesen und vorschlagen; nach Bestätigung nur [eine benannte Datei] bearbeiten.
-Verboten: kein Netzwerk, Installieren, Sign-in, Senden, Commit, Veröffentlichen oder Lesen von Secrets.
+Verboten: kein Netzwerk, keine Installation, keine Anmeldung, kein Senden,
+  kein Commit, keine Veröffentlichung und kein Lesen von Zugangsdaten.
 Abnahme: Vorher-/Nachher-Diff zeigen und erklären, wie jede Änderung dem Ziel dient.
-Stopp: Wenn weitere Dateien, Konto, Netzwerk, externer Write oder nicht prüfbare Fakten nötig sind, anhalten und fragen.
+Stopp: Wenn weitere Dateien, ein Konto, Netzwerk, externe Schreibvorgänge oder nicht prüfbare Fakten nötig sind, anhalten und fragen.
 ```
 
-Für Spanisch oder eine andere Fähigkeit ersetzt du „benannte Datei“ durch fünf bis zehn eigene Sätze. Das Modell darf üben, Feedback und Änderungsvorschläge geben, aber keine Beherrschung erklären. Beim Ordnen von Material ersetzt du die Eingabe durch erlaubte Quellenauszüge; es darf nicht bereitgestellten Webinhalt oder Vermutungen nicht zu Fakten machen. Objekt und Abnahmebeleg ändern sich je nach Bereich, nicht die Reihenfolge: Umfang begrenzen, dann Ergebnis prüfen.
+Für Spanisch oder eine andere Fähigkeit ersetzt du „benannte Datei“ durch fünf bis zehn eigene Sätze. Das Modell darf üben, Feedback geben und Änderungen vorschlagen, aber nicht behaupten, dass du die Fähigkeit beherrschst. Beim Ordnen von Material ersetzt du die Eingabe durch erlaubte Quellenauszüge; nicht bereitgestellte Webinhalte und Vermutungen darf es nicht in Fakten verwandeln. Objekt und Abnahmenachweis ändern sich je nach Bereich, nicht aber die Reihenfolge: Umfang begrenzen, dann Ergebnis prüfen.
 
 ### So fragst du in der ersten Runde
 
@@ -166,7 +168,7 @@ Wiederhole vor jeder Aktion Ziel, Eingabe zum Lesen, Aktionen, die du nicht ausf
 Abnahmebeleg und Stoppbedingung. Fehlt ein Feld, stelle nur die minimal nötigen Rückfragen.
 ```
 
-Lies die Antwort und bestätige, dass der Umfang nicht gewachsen ist. Erlaube erst dann eine kleine Aktion. So unterscheidest du eine überzeugende Antwort von Plan, Vorschlag oder einem Ergebnis mit Evidenz.
+Lies die Antwort und bestätige, dass der Umfang nicht gewachsen ist. Erlaube erst dann eine kleine Aktion. So unterscheidest du eine überzeugende Antwort von einem Plan, einem Vorschlag oder einem Ergebnis mit Nachweisen.
 
 ## Drei Bestätigungspunkte
 
@@ -221,18 +223,18 @@ lokal reproduziert.
 
 Ein Windows-Desktop-Bericht beschrieb eine Responses-Anfrage mit mehreren
 Minuten ohne Reasoning-, Assistant- oder Tool-Ereignis, gefolgt von HTTP 507
-und einem automatischen Retry. Der Retry lief weiter, aber der Bericht
-beweist weder die Ursache auf Serverseite noch, dass jeder Retry sicher war.
+und einem automatischen erneuten Versuch. Dieser lief weiter, aber der Bericht
+beweist weder die Ursache auf Serverseite noch, dass jeder erneute Versuch sicher war.
 
-- Nutzerbericht: sichtbarer Zeitablauf, timeoutähnliche Ereignislücke und spätere Antwort;
-- offizielle Tatsache: Zum Prüfzeitpunkt war keine bestätigte Root Cause oder Lösung erfasst;
-- sichere Praxis: Zeitlinie, Checkpoint, geänderte Dateien und externe Wirkungen vor dem Retry sichern;
+- Nutzerbericht: eine sichtbare Zeitüberschreitung, eine wie ein Timeout wirkende Ereignislücke und eine spätere Antwort;
+- offizielle Tatsache: Zum Prüfzeitpunkt war weder eine bestätigte Ursache noch eine Lösung erfasst;
+- sichere Praxis: Zeitlinie, Checkpoint, geänderte Dateien und externe Wirkungen vor einem erneuten Versuch sichern;
 - lokale Reproduktion: nicht durchgeführt;
-- unverifizierte Hypothese: Anfragegröße, Proxy, Upstream oder eine Zwischenebene könnte beteiligt sein.
+- unverifizierte Hypothese: Anfragegröße, Proxy, ein vorgelagerter Dienst oder eine Zwischenebene könnte beteiligt sein.
 
-Lehre: Definiere eine Wartefrist und einen Stoppdatensatz. „Denkt noch“ beweist
-keinen Fortschritt, und ein erfolgreicher Retry beweist nicht, dass der erste
-Versuch nichts getan hat.
+Lehre: Definiere ein Zeitlimit und ein Stoppprotokoll. „Denkt noch“ beweist
+keinen Fortschritt, und ein erfolgreicher erneuter Versuch beweist nicht, dass
+der erste Versuch nichts getan hat.
 
 ### Fall CH2-02: Ein gestartetes Kommando ist keine bestandene Prüfung
 
@@ -242,7 +244,7 @@ Fehler. Die Diagnose bewies nicht, dass der Formatter selbst beendet war.
 
 - Nutzerbericht: langer sichtbarer Lauf und manuelle Unterbrechung;
 - offizielle Tatsache: Die CLI-Dokumentation beschreibt die Arbeitsfläche, nicht die Ursache dieses Berichts;
-- sichere Praxis: Timeout, Ausgabengrenze und benannten Unterbrechungsweg festlegen; danach Diff prüfen;
+- sichere Praxis: Zeitlimit, Ausgabengrenze und einen benannten Unterbrechungsweg festlegen; danach den Diff prüfen;
 - lokale Reproduktion: nicht durchgeführt;
 - unverifizierte Hypothese: Warten auf einen Kindprozess, interaktive Ausgabe, Terminalbehandlung oder Versionsdrift.
 
@@ -251,7 +253,7 @@ drei getrennte Aufzeichnungen.
 
 ### Fall CH2-03: Prüfberechtigung ist keine Installationsberechtigung
 
-Ein öffentlicher Bericht beschrieb einen Agent, der Quelltext bearbeiten und
+Ein öffentlicher Bericht beschrieb einen Agenten, der Quelltext bearbeiten und
 End-to-End prüfen durfte, aber nicht installieren, eine Umgebung gewaltsam
 ersetzen, veröffentlichen, deployen oder neu starten sollte. Der Bericht sagt,
 der Agent habe trotzdem eine dauerhafte Neuinstallation ausgeführt und danach
@@ -270,7 +272,7 @@ Entscheidung, kein Implementierungsdetail der ursprünglichen Aufgabe.
 
 Zwei Berichte betrafen unterschiedliche Arbeitsflächen, aber dieselbe Grenze.
 In einem Fall erschien ein zweites konfiguriertes Repository nicht im neuen
-Arbeitsbereich oder Schreibumfang. In einem anderen blieb Cloud bei `Running
+Arbeitsbereich oder Schreibbereich. In einem anderen blieb Cloud bei `Running
 setup scripts`, bevor ein harmloser Marker sichtbar wurde.
 
 - Nutzerbericht: Konfiguration oder frühe Vorbereitung schien vorhanden, während der Aufgabe aber der erwartete Pfad oder Beleg fehlte;
@@ -282,28 +284,28 @@ setup scripts`, bevor ein harmloser Marker sichtbar wurde.
 Lehre: `configured`, `visible`, `callable` und `writable/runnable` sind vier
 verschiedene Aussagen.
 
-#### Die kleinste sichere Sonde
+#### Die kleinste sichere Prüfdatei
 
-Wenn eine Aufgabe von einem Pfad- oder Workspace-Versprechen abhängt, nutze
-eine wegwerfbare Sentinel-Datei als Beobachtungswerkzeug:
+Wenn eine Aufgabe von einer Aussage über einen Pfad oder Workspace abhängt,
+nutze eine temporäre Prüfdatei (Sentinel) als Beobachtungswerkzeug:
 
 1. absoluten Zielpfad und aktuelles Arbeitsverzeichnis bestätigen;
 2. bestätigen, dass das Ziel innerhalb der bereits genehmigten Sandbox liegt;
-3. eine benannte Sentinel-Datei ohne Geheimnisse oder Kundendaten schreiben;
+3. eine benannte Prüfdatei ohne Geheimnisse oder Kundendaten schreiben;
 4. sie zurücklesen, das Ergebnis erfassen und nur innerhalb des genehmigten
    Umfangs entfernen; und
 5. Pfad, Aktion, Ergebnis und nicht getestete Punkte dokumentieren.
 
 Die Sonde darf keine Berechtigungen ändern, Umgebungsvariablen oder
 Zugangsdaten lesen, Abhängigkeiten installieren, das Netzwerk aufrufen, ein
-zweites Repository berühren oder Produktionszugang ableiten. Ein erfolgreiches
-Sentinel beweist nur diese harmlose Aktion an diesem Pfad in diesem Lauf. Bei
+zweites Repository berühren oder Produktionszugang ableiten. Eine erfolgreiche
+Prüfung beweist nur diese harmlose Aktion an diesem Pfad in diesem Lauf. Bei
 unklarem Pfad, Aufräumen oder Umfang lautet das Ergebnis `blocked` oder
 `unverified`, nicht „mehr Sonde“.
 
 ### Fall CH2-05: UI-Abschluss ist kein geprüfter Abschluss
 
-Ein Desktop-Bericht zeigte untergeordnete Agents im Elternfenster als `Active`,
+Ein Desktop-Bericht zeigte untergeordnete Agenten im übergeordneten Fenster als `Active`,
 während eine Laufzeitabfrage `completed` meldete. Beim Öffnen des Ergebnisses
 änderte sich die sichtbare Markierung. Das ist ein nützlicher Hinweis auf
 abweichende Statusanzeigen, aber kein Beweis für eine bestimmte UI-Implementierung
@@ -311,9 +313,9 @@ oder Ressourcenfreigabe.
 
 - Nutzerbericht: UI-Label, Laufzeitstatus und Ergebnisprüfung stimmten nicht überein;
 - offizielle Tatsache: Die Subagents-Dokumentation unterstützt Status- und Ergebnisprüfung, bestätigt aber nicht die Ursache dieses Berichts;
-- sichere Praxis: vor Retry, Abbruch, zusätzlicher Autorität oder Übergabe Laufzeitstatus, Ergebnis, Diff und Nebenwirkungen prüfen;
+- sichere Praxis: vor einem erneuten Versuch, einem Abbruch, zusätzlicher Autorität oder der Übergabe Laufzeitstatus, Ergebnis, Diff und Nebenwirkungen prüfen;
 - lokale Reproduktion: nicht durchgeführt;
-- unverifizierte Hypothese: veraltete UI, ungelesenes Ergebnis oder Rehydration könnten beteiligt sein.
+- unverifizierte Hypothese: eine veraltete UI, ein ungelesenes Ergebnis oder eine erneute Initialisierung könnten beteiligt sein.
 
 Lehre: `running`, `completed`, `result received` und `result reviewed` sind
 getrennte Zustände.
@@ -327,7 +329,7 @@ weiterarbeitet, stelle zuerst die Beurteilbarkeit wieder her:
    Prozess/Kommando, letztes Ereignis, Status und vorhandene Ausgabe erfassen.
 2. **Unkontrollierte Aktion stoppen.** Die sichere Unterbrechung der aktuellen
    Arbeitsfläche nutzen. Stoppen beweist weder Fehlschlag noch Erfolg.
-3. **Zustand prüfen.** `git status`, relevanten `git diff`, Zeitstempel,
+3. **Zustand prüfen.** `git status`, den relevanten `git diff`, Zeitstempel,
    Exit-Information, generierte Dateien und mögliche externe Änderungen prüfen.
 4. **Fehler klassifizieren.** Fehlt eine Eingabe, wurde das Ziel missverstanden,
    ist der Pfad falsch, die Umgebung nicht verfügbar, die Implementierung falsch,
@@ -335,7 +337,7 @@ weiterarbeitet, stelle zuerst die Beurteilbarkeit wieder her:
 5. **Nächsten Check verkleinern.** Eine Datei, eine Read-only-Sonde, einen
    fokussierten Test oder eine harmlose temporäre Änderung bevorzugen.
 6. **Nächsten Schritt begrenzen.** Nur bei explizit geänderter Bedingung und
-   Retry-Budget einmal wiederholen; sonst Input anfordern oder `blocked`/
+   das Budget für erneute Versuche einmal wiederholen; sonst Input anfordern oder `blocked`/
    `unverified` markieren.
 
 Bei einem fehlgeschlagenen Check nicht automatisch installieren, Umgebung
