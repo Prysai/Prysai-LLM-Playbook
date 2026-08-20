@@ -20,10 +20,10 @@ ROUTING_PATH = Path("docs/governance/skill-routing-contract.yaml")
 ROUTING_MATRIX_PATH = Path("docs/quality/skill-routing-matrix.md")
 FRONTDOOR_SKILL_COUNT_PATTERNS = {
     "README.md": re.compile(
-        r"\|\s*Skills\s*\|\s*(?P<count>\d+)\s+project-owned\s+`candidate`\s+Skills\s*\|"
+        r"\|\s*Skills\s*\|\s*(?P<count>\d+)\s+project-owned\s+`candidate`\s+Skills\b"
     ),
     "README-EN.md": re.compile(
-        r"\|\s*Skills\s*\|\s*(?P<count>\d+)\s+project\s+Skills\s+·\s+`candidate`\s*\|"
+        r"\|\s*Skills\s*\|\s*(?P<count>\d+)\s+project\s+Skills\s+·\s+`candidate`(?:\s+\([^|]*\))?\s*\|"
     ),
 }
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
@@ -156,7 +156,7 @@ def validate(root: Path, registry: dict[str, Any] | None = None) -> list[str]:
         if not isinstance(license_record, dict):
             errors.append(f"{skill_id}: license must be an object")
         else:
-            if license_record.get("expression") not in {"CC-BY-4.0", "CC-BY-NC-4.0"}:
+            if license_record.get("expression") not in {"CC-BY-4.0", "CC-BY-NC-4.0", "Apache-2.0", "MIT"}:
                 errors.append(f"{skill_id}: unknown or unsupported license expression")
             if not isinstance(license_record.get("boundary"), str) or not license_record["boundary"].strip():
                 errors.append(f"{skill_id}: license boundary is required")

@@ -1,6 +1,6 @@
 <!-- content_id: llm-fundamentals-guide | locale: DE | language: de | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-17-foundation-observations -->
 
-# Was ist ein LLM? Die Schichten hinter einer nützlichen Antwort
+# Was ist ein LLM? Was es kann und was nicht
 
 **Einheit:** `core-llm-boundaries`
 **Status:** `candidate`. **Laufstatus:** `not_run`.
@@ -9,10 +9,10 @@ Git, ein kostenpflichtiges Konto noch ein Tool.
 
 Dies ist das Fundament des Playbooks. Bevor du eine Plattform auswählst, eine
 Datei verbindest, ein Skill installierst oder einen Agenten handeln lässt,
-brauchst du ein kleines Modell davon, was passiert. Es geht nicht darum,
+brauchst du ein einfaches Modell davon, was passiert. Es geht nicht darum,
 Abkürzungen auswendig zu lernen. Du sollst erkennen, welche Schicht eine
 Behauptung erzeugt, welche Schicht außerhalb des Modells handeln kann und
-welcher Beleg die Behauptung prüfbar macht.
+welche Aufzeichnung die Behauptung prüfbar macht.
 
 Bei jeder neuen KI-Funktion helfen vier Fragen:
 
@@ -20,7 +20,7 @@ Bei jeder neuen KI-Funktion helfen vier Fragen:
 2. **Welcher Kontext wurde für diese Anfrage tatsächlich bereitgestellt?**
 3. **Welches Produkt oder Tool kann außerhalb des Modells etwas beobachten oder
    verändern?**
-4. **Welcher Beleg würde einer anderen Person die Prüfung ermöglichen?**
+4. **Welche Aufzeichnung würde einer anderen Person die Prüfung ermöglichen?**
 
 Wenn du eine Frage nicht beantworten kannst, behandle das Ergebnis als Entwurf
 oder Hypothese. Fülle die Lücke nicht mit einer selbstsicher klingenden Erklärung.
@@ -39,7 +39,7 @@ Grenzentscheidungen. Die Karte soll zeigen:
 Das ist eine begrenzte Erklärungsaufgabe, kein Test aller Fähigkeiten eines
 KI-Produkts. Plattformspezifische Verfahren kommen später.
 
-## 0.1 Ein Arbeitsmodell in einem Satz
+## 0.1 Das Arbeitsmodell in einem Satz
 
 Ein modernes Text-LLM ist ein Modell, das Tokenfolgen schätzt und erzeugt.
 Viele autoregressive Modelle erzeugen Schritt für Schritt, indem sie aus dem
@@ -55,7 +55,7 @@ beschreibt die Erzeugung; es sagt nicht, dass das Modell die Welt geprüft, eine
 Menschen verstanden oder eine Handlung autorisiert hat. Auch eine hilfreiche
 Antwort muss geprüft werden.
 
-## 0.2 Acht Begriffe, jeder in seiner Spur
+## 0.2 Acht Begriffe, klar voneinander getrennt
 
 Das sind Arbeitsdefinitionen für einen sicheren Einstieg. Anbieter verwenden
 die Wörter nicht immer genau gleich.
@@ -69,11 +69,11 @@ die Wörter nicht immer genau gleich.
 | **Prompt** | Anfrage und Material mit Ziel, Einschränkungen und gewünschter Antwortform. | Ein Zauberspruch. Ein längerer Prompt ist nicht automatisch besser. |
 | **User-Prompt / System- oder Entwickleranweisung** | Der Nutzer beschreibt die unmittelbare Aufgabe. Der Host kann unsichtbare Anweisungen höherer Priorität anwenden. | Dass Nutzer Hostregeln überschreiben können oder alle Produkte dieselben Ebenen zeigen. |
 | **Tool / Retrieval** | Ein Host kann Rechner, Suche, Dateileser, Datenbank oder andere externe Fähigkeiten bereitstellen. Das Modell kann einen Aufruf vorschlagen; Host oder Tool führen ihn aus. | Dass Vorschlag, Schaltfläche oder Zusammenfassung beweisen, dass die Aktion stattfand oder korrekt ist. |
-| **MCP / Agent / Skill** | MCP verbindet einen kompatiblen Host mit Kontext oder Tools. Ein Agent ist eine beobachtbare Mehrschleife; ein Skill ein wiederverwendbares Verfahren. | Universelle Kompatibilität, Vertrauen, sichtbares Denken, Berechtigung oder erfolgreiche Fertigstellung. |
+| **MCP / Agent / Skill** | MCP verbindet einen kompatiblen Host mit Kontext oder Tools. Ein Agent ist ein beobachtbarer Ablauf in mehreren Schritten; ein Skill ist ein wiederverwendbares Verfahren. | Universelle Kompatibilität, Vertrauen, sichtbares Denken, Berechtigung oder erfolgreiche Fertigstellung. |
 
 Zwei Unterscheidungen gehören in jede weitere Lektion:
 
-1. **Fähigkeit, Berechtigung und Beleg sind verschieden.** Eine Aktion vorschlagen,
+1. **Fähigkeit, Berechtigung und Aufzeichnung sind verschieden.** Eine Aktion vorschlagen,
    sie versuchen dürfen und sie tatsächlich abgeschlossen haben sind drei
    unterschiedliche Beobachtungen.
 2. **Eine höhere Schicht repariert nicht automatisch die darunterliegende.** Suche
@@ -94,28 +94,28 @@ Passagen für den Kontext. Dabei kann die beste Quelle fehlen, eine Kopie oder a
 Version ausgewählt werden. Bewahre URL, Datum und die Zuordnung von Behauptung zu
 Quelle auf. Mehr Kontext schafft Kapazität, aber keine Richtigkeit.
 
-**Ein Prompt ist ein Vertrag, kein Zauber.** Eine erste Anfrage nennt Ergebnis,
+**Ein Prompt ist eine Arbeitsvereinbarung, kein Zauber.** Eine erste Anfrage nennt Ergebnis,
 Ausgangsmaterial, Grenzen, Antwortform, Prüfung und Stopplinie. Ein zitiertes
 Dokument kann nicht vertrauenswürdige Anweisungen enthalten. Behandle gelieferten
 Text als Daten, außer die Aufgabe macht ihn ausdrücklich zur Anweisung.
 
-**Ein Tool-Aufruf hat zwei Urheber.** Das Modell kann einen strukturierten Aufruf
+**Ein Tool-Aufruf hat zwei Rollen.** Das Modell kann einen strukturierten Aufruf
 vorschlagen. Der Host entscheidet über die Erlaubnis, das Tool führt aus. Notiere
-Ziel, Autorität, beabsichtigte Wirkung, Ergebnis und Rücklese. Ein Toolname in
-einer Antwort ist kein Beleg.
+Ziel, Autorität, beabsichtigte Wirkung, Ergebnis und deine anschließende Prüfung.
+Ein Toolname in einer Antwort ist keine Ausführungsaufzeichnung.
 
 **MCP verkleinert ein Integrationsproblem, beseitigt aber keine Governance.**
 Authentifizierung, Serverimplementierung, Zustimmung, Netzwerkbereich,
 Datenabfluss und Ergebnisprüfung bleiben eigene Entscheidungen. „MCP-fähig“
 heißt nicht „sicher“ oder „unbegrenzter Zugriff“.
 
-**Ein Agent ist eine prüfbare Schleife, keine Person.** Lehre sichtbare Zustände:
+**Ein Agent ist ein prüfbarer Ablauf, keine Person.** Lehre sichtbare Zustände:
 Eingang, Plan, vorgeschlagene Aktion, Zustimmung oder Ablehnung, Ergebnis,
-Verifikation, Wiederholung, Übergabe und Stopp. Behaupte nicht, einen verborgenen
+Prüfung, Wiederholung, Übergabe und Stopp. Behaupte nicht, einen verborgenen
 Gedankengang zu kennen. Das Ende von Text beweist nicht das Ende einer externen Arbeit.
 
 **Ein Skill ist ein Methodenpaket, keine Berechtigung.** Es nennt Anwendung,
-benötigte Eingaben, Verbote, Stopbedingungen und den zurückgegebenen Beleg. Das
+benötigte Eingaben, Verbote, Stopbedingungen und die zurückgegebene Aufzeichnung. Das
 Laden von Anweisungen verleiht keinen Datei-, Terminal-, Browser-, Konto- oder
 Veröffentlichungszugriff.
 
@@ -138,14 +138,14 @@ eine Person prüft Text, Ergebnis und Grenzen
 ```
 
 Modelltext kann einen Aufruf beschreiben, ohne dass er ausgeführt wurde. Suche
-nach Tool-Ereignis, zurückgegebenen Daten, Dateidiff, Kommandoausgabe oder einem
-anderen passenden Beleg, bevor du eine Aktion als abgeschlossen bezeichnest.
+nach Tool-Ereignis, zurückgegebenen Daten, Dateidiff, Kommandoausgabe oder einer
+anderen passenden Aufzeichnung, bevor du eine Aktion als abgeschlossen bezeichnest.
 
 Bei einem Agenten wiederholst du den Check an jeder Grenze:
 
 ```text
 Zustand beobachtet → Aktion vorgeschlagen → Autorität geprüft → ausgeführt
-→ Ergebnis gelesen → Abnahme geprüft → fortsetzen, übergeben oder stoppen
+→ Ergebnis erneut geprüft → Annahmebedingung geprüft → fortsetzen, übergeben oder stoppen
 ```
 
 Wenn der Zustand nach Timeout oder Unterbrechung unbekannt ist, wiederhole nicht
@@ -178,7 +178,7 @@ kann veraltet, unvollständig oder falsch sein: **Prüfe Originalquelle und Datu
 
 Vor dem Einfügen, Hochladen oder Verbinden von Daten prüfe **was die aktuelle Oberfläche
 verlassen darf und wer dies autorisiert hat**. Verwandle einen plausiblen
-Entwurf nicht ohne ausdrückliche Grenze und Beleg in Zahlung, Veröffentlichung,
+Entwurf nicht ohne ausdrückliche Grenze und überprüfbare Aufzeichnung in Zahlung, Veröffentlichung,
 Löschung, Kontenänderung oder Überzeugung.
 
 Training formt die Parameter vor der Nutzung; die aktuelle Anfrage liefert neuen
@@ -311,5 +311,5 @@ dieser Überarbeitung: 2026-08-17.
 Veränderliche Produktfakten brauchen in ihrem eigenen Quellenregister URL,
 Zugriffsdatum, Geltungsbereich, Verantwortliche und nächste Prüfung. Diese Seite
 behauptet weder ein bestes Modell noch universelles Verhalten, Lernerfolg,
-Retention, Transfer oder Produktionsreife. Die Übersetzung ist `candidate` und
+Behalten, Transfer oder Produktionsreife. Die Übersetzung ist `candidate` und
 braucht weiterhin unabhängige Sprachprüfung und einen Lauf mit Lesenden.

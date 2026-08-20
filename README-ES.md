@@ -105,7 +105,7 @@ instalaciones no demuestra dominio.
 ## Estado actual
 
 La fuente canónica en inglés contiene 22 capítulos `candidate`, 18 Labs
-`draft`, 25 Skills propias `candidate` y 40 fixtures de evaluación
+`draft`, 26 Skills (25 propias y 1 externa revisada) `candidate` y 40 fixtures de evaluación
 `candidate`. Las comprobaciones estructurales existen, pero no sustituyen
 resultados de aprendizaje, transferencia, evaluación repetida ni revisión
 independiente. Los 22 capítulos y 18 Labs españoles tienen archivos candidatos

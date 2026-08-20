@@ -1,6 +1,6 @@
 <!-- content_id: llm-fundamentals-guide | locale: ES | language: es | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-17-foundation-observations -->
 
-# Qué es un LLM: las capas detrás de una respuesta útil
+# Qué es un LLM: qué puede hacer y qué no puede hacer
 
 **Unidad:** `core-llm-boundaries`
 **Estado:** `candidate`. **Ejecución:** `not_run`.
@@ -9,9 +9,9 @@ Codex, Git, una cuenta de pago ni una herramienta.
 
 Esta es la base del Playbook. Antes de elegir una plataforma, conectar un
 archivo, instalar un Skill o pedir a un Agent que actúe, necesitas un modelo
-pequeño de lo que sucede. La meta no es memorizar siglas: es saber qué capa
-produjo una afirmación, qué capa puede actuar y qué recibo permitiría comprobar
-el resultado.
+pequeño de lo que sucede. La meta no es memorizar siglas: es distinguir qué
+capa produjo una afirmación, qué capa puede actuar y qué registro permite
+comprobar el resultado.
 
 Ante cualquier función nueva de IA, pregunta:
 
@@ -19,7 +19,7 @@ Ante cualquier función nueva de IA, pregunta:
 2. **¿Qué contexto recibió realmente esta solicitud?**
 3. **¿Qué producto o herramienta puede observar o cambiar algo fuera del
    modelo?**
-4. **¿Qué recibo permitiría que otra persona comprobara la afirmación?**
+4. **¿Qué registro permitiría que otra persona comprobara la afirmación?**
 
 Si no puedes responder una pregunta, conserva el resultado como borrador o
 hipótesis. No rellenes el hueco con una explicación que solo suena segura.
@@ -87,7 +87,7 @@ la mejor fuente, escoger una copia o devolver una versión antigua. Conserva URL
 fecha y la correspondencia entre afirmación y fuente. Más contexto no significa
 que cada pasaje sea correcto.
 
-**Un prompt es un contrato, no un hechizo.** Una primera solicitud útil nombra
+**Un prompt es un acuerdo de trabajo, no un hechizo.** Una primera solicitud útil nombra
 resultado, material inicial, límites, forma de respuesta, comprobación y línea
 de parada. Una cita puede contener instrucciones no confiables: trata el texto
 entregado como datos salvo que la tarea lo convierta explícitamente en una
@@ -96,7 +96,7 @@ instrucción.
 **Una llamada a herramienta tiene dos autores.** El modelo propone una llamada
 estructurada; el host decide si está permitida y la herramienta la ejecuta.
 Registra objetivo, autoridad, efecto previsto, resultado y lectura de vuelta.
-El nombre de una herramienta en una respuesta no es un recibo.
+El nombre de una herramienta en una respuesta no es un registro de ejecución.
 
 **MCP reduce un problema de integración, no elimina la gobernanza.** La
 autenticación, implementación del servidor, aprobación, red, salida de datos y
@@ -133,7 +133,7 @@ una persona comprueba texto, resultado y límites
 
 Las palabras del modelo pueden describir una llamada sin que se haya ejecutado.
 Busca un evento de herramienta, datos devueltos, diff, salida de comando u otro
-recibo antes de llamar completa a una acción.
+registro antes de dar una acción por completada.
 
 En un Agent repite el control en cada frontera:
 

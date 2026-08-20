@@ -133,7 +133,7 @@ Si el modelo da una respuesta completa cuando querías practicar, pídele una so
 pista. Si inventa un hecho, fuente o promesa, deja de usar esa respuesta y conserva
 lo no comprobado como desconocido.
 
-## Recibo de práctica: conserva una conversación comprobable
+## Registro de práctica: conserva una conversación comprobable
 
 Después de cualquier tarjeta, guarda solo este registro breve. Te permite ver qué
 practicaste la próxima vez y evita convertir «me pareció útil» en una afirmación sin

@@ -7239,6 +7239,65 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         }
       }
+    },
+    "polish-open-source-prose": {
+      "kind": "skill",
+      "reader_type": "skill",
+      "overview_target": "index.html#skills",
+      "stem": "skills/polish-open-source-prose/SKILL",
+      "source_locale": "en",
+      "legacy_paths": [],
+      "locales": {
+        "en": {
+          "path": "skills/polish-open-source-prose/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "source",
+          "source_revision": "skill-registry"
+        },
+        "zh": {
+          "path": "skills/polish-open-source-prose/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "es": {
+          "path": "skills/polish-open-source-prose/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ja": {
+          "path": "skills/polish-open-source-prose/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "ko": {
+          "path": "skills/polish-open-source-prose/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "de": {
+          "path": "skills/polish-open-source-prose/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "zh-tw": {
+          "path": "skills/polish-open-source-prose/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        }
+      }
     }
   },
   "aliases": {
@@ -7761,7 +7820,8 @@ window.CODEX_LOCALE_MANIFEST = {
     "skills/prysai-shift-handoff/SKILL.md": "prysai-shift-handoff",
     "skills/prysai-platform-observation-record/SKILL.md": "prysai-platform-observation-record",
     "skills/prysai-language-partner/SKILL.md": "prysai-language-partner",
-    "skills/prysai-interview-rehearsal/SKILL.md": "prysai-interview-rehearsal"
+    "skills/prysai-interview-rehearsal/SKILL.md": "prysai-interview-rehearsal",
+    "skills/polish-open-source-prose/SKILL.md": "polish-open-source-prose"
   },
   "routed_status_counts": {
     "chapters": 22,

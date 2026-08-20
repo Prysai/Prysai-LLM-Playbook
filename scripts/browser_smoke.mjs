@@ -423,7 +423,7 @@ try {
     zh: {
       heading: '五张基础图，串起一个闭环。',
       titles: ['最小安全 LLM 闭环', '提示词契约：六个字段', '可观察的行动边界', '证据恢复阶梯', '相信前先检查来源'],
-      bodies: ['定义、提供上下文、提出请求、检查，然后修正、迁移或停止。', '结果、上下文、允许的帮助、限制、回答与检查、停止条件。', '提议、授权、执行和人工读回。', '让声明的强度匹配下一个最小检查。', '依赖信息前，对照声明、来源、范围和时效性。'],
+      bodies: ['定义、提供上下文、提出请求、检查，然后修正、迁移或停止。', '结果、上下文、允许的帮助、限制、回答与检查、停止条件。', '提议、授权、执行和人工核对。', '让声明的强度匹配下一个最小检查。', '依赖信息前，对照声明、来源、范围和时效性。'],
       boundary: /项目原创英文图表/,
     },
     es: {
@@ -706,7 +706,7 @@ try {
   );
   assert.match(
     await skillsSection.locator('.skill-footnote').innerText(),
-    /maintenance receipt, not a current-platform check/i,
+    /maintenance (?:receipt|check record), not a current-platform check/i,
     'Skill index does not retain the platform-fact maintenance boundary',
   );
   assert.match(
@@ -716,7 +716,7 @@ try {
   );
   assert.match(
     await skillsSection.locator('.skill-footnote').innerText(),
-    /preserves a task receipt; it does not retry or recover work/i,
+    /preserves a task (?:receipt|check record); it does not retry or recover work/i,
     'Skill index does not retain the Interruption Checkpoint evidence boundary',
   );
   await skillsSection.screenshot({ path: path.join(visualEvidenceDirectory, 'skills-desktop.png') });
@@ -1446,7 +1446,7 @@ try {
   await coreReceiptPage.locator('[data-reader-core-artifact]').fill('A short non-sensitive task note');
   await coreReceiptPage.locator('[data-reader-core-limit]').fill('No source check yet');
   recordingReceiptNetwork = true;
-  await coreReceiptPage.getByRole('button', { name: /save local receipt/i }).click();
+  await coreReceiptPage.getByRole('button', { name: /save local (?:receipt|check record)/i }).click();
   await coreReceiptPage.waitForTimeout(100);
   recordingReceiptNetwork = false;
   assert.equal(receiptNetworkDuringSave.length, 0, 'saving a local receipt created a network request');
@@ -1457,7 +1457,7 @@ try {
   assert.match(await coreNextCard.locator('[data-reader-core-next-title]').innerText(), /context, instruction, and a first generation/i, 'core next-step card does not advance after saving an attempt');
   assert.match(await coreNextCard.locator('[data-reader-core-next-body]').innerText(), /continue to the next unit.*keep:/i, 'core next-step card does not name the next retained artifact');
   assert.match(await coreNextCard.locator('[data-reader-core-next-link]').getAttribute('href'), /llm-core-first-generation-EN\.md&lang=en$/, 'core next-step card points to the wrong next unit');
-  await coreReceiptPage.getByRole('button', { name: /copy receipt/i }).click();
+  await coreReceiptPage.getByRole('button', { name: /copy (?:receipt|check record)/i }).click();
   const copiedReceipt = await coreReceiptPage.evaluate(() => navigator.clipboard.readText());
   assert.match(copiedReceipt, /candidate \/ not_run/, 'copied receipt does not expose candidate / not_run status');
   assert.match(copiedReceipt, /No source check yet/, 'copied receipt omits the declared limit');
@@ -1477,7 +1477,7 @@ try {
     assert.equal(await localePage.locator('[data-reader-core-next]').isVisible(), true, `localized core next-step card is hidden: ${locale}`);
     assert.equal((await localePage.locator('[data-reader-core-next] .reader-aside-label').innerText()).trim().toLocaleLowerCase(), localizedNextMarkers[locale].toLocaleLowerCase(), `localized core next-step label leaked: ${locale}`);
   }
-  await coreReceiptPage.getByRole('button', { name: /clear local receipt/i }).click();
+  await coreReceiptPage.getByRole('button', { name: /clear local (?:receipt|check record)/i }).click();
   assert.equal(await coreReceiptPage.evaluate(() => localStorage.getItem('prysai-llm-foundation-core-receipt-v1')), null, 'clear did not remove the local receipt');
   assert.equal(await coreReceiptPage.locator('[data-reader-core-attempted]').isChecked(), false, 'clear did not reset the current unit form');
   await coreReceiptPage.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&lang=en`, { waitUntil: 'networkidle' });

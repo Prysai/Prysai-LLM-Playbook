@@ -11,7 +11,10 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTRACT_PATH = ROOT / "docs/governance/skill-routing-contract.yaml"
-SKILL_RE = re.compile(r"^prysai-[a-z0-9]+(?:-[a-z0-9]+)*$")
+# Project Skills use the ``prysai-`` namespace. Vendored/adapted Skills may
+# retain a source-project installation ID, so the routing contract accepts the
+# same conservative kebab-case shape as the provenance registry.
+SKILL_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 
 
 def load_contract(path: Path = CONTRACT_PATH) -> dict[str, Any]:
@@ -180,7 +183,7 @@ def validate_contract(contract: dict[str, Any]) -> list[str]:
     if neighbors != intents: errors.append(f"near-neighbor fixtures must cover all intents: missing={sorted(intents-neighbors)}")
     for required in ("mixed", "explicit", "safety"):
         if required not in kinds: errors.append(f"fixtures need kind: {required}")
-    for new_skill in ("prysai-dialogue-brief", "prysai-first-turn-check", "prysai-field-signal-curator", "prysai-platform-adapter-review", "prysai-platform-fact-watch", "prysai-communication-failure-triage", "prysai-interruption-checkpoint", "prysai-shift-handoff", "prysai-prompt-card-editor", "prysai-adversarial-project-review"):
+    for new_skill in ("prysai-dialogue-brief", "prysai-first-turn-check", "prysai-field-signal-curator", "prysai-platform-adapter-review", "prysai-platform-fact-watch", "prysai-communication-failure-triage", "prysai-interruption-checkpoint", "prysai-shift-handoff", "prysai-prompt-card-editor", "prysai-adversarial-project-review", "polish-open-source-prose"):
         if new_skill not in explicit_owners: errors.append(f"new Skill needs explicit fixture: {new_skill}")
         if new_skill not in safety_owners: errors.append(f"new Skill needs safety fixture: {new_skill}")
         if new_skill != "prysai-dialogue-brief" and new_skill not in mixed_owners: errors.append(f"new Skill needs mixed-owner fixture: {new_skill}")

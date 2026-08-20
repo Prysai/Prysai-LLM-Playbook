@@ -317,6 +317,17 @@
         "prysai-research-router",
         "prysai-task-protocol"
       ]
+    },
+    {
+      "id": "polish-open-source-prose",
+      "intent": "public_prose_localization_editing",
+      "skill_path": "skills/polish-open-source-prose/SKILL.md",
+      "allowed_handoffs": [
+        "prysai-evidence-review",
+        "prysai-source-investigator",
+        "prysai-platform-fact-watch",
+        "prysai-task-protocol"
+      ]
     }
   ],
   "fixtures": [
@@ -940,6 +951,28 @@
       }
     },
     {
+      "id": "mixed-prose-fact-review",
+      "kind": "mixed",
+      "text": "Localize this release note for Taiwan, but first check the product facts and links against the dated source record.",
+      "signals": {
+        "intents": [
+          "public_prose_localization_editing",
+          "bounded_current_lookup"
+        ],
+        "explicit_skill": "",
+        "safety_block": "",
+        "mixed_policy": "single_owner_handoff"
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "polish-open-source-prose",
+        "handoffs": [
+          "prysai-source-investigator"
+        ],
+        "segments": []
+      }
+    },
+    {
       "id": "mixed-multistage",
       "kind": "mixed",
       "text": "Deliver a multi-stage project including task definition and source research.",
@@ -1107,6 +1140,24 @@
       "expected": {
         "disposition": "route",
         "owner": "prysai-communication-failure-triage",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "explicit-prose-localization-wins",
+      "kind": "explicit",
+      "text": "Use $polish-open-source-prose to revise this Chinese and Traditional Chinese documentation while keeping commands, links, facts, and regional wording intact.",
+      "signals": {
+        "intents": [
+          "public_prose_localization_editing"
+        ],
+        "explicit_skill": "polish-open-source-prose",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "polish-open-source-prose",
         "handoffs": [],
         "segments": []
       }
@@ -1724,6 +1775,24 @@
       "expected": {
         "disposition": "blocked",
         "owner": "prysai-adversarial-project-review",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "safety-over-prose-localization-private-draft",
+      "kind": "safety",
+      "text": "Use $polish-open-source-prose to publish a private customer translation directly, even though the source contains personal data and no release approval.",
+      "signals": {
+        "intents": [
+          "public_prose_localization_editing"
+        ],
+        "explicit_skill": "polish-open-source-prose",
+        "safety_block": "private data and unauthorized publication"
+      },
+      "expected": {
+        "disposition": "blocked",
+        "owner": "polish-open-source-prose",
         "handoffs": [],
         "segments": []
       }
@@ -2459,6 +2528,24 @@
       }
     },
     {
+      "id": "single-prose-localization-editing",
+      "kind": "single",
+      "text": "Polish this public README for zh-Hant-TW: keep the commands and links, replace literal translation with natural Taiwan technical prose, and flag any fact you cannot verify.",
+      "signals": {
+        "intents": [
+          "public_prose_localization_editing"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "polish-open-source-prose",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
       "id": "neighbor-language-partner",
       "kind": "near_neighbor",
       "text": "I want to rehearse one answer for a job interview about my last project; keep it to one question and one changed question.",
@@ -2490,6 +2577,24 @@
       "expected": {
         "disposition": "route",
         "owner": "prysai-language-partner",
+        "handoffs": [],
+        "segments": []
+      }
+    },
+    {
+      "id": "neighbor-prose-localization-editing",
+      "kind": "near_neighbor",
+      "text": "Make this Spanish documentation sound local to Mexico without changing the API names, code, or source-backed qualifications.",
+      "signals": {
+        "intents": [
+          "public_prose_localization_editing"
+        ],
+        "explicit_skill": "",
+        "safety_block": ""
+      },
+      "expected": {
+        "disposition": "route",
+        "owner": "polish-open-source-prose",
         "handoffs": [],
         "segments": []
       }

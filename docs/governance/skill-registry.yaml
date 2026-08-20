@@ -562,6 +562,28 @@
       "review_date": "2026-09-16",
       "status": "candidate",
       "primary_validation": "Candidate-first answer, one-gap correction, time limit, changed-question transfer, and no-outcome-promise boundary."
+    },
+    {
+      "id": "polish-open-source-prose",
+      "path": "skills/polish-open-source-prose",
+      "public_name": "Polish Open-Source Prose",
+      "purpose": "Audit and revise public project prose and locale copy while preserving facts, protected tokens, project voice, and regional register.",
+      "learning_path": "L2-L6",
+      "origin": "vendored",
+      "upstream_url": "https://github.com/ting-hong-shieh/polish-open-source-prose/tree/7aa4938a3ab2da2866d703433acb4e091d6d5c8f/skills/polish-open-source-prose",
+      "asset_source_ids": [
+        "S134"
+      ],
+      "source_summary": "Upstream editorial Skill vendored at fixed commit 7aa4938a3ab2da2866d703433acb4e091d6d5c8f; its locale-pack workflow and forward cases are used for evidence-preserving prose review",
+      "license": {
+        "expression": "Apache-2.0",
+        "boundary": "vendored upstream Apache-2.0 Skill with retained NOTICE and THIRD_PARTY_NOTICES.md; nested stop-slop material remains under the included MIT license"
+      },
+      "owner": "localization-maintainer",
+      "version": "0.1.0",
+      "review_date": "2026-09-19",
+      "status": "candidate",
+      "primary_validation": "Upstream validator passes 46 forward cases; official Skill validator passes; native/domain review and translation outcome evidence remain pending."
     }
   ]
 }

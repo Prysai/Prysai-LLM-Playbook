@@ -1,0 +1,4 @@
+interface:
+  display_name: "Polish Open-Source Prose"
+  short_description: "Polish open-source prose and Taiwan localization"
+  default_prompt: "Use $polish-open-source-prose to polish this public project prose, preserve facts and voice, and apply zh-Hant-TW conventions when requested."

@@ -76,7 +76,7 @@ GPTを知る → Codexを知る → 安全に準備する → タスクを表現
 ## 現在の状態
 
 英語の正規ソースには、`candidate` の 22 章、`draft` の 18 Labs、
-`candidate` の自作 Skill 25 件、`candidate` の評価 fixture 40 件があります。
+`candidate` の Skill 26 件（自作 25 件とレビュー済み外部 Skill 1 件）と、`candidate` の評価 fixture 40 件があります。
 構造チェックが通っていても、学習、転移、反復評価、独立レビューの結果を
 置き換えるものではありません。日本語の 22 章と 18 Labs には候補ファイルと
 同一言語の経路がありますが、いずれも `in-progress` です。この構造上の網羅性は、

@@ -31,6 +31,7 @@ This registry contains project-maintained Skills, not a bulk copy of external re
 | `prysai-source-investigator` | Source Investigator | Original | Turn a bounded current question into a claim ledger with source hierarchy, conflict handling, and a stop receipt. | `skills/prysai-source-investigator` | `0.2.0` | research-systems maintainer | 2026-09-12 | candidate | `S52` |
 | `prysai-task-protocol` | Task Protocol | Original | Turn an ambiguous request into a bounded task contract with acceptance evidence. | `skills/prysai-task-protocol` | `0.2.0` | task-systems maintainer | 2026-09-09 | candidate | `S62` |
 | `prysai-workflow-orchestrator` | Workflow Orchestrator | Original | Route dependent work through definition, planning, action, verification, review, and delivery. | `skills/prysai-workflow-orchestrator` | `0.2.0` | workflow-systems maintainer | 2026-09-09 | candidate | `S62` |
+| `polish-open-source-prose` | Polish Open-Source Prose | [Vendored](https://github.com/ting-hong-shieh/polish-open-source-prose/tree/7aa4938a3ab2da2866d703433acb4e091d6d5c8f/skills/polish-open-source-prose) | Audit and revise public project prose and locale copy while preserving facts, protected tokens, project voice, and regional register. | `skills/polish-open-source-prose` | `0.1.0` | localization-maintainer | 2026-09-19 | candidate | `S134` |
 
 ## Status boundary
 

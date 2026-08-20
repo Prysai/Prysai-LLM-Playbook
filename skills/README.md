@@ -60,11 +60,11 @@ before relying on a result.
 
 ## Provenance in plain sight
 
-All 25 current entries are original Prysai Lab methods; none is copied or
-installed from another project. The generated registry lists original methods
-first. If a future entry is adapted or vendored, its **Origin** cell must link
-to the canonical upstream project, and its source record and license boundary
-must be present before it can enter this directory.
+The registry contains 26 Skills: 25 original Prysai Lab methods plus one reviewed
+external editorial Skill. The generated registry lists original methods first. The
+external entry keeps its canonical upstream URL, fixed revision, NOTICE, and
+nested MIT license boundary; it is an editing aid, not a claim that any locale
+has passed native-speaker review.
 
 ## Current Skills
 

@@ -5,12 +5,12 @@
 **Status:** `candidate`
 
 This matrix is the human-readable projection of the routing contract for the
-twenty-five project Skills. It defines responsibility and handoff; it does not
+twenty-six project Skills. It defines responsibility and handoff; it does not
 grant tool access or replace project rules. The machine-readable source is
 [`../governance/skill-routing-contract.yaml`](../governance/skill-routing-contract.yaml),
 whose fixtures test declared policy consistency, not trigger accuracy.
 
-This matrix covers the routing contract and the 25 registered Skill files.
+This matrix covers the routing contract and the 26 registered Skill files.
 
 ## Precedence rules
 
@@ -62,6 +62,7 @@ matches the task. Do not load every Skill by default.
 | `prysai-language-partner` / Language Partner | “What is one bounded typed exchange I can produce in my target language?” | one fictional typed scene, learner-first turns, one meaning-blocking correction, a changed case, and a practice receipt | Practice Target to set the first attempt; Learning Coach for existing-attempt feedback; Dialogue Brief for an unsent first message; Source Investigator / Research Router for factual goals; Task Protocol for real people, bookings, payments, or accounts | teaching grammar from scratch, translation, proficiency or fluency claims, real personal data, or external effects |
 | `prysai-interview-rehearsal` / Interview Rehearsal | “How do I rehearse one observable interview answer without a script?” | one question, time limit, visible check, one material gap, one changed question, and a practice receipt | Practice Target for the first attempt; Learning Coach for deeper feedback loops; Dialogue Brief for outreach drafts; Source Investigator for current facts; Task Protocol for real applications or external effects | writing model answers, predicting interview questions, resume writing, salary advice, outcome promises |
 | `prysai-platform-fact-watch` / Platform Fact Watch | "Which existing named-platform teaching claim may need a freshness review, and what reader-facing surface does it affect?" | one claim card, freshness classification, affected-unit map, reader-risk label, safe interim wording, and explicit source/admission handoffs | Source Investigator for a fresh fact review; Evidence Review for a public claim packet; Platform Adapter Review when a changed fact calls adapter admission into question | fact retrieval, platform execution, product approval, adapter admission, model comparison, equivalence, learner outcomes, or release certification |
+| `polish-open-source-prose` / Polish Open-Source Prose | "How can public project prose or locale copy become clearer and more natural without changing facts, protected tokens, or regional meaning?" | an evidence-preserving audit or minimal revision with locale, surface, protected spans, unresolved facts, and native-review boundary | Evidence Review for a completion claim; Source Investigator for missing current facts; Platform Fact Watch for volatile product wording; Task Protocol for files, tools, or external effects | automatic translation certification, AI-authorship detection, native-speaker impersonation, publication approval, or unsupported product claims |
 
 ## Allowed handoff graph
 
@@ -203,7 +204,7 @@ Additional contract fields are required where the route needs them:
 ## Source and maintenance boundary
 
 - **Source:** `CONTEXT.md`, `docs/charter.md`, `docs/book-architecture.md`,
-  `docs/quality/skill-quality-standard.md`, and the 22 registered Skill
+  `docs/quality/skill-quality-standard.md`, and the 26 registered Skill
   files.
 - **License:** original project rewrite. External skill repositories and
   supplied archives remain reference-only unless the asset register records a

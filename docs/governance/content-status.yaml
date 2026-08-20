@@ -426,7 +426,7 @@
     ]
   },
   "skills": {
-    "count": 25,
+    "count": 26,
     "status": "candidate",
     "validator_status": "structural_checks_passed",
     "fresh_context_status": "2_isolated_single_turn_observations; broader trigger, repeated-runtime, learner, and transfer evidence remains partial or not_run",
@@ -605,6 +605,12 @@
         "path": "skills/prysai-interview-rehearsal",
         "status": "candidate",
         "fresh_context_status": "static_contract_reviewed; runtime_pretest_pending"
+      },
+      {
+        "id": "polish-open-source-prose",
+        "path": "skills/polish-open-source-prose",
+        "status": "candidate",
+        "fresh_context_status": "upstream forward cases and structural validation passed; native/domain review and project-runtime pretest pending"
       }
     ]
   },
