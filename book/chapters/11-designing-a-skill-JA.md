@@ -2,172 +2,171 @@
 
 # 第 11 章：役に立つ Skill を設計する
 
-**状態：** `candidate`。**実験：** `not_run`。この章は設計方法を定義します。特定のホストが Skill を発見し、読み込み、実行したことを証明するものではありません。
+**状態：** `candidate`。**実験：** `not_run`。この章では設計方法を定義します。特定のホストが Skill を発見し、読み込み、実行したことを示す章ではありません。
 
 ## この章が解決する問題
 
-一度うまくいったセッションだけを根拠に、プロンプトを Skill にするのは危険です。書かれていない事実に依存したり、不要な権限を求めたり、認証情報が使えることを前提にしたり、流行語だけで起動したりするからです。役に立つ Skill は、繰り返し発生する仕事の種類に対して、範囲を限定した操作と確認可能な証拠を対応づける、バージョン管理された手順パッケージです。
+一度うまくいったセッションだけを根拠に、プロンプトを Skill 化するのは危険です。書かれていない事実に依存したり、不要な権限を求めたり、認証情報が使えると決めつけたり、流行語に反応して起動したりするからです。役に立つ Skill は、繰り返し発生する仕事に対して、範囲を限定した操作と確認できる証拠を結び付けた、バージョン管理下の手順パッケージです。
 
-> Skill とは、範囲を限定した仕事の種類を、範囲を限定した操作と確認可能な証拠に結びつける、発見可能で再利用できる手順パッケージです。
+> Skill とは、範囲を限定した仕事を、範囲を限定した操作と確認できる証拠に結び付ける、見つけて再利用できる手順パッケージです。
 
 Skill はモデル、ツール、権限、コネクター、人による承認の代わりではありません。
 
 ## 学習目標
 
-繰り返し行う仕事に本当に Skill が必要かを判断し、起動条件（trigger）と対象外条件（non-trigger）を含む契約を書くことができます。また、手順・データ・実行を分け、成功例、境界例、失敗例、移行例で候補をレビューできます。`SKILL.md` が存在することや、一度実行できたことだけでは、すべてのホスト、モデル、利用者で信頼できるとは言えません。
+繰り返す仕事に本当に Skill が必要かを判断し、起動条件（`trigger`）と対象外条件（`non-trigger`）を含む契約を書けるようになります。さらに、手順・データ・実行を分け、正常系、境界、失敗、別の仕事への移行という四つのケースで候補を見直せます。`SKILL.md` が存在することや、一度動いたことだけでは、すべてのホスト、モデル、利用者にとって信頼できるとは言えません。
 
 ## 現実の問題：Skill は動き始める前に失敗することがある
 
-### discovery は独立した段階
+### discovery（発見）は独立した段階
 
-Skill をディレクトリに置いても、その場所にファイルがあることしか分かりません。ファイルの存在、現在の画面や作業面から見えること、タスクで選ばれること、入口ファイルが読み込まれること、手順が実行されること、成果物が受け入れ条件を満たすことは、別々に記録します。観察していない段階があるなら、引き継ぎを「接続済み」と一括りにせず `unknown` と書きます。
+Skill をディレクトリに置いても、その場所にファイルがあると分かるだけです。ファイルの存在、現在の画面や作業面（`surface`）から見えること、タスクで選ばれること、入口ファイルが読み込まれること、手順が実行されること、成果物が受け入れ条件を満たすことは、それぞれ別に記録します。確認していない段階があるなら、引き継ぎを「接続済み」とひとまとめにせず、`unknown` と書きます。
 
-### 「接続済み」と「呼び出せる」は別
+### 「接続済み」と「呼び出せる」は別物
 
-コネクター、プラグイン、ワークスペース設定が画面に表示されても、現在のタスクで必要なファイル、ネットワーク、アカウント、公開権限が自動的に与えられるわけではありません。初めて採用するときは、機密情報を含まない成功例で、ホスト、バージョン、パス、入力、実際に選ばれた方法、出力を記録します。観察していない段階は記録（receipt）に残してください。設定画面は、実行時の証拠の代わりにはなりません。
+コネクター、プラグイン、ワークスペース設定が画面に表示されても、現在のタスクに必要なファイル、ネットワーク、アカウント、公開権限が自動的に与えられるわけではありません。初めて採用するときは、機密情報を含まない成功例を使い、ホスト（実行環境）、バージョン、パス、入力、実際に選ばれた方法、出力を記録します。確認していない段階は、記録（`receipt`）に残してください。設定画面は、実行時の証拠の代わりにはなりません。
 
 ### 起動条件と対象外条件を先に分ける
 
-起動条件は、タスクの意図、入力が揃っていること、この方法が担当すべき仕事であること、許容できるリスクであることがすべて揃ったときだけ成立します。キーワードが一致しただけでは不十分です。近い仕事を別の方法に譲る対象外条件（`non-trigger`）も、利用者の注意と権限を守る製品設計の一部です。どの方法も、文案の全面改稿、外部サイトの確認、大量修正、権限の出所が不明な仕事を黙って引き受けてはいけません。
+起動条件は、タスクの意図、必要な入力、この方法が担当すべき仕事かどうか、許容できるリスクの四つがそろったときだけ成立します。キーワードが一致しただけでは不十分です。近い仕事を別の方法に譲る対象外条件（`non-trigger`）も、利用者の注意と権限を守る設計の一部です。どの方法も、文案の全面改稿、外部サイトの確認、大量修正、権限の出所が分からない作業を黙って引き受けてはいけません。
 
 ### 入力・権限・秘密情報の境界
 
-入力は「提供済み」「読み取り可能」「推測」「不明」に分けます。パス、バージョン、出典、基準状態、受け入れ規則、復元先が分からないとき、モデルに補完させてはいけません。読み取り、一時書き込み、永続書き込み、ネットワーク接続、インストール、送信、公開、削除も、それぞれ別の権限です。秘密情報は `SKILL.md`、例、ログ、スクリーンショット、記録に入れず、必要な場合も指定された管理入口だけで扱います。
+入力は「提供済み」「読み取り可能」「推測」「不明」に分けます。パス、バージョン、出典、基準状態、受け入れ条件、復元先が分からないときは、モデルに補完させてはいけません。読み取り、一時的な書き込み、既存ファイルへの書き込み、ネットワーク接続、インストール、送信、公開、削除は、それぞれ別の権限です。秘密情報を `SKILL.md`、例、ログ、スクリーンショット、記録に入れてはいけません。必要な場合も、指定された管理入口だけで扱います。
 
 ### リソースを増やす前に考える
 
-`scripts/` は、同じ結果を再現でき、検査可能な反復操作に限ります。`references/` は、特定の分岐でだけ必要な詳細を置く場所です。`assets/` は、用途とライセンスを明記した静的な素材に限ります。すべてのリソースについて、入力、出力、失敗時の動き、副作用を示します。初回実行は一時ディレクトリか機密情報を含まないサンプルで行い、バージョンと生の出力を残します。スクリプトがあることは、安全、正確、実行済みの証明ではありません。
+`scripts/` には、同じ結果を再現でき、検査可能な反復操作だけを置きます。`references/` は、特定の分岐でだけ必要な詳細を置く場所です。`assets/` は、用途とライセンスを明記した静的な素材に限ります。各リソースについて、入力、出力、失敗時の動き、副作用を示します。初回実行は一時ディレクトリか機密情報を含まないサンプルで行い、バージョンと生の出力を残します。スクリプトがあることは、安全、正確、実行済みの証明ではありません。
 
-## prose より先に contract を書く
+## prose（説明文）より先に contract（契約）を書く
 
 ```yaml
 skill_id: evidence-boundary-review
 version: "0.1.0"
 owner: named-person-or-team
 review_date: "YYYY-MM-DD"
-purpose: "与えられた artifact を指定された evidence boundary で review する。"
+purpose: "与えられた成果物を、指定された証拠の範囲で確認する。"
 trigger:
-  - "evidence boundary review が依頼されている。"
-  - "artifact、goal、acceptance が与えられている。"
+  - "証拠の範囲を定めたレビューが依頼されている。"
+  - "成果物、目的、受け入れ条件が与えられている。"
 non_trigger:
-  - "制限なしの rewrite が依頼されている。"
-  - "重要な claim の source がない。"
-  - "別の named method が task を所有する。"
+  - "制限のない書き直しが依頼されている。"
+  - "重要な主張の出典がない。"
+  - "別に指定された方法がそのタスクを担当する。"
 required_inputs:
-  - target path または貼り付けた artifact
-  - goal、non-goal、acceptance
-  - material claim の provenance
-allowed_actions: "named target を read; disposable output に report を write; reversible local check を run"
-forbidden_actions: "secret の読取/出力、publish、send、delete、install、無許可 network"
-output: "claim → evidence → uncovered scope report"
-stop_when: "input、authority、source、recovery target が欠ける"
+  - 対象パスまたは貼り付けた成果物
+  - 目的、対象外、受け入れ条件
+  - 重要な主張の出どころ
+allowed_actions: "指定された対象を読む; 破棄できる出力に報告を書く; 元に戻せるローカル検査を実行する"
+forbidden_actions: "秘密情報の読み取り・出力、公開、送信、削除、インストール、無許可のネットワーク接続"
+output: "主張 → 証拠 → 未確認範囲の報告"
+stop_when: "入力、権限、出典、復元先のいずれかが欠けている"
 ```
 
-trigger には task intent、required input、method ownership、acceptable risk が必要です。keyword coincidence だけでは足りません。non-trigger は近接 task を乗っ取らないためのものです。
+`trigger` には、タスクの意図、必要な入力、この方法が担当する範囲、許容できるリスクを明記します。キーワードが偶然一致しただけでは足りません。`non-trigger` は、よく似た別のタスクを横取りしないためのものです。
 
 ## method、data、execution を分ける
 
-- `SKILL.md` には常に必要な purpose、boundary、step、stop rule、evidence を置く。
-- `references/` には特定 branch でのみ読む material を置く。
-- `scripts/` は dependency、network、write scope、exit behavior を宣言した deterministic check だけにする。
-- `assets/` は宣言した static resource だけにする。
+- `SKILL.md` には、毎回必要な目的、境界、手順、停止条件、証拠を置く。
+- `references/` には、特定の分岐でだけ読む資料を置く。
+- `scripts/` には、依存関係、ネットワーク、書き込み範囲、終了時の振る舞いを宣言した決定的な検査だけを置く。
+- `assets/` には、用途を明記した静的リソースだけを置く。
 
-critical safety rule を optional reference に隠しません。file exists は discovery を、discovery は load を、load は adoption を、adoption は behavior を証明しません。
+重要な安全ルールを任意の参考資料に隠してはいけません。ファイルがあることは発見を、発見は読み込みを、読み込みは採用を、採用は実際の振る舞いを証明しません。
 
-## 四つの case で評価する
+## 四つのケースで評価する
 
-| case | 起きるべきこと | 起きてはいけないこと |
+| ケース | 起きるべきこと | 起きてはいけないこと |
 |---|---|---|
-| positive | method が trigger し、reviewable artifact を残す | evidence なしの成功宣言 |
-| boundary | 正しい method に譲るか、具体的に質問する | 類似 label だけで trigger |
-| failure | unsafe write 前に stop し、最初の欠落点を残す | input、permission、result を捏造 |
-| transfer | domain fact を変え、assumption を再確認する | noun を機械的に置換 |
+| 正常系 | 方法が起動し、確認できる成果物を残す | 証拠のない成功宣言 |
+| 境界 | 正しい方法に譲るか、具体的に質問する | 似たラベルだけで起動する |
+| 失敗 | 危険な書き込みの前に停止し、最初の欠落点を残す | 入力・権限・結果を捏造する |
+| 移行 | 分野の事実を変え、前提を再確認する | 名詞だけを機械的に置き換える |
 
-一変数だけを変え、artifact に見える signal を残す intentional failure を加えます。rollback は target、baseline、step、read-back check を定義します。「undo」だけでは不十分です。
+一つの変数だけを変え、成果物に見える失敗の兆候が残る、意図的な失敗ケースを加えます。ロールバックには対象、基準状態、手順、復元後の読み戻し確認を定義します。「元に戻す」と書くだけでは不十分です。
 
 ## 実験と境界
 
 ### 準備
 
-少なくとも二回行った、local で non-sensitive な task を選びます。disposable input、明確な acceptance、read-only boundary を決めます。credential、install、network、license が不明な他者の Skill content は使いません。
+少なくとも二回行った、ローカルで実行できる機密性のないタスクを選びます。破棄できる入力、明確な受け入れ条件、読み取り専用の境界を決めます。認証情報、インストール、ネットワーク、ライセンスが不明な他者の Skill の内容は使いません。
 
 ### タスク
 
-Markdown link review、research brief の source check、release handoff など、二回以上行った低リスク method を選びます。contract、positive case、trigger しない near miss、missing input、visible failure、rollback check を作り、artifact が何を証明し、何が unknown かを表にします。
+Markdown のリンク確認、調査概要の出典チェック、リリース引き継ぎなど、二回以上行った低リスクの方法を選びます。契約、正常系、起動しない近い例、入力不足、目に見える失敗、ロールバック確認を用意し、成果物が何を証明し、何が不明かを表にします。
 
-宣言した environment でこれらの case を記録し、独立 review を受けるまで、その Skill は `candidate` です。discovery、load、execution、business impact を主張しません。
+宣言した環境でこれらのケースを記録し、独立したレビューを受けるまで、その Skill は `candidate` です。発見、読み込み、実行、業務への効果を主張してはいけません。
 
 ### 証拠
 
-contract、version、non-sensitive input、expected と actual output、stop point、load した resource、host/surface の正確な observation を保存します。観察していない layer は `not_observed` とし、directory だけから execution record を作りません。
+契約、バージョン、機密性のない入力、期待値と実際の出力、停止地点、読み込んだリソース、ホストと作業面（`surface`）で実際に確認したことを保存します。確認していない層は `not_observed` とし、ディレクトリにあることだけを根拠に実行記録を作ってはいけません。
 
 ## 観察できる設計フロー
 
-ここでは低リスクな「Markdown のローカルリンク確認」を使います。ネットワーク、アカウント、実在の利用者データは不要です。ただし、特定の host がこの Skill を自動で discover する証明にはなりません。
+ここでは低リスクな「Markdown のローカルリンク確認」を使います。ネットワーク、アカウント、実在する利用者データは必要ありません。ただし、特定のホストがこの Skill を自動で発見する証明にはなりません。
 
-### task を確認可能な範囲に絞る
+### タスクを確認できる範囲に絞る
 
-「ドキュメントの品質を確認する」では境界がありません。method を使う前に、その回の task protocol を書きます。
+「ドキュメントの品質を確認する」だけでは境界がありません。方法を使う前に、その回のタスク契約を書きます。
 
 ```text
-goal: docs/quickstart.md 内の壊れた相対 Markdown link を見つける。
-allowed: 対象を read、temporary report に候補を書く、read-only local check を run。
-not allowed: 本文 edit、network、dependency install、delete、publish。
-acceptance: link text、target、check result、unknown の理由を一件ずつ示す。
-stop: file がない、解決基準が不明、または未許可の action が必要。
+目的: docs/quickstart.md 内の壊れた相対 Markdown リンクを見つける。
+許可: 対象を読む、破棄できる一時報告に候補を書く、読み取り専用のローカル検査を実行する。
+禁止: 本文の編集、ネットワーク接続、依存関係のインストール、削除、公開。
+受け入れ条件: リンクの文言、対象、検査結果、不明な理由を一件ずつ示す。
+停止: ファイルがない、解決基準が不明、または許可されていない操作が必要。
 ```
 
-この protocol は今回の task のものです。Skill は繰り返し使う method だけを持ちます。混ぜると次の task に古い path、permission、結論まで持ち込んでしまいます。
+この契約は今回のタスクだけに属します。Skill には繰り返し使う方法だけを持たせます。混ぜると、次のタスクに古いパス、権限、結論まで持ち込むことになります。
 
-### trigger と譲る条件を設計する
+### 起動条件と譲る条件を設計する
 
-trigger は宣伝文句ではありません。method がこの task を担当してよいか判断できる必要があります。
+起動条件は宣伝文句ではありません。この方法がタスクを担当してよいか判断できる内容にします。
 
-| 項目 | link review Skill の例 |
+| 項目 | リンク確認 Skill の例 |
 |---|---|
-| 適用 | named Markdown file の local link を、goal と acceptance 付きで確認してほしい |
-| 非適用 | rewrite、remote site check、repository 全体の repair、対象 file 不明 |
-| 先に質問 | file、repository root、site output のどれを link base にするか |
-| stop | network、credential、protected write、publish change が必要なのに明示許可がない |
+| 適用 | 指定された Markdown ファイルのローカルリンクを、目的と受け入れ条件付きで確認してほしい |
+| 非適用 | 書き直し、リモートサイトの確認、リポジトリ全体の修復、対象ファイルが不明 |
+| 先に質問 | リンクの基準はファイル、リポジトリのルート、サイト出力のどれか |
+| 停止 | 明示的な許可がないのにネットワーク、認証情報、保護された書き込み、公開変更が必要 |
 
-「link」と「review」が出ただけでは足りません。intent、input、method ownership、許容 risk を合わせて決めます。
+「リンク」と「確認」という言葉が出ただけでは足りません。意図、入力、この方法の担当範囲、許容できるリスクを合わせて判断します。
 
-### action と evidence を対にする
+### 操作と証拠を対にする
 
-| 段階 | 許可する action | 残す evidence | まだ証明しないこと |
+| 段階 | 許可する操作 | 残す証拠 | まだ証明しないこと |
 |---|---|---|---|
-| input check | file と protocol を read | path、baseline、missing input | link が壊れていること |
-| scan | relative link を抽出 | candidate table と parse rule | target が存在すること |
-| check | path を read-only で解決 | exists / missing / unknown | remote URL が使えること |
-| delivery | disposable report を write | report、command、exit status | 問題を修正したこと |
-| review | high-risk / unknown を人が読む | decision と uncovered scope | すべての repo で有効なこと |
+| 入力確認 | ファイルと契約を読む | パス、基準状態、不足している入力 | リンクが壊れていること |
+| 抽出 | 相対リンクを取り出す | 候補表と解析規則 | 対象が存在すること |
+| 確認 | 読み取り専用でパスを解決する | 存在・不在・不明の結果 | リモート URL が使えること |
+| 共有 | 破棄できる報告に書く | 報告、コマンド、終了状態 | 問題を修正したこと |
+| レビュー | リスクが高い項目や不明な項目を人が読む | 判断と未確認範囲 | すべてのリポジトリで有効なこと |
 
-exit status が 0 でも、その check が自身の定義で終わっただけです。無視した format、build 時の書き換え、remote target まで正しいとは言えません。
+終了状態が 0 でも、その検査が自分の定義どおりに終わっただけです。対象外にした形式、ビルド時の書き換え、リモートの対象まで正しいとは言えません。
 
-## 最小とは、短くして大事な判断を落とすことではない
+## 最小化とは、大事な判断を削ることではない
 
-入口の `SKILL.md` は短くできますが、毎回必要な boundary は残します。
+入口の `SKILL.md` は短くできますが、毎回必要な境界は残します。
 
 ```markdown
 ---
 name: local-link-review
-description: Named Markdown file の local link を、goal、acceptance、
-read-only scope が与えられたときに review する。rewrite、network、bulk repair には使わない。
+description: 目的、受け入れ条件、読み取り専用の範囲が与えられたとき、指定された Markdown ファイルのローカルリンクを確認する。書き直し、ネットワーク接続、大量修正には使わない。
 ---
 
-1. target、link base、allowed scope、acceptance を確認する。
-2. 一つでも欠けたら stop して質問する。
-3. local relative link だけを抽出し、元の text を保存する。
-4. 宣言済み read-only check を run し、version と exit status を記録する。
-5. candidate、confirmed、unknown を分けて返す。
-6. 新しい approval なしに edit、publish、install、network をしない。
+1. 対象、リンクの基準、許可された範囲、受け入れ条件を確認する。
+2. 一つでも欠けていたら停止して質問する。
+3. ローカルの相対リンクだけを抽出し、元の文言を保存する。
+4. 宣言済みの読み取り専用検査を実行し、バージョンと終了状態を記録する。
+5. 候補、確認済み、不明を分けて返す。
+6. 新たな承認なしに編集、公開、インストール、ネットワーク接続を行わない。
 ```
 
-方言別の解析は `references/`、決定的な checker は `scripts/` に置けます。しかし「target がなければ stop」「network と write はしない」は optional file に隠してはいけません。
+形式ごとの解析規則は `references/`、決定的なチェッカーは `scripts/` に置けます。ただし、「対象がなければ停止する」「ネットワーク接続と書き込みをしない」というルールは、任意のファイルに隠してはいけません。
 
-## 意図的な failure で stop を試す
+## 意図的な失敗で停止を試す
 
-temporary sample を作り、一つだけ変えます。link を存在しない path に向けます。期待するのは曖昧な賢さではなく、見える signal です。
+一時的なサンプルを作り、一つだけ変えます。リンクを存在しないパスに向けます。期待するのは曖昧な賢さではなく、目に見える兆候です。
 
 ```text
 BROKEN: [インストール手順] (guides/install.md)
@@ -176,120 +175,118 @@ check: path does not exist
 scope: local relative path only; remote availability not checked
 ```
 
-次に `https://` link を含む boundary case を試します。network へ出ず、out of scope / unknown と残すべきです。link base がない場合も、正しい答えは構造を推測することではなく、質問または stop です。
+次に `https://` リンクを含む境界ケースを試します。ネットワークには接続せず、範囲外または不明として残すべきです。リンクの基準がない場合も、構造を推測するのではなく、質問するか停止するのが正しい対応です。
 
 ## 小さな実験と境界
 
-1. 安全に read できる Markdown file を選ぶ。secret や private material は model に渡さない。
-2. goal、scope、acceptance を protocol に記入する。
-3. read-only check を一度 run し、environment、date、input、raw output を残す。
-4. temporary broken link を入れて再実行し、repair ではなく failure signal が残るか確かめる。
-5. sample を捨てるか行を戻し、original file と report を read back して未許可の change がないか確認する。
-6. protocol と report だけを別の reader に渡し、result、scope、unknown を説明できるか聞く。
+1. 安全に読める Markdown ファイルを選ぶ。秘密情報や私的な資料をモデルに渡さない。
+2. 目的、範囲、受け入れ条件をタスク契約に記入する。
+3. 読み取り専用の検査を一度実行し、環境、日付、入力、生の出力を残す。
+4. 一時的に壊れたリンクを入れて再実行し、修正ではなく失敗の兆候が残るか確かめる。
+5. サンプルを捨てるか変更した行を戻し、元のファイルと報告を読み戻して、許可していない変更がないか確認する。
+6. 契約と報告だけを別の読者に渡し、結果、範囲、不明点を説明できるか尋ねる。
 
-この観察は記録した environment に限られます。他の host、version、model で同じ discovery、selection、load、execution が起きる証明ではありません。
+この観察は、記録した環境に限られます。他のホスト、バージョン、モデルで同じ発見、選択、読み込み、実行が起きる証明ではありません。
 
 ## よくある誤り
 
-- description を保証にする。「安全な publish を自動保証する」は boundary も acceptance もない。
-- script と Skill を混同する。script は決まった check、Skill は使用時、停止時、解釈を決める。
-- discovery を reliability と混同する。metadata、selection、load、action、evidence を別々に確認する。
-- unknown を隠す。「remote link は未確認」は失敗ではなく report の重要な結果である。
+- 説明文を保証だと思う。「安全な公開を自動で保証する」では、境界も受け入れ条件もありません。
+- スクリプトと Skill を混同する。スクリプトは決められた検査を実行し、Skill はいつ使い、いつ停止し、結果をどう解釈するかを定めます。
+- 発見を信頼性と混同する。メタデータ、選択、読み込み、操作、証拠を分けて確認します。
+- 不明点を隠す。「リモートリンクは未確認」も、報告に残すべき重要な結果です。
 
-## adoption receipt：file があるだけでは依存できない
+## 採用記録（adoption receipt）：ファイルがあるだけでは頼れない
 
-Skill を実際の task に渡す前に、adoption receipt を残します。これは「folder に見える」を
-「使ってよい」と取り違えないためであり、次の reviewer がどの layer から確認すべきかを
-示します。
-
-```text
-Skill name と version:
-task gap: 「AI を強くする」ではなく、補う具体的な decision
-source と license: original / reviewed source、license と review date
-この試行の host と surface: 実際に使った product、version、path
-observed: file / discovery / selection / load / action / output
-not observed: run、read-back、independent review がないすべての layer
-allowed scope: read、temporary write、network、install、publish を別々に記す
-next safe check: 未観測の layer を一つだけ確認する
-stop: input、authority、recovery target、evidence が欠けるとき
-```
-
-repository に `SKILL.md` があることは、file の存在だけを支えます。host の discovery や
-method の execution は支えません。一度 report が出ても、それは記録した task と environment
-だけの observation です。すべての model、folder、user に同じ結果が出る証明ではありません。
-
-## external method は source を review してから採用する
-
-external Skill の instruction、script、example は review 対象の material として扱います。
-repository が popular、説明が流暢、名前が似ているという理由だけで course に copy したり、
-real data で run したりしません。少なくとも次を確認します。
-
-1. original link、specific revision、owner、review date;
-2. top-level license が必要な code、script、asset、nested dependency を覆うか;
-3. read、write、install、network、send の何を行う可能性があるか;
-4. より小さな original method ではなく、その task gap に本当に必要か; そして
-5. non-sensitive temporary fixture で何を check し、何をまだ run していないか。
-
-答えが欠けるなら、link と research record だけを残します。本 project の Skill として copy
-せず、adopted capability とも書きません。
-
-## ガイド付き練習：繰り返せる check を Skill にする
-
-少なくとも二回行った小さな task を選びます。たとえば Markdown file の local link review、
-report に source と date があるかの確認、diff と test command を含む handoff の準備です。
-「もっと良くする」は選びません。ほかの人が同じ decision を繰り返せないからです。
-
-まず Skill なしで一度行い、goal、input file、allowed action、result、evidence、stop point
-だけを残します。次の task でも必要な判断に下線を引きます。file name や見栄えのよい
-response ではなく、その判断が Skill にする候補です。
+Skill を実際のタスクに渡す前に、採用記録（`adoption receipt`）を残します。これは「フォルダーに見える」ことを
+「使ってよい」ことと取り違えないためです。また、次のレビュー担当者がどの段階から確認すべきかも示します。
 
 ```text
-いつ使うか: 指定 Markdown file の local link review を頼まれたとき
-使わない: rewrite、web link、publish、bulk repair
-必要な入力: file、link base、read-only scope、acceptance
-返すもの: confirmed、candidate、unknown を分けた report
-停止: file/base がない。network、install、write が必要になる
+Skill の名前とバージョン:
+補う仕事の空白: 「AI を強くする」ではなく、具体的に補う判断
+出典とライセンス: 原典または確認済みの出典、ライセンス、確認日
+今回のホストと作業面: 実際に使った製品、バージョン、パス
+確認済み: ファイル / 発見 / 選択 / 読み込み / 操作 / 出力
+未確認: 実行、読み戻し、独立レビューなど、確認していないすべての段階
+許可された範囲: 読み取り、一時書き込み、ネットワーク、インストール、公開を分けて記す
+次の安全な確認: 未確認の段階を一つだけ選ぶ
+停止条件: 入力、権限、復元先、証拠のいずれかが欠けたとき
 ```
 
-`SKILL.md` を書く前に、モデルへこの contract を批判させます。何を勝手に補うか、どの似た
-request を別の method に譲るか、reviewer は何で result を確認できるかを尋ねます。
-「すべてを自動化する」は受け取りません。役立つ rule には decision、boundary、reviewable
-signal が必要です。
+リポジトリに `SKILL.md` があることは、ファイルが存在することだけを示します。ホストが発見したことや、
+方法が実行されたことは示しません。一度報告が出ても、それは記録したタスクと環境での観察にすぎません。
+すべてのモデル、フォルダー、利用者で同じ結果になる証明ではありません。
+
+## 外部の方法は出典を確認してから採用する
+
+外部 Skill の指示、スクリプト、例は、まずレビュー対象の資料として扱います。
+リポジトリが人気である、説明が流暢である、名前が似ているという理由だけで教材にコピーしたり、
+実データで実行したりしません。少なくとも次を確認します。
+
+1. 原典へのリンク、具体的なリビジョン、所有者、確認日。
+2. ルートのライセンスが、必要なコード、スクリプト、アセット、入れ子の依存関係までカバーしているか。
+3. 読み取り、書き込み、インストール、ネットワーク接続、送信のうち、何を行う可能性があるか。
+4. より小さな自作の方法ではなく、その仕事の空白を本当に埋める必要があるか。
+5. 機密性のない一時フィクスチャで何を確認し、何をまだ実行していないか。
+
+答えが欠けるなら、リンクと調査記録だけを残します。このプロジェクトの Skill としてコピーせず、
+採用済みの機能とも書きません。
+
+## ガイド付き練習：繰り返せる確認を Skill にする
+
+少なくとも二回行った小さなタスクを選びます。たとえば Markdown ファイルのローカルリンク確認、
+報告に出典と日付があるかの確認、差分とテストコマンドを含む引き継ぎの準備です。
+「もっと良くする」は選びません。他の人が同じ判断を繰り返せないからです。
+
+まず Skill なしで一度行い、目的、入力ファイル、許可された操作、結果、証拠、停止地点だけを残します。
+次のタスクでも必要になる判断に下線を引きます。ファイル名や見栄えのよい応答ではなく、その判断こそが
+Skill にする候補です。
+
+```text
+使うとき: 指定された Markdown ファイルのローカルリンク確認を頼まれたとき
+使わないとき: 書き直し、Web リンクの確認、公開、大量修正
+必要な入力: ファイル、リンクの基準、読み取り専用の範囲、受け入れ条件
+返すもの: 確認済み、候補、不明を分けた報告
+停止: ファイルまたは基準がない、ネットワーク・インストール・書き込みが必要になる
+```
+
+`SKILL.md` を書く前に、モデルにこの契約を批判させます。何を勝手に補うか、どの似た依頼を別の方法に譲るか、
+レビュー担当者は何を見れば結果を確認できるかを尋ねます。「すべてを自動化する」という答えは採用しません。
+役立つルールには、判断、境界、確認できる兆候が必要です。
 
 ## 振り返り
 
-Skill の中で再利用できる decision と、この file または host だけに属するものは何か。Skill が明示的に引き受けてはいけない request は何か。permission や scope を広げずに、次の未観察 layer を確かめる evidence は何か。
+Skill の中で再利用できる判断と、このファイルまたはホストだけに属するものは何でしょうか。Skill が明示的に引き受けてはいけない依頼は何でしょうか。権限や範囲を広げずに、次の未確認の段階を確かめる証拠は何でしょうか。
 
 ## 移行タスク
 
-contract を learning または research の task に移します。learning Skill は practice cycle と後の recall task を組織できますが、fluency や mastery を主張しません。research Skill は source と uncertainty を整理できますが、見つけた link を確認済みの fact にしません。trigger、non-trigger、stop rule、evidence boundary は保ちます。
+契約を学習または調査のタスクに移します。学習 Skill は練習サイクルと後の想起課題を組み立てられますが、流暢さや習得を主張しません。調査 Skill は出典と不確実性を整理できますが、見つけたリンクを確認済みの事実に変えません。起動条件、対象外条件、停止条件、証拠の境界は保ちます。
 
 ## 受け入れチェックリスト
 
-- [ ] candidate は「AI を強くする」ではなく、名前のある繰り返す decision を解く。
-- [ ] trigger、non-trigger、input、allowed action、stop、reviewable output がある。
-- [ ] method、project-specific data、deterministic execution を分けている。
-- [ ] positive、boundary、failure、transfer に expected result または正直な `not_run` がある。
-- [ ] external material は source、license、side effect を review してからだけ採用する。
+- [ ] `candidate` は「AI を強くする」ではなく、名前のある繰り返しの判断を解決する。
+- [ ] 起動条件、対象外条件、入力、許可された操作、停止条件、確認できる出力がある。
+- [ ] 方法、プロジェクト固有のデータ、決定的な実行を分けている。
+- [ ] 正常系、境界、失敗、移行に、期待する結果または正直な `not_run` がある。
+- [ ] 外部資料は、出典、ライセンス、副作用を確認してから採用する。
 
 ## 出典と保守の境界
 
-Skill の decision method は project-authored です。host behavior、discovery、Plugin、MCP、permission、external candidate は変わります。現在の claim は[公式ファクトカード](../evidence-library-JA.md#source-notes)、[Skill candidate record](../evidence-library-JA.md#source-notes)、具体的な license source で確認します。どれも記録した host での run の代わりにはなりません。
+Skill の判断方法は、このプロジェクトが作成したものです。ホストの挙動、発見、プラグイン、MCP、権限、外部候補は変わります。現在の主張は、[公式ファクトカード](../evidence-library-JA.md#source-notes)、[Skill 候補の記録](../evidence-library-JA.md#source-notes)、具体的なライセンスの出典で確認します。どれも、記録したホストでの実行の代わりにはなりません。
 
-## 採用前の四つの case
+## 採用前の四つのケース
 
-credential と network を使わない最小セットを用意します。
+認証情報とネットワークを使わない最小セットを用意します。
 
-| case | input | 正しい結果 |
+| ケース | 入力 | 正しい結果 |
 |---|---|---|
-| positive | file と base が明確 | local link report と read-back evidence |
-| boundary | text を整えるだけの依頼 | trigger せず、link review ではないと説明 |
-| failure | file または base がない | 質問または `blocked`。path を推測しない |
-| transfer | 構造の異なる別の local report | method は保ち、base と acceptance を再決定 |
+| 正常系 | ファイルと基準が明確 | ローカルリンクの報告と読み戻しの証拠 |
+| 境界 | 文章を整えるだけの依頼 | 起動せず、リンク確認ではないと説明 |
+| 失敗 | ファイルまたは基準がない | 質問または `blocked`。パスを推測しない |
+| 移行 | 構造の異なる別のローカル報告 | 方法は保ち、基準と受け入れ条件を再決定 |
 
-Skill version、非機密 input、load した resource、output、最初の stop point を保存します。
-directory に file があることは、host での discovery、loading、execution の証明ではありません。
-記録ができるまで、この章は `candidate`、experiment は `not_run` のままです。
+Skill のバージョン、機密性のない入力、読み込んだリソース、出力、最初の停止地点を保存します。
+ディレクトリにファイルがあることは、ホストで発見・読み込み・実行された証明ではありません。
+記録ができるまで、この章は `candidate`、実験は `not_run` のままです。
 
 <!-- chapter-navigation:start -->
 <hr>
