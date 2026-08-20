@@ -182,8 +182,8 @@ Agent 可以整理產品上下文、起草變體、檢查事件名稱、計算�
 <nav class="chapter-navigation" aria-label="章節導覽">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="16-engineering-track-ZHTW.md" aria-label="上一章: 第 16 章 · Engineering track: from idea to reliable software">← 上一章<br><strong>第 16 章 · Engineering track: from idea to reliable software</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="18-content-design-data-automation-ZHTW.md" aria-label="下一章: 第 18 章 · Content, design, data, and automation track">下一章 →<br><strong>第 18 章 · Content, design, data, and automation track</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="16-engineering-track-ZHTW.md" aria-label="上一章：第 16 章 · 工程路線——從想法到可靠軟體">← 上一章<br><strong>第 16 章 · 工程路線——從想法到可靠軟體</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="18-content-design-data-automation-ZHTW.md" aria-label="下一章：第 18 章 · 內容、設計、資料與自動化軌">下一章 →<br><strong>第 18 章 · 內容、設計、資料與自動化軌</strong></a></td>
     </tr>
   </table>
 </nav>
