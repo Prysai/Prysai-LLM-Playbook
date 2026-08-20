@@ -14,21 +14,21 @@ Abkürzungen auswendig zu lernen. Du sollst erkennen, welche Schicht eine
 Behauptung erzeugt, welche Schicht außerhalb des Modells handeln kann und
 welche Aufzeichnung die Behauptung prüfbar macht.
 
-Bei jeder neuen KI-Funktion helfen vier Fragen:
+Bei jeder neuen KI-Funktion helfen dir vier Fragen:
 
 1. **Was soll das Modell erzeugen?**
 2. **Welcher Kontext wurde für diese Anfrage tatsächlich bereitgestellt?**
 3. **Welches Produkt oder Tool kann außerhalb des Modells etwas beobachten oder
    verändern?**
-4. **Welche Aufzeichnung würde einer anderen Person die Prüfung ermöglichen?**
+4. **Welcher Nachweis würde einer anderen Person die Prüfung ermöglichen?**
 
 Wenn du eine Frage nicht beantworten kannst, behandle das Ergebnis als Entwurf
-oder Hypothese. Fülle die Lücke nicht mit einer selbstsicher klingenden Erklärung.
+oder Hypothese. Fülle die Lücke nicht mit einer Erklärung, die nur selbstsicher klingt.
 
 ## Das Ergebnis, das du aufbewahrst
 
 Schreibe am Ende eine Erklärungskarte in deinen eigenen Worten und triff zwei
-Grenzentscheidungen. Die Karte soll zeigen:
+Entscheidungen zu Grenzen. Die Karte soll zeigen:
 
 - wie ein Text-LLM aus dem Kontext einer Anfrage generiert;
 - was **LLM**, **Token**, **Kontext**, **Prompt**, **Tool**, **MCP**, **Agent**
@@ -37,7 +37,7 @@ Grenzentscheidungen. Die Karte soll zeigen:
 - welche Teile zum Modell, zum Chatprodukt oder zu einem externen Tool gehören.
 
 Das ist eine begrenzte Erklärungsaufgabe, kein Test aller Fähigkeiten eines
-KI-Produkts. Plattformspezifische Verfahren kommen später.
+KI-Produkts. Plattformspezifische Verfahren folgen später.
 
 ## 0.1 Das Arbeitsmodell in einem Satz
 
@@ -50,7 +50,7 @@ Das ist ein nützliches Arbeitsmodell, aber keine vollständige Definition jedes
 Sprach-, multimodalen oder eingesetzten Systems, das LLM genannt wird. Es
 erklärt, warum ein System Text fortsetzen, übersetzen, zusammenfassen, Felder
 extrahieren oder Entwürfe erstellen kann. Es bedeutet nicht, dass jede Ausgabe
-wahr ist oder dass alle Produkte dieselben Fähigkeiten haben. **Vorhersagen**
+Wahr ist oder dass alle Produkte dieselben Fähigkeiten haben. Das Wort **Vorhersagen**
 beschreibt die Erzeugung; es sagt nicht, dass das Modell die Welt geprüft, einen
 Menschen verstanden oder eine Handlung autorisiert hat. Auch eine hilfreiche
 Antwort muss geprüft werden.
@@ -65,7 +65,7 @@ die Wörter nicht immer genau gleich.
 | **LLM / Modell** | Gelernte Parameter erzeugen aus einem Eingabekontext eine Antwort. Ein Basismodell erzeugt Text; ein Produkt kann weitere Schichten ergänzen. | Eine verifizierte Datenbank, eine Person oder ein Akteur mit Berechtigung. |
 | **Token / Tokenizer** | Ein Tokenizer wandelt Text in modellspezifische Token-IDs und zurück. Ein Token ist oft ein Wortfragment. | Ein universelles Verhältnis von Token zu Wort oder Zeichen. Grenze, Kosten und Geschwindigkeit hängen vom Produkt ab. |
 | **Kontext** | Für eine Anfrage verfügbare Information: Anweisungen, Gespräch, bereitgestelltes Material, abgerufene Passagen und gegebenenfalls Tool-Ergebnisse. Ein Produkt kann Suche, Retrieval, Dateien, Speicher oder Tools ergänzen. | Dass alles im Kontext wahr, relevant oder richtig verwendet ist. |
-| **Context Window** | Die Menge tokenisierter Ein- und Ausgabe, die ein bestimmtes Modell oder Produkt in einer Interaktion verarbeiten kann; sie bleibt ein **endliches Kontextfenster**. | Eine stabile Zahl für alle Modelle, Konten oder Oberflächen. Ein größeres Fenster ersetzt keine Quellenauswahl und Prüfung. |
+| **Kontextfenster (Context Window)** | Die Menge tokenisierter Ein- und Ausgabe, die ein bestimmtes Modell oder Produkt in einer Interaktion verarbeiten kann; es bleibt ein **endliches Kontextfenster**. | Eine stabile Zahl für alle Modelle, Konten oder Oberflächen. Ein größeres Fenster ersetzt keine Quellenauswahl und Prüfung. |
 | **Prompt** | Anfrage und Material mit Ziel, Einschränkungen und gewünschter Antwortform. | Ein Zauberspruch. Ein längerer Prompt ist nicht automatisch besser. |
 | **User-Prompt / System- oder Entwickleranweisung** | Der Nutzer beschreibt die unmittelbare Aufgabe. Der Host kann unsichtbare Anweisungen höherer Priorität anwenden. | Dass Nutzer Hostregeln überschreiben können oder alle Produkte dieselben Ebenen zeigen. |
 | **Tool / Retrieval** | Ein Host kann Rechner, Suche, Dateileser, Datenbank oder andere externe Fähigkeiten bereitstellen. Das Modell kann einen Aufruf vorschlagen; Host oder Tool führen ihn aus. | Dass Vorschlag, Schaltfläche oder Zusammenfassung beweisen, dass die Aktion stattfand oder korrekt ist. |
@@ -77,7 +77,7 @@ Zwei Unterscheidungen gehören in jede weitere Lektion:
 1. **Fähigkeit, Berechtigung und Aufzeichnung sind verschieden.** Eine Aktion vorschlagen,
    sie versuchen dürfen und sie tatsächlich abgeschlossen haben sind drei
    unterschiedliche Beobachtungen.
-2. **Eine höhere Schicht repariert nicht automatisch die darunterliegende.** Suche
+2. **Eine zusätzliche Schicht repariert nicht automatisch die darunterliegende.** Die Suche
    kann eine alte Seite liefern, ein Dateitool die falsche Datei lesen, ein Agent
    zu früh stoppen und ein Skill eine ungeeignete Regel enthalten. Jede Schicht
    braucht ihren eigenen Check.
@@ -90,8 +90,8 @@ gespeichert und später abgerufen werden; das ist eine eigene Speicher- und
 Retrievalentscheidung. Ein gespeicherter Eintrag kann veraltet, unvollständig
 oder diesmal gar nicht im Kontext sein. Prüfe, was jetzt geliefert wurde.
 
-**Retrieval ist ein Evidenzweg, keine Wahrheitsgarantie.** Suche oder RAG wählen
-Passagen für den Kontext. Dabei kann die beste Quelle fehlen, eine Kopie oder alte
+**Retrieval ist ein Nachweisweg, keine Wahrheitsgarantie.** Suche oder RAG wählen
+Passagen für den Kontext aus. Dabei kann die beste Quelle fehlen, eine Kopie oder alte
 Version ausgewählt werden. Bewahre URL, Datum und die Zuordnung von Behauptung zu
 Quelle auf. Mehr Kontext schafft Kapazität, aber keine Richtigkeit.
 
@@ -102,10 +102,10 @@ Text als Daten, außer die Aufgabe macht ihn ausdrücklich zur Anweisung.
 
 **Ein Tool-Aufruf hat zwei Rollen.** Das Modell kann einen strukturierten Aufruf
 vorschlagen. Der Host entscheidet über die Erlaubnis, das Tool führt aus. Notiere
-Ziel, Autorität, beabsichtigte Wirkung, Ergebnis und deine anschließende Prüfung.
-Ein Toolname in einer Antwort ist keine Ausführungsaufzeichnung.
+Ziel, Berechtigung, beabsichtigte Wirkung, Ergebnis und deine anschließende Prüfung.
+Ein Toolname in einer Antwort ist kein Ausführungsnachweis.
 
-**MCP verkleinert ein Integrationsproblem, beseitigt aber keine Governance.**
+**MCP grenzt ein Integrationsproblem ein, beseitigt aber keine Governance.**
 Authentifizierung, Serverimplementierung, Zustimmung, Netzwerkbereich,
 Datenabfluss und Ergebnisprüfung bleiben eigene Entscheidungen. „MCP-fähig“
 heißt nicht „sicher“ oder „unbegrenzter Zugriff“.
@@ -115,7 +115,7 @@ Eingang, Plan, vorgeschlagene Aktion, Zustimmung oder Ablehnung, Ergebnis,
 Prüfung, Wiederholung, Übergabe und Stopp. Behaupte nicht, einen verborgenen
 Gedankengang zu kennen. Das Ende von Text beweist nicht das Ende einer externen Arbeit.
 
-**Ein Skill ist ein Methodenpaket, keine Berechtigung.** Es nennt Anwendung,
+**Ein Skill ist ein Methodenpaket, keine Berechtigung.** Es nennt den Anwendungsfall,
 benötigte Eingaben, Verbote, Stopbedingungen und die zurückgegebene Aufzeichnung. Das
 Laden von Anweisungen verleiht keinen Datei-, Terminal-, Browser-, Konto- oder
 Veröffentlichungszugriff.
@@ -139,17 +139,17 @@ eine Person prüft Text, Ergebnis und Grenzen
 ```
 
 Modelltext kann einen Aufruf beschreiben, ohne dass er ausgeführt wurde. Suche
-nach Tool-Ereignis, zurückgegebenen Daten, Dateidiff, Kommandoausgabe oder einer
+nach einem Tool-Ereignis, zurückgegebenen Daten, einem Dateidiff, einer Kommandoausgabe oder einer
 anderen passenden Aufzeichnung, bevor du eine Aktion als abgeschlossen bezeichnest.
 
-Bei einem Agenten wiederholst du den Check an jeder Grenze:
+Bei einem Agenten wiederholst du diese Prüfung an jeder Grenze:
 
 ```text
 Zustand beobachtet → Aktion vorgeschlagen → Autorität geprüft → ausgeführt
 → Ergebnis erneut geprüft → Annahmebedingung geprüft → fortsetzen, übergeben oder stoppen
 ```
 
-Wenn der Zustand nach Timeout oder Unterbrechung unbekannt ist, wiederhole nicht
+Wenn der Zustand nach einem Timeout oder einer Unterbrechung unbekannt ist, wiederhole nicht
 blind eine Aktion, die senden, veröffentlichen, löschen, bezahlen oder ein Konto
 ändern könnte. Lies das Ziel zuerst oder übergib die Unsicherheit einem Menschen.
 
@@ -159,7 +159,7 @@ blind eine Aktion, die senden, veröffentlichen, löschen, bezahlen oder ein Kon
 
 ## 0.4 Ein wenig Geschichte, ohne sie zur Garantie zu machen
 
-Das Paper *Attention Is All You Need* von 2017 stellte die Transformer-Architektur
+Die Arbeit *Attention Is All You Need* aus dem Jahr 2017 stellte die Transformer-Architektur
 vor, die viel spätere Sprachmodellarbeit beeinflusste. Attention machte es leichter,
 Beziehungen zwischen Tokens in einer bereitgestellten Sequenz zu modellieren, aber
 der Kontext wurde nicht unendlich. Moderne Produkte ergänzen Datenauswahl,
@@ -194,11 +194,11 @@ und gib keine privaten Informationen ein.
 
 Vervollständige zuerst, ohne ein Modell zu fragen:
 
-> Die Stadtbibliothek schließt heute um 18 Uhr.
+> Der Club trifft sich am Dienstag um 18:00 Uhr, und die Raumnummer ist ...
 
-Schreibe zwei mögliche Fortsetzungen und markiere, welche davon die Aussage stützt.
-Korrekt ist: Es werden weder eine zusätzliche Uhrzeit noch ein Grund genannt.
-Plausibilität ist kein Beleg.
+Schreibe zwei mögliche Raumnummern auf und markiere, welche davon die Aussage stützt.
+Korrekt ist: Keine der beiden Raumnummern wird im Satz genannt. Dein Gehirn kann
+ebenfalls eine plausible Ergänzung erzeugen; Plausibilität ist kein Nachweis.
 
 Sende anschließend nur diese fiktive Mitteilung:
 
