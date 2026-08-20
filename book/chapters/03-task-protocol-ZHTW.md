@@ -418,8 +418,8 @@
 <nav class="chapter-navigation" aria-label="章節導覽">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="02-first-safe-task-ZHTW.md" aria-label="上一章: 第 2 章 · Complete a first safe, verifiable task">← 上一章<br><strong>第 2 章 · Complete a first safe, verifiable task</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="04-context-permissions-and-agent-ZHTW.md" aria-label="下一章: 第 4 章 · Context, permissions, and the Agent action boundary">下一章 →<br><strong>第 4 章 · Context, permissions, and the Agent action boundary</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="02-first-safe-task-ZHTW.md" aria-label="上一章：第 2 章 · 完成第一個安全、可驗證的任務">← 上一章<br><strong>第 2 章 · 完成第一個安全、可驗證的任務</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="04-context-permissions-and-agent-ZHTW.md" aria-label="下一章：第 4 章 · 上下文、許可權與 Agent 的行動邊界">下一章 →<br><strong>第 4 章 · 上下文、許可權與 Agent 的行動邊界</strong></a></td>
     </tr>
   </table>
 </nav>
