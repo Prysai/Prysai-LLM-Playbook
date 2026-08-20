@@ -1,16 +1,16 @@
-<!-- content_id: chapter-16-engineering-track | locale: JA | language: ja | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
+<!-- content_id: chapter-16-engineering-track | locale: JA | language: ja | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-20 -->
 
 # 第16章：エンジニアリング・トラック、着想から信頼できるソフトウェアへ
 
-**状態：** `candidate`。**実験：** `draft / not_run`。この章はエンジニアリングのライフサイクルを教えます。フィールド報告はローカル再現でも、すべての版への原因確認でもありません。
+**状態：** `candidate`。**実験：** `draft / not_run`。この章では、エンジニアリングのライフサイクルを扱います。以下の現場報告はローカルで再現したものでも、すべてのバージョンで根本原因を確認したものでもありません。
 
 ## この章が解決する問題
 
-エンジニアリングでは、要件、設計上の選択、テスト設計、実行時の観測、rollback が明確になる前にコードを書き始めがちです。patch は build と unit test を通っても、利用者の経路、エラー処理、依存関係の版、デプロイ、安全な回復が正しいとは限りません。
+エンジニアリングでは、要件、設計上の選択、テスト設計、実行時の観測、ロールバック（元に戻す手順）が明確になる前に、コードを書き始めがちです。パッチはビルドと単体テストを通っても、利用者の操作経路、エラー処理、依存関係のバージョン、デプロイ、安全な復旧が正しいとは限りません。
 
-> build 成功、unit test 成功、integration test 成功、実行時の正しさ、利用者の受け入れ、本番準備は別々の主張です。
+> ビルド成功、単体テスト成功、統合テスト成功、実行時の正しさ、利用者の受け入れ、本番準備は、それぞれ別の主張です。
 
-エンジニアリング Skill は証拠を伴うライフサイクルです。各段階に入口条件、最小 slice、失敗経路、出口証拠を置きます。
+エンジニアリング Skill は、証拠を伴うライフサイクルです。各段階に、入口条件、最小の実装単位（slice）、失敗経路、出口で残す証拠を置きます。
 
 ## エンジニアリングのライフサイクル
 
@@ -24,152 +24,150 @@
 | 段階 | 入口 | 最小の出口証拠 |
 |---|---|---|
 | 定義 | 問題と範囲 | 他者が言い直せる問題文 |
-| 仕様 | 境界、入出力、エラー | 受け入れ条件と非目標 |
-| 計画 | 依存とリスク | 独立に検証できる slice |
-| 実装 | 現在の slice と baseline | 小さく説明可能な diff |
-| テスト | 挙動と失敗を試せる | command、結果、失敗の説明 |
-| 実行時 | 起動可能な環境と代表データ | version、log、response または画面 |
-| release | review と rollback がある | 記録、監視、rollback rehearsal |
+| 仕様 | 境界、入出力、エラー | 受け入れ条件と対象外 |
+| 計画 | 依存とリスク | 独立に検証できる実装単位 |
+| 実装 | 現在の実装単位と基準状態 | 小さく説明できる差分 |
+| テスト | 挙動と失敗を試せる | コマンド、結果、失敗の説明 |
+| 実行時 | 起動可能な環境と代表データ | バージョン、ログ、応答または画面 |
+| リリース | レビューとロールバックがある | 記録、監視、ロールバックのリハーサル |
 
 ## 実装前に仕様を書く
 
-「export を追加」なら、形式、データ範囲、権限、部分ファイル、上書き方針、最終受け入れを確認します。利用者の操作、入力制約、成功・エラー出力、境界、非目標、性能・安全制約、観測信号、受け入れ方法を示します。Skill が黙って決定を置き換えることはできません。
+「エクスポートを追加」なら、形式、データ範囲、権限、部分ファイル、上書き方針、最終的な受け入れ条件を確認します。利用者の操作、入力制約、成功時とエラー時の出力、境界、対象外、性能・安全制約、観測できる兆候、受け入れ方法を示します。Skill が黙って判断を置き換えることはできません。
 
-source-driven、doubt-driven、incremental に進めます。API や版には公式文書、型、現在の code、再現結果を使い、blog やモデル記憶は手掛かりです。型と unit test が証明しない network、database、browser、permission、concurrency、time zone、deployment を確認します。一度に一つの説明可能な slice を変え、diff と rollback 点を残します。
+公式資料を起点に疑いながら、段階的に進めます。API やバージョンについては公式文書、型定義、現在のコード、再現結果を使い、ブログやモデルの記憶は手掛かりにとどめます。型と単体テストだけでは証明できないネットワーク、データベース、ブラウザー、権限、並行処理、タイムゾーン、デプロイを確認します。一度に一つの説明できる実装単位だけを変え、差分とロールバック地点を残します。
 
 ## 実行、停止、回復
 
-build の証拠は compile できること、test の証拠は指定の assertion が通ることです。実行時の証拠には start command、version、環境値、実入力、response または画面、log、error path が必要です。本番準備には security、performance、migration、monitoring、rollback、利用者受け入れも加わります。
+ビルドの証拠はコンパイルできること、テストの証拠は指定したアサーションが通ることです。実行時の証拠には、起動コマンド、バージョン、環境値、実際の入力、応答または画面、ログ、エラー経路が必要です。本番準備には、セキュリティ、性能、移行、監視、ロールバック、利用者の受け入れも加わります。
 
-timeout まで出力なし、欠けた test 依存、未知の worktree、実 credential 要求、永続変更、公開、deploy、restart は停止して scope を確認する信号です。緑にするために force reinstall や権限拡大をせず、認可がない時は隔離環境、test double、static check を使います。
+タイムアウトまで出力がない、テスト依存関係が欠けている、ワークツリーの変更が不明、実際の認証情報を求められる、永続的な変更・公開・デプロイ・再起動が必要になる、という状況は、停止して範囲を確認する合図です。緑にするために強制再インストールや権限の拡大はせず、認可がないときは隔離環境、テストダブル、静的チェックを使います。
 
 ## 練習と境界
 
-ローカルのリストを重複除去して JSON に書くような低リスク機能を選びます。通常、空、重複、無効入力を用意します。目的だけを渡すラウンドと、問題、受け入れ、非目標、slice、test matrix を先に作るラウンドを比較します。両方で static check、unit test、ローカル実行、空・無効入力を試し、契約、diff、command、終了状態、log、version、入力、rollback 点を残します。
+ローカルのリストから重複を除き、JSON に書き出すような低リスク機能を選びます。通常の入力、空の入力、重複、無効な入力を用意します。目的だけを渡すラウンドと、問題、受け入れ条件、対象外、実装単位、テスト表を先に作るラウンドを比較します。両方で静的チェック、単体テスト、ローカル実行、空・無効入力を試し、契約、差分、コマンド、終了状態、ログ、バージョン、入力、ロールバック地点を残します。
 
-中断を模擬したら、続ける前に worktree、diff、log、test 状態を確認します。実記録と独立 review ができるまで `candidate / not_run` のままです。特定の認可なしに install、publish、deploy、restart はしません。
+中断を模擬したら、続ける前にワークツリー、差分、ログ、テスト状態を確認します。実際の記録と独立したレビューができるまで、状態は `candidate / not_run` のままです。明示的な認可なしにインストール、公開、デプロイ、再起動はしません。
 
-## 要求を engineering task card にする
+## 要求をエンジニアリング・タスクカードにする
 
-「export を追加」は coding を始める条件ではありません。unknown は model が決めず question として残します。
+「エクスポートを追加」は、コーディングを始める条件ではありません。不明点はモデルに決めさせず、質問として残します。
 
 ```text
-user action: <page/command> で <明確な data range> を export する。
-success: <format> と <field> を作り、利用者に <observable result> が見える。
-failure: permission、empty data、invalid input、write failure をどう返すか。
-non-goal: history migration、publish、permission change、external service 接続はしない。
-scope: read/write path、allowed command、network と secret boundary。
-acceptance: test、一回の local run、human check と各々の coverage。
-recovery: original state、temporary artifact、read-back、stop condition。
+利用者の操作: <ページ/コマンド> で <明確なデータ範囲> をエクスポートする。
+成功: <形式> と <項目> を作り、利用者に <観測できる結果> が見える。
+失敗: 権限不足、空のデータ、無効な入力、書き込み失敗をどう返すか。
+対象外: 履歴の移行、公開、権限変更、外部サービスへの接続はしない。
+範囲: 読み取り・書き込みパス、許可されたコマンド、ネットワークと秘密情報の境界。
+受け入れ: テスト、一回のローカル実行、人による確認が、それぞれ何を対象にするか。
+復旧: 元の状態、一時的な成果物、読み戻し、停止条件。
 ```
 
-他の developer が goal と non-goal を言い直せてから最初の slice を選びます。format、overwrite、permission が unknown なら、最小 slice は silent write ではなく read-only preview にできます。
+他の開発者が目的と対象外を言い直せるようになってから、最初の実装単位を選びます。形式、上書き、権限が不明なら、最小の実装単位を黙った書き込みではなく読み取り専用のプレビューにできます。
 
-| evidence | 言えること | 言えないこと |
+| 証拠 | 言えること | 言えないこと |
 |---|---|---|
-| build success | 指定 config で compile/package できる | user flow や deploy が正しい |
-| test pass | その environment で assertion が通る | 未対象 error、browser、permission、real input |
-| local run | 指定 input が観測された result を出す | production、全 account、performance |
-| remote read-back | 指定 revision/record が remote にある | user acceptance、monitoring、safe rollback |
+| ビルド成功 | 指定した設定でコンパイル・パッケージ化できる | 利用者の経路やデプロイが正しい |
+| テスト通過 | その環境でアサーションが通る | 対象外のエラー、ブラウザー、権限、実入力 |
+| ローカル実行 | 指定した入力から観測できる結果が出る | 本番、すべてのアカウント、性能 |
+| リモート読み戻し | 指定したリビジョンや記録がリモートにある | 利用者の受け入れ、監視、安全なロールバック |
 
-## Web coding：表示できる結果を実ブラウザーまで運ぶ
+## Web コーディング：表示できる結果を実際のブラウザーまで届ける
 
-「完全なサイトを作る」は、読者、状態、source file、runtime、browser review、
-rollback を一つにしてしまいます。まず `examples/skill-sandbox/product-context-real-estate`
-の README と `index.html` を使い捨てコピーで読み、`index.html` の表示文を一つ
-だけ変えます。framework、画像、form、API、network は追加しません。Python 3 が
-すでに使えるなら、コピー先で `python -m http.server 4182` を実行し、
-`http://127.0.0.1:4182/` を開いて title、変更文、保持した見出し、link、console、
-幅 390px を確認します。
+「完全なサイトを作る」という依頼には、読者、状態、ソースファイル、実行環境、ブラウザーでの確認、
+ロールバックが混在しています。まず `examples/skill-sandbox/product-context-real-estate` の README と
+`index.html` を使い捨てコピーで読み、`index.html` の表示文を一つだけ変えます。フレームワーク、画像、
+フォーム、API、ネットワーク接続は追加しません。Python 3 がすでに使えるなら、コピー先で
+`python -m http.server 4182` を実行し、`http://127.0.0.1:4182/` を開いて、タイトル、変更した文、
+保持した見出し、リンク、コンソール、幅 390px の表示を確認します。
 
-コピー先、許可ファイル、URL、見えた状態、diff と、deploy、accessibility、他の
-browser、利用者受け入れの未確認項目を記録します。source diff では CSS、相対
-path、mobile clipping、runtime error は分かりません。local render は deploy では
-ありません。
+コピー先、許可したファイル、URL、見えた状態、差分と、デプロイ、アクセシビリティ、他の
+ブラウザー、利用者の受け入れについて未確認の項目を記録します。ソースの差分だけでは CSS、相対
+パス、モバイルでの切り詰め、実行時エラーは分かりません。ローカル表示はデプロイではありません。
 
-## 小実験：JSON の vertical slice
+## 小実験：JSON の垂直スライス
 
-disposable directory で `input.json` の文字列 list を読み、重複を除いて `output.json` に書きます。read/write はその directory だけ。network、install、login、commit、push、publish はしません。
+使い捨てディレクトリで `input.json` の文字列リストを読み、重複を除いて `output.json` に書きます。読み取りと書き込みはそのディレクトリだけに限定します。ネットワーク接続、インストール、ログイン、コミット、プッシュ、公開はしません。
 
-1. task card と baseline を書く：normal、empty、duplicate、missing field/invalid JSON。
-2. normal と duplicate だけを最初に実装し、diff と command output を残す。
-3. empty と invalid を加える。一回に一つの説明可能な点だけ変え、宣言済み check を run する。
-4. 独立 command で `output.json` を read し、version、input、exit status、raw output、scope を残す。
-5. interruption を模擬する。続ける前に status、diff、log、output を読み、continue/recover/checkpoint を決める。
+1. タスクカードと基準状態を書く：通常、空、重複、項目欠落・無効な JSON。
+2. 通常と重複だけを最初に実装し、差分とコマンド出力を残す。
+3. 空と無効な入力を加える。一度に一つの説明できる点だけを変え、宣言した確認を実行する。
+4. 独立したコマンドで `output.json` を読み、バージョン、入力、終了状態、生の出力、範囲を残す。
+5. 中断を模擬する。続ける前に状態、差分、ログ、出力を読み、続行・復旧・チェックポイントのどれにするか決める。
 
-output がない、dependency がない、PATH change、runtime reinstall、log upload、deploy、restart が提案されたら stop し、足りない authorization と recovery を示します。
+出力がない、依存関係がない、PATH の変更、実行環境の再インストール、ログのアップロード、デプロイ、再起動が提案されたら停止し、不足している認可と復旧方法を示します。
 
 ## 自己確認
 
-- [ ] user action、success/failure、non-goal、scope、acceptance、recovery を書いた。
-- [ ] slice ごとに diff、command、exit status、input/output、unknown を残す。
-- [ ] build、test、local run、remote、user acceptance を混同しない。
-- [ ] interruption 後は retry 前に state を確認する。
+- [ ] 利用者の操作、成功・失敗、対象外、範囲、受け入れ、復旧を書いた。
+- [ ] 実装単位ごとに差分、コマンド、終了状態、入力・出力、不明点を残す。
+- [ ] ビルド、テスト、ローカル実行、リモート、利用者の受け入れを混同しない。
+- [ ] 中断の後は、再試行する前に状態を確認する。
 
-## engineering task card：受け入れ可能な最小 change
+## エンジニアリング・タスクカード：受け入れ可能な最小の変更
 
-この card は、自分が所有または許可された disposable project copy 用です。先に問題を限定し、その後で任意の LLM に read、plan、edit を手伝わせます。install、network、commit、push、publish、production data へのアクセスは許可しません。
+このカードは、自分が所有する、または許可を得た使い捨てのプロジェクトコピー向けです。先に問題を限定し、その後で任意の LLM に読み取り、計画、編集を手伝わせます。インストール、ネットワーク接続、コミット、プッシュ、公開、本番データへのアクセスは許可しません。
 
 ```text
-goal: [一つの具体的な action] の後、利用者が見る確認可能な結果は何か。
-scope: [path] を read；確認後は [path] だけを edit；[path] は edit しない。
-baseline: 現在の branch / commit、既存 change、test / command の元の結果。
-source of truth: どの specification、existing behavior、test、interface、design がこの事実を持つか。
-minimum slice: 今回変える observable behavior は一つだけ何か。
-acceptance: file scope、focused check、runtime observation、human read がそれぞれ何を確認するか。
-forbidden: install、network、delete、commit、push、publish、external message、secret read。
-stop: path、specification、authority、recovery、acceptance rule が不明なら pause。
-delivery: diff、実際の command と output、passed / failed / not_run、unknown、最小の次の check。
+目的: [一つの具体的な操作] の後、利用者が見る確認できる結果は何か。
+範囲: [パス] を読む。確認後は [パス] だけを編集し、[パス] は編集しない。
+基準状態: 現在のブランチ / コミット、既存の変更、テスト / コマンドの元の結果。
+信頼できる根拠: どの仕様、既存の挙動、テスト、インターフェース、設計がこの事実を持つか。
+最小の実装単位: 今回変える観測可能な挙動は一つだけ何か。
+受け入れ: ファイルの範囲、焦点を絞った確認、実行時の観測、人による読み取りが、それぞれ何を確認するか。
+禁止: インストール、ネットワーク接続、削除、コミット、プッシュ、公開、外部メッセージ、秘密情報の読み取り。
+停止: パス、仕様、権限、復旧方法、受け入れ規則が不明なら保留する。
+納品: 差分、実際のコマンドと出力、passed / failed / not_run、不明点、最小の次の確認。
 ```
 
 ### 四つの green は四つの別の結論
 
-| signal | 最大で言えること | まだ言えないこと |
+| シグナル | 最大で言えること | まだ言えないこと |
 |---|---|---|
-| small diff | 比較範囲の text change が小さい | requirement が満たされた、runtime が正しい |
-| static check passed | 記録した environment でその check が通った | 全 path、全 user が動く |
-| local run passed | 一つの明示した run scenario を観察した | deploy、performance、security、external integration |
-| human acceptance | 指定 reader が指定 rule で結果を見た | maintenance、transfer、広い adoption |
+| 小さな差分 | 比較した範囲のテキスト変更が小さい | 要件を満たした、実行時に正しい |
+| 静的チェック通過 | 記録した環境でそのチェックが通った | すべてのパス、すべての利用者で動く |
+| ローカル実行通過 | 明示した一つの実行シナリオを観測した | デプロイ、性能、セキュリティ、外部統合 |
+| 人による受け入れ | 指定した読者が指定した規則で結果を見た | 保守、移行、広い採用 |
 
-一つでも欠ければ delivery に `not_run`、`blocked`、`unknown` を残します。green にするために permission を広げたり、environment を置き換えたり、specification を書き換えたりしません。
+一つでも欠ければ、納品に `not_run`、`blocked`、`unknown` を残します。緑にするために権限を広げたり、環境を置き換えたり、仕様を書き換えたりしません。
 
 ## 学習目標
 
-requirement を小さく検証可能な slice に分け、build、test、local run、publish、user acceptance を別の evidence claim として扱えます。
+要件を小さく検証できる実装単位に分け、ビルド、テスト、ローカル実行、公開、利用者の受け入れを別々の証拠の主張として扱えます。
 
-## 現実の問題：green test は user task の終わりではない
+## 現実の問題：テストが緑でも利用者のタスクは終わらない
 
-patch は compile しても、empty input、誤った path、recovery を見落とせます。green の数ではなく、具体的な user action と failure を check が覆うかが重要です。
+パッチはコンパイルできても、空の入力、誤ったパス、復旧を見落とすことがあります。緑の数ではなく、具体的な利用者の操作と失敗をチェックがカバーしているかが重要です。
 
 ### 準備
 
-`input.json` のある disposable local directory を使います。network、credential、remote、install は使わず、元の file と書いてよい path を記録します。
+`input.json` のある使い捨てのローカルディレクトリを使います。ネットワーク接続、認証情報、リモート、インストールは使わず、元のファイルと書き込んでよいパスを記録します。
 
 ### タスク
 
-string list の duplicate だけを取り除き、local に `output.json` を書きます。normal、empty、duplicate、invalid input を確認し、一度に一つの説明可能な点だけを変えます。
+文字列リストの重複だけを取り除き、ローカルに `output.json` を書きます。通常、空、重複、無効な入力を確認し、一度に一つの説明できる点だけを変えます。
 
 ### 証拠
 
-card、diff、command、exit status、input、独立に読み直した output、実行しなかった action を残します。記録のない test は publish や user acceptance を証明しません。
+カード、差分、コマンド、終了状態、入力、独立に読み直した出力、実行しなかった操作を残します。記録のないテストは、公開や利用者の受け入れを証明しません。
 
 ### 振り返り
 
-各 check はどの claim を実際に支えますか。どの failure path が unknown で、次の最小 check は何ですか。
+各チェックはどの主張を実際に支えますか。どの失敗経路が不明で、次の最小の確認は何ですか。
 
 ## 移行タスク
 
-link、navigation、publish status を変えず learning example を直す場合に card を適用します。user effect、files、check、recovery を書きます。
+リンク、ナビゲーション、公開状態を変えずに学習例を直す場合に、このカードを適用します。利用者への効果、ファイル、確認、復旧を書きます。
 
 ## 受け入れチェックリスト
 
-- [ ] user action、success、failure、non-goal、scope、recovery を書ける。
-- [ ] diff、command、result、未確認 claim を分けて渡せる。
-- [ ] unknown path、secret、network、persistent effect で停止する。
+- [ ] 利用者の操作、成功、失敗、対象外、範囲、復旧を書ける。
+- [ ] 差分、コマンド、結果、未確認の主張を分けて渡せる。
+- [ ] 不明なパス、秘密情報、ネットワーク、永続的な効果が現れたら停止する。
 
 ## 出典と保守の境界
 
-lifecycle と evidence の分離は安定した方法です。framework、command、runtime、deployment rule は project ごとに変わるため確認します。
+ライフサイクルと証拠を分ける方法は安定しています。フレームワーク、コマンド、実行環境、デプロイの規則はプロジェクトごとに変わるため、都度確認します。
 
 <!-- chapter-navigation:start -->
 <hr>
