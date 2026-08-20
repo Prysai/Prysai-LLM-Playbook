@@ -218,7 +218,7 @@ parada: falta entrada, autorización, destino de recuperación o evidencia
 Un `SKILL.md` presente solo prueba que el archivo está presente; no prueba que
 el host lo descubriera ni que el método se ejecutara. Un informe correcto una
 vez solo habla de esa tarea y entorno registrado, no de todos los modelos,
-carpetas o personas usuarias. El recibo convierte «creo que funciona» en una
+carpetas o personas usuarias. El registro convierte «creo que funciona» en una
 decisión que se puede revisar.
 
 ## Revisa el origen antes de adoptar un método externo
@@ -230,7 +230,7 @@ porque el repositorio sea popular o el nombre parezca conocido. Confirma:
 1. enlace original, revisión concreta, responsable y fecha de consulta;
 2. que la licencia superior cubre código, scripts, recursos y dependencias que necesitas;
 3. qué puede leer, escribir, instalar, conectar o enviar;
-4. que el vacío de tarea realmente lo requiere, frente a un método propio más pequeño; y
+4. que la brecha de la tarea realmente lo requiere, frente a un método propio más pequeño; y
 5. qué se comprobó en un ejemplo temporal no sensible y qué no se ejecutó.
 
 Si falta una respuesta, conserva el enlace y el registro de investigación; no
