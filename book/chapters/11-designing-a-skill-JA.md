@@ -1,42 +1,42 @@
-<!-- content_id: chapter-11-designing-a-skill | locale: JA | language: ja | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
+<!-- content_id: chapter-11-designing-a-skill | locale: JA | language: ja | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-20 -->
 
 # 第 11 章：役に立つ Skill を設計する
 
-**状態：** `candidate`。**実験：** `not_run`。この章は設計方法を定義します。特定 host が Skill を discover、load、execute したことは証明しません。
+**状態：** `candidate`。**実験：** `not_run`。この章は設計方法を定義します。特定のホストが Skill を発見し、読み込み、実行したことを証明するものではありません。
 
 ## この章が解決する問題
 
-一度うまくいった session だけで prompt を Skill にするのは危険です。書かれていない事実に依存し、不要な permission を求め、credential を前提にし、流行語だけで trigger するかもしれません。役に立つ Skill は、繰り返せる task class に、限定した action と確認可能な evidence を対応させる versioned method package です。
+一度うまくいったセッションだけを根拠に、プロンプトを Skill にするのは危険です。書かれていない事実に依存したり、不要な権限を求めたり、認証情報が使えることを前提にしたり、流行語だけで起動したりするからです。役に立つ Skill は、繰り返し発生する仕事の種類に対して、範囲を限定した操作と確認可能な証拠を対応づける、バージョン管理された手順パッケージです。
 
-> Skill は、限定された task class を限定された action と確認可能な evidence に対応させる、discoverable で reusable な method package です。
+> Skill とは、範囲を限定した仕事の種類を、範囲を限定した操作と確認可能な証拠に結びつける、発見可能で再利用できる手順パッケージです。
 
-Skill は model、tool、permission、connector、human approval の代わりではありません。
+Skill はモデル、ツール、権限、コネクター、人による承認の代わりではありません。
 
 ## 学習目標
 
-繰り返す task に本当に Skill が必要かを判断し、trigger と non-trigger のある contract を書き、method、data、execution を分け、positive、boundary、failure、transfer の case で candidate を review できます。`SKILL.md` の存在や一回の run だけでは、すべての host、model、user における reliability を証明しません。
+繰り返し行う仕事に本当に Skill が必要かを判断し、起動条件（trigger）と対象外条件（non-trigger）を含む契約を書くことができます。また、手順・データ・実行を分け、成功例、境界例、失敗例、移行例で候補をレビューできます。`SKILL.md` が存在することや、一度実行できたことだけでは、すべてのホスト、モデル、利用者で信頼できるとは言えません。
 
-## 現実の問題：Skill が動く前に失敗することがある
+## 現実の問題：Skill は動き始める前に失敗することがある
 
 ### discovery は独立した段階
 
-Skill を directory に置いたことは、その場所に file があることだけを示します。file の存在、現在の surface からの可視性、task による選択、入口の load、step の実行、artifact の acceptance は別々に記録します。どこかが観察されていないなら、handoff は「connected」とまとめず `unknown` と書きます。
+Skill をディレクトリに置いても、その場所にファイルがあることしか分かりません。ファイルの存在、現在の画面や作業面から見えること、タスクで選ばれること、入口ファイルが読み込まれること、手順が実行されること、成果物が受け入れ条件を満たすことは、別々に記録します。観察していない段階があるなら、引き継ぎを「接続済み」と一括りにせず `unknown` と書きます。
 
-### 「接続済み」は「呼び出せる」ではない
+### 「接続済み」と「呼び出せる」は別
 
-connector、plugin、workspace setting が画面で見えても、現在の task の file、network、account、publish permission を与えるわけではありません。最初の adoption では、non-sensitive な positive case で host、version、path、input、actual selection、output を残し、未観察の layer を receipt に書きます。設定画面は runtime evidence の代わりになりません。
+コネクター、プラグイン、ワークスペース設定が画面に表示されても、現在のタスクで必要なファイル、ネットワーク、アカウント、公開権限が自動的に与えられるわけではありません。初めて採用するときは、機密情報を含まない成功例で、ホスト、バージョン、パス、入力、実際に選ばれた方法、出力を記録します。観察していない段階は記録（receipt）に残してください。設定画面は、実行時の証拠の代わりにはなりません。
 
-### trigger と non-trigger を先に分ける
+### 起動条件と対象外条件を先に分ける
 
-trigger は task intent、complete input、method ownership、acceptable risk がそろったときだけ成立します。keyword の一致は十分条件ではありません。近い task に譲る `non_trigger` は、attention と permission を守る product の一部です。どの method も、copy rewrite、remote check、bulk repair、authority 不明の task を黙って引き受けてはいけません。
+起動条件は、タスクの意図、入力が揃っていること、この方法が担当すべき仕事であること、許容できるリスクであることがすべて揃ったときだけ成立します。キーワードが一致しただけでは不十分です。近い仕事を別の方法に譲る対象外条件（`non-trigger`）も、利用者の注意と権限を守る製品設計の一部です。どの方法も、文案の全面改稿、外部サイトの確認、大量修正、権限の出所が不明な仕事を黙って引き受けてはいけません。
 
-### input、permission、secret の境界
+### 入力・権限・秘密情報の境界
 
-input は provided、readable、inferred、unknown を分けます。path、version、source、baseline、acceptance rule、recovery location がないとき、model が補ってはいけません。read、temporary write、persistent write、network、install、send、publish、delete も別の permission です。secret は `SKILL.md`、example、log、screenshot、receipt に入れず、必要なら指定された制御入口でだけ扱います。
+入力は「提供済み」「読み取り可能」「推測」「不明」に分けます。パス、バージョン、出典、基準状態、受け入れ規則、復元先が分からないとき、モデルに補完させてはいけません。読み取り、一時書き込み、永続書き込み、ネットワーク接続、インストール、送信、公開、削除も、それぞれ別の権限です。秘密情報は `SKILL.md`、例、ログ、スクリーンショット、記録に入れず、必要な場合も指定された管理入口だけで扱います。
 
-### resource を増やす前の判断
+### リソースを増やす前に考える
 
-`scripts/` は決定的で検査可能な反復 action、`references/` は一部の branch だけで必要な詳細、`assets/` は用途と license が明記された static resource に限ります。すべての resource は input、output、failure mode、副作用を示します。最初の実行は temporary directory または非機密 sample で行い、version と raw output を残します。script があることは、安全、正しさ、実行済みの証明ではありません。
+`scripts/` は、同じ結果を再現でき、検査可能な反復操作に限ります。`references/` は、特定の分岐でだけ必要な詳細を置く場所です。`assets/` は、用途とライセンスを明記した静的な素材に限ります。すべてのリソースについて、入力、出力、失敗時の動き、副作用を示します。初回実行は一時ディレクトリか機密情報を含まないサンプルで行い、バージョンと生の出力を残します。スクリプトがあることは、安全、正確、実行済みの証明ではありません。
 
 ## prose より先に contract を書く
 
