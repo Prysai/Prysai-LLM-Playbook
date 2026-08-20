@@ -243,8 +243,8 @@ R0 是解釋或只讀判斷；R1 是可恢復的本地行動；R2 涉及共享�
 <nav class="chapter-navigation" aria-label="章節導覽">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-ZHTW.md" aria-label="上一章: 第 3 章 · Turn a wish into a task protocol">← 上一章<br><strong>第 3 章 · Turn a wish into a task protocol</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="05-choose-the-codex-surface-ZHTW.md" aria-label="下一章: 第 5 章 · Choose the right Codex surface">下一章 →<br><strong>第 5 章 · Choose the right Codex surface</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="03-task-protocol-ZHTW.md" aria-label="上一章：第 3 章 · 把願望變成任務協議">← 上一章<br><strong>第 3 章 · 把願望變成任務協議</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="05-choose-the-codex-surface-ZHTW.md" aria-label="下一章：第 5 章 · 選擇正確的 Codex 工作面">下一章 →<br><strong>第 5 章 · 選擇正確的 Codex 工作面</strong></a></td>
     </tr>
   </table>
 </nav>
