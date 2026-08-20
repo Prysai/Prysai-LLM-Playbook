@@ -290,8 +290,8 @@ Lab 003 負責獨立的主張裁定；Lab 015
 <nav class="chapter-navigation" aria-label="章節導覽">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-ZHTW.md" aria-label="上一章: 第 18 章 · Content, design, data, and automation track">← 上一章<br><strong>第 18 章 · Content, design, data, and automation track</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-ZHTW.md" aria-label="下一章: 第 20 章 · Build a personal Codex work system">下一章 →<br><strong>第 20 章 · Build a personal Codex work system</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-ZHTW.md" aria-label="上一章：第 18 章 · 內容、設計、資料與自動化軌">← 上一章<br><strong>第 18 章 · 內容、設計、資料與自動化軌</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-ZHTW.md" aria-label="下一章：第 20 章 · 構建個人 Codex 工作系統">下一章 →<br><strong>第 20 章 · 構建個人 Codex 工作系統</strong></a></td>
     </tr>
   </table>
 </nav>
