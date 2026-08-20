@@ -194,7 +194,7 @@ claim_status: "disputed"
 <nav class="chapter-navigation" aria-label="章節導覽">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="21-team-capability-system-ZHTW.md" aria-label="上一章: 第 21 章 · Build a team capability system">← 上一章<br><strong>第 21 章 · Build a team capability system</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="21-team-capability-system-ZHTW.md" aria-label="上一章：第 21 章 · 構建團隊能力系統">← 上一章<br><strong>第 21 章 · 構建團隊能力系統</strong></a></td>
       <td align="right"></td>
     </tr>
   </table>
