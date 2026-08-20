@@ -748,8 +748,8 @@ owner: 當前操作者
 <nav class="chapter-navigation" aria-label="章節導覽">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-ZHTW.md" aria-label="上一章: 第 11 章 · Design a genuinely useful Skill">← 上一章<br><strong>第 11 章 · Design a genuinely useful Skill</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="13-action-boundaries-ZHTW.md" aria-label="下一章: 第 13 章 · Action boundaries for files, terminals, browsers, and GitHub">下一章 →<br><strong>第 13 章 · Action boundaries for files, terminals, browsers, and GitHub</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-ZHTW.md" aria-label="上一章：第 11 章 · 設計一個真正有用的 Skill">← 上一章<br><strong>第 11 章 · 設計一個真正有用的 Skill</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="13-action-boundaries-ZHTW.md" aria-label="下一章：第 13 章 · 檔案、終端、瀏覽器與 GitHub 的行動邊界">下一章 →<br><strong>第 13 章 · 檔案、終端、瀏覽器與 GitHub 的行動邊界</strong></a></td>
     </tr>
   </table>
 </nav>
