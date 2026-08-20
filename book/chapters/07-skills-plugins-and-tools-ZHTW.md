@@ -239,8 +239,8 @@ Skill、Plugin、聯結器、MCP、manifest、認證和呼叫細節都可能變�
 <nav class="chapter-navigation" aria-label="章節導覽">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="06-model-selection-ZHTW.md" aria-label="上一章: 第 6 章 · Model selection is not model worship">← 上一章<br><strong>第 6 章 · Model selection is not model worship</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="08-full-lifecycle-workflow-ZHTW.md" aria-label="下一章: 第 8 章 · The complete lifecycle from definition to delivery">下一章 →<br><strong>第 8 章 · The complete lifecycle from definition to delivery</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="06-model-selection-ZHTW.md" aria-label="上一章：第 6 章 · 模型選擇不是模型崇拜">← 上一章<br><strong>第 6 章 · 模型選擇不是模型崇拜</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="08-full-lifecycle-workflow-ZHTW.md" aria-label="下一章：第 8 章 · 從定義到交付的完整生命週期">下一章 →<br><strong>第 8 章 · 從定義到交付的完整生命週期</strong></a></td>
     </tr>
   </table>
 </nav>
