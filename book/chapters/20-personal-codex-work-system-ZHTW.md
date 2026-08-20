@@ -188,8 +188,8 @@ status: "pass | fail | not_comparable | blocked | not_run"
 <nav class="chapter-navigation" aria-label="章節導覽">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows-ZHTW.md" aria-label="上一章: 第 19 章 · Evaluate models and workflows">← 上一章<br><strong>第 19 章 · Evaluate models and workflows</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="21-team-capability-system-ZHTW.md" aria-label="下一章: 第 21 章 · Build a team capability system">下一章 →<br><strong>第 21 章 · Build a team capability system</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows-ZHTW.md" aria-label="上一章：第 19 章 · 評估模型與工作流——從印象走向證據">← 上一章<br><strong>第 19 章 · 評估模型與工作流——從印象走向證據</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="21-team-capability-system-ZHTW.md" aria-label="下一章：第 21 章 · 構建團隊能力系統">下一章 →<br><strong>第 21 章 · 構建團隊能力系統</strong></a></td>
     </tr>
   </table>
 </nav>
