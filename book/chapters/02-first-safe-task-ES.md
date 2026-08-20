@@ -4,35 +4,35 @@
 
 ## Empieza aquí: haz que el primer paso sea deliberadamente aburrido
 
-Es normal sentir que una primera tarea con una herramienta de IA debe demostrar
-que sabes «usarla de verdad». No hace falta una tarea espectacular. Cuando
-cambian a la vez demasiados archivos, permisos e incógnitas, ya no puedes
-saber qué produjo un éxito o un fallo.
+Es normal sentir que la primera tarea con una herramienta de IA tiene que demostrar
+que sabes «usarla de verdad». No hace falta que sea espectacular. Cuando cambian
+a la vez demasiados archivos, permisos e incógnitas, ya no puedes saber qué
+provocó el éxito o el fallo.
 
-Aquí, lo pequeño es una característica. Elige un objetivo visible, un único
-cambio permitido y una comprobación repetible. Si todavía no tienes un proyecto
-descartable, practica primero con [Primer cambio seguro](../routes/first-safe-change-ES.md).
-Es un fixture local de bajo riesgo antes de aplicar el mismo ciclo a los hechos
+Aquí, que sea pequeño es una decisión de diseño. Elige un objetivo visible, un
+único cambio permitido y una comprobación que puedas repetir. Si todavía no
+tienes un proyecto descartable, practica primero con [Primer cambio seguro](../routes/first-safe-change-ES.md).
+Es un ejercicio local de bajo riesgo antes de aplicar el mismo ciclo a los hechos
 de un proyecto real en el Lab 001.
 
 ## El problema que resuelve este capítulo
 
 La primera tarea real no debe ser «cambia lo que parezca necesario en un
-repositorio importante». Debe ser una tarea cuyo alcance, riesgo, reversión y
-evidencia de aceptación estén claros antes de la primera edición.
+repositorio importante». Debe ser una tarea cuyo alcance, riesgo, forma de
+revertirla y evidencia de aceptación estén claros antes de editar nada.
 
 Los informes públicos describen esperas largas sin eventos visibles, comandos
 de validación que permanecen en `Working`, permisos que parecen configurados
 pero no alcanzan la tarea actual y agentes que interpretan una petición de
 validación como permiso para instalar o sustituir un entorno persistente. Esos
 informes no prueban una causa universal ni un defecto de un producto. Sí
-demuestran que una etiqueta de finalización no basta para sostener toda una
-afirmación.
+muestran que una etiqueta de finalización no basta para respaldar la afirmación
+completa.
 
 Convierte la primera tarea en este ciclo observable:
 
 ```text
-definir → inspeccionar → confirmar → editar → revisar la diferencia
+definir → inspeccionar → confirmar → editar → revisar el diff
         → verificar → entregar o detenerse
 ```
 
@@ -45,12 +45,12 @@ etiqueta de permiso o un resumen del agente prueben ejecución.
 Al terminar este capítulo, podrás:
 
 - elegir una tarea de bajo riesgo, reversible y con una comprobación objetiva;
-- escribir el archivo y el límite de acción antes de pedir una edición;
+- especificar el archivo y el límite de acción antes de pedir una edición;
 - distinguir capacidad del sandbox, momento de aprobación, estado realmente
   modificado y evidencia de verificación;
-- recuperarte de una espera larga o de un check fallido sin ampliar permisos;
-- revisar una diferencia y un check específico antes de decir «terminado»; y
-- redactar un relevo honesto que separe lo observado, verificado, no verificado
+- recuperarte de una espera prolongada o de una comprobación fallida sin ampliar permisos;
+- revisar el diff y una comprobación específica antes de decir «terminado»; y
+- redactar una entrega honesta que separe lo observado, verificado, no verificado
   y bloqueado.
 
 ## Una primera tarea es un experimento pequeño, no un salto de fe
@@ -76,14 +76,14 @@ una primera tarea: no tiene un límite ni una aceptación estables.
 
 | Límite | Respuesta mínima | Si falta la respuesta |
 | --- | --- | --- |
-| Superficie de trabajo | Una copia descartable o sandbox no productivo, con ruta absoluta y estado actual | Mantente en lectura y pide la superficie que falta |
+| Superficie de trabajo | Una copia descartable o un entorno aislado no productivo, con ruta absoluta y estado actual | Mantente en modo lectura y pide la información que falta sobre la superficie |
 | Objetivo | Un archivo concreto, no sensible, y su ruta exacta permitida | No adivines el archivo por su nombre |
-| Línea base | Punto limpio o copia original; sabe qué existía antes | Registra los cambios existentes antes de tocar nada |
-| Acción | Una edición estrecha y solo los checks necesarios; sin instalar, commit, push ni publicar | Pregunta si el efecto lateral está autorizado |
-| Aceptación | Un check que proceda del archivo, configuración, prueba o fuente real | Añade un check antes de seguir editando |
-| Condición de parada | Regla para dato faltante, autoridad ambigua, tiempo agotado, cambio de límite o falta de evidencia | Detente; no sustituyas preparación por «probar primero» |
+| Línea base | Punto limpio o copia original que permita saber qué había antes | Registra los cambios existentes antes de tocar nada |
+| Acción | Una edición acotada y solo las comprobaciones necesarias; sin instalar, commit, push ni publicar | Pregunta si el efecto lateral está autorizado |
+| Aceptación | Una comprobación que proceda del archivo, la configuración, una prueba o una fuente real | Añade una comprobación antes de seguir editando |
+| Condición de parada | Regla para datos faltantes, autoridad ambigua, tiempo agotado, cambio de alcance o falta de evidencia | Detente; no sustituyas la preparación por «probar primero» |
 
-La transición importante es la misma: primero lee y comprueba, y después edita
+La transición importante es la misma: primero lee y comprueba; después edita
 en una superficie limitada. Si falta un dato, una autorización o una prueba,
 mantén la tarea en modo de lectura.
 
@@ -96,21 +96,21 @@ que el texto de un menú concreto:
 | Evento | Lo que puede establecer | Lo que no establece por sí solo |
 | --- | --- | --- |
 | Un modelo propone una edición o un comando | Se generó una posible acción siguiente | Que se permitiera o ejecutara |
-| Se muestra un sandbox o perfil | Se describe un límite técnico configurado | Que la tarea actual alcance todas las rutas previstas |
+| Se muestra un entorno aislado o un perfil | Se describe un límite técnico configurado | Que la tarea actual alcance todas las rutas previstas |
 | Se acepta una aprobación | Ocurrió una aprobación concreta | Que se autorizó un alcance mayor de archivo, red o producción |
-| Una herramienta devuelve éxito | Se recibió una respuesta de herramienta | Que el objeto pretendido cambió correctamente |
+| Una herramienta devuelve éxito | Se recibió una respuesta de la herramienta | Que el objeto pretendido cambió correctamente |
 | `git diff` muestra un cambio | Difiere texto o árbol dentro de esa comparación | Ejecución, pruebas, despliegue o aceptación de usuario |
-| Una prueba termina con código cero | Ese check pasó en ese entorno observado | Que funciona toda ruta, entorno, servicio o flujo de usuario |
+| Una prueba termina con código cero | Esa comprobación pasó en el entorno observado | Que funcionan todas las rutas, entornos, servicios o flujos de usuario |
 | La interfaz dice `Completed` o `Working` | Existe un estado visible del producto | Que se revisó el resultado o se cumplió el objetivo |
 
-La documentación oficial distingue capacidad de sandbox y política de
-aprobación; Git distingue `status`, `diff`, `restore` y `revert`. Son límites
-respaldados por fuentes, no pruebas del comportamiento en tu cuenta o de este
-repositorio durante una ejecución concreta.
+La documentación oficial distingue la capacidad del entorno aislado de la
+política de aprobación; Git distingue `status`, `diff`, `restore` y `revert`.
+Son límites respaldados por fuentes, no pruebas del comportamiento en tu cuenta
+ni de lo que ocurrió en este repositorio durante una ejecución concreta.
 
 ## El protocolo de primera tarea
 
-Usa esta tarjeta y reemplaza los ejemplos por hechos del sandbox:
+Usa esta tarjeta y reemplaza los ejemplos por hechos del entorno aislado:
 
 ```text
 Objetivo: añadir una sección «ejecución local» a README.md para una persona nueva.
@@ -122,13 +122,13 @@ Prohibido: cambios de código, instalación, red, commit, push, publicación,
 Línea base: registrar el estado actual y una copia o hash limpio de README.md.
 Aceptación: cada comando nuevo existe en los scripts reales y el diff solo
   contiene README.md.
-Fallo: si el comando no está claro, un check espera o cambia el alcance,
-  conservar estado y detenerse. No adivinar ni aumentar permisos.
+Fallo: si el comando no está claro, una comprobación se queda esperando o cambia
+  el alcance, conservar el estado y detenerse. No adivinar ni aumentar permisos.
 Entrega: resumen, archivos cambiados, comandos realmente ejecutados, salidas,
-  alcance no verificado y siguiente check o bloqueo.
+  alcance no verificado y siguiente comprobación o bloqueo.
 ```
 
-La tarjeta sirve porque transforma cada verbo ambiguo en objeto, límite de
+La tarjeta sirve porque transforma cada verbo ambiguo en un objeto, un límite de
 autoridad y requisito de evidencia. No es un prompt mágico y no elimina el
 juicio humano.
 
@@ -145,7 +145,7 @@ Aceptación: mostrar diff antes/después y explicar cómo cada cambio sirve al o
 Parada: si hacen falta más archivos, cuenta, red, escritura externa o hechos no verificables, parar y preguntar.
 ```
 
-Para practicar español u otra habilidad, cambia «archivo nombrado» por cinco a diez frases escritas por ti. El modelo puede dar práctica, feedback y sugerencias, no declarar dominio. Para ordenar materiales, cambia la entrada por extractos de fuentes autorizadas; no puede convertir contenido web no aportado ni conjeturas en hechos. El objeto y la evidencia cambian por dominio; el orden de limitar alcance y comprobar resultado no.
+Para practicar español u otra habilidad, cambia «archivo nombrado» por cinco a diez frases escritas por ti. El modelo puede ofrecer práctica, comentarios y sugerencias, pero no declarar que dominas la habilidad. Para ordenar materiales, cambia la entrada por extractos de fuentes autorizadas; no puede convertir contenido web no aportado ni conjeturas en hechos. El objeto y la evidencia cambian según el ámbito; el orden —limitar el alcance y comprobar el resultado— no.
 
 ### Qué pedir en la primera vuelta
 
@@ -183,9 +183,9 @@ cerrará la petición.
 
 Exige una lista de archivos cambiados y deliberadamente no tocados, comandos
 ejecutados y su salida o código de salida, comparación usada para el diff,
-check de aceptación y su alcance, estado externo cambiado y elementos
+comprobación de aceptación y su alcance, estado externo cambiado y elementos
 `unverified`, `blocked` o `not_run` restantes. «Planificado», «intentado»,
-«hecho», «validado», «instalado», «publicado» y «verificado en vivo» no son
+«completado», «validado», «instalado», «publicado» y «verificado en vivo» no son
 sinónimos.
 
 ## Casos de campo: dónde fallan los supuestos casuales
@@ -201,9 +201,9 @@ razonamiento, mensaje ni herramienta, seguidos por HTTP 507 y un reintento.
 El reintento continuó, pero el informe no estableció la causa del servicio ni
 demostró que cada reintento fuera seguro.
 
-- Informe de usuario: una secuencia temporal visible, ausencia de eventos parecida a un timeout y una respuesta posterior al reintento;
+- Informe de usuario: una secuencia temporal visible, ausencia de eventos parecida a un tiempo de espera agotado y una respuesta posterior al reintento;
 - Hecho oficial: al revisar el caso no constaba una causa raíz ni una corrección confirmada por un mantenedor;
-- Práctica segura: conserva la cronología, el checkpoint, los archivos cambiados y los efectos externos antes de reintentar;
+- Práctica segura: conserva la cronología, el punto de control, los archivos cambiados y los efectos externos antes de reintentar;
 - Reproducción local: no realizada;
 - Hipótesis no verificada: podrían influir el tamaño de la solicitud, un proxy, el servicio ascendente o una capa intermedia.
 
@@ -219,7 +219,7 @@ terminado.
 
 - Informe de usuario: estado visible prolongado y una interrupción manual;
 - Hecho oficial: la documentación de CLI describe la superficie de trabajo, no la causa de ese informe;
-- Práctica segura: define un timeout, un límite de salida y una ruta de interrupción; después revisa el diff;
+- Práctica segura: define un tiempo máximo, un límite de salida y una ruta de interrupción; después revisa el diff;
 - Reproducción local: no realizada;
 - Hipótesis no verificada: podrían intervenir un proceso hijo, la salida interactiva, el terminal o una versión concreta.
 
@@ -262,18 +262,18 @@ afirmaciones distintas.
 
 #### La sonda segura más pequeña
 
-Cuando una tarea depende de una afirmación sobre una ruta o un workspace, usa
-un sentinel descartable como herramienta de observación:
+Cuando una tarea depende de una afirmación sobre una ruta o un espacio de trabajo,
+usa un archivo marcador descartable como herramienta de observación:
 
 1. confirma la ruta absoluta y el directorio de trabajo actual;
 2. confirma que el objetivo está dentro del sandbox ya aprobado;
-3. crea un archivo sentinel con nombre, sin secretos ni datos de clientes;
+3. crea un archivo marcador con nombre, sin secretos ni datos de clientes;
 4. léelo, registra el resultado y elimínalo solo si la limpieza está dentro del alcance aprobado; y
 5. registra la ruta, la operación, el resultado y lo que la sonda no probó.
 
 No uses la sonda para cambiar permisos, leer credenciales, instalar dependencias,
 llamar a la red, tocar otro repositorio o inferir acceso de producción. Un
-sentinel correcto solo demuestra que esa operación inocua funcionó en esa ruta
+marcador correcto solo demuestra que esa operación inocua funcionó en esa ruta
 y en esa ejecución. Si la ruta, la limpieza o el alcance no están claros, el
 resultado correcto es `blocked` o `unverified`, no una sonda más amplia.
 
