@@ -1,42 +1,42 @@
-<!-- content_id: chapter-11-designing-a-skill | locale: KO | language: ko | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
+<!-- content_id: chapter-11-designing-a-skill | locale: KO | language: ko | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-20 -->
 
 # 11장: 쓸모 있는 Skill 설계하기
 
-**상태:** `candidate`. **실험:** `not_run`. 이 장은 설계 방법을 정합니다. 특정 host가 Skill을 발견, 로드, 실행했다는 증거는 아닙니다.
+**상태:** `candidate`. **실험:** `not_run`. 이 장에서는 설계 방법을 설명합니다. 특정 호스트가 Skill을 발견하고, 불러오고, 실행했다는 증거를 제공하는 것은 아닙니다.
 
 ## 이 장에서 해결하는 문제
 
-한 번 잘 된 세션만으로 프롬프트를 Skill로 만들면 위험합니다. 기록하지 않은 사실에 의존하거나, 필요 없는 권한을 요구하거나, 자격 증명을 가정하거나, 유행어만으로 실행될 수 있습니다. 쓸모 있는 Skill은 반복 가능한 작업 범주를 제한된 행동과 검사 가능한 증거에 연결하는 버전 관리 방법 패키지입니다.
+한 번 잘 된 세션만으로 프롬프트를 Skill로 만들면 위험합니다. 기록하지 않은 사실에 의존하거나, 필요하지 않은 권한을 요구하거나, 자격 증명이 있다고 가정하거나, 유행어가 들어갔다는 이유만으로 실행될 수 있기 때문입니다. 쓸모 있는 Skill은 반복되는 작업 유형을 범위가 정해진 행동과 확인 가능한 증거에 연결하는 버전 관리형 방법 패키지입니다.
 
-> Skill은 제한된 작업 범주를 제한된 행동과 검사 가능한 증거에 연결하는, 발견 가능하고 재사용 가능한 방법 패키지입니다.
+> Skill은 범위가 정해진 작업 유형을 제한된 행동과 확인 가능한 증거에 연결하는, 발견 가능하고 재사용할 수 있는 방법 패키지입니다.
 
-Skill은 모델, 도구, 권한, 연결기, 사람의 승인을 대신하지 않습니다.
+Skill은 모델, 도구, 권한, 커넥터, 사람의 승인을 대신하지 않습니다.
 
 ## 학습 목표
 
-반복 task에 정말 Skill이 필요한지 판단하고, trigger와 non-trigger가 있는 contract를 쓰며, method, data, execution을 나누고, positive, boundary, failure, transfer 사례로 candidate를 검토할 수 있습니다. `SKILL.md` 존재나 한 번의 run만으로 모든 host, model, user에서의 reliability를 증명하지 않습니다.
+반복 작업에 정말 Skill이 필요한지 판단하고, 시작 조건(trigger)과 대상 제외 조건(non-trigger)이 있는 계약(contract)을 작성할 수 있습니다. 또한 방법(method), 데이터(data), 실행(execution)을 나누고, 성공·경계·실패·전이 사례로 후보(candidate)를 검토할 수 있습니다. `SKILL.md`가 존재하거나 한 번 실행되었다는 사실만으로 모든 호스트, 모델, 사용자에서 신뢰성(reliability)이 입증되는 것은 아닙니다.
 
-## 실제 문제: Skill이 실행되기 전에 실패할 수 있습니다
+## 실제 문제: Skill은 실행되기 전에 실패할 수 있습니다
 
-### discovery는 독립된 단계입니다
+### 탐색(discovery)은 독립된 단계입니다
 
-Skill을 디렉터리에 넣었다는 것은 그 위치에 file이 있다는 사실만 뜻합니다. file 존재, 현재 surface에서의 가시성, task의 선택, 입구의 load, step 실행, artifact acceptance는 각각 기록해야 합니다. 어느 단계든 관찰하지 못했다면 handoff에 “연결됨”이라고 뭉뚱그리지 말고 `unknown`이라고 적으세요.
+Skill을 디렉터리에 넣었다는 것은 그 위치에 파일이 있다는 사실만 뜻합니다. 파일의 존재, 현재 작업 화면(surface)에서 보이는지, 작업(task)에서 선택되었는지, 입구 파일이 불러와졌는지, 단계가 실행되었는지, 결과물(artifact)이 수용 조건을 통과했는지는 각각 기록해야 합니다. 어느 단계든 관찰하지 못했다면 인계(handoff)에 “연결됨”이라고 뭉뚱그리지 말고 `unknown`이라고 적으세요.
 
-### “연결됨”은 “호출 가능함”이 아닙니다
+### “연결됨”과 “호출 가능함”은 다릅니다
 
-connector, plugin, workspace setting이 화면에 보인다고 해서 현재 task에 file, network, account, publish permission이 생기지는 않습니다. 첫 adoption에서는 민감하지 않은 positive case로 host, version, path, input, 실제 선택, output을 남기고, 관찰하지 못한 layer를 receipt에 씁니다. 설정 화면은 runtime evidence를 대신할 수 없습니다.
+커넥터, 플러그인, 워크스페이스 설정이 화면에 보인다고 해서 현재 작업에 파일, 네트워크, 계정, 게시 권한이 자동으로 생기지는 않습니다. 처음 도입(adoption)할 때는 민감하지 않은 성공 사례로 호스트, 버전, 경로, 입력, 실제 선택, 출력을 기록하고, 관찰하지 못한 단계는 채택 기록(receipt)에 적습니다. 설정 화면은 실행 시점의 증거(runtime evidence)를 대신할 수 없습니다.
 
-### trigger와 non-trigger를 먼저 나누기
+### 시작 조건(trigger)과 대상 제외 조건(non-trigger)을 먼저 나누기
 
-trigger에는 task intent, complete input, method ownership, acceptable risk가 모두 필요합니다. keyword 일치는 충분조건이 아닙니다. 가까운 task에 양보하는 `non_trigger`는 attention과 permission을 지키는 product의 일부입니다. 어떤 method도 copy rewrite, remote check, bulk repair, authority가 불명확한 task를 조용히 맡아서는 안 됩니다.
+시작 조건에는 작업 의도, 필요한 입력의 완비, 방법의 담당 범위, 감당할 수 있는 위험이 모두 필요합니다. 키워드가 일치하는 것만으로는 충분하지 않습니다. 가까운 작업을 다른 방법에 넘기는 `non_trigger`도 사용자의 주의와 권한을 지키는 제품 설계의 일부입니다. 어떤 방법도 문안 전체 수정, 원격 확인, 대량 수리, 권한의 출처가 불분명한 작업을 조용히 맡아서는 안 됩니다.
 
-### input, permission, secret 경계
+### 입력(input)·권한(permission)·비밀(secret)의 경계
 
-input은 provided, readable, inferred, unknown으로 나눕니다. path, version, source, baseline, acceptance rule, recovery location이 없으면 model이 채워 넣으면 안 됩니다. read, temporary write, persistent write, network, install, send, publish, delete도 각각 다른 permission입니다. secret은 `SKILL.md`, example, log, screenshot, receipt에 넣지 말고, 필요할 때도 지정된 통제 입구에서만 다룹니다.
+입력은 제공됨(provided), 읽을 수 있음(readable), 추정함(inferred), 알 수 없음(unknown)으로 나눕니다. 경로, 버전, 출처, 기준선, 수용 규칙, 복구 위치가 없으면 모델이 임의로 채워 넣어서는 안 됩니다. 읽기, 임시 쓰기, 영구 쓰기, 네트워크, 설치, 전송, 게시, 삭제도 각각 별도의 권한입니다. 비밀은 `SKILL.md`, 예제, 로그, 스크린샷, 채택 기록(receipt)에 넣지 말고, 필요할 때도 지정된 통제된 입구에서만 다룹니다.
 
-### resource를 늘리기 전의 판단
+### 리소스(resource)를 늘리기 전에 판단하기
 
-`scripts/`는 결정적이고 검사 가능한 반복 action, `references/`는 일부 branch에서만 필요한 상세, `assets/`는 용도와 license가 명시된 static resource로 제한합니다. 모든 resource에는 input, output, failure mode, 부작용을 적습니다. 첫 실행은 temporary directory 또는 비민감 sample에서 하고 version과 raw output을 남기세요. script가 있다는 사실은 안전, 정확성, 실행 완료의 증거가 아닙니다.
+`scripts/`는 결과를 재현할 수 있고 검사 가능한 반복 작업에만 씁니다. `references/`에는 특정 분기에서만 필요한 상세를 둡니다. `assets/`는 용도와 라이선스가 명시된 정적 리소스로 제한합니다. 모든 리소스에 입력, 출력, 실패 방식, 부작용을 적습니다. 처음 실행할 때는 임시 디렉터리나 민감하지 않은 샘플을 사용하고 버전과 원시 출력을 남기세요. 스크립트가 있다는 사실만으로 안전성, 정확성, 실행 완료가 증명되는 것은 아닙니다.
 
 ## 문장보다 먼저 계약 쓰기
 
@@ -57,22 +57,22 @@ required_inputs:
   - 대상 경로 또는 붙여 넣은 산출물
   - 목표, 제외 사항, 수용 조건
   - 중요한 주장의 출처
-allowed_actions: "대상 읽기; 버릴 수 있는 출력에 보고서 쓰기; 이름 붙은 가역 로컬 검사 실행"
+allowed_actions: "대상 읽기; 폐기 가능한 출력 디렉터리에 보고서 쓰기; 이름을 지정한 되돌릴 수 있는 로컬 검사 실행"
 forbidden_actions: "비밀 읽기/출력, 게시, 전송, 삭제, 설치, 무단 네트워크"
-output: "주장 → 증거 → 덮이지 않은 범위 보고서"
+output: "주장 → 증거 → 검토하지 못한 범위 보고서"
 stop_when: "입력, 권한, 출처, 복구 대상이 없다"
 ```
 
-trigger에는 작업 의도, 필요한 입력, 방법의 소유권, 허용 가능한 위험이 있어야 합니다. 키워드 일치만으로는 부족합니다. non-trigger는 가까운 작업을 가로채지 않게 합니다.
+시작 조건에는 작업 의도, 필요한 입력, 방법의 담당 범위, 허용 가능한 위험이 있어야 합니다. 키워드가 일치하는 것만으로는 부족합니다. 대상 제외 조건은 가까운 작업을 가로채지 않게 합니다.
 
-## 방법, 데이터, 실행을 나누기
+## 방법·데이터·실행을 나누기
 
 - `SKILL.md`에는 항상 필요한 목적, 경계, 절차, 중단 규칙, 증거를 둡니다.
 - `references/`에는 특정 갈래에서만 읽을 자료를 둡니다.
 - `scripts/`에는 의존성, 네트워크, 쓰기 범위, 종료 동작을 선언한 결정적 검사만 둡니다.
 - `assets/`에는 선언한 정적 자원만 둡니다.
 
-중요한 안전 규칙을 선택적 참고 자료에 숨기지 않습니다. 파일 존재는 발견을, 발견은 로드를, 로드는 채택을, 채택은 동작을 증명하지 않습니다.
+중요한 안전 규칙을 선택적인 참고 자료에 숨기지 않습니다. 파일이 있다는 사실은 탐색을, 탐색은 로드를, 로드는 채택을, 채택은 동작을 증명하지 않습니다.
 
 ### 권한은 한 줄로 합치지 않습니다
 
@@ -108,13 +108,13 @@ trigger에는 작업 의도, 필요한 입력, 방법의 소유권, 허용 가�
 | 실패 | 위험한 쓰기 전에 멈추고 첫 누락 지점을 남긴다 | 입력, 권한, 결과를 지어냄 |
 | 전이 | 도메인 사실을 바꾸고 가정을 다시 검사한다 | 명사만 기계적으로 바꿈 |
 
-한 변수만 바꾸고 산출물에 보이는 신호를 남기는 의도적 실패를 넣습니다. rollback은 대상, 기준선, 단계, 읽어 본 성공 검사가 필요합니다. “되돌리기”만으로는 충분하지 않습니다.
+변수 하나만 바꾸고 결과물에서 확인할 수 있는 신호를 남기는 의도적 실패를 넣습니다. 복구(rollback)에는 대상, 기준선, 단계, 복구 후 다시 읽어 확인하는 검사가 필요합니다. “되돌리기”라고만 쓰는 것은 충분하지 않습니다.
 
-## 실험과 한계
+## 실험과 경계
 
 ### 준비
 
-적어도 두 번 수행한 local 비민감 task를 고릅니다. disposable input, 명확한 acceptance, read-only boundary를 정합니다. credential, install, network, license가 불명확한 다른 사람의 Skill content는 사용하지 않습니다.
+적어도 두 번 수행한 로컬의 비민감 작업을 고릅니다. 폐기 가능한 입력, 명확한 수용 조건, 읽기 전용 경계를 정합니다. 자격 증명, 설치, 네트워크, 라이선스가 불분명한 다른 사람의 Skill 내용은 사용하지 않습니다.
 
 ### 작업
 
@@ -355,7 +355,7 @@ Skill 버전, 비민감 입력, 불러온 리소스, 출력, 첫 중단 지점�
 <nav class="chapter-navigation" aria-label="장 내비게이션">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-KO.md" aria-label="이전 장: 10장 · 10장: 계획과 수직 슬라이스">← 이전<br><strong>10장 · 10장: 계획과 수직 슬라이스</strong></a></td>
+<td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-KO.md" aria-label="이전 장: 10장 · 계획과 수직 슬라이스">← 이전<br><strong>10장 · 계획과 수직 슬라이스</strong></a></td>
       <td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-KO.md" aria-label="다음 장: 12장 · 12장: Agent 루프, 상태, 중지 조건">다음 →<br><strong>12장 · 12장: Agent 루프, 상태, 중지 조건</strong></a></td>
     </tr>
   </table>
