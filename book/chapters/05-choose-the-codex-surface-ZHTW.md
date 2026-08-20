@@ -352,8 +352,8 @@ diff、檢查輸出與審查者，才能改變這些宣告。
 <nav class="chapter-navigation" aria-label="章節導覽">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="04-context-permissions-and-agent-ZHTW.md" aria-label="上一章: 第 4 章 · Context, permissions, and the Agent action boundary">← 上一章<br><strong>第 4 章 · Context, permissions, and the Agent action boundary</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="06-model-selection-ZHTW.md" aria-label="下一章: 第 6 章 · Model selection is not model worship">下一章 →<br><strong>第 6 章 · Model selection is not model worship</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="04-context-permissions-and-agent-ZHTW.md" aria-label="上一章：第 4 章 · 上下文、許可權與 Agent 的行動邊界">← 上一章<br><strong>第 4 章 · 上下文、許可權與 Agent 的行動邊界</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="06-model-selection-ZHTW.md" aria-label="下一章：第 6 章 · 模型選擇不是模型崇拜">下一章 →<br><strong>第 6 章 · 模型選擇不是模型崇拜</strong></a></td>
     </tr>
   </table>
 </nav>
