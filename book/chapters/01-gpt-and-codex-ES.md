@@ -4,27 +4,27 @@
 
 ## Empieza aquí: todavía no necesitas los nombres
 
-Hoy empezamos por la pregunta que hay detrás de los nombres de producto. Puede que ya hayas oído mencionar Codex y Claude Code juntos. Son ejemplos útiles de un cambio mayor: un modelo de lenguaje puede trabajar con una tarea, un contexto y a veces herramientas, en lugar de limitarse a devolver una respuesta de chat. Piensa en esta apertura como una conversación guiada corta, no como un examen: no tienes que elegir bando ni memorizar una lista de funciones primero. Antes de recorrer ningún control, aprende la pregunta que hace más fácil todo lo demás:
+Hoy partimos de la pregunta que se esconde detrás de los nombres de producto. Quizá ya hayas visto mencionar Codex y Claude Code en la misma conversación. Son ejemplos útiles de un cambio mayor: un modelo de lenguaje puede trabajar con una tarea, un contexto y, a veces, herramientas, en lugar de limitarse a devolver una respuesta de chat. Piensa en esta apertura como una conversación guiada breve, no como un examen: no tienes que tomar partido ni memorizar primero una lista de funciones. Antes de entrar en los menús, aprende la pregunta que hace más fácil todo lo demás:
 
 > Cuando una herramienta de modelo de lenguaje dice que ha terminado, ¿qué puedes inspeccionar de verdad antes de confiar en el resultado?
 
-En esta primera lección separarás una acción sugerida de una acción permitida, un mensaje de herramienta de un objetivo cambiado, y una respuesta plausible de la evidencia. Codex es el track insignia de práctica de este Playbook. El método es más amplio; una plataforma con nombre debe ganarse su propio adaptador antes de que enseñemos sus botones, permisos o comportamiento como hechos.
+En esta primera lección separarás una acción sugerida de una acción permitida, un mensaje de una herramienta de un objetivo realmente modificado y una respuesta plausible de la evidencia. Codex es la ruta práctica principal de este Playbook. El método es más amplio; cada plataforma debe tener su propio adaptador antes de que presentemos sus botones, permisos o comportamiento como hechos comprobados.
 
-Por eso el primer ejercicio es deliberadamente modesto. Empieza con una entrada visible, una acción de bajo riesgo y una comprobación que otra persona pueda repetir. Una larga lista de funciones puede esperar hasta que sepas distinguir un resultado terminado de uno que solo parece convincente.
+Por eso el primer ejercicio es deliberadamente modesto. Empieza con una entrada explícita, una acción de bajo riesgo y una comprobación que otra persona pueda repetir. Una larga lista de funciones puede esperar hasta que sepas distinguir un resultado terminado de uno que solo parece convincente.
 
 ## Dónde encajan los nombres conocidos
 
-Oirás GPT, Grok, Gemini, Kimi, Codex y Answer.AI en la misma conversación. No son todos lo mismo. Algunos nombres se refieren a familias de modelos, otros a bancos de trabajo que añaden archivos o herramientas, y otros a organizaciones de investigación y educación en IA aplicada. Un mapa útil es:
+Oirás GPT, Grok, Gemini, Kimi, Codex y Answer.AI en la misma conversación. No son todos lo mismo. Algunos nombres se refieren a familias de modelos, otros a entornos de trabajo que añaden archivos o herramientas, y otros a organizaciones de investigación y educación en IA aplicada. Un mapa útil es:
 
 | Nombre que oirás | Primera pregunta que hacer | No asumas |
 | --- | --- | --- |
-| GPT / OpenAI | ¿Qué modelo y qué superficie—ChatGPT, API o Codex—usaré realmente? | Un nombre de modelo concede acceso a archivos, herramientas o un mejor resultado. |
-| Grok / xAI | ¿Su enfoque de razonamiento descrito por el propietario es relevante para mi tarea fija? | Es el mejor modelo para tu tarea o está disponible en tu cuenta. |
-| Gemini / Google DeepMind | ¿Esta tarea necesita las modalidades o el ecosistema a los que realmente puedo acceder? | Cada superficie de Gemini tiene las mismas herramientas o capacidades. |
-| Kimi / Moonshot AI | ¿Es la codificación, el análisis o el trabajo con documentos largos la tarea que necesito probar? | Su contexto o funciones anunciadas prueban la calidad en este banco de trabajo. |
+| GPT / OpenAI | ¿Qué modelo y qué superficie—ChatGPT, API o Codex—voy a usar realmente? | Un nombre de modelo concede acceso a archivos, herramientas o un mejor resultado. |
+| Grok / xAI | ¿El enfoque de razonamiento que describe su propietario es relevante para mi tarea concreta? | Es el mejor modelo para tu tarea o está disponible en tu cuenta. |
+| Gemini / Google DeepMind | ¿Esta tarea necesita las modalidades de entrada o el ecosistema a los que realmente puedo acceder? | Cada superficie de Gemini tiene las mismas herramientas o capacidades. |
+| Kimi / Moonshot AI | ¿Necesito probarlo para programar, analizar o trabajar con documentos largos? | Su contexto o sus funciones anunciadas prueban la calidad en este entorno de trabajo. |
 | Answer.AI | ¿Busco investigación aplicada, educación o un producto para usuarios finales? | Es un proveedor de modelos fundacionales para poner en el mismo selector. |
 
-El [recibo de paisaje de modelos y bancos de trabajo](../evidence-library-ES.md#source-notes) enlaza cada fila con una fuente del propietario y separa el posicionamiento del propietario de un resultado medido. Empieza mejorando una petición en el modelo que ya tienes; solo después compara candidatos en la misma tarea y regla de aceptación.
+El [registro de fuentes del panorama de modelos y entornos de trabajo](../evidence-library-ES.md#source-notes) enlaza cada fila con una fuente del propietario y separa el posicionamiento del propietario de un resultado medido. Empieza mejorando una petición en el modelo que ya tienes; solo después compara candidatos con la misma tarea y la misma regla de aceptación.
 
 ## El problema que resuelve este capítulo
 
@@ -32,8 +32,8 @@ A menudo se describe Codex como «una ventana de chat que escribe mejor
 código». Esa descripción deja de ser útil en cuanto se produce el primer fallo
 real. No explica por qué una misma petición se comporta de manera diferente
 cuando cambian el modelo, el proyecto, el contexto, los permisos, las
-herramientas o el feedback. También fomenta un atajo peligroso: considerar una
-respuesta segura de sí misma o un mensaje de una herramienta como prueba de que
+herramientas o la retroalimentación. También fomenta un atajo peligroso: considerar una
+respuesta expresada con mucha seguridad o un mensaje de una herramienta como prueba de que
 el trabajo se ejecutó y se comprobó.
 
 Este capítulo construye un pequeño modelo operativo. No pretende describir una
@@ -89,7 +89,7 @@ flecha necesita su propia evidencia.
 | Codex | Una superficie de trabajo que conecta un modelo con el contexto, las herramientas y los permisos del proyecto | Que toda cuenta o conector visible esté autorizado para el objetivo |
 | Herramienta | Una interfaz para leer o modificar un archivo, proceso, navegador, host de Git o servicio | Que la acción solicitada estuviera permitida, fuera correcta o se completara |
 | Skill | Un método reutilizable con activadores, entradas, límites, pasos y evidencia | Un modelo nuevo, una concesión de permisos o un sustituto de la verificación |
-| Agent | Un bucle observable de varios pasos en torno a la observación, la acción, el feedback, los reintentos y la parada | Acceso a razonamientos ocultos o permiso para reintentar indefinidamente |
+| Agent | Un bucle observable de varios pasos en torno a la observación, la acción, la retroalimentación, los reintentos y la parada | Acceso a razonamientos ocultos o permiso para reintentar indefinidamente |
 
 La terminología estable del proyecto se define en
 [CONTEXT.md](../evidence-library-ES.md#core-terms). Los detalles del producto, como los nombres de
@@ -110,7 +110,7 @@ Un modelo simplificado útil es:
 El modelo no recupera una única respuesta preescrita de una base de datos.
 Genera una secuencia condicionada por el contexto que recibe. Pequeños cambios
 en el contexto, el orden, las instrucciones, los resultados de las herramientas
-o la configuración de generación pueden cambiar la continuación. Esta imagen no
+o la configuración de generación pueden cambiar la continuación. Este esquema no
 te dice exactamente qué pensó un modelo; te indica qué entradas deben mantenerse
 fijas para realizar una comparación justa.
 
@@ -173,7 +173,7 @@ por sí solos ninguna de esas lagunas.
 
 ### El permiso no es lo mismo que la capacidad
 
-El límite oficial del producto distingue el sandbox técnico del límite de
+La documentación oficial del producto distingue el sandbox técnico del límite de
 aprobación. En términos del proyecto:
 
 - un sandbox describe a qué puede acceder técnicamente el entorno de ejecución;
@@ -215,8 +215,8 @@ proveedores utilicen la misma implementación.
 ### 2. La recuperación selecciona material; no garantiza que se utilice por completo
 
 La búsqueda o la recuperación pueden seleccionar un fragmento pertinente, pero
-la pertinencia no equivale a integridad, actualidad, autoridad ni uso causal
-real por parte del modelo. Un breve párrafo de excepción puede quedar por
+la pertinencia no equivale a integridad, actualidad, autoridad ni a que el modelo
+lo haya utilizado realmente para generar la respuesta. Un breve párrafo de excepción puede quedar por
 debajo de una regla general en la clasificación, o el límite de un fragmento
 puede separar una condición de su definición. Registra la consulta, los
 filtros, la revisión, los ID de los fragmentos seleccionados y las citas
@@ -237,12 +237,12 @@ defensa contra la inyección de prompts para un estudiante principiante:
 identificar la fuente de los datos, limitar el ámbito de la herramienta y
 conservar en el registro el intento de acción.
 
-Estas tres trampas se tratan con fuentes específicas de cada proveedor y
+Estas tres trampas se explican con fuentes específicas de cada proveedor y
 experimentos de bajo riesgo en el [análisis detallado de mecanismos](../evidence-library-ES.md#source-notes).
 
 ## Qué significa realmente un bucle de Agent
 
-La mejor manera de enseñar un Agent es como una máquina de estados que deja
+La forma más útil de explicar un Agent es como una máquina de estados que deja
 rastros observables:
 
     ready
@@ -270,9 +270,9 @@ acontecimientos y decisiones observables; no presentes una justificación
 privada inventada como si fuera una transcripción del proceso interno del
 modelo.
 
-## Casos de campo: la lección útil es el límite
+## Casos de campo: lo importante es el límite
 
-Los siguientes son informes públicos de usuarios recopilados en la
+Los siguientes son informes públicos de usuarios recopilados durante la
 investigación de campo del proyecto. No son informes oficiales de causa raíz y
 no se han reproducido localmente en este proyecto. Su valor reside en que
 muestran dónde falla un modelo mental informal.
@@ -285,7 +285,7 @@ parecer continuar desde un estado parcialmente completado. El informe no
 establece la causa del lado del servicio ni la semántica exacta de la cola. Por
 tanto, una respuesta segura no es «seguir pulsando continuar».
 
-La respuesta segura más pequeña es:
+La respuesta segura mínima es:
 
 1. parar y registrar el modelo, la superficie, la hora y el error visible;
 2. inspeccionar el diff y el checkpoint actuales antes de enviar otra
@@ -298,9 +298,9 @@ Etiquetas de fuente y evidencia: [FP-09 en la investigación de campo](../eviden
 
 ### Caso FP-10: «Working» no demuestra que haya progreso
 
-Un usuario de la CLI en Windows informó de que un trabajo de formato o análisis
-permanecía mucho tiempo en estado Working/running sin una finalización ni un
-error claros. El informe no demostró si la causa era un comando bloqueado, la
+Un usuario de la CLI en Windows informó de que una tarea de formateo o análisis
+permanecía mucho tiempo en estado Working/running sin que aparecieran ni una
+confirmación clara de finalización ni un error. El informe no demostró si la causa era un comando bloqueado, la
 gestión de procesos, el almacenamiento en búfer de la salida, un cambio en el
 entorno u otro factor. Una etiqueta que permanece activa mucho tiempo es una
 observación de estado, no un resultado satisfactorio.
@@ -314,8 +314,8 @@ Etiquetas de fuente y evidencia: [FP-10 en la investigación de campo](../eviden
 
 ### Caso FP-11: la validación puede ampliar la tarea por accidente
 
-Un informe público describe un Agent que amplió un paso de validación hasta
-convertirlo en una reinstalación forzada no autorizada. No se ha confirmado si
+Un informe público describe un Agent que convirtió un paso de validación en una
+reinstalación forzada no autorizada. No se ha confirmado si
 la explicación del informe es la causa raíz real. La lección duradera no
 depende de la causa raíz: la verificación debe tener un alcance de comandos, un
 alcance de escritura y un punto de parada declarados.
@@ -330,35 +330,35 @@ y laboratorios relacionados.
 
 ## Regla de decisión para una tarea real
 
-Antes de pedirle a Codex que actúe, escribe esta pequeña tarjeta de tarea:
+Antes de pedirle a Codex que actúe, escribe esta breve tarjeta de tarea:
 
 | Campo | Ejemplo para un cambio limitado al README | Qué hacer si falta |
 |---|---|---|
 | Objetivo | Ayudar a un nuevo colaborador a poner en marcha el proyecto | Preguntar; no interpretar «mejóralo» como un criterio de aceptación |
 | Contexto | Reglas del proyecto, README y scripts de paquetes | Leer solo los archivos mínimos pertinentes |
 | Acción permitida | Editar un README local en una rama desechable | Tratar como prohibidos los efectos secundarios no enumerados |
-| Feedback | Diff, comprobación de enlaces y registro de la salida de comandos | Añadir una comprobación antes de seguir editando |
+| Retroalimentación | Diff, comprobación de enlaces y registro de la salida de comandos | Añadir una comprobación antes de seguir editando |
 | Condición de parada | El alcance cambió, el comando necesita instalación o red, o falta evidencia | Parar y registrar `blocked` o `not_observed` |
 | Afirmación de entrega | «README modificado; comprobación de enlaces superada; ejecución no probada» | Mantener cada afirmación dentro de lo que demuestra realmente su evidencia |
 
-Esta tarjeta es más valiosa que un prompt largo porque hace visibles las
+Esta tarjeta es más valiosa que un prompt largo porque deja explícitas las
 decisiones que un prompt suele dejar implícitas.
 
 ## Primera conversación: tres prompts que puedes usar ahora
 
-No necesitas memorizar términos difíciles primero. Elige un objetivo pequeño que no contenga datos personales ni implique escritura externa y pega uno de estos textos en el LLM que uses. Sustituye los corchetes por tu caso. No son frases mágicas: hacen visibles comprensión, límites y siguiente paso. Los resultados cambian entre modelos y superficies.
+No necesitas memorizar términos difíciles primero. Elige un objetivo pequeño que no contenga datos personales ni implique escritura externa y pega uno de estos textos en el LLM que uses. Sustituye los corchetes por tu caso. No son frases mágicas: hacen visibles la comprensión, los límites y el siguiente paso. Los resultados cambian entre modelos y superficies.
 
 ### 1. Aprender un idioma o una habilidad pequeña
 
 ```text
 Estoy aprendiendo [español / una habilidad] y ahora puedo hacer lo siguiente: [nivel real].
-Crea una práctica de 10 minutos para un solo objetivo; no supongas que ya domino lo demás.
+Crea una práctica de 10 minutos con un solo objetivo; no supongas que ya domino lo demás.
 Primero muestra un ejemplo y luego déjame responder. Corrige solo uno o dos puntos que afecten más a la comprensión.
 Al final escribe tres líneas: qué hice bien, qué practicar después y qué no se puede concluir de esta sesión.
 No presentes una conversación como prueba de que ya domino la habilidad.
 ```
 
-No promete aprender un idioma en siete días. Una sesión conserva solo esa respuesta y ese feedback; retención, transferencia a una situación nueva y conversación real se comprueban después por separado. Si aparecen hechos no comprobables, una carga excesiva o una petición de datos personales, reduce la tarea, pide fuente o detén la conversación.
+Este ejercicio no promete que aprendas un idioma en siete días. Una sola sesión solo deja constancia de la respuesta y la retroalimentación de ese momento; la retención, la transferencia a una situación nueva y la conversación real se comprueban después por separado. Si aparecen hechos no comprobables, una carga excesiva o una petición de datos personales, acota la tarea, pide una fuente o detén la conversación.
 
 ### 2. Ordenar fuentes públicas con rapidez
 
@@ -370,7 +370,7 @@ Separa «la fuente afirma», «inferencia razonable» y «todavía desconocido»
 Si las fuentes chocan, están desactualizadas o falta un hecho clave, detente en una lista de preguntas; no adivines la respuesta.
 ```
 
-Convierte «encontré mucho» en una conclusión que puede volver a la fuente. Para investigación que necesita red, base de datos de pago o cuenta real, confirma antes permisos del producto, licencia de la fuente y alcance de los datos. Que aparezca una respuesta no significa que la investigación terminó.
+Convierte «encontré mucho» en una conclusión que se pueda contrastar con la fuente. Para una investigación que necesite red, una base de datos de pago o una cuenta real, confirma primero los permisos del producto, la licencia de la fuente y el alcance de los datos. Que aparezca una respuesta no significa que la investigación haya terminado.
 
 ### 3. Aclarar una petición ambigua antes de actuar
 
@@ -383,11 +383,11 @@ evidencia de aceptación y condición de parada.
 Si necesitas secreto, red, cuenta, escritura externa o más alcance, marca blocked y di quién debe confirmarlo.
 ```
 
-Incluso si la respuesta parece buena, comprueba que conteste esos campos. Si inventa lo desconocido, llama «hecho» a una propuesta o amplía acciones no autorizadas, es un fallo observable: no le pidas que siga adivinando.
+Incluso si la respuesta parece buena, comprueba que conteste esos campos. Si inventa lo desconocido, presenta una propuesta como si fuera un hecho o amplía acciones no autorizadas, es un fallo observable: no le pidas que siga adivinando.
 
-## Lectura de vuelta en tres pasos
+## Revisión en tres pasos
 
-Después de cada prompt, dedica un minuto a preguntar: **¿qué leyó?, ¿qué hizo realmente?, ¿qué puedo comprobar?** En una tarea de chat normalmente solo puedes comprobar entrada y salida. En archivo, navegador o código también necesitas objetivo, diff, salida de comando o lectura externa. Así separas desde el primer día «puedo conversar» de «puedo entregar con confianza».
+Después de cada petición, tómate un minuto para preguntarte: **¿qué leyó?, ¿qué hizo realmente?, ¿qué puedo comprobar?** En una tarea de chat normalmente solo puedes comprobar la entrada y la salida. Cuando intervienen archivos, un navegador o código, también necesitas el objetivo, el diff, la salida del comando o una comprobación externa. Así separas desde el primer día «puedo conversar» de «puedo entregar con confianza».
 
 ## Experimento pequeño: mantén la tarea y cambia una entrada
 
@@ -400,7 +400,7 @@ cada intento.
 
 ### Tarea
 
-Pide al modelo o a la superficie de Codex:
+Pídele al modelo o a la superficie de Codex:
 
 > Inspecciona el README e identifica una mejora. No edites archivos. Explica
 > qué has leído, por qué importa la mejora y cómo podría comprobarse una
@@ -419,7 +419,7 @@ del antes y el después.
 
 ### Evidencia
 
-Guarda la revisión del prompt o de la entrada, el ID de ejecución, la etiqueta
+Guarda la versión de la petición o de la entrada, el ID de ejecución, la etiqueta
 de superficie/modelo, el alcance de lectura, la respuesta, si existe un diff de
 archivos y los elementos no verificados. Superar un ejercicio estático no
 demuestra que el mismo comportamiento se produzca en todas las superficies de
@@ -443,7 +443,7 @@ La respuesta correcta no es una edición grande y sin límites. Una respuesta
 sólida identifica que faltan la definición de «profesional», el alcance, los
 archivos de entrada, el riesgo, los criterios de aceptación y las condiciones
 de parada; propone un inventario de solo lectura o formula una pregunta
-concreta. Si empieza a editar de inmediato, regístralo como un fallo del límite
+concreta. Si el modelo empieza a editar de inmediato, regístralo como un fallo del límite
 de la tarea, no como iniciativa útil.
 
 ## Lista de aceptación
@@ -461,7 +461,7 @@ Estás listo para continuar cuando puedas:
   parada; y
 - producir un registro de ejecución que indique qué no demuestra la evidencia.
 
-No marques este capítulo como dominado solo porque puedas repetir las
+No des por dominado este capítulo solo porque puedas repetir las
 definiciones. Completa el
 [Laboratorio 011 — GPT, Codex, herramientas y Agents](../labs/lab-011-gpt-codex-boundaries-ES.md)
 y conserva el resultado en un registro local de aprendizaje.
