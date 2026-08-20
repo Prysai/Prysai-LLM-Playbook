@@ -440,8 +440,8 @@ owner：[個人或團隊]
 <nav class="chapter-navigation" aria-label="章節導覽">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-ZHTW.md" aria-label="上一章: 第 9 章 · Verification, doubt, and recovery">← 上一章<br><strong>第 9 章 · Verification, doubt, and recovery</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="11-designing-a-skill-ZHTW.md" aria-label="下一章: 第 11 章 · Design a genuinely useful Skill">下一章 →<br><strong>第 11 章 · Design a genuinely useful Skill</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-ZHTW.md" aria-label="上一章：第 9 章 · 驗證、懷疑與恢復">← 上一章<br><strong>第 9 章 · 驗證、懷疑與恢復</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="11-designing-a-skill-ZHTW.md" aria-label="下一章：第 11 章 · 設計一個真正有用的 Skill">下一章 →<br><strong>第 11 章 · 設計一個真正有用的 Skill</strong></a></td>
     </tr>
   </table>
 </nav>
