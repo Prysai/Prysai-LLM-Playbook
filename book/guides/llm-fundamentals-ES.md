@@ -96,7 +96,7 @@ instrucción.
 
 **Una llamada a herramienta tiene dos autores.** El modelo propone una llamada
 estructurada; el host decide si está permitida y la herramienta la ejecuta.
-Registra objetivo, autoridad, efecto previsto, resultado y lectura de vuelta.
+Registra objetivo, autoridad, efecto previsto, resultado y comprobación posterior.
 El nombre de una herramienta en una respuesta no es un registro de ejecución.
 
 **MCP reduce un problema de integración, no elimina la gobernanza.** La
@@ -163,14 +163,14 @@ etiqueta histórica explica por sí sola cada servicio actual.
 
 ## 0.5 Lo que los LLM no pueden establecer por sí solos
 
-Un modelo puede ayudar con una tarea clara de texto entra/texto sale: reescribir
+Un modelo puede ayudar con una tarea clara de texto de entrada y texto de salida: reescribir
 texto entregado, explicar un concepto, proponer un esquema, extraer campos o
 sugerir código que después pruebas. Son patrones útiles, no garantías.
 
 Sin una fuente o herramienta apropiada no puede establecer que una cita exista,
 que una web siga activa, que una afirmación actual sea verdadera o que una
 acción propuesta haya ocurrido. Un producto puede añadir búsqueda, pero el
-material recuperado puede ser viejo, incompleto o incorrecto: **comprueba la
+material recuperado puede estar desactualizado, incompleto o ser incorrecto: **comprueba la
 fuente original y la fecha**.
 
 Antes de pegar, subir o conectar datos, comprueba **qué puede salir de la
@@ -186,15 +186,17 @@ cada una con su propia frescura y permiso.
 
 ## 0.6 Comprobación de límites en cinco minutos
 
-No actives búsqueda, no subas archivos ni entregues información privada.
+Esta es una observación solo textual. No actives búsqueda, no subas archivos ni
+entregues información privada.
 
 Completa primero, sin preguntarle a un modelo:
 
-> La biblioteca municipal cerrará hoy a las 18:00.
+> El club se reúne el martes a las 18:00 y el número de sala es ...
 
-Escribe dos posibles continuaciones y marca cuál está respaldada por la frase.
-La respuesta correcta es que no se da ninguna hora adicional ni una causa.
-Una continuación plausible no es evidencia.
+Escribe dos posibles números de sala y marca cuál está respaldado por la frase.
+La respuesta correcta es que la frase no proporciona ningún número de sala. Tu
+cerebro también puede completar el hueco con algo plausible; lo plausible no es
+lo mismo que lo respaldado por una fuente.
 
 Después envía solo este aviso ficticio:
 
