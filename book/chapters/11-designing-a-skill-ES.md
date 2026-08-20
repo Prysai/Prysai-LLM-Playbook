@@ -1,24 +1,41 @@
-<!-- content_id: chapter-11-designing-a-skill | locale: ES | language: es | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
+<!-- content_id: chapter-11-designing-a-skill | locale: ES | language: es | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-20 -->
 
-# Capítulo 11: diseñar un Skill que se gane su lugar
+# Capítulo 11: diseñar una Skill que merezca su lugar
 
-**Estado:** `candidate`. **Experimento:** `not_run`. Este capítulo especifica un método de diseño; no demuestra que un host descubra, cargue o ejecute un Skill concreto.
+**Estado:** `candidate`. **Experimento:** `not_run`. Este capítulo propone un método de diseño; no demuestra que un host concreto descubra, cargue o ejecute una Skill.
 
 ## El problema que resuelve este capítulo
 
-Una sesión llamativa no basta para convertir un prompt en Skill. Puede depender de hechos no escritos, pedir permisos innecesarios, asumir una credencial o activarse por una palabra de moda. Un Skill útil es un paquete de método versionado para una clase de trabajo repetible, con acciones limitadas y evidencia inspeccionable.
+Una sesión llamativa no basta para convertir un prompt en una Skill. El prompt puede depender de hechos no documentados, pedir permisos innecesarios, dar por disponible una credencial o activarse solo porque aparece una palabra de moda. Una Skill útil es un paquete de método versionado para una clase de trabajo repetible, con acciones limitadas y evidencia que otra persona pueda inspeccionar.
 
 ## Objetivos de aprendizaje
 
-Podrás decidir si una tarea repetida realmente necesita un Skill, escribir un contrato con activadores y no activadores, separar método, datos y ejecución, y revisar un candidato con casos positivo, de límite, de fallo y de transferencia. Un `SKILL.md` presente o una sola ejecución no prueba fiabilidad en todos los hosts, modelos o personas.
+Podrás decidir si una tarea repetida realmente necesita una Skill, escribir un contrato con disparadores y no disparadores, separar método, datos y ejecución, y revisar una candidata con casos positivo, de límite, de fallo y de transferencia. Que exista un `SKILL.md` o que haya una sola ejecución no demuestra fiabilidad en todos los hosts, modelos o personas.
+
+## Una Skill en una frase
+
+Usa esta definición durante todo el capítulo:
+
+> Una Skill es un paquete de método descubrible y reutilizable que asigna una clase de tarea acotada a acciones acotadas y a evidencia comprobable.
+
+Cuatro palabras marcan sus límites:
+
+| Palabra | Qué significa en la práctica | Qué descarta |
+|---|---|---|
+| **Descubrible** | El host puede identificar el paquete en la superficie de trabajo prevista, o existe un procedimiento manual documentado | Que el archivo esté en un repositorio no demuestra que la sesión actual pueda verlo |
+| **Reutilizable** | El método funciona con distintas instancias; los hechos del proyecto llegan como entrada | Incrustar un brief de cliente o una ruta absoluta en la Skill |
+| **Acotada** | La tarea, la autoridad, los datos y los efectos secundarios tienen límites explícitos | «Úsala para todo lo relacionado con marketing» |
+| **Comprobable** | Otra persona puede revisar entradas, acciones, salidas y afirmaciones no respaldadas | «El modelo dijo que siguió el proceso» |
+
+Una Skill no se convierte en modelo, herramienta, permiso, conector ni sustituto de la aprobación humana. Describe un método; el host y la autorización de la persona usuaria determinan qué acciones están disponibles y permitidas.
 
 ## Problemas reales: un Skill puede fallar antes de que empiece su método
 
-El fallo práctico suele ser una decisión ausente: el host no descubre el Skill, el activador no encaja, falta la entrada, la licencia es incierta o la tarea pide un efecto más amplio que el autorizado. Por eso revisas archivo, descubrimiento, selección, carga, acción y salida por separado, y te detienes antes de presentar un candidato externo como capacidad propia.
+El fallo práctico suele ser una decisión ausente: el host no descubre la Skill, el disparador no encaja, falta una entrada, la licencia es incierta o la tarea pide un efecto más amplio que el autorizado. Por eso revisa el archivo, el descubrimiento, la selección, la carga, la acción y la salida por separado. Detente antes de presentar una candidata externa como capacidad propia.
 
-> Un Skill es un paquete descubrible y reutilizable que asigna una clase de tarea acotada a acciones acotadas y evidencia comprobable.
+> Una Skill es un paquete descubrible y reutilizable que asigna una clase de tarea acotada a acciones acotadas y evidencia comprobable.
 
-No es un modelo, una herramienta, permiso, conector ni sustituto de aprobación humana.
+No es un modelo, una herramienta, un permiso, un conector ni un sustituto de la aprobación humana.
 
 ## Escribe el contrato antes de la prosa
 
@@ -39,8 +56,8 @@ required_inputs:
   - ruta o artefacto pegado
   - objetivo, exclusiones y aceptación
   - procedencia de afirmaciones materiales
-allowed_actions: "leer objetivos; escribir informe en salida desechable; ejecutar checks reversibles nombrados"
-forbidden_actions: "secretos, publicación, envío, borrado, instalación o red sin autorización"
+allowed_actions: "leer los archivos indicados; escribir un informe en una salida desechable; ejecutar comprobaciones reversibles con nombre"
+forbidden_actions: "leer o imprimir secretos; publicar, enviar, borrar, instalar o usar la red sin autorización"
 output: "informe de afirmación → evidencia → alcance no cubierto"
 stop_when: "falta entrada, autoridad, fuente o destino recuperable"
 ```
@@ -65,13 +82,13 @@ No ocultes reglas de seguridad críticas en una referencia opcional. Un archivo 
 | Fallo | Se detiene antes de una escritura insegura y conserva el primer punto ausente | Inventar entrada, permiso o resultado |
 | Transferencia | Cambia hechos de dominio y vuelve a revisar supuestos | Sustituir nombres mecánicamente |
 
-Incluye una falla intencional que cambie una sola variable y tenga señal visible. Define destino, línea base, pasos de rollback y una lectura posterior: «deshacer» no es suficiente.
+Incluye un fallo intencional que cambie una sola variable y deje una señal visible. Define el objetivo, la línea base, los pasos de recuperación y una lectura posterior para comprobar el resultado: «deshacer» por sí solo no basta.
 
-## Experimento y límite
+## Experimento y límites
 
 ### Preparación
 
-Elige una tarea local no sensible que hayas hecho al menos dos veces. Define una entrada desechable, aceptación clara y límite de solo lectura. No uses credenciales, instalación, red ni contenido ajeno de Skill cuya licencia no esté clara.
+Elige una tarea local y no sensible que hayas hecho al menos dos veces. Define una entrada desechable, criterios de aceptación claros y un límite de solo lectura. No uses credenciales, instalaciones, red ni contenido ajeno de una Skill cuya licencia no esté clara.
 
 ### Tarea
 
@@ -180,15 +197,15 @@ El resultado solo describe el entorno registrado. No demuestra descubrimiento, s
 - Confundir descubrimiento con fiabilidad: verifica por separado metadatos, selección, carga, acciones y evidencia.
 - Ocultar desconocidos: «no se revisó la red» también es un resultado útil.
 
-## Recibo de adopción: que el archivo exista no basta
+## Registro de adopción: que el archivo exista no basta
 
-Antes de llevar un Skill a una tarea real, deja un recibo de adopción. Evita
+Antes de llevar una Skill a una tarea real, deja un registro de adopción. Evita
 confundir «veo una carpeta» con «puedo depender de ella» y dice a la siguiente
 persona en qué capa debe empezar la revisión:
 
 ```text
 nombre y versión del Skill:
-vacío de tarea: qué decisión concreta aporta, no “hacer la IA mejor”
+brecha de la tarea: qué decisión concreta aporta, no «hacer mejor la IA»
 origen y licencia: original / fuente revisada; licencia y fecha de revisión
 host y superficie de esta prueba: producto, versión y ruta realmente usados
 observado: archivo / descubrimiento / selección / carga / acción / salida
