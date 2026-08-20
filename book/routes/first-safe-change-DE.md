@@ -9,30 +9,30 @@ Sprachprüfung steht noch aus.
 
 Dies ist die Standardsandbox für Einsteigerinnen und Einsteiger zwischen
 Kapitel 2 und Lab 001. Sie bietet ein absichtlich unvollständiges README,
-eine erlaubte lokale Änderung und einen engen Check, bevor du in deinem
+eine erlaubte lokale Änderung und eine eng gefasste Prüfung, bevor du in deinem
 eigenen Projekt arbeitest. Sie ist weder Kapitel 23 noch ein neues Skill,
 keine Git-Übung und kein Beleg dafür, dass ein Modell etwas erledigt hat.
 
-Wenn du zum ersten Mal einen Projektordner öffnest oder einen Check ausführst,
+Wenn du zum ersten Mal einen Projektordner öffnest oder eine Prüfung ausführst,
 ist genau das der Grund für diese Route. Du musst nichts installieren, kein
 Konto anlegen und kein echtes Projekt riskieren. Das Ziel bleibt so klein,
-dass du alle relevanten Dateien sehen und selbst beurteilen kannst, ob der
-Check die Frage tatsächlich beantwortet.
+dass du alle relevanten Dateien sehen und selbst beurteilen kannst, ob die
+Prüfung die Frage tatsächlich beantwortet.
 
 ## Problem
 
 Lab 001 verlangt ein wegwerfbares Projekt, eine echte Quelle für einen Befehl
-und eine begrenzte README-Änderung. Das sind gute produktionsnahe Bedingungen,
+und eine begrenzte Änderung am README. Das sind gute produktionsnahe Bedingungen,
 doch der erste praktische Schritt kann sich dadurch im Kreis drehen: Neue
 Lesende haben noch kein sicheres Projekt und wissen nicht, welcher
-Befehlsquelle sie vertrauen sollen.
+Befehlsquelle sie vertrauen können.
 
 ## Konzept
 
 Ein Fixture trennt das *Üben der Methode* von der Suche nach einem passenden
-Projekt. Es ist künstlich, lokal und wegwerfbar. Die einzige vorgesehene
-Inhaltsänderung ist eine README-Korrektur; der Prüfer liest nur diese Datei und
-meldet ein kleines Ergebnis. So wird die Abnahmebedingung sichtbar, ohne Konto,
+Projekt. Es ist synthetisch, lokal und wegwerfbar. Die einzige vorgesehene
+Inhaltsänderung ist eine Korrektur am README; der Prüfer liest nur diese Datei und
+meldet ein begrenztes Ergebnis. So wird die Abnahmebedingung sichtbar, ohne Konto,
 Netzwerk, Installation, Git, Commit, Push, Veröffentlichung oder persönliche
 Daten zu benötigen.
 
@@ -41,7 +41,7 @@ Daten zu benötigen.
 Wenn du noch kein wegwerfbares lokales Projekt hast, verwende das
 projektinterne [Fixture „Erste sichere Änderung“](../../examples/lab-001-v1/README-DE.md).
 Kopiere den gesamten Fixture-Ordner nach `.work/` oder an einen anderen
-temporären Ort. Bearbeite nicht das Original im Repository, sonst bleibt der
+temporären Ort. Bearbeite nicht das Original im Repository, damit der
 vorbereitete Fehler für die nächste Person nicht erhalten.
 
 ## Aktion
@@ -50,7 +50,7 @@ Lege zunächst eine private Arbeitskopie an. Kopiere im Dateimanager den
 gesamten Ordner `examples/lab-001-v1` an einen Ort, den du wieder löschen
 kannst, und nenne die Kopie `first-safe-change`.
 
-Wähle danach einen von zwei Checks:
+Wähle danach eine von zwei Prüfungen:
 
 1. **Check ohne Laufzeitumgebung (Standard).** Öffne in der Kopie
    `seed/README.md` und `expected/acceptance.json`. Vor der Änderung fehlen
@@ -74,8 +74,8 @@ optionalen Check. Das optionale Erfolgsresultat lautet
 `FIRST_SAFE_CHANGE_OK`.
 
 Falls Python nicht verfügbar ist, installiere nicht nur für diese Route eine
-Laufzeitumgebung und ersetze den Befehl nicht durch einen anderen. Verwende den
-Check ohne Laufzeitumgebung und notiere
+Laufzeitumgebung und ersetze den Befehl nicht durch einen anderen. Verwende die
+Prüfung ohne Laufzeitumgebung und notiere
 `check: manual required_readme_strings 3/3`. Wenn du nicht einmal eine
 wegwerfbare lokale Kopie erstellen kannst, stoppe und nutze das textbasierte
 First Win; eine GitHub-Webansicht ist keine lokale Sandbox.
@@ -98,7 +98,7 @@ kein Formular, keine Analyse, keine API und kein externes Bild.
 python -m http.server 4182
 ```
 
-Öffne `http://127.0.0.1:4182/` im Browser. Prüfe Titel, neuen Satz, erhaltene Überschrift,
+Öffne `http://127.0.0.1:4182/` im Browser. Prüfe den Titel, den neuen Satz, die erhaltene Überschrift,
 Linkziele, Konsole und einen 390px breiten Viewport. Wenn Befehl, Zieldatei oder
 Browserergebnis unklar sind, stoppe; installiere für diese Übung keine Laufzeit.
 
@@ -113,8 +113,8 @@ diff: <geprüfter Diff>
 unverified: Deployment, Accessibility-Review, andere Browser, Nutzerabnahme
 ```
 
-Das belegt nur einen lokal gerenderten Zustand bei einem Viewport. Es belegt weder einen
-Produktions-Build noch alle responsiven Zustände, Barrierefreiheit, Sicherheit, Leistung
+Das belegt nur einen lokal gerenderten Zustand bei einem Viewport. Es belegt weder eine
+Produktionskompilierung noch alle responsiven Zustände, Barrierefreiheit, Sicherheit, Leistung
 oder Produktwert. Für den vollständigen Ablauf gehe zu
 [Kapitel 16](../chapters/16-engineering-track-DE.md).
 
@@ -135,7 +135,7 @@ unverified:
   - transfer
 ```
 
-Der Prüfer kann nur zeigen, dass dieses feste, künstliche README zu einem
+Der Prüfer kann nur zeigen, dass dieses feste, synthetische README zu einem
 Zeitpunkt die erklärten Zeichenfolgen enthält. Ein Erfolg belegt keine
 Git-Operation, keinen Browser, keine Kontoberechtigung, keine Sicherheitsprüfung
 und nicht, dass du die Methode beherrschst.
