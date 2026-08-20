@@ -806,6 +806,17 @@
         "de": "Interview Rehearsal (Vorstellungsgespräch-Probe)",
         "zh-tw": "面試演練 Interview Rehearsal"
       }
+    },
+    "polish-open-source-prose": {
+      "name": {
+        "en": "Polish Open-Source Prose",
+        "zh": "开源项目文案润色",
+        "es": "Pulir textos de código abierto",
+        "ja": "オープンソース向け文章の推敲",
+        "ko": "오픈 소스 문서 다듬기",
+        "de": "Open-Source-Texte redigieren",
+        "zh-tw": "開源專案文案潤飾"
+      }
     }
   }
 }
