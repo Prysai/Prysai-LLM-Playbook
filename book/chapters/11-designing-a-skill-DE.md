@@ -1,24 +1,41 @@
-<!-- content_id: chapter-11-designing-a-skill | locale: DE | language: de | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
+<!-- content_id: chapter-11-designing-a-skill | locale: DE | language: de | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-20 -->
 
 # Kapitel 11: Einen Skill entwerfen, der seinen Platz verdient
 
-**Status:** `candidate`. **Experimentstatus:** `not_run`. Dieses Kapitel beschreibt eine Entwurfsmethode; es beweist nicht, dass ein bestimmter Host einen Skill findet, lädt oder ausführt.
+**Status:** `candidate`. **Experimentstatus:** `not_run`. Dieses Kapitel beschreibt eine Entwurfsmethode; es beweist nicht, dass ein bestimmter Host einen Skill entdeckt, lädt oder ausführt.
 
 ## Das Problem dieses Kapitels
 
-Eine beeindruckende Sitzung reicht nicht, um aus einem Prompt einen Skill zu machen. Der Prompt kann von nicht dokumentierten Fakten abhängen, unnötige Rechte verlangen, eine Zugangsdaten voraussetzen oder bei einem Modewort anspringen. Ein nützlicher Skill ist ein versioniertes Methodenpaket für eine wiederkehrende Arbeitsklasse: mit begrenzten Aktionen und überprüfbarer Evidenz.
+Eine beeindruckende Sitzung reicht nicht, um aus einem Prompt einen Skill zu machen. Der Prompt kann von nicht dokumentierten Fakten abhängen, unnötige Rechte verlangen, vorhandene Zugangsdaten voraussetzen oder bei einem Modewort anspringen. Ein nützlicher Skill ist ein versioniertes Methodenpaket für eine wiederkehrende Arbeitsklasse: mit begrenzten Aktionen und überprüfbarer Evidenz.
 
 ## Lernziele
 
 Du kannst entscheiden, ob eine wiederkehrende Aufgabe überhaupt einen Skill braucht, einen Vertrag mit Auslösern und Nicht-Auslösern schreiben, Methode von Daten und Ausführung trennen und einen Kandidaten mit positiven, Grenz-, Fehler- und Transferfällen prüfen. Ein vorhandenes `SKILL.md` oder ein einzelner Lauf beweist noch keine Zuverlässigkeit über Hosts, Modelle oder Personen hinweg.
 
+## Ein Skill in einem Satz
+
+Verwende diese Definition im ganzen Kapitel:
+
+> Ein Skill ist ein auffindbares, wiederverwendbares Methodenpaket, das eine begrenzte Aufgabenklasse mit begrenzten Aktionen und prüfbarer Evidenz verbindet.
+
+Die vier Begriffe setzen die Grenze:
+
+| Begriff | Praktische Bedeutung | Was dadurch ausgeschlossen wird |
+|---|---|---|
+| **Auffindbar** | Der Host kann das Paket in der vorgesehenen Arbeitsoberfläche erkennen; alternativ gibt es einen dokumentierten manuellen Weg | Eine Datei im Repository beweist nicht, dass die aktuelle Sitzung sie sieht |
+| **Wiederverwendbar** | Die Methode funktioniert für verschiedene Aufgabeninstanzen; projektspezifische Fakten kommen als Eingabe | Ein Kundenbrief oder ein absoluter lokaler Pfad im Skill |
+| **Begrenzt** | Aufgabe, Zuständigkeit, Daten und Nebenwirkungen haben ausdrückliche Grenzen | „Für alles rund ums Marketing“ |
+| **Prüfbar** | Eine andere Person kann Eingaben, Aktionen, Ausgaben und unbelegte Aussagen prüfen | „Das Modell sagte, es habe den Prozess befolgt“ |
+
+Ein Skill ist weder Modell, Werkzeug, Berechtigung, Connector noch Ersatz für menschliche Freigabe. Er beschreibt eine Methode; der Host und die Autorisierung der nutzenden Person bestimmen, welche Aktionen technisch möglich und erlaubt sind.
+
 ## Praxisfälle: Ein Skill kann scheitern, bevor seine Methode beginnt
 
-Der praktische Fehler ist oft eine fehlende Entscheidung: Der Host entdeckt den Skill nicht, ein Trigger passt nicht, die Eingabe fehlt, eine Lizenz ist unklar oder die Aufgabe fordert eine breitere Nebenwirkung als erlaubt. Deshalb prüfst du Datei, Discovery, Auswahl, Laden, Aktion und Ausgabe getrennt und stoppst, bevor ein externer Kandidat als eigene Fähigkeit ausgegeben wird.
+Der praktische Fehler ist oft eine fehlende Entscheidung: Der Host entdeckt den Skill nicht, ein Trigger passt nicht, die Eingabe fehlt, eine Lizenz ist unklar oder die Aufgabe fordert eine breitere Nebenwirkung als erlaubt. Deshalb prüfst du Datei, Discovery, Auswahl, Laden, Aktion und Ausgabe getrennt. Stoppe, bevor ein externer Kandidat als eigene Fähigkeit ausgegeben wird.
 
 > Ein Skill ist ein auffindbares, wiederverwendbares Methodenpaket, das eine abgegrenzte Aufgabenklasse auf begrenzte Aktionen und prüfbare Evidenz abbildet.
 
-Er ist weder Modell noch Werkzeug, Berechtigung, Connector oder Ersatz für menschliche Freigabe.
+Er ist weder Modell noch Werkzeug, Berechtigung, Connector noch Ersatz für menschliche Freigabe.
 
 ## Erst den Vertrag schreiben, dann den Text
 
@@ -39,8 +56,8 @@ required_inputs:
   - genauer Pfad oder eingefügtes Artefakt
   - Ziel, Ausschlüsse und Abnahme
   - Herkunft wesentlicher Aussagen
-allowed_actions: "Benannte Ziele lesen; Bericht in einen wegwerfbaren Ausgabeort schreiben; benannte reversible Checks ausführen"
-forbidden_actions: "Geheimnisse, Veröffentlichung, Versand, Löschen, Installation oder Netzwerk ohne Autorisierung"
+allowed_actions: "Benannte Ziele lesen; Bericht in einen wegwerfbaren Ausgabeort schreiben; benannte reversible Prüfungen ausführen"
+forbidden_actions: "Geheimnisse lesen oder ausgeben; veröffentlichen, versenden, löschen, installieren oder ohne Autorisierung das Netzwerk nutzen"
 output: "Bericht: Behauptung → Evidenz → nicht abgedeckter Umfang"
 stop_when: "Eingabe, Autorität, Quelle oder wiederherstellbares Ziel fehlt"
 ```
@@ -65,13 +82,13 @@ Kritische Sicherheitsregeln gehören nicht in eine optionale Referenz. Eine vorh
 | Fehler | Sie stoppt vor einem unsicheren Schreibvorgang und bewahrt die erste fehlende Voraussetzung | Eingabe, Berechtigung oder Ergebnis erfinden |
 | Transfer | Sie ändert Fachfakten und prüft Annahmen erneut | Namen mechanisch ersetzen |
 
-Baue einen absichtlichen Fehler ein, der nur eine Variable verändert und ein sichtbares Signal hinterlässt. Bestimme Ziel, Ausgangslage, Wiederherstellungsschritte und eine anschließende Kontrolle: „Rückgängig machen“ allein genügt nicht.
+Baue einen absichtlichen Fehler ein, der nur eine Variable verändert und ein sichtbares Signal hinterlässt. Bestimme Ziel, Ausgangslage, Wiederherstellungsschritte und eine anschließende Prüfung. „Rückgängig machen“ allein genügt nicht.
 
-## Experiment und Grenze
+## Experiment und Grenzen
 
 ### Vorbereitung
 
-Wähle eine lokale, nicht sensible Aufgabe, die du mindestens zweimal erledigt hast. Lege eine wegwerfbare Eingabe, eine klare Abnahme und eine Nur-Lesen-Grenze fest. Verwende keine Zugangsdaten, Installation, Netzwerkzugriffe oder fremde Skill-Inhalte mit unklarer Lizenz.
+Wähle eine lokale, nicht sensible Aufgabe, die du mindestens zweimal erledigt hast. Lege eine wegwerfbare Eingabe, klare Abnahmekriterien und eine Nur-Lesen-Grenze fest. Verwende keine Zugangsdaten, Installationen, Netzwerkzugriffe oder fremden Skill-Inhalte mit unklarer Lizenz.
 
 ### Aufgabe
 
@@ -179,10 +196,10 @@ Diese Beobachtung gilt nur für die dokumentierte Umgebung. Sie beweist nicht di
 - Auffindbarkeit mit Zuverlässigkeit verwechseln: Metadaten, Auswahl, Laden, Aktionen und Evidenz getrennt prüfen.
 - Unbekanntes verstecken: „Remote-Link nicht geprüft“ ist ein wichtiges Ergebnis des Berichts.
 
-## Übernahmebeleg: Eine Datei allein genügt nicht
+## Übernahmerecord: Eine Datei allein genügt nicht
 
 Bevor ein Skill in eine echte Aufgabe kommt, hinterlässt du einen
-Übernahmebeleg. Er trennt „ich sehe einen Ordner“ von „ich darf mich darauf
+Übernahmerecord. Er trennt „ich sehe einen Ordner“ von „ich darf mich darauf
 verlassen“ und zeigt der nächsten Person, auf welcher Stufe das Review beginnt:
 
 ```text
@@ -197,7 +214,7 @@ nächster sicherer Check: genau eine unbeobachtete Stufe prüfen
 Stopp: Eingabe, Autorität, Wiederherstellungsziel oder Beleg fehlt
 ```
 
-Eine vorhandene `SKILL.md` stützt nur die Existenz der Datei, nicht Discovery
+Eine vorhandene `SKILL.md` stützt nur die Existenz der Datei, nicht die Discovery
 im Host oder die Ausführung der Methode. Ein einmaliger Bericht gilt nur für
 die dokumentierte Aufgabe und Umgebung, nicht für alle Modelle, Ordner oder
 Nutzenden. Der Beleg macht aus „ich glaube, es geht“ eine prüfbare Entscheidung.
