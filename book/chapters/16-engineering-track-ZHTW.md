@@ -168,8 +168,8 @@ AI 可以快速生成補丁，卻也能在錯誤的倉庫、錯誤的範圍或�
 <nav class="chapter-navigation" aria-label="章節導覽">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="15-research-track-ZHTW.md" aria-label="上一章: 第 15 章 · Research track: from question to auditable knowledge">← 上一章<br><strong>第 15 章 · Research track: from question to auditable knowledge</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="17-marketing-track-ZHTW.md" aria-label="下一章: 第 17 章 · Marketing track: from product understanding to growth experiments">下一章 →<br><strong>第 17 章 · Marketing track: from product understanding to growth experiments</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="15-research-track-ZHTW.md" aria-label="上一章：第 15 章 · 研究路線——從問題到可審計知識">← 上一章<br><strong>第 15 章 · 研究路線——從問題到可審計知識</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="17-marketing-track-ZHTW.md" aria-label="下一章：第 17 章 · 營銷路線——從產品理解到增長實驗">下一章 →<br><strong>第 17 章 · 營銷路線——從產品理解到增長實驗</strong></a></td>
     </tr>
   </table>
 </nav>
