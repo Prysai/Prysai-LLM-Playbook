@@ -2,29 +2,29 @@
 
 # 第 9 章：検証、疑い、復旧
 
-**状態：** `candidate`。**実験：** `not_run`。この章は完了 claim と evidence を対応させ、不確かな workflow を復旧する方法を教えます。ローカル再現、公式診断、production evidence ではありません。
+**状態：** `candidate`。**実験：** `not_run`。この章では、「完了した」という主張と、その根拠（evidence）を対応づけます。確かでない作業手順を立て直す方法も扱います。ローカルでの再現、公式な診断、運用環境での証拠を示す章ではありません。
 
 ## この章が解決する問題
 
-Agent は、誤り、scope 外、未実行、誤った environment で確認した結果についても、もっともらしい完了 summary を書けます。blind trust と永久の疑いの代わりに、summary を独立した claim に分け、宣言した scope で支えられる最小の evidence を割り当てます。
+Agent は、誤りや範囲外の変更、実行していない処理、別の環境で得た結果についても、もっともらしい完了報告（summary）を書けます。何でも信じるのも、何も信じないのも解決策ではありません。報告を個別の主張（claim）に分け、宣言した範囲（scope）を支えられる最小限の証拠を割り当てます。
 
-| claim | 最低限の evidence | 証明しないこと |
+| 主張（claim） | 最低限の証拠 | それだけでは証明できないこと |
 |---|---|---|
-| file が変わった | diff、path、hash | 正しい、または完全なこと |
-| check が通った | command、directory、exit code、relevant output | 別環境で同じに動くこと |
-| application が動く | actual start と critical path の observation | user value、security、production readiness |
-| page が正しく見える | viewport を記録した render review | 完全な accessibility、backend、conversion |
-| fact が公式 source にある | authority URL、access date、scope、review owner | この account の access や local configuration |
+| ファイルが変わった | 差分（diff）、パス、ハッシュ | 変更が正しい、または完全であること |
+| チェックが通った | コマンド、作業ディレクトリ、終了コード、重要な出力 | 別の環境でも同じように動くこと |
+| アプリケーションが動く | 実際の起動と重要な経路の観察 | 利用者に役立つこと、安全性、運用投入の準備 |
+| ページが正しく見える | ビューポートを記録した表示確認 | アクセシビリティ全体、バックエンド、成約率 |
+| 事実が公式資料にある | 公式 URL、確認日、適用範囲、確認担当者 | このアカウントの権限やローカル設定 |
 
-弱い一つの proof は残りすべての代わりになりません。passing build は runtime を、screenshot は demand を、公式 URL は access を証明しません。
+弱い証拠一つで、他の証拠を代用することはできません。ビルド成功は実行時の動作を、スクリーンショットは需要を、公式 URL は自分のアクセス権を証明しません。
 
 ## 学習目標
 
-完了 summary を個別に確認できる claim に分け、各 claim に合う最小 evidence を選び、最初に根拠が切れた地点を見つけ、安全な次の check または正直な handoff を書けるようになります。この練習だけでは、製品の信頼性や学習効果を証明しません。独立した run と review が必要です。
+完了報告を個別に確認できる主張へ分け、それぞれに合う最小限の証拠を選びます。根拠が最初に途切れた地点を見つけ、安全な次の確認か、正直な引き継ぎ（handoff）を書けるようになることが目標です。この練習だけで、製品の信頼性や学習効果を証明することはできません。独立した実行記録とレビューが必要です。
 
-## 現実の問題：もっともらしい summary に対応する evidence がない
+## 現実の問題：もっともらしい完了報告に根拠がない
 
-reply は diff、test output、reader の観察がないまま「完了」「すべての test が通った」「reader は理解した」と言えます。これは特定の model の診断ではありません。request、authorization、tool、action、result、review の間で最初に欠ける段階だけを確認すべき理由です。
+差分、テスト出力、読者の観察がなくても、返答は「完了した」「すべてのテストに通った」「読者は理解した」と言えてしまいます。これは特定のモデルを診断する話ではありません。依頼、承認、ツール、操作、結果、レビューという流れのうち、根拠が最初に欠けた段階を確認することが大切です。
 
 ## 最初の切れ目を見つける
 
@@ -32,155 +32,145 @@ reply は diff、test output、reader の観察がないまま「完了」「す
 request → authorization → visible tool → action → result → review
 ```
 
-観測できない最初の矢印を記録します。session が使えても tool が登録されているとは限らず、run の control を取り戻しても intended result が正しいとは限りません。
+観測できない最初の矢印を記録します。セッションが使えても、必要なツールが登録されているとは限りません。作業を再び操作できるようになっても、目的の結果が正しいとは限りません。
 
-| state | 意味 |
+| 状態 | 意味 |
 |---|---|
-| `verified` | 宣言した scope で evidence が claim を支える |
-| `unverified` | 必要な evidence が欠ける。false とは限らない |
-| `unknown` | 分類する observation が足りない |
-| `partial` | 一部は支えられ、残りは支えられない |
-| `not_observed` | project が observation を保存していない |
-| `error` | 宣言した operation の failure evidence がある |
+| `verified` | 宣言した範囲で、証拠が主張を支えている |
+| `unverified` | 必要な証拠が欠けている。誤りだと決まったわけではない |
+| `unknown` | 判定に必要な観察が足りない |
+| `partial` | 一部だけ支えられ、残りは支えられない |
+| `not_observed` | プロジェクトが観察結果を保存していない |
+| `error` | 宣言した操作が失敗した証拠がある |
 
-## 一つの安全な check で復旧する
+## 安全な確認を一つだけ行って立て直す
 
-capacity error、`Working` のままの command、missing tool、reinstall proposal に対して、先に diff、output、log、last accepted checkpoint を保存します。その後に target を inspect する、同じ command を一回だけ bound して retry する、input を尋ねる、または stop する、の一つを選びます。check は install、restart、deployment、scope 外 write の許可ではありません。
+容量エラー、`Working` のまま終わらないコマンド、見つからないツール、再インストールの提案に遭遇したら、まず差分、出力、ログ、最後に受け入れたチェックポイントを保存します。そのうえで、対象を読み取る、同じコマンドを条件付きで一度だけ再試行する、入力を尋ねる、停止する、のいずれか一つを選びます。確認を始めたからといって、インストール、再起動、デプロイ、範囲外への書き込みが許可されたわけではありません。
 
 ```text
-claim: すべての test が通った
-evidence: test output がない
+claim: すべてのテストに通った
+evidence: テスト出力がない
 status: unverified
-next_check: 固定した directory と revision で承認済み command だけを実行する
+next_check: 固定した作業ディレクトリとリビジョンで、承認済みのコマンドだけを実行する
 ```
 
 ### 緑の表示は結論ではない
 
-緑の check は、ある時点で **一つの** check が error なしで終わったことを示すだけです。
-「動く」と書く前に、次を分けます。
+緑色のチェックが示すのは、ある時点で**一つの**確認がエラーなく終わったことだけです。
+「動く」と書く前に、次の点を分けて確認します。
 
 | 見えたこと | まだ確認すること | 小さく安全な確認 |
 |---|---|---|
-| command が exit code 0 で終わった | 想定した command、folder、revision だったか | command、folder、revision、必要な output を残す |
-| diff がある | 依頼と boundary を守った変更か | goal と制約に照らして diff を読む |
-| page が開く | 想定した input で重要な path が通るか | 無害な input と記録した viewport で一つの path を確認する |
-| model が「完了」と言った | 各 claim を支える独立した observation は何か | path、output、diff、または明示的な limitation を求める |
+| コマンドが終了コード 0 で終わった | 想定したコマンド、フォルダー、リビジョンだったか | コマンド、フォルダー、リビジョン、必要な出力を残す |
+| 差分がある | 依頼と境界を守った変更か | 目的と制約に照らして差分を読む |
+| ページが開く | 想定した入力で重要な経路が通るか | 無害な入力と記録済みのビューポートで一つの経路を確認する |
+| モデルが「完了」と言った | 各主張を支える独立した観察は何か | パス、出力、差分、または明示的な制限を求める |
 
-一つの check の成功を security、user value、production への約束に変えません。
-observation がなければ、その行は `unverified` のままにします。自信で埋めないでください。
+一つのチェックの成功を、安全性、利用者への価値、運用投入への約束にすり替えません。
+観察がなければ、その行は `unverified` のままにします。自信で空白を埋めないでください。
 
-### 復旧レシート：次の人が安全に続けられるようにする
+### 復旧レシート：次の人が安全に続けるために
 
-workflow を止めた、または control を取り戻したら、短い receipt を残します。
-闇雲に最初からやり直さず、次の人が permission を広げずに何を確認できるかを示すためです。
+作業手順を止めたとき、または操作を取り戻したときは、短いレシート（receipt）を残します。
+最初から闇雲にやり直すのではなく、次の人が権限を広げずに何を確認できるかを示すためです。
 
 ```text
-goal と boundary: 何を行う予定で、何が許可されていなかったか
-last confirmed point: 実際にある observation、path、または output
-first unsupported point: evidence のない最初の claim
+goal と boundary: 何をする予定で、何が許可されていなかったか
+last confirmed point: 実際に確認できた観察、パス、または出力
+first unsupported point: 根拠がない最初の主張
 target state: no change / partial change / unknown
-saved evidence: diff、log、output、screenshot、または特定の link
-safe next check: read-only または reversible な一つの action
-not yet: publish、install、deploy、または scope の拡張
+saved evidence: 差分、ログ、出力、スクリーンショット、または特定のリンク
+safe next check: 読み取り専用、または元に戻せる一つの操作
+not yet: 公開、インストール、デプロイ、または範囲の拡張
 ```
 
-receipt は result を修正せず、cause も証明しません。`maybe` を `done` にせず、
-安全に再開できる正確な位置だけを残します。
+レシートは結果を修正せず、原因も証明しません。`maybe` を `done` に変えず、
+安全に再開できる正確な地点だけを残します。
 
 ## 実験と境界
 
 ### 準備
 
-local の disposable folder に、整えた summary、diff、test output、source link、意図的に欠けた evidence 一つを置きます。secret、production、install、sign-in、external change は使いません。
+ローカルの一時フォルダーに、完了報告、差分、テスト出力、出典リンク、そして意図的に欠けさせた証拠を一つ置きます。秘密情報、本番環境、インストール、サインイン、外部への変更は使いません。
 
 ### タスク
 
-redacted summary、diff、test output、source link、意図的に欠けた evidence を用意します。Lab 003 で claim、scope、evidence、status、next check の表を作り、output のない「all tests passed」を安全な口調でも拒否します。fact claim、execution claim、user-effect claim を一つずつ含め、一つの弱い evidence を共有できない理由を説明します。production service には接続せず、external system を変更しません。
+伏せ字にした完了報告、差分、テスト出力、出典リンク、意図的に欠けさせた証拠を用意します。Lab 003 で、主張・範囲・証拠・状態・次の確認を表にします。出力がない「すべてのテストに通った」という文は、丁寧に書かれていても受け入れません。事実に関する主張、実行に関する主張、利用者への効果に関する主張を一つずつ含め、弱い証拠一つで三つを支えられない理由を説明します。本番サービスには接続せず、外部システムも変更しません。
 
-復旧によって state が再び観測可能になっても、claim が自動で `verified` になるわけではありません。この章は `candidate`、実験は `not_run` のままです。
+復旧して状態を再び観測できるようになっても、主張が自動的に `verified` になるわけではありません。この章は `candidate`、実験は `not_run` のままです。
 
 ### 証拠
 
-claim-evidence table、名前のある path と output、各行の status、最初の切れ目、安全な次の check を保存します。run がなければ `not_run` と書き、自信のある tone から test output を作りません。
+主張と証拠の表、名前を付けたパスと出力、各行の状態、最初に根拠が切れた地点、安全な次の確認を保存します。実行していなければ `not_run` と書き、自信のある語調からテスト出力を作りません。
 
-## ガイド付き練習：自信のある summary をそのまま受け取らない
+## ガイド付き練習：自信のある完了報告をそのまま受け取らない
 
-90 語程度の案内文について、「初めての人が最初の一歩を理解できるように直して。
-事実は変えず、公開もしないで」と依頼した場面を考えます。モデルが「完了しました。
-分かりやすく、すべての check を通しました」と返しても、すぐに完了にしません。
+90語ほどの案内文について、「初めての人が最初の一歩を理解できるように直して。事実は変えず、公開もしないで」と依頼した場面を考えます。モデルが「完了しました。分かりやすく、すべてのチェックに通りました」と返しても、すぐに完了とはしません。
 
-1. どの file または本文が変わったか。diff か変更前後の本文を確認する。
-2. どの check を実行したか。command、directory、exit code、必要な output を確認する。
-3. 何をまだ確認していないか。初学者の理解、Web での見え方、公開後の反応を分ける。
-4. 次の安全な check は何か。この例では二つの本文を比較し、初めて読む人に
-   「最初に何をする？」と一問だけ尋ねる。
+1. どのファイル、または本文が変わったか。差分か、変更前後の本文を確認する。
+2. どのチェックを実行したか。コマンド、作業ディレクトリ、終了コード、必要な出力を確認する。
+3. まだ何を確認していないか。初学者の理解、Web 上の見え方、公開後の反応を分ける。
+4. 次の安全な確認は何か。この例では二つの本文を比べ、初めて読む人に「最初に何をする？」と一問だけ尋ねる。
 
-モデルを嘘つきと決める必要はありません。広い一文を claim の表に変えれば十分です。
-test output がなければ「すべての check が通った」は `unverified` です。本文比較しか
-していないなら、「本文の差分はあるが、読者の理解は未確認」が正確な handoff です。
+モデルを嘘つきと決めつける必要はありません。広すぎる一文を、主張の表に変えれば十分です。
+テスト出力がなければ、「すべてのチェックに通った」は `unverified` です。本文を比べただけなら、「本文の差分は確認したが、読者の理解は未確認」と引き継ぐのが正確です。
 
 ## 初学者向けの復旧カード
 
-期待どおりでないとき、指示を無計画に足しません。観測したことだけを書きます。
+期待どおりにならないとき、指示を無計画に足しません。観測したことだけを書きます。
 
 ```text
 goal: 最初の一歩を分かりやすくする。公開しない
-last_confirmed: 下書きと diff はある
-first_breakpoint: 初めての読者が理解した evidence がない
+last_confirmed: 下書きと差分がある
+first_breakpoint: 初めての読者が理解した証拠がない
 safe_next_check: 一問だけの読者確認を依頼する
-stop_if: 公開、install、別 file の変更が必要になる
-honest_handoff: 本文 review はある。読者理解は unverified
+stop_if: 公開、インストール、別ファイルの変更が必要になる
+honest_handoff: 本文のレビューはある。読者の理解は unverified
 ```
 
-このカードは「動かなかった」を調べられる次の一歩に変えます。model、Skill、course の
-効果を証明するものではありません。観測したこと、欠けていること、安全な次の行動だけを
-分けて残します。
+このカードは、「動かなかった」を調べられる次の一歩に変えます。モデル、Skill、コースの効果を証明するものではありません。観測したこと、欠けていること、安全な次の行動だけを分けて残します。
 
-## claim を evidence に対応させる
+## 主張を証拠に対応させる
 
-summary を受け取ったら、まず claim を一行ずつ分けます。一つの artifact や green check を
-複数の結論に使い回さないためです。
+完了報告を受け取ったら、まず主張を一行ずつに分けます。一つの成果物や緑色のチェックを、複数の結論に使い回さないためです。
 
-| claim | scope に合う evidence | evidence があっても残る限界 |
+| 主張 | 範囲に合う証拠 | 証拠があっても残る限界 |
 | --- | --- | --- |
-| 指定 file が変わった | exact path、before/after diff、必要なら hash | 変更が依頼の意味を満たすこと |
-| named command が pass した | exact command、working directory、revision、timeout、exit status、relevant output | 他の command、environment、未実行 path |
-| page の一つの path が開いた | recorded viewport、input、URL、render observation | 全 browser、authenticated state、accessibility 全体 |
-| source が文を支える | original URL、access date、引用した範囲、scope | current product behavior、account access、因果 |
-| beginner が理解した | 誰が、何を読んだか、質問、回答、条件を残す reader observation | すべての reader、保持、transfer |
+| 指定したファイルが変わった | 正確なパス、変更前後の差分、必要ならハッシュ | 変更が依頼の意図を満たすこと |
+| 名前を指定したコマンドが通った | 正確なコマンド、作業ディレクトリ、リビジョン、制限時間、終了状態、重要な出力 | 他のコマンド、環境、未実行の経路 |
+| ページの一つの経路が開いた | 記録したビューポート、入力、URL、表示結果 | すべてのブラウザー、認証済み状態、アクセシビリティ全体 |
+| 出典が文を支えている | 元の URL、確認日、引用範囲、適用範囲 | 現在の製品動作、アカウント権限、因果関係 |
+| 初学者が理解した | 誰が何を読み、どんな質問にどう答えたかという読者観察 | すべての読者、保持、応用 |
 
-`claim → evidence → status → next check` の表を作り、evidence がない row は `unverified` のまま
-にします。false と決める必要はありません。ただし、evidence がないことを success の語で隠さない
-ことが重要です。
+「主張 → 証拠 → 状態 → 次の確認」の表を作り、証拠がない行は `unverified` のままにします。誤りだと決める必要はありません。ただし、証拠がないことを成功らしい言葉で隠さないことが重要です。
 
 ```text
-claim: README の start step は初学者に分かりやすい
-evidence: maintainer の本文 review と local diff
+claim: README の開始手順は初学者に分かりやすい
+evidence: 保守担当者による本文レビューとローカル差分
 status: partial
-not proven: 初見の reader が正しく行動できること
-next check: 一人に「最初に何をするか」を一問だけ聞く
+not proven: 初めて読む人が正しく行動できること
+next check: 一人に「最初に何をするか」を一問だけ尋ねる
 ```
 
-## capability chain と breakpoint card
+## 能力の連鎖と「最初の切れ目」カード
 
-「tool が見える」「session が開く」「control を取り戻した」は、それぞれ違う層の signal です。
-次の chain の各矢印に独立した proof が必要です。
+「ツールが見える」「セッションが開く」「操作を取り戻した」は、それぞれ別の層の信号です。次の連鎖にある各矢印には、独立した証拠が必要です。
 
 ```text
 request → authorization → visible tool → action started → result observed → acceptance review
 ```
 
-最初に support できない layer で止まります。後ろの layer を推測して埋めません。
+最初に確認できない層で止まります。後ろの層を推測で埋めてはいけません。
 
-| breakpoint | まず保存するもの | 次の小さな check |
+| 切れ目 | まず保存するもの | 次の小さな確認 |
 | --- | --- | --- |
-| authorization が不明 | task contract、requested action、approval screen/record | scope と approver を確認する。実行しない |
-| visible tool がない | current surface、account/environment label、exact missing control | official/current setup を読むか human に ask |
-| action start が不明 | proposal、tool trace、target baseline | named local target を read-only で確認 |
-| result が不明 | diff、partial output、log、timestamp | exact artifact を read back する |
-| acceptance がない | artifact と requirement | requirement を直接調べる一つの check を選ぶ |
+| 承認が不明 | タスク契約、依頼した操作、承認画面または記録 | 範囲と承認者を確認する。実行しない |
+| 表示されるツールがない | 現在の作業面、アカウント／環境の表示、欠けている操作 | 現行の公式設定を読むか、人に尋ねる |
+| 操作開始が不明 | 提案内容、ツールの記録、対象の基準状態 | 名前を指定したローカル対象を読み取り専用で確認 |
+| 結果が不明 | 差分、途中の出力、ログ、時刻 | 対象の成果物を読み戻す |
+| 受け入れ条件がない | 成果物と要件 | 要件を直接調べる小さな確認を一つ選ぶ |
 
-breakpoint card は復旧を小さく保ちます。
+このカードは、立て直しの範囲を小さく保ちます。
 
 ```text
 last confirmed layer:
@@ -192,12 +182,9 @@ one safe next check:
 explicitly forbidden next actions:
 ```
 
-## event がない待機を扱う
+## 何も起きない待機を扱う
 
-長い `Working` 表示や無応答の command は、成功でも failure でもなく、まず timeline の問題です。
-wait を繰り返す前に開始時刻、最後の output、process/tool state、observed diff、allowed timeout を
-記録します。timeout の後は、同じ write を送る前に artifact を読むか、authorized な interrupt を
-使うか、`unknown` として handoff します。
+長い `Working` 表示や応答のないコマンドは、成功でも失敗でもありません。まずは時系列を記録します。待つことを繰り返す前に、開始時刻、最後の出力、プロセス／ツールの状態、確認できた差分、許容する待ち時間を残します。制限時間を過ぎたら、同じ書き込みを送る前に成果物を読み取るか、許可された中断を使うか、`unknown` として引き継ぎます。
 
 ```text
 started_at:
@@ -209,59 +196,45 @@ external side effects observed:
 decision: wait once | interrupt | read back | stop
 ```
 
-elapsed time は effect の proof ではありません。特に write、publish、send、payment のような
-non-idempotent action は、response が失われても blind retry しません。baseline と postcondition を
-照合してから、human が新しい attempt を許可するか決めます。
+経過時間は、効果の証拠ではありません。特に書き込み、公開、送信、支払いのような、同じ処理を安全に繰り返せない操作は、応答が失われても盲目的に再試行しません。基準状態と実行後の状態を照合し、人が新しい試行を許可するか決めます。
 
-## completion status と recovery status を分ける
+## 完了状態と復旧状態を分ける
 
-recovery で control を取り戻しても、completion claim が真になるとは限りません。二つの column を
-別に残します。
+復旧して操作を取り戻しても、完了の主張が真になるとは限りません。二つの列を分けて残します。
 
-| recovery state | completion state | 正確な handoff の例 |
+| 復旧状態 | 完了状態 | 正確な引き継ぎの例 |
 | --- | --- | --- |
-| checkpoint を保存して pause | `unverified` | 「再開可能な checkpoint はある。結果は未確認」 |
-| target を read back して partial diff を確認 | `partial` | 「一部変更を確認。acceptance check は未実行」 |
-| missing input を特定 | `blocked` | 「原因候補ではなく、必要 input の不在を観測」 |
-| exact check が scope 内で pass | `verified` | 「この local rule は pass。scope 外は not proven」 |
+| チェックポイントを保存して一時停止 | `unverified` | 「再開できるチェックポイントはある。結果は未確認」 |
+| 対象を読み戻し、一部の差分を確認 | `partial` | 「一部の変更を確認。受け入れ確認は未実行」 |
+| 不足している入力を特定 | `blocked` | 「原因の推測ではなく、必要な入力がないことを観測」 |
+| 範囲内の正確なチェックに通った | `verified` | 「このローカル規則は通った。範囲外は未確認」 |
 
-これは product の status label を定義するものではありません。自分の delivery claim が、実際に
-保存した evidence より強くならないための vocabulary です。
+これは製品の状態ラベルを定義するものではありません。自分の引き渡しの主張が、実際に保存した証拠より強くならないようにするための用語です。
 
 ## 移行タスク
 
-固定 source を使う research memo または static page review に同じ method を移します。language practice では、assisted reply と後の未見・無支援 recall を分けます。事実 claim、
-execution claim、reader-effect claim を一つずつ書き、それぞれに別の evidence を要求します。意図的に
-一つの citation、diff、または output を外し、claim を downgrade してから一つの safe next check を
-選びます。
+固定した出典を使う調査メモや静的ページのレビューにも、同じ方法を移してみます。言語練習では、AIの助けを受けた返答と、後で見慣れない内容を助けなしに思い出せるかを分けます。事実の主張、実行の主張、読者への効果の主張を一つずつ書き、それぞれに別の証拠を求めます。引用、差分、出力のどれか一つを意図的に外し、主張を狭めてから安全な次の確認を一つ選びます。
 
-- [ ] build、diff、screenshot、source URL、reader feedback のどれも、別の種類の claim を自動で証明しないと説明できる。
-- [ ] first unsupported layer を名付け、scope を広げずに次の check を選べる。
-- [ ] no-event command の timeline を保存し、time だけから success と言わない。
-- [ ] recovery state と completion state を別々に delivery する。
-- [ ] `verified` は exact acceptance check の記録がある row にだけ使う。
+- [ ] ビルド、差分、スクリーンショット、出典 URL、読者の反応のどれも、別種類の主張を自動的には証明しないと説明できる。
+- [ ] 最初に根拠が切れた層を名指しし、範囲を広げずに次の確認を選べる。
+- [ ] 何も起きなかったコマンドの時系列を保存し、時間だけを根拠に成功と言わない。
+- [ ] 復旧状態と完了状態を別々に引き継ぐ。
+- [ ] `verified` は、正確な受け入れ確認の記録がある行にだけ使う。
 
 ## 受け入れチェックリスト
 
-- [ ] 各 completion claim に scope、evidence、または `unverified` がある。
-- [ ] diff、test output、runtime observation、render review、user observation を分けられる。
-- [ ] 最初の根拠なしの段階を見つけ、安全な next check を一つだけ選んだ。
-- [ ] handoff に change、evidence、unknown、未実行の side effect を書いた。
+- [ ] 完了の各主張に、範囲と証拠、または `unverified` がある。
+- [ ] 差分、テスト出力、実行時の観察、表示確認、利用者の観察を分けられる。
+- [ ] 最初に根拠がない段階を見つけ、安全な次の確認を一つだけ選んだ。
+- [ ] 引き継ぎに、変更、証拠、不明点、未実行の副作用を書いた。
 
 ## 出典と更新境界
 
-この章の method は project-authored の teaching framework です。product-specific behavior、command、
-approval、UI status は volatile であり、current official documentation と actual environment で確認します。
-public field report は symptom の teaching input であり、local reproduction、root cause、universal fix の
-証拠ではありません。参照先は英語 source chapter と [evidence library](../evidence-library-JA.md#source-notes)
-に記録されています。章は `candidate`、実験は `not_run` のままです。
+この章の方法は、プロジェクトが作成した教材上の枠組みです。製品固有の動作、コマンド、承認、画面の状態は変わるため、現在の公式ドキュメントと実際の環境で確認します。公開された利用者報告は、症状を学ぶための材料であり、ローカルでの再現、根本原因、万能な修正方法の証拠ではありません。参照先は英語の原文と [evidence library](../evidence-library-JA.md#source-notes) に記録しています。章は `candidate`、実験は `not_run` のままです。
 
 ## 意図的な失敗と振り返り
 
-読者に尋ねていないのに「読者は理解した」と書いた handoff を一度作ります。その claim が
-evidence を越える箇所を印し、正直な状態に書き換えます。次に、状態を変える最小の
-evidence と、それでも scope 外に残ることを説明します。diff と一緒に保存してください。
-実行記録と review がない限り、この章は `candidate`、この練習は `not_run` のままです。
+読者に尋ねていないのに「読者は理解した」と書いた引き継ぎを一度作ります。その主張が証拠を越えている箇所に印を付け、正直な状態へ書き換えます。次に、状態を変える最小の証拠と、それでも範囲外に残ることを説明します。差分と一緒に保存してください。実行記録とレビューがない限り、この章は `candidate`、この練習は `not_run` のままです。
 
 <!-- chapter-navigation:start -->
 <hr>
