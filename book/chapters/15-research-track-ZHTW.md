@@ -271,8 +271,8 @@ C-07 | 主張：____ | 原始/最終 URL：____
 <nav class="chapter-navigation" aria-label="章節導覽">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-ZHTW.md" aria-label="上一章: 第 14 章 · Discover, install, and audit external Skills">← 上一章<br><strong>第 14 章 · Discover, install, and audit external Skills</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="16-engineering-track-ZHTW.md" aria-label="下一章: 第 16 章 · Engineering track: from idea to reliable software">下一章 →<br><strong>第 16 章 · Engineering track: from idea to reliable software</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-ZHTW.md" aria-label="上一章：第 14 章 · 發現、安裝與審計外部 Skill">← 上一章<br><strong>第 14 章 · 發現、安裝與審計外部 Skill</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="16-engineering-track-ZHTW.md" aria-label="下一章：第 16 章 · 工程路線——從想法到可靠軟體">下一章 →<br><strong>第 16 章 · 工程路線——從想法到可靠軟體</strong></a></td>
     </tr>
   </table>
 </nav>
