@@ -324,8 +324,8 @@ list_windows() 呼叫會出現 spawn EPERM；瀏覽器彈窗與 DOM 可讀，但
 <nav class="chapter-navigation" aria-label="章節導覽">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-ZHTW.md" aria-label="上一章: 第 8 章 · The complete lifecycle from definition to delivery">← 上一章<br><strong>第 8 章 · The complete lifecycle from definition to delivery</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-ZHTW.md" aria-label="下一章: 第 10 章 · Planning and vertical slicing">下一章 →<br><strong>第 10 章 · Planning and vertical slicing</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-ZHTW.md" aria-label="上一章：第 8 章 · 從定義到交付的完整生命週期">← 上一章<br><strong>第 8 章 · 從定義到交付的完整生命週期</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-ZHTW.md" aria-label="下一章：第 10 章 · 規劃與豎向切片">下一章 →<br><strong>第 10 章 · 規劃與豎向切片</strong></a></td>
     </tr>
   </table>
 </nav>
