@@ -2,234 +2,207 @@
 
 # 第 10 章：計画と垂直スライス
 
-**状態：** `candidate`。plan と example は teaching material です。Agent が実行したことや、どの repository でも slice が働くことを証明しません。
+**状態：** `candidate`。計画（plan）と例は教材です。Agent が実行したことや、どのリポジトリでもこの分割方法が機能することを証明するものではありません。
 
 ## この章が解決する問題
 
-detail に見える plan でも、最後まで誰も結果を確認できないことがあります。すべての data、API、UI を順に終える横割りは、誤った前提を遅く発見します。vertical slice は小さくても input から evidence まで通る結果を作ります。
+詳しく見える計画でも、最後まで誰も結果を確認できないことがあります。データ、API、UIを順番にすべて終わらせる横割りの計画では、前提の誤りに気づくのが遅れます。垂直スライス（vertical slice）は、小さくても入力から証拠までつながる結果を作ります。
 
 ```text
 one input → smallest change → observable action → focused check → evidence
 ```
 
-これは一度に全部を変える口実ではありません。review と rollback ができる scope で、最も高価な risk を早く見つける方法です。
+これは一度に全部を変える口実ではありません。レビューとロールバックができる範囲で、最も高くつくリスクを早く見つける方法です。
 
 ## 学習目標
 
-大きな project を小さく観察可能な slice に翻訳し、edit 前に dependency と stop point を記録し、失敗した試行を次の人が scope や permission を推測せずに続けられる形で handoff できます。この練習は一般的な speed、model quality、長期の学習を測りません。
+大きなプロジェクトを、小さく観察できるスライスへ分けます。編集前に依存関係と停止点を記録し、失敗した試行も、次の人が範囲や権限を推測せずに続けられる形で引き継ぎます。この練習は、一般的な速さ、モデルの品質、長期的な学習を測るものではありません。
 
-## 現実の問題：詳しい plan でも確認可能な結果が出ない
+## 現実の問題：詳しい計画でも確認できる結果が出ない
 
-plan が多くの file、phase、tool を列挙しても、誰かが確認できる最初の state を示さないことがあります。risk は長い仮定の連鎖です。存在しない file、不明な permission、曖昧な acceptance が、確認不能な作業を積んだ後に現れます。vertical slice は次の見える step を止める dependency を先に確かめます。
+計画に多くのファイル、段階、ツールを並べても、誰かが確認できる最初の状態が示されていないことがあります。リスクは、長く連なった仮定の中に隠れます。存在しないファイル、不明な権限、曖昧な受け入れ条件が、確認できない作業を積み重ねた後で現れます。垂直スライスでは、次の見える一歩を止める依存関係を先に確かめます。
 
-## edit 前に slice を設計する
+## 編集前にスライスを設計する
 
-| field | 答える問い |
+| 項目 | 答える問い |
 |---|---|
 | outcome | 最後に誰が何を観測できるか |
-| input | どの file、data、decision が固定されるか |
-| boundary | 許可される file、permission、side effect は何か |
-| smallest change | outcome を作る最小の change は何か |
-| check | 何の command、inspection、read-back が拒否できるか |
-| evidence | どの diff、output、screenshot、review を残すか |
-| not proven | 何が scope 外に残るか |
-| recovery | 最後の受理 state にどう戻るか |
+| input | どのファイル、データ、判断を固定するか |
+| boundary | どのファイル、権限、副作用を許可するか |
+| smallest change | 結果を作る最小の変更は何か |
+| check | どのコマンド、検査、読み戻しで不合格にできるか |
+| evidence | どの差分、出力、スクリーンショット、レビューを残すか |
+| not proven | 何が範囲外に残るか |
+| recovery | 最後に受け入れた状態へどう戻すか |
 
-良い slice は decision に答えます。「すべての navigation を migrate」は答えません。「一人が日本語の目次から local chapter を開き、practice を見つけ、記録済み経路で戻る」は答えられます。
+良いスライスは、判断できる問いに答えます。「すべてのナビゲーションを移行する」では答えになりません。「一人が日本語の目次からローカルの章を開き、練習を見つけ、記録した経路で戻れるか」なら確認できます。
 
-## dependency から計画する
+## 依存関係から計画する
 
-1. tool より先に outcome と acceptance を書く。
-2. input、dependency、permission、unknown fact を列挙する。
-3. outcome を止め得る unknown を最初に置く。
-4. failure でも evidence を残す slice を選ぶ。
-5. check の順序と stop condition を固定する。
-6. 各 slice の後に diff、scope、evidence、次の decision を review する。
+1. ツールより先に、結果と受け入れ条件を書く。
+2. 入力、依存関係、権限、まだ分からない事実を列挙する。
+3. 結果を止める可能性がある不明点を最初に置く。
+4. 失敗しても証拠が残るスライスを選ぶ。
+5. 確認の順序と停止条件を固定する。
+6. 各スライスの後に、差分、範囲、証拠、次の判断をレビューする。
 
-task list を promise にしません。task を実行しても outcome が出ないことがあります。plan は assumption を見えるようにし、安全な言葉に隠しません。
+タスクリストを約束だと思わないでください。タスクを実行しても、結果が出るとは限りません。計画では前提を見えるようにし、安心させる言葉の奥へ隠さないことが大切です。
 
 ## 実験と境界
 
 ### 準備
 
-remote、secret、external account のない local disposable copy を用意します。短い原文、既知の change、固定した acceptance question を選び、baseline revision を保存します。開始前に stop rule を決め、install、publish、送信をしません。
+リモート接続、秘密情報、外部アカウントを使わないローカルの使い捨てコピーを用意します。短い原文、既知の変更、固定した受け入れ確認の問いを選び、基準リビジョンを保存します。始める前に停止規則を決め、インストール、公開、送信はしません。
 
 ### タスク
 
-disposable copy で同じ小さな change に対する horizontal plan と vertical plan を比べます。initial plan、baseline revision、command、diff、check、decision が変わった点を保存します。missing dependency または ambiguous acceptance を入れます。vertical plan は、確認不能な change を積む前に block を露出できれば通過です。
+使い捨てコピーで、同じ小さな変更に対する横割りの計画と垂直スライスの計画を比べます。最初の計画、基準リビジョン、コマンド、差分、確認、判断がどう変わったかを保存します。依存関係の不足、または曖昧な受け入れ条件を一つ入れます。確認できない変更を積み上げる前に、垂直スライスで障害を表に出せれば合格です。
 
-一 task から general speed や quality を測りません。観測していない time、cost、result は `unavailable`、`unknown`、`not_run` と記します。
+一つのタスクから、一般的な速さや品質を測ろうとはしません。観測していない時間、コスト、結果は `unavailable`、`unknown`、`not_run` と記録します。
 
 ### 証拠
 
-二つの plan、固定 input、選んだ slice、dependency と permission の仮定、diff、check output、stop point、handoff card を保存します。run していない試行は `not_run` のままであり、もっともらしい plan は result の代わりになりません。
+二つの計画、固定した入力、選んだスライス、依存関係と権限に関する前提、差分、確認結果、停止点、引き継ぎカードを保存します。実行していない試行は `not_run` のままです。もっともらしい計画は、結果の代わりにはなりません。
 
-- [ ] outcome、input、scope、acceptance が観測可能である。
-- [ ] slice に check と recovery source がある。
-- [ ] failure attempt も review できる evidence が残る。
-- [ ] explicit authority がない external side effect は scope 外である。
-- [ ] handoff が changed、verified、blocked、not proven を分ける。
+- [ ] 結果、入力、範囲、受け入れ条件を観測できる。
+- [ ] スライスに確認方法と復旧元がある。
+- [ ] 失敗した試行もレビューできる証拠が残る。
+- [ ] 明示的な権限がない外部への副作用は、範囲外である。
+- [ ] 引き継ぎで、変更済み、確認済み、ブロック、未確認を分けている。
 
-## 三つの plan のワークシート：最初の evidence で選ぶ
+## 三つの計画を比べる：最初の証拠で選ぶ
 
-同じ依頼に対して、editor を開く前に三つの案を書きます。三つすべてを実行する必要は
-ありません。どの案が最初の役立つ result を隠すかを見るための比較です。
+同じ依頼に対して、エディターを開く前に三つの案を書きます。三つすべてを実行する必要はありません。どの案が最初の役立つ結果を隠してしまうかを比べるためです。
 
-| 形 | よくある最初の step | 最初の役立つ evidence | 続けない signal |
+| 形 | よくある最初の手順 | 最初の役立つ証拠 | 続けない合図 |
 |---|---|---|---|
-| horizontal | 「すべての data、次にすべての UI を準備する」 | 多くの layer の後になりがち | 今日 review できる人、input、check がない |
-| file order | 「この file をこの順で edit する」 | local で review できる diff | file の順序が、誰に何が見えるかを説明しない |
-| vertical | 「固定 input から一つの result を見せ、check する」 | 小さな path、check、record | 最初の path に publish、install、複数 system の変更が必要 |
+| 横割り | 「すべてのデータ、次にすべてのUIを準備する」 | 多くの層を終えた後になりがち | 今日レビューできる人、入力、確認がない |
+| ファイル順 | 「このファイルをこの順で編集する」 | ローカルでレビューできる差分 | ファイルの順序が、誰に何が見えるかを説明しない |
+| 垂直 | 「固定した入力から一つの結果を見せ、確認する」 | 小さな経路、確認、記録 | 最初の経路に公開、インストール、複数システムの変更が必要 |
 
-次の step に進む価値があるかを早く知りたいときは vertical plan を選びます。dependency、
-permission、file があるかさえ不明なら、read-only の probe を選びます。probe は
-「続けられるか」に答えるもので、完成した feature ではありません。
+次の手順に進む価値があるかを早く知りたいときは、垂直の計画を選びます。依存関係、権限、ファイルの存在さえ不明なら、読み取り専用の探索（probe）を選びます。探索が答えるのは「続けられるか」であり、完成した機能ではありません。
 
-## stop と handoff のカード
+## 停止と引き継ぎのカード
 
-interrupt があっても plan は消えません。しかし、continue の permission になるわけでも
-ありません。session を閉じる前、または助けを求める前に、会話を知らない人にも読める
-カードを残します。
+中断されても計画は消えません。しかし、それで続行の権限が得られるわけでもありません。セッションを閉じる前、または助けを求める前に、会話を知らない人にも読めるカードを残します。
 
 ```text
-slice: 一つの observable outcome の名前
-baseline: 比較した branch、revision、または copy
-done with evidence: 実在する change と proof
-blocker or unknown: 最初に欠けた dependency または check
+slice: 一つの観測可能な結果の名前
+baseline: 比較したブランチ、リビジョン、またはコピー
+done with evidence: 実際に行った変更と証拠
+blocker or unknown: 最初に欠けた依存関係または確認
 target state: no change / partial / unknown
-not yet: permission、install、publish、または除外した file
-one next action: read-only probe または idempotent retry
+not yet: 権限、インストール、公開、または除外したファイル
+one next action: 読み取り専用の探索、または同じ結果を壊さずに再試行できる操作
 ```
 
-一つの next action を名前で言えなければ、slice はまだ大きすぎます。「continue」と
-頼む前に question を分けてください。
+次に行う一つの操作を名前で言えないなら、スライスはまだ大きすぎます。「続けて」と頼む前に、問いを分けてください。
 
-## 最初の完結した slice を作る
+## 最初に完結するスライスを一つ作る
 
-「course 全体を改善する」から始めません。初めての人が読む、120 語以内の local text を一つ
-選びます。この slice の outcome は控えめです。**何を変えたか** と **どう確認するか** という
-二つの見出しを見えるようにし、publish、install、他の file の edit はしません。
+「コース全体を改善する」ことから始めません。初めての人が読む、120語以内のローカル文章を一つ選びます。このスライスの結果は控えめです。**何を変えたか** と **どう確認するか** の二つの見出しを見えるようにし、公開、インストール、他のファイルの編集はしません。
 
-最初にモデルへ「まだ edit しない」と伝え、次のカードを渡します。
+最初にモデルへ「まだ編集しない」と伝え、次のカードを渡します。
 
 ```text
 outcome: 読者が変更内容と確認方法を読める
-fixed input: 120 語以内の local file 一つ
-allowed: text の提案。確認後はその file だけを edit
-forbidden: publish、install、link 変更、他 file の変更
+fixed input: 120語以内のローカルファイル一つ
+allowed: 文章の提案。確認後はそのファイルだけを編集
+forbidden: 公開、インストール、リンク変更、他ファイルの変更
 acceptance: 二つの見出しがあり、人が見つけられる
-stop if: file がない、別 file が必要、依頼が曖昧になる
+stop if: ファイルがない、別ファイルが必要、依頼が曖昧になる
 ```
 
-その後、define → 三段階の plan を頼む → edit 前に scope を確認 → 小さく edit → 前後を比較
-→ 二つの見出しを読む → 正直に handoff、の順に進めます。モデルが作業を広げようとしたら
-カードに戻ります。新しい decision なしに scope を広げることは「より役立つ」ことではありません。
+その後、定義 → 三段階の計画を依頼 → 編集前に範囲を確認 → 小さく編集 → 前後を比較 → 二つの見出しを読む → 正直に引き継ぐ、の順に進めます。モデルが作業を広げようとしたら、カードに戻ります。新しい判断なしに範囲を広げても、「より役に立つ」ことにはなりません。
 
-## metric を作らずに、二つの頼み方を比べる
+## 指標を作らずに、二つの頼み方を比べる
 
-direct request（「分かりやすくして」）と、このカードを使う request を一度ずつ試せます。
-text、model、tool、使える時間、読者の check を固定します。両方の prompt、version、読者の
-質問、error を保存します。変数が変われば `not_comparable` と記録します。速く見える response や
-きれいな文章一つでは、一般的な productivity や model superiority は証明しません。この練習は、
-edit 前に何が欠けていたか、結果を review できるかを観測するためのものです。
+直接の依頼（「分かりやすくして」）と、このカードを使う依頼を一度ずつ試せます。文章、モデル、ツール、使える時間、読者への確認方法を固定します。両方のプロンプト、バージョン、読者の質問、エラーを保存します。変数が変わったら `not_comparable` と記録します。速く見える返答や、きれいな文章一つでは、一般的な生産性やモデルの優劣は証明できません。この練習で観測するのは、編集前に何が足りなかったか、結果をレビューできるかです。
 
 ## 安全な失敗と境界
 
-**どう確認するか** をわざと消すか、存在しない file を指定します。最初の failure は、content が
-足りないのか input が誤っているのかを示すはずです。failure を隠すために dependency や
-permission を増やしません。観測したこと、まだ証明されないこと、安全な次の一 action を書きます。
-この章は `candidate` のままです。この練習だけで effectiveness、speed、長期 learning は測れません。
+**どう確認するか** をわざと消すか、存在しないファイルを指定します。最初の失敗は、内容が足りないのか、入力が誤っているのかを示すはずです。失敗を隠すために依存関係や権限を増やしません。観測したこと、まだ証明されないこと、安全な次の操作を一つ書きます。この章は `candidate` のままです。この練習だけで有効性、速さ、長期的な学習を測ることはできません。
 
 ## 振り返り
 
-horizontal plan なら最後に見つけていた dependency は何か。vertical slice を確認可能にした evidence は何か。check 後も scope 外に残った claim は何か。
+横割りの計画なら最後まで見つからなかった依存関係は何か。垂直スライスを確認可能にした証拠は何か。確認後も範囲外に残った主張は何か。
 
-## dependency を見える順に並べる
+## 依存関係を見える順に並べる
 
-plan の順序は file 名や team の担当順ではなく、最初に高い risk を減らせる順に決めます。各
-dependency に「これがなければ何ができないか」と「read-only で確かめられるか」を書きます。
+計画の順序は、ファイル名やチームの担当順ではなく、最初に大きなリスクを減らせる順に決めます。各依存関係について、「これがなければ何ができないか」「読み取り専用で確かめられるか」を書きます。
 
-| dependency | 先に確認する理由 | 最小の check | 未確認ならどうするか |
+| 依存関係 | 先に確認する理由 | 最小の確認 | 未確認ならどうするか |
 | --- | --- | --- | --- |
-| target file の identity | 別の copy を edit すると outcome が無意味になる | absolute path と baseline を読む | stop して correct root を ask |
-| acceptance rule | “良くする”だけでは review できない | reader-visible rule を一文にする | outcome を小さくし直す |
-| required input | input がなければ proposal を比較できない | named file/source の revision を読む | `blocked_input` にする |
-| authority | write や external action は task の意味を変える | allowed path/action を task card と照合 | approval を ask。widen しない |
-| verification source | check がなければ delivery claim は作れない | command、manual rule、read-back を特定 | `unverified` のまま handoff |
+| 対象ファイルの同一性 | 別のコピーを編集すると結果が無意味になる | 絶対パスと基準状態を読む | 停止して正しいルートを尋ねる |
+| 受け入れ規則 | 「良くする」だけではレビューできない | 読者が見える規則を一文にする | 結果をさらに小さくする |
+| 必要な入力 | 入力がなければ提案を比べられない | 名前を指定したファイル／出典のリビジョンを読む | `blocked_input` にする |
+| 権限 | 書き込みや外部操作はタスクの意味を変える | 許可されたパス／操作をタスクカードと照合 | 承認を尋ねる。範囲を広げない |
+| 検証の出典 | 確認方法がなければ引き渡しの主張を作れない | コマンド、手動規則、読み戻しを特定 | `unverified` のまま引き継ぐ |
 
-dependency graph は完璧な図でなくて構いません。重要なのは、unknown を後ろに隠さず、最初の
-vertical slice がその unknown を安全に露出することです。
+依存関係の図は、完璧でなくて構いません。大切なのは、不明点を後ろへ隠さず、最初の垂直スライスで安全に表へ出すことです。
 
-## worked slice：一本の reader path を直す
+## 実例：読者の経路を一つ直す
 
-例として、local chapter の最初の 120 語が「何をするか」と「どう確認するか」を示していないと
-します。目標を「course 全体を改善」ではなく、次のように縮めます。
+例として、ローカルの章の冒頭120語に「何をするか」と「どう確認するか」が書かれていないとします。目標を「コース全体を改善する」から、次のように小さくします。
 
 ```text
-Outcome: 初めて読む人が二つの見出しを見つけ、最初の action を一つ言える。
-Fixed input: disposable copy の named chapter file 一つ。
-Allowed change: その file の local text のみ。edit 前は proposal だけ。
-Acceptance: “What changed” と “How to check” があり、二つとも 120 語以内の section にある。
-Evidence: baseline、exact diff、manual read-back、not-proven list。
-Stop: 別 file、link、publish、install、または reader data が必要になる。
+Outcome: 初めて読む人が二つの見出しを見つけ、最初の操作を一つ言える。
+Fixed input: 使い捨てコピーにある、名前を指定した章ファイル一つ。
+Allowed change: そのファイルのローカル文章だけ。編集前は提案にとどめる。
+Acceptance: 「What changed」と「How to check」があり、どちらも120語以内の節にある。
+Evidence: 基準状態、正確な差分、手動の読み戻し、未確認事項の一覧。
+Stop: 別ファイル、リンク、公開、インストール、または読者データが必要になる。
 ```
 
-この slice の value は、course が完成することではありません。task contract が十分か、target が
-正しいか、check が reader-visible rule を直接見るかを低い cost で発見することです。acceptance を
-満たしても、理解、conversion、retention、general quality は `not proven` のままです。
+このスライスの価値は、コースを完成させることではありません。タスク契約が十分か、対象が正しいか、確認方法が読者に見える規則を直接調べているかを、低いコストで見つけることです。受け入れ条件を満たしても、理解、成約、定着、全般的な品質は `not proven` のままです。
 
-## plan review：開始前と変更後に問うこと
+## 計画レビュー：開始前と変更後に問うこと
 
-editor を開く前と一つの slice が終わった後に、同じ五つを review します。
+エディターを開く前と、一つのスライスが終わった後に、同じ五つをレビューします。
 
-1. この outcome を一文で言えるか。誰が何を観測するのか。
-2. 最初の check は、作った artifact ではなく acceptance を見ているか。
-3. どの assumption が false なら、この plan は直ちに止まるか。
-4. failure しても、次の人が baseline と attempted scope を review できるか。
-5. 次の slice は新しい evidence を要求するか、それとも同じ promise を大きくしているだけか。
+1. この結果を一文で言えるか。誰が何を観測するのか。
+2. 最初の確認は、作った成果物ではなく受け入れ条件を見ているか。
+3. どの前提が誤っていたら、この計画はすぐに止まるか。
+4. 失敗しても、次の人が基準状態と試した範囲をレビューできるか。
+5. 次のスライスは新しい証拠を求めるのか、それとも同じ約束を大きくしているだけか。
 
-yes/no だけで答えられないなら、その plan はまだ実行手順ではなく希望です。read-only probe、
-question、または smaller outcome に戻します。
+はい／いいえだけで答えられないなら、その計画はまだ実行手順ではなく希望です。読み取り専用の探索、質問、またはより小さい結果へ戻します。
 
-## failure を evidence にする
+## 失敗を証拠に変える
 
-| failure | safe result |
+| 失敗 | 安全な結果 |
 | --- | --- |
-| target file がない | target を作らず `blocked_input` と記録 |
-| acceptance が「もっと良く」のまま | reader-visible rule を ask し、edit しない |
-| first slice が三つの system を変える | one local artifact に戻す |
-| check が install/network を要求する | new authority を ask するか `unverified` で stop |
-| diff が allowed file を越える | extra change を review し、rollback/decision なしに続けない |
+| 対象ファイルがない | 対象を作らず `blocked_input` と記録 |
+| 受け入れ条件が「もっと良く」のまま | 読者に見える規則を尋ね、編集しない |
+| 最初のスライスが三つのシステムを変える | ローカルの成果物一つに戻す |
+| 確認にインストール／ネットワークが必要 | 新しい権限を尋ねるか、`unverified` で停止 |
+| 差分が許可したファイルを越える | 追加変更をレビューし、ロールバックや判断なしに続けない |
 
-failure は plan の失敗ではなく、最初の expensive assumption が見えた record です。最初の
-unsupported claim、actual diff、last accepted state、one safe next action を handoff に残します。
+失敗は計画の失敗ではなく、最初に高くつく前提が見えた記録です。最初に根拠がなくなった主張、実際の差分、最後に受け入れた状態、安全な次の操作を一つ、引き継ぎに残します。
 
 ## 移行タスク
 
-同じ slice を research、language practice、content review のために plan します。result、固定 input、allowed と forbidden action、check、recovery は保ちます。language では、acceptance に流暢な assisted reply だけでなく、後の未見・無支援 recall を入れます。新しい練習が証明しないことも書きます。
+同じスライスを、調査、言語練習、内容レビューにも計画します。結果、固定した入力、許可する操作と禁止する操作、確認、復旧は保ちます。言語練習では、受け入れ条件に、流暢なAI支援の返答だけでなく、後で見慣れない内容を助けなしに思い出すことも入れます。その練習が証明しないことも書きます。
 
 ## 受け入れチェックリスト
 
-- [ ] result、input、scope、acceptance が観察可能である。
-- [ ] slice に check、stop rule、recovery source がある。
-- [ ] failure attempt も review できる evidence を残す。
-- [ ] explicit authority がない external side effect は scope 外である。
-- [ ] handoff が changed、verified、blocked、not proven を分ける。
+- [ ] 結果、入力、範囲、受け入れ条件を観測できる。
+- [ ] スライスに確認方法、停止規則、復旧元がある。
+- [ ] 失敗した試行もレビューできる証拠を残す。
+- [ ] 明示的な権限がない外部への副作用は、範囲外である。
+- [ ] 引き継ぎで、変更済み、確認済み、ブロック、未確認を分ける。
 
 ## 出典と保守の境界
 
-vertical slice、dependency の順序、stop point はこの project の安定した teaching method です。product feature、permission、model availability、community symptom は変わります。現在の claim は[公式ファクトカード](../evidence-library-JA.md#source-notes)と[フィールド問題索引](../evidence-library-JA.md#source-notes)で確認してください。これらは local run や独立した learning observation の代わりにはなりません。
+垂直スライス、依存関係の順序、停止点は、このプロジェクトの安定した教え方です。製品機能、権限、モデルの利用可能性、コミュニティで報告された症状は変わります。現在の主張は、[公式ファクトカード](../evidence-library-JA.md#source-notes)と[フィールド問題索引](../evidence-library-JA.md#source-notes)で確認してください。これらは、ローカルでの実行や独立した学習者の観察に代わるものではありません。
 
-同じ template を research memo、marketing copy、design review に使います。ただし acceptance を
-domain に合わせて変えます。research なら source scope と citation、copy なら supplied facts と
-audience rule、design review なら viewport と observation が必要です。platform-specific commands、
-model behavior、speed、cost は current source と actual run がない限り assertion にしません。
+同じテンプレートを、調査メモ、マーケティング文、デザインレビューにも使えます。ただし、受け入れ条件は分野に合わせて変えます。調査なら出典の範囲と引用、文案なら提供された事実と読者条件、デザインレビューならビューポートと観察が必要です。プラットフォーム固有のコマンド、モデルの動作、速さ、コストは、現在の出典と実際の実行がない限り主張しません。
 
-- [ ] outcome は small で observer が分かる。
-- [ ] first high-risk dependency に read-only check または stop rule がある。
-- [ ] one slice が one reviewable artifact と evidence を残す。
-- [ ] failure と unknown を delivery から消していない。
-- [ ] next slice は scope expansion ではなく新しい decision である。
+- [ ] 結果が小さく、観察する人に分かる。
+- [ ] 最初に大きなリスクを持つ依存関係に、読み取り専用の確認または停止規則がある。
+- [ ] 一つのスライスが、一つのレビュー可能な成果物と証拠を残す。
+- [ ] 失敗と不明点を引き渡しから消していない。
+- [ ] 次のスライスが、範囲の拡大ではなく新しい判断になっている。
 
 <!-- chapter-navigation:start -->
 <hr>
