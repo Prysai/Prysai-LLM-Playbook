@@ -2,24 +2,24 @@
 
 # Kapitel 5: Die richtige Codex-Arbeitsfläche wählen
 
-**Status:** `candidate`. Dieses Kapitel bietet eine quellenbasierte Entscheidungsmethode, aber keinen unabhängigen Lerner-Vortest. Es belegt weder Kontofähigkeiten noch einen Cloud-Lauf oder Modellvergleich.
+**Status:** `candidate`. Dieses Kapitel bietet eine quellenbasierte Entscheidungsmethode, aber keinen unabhängigen Vortest mit Lernenden. Es belegt weder die Funktionen deines Kontos noch eine Cloud-Ausführung oder einen Modellvergleich.
 
 ## Das Problem dieses Kapitels
 
-Dasselbe Ziel kann im Desktop, in der CLI, IDE oder im Web beginnen und lokal, in einem Git-Worktree oder in Cloud laufen. Das sind getrennte Entscheidungen:
+Dasselbe Ziel kann in einer Desktop-App, der CLI, einer IDE oder im Web beginnen und lokal, in einem Git-Worktree oder in der Cloud ausgeführt werden. Das sind getrennte Entscheidungen:
 
 ~~~
 Arbeitsfläche wählen → Einstieg wählen → Ziel und Kontogrenze prüfen
-→ Modell und Tools prüfen → kleinste Aktion → Belege vor Übergabe prüfen
+→ Modell und Tools prüfen → kleinste Aktion → Belege vor der Übergabe prüfen
 ~~~
 
-Eine *Arbeitsfläche* ist der Ort der Ausführung und Änderung. Ein *Einstieg* ist der Weg, die Arbeit zu starten und zu prüfen. CLI, IDE, Desktop und Web sind keine anderen Namen für Local, Worktree und Cloud.
+Eine *Arbeitsfläche* ist der Ort, an dem die Arbeit ausgeführt wird und Änderungen landen. Ein *Einstieg* ist die Art, wie die Arbeit gestartet und geprüft wird. CLI, IDE, Desktop und Web sind keine anderen Namen für Local, Worktree und Cloud.
 
 ## Lernziele
 
 - `Local`, `Worktree` und `Cloud` nach Kontext, Datengrenze, Nebenwirkung, Beleg und Wiederherstellung wählen;
-- Ressourcenzugriff, Modell- und Toolverfügbarkeit getrennt prüfen;
-- Cloud-`setup` und `agent`, Netzwerk und Geheimnis-Lebensdauer getrennt dokumentieren; und
+- den Zugriff auf Ressourcen sowie die Verfügbarkeit von Modell und Tools getrennt prüfen;
+- Cloud-`setup` und `agent` sowie Netzwerk- und Geheimnislebensdauer getrennt dokumentieren; und
 - sicher stoppen, wenn der nächste Beleg breitere Autorität verlangt.
 
 ## Praxisfälle: öffentliche Symptome, keine Laufzeitbeweise
@@ -28,29 +28,29 @@ Eine *Arbeitsfläche* ist der Ort der Ausführung und Änderung. Ein *Einstieg* 
 
 | Bericht | Beobachtung | Beweist nicht | Sicherer Check |
 |---|---|---|---|
-| OAuth klappt, Token-Austausch nicht | Browser-Autorisierung endet, Client scheitert | Dass CLI, Host oder Repository nutzbar sind | Autorisierung, Callback, Austausch und erste Lesung getrennt notieren |
-| Provider zeigt nur ein Tool | Konfiguration ist akzeptiert, Shell/Files/Browser fehlen | Dass fehlende Aktionen möglich sind | Tool-Inventar sichern; Registrierung und Aufruf getrennt testen |
+| OAuth gelingt, aber der Token-Austausch scheitert | Die Browser-Autorisierung wird abgeschlossen, aber der Client scheitert beim Austausch | Dass CLI, Host oder Repository nutzbar sind | Autorisierung, Callback, Austausch und erste Lesung getrennt notieren |
+| Ein Provider stellt nur ein Tool bereit | Die Konfiguration wird akzeptiert, aber Shell, Dateien oder Browser fehlen | Dass die fehlenden Aktionen möglich sind | Tool-Inventar sichern; Registrierung und Aufruf getrennt testen |
 | Worktree und Checkout weichen ab | UI, `cwd`, IDE-Root oder Git-Metadaten stimmen nicht überein | Dass der editierende Prozess isoliert ist | Absoluten Pfad, `.git`, Workspace-Root und `git status` vergleichen |
-| Setup geht, Agent erreicht Dienst nicht | Setup installiert, Agent hat kein Netz oder Geheimnis | Dass beide Phasen dieselben Rechte haben | Setup-/Agent-Logs, Netzwerkphase, Geheimnis-Lebensdauer und Diff getrennt sichern |
+| Setup gelingt, aber der Agent erreicht den Dienst nicht | Setup installiert etwas, doch der Agent hat keinen Netzwerk- oder Geheimniszugriff | Dass beide Phasen dieselben Rechte haben | Setup-/Agent-Logs, Netzwerkphase, Geheimnislebensdauer und Diff getrennt sichern |
 
-Siehe [Feldproblem-Index](../evidence-library-DE.md#source-notes), [Arbeitsflächenforschung](../evidence-library-DE.md#source-notes) und [Forenforschung](../evidence-library-DE.md#source-notes). Der Worktree-Fall [FC-WORKTREE-01](../evidence-library-DE.md#source-notes) lehrt: Nach einer Local-zu-Worktree-Übergabe Checkout, Shell-`cwd`, Git-Top-Level, Worktree-Liste, Branch/HEAD und schreibbare Wurzeln vergleichen. Bei Abweichung nicht schreiben.
+Siehe [Feldproblem-Index](../evidence-library-DE.md#source-notes), [Arbeitsflächenforschung](../evidence-library-DE.md#source-notes) und [Forenforschung](../evidence-library-DE.md#source-notes). Der Worktree-Fall [FC-WORKTREE-01](../evidence-library-DE.md#source-notes) zeigt: Nach einer Übergabe von Local an Worktree sind Checkout, Shell-`cwd`, Git-Top-Level, Worktree-Liste, Branch/HEAD und schreibbare Wurzeln zu vergleichen. Bei Abweichung nicht schreiben.
 
 ## 1. Arbeitsfläche und Einstieg
 
-| Fläche | Ort | Zweck | Kein Beweis für |
+| Arbeitsfläche | Ort | Zweck | Kein Beweis für |
 |---|---|---|---|
 | `Local` | Aktuelles Projektverzeichnis | Schnelle Prüfung, kleiner Edit | Sicheres, sauberes oder richtiges Ziel |
 | `Worktree` | Separater Git-Worktree | Änderung isolieren und Diff prüfen | Dass alle Prozesse dort arbeiten |
 | `Cloud` | Konfigurierte Remote-Umgebung | Längere oder parallele Arbeit | Konto, Repo, Tools, Netz, Geheimnisse oder finalen Diff |
 
-`Local` und `Worktree` sind lokale Ausführung; Worktree ist Git-Isolation, keine universelle Sicherheitsgrenze. Cloud ist Ausführungsgrenze, kein Bereitschaftsbeweis.
+`Local` und `Worktree` sind lokale Ausführungsumgebungen; Worktree ist eine Git-Isolation, aber keine universelle Sicherheitsgrenze. Cloud ist eine Ausführungsgrenze, jedoch kein Beleg dafür, dass alles bereit ist.
 
-| Einstieg | Stärke | Prüfbeleg |
+| Einstieg | Vorteil | Prüfbeleg |
 |---|---|---|
-| Desktop-App | Sichtbarer Task-Status | Umgebungslabel, Ereignisse, Summary, Diff |
+| Desktop-App | Sichtbarer Aufgabenstatus | Umgebungslabel, Ereignisse, Zusammenfassung, Diff |
 | CLI | Explizite Pfade und Befehle | `cwd`, Ausgabe, Exit-Code, Git-Status, Diff |
-| IDE-Erweiterung | Editor-Kontext und naher Diff | Workspace-Root, Kontext, Patch |
-| Web / Cloud | Remote-Setup und Handoff | Repo/Branch, Setup-/Agent-Beleg, Diff |
+| IDE-Erweiterung | Editor-Kontext und direkter Diff | Workspace-Root, Kontext, Patch |
+| Web / Cloud | Remote-Setup und Übergabe | Repo/Branch, Setup-/Agent-Beleg, Diff |
 
 ## 2. Fähigkeit ist eine Kette
 
@@ -59,14 +59,14 @@ offizieller Produktsupport → Konto autorisiert → Ziel lesbar → Modell verf
 → Tool registriert → Tool aufrufbar → Aktion endet → Ergebnis verifiziert
 ~~~
 
-Jeder Pfeil braucht einen eigenen Beleg. Browser-Login, Modell im Picker, schreibbares Verzeichnis, sichtbarer Toolname, Setup-Installation oder UI-Status `Completed` beweisen jeweils nur ihre enge Stufe – nicht Repositoryzugriff, Toolausführung, Deployment, Push oder Nutzerabnahme.
+Jeder Pfeil braucht einen eigenen Beleg. Browser-Login, Modell im Picker, schreibbares Verzeichnis, sichtbarer Toolname, Setup-Installation oder der UI-Status `Completed` belegen jeweils nur den eng begrenzten Schritt – nicht Repositoryzugriff, Toolausführung, Deployment, Push oder Nutzerabnahme.
 
 ## 3. Fünf Tore
 
-1. **Kontext:** Kann die Fläche exakte Regeln, Ziel-Dateien, Version und Abnahmeeingaben lesen?
+1. **Kontext:** Kann die Fläche die genauen Regeln, Zieldateien, die Version und die Abnahmeeingaben lesen?
 2. **Daten und Isolation:** Bleiben Geheimnisse, Kundendaten, privater Code und uncommittete Arbeit an der richtigen Grenze?
 3. **Aktion:** Ist nur Lesen, Edit, Branch, Push, API oder Produktion nötig? Wähle die kleinste passende Fläche.
-4. **Beleg:** Können andere Pfad-Echo, Ziel-Lesen, Tool-Inventar, Ausgabe, Diff, Test, Cloud-Log oder Freigabe prüfen?
+4. **Beleg:** Können andere den Pfad, die Ziellesung, das Tool-Inventar, die Ausgabe, den Diff, den Test, das Cloud-Log oder die Freigabe prüfen?
 5. **Wiederherstellung:** Bleibt bei Auth-, Netz-, Abhängigkeits- oder Teiländerungsfehlern ein Checkpoint?
 
 | Aufgabe | Kandidat | Beleg vor Aktion |
@@ -104,11 +104,11 @@ checked_at:
 reviewer:
 ~~~
 
-`not_observed` heißt: kein Lauf oder kein gesammelter Beleg. Fehlende Beobachtung wird nicht für ein Formular in `yes` oder `no` verwandelt.
+`not_observed` heißt: Es gab keinen Lauf oder es wurde kein Beleg gesammelt. Fehlende Beobachtungen werden nicht bloß zum Ausfüllen des Formulars in `yes` oder `no` verwandelt.
 
 ## 5. Cloud: Setup und Agent sind getrennt
 
-Setup darf Abhängigkeiten mit Netz installieren; Agent ist normalerweise offline, sofern die Umgebung nicht anders konfiguriert ist. Ein Geheimnis kann im Setup vorhanden und vor Agent entfernt sein. „Paket installiert“ belegt Setup, nicht Agent-Zugriff. Externe Aufrufe bleiben pausiert, bis Phase und Datenweg belegt sind.
+Setup darf Abhängigkeiten mit Netzwerkzugriff installieren; der Agent ist normalerweise offline, sofern die Umgebung nicht anders konfiguriert ist. Ein Geheimnis kann im Setup vorhanden und vor der Agent-Phase entfernt sein. „Paket installiert“ belegt Setup, nicht den Agent-Zugriff. Externe Aufrufe bleiben pausiert, bis Phase und Datenweg belegt sind.
 
 ## Experiment: beobachtbares Mini-Experiment
 
@@ -116,13 +116,13 @@ Setup darf Abhängigkeiten mit Netz installieren; Agent ist normalerweise offlin
 
 ### Vorbereitung
 
-Lege eine wegwerfbare Markdown-Datei, kurze Abnahmeliste und ein temporäres Git-Repository ohne Remote an. Nutze keine Geheimnisse, privaten Daten, Installation, Nachricht, Pushes oder Produktion.
+Lege eine wegwerfbare Markdown-Datei, eine kurze Abnahmeliste und ein temporäres Git-Repository ohne Remote an. Verwende keine Geheimnisse oder privaten Daten und führe keine Installation, Nachrichten, Pushes oder Produktionsaktionen aus.
 
 ### Aufgabe
 
 > Lies `brief.md`, ändere eine benannte Formulierung in `draft.md`, führe einen lesenden Formatcheck aus und berichte den Diff. Ändere nichts anderes.
 
-Fülle Local-, Worktree- und Cloud-Karte vorher aus. Notiere absoluten Pfad, Ziel-Lesen, Tool-Inventar, Modellsichtbarkeit und erlaubte Nebenwirkung. Wähle höchstens eine Karte; die anderen sind `rejected`, `blocked` oder `not_observed`. Sichere Diff, Check-Ausgabe, Run-ID und exakte Fläche/Einstieg. Bei geändertem Pfad-, Tool-, Ziel- oder Phasenbeleg halte an und bewahre den Checkpoint.
+Fülle die Local-, Worktree- und Cloud-Karte vor der Ausführung aus. Notiere absoluten Pfad, Ziellesung, Tool-Inventar, Modellsichtbarkeit und erlaubte Nebenwirkung. Wähle höchstens eine Karte; die anderen sind `rejected`, `blocked` oder `not_observed`. Sichere Diff, Prüfausgabe, Run-ID und die genaue Arbeitsfläche samt Einstieg. Wenn sich ein Pfad-, Tool-, Ziel- oder Phasenbeleg ändert, halte an und bewahre den Checkpoint.
 
 ### Belege
 
@@ -145,15 +145,15 @@ decision | diff_path | check_output | reviewer
 
 ## Reflexion
 
-Welches Tor änderte deine Wahl? Welcher vorgelagerte Erfolg wäre leicht zu überbehaupten? Begründe die Antwort mit deiner Entscheidungskarte, nicht mit einer Erinnerung an eine Oberfläche.
+Welches Tor hat deine Wahl verändert? Welchen vorgelagerten Erfolg könntest du leicht überbewerten? Begründe die Antwort mit deiner Entscheidungskarte, nicht mit deiner Erinnerung an eine Oberfläche.
 
 ## Transferaufgabe
 
-Übertrage die Methode auf eine Rechercheaufgabe: Nutze einen Browser nur für öffentliche Quellen, eine lokale Shell nur für geschwärzte Belege und eine isolierte Umgebung für sensible Dateien. Fülle neue Karten aus; übernimm die Flächenwahl aus diesem Kapitel nicht automatisch. Markiere, welche Quelle, welcher Pfad und welche Nebenwirkung die neue Wahl begründen.
+Übertrage die Methode auf eine Rechercheaufgabe: Nutze einen Browser nur für öffentliche Quellen, eine lokale Shell nur für redigierte Belege und eine isolierte Umgebung für sensible Dateien. Fülle neue Karten aus; übernimm die Flächenwahl aus diesem Kapitel nicht automatisch. Markiere, welche Quelle, welcher Pfad und welche Nebenwirkung die neue Wahl begründen.
 
 ## Abnahme-Checkliste
 
-- [ ] Ich kann `Local`, `Worktree` und `Cloud` von Desktop, CLI, IDE und Web als Einstieg unterscheiden.
+- [ ] Ich kann `Local`, `Worktree` und `Cloud` von Desktop, CLI, IDE und Web als Einstiegen unterscheiden.
 - [ ] Meine Karte trennt Kontofreigabe, Lesezugriff, Modellsichtbarkeit, Tool-Verfügbarkeit und Ergebnisprüfung.
 - [ ] Ich habe eine Option mit einem überprüfbaren Grund ausgewählt und die anderen als `rejected`, `blocked` oder `not_observed` dokumentiert.
 - [ ] Für Cloud habe ich Setup und Agent, Netzwerkphase und Geheimnislebensdauer getrennt erfasst oder ehrlich als nicht beobachtet markiert.
@@ -163,7 +163,7 @@ Welches Tor änderte deine Wahl? Welcher vorgelagerte Erfolg wäre leicht zu üb
 
 | Veränderliche Tatsache | Quelle | Zugriff | Grenze |
 |---|---|---|---|
-| Local, Worktree und Cloud sind Arbeitsflächen | https://learn.chatgpt.com/docs/environments/modes.md | 2026-08-09 | Belegt nicht dieses Konto oder diese Task |
+| Local, Worktree und Cloud sind Arbeitsflächen | https://learn.chatgpt.com/docs/environments/modes.md | 2026-08-09 | Belegt nicht dieses Konto oder diese Aufgabe |
 | Setup und Agent sind getrennte Cloud-Phasen | https://learn.chatgpt.com/docs/environments/cloud-environment.md | 2026-08-09 | Belegt keinen Cloud-Lauf hier |
 | Netz und Geheimnis-Lebensdauer haben getrennte Grenzen | https://learn.chatgpt.com/docs/cloud/internet-access.md | 2026-08-09 | Policy und Runtime-Beleg bleiben nötig |
 | Berechtigung und Approval sind getrennt | https://learn.chatgpt.com/docs/agent-approvals-security.md | 2026-08-09 | Belegt nicht die wirksame Sitzungskonfiguration |
