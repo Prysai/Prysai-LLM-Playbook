@@ -4,27 +4,27 @@
 
 ## Fang hier an: Die Namen brauchst du noch nicht
 
-Heute beginnen wir mit der Frage hinter den Produktnamen. Vielleicht hast du schon gehört, dass Codex und Claude Code zusammen genannt werden. Sie sind nützliche Beispiele für einen größeren Wandel: Ein Sprachmodell kann mit einer Aufgabe, einem Kontext und manchmal Werkzeugen arbeiten, statt nur eine Chat-Antwort zu liefern. Betrachte diese Eröffnung als kurzes geführtes Gespräch, nicht als Prüfung: Du musst dich nicht zuerst für eine Seite entscheiden oder eine Funktionsliste auswendig lernen. Bevor wir uns irgendwelche Bedienelemente ansehen, lerne die Frage, die alles Weitere leichter macht:
+Heute beginnen wir mit der Frage, die hinter den Produktnamen steckt. Vielleicht hast du schon gehört, dass Codex und Claude Code zusammen genannt werden. Sie sind nützliche Beispiele für einen größeren Wandel: Ein Sprachmodell kann mit einer Aufgabe, einem Kontext und manchmal Werkzeugen arbeiten, statt nur eine Chat-Antwort zu liefern. Betrachte diese Eröffnung als kurzes geführtes Gespräch, nicht als Prüfung: Du musst dich nicht zuerst für eine Seite entscheiden oder eine Funktionsliste auswendig lernen. Bevor wir uns irgendwelche Bedienelemente ansehen, merke dir die Frage, die alles Weitere leichter macht:
 
 > Wenn ein Sprachmodell-Werkzeug sagt, es sei fertig: Was kannst du tatsächlich prüfen, bevor du dem Ergebnis vertraust?
 
-In dieser ersten Lektion trennst du eine vorgeschlagene Handlung von einer erlaubten Handlung, eine Werkzeugmeldung von einem tatsächlich geänderten Ziel und eine plausible Antwort von Belegen. Codex ist der Flaggschiff-Praxistrack dieses Playbooks. Die Methode ist breiter; eine benannte Plattform muss sich ihren eigenen Adapter verdienen, bevor wir ihre Buttons, Berechtigungen oder Verhaltensweisen als Tatsachen lehren.
+In dieser ersten Lektion trennst du eine vorgeschlagene Handlung von einer erlaubten Handlung, eine Werkzeugmeldung von einem tatsächlich geänderten Ziel und eine plausible Antwort von Belegen. Codex ist die vertiefte Praxisroute dieses Playbooks. Die Methode geht darüber hinaus: Für jede benannte Plattform brauchen wir einen eigenen Adapter, bevor wir ihre Schaltflächen, Berechtigungen oder Verhaltensweisen als geprüfte Tatsachen darstellen.
 
-Deshalb ist die erste Übung bewusst bescheiden. Beginne mit einer sichtbaren Eingabe, einer risikoarmen Handlung und einer Prüfung, die eine andere Person wiederholen kann. Eine lange Funktionsliste kann warten, bis du einen fertigen von einem bloß überzeugend wirkenden Befund unterscheiden kannst.
+Deshalb bleibt die erste Übung bewusst klein. Starte mit einer sichtbaren Eingabe, einer risikoarmen Handlung und einer Prüfung, die eine andere Person wiederholen kann. Eine lange Funktionsliste kann warten, bis du ein fertiges Ergebnis von einem bloß überzeugend wirkenden Befund unterscheiden kannst.
 
 ## Wo die bekannten Namen hingehören
 
-Du wirst GPT, Grok, Gemini, Kimi, Codex und Answer.AI in derselben Diskussion hören. Sie sind nicht alle dasselbe. Manche Namen bezeichnen Modellfamilien, manche Werkbänke, die Dateien oder Werkzeuge hinzufügen, und manche angewandte KI-Forschung und -Bildungsorganisationen. Eine nützliche Landkarte ist:
+Du wirst GPT, Grok, Gemini, Kimi, Codex und Answer.AI in ein und demselben Gespräch hören. Sie stehen nicht alle für dasselbe. Manche Namen bezeichnen Modellfamilien, andere Arbeitsumgebungen, die Dateien oder Werkzeuge hinzufügen, und wieder andere Organisationen für angewandte KI-Forschung und Bildung. Eine nützliche Landkarte ist:
 
 | Name, den du hörst | Erste Frage, die du stellst | Nimm nicht an |
 | --- | --- | --- |
-| GPT / OpenAI | Welches Modell und welche Oberfläche—ChatGPT, API oder Codex—werde ich tatsächlich nutzen? | Ein Modellname gewährt Datei- oder Werkzeugzugriff oder ein besseres Ergebnis. |
-| Grok / xAI | Ist der vom Eigentümer beschriebene Denkfokus für meine feste Aufgabe relevant? | Es ist das beste Modell für deine Aufgabe oder in deinem Konto verfügbar. |
-| Gemini / Google DeepMind | Braucht diese Aufgabe die Eingabemodalitäten oder das Ökosystem, auf das ich wirklich zugreifen kann? | Jede Gemini-Oberfläche hat dieselben Werkzeuge oder Fähigkeiten. |
-| Kimi / Moonshot AI | Ist Codieren, Analysieren oder Arbeiten mit langen Dokumenten die Aufgabe, die ich testen muss? | Sein beworbener Kontext oder Funktionsumfang beweist Qualität in dieser Werkbank. |
-| Answer.AI | Suche ich angewandte Forschung, Bildung oder ein Endnutzerprodukt? | Es ist ein Basismodell-Anbieter für dieselbe Auswahl. |
+| GPT / OpenAI | Welche konkrete Kombination aus Modell und Oberfläche—ChatGPT, API oder Codex—werde ich tatsächlich nutzen? | Ein Modellname gewährt Datei- oder Werkzeugzugriff oder ein besseres Ergebnis. |
+| Grok / xAI | Ist der vom Anbieter beschriebene Schwerpunkt auf logischem Schlussfolgern für meine konkrete Aufgabe relevant? | Es ist das beste Modell für deine Aufgabe oder in deinem Konto verfügbar. |
+| Gemini / Google DeepMind | Braucht diese Aufgabe bestimmte Eingabeformate oder ein Ökosystem, auf das ich tatsächlich zugreifen kann? | Jede Gemini-Oberfläche hat dieselben Werkzeuge oder Fähigkeiten. |
+| Kimi / Moonshot AI | Was muss ich für diese Aufgabe testen: Programmieren, Analysieren oder das Arbeiten mit langen Dokumenten? | Sein beworbener Kontext oder Funktionsumfang beweist Qualität in dieser Arbeitsumgebung. |
+| Answer.AI | Suche ich angewandte Forschung, Bildungsarbeit oder ein Produkt für Endnutzer? | Es ist ein Basismodell-Anbieter für dieselbe Auswahl. |
 
-Die [Landschaft-Quittung für Modelle und Werkbänke](../evidence-library-DE.md#source-notes) verknüpft jede Zeile mit einer Eigentümerquelle und trennt die Positionierung des Eigentümers von einem gemessenen Ergebnis. Verbessere zuerst eine Anfrage in dem Modell, das du bereits hast; vergleiche Kandidaten erst danach an derselben Aufgabe und derselben Akzeptanzregel.
+Der [Quellenbeleg zur Übersicht von Modellen und Arbeitsumgebungen](../evidence-library-DE.md#source-notes) verknüpft jede Zeile mit einer Quelle des Anbieters und trennt dessen Positionierung von einem gemessenen Ergebnis. Verbessere zuerst eine Anfrage in dem Modell, das du bereits hast; vergleiche Kandidaten erst danach mit derselben Aufgabe und derselben Akzeptanzregel.
 
 ## Das Problem, das dieses Kapitel löst
 
@@ -62,7 +62,7 @@ Verwende bei der Analyse einer Aufgabe diesen Ablauf:
 
     Modellfähigkeit
             ↓ erzeugt eine Antwort oder einen Aktionsvorschlag
-    Codex-Arbeitsoberfläche
+    Codex-Arbeitsumgebung
             ↓ liefert Projektkontext und eine Ausführungsgrenze
     Tool/Laufzeit
             ↓ kann eine angeforderte Aktion erlauben, ablehnen oder ausführen
@@ -70,7 +70,7 @@ Verwende bei der Analyse einer Aufgabe diesen Ablauf:
             ↓ wird zu einem neuen Beleg oder neuen Kontext
     Verifizierung und menschliche Entscheidung
             ↓ entscheidet, ob die Arbeit stoppen oder wiederhergestellt werden muss
-    Lieferbehauptung
+    Aussage zur Lieferung
 
 Die Pfeile sind keine automatischen Garantien. Ein Modell kann einen
 Shell-Befehl vorschlagen, ohne dass die Laufzeit ihn ausführt. Eine Laufzeit kann
@@ -91,7 +91,7 @@ seine eigenen Belege.
 | Agent | Eine beobachtbare mehrstufige Schleife aus Beobachtung, Aktion, Feedback, Wiederholung und Stopp | Zugriff auf verborgene Schlussfolgerungen oder die Berechtigung, ewig zu wiederholen |
 
 Die stabile Terminologie des Projekts ist in [CONTEXT.md](../evidence-library-DE.md#core-terms)
-definiert. Produktdetails wie Modellnamen, Aufrufsyntax und Standardwerte für
+festgelegt. Produktdetails wie Modellnamen, Aufrufsyntax und Standardwerte für
 Berechtigungen sind veränderliche Fakten; verwende die datierte [offizielle
 Baseline](../evidence-library-DE.md#source-notes) und prüfe die verlinkte
 Dokumentation des jeweiligen Anbieters erneut, bevor du dich darauf stützt.
@@ -169,7 +169,7 @@ ein Toolname oder eine Meldung mit „fertig“ schließt keine dieser Lücken a
 
 ### Berechtigung ist nicht dasselbe wie Fähigkeit
 
-Die offizielle Produktgrenze unterscheidet zwischen technischer Sandbox und
+Die offizielle Produktdokumentation unterscheidet zwischen technischer Sandbox und
 Freigabegrenze. In den Begriffen des Projekts:
 
 - Eine Sandbox beschreibt, worauf die Laufzeit technisch zugreifen kann.
@@ -235,7 +235,7 @@ behandelt.
 
 ## Was eine Agent-Schleife wirklich bedeutet
 
-Ein Agent lässt sich am besten als Zustandsmaschine vermitteln, die
+Ein Agent lässt sich am besten als Zustandsmaschine erklären, die
 beobachtbare Spuren hinterlässt:
 
     ready
@@ -316,7 +316,7 @@ dauerhafte Lehre ist unabhängig von der Ursache: Eine Verifizierung muss einen
 festgelegten Befehlsumfang, Schreibumfang und Stoppunkt haben.
 
 Wenn eine Prüfung einen destruktiven Reset, einen Netzwerkaufruf, eine
-Paketneuinstallation oder ein Zugangsdaten erfordert, stoppe und fordere eine
+Paketneuinstallation oder Zugangsdaten erfordert, stoppe und fordere eine
 neue Entscheidung an. „Die Prüfung ist fehlgeschlagen“ gewährt keine Erlaubnis
 zur Eskalation.
 
@@ -326,7 +326,7 @@ Labs.
 
 ## Entscheidungsregel für eine echte Aufgabe
 
-Bevor du Codex zum Handeln aufforderst, schreibe diese kleine Aufgabenkarte:
+Bevor du Codex eine Aktion ausführen lässt, schreibe diese kleine Aufgabenkarte:
 
 | Feld | Beispiel für eine reine README-Änderung | Was tun, wenn es fehlt |
 |---|---|---|
@@ -344,7 +344,7 @@ sichtbar macht, die ein Prompt oft implizit lässt.
 
 ## Erstes Gespräch: drei Prompts für sofort
 
-Du musst nicht zuerst schwierige Begriffe auswendig lernen. Wähle ein kleines Ziel ohne persönliche Daten und ohne externen Write und kopiere einen der folgenden Texte in den LLM, den du tatsächlich nutzt. Ersetze die eckigen Klammern. Es sind keine Zauberformeln: Sie machen Verständnis, Grenzen und den nächsten Schritt sichtbar. Ergebnisse können sich zwischen Modellen und Oberflächen unterscheiden.
+Du musst nicht zuerst schwierige Begriffe auswendig lernen. Wähle ein kleines Ziel ohne persönliche Daten und ohne externen Schreibzugriff und füge einen der folgenden Texte in den Chat des von dir verwendeten LLM ein. Ersetze die eckigen Klammern. Es sind keine Zauberformeln: Sie machen Verständnis, Grenzen und den nächsten Schritt sichtbar. Ergebnisse können sich zwischen Modellen und Arbeitsumgebungen unterscheiden.
 
 ### 1. Eine Sprache oder kleine Fähigkeit lernen
 
@@ -356,7 +356,7 @@ Schreibe zum Schluss drei Zeilen: Was gelang, was ich als Nächstes übe und was
 Stelle eine Unterhaltung nicht als Nachweis dar, dass ich die Fähigkeit beherrsche.
 ```
 
-Das verspricht nicht, eine Sprache in sieben Tagen zu lernen. Eine Sitzung hinterlässt nur diese Antwort und dieses Feedback; Behalten, Transfer in eine neue Situation und echte Gesprächsfähigkeit prüfst du später getrennt. Bei nicht prüfbaren Fakten, zu großer Aufgabe oder einer Bitte um persönliche Daten: Aufgabe verkleinern, Quelle verlangen oder Gespräch stoppen.
+Das ist kein Versprechen, eine Sprache in sieben Tagen zu lernen. Eine Sitzung hinterlässt nur diese Antwort und dieses Feedback; Behalten, Transfer in eine neue Situation und echte Gesprächsfähigkeit prüfst du später getrennt. Wenn Fakten nicht überprüfbar sind, die Aufgabe zu groß wird oder nach persönlichen Daten gefragt wird, verkleinere die Aufgabe, verlange eine Quelle oder beende das Gespräch.
 
 ### 2. Öffentliche Quellen schnell ordnen
 
@@ -381,11 +381,11 @@ Abnahmebeleg und Stoppbedingung aus.
 Wenn Secret, Netzwerk, Konto, externer Write oder größerer Umfang nötig ist, markiere blocked und nenne die nötige Bestätigung.
 ```
 
-Prüfe auch bei einer gut klingenden Antwort, ob sie diese Felder wirklich beantwortet. Überspringt sie Unbekanntes, erklärt Vorschläge zu Ergebnissen oder erweitert unautorisierte Aktionen, ist das ein beobachtbarer Fehler. Lass nicht weiter raten.
+Prüfe auch bei einer gut klingenden Antwort, ob sie diese Felder wirklich beantwortet. Überspringt sie Unbekanntes, stellt sie Vorschläge als Ergebnisse dar oder erweitert sie unautorisierte Aktionen, ist das ein beobachtbarer Fehler. Lass das Modell nicht weiter raten.
 
 ## Drei Schritte zum Zurücklesen
 
-Frage nach jedem Prompt eine Minute lang: **Was wurde gelesen? Was wurde tatsächlich getan? Was kann ich prüfen?** Bei einer reinen Chat-Aufgabe sind meist nur Eingabe und Ausgabe prüfbar. Bei Datei-, Browser- oder Code-Aufgaben brauchst du zusätzlich Ziel, Diff, Befehlsausgabe oder externes Read-back. So trennst du vom ersten Tag an „ich kann chatten“ von „ich kann zuverlässig liefern“.
+Stell dir nach jedem Prompt eine Minute lang drei Fragen: **Was wurde gelesen? Was wurde tatsächlich getan? Was kann ich prüfen?** Bei einer reinen Chat-Aufgabe sind meist nur Eingabe und Ausgabe prüfbar. Bei Datei-, Browser- oder Code-Aufgaben brauchst du zusätzlich Ziel, Diff, Befehlsausgabe oder eine externe Rückmeldung. So trennst du vom ersten Tag an „ich kann chatten“ von „ich kann zuverlässig liefern“.
 
 ### Vorbereitung
 
@@ -435,7 +435,7 @@ wegwerfbaren Kopie:
 
 > Mach das gesamte Projekt professionell und behebe jedes Problem.
 
-Die richtige Reaktion ist keine große, unbeschränkte Änderung. Eine solide
+Die richtige Reaktion besteht nicht in einer großen, unbeschränkten Änderung. Eine solide
 Reaktion benennt die fehlende Definition von „professionell“, Umfang,
 Eingabedateien, Risiko, Abnahmekriterien und Stoppbedingungen; sie schlägt eine
 schreibgeschützte Bestandsaufnahme vor oder stellt eine fokussierte Frage. Wenn
@@ -444,7 +444,7 @@ nützliche Initiative.
 
 ## Abnahme-Checkliste
 
-Du bist bereit weiterzumachen, wenn du:
+Du kannst weitermachen, wenn du:
 
 - den Unterschied zwischen Modellfähigkeit, Codex-Oberfläche, Tool-Aktion,
   Tool-Ergebnis und Verifizierung erklären kannst;
@@ -480,7 +480,7 @@ autorisiert.
 - [Vertiefung zu LLM-Mechanismen](../evidence-library-DE.md#source-notes) — auf offiziellen Quellen beruhende Mechanismuskarten, Experimente und Kennzeichnungen für Fakten, Schlussfolgerungen und Unbekanntes; geprüft am 2026-08-10.
 - [Projektterminologie](../evidence-library-DE.md#core-terms) — stabile Definitionen für GPT, Codex, Tools, Skills, Agents, Belege und Status.
 
-Die erklärende Struktur des Kapitels ist für dieses Projekt originär. Produktnamen,
+Die erklärende Struktur dieses Kapitels ist originär für dieses Projekt. Produktnamen,
 Aufrufsyntax, Modellverfügbarkeit, Berechtigungen und Dienstverhalten müssen
 erneut anhand der aktuellen Quelle aus erster Hand geprüft werden, bevor sie als
 aktuelle Fakten gelten. Der Kapitelstatus bleibt `candidate`; das verlinkte Lab
