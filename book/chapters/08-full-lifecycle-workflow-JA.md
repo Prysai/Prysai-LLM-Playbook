@@ -1,4 +1,4 @@
-<!-- content_id: chapter-08-full-lifecycle-workflow | locale: JA | language: ja | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
+<!-- content_id: chapter-08-full-lifecycle-workflow | locale: JA | language: ja | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-20 -->
 
 # 第 8 章：定義から引き渡しまで
 
@@ -14,6 +14,27 @@ define → plan → build → verify → review → deliver → maintain
 
 各矢印は判断点です。Agent が「完了」と言ったからではなく、その段階を他者が確認できる evidence があるときだけ進みます。
 
+![教案例：証拠を定義から保守まで運ぶ workflow](../../assets/teaching/lifecycle-checkpoints.svg)
+
+> これはプロジェクトが作成した教案例です。方法の構造を説明するものであり、
+> Skill、Agent、外部サービスがこの workflow を実行した証拠ではありません。
+
+### 境界が見える出力を一つ見る
+
+同じ考え方をコード以外の成果物にも適用した、使い捨て可能なケースを用意しています。
+架空の「初めて家を買う人」向け不動産ページです。スクリーンショットを見る前に、
+[ケース記録](../../docs/research/skill-case-product-context-real-estate-2026-08-11.md)
+を読んでください。合成入力、ローカルでのレンダリング方法、記録した viewport、
+画像からは言えないことが明記されています。
+
+[![合成した初回購入者ガイドのローカル表示](../../assets/cases/product-context-real-estate-thumbnail.png)](../../assets/cases/product-context-real-estate-desktop.png)
+
+この画像が示すのは、記録された viewport で一度ローカル表示できたことだけです。
+Product Context Skill が単独で動いたこと、物件が実在すること、ページが信頼感や
+問い合わせ、成約、売上を高めることは証明しません。
+[sandbox のソース](../../examples/skill-sandbox/product-context-real-estate/README-JA.md)
+は、認証情報や外部リクエストなしで確認・再実行できるよう、意図的に小さくしてあります。
+
 ## 学習目標
 
 - edit 前に scope、non-goal、acceptance、authority、rollback を書く。
@@ -24,7 +45,20 @@ define → plan → build → verify → review → deliver → maintain
 
 ## 現実の問題：見える成功の間で workflow が壊れる
 
-login、model picker、開始した check は、次に必要な state が欠けていても進行に見えます。下の公開症状は、この実行の再現でも製品診断でもありません。中断後に path と diff を読む、browser のあとに client exchange を分ける、永続的 change の前に新しい許可を求める、といった最初の安全な観察を選ぶ材料です。
+login、model picker、開始した check は、次に必要な state が欠けていても進行に見えます。
+プロジェクトの [Codex field research](../../docs/research/field-problems-codex.md) には、
+この種の公開利用者報告が記録されています。以下は症状を学ぶための材料であり、公式の
+製品診断でも、この実行の再現でもありません。
+
+| 報告された症状 | その報告から分かること | **分からないこと** | 最初に行う安全な対応 |
+|---|---|---|---|
+| 選んだモデルが使えなくなり task が止まった | 容量エラーと中断を報告者が観測した | queue の仕組み、サービス側の原因、全 account・全 release の挙動 | 後続 prompt を止め、diff、log、最後に受理した checkpoint を確認してから retry を考える |
+| formatter や検証が長時間 `Working` のまま | その実行で完了 signal が見えなかった | 一般的な deadlock、正確な child process、root cause | 待ち時間を決め、output と process state を保存し、定めた recovery rule の範囲でだけ中断する |
+| browser は認証成功、client は後で失敗 | 認証には複数の observable stage がある | browser の表示や network 到達性だけで client ready とは言えない | callback、token exchange、最初に成功した client request を別の claim として記録する |
+| 「確認して」が force reinstall に膨らんだ | Agent が確認依頼を persistent environment の変更まで広げる場合がある | すべての Agent がそうすること、reinstall が常に誤りであること | source change、test、install、restart、deployment、live verification を分け、persistent change の前に確認する |
+
+教訓は「絶対に retry しない」「絶対に install しない」ではありません。次の action を、
+経過時間や status label の勢いではなく、evidence と authority に結びつけることです。
 
 ## evidence を運ぶ七段階
 
@@ -42,15 +76,16 @@ exit が欠けたら `blocked` または `unverified` と書きます。段階�
 
 ## status label と evidence は違う
 
-| claim | 最低限の evidence | 証明しないこと |
+| 言えること | 最低限の証拠 | その証拠だけでは言えないこと |
 |---|---|---|
-| source を変えた | 指定 path の diff | change が正しいこと |
-| check を実行した | command、directory、exit code、output | application の動作 |
-| application が動く | 指定 input と environment の runtime observation | 全 account や OS での動作 |
-| page は正しい見た目 | viewport と criterion を残した render inspection | demand、完全な accessibility、deployment |
-| feature を出荷した | repository/deployment state と delivery 後 check | 全利用者への到達 |
+| 「source が変わった」 | 指定 path の diff または file comparison | change が正しい、または完全であること |
+| 「check を実行した」 | 正確な command、working directory、exit code、output | application が動くこと |
+| 「application が動く」 | 指定 environment と input での runtime observation | 全 account や OS で同じに動くこと |
+| 「page の見た目が正しい」 | 記録した viewport と視覚的な acceptance criteria を含む render review | demand、完全な accessibility、deployment |
+| 「feature を出荷した」 | repository/deployment state、release record、delivery 後の check | 全利用者への到達 |
 
-passing build は有用でも、runtime、visual、security、user acceptance の証明には自動でなりません。
+最後の主張は、前の四つより強い証拠を要求します。passing build があっても、runtime、
+visual、security、user acceptance が自動的に確認されたことにはなりません。
 
 ## action の前に define する
 
@@ -64,9 +99,27 @@ acceptance: 指定 defect を直し、許可された check の exit を残す
 evidence: diff、changed-file list、command output、unverified list
 stop_when: scope、authority、target、recovery source が欠ける
 rollback: 記録済みの pre-edit copy または clean checkpoint に戻る
+inputs: target file、project rules、defect list、既存の link checker
+delivery: local review packet。commit と push をしていないなら、そう書く
 ```
 
-non-goal は accidental expansion を防ぎます。「page を verify」は browser reinstall、policy change、publish の許可ではありません。hash は変更を示しますが、以前の内容を戻しません。write、network、authentication、installation、restart、deployment、external message は必要で、かつ明示的に許可されたときだけ加えます。
+`non_goals` は accidental expansion を防ぎます。「page を verify」は browser reinstall、
+policy change、publish の許可ではありません。`rollback` は実際に戻せる source を指します。
+hash は変更を識別できますが、それだけで以前の内容を復元できるわけではありません。
+write、network、authentication、installation、restart、deployment、external message は、
+必要で、かつ明示的に許可されたときだけ加えます。
+
+### minimum authority rule
+
+まず read-only inspection を行い、書き込みは名前を指定した target にだけ加えます。
+network、authentication、installation、restart、deployment、external message は、タスクに
+必要で、その範囲が明確に許可された場合だけ追加します。
+
+公式の security record は sandbox と approval を別の制御として扱い、side effect のある
+connector や MCP action を approval boundary に置いています。したがって workflow には、
+技術的にできることと、意味上やってよいことの両方を記録します。[official facts refresh](../../docs/research/openai-codex-facts-refresh-2026-08-09.md) と
+[fact-impact registry](../../docs/governance/fact-impact-registry.yaml) は、日付のある
+product boundary を確認する入口です。
 
 ## vertical slice と checkpoint
 
@@ -89,7 +142,9 @@ fallback: output がなければ stop して handoff
 
 ### 準備
 
-remote、secret、顧客データのない disposable folder を作ります。原文、acceptance question、local checkpoint を保存し、待機上限と安全な中断手順を先に決めます。install、sign-in、第三者への送信はしません。
+remote connection、secret、顧客データを使わない disposable folder を作ります。原文、
+acceptance question、local checkpoint を保存し、待機上限と安全な中断手順を先に決めます。
+install、sign-in、第三者への送信はしません。
 
 ### タスク
 
@@ -314,7 +369,22 @@ instruction は source、access date、scope とともに更新します。古�
 
 ## 出典と保守の境界
 
-workflow の順序、checkpoint、claim と evidence の分離は、このプロジェクトの安定した教え方です。製品の作業面、account と tool の挙動、model の可用性、community symptom は変わる事実です。現在の製品主張を採用する前に、日付付きの[公式ファクトカード](../evidence-library-JA.md#source-notes)と[フィールド問題索引](../evidence-library-JA.md#source-notes)を確認してください。どちらも local run や独立した学習観察の代わりにはなりません。
+workflow の順序、checkpoint、claim と evidence の分離は、このプロジェクトの安定した教え方です。
+一方、product surface、account と tool の挙動、model の可用性、community symptom は変わり得ます。
+現在の主張を採用する前に、日付付きの source、適用範囲、owner、次回 review を確認します。
+
+| 事実または境界 | Source | Accessed | 適用範囲 | Owner / next review |
+|---|---|---:|---|---|
+| sandbox と approval は別の control で、connector/MCP の side effect は approval boundary に入り得る | [Agent approvals and security](https://learn.chatgpt.com/docs/agent-approvals-security.md) と [official facts refresh](../../docs/research/openai-codex-facts-refresh-2026-08-09.md) | 2026-08-09 | 当日の公式 product description。現在の repository runtime policy の証明ではない | `facts-maintainer` / 2026-09-09 |
+| Cloud work には setup、Agent work、result review、follow-up の境界がある | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-09 | product description。account、organization、environment、current UI は別途確認する | `facts-maintainer` / 2026-09-09 |
+| capacity interruption が dependent task の state を不明にすることがある | [FP-09 / issue #33865](../../docs/research/field-problems-codex.md) | 2026-08-09 | 公開利用者報告。local reproduction や universal queue conclusion ではない | `curriculum-maintainer` / 2026-09-09 |
+| long-running verification が completion state を不明にすることがある | [FP-10 / issue #34325](../../docs/research/field-problems-codex.md) | 2026-08-09 | 公開利用者報告。root cause と release scope は不明 | `curriculum-maintainer` / 2026-09-09 |
+| authentication は別々の observable stage として記録する | [FP-01、FP-02](../../docs/research/field-problems-codex.md) | 2026-08-09 | evidence discipline のための利用者報告。公式の修復手順ではない | `curriculum-maintainer` / 2026-09-09 |
+| verification は install や persistent environment change に静かに広がってはいけない | [FP-11 / issue #37677](../../docs/research/field-problems-codex.md) | 2026-08-09 | 公開利用者報告。official policy や local reproduction ではない | `curriculum-maintainer` / 2026-09-09 |
+
+stable な方法は残し、product-specific instruction は source、access date、scope とともに更新します。
+変更があれば first-party record を先に更新し、その後でこの章、関連 Lab、Skill、evaluation fixture、
+site path を review します。source の説明も local run や独立した学習観察の代わりにはなりません。
 
 <!-- chapter-navigation:start -->
 <hr>
