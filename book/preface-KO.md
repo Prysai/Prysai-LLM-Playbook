@@ -1,3 +1,5 @@
+<!-- content_id: book-preface | locale: KO | language: ko | default_locale: EN | content_status: candidate | translation_status: in-progress | reader_runtime_status: not_run | translated_from: EN | source_revision: dd08a68 -->
+
 # 서문: 이것은 프롬프트 모음집이 아니다
 
 많은 사람이 GPT를 처음 만났을 때 가장 자연스럽게 묻는 질문은 “무엇이라고 말해야 하지?”입니다.
