@@ -154,7 +154,7 @@ A–D 表、最終 render、data dictionary、validation、無効入力への応
 
 email、CRM、cloud drive、website への送信は別の external write です。test account/draft endpoint、target/audience、approval、batch、withdrawal/rollback、online read-back が必要で、この exercise は許可しません。
 
-## 自己確認
+## 受け入れチェックリスト（自己確認）
 
 - [ ] input field、sensitive boundary、version、output、validation、retry、stop を書いた。
 - [ ] final form を開き、empty/error/accessibility を script 以外で確認する。
@@ -179,49 +179,6 @@ email、CRM、cloud drive、website への送信は別の external write です�
 2. 一回の final-form review を行い、screenshot、export、browser / spreadsheet artifact を残す。
 3. schema、sensitive field、idempotency、log、retry、validation、rollback を含む automation contract を完成させる。
 4. test account または local simulation で failure input を一つ再生し、結果を `draft`、`candidate`、`verified`、`production-ready` のいずれかに分類する。
-
-## 学習目標
-
-final delivery と risk から capability を選び、rendered form を確認し、script の成功を complete または published delivery の証拠にしません。
-
-## 現実の問題：source file は reader の結果ではない
-
-Markdown、image、script が正しくても、PDF、browser、export では読めない、label が誤る、accessibility がないことがあります。開いた人が何を見て使うかを確認します。
-
-### 準備
-
-normal、empty、missing column、extreme の synthetic count を disposable directory に用意します。account、network、production data、external send は使いません。
-
-### タスク
-
-offline report を作り、sum、category、empty state、missing column error を確認します。final form を開いて check を残し、write 後 timeout なら先に partial state を read-back します。
-
-### 証拠
-
-input hash、transformation version、output path、log、exit status、read-back、`not sent` status を残します。artifact の生成は send、publish、audience effect の証拠ではありません。
-
-### 振り返り
-
-final form で初めて見えた failure は何ですか。timeout 後に安全に繰り返せない action は何ですか。
-
-## 移行タスク
-
-local course graphic に contract を使います。audience、fact、alt text、license boundary、visual check を定義し、external upload はしません。
-
-## 受け入れチェックリスト
-
-- [ ] schema、sensitive boundary、output、retry、read-back、stop を定義する。
-- [ ] empty/error state を含む final form を確認する。
-- [ ] local generated、draft、sent、published、online confirmed を分ける。
-- [ ] capability を brand ではなく納品物と risk から選んだ。
-- [ ] reader、final format、成功 action、empty state、error state を定義した。
-- [ ] source / command だけでなく、rendered または running form を確認した。
-- [ ] facts、license、accessibility、readability、editability を確認した。
-- [ ] input schema、transform、external call、retry、idempotency、log、output validation を記録した。
-- [ ] synthetic / test data、test account / sandbox、permission、batch、rollback evidence を使った。
-- [ ] FP-10 / FP-11 に応じた hang、partial success、persistent change の扱いを説明できる。
-- [ ] draft、connection、started command を public release や online verification と書いていない。
-- [ ] final form、data check、permission、recovery boundary の具体的な artifact を示せる。
 
 ## 出典と保守の境界
 
