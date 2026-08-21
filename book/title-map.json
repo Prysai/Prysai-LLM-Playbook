@@ -341,7 +341,7 @@
         "ja": "調査トラック、問いから監査可能な知識へ",
         "ko": "15장: 연구 트랙, 질문에서 감사 가능한 지식까지",
         "de": "Forschungspfad, von der Frage zu prüfbarem Wissen",
-        "zh-tw": "研究軌——從問題到可審查知識"
+        "zh-tw": "研究路線——從問題到可稽核的知識"
       },
       "display": {
         "en": "Research track: from question to auditable knowledge",
@@ -350,7 +350,7 @@
         "ja": "調査トラック、問いから監査可能な知識へ",
         "ko": "15장: 연구 트랙, 질문에서 감사 가능한 지식까지",
         "de": "Forschungspfad, von der Frage zu prüfbarem Wissen",
-        "zh-tw": "研究軌：從問題到可審查知識"
+        "zh-tw": "研究路線——從問題到可稽核的知識"
       }
     },
     {
@@ -364,7 +364,7 @@
         "ja": "エンジニアリング・トラック、着想から信頼できるソフトウェアへ",
         "ko": "16장: 엔지니어링 트랙, 아이디어에서 신뢰할 수 있는 소프트웨어까지",
         "de": "Engineering-Pfad, von der Idee zu zuverlässiger Software",
-        "zh-tw": "工程軌——從想法到可靠軟體"
+        "zh-tw": "工程路線——從想法到可靠軟體"
       },
       "display": {
         "en": "Engineering track: from idea to reliable software",
@@ -373,7 +373,7 @@
         "ja": "エンジニアリング・トラック、着想から信頼できるソフトウェアへ",
         "ko": "16장: 엔지니어링 트랙, 아이디어에서 신뢰할 수 있는 소프트웨어까지",
         "de": "Engineering-Pfad, von der Idee zu zuverlässiger Software",
-        "zh-tw": "工程軌：從想法到可靠軟體"
+        "zh-tw": "工程路線——從想法到可靠軟體"
       }
     },
     {
@@ -387,7 +387,7 @@
         "ja": "マーケティング・トラック、製品理解から成長実験へ",
         "ko": "17장: 마케팅 트랙, 제품 이해에서 성장 실험까지",
         "de": "Marketing-Pfad, vom Produktverständnis zu Wachstumsexperimenten",
-        "zh-tw": "行銷軌——從產品理解到增長實驗"
+        "zh-tw": "行銷路線——從產品理解到成長實驗"
       },
       "display": {
         "en": "Marketing track: from product understanding to growth experiments",
@@ -396,7 +396,7 @@
         "ja": "マーケティング・トラック、製品理解から成長実験へ",
         "ko": "17장: 마케팅 트랙, 제품 이해에서 성장 실험까지",
         "de": "Marketing-Pfad, vom Produktverständnis zu Wachstumsexperimenten",
-        "zh-tw": "行銷軌：從產品理解到增長實驗"
+        "zh-tw": "行銷路線——從產品理解到成長實驗"
       }
     },
     {
@@ -433,7 +433,7 @@
         "ja": "モデルとワークフローを評価する、印象から証拠へ",
         "ko": "19장: 모델과 워크플로 평가하기, 인상에서 증거로",
         "de": "Modelle und Workflows evaluieren, von Eindrücken zu Evidenz",
-        "zh-tw": "評估模型和工作流程——從感覺到證據"
+        "zh-tw": "評估模型與工作流——從印象走向證據"
       },
       "display": {
         "en": "Evaluate models and workflows",
@@ -442,7 +442,7 @@
         "ja": "モデルとワークフローを評価する、印象から証拠へ",
         "ko": "19장: 모델과 워크플로 평가하기, 인상에서 증거로",
         "de": "Modelle und Workflows evaluieren, von Eindrücken zu Evidenz",
-        "zh-tw": "評估模型和工作流程"
+        "zh-tw": "評估模型與工作流——從印象走向證據"
       }
     },
     {
@@ -456,7 +456,7 @@
         "ja": "個人用 Codex 作業システムを作る",
         "ko": "20장: 개인 Codex 작업 시스템 만들기",
         "de": "Ein persönliches Codex-Arbeitssystem aufbauen",
-        "zh-tw": "建立個人 Codex 工作系統"
+        "zh-tw": "構建個人 Codex 工作系統"
       },
       "display": {
         "en": "Build a personal Codex work system",
@@ -465,7 +465,7 @@
         "ja": "個人用 Codex 作業システムを作る",
         "ko": "20장: 개인 Codex 작업 시스템 만들기",
         "de": "Ein persönliches Codex-Arbeitssystem aufbauen",
-        "zh-tw": "建立個人 Codex 工作系統"
+        "zh-tw": "構建個人 Codex 工作系統"
       }
     },
     {
@@ -479,7 +479,7 @@
         "ja": "チーム能力システムを作る",
         "ko": "21장: 팀 역량 시스템 만들기",
         "de": "Ein Team-Fähigkeitssystem aufbauen",
-        "zh-tw": "建立團隊能力系統"
+        "zh-tw": "構建團隊能力系統"
       },
       "display": {
         "en": "Build a team capability system",
@@ -488,7 +488,7 @@
         "ja": "チーム能力システムを作る",
         "ko": "21장: 팀 역량 시스템 만들기",
         "de": "Ein Team-Fähigkeitssystem aufbauen",
-        "zh-tw": "建立團隊能力系統"
+        "zh-tw": "構建團隊能力系統"
       }
     },
     {
@@ -502,7 +502,7 @@
         "ja": "継続的な更新と将来への備え",
         "ko": "22장: 지속적인 업데이트와 미래 대비",
         "de": "Kontinuierliche Aktualisierung und Zukunftssicherheit",
-        "zh-tw": "持續更新與未來適應"
+        "zh-tw": "持續更新與面向未來"
       },
       "display": {
         "en": "Continuous update and future-proofing",
@@ -511,7 +511,7 @@
         "ja": "継続的な更新と将来への備え",
         "ko": "22장: 지속적인 업데이트와 미래 대비",
         "de": "Kontinuierliche Aktualisierung und Zukunftssicherheit",
-        "zh-tw": "持續更新與未來適應"
+        "zh-tw": "持續更新與面向未來"
       }
     }
   ]
