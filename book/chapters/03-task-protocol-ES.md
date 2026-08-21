@@ -1,6 +1,6 @@
 <!-- content_id: chapter-03-task-protocol | locale: ES | language: es | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-15 -->
 
-# Capítulo 3: Convierte una petición vaga en un protocolo de trabajo
+# Capítulo 3: Convierte una petición vaga en un protocolo de tareas
 
 ![Pizarra didáctica: de una petición, pasando por alcance y comprobación, a una entrega acotada](../../assets/teaching/task-to-evidence-red-black.svg)
 
@@ -132,7 +132,7 @@ Un protocolo puede autorizar A0–A2 y dejar A3 para confirmación; puede autori
 una prueba sin autorizar una instalación. Nunca uses «haz lo que haga falta»
 para ocultar un cambio de permisos.
 
-### 6. Criterios de aceptación: relaciona cada declaración con evidencia
+### 6. Aceptación: relaciona cada declaración con su evidencia
 
 Escribe primero la declaración y después el material que la sostendría:
 
@@ -161,7 +161,7 @@ primer error, reduce alcance, cambia una hipótesis o comprobación y registra q
 ya cambió el intento anterior. Antes de reintentar una acción larga o externa,
 revisa estado y diff para no duplicar el efecto lateral.
 
-### 8. Entrega: deja un relevo utilizable
+### 8. Entrega: deja un relevo que se pueda usar
 
 Exige un registro final con declaraciones terminadas y evidencia; archivos, URL,
 comandos o registros cambiados; acciones no tomadas; preguntas, riesgos y
@@ -192,11 +192,11 @@ una dependencia ausente.
 
 <a id="core-task-contract-end"></a>
 
-## El protocolo mínimo que resulta útil
+## El protocolo mínimo que sirve
 
 <!-- starter-task-contract:start -->
 
-### Copia un prompt inicial seguro
+### Copia un prompt seguro para empezar
 
 Sustituye los campos entre corchetes y exige que la primera respuesta solo
 observe. La pausa de aprobación une una petición de principiante con un flujo
@@ -279,7 +279,7 @@ Cuando la tarea sea incierta, divide el trabajo:
 Así el plan se inspecciona antes de editar y es más fácil saber qué etapa añadió
 una mala suposición. No elimina la revisión del resultado real.
 
-## Seis prompts iniciales para un ciclo de práctica con evidencia y límites
+## Seis prompts iniciales para un ciclo de práctica con límites y evidencia
 
 No son frases mágicas ni seis lecciones consecutivas. Resuelven seis problemas:
 línea base observable, recuperación antes de revelar, corrección acotada,
@@ -400,7 +400,7 @@ y el [informe de casos de agentes de programación](../evidence-library-ES.md#so
 registra síntoma y entorno, haz la comprobación segura más pequeña, detente en
 el límite y declara solo lo que sostenga la evidencia.
 
-## Varios agentes: la entrega también necesita un protocolo
+## Varios agentes: la entrega también necesita su propio protocolo
 
 Delegar no elimina responsabilidad del agente principal. Da a cada trabajador
 una tarea separada y una forma fija:
@@ -458,7 +458,7 @@ Registra qué campo ausente causó el mayor cambio de alcance, riesgo o aceptaci
 Anota si otra persona podría ejecutar el protocolo sin adivinar y nombra una
 declaración que aún requiera evidencia de runtime.
 
-## Lista de aceptación
+## Lista de comprobación
 
 - [ ] El objetivo nombra resultado, audiencia y alcance.
 - [ ] El contexto distingue reglas, hechos, informes, hipótesis y datos de ejemplo.
