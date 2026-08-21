@@ -1,6 +1,6 @@
 <!-- content_id: llm-fundamentals-guide | locale: DE | language: de | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-17-foundation-observations -->
 
-# Was ist ein LLM? Was es kann und was nicht
+# Was ist ein LLM? Was es kann – und was nicht
 
 **Einheit:** `core-llm-boundaries`
 **Status:** `candidate`. **Laufstatus:** `not_run`.
@@ -9,10 +9,10 @@ Git, ein kostenpflichtiges Konto noch ein Tool.
 
 Dies ist das Fundament des Playbooks. Bevor du eine Plattform auswählst, eine
 Datei verbindest, ein Skill installierst oder einen Agenten handeln lässt,
-brauchst du ein einfaches Modell davon, was passiert. Es geht nicht darum,
-Abkürzungen auswendig zu lernen. Du sollst erkennen, welche Schicht eine
-Behauptung erzeugt, welche Schicht außerhalb des Modells handeln kann und
-welche Aufzeichnung die Behauptung prüfbar macht.
+brauchst du ein einfaches Bild davon, was dabei passiert. Du musst keine
+Abkürzungen auswendig lernen. Entscheidend ist, dass du erkennst, welche
+Schicht eine Behauptung erzeugt, welche außerhalb des Modells handeln kann und
+welcher Nachweis die Behauptung prüfbar macht.
 
 Bei jeder neuen KI-Funktion helfen dir vier Fragen:
 

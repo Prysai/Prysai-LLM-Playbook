@@ -1,6 +1,6 @@
 <!-- content_id: llm-fundamentals-guide | locale: ES | language: es | default_locale: EN | translation_status: candidate | translated_from: EN | source_revision: worktree-2026-08-17-foundation-observations -->
 
-# Qué es un LLM: qué puede hacer y qué no puede hacer
+# Qué es un LLM: qué puede hacer y qué no
 
 **Unidad:** `core-llm-boundaries`
 **Estado:** `candidate`. **Ejecución:** `not_run`.
@@ -8,10 +8,10 @@
 Codex, Git, una cuenta de pago ni una herramienta.
 
 Esta es la base del Playbook. Antes de elegir una plataforma, conectar un
-archivo, instalar un Skill o pedir a un Agent que actúe, necesitas un modelo
-pequeño de lo que sucede. La meta no es memorizar siglas: es distinguir qué
-capa produjo una afirmación, qué capa puede actuar y qué registro permite
-comprobar el resultado.
+archivo, instalar un Skill o pedir a un Agent que actúe, necesitas una idea
+clara de lo que está pasando. No se trata de memorizar siglas, sino de
+reconocer qué capa produce una afirmación, cuál puede actuar y qué registro
+permite comprobar el resultado.
 
 Ante cualquier función nueva de IA, pregunta:
 
@@ -33,7 +33,7 @@ qué significan **LLM**, **token**, **contexto**, **prompt**, **herramienta**,
 pertenece al modelo, al producto o a una herramienta externa. Es una tarea de
 explicación acotada; los procedimientos de cada plataforma vienen después.
 
-## 0.1 Una frase de trabajo
+## 0.1 Una frase para orientarte
 
 Un LLM de texto moderno es un modelo que estima y genera secuencias de tokens.
 Muchos modelos autorregresivos generan prediciendo el token siguiente a partir
