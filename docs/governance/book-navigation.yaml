@@ -485,8 +485,8 @@
       "english_path": "book/chapters/15-research-track-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "研究軌：從問題到可審查知識",
-      "canonical_title_zh-tw": "研究軌——從問題到可審查知識"
+      "title_zh-tw": "研究路線——從問題到可稽核的知識",
+      "canonical_title_zh-tw": "研究路線——從問題到可稽核的知識"
     },
     {
       "id": "chapter-16",
@@ -507,8 +507,8 @@
       "english_path": "book/chapters/16-engineering-track-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "工程軌：從想法到可靠軟體",
-      "canonical_title_zh-tw": "工程軌——從想法到可靠軟體"
+      "title_zh-tw": "工程路線——從想法到可靠軟體",
+      "canonical_title_zh-tw": "工程路線——從想法到可靠軟體"
     },
     {
       "id": "chapter-17",
@@ -529,8 +529,8 @@
       "english_path": "book/chapters/17-marketing-track-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "行銷軌：從產品理解到成長實驗",
-      "canonical_title_zh-tw": "行銷軌——從產品理解到成長實驗"
+      "title_zh-tw": "行銷路線——從產品理解到成長實驗",
+      "canonical_title_zh-tw": "行銷路線——從產品理解到成長實驗"
     },
     {
       "id": "chapter-18",
@@ -573,7 +573,7 @@
       "english_path": "book/chapters/19-evaluate-models-and-workflows-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "評估模型與工作流",
+      "title_zh-tw": "評估模型與工作流——從印象走向證據",
       "canonical_title_zh-tw": "評估模型與工作流——從印象走向證據"
     },
     {
@@ -639,8 +639,8 @@
       "english_path": "book/chapters/22-continuous-update-and-future-proofing-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "持續更新與未來適應",
-      "canonical_title_zh-tw": "持續更新與未來適應"
+      "title_zh-tw": "持續更新與面向未來",
+      "canonical_title_zh-tw": "持續更新與面向未來"
     }
   ]
 }

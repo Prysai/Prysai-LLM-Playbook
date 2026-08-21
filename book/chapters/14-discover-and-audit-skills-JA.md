@@ -233,7 +233,7 @@ reject / pause / adopt の理由:
 <nav class="chapter-navigation" aria-label="章ナビゲーション">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-JA.md" aria-label="前の章: 第 13 章 · ファイル、ターミナル、ブラウザー、GitHub にまたがる行動の境界">← 前へ<br><strong>第 13 章 · ファイル、ターミナル、ブラウザー、GitHub にまたがる行動の境界</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-JA.md" aria-label="前の章: 第 13 章 · ファイル、ターミナル、ブラウザ、GitHub にまたがる行動境界">← 前へ<br><strong>第 13 章 · ファイル、ターミナル、ブラウザ、GitHub にまたがる行動境界</strong></a></td>
       <td align="right"><a data-chapter-nav="next" href="15-research-track-JA.md" aria-label="次の章: 第 15 章 · 調査トラック、問いから監査可能な知識へ">次へ →<br><strong>第 15 章 · 調査トラック、問いから監査可能な知識へ</strong></a></td>
     </tr>
   </table>

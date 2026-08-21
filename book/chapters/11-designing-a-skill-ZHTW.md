@@ -349,8 +349,8 @@ Skill 名稱與版本：
 <nav class="chapter-navigation" aria-label="章節導覽">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-ZHTW.md" aria-label="上一章：第 10 章 · 規劃與垂直切片">← 上一章<br><strong>第 10 章 · 規劃與垂直切片</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-ZHTW.md" aria-label="下一章：第 12 章 · Agent 迴圈、狀態與停止條件">下一章 →<br><strong>第 12 章 · Agent 迴圈、狀態與停止條件</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-ZHTW.md" aria-label="上一章：第 10 章 · 規劃與豎向切片">← 上一章<br><strong>第 10 章 · 規劃與豎向切片</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-ZHTW.md" aria-label="下一章：第 12 章 · Agent 的循環、狀態和停止條件">下一章 →<br><strong>第 12 章 · Agent 的循環、狀態和停止條件</strong></a></td>
     </tr>
   </table>
 </nav>

@@ -204,7 +204,7 @@ Skill 是方法與路由契約；工具是觀察或改變外部世界的介面�
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-ZHTW.md" aria-label="上一章：第 13 章 · 檔案、終端、瀏覽器與 GitHub 的行動邊界">← 上一章<br><strong>第 13 章 · 檔案、終端、瀏覽器與 GitHub 的行動邊界</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="15-research-track-ZHTW.md" aria-label="下一章：第 15 章 · 研究路線——從問題到可審計知識">下一章 →<br><strong>第 15 章 · 研究路線——從問題到可審計知識</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="15-research-track-ZHTW.md" aria-label="下一章：第 15 章 · 研究路線——從問題到可稽核的知識">下一章 →<br><strong>第 15 章 · 研究路線——從問題到可稽核的知識</strong></a></td>
     </tr>
   </table>
 </nav>

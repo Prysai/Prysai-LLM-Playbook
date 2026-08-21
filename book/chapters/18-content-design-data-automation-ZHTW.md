@@ -176,7 +176,7 @@
 <nav class="chapter-navigation" aria-label="章節導覽">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="17-marketing-track-ZHTW.md" aria-label="上一章：第 17 章 · 營銷路線——從產品理解到增長實驗">← 上一章<br><strong>第 17 章 · 營銷路線——從產品理解到增長實驗</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="17-marketing-track-ZHTW.md" aria-label="上一章：第 17 章 · 行銷路線——從產品理解到成長實驗">← 上一章<br><strong>第 17 章 · 行銷路線——從產品理解到成長實驗</strong></a></td>
       <td align="right"><a data-chapter-nav="next" href="19-evaluate-models-and-workflows-ZHTW.md" aria-label="下一章：第 19 章 · 評估模型與工作流——從印象走向證據">下一章 →<br><strong>第 19 章 · 評估模型與工作流——從印象走向證據</strong></a></td>
     </tr>
   </table>

@@ -497,7 +497,7 @@ next: human review of the evidence paths before any local commit
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="07-skills-plugins-and-tools-ZHTW.md" aria-label="上一章：第 7 章 · Skill、Plugin、MCP 和工具如何分工">← 上一章<br><strong>第 7 章 · Skill、Plugin、MCP 和工具如何分工</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="09-verification-and-recovery-ZHTW.md" aria-label="下一章：第 9 章 · 驗證、懷疑與復原">下一章 →<br><strong>第 9 章 · 驗證、懷疑與復原</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="09-verification-and-recovery-ZHTW.md" aria-label="下一章：第 9 章 · 驗證、懷疑與恢復">下一章 →<br><strong>第 9 章 · 驗證、懷疑與恢復</strong></a></td>
     </tr>
   </table>
 </nav>

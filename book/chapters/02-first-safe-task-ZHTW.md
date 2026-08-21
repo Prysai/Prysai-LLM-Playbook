@@ -369,7 +369,7 @@ status: passed | failed | stopped
 <nav class="chapter-navigation" aria-label="章節導覽">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="01-gpt-and-codex-ZHTW.md" aria-label="上一章：第 1 章 · 先理解 GPT，再信任 Codex">← 上一章<br><strong>第 1 章 · 先理解 GPT，再信任 Codex</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="01-gpt-and-codex-ZHTW.md" aria-label="上一章：第 1 章 · 先理解 GPT，再理解 Codex 的工作原理">← 上一章<br><strong>第 1 章 · 先理解 GPT，再理解 Codex 的工作原理</strong></a></td>
       <td align="right"><a data-chapter-nav="next" href="03-task-protocol-ZHTW.md" aria-label="下一章：第 3 章 · 把願望變成任務協議">下一章 →<br><strong>第 3 章 · 把願望變成任務協議</strong></a></td>
     </tr>
   </table>

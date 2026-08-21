@@ -72,10 +72,12 @@ def link_markup(
         "JA": {"prev": "前の章", "next": "次の章", "prev_short": "← 前へ", "next_short": "次へ →", "sep": " · ", "pending": " · 移行待ち", "num": f"第 {number} 章"},
         "KO": {"prev": "이전 장", "next": "다음 장", "prev_short": "← 이전", "next_short": "다음 →", "sep": " · ", "pending": " · 전환 대기 중", "num": f"{number}장"},
         "DE": {"prev": "Vorheriges Kapitel", "next": "Nächstes Kapitel", "prev_short": "← Zurück", "next_short": "Weiter →", "sep": " · ", "pending": " · Migration ausstehend", "num": f"Kapitel {number}"},
-        "ZHTW": {"prev": "上一章", "next": "下一章", "prev_short": "← 上一章", "next_short": "下一章 →", "sep": " · ", "pending": " · 遷移待定", "num": f"第 {number} 章"},
+        "ZHTW": {"prev": "上一章", "next": "下一章", "prev_short": "← 上一章", "next_short": "下一章 →", "sep": " · ", "colon": "：", "after_colon": "", "pending": " · 遷移待定", "num": f"第 {number} 章"},
     }[locale]
+    copy.setdefault("colon", ":")
+    copy.setdefault("after_colon", " ")
     prefix = copy["prev"] if direction == "previous" else copy["next"]
-    label = f"{prefix}: {copy['num']}{copy['sep']}{title}"
+    label = f"{prefix}{copy['colon']}{copy['after_colon']}{copy['num']}{copy['sep']}{title}"
     if pending:
         label += copy["pending"]
     visible_prefix = copy["prev_short"] if direction == "previous" else copy["next_short"]
