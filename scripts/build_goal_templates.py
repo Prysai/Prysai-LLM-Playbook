@@ -12,7 +12,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "docs/governance/goal-templates.json"
 OUTPUT = ROOT / "site/goal-templates.js"
-LOCALES = ("en", "zh", "es", "ja", "ko", "de", "zh-tw")
+LOCALES = ("en", "zh", "es", "ja", "ko", "de", "zh-tw", "fr")
 GOALS = ("language", "work", "research", "interview", "task", "codex")
 
 

@@ -18,7 +18,7 @@ LINK_RE = re.compile(r'<a[^>]+data-chapter-nav="([^"]+)"[^>]+href="([^"]+)"', re
 H1_RE = re.compile(r"(?m)^#\s+(.+?)\s*$")
 EN_H1_RE = re.compile(r"^Chapter\s+(\d+):\s+(.+)$")
 ZH_H1_RE = re.compile(r"^第([一二三四五六七八九十]+)章：(.+)$")
-LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW")
+LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW", "FR")
 
 
 def fail(errors: list[str]) -> int:

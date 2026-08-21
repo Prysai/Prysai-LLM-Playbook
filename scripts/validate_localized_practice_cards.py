@@ -14,7 +14,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-LOCALES = ("ZH", "ES", "JA", "KO", "DE", "ZHTW")
+LOCALES = ("ZH", "ES", "JA", "KO", "DE", "ZHTW", "FR")
 CARD_RE = re.compile(r"^###\s+([1-7])\.\s+.+$", re.MULTILINE)
 
 # Keep this deliberately small and outcome-oriented.  The localized prose is

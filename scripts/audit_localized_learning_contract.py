@@ -17,7 +17,7 @@ import validate_learning_contract as contract
 
 ROOT = Path(__file__).resolve().parents[1]
 MATRIX_PATH = ROOT / "docs/governance/locale-matrix.yaml"
-LOCALES = ("ZH", "ES", "JA", "KO", "DE", "ZHTW")
+LOCALES = ("ZH", "ES", "JA", "KO", "DE", "ZHTW", "FR")
 HEADING_RE = re.compile(r"^#{2,3}\s+\S", re.MULTILINE)
 
 

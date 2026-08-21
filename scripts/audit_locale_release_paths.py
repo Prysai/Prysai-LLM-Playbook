@@ -19,7 +19,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MATRIX = ROOT / "docs/governance/locale-matrix.yaml"
 COURSE_KINDS = {"chapter", "lab"}
-LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW")
+LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW", "FR")
 MARKDOWN_LINK = re.compile(r"(?:href=\"|\]\()([^\"\)#]+\.md)(?:#[^\"\)]*)?", re.IGNORECASE)
 IDENTITY = re.compile(
     r"<!--\s*content_id:\s*([^|\s]+)\s*\|\s*locale:\s*([A-Z]{2,4})\s*"

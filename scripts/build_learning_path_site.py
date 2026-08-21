@@ -35,7 +35,7 @@ def indexed_items(status: dict[str, Any], section: str) -> dict[str, dict[str, A
     }
 
 
-LOCALE_KEYS = ("en", "zh", "es", "ja", "ko", "de", "zh-tw")
+LOCALE_KEYS = ("en", "zh", "es", "ja", "ko", "de", "zh-tw", "fr")
 
 
 def localized(value: dict[str, str]) -> dict[str, str]:
@@ -57,7 +57,7 @@ def build_asset(
         raise ValueError(f"{section}: catalog is missing bilingual name for {asset_id}")
     name = catalog_item["name"]
     if set(name) != set(LOCALE_KEYS) or not all(isinstance(value, str) and value.strip() for value in name.values()):
-        raise ValueError(f"{section}: catalog name for {asset_id} must contain non-empty text for all seven locales")
+        raise ValueError(f"{section}: catalog name for {asset_id} must contain non-empty text for all eight locales")
     result = {
         "id": asset_id,
         "name": localized(name),
@@ -103,7 +103,7 @@ def build_foundation_route(route: dict[str, Any] | None) -> dict[str, Any] | Non
     if not isinstance(route_name, dict):
         raise ValueError("foundation_route.name must be an object")
     if set(route_name) != set(LOCALE_KEYS) or not all(isinstance(value, str) and value.strip() for value in route_name.values()):
-        raise ValueError("foundation_route.name must contain non-empty text for all seven locales")
+        raise ValueError("foundation_route.name must contain non-empty text for all eight locales")
     return {
         "id": route_id,
         "content_id": route_id,

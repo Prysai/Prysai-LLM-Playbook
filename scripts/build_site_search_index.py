@@ -12,7 +12,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_FILE = ROOT / "site/search-index.js"
-LOCALES = ("en", "zh", "es", "ja", "ko", "de", "zh-tw")
+LOCALES = ("en", "zh", "es", "ja", "ko", "de", "zh-tw", "fr")
 # The Reader deliberately renders candidate and in-progress translations while
 # disclosing their review state. Search must follow that same availability rule:
 # otherwise a Chinese search can point to English even when the Reader can

@@ -12,7 +12,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW")
+LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW", "FR")
 
 OPTIONAL_MARKERS = {
     "EN": "optional application practice",
@@ -22,6 +22,7 @@ OPTIONAL_MARKERS = {
     "KO": "선택 응용 연습",
     "DE": "optionale Anwendungsübung",
     "ZHTW": "可選應用練習",
+    "FR": "pratique d’application facultative",
 }
 
 START_HERE_HEADING = {
@@ -30,6 +31,7 @@ START_HERE_HEADING = {
     "KO": "## 여기서 시작하세요",
     "DE": "## Hier beginnen",
     "ZHTW": "## 先從哪裡開始",
+    "FR": "## Commencer ici",
 }
 
 

@@ -13,7 +13,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW")
+LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW", "FR")
 HEADING_RE = re.compile(r"^##\s+.+$", re.MULTILINE)
 CORE_STEMS = (
     "03-task-protocol",

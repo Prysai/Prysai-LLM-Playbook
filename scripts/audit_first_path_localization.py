@@ -18,7 +18,7 @@ import validate_learning_contract as contract
 
 ROOT = Path(__file__).resolve().parents[1]
 MATRIX = ROOT / "docs/governance/locale-matrix.yaml"
-LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW")
+LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW", "FR")
 FIRST_PATH_IDS = (
     "llm-fundamentals-guide",
     "chapter-01-gpt-and-codex",
@@ -28,7 +28,7 @@ FIRST_PATH_IDS = (
 )
 LESSON_ZERO_ID = "llm-fundamentals-guide"
 MARKDOWN_LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
-LOCALIZED_TARGET_RE = re.compile(r"-(EN|ZH|ES|JA|KO|DE|ZHTW)\.md$")
+LOCALIZED_TARGET_RE = re.compile(r"-(EN|ZH|ES|JA|KO|DE|ZHTW|FR)\.md$")
 
 
 def load_records() -> dict[str, dict]:

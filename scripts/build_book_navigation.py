@@ -30,7 +30,7 @@ def load_navigation() -> dict[str, Any]:
     return document
 
 
-LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW")
+LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW", "FR")
 
 
 def path_for(item: dict[str, Any], locale: str) -> str:

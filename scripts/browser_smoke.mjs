@@ -281,7 +281,7 @@ try {
   await noHorizontalOverflow(page, 'Chinese goal wizard');
   // Traditional Chinese must use its own goal records, not the English
   // fallback. The first generated prompt and its Reader route are both
-  // observable requirements of the seventh locale.
+  // observable requirements of the eighth locale.
   await page.goto(`${origin}/site/?lang=zh-tw`, { waitUntil: 'networkidle' });
   const traditionalGoalWizard = page.locator('[data-goal-wizard]');
   await traditionalGoalWizard.locator('[data-goal-key="task"]').click();

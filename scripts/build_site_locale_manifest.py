@@ -18,8 +18,8 @@ TITLE_MAP_FILE = ROOT / "book/title-map.json"
 LAB_NAVIGATION_FILE = ROOT / "docs/governance/lab-navigation.yaml"
 SKILL_REGISTRY_FILE = ROOT / "docs/governance/skill-registry.yaml"
 OUTPUT_FILE = ROOT / "site/locale-manifest.js"
-LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW")
-LOCALE_KEYS = ("en", "zh", "es", "ja", "ko", "de", "zh-tw")
+LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW", "FR")
+LOCALE_KEYS = ("en", "zh", "es", "ja", "ko", "de", "zh-tw", "fr")
 ROUTED_STATUS_SECTIONS = ("chapters", "labs")
 RENDERABLE_TRANSLATION_STATUSES = {
     "source",

@@ -17,7 +17,7 @@ ARTIFACT_STATUSES = {"draft", "candidate", "verified", "production-ready"}
 RUN_STATUSES = {"not_run", "running", "completed"}
 RUN_PROJECTION_STATUSES = {"not_run", "partial", "completed"}
 BROWSER_REVIEW_STATUSES = {"pending", "completed"}
-REPOSITORY_LOCALES = ["en", "zh", "es", "ja", "ko", "de", "zh-tw"]
+REPOSITORY_LOCALES = ["en", "zh", "es", "ja", "ko", "de", "zh-tw", "fr"]
 LOCALE_MIGRATION_STATUSES = {"migration", "release"}
 LICENSE_REVIEW_STATUSES = {
     "file_level_release_boundaries_reviewed",

@@ -15,7 +15,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-LOCALES = ("ZH", "ZHTW", "ES", "JA", "KO", "DE")
+LOCALES = ("ZH", "ZHTW", "ES", "JA", "KO", "DE", "FR")
 LOCALE_NAMES = {
     "ZH": "Simplified Chinese",
     "ZHTW": "Traditional Chinese",
@@ -23,6 +23,7 @@ LOCALE_NAMES = {
     "JA": "Japanese",
     "KO": "Korean",
     "DE": "German",
+    "FR": "French",
 }
 HEADER_STATUS_RE = re.compile(r"translation_status:\s*([^ |]+)")
 HEADING_RE = re.compile(r"^#{1,6}\s+\S", re.MULTILINE)

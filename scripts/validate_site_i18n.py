@@ -20,7 +20,7 @@ HTML = ROOT / "site/index.html"
 APP = ROOT / "site/app.js"
 GENERATED = ROOT / "site/learning-path-data.js"
 LOCALE_MANIFEST = ROOT / "site/locale-manifest.js"
-LOCALE_TOKENS = {"en", "zh", "es", "ja", "ko", "de", "zh-tw"}
+LOCALE_TOKENS = {"en", "zh", "es", "ja", "ko", "de", "zh-tw", "fr"}
 STATUS = ROOT / "docs/governance/content-status.yaml"
 PUBLIC_COURSE_COVERAGE_TABLES = {
     ROOT / "README-EN.md": {

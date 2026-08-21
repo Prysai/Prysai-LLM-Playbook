@@ -13,12 +13,12 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 MATRIX_PATH = ROOT / "docs/governance/locale-matrix.yaml"
-LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW")
+LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW", "FR")
 TRANSLATION_STATUSES = {"source", "not-started", "in-progress", "candidate", "verified", "stale"}
 CONTENT_STATUSES = {"draft", "candidate", "verified", "production-ready"}
-SUFFIX_RE = re.compile(r"-(EN|ZH|ES|JA|KO|DE|ZHTW)(\.[^/]+)$")
+SUFFIX_RE = re.compile(r"-(EN|ZH|ES|JA|KO|DE|ZHTW|FR)(\.[^/]+)$")
 LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
-LOCALE_FILE_RE = re.compile(r"-(EN|ZH|ES|JA|KO|DE|ZHTW)\.[^/]+$")
+LOCALE_FILE_RE = re.compile(r"-(EN|ZH|ES|JA|KO|DE|ZHTW|FR)\.[^/]+$")
 README_RE = re.compile(r"^(?:README|book/README)(?:-(EN|ZH|ES|JA|KO|DE|ZHTW))?\.md$")
 ROOT_EN_README = "README.md"
 LANGUAGE_SWITCHER_START = "<!-- language-switcher:start -->"
