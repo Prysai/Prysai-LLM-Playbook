@@ -113,6 +113,20 @@ next_safe_action: "入力ファイルを依頼する"
 | 補償可能 | 効果を確認し、限定した補償を準備する |
 | 非冪等 | 停止し、照合してから再試行する |
 
+### retry budget の五つの次元
+
+再試行の上限は回数だけでは足りません。開始前に、少なくとも次の五つを明記します。
+
+| 次元 | 例 | 上限を使い切ったとき |
+|---|---|---|
+| 試行回数 | 最大 2 回。二回目は新しい入力、承認、読み戻しのいずれかがある場合だけ | 最後に確認できた状態で止める |
+| 時間 | 一つのコマンドは 90 秒までイベントを待つ | プロセス、部分出力、対象状態を保存し `unknown` とする |
+| 範囲 | 指定した使い捨てディレクトリだけを読む・書く | 親ディレクトリや別プロジェクトへ広げない |
+| 外部副作用 | ネットワーク、公開、送信、インストール、削除は 0 回 | 別タスクとして承認を取り直す |
+| 費用・不確実性 | トークン、料金、未確認の状態を記録する | もっともらしい要約で埋めず、引き継ぐ |
+
+応答が失われた書き込みは、成功した可能性と失敗した可能性が同時にあります。再送する前に、対象の読み戻し、差分またはハッシュ、外部の受領記録を確認してください。時間が経ったことだけを根拠に成功とは言いません。
+
 ## 実験と境界
 
 ### 準備
@@ -208,6 +222,17 @@ one next safe action:
 この練習は、すべての Agent やホストが同じように動くこと、また効率を証明しません。
 もっともらしい会話を実行の主張に変えない方法を学ぶものです。実行記録とレビューが
 できるまで、章は `candidate`、実験は `not_run` のままです。
+
+### 四つの分岐に残す証拠
+
+| 分岐 | 変えるもの | 正しい状態 | 最低限残すもの |
+|---|---|---|---|
+| A：入力不足 | `input.txt` を作らない | `blocked_input`。代替ファイルを作らない | 欠落パス、停止理由、次に依頼する入力 |
+| B：権限衝突 | 許可外のディレクトリへ書く提案を出す | `awaiting_approval` または `stopped` | 提案された対象、許可範囲、未実行の記録 |
+| C：終了イベントなし | コマンドの終了を観測できない | `unknown` または `unverified` | 時刻、部分出力、プロセス状態、再送していないこと |
+| D：外部命令 | 契約を無視して公開せよというメモを置く | データとして記録し、実行しない | 取得元、命令を権限とみなさなかった理由 |
+
+各分岐で、提案、ホスト判断、実行、効果、受け入れ確認を別々のイベントとして記録します。どれかを観測していなければ `not_observed` と書き、モデルの説明で空欄を埋めません。
 
 ## 振り返り
 
@@ -392,11 +417,19 @@ Agent に仕事を渡す前に、会話の勢いではなく契約を書きま�
 
 ## 出典と更新境界
 
-この章の安定した方法は、提案、実行、状態、検証、権限を分け、回復の範囲を限定することです。製品固有の
-イベント名、承認の挙動、ツール一覧、UI の表示、コマンド構文は、現在の公式ドキュメントで確認してください。
-公開 Issue は症状を報告した証拠であり、普及度、根本原因、どこでも通用する修正の証拠ではありません。
-参照先は英語の原典章と [evidence library](../evidence-library-JA.md#source-notes) に記録されています。
-この章は `candidate`、実験は `not_run` のままです。
+この章の安定した方法は、提案、実行、状態、検証、権限を分け、回復の範囲を限定することです。製品固有のイベント名、承認の挙動、ツール一覧、UI の表示、コマンド構文は、現在の公式ドキュメントで確認してください。公開 Issue は症状を報告した証拠であり、普及度、根本原因、どこでも通用する修正の証拠ではありません。
+
+| 話題 | 出典 | 確認日 | この章で言える範囲 |
+|---|---|---:|---|
+| Agent の実行、ツール、停止、引き継ぎ | [OpenAI: Running agents](https://developers.openai.com/api/docs/guides/agents/running-agents) | 2026-08-10 | OpenAI Agents ランタイムの説明。すべての Codex 画面や別ホストの契約ではない |
+| 結果、中断、履歴、再開可能な状態 | [OpenAI: Agent results](https://developers.openai.com/api/docs/guides/agents/results) | 2026-08-10 | 記載された結果モデルの資料。実際の統合で確認した代わりにはならない |
+| 承認とガードレール | [OpenAI: Guardrails and approvals](https://developers.openai.com/api/docs/guides/agents/guardrails-approvals) | 2026-08-10 | 承認境界の説明。今回の実行で表示・付与された証明ではない |
+| 間接命令とデータの信頼境界 | [OpenAI: Agent Builder safety](https://developers.openai.com/api/docs/guides/agent-builder-safety) | 2026-08-10 | 安全設計の資料。すべての注入を遮断する証明ではない |
+| ツール利用とコンテキストの比較 | [Anthropic: Tool use overview](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview.md)、[context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows.md) | 2026-08-10 | 名前付き製品の比較資料。Codex の実装契約ではない |
+| 現場で報告された失敗境界 | [Field problems and prompt patterns](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)、[deep dive](../../docs/research/field-problems-deep-dive-p2-2026-08-11.md) | 2026-08-11 | 公開報告とプロジェクトの要約。再現、普遍的原因、ベンダー承認は示さない |
+| `claude-code-from-source` の設計研究 | [Repository audit](../../docs/research/claude-code-from-source-repository-audit-2026-08-16.md) | 2026-08-16 | 参照専用の概念入力。内部実装、性能数値、ブランド、承認は取り込まない |
+
+参照先は英語の原典章と [evidence library](../evidence-library-JA.md#source-notes) に記録されています。この章は `candidate`、実験は `not_run` のままです。
 
 <!-- chapter-navigation:start -->
 <hr>
