@@ -2,43 +2,43 @@
 
 # 8장: 정의에서 전달까지
 
-**상태:** `candidate`. 이 장은 증거를 남기는 작업 흐름과 복구 규칙을 설명합니다. 비교 실험은 `not_run`이며 실제 Codex 실행, 고객 업무, 운영 배포를 증명하지 않습니다.
+**상태:** `candidate`. 이 장에서는 증거를 남기는 작업 흐름과 복구 규칙을 설명합니다. 비교 실험은 `not_run`이며, 실제 Codex 실행이나 고객 업무, 운영 환경 배포를 기록한 것이 아닙니다.
 
 ## 이 장에서 해결하는 문제
 
-모델에게 시작을 시키는 일과 다른 사람이 쓸 수 있는 일을 끝내는 일은 다릅니다. 목표가 모호하거나 범위가 커지거나 검사가 다른 파일을 보고 있어도 화면은 정상처럼 보일 수 있습니다.
+모델에게 작업을 시작시키는 일과 다른 사람이 바로 쓸 수 있는 결과를 완성하는 일은 다릅니다. 목표가 모호하거나 범위가 커지거나 검사가 엉뚱한 파일을 보고 있어도 화면은 정상처럼 보일 수 있습니다.
 
 ```text
 define → plan → build → verify → review → deliver → maintain
 ```
 
-각 화살표는 판단 지점입니다. Agent가 완료라고 말해서가 아니라 다른 사람이 확인할 증거가 있을 때만 다음 단계로 갑니다. 이 장을 마치면 편집 전 범위·제외·수용·권한·복구를 쓰고, 큰 요청을 증거가 빠른 수직 슬라이스로 나누며, 마지막 수용 상태를 알고 조건부 재시도를 할 수 있어야 합니다.
+각 화살표는 판단 지점입니다. Agent가 “완료”라고 말해서가 아니라, 다른 사람이 확인할 증거가 있을 때만 다음 단계로 갑니다. 이 장을 마치면 편집 전에 범위·제외 사항·수용 조건·권한·복구 방법을 적고, 큰 요청을 빠르게 증거를 얻을 수 있는 수직 슬라이스로 나누며, 마지막으로 수용한 상태를 확인한 뒤 조건부로 재시도할 수 있어야 합니다.
 
 ## 학습 목표
 
 - 편집 전에 범위, 제외, 수용, 권한, 복구를 적는다.
 - 큰 요청을 이른 증거가 나오는 수직 슬라이스로 나눈다.
 - 마지막으로 수용한 상태를 보존하고 정한 조건에서만 재시도한다.
-- build, runtime, visual, source, security, 사용자 수용 증거를 구분한다.
-- 완료와 미완료를 섞지 않는 handoff를 쓴다.
+- 빌드, 실행 시 동작, 화면, 소스, 보안, 사용자 수용에 관한 증거를 구분한다.
+- 완료한 일과 완료하지 못한 일을 섞지 않고 인수인계 내용을 작성한다.
 
 ## 실제 문제: 보이는 성공 사이에서 workflow가 깨질 수 있다
 
-login, model picker, 시작한 check는 다음에 필요한 state가 빠져도 진행처럼 보일 수 있습니다. 아래의 공개 증상은 이 실행의 재현도 제품 진단도 아닙니다. 중단 뒤 path와 diff를 읽고, browser 뒤 client exchange를 분리하고, 영속 change 전에 새 승인을 요청하는 등 첫 안전 관찰을 고르는 재료입니다.
+로그인, 모델 선택기, 시작된 검사는 다음 단계에 필요한 상태가 빠져 있어도 진행 중인 것처럼 보일 수 있습니다. 아래의 공개 증상은 이번 실행을 재현한 것도, 제품을 진단한 것도 아닙니다. 중단 뒤 경로와 diff를 확인하고, 브라우저 로그인 뒤의 클라이언트 교환을 분리하고, 영구 변경 전에 새 승인을 요청하는 등 첫 번째 안전한 관찰을 고르는 데 쓰는 자료입니다.
 
-## 증거를 운반하는 단계
+## 증거를 이어 가는 단계
 
 | 단계 | 종료 증거 | 멈출 때 |
 |---|---|---|
 | Define | 작업 프로토콜과 수용 조건 | 입력 부족이 범위, 위험, 권한을 바꾼다 |
 | Plan | 슬라이스와 검사가 있는 계획 | 확인 가능한 결과 없는 수평 계획 |
-| Build | diff, 변경 파일, checkpoint | 범위를 벗어나거나 복구가 불명확하다 |
+| Build | diff, 변경 파일, 체크포인트 | 범위를 벗어나거나 복구 방법이 불명확하다 |
 | Verify | 명령, 종료 코드, 출력, 환경 | 멈춤, 잘못된 대상, 증거 부족 |
 | Review | 주장-증거 표와 열린 위험 | 주장이 증거보다 넓다 |
-| Deliver | 요약과 산출물 경로 | published 또는 live라고 과장된다 |
+| Deliver | 요약과 산출물 경로 | 게시됨 또는 운영 중이라고 과장하게 된다 |
 | Maintain | 담당자, 검토, 복구 기록 | 담당자나 복구 방법이 없다 |
 
-종료 조건이 빠지면 `blocked` 또는 `unverified`로 남깁니다. 단계 수가 많아도 빠진 권한, 파일, 검사를 대신하지 못합니다.
+종료 조건이 빠지면 `blocked` 또는 `unverified`로 남깁니다. 단계를 더 늘린다고 해서 빠진 권한, 파일, 검사를 대신할 수는 없습니다.
 
 ## 문구와 증거를 구분하기
 
@@ -50,9 +50,9 @@ login, model picker, 시작한 check는 다음에 필요한 state가 빠져도 �
 | 페이지가 보기 좋다 | viewport와 기준을 남긴 렌더 검사 | 수요, 완전한 접근성, 배포 |
 | 기능을 출시했다 | 저장소 또는 배포 상태와 후속 검사 | 모든 사용자 도달 |
 
-빌드 통과는 유용하지만 실행, 시각, 보안, 사용자 수용 증거가 자동으로 되지는 않습니다.
+빌드 통과는 유용하지만, 실행 결과나 화면 품질, 보안, 사용자 수용에 관한 증거가 자동으로 생기는 것은 아닙니다.
 
-## 행동 전에 정의하고 복구하기
+## 행동하기 전에 정의하고 복구 방법을 정하기
 
 ```text
 owner: content-maintainer
@@ -65,60 +65,59 @@ stop_when: 범위, 권한, 대상, 복구 출처가 빠진다
 rollback: 기록한 편집 전 복사본 또는 clean checkpoint로 돌아간다
 ```
 
-`모든 데이터 → 모든 API → 모든 UI → 통합 → 테스트` 같은 수평 계획 대신, `한 입력 → 가장 작은 변경 → 관찰 가능한 행동 → 집중 검사`라는 수직 슬라이스를 사용합니다. 쓰기, 네트워크, 인증, 설치, 재시작, 배포, 외부 메시지는 필요하고 명시적으로 허가됐을 때만 더합니다.
+`모든 데이터 → 모든 API → 모든 UI → 통합 → 테스트` 같은 수평 계획 대신, `한 입력 → 가장 작은 변경 → 관찰 가능한 행동 → 집중 검사`라는 수직 슬라이스를 사용합니다. 쓰기, 네트워크, 인증, 설치, 재시작, 배포, 외부 메시지는 정말 필요하고 범위가 명시적으로 허가된 경우에만 추가합니다.
 
-재시도 전에는 `failed_stage`, `failure_class`, `last_accepted_checkpoint`, `changes_since_checkpoint`, `retry_condition`, `fallback`을 남깁니다. “계속해”는 복구 계획이 아닙니다. 명령이 `Working`에 머물면 침묵은 성공이 아니라 관찰입니다.
+재시도 전에는 `failed_stage`, `failure_class`, `last_accepted_checkpoint`, `changes_since_checkpoint`, `retry_condition`, `fallback`을 남깁니다. “계속해”는 복구 계획이 아닙니다. 명령이 `Working`에 머물면 아무 말이 없는 상태도 성공이 아니라 하나의 관찰 결과입니다.
 
 ## 실제 중단에 대비하는 복구 패턴
 
-공개 사용자 보고서는 유용한 증상을 보여 줄 수 있지만 공식 원인이나 로컬 재현을 대신하지는
-않습니다. 제품 내부를 추측하기 위해서가 아니라 첫 번째 안전한 점검을 고르기 위해 사용하세요.
+공개 사용자 보고서는 유용한 증상을 보여 줄 수 있지만 공식적인 원인 분석이나 로컬 재현을 대신하지는
+않습니다. 제품 내부를 추측하기 위해서가 아니라 첫 번째 안전한 점검을 고르기 위해 사용합니다.
 
-### capacity 또는 availability 중단
+### 용량 또는 가용성으로 인한 중단
 
-**관찰된 증상:** 선택한 model을 사용할 수 없게 되어 task가 멈춥니다.
+**관찰된 증상:** 선택한 모델을 사용할 수 없게 되어 작업이 멈춥니다.
 
-**첫 번째 안전한 대응:** 그 task에 의존하는 다음 prompt를 멈추고 diff, output, 마지막으로
-수용한 checkpoint를 보관합니다. target artifact가 부분 state인지 확인한 다음 한 번의 bounded
-retry, 허용된 다른 surface, handoff 중 하나를 선택합니다.
+**첫 번째 안전한 대응:** 그 작업에 의존하는 후속 프롬프트를 멈추고 diff, 출력, 마지막으로
+수용한 체크포인트를 보관합니다. 대상 산출물이 일부만 바뀐 상태인지 확인한 다음, 범위를 제한한
+재시도 한 번, 허용된 다른 경로, 인수인계 중 하나를 선택합니다.
 
-**말하면 안 되는 것:** queue의 task가 끝났다고, model만 원인이었다고, 또는 “계속”을 반복하면
-없던 evidence가 복구됐다고 말할 수 없습니다.
+**말하면 안 되는 것:** 큐에 있던 작업이 끝났다고, 모델만 원인이었다고, 또는 “계속”을 반복하면
+없던 증거가 복구됐다고 말할 수 없습니다.
 
-### check가 `Working`에 머무름
+### 검사가 `Working`에 머무름
 
-**관찰된 증상:** formatter, test, analysis가 완료 signal을 내지 않습니다.
+**관찰된 증상:** 포매터, 테스트, 분석이 완료 신호를 내지 않습니다.
 
-**첫 번째 안전한 대응:** 미리 정한 대기 시간과 interruption rule을 적용하고 command, directory,
-elapsed time, output, process state를 남깁니다. diff를 확인한 뒤 complete, partial, failed,
+**첫 번째 안전한 대응:** 미리 정한 대기 시간과 중단 규칙을 적용하고 명령, 디렉터리,
+경과 시간, 출력, 프로세스 상태를 남깁니다. diff를 확인한 뒤 complete, partial, failed,
 unknown 중 하나로 분류합니다.
 
 **말하면 안 되는 것:** silence가 pass를 뜻하지 않으며 화면에 error가 없다고 child process가
 끝난 것은 아닙니다.
 
-### browser login은 성공했지만 client가 뒤에서 실패함
+### 브라우저 로그인은 성공했지만 클라이언트가 뒤에서 실패함
 
-**관찰된 증상:** browser는 login 성공을 표시하지만 client는 token exchange나 첫 request에서 실패합니다.
+**관찰된 증상:** 브라우저는 로그인 성공을 표시하지만 클라이언트는 토큰 교환이나 첫 요청에서 실패합니다.
 
-**첫 번째 안전한 대응:** authorization page, callback, client exchange, 처음 성공한 request를
-각각 기록합니다. 빠진 다음 state만 점검합니다.
+**첫 번째 안전한 대응:** 인증 페이지, 콜백, 클라이언트 교환, 처음 성공한 요청을 각각 기록합니다.
+빠진 다음 상태만 점검합니다.
 
 **말하면 안 되는 것:** browser 성공은 client authentication, account entitlement, connector approval,
 tool availability의 증거가 아닙니다.
 
-### verify가 영속 change를 제안함
+### 검증이 영구 변경을 제안함
 
-**관찰된 증상:** Agent가 check를 통과시키기 위해 reinstall, restart, environment 변경을 제안합니다.
+**관찰된 증상:** Agent가 검사를 통과시키기 위해 재설치, 재시작, 환경 변경을 제안합니다.
 
-**첫 번째 안전한 대응:** 제안된 side effect, target, 이를 촉발한 artifact, 가능한 recovery를
-명시하고 멈춥니다. local edit, test, installation, restart, deployment, live verification을 나누고
-영속 change 전에는 새 판단을 요청합니다.
+**첫 번째 안전한 대응:** 제안된 부작용, 대상, 이를 촉발한 산출물, 가능한 복구 방법을 명시하고 멈춥니다.
+로컬 편집, 테스트, 설치, 재시작, 배포, 운영 환경 확인을 나누고 영구 변경 전에는 새 판단을 요청합니다.
 
-**말하면 안 되는 것:** “작동하는지 확인해”는 installation, network write, publish를 허용하는 말이 아닙니다.
+**말하면 안 되는 것:** “작동하는지 확인해”는 설치, 네트워크 쓰기, 게시를 허용하는 말이 아닙니다.
 
-## 먼저 작고 완전한 slice 하나 끝내기
+## 먼저 작고 완전한 슬라이스 하나 끝내기
 
-처음부터 site, code, release로 시작할 필요는 없습니다. 직접 확인할 수 있는 짧은 글, local README 하나, 이미 사용 허가된 공개 source 묶음을 고르세요. 목표는 model이 “많이 하게” 하는 것이 아니라 define부터 handoff까지 보이는 한 바퀴를 끝내는 것입니다.
+처음부터 사이트, 코드, 릴리스로 시작할 필요는 없습니다. 직접 확인할 수 있는 짧은 글, 로컬 README 하나, 이미 사용 허가된 공개 소스 묶음을 고르세요. 목표는 모델이 “많이 하게” 하는 것이 아니라 정의부터 인수인계까지 보이는 한 바퀴를 끝내는 것입니다.
 
 ```text
 result: 120자 이내 설명으로 새 reader가 첫 단계를 찾게 한다.
@@ -129,23 +128,23 @@ check: before/after text를 보관하고 “첫 단계를 찾는가”를 한 �
 handoff: 바꾼 것, 바꾸지 않은 것, check 결과, 남은 unknown.
 ```
 
-일곱 단계를 통과합니다. reader와 result를 정의하고, 한 변경을 plan하며, 원문을 checkpoint로 보관하고, 편집하고, 전후를 비교하고, 새 시각으로 review한 뒤, 다음 사람이나 내일의 자신에게 handoff합니다. 더 많은 자료나 external action이 필요하면 `blocked`에서 멈춥니다. 닫힌 것처럼 보이기 위해 permission을 넓히지 않습니다.
+일곱 단계를 통과합니다. 독자와 결과를 정의하고, 한 가지 변경을 계획하고, 원문을 체크포인트로 보관하고, 편집하고, 전후를 비교하고, 새로운 시각으로 검토한 뒤 다음 사람이나 내일의 자신에게 인수인계합니다. 더 많은 자료나 외부 행동이 필요하면 `blocked`에서 멈춥니다. 끝난 것처럼 보이게 하려고 권한을 넓히지 않습니다.
 
 ### 두 시도가 비교 가능한 때
 
-“model에게 바로 편집을 요청”과 “먼저 protocol을 작성”을 비교하려면 원문, goal, allowed action, time limit, check rule을 고정합니다. first output, 실제 시간, rework, diff, check result, unknown을 남깁니다. text, model, tool, permission, environment가 바뀌면 `not_comparable`입니다. 한 번 더 빠르거나 보기 좋은 결과는 일반 효율이나 model 우위를 증명하지 않습니다.
+“모델에게 바로 편집을 요청”하는 방법과 “먼저 프로토콜을 작성”하는 방법을 비교하려면 원문, 목표, 허용된 행동, 시간 제한, 검사 규칙을 고정합니다. 첫 출력, 실제 시간, 재작업, diff, 검사 결과, 미확인 사항을 남깁니다. 텍스트, 모델, 도구, 권한, 환경이 바뀌면 `not_comparable`입니다. 한 번 더 빠르거나 보기 좋은 결과가 나왔다고 일반적인 효율이나 모델의 우수성을 증명할 수는 없습니다.
 
 ## 실험과 한계
 
 ### 준비
 
-remote, secret, 고객 데이터가 없는 버려도 되는 폴더를 만듭니다. 원문, 수용 질문, local checkpoint를 저장하고 대기 한계와 안전한 중단 절차를 먼저 정합니다. install, sign-in, 제3자 전송은 하지 않습니다.
+원격 연결, 비밀 정보, 고객 데이터가 없는 버려도 되는 폴더를 만듭니다. 원문, 수용 질문, 로컬 체크포인트를 저장하고 대기 한계와 안전한 중단 절차를 먼저 정합니다. 설치, 로그인, 제3자 전송은 하지 않습니다.
 
 ### 작업
 
-작은 문서 작업을 직접 요청과 프로토콜·checkpoint·집중 검사 방식으로 비교합니다. 첫 출력, diff, 명령, 종료 코드, 실제 시간, 재작업을 남깁니다. 없는 시간이나 비용은 추정하지 말고 `unavailable`로 적습니다.
+작은 문서 작업을 직접 요청하는 방식과 프로토콜·체크포인트·집중 검사 방식을 사용하는 방식으로 비교합니다. 첫 출력, diff, 명령, 종료 코드, 실제 시간, 재작업을 남깁니다. 없는 시간이나 비용은 추정하지 말고 `unavailable`로 적습니다.
 
-시간 초과, 입력 변경, 권한 차단, 로컬 쓰기 결과 불명 중 하나를 일으킵니다. 중단한 시도를 보존하고 재시도 전 대상을 읽습니다. 고정 조건이 바뀌면 `not_comparable`로 표시합니다. 작은 과제 몇 개로 일반 효율, 품질, 모델 순위를 증명할 수 없고, 링크 검사가 학습, 공개, 채택을 증명하지도 않습니다.
+시간 초과, 입력 변경, 권한 차단, 로컬 쓰기 결과 불명 중 하나를 일으킵니다. 중단한 시도를 보존하고 재시도 전 대상을 읽습니다. 고정 조건이 바뀌면 `not_comparable`로 표시합니다. 작은 과제 몇 개로 일반적인 효율, 품질, 모델 순위를 증명할 수 없고, 링크 검사가 학습, 공개, 채택을 증명하지도 않습니다.
 
 ### 증거
 
@@ -157,10 +156,9 @@ remote, secret, 고객 데이터가 없는 버려도 되는 폴더를 만듭니�
 - diff가 뒷받침하는 주장과 runtime 또는 reader가 필요한 주장은 무엇인가?
 - 어떤 side effect가 새롭고 제한된 승인을 필요로 했는가?
 
-## checkpoint를 가지고 한 바퀴 돌기
+## 체크포인트를 가지고 한 바퀴 돌기
 
-짧은 작업도 중간에 무엇이 확정됐는지 남겨야 합니다. 다음 사람이 conversation을 읽지 않아도
-이어갈 수 있는지가 기준입니다.
+짧은 작업도 중간에 무엇이 확정됐는지 남겨야 합니다. 다음 사람이 대화 기록을 읽지 않아도 이어갈 수 있는지가 기준입니다.
 
 ```text
 CP0: original text, target path, 허용 scope, rollback source
@@ -170,9 +168,9 @@ CP3: named check 실행 또는 stop; output과 limit 보관
 CP4: claim과 evidence 검토; handoff와 next action 작성
 ```
 
-각 checkpoint에 마지막으로 확인한 것, 바뀌었을 수 있는 file, 부족한 evidence, 다음 안전한
-행동 하나를 적습니다. `CP2`가 없으면 model이 “바꿨다”고 해도 change를 delivery에 넣지 않습니다.
-`CP3`가 timeout되면 silence를 pass라고 하지 않고 output, process state, diff를 남겨
+각 체크포인트에 마지막으로 확인한 것, 바뀌었을 수 있는 파일, 부족한 증거, 다음 안전한
+행동 하나를 적습니다. `CP2`가 없으면 모델이 “바꿨다”고 해도 변경을 전달 내용에 넣지 않습니다.
+`CP3`가 timeout되면 침묵을 통과로 보지 않고 출력, 프로세스 상태, diff를 남겨
 `unverified` 또는 `blocked`로 둡니다.
 
 ## 주장마다 검사를 고르기
@@ -184,10 +182,10 @@ CP4: claim과 evidence 검토; handoff와 next action 작성
 | page가 보인다 | recorded viewport의 render review | accessibility, demand, deployment |
 | external change를 보냈다 | target 쪽 read-back | 모든 사람이 볼 수 있다는 것 |
 
-하나의 green check를 모든 주장에 쓰지 않습니다. 특히 diff는 change의 증거일 뿐 user value나
-publish의 증거가 아닙니다. evidence가 없으면 문장을 좁힙니다.
+하나의 통과한 검사 결과를 모든 주장에 재사용하지 않습니다. 특히 diff는 변경의 증거일 뿐 사용자 가치나
+게시의 증거가 아닙니다. 증거가 없으면 문장을 더 좁게 씁니다.
 
-## 다음 사람을 위한 짧은 handoff
+## 다음 사람을 위한 짧은 인수인계
 
 ```text
 status: passed | partial | blocked | unverified
@@ -199,18 +197,18 @@ not proven: reader usefulness, runtime, visual, security 등
 next: 안전한 행동 하나
 ```
 
-이는 “전부 완료”보다 짧아도 더 강한 handoff입니다. target, authority, recovery source가
-불명확하면 다음 행동은 edit가 아니라 질문 또는 read-only check입니다. 실행 기록과 review가
+이는 “전부 완료”보다 짧아도 더 강한 인수인계입니다. 대상, 권한, 복구 출처가
+불명확하면 다음 행동은 편집이 아니라 질문 또는 읽기 전용 검사입니다. 실행 기록과 검토가
 생기기 전까지 이 장과 비교 실험은 `candidate`, `not_run`입니다.
 
-## 전이 과제
+## 응용 과제
 
-같은 workflow를 비기술 작업으로 옮깁니다. 자신의 짧은 글을 고치거나, 작은 source 목록을 확인하거나, language practice를 계획합니다. goal, 허용 input, 금지 side effect, checkpoint, handoff는 유지합니다. 수용 조건만 domain에 맞게 바꿉니다. 예를 들어 reader의 이해, research의 source와 unknown, language practice의 지연된 무도움 recall입니다. 이 연습이 증명하지 않는 것도 적습니다.
+같은 워크플로를 비기술 작업에 적용합니다. 자신의 짧은 글을 고치거나, 작은 소스 목록을 확인하거나, 언어 연습을 계획합니다. 목표, 허용 입력, 금지된 부작용, 체크포인트, 인수인계는 유지합니다. 수용 조건만 분야에 맞게 바꿉니다. 예를 들어 독자의 이해, 조사 자료와 미확인 사항, 언어 연습에서 시간을 둔 뒤 도움 없이 떠올리는 능력입니다. 이 연습으로 증명할 수 없는 것도 적습니다.
 
-## worked case: Markdown chapter 하나 검토하기
+## 예시: Markdown 장 하나 검토하기
 
-production repository가 아니라 disposable copy에서 일곱 단계를 한 바퀴 도는 예입니다. 목표는 “글을
-더 좋아 보이게” 하는 것이 아니라 reader가 local start step과 check 방법을 구분해 읽게 하는 것입니다.
+운영 리포지터리가 아니라 버려도 되는 복사본에서 일곱 단계를 한 바퀴 도는 예입니다. 목표는 “글을
+더 좋아 보이게” 하는 것이 아니라 독자가 로컬에서 시작하는 단계와 검사 방법을 구분해 읽게 하는 것입니다.
 
 ```text
 Reader: 처음 local copy를 연 사람
@@ -222,20 +220,20 @@ Acceptance: 두 heading과 지정한 local command text가 있다. broken local 
 Rollback: pre-edit copy와 baseline diff
 ```
 
-이 definition을 쓸 수 없다면 build를 시작하지 않습니다. “더 professional하게”는 reader, target,
-acceptance, non-goal 어느 것도 정하지 않았으므로 task가 아닙니다.
+이 정의를 쓸 수 없다면 빌드를 시작하지 않습니다. “더 전문적으로”라는 말은 독자, 대상,
+수용 조건, 비목표를 어느 것도 정하지 않았으므로 작업 요청이 아닙니다.
 
-### Capability decision과 plan
+### 기능 선택과 계획
 
-이 case에 필요한 것은 새 Skill, browser automation, external source가 아니라 local file을 read하고
-text edit 하나를 review하는 능력입니다.
+이 사례에 필요한 것은 새 Skill, 브라우저 자동화, 외부 소스가 아니라 로컬 파일을 읽고
+텍스트 한 곳을 편집한 뒤 검토하는 능력입니다.
 
-1. target과 acceptance note를 read하고 missing heading 또는 command를 report한다.
-2. edit 전에 changed line, expected diff, check를 proposal로 보여 준다.
-3. approval 뒤 target만 edit하고 diff와 existing local check를 보관한다.
+1. 대상과 수용 조건을 읽고 빠진 제목이나 명령을 보고한다.
+2. 편집 전에 변경할 줄, 예상 diff, 검사를 제안으로 보여 준다.
+3. 승인 뒤 대상만 편집하고 diff와 기존 로컬 검사 결과를 보관한다.
 
-plan에 다른 file, install, network, publish가 필요하면 같은 slice가 아닙니다. 원인을 기록하고 scope를
-넓히지 말고 stop하거나 별도 decision으로 나눕니다.
+계획에 다른 파일, 설치, 네트워크, 게시가 필요하면 같은 슬라이스가 아닙니다. 원인을 기록하고 범위를
+넓히지 않은 채 멈추거나 별도의 결정으로 나눕니다.
 
 ### Stage exits와 recovery
 
