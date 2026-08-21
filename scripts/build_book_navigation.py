@@ -44,7 +44,10 @@ def path_for(item: dict[str, Any], locale: str) -> str:
 
 
 def title_for(item: dict[str, Any], locale: str) -> str:
-    return str(item.get(f"title_{locale.lower()}") or item.get("title_en") or "")
+    # The locale suffix is not always the same as the navigation field suffix:
+    # Traditional Chinese is stored as ``zh-tw`` rather than ``zhtw``.
+    field_locale = {"ZHTW": "zh-tw"}.get(locale, locale.lower())
+    return str(item.get(f"title_{field_locale}") or item.get("title_en") or "")
 
 
 def relative_href(source: Path, target: Path) -> str:
