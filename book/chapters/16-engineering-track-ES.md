@@ -1,49 +1,49 @@
 <!-- content_id: chapter-16-engineering-track | locale: ES | language: es | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
-# Capítulo 16: ruta de ingeniería, de la idea al software fiable
+# Capítulo 16: Ruta de ingeniería: de la idea a un software fiable
 
-**Estado:** `candidate`. **Experimento:** `draft / not_run`. Este capítulo enseña un ciclo de ingeniería; los informes de campo no son reproducciones locales ni confirmaciones universales de causa raíz.
+**Estado:** `candidate`. **Experimento:** `draft / not_run`. Este capítulo enseña un ciclo de trabajo de ingeniería; los informes de campo no son reproducciones locales ni confirmaciones de causa raíz para todas las versiones.
 
 ## El problema que resuelve este capítulo
 
-Las tareas de ingeniería invitan a escribir código antes de aclarar requisitos, decisiones de arquitectura, pruebas, comportamiento en ejecución y rollback. Un parche puede compilar y pasar pruebas unitarias sin que funcione el camino de usuario, el manejo de errores, las versiones de dependencias, el despliegue o la recuperación.
+Las tareas de ingeniería invitan a escribir código antes de aclarar requisitos, decisiones de arquitectura, diseño de pruebas, comportamiento en ejecución y cómo volver atrás. Un parche puede compilar y pasar las pruebas unitarias sin que funcionen el recorrido del usuario, el manejo de errores, las versiones de dependencias, el despliegue o la recuperación.
 
-> Construir, pasar unit tests, pasar integración, comportarse bien en ejecución, ser aceptado por usuarios y estar listo para producción son afirmaciones distintas.
+> Que el build termine, que pasen las pruebas unitarias y de integración, que el programa se comporte bien en ejecución, que las personas usuarias lo acepten y que esté listo para producción son afirmaciones distintas.
 
-Un Skill de ingeniería debe ser un ciclo con evidencia: cada etapa tiene condición de entrada, corte mínimo, rutas de fallo y evidencia de salida.
+Un Skill de ingeniería debe guiar un ciclo respaldado por evidencia: cada etapa tiene una condición de entrada, un incremento mínimo, rutas de fallo y un comprobante de salida.
 
 ## El ciclo de ingeniería
 
 ```text
-definir problema → especificar y aceptar → planificar cortes
-→ implementar de forma incremental → checks y pruebas
+definir el problema → especificar y fijar la aceptación → planificar incrementos
+→ implementar de forma incremental → comprobaciones y pruebas
 → verificar en ejecución → revisar y simplificar
-→ liberar y recuperar → mantener y probar regresiones
+→ publicar y poder revertir → mantener y probar regresiones
 ```
 
 | Etapa | Entrada | Evidencia mínima de salida |
 |---|---|---|
 | Definición | Problema y alcance | Enunciado repetible |
-| Especificación | Límites, entradas, salidas y errores | Aceptación y no objetivos |
-| Plan | Dependencias y riesgos | Cortes verificables por separado |
-| Implementación | Corte actual y línea base | Diff pequeño y explicable |
+| Especificación | Límites, entradas, salidas y errores | Criterios de aceptación y no objetivos |
+| Plan | Dependencias y riesgos | Incrementos que se puedan verificar por separado |
+| Implementación | Incremento actual y línea base | Diff pequeño y explicable |
 | Pruebas | Se pueden ejercitar comportamiento y fallos | Comandos, resultados y explicación |
 | Ejecución | Entorno arrancable y datos representativos | Versión, logs, respuesta o pantalla |
 | Release | Revisión y rollback disponibles | Registro, monitorización y ensayo de rollback |
 
 ## Especifica antes de implementar
 
-Para «añade exportación», pregunta formato, rango de datos, permiso, comportamiento de archivo parcial, política de sobrescritura y aceptación final. Una tarea debe indicar acción de usuario, restricciones de entrada, éxito, error, límites, no objetivos, rendimiento y seguridad, señales observables y método de aceptación. Un Skill no puede sustituir una decisión con un valor por defecto silencioso.
+Para «añade exportación», pregunta por el formato, el rango de datos, los permisos, el comportamiento con archivos parciales, la política de sobrescritura y los criterios finales de aceptación. Una tarea debe indicar la acción de la persona usuaria, las restricciones de entrada, las salidas de éxito y error, los límites, los no objetivos, las condiciones de rendimiento y seguridad, las señales observables y cómo se comprobará. Un Skill no puede sustituir una decisión por un valor predeterminado silencioso.
 
 Trabaja guiado por fuentes, dudas e incrementos: documentación oficial, tipos, código actual o resultado reproducible son autoridad para APIs y versiones; los blogs y memoria del modelo son pistas. Comprueba lo que tipos y pruebas unitarias no prueban: red, base de datos, navegador, permisos, concurrencia, zonas horarias y despliegue. Cambia un corte explicable cada vez y conserva diff y punto de rollback.
 
 ## Ejecución, parada y recuperación
 
-La evidencia de build dice que se puede compilar; la de prueba dice que pasaron aserciones; la de ejecución necesita comando de inicio, versiones, valores de entorno, entradas reales, respuestas o pantallas, logs y rutas de error. Producción añade seguridad, rendimiento, migración, monitorización, rollback y aceptación de usuarios.
+El comprobante del build dice que se puede compilar; el de las pruebas, que pasaron unas aserciones concretas; el de ejecución necesita el comando de arranque, las versiones, los valores del entorno, las entradas reales, las respuestas o pantallas, los logs y las rutas de error. La preparación para producción añade seguridad, rendimiento, migración, monitorización, reversión y aceptación de las personas usuarias.
 
-Sin salida hasta el timeout, dependencia de prueba ausente, worktree desconocido, solicitud de credenciales reales, cambio persistente, publicación, despliegue o reinicio son señales de parar y revisar alcance. No fuerces reinstalaciones ni amplíes permisos para obtener un verde; usa entorno aislado, doble de prueba o check estático si no hay autorización.
+Si no hay salida hasta que vence el tiempo de espera, falta una dependencia de prueba, el estado del worktree es desconocido, se piden credenciales reales o se propone un cambio persistente, publicar, desplegar o reiniciar, detente y revisa el alcance. No fuerces reinstalaciones ni amplíes permisos para obtener un verde; si no hay autorización, usa un entorno aislado, un doble de prueba o una comprobación estática.
 
-## Práctica y límite
+## Práctica y límites
 
 Elige una función de bajo riesgo, por ejemplo deduplicar una lista local y escribir JSON. Prepara registros normales, entrada vacía, duplicados e inválidos. Compara una ronda con solo objetivo frente a una ronda con problema, aceptación, no objetivos, cortes y matriz de pruebas. En ambas, ejecuta checks estáticos, unit tests, una ejecución local, entrada vacía e inválida; conserva contratos, diffs, comandos, códigos de salida, logs, versión, entradas y puntos de rollback.
 
