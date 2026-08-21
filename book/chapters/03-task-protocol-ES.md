@@ -1,6 +1,6 @@
 <!-- content_id: chapter-03-task-protocol | locale: ES | language: es | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-15 -->
 
-# Capítulo 3: Convierte un deseo en un protocolo de tarea
+# Capítulo 3: Convierte una petición vaga en un protocolo de trabajo
 
 ![Pizarra didáctica: de una petición, pasando por alcance y comprobación, a una entrega acotada](../../assets/teaching/task-to-evidence-red-black.svg)
 
@@ -53,7 +53,7 @@ para ver alcance y fecha de acceso de cada fuente.
 ## El protocolo de ocho partes
 
 ```text
-objetivo → contexto → entradas → restricciones → acciones permitidas → aceptación
+objetivo → contexto → entradas → restricciones → acciones permitidas → criterios de aceptación
          → fallo y parada → entrega
 ```
 
@@ -132,7 +132,7 @@ Un protocolo puede autorizar A0–A2 y dejar A3 para confirmación; puede autori
 una prueba sin autorizar una instalación. Nunca uses «haz lo que haga falta»
 para ocultar un cambio de permisos.
 
-### 6. Aceptación: relaciona cada declaración con evidencia
+### 6. Criterios de aceptación: relaciona cada declaración con evidencia
 
 Escribe primero la declaración y después el material que la sostendría:
 
@@ -192,7 +192,7 @@ una dependencia ausente.
 
 <a id="core-task-contract-end"></a>
 
-## El protocolo útil más pequeño
+## El protocolo mínimo que resulta útil
 
 <!-- starter-task-contract:start -->
 
@@ -300,7 +300,7 @@ todavía no puedes inferir de un solo intento.
 Úsalo antes de una lección. «Principiante» dicho por la persona es menos útil
 que un intento observado.
 
-### 2. Haz que recupere antes de revelar
+### 2. Haz que recuerde antes de mostrar la respuesta
 
 ```text
 Enséñame una unidad pequeña necesaria para [pedir comida en español]. Mantén la explicación
@@ -350,7 +350,7 @@ Dame una señal de repaso guardable, fecha en que debería intentarlo y evidenci
 El modelo puede preparar una señal; no puede afirmar que conservaste la habilidad
 o que hay un recordatorio externo sin evidencia.
 
-### 6. Haz la comprobación diferida y no vista antes de afirmar retención
+### 6. Haz una prueba nueva y diferida antes de afirmar que se retuvo
 
 ```text
 Esta es mi revisión programada de [habilidad objetivo]. No muestres la lección guardada ni
@@ -400,7 +400,7 @@ y el [informe de casos de agentes de programación](../evidence-library-ES.md#so
 registra síntoma y entorno, haz la comprobación segura más pequeña, detente en
 el límite y declara solo lo que sostenga la evidencia.
 
-## Varios agentes: el relevo es otro protocolo
+## Varios agentes: la entrega también necesita un protocolo
 
 Delegar no elimina responsabilidad del agente principal. Da a cada trabajador
 una tarea separada y una forma fija:
