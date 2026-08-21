@@ -1,4 +1,4 @@
-<!-- content_id: chapter-09-verification-and-recovery | locale: JA | language: ja | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
+<!-- content_id: chapter-09-verification-and-recovery | locale: JA | language: ja | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-20 -->
 
 # 第 9 章：検証、疑い、復旧
 
@@ -8,15 +8,7 @@
 
 Agent は、誤りや範囲外の変更、実行していない処理、別の環境で得た結果についても、もっともらしい完了報告（summary）を書けます。何でも信じるのも、何も信じないのも解決策ではありません。報告を個別の主張（claim）に分け、宣言した範囲（scope）を支えられる最小限の証拠を割り当てます。
 
-| 主張（claim） | 最低限の証拠 | それだけでは証明できないこと |
-|---|---|---|
-| ファイルが変わった | 差分（diff）、パス、ハッシュ | 変更が正しい、または完全であること |
-| チェックが通った | コマンド、作業ディレクトリ、終了コード、重要な出力 | 別の環境でも同じように動くこと |
-| アプリケーションが動く | 実際の起動と重要な経路の観察 | 利用者に役立つこと、安全性、運用投入の準備 |
-| ページが正しく見える | ビューポートを記録した表示確認 | アクセシビリティ全体、バックエンド、成約率 |
-| 事実が公式資料にある | 公式 URL、確認日、適用範囲、確認担当者 | このアカウントの権限やローカル設定 |
-
-弱い証拠一つで、他の証拠を代用することはできません。ビルド成功は実行時の動作を、スクリーンショットは需要を、公式 URL は自分のアクセス権を証明しません。
+弱い証拠一つで、別の種類の証拠を代用することはできません。ビルド成功は実行時の動作を、スクリーンショットは需要を、公式 URL は自分のアクセス権を証明しません。
 
 ## 学習目標
 
@@ -26,7 +18,95 @@ Agent は、誤りや範囲外の変更、実行していない処理、別の�
 
 差分、テスト出力、読者の観察がなくても、返答は「完了した」「すべてのテストに通った」「読者は理解した」と言えてしまいます。これは特定のモデルを診断する話ではありません。依頼、承認、ツール、操作、結果、レビューという流れのうち、根拠が最初に欠けた段階を確認することが大切です。
 
-## 最初の切れ目を見つける
+## 三つの Windows 報告：signal は evidence ではない
+
+次のケースは、2026-08-12 に確認した公開 GitHub 報告から取った教材上の入力です。
+ローカルでの再現、公式の診断、すべての Windows 環境に当てはまる不具合の宣言では
+ありません。症状を読んだら、必ず「何を証明し、何を証明しないか」を分けます。
+
+| 公開された症状 | ここから学べること | 最初の限定的な確認 | その前に止めること |
+|---|---|---|---|
+| Codex CLI の長い出力を terminal の scrollback から戻せないという報告（[#35335](https://github.com/openai/codex/issues/35335)） | viewport は表示であり、永続的な evidence ではない | response を名前付き file に保存するか、同じ範囲を再生成して CLI、terminal、prompt scope を記録する | 表示がないことから Agent や repository data の消失を断定する |
+| TUI composer に貼った non-BMP 文字が消えるという報告（[#37578](https://github.com/openai/codex/issues/37578)） | composer の見た目は入力の完全性ではない | 無害な fixture で意図した文字列と受信した文字列を比較してから、重要な依頼を送る | 入力が保存されていないまま edit、commit、送信を行う |
+| 長い checkpoint ref で Windows Git が `bad ref` や `Filename too long` を返すという報告（[#37559](https://github.com/openai/codex/issues/37559)） | Agent 内部の状態と通常の project state は同じではない | 許可された診断範囲で `git status`、`git show-ref`、`git fsck --full`、`git worktree list`、正確な ref path を記録する | backup と authority なしに `.git` を削除、設定変更、fetch、ref 修復を行う |
+
+プロジェクトの [Windows input and evidence field problems](../../docs/research/field-problems-input-and-evidence-p3-2026-08-11.md)
+には、報告の version、evidence boundary、転用できる表があります。実務上の規則は、
+**retry の前に最小の durable artifact を保存する**ことです。output file、受信入力の比較、
+diff、hash、command log、redacted handoff のいずれかで構いません。community workaround は
+triage の手がかりにはなりますが、公式の修正や永続環境変更の許可ではありません。
+
+### 現場ケース：command が終わっても claim を review できない
+
+[FC-EVIDENCE-01](../../docs/research/field-case-hidden-verification-output-2026-08-12.md) は、
+実行したことと監査できる evidence を分けるための bounded case です。参照している issue
+（#34951）は open のままで、公開された maintainer diagnosis はなく、このプロジェクトでも
+再現していません。必要な output が隠れている、または残っていないなら、すでに許可された
+exit、event、diff、artifact、hash、read-back だけを保存します。監査 claim は
+`unverified` とし、欠けている channel を書きます。表示を取り戻すために consequential action
+を再実行したり、安全制御を弱めたり、success-shaped state から結果を推測したりしません。
+
+<a id="core-evidence-recovery"></a>
+
+## 1. claim を evidence に対応させる
+
+まず言おうとしている一文を書き、その scope で別の人が受け入れるために何を見ればよいかを考えます。
+
+| Claim | その scope を支える最低限の evidence | Claim の外に残ること |
+|---|---|---|
+| file が変わった | diff、named path、hash | change が正しい、または完全であること |
+| check が通った | 正確な command、working directory、exit code、relevant output | 別の environment が同じように動くこと |
+| application が動く | 実際の start と named critical-path observation | visual quality、security、user value、production readiness |
+| page の見た目が正しい | 記録した viewport の browser または screenshot review | accessibility、全 breakpoint、backend、conversion |
+| fact は公式 source に基づく | authoritative URL、access date、scope、review owner | 現在の account や runtime が同じ capability を持つこと |
+| secret を公開していない | scoped scan、environment check、boundary statement | 未知の外部 system に届いていないこと |
+| result が user に役立つ | defined sample、task、user-acceptance record | 市場での成功や将来の効果 |
+| production-ready である | quality、security、maintenance、release、rollback の各 gate | 未テストの environment や owner のない将来変更 |
+
+### Lab 013 の前に：claim-to-evidence 表を書く
+
+[Lab 013: auditable vertical slice](../labs/lab-013-l3-vertical-slice-JA.md) を始める前に、
+「done」を確認可能な行へ分けます。各行は、宣言した scope に入る evidence だけで支えます。
+
+```text
+assertion: 何を正確に主張するか
+scope: file、command、run、version、environment のどこまでか
+evidence: path、command output、log、screenshot、source、review record
+status: verified / partial / unverified / blocked / not_run
+gap_or_next_check: 何が足りず、最小の追加確認は何か
+```
+
+一つの diff で test pass を証明したり、signed-in page で token exchange や外部 action の成功を
+証明したりしません。evidence がなければ `unverified`、`blocked`、`not_run` のどれかを付け、
+欠けた部分を保存して recovery flow へ進みます。
+
+## 2. 疑いを次の check の選択に使う
+
+重要な判断では、短い claim を一つ書き、自分の推論から一度外してみます。
+
+- どの前提に evidence がないか。
+- どの boundary condition をまだ試していないか。
+- mock、cache、stale file、誤った environment から同じ結果が出ないか。
+- claim が false なら、最初にどこで見えるか。
+- 判断を変え得る、最小の追加 check は何か。
+
+疑い続けることが目的ではありません。高くつく誤りを、delivery 前に小さく発見するためです。
+良い check は一つの relevant condition だけを変え、observable result と stop rule を持ちます。
+
+### status label は出口チェックではない
+
+| 言えること | 最低限の証拠 |
+|---|---|
+| 「source が変わった」 | named path の diff または file comparison |
+| 「check を実行した」 | 正確な command、working directory、exit code、output |
+| 「application が動く」 | named environment と input の runtime observation |
+| 「page の見た目が正しい」 | 記録した viewport と visual criteria を含む render review |
+| 「feature を出荷した」 | repository/deployment state、release record、delivery 後の check |
+
+最後の主張は前の四つより強いものです。passing build を runtime、visual、security、
+user acceptance の証拠に置き換えません。
+
+### 最初の切れ目を見つける
 
 ```text
 request → authorization → visible tool → action → result → review
@@ -42,6 +122,91 @@ request → authorization → visible tool → action → result → review
 | `partial` | 一部だけ支えられ、残りは支えられない |
 | `not_observed` | プロジェクトが観察結果を保存していない |
 | `error` | 宣言した操作が失敗した証拠がある |
+
+## 3. 範囲を固定した順番で recovery する
+
+何かが失敗した、または状態が分からなくなったら、次の順番を使います。
+
+1. エラーと現在の状態を保存する。
+2. input、understanding、environment、implementation、capability、permission、verification のどこが境界かを分類する。
+3. scope を狭め、最小の observable break を再現する。
+4. 一つの小さな修正、または一つの targeted check だけを行う。
+5. 影響した path を再確認し、新しい evidence を記録する。
+6. まだ不明なら、正確な blocking note を残して止まる。
+7. evidence が支える場合だけ、permission、scope、retry budget を広げる。
+
+「もう一度実行する」「もっと権限を与える」「モデルにもっと考えさせる」は、診断の代わりになりません。
+
+### capability chain：成功した各層に別の proof が要る
+
+公開報告では、tool name は見える、page は読める、provider は configuration を受け付けるのに、
+discovery call、click、上位 capability が失敗するという sequence が繰り返し出てきます。見える名前が
+証明するのは名前が見えることだけです。registration、discoverability、execution、side effect の成功は別に確認します。
+
+```text
+tool または Skill が見える
+  → read-only discovery call が動く
+  → target state を読める
+  → target action が success を返す
+  → 期待した外部 state change を read-back で確認する
+```
+
+各段階に独自の evidence が必要です。DOM を読んだことは click 成功を、parsed configuration は
+backend capability を、初回 launch 成功は別の window、version、account での同じ capability を証明しません。
+
+### breakpoint card：最初に支えられない層で止まる
+
+root cause を先に推測せず、最後に通った assertion と、最初に失敗または観測できなかった assertion を記録します。
+
+```yaml
+run_id: "unique run identifier"
+surface: "実際の work surface と version"
+expected_capability: "この run に必要な最小 capability"
+chain:
+  - stage: "entry/session available"
+    observation: "observable event または error"
+    status: "passed | failed | not_observed"
+  - stage: "tool registered and discoverable"
+    observation: "tool list または read-only discovery result"
+    status: "passed | failed | not_observed"
+  - stage: "target state readable"
+    observation: "read-only の target、account、path、window の evidence"
+    status: "passed | failed | not_observed"
+  - stage: "target action returned"
+    observation: "result、exit code、error category"
+    status: "passed | failed | not_observed"
+  - stage: "expected side effect confirmed"
+    observation: "target state、diff、read-back result"
+    status: "passed | failed | not_observed"
+last_confirmed_stage: "最後に通った stage"
+first_breakpoint: "最初に failed または not_observed の stage"
+safe_next_check: "condition を一つだけ変える最小の check"
+stop_condition: "authority や side effect を広げずに止まる条件"
+```
+
+tool name は見えるのに read-only discovery が失敗したなら、breakpoint はその discovery 層です。
+action が success を返しても target state が変わらなければ、breakpoint は side-effect confirmation 層です。
+breakpoint を越えて高リスクの action を始めたり、後から得た lucky success で前の proof を埋めたりしません。
+
+### 何も起きない長い待機：先に時系列を残す
+
+「UI がまだ `Working` と表示する」は、一つの観測であって root cause ではありません。長い request では少なくとも次を残します。
+
+```text
+request_started_at
+first_event_at
+each tool or network event
+last_event_at
+interrupt or error time
+automatic retry start time
+final state
+```
+
+合意した no-event threshold に達したら、`no_event_observed` と記録します。許可された手段で control を取り戻し、
+process、worktree、target state、last checkpoint を確認してください。最初の request が side effect を起こした
+可能性があるなら `unverified` または `blocked` のままです。idempotent で、state を再確認し、retry rule が前もって
+定義されている場合に限り、限定した retry を一回だけ許可します。自動 retry は別の event として保存し、二回目の成功で
+一回目の no-event を pass に書き換えません。
 
 ## 安全な確認を一つだけ行って立て直す
 
@@ -130,19 +295,11 @@ honest_handoff: 本文のレビューはある。読者の理解は unverified
 
 このカードは、「動かなかった」を調べられる次の一歩に変えます。モデル、Skill、コースの効果を証明するものではありません。観測したこと、欠けていること、安全な次の行動だけを分けて残します。
 
-## 主張を証拠に対応させる
+## 実践：claim-to-evidence 表を一度書く
 
-完了報告を受け取ったら、まず主張を一行ずつに分けます。一つの成果物や緑色のチェックを、複数の結論に使い回さないためです。
-
-| 主張 | 範囲に合う証拠 | 証拠があっても残る限界 |
-| --- | --- | --- |
-| 指定したファイルが変わった | 正確なパス、変更前後の差分、必要ならハッシュ | 変更が依頼の意図を満たすこと |
-| 名前を指定したコマンドが通った | 正確なコマンド、作業ディレクトリ、リビジョン、制限時間、終了状態、重要な出力 | 他のコマンド、環境、未実行の経路 |
-| ページの一つの経路が開いた | 記録したビューポート、入力、URL、表示結果 | すべてのブラウザー、認証済み状態、アクセシビリティ全体 |
-| 出典が文を支えている | 元の URL、確認日、引用範囲、適用範囲 | 現在の製品動作、アカウント権限、因果関係 |
-| 初学者が理解した | 誰が何を読み、どんな質問にどう答えたかという読者観察 | すべての読者、保持、応用 |
-
-「主張 → 証拠 → 状態 → 次の確認」の表を作り、証拠がない行は `unverified` のままにします。誤りだと決める必要はありません。ただし、証拠がないことを成功らしい言葉で隠さないことが重要です。
+完了報告を受け取ったら、先ほどの表を使って主張を一行ずつに分けます。一つの成果物や
+緑色のチェックを複数の結論に使い回さないためです。たとえば次のように、読者の理解を
+まだ確認していないことを残します。
 
 ```text
 claim: README の開始手順は初学者に分かりやすい
@@ -152,25 +309,10 @@ not proven: 初めて読む人が正しく行動できること
 next check: 一人に「最初に何をするか」を一問だけ尋ねる
 ```
 
-## 能力の連鎖と「最初の切れ目」カード
+## 実践カード：最初の切れ目と待機の記録
 
-「ツールが見える」「セッションが開く」「操作を取り戻した」は、それぞれ別の層の信号です。次の連鎖にある各矢印には、独立した証拠が必要です。
-
-```text
-request → authorization → visible tool → action started → result observed → acceptance review
-```
-
-最初に確認できない層で止まります。後ろの層を推測で埋めてはいけません。
-
-| 切れ目 | まず保存するもの | 次の小さな確認 |
-| --- | --- | --- |
-| 承認が不明 | タスク契約、依頼した操作、承認画面または記録 | 範囲と承認者を確認する。実行しない |
-| 表示されるツールがない | 現在の作業面、アカウント／環境の表示、欠けている操作 | 現行の公式設定を読むか、人に尋ねる |
-| 操作開始が不明 | 提案内容、ツールの記録、対象の基準状態 | 名前を指定したローカル対象を読み取り専用で確認 |
-| 結果が不明 | 差分、途中の出力、ログ、時刻 | 対象の成果物を読み戻す |
-| 受け入れ条件がない | 成果物と要件 | 要件を直接調べる小さな確認を一つ選ぶ |
-
-このカードは、立て直しの範囲を小さく保ちます。
+詳細な capability chain と長時間待機の記録形式は、上の recovery 節にまとめています。
+ここでは、実際の handoff に使う最小カードだけを残します。
 
 ```text
 last confirmed layer:
@@ -181,22 +323,6 @@ claim downgraded to:
 one safe next check:
 explicitly forbidden next actions:
 ```
-
-## 何も起きない待機を扱う
-
-長い `Working` 表示や応答のないコマンドは、成功でも失敗でもありません。まずは時系列を記録します。待つことを繰り返す前に、開始時刻、最後の出力、プロセス／ツールの状態、確認できた差分、許容する待ち時間を残します。制限時間を過ぎたら、同じ書き込みを送る前に成果物を読み取るか、許可された中断を使うか、`unknown` として引き継ぎます。
-
-```text
-started_at:
-last_output_at:
-no-event threshold:
-process or tool state:
-artifact read-back:
-external side effects observed:
-decision: wait once | interrupt | read back | stop
-```
-
-経過時間は、効果の証拠ではありません。特に書き込み、公開、送信、支払いのような、同じ処理を安全に繰り返せない操作は、応答が失われても盲目的に再試行しません。基準状態と実行後の状態を照合し、人が新しい試行を許可するか決めます。
 
 ## 完了状態と復旧状態を分ける
 
