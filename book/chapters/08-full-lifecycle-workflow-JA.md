@@ -1,18 +1,18 @@
 <!-- content_id: chapter-08-full-lifecycle-workflow | locale: JA | language: ja | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-20 -->
 
-# 第 8 章：定義から引き渡しまで
+# 第 8 章：定義から引き継ぎまで
 
-**状態：** `candidate`。この章は evidence を伴う workflow と復旧規則を教えます。比較実験は `not_run` のままであり、実際の Codex 実行、顧客対応、production release の記録ではありません。
+**状態：** `candidate`。この章では、証拠（evidence）を伴うワークフローと復旧ルールを扱います。比較実験は `not_run` のままであり、実際の Codex 実行、顧客対応、本番リリースの記録ではありません。
 
 ## この章が解決する問題
 
-モデルに書き始めてもらうことと、別の人が使える仕事を終えることは別です。goal が曖昧でも、scope が膨張しても、check が違う file を見ていても、画面は順調に見えることがあります。最後に受理した change が不明なまま retry すると、未完成の state に後続作業を重ねる危険もあります。
+モデルに文章を書かせ始めることと、別の人がそのまま使える仕事を終えることは別です。目標が曖昧だったり、範囲が膨らんだり、検証が別のファイルを見ていたりしても、画面上は順調に見えることがあります。最後に受け入れた変更が分からないまま再試行すると、未完成の状態に後続作業を重ねる危険もあります。
 
 ```text
 define → plan → build → verify → review → deliver → maintain
 ```
 
-各矢印は判断点です。Agent が「完了」と言ったからではなく、その段階を他者が確認できる evidence があるときだけ進みます。
+各矢印は判断のポイントです。Agent が「完了」と言ったからではなく、その段階を他の人が確認できる証拠があるときだけ先へ進みます。
 
 ![教案例：証拠を定義から保守まで運ぶ workflow](../../assets/teaching/lifecycle-checkpoints.svg)
 
@@ -22,59 +22,60 @@ define → plan → build → verify → review → deliver → maintain
 ### 境界が見える出力を一つ見る
 
 同じ考え方をコード以外の成果物にも適用した、使い捨て可能なケースを用意しています。
-架空の「初めて家を買う人」向け不動産ページです。スクリーンショットを見る前に、
+架空の「初めて家を買う人」向けの不動産ページです。スクリーンショットを見る前に、
 [ケース記録](../../docs/research/skill-case-product-context-real-estate-2026-08-11.md)
 を読んでください。合成入力、ローカルでのレンダリング方法、記録した viewport、
 画像からは言えないことが明記されています。
 
 [![合成した初回購入者ガイドのローカル表示](../../assets/cases/product-context-real-estate-thumbnail.png)](../../assets/cases/product-context-real-estate-desktop.png)
 
-この画像が示すのは、記録された viewport で一度ローカル表示できたことだけです。
+この画像から分かるのは、記録した表示領域（viewport）で一度ローカル表示できたことだけです。
 Product Context Skill が単独で動いたこと、物件が実在すること、ページが信頼感や
-問い合わせ、成約、売上を高めることは証明しません。
+問い合わせ、成約、売上を高めることまでは証明できません。
 [sandbox のソース](../../examples/skill-sandbox/product-context-real-estate/README-JA.md)
 は、認証情報や外部リクエストなしで確認・再実行できるよう、意図的に小さくしてあります。
 
 ## 学習目標
 
-- edit 前に scope、non-goal、acceptance、authority、rollback を書く。
-- 大きな request を、早く evidence を出す vertical slice に変える。
-- 最後の受理済み state を残し、条件付きでだけ retry する。
-- build、runtime、visual、source、security、user acceptance の evidence を区別する。
-- 完了と未完了を混ぜない handoff を書く。
+- 編集前に `scope`、`non-goal`、`acceptance`、`authority`、`rollback` を書く。
+- 大きな依頼を、早く証拠を出せる小さな縦断スライスに変える。
+- 最後に受け入れた状態を残し、条件を満たしたときだけ再試行する。
+- ビルド、実行時の動作、表示、ソース、セキュリティ、利用者による受け入れの証拠を区別する。
+- 完了と未完了を混ぜない引き継ぎを書く。
 
 ## 現実の問題：見える成功の間で workflow が壊れる
 
-login、model picker、開始した check は、次に必要な state が欠けていても進行に見えます。
-プロジェクトの [Codex field research](../../docs/research/field-problems-codex.md) には、
-この種の公開利用者報告が記録されています。以下は症状を学ぶための材料であり、公式の
-製品診断でも、この実行の再現でもありません。
+ログイン、モデル選択画面、開始した検証は、次に必要な状態が欠けていても進んでいるように見えます。
+プロジェクトの [Codex フィールド調査](../../docs/research/field-problems-codex.md) には、
+この種の公開利用者報告を記録しています。以下は症状から安全な確認方法を学ぶための材料であり、
+公式の製品診断でも、この実行を再現したものでもありません。
 
 | 報告された症状 | その報告から分かること | **分からないこと** | 最初に行う安全な対応 |
 |---|---|---|---|
-| 選んだモデルが使えなくなり task が止まった | 容量エラーと中断を報告者が観測した | queue の仕組み、サービス側の原因、全 account・全 release の挙動 | 後続 prompt を止め、diff、log、最後に受理した checkpoint を確認してから retry を考える |
-| formatter や検証が長時間 `Working` のまま | その実行で完了 signal が見えなかった | 一般的な deadlock、正確な child process、root cause | 待ち時間を決め、output と process state を保存し、定めた recovery rule の範囲でだけ中断する |
-| browser は認証成功、client は後で失敗 | 認証には複数の observable stage がある | browser の表示や network 到達性だけで client ready とは言えない | callback、token exchange、最初に成功した client request を別の claim として記録する |
-| 「確認して」が force reinstall に膨らんだ | Agent が確認依頼を persistent environment の変更まで広げる場合がある | すべての Agent がそうすること、reinstall が常に誤りであること | source change、test、install、restart、deployment、live verification を分け、persistent change の前に確認する |
+| 選んだモデルが使えなくなり作業が止まった | 容量エラーと中断を報告者が観測した | キューの仕組み、サービス側の原因、すべてのアカウントやリリースでの挙動 | 後続のプロンプトを止め、差分、ログ、最後に受け入れたチェックポイントを確認してから再試行を検討する |
+| formatter や検証が長時間 `Working` のまま | その実行で完了の合図が見えなかった | 一般的なデッドロック、正確な子プロセス、根本原因 | 待ち時間を決め、出力とプロセス状態を保存し、定めた復旧ルールの範囲でだけ中断する |
+| ブラウザでは認証に成功したが、クライアントは後で失敗した | 認証には複数の観測可能な段階がある | ブラウザの表示やネットワーク到達性だけで、クライアントの準備完了とは言えない | コールバック、トークン交換、最初に成功したクライアント要求を別々の主張として記録する |
+| 「確認して」が強制的な再インストールに膨らんだ | Agent が確認依頼を永続的な環境変更まで広げる場合がある | すべての Agent がそうすること、再インストールが常に誤りであること | ソース変更、テスト、インストール、再起動、デプロイ、公開環境での確認を分け、永続的な変更の前に確認する |
 
-教訓は「絶対に retry しない」「絶対に install しない」ではありません。次の action を、
-経過時間や status label の勢いではなく、evidence と authority に結びつけることです。
+教訓は「絶対に再試行しない」「絶対にインストールしない」ではありません。次の行動を、
+経過時間やステータス表示の勢いではなく、証拠と権限に結び付けることです。
 
-## evidence を運ぶ七段階
+## 証拠を引き継ぐ七つの段階
 
-| 段階 | 問い | exit evidence | 止まる条件 |
+| 段階 | 問い | 段階を終える証拠 | 止まる条件 |
 |---|---|---|---|
-| Define | 何を誰のために、どこまで行うか | task protocol と acceptance | input 不足が scope、risk、authority を変える |
-| Plan | 最小の有用な順序は何か | slice と check を含む plan | 確認可能な結果のない横割り |
-| Build | 許可された scope で何が変わったか | diff、changed-file list、checkpoint | scope 外または rollback 不明 |
-| Verify | 必要な check で振る舞うか | command、exit code、output、environment | hang、誤 target、evidence 不足 |
-| Review | claim は evidence と合うか | claim-to-evidence 表、open risk | claim が evidence より広い |
-| Deliver | 別の人が使い確認できるか | summary と artifact path | published や live を誇張する |
-| Maintain | 何を更新・戻すか | owner、review、rollback record | owner も recovery もない |
+| Define | 何を誰のために、どこまで行うか | タスクプロトコルと受け入れ条件 | 入力不足で範囲、リスク、権限が変わる |
+| Plan | 最小限で役に立つ順序は何か | スライスと検証を含む計画 | 確認できる結果のない横割りの計画 |
+| Build | 許可された範囲で何が変わったか | 差分、変更ファイル一覧、チェックポイント | 範囲外の変更、または戻し方が不明 |
+| Verify | 必要な検証で正しく動くか | コマンド、終了コード、出力、環境 | ハング、対象の誤り、証拠不足 |
+| Review | 主張は証拠と釣り合っているか | 主張と証拠の対応表、未解決リスク | 主張が証拠より広い |
+| Deliver | 別の人が使い、確認できるか | 要約と成果物のパス | 公開済み、稼働中などと誇張する |
+| Maintain | 何を更新し、何を戻すか | 担当者、レビュー、ロールバック記録 | 更新担当者も復旧方法もない |
 
-exit が欠けたら `blocked` または `unverified` と書きます。段階を増やしても、不足した permission、file、test の代わりにはなりません。
+段階を終える条件が欠けたら `blocked` または `unverified` と記録します。段階を増やしても、
+不足している権限、ファイル、テストの代わりにはなりません。
 
-## status label と evidence は違う
+## ステータス表示と証拠は別物
 
 | 言えること | 最低限の証拠 | その証拠だけでは言えないこと |
 |---|---|---|
@@ -87,7 +88,7 @@ exit が欠けたら `blocked` または `unverified` と書きます。段階�
 最後の主張は、前の四つより強い証拠を要求します。passing build があっても、runtime、
 visual、security、user acceptance が自動的に確認されたことにはなりません。
 
-## action の前に define する
+## 行動の前に定義する
 
 ```text
 owner: content-maintainer
@@ -103,29 +104,29 @@ inputs: target file、project rules、defect list、既存の link checker
 delivery: local review packet。commit と push をしていないなら、そう書く
 ```
 
-`non_goals` は accidental expansion を防ぎます。「page を verify」は browser reinstall、
-policy change、publish の許可ではありません。`rollback` は実際に戻せる source を指します。
-hash は変更を識別できますが、それだけで以前の内容を復元できるわけではありません。
-write、network、authentication、installation、restart、deployment、external message は、
-必要で、かつ明示的に許可されたときだけ加えます。
+`non_goals` は意図しない範囲拡大を防ぎます。「ページを検証する」という依頼は、ブラウザの
+再インストール、ポリシー変更、公開の許可ではありません。`rollback` には実際に戻せる
+ソースを指定します。ハッシュは変更を識別できますが、それだけで以前の内容を復元できるわけではありません。
+書き込み、ネットワーク、認証、インストール、再起動、デプロイ、外部メッセージは、必要で、
+かつ明示的に許可された場合だけ加えます。
 
-### minimum authority rule
+### 最小権限の原則
 
-まず read-only inspection を行い、書き込みは名前を指定した target にだけ加えます。
-network、authentication、installation、restart、deployment、external message は、タスクに
-必要で、その範囲が明確に許可された場合だけ追加します。
+まず読み取り専用の確認を行い、書き込みは名前を指定した対象だけに行います。ネットワーク、
+認証、インストール、再起動、デプロイ、外部メッセージは、タスクに必要で、その範囲が明確に
+許可された場合だけ追加します。
 
-公式の security record は sandbox と approval を別の制御として扱い、side effect のある
-connector や MCP action を approval boundary に置いています。したがって workflow には、
-技術的にできることと、意味上やってよいことの両方を記録します。[official facts refresh](../../docs/research/openai-codex-facts-refresh-2026-08-09.md) と
-[fact-impact registry](../../docs/governance/fact-impact-registry.yaml) は、日付のある
-product boundary を確認する入口です。
+公式のセキュリティ記録では、sandbox と承認を別の制御として扱い、副作用のあるコネクタや
+MCP アクションを承認境界に置いています。ワークフローには、技術的にできることと、意味の上で
+実行してよいことの両方を記録します。[公式事実の更新記録](../../docs/research/openai-codex-facts-refresh-2026-08-09.md) と
+[事実の影響範囲レジストリ](../../docs/governance/fact-impact-registry.yaml) は、日付のある
+製品境界を確認する入口です。
 
-## vertical slice と checkpoint
+## 縦断スライスとチェックポイント
 
-横割りの `all data → all API → all UI → integration → test` は、間違った前提を最後まで隠しがちです。vertical slice は `one input → smallest change → observable action → focused check` として、一つの小さな結果を input から evidence まで通します。
+横割りの `all data → all API → all UI → integration → test` は、間違った前提を最後まで隠しがちです。縦断スライスは `one input → smallest change → observable action → focused check` とし、一つの小さな結果を入力から証拠まで通します。
 
-checkpoint には baseline、permission、最初の diff、check output、review を分けて残します。retry 前には次を記録します。
+チェックポイントにはベースライン、権限、最初の差分、検証結果、レビューを分けて残します。再試行の前には次を記録します。
 
 ```text
 failed_stage: verify
@@ -136,31 +137,38 @@ retry_condition: same command, same target, one bounded attempt
 fallback: output がなければ stop して handoff
 ```
 
-「続けて」は recovery plan ではありません。最後に受理した state も duplicate side effect の防止も示しません。
+「続けて」は復旧計画ではありません。最後に受け入れた状態も、重複した副作用を防ぐ方法も示しません。
 
-## 実験：失敗と受け入れ
+## 実験：失敗と受け入れ条件
 
 ### 準備
 
-remote connection、secret、顧客データを使わない disposable folder を作ります。原文、
-acceptance question、local checkpoint を保存し、待機上限と安全な中断手順を先に決めます。
-install、sign-in、第三者への送信はしません。
+リモート接続、秘密情報、顧客データを使わない使い捨てフォルダーを作ります。原文、
+受け入れ条件の質問、ローカルのチェックポイントを保存し、待機上限と安全な中断手順を先に決めます。
+インストール、サインイン、第三者への送信はしません。
 
 ### タスク
 
-小さな documentation task を二通り試します。一方は直接の request、もう一方は protocol、checkpoint、focused check を使います。初回 output、diff、command、exit code、実際の duration、rework を残します。ない time や cost は推定せず `unavailable` と書きます。
+小さなドキュメント作業を二通り試します。一方は直接の依頼、もう一方はプロトコル、チェックポイント、
+絞った検証を使います。初回の出力、差分、コマンド、終了コード、実際の所要時間、やり直しを残します。
+分からない時間やコストは推定せず `unavailable` と記録します。
 
-timeout、input hash の変更、permission block、local write result の不明を一つ起こします。中断試行を残し、retry 前に target を読み、固定条件が変われば `not_comparable` にします。後の成功は比較可能性を遡って直しません。三つの小課題は一般的な efficiency、quality、model ranking を証明せず、link check は学習、公開、adoption を証明しません。
+タイムアウト、入力ハッシュの変更、権限ブロック、ローカル書き込み結果の不明のいずれかを一つ起こします。
+中断した試行を残し、再試行の前に対象を読み、固定条件が変われば `not_comparable` と記録します。
+後から成功しても、比較可能性をさかのぼって修正しません。三つの小課題で一般的な効率、品質、
+モデルの優劣は証明できません。リンク検査も、学習、公開、普及の証拠にはなりません。
 
 ### 証拠
 
-各試行について、固定した input と acceptance、allowed action、checkpoint 番号、request または protocol、changed path、diff、directory と exit code を含む command、review note、欠けた観察を保存します。実行しなかった variant は `not_run` と書き、流暢な output から実行記録を作りません。
+各試行について、固定した入力と受け入れ条件、許可された行動、チェックポイント番号、依頼またはプロトコル、
+変更パス、差分、ディレクトリと終了コードを含むコマンド、レビュー記録、欠けた観察を保存します。実行しなかった
+variant は `not_run` と書き、流暢な出力から実行記録を作りません。
 
 ### 振り返り
 
-- どの checkpoint で state は実際に分かり、どこから推測だったか。
-- diff が支える claim と、runtime または reader が必要な claim はどれか。
-- どの side effect が新しく限定した approval を必要としたか。
+- どのチェックポイントで状態が実際に分かり、どこからが推測だったか。
+- 差分で支えられる主張と、実行時の観察または読者の確認が必要な主張はどれか。
+- どの副作用に、新しく限定した承認が必要だったか。
 
 - [ ] edit 前に scope、non-goal、acceptance、authority、rollback を書ける。
 - [ ] 大きな request を early evidence を出す vertical slice に変えられる。
@@ -169,58 +177,60 @@ timeout、input hash の変更、permission block、local write result の不明
 - [ ] 求められていない install、restart、deployment、external write を止められる。
 - [ ] completed、not done、blocked、unverified を分けて handoff できる。
 
-## 実際の中断に備える recovery pattern
+## 実際の中断に備える復旧パターン
 
 公開された利用者報告は有用な症状を示すことがありますが、公式の原因説明やローカル再現の
-代わりにはなりません。製品内部を推測するためでなく、最初の安全な確認を選ぶために使います。
+代わりにはなりません。製品内部を推測するためではなく、最初の安全な確認を選ぶために使います。
 
-### capacity または availability の中断
+### 容量または可用性による中断
 
-**観測された症状：** 選んだ model が利用できなくなり、task が止まる。
+**観測された症状：** 選んだモデルが利用できなくなり、作業が止まる。
 
-**最初の安全な対応：** その task に依存する後続 prompt を止め、diff、output、最後に受理した
-checkpoint を残します。target artifact が途中の state ではないか確認してから、一回だけの
-bounded retry、許可された別 surface、handoff のいずれかを選びます。
+**最初の安全な対応：** その作業に依存する後続のプロンプトを止め、差分、出力、最後に受け入れた
+チェックポイントを残します。対象の成果物が途中の状態になっていないか確認してから、1 回だけの
+範囲を限定した再試行、許可された別の入口、引き継ぎのいずれかを選びます。
 
-**言ってはいけないこと：** queue 中の task が終わった、model だけが原因だった、または
-「続けて」を繰り返せば欠けた evidence が戻った、とは言えません。
+**言ってはいけないこと：** キュー内の作業が終わった、モデルだけが原因だった、または
+「続けて」を繰り返せば欠けた証拠が戻った、とは言えません。
 
-### check が `Working` のままになる
+### 検証が `Working` のままになる
 
-**観測された症状：** formatter、test、analysis が完了 signal を返さない。
+**観測された症状：** formatter、test、analysis が完了の合図を返さない。
 
-**最初の安全な対応：** あらかじめ決めた待機時間と interruption rule を適用し、command、
-directory、elapsed time、output、process state を残します。diff を確認してから complete、
-partial、failed、unknown のどれかに分類します。
+**最初の安全な対応：** あらかじめ決めた待機時間と中断ルールを適用し、コマンド、ディレクトリ、
+経過時間、出力、プロセス状態を残します。差分を確認してから complete、partial、failed、unknown の
+いずれかに分類します。
 
 **言ってはいけないこと：** silence は pass を意味せず、画面に error がないからといって
 child process が終わったとは限りません。
 
-### browser の login は成功したが client が続かない
+### ブラウザのログインは成功したがクライアントが続かない
 
-**観測された症状：** browser は login 成功を示すのに、client は token exchange または最初の
-request で失敗する。
+**観測された症状：** ブラウザはログイン成功を示すのに、クライアントはトークン交換または最初の
+リクエストで失敗する。
 
-**最初の安全な対応：** authorization page、callback、client exchange、最初に成功した request
-を別々の行に記録します。欠けている次の state だけを確認します。
+**最初の安全な対応：** 認証ページ、コールバック、クライアントとの交換、最初に成功したリクエストを
+別々の行に記録します。欠けている次の状態だけを確認します。
 
 **言ってはいけないこと：** browser の成功は client authentication、account entitlement、
 connector approval、tool availability の証明ではありません。
 
-### verify が永続的な change を提案する
+### 検証が永続的な変更を提案する
 
-**観測された症状：** Agent が check を通すために reinstall、restart、environment の変更を提案する。
+**観測された症状：** Agent が検証を通すために再インストール、再起動、環境の変更を提案する。
 
-**最初の安全な対応：** 提案された side effect、target、それを促した artifact、利用できる recovery
-を明記して止まります。local edit、test、installation、restart、deployment、live verification を
-分け、永続 change の前には新しい判断を求めます。
+**最初の安全な対応：** 提案された副作用、対象、それを促した成果物、利用できる復旧方法を明記して
+止まります。ローカル編集、テスト、インストール、再起動、デプロイ、公開環境での確認を分け、永続的な
+変更の前には新しい判断を求めます。
 
 **言ってはいけないこと：** 「動くことを確認して」は installation、network write、publish の
 許可にはなりません。
 
-## まず小さく完結する slice を一つ終える
+## まず小さく完結するスライスを一つ終える
 
-最初から site、code、release を扱う必要はありません。自分で確認できる短い文章、一つの local README、またはすでに使用許可のある公開 source 一式を選びます。目的は model に「たくさんさせる」ことではなく、define から handoff まで見える一周を終えることです。
+最初からサイト、コード、リリースを扱う必要はありません。自分で確認できる短い文章、一つのローカル README、
+またはすでに使用許可のある公開ソース一式を選びます。目的はモデルに「たくさんさせる」ことではなく、定義から
+引き継ぎまで見える一周を終えることです。
 
 ```text
 result: 120 字以内の説明で、新しい reader が最初の一歩を見つけられる。
@@ -231,16 +241,17 @@ check: before/after text を保存し、「最初の一歩を見つけられる�
 handoff: 変えたこと、変えなかったこと、check の結果、まだ unknown なこと。
 ```
 
-七段階を通します。reader と result を定義し、一か所を plan し、原文を checkpoint として残し、編集し、前後を比べ、別の視点で review し、次の人または明日の自分へ handoff します。追加資料や external action が必要なら `blocked` で止めます。閉じたように見せるために permission を広げません。
+七つの段階を通します。読者と結果を定義し、一か所の変更を計画し、原文をチェックポイントとして残し、編集し、
+前後を比べ、別の視点で確認し、次の人または明日の自分へ引き継ぎます。追加資料や外部の行動が必要なら `blocked` で
+止めます。終わったように見せるために権限を広げません。
 
 ### 二つの試行が比較できる条件
 
 「model にすぐ編集を頼む」と「先に protocol を書く」を比べるなら、原文、goal、allowed action、time limit、check rule を固定します。first output、実時間、rework、diff、check result、unknown を残します。text、model、tool、permission、environment が変われば `not_comparable` です。一度速い、または見栄えが良い結果は、一般的な効率や model の優劣を証明しません。
 
-## checkpoint を持って一周する
+## チェックポイントを持って一周する
 
-短い task でも、途中で何が確定したかを残します。次の人が conversation を読まなくても
-続けられることが基準です。
+短い作業でも、途中で何が確定したかを残します。次の人が会話を読み返さなくても続けられることが基準です。
 
 ```text
 CP0: original text、target path、許可 scope、rollback source
@@ -250,12 +261,11 @@ CP3: named check を実行、または stop。output と limit を保存
 CP4: claim と evidence を review。handoff と next action を書く
 ```
 
-checkpoint ごとに、最後に確認できたこと、変わった可能性がある file、まだ足りない
-evidence、次の一つの安全な action を書きます。`CP2` がなければ、model が「変更した」と
-言っても change を delivery に含めません。`CP3` が timeout したら silence を pass にせず、
-output、process state、diff を残して `unverified` または `blocked` にします。
+チェックポイントごとに、最後に確認できたこと、変わった可能性があるファイル、まだ足りない証拠、次の一つの安全な
+行動を書きます。`CP2` がなければ、モデルが「変更した」と言っても変更を引き継ぎ内容に含めません。`CP3` が
+タイムアウトしたら沈黙を合格とみなさず、出力、プロセス状態、差分を残して `unverified` または `blocked` にします。
 
-## claim ごとに check を選ぶ
+## 主張ごとに検証を選ぶ
 
 | claim | 必要な evidence | まだ証明しないこと |
 |---|---|---|
@@ -264,10 +274,10 @@ output、process state、diff を残して `unverified` または `blocked` に�
 | page が見える | recorded viewport の render review | accessibility、demand、deployment |
 | external change を送った | target 側の read-back | すべての人が見られること |
 
-一つの green check をすべての claim に使いません。特に diff は change の証拠であり、
-user value や publish の証拠ではありません。evidence がなければ、文を狭めます。
+一つの合格した検証をすべての主張に使い回しません。特に差分は変更の証拠であり、利用者価値や公開の証拠ではありません。
+証拠がなければ、主張を狭めます。
 
-## 次の人へ渡す短い handoff
+## 次の人へ渡す短い引き継ぎ
 
 ```text
 status: passed | partial | blocked | unverified
@@ -279,19 +289,20 @@ not proven: reader usefulness、runtime、visual、security など
 next: 一つの安全な action
 ```
 
-これは「すべて完了」より短くても強い handoff です。対象、authority、recovery source が
-不明なら、次の action は edit ではなく質問または read-only check です。この章と比較実験は
-run record と review ができるまで `candidate` と `not_run` のままです。
+これは「すべて完了」と書くより短くても強い引き継ぎです。対象、権限、復旧元が不明なら、次の行動は編集ではなく
+質問または読み取り専用の確認です。この章と比較実験は、実行記録とレビューができるまで `candidate` と `not_run` のままです。
 
-## 移行タスク
+## 応用課題
 
-同じ workflow を、技術以外の task に移します。自分の短い文章を直す、小さな source list を確認する、または language practice を計画する task です。goal、allowed input、禁止 side effect、checkpoint、handoff は保ちます。acceptance だけを domain に合わせて替えます。たとえば reader の理解、research の source と unknown、language practice の遅延した無支援の recall です。この練習が証明しないことも書きます。
+同じワークフローを、技術以外の作業に応用します。自分の短い文章を直す、小さなソース一覧を確認する、または語学練習を
+計画する作業です。目標、許可された入力、禁止する副作用、チェックポイント、引き継ぎは保ちます。受け入れ条件だけを
+分野に合わせて替えます。たとえば読者の理解、調査のソースと不明点、語学練習で時間を置いた後の何も見ない想起です。
+この練習で証明できないことも書きます。
 
-## worked case：一つの Markdown chapter を review する
+## 例：一つの Markdown 章を確認する
 
-production repository ではなく disposable copy で、七段階を一周する例です。目的は「文章を
-よく見せる」ことではなく、reader が local start step と check の方法を区別して読めるようにする
-ことです。
+本番リポジトリではなく使い捨てのコピーで、七つの段階を一周する例です。目的は「文章をきれいに見せる」ことではなく、
+読者がローカルで最初に行う手順と、確認方法を区別して読めるようにすることです。
 
 ```text
 Reader: 初めて local copy を開いた人
@@ -303,8 +314,8 @@ Acceptance: 二つの heading と指定された local command text がある。
 Rollback: pre-edit copy と baseline diff
 ```
 
-この definition が書けないなら、build を始めません。「もっと professional に」は reader、target、
-acceptance、non-goal のどれも決めていないため task ではありません。
+この定義を書けないなら、構築を始めません。「もっとプロらしく」は読者、対象、受け入れ条件、非目標のどれも決めていないため、
+作業の依頼になっていません。
 
 ### Capability decision と plan
 
