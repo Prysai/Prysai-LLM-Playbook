@@ -1,43 +1,43 @@
 <!-- content_id: chapter-16-engineering-track | locale: DE | language: de | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
-# Kapitel 16: Engineering-Pfad, von der Idee zu zuverlässiger Software
+# Kapitel 16: Engineering-Pfad – von der Idee zu zuverlässiger Software
 
-**Status:** `candidate`. **Experimentstatus:** `draft / not_run`. Dieses Kapitel lehrt einen Engineering-Lebenszyklus; Feldberichte sind keine lokalen Reproduktionen oder Ursachenbestätigungen für jede Version.
+**Status:** `candidate`. **Experimentstatus:** `draft / not_run`. Dieses Kapitel vermittelt einen Engineering-Ablauf; die Feldberichte sind keine lokalen Reproduktionen und keine Ursachenbestätigung für jede Version.
 
 ## Das Problem dieses Kapitels
 
-Engineering-Aufgaben verleiten dazu, vor klaren Anforderungen, Architekturentscheidungen, Testdesign, Laufzeitbeobachtung und Rollback zu programmieren. Ein Patch kann bauen und alle Unit-Tests bestehen, ohne dass der Nutzerpfad, Fehlerbehandlung, Abhängigkeitsversionen, Deployment oder Wiederherstellung funktionieren.
+Engineering-Aufgaben verleiten dazu, zu programmieren, bevor Anforderungen, Architekturentscheidungen, Testdesign, Laufzeitbeobachtung und das Zurückrollen geklärt sind. Ein Patch kann bauen und alle Unit-Tests bestehen, ohne dass Nutzerpfad, Fehlerbehandlung, Abhängigkeitsversionen, Deployment oder Wiederherstellung funktionieren.
 
-> Erfolgreicher Build, bestandene Unit-Tests, bestandene Integrationstests, korrektes Laufzeitverhalten, Nutzerakzeptanz und Produktionsreife sind verschiedene Behauptungen.
+> Ein erfolgreicher Build, bestandene Unit- und Integrationstests, korrektes Laufzeitverhalten, Nutzerakzeptanz und Produktionsreife sind verschiedene Behauptungen.
 
-Ein Engineering-Skill ist ein evidenztragender Lebenszyklus. Jede Phase hat Eintrittsbedingungen, den kleinsten nützlichen Schnitt, Fehlerpfade und Ausgangsevidenz.
+Ein Engineering-Skill führt durch einen Ablauf, in dem jede Phase Eintrittsbedingungen, den kleinsten nützlichen Schritt, Fehlerpfade und einen überprüfbaren Abschluss hat.
 
-## Der Engineering-Lebenszyklus
+## Der Entwicklungsablauf
 
 ```text
-Problem definieren → spezifizieren und abnehmen → planen und schneiden
+Problem definieren → spezifizieren und Abnahme festlegen → planen und in Schritte teilen
 → schrittweise implementieren → statische Checks und Tests
 → Laufzeit prüfen → reviewen und vereinfachen
-→ releasen und zurückrollen → warten und Regressionen prüfen
+→ veröffentlichen und zurückrollen können → warten und Regressionen prüfen
 ```
 
 | Phase | Eintrittsbedingung | Minimale Ausgangsevidenz |
 |---|---|---|
 | Definition | Problem und Umfang | Wiederholbare Problembeschreibung |
-| Spezifikation | Grenzen, Ein-/Ausgaben, Fehler | Abnahme und Nicht-Ziele |
-| Planung | Abhängigkeiten und Risiken | Unabhängig prüfbare Schnitte |
-| Implementierung | Aktueller Schnitt und Baseline | Kleiner, erklärbarer Diff |
+| Spezifikation | Grenzen, Ein-/Ausgaben, Fehler | Abnahmekriterien und Nicht-Ziele |
+| Planung | Abhängigkeiten und Risiken | Unabhängig prüfbare Schritte |
+| Implementierung | Aktueller Schritt und Baseline | Kleiner, erklärbarer Diff |
 | Tests | Verhalten und Fehler sind ausführbar | Befehle, Resultate, Fehlererklärung |
 | Laufzeit | Startbare Umgebung und repräsentative Daten | Version, Logs, Antwort oder Bildschirm |
 | Release | Review und Rollback vorhanden | Release-Aufzeichnung, Monitoring, Rollback-Probe |
 
-## Vor der Implementierung spezifizieren
+## Vor der Implementierung Anforderungen und Abnahme klären
 
-Bei „Export hinzufügen“ fragst du nach Format, Datenbereich, Berechtigung, Teil-Dateien, Überschreibregel und finaler Abnahme. Eine Aufgabe nennt Nutzeraktion, Eingabebeschränkungen, Erfolgs- und Fehlerausgabe, Grenzen, Nicht-Ziele, Leistungs-/Sicherheitsvorgaben, beobachtbare Signale und Abnahmemethode. Ein Skill darf eine Entscheidung nicht still durch einen Standard ersetzen.
+Bei „Export hinzufügen“ fragst du nach Format, Datenbereich, Berechtigung, dem Umgang mit unvollständigen Dateien, Überschreibregel und Abnahmekriterien. Eine Aufgabe nennt Nutzeraktion, Eingabebeschränkungen, Erfolgs- und Fehlerausgabe, Grenzen, Nicht-Ziele, Leistungs-/Sicherheitsvorgaben, beobachtbare Signale und Abnahmemethode. Ein Skill darf eine Entscheidung nicht still durch einen Standard ersetzen.
 
 Arbeite source-driven, doubt-driven und inkrementell. Für APIs und Versionen sind offizielle Dokumentation, Typen, aktueller Code oder reproduzierbares Ergebnis maßgeblich; Blogs und Modellgedächtnis sind Hinweise. Prüfe Netzwerk, Datenbank, Browser, Berechtigungen, Parallelität, Zeitzonen und Deployment, die Typen und Unit-Tests nicht beweisen. Ändere jeweils nur einen erklärbaren Schnitt und bewahre Diff und Rollback-Punkt.
 
-## Laufzeit, Stopp und Wiederherstellung
+## Laufzeitprüfung, Stopp und Wiederherstellung
 
 Build-Evidenz heißt kompilierbar; Test-Evidenz heißt, dass bestimmte Assertions bestanden. Laufzeit-Evidenz benötigt Startbefehl, Versionen, Umgebungswerte, reale Eingaben, Antwort oder Bildschirm, Logs und Fehlerpfade. Produktionsreife braucht zusätzlich Sicherheit, Performance, Migration, Monitoring, Rollback und Nutzerakzeptanz.
 
