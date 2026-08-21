@@ -6,6 +6,7 @@ import copy
 import re
 from pathlib import Path
 
+import build_book_navigation as builder
 import validate_book_navigation as navigation
 
 
@@ -40,6 +41,11 @@ def main() -> int:
     document = navigation.load()
     require(document.get("schema_version") == "2", "title-role schema is not v2")
     require(title_errors(document) == [], "checked-in title map is invalid")
+    traditional = document["chapters"][14]
+    require(
+        builder.title_for(traditional, "ZHTW") == traditional["title_zh-tw"],
+        "Traditional Chinese navigation must use the zh-tw field",
+    )
 
     missing = copy.deepcopy(document)
     missing["chapters"][0]["canonical_title_en"] = ""
