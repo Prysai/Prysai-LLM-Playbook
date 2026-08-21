@@ -12,6 +12,23 @@
 
 エンジニアリング Skill は、証拠を伴うライフサイクルです。各段階に、入口条件、最小の実装単位（slice）、失敗経路、出口で残す証拠を置きます。
 
+## 学習目標
+
+この章を読み終えると、次のことができるようになります。
+
+- エンジニアリング task の範囲、入口条件、出口条件、risk、停止条件を明示する。
+- 公式資料の確認、段階的な実装、test、debug、runtime check、review、release、rollback を一つの流れにつなぐ。
+- build 成功、unit / integration test 通過、runtime の正しさ、利用者の受け入れ、production readiness を別々の主張として扱う。
+- 長時間コマンド、途中状態、未承認の環境置換、secret の露出、戻せない変更を見つけ、復旧の根拠を残す。
+
+## 現実の報告：コードを変えたことは作業完了ではない
+
+- **FP-09:** model capacity の error で task が中断された一方、queue に残った request が途中までの state に結び付いたという報告があります。retry の前に worktree、diff、test、完了地点を読み、未知の state に新しい指示を足しません。
+- **FP-10:** Windows の CLI formatter / validation command が、明確な error を出さないまま `Working` に残ったという報告があります。コマンドには output boundary と timeout を置き、「開始した」と「validation が通った」を分けます。
+- **FP-11:** source の確認が persistent environment の force reinstall に広がったという報告です。install、publish、deploy、restart、live verification は別の権限と evidence を必要とします。
+
+これらは field research の利用者報告または分析であり、ローカル再現でも、すべての version に当てはまる根本原因の確認でもありません。実際の判断では、現在の repository と runtime の evidence を優先します。
+
 ## エンジニアリングのライフサイクル
 
 ```text
@@ -43,6 +60,12 @@
 
 タイムアウトまで出力がない、テスト依存関係が欠けている、ワークツリーの変更が不明、実際の認証情報を求められる、永続的な変更・公開・デプロイ・再起動が必要になる、という状況は、停止して範囲を確認する合図です。緑にするために強制再インストールや権限の拡大はせず、認可がないときは隔離環境、テストダブル、静的チェックを使います。
 
+### source-driven、doubt-driven、incremental
+
+- **source-driven:** framework、API、library、version の挙動は公式文書、型定義、現行コード、再現結果を根拠にします。blog とモデルの記憶は手掛かりです。
+- **doubt-driven:** type と unit test だけでは証明できない network、database、browser、permission、concurrency、time zone、deployment の主張を別に確認します。
+- **incremental:** 一度に一つの説明できる slice だけを変え、diff と rollback point を残します。原因不明の失敗に修正を積み重ねません。
+
 ## 練習と境界
 
 ローカルのリストから重複を除き、JSON に書き出すような低リスク機能を選びます。通常の入力、空の入力、重複、無効な入力を用意します。目的だけを渡すラウンドと、問題、受け入れ条件、対象外、実装単位、テスト表を先に作るラウンドを比較します。両方で静的チェック、単体テスト、ローカル実行、空・無効入力を試し、契約、差分、コマンド、終了状態、ログ、バージョン、入力、ロールバック地点を残します。
@@ -72,6 +95,8 @@
 | ローカル実行 | 指定した入力から観測できる結果が出る | 本番、すべてのアカウント、性能 |
 | リモート読み戻し | 指定したリビジョンや記録がリモートにある | 利用者の受け入れ、監視、安全なロールバック |
 
+一つの green signal は、別の green signal の代わりになりません。build は compile、test は指定した assertion、local run は一つの入力経路、remote read-back は指定した revision の存在だけを示します。
+
 ## Web コーディング：表示できる結果を実際のブラウザーまで届ける
 
 「完全なサイトを作る」という依頼には、読者、状態、ソースファイル、実行環境、ブラウザーでの確認、
@@ -85,24 +110,89 @@
 ブラウザー、利用者の受け入れについて未確認の項目を記録します。ソースの差分だけでは CSS、相対
 パス、モバイルでの切り詰め、実行時エラーは分かりません。ローカル表示はデプロイではありません。
 
-## 小実験：JSON の垂直スライス
+最初の web 課題は、意図的に小さくします。
 
-使い捨てディレクトリで `input.json` の文字列リストを読み、重複を除いて `output.json` に書きます。読み取りと書き込みはそのディレクトリだけに限定します。ネットワーク接続、インストール、ログイン、コミット、プッシュ、公開はしません。
+1. **結果:** 見出し一つ、短い説明一つ、状態表示一つの静的 page。
+2. **context:** 読者、与えられた copy、対象 file、local run command。framework、依存関係、image、backend を発明しない。
+3. **change:** 許可した HTML または CSS の一つの edit。編集前に読む。
+4. **browser check:** 実際の `http://127.0.0.1:<port>/` を開き、title、heading、status、link、console error、必要なら狭い viewport を確認する。
+5. **receipt:** 正確な diff、URL、viewport、command result、screenshot または観察を残す。deploy、accessibility、cross-browser、user acceptance は未確認ならそう書く。
 
-1. タスクカードと基準状態を書く：通常、空、重複、項目欠落・無効な JSON。
-2. 通常と重複だけを最初に実装し、差分とコマンド出力を残す。
-3. 空と無効な入力を加える。一度に一つの説明できる点だけを変え、宣言した確認を実行する。
-4. 独立したコマンドで `output.json` を読み、バージョン、入力、終了状態、生の出力、範囲を残す。
-5. 中断を模擬する。続ける前に状態、差分、ログ、出力を読み、続行・復旧・チェックポイントのどれにするか決める。
+使える最初の依頼は次のように具体化できます。
+
+```text
+目的: static page の見える文を一つだけ変える。
+先に読む: index.html と styles.css。現在の見出しと、project に書かれた local command を報告する。
+許可する変更: index.html だけ。既存の構造と style は保つ。
+しないこと: package install、framework の追加、image の取得、network、secret、server command の変更、commit、push、publish。
+受け入れ: 新しい文が browser に一度だけ現れ、古い文が消え、title と heading が残り、diff に他の file がない。
+停止: 対象 path、command、browser result のどれかが不明なら止まる。
+```
+
+browser は source diff だけでは見えない CSS loading、relative path、mobile clipping、runtime error を示します。ただし local page がこの check を通っても、deployed site だとは言えません。
+
+### 見た目のフィードバックは仕様の代わりにならない
+
+画面の領域を指せる tool や screenshot は、追加の context として使います。対象、変更、維持するもの、判定方法を明記します。
+
+```text
+対象: 指している正確な region、state、viewport。
+変更: 観測できる差を一つ。
+維持: 変えてはいけない content、behavior、layout、path。
+確認: rendered page と diff で何を見るか。
+```
+
+「header をよくして」ではなく、「390px view で search control を title の下へ移し、title、link、focus order は保ち、rendered width と keyboard path と one-file diff を確認する」と書きます。これは screenshot、browser inspector、design file、plain text のいずれにも使える契約です。
+
+### preview は runtime についての仮説
+
+埋め込み preview と読者の環境では storage、cookie、origin、network、permission、viewport、font、asset path が違うかもしれません。control が壊れて見えたら、まず「source / client logic の defect か」「preview が target と同じ条件か」を分けます。scope 内の console と network を読み、独立した local browser で最小 interaction を再現し、origin と viewport を比べ、一条件または一 file だけ変えます。「preview で動いた」と「target runtime で動いた」は別の主張です。
+
+### AI programming を段階的に練習する
+
+固定日数で developer になれると約束せず、現在の task が見える evidence を残せるときだけ次へ進みます。
+
+| Level | Practice | 次へ進む前の最小 evidence |
+|---|---|---|
+| 1. Read | 既存の function または page 一つを説明させる | input、output、boundary 一つを自分の言葉で言える |
+| 2. Change | 破棄できる project で見える edit 一つ | 許可した file だけの diff と browser / checker の変化 |
+| 3. Test | focused check 一つと failure case 一つ | check が証明することと unknown を説明できる |
+| 4. Slice | contract から runtime まで一つの vertical feature | normal case と invalid / empty case を記録 |
+| 5. Recover | 中断または失敗後に再開する | checkpoint を読み、失敗 evidence を保った |
+| 6. Collaborate | project rule、isolated work、review、handoff | 別の人が receipt から判断を再現できる |
+
+モデルには、編集前の inspection、scope、assumption、停止条件を求めます。説明が流暢でも、独立して diagnosis、implementation、maintenance ができる証明にはなりません。最初の一周では、task contract、自分の最初の試み、使った支援、変更 file、check output、一つの failure / boundary、次に練習する Skill を残します。
+
+## 観察可能な実験：直接実装とライフサイクルを比べる
+
+### 準備
+
+使い捨てディレクトリで `input.json` の文字列リストを読み、重複を除いて `output.json` に書く低リスク機能を選びます。通常の入力、空の入力、重複、項目欠落または無効な JSON を用意し、runtime の version、output directory、短い timeout を固定します。実際の secret、外部 write、login は使いません。
+
+### タスク
+
+1. **直接実装ラウンド:** 目的だけを Agent に渡します。仕様を質問したか、どの file を変えたか、どの command を実行したか、無効な入力を扱ったかを記録します。
+2. **ライフサイクル・ラウンド:** 先に問題文、受け入れ条件、対象外、slice 計画、test matrix を作らせます。段階的に実装し、各段階で diff を読みます。
+3. 両ラウンドで static check、unit test、実際の local run、空入力、無効入力を行い、問題がどの段階で見つかったかを記録します。
+4. 中断または capacity error を模擬します。まず止まり、worktree、直近の diff、log、test state を読み、続行、rollback、checkpoint のいずれかを決めます。
+5. force reinstall、production write、deploy、restart は行いません。Agent が提案したら、権限外として記録します。
+
+### 証拠
+
+二つの task contract、diff、test matrix、command と exit status、runtime の input / output、error log、問題が見つかった段階、rollback point、最終 acceptance を保存します。「build が成功」「test が通った」「runtime が正しい」「user / release acceptance が済んだ」を少なくとも別々の状態で記録します。どの version、どの environment、どの input がどの result を出したかが分かるようにします。
+
+### 失敗変形
+
+formatter を no-output のまま長時間実行するか、存在しない service に依存する test を置きます。正しい対応は、停止して process と worktree を確認し、validation を未完了と記録することです。待った後に成功と書いたり、環境を再インストールしたりしません。別の変形では、前の slice が途中で止まったまま無関係な依頼を追加します。未知の state に直接追記せず、checkpoint を作ります。
+
+### 振り返り
+
+- 完全なライフサイクルが、直接実装より多く保存した evidence は何ですか。どの問題を早く見つけましたか。
+- unit test で置き換えられなかった runtime evidence は何ですか。
+- いつ rollback し、いつ diagnosis を続けますか。
+- validation に persistent install が必要なら、どの authorization、impact、rollback record が新たに必要ですか。
 
 出力がない、依存関係がない、PATH の変更、実行環境の再インストール、ログのアップロード、デプロイ、再起動が提案されたら停止し、不足している認可と復旧方法を示します。
-
-## 自己確認
-
-- [ ] 利用者の操作、成功・失敗、対象外、範囲、受け入れ、復旧を書いた。
-- [ ] 実装単位ごとに差分、コマンド、終了状態、入力・出力、不明点を残す。
-- [ ] ビルド、テスト、ローカル実行、リモート、利用者の受け入れを混同しない。
-- [ ] 中断の後は、再試行する前に状態を確認する。
 
 ## エンジニアリング・タスクカード：受け入れ可能な最小の変更
 
@@ -131,43 +221,38 @@
 
 一つでも欠ければ、納品に `not_run`、`blocked`、`unknown` を残します。緑にするために権限を広げたり、環境を置き換えたり、仕様を書き換えたりしません。
 
-## 学習目標
+## 失敗と境界のケース
 
-要件を小さく検証できる実装単位に分け、ビルド、テスト、ローカル実行、公開、利用者の受け入れを別々の証拠の主張として扱えます。
-
-## 現実の問題：テストが緑でも利用者のタスクは終わらない
-
-パッチはコンパイルできても、空の入力、誤ったパス、復旧を見落とすことがあります。緑の数ではなく、具体的な利用者の操作と失敗をチェックがカバーしているかが重要です。
-
-### 準備
-
-`input.json` のある使い捨てのローカルディレクトリを使います。ネットワーク接続、認証情報、リモート、インストールは使わず、元のファイルと書き込んでよいパスを記録します。
-
-### タスク
-
-文字列リストの重複だけを取り除き、ローカルに `output.json` を書きます。通常、空、重複、無効な入力を確認し、一度に一つの説明できる点だけを変えます。
-
-### 証拠
-
-カード、差分、コマンド、終了状態、入力、独立に読み直した出力、実行しなかった操作を残します。記録のないテストは、公開や利用者の受け入れを証明しません。
-
-### 振り返り
-
-各チェックはどの主張を実際に支えますか。どの失敗経路が不明で、次の最小の確認は何ですか。
+- **green test だけを見る:** real service、build artifact、permission、browser、mobile path が動いていないかもしれません。integration、end-to-end、または人による runtime evidence を足します。
+- **build は成功したのに runtime が失敗する:** startup entry point、environment variable、dependency version、static asset、route、migration、log を確認します。compile を runtime verification と呼びません。
+- **command が hang する:** FP-10 に沿って timeout、output boundary、interrupt path を置きます。中断後は worktree、残った process、validation status を読み直します。
+- **model capacity / session が中断する:** FP-09 に沿って diff、completion point、log、test state を確認し、clean checkpoint から再開します。queued task が現在の状態を知っていると仮定しません。
+- **validation が environment replacement に広がる:** FP-11 に沿って `source modified`、`validated`、`installed`、`published`、`deployed`、`restarted`、`live verified` を分け、別々に認可します。
+- **外部 dependency を読めない:** unverified と記録し、test double または sandbox を使います。「command が動いた」は外部 system の evidence ではありません。
+- **rollback がない:** 復元可能な artifact、database backup、migration reverse operation、configuration snapshot がなければ、release は `candidate` で止めます。
 
 ## 移行タスク
 
-リンク、ナビゲーション、公開状態を変えずに学習例を直す場合に、このカードを適用します。利用者への効果、ファイル、確認、復旧を書きます。
+既存の engineering task を一ページの contract（problem、scope、acceptance、non-goals、permissions、risk、slice、test matrix、runtime verification、rollback）へ書き換えます。normal、empty、invalid、timeout、insufficient-permission の check を設計し、最初の slice だけを実装して証拠を残します。最後に、同僚に `draft`、`candidate`、`verified`、`production-ready` のどれかを blind review してもらい、過剰な主張を直します。
 
 ## 受け入れチェックリスト
 
-- [ ] 利用者の操作、成功、失敗、対象外、範囲、復旧を書ける。
-- [ ] 差分、コマンド、結果、未確認の主張を分けて渡せる。
-- [ ] 不明なパス、秘密情報、ネットワーク、永続的な効果が現れたら停止する。
+- [ ] 利用者の操作、成功、失敗、対象外、範囲、入口・出口条件、復旧を書いた。
+- [ ] 実装を、実行可能で戻しやすい slice に分けた。
+- [ ] build、test、runtime、user acceptance、production readiness を別々に説明できる。
+- [ ] framework / API の重要な主張を公式資料または現行コードで確認した。
+- [ ] normal、boundary、failure、permission、timeout の経路を確認した。
+- [ ] diff、command、exit status、log、runtime environment、final output を残した。
+- [ ] FP-09、FP-10、FP-11 に関する recovery と permission boundary を説明できる。
+- [ ] authorization なしに install、force-reinstall、publish、deploy、restart をしていない。
 
 ## 出典と保守の境界
 
-ライフサイクルと証拠を分ける方法は安定しています。フレームワーク、コマンド、実行環境、デプロイの規則はプロジェクトごとに変わるため、都度確認します。
+- 現実の問題：[`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md) の FP-09、FP-10、FP-11。status は `candidate`、アクセス・整理日は 2026-08-09、owner は Prysai LLM Playbook maintenance group です。
+- Engineering method と外部 asset：[`docs/sources/asset-register.md`](../../docs/sources/asset-register.md) の S05。ここは外部 Skill の本文をコピーせず、独自の process rewrite として書いています。
+- 変動する framework / API / version：該当 project の公式文書と [OpenAI Codex repository](https://github.com/openai/codex)。engineering record に URL、version、アクセス日、verification scope を残します。
+
+ライフサイクルと evidence を分ける方法は比較的安定していますが、command、runtime、dependency、deployment の規則は project ごとに変わります。review owner は Engineering-track maintainer、次回確認は runtime、dependency、release process、permission policy の変更時、または遅くとも 2026-11-09 です。この章は `candidate`、実験は `draft / not_run` のままです。runtime、failure recovery、release rollback の evidence がそろうまで、delivery を `verified` や `production-ready` とは呼びません。
 
 <!-- chapter-navigation:start -->
 <hr>
