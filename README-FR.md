@@ -28,10 +28,11 @@ l’anglais.
 
 ## Ce que contient le dépôt
 
-Les 22 chapitres, 18 Labs, Skills, recherches et registres sont structurés dans
-le [guide du livre](book/README-FR.md). Les unités françaises actuellement
-disponibles forment une tranche de migration ; la couverture complète et la
-qualité de langue doivent encore être révisées par des personnes francophones.
+Les 22 chapitres et 18 Labs disposent désormais d’un fichier candidat en
+français, avec des liens qui restent dans la même langue. Les Skills, recherches
+et registres complémentaires gardent leur propre statut de traduction : une
+couverture de fichiers ne vaut pas relecture native, exécution par des
+apprenants ou validation de publication.
 
 ## Licence et limites
 

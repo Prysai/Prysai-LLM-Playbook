@@ -384,7 +384,7 @@ def main() -> int:
     )
     ui_dicts = ",".join(document["public_site"]["ui_language_options"])
     print(
-        "public_site=7-route-locales,"
+        "public_site=8-route-locales,"
         f"ui-dictionaries={ui_dicts},"
         f"repository_locale_status={document['public_site']['repository_locale_status']},"
         f"browser_review={document['public_site']['browser_review']}"

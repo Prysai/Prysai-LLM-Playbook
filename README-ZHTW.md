@@ -62,7 +62,7 @@ Prysai LLM Playbook（Prysai 大模型實戰手冊）不是把 skills 平鋪在�
 
 ## 專案由哪些部分組成
 
-下表列出主要目錄的職責。目錄本身是結構性入口，不代表其中的每一個 reader-facing 檔案都已經完成七語言遷移。
+下表列出主要目錄的職責。目錄本身是結構性入口，不代表其中的每一個 reader-facing 檔案都已經完成八語言遷移。
 
 | 層 | 位置 | 儲存什麼 | 作用 |
 |---|---|---|---|
@@ -83,7 +83,7 @@ Prysai LLM Playbook（Prysai 大模型實戰手冊）不是把 skills 平鋪在�
 
 當前專案處於 v0.1 的產品地基階段：22 章書籍結構、18 個實驗、真實問題研究、26 個候選 Skill（25 個原創方法和 1 個已審查的外部編輯 Skill），以及約 40 項評測夾具已經建立。目錄、結構與靜態契約檢查不等於學習者已經完成、遷移或掌握這些內容。
 
-書籍規範源為 English（`EN`），公開展示頁預設 English，並提供語言切換。繁體中文已經具備 22 章和 18 個實驗的 `-ZHTW` 候選檔案及同語言閱讀路徑；這表示課程單元可沿繁體中文路線往返閱讀，並不等於完整繁體中文課程已經透過獨立語言審校或學習者驗證。Skill、評測、研究檔案和部分補充讀物仍在遷移中。多語言架構要求每個 reader-facing 檔案帶明確字尾，同一內容 ID 的連結保持當前語言；在獨立語言審校完成前，現有翻譯保持 `in-progress`，不能被宣傳為完整七語言支援。
+書籍規範源為 English（`EN`），公開展示頁預設 English，並提供語言切換。繁體中文已經具備 22 章和 18 個實驗的 `-ZHTW` 候選檔案及同語言閱讀路徑；這表示課程單元可沿繁體中文路線往返閱讀，並不等於完整繁體中文課程已經透過獨立語言審校或學習者驗證。Skill、評測、研究檔案和部分補充讀物仍在遷移中。多語言架構要求每個 reader-facing 檔案帶明確字尾，同一內容 ID 的連結保持當前語言；在獨立語言審校完成前，現有翻譯保持 `in-progress`，不能被宣傳為完整八語言支援。
 
 ### 實際課程覆蓋率（22 章 + 18 個 Lab）
 
@@ -97,7 +97,7 @@ Prysai LLM Playbook（Prysai 大模型實戰手冊）不是把 skills 平鋪在�
 | Deutsch | 40 / 40 | 22 章和 18 個實驗均有候選譯文；獨立語言審校待完成。 |
 | 繁體中文 | 40 / 40 | 22 章和 18 個實驗均有候選譯文；獨立語言審校待完成。 |
 
-七條語言線均已具備 40 個課程單元的檔案與路徑；這只說明結構覆蓋，**不**表示七種語言都已完成獨立審校、文化適配、學習效果驗證或正式發行。頁面中的 `available / 40` 是路徑數量，不是準確度、自然程度、學習效果或發行狀態的分數。
+八條語言線均已具備 40 個課程單元的檔案與路徑；這只說明結構覆蓋，**不**表示八種語言都已完成獨立審校、文化適配、學習效果驗證或正式發行。頁面中的 `available / 40` 是路徑數量，不是準確度、自然程度、學習效果或發行狀態的分數。
 
 章節 19–22、全部候選 Skill 和模型/工作流評測仍需要 fresh-context 前測與執行日誌。外部材料不會未經來源、許可證和內容審查直接進入主線；真實問題研究記錄的是使用者報告或社群建議，不自動等同於官方根因，也不等同於本地復現。
 
@@ -131,7 +131,7 @@ Prysai LLM Playbook（Prysai 大模型實戰手冊）不是把 skills 平鋪在�
 - [第 1 章](book/chapters/01-gpt-and-codex-ZHTW.md) → [實驗 011](book/labs/lab-011-gpt-codex-boundaries-ZHTW.md) → [第 2 章](book/chapters/02-first-safe-task-ZHTW.md) → [第一次安全改動夾具](book/routes/first-safe-change-ZHTW.md) → [實驗 001](book/labs/lab-001-first-safe-task-ZHTW.md) → [第 3 章](book/chapters/03-task-protocol-ZHTW.md) → [實驗 002](book/labs/lab-002-task-protocol-ZHTW.md)；
 - [第 4 章](book/chapters/04-context-permissions-and-agent-ZHTW.md) → [實驗 007](book/labs/lab-007-action-boundaries-ZHTW.md) → [第 5 章](book/chapters/05-choose-the-codex-surface-ZHTW.md) → [第 6 章](book/chapters/06-model-selection-ZHTW.md) → [第 7 章](book/chapters/07-skills-plugins-and-tools-ZHTW.md) → [實驗 004：選擇最小有用能力](book/labs/lab-004-skill-selection-ZHTW.md) → [第 8 章](book/chapters/08-full-lifecycle-workflow-ZHTW.md) → [實驗 013](book/labs/lab-013-l3-vertical-slice-ZHTW.md) → [第 9 章](book/chapters/09-verification-and-recovery-ZHTW.md) → [實驗 003](book/labs/lab-003-evidence-review-ZHTW.md) → [第 10 章](book/chapters/10-planning-and-slicing-ZHTW.md)。
 
-它們都是遷移中的 `ZH` 候選內容。22 章與 18 個實驗之外的 Skill、研究檔案、評測和治理檔案仍不代表已完成同內容 ID 的中文版本，語言質量也尚未由獨立審校者確認。後續遷移必須繼續使用同一內容 ID、明確語言字尾和同語言連結；只有檔案、審校與對應證據都存在時才可提升狀態。
+它們都是遷移中的 `ZHTW` 候選內容。22 章與 18 個實驗之外的 Skill、研究檔案、評測和治理檔案仍不代表已完成同內容 ID 的繁體中文版本，語言質量也尚未由獨立審校者確認。後續遷移必須繼續使用同一內容 ID、明確語言字尾和同語言連結；只有檔案、審校與對應證據都存在時才可提升狀態。
 
 ## 名稱說明
 

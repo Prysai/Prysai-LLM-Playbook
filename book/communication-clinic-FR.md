@@ -13,6 +13,8 @@ facultatifs et ne promettent ni maîtrise ni fluidité.
 
 Si vous découvrez le projet et ne souhaitez pas pratiquer l’espagnol, commencez par la carte 3 de B.
 
+<span id="language-practice-route"></span>
+
 ## A. Pratique facultative d’une langue
 
 ### 1. Essayer avant de demander une correction

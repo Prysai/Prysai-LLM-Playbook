@@ -701,7 +701,8 @@
       "ja",
       "ko",
       "de",
-      "zh-tw"
+      "zh-tw",
+      "fr"
     ],
     "ui_language_options": [
       "en",
@@ -710,7 +711,8 @@
       "ja",
       "ko",
       "de",
-      "zh-tw"
+      "zh-tw",
+      "fr"
     ],
     "repository_content_locales": [
       "en",
@@ -719,7 +721,8 @@
       "ja",
       "ko",
       "de",
-      "zh-tw"
+      "zh-tw",
+      "fr"
     ],
     "repository_locale_status": "migration",
     "locale_matrix": "docs/governance/locale-matrix.yaml",
@@ -751,7 +754,8 @@
       "docs/adr/0015-locale-aware-site-routing.md",
       "docs/governance/locale-matrix.yaml",
       "site/locale-manifest.js",
-      "docs/quality/translation-depth-release-audit-2026-08-16.md"
+      "docs/quality/translation-depth-release-audit-2026-08-16.md",
+      "docs/quality/review-french-locale-browser-2026-08-21.md"
     ]
   },
   "sources_and_licenses": {

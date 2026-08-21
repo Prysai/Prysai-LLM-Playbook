@@ -92,7 +92,7 @@ Passez à la [vérification et récupération](09-verification-and-recovery-FR.m
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="02-first-safe-task-FR.md" aria-label="Chapitre précédent: Chapitre 2 · Première tâche sûre et vérifiable">← Précédent<br><strong>Chapitre 2 · Première tâche sûre et vérifiable</strong></a></td>
-      <td align="right"></td>
+      <td align="right"><a data-chapter-nav="next" href="04-context-permissions-and-agent-FR.md" aria-label="Chapitre suivant: Chapitre 4 · Contexte, autorisations et Agent">Suivant →<br><strong>Chapitre 4 · Contexte, autorisations et Agent</strong></a></td>
     </tr>
   </table>
 </nav>

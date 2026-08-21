@@ -10,7 +10,7 @@ Accepted for the migration phase
 
 ## Context
 
-The repository now has seven registered reader locales and a visible language
+The repository now has eight registered reader locales and a visible language
 menu, but the public showcase also contains 22 chapters and 18 labs whose
 translation files are being migrated at different speeds. A language toggle
 alone is not enough: a reader who chooses Chinese and then opens a chapter can
@@ -40,7 +40,7 @@ public-site route index that joins them.
    or the documented English migration path and expose a visible pending
    banner/title. A fallback is evidence of a missing translation, not a
    translation claim.
-5. Keep `?lang=en|zh|es|ja|ko|de|zh-tw` as the shareable language state. The URL is
+5. Keep `?lang=en|zh|es|ja|ko|de|zh-tw|fr` as the shareable language state. The URL is
    the only language source: an absent or invalid parameter resolves to the
    English default. Do not read a browser preference, because it can make a
    shared English URL render a different language.
@@ -84,7 +84,7 @@ same contracts rather than introduce a second routing system.
   manifest is regenerated and checked.
 - The static showcase has a small amount of runtime logic, but the routing
   rules remain deterministic and inspectable without a network service.
-- The site can truthfully show seven locale choices while still reporting that
+- The site can truthfully show eight locale choices while still reporting that
   route/file availability and language review are separate claims.
 - The manifest is generated output. Its JSON is not an editing surface.
 

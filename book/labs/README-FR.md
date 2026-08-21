@@ -8,7 +8,7 @@
 
 Chaque Lab indique une préparation, une tâche, une preuve, une variante d’échec,
 une réflexion, un transfert et une limite d’autorité. Les Labs français
-disponibles sont des brouillons `draft / not_run` :
+disposent d’une route française candidate et restent des brouillons `draft / not_run` :
 
 - [Lab 001 — première tâche sûre](lab-001-first-safe-task-FR.md)
 - [Lab 011 — frontières GPT–Codex](lab-011-gpt-codex-boundaries-FR.md)

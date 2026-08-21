@@ -63,9 +63,9 @@ quality, learner outcomes, or release readiness.
 | Korean | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental LLM foundation guide is stale after the 2026-08-17 English revision and is withheld from the sitemap until retranslation and review. |
 | German | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental LLM foundation guide is stale after the 2026-08-17 English revision and is withheld from the sitemap until retranslation and review. |
 | Traditional Chinese | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; independent Traditional Chinese language review is still pending. |
-| French | 8 / 40 | The foundation slice and selected practice routes have candidate files; the remaining 32 units are unavailable in French. Independent French language review is still pending. |
+| French | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; independent French language review is still pending. |
 
-Eight locale choices are registered; seven provide a complete **file path** for the 22 chapters and 18
+Eight locale choices are registered; all eight provide a complete **file path** for the 22 chapters and 18
 Labs. The supplemental foundation guide stays out of non-English sitemap
 entries until each translation has a current source revision and independent
 review. The five earlier translations are marked `stale`; Traditional Chinese
@@ -517,8 +517,8 @@ repository; they do not describe learning outcomes.
 | Labs | 18 labs · `draft` · `run_status: not_run` | The contracts exist; the repository does not claim that every lab has been freshly executed |
 | Skills | 26 project Skills · `candidate` (25 original + 1 reviewed external) | Structural checks pass; fresh-context and native-language evidence remain partial and visible in the registry |
 | Evaluation fixtures | 40 fixtures · `candidate` · `not_run` | The task set is defined; model execution logs are not being implied |
-| Public showcase | `candidate`, publicly reachable | Seven localized entry URLs are deployed; indexing, reader acceptance, deployment evidence, and rollback remain unproven |
-| Locale rollout | EN source plus six candidate translations in progress | Every locale has 40 / 40 chapter-and-Lab files and same-locale routes; independent language review and supplemental-material coverage remain incomplete |
+| Public showcase | `candidate`, publicly reachable | Eight localized entry URLs are registered; indexing, reader acceptance, deployment evidence, and rollback remain unproven |
+| Locale rollout | EN source plus seven candidate translations in progress | Every locale has 40 / 40 chapter-and-Lab files and same-locale routes; independent language review and supplemental-material coverage remain incomplete |
 
 The [current status source](docs/governance/content-status.yaml) is authoritative
 for evidence-backed maturity. The [current-state review](docs/quality/current-state-review-2026-08-09.md)

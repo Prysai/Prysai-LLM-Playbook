@@ -79,7 +79,7 @@ Continuez avec la [planification et le découpage](10-planning-and-slicing-FR.md
 <nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"></td>
+      <td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-FR.md" aria-label="Chapitre précédent: Chapitre 8 · De la définition à la livraison">← Précédent<br><strong>Chapitre 8 · De la définition à la livraison</strong></a></td>
       <td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-FR.md" aria-label="Chapitre suivant: Chapitre 10 · Planification et tranches verticales">Suivant →<br><strong>Chapitre 10 · Planification et tranches verticales</strong></a></td>
     </tr>
   </table>

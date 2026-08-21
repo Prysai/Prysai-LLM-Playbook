@@ -6,6 +6,12 @@ Playbook is ready for public production use.
 
 ## Unreleased
 
+### French locale candidate (2026-08-21)
+
+- Added the eighth registered interface and course route: French (`fr`). The 22 chapters and 18 Labs now have same-locale candidate files and routes.
+- French copy remains `in-progress`: independent native-language review, learner runs, transfer evidence, and production deployment are not established.
+
+
 ### Changed
 
 - **Open licenses adopted.** Project-owned content (curriculum, diagrams,
@@ -24,7 +30,7 @@ Playbook is ready for public production use.
   explicit stop boundaries, and no claim of learner or model performance.
 - **Lesson 0: What Is a Large Language Model** (book/guides/llm-fundamentals-EN.md + six translations): the textbook opener that explains tokens, context windows, capabilities, and limits before any product talk.
 - **Textbook reading path**: the homepage hero, the compact README, and the English README now lead with one ordered path (Lesson 0 -> Chapter 1 -> Chapter 2 -> ... -> Chapter 22) instead of a menu of choices; practice cards and language loops are exercises reached after the foundation.
-- **Goal wizard** (site/goal-templates.js + app.js): a seven-language interactive tool that turns a picked goal into a ready-to-copy prompt; positioned as a practice tool, not the entry point.
+- **Goal wizard** (site/goal-templates.js + app.js): an eight-language interactive tool that turns a picked goal into a ready-to-copy prompt; positioned as a practice tool, not the entry point.
 - **Six-platform adapter guide** (book/routes/platform-adapter-guide-EN.md and
   six translations): a safe first task and a visible difference list for
   ChatGPT, Claude / Claude Code, Gemini, DeepSeek, Grok, and the Codex
@@ -38,8 +44,8 @@ Playbook is ready for public production use.
 - **Interview Rehearsal Skill** (prysai-interview-rehearsal): one observable
   timed answer with a visible check, one material gap, and one changed
   question.
-- **Seven-language site UI**: complete Spanish, Japanese, Korean, German, and
-  Traditional Chinese interface dictionaries (506 keys each), seven-language learning-path data,
+- **Eight-language site UI**: complete Spanish, Japanese, Korean, German,
+  Traditional Chinese, and French interface dictionaries, eight-language learning-path data,
   chapter/lab/part titles, and localized chapter navigation footers; no route
   uses an English UI fallback anymore.
 - Request Escalation, an original candidate Skill and beginner reader card
@@ -95,7 +101,7 @@ Playbook is ready for public production use.
 - The first public route now separates the recommended local Codex path from
   optional text-only practice, with fictional ready-to-copy prompt cards and
   visible data-minimization guidance.
-- The homepage now renders the first-turn prompt contract as seven localized,
+- The homepage now renders the first-turn prompt contract as eight localized,
   readable fields instead of a dense image preview; the contract remains a
   candidate teaching aid, not a safety or learning guarantee.
 - Local source-archive audit and discovery scripts now require

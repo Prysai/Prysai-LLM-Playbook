@@ -324,9 +324,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -410,9 +410,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -496,9 +496,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -576,8 +576,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -661,9 +661,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -744,8 +744,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -826,8 +826,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -908,8 +908,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -990,8 +990,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -1072,8 +1072,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -1154,8 +1154,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -1236,8 +1236,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -1318,8 +1318,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -1400,8 +1400,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -1482,8 +1482,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -1564,8 +1564,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -1646,8 +1646,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -1728,8 +1728,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -1810,8 +1810,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -1892,8 +1892,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -1974,8 +1974,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -2056,8 +2056,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -2138,8 +2138,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -2220,8 +2220,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -2302,8 +2302,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -2384,8 +2384,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -2466,8 +2466,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -2548,8 +2548,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -2630,8 +2630,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -2712,8 +2712,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -2794,8 +2794,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -2876,8 +2876,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -2964,9 +2964,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -3053,9 +3053,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -3142,9 +3142,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -3231,9 +3231,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -3320,9 +3320,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -3409,9 +3409,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -3498,9 +3498,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -3587,9 +3587,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -3676,9 +3676,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -3765,9 +3765,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -3854,9 +3854,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -3943,9 +3943,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -4032,9 +4032,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -4118,9 +4118,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -4204,9 +4204,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -4290,9 +4290,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -4376,9 +4376,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -4462,9 +4462,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -4548,9 +4548,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -4628,8 +4628,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "coverage": "full",
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -4713,9 +4713,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -4799,9 +4799,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -4885,9 +4885,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "not-started",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
@@ -4971,9 +4971,9 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "core-slice",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "French core route is being authored and awaits independent native-language review."
+          "reason": "French file exists for the foundation guide; independent native-language review and learner-run evidence remain pending."
         }
       }
     }

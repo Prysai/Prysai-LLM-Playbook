@@ -137,7 +137,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -216,10 +216,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/guides/learning-practice-contract-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -305,12 +305,13 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/labs/lab-018-language-transfer-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [],
+          "title": "Lab 018 : Tester un transfert d’apprentissage écrit"
         }
       }
     },
@@ -390,7 +391,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -505,9 +506,11 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [
+            "language-practice-route"
+          ]
         }
       }
     },
@@ -591,7 +594,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -675,7 +678,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -759,7 +762,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -843,7 +846,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -927,7 +930,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -1011,7 +1014,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -1095,7 +1098,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -1200,7 +1203,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": [
             "core-task-contract"
@@ -1283,10 +1286,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/chapters/04-context-permissions-and-agent-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -1367,10 +1370,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/chapters/05-choose-the-codex-surface-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -1451,10 +1454,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/chapters/06-model-selection-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -1535,10 +1538,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/chapters/07-skills-plugins-and-tools-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -1619,10 +1622,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/chapters/08-full-lifecycle-workflow-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -1717,7 +1720,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": [
             "core-evidence-recovery"
@@ -1812,7 +1815,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": [
             "core-evidence-bearing-slice"
@@ -1895,10 +1898,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/chapters/11-designing-a-skill-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -1979,10 +1982,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/chapters/12-agent-loop-and-stop-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -2069,7 +2072,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": [
             "core-action-boundary"
@@ -2152,10 +2155,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/chapters/14-discover-and-audit-skills-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -2236,10 +2239,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/chapters/15-research-track-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -2320,10 +2323,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/chapters/16-engineering-track-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -2404,10 +2407,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/chapters/17-marketing-track-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -2488,10 +2491,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/chapters/18-content-design-data-automation-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -2572,10 +2575,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/chapters/19-evaluate-models-and-workflows-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -2656,10 +2659,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/chapters/20-personal-codex-work-system-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -2740,10 +2743,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/chapters/21-team-capability-system-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -2824,10 +2827,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/chapters/22-continuous-update-and-future-proofing-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -2918,7 +2921,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": [],
           "title": "Lab 011 : La frontière GPT–Codex"
@@ -3010,7 +3013,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": [],
           "title": "Lab 001 : La première tâche sûre"
@@ -3099,12 +3102,13 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/labs/lab-002-task-protocol-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [],
+          "title": "Lab 002 : Transformer un souhait en protocole"
         }
       }
     },
@@ -3190,12 +3194,13 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/labs/lab-003-evidence-review-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [],
+          "title": "Lab 003 : Auditer une affirmation de fin"
         }
       }
     },
@@ -3281,12 +3286,13 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/labs/lab-004-skill-selection-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [],
+          "title": "Lab 004 : Choisir la plus petite capacité utile"
         }
       }
     },
@@ -3372,12 +3378,13 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/labs/lab-005-design-a-skill-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [],
+          "title": "Lab 005 : Concevoir un Skill étroit"
         }
       }
     },
@@ -3463,12 +3470,13 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/labs/lab-008-research-question-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [],
+          "title": "Lab 008 : Réduire une question de recherche"
         }
       }
     },
@@ -3554,12 +3562,13 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/labs/lab-009-engineering-lifecycle-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [],
+          "title": "Lab 009 : Comparer deux cycles d’ingénierie"
         }
       }
     },
@@ -3645,12 +3654,13 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/labs/lab-010-product-context-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [],
+          "title": "Lab 010 : Construire un contexte produit partagé"
         }
       }
     },
@@ -3736,12 +3746,13 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/labs/lab-012-team-capability-migration-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [],
+          "title": "Lab 012 : Migrer une capacité vers une équipe"
         }
       }
     },
@@ -3827,12 +3838,13 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/labs/lab-013-l3-vertical-slice-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [],
+          "title": "Lab 013 : Une tranche verticale"
         }
       }
     },
@@ -3918,12 +3930,13 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/labs/lab-006-agent-stop-conditions-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [],
+          "title": "Lab 006 : Concevoir les conditions d’arrêt"
         }
       }
     },
@@ -4009,12 +4022,13 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/labs/lab-007-action-boundaries-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [],
+          "title": "Lab 007 : Trois frontières pour une même tâche"
         }
       }
     },
@@ -4098,12 +4112,13 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/labs/lab-014-resume-reconciliation-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [],
+          "title": "Lab 014 : Reprendre sans supposer"
         }
       }
     },
@@ -4187,12 +4202,13 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/labs/lab-015-evidence-delivery-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [],
+          "title": "Lab 015 : Livrer des preuves"
         }
       }
     },
@@ -4276,12 +4292,13 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/labs/lab-016-side-effect-boundary-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [],
+          "title": "Lab 016 : La frontière d’effet"
         }
       }
     },
@@ -4358,10 +4375,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/spanish-practice-loop-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -4443,7 +4460,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -4525,7 +4542,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -4632,12 +4649,16 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/evidence-library-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [
+            "core-terms",
+            "method-and-status",
+            "source-notes"
+          ]
         }
       }
     },
@@ -4721,12 +4742,13 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/labs/lab-017-skill-discovery-audit-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [],
+          "title": "Lab 017 : Auditer avant d’adopter"
         }
       }
     },
@@ -4845,12 +4867,18 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/routes/platform-adapter-guide-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": []
+          "explicit_anchors": [
+            "chatgpt-first-task",
+            "claude-code-first-task",
+            "deepseek-first-task",
+            "gemini-first-task",
+            "grok-first-task"
+          ]
         }
       }
     },
@@ -4927,10 +4955,10 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "fr": {
           "path": "book/french-practice-loop-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "not-started",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -5012,7 +5040,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "candidate",
           "translation_status": "in-progress",
-          "coverage": "core-slice",
+          "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
@@ -8791,9 +8819,9 @@ window.CODEX_LOCALE_MANIFEST = {
     },
     "fr": {
       "total_units": 40,
-      "available_units": 8,
+      "available_units": 40,
       "source_units": 0,
-      "candidate_translation_units": 8,
+      "candidate_translation_units": 40,
       "reviewed_translation_units": 0
     }
   },

@@ -1,8 +1,8 @@
 # Prysai LLM Playbook 展示页
 
-这是 Prysai LLM Playbook 的静态展示页实现，范围仅限 `site/`。页面采用 Swiss editorial 方向：白色/中性背景、近黑文字、单一 Swiss Red `#E4002B`、可见细线网格和左对齐编辑层级。公开页默认英文，并提供 EN、ZH、ES、JA、KO、DE、ZHTW 七种界面语言与对应课程路径。首页先让读者选择今天要完成的事、生成一条可直接使用的提示词，再展示课程索引与项目资料；它不会要求新用户先理解仓库目录。学习路径面板由 `docs/governance/learning-path.yaml`、`docs/governance/content-status.yaml` 和 `site/content-catalog.json` 生成，`site/learning-path-data.js` 是提交到仓库的生成物；内容身份和语言路径由 `site/locale-manifest.js` 生成，两个生成物都不应手工编辑。页面的核心交互是：
+这是 Prysai LLM Playbook 的静态展示页实现，范围仅限 `site/`。页面采用 Swiss editorial 方向：白色/中性背景、近黑文字、单一 Swiss Red `#E4002B`、可见细线网格和左对齐编辑层级。公开页默认英文，并提供 EN、ZH、ES、JA、KO、DE、ZHTW、FR 八种界面语言与对应课程路径。法语路线目前是候选迁移：浏览器渲染和路径覆盖已检查，但独立法语母语审校仍未完成。首页先让读者选择今天要完成的事、生成一条可直接使用的提示词，再展示课程索引与项目资料；它不会要求新用户先理解仓库目录。学习路径面板由 `docs/governance/learning-path.yaml`、`docs/governance/content-status.yaml` 和 `site/content-catalog.json` 生成，`site/learning-path-data.js` 是提交到仓库的生成物；内容身份和语言路径由 `site/locale-manifest.js` 生成，两个生成物都不应手工编辑。页面的核心交互是：
 
-- 七语言菜单支持 `?lang=en|zh|es|ja|ko|de|zh-tw`。URL 是唯一的语言来源：没有参数的入口始终是英文；菜单切换会保留当前路径、查询参数和 hash；
+- 八语言菜单支持 `?lang=en|zh|es|ja|ko|de|zh-tw|fr`。URL 是唯一的语言来源：没有参数的入口始终是英文；菜单切换会保留当前路径、查询参数和 hash；
 - 章节、实验和学习路径链接通过 `content_id + locale` manifest 解析，并始终停留在所选语言路径；Reader 不会静默把正文切回英文；
 - L0—L6 成长路径标签切换，会更新当前等级的说明与章节入口，并支持方向键、Home/End；
 - 22 章路线按 A—D 四条路线筛选，并保留章节折叠；
@@ -92,7 +92,7 @@ build alone does not prove either public origin now serves the new files.
 ## Search metadata and public URL
 
 `site/seo-config.json` is the single source for the intended public site URL
-and the seven supported language routes. The Pages artifact generator uses it to
+and the eight supported language routes. The Pages artifact generator uses it to
 create `robots.txt` and `sitemap.xml`; the home page uses the same route shape
 for canonical, alternate-language, Open Graph, Twitter, and structured-data
 metadata. If the project moves to a custom domain, change only
@@ -102,7 +102,7 @@ The generated artifact also exposes `sitemap_index.xml` as a compatibility
 entry point. The canonical project URLs are under the configured public prefix:
 `https://docs.prysai.com/llm-playbook/sitemap.xml` and
 `https://docs.prysai.com/llm-playbook/sitemap_index.xml`. The main sitemap lists
-the seven crawlable locale entries plus Reader URLs whose source file exists, whose
+the eight crawlable locale entries plus Reader URLs whose source file exists, whose
 content status is at least `candidate`, and whose translation is not
 `in-progress`, `not-started`, or `stale`. This keeps draft and incomplete
 translations out of crawler discovery even though the Reader may display them
@@ -147,7 +147,7 @@ $py = (Get-Command python -ErrorAction Stop).Source
 ## 验证
 
 1. 默认打开 `http://127.0.0.1:4173/`，确认页面为英文，`document.documentElement.lang` 为 `en`；
-2. 访问无参数入口以及 `?lang=en`、`?lang=zh`、`?lang=es`、`?lang=ja`、`?lang=ko`、`?lang=de`，确认菜单高亮、banner 状态和 URL 保持；无参数和 `?lang=en` 必须始终呈现英文，不能继承浏览器旧偏好；
+2. 访问无参数入口以及 `?lang=en`、`?lang=zh`、`?lang=es`、`?lang=ja`、`?lang=ko`、`?lang=de`、`?lang=zh-tw`、`?lang=fr`，确认菜单高亮、banner 状态和 URL 保持；无参数和 `?lang=en` 必须始终呈现英文，不能继承浏览器旧偏好；
 3. 在每一种语言下确认正文、标题、description、aria-label 和 `lang` 同步；缺失单元必须显示该语言的不可用提示，不得静默切换到英文或其他语言；
 4. 点击章节、实验和学习路径入口，确认它们解析到当前 locale 的存在文件，或显示该 locale 的待翻译不可用状态；确认路径、查询参数和 hash 不丢失；
 5. 检查导航锚点、章节筛选、章节折叠和 L0—L6 切换；用方向键、Home/End 操作等级标签；
@@ -168,4 +168,4 @@ $py = (Get-Command python -ErrorAction Stop).Source
 & $py scripts\build_site_locale_manifest.py --check
 ```
 
-本页对项目状态的表述以 `docs/governance/content-status.yaml` 为当前单一状态源，并由 `docs/quality/current-state-review-2026-08-09.md` 解释证据边界；`book/table-of-contents-EN.md`、`book/labs/README-EN.md`、`docs/governance/update-map.md` 仍是对应领域的阅读入口。七语种内容入口的身份和翻译状态以 `docs/governance/locale-matrix.yaml` 为准。2026-08-10 已完成一次范围化的本地浏览器验收，详见 `docs/quality/review-public-site-browser-2026-08-10.md`；这不等于完成完整视觉、屏幕阅读器、对比度、跨浏览器、部署环境或真实用户验收。当前页面实现状态仍为 **candidate**，页面不把 `candidate` 写成 `verified` 或 `production-ready`。
+本页对项目状态的表述以 `docs/governance/content-status.yaml` 为当前单一状态源，并由 `docs/quality/current-state-review-2026-08-09.md` 解释证据边界；`book/table-of-contents-EN.md`、`book/labs/README-EN.md`、`docs/governance/update-map.md` 仍是对应领域的阅读入口。八语种内容入口的身份和翻译状态以 `docs/governance/locale-matrix.yaml` 为准。2026-08-10 已完成一次范围化的本地浏览器验收，详见 `docs/quality/review-public-site-browser-2026-08-10.md`；这不等于完成完整视觉、屏幕阅读器、对比度、跨浏览器、部署环境或真实用户验收。当前页面实现状态仍为 **candidate**，页面不把 `candidate` 写成 `verified` 或 `production-ready`。

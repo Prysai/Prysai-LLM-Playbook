@@ -17,10 +17,10 @@ les fondations. Elle n’est pas une introduction à ce qu’est un LLM.
 
 ## Structure
 
-Les 22 chapitres et 18 Labs gardent une identité par langue. La tranche
-française disponible couvre les fondations, les frontières GPT–Codex, la
-première tâche, la vérification, le découpage, les effets externes et deux Labs.
-Les autres pages affichent explicitement leur indisponibilité en français.
+Les 22 chapitres et 18 Labs disposent d’une route française candidate et leurs
+liens de chapitre restent dans cette route. Les pages complémentaires (Skills,
+recherches, registres et exemples) gardent leur propre état de traduction et
+affichent explicitement une indisponibilité quand aucune page française n’existe.
 
 Chaque chapitre suit la boucle : problème → concept → décision → action →
 preuve → échec → réflexion → transfert. Une structure réussie ne constitue pas
@@ -33,6 +33,6 @@ preuve → échec → réflexion → transfert. Une structure réussie ne consti
 - [Règles des Labs](labs/README-FR.md)
 - [Pratique langue, travail et recherche](communication-clinic-FR.md)
 
-**État de la traduction :** `in-progress`, `candidate`, `not_run`. Une
-relecture française indépendante et des essais avec des lecteurs restent à
-faire.
+**État de la traduction :** `in-progress`, `candidate`, `not_run`. La couverture
+structurelle est complète pour les 22 chapitres et 18 Labs ; une relecture
+française indépendante et des essais avec des lecteurs restent à faire.

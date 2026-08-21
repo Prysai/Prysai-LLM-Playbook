@@ -298,7 +298,7 @@ try {
   // its own Reader document. A same-locale filename with a stale English
   // fragment silently sends readers to the article top, which defeats the
   // concrete next step promised by the goal wizard.
-  for (const locale of ['zh', 'es', 'ja', 'ko', 'de', 'zh-tw']) {
+  for (const locale of ['zh', 'es', 'ja', 'ko', 'de', 'zh-tw', 'fr']) {
     await page.goto(`${origin}/site/?lang=${locale}`, { waitUntil: 'networkidle' });
     const localizedWizard = page.locator('[data-goal-wizard]');
     await localizedWizard.locator('[data-goal-key="language"]').click();
@@ -327,7 +327,7 @@ try {
     await new Promise((resolve) => setTimeout(resolve, 400));
     await route.continue();
   });
-  const readerHtmlLanguages = { en: 'en', zh: 'zh-CN', es: 'es', ja: 'ja', ko: 'ko', de: 'de', 'zh-tw': 'zh-TW' };
+  const readerHtmlLanguages = { en: 'en', zh: 'zh-CN', es: 'es', ja: 'ja', ko: 'ko', de: 'de', 'zh-tw': 'zh-TW', fr: 'fr' };
   for (const locale of Object.keys(readerHtmlLanguages)) {
     const suffix = locale === 'zh-tw' ? 'ZHTW' : locale.toUpperCase();
     const source = `book/guides/llm-fundamentals-${suffix}.md`;
@@ -366,7 +366,7 @@ try {
   const localizedHeroSources = {
     en: /Hi, the workshop changed/, zh: /你好，工作坊改期了/, es: /El taller cambió/,
     ja: /ワークショップの予定が変わりました/, ko: /워크숍 일정이 바뀌었습니다/, de: /Der Workshop wurde verschoben/,
-    'zh-tw': /嗨，工作坊改期了/,
+    'zh-tw': /嗨，工作坊改期了/, fr: /Bonjour, l’atelier a changé/,
   };
   const localizedHeroTitles = {
     en: 'Understand LLMs before you ask them to work.',
@@ -375,7 +375,7 @@ try {
     ja: 'LLMに仕事を頼む前に、その仕組みを理解する。',
     ko: 'LLM에게 일을 맡기기 전에 먼저 이해하세요.',
     de: 'Verstehe LLMs, bevor du sie arbeiten lässt.',
-    'zh-tw': '先理解 LLM，再讓它開始工作。',
+    'zh-tw': '先理解 LLM，再讓它開始工作。', fr: 'Comprenez les LLM avant de leur confier une tâche.',
   };
   const localizedRouteContinuation = {
     en: 'Continue inside the core route',
@@ -384,7 +384,7 @@ try {
     ja: '基礎コアルートの中で続ける',
     ko: '기초 코어 경로에서 계속하기',
     de: 'Im Kernpfad fortfahren',
-    'zh-tw': '在核心路線中繼續',
+    'zh-tw': '在核心路線中繼續', fr: 'Continuez à l’intérieur du parcours fondamental',
   };
   const localizedVisualCardTitles = {
     en: ['Request to evidence', 'Beginner practice loop', 'Project evidence snapshot', 'From understanding to transfer'],
@@ -393,7 +393,7 @@ try {
     ja: ['リクエストからエビデンスへ', '初心者練習ループ', 'プロジェクトのエビデンススナップショット', '理解から転移へ'],
     ko: ['요청에서 증거까지', '초보 연습 루프', '프로젝트 증거 스냅샷', '이해에서 전이까지'],
     de: ['Von der Anfrage zum Beleg', 'Anfänger-Übungsschleife', 'Evidenz-Schnappschuss des Projekts', 'Vom Verstehen zum Transfer'],
-    'zh-tw': ['從請求到證據', '入門實踐循環', '專案證據快照', '從理解到遷移'],
+    'zh-tw': ['從請求到證據', '入門實踐循環', '專案證據快照', '從理解到遷移'], fr: ['De la demande à la preuve', 'Boucle de pratique pour débuter', 'Instantané des preuves du projet', 'De la compréhension au transfert'],
   };
   const localizedFoundationLensTitles = {
     en: ['Generate', 'Frame', 'Extend', 'Coordinate', 'Check'],
@@ -402,7 +402,7 @@ try {
     ja: ['生成', '枠組み', '拡張', '調整', '確認'],
     ko: ['생성', '구성', '확장', '조정', '점검'],
     de: ['Erzeugen', 'Rahmen', 'Erweitern', 'Koordinieren', 'Prüfen'],
-    'zh-tw': ['生成', '定義', '擴展', '協作', '檢查'],
+    'zh-tw': ['生成', '定義', '擴展', '協作', '檢查'], fr: ['Générer', 'Cadrer', 'Étendre', 'Coordonner', 'Vérifier'],
   };
   const localizedFoundationConceptTitles = {
     en: ['Token', 'Context', 'Context window', 'Prompt', 'Response', 'Tool / Agent'],
@@ -411,7 +411,7 @@ try {
     ja: ['トークン', 'コンテキスト', 'コンテキストウィンドウ', 'プロンプト', '回答', 'ツール / Agent'],
     ko: ['토큰', '컨텍스트', '컨텍스트 윈도우', '프롬프트', '응답', '도구 / Agent'],
     de: ['Token', 'Kontext', 'Kontextfenster', 'Prompt', 'Antwort', 'Tool / Agent'],
-    'zh-tw': ['Token', '上下文', '上下文窗口', '提示詞', '回答', '工具 / Agent'],
+    'zh-tw': ['Token', '上下文', '上下文窗口', '提示詞', '回答', '工具 / Agent'], fr: ['Jeton', 'Contexte', 'Fenêtre de contexte', 'Prompt', 'Réponse', 'Outil / Agent'],
   };
   const localizedFoundationVisuals = {
     en: {
@@ -456,6 +456,12 @@ try {
       bodies: ['定義、提供脈絡、提出請求、檢查，然後修正、遷移或停止。', '結果、起始脈絡、允許的協助、限制、回答與檢查、停止條件。', '提議、授權、執行與人工讀回。', '讓聲明的強度對應下一個最小檢查。', '依賴資訊前，對照聲明、來源、範圍與時效性。'],
       boundary: /專案原創英文圖表/,
     },
+    fr: {
+      heading: 'Cinq tableaux de base, une seule boucle.',
+      titles: ['La plus petite boucle LLM sûre', 'Contrat de prompt : six champs', 'Frontière d’action observable', 'Échelle de récupération des preuves', 'Vérifier la source avant de croire'],
+      bodies: ['Définir, fournir le contexte, demander, vérifier, puis corriger, transférer ou s’arrêter.', 'Résultat, contexte, aide autorisée, limites, vérification et arrêt.', 'Proposition, autorité, exécution et relecture humaine.', 'Adapter la force de l’affirmation au prochain contrôle le plus petit.', 'Comparer affirmation, source, portée et actualité avant de s’y fier.'],
+      boundary: /Tableaux anglais créés par le projet/i,
+    },
   };
   const localizedMobileIndexDetails = {
     en: 'Open the detailed map',
@@ -464,9 +470,9 @@ try {
     ja: '詳細な地図を開く',
     ko: '상세 지도 열기',
     de: 'Detaillierte Karte öffnen',
-    'zh-tw': '開啟詳細地圖',
+    'zh-tw': '開啟詳細地圖', fr: 'Ouvrir la carte détaillée',
   };
-  for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de', 'zh-tw']) {
+  for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de', 'zh-tw', 'fr']) {
     await page.goto(`${origin}/site/?lang=${locale}`, { waitUntil: 'networkidle' });
     await page.locator('[data-current-language]').waitFor();
     const expectedLanguageToken = locale === 'zh-tw' ? 'ZHTW' : locale.toUpperCase();
@@ -558,6 +564,7 @@ try {
         ko: ['가장 작은 안전한 LLM 루프 교육 보드', '여섯 필드 프롬프트 계약 교육 보드', '관찰 가능한 행동 경계 교육 보드', '증거 복구 사다리 교육 보드', '믿기 전 출처 점검 교육 보드'],
         de: ['Lehrtafel zum kleinsten sicheren LLM-Ablauf', 'Lehrtafel für einen Prompt-Vertrag mit sechs Feldern', 'Lehrtafel für eine beobachtbare Handlungsgrenze', 'Lehrtafel zur Evidenz-Wiederherstellungsleiter', 'Lehrtafel zur Quellenprüfung vor dem Vertrauen'],
         'zh-tw': ['最小安全 LLM 閉環教學圖', '六欄位提示詞契約教學圖', '可觀察行動邊界教學圖', '證據恢復階梯教學圖', '相信前先檢查來源教學圖'],
+        fr: ['Tableau pédagogique de la plus petite boucle LLM sûre', 'Tableau pédagogique du contrat de prompt à six champs', 'Tableau pédagogique de la frontière d’action observable', 'Tableau pédagogique de l’échelle de récupération des preuves', 'Tableau pédagogique de la vérification de la source avant de croire'],
       }[locale],
       `${locale} foundation visual alt text is not localized`,
     );
@@ -571,7 +578,7 @@ try {
     );
     assert.match(
       await page.locator('.foundation-concept-head .text-link').innerText(),
-      { en: /Open the complete English visual/i, zh: /打开完整英文图表/, es: /visual completo en inglés/i, ja: /英語の全体図/, ko: /전체 영어 도표/, de: /vollständige englische Grafik/i, 'zh-tw': /完整英文圖表/ }[locale],
+      { en: /Open the complete English visual/i, zh: /打开完整英文图表/, es: /visual completo en inglés/i, ja: /英語の全体図/, ko: /전체 영어 도표/, de: /vollständige englische Grafik/i, 'zh-tw': /完整英文圖表/, fr: /visuel complet en anglais/i }[locale],
       `${locale} concept map visual link is not localized`,
     );
     assert.equal(
@@ -579,6 +586,9 @@ try {
       localizedMobileIndexDetails[locale],
       `${locale} mobile project map disclosure is not localized`,
     );
+    if (locale === 'fr') {
+      await page.locator('.hero').screenshot({ path: path.join(visualEvidenceDirectory, 'hero-routes-desktop-fr.png') });
+    }
     assert.equal(await page.locator('#protocol .protocol-rule li').count(), 4, `${locale} protocol boundary chart lost a step`);
     assert.equal(
       await page.locator('#protocol .protocol-rule').getAttribute('aria-label'),
@@ -589,6 +599,7 @@ try {
         ja: '境界付きタスクの4つの問い',
         ko: '범위가 정해진 작업을 위한 네 가지 질문',
         de: 'Vier Fragen für eine begrenzte Aufgabe',
+        fr: 'Quatre questions pour une tâche délimitée',
         'zh-tw': '有邊界任務的四個問題',
       }[locale],
       `${locale} protocol boundary chart is not localized`,
@@ -600,35 +611,37 @@ try {
     }
   }
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto(`${origin}/site/?lang=zh`, { waitUntil: 'networkidle' });
+  await page.goto(`${origin}/site/?lang=fr`, { waitUntil: 'networkidle' });
   await noHorizontalOverflow(page, 'mobile localized six-term concept map');
   assert.equal(await page.locator('.foundation-concept-card').count(), 6, 'mobile six-term concept map is not discoverable');
   assert.equal(await page.locator('#foundation-visuals .foundation-visual-card').count(), 5, 'mobile foundation visual section is not discoverable');
   await page.locator('#foundation-visuals').scrollIntoViewIfNeeded();
   await page.locator('#foundation-visuals').screenshot({ path: path.join(visualEvidenceDirectory, 'foundation-visuals-mobile.png') });
+  await page.goto(`${origin}/site/?lang=fr`, { waitUntil: 'networkidle' });
+  await page.locator('.hero').screenshot({ path: path.join(visualEvidenceDirectory, 'hero-routes-mobile-fr.png') });
   await noHorizontalOverflow(page, 'mobile foundation teaching visuals');
   const mobileProjectDetails = page.locator('.mobile-project-details');
   assert.equal(await mobileProjectDetails.isVisible(), true, 'mobile project map disclosure is not visible');
-  assert.equal(await mobileProjectDetails.locator('nav').getAttribute('aria-label'), '详细项目地图', 'mobile project map disclosure aria label is not localized');
+  assert.equal(await mobileProjectDetails.locator('nav').getAttribute('aria-label'), 'Carte détaillée du projet', 'mobile project map disclosure aria label is not localized');
   assert.match(
     await mobileProjectDetails.locator('a[data-content-id="project-readme"]').getAttribute('href'),
-    /reader\.html\?path=README-ZH\.md&lang=zh$/,
-    'mobile project map canonical reading link does not stay on the selected Chinese route',
+    /reader\.html\?path=README-FR\.md&lang=fr$/,
+    'mobile project map canonical reading link does not stay on the selected French route',
   );
   assert.match(
     await page.locator('.mobile-index-rail a[data-content-id="book-table-of-contents"]').getAttribute('href'),
-    /reader\.html\?path=book%2Ftable-of-contents-ZH\.md&lang=zh$/,
-    'mobile chapter index does not stay on the selected Chinese route',
+    /reader\.html\?path=book%2Ftable-of-contents-FR\.md&lang=fr$/,
+    'mobile chapter index does not stay on the selected French route',
   );
   assert.match(
     await page.locator('.mobile-index-rail a[data-content-id="book-labs-readme"]').getAttribute('href'),
-    /reader\.html\?path=book%2Flabs%2FREADME-ZH\.md&lang=zh$/,
-    'mobile lab index does not stay on the selected Chinese route',
+    /reader\.html\?path=book%2Flabs%2FREADME-FR\.md&lang=fr$/,
+    'mobile lab index does not stay on the selected French route',
   );
   assert.match(
     await page.locator('.mobile-index-rail a[data-content-id="field-problems-index-2026-08-10"]').getAttribute('href'),
-    /reader\.html\?path=docs%2Fresearch%2Ffield-problems-index-2026-08-10\.md&lang=zh$/,
-    'mobile field-case index does not retain the selected Chinese locale',
+    /reader\.html\?path=docs%2Fresearch%2Ffield-problems-index-2026-08-10\.md&lang=fr$/,
+    'mobile field-case index does not retain the selected French locale',
   );
   await mobileProjectDetails.locator('summary').click();
   assert.equal(await mobileProjectDetails.locator('a').count(), 3, 'mobile project map disclosure lost a source route');
@@ -1060,7 +1073,7 @@ try {
   // can change with wording or Reader rules. Keep every localized adapter
   // fail-closed only for missing content, not for a missing target.
   const platformAdapterPage = await context.newPage();
-  for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de', 'zh-tw']) {
+  for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de', 'zh-tw', 'fr']) {
     const suffix = locale === 'zh-tw' ? 'ZHTW' : locale.toUpperCase();
     const adapterSource = `book%2Froutes%2Fplatform-adapter-guide-${suffix}.md`;
     await platformAdapterPage.goto(`${origin}/site/reader.html?path=${adapterSource}&lang=${locale}#deepseek-first-task`, { waitUntil: 'networkidle' });
@@ -1129,7 +1142,7 @@ try {
   assert.equal(await page.locator('.first-win-checks li').count(), 3, 'first prompt practice does not expose three plain-language checks');
   await page.locator('[data-copy-starter]').click();
   await page.locator('[data-copy-starter-status]').getByText('Prompt copied.', { exact: false }).waitFor();
-  for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de', 'zh-tw']) {
+  for (const locale of ['en', 'zh', 'es', 'ja', 'ko', 'de', 'zh-tw', 'fr']) {
     const localePage = await context.newPage();
     const localeEntry = locale === 'en' ? `${origin}/site/index.html` : `${origin}/${locale}.html`;
     await localePage.goto(localeEntry, { waitUntil: 'networkidle' });
@@ -1380,7 +1393,7 @@ try {
     ['llm-core-check-repair-EN.md', /Check, repair, and state limits/i],
     ['llm-core-unseen-transfer-EN.md', /Repeat the method on an unseen task/i],
   ];
-  const localeSuffix = { en: 'EN', zh: 'ZH', es: 'ES', ja: 'JA', ko: 'KO', de: 'DE', 'zh-tw': 'ZHTW' };
+  const localeSuffix = { en: 'EN', zh: 'ZH', es: 'ES', ja: 'JA', ko: 'KO', de: 'DE', 'zh-tw': 'ZHTW', fr: 'FR' };
   const coreProjectionStems = {
     'llm-foundation-core-v1-EN.md': 'book/guides/llm-fundamentals',
     'llm-core-first-generation-EN.md': 'book/routes/universal-core-foundations',
@@ -1390,7 +1403,7 @@ try {
   };
   const coreRoutePage = await context.newPage();
   const localizedCorePages = await Promise.all(
-    Object.entries({ zh: 'zh-CN', es: 'es', ja: 'ja', ko: 'ko', de: 'de', 'zh-tw': 'zh-TW' }).map(async ([locale, htmlLang]) => ({
+    Object.entries({ zh: 'zh-CN', es: 'es', ja: 'ja', ko: 'ko', de: 'de', 'zh-tw': 'zh-TW', fr: 'fr' }).map(async ([locale, htmlLang]) => ({
       locale,
       htmlLang,
       page: await context.newPage(),
@@ -1470,7 +1483,7 @@ try {
   await coreReceiptCard.waitFor({ state: 'visible' });
   assert.equal(await coreReceiptPage.locator('[data-reader-core-attempted]').isChecked(), true, 'local receipt did not restore after refresh');
   assert.match(await coreReceiptPage.locator('[data-reader-core-progress]').innerText(), /1 of 5 units/i, 'core progress does not reflect the saved attempt');
-  const localizedNextMarkers = { zh: '下一步', es: 'Siguiente paso', ja: '次のステップ', ko: '다음 단계', de: 'Nächster Schritt', 'zh-tw': '下一步' };
+  const localizedNextMarkers = { zh: '下一步', es: 'Siguiente paso', ja: '次のステップ', ko: '다음 단계', de: 'Nächster Schritt', 'zh-tw': '下一步', fr: 'Étape suivante' };
   for (const { locale, page: localePage } of localizedCorePages) {
     await localePage.goto(`${origin}/site/reader.html?path=book%2Froutes%2Fllm-foundation-core-v1-EN.md&lang=${locale}`, { waitUntil: 'networkidle' });
     await localePage.locator('[data-reader-core-card]').waitFor({ state: 'visible' });
@@ -1794,7 +1807,7 @@ try {
 
 // The same protection is a Reader contract for every non-English route,
   // including locales that currently have only their starter path translated.
-  for (const locale of ['zh', 'es', 'ja', 'ko', 'de']) {
+  for (const locale of ['zh', 'es', 'ja', 'ko', 'de', 'fr']) {
     const untranslatedProjectPage = await context.newPage();
     await untranslatedProjectPage.goto(`${origin}/site/reader.html?path=${englishOnlyResearchPath}&lang=${locale}`, { waitUntil: 'networkidle' });
     await untranslatedProjectPage.locator('[data-reader-article] [role="alert"]').waitFor();
@@ -1819,6 +1832,7 @@ try {
     ['ja', '最初の安全な変更', '安全な README の変更を一つ行う'],
     ['ko', '첫 번째 안전한 변경', '안전한 README 변경 하나 만들기'],
     ['de', 'Die erste sichere Änderung', 'Eine sichere README-Änderung vornehmen'],
+    ['fr', 'Première modification sûre', 'La première tâche sûre'],
   ];
   for (const [locale, heading, labHeading] of localizedSafeFixtureRoutes) {
     const localizedRoutePage = await context.newPage();
@@ -1837,6 +1851,16 @@ try {
     await noHorizontalOverflow(localizedRoutePage, `mobile ${locale} safe-fixture and Lab 001 continuation`);
     await localizedRoutePage.close();
   }
+
+  const frenchReaderPage = await context.newPage();
+  await frenchReaderPage.setViewportSize({ width: 390, height: 844 });
+  await frenchReaderPage.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F02-first-safe-task-FR.md&lang=fr`, { waitUntil: 'networkidle' });
+  await frenchReaderPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+  assert.equal(await frenchReaderPage.locator('[data-reader-language]').inputValue(), 'fr', 'French Reader chapter route loses the requested language');
+  assert.match(await frenchReaderPage.locator('[data-reader-article] h1').innerText(), /Réaliser une première tâche sûre et vérifiable/i, 'French Reader chapter route does not render the French article heading');
+  await noHorizontalOverflow(frenchReaderPage, 'mobile French Reader chapter 02');
+  await frenchReaderPage.screenshot({ path: path.join(visualEvidenceDirectory, 'candidate-reader-mobile-chapter-02-fr.png') });
+  await frenchReaderPage.close();
 
   const chineseSearchPage = await context.newPage();
   await chineseSearchPage.setViewportSize({ width: 390, height: 844 });

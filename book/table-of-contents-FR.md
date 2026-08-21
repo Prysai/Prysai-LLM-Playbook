@@ -21,6 +21,6 @@
 - [Chapitre 10 — Planification et découpage](chapters/10-planning-and-slicing-FR.md)
 - [Chapitre 13 — Frontières d’action](chapters/13-action-boundaries-FR.md)
 
-Les autres chapitres et Labs sont enregistrés dans la matrice de locales, mais
-ne disposent pas encore d’une page française publiée. Reader le signale au lieu
-de charger une source anglaise.
+Les 22 chapitres et 18 Labs disposent d’une page française candidate. Les pages
+complémentaires gardent leur propre statut ; si une page française manque,
+Reader le signale au lieu de charger une source anglaise.
