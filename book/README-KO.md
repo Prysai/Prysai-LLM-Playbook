@@ -1,3 +1,5 @@
+<!-- content_id: book-readme | locale: KO | language: ko | default_locale: EN | content_status: candidate | translation_status: in-progress | reader_runtime_status: not_run | translated_from: EN | source_revision: worktree-2026-08-15 -->
+
 # Prysai LLM Playbook: 책
 
 이 디렉터리에는 `Prysai LLM Playbook`의 독창적인 주 학습 경로가 들어 있습니다. 이 책은 여섯 개 외부 프로젝트를 이어 붙인 모음이 아니라, 학습자의 성장 순서에 맞춰 다시 구성한 콘텐츠 시스템입니다.
