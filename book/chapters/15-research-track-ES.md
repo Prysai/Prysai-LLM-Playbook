@@ -2,13 +2,13 @@
 
 # Capítulo 15: Ruta de investigación: de la pregunta al conocimiento auditable
 
-**Estado:** `candidate`. **Experimento:** `draft / not_run`. Este capítulo enseña disciplina de investigación; sus casos públicos son material didáctico, no reproducciones locales ni confirmaciones oficiales de causas.
+**Estado:** `candidate`. **Experimento:** `draft / not_run`. Este capítulo enseña a investigar con rigor. Los casos públicos son material didáctico: no son reproducciones locales ni confirmaciones oficiales de causas.
 
 ## El problema que resuelve este capítulo
 
-«Investiga esto» puede querer decir hallar hechos, comparar opciones, revisar bibliografía, formular una pregunta, escribir un informe o auditar un borrador. Sin acotar primero, un Agent puede convertir fragmentos de búsqueda en conclusiones, tratar una URL inaccesible como leída o obedecer una instrucción escondida en un documento externo.
+«Investiga esto» puede querer decir hallar hechos, comparar opciones, revisar bibliografía, formular una pregunta, escribir un informe o auditar un borrador. Si no acotas primero, un Agent puede convertir fragmentos de búsqueda en conclusiones, dar por leída una URL inaccesible o seguir una instrucción escondida en un documento externo.
 
-> La capacidad no consiste en producir una revisión más larga. Consiste en dejar una cadena en la que cada afirmación importante pueda rastrearse hasta una pregunta, una fuente, una ubicación, un nivel de evidencia y una revisión humana.
+> La capacidad no consiste en producir una revisión más larga. Consiste en dejar una cadena trazable: cada afirmación importante debe llevar a una pregunta, una fuente, un pasaje concreto, un nivel de evidencia y una revisión humana.
 
 ## Objetivos de aprendizaje
 
@@ -18,9 +18,9 @@ Podrás formular una pregunta bien delimitada, registrar las fuentes accesibles 
 
 Define el objeto, la relación o comparación, el alcance, el periodo, la audiencia y el propósito de la entrega. «Investiga problemas de inicio de sesión» no basta. Una pregunta útil también define qué entra y qué queda fuera, qué fuentes tienen prioridad, cuándo se detiene la búsqueda y en qué formato se entregará el resultado: tabla de hechos, comparación, informe de decisión o borrador con citas.
 
-Busca síntomas antes que causas. Prepara grupos de consultas por síntoma, límite y entorno. No conviertas una causa sospechada en tu única consulta. Registra términos, fecha y zona horaria, alcance de fuente, enlaces originales, exclusiones y condiciones de parada. Un snippet, un agregador o una lista generada son pistas, no evidencia.
+Busca primero los síntomas y después las causas. Prepara grupos de consultas por síntoma, límite y entorno; no conviertas una causa sospechada en tu única consulta. Registra términos, fecha y zona horaria, alcance de las fuentes, enlaces originales, exclusiones y condiciones de parada. Un fragmento de búsqueda (`snippet`), un agregador o una lista generada son pistas, no evidencia.
 
-Detente cuando las afirmaciones importantes tengan ruta de evidencia, hayas usado al menos una consulta inversa, dos rondas distintas no añadan entorno ni contraejemplo, llegue la fecha de corte, el alcance no permita generalizar o una fuente pida secretos, permisos mayores o scripts desconocidos.
+Detente cuando las afirmaciones importantes tengan una ruta de evidencia, hayas usado al menos una consulta inversa, dos rondas distintas no añadan un entorno ni un contraejemplo, llegue la fecha de corte, el alcance no permita generalizar o una fuente pida secretos, permisos adicionales o scripts desconocidos.
 
 ## Construye una cadena de registros de investigación
 
@@ -37,21 +37,21 @@ intención → pregunta → plan de fuentes → recuperación y lectura
 | Sintetizar | Conflictos, desconocidos y fuerza | Un informe no se vuelve conclusión universal |
 | Entregar | Borrador, citas, revisión y versión | Otra persona puede volver a comprobar |
 
-Cada fila de evidencia contiene una afirmación atómica, la URL original y la final, el autor u organización, las fechas de publicación, acceso y corte, la versión, la plataforma, el alcance, la ubicación, el tipo de fuente, su relación con la afirmación, la diferencia entre hecho observado e hipótesis, los conflictos, la auditoría de la cita, el tono, la persona revisora y la siguiente acción.
+Cada fila de evidencia contiene una afirmación atómica, la URL original y la final, el autor u organización, las fechas de publicación, acceso y corte, la versión, la plataforma, el alcance, el pasaje concreto, el tipo de fuente, su relación con la afirmación, la diferencia entre hecho observado e hipótesis, los conflictos, la auditoría de la cita, el tono, la persona revisora y la siguiente acción.
 
 ## Fuentes inaccesibles, conflictos y foros
 
-Un resultado de búsqueda, un `200` o una redirección no prueban lectura. Guarda URL original, estado, destino final, identidad de página, fecha y resultado de lectura. Una página de login, límite de tasa, timeout o error se registra como inaccesible; no se rellena con memoria, título o snippet.
+Un resultado de búsqueda, un `200` o una redirección no demuestran que hayas leído la página. Guarda la URL original, el estado, el destino final, la identidad de la página, la fecha y el resultado de lectura. Una página de inicio de sesión, un límite de tasa, un timeout o un error se registra como inaccesible; no rellenes el hueco con memoria, título o `snippet`.
 
-Cuando dos fuentes oficiales difieran, primero compara objeto, fecha, versión, superficie, cuenta, región y definición. Si el conflicto sigue, conserva ambos lados, estrecha el texto y deja el resultado `candidate`. En un foro, separa «la persona observó», «alguien sugirió», «se sospechó» y «un mantenedor confirmó». Muchos votos, un cierre o una respuesta aceptada no sustituyen confirmación ni reproducción.
+Cuando dos fuentes oficiales difieran, compara primero el objeto, la fecha, la versión, la superficie de trabajo, la cuenta, la región y la definición. Si el conflicto continúa, conserva ambos lados, limita el texto y deja el resultado en `candidate`. En un foro, separa «la persona observó», «alguien sugirió», «se sospechó» y «un mantenedor confirmó». Muchos votos, un cierre o una respuesta aceptada no sustituyen la confirmación ni la reproducción.
 
-Una cita pulida generada por IA tampoco constituye evidencia. Abre la fuente, localiza el pasaje y comprueba el título, la fecha, la versión y el alcance; divide la frase si la fuente solo respalda una parte. Si no puedes localizar una cita clave, marca `citation_unverified` y debilita o elimina la conclusión.
+Una cita pulida generada por IA tampoco es evidencia. Abre la fuente, localiza el pasaje y comprueba el título, la fecha, la versión y el alcance; divide la frase si la fuente solo respalda una parte. Si no puedes localizar una cita clave, marca `citation_unverified` y debilita o elimina la conclusión.
 
 ## Práctica y límites
 
-Parte de una pregunta amplia, prepara una fuente oficial, un informe de campo con URL y fecha, y un elemento inaccesible o conflictivo. Pide primero tres preguntas candidatas, elige una y define alcance, corte, zona horaria y paradas. Diseña consultas por síntoma, límite y entorno; crea plan de fuentes, tabla de evidencia, registro de acceso, conflicto y auditoría de citas. No subas logs, cookies, tokens ni contactos.
+Parte de una pregunta amplia, prepara una fuente oficial, un informe de campo con URL y fecha y un elemento inaccesible o conflictivo. Pide primero tres preguntas candidatas, elige una y define alcance, corte, zona horaria y paradas. Diseña consultas por síntoma, límite y entorno; crea un plan de fuentes, una tabla de evidencia, un registro de acceso, un registro de conflictos y una auditoría de citas. No subas logs, cookies, tokens ni contactos.
 
-Entrega `candidate` si falta evidencia clave: hechos conocidos, desconocidos, conflictos, alcance, motivo de parada y siguiente paso de bajo riesgo. El ejercicio no demuestra investigación completa hasta que las fuentes clave se abran, localicen y revisen independientemente.
+Entrega `candidate` si falta evidencia clave: hechos conocidos, desconocidos, conflictos, alcance, motivo de parada y siguiente paso de bajo riesgo. El ejercicio no demuestra una investigación completa hasta que las fuentes clave se abran, se localicen y se revisen de forma independiente.
 
 ## De un tema amplio a una entrega auditable
 
@@ -66,12 +66,12 @@ Entrega: tabla afirmación → fuente → alcance → desconocido, sin ranking t
 Parada: página clave inaccesible, alcance incierto o necesidad de cuenta/datos privados/pago.
 ```
 
-Prepara consultas de tarea o síntoma, límite y entorno. No busques solo el producto que esperas que gane más «best». Cada fila conserva consulta, fecha, zona, alcance de fuente, inclusión y exclusión; snippets y enlaces del modelo son pistas.
+Prepara consultas de tarea o síntoma, límite y entorno. No busques solo el producto que esperas que gane, acompañado de `best`. Cada fila conserva la consulta, la fecha, la zona horaria, el alcance de la fuente, la inclusión y la exclusión; los `snippets` y los enlaces del modelo son pistas.
 
 | Campo | Forma segura |
 |---|---|
 | Afirmación | «La página X describía Y el día de acceso» |
-| Evidencia | URL original/final, título, ubicación y fecha |
+| Evidencia | URL original/final, título, pasaje y fecha |
 | Alcance | Superficie, versión, región y cuenta; o desconocido |
 | Nivel | Oficial / mantenedor / informe de usuario / pista |
 | No implica | Disponibilidad en mi cuenta, éxito de tarea o mejor elección |
@@ -84,21 +84,21 @@ Reúne una página oficial accesible, un informe de usuario fechado y un enlace 
 
 ### Tarea
 
-Usa una página oficial accesible, un informe de usuario fechado y un enlace que redirige, exige login o falla. No subas logs, cookies, tokens, contactos ni archivos privados.
+Usa una página oficial accesible, un informe de usuario fechado y un enlace que redirige, exige iniciar sesión o devuelve un error. No subas logs, cookies, tokens, contactos ni archivos privados.
 
 1. Escribe tres preguntas candidatas, elige una y fija alcance, corte, zona, inclusión y parada.
-2. Registra URL original/final, resultado de acceso, organización, fecha y ubicación; una página inaccesible queda `inaccessible`, no se completa con snippet.
+2. Registra la URL original y final, el resultado del acceso, la organización, la fecha y el pasaje; una página inaccesible queda como `inaccessible`, sin completarla con un `snippet`.
 3. Haz una consulta inversa para cada afirmación clave: busca límites, otro entorno o contraejemplo. No encontrarlo no confirma.
 4. Si dos páginas chocan, compara versión, superficie, cuenta, región y definición; conserva ambas y limita la entrega si no se resuelve.
 5. Entrega una página `candidate`: conocido, desconocido, conflicto, no afirmado, parada y siguiente paso seguro.
 
 ### Evidencia
 
-Guarda pregunta, fecha de corte con zona horaria, consultas, URL original y final, resultado de acceso, ubicación leída y una tabla de afirmaciones atómicas. Un título o snippet sin texto localizado sigue siendo una pista, no una cita.
+Guarda la pregunta, la fecha de corte con zona horaria, las consultas, la URL original y final, el resultado de acceso, el pasaje leído y una tabla de afirmaciones atómicas. Un título o `snippet` sin el texto de la fuente sigue siendo una pista, no una cita.
 
 ### Reflexión
 
-¿Qué afirmación tuvo que reducirse al separar fuente, fecha y alcance? ¿Cuál es la siguiente comprobación mínima que no exige datos privados ni permisos nuevos?
+¿Qué afirmación tuviste que limitar al separar fuente, fecha y alcance? ¿Cuál es la siguiente comprobación mínima que no exige datos privados ni permisos nuevos?
 
 ## Problemas reales: una respuesta fluida sin fuente comprobable
 
@@ -106,7 +106,7 @@ Al elegir un modelo, método de estudio o herramienta, un resumen puede mezclar 
 
 ## Tarea de transferencia
 
-Usa la tarjeta para «qué recursos apoyan mi práctica de español la próxima semana». Define tarea, plazo, fuentes permitidas y una afirmación que no harás: no prometer dominio en siete días ni competencia garantizada.
+Usa la tarjeta para «qué recursos apoyan mi práctica de español la próxima semana». Define tarea, plazo y fuentes permitidas. Deja claro qué no afirmarás: no prometer dominio en siete días ni competencia garantizada.
 
 ## Lista de aceptación
 
@@ -117,7 +117,7 @@ Usa la tarjeta para «qué recursos apoyan mi práctica de español la próxima 
 
 ## Fuentes y límite de mantenimiento
 
-Las preguntas, cadenas de evidencia y registros de conflicto son métodos estables. Páginas, hechos de producto, foros y búsquedas cambian; registra fecha de acceso, alcance y próxima comprobación.
+Las preguntas, las cadenas de evidencia y los registros de conflicto son métodos estables. Las páginas, los hechos de producto, los foros y las búsquedas cambian; registra la fecha de acceso, el alcance y la próxima comprobación.
 
 ## Comprobación propia
 
@@ -129,7 +129,7 @@ Las preguntas, cadenas de evidencia y registros de conflicto son métodos establ
 ## Una tarjeta de investigación real y de bajo riesgo
 
 No empieces con «¿qué modelo es mejor?». Convierte la pregunta en algo que se
-pueda revisar y también rechazar:
+pueda revisar y también refutar:
 
 ```text
 pregunta: a fecha de [día y zona horaria], ¿cómo describen fuentes públicas
@@ -142,7 +142,7 @@ parar: página clave inaccesible, login/pago/dato privado necesario o conflicto 
 ```
 
 Pide al modelo sugerencias de fuentes y búsquedas, pero trata cada enlace como
-una pista. Al abrirlo, conserva título, URL original y final, ubicación legible,
+una pista. Al abrirlo, conserva el título, la URL original y final, el pasaje legible,
 resultado de acceso y alcance declarado. Si el modelo dice «oficialmente admite»
 pero no puedes localizar el texto, baja la frase a `citation_unverified`; una
 bibliografía convincente no rellena un hueco.
@@ -158,12 +158,12 @@ regla universal; solo registra que no apareció en el alcance declarado.
 |---|---|---|---|---|
 | La página describía X ese día | URL y ubicación | búsqueda de límite/región/versión | expresión pública de esa página | cuenta propia, éxito real, mejor elección |
 
-Entrega una página `candidate` con conocido, desconocido, conflicto, no afirmado,
+Entrega una ficha `candidate` con lo conocido, lo desconocido, los conflictos, lo que no afirmas,
 motivo de parada y siguiente acción de bajo riesgo. No es un benchmark, estudio
 de usuarios ni consejo de compra; capítulo y experimento siguen `candidate` y
 `not_run`.
 
-## Recibo de investigación de diez minutos: registra antes de concluir
+## Recibo de investigación de diez minutos: documenta antes de concluir
 
 Al empezar no necesitas fingir un informe completo. Elige una pregunta estrecha
 y rellena este recibo durante diez minutos. Su fin es dejar un siguiente paso
