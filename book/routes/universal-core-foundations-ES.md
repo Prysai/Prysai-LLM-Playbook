@@ -1,12 +1,12 @@
 <!-- content_id: universal-core-foundations-route | locale: ES | language: es | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-15 -->
 
-# Colaboración universal con LLM: una primera tarea segura y cuatro fundamentos
+# Trabajar con LLM: una primera tarea segura y cuatro fundamentos
 
 **Estado:** `candidate`. **Estado de ejecución:** `not_run`.
 
-Empieza aquí si quieres usar un chat de texto normal y todavía no necesitas configurar un producto concreto. Puedes hacer el primer intento de abajo sin tratar ChatGPT, Claude, Grok, Gemini, Codex ni ningún otro producto como si fueran lo mismo. Esta ruta se ocupa de unas pocas decisiones que se repiten en cualquier plataforma: definir la tarea, limitar el material, dejar claro cómo comprobarla y establecer un punto de parada. No afirma que las plataformas compartan herramientas, permisos, memoria, cuentas, precios ni comportamiento de Agent.
+Empieza aquí si quieres usar un chat de texto normal y todavía no necesitas configurar un producto concreto. Puedes hacer el primer intento de abajo sin tratar ChatGPT, Claude, Grok, Gemini, Codex ni ningún otro producto como si fueran lo mismo. Esta ruta reúne cuatro decisiones que se repiten en muchas plataformas: definir la tarea, limitar el material, dejar claro cómo comprobarla y establecer un punto de parada. No afirma que las plataformas compartan herramientas, permisos, memoria, cuentas, precios ni comportamiento de Agent.
 
-## Haz ahora una primera tarea segura
+## Prueba ahora una primera tarea segura
 
 Usa solo el aviso ficticio de abajo. No pegues mensajes privados, material de clientes, credenciales, trabajo sin publicar ni archivos reales. Durante esta prueba no navegues, no uses herramientas, no subas archivos, no cambies la cuenta ni envíes o publiques nada.
 
