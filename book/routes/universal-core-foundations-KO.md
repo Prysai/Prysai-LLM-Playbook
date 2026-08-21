@@ -1,10 +1,10 @@
 <!-- content_id: universal-core-foundations-route | locale: KO | language: ko | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-15 -->
 
-# 범용 LLM 협업: 안전한 첫 과제와 네 가지 기초
+# LLM 활용하기: 안전한 첫 과제와 네 가지 기초
 
 **상태:** `candidate`. **실행 상태:** `not_run`.
 
-일반적인 텍스트 채팅을 써 보고 싶지만 아직 특정 제품의 설정까지 할 필요는 없다면 여기서 시작하세요. 아래의 첫 시도는 ChatGPT, Claude, Grok, Gemini, Codex 또는 다른 제품을 서로 같은 것으로 여기지 않고도 할 수 있습니다. 이 경로는 모든 플랫폼에 적용할 수 있는 기본적인 판단만 다룹니다. 과업을 분명히 하고, 자료의 범위를 정하고, 확인 방법과 중단 조건을 드러내는 연습입니다. 플랫폼들이 도구, 권한, 기억, 계정, 가격 또는 Agent의 동작을 공유한다고 주장하지 않습니다.
+일반적인 텍스트 채팅을 써 보고 싶지만 아직 특정 제품의 설정까지 할 필요는 없다면 여기서 시작하세요. 아래의 첫 시도는 ChatGPT, Claude, Grok, Gemini, Codex 또는 다른 제품을 서로 같은 것으로 여기지 않고도 할 수 있습니다. 이 경로에서는 여러 플랫폼에 공통으로 적용할 수 있는 네 가지 판단을 연습합니다. 과업을 분명히 하고, 자료의 범위를 정하고, 확인 방법과 중단 조건을 드러냅니다. 플랫폼들이 도구, 권한, 기억, 계정, 가격 또는 Agent의 동작을 공유한다고 주장하지 않습니다.
 
 ## 지금 안전한 첫 과제를 하나 해 보세요
 
