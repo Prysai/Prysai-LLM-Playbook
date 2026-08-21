@@ -37,6 +37,28 @@
 
 原因より先に症状を検索します。症状、境界、環境ごとの検索語を用意し、疑っている原因だけを検索しません。語句、日付とタイムゾーン、出典の範囲、元リンク、除外、停止条件を残します。スニペット、まとめサイト、自動生成の関連項目は手掛かりであって証拠ではありません。
 
+### 検索語を層に分ける
+
+検索語は「答えを見つける」命令ではなく、調査対象を切り出すルールです。原因を一つに決めてから検索すると、同じ推測が繰り返し表示されて、合意のように見えることがあります。まず症状と作業面を探し、その後で複数の説明を比べます。
+
+| 層 | 組み合わせ | 目的と例 |
+|---|---|---|
+| 症状 | 製品または作業面 + 元のエラー文・段階 | `Codex "token exchange"`、`"spawn UNKNOWN" Codex VS Code` のように、位置を特定できる報告を探す |
+| 境界 | 症状 + 権限・ネットワーク・host・設定の境界 | sandbox、proxy、PATH、extension host、対象サービスのどこが関係し得るかを、原因を決めずに比べる |
+| 環境 | 症状 + platform、version、entry point、organization、region | Windows / macOS / Linux、CLI / IDE / Cloud、版、組織、地域を分ける |
+| 出典 | `site:` または公式 repository / forum の範囲 + 上記の組み合わせ | 公式の定義、元の Issue、利用者の体験を別々に見つける。絞り込みは発見範囲を変えるが、証拠レベルは上げない |
+
+重要な問いでは、症状・境界・環境の三つの query group を最低一つずつ作ります。query、実行日時とタイムゾーン、source scope、見つかった元リンク、除外理由、停止時点で残った語をログに残します。`bug`、`fix`、自分が信じている原因だけを検索することは避けます。
+
+### 調査を止めるゲート
+
+- **coverage:** 重要な主張ごとに、公式の定義、現場の症状、runtime の結果を混ぜない evidence path がある。
+- **反証:** 結論ごとに `works`、`resolved`、`limitation` などを含む逆向き query を一つ実行し、見つからなかったことも記録する。反例がないことは証明ではない。
+- **飽和:** 異なる語で二回続けて検索しても、新しい環境、反例、保守担当者の情報が増えなければ、その判断を記録して止める。
+- **cutoff:** 宣言した日付、タイムゾーン、または調査時間で結果を凍結する。後から更新されたページは、元の結果ではなく次の review cycle に入れる。
+- **scope:** 一つの国、platform、account level、version しかカバーしないなら、一般化を止めて問いを狭めるか `candidate` に下げる。
+- **safety:** log の upload、secret の開示、権限の拡大、出所不明の script を求める経路は、検索を続ける理由ではなく受け入れ不可の input として止める。
+
 重要な主張の証拠経路ができ、反対方向の検索を少なくとも一つ実施し、異なる二回の探索で新しい環境や反例が増えず、締め切りに達し、範囲を超えて一般化できず、または秘密・権限の拡大・出所不明のスクリプトを求める資料に出会ったら停止します。
 
 ### Web 開発・技術作業のリソースを選ぶ
@@ -77,19 +99,87 @@ Web コーディングの問いなら、公式の言語・フレームワーク�
 
 証拠表の一行には、原子的な主張、元 URL と最終 URL、著者・組織、公開日・アクセス日・締め切り日、版、プラットフォーム、範囲、該当箇所、出典の種別、支持関係、観測と仮説、衝突、引用監査、文体、レビュー担当者、次の行動を入れます。
 
-重要な主張は一行に一つだけ置きます。「ブラウザ段階は成功した」「トークン交換は失敗した」「公式が根本原因を確認した」は別々の主張です。公式文書は定義や要件、元の利用者報告は現場の症状、二次解説は手掛かりとして使います。読めない出典は「要確認」と記録できますが、存在しないページ番号、引用、読了の事実を作ってはいけません。
+### 主張と出典を一対一で結ぶ
 
-## 読めない資料、衝突、フォーラム
+証拠表は、一行に一つの確認可能な主張を置きます。最低限、次を記録します。
 
-検索結果、`200`、リダイレクトは、読解の証拠ではありません。元 URL、状態、最終 URL、ページの同定、日付、読めたかどうかを残します。ログイン画面、レート制限、タイムアウト、エラーはアクセス不能です。記憶、タイトル、スニペットで穴を埋めません。
+```text
+Claim ID:
+Atomic claim（確認できる事実を一つ）:
+Source ID、著者 / 組織、題名、元 URL、最終 URL:
+公開・更新・発生日、アクセス日、cutoff 日、タイムゾーン:
+Version、platform、work surface、地域 / account / organization の範囲:
+Location（section、page、paragraph、Issue、comment、timestamp）:
+Source type / evidence level: official / maintainer confirmation /
+  independent reproduction / user report / community advice / search lead:
+Evidence relation: supports / contradicts / lead only / unknown:
+Observed fact と explanatory hypothesis（分けて記録）:
+Scope、sample の限界、他の出典との衝突:
+Citation audit: opened and located / title only / inaccessible / no support found:
+Writing tone: certain / possible / unknown / should not be stated:
+Reviewer、日付、次の action:
+```
+
+公式文書は定義や protocol 要件、元の利用者報告は現場の症状、二次解説は降格すべき手掛かりです。モデルが作った要約は独立した出典ではありません。読めない出典は「要確認」と書けますが、存在しない page 番号、引用、読了の事実を作ってはいけません。
+
+## 公式資料が衝突したとき
+
+二つの公式ページが違って見えても、同じ問いに答えているとは限りません。一方が現行製品、もう一方が旧版、Cloud と CLI、機能説明と account / region / experimental rollout、仕様と実装上の制限を扱っているかもしれません。対象、時期、範囲、定義を合わせても違いが残るときだけ、直接の衝突として記録します。
+
+1. 元 URL と最終 URL、アクセス日、page の version / update date、scope を凍結します。検索結果の題名だけを保存しません。
+2. A の主張と B の主張を原子化し、用語の違いか、scope の違いかを確かめます。
+3. product behavior なら、現行の公式文書、release note、公式 code / test、明示的な maintainer response など、その挙動を所有する一次資料を探します。account、region、organization policy は一般文書で代用しません。
+4. 解決しなければ両方を残し、「A は X の範囲、B は Y の範囲を説明しており、広い結論は出せない」と書きます。
+5. 核心の主張が解決するまで事実として断定せず、`candidate`、不足証拠、次回 review 日を残します。
+
+| 衝突の形 | ありがちな誤り | 正しい扱い |
+|---|---|---|
+| version | 古い tutorial を現行の対応とみなす | version と公開日を記録し、現行の一次資料をその scope 内だけで使う |
+| work surface | Cloud の制限を CLI に適用する | Local、Worktree、Cloud、CLI、IDE、Desktop を分ける |
+| eligibility | 「製品が対応」から「自分の account で使える」へ飛ぶ | account、workspace、organization、region、plan の根拠を取る。なければ `unconfirmed` |
+| definition | start、read、write、end-to-end completion を同じ成功とみなす | 段階を分け、それぞれに evidence と stop point を置く |
+| fact / advice | community workaround を公式 semantics とみなす | `reported_workaround` として記録し、製品の約束にしない |
+
+## 読めない資料、リダイレクト、フォーラム
+
+検索結果、`200`、リダイレクトは、読解の証拠ではありません。元 URL、HTTP status、`Location`、最終 URL、host が変わったか、最終 page の題名・version、アクセス日、本文を読めたかを残します。ログイン画面、レート制限、タイムアウト、エラーはアクセス不能です。記憶、タイトル、スニペットで穴を埋めません。
 
 公式資料が食い違う場合は、対象、時期、版、作業面、アカウント、地域、定義を比較します。それでも衝突するなら両方を残し、文章を狭め、`candidate` とします。フォーラムでは「投稿者が観測した」「回答者が提案した」「誰かが推測した」「保守担当者が確認した」を分けます。高評価、クローズ、accepted answer は確認や再現の代わりになりません。
 
 AI が整えた引用も証拠ではありません。出典を開き、該当箇所、題名、日付、版、範囲を確かめます。一部しか支えない文章は分け、重要な引用を見つけられなければ `citation_unverified` として主張を弱めるか削除します。
 
+| 見えた状態 | 記録できること | 主張してはいけないこと |
+|---|---|---|
+| `3xx`、最終本文を取得できない | 「元の URL は redirect したが、本文は未確認」 | 「文書を読んだ」 |
+| 最終 page の identity と本文が一致 | 元 URL を残した上で最終 URL を引用する | version、scope、変更情報を省く |
+| `401/403`、login、region / organization 制限 | 「この環境では読めない。権限または別出典が必要」 | 題名、snippet、モデルの記憶で引用を埋める |
+| `429`、anonymous rate limit、timeout、network block | 失敗と retry / stop 時刻を記録する | 無制限に retry、位置を作る、cache を本文扱いする |
+| snippet、repost、aggregator、自動 citation | candidate lead と query source にする | 公式 root cause、原文引用、完全な文脈にする |
+
+安全な downgrade は、同じ機関の読める公式代替、versioned release note、identity と本文を確認できる mirror の順です。それでも未確認なら lead にとどめます。token、Cookie、署名付き query、個人 path を log や evidence table に入れず、必要なら伏せたことだけ記録します。
+
 リダイレクト後は元 URL と最終 URL、HTTP 状態、`Location`、ページの題名・版、アクセス日、本文を読めたかを保存します。ログイン画面、地域制限、エラーページ、別製品への移動なら、元の引用を再利用しません。`401/403`、`429`、タイムアウト、ネットワーク遮断は「この環境では確認できない」という調査結果です。トークン、Cookie、署名付き URL、個人パスはログに残さず、必要なら非公開情報を伏せたことだけ記録します。
 
 公式ページ同士が食い違うときは、対象、時期、版、作業面、アカウント、地域、定義をそろえてから衝突と呼びます。解決しなければ両方を保存し、「A は X の範囲、B は Y の範囲を説明する。この調査から広い結論は出せない」と書き、`candidate` のままにします。フォーラムでは、観測、提案、仮説、保守担当者の確認、ローカル再現を別の列に置きます。高評価、accepted answer、クローズは、それだけで修正や公式サポートの証明にはなりません。
+
+forum は症状、環境、切り分けの語彙を見つけるのに役立ちますが、原因を確定したり、全員に当てはまることを示したりはしません。`closed`、`accepted answer`、多数の vote も、修正済み・公式対応の証明ではありません。
+
+| 欄 | 安全な書き方 | 変えてはいけないもの |
+|---|---|---|
+| `observed_symptom` | 「著者は Windows / version X で…を見たと報告した」 | 「Windows では常に…」 |
+| `reported_workaround` | 「回答者がこの環境 / version で…を提案した」 | 「公式 fix」「とにかく実行」 |
+| `hypothesis` | 「著者 / 回答者は…との関係を疑った」 | 「根本原因は…」 |
+| `corroboration` | 「別の報告にも似た症状がある」 | 「複数投稿が同じ原因を証明」 |
+| `maintainer_confirmation` | 「maintainer が明示的に確認し、修正版を示した」 | bot label、auto-close、著者の断定 |
+| `local_reproduction` | 「この project が宣言した環境で再現し、証拠を保存した」 | 実行していないのに「再現」 |
+
+「何が起きたか」「誰がどう説明したか」「何を提案したか」を別の文にします。network boundary を緩める、書き込み範囲を広げる、未知の script を install する、log を upload する、security / approval を変える提案は、人による review の候補にすぎません。この章では forum command を実行せず、既定の手順にも変えません。
+
+## cutoff、タイムゾーン、地域、account の範囲
+
+少なくとも、出来事が起きた時刻、出典が公開・更新された時刻、researcher がアクセスした時刻、報告を凍結した時刻を分けます。タイムゾーンを書き、相対日時を自分で正確な日付に変換しません。2026-08-10 に読んだ page が旧版の挙動を説明していることも、新しく更新された page が過去の事象に当てはまらないこともあります。
+
+country / region または data center、言語、account plan、workspace / organization policy、platform と version、Cloud / local の作業面、sample source、除外範囲を明記します。米国 forum の Windows 報告を全世界の Windows 利用者へ、Enterprise の一組織を全 account へ一般化しません。global な問いに一地域しか evidence がないなら、問いを狭めるか `candidate` に下げます。
 
 ## 練習と境界
 
@@ -148,6 +238,39 @@ question: <日付とタイムゾーン> の時点で、<名前を付けた三つ
 
 モデル、学習法、ツールを選ぶとき、要約はリンク、バージョン、報告を混ぜることがあります。大事なのは説得力ではなく、宣言したタスク、日付、環境に対して、どの主張が支えられるかです。
 
+## 引用監査：整った参考文献は証拠ではない
+
+Agent は、存在しない URL、別の題名に実在 URL を割り当てる citation、複数ページを一つに混ぜた citation、snippet を本文へ膨らませた citation、ページや Issue の位置を作る citation を出すことがあります。長い報告でよくある失敗は、出典が一つの利用者報告しか支えていないのに、文章が普遍的な根本原因を宣言してしまうことです。
+
+次の順番で監査します。
+
+1. 先に claim ID、原子的な主張、evidence level、unknown を求め、記憶でリンクの空欄を埋めない。
+2. 重要な主張ごとに元 URL と最終 URL を保存し、題名・組織、該当箇所、日付、version、platform、scope を開いて確認する。
+3. 出典が支える部分と支えない部分を分ける。位置が見つからなければ `citation_unverified` とし、page、paragraph、author、quote を作らない。
+4. AI が作った要約を「その文を出典が含意しているか」で逆向きに確認する。文が似ているかでは判断しない。
+5. reviewer、日付、未解決 citation、次回確認を記録する。核心 citation を確認できなければ、結論は `candidate` より強くしない。
+
+```text
+C-07 | Claim: ________ | Original/final URL: ________
+Location: ________ | Source supports: ________ | Extra inference: ________
+Scope/date/version: ________ | Audit: supported / partial / unsupported / inaccessible
+Reviewer/date: ________ | Action: keep / soften / remove / add evidence
+```
+
+## 証拠が足りないときは `candidate` に下げる
+
+核心の source が読めない、公式資料が scope を比べても衝突する、forum report や workaround しかない、AI citation を開いていない、日付・version・platform・region が一致しない、runtime / local reproduction の log がない――このどれかなら、research product を `verified` にしません。`candidate` は「何もしていない」という意味ではなく、限界が明示された納品です。
+
+`candidate` で渡すものは次の通りです。
+
+- 既知、未知、衝突、evidence level。
+- 核心 claim ごとの source と location の状態。
+- 何を結論にできないか、どこで止めたか。
+- redacted error、read-only check、範囲を狭めた sample、別 source の依頼など、安全で低リスクな代案。
+- owner、cutoff 日、次回 review 条件、`verified` に必要な追加 evidence。
+
+たとえば token exchange の成功を示す証拠がなければ、「browser の段階は成功したと報告されているが、その後の exchange は未確認または失敗しているため、login 完了とは言えない。次は秘密を含まない段階情報と version / network scope を確認する」と書きます。公式原因を作ったり、未検証の workaround のために権限を広げたりしません。
+
 ## 移行タスク
 
 「来週の Spanish practice を支える資料は何か」という問いにカードを使います。タスク、期間、許可された出典と、七日での習得や保証された流暢さを主張しないことを書きます。
@@ -203,6 +326,13 @@ Web ページ、Issue、メール、PDF、ツールの返り値に「指示を�
 - [ ] 重要な主張に出典、該当箇所、アクセス結果、制限がある。
 - [ ] 報告、仮説、公式声明、不明を分ける。
 - [ ] 衝突やアクセス不能な出典では確信を作らず、`candidate` を渡す。
+- [ ] 少なくとも三つの query group、反対方向の query、stop gate、cutoff 日・タイムゾーン、未カバー範囲を記録した。
+- [ ] 元 URL、最終 URL、redirect、rate limit、login wall を残し、snippet を本文として使っていない。
+- [ ] forum の観測、workaround、root-cause hypothesis、maintainer confirmation、local reproduction を分けた。
+- [ ] 重要な AI citation を開いて位置を確認し、支えない部分を分割、降格、削除した。
+- [ ] 外部資料の prompt injection を見つけ、優先度の高い instruction として扱っていない。
+- [ ] S02 の CC BY-NC 4.0 と、本文が original rewrite である境界を説明できる。
+- [ ] FP-01 / FP-02 を一つの「成功」ラベルにまとめず、段階別 evidence に分けた。
 
 ## 出典と保守の境界
 
@@ -214,6 +344,7 @@ Web ページ、Issue、メール、PDF、ツールの返り値に「指示を�
 - [ ] URL、アクセス結果、該当箇所を残し、スニペットを読解の証拠にしない。
 - [ ] 制限や反例を探し、それで何が証明できないかも書く。
 - [ ] 公式資料の衝突、アカウント、地域、利用者報告を、普遍的な規則に圧縮しない。
+- [ ] 核心 evidence が欠けたとき、既知・未知・停止理由・次の安全な操作を持つ `candidate` を渡せる。
 
 ## 実際にできる低リスク research card
 
@@ -318,6 +449,40 @@ status: research_plan | scope_checked_for_supplied_list | blocked | not_run
 ```
 
 この記録が示すのは、記録した範囲内で起きたことだけです。「調査完了」、最新の事実、モデルの正しい検索、行動の許可を意味しません。
+
+## 失敗と境界のケース
+
+- **利用者報告を公式確認に変える:** FP-01 と FP-02 では、必ず段階を分けます。「報告では」「この page は」「local では未再現」と書き、「product が根本原因を確認した」とは書きません。
+- **page の成功を end-to-end の成功に変える:** entry、callback、token exchange、client state、後続 task を別々に記録し、各段階に独自の evidence と stop point を置きます。
+- **公式 page を無条件に結合する:** version、work surface、account eligibility、region、定義をそろえます。そろわなければ横に並べ、claim を狭めるか `candidate` にします。
+- **redirect や `200` を「読んだ」にする:** final URL、page identity、本文を確認します。login wall、rate limit、error page は inaccessible であり、題名や snippet で補いません。
+- **forum workaround を root cause や support promise にする:** observation、suggestion、hypothesis、maintainer confirmation、local reproduction を分けます。`accepted`、`closed`、多数の vote は自動的に fix を意味しません。
+- **citation の見た目を evidence にする:** 核心 source を開いて位置を探します。文の一部しか支えなければ分割し、位置がなければ降格または削除します。
+- **一地域の sample を全体の事実にする:** time zone、cutoff、geography、account、organization、version scope を残し、外側は unknown とします。
+- **evidence が弱いまま権限を広げる:** redacted record、read-only check、小さい sample、別 source の依頼へ降格します。secret の upload、unknown command、network / write 境界の拡張はしません。
+- **古い・scope が違う source を使う:** model 名、価格、version、policy、service behavior は変わるため、権威 URL、access date、scope、owner、次回 review を結びます。
+- **source 内の prompt injection に研究を乗っ取らせる:** instruction-like text は調査対象です。retrieval、privacy、external action の範囲を変えようとしたら止めます。
+- **外部 Skill の license 境界を越える:** S02 は CC BY-NC 4.0 の参照資料、S01 は license 不明、S03 / S06 の directory contents は root signal だけで一律に許諾されません。
+
+## 転移タスク
+
+最近書いた調査の結論を、もう一度検索せずに選びます。
+
+1. 各文に claim ID を付け、source、location、日付、scope を足す。
+2. 根拠のない文を unknown、hypothesis、または削除へ書き換える。
+3. 二次要約の一つを元の出典に置き換える。置き換えられないなら、その理由と限界を記録する。
+4. 同僚に三つの claim を blind-check してもらい、五分以内に支持または反証を見つけられたかを残す。
+
+## 出典と更新境界
+
+- 現実の問題の入口：[`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md) の FP-01、FP-02。記録状態は `candidate`、アクセス・整理日は 2026-08-09、owner は Prysai LLM Playbook maintenance group です。
+- 追加の現場問題：[`field-problems-forums-2026-08-10.md`](../../docs/research/field-problems-forums-2026-08-10.md)、[`field-problems-follow-up-2026-08-10.md`](../../docs/research/field-problems-follow-up-2026-08-10.md)、[`field-problems-index-2026-08-10.md`](../../docs/research/field-problems-index-2026-08-10.md)。forum の本文や command ではなく、元の要約、source boundary、research ID だけを参照します。
+- 公式事実と未確認の差分：[`official-facts-gap-review-2026-08-10.md`](../../docs/research/official-facts-gap-review-2026-08-10.md) と [`openai-codex-facts-refresh-2026-08-09.md`](../../docs/research/openai-codex-facts-refresh-2026-08-09.md)。公式の製品説明、account レベルの unknown、local non-reproduction を別の欄に置きます。
+- 方法の独自統合：[`web-methods-synthesis-2026-08-10.md`](../../docs/research/web-methods-synthesis-2026-08-10.md)。ここでは question narrowing、evidence ladder、stop / review logic を独自に書き直しており、外部の本文、code、asset はコピーしていません。
+- 外部 asset の license：[`docs/sources/asset-register.md`](../../docs/sources/asset-register.md) の S01、S02、S03、S06。S02 は CC BY-NC 4.0 で、公開前に帰属と NOTICE を再確認します。
+- 変動する product / protocol facts：[OpenAI Codex repository](https://github.com/openai/codex) と関連する公式文書。調査時には正確な URL、アクセス日、version を記録し、Issue の仮説を公式結論に変えません。
+
+更新担当は Prysai LLM Playbook maintenance group です。source、version、license が変わったとき、または遅くとも 2026-11-09 に review します。この章は `candidate`、実験は `draft / not_run` のままです。research output を `verified` と呼ぶには、重要な claim の人による review と現行 source の evidence が必要です。
 
 <!-- chapter-navigation:start -->
 <hr>
