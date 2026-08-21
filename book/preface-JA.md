@@ -1,3 +1,5 @@
+<!-- content_id: book-preface | locale: JA | language: ja | default_locale: EN | content_status: candidate | translation_status: in-progress | reader_runtime_status: not_run | translated_from: EN | source_revision: dd08a68 -->
+
 # 序：これはプロンプト集ではない
 
 GPT に初めて触れたとき、最も自然に浮かぶ質問は「何と言えばよいのか」でしょう。
