@@ -299,6 +299,7 @@
         coreNextLink.hidden = false;
         coreNextLink.href = readerHref(nextUnit.path, '', activeLocale);
         coreNextLinkLabel.textContent = currentAttempted ? strings.coreNextContinueLink : strings.coreNextOpen;
+        coreNextLink.setAttribute('aria-label', coreNextLinkLabel.textContent);
       }
     }
     const entry = coreReceipts[currentUnit.id] || {};
