@@ -1,4 +1,4 @@
-<!-- content_id: chapter-10-planning-and-slicing | locale: JA | language: ja | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
+<!-- content_id: chapter-10-planning-and-slicing | locale: JA | language: ja | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-20 -->
 
 # 第 10 章：計画と垂直スライス
 
@@ -14,6 +14,11 @@ one input → smallest change → observable action → focused check → eviden
 
 これは一度に全部を変える口実ではありません。レビューとロールバックができる範囲で、最も高くつくリスクを早く見つける方法です。
 
+![教案例：lifecycle checkpoint が大きな目標を証拠のある出口へ分ける](../../assets/teaching/lifecycle-checkpoints.svg)
+
+> これはプロジェクトが作成した教案例です。計画方法を説明するものであり、Agent、
+> Skill、command、外部サービスが実行された証拠ではありません。
+
 ## 学習目標
 
 大きなプロジェクトを、小さく観察できるスライスへ分けます。編集前に依存関係と停止点を記録し、失敗した試行も、次の人が範囲や権限を推測せずに続けられる形で引き継ぎます。この練習は、一般的な速さ、モデルの品質、長期的な学習を測るものではありません。
@@ -21,6 +26,20 @@ one input → smallest change → observable action → focused check → eviden
 ## 現実の問題：詳しい計画でも確認できる結果が出ない
 
 計画に多くのファイル、段階、ツールを並べても、誰かが確認できる最初の状態が示されていないことがあります。リスクは、長く連なった仮定の中に隠れます。存在しないファイル、不明な権限、曖昧な受け入れ条件が、確認できない作業を積み重ねた後で現れます。垂直スライスでは、次の見える一歩を止める依存関係を先に確かめます。
+
+長い Agent 作業に関する公開報告は、容量エラーのあとに何が完了したか分からなくなること、
+formatter や validation が `Working` のまま完了 signal を返さないことを示しています。
+コミュニティの議論には、会話だけでなく TODO、plan、state を外に出しておく必要も現れます。
+これらは universal product diagnosis ではなく、計画を観察可能にするための入力です。
+
+| 報告された症状 | evidence が支えること | 証明しないこと | 計画上の対応 |
+|---|---|---|---|
+| 長い task の途中で model が使えなくなった | 中断と不確かな partial state が観測された | service-side cause、queue behavior、全 account の挙動 | 新しい指示を止め、worktree、last output、checkpoint を確認してから一つの slice だけ retry する |
+| formatter または validation が `Working` のまま | その run で有用な completion signal がなかった | universal deadlock、正確な child process、root cause | no-progress threshold を決め、stdout、stderr、exit code、changed files を保存する |
+| 複雑な task に見える TODO と plan が必要 | 外部 state が長い作業の追跡を助けるという user report | すべての model、task で visible plan が改善すること | decision summary、diff、check result、next action を必須にし、spinner を delivery evidence にしない |
+
+計画は Agent が最後まで終える約束ではありません。人が pause、inspect、次の判断をできる
+control surface です。
 
 ## 編集前にスライスを設計する
 
@@ -37,6 +56,131 @@ one input → smallest change → observable action → focused check → eviden
 
 良いスライスは、判断できる問いに答えます。「すべてのナビゲーションを移行する」では答えになりません。「一人が日本語の目次からローカルの章を開き、練習を見つけ、記録した経路で戻れるか」なら確認できます。
 
+### 1. 作業名より先に結果を決める
+
+利用者、reviewer、downstream system のどれかが観測できる一文から始めます。
+
+> 新しい contributor が一ページを読み、network なしで一つの local check を実行し、
+> pass または fail を見られる。
+
+「documentation pipeline を作る」より、これを result card に直した方が、計画が守る対象が明確です。
+
+```text
+Outcome: いま誰が何を実行または確認できるか
+Inputs: file、data、assumption、precondition
+Allowed actions: 許可された surface と mutation type
+Non-goals: 今回は意図的に後回しにする作業
+Evidence: diff、command output、test、screenshot、review record
+Risk: secret、external call、persistence、deletion、irreversible change
+```
+
+未来のすべての feature がないと観測できないなら、さらに小さな outcome を作ります。
+
+### 2. 依存関係を wish list ではなく事実として描く
+
+依存関係とは「次の action が意味のある結果を出す前に、これが真でなければならない」という意味です。
+各項目について、次を答えます。
+
+1. **Depends on:** 先に存在すべき exact state または evidence は何か。
+2. **Provides to:** 次の slice に渡す file、field、command result、decision は何か。
+3. **Blocked by:** 安全に推測できない欠けた input は何か。
+4. **Dependency check:** read-only で最も安く確認できる方法は何か。
+
+たとえば `database → API → UI → deployment` を、次のように evidence の鎖にします。
+
+```text
+Slice A: fixed sample record を local に読める
+  provides: sample data shape と passing read check
+Slice B: read-only endpoint がその record を返す
+  depends_on: A; provides: observable API response
+Slice C: 一つの screen が endpoint response を render する
+  depends_on: B; provides: user-visible path
+Slice D: disposable build で path を確認する
+  depends_on: C; provides: build output と reviewable diff
+```
+
+矢印は hidden Agent memory ではなく、evidence と interface を表します。未確認の dependency は
+静かに true とせず、`assumed` と書きます。
+
+### 3. 計画の形を選ぶ
+
+| 形 | 得意なこと | よくある失敗 | 使う場面 |
+|---|---|---|---|
+| Horizontal | 技術層、owner、release prerequisite を一覧にする | 最初の user result が多くの層の後ろへ隠れる | capacity map や ownership review が必要なとき |
+| File/order based | edit の場所と小さな diff を把握する | repository の順番が user value の順番になる | change が理解済みで本当に local なとき |
+| Vertical | input から observable result までの thin path を証明する | first slice が「feature 全体」になる | early feedback、reversible experiment、handoff が必要なとき |
+
+Vertical slice は「backend の小さな一部」ではありません。一つの outcome に必要な境界だけを
+横断し、extra polish、future abstraction、production data は残します。
+
+主な問いがまだ未知なら、probe を使います。dependency の有無を読む、sample を一つ render する、
+harmless tool call が目的の surface に届くか確かめる、といった read-only または reversible な調査です。
+probe の出力は continue、narrow、stop の decision であり、product work ではありません。
+
+### 4. task の山ではなく slice card を使う
+
+```text
+slice_id: S-01
+outcome: 一つの observable user/team result
+depends_on: 先に必要な exact state、file、evidence
+provides_to: 次の slice に渡す input または decision
+inputs: named files、fixtures、versions、assumptions
+allowed_actions: この slice で許可する path と action class
+non_goals: change、install、publish、infer しないもの
+change_budget: expected files、commands、external effects
+acceptance_evidence: passed と呼ぶための exact proof
+failure_signal: failed または stalled run の見え方
+stop_condition: state を保存して decision を求める条件
+recovery: 最小の安全な retry または rollback
+handoff: status、evidence path、remaining risk、next action
+```
+
+この項目は「人が X できる」を「Agent が Y と Z を編集した」に置き換えないためにあります。
+File は implementation evidence であり、自動的に delivery evidence にはなりません。
+
+### 5. change budget と checkpoint を決める
+
+実行前に、意図的に狭い budget を見積もります。
+
+- 変更してよい file。
+- 実行してよい command。
+- retry の最大回数、または no-progress interval。
+- network、credential、installation、persistent state の可否。
+- irreversible action の前に必要な human confirmation。
+- slice が止まったら保存する artifact。
+
+これは token 数の予測ではなく、side effect の境界です。budget 外の file、新しい dependency、
+production credential、別 repository が必要なら、そこで止めて plan を更新します。
+
+各 checkpoint に少なくとも次を残します。
+
+```text
+goal and current slice:
+completed actions and evidence:
+worktree / branch / target path:
+files changed and baseline comparison:
+last command, output, and exit status:
+permission and external-effect state:
+open assumptions or blockers:
+next single action:
+```
+
+Checkpoint は Agent の短期会話の外に保存します。小さな Markdown、issue note、approved task record で十分です。
+secret、cookie、token、private credential は入れません。
+
+### 6. slice が本当に小さいか判断する
+
+一つの title に独立した user outcome が複数ある、implementation と migration/release が混ざる、
+acceptance authority が複数ある、first breakpoint がない、という場合は大きすぎます。最初の
+useful evidence が最後にしか出ないなら分割します。
+
+逆に、読めない、実行できない、review できない isolated file だけを作るなら小さすぎます。
+最も近い observable slice と合わせます。ただし、refactor 自体を probe として試す場合は例外です。
+
+> 会話にいなかった reviewer が artifact を見て「何が変わり、どう確認し、何が未証明で、次に何を安全にできるか」を答えられるか。
+
+答えられなければ、slice により良い interface、またはより小さい outcome が必要です。
+
 ## 依存関係から計画する
 
 1. ツールより先に、結果と受け入れ条件を書く。
@@ -48,21 +192,65 @@ one input → smallest change → observable action → focused check → eviden
 
 タスクリストを約束だと思わないでください。タスクを実行しても、結果が出るとは限りません。計画では前提を見えるようにし、安心させる言葉の奥へ隠さないことが大切です。
 
-## 実験と境界
+## 小実験：一つの安全な slice で三つの plan を比べる
+
+この実験は network、installation、credential、commit、push、deployment、production data を
+使いません。人の変更が入った working tree ではなく、一時 directory を使います。
 
 ### 準備
 
 リモート接続、秘密情報、外部アカウントを使わないローカルの使い捨てコピーを用意します。短い原文、既知の変更、固定した受け入れ確認の問いを選び、基準リビジョンを保存します。始める前に停止規則を決め、インストール、公開、送信はしません。
 
+次のような README.md を一時 directory に作ります。
+
+```markdown
+## Slice Lab
+
+Starting point. The page does not yet explain what changed or how to check it.
+```
+
+受け入れ条件は小さく固定します。読者が `What changed` と `How to verify` の二つの見出しを見つけられることです。
+PowerShell の read-only check は次のとおりです。
+
+```powershell
+$text = Get-Content -Raw README.md
+$required = '# Slice Lab', '## What changed', '## How to verify'
+$missing = $required | Where-Object { $text -notmatch [regex]::Escape($_) }
+if ($missing) { $missing | ForEach-Object { "MISSING: $_" }; exit 1 }
+'PASS: required headings found'; exit 0
+```
+
 ### タスク
 
-使い捨てコピーで、同じ小さな変更に対する横割りの計画と垂直スライスの計画を比べます。最初の計画、基準リビジョン、コマンド、差分、確認、判断がどう変わったかを保存します。依存関係の不足、または曖昧な受け入れ条件を一つ入れます。確認できない変更を積み上げる前に、垂直スライスで障害を表に出せれば合格です。
+三つの plan を、七項目以内で同じ goal に対して書きます。
+
+1. writing、tooling、review、release に分ける horizontal plan。
+2. file を触る順で並べる file-order plan。
+3. 最小の readable/checkable page を先に作る vertical plan。
+
+各項目に result、dependency、evidence、stop condition を付け、vertical plan の最初の項目だけを
+実行します。二つの見出しと、その下の正直な一文を追加し、style、link、build system、future section は追加しません。
+編集前後の target path と diff を保存し、local check を一度実行します。見知らぬ reviewer が baseline、
+最初の observable result、changed files、exact command/exit status、out-of-scope を答えられる状態にします。
 
 一つのタスクから、一般的な速さや品質を測ろうとはしません。観測していない時間、コスト、結果は `unavailable`、`unknown`、`not_run` と記録します。
 
 ### 証拠
 
 二つの計画、固定した入力、選んだスライス、依存関係と権限に関する前提、差分、確認結果、停止点、引き継ぎカードを保存します。実行していない試行は `not_run` のままです。もっともらしい計画は、結果の代わりにはなりません。
+
+期待する artifact は一時 directory 内の `slice-record.md`（または同等の approved note）です。
+
+```text
+baseline: edit 前の README.md
+chosen_plan: vertical
+changed_files: README.md only
+check: 実際に実行した exact command
+result: exact output と exit status
+acceptance: passed / failed / not_observed
+not_proven: styling、build、deployment、user acceptance
+next_slice: 一つの bounded next action
+```
 
 - [ ] 結果、入力、範囲、受け入れ条件を観測できる。
 - [ ] スライスに確認方法と復旧元がある。
@@ -81,6 +269,50 @@ one input → smallest change → observable action → focused check → eviden
 | 垂直 | 「固定した入力から一つの結果を見せ、確認する」 | 小さな経路、確認、記録 | 最初の経路に公開、インストール、複数システムの変更が必要 |
 
 次の手順に進む価値があるかを早く知りたいときは、垂直の計画を選びます。依存関係、権限、ファイルの存在さえ不明なら、読み取り専用の探索（probe）を選びます。探索が答えるのは「続けられるか」であり、完成した機能ではありません。
+
+## 再利用できる planning prompt
+
+次を出発点にして、値を自分の task に置き換えます。production task にそのまま貼り付けず、
+target と境界を先に埋めてください。
+
+```text
+Goal
+Deliver one vertical slice: [named user/reviewer が観測できる result]
+
+Context and inputs
+- Repository/workspace: [absolute path or approved surface]
+- Relevant files and fixtures: [exact paths]
+- Baseline: [branch/commit/hash/status or saved copy]
+- Known assumptions: [まだ未確認の facts]
+
+Scope contract
+- Allowed actions: [exact paths と read/edit/run/check]
+- Change budget: [files、commands、retry/time limit]
+- Non-goals: [feature、install、network、deploy、cleanup の除外]
+- Human confirmation required before: [irreversible/external action]
+
+Slice design
+- depends_on: [precondition と cheap check]
+- provides_to: [next slice の exact input]
+- acceptance_evidence: [diff、output、test、render、review record]
+- failure_signal: [error、missing output、timeout、scope drift]
+
+Execution rules
+1. baseline と既存変更を read-only で確認してから edit する。
+2. first mutation の前に slice card と checkpoint を保存する。
+3. stated evidence を出す最小の action だけを行う。
+4. 各 action の後に changed state を報告し、spinner や自分の summary から成功を推測しない。
+5. dependency、target path、useful event、budget に問題があれば stop して checkpoint を保存する。
+   install、publish、delete、permission の拡大はしない。
+6. recovery では target を読み戻し、baseline と diff を比較し、変数一つで idempotent action を一回だけ retry する。
+
+Delivery
+status (passed / blocked / unverified)、changed files、exact evidence、failed attempts、
+remaining unknowns、rollback/recovery、next single action を返す。acceptance evidence がなければ complete と呼ばない。
+```
+
+この prompt だけで Agent が reliable になるわけではありません。会話の依頼を、別の人が audit
+できる contract に変える点に価値があります。
 
 ## 停止と引き継ぎのカード
 
@@ -121,11 +353,67 @@ stop if: ファイルがない、別ファイルが必要、依頼が曖昧に�
 
 ## 安全な失敗と境界
 
-**どう確認するか** をわざと消すか、存在しないファイルを指定します。最初の失敗は、内容が足りないのか、入力が誤っているのかを示すはずです。失敗を隠すために依存関係や権限を増やしません。観測したこと、まだ証明されないこと、安全な次の操作を一つ書きます。この章は `candidate` のままです。この練習だけで有効性、速さ、長期的な学習を測ることはできません。
+**どう確認するか** をわざと消すか、存在しないファイルを指定します。最初の失敗は、内容が足りないのか、入力が誤っているのかを示すはずです。失敗を隠すために依存関係や権限を増やしません。観測したこと、まだ証明されないこと、安全な次の操作を一つ書きます。
+
+| signal | 分類 | 最初の recovery |
+|---|---|---|
+| required heading がない | content acceptance failure | 欠けた heading だけを戻し、同じ check を再実行する |
+| check が間違った file を見る | test/input failure | target path を読み直し、contract が許せば check だけを直す |
+| 定義した時間内に output がない | unknown execution state | 待つのを止め、command、時間、process state、diff を保存する |
+| install、network、広い path が必要 | scope/authority failure | 新しい decision を求め、環境を黙って修理しない |
+
+復旧後は、何が変わったかと、失敗が何を証明**しなかった**かを書きます。失敗した check が
+証明するのは、その input に対するその check が通らなかったことだけです。repository 全体や
+Agent 全体が壊れた、または大規模 rewrite が必要だとは言えません。
+
+## 実際の作業での recovery と stop
+
+長い task が中断されたとき、無条件に「続けて」と送りません。
+
+1. 新しい write、external request、install、delete、deploy を止める。
+2. checkpoint、`git status`、relevant diff、last command output、実際の target path を読む。
+3. breakpoint を missing input、scope drift、validation、infrastructure/timeout、permission、unknown に分類する。
+4. read-only probe、または最小 slice への idempotent retry を一つだけ選び、変数を一つだけ変える。
+5. 新しい evidence と、次の slice がまだ有効かを checkpoint に追記する。
+6. 原因不明、retry budget 消費、target 変更のいずれかなら、編集を積み上げず blocked handoff を渡す。
+
+partial artifact が安全で役に立つなら残し、`partial` または `unverified` と明記します。rollback が
+必要なら、失敗の evidence を先に保存し、既存の user change を消さない範囲だけ戻します。
+
+> 新しい evidence、新しい authority、または安定した target がなければ、自動的に続けない。
+
+## 期待する artifact：別の人が実行できる handoff
+
+complete な slice は、blocked で終わっても次の成果物を残します。
+
+1. **Slice card：** outcome、dependency、scope、evidence、budget、stop condition。
+2. **Checkpoint：** last confirmed state、target identity、changed files、command result、next action。
+3. **Implementation diff または no-change record：** 実際に動いたもの。
+4. **Verification record：** exact command、environment、exit status、output、check scope。
+5. **Failure record：** failed input、observable signal、recovery、retry が安全かどうか。
+6. **Handoff note：**
+
+```text
+status: passed / partial / blocked / unverified
+done: evidence が支える claim
+changed: exact paths または none
+evidence: artifact path または link
+not_proven: runtime、external、visual、security、user claim
+risks: 残った side effect または assumption
+next: 一つの bounded action
+owner: person または team
+```
+
+Handoff は後から付ける事務作業ではなく、slice の一部です。これがなければ、次の人は長い
+transcript から state を再構成し、すでに行った action を繰り返すかもしれません。
 
 ## 振り返り
 
 横割りの計画なら最後まで見つからなかった依存関係は何か。垂直スライスを確認可能にした証拠は何か。確認後も範囲外に残った主張は何か。
+
+今の task で、まだ別の人へ渡せないほど大きいものを一つ書きます。どの first slice が最初の
+meaningful evidence を出すか。どの action、input、decision を明確に範囲外にするか。そこで
+中断されたら、推測なしに再開するためにどの record が必要かを答えます。
 
 ## 依存関係を見える順に並べる
 
@@ -184,6 +472,16 @@ Stop: 別ファイル、リンク、公開、インストール、または読�
 
 同じスライスを、調査、言語練習、内容レビューにも計画します。結果、固定した入力、許可する操作と禁止する操作、確認、復旧は保ちます。言語練習では、受け入れ条件に、流暢なAI支援の返答だけでなく、後で見慣れない内容を助けなしに思い出すことも入れます。その練習が証明しないことも書きます。
 
+分野ごとに三〜七枚の slice card を作ります。
+
+- **Engineering：** 固定 fixture を返す read-only endpoint と、それを表示する一つの画面。auth、analytics、deployment は最初の slice から外す。
+- **Research：** source table、uncertainty 列、範囲を限定した結論を持つ一つの質問。source を確認するまで検索結果を fact と呼ばない。
+- **Marketing：** approved product context から audience-specific draft と reviewable experiment を一つ。publication と live audience data は外す。
+- **Skill design：** trigger、input schema、allowed actions、output、failure path、review date を一つ。未レビューの外部 Skill は install/invoke しない。
+
+別の人、または fresh Agent context に口頭説明なしで card を読ませ、隠れた assumption 一つと
+不足した acceptance signal 一つを見つけてもらいます。直すのは reviewer の記憶ではなく card です。
+
 ## 受け入れチェックリスト
 
 - [ ] 結果、入力、範囲、受け入れ条件を観測できる。
@@ -195,6 +493,13 @@ Stop: 別ファイル、リンク、公開、インストール、または読�
 ## 出典と保守の境界
 
 垂直スライス、依存関係の順序、停止点は、このプロジェクトの安定した教え方です。製品機能、権限、モデルの利用可能性、コミュニティで報告された症状は変わります。現在の主張は、[公式ファクトカード](../evidence-library-JA.md#source-notes)と[フィールド問題索引](../evidence-library-JA.md#source-notes)で確認してください。これらは、ローカルでの実行や独立した学習者の観察に代わるものではありません。
+
+| topic | source | Accessed | evidence boundary | Owner / next review |
+|---|---|---:|---|---|
+| task protocol に goal、context、constraints、acceptance、stop、recovery、delivery を含める | [Prompt patterns for real work](../../docs/research/prompt-patterns-for-real-work-2026-08-10.md) | 2026-08-11 | project research synthesis。vendor が定めた prompt format ではない | `curriculum-maintainer` / 2026-09-11 |
+| capacity interruption と long-running verification で state が不明になることがある | [Field problems and prompt patterns P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)、[field-problems deep dive](../../docs/research/field-problems-deep-dive-2026-08-11.md) | 2026-08-11 | public user reports。universal cause、repair、local reproduction は主張しない | `curriculum-maintainer` / 2026-09-11 |
+| external checkpoint、vertical slice、complete handoff を curriculum に加える | [Content value upgrade plan P2](../../docs/research/content-value-upgrade-plan-p2-2026-08-11.md) | 2026-08-11 | project planning recommendation。experiment は `not_run` | `curriculum-maintainer` / 2026-09-11 |
+| current Codex entry points、permission、model、command flag、UI state | [OpenAI Codex baseline](../../docs/research/openai-codex-baseline.md)、[official Codex documentation](https://developers.openai.com/codex/) | 2026-08-11 | volatile product facts。command や label は first-party source で再確認する | `curriculum-maintainer` / 2026-09-11 |
 
 同じテンプレートを、調査メモ、マーケティング文、デザインレビューにも使えます。ただし、受け入れ条件は分野に合わせて変えます。調査なら出典の範囲と引用、文案なら提供された事実と読者条件、デザインレビューならビューポートと観察が必要です。プラットフォーム固有のコマンド、モデルの動作、速さ、コストは、現在の出典と実際の実行がない限り主張しません。
 
