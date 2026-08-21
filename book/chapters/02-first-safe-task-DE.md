@@ -5,7 +5,7 @@
 ## Hier beginnen: Der erste Schritt darf absichtlich langweilig sein
 
 Viele Menschen glauben, eine erste Aufgabe mit einem KI-Programmierwerkzeug
-müsse beweisen, dass sie es „wirklich benutzen“ können. Das muss sie nicht.
+müsse zeigen, dass sie es „wirklich benutzen“ können. Das muss sie nicht.
 Eine spektakuläre Aufgabe verdeckt sogar die wichtigste Lektion: Wenn sich zu
 viele Dateien, Berechtigungen und unbekannte Faktoren gleichzeitig ändern,
 kannst du nicht mehr erkennen, was den Erfolg oder den Fehler verursacht hat.
@@ -74,7 +74,7 @@ Wähle eine Aufgabe mit allen folgenden Eigenschaften:
   werden.
 
 Gute erste Aufgaben sind ein README-Abschnitt, die Korrektur eines bekannten
-Tippfehlers, ein Test für eine reine Funktion, die Ordnung in einer kleinen
+Tippfehlers, ein Test für eine reine Funktion, das Strukturieren einer kleinen
 Markdown-Datei oder eine benannte Textänderung auf einer statischen Seite.
 „Mach das Projekt professionell“ ist keine erste Aufgabe: Umfang und
 Abnahmebedingung sind nicht stabil.
@@ -98,7 +98,7 @@ Beleg, bleibt die Aufgabe im Lesemodus.
 
 ## Was ein Produktsignal sagen kann und was nicht
 
-Die [offizielle Ausgangsbasis für Kapitel 2](../evidence-library-DE.md#source-notes)
+Die [offizielle Referenz für Kapitel 2](../evidence-library-DE.md#source-notes)
 erfasst die verwendeten Produkt- und Git-Quellen. Die stabile Regel ist
 wichtiger als der genaue Text eines Menüs:
 
@@ -344,7 +344,7 @@ Bei einem fehlgeschlagenen Check nicht automatisch installieren, Umgebung
 ersetzen, Vollzugriff wählen, Zugangsdaten verwenden oder Zustand löschen.
 Fehlschlag ist keine Berechtigungsvergabe.
 
-### Wiederherstellungs-Entscheidungskarte
+### Entscheidungskarte zur Wiederherstellung
 
 | Signal | Erste Aktion | Was weiterhin nicht behauptet werden darf |
 | --- | --- | --- |
@@ -355,9 +355,9 @@ Fehlschlag ist keine Berechtigungsvergabe.
 | Fehlender Checker oder fehlende Abhängigkeit | „Prüfwerkzeug nicht verfügbar“ dokumentieren | Ein nicht gelaufener Check ist bestanden |
 | Erfolgähnliche Zusammenfassung ohne Zielbeleg | Kleinste zielbezogene Prüfung ausführen | Ziel wurde erreicht |
 
-## Evidenz: Drei Schichten sind das Minimum
+## Nachweise: Drei Schichten sind das Minimum
 
-Eine erste Aufgabe benötigt mindestens drei Belegarten:
+Eine erste Aufgabe benötigt mindestens drei Arten von Nachweisen:
 
 1. **Umfangsbeleg:** `status`, Dateiliste oder Diff zeigt, dass nur das
    erlaubte Objekt geändert wurde und vorhandene Arbeit nicht fälschlich dieser
