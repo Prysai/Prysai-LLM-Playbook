@@ -611,6 +611,93 @@ window.GOAL_TEMPLATES = {
     "template": "我是 AI 程式設計工具的新手。給我一個安全的第一個任務：一個虛構的、純文字練習，要有明確結果、提供的材料、回覆形式、我可以自己執行的檢查，以及停止規則。不要假設我有檔案、工具、帳號或權限。不要先教功能清單。最後請我做出自己的第一次嘗試。",
     "path": "../book/chapters/01-gpt-and-codex-ZHTW.md"
    }
+  },
+  "fr": {
+   "language": {
+    "fields": [
+     {
+      "key": "language",
+      "label": "Langue à pratiquer",
+      "placeholder": "par ex. Espagnol, français, allemand"
+     },
+     {
+      "key": "scene",
+      "label": "Une scène",
+      "placeholder": "par ex. temps en groupe d'étude, planification des devoirs, discussion en classe"
+     }
+    ],
+    "template": "Exécutez une {scène} à quatre tours en {langue}. Vous jouez l’autre rôle et écrivez d’abord, une courte question à la fois. Je taperai une réponse après chaque question.\n\nUtilisez uniquement des détails fictifs. Ne demandez ni n’acceptez de vrais noms, écoles, calendriers, comptes, adresses, contacts ou détails de paiement. Avant le premier tour, montrez ce test fixe : quatre tours d'apprenant ; les informations demandées communiquées ; une ambiguïté résolue ; assez compréhensible pour continuer. Ne traduisez pas, n'enseignez pas et ne montrez pas de modèle de réponse avant que je réponde. Conservez ma première tentative. Corrigez uniquement la première erreur bloquant le sens : nommez le type d'erreur, donnez un indice partiel, puis un fragment travaillé uniquement si je ne peux toujours pas continuer. Conservez les deux tentatives et n'appelez pas une seule preuve de fluidité d'échange, de conversation orale ou d'écoute/prononciation.",
+    "path": "../book/communication-clinic-FR.md#language-practice-route"
+   },
+   "work": {
+    "fields": [
+     {
+      "key": "audience",
+      "label": "Qui lira la mise à jour",
+      "placeholder": "par ex. un coéquipier, un manager, un client"
+     },
+     {
+      "key": "facts",
+      "label": "Faits à utiliser (un par ligne)",
+      "placeholder": "par ex. le projet est terminé à 60 %\nl'examen est attendu vendredi"
+     }
+    ],
+    "template": "Je dois transformer les notes suivantes en une courte mise à jour pour {audience}.\n\nNotes brutes :\n{faits}\n\nExigences :\n- énumérez d'abord les faits que vous pouvez confirmer à partir des notes brutes ;\n- n'ajoutez pas de dates, d'engagements, d'état d'avancement ou de raisons ;\n- donner une version de moins de 120 mots et une version plus formelle ;\n- terminer en énumérant deux choses que je dois me confirmer avant d'envoyer.",
+    "path": "../book/work-update-practice-loop-FR.md"
+   },
+   "research": {
+    "fields": [
+     {
+      "key": "question",
+      "label": "La réclamation que vous souhaitez vérifier",
+      "placeholder": "par ex. Ce produit a changé son prix en 2026"
+     },
+     {
+      "key": "material",
+      "label": "Matériel que vous pouvez partager",
+      "placeholder": "URL, titres, extraits ou « aucun »"
+     }
+    ],
+    "template": "Je veux vérifier une affirmation avant de la répéter.\n\nQuestion : {question}\nMatériel que j'ai fourni : {matériel}\n\nN’inventez pas de sources et ne prétendez pas avoir ouvert quelque chose auquel vous ne pouvez pas accéder. Faites un tableau à trois lignes : réclamation possible, source fournie ou \"manquante\", et ce qui doit encore être vérifié. Séparez les faits, les rapports et les inférences. Si le matériel est manquant, contradictoire, personnel ou à enjeux élevés, arrêtez-vous et dites-moi la prochaine étape la plus petite et sûre.",
+    "path": "../book/research-check-practice-loop-FR.md"
+   },
+   "interview": {
+    "fields": [
+     {
+      "key": "question",
+      "label": "La question de l'entretien",
+      "placeholder": "par ex. Parlez-moi d'une fois où vous avez géré un conflit"
+     },
+     {
+      "key": "time",
+      "label": "Longueur de réponse",
+      "placeholder": "par ex. 90 secondes"
+     }
+    ],
+    "template": "Je veux répéter une réponse à une interview.\n\nQuestion : {question}\nDurée de la réponse : {time}\n\nDemandez-moi de répondre d'abord, dans mes propres mots, dans le délai imparti. Avant de commencer, énoncez le contrôle visible : un exemple concret, une décision, un résultat, une structure claire. Après ma réponse, nommez au plus une lacune matérielle et donnez un indice partiel. Ensuite, demandez-moi de réviser, et enfin posez une question modifiée avec le même contrôle et sans indice. N'écrivez pas de réponse modèle, ne prédisez pas d'autres questions d'entretien et ne promettez pas de résultat.",
+    "path": "../skills/prysai-interview-rehearsal/SKILL.md"
+   },
+   "task": {
+    "fields": [
+     {
+      "key": "goal",
+      "label": "Ce que tu veux faire",
+      "placeholder": "par ex. Réparez le lien brisé sur la page d'aide"
+     },
+     {
+      "key": "context",
+      "label": "Contexte pertinent",
+      "placeholder": "par ex. le fichier est docs/help.md ; Je peux le modifier localement"
+     }
+    ],
+    "template": "Je dois transformer une tâche en une demande claire.\n\nObjectif : {objectif}\nContexte : {contexte}\n\nRédigez un contrat de tâche avec exactement ces champs : objectif, contexte, actions autorisées, contrôle d'acceptation, preuve et condition d'arrêt. N’agissez pas, ne parcourez pas et n’utilisez pas d’outils. Posez une seule question si un champ manquant pourrait modifier le contrôle de risque ou d'acceptation. Gardez la lunette petite et réversible.",
+    "path": "../book/chapters/03-task-protocol-FR.md#core-task-contract"
+   },
+   "codex": {
+    "fields": [],
+    "template": "Je suis nouveau dans les outils de codage d'IA. Donnez-moi une première tâche sûre : un exercice fictif, composé uniquement de texte, avec un résultat clair, du matériel fourni, une forme de réponse, une vérification que je peux exécuter moi-même et une règle d'arrêt. Ne présumez pas que je dispose de fichiers, d’outils, de comptes ou d’autorisations. N’enseignez pas d’abord une liste de fonctionnalités. Terminez en me demandant de faire ma propre première tentative.",
+    "path": "../book/routes/llm-foundation-core-v1-FR.md"
+   }
   }
  }
 };

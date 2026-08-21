@@ -65,3 +65,15 @@ confirmés par leurs sources datées. Cette version française reste
 `in-progress / candidate / not_run`.
 
 Passez aux [frontières d’action](13-action-boundaries-FR.md).
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-FR.md" aria-label="Chapitre précédent: Chapitre 9 · Vérification et récupération">← Précédent<br><strong>Chapitre 9 · Vérification et récupération</strong></a></td>
+      <td align="right"></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

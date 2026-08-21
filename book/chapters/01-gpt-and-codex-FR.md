@@ -108,3 +108,15 @@ chapitre. La version française attend une relecture indépendante et reste
 `in-progress` / `candidate`.
 
 Passez au [Chapitre 2 : une première tâche sûre et vérifiable](02-first-safe-task-FR.md).
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"></td>
+      <td align="right"><a data-chapter-nav="next" href="02-first-safe-task-FR.md" aria-label="Chapitre suivant: Chapitre 2 · Première tâche sûre et vérifiable">Suivant →<br><strong>Chapitre 2 · Première tâche sûre et vérifiable</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

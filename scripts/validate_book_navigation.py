@@ -59,6 +59,17 @@ def check_target(
         )
 
 
+def locale_target_exists(item: dict[str, Any], locale: str) -> bool:
+    english_path = item.get("english_path")
+    if english_path:
+        path = str(english_path)
+        if locale != "EN":
+            path = path.replace("-EN.md", f"-{locale}.md")
+        return (ROOT / path).is_file()
+    legacy_path = item.get("legacy_path")
+    return bool(legacy_path and locale == "ZH" and (ROOT / str(legacy_path)).is_file())
+
+
 def main() -> int:
     errors: list[str] = []
     try:
@@ -123,9 +134,9 @@ def main() -> int:
             links = LINK_RE.findall(blocks[0])
             kinds = [kind for kind, _ in links]
             expected_kinds = []
-            if index > 0:
+            if index > 0 and locale_target_exists(entries[index - 1], locale):
                 expected_kinds.insert(0, "previous")
-            if index + 1 < len(entries):
+            if index + 1 < len(entries) and locale_target_exists(entries[index + 1], locale):
                 expected_kinds.append("next")
             if sorted(kinds) != sorted(expected_kinds):
                 errors.append(f"{label}: expected navigation links {expected_kinds}, found {kinds}")
@@ -133,9 +144,9 @@ def main() -> int:
                 if "migration pending" not in blocks[0]:
                     errors.append(f"{label}: English link to the untranslated next chapter needs migration pending")
             for kind, href in links:
-                if kind == "previous" and index > 0:
+                if kind == "previous" and index > 0 and locale_target_exists(entries[index - 1], locale):
                     check_target(errors, entries, source, index - 1, locale, href)
-                elif kind == "next" and index + 1 < len(entries):
+                elif kind == "next" and index + 1 < len(entries) and locale_target_exists(entries[index + 1], locale):
                     check_target(errors, entries, source, index + 1, locale, href)
 
     if errors:

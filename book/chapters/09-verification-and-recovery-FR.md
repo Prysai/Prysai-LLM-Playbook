@@ -73,3 +73,15 @@ les sources officielles avant une action. La traduction française est
 `in-progress`, `candidate` et `not_run`.
 
 Continuez avec la [planification et le découpage](10-planning-and-slicing-FR.md).
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"></td>
+      <td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-FR.md" aria-label="Chapitre suivant: Chapitre 10 · Planification et tranches verticales">Suivant →<br><strong>Chapitre 10 · Planification et tranches verticales</strong></a></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

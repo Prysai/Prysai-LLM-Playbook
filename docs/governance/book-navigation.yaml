@@ -10,8 +10,8 @@
   "generated_block": "<!-- chapter-navigation:start --> ... <!-- chapter-navigation:end -->",
   "policy": {
     "order_source": "This file owns chapter order; filenames, directory enumeration, and page-local links do not.",
-    "title_roles": "canonical_title_en and canonical_title_zh own the exact H1 body without the chapter-number prefix. title_en and title_zh are intentional compact labels for TOCs, rails, and previous/next navigation. Unregistered page-local aliases are not canonical titles.",
-    "english_navigation": "Every chapter uses its seven locale-suffixed source files; navigation always targets the selected locale path.",
+    "title_roles": "canonical_title_en and canonical_title_zh own the exact H1 body without the chapter-number prefix. Localized canonical_title fields own the corresponding localized H1 body. title_en and title_zh are intentional compact labels for TOCs, rails, and previous/next navigation. Unregistered page-local aliases are not canonical titles.",
+    "english_navigation": "Every chapter uses its locale-suffixed source file when that file exists; navigation targets the selected locale and stops at a missing same-locale file.",
     "legacy_navigation": "Legacy unsuffixed chapter drafts were removed during release cleanup; no page links to an unsuffixed chapter path anymore.",
     "footer": "The generated footer contains only previous and next chapter links. The table of contents remains the dedicated route index.",
     "boundary": "This source controls chapter navigation only. Learning-level ownership remains in learning-path.yaml, translation identity remains in locale-matrix.yaml, and supplemental routes never change the 22-chapter order."
@@ -99,7 +99,8 @@
         "chapter-05",
         "chapter-06"
       ],
-      "title_zh-tw": "從認識 GPT 到第一次安全使用"
+      "title_zh-tw": "從認識 GPT 到第一次安全使用",
+      "title_fr": "De la compréhension de GPT à la première utilisation sûre"
     },
     {
       "id": "part-2",
@@ -119,7 +120,8 @@
         "chapter-12",
         "chapter-13"
       ],
-      "title_zh-tw": "從使用者到工作流程設計者"
+      "title_zh-tw": "從使用者到工作流程設計者",
+      "title_fr": "De l’utilisateur au concepteur de workflow"
     },
     {
       "id": "part-3",
@@ -137,7 +139,8 @@
         "chapter-17",
         "chapter-18"
       ],
-      "title_zh-tw": "技能、工具與專業實踐"
+      "title_zh-tw": "技能、工具與專業實踐",
+      "title_fr": "Skills, outils et pratique professionnelle"
     },
     {
       "id": "part-4",
@@ -154,7 +157,8 @@
         "chapter-21",
         "chapter-22"
       ],
-      "title_zh-tw": "從熟練使用到組織化"
+      "title_zh-tw": "從熟練使用到組織化",
+      "title_fr": "De l’usage avancé à la capacité organisationnelle"
     }
   ],
   "chapters": [
@@ -178,7 +182,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "先理解 GPT，再理解 Codex 的工作原理",
-      "canonical_title_zh-tw": "先理解 GPT，再理解 Codex"
+      "canonical_title_zh-tw": "先理解 GPT，再理解 Codex",
+      "title_fr": "Comprendre GPT avant Codex",
+      "canonical_title_fr": "Comprendre GPT avant de faire confiance à Codex"
     },
     {
       "id": "chapter-02",
@@ -200,7 +206,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "完成第一個安全、可驗證的任務",
-      "canonical_title_zh-tw": "完成第一個安全、可驗證的任務"
+      "canonical_title_zh-tw": "完成第一個安全、可驗證的任務",
+      "title_fr": "Première tâche sûre et vérifiable",
+      "canonical_title_fr": "Accomplir une première tâche sûre et vérifiable"
     },
     {
       "id": "chapter-03",
@@ -222,7 +230,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "把願望變成任務協議",
-      "canonical_title_zh-tw": "把願望變成任務協議"
+      "canonical_title_zh-tw": "把願望變成任務協議",
+      "title_fr": "De l’intention au protocole",
+      "canonical_title_fr": "Transformer une intention en protocole de tâche"
     },
     {
       "id": "chapter-04",
@@ -244,7 +254,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "上下文、權限與 Agent 的行動邊界",
-      "canonical_title_zh-tw": "上下文、權限與 Agent 的行動邊界"
+      "canonical_title_zh-tw": "上下文、權限與 Agent 的行動邊界",
+      "title_fr": "Contexte, autorisations et Agent",
+      "canonical_title_fr": "Contexte, autorisations et limites d’action de l’Agent"
     },
     {
       "id": "chapter-05",
@@ -266,7 +278,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "選擇正確的 Codex 工作面",
-      "canonical_title_zh-tw": "選擇正確的 Codex 工作面"
+      "canonical_title_zh-tw": "選擇正確的 Codex 工作面",
+      "title_fr": "Choisir son interface Codex",
+      "canonical_title_fr": "Choisir la bonne interface Codex"
     },
     {
       "id": "chapter-06",
@@ -288,7 +302,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "模型選擇不是模型崇拜",
-      "canonical_title_zh-tw": "模型選擇不是模型崇拜"
+      "canonical_title_zh-tw": "模型選擇不是模型崇拜",
+      "title_fr": "Choisir un modèle",
+      "canonical_title_fr": "Choisir un modèle n’est pas vénérer un modèle"
     },
     {
       "id": "chapter-07",
@@ -310,7 +326,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "Skill、Plugin、MCP 和工具如何分工",
-      "canonical_title_zh-tw": "Skill、Plugin、MCP 和工具如何分工"
+      "canonical_title_zh-tw": "Skill、Plugin、MCP 和工具如何分工",
+      "title_fr": "Skills, Plugins, MCP et outils",
+      "canonical_title_fr": "Répartir le travail entre Skills, Plugins, MCP et outils"
     },
     {
       "id": "chapter-08",
@@ -332,7 +350,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "從定義到交付的完整生命週期",
-      "canonical_title_zh-tw": "從定義到交付的完整生命週期"
+      "canonical_title_zh-tw": "從定義到交付的完整生命週期",
+      "title_fr": "De la définition à la livraison",
+      "canonical_title_fr": "Le cycle complet, de la définition à la livraison"
     },
     {
       "id": "chapter-09",
@@ -354,7 +374,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "驗證、懷疑與恢復",
-      "canonical_title_zh-tw": "驗證、懷疑與恢復"
+      "canonical_title_zh-tw": "驗證、懷疑與恢復",
+      "title_fr": "Vérification et récupération",
+      "canonical_title_fr": "Vérification, doute et récupération"
     },
     {
       "id": "chapter-10",
@@ -376,7 +398,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "規劃與豎向切片",
-      "canonical_title_zh-tw": "把大目標拆成可交付切片"
+      "canonical_title_zh-tw": "把大目標拆成可交付切片",
+      "title_fr": "Planification et tranches verticales",
+      "canonical_title_fr": "Planifier et découper en tranches verticales"
     },
     {
       "id": "chapter-11",
@@ -398,7 +422,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "設計一個真正有用的 Skill",
-      "canonical_title_zh-tw": "設計一個真正有用的 Skill"
+      "canonical_title_zh-tw": "設計一個真正有用的 Skill",
+      "title_fr": "Concevoir un Skill utile",
+      "canonical_title_fr": "Concevoir un Skill qui mérite sa place"
     },
     {
       "id": "chapter-12",
@@ -420,7 +446,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "Agent 的循環、狀態和停止條件",
-      "canonical_title_zh-tw": "Agent 的循環、狀態和停止條件"
+      "canonical_title_zh-tw": "Agent 的循環、狀態和停止條件",
+      "title_fr": "Boucle et arrêts de l’Agent",
+      "canonical_title_fr": "Boucle de l’Agent, états et conditions d’arrêt"
     },
     {
       "id": "chapter-13",
@@ -442,7 +470,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "檔案、終端、瀏覽器與 GitHub 的行動邊界",
-      "canonical_title_zh-tw": "檔案、終端、瀏覽器與 GitHub 的行動邊界"
+      "canonical_title_zh-tw": "檔案、終端、瀏覽器與 GitHub 的行動邊界",
+      "title_fr": "Limites d’action",
+      "canonical_title_fr": "Limites d’action entre fichiers, terminaux, navigateurs et GitHub"
     },
     {
       "id": "chapter-14",
@@ -464,7 +494,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "如何發現、安裝和審查外部 Skill",
-      "canonical_title_zh-tw": "如何發現、安裝和審查外部 Skill"
+      "canonical_title_zh-tw": "如何發現、安裝和審查外部 Skill",
+      "title_fr": "Auditer un Skill externe",
+      "canonical_title_fr": "Découvrir, installer et auditer un Skill externe"
     },
     {
       "id": "chapter-15",
@@ -486,7 +518,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "研究路線——從問題到可稽核的知識",
-      "canonical_title_zh-tw": "研究路線——從問題到可稽核的知識"
+      "canonical_title_zh-tw": "研究路線——從問題到可稽核的知識",
+      "title_fr": "Recherche vérifiable",
+      "canonical_title_fr": "Recherche : de la question à une connaissance vérifiable"
     },
     {
       "id": "chapter-16",
@@ -508,7 +542,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "工程路線——從想法到可靠軟體",
-      "canonical_title_zh-tw": "工程路線——從想法到可靠軟體"
+      "canonical_title_zh-tw": "工程路線——從想法到可靠軟體",
+      "title_fr": "Ingénierie fiable",
+      "canonical_title_fr": "Ingénierie : de l’idée à un logiciel fiable"
     },
     {
       "id": "chapter-17",
@@ -530,7 +566,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "行銷路線——從產品理解到成長實驗",
-      "canonical_title_zh-tw": "行銷路線——從產品理解到成長實驗"
+      "canonical_title_zh-tw": "行銷路線——從產品理解到成長實驗",
+      "title_fr": "Marketing et expériences",
+      "canonical_title_fr": "Marketing : du contexte produit aux expériences"
     },
     {
       "id": "chapter-18",
@@ -552,7 +590,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "內容、設計、資料與自動化軌",
-      "canonical_title_zh-tw": "內容、設計、資料與自動化軌"
+      "canonical_title_zh-tw": "內容、設計、資料與自動化軌",
+      "title_fr": "Contenu, design, données",
+      "canonical_title_fr": "Contenu, design, données et automatisation"
     },
     {
       "id": "chapter-19",
@@ -574,7 +614,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "評估模型與工作流——從印象走向證據",
-      "canonical_title_zh-tw": "評估模型與工作流——從印象走向證據"
+      "canonical_title_zh-tw": "評估模型與工作流——從印象走向證據",
+      "title_fr": "Évaluer modèles et workflows",
+      "canonical_title_fr": "Évaluer les modèles et les workflows"
     },
     {
       "id": "chapter-20",
@@ -596,7 +638,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "構建個人 Codex 工作系統",
-      "canonical_title_zh-tw": "構建個人 Codex 工作系統"
+      "canonical_title_zh-tw": "構建個人 Codex 工作系統",
+      "title_fr": "Système de travail Codex",
+      "canonical_title_fr": "Construire son système de travail avec Codex"
     },
     {
       "id": "chapter-21",
@@ -618,7 +662,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "構建團隊能力系統",
-      "canonical_title_zh-tw": "構建團隊能力系統"
+      "canonical_title_zh-tw": "構建團隊能力系統",
+      "title_fr": "Capacité d’équipe",
+      "canonical_title_fr": "Construire une capacité d’équipe"
     },
     {
       "id": "chapter-22",
@@ -640,7 +686,9 @@
       "english_status": "source",
       "status": "candidate",
       "title_zh-tw": "持續更新與面向未來",
-      "canonical_title_zh-tw": "持續更新與面向未來"
+      "canonical_title_zh-tw": "持續更新與面向未來",
+      "title_fr": "Mise à jour et récupération",
+      "canonical_title_fr": "Garder le système à jour et récupérable"
     }
   ]
 }

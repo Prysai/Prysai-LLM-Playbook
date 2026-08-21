@@ -1,4 +1,4 @@
-"""Guard the seven-language first path against silent teaching-contract loss.
+"""Guard the eight-language first path against silent teaching-contract loss.
 
 This is deliberately narrower than a translation review. It verifies that the
 five reader-visible starting units retain the same observable learning loop and

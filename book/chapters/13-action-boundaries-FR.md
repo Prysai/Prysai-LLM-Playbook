@@ -74,3 +74,15 @@ revérifiées dans ses documents actuels. Cette traduction française attend une
 relecture indépendante et reste `candidate / not_run`.
 
 Retournez au [protocole de tâche](03-task-protocol-FR.md#core-task-contract) si le périmètre change.
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"></td>
+      <td align="right"></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

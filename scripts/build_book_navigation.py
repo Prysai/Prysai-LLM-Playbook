@@ -54,6 +54,28 @@ def relative_href(source: Path, target: Path) -> str:
     return Path(os.path.relpath(target, source.parent)).as_posix()
 
 
+def localized_target(item: dict[str, Any], locale: str) -> Path:
+    """Return the target path for a chapter in one locale."""
+    return ROOT / path_for(item, locale)
+
+
+def available_neighbor(
+    entries: list[dict[str, Any]], index: int | None, locale: str
+) -> dict[str, Any] | None:
+    """Only expose a chapter neighbor when its same-locale file exists.
+
+    A partially translated locale must stop at its authored boundary. A
+    generated link to a future ``-FR.md`` file is worse than a missing link:
+    it looks like a supported continuation and sends readers to a dead page.
+    English keeps the same behavior for migration-pending entries because
+    ``expected_files`` already limits generation to existing sources.
+    """
+    if index is None or index < 0 or index >= len(entries):
+        return None
+    item = entries[index]
+    return item if localized_target(item, locale).is_file() else None
+
+
 def link_markup(
     item: dict[str, Any],
     locale: str,
@@ -73,6 +95,7 @@ def link_markup(
         "KO": {"prev": "이전 장", "next": "다음 장", "prev_short": "← 이전", "next_short": "다음 →", "sep": " · ", "pending": " · 전환 대기 중", "num": f"{number}장"},
         "DE": {"prev": "Vorheriges Kapitel", "next": "Nächstes Kapitel", "prev_short": "← Zurück", "next_short": "Weiter →", "sep": " · ", "pending": " · Migration ausstehend", "num": f"Kapitel {number}"},
         "ZHTW": {"prev": "上一章", "next": "下一章", "prev_short": "← 上一章", "next_short": "下一章 →", "sep": " · ", "colon": "：", "after_colon": "", "pending": " · 遷移待定", "num": f"第 {number} 章"},
+        "FR": {"prev": "Chapitre précédent", "next": "Chapitre suivant", "prev_short": "← Précédent", "next_short": "Suivant →", "sep": " · ", "pending": " · traduction en cours", "num": f"Chapitre {number}"},
     }[locale]
     copy.setdefault("colon", ":")
     copy.setdefault("after_colon", " ")
@@ -92,11 +115,11 @@ def link_markup(
 
 
 def build_block(index: int, entries: list[dict[str, Any]], locale: str, source: Path) -> str:
-    previous = entries[index - 1] if index > 0 else None
-    following = entries[index + 1] if index + 1 < len(entries) else None
+    previous = available_neighbor(entries, index - 1 if index > 0 else None, locale)
+    following = available_neighbor(entries, index + 1 if index + 1 < len(entries) else None, locale)
     aria_labels = {
         "EN": "Chapter navigation", "ZH": "章节导航", "ES": "Navegación de capítulos",
-        "JA": "章ナビゲーション", "KO": "장 내비게이션", "DE": "Kapitelnavigation", "ZHTW": "章節導覽",
+        "JA": "章ナビゲーション", "KO": "장 내비게이션", "DE": "Kapitelnavigation", "ZHTW": "章節導覽", "FR": "Navigation entre les chapitres",
     }
     aria_label = aria_labels.get(locale, "Chapter navigation")
     previous_cell = (

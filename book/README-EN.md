@@ -179,7 +179,7 @@ used when it is explicitly marked as migration pending, as above. See the
 [locale-suffixed content decision](../docs/adr/0010-locale-suffixed-content.md)
 for the canonical matrix and translation-status rules.
 
-The English entry files are source-locale files. All seven locales now have
+The English entry files are source-locale files. Eight locale routes are now
 reader-facing paths for the 22 chapters and 18 Labs. That coverage still does
 not establish independent language review, semantic equivalence, learner
 outcomes, or platform behavior; those evidence types remain separate.

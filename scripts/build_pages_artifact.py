@@ -218,7 +218,7 @@ def load_seo_config() -> dict[str, object]:
     for key in ("site_name", "alternate_name"):
         if not isinstance(value.get(key), str) or not value[key].strip():
             raise ValueError(f"site/seo-config.json {key} must be a non-empty string")
-    if locales != ["en", "zh", "es", "ja", "ko", "de", "zh-tw"]:
+    if locales != ["en", "zh", "es", "ja", "ko", "de", "zh-tw", "fr"]:
         raise ValueError("site/seo-config.json locales must list the eight supported locales in canonical order")
     locale_pages = value.get("static_locale_pages")
     home_page = value.get("home_page")

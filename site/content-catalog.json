@@ -8,7 +8,8 @@
         "ja": "GPT を理解してから Codex へ",
         "ko": "Codex 전에 GPT를 이해한다",
         "de": "Erst GPT verstehen, dann Codex",
-        "zh-tw": "先理解 GPT，再理解 Codex"
+        "zh-tw": "先理解 GPT，再理解 Codex",
+        "fr": "Comprendre GPT avant Codex"
       }
     },
     "chapter-02": {
@@ -19,7 +20,8 @@
         "ja": "安全で検証可能なタスクを完了する",
         "ko": "안전하고 검증 가능한 작업을 완료한다",
         "de": "Eine sichere, verifizierbare Aufgabe abschließen",
-        "zh-tw": "完成安全、可驗證的任務"
+        "zh-tw": "完成安全、可驗證的任務",
+        "fr": "Effectuer une tâche sûre et vérifiable"
       }
     },
     "chapter-03": {
@@ -30,7 +32,8 @@
         "ja": "願いをタスクプロトコルにする",
         "ko": "바람을 작업 프로토콜로 바꾼다",
         "de": "Einen Wunsch in ein Task-Protokoll verwandeln",
-        "zh-tw": "把願望變成任務協議"
+        "zh-tw": "把願望變成任務協議",
+        "fr": "Transformez un souhait en protocole de tâche"
       }
     },
     "chapter-04": {
@@ -41,7 +44,8 @@
         "ja": "コンテキスト・権限・Agent の境界",
         "ko": "컨텍스트, 권한, Agent 경계",
         "de": "Kontext, Berechtigungen und Agent-Grenzen",
-        "zh-tw": "上下文、權限與 Agent 邊界"
+        "zh-tw": "上下文、權限與 Agent 邊界",
+        "fr": "Contexte, autorisations et limites Agent"
       }
     },
     "chapter-05": {
@@ -52,7 +56,8 @@
         "ja": "適切な Codex の利用面を選ぶ",
         "ko": "올바른 Codex 작업면을 고른다",
         "de": "Die richtige Codex-Oberfläche wählen",
-        "zh-tw": "選擇正確的 Codex 工作面"
+        "zh-tw": "選擇正確的 Codex 工作面",
+        "fr": "Choisissez la bonne surface Codex"
       }
     },
     "chapter-06": {
@@ -63,7 +68,8 @@
         "ja": "モデル選択はモデル崇拝ではない",
         "ko": "모델 선택은 모델 숭배가 아니다",
         "de": "Modellwahl ist keine Modellverehrung",
-        "zh-tw": "模型選擇不是模型崇拜"
+        "zh-tw": "模型選擇不是模型崇拜",
+        "fr": "Le choix d’un modèle n’est pas un culte du modèle"
       }
     },
     "chapter-07": {
@@ -74,7 +80,8 @@
         "ja": "Skill・Plugin・MCP・ツールがどう作業を分担するか",
         "ko": "Skill, Plugin, MCP, 도구가 작업을 어떻게 나누는가",
         "de": "Wie Skills, Plugins, MCP und Tools die Arbeit aufteilen",
-        "zh-tw": "Skill、Plugin、MCP 與工具如何分工"
+        "zh-tw": "Skill、Plugin、MCP 與工具如何分工",
+        "fr": "Comment les Skill, les plugins, les MCP et les outils répartissent le travail"
       }
     },
     "chapter-08": {
@@ -85,7 +92,8 @@
         "ja": "定義から納品までの完全なライフサイクル",
         "ko": "정의에서 전달까지의 전체 수명주기",
         "de": "Der vollständige Lebenszyklus von der Definition bis zur Lieferung",
-        "zh-tw": "從定義到交付的完整生命週期"
+        "zh-tw": "從定義到交付的完整生命週期",
+        "fr": "Le cycle de vie complet, de la définition à la livraison"
       }
     },
     "chapter-09": {
@@ -96,7 +104,8 @@
         "ja": "検証・疑い・リカバリ",
         "ko": "검증, 의심, 복구",
         "de": "Verifikation, Zweifel und Recovery",
-        "zh-tw": "驗證、懷疑與恢復"
+        "zh-tw": "驗證、懷疑與恢復",
+        "fr": "Vérification, doute et récupération"
       }
     },
     "chapter-10": {
@@ -107,7 +116,8 @@
         "ja": "計画と垂直スライス",
         "ko": "계획과 수직 슬라이스",
         "de": "Planung und vertikale Schnitte",
-        "zh-tw": "規劃與豎向切片"
+        "zh-tw": "規劃與豎向切片",
+        "fr": "Planification et tranches verticales"
       }
     },
     "chapter-11": {
@@ -118,7 +128,8 @@
         "ja": "採用に値する Skill を設計する",
         "ko": "자리할 이유가 있는 Skill을 설계한다",
         "de": "Einen Skill entwerfen, der seinen Platz verdient",
-        "zh-tw": "設計一個真正有用的 Skill"
+        "zh-tw": "設計一個真正有用的 Skill",
+        "fr": "Concevez une Skill qui mérite sa place"
       }
     },
     "chapter-12": {
@@ -129,7 +140,8 @@
         "ja": "Agent のループ・状態・停止条件",
         "ko": "Agent 루프, 상태, 중지 조건",
         "de": "Die Agent-Schleife, Zustand und Stoppbedingungen",
-        "zh-tw": "Agent 的循環、狀態與停止條件"
+        "zh-tw": "Agent 的循環、狀態與停止條件",
+        "fr": "Conditions de boucle, d'état et d'arrêt du Agent"
       }
     },
     "chapter-13": {
@@ -140,7 +152,8 @@
         "ja": "ファイル・端末・ブラウザ・GitHub をまたぐ操作の境界",
         "ko": "파일, 터미널, 브라우저, GitHub 전반의 행동 경계",
         "de": "Aktionsgrenzen bei Dateien, Terminals, Browsern und GitHub",
-        "zh-tw": "檔案、終端、瀏覽器與 GitHub 的行動邊界"
+        "zh-tw": "檔案、終端、瀏覽器與 GitHub 的行動邊界",
+        "fr": "Limites d'action entre les fichiers, les terminaux, les navigateurs et GitHub"
       }
     },
     "chapter-14": {
@@ -151,7 +164,8 @@
         "ja": "外部 Skill の発見・インストール・監査",
         "ko": "외부 Skill을 발견하고 설치하며 감사한다",
         "de": "Einen externen Skill entdecken, installieren und prüfen",
-        "zh-tw": "發現、安裝與審查外部 Skill"
+        "zh-tw": "發現、安裝與審查外部 Skill",
+        "fr": "Découvrez, installez et auditez un Skill externe"
       }
     },
     "chapter-15": {
@@ -162,7 +176,8 @@
         "ja": "リサーチ：質問から監査可能な知識へ",
         "ko": "연구: 질문에서 감사 가능한 지식까지",
         "de": "Research: von der Frage zu prüfbarem Wissen",
-        "zh-tw": "研究：從問題到可審查知識"
+        "zh-tw": "研究：從問題到可審查知識",
+        "fr": "Recherche : de la question à la connaissance auditable"
       }
     },
     "chapter-16": {
@@ -173,7 +188,8 @@
         "ja": "エンジニアリング：アイデアから信頼できるソフトウェアへ",
         "ko": "엔지니어링: 아이디어에서 신뢰할 수 있는 소프트웨어까지",
         "de": "Engineering: von der Idee zu zuverlässiger Software",
-        "zh-tw": "工程：從想法到可靠軟體"
+        "zh-tw": "工程：從想法到可靠軟體",
+        "fr": "Ingénierie : de l'idée au logiciel fiable"
       }
     },
     "chapter-17": {
@@ -184,7 +200,8 @@
         "ja": "マーケティング：プロダクトコンテキストから実験へ",
         "ko": "마케팅: 제품 컨텍스트에서 실험까지",
         "de": "Marketing: vom Produktkontext zu Experimenten",
-        "zh-tw": "營銷：從產品上下文到實驗"
+        "zh-tw": "營銷：從產品上下文到實驗",
+        "fr": "Marketing : du contexte produit aux expérimentations"
       }
     },
     "chapter-18": {
@@ -195,7 +212,8 @@
         "ja": "コンテンツ・デザイン・データ・自動化",
         "ko": "콘텐츠, 디자인, 데이터, 자동화",
         "de": "Content, Design, Daten und Automatisierung",
-        "zh-tw": "內容、設計、資料與自動化"
+        "zh-tw": "內容、設計、資料與自動化",
+        "fr": "Contenu, conception, données et automatisation"
       }
     },
     "chapter-19": {
@@ -206,7 +224,8 @@
         "ja": "モデルとワークフローを評価する",
         "ko": "모델과 워크플로를 평가한다",
         "de": "Modelle und Workflows evaluieren",
-        "zh-tw": "評估模型與工作流程"
+        "zh-tw": "評估模型與工作流程",
+        "fr": "Évaluer les modèles et les flux de travail"
       }
     },
     "chapter-20": {
@@ -217,7 +236,8 @@
         "ja": "個人の Codex 仕事システムを構築する",
         "ko": "개인 Codex 작업 시스템을 구축한다",
         "de": "Ein persönliches Codex-Arbeitssystem aufbauen",
-        "zh-tw": "建立個人 Codex 工作系統"
+        "zh-tw": "建立個人 Codex 工作系統",
+        "fr": "Construisez un système de travail personnel Codex"
       }
     },
     "chapter-21": {
@@ -228,7 +248,8 @@
         "ja": "チーム能力システムを構築する",
         "ko": "팀 역량 시스템을 구축한다",
         "de": "Ein Team-Capability-System aufbauen",
-        "zh-tw": "建立團隊能力系統"
+        "zh-tw": "建立團隊能力系統",
+        "fr": "Construire un système de capacité d’équipe"
       }
     },
     "chapter-22": {
@@ -239,7 +260,8 @@
         "ja": "システムを最新かつ復元可能に保つ",
         "ko": "시스템을 최신으로 유지하고 복구 가능하게 한다",
         "de": "Das System aktuell und wiederherstellbar halten",
-        "zh-tw": "持續更新並保持可恢復"
+        "zh-tw": "持續更新並保持可恢復",
+        "fr": "Gardez le système à jour et récupérable"
       }
     }
   },
@@ -252,7 +274,8 @@
         "ja": "最初の安全なタスク",
         "ko": "첫 번째 안전한 작업",
         "de": "Erste sichere Aufgabe",
-        "zh-tw": "第一個安全任務"
+        "zh-tw": "第一個安全任務",
+        "fr": "Première tâche sécuritaire"
       }
     },
     "lab-002": {
@@ -263,7 +286,8 @@
         "ja": "タスクプロトコル",
         "ko": "작업 프로토콜",
         "de": "Task-Protokoll",
-        "zh-tw": "任務協議"
+        "zh-tw": "任務協議",
+        "fr": "Protocole de tâche"
       }
     },
     "lab-003": {
@@ -274,7 +298,8 @@
         "ja": "証拠レビュー",
         "ko": "증거 리뷰",
         "de": "Beleg-Prüfung",
-        "zh-tw": "證據審查"
+        "zh-tw": "證據審查",
+        "fr": "Examen des preuves"
       }
     },
     "lab-004": {
@@ -285,7 +310,8 @@
         "ja": "Skill の選択",
         "ko": "Skill 선택",
         "de": "Skill-Auswahl",
-        "zh-tw": "Skill 選擇"
+        "zh-tw": "Skill 選擇",
+        "fr": "Sélection Skill"
       }
     },
     "lab-005": {
@@ -296,7 +322,8 @@
         "ja": "Skill の設計",
         "ko": "Skill 설계",
         "de": "Einen Skill entwerfen",
-        "zh-tw": "設計一個 Skill"
+        "zh-tw": "設計一個 Skill",
+        "fr": "Concevoir un Skill"
       }
     },
     "lab-006": {
@@ -307,7 +334,8 @@
         "ja": "Agent の停止条件",
         "ko": "Agent 중지 조건",
         "de": "Agent-Stoppbedingungen",
-        "zh-tw": "Agent 停止條件"
+        "zh-tw": "Agent 停止條件",
+        "fr": "Conditions d'arrêt Agent"
       }
     },
     "lab-007": {
@@ -318,7 +346,8 @@
         "ja": "操作の境界",
         "ko": "행동 경계",
         "de": "Aktionsgrenzen",
-        "zh-tw": "行動邊界"
+        "zh-tw": "行動邊界",
+        "fr": "Limites des actions"
       }
     },
     "lab-008": {
@@ -329,7 +358,8 @@
         "ja": "リサーチクエスチョン",
         "ko": "연구 질문",
         "de": "Research-Frage",
-        "zh-tw": "研究問題"
+        "zh-tw": "研究問題",
+        "fr": "Question de recherche"
       }
     },
     "lab-009": {
@@ -340,7 +370,8 @@
         "ja": "エンジニアリングライフサイクル",
         "ko": "엔지니어링 수명주기",
         "de": "Engineering-Lebenszyklus",
-        "zh-tw": "工程生命週期"
+        "zh-tw": "工程生命週期",
+        "fr": "Cycle de vie de l'ingénierie"
       }
     },
     "lab-010": {
@@ -351,7 +382,8 @@
         "ja": "共有プロダクトコンテキスト",
         "ko": "공유 제품 컨텍스트",
         "de": "Gemeinsamer Produktkontext",
-        "zh-tw": "共享產品上下文"
+        "zh-tw": "共享產品上下文",
+        "fr": "Contexte du produit partagé"
       }
     },
     "lab-011": {
@@ -362,7 +394,8 @@
         "ja": "GPT と Codex の境界",
         "ko": "GPT와 Codex 경계",
         "de": "GPT- und Codex-Grenzen",
-        "zh-tw": "GPT 與 Codex 邊界"
+        "zh-tw": "GPT 與 Codex 邊界",
+        "fr": "Limites GPT et Codex"
       }
     },
     "lab-012": {
@@ -373,7 +406,8 @@
         "ja": "チーム能力の移行",
         "ko": "팀 역량 마이그레이션",
         "de": "Team-Capability-Migration",
-        "zh-tw": "團隊能力遷移"
+        "zh-tw": "團隊能力遷移",
+        "fr": "Migration des capacités de l'équipe"
       }
     },
     "lab-013": {
@@ -384,7 +418,8 @@
         "ja": "監査可能な垂直スライス",
         "ko": "감사 가능한 수직 슬라이스",
         "de": "Prüfbarer vertikaler Schnitt",
-        "zh-tw": "可審計的豎向切片"
+        "zh-tw": "可審計的豎向切片",
+        "fr": "Tranche verticale vérifiable"
       }
     },
     "lab-014": {
@@ -395,7 +430,8 @@
         "ja": "再開時の突き合わせ",
         "ko": "재개 대조",
         "de": "Fortsetzungs-Abgleich",
-        "zh-tw": "恢復任務對賬"
+        "zh-tw": "恢復任務對賬",
+        "fr": "Reprendre le rapprochement"
       }
     },
     "lab-015": {
@@ -406,7 +442,8 @@
         "ja": "証拠の納品",
         "ko": "증거 전달",
         "de": "Beleglieferung",
-        "zh-tw": "證據交付"
+        "zh-tw": "證據交付",
+        "fr": "Remise des preuves"
       }
     },
     "lab-016": {
@@ -417,7 +454,8 @@
         "ja": "副作用の境界",
         "ko": "부작용 경계",
         "de": "Nebeneffekt-Grenze",
-        "zh-tw": "副作用邊界"
+        "zh-tw": "副作用邊界",
+        "fr": "Limite des effets secondaires"
       }
     },
     "lab-017": {
@@ -428,7 +466,8 @@
         "ja": "Skill 発見の監査",
         "ko": "Skill 발견 감사",
         "de": "Skill-Entdeckungs-Audit",
-        "zh-tw": "Skill 發現審計"
+        "zh-tw": "Skill 發現審計",
+        "fr": "Audit de découverte Skill"
       }
     },
     "lab-018": {
@@ -439,7 +478,8 @@
         "ja": "型付き言語の転移",
         "ko": "문자 언어 전이 연습",
         "de": "Getippter Sprachtransfer",
-        "zh-tw": "文字語言遷移練習"
+        "zh-tw": "文字語言遷移練習",
+        "fr": "Transfert de langue dactylographié"
       }
     }
   },
@@ -540,7 +580,8 @@
         "ja": "対話ブリーフ Dialogue Brief",
         "ko": "대화 브리핑",
         "de": "Dialogue Brief",
-        "zh-tw": "首輪對話簡報 Dialogue Brief"
+        "zh-tw": "首輪對話簡報 Dialogue Brief",
+        "fr": "Résumé du dialogue"
       }
     },
     "prysai-first-turn-check": {
@@ -551,7 +592,8 @@
         "ja": "初回ターンチェック First-Turn Check",
         "ko": "첫 턴 점검",
         "de": "First-Turn Check",
-        "zh-tw": "首輪請求檢查 First-Turn Check"
+        "zh-tw": "首輪請求檢查 First-Turn Check",
+        "fr": "Vérification au premier tour"
       }
     },
     "prysai-codex-coach": {
@@ -562,7 +604,8 @@
         "ja": "Codex コーチ Codex Coach",
         "ko": "Codex 코치",
         "de": "Codex Coach",
-        "zh-tw": "Codex 學習教練"
+        "zh-tw": "Codex 學習教練",
+        "fr": "Autocar Codex"
       }
     },
     "prysai-task-protocol": {
@@ -573,7 +616,8 @@
         "ja": "タスクプロトコル Task Protocol",
         "ko": "작업 프로토콜",
         "de": "Task Protocol",
-        "zh-tw": "任務協議 Task Protocol"
+        "zh-tw": "任務協議 Task Protocol",
+        "fr": "Protocole de tâche"
       }
     },
     "prysai-evidence-review": {
@@ -584,7 +628,8 @@
         "ja": "証拠レビュー Evidence Review",
         "ko": "증거 리뷰",
         "de": "Evidence Review",
-        "zh-tw": "證據審查 Evidence Review"
+        "zh-tw": "證據審查 Evidence Review",
+        "fr": "Examen des preuves"
       }
     },
     "prysai-skill-selector": {
@@ -595,7 +640,8 @@
         "ja": "Skill セレクター Skill Selector",
         "ko": "Skill 선택기",
         "de": "Skill Selector",
-        "zh-tw": "Skill 選擇器 Skill Selector"
+        "zh-tw": "Skill 選擇器 Skill Selector",
+        "fr": "Sélecteur Skill"
       }
     },
     "prysai-workflow-orchestrator": {
@@ -606,7 +652,8 @@
         "ja": "ワークフローオーケストレーター Workflow Orchestrator",
         "ko": "워크플로 오케스트레이터",
         "de": "Workflow Orchestrator",
-        "zh-tw": "工作流程編排 Workflow Orchestrator"
+        "zh-tw": "工作流程編排 Workflow Orchestrator",
+        "fr": "Orchestrateur de flux de travail"
       }
     },
     "prysai-research-router": {
@@ -617,7 +664,8 @@
         "ja": "リサーチルーター Research Router",
         "ko": "연구 라우터",
         "de": "Research Router",
-        "zh-tw": "研究路由 Research Router"
+        "zh-tw": "研究路由 Research Router",
+        "fr": "Routeur de recherche"
       }
     },
     "prysai-product-context": {
@@ -628,7 +676,8 @@
         "ja": "プロダクトコンテキスト Product Context",
         "ko": "제품 컨텍스트",
         "de": "Product Context",
-        "zh-tw": "產品上下文 Product Context"
+        "zh-tw": "產品上下文 Product Context",
+        "fr": "Contexte du produit"
       }
     },
     "prysai-learning-coach": {
@@ -639,7 +688,8 @@
         "ja": "学習コーチ Learning Coach",
         "ko": "학습 코치",
         "de": "Learning Coach",
-        "zh-tw": "學習教練 Learning Coach"
+        "zh-tw": "學習教練 Learning Coach",
+        "fr": "Coach d'apprentissage"
       }
     },
     "prysai-source-investigator": {
@@ -650,7 +700,8 @@
         "ja": "情報源調査 Source Investigator",
         "ko": "출처 조사자",
         "de": "Source Investigator",
-        "zh-tw": "來源調查 Source Investigator"
+        "zh-tw": "來源調查 Source Investigator",
+        "fr": "Enquêteur source"
       }
     },
     "prysai-field-signal-curator": {
@@ -661,7 +712,8 @@
         "ja": "現場シグナルキュレーター Field Signal Curator",
         "ko": "현장 신호 큐레이터",
         "de": "Field Signal Curator",
-        "zh-tw": "現場信號整理 Field Signal Curator"
+        "zh-tw": "現場信號整理 Field Signal Curator",
+        "fr": "Conservateur des signaux de terrain"
       }
     },
     "prysai-platform-adapter-review": {
@@ -672,7 +724,8 @@
         "ja": "プラットフォームアダプターレビュー Platform Adapter Review",
         "ko": "플랫폼 어댑터 리뷰",
         "de": "Platform Adapter Review",
-        "zh-tw": "平臺適配審查 Platform Adapter Review"
+        "zh-tw": "平臺適配審查 Platform Adapter Review",
+        "fr": "Examen de l'adaptateur de plate-forme"
       }
     },
     "prysai-platform-fact-watch": {
@@ -683,7 +736,8 @@
         "ja": "プラットフォーム事実監視 Platform Fact Watch",
         "ko": "플랫폼 사실 감시",
         "de": "Platform Fact Watch",
-        "zh-tw": "平臺事實巡檢 Platform Fact Watch"
+        "zh-tw": "平臺事實巡檢 Platform Fact Watch",
+        "fr": "Veille factuelle sur la plateforme"
       }
     },
     "prysai-platform-observation-record": {
@@ -694,7 +748,8 @@
         "ja": "プラットフォーム観察記録 Platform Observation Record",
         "ko": "플랫폼 관찰 기록",
         "de": "Platform Observation Record",
-        "zh-tw": "平臺觀察記錄 Platform Observation Record"
+        "zh-tw": "平臺觀察記錄 Platform Observation Record",
+        "fr": "Enregistrement d'observation de la plate-forme"
       }
     },
     "prysai-communication-failure-triage": {
@@ -705,7 +760,8 @@
         "ja": "コミュニケーション失敗トリアージ Communication Failure Triage",
         "ko": "커뮤니케이션 실패 진단",
         "de": "Communication Failure Triage",
-        "zh-tw": "溝通失敗診斷 Communication Failure Triage"
+        "zh-tw": "溝通失敗診斷 Communication Failure Triage",
+        "fr": "Triage des échecs de communication"
       }
     },
     "prysai-prompt-card-editor": {
@@ -716,7 +772,8 @@
         "ja": "プロンプトカードエディター Prompt Card Editor",
         "ko": "프롬프트 카드 편집기",
         "de": "Prompt Card Editor",
-        "zh-tw": "提示卡編輯器 Prompt Card Editor"
+        "zh-tw": "提示卡編輯器 Prompt Card Editor",
+        "fr": "Éditeur de cartes d'invite"
       }
     },
     "prysai-adversarial-project-review": {
@@ -727,7 +784,8 @@
         "ja": "対抗的プロジェクトレビュー Adversarial Project Review",
         "ko": "적대적 프로젝트 리뷰",
         "de": "Adversarial Project Review",
-        "zh-tw": "對抗式專案審查 Adversarial Project Review"
+        "zh-tw": "對抗式專案審查 Adversarial Project Review",
+        "fr": "Examen contradictoire du projet"
       }
     },
     "prysai-interruption-checkpoint": {
@@ -738,7 +796,8 @@
         "ja": "中断チェックポイント Interruption Checkpoint",
         "ko": "중단 체크포인트",
         "de": "Interruption Checkpoint",
-        "zh-tw": "中斷檢查點 Interruption Checkpoint"
+        "zh-tw": "中斷檢查點 Interruption Checkpoint",
+        "fr": "Point de contrôle d'interruption"
       }
     },
     "prysai-practice-target": {
@@ -749,7 +808,8 @@
         "ja": "プラクティスターゲット Practice Target",
         "ko": "연습 목표",
         "de": "Practice Target",
-        "zh-tw": "練習目標 Practice Target"
+        "zh-tw": "練習目標 Practice Target",
+        "fr": "Cible d'entraînement"
       }
     },
     "prysai-request-escalation": {
@@ -760,7 +820,8 @@
         "ja": "リクエストエスカレーション Request Escalation",
         "ko": "요청 에스컬레이션",
         "de": "Request Escalation",
-        "zh-tw": "請求升級 Request Escalation"
+        "zh-tw": "請求升級 Request Escalation",
+        "fr": "Demande d'escalade"
       }
     },
     "prysai-shift-handoff": {
@@ -771,7 +832,8 @@
         "ja": "シフト引き継ぎ Shift Handoff",
         "ko": "교대 인계",
         "de": "Shift Handoff",
-        "zh-tw": "工作交接 Shift Handoff"
+        "zh-tw": "工作交接 Shift Handoff",
+        "fr": "Transfert de quart de travail"
       }
     },
     "prysai-llm-comparison-protocol": {
@@ -782,7 +844,8 @@
         "ja": "LLM 比較プロトコル LLM Comparison Protocol",
         "ko": "LLM 비교 프로토콜",
         "de": "LLM Comparison Protocol",
-        "zh-tw": "LLM 對比協議 LLM Comparison Protocol"
+        "zh-tw": "LLM 對比協議 LLM Comparison Protocol",
+        "fr": "Protocole de comparaison LLM"
       }
     },
     "prysai-language-partner": {
@@ -793,7 +856,8 @@
         "ja": "言語パートナー Language Partner",
         "ko": "언어 파트너 Language Partner",
         "de": "Language Partner (Sprachpartner)",
-        "zh-tw": "語言夥伴 Language Partner"
+        "zh-tw": "語言夥伴 Language Partner",
+        "fr": "Partenaire linguistique"
       }
     },
     "prysai-interview-rehearsal": {
@@ -804,7 +868,8 @@
         "ja": "面接リハーサル Interview Rehearsal",
         "ko": "면접 리허설 Interview Rehearsal",
         "de": "Interview Rehearsal (Vorstellungsgespräch-Probe)",
-        "zh-tw": "面試演練 Interview Rehearsal"
+        "zh-tw": "面試演練 Interview Rehearsal",
+        "fr": "Répétition d'entretien"
       }
     },
     "polish-open-source-prose": {
@@ -815,7 +880,8 @@
         "ja": "オープンソース向け文章の推敲",
         "ko": "오픈 소스 문서 다듬기",
         "de": "Open-Source-Texte redigieren",
-        "zh-tw": "開源專案文案潤飾"
+        "zh-tw": "開源專案文案潤飾",
+        "fr": "Prose polonaise open source"
       }
     }
   }

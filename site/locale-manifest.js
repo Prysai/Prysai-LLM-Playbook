@@ -52,6 +52,12 @@ window.CODEX_LOCALE_MANIFEST = {
       "url_token": "zh-tw",
       "html_lang": "zh-TW",
       "display_name": "繁體中文"
+    },
+    "fr": {
+      "suffix": "FR",
+      "url_token": "fr",
+      "html_lang": "fr",
+      "display_name": "Français"
     }
   },
   "contents": {
@@ -125,6 +131,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/routes/first-safe-change-FR.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -197,6 +212,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
+          "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/guides/learning-practice-contract-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
       }
@@ -278,6 +302,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
           "title": "實驗 018：用初學者學習協調打字對話測試保持與遷移"
+        },
+        "fr": {
+          "path": "book/labs/lab-018-language-transfer-FR.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -350,6 +383,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
+          "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/routes/universal-core-foundations-FR.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
       }
@@ -457,6 +499,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "explicit_anchors": [
             "language-practice-route"
           ]
+        },
+        "fr": {
+          "path": "book/communication-clinic-FR.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -534,6 +585,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": []
+        },
+        "fr": {
+          "path": "README-FR.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -608,6 +668,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
+          "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/README-FR.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
       }
@@ -684,6 +753,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/preface-FR.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -758,6 +836,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
+          "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/labs/README-FR.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
       }
@@ -834,6 +921,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/table-of-contents-FR.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -909,6 +1005,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/01-gpt-and-codex-FR.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -983,6 +1088,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
+          "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/02-first-safe-task-FR.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
       }
@@ -1080,6 +1194,17 @@ window.CODEX_LOCALE_MANIFEST = {
             "core-task-contract",
             "core-task-contract-end"
           ]
+        },
+        "fr": {
+          "path": "book/chapters/03-task-protocol-FR.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": [
+            "core-task-contract"
+          ]
         }
       }
     },
@@ -1154,6 +1279,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
+          "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/04-context-permissions-and-agent-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
       }
@@ -1230,6 +1364,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/05-choose-the-codex-surface-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -1304,6 +1447,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
+          "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/06-model-selection-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
       }
@@ -1380,6 +1532,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/07-skills-plugins-and-tools-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -1454,6 +1615,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
+          "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/08-full-lifecycle-workflow-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
       }
@@ -1541,6 +1711,17 @@ window.CODEX_LOCALE_MANIFEST = {
             "core-evidence-recovery",
             "core-evidence-recovery-end"
           ]
+        },
+        "fr": {
+          "path": "book/chapters/09-verification-and-recovery-FR.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": [
+            "core-evidence-recovery"
+          ]
         }
       }
     },
@@ -1625,6 +1806,17 @@ window.CODEX_LOCALE_MANIFEST = {
             "core-evidence-bearing-slice",
             "core-evidence-bearing-slice-end"
           ]
+        },
+        "fr": {
+          "path": "book/chapters/10-planning-and-slicing-FR.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": [
+            "core-evidence-bearing-slice"
+          ]
         }
       }
     },
@@ -1700,6 +1892,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/11-designing-a-skill-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -1774,6 +1975,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
+          "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/12-agent-loop-and-stop-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
       }
@@ -1853,6 +2063,17 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/13-action-boundaries-FR.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": [
+            "core-action-boundary"
+          ]
         }
       }
     },
@@ -1927,6 +2148,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
+          "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/14-discover-and-audit-skills-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
       }
@@ -2003,6 +2233,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/15-research-track-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -2077,6 +2316,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
+          "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/16-engineering-track-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
       }
@@ -2153,6 +2401,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/17-marketing-track-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -2227,6 +2484,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
+          "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/18-content-design-data-automation-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
       }
@@ -2303,6 +2569,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/19-evaluate-models-and-workflows-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -2377,6 +2652,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
+          "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/20-personal-codex-work-system-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
       }
@@ -2453,6 +2737,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/21-team-capability-system-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -2527,6 +2820,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
+          "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/chapters/22-continuous-update-and-future-proofing-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
       }
@@ -2610,6 +2912,16 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
           "title": "實驗 011：分清 GPT、Codex、工具與 Agent"
+        },
+        "fr": {
+          "path": "book/labs/lab-011-gpt-codex-boundaries-FR.md",
+          "exists": true,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": [],
+          "title": "Lab 011 : La frontière GPT–Codex"
         }
       }
     },
@@ -2692,6 +3004,16 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
           "title": "實驗 001：讓第一個請求變得可用"
+        },
+        "fr": {
+          "path": "book/labs/lab-001-first-safe-task-FR.md",
+          "exists": true,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": [],
+          "title": "Lab 001 : La première tâche sûre"
         }
       }
     },
@@ -2774,6 +3096,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
           "title": "實驗 002：把一個願望變成任務協議"
+        },
+        "fr": {
+          "path": "book/labs/lab-002-task-protocol-FR.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -2856,6 +3187,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
           "title": "實驗 003：審計一條完成宣告"
+        },
+        "fr": {
+          "path": "book/labs/lab-003-evidence-review-FR.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -2938,6 +3278,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
           "title": "實驗 004：選擇最小有用能力"
+        },
+        "fr": {
+          "path": "book/labs/lab-004-skill-selection-FR.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -3020,6 +3369,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
           "title": "實驗 005：把重複方法沉澱為邊界明確的 Skill"
+        },
+        "fr": {
+          "path": "book/labs/lab-005-design-a-skill-FR.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -3102,6 +3460,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
           "title": "實驗 008：把一個大話題收窄為可回答的研究問題"
+        },
+        "fr": {
+          "path": "book/labs/lab-008-research-question-FR.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -3184,6 +3551,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
           "title": "實驗 009：比較直接實施與完整工程生命週期"
+        },
+        "fr": {
+          "path": "book/labs/lab-009-engineering-lifecycle-FR.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -3266,6 +3642,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
           "title": "實驗 010：建立可跨兩個任務複用的產品上下文"
+        },
+        "fr": {
+          "path": "book/labs/lab-010-product-context-FR.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -3348,6 +3733,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
           "title": "實驗 012：把個人方法遷移為團隊能力"
+        },
+        "fr": {
+          "path": "book/labs/lab-012-team-capability-migration-FR.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -3430,6 +3824,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
           "title": "實驗 013：完成一個完整的豎向切片"
+        },
+        "fr": {
+          "path": "book/labs/lab-013-l3-vertical-slice-FR.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -3512,6 +3915,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
           "title": "實驗 006：設計 Agent 的停止條件"
+        },
+        "fr": {
+          "path": "book/labs/lab-006-agent-stop-conditions-FR.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -3594,6 +4006,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
           "title": "實驗 007：把一個 README 任務放進三個行動邊界"
+        },
+        "fr": {
+          "path": "book/labs/lab-007-action-boundaries-FR.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -3674,6 +4095,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
           "title": "實驗 014：繼續之前，先核對恢復的任務"
+        },
+        "fr": {
+          "path": "book/labs/lab-014-resume-reconciliation-FR.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -3754,6 +4184,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
           "title": "實驗 015：交付證據，而不只是一句完成宣告"
+        },
+        "fr": {
+          "path": "book/labs/lab-015-evidence-delivery-FR.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -3834,6 +4273,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
           "title": "實驗 016：在副作用邊界停下"
+        },
+        "fr": {
+          "path": "book/labs/lab-016-side-effect-boundary-FR.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -3906,6 +4354,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
+          "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/spanish-practice-loop-FR.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
       }
@@ -3980,6 +4437,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/work-update-practice-loop-FR.md",
+          "exists": true,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -4052,6 +4518,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
+          "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/research-check-practice-loop-FR.md",
+          "exists": true,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
       }
@@ -4154,6 +4629,15 @@ window.CODEX_LOCALE_MANIFEST = {
             "method-and-status",
             "source-notes"
           ]
+        },
+        "fr": {
+          "path": "book/evidence-library-FR.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -4234,6 +4718,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
           "title": "實驗 017：在採納 Skill 前審計發現過程"
+        },
+        "fr": {
+          "path": "book/labs/lab-017-skill-discovery-audit-FR.md",
+          "exists": false,
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -4349,6 +4842,15 @@ window.CODEX_LOCALE_MANIFEST = {
             "gemini-first-task",
             "grok-first-task"
           ]
+        },
+        "fr": {
+          "path": "book/routes/platform-adapter-guide-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -4421,6 +4923,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
+          "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/french-practice-loop-FR.md",
+          "exists": false,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "not-started",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": []
         }
       }
@@ -4495,6 +5006,15 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": []
+        },
+        "fr": {
+          "path": "book/guides/llm-fundamentals-FR.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "coverage": "core-slice",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "explicit_anchors": []
         }
       }
     },
@@ -4549,6 +5069,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh-tw": {
+          "path": "docs/research/field-problems-index-2026-08-10.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "fr": {
           "path": "docs/research/field-problems-index-2026-08-10.md",
           "exists": true,
           "content_status": "candidate",
@@ -4613,6 +5140,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "locale-matrix"
+        },
+        "fr": {
+          "path": "docs/research/field-problems-forums-2026-08-10.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
         }
       }
     },
@@ -4667,6 +5201,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh-tw": {
+          "path": "docs/research/codex-field-cases-current-review-2026-08-12.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "fr": {
           "path": "docs/research/codex-field-cases-current-review-2026-08-12.md",
           "exists": true,
           "content_status": "candidate",
@@ -4731,6 +5272,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "locale-matrix"
+        },
+        "fr": {
+          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
         }
       }
     },
@@ -4785,6 +5333,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh-tw": {
+          "path": "docs/research/field-case-external-instruction-authority-2026-08-13.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "fr": {
           "path": "docs/research/field-case-external-instruction-authority-2026-08-13.md",
           "exists": true,
           "content_status": "candidate",
@@ -4849,6 +5404,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "locale-matrix"
+        },
+        "fr": {
+          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
         }
       }
     },
@@ -4903,6 +5465,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh-tw": {
+          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "fr": {
           "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14.md",
           "exists": true,
           "content_status": "candidate",
@@ -4967,6 +5536,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "locale-matrix"
+        },
+        "fr": {
+          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
         }
       }
     },
@@ -5021,6 +5597,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh-tw": {
+          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "fr": {
           "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md",
           "exists": true,
           "content_status": "candidate",
@@ -5085,6 +5668,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "locale-matrix"
+        },
+        "fr": {
+          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
         }
       }
     },
@@ -5139,6 +5729,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh-tw": {
+          "path": "docs/quality/verification-stability-2026-08-15.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "fr": {
           "path": "docs/quality/verification-stability-2026-08-15.md",
           "exists": true,
           "content_status": "candidate",
@@ -5203,6 +5800,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "locale-matrix"
+        },
+        "fr": {
+          "path": "docs/quality/first-win-pilot-protocol-v2.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
         }
       }
     },
@@ -5257,6 +5861,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh-tw": {
+          "path": "docs/quality/newcomer-entry-observation-protocol-v1.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "fr": {
           "path": "docs/quality/newcomer-entry-observation-protocol-v1.md",
           "exists": true,
           "content_status": "candidate",
@@ -5321,6 +5932,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "locale-matrix"
+        },
+        "fr": {
+          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
         }
       }
     },
@@ -5380,6 +5998,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "locale-matrix"
+        },
+        "fr": {
+          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
         }
       }
     },
@@ -5434,6 +6059,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh-tw": {
+          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "locale-matrix"
+        },
+        "fr": {
           "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md",
           "exists": true,
           "content_status": "candidate",
@@ -5504,6 +6136,14 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "candidate",
           "source_revision": "locale-matrix",
           "coverage": "projected-existing-page"
+        },
+        "fr": {
+          "path": "book/guides/llm-fundamentals-FR.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "locale-matrix",
+          "coverage": "projected-existing-page"
         }
       }
     },
@@ -5564,6 +6204,14 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh-tw": {
           "path": "book/routes/universal-core-foundations-ZHTW.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "locale-matrix",
+          "coverage": "projected-existing-page"
+        },
+        "fr": {
+          "path": "book/routes/universal-core-foundations-FR.md",
           "exists": true,
           "content_status": "candidate",
           "translation_status": "candidate",
@@ -5634,6 +6282,14 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "candidate",
           "source_revision": "locale-matrix",
           "coverage": "projected-existing-page"
+        },
+        "fr": {
+          "path": "book/communication-clinic-FR.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "locale-matrix",
+          "coverage": "projected-existing-page"
         }
       }
     },
@@ -5694,6 +6350,14 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh-tw": {
           "path": "book/chapters/09-verification-and-recovery-ZHTW.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "locale-matrix",
+          "coverage": "projected-existing-page"
+        },
+        "fr": {
+          "path": "book/chapters/09-verification-and-recovery-FR.md",
           "exists": true,
           "content_status": "candidate",
           "translation_status": "candidate",
@@ -5764,6 +6428,14 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "candidate",
           "source_revision": "locale-matrix",
           "coverage": "projected-existing-page"
+        },
+        "fr": {
+          "path": "book/routes/first-safe-change-FR.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "candidate",
+          "source_revision": "locale-matrix",
+          "coverage": "projected-existing-page"
         }
       }
     },
@@ -5818,6 +6490,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh-tw": {
+          "path": "skills/prysai-dialogue-brief/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "fr": {
           "path": "skills/prysai-dialogue-brief/SKILL.md",
           "exists": true,
           "content_status": "candidate",
@@ -5882,6 +6561,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "skill-registry"
+        },
+        "fr": {
+          "path": "skills/prysai-first-turn-check/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
         }
       }
     },
@@ -5936,6 +6622,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh-tw": {
+          "path": "skills/prysai-field-signal-curator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "fr": {
           "path": "skills/prysai-field-signal-curator/SKILL.md",
           "exists": true,
           "content_status": "candidate",
@@ -6000,6 +6693,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "skill-registry"
+        },
+        "fr": {
+          "path": "skills/prysai-platform-adapter-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
         }
       }
     },
@@ -6054,6 +6754,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh-tw": {
+          "path": "skills/prysai-platform-fact-watch/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "fr": {
           "path": "skills/prysai-platform-fact-watch/SKILL.md",
           "exists": true,
           "content_status": "candidate",
@@ -6118,6 +6825,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "skill-registry"
+        },
+        "fr": {
+          "path": "skills/prysai-communication-failure-triage/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
         }
       }
     },
@@ -6172,6 +6886,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh-tw": {
+          "path": "skills/prysai-codex-coach/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "fr": {
           "path": "skills/prysai-codex-coach/SKILL.md",
           "exists": true,
           "content_status": "candidate",
@@ -6236,6 +6957,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "skill-registry"
+        },
+        "fr": {
+          "path": "skills/prysai-task-protocol/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
         }
       }
     },
@@ -6290,6 +7018,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh-tw": {
+          "path": "skills/prysai-evidence-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "fr": {
           "path": "skills/prysai-evidence-review/SKILL.md",
           "exists": true,
           "content_status": "candidate",
@@ -6354,6 +7089,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "skill-registry"
+        },
+        "fr": {
+          "path": "skills/prysai-skill-selector/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
         }
       }
     },
@@ -6408,6 +7150,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh-tw": {
+          "path": "skills/prysai-workflow-orchestrator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "fr": {
           "path": "skills/prysai-workflow-orchestrator/SKILL.md",
           "exists": true,
           "content_status": "candidate",
@@ -6472,6 +7221,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "skill-registry"
+        },
+        "fr": {
+          "path": "skills/prysai-research-router/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
         }
       }
     },
@@ -6526,6 +7282,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh-tw": {
+          "path": "skills/prysai-product-context/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "fr": {
           "path": "skills/prysai-product-context/SKILL.md",
           "exists": true,
           "content_status": "candidate",
@@ -6590,6 +7353,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "skill-registry"
+        },
+        "fr": {
+          "path": "skills/prysai-learning-coach/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
         }
       }
     },
@@ -6644,6 +7414,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh-tw": {
+          "path": "skills/prysai-source-investigator/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "fr": {
           "path": "skills/prysai-source-investigator/SKILL.md",
           "exists": true,
           "content_status": "candidate",
@@ -6708,6 +7485,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "skill-registry"
+        },
+        "fr": {
+          "path": "skills/prysai-prompt-card-editor/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
         }
       }
     },
@@ -6762,6 +7546,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh-tw": {
+          "path": "skills/prysai-adversarial-project-review/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "fr": {
           "path": "skills/prysai-adversarial-project-review/SKILL.md",
           "exists": true,
           "content_status": "candidate",
@@ -6826,6 +7617,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "skill-registry"
+        },
+        "fr": {
+          "path": "skills/prysai-request-escalation/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
         }
       }
     },
@@ -6880,6 +7678,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh-tw": {
+          "path": "skills/prysai-llm-comparison-protocol/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "fr": {
           "path": "skills/prysai-llm-comparison-protocol/SKILL.md",
           "exists": true,
           "content_status": "candidate",
@@ -6944,6 +7749,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "skill-registry"
+        },
+        "fr": {
+          "path": "skills/prysai-practice-target/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
         }
       }
     },
@@ -6998,6 +7810,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh-tw": {
+          "path": "skills/prysai-interruption-checkpoint/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "fr": {
           "path": "skills/prysai-interruption-checkpoint/SKILL.md",
           "exists": true,
           "content_status": "candidate",
@@ -7062,6 +7881,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "skill-registry"
+        },
+        "fr": {
+          "path": "skills/prysai-shift-handoff/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
         }
       }
     },
@@ -7116,6 +7942,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh-tw": {
+          "path": "skills/prysai-platform-observation-record/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "fr": {
           "path": "skills/prysai-platform-observation-record/SKILL.md",
           "exists": true,
           "content_status": "candidate",
@@ -7180,6 +8013,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "skill-registry"
+        },
+        "fr": {
+          "path": "skills/prysai-language-partner/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
         }
       }
     },
@@ -7234,6 +8074,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh-tw": {
+          "path": "skills/prysai-interview-rehearsal/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
+        },
+        "fr": {
           "path": "skills/prysai-interview-rehearsal/SKILL.md",
           "exists": true,
           "content_status": "candidate",
@@ -7298,6 +8145,13 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "not-started",
           "source_revision": "skill-registry"
+        },
+        "fr": {
+          "path": "skills/polish-open-source-prose/SKILL.md",
+          "exists": true,
+          "content_status": "candidate",
+          "translation_status": "not-started",
+          "source_revision": "skill-registry"
         }
       }
     }
@@ -7352,6 +8206,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/routes/first-safe-change-KO.md": "first-safe-change-route",
     "book/routes/first-safe-change-DE.md": "first-safe-change-route",
     "book/routes/first-safe-change-ZHTW.md": "first-safe-change-route",
+    "book/routes/first-safe-change-FR.md": "first-safe-change-route",
     "book/guides/learning-practice-contract-EN.md": "learning-practice-contract",
     "book/guides/learning-practice-contract-ZH.md": "learning-practice-contract",
     "book/guides/learning-practice-contract-ES.md": "learning-practice-contract",
@@ -7359,6 +8214,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/guides/learning-practice-contract-KO.md": "learning-practice-contract",
     "book/guides/learning-practice-contract-DE.md": "learning-practice-contract",
     "book/guides/learning-practice-contract-ZHTW.md": "learning-practice-contract",
+    "book/guides/learning-practice-contract-FR.md": "learning-practice-contract",
     "book/labs/lab-018-language-transfer-EN.md": "lab-018-language-transfer",
     "book/labs/lab-018-language-transfer-ZH.md": "lab-018-language-transfer",
     "book/labs/lab-018-language-transfer-ES.md": "lab-018-language-transfer",
@@ -7366,6 +8222,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-018-language-transfer-KO.md": "lab-018-language-transfer",
     "book/labs/lab-018-language-transfer-DE.md": "lab-018-language-transfer",
     "book/labs/lab-018-language-transfer-ZHTW.md": "lab-018-language-transfer",
+    "book/labs/lab-018-language-transfer-FR.md": "lab-018-language-transfer",
     "book/routes/universal-core-foundations-EN.md": "universal-core-foundations-route",
     "book/routes/universal-core-foundations-ZH.md": "universal-core-foundations-route",
     "book/routes/universal-core-foundations-ES.md": "universal-core-foundations-route",
@@ -7373,6 +8230,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/routes/universal-core-foundations-KO.md": "universal-core-foundations-route",
     "book/routes/universal-core-foundations-DE.md": "universal-core-foundations-route",
     "book/routes/universal-core-foundations-ZHTW.md": "universal-core-foundations-route",
+    "book/routes/universal-core-foundations-FR.md": "universal-core-foundations-route",
     "book/communication-clinic-EN.md": "communication-clinic",
     "book/communication-clinic-ZH.md": "communication-clinic",
     "book/communication-clinic-ES.md": "communication-clinic",
@@ -7380,6 +8238,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/communication-clinic-KO.md": "communication-clinic",
     "book/communication-clinic-DE.md": "communication-clinic",
     "book/communication-clinic-ZHTW.md": "communication-clinic",
+    "book/communication-clinic-FR.md": "communication-clinic",
     "README-EN.md": "project-readme",
     "README-ZH.md": "project-readme",
     "README-ES.md": "project-readme",
@@ -7387,6 +8246,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "README-KO.md": "project-readme",
     "README-DE.md": "project-readme",
     "README-ZHTW.md": "project-readme",
+    "README-FR.md": "project-readme",
     "README.md": "project-readme",
     "book/README-EN.md": "book-readme",
     "book/README-ZH.md": "book-readme",
@@ -7395,6 +8255,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/README-KO.md": "book-readme",
     "book/README-DE.md": "book-readme",
     "book/README-ZHTW.md": "book-readme",
+    "book/README-FR.md": "book-readme",
     "book/README.md": "book-readme",
     "book/preface-EN.md": "book-preface",
     "book/preface-ZH.md": "book-preface",
@@ -7403,6 +8264,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/preface-KO.md": "book-preface",
     "book/preface-DE.md": "book-preface",
     "book/preface-ZHTW.md": "book-preface",
+    "book/preface-FR.md": "book-preface",
     "book/preface.md": "book-preface",
     "book/labs/README-EN.md": "book-labs-readme",
     "book/labs/README-ZH.md": "book-labs-readme",
@@ -7411,6 +8273,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/README-KO.md": "book-labs-readme",
     "book/labs/README-DE.md": "book-labs-readme",
     "book/labs/README-ZHTW.md": "book-labs-readme",
+    "book/labs/README-FR.md": "book-labs-readme",
     "book/labs/README.md": "book-labs-readme",
     "book/table-of-contents-EN.md": "book-table-of-contents",
     "book/table-of-contents-ZH.md": "book-table-of-contents",
@@ -7419,6 +8282,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/table-of-contents-KO.md": "book-table-of-contents",
     "book/table-of-contents-DE.md": "book-table-of-contents",
     "book/table-of-contents-ZHTW.md": "book-table-of-contents",
+    "book/table-of-contents-FR.md": "book-table-of-contents",
     "book/table-of-contents.md": "book-table-of-contents",
     "book/chapters/01-gpt-and-codex-EN.md": "chapter-01-gpt-and-codex",
     "book/chapters/01-gpt-and-codex-ZH.md": "chapter-01-gpt-and-codex",
@@ -7427,6 +8291,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/01-gpt-and-codex-KO.md": "chapter-01-gpt-and-codex",
     "book/chapters/01-gpt-and-codex-DE.md": "chapter-01-gpt-and-codex",
     "book/chapters/01-gpt-and-codex-ZHTW.md": "chapter-01-gpt-and-codex",
+    "book/chapters/01-gpt-and-codex-FR.md": "chapter-01-gpt-and-codex",
     "book/chapters/01-gpt-and-codex.md": "chapter-01-gpt-and-codex",
     "book/chapters/02-first-safe-task-EN.md": "chapter-02-first-safe-task",
     "book/chapters/02-first-safe-task-ZH.md": "chapter-02-first-safe-task",
@@ -7435,6 +8300,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/02-first-safe-task-KO.md": "chapter-02-first-safe-task",
     "book/chapters/02-first-safe-task-DE.md": "chapter-02-first-safe-task",
     "book/chapters/02-first-safe-task-ZHTW.md": "chapter-02-first-safe-task",
+    "book/chapters/02-first-safe-task-FR.md": "chapter-02-first-safe-task",
     "book/chapters/02-first-safe-task.md": "chapter-02-first-safe-task",
     "book/chapters/03-task-protocol-EN.md": "chapter-03-task-protocol",
     "book/chapters/03-task-protocol-ZH.md": "chapter-03-task-protocol",
@@ -7443,6 +8309,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/03-task-protocol-KO.md": "chapter-03-task-protocol",
     "book/chapters/03-task-protocol-DE.md": "chapter-03-task-protocol",
     "book/chapters/03-task-protocol-ZHTW.md": "chapter-03-task-protocol",
+    "book/chapters/03-task-protocol-FR.md": "chapter-03-task-protocol",
     "book/chapters/03-task-protocol.md": "chapter-03-task-protocol",
     "book/chapters/04-context-permissions-and-agent-EN.md": "chapter-04-context-permissions-and-agent",
     "book/chapters/04-context-permissions-and-agent-ZH.md": "chapter-04-context-permissions-and-agent",
@@ -7451,6 +8318,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/04-context-permissions-and-agent-KO.md": "chapter-04-context-permissions-and-agent",
     "book/chapters/04-context-permissions-and-agent-DE.md": "chapter-04-context-permissions-and-agent",
     "book/chapters/04-context-permissions-and-agent-ZHTW.md": "chapter-04-context-permissions-and-agent",
+    "book/chapters/04-context-permissions-and-agent-FR.md": "chapter-04-context-permissions-and-agent",
     "book/chapters/04-context-permissions-and-agent.md": "chapter-04-context-permissions-and-agent",
     "book/chapters/05-choose-the-codex-surface-EN.md": "chapter-05-choose-the-codex-surface",
     "book/chapters/05-choose-the-codex-surface-ZH.md": "chapter-05-choose-the-codex-surface",
@@ -7459,6 +8327,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/05-choose-the-codex-surface-KO.md": "chapter-05-choose-the-codex-surface",
     "book/chapters/05-choose-the-codex-surface-DE.md": "chapter-05-choose-the-codex-surface",
     "book/chapters/05-choose-the-codex-surface-ZHTW.md": "chapter-05-choose-the-codex-surface",
+    "book/chapters/05-choose-the-codex-surface-FR.md": "chapter-05-choose-the-codex-surface",
     "book/chapters/05-choose-the-codex-surface.md": "chapter-05-choose-the-codex-surface",
     "book/chapters/06-model-selection-EN.md": "chapter-06-model-selection",
     "book/chapters/06-model-selection-ZH.md": "chapter-06-model-selection",
@@ -7467,6 +8336,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/06-model-selection-KO.md": "chapter-06-model-selection",
     "book/chapters/06-model-selection-DE.md": "chapter-06-model-selection",
     "book/chapters/06-model-selection-ZHTW.md": "chapter-06-model-selection",
+    "book/chapters/06-model-selection-FR.md": "chapter-06-model-selection",
     "book/chapters/06-model-selection.md": "chapter-06-model-selection",
     "book/chapters/07-skills-plugins-and-tools-EN.md": "chapter-07-skills-plugins-and-tools",
     "book/chapters/07-skills-plugins-and-tools-ZH.md": "chapter-07-skills-plugins-and-tools",
@@ -7475,6 +8345,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/07-skills-plugins-and-tools-KO.md": "chapter-07-skills-plugins-and-tools",
     "book/chapters/07-skills-plugins-and-tools-DE.md": "chapter-07-skills-plugins-and-tools",
     "book/chapters/07-skills-plugins-and-tools-ZHTW.md": "chapter-07-skills-plugins-and-tools",
+    "book/chapters/07-skills-plugins-and-tools-FR.md": "chapter-07-skills-plugins-and-tools",
     "book/chapters/07-skills-plugins-and-tools.md": "chapter-07-skills-plugins-and-tools",
     "book/chapters/08-full-lifecycle-workflow-EN.md": "chapter-08-full-lifecycle-workflow",
     "book/chapters/08-full-lifecycle-workflow-ZH.md": "chapter-08-full-lifecycle-workflow",
@@ -7483,6 +8354,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/08-full-lifecycle-workflow-KO.md": "chapter-08-full-lifecycle-workflow",
     "book/chapters/08-full-lifecycle-workflow-DE.md": "chapter-08-full-lifecycle-workflow",
     "book/chapters/08-full-lifecycle-workflow-ZHTW.md": "chapter-08-full-lifecycle-workflow",
+    "book/chapters/08-full-lifecycle-workflow-FR.md": "chapter-08-full-lifecycle-workflow",
     "book/chapters/08-full-lifecycle-workflow.md": "chapter-08-full-lifecycle-workflow",
     "book/chapters/09-verification-and-recovery-EN.md": "chapter-09-verification-and-recovery",
     "book/chapters/09-verification-and-recovery-ZH.md": "chapter-09-verification-and-recovery",
@@ -7491,6 +8363,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/09-verification-and-recovery-KO.md": "chapter-09-verification-and-recovery",
     "book/chapters/09-verification-and-recovery-DE.md": "chapter-09-verification-and-recovery",
     "book/chapters/09-verification-and-recovery-ZHTW.md": "chapter-09-verification-and-recovery",
+    "book/chapters/09-verification-and-recovery-FR.md": "chapter-09-verification-and-recovery",
     "book/chapters/09-verification-and-recovery.md": "chapter-09-verification-and-recovery",
     "book/chapters/10-planning-and-slicing-EN.md": "chapter-10-planning-and-slicing",
     "book/chapters/10-planning-and-slicing-ZH.md": "chapter-10-planning-and-slicing",
@@ -7499,6 +8372,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/10-planning-and-slicing-KO.md": "chapter-10-planning-and-slicing",
     "book/chapters/10-planning-and-slicing-DE.md": "chapter-10-planning-and-slicing",
     "book/chapters/10-planning-and-slicing-ZHTW.md": "chapter-10-planning-and-slicing",
+    "book/chapters/10-planning-and-slicing-FR.md": "chapter-10-planning-and-slicing",
     "book/chapters/10-planning-and-slicing.md": "chapter-10-planning-and-slicing",
     "book/chapters/11-designing-a-skill-EN.md": "chapter-11-designing-a-skill",
     "book/chapters/11-designing-a-skill-ZH.md": "chapter-11-designing-a-skill",
@@ -7507,6 +8381,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/11-designing-a-skill-KO.md": "chapter-11-designing-a-skill",
     "book/chapters/11-designing-a-skill-DE.md": "chapter-11-designing-a-skill",
     "book/chapters/11-designing-a-skill-ZHTW.md": "chapter-11-designing-a-skill",
+    "book/chapters/11-designing-a-skill-FR.md": "chapter-11-designing-a-skill",
     "book/chapters/11-designing-a-skill.md": "chapter-11-designing-a-skill",
     "book/chapters/12-agent-loop-and-stop-EN.md": "chapter-12-agent-loop-and-stop",
     "book/chapters/12-agent-loop-and-stop-ZH.md": "chapter-12-agent-loop-and-stop",
@@ -7515,6 +8390,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/12-agent-loop-and-stop-KO.md": "chapter-12-agent-loop-and-stop",
     "book/chapters/12-agent-loop-and-stop-DE.md": "chapter-12-agent-loop-and-stop",
     "book/chapters/12-agent-loop-and-stop-ZHTW.md": "chapter-12-agent-loop-and-stop",
+    "book/chapters/12-agent-loop-and-stop-FR.md": "chapter-12-agent-loop-and-stop",
     "book/chapters/12-agent-loop-and-stop.md": "chapter-12-agent-loop-and-stop",
     "book/chapters/13-action-boundaries-EN.md": "chapter-13-action-boundaries",
     "book/chapters/13-action-boundaries-ZH.md": "chapter-13-action-boundaries",
@@ -7523,6 +8399,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/13-action-boundaries-KO.md": "chapter-13-action-boundaries",
     "book/chapters/13-action-boundaries-DE.md": "chapter-13-action-boundaries",
     "book/chapters/13-action-boundaries-ZHTW.md": "chapter-13-action-boundaries",
+    "book/chapters/13-action-boundaries-FR.md": "chapter-13-action-boundaries",
     "book/chapters/13-action-boundaries.md": "chapter-13-action-boundaries",
     "book/chapters/14-discover-and-audit-skills-EN.md": "chapter-14-discover-and-audit-skills",
     "book/chapters/14-discover-and-audit-skills-ZH.md": "chapter-14-discover-and-audit-skills",
@@ -7531,6 +8408,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/14-discover-and-audit-skills-KO.md": "chapter-14-discover-and-audit-skills",
     "book/chapters/14-discover-and-audit-skills-DE.md": "chapter-14-discover-and-audit-skills",
     "book/chapters/14-discover-and-audit-skills-ZHTW.md": "chapter-14-discover-and-audit-skills",
+    "book/chapters/14-discover-and-audit-skills-FR.md": "chapter-14-discover-and-audit-skills",
     "book/chapters/14-discover-and-audit-skills.md": "chapter-14-discover-and-audit-skills",
     "book/chapters/15-research-track-EN.md": "chapter-15-research-track",
     "book/chapters/15-research-track-ZH.md": "chapter-15-research-track",
@@ -7539,6 +8417,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/15-research-track-KO.md": "chapter-15-research-track",
     "book/chapters/15-research-track-DE.md": "chapter-15-research-track",
     "book/chapters/15-research-track-ZHTW.md": "chapter-15-research-track",
+    "book/chapters/15-research-track-FR.md": "chapter-15-research-track",
     "book/chapters/15-research-track.md": "chapter-15-research-track",
     "book/chapters/16-engineering-track-EN.md": "chapter-16-engineering-track",
     "book/chapters/16-engineering-track-ZH.md": "chapter-16-engineering-track",
@@ -7547,6 +8426,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/16-engineering-track-KO.md": "chapter-16-engineering-track",
     "book/chapters/16-engineering-track-DE.md": "chapter-16-engineering-track",
     "book/chapters/16-engineering-track-ZHTW.md": "chapter-16-engineering-track",
+    "book/chapters/16-engineering-track-FR.md": "chapter-16-engineering-track",
     "book/chapters/16-engineering-track.md": "chapter-16-engineering-track",
     "book/chapters/17-marketing-track-EN.md": "chapter-17-marketing-track",
     "book/chapters/17-marketing-track-ZH.md": "chapter-17-marketing-track",
@@ -7555,6 +8435,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/17-marketing-track-KO.md": "chapter-17-marketing-track",
     "book/chapters/17-marketing-track-DE.md": "chapter-17-marketing-track",
     "book/chapters/17-marketing-track-ZHTW.md": "chapter-17-marketing-track",
+    "book/chapters/17-marketing-track-FR.md": "chapter-17-marketing-track",
     "book/chapters/17-marketing-track.md": "chapter-17-marketing-track",
     "book/chapters/18-content-design-data-automation-EN.md": "chapter-18-content-design-data-automation",
     "book/chapters/18-content-design-data-automation-ZH.md": "chapter-18-content-design-data-automation",
@@ -7563,6 +8444,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/18-content-design-data-automation-KO.md": "chapter-18-content-design-data-automation",
     "book/chapters/18-content-design-data-automation-DE.md": "chapter-18-content-design-data-automation",
     "book/chapters/18-content-design-data-automation-ZHTW.md": "chapter-18-content-design-data-automation",
+    "book/chapters/18-content-design-data-automation-FR.md": "chapter-18-content-design-data-automation",
     "book/chapters/18-content-design-data-automation.md": "chapter-18-content-design-data-automation",
     "book/chapters/19-evaluate-models-and-workflows-EN.md": "chapter-19-evaluate-models-and-workflows",
     "book/chapters/19-evaluate-models-and-workflows-ZH.md": "chapter-19-evaluate-models-and-workflows",
@@ -7571,6 +8453,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/19-evaluate-models-and-workflows-KO.md": "chapter-19-evaluate-models-and-workflows",
     "book/chapters/19-evaluate-models-and-workflows-DE.md": "chapter-19-evaluate-models-and-workflows",
     "book/chapters/19-evaluate-models-and-workflows-ZHTW.md": "chapter-19-evaluate-models-and-workflows",
+    "book/chapters/19-evaluate-models-and-workflows-FR.md": "chapter-19-evaluate-models-and-workflows",
     "book/chapters/19-evaluate-models-and-workflows.md": "chapter-19-evaluate-models-and-workflows",
     "book/chapters/20-personal-codex-work-system-EN.md": "chapter-20-personal-codex-work-system",
     "book/chapters/20-personal-codex-work-system-ZH.md": "chapter-20-personal-codex-work-system",
@@ -7579,6 +8462,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/20-personal-codex-work-system-KO.md": "chapter-20-personal-codex-work-system",
     "book/chapters/20-personal-codex-work-system-DE.md": "chapter-20-personal-codex-work-system",
     "book/chapters/20-personal-codex-work-system-ZHTW.md": "chapter-20-personal-codex-work-system",
+    "book/chapters/20-personal-codex-work-system-FR.md": "chapter-20-personal-codex-work-system",
     "book/chapters/20-personal-codex-work-system.md": "chapter-20-personal-codex-work-system",
     "book/chapters/21-team-capability-system-EN.md": "chapter-21-team-capability-system",
     "book/chapters/21-team-capability-system-ZH.md": "chapter-21-team-capability-system",
@@ -7587,6 +8471,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/21-team-capability-system-KO.md": "chapter-21-team-capability-system",
     "book/chapters/21-team-capability-system-DE.md": "chapter-21-team-capability-system",
     "book/chapters/21-team-capability-system-ZHTW.md": "chapter-21-team-capability-system",
+    "book/chapters/21-team-capability-system-FR.md": "chapter-21-team-capability-system",
     "book/chapters/21-team-capability-system.md": "chapter-21-team-capability-system",
     "book/chapters/22-continuous-update-and-future-proofing-EN.md": "chapter-22-continuous-update-and-future-proofing",
     "book/chapters/22-continuous-update-and-future-proofing-ZH.md": "chapter-22-continuous-update-and-future-proofing",
@@ -7595,6 +8480,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/chapters/22-continuous-update-and-future-proofing-KO.md": "chapter-22-continuous-update-and-future-proofing",
     "book/chapters/22-continuous-update-and-future-proofing-DE.md": "chapter-22-continuous-update-and-future-proofing",
     "book/chapters/22-continuous-update-and-future-proofing-ZHTW.md": "chapter-22-continuous-update-and-future-proofing",
+    "book/chapters/22-continuous-update-and-future-proofing-FR.md": "chapter-22-continuous-update-and-future-proofing",
     "book/chapters/22-continuous-update-and-future-proofing.md": "chapter-22-continuous-update-and-future-proofing",
     "book/labs/lab-011-gpt-codex-boundaries-EN.md": "lab-011-gpt-codex-boundaries",
     "book/labs/lab-011-gpt-codex-boundaries-ZH.md": "lab-011-gpt-codex-boundaries",
@@ -7603,6 +8489,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-011-gpt-codex-boundaries-KO.md": "lab-011-gpt-codex-boundaries",
     "book/labs/lab-011-gpt-codex-boundaries-DE.md": "lab-011-gpt-codex-boundaries",
     "book/labs/lab-011-gpt-codex-boundaries-ZHTW.md": "lab-011-gpt-codex-boundaries",
+    "book/labs/lab-011-gpt-codex-boundaries-FR.md": "lab-011-gpt-codex-boundaries",
     "book/labs/lab-011-gpt-codex-boundaries.md": "lab-011-gpt-codex-boundaries",
     "book/labs/lab-001-first-safe-task-EN.md": "lab-001-first-safe-task",
     "book/labs/lab-001-first-safe-task-ZH.md": "lab-001-first-safe-task",
@@ -7611,6 +8498,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-001-first-safe-task-KO.md": "lab-001-first-safe-task",
     "book/labs/lab-001-first-safe-task-DE.md": "lab-001-first-safe-task",
     "book/labs/lab-001-first-safe-task-ZHTW.md": "lab-001-first-safe-task",
+    "book/labs/lab-001-first-safe-task-FR.md": "lab-001-first-safe-task",
     "book/labs/lab-001-first-safe-task.md": "lab-001-first-safe-task",
     "book/labs/lab-002-task-protocol-EN.md": "lab-002-task-protocol",
     "book/labs/lab-002-task-protocol-ZH.md": "lab-002-task-protocol",
@@ -7619,6 +8507,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-002-task-protocol-KO.md": "lab-002-task-protocol",
     "book/labs/lab-002-task-protocol-DE.md": "lab-002-task-protocol",
     "book/labs/lab-002-task-protocol-ZHTW.md": "lab-002-task-protocol",
+    "book/labs/lab-002-task-protocol-FR.md": "lab-002-task-protocol",
     "book/labs/lab-002-task-protocol.md": "lab-002-task-protocol",
     "book/labs/lab-003-evidence-review-EN.md": "lab-003-evidence-review",
     "book/labs/lab-003-evidence-review-ZH.md": "lab-003-evidence-review",
@@ -7627,6 +8516,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-003-evidence-review-KO.md": "lab-003-evidence-review",
     "book/labs/lab-003-evidence-review-DE.md": "lab-003-evidence-review",
     "book/labs/lab-003-evidence-review-ZHTW.md": "lab-003-evidence-review",
+    "book/labs/lab-003-evidence-review-FR.md": "lab-003-evidence-review",
     "book/labs/lab-003-evidence-review.md": "lab-003-evidence-review",
     "book/labs/lab-004-skill-selection-EN.md": "lab-004-skill-selection",
     "book/labs/lab-004-skill-selection-ZH.md": "lab-004-skill-selection",
@@ -7635,6 +8525,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-004-skill-selection-KO.md": "lab-004-skill-selection",
     "book/labs/lab-004-skill-selection-DE.md": "lab-004-skill-selection",
     "book/labs/lab-004-skill-selection-ZHTW.md": "lab-004-skill-selection",
+    "book/labs/lab-004-skill-selection-FR.md": "lab-004-skill-selection",
     "book/labs/lab-004-skill-selection.md": "lab-004-skill-selection",
     "book/labs/lab-005-design-a-skill-EN.md": "lab-005-design-a-skill",
     "book/labs/lab-005-design-a-skill-ZH.md": "lab-005-design-a-skill",
@@ -7643,6 +8534,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-005-design-a-skill-KO.md": "lab-005-design-a-skill",
     "book/labs/lab-005-design-a-skill-DE.md": "lab-005-design-a-skill",
     "book/labs/lab-005-design-a-skill-ZHTW.md": "lab-005-design-a-skill",
+    "book/labs/lab-005-design-a-skill-FR.md": "lab-005-design-a-skill",
     "book/labs/lab-005-design-a-skill.md": "lab-005-design-a-skill",
     "book/labs/lab-008-research-question-EN.md": "lab-008-research-question",
     "book/labs/lab-008-research-question-ZH.md": "lab-008-research-question",
@@ -7651,6 +8543,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-008-research-question-KO.md": "lab-008-research-question",
     "book/labs/lab-008-research-question-DE.md": "lab-008-research-question",
     "book/labs/lab-008-research-question-ZHTW.md": "lab-008-research-question",
+    "book/labs/lab-008-research-question-FR.md": "lab-008-research-question",
     "book/labs/lab-008-research-question.md": "lab-008-research-question",
     "book/labs/lab-009-engineering-lifecycle-EN.md": "lab-009-engineering-lifecycle",
     "book/labs/lab-009-engineering-lifecycle-ZH.md": "lab-009-engineering-lifecycle",
@@ -7659,6 +8552,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-009-engineering-lifecycle-KO.md": "lab-009-engineering-lifecycle",
     "book/labs/lab-009-engineering-lifecycle-DE.md": "lab-009-engineering-lifecycle",
     "book/labs/lab-009-engineering-lifecycle-ZHTW.md": "lab-009-engineering-lifecycle",
+    "book/labs/lab-009-engineering-lifecycle-FR.md": "lab-009-engineering-lifecycle",
     "book/labs/lab-009-engineering-lifecycle.md": "lab-009-engineering-lifecycle",
     "book/labs/lab-010-product-context-EN.md": "lab-010-product-context",
     "book/labs/lab-010-product-context-ZH.md": "lab-010-product-context",
@@ -7667,6 +8561,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-010-product-context-KO.md": "lab-010-product-context",
     "book/labs/lab-010-product-context-DE.md": "lab-010-product-context",
     "book/labs/lab-010-product-context-ZHTW.md": "lab-010-product-context",
+    "book/labs/lab-010-product-context-FR.md": "lab-010-product-context",
     "book/labs/lab-010-product-context.md": "lab-010-product-context",
     "book/labs/lab-012-team-capability-migration-EN.md": "lab-012-team-capability-migration",
     "book/labs/lab-012-team-capability-migration-ZH.md": "lab-012-team-capability-migration",
@@ -7675,6 +8570,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-012-team-capability-migration-KO.md": "lab-012-team-capability-migration",
     "book/labs/lab-012-team-capability-migration-DE.md": "lab-012-team-capability-migration",
     "book/labs/lab-012-team-capability-migration-ZHTW.md": "lab-012-team-capability-migration",
+    "book/labs/lab-012-team-capability-migration-FR.md": "lab-012-team-capability-migration",
     "book/labs/lab-012-team-capability-migration.md": "lab-012-team-capability-migration",
     "book/labs/lab-013-l3-vertical-slice-EN.md": "lab-013-l3-vertical-slice",
     "book/labs/lab-013-l3-vertical-slice-ZH.md": "lab-013-l3-vertical-slice",
@@ -7683,6 +8579,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-013-l3-vertical-slice-KO.md": "lab-013-l3-vertical-slice",
     "book/labs/lab-013-l3-vertical-slice-DE.md": "lab-013-l3-vertical-slice",
     "book/labs/lab-013-l3-vertical-slice-ZHTW.md": "lab-013-l3-vertical-slice",
+    "book/labs/lab-013-l3-vertical-slice-FR.md": "lab-013-l3-vertical-slice",
     "book/labs/lab-013-l3-vertical-slice.md": "lab-013-l3-vertical-slice",
     "book/labs/lab-006-agent-stop-conditions-EN.md": "lab-006-agent-stop-conditions",
     "book/labs/lab-006-agent-stop-conditions-ZH.md": "lab-006-agent-stop-conditions",
@@ -7691,6 +8588,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-006-agent-stop-conditions-KO.md": "lab-006-agent-stop-conditions",
     "book/labs/lab-006-agent-stop-conditions-DE.md": "lab-006-agent-stop-conditions",
     "book/labs/lab-006-agent-stop-conditions-ZHTW.md": "lab-006-agent-stop-conditions",
+    "book/labs/lab-006-agent-stop-conditions-FR.md": "lab-006-agent-stop-conditions",
     "book/labs/lab-006-agent-stop-conditions.md": "lab-006-agent-stop-conditions",
     "book/labs/lab-007-action-boundaries-EN.md": "lab-007-action-boundaries",
     "book/labs/lab-007-action-boundaries-ZH.md": "lab-007-action-boundaries",
@@ -7699,6 +8597,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-007-action-boundaries-KO.md": "lab-007-action-boundaries",
     "book/labs/lab-007-action-boundaries-DE.md": "lab-007-action-boundaries",
     "book/labs/lab-007-action-boundaries-ZHTW.md": "lab-007-action-boundaries",
+    "book/labs/lab-007-action-boundaries-FR.md": "lab-007-action-boundaries",
     "book/labs/lab-007-action-boundaries.md": "lab-007-action-boundaries",
     "book/labs/lab-014-resume-reconciliation-EN.md": "lab-014-resume-reconciliation",
     "book/labs/lab-014-resume-reconciliation-ZH.md": "lab-014-resume-reconciliation",
@@ -7707,6 +8606,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-014-resume-reconciliation-KO.md": "lab-014-resume-reconciliation",
     "book/labs/lab-014-resume-reconciliation-DE.md": "lab-014-resume-reconciliation",
     "book/labs/lab-014-resume-reconciliation-ZHTW.md": "lab-014-resume-reconciliation",
+    "book/labs/lab-014-resume-reconciliation-FR.md": "lab-014-resume-reconciliation",
     "book/labs/lab-015-evidence-delivery-EN.md": "lab-015-evidence-delivery",
     "book/labs/lab-015-evidence-delivery-ZH.md": "lab-015-evidence-delivery",
     "book/labs/lab-015-evidence-delivery-ES.md": "lab-015-evidence-delivery",
@@ -7714,6 +8614,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-015-evidence-delivery-KO.md": "lab-015-evidence-delivery",
     "book/labs/lab-015-evidence-delivery-DE.md": "lab-015-evidence-delivery",
     "book/labs/lab-015-evidence-delivery-ZHTW.md": "lab-015-evidence-delivery",
+    "book/labs/lab-015-evidence-delivery-FR.md": "lab-015-evidence-delivery",
     "book/labs/lab-016-side-effect-boundary-EN.md": "lab-016-side-effect-boundary",
     "book/labs/lab-016-side-effect-boundary-ZH.md": "lab-016-side-effect-boundary",
     "book/labs/lab-016-side-effect-boundary-ES.md": "lab-016-side-effect-boundary",
@@ -7721,6 +8622,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-016-side-effect-boundary-KO.md": "lab-016-side-effect-boundary",
     "book/labs/lab-016-side-effect-boundary-DE.md": "lab-016-side-effect-boundary",
     "book/labs/lab-016-side-effect-boundary-ZHTW.md": "lab-016-side-effect-boundary",
+    "book/labs/lab-016-side-effect-boundary-FR.md": "lab-016-side-effect-boundary",
     "book/spanish-practice-loop-EN.md": "spanish-practice-loop",
     "book/spanish-practice-loop-ZH.md": "spanish-practice-loop",
     "book/spanish-practice-loop-ES.md": "spanish-practice-loop",
@@ -7728,6 +8630,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/spanish-practice-loop-KO.md": "spanish-practice-loop",
     "book/spanish-practice-loop-DE.md": "spanish-practice-loop",
     "book/spanish-practice-loop-ZHTW.md": "spanish-practice-loop",
+    "book/spanish-practice-loop-FR.md": "spanish-practice-loop",
     "book/work-update-practice-loop-EN.md": "work-update-practice-loop",
     "book/work-update-practice-loop-ZH.md": "work-update-practice-loop",
     "book/work-update-practice-loop-ES.md": "work-update-practice-loop",
@@ -7735,6 +8638,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/work-update-practice-loop-KO.md": "work-update-practice-loop",
     "book/work-update-practice-loop-DE.md": "work-update-practice-loop",
     "book/work-update-practice-loop-ZHTW.md": "work-update-practice-loop",
+    "book/work-update-practice-loop-FR.md": "work-update-practice-loop",
     "book/research-check-practice-loop-EN.md": "research-check-practice-loop",
     "book/research-check-practice-loop-ZH.md": "research-check-practice-loop",
     "book/research-check-practice-loop-ES.md": "research-check-practice-loop",
@@ -7742,6 +8646,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/research-check-practice-loop-KO.md": "research-check-practice-loop",
     "book/research-check-practice-loop-DE.md": "research-check-practice-loop",
     "book/research-check-practice-loop-ZHTW.md": "research-check-practice-loop",
+    "book/research-check-practice-loop-FR.md": "research-check-practice-loop",
     "book/evidence-library-EN.md": "reader-evidence-library",
     "book/evidence-library-ZH.md": "reader-evidence-library",
     "book/evidence-library-ES.md": "reader-evidence-library",
@@ -7749,6 +8654,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/evidence-library-KO.md": "reader-evidence-library",
     "book/evidence-library-DE.md": "reader-evidence-library",
     "book/evidence-library-ZHTW.md": "reader-evidence-library",
+    "book/evidence-library-FR.md": "reader-evidence-library",
     "book/labs/lab-017-skill-discovery-audit-EN.md": "lab-017-skill-discovery-audit",
     "book/labs/lab-017-skill-discovery-audit-ZH.md": "lab-017-skill-discovery-audit",
     "book/labs/lab-017-skill-discovery-audit-ES.md": "lab-017-skill-discovery-audit",
@@ -7756,6 +8662,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/labs/lab-017-skill-discovery-audit-KO.md": "lab-017-skill-discovery-audit",
     "book/labs/lab-017-skill-discovery-audit-DE.md": "lab-017-skill-discovery-audit",
     "book/labs/lab-017-skill-discovery-audit-ZHTW.md": "lab-017-skill-discovery-audit",
+    "book/labs/lab-017-skill-discovery-audit-FR.md": "lab-017-skill-discovery-audit",
     "book/routes/platform-adapter-guide-EN.md": "platform-adapter-guide-route",
     "book/routes/platform-adapter-guide-ZH.md": "platform-adapter-guide-route",
     "book/routes/platform-adapter-guide-ES.md": "platform-adapter-guide-route",
@@ -7763,6 +8670,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/routes/platform-adapter-guide-KO.md": "platform-adapter-guide-route",
     "book/routes/platform-adapter-guide-DE.md": "platform-adapter-guide-route",
     "book/routes/platform-adapter-guide-ZHTW.md": "platform-adapter-guide-route",
+    "book/routes/platform-adapter-guide-FR.md": "platform-adapter-guide-route",
     "book/french-practice-loop-EN.md": "french-practice-loop",
     "book/french-practice-loop-ZH.md": "french-practice-loop",
     "book/french-practice-loop-ES.md": "french-practice-loop",
@@ -7770,6 +8678,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/french-practice-loop-KO.md": "french-practice-loop",
     "book/french-practice-loop-DE.md": "french-practice-loop",
     "book/french-practice-loop-ZHTW.md": "french-practice-loop",
+    "book/french-practice-loop-FR.md": "french-practice-loop",
     "book/guides/llm-fundamentals-EN.md": "llm-fundamentals-guide",
     "book/guides/llm-fundamentals-ZH.md": "llm-fundamentals-guide",
     "book/guides/llm-fundamentals-ES.md": "llm-fundamentals-guide",
@@ -7777,6 +8686,7 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/guides/llm-fundamentals-KO.md": "llm-fundamentals-guide",
     "book/guides/llm-fundamentals-DE.md": "llm-fundamentals-guide",
     "book/guides/llm-fundamentals-ZHTW.md": "llm-fundamentals-guide",
+    "book/guides/llm-fundamentals-FR.md": "llm-fundamentals-guide",
     "docs/research/field-problems-index-2026-08-10.md": "field-problems-index-2026-08-10",
     "docs/research/field-problems-forums-2026-08-10.md": "field-problems-forums-2026-08-10",
     "docs/research/codex-field-cases-current-review-2026-08-12.md": "codex-field-cases-current-review-2026-08-12",
@@ -7878,6 +8788,13 @@ window.CODEX_LOCALE_MANIFEST = {
       "source_units": 0,
       "candidate_translation_units": 40,
       "reviewed_translation_units": 0
+    },
+    "fr": {
+      "total_units": 40,
+      "available_units": 8,
+      "source_units": 0,
+      "candidate_translation_units": 8,
+      "reviewed_translation_units": 0
     }
   },
   "book_navigation": {
@@ -7899,7 +8816,8 @@ window.CODEX_LOCALE_MANIFEST = {
           "chapter-05",
           "chapter-06"
         ],
-        "title_zh-tw": "從認識 GPT 到第一次安全使用"
+        "title_zh-tw": "從認識 GPT 到第一次安全使用",
+        "title_fr": "De la compréhension de GPT à la première utilisation sûre"
       },
       {
         "id": "part-2",
@@ -7919,7 +8837,8 @@ window.CODEX_LOCALE_MANIFEST = {
           "chapter-12",
           "chapter-13"
         ],
-        "title_zh-tw": "從使用者到工作流程設計者"
+        "title_zh-tw": "從使用者到工作流程設計者",
+        "title_fr": "De l’utilisateur au concepteur de workflow"
       },
       {
         "id": "part-3",
@@ -7937,7 +8856,8 @@ window.CODEX_LOCALE_MANIFEST = {
           "chapter-17",
           "chapter-18"
         ],
-        "title_zh-tw": "技能、工具與專業實踐"
+        "title_zh-tw": "技能、工具與專業實踐",
+        "title_fr": "Skills, outils et pratique professionnelle"
       },
       {
         "id": "part-4",
@@ -7954,7 +8874,8 @@ window.CODEX_LOCALE_MANIFEST = {
           "chapter-21",
           "chapter-22"
         ],
-        "title_zh-tw": "從熟練使用到組織化"
+        "title_zh-tw": "從熟練使用到組織化",
+        "title_fr": "De l’usage avancé à la capacité organisationnelle"
       }
     ],
     "chapters": [
@@ -7969,6 +8890,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "Codex를 신뢰하기 전에 GPT 이해하기",
         "title_de": "Verstehe GPT, bevor du Codex vertraust",
         "title_zh-tw": "先理解 GPT，再理解 Codex 的工作原理",
+        "title_fr": "Comprendre GPT avant Codex",
         "canonical_title_en": "Understand GPT before you trust Codex",
         "canonical_title_zh": "先理解 GPT，再理解 Codex",
         "canonical_title_es": "Entender GPT antes de confiar en Codex",
@@ -7976,6 +8898,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "Codex를 신뢰하기 전에 GPT 이해하기",
         "canonical_title_de": "Verstehe GPT, bevor du Codex vertraust",
         "canonical_title_zh-tw": "先理解 GPT，再理解 Codex",
+        "canonical_title_fr": "Comprendre GPT avant de faire confiance à Codex",
         "english_path": "book/chapters/01-gpt-and-codex-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -7993,6 +8916,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "2장: 첫 번째 안전하고 검증 가능한 작업 완료하기",
         "title_de": "Die erste sichere und überprüfbare Aufgabe erledigen",
         "title_zh-tw": "完成第一個安全、可驗證的任務",
+        "title_fr": "Première tâche sûre et vérifiable",
         "canonical_title_en": "Complete your first safe, verifiable task",
         "canonical_title_zh": "完成第一个安全、可验证的任务",
         "canonical_title_es": "Completa tu primera tarea segura y verificable",
@@ -8000,6 +8924,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "2장: 첫 번째 안전하고 검증 가능한 작업 완료하기",
         "canonical_title_de": "Die erste sichere und überprüfbare Aufgabe erledigen",
         "canonical_title_zh-tw": "完成第一個安全、可驗證的任務",
+        "canonical_title_fr": "Accomplir une première tâche sûre et vérifiable",
         "english_path": "book/chapters/02-first-safe-task-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8017,6 +8942,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "3장: 바람을 작업 프로토콜로 바꾸기",
         "title_de": "Einen Wunsch in ein Aufgabenprotokoll verwandeln",
         "title_zh-tw": "把願望變成任務協議",
+        "title_fr": "De l’intention au protocole",
         "canonical_title_en": "Turn a wish into a task protocol",
         "canonical_title_zh": "把愿望变成任务协议",
         "canonical_title_es": "Convierte un deseo en un protocolo de tarea",
@@ -8024,6 +8950,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "3장: 바람을 작업 프로토콜로 바꾸기",
         "canonical_title_de": "Einen Wunsch in ein Aufgabenprotokoll verwandeln",
         "canonical_title_zh-tw": "把願望變成任務協議",
+        "canonical_title_fr": "Transformer une intention en protocole de tâche",
         "english_path": "book/chapters/03-task-protocol-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8041,6 +8968,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "4장: 컨텍스트, 권한, Agent의 행동 경계",
         "title_de": "Kontext, Berechtigungen und die Handlungsgrenze des Agents",
         "title_zh-tw": "上下文、權限與 Agent 的行動邊界",
+        "title_fr": "Contexte, autorisations et Agent",
         "canonical_title_en": "Context, Permissions, and the Agent Action Boundary",
         "canonical_title_zh": "上下文、权限与 Agent 的行动边界",
         "canonical_title_es": "Contexto, permisos y límites de acción del Agent",
@@ -8048,6 +8976,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "4장: 컨텍스트, 권한, Agent의 행동 경계",
         "canonical_title_de": "Kontext, Berechtigungen und die Handlungsgrenze des Agents",
         "canonical_title_zh-tw": "上下文、權限與 Agent 的行動邊界",
+        "canonical_title_fr": "Contexte, autorisations et limites d’action de l’Agent",
         "english_path": "book/chapters/04-context-permissions-and-agent-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8065,6 +8994,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "5장: 알맞은 Codex 작업면 선택하기",
         "title_de": "Die richtige Codex-Arbeitsfläche wählen",
         "title_zh-tw": "選擇正確的 Codex 工作面",
+        "title_fr": "Choisir son interface Codex",
         "canonical_title_en": "Choose the Right Codex Surface",
         "canonical_title_zh": "选择正确的 Codex 工作面",
         "canonical_title_es": "Elige la superficie de trabajo adecuada de Codex",
@@ -8072,6 +9002,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "5장: 알맞은 Codex 작업면 선택하기",
         "canonical_title_de": "Die richtige Codex-Arbeitsfläche wählen",
         "canonical_title_zh-tw": "選擇正確的 Codex 工作面",
+        "canonical_title_fr": "Choisir la bonne interface Codex",
         "english_path": "book/chapters/05-choose-the-codex-surface-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8089,6 +9020,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "6장: 모델 선택은 모델 숭배가 아니다",
         "title_de": "Modellauswahl ist keine Modellverehrung",
         "title_zh-tw": "模型選擇不是模型崇拜",
+        "title_fr": "Choisir un modèle",
         "canonical_title_en": "Model Choice Is Not Model Worship",
         "canonical_title_zh": "模型选择不是模型崇拜",
         "canonical_title_es": "Elegir un modelo no es venerar un modelo",
@@ -8096,6 +9028,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "6장: 모델 선택은 모델 숭배가 아니다",
         "canonical_title_de": "Modellauswahl ist keine Modellverehrung",
         "canonical_title_zh-tw": "模型選擇不是模型崇拜",
+        "canonical_title_fr": "Choisir un modèle n’est pas vénérer un modèle",
         "english_path": "book/chapters/06-model-selection-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8113,6 +9046,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "7장: Skills, Plugins, MCP, 도구는 어떻게 일을 나누는가",
         "title_de": "Wie Skills, Plugins, MCP und Tools die Arbeit aufteilen",
         "title_zh-tw": "Skill、Plugin、MCP 和工具如何分工",
+        "title_fr": "Skills, Plugins, MCP et outils",
         "canonical_title_en": "How Skills, Plugins, MCP, and Tools Divide the Work",
         "canonical_title_zh": "Skill、Plugin、MCP 和工具如何分工",
         "canonical_title_es": "cómo se reparten el trabajo los Skills, los Plugins, MCP y las herramientas",
@@ -8120,6 +9054,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "7장: Skills, Plugins, MCP, 도구는 어떻게 일을 나누는가",
         "canonical_title_de": "Wie Skills, Plugins, MCP und Tools die Arbeit aufteilen",
         "canonical_title_zh-tw": "Skill、Plugin、MCP 和工具如何分工",
+        "canonical_title_fr": "Répartir le travail entre Skills, Plugins, MCP et outils",
         "english_path": "book/chapters/07-skills-plugins-and-tools-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8137,6 +9072,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "8장: 정의에서 전달까지",
         "title_de": "Von der Definition zur Übergabe",
         "title_zh-tw": "從定義到交付的完整生命週期",
+        "title_fr": "De la définition à la livraison",
         "canonical_title_en": "From Definition to Delivery",
         "canonical_title_zh": "从定义到交付的完整生命周期",
         "canonical_title_es": "de la definición a la entrega",
@@ -8144,6 +9080,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "8장: 정의에서 전달까지",
         "canonical_title_de": "Von der Definition zur Übergabe",
         "canonical_title_zh-tw": "從定義到交付的完整生命週期",
+        "canonical_title_fr": "Le cycle complet, de la définition à la livraison",
         "english_path": "book/chapters/08-full-lifecycle-workflow-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8161,6 +9098,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "9장: 검증, 의심, 복구",
         "title_de": "Überprüfung, Zweifel und Wiederherstellung",
         "title_zh-tw": "驗證、懷疑與恢復",
+        "title_fr": "Vérification et récupération",
         "canonical_title_en": "Verification, Doubt, and Recovery",
         "canonical_title_zh": "验证、怀疑与恢复",
         "canonical_title_es": "verificación, duda y recuperación",
@@ -8168,6 +9106,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "9장: 검증, 의심, 복구",
         "canonical_title_de": "Überprüfung, Zweifel und Wiederherstellung",
         "canonical_title_zh-tw": "驗證、懷疑與恢復",
+        "canonical_title_fr": "Vérification, doute et récupération",
         "english_path": "book/chapters/09-verification-and-recovery-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8185,6 +9124,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "10장: 계획과 수직 슬라이스",
         "title_de": "Planung und vertikale Schnitte",
         "title_zh-tw": "規劃與豎向切片",
+        "title_fr": "Planification et tranches verticales",
         "canonical_title_en": "Planning and vertical slicing",
         "canonical_title_zh": "把大目标拆成可交付切片",
         "canonical_title_es": "planificación y cortes verticales",
@@ -8192,6 +9132,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "10장: 계획과 수직 슬라이스",
         "canonical_title_de": "Planung und vertikale Schnitte",
         "canonical_title_zh-tw": "把大目標拆成可交付切片",
+        "canonical_title_fr": "Planifier et découper en tranches verticales",
         "english_path": "book/chapters/10-planning-and-slicing-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8209,6 +9150,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "11장: 쓸모 있는 Skill 설계하기",
         "title_de": "Einen Skill entwerfen, der seinen Platz verdient",
         "title_zh-tw": "設計一個真正有用的 Skill",
+        "title_fr": "Concevoir un Skill utile",
         "canonical_title_en": "Designing a Skill That Earns Its Place",
         "canonical_title_zh": "设计一个真正有用的 Skill",
         "canonical_title_es": "diseñar un Skill que se gane su lugar",
@@ -8216,6 +9158,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "11장: 쓸모 있는 Skill 설계하기",
         "canonical_title_de": "Einen Skill entwerfen, der seinen Platz verdient",
         "canonical_title_zh-tw": "設計一個真正有用的 Skill",
+        "canonical_title_fr": "Concevoir un Skill qui mérite sa place",
         "english_path": "book/chapters/11-designing-a-skill-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8233,6 +9176,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "12장: Agent 루프, 상태, 중지 조건",
         "title_de": "Agent-Schleife, Zustand und Stoppbedingungen",
         "title_zh-tw": "Agent 的循環、狀態和停止條件",
+        "title_fr": "Boucle et arrêts de l’Agent",
         "canonical_title_en": "The Agent Loop, State, and Stop Conditions",
         "canonical_title_zh": "Agent 的循环、状态和停止条件",
         "canonical_title_es": "el ciclo, el estado y las condiciones de parada del Agent",
@@ -8240,6 +9184,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "12장: Agent 루프, 상태, 중지 조건",
         "canonical_title_de": "Agent-Schleife, Zustand und Stoppbedingungen",
         "canonical_title_zh-tw": "Agent 的循環、狀態和停止條件",
+        "canonical_title_fr": "Boucle de l’Agent, états et conditions d’arrêt",
         "english_path": "book/chapters/12-agent-loop-and-stop-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8257,6 +9202,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "파일, 터미널, 브라우저, GitHub의 행동 경계",
         "title_de": "Aktionsgrenzen für Dateien, Terminal, Browser und GitHub",
         "title_zh-tw": "檔案、終端、瀏覽器與 GitHub 的行動邊界",
+        "title_fr": "Limites d’action",
         "canonical_title_en": "Action Boundaries Across Files, Terminals, Browsers, and GitHub",
         "canonical_title_zh": "文件、终端、浏览器与 GitHub 的行动边界",
         "canonical_title_es": "límites de acción en archivos, terminales, navegadores y GitHub",
@@ -8264,6 +9210,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "파일, 터미널, 브라우저, GitHub의 행동 경계",
         "canonical_title_de": "Aktionsgrenzen für Dateien, Terminal, Browser und GitHub",
         "canonical_title_zh-tw": "檔案、終端、瀏覽器與 GitHub 的行動邊界",
+        "canonical_title_fr": "Limites d’action entre fichiers, terminaux, navigateurs et GitHub",
         "english_path": "book/chapters/13-action-boundaries-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8281,6 +9228,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "14장: 외부 Skill 찾기, 설치하기, 감사하기",
         "title_de": "Externe Skills finden, installieren und prüfen",
         "title_zh-tw": "如何發現、安裝和審查外部 Skill",
+        "title_fr": "Auditer un Skill externe",
         "canonical_title_en": "Discover, Install, and Audit External Skills",
         "canonical_title_zh": "如何发现、安装和审查外部 Skill",
         "canonical_title_es": "descubrir, instalar y auditar Skills externos",
@@ -8288,6 +9236,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "14장: 외부 Skill 찾기, 설치하기, 감사하기",
         "canonical_title_de": "Externe Skills finden, installieren und prüfen",
         "canonical_title_zh-tw": "如何發現、安裝和審查外部 Skill",
+        "canonical_title_fr": "Découvrir, installer et auditer un Skill externe",
         "english_path": "book/chapters/14-discover-and-audit-skills-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8305,6 +9254,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "15장: 연구 트랙, 질문에서 감사 가능한 지식까지",
         "title_de": "Forschungspfad, von der Frage zu prüfbarem Wissen",
         "title_zh-tw": "研究路線——從問題到可稽核的知識",
+        "title_fr": "Recherche vérifiable",
         "canonical_title_en": "Research Track — From Question to Auditable Knowledge",
         "canonical_title_zh": "研究轨——从问题到可审查知识",
         "canonical_title_es": "ruta de investigación, de la pregunta al conocimiento auditable",
@@ -8312,6 +9262,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "15장: 연구 트랙, 질문에서 감사 가능한 지식까지",
         "canonical_title_de": "Forschungspfad, von der Frage zu prüfbarem Wissen",
         "canonical_title_zh-tw": "研究路線——從問題到可稽核的知識",
+        "canonical_title_fr": "Recherche : de la question à une connaissance vérifiable",
         "english_path": "book/chapters/15-research-track-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8329,6 +9280,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "16장: 엔지니어링 트랙, 아이디어에서 신뢰할 수 있는 소프트웨어까지",
         "title_de": "Engineering-Pfad, von der Idee zu zuverlässiger Software",
         "title_zh-tw": "工程路線——從想法到可靠軟體",
+        "title_fr": "Ingénierie fiable",
         "canonical_title_en": "Engineering Track — From Idea to Reliable Software",
         "canonical_title_zh": "工程轨——从想法到可靠软件",
         "canonical_title_es": "ruta de ingeniería, de la idea al software fiable",
@@ -8336,6 +9288,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "16장: 엔지니어링 트랙, 아이디어에서 신뢰할 수 있는 소프트웨어까지",
         "canonical_title_de": "Engineering-Pfad, von der Idee zu zuverlässiger Software",
         "canonical_title_zh-tw": "工程路線——從想法到可靠軟體",
+        "canonical_title_fr": "Ingénierie : de l’idée à un logiciel fiable",
         "english_path": "book/chapters/16-engineering-track-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8353,6 +9306,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "17장: 마케팅 트랙, 제품 이해에서 성장 실험까지",
         "title_de": "Marketing-Pfad, vom Produktverständnis zu Wachstumsexperimenten",
         "title_zh-tw": "行銷路線——從產品理解到成長實驗",
+        "title_fr": "Marketing et expériences",
         "canonical_title_en": "Marketing Track — From Product Understanding to Growth Experiments",
         "canonical_title_zh": "营销轨——从产品理解到增长实验",
         "canonical_title_es": "ruta de marketing, de entender el producto a experimentar con crecimiento",
@@ -8360,6 +9314,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "17장: 마케팅 트랙, 제품 이해에서 성장 실험까지",
         "canonical_title_de": "Marketing-Pfad, vom Produktverständnis zu Wachstumsexperimenten",
         "canonical_title_zh-tw": "行銷路線——從產品理解到成長實驗",
+        "canonical_title_fr": "Marketing : du contexte produit aux expériences",
         "english_path": "book/chapters/17-marketing-track-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8377,6 +9332,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "18장: 콘텐츠, 디자인, 데이터, 자동화 트랙",
         "title_de": "Pfad für Inhalte, Design, Daten und Automatisierung",
         "title_zh-tw": "內容、設計、資料與自動化軌",
+        "title_fr": "Contenu, design, données",
         "canonical_title_en": "Content, Design, Data, and Automation Track",
         "canonical_title_zh": "内容、设计、数据与自动化轨",
         "canonical_title_es": "ruta de contenido, diseño, datos y automatización",
@@ -8384,6 +9340,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "18장: 콘텐츠, 디자인, 데이터, 자동화 트랙",
         "canonical_title_de": "Pfad für Inhalte, Design, Daten und Automatisierung",
         "canonical_title_zh-tw": "內容、設計、資料與自動化軌",
+        "canonical_title_fr": "Contenu, design, données et automatisation",
         "english_path": "book/chapters/18-content-design-data-automation-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8401,6 +9358,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "19장: 모델과 워크플로 평가하기, 인상에서 증거로",
         "title_de": "Modelle und Workflows evaluieren, von Eindrücken zu Evidenz",
         "title_zh-tw": "評估模型與工作流——從印象走向證據",
+        "title_fr": "Évaluer modèles et workflows",
         "canonical_title_en": "Evaluate Models and Workflows — From Impressions to Evidence",
         "canonical_title_zh": "评估模型和工作流——从感觉到证据",
         "canonical_title_es": "evaluar modelos y flujos de trabajo, de impresiones a evidencia",
@@ -8408,6 +9366,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "19장: 모델과 워크플로 평가하기, 인상에서 증거로",
         "canonical_title_de": "Modelle und Workflows evaluieren, von Eindrücken zu Evidenz",
         "canonical_title_zh-tw": "評估模型與工作流——從印象走向證據",
+        "canonical_title_fr": "Évaluer les modèles et les workflows",
         "english_path": "book/chapters/19-evaluate-models-and-workflows-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8425,6 +9384,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "20장: 개인 Codex 작업 시스템 만들기",
         "title_de": "Ein persönliches Codex-Arbeitssystem aufbauen",
         "title_zh-tw": "構建個人 Codex 工作系統",
+        "title_fr": "Système de travail Codex",
         "canonical_title_en": "Build a Personal Codex Work System",
         "canonical_title_zh": "建立个人 Codex 工作系统",
         "canonical_title_es": "construir un sistema personal de trabajo con Codex",
@@ -8432,6 +9392,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "20장: 개인 Codex 작업 시스템 만들기",
         "canonical_title_de": "Ein persönliches Codex-Arbeitssystem aufbauen",
         "canonical_title_zh-tw": "構建個人 Codex 工作系統",
+        "canonical_title_fr": "Construire son système de travail avec Codex",
         "english_path": "book/chapters/20-personal-codex-work-system-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8449,6 +9410,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "21장: 팀 역량 시스템 만들기",
         "title_de": "Ein Team-Fähigkeitssystem aufbauen",
         "title_zh-tw": "構建團隊能力系統",
+        "title_fr": "Capacité d’équipe",
         "canonical_title_en": "Build a Team Capability System",
         "canonical_title_zh": "建立团队能力系统",
         "canonical_title_es": "construir un sistema de capacidades para el equipo",
@@ -8456,6 +9418,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "21장: 팀 역량 시스템 만들기",
         "canonical_title_de": "Ein Team-Fähigkeitssystem aufbauen",
         "canonical_title_zh-tw": "構建團隊能力系統",
+        "canonical_title_fr": "Construire une capacité d’équipe",
         "english_path": "book/chapters/21-team-capability-system-EN.md",
         "legacy_path": null,
         "english_status": "source",
@@ -8473,6 +9436,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ko": "22장: 지속적인 업데이트와 미래 대비",
         "title_de": "Kontinuierliche Aktualisierung und Zukunftssicherheit",
         "title_zh-tw": "持續更新與面向未來",
+        "title_fr": "Mise à jour et récupération",
         "canonical_title_en": "Continuous Update and Future-Proofing",
         "canonical_title_zh": "持续更新与未来适应",
         "canonical_title_es": "actualización continua y preparación para el futuro",
@@ -8480,6 +9444,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "canonical_title_ko": "22장: 지속적인 업데이트와 미래 대비",
         "canonical_title_de": "Kontinuierliche Aktualisierung und Zukunftssicherheit",
         "canonical_title_zh-tw": "持續更新與面向未來",
+        "canonical_title_fr": "Garder le système à jour et récupérable",
         "english_path": "book/chapters/22-continuous-update-and-future-proofing-EN.md",
         "legacy_path": null,
         "english_status": "source",

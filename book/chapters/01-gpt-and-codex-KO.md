@@ -438,7 +438,7 @@ README와 짧은 프로젝트 규칙 하나만 들어 있는 일회용 로컬 �
   <table role="presentation" width="100%">
     <tr>
       <td align="left"></td>
-      <td align="right"><a data-chapter-nav="next" href="02-first-safe-task-KO.md" aria-label="다음 장: 2장 · 첫 번째 안전하고 검증 가능한 작업 완료하기">다음 →<br><strong>2장 · 첫 번째 안전하고 검증 가능한 작업 완료하기</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="02-first-safe-task-KO.md" aria-label="다음 장: 2장 · 2장: 첫 번째 안전하고 검증 가능한 작업 완료하기">다음 →<br><strong>2장 · 2장: 첫 번째 안전하고 검증 가능한 작업 완료하기</strong></a></td>
     </tr>
   </table>
 </nav>

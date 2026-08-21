@@ -14,7 +14,7 @@ The route is a learning sequence, not an alphabetical file listing.
 
 - `*-EN.md` is the English source when that chapter has been migrated.
 - Unsuffixed chapter drafts were removed during release cleanup; every
-  chapter identity is now carried by its seven locale-suffixed files.
+  chapter identity is now carried by its eight locale-suffixed files.
 - `*-ZH`, `*-ES`, `*-JA`, `*-KO`, `*-DE`, and `*-ZHTW` are language-specific variants
   only when the locale matrix records them.
 - The marked `chapter-navigation` block is generated. Change the navigation

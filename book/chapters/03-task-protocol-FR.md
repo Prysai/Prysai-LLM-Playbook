@@ -85,3 +85,15 @@ versions et fonctions d’un produit exigent une source officielle datée. Cette
 traduction française est en cours de relecture et reste `candidate / not_run`.
 
 Passez à la [vérification et récupération](09-verification-and-recovery-FR.md).
+
+<!-- chapter-navigation:start -->
+<hr>
+<nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="02-first-safe-task-FR.md" aria-label="Chapitre précédent: Chapitre 2 · Première tâche sûre et vérifiable">← Précédent<br><strong>Chapitre 2 · Première tâche sûre et vérifiable</strong></a></td>
+      <td align="right"></td>
+    </tr>
+  </table>
+</nav>
+<!-- chapter-navigation:end -->

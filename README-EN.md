@@ -63,13 +63,14 @@ quality, learner outcomes, or release readiness.
 | Korean | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental LLM foundation guide is stale after the 2026-08-17 English revision and is withheld from the sitemap until retranslation and review. |
 | German | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental LLM foundation guide is stale after the 2026-08-17 English revision and is withheld from the sitemap until retranslation and review. |
 | Traditional Chinese | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; independent Traditional Chinese language review is still pending. |
+| French | 8 / 40 | The foundation slice and selected practice routes have candidate files; the remaining 32 units are unavailable in French. Independent French language review is still pending. |
 
-Seven locale choices provide a complete **file path** for the 22 chapters and 18
+Eight locale choices are registered; seven provide a complete **file path** for the 22 chapters and 18
 Labs. The supplemental foundation guide stays out of non-English sitemap
 entries until each translation has a current source revision and independent
 review. The five earlier translations are marked `stale`; Traditional Chinese
 is `in-progress` after the current English revision but still awaits review.
-That structural coverage is not seven independently reviewed, culturally adapted, or
+That structural coverage is not eight independently reviewed, culturally adapted, or
 learner-validated courses. Supplemental
 reader material still has its own coverage and review status; the reader
 exposes the same `available / 40` course-unit count in its language selector.
