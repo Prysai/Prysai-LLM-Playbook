@@ -3,25 +3,24 @@
 # 5장: 알맞은 Codex 작업면 선택하기
 
 **상태:** `candidate`. 이 장에는 구조화된 선택 방법과 출처에 근거한 제품 경계가
-있지만, 독립 학습자 사전 테스트는 아직 통과하지 않았습니다. 이 장만으로 계정 수준
-기능, Cloud 실행 또는 모델 비교를 추론해서는 안 됩니다.
+있지만, 독립 학습자를 대상으로 한 사전 테스트는 아직 통과하지 않았습니다. 이 장만으로
+계정에서 사용할 수 있는 기능, Cloud 실행 또는 모델 비교를 추론해서는 안 됩니다.
 
 ## 이 장이 해결하는 문제
 
-같은 목표도 데스크톱 앱, CLI, IDE 확장, 웹 흐름에서 시작할 수 있습니다. 로컬,
-Git worktree 또는 Cloud 환경에서 실행될 수도 있습니다. 이것들은 서로 다른 결정입니다.
+같은 목표도 데스크톱 앱, CLI, IDE 확장 또는 웹 흐름에서 시작할 수 있습니다. 실행 장소는
+로컬, Git worktree 또는 Cloud 환경일 수 있습니다. 이는 서로 다른 결정입니다.
 
 사람들은 여러 단계를 한 문장으로 뭉뚱그리기 쉽습니다.
 
 ~~~
-“브라우저 로그인이 됐고, 모델이 선택기에 보이고, setup도 끝났으니 이제 작업할 수 있다.”
+“브라우저 로그인에 성공했고 모델이 선택기에 보이며 setup도 끝났으니 이제 작업을 시작할 수 있다.”
 ~~~
 
-이 문장은 여러 독립된 이유로 틀릴 수 있습니다. 대상 저장소를 읽지 못할 수 있고,
-선택한 모델을 그 작업면에서 쓸 수 없을 수 있으며, 터미널·브라우저·connector·파일
-도구가 없을 수 있습니다. Cloud setup 스크립트에는 네트워크가 있어도 뒤의 Agent
-단계에는 없을 수 있습니다. Worktree 라벨이 보여도 shell이나 IDE는 다른 checkout을
-가리킬 수 있습니다.
+이 문장은 서로 독립된 여러 이유로 틀릴 수 있습니다. 대상 저장소를 읽지 못할 수 있고,
+선택한 모델을 그 작업면에서 사용할 수 없을 수도 있으며, 터미널·브라우저·connector·파일
+도구가 없을 수도 있습니다. Cloud setup 스크립트에는 네트워크가 있어도 뒤의 Agent 단계에는
+없을 수 있습니다. Worktree 라벨이 보여도 shell이나 IDE는 다른 checkout을 가리킬 수 있습니다.
 
 더 유용한 순서는 다음과 같습니다.
 
@@ -34,7 +33,7 @@ Git worktree 또는 Cloud 환경에서 실행될 수도 있습니다. 이것들�
 → 전달 전 증거 검토
 ~~~
 
-*작업면*은 실행이 일어나고 변경이 남는 곳입니다. *진입점*은 사람이 그 작업을
+*작업면*은 작업이 실행되고 변경이 기록되는 곳입니다. *진입점*은 사람이 그 작업을
 시작하고 검토하는 방법입니다. CLI, IDE, 데스크톱, 웹은 Local, Worktree, Cloud의
 다른 이름이 아닙니다.
 
@@ -42,25 +41,25 @@ Git worktree 또는 Cloud 환경에서 실행될 수도 있습니다. 이것들�
 
 이 장을 마치면 다음을 할 수 있습니다.
 
-- 컨텍스트, 데이터 경계, 부작용, 증거, 복구 요구로 `Local`, `Worktree`, `Cloud`를 고른다.
+- 컨텍스트, 데이터 경계, 부작용, 증거, 복구 요구를 기준으로 `Local`, `Worktree`, `Cloud`를 고른다.
 - 작업면과 데스크톱·CLI·IDE·웹 진입점을 구분한다.
-- 대상 리소스 접근, 모델 가용성, 도구 가용성을 별개의 주장으로 확인한다.
-- Cloud의 `setup`과 `agent` 증거, 네트워크 및 비밀 정보 수명을 따로 기록한다.
+- 대상 리소스 접근, 모델 가용성, 도구 가용성을 서로 다른 주장으로 확인한다.
+- Cloud의 `setup`과 `agent` 증거, 네트워크 단계 및 비밀 정보의 수명을 따로 기록한다.
 - 선택한 안뿐 아니라 거부 및 미관찰 안도 남기는 `surface-decision.md`를 만든다.
 - 다음 확인에 작업보다 넓은 권한이 필요하면 안전하게 중단한다.
 
 ## 실제 진입점: 단계가 단서다
 
-프로젝트의 현장 조사는 GitHub Issues, Stack Exchange와 공개 토론의 사용자 보고를
+프로젝트의 현장 조사는 GitHub Issues, Stack Exchange 및 공개 토론의 사용자 보고를
 수집합니다. 이는 증상 보고이지 로컬 재현, 공식 근본 원인, 보장된 해결책이 아닙니다.
-가치는 사람들이 흔히 혼동하는 주장을 드러내는 데 있습니다.
+이 보고의 가치는 사람들이 흔히 혼동하는 주장을 드러내는 데 있습니다.
 
 | 공개 보고 범주 | 관찰된 것 | **증명하지 않는 것** | 첫 안전 확인 |
 |---|---|---|---|
-| OAuth는 성공하지만 token exchange는 실패 | 브라우저 인증 페이지는 끝나지만 클라이언트가 교환을 못 끝냄 | CLI 세션, 대상 host, 저장소가 쓸 수 있음 | 인증, callback, exchange, 첫 무해한 리소스 읽기를 네 단계로 기록 |
-| 사용자 provider가 도구 하나만 노출 | 설정은 받아들이지만 shell, files, browser가 없음 | 모델이나 provider가 빠진 행동을 할 수 있음 | 실제 도구 목록을 저장하고 등록과 호출을 따로 시험 |
+| OAuth는 성공하지만 token exchange는 실패 | 브라우저 인증 페이지는 끝나지만 클라이언트가 교환을 완료하지 못함 | CLI 세션, 대상 host, 저장소를 사용할 수 있다는 것 | 인증, callback, exchange, 첫 무해한 리소스 읽기를 네 단계로 기록 |
+| 사용자 provider가 도구 하나만 노출 | 설정은 받아들여지지만 shell, files, browser가 없음 | 모델이나 provider가 빠진 행동을 수행할 수 있다는 것 | 실제 도구 목록을 저장하고 등록과 호출을 따로 시험 |
 | Worktree와 checkout이 다름 | UI는 Worktree라 하지만 `cwd`, IDE root, patch 대상, Git 메타데이터가 다름 | 편집 프로세스의 격리가 성립함 | 절대 경로, `.git` 형태, workspace root, `git status`를 읽고 다르면 쓰기 중단 |
-| Cloud setup은 성공했지만 비밀 또는 네트워크를 못 씀 | 의존성을 설치하거나 setup 표시가 생긴 뒤 Agent가 서비스에 닿지 못함 | setup과 Agent의 네트워크·비밀이 같은 능력 | setup/Agent 로그, 네트워크 단계, 비밀 수명, diff를 따로 기록 |
+| Cloud setup은 성공했지만 비밀 또는 네트워크를 사용하지 못함 | 의존성을 설치하거나 setup 표시가 생긴 뒤 Agent가 서비스에 닿지 못함 | setup과 Agent의 네트워크·비밀이 같은 능력이라는 것 | setup/Agent 로그, 네트워크 단계, 비밀 수명, diff를 따로 기록 |
 | allowlist가 GitHub 등 host를 막음 | proxy, sandbox, 기업 네트워크 정책에서 요청 실패 | 모든 네트워크 권한 확대가 맞거나 승인됨 | 좁은 변경을 요청하기 전 sandbox, allowlist, DNS/TLS, firewall 가설을 분리 |
 
 원래 링크와 날짜는 [현장 문제 색인](../evidence-library-KO.md#source-notes),
@@ -92,8 +91,8 @@ worktree 목록, branch/HEAD, 쓰기 가능한 root를 비교합니다. 신호 �
 | `Worktree` | 사용자 컴퓨터의 별도 Git worktree | main checkout과 변경을 분리하고 집중된 diff 검토 | 모든 프로세스가 같은 worktree로 옮겨 갔음, 네트워크나 계정 권한이 바뀜 |
 | `Cloud` | 구성된 원격 환경 | 원격 격리 runtime과 저장소 checkout이 맞는 긴 또는 병렬 작업 | 이번 run에 계정, 저장소, 도구, 네트워크, 비밀, 최종 diff가 있음 |
 
-`Local`과 `Worktree`는 모두 로컬 실행입니다. Worktree는 Git 격리 수단이지 보편적
-보안 경계가 아닙니다. Cloud는 실행 경계이지 setup, Agent runtime, 외부 연결이
+`Local`과 `Worktree`는 모두 로컬 실행입니다. Worktree는 Git 격리 수단이지 보편적인
+보안 경계가 아닙니다. Cloud는 실행 경계일 뿐, setup·Agent runtime·외부 연결이
 준비되었다는 증거가 아닙니다.
 
 ### 진입점: 시작하고 검토하는 방법
@@ -102,10 +101,10 @@ worktree 목록, branch/HEAD, 쓰기 가능한 root를 비교합니다. 신호 �
 
 | 진입점 | 장점 | 일반적인 검토 증거 |
 |---|---|---|
-| 데스크톱 앱 | 보이는 작업 상태, 환경 선택, 대화형 검토 | 환경 라벨, task events, summary, diff, 수동 확인 |
-| CLI | 명시적 경로·명령·스크립트, 반복 가능한 로컬 작업 | `cwd`, command output, exit code, Git status, diff, 저장한 logs |
-| IDE 확장 | 가까운 편집기 문맥, 선택 파일, 편집기 내 diff | workspace root, 선택 문맥, patch, 집중 diff |
-| 웹 / Cloud 흐름 | 원격 setup, 긴 실행, handoff형 검토 | repository/branch, setup 증거, Agent 증거, summary, diff |
+| 데스크톱 앱 | 작업 상태와 환경을 눈으로 확인하고 대화형으로 검토 | 환경 라벨, task events, summary, diff, 수동 확인 |
+| CLI | 경로·명령·스크립트가 명확하고 로컬 작업을 반복하기 쉬움 | `cwd`, command output, exit code, Git status, diff, 저장한 logs |
+| IDE 확장 | 편집기 문맥과 선택한 파일을 가까이서 보고 편집기 안에서 diff를 검토 | workspace root, 선택 문맥, patch, 집중 diff |
+| 웹 / Cloud 흐름 | 원격 setup, 장시간 실행, handoff 방식의 검토 | repository/branch, setup 증거, Agent 증거, summary, diff |
 
 CLI는 Local checkout이나 Worktree에서 모두 실행될 수 있습니다. IDE는 Worktree에
 붙어 있어도 별도 shell은 원래 checkout에 남을 수 있습니다. “CLI를 썼다”는
@@ -126,7 +125,7 @@ CLI는 Local checkout이나 Worktree에서 모두 실행될 수 있습니다. ID
 → 결과가 검증됨
 ~~~
 
-각 화살표에는 고유한 증거가 필요합니다. 앞 단계의 성공은 뒤 단계 확인을 대신하지
+각 화살표에는 별도의 증거가 필요합니다. 앞 단계의 성공이 뒤 단계의 확인을 대신하지는
 않습니다.
 
 | 관찰 | 뒷받침할 수 있는 것 | 단독으로 뒷받침하지 못하는 것 |
@@ -138,22 +137,22 @@ CLI는 Local checkout이나 Worktree에서 모두 실행될 수 있습니다. ID
 | Cloud setup이 의존성을 설치 | setup이 그 단계까지 감 | Agent 단계 네트워크, 비밀 접근, 작업 완료, 검증된 diff |
 | UI가 `Completed` 표시 | 제품 상태가 표시됨 | review, test 통과, deploy, push, 사용자 수용 |
 
-사슬이 끊기면 끊긴 단계를 이름으로 기록하세요. “이 작업”을 “제품이 일반적으로 지원”으로
-바꿔 주장을 강하게 만들지 마세요.
+사슬이 끊기면 어느 단계에서 끊겼는지 적으세요. “이 작업에서 확인한 것”을 “제품이 일반적으로
+지원하는 것”으로 바꾸어 주장을 부풀리지 마세요.
 
 ## 3. 다섯 관문으로 작업면을 고른다
 
-후보 작업면을 다음 순서로 평가합니다. 편한 진입점이나 선호 모델이 위험한 환경 선택을
-먼저 좌우하지 못하게 합니다.
+후보 작업면은 다음 순서로 평가합니다. 편한 진입점이나 선호 모델이 안전하지 않은 환경을
+먼저 결정하지 않게 하려는 순서입니다.
 
 ### 관문 1: 컨텍스트
 
-작업면이 필요한 정확한 프로젝트 규칙, 대상 파일, 버전, 수용 입력을 읽을 수 있나요?
-모르면 저장소 이름이나 성공한 로그인으로 추론하지 않습니다.
+작업면이 작업에 필요한 정확한 프로젝트 규칙, 대상 파일, 버전, 수용 입력을 읽을 수 있나요?
+모르겠다면 저장소 이름이나 로그인 성공만으로 추론하지 않습니다.
 
 ### 관문 2: 데이터 경계와 격리
 
-데이터는 현재 컴퓨터, 버릴 수 있는 worktree, 승인된 원격 환경 중 어디에 있어야 하나요?
+데이터는 현재 컴퓨터, 폐기 가능한 worktree, 승인된 원격 환경 중 어디에 있어야 하나요?
 비밀, 고객 데이터, 비공개 소스, 미커밋 작업이 경계를 넘으면 안 되나요? 원격 작업면은
 데이터 전송을 정당화해야 하고, 로컬 작업면도 복구 가능한 기준점을 가져야 합니다.
 
@@ -165,14 +164,14 @@ CLI는 Local checkout이나 Worktree에서 모두 실행될 수 있습니다. ID
 
 ### 관문 4: 증거
 
-다른 사람이 주장에 대응하는 자료를 검사할 수 있나요? path echo, 대상 읽기, 도구 목록,
-command output, diff, test result, Cloud log, 사람의 승인이 예입니다. 행동은 가능하지만
-검토 가능한 증거를 남기지 못하는 작업면은 고위험 작업에 좋지 않습니다.
+다른 사람이 주장에 대응하는 자료를 검사할 수 있나요? 예를 들어 path echo, 대상 읽기,
+도구 목록, command output, diff, test result, Cloud log, 사람의 승인이 있습니다. 행동은
+가능하지만 검토 가능한 증거를 남기지 못하는 작업면은 고위험 작업에 적합하지 않습니다.
 
 ### 관문 5: 복구
 
-인증 실패, 네트워크 단절, 의존성 누락, Agent의 부분 변경 때 상태를 보존하고 알려진
-checkpoint에서 재개할 수 있나요? 못하면 작업면을 거부하거나 읽기 전용 probe로 낮춥니다.
+인증 실패, 네트워크 단절, 의존성 누락, Agent의 부분 변경이 생겨도 상태를 보존하고 알려진
+checkpoint에서 재개할 수 있나요? 그렇지 않다면 작업면을 거부하거나 읽기 전용 probe로 낮춥니다.
 
 ### 실용적인 선택표
 
@@ -184,8 +183,8 @@ checkpoint에서 재개할 수 있나요? 못하면 작업면을 거부하거나
 | 고객 데이터를 외부 connector로 전송 | 자동 선택 없음 | data owner, 대상, 승인, 보존 검토 필요 | 정확한 payload, 대상 account, 승인, rollback/보상, 도구 증거 |
 | 누락 도구나 접근 불가 경로 진단 | 먼저 현재 작업면에서 읽기 전용 | 실패 경계를 보존함 | tool inventory, 절대 경로, 설정 source, error output |
 
-표는 후보를 제시할 뿐 자동 권한이 아닙니다. 보통 알맞은 작업면이어도 작업은 `blocked`일 수
-있습니다.
+표는 후보를 제시할 뿐 자동으로 권한을 주지는 않습니다. 평소에 알맞은 작업면이어도 작업은
+`blocked`일 수 있습니다.
 
 ## 4. 행동 전에 결정 카드를 쓴다
 
@@ -232,14 +231,14 @@ checked_at:
 reviewer:
 ~~~
 
-작업을 실행하지 않았거나 증거를 모으지 않았다면 `not_observed`를 씁니다. 양식을 채우기
-위해 관찰 없는 항목을 `yes`나 `no`로 바꾸지 마세요.
+작업을 실행하지 않았거나 증거를 모으지 않았다면 `not_observed`를 씁니다. 양식을 채우려고
+관찰하지 않은 항목을 `yes`나 `no`로 바꾸지 마세요.
 
 ## 5. Cloud에는 setup 단계와 Agent 단계가 있다
 
-공식 Cloud 문서는 setup과 Agent 실행을 서로 다른 수명 주기 부분으로 다룹니다. setup은
-네트워크로 의존성을 설치할 수 있습니다. 설정을 바꾸지 않으면 Agent 단계는 보통 offline입니다.
-환경의 비밀은 setup에만 있고 Agent 전에 제거될 수 있습니다.
+공식 Cloud 문서는 setup과 Agent 실행을 수명 주기의 서로 다른 단계로 다룹니다. setup은
+네트워크를 사용해 의존성을 설치할 수 있습니다. 설정을 바꾸지 않으면 Agent 단계는 보통
+offline입니다. 환경의 비밀은 setup에만 있다가 Agent 전에 제거될 수 있습니다.
 
 다음을 따로 기록합니다.
 
@@ -252,8 +251,8 @@ result_review
 ~~~
 
 “setup script가 package를 설치했다”는 setup의 증거일 뿐입니다. Agent가 package 서비스에
-도달한다는 증거가 아닙니다. “비밀이 환경 설정에 있다”도 task runtime이 읽는다는 증거가
-아닙니다. 현재 단계와 데이터 경로를 보일 때까지 외부 호출을 멈추는 편이 안전합니다.
+도달한다는 증거는 아닙니다. “비밀이 환경 설정에 있다”도 task runtime이 읽는다는 증거가
+아닙니다. 현재 단계와 데이터 경로를 확인할 때까지 외부 호출을 멈추는 편이 안전합니다.
 
 ## 6. 작은 관찰 실험: 같은 작업, 세 카드
 
@@ -290,8 +289,8 @@ setup_status | agent_status | network_phase | secret_lifetime
 decision | diff_path | check_output | reviewer
 ~~~
 
-통과 기록은 파일 변경보다 많은 것을 보여줍니다. 왜 한 작업면을 골랐고 다른 후보를 거부했는지,
-어떤 증거가 최종 주장을 지지하는지 보여줍니다. Cloud를 실행하지 않았다면 카드에
+통과 기록은 파일 변경 이상의 내용을 보여줍니다. 왜 한 작업면을 골랐고 다른 후보를 거부했는지,
+어떤 증거가 최종 주장을 뒷받침하는지 보여줍니다. Cloud를 실행하지 않았다면 카드에
 `not_observed`라고 써야 합니다.
 
 ### 보존할 증거
@@ -310,7 +309,7 @@ reviewer 기록을 저장합니다. 빠진 관찰을 UI 라벨만으로 채우�
 | 네트워크 요청이 막힘 | sandbox, proxy, DNS/TLS, 기업 정책이 원인 후보 | 요청을 좁히고 오류를 보존; 진단하려고 무제한 네트워크로 전환하지 않음 |
 | 새 event 없는 긴 대기 | 진행 또는 완료라고 부를 증거 부족 | 작업면 정책에 따라 stop/cancel하고 마지막 checkpoint 보존 |
 
-이는 진단 상태이지 보편적 제품 버그 진단이 아닙니다. 커뮤니티 해결책은 관련 공식 행동과
+이는 진단 상태이지 보편적인 제품 버그 진단이 아닙니다. 커뮤니티 해결책은 관련 공식 동작과
 현재 runtime을 확인하기 전까지 가설입니다.
 
 ## 회고
@@ -325,8 +324,8 @@ reviewer 기록을 저장합니다. 빠진 관찰을 UI 라벨만으로 채우�
 
 ## 전이 과제
 
-공개 source에는 browser, 가린 증거에는 로컬 shell, 민감 파일에는 격리 환경을 쓰는 research
-작업에 이 방법을 옮기세요. 카드를 다시 채우고 이 장의 작업면 선택을 그대로 복사하지 마세요.
+공개 source에는 browser, 비식별화한 증거에는 로컬 shell, 민감 파일에는 격리 환경을 쓰는 research
+작업으로 이 방법을 옮기세요. 카드를 다시 채우고 이 장의 작업면 선택을 그대로 복사하지 마세요.
 
 ## 수용 체크리스트
 
@@ -335,14 +334,14 @@ reviewer 기록을 저장합니다. 빠진 관찰을 UI 라벨만으로 채우�
 - `Local`, `Worktree`, `Cloud`의 차이를 설명한다.
 - 데스크톱, CLI, IDE, 웹이 작업면과 같은 범주가 아니라 진입점임을 설명한다.
 - 선택 하나와 명시적 거부/미관찰 이유를 담은 카드 세 장을 만든다.
-- account authorization, resource readability, model visibility, tool registration, tool invocation, action completion, result review를 구분한다.
+- account authorization, resource readability, model visibility, tool registration, tool invocation, action completion, result review를 서로 구분한다.
 - Cloud setup/Agent, network phase, secret lifetime을 따로 기록한다.
 - 다음 증명이 작업 계약보다 넓은 권한을 요구할 때 중단하거나 축소한다.
 
 ## 출처와 갱신 경계
 
 결정 방법은 안정적인 교육 방법입니다. 제품 작업면, 모델 행렬, permission mode, Cloud
-lifecycle, 도구 가용성, 진입점 지원은 변할 수 있습니다. 현재 제품 주장을 하기 전에는
+lifecycle, 도구 가용성, 진입점 지원은 변할 수 있습니다. 현재 제품을 주장하기 전에는
 날짜가 있는 source record를 사용하세요.
 
 | 변하는 사실 | 일차 출처 | 확인일 | 범위 경계 |
