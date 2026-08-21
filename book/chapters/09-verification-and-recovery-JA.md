@@ -2,17 +2,17 @@
 
 # 第 9 章：検証、疑い、復旧
 
-**状態：** `candidate`。**実験：** `not_run`。この章では、「完了した」という主張と、その根拠（evidence）を対応づけます。確かでない作業手順を立て直す方法も扱います。ローカルでの再現、公式な診断、運用環境での証拠を示す章ではありません。
+**状態：** `candidate`。**実験：** `not_run`。この章では、「完了した」という主張と、その根拠（evidence）を対応づけます。手順に確信が持てないときの立て直し方も扱います。ローカルで再現した結果や、公式の診断、運用環境での証拠を示す章ではありません。
 
 ## この章が解決する問題
 
-Agent は、誤りや範囲外の変更、実行していない処理、別の環境で得た結果についても、もっともらしい完了報告（summary）を書けます。何でも信じるのも、何も信じないのも解決策ではありません。報告を個別の主張（claim）に分け、宣言した範囲（scope）を支えられる最小限の証拠を割り当てます。
+Agent は、誤りや範囲外の変更、実行していない処理、別の環境で得た結果についても、もっともらしい完了報告（summary）を書けます。何でも信じるのも、何も信じないのも解決策ではありません。報告を、個別に確認できる主張（claim）へ分解し、示した範囲（scope）を支える最小限の証拠を割り当てます。
 
 弱い証拠一つで、別の種類の証拠を代用することはできません。ビルド成功は実行時の動作を、スクリーンショットは需要を、公式 URL は自分のアクセス権を証明しません。
 
 ## 学習目標
 
-完了報告を個別に確認できる主張へ分け、それぞれに合う最小限の証拠を選びます。根拠が最初に途切れた地点を見つけ、安全な次の確認か、正直な引き継ぎ（handoff）を書けるようになることが目標です。この練習だけで、製品の信頼性や学習効果を証明することはできません。独立した実行記録とレビューが必要です。
+完了報告を、個別に確認できる主張へ分解し、それぞれに合う最小限の証拠を選びます。根拠が最初に途切れる地点を見つけ、安全な次の確認か、正直な引き継ぎ（handoff）を書けるようになることが目標です。この練習だけで、製品の信頼性や学習効果を証明することはできません。独立した実行記録とレビューが必要です。
 
 ## 現実の問題：もっともらしい完了報告に根拠がない
 
@@ -20,7 +20,7 @@ Agent は、誤りや範囲外の変更、実行していない処理、別の�
 
 ## 三つの Windows 報告：signal は evidence ではない
 
-次のケースは、2026-08-12 に確認した公開 GitHub 報告から取った教材上の入力です。
+次のケースは、2026-08-12 に確認した公開 GitHub 報告を教材として使ったものです。
 ローカルでの再現、公式の診断、すべての Windows 環境に当てはまる不具合の宣言では
 ありません。症状を読んだら、必ず「何を証明し、何を証明しないか」を分けます。
 
@@ -31,10 +31,10 @@ Agent は、誤りや範囲外の変更、実行していない処理、別の�
 | 長い checkpoint ref で Windows Git が `bad ref` や `Filename too long` を返すという報告（[#37559](https://github.com/openai/codex/issues/37559)） | Agent 内部の状態と通常の project state は同じではない | 許可された診断範囲で `git status`、`git show-ref`、`git fsck --full`、`git worktree list`、正確な ref path を記録する | backup と authority なしに `.git` を削除、設定変更、fetch、ref 修復を行う |
 
 プロジェクトの [Windows input and evidence field problems](../../docs/research/field-problems-input-and-evidence-p3-2026-08-11.md)
-には、報告の version、evidence boundary、転用できる表があります。実務上の規則は、
+には、報告の version、evidence boundary、転用できる表があります。実務上のルールは、
 **retry の前に最小の durable artifact を保存する**ことです。output file、受信入力の比較、
-diff、hash、command log、redacted handoff のいずれかで構いません。community workaround は
-triage の手がかりにはなりますが、公式の修正や永続環境変更の許可ではありません。
+diff、hash、command log、redacted handoff のどれでも構いません。community workaround は
+triage の手がかりにはなりますが、公式の修正や永続的な環境変更を許可するものではありません。
 
 ### 現場ケース：command が終わっても claim を review できない
 
@@ -48,9 +48,9 @@ exit、event、diff、artifact、hash、read-back だけを保存します。監
 
 <a id="core-evidence-recovery"></a>
 
-## 1. claim を evidence に対応させる
+## 1. claim と evidence を対応させる
 
-まず言おうとしている一文を書き、その scope で別の人が受け入れるために何を見ればよいかを考えます。
+まず言おうとしている一文を書き、その scope の主張を別の人が受け入れるには何を見ればよいかを考えます。
 
 | Claim | その scope を支える最低限の evidence | Claim の外に残ること |
 |---|---|---|
@@ -63,10 +63,10 @@ exit、event、diff、artifact、hash、read-back だけを保存します。監
 | result が user に役立つ | defined sample、task、user-acceptance record | 市場での成功や将来の効果 |
 | production-ready である | quality、security、maintenance、release、rollback の各 gate | 未テストの environment や owner のない将来変更 |
 
-### Lab 013 の前に：claim-to-evidence 表を書く
+### Lab 013 の前に：claim-to-evidence 表を作る
 
 [Lab 013: auditable vertical slice](../labs/lab-013-l3-vertical-slice-JA.md) を始める前に、
-「done」を確認可能な行へ分けます。各行は、宣言した scope に入る evidence だけで支えます。
+「done」を確認可能な行に分けます。各行は、宣言した scope に含まれる evidence だけで支えます。
 
 ```text
 assertion: 何を正確に主張するか
@@ -80,9 +80,9 @@ gap_or_next_check: 何が足りず、最小の追加確認は何か
 証明したりしません。evidence がなければ `unverified`、`blocked`、`not_run` のどれかを付け、
 欠けた部分を保存して recovery flow へ進みます。
 
-## 2. 疑いを次の check の選択に使う
+## 2. 疑いを次の check を選ぶ材料にする
 
-重要な判断では、短い claim を一つ書き、自分の推論から一度外してみます。
+重要な判断では、短い claim を一つ書き、自分の推論からいったん切り離してみます。
 
 - どの前提に evidence がないか。
 - どの boundary condition をまだ試していないか。
@@ -90,10 +90,10 @@ gap_or_next_check: 何が足りず、最小の追加確認は何か
 - claim が false なら、最初にどこで見えるか。
 - 判断を変え得る、最小の追加 check は何か。
 
-疑い続けることが目的ではありません。高くつく誤りを、delivery 前に小さく発見するためです。
-良い check は一つの relevant condition だけを変え、observable result と stop rule を持ちます。
+疑い続けることが目的ではありません。コストの大きい誤りを、delivery 前に早く見つけるためです。
+良い check は関係する条件を一つだけ変え、観測可能な結果と stop rule を持ちます。
 
-### status label は出口チェックではない
+### status label は完了の証拠ではない
 
 | 言えること | 最低限の証拠 |
 |---|---|
@@ -123,13 +123,13 @@ request → authorization → visible tool → action → result → review
 | `not_observed` | プロジェクトが観察結果を保存していない |
 | `error` | 宣言した操作が失敗した証拠がある |
 
-## 3. 範囲を固定した順番で recovery する
+## 3. 範囲を広げずに recovery する順番
 
 何かが失敗した、または状態が分からなくなったら、次の順番を使います。
 
 1. エラーと現在の状態を保存する。
 2. input、understanding、environment、implementation、capability、permission、verification のどこが境界かを分類する。
-3. scope を狭め、最小の observable break を再現する。
+3. scope を狭め、最小の観測可能な破綻を再現する。
 4. 一つの小さな修正、または一つの targeted check だけを行う。
 5. 影響した path を再確認し、新しい evidence を記録する。
 6. まだ不明なら、正確な blocking note を残して止まる。
@@ -137,7 +137,7 @@ request → authorization → visible tool → action → result → review
 
 「もう一度実行する」「もっと権限を与える」「モデルにもっと考えさせる」は、診断の代わりになりません。
 
-### capability chain：成功した各層に別の proof が要る
+### capability chain：成功した各段階に別の proof が必要
 
 公開報告では、tool name は見える、page は読める、provider は configuration を受け付けるのに、
 discovery call、click、上位 capability が失敗するという sequence が繰り返し出てきます。見える名前が
@@ -202,9 +202,9 @@ automatic retry start time
 final state
 ```
 
-合意した no-event threshold に達したら、`no_event_observed` と記録します。許可された手段で control を取り戻し、
+あらかじめ決めた no-event threshold に達したら、`no_event_observed` と記録します。許可された手段で control を取り戻し、
 process、worktree、target state、last checkpoint を確認してください。最初の request が side effect を起こした
-可能性があるなら `unverified` または `blocked` のままです。idempotent で、state を再確認し、retry rule が前もって
+可能性があるなら `unverified` または `blocked` のままです。操作が idempotent で、state を再確認し、retry rule が前もって
 定義されている場合に限り、限定した retry を一回だけ許可します。自動 retry は別の event として保存し、二回目の成功で
 一回目の no-event を pass に書き換えません。
 
@@ -282,7 +282,7 @@ not yet: 公開、インストール、デプロイ、または範囲の拡張
 
 ## 初学者向けの復旧カード
 
-期待どおりにならないとき、指示を無計画に足しません。観測したことだけを書きます。
+期待どおりにならないとき、思いつきで指示を追加しません。観測したことだけを書きます。
 
 ```text
 goal: 最初の一歩を分かりやすくする。公開しない
@@ -295,7 +295,7 @@ honest_handoff: 本文のレビューはある。読者の理解は unverified
 
 このカードは、「動かなかった」を調べられる次の一歩に変えます。モデル、Skill、コースの効果を証明するものではありません。観測したこと、欠けていること、安全な次の行動だけを分けて残します。
 
-## 実践：claim-to-evidence 表を一度書く
+## 実践：claim-to-evidence 表を一度作る
 
 完了報告を受け取ったら、先ほどの表を使って主張を一行ずつに分けます。一つの成果物や
 緑色のチェックを複数の結論に使い回さないためです。たとえば次のように、読者の理解を
@@ -337,7 +337,7 @@ explicitly forbidden next actions:
 
 これは製品の状態ラベルを定義するものではありません。自分の引き渡しの主張が、実際に保存した証拠より強くならないようにするための用語です。
 
-## 移行タスク
+## 応用課題
 
 固定した出典を使う調査メモや静的ページのレビューにも、同じ方法を移してみます。言語練習では、AIの助けを受けた返答と、後で見慣れない内容を助けなしに思い出せるかを分けます。事実の主張、実行の主張、読者への効果の主張を一つずつ書き、それぞれに別の証拠を求めます。引用、差分、出力のどれか一つを意図的に外し、主張を狭めてから安全な次の確認を一つ選びます。
 
