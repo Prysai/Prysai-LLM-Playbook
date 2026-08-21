@@ -29,9 +29,9 @@ Cuatro palabras marcan sus límites:
 
 Una Skill no se convierte en modelo, herramienta, permiso, conector ni sustituto de la aprobación humana. Describe un método; el host y la autorización de la persona usuaria determinan qué acciones están disponibles y permitidas.
 
-## Problemas reales: un Skill puede fallar antes de que empiece su método
+## Un problema real: una Skill puede fallar antes de que empiece su método
 
-El fallo práctico suele ser una decisión ausente: el host no descubre la Skill, el disparador no encaja, falta una entrada, la licencia es incierta o la tarea pide un efecto más amplio que el autorizado. Por eso revisa el archivo, el descubrimiento, la selección, la carga, la acción y la salida por separado. Detente antes de presentar una candidata externa como capacidad propia.
+El fallo práctico suele ser una decisión ausente: el host no descubre la Skill, el activador no encaja, falta una entrada, la licencia es incierta o la tarea pide un efecto más amplio que el autorizado. Por eso revisa el archivo, el descubrimiento, la selección, la carga, la acción y la salida por separado. Detente antes de presentar una candidata externa como capacidad propia.
 
 > Una Skill es un paquete descubrible y reutilizable que asigna una clase de tarea acotada a acciones acotadas y evidencia comprobable.
 
@@ -119,9 +119,9 @@ Parada: falta el archivo, la base de resolución no está clara o hace falta una
 
 El acuerdo pertenece a esta ocasión. El Skill solo contiene el método reutilizable. Si se mezclan, el siguiente encargo hereda nombres de archivo, permisos y conclusiones que ya no corresponden.
 
-### Diseña activadores y reglas para ceder
+### Diseña activadores y reglas para dar paso
 
-Un activador no es una frase publicitaria. Debe permitir decidir si el método es dueño de esta tarea.
+Un activador no es una frase publicitaria. Debe permitir decidir si este método debe hacerse cargo de la tarea.
 
 | Elemento | Ejemplo para revisión de enlaces |
 |---|---|
@@ -197,9 +197,9 @@ El resultado solo describe el entorno registrado. No demuestra descubrimiento, s
 - Confundir descubrimiento con fiabilidad: verifica por separado metadatos, selección, carga, acciones y evidencia.
 - Ocultar desconocidos: «no se revisó la red» también es un resultado útil.
 
-## Registro de adopción: que el archivo exista no basta
+## Registro de incorporación: que el archivo exista no basta
 
-Antes de llevar una Skill a una tarea real, deja un registro de adopción. Evita
+Antes de llevar una Skill a una tarea real, deja un registro de incorporación. Evita
 confundir «veo una carpeta» con «puedo depender de ella» y dice a la siguiente
 persona en qué capa debe empezar la revisión:
 
@@ -207,7 +207,7 @@ persona en qué capa debe empezar la revisión:
 nombre y versión del Skill:
 brecha de la tarea: qué decisión concreta aporta, no «hacer mejor la IA»
 origen y licencia: original / fuente revisada; licencia y fecha de revisión
-host y superficie de esta prueba: producto, versión y ruta realmente usados
+host y superficie de esta prueba: producto, versión y ruta que realmente se usaron
 observado: archivo / descubrimiento / selección / carga / acción / salida
 no observado: cada capa que no se ejecutó, leyó de vuelta o revisó de forma independiente
 alcance permitido: lectura, escritura temporal, red, instalación y publicación por separado
