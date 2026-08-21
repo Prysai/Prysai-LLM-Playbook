@@ -2,15 +2,15 @@
 
 # Kapitel 6: Modellauswahl ist keine Modellverehrung
 
-**Status:** `candidate`. Das unten stehende Vergleichsprotokoll ist formuliert und quellenbegrenzt, aber dieses Repository hat seinen festen Aufgabensatz noch nicht ausgeführt. Modellleistung, Kosten, Latenz, Kapazität, Stabilität und die Gesamtrangfolge bleiben `not_run`.
+**Status:** `candidate`. Das folgende Vergleichsprotokoll ist formuliert und durch Quellen begrenzt, aber dieses Repository hat seinen festen Aufgabensatz noch nicht ausgeführt. Modellleistung, Kosten, Latenz, Kapazität, Stabilität und eine Gesamtrangfolge sind weiterhin `not_run`.
 
 ## Das Problem, das dieses Kapitel löst
 
-Modellauswahl wird oft durch einen Slogan ersetzt: „Nimm das beste Modell.“ Echte Arbeit braucht eine engere Frage:
+Modellauswahl wird oft durch einen Slogan ersetzt: „Nimm das beste Modell.“ Für echte Arbeit braucht es eine engere Frage:
 
-> Für diese Aufgabe, auf dieser Arbeitsfläche, bei diesem Provider, mit diesem Kontext, diesem Tool-Satz, dieser Berechtigungsgrenze, diesem Zeitbudget und dieser Abnahmerubrik: Welcher Kandidat erfüllt die Mindestanforderung – und gibt es genug Belege, um den Versuch auszuweiten?
+> Für diese Aufgabe, auf dieser Arbeitsfläche, unter diesem Provider, mit diesem Kontext, diesem Tool-Satz, dieser Berechtigungsgrenze, diesem Zeitbudget und diesen Abnahmekriterien: Welcher Kandidat erfüllt die Mindestanforderung – und gibt es genug Belege, um den Test auszuweiten?
 
-Ist ein Kandidat auf der gewählten Arbeitsfläche nicht verfügbar, oder verwenden zwei Läufe unterschiedliche Eingaben, Tools, Berechtigungen oder Reasoning-Einstellungen, gibt es keinen sauberen Modellvergleich. Eine schöne Demo kann zeigen, dass eine Konfiguration ein Ergebnis erzeugt hat. Sie kann keine universelle Rangfolge und keinen Gesamtnutzen belegen.
+Ist ein Kandidat auf der gewählten Arbeitsfläche nicht verfügbar, oder verwenden zwei Läufe unterschiedliche Eingaben, Tools, Berechtigungen oder Reasoning-Einstellungen, ist kein fairer Modellvergleich möglich. Eine schöne Demo kann zeigen, dass eine Konfiguration ein Ergebnis erzeugt hat. Sie kann weder eine universelle Rangfolge noch einen allgemeinen Nutzen belegen.
 
 ## Lernziele
 
@@ -19,18 +19,18 @@ Am Ende dieses Kapitels solltest du in der Lage sein:
 - die Aufgabe und die Arbeitsfläche zu wählen, bevor du ein Modell wählst;
 - die Verfügbarkeit des Modells im tatsächlichen Konto, Workspace, Provider und in der Sitzung zu prüfen, statt sie aus einem Katalog oder Picker abzuleiten;
 - Modell-ID, Provider, Reasoning-Aufwand, Kontext, Tools, Berechtigungen und Abnahmekriterien als getrennte Vergleichsvariablen zu behandeln;
-- einen risikoarmen Smoke-Vergleich mit drei Aufgaben durchzuführen, ohne Bedingungen zu ändern, um einen Kandidaten zu retten;
-- Kapazitäts-, Provider-Fehlzuordnungs- und Langzeit-Wartefehler als Belege zu sichern; und
+- einen risikoarmen Vergleich mit drei Aufgaben durchzuführen, ohne Bedingungen zu ändern, um einen Kandidaten zu retten;
+- Fehler durch Kapazitätsgrenzen, Provider-Fehlzuordnungen und lange Wartezeiten als Belege zu sichern; und
 - zu benennen, was das Experiment beweist, was es nicht beweist und wann man aufhört.
 
 ## Reale Probleme: Modellauswahl scheitert auf ganz gewöhnliche Weise
 
-Die [Codex-Feldrecherche](../evidence-library-DE.md#source-notes) des Projekts sammelt öffentliche GitHub Issues und andere öffentliche Diskussionen. Diese Berichte sind Symptome, keine offiziellen Diagnosen und keine lokalen Reproduktionen. Sie sind wertvoll, weil sie die Annahmen sichtbar machen, die Menschen treffen, wenn eine Modellauswahl schiefgeht.
+Die [Codex-Feldrecherche](../evidence-library-DE.md#source-notes) des Projekts sammelt öffentliche GitHub Issues und andere öffentliche Diskussionen. Diese Berichte beschreiben Symptome, keine offiziellen Diagnosen und keine lokalen Reproduktionen. Sie sind wertvoll, weil sie die Annahmen sichtbar machen, die Menschen treffen, wenn eine Modellauswahl schiefgeht.
 
 | Öffentliches Symptom | Was der Melder beobachtet hat | Was es **nicht** beweist | Erste sichere Reaktion |
 |---|---|---|---|
-| Ein Modell-Picker ändert `model`, behält aber einen benutzerdefinierten `model_provider` | Das sichtbare Modell und der wirksame Provider können ein ungültiges Paar bilden | Dass Picker, Provider oder Modell allgemein defekt sind | Wirksames `model` und `model_provider` zusammen lesen; vor der Korrektur einen geschwärzten Konfigurations-Diff sichern |
-| Das gewählte Modell ist ausgelastet | Eine Aufgabe stoppt vor einem vollständigen Ergebnis, und spätere Prompts können auf einen Teilzustand treffen | Dass das Modell schlecht ist oder dass ein erneuter Versuch bedeutet, der erste Lauf sei abgeschlossen | Checkpoint, Diff, Logs und Tests sichern; den Zustand einordnen, bevor du fortfährst |
+| Ein Modell-Picker ändert `model`, behält aber einen benutzerdefinierten `model_provider` | Das sichtbare Modell und der wirksame Provider können ein ungültiges Paar bilden | Dass Picker, Provider oder Modell allgemein defekt sind | Wirksames `model` und `model_provider` zusammen lesen; vor der Korrektur einen redigierten Konfigurations-Diff sichern |
+| Das gewählte Modell stößt an eine Kapazitätsgrenze | Eine Aufgabe stoppt vor einem vollständigen Ergebnis, und spätere Prompts können auf einen Teilzustand treffen | Dass das Modell schlecht ist oder dass ein erneuter Versuch bedeutet, der erste Lauf sei abgeschlossen | Checkpoint, Diff, Logs und Tests sichern; den Zustand einordnen, bevor du fortfährst |
 | Ein Windows-Befehl bleibt auf `Working` | Die UI zeigt Aktivität, aber es trifft keine überprüfbare Ausgabe ein | Dass Formatter, Agent oder Modell weiterhin sinnvolle Fortschritte machen | Die Timeout-/Stopp-Regel anwenden, sicher unterbrechen, den Worktree prüfen und nur einen begrenzten Check erneut ausführen |
 
 Die ursprünglichen Links, Daten, Versionen, Evidenzgrade und Unsicherheitshinweise stehen im [Datensatz zur Modellauswahl](../evidence-library-DE.md#source-notes). Das Projekt hat die Befehle oder Workarounds aus diesen Berichten nicht ausgeführt.
@@ -80,7 +80,7 @@ model_visible_evidence:
 harmless_request_evidence:
 ```
 
-`not_observed` ist ein gültiges Ergebnis. Es bedeutet, dass die Prüfung nicht durchgeführt wurde oder keine brauchbaren Belege hinterlassen hat. Es ist sicherer, als das Formular mit einer Vermutung zu füllen.
+`not_observed` ist ein gültiges Ergebnis. Es bedeutet, dass die Prüfung nicht durchgeführt wurde oder keine brauchbaren Belege hinterlassen hat. Das ist sicherer, als das Formular mit einer Vermutung zu füllen.
 
 ### Produktpositionierung ist eine Anfangshypothese
 
