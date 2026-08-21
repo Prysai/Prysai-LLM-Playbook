@@ -29,9 +29,9 @@ Die vier Begriffe setzen die Grenze:
 
 Ein Skill ist weder Modell, Werkzeug, Berechtigung, Connector noch Ersatz für menschliche Freigabe. Er beschreibt eine Methode; der Host und die Autorisierung der nutzenden Person bestimmen, welche Aktionen technisch möglich und erlaubt sind.
 
-## Praxisfälle: Ein Skill kann scheitern, bevor seine Methode beginnt
+## Ein Praxisproblem: Ein Skill kann scheitern, bevor seine Methode beginnt
 
-Der praktische Fehler ist oft eine fehlende Entscheidung: Der Host entdeckt den Skill nicht, ein Trigger passt nicht, die Eingabe fehlt, eine Lizenz ist unklar oder die Aufgabe fordert eine breitere Nebenwirkung als erlaubt. Deshalb prüfst du Datei, Discovery, Auswahl, Laden, Aktion und Ausgabe getrennt. Stoppe, bevor ein externer Kandidat als eigene Fähigkeit ausgegeben wird.
+Der praktische Fehler ist oft eine fehlende Entscheidung: Der Host entdeckt den Skill nicht, der Trigger passt nicht, eine Eingabe fehlt, die Lizenz ist unklar oder die Aufgabe verlangt eine weitergehende Nebenwirkung als erlaubt. Deshalb prüfst du Datei, Discovery, Auswahl, Laden, Aktion und Ausgabe getrennt. Stoppe, bevor du einen externen Kandidaten als eigene Fähigkeit ausgibst.
 
 > Ein Skill ist ein auffindbares, wiederverwendbares Methodenpaket, das eine abgegrenzte Aufgabenklasse auf begrenzte Aktionen und prüfbare Evidenz abbildet.
 
@@ -196,17 +196,17 @@ Diese Beobachtung gilt nur für die dokumentierte Umgebung. Sie beweist nicht di
 - Auffindbarkeit mit Zuverlässigkeit verwechseln: Metadaten, Auswahl, Laden, Aktionen und Evidenz getrennt prüfen.
 - Unbekanntes verstecken: „Remote-Link nicht geprüft“ ist ein wichtiges Ergebnis des Berichts.
 
-## Übernahmerecord: Eine Datei allein genügt nicht
+## Übernahmeeintrag: Eine Datei allein genügt nicht
 
 Bevor ein Skill in eine echte Aufgabe kommt, hinterlässt du einen
-Übernahmerecord. Er trennt „ich sehe einen Ordner“ von „ich darf mich darauf
+Übernahmeeintrag. Er trennt „ich sehe einen Ordner“ von „ich darf mich darauf
 verlassen“ und zeigt der nächsten Person, auf welcher Stufe das Review beginnt:
 
 ```text
 Skill-Name und Version:
 Aufgabenlücke: konkrete Entscheidung statt „die KI besser machen“
 Quelle und Lizenz: Original / geprüfte Quelle; Lizenz und Prüfdatum
-Host und Oberfläche dieses Versuchs: tatsächlich verwendetes Produkt, Version und Pfad
+Host und Arbeitsoberfläche dieses Versuchs: tatsächlich verwendetes Produkt, Version und Pfad
 beobachtet: Datei / Discovery / Auswahl / Laden / Aktion / Ausgabe
 nicht beobachtet: jede nicht ausgeführte, nicht zurückgelesene oder nicht unabhängig geprüfte Stufe
 erlaubter Umfang: Lesen, temporäres Schreiben, Netzwerk, Installation und Veröffentlichung getrennt
