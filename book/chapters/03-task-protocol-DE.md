@@ -1,6 +1,6 @@
 <!-- content_id: chapter-03-task-protocol | locale: DE | language: de | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-15 -->
 
-# Kapitel 3: Aus einem Wunsch ein Aufgabenprotokoll machen
+# Kapitel 3: Aus einem Wunsch ein Aufgabenprotokoll erstellen
 
 ![Lehrtafel: Von einer Anfrage über Umfang, Handlung und Prüfung zu einer begrenzten Übergabe](../../assets/teaching/task-to-evidence-red-black.svg)
 
@@ -50,7 +50,7 @@ verschiedene Behauptungen sind.
 
 Siehe die [offizielle Codex-Faktenbasis](../evidence-library-DE.md#source-notes)
 und die [Recherche zu Prompt-Mustern für echte Arbeit](../evidence-library-DE.md#source-notes)
-für Geltungsbereich und Zugriffstag pro Quelle.
+für Geltungsbereich und Abrufdatum jeder Quelle.
 
 <a id="core-task-contract"></a>
 
@@ -120,7 +120,7 @@ Absichten sein, sind aber keine ausreichenden Einschränkungen. Übersetze sie i
 beobachtbare Eigenschaften oder behaupte nicht, dass ein automatischer Check sie
 prüfen kann.
 
-### 5. Erlaubte Aktionen: Fähigkeit und Befugnis trennen
+### 5. Erlaubte Aktionen: Fähigkeit und Berechtigung trennen
 
 Dass ein Werkzeug verfügbar ist, erlaubt nicht jede Handlung, die es ausführen
 kann. Schreibe die Handlungsstufen ausdrücklich auf:
@@ -138,7 +138,7 @@ Ein Protokoll kann A0–A2 erlauben und A3 zur Bestätigung offenlassen. Es kann
 einen fokussierten Test erlauben, aber keine Installation. Nutze nie „tu, was
 nötig ist“, um eine Berechtigungsänderung zu verstecken.
 
-### 6. Abnahme: jede Behauptung einem Beleg zuordnen
+### 6. Abnahme: jede Behauptung einem Nachweis zuordnen
 
 Schreibe zuerst die Behauptung und dann das Material, das sie stützen würde:
 
@@ -169,7 +169,7 @@ einen Check und notiere, was der vorige Versuch bereits geändert hat. Prüfe vo
 einem langen oder extern sichtbaren Wiederholungsversuch Zustand und Diff, damit
 die erste Nebenwirkung nicht doppelt geschieht.
 
-### 8. Übergabe: einen verwendbaren Bericht hinterlassen
+### 8. Übergabe: einen brauchbaren Bericht hinterlassen
 
 Fordere einen Abschlussbericht mit erledigten Behauptungen und Belegen, geänderten
 Dateien, URLs, Befehlen oder Aufzeichnungen, absichtlich nicht ausgeführten
@@ -201,11 +201,11 @@ Risiko, müssen erlaubte Aktion und Stoppbedingung neu betrachtet werden.
 
 <a id="core-task-contract-end"></a>
 
-## Das kleinste nützliche Protokoll
+## Das kleinste brauchbare Protokoll
 
 <!-- starter-task-contract:start -->
 
-### Einen sicheren Start-Prompt kopieren
+### Einen sicheren Start-Prompt übernehmen
 
 Ersetze die Felder in Klammern und verlange eine erste Antwort, die nur
 beobachtet. Die Pause, in der du den Plan freigibst, verbindet eine
@@ -290,7 +290,7 @@ Damit ist ein Plan vor der Bearbeitung prüfbar, und es ist leichter zu erkennen
 in welcher Stufe eine schlechte Annahme entstand. Das ersetzt nicht die Prüfung
 des echten Ergebnisses.
 
-## Sechs Startprompts für eine evidenzbegrenzte Übungsschleife
+## Sechs Startprompts für eine durch Nachweise begrenzte Übungsschleife
 
 Das sind keine Zauberformeln und keine sechs aufeinanderfolgenden Lektionen.
 Sie lösen sechs Steuerungsprobleme: beobachtbarer Ausgangspunkt und Basislinie,
@@ -414,7 +414,7 @@ den [Fallbericht zu Coding-Agents](../evidence-library-DE.md#source-notes):
 Symptom und Umgebung erfassen, den kleinsten sicheren Check ausführen, an der
 Grenze stoppen und nur behaupten, was die Belege tragen.
 
-## Mehrere Agents: Übergabe ist ein weiteres Protokoll
+## Mehrere Agents: Auch die Übergabe braucht ein Protokoll
 
 Delegation entfernt nicht die Verantwortung des Haupt-Agents. Gib jeder
 Arbeitskraft eine getrennte Aufgabe und eine feste Antwortform:
