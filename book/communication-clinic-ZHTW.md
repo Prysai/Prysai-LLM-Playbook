@@ -8,6 +8,7 @@
 **請在完成 LLM 基礎核心課程後再使用：**[單元 1：LLM 基礎概念](guides/llm-fundamentals-ZHTW.md)
 → [單元 2：第一次有界限的請求](routes/universal-core-foundations-ZHTW.md)。
 這些卡片用於應用核心方法；它們不是解釋“大語言模型是什麼”的入門課。
+先讀[第 0 章](guides/llm-fundamentals-ZHTW.md)；這些卡片不是解釋“大語言模型是什麼”的入門課。
 如果你還沒有完成核心課程，請先從 [LLM 基礎核心課程](routes/universal-core-foundations-ZHTW.md) 開始。
 
 你現在處於繁體中文說明路徑：本頁所有說明、判斷和導航都使用繁體中文。頁面中的西班牙語只是**可選擇的外語練習目標**，不是頁面誤跳轉，也不表示你必須學習西班牙語。

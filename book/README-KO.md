@@ -7,7 +7,7 @@
 이 한국어 파일은 책의 한국어 핵심 입구입니다. 22개 장과 18개 Lab은 한국어 경로를 갖지만, 현재 번역 상태는 `in-progress`이며 독립 언어 감수와 학습자 실행 증거는 아직 없습니다.
 
 <!-- language-switcher:start -->
-**언어:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md)
+**언어:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md) | [Français](README-FR.md)
 <!-- language-switcher:end -->
 
 ## 먼저 교과서 주 학습 경로를 읽으세요

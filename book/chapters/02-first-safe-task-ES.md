@@ -401,7 +401,7 @@ Pregúntate qué punto de confirmación redujo más riesgo, qué probó el diff,
 siguió siendo desconocido tras interrumpir un check y qué campo añadirías a la
 tarjeta antes de repetirla.
 
-## Lista de comprobación
+## Lista de aceptación
 
 - [ ] Hay protocolo con objetivo, contexto, entradas, límites, acciones,
       aceptación, fallo y formato de entrega.

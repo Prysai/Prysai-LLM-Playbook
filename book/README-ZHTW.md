@@ -6,7 +6,7 @@
 > 繁體中文書稿入口（`ZHTW`）。入口、序言、目錄、22 章、18 項實驗、兩條新手路線和一組新手提示卡均已有繁體中文候選內容；獨立語言審校與學習者執行證據仍待完成。
 
 <!-- language-switcher:start -->
-**語言：** [English](README-EN.md) | [簡體中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md)
+**語言：** [English](README-EN.md) | [簡體中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md) | [Français](README-FR.md)
 <!-- language-switcher:end -->
 
 ## 先按教材主線閱讀

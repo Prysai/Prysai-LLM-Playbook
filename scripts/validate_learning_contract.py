@@ -69,36 +69,38 @@ CHAPTER_CONTRACT = {
         r"(?m)^##\s+(?:本章要解决的问题|本章要解決的問題|问题(?:：.*)?|問題(?:：.*)?|The problem this chapter solves|"
         r"Das Problem, das dieses Kapitel löst|Das Problem dieses Kapitels|"
         r"El problema que resuelve este capítulo|この章が解決する問題|本章要解決的問題|"
-        r"이 장에서 해결하는 문제|이 장이 해결하는 문제)\s*$",
+        r"이 장에서 해결하는 문제|이 장이 해결하는 문제|Le problème que résout ce chapitre|"
+        r"Problème de ce chapitre|Le problème)\s*$",
         re.IGNORECASE,
     ),
     "objective": re.compile(
         r"(?m)^##\s+(?:学习目标|學習目標|Learning objectives|Lernziele|Objetivos de aprendizaje|"
-        r"学習目標|학습 목표)\s*$",
+        r"学習目標|학습 목표|Objectifs d’apprentissage|Objectifs d'apprentissage)\s*$",
         re.IGNORECASE,
     ),
     "real_problem": re.compile(
         r"现实问题入口|現實問題入口|真实问题入口|真實問題入口|field cases?|real[- ]world (?:problem|cases?|entry point)|"
         r"现场案例|現場案例|真實問題入口|casos de campo|problemas reales|praxisfälle|reale Probleme|"
-        r"現場の事例|現実の問題|현장 사례|실제 문제",
+        r"現場の事例|現実の問題|현장 사례|실제 문제|cas réels|problèmes de terrain|"
+        r"entrée du problème réel",
         re.IGNORECASE,
     ),
     "experiment": re.compile(
-        r"(?:^##\s+.*(?:实验|實驗|experiment|experimento|実験|실험)|"
-        r"^###\s+.*(?:实验|實驗|experiment|experimento|実験|실험)|实验：|實驗：)",
+        r"(?:^##\s+.*(?:实验|實驗|experiment|experimento|実験|실험|expérience)|"
+        r"^###\s+.*(?:实验|實驗|experiment|experimento|実験|실험|expérience)|实验：|實驗：|expérience\s*:)",
         re.MULTILINE | re.IGNORECASE,
     ),
     "setup": re.compile(
-        r"(?:^###\s+(?:Setup|准备|前置|实验准备|Vorbereitung|Preparación|準備|준비)\s*$|"
-        r"^##\s+(?:实验准备|Preparation|Vorbereitung|Preparación|準備|준비)\s*$)",
+        r"(?:^###\s+(?:Setup|准备|前置|实验准备|Vorbereitung|Preparación|準備|준비|Préparation)\s*$|"
+        r"^##\s+(?:实验准备|Preparation|Vorbereitung|Preparación|準備|준비|Préparation)\s*$)",
         re.MULTILINE | re.IGNORECASE,
     ),
     "task": re.compile(
-        r"(?:^###\s+.*(?:Task|任务|任務|操作步骤|操作步驟|实验步骤|實驗步驟|Aufgabe|Tarea|タスク|작업).*$)",
+        r"(?:^###\s+.*(?:Task|任务|任務|操作步骤|操作步驟|实验步骤|實驗步驟|Aufgabe|Tarea|タスク|작업|Tâche|Étapes).*$)",
         re.MULTILINE | re.IGNORECASE,
     ),
     "evidence": re.compile(
-        r"(?:^###\s+.*(?:Evidence|证据|證據|记录|記錄|必须保存|必須保存|Belege?|Evidencia|証拠|증거).*$)",
+        r"(?:^###\s+.*(?:Evidence|证据|證據|记录|記錄|必须保存|必須保存|Belege?|Evidencia|証拠|증거|Preuve|Éléments à conserver).*$)",
         re.MULTILINE | re.IGNORECASE,
     ),
     "boundary": re.compile(
@@ -106,24 +108,24 @@ CHAPTER_CONTRACT = {
         r"Fehler|Grenze|Fallo|límite|失敗|境界|실패|경계)|"
         r"失败|边界|停止|风险|不适用|failure|boundary|stop|risk|limitation|"
         r"Fehler|Grenze|Stopp|Risiko|Fallo|límite|detener|失敗|境界|邊界|停止|風險|不適用|"
-        r"リスク|실패|경계|중단|위험)",
+        r"リスク|실패|경계|중단|위험|limite|arrêt)",
         re.MULTILINE | re.IGNORECASE,
     ),
     "reflection": re.compile(
         r"(?:^###\s+.*(?:Reflection|复盘|復盤|覆盤|反思|Reflexion|Reflexión|振り返り|"
-        r"회고|성찰).*$|复盘|復盤|覆盤|反思|reflection|reflexion|reflexión|振り返り|회고|성찰)",
+        r"회고|성찰|Réflexion).*$|复盘|復盤|覆盤|反思|reflection|reflexion|reflexión|振り返り|회고|성찰|réflexion)",
         re.MULTILINE | re.IGNORECASE,
     ),
     "transfer": re.compile(
         r"(?m)^(?:##|###)\s+(?:迁移|遷移|迁移练习|遷移練習|遷移任務|Transfer|Transfer task|"
         r"Transfer exercise|Transferaufgabe|Tarea de transferencia|"
-        r"Transferencia|Übertragung|迁移任务|移行|移行タスク|전환|전이 과제)\s*$",
+        r"Transferencia|Übertragung|迁移任务|移行|移行タスク|전환|전이 과제|Transfert|Exercice de transfert)\s*$",
         re.IGNORECASE,
     ),
     "acceptance": re.compile(
         r"^##\s+.*(?:本章验收|本章驗收|我真的学会了吗|我真的學會了嗎|验收清单|驗收清單|Acceptance checklist|"
         r"Abnahme-Checkliste|Abnahmecheckliste|Lista de aceptación|"
-        r"受け入れチェックリスト|合格チェックリスト|수용 체크리스트|합격 체크리스트).*$",
+        r"受け入れチェックリスト|合格チェックリスト|수용 체크리스트|합격 체크리스트|Liste de contrôle d’acceptation|Liste de contrôle d'acceptation|Liste d’acceptation).*$",
         re.MULTILINE | re.IGNORECASE,
     ),
     "sources": re.compile(
@@ -137,7 +139,7 @@ CHAPTER_CONTRACT = {
 
 UNRUN_STATUS_RE = re.compile(
     r"(?:\bnot\s+run\b|\bnot\s+executed\b|nicht\s+ausgeführt|"
-    r"no\s+ejecutado|未実行|未运行|미실행|실행하지\s+않음)",
+    r"no\s+ejecutado|non\s+exécuté|未実行|未运行|미실행|실행하지\s+않음)",
     re.IGNORECASE,
 )
 
@@ -292,26 +294,26 @@ def validate_labs(errors: list[str], labs: list[Path] | None = None) -> None:
             # evidence guidance.  Keep a body-section requirement above, then
             # accept either a localized cue or the validated contract field.
             "task": lambda candidate: bool(
-                re.search(r"任务|输入|task|tarea|aufgabe|実験|실험|experiment", candidate, re.IGNORECASE)
+                re.search(r"任务|输入|task|tarea|aufgabe|実験|실험|experiment|tâche|entrée", candidate, re.IGNORECASE)
                 or value_is_nonempty(values.get("task"))
             ),
             "evidence": lambda candidate: bool(
-                re.search(r"证据|记录|evidence|beleg|evidencia|証拠|증거", candidate, re.IGNORECASE)
+                re.search(r"证据|记录|evidence|beleg|evidencia|証拠|증거|preuve|conserver", candidate, re.IGNORECASE)
                 or evidence_block
                 or evidence_flow
             ),
             "failure_variant": re.compile(
                 r"失败|边界|故意|failure|boundary|intentional|fehler|grenze|"
-                r"fallo|límite|intencional|失敗|境界|意図|실패|경계|의도",
+                r"fallo|límite|intencional|失敗|境界|意図|실패|경계|의도|échec|limite|arrêt",
                 re.IGNORECASE,
             ).search,
             "reflection": lambda candidate: bool(re.compile(
                 r"复盘|反思|思考|总结|reflection|reflexion|reflexión|summary|"
-                r"zusammenfassung|resumen|要約|振り返り|회고|성찰|요약|まとめ",
+                r"zusammenfassung|resumen|要約|振り返り|회고|성찰|요약|まとめ|réflexion|bilan",
                 re.IGNORECASE,
             ).search(candidate) or value_is_nonempty(values.get("reflection"))),
             "acceptance": lambda candidate: bool(re.compile(
-                r"通过标准|验收标准|acceptance|abnahme|aceptación|受け入れ|수용",
+                r"通过标准|验收标准|acceptance|abnahme|aceptación|受け入れ|수용|acceptation|critères",
                 re.IGNORECASE,
             ).search(candidate) or re.search(r"(?m)^\s*- \[ \]", candidate)),
         }.items():

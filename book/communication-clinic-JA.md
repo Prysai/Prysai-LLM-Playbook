@@ -10,6 +10,7 @@
 **LLM 基礎コアを終えてから使います：**[ユニット 1：LLM の概念](guides/llm-fundamentals-JA.md)
 → [ユニット 2：最初の範囲付きリクエスト](routes/universal-core-foundations-JA.md)。
 このカードはコアの方法を応用するもので、LLM とは何かを説明する入門ではありません。
+先に[第0章](guides/llm-fundamentals-JA.md)を読み、このカードを応用練習として使ってください。LLMとは何かを説明する入門ではありません。
 まだコアを終えていない場合は、[LLM 基礎コア](routes/universal-core-foundations-JA.md)から始めてください。
 
 ここは日本語で説明する学習ルートです。このページの説明、判断、リンクは日本語です。カードに出てくるスペイン語は任意の語学練習の目標であり、誤った言語への移動でも必須科目でもありません。

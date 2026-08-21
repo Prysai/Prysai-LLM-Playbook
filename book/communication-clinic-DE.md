@@ -11,6 +11,8 @@ Für eine kurze Übung in klaren Schritten öffne den [Arbeitsupdate-Ablauf](wor
 → [Einheit 2 — die erste begrenzte Anfrage](routes/universal-core-foundations-DE.md).
 Die Karten wenden die Kernmethode an; sie führen nicht in die Frage ein, was
 ein LLM ist. Wenn du den Core noch nicht durchlaufen hast, beginne mit Einheit 1.
+Lies zuerst [Kapitel 0](guides/llm-fundamentals-DE.md); diese Karten wenden die
+Kernmethode an, sie führen nicht in die Frage ein, was ein LLM ist.
 
 Du befindest dich auf dem deutsch erklärten Lernpfad: Erklärungen, Entscheidungen und Links auf dieser Seite sind auf Deutsch. Das Spanische in den Karten ist ein optionales Ziel für eine Sprachübung, kein versehentlicher Sprachwechsel und keine Pflicht.
 

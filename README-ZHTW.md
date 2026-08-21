@@ -7,7 +7,7 @@
 > 繁體中文專案入口（`ZHTW`）。預設公開語言目標是 English（`EN`）；本檔案是當前繁體中文入口遷移的一部分。
 
 <!-- language-switcher:start -->
-**語言：** [English](README-EN.md) | [簡體中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md)
+**語言：** [English](README-EN.md) | [簡體中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md) | [Français](README-FR.md)
 <!-- language-switcher:end -->
 
 ## 按教材順序開始：先理解，再動手

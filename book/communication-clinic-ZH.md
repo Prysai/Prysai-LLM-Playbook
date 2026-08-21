@@ -7,6 +7,7 @@
 **请在完成 LLM 基础核心课程后再使用：**[单元 1：LLM 基础概念](guides/llm-fundamentals-ZH.md)
 → [单元 2：第一次有边界的请求](routes/universal-core-foundations-ZH.md)。
 这些卡片用于应用核心方法；它们不是解释“大语言模型是什么”的入门课。
+请在[第 0 章](guides/llm-fundamentals-ZH.md)之后使用；它们不是解释“大语言模型是什么”的入门课。
 如果你还没有完成核心课程，请先从[LLM 基础核心课程](routes/universal-core-foundations-ZH.md)开始。
 
 你现在处于中文说明路径：本页所有说明、判断和导航都使用中文。页面中的西班牙语只是**可选择的外语练习目标**，不是页面误跳转，也不表示你必须学习西班牙语。
