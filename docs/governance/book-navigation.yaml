@@ -529,8 +529,8 @@
       "english_path": "book/chapters/17-marketing-track-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "行銷軌：從產品理解到增長實驗",
-      "canonical_title_zh-tw": "行銷軌——從產品理解到增長實驗"
+      "title_zh-tw": "行銷軌：從產品理解到成長實驗",
+      "canonical_title_zh-tw": "行銷軌——從產品理解到成長實驗"
     },
     {
       "id": "chapter-18",
@@ -573,8 +573,8 @@
       "english_path": "book/chapters/19-evaluate-models-and-workflows-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "評估模型和工作流程",
-      "canonical_title_zh-tw": "評估模型和工作流程——從感覺到證據"
+      "title_zh-tw": "評估模型與工作流",
+      "canonical_title_zh-tw": "評估模型與工作流——從印象走向證據"
     },
     {
       "id": "chapter-20",
@@ -595,8 +595,8 @@
       "english_path": "book/chapters/20-personal-codex-work-system-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "建立個人 Codex 工作系統",
-      "canonical_title_zh-tw": "建立個人 Codex 工作系統"
+      "title_zh-tw": "構建個人 Codex 工作系統",
+      "canonical_title_zh-tw": "構建個人 Codex 工作系統"
     },
     {
       "id": "chapter-21",
@@ -617,8 +617,8 @@
       "english_path": "book/chapters/21-team-capability-system-EN.md",
       "english_status": "source",
       "status": "candidate",
-      "title_zh-tw": "建立團隊能力系統",
-      "canonical_title_zh-tw": "建立團隊能力系統"
+      "title_zh-tw": "構建團隊能力系統",
+      "canonical_title_zh-tw": "構建團隊能力系統"
     },
     {
       "id": "chapter-22",
