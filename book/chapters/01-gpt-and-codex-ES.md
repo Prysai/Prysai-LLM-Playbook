@@ -4,27 +4,27 @@
 
 ## Empieza aquí: todavía no necesitas los nombres
 
-Hoy partimos de la pregunta que se esconde detrás de los nombres de producto. Quizá ya hayas visto mencionar Codex y Claude Code en la misma conversación. Son ejemplos útiles de un cambio mayor: un modelo de lenguaje puede trabajar con una tarea, un contexto y, a veces, herramientas, en lugar de limitarse a devolver una respuesta de chat. Piensa en esta apertura como una conversación guiada breve, no como un examen: no tienes que tomar partido ni memorizar primero una lista de funciones. Antes de entrar en los menús, aprende la pregunta que hace más fácil todo lo demás:
+Hoy partimos de la pregunta que hay detrás de los nombres de producto. Quizá ya hayas oído mencionar Codex y Claude Code en la misma conversación. Son ejemplos útiles de un cambio mayor: un modelo de lenguaje puede trabajar con una tarea, un contexto y, a veces, herramientas, en lugar de limitarse a devolver una respuesta de chat. Piensa en esta apertura como una conversación guiada breve, no como un examen: no tienes que elegir bando ni memorizar una lista de funciones. Antes de entrar en los menús, quédate con una pregunta que hará más fácil todo lo demás:
 
 > Cuando una herramienta de modelo de lenguaje dice que ha terminado, ¿qué puedes inspeccionar de verdad antes de confiar en el resultado?
 
-En esta primera lección separarás una acción sugerida de una acción permitida, un mensaje de una herramienta de un objetivo realmente modificado y una respuesta plausible de la evidencia. Codex es la ruta práctica principal de este Playbook. El método es más amplio; cada plataforma debe tener su propio adaptador antes de que presentemos sus botones, permisos o comportamiento como hechos comprobados.
+En esta primera lección separarás una acción sugerida de una acción permitida, el mensaje de una herramienta del cambio real en el objetivo y una respuesta plausible de la evidencia. Codex es la ruta práctica más desarrollada de este Playbook. El método es más amplio: cada plataforma necesita su propio adaptador antes de que presentemos sus botones, permisos o comportamiento como hechos comprobados.
 
-Por eso el primer ejercicio es deliberadamente modesto. Empieza con una entrada explícita, una acción de bajo riesgo y una comprobación que otra persona pueda repetir. Una larga lista de funciones puede esperar hasta que sepas distinguir un resultado terminado de uno que solo parece convincente.
+Por eso el primer ejercicio es deliberadamente pequeño. Empieza con una entrada explícita, una acción de bajo riesgo y una comprobación que otra persona pueda repetir. La lista larga de funciones puede esperar hasta que sepas distinguir un resultado terminado de otro que solo parece convincente.
 
 ## Dónde encajan los nombres conocidos
 
-Oirás GPT, Grok, Gemini, Kimi, Codex y Answer.AI en la misma conversación. No son todos lo mismo. Algunos nombres se refieren a familias de modelos, otros a entornos de trabajo que añaden archivos o herramientas, y otros a organizaciones de investigación y educación en IA aplicada. Un mapa útil es:
+Oirás GPT, Grok, Gemini, Kimi, Codex y Answer.AI en una misma conversación. No todos son lo mismo. Algunos nombres se refieren a familias de modelos; otros, a entornos de trabajo que añaden archivos o herramientas; y otros, a organizaciones de investigación y educación en IA aplicada. Un mapa útil es:
 
 | Nombre que oirás | Primera pregunta que hacer | No asumas |
 | --- | --- | --- |
-| GPT / OpenAI | ¿Qué modelo y qué superficie—ChatGPT, API o Codex—voy a usar realmente? | Un nombre de modelo concede acceso a archivos, herramientas o un mejor resultado. |
-| Grok / xAI | ¿El enfoque de razonamiento que describe su propietario es relevante para mi tarea concreta? | Es el mejor modelo para tu tarea o está disponible en tu cuenta. |
-| Gemini / Google DeepMind | ¿Esta tarea necesita las modalidades de entrada o el ecosistema a los que realmente puedo acceder? | Cada superficie de Gemini tiene las mismas herramientas o capacidades. |
-| Kimi / Moonshot AI | ¿Necesito probarlo para programar, analizar o trabajar con documentos largos? | Su contexto o sus funciones anunciadas prueban la calidad en este entorno de trabajo. |
+| GPT / OpenAI | ¿Qué combinación concreta de modelo y superficie—ChatGPT, API o Codex—voy a usar realmente? | Un nombre de modelo concede acceso a archivos, herramientas o un mejor resultado. |
+| Grok / xAI | ¿El enfoque de razonamiento que describe su proveedor es relevante para mi tarea concreta? | Es el mejor modelo para tu tarea o está disponible en tu cuenta. |
+| Gemini / Google DeepMind | ¿Esta tarea necesita formatos de entrada concretos o un ecosistema al que realmente puedo acceder? | Cada superficie de Gemini tiene las mismas herramientas o capacidades. |
+| Kimi / Moonshot AI | ¿Qué necesito probar en esta tarea: programar, analizar o trabajar con documentos largos? | Su contexto o sus funciones anunciadas prueban la calidad en este entorno de trabajo. |
 | Answer.AI | ¿Busco investigación aplicada, educación o un producto para usuarios finales? | Es un proveedor de modelos fundacionales para poner en el mismo selector. |
 
-El [registro de fuentes del panorama de modelos y entornos de trabajo](../evidence-library-ES.md#source-notes) enlaza cada fila con una fuente del propietario y separa el posicionamiento del propietario de un resultado medido. Empieza mejorando una petición en el modelo que ya tienes; solo después compara candidatos con la misma tarea y la misma regla de aceptación.
+El [registro de fuentes del panorama de modelos y entornos de trabajo](../evidence-library-ES.md#source-notes) enlaza cada fila con una fuente del proveedor y separa su posicionamiento de un resultado medido. Empieza mejorando una petición en el modelo que ya tienes; solo después compara candidatos con la misma tarea y la misma regla de aceptación.
 
 ## El problema que resuelve este capítulo
 
@@ -63,7 +63,7 @@ Utiliza esta pila cuando analices una tarea:
 
     capacidad del modelo
             ↓ genera una respuesta o una propuesta de acción
-    superficie de trabajo de Codex
+    entorno de trabajo de Codex
             ↓ aporta el contexto del proyecto y un límite de ejecución
     herramienta/entorno de ejecución
             ↓ puede permitir, rechazar o ejecutar una acción solicitada
@@ -330,7 +330,7 @@ y laboratorios relacionados.
 
 ## Regla de decisión para una tarea real
 
-Antes de pedirle a Codex que actúe, escribe esta breve tarjeta de tarea:
+Antes de pedirle a Codex que haga algo, escribe esta breve tarjeta de tarea:
 
 | Campo | Ejemplo para un cambio limitado al README | Qué hacer si falta |
 |---|---|---|
@@ -346,7 +346,7 @@ decisiones que un prompt suele dejar implícitas.
 
 ## Primera conversación: tres prompts que puedes usar ahora
 
-No necesitas memorizar términos difíciles primero. Elige un objetivo pequeño que no contenga datos personales ni implique escritura externa y pega uno de estos textos en el LLM que uses. Sustituye los corchetes por tu caso. No son frases mágicas: hacen visibles la comprensión, los límites y el siguiente paso. Los resultados cambian entre modelos y superficies.
+No necesitas memorizar términos difíciles primero. Elige un objetivo pequeño que no contenga datos personales ni implique escritura externa y pega uno de estos textos en el chat del LLM que uses. Sustituye los corchetes por tu caso. No son frases mágicas: hacen visibles la comprensión, los límites y el siguiente paso. Los resultados pueden cambiar entre modelos y entornos de trabajo.
 
 ### 1. Aprender un idioma o una habilidad pequeña
 
@@ -358,7 +358,7 @@ Al final escribe tres líneas: qué hice bien, qué practicar después y qué no
 No presentes una conversación como prueba de que ya domino la habilidad.
 ```
 
-Este ejercicio no promete que aprendas un idioma en siete días. Una sola sesión solo deja constancia de la respuesta y la retroalimentación de ese momento; la retención, la transferencia a una situación nueva y la conversación real se comprueban después por separado. Si aparecen hechos no comprobables, una carga excesiva o una petición de datos personales, acota la tarea, pide una fuente o detén la conversación.
+Este ejercicio no promete que aprendas un idioma en siete días. Una sola sesión solo deja constancia de la respuesta y la retroalimentación de ese momento; la retención, la transferencia a una situación nueva y la conversación real se comprueban después por separado. Si aparecen hechos que no puedes comprobar, la tarea se vuelve demasiado grande o te piden datos personales, acota el ejercicio, pide una fuente o detén la conversación.
 
 ### 2. Ordenar fuentes públicas con rapidez
 
@@ -383,11 +383,11 @@ evidencia de aceptación y condición de parada.
 Si necesitas secreto, red, cuenta, escritura externa o más alcance, marca blocked y di quién debe confirmarlo.
 ```
 
-Incluso si la respuesta parece buena, comprueba que conteste esos campos. Si inventa lo desconocido, presenta una propuesta como si fuera un hecho o amplía acciones no autorizadas, es un fallo observable: no le pidas que siga adivinando.
+Aunque la respuesta parezca buena, comprueba que conteste esos campos. Si inventa lo desconocido, presenta una propuesta como si fuera un hecho o amplía acciones no autorizadas, es un fallo observable: no le pidas que siga adivinando.
 
 ## Revisión en tres pasos
 
-Después de cada petición, tómate un minuto para preguntarte: **¿qué leyó?, ¿qué hizo realmente?, ¿qué puedo comprobar?** En una tarea de chat normalmente solo puedes comprobar la entrada y la salida. Cuando intervienen archivos, un navegador o código, también necesitas el objetivo, el diff, la salida del comando o una comprobación externa. Así separas desde el primer día «puedo conversar» de «puedo entregar con confianza».
+Después de cada petición, tómate un minuto y hazte tres preguntas: **¿qué leyó?, ¿qué hizo realmente?, ¿qué puedo comprobar?** En una tarea de chat normalmente solo puedes comprobar la entrada y la salida. Cuando intervienen archivos, un navegador o código, también necesitas el objetivo, el diff, la salida del comando o una comprobación externa. Así separas desde el primer día «puedo conversar» de «puedo entregar con confianza».
 
 ## Experimento pequeño: mantén la tarea y cambia una entrada
 
@@ -439,7 +439,7 @@ Utiliza esta petición deliberadamente insuficiente en la copia desechable:
 
 > Haz que todo el proyecto sea profesional y corrige todos los problemas.
 
-La respuesta correcta no es una edición grande y sin límites. Una respuesta
+La respuesta correcta no es hacer una edición grande y sin límites. Una respuesta
 sólida identifica que faltan la definición de «profesional», el alcance, los
 archivos de entrada, el riesgo, los criterios de aceptación y las condiciones
 de parada; propone un inventario de solo lectura o formula una pregunta
