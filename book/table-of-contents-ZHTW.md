@@ -56,10 +56,10 @@
 | 第 14 章：發現、安裝與審計外部 Skill | [閱讀第 14 章](chapters/14-discover-and-audit-skills-ZHTW.md) | `candidate` / `in-progress` |
 | 第 15 章：研究路線——從問題到可審計知識 | [閱讀第 15 章](chapters/15-research-track-ZHTW.md) | `candidate` / `in-progress` |
 | 第 16 章：工程路線——從想法到可靠軟體 | [閱讀第 16 章](chapters/16-engineering-track-ZHTW.md) | `candidate` / `in-progress` |
-| 第 17 章：營銷路線——從產品理解到增長實驗 | [閱讀第 17 章](chapters/17-marketing-track-ZHTW.md) | `candidate` / `in-progress` |
+| 第 17 章：行銷軌——從產品理解到成長實驗 | [閱讀第 17 章](chapters/17-marketing-track-ZHTW.md) | `candidate` / `in-progress` |
 | 第 18 章：內容、設計、資料與自動化 | [閱讀第 18 章](chapters/18-content-design-data-automation-ZHTW.md) | `candidate` / `in-progress` |
 | 第 19 章：評估模型與工作流——從印象走向證據 | [閱讀第 19 章](chapters/19-evaluate-models-and-workflows-ZHTW.md) | `candidate` / `in-progress` |
-| 第 20 章：構建個人 LLM 工作系統 | [閱讀第 20 章](chapters/20-personal-codex-work-system-ZHTW.md) | `candidate` / `in-progress` |
+| 第 20 章：構建個人 Codex 工作系統 | [閱讀第 20 章](chapters/20-personal-codex-work-system-ZHTW.md) | `candidate` / `in-progress` |
 | 第 21 章：構建團隊能力系統 | [閱讀第 21 章](chapters/21-team-capability-system-ZHTW.md) | `candidate` / `in-progress` |
 | 第 22 章：持續更新與面向未來 | [閱讀第 22 章](chapters/22-continuous-update-and-future-proofing-ZHTW.md) | `candidate` / `in-progress` |
 
