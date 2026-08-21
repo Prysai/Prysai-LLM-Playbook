@@ -1,12 +1,12 @@
 <!-- content_id: universal-core-foundations-route | locale: DE | language: de | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-15 -->
 
-# Universelle LLM-Zusammenarbeit: eine sichere erste Aufgabe und vier Grundlagen
+# Mit LLMs arbeiten: eine sichere erste Aufgabe und vier Grundlagen
 
 **Status:** `candidate`. **Ausführungsstatus:** `not_run`.
 
-Beginne hier, wenn du einen gewöhnlichen Textchat nutzen möchtest und noch keine produktspezifische Einrichtung brauchst. Den ersten Versuch unten kannst du machen, ohne ChatGPT, Claude, Grok, Gemini, Codex oder ein anderes Produkt gleichzusetzen. Diese Route vermittelt nur eine kleine gemeinsame Entscheidungsgrundlage: eine klare Aufgabe, begrenztes Material, eine sichtbare Prüfung und ein Stoppkriterium. Sie behauptet nicht, dass Plattformen Werkzeuge, Berechtigungen, Erinnerungen, Konten, Preise oder das Verhalten von Agents teilen.
+Beginne hier, wenn du einen gewöhnlichen Textchat nutzen möchtest und noch keine produktspezifische Einrichtung brauchst. Den ersten Versuch unten kannst du machen, ohne ChatGPT, Claude, Grok, Gemini, Codex oder ein anderes Produkt gleichzusetzen. Diese Route vermittelt nur vier Grundentscheidungen, die sich auf viele Plattformen übertragen lassen: eine klare Aufgabe, begrenztes Material, eine sichtbare Prüfung und ein Stoppkriterium. Sie behauptet nicht, dass Plattformen Werkzeuge, Berechtigungen, Erinnerungen, Konten, Preise oder das Verhalten von Agents teilen.
 
-## Führe jetzt eine sichere erste Aufgabe aus
+## Probiere jetzt eine sichere erste Aufgabe aus
 
 Verwende nur die fiktive Mitteilung unten. Füge keine privaten Nachrichten, Kundenmaterialien, Zugangsdaten, unveröffentlichte Arbeit oder echten Dateien ein. Bei diesem Versuch nutzt du weder Websuche noch Tools und lädst nichts hoch, änderst kein Konto und sendest oder veröffentlichst nichts.
 
