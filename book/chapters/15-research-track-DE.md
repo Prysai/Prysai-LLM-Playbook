@@ -1,14 +1,14 @@
 <!-- content_id: chapter-15-research-track | locale: DE | language: de | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
-# Kapitel 15: Forschungspfad, von der Frage zu prüfbarem Wissen
+# Kapitel 15: Forschungspfad – von der Frage zu überprüfbarem Wissen
 
-**Status:** `candidate`. **Experimentstatus:** `draft / not_run`. Dieses Kapitel lehrt Forschungsdisziplin; öffentliche Fälle sind Lehrmaterial, keine lokale Reproduktion oder offizielle Ursachenfeststellung.
+**Status:** `candidate`. **Experimentstatus:** `draft / not_run`. Dieses Kapitel vermittelt Forschungsdisziplin; die öffentlichen Fälle sind Lehrmaterial, keine lokale Reproduktion und keine offizielle Ursachenbestätigung.
 
 ## Das Problem dieses Kapitels
 
 „Bitte recherchiere das“ kann Fakten finden, Optionen vergleichen, Literatur prüfen, eine Forschungsfrage bilden, einen Bericht schreiben oder einen Entwurf prüfen heißen. Ohne vorherige Eingrenzung kann ein Agent Suchausschnitte als Schlussfolgerung ausgeben, eine unzugängliche URL als gelesen behandeln oder eine Anweisung in einem externen Dokument befolgen.
 
-> Die Fähigkeit ist nicht eine längere Literaturübersicht. Sie ist eine Kette, in der jede wichtige Behauptung zu einer Frage, Quelle, Fundstelle, Evidenzstufe und menschlichen Prüfung zurückverfolgt werden kann.
+> Es geht nicht um eine längere Literaturübersicht. Es geht um eine Kette, in der sich jede wichtige Behauptung zu einer Frage, einer Quelle, einer Fundstelle, einer Evidenzstufe und einer menschlichen Prüfung zurückverfolgen lässt.
 
 ## Lernziele
 
@@ -18,7 +18,7 @@ Du formulierst eine enge Forschungsfrage, protokollierst zugängliche Quellen un
 
 Bei der Auswahl eines Modells, einer Lernmethode oder eines Tools kann eine flüssige Zusammenfassung Links, Versionen und Berichte vermischen. Die praktische Entscheidung ist nicht, welche Antwort überzeugender klingt, sondern welche Behauptung für die erklärte Aufgabe, Zeit und Umgebung belegt ist.
 
-## Das Thema in eine beantwortbare Frage verwandeln
+## Aus einem Thema eine beantwortbare Frage machen
 
 Bestimme Objekt, Vergleich oder Beziehung, Umfang, Zeit, Publikum und Ausgabezweck. „Login-Probleme recherchieren“ genügt nicht. Eine gute Frage definiert außerdem Einschluss und Ausschluss, priorisierte Quellen, Stoppzeitpunkt und Form des Ergebnisses: Faktentabelle, Vergleich, Entscheidungsnotiz oder zitierter Entwurf.
 
@@ -26,7 +26,7 @@ Suche Symptome vor Ursachen. Baue Query-Gruppen für Symptom, Grenze und Umgebun
 
 Stoppe, wenn wichtige Behauptungen einen Evidenzpfad haben, mindestens eine Gegenquery gelaufen ist, zwei verschiedene Suchrunden keine neue Umgebung oder kein Gegenbeispiel liefern, der Cutoff erreicht ist, der Umfang keine Verallgemeinerung erlaubt oder eine Quelle Geheimnisse, breitere Rechte oder unbekannte Scripts verlangt.
 
-## Eine Kette von Forschungsartefakten bauen
+## Eine nachvollziehbare Kette von Forschungsunterlagen aufbauen
 
 ```text
 Absicht → Frage → Quellenplan → Abruf und Lesen
@@ -41,7 +41,7 @@ Absicht → Frage → Quellenplan → Abruf und Lesen
 | Synthese | Konflikte, Unbekanntes, Stärke | Ein Bericht wird nicht zur Universalregel |
 | Übergabe | Entwurf, Zitate, Review, Version | Andere können nachprüfen |
 
-Eine Evidenzzeile enthält atomare Behauptung, Original- und finale URL, Autor oder Organisation, Veröffentlichungs-, Zugriffs- und Cutoff-Datum, Version, Plattform, Umfang, Fundstelle, Quellentyp, Evidenzbeziehung, Beobachtung und Hypothese, Konflikt, Zitatprüfung, Ton, Reviewer und nächste Aktion.
+Jede Evidenzzeile enthält eine atomare Behauptung, die ursprüngliche und die endgültige URL, Autor oder Organisation, Veröffentlichungs-, Zugriffs- und Cutoff-Datum, Version, Plattform, Umfang, Fundstelle, Quellentyp, die Beziehung zur Behauptung, Beobachtung und Hypothese, Konflikt, Zitatprüfung, Ton, Reviewer und nächste Aktion.
 
 ## Unzugängliche Quellen, Konflikte und Foren
 
@@ -49,9 +49,9 @@ Suchtreffer, `200` oder Redirect beweisen kein Lesen. Bewahre Original-URL, Stat
 
 Wenn offizielle Quellen abweichen, vergleiche Objekt, Zeit, Version, Work Surface, Konto, Region und Definition. Bleibt der Konflikt, behalte beide Seiten, schränke den Text ein und bleibe bei `candidate`. In Foren trennst du „Autor beobachtete“, „Antwort schlug vor“, „jemand vermutete“ und „Maintainer bestätigte“. Viele Stimmen, Schließen oder akzeptierte Antwort ersetzen keine Bestätigung oder Reproduktion.
 
-Auch eine glänzende KI-Zitation ist keine Evidenz. Öffne die Quelle und prüfe Fundstelle, Titel, Datum, Version und Umfang. Stützt sie nur einen Teil des Satzes, trenne ihn; ist eine Schlüsselzitation nicht auffindbar, markiere `citation_unverified` und schwäche oder entferne die Behauptung.
+Auch ein glatt formulierter KI-Quellenbeleg ist noch keine Evidenz. Öffne die Quelle und prüfe Fundstelle, Titel, Datum, Version und Umfang. Stützt sie nur einen Teil des Satzes, trenne ihn; ist ein wichtiger Beleg nicht auffindbar, markiere `citation_unverified` und schwäche oder entferne die Behauptung.
 
-## Übung und Grenze
+## Übung und Grenzen
 
 Beginne mit einem breiten Thema und bereite eine offizielle Quelle, einen Feldbericht mit URL und Datum sowie einen unzugänglichen oder widersprüchlichen Eintrag vor. Formuliere zuerst nur drei Kandidatenfragen, wähle eine und lege Umfang, Cutoff, Zeitzone und Stoppsignale fest. Entwirf Symptom-, Grenz- und Umgebungsqueries, Quellenplan, Evidenztabelle, Access Log, Conflict Log und Citation Audit. Lade keine Logs, Cookies, Tokens oder Kontakte hoch.
 
