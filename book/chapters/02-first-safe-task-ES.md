@@ -87,7 +87,7 @@ La transición importante es la misma: primero lee y comprueba; después edita
 en una superficie limitada. Si falta un dato, una autorización o una prueba,
 mantén la tarea en modo de lectura.
 
-## Qué puede y qué no puede decir una señal de producto
+## Qué puede decir una señal del producto y qué no
 
 La [línea base oficial del Capítulo 2](../evidence-library-ES.md#source-notes)
 registra las fuentes de producto y Git consultadas. La regla estable importa más
@@ -108,7 +108,7 @@ política de aprobación; Git distingue `status`, `diff`, `restore` y `revert`.
 Son límites respaldados por fuentes, no pruebas del comportamiento en tu cuenta
 ni de lo que ocurrió en este repositorio durante una ejecución concreta.
 
-## El protocolo de primera tarea
+## El protocolo para la primera tarea
 
 Usa esta tarjeta y reemplaza los ejemplos por hechos del entorno aislado:
 
@@ -147,7 +147,7 @@ Parada: si hacen falta más archivos, cuenta, red, escritura externa o hechos no
 
 Para practicar español u otra habilidad, cambia «archivo nombrado» por cinco a diez frases escritas por ti. El modelo puede ofrecer práctica, comentarios y sugerencias, pero no declarar que dominas la habilidad. Para ordenar materiales, cambia la entrada por extractos de fuentes autorizadas; no puede convertir contenido web no aportado ni conjeturas en hechos. El objeto y la evidencia cambian según el ámbito; el orden —limitar el alcance y comprobar el resultado— no.
 
-### Qué pedir en la primera vuelta
+### Qué pedir en el primer intercambio
 
 Haz que repita el límite antes de editar:
 
@@ -188,7 +188,7 @@ comprobación de aceptación y su alcance, estado externo cambiado y elementos
 «completado», «validado», «instalado», «publicado» y «verificado en vivo» no son
 sinónimos.
 
-## Casos de campo: dónde fallan los supuestos casuales
+## Casos de campo: dónde se rompen las suposiciones apresuradas
 
 Estos son resúmenes originales y acotados de informes públicos en el
 [estudio de problemas del Capítulo 2](../evidence-library-ES.md#source-notes).
@@ -310,7 +310,7 @@ No instales dependencias, sustituyas entornos, cambies a acceso total, uses
 credenciales o borres estado automáticamente solo porque la verificación falló.
 Un fallo no concede permisos.
 
-### Tarjeta de decisión de recuperación
+### Tarjeta para decidir cómo recuperarse
 
 | Señal | Primera acción | Lo que todavía no puedes afirmar |
 | --- | --- | --- |
@@ -321,7 +321,7 @@ Un fallo no concede permisos.
 | Falta checker o dependencia | Registra herramienta no disponible y pide una decisión | Que un check no ejecutado pasó |
 | Resumen de éxito sin evidencia | Haz la inspección específica más pequeña | Que se cumplió el objetivo |
 
-## Evidencia: tres capas son el mínimo
+## Evidencia: tres capas como mínimo
 
 Conserva al menos tres capas distintas:
 
@@ -401,7 +401,7 @@ Pregúntate qué punto de confirmación redujo más riesgo, qué probó el diff,
 siguió siendo desconocido tras interrumpir un check y qué campo añadirías a la
 tarjeta antes de repetirla.
 
-## Lista de aceptación
+## Lista de comprobación
 
 - [ ] Hay protocolo con objetivo, contexto, entradas, límites, acciones,
       aceptación, fallo y formato de entrega.
