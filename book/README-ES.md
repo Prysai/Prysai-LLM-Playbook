@@ -1,3 +1,5 @@
+<!-- content_id: book-readme | locale: ES | language: es | default_locale: EN | content_status: candidate | translation_status: in-progress | reader_runtime_status: not_run | translated_from: EN | source_revision: worktree-2026-08-15 -->
+
 # Prysai LLM Playbook: manuscrito del libro
 
 <!-- language-switcher:start -->
