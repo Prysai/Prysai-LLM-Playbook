@@ -1,3 +1,5 @@
+<!-- content_id: book-preface | locale: ES | language: es | default_locale: EN | content_status: candidate | translation_status: in-progress | reader_runtime_status: not_run | translated_from: EN | source_revision: dd08a68 -->
+
 # Prefacio: esto no es una colección de prompts
 
 Cuando muchas personas conocen GPT por primera vez, la pregunta más natural
