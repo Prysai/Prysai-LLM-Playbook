@@ -3,29 +3,29 @@
 # Capítulo 5: Elige la superficie de trabajo adecuada de Codex
 
 **Estado:** `candidate`. Este capítulo propone un método de decisión estructurado
-y límites de producto respaldados por fuentes, pero aún no ha superado una
-prueba previa con aprendices independientes. No permite inferir capacidad de
-cuenta, una ejecución en Cloud ni una comparación de modelos.
+y límites de producto respaldados por fuentes, pero todavía no ha pasado una
+prueba previa con aprendices independientes. No permite inferir las capacidades
+de una cuenta, una ejecución en Cloud ni una comparación de modelos.
 
 ## El problema que resuelve este capítulo
 
-Un mismo objetivo puede empezar en la app de escritorio, la CLI, una extensión
-del IDE o un flujo web. Puede ejecutarse localmente, en un worktree de Git o en
-un entorno Cloud. Son decisiones distintas.
+Un mismo objetivo puede empezar en una aplicación de escritorio, la CLI, una
+extensión del IDE o un flujo web. Puede ejecutarse en local, en un worktree de
+Git o en un entorno Cloud. Son decisiones distintas.
 
 Es fácil comprimir varios pasos en una sola frase:
 
 ~~~
 «El inicio de sesión del navegador funcionó, el modelo aparece en el selector y
-la preparación terminó; por tanto, la tarea está lista.»
+la preparación terminó; por tanto, ya podemos empezar la tarea.»
 ~~~
 
-Esa frase puede ser falsa de varias maneras independientes. Quizá no se puede
+Esa frase puede ser falsa por varios motivos independientes. Quizá no se puede
 leer el repositorio objetivo; quizá el modelo no está disponible en esa
 superficie; quizá falta la terminal, el navegador, el conector o la herramienta
-de archivos. Un script de preparación de Cloud puede tener red cuando la fase
-posterior del Agent no la tiene. Una etiqueta de worktree puede estar visible
-mientras la consola o el IDE siguen apuntando a otra copia.
+de archivos. Un script de preparación de Cloud puede tener acceso a la red,
+mientras la fase posterior del Agent no lo tiene. Puede verse la etiqueta de
+worktree y, aun así, la consola o el IDE pueden apuntar a otra copia.
 
 Usa este orden, que es más útil:
 
@@ -38,7 +38,7 @@ elige la superficie de trabajo
 → revisa evidencia antes de entregar
 ~~~
 
-Una *superficie* es el lugar donde se ejecuta el trabajo y donde terminan sus
+Una *superficie* es el lugar donde se ejecuta el trabajo y donde quedan sus
 cambios. Un *punto de entrada* es la forma de iniciar y revisar ese trabajo.
 CLI, IDE, escritorio y web no son otros nombres de Local, Worktree y Cloud.
 
@@ -46,14 +46,14 @@ CLI, IDE, escritorio y web no son otros nombres de Local, Worktree y Cloud.
 
 Al terminar podrás:
 
-- elegir entre `Local`, `Worktree` y `Cloud` según contexto, límite de datos,
+- elegir entre `Local`, `Worktree` y `Cloud` según el contexto, el límite de datos,
   efectos secundarios, evidencia y recuperación;
 - distinguir una superficie de trabajo de un punto de entrada de escritorio,
   CLI, IDE o web;
-- comprobar acceso al recurso objetivo, disponibilidad de modelo y de
-  herramientas como afirmaciones separadas;
-- registrar por separado la evidencia de `setup` y de `agent` en Cloud,
-  incluida la red y la vida de los secretos;
+- comprobar por separado el acceso al recurso objetivo, la disponibilidad del
+  modelo y la disponibilidad de las herramientas;
+- registrar por separado las evidencias de `setup` y `agent` en Cloud, incluida
+  la fase de red y la duración de los secretos;
 - producir un `surface-decision.md` que conserve opciones rechazadas y no
   observadas, no solo la opción elegida; y
 - detenerte de forma segura cuando la siguiente prueba exija más autoridad de
@@ -64,14 +64,14 @@ Al terminar podrás:
 La investigación de campo del proyecto reúne informes públicos de GitHub
 Issues, Stack Exchange y otros debates. Son informes de síntomas, no
 reproducciones locales, causas oficiales ni soluciones garantizadas. Sirven
-para detectar qué afirmaciones suelen confundirse.
+para detectar qué afirmaciones se suelen confundir.
 
 | Categoría del informe público | Lo que se observó | Lo que **no** demuestra | Primera comprobación segura |
 |---|---|---|---|
-| OAuth termina, pero falla el intercambio del token | Se completa la autorización en el navegador, pero el cliente no acaba el intercambio | Que la sesión CLI, el host objetivo o el repositorio sean utilizables | Registra autorización, callback, intercambio y primera lectura inocua como cuatro etapas |
-| Un proveedor personalizado solo expone una herramienta | La configuración se acepta, pero faltan shell, archivos o navegador | Que el modelo o proveedor pueda hacer la acción ausente | Guarda el inventario real; prueba por separado registro e invocación |
+| OAuth termina, pero falla el intercambio del token | Se completa la autorización en el navegador, pero el cliente no logra terminar el intercambio | Que la sesión CLI, el host objetivo o el repositorio sean utilizables | Registra autorización, callback, intercambio y primera lectura inocua como cuatro etapas |
+| Un proveedor personalizado solo expone una herramienta | La configuración se acepta, pero faltan shell, archivos o navegador | Que el modelo o el proveedor puedan realizar la acción ausente | Guarda el inventario real; prueba por separado el registro y la invocación |
 | Worktree y copia no coinciden | La interfaz dice Worktree, pero `cwd`, raíz del IDE, destino del parche y metadatos Git difieren | Que el proceso que edita esté aislado | Lee ruta absoluta, forma de `.git`, raíz del espacio y `git status`; no escribas si discrepan |
-| Cloud prepara dependencias, pero la tarea no usa secreto o red | Se instala una dependencia o aparece una marca de setup, luego el Agent no llega al servicio | Que red y secretos de setup y Agent sean la misma capacidad | Registra por separado logs de setup y Agent, fase de red, vida del secreto y diff |
+| Cloud prepara dependencias, pero la tarea no puede usar un secreto o la red | Se instala una dependencia o aparece una marca de setup, pero después el Agent no llega al servicio | Que la red y los secretos de setup y Agent sean la misma capacidad | Registra por separado los logs de setup y Agent, la fase de red, la duración del secreto y el diff |
 | Un allowlist bloquea GitHub u otro host | La petición falla bajo proxy, sandbox o política empresarial | Que abrir toda la red sea correcto o esté aprobado | Separa hipótesis de sandbox, allowlist, DNS/TLS y firewall antes de pedir un cambio acotado |
 
 Consulta el [índice de problemas de campo](../evidence-library-ES.md#source-notes),
@@ -187,7 +187,7 @@ No concedas red ni escritura remota solo porque simplifica un diagnóstico.
 ¿Otra persona puede inspeccionar el material que corresponde a la afirmación?
 Por ejemplo: eco de ruta, lectura de objetivo, inventario de herramientas,
 salida de comando, diff, prueba, log de Cloud o aprobación humana. Una
-superficie que permite actuar, pero no deja evidencia revisable, es mala opción
+superficie que permite actuar, pero no deja evidencia revisable, es una mala opción
 para una tarea de alto riesgo.
 
 ### Puerta 5: recuperación
@@ -212,7 +212,7 @@ La tabla propone candidatas, no permisos automáticos. Una tarea puede quedar
 
 ## 4. Escribe la tarjeta de decisión antes de actuar
 
-Para una tarea que supere la explicación de solo lectura, crea
+Para una tarea que vaya más allá de una explicación de solo lectura, crea
 `surface-decision.md`. Conserva las tarjetas rechazadas: explican por qué no se
 eligió una opción plausible.
 
@@ -257,15 +257,15 @@ reviewer:
 ~~~
 
 Usa `not_observed` cuando la tarea no se ejecutó o no se recogió evidencia. No
-rellenes una ausencia con `yes` o `no` solo para completar el formulario.
+conviertas la falta de observación en `yes` o `no` solo para completar el formulario.
 
 ## 5. Cloud tiene fase de setup y fase de Agent
 
-La documentación oficial de Cloud trata setup y ejecución del Agent como
+La documentación oficial de Cloud trata setup y la ejecución del Agent como
 partes distintas del ciclo. Setup puede instalar dependencias con acceso a red.
-Después, la fase Agent suele estar desconectada salvo configuración contraria.
-Los secretos del entorno pueden estar disponibles en setup y eliminarse antes
-del Agent.
+Después, la fase Agent suele estar desconectada, salvo que la configuración indique
+lo contrario. Los secretos del entorno pueden estar disponibles durante setup y
+eliminarse antes de la fase Agent.
 
 Registra por separado:
 
@@ -277,16 +277,16 @@ secret_lifetime
 result_review
 ~~~
 
-«El script de setup instaló el paquete» solo es evidencia de setup. No prueba
+«El script de setup instaló el paquete» solo es evidencia de setup. No demuestra
 que el Agent pueda llegar al servicio del paquete. «El secreto aparece en la
-configuración» no prueba que el runtime de tarea pueda leerlo. Detén las
-llamadas externas hasta demostrar fase actual y ruta de datos.
+configuración» no demuestra que el runtime de tarea pueda leerlo. Pausa las
+llamadas externas hasta demostrar la fase actual y la ruta de los datos.
 
 ## 6. Experimento observable pequeño: la misma tarea, tres tarjetas
 
 **Estado del experimento:** `not_run`. El protocolo siguiente es un diseño de
-ejercicio, no un registro de que este repositorio haya usado Local, Worktree o
-Cloud.
+ejercicio, no un registro de que este repositorio haya ejecutado la tarea en
+Local, Worktree o Cloud.
 
 ### Preparación
 
@@ -324,16 +324,16 @@ setup_status | agent_status | network_phase | secret_lifetime
 decision | diff_path | check_output | reviewer
 ~~~
 
-Un registro que pasa muestra más que un archivo cambiado. Muestra por qué se
+Un registro que pasa muestra más que un archivo cambiado: muestra por qué se
 eligió una superficie, por qué se rechazó otra y qué evidencia apoya la
 afirmación final. Si no se ejecutó Cloud, su tarjeta debe decir `not_observed`.
 
 ### Evidencia que conservar
 
-Conserva tarjetas, rutas absolutas, resultado de lectura, inventario, modelo
-visible, estados de fase, diff, salida y registro de revisión. Mantén las
-observaciones ausentes como `not_observed`, no las completes desde una etiqueta
-de interfaz.
+Conserva las tarjetas, las rutas absolutas, el resultado de la lectura, el
+inventario, el modelo visible, los estados de fase, el diff, la salida y el
+registro de revisión. Mantén las observaciones ausentes como `not_observed`; no
+las completes a partir de una etiqueta de interfaz.
 
 ## 7. Patrones de fallo y degradaciones seguras
 
