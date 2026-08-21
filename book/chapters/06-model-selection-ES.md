@@ -3,14 +3,15 @@
 # Capítulo 6: Elegir un modelo no es venerar un modelo
 
 **Estado:** `candidate`. El protocolo de comparación que sigue está escrito y
-delimitado por fuentes, pero este repositorio no ha ejecutado su conjunto fijo
-de tareas. El rendimiento, el coste, la latencia, la capacidad, la estabilidad
-y la clasificación general de los modelos siguen en `not_run`.
+acotado por sus fuentes, pero este repositorio aún no ha ejecutado su conjunto
+fijo de tareas. El rendimiento, el coste, la latencia, la capacidad, la
+estabilidad y cualquier clasificación general de los modelos siguen en
+`not_run`.
 
 ## El problema que resuelve este capítulo
 
 La elección de modelo suele sustituirse por un eslogan: «Usa el mejor modelo».
-El trabajo real necesita una pregunta más acotada:
+Para trabajar de verdad hace falta una pregunta más concreta:
 
 > Para esta tarea, en esta superficie, con este proveedor, contexto, conjunto de
 > herramientas, límite de permisos, presupuesto de tiempo y rúbrica de
@@ -19,9 +20,9 @@ El trabajo real necesita una pregunta más acotada:
 
 Si un candidato no está disponible en la superficie elegida, o si dos ejecuciones
 usan entradas, herramientas, permisos o ajustes de razonamiento distintos, no
-existe una comparación limpia de modelos. Una demostración atractiva puede
-mostrar que una configuración produjo un resultado. No puede establecer una
-clasificación universal ni un valor global.
+hay una comparación justa entre modelos. Una demostración atractiva puede
+mostrar que una configuración produjo un resultado, pero no puede establecer
+una clasificación universal ni un valor global.
 
 ## Objetivos de aprendizaje
 
@@ -34,7 +35,7 @@ Al terminar este capítulo, deberías ser capaz de:
 - separar el ID del modelo, el proveedor, el esfuerzo de razonamiento, el
   contexto, las herramientas, los permisos y los criterios de aceptación como
   variables de comparación distintas;
-- ejecutar una comparación de humo de bajo riesgo con tres tareas sin cambiar las
+- ejecutar una comparación breve y de bajo riesgo con tres tareas, sin cambiar las
   condiciones para rescatar a un candidato;
 - conservar los fallos de capacidad, de desajuste de proveedor y de espera
   prolongada como evidencia; y
@@ -51,13 +52,13 @@ modelo sale mal.
 | Síntoma público | Qué observó quien informó | Qué **no** demuestra | Primera respuesta segura |
 |---|---|---|---|
 | Un selector de modelos cambia `model` pero deja un `model_provider` personalizado | El modelo visible y el proveedor efectivo pueden formar un par inválido | Que el selector, el proveedor o el modelo estén rotos universalmente | Lee `model` y `model_provider` efectivos juntos; conserva un diff de configuración redactado antes de corregirlo |
-| El modelo seleccionado está a capacidad | Una tarea se detiene antes de un resultado completo, y los prompts posteriores pueden encontrarse con un estado parcial | Que el modelo sea de baja calidad, o que reintentar signifique que el primer intento terminó | Guarda el checkpoint, el diff, los logs y las pruebas; clasifica el estado antes de continuar |
+| El modelo seleccionado ha alcanzado su límite de capacidad | Una tarea se detiene antes de un resultado completo, y los prompts posteriores pueden encontrarse con un estado parcial | Que el modelo sea de baja calidad, o que reintentar signifique que el primer intento terminó | Guarda el checkpoint, el diff, los logs y las pruebas; clasifica el estado antes de continuar |
 | Un comando de Windows sigue en `Working` | La interfaz muestra actividad pero no llega ninguna salida verificable | Que el formateador, el Agent o el modelo sigan haciendo progreso útil | Aplica la regla de tiempo de espera, interrumpe con seguridad, inspecciona el worktree y vuelve a ejecutar solo una comprobación acotada |
 
 Los enlaces originales, las fechas, las versiones, los niveles de evidencia y
 las notas de incertidumbre están en el
 [registro de investigación sobre selección de modelos](../evidence-library-ES.md#source-notes).
-El proyecto no ejecutó los comandos ni los workarounds de esos informes.
+El proyecto no ejecutó los comandos ni las soluciones alternativas de esos informes.
 
 ### Cómo usar un informe real sin convertirlo en folklore
 
@@ -67,20 +68,20 @@ Para cada síntoma, mantén cuatro etiquetas separadas:
    con nombre.
 2. **Informe independiente:** si otra persona describe un síntoma parecido.
 3. **Confirmación oficial:** una respuesta de mantenimiento, documentación
-   oficial, nota de versión u otra evidencia de primera parte.
+   oficial, nota de versión u otra evidencia de primera mano.
 4. **Evidencia del Playbook:** lo que este proyecto reprodujo de verdad.
 
 En los tres ejemplos anteriores pueden estar presentes las dos primeras
-etiquetas, pero este proyecto no tiene reproducción local ni confirmación
-oficial de causa raíz que las eleve a una solución garantizada. Eso cambia la
-acción: conservar la evidencia y acotar la siguiente comprobación en lugar de
-prometer un ajuste mágico.
+etiquetas, pero este proyecto no tiene una reproducción local ni una confirmación
+oficial de la causa raíz que permita convertirlas en una solución garantizada.
+Por eso la acción cambia: conserva la evidencia y acota la siguiente
+comprobación, en lugar de prometer un ajuste mágico.
 
 ## 1. La elección de modelo es una decisión de configuración
 
 ### La disponibilidad viene antes que la calidad
 
-Usa dos compuertas separadas:
+Usa dos comprobaciones separadas:
 
 ```text
 documentación oficial del producto
@@ -130,7 +131,7 @@ Codex describe las opciones recomendadas de GPT-5.6 más o menos así:
 | Terra: caballo de batalla pragmático para el día a día | Pruébalo para el trabajo ordinario que necesita razonamiento sólido y uso de herramientas | Si supera tu umbral de aceptación bajo tus restricciones reales |
 | Luna: trabajo claro, repetible y de alto volumen | Pruébalo para extracción, clasificación, transformación y resúmenes estructurados | Si su resultado sigue siendo aceptable una vez incluidos los costes de contexto, proveedor, esfuerzo y revisión |
 
-Estas son descripciones de producto, no resultados de benchmark del Playbook.
+Estas son descripciones del producto, no resultados de benchmark del Playbook.
 La página oficial también advierte de que un mayor esfuerzo de razonamiento
 puede mejorar el trabajo complejo a costa de tardar más y usar más tokens.
 Empieza con el esfuerzo más bajo que cumpla la rúbrica de aceptación y súbelo
@@ -159,14 +160,14 @@ contrato.
 
 La documentación oficial describe una ruta compartida de `config.toml` para los
 valores por defecto del escritorio local, la CLI y el IDE, mientras que los
-chats de Cloud tienen un límite de modelo por defecto distinto. Un archivo de
-configuración es solo evidencia de configuración. Lee de vuelta el proveedor y
-el modelo efectivos y, después, haz una petición inocua antes de tratar la
+chats de Cloud tienen un límite de modelo predeterminado distinto. Un archivo de
+configuración solo demuestra cómo está configurado algo. Vuelve a leer el
+proveedor y el modelo efectivos y haz una petición inocua antes de tratar la
 tupla como activa.
 
 ## 2. Decide en el orden correcto
 
-No empieces con un modelo favorito. Usa esta secuencia:
+No empieces por un modelo favorito. Usa esta secuencia:
 
 ```text
 define la tarea y el riesgo
