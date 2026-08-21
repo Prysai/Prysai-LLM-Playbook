@@ -1,6 +1,6 @@
 <!-- content_id: chapter-03-task-protocol | locale: DE | language: de | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-15 -->
 
-# Kapitel 3: Einen Wunsch in ein Aufgabenprotokoll verwandeln
+# Kapitel 3: Aus einem Wunsch ein Aufgabenprotokoll machen
 
 ![Lehrtafel: Von einer Anfrage über Umfang, Handlung und Prüfung zu einer begrenzten Übergabe](../../assets/teaching/task-to-evidence-red-black.svg)
 
@@ -205,11 +205,12 @@ Risiko, müssen erlaubte Aktion und Stoppbedingung neu betrachtet werden.
 
 <!-- starter-task-contract:start -->
 
-### Einen sicheren Startprompt kopieren
+### Einen sicheren Start-Prompt kopieren
 
 Ersetze die Felder in Klammern und verlange eine erste Antwort, die nur
-beobachtet. Die Freigabepause verbindet eine Anfängerfrage mit einem prüfbaren
-Arbeitsablauf; entferne sie nicht nur, um den Prompt kürzer zu machen.
+beobachtet. Die Pause, in der du den Plan freigibst, verbindet eine
+Anfängerfrage mit einem prüfbaren Arbeitsablauf; streiche sie nicht nur, um den
+Prompt kürzer zu machen.
 
 ```text
 Hilf mir, eine kleine, rückgängig zu machende Aufgabe zu erledigen.
@@ -370,7 +371,7 @@ und unveränderte Bewertungskriterien, dann warte auf meinen Versuch. Notiere ec
 Berichte nur, was in dieser verzögerten Aufgabe geschah; leite keine dauerhafte Behaltung, breiten Transfer, Flüssigkeit oder Beherrschung ab.
 ```
 
-Ein gespeicherter Wiederholungshinweis ist ein Plan. Behaltung bleibt `not_run`,
+Ein gespeicherter Hinweis für die nächste Wiederholung ist ein Plan. Behaltung bleibt `not_run`,
 bis verzögerter Versuch und Bedingungen tatsächlich aufgezeichnet sind.
 
 ### Separater Check: eine Behauptung über die Methode recherchieren
