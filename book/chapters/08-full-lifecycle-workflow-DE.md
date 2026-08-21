@@ -6,21 +6,21 @@
 
 ## Das Problem dieses Kapitels
 
-Ein Modell anfangen zu lassen ist nicht dasselbe wie nutzbare Arbeit zu Ende zu bringen. Ein Ziel kann vage sein, der Umfang wachsen oder ein Check das falsche Ziel prüfen, während die Oberfläche gesund aussieht.
+Ein Modell zu starten ist nicht dasselbe wie nutzbare Arbeit zu Ende zu bringen. Ein Ziel kann vage sein, der Umfang wachsen oder ein Check das falsche Ziel prüfen, während die Oberfläche scheinbar problemlos funktioniert.
 
 ```text
 define → plan → build → verify → review → deliver → maintain
 ```
 
-Jeder Übergang verlangt eine Entscheidung. Eine Phase endet nicht, weil ein Agent „fertig“ sagt, sondern weil andere ihren Beleg prüfen können.
+Jeder Übergang verlangt eine Entscheidung. Eine Phase endet nicht deshalb, weil ein Agent „fertig“ meldet, sondern erst, wenn andere den zugehörigen Beleg prüfen können.
 
 ## Lernziele
 
-Nach diesem Kapitel kannst du einen kleinen LLM-unterstützten Auftrag als überprüfbare Kette von `define` bis `maintain` beschreiben, einen Checkpoint vor einem Retry sichern und eine Übergabe schreiben, die Handlung, Beleg und Unbekanntes nicht vermischt. Du wirst nicht beweisen, dass ein Modell allgemein zuverlässig ist; der Versuch bleibt auf seine Eingabe, Umgebung und Rubrik begrenzt.
+Nach diesem Kapitel kannst du einen kleinen LLM-unterstützten Auftrag als überprüfbare Kette von `define` bis `maintain` beschreiben. Du kannst vor einem erneuten Versuch einen Checkpoint sichern und eine Übergabe schreiben, die Handlung, Beleg und Unbekanntes auseinanderhält. Du wirst damit nicht beweisen, dass ein Modell allgemein zuverlässig ist; der Versuch bleibt auf seine Eingabe, Umgebung und Bewertungsregel begrenzt.
 
-## Praxisfälle: Wenn der Workflow zwischen sichtbaren Erfolgen bricht
+## Praxisnahe Fälle: Wenn der Workflow zwischen sichtbaren Erfolgen bricht
 
-Ein Login, eine sichtbare Modellliste oder ein gestarteter Check kann als Fortschritt erscheinen, obwohl der nächste notwendige Zustand fehlt. Die öffentlichen Symptome in den folgenden Wiederherstellungsmustern sind keine Diagnosen des Produkts und keine lokale Reproduktion. Sie dienen dazu, die erste sichere Beobachtung zu wählen: Pfad und Diff nach einer Unterbrechung, Client-Austausch nach einem Browser-Login oder explizite Zustimmung vor einer dauerhaften Umgebungsänderung.
+Ein Login, eine sichtbare Modellliste oder ein gestarteter Check kann wie Fortschritt aussehen, obwohl der nächste notwendige Zustand fehlt. Die öffentlichen Symptome in den folgenden Wiederherstellungsmustern sind weder Produktdiagnosen noch lokale Reproduktionen. Sie helfen dir nur, die erste sichere Beobachtung auszuwählen: Pfad und Diff nach einer Unterbrechung, den Token-Austausch nach einem Browser-Login oder eine ausdrückliche Zustimmung vor einer dauerhaften Änderung der Umgebung.
 
 ## Phasen mit Belegen
 
@@ -60,7 +60,7 @@ stop_when: Umfang, Autorität, Ziel oder Wiederherstellungsquelle fehlt
 rollback: aufgezeichnete Vorversion oder sauberer Checkpoint
 ```
 
-Nutze statt eines horizontalen Plans einen vertikalen Schnitt: `eine Eingabe → kleinste Änderung → beobachtbare Aktion → fokussierter Check`. Netzwerk, Authentifizierung, Installation, Neustart, Deployment oder externe Nachricht benötigen einen ausdrücklichen Auftrag.
+Nutze statt eines horizontalen Plans einen vertikalen Slice: `eine Eingabe → kleinste Änderung → beobachtbare Aktion → fokussierter Check`. Ein Slice läuft einmal durch die ganze Kette und bleibt dabei klein. Netzwerk, Authentifizierung, Installation, Neustart, Deployment oder eine externe Nachricht benötigen einen ausdrücklichen Auftrag.
 
 ## Wiederherstellungsmuster bei echten Unterbrechungen
 
@@ -68,25 +68,25 @@ Nutze statt eines horizontalen Plans einen vertikalen Schnitt: `eine Eingabe →
 offizielle Ursachenanalyse noch eine lokale Reproduktion. Nutze sie, um den ersten sicheren
 Check zu wählen, nicht um Vorgänge innerhalb des Produkts zu erraten.
 
-### Unterbrechung durch capacity oder availability
+### Unterbrechung durch Kapazität oder Verfügbarkeit
 
-**Beobachtetes Symptom:** Das gewählte Model ist nicht mehr verfügbar und die Aufgabe stoppt.
+**Beobachtetes Symptom:** Das gewählte Modell ist nicht mehr verfügbar und der Auftrag stoppt.
 
-**Erste sichere Reaktion:** Halte Folgeprompts an, die von dieser Aufgabe abhängen, sichere
-Diff, Ausgabe und den letzten akzeptierten Checkpoint und prüfe, ob das Zielartefakt teilweise
-geändert wurde. Wähle erst dann einen einzigen begrenzten Retry, eine erlaubte andere Surface
-oder eine Übergabe.
+**Erste sichere Reaktion:** Halte Folgeprompts an, die von diesem Auftrag abhängen. Sichere
+Diff, Ausgabe und den letzten akzeptierten Checkpoint und prüfe, ob sich das Zielartefakt
+teilweise geändert hat. Wähle erst danach einen einzigen begrenzten Retry, einen anderen
+zulässigen Einstieg oder eine Übergabe.
 
-**Nicht behaupten:** dass eine Warteschlangenaufgabe fertig wurde, das Model die einzige Ursache
-war oder wiederholtes „Weiter“ fehlende Evidenz wiederhergestellt hat.
+**Nicht behaupten:** dass ein Auftrag in der Warteschlange fertig wurde, das Modell die einzige
+Ursache war oder wiederholtes „Weiter“ fehlende Evidenz ersetzt.
 
 ### Ein Check bleibt in `Working`
 
 **Beobachtetes Symptom:** Formatter, Test oder Analyse liefert kein Abschluss-Signal.
 
-**Erste sichere Reaktion:** Wende die vereinbarte Warte- und Unterbrechungsregel an; bewahre
+**Erste sichere Reaktion:** Wende die vereinbarte Warte- und Unterbrechungsregel an. Bewahre
 Befehl, Verzeichnis, Dauer, Ausgabe und Prozesszustand auf. Prüfe den Diff und klassifiziere
-erst dann als vollständig, teilweise, fehlgeschlagen oder unbekannt.
+den Zustand erst dann als vollständig, teilweise, fehlgeschlagen oder unbekannt.
 
 **Nicht behaupten:** dass Stille ein Pass ist oder dass kein sichtbarer Fehler beweist, dass ein
 Unterprozess beendet wurde.
@@ -94,10 +94,10 @@ Unterprozess beendet wurde.
 ### Browser-Login gelingt, der Client scheitert danach
 
 **Beobachtetes Symptom:** Der Browser zeigt einen erfolgreichen Login, doch der Client scheitert
-beim Token-Austausch oder bei der ersten Anfrage.
+beim Token-Austausch oder bei seiner ersten Anfrage.
 
-**Erste sichere Reaktion:** Notiere Autorisierungsseite, Callback, Client-Austausch und erste
-erfolgreiche Anfrage getrennt. Prüfe nur den nächsten fehlenden Zustand.
+**Erste sichere Reaktion:** Notiere die Autorisierungsseite, den Callback, den Token-Austausch
+und die erste erfolgreiche Anfrage getrennt. Prüfe nur den nächsten fehlenden Zustand.
 
 **Nicht behaupten:** dass Browser-Erfolg Client-Authentifizierung, Account-Berechtigung,
 Connector-Freigabe oder Tool-Verfügbarkeit beweist.
@@ -108,9 +108,9 @@ Connector-Freigabe oder Tool-Verfügbarkeit beweist.
 Umgebungsänderung vor, damit ein Check besteht.
 
 **Erste sichere Reaktion:** Stoppe und benenne die vorgeschlagene Nebenwirkung, ihr Ziel,
-das auslösende Artefakt und die verfügbare Wiederherstellung. Trenne lokalen Edit, Test,
-Installation, Neustart, Deployment und Live-Verifikation; verlange vor einer dauerhaften
-Änderung eine neue Entscheidung.
+das auslösende Artefakt und den verfügbaren Rückweg. Trenne lokale Bearbeitung, Test,
+Installation, Neustart, Deployment und Live-Prüfung. Verlange vor einer dauerhaften Änderung
+eine neue Entscheidung.
 
 **Nicht behaupten:** dass „stell sicher, dass es funktioniert“ Installation, Netzwerkschreiben
 oder Veröffentlichung autorisiert.
@@ -128,15 +128,20 @@ Check: Vorher-/Nachher-Text speichern und einmal prüfen: „Findet die Person d
 Übergabe: was sich änderte, was nicht, Checkergebnis und was unbekannt bleibt.
 ```
 
-Durchlaufe die sieben Phasen: Leserschaft und Ergebnis definieren; eine Änderung planen; Ausgangstext als Checkpoint speichern; bearbeiten; vergleichen; mit frischem Blick reviewen; an eine andere Person oder dein Ich von morgen übergeben. Sind mehr Material oder externe Aktionen nötig, halte bei `blocked` an. Erweitere keine Rechte, nur damit der Ablauf abgeschlossen aussieht.
+Durchlaufe die sieben Phasen: Leserschaft und Ergebnis definieren, eine Änderung planen, den
+Ausgangstext als Checkpoint speichern, bearbeiten, vergleichen, mit frischem Blick prüfen und
+an eine andere Person oder dein Ich von morgen übergeben. Sind mehr Material oder externe
+Aktionen nötig, halte bei `blocked` an. Erweitere keine Rechte, nur damit der Ablauf abgeschlossen aussieht.
 
 ### Wann zwei Versuche vergleichbar sind
 
 Willst du „Modell sofort bearbeiten lassen“ mit „erst ein Protokoll schreiben“ vergleichen, friere Ausgangstext, Ziel, erlaubte Aktionen, Zeitlimit und Checkregel ein. Bewahre erste Ausgabe, echte Dauer, Nacharbeit, Diff, Checkergebnis und Unbekannte auf. Ändern sich Text, Modell, Tool, Rechte oder Umgebung, schreibe `not_comparable`. Ein einmal schnelleres oder hübscheres Ergebnis beweist weder allgemeine Effizienz noch ein besseres Modell.
 
-## Experiment: Checkpoints, Versuch und Grenze
+## Experiment: Checkpoints, Wiederholungen und Grenzen
 
-Vor einem Retry notiere fehlgeschlagene Phase, Fehlerklasse, letzten akzeptierten Checkpoint, bekannte Änderungen, Retry-Bedingung und Fallback. „Weiter“ ist kein Wiederherstellungsplan. Wenn ein Befehl in `Working` bleibt, ist Stille eine Beobachtung, kein Erfolg.
+Vor einem Retry notiere die fehlgeschlagene Phase, die Fehlerklasse, den letzten akzeptierten
+Checkpoint, bekannte Änderungen, die Retry-Bedingung und den Fallback. „Weiter“ ist kein
+Wiederherstellungsplan. Wenn ein Befehl in `Working` bleibt, ist Stille eine Beobachtung, kein Erfolg.
 
 ### Vorbereitung
 
@@ -144,13 +149,18 @@ Lege einen wegwerfbaren Ordner ohne Remote, Geheimnisse oder Kundendaten an. Spe
 
 ### Aufgabe
 
-Vergleiche in diesem Ordner eine direkte Bitte mit einem Protokoll, Checkpoints und fokussiertem Check. Bewahre erste Ausgabe, Diff, Befehl, Exit-Code, reale Dauer und Nacharbeit auf; fehlende Zeit oder Kosten bleiben `unavailable`. Erzeuge einen Timeout, geänderten Input, Berechtigungsblock oder unbekanntes lokales Schreibergebnis. Ändern sich feste Bedingungen, markiere `not_comparable`. Wenige kleine Aufgaben beweisen keine allgemeine Effizienz, Qualität oder Modellrangfolge.
+Vergleiche in diesem Ordner eine direkte Bitte mit einem Protokoll, Checkpoints und einem
+fokussierten Check. Bewahre erste Ausgabe, Diff, Befehl, Exit-Code, tatsächliche Dauer und
+Nacharbeit auf; fehlende Zeit- oder Kostenangaben bleiben `unavailable`. Erzeuge einen Timeout,
+einen geänderten Input, einen Berechtigungsblock oder ein unbekanntes lokales Schreibergebnis.
+Ändern sich feste Bedingungen, markiere `not_comparable`. Wenige kleine Aufgaben beweisen
+keine allgemeine Effizienz, Qualität oder Modellrangfolge.
 
 ### Belege
 
 Sichere für jeden Versuch: Ausgangseingabe und Abnahme, erlaubte Aktionen, Checkpoint-Nummer, Prompt oder Protokoll, geänderte Pfade, Diff, ausgeführten Befehl mit Verzeichnis und Exit-Code, Review-Notiz und fehlende Beobachtungen. Ein fehlender Lauf wird `not_run`, nicht nachträglich aus einer überzeugenden Ausgabe rekonstruiert.
 
-## Mit Checkpoints einen vollständigen Kreis schließen
+## Mit Checkpoints einen vollständigen Durchlauf abschließen
 
 Auch eine kleine Aufgabe braucht einen sichtbaren Verlauf. Maßstab ist, dass die
 nächste Person ohne den alten Chat sicher weiterarbeiten kann:
@@ -163,11 +173,10 @@ CP3: Benannten Check ausgeführt oder gestoppt; Ausgabe und Grenzen aufbewahrt
 CP4: Behauptung gegen Evidenz geprüft; Übergabe und nächste Aktion notiert
 ```
 
-Notiere pro Checkpoint das letzte bestätigte Ereignis, möglicherweise geänderte
-Dateien, fehlende Evidenz und genau einen sicheren nächsten Schritt. Ohne `CP2`
-gehört eine Modellbehauptung über eine Änderung nicht in die Übergabe. Hängt
-`CP3`, ist Stille kein Pass: Ausgabe, Prozesszustand und Diff bleiben erhalten,
-der Status wird `unverified` oder `blocked`.
+Notiere pro Checkpoint das letzte bestätigte Ereignis, möglicherweise geänderte Dateien,
+fehlende Evidenz und genau einen sicheren nächsten Schritt. Ohne `CP2` gehört eine
+Modellbehauptung über eine Änderung nicht in die Übergabe. Hängt `CP3`, ist Stille kein Pass:
+Ausgabe, Prozesszustand und Diff bleiben erhalten, der Status wird `unverified` oder `blocked`.
 
 ## Den Check passend zur Behauptung wählen
 
@@ -194,10 +203,9 @@ not proven: Leserwert, Laufzeit, visuelle Qualität, Sicherheit
 next: eine sichere nächste Aktion
 ```
 
-Das ist stärker als „alles fertig“. Sind Ziel, Autorität oder Wiederherstellungs-
-quelle unklar, ist die nächste Aktion eine Frage oder ein Read-only-Check, kein
-Edit. Kapitel und Vergleich bleiben bis zu Laufprotokoll und Review `candidate`
-und `not_run`.
+Das ist aussagekräftiger als „alles fertig“. Sind Ziel, Autorität oder Wiederherstellungsquelle
+unklar, ist die nächste Aktion eine Frage oder ein Read-only-Check, keine Bearbeitung. Kapitel
+und Vergleich bleiben bis zum Laufprotokoll und Review `candidate` und `not_run`.
 
 ## Reflexion
 
@@ -207,7 +215,12 @@ und `not_run`.
 
 ## Transferaufgabe
 
-Übertrage denselben Ablauf auf einen nicht-technischen Auftrag: verbessere einen kurzen eigenen Text, prüfe eine kleine Quellenliste oder plane eine Sprachübung. Behalte Ziel, erlaubte Eingaben, verbotene Nebenwirkungen, Checkpoints und Übergabe bei. Ersetze nur die domänenspezifische Abnahme: etwa Verständlichkeit für eine Leserin, Quelle und Unsicherheit für Recherche oder eine verzögerte, unbeantwortete Abrufaufgabe für Sprachpraxis. Notiere ausdrücklich, was die Übung nicht beweist.
+Übertrage denselben Ablauf auf einen nichttechnischen Auftrag: verbessere einen kurzen eigenen
+Text, prüfe eine kleine Quellenliste oder plane eine Sprachübung. Behalte Ziel, erlaubte
+Eingaben, verbotene Nebenwirkungen, Checkpoints und Übergabe bei. Ersetze nur die
+domänenspezifische Abnahme: etwa Verständlichkeit für eine Leserin, Quelle und Unsicherheit
+bei einer Recherche oder eine verzögerte, unbeantwortete Abrufaufgabe für Sprachpraxis.
+Notiere ausdrücklich, was die Übung nicht beweist.
 
 ## Abnahme-Checkliste
 
@@ -219,7 +232,13 @@ und `not_run`.
 
 ## Quellen und Wartungsgrenze
 
-Die Workflow-Reihenfolge, Checkpoints und Claim-Evidence-Trennung sind die stabile Lehrmethode dieses Projekts. Produktoberflächen, Konto- und Toolverhalten, Modellverfügbarkeit und Community-Symptome sind veränderliche Fakten. Prüfe die datierten [offiziellen Faktenkarten](../evidence-library-DE.md#source-notes) und den [Feldproblemindex](../evidence-library-DE.md#source-notes), bevor du eine aktuelle Produktbehauptung übernimmst. Diese Quellen ersetzen weder einen lokalen Lauf noch eine unabhängige Lernbeobachtung.
+Die Reihenfolge des Workflows, die Checkpoints und die Trennung von Behauptung und Beleg sind
+die stabile Lehrmethode dieses Projekts. Produktoberflächen, Konto- und Toolverhalten,
+Modellverfügbarkeit und Community-Symptome sind veränderliche Fakten. Prüfe die datierten
+[offiziellen Faktenkarten](../evidence-library-DE.md#source-notes) und den
+[Feldproblemindex](../evidence-library-DE.md#source-notes), bevor du eine aktuelle
+Produktbehauptung übernimmst. Diese Quellen ersetzen weder einen lokalen Lauf noch eine
+unabhängige Lernbeobachtung.
 
 <!-- chapter-navigation:start -->
 <hr>
