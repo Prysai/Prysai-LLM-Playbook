@@ -1,47 +1,50 @@
 <!-- content_id: chapter-07-skills-plugins-and-tools | locale: ES | language: es | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-16 -->
 
-# Capítulo 7: cómo se reparten el trabajo los Skills, los Plugins, MCP y las herramientas
+# Capítulo 7: cómo se reparten el trabajo los Skills, Plugins, MCP y herramientas
 
 **Estado:** `candidate`. **Comparación:** `not_run`. Estos casos enseñan un método;
-no prueban que un Skill externo haya funcionado en este repositorio.
+no demuestran que un Skill externo se haya ejecutado en este repositorio.
 
-**Empieza aquí:** nombra primero la brecha de la tarea y elige después la capacidad
-mínima que la cubra.
+**Empieza aquí:** describe primero qué le falta a la tarea. Después elige la
+capacidad mínima que cubra esa brecha.
 
 ## El problema que resuelve este capítulo
 
-«Necesito un Skill» no siempre es el diagnóstico correcto. Un Skill, Plugin,
-servidor MCP, conector, script, plantilla y documento resuelven problemas distintos.
-Tratarlos como etiquetas intercambiables lleva a instalar capacidad que la tarea no
-necesita, ocultar dependencias y ampliar efectos externos sin advertirlo.
+«Necesito un Skill» no siempre es el diagnóstico correcto. Un Skill, un Plugin,
+un servidor MCP, un conector, un script, una plantilla y un documento resuelven
+problemas distintos. Tratarlos como etiquetas intercambiables lleva a instalar
+capacidades innecesarias, ocultar dependencias y ampliar los efectos externos sin
+darse cuenta.
 
 La pregunta útil no es «¿qué directorio tiene más Skills?», sino:
 
-> ¿Qué le falta a esta tarea? ¿Qué capacidad mínima cubre esa brecha sin perder
-> control sobre permisos, licencia, dependencias y evidencia?
+> ¿Qué le falta a esta tarea? ¿Qué capacidad mínima cubre esa brecha sin perder de
+> vista los permisos, la licencia, las dependencias y la evidencia?
 
 ## Objetivos de aprendizaje
 
 - explicar la división entre método, conexión, ejecución y distribución;
-- derivar una combinación mínima útil desde la tarea, no desde un directorio;
+- derivar una combinación mínima y útil a partir de la tarea, no de un directorio;
 - revisar disparadores, dependencias, licencia, permisos, efectos y evidencia
   antes de adoptar un Skill, Plugin o conector; y
-- distinguir archivo existente, capacidad descubierta, cargada, adoptada y
-  comportamiento verificado.
+- distinguir entre un archivo que existe, una capacidad descubierta y cargada,
+  una capacidad adoptada y un comportamiento verificado.
 
-## Problemas reales: el descubrimiento falla antes de empezar
+## Problemas reales: el descubrimiento puede fallar antes de empezar
 
 La [investigación de campo de Codex](../evidence-library-ES.md#source-notes)
-registra informes públicos. Son síntomas, no una causa oficial ni reproducción local.
+recoge informes públicos. Son síntomas, no un análisis oficial de la causa ni una
+reproducción local.
 
 | Síntoma público | Qué observó la persona | Qué **no** demuestra | Primera respuesta segura |
 |---|---|---|---|
-| Un Skill funciona como archivo normal pero deja de descubrirse al ser enlace simbólico | La forma de representar el archivo cambia el resultado de descubrimiento | Que todo escáner de Skills, sistema operativo o versión tenga el mismo defecto | Conserva forma de archivo y superficie; compara archivo y enlace en una prueba aislada |
-| Usar un Skill de forma explícita depende de una lista implícita disponible | Una petición explícita no es independiente del listado de la superficie | Una regla general de enrutamiento o una garantía oficial | Guarda lista visible, petición exacta, sesión y recursos cargados por separado |
+| Un Skill funciona como archivo normal pero deja de descubrirse al convertirse en enlace simbólico | La forma de representar el archivo cambia el resultado del descubrimiento | Que todos los escáneres de Skills, sistemas operativos o versiones tengan el mismo defecto | Conserva la forma del archivo y la superficie de trabajo; compara archivo y enlace en una prueba aislada |
+| Usar un Skill de forma explícita depende de una lista implícita disponible | Una petición explícita no es independiente de la lista que muestra la superficie actual | Que sea una regla general de enrutamiento o una garantía oficial | Guarda por separado la lista visible, la petición exacta, la sesión y los recursos cargados |
 
-Una ruta en el repositorio no significa que el host actual descubrió el Skill; un
-nombre visible no significa que esta sesión lo cargó; y cargarlo no prueba que sus
-dependencias o permisos externos funcionen.
+Que exista una ruta en el repositorio no significa que el host actual haya
+descubierto el Skill. Un nombre visible no significa que esta sesión lo haya
+cargado, y cargarlo no prueba que funcionen sus dependencias ni sus permisos
+externos.
 
 ## 1. Un modelo de capacidad de cuatro capas
 
@@ -49,12 +52,12 @@ Antes de elegir un paquete, nombra qué falta:
 
 ```text
 capa de método       Skill            método repetible para una clase de tarea
-capa de conexión     MCP/conector      datos, contexto o acciones externos
-capa de ejecución    herramienta       leer, editar, ejecutar, navegar o llamar
+capa de conexión     MCP/conector     datos, contexto o acciones externos
+capa de ejecución    herramienta      leer, editar, ejecutar, navegar o llamar
 capa de distribución Plugin           paquete que combina capacidades
 ```
 
-Las capas pueden solaparse, pero responden a preguntas distintas.
+Las capas pueden solaparse en un producto real, pero responden a preguntas distintas.
 
 | Capa | Qué aporta | Qué no concede por sí misma |
 |---|---|---|
@@ -63,42 +66,42 @@ Las capas pueden solaparse, pero responden a preguntas distintas.
 | Herramienta | Acción observable: leer, editar, ejecutar o llamar una API | Un motivo para usarla, autorización o corrección del resultado |
 | Plugin | Distribución y composición de varias capacidades | Autorización automática o garantía de disponibilidad |
 
-Para lógica repetida que debe ejecutarse igual cada vez suele ser mejor un script.
-Para una forma de salida estable, una plantilla. Para conocimiento que solo se
+Para una lógica repetida que debe ejecutarse igual cada vez suele ser mejor un script;
+para una forma de salida estable, una plantilla; y para conocimiento que solo se
 consulta en ciertos casos, documentación. Un Skill vale la pena cuando el método se
-repite pero aún requiere juicio según el contexto.
+repite, pero todavía exige criterio según el contexto.
 
 ## 2. Selecciona en un orden que limite el alcance
 
 1. Decide si la tarea ya tiene un protocolo claro; si no, aclárala primero.
 2. Si el mismo método se repite y se omiten pasos, considera un Skill.
-3. Si hacen falta datos o acciones externas, pregunta si un conector o MCP es necesario.
+3. Si hacen falta datos o acciones externas, comprueba si de verdad necesitas un conector o MCP.
 4. Si la transformación es determinista, prefiere un script.
-5. Si varias capacidades deben distribuirse juntas, considera un Plugin como distribución.
+5. Si varias capacidades deben distribuirse juntas, considera un Plugin como capa de distribución.
 6. Solo entonces decide si instalar, autenticar o abrir permisos adicionales.
 
 El orden es deliberadamente conservador. Un directorio grande puede aparentar más
-capacidad y, a la vez, volver ilegible el grafo real de dependencias y permisos.
+capacidad y, a la vez, hacer ilegible el grafo real de dependencias y permisos.
 
 ## 3. Empieza por la brecha, no por el nombre del Skill
 
-Responde por escrito antes de adoptar un candidato:
+Antes de adoptar un candidato, responde por escrito:
 
-- **Brecha de tarea:** ¿falta método estable, script determinista, conexión externa
-  o la definición misma de la tarea?
+- **Brecha de tarea:** ¿falta un método estable, un script determinista, una conexión externa
+  o la propia definición de la tarea?
 - **Disparador y no disparador:** ¿qué entrada debe activarlo? ¿Qué petición similar
-  no debe activarlo o debe ir a otro método? Compartir palabras no basta.
-- **Fuente y revisión:** ¿otra persona puede comprobar URL, commit, versión o hash y
-  fecha de inventario?
-- **Licencia y dependencias:** ¿la licencia cubre archivos objetivo? ¿se inventariaron
+  no debe activarlo o debe pasar a otro método? Compartir palabras no basta.
+- **Fuente y revisión:** ¿otra persona puede comprobar la URL, el commit, la versión o el hash,
+  además de la fecha de inventario?
+- **Licencia y dependencias:** ¿la licencia cubre los archivos objetivo? ¿se inventariaron
   NOTICE, activos anidados y dependencias de ejecución?
 - **Permisos y efectos:** ¿qué lee o escribe? ¿requiere red o cuenta? ¿puede enviar,
-  publicar, borrar, modificar o alterar otro sistema?
-- **Verificación y mantenimiento:** ¿una prueba aislada cubre positivo, límite, fallo
-  y transferencia? ¿quién aprueba, mantiene, respalda, actualiza y practica reversión?
+  publicar, borrar, modificar o cambiar otro sistema?
+- **Verificación y mantenimiento:** ¿una prueba aislada cubre el caso positivo, el límite, el fallo
+  y la transferencia? ¿Quién aprueba, mantiene, respalda, actualiza y practica la reversión?
 
-El número de entradas externas no es calidad. Cada candidato necesita una revisión
-basada en su propia evidencia.
+El número de entradas externas no es una medida de calidad. Cada candidato necesita
+una revisión basada en sus propios datos y evidencias.
 
 ### Qué contiene un Plugin y dónde termina el soporte
 
@@ -109,10 +112,10 @@ información compartida o acciones en un sistema externo. Plugin es distribució
 composición, no autorización.
 
 La documentación consultada el 2026-08-09 enumera Plugins para ChatGPT Chat/Work en
-web, escritorio y móvil; Codex en la aplicación de escritorio de ChatGPT; y el
-explorador de Plugins de Codex CLI. No enumera una extensión IDE. Que Chat/Work
-funcione en móvil no implica la misma superficie de exploración o instalación que
-escritorio.
+la web, el escritorio y el móvil; Codex en la aplicación de escritorio de ChatGPT; y
+el explorador de Plugins de Codex CLI. No enumera una extensión para IDE. Que Chat/Work
+funcione en móvil no implica que ofrezca la misma superficie de exploración o
+instalación que el escritorio.
 
 Trata producto y conexión como una cadena de evidencias separadas:
 
@@ -122,23 +125,24 @@ soporte del producto → autorización de cuenta u organización → instalació
 → llamada real → resultado externo verificado
 ```
 
-Cada flecha es una afirmación independiente. «Sign in with ChatGPT» no entrega
-acceso automático a los datos de un Plugin ni aprueba acciones. Revisa `OF-015`,
+Cada flecha es una afirmación independiente. «Sign in with ChatGPT» no concede por sí
+solo acceso automático a los datos de un Plugin ni aprueba acciones. Revisa `OF-015`,
 `OF-016`, `UF-001`, `UF-003` y `LB-002` en el
 [registro de impacto de hechos](../../docs/governance/fact-impact-registry.yaml)
 antes de cambiar contenido afectado.
 
 Los materiales oficiales consultados el 2026-08-10 distinguen coincidencia automática
 de selección explícita: ChatGPT usa `@` y Codex `$`; también indican iniciar una
-nueva conversación o sesión CLI tras instalar. Son hechos cambiantes de producto,
-no permisos que acompañen a un Skill. Una comprobación local debe conservar
-superficie, sesión, cadena de invocación, recursos cargados, salida y verificación.
-Este repositorio no tiene tales registros: el estado sigue siendo `not_observed`.
+nueva conversación o sesión CLI después de instalar. Son hechos cambiantes del
+producto, no permisos que acompañen a un Skill. Una comprobación local debe conservar
+la superficie, la sesión, la cadena de invocación, los recursos cargados, la salida y
+la verificación. Este repositorio no tiene tales registros: el estado sigue siendo
+`not_observed`.
 
-## 4. El paquete de revisión antes de adoptar
+## 4. El registro de revisión antes de adoptar
 
-Antes de instalar, prepara un `skill-adoption-decision.md`; no basta con «licencia
-revisada».
+Antes de instalar, prepara un `skill-adoption-decision.md`; no basta con escribir
+«licencia revisada». El registro debe permitir que otra persona siga el mismo razonamiento.
 
 ```text
 task_gap:
@@ -168,8 +172,8 @@ evidence / unverified:
 | `installed-candidate` | Destino e instalación son observables; conducta no se revisó por completo | «existe un candidato instalado aislado» | «el equipo lo adoptó» o «listo para producción» |
 
 Los estados `draft`, `candidate`, `verified` y `production-ready` del proyecto son
-distintos de estas decisiones. Una página GitHub accesible no aclara licencia; un
-manifest no prueba una llamada de herramienta.
+distintos de estas decisiones. Que una página de GitHub sea accesible no aclara la
+licencia; un manifiesto tampoco prueba que una llamada de herramienta haya funcionado.
 
 ### Cinco estados fáciles de confundir
 
@@ -181,24 +185,25 @@ manifest no prueba una llamada de herramienta.
 | Adoptado | Propietario y aprobación en el alcance declarado | Conducta verificada |
 | Verificado | Positivo, límite, fallo y transferencia en entorno declarado | Igual conducta en otra cuenta, entrada o versión |
 
-Instalar es también una acción observable. El destino y log pueden apoyar
-`installed-candidate`, pero no sustituyen descubrimiento, carga, adopción ni
-validación de comportamiento.
+Instalar es también una acción observable. El destino y el registro pueden respaldar
+`installed-candidate`, pero no sustituyen el descubrimiento, la carga, la adopción ni
+la validación del comportamiento.
 
 ### Dos decisiones de adopción trabajadas
 
 - **Recomendación:** `code-review-and-quality` de S05 es un candidato razonable
   `recommendation-only` para un diff con base definida. Proviene del archivo local
-  de `https://github.com/addyosmani/agent-skills`, señal SHA-256
-  `6EEDBE7D2EA3A82417781D879785BD501FBDE21275627F557DE4B76560BA1250` y señal MIT
-  a nivel de repositorio. Dependencias anidadas, activos completos, permisos reales
-  y reversión aún no se revisaron: sigue lectura o ensayo aislado, no instalación.
+  de `https://github.com/addyosmani/agent-skills`, con la señal SHA-256
+  `6EEDBE7D2EA3A82417781D879785BD501FBDE21275627F557DE4B76560BA1250` y una señal MIT
+  a nivel de repositorio. Las dependencias anidadas, los activos completos, los
+  permisos reales y la reversión aún no se han revisado: toca continuar con lectura
+  o un ensayo aislado, no instalarlo.
 - **Variante bloqueada:** `webapp-testing` de S06 debe seguir `blocked`. Proviene del
   archivo local de `https://github.com/composio-community/awesome-codex-skills`,
   SHA-256 `D3DA83ED9D474690E7FF235351376114972840C78BC319CBCB8F89CBD704608E`.
-  Hay señal Apache-2.0 en raíz, no evidencia de cobertura coherente de licencia y
-  NOTICE para cada Skill, script y activo anidado. Sin revisión por activo y
-  reversión practicable, tener `SKILL.md` no basta.
+  Hay una señal Apache-2.0 en la raíz, pero no evidencia de una cobertura coherente
+  de licencia y NOTICE para cada Skill, script y activo anidado. Sin revisar cada
+  activo y contar con una reversión practicable, la presencia de `SKILL.md` no basta.
 
 ## 5. Compón capacidades; no las apiles
 
@@ -206,9 +211,9 @@ validación de comportamiento.
 protocolo de tarea → método de dominio → herramienta o conexión → revisión de evidencia
 ```
 
-En un experimento de marketing de bajo riesgo, el protocolo define objetivo y
-límites; un método de contexto de producto aporta público y posicionamiento; una
-herramienta analítica registra datos; Evidence Review comprueba que el evento
+En un experimento de marketing de bajo riesgo, el protocolo define el objetivo y
+los límites; un método de contexto de producto aporta público y posicionamiento; una
+herramienta analítica registra los datos; Evidence Review comprueba que el evento
 ocurrió. Diez Skills solapados suelen ser menos comprensibles que un método y un
 protocolo claros.
 
@@ -222,21 +227,21 @@ actions_not_done | evidence | unverified | blocked_on | next_check
 permission_boundary | next_review
 ```
 
-Un Skill de dominio posee su método; Task Protocol el límite de ejecución; Evidence
-Review revisa afirmaciones; Workflow Orchestrator mantiene fases y controles. Invocar
-un Skill no le concede permisos de otro ni debe iniciar una orquestación completa de
-forma recursiva.
+Un Skill de dominio posee su método; Task Protocol, el límite de ejecución; Evidence
+Review, la revisión de afirmaciones; y Workflow Orchestrator, las fases y los
+controles. Invocar un Skill no le concede los permisos de otro ni debe iniciar una
+orquestación completa de forma recursiva.
 
 ## 7. Experimento: compara tres combinaciones
 
 ### Preparación
 
 Elige una tarea local, reversible y de bajo riesgo. Prepara un protocolo, dos
-candidatos Skill de revisión fija y una opción simulada que pediría conexión externa.
+candidatos Skill con revisión fija y una opción simulada que pediría conexión externa.
 Uno debe poder seguir a revisión aislada; otro debe rechazarse por licencia, NOTICE
 o reversión poco claros. No subas datos reales, envíes mensajes, escribas en terceros
-ni autentiques cuentas. Asigna un `run-id` a cada combinación y conserva texto y
-rúbrica de la tarea.
+ni autentiques cuentas. Asigna un `run-id` a cada combinación y conserva el texto y
+la rúbrica de la tarea.
 
 ### Tarea
 
@@ -247,13 +252,13 @@ equipo. Compara calidad de salida, tiempo, permisos, coste de verificación y ef
 
 ### Evidencia y reflexión
 
-Conserva las tres rutas, sus `run-id`, dos decisiones de adopción, tabla de
-dependencias/permisos, hallazgos de licencia, salida simulada o real, resultados de
-verificación y una lista de acciones externas no ejecutadas. Una fila válida hace
-comprobables fuente y revisión, apunta a archivos de licencia reales, nombra destino
-de instalación/respaldo/reversión, responsable y aprobaciones, cubre positivo/límite/
-fallo/transferencia y conserva la línea base sin conexión extra. Una llamada simulada
-se llama simulada.
+Conserva las tres rutas, sus `run-id`, dos decisiones de adopción, una tabla de
+dependencias y permisos, los hallazgos de licencia, la salida simulada o real, los
+resultados de verificación y una lista de acciones externas no ejecutadas. Un registro
+válido hace comprobables la fuente y la revisión, apunta a archivos de licencia reales,
+nombra los destinos de instalación, respaldo y reversión, además del responsable y las
+aprobaciones; cubre positivo, límite, fallo y transferencia, y conserva la línea base
+sin conexión adicional. Una llamada simulada debe identificarse como simulada.
 
 Explica qué evidencia movería `recommendation-only` o `blocked` al siguiente estado.
 Para cada observación indica si prueba existencia, descubrimiento, carga, adopción o
@@ -261,10 +266,10 @@ validación; un estado temprano nunca sustituye a uno posterior.
 
 ## Fallo deliberado y límite
 
-Ofrece tres Skills solapados; uno pide subida externa aunque solo hace falta ordenar
-localmente. Añade un candidato con repositorio accesible y `SKILL.md`, pero licencia
-o reversión inciertas. Se aprueba si se detecta el solapamiento, se rechaza permiso
-innecesario, el candidato incierto queda `blocked` y se conserva la línea base.
+Ofrece tres Skills solapados; uno pide una subida externa aunque solo haga falta ordenar
+localmente. Añade un candidato con repositorio accesible y `SKILL.md`, pero con licencia
+o reversión inciertas. La práctica se supera si detectas el solapamiento, rechazas el
+permiso innecesario, dejas el candidato incierto en `blocked` y conservas la línea base.
 
 ## Transferencia
 
@@ -283,10 +288,11 @@ ser un script.
 | Síntomas de descubrimiento por enlace e invocación explícita | [Campo Codex](../evidence-library-ES.md#source-notes) | 2026-08-09 | Informes públicos, sin reproducción ni causa oficial |
 | Inventario y señales de licencia de candidatos | [Catálogo de candidatos](../evidence-library-ES.md#source-notes) | 2026-08-09 | Inventario, no autorización de instalación |
 
-Skills, Plugins, conectores, MCP, manifests, autenticación e invocación cambian.
-Actualiza primero fuentes primarias y revisa registro de impacto, capítulo, Labs,
-Skills, fixtures y rutas afectadas. No mezcles descripción oficial, síntoma comunitario
-y evidencia local en una sola frase.
+Los detalles de Skills, Plugins, conectores, MCP, manifiestos, autenticación e
+invocación cambian. Actualiza primero las fuentes primarias y revisa después el
+registro de impacto, el capítulo, los Labs, los Skills, los fixtures y las rutas
+afectadas. No mezcles descripción oficial, síntoma comunitario y evidencia local en
+una sola frase.
 
 ## Lista de aceptación
 
