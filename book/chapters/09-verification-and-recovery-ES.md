@@ -2,37 +2,37 @@
 
 # Capítulo 9: verificación, duda y recuperación
 
-**Estado:** `candidate`. **Experimento:** `not_run`. Este capítulo enseña a comparar una afirmación con su evidencia y a recuperar un flujo incierto; no es una reproducción local ni una prueba de producción.
+**Estado:** `candidate`. **Experimento:** `not_run`. Este capítulo enseña a contrastar una afirmación con sus evidencias y a recuperar un flujo de trabajo incierto; no es una reproducción local ni una prueba de producción.
 
 ## El problema que resuelve este capítulo
 
-Un Agent puede redactar un resumen convincente sobre un resultado equivocado, fuera de alcance, nunca ejecutado o revisado en el entorno incorrecto. La respuesta no es confianza ciega ni sospecha permanente: separa el resumen en afirmaciones y asigna a cada una la evidencia mínima que pueda sostenerla en el alcance declarado.
+Un Agent puede redactar un resumen convincente sobre un resultado equivocado, fuera de alcance, nunca ejecutado o revisado en el entorno incorrecto. La respuesta no es confiar a ciegas ni sospechar de todo: separa el resumen en afirmaciones y asigna a cada una la evidencia mínima que pueda sostenerla dentro del alcance declarado.
 
 | Afirmación | Evidencia mínima | No demuestra |
 |---|---|---|
 | Un archivo cambió | Diff, ruta o hash | Que sea correcto o completo |
-| Una comprobación pasó | Orden, directorio, código de salida y salida relevante | Igual comportamiento en otro entorno |
-| La aplicación se ejecuta | Inicio real y observación de ruta crítica | Valor de usuario, seguridad o producción |
+| Una comprobación pasó | Comando, directorio, código de salida y salida relevante | Igual comportamiento en otro entorno |
+| La aplicación funciona | Inicio real y observación de una ruta crítica | Valor para los usuarios, seguridad o preparación para producción |
 | La página se ve correcta | Revisión renderizada con viewport registrado | Accesibilidad completa, backend o conversión |
-| Un hecho es oficial | URL autorizada, fecha, alcance y responsable | Acceso de esta cuenta o configuración local |
+| Un dato proviene de una fuente oficial | URL autorizada, fecha, alcance y responsable | Acceso de esta cuenta o configuración local |
 
-Una prueba débil no puede sustituir a todas las demás. Un build correcto no prueba ejecución; una captura no prueba demanda; un enlace oficial no prueba acceso.
+Una sola prueba débil no puede sustituir a las demás. Un build correcto no prueba que algo se haya ejecutado; una captura no prueba que exista demanda; un enlace oficial no prueba que tengas acceso.
 
 ## Objetivos de aprendizaje
 
-Podrás separar un resumen final en afirmaciones comprobables, nombrar la evidencia mínima adecuada para cada una, localizar el primer salto no respaldado y escribir una comprobación siguiente segura o una entrega honesta. El ejercicio no prueba fiabilidad de producto ni aprendizaje sin una ejecución y revisión independientes.
+Podrás separar un resumen final en afirmaciones comprobables, nombrar la evidencia mínima adecuada para cada una, localizar el primer punto sin respaldo y escribir la siguiente comprobación segura o una entrega honesta. El ejercicio no demuestra la fiabilidad del producto ni el aprendizaje sin una ejecución y una revisión independientes.
 
-## Problemas reales: un resumen convincente sin evidencia correspondiente
+## El problema real: un resumen convincente sin evidencia suficiente
 
-Una respuesta puede decir «listo», «todas las pruebas pasaron» o «los lectores entienden» sin diff, salida de pruebas ni observación de lectores. No es un diagnóstico de un modelo. Es una razón para comprobar solo la primera etapa ausente entre solicitud, autorización, herramienta, acción, resultado y revisión.
+Una respuesta puede decir «listo», «todas las pruebas pasaron» o «los lectores entienden» sin diff, salida de pruebas ni observación de lectores. No se trata de diagnosticar un modelo concreto. Es una razón para comprobar únicamente la primera etapa que falte entre solicitud, autorización, herramienta, acción, resultado y revisión.
 
-## Localiza la primera ruptura
+## Encuentra el primer punto de ruptura
 
 ```text
 solicitud → autorización → herramienta visible → acción → resultado → revisión
 ```
 
-Marca la primera flecha que no puedas observar. Una sesión disponible no prueba que una herramienta esté registrada; recuperar el control de una ejecución no prueba el resultado deseado.
+Marca la primera flecha que no puedas observar. Que una sesión esté disponible no prueba que una herramienta esté registrada; recuperar el control de una ejecución no prueba que el resultado sea el esperado.
 
 | Estado | Significa |
 |---|---|
@@ -43,9 +43,9 @@ Marca la primera flecha que no puedas observar. Una sesión disponible no prueba
 | `not_observed` | El proyecto no registró la observación |
 | `error` | Hay evidencia de fallo para la operación declarada |
 
-## Recupera con una sola comprobación segura
+## Recupera el control con una sola comprobación segura
 
-Ante capacidad agotada, una orden que sigue en `Working`, una herramienta ausente o una propuesta de reinstalación, conserva primero diff, salida, registro y último checkpoint aceptado. Después elige una acción acotada: inspeccionar el destino, repetir una orden idéntica con límite, pedir una entrada o detenerte. Un check no autoriza instalación, reinicio, despliegue o escritura fuera del alcance.
+Cuando se agote la capacidad disponible, un comando permanezca en `Working`, falte una herramienta o alguien proponga reinstalar, conserva primero el diff, la salida, el registro y el último checkpoint aceptado. Después elige una sola acción acotada: inspeccionar el destino, repetir una vez el mismo comando con un límite definido, pedir el dato que falta o detenerte. Una comprobación no autoriza a instalar, reiniciar, desplegar ni escribir fuera del alcance.
 
 ```text
 claim: Todas las pruebas pasaron
@@ -54,25 +54,25 @@ status: unverified
 next_check: ejecutar solo la orden aprobada en el directorio y revisión fijados
 ```
 
-### Un estado verde no es una conclusión
+### Una marca verde no es una conclusión
 
-Una marca verde puede significar que **una** comprobación terminó sin error en
+Una marca verde puede significar que **una** comprobación terminó sin errores en
 un momento concreto. Antes de escribir «funciona», separa estas preguntas:
 
 | Lo que viste | Aún debes comprobar | Forma pequeña y segura de hacerlo |
 |---|---|---|
 | El comando terminó con código 0 | ¿Era el comando, carpeta y revisión esperados? | Guarda la orden, la carpeta, la revisión y la salida relevante |
 | Existe un diff | ¿El cambio respeta el encargo? | Lee el diff frente al objetivo y los límites acordados |
-| Abre una página | ¿El recorrido importante responde con la entrada prevista? | Prueba una ruta concreta, con una entrada inocua y un viewport anotado |
+| Se abre una página | ¿La ruta importante responde a la entrada prevista? | Prueba una ruta concreta, con una entrada inocua y un viewport anotado |
 | El modelo dijo «hecho» | ¿Qué observación independiente respalda cada frase? | Pide rutas, salida, diff o una limitación explícita |
 
 No conviertas una comprobación correcta en una promesa sobre seguridad,
-personas usuarias o producción. Si la observación no existe, deja esa fila como
+usuarios o producción. Si no existe la observación, mantén esa fila como
 `unverified`; no la rellenes con confianza.
 
-### Recibo de recuperación: deja que otra persona continúe
+### Ficha de recuperación: permite que otra persona continúe
 
-Cuando pares o recuperes un flujo, guarda un recibo breve. Sirve para no
+Cuando pares o recuperes un flujo, guarda una ficha breve. Sirve para no
 reiniciar a ciegas y para que la siguiente persona sepa qué puede comprobar sin
 ampliar permisos:
 
@@ -86,31 +86,31 @@ siguiente comprobación segura: una acción de solo lectura o reversible
 no hacer todavía: publicación, instalación, despliegue o nuevo alcance
 ```
 
-Un recibo no arregla el resultado ni prueba una causa. Conserva el lugar exacto
+Una ficha no arregla el resultado ni prueba una causa. Conserva el lugar exacto
 desde el que se puede retomar sin convertir un «quizá» en un «listo».
 
 ## Experimento y límite
 
 ### Preparación
 
-En una carpeta local desechable, prepara un resumen redactado, un diff, una salida de pruebas, enlaces de fuente y una sola pieza de evidencia ausente a propósito. No uses secretos, producción, instalación, inicio de sesión ni cambios externos.
+En una carpeta local desechable, prepara un resumen con los datos sensibles ocultos, un diff, una salida de pruebas, enlaces de fuentes y una única evidencia omitida deliberadamente. No uses secretos, producción, instalación, inicio de sesión ni cambios externos.
 
 ### Tarea
 
-Prepara un resumen redactado, un diff, salida de pruebas, enlaces de fuente y una pieza de evidencia ausente. Con el Lab 003 crea una tabla de afirmación, alcance, evidencia, estado y siguiente paso. Añade deliberadamente «todas las pruebas pasaron» sin salida y recházala aunque el tono sea seguro.
+Prepara un resumen con los datos sensibles ocultos, un diff, la salida de pruebas, enlaces de fuentes y una evidencia omitida deliberadamente. Usa el Lab 003 para crear una tabla de afirmación, alcance, evidencia, estado y siguiente paso. Añade deliberadamente «todas las pruebas pasaron» sin salida y recházala aunque el texto suene seguro.
 
-Guarda la tabla, las rutas de evidencia y el plan de recuperación. Incluye una afirmación factual, una de ejecución y una de efecto en usuarios; explica por qué no comparten una prueba débil. No conectes servicios de producción ni modifiques sistemas externos. La recuperación puede volver observable el estado, pero no lo mejora automáticamente a `verified`.
+Guarda la tabla, las rutas de evidencia y el plan de recuperación. Incluye una afirmación factual, otra sobre la ejecución y otra sobre el efecto en los usuarios; explica por qué no pueden apoyarse en una única prueba débil. No conectes servicios de producción ni modifiques sistemas externos. La recuperación puede volver observable el estado, pero no lo convierte automáticamente en `verified`.
 
 ### Evidencia
 
-Guarda la tabla de afirmación-evidencia, rutas y salidas nombradas, el estado de cada fila, la primera ruptura y el siguiente check seguro. Si no hubo ejecución, escribe `not_run`; no inventes salida de pruebas a partir de un tono seguro.
+Guarda la tabla de afirmaciones y evidencias, las rutas y salidas con nombre, el estado de cada fila, la primera ruptura y la siguiente comprobación segura. Si no hubo ejecución, escribe `not_run`; no inventes una salida de pruebas por el mero tono de seguridad.
 
-## Práctica guiada: no aceptes un resumen por su seguridad
+## Práctica guiada: no des por válido un resumen solo porque suena seguro
 
 Imagina que pides: «Revisa este texto de 90 palabras para que una persona nueva
 entienda el primer paso. No cambies los hechos ni publiques nada». El modelo
 responde: «Listo; el texto es claro y todas las comprobaciones pasaron».
-Antes de celebrar, pide una entrega comprobable:
+Antes de darlo por bueno, pide evidencias que puedas comprobar:
 
 1. ¿Qué archivo o texto exacto cambió? Pide el diff o ambas versiones.
 2. ¿Qué comprobación concreta se ejecutó? Pide la orden, el directorio, el
@@ -120,22 +120,22 @@ Antes de celebrar, pide una entrega comprobable:
 4. ¿Cuál es el siguiente check seguro? En este caso, comparar las dos versiones
    y pedir a una persona que señale el primer paso con sus propias palabras.
 
-No necesitas llamar al modelo mentiroso. Basta con cambiar una frase amplia por
+No necesitas llamar mentiroso al modelo. Basta con cambiar una frase amplia por
 una tabla de afirmaciones. Si no hay salida de pruebas, «todas las comprobaciones
 pasaron» queda como `unverified`; si solo se comparó el texto, la afirmación
-honesta es «hay una revisión de texto pendiente de lectura humana».
+honesta es «el texto tiene una revisión pendiente por parte de una persona».
 
 ## Tarjeta de recuperación para principiantes
 
-Cuando el resultado no coincide con lo esperado, no añadas más indicaciones al
-azar. Copia esta tarjeta y rellena solo lo que observaste:
+Cuando el resultado no coincide con lo esperado, no añadas indicaciones al azar.
+Copia esta tarjeta y rellena solo lo que hayas observado:
 
 ```text
 objetivo: hacer el primer paso más claro, sin publicar
 última observación confirmada: el borrador y el diff existen
 primera ruptura: no hay evidencia de lectura por una persona nueva
-acción segura siguiente: pedir una revisión de una sola pregunta
-alto si: la respuesta requiere publicar, instalar o cambiar otro archivo
+acción segura siguiente: pedir una revisión con una sola pregunta
+detente si: la respuesta requiere publicar, instalar o cambiar otro archivo
 entrega honesta: revisión de texto disponible; comprensión de lectores no verificada
 ```
 
@@ -145,7 +145,7 @@ qué falta y qué acción sigue siendo segura.
 
 ## Fallo deliberado y límite
 
-Haz una versión de la entrega que diga «el lector ya entiende el texto» sin
+Redacta una versión de la entrega que diga «el lector ya entiende el texto» sin
 haber hablado con ningún lector. Señala la afirmación que excede la evidencia y
 reescríbela. Después explica: ¿qué evidencia mínima te permitiría cambiar el
 estado?, ¿qué dato seguiría fuera de alcance? Guarda esa respuesta junto con el
@@ -158,7 +158,7 @@ que existan registros de ejecución y revisión.
 
 ## Tarea de transferencia
 
-Usa la misma tarjeta para práctica de idioma o investigación de fuentes. En idioma, distingue una respuesta asistida de una recuperación posterior y no vista sin ayuda. En investigación, separa un enlace encontrado de una afirmación comprobada. Conserva estados, evidencia y límites, pero no copies la afirmación de este capítulo.
+Usa la misma tarjeta para practicar un idioma o investigar fuentes. En el primer caso, distingue una respuesta asistida de la recuperación posterior de lo aprendido, sin volver a ver la respuesta y sin ayuda. En investigación, separa un enlace encontrado de una afirmación comprobada. Conserva estados, evidencias y límites, pero no copies la afirmación de este capítulo.
 
 ## Lista de aceptación
 
