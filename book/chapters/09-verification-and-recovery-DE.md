@@ -2,11 +2,11 @@
 
 # Kapitel 9: Überprüfung, Zweifel und Wiederherstellung
 
-**Status:** `candidate`. **Experiment:** `not_run`. Dieses Kapitel ordnet Abschlussbehauptungen ihren Belegen zu und zeigt, wie ein unsicherer Ablauf wieder unter Kontrolle kommt. Es ist keine lokale Reproduktion, offizielle Diagnose oder Produktionsnachweis.
+**Status:** `candidate`. **Experiment:** `not_run`. Dieses Kapitel ordnet Aussagen über den Abschluss ihren Belegen zu und zeigt, wie ein unsicherer Ablauf wieder unter Kontrolle kommt. Es ist weder eine lokale Reproduktion noch eine offizielle Diagnose oder ein Nachweis für den Produktionseinsatz.
 
 ## Das Problem dieses Kapitels
 
-Ein Agent kann eine überzeugende Abschlusszusammenfassung für ein falsches, zu weitgehendes, nie ausgeführtes oder im falschen Umfeld geprüftes Ergebnis schreiben. Die Antwort ist weder blindes Vertrauen noch dauerhafter Verdacht: Zerlege die Zusammenfassung in einzelne Behauptungen und ordne jeder den kleinsten Beleg zu, der sie im angegebenen Umfang tragen kann.
+Ein Agent kann eine überzeugende Abschlusszusammenfassung für ein falsches, zu weitgehendes, nie ausgeführtes oder in der falschen Umgebung geprüftes Ergebnis schreiben. Die richtige Reaktion ist weder blindes Vertrauen noch dauerndes Misstrauen: Zerlege die Zusammenfassung in einzelne Behauptungen und ordne jeder den kleinsten Beleg zu, der sie in dem genannten Umfang stützt.
 
 | Behauptung | Mindestbeleg | Beweist nicht |
 |---|---|---|
@@ -16,15 +16,15 @@ Ein Agent kann eine überzeugende Abschlusszusammenfassung für ein falsches, zu
 | Die Seite sieht korrekt aus | Render-Prüfung mit dokumentiertem Viewport | Vollständige Barrierefreiheit, Backend oder Conversion |
 | Eine Tatsache ist offiziell | Autoritative URL, Datum, Umfang und Verantwortlichkeit | Zugriff dieses Kontos oder lokale Konfiguration |
 
-Ein schwacher Beleg ersetzt nicht alle anderen. Ein Build beweist keine Laufzeit, ein Screenshot keine Nachfrage und eine offizielle URL keinen Zugriff.
+Ein einzelner schwacher Beleg ersetzt die übrigen nicht. Ein Build beweist keine Laufzeit, ein Screenshot keine Nachfrage und eine offizielle URL keinen Zugriff.
 
 ## Lernziele
 
-Du kannst eine Abschlusszusammenfassung in einzeln prüfbare Behauptungen zerlegen, für jede den passenden Mindestbeleg benennen, einen ersten unbelegten Übergang finden und einen sicheren nächsten Check oder eine ehrliche Übergabe schreiben. Die Übung beweist weder Produktzuverlässigkeit noch Lernwirkung ohne einen gesonderten Lauf und Review.
+Du kannst eine Abschlusszusammenfassung in einzeln prüfbare Behauptungen zerlegen, für jede den passenden Mindestbeleg benennen, den ersten unbelegten Übergang finden und einen sicheren nächsten Check oder eine ehrliche Übergabe schreiben. Die Übung beweist weder Produktzuverlässigkeit noch Lernwirkung; dafür bräuchte es einen eigenen Lauf und ein eigenes Review.
 
 ## Praxisfälle: Eine überzeugende Zusammenfassung ohne passenden Beleg
 
-Eine Antwort kann „fertig“, „alle Tests bestanden“ oder „Lesende verstehen es“ sagen, ohne Diff, Testausgabe oder Beobachtung der Lesenden zu liefern. Das ist keine Behauptung über ein bestimmtes Modell. Es ist ein Anlass, nur die erste fehlende Stufe zwischen Anfrage, Autorisierung, Tool, Aktion, Ergebnis und Review zu prüfen.
+Eine Antwort kann „fertig“, „alle Tests bestanden“ oder „Lesende verstehen es“ sagen, ohne Diff, Testausgabe oder Beobachtung von Lesenden zu liefern. Das ist keine Aussage über ein bestimmtes Modell. Es ist ein Anlass, nur die erste fehlende Stufe zwischen Anfrage, Autorisierung, Tool, Aktion, Ergebnis und Review zu prüfen.
 
 ## Den ersten Bruch finden
 
@@ -32,7 +32,7 @@ Eine Antwort kann „fertig“, „alle Tests bestanden“ oder „Lesende verst
 Anfrage → Autorisierung → sichtbares Tool → Aktion → Ergebnis → Review
 ```
 
-Notiere den ersten Pfeil, den du nicht beobachten kannst. Eine verfügbare Sitzung beweist keine Tool-Registrierung; zurückgewonnene Kontrolle über einen Lauf beweist nicht das gewünschte Ergebnis.
+Notiere den ersten Pfeil, den du nicht beobachten kannst. Eine verfügbare Sitzung beweist nicht, dass ein Tool registriert ist; die wiedergewonnene Kontrolle über einen Lauf beweist nicht das gewünschte Ergebnis.
 
 | Status | Bedeutung |
 |---|---|
@@ -45,7 +45,7 @@ Notiere den ersten Pfeil, den du nicht beobachten kannst. Eine verfügbare Sitzu
 
 ## Mit einem sicheren Check wiederherstellen
 
-Bei Kapazitätsfehler, `Working` ohne Ende, fehlendem Tool oder vorgeschlagener Neuinstallation bewahrst du zuerst Diff, Ausgabe, Log und letzten akzeptierten Checkpoint auf. Wähle dann genau eine begrenzte Aktion: Ziel inspizieren, denselben Befehl einmal begrenzt wiederholen, Eingabe anfordern oder stoppen. Ein Check ist keine Erlaubnis für Installation, Neustart, Deployment oder Schreiben außerhalb des Auftrags.
+Bei Kapazitätsfehlern, einem endlosen `Working`, einem fehlenden Tool oder einer vorgeschlagenen Neuinstallation bewahrst du zuerst Diff, Ausgabe, Log und den letzten akzeptierten Checkpoint auf. Wähle dann genau eine begrenzte Aktion: Ziel prüfen, denselben Befehl einmal begrenzt wiederholen, fehlende Eingaben anfordern oder stoppen. Ein Check ist keine Erlaubnis für Installation, Neustart, Deployment oder Schreiben außerhalb des Auftrags.
 
 ```text
 claim: Alle Tests bestanden
@@ -54,10 +54,10 @@ status: unverified
 next_check: Nur den freigegebenen Befehl im festen Verzeichnis und Revision ausführen
 ```
 
-### Ein grüner Status ist kein Schluss
+### Ein grüner Status ist noch kein Ergebnis
 
 Ein grüner Check bedeutet nur, dass **ein** Check zu einem bestimmten Zeitpunkt
-ohne Fehler endete. Bevor du „funktioniert“ schreibst, trenne diese Fragen:
+ohne Fehler endete. Bevor du „funktioniert“ schreibst, trenne deshalb diese Fragen:
 
 | Beobachtung | Noch zu prüfen | Kleiner, sicherer Check |
 |---|---|---|
@@ -67,13 +67,13 @@ ohne Fehler endete. Bevor du „funktioniert“ schreibst, trenne diese Fragen:
 | Das Modell sagt „erledigt“ | Welche unabhängige Beobachtung stützt jede Behauptung? | Pfade, Ausgabe, Diff oder eine ausdrückliche Einschränkung anfordern |
 
 Aus einem bestandenen Check wird keine Zusage über Sicherheit, Nutzwert oder
-Produktionsreife. Fehlt die Beobachtung, bleibt die Zeile `unverified`; sie wird
-nicht mit Zuversicht aufgefüllt.
+Produktionsreife. Fehlt die Beobachtung, bleibt die Zeile `unverified`; wir füllen sie
+nicht mit Zuversicht auf.
 
-### Wiederherstellungsbeleg: sicher an andere übergeben
+### Wiederherstellungsnotiz: sicher an andere übergeben
 
 Wenn du einen Ablauf stoppst oder wieder unter Kontrolle bringst, hinterlasse
-einen kurzen Beleg. So beginnt niemand blind von vorn, und die nächste Person
+eine kurze Notiz mit den Belegen. So beginnt niemand blind von vorn, und die nächste Person
 weiß, was sie ohne zusätzliche Berechtigungen prüfen darf:
 
 ```text
@@ -86,27 +86,27 @@ nächster sicherer check: eine schreibgeschützte oder reversible Aktion
 noch nicht: veröffentlichen, installieren, deployen oder Umfang erweitern
 ```
 
-Der Beleg repariert kein Ergebnis und beweist keine Ursache. Er hält nur den
-genauen Ort fest, an dem sicher weitergearbeitet werden kann, ohne aus einem
+Die Notiz repariert kein Ergebnis und beweist keine Ursache. Sie hält nur den
+genauen Punkt fest, an dem sicher weitergearbeitet werden kann, ohne aus einem
 „vielleicht“ ein „erledigt“ zu machen.
 
-## Experiment und Grenze
+## Experiment und Grenzen
 
 ### Vorbereitung
 
-Lege in einem lokalen, wegwerfbaren Ordner eine bereinigte Zusammenfassung, einen Diff, eine Testausgabe, Quellenlinks und genau ein absichtlich fehlendes Belegstück ab. Nutze keine Geheimnisse, Produktion, Installation, Anmeldung oder externe Änderung.
+Lege in einem lokalen, wegwerfbaren Ordner eine bereinigte Zusammenfassung, einen Diff, eine Testausgabe, Quellenlinks und genau einen absichtlich fehlenden Beleg ab. Nutze keine Geheimnisse oder Produktionsressourcen und nimm keine Installation, Anmeldung oder externe Änderung vor.
 
 ### Aufgabe
 
-Bereite eine bereinigte Zusammenfassung, Diff, Testausgabe, Quellenlinks und ein absichtlich fehlendes Belegstück vor. Erstelle mit Lab 003 eine Tabelle aus Behauptung, Umfang, Beleg, Status und nächstem Check. Lehne „alle Tests bestanden“ ohne Ausgabe auch bei sicherem Ton ab.
+Bereite eine bereinigte Zusammenfassung, einen Diff, eine Testausgabe, Quellenlinks und einen absichtlich fehlenden Beleg vor. Erstelle mit Lab 003 eine Tabelle aus Behauptung, Umfang, Beleg, Status und nächstem Check. Lehne „alle Tests bestanden“ ohne Ausgabe auch dann ab, wenn es selbstbewusst klingt.
 
-Halte Fakt-, Ausführungs- und Nutzerwirkungsbehauptung getrennt und erkläre, warum sie keinen schwachen Beleg teilen. Keine Produktionsdienste verbinden oder externe Systeme ändern. Wiederherstellung kann einen Zustand wieder beobachtbar machen, macht ihn aber nicht automatisch `verified`.
+Halte Behauptungen über Fakten, Ausführung und Nutzerwirkung getrennt und erkläre, warum sie nicht denselben schwachen Beleg teilen können. Verbinde keine Produktionsdienste und ändere keine externen Systeme. Eine Wiederherstellung kann einen Zustand wieder beobachtbar machen, macht ihn aber nicht automatisch `verified`.
 
 ### Belege
 
-Bewahre die Claim-Evidence-Tabelle, alle benannten Pfade und Ausgaben, den Status jeder Zeile, die erste Lücke und den nächsten sicheren Check auf. Fehlt eine Ausführung, schreibe `not_run`; erfinde keine Testausgabe aus einem selbstsicheren Ton.
+Bewahre die Claim-Evidence-Tabelle, alle benannten Pfade und Ausgaben, den Status jeder Zeile, die erste Lücke und den nächsten sicheren Check auf. Fehlt eine Ausführung, schreibe `not_run`; erfinde keine Testausgabe aus einem selbstsicheren Tonfall.
 
-## Geführte Übung: Eine sichere Zusammenfassung ist noch kein Nachweis
+## Geführte Übung: Eine überzeugende Zusammenfassung ist noch kein Nachweis
 
 Stell dir vor, du bittest um Folgendes: „Überarbeite diesen Text mit höchstens
 90 Wörtern, damit eine neue Person den ersten Schritt versteht. Ändere keine
@@ -123,15 +123,15 @@ prüfbare Übergabe:
 4. Was ist der nächste sichere Check? Hier: die Textversionen vergleichen und
    eine neue Leserin oder einen neuen Leser nur nach dem ersten Schritt fragen.
 
-Du musst das Modell nicht als unehrlich bezeichnen. Es reicht, die breite
+Du musst das Modell nicht als unehrlich bezeichnen. Es reicht, die weitreichende
 Aussage in überprüfbare Behauptungen zu zerlegen. Ohne Testausgabe bleibt
 „alle Checks bestanden“ `unverified`. Wurde nur der Text verglichen, lautet die
 ehrliche Übergabe: „Textänderung geprüft; Verständnis von Lesenden ungeprüft.“
 
-## Wiederherstellungskarte für den Einstieg
+## Wiederherstellungskarte für den Anfang
 
 Wenn das Ergebnis unklar ist, fügst du nicht planlos weitere Anweisungen hinzu.
-Trage nur Beobachtungen ein:
+Trage zunächst nur Beobachtungen ein:
 
 ```text
 ziel: Den ersten Schritt verständlicher machen, ohne Veröffentlichung
@@ -161,7 +161,7 @@ Welcher Satz in deiner Tabelle war am verführerischsten zu übertreiben? Welche
 
 ## Transferaufgabe
 
-Nutze dieselbe Karte für eine Sprachübung oder eine Quellenrecherche. Bei Sprache unterscheide eine assistierte Antwort von einem späteren, unbekannten Abruf ohne Hilfe. Bei Recherche trenne einen gefundenen Link von einer überprüften Aussage. Übernimm Status, Belege und Grenzen, aber nicht die Behauptung aus diesem Kapitel.
+Nutze dieselbe Karte für eine Sprachübung oder eine Quellenrecherche. Bei Sprache unterscheide eine assistierte Antwort von einem späteren Abruf ohne Hilfe, dessen Zeitpunkt niemand vorher kennt. Bei Recherche trenne einen gefundenen Link von einer überprüften Aussage. Übernimm Status, Belege und Grenzen, aber nicht die Behauptung aus diesem Kapitel.
 
 ## Abnahme-Checkliste
 
@@ -172,7 +172,7 @@ Nutze dieselbe Karte für eine Sprachübung oder eine Quellenrecherche. Bei Spra
 
 ## Quellen und Wartungsgrenze
 
-Die Claim-Evidence-Karte und der Wiederherstellungsablauf sind stabile Lehrmethoden. Produktstatus, Tools, Berechtigungen und öffentliche Symptome sind veränderlich. Prüfe vor einer aktuellen Produktbehauptung die [offiziellen Faktenkarten](../evidence-library-DE.md#source-notes) und den [Feldproblemindex](../evidence-library-DE.md#source-notes). Sie ersetzen keinen lokalen Lauf, keinen unabhängigen Review und keine Lernbeobachtung.
+Die Claim-Evidence-Karte und der Wiederherstellungsablauf sind stabile Lehrmethoden. Produktstatus, Tools, Berechtigungen und öffentliche Symptome können sich ändern. Prüfe vor einer aktuellen Produktbehauptung die [offiziellen Faktenkarten](../evidence-library-DE.md#source-notes) und den [Feldproblemindex](../evidence-library-DE.md#source-notes). Sie ersetzen weder einen lokalen Lauf noch ein unabhängiges Review oder eine Lernbeobachtung.
 
 <!-- chapter-navigation:start -->
 <hr>
