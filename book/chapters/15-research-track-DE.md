@@ -2,29 +2,29 @@
 
 # Kapitel 15: Forschungspfad – von der Frage zu überprüfbarem Wissen
 
-**Status:** `candidate`. **Experimentstatus:** `draft / not_run`. Dieses Kapitel vermittelt Forschungsdisziplin; die öffentlichen Fälle sind Lehrmaterial, keine lokale Reproduktion und keine offizielle Ursachenbestätigung.
+**Status:** `candidate`. **Experimentstatus:** `draft / not_run`. Dieses Kapitel zeigt, wie du sauber recherchierst. Die öffentlichen Fälle dienen nur als Lehrmaterial: Sie sind weder lokal reproduziert noch eine offizielle Bestätigung von Ursachen.
 
 ## Das Problem dieses Kapitels
 
-„Bitte recherchiere das“ kann Fakten finden, Optionen vergleichen, Literatur prüfen, eine Forschungsfrage bilden, einen Bericht schreiben oder einen Entwurf prüfen heißen. Ohne vorherige Eingrenzung kann ein Agent Suchausschnitte als Schlussfolgerung ausgeben, eine unzugängliche URL als gelesen behandeln oder eine Anweisung in einem externen Dokument befolgen.
+„Bitte recherchiere das“ kann heißen: Fakten finden, Optionen vergleichen, Literatur prüfen, eine Forschungsfrage formulieren, einen Bericht schreiben oder einen Entwurf prüfen. Ohne klare Eingrenzung kann ein Agent Suchausschnitte zu Schlussfolgerungen machen, eine nicht erreichbare URL als gelesen behandeln oder einer Anweisung in einem externen Dokument folgen.
 
-> Es geht nicht um eine längere Literaturübersicht. Es geht um eine Kette, in der sich jede wichtige Behauptung zu einer Frage, einer Quelle, einer Fundstelle, einer Evidenzstufe und einer menschlichen Prüfung zurückverfolgen lässt.
+> Es geht nicht um eine möglichst lange Literaturübersicht. Entscheidend ist eine nachvollziehbare Kette: Jede wichtige Behauptung muss zu einer Frage, einer Quelle, einer Fundstelle, einer Evidenzstufe und einer menschlichen Prüfung zurückführen.
 
 ## Lernziele
 
-Du formulierst eine enge Forschungsfrage, protokollierst zugängliche Quellen und Grenzen, und übergibst Schlussfolgerungen nur in dem Umfang, den die Fundstellen tatsächlich stützen.
+Du formulierst eine enge Forschungsfrage, hältst erreichbare Quellen und ihre Grenzen fest und gibst Schlussfolgerungen nur so weit weiter, wie die Fundstellen sie tatsächlich tragen.
 
-## Praxisfälle: Eine plausible Antwort ohne überprüfbare Quelle
+## Praxisbeispiel: Eine plausible Antwort ohne prüfbare Quelle
 
 Bei der Auswahl eines Modells, einer Lernmethode oder eines Tools kann eine flüssige Zusammenfassung Links, Versionen und Berichte vermischen. Die praktische Entscheidung ist nicht, welche Antwort überzeugender klingt, sondern welche Behauptung für die erklärte Aufgabe, Zeit und Umgebung belegt ist.
 
 ## Aus einem Thema eine beantwortbare Frage machen
 
-Bestimme Objekt, Vergleich oder Beziehung, Umfang, Zeit, Publikum und Ausgabezweck. „Login-Probleme recherchieren“ genügt nicht. Eine gute Frage definiert außerdem Einschluss und Ausschluss, priorisierte Quellen, Stoppzeitpunkt und Form des Ergebnisses: Faktentabelle, Vergleich, Entscheidungsnotiz oder zitierter Entwurf.
+Lege Gegenstand, Vergleich oder Beziehung, Umfang, Zeitraum, Zielgruppe und Zweck der Übergabe fest. „Login-Probleme recherchieren“ reicht nicht. Eine gute Frage klärt außerdem, was ein- und ausgeschlossen wird, welche Quellen Vorrang haben, wann du aufhörst und in welcher Form das Ergebnis kommt: Faktentabelle, Vergleich, Entscheidungsnotiz oder zitierter Entwurf.
 
-Suche Symptome vor Ursachen. Baue Query-Gruppen für Symptom, Grenze und Umgebung; die vermutete Ursache darf nicht die einzige Query sein. Protokolliere Begriffe, Datum und Zeitzone, Quellenumfang, Original-Links, Ausschlüsse und Stoppsignale. Snippets, Aggregatoren und automatisch erzeugte Listen sind Hinweise, keine Evidenz.
+Suche zuerst nach Symptomen, erst danach nach Ursachen. Lege Suchgruppen für Symptom, Grenze und Umgebung an; die vermutete Ursache darf nicht deine einzige Suchanfrage sein. Notiere Suchbegriffe, Datum und Zeitzone, Quellenumfang, Original-URLs, Ausschlüsse und Stoppsignale. Snippets, Aggregatoren und automatisch erzeugte Listen sind Hinweise, keine Belege.
 
-Stoppe, wenn wichtige Behauptungen einen Evidenzpfad haben, mindestens eine Gegenquery gelaufen ist, zwei verschiedene Suchrunden keine neue Umgebung oder kein Gegenbeispiel liefern, der Cutoff erreicht ist, der Umfang keine Verallgemeinerung erlaubt oder eine Quelle Geheimnisse, breitere Rechte oder unbekannte Scripts verlangt.
+Beende die Suche, wenn wichtige Behauptungen einen Belegpfad haben, mindestens eine Gegenabfrage gelaufen ist, zwei unterschiedliche Suchrunden keine neue Umgebung und kein Gegenbeispiel liefern, der Stichtag erreicht ist, der Umfang keine Verallgemeinerung zulässt oder eine Quelle Geheimnisse, zusätzliche Rechte oder unbekannte Skripte verlangt.
 
 ## Eine nachvollziehbare Kette von Forschungsunterlagen aufbauen
 
@@ -41,21 +41,21 @@ Absicht → Frage → Quellenplan → Abruf und Lesen
 | Synthese | Konflikte, Unbekanntes, Stärke | Ein Bericht wird nicht zur Universalregel |
 | Übergabe | Entwurf, Zitate, Review, Version | Andere können nachprüfen |
 
-Jede Evidenzzeile enthält eine atomare Behauptung, die ursprüngliche und die endgültige URL, Autor oder Organisation, Veröffentlichungs-, Zugriffs- und Cutoff-Datum, Version, Plattform, Umfang, Fundstelle, Quellentyp, die Beziehung zur Behauptung, Beobachtung und Hypothese, Konflikt, Zitatprüfung, Ton, Reviewer und nächste Aktion.
+Jede Belegzeile enthält eine atomare Behauptung, die ursprüngliche und die endgültige URL, Autor oder Organisation, Veröffentlichungs-, Zugriffs- und Stichtagsdatum, Version, Plattform, Umfang, Fundstelle, Quellentyp, die Beziehung zur Behauptung, Beobachtung und Hypothese, Konflikt, Zitationsprüfung, Ton, Prüfer und nächste Aktion.
 
 ## Unzugängliche Quellen, Konflikte und Foren
 
-Suchtreffer, `200` oder Redirect beweisen kein Lesen. Bewahre Original-URL, Status, finale URL, Seitenidentität, Datum und Leseergebnis auf. Login-Wall, Rate-Limit, Timeout und Fehler sind unzugänglich; fülle die Lücke nicht mit Erinnerung, Titel oder Snippet.
+Ein Suchtreffer, `200` oder eine Weiterleitung beweist nicht, dass du den Inhalt gelesen hast. Bewahre Original-URL, Status, endgültige URL, Seitenidentität, Datum und Leseergebnis auf. Login-Seite, Rate-Limit, Timeout und Fehler gelten als nicht erreichbar; fülle die Lücke nicht mit Erinnerung, Titel oder Snippet.
 
-Wenn offizielle Quellen abweichen, vergleiche Objekt, Zeit, Version, Work Surface, Konto, Region und Definition. Bleibt der Konflikt, behalte beide Seiten, schränke den Text ein und bleibe bei `candidate`. In Foren trennst du „Autor beobachtete“, „Antwort schlug vor“, „jemand vermutete“ und „Maintainer bestätigte“. Viele Stimmen, Schließen oder akzeptierte Antwort ersetzen keine Bestätigung oder Reproduktion.
+Wenn offizielle Quellen voneinander abweichen, vergleiche Gegenstand, Zeitpunkt, Version, Arbeitsoberfläche, Konto, Region und Definition. Bleibt der Widerspruch bestehen, behalte beide Seiten, begrenze den Text und bleibe bei `candidate`. In Foren unterscheidest du sauber zwischen „Autor beobachtete“, „Antwortende schlugen vor“, „jemand vermutete“ und „Maintainer bestätigte“. Viele Stimmen, ein geschlossener Beitrag oder eine akzeptierte Antwort ersetzen weder Bestätigung noch Reproduktion.
 
-Auch ein glatt formulierter KI-Quellenbeleg ist noch keine Evidenz. Öffne die Quelle und prüfe Fundstelle, Titel, Datum, Version und Umfang. Stützt sie nur einen Teil des Satzes, trenne ihn; ist ein wichtiger Beleg nicht auffindbar, markiere `citation_unverified` und schwäche oder entferne die Behauptung.
+Auch ein glatt formulierter KI-Zitationsbeleg ist noch kein Beleg. Öffne die Quelle und prüfe Fundstelle, Titel, Datum, Version und Umfang. Stützt sie nur einen Teil des Satzes, teile ihn auf; ist ein wichtiger Beleg nicht auffindbar, markiere `citation_unverified` und schwäche die Behauptung ab oder entferne sie.
 
 ## Übung und Grenzen
 
-Beginne mit einem breiten Thema und bereite eine offizielle Quelle, einen Feldbericht mit URL und Datum sowie einen unzugänglichen oder widersprüchlichen Eintrag vor. Formuliere zuerst nur drei Kandidatenfragen, wähle eine und lege Umfang, Cutoff, Zeitzone und Stoppsignale fest. Entwirf Symptom-, Grenz- und Umgebungsqueries, Quellenplan, Evidenztabelle, Access Log, Conflict Log und Citation Audit. Lade keine Logs, Cookies, Tokens oder Kontakte hoch.
+Beginne mit einem breiten Thema und bereite eine erreichbare offizielle Quelle, einen datierten Feldbericht sowie einen nicht erreichbaren oder widersprüchlichen Eintrag vor. Formuliere zunächst nur drei mögliche Fragen, wähle eine aus und lege Umfang, Stichtag, Zeitzone und Stoppsignale fest. Erstelle Suchgruppen für Symptom, Grenze und Umgebung sowie Quellenplan, Belegtabelle, Zugriffs- und Konfliktprotokoll und eine Zitationsprüfung. Lade keine Logs, Cookies, Tokens oder Kontakte hoch.
 
-Fehlt Schlüsselevidenz, liefere `candidate` mit Bekanntem, Unbekanntem, Konflikten, Umfang, Stoppgrund und nächstem risikoarmen Schritt. Bis Schlüsselquellen geöffnet, lokalisiert und unabhängig geprüft sind, ist die Übung kein Beweis vollständiger Forschung.
+Fehlt ein wichtiger Beleg, übergib `candidate` mit Bekanntem, Unbekanntem, Konflikten, Umfang, Stoppgrund und dem nächsten risikoarmen Schritt. Solange die Schlüsselquellen nicht geöffnet, inhaltlich verortet und unabhängig geprüft sind, belegt die Übung keine vollständige Recherche.
 
 ## Ein breites Thema in eine prüfbare Übergabe verwandeln
 
@@ -70,13 +70,13 @@ Antwortet nicht: Gesamtrang „am besten“, nicht veröffentlichte Preise oder 
 Stopp: Schlüsselseite unzugänglich, Umfang unklar oder Konto/private Daten/Zahlung nötig.
 ```
 
-Bereite Queries für Aufgabe/Symptom, Grenze und Umgebung vor. Suche nicht nur nach dem Produkt, das gewinnen soll, plus `best`. Bewahre Query, Datum, Zeitzone, Quellenumfang sowie Ein- und Ausschluss auf. Snippets und Modell-Links sind Hinweise.
+Bereite Suchanfragen für Aufgabe oder Symptom, Grenze und Umgebung vor. Suche nicht nur nach dem Produkt, das deiner Vermutung nach gewinnen soll, plus `best`. Bewahre Suchanfrage, Datum, Zeitzone, Quellenumfang sowie Ein- und Ausschlüsse auf. Snippets und vom Modell vorgeschlagene Links sind Hinweise.
 
-| Feld | Sichere Form |
+| Feld | Sichere Formulierung |
 |---|---|
 | Atomare Behauptung | „Seite X beschrieb Y am Zugriffstag“ |
 | Evidenz | Original-/Final-URL, Titel, Fundstelle, Zugriffstag |
-| Umfang | Surface, Version, Region, Konto oder unknown |
+| Umfang | Arbeitsoberfläche, Version, Region, Konto oder unknown |
 | Stufe | official / maintainer / user report / lead |
 | Nicht impliziert | Verfügbarkeit für mein Konto, Aufgabenerfolg, beste Wahl |
 
@@ -106,18 +106,18 @@ Welche Aussage wurde schwächer, als du Quelle, Zeitpunkt oder Umfang getrennt h
 
 ## Transferaufgabe
 
-Übertrage die Karte auf „Welche Lernressourcen unterstützen meine nächste Woche Spanisch-Übung?“. Definiere Aufgabe, Zeitraum, zulässige Quellen und eine Aussage, die du ausdrücklich nicht behauptest: keine siebentägige Beherrschung oder garantierte Sprachkompetenz.
+Übertrage die Karte auf „Welche Lernressourcen unterstützen meine Spanischübungen in der nächsten Woche?“. Definiere Aufgabe, Zeitraum und zulässige Quellen. Halte ausdrücklich fest, was du nicht behauptest: keine Beherrschung in sieben Tagen und keine garantierte Sprachkompetenz.
 
 ## Abnahme-Checkliste
 
 - [ ] Meine Frage nennt Aufgabe, Umfang, Datum und Ausstiegsbedingung.
 - [ ] Jede Schlüsselbehauptung hat Quelle, Fundstelle, Zugriffsstatus und Grenze.
-- [ ] Ich halte Bericht, Hypothese, offizielle Aussage und Unknown getrennt.
+- [ ] Ich halte Bericht, Hypothese, offizielle Aussage und Unbekanntes getrennt.
 - [ ] Bei Konflikt oder unzugänglicher Quelle liefere ich `candidate`, nicht erfundene Gewissheit.
 
 ## Quellen und Wartungsgrenze
 
-Fragen, Evidenzketten und Konfliktprotokolle sind stabile Methoden. Verfügbare Seiten, Produktfakten, Forenbeiträge und Suchergebnisse ändern sich; protokolliere Zugriffstag, Umfang und nächste Prüfung statt sie als zeitlose Fakten zu behandeln.
+Fragen, Belegketten und Konfliktprotokolle sind stabile Methoden. Erreichbare Seiten, Produktfakten, Forenbeiträge und Suchergebnisse ändern sich; protokolliere Zugriffstag, Umfang und nächste Prüfung, statt sie als zeitlose Fakten zu behandeln.
 
 ## Eigene Abnahme
 
@@ -129,7 +129,7 @@ Fragen, Evidenzketten und Konfliktprotokolle sind stabile Methoden. Verfügbare 
 ## Eine echte, risikoarme Forschungskarte
 
 Beginne nicht mit „Welches Modell ist am besten?“. Formuliere eine Frage, die
-geprüft und auch zurückgewiesen werden kann:
+geprüft und auch widerlegt werden kann:
 
 ```text
 frage: Wie beschreiben öffentliche Primärquellen zum [Datum mit Zeitzone] die
@@ -141,8 +141,8 @@ quellen: offizielle Seiten, Release Notes und öffentliche Dokumentation.
 stopp: Schlüsselseite unzugänglich, Login/Zahlung/private Daten nötig oder unerklärter Konflikt.
 ```
 
-Lass das Modell Quellen und Queries vorschlagen, behandle jeden Link aber als
-Hinweis. Nach dem Öffnen bewahrst du Titel, Original- und End-URL, Fundstelle,
+Lass dir vom Modell Quellen und Suchanfragen vorschlagen, behandle jeden Link aber als
+Hinweis. Nach dem Öffnen bewahrst du Titel, Original- und endgültige URL, Fundstelle,
 Zugriffsergebnis und erklärten Umfang auf. Sagt das Modell „offiziell unterstützt“,
 du findest den Text aber nicht, wird die Aussage `citation_unverified`. Eine
 überzeugende Bibliografie füllt keine Lücke.
@@ -150,7 +150,7 @@ du findest den Text aber nicht, wird die Aussage `citation_unverified`. Eine
 ## Ein Gegencheck pro Behauptung
 
 Ergänze jede wichtige Aussage um eine Frage, die sie einschränken könnte. Nach
-„die Seite beschreibt X“ suchst du Limits, Konto-/Regionsunterschiede,
+„die Seite beschreibt X“ suchst du nach Limits, Konto-/Regionsunterschieden,
 Versionsvoraussetzungen und öffentliche Gegenbeispiele. Kein Gegenbeispiel zu
 finden beweist keine Universalregel; es dokumentiert nur die Suche im Umfang.
 
@@ -158,14 +158,14 @@ finden beweist keine Universalregel; es dokumentiert nur die Suche im Umfang.
 |---|---|---|---|---|
 | Seite beschrieb X an diesem Tag | URL und Fundstelle | Limit-/Region-/Versionsquery | öffentliche Formulierung damals | eigenes Konto, echter Erfolg, beste Wahl |
 
-Übergib eine Seite `candidate` mit Bekanntem, Unknowns, Konflikten,
+Übergib eine `candidate`-Seite mit Bekanntem, Unbekanntem, Konflikten,
 Nichtbehauptetem, Stoppgrund und nächster risikoarmer Aktion. Das ist kein
 Benchmark, keine Nutzerstudie und keine Kaufempfehlung; Kapitel und Experiment
 bleiben `candidate` und `not_run`.
 
-## Forschungsbeleg in zehn Minuten: erst festhalten, dann schließen
+## Zehn-Minuten-Forschungsbeleg: erst dokumentieren, dann entscheiden
 
-Zu Beginn musst du keinen vollständigen Bericht vorspielen. Wähle eine enge
+Du musst am Anfang keinen vollständigen Bericht vortäuschen. Wähle eine enge
 Frage und fülle diesen Beleg zehn Minuten lang aus. Er hinterlässt einen
 prüfbaren nächsten Schritt, statt sofort das „beste Modell“ oder eine „einzige
 Ursache“ zu behaupten.
@@ -188,7 +188,7 @@ verschiedene Behauptungen. Für die erste kann eine öffentliche Seite reichen;
 für die zweite braucht es Evidenz zu Konto, Organisation, Region und echter
 Arbeitsoberfläche. Ein Link ersetzt nicht zwei Belege.
 
-### Wann ein Satz abgeschwächt wird
+### Wann eine Formulierung abgeschwächt werden sollte
 
 | Ausgangssatz | Was fehlt | Ehrlichere Fassung |
 |---|---|---|
@@ -196,8 +196,8 @@ Arbeitsoberfläche. Ein Link ersetzt nicht zwei Belege.
 | „X verursacht dieses Problem.“ | Reproduktion oder Maintainer-Bestätigung | „Eine Person berichtete das Symptom und nannte X als mögliche Ursache.“ |
 | „Es wird offiziell unterstützt.“ | Auffindbarer offizieller Text und Umfang | „Am Zugriffstag beschreibt eine offizielle Seite die Funktion in ihrem erklärten Umfang.“ |
 
-Abschwächen macht Forschung nicht schwächer. Es verhindert, dass das Vorliegen
-einer Quelle mit einer bewiesenen Schlussfolgerung verwechselt wird.
+Eine vorsichtigere Formulierung macht die Recherche nicht schwächer. Sie verhindert,
+dass das Vorhandensein einer Quelle mit einer bewiesenen Schlussfolgerung verwechselt wird.
 
 ## Forschungskarte: Von der Frage zum Stoppbeleg
 
