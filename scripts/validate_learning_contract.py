@@ -130,7 +130,7 @@ CHAPTER_CONTRACT = {
         r"来源与更新提示|來源與更新提示|來源與更新邊界|易变事实与来源|易變事實與來源|来源与维护边界|來源與維護邊界|來源與維護提示|稳定原则|治理的连接|Sources and maintenance boundary|"
         r"Sources and review boundary|Sources and update boundary|来源与维护边界|来源与更新边界|"
         r"Quellen und Wartungsgrenze|Quellen und Aktualitätsgrenze|Fuentes y límite de mantenimiento|"
-        r"Fuentes y actualización|出典と保守の境界|出典と更新境界|출처 및 유지보수 경계|출처와 갱신 경계",
+        r"Fuentes y actualización|出典と保守の境界|出典と更新境界|출처 및 유지보수 경계|출처와 갱신 경계|Sources et limite de maintenance|Sources et limite de mise à jour",
         re.IGNORECASE,
     ),
 }

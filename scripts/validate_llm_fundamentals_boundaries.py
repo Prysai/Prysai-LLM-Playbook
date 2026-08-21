@@ -65,6 +65,12 @@ REQUIRED_MARKERS = {
         "哪些資料會離開當前介面，以及誰授權這樣做",
         "核對原始來源和日期",
     ),
+    "FR": (
+        "Un modèle de base génère du texte",
+        "recherche, récupération, fichiers, mémoire ou outils",
+        "ce qui peut quitter l’interface actuelle et qui l’a autorisé",
+        "vérifiez la source originale et sa date",
+    ),
 }
 
 # These were attractive simplifications, but they teach the wrong mental model:
@@ -79,6 +85,7 @@ ACCURACY_MARKERS = {
     "KO": ("유한한 context window", "cutoff만으로 판단하지 말고"),
     "DE": ("endliches Kontextfenster", "ein Cutoff allein entscheidet die Frage nicht"),
     "ZHTW": ("有限的上下文視窗", "不能只憑截止日期下結論"),
+    "FR": ("fenêtre de contexte finie", "plutôt que de se fier uniquement à la date de coupure"),
 }
 
 MICRO_EXPERIMENT_MARKERS = {
@@ -89,6 +96,7 @@ MICRO_EXPERIMENT_MARKERS = {
     "KO": ("5분 경계 점검", "시립 도서관은 오늘 오후 6시에 문을 닫습니다"),
     "DE": ("Fünf-Minuten-Grenzcheck", "Die Stadtbibliothek schließt heute um 18 Uhr"),
     "ZHTW": ("五分鐘邊界檢查", "市圖書館今天下午 6 點關門"),
+    "FR": ("Vérification des limites en cinq minutes", "La bibliothèque municipale fermera aujourd’hui à 18 h"),
 }
 
 FORBIDDEN_MARKERS = {
@@ -99,6 +107,7 @@ FORBIDDEN_MARKERS = {
     "KO": ("짧은 범위라는 병목이 사라졌습니다", "모델은 학습 cutoff 시점에 고정됩니다"),
     "DE": ("Damit fiel der Engpass des kurzen Fensters weg.", "Das Modell ist an seinem Trainings-Cutoff eingefroren"),
     "ZHTW": ("短窗口這個瓶頸就此被打破", "模型凍結在它的訓練截止日期"),
+    "FR": ("Cela a supprimé le goulot d’étranglement de la fenêtre courte.", "Le modèle est figé à sa date de coupure d’entraînement"),
 }
 
 
@@ -129,7 +138,7 @@ def main() -> int:
         return 1
 
     print("LLM_FUNDAMENTALS_BOUNDARIES_OK")
-    print("locales=EN,ZH,ES,JA,KO,DE,ZHTW")
+    print("locales=EN,ZH,ES,JA,KO,DE,ZHTW,FR")
     print("evidence_boundary=wording-presence-not-language-review-product-behavior-or-learning-proof")
     return 0
 

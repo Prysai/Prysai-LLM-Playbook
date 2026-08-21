@@ -78,16 +78,16 @@ def lesson_zero_gaps(text: str) -> list[str]:
         "capability_boundary": re.compile(
             r"(?i)(what LLMs cannot|LLM 做不到|LLM 自己无法建立什么|LLM 自己無法建立什麼|LLM.{0,8}(不能|無法|做不到)|"
             r"LLMだけでは確立できないこと|LLM만으로 확립할 수 없는 것|Was LLMs allein nicht feststellen können|"
-            r"LLM.{0,4}できない|LLM이 할 수 없는|LLMs nicht können|LLM no pueden)"
+            r"LLM.{0,4}できない|LLM이 할 수 없는|LLMs nicht können|LLM no pueden|les LLM ne peuvent pas)"
         ),
         "observable_check": re.compile(
-            r"(?i)(five-minute boundary check|五分钟边界检查|五分鐘邊界檢查|5分の境界チェック|5분 경계 점검|Comprobación de límites en cinco minutos|Fünf-Minuten-Grenzcheck)"
+            r"(?i)(five-minute boundary check|五分钟边界检查|五分鐘邊界檢查|5分の境界チェック|5분 경계 점검|Comprobación de límites en cinco minutos|Fünf-Minuten-Grenzcheck|Vérification des limites en cinq minutes)"
         ),
         "sources_boundary": re.compile(
             r"(?i)(sources and boundary|资料来源与边界|来源与边界|來源與邊界|情報源とその限界|情報源と境界|"
-            r"출처와 경계|Fuentes y alcance|Fuentes y límites|Quellen und Grenzen|Quellen und Grenzen)"
+            r"출처와 경계|Fuentes y alcance|Fuentes y límites|Quellen und Grenzen|Quellen und Grenzen|sources et limites)"
         ),
-        "next_unit": re.compile(r"(?i)(chapter.?1|第.?1.?章|第1章|1장|Kapitel.?1|Capítulo.?1)"),
+        "next_unit": re.compile(r"(?i)(chapter.?1|第.?1.?章|第1章|1장|Kapitel.?1|Capítulo.?1|Chapitre.?1)"),
     }
     return [name for name, pattern in checks.items() if not pattern.search(text)]
 
@@ -147,3 +147,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

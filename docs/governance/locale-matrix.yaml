@@ -2,7 +2,7 @@
   "matrix_version": "1",
   "mode": "migration",
   "default_locale": "EN",
-  "last_reviewed": "2026-08-18",
+  "last_reviewed": "2026-08-21",
   "next_review": "2026-11-09",
   "description": "Canonical identity and translation state for reader-facing localized content.",
   "locales": {
@@ -47,6 +47,12 @@
       "url_token": "zh-tw",
       "html_lang": "zh-TW",
       "display_name": "繁體中文"
+    },
+    "FR": {
+      "suffix": "FR",
+      "url_token": "fr",
+      "html_lang": "fr",
+      "display_name": "Français"
     }
   },
   "locale_neutral_paths": [
@@ -172,7 +178,8 @@
         "JA": "book/guides/llm-fundamentals-JA.md",
         "KO": "book/guides/llm-fundamentals-KO.md",
         "DE": "book/guides/llm-fundamentals-DE.md",
-        "ZHTW": "book/guides/llm-fundamentals-ZHTW.md"
+        "ZHTW": "book/guides/llm-fundamentals-ZHTW.md",
+        "FR": "book/guides/llm-fundamentals-FR.md"
       }
     },
     {
@@ -186,7 +193,8 @@
         "JA": "book/routes/universal-core-foundations-JA.md",
         "KO": "book/routes/universal-core-foundations-KO.md",
         "DE": "book/routes/universal-core-foundations-DE.md",
-        "ZHTW": "book/routes/universal-core-foundations-ZHTW.md"
+        "ZHTW": "book/routes/universal-core-foundations-ZHTW.md",
+        "FR": "book/routes/universal-core-foundations-FR.md"
       }
     },
     {
@@ -200,7 +208,8 @@
         "JA": "book/communication-clinic-JA.md",
         "KO": "book/communication-clinic-KO.md",
         "DE": "book/communication-clinic-DE.md",
-        "ZHTW": "book/communication-clinic-ZHTW.md"
+        "ZHTW": "book/communication-clinic-ZHTW.md",
+        "FR": "book/communication-clinic-FR.md"
       }
     },
     {
@@ -214,7 +223,8 @@
         "JA": "book/chapters/09-verification-and-recovery-JA.md",
         "KO": "book/chapters/09-verification-and-recovery-KO.md",
         "DE": "book/chapters/09-verification-and-recovery-DE.md",
-        "ZHTW": "book/chapters/09-verification-and-recovery-ZHTW.md"
+        "ZHTW": "book/chapters/09-verification-and-recovery-ZHTW.md",
+        "FR": "book/chapters/09-verification-and-recovery-FR.md"
       }
     },
     {
@@ -228,7 +238,8 @@
         "JA": "book/routes/first-safe-change-JA.md",
         "KO": "book/routes/first-safe-change-KO.md",
         "DE": "book/routes/first-safe-change-DE.md",
-        "ZHTW": "book/routes/first-safe-change-ZHTW.md"
+        "ZHTW": "book/routes/first-safe-change-ZHTW.md",
+        "FR": "book/routes/first-safe-change-FR.md"
       }
     }
   ],
@@ -306,6 +317,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/routes/first-safe-change-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -382,6 +403,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/guides/learning-practice-contract-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -458,6 +489,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/lab-018-language-transfer-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -528,6 +569,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/routes/universal-core-foundations-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -604,6 +654,16 @@
           "coverage": "starter-card subset",
           "run_status": "not_run",
           "reason": "繁體中文起步卡片子集已建立；它不是完整英文練習包的翻譯，獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/communication-clinic-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -677,6 +737,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "README-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -750,6 +819,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/README-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -823,6 +901,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/preface-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -896,6 +983,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/README-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -969,6 +1065,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/table-of-contents-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -1042,6 +1147,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/01-gpt-and-codex-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -1115,6 +1229,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/02-first-safe-task-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -1188,6 +1311,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/03-task-protocol-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -1261,6 +1393,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/04-context-permissions-and-agent-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -1334,6 +1475,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/05-choose-the-codex-surface-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -1407,6 +1557,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/06-model-selection-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -1480,6 +1639,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/07-skills-plugins-and-tools-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -1553,6 +1721,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/08-full-lifecycle-workflow-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -1626,6 +1803,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/09-verification-and-recovery-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -1699,6 +1885,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/10-planning-and-slicing-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -1772,6 +1967,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/11-designing-a-skill-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -1845,6 +2049,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/12-agent-loop-and-stop-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -1918,6 +2131,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/13-action-boundaries-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -1991,6 +2213,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/14-discover-and-audit-skills-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -2064,6 +2295,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/15-research-track-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -2137,6 +2377,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/16-engineering-track-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -2210,6 +2459,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/17-marketing-track-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -2283,6 +2541,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/18-content-design-data-automation-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -2356,6 +2623,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/19-evaluate-models-and-workflows-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -2429,6 +2705,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/20-personal-codex-work-system-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -2502,6 +2787,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/21-team-capability-system-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -2575,6 +2869,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/chapters/22-continuous-update-and-future-proofing-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -2654,6 +2957,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/lab-011-gpt-codex-boundaries-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -2733,6 +3046,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/lab-001-first-safe-task-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -2812,6 +3135,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/lab-002-task-protocol-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -2891,6 +3224,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/lab-003-evidence-review-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -2970,6 +3313,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/lab-004-skill-selection-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -3049,6 +3402,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/lab-005-design-a-skill-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -3128,6 +3491,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/lab-008-research-question-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -3207,6 +3580,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/lab-009-engineering-lifecycle-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -3286,6 +3669,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/lab-010-product-context-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -3365,6 +3758,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/lab-012-team-capability-migration-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -3444,6 +3847,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/lab-013-l3-vertical-slice-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -3523,6 +3936,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/lab-006-agent-stop-conditions-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -3602,6 +4025,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/lab-007-action-boundaries-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -3678,6 +4111,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/lab-014-resume-reconciliation-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -3754,6 +4197,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/lab-015-evidence-delivery-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -3830,6 +4283,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/lab-016-side-effect-boundary-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -3906,6 +4369,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/spanish-practice-loop-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -3982,6 +4455,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/work-update-practice-loop-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -4058,6 +4541,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/research-check-practice-loop-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -4128,6 +4621,15 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/evidence-library-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -4204,6 +4706,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/labs/lab-017-skill-discovery-audit-FR.md",
+          "content_status": "draft",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -4280,6 +4792,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/routes/platform-adapter-guide-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -4356,6 +4878,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/french-practice-loop-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "not-started",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     },
@@ -4432,6 +4964,16 @@
           "coverage": "full",
           "run_status": "not_run",
           "reason": "繁體中文候選譯文由現有中文源轉換後建立；獨立語言審校與學習者執行證據仍待完成。"
+        },
+        "FR": {
+          "path": "book/guides/llm-fundamentals-FR.md",
+          "content_status": "candidate",
+          "translation_status": "in-progress",
+          "translated_from": "EN",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "core-slice",
+          "run_status": "not_run",
+          "reason": "French core route is being authored and awaits independent native-language review."
         }
       }
     }

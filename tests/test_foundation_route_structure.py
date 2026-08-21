@@ -1,4 +1,4 @@
-"""Discovery entry point for the seven-locale foundation-route contract."""
+"""Discovery entry point for the eight-locale foundation-route contract."""
 
 from __future__ import annotations
 
