@@ -2,49 +2,52 @@
 
 # Kapitel 7: Wie Skills, Plugins, MCP und Tools die Arbeit aufteilen
 
-**Status:** `candidate`. **Vergleich:** `not_run`. Dieses Kapitel lehrt eine Methode;
-es belegt nicht, dass ein externer Skill in diesem Repository lief.
+**Status:** `candidate`. **Vergleich:** `not_run`. Dieses Kapitel vermittelt eine
+Methode; es belegt nicht, dass ein externer Skill in diesem Repository ausgeführt
+wurde.
 
-**Startpunkt:** Benenne zuerst die Aufgabenlücke und wähle erst dann die kleinste
-Fähigkeit, die sie schließt.
+**Startpunkt:** Benenne zuerst, was der Aufgabe fehlt. Wähle erst danach die
+kleinste Fähigkeit, die diese Lücke schließt.
 
 ## Das Problem dieses Kapitels
 
 „Ich brauche einen Skill“ ist nicht immer die richtige Diagnose. Skill, Plugin,
-MCP-Server, Connector, Skript, Vorlage und Dokument lösen verschiedene Probleme.
-Wer sie als austauschbare Namen behandelt, installiert unnötige Fähigkeiten,
-verbirgt Abhängigkeiten und erweitert externe Nebenwirkungen unbemerkt.
+MCP-Server, Connector, Skript, Vorlage und Dokument lösen unterschiedliche
+Probleme. Wer sie nur als austauschbare Bezeichnungen behandelt, installiert
+unnötige Fähigkeiten, macht Abhängigkeiten schwerer sichtbar und vergrößert
+unbemerkt den möglichen Schaden nach außen.
 
-> Was fehlt dieser Aufgabe? Welche kleinste Fähigkeit schließt die Lücke, während
-> Rechte, Lizenz, Abhängigkeiten und Belege kontrollierbar bleiben?
+> Was fehlt dieser Aufgabe? Welche kleinste Fähigkeit schließt diese Lücke, ohne
+> dass Rechte, Lizenz, Abhängigkeiten und Belege aus dem Blick geraten?
 
 ## Lernziele
 
-- Methode, Verbindung, Ausführung und Verteilung unterscheiden;
-- eine kleinste nützliche Kombination aus der Aufgabe statt aus einem Verzeichnis ableiten;
+- Methode, Verbindung, Ausführung und Verteilung voneinander unterscheiden;
+- aus der Aufgabe statt aus einem Verzeichnis die kleinste nützliche Kombination ableiten;
 - Trigger, Abhängigkeiten, Lizenz, Rechte, Nebenwirkungen und Belege vor der Übernahme prüfen; und
-- Datei, Entdeckung, Laden, Übernahme und verifiziertes Verhalten nicht verwechseln.
+- eine vorhandene Datei, ihre Entdeckung, ihr Laden, ihre Übernahme und ihr verifiziertes Verhalten nicht verwechseln.
 
-## Praxisfälle: Entdeckung kann vor der Aufgabe scheitern
+## Praxisfälle: Die Entdeckung kann schon vor dem eigentlichen Auftrag scheitern
 
-Die [Codex-Feldrecherche](../evidence-library-DE.md#source-notes) enthält
-öffentliche Symptome, keine offizielle Ursache und keine lokale Reproduktion.
+Die [Codex-Feldrecherche](../evidence-library-DE.md#source-notes) hält öffentliche
+Beobachtungen fest. Sie liefert weder eine offizielle Ursachenanalyse noch eine
+lokale Reproduktion.
 
 | Symptom | Beobachtung | Beweist nicht | Sichere Reaktion |
 |---|---|---|---|
-| Skill funktioniert als normale Datei, wird als symbolischer Link aber nicht entdeckt | Dateidarstellung verändert die Entdeckung | Dass jeder Scanner, jedes OS oder jeder Release denselben Fehler hat | Dateiform und Arbeitsfläche sichern; Datei und Link isoliert vergleichen |
-| Explizite Skill-Nutzung hängt von einer impliziten Liste ab | Eine explizite Anfrage ist nicht unabhängig von der aktuellen Liste | Allgemeine Routing-Regel oder offizielle Garantie | Sichtbare Liste, exakte Anfrage, Sitzung und geladene Ressourcen getrennt sichern |
+| Skill funktioniert als normale Datei, wird als symbolischer Link aber nicht entdeckt | Die Darstellung der Datei verändert das Entdeckungsergebnis | Dass jeder Scanner, jedes Betriebssystem und jede Version denselben Fehler zeigt | Dateiform und Arbeitsfläche sichern; normale Datei und Link in einem isolierten Test vergleichen |
+| Explizite Skill-Nutzung hängt von einer impliziten Liste ab | Eine ausdrücklich gestellte Anfrage lässt sich nicht von der aktuell sichtbaren Liste trennen | Dass dies eine allgemeine Routing-Regel oder eine offizielle Garantie ist | Sichtbare Liste, exakte Anfrage, Sitzung und geladene Ressourcen getrennt sichern |
 
-Ein Pfad im Repository bedeutet nicht, dass der aktuelle Host ihn entdeckte. Ein
-sichtbarer Name bedeutet nicht, dass die Sitzung ihn lud; Laden beweist weder
-funktionierende externe Abhängigkeiten noch Berechtigungen.
+Ein Pfad im Repository bedeutet nicht, dass der aktuelle Host ihn entdeckt hat.
+Ein sichtbarer Name bedeutet nicht, dass die Sitzung den Skill geladen hat; und
+Laden beweist weder funktionierende externe Abhängigkeiten noch passende Rechte.
 
 ## 1. Ein vierstufiges Fähigkeitsmodell
 
 ```text
 Methodenschicht       Skill           wiederholbare Methode für eine Aufgabenklasse
 Verbindungsschicht    MCP/Connector   externe Daten, Kontext oder Aktionen
-Ausführungsschicht    Tool            lesen, editieren, ausführen, browsen, aufrufen
+Ausführungsschicht    Tool            lesen, bearbeiten, ausführen, durchsuchen, aufrufen
 Verteilungsschicht    Plugin          Paket zum Verteilen und Kombinieren von Fähigkeiten
 ```
 
@@ -55,47 +58,50 @@ Verteilungsschicht    Plugin          Paket zum Verteilen und Kombinieren von F�
 | Tool | Beobachtbare Aktion wie Datei lesen, Befehl ausführen oder API aufrufen | Grund zur Nutzung, Erlaubnis oder korrektes Ergebnis |
 | Plugin | Verteilung und Komposition mehrerer Fähigkeiten | Automatische Autorisierung oder Verfügbarkeitsgarantie |
 
-Für deterministische Wiederholung ist meist ein Skript besser, für eine stabile
-Ausgabeform eine Vorlage und für gelegentliches Hintergrundwissen ein Dokument.
-Ein Skill lohnt sich, wenn die Methode wiederkehrt, aber Kontexturteil braucht.
+Für eine deterministische, wiederholbare Umwandlung ist meist ein Skript besser;
+für eine feste Ausgabeform eine Vorlage und für gelegentlich benötigtes
+Hintergrundwissen ein Dokument. Ein Skill lohnt sich, wenn die Methode wiederkehrt,
+aber jedes Mal eine Beurteilung des Kontexts verlangt.
 
 ## 2. In einer Reihenfolge wählen, die Umfang begrenzt
 
 1. Kläre zuerst das Aufgabenprotokoll.
-2. Wiederholt sich die Methode und gehen Schritte verloren, erwäge einen Skill.
-3. Nur bei nötigen externen Daten oder Aktionen frage nach Connector oder MCP.
+2. Wiederholt sich die Methode, und werden dabei regelmäßig Schritte übersprungen, erwäge einen Skill.
+3. Wenn externe Daten oder Aktionen wirklich nötig sind, prüfe, ob ein Connector oder MCP genügt.
 4. Ist die Umwandlung deterministisch, bevorzuge ein Skript.
 5. Müssen mehrere Fähigkeiten gemeinsam verteilt werden, erwäge ein Plugin.
-6. Erst danach entscheide über Installation, Authentifizierung oder weitere Rechte.
+6. Entscheide erst danach über Installation, Authentifizierung oder zusätzliche Rechte.
 
-Ein großes Verzeichnis kann mehr Fähigkeit vortäuschen und zugleich den realen
-Abhängigkeits- und Berechtigungsgraphen unlesbar machen.
+Ein großes Verzeichnis kann mehr Fähigkeiten vortäuschen und gleichzeitig den
+realen Abhängigkeits- und Berechtigungsgraphen unlesbar machen.
 
 ## 3. Mit der Aufgabenlücke beginnen, nicht mit dem Skill-Namen
 
-Vor der Übernahme beantwortest du schriftlich:
+Vor einer Übernahme beantwortest du schriftlich:
 
-- **Aufgabenlücke:** Fehlt stabile Methode, deterministisches Skript, externe Verbindung oder die Aufgabendefinition?
-- **Trigger/Nicht-Trigger:** Welche Eingabe löst aus, welche ähnliche Anfrage darf nicht auslösen? Gemeinsame Wörter reichen nicht.
-- **Quelle/Revision:** Kann ein Reviewer URL, fixierten Commit, Version oder Hash und Inventardatum prüfen?
-- **Lizenz/Abhängigkeiten:** Deckt die Lizenz Ziel-Dateien? Sind NOTICE, verschachtelte Assets und Laufzeitabhängigkeiten inventarisiert?
-- **Rechte/Nebenwirkungen:** Was wird gelesen oder geschrieben? Ist Netz oder Konto nötig? Kann es senden, veröffentlichen, löschen oder verändern?
-- **Prüfung/Wartung:** Deckt ein isolierter Test positiv, Grenze, Fehler und Transfer? Wer besitzt Approval, Backup, Update und Rollback?
+- **Aufgabenlücke:** Fehlt eine stabile Methode, ein deterministisches Skript, eine externe Verbindung oder zunächst die Aufgabendefinition?
+- **Trigger/Nicht-Trigger:** Welche Eingabe löst aus, und welche ähnliche Anfrage darf nicht auslösen? Gemeinsame Wörter reichen nicht.
+- **Quelle/Revision:** Kann ein Reviewer URL, fixierten Commit, Version oder Hash sowie das Inventardatum prüfen?
+- **Lizenz/Abhängigkeiten:** Deckt die Lizenz die Zieldateien ab? Sind NOTICE, verschachtelte Assets und Laufzeitabhängigkeiten erfasst?
+- **Rechte/Nebenwirkungen:** Was wird gelesen oder geschrieben? Sind Netzwerk oder Konto nötig? Kann die Fähigkeit senden, veröffentlichen, löschen oder verändern?
+- **Prüfung/Wartung:** Deckt ein isolierter Test den Normalfall, die Grenze, den Fehler und die Migration ab? Wer verantwortet Freigabe, Backup, Update und Rollback?
 
-Die Zahl externer Einträge ist kein Qualitätsmaß. Jeder Kandidat benötigt eine
-eigene evidenzbasierte Prüfung.
+Die Zahl externer Einträge ist kein Qualitätsmaß. Jeder Kandidat braucht eine
+eigene Prüfung anhand konkreter Belege.
 
 ### Plugin-Inhalt und Supportgrenze
 
 Die offizielle [Plugin-Dokumentation](https://learn.chatgpt.com/docs/plugins.md)
-beschreibt ein Plugin als installierbares Paket mit Skills, Connectors oder beidem.
-Ein Connector kann über einen MCP-Server Tools, geteilte Information oder externe
-Aktionen anbieten. Plugin ist Verteilung und Komposition, keine Autorisierung.
+beschreibt ein Plugin als installierbares Paket, das Skills, Connectors oder beides
+enthalten kann. Ein Connector kann über einen MCP-Server Tools, geteilte
+Informationen oder externe Aktionen bereitstellen. Ein Plugin dient der Verteilung
+und Komposition; es ist keine Autorisierung.
 
-Am 2026-08-09 nannte die Supportdokumentation Plugins für ChatGPT Chat/Work im Web,
-Desktop und Mobil, Codex in der ChatGPT-Desktop-App und den Plugin-Browser der Codex
-CLI; keine IDE-Erweiterung. Mobilzugriff bedeutet nicht dieselbe Browse- oder
-Installationsfläche wie Desktop.
+In der am 2026-08-09 geprüften Supportdokumentation wurden Plugins für ChatGPT
+Chat/Work im Web, auf dem Desktop und mobil, für Codex in der ChatGPT-Desktop-App
+und für den Plugin-Browser der Codex CLI genannt; eine IDE-Erweiterung wurde nicht
+genannt. Dass Chat/Work mobil verfügbar ist, bedeutet nicht, dass dort dieselbe
+Browse- oder Installationsfläche wie auf dem Desktop vorhanden ist.
 
 ```text
 Produktsupport → Konto-/Org-Autorisierung → Plugin-Installation
@@ -104,20 +110,21 @@ Produktsupport → Konto-/Org-Autorisierung → Plugin-Installation
 ```
 
 Jeder Pfeil ist eine eigene Behauptung. `Sign in with ChatGPT` gewährt weder
-automatisch Plugin-Datenzugriff noch genehmigt es Aktionen. Prüfe `OF-015`,
+automatisch Zugriff auf Plugin-Daten noch genehmigt es Aktionen. Prüfe `OF-015`,
 `OF-016`, `UF-001`, `UF-003` und `LB-002` im
 [Fact-Impact-Register](../../docs/governance/fact-impact-registry.yaml).
 
-Offizielle Materialien vom 2026-08-10 unterscheiden automatische Zuordnung und
-explizite Auswahl: ChatGPT nutzt `@`, Codex `$`; eine neue Chat- oder CLI-Sitzung
-nach Installation gehört zum Ablauf. Das sind volatile Produktfakten, keine
-automatisch verliehenen Rechte. Ein lokaler Check muss Arbeitsfläche, Sitzung,
-Invocation, geladene Ressource, Ausgabe und Ergebnisprüfung sichern. Hier fehlen
-solche Runtime-Protokolle, also bleibt der Zustand `not_observed`.
+Die am 2026-08-10 geprüften offiziellen Materialien unterscheiden automatische
+Zuordnung und explizite Auswahl: ChatGPT nutzt `@`, Codex `$`; eine neue Chat- oder
+CLI-Sitzung nach der Installation gehört zum beschriebenen Ablauf. Das sind
+veränderliche Produktfakten, keine automatisch verliehenen Rechte. Ein lokaler
+Check muss Arbeitsfläche, Sitzung, exakten Aufruf, geladene Ressource, Ausgabe und
+Ergebnisprüfung sichern. Hier fehlen solche Runtime-Protokolle; der Zustand bleibt
+also `not_observed`.
 
-## 4. Das Prüfpaket vor der Übernahme
+## 4. Das Prüfprotokoll vor der Übernahme
 
-Vor Installation entsteht eine `skill-adoption-decision.md`:
+Vor der Installation legst du eine `skill-adoption-decision.md` an:
 
 ```text
 task_gap:
@@ -139,16 +146,16 @@ decision: recommendation-only | blocked | approved-to-install | installed-candid
 evidence / unverified:
 ```
 
-| Entscheidung | Darf behauptet werden | Darf nicht behauptet werden |
+| Entscheidung | Was du damit sagen darfst | Was du damit nicht sagen darfst |
 |---|---|---|
-| `recommendation-only` | „Lohnt weitere Read-only-Prüfung oder isolierten Versuch“ | „Für Installation freigegeben“ |
-| `blocked` | „Noch nicht übernehmen; diese Bedingungen lösen die Blockade“ | „Erst installieren, später dokumentieren“ |
-| `approved-to-install` | „In diesem Scope installierbar“ | „Installiert“ oder „verifiziert“ |
-| `installed-candidate` | „Isolierter Installationskandidat existiert“ | „Team hat übernommen“ oder „production-ready“ |
+| `recommendation-only` | „Eine weitere schreibgeschützte Prüfung oder ein isolierter Versuch lohnt sich“ | „Für die Installation freigegeben“ |
+| `blocked` | „Noch nicht übernehmen; diese Bedingungen müssen zuerst erfüllt sein“ | „Erst installieren und später dokumentieren“ |
+| `approved-to-install` | „In diesem festgelegten Umfang installierbar“ | „Installiert“ oder „verifiziert“ |
+| `installed-candidate` | „Ein isolierter Installationskandidat ist vorhanden“ | „Vom Team übernommen“ oder „production-ready“ |
 
 `draft`, `candidate`, `verified` und `production-ready` sind Projektzustände,
-nicht diese Übernahmeentscheidungen. GitHub-Erreichbarkeit klärt keine Lizenz;
-ein Manifest beweist keinen erfolgreichen Tool-Aufruf.
+nicht Übernahmeentscheidungen. Dass eine GitHub-Seite erreichbar ist, klärt keine
+Lizenz; ein vorhandenes Manifest beweist keinen erfolgreichen Tool-Aufruf.
 
 ### Fünf leicht verwechselte Zustände
 
@@ -160,35 +167,38 @@ ein Manifest beweist keinen erfolgreichen Tool-Aufruf.
 | Übernommen | Owner- und Genehmigungsnachweis im Scope | Verifiziertes Verhalten |
 | Verifiziert | Positiv-, Grenz-, Fehler- und Transferbeleg | Gleiches Verhalten in anderem Konto, Einstieg oder Version |
 
-Zielpfad und Installationslog können `installed-candidate` stützen, überspringen
-aber nicht Entdeckung, Laden, Übernahme und Verhaltensprüfung.
+Zielpfad und Installationsprotokoll können `installed-candidate` stützen. Sie
+ersetzen aber weder die Entdeckung und das Laden noch die Übernahme und
+Verhaltensprüfung.
 
 ### Zwei Übernahmeentscheidungen
 
-- **Empfehlung:** S05 `code-review-and-quality` ist für Diff-Prüfung mit definierter
-  Basis ein `recommendation-only`-Kandidat: lokales Archiv von
+- **Empfehlung:** S05 `code-review-and-quality` ist für eine Diff-Prüfung mit
+  definierter Basis ein `recommendation-only`-Kandidat: lokales Archiv von
   `https://github.com/addyosmani/agent-skills`, SHA-256
-  `6EEDBE7D2EA3A82417781D879785BD501FBDE21275627F557DE4B76560BA1250`, MIT-Signal
-  auf Repository-Ebene. Verschachtelte Abhängigkeiten, vollständige Assets,
-  wirksame Rechte und Rollback sind ungeprüft; als Nächstes folgt nur Review oder
-  Offline-Test, nicht Installation.
+  `6EEDBE7D2EA3A82417781D879785BD501FBDE21275627F557DE4B76560BA1250` und ein
+  MIT-Signal auf Repository-Ebene. Verschachtelte Abhängigkeiten, vollständige
+  Assets, tatsächliche Rechte und Rollback sind noch ungeprüft. Der nächste
+  Schritt ist daher nur eine Prüfung oder ein Offline-Test, nicht die Installation.
 - **Blockiert:** S06 `webapp-testing` bleibt `blocked`: lokales Archiv von
   `https://github.com/composio-community/awesome-codex-skills`, SHA-256
   `D3DA83ED9D474690E7FF235351376114972840C78BC319CBCB8F89CBD704608E`. Ein
-  Apache-2.0-Signal an der Wurzel belegt nicht, dass jeder verschachtelte Skill,
-  jedes Skript und Asset passende Lizenz-/NOTICE-Abdeckung hat. Ohne Asset-Review
-  und übbares Rollback reicht `SKILL.md` nicht.
+  Apache-2.0-Signal im Wurzelverzeichnis belegt nicht, dass jeder verschachtelte
+  Skill, jedes Skript und jedes Asset von einer passenden Lizenz oder NOTICE
+  abgedeckt ist. Ohne eine Prüfung der einzelnen Assets und ein durchspielbares
+  Rollback reicht die bloße Existenz einer `SKILL.md` nicht aus.
 
-## 5. Fähigkeiten komponieren, nicht stapeln
+## 5. Fähigkeiten zusammenstellen, nicht wahllos stapeln
 
 ```text
 Aufgabenprotokoll → Domänenmethode → Tool oder Verbindung → Evidenzprüfung
 ```
 
 In einem risikoarmen Marketingexperiment definiert das Protokoll Ziel und Grenze,
-eine Produktkontextmethode liefert Publikum und Positionierung, ein Analysetool
-zeichnet Daten auf und Evidence Review prüft das Ereignis. Zehn überlappende Skills
-sind meist weniger verständlich als eine Methode mit einem klaren Protokoll.
+eine Methode für den Produktkontext liefert Publikum und Positionierung, ein
+Analysetool zeichnet die nötigen Daten auf und Evidence Review prüft, ob das
+Ereignis tatsächlich stattgefunden hat. Zehn überlappende Skills sind meist
+schwerer zu verstehen als eine Methode mit einem klaren Protokoll.
 
 ## 6. Übergabe vor der Komposition
 
@@ -198,58 +208,63 @@ actions_not_done | evidence | unverified | blocked_on | next_check
 permission_boundary | next_review
 ```
 
-Domänen-Skill, Task Protocol, Evidence Review und Workflow Orchestrator besitzen
-jeweils Methode, Ausführungsgrenze, Claim-Review beziehungsweise Phasen und
-Checkpoints. Ein aufgerufener Skill erhält nicht die Rechte eines anderen.
+Domänen-Skill, Task Protocol, Evidence Review und Workflow Orchestrator haben jeweils
+eine eigene Aufgabe: Methode, Ausführungsgrenze, Prüfung von Behauptungen sowie
+Phasen und Checkpoints. Ein aufgerufener Skill erhält nicht die Rechte eines anderen.
 
 ## 7. Experiment: drei Fähigkeitskombinationen vergleichen
 
 ### Vorbereitung
 
-Wähle eine lokale, risikoarme, reversible Aufgabe. Bereite ein Protokoll, zwei
+Wähle eine lokale, risikoarme und reversible Aufgabe. Bereite ein Protokoll, zwei
 Skill-Kandidaten mit fixer Revision und eine simulierte externe Verbindung vor.
-Einer soll weiter isoliert geprüft, einer wegen unklarer Lizenz, NOTICE oder
-Rücknahme abgelehnt werden. Lade keine echten Daten hoch, sende keine Nachrichten,
-schreibe nicht an Dritte und authentifiziere keine externen Konten. Jede Kombination
-erhält eine `run-id`; Aufgabentext und Abnahmerubrik bleiben gleich.
+Einer soll weiter isoliert geprüft werden können; der andere wird wegen unklarer
+Lizenz, NOTICE oder Rücknahme abgelehnt. Lade keine echten Daten hoch, sende keine
+Nachrichten, schreibe nicht an Dritte und authentifiziere keine externen Konten.
+Jede Kombination erhält eine `run-id`; Aufgabentext und Abnahmerubrik bleiben gleich.
 
 ### Aufgabe
 
-Vergleiche (1) Protokoll allein, (2) Protokoll plus Domänen-Skill und (3) Protokoll,
-Skill plus externe Verbindung. Schließe die Vorprüfung vorher ab. Der Versuch bleibt
-read-only: nicht installieren, authentifizieren oder Teamkonfiguration aktivieren.
-Vergleiche Ausgabequalität, Zeit, Rechteumfang, Verifikationskosten und Nebenwirkung.
+Vergleiche (1) das Protokoll allein, (2) das Protokoll plus Domänen-Skill und (3)
+das Protokoll mit Domänen-Skill und externer Verbindung. Schließe die Vorprüfung
+vorher ab. Der Versuch bleibt schreibgeschützt: nichts installieren oder
+authentifizieren und keine Teamkonfiguration aktivieren. Vergleiche Ausgabequalität,
+Zeit, Rechteumfang, Prüfaufwand und Nebenwirkungen.
 
 ### Belege
 
-Bewahre Wege, `run-id`, zwei Entscheidungen, Rechte-/Abhängigkeitstabelle,
-Lizenzfunde, simulierte oder echte Ausgabe, Prüfergebnis und eine Liste nicht
-ausgeführter externer Aktionen auf. Ein valider Eintrag macht Quelle/Revision
-prüfbar, verweist Lizenzschlüsse auf echte Dateien, benennt Installations-, Backup-
-und Rollback-Ziel, Owner und Approval, deckt positiv/Grenze/Fehler/Transfer ab und
-behält die Basis ohne zusätzliche Verbindung. Ein simulierter Aufruf heißt simuliert.
+Bewahre Pfade, `run-id`, die beiden Entscheidungen, eine Rechte- und
+Abhängigkeitstabelle, Lizenzfunde, simulierte oder echte Ausgaben, das Prüfergebnis
+und eine Liste der nicht ausgeführten externen Aktionen auf. Ein belastbarer Eintrag
+macht Quelle und Revision prüfbar, verweist Lizenzschlüsse auf echte Dateien,
+nennt Installations-, Backup- und Rollback-Ziel sowie Owner und Approval, deckt
+Normalfall, Grenze, Fehler und Migration ab und behält die Basis ohne zusätzliche
+Verbindung. Ein simulierter Aufruf muss als simuliert gekennzeichnet sein.
 
-Erkläre, welcher Beleg `recommendation-only` oder `blocked` weiterbewegen würde.
-Notiere, ob jede Beobachtung Existenz, Entdeckung, Laden, Übernahme oder Verifikation
-zeigt; ein früher Zustand ersetzt keinen späteren.
+Erkläre, welcher Beleg `recommendation-only` oder `blocked` in den nächsten Zustand
+überführen würde. Notiere, ob jede Beobachtung Existenz, Entdeckung, Laden,
+Übernahme oder Verifikation zeigt; ein früher Zustand ersetzt keinen späteren.
 
 ## Bewusster Fehlerfall und Grenze
 
-Gib drei überlappende Skills vor, von denen einer externes Hochladen verlangt,
-obwohl nur lokale Ordnung nötig ist. Ergänze einen Kandidaten mit erreichbarem Repo
-und `SKILL.md`, aber unklarer Lizenz oder Rücknahme. Die Übung ist bestanden, wenn
-Überlappung erkannt, unnötige Rechte abgelehnt, der unklare Kandidat `blocked`
-bleibt und die Basis mit Protokoll allein oder einem Skill erhalten bleibt.
+Stelle drei überlappende Skills bereit; einer davon verlangt das Hochladen nach
+außen, obwohl für die Aufgabe eine lokale Ordnung genügt. Ergänze einen Kandidaten
+mit erreichbarem Repository und `SKILL.md`, dessen Lizenz oder Rücknahme aber unklar
+ist. Die Übung ist bestanden, wenn du die Überschneidung erkennst, unnötige Rechte
+ablehnst, den unklaren Kandidaten auf `blocked` lässt und die Basis mit dem Protokoll
+allein oder mit einem Skill erhältst.
 
 ## Reflexion
 
-Welche zusätzliche Fähigkeit veränderte den Beleg oder die Berechtigung am stärksten? Welche Beobachtung war nur simuliert? Begründe, weshalb die Basis ohne externe Verbindung erhalten bleiben muss.
+Welche zusätzliche Fähigkeit hat Beleglage oder Berechtigungen am stärksten
+verändert? Welche Beobachtung war nur simuliert? Begründe, warum die Basis ohne
+externe Verbindung erhalten bleiben muss.
 
 ## Transferaufgabe
 
-Übertrage das Vier-Schichten-Modell auf Recherche-Workflow und Produktbericht.
-Bestimme jeweils Methode, Verbindung und jede deterministische Umwandlung, die ein
-Skript sein sollte.
+Übertrage das Vier-Schichten-Modell auf einen Recherche-Workflow und einen
+Produktbericht. Bestimme jeweils Methode und Verbindung sowie jede deterministische
+Umwandlung, die besser als Skript umgesetzt wird.
 
 ## Quellen und Wartungsgrenze
 
@@ -262,9 +277,9 @@ Skript sein sollte.
 | Link-Entdeckung und explizite Invocation | [Codex-Feldrecherche](../evidence-library-DE.md#source-notes) | 2026-08-09 | Öffentliche Berichte ohne Reproduktion oder offizielle Ursache |
 | Kandidatenarchiv und Lizenzsignale | [Skill-Kandidatenkatalog](../evidence-library-DE.md#source-notes) | 2026-08-09 | Inventar, keine Installationsfreigabe |
 
-Details zu Skills, Plugins, Connectors, MCP, Manifesten, Authentifizierung und
-Invocation können sich ändern. Aktualisiere zuerst Primärquellen und prüfe danach
-Fact-Impact-Register, Kapitel, Labs, Skills, Fixtures und betroffene Routen. Mische
+Einzelheiten zu Skills, Plugins, Connectors, MCP, Manifesten, Authentifizierung und
+Aufrufen können sich ändern. Aktualisiere zuerst die Primärquellen und prüfe danach
+Fact-Impact-Register, Kapitel, Labs, Skills, Fixtures und betroffene Routen. Vermische
 offizielle Beschreibung, Community-Symptom und lokalen Runtime-Beleg nicht in einem
 Satz.
 
@@ -272,7 +287,7 @@ Satz.
 
 - [ ] Ich unterscheide Skill, Plugin, MCP-Server, Connector, Tool, Skript, Vorlage und Dokument.
 - [ ] Ich kann Aufgabenlücke, Trigger, Nicht-Trigger, Quellenrevision, Lizenz, Abhängigkeit, Recht, Nebenwirkung, Owner und Rollback erklären.
-- [ ] Ich halte einen Kandidaten auf `recommendation-only` und markiere ihn bei unklarer Lizenz oder Rücknahme `blocked`.
+- [ ] Ich belasse einen Kandidaten bei `recommendation-only` und setze ihn bei unklarer Lizenz oder Rücknahme auf `blocked`.
 - [ ] Ich unterscheide Existenz, Entdeckung, Laden, Übernahme und verifiziertes Verhalten.
 - [ ] Ich vergleiche Protokollbasis und Fähigkeitskombination bei fester Eingabe, Abnahme und Evidenzgrenze.
 - [ ] Ich nenne nicht ausgeführte externe Aktionen und nötige Belege vor einer Runtime-Erfolgsbehauptung.
