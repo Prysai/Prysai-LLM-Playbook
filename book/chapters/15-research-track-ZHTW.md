@@ -227,6 +227,58 @@ action: keep | narrow | remove | request_source
 
 來源會過期，產品事實更會變化。研究完成不等於結論永久有效；請記錄複核人和日期。可配合 [實驗 008：把主題縮成可研究的問題](../labs/lab-008-research-question-ZHTW.md)。本章仍是 `candidate`，研究模板存在不證明結論正確。
 
+### 引用稽核的最小可交付包
+
+不要只保存一張連結清單。對每條會影響決定的主張，至少保留一行完整
+記錄；如果一句話包含兩個事實，就拆成兩行：
+
+```text
+claim_id: C-07
+claim: <一個可單獨檢查的事實>
+original_url: <發現來源的 URL>
+final_url: <最終開啟的 URL；沒有跳轉則同上>
+location: <段落、標題、表格列或 Issue；找不到寫 none>
+scope: <產品面／版本／帳戶／地區／日期；未知寫 unknown>
+source_supports: <原文直接支援什麼>
+extra_inference: <我額外推斷了什麼；沒有則寫 none>
+audit: supported | partial | unsupported | inaccessible | citation_unverified
+reviewer_and_date: <複核人／日期>
+action: keep | narrow | remove | request_source
+```
+
+稽核完成後，把主張放進下面四類之一：
+
+| 分類 | 可以使用的語氣 | 下一步 |
+|---|---|---|
+| `supported` |「在該來源、版本和日期範圍內，頁面說明……」| 寫清範圍和複核日期 |
+| `partial` | 拆句，或寫「來源只支援其中一部分」| 找同範圍來源，或收窄句子 |
+| `citation_unverified` |「模型／搜尋結果提供線索，原文尚未定位」| 不放入結論，只保留待核實記錄 |
+| `inaccessible` |「目前環境無法核實該頁面」| 不繞過登入、限流或權限；降級交付 |
+
+`HTTP 200`、搜尋結果標題、模型提供的 URL 或格式正確的書目，都不能代替
+`location` 和 `scope`。如果來源負責人、版本或最終頁面不同，先分類為
+範圍差異，再決定是否真的衝突。
+
+### Candidate 降級與停止收據
+
+當關鍵來源無法存取、範圍衝突未解、只剩論壇建議，或 AI 引用無法定位
+時，交付必須降為 `candidate`。用一頁收據記錄為什麼停止、下一步做什麼：
+
+```text
+decision: <要支援的決定>
+question_and_scope: <問題、產品面、版本、地區、截止日期>
+checked_sources: <來源負責人、URL、存取日期和狀態>
+supported_claims: <可直接支援的主張 ID>
+conflicts_or_unknowns: <衝突、無法存取或未定位的主張>
+stop_reason: <缺來源、範圍衝突、權限／登入牆、預算到期等>
+next_safe_check: <一項不上傳秘密、不擴大權限的檢查>
+owner_and_review_date: <負責人／下次複核日期>
+status: candidate | blocked | not_run
+```
+
+這張收據不證明研究「完成」，也不證明模型、帳戶或真實任務的效果；它
+只讓下一位讀者知道目前證據停在哪裡，以及什麼條件滿足後才能繼續。
+
 ## 從寬題到可查核的交付：一張研究工作表
 
 以「哪種 LLM 最適合我的團隊？」為例。它不是可直接回答的問題，因為「最適合」沒有任務、帳戶條件、預算、時間或驗收標準。先把它改寫為：
