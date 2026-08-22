@@ -39,14 +39,15 @@ Copiez cette demande dans la plateforme choisie. Elle utilise un contenu
 fictif, aucun outil et aucune donnée de compte.
 
 ```text
-Résultat : réécris cet avis fictif pour de nouveaux membres.
+Résultat : réécrivez cet avis fictif pour de nouveaux membres.
 Matériel : « L’association se réunit mardi à 18 h. Apporte un carnet. La salle
 sera confirmée plus tard. »
-Format : deux phrases. Conserve chaque fait. Mets tout détail manquant entre [crochets].
-Ajoute ensuite la liste des faits conservés.
-Contrôle : compare le texte source et la réécriture. N’ajoute ni heure, ni salle,
+Format : deux phrases. Conservez chaque fait. Mettez tout détail manquant entre
+[crochets]. Ajoutez ensuite la liste des faits conservés.
+Contrôle : comparez le texte source et la réécriture. N’ajoutez ni heure, ni salle,
 ni tarif, ni contact, ni promesse.
-Arrêt : ne navigue pas, n’envoie rien, ne publie rien et ne suppose aucun détail inconnu.
+Arrêt : ne naviguez pas, n’envoyez rien, ne publiez rien et ne supposez aucun
+détail inconnu.
 ```
 
 Vérifiez vous-même : chaque phrase est-elle rattachée au texte fourni ? La
