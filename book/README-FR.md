@@ -43,4 +43,7 @@ traduction française reste `in-progress` et attend une relecture native.
 
 **État de la traduction :** `in-progress`, `candidate`, `not_run`. La couverture
 structurelle est complète pour les 22 chapitres et 18 Labs ; une relecture
-française indépendante et des essais avec des lecteurs restent à faire.
+française indépendante et des essais avec des lecteurs restent à faire. La
+[matrice des langues](../docs/governance/locale-matrix.yaml) et l’[état de
+publication](../docs/governance/release-readiness.yaml) décrivent les limites
+actuelles.
