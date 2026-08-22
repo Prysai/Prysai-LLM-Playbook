@@ -16,7 +16,11 @@ Vous n’avez pas besoin d’un projet spectaculaire pour apprendre à utiliser 
 outil d’IA. Une tâche dramatique mélange trop de fichiers, permissions et
 inconnues pour permettre de comprendre ce qui a réussi ou échoué. Choisissez
 une cible visible, une modification autorisée et un contrôle répétable. Sans
-projet temporaire, utilisez la [fixture Première modification sûre](../routes/first-safe-change-FR.md).
+projet temporaire, utilisez le [jeu de test hors ligne Première modification
+sûre](../routes/first-safe-change-FR.md). Il ne demande ni compte, ni réseau,
+ni dépôt public : il sert uniquement à répéter le cycle dans une surface que
+vous pouvez inspecter et jeter. Ce jeu de test ne prouve pas que votre compte,
+votre dépôt réel ou votre outil dispose des mêmes capacités.
 
 ## Le problème que résout ce chapitre
 
@@ -91,6 +95,12 @@ Livraison : résumé, fichiers, commandes exécutées, sorties, limites et proch
 
 Ce protocole convertit chaque verbe vague en objet, autorité et preuve. Ce n’est
 pas un prompt magique : le jugement humain reste nécessaire.
+
+Avant d’autoriser l’édition, vérifiez aussi que la carte est complète : cible
+exacte, entrée effectivement lue, action permise, action interdite, preuve
+d’acceptation, récupération et condition d’arrêt. Une carte qui dit seulement
+« modifier README.md » ne précise pas ce qui rend la modification correcte ni
+ce qu’il faut faire si le contrôle ne répond plus.
 
 ## Du prompt de chat à la première tâche
 
@@ -390,6 +400,9 @@ quel état reste inconnu ?
 - [ ] L’autorité minimale suffit à la tâche.
 - [ ] Un statut `not_run` ou `unverified` est conservé lorsqu’un contrôle n’a pas
       été exécuté ou ne couvre pas la phrase annoncée.
+- [ ] Les faits de produit et les limites de version renvoient à une source
+      datée ; une rumeur ou une sortie de modèle n’est pas présentée comme une
+      règle officielle.
 
 ### Reçu de première livraison
 

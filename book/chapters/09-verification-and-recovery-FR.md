@@ -142,6 +142,13 @@ conclusion.
 6. si la cause reste floue, arrêter et livrer une note de blocage précise ;
 7. élargir permission, portée ou budget seulement si la preuve le justifie.
 
+« Relancer » n’est donc pas une stratégie de récupération. Avant tout nouvel
+essai, écrivez l’état qui a changé, l’idempotence de l’action, le budget restant
+et la preuve attendue. Si l’effet de la première tentative est inconnu, le
+statut reste `unverified` ou `blocked` jusqu’à une lecture de réconciliation ;
+un résultat favorable obtenu ensuite ne transforme pas rétroactivement la
+première tentative en succès.
+
 ### Chaîne de capacité
 
 ~~~text
@@ -231,6 +238,14 @@ un déploiement ou une autre cible externe n’a pas été touché. Reprenez seu
 si la nouvelle condition, l’idempotence, la preuve attendue et le budget sont
 explicitement consignés.
 
+Pour une reprise autorisée, conservez au minimum :
+
+1. la commande ou la demande exacte de la première tentative ;
+2. le checkpoint et la comparaison avant/après ;
+3. la classe d’idempotence et le risque d’un doublon ;
+4. la lecture indépendante qui a justifié la reprise ; et
+5. la preuve propre au second essai, sans la fusionner avec la première ligne.
+
 ## 4. Distinguer récupération et complétion
 
 practice désigne un exercice, candidate une structure prometteuse mais
@@ -263,6 +278,17 @@ et vérifiez que la revue la refuse au lieu de suivre son ton.
 Gardez tableau, chemins de preuve, catégorie de lacune, décision de revue et
 plan de récupération. Incluez une affirmation de fait, une de runtime et une
 d’effet utilisateur.
+
+Utilisez trois lignes au minimum pour rendre la différence visible :
+
+| Type d’affirmation | Exemple | Preuve attendue |
+|---|---|---|
+| Fait source | « La documentation décrit cette option. » | URL, date, passage et portée relus. |
+| Exécution | « Le contrôle a passé dans cette copie. » | Commande, répertoire, code retour et sortie. |
+| Effet utilisateur | « La page est utilisable sur mobile. » | Rendu à un viewport nommé, critères et revue humaine. |
+
+Une seule capture, un seul diff ou un seul message de succès ne peut pas
+remplacer les trois preuves.
 
 ### Échec intentionnel et limite
 
@@ -322,6 +348,8 @@ pour que son statut corresponde à sa preuve.
       inconnues, risques, chemins de preuve et prochain contrôle sûr.
 - [ ] Je peux conserver `candidate` et `not_run` lorsque l’expérience et sa
       relecture n’ont pas eu lieu.
+- [ ] Je peux consigner une reprise comme un nouvel essai, avec son propre
+      périmètre, sa preuve et sa limite.
 
 ## Transfert
 

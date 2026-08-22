@@ -12,6 +12,13 @@ Les termes `candidate`, `not_run`, `blocked` et `unverified` indiquent l’état
 la preuve dans la portée déclarée. Ils ne signifient pas qu’une action est sûre
 dans tous les comptes ou toutes les versions.
 
+Dans ce chapitre, **authentification** répond à « quel compte est connecté ? »,
+**capacité technique** à « quels chemins et outils peuvent réellement agir ? »,
+**autorisation** à « quelle action précise a été accordée pour cette cible ? » et
+**confirmation humaine** à « quelle action à impact élevé a été approuvée juste
+avant son exécution ? ». Une réponse positive à l’une de ces questions ne
+remplit pas les trois autres.
+
 ## Le problème que résout ce chapitre
 
 Lire, éditer, exécuter, valider, committer, pousser et publier n’ont ni le même
@@ -120,6 +127,27 @@ Un login, un bouton visible ou un répertoire inscriptible ne remplit aucune de
 ces lignes à lui seul. Tant que la cible, l’audience ou la lecture arrière manque,
 restez en aperçu et n’envoyez rien.
 
+### Exemple rempli, sans effet externe
+
+Cet exemple montre la forme attendue ; il ne pousse rien et n’utilise aucun
+compte distant :
+
+```text
+cible et hôte : copie locale / dossier temporaire
+compte / organisation : aucun
+dépôt, branche ou objet : README.md local
+action exacte et données transmises : lire puis proposer une correction ; rien envoyé
+public ou destinataire : aucun
+autorisation pour cette action : édition locale de README.md après confirmation
+preuve de retour attendue : diff limité à README.md et contrôle de liens local
+rollback / restauration : restaurer la copie propre conservée avant l’édition
+arrêt si : chemin, commande ou critère d’acceptation est ambigu
+```
+
+Quand une ligne devient « dépôt public », « upload » ou « publication », il ne
+s’agit plus du même contrat : compte, audience, revue, payload et rollback
+doivent être réécrits.
+
 ## 3. Prompt qui garde la frontière visible
 
 ```text
@@ -195,6 +223,11 @@ Condition d’arrêt :
 Vérifiez les chemins, variables, branches et remotes en lecture seule. Une reprise
 doit nommer la condition changée et le risque qu’une première tentative ait déjà
 produit un effet.
+
+Pour la restauration, indiquez la source exacte (copie, checkpoint, `git restore`
+ou autre mécanisme autorisé), ce qui sera perdu, et la lecture qui confirmera que
+la cible est revenue à l’état attendu. « Annuler » sans source ni vérification
+n’est pas un rollback démontré.
 
 Pour une commande qui écrit, installe, se connecte ou peut durer longtemps,
 ajoutez explicitement :
@@ -272,6 +305,11 @@ sans écriture, la liste des actions D/E délibérément non exécutées, le sec
 tableau après changement de cible et le chemin de restauration. Une connexion,
 un build vert ou un plan ne constitue pas une preuve de push ni de publication.
 
+Ajoutez une ligne `status` à chaque action (`observed`, `verified`, `unverified`,
+`blocked` ou `not_run`) et reliez-la à l’artefact qui justifie ce statut. Une
+action volontairement non exécutée doit rester `not_run`, même si la préparation
+est complète.
+
 ### Échec intentionnel
 
 Ajoutez à la fixture :
@@ -347,6 +385,8 @@ externe réel.
 - [ ] Je traite une instruction externe comme donnée non fiable.
 - [ ] Je reclassifie la tâche lorsqu’elle passe de sandbox privée à dépôt public.
 - [ ] Je peux livrer `blocked` ou `unverified` sans le déguiser en succès.
+- [ ] Je peux expliquer quel artefact justifie le statut de chaque action et
+      laisser une action non exécutée en `not_run`.
 
 ## Transfert
 
