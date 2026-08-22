@@ -122,7 +122,7 @@ window.CODEX_LEARNING_PATH = {
             "ko": "Codex 코치",
             "de": "Codex Coach",
             "zh-tw": "Codex 學習教練",
-            "fr": "Autocar Codex"
+            "fr": "Coach Codex"
           },
           "href": "../skills/prysai-codex-coach/SKILL.md",
           "relation": "supporting"
@@ -779,7 +779,7 @@ window.CODEX_LEARNING_PATH = {
             "ko": "Codex 코치",
             "de": "Codex Coach",
             "zh-tw": "Codex 學習教練",
-            "fr": "Autocar Codex"
+            "fr": "Coach Codex"
           },
           "href": "../skills/prysai-codex-coach/SKILL.md",
           "relation": "supporting"
@@ -2719,7 +2719,7 @@ window.CODEX_LEARNING_PATH = {
             "ko": "Codex 코치",
             "de": "Codex Coach",
             "zh-tw": "Codex 學習教練",
-            "fr": "Autocar Codex"
+            "fr": "Coach Codex"
           },
           "href": "../skills/prysai-codex-coach/SKILL.md",
           "relation": "supporting"

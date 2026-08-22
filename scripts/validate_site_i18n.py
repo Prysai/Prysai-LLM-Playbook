@@ -34,6 +34,11 @@ FRENCH_COPY_GUARDS = {
     "Label la limite": "boundary label must use an idiomatic French imperative",
     "démontré_on_this_task": "status values must not contain untranslated English fragments",
     "transféré_to_time_limit_variation": "status values must not contain untranslated English fragments",
+    "Autocar Codex": "Codex Coach must not be translated as the French word for a bus",
+    "Draft un premier tour": "research card link must be fully localized",
+    "Vingt-six Skill.": "French plural for Skills must be grammatical",
+    "Les Lab sont": "French lab label must use the ordinary plural form",
+    "ENREGISTREMENT DE CHÈQUE": "verification record must not use a banking term",
 }
 PUBLIC_COURSE_COVERAGE_TABLES = {
     ROOT / "README-EN.md": {

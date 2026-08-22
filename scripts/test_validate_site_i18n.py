@@ -119,7 +119,15 @@ def main() -> int:
         "an early locale override was accepted",
     )
 
-    print("SITE_I18N_TESTS_OK fixtures=9")
+    french_guard_errors: list[str] = []
+    i18n.validate_french_copy_guards(
+        "// Generated French interface dictionary\n"
+        "const visible = 'Autocar Codex';\n",
+        french_guard_errors,
+    )
+    require(french_guard_errors and "Autocar Codex" in french_guard_errors[0], "a known French false translation was accepted")
+
+    print("SITE_I18N_TESTS_OK fixtures=10")
     return 0
 
 
