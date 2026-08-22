@@ -16,7 +16,7 @@ evidence:
 failure_variant: "移除必要輸入、讓聚焦檢查失敗、在 CP2 後恢復、注入外部行動指令，或要求持久環境改動"
 reflection: "哪一個檢查點阻止了最大的無證據宣告或不必要行動？"
 status: draft
-last_verified: "維護者參考執行於 2026-08-12 被接受；本實驗尚未由學習者執行（未執行）。"
+last_verified: "not run（not_run）；維護者參考執行於 2026-08-12 被接受；本實驗尚未由學習者執行。"
 transfer_task: "把檢查點工作流遷移到低風險的研究或內容任務"
 transfer_domain: "工程、研究或內容工作流"
 transfer_evidence: "保留改寫後的任務協議、檢查點、產物或受阻記錄、證據表和交接"
