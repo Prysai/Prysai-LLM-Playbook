@@ -475,11 +475,11 @@ status: research_plan | scope_checked_for_supplied_list | blocked | not_run
 
 ## 出典と更新境界
 
-- 現実の問題の入口：[`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md) の FP-01、FP-02。記録状態は `candidate`、アクセス・整理日は 2026-08-09、owner は Prysai LLM Playbook maintenance group です。
-- 追加の現場問題：[`field-problems-forums-2026-08-10.md`](../../docs/research/field-problems-forums-2026-08-10.md)、[`field-problems-follow-up-2026-08-10.md`](../../docs/research/field-problems-follow-up-2026-08-10.md)、[`field-problems-index-2026-08-10.md`](../../docs/research/field-problems-index-2026-08-10.md)。forum の本文や command ではなく、元の要約、source boundary、research ID だけを参照します。
-- 公式事実と未確認の差分：[`official-facts-gap-review-2026-08-10.md`](../../docs/research/official-facts-gap-review-2026-08-10.md) と [`openai-codex-facts-refresh-2026-08-09.md`](../../docs/research/openai-codex-facts-refresh-2026-08-09.md)。公式の製品説明、account レベルの unknown、local non-reproduction を別の欄に置きます。
-- 方法の独自統合：[`web-methods-synthesis-2026-08-10.md`](../../docs/research/web-methods-synthesis-2026-08-10.md)。ここでは question narrowing、evidence ladder、stop / review logic を独自に書き直しており、外部の本文、code、asset はコピーしていません。
-- 外部 asset の license：[`docs/sources/asset-register.md`](../../docs/sources/asset-register.md) の S01、S02、S03、S06。S02 は CC BY-NC 4.0 で、公開前に帰属と NOTICE を再確認します。
+- 現実の問題の入口：[`docs/research/field-problems-codex.md`](../evidence-library-JA.md#source-notes) の FP-01、FP-02。記録状態は `candidate`、アクセス・整理日は 2026-08-09、owner は Prysai LLM Playbook maintenance group です。
+- 追加の現場問題：[`field-problems-forums-2026-08-10.md`](../evidence-library-JA.md#source-notes)、[`field-problems-follow-up-2026-08-10.md`](../evidence-library-JA.md#source-notes)、[`field-problems-index-2026-08-10.md`](../evidence-library-JA.md#source-notes)。forum の本文や command ではなく、元の要約、source boundary、research ID だけを参照します。
+- 公式事実と未確認の差分：[`official-facts-gap-review-2026-08-10.md`](../evidence-library-JA.md#source-notes) と [`openai-codex-facts-refresh-2026-08-09.md`](../evidence-library-JA.md#source-notes)。公式の製品説明、account レベルの unknown、local non-reproduction を別の欄に置きます。
+- 方法の独自統合：[`web-methods-synthesis-2026-08-10.md`](../evidence-library-JA.md#source-notes)。ここでは question narrowing、evidence ladder、stop / review logic を独自に書き直しており、外部の本文、code、asset はコピーしていません。
+- 外部 asset の license：[`docs/sources/asset-register.md`](../evidence-library-JA.md#source-notes) の S01、S02、S03、S06。S02 は CC BY-NC 4.0 で、公開前に帰属と NOTICE を再確認します。
 - 変動する product / protocol facts：[OpenAI Codex repository](https://github.com/openai/codex) と関連する公式文書。調査時には正確な URL、アクセス日、version を記録し、Issue の仮説を公式結論に変えません。
 
 更新担当は Prysai LLM Playbook maintenance group です。source、version、license が変わったとき、または遅くとも 2026-11-09 に review します。この章は `candidate`、実験は `draft / not_run` のままです。research output を `verified` と呼ぶには、重要な claim の人による review と現行 source の evidence が必要です。
