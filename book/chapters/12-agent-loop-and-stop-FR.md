@@ -475,8 +475,12 @@ de runtime ou d’efficacité d’apprentissage.
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Navigation entre les chapitres"><table role="presentation" width="100%"><tr>
-<td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-FR.md" aria-label="Chapitre précédent : Chapitre 11 · Concevoir un Skill qui mérite sa place">← Précédent<br><strong>Chapitre 11 · Concevoir un Skill qui mérite sa place</strong></a></td>
-<td align="right"><a data-chapter-nav="next" href="13-action-boundaries-FR.md" aria-label="Chapitre suivant : Chapitre 13 · Frontières d’action">Suivant →<br><strong>Chapitre 13 · Frontières d’action</strong></a></td>
-</tr></table></nav>
+<nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="11-designing-a-skill-FR.md" aria-label="Chapitre précédent: Chapitre 11 · Concevoir un Skill utile">← Précédent<br><strong>Chapitre 11 · Concevoir un Skill utile</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="13-action-boundaries-FR.md" aria-label="Chapitre suivant: Chapitre 13 · Limites d’action">Suivant →<br><strong>Chapitre 13 · Limites d’action</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

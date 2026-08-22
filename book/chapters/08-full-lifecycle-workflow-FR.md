@@ -505,8 +505,8 @@ ancien plan n’est pas une preuve que l’environnement est resté identique.
 <nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="07-skills-plugins-and-tools-FR.md" aria-label="Chapitre précédent : Chapitre 7 · Skills, Plugins, MCP et outils">← Précédent<br><strong>Chapitre 7 · Skills, Plugins, MCP et outils</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="09-verification-and-recovery-FR.md" aria-label="Chapitre suivant : Chapitre 9 · Vérification et récupération">Suivant →<br><strong>Chapitre 9 · Vérification et récupération</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="07-skills-plugins-and-tools-FR.md" aria-label="Chapitre précédent: Chapitre 7 · Skills, Plugins, MCP et outils">← Précédent<br><strong>Chapitre 7 · Skills, Plugins, MCP et outils</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="09-verification-and-recovery-FR.md" aria-label="Chapitre suivant: Chapitre 9 · Vérification et récupération">Suivant →<br><strong>Chapitre 9 · Vérification et récupération</strong></a></td>
     </tr>
   </table>
 </nav>

@@ -280,8 +280,8 @@ adoption d’équipe.
 <nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-FR.md" aria-label="Chapitre précédent : Chapitre 13 · Limites d’action">← Précédent<br><strong>Chapitre 13 · Limites d’action</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="15-research-track-FR.md" aria-label="Chapitre suivant : Chapitre 15 · Recherche vérifiable">Suivant →<br><strong>Chapitre 15 · Recherche vérifiable</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="13-action-boundaries-FR.md" aria-label="Chapitre précédent: Chapitre 13 · Limites d’action">← Précédent<br><strong>Chapitre 13 · Limites d’action</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="15-research-track-FR.md" aria-label="Chapitre suivant: Chapitre 15 · Recherche vérifiable">Suivant →<br><strong>Chapitre 15 · Recherche vérifiable</strong></a></td>
     </tr>
   </table>
 </nav>

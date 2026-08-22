@@ -260,8 +260,8 @@ tard le 2026-11-09. Cette traduction reste `in-progress / candidate / not_run`.
 <nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="17-marketing-track-FR.md" aria-label="Chapitre précédent : Chapitre 17 · Marketing et expériences">← Précédent<br><strong>Chapitre 17 · Marketing et expériences</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="19-evaluate-models-and-workflows-FR.md" aria-label="Chapitre suivant : Chapitre 19 · Évaluer modèles et workflows">Suivant →<br><strong>Chapitre 19 · Évaluer modèles et workflows</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="17-marketing-track-FR.md" aria-label="Chapitre précédent: Chapitre 17 · Marketing et expériences">← Précédent<br><strong>Chapitre 17 · Marketing et expériences</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="19-evaluate-models-and-workflows-FR.md" aria-label="Chapitre suivant: Chapitre 19 · Évaluer modèles et workflows">Suivant →<br><strong>Chapitre 19 · Évaluer modèles et workflows</strong></a></td>
     </tr>
   </table>
 </nav>

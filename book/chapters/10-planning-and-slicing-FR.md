@@ -379,8 +379,8 @@ exige une sonde de l’état courant avant toute action reprise.
 <nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-FR.md" aria-label="Chapitre précédent : Chapitre 9 · Vérification et récupération">← Précédent<br><strong>Chapitre 9 · Vérification et récupération</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="11-designing-a-skill-FR.md" aria-label="Chapitre suivant : Chapitre 11 · Concevoir un Skill utile">Suivant →<br><strong>Chapitre 11 · Concevoir un Skill utile</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="09-verification-and-recovery-FR.md" aria-label="Chapitre précédent: Chapitre 9 · Vérification et récupération">← Précédent<br><strong>Chapitre 9 · Vérification et récupération</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="11-designing-a-skill-FR.md" aria-label="Chapitre suivant: Chapitre 11 · Concevoir un Skill utile">Suivant →<br><strong>Chapitre 11 · Concevoir un Skill utile</strong></a></td>
     </tr>
   </table>
 </nav>

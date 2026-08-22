@@ -311,7 +311,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": [],
-          "title": "Lab 018 : Tester un transfert d’apprentissage écrit"
+          "title": "Lab 018 : Tester un échange écrit de débutant pour la rétention et le transfert"
         }
       }
     },
@@ -1723,9 +1723,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": [
-            "core-evidence-recovery"
-          ]
+          "explicit_anchors": []
         }
       }
     },
@@ -1819,7 +1817,8 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": [
-            "core-evidence-bearing-slice"
+            "core-evidence-bearing-slice",
+            "core-evidence-bearing-slice-end"
           ]
         }
       }
@@ -2075,9 +2074,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "translation_status": "in-progress",
           "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "explicit_anchors": [
-            "core-action-boundary"
-          ]
+          "explicit_anchors": []
         }
       }
     },
@@ -3017,7 +3014,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": [],
-          "title": "Lab 001 : La première tâche sûre"
+          "title": "Lab 001 : Rendre la première demande exploitable"
         }
       }
     },
@@ -3845,7 +3842,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": [],
-          "title": "Lab 013 : Une tranche verticale"
+          "title": "Lab 013 : Mener une tranche verticale complète"
         }
       }
     },
@@ -3937,7 +3934,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": [],
-          "title": "Lab 006 : Concevoir les conditions d’arrêt"
+          "title": "Lab 006 : Concevoir les conditions d’arrêt d’un Agent"
         }
       }
     },
@@ -4029,7 +4026,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": [],
-          "title": "Lab 007 : Trois frontières pour une même tâche"
+          "title": "Lab 007 : Placer une tâche README derrière trois frontières d’action"
         }
       }
     },

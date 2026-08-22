@@ -280,8 +280,8 @@ le 2026-11-09. Cette traduction reste `in-progress / candidate / not_run`.
 <nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="15-research-track-FR.md" aria-label="Chapitre précédent : Chapitre 15 · Recherche vérifiable">← Précédent<br><strong>Chapitre 15 · Recherche vérifiable</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="17-marketing-track-FR.md" aria-label="Chapitre suivant : Chapitre 17 · Marketing et expériences">Suivant →<br><strong>Chapitre 17 · Marketing et expériences</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="15-research-track-FR.md" aria-label="Chapitre précédent: Chapitre 15 · Recherche vérifiable">← Précédent<br><strong>Chapitre 15 · Recherche vérifiable</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="17-marketing-track-FR.md" aria-label="Chapitre suivant: Chapitre 17 · Marketing et expériences">Suivant →<br><strong>Chapitre 17 · Marketing et expériences</strong></a></td>
     </tr>
   </table>
 </nav>

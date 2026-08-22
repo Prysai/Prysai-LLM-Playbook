@@ -263,8 +263,12 @@ Continuez avec le [Chapitre 3 : transformer un souhait en protocole](03-task-pro
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Navigation entre les chapitres"><table role="presentation" width="100%"><tr>
-<td align="left"><a data-chapter-nav="previous" href="01-gpt-and-codex-FR.md" aria-label="Chapitre précédent : Chapitre 1 · Comprendre GPT avant Codex">← Précédent<br><strong>Chapitre 1 · Comprendre GPT avant Codex</strong></a></td>
-<td align="right"><a data-chapter-nav="next" href="03-task-protocol-FR.md" aria-label="Chapitre suivant : Chapitre 3 · De l’intention au protocole">Suivant →<br><strong>Chapitre 3 · De l’intention au protocole</strong></a></td>
-</tr></table></nav>
+<nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="01-gpt-and-codex-FR.md" aria-label="Chapitre précédent: Chapitre 1 · Comprendre GPT avant Codex">← Précédent<br><strong>Chapitre 1 · Comprendre GPT avant Codex</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="03-task-protocol-FR.md" aria-label="Chapitre suivant: Chapitre 3 · De l’intention au protocole">Suivant →<br><strong>Chapitre 3 · De l’intention au protocole</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

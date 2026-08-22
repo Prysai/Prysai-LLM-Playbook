@@ -480,8 +480,12 @@ effet réel.
 
 <!-- chapter-navigation:start -->
 <hr>
-<nav class="chapter-navigation" aria-label="Navigation entre les chapitres"><table role="presentation" width="100%"><tr>
-<td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-FR.md" aria-label="Chapitre précédent : Chapitre 10 · Planification et tranches verticales">← Précédent<br><strong>Chapitre 10 · Planification et tranches verticales</strong></a></td>
-<td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-FR.md" aria-label="Chapitre suivant : Chapitre 12 · Boucle et arrêts de l’Agent">Suivant →<br><strong>Chapitre 12 · Boucle et arrêts de l’Agent</strong></a></td>
-</tr></table></nav>
+<nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
+  <table role="presentation" width="100%">
+    <tr>
+      <td align="left"><a data-chapter-nav="previous" href="10-planning-and-slicing-FR.md" aria-label="Chapitre précédent: Chapitre 10 · Planification et tranches verticales">← Précédent<br><strong>Chapitre 10 · Planification et tranches verticales</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="12-agent-loop-and-stop-FR.md" aria-label="Chapitre suivant: Chapitre 12 · Boucle et arrêts de l’Agent">Suivant →<br><strong>Chapitre 12 · Boucle et arrêts de l’Agent</strong></a></td>
+    </tr>
+  </table>
+</nav>
 <!-- chapter-navigation:end -->

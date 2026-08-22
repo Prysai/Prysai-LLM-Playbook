@@ -377,8 +377,8 @@ Les faits de produit, protocoles, prix, versions et licences sont volatils. Rev�
 <nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-FR.md" aria-label="Chapitre précédent : Chapitre 14 · Découvrir et auditer un Skill externe">← Précédent<br><strong>Chapitre 14 · Découvrir et auditer un Skill externe</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="16-engineering-track-FR.md" aria-label="Chapitre suivant : Chapitre 16 · Parcours d’ingénierie">Suivant →<br><strong>Chapitre 16 · Parcours d’ingénierie</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="14-discover-and-audit-skills-FR.md" aria-label="Chapitre précédent: Chapitre 14 · Auditer un Skill externe">← Précédent<br><strong>Chapitre 14 · Auditer un Skill externe</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="16-engineering-track-FR.md" aria-label="Chapitre suivant: Chapitre 16 · Ingénierie fiable">Suivant →<br><strong>Chapitre 16 · Ingénierie fiable</strong></a></td>
     </tr>
   </table>
 </nav>
