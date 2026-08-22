@@ -214,6 +214,58 @@ action: keep | narrow | remove | request_source
 
 来源会过期，产品事实更会变化。研究完成不等于结论永久有效；请记录复核人和日期。可配合 [实验 008：把主题缩成可研究的问题](../labs/lab-008-research-question-ZH.md)。本章仍是 `candidate`，研究模板存在不证明结论正确。
 
+### 引用审计的最小可交付包
+
+不要只保存一张链接清单。对每条会影响决定的主张，至少保留一行完整
+记录；如果一句话包含两个事实，就拆成两行：
+
+```text
+claim_id: C-07
+claim: <一个可单独检查的事实>
+original_url: <发现来源的 URL>
+final_url: <最终打开的 URL；没有跳转则同上>
+location: <段落、标题、表格行或 Issue；找不到写 none>
+scope: <产品面 / 版本 / 账号 / 地区 / 日期；未知写 unknown>
+source_supports: <原文直接支持什么>
+extra_inference: <我额外推断了什么；没有则写 none>
+audit: supported | partial | unsupported | inaccessible | citation_unverified
+reviewer_and_date: <复核人 / 日期>
+action: keep | narrow | remove | request_source
+```
+
+审计完成后，把主张放进下面四类之一：
+
+| 分类 | 允许的语气 | 下一步 |
+|---|---|---|
+| `supported` | “在该来源、版本和日期范围内，页面说明……” | 写清范围和复核日期 |
+| `partial` | 拆句，或写“来源只支持其中一部分” | 找同范围来源，或缩小句子 |
+| `citation_unverified` | “模型/搜索结果提供了线索，原文尚未定位” | 不把它放进结论，只保留待核实记录 |
+| `inaccessible` | “当前环境无法核实该页面” | 不绕过登录、限流或权限；降级交付 |
+
+`HTTP 200`、搜索结果标题、模型给出的 URL 或格式正确的书目都不能代替
+`location` 和 `scope`。如果来源负责人、版本或最终页面不同，先分类为
+范围差异，再决定是否真的冲突。
+
+### 候选降级与停止收据
+
+当关键来源不可访问、范围冲突未解、只剩论坛建议，或 AI 引用无法定位
+时，交付必须降为 `candidate`。用一页收据记录为什么停、下一步做什么：
+
+```text
+decision: <要支持的决定>
+question_and_scope: <问题、产品面、版本、地区、截止日期>
+checked_sources: <来源所有者、URL、访问日期和状态>
+supported_claims: <可直接支持的主张 ID>
+conflicts_or_unknowns: <冲突、不可访问或未定位的主张>
+stop_reason: <缺来源、范围冲突、权限/登录墙、预算到期等>
+next_safe_check: <一项不上传秘密、不扩大权限的检查>
+owner_and_review_date: <负责人 / 下次复核日期>
+status: candidate | blocked | not_run
+```
+
+这张收据不证明研究“完成”，也不证明模型、账号或真实任务的效果；它
+只让下一位读者知道当前证据停在哪里，以及什么条件满足后才能继续。
+
 ## 从宽题到可审计交付：一张研究工作表
 
 以“哪种 LLM 最适合我的团队？”为例。它不是一个可以直接回答的问题，因为“最适合”没有任务、账户条件、预算、时间或验收标准。先把它改写为：
