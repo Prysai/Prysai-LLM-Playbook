@@ -16,7 +16,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-LOCALES = ("ZH", "ES", "JA", "KO", "DE", "ZHTW")
+LOCALES = ("ZH", "ES", "JA", "KO", "DE", "ZHTW", "FR")
 LINK = re.compile(r"(\]\()([^\)#]+\.md)(#[^\)]*)?(\))")
 
 
@@ -50,7 +50,7 @@ def main() -> int:
     paths = [*ROOT.glob("README-*.md"), *ROOT.glob("book/**/*.md")]
     changed: list[Path] = []
     for path in paths:
-        match = re.search(r"-(ZH|ES|JA|KO|DE|ZHTW)\.md$", path.name)
+        match = re.search(r"-(ZH|ES|JA|KO|DE|ZHTW|FR)\.md$", path.name)
         if not match:
             continue
         locale = match.group(1)
