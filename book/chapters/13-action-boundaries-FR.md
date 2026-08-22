@@ -1,4 +1,4 @@
-<!-- content_id: chapter-13-action-boundaries | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: 2026-08-22-fr-contract-polish -->
+<!-- content_id: chapter-13-action-boundaries | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: 2026-08-22-fr-contract-reinforcement -->
 
 # Chapitre 13 : Les frontières d’action entre fichiers, terminaux, navigateurs et GitHub
 
@@ -277,6 +277,46 @@ montrent une intention et un appel ; ils ne prouvent ni la réponse ni le nouvel
 état. En cas de timeout, écrivez `submission not verified` et ne répétez pas un
 clic non idempotent sans réconciliation.
 
+### Deux cartes, deux décisions
+
+Une carte avant l’action et une carte après l’action évitent de confondre une
+intention avec un résultat. Remplissez la première avant tout effet D ou E :
+
+```text
+CARTE AVANT ACTION
+identité authentifiée : compte, hôte et organisation
+capacité technique : ressource réellement découvrable en lecture seule
+autorisation de tâche : action exacte, cible et audience autorisées
+confirmation humaine : personne, moment et effet confirmé
+payload : données lues, envoyées ou modifiées
+preuve attendue : événement, diff, URL, code ou état relu
+rollback / restauration : source et limite
+arrêt si : champ absent, cible ambiguë ou effet plus large que prévu
+```
+
+Après le retour de l’outil ou du navigateur, ouvrez une seconde carte. Elle ne
+réutilise pas le mot « réussi » sans lecture indépendante :
+
+```text
+CARTE APRÈS ACTION
+cible effectivement touchée :
+réponse reçue et code :
+état relu :
+diff / URL / identifiant distant :
+audience réellement visible :
+effet confirmé : oui | non | inconnu
+actions non exécutées :
+limite de preuve et prochaine lecture sûre :
+statut : verified | partial | unverified | blocked | not_run
+```
+
+Exemple GitHub : `git push` peut retourner un code zéro, mais la livraison doit
+encore nommer le remote, la branche, le SHA distant et le contrôle de la cible.
+Une page de workflow visible ne prouve pas que le déploiement est terminé ; une
+connexion ne prouve pas que l’organisation ou le dépôt sont les bons. Si la
+lecture distante est impossible, gardez `published` ou `deployed` à
+`unverified` au lieu de l’écrire comme un fait établi.
+
 ## 7. Petite expérience : reclasser la même tâche
 
 ### Préparation
@@ -309,6 +349,19 @@ Ajoutez une ligne `status` à chaque action (`observed`, `verified`, `unverified
 `blocked` ou `not_run`) et reliez-la à l’artefact qui justifie ce statut. Une
 action volontairement non exécutée doit rester `not_run`, même si la préparation
 est complète.
+
+Pour rendre la comparaison vérifiable, ajoutez une ligne par action :
+
+| Action | Classe | Preuve attendue | État si non exécutée |
+|---|---|---|---|
+| Lire la fixture locale | A | chemin et contenu relu | `verified` après lecture |
+| Modifier la copie | B | diff limité et copie originale | `verified` après contrôle |
+| Créer un commit local | C | SHA, état et message | `not_run` si hors exercice |
+| Pousser vers un dépôt public | D | remote, branche, SHA distant et URL | `not_run` |
+| Publier ou déployer | E | job/release puis lecture publique | `not_run` |
+
+Le tableau ne suppose pas qu’un code retour ou un login fournisse les preuves
+des lignes suivantes. Il rend visible la frontière où l’exercice s’arrête.
 
 ### Échec intentionnel
 
