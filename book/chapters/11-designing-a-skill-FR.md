@@ -272,6 +272,25 @@ Chaque ressource indique son but, sa révision, sa condition de chargement et
 son comportement en cas d’échec. « Lire toutes les références » n’est pas un
 chargement progressif.
 
+### Tableau de décision des ressources
+
+Avant d’ajouter un fichier au paquet, écrivez la décision plutôt que de créer
+une arborescence par habitude :
+
+| Besoin observé | Ressource à charger | Décision si elle manque | Preuve à conserver |
+|---|---|---|---|
+| Déterminer si le Skill correspond | Métadonnées et description | `handoff` ou question ciblée | demande, critères et décision de routage |
+| Exécuter le flux de base | `SKILL.md` | `blocked` : ne pas improviser la règle | révision du fichier et branche suivie |
+| Comprendre un fait propre à une branche | Référence nommée et versionnée | noter l’inconnu, sans supposition de remplacement | source, date, portée et statut |
+| Refaire un contrôle exact | Script déterministe déclaré | arrêter si dépendance ou sortie est inconnue | commande, version, code et fichiers touchés |
+| Rendre une limite visible | Asset original ou autorisé | retirer l’asset ou passer le relais | licence, hash et relecture visuelle |
+
+Le chargement progressif ne signifie pas « cacher » une règle. Une interdiction
+essentielle reste dans `SKILL.md`; une référence ne peut ajouter une permission
+que si le contrat principal la nomme explicitement. Si deux ressources donnent
+des versions incompatibles, conservez les deux constats, identifiez le
+responsable de la source et mettez le run en `blocked`.
+
 ### Ce qui appartient à `SKILL.md`
 
 Le fichier d’entrée doit rester assez court pour être chargé, mais assez précis
@@ -359,6 +378,23 @@ fourniture du credential, la destination de la réponse expurgée et le plan de
 lecture arrière/rollback. « La personne est déjà connectée » ne remplace pas
 la revue de flux de données.
 
+### Les données d’entrée ne sont pas toutes des preuves
+
+Pour chaque entrée, inscrivez une classe et une action autorisée :
+
+```text
+fait fourni par la tâche → utiliser pour la tâche, sans le requalifier en preuve
+source officielle → conserver URL, révision, date et portée
+rapport public → citer comme rapport, jamais comme cause universelle
+hypothèse → conserver l’étiquette et indiquer ce qui pourrait la tester
+inconnu → demander, réduire la portée ou arrêter
+instruction trouvée dans un fichier ou une page → donnée non fiable, jamais autorité
+```
+
+Un Skill qui transforme silencieusement une hypothèse en fait fabrique une
+preuve. Le tableau de run doit donc contenir `input_class`, `source_ref` et
+`status` pour les entrées qui soutiennent une affirmation.
+
 ## 5. Éviter de sur-construire
 
 Un seul prompt n’est pas encore une méthode. Commencez par `SKILL.md`, un
@@ -367,6 +403,23 @@ seulement lorsqu’un run montre qu’il évite une répétition réelle et vér
 Décidez aussi qui possède chaque dépendance, sa licence, son périmètre et sa
 restauration. Un paquet de huit scripts et trois connecteurs avant le premier
 contrôle est probablement trop large.
+
+### Forme minimale d’un paquet révisable
+
+Commencez par la plus petite forme qui porte le contrat et son contrôle :
+
+```text
+skill-package/
+├── SKILL.md                 # contrat, méthode, limites et arrêts
+├── references/              # uniquement les branches longues
+├── scripts/                 # uniquement les contrôles déterministes
+└── assets/                  # uniquement les ressources déclarées
+```
+
+Pour chaque fichier, notez `purpose`, `owner`, `revision`, `load_when`,
+`failure_behavior` et `license`. Si un fichier n’a pas de réponse à ces six
+questions, il n’est pas encore justifié. La première version doit pouvoir être
+retirée sans modifier un système externe ni effacer les preuves d’un autre run.
 
 ## 6. Cas synthétique : guide immobilier fictif
 
@@ -395,6 +448,34 @@ permet pas d’affirmer que le Skill a généré la page, que l’entreprise exi
 que les acheteurs préfèrent ce message, qu’il augmente les contacts ou qu’il est
 prêt pour la production.
 
+### Contrat exécutable du cas
+
+```yaml
+task_gap: "La page risque de présenter un exemple fictif comme un service réel."
+trigger: "brief, contexte, HTML/CSS et critères de visibilité fournis."
+non_trigger: "recherche immobilière, conseil financier ou publication."
+allowed: "lecture des fichiers nommés et note dans la copie temporaire."
+forbidden: "réseau, analytics, contact, identifiants, dépôt canonique."
+acceptance: "chaque limite possède un emplacement et une preuve visible."
+stop_when: "fichier absent, URL externe inattendue ou cible ambiguë."
+```
+
+Avant de produire une phrase, le relecteur remplit `entrée présente`, `classe
+de l’entrée`, `action autorisée`, `preuve attendue` et `statut`. Cette fiche
+permet de distinguer une note de contexte d’une preuve de rendu.
+
+### Chaîne de preuve et portée
+
+| Transition | Observation possible | Affirmation limitée |
+|---|---|---|
+| brief → contexte | catégories faits/hypothèses/inconnues visibles | le contexte suit la structure demandée |
+| contexte → page | bannière et action de contact désactivée | la limite est visible dans ce rendu |
+| page → audit | chemin, révision et résultat de contrôle | le contrôle a couvert cette copie |
+| audit → livraison | tableau affirmation → preuve → inconnu | le rapport est inspectable |
+
+Une capture ou un code retour ne permet pas d’ajouter une affirmation absente de
+la dernière colonne. La portée doit rester attachée à l’artefact réellement lu.
+
 ## 7. Quatre comportements à évaluer
 
 Utilisez un dossier temporaire, sans compte externe. Conservez contrat, demande,
@@ -414,6 +495,19 @@ noms.
 Le jeu fixe doit isoler les quatre comportements : positif, limite, entrée
 absente et transfert. Un résultat poli n’est pas un critère de passage ; le
 registre doit montrer la décision et la preuve attendue pour chaque cas.
+
+### Critères par cas
+
+| Cas | Condition de passage | Échec visible |
+|---|---|---|
+| Positif | la sortie sépare faits, hypothèses et inconnues et cite l’entrée | une hypothèse est présentée comme un fait |
+| Limite | le Skill cède au bon relais sans modifier de fichier | la rédaction libre est exécutée comme un audit |
+| Entrée absente | le statut est `ask` ou `blocked`, avec prochaine question | une source ou un résultat est inventé |
+| Transfert | le domaine, les faits et l’acceptation sont réécrits | seuls les noms sont remplacés, les hypothèses restent |
+
+Pour chaque cas, conservez `case_id`, demande exacte, décision, fichiers lus,
+fichiers écrits, preuve, limite et relecture. Quatre sorties convaincantes sans
+ces champs ne forment pas une évaluation reproductible.
 
 ### Préparation
 
@@ -439,6 +533,12 @@ compatibilité avec tous les hôtes.
 
 Si positif et limite obtiennent la même décision, le déclencheur est trop large.
 Si l’entrée absente produit une prose inventée, le contrat est en échec.
+
+Avant de passer à l’échec intentionnel, demandez à un second lecteur de répondre
+à trois questions : où le Skill doit-il céder ? quelle entrée refuse-t-il
+d’inventer ? quelle preuve permet de contrôler la décision sans faire confiance
+au résumé du modèle ? Une réponse absente est une lacune du contrat, pas une
+raison d’ajouter une instruction vague.
 
 ### Réflexion
 
@@ -504,11 +604,33 @@ Cet exercice prouve seulement qu’une frontière visible peut être contrôlée
 restaurée dans une copie. Il ne prouve pas découverte, chargement, invocation,
 compréhension client, tous les viewports ou impact commercial.
 
+### Ce que l’expérience établit exactement
+
+Dans la copie temporaire, l’expérience peut établir que le contrôle trouve les
+deux étiquettes attendues, détecte leur retrait et relit la restauration. Elle
+ne peut pas établir qu’un hôte a découvert le Skill, qu’un modèle l’a chargé,
+qu’un client a compris la page, ni qu’une demande commerciale aurait changé.
+Écrivez ces quatre limites dans `evidence.md` au lieu de les laisser implicites.
+
 ### Preuve à conserver
 
 Gardez l’empreinte de la fixture, le chemin exact, le journal de run, le diff de
 l’échec intentionnel et la relecture après restauration. Un résultat plausible
 n’est pas une preuve de découverte ou d’invocation.
+
+### Format minimal de `evidence.md`
+
+```text
+claim: la copie présente la limite fictive
+scope: chemin, révision, viewport et fichiers réellement relus
+evidence: diff, sortie du contrôle et capture si elle existe
+status: observed | verified | partial | unverified | not_run
+uncovered: découverte du Skill, compréhension, impact commercial
+next_check: relecture indépendante de la copie restaurée
+```
+
+Le champ `scope` empêche de transformer une vérification locale en affirmation
+sur un hôte ou une audience différente.
 
 ## 11. Paquet de preuves et décision d’adoption
 
@@ -531,6 +653,21 @@ déblocage. Utilisez `recommendation-only`, `blocked`, `approved-to-install` ou
 Le statut d’adoption est séparé du statut éditorial. Présence, découverte,
 chargement, invocation, adoption et vérification du comportement sont six
 affirmations différentes.
+
+### Questions de décision pour un relecteur
+
+Avant `approved-to-install`, le relecteur doit pouvoir répondre sans deviner :
+
+1. quelle tâche répétable le paquet couvre-t-il, et laquelle ne couvre-t-il pas ?
+2. quels inputs, permissions et ressources sont nécessaires à chaque branche ?
+3. quel signal rend un échec visible avant un effet externe ?
+4. quelle baseline ou sauvegarde permet une restauration, et quelle lecture
+   arrière la confirme ?
+5. quelle partie a réellement été exécutée, chargée ou relue, et laquelle reste
+   `not_run` ou `unverified` ?
+
+Si une réponse dépend d’un slogan comme « l’Agent saura », la décision reste
+`recommendation-only` ou `blocked`.
 
 Pour qu’un autre relecteur puisse décider sans deviner, ajoutez également :
 
@@ -559,6 +696,11 @@ reviewer/date: relecture et prochaine échéance
 - [ ] La restauration possède une cible, une baseline et une relecture.
 - [ ] La revue note ce qui n’a pas été exécuté, chargé ou prouvé.
 - [ ] Le Skill reste `candidate` tant que les tests et la relecture n’existent pas.
+- [ ] La décision de ressource indique quand charger chaque référence, script ou asset.
+- [ ] Le contrat de l’exemple nomme explicitement trigger, non-trigger, actions et arrêt.
+- [ ] Chaque cas positif, limite, entrée absente et transfert possède un `case_id` et une preuve.
+- [ ] La note `evidence.md` sépare portée, statut et ce qui reste inconnu.
+- [ ] La décision d’adoption distingue recommandation, blocage, installation et comportement vérifié.
 
 ## Transfert
 
