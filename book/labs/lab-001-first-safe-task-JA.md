@@ -207,3 +207,11 @@ unverified と記録して停止します。
 
 より高リスクなタスクへ広げる前に、[第 2 章：最初の安全で検証可能なタスクを完了する](../chapters/02-first-safe-task-JA.md)
 を確認してください。これは背景であって、この Lab や学習者の成功証拠ではありません。
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab のナビゲーション"><table role="presentation" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><a data-lab-nav="next" href="lab-002-task-protocol-JA.md" aria-label="次の Lab：Lab 002 · 願いをタスクプロトコルに変える">次へ →<br><strong>Lab 002 · 願いをタスクプロトコルに変える</strong></a></td>
+</tr></table></nav>
+<!-- lab-navigation:end -->

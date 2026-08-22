@@ -147,3 +147,11 @@ despliegue, notificación y reemplazo persistente quedan not_run.
 La investigación de problemas y foros aporta síntomas y contexto comunitario, no
 reproducciones locales ni arreglos oficiales. El fixture es original y reversible,
 pero no prueba cuentas, conectores, Enterprise, publicación o rollback remoto.
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Navegación de Labs"><table role="presentation" width="100%"><tr>
+<td align="left"><a data-lab-nav="previous" href="lab-006-agent-stop-conditions-ES.md" aria-label="Lab anterior: Lab 006 · Diseñar condiciones de parada para un agente">← Anterior<br><strong>Lab 006 · Diseñar condiciones de parada para un agente</strong></a></td>
+<td align="right"><a data-lab-nav="next" href="lab-008-research-question-ES.md" aria-label="Siguiente Lab: Lab 008 · Convertir un tema en una pregunta investigable">Siguiente →<br><strong>Lab 008 · Convertir un tema en una pregunta investigable</strong></a></td>
+</tr></table></nav>
+<!-- lab-navigation:end -->

@@ -267,3 +267,11 @@ status: passed | failed | stopped
 本實驗仍是 `draft` 和 `not_run`。結構驗證不能證明有學習者完成它。該練習也不證明某個賬戶、模型、Skill、工具、聯結器或工作面能夠完成同一任務。
 
 在將實驗改造成高風險任務前，閱讀[第 2 章](../chapters/02-first-safe-task-ZHTW.md)、[官方基線](../evidence-library-ZHTW.md#source-notes)、[現場問題研究](../evidence-library-ZHTW.md#source-notes)，以及候選的[首次動作摩擦臺賬](../evidence-library-ZHTW.md#source-notes)。該臺賬提供有範圍的研究背景；它不是這項實驗、一個產品工作面或學習者已經成功執行的證據。
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="實驗導航"><table role="presentation" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><a data-lab-nav="next" href="lab-002-task-protocol-ZHTW.md" aria-label="下一個實驗：實驗 002·把願望變成任務協議">下一個實驗 →<br><strong>實驗 002·把願望變成任務協議</strong></a></td>
+</tr></table></nav>
+<!-- lab-navigation:end -->

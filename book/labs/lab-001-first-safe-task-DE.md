@@ -210,3 +210,11 @@ jemand es abgeschlossen hat. Sie belegt auch nicht das Verhalten eines bestimmte
 Kontos, Modells, Skills, Tools, Connectors oder einer Codex-Oberfläche. Lies vor
 dem Start [Kapitel 2: Die erste sichere und überprüfbare Aufgabe erledigen](../chapters/02-first-safe-task-DE.md)
 und nutze das [deutsche Inhaltsverzeichnis](../table-of-contents-DE.md) für den aktuellen Stand.
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab-Navigation"><table role="presentation" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><a data-lab-nav="next" href="lab-002-task-protocol-DE.md" aria-label="Nächstes Lab: Lab 002 · Einen Wunsch in ein Aufgabenprotokoll verwandeln">Nächstes Lab →<br><strong>Lab 002 · Einen Wunsch in ein Aufgabenprotokoll verwandeln</strong></a></td>
+</tr></table></nav>
+<!-- lab-navigation:end -->

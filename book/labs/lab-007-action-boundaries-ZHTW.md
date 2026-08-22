@@ -170,3 +170,11 @@ evidence_paths:
 Codex 問題研究提供使用者症狀和公開連結，論壇研究提供社群背景；它們不是本地
 復現或官方修復。本文夾具是原創、可回滾練習輸入，不能證明真實賬戶、聯結器、
 Enterprise、釋出或遠端回滾鏈路可用。
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="實驗導航"><table role="presentation" width="100%"><tr>
+<td align="left"><a data-lab-nav="previous" href="lab-006-agent-stop-conditions-ZHTW.md" aria-label="上一個實驗：實驗 006·設計 Agent 停止條件">← 上一個實驗<br><strong>實驗 006·設計 Agent 停止條件</strong></a></td>
+<td align="right"><a data-lab-nav="next" href="lab-008-research-question-ZHTW.md" aria-label="下一個實驗：實驗 008·把主題收窄成可回答的研究問題">下一個實驗 →<br><strong>實驗 008·把主題收窄成可回答的研究問題</strong></a></td>
+</tr></table></nav>
+<!-- lab-navigation:end -->

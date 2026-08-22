@@ -282,3 +282,11 @@ oficial, el estudio de problemas y el registro de fricción de los primeros
 cinco minutos antes de adaptar este Lab a una tarea de mayor riesgo. Esas
 fuentes aportan contexto acotado; no son evidencia de que el Lab, una superficie
 de producto o un aprendiz hayan funcionado correctamente.
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Navegación de Labs"><table role="presentation" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><a data-lab-nav="next" href="lab-002-task-protocol-ES.md" aria-label="Siguiente Lab: Lab 002 · Convertir un deseo en un protocolo de tarea">Siguiente →<br><strong>Lab 002 · Convertir un deseo en un protocolo de tarea</strong></a></td>
+</tr></table></nav>
+<!-- lab-navigation:end -->

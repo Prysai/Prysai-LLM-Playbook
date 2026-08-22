@@ -103,3 +103,11 @@ fournis, le périmètre, la preuve et la condition d’arrêt.
 - [ ] Le diff montre seulement la modification déclarée.
 - [ ] Le contrôle et les actions non exécutées sont indiqués.
 - [ ] Une limite de portée est écrite.
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Navigation des Labs"><table role="presentation" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><a data-lab-nav="next" href="lab-002-task-protocol-FR.md" aria-label="Lab suivant : Lab 002 · Transformer un souhait en protocole de tâche">Suivant →<br><strong>Lab 002 · Transformer un souhait en protocole de tâche</strong></a></td>
+</tr></table></nav>
+<!-- lab-navigation:end -->

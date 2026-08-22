@@ -169,3 +169,11 @@ evidence_paths:
 Codex 问题研究提供用户症状和公开链接，论坛研究提供社区背景；它们不是本地
 复现或官方修复。本文夹具是原创、可回滚练习输入，不能证明真实账户、连接器、
 Enterprise、发布或远端回滚链路可用。
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="实验导航"><table role="presentation" width="100%"><tr>
+<td align="left"><a data-lab-nav="previous" href="lab-006-agent-stop-conditions-ZH.md" aria-label="上一个实验：实验 006·设计 Agent 停止条件">← 上一个实验<br><strong>实验 006·设计 Agent 停止条件</strong></a></td>
+<td align="right"><a data-lab-nav="next" href="lab-008-research-question-ZH.md" aria-label="下一个实验：实验 008·把主题收窄成可回答的研究问题">下一个实验 →<br><strong>实验 008·把主题收窄成可回答的研究问题</strong></a></td>
+</tr></table></nav>
+<!-- lab-navigation:end -->

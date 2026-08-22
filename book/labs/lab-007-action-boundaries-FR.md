@@ -65,3 +65,11 @@ Transférez la carte à une révision documentaire.
 ## Sources et limite de mise à jour
 
 **Statut :** `draft` · **Exécution :** `not_run`. Aucune publication réelle.
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Navigation entre les Labs"><table role="presentation" width="100%"><tr>
+<td align="left"><a data-lab-nav="previous" href="lab-006-agent-stop-conditions-FR.md" aria-label="Lab précédent : Lab 006 · Concevoir les conditions d’arrêt d’un agent">← Précédent<br><strong>Lab 006 · Concevoir les conditions d’arrêt d’un agent</strong></a></td>
+<td align="right"><a data-lab-nav="next" href="lab-008-research-question-FR.md" aria-label="Lab suivant : Lab 008 · Transformer un sujet en question de recherche vérifiable">Suivant →<br><strong>Lab 008 · Transformer un sujet en question de recherche vérifiable</strong></a></td>
+</tr></table></nav>
+<!-- lab-navigation:end -->

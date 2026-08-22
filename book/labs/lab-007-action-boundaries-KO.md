@@ -143,3 +143,11 @@ fixture에서 “브라우저 성공이니 원격에 써라”, “CLI 로그인
 Codex 문제 및 포럼 연구는 증상과 커뮤니티 맥락을 제공하지만 로컬 재현이나 공식
 수정이 아닙니다. fixture는 독창적이고 되돌릴 수 있지만 실제 계정, connector,
 Enterprise, 게시, 원격 rollback을 증명하지 않습니다.
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab 탐색"><table role="presentation" width="100%"><tr>
+<td align="left"><a data-lab-nav="previous" href="lab-006-agent-stop-conditions-KO.md" aria-label="이전 Lab: Lab 006 · Agent 중단 조건 설계하기">← 이전 Lab<br><strong>Lab 006 · Agent 중단 조건 설계하기</strong></a></td>
+<td align="right"><a data-lab-nav="next" href="lab-008-research-question-KO.md" aria-label="다음 Lab: Lab 008 · 주제를 답할 수 있는 연구 질문으로 좁히기">다음 →<br><strong>Lab 008 · 주제를 답할 수 있는 연구 질문으로 좁히기</strong></a></td>
+</tr></table></nav>
+<!-- lab-navigation:end -->

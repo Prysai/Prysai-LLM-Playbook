@@ -151,3 +151,11 @@ Codex-Problem- und Forenrecherche liefern Symptome und Community-Kontext, keine
 lokalen Reproduktionen oder offiziellen Reparaturen. Das Fixture ist original und
 reversibel, beweist aber keine realen Konten, Connectoren, Enterprise-, Publish-
 oder Remote-Rollback-Ketten.
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab-Navigation"><table role="presentation" width="100%"><tr>
+<td align="left"><a data-lab-nav="previous" href="lab-006-agent-stop-conditions-DE.md" aria-label="Vorheriges Lab: Lab 006 · Stoppbedingungen für Agenten entwerfen">← Vorheriges<br><strong>Lab 006 · Stoppbedingungen für Agenten entwerfen</strong></a></td>
+<td align="right"><a data-lab-nav="next" href="lab-008-research-question-DE.md" aria-label="Nächstes Lab: Lab 008 · Ein Thema in eine beantwortbare Forschungsfrage verwandeln">Nächstes →<br><strong>Lab 008 · Ein Thema in eine beantwortbare Forschungsfrage verwandeln</strong></a></td>
+</tr></table></nav>
+<!-- lab-navigation:end -->

@@ -266,3 +266,11 @@ status: passed | failed | stopped
 本实验仍是 `draft` 和 `not_run`。结构验证不能证明有学习者完成它。该练习也不证明某个账户、模型、Skill、工具、连接器或工作面能够完成同一任务。
 
 在将实验改造成高风险任务前，阅读[第 2 章](../chapters/02-first-safe-task-ZH.md)、[官方基线](../evidence-library-ZH.md#source-notes)、[现场问题研究](../evidence-library-ZH.md#source-notes)，以及候选的[首次动作摩擦台账](../evidence-library-ZH.md#source-notes)。该台账提供有范围的研究背景；它不是这项实验、一个产品工作面或学习者已经成功运行的证据。
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="实验导航"><table role="presentation" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><a data-lab-nav="next" href="lab-002-task-protocol-ZH.md" aria-label="下一个实验：实验 002·把愿望变成任务协议">下一个实验 →<br><strong>实验 002·把愿望变成任务协议</strong></a></td>
+</tr></table></nav>
+<!-- lab-navigation:end -->

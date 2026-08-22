@@ -199,3 +199,11 @@ status: passed | failed | stopped
 아닙니다. 특정 계정, 모델, Skill, 도구, 커넥터 또는 Codex 작업면이 같은 작업을 할 수
 있다는 증거도 아닙니다. 시작하기 전에 [2장: 첫 번째 안전하고 검증 가능한 작업 완료하기](../chapters/02-first-safe-task-KO.md)를
 확인하고, 현재 제공되는 다른 단원은 [한국어 목차](../table-of-contents-KO.md)에서 확인하세요.
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab 탐색"><table role="presentation" width="100%"><tr>
+<td align="left"></td>
+<td align="right"><a data-lab-nav="next" href="lab-002-task-protocol-KO.md" aria-label="다음 Lab: Lab 002 · 바람을 작업 프로토콜로 바꾸기">다음 →<br><strong>Lab 002 · 바람을 작업 프로토콜로 바꾸기</strong></a></td>
+</tr></table></nav>
+<!-- lab-navigation:end -->

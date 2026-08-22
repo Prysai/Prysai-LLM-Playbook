@@ -145,3 +145,11 @@ token、push、公開、installation、デプロイ、通知、永続置換は�
 Codex 問題研究とフォーラム研究は症状とコミュニティ背景を提供しますが、ローカル
 再現や公式修正ではありません。fixture は独自で可逆ですが、実際の account、
 connector、Enterprise、公開、遠隔 rollback を証明しません。
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Lab のナビゲーション"><table role="presentation" width="100%"><tr>
+<td align="left"><a data-lab-nav="previous" href="lab-006-agent-stop-conditions-JA.md" aria-label="前の Lab：Lab 006 · Agent の停止条件を設計する">← 前の Lab<br><strong>Lab 006 · Agent の停止条件を設計する</strong></a></td>
+<td align="right"><a data-lab-nav="next" href="lab-008-research-question-JA.md" aria-label="次の Lab：Lab 008 · テーマを答えられる研究質問に絞る">次へ →<br><strong>Lab 008 · テーマを答えられる研究質問に絞る</strong></a></td>
+</tr></table></nav>
+<!-- lab-navigation:end -->
