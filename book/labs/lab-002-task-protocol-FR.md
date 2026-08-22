@@ -39,6 +39,35 @@ commande qui change un état, ne commitez pas, ne poussez pas, ne publiez pas et
 ne prévenez personne. Si la cible, l'autorité ou la preuve sont floues, écrivez
 `blocked` et restez au stade du protocole.
 
+## Le contrat minimal de la tâche
+
+Avant de comparer les trois tours, écrivez les six éléments qui doivent être
+connus avant toute action :
+
+| Élément | Question à trancher | Exemple pour ce Lab |
+|---|---|---|
+| But | Quel résultat observable cherche-t-on ? | obtenir un protocole relisible, pas une page modifiée |
+| Entrées | Quelles informations peuvent être utilisées ? | la phrase fixe et le contexte fourni au tour |
+| Autorité | Qui peut demander ou confirmer une action ? | l'apprenant, dans sa copie temporaire |
+| Actions permises | Que peut faire le modèle maintenant ? | poser des questions et rédiger un brouillon |
+| Acceptation et preuves | Comment saura-t-on que le brouillon est exploitable ? | les champs sont présents et chaque affirmation a une preuve attendue |
+| Arrêt et récupération | Quand faut-il s'arrêter, et que conserver ? | entrée manquante, autorité floue ou échec répété : conserver la sortie et rester `blocked` |
+
+Si l'un de ces éléments manque, le tour est incomplet. Notez le champ manquant
+et la question qui permettrait de le remplir.
+
+Pour rendre la frontière explicite, faites relire ce tableau avant de passer à
+la version suivante :
+
+```text
+cible | entrées lisibles | chemins modifiables | actions interdites |
+critères d'acceptation | conditions d'arrêt | récupération | livraison attendue
+```
+
+Dans ce Lab, les chemins modifiables et la livraison restent « aucun ». Un
+modèle qui propose malgré tout une édition, une installation ou une publication
+produit une violation de périmètre à conserver comme échec.
+
 ## Entrée fixe et identifiants
 
 Gardez la phrase suivante inchangée dans les trois tours :
@@ -103,6 +132,19 @@ actions autorisées | point d'arrêt | preuve attendue | effet réel
 Utilisez `observed`, `verified`, `unverified`, `blocked` et `not_run` avec leur
 portée exacte.
 
+Ajoutez une table affirmation-preuve ; elle empêche de confondre un brouillon
+convaincant avec une tâche effectivement accomplie :
+
+| Affirmation | Preuve attendue | Preuve recueillie | État |
+|---|---|---|---|
+| la demande est restée identique | copie des trois phrases et hachage si possible | à remplir dans le compte rendu | `observed` ou `unverified` |
+| le périmètre est borné | tableau de frontière relu | à remplir | `verified` seulement après relecture |
+| aucune action externe n'a eu lieu | journal et absence de commande/appel | à remplir | `observed`, jamais déduit d'un texte |
+| le protocole est exécutable | champs, preuves et arrêts remplis | à remplir | `verified` ou `blocked` |
+
+Une sortie disant « terminé » n'est pas une preuve d'action, et une session
+ouverte ne vaut ni autorisation ni publication.
+
 ## Échecs intentionnels
 
 Réalisez au moins une variante sans franchir la frontière :
@@ -158,12 +200,34 @@ et de restauration.
 - [ ] Une variante d'échec produit une réponse étroite ou `blocked`.
 - [ ] Une revue indépendante peut relire la frontière sans deviner.
 
+## Cartes de transfert
+
+Ne copiez pas le même exemple dans tous les domaines. Réécrivez au minimum les
+champs suivants pour chaque carte, puis indiquez ce qui reste hors périmètre :
+
+| Domaine | Entrée à geler | Preuve principale | Arrêt à tester |
+|---|---|---|---|
+| Régression logicielle | reproduction minimale et révision de base | test ciblé, diff et sortie brute | reproduction absente ou effet persistant demandé |
+| Note de recherche | question, date limite et sources autorisées | tableau affirmation-source et citations localisables | source inaccessible, contradictoire ou hors sujet |
+| README localisé | locale, fichier et liens de la même locale | diff, contrôle de liens et absence de fallback silencieux | traduction manquante ou lien vers une autre langue |
+| Plan de publication | artefact, cible et sauvegarde | validation locale, preuve de cible et reçu de restauration | autorité ou cible distante non confirmée |
+
+Pour chaque carte, conservez le protocole réécrit, une variante d’échec et une
+ligne « ce que cette preuve ne démontre pas ». Une carte de transfert montre
+que la méthode a été reformulée ; elle ne prouve pas encore la réussite d’une
+tâche réelle.
+
 ## Sources et limite de mise à jour
 
 **Statut :** `draft` · **Exécution :** `not_run`. Le Lab ne prouve ni la qualité
 d'un prompt ni une capacité produit. Une revue de protocole n'est pas une
 exécution Codex et ne prouve pas la réussite d'un produit. La version française
 reste `candidate / in-progress` jusqu'à une relecture indépendante.
+
+Pour maintenir les notions utilisées ici, consultez le [contrat de tâche du
+chapitre 3](../chapters/03-task-protocol-FR.md) et le [contrat de statut du
+projet](../../docs/governance/content-status.yaml). Ces liens documentent la
+méthode ; ils ne constituent pas une preuve d’exécution de ce Lab.
 
 <!-- lab-navigation:start -->
 <hr>
