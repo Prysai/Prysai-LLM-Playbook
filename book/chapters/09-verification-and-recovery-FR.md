@@ -143,6 +143,23 @@ outil/Skill visible → découverte en lecture seule → état cible lisible
 Chaque maillon a sa propre preuve. Un nom visible ne prouve pas l’enregistrement,
 la découverte ou l’exécution. Une lecture du DOM ne prouve pas un clic réussi.
 
+### Une fiche de point d’arrêt doit être actionnable
+
+Ne gardez pas la chaîne de capacité comme un simple schéma. Pour chaque maillon,
+inscrivez quatre éléments :
+
+```text
+stage: découverte / cible lisible / action retournée / effet confirmé
+observation: ce qui a réellement été vu
+status: passed | failed | not_observed
+next_check: une seule lecture sûre qui pourrait changer le statut
+```
+
+Le `next_check` doit être plus petit que l’action qui a échoué. Il ne doit pas
+installer, publier, élargir les permissions ou répéter une écriture dont l’effet
+reste inconnu. Si aucune lecture bornée ne peut lever le doute, livrez
+`unverified` ou `blocked`.
+
 ### Décalage de surface : visible ne signifie pas callable
 
 Des rapports publics décrivent une surface Computer Use ou `node_repl` visible
@@ -189,6 +206,21 @@ seuil prévu, marquez no_event_observed, reprenez le contrôle par un moyen
 autorisé et inspectez processus, worktree, cible et checkpoint. Si un effet est
 possible, arrêtez unverified ou blocked. Une seconde tentative réussie ne
 réécrit pas la première tentative silencieuse.
+
+### Réconcilier une réponse perdue
+
+Après une réponse absente, gelez la suite, conservez la commande exacte et
+relisez seulement la cible déclarée. Comparez baseline, état actuel et
+postcondition, puis classez :
+
+```text
+no_effect_observed | effect_matches | effect_differs | effect_unknown
+```
+
+Une lecture qui trouve le bon fichier ne prouve pas qu’un message, un upload,
+un déploiement ou une autre cible externe n’a pas été touché. Reprenez seulement
+si la nouvelle condition, l’idempotence, la preuve attendue et le budget sont
+explicitement consignés.
 
 ## 4. Distinguer récupération et complétion
 
@@ -239,6 +271,22 @@ hors périmètre. L’exercice n’est réussi que si l’apprenant :
 
 Le tableau n’établit ni une cause fournisseur, ni une reproduction, ni un succès
 d’apprentissage.
+
+### Reçu de revue
+
+```text
+claim: phrase exacte
+scope: fichiers, run, version, viewport ou environnement
+evidence: artefact réellement relu
+status: verified | partial | unverified | blocked | not_run
+uncovered: ce qui reste hors du contrôle
+next_check: plus petite observation suivante
+reviewer/date: relecture et moment
+```
+
+Ce reçu force la différence entre une sortie préparée, une sortie observée et
+une affirmation acceptée. Un résumé de fin sans `scope` et `uncovered` invite à
+une conclusion plus large que la preuve.
 
 ### Réflexion
 

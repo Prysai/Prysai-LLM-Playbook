@@ -102,6 +102,24 @@ Confirmation humaine pour cette action exacte :
 Si la cible est inconnue, arrêtez. Si le payload ou l’audience manque, préparez
 un aperçu et demandez la décision.
 
+### Contrat externe à remplir avant un effet
+
+```text
+cible et hôte :
+compte / organisation :
+dépôt, branche ou objet :
+action exacte et données transmises :
+public ou destinataire :
+autorisation pour cette action :
+preuve de retour attendue :
+rollback / restauration :
+arrêt si :
+```
+
+Un login, un bouton visible ou un répertoire inscriptible ne remplit aucune de
+ces lignes à lui seul. Tant que la cible, l’audience ou la lecture arrière manque,
+restez en aperçu et n’envoyez rien.
+
 ## 3. Prompt qui garde la frontière visible
 
 ```text
@@ -212,6 +230,19 @@ Rollback :
 Un build local vert ne prouve pas que Pages est activé, qu’un workflow a publié
 ou que l’URL publique répond. Gardez `validated`, `published`, `deployed` et
 `live verified` séparés.
+
+### Carte de preuve d’action
+
+Après l’action, distinguez les quatre événements :
+
+```text
+élément trouvé → action appelée → réponse reçue → état relu et changé
+```
+
+Conservez pour chacun le timestamp, la cible et le statut. Les deux premiers
+montrent une intention et un appel ; ils ne prouvent ni la réponse ni le nouvel
+état. En cas de timeout, écrivez `submission not verified` et ne répétez pas un
+clic non idempotent sans réconciliation.
 
 ## 7. Petite expérience : reclasser la même tâche
 
