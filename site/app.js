@@ -1232,7 +1232,18 @@ const updateLevel = (level, focus = false) => {
   const link = document.querySelector('[data-level-link]');
   link.href = hrefForItem(nextPrimary);
   link.dataset.contentId = nextPrimary.content_id || localeManifest.aliases?.[nextPrimary.id] || '';
-  link.querySelector('[data-level-link-text]').textContent = data.next?.label?.[effectiveUiLanguage] || data.next?.label?.en || (effectiveUiLanguage === 'zh' ? `打开${nextPrimary.name?.zh || nextPrimary[1]}` : `Open ${nextPrimary.name?.en || nextPrimary[0]}`);
+  const nextName = nextPrimary.name?.[effectiveUiLanguage] || nextPrimary.name?.en || nextPrimary[1] || nextPrimary[0] || '';
+  const openNextFallback = {
+    zh: `打开${nextName}`,
+    'zh-tw': `開啟${nextName}`,
+    es: `Abrir ${nextName}`,
+    ja: `${nextName}を開く`,
+    ko: `${nextName} 열기`,
+    de: `${nextName} öffnen`,
+    fr: `Ouvrir ${nextName}`,
+    en: `Open ${nextName}`,
+  }[effectiveUiLanguage] || `Open ${nextName}`;
+  link.querySelector('[data-level-link-text]').textContent = data.next?.label?.[effectiveUiLanguage] || data.next?.label?.en || openNextFallback;
   const labLink = document.querySelector('[data-level-lab-link]');
   labLink.href = hrefForItem(nextLab);
   labLink.dataset.contentId = nextLab.content_id || localeManifest.aliases?.[nextLab.id] || '';
