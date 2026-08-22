@@ -6509,7 +6509,49 @@ Object.assign(copy.fr, {
   visualModelAlt: 'Tableau pédagogique : de la demande à la preuve',
   visualEvidenceAlt: 'Tableau pédagogique : instantané des preuves du projet',
   visualLoopAlt: 'Tableau pédagogique : de la compréhension au transfert',
-  repositoryLabs: '18 exercices guidés pour une pratique sûre'
+  repositoryLabs: '18 exercices guidés pour une pratique sûre',
+  // Final editorial pass for strings that were still inherited from the first
+  // literal translation. Keep these at the effective override layer so the
+  // rendered French shell stays idiomatic even when the generated dictionary
+  // is refreshed.
+  heroIndex: 'LLM / FONDAMENTAUX',
+  heroLede: 'Apprenez ce qu’un modèle de langage peut ou non établir, rédigez une demande délimitée, examinez la réponse, puis réutilisez la méthode sur une nouvelle tâche. Codex, les outils, les Agents et les Skills viennent ensuite.',
+  heroRouteKicker: 'Un parcours fondamental obligatoire · aperçu des unités 1 → 2 → 3, puis 4 → 5',
+  heroRouteBoundary: 'Les trois premières cartes donnent un aperçu ; elles ne sont pas trois portes d’entrée concurrentes. Terminez les cinq unités avant d’ouvrir Codex, les outils, les Agents ou les Skills. L’échauffement reste facultatif.',
+  startEyebrow: 'Après les fondamentaux · choisissez un objectif',
+  problemUpdateBody: 'Trouvez le fichier canonique, joignez sa source, exécutez le contrôle approprié et laissez hors de la livraison toute affirmation non vérifiée.',
+  problemResearchBody: 'Reliez la question à une décision, attribuez chaque source, tenez un registre des affirmations, cherchez les désaccords et arrêtez-vous volontairement.',
+  starterIntro: 'Cet exercice montre pourquoi la formulation compte. Un modèle peut rendre un message plus naturel, mais il peut aussi ajouter des détails que vous n’avez jamais fournis. Donnez une consigne claire, puis vérifiez qu’elle a été respectée.',
+  starterBoundaryLab: 'Repérez la limite : Lab 011',
+  chapter07: 'Comment les Skills, les plugins, MCP et les outils se répartissent le travail',
+  lab12Body: 'Créez un contrat qui précise la version, le responsable, les autorisations, la reproduction indépendante et le retour en arrière.',
+  skillEvidence: 'Décomposez les affirmations d’achèvement en preuves vérifiables.',
+  skillAdapterName: 'Relecture de l’adaptateur de plateforme',
+  skillBoundary: 'Les Skills externes doivent conserver l’URL du projet source et respecter sa licence.',
+  skillFootnote: 'Les 26 Skills du projet passent les contrôles structurels et restent au stade candidat ; les preuves sur des tâches nouvelles restent partielles. Language Partner ne fait qu’exécuter un échange écrit : il n’enseigne pas une langue et ne promet pas la maîtrise. Interview Rehearsal Coach travaille une réponse : il ne prédit pas les questions et ne promet aucun résultat. Interruption Checkpoint conserve un relevé de contrôle, mais ne relance ni ne récupère le travail. Practice Target prépare une première tentative ; il ne prouve pas l’apprentissage. Platform Fact Watch est un relevé de maintenance, pas une vérification de la plateforme actuelle. Le protocole de comparaison des LLM n’a pas été exécuté et ne constitue pas un classement de modèles. Adversarial Project Review n’est pas une revue externe.',
+  updateFlowThreeBody: 'Consignez la source, le périmètre, le responsable, le hash et la prochaine date de revue.',
+  skillRouteVerify: 'Je veux vérifier une affirmation existante.',
+  starterCheckGate: 'Enregistrez vos trois verdicts avant de les comparer à l’exemple.',
+  starterCheckRecovery: 'Un contrôle échoué ou incertain est enregistré. Utilisez le prompt de secours, puis conservez ce relevé comme observation locale.',
+  starterComparisonBoundary: 'La réponse illustrative reste masquée jusqu’à l’enregistrement des trois verdicts. Elle n’évalue pas votre réponse et ne prouve pas votre apprentissage.',
+  starterHelpRescue: 'Prompt de secours',
+  starterRecordCopied: 'Relevé de vérification copié. Il ne contient que les statuts, pas votre réponse.',
+  indexTitle: 'Sachez où vérifier chaque affirmation.',
+  researchReceiptsBody: 'Rapports publics, classement des affirmations et points de contrôle pour les recherches longues ; dossier encore au stade de candidat.',
+  repositoryChapters: '22 chapitres, des fondamentaux au travail fiable',
+  skillCardStepOne: 'Copiez la carte dans n’importe quelle conversation textuelle. Elle décrit une situation fictive et ne demande ni compte, ni fichier, ni outil, ni donnée personnelle.',
+  skillCardBoundary: 'Exercice candidat uniquement : ce court plan fictif ne prouve ni la capacité générale de planifier, ni le jugement, ni le transfert, ni la rétention, ni la sécurité, ni l’autonomie.',
+  spanishCardTitle: 'Faites un bref échange écrit pour vérifier l’heure avec un groupe d’étude d’espagnol.',
+  spanishCardStepOne: 'Copiez la carte telle quelle. Elle définit déjà un échange écrit fictif de vérification de l’heure pour un groupe d’étude d’espagnol.',
+  spanishCardBoundary: 'Exercice candidat en texte uniquement : une séance écrite ne permet pas d’évaluer la conversation orale, la prononciation, la compréhension orale, l’aisance, la précision, la rétention ou l’autonomie.',
+  researchCardIntro: 'Transformez une question précise et les documents fournis en un petit registre des affirmations, des lacunes et de la prochaine question.',
+  researchCardStepThree: 'Considérez ce tableau comme une préparation. Ouvrez vous-même les sources et vérifiez leur correspondance avant de vous fier à une affirmation.',
+  skillPlatformObservationName: 'Relevé d’observation de la plateforme',
+  wizardEyebrow: 'Pratique d’application après les fondamentaux',
+  wizardIntro: 'Après les fondamentaux, choisissez un objectif, ajoutez seulement les détails nécessaires, puis copiez un prompt que vous pourrez vérifier dans n’importe quel modèle de chat. Aucun compte, fichier ni configuration n’est requis.',
+  visualLearningSourceLink: 'Ouvrir le parcours des fondamentaux',
+  foundationLayerCheckBody: 'Comparez le résultat avec une règle de source, un diff, un test, un journal ou un critère d’acceptation avant d’affirmer que la tâche est terminée.',
+  routeCTitle: 'Capacités et collaboration avec les Agents'
 });
 
 initializeSearch();
