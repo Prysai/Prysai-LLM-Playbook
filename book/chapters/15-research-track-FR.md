@@ -52,8 +52,16 @@ puis remplissez une table d’affirmations et de preuves.
 
 ### Preuve
 
-Gardez les URLs, dates, extraits, conflits et points non résolus. Une source
-manquante doit réduire la conclusion au lieu de la compléter par intuition.
+Gardez les URL, les dates d’accès, les extraits, les conflits et les points non
+résolus. Pour chaque affirmation, utilisez au moins ces colonnes :
+
+```text
+affirmation | source et emplacement | appui direct | interprétation
+conflit ou lacune | prochaine vérification | statut
+```
+
+Une source manquante doit réduire la conclusion au lieu de la compléter par
+intuition.
 
 ### Échec et limite
 
@@ -61,16 +69,13 @@ Si la source est inaccessible ou hors sujet, marquez la ligne `unknown`. Cette
 expérience ne remplace ni une revue juridique, médicale ou scientifique.
 
 ### Réflexion
-Quelle contrainte a rendu la question à laquelle on peut répondre ?
+Quelle contrainte a rendu la question répondable ? Quelle affirmation avez-vous
+réduite parce que la source ne permettait pas d’aller plus loin ?
 
 ## Transfert
 
 Réutilisez la table pour un bug logiciel ou une vérification de traduction, en
 conservant les mêmes statuts de preuve.
-
-## Transfert
-
-Réutilisez la table pour un bug logiciel ou une vérification de traduction, en conservant les mêmes statuts de preuve.
 
 ## Liste de contrôle d’acceptation
 

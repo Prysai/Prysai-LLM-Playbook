@@ -3,8 +3,8 @@
 # Chapitre 11 : Concevoir un Skill qui mérite d’être conservé
 
 **Statut :** `candidate` · **Expérience :** `not_run`  
-Cette version française est un condensé pédagogique en cours de relecture. Elle
-ne prouve pas qu’un hôte découvrira ou exécutera le Skill proposé.
+Cette version française est une adaptation pédagogique en cours de relecture.
+Elle ne prouve pas qu’un hôte découvrira ou exécutera le Skill proposé.
 
 ## Le problème
 
@@ -60,11 +60,24 @@ dossier jetable et aucun compte externe.
 
 ### Tâche
 
+Écrivez d’abord le contrat, puis appliquez-le à quatre demandes :
+
+| Cas | Demande | Décision attendue |
+|---|---|---|
+| positif | « Transforme cette note fournie en faits, hypothèses et inconnues. » | `continue` : les entrées et la sortie sont présentes |
+| proche mais hors périmètre | « Réécris cette page pour la rendre plus persuasive. » | `handoff` : la demande relève d’une autre méthode |
+| entrée manquante | « Analyse le rapport » sans fournir le rapport | `ask` : demander le fichier ou l’extrait exact |
+| transfert | « Utilise le même contrat pour une revue de traduction. » | `adapt` : conserver la frontière et préciser le nouveau domaine |
+
+Ne lancez aucun script et n’écrivez que dans le dossier jetable. Le but est de
+voir si le contrat guide une décision, pas de produire un Skill installable.
+
 ### Preuve
 
 Testez une demande adaptée, une demande proche mais hors périmètre, une entrée
 manquante et une demande de transfert à un autre domaine. Conservez le contrat,
-la réponse, le statut et la raison d’un éventuel arrêt.
+la réponse, le statut et la raison d’un éventuel arrêt. Utilisez un tableau
+simple : `cas | entrée observée | action permise | sortie | preuve | statut`.
 
 ### Échec et limite
 
@@ -73,7 +86,8 @@ Si le cas limite déclenche une écriture ou réclame un secret, marquez-le
 
 ### Réflexion
 Quel champ du contrat a empêché l’élargissement ? Quelle preuve manquerait avant
-une adoption d’équipe ?
+une adoption d’équipe ? Si la demande positive et la demande hors périmètre
+produisent la même décision, le déclencheur est encore trop large.
 
 ## Transfert
 
