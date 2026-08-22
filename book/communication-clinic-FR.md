@@ -8,13 +8,13 @@ Pour une pratique courte et guidée, ouvrez la [boucle du point d’avancement](
 **État :** template_selected | practised | not_run | blocked
 <!-- état : template_selected | practised | not_run | blocked -->
 
-Vous lisez ici la version française du parcours. Le français de cette page est
-une version en cours de relecture ; les exemples de langue cible sont
-facultatifs et ne promettent ni maîtrise ni fluidité.
+Vous consultez ici la version française du parcours. Cette version est encore
+en cours de relecture ; les exemples dans la langue cible sont facultatifs et
+ne promettent ni maîtrise ni aisance.
 
-Si vous découvrez le projet et ne souhaitez pas pratiquer l’espagnol, commencez par la carte 3 de B.
-Vous êtes sur le parcours expliqué en français ; les exemples en espagnol restent
-facultatifs.
+Si vous découvrez le projet et ne souhaitez pas pratiquer l’espagnol,
+commencez directement par la carte 3 de la section B. Les exemples en espagnol
+restent facultatifs.
 
 <span id="language-practice-route"></span>
 
@@ -24,15 +24,15 @@ facultatifs.
 
 ```text
 Je veux m’entraîner à confirmer un horaire en espagnol avec des informations fictives.
-J’écris d’abord une phrase de douze mots maximum. Tu joues seulement un camarade
-et tu poses une question courte à la fois.
-Avant le premier tour, affiche le contrôle : quatre tours de l’apprenant,
-objectif et groupe communiqués, jour et heure clarifiés, lieu ou option en ligne,
-message assez compréhensible pour continuer.
-Ne traduis pas et ne montre pas de réponse modèle avant mon essai. Après ma
-réponse, signale seulement la première erreur qui bloque le sens, donne un indice
-partiel et attends ma correction. Garde les deux versions. Ne parle pas de
-fluidité, de prononciation ou de niveau après cet échange.
+J’écris d’abord une phrase de douze mots maximum. Vous jouez uniquement le rôle
+d’un camarade et vous ne posez qu’une question courte à la fois.
+Avant le premier tour, affichez les critères de contrôle : quatre tours de
+l’apprenant, objectif et groupe indiqués, jour et heure clarifiés, lieu ou
+option en ligne précisés, message suffisamment compréhensible pour poursuivre.
+Ne traduisez pas et ne montrez pas de réponse modèle avant mon essai. Après ma
+réponse, signalez uniquement la première erreur qui bloque le sens, donnez un
+indice partiel et attendez ma correction. Conservez les deux versions. Ne
+parlez ni de fluidité, ni de prononciation, ni de niveau après cet échange.
 ```
 
 ### 2. Changer le cas
@@ -46,21 +46,22 @@ réponse par cœur.
 ### 3. Une mise à jour fidèle
 
 ```text
-Transforme ces notes en une mise à jour destinée à [public].
+Transformez ces notes en une mise à jour destinée à [public].
 Notes : [fait 1], [fait 2], [encore inconnu].
 Liste d’abord les faits vérifiables. N’ajoute ni date, ni promesse, ni statut de
-fin, ni raison. Donne une version de 120 mots maximum et une version plus formelle.
-Termine par deux points que je dois vérifier avant d’envoyer.
+fin, ni raison. N’ajoutez ni date, ni promesse, ni statut d’achèvement, ni
+justification. Donnez une version de 120 mots maximum et une version plus
+formelle. Terminez par deux points que je dois vérifier avant l’envoi.
 ```
 
 ### 4. Décider sans rien inventer
 
 ```text
 Je dois choisir entre [A] et [B]. Objectif : [objectif]. Faits connus : [faits].
-Inconnues : [inconnues]. Ne décide pas à ma place. Pose d’abord au plus trois
-questions qui pourraient changer la conclusion. Sépare ensuite ce que les
-éléments soutiennent de ce qui reste indécidable. Si un fait manque, recommande
-d’arrêter plutôt que d’inventer.
+Inconnues : [inconnues]. Ne décidez pas à ma place. Posez d’abord au plus trois
+questions susceptibles de changer la conclusion. Séparez ensuite ce que les
+éléments soutiennent de ce qui reste indécidable. S’il manque un fait,
+recommandez de vous arrêter plutôt que d’inventer.
 ```
 
 ## C. Recherche et vérification avant de partager
@@ -68,20 +69,20 @@ d’arrêter plutôt que d’inventer.
 ### 5. Réduire la question
 
 ```text
-Je veux éclaircir : [question]. Décision soutenue : [décision].
+Je veux éclaircir : [question]. Décision à éclairer : [décision].
 Sources acceptées : [documentation officielle, article, rapport].
-Ne réponds pas et n’invente aucune source. Écris une question plus petite, la
-première affirmation à vérifier, son propriétaire probable et une condition
-d’arrêt si la source n’est pas trouvée.
+Ne répondez pas et n’inventez aucune source. Écrivez une question plus ciblée,
+la première affirmation à vérifier, la source qui pourrait en être responsable
+et une condition d’arrêt si cette source reste introuvable.
 ```
 
 ### 6. Vérifier une affirmation
 
 ```text
 Voici une affirmation : [phrase]. Voici les éléments autorisés : [extraits ou URL].
-Indique quels mots sont directement soutenus, lesquels sont absents ou
-contradictoires, et quelle vérification minimale manque. Ne prétends pas avoir
-ouvert une source que je n’ai pas fournie et n’envoie rien.
+Indiquez quels mots sont directement étayés, lesquels sont absents ou
+contradictoires, et quelle vérification minimale manque. Ne prétendez pas avoir
+ouvert une source que je ne vous ai pas fournie et n’envoyez rien.
 ```
 
 ### 7. Trace avant partage
