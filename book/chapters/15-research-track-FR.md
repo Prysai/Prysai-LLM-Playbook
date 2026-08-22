@@ -175,11 +175,39 @@ Notez au minimum la date de l’événement, la publication ou mise à jour de l
 
 ### 9. Une citation bien présentée n’est pas une preuve de citation
 
-Une citation produite par un modèle doit passer trois contrôles : ouvrir la source originale, localiser le passage, puis vérifier qu’il soutient exactement la phrase et son périmètre. Si le lien existe mais que le passage ne peut pas être retrouvé, écrivez `citation_unverified`. Ne fabriquez ni titre, ni date, ni numéro de page plausible.
+Une citation produite par un modèle peut pointer vers une page réelle mais vers le mauvais titre, mélanger plusieurs pages, transformer un extrait de recherche en texte source ou inventer un emplacement. Elle doit passer trois contrôles : ouvrir la source originale, localiser le passage, puis vérifier qu’il soutient exactement la phrase et son périmètre. Si le lien existe mais que le passage ne peut pas être retrouvé, écrivez `citation_unverified`. Ne fabriquez ni titre, ni date, ni numéro de page plausible.
+
+Suivez cet ordre pour chaque affirmation importante :
+
+1. Demandez un identifiant d’affirmation, une phrase atomique, un niveau de preuve et les inconnues. Ne laissez pas la mémoire du modèle combler un lien absent.
+2. Conservez l’URL d’origine et l’URL finale. Ouvrez la page et vérifiez le titre, l’organisme, le passage localisable, la date, la version, la plateforme et le périmètre.
+3. Séparez ce que la source établit de ce que le texte en déduit. Marquez `citation_unverified` si le passage ne peut pas être retrouvé.
+4. Faites une vérification inverse : la source implique-t-elle vraiment la phrase, ou la phrase semble-t-elle seulement compatible avec la source ?
+5. Notez le relecteur, la date, les citations non résolues et la prochaine revue. Si une citation clé ne peut pas être contrôlée, la conclusion ne peut pas dépasser `candidate`.
+
+Conservez une ligne d’audit telle que celle-ci :
+
+```text
+C-07 | Affirmation : ________ | URL d’origine/finale : ________
+Emplacement : ________ | Ce que la source établit : ________
+Inférence supplémentaire : ________ | Périmètre/date/version : ________
+Audit : étayée / partielle / non étayée / inaccessible
+Relecteur/date : ________ | Action : conserver / nuancer / retirer / compléter
+```
 
 ### 10. Ramener honnêtement le résultat à `candidate`
 
-Un rapport est `candidate` lorsqu’une source clé est inaccessible, qu’un conflit important n’est pas résolu, qu’une affirmation dépasse son échantillon ou qu’il ne reste qu’un conseil communautaire. Écrivez ce qui est connu, ce qui ne l’est pas, la prochaine vérification minimale et la condition de révision.
+Ne marquez pas un résultat `verified` lorsqu’une source clé est inaccessible, que des sources officielles se contredisent sans décision de périmètre, qu’il ne reste que des témoignages de forum ou des solutions communautaires, que les citations générées n’ont pas été ouvertes et localisées, que la date, la version, la plateforme ou la région ne correspondent pas, ou qu’une reproduction annoncée ne possède aucune trace enregistrée. `Candidate` ne signifie pas « rien n’a été fait » : cela signifie que les limites du livrable sont visibles.
+
+Une livraison `candidate` doit comprendre :
+
+- les faits connus, les inconnues, les conflits et le niveau de chaque preuve ;
+- l’état de la source et de l’emplacement pour chaque affirmation clé ;
+- les conclusions impossibles à tirer et la raison de l’arrêt ;
+- une alternative sûre et peu risquée : conserver une erreur masquée, effectuer un contrôle en lecture seule, réduire l’échantillon ou demander une autre source ;
+- un responsable, une date de coupure, une condition de prochaine revue et la preuve encore nécessaire pour passer à `verified`.
+
+Exemple : sans preuve que l’échange de jeton a réussi, écrivez : « L’étape du navigateur a été signalée comme réussie ; l’échange suivant reste non vérifié ou a échoué, donc on ne peut pas conclure à une connexion réussie. La prochaine vérification consiste à conserver des traces sans secret et à contrôler la version et le périmètre réseau. » N’inventez pas de cause officielle et ne demandez pas d’élargir les permissions pour tester une piste non vérifiée.
 
 ### 11. Les documents externes sont des données, pas des instructions prioritaires
 
@@ -273,6 +301,33 @@ Arrêt : quelle source, autorisation ou définition manquante impose une pause ?
 
 Chaque affirmation reçoit un propriétaire de source, un appui direct, un conflit éventuel et une seule prochaine vérification. Si le passage ne soutient qu’une partie de la phrase, scindez-la ou abaissez sa tonalité.
 
+#### Quatre questions avant de conclure
+
+Pour chaque phrase que vous vous apprêtez à présenter comme une conclusion, posez-vous ces quatre questions :
+
+1. La source dit-elle cela directement, ou suis-je en train de l’inférer ?
+2. Existe-t-il une version plus récente, une exception ou une source contradictoire ?
+3. La date d’accès et le périmètre restent-ils dans la fenêtre de décision ?
+4. Un autre lecteur pourrait-il retrouver le même appui en ne regardant que le registre ?
+
+Si une réponse est non, réduisez la phrase ou marquez-la `unknown` au lieu d’ajouter un ton de certitude.
+
+#### Fiche de clôture en dix minutes
+
+```text
+Décision et question :
+Sources ouvertes et contrôlables :
+Appui direct :
+Interprétation ou inférence :
+Conflits et inconnues :
+Date d’accès et périmètre :
+Prochaine vérification minimale :
+Raison de l’arrêt :
+Statut : research_plan | scope_checked_for_supplied_list | blocked | not_run
+```
+
+Cette fiche décrit uniquement ce qui s’est passé dans le périmètre consigné. Elle ne prouve ni que la recherche est terminée, ni que les faits sont encore actuels, ni qu’un modèle a correctement récupéré les sources, ni qu’une action peut être entreprise.
+
 ## Échecs et frontières
 
 - Ne transformez pas un rapport utilisateur en confirmation officielle.
@@ -284,6 +339,8 @@ Chaque affirmation reçoit un propriétaire de source, un appui direct, un confl
 - Ne généralisez pas un échantillon régional, un plan ou une seule version.
 - N’élargissez pas les permissions parce que les preuves sont faibles ; réduisez l’échantillon, retirez les secrets ou arrêtez.
 - Ne laissez pas une instruction injectée dans un document modifier l’étude.
+- Ne présentez pas une source ancienne ou hors périmètre comme si elle était actuelle ; attachez à chaque fait volatil son URL officielle, sa date d’accès, son périmètre, son responsable et sa prochaine revue.
+- Ne franchissez pas la limite de licence d’un Skill externe : S02 est une référence sous CC BY-NC 4.0 ; S01 n’a pas de licence claire et les répertoires S03/S06 ne reçoivent pas automatiquement une autorisation uniforme.
 
 ## Exercice de transfert
 
@@ -300,7 +357,8 @@ Prenez une conclusion récente sans la rechercher à nouveau. Donnez un identifi
 - [ ] Les citations produites par un modèle ont été ouvertes et localisées.
 - [ ] Une preuve manquante ramène le texte à `candidate` avec une raison d’arrêt.
 - [ ] Les documents externes sont traités comme données et non comme consignes prioritaires.
-- [ ] Les licences et attributions des sources externes sont consignées.
+- [ ] Les licences et attributions des sources externes sont consignées, notamment la limite CC BY-NC 4.0 de S02.
+- [ ] Je peux expliquer pourquoi FP-01 et FP-02 demandent des preuves par étapes plutôt qu’une seule étiquette « réussite ».
 
 ## Sources et limite de mise à jour
 
@@ -308,7 +366,9 @@ Prenez une conclusion récente sans la rechercher à nouveau. Donnez un identifi
 - Problèmes étendus : [`field-problems-forums-2026-08-10.md`](../../docs/research/field-problems-forums-2026-08-10.md), [`field-problems-follow-up-2026-08-10.md`](../../docs/research/field-problems-follow-up-2026-08-10.md) et [`field-problems-index-2026-08-10.md`](../../docs/research/field-problems-index-2026-08-10.md).
 - Faits officiels et lacunes : [`official-facts-gap-review-2026-08-10.md`](../../docs/research/official-facts-gap-review-2026-08-10.md) et [`openai-codex-facts-refresh-2026-08-09.md`](../../docs/research/openai-codex-facts-refresh-2026-08-09.md).
 - Synthèse originale des méthodes : [`web-methods-synthesis-2026-08-10.md`](../../docs/research/web-methods-synthesis-2026-08-10.md).
-- Licences : [`asset-register.md`](../../docs/sources/asset-register.md).
+- Licences et attribution : [`asset-register.md`](../../docs/sources/asset-register.md), S01, S02, S03 et S06 ; S02 est sous CC BY-NC 4.0 et doit faire l’objet d’une nouvelle vérification avant publication.
+
+Pour chaque source volatile, notez l’URL exacte, la date d’accès, le périmètre, le responsable et la prochaine revue. Une source inaccessible, une citation non localisable ou un conflit non résolu reste une piste ou un résultat `candidate`, jamais une preuve silencieusement complétée.
 
 Les faits de produit, protocoles, prix, versions et licences sont volatils. Revérifiez l’URL officielle, la date, la portée, le propriétaire et la prochaine revue avant de les présenter comme actuels. Cette traduction reste `in-progress / candidate / not_run` tant qu’une relecture francophone indépendante et une exécution d’apprenant n’ont pas été enregistrées.
 
