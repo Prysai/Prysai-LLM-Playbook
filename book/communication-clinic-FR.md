@@ -8,13 +8,12 @@ Pour une pratique courte et guidée, ouvrez la [boucle du point d’avancement](
 **État :** template_selected | practised | not_run | blocked
 <!-- état : template_selected | practised | not_run | blocked -->
 
-Vous consultez ici la version française du parcours. Cette version est encore
-en cours de relecture ; les exemples dans la langue cible sont facultatifs et
-ne promettent ni maîtrise ni aisance.
+Vous êtes sur le parcours expliqué en français. Cette version est encore en
+cours de relecture ; les exemples dans la langue cible sont facultatifs et ne
+promettent ni maîtrise ni aisance.
 
-Si vous découvrez le projet et ne souhaitez pas pratiquer l’espagnol,
-commencez directement par la carte 3 de la section B. Les exemples en espagnol
-restent facultatifs.
+Si vous découvrez le projet et ne souhaitez pas pratiquer l’espagnol, commencez
+par la carte 3 de B. Les exemples en espagnol restent facultatifs.
 
 <span id="language-practice-route"></span>
 
