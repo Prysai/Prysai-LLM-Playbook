@@ -1872,6 +1872,35 @@ try {
     await localizedRoutePage.close();
   }
 
+  // Reader content can be localized while the shell silently falls back to
+  // English. Keep the chapter pagination, its ARIA label, and the mobile
+  // controls in the selected locale for every registered language. This is a
+  // UI contract, not translation-quality evidence.
+  const readerPaginationLocales = [
+    ['en', 'EN', 'Chapter navigation', 'Previous chapter', 'Next chapter'],
+    ['zh', 'ZH', '章节导航', '上一章', '下一章'],
+    ['es', 'ES', 'Navegación por capítulos', 'Capítulo anterior', 'Capítulo siguiente'],
+    ['ja', 'JA', '章のナビゲーション', '前の章', '次の章'],
+    ['ko', 'KO', '장 탐색', '이전 장', '다음 장'],
+    ['de', 'DE', 'Kapitelnavigation', 'Vorheriges Kapitel', 'Nächstes Kapitel'],
+    ['zh-tw', 'ZHTW', '章節導覽', '上一章', '下一章'],
+    ['fr', 'FR', 'Navigation entre les chapitres', 'Chapitre précédent', 'Chapitre suivant'],
+  ];
+  for (const [locale, suffix, navigationLabel, previousLabel, nextLabel] of readerPaginationLocales) {
+    const paginationPage = await context.newPage();
+    await paginationPage.setViewportSize({ width: 390, height: 844 });
+    await paginationPage.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F02-first-safe-task-${suffix}.md&lang=${locale}`, { waitUntil: 'networkidle' });
+    await paginationPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+    assert.equal(await paginationPage.locator('[data-reader-language]').inputValue(), locale, `${locale} chapter pagination route loses the selected locale`);
+    assert.equal(await paginationPage.locator('[data-reader-pagination]').getAttribute('aria-label'), navigationLabel, `${locale} desktop pagination keeps the wrong ARIA language`);
+    assert.equal(await paginationPage.locator('[data-reader-previous] .reader-pagination-kicker').textContent(), previousLabel, `${locale} desktop previous control keeps the wrong language`);
+    assert.equal(await paginationPage.locator('[data-reader-next] .reader-pagination-kicker').textContent(), nextLabel, `${locale} desktop next control keeps the wrong language`);
+    assert.equal(await paginationPage.locator('[data-reader-mobile-previous]').getAttribute('aria-label'), previousLabel, `${locale} mobile previous control keeps the wrong language`);
+    assert.equal(await paginationPage.locator('[data-reader-mobile-next]').getAttribute('aria-label'), nextLabel, `${locale} mobile next control keeps the wrong language`);
+    await noHorizontalOverflow(paginationPage, `mobile ${locale} chapter pagination`);
+    await paginationPage.close();
+  }
+
   const frenchReaderPage = await context.newPage();
   await frenchReaderPage.setViewportSize({ width: 390, height: 844 });
   await frenchReaderPage.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F02-first-safe-task-FR.md&lang=fr`, { waitUntil: 'networkidle' });
