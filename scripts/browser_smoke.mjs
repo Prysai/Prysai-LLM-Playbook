@@ -339,6 +339,26 @@ try {
     );
   }
   await loadingLanguagePage.close();
+  const localizedReaderBrandAria = {
+    en: 'Prysai LLM Playbook overview',
+    zh: 'Prysai LLM Playbook 总览',
+    es: 'Vista general de Prysai LLM Playbook',
+    ja: 'Prysai LLM Playbook の概要',
+    ko: 'Prysai LLM Playbook 개요',
+    de: 'Prysai LLM Playbook – Übersicht',
+    'zh-tw': 'Prysai LLM Playbook 總覽',
+    fr: 'Aperçu du Prysai LLM Playbook',
+  };
+  const readerBrandPage = await context.newPage();
+  for (const locale of Object.keys(localizedReaderBrandAria)) {
+    await readerBrandPage.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F01-gpt-and-codex-${locale === 'zh-tw' ? 'ZHTW' : locale.toUpperCase()}.md&lang=${locale}`, { waitUntil: 'networkidle' });
+    assert.equal(
+      await readerBrandPage.locator('.reader-brand').getAttribute('aria-label'),
+      localizedReaderBrandAria[locale],
+      `${locale} Reader brand still exposes an English accessibility label`,
+    );
+  }
+  await readerBrandPage.close();
   // The localized application guide is intentionally a starter-card subset.
   // Do not preserve an English-only detailed fragment when the local document
   // cannot satisfy it: link to the selected-language overview and say why.
