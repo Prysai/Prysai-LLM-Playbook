@@ -646,10 +646,10 @@ Skill の判断方法は、このプロジェクトが作成したものです�
 | サンドボックス、承認、外部作用 | [OpenAI Agent approvals and security](https://developers.openai.com/codex/agent-approvals-security) | 2026-08-11 | 公式の境界説明。今回の作業への権限付与やローカル確認の代わりにはならない |
 | Skill 発見の失敗症状 | [openai/codex issue 31592](https://github.com/openai/codex/issues/31592) | 2026-08-11 | 公開利用者報告。普遍的なファイル規則、根本原因、修正、再現は主張しない |
 | MCP の接続と呼び出しの境界 | [anthropics/claude-code issue 73185](https://github.com/anthropics/claude-code/issues/73185)、[MCP transports](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports) | 2026-08-11 | 公開報告とプロトコル資料。報告の原因や他製品の挙動は断定しない |
-| Skill 品質と採用方針 | [Skill quality standard](../../docs/quality/skill-quality-standard.md)、[Skill integration decisions](../../docs/sources/skill-integration-decisions.md) | 2026-08-11 | リポジトリのガバナンス。構造検査は実行時挙動や本番準備を証明しない |
-| 合成不動産ケース | [ケース記録](../../docs/research/skill-case-product-context-real-estate-2026-08-11.md)、[サンドボックス](../../examples/skill-sandbox/product-context-real-estate/README-JA.md) | 2026-08-11 | プロジェクト所有の合成資料。画像は記録済みローカル描画に限る |
-| 現場の問題とプロンプトパターン | [Field problems and prompt patterns](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)、[deep-dive cases](../../docs/research/field-problems-deep-dive-p2-2026-08-11.md) | 2026-08-11 | 公開報告をもとにしたプロジェクトの要約。頻度、根本原因、ベンダー承認は示さない |
-| 外部資産とライセンス | [Asset register](../../docs/sources/asset-register.md) | 2026-08-11 | 研究資料とプロジェクト資産の分類。外部リポジトリのトップレベルライセンスが入れ子の媒体を覆うとは限らない |
+| Skill 品質と採用方針 | [Skill quality standard](../evidence-library-JA.md#method-and-status)、[Skill integration decisions](../evidence-library-JA.md#source-notes) | 2026-08-11 | リポジトリのガバナンス。構造検査は実行時挙動や本番準備を証明しない |
+| 合成不動産ケース | [ケース記録](../evidence-library-JA.md#source-notes)、[サンドボックス](../../examples/skill-sandbox/product-context-real-estate/README-JA.md) | 2026-08-11 | プロジェクト所有の合成資料。画像は記録済みローカル描画に限る |
+| 現場の問題とプロンプトパターン | [Field problems and prompt patterns](../evidence-library-JA.md#source-notes)、[deep-dive cases](../evidence-library-JA.md#source-notes) | 2026-08-11 | 公開報告をもとにしたプロジェクトの要約。頻度、根本原因、ベンダー承認は示さない |
+| 外部資産とライセンス | [Asset register](../evidence-library-JA.md#source-notes) | 2026-08-11 | 研究資料とプロジェクト資産の分類。外部リポジトリのトップレベルライセンスが入れ子の媒体を覆うとは限らない |
 
 ## 採用前の四つのケース
 
