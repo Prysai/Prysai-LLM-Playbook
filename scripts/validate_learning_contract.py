@@ -80,8 +80,9 @@ CHAPTER_CONTRACT = {
     ),
     "real_problem": re.compile(
         r"现实问题入口|現實問題入口|真实问题入口|真實問題入口|field cases?|real[- ]world (?:problem|cases?|entry point)|"
-        r"现场案例|現場案例|真實問題入口|casos de campo|problemas reales|praxisfälle|reale Probleme|"
-        r"現場の事例|現実の問題|현장 사례|실제 문제|cas réels|problèmes de terrain|"
+        r"现场案例|現場案例|真實問題入口|casos de campo|problemas reales|praxisfälle|reale Probleme|Praxisproblem|Problema real|"
+        r"現場の事例|現実の問題|現実の入口|実際に起きる問題|実際の問題|현장 사례|실제 문제|cas réels|problèmes de terrain|"
+        r"现实问题|現實問題|真实入口|真實入口|Praxisnahe Fälle|Praxisbeispiel|El problema real|"
         r"entrée du problème réel",
         re.IGNORECASE,
     ),
@@ -91,16 +92,16 @@ CHAPTER_CONTRACT = {
         re.MULTILINE | re.IGNORECASE,
     ),
     "setup": re.compile(
-        r"(?:^###\s+(?:Setup|准备|前置|实验准备|Vorbereitung|Preparación|準備|준비|Préparation)\s*$|"
-        r"^##\s+(?:实验准备|Preparation|Vorbereitung|Preparación|準備|준비|Préparation)\s*$)",
+        r"(?:^###\s+(?:Setup|准备|前置|实验准备|Vorbereitung|Preparación|準備|준비|Préparation|小実験と境界|小実験|小实验|小實驗|資格情報なしの小さな実験で契約を確認する)\s*$|"
+        r"^##\s+(?:实验准备|Preparation|Vorbereitung|Preparación|準備|준비|Préparation|小実験と境界|小実験|小実驗|資格情報なしの小さな実験で契約を確認する)\s*$)",
         re.MULTILINE | re.IGNORECASE,
     ),
     "task": re.compile(
-        r"(?:^###\s+.*(?:Task|任务|任務|操作步骤|操作步驟|实验步骤|實驗步驟|Aufgabe|Tarea|タスク|작업|Tâche|Étapes).*$)",
+        r"(?:^###\s+.*(?:Task|任务|任務|操作步骤|操作步驟|实验步骤|實驗步驟|Aufgabe|Tarea|タスク|작업|Tâche|Étapes|やること|練習|실험|正常系の確認|小実験：).*$)",
         re.MULTILINE | re.IGNORECASE,
     ),
     "evidence": re.compile(
-        r"(?:^###\s+.*(?:Evidence|证据|證據|记录|記錄|必须保存|必須保存|Belege?|Evidencia|証拠|증거|Preuve|Éléments à conserver).*$)",
+        r"(?:^###\s+.*(?:Evidence|证据|證據|记录|記錄|必须保存|必須保存|Belege?|Evidencia|証拠|증거|Preuve|Éléments à conserver|期待する成果物|証拠を残す|期待する成果物は).*$)",
         re.MULTILINE | re.IGNORECASE,
     ),
     "boundary": re.compile(
@@ -113,19 +114,19 @@ CHAPTER_CONTRACT = {
     ),
     "reflection": re.compile(
         r"(?:^###\s+.*(?:Reflection|复盘|復盤|覆盤|反思|Reflexion|Reflexión|振り返り|"
-        r"회고|성찰|Réflexion).*$|复盘|復盤|覆盤|反思|reflection|reflexion|reflexión|振り返り|회고|성찰|réflexion)",
+        r"회고|성찰|Réflexion|振り返る|回顾|回顧).*$|复盘|復盤|覆盤|反思|reflection|reflexion|reflexión|振り返り|振り返る|회고|성찰|réflexion|回顾|回顧)",
         re.MULTILINE | re.IGNORECASE,
     ),
     "transfer": re.compile(
         r"(?m)^(?:##|###)\s+(?:迁移|遷移|迁移练习|遷移練習|遷移任務|Transfer|Transfer task|"
         r"Transfer exercise|Transferaufgabe|Tarea de transferencia|"
-        r"Transferencia|Übertragung|迁移任务|移行|移行タスク|전환|전이 과제|Transfert|Exercice de transfert)\s*$",
+        r"Transferencia|Übertragung|迁移任务|移行|移行タスク|転移タスク|別の分野へ移す|移行と振り返り|応用課題|応用|전환|전이 과제|응용 과제|Transfert|Exercice de transfert)(?:\s+.*)?$",
         re.IGNORECASE,
     ),
     "acceptance": re.compile(
         r"^##\s+.*(?:本章验收|本章驗收|我真的学会了吗|我真的學會了嗎|验收清单|驗收清單|Acceptance checklist|"
-        r"Abnahme-Checkliste|Abnahmecheckliste|Lista de aceptación|"
-        r"受け入れチェックリスト|合格チェックリスト|수용 체크리스트|합격 체크리스트|Liste de contrôle d’acceptation|Liste de contrôle d'acceptation|Liste d’acceptation).*$",
+        r"Abnahme-Checkliste|Abnahmecheckliste|Lista de aceptación|Lista de comprobación|"
+        r"受け入れチェックリスト|受け入れのチェックリスト|合格チェックリスト|수용 체크리스트|수용 점검표|합격 체크리스트|验收检查清单|驗收檢查清單|Liste de contrôle d’acceptation|Liste de contrôle d'acceptation|Liste d’acceptation).*$",
         re.MULTILINE | re.IGNORECASE,
     ),
     "sources": re.compile(
