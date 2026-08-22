@@ -26,6 +26,20 @@ IDENTITY = re.compile(
     re.IGNORECASE,
 )
 ANCHOR = re.compile(r'<(?:a|span)\s+id="([a-z][a-z0-9-]*)"', re.IGNORECASE)
+REQUIRED_COMMUNICATION_ANCHORS = {
+    "practice-route-chooser",
+    "request-escalation",
+    "first-practice-intake",
+    "four-line-safety-card",
+    "share-check",
+    "public-interest-safety-route",
+    "language-practice-route",
+    "general-skill-practice-route",
+    "bounded-research-route",
+    "source-check-route",
+    "recovery-route",
+    "card-e1-user-declared-continuity-receipt",
+}
 
 
 def load_matrix() -> dict[str, Any]:
@@ -112,6 +126,18 @@ def audit() -> dict[str, Any]:
                         "path": record["path"],
                     }
                 )
+            if content_id == "communication-clinic" and locale != "EN":
+                missing_anchors = sorted(REQUIRED_COMMUNICATION_ANCHORS - set(record["anchors"]))
+                if missing_anchors:
+                    issues.append(
+                        {
+                            "content_id": content_id,
+                            "locale": locale,
+                            "kind": "missing-required-anchor",
+                            "missing": missing_anchors,
+                            "path": record["path"],
+                        }
+                    )
         units.append(unit)
 
     aliases: list[dict[str, Any]] = []
