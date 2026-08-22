@@ -6526,14 +6526,14 @@ Object.assign(copy.fr, {
   // rendered French shell stays idiomatic even when the generated dictionary
   // is refreshed.
   heroIndex: 'LLM / FONDAMENTAUX',
-  heroLede: 'Apprenez ce qu’un modèle de langage peut ou non établir, rédigez une demande délimitée, examinez la réponse, puis réutilisez la méthode sur une nouvelle tâche. Codex, les outils, les Agents et les Skills viennent ensuite.',
+  heroLede: 'Apprenez ce qu’un modèle de langage peut ou non établir, rédigez une demande délimitée, examinez la réponse, puis réutilisez la méthode sur une nouvelle tâche. Codex, les outils, les agents et les skills viennent ensuite.',
   heroRouteKicker: 'Un parcours fondamental obligatoire · aperçu des unités 1 → 2 → 3, puis 4 → 5',
-  heroRouteBoundary: 'Les trois premières cartes donnent un aperçu ; elles ne sont pas trois portes d’entrée concurrentes. Terminez les cinq unités avant d’ouvrir Codex, les outils, les Agents ou les Skills. L’échauffement reste facultatif.',
+  heroRouteBoundary: 'Les trois premières cartes donnent un aperçu ; elles ne sont pas trois portes d’entrée concurrentes. Terminez les cinq unités avant d’ouvrir Codex, les outils, les agents ou les skills. La mise en route reste facultative.',
   startEyebrow: 'Après les fondamentaux · choisissez un objectif',
   problemUpdateBody: 'Trouvez le fichier canonique, joignez sa source, exécutez le contrôle approprié et laissez hors de la livraison toute affirmation non vérifiée.',
   problemResearchBody: 'Reliez la question à une décision, attribuez chaque source, tenez un registre des affirmations, cherchez les désaccords et arrêtez-vous volontairement.',
   starterIntro: 'Cet exercice montre pourquoi la formulation compte. Un modèle peut rendre un message plus naturel, mais il peut aussi ajouter des détails que vous n’avez jamais fournis. Donnez une consigne claire, puis vérifiez qu’elle a été respectée.',
-  starterBoundaryLab: 'Repérez la limite : Lab 011',
+  starterBoundaryLab: 'Repérez la limite : exercice 011',
   chapter07: 'Comment les Skills, les plugins, MCP et les outils se répartissent le travail',
   lab12Body: 'Créez un contrat qui précise la version, le responsable, les autorisations, la reproduction indépendante et le retour en arrière.',
   skillEvidence: 'Décomposez les affirmations d’achèvement en preuves vérifiables.',
@@ -6543,7 +6543,7 @@ Object.assign(copy.fr, {
   updateFlowThreeBody: 'Consignez la source, le périmètre, le responsable, le hash et la prochaine date de revue.',
   skillRouteVerify: 'Je veux vérifier une affirmation existante.',
   starterCheckGate: 'Enregistrez vos trois verdicts avant de les comparer à l’exemple.',
-  starterCheckRecovery: 'Un contrôle échoué ou incertain est enregistré. Utilisez le prompt de secours, puis conservez ce relevé comme observation locale.',
+  starterCheckRecovery: 'Un contrôle échoué ou incertain est enregistré. Utilisez la consigne de secours, puis conservez ce relevé comme observation locale.',
   starterComparisonBoundary: 'La réponse illustrative reste masquée jusqu’à l’enregistrement des trois verdicts. Elle n’évalue pas votre réponse et ne prouve pas votre apprentissage.',
   starterHelpRescue: 'Prompt de secours',
   starterRecordCopied: 'Relevé de vérification copié. Il ne contient que les statuts, pas votre réponse.',
@@ -6559,10 +6559,10 @@ Object.assign(copy.fr, {
   researchCardStepThree: 'Considérez ce tableau comme une préparation. Ouvrez vous-même les sources et vérifiez leur correspondance avant de vous fier à une affirmation.',
   skillPlatformObservationName: 'Relevé d’observation de la plateforme',
   wizardEyebrow: 'Pratique d’application après les fondamentaux',
-  wizardIntro: 'Après les fondamentaux, choisissez un objectif, ajoutez seulement les détails nécessaires, puis copiez un prompt que vous pourrez vérifier dans n’importe quel modèle de chat. Aucun compte, fichier ni configuration n’est requis.',
+  wizardIntro: 'Après les fondamentaux, choisissez un objectif, ajoutez seulement les détails nécessaires, puis copiez une consigne que vous pourrez vérifier dans n’importe quel modèle de chat. Aucun compte, fichier ni configuration n’est requis.',
   visualLearningSourceLink: 'Ouvrir le parcours des fondamentaux',
   foundationLayerCheckBody: 'Comparez le résultat avec une règle de source, un diff, un test, un journal ou un critère d’acceptation avant d’affirmer que la tâche est terminée.',
-  routeCTitle: 'Capacités et collaboration avec les Agents'
+  routeCTitle: 'Capacités et collaboration avec les agents'
 });
 
 initializeSearch();

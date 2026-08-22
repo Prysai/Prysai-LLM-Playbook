@@ -2,7 +2,7 @@
 
 # Pratique d’application facultative : langue, travail et recherche
 
-Pour une pratique courte et guidée, ouvrez la [boucle de mise à jour de travail](work-update-practice-loop-FR.md) ou la [boucle de vérification de recherche](research-check-practice-loop-FR.md). Ces cartes s’utilisent après le [Chapitre 0](guides/llm-fundamentals-FR.md) ; ce n’est pas une introduction à ce qu’est un LLM.
+Pour une pratique courte et guidée, ouvrez la [boucle de mise à jour de travail](work-update-practice-loop-FR.md) ou la [boucle de vérification de recherche](research-check-practice-loop-FR.md). Ces cartes s’utilisent après le [guide de base](guides/llm-fundamentals-FR.md) ; ce n’est pas une introduction à ce qu’est un LLM.
 
 **Statut :** `candidate` · **Exécution :** `not_run` · **Données :** textes fictifs ou autorisés uniquement.  
 état : template_selected | practised | not_run | blocked
@@ -11,7 +11,7 @@ Vous êtes sur le parcours expliqué en français. Le français de cette page es
 une version en cours de relecture ; les exemples de langue cible sont
 facultatifs et ne promettent ni maîtrise ni fluidité.
 
-Si vous découvrez le projet et ne souhaitez pas pratiquer l’espagnol, commencez par la carte 3 de B.
+Si vous découvrez le projet et ne souhaitez pas pratiquer l’espagnol, commencez par la carte 3 de la partie B.
 
 <span id="language-practice-route"></span>
 
@@ -20,7 +20,7 @@ Si vous découvrez le projet et ne souhaitez pas pratiquer l’espagnol, commenc
 ### 1. Essayer avant de demander une correction
 
 ```text
-Je veux pratiquer une confirmation d’horaire en espagnol avec des informations fictives.
+Je veux m’entraîner à confirmer un horaire en espagnol avec des informations fictives.
 J’écris d’abord une phrase de douze mots maximum. Tu joues seulement un camarade
 et tu poses une question courte à la fois.
 Avant le premier tour, affiche le contrôle : quatre tours de l’apprenant,
@@ -34,7 +34,7 @@ fluidité, de prononciation ou de niveau après cet échange.
 
 ### 2. Changer le cas
 
-Demandez ensuite une question différente, sans réutiliser votre première phrase.
+Demandez ensuite une question différente, sans reprendre votre première phrase.
 Le but est d’observer une correction et un nouveau cas, pas d’apprendre une
 réponse par cœur.
 
@@ -43,7 +43,7 @@ réponse par cœur.
 ### 3. Mise à jour fidèle
 
 ```text
-Transforme ces notes en une mise à jour pour [public].
+Transforme ces notes en une mise à jour destinée à [public].
 Notes : [fait 1], [fait 2], [encore inconnu].
 Liste d’abord les faits vérifiables. N’ajoute ni date, ni promesse, ni statut de
 fin, ni raison. Donne une version de 120 mots maximum et une version plus formelle.
@@ -85,8 +85,8 @@ ouvert une source que je n’ai pas fournie et n’envoie rien.
 
 ```text
 Avant tout partage, résume l’objet, le public, l’autorisation et le canal.
-N’envoyez rien, ne téléversez rien et ne créez pas de lien. Si une information, une permission
-ou une preuve manque, arrête et marque-la comme inconnue.
+N’envoie rien, ne téléverse rien et ne crée aucun lien. Si une information, une
+autorisation ou une preuve manque, arrête-toi et marque-la comme inconnue.
 ```
 
 **Limite :** ces cartes ne prouvent pas la qualité d’un modèle, l’existence
