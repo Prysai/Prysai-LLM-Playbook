@@ -235,7 +235,7 @@ constitue pas une preuve que ce dépôt a comparé des modèles.
 
 Choisissez deux candidats dont `surface_available` vaut `yes` sur la même
 surface. Utilisez le jeu hors ligne versionné
-[three-task-smoke-v1](../../evals/candidates/three-task-smoke-v1/README-EN.md),
+[three-task-smoke-v1](../../evals/candidates/three-task-smoke-v1/README-FR.md),
 qui contient des entrées synthétiques non sensibles et un validateur local,
 mais aucun résultat de modèle. N’utilisez ni données de production, ni secret,
 ni écriture externe, ni publication, ni push, ni déploiement, ni connecteur
@@ -344,7 +344,7 @@ positionnement officiel et une démonstration ne remplacent pas une évaluation.
 | Surface CLI et workflow de dépôt local | [Codex CLI](https://learn.chatgpt.com/docs/cli.md) | 2026-08-11 | Documentation officielle ; pas la configuration effective de cette session | `facts-maintainer` / 2026-09-11 |
 | Environnement Cloud, journaux et limites de revue | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-11 | Documentation officielle ; la configuration ne prouve pas la fin d’un Agent | `facts-maintainer` / 2026-09-11 |
 | Symptômes de capacité, fournisseur et attente prolongée | [Dossier de terrain](../../docs/research/codex-model-selection-official-facts-2026-08-11.md) | 2026-08-11 | Rapports utilisateurs et méthode du projet ; pas une cause officielle ni une reproduction locale | `curriculum-maintainer` / 2026-09-11 |
-| Méthode de comparaison à tâches fixes | [Chapitre d’évaluation](19-evaluate-models-and-workflows-FR.md) et [fixture versionnée](../../evals/candidates/three-task-smoke-v1/README-EN.md) | 2026-08-14 | Méthode du Playbook et validateur local ; aucun run de modèle terminé | `evaluation-maintainer` / 2026-09-11 |
+| Méthode de comparaison à tâches fixes | [Chapitre d’évaluation](19-evaluate-models-and-workflows-FR.md) et [fixture versionnée](../../evals/candidates/three-task-smoke-v1/README-FR.md) | 2026-08-14 | Méthode du Playbook et validateur local ; aucun run de modèle terminé | `evaluation-maintainer` / 2026-09-11 |
 
 Les identifiants de modèles, surfaces, prix, capacités, paramètres et avis de
 dépréciation changent. À chaque changement, actualisez les sources de première

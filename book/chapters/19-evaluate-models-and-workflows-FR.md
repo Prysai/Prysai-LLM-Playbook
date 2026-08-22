@@ -83,7 +83,7 @@ workflow est généralement meilleur.
 ### Préparation
 
 Dans une copie temporaire, utilisez le paquet fixe
-[`three-task-smoke-v1`](../../evals/candidates/three-task-smoke-v1/README-EN.md).
+[`three-task-smoke-v1`](../../evals/candidates/three-task-smoke-v1/README-FR.md).
 Il contient entrées synthétiques, sorties attendues, hash, modèle de fiche et
 validateur local. Choisissez une seule variable : modèle avec workflow fixe, ou
 workflow avec modèle fixe. N’utilisez ni production, ni secrets, ni écriture
