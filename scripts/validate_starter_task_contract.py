@@ -20,6 +20,22 @@ SITE_START = "<!-- starter-task-contract-site:start -->"
 SITE_END = "<!-- starter-task-contract-site:end -->"
 FORBIDDEN_BEGINNER_TERMS = ("git", "file path", "absolute path", "diff", "command", "terminal")
 LIVE_COPY_GUARD_MARKER = "// Final naming guard for the public no-setup exercise."
+STALE_DURATION_PATTERNS = (
+    "15-minute",
+    "15 minutes",
+    "fifteen-minute",
+    "fifteen minutes",
+    "15 minutos",
+    "quince minutos",
+    "quinze",
+    "15分",
+    "15분",
+    "15 Minuten",
+    "fünfzehn",
+    "十五分钟",
+    "15分钟",
+    "15 分钟",
+)
 
 
 def load_contract(path: Path = CONTRACT) -> dict[str, Any]:
@@ -143,6 +159,9 @@ def validate_contract(contract: dict[str, Any], *, check_surfaces: bool = True) 
             for phrase in ("15-minute", "15 minutos", "15分", "15분", "15 Minuten"):
                 if phrase in live_copy:
                     errors.append(f"site/app.js live-copy guard still exposes the old duration: {phrase}")
+        for phrase in STALE_DURATION_PATTERNS:
+            if phrase.casefold() in app.casefold():
+                errors.append(f"site/app.js contains a stale public-practice duration: {phrase}")
     return errors
 
 

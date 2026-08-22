@@ -27,11 +27,11 @@ const copy = {
   },
   zh: {
     heroIndexAria: '页面索引',
-    skipToContent: '跳到主要内容', wordmarkAria: 'Prysai 大模型实战手册首页', languageToggleAria: '选择界面语言', menuAria: '打开导航', navAria: '主导航', pathAria: '七级学习路径', routesAria: '筛选章节路线', menu: '菜单', menuClose: '关闭', navStart: '从问题开始', navFirst30: '前 30 分钟', navPath: '学习路径', navIndex: '项目索引', navRoutes: '阅读路线', navLabs: '实验室', navSkills: 'Skills', navUpdates: '更新地图', localeBannerFallback: '当前已选择 {requested} 路由，但部分界面文字或课程单元仍在迁移中。若课程单元尚未提供，Reader 会保持当前语言并明确标为暂不可用；不会悄悄把课程正文切换成英文。', localeManifestError: '语言路由不可用，因为生成的 manifest 没有加载。英文仍可用；在依赖其他语言路由前，请先重新生成 manifest。', localeBannerReady: '当前阅读语言：{language}。', localeMenuAria: '界面语言', languageNameEnglish: '英语', languageNameChinese: '简体中文', languageNameSpanish: '西班牙语', languageNameJapanese: '日语', languageNameKorean: '韩语', languageNameGerman: '德语', localeOptionFallback: '英文界面回退', localePartialAnchorNotice: '本地概览；该详细专题尚未完成翻译。',
-    heroIndex: 'CODEX / 学习系统', heroEyebrow: '候选指南 · 基础结构和检查已通过', heroTitle: '练习可检查的 Codex 工作。', heroLede: '使用一套旨在迁移到各类大语言模型工具的协作方法，再在 Codex 中深入实践：定义结果、控制上下文与权限、检查工作、从失败中恢复，并保留证据。', heroPrimary: '开始有引导的 Codex 路径', heroSecondary: '查看可选的免设置热身', heroRouteAria: '选择推荐的第一条路线', heroRouteKicker: '按你的起始条件选择', heroRouteGuidedTitle: '有可丢弃的项目？沿着引导路径开始。', heroRouteGuidedBody: '从第 1 章开始。第一次本地编辑会在范围和证据边界清楚之后出现。', heroRouteFixtureTitle: '还没有可丢弃的项目？在第 2 章的决策点使用安全夹具。', heroRouteFixtureBody: '它提供一个离线目标和检查，不替代有引导的 Codex 路径。', heroRouteBoundary: '候选表示基础结构和检查已通过；首次读者的学习结果仍未测量。', heroProofAria: 'First Win 证据卡', heroProofKicker: 'FIRST WIN / 可检查示例', heroProofStatus: '候选 · 尚无参与者运行记录', heroProofTitle: '看看一次可检查的结果包含什么。', heroProofSourceLabel: '原始消息', heroProofSource: '“你好，工作坊改期了。周五 10 点开始。请带上草稿。如果你不能参加，请告诉我。”', heroProofPreserveLabel: '保留事实', heroProofPreserve: '保留周五 10 点、草稿和回复要求；不要添加日期、地点、原因或联系方式。', heroProofChecksLabel: '三项人工检查', heroProofCheckOne: '周五 10 点和草稿仍然保留。', heroProofCheckTwo: '不能参加的人仍被要求回复。', heroProofCheckThree: '没有出现无依据的细节。', heroProofReceiptLabel: '有边界的检查记录', heroProofReceipt: '可以记录一次经过检查的尝试；它不证明已经学会、能够迁移，或模型表现。', heroProofLink: '打开完整的 15 分钟检查', heroFooter: '问题 → 协议 → 行动 → 证据',
+    skipToContent: '跳到主要内容', wordmarkAria: 'Prysai 大模型实战手册首页', languageToggleAria: '选择界面语言', menuAria: '打开导航', navAria: '主导航', pathAria: '七级学习路径', routesAria: '筛选章节路线', menu: '菜单', menuClose: '关闭', navStart: '从问题开始', navFirst30: '5 分钟提示词练习', navPath: '学习路径', navIndex: '项目索引', navRoutes: '阅读路线', navLabs: '实验室', navSkills: 'Skills', navUpdates: '更新地图', localeBannerFallback: '当前已选择 {requested} 路由，但部分界面文字或课程单元仍在迁移中。若课程单元尚未提供，Reader 会保持当前语言并明确标为暂不可用；不会悄悄把课程正文切换成英文。', localeManifestError: '语言路由不可用，因为生成的 manifest 没有加载。英文仍可用；在依赖其他语言路由前，请先重新生成 manifest。', localeBannerReady: '当前阅读语言：{language}。', localeMenuAria: '界面语言', languageNameEnglish: '英语', languageNameChinese: '简体中文', languageNameSpanish: '西班牙语', languageNameJapanese: '日语', languageNameKorean: '韩语', languageNameGerman: '德语', localeOptionFallback: '英文界面回退', localePartialAnchorNotice: '本地概览；该详细专题尚未完成翻译。',
+    heroIndex: 'CODEX / 学习系统', heroEyebrow: '候选指南 · 基础结构和检查已通过', heroTitle: '练习可检查的 Codex 工作。', heroLede: '使用一套旨在迁移到各类大语言模型工具的协作方法，再在 Codex 中深入实践：定义结果、控制上下文与权限、检查工作、从失败中恢复，并保留证据。', heroPrimary: '开始有引导的 Codex 路径', heroSecondary: '查看可选的免设置热身', heroRouteAria: '选择推荐的第一条路线', heroRouteKicker: '按你的起始条件选择', heroRouteGuidedTitle: '有可丢弃的项目？沿着引导路径开始。', heroRouteGuidedBody: '从第 1 章开始。第一次本地编辑会在范围和证据边界清楚之后出现。', heroRouteFixtureTitle: '还没有可丢弃的项目？在第 2 章的决策点使用安全夹具。', heroRouteFixtureBody: '它提供一个离线目标和检查，不替代有引导的 Codex 路径。', heroRouteBoundary: '候选表示基础结构和检查已通过；首次读者的学习结果仍未测量。', heroProofAria: 'First Win 证据卡', heroProofKicker: 'FIRST WIN / 可检查示例', heroProofStatus: '候选 · 尚无参与者运行记录', heroProofTitle: '看看一次可检查的结果包含什么。', heroProofSourceLabel: '原始消息', heroProofSource: '“你好，工作坊改期了。周五 10 点开始。请带上草稿。如果你不能参加，请告诉我。”', heroProofPreserveLabel: '保留事实', heroProofPreserve: '保留周五 10 点、草稿和回复要求；不要添加日期、地点、原因或联系方式。', heroProofChecksLabel: '三项人工检查', heroProofCheckOne: '周五 10 点和草稿仍然保留。', heroProofCheckTwo: '不能参加的人仍被要求回复。', heroProofCheckThree: '没有出现无依据的细节。', heroProofReceiptLabel: '有边界的检查记录', heroProofReceipt: '可以记录一次经过检查的尝试；它不证明已经学会、能够迁移，或模型表现。', heroProofLink: '打开完整的 5 分钟检查', heroFooter: '问题 → 协议 → 行动 → 证据',
     startEyebrow: '从问题开始', startTitle: '不要从 Skill 开始。', startIntro: '先说清楚你要避免的失败或要完成的工作。选择最小有效入口，然后留下证据。', problemStartTitle: '我不知道从哪里开始。', problemStartBody: '在选择工作流前，先分清 GPT、Codex、模型、工具、Skill 与 Agent。', problemStartLink: '打开第 1 章 ↗', problemWrongFileTitle: 'Codex 改错了文件。', problemWrongFileBody: '在相信完成声明前，检查范围、差异、测试与恢复方式。', problemWrongFileLink: '打开第 9 章 ↗', problemSkillTitle: '我不知道该用哪个 Skill。', problemSkillBody: '按任务、风险、输入、依赖和证据选择，不按目录大小选择。', problemSkillLink: '运行实验 004 ↗', problemUpdateTitle: '我需要安全地更新项目。', problemUpdateBody: '用固定更新地图找到规范文件、来源记录和验证门槛。', problemUpdateLink: '打开更新地图 ↗', problemIntakeTitle: '我的目标很宽泛，不知道先练什么。', problemIntakeBody: '一次只澄清一个决定：选一条已有路线、一次可检查尝试、允许的帮助和更小的回退。', problemIntakeLink: '打开首次练习入口 · candidate · not_run ↗',
-    first30Eyebrow: '你的前 15 分钟', first30Title: '先判断一个答案，无需配置。', first30Intro: '原文、任务和检查标准都已经填好。任意聊天模型都可以；不需要文件、终端、Git、账户连接或专业词汇。', stepOneTitle: '选择可回滚的改动。', stepOneBody: '使用沙盒文件或小型文档修改。不要从凭据、生产环境或破坏性命令开始。', stepTwoTitle: '写任务协议。', stepTwoBody: '写清目标、上下文、允许行动、验收标准、证据和停止条件。', stepThreeTitle: '让 Codex 先检查。', stepThreeBody: '允许修改前，先让它说明相关文件和当前状态，保持范围可见。', stepFourTitle: '验证实际变化。', stepFourBody: '检查差异，运行最小相关检查，并记录没有测试什么。', checkCardLabel: '一个有用的任务协议', fieldGoalLabel: '目标', fieldGoal: '完成一个明确的改动。', fieldContextLabel: '上下文', fieldContext: '只提供完成任务所需的文件。', fieldInputsLabel: '输入', fieldInputs: '路径、当前行为、约束。', fieldAllowedLabel: '允许行动', fieldAllowed: '读取和编辑；外部副作用前暂停。', fieldAcceptanceLabel: '验收', fieldAcceptance: '明确的差异和检查结果。', fieldEvidenceLabel: '证据', fieldEvidence: '差异、命令、输出和限制。', fieldStopLabel: '停止条件', fieldStop: '范围、授权或证据缺失。', contractHighlight: '最安全的第一个任务应该足够小、可回滚，而且容易检查。', openChapterTwo: '打开第 2 章',
-    starterEyebrow: '原文 → 提示词 → 自查 → 修正', starterTitle: '让一条消息更清楚，同时不改变事实。', starterIntro: '先读一遍原文，复制已填好的提示词，再亲自检查答案。目标用时 15 分钟；目前尚未测量零基础用户的实际完成时间。', starterCopy: '复制第一次提示词', starterCopied: '第一次提示词已复制，请按三项标准检查答案。', starterCopyFailed: '复制失败，请手动选择提示词文本。', starterBoundary: '准备好了。完成本练习只记录一次经过检查的尝试，不证明已经学会或具备普遍能力。', starterProgressionAria: '从可选热身继续', starterDeepen: '选择另一项新手练习', starterCodexPath: '开始 Codex 路径：第 1 章', starterBoundaryLab: '标注边界：实验 011 · draft / not_run', starterBoundedTask: '选择一个有边界的本地任务：第 2 章', starterPractice: '运行实验 001：使用文件和 Git · draft / not_run', starterEvidence: '学习如何修正不合格的答案',
+    first30Eyebrow: '你的 5 分钟练习', first30Title: '先判断一个答案，无需配置。', first30Intro: '原文、任务和检查标准都已经填好。任意聊天模型都可以；不需要文件、终端、Git、账户连接或专业词汇。', stepOneTitle: '选择可回滚的改动。', stepOneBody: '使用沙盒文件或小型文档修改。不要从凭据、生产环境或破坏性命令开始。', stepTwoTitle: '写任务协议。', stepTwoBody: '写清目标、上下文、允许行动、验收标准、证据和停止条件。', stepThreeTitle: '让 Codex 先检查。', stepThreeBody: '允许修改前，先让它说明相关文件和当前状态，保持范围可见。', stepFourTitle: '验证实际变化。', stepFourBody: '检查差异，运行最小相关检查，并记录没有测试什么。', checkCardLabel: '一个有用的任务协议', fieldGoalLabel: '目标', fieldGoal: '完成一个明确的改动。', fieldContextLabel: '上下文', fieldContext: '只提供完成任务所需的文件。', fieldInputsLabel: '输入', fieldInputs: '路径、当前行为、约束。', fieldAllowedLabel: '允许行动', fieldAllowed: '读取和编辑；外部副作用前暂停。', fieldAcceptanceLabel: '验收', fieldAcceptance: '明确的差异和检查结果。', fieldEvidenceLabel: '证据', fieldEvidence: '差异、命令、输出和限制。', fieldStopLabel: '停止条件', fieldStop: '范围、授权或证据缺失。', contractHighlight: '最安全的第一个任务应该足够小、可回滚，而且容易检查。', openChapterTwo: '打开第 2 章',
+    starterEyebrow: '原文 → 提示词 → 自查 → 修正', starterTitle: '让一条消息更清楚，同时不改变事实。', starterIntro: '先读一遍原文，复制已填好的提示词，再亲自检查答案。这是一个 5 分钟的小练习；目前尚未测量零基础用户的实际完成时间。', starterCopy: '复制第一次提示词', starterCopied: '第一次提示词已复制，请按三项标准检查答案。', starterCopyFailed: '复制失败，请手动选择提示词文本。', starterBoundary: '准备好了。完成本练习只记录一次经过检查的尝试，不证明已经学会或具备普遍能力。', starterProgressionAria: '从可选热身继续', starterDeepen: '选择另一项新手练习', starterCodexPath: '开始 Codex 路径：第 1 章', starterBoundaryLab: '标注边界：实验 011 · draft / not_run', starterBoundedTask: '选择一个有边界的本地任务：第 2 章', starterPractice: '运行实验 001：使用文件和 Git · draft / not_run', starterEvidence: '学习如何修正不合格的答案',
     protocolEyebrow: '工作框架', protocolTitle: '每个严肃任务都需要边界。', protocolIntro: '这是人与模型、工具和 Agent 之间的共同语言。在增加权限或 Skill 前先使用它。', protocolLink: '阅读任务协议', protocolNote: '如果缺失输入会改变范围、风险或验收测试，就暂停并询问。如果只影响低风险读取，可以先检查并报告假设。', protocolRuleAria: '有边界任务的四个问题', protocolRuleOne: '定义', protocolRuleOneBody: '哪些结果在范围内，哪些内容明确不做？', protocolRuleTwo: '行动', protocolRuleTwoBody: '模型或工具可以做什么，哪些动作必须暂停？', protocolRuleThree: '验证', protocolRuleThreeBody: '哪个来源、差异、测试或验收检查能说明发生了什么？', protocolRuleFour: '交接', protocolRuleFourBody: '下一位接手者需要收到什么，包括哪些未知项？',
     pathEyebrow: '学习路径', pathTitle: '七个等级，一份可执行契约。', pathIntro: '选择一个等级，直接看到要读什么、做什么、使用什么、提交什么，以及哪些结论不能声称。等级不是阅读数量。', currentLevel: '当前等级', nextStep: '下一步', requiredChapters: '必读章节', requiredLabs: '必做实验', supportingSkills: '支撑 Skill', evaluationFixtures: '评测夹具', evidenceGate: '证据门槛', graduationGate: '进入下一阶段前', blockedWhen: '遇到这些情况先停止', positive: '正例', boundary: '边界例', failure: '失败例', transfer: '迁移例', fourEvidence: '四类证据', evidenceExplain: '解释', evidenceOperate: '操作', evidenceJudge: '判断', evidenceReview: '审查', levelL0Name: '观察者', levelL0Short: '知道发生了什么', levelL1Name: '安全使用者', levelL1Short: '完成低风险任务', levelL2Name: '任务设计者', levelL2Short: '写出任务协议', levelL3Name: '工作流设计者', levelL3Short: '从定义走到交付', levelL4Name: '能力构建者', levelL4Short: '选择最小有效组合', levelL5Name: '证据审查者', levelL5Short: '检验完成声明', levelL6Name: '团队教练', levelL6Short: '把方法变成系统',
     labFirstSeen: '首次引入', labReused: '复用自', labCapability: '新增能力', labArtifact: '新增产物', labAcceptance: '新增验收',
@@ -67,7 +67,7 @@ Object.assign(copy.zh, {
 // French is a first-class interface locale. Keep this dictionary explicit so
 // an incomplete course route never turns into a mixed French/English shell.
 copy.fr = {
-  skipToContent: 'Aller au contenu principal', wordmarkAria: 'Accueil du Prysai LLM Playbook', languageToggleAria: 'Choisir la langue de l’interface', menuAria: 'Ouvrir la navigation', navAria: 'Navigation principale', heroIndexAria: 'Index de la page', pathAria: 'Parcours d’apprentissage en sept niveaux', routesAria: 'Filtrer les parcours des chapitres', menu: 'Menu', menuClose: 'Fermer', navStart: 'Commencer par un problème', navFirst30: 'Pratique de cinq minutes', navPath: 'Parcours d’apprentissage', navIndex: 'Index du projet', navRoutes: 'Parcours de lecture', navLabs: 'Labs', navSkills: 'Skills', navUpdates: 'Carte des mises à jour', localeBannerFallback: 'Le parcours {requested} est sélectionné, mais certaines chaînes de l’interface ou unités du cours sont encore en migration. Lorsqu’une unité manque, le Reader conserve cette langue et la signale comme indisponible ; il ne bascule pas silencieusement vers l’anglais.', localeManifestError: 'Le routage des langues est indisponible car le manifeste généré n’a pas été chargé. L’anglais reste disponible ; reconstruisez le manifeste avant de vous fier aux autres parcours.', localeBannerReady: 'Lecture en {language}.', localeMenuAria: 'Langues de l’interface', languageNameEnglish: 'anglais', languageNameChinese: 'chinois simplifié', languageNameTraditionalChinese: 'chinois traditionnel', languageNameSpanish: 'espagnol', languageNameJapanese: 'japonais', languageNameKorean: 'coréen', languageNameGerman: 'allemand', languageNameFrench: 'français', localeOptionFallback: 'Interface en anglais', localePartialAnchorNotice: 'Aperçu local ; cette section détaillée n’est pas encore traduite.', heroIndex: 'LLM / PARCOURS FONDAMENTAL', heroEyebrow: 'Commencez par le modèle · puis faites un essai vérifiable', heroTitle: 'Comprenez les LLM avant de leur confier une tâche.', heroLede: 'Apprenez ce qu’un modèle de langage peut ou ne peut pas établir, écrivez une demande délimitée, examinez la réponse, puis reprenez la méthode sur une nouvelle tâche. Codex, les outils, les Agents et les Skills viennent après ces bases.', heroPrimary: 'Commencer le parcours fondamental LLM', heroSecondary: 'Essayer l’exemple facultatif de cinq minutes', heroRouteAria: 'Le parcours fondamental obligatoire', heroRouteKicker: 'Un parcours obligatoire · aperçu 1 → 2 → 3, puis 4 → 5', heroRouteGuidedTitle: 'Vous avez un projet jetable et souhaitez utiliser Codex ? Suivez le parcours guidé.', heroRouteGuidedBody: 'Commencez par le chapitre 1. La première modification locale vient après la clarification du périmètre et des preuves attendues.', heroRouteFixtureTitle: 'Besoin d’un fichier sûr pour le parcours Codex ? Ouvrez le support hors ligne.', heroRouteFixtureBody: 'Il fournit une cible et une vérification après le chapitre 2. C’est un recours, pas un remplacement du parcours guidé.', heroRouteBoundary: 'Les trois premières cartes sont un aperçu, pas trois points de départ concurrents. Terminez les cinq unités avant d’ouvrir Codex, les outils, les Agents ou les Skills ; la mise en route est facultative.', heroProofAria: 'Exemple de prompt de cinq minutes', heroProofKicker: 'EXEMPLE DE CINQ MINUTES', heroProofStatus: 'Exemple facultatif · ce n’est pas la leçon fondamentale', heroProofTitle: 'Voyez comment un petit prompt peut changer le résultat.', heroProofSourceLabel: 'MESSAGE SOURCE', heroProofSource: '« Bonjour, l’atelier a changé. Il commence vendredi à 10 h. Apportez le brouillon. Dites-moi si vous ne pouvez pas venir. »', heroProofPreserveLabel: 'CONSERVER LES FAITS', heroProofPreserve: 'Gardez vendredi à 10 h, le brouillon et la demande de réponse. N’ajoutez ni date, ni lieu, ni raison, ni moyen de contact.', heroProofChecksLabel: 'TROIS VÉRIFICATIONS HUMAINES', heroProofCheckOne: 'Vendredi à 10 h et le brouillon sont toujours là.', heroProofCheckTwo: 'Les personnes absentes sont toujours invitées à répondre.', heroProofCheckThree: 'Aucun détail sans source n’a été ajouté.', heroProofReceiptLabel: 'FICHE DE VÉRIFICATION DÉLIMITÉE', heroProofReceipt: 'Vous pouvez noter un essai vérifié. Cela ne prouve ni l’apprentissage, ni le transfert, ni la performance du modèle.', heroProofLink: 'Voir l’exemple facultatif ci-dessous', heroFooter: 'Problème → protocole → action → preuve', startEyebrow: 'Après les bases · choisissez un objectif', startTitle: 'Que voulez-vous faire avec le modèle maintenant ?', startIntro: 'Terminez d’abord le parcours fondamental LLM. Choisissez ensuite un objectif réel, ajoutez seulement les détails utiles et copiez un prompt délimité pour n’importe quel modèle de chat.', problemStartTitle: 'Je ne sais pas par où commencer.', problemStartBody: 'Commencez par le parcours fondamental LLM : limites du modèle, demande délimitée, erreurs visibles, correction et transfert avant toute plateforme.', problemStartLink: 'Commencer le parcours fondamental LLM ↗', problemWrongFileTitle: 'Le fichier ou le résultat est incertain.', problemWrongFileBody: 'Mettez la prochaine modification en pause. Comparez le périmètre demandé, le diff Git, la vérification ciblée et les inconnues restantes.', problemWrongFileLink: 'Apprendre la vérification de récupération ↗', problemSkillTitle: 'Je dois choisir ou concevoir un Skill.', problemSkillBody: 'Commencez par le déclencheur, les entrées, les limites et le contrat de preuve ; décidez ensuite si le Skill mérite sa place.', problemSkillLink: 'Apprendre à choisir un Skill ↗', problemUpdateTitle: 'Je dois publier ou mettre à jour sans risque.', problemUpdateBody: 'Trouvez le fichier canonique, joignez la source, lancez le contrôle adapté et excluez les affirmations non vérifiées de la livraison.', problemUpdateLink: 'Apprendre la mise à jour sûre ↗', problemIntakeTitle: 'J’ai un objectif large et je ne sais pas quoi pratiquer.', problemIntakeBody: 'Posez une question à la fois. Choisissez un parcours existant, un essai vérifiable, l’aide autorisée et un repli plus petit.', problemIntakeLink: 'Choisir une première pratique ↗', problemLanguageTitle: 'Je veux pratiquer une langue.', problemLanguageBody: 'Définissez une performance observable, essayez avant l’explication, corrigez une erreur qui bloque le sens, puis testez un cas différent.', problemLanguageLink: 'Ouvrir le parcours de langue · candidate · not_run ↗', problemGeneralSkillTitle: 'Je veux pratiquer une autre compétence.', problemGeneralSkillBody: 'Transformez une réponse d’entretien, une explication ou une présentation en performance chronométrée, puis retestez-la dans une condition différente.', problemGeneralSkillLink: 'Ouvrir le parcours de compétence · candidate · not_run ↗', problemResearchTitle: 'Je dois vérifier une question précise.', problemResearchBody: 'Reliez la question à une décision, attribuez les sources, tenez un registre des affirmations, cherchez les désaccords et arrêtez-vous volontairement.', problemResearchLink: 'Ouvrir le parcours de recherche · candidate · not_run ↗', first30Eyebrow: 'Vos quinze premières minutes', first30Title: 'Évaluez une réponse. Sans installation.', first30Intro: 'Le texte, la tâche et les contrôles sont déjà préparés. Utilisez n’importe quel modèle de chat ; aucun fichier, terminal, dépôt Git ou vocabulaire spécial n’est requis.', menuCloseAria: 'Fermer la navigation', localeTitle: 'Parcours en huit langues', localeIntro: 'Huit langues d’entrée sont enregistrées. Chaque parcours de cours couvre 22 chapitres et 18 Labs dans la langue choisie ; les pages complémentaires gardent leur propre statut de traduction et signalent clairement l’absence d’une page dans la même langue.', localeEnglish: 'disponible · par défaut', localeChinese: 'disponible · 简体中文', localeTraditionalChinese: 'disponible · 繁體中文', localeSpanish: 'disponible · Español', localeGerman: 'disponible · Deutsch', localeJapanese: 'disponible · 日本語', localeKorean: 'disponible · 한국어', localeFrench: 'disponible · Français', localeRule: 'Règle du parcours : les unités traduites portent un suffixe de langue et renvoient vers la même langue. Un jeton indique une couverture de fichiers et de chemins, pas une traduction terminée, une relecture indépendante ni une preuve d’apprentissage.', mobileIndexUpdates: 'Zones de mise à jour', mobileIndexTrust: 'Familles de confiance', skillCatalogSummary: 'Parcourir le registre complet des Skills', skillCatalogIntro: 'Ces méthodes sont facultatives. Commencez par la situation ci-dessus ; ouvrez le registre complet lorsque vous savez quel travail vous voulez soutenir.'
+  skipToContent: 'Aller au contenu principal', wordmarkAria: 'Accueil du Prysai LLM Playbook', languageToggleAria: 'Choisir la langue de l’interface', menuAria: 'Ouvrir la navigation', navAria: 'Navigation principale', heroIndexAria: 'Index de la page', pathAria: 'Parcours d’apprentissage en sept niveaux', routesAria: 'Filtrer les parcours des chapitres', menu: 'Menu', menuClose: 'Fermer', navStart: 'Commencer par un problème', navFirst30: 'Pratique de cinq minutes', navPath: 'Parcours d’apprentissage', navIndex: 'Index du projet', navRoutes: 'Parcours de lecture', navLabs: 'Labs', navSkills: 'Skills', navUpdates: 'Carte des mises à jour', localeBannerFallback: 'Le parcours {requested} est sélectionné, mais certaines chaînes de l’interface ou unités du cours sont encore en migration. Lorsqu’une unité manque, le Reader conserve cette langue et la signale comme indisponible ; il ne bascule pas silencieusement vers l’anglais.', localeManifestError: 'Le routage des langues est indisponible car le manifeste généré n’a pas été chargé. L’anglais reste disponible ; reconstruisez le manifeste avant de vous fier aux autres parcours.', localeBannerReady: 'Lecture en {language}.', localeMenuAria: 'Langues de l’interface', languageNameEnglish: 'anglais', languageNameChinese: 'chinois simplifié', languageNameTraditionalChinese: 'chinois traditionnel', languageNameSpanish: 'espagnol', languageNameJapanese: 'japonais', languageNameKorean: 'coréen', languageNameGerman: 'allemand', languageNameFrench: 'français', localeOptionFallback: 'Interface en anglais', localePartialAnchorNotice: 'Aperçu local ; cette section détaillée n’est pas encore traduite.', heroIndex: 'LLM / PARCOURS FONDAMENTAL', heroEyebrow: 'Commencez par le modèle · puis faites un essai vérifiable', heroTitle: 'Comprenez les LLM avant de leur confier une tâche.', heroLede: 'Apprenez ce qu’un modèle de langage peut ou ne peut pas établir, écrivez une demande délimitée, examinez la réponse, puis reprenez la méthode sur une nouvelle tâche. Codex, les outils, les Agents et les Skills viennent après ces bases.', heroPrimary: 'Commencer le parcours fondamental LLM', heroSecondary: 'Essayer l’exemple facultatif de cinq minutes', heroRouteAria: 'Le parcours fondamental obligatoire', heroRouteKicker: 'Un parcours obligatoire · aperçu 1 → 2 → 3, puis 4 → 5', heroRouteGuidedTitle: 'Vous avez un projet jetable et souhaitez utiliser Codex ? Suivez le parcours guidé.', heroRouteGuidedBody: 'Commencez par le chapitre 1. La première modification locale vient après la clarification du périmètre et des preuves attendues.', heroRouteFixtureTitle: 'Besoin d’un fichier sûr pour le parcours Codex ? Ouvrez le support hors ligne.', heroRouteFixtureBody: 'Il fournit une cible et une vérification après le chapitre 2. C’est un recours, pas un remplacement du parcours guidé.', heroRouteBoundary: 'Les trois premières cartes sont un aperçu, pas trois points de départ concurrents. Terminez les cinq unités avant d’ouvrir Codex, les outils, les Agents ou les Skills ; la mise en route est facultative.', heroProofAria: 'Exemple de prompt de cinq minutes', heroProofKicker: 'EXEMPLE DE CINQ MINUTES', heroProofStatus: 'Exemple facultatif · ce n’est pas la leçon fondamentale', heroProofTitle: 'Voyez comment un petit prompt peut changer le résultat.', heroProofSourceLabel: 'MESSAGE SOURCE', heroProofSource: '« Bonjour, l’atelier a changé. Il commence vendredi à 10 h. Apportez le brouillon. Dites-moi si vous ne pouvez pas venir. »', heroProofPreserveLabel: 'CONSERVER LES FAITS', heroProofPreserve: 'Gardez vendredi à 10 h, le brouillon et la demande de réponse. N’ajoutez ni date, ni lieu, ni raison, ni moyen de contact.', heroProofChecksLabel: 'TROIS VÉRIFICATIONS HUMAINES', heroProofCheckOne: 'Vendredi à 10 h et le brouillon sont toujours là.', heroProofCheckTwo: 'Les personnes absentes sont toujours invitées à répondre.', heroProofCheckThree: 'Aucun détail sans source n’a été ajouté.', heroProofReceiptLabel: 'FICHE DE VÉRIFICATION DÉLIMITÉE', heroProofReceipt: 'Vous pouvez noter un essai vérifié. Cela ne prouve ni l’apprentissage, ni le transfert, ni la performance du modèle.', heroProofLink: 'Voir l’exemple facultatif ci-dessous', heroFooter: 'Problème → protocole → action → preuve', startEyebrow: 'Après les bases · choisissez un objectif', startTitle: 'Que voulez-vous faire avec le modèle maintenant ?', startIntro: 'Terminez d’abord le parcours fondamental LLM. Choisissez ensuite un objectif réel, ajoutez seulement les détails utiles et copiez un prompt délimité pour n’importe quel modèle de chat.', problemStartTitle: 'Je ne sais pas par où commencer.', problemStartBody: 'Commencez par le parcours fondamental LLM : limites du modèle, demande délimitée, erreurs visibles, correction et transfert avant toute plateforme.', problemStartLink: 'Commencer le parcours fondamental LLM ↗', problemWrongFileTitle: 'Le fichier ou le résultat est incertain.', problemWrongFileBody: 'Mettez la prochaine modification en pause. Comparez le périmètre demandé, le diff Git, la vérification ciblée et les inconnues restantes.', problemWrongFileLink: 'Apprendre la vérification de récupération ↗', problemSkillTitle: 'Je dois choisir ou concevoir un Skill.', problemSkillBody: 'Commencez par le déclencheur, les entrées, les limites et le contrat de preuve ; décidez ensuite si le Skill mérite sa place.', problemSkillLink: 'Apprendre à choisir un Skill ↗', problemUpdateTitle: 'Je dois publier ou mettre à jour sans risque.', problemUpdateBody: 'Trouvez le fichier canonique, joignez la source, lancez le contrôle adapté et excluez les affirmations non vérifiées de la livraison.', problemUpdateLink: 'Apprendre la mise à jour sûre ↗', problemIntakeTitle: 'J’ai un objectif large et je ne sais pas quoi pratiquer.', problemIntakeBody: 'Posez une question à la fois. Choisissez un parcours existant, un essai vérifiable, l’aide autorisée et un repli plus petit.', problemIntakeLink: 'Choisir une première pratique ↗', problemLanguageTitle: 'Je veux pratiquer une langue.', problemLanguageBody: 'Définissez une performance observable, essayez avant l’explication, corrigez une erreur qui bloque le sens, puis testez un cas différent.', problemLanguageLink: 'Ouvrir le parcours de langue · candidate · not_run ↗', problemGeneralSkillTitle: 'Je veux pratiquer une autre compétence.', problemGeneralSkillBody: 'Transformez une réponse d’entretien, une explication ou une présentation en performance chronométrée, puis retestez-la dans une condition différente.', problemGeneralSkillLink: 'Ouvrir le parcours de compétence · candidate · not_run ↗', problemResearchTitle: 'Je dois vérifier une question précise.', problemResearchBody: 'Reliez la question à une décision, attribuez les sources, tenez un registre des affirmations, cherchez les désaccords et arrêtez-vous volontairement.', problemResearchLink: 'Ouvrir le parcours de recherche · candidate · not_run ↗', first30Eyebrow: 'Votre pratique de prompt en cinq minutes', first30Title: 'Évaluez une réponse. Sans installation.', first30Intro: 'Le texte, la tâche et les contrôles sont déjà préparés. Utilisez n’importe quel modèle de chat ; aucun fichier, terminal, dépôt Git ou vocabulaire spécial n’est requis.', menuCloseAria: 'Fermer la navigation', localeTitle: 'Parcours en huit langues', localeIntro: 'Huit langues d’entrée sont enregistrées. Chaque parcours de cours couvre 22 chapitres et 18 Labs dans la langue choisie ; les pages complémentaires gardent leur propre statut de traduction et signalent clairement l’absence d’une page dans la même langue.', localeEnglish: 'disponible · par défaut', localeChinese: 'disponible · 简体中文', localeTraditionalChinese: 'disponible · 繁體中文', localeSpanish: 'disponible · Español', localeGerman: 'disponible · Deutsch', localeJapanese: 'disponible · 日本語', localeKorean: 'disponible · 한국어', localeFrench: 'disponible · Français', localeRule: 'Règle du parcours : les unités traduites portent un suffixe de langue et renvoient vers la même langue. Un jeton indique une couverture de fichiers et de chemins, pas une traduction terminée, une relecture indépendante ni une preuve d’apprentissage.', mobileIndexUpdates: 'Zones de mise à jour', mobileIndexTrust: 'Familles de confiance', skillCatalogSummary: 'Parcourir le registre complet des Skills', skillCatalogIntro: 'Ces méthodes sont facultatives. Commencez par la situation ci-dessus ; ouvrez le registre complet lorsque vous savez quel travail vous voulez soutenir.'
 };
 
 // The generated contract is the source of truth; this fallback keeps a direct file open usable during local edits.
@@ -107,7 +107,7 @@ legacyLearningPath.L0.foundationRoute = {
 Object.assign(copy.en, {
   skillStarterEyebrow: 'Choose by situation', skillStarterTitle: 'Start here if the names mean nothing yet.', skillStarterIntro: 'These are starting routes, not automatic diagnoses. Open one method, check its required inputs, and stop if the boundary does not fit.', skillRouteUnclear: 'My task is still unclear.', skillRouteUnclearResult: 'Returns a bounded goal, inputs, actions, acceptance, and stop condition.', skillRouteLearnCodex: 'I need to learn Codex.', skillRouteLearnCodexResult: 'Returns a Codex learning level, experiment, evidence check, and reflection.', skillRouteLearnOther: 'I need to practise another capability.', skillRouteLearnOtherResult: 'Returns a baseline, correction, changed-case transfer attempt, and review cue.', skillRouteFailed: 'A preserved request and reply already failed.', skillRouteFailedResult: 'Returns one evidence-based diagnosis and a smallest comparable repair.', skillRouteVerify: 'I need to check an existing claim.', skillRouteVerifyResult: 'Returns what the evidence proves, misses, and requires next.',
   mobileRoutesAria: 'Choose your next move',
-  mobileRouteTask: 'Get a first result in 15 minutes',
+  mobileRouteTask: 'Get a first result in five minutes',
   mobileRoutePractice: 'Practise language, research, or another skill',
   mobileRouteIndexes: 'Browse the complete project indexes',
   mobileAllRoutes: 'Open every problem route',
@@ -167,7 +167,7 @@ Object.assign(copy.en, {
 Object.assign(copy.zh, {
   skillStarterEyebrow: '按当前情况选择', skillStarterTitle: '如果这些名称还很陌生，从这里开始。', skillStarterIntro: '这是起点建议，不是自动诊断。先打开一个方法，检查必需输入；边界不匹配时就停止。', skillRouteUnclear: '我的任务还不清楚。', skillRouteUnclearResult: '产出有边界的目标、输入、动作、验收与停止条件。', skillRouteLearnCodex: '我需要学习 Codex。', skillRouteLearnCodexResult: '产出 Codex 学习等级、实验、证据检查与反思。', skillRouteLearnOther: '我需要练习另一项能力。', skillRouteLearnOtherResult: '产出基线、纠错、变式迁移尝试与复习提示。', skillRouteFailed: '我保留了已经失败的请求和回复。', skillRouteFailedResult: '产出一项有证据的诊断和最小可比修复。', skillRouteVerify: '我需要检查一个已有声明。', skillRouteVerifyResult: '说明证据能证明什么、缺什么、下一步检查什么。',
   mobileRoutesAria: '\u9009\u62e9\u4e0b\u4e00\u6b65',
-  mobileRouteTask: '15 分钟完成第一次可检查的结果',
+  mobileRouteTask: '5 分钟完成第一次可检查的结果',
   mobileRoutePractice: '\u7ec3\u4e60\u8bed\u8a00\u3001\u7814\u7a76\u6216\u5176\u4ed6\u6280\u80fd',
   mobileRouteIndexes: '\u6d4f\u89c8\u5b8c\u6574\u9879\u76ee\u7d22\u5f15',
   mobileAllRoutes: '\u6253\u5f00\u5168\u90e8\u95ee\u9898\u8def\u7ebf',
@@ -605,7 +605,7 @@ Object.assign(copy.en, {
   problemStartTitle: 'I want one safe Codex path.',
   problemStartBody: 'Start with the boundary map, then use Lab 011 to label it before choosing one disposable README change with a diff, focused check, and unverified list.',
   problemStartLink: 'Start Chapter 1 → Lab 011 → Chapter 2 → Lab 001 · candidate / draft ↗',
-  first30Eyebrow: 'Optional 15-minute warm-up',
+  first30Eyebrow: 'Optional five-minute warm-up',
   first30Intro: 'The text, task, and checks are already filled in. Use any chat model; you need no files, terminal, Git, account connection, or special vocabulary. This warm-up rehearses one checking habit; start the Codex path above for a real local task.',
 });
 
@@ -634,7 +634,7 @@ Object.assign(copy.zh, {
   problemStartTitle: '我想走一条安全的 Codex 路径。',
   problemStartBody: '先理解边界，再通过实验 011 标注它，然后选择一次可丢弃的 README 修改，并保留差异、针对性检查和未验证清单。',
   problemStartLink: '从第 1 章 → 实验 011 → 第 2 章 → 实验 001 开始 · candidate / draft ↗',
-  first30Eyebrow: '可选的 15 分钟热身',
+  first30Eyebrow: '可选的 5 分钟热身',
   first30Intro: '原文、任务和检查标准都已经填好。任意聊天模型都可以；不需要文件、终端、Git、账户连接或专业词汇。这个热身只练习一项检查习惯；真实本地任务请从上方的 Codex 路径开始。',
 });
 
@@ -1195,7 +1195,17 @@ const applyLanguage = (language, { updateUrl = true } = {}) => {
   }
 };
 
-const localizedField = (data, key) => data?.[key]?.[effectiveUiLanguage] || data?.[key]?.en || '';
+const localizedField = (data, key) => {
+  const value = data?.[key];
+  if (Array.isArray(value)) {
+    // The checked-in fallback predates the generated manifest and stores
+    // English/Simplified Chinese as [en, zh]. Keep that fallback readable
+    // instead of rendering an empty learning-path panel when generation is
+    // unavailable.
+    return effectiveUiLanguage === 'zh' ? (value[1] || value[0] || '') : (value[0] || '');
+  }
+  return value?.[effectiveUiLanguage] || value?.en || '';
+};
 const updateLevel = (level, focus = false) => {
   const data = learningPath[level];
   const title = localizedField(data, 'headline') || localizedField(data, 'title');
@@ -1509,7 +1519,7 @@ copy.es = {
   'menu': 'Menú',
   'menuClose': 'Cerrar',
   'navStart': 'Empieza aquí',
-  'navFirst30': 'Primeros 15 minutos',
+  'navFirst30': 'Práctica de prompt de cinco minutos',
   'navPath': 'Ruta de aprendizaje',
   'navIndex': 'Índice del proyecto',
   'navRoutes': 'Rutas de lectura',
@@ -1555,7 +1565,7 @@ copy.es = {
   'heroProofCheckThree': 'No aparece ningún detalle sin sustento.',
   'heroProofReceiptLabel': 'REGISTRO DE COMPROBACIÓN ACOTADO',
   'heroProofReceipt': 'Se puede registrar un intento comprobado. No demuestra aprendizaje, transferencia ni rendimiento del modelo.',
-  'heroProofLink': 'Abrir la comprobación opcional de 15 minutos',
+  'heroProofLink': 'Abrir la comprobación opcional de cinco minutos',
   'heroFooter': 'Problema → protocolo → acción → evidencia',
   'startEyebrow': 'Empieza aquí · elige según el problema',
   'startTitle': '¿Qué necesitas hacer?',
@@ -1584,7 +1594,7 @@ copy.es = {
   'problemResearchTitle': 'Necesito investigar una pregunta acotada.',
   'problemResearchBody': 'Vincula la pregunta a una decisión, asigna responsables de las fuentes, lleva un registro de afirmaciones, busca desacuerdos y detente a propósito.',
   'problemResearchLink': 'Abrir la ruta de investigación · candidate · not_run ↗',
-  'first30Eyebrow': 'Calentamiento opcional de 15 minutos',
+  'first30Eyebrow': 'Práctica breve opcional de cinco minutos',
   'first30Title': 'Evalúa una respuesta. Sin configuración.',
   'first30Intro': 'El texto, la tarea y las comprobaciones ya están completos. Usa cualquier modelo de chat; no necesitas archivos, terminal, Git, cuenta conectada ni vocabulario especial. Este calentamiento ejercita un hábito de comprobación; para una tarea local real, empieza la ruta de Codex de arriba.',
   'stepOneTitle': 'Elige un cambio reversible.',
@@ -1614,7 +1624,7 @@ copy.es = {
   'openChapterTwo': 'Abrir el capítulo 2',
   'starterEyebrow': 'Antes → prompt → comprobación → corrección',
   'starterTitle': 'Haz que un mensaje sea más claro sin cambiar sus hechos.',
-  'starterIntro': 'Lee el original una vez, copia el prompt ya completado y luego comprueba la respuesta tú mismo. Tiempo objetivo: 15 minutos; el tiempo real de finalización de principiantes no se ha medido.',
+  'starterIntro': 'Lee el original una vez, copia el prompt ya completado y luego comprueba la respuesta tú mismo. Es una práctica breve de cinco minutos; el tiempo real de finalización de principiantes no se ha medido.',
   'starterCopy': 'Copiar el primer prompt',
   'starterCopied': 'Primer prompt copiado. Comprueba la respuesta contra las tres líneas.',
   'starterCopyFailed': 'No se pudo copiar. Selecciona el texto del prompt manualmente.',
@@ -2116,7 +2126,7 @@ copy.ja = {
   'menu': 'メニュー',
   'menuClose': '閉じる',
   'navStart': 'ここから始める',
-  'navFirst30': '最初の15分',
+  'navFirst30': '最初の5分',
   'navPath': '学習パス',
   'navIndex': 'プロジェクトインデックス',
   'navRoutes': 'リーディングルート',
@@ -2162,7 +2172,7 @@ copy.ja = {
   'heroProofCheckThree': '根拠のない詳細は現れない。',
   'heroProofReceiptLabel': '範囲を明示した確認記録',
   'heroProofReceipt': 'チェック済みの試行を1回記録できます。学習、転移、モデルの性能を証明するものではありません。',
-  'heroProofLink': 'オプションの15分チェックを開く',
+  'heroProofLink': 'オプションの5分チェックを開く',
   'heroFooter': '問題 → プロトコル → アクション → エビデンス',
   'startEyebrow': 'ここから始める · 問題で選ぶ',
   'startTitle': '何をする必要がありますか?',
@@ -2191,7 +2201,7 @@ copy.ja = {
   'problemResearchTitle': '境界のある質問を1つ調査する必要があります。',
   'problemResearchBody': '質問を判断に結び付け、ソースの所有者を割り当て、主張の台帳を維持し、反対意見を探し、意図的に停止します。',
   'problemResearchLink': 'リサーチルートを開く · candidate · not_run ↗',
-  'first30Eyebrow': 'オプションの15分ウォームアップ',
+  'first30Eyebrow': 'オプションの5分ウォームアップ',
   'first30Title': '1つの回答を判定する。セットアップ不要。',
   'first30Intro': 'テキスト、タスク、チェックはすでに記入済みです。任意のチャットモデルを使用できます。ファイル、ターミナル、Git、アカウント接続、専門用語は不要です。このウォームアップは1つのチェック習慣を練習します。実際のローカルタスクには、上の Codex パスから始めてください。',
   'stepOneTitle': 'リバーシブルな変更を選ぶ。',
@@ -2221,7 +2231,7 @@ copy.ja = {
   'openChapterTwo': '第2章を開く',
   'starterEyebrow': '原文 → プロンプト → チェック → 修正',
   'starterTitle': '事実を変えずに、1つのメッセージを明確にする。',
-  'starterIntro': '原文を1回読み、記入済みのプロンプトをコピーし、答えを自分でチェックしてください。目標時間:15分。初心者の実際の完了時間はまだ測定されていません。',
+  'starterIntro': '原文を1回読み、記入済みのプロンプトをコピーし、答えを自分で確認してください。5分間の短い練習です。初心者の実際の完了時間はまだ測定されていません。',
   'starterCopy': '最初のプロンプトをコピー',
   'starterCopied': '最初のプロンプトをコピーしました。3つの項目すべてに照らして答えを確認してください。',
   'starterCopyFailed': 'コピーに失敗しました。プロンプトのテキストを手動で選択してください。',
@@ -2723,7 +2733,7 @@ copy.ko = {
   'menu': '메뉴',
   'menuClose': '닫기',
   'navStart': '여기서 시작',
-  'navFirst30': '처음 15분',
+  'navFirst30': '처음 5분',
   'navPath': '학습 경로',
   'navIndex': '프로젝트 색인',
   'navRoutes': '읽기 경로',
@@ -2769,7 +2779,7 @@ copy.ko = {
   'heroProofCheckThree': '근거 없는 세부 내용이 나타나지 않습니다.',
   'heroProofReceiptLabel': '범위를 명시한 점검 기록',
   'heroProofReceipt': '점검된 시도 하나를 기록할 수 있습니다. 학습, 전이, 모델 성능을 증명하지는 않습니다.',
-  'heroProofLink': '선택 15분 점검 열기',
+  'heroProofLink': '선택 5분 점검 열기',
   'heroFooter': '문제 → 프로토콜 → 행동 → 증거',
   'startEyebrow': '여기서 시작 · 문제에 따라 선택',
   'startTitle': '무엇을 해야 하세요?',
@@ -2798,7 +2808,7 @@ copy.ko = {
   'problemResearchTitle': '범위가 정해진 질문 하나를 조사해야 합니다.',
   'problemResearchBody': '질문을 결정과 연결하고, 출처 담당자를 지정하고, 주장 원장을 유지하고, 반대 의견을 찾아보고, 의도적으로 멈추세요.',
   'problemResearchLink': '조사 경로 열기 · candidate · not_run ↗',
-  'first30Eyebrow': '선택 15분 워밍업',
+  'first30Eyebrow': '선택 5분 워밍업',
   'first30Title': '답변 하나를 판단하세요. 설정이 필요 없습니다.',
   'first30Intro': '텍스트, 과제, 점검 항목이 이미 채워져 있습니다. 아무 채팅 모델이나 사용하세요. 파일, 터미널, Git, 계정 연결, 특별한 용어가 필요 없습니다. 이 워밍업은 점검 습관 하나를 연습하는 것입니다. 실제 로컬 과제는 위의 Codex 경로로 시작하세요.',
   'stepOneTitle': '되돌릴 수 있는 변경을 선택하세요.',
@@ -2828,7 +2838,7 @@ copy.ko = {
   'openChapterTwo': '챕터 2 열기',
   'starterEyebrow': '전 → 프롬프트 → 점검 → 수정',
   'starterTitle': '사실은 바꾸지 않고 메시지 하나를 더 명확하게 만드세요.',
-  'starterIntro': '원본을 한 번 읽고, 채워진 프롬프트를 복사한 다음, 답변을 직접 점검하세요. 목표 시간: 15분. 실제 초보자 완료 시간은 측정되지 않았습니다.',
+  'starterIntro': '원본을 한 번 읽고, 채워진 프롬프트를 복사한 다음, 답변을 직접 점검하세요. 5분 동안 해 보는 짧은 연습입니다. 실제 초보자 완료 시간은 측정되지 않았습니다.',
   'starterCopy': '첫 프롬프트 복사',
   'starterCopied': '첫 프롬프트를 복사했습니다. 세 가지 항목에 맞춰 답변을 점검하세요.',
   'starterCopyFailed': '복사에 실패했습니다. 프롬프트 텍스트를 직접 선택하세요.',
@@ -3330,7 +3340,7 @@ copy.de = {
   'menu': 'Menü',
   'menuClose': 'Schließen',
   'navStart': 'Hier starten',
-  'navFirst30': 'Erste 15 Minuten',
+  'navFirst30': 'Erste fünf Minuten',
   'navPath': 'Lernpfad',
   'navIndex': 'Projektindex',
   'navRoutes': 'Leserouten',
@@ -3376,7 +3386,7 @@ copy.de = {
   'heroProofCheckThree': 'Es taucht kein unbelegtes Detail auf.',
   'heroProofReceiptLabel': 'BEGRENZTES PRÜFPROTOKOLL',
   'heroProofReceipt': 'Ein geprüfter Versuch kann erfasst werden. Er beweist weder Lernen noch Transfer noch Modellleistung.',
-  'heroProofLink': 'Den optionalen 15-Minuten-Check öffnen',
+  'heroProofLink': 'Den optionalen Fünf-Minuten-Check öffnen',
   'heroFooter': 'Problem → Protokoll → Handlung → Beleg',
   'startEyebrow': 'Hier starten · nach Problem wählen',
   'startTitle': 'Was musst du tun?',
@@ -3405,7 +3415,7 @@ copy.de = {
   'problemResearchTitle': 'Ich muss eine begrenzte Frage recherchieren.',
   'problemResearchBody': 'Verknüpfe die Frage mit einer Entscheidung, weise Quellenverantwortliche zu, führe ein Behauptungsregister, suche nach Widersprüchen und stoppe bewusst.',
   'problemResearchLink': 'Recherche-Route öffnen · candidate · not_run ↗',
-  'first30Eyebrow': 'Optionaler 15-Minuten-Warm-up',
+  'first30Eyebrow': 'Optionaler Fünf-Minuten-Warm-up',
   'first30Title': 'Beurteile eine Antwort. Ohne Einrichtung.',
   'first30Intro': 'Text, Aufgabe und Prüfungen sind bereits ausgefüllt. Nutze ein beliebiges Chat-Modell; du brauchst keine Dateien, kein Terminal, kein Git, keine Kontoverbindung und kein Fachvokabular. Dieses Warm-up trainiert eine Prüfgewohnheit; für eine echte lokale Aufgabe starte oben den Codex-Pfad.',
   'stepOneTitle': 'Wähle eine umkehrbare Änderung.',
@@ -3435,7 +3445,7 @@ copy.de = {
   'openChapterTwo': 'Kapitel 2 öffnen',
   'starterEyebrow': 'Vorher → Prompt → Prüfung → Reparatur',
   'starterTitle': 'Mache eine Nachricht klarer, ohne ihre Fakten zu verändern.',
-  'starterIntro': 'Lies das Original einmal, kopiere den ausgefüllten Prompt und prüfe die Antwort dann selbst. Zielzeit: 15 Minuten; die tatsächliche Bearbeitungszeit von Anfängern wurde nicht gemessen.',
+  'starterIntro': 'Lies das Original einmal, kopiere den ausgefüllten Prompt und prüfe die Antwort dann selbst. Das ist eine kurze Übung von etwa fünf Minuten; die tatsächliche Bearbeitungszeit von Anfängern wurde nicht gemessen.',
   'starterCopy': 'Ersten Prompt kopieren',
   'starterCopied': 'Erster Prompt kopiert. Prüfe die Antwort gegen alle drei Punkte.',
   'starterCopyFailed': 'Kopieren fehlgeschlagen. Wähle den Prompttext manuell aus.',
