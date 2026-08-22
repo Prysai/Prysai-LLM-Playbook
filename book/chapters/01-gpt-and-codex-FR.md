@@ -178,10 +178,10 @@ Ces cartes sont des points de départ, pas des recettes magiques. Remplacez les
 
 ```text
 Je veux pratiquer [espagnol] à l’écrit pendant cinq minutes.
-Fais-moi essayer avant d’expliquer. Pose une seule question à la fois,
-attends ma réponse, corrige d’abord l’erreur qui bloque le sens et demande-moi
-de la reformuler. Termine par ce qui a été observé, ce qui reste inconnu et un
-exercice légèrement différent. Ne promets ni fluidité ni maîtrise.
+Faites-moi essayer avant d’expliquer. Posez une seule question à la fois,
+attendez ma réponse, corrigez d’abord l’erreur qui bloque le sens et demandez-
+moi de la reformuler. Terminez par ce qui a été observé, ce qui reste inconnu
+et un exercice légèrement différent. Ne promettez ni fluidité ni maîtrise.
 ```
 
 ### 2. Organiser des sources publiques sans inventer une recherche
@@ -189,11 +189,11 @@ exercice légèrement différent. Ne promets ni fluidité ni maîtrise.
 ```text
 Question : [question précise].
 Sources fournies : [URL, titre, extrait ou « aucune »].
-Commence par reformuler la question et liste les preuves nécessaires. Fais un
-tableau : affirmation possible, source réellement fournie, vérification encore
-nécessaire. N’invente aucune citation, ne prétends pas avoir ouvert une URL
-inaccessible et sépare faits, témoignages et inférences. Arrête-toi si une
-source manque ou se contredit.
+Commencez par reformuler la question et listez les preuves nécessaires. Faites
+un tableau : affirmation possible, source réellement fournie, vérification
+encore nécessaire. N’inventez aucune citation, ne prétendez pas avoir ouvert
+une URL inaccessible et séparez faits, témoignages et inférences. Arrêtez-vous
+si une source manque ou se contredit.
 ```
 
 ### 3. Clarifier une demande trop vague
@@ -201,9 +201,9 @@ source manque ou se contredit.
 ```text
 Avant de proposer une solution, transforme ma demande en contrat court :
 résultat observable, contexte fourni, actions permises, actions interdites,
-critère d’acceptation, preuve à conserver et condition d’arrêt. Pose seulement
-la question dont la réponse changerait le risque ou l’acceptation. N’invente
-pas de cible et n’agis pas tant qu’un champ essentiel manque.
+critère d’acceptation, preuve à conserver et condition d’arrêt. Posez seulement
+la question dont la réponse changerait le risque ou l’acceptation. N’inventez
+pas de cible et n’agissez pas tant qu’un champ essentiel manque.
 ```
 
 Une seule séance ne prouve ni un apprentissage durable ni une performance
