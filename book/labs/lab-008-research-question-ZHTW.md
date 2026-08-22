@@ -16,7 +16,7 @@ evidence:
 failure_variant: "加入一個無法訪問、不相關或薄弱的來源，檢查結論是否被收窄，而不是靠編造補全"
 reflection: "哪一項約束讓問題變得可回答？哪條主張支援最弱？什麼新證據會改變結論？"
 status: draft
-last_verified: "維護者參考執行於 2026-08-13 接受；學習者執行未執行"
+last_verified: "not run（not_run）；維護者參考執行於 2026-08-13 接受；學習者尚未執行"
 transfer_task: "把同一問題與證據協議用於第二個低風險領域"
 transfer_domain: "產品研究、工程調查或內容事實核查"
 transfer_evidence: "保留問題版本、來源記錄、主張對映、限制與下一步最小研究行動"
