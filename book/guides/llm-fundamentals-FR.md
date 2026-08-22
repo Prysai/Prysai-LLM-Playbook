@@ -119,12 +119,12 @@ lendemain.
 Avis : « Le club se réunit mardi à 18 h. Apportez un carnet. Le numéro de
 salle sera confirmé plus tard. »
 
-Tâche : réécris l’avis pour une nouvelle personne en deux phrases. Conserve
-chaque fait. Place les informations absentes entre crochets, puis liste les
+Tâche : réécrivez l’avis pour une nouvelle personne en deux phrases. Conservez
+chaque fait. Placez les informations absentes entre crochets, puis listez les
 faits conservés.
-Contrôle : compare chaque phrase avec l’avis. N’ajoute ni numéro de salle,
+Contrôle : comparez chaque phrase avec l’avis. N’ajoutez ni numéro de salle,
 ni tarif, ni contact, ni promesse, ni nouvel horaire.
-Arrêt : ne navigue pas, n’envoie rien, ne publie rien et n’invente aucun détail.
+Arrêt : ne naviguez pas, n’envoyez rien, ne publiez rien et n’inventez aucun détail.
 ```
 
 Marquez chaque proposition `PASS`, `FAIL` ou `UNSURE`. Si un numéro de salle
