@@ -1,4 +1,4 @@
-<!-- content_id: chapter-11-designing-a-skill | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-22-fr-contract-restoration -->
+<!-- content_id: chapter-11-designing-a-skill | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-22-fr-contract-reinforcement -->
 
 # Chapitre 11 : Concevoir un Skill qui mérite sa place
 
@@ -256,6 +256,30 @@ autorisation de lire, écrire, appeler ou publier.
 
 Le test est réussi lorsque la décision, le relais et l’absence de modification
 hors périmètre sont lisibles dans le registre de run.
+
+### Reçu de test du déclencheur
+
+Ne résumez pas une matrice par « le Skill s’est déclenché ». Conservez une ligne
+par demande et par décision :
+
+```text
+case_id :
+demande exacte :
+intention correspondante : oui | non | inconnue
+entrée minimale présente : oui | non | inconnue
+responsable / domaine correct : oui | non | conflit
+risque dans la frontière : acceptable | trop élevé | inconnu
+décision : continue | ask | handoff | blocked
+ressources chargées : métadonnées | SKILL.md | référence nommée | aucune
+fichier modifié : chemin ou aucun
+preuve : sortie, diff, événement ou lecture
+limite : ce que ce test ne prouve pas
+```
+
+Une demande voisine doit donc pouvoir produire `handoff` ou `blocked` sans
+charger les références inutiles. Un mot-clé commun, un fichier présent ou une
+sélection explicite ne suffit pas à prouver que l’intention, les entrées et la
+responsabilité correspondent.
 
 ### Le non-déclenchement fait partie du produit
 
@@ -732,6 +756,25 @@ retour arrière et contrôle de succès, points d’approbation, tests positif/
 limite/échec/transfert, propriétaire/version/revue, décision et conditions de
 déblocage. Utilisez `recommendation-only`, `blocked`, `approved-to-install` ou
 `installed-candidate` sans les traduire en promesse de fonctionnement.
+
+### Les six portes d’adoption
+
+Gardez ces états séparés dans la décision. Ils peuvent être observés à des
+moments différents et aucun ne se déduit automatiquement du précédent :
+
+| Porte | Question | Preuve minimale | Si elle manque |
+|---|---|---|---|
+| Présence | Le paquet et sa révision existent-ils à l’endroit déclaré ? | chemin, empreinte ou inventaire | `unverified` |
+| Découverte | La surface ciblée peut-elle l’identifier ? | inventaire ou test de découverte | `not_run` |
+| Chargement | Les instructions de la branche sont-elles lisibles ? | ressource et révision relues | `blocked` |
+| Invocation | La demande correspondante a-t-elle sélectionné la méthode ? | décision de routage et événement | `unverified` |
+| Comportement | Le cas positif/limite/échec produit-il les signaux attendus ? | registre de run et artefacts | `not_run` |
+| Adoption | Le propriétaire a-t-il accepté le périmètre, la licence et le rollback ? | décision datée et condition de revue | `recommendation-only` |
+
+Une page de catalogue prouve au mieux une présence ou une visibilité. Elle ne
+prouve ni le chargement, ni l’invocation, ni le comportement correct. Si une
+porte reste ouverte, conservez le statut le plus étroit et ne promettez pas la
+parité avec un autre hôte.
 
 Le statut d’adoption est séparé du statut éditorial. Présence, découverte,
 chargement, invocation, adoption et vérification du comportement sont six
