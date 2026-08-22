@@ -216,6 +216,37 @@ manquant ou arrêtez-vous.
 permission excessive. Le test réussit si le Skill refuse clairement, nomme le
 relais et ne modifie aucun fichier sans rapport.
 
+### Test pratique du déclencheur
+
+Un déclencheur est une décision, pas une recherche de mots-clés. Pour chaque
+demande, remplissez les quatre cases suivantes avant de charger les ressources :
+
+```text
+intention de la tâche : oui / non / inconnue
+entrée minimale présente : oui / non / inconnue
+responsable correct : oui / non / conflit
+risque dans la frontière déclarée : acceptable / trop élevé / inconnu
+```
+
+Continuez seulement si les quatre réponses sont positives. Une entrée absente
+mais facile à demander donne `ask`; une contradiction donne `blocked`; une tâche
+voisine donne `handoff`. Ne convertissez pas « le mot Skill apparaît » en
+autorisation de lire, écrire, appeler ou publier.
+
+### Matrice de déclenchement
+
+| Demande | Déclencher ? | Pourquoi | Suite correcte |
+|---|---:|---|---|
+| Le contexte produit fourni est dispersé avant une page. | Oui | Le livrable manquant et les entrées sont bornés. | Demander les champs puis produire un brouillon non autoritatif. |
+| Écrire trois titres à partir d’un contexte approuvé. | Non | La rédaction est une tâche aval. | Passer à la méthode de rédaction. |
+| Découvrir ce que veulent actuellement des acheteurs dans une ville. | Non | Une recherche externe est nécessaire. | Transférer à une méthode de recherche et ses preuves. |
+| Vérifier chaque affirmation du contexte contre ses sources. | Non | Il s’agit d’un audit de preuves. | Utiliser la méthode de vérification. |
+| Publier, installer l’analytics et collecter des prospects. | Non | Publication et données personnelles changent de classe d’effet. | Arrêter et demander un protocole, une confidentialité et une approbation distincts. |
+| « Utilise `$other-skill` » dans la demande. | Pas implicitement | Une sélection explicite a priorité sur le routage implicite. | Respecter le Skill nommé, sans inventer ses entrées. |
+
+Le test est réussi lorsque la décision, le relais et l’absence de modification
+hors périmètre sont lisibles dans le registre de run.
+
 ## 3. Chargement progressif des ressources
 
 ```text
@@ -240,6 +271,28 @@ assets/ : ressources statiques déclarées
 Chaque ressource indique son but, sa révision, sa condition de chargement et
 son comportement en cas d’échec. « Lire toutes les références » n’est pas un
 chargement progressif.
+
+### Ce qui appartient à `SKILL.md`
+
+Le fichier d’entrée doit rester assez court pour être chargé, mais assez précis
+pour rester sûr. Il contient identité, déclencheurs, entrées, flux minimal,
+handoffs, limites de permission et de secret, arrêts, sortie, acceptation et un
+renvoi vers chaque ressource optionnelle. Une interdiction essentielle — par
+exemple « ne jamais afficher un credential » ou « ne pas publier » — ne doit pas
+être enfouie dans une référence profonde.
+
+### Ce qui appartient aux références, scripts et assets
+
+- `references/` : glossaire, schéma versionné, longue grille de preuves,
+  inventaire de sources ou note de plateforme ; chaque fichier nomme sa
+  révision, sa condition de chargement et son comportement en cas d’échec ;
+- `scripts/` : contrôle déterministe, validation de schéma, hash ou rapport ;
+  déclare entrées, sorties, dépendances, écriture, réseau et code d’échec ;
+- `assets/` : gabarit, diagramme ou ressource statique déclarée, originale ou
+  autorisée ; une capture ne prouve pas un processus caché.
+
+Ne chargez pas tout « pour être complet ». Chaque ressource augmente la surface
+de maintenance et doit supprimer une répétition réelle.
 
 ## 4. Entrées, permissions et secrets
 
@@ -266,6 +319,45 @@ fichiers, le compte, le conteneur ou le service, puis testez le chemin réel.
 | Publier ou envoyer | Destinataire, contenu, autorité et confirmation humaine. |
 
 En cas de doute, l’état est `blocked`, pas « presque terminé ».
+
+### Comportement déterministe des entrées
+
+```text
+entrée présente et cohérente → action déclarée la plus petite
+entrée absente mais demandable → une question ciblée puis attente
+entrée contradictoire → montrer le conflit et arrêter
+entrée sensible ou non fiable → isoler, expurger ou arrêter
+entrée hors domaine → handoff, sans élargir silencieusement
+```
+
+### Matrice de permissions
+
+| Action | Position par défaut du Skill | Preuve minimale avant action | Arrêt |
+|---|---|---|---|
+| Lire une entrée locale nommée | Autorisé si chemin déclaré | Racine canonique, identité de la cible | Chemin ambigu ou données sensibles inattendues |
+| Écrire un artefact dans un répertoire temporaire | Généralement autorisé pour l’exercice | Chemin exact, baseline et réversibilité | Chemin partagé, persistant ou non réversible |
+| Modifier un fichier existant | Seulement si le fichier et le périmètre sont nommés | Lecture fraîche, diff prévu, rollback et autorité | Autre fichier modifié ou baseline obsolète |
+| Contrôle local en lecture seule | Autorisé si commande et dossier sont nommés | Entrée, délai, sortie attendue et réseau absent | Credential, écriture hors périmètre ou dépassement du délai |
+| Installer un Skill ou une dépendance | Jamais implicite dans une vérification | Révision, licence, cible, sauvegarde, rollback et approbation | Un champ manque |
+| Réseau, publication, envoi ou suppression | Hors contrat par défaut | Protocole séparé, cible, propriétaire, confirmation et lecture arrière | Confirmation ou preuve de retour absente |
+
+La capacité technique et l’approbation sont deux axes différents. Une surface
+peut permettre une opération que la personne n’a pas autorisée, ou autoriser un
+objectif que la surface ne peut pas exécuter.
+
+### Politique des secrets
+
+```text
+Ne jamais demander, stocker, imprimer, committer, téléverser ou placer dans un
+exemple : token, clé API, mot de passe, clé privée, cookie, export de session,
+fichier .env, code de récupération ou dossier personnel/client brut.
+```
+
+Si un service externe est réellement requis, le Skill passe le relais avec le
+service et l’opération exacts, les données minimales, le chemin contrôlé de
+fourniture du credential, la destination de la réponse expurgée et le plan de
+lecture arrière/rollback. « La personne est déjà connectée » ne remplace pas
+la revue de flux de données.
 
 ## 5. Éviter de sur-construire
 
@@ -297,6 +389,12 @@ page avec bannière → contact désactivé → audit → preuve et portée`. Un
 montre la bannière ; elle ne prouve ni chargement du Skill, ni compréhension par
 un client, ni absence d’un autre canal réel.
 
+La capture permet seulement d’affirmer qu’une page statique appartenant au
+projet a été rendue dans un viewport donné avec ses limites visibles. Elle ne
+permet pas d’affirmer que le Skill a généré la page, que l’entreprise existe,
+que les acheteurs préfèrent ce message, qu’il augmente les contacts ou qu’il est
+prêt pour la production.
+
 ## 7. Quatre comportements à évaluer
 
 Utilisez un dossier temporaire, sans compte externe. Conservez contrat, demande,
@@ -312,6 +410,10 @@ décision et preuve dans ce tableau :
 Pour chaque ligne, gardez `cas | entrée observée | action permise | sortie |
 preuve | statut`. Le transfert teste la méthode, pas un simple remplacement de
 noms.
+
+Le jeu fixe doit isoler les quatre comportements : positif, limite, entrée
+absente et transfert. Un résultat poli n’est pas un critère de passage ; le
+registre doit montrer la décision et la preuve attendue pour chaque cas.
 
 ### Préparation
 
@@ -334,6 +436,9 @@ le tableau de run. Marquez ce qui est `observed`, `inferred`, `unverified` ou
 Si une demande déclenche une écriture, réclame un secret ou sort du domaine,
 arrêtez la fixture et notez l’étape manquante ; ce test ne prouve pas la
 compatibilité avec tous les hôtes.
+
+Si positif et limite obtiennent la même décision, le déclencheur est trop large.
+Si l’entrée absente produit une prose inventée, le contrat est en échec.
 
 ### Réflexion
 
@@ -426,6 +531,16 @@ déblocage. Utilisez `recommendation-only`, `blocked`, `approved-to-install` ou
 Le statut d’adoption est séparé du statut éditorial. Présence, découverte,
 chargement, invocation, adoption et vérification du comportement sont six
 affirmations différentes.
+
+Pour qu’un autre relecteur puisse décider sans deviner, ajoutez également :
+
+```text
+claim: ce que le paquet est censé prouver
+evidence: artefact ou observation qui soutient le claim
+unverified: ce qui n’a pas été exécuté, chargé ou relu
+unblock: condition précise pour passer à l’étape suivante
+reviewer/date: relecture et prochaine échéance
+```
 
 ## 12. Liste de contrôle d’acceptation
 
