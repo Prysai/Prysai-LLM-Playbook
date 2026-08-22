@@ -38,10 +38,10 @@ Prochaine étape : demander à Maya quel contrôle effectuer avant publication.
 Comparez « Fais-en une bonne mise à jour » avec :
 
 ```text
-Tâche : transforme uniquement ces notes en mise à jour.
+Tâche : transformez uniquement ces notes en mise à jour.
 Format : Fait, En attente, Inconnu, Prochaine étape.
 N’invente ni test, ni approbation, ni date, ni raison.
-Avant de répondre, nomme les faits manquants qui changeraient la décision.
+Avant de répondre, nommez les faits manquants qui changeraient la décision.
 ```
 
 Pour chaque réponse, relevez séparément les faits conservés, les éléments
