@@ -54,7 +54,7 @@ vérifier que la sortie attendue est toujours la même.
 
 ### Preuve
 
-Conservez un reçu court :
+Conservez une trace courte :
 
 ```text
 version et dossier de départ :
@@ -66,7 +66,7 @@ observation dans l’environnement local :
 inconnues et point de retour :
 ```
 
-Ce reçu permet de distinguer « le code se construit » de « le parcours
+Cette trace permet de distinguer « le code se construit » de « le parcours
 fonctionne ». Ne transformez pas une seule tâche en classement universel.
 
 ### Échec et limite

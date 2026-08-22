@@ -1,13 +1,13 @@
 <!-- content_id: communication-clinic | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-21-fr-bootstrap -->
 
-# Pratique d’application facultative : langue, travail et recherche
+# Mise en pratique facultative : langue, travail et recherche
 
 Pour une pratique courte et guidée, ouvrez la [boucle de mise à jour de travail](work-update-practice-loop-FR.md) ou la [boucle de vérification de recherche](research-check-practice-loop-FR.md). Ces cartes s’utilisent après le [guide de base](guides/llm-fundamentals-FR.md) ; ce n’est pas une introduction à ce qu’est un LLM.
 
 **Statut :** `candidate` · **Exécution :** `not_run` · **Données :** textes fictifs ou autorisés uniquement.  
 état : template_selected | practised | not_run | blocked
 
-Vous êtes sur le parcours expliqué en français. Le français de cette page est
+Vous lisez ici la version française du parcours. Le français de cette page est
 une version en cours de relecture ; les exemples de langue cible sont
 facultatifs et ne promettent ni maîtrise ni fluidité.
 
@@ -40,7 +40,7 @@ réponse par cœur.
 
 ## B. Commencez ici : expression et décisions au travail
 
-### 3. Mise à jour fidèle
+### 3. Une mise à jour fidèle
 
 ```text
 Transforme ces notes en une mise à jour destinée à [public].
@@ -50,7 +50,7 @@ fin, ni raison. Donne une version de 120 mots maximum et une version plus formel
 Termine par deux points que je dois vérifier avant d’envoyer.
 ```
 
-### 4. Décider sans deviner
+### 4. Décider sans rien inventer
 
 ```text
 Je dois choisir entre [A] et [B]. Objectif : [objectif]. Faits connus : [faits].
@@ -62,7 +62,7 @@ d’arrêter plutôt que d’inventer.
 
 ## C. Recherche et vérification avant de partager
 
-### 5. Réduire une question
+### 5. Réduire la question
 
 ```text
 Je veux éclaircir : [question]. Décision soutenue : [décision].
@@ -75,13 +75,13 @@ d’arrêt si la source n’est pas trouvée.
 ### 6. Vérifier une affirmation
 
 ```text
-Voici une affirmation : [phrase]. Voici le matériau autorisé : [extraits ou URL].
+Voici une affirmation : [phrase]. Voici les éléments autorisés : [extraits ou URL].
 Indique quels mots sont directement soutenus, lesquels sont absents ou
 contradictoires, et quelle vérification minimale manque. Ne prétends pas avoir
 ouvert une source que je n’ai pas fournie et n’envoie rien.
 ```
 
-### 7. Reçu de partage
+### 7. Trace avant partage
 
 ```text
 Avant tout partage, résume l’objet, le public, l’autorisation et le canal.

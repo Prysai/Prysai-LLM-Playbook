@@ -1,9 +1,10 @@
 <!-- content_id: research-check-practice-loop | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-21-fr-bootstrap -->
 
-# Six messages pour une vérification de recherche délimitée
+# Six messages pour vérifier une recherche à périmètre défini
 
 Utilisez cette boucle uniquement avec des documents publics ou autorisés que
-vous pouvez inspecter. Elle aide à séparer une petite question de ses preuves ;
+vous pouvez inspecter. Elle aide à distinguer une question précise des éléments
+qui l’étayent ;
 elle ne navigue pas, ne prouve pas qu’une source est vraie, n’établit pas un
 fait actuel et ne prend pas de décision à fort enjeu. Arrêtez-vous devant des
 secrets, du matériel sans licence, des données privées ou une autorisation de
@@ -27,7 +28,7 @@ registre institutionnel nommé. Dis ce que chaque type ne peut pas prouver.
 N’invente ni URL, ni titre, ni citation, ni conclusion.
 ```
 
-## 3. Lire le matériau fourni, pas des sources imaginées
+## 3. Lire les documents fournis, pas des sources imaginées
 ```text
 En utilisant uniquement les extraits et liens publics ou autorisés que je
 fournis, crée un registre : affirmation | appui direct | interprétation |
@@ -38,7 +39,7 @@ dans cette conversation.
 
 ## 4. Tester une phrase
 ```text
-Vérifie si cette phrase exacte est étayée par le matériau fourni : [phrase].
+Vérifie si cette phrase exacte est étayée par les éléments fournis : [phrase].
 Sépare appui direct, inférence, conflit et inconnues. Cite uniquement le texte
 fourni. Si l’appui manque, aide-moi à réduire la phrase au lieu de combler la
 lacune.
@@ -52,14 +53,14 @@ Explique pourquoi cela compte et quelle est la plus petite vérification permise
 qui reste. Ne dis pas que la recherche est terminée.
 ```
 
-## 6. Terminer par un reçu d’arrêt
+## 6. Terminer par une trace d’arrêt
 ```text
-Renvoie un reçu de recherche : décision | question | périmètre | matériaux
+Renvoie une trace de recherche : décision | question | périmètre | documents
 fournis | appui direct | interprétation | conflits | inconnues | dates d’accès |
 prochaine vérification | raison de l’arrêt. Termine par un seul état :
 research_plan, scope_checked_for_supplied_list, blocked ou not_run. Ne qualifie
 pas la réponse d’exhaustive, d’actuelle ou de prête pour une décision à fort enjeu.
 ```
 
-Le reçu est une trace délimitée, pas la preuve qu’un LLM a bien effectué la
+Cette trace est délimitée ; elle ne prouve pas qu’un LLM a bien effectué la
 recherche ni qu’il faut agir sur sa conclusion.

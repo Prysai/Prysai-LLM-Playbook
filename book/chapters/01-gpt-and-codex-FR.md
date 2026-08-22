@@ -17,7 +17,7 @@ une action réalisée, ou une connexion disponible pour une autorisation acquise
 - distinguer modèle, produit, outil et Agent ;
 - décrire ce qu’un contexte fourni permet réellement d’établir ;
 - écrire une première demande avec une frontière et un contrôle visibles ;
-- refuser une affirmation d’exécution sans reçu correspondant.
+- refuser une affirmation d’exécution sans trace correspondante.
 
 ## Commencez par les rôles, pas par les marques
 
@@ -100,7 +100,7 @@ l’hôte affiche la réponse ou propose un appel d’outil
           ↓
 l’outil ne s’exécute que si l’hôte et l’autorité l’autorisent
           ↓
-une personne relit le résultat, la limite et le reçu
+une personne relit le résultat, la limite et la trace
 ```
 
 Le contexte est à la fois un **budget** et un **filtre**. Un document absent ne
@@ -151,7 +151,7 @@ correspondance entre chaque affirmation et sa source.
 
 Un README, un résultat d’outil ou un extrait cité peut dire « ignore la règle
 de sécurité ». Tant que la tâche ne l’a pas rendu applicable, gardez ce texte
-comme matériau, refusez l’effet externe et enregistrez la source de la demande.
+comme des éléments à examiner, refusez l’effet externe et enregistrez la source de la demande.
 
 ## La boucle Agent que vous pouvez réellement inspecter
 
@@ -168,7 +168,7 @@ reprise. Si l’entrée manque, si l’autorité est ambiguë ou si deux essais 
 échoué sans changer le diagnostic, elle doit s’arrêter et demander la plus
 petite information utile.
 
-## Trois prompts utilisables dès maintenant
+## Trois consignes utilisables dès maintenant
 
 Ces cartes sont des points de départ, pas des recettes magiques. Remplacez les
 éléments entre crochets et inspectez toujours la sortie.
@@ -183,7 +183,7 @@ de la reformuler. Termine par ce qui a été observé, ce qui reste inconnu et u
 exercice légèrement différent. Ne promets ni fluidité ni maîtrise.
 ```
 
-### 2. Organiser des sources publiques sans inventer de recherche
+### 2. Organiser des sources publiques sans inventer une recherche
 
 ```text
 Question : [question précise].

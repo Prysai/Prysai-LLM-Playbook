@@ -15,14 +15,14 @@ Posez quatre questions face à une nouvelle fonction d’IA :
 1. Qu’est-ce que le modèle doit produire ?
 2. Quel contexte a réellement été fourni pour cette demande ?
 3. Quel produit ou outil peut observer ou modifier quelque chose en dehors du modèle ?
-4. Quel reçu permettrait à une autre personne de contrôler l’affirmation ?
+4. Quelle trace permettrait à une autre personne de contrôler l’affirmation ?
 
 Si une réponse manque, gardez le résultat comme brouillon ou hypothèse. Ne
 remplissez pas le vide avec une phrase qui paraît sûre d’elle.
 
 ## 0.1 Une phrase de travail
 
-Un modèle de base génère du texte en estimant des suites de tokens. De
+Un modèle de base génère du texte en estimant des séquences de tokens. De
 nombreux modèles autorégressifs produisent le texte token après token à partir
 du contexte disponible. L’entraînement complémentaire et les couches du
 produit influencent ensuite la réponse.
@@ -36,10 +36,10 @@ d’agir. Un texte fluide peut donc rester à vérifier.
 | Notion | Sens minimal utile | Ce qu’il ne faut pas en déduire |
 |---|---|---|
 | **LLM / modèle** | Des paramètres appris produisent une réponse à partir d’un contexte. | Une base de données vérifiée, une personne ou un acteur autorisé. |
-| **Token / tokenizer** | Le tokenizer convertit le texte en identifiants propres au modèle. Un token peut être un morceau de mot. | Un rapport universel token/mot ou token/caractère. |
+| **Token / tokenizer** | Le tokenizer transforme le texte en identifiants propres au modèle. Un token peut être un morceau de mot. | Un rapport universel token/mot ou token/caractère. |
 | **Contexte** | Instructions, conversation, textes fournis, passages récupérés et résultats d’outils disponibles pour cette requête. | Que tout ce contexte soit vrai, pertinent ou correctement utilisé. |
 | **Fenêtre de contexte** | Une **fenêtre de contexte finie** limite la quantité de tokens d’entrée et de sortie pour un modèle et une interface donnés. | Un nombre stable pour tous les modèles, comptes ou produits. |
-| **Prompt** | Une demande qui indique le résultat, le contexte, les contraintes et la forme attendue. | Une formule magique ou un accès implicite. |
+| **Prompt** | Une consigne qui précise le résultat, le contexte, les contraintes et la forme attendue. | Une formule magique ou un accès implicite. |
 | **Instruction utilisateur / système / développeur** | L’utilisateur décrit la tâche ; l’hôte peut appliquer des instructions de priorité supérieure. | Que l’utilisateur puisse ignorer les règles de l’hôte. |
 | **Outil / récupération** | Un hôte peut proposer une recherche, un lecteur de fichiers, un calculateur ou un autre service externe. | Qu’une proposition de l’outil prouve qu’il a été exécuté. |
 | **MCP** | Un protocole peut organiser la connexion entre un hôte compatible et des outils ou fournisseurs de contexte. | La compatibilité universelle, la confiance ou l’accès illimité. |
@@ -68,10 +68,10 @@ l’hôte affiche le texte ou propose un appel d’outil
           ↓
 l’outil n’agit que si l’hôte et l’autorité l’autorisent
           ↓
-une personne relit le résultat, les limites et le reçu
+une personne relit le résultat, les limites et la trace
 ```
 
-Pour un Agent, répétez le contrôle à chaque étape :
+Avec un Agent, répétez le contrôle à chaque étape :
 
 ```text
 état observé → action proposée → autorité vérifiée → action exécutée
@@ -146,7 +146,7 @@ Pour un premier essai, utilisez un exemple fictif ou non sensible. Conservez
 la première demande et la première réponse ; sinon vous ne saurez pas si une
 révision a réellement corrigé le problème.
 
-La suite est [Fondations universelles : une première tâche sûre](../routes/universal-core-foundations-FR.md).
+Continuez avec [Fondations universelles : une première tâche sûre](../routes/universal-core-foundations-FR.md).
 La route Codex commence après les fondations, au [Chapitre 1](../chapters/01-gpt-and-codex-FR.md).
 
 ## 0.7 Ce que vous devez conserver
@@ -167,7 +167,7 @@ Décision 2 (modèle / produit / outil) :
 Preuve :
 ```
 
-Une carte réussie sépare le modèle du produit et de l’outil et nomme au moins
+Une carte est réussie si elle sépare le modèle du produit et de l’outil et nomme au moins
 une raison de vérifier. Cette unité reste `candidate / not_run` : elle ne
 prouve ni l’apprentissage, ni le transfert, ni l’équivalence entre produits.
 

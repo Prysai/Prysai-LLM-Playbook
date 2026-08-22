@@ -32,8 +32,8 @@ Avant de demander une modification, vérifiez :
 ## Cas réels : problèmes de terrain
 
 « Rends ce projet plus professionnel » ne dit ni quel fichier changer, ni ce
-qui ferait accepter le résultat. « Corrige une phrase dans README.md, puis
-montre le diff » possède une cible et une réception contrôlables.
+qui permettrait d’accepter le résultat. « Corrige une phrase dans README.md,
+puis montre le diff » possède une cible et un contrôle d’acceptation vérifiable.
 
 ## Expérience : une modification locale
 
@@ -78,7 +78,7 @@ arrêtez-vous ; ce n’est pas une extension automatique de la tâche.
 
 Ne confondez pas non plus « commande lancée » et « contrôle réussi », ni
 « configuration présente » et « capacité démontrée ». Chaque affirmation a son
-propre reçu.
+propre trace.
 
 ### Réflexion
 

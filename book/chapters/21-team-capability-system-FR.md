@@ -50,7 +50,7 @@ manquait et la permission qu’elle aurait refusée.
 
 ### Preuve
 
-Réunissez la fiche de capacité, les versions, les diffs, les deux reçus de
+Réunissez la fiche de capacité, les versions, les diffs, les deux traces de
 reproduction, la relecture et les éléments non vérifiés. Pour chaque étape,
 notez l’entrée, l’action autorisée, la sortie, le contrôle et la décision :
 

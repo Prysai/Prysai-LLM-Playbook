@@ -16,6 +16,13 @@ locales.
 The edit is intentionally limited to high-exposure interface copy. It does not
 rewrite the 55 French Markdown files or change their translation-status claims.
 
+The follow-up pass also reviewed the foundation guide, Chapters 1–3, the
+optional practice index, and the three copy-ready practice loops. It replaces
+literal uses of *reçu* for an execution record with *trace*, uses *contrôle
+d’acceptation* where the English means acceptance evidence, and replaces
+*mise à jour de travail* with the ordinary French workplace expression *point
+d’avancement*. The safety boundary and the underlying claims are unchanged.
+
 ## Evidence
 
 - `npm run test:browser` → `BROWSER_SMOKE_OK` with desktop `1280px` and mobile

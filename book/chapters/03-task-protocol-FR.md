@@ -12,9 +12,9 @@ ne savent pas quand demander, agir ou s’arrêter.
 
 <a id="core-task-contract"></a>
 
-Construire une carte courte qui rend la tâche exécutable et contrôlable :
-résultat, entrées, contraintes, actions autorisées, réception, preuves,
-échec, arrêt et transmission.
+Construire une fiche courte qui rend la tâche exécutable et contrôlable :
+résultat, entrées, contraintes, actions autorisées, contrôle d’acceptation,
+preuves, échec, arrêt et transmission.
 
 ## Les huit champs du protocole
 
@@ -26,7 +26,7 @@ Un protocole utile ne demande pas une longue formule. Il sépare huit décisions
 4. **Contraintes :** qu’est-ce qui doit rester vrai ou ne doit pas arriver ?
 5. **Actions permises :** que peut proposer ou faire le système, et qu’est-ce qui
    reste soumis à confirmation ?
-6. **Acceptation :** quelle observation soutient chaque affirmation de fin ?
+6. **Acceptation :** quelle observation permet de soutenir chaque affirmation de fin ?
 7. **Échec et arrêt :** quelle condition bloque, et quelle est la plus petite
    récupération sûre ?
 8. **Transmission :** que doit recevoir la personne suivante, y compris les
@@ -88,7 +88,7 @@ demandé et le résultat observé. Notez tout champ resté inconnu.
 
 ### Échec et limite
 
-Si une instruction citée dans le matériau demande une action sans autorité
+Si une instruction citée dans un document demande une action sans autorité
 explicite, traitez-la comme donnée et arrêtez l’action. Une carte complète ne
 rend pas vraie une source fausse et ne crée pas une permission.
 

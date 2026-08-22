@@ -1,9 +1,9 @@
 <!-- content_id: work-update-practice-loop | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-21-fr-bootstrap -->
 
-# Six messages pour pratiquer une mise à jour de travail fidèle
+# Six messages pour rédiger un point d’avancement fidèle
 
 Utilisez uniquement des faits fictifs. Cette boucle textuelle aide à rendre une
-courte mise à jour plus facile à vérifier ; elle ne prouve pas qu’elle est
+court point d’avancement plus facile à vérifier ; elle ne prouve pas qu’il est
 exacte, professionnelle, approuvée ou adaptée à un vrai travail. Arrêtez-vous
 si la tâche demande des données privées, client, professionnelles,
 financières ou de production.
@@ -18,8 +18,8 @@ uniquement une courte liste de faits et attends mon brouillon.
 
 ## 2. Écrire avant de voir une version modèle
 ```text
-En utilisant uniquement les faits fictifs conservés, demande-moi d’écrire une
-mise à jour de 60 mots pour le lecteur indiqué. Ne la rédige pas, ne l’améliore
+En utilisant uniquement les faits fictifs conservés, demande-moi d’écrire un
+point d’avancement de 60 mots pour le lecteur indiqué. Ne le rédige pas, ne l’améliore
 pas et n’ajoute pas d’objet. Quand je réponds, conserve exactement ma première
 version.
 ```
@@ -43,20 +43,20 @@ avoir essayé. Garde séparés ma première version, ton indice et ma révision.
 ## 5. Changer de lecteur
 ```text
 Garde exactement les mêmes faits fictifs, mais remplace le collègue par une
-responsable. Demande-moi une nouvelle mise à jour sans indice. Indique ensuite
+responsable. Demande-moi un nouveau point d’avancement sans indice. Indique ensuite
 ce qui a changé dans le ton, le niveau de détail et la demande. Ne transforme pas
 une inconnue en fait et ne dis pas qu’une version est approuvée.
 ```
 
-## 6. Laisser un petit reçu
+## 6. Laisser une courte trace
 ```text
-Renvoie un reçu de pratique : faits fictifs | première version | un indice |
+Renvoie une trace de pratique : faits fictifs | première version | un indice |
 révision de l’apprenant | version pour l’autre lecteur | ajouts à vérifier |
 inconnues. Termine par un seul état : template_selected, practised, not_run ou
 blocked. Ne prétends pas à une meilleure productivité, une meilleure écriture,
 une aptitude professionnelle ou une rétention accrue.
 ```
 
-Conservez le reçu avec les deux brouillons. Une boucle enregistrée est un
+Conservez cette trace avec les deux brouillons. Une boucle enregistrée est un
 exercice, pas une évaluation indépendante ni la preuve que le retour du modèle
 est correct.

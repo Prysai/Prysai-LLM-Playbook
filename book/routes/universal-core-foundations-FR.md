@@ -30,7 +30,7 @@ ne prouve ni la vérité des faits ni un comportement identique sur chaque produ
 
 ## Relier la première tâche aux quatre fondations
 
-1. [Transformer une intention en contrat de tâche](../chapters/03-task-protocol-FR.md#core-task-contract) : résultat, contexte, autorité, réception et arrêt.
+1. [Transformer une intention en contrat de tâche](../chapters/03-task-protocol-FR.md#core-task-contract) : résultat, contexte, autorité, contrôle d’acceptation et arrêt.
 2. [Relier les affirmations aux preuves](../chapters/09-verification-and-recovery-FR.md#core-evidence-recovery) : vérifier l’affirmation la plus étroite et s’arrêter au premier niveau non étayé.
 3. [Planifier une petite tranche vérifiable](../chapters/10-planning-and-slicing-FR.md#core-evidence-bearing-slice) : choisir le plus petit résultat transmissible.
 4. [Séparer capacité, autorité, confirmation et preuve](../chapters/13-action-boundaries-FR.md#core-action-boundary) : possible, autorisé, exécuté et vérifié ne sont pas synonymes.
@@ -43,7 +43,7 @@ preuve d’efficacité pédagogique ni un test en direct.
 
 Ouvrez la [fixture de jonction universelle](../../examples/universal-seam-v1/README-FR.md)
 si vous souhaitez continuer avec quatre enregistrements fictifs : demande la
-plus récente, mauvaise cible, reçu d’outil absent et valeur structurée modifiée.
+plus récente, mauvaise cible, trace d’outil manquante et valeur structurée modifiée.
 Pour chacun, dites ce que le texte visible ne prouve pas, choisissez le plus
 petit contrôle sûr et arrêtez-vous avant qu’un comportement réel ne demande un
 adaptateur.

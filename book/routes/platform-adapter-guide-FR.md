@@ -96,8 +96,8 @@ Pour un premier essai sans clé ni donnée privée, utilisez la tâche sûre
 générique ci-dessus dans une surface autorisée. Si une expérience API est
 explicitement autorisée, consultez d’abord la
 [documentation officielle de l’API DeepSeek](https://api-docs.deepseek.com/),
-puis vérifiez le reçu de source conservé dans le dépôt avant de reprendre une
-affirmation. Cette page ne transforme pas ce reçu en preuve pour le chat web.
+puis vérifiez la trace de source conservée dans le dépôt avant de reprendre une
+affirmation. Cette page ne transforme pas cette trace en preuve pour le chat web.
 Notez la surface, l’identifiant du modèle réellement utilisé et la date. Ne
 collez jamais de clé API, de code privé ou de document interne.
 

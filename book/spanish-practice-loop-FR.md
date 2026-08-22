@@ -1,11 +1,11 @@
 <!-- content_id: spanish-practice-loop | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-21-fr-bootstrap -->
 
-# Six messages pour une courte pratique de l’espagnol
+# Six messages pour pratiquer brièvement l’espagnol
 
 Utilisez ces messages avec n’importe quel LLM textuel pour un échange fictif de
-quatre tours sur l’horaire d’un groupe d’étude en espagnol. Ils illustrent une
-boucle réutilisable : choisir une petite cible, essayer d’abord, recevoir une
-correction limitée, changer le cas, puis vérifier plus tard. Ils ne promettent
+quatre tours visant à convenir de l’horaire d’un groupe d’étude en espagnol. Ils
+illustrent une boucle réutilisable : choisir une petite cible, essayer d’abord,
+obtenir une correction ciblée, changer le cas, puis vérifier plus tard. Ils ne promettent
 ni aisance, ni apprentissage accéléré, ni correction fiable. Utilisez uniquement
 des détails inventés ; arrêtez-vous si le modèle demande une identité réelle,
 une école, un calendrier, un compte, une adresse, un contact ou un paiement.
