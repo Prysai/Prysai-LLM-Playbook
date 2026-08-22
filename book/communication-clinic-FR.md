@@ -1,17 +1,20 @@
 <!-- content_id: communication-clinic | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-21-fr-bootstrap -->
 
-# Mise en pratique facultative : langue, travail et recherche
+# Pratique d’application facultative : langue, travail et recherche
 
-Pour une pratique courte et guidée, ouvrez la [boucle du point d’avancement](work-update-practice-loop-FR.md) ou la [boucle de vérification de recherche](research-check-practice-loop-FR.md). Ces cartes s’utilisent après le [guide de base](guides/llm-fundamentals-FR.md) ; ce n’est pas une introduction à ce qu’est un LLM.
+Pour une pratique courte et guidée, ouvrez la [boucle du point d’avancement](work-update-practice-loop-FR.md) ou la [boucle de vérification de recherche](research-check-practice-loop-FR.md). Ces cartes s’utilisent après le [Chapitre 0](guides/llm-fundamentals-FR.md) ; ce n’est pas une introduction à ce qu’est un LLM.
 
 **Statut :** `candidate` · **Exécution :** `not_run` · **Données :** textes fictifs ou autorisés uniquement.  
+**État :** template_selected | practised | not_run | blocked
 état : template_selected | practised | not_run | blocked
 
 Vous lisez ici la version française du parcours. Le français de cette page est
 une version en cours de relecture ; les exemples de langue cible sont
 facultatifs et ne promettent ni maîtrise ni fluidité.
 
-Si vous découvrez le projet et ne souhaitez pas pratiquer l’espagnol, commencez par la carte 3 de la partie B.
+Si vous découvrez le projet et ne souhaitez pas pratiquer l’espagnol, commencez par la carte 3 de B.
+Vous êtes sur le parcours expliqué en français ; les exemples en espagnol restent
+facultatifs.
 
 <span id="language-practice-route"></span>
 
@@ -38,7 +41,7 @@ Demandez ensuite une question différente, sans reprendre votre première phrase
 Le but est d’observer une correction et un nouveau cas, pas d’apprendre une
 réponse par cœur.
 
-## B. Commencez ici : communication et décisions au travail
+## B. Commencez ici : expression et décisions au travail
 
 ### 3. Une mise à jour fidèle
 
@@ -84,9 +87,9 @@ ouvert une source que je n’ai pas fournie et n’envoie rien.
 ### 7. Trace avant partage
 
 ```text
-Avant tout partage, résume l’objet, le public, l’autorisation et le canal.
-N’envoie rien, ne téléverse rien et ne crée aucun lien. Si une information, une
-autorisation ou une preuve manque, arrête-toi et marque-la comme inconnue.
+Avant tout partage, résumez l’objet, le public, l’autorisation et le canal.
+N’envoyez rien, ne téléversez rien et ne créez pas de lien. Si une information,
+une autorisation ou une preuve manque, arrêtez-vous et marquez-la comme inconnue.
 ```
 
 **Limite :** ces cartes ne prouvent pas la qualité d’un modèle, l’existence
