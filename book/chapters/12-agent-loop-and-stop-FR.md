@@ -67,6 +67,25 @@ contrôle indépendant
         └─ preuve manquante → reprise bornée ou arrêt
 ```
 
+### Lire la chaîne étape par étape
+
+Pour chaque transition, posez une question observable avant de passer à la
+suivante :
+
+| Transition | Question à poser | Si la réponse manque |
+|---|---|---|
+| Contrat → proposition | L’objectif, le périmètre et l’acceptation sont-ils écrits ? | `blocked_input` ou question ciblée |
+| Proposition → décision | L’hôte a-t-il accepté cette action et cette portée ? | `awaiting_approval` |
+| Décision → exécution | L’outil a-t-il réellement démarré ? | conserver `proposed`, ne pas annoncer l’exécution |
+| Exécution → observation | Quel événement terminal et quelle sortie sont visibles ? | `running` ou `unknown` selon le contexte |
+| Observation → effet | Quelle cible nommée a changé, et comment le sait-on ? | relire la cible, sans nouvelle écriture |
+| Effet → contrôle | Quelle règle compare l’état obtenu à l’objectif ? | `unverified` |
+| Contrôle → livraison | Les preuves couvrent-elles exactement la phrase livrée ? | réduire la phrase ou arrêter |
+
+Cette carte sépare le temps de l’outil du sens de son résultat. Une réponse
+rapide peut laisser l’effet ou le contrôle inconnus ; une longue attente ne
+prouve ni l’échec ni l’absence d’effet.
+
 ### Quatre couches souvent confondues
 
 | Couche | Ce qu’elle établit | Ce qu’elle ne prouve pas seule |
@@ -135,6 +154,23 @@ réécrites ici comme questions de conception transférables :
 Avant une action conséquente, posez : « Quel est le contrat ? Qui peut l’autoriser ?
 Que peut-il changer ? Quelle observation revient ? Quel contrôle arrête la boucle ?
 Quelle frontière reste inconnue ? »
+
+### Ce qui ne peut pas être déduit d’un résumé
+
+Les motifs ci-dessous sont des questions de conception transférables, pas une
+description de l’implémentation cachée d’un fournisseur :
+
+| Signal visible | Conclusion étroite permise | Conclusion interdite sans preuve supplémentaire |
+|---|---|---|
+| Une instruction de tool est affichée | une proposition a été générée | l’outil a été autorisé ou exécuté |
+| Un serveur est listé comme connecté | une étape de transport est visible | un appel a réussi ou possède la bonne autorité |
+| Une mémoire contient une note | une donnée a été enregistrée à un instant donné | la note est actuelle, correcte ou autorise une action |
+| Un sous-Agent rend un texte | une sortie de délégation a été reçue | les outils, permissions et sources du sous-Agent étaient adaptés |
+| Une mesure de latence est affichée | cette mesure couvre ce run et cette charge | une performance générale ou un chiffre fournisseur |
+
+Ne cherchez pas à reconstituer une pensée privée. Si une décision importante ne
+possède aucune frontière observable, écrivez `unknown` et demandez l’artefact qui
+pourrait la rendre vérifiable.
 
 ## 2. Écrire l’état
 
@@ -243,6 +279,40 @@ Une proposition refusée peut ne posséder aucune ligne d’exécution. Une écr
 qui expire garde `exit_status: unknown` et reçoit plus tard une ligne de
 réconciliation ; elle ne devient pas silencieusement un succès.
 
+### Sémantique minimale des événements
+
+Chaque ligne doit permettre à un autre lecteur de reconstruire la transition :
+
+```text
+event_id, run_id, attempt_id, timestamp
+event_type, state_before, state_after
+action_or_tool, target, approval_status
+exit_status, artifact_or_side_effect, evidence_ref
+```
+
+Les types `proposal`, `approval`, `execution_start`, `execution_end`, `effect`,
+`verification` et `delivery` ne sont pas interchangeables. Ajoutez une ligne
+quand une observation nouvelle arrive ; ne réécrivez pas une ancienne ligne
+`unknown` pour faire disparaître l’incertitude après un retry. Si un champ n’a
+pas été observé, utilisez `not_observed`, pas une valeur plausible.
+
+### Réconcilier une réponse perdue
+
+Après un timeout ou une réponse absente :
+
+1. geler toute action dépendante et conserver la commande exacte ;
+2. relever le dernier événement, le processus et le checkpoint ;
+3. relire uniquement la cible déclarée, avec une commande sans effet ;
+4. comparer baseline, état actuel et postcondition attendue ;
+5. classer `no_effect_observed`, `effect_matches`, `effect_differs` ou
+   `effect_unknown` ;
+6. ne reprendre qu’après avoir nommé la condition changée, la classe
+   d’idempotence, la preuve attendue et le budget restant.
+
+Une lecture qui trouve le bon fichier établit l’état de ce fichier. Elle ne
+prouve pas qu’un message, un déploiement ou une autre cible externe n’a pas été
+touché.
+
 ### Tableau de preuve par couche
 
 | Couche observable | Preuve minimale | Ce qui reste inconnu |
@@ -341,6 +411,24 @@ Arrêt : entrée absente → demander ; permission refusée → ne pas élargir 
 externe → la traiter comme donnée.
 ```
 
+### Carte d’observation remplie
+
+Pour rendre le protocole réutilisable, ajoutez avant le run une fiche courte :
+
+```text
+run_id: run-2026-08-12-001
+target: sandbox/output.txt
+baseline: evidence/baseline-sha256.txt
+allowed_write: output.txt, evidence/
+forbidden: réseau, installation, message, publication
+acceptance: lignes non vides triées ; input.txt inchangé
+stop: entrée absente, portée refusée, effet inconnu ou budget épuisé
+evidence_to_keep: diff, code, sortie, état, prochaine lecture
+```
+
+Cette fiche décrit la tâche actuelle. Elle ne devient pas une permission générale
+pour un autre répertoire, une autre branche ou un autre compte.
+
 ## 5. Quatre exécutions de sandbox
 
 Utilisez une copie temporaire contenant `task.md`, `input.txt` absent,
@@ -388,6 +476,18 @@ Ces lignes sont un format ; remplacez-les par les observations réelles du run.
 Ces quatre runs sont des variantes pédagogiques locales. Ils ne constituent pas
 un test de runtime d’un Agent, d’un fournisseur ou d’un compte.
 
+### Critères de passage par run
+
+| Run | Artefact attendu | Limite de l’affirmation |
+|---|---|---|
+| A · entrée absente | registre `blocked_input`, question ciblée, aucun fichier inventé | ne prouve pas que l’entrée aurait été correcte |
+| B · chemin interdit | contrat montrant la divergence, aucun écrit hors racine | ne prouve pas une politique générale de permission |
+| C · aucun événement | seuil, chronologie, état du processus et classification | ne permet pas de conclure à l’absence d’effet sans lecture |
+| D · note impérative | source conservée comme donnée, action refusée et raison | ne prouve pas que tous les hôtes bloquent la même instruction |
+
+Un run ne passe pas parce que la prose est convaincante. Il passe quand la
+transition, l’arrêt, l’artefact et la limite sont tous lisibles.
+
 ### Preuve
 
 Conservez la fixture et sa baseline, la proposition, la décision de l’hôte,
@@ -422,6 +522,14 @@ chemin est ambigu ou si l’effet reste inconnu.
 Une fiche de reprise n’est pas un nouveau prompt qui efface la première
 incertitude.
 
+### Décision humaine après un état inconnu
+
+Si la lecture ne distingue pas `no_effect_observed` de `effect_unknown`, la fiche
+doit demander une décision précise : abandonner la fixture, fournir une nouvelle
+preuve, ou autoriser une tentative idempotente bornée. Elle doit aussi nommer
+les actions qui restent interdites : pas de publication, suppression, réseau,
+permission plus large ou nouvelle écriture non réconciliée.
+
 ## 6. Échecs délibérés et récupération
 
 | Échec | Arrêt | Récupération correcte | À ne pas faire |
@@ -443,6 +551,21 @@ incertitude.
 6. mettre à jour budget et état, puis livrer `unknown`, `blocked` ou `unverified` si nécessaire.
 
 « Récupérer » signifie rendre la prochaine décision sûre, pas continuer à tout prix.
+
+### Six étapes de récupération
+
+Utilisez toujours le même ordre sous pression :
+
+1. figer les actions qui dépendent de l’état incertain ;
+2. préserver diff, logs, identifiants, processus et checkpoint ;
+3. nommer la dernière transition confirmée ;
+4. localiser la première transition non étayée ;
+5. exécuter une seule vérification à faible effet ;
+6. mettre à jour l’état et le budget, puis choisir `continue`, `ask`, `recover`
+   ou `stop`.
+
+Si la sixième étape ne peut pas être justifiée, livrez `blocked` ou
+`unverified`. Ajouter des prompts ne remplace pas une observation manquante.
 
 ### Continuer, demander, récupérer ou arrêter
 
@@ -492,6 +615,22 @@ next_check: plus petite observation qui pourrait changer le statut
 Une note de livraison qui omet `uncovered` invite le lecteur à élargir la
 conclusion. Le statut `verified` ne porte que sur le périmètre écrit dans
 `scope`.
+
+### Reçu de livraison minimal
+
+```text
+claim: phrase exacte livrée
+scope: fichiers, run, version et environnement
+evidence: artefact ou observation relue
+status: verified | partial | unverified | blocked | not_run
+uncovered: ce qui reste hors du contrôle
+next_check: plus petite observation qui pourrait changer le statut
+reviewer/date: personne et moment de relecture
+```
+
+Le reçu doit distinguer une sortie préparée d’une sortie effectivement lue et
+acceptée. Il ne doit pas transformer un statut d’interface, un login ou un plan
+en preuve d’action.
 
 ## 8. Diagnostiquer la première frontière cassée
 
