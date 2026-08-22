@@ -118,7 +118,7 @@ productivité, de qualité ou de modèle n'est permise.
 ## Réflexion et transfert
 
 Quel stade a détecté le premier problème important ? Quel stade a ajouté de la
-cerémonie sans changer le résultat ? Transférez seulement les contrôles utiles à
+cérémonie sans changer le résultat ? Transférez seulement les contrôles utiles à
 une autre tâche réversible et expliquez pourquoi elle est, ou non, comparable.
 
 ## Sources et limite de mise à jour
