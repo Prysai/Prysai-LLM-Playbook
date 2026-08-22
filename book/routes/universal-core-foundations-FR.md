@@ -14,14 +14,14 @@ N’utilisez que cet avis fictif. Ne copiez ni message privé, ni donnée client
 ni secret, ni fichier réel. N’utilisez ni recherche ni outil et n’envoyez rien.
 
 ```text
-Résultat : réécris cet avis d’association pour une nouvelle personne.
+Résultat : réécrivez cet avis d’association pour une nouvelle personne.
 Matériel : « L’association se réunit mardi à 18 h. Apporte un carnet. La salle
 sera confirmée plus tard. »
 Format : deux phrases, tous les faits conservés, détails absents entre [crochets],
 puis une liste des faits conservés.
-Contrôle : compare l’original et la réécriture. N’ajoute ni heure, ni salle, ni
+Contrôle : comparez l’original et la réécriture. N’ajoutez ni heure, ni salle, ni
 cotisation, ni contact, ni promesse.
-Arrêt : ne navigue pas, n’envoie rien, ne publie rien et n’invente rien.
+Arrêt : ne naviguez pas, n’envoyez rien, ne publiez rien et n’inventez rien.
 ```
 
 Vérifiez vous-même : chaque phrase est-elle rattachée au texte ? La forme est-
