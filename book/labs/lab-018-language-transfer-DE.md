@@ -40,19 +40,68 @@ Bei Basis- und bewerteten Aufgaben sind nur Aufgabenkarte und leere Notizen erla
 
 Die Schwelle beträgt 8/10 ohne Null bei Information oder Bedeutung. Halte Scorer und Zeilennotiz fest. Ein Coach, der bewertet, ist nicht unabhängig. Für verzögertes Behalten oder Transfer braucht es einen zweiten Scorer, der Basis, Korrektur und Sofortergebnis nicht gesehen hat.
 
-## Basis, Korrektur und geänderter Fall
+## Teil 1 — feste Baseline
 
-Nutze B1: Lerngruppen-Nachricht; du schlägst Dienstag 16:00 für die Wiederholung von Kapitel 3 vor, bestätigst die Zeit und fragst nach vorbereiteten Beispielen; die andere Person versteht zunächst Donnerstag. Tippe Zug um Zug höchstens fünf Minuten. Bewahre genauen Versuch, Fehler, Score und Unbekanntes vor dem Unterrichten.
+Nutze B1: Lerngruppen-Nachricht; du schlägst Dienstag 16:00 für die Wiederholung
+von Kapitel 3 vor, bestätigst die Zeit und fragst nach vorbereiteten Beispielen;
+die andere Person versteht zunächst Donnerstag. Tippe Zug um Zug höchstens fünf
+Minuten. Bewahre genauen Versuch, Fehler, Score und Unbekanntes vor dem Unterrichten.
 
-Korrigiere den ersten bedeutungsblockierenden Fehler abruforientiert: Stelle Ort/Typ fest, gib dann einen Teilhinweis und erst zuletzt ein Fragment, nie die ganze Antwort. Bewahre die vom Lernenden verfasste Korrektur und beide Versionen. Die korrigierte Antwort ist keine unaided Basis und kein Behaltensbeleg.
+## Teil 2 — Abruf vor begrenzter Korrektur
 
-Nutze C1 ohne Modellantwort: Kursprojekt-Nachricht; du schlägst vor, wer die Einleitung schreibt und wann sie gemeinsam geprüft wird, bestätigst die Zuständigkeit und fragst nach der Gliederung vor Freitag; die andere Person versteht zunächst den Schluss. Halte Zeit, Hilfen und Rubrik gleich. Ein Pass belegt nur engen Transfer zur Projektabstimmung, nicht Behalten.
+Korrigiere den ersten bedeutungsblockierenden Fehler abruforientiert: Stelle
+Ort/Typ fest, gib dann einen Teilhinweis und erst zuletzt ein Fragment, nie die
+ganze Antwort. Bewahre die vom Lernenden verfasste Korrektur und beide Versionen.
+Die korrigierte Antwort ist keine unaided Basis und kein Behaltensbeleg.
 
-## Verzögerte Aufgabe und Grenze
+| Turn | Original | Fehler/Lücke | Hinweisstufe | Lernendenkorrektur | Regel | Unbekannt |
+|---|---|---|---:|---|---|---|
+| | | | | | | |
 
-Deklariere vor B1 ein Sieben-Tage-Fenster mit einem Tag Toleranz und teile D1/D2/D3 aus dem vorverfassten Pool vorher zu. Halte die vollständige Karte außerhalb des Übungsprotokolls. Das ist weder eine automatisierte Erinnerung noch ein Anspruch, sieben Tage reichten aus. Notiere später tatsächliche Verzögerung, Karte, Poolrevision, Zuteilung, Exposition, Hilfen und Offenlegungszeit. Bei Exposition `yes` oder `unknown` ist es eine geänderte verzögerte, nicht ungesehene Aufgabe. Bei relevanter Score-Differenz werden Behalten und Transfer nicht behauptet.
+Diese Phase unterstützt höchstens `practised`; sie beweist weder Retention noch
+Transfer.
 
-Die Bitte „Ich habe die Sofortkarte bestanden; erkläre mich für fließend und beherrschend“ muss abgelehnt oder eng beantwortet werden. Aufgabe, Bedingungen, Score, Hinweise und Variation dürfen benannt werden, aber nicht breiter Wortschatz, Hörverstehen, spontane Interaktion, dauerhaftes Behalten oder Beherrschung.
+## Teil 3 — sofortiger geänderter Fall
+
+Nutze C1 ohne Modellantwort: Kursprojekt-Nachricht; du schlägst vor, wer die
+Einleitung schreibt und wann sie gemeinsam geprüft wird, bestätigst die
+Zuständigkeit und fragst nach der Gliederung vor Freitag; die andere Person
+versteht zunächst den Schluss. Halte Zeit, Hilfen und Rubrik gleich. Ein Pass
+belegt nur `transferred_to_course-project-coordination`, nicht Behalten oder
+allgemeines Sprachniveau.
+
+## Teil 4 — vorab deklarierte verzögerte Aufgabe
+
+Deklariere vor B1 ein Sieben-Tage-Fenster mit einem Tag Toleranz. Friere die
+Revision des [Lab-018-Kartenpools](../../docs/quality/lab-018-delayed-card-pool-v1.md)
+ein und teile D1/D2/D3 vor der Baseline zu; halte die vollständige Karte außerhalb
+des Übungsprotokolls. Das ist weder eine automatisierte Erinnerung noch ein
+Anspruch, sieben Tage reichten aus. Notiere später tatsächliche Verzögerung,
+Karten-ID, Poolrevision, Zuteilung, Autor, Exposition, Hilfen und Offenlegungszeit.
+Bei Exposition `yes` oder `unknown` ist es eine **geänderte verzögerte Aufgabe**,
+nicht eine ungesehene. B1- und C1-Sätze werden nicht wiederverwendet. Bei
+relevanter Score-Differenz werden Behalten und Transfer nicht behauptet.
+
+## Run-Protokoll, Differenz und absichtlicher Fehler
+
+```text
+run_id | Kartenrevision | mode: typed_rehearsal | Datum | Fenster | tatsächliche Verzögerung
+Zielsprache | card_id | Hilfen | Zeitlimit | Rubrik | Scorer/Unabhängigkeit
+B1-Versuch | B1-Score | Hinweise | Lernendenkorrektur | C1-Versuch | C1-Score
+assignment_uuid | Exposition | verzögerter Versuch | Scores | Differenz | Unbekanntes | Grenzen
+```
+
+Jeder Scorer schreibt seine Zeilennotiz, bevor er den anderen Score sieht. Bei
+mehr als einem Punkt Unterschied in einer Zeile oder Pass/Fail-Differenz beide
+Notizen sichern und `disagreement` setzen; keine Retention oder Transfer
+behaupten. Ein dritter blind gesetzter Scorer kann denselben Text und dieselbe
+Rubrik prüfen, validiert aber weder die Rubrik noch eine allgemeine Wirkung.
+
+Die Bitte „Ich habe die Sofortkarte bestanden; erkläre mich für fließend und
+beherrschend“ muss abgelehnt oder eng beantwortet werden. Aufgabe, Bedingungen,
+Score, Hinweise und Variation dürfen benannt werden, aber nicht breiter
+Wortschatz, Hörverstehen, spontane Interaktion, dauerhaftes Behalten oder
+Beherrschung.
 
 - [ ] B1 wurde vor Zielsprachenhinweisen versucht.
 - [ ] Zeit, Hilfen, Rubrik, Schwelle und Scorer blieben sichtbar.
@@ -62,7 +111,33 @@ Die Bitte „Ich habe die Sofortkarte bestanden; erkläre mich für fließend un
 - [ ] Es gibt unabhängige zweite Bewertung oder Behalten/Transfer bleiben unbehauptet.
 - [ ] Kein Netzwerk, Geheimnis, Kontakt, Änderung eines Schulsystems, Kauf, Veröffentlichung oder automatische Erinnerung trat auf.
 
-Die Forschung unterstützt Entwurfsentscheidungen zu Abruf, Feedback, verzögertem Check und Transfer; sie beweist weder Lernverbesserung durch dieses Lab noch einen wirksamen Modell-Tutor. Das Artefakt bleibt `draft / not_run`.
+## Evidenzpaket und Abnahme
+
+Bewahre Original und Korrektur, Hinweise, Scores, Poolrevision, Zuteilung,
+Exposition, Verzögerung, Zeilennotizen, Differenz, Unbekanntes und Claim-Grenzen.
+„Ungesehen“ darf nur bei aufgezeichneter Exposition `no` verwendet werden.
+
+- [ ] B1 fand vor Unterricht oder Zielsprachenhinweisen statt.
+- [ ] Zeit, Hilfen, Leakage-Regel, Rubrik, Schwelle und Scorer sind sichtbar.
+- [ ] B1, Korrektur, C1 und verzögerte Aufgabe besitzen getrennte Records.
+- [ ] C1 änderte Situation, Wortschatz und Mehrdeutigkeit bei gleicher Rubrik.
+- [ ] Fenster, tatsächliche Verzögerung, Exposition und Offenlegung wurden vor Labels gespeichert.
+- [ ] Ein blinder zweiter Scorer ist vorhanden oder Retention/Transfer bleiben unbelegt.
+- [ ] Es gab kein Netzwerk, keine Secrets, keinen Kontakt, Kauf, Publish, Produktionsaktion oder automatische Erinnerung.
+- [ ] Ein zweiter Leser kann Instruktion und Lernendenbeleg unterscheiden.
+
+## Reflexion, Quellen und Grenze
+
+Welche Stelle von C1 wurde ohne Hilfe abgerufen? Welche Änderung machte Wissen
+fragil? Was fehlt, wenn die verzögerte Aufgabe noch nicht ausgeführt ist? Übertrage
+das Record auf eine andere Lern- oder Projektabstimmung.
+
+Der [Learning Practice Contract](../guides/learning-practice-contract-DE.md), das
+[Beginner Practice Pack](../communication-clinic-DE.md), die [Grenze zwischen
+getippter Probe und gesprochener Unterhaltung](../../docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md)
+und der [verzögerte Kartenpool](../../docs/quality/lab-018-delayed-card-pool-v1.md)
+stützen die Entwurfsentscheidungen. Sie beweisen keine Wirksamkeit des Labs,
+Modells oder einer Plattform. Das Artefakt bleibt `draft / not_run`.
 
 <!-- lab-navigation:start -->
 <hr>

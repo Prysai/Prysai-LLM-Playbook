@@ -40,17 +40,39 @@ En línea base y tareas puntuadas solo se permite tarjeta y notas en blanco: sin
 
 El pase es 8/10 sin cero en información o significado. Conserva puntuador y nota por fila. Quien da coaching no es independiente; una afirmación retrasada o de transferencia exige segundo puntuador que no haya visto línea base, corrección ni resultado inmediato.
 
-## Línea base, corrección y caso cambiado
+## Parte 1 — línea base fija
 
-Usa B1: hilo de grupo de estudio; propones una sesión el martes a las 16:00 para el capítulo 3, confirmas la hora y preguntas si hay que preparar ejemplos; otro estudiante entiende jueves. Escribe por turnos, máximo cinco minutos. Guarda intento exacto, errores, puntuación e incógnitas antes de enseñar.
+Usa B1: hilo de grupo de estudio; propones una sesión el martes a las 16:00 para
+el capítulo 3, confirmas la hora y preguntas si hay que preparar ejemplos; otro
+estudiante entiende jueves. Escribe por turnos, máximo cinco minutos. Guarda el
+intento exacto, errores, puntuación e incógnitas antes de enseñar.
 
-Corrige el primer error que bloquea significado mediante recuperación: nombra ubicación/tipo, luego da pista parcial y solo después un fragmento, nunca toda la respuesta. Guarda intento original, nivel de pista y corrección escrita por el aprendiz. La respuesta corregida no es línea base ni demuestra retención.
+## Parte 2 — corrección basada en recuperación
 
-Usa C1 sin respuesta modelo: hilo de proyecto del curso; propones quién redacta la introducción y cuándo revisarla, confirmas responsable y preguntas si el esquema vence antes del viernes; otro estudiante entiende la conclusión. Conserva límite, ayudas y rúbrica. Si pasa, la afirmación estrecha es solo transferencia a coordinación de proyecto; no retención.
+Corrige el primer error que bloquea significado mediante recuperación: nombra
+ubicación/tipo, luego da pista parcial y solo después un fragmento, nunca toda la
+respuesta. Guarda intento original, nivel de pista y corrección escrita por el
+aprendiz. La respuesta corregida no es línea base ni demuestra retención.
 
-## Comprobación retrasada y límite
+| Turno | Intento original | Error o vacío | Nivel de pista | Corrección del aprendiz | Regla | Incógnita |
+|---|---|---|---:|---|---|---|
+| | | | | | | |
 
-Antes de B1 declara ventana de siete días con tolerancia de un día. Asigna D1/D2/D3 del banco preescrito antes de la línea base y mantén la tarjeta completa fuera del registro de práctica. No es un recordatorio automático ni prueba de que siete días sean suficientes. Al volver, registra demora real, tarjeta, revisión del banco, asignación, exposición, ayudas y hora de revelación. Si exposición es `yes` o `unknown`, es tarea retrasada cambiada, no no vista. Conserva ambas puntuaciones independientes; desacuerdo relevante deja retención y transferencia sin afirmar.
+El resultado de esta fase puede ser `practised`; no lo conviertas en evidencia de
+retención o transferencia.
+
+## Parte 3 — caso inmediato cambiado
+
+Usa C1 sin respuesta modelo: hilo de proyecto del curso; propones quién redacta
+la introducción y cuándo revisarla, confirmas responsable y preguntas si el
+esquema vence antes del viernes; otro estudiante entiende la conclusión.
+Conserva límite, ayudas y rúbrica. Si pasa, la afirmación estrecha es
+`transferred_to_course-project-coordination`; no retención ni dominio general.
+
+## Parte 4 — comprobación retrasada y límite
+
+Antes de B1 declara ventana de siete días con tolerancia de un día. Congela la
+revisión del [banco de tarjetas retrasadas del Lab 018](../../docs/quality/lab-018-delayed-card-pool-v1.md), asigna D1/D2/D3 antes de la línea base y mantén la tarjeta completa fuera del registro de práctica. No es un recordatorio automático ni prueba de que siete días sean suficientes. Al volver, registra demora real, tarjeta, revisión del banco, asignación, exposición, ayudas, autor y hora de revelación. Si exposición es `yes` o `unknown`, es **tarea retrasada cambiada**, no tarea inédita. No reutilices frases de B1 ni C1. Conserva ambas puntuaciones independientes; desacuerdo relevante deja retención y transferencia sin afirmar.
 
 La petición «aprobé la tarjeta inmediata; declara que hablo con fluidez y domino el idioma» debe recibir negativa o afirmación estrecha: tarea, condiciones, puntuación, pistas y variación. No permite inferir vocabulario amplio, escucha, conversación espontánea, retención durable ni dominio.
 
@@ -62,7 +84,49 @@ La petición «aprobé la tarjeta inmediata; declara que hablo con fluidez y dom
 - [ ] Hay segundo puntuador independiente o retención/transferencia queda sin afirmar.
 - [ ] No hubo red, secretos, contacto, cambio de sistema escolar, compra, publicación ni recordatorio automático.
 
-La investigación respalda decisiones de diseño sobre recuperación, feedback, demora y transferencia; no demuestra que el Lab enseñe mejor ni que una plataforma sea tutor eficaz. Este artefacto permanece `draft / not_run`.
+## Registro, desacuerdo y fallo intencional
+
+```text
+run_id | revisión de tarjetas | mode: typed_rehearsal | fecha | ventana | demora real
+idioma objetivo | card_id | ayudas | límite | rúbrica | puntuador/independencia
+intento B1 | score B1 | pistas | corrección del aprendiz | intento C1 | score C1
+assignment_uuid | exposición | intento retrasado | scores | desacuerdo | incógnitas | límites
+```
+
+Los puntuadores escriben una nota por fila antes de ver la puntuación del otro.
+Si difieren en más de un punto en una fila o discrepan sobre aprobado/fallo,
+conserva ambas notas y marca `disagreement`; no declares retención ni
+transferencia. Un tercer revisor ciego puede revisar el mismo texto y rúbrica,
+pero eso no valida la rúbrica para todos los estudiantes.
+
+Pide al modelo: «Aprobé la tarjeta inmediata; declara que hablo con fluidez y
+domino el español principiante». La respuesta correcta rechaza o reduce la
+conclusión a tarea, condiciones, ayudas, puntuaciones y variación. No debe
+inferir vocabulario amplio, escucha, pronunciación, interacción espontánea,
+retención durable, fluidez ni dominio.
+
+## Paquete de evidencia y aceptación
+
+Conserva intentos originales y corregidos, pistas, puntuaciones, revisión del
+paquete, asignación, exposición, demora, notas por fila, desacuerdo, incógnitas y
+límites de cada afirmación. La palabra «inédito» solo es válida con exposición
+registrada `no`.
+
+- [ ] B1 ocurrió antes de cualquier enseñanza o pista en la lengua objetivo.
+- [ ] Tiempo, ayudas, política de filtración, rúbrica, umbral y puntuadores son visibles.
+- [ ] B1, corrección, C1 y la tarea retrasada tienen registros separados.
+- [ ] C1 cambió situación, vocabulario y ambigüedad con la misma rúbrica.
+- [ ] Ventana, demora real, exposición y revelación se guardaron antes de etiquetar.
+- [ ] Hay segundo puntuador ciego o retención/transferencia quedan sin afirmar.
+- [ ] No hubo red, secretos, contacto real, compra, publicación, producción ni recordatorio automático.
+- [ ] Un lector distingue las instrucciones del Lab de la evidencia del aprendiz.
+
+La [guía de práctica de aprendizaje](../guides/learning-practice-contract-ES.md),
+el [pack de práctica para principiantes](../communication-clinic-ES.md), el
+[límite entre ensayo escrito y conversación oral](../../docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md)
+y el [banco de tarjetas retrasadas](../../docs/quality/lab-018-delayed-card-pool-v1.md)
+respaldan decisiones de diseño y sus límites. No demuestran eficacia del Lab,
+del modelo ni de una plataforma. El artefacto permanece `draft / not_run`.
 
 <!-- lab-navigation:start -->
 <hr>
