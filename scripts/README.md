@@ -41,6 +41,8 @@ $py = (Get-Command python -ErrorAction Stop).Source
 & $py scripts\validate_teaching_assets.py
 & $py scripts\test_validate_teaching_assets.py
 & $py scripts\validate_localization.py
+& $py scripts\audit_semantic_contract.py
+& $py scripts\test_audit_semantic_contract.py
 & $py scripts\localize_reader_evidence_links.py --check
 & $py scripts\build_book_navigation.py --check
 & $py scripts\test_book_navigation_titles.py
@@ -141,6 +143,16 @@ checks that the 22 canonical chapters, 18 lab records, locale matrix, chapter
 order, reader entries, and generated site outputs agree. Its migration warnings
 identify lab sources that are still intentionally unsuffixed; they are not
 claims that those labs have been translated or run.
+
+`audit_semantic_contract.py` is an editorial signal for the reader-facing
+teaching contract. It checks that each registered chapter or Lab exposes an
+objective, an observable exercise, a failure or boundary, evidence, acceptance,
+transfer, source/status boundaries, and the entry navigation required by the
+current route. It also reports conservative heading and reader-text compression
+signals for non-English files. Those signals require a blind native-language
+review; they are not translation scores, proof of missing meaning, or learner
+evidence. The companion `test_audit_semantic_contract.py` protects the audit's
+missing-versus-compressed distinction.
 
 Use `validate_learning_contract.py --canonical-en` to inspect only the
 English sources currently declared by the locale matrix. The full command

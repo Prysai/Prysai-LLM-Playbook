@@ -57,7 +57,7 @@
       "role": "Repeatable validators, generators, and project checks.",
       "entry": "scripts/README.md",
       "first_read": "scripts/README.md",
-      "canonical_sources": ["AGENTS.md", "docs/release-checklist.md"],
+      "canonical_sources": ["AGENTS.md", "docs/release-checklist.md", "scripts/audit_semantic_contract.py", "scripts/test_audit_semantic_contract.py"],
       "generated_outputs": []
     },
     {

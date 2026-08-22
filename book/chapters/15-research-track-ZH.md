@@ -61,6 +61,26 @@
 
 一行只写一个可以单独检查的主张。例如“浏览器阶段成功”“客户端令牌交换失败”“官方确认了根因”必须拆成三行，因为它们可能来自不同来源，证据强度也不同。官方文档适合支持产品定义和协议要求；原始用户报告适合记录现场症状；二手解读只是线索。打不开的页面可以记为“待核实”，但不能补写不存在的页码、引语或“已读”结论。
 
+### 一条主张的引用审计卡
+
+对每条重要主张保留以下字段。它不是引用数量指标，而是让另一位读者能重做同一项检查：
+
+```text
+claim_id: C-07
+claim: 页面在访问日描述了功能 Y
+original_url: <原始 URL>
+final_url: <最终 URL；未跳转则同上>
+location: <标题、段落、表格行或 Issue；找不到写 none>
+scope: <产品面 / 版本 / 账户 / 地区 / 日期；未知写 unknown>
+source_supports: <原文直接支持的一句话>
+extra_inference: <额外推断；没有则写 none>
+audit: supported | partial | unsupported | inaccessible
+reviewer_and_date: <复核人 / 日期>
+action: keep | narrow | remove | request_source
+```
+
+`HTTP 200`、搜索结果标题、模型生成的 URL 或“引用格式正确”都不能代替 `location` 和 `scope`。如果来源只支持半句话，就拆成两条主张；如果关键来源打不开，保留失败状态，不要用摘要补洞。
+
 ## 一轮最小的可核查研究
 
 1. 固定问题、范围和来源规则；

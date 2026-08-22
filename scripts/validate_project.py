@@ -145,6 +145,8 @@ REQUIRED = (
     "tests/test_foundation_route_structure.py",
     "tests/README.md",
     "scripts/audit_translation_depth.py",
+    "scripts/audit_semantic_contract.py",
+    "scripts/test_audit_semantic_contract.py",
     "scripts/test_validate_site_i18n.py",
     "scripts/validate_teaching_assets.py",
     "scripts/test_validate_teaching_assets.py",

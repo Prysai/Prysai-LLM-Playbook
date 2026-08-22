@@ -72,6 +72,26 @@
 
 一行只寫一個可以單獨檢查的主張。例如「瀏覽器階段成功」「用戶端權杖交換失敗」「官方確認根因」必須拆成三行，因為它們可能來自不同來源，證據強度也不同。官方文件適合支援產品定義與協定要求；原始使用者報告適合記錄現場症狀；二手解讀只是線索。打不開的頁面可以記為「待確認」，但不能補寫不存在的頁碼、引語或「已讀」結論。
 
+### 一條主張的引用稽核卡
+
+對每條重要主張保留以下欄位。它不是引用數量指標，而是讓另一位讀者能重做同一項檢查：
+
+```text
+claim_id: C-07
+claim: 頁面在查閱日描述了功能 Y
+original_url: <原始 URL>
+final_url: <最終 URL；未跳轉則同上>
+location: <標題、段落、表格列或 Issue；找不到寫 none>
+scope: <產品面 / 版本 / 帳戶 / 地區 / 日期；未知寫 unknown>
+source_supports: <原文直接支援的一句話>
+extra_inference: <額外推斷；沒有則寫 none>
+audit: supported | partial | unsupported | inaccessible
+reviewer_and_date: <複核人 / 日期>
+action: keep | narrow | remove | request_source
+```
+
+`HTTP 200`、搜尋結果標題、模型產生的 URL 或「引用格式正確」都不能代替 `location` 和 `scope`。如果來源只支援半句話，就拆成兩條主張；如果關鍵來源打不開，保留失敗狀態，不要用摘要補洞。
+
 ## 一輪最小的可查核研究
 
 1. 固定問題、範圍和來源規則；
