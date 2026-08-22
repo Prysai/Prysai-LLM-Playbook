@@ -228,3 +228,8 @@ Les cartes et la rédaction de ce Lab sont originales. Les sources soutiennent
 des choix de rappel, de correction et de contrôle différé ; elles ne prouvent
 pas l’efficacité de ce Lab, d’un modèle ou d’une plateforme. Le statut reste
 `draft` et `run_status` reste `not_run` jusqu’à l’enregistrement des preuves.
+
+<!-- lab-navigation:start -->
+<hr>
+<nav class="lab-navigation" aria-label="Navigation entre les Labs"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-017-skill-discovery-audit-FR.md" aria-label="Lab précédent : Lab 017 · Auditer la découverte d’un Skill">← Précédent<br><strong>Lab 017 · Auditer la découverte d’un Skill</strong></a></td><td align="right"></td></tr></table></nav>
+<!-- lab-navigation:end -->
