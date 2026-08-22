@@ -141,13 +141,14 @@ Im Gesamtprojekt sind 22 Kapitel `candidate`, 18 Labs `draft` mit
 kann und welche frische Ausführung, Übertragungsbelege, unabhängige Review oder
 Browser-/Runtime-Bestätigung noch fehlt.
 
-## Sechs Locales und die deutsche Navigation
+## Acht Locales und die deutsche Navigation
 
-Reader-facing Dateien folgen immer `<stabiler-stem>-<LOCALE>.md` mit den sechs
-Suffices `-EN`, `-ZH`, `-ES`, `-JA`, `-KO` und `-DE`. Ihre URL-Tokens sind
-`en`, `zh`, `es`, `ja`, `ko` und `de`; die HTML-Sprachen sind `en`, `zh-CN`,
-`es`, `ja`, `ko` und `de`. Sobald ein gleiches `content_id` als deutsche Datei
-existiert, bleiben Links in `DE` und verweisen auf das `-DE`-Ziel.
+Reader-facing Dateien folgen immer `<stabiler-stem>-<LOCALE>.md` mit den acht
+Suffixen `-EN`, `-ZH`, `-ES`, `-JA`, `-KO`, `-DE`, `-ZHTW` und `-FR`. Ihre
+URL-Tokens sind `en`, `zh`, `es`, `ja`, `ko`, `de`, `zh-tw` und `fr`; die
+HTML-Sprachen sind `en`, `zh-CN`, `es`, `ja`, `ko`, `de`, `zh-TW` und `fr`.
+Sobald ein gleiches `content_id` als deutsche Datei existiert, bleiben Links
+in `DE` und verweisen auf das `-DE`-Ziel.
 
 Wo das `-DE`-Ziel noch fehlt, nennt der sichtbare Linktext ausdrücklich die
 deutsche Migration in Arbeit. Ein unsuffixierter Originalpfad ist dadurch als
