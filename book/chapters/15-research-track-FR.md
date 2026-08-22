@@ -247,7 +247,7 @@ reviewer / action / next_review : [relecture, décision et prochaine date]
 « probablement correct ». Tant que le passage n'est pas localisé, scindez la
 phrase, réduisez son niveau de certitude ou retirez-la.
 
-### 10. Ramener honnêtement le résultat à `candidate`
+### 10. Reclasser honnêtement le résultat en `candidate`
 
 Ne marquez pas un résultat `verified` lorsqu’une source clé est inaccessible, que des sources officielles se contredisent sans décision de périmètre, qu’il ne reste que des témoignages de forum ou des solutions communautaires, que les citations générées n’ont pas été ouvertes et localisées, que la date, la version, la plateforme ou la région ne correspondent pas, ou qu’une reproduction annoncée ne possède aucune trace enregistrée. `Candidate` ne signifie pas « rien n’a été fait » : cela signifie que les limites du livrable sont visibles.
 
