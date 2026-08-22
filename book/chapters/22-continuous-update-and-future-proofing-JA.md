@@ -187,7 +187,7 @@ lifecycle、impact matrix、rollback、evidence gate は project methodology で
   claim_status: "current"
 ```
 
-この project の update process は [`docs/governance/content-lifecycle.md`](../../docs/governance/content-lifecycle.md) にも記録されています。この章は `candidate`、演習は `draft / not_run` のままです。上の `claim_status` はどちらの結論も変更しません。
+この project の update process は [`docs/governance/content-lifecycle.md`](../evidence-library-JA.md#method-and-status) にも記録されています。この章は `candidate`、演習は `draft / not_run` のままです。上の `claim_status` はどちらの結論も変更しません。
 
 ## 公開前の最小 update card
 
