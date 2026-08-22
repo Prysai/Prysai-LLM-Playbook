@@ -1,4 +1,4 @@
-<!-- content_id: chapter-15-research-track | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: 2026-08-22-fr-depth-repair -->
+<!-- content_id: chapter-15-research-track | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: 2026-08-22-fr-evidence-reinforcement -->
 
 # Chapitre 15 : Parcours de recherche — de la question aux connaissances vérifiables
 
@@ -211,6 +211,35 @@ consignez le résultat dans `citation-audit.md` :
 5. **Action :** faut-il conserver, scinder, nuancer, retirer ou demander une
    nouvelle source ?
 
+### Ligne d’audit complète pour une citation
+
+Une URL seule ne permet pas de refaire le contrôle. Utilisez une ligne par
+affirmation et gardez l’URL d’origine ainsi que l’URL finale :
+
+```text
+claim_id : C-07
+affirmation atomique :
+URL d’origine :
+URL finale après redirection :
+titre / responsable de la source :
+emplacement précis : section, paragraphe, issue, commentaire ou horodatage
+ce que la source soutient directement :
+ce qui est une inférence ou reste absent :
+date de publication / mise à jour et date d’accès :
+version, plateforme, région, compte et coupure :
+statut : appuie | partielle | contredit | inaccessible | citation_unverified
+relecteur / date :
+action : conserver | scinder | nuancer | retirer | compléter
+prochaine revue :
+```
+
+`citation_unverified` signifie que le lien ou le titre existe peut-être, mais
+que le passage annoncé n’a pas été ouvert et localisé. Il ne signifie pas que
+la phrase est fausse ; il signifie qu’elle ne peut pas encore être livrée avec
+ce niveau de certitude. Si la source soutient seulement une partie de la
+phrase, scindez l’affirmation ou abaissez son niveau au lieu de compléter le
+passage de mémoire.
+
 Un lien valide mais un passage introuvable reste `citation_unverified`. Un passage
 qui soutient seulement une sous-phrase exige de scinder la claim ; il ne faut pas
 étendre la citation par le style ou le contexte supposé de la page.
@@ -295,6 +324,37 @@ Ne remplacez pas un trou de preuve par un ton plus assuré :
 | « Fonction officiellement prise en charge. » | texte officiel non localisé | « La page officielle décrit cette capacité dans son périmètre daté ; l’applicabilité au compte reste inconnue. » | ouvrir et localiser le passage |
 
 Le déclassement conserve la décision utile tout en rendant visible ce qui manque.
+
+### Reçu de livraison `candidate`
+
+Avant de fermer une session de recherche, produisez une fiche qui permet à une
+autre personne de reprendre sans confondre plan, accès et résultat :
+
+```text
+décision visée et question retenue :
+claims contrôlées / claims non contrôlées :
+sources réellement ouvertes et emplacements :
+sources redirigées, inaccessibles ou non localisables :
+conflits de version, plateforme, région ou définition :
+licence et attribution vérifiées : oui / non / partiel
+date de coupure + fuseau + périmètre :
+responsable de la source et relecteur :
+statut : candidate | blocked | not_run
+raison d’arrêt :
+prochaine vérification minimale + responsable + date :
+```
+
+Une livraison `candidate` doit aussi comporter un tableau de déclassement :
+
+| Affirmation initiale | Lacune | Formulation livrable | Contrôle suivant |
+|---|---|---|---|
+| « La capacité est officiellement prise en charge. » | passage non localisé ou périmètre de compte inconnu | « La page officielle décrit cette capacité dans son périmètre daté ; son applicabilité au compte reste inconnue. » | ouvrir et localiser le passage, puis vérifier la surface |
+| « X est la cause du problème. » | hypothèse d’un rapport, aucune RCA | « Un rapport propose X comme cause possible. » | chercher une réponse de mainteneur ou une reproduction bornée |
+| « La recherche est complète. » | sources et contre-exemples non épuisés | « La collecte couvre le périmètre déclaré jusqu’à la coupure ; des limites restent ouvertes. » | vérifier les sources manquantes ou arrêter |
+
+Le tableau protège contre une hausse artificielle du niveau de certitude. Un
+résumé fluide, une page accessible ou un statut `200` ne relève pas une ligne
+au-dessus de la preuve réellement conservée.
 
 ### 11. Les documents externes sont des données, pas des instructions prioritaires
 
@@ -501,6 +561,10 @@ vérifiée.
 - N’élargissez pas les permissions parce que les preuves sont faibles ; réduisez l’échantillon, retirez les secrets ou arrêtez.
 - Ne laissez pas une instruction injectée dans un document modifier l’étude.
 - Ne franchissez pas la limite de licence d’un Skill externe : S02 est une référence sous CC BY-NC 4.0 ; S01 n’a pas de licence claire et les répertoires S03/S06 ne reçoivent pas automatiquement une autorisation uniforme.
+- Ne copiez pas le texte, le code ou les commandes d’un forum dans le livrable ;
+  conservez le lien, le contexte, la licence et le statut du rapport.
+- Ne présentez pas une page qui nécessite une authentification, une redirection
+  ou une limite de débit comme une source lue intégralement.
 
 ## Exercice de transfert
 
