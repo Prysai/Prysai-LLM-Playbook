@@ -35,12 +35,31 @@ permissions minimales · contrôles · incidents · prochain examen · rollback
 
 ### Préparation
 
+Préparez un dossier de simulation avec une tâche hebdomadaire fictive, deux
+rôles anonymisés, un propriétaire et une date de revue. Définissez une entrée
+qui ne contient aucune donnée client, la sortie attendue, les permissions
+minimales et un point de retrait. La personne qui reproduit le paquet ne doit
+pas avoir besoin d’une explication orale.
+
 ### Tâche
 
 Utilisez une tâche hebdomadaire fictive et deux rôles anonymes. Créez une v0.1,
-faites deux reproductions à contexte vierge, puis modifiez une exigence en v0.2.
+faites deux reproductions dans un contexte vierge, puis modifiez une exigence
+en v0.2. Demandez à chaque personne de signaler ce qu’elle a compris, ce qui
+manquait et la permission qu’elle aurait refusée.
 
 ### Preuve
+
+Réunissez la fiche de capacité, les versions, les diffs, les deux reçus de
+reproduction, la relecture et les éléments non vérifiés. Pour chaque étape,
+notez l’entrée, l’action autorisée, la sortie, le contrôle et la décision :
+
+```text
+run-id | version | rôle | entrée | sortie | contrôle | décision | inconnue
+```
+
+Une reproduction réussie dans la simulation ne prouve ni l’adoption d’équipe ni
+la sécurité d’un environnement réel.
 
 ### Échec et limite
 
@@ -49,6 +68,12 @@ permission manque, bloquez la livraison. Une simulation ne prouve pas
 l’adoption organisationnelle.
 
 ### Réflexion
+
+- Quelle connaissance était uniquement dans la tête de la première personne ?
+- Quelle permission était plus large que la tâche ?
+- Qu’est-ce qui a changé entre v0.1 et v0.2, et où ce changement est-il prouvé ?
+- Qui peut corriger, suspendre ou retirer le paquet si son propriétaire disparaît ?
+
 ## Transfert
 
 Quelle connaissance était seulement dans la tête d’une personne ? Transférez le

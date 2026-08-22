@@ -35,13 +35,35 @@ objectif et portée · contexte versionné · décisions · commandes datées
 
 ### Préparation
 
+Créez une copie temporaire contenant seulement un objectif, deux fichiers
+fictifs et un journal. Fixez un identifiant de checkpoint et notez la branche,
+les permissions prévues, l’heure et la dernière observation. N’utilisez ni
+compte réel, ni cookie, ni secret, ni fonction de mémoire supposée.
+
 ### Tâche
 
 Créez une copie jetable avec deux fichiers et un checkpoint. Modifiez un champ,
-interrompez la session, puis réconciliez cible, branche, permissions et effets
-avant de continuer.
+interrompez la session, puis vérifiez cible, branche, permissions, fichiers
+modifiés et effets possibles avant de continuer. Demandez au modèle de résumer
+uniquement ce qui est écrit dans le checkpoint ; complétez vous-même les
+inconnues.
 
 ### Preuve
+
+Le checkpoint doit rester lisible par une autre personne :
+
+```text
+objectif et périmètre :
+version, branche et dernière observation :
+fichiers et diff connus :
+permissions et effets autorisés :
+preuves conservées :
+inconnues (ne pas deviner) :
+prochaine vérification et point de retour :
+```
+
+Conservez l’ancien checkpoint et le nouveau. Un état distant non observé reste
+`unknown`, même si le résumé paraît cohérent.
 
 ### Échec et limite
 
@@ -49,6 +71,12 @@ Conservez l’ancien et le nouveau checkpoint. Un état distant inconnu doit res
 `unknown`. La fixture ne prouve pas la continuité d’un compte réel.
 
 ### Réflexion
+
+- Quelle information a permis de reprendre sans refaire tout le travail ?
+- Quel champ aurait été dangereux à compléter par supposition ?
+- Quelle observation manque encore avant une action durable ?
+- Que faudrait-il retirer du paquet pour éviter d’y conserver une donnée sensible ?
+
 ## Transfert
 
 Quelle information était réellement réutilisable ? Transférez le kit à une

@@ -39,12 +39,34 @@ Conclusion autorisée :
 
 ### Préparation
 
+Écrivez la question de décision avant de regarder les réponses. Fixez trois
+tâches courtes : extraire des champs, reformuler un paragraphe et signaler une
+information absente. Utilisez les mêmes entrées, le même contexte, les mêmes
+outils et les mêmes critères pour les deux configurations. Préparez une feuille
+où chaque résultat recevra `PASS`, `FAIL` ou `UNSURE`.
+
 ### Tâche
 
 Comparez deux configurations sur extraction, reformulation et repérage d’une
-information absente. Gardez les entrées, sorties, corrections et temps observés.
+information absente. Gardez les entrées, sorties, corrections, erreurs et temps
+observés. Si une condition change, interrompez la comparaison et marquez la
+ligne `incomparable` au lieu de corriger l’écart après coup.
 
 ### Preuve
+
+Pour chaque tâche, conservez :
+
+```text
+identifiant de tâche et empreinte de l’entrée :
+configuration et version :
+sortie brute :
+critère, score et relecture humaine :
+désaccord ou condition différente :
+conclusion autorisée :
+```
+
+Présentez les résultats par tâche avant toute moyenne. Trois tâches donnent un
+aperçu local, pas un palmarès général.
 
 ### Échec et limite
 
@@ -53,6 +75,12 @@ peuvent pas établir un classement général, une causalité ou un gain de
 productivité.
 
 ### Réflexion
+
+- La question posée avant l’essai est-elle réellement tranchée par les données ?
+- Quel résultat aurait changé votre décision ?
+- Quelle différence pourrait venir du contexte plutôt que du modèle ?
+- Qu’est-ce qui reste non mesuré : d’autres tâches, d’autres utilisateurs ou une autre version ?
+
 ## Transfert
 
 Quelle mesure répond réellement à la décision ? Réutilisez la carte pour deux

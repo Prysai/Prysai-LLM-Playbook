@@ -41,13 +41,32 @@ Limites d’attribution :
 
 ### Préparation
 
+Inventez un produit simple et sans données personnelles, par exemple une
+application qui aide à préparer une revue hebdomadaire. Écrivez sa version,
+son public, une action attendue et deux éléments de preuve réellement
+disponibles. Marquez les autres informations comme `inconnues` au lieu de les
+compléter de mémoire.
+
 ### Tâche
 
 Créez un contexte produit sans donnée personnelle. Demandez une explication,
-puis un plan de mesure. Changez une décision de positionnement et comparez les
-différences.
+puis un plan de mesure. Demandez d’abord une hypothèse explicite, puis deux
+variantes de message. Changez une seule décision de positionnement et comparez
+les différences : ce qui change, ce qui ne change pas et ce qui ne peut pas être
+conclu.
 
 ### Preuve
+
+Conservez la carte de contexte, les deux versions de la demande, les réponses
+brutes et votre relecture. Pour chaque métrique, indiquez sa définition, sa
+source, sa période et la décision qu’elle pourrait éclairer. Utilisez un tableau
+simple :
+
+```text
+affirmation | source | mesure prévue | décision liée | limite | statut
+```
+
+Une hypothèse plausible n’est pas un résultat de campagne.
 
 ### Échec et limite
 
@@ -55,6 +74,12 @@ Conservez les versions, hypothèses et inconnues. Si le public ou la preuve manq
 arrêtez la génération de témoignages et de métriques.
 
 ### Réflexion
+
+- Quelle information a réellement changé votre décision ?
+- Quelle métrique pourrait être corrélée sans être causée par le message ?
+- Qu’avez-vous refusé d’inventer parce que la preuve manquait ?
+- La demande resterait-elle compréhensible si le produit changeait de version ?
+
 ## Transfert
 
 Quel champ a réellement changé la décision ? Transférez la carte à un outil

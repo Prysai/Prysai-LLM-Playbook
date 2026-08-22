@@ -7,14 +7,14 @@ Un code qui compile n’est pas encore une livraison utilisable.
 
 ## Le problème
 
-Commencer à coder avant de fixer les exigences, les tests, l’observation du
-environnement d’exécution et le repli créent des correctifs qui semblent terminés mais échouent sur
-le vrai parcours utilisateur.
+Commencer à coder avant d’avoir fixé les exigences, les tests, l’observation de
+l’environnement d’exécution et le plan de retour conduit à des correctifs qui
+paraissent terminés, mais échouent sur le vrai parcours utilisateur.
 
 ## Objectifs d’apprentissage
 
 - spécifier avant d’implémenter ;
-- travailler par tranche verticale ;
+- livrer par petites tranches de bout en bout ;
 - utiliser les tests et le rendu comme preuves distinctes ;
 - prévoir diagnostic, rollback et limite d’autorité.
 
@@ -38,15 +38,36 @@ le parcours réel, pas seulement l’existence des fichiers.
 
 ### Préparation
 
+Travaillez dans une copie jetable. Notez le point de départ, la version de
+l’environnement, la commande de test et le critère de réussite. Préparez trois
+entrées synthétiques : une entrée normale, une entrée vide et une entrée
+invalide. Aucune clé, donnée client, publication ni écriture externe n’est
+nécessaire.
+
 ### Tâche
 
-Dans une copie jetable, choisissez trois petites tâches fixes. Faites une
-tentative directe puis une tentative avec définition, plan, contrôle et revue.
+Choisissez une petite tâche fixe, par exemple dédupliquer une liste locale et
+écrire un fichier JSON. Faites d’abord une tentative directe, puis une seconde
+tentative avec définition du besoin, plan, tranche minimale, test, exécution
+locale et revue. Après chaque étape, arrêtez-vous pour regarder le diff et
+vérifier que la sortie attendue est toujours la même.
 
 ### Preuve
 
-Conservez les diffs, commandes, sorties, erreurs, relectures et changements de
-condition. Ne transformez pas trois tâches en classement universel.
+Conservez un reçu court :
+
+```text
+version et dossier de départ :
+contrat et critères d’acceptation :
+fichiers modifiés et diff :
+commandes, codes de sortie et journaux :
+résultat normal / vide / invalide :
+observation dans l’environnement local :
+inconnues et point de retour :
+```
+
+Ce reçu permet de distinguer « le code se construit » de « le parcours
+fonctionne ». Ne transformez pas une seule tâche en classement universel.
 
 ### Échec et limite
 
@@ -54,6 +75,12 @@ Introduisez une entrée manquante ou un contrôle qui échoue ; diagnostiquez av
 d’ajouter du code. L’exercice ne prouve pas un gain général.
 
 ### Réflexion
+
+- Quelle vérification a empêché le plus grand détour ?
+- Qu’a montré l’exécution locale que les tests statiques ne pouvaient pas montrer ?
+- À quel moment auriez-vous dû vous arrêter ou revenir au point précédent ?
+- Quelle affirmation reste `UNSURE` malgré la réussite de l’exercice ?
+
 ## Transfert
 
 Quel point de contrôle a empêché le plus gros détour ? Transférez le cycle à une

@@ -33,13 +33,25 @@ test de régression · décision · date de revue · rollback
 
 ### Préparation
 
+Dans une copie temporaire, choisissez un changement hypothétique : nouveau
+format, nouvelle permission ou nouvelle version de modèle. Écrivez la fiche
+avant toute modification et calculez l’empreinte de l’état initial. Listez les
+chapitres, Skills, Labs et tests qui pourraient consommer cette information.
+
 ### Tâche
 
 Choisissez une fonction fictive qui change une permission ou un format. Mettez à
 jour la carte, identifiez les pages touchées, écrivez un test et préparez un
-rollback sans l’exécuter dans un service réel.
+retour arrière sans l’exécuter dans un service réel. Si la source est absente,
+contradictoire ou hors périmètre, laissez la décision `disputed` ou `blocked`.
 
 ### Preuve
+
+Conservez la source (ou la trace de son indisponibilité), la carte d’impact, les
+empreintes avant/après, le diff, le test, le journal et la liste des inconnues.
+La fiche de décision doit nommer le responsable, la cible temporaire, le
+relecteur et le point de retour. Un simple changement de statut dans un fichier
+ne constitue pas une migration vérifiée.
 
 ### Échec et limite
 
@@ -47,6 +59,12 @@ Si la source ou la portée est inconnue, bloquez la migration. Une carte statiqu
 ne prouve ni la fraîcheur permanente ni le comportement de production.
 
 ### Réflexion
+
+- Quel consommateur en aval aurait été oublié par un remplacement global ?
+- Pourquoi la décision est-elle `current`, `stale`, `disputed` ou `removed` ?
+- Quelle vérification est la plus petite qui réduirait l’incertitude ?
+- Qui déclenche la prochaine revue, à quelle date et sur quel signal ?
+
 ## Transfert
 
 Quel changement aurait exigé la plus petite vérification ? Transférez la méthode
