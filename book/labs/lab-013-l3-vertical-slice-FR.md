@@ -5,15 +5,15 @@ id: lab-013-l3-vertical-slice
 title: "Mener une tranche verticale complète"
 level: L3
 domain: engineering
-goal: "Faire passer une modification bornée de sa définition jusqu’aux preuves et à la transmission"
-setup: "Une copie jetable d’un dépôt, un seul chemin Markdown autorisé, sans publication ni identifiants"
-task: "Exécuter CP0 à CP4 pour une note de version, avec contrôle ciblé, branche d’échec et transmission en contexte vierge"
+goal: "Faire passer une modification bornée de sa définition jusqu’aux preuves et à la transmission, sans confondre capacité technique, autorisation et confirmation humaine"
+setup: "Une copie temporaire d’un dépôt, un seul chemin Markdown autorisé, sans publication, identifiants ni changement persistant d’environnement"
+task: "Exécuter CP0 à CP4 pour une note de version, avec observation ciblée de la surface choisie, branche d’échec et transmission en contexte vierge"
 evidence:
   - "Hachages d’entrée, état initial, checkpoints et journal des actions"
-  - "Diff réel, sortie de commande, codes de sortie et table affirmation-preuve"
-  - "Échec, transmission, cible de retour arrière et liste des inconnues"
+  - "Diff réel, observation de la surface, sortie de commande, codes de sortie et table affirmation-preuve"
+  - "Échec, transmission, cible de restauration et liste des inconnues"
 failure_variant: "Supprimer une entrée requise, faire échouer le contrôle ciblé, reprendre après CP2, injecter une instruction d’action externe ou demander une modification persistante d’environnement"
-reflection: "Quel checkpoint a empêché l’affirmation non étayée ou l’action inutile la plus importante ?"
+reflection: "Quel checkpoint a empêché l’affirmation non étayée ou l’action inutile la plus importante ? Quelle preuve distinguait capacité, autorisation et effet réel ?"
 status: draft
 last_verified: "Maintainer reference run accepted 2026-08-12; learner run not run"
 transfer_task: "Transférer le workflow de checkpoints à une tâche de recherche ou de contenu sans risque"
@@ -28,9 +28,27 @@ transfer_limitations: "Une tranche locale ne prouve ni la publication distante, 
 
 Mener une petite modification de bout en bout sans confondre planification, édition, contrôle, revue, livraison et publication.
 
-## Préparation
+## Préparation : périmètre et surface observable
 
-Utilisez une copie jetable d’un dépôt. La seule modification autorisée est une petite note Markdown à un chemin nommé. Notez les fichiers d’entrée, leurs hachages, le `git status` initial, le chemin permis, les critères d’acceptation, la cible de restauration et les actions interdites. Publication, envoi vers le dépôt distant, installation de dépendances et identifiants sont hors périmètre.
+Utilisez une copie temporaire d’un dépôt. La seule modification autorisée est
+une petite note Markdown à un chemin nommé. Notez les fichiers d’entrée, leurs
+hachages, le `git status` initial, le chemin permis, les critères d’acceptation,
+la cible de restauration et les actions interdites. Publication, envoi vers le
+dépôt distant, installation de dépendances et identifiants sont hors périmètre.
+
+Choisissez une seule surface d'observation pour l'expérience :
+
+| Surface | Ce que vous pouvez observer | Ce que cela ne prouve pas |
+|---|---|---|
+| éditeur local | chemin, diff, contenu et état du fichier | publication ou synchronisation distante |
+| terminal | commande exacte, sortie et code de sortie | que la commande a couvert tous les risques |
+| navigateur ou dépôt | URL, état affiché et moment de l'observation | une autorisation durable, ni l'absence d'un autre état |
+
+Pour chaque surface, notez séparément : authentification observée (ou non),
+capacité technique disponible, autorisation accordée, confirmation humaine
+requise, effet réellement observé et éléments encore inconnus. Une session
+ouverte n'est pas une autorisation ; une capacité n'est pas une permission ; un
+message de succès n'est pas une preuve de l'état cible.
 
 Avant de commencer, classez chaque action :
 
@@ -42,9 +60,9 @@ Avant de commencer, classez chaque action :
 | D — état du dépôt | commit ou changement de branche | référence et état avant/après | hors périmètre de la fixture sauf décision distincte |
 | E — action externe | envoyer vers le dépôt distant, publier, notifier ou modifier un environnement persistant | cible, payload, autorisation et preuve distante | `not_run` et arrêt par défaut |
 
-Une session ouverte n’est pas une autorisation. Une capacité technique n’est
-pas une permission. Une demande d’action externe doit identifier la cible
-exacte, l’effet, l’autorité et la confirmation humaine avant toute exécution.
+Une demande d’action externe doit identifier la cible exacte, l'effet, l'autorité,
+la confirmation humaine, le retour arrière et la vérification après action avant
+toute exécution. Dans ce Lab, elle reste `not_run`.
 
 ## Checkpoints
 
@@ -60,19 +78,29 @@ Utilisez cinq checkpoints et ne passez pas au suivant sans conserver sa preuve :
 
 Le journal note heure, observation, action, résultat, changement d’état, preuve, risque, étape suivante et raison d’arrêt.
 
-## Expérience
+## Expérience et cartes d'observation
 
-Créez la note de version avec les seuls faits fournis dans l’entrée. Avant
-l’édition, demandez à l’Agent de reformuler le but, le chemin, les limites et le
-critère d’acceptation ; vérifiez votre CP0. Faites ensuite un plan minimal (CP1),
+Créez la note de version avec les seuls faits fournis dans l'entrée. Avant
+l'édition, demandez à l'Agent de reformuler le but, le chemin, les limites et le
+critère d'acceptation ; vérifiez votre CP0. Faites ensuite un plan minimal (CP1),
 modifiez une seule fois (CP2), et vérifiez que seul le chemin autorisé a changé,
-que le contenu requis est présent, qu’aucune affirmation non étayée n’a été
+que le contenu requis est présent, qu'aucune affirmation non étayée n'a été
 ajoutée et que le contrôle local ciblé a réussi (CP3). Un diff réussi ne prouve
 ni la publication, ni la compréhension des lecteurs, ni la synchronisation
 distante. CP4 doit dire séparément ce qui est livré localement, ce qui reste
 `not_run` et comment une autre personne peut reprendre.
 
-## Cas d’échec
+Utilisez une fiche par observation :
+
+```text
+surface | authentification observée | capacité technique | autorisation | confirmation humaine | action proposée | action exécutée | état cible observé | preuve | inconnues
+```
+
+Une réponse « connecté », un nom d'outil ou un message `completed` remplit au
+mieux la colonne du message observé. Il ne remplit pas automatiquement les
+colonnes d'autorisation, d'exécution ou d'état cible.
+
+## Cas d'échec et récupération
 
 Réalisez au moins une branche :
 
@@ -82,7 +110,14 @@ Réalisez au moins une branche :
 - placer une instruction d’envoi de jeton dans l’entrée et la traiter comme donnée ;
 - demander une modification persistante d’environnement et s’arrêter faute d’autorité.
 
-Une reprise n’est permise qu’après changement du diagnostic et compréhension des effets déjà produits. Répéter la même action n’est pas une récupération.
+Une reprise n'est permise qu'après changement du diagnostic et compréhension des
+effets déjà produits. Répéter la même action n'est pas une récupération. Notez
+pour chaque branche le symptôme visible, le dernier checkpoint, l'hypothèse
+modifiée, l'action minimale, le rollback et ce qui demeure non vérifié.
+
+```text
+branch_id | état | symptôme | dernier checkpoint | diagnostic changé | action minimale | restauration | preuve après reprise | non vérifié
+```
 
 Pour chaque branche, remplissez une ligne « affirmation → preuve » :
 
@@ -91,7 +126,7 @@ Pour chaque branche, remplissez une ligne « affirmation → preuve » :
 | le bon fichier a changé | diff et chemin autorisé | restaurer et revenir à CP1 |
 | le contrôle a réussi | sortie brute et code de sortie | conserver l’échec, changer une condition de diagnostic |
 | la reprise est sûre | checkpoints et état du dépôt dans le nouveau contexte | arrêter et demander la pièce manquante |
-| la publication est faite | preuve de la cible distante et du résultat | écrire `not_run` ; un diff local ne suffit pas |
+| la publication est faite | preuve de la cible distante et du résultat | écrire `not_run` ; un diff local ou une session ouverte ne suffit pas |
 
 ## Liste de contrôle d’acceptation
 
@@ -106,6 +141,10 @@ Pour chaque branche, remplissez une ligne « affirmation → preuve » :
       autorité et confirmation, ou reste `not_run`.
 - [ ] La table affirmation-preuve distingue une sortie locale d’une preuve
       distante et nomme les éléments encore inconnus.
+- [ ] La fiche d'observation sépare authentification, capacité, autorisation,
+      confirmation humaine, exécution et état cible.
+- [ ] Une branche de récupération indique le diagnostic changé, la restauration
+      et la preuve après reprise.
 
 ## Preuves à conserver
 
@@ -117,12 +156,14 @@ Le projet possède un dossier de référence déterministe accepté pour cette f
 
 Ce dossier vient d’un exécuteur local déterministe, pas d’un apprenant ni d’un modèle. Il ne prouve ni l’indépendance, ni le comportement de Codex, ni le transfert, ni la publication, ni la répétition du retour arrière. Les exécutions d’apprenant et de transfert restent `not_run`.
 
-## Réflexion et transfert
+## Réflexion, transfert et limites
 
 Transférez le workflow à une recherche ou une revue de contenu. Réécrivez les
 champs source, autorité, acceptation et échec au lieu de copier des commandes
-d’ingénierie. Ajoutez les limites de citation ou de confidentialité propres au
-domaine. Quel checkpoint a empêché l’affirmation non étayée la plus importante ?
+d'ingénierie. Ajoutez les limites de citation ou de confidentialité propres au
+domaine. Quelle observation serait différente dans un navigateur, un terminal ou
+un dépôt distant ? Quel checkpoint a empêché l'affirmation non étayée la plus
+importante ?
 
 ## Sources et limite de mise à jour
 
