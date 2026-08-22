@@ -19,7 +19,10 @@ CONTENT_STATUSES = {"draft", "candidate", "verified", "production-ready"}
 SUFFIX_RE = re.compile(r"-(EN|ZH|ES|JA|KO|DE|ZHTW|FR)(\.[^/]+)$")
 LINK_RE = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
 LOCALE_FILE_RE = re.compile(r"-(EN|ZH|ES|JA|KO|DE|ZHTW|FR)\.[^/]+$")
-README_RE = re.compile(r"^(?:README|book/README)(?:-(EN|ZH|ES|JA|KO|DE|ZHTW))?\.md$")
+README_RE = re.compile(r"^(?:README|book/README)(?:-(EN|ZH|ES|JA|KO|DE|ZHTW|FR))?\.md$")
+LOCALIZED_ENTRY_RE = re.compile(
+    rf"^book/(?:communication-clinic|preface|table-of-contents)-(?:{'|'.join(LOCALES)})\.md$"
+)
 ROOT_EN_README = "README.md"
 LANGUAGE_SWITCHER_START = "<!-- language-switcher:start -->"
 LANGUAGE_SWITCHER_END = "<!-- language-switcher:end -->"
@@ -230,19 +233,7 @@ def main() -> int:
         is_localized_entry_page = locale not in {None, "EN"} and (
             is_readme
             or path_string.startswith("book/routes/")
-            or path_string in {
-                "book/communication-clinic-ZH.md",
-                "book/preface-ZH.md",
-                "book/preface-ES.md",
-                "book/preface-JA.md",
-                "book/preface-KO.md",
-                "book/preface-DE.md",
-                "book/table-of-contents-ZH.md",
-                "book/table-of-contents-ES.md",
-                "book/table-of-contents-JA.md",
-                "book/table-of-contents-KO.md",
-                "book/table-of-contents-DE.md",
-            }
+            or LOCALIZED_ENTRY_RE.match(path_string)
         )
         switcher_locale_counts = {registered_locale: 0 for registered_locale in LOCALES}
         for link_match in LINK_RE.finditer(text):
