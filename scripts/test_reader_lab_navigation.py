@@ -114,7 +114,10 @@ def main() -> int:
                 require(localized.get("reason"), f"{content_id} {locale} lacks an explicit missing-translation reason")
 
         localized_lab_links = 0
-        for locale in ("ZH", "ES", "JA", "KO", "DE"):
+        # Every published locale must keep its Lab rail self-contained.  This
+        # includes Traditional Chinese and French; leaving them out here lets a
+        # future translation silently regress to a missing or cross-locale link.
+        for locale in ("ZH", "ES", "JA", "KO", "DE", "ZHTW", "FR"):
             for lab_path in sorted((ROOT / "book/labs").glob(f"*-{locale}.md")):
                 source = lab_path.read_text(encoding="utf-8")
                 for target in re.findall(r'<a\s+[^>]*data-lab-nav="(?:previous|next)"[^>]*href="([^"]+)"', source):

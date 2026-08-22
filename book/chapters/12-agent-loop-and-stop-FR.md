@@ -271,7 +271,7 @@ Si un champ n’a pas été observé, écrivez `not_observed`.
 | `delivery` | Affirmation formulée. | Sa preuve, jusqu’à lecture des références. |
 
 Une écriture expirée garde `exit_status: unknown` et reçoit plus tard une ligne
-de reconciliation ; ne la convertissez pas silencieusement en succès.
+de réconciliation ; ne la convertissez pas silencieusement en succès.
 
 Pour une petite tâche locale, les six lignes minimales sont généralement
 `proposal`, `approval`, `execution`, `effect`, `verification` et `delivery`.
@@ -365,7 +365,7 @@ stop_if: aucun événement terminal, effet inconnu ou périmètre élargi
 | Coût/appels | Combien de tours de modèle ou d’outil ? |
 | Incertitude | Que faut-il savoir avant un effet non idempotent ? |
 
-### Idempotence et reconciliation
+### Idempotence et réconciliation
 
 | Classe | Définition | Premier contrôle après résultat incertain |
 |---|---|---|

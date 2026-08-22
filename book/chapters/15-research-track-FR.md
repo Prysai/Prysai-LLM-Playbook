@@ -1,6 +1,6 @@
 <!-- content_id: chapter-15-research-track | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: 2026-08-22-fr-depth-repair -->
 
-# Chapitre 15 : Parcours de recherche — de la question au savoir vérifiable
+# Chapitre 15 : Parcours de recherche — de la question aux connaissances vérifiables
 
 > **Statut :** `candidate`
 > **Statut de l’expérience :** `draft / not_run`
@@ -27,7 +27,7 @@ La compétence visée n’est pas de produire une revue plus longue. C’est de 
 
 ## Problèmes réels : une réussite partielle n’est pas une recherche terminée
 
-- **FP-01 :** une page de rappel OAuth semblait terminée, mais le client a ensuite échoué parce que `iss` manquait. Ce cas apprend à séparer « le navigateur a affiché une réussite » de « le client a reçu une preuve exploitable », et à noter la source et la version de chaque champ de protocole.
+- **FP-01 :** une page de redirection/callback OAuth semblait terminée, mais le client a ensuite échoué parce que `iss` manquait. Ce cas apprend à séparer « le navigateur a affiché une réussite » de « le client a reçu une preuve exploitable », et à noter la source et la version de chaque champ de protocole.
 - **FP-02 :** l’authentification dans le navigateur semblait réussie, mais l’échange de jeton a échoué. Le rapport doit donc découper le processus en étapes ; une interface qui passe ne prouve pas la réussite de bout en bout.
 
 Ces deux éléments viennent d’une collecte de problèmes organisée le 2026-08-09. Ils n’ont pas été reproduits localement et leur cause n’a pas été confirmée par un responsable officiel. Ici, ce sont des exemples de séparation des preuves, pas des conclusions définitives sur une version.
@@ -123,7 +123,7 @@ Action : conserver / nuancer / retirer / compléter | Prochaine revue : ________
 
 La documentation officielle décrit les produits et les protocoles ; un rapport original décrit un symptôme ; un commentaire secondaire est une piste ; un résumé de modèle n’est jamais une source indépendante. Une page inaccessible peut être conservée comme « vérification requise », jamais comme une citation lue avec un numéro de page inventé.
 
-### 5. Classer les conflits avant de choisir la tonalité
+### 5. Classer les conflits avant de choisir le niveau de certitude
 
 Deux pages officielles ne parlent pas forcément du même objet. L’une peut décrire une version ancienne, l’autre une surface Cloud, une règle de compte, une région ou un déploiement expérimental. Comparez d’abord objet, date, périmètre et définitions.
 
@@ -250,7 +250,7 @@ Ne remplacez pas un trou de preuve par un ton plus assuré :
 
 | Phrase initiale | Lacune | Phrase livrable `candidate` | Prochaine vérification |
 |---|---|---|---|
-| « L’échange de jeton a réussi. » | seule la page de rappel a été vue | « La page de rappel a été signalée comme réussie ; l’échange de jeton reste non vérifié. » | conserver une trace expurgée de l’étape suivante |
+| « L’échange de jeton a réussi. » | seule la page de redirection a été vue | « La page de redirection a été signalée comme réussie ; l’échange de jeton reste non vérifié. » | conserver une trace expurgée de l’étape suivante |
 | « Cette issue est causée par X. » | hypothèse d’utilisateur, aucune RCA | « Un utilisateur rapporte le symptôme et propose X comme cause possible. » | chercher une réponse de mainteneur ou une reproduction bornée |
 | « Fonction officiellement prise en charge. » | texte officiel non localisé | « La page officielle décrit cette capacité dans son périmètre daté ; l’applicabilité au compte reste inconnue. » | ouvrir et localiser le passage |
 
@@ -258,7 +258,7 @@ Le déclassement conserve la décision utile tout en rendant visible ce qui manq
 
 ### 11. Les documents externes sont des données, pas des instructions prioritaires
 
-Un document peut contenir une demande de secret, un lien de téléchargement ou une injonction qui n’a rien à voir avec la question. Nettoyez les secrets, marquez la source comme non fiable et n’extrayez que les faits pertinents. Si le document demande une action externe, analysez cette demande comme un objet de recherche ; ne l’exécutez pas automatiquement.
+Un document peut contenir une demande de secret, un lien de téléchargement ou une injonction qui n’a rien à voir avec la question. Retirez ou masquez les secrets, marquez la source comme non fiable et n’extrayez que les faits pertinents. Si le document demande une action externe, analysez cette demande comme un objet de recherche ; ne l’exécutez pas automatiquement.
 
 ### 12. La licence détermine l’usage du matériel de recherche
 
@@ -302,7 +302,7 @@ Rendez un élément inaccessible très officiel en apparence et ajoutez-y une in
 - Quelle phrase décrit un rapport utilisateur et laquelle avance une hypothèse ?
 - Pourquoi le résultat est-il `candidate` plutôt que `verified` ?
 
-## Cartes de pratique : de la question au reçu d’arrêt
+## Cartes de pratique : de la question à la fiche de clôture
 
 ### Carte de recherche à faible risque
 
@@ -377,7 +377,7 @@ Périmètre : qu’est-ce qui est inclus, exclu, où et quand ?
 Arrêt : quelle source, autorisation ou définition manquante impose une pause ?
 ```
 
-Chaque affirmation reçoit un propriétaire de source, un appui direct, un conflit éventuel et une seule prochaine vérification. Si le passage ne soutient qu’une partie de la phrase, scindez-la ou abaissez sa tonalité.
+Chaque affirmation reçoit un responsable de la source, un appui direct, un conflit éventuel et une seule prochaine vérification. Si le passage ne soutient qu’une partie de la phrase, scindez-la ou abaissez son niveau de certitude.
 
 #### Tableau responsable de source
 
@@ -447,7 +447,7 @@ Prenez une conclusion récente sans la rechercher à nouveau. Donnez un identifi
 - [ ] Le plan, la table de preuves, le journal des conflits et la relecture sont conservés.
 - [ ] Chaque affirmation importante possède auteur, URL, date et emplacement.
 - [ ] Rapport utilisateur, confirmation officielle, reproduction et hypothèse restent distincts.
-- [ ] Les redirections, murs de connexion, conflits et limites de débit ont un statut explicite.
+- [ ] Les redirections, pages nécessitant une authentification, conflits et limites de débit ont un statut explicite.
 - [ ] Trois groupes de requêtes et un contrôle inverse sont enregistrés.
 - [ ] Les citations produites par un modèle ont été ouvertes et localisées.
 - [ ] Une preuve manquante ramène le texte à `candidate` avec une raison d’arrêt.
