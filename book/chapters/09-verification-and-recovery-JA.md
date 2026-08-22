@@ -30,7 +30,7 @@ Agent は、誤りや範囲外の変更、実行していない処理、別の�
 | TUI composer に貼った non-BMP 文字が消えるという報告（[#37578](https://github.com/openai/codex/issues/37578)） | composer の見た目は入力の完全性ではない | 無害な fixture で意図した文字列と受信した文字列を比較してから、重要な依頼を送る | 入力が保存されていないまま edit、commit、送信を行う |
 | 長い checkpoint ref で Windows Git が `bad ref` や `Filename too long` を返すという報告（[#37559](https://github.com/openai/codex/issues/37559)） | Agent 内部の状態と通常の project state は同じではない | 許可された診断範囲で `git status`、`git show-ref`、`git fsck --full`、`git worktree list`、正確な ref path を記録する | backup と authority なしに `.git` を削除、設定変更、fetch、ref 修復を行う |
 
-プロジェクトの [Windows input and evidence field problems](../../docs/research/field-problems-input-and-evidence-p3-2026-08-11.md)
+プロジェクトの [Windows input and evidence field problems](../evidence-library-JA.md#source-notes)
 には、報告の version、evidence boundary、転用できる表があります。実務上のルールは、
 **retry の前に最小の durable artifact を保存する**ことです。output file、受信入力の比較、
 diff、hash、command log、redacted handoff のどれでも構いません。community workaround は
@@ -38,7 +38,7 @@ triage の手がかりにはなりますが、公式の修正や永続的な環�
 
 ### 現場ケース：command が終わっても claim を review できない
 
-[FC-EVIDENCE-01](../../docs/research/field-case-hidden-verification-output-2026-08-12.md) は、
+[FC-EVIDENCE-01](../evidence-library-JA.md#source-notes) は、
 実行したことと監査できる evidence を分けるための bounded case です。参照している issue
 （#34951）は open のままで、公開された maintainer diagnosis はなく、このプロジェクトでも
 再現していません。必要な output が隠れている、または残っていないなら、すでに許可された
