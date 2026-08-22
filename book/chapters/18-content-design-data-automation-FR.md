@@ -8,7 +8,7 @@ accessible ou publiable.
 
 ## Le problème
 
-Les workflows riches peuvent masquer un écran cassé, un graphique trompeur, une
+Les flux de travail complexes peuvent masquer un écran cassé, un graphique trompeur, une
 licence absente, une écriture dupliquée ou une permission excessive.
 
 ## Objectifs d’apprentissage

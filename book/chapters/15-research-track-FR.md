@@ -27,7 +27,7 @@ Une citation peut sembler précise tout en étant hors contexte, inaccessible ou
 ## Cas réel : une citation élégante peut rester invérifiable
 
 Une URL, une date et un extrait ne prouvent pas que la source soutient le sens
-attribué. Notez l’autorité, le périmètre, l’accessibilité et la fraîcheur.
+attribué. Notez l’autorité, le périmètre, l’accessibilité et la date de mise à jour.
 
 ## Chaîne de recherche
 
@@ -69,7 +69,7 @@ Si la source est inaccessible ou hors sujet, marquez la ligne `unknown`. Cette
 expérience ne remplace ni une revue juridique, médicale ou scientifique.
 
 ### Réflexion
-Quelle contrainte a rendu la question répondable ? Quelle affirmation avez-vous
+Quelle contrainte a rendu la question traitable ? Quelle affirmation avez-vous
 réduite parce que la source ne permettait pas d’aller plus loin ?
 
 ## Transfert

@@ -21,9 +21,9 @@ d’état ; elle ne constitue pas une vérification.
 
 ## Problèmes de terrain
 
-Une page de catalogue peut être ancienne, incomplète ou incompatible avec votre hôte. « Trouvable » décrit une découverte, pas une licence claire ni un test sûr.
+Une page de catalogue peut être ancienne, incomplète ou incompatible avec votre hôte. « Repérable » décrit une découverte, pas une licence claire ni un test sûr.
 
-## Cas réel : « trouvable » ne veut pas dire « adoptable »
+## Cas réel : « repérable » ne veut pas dire « adoptable »
 
 Une fiche peut être ancienne, incomplète ou incompatible avec votre hôte. Les
 instructions contenues dans le Skill sont des données à examiner jusqu’à ce que

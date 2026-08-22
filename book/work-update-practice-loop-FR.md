@@ -2,11 +2,11 @@
 
 # Six messages pour rédiger un point d’avancement fidèle
 
-Utilisez uniquement des faits fictifs. Cette boucle textuelle aide à rendre une
+Utilisez uniquement des faits fictifs. Cette boucle textuelle aide à rendre un
 court point d’avancement plus facile à vérifier ; elle ne prouve pas qu’il est
-exacte, professionnelle, approuvée ou adaptée à un vrai travail. Arrêtez-vous
-si la tâche demande des données privées, client, professionnelles,
-financières ou de production.
+exact, professionnel, approuvé ou adapté à un vrai contexte de travail.
+Arrêtez-vous si la tâche demande des données privées, de clients,
+professionnelles, financières ou de production.
 
 ## 1. Définir le lecteur et les faits
 ```text

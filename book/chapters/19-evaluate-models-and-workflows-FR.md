@@ -1,6 +1,6 @@
 <!-- content_id: chapter-19-evaluate-models-and-workflows | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-21-fr-course-slice -->
 
-# Chapitre 19 : Évaluer modèles et workflows, des impressions aux preuves
+# Chapitre 19 : Évaluer les modèles et les flux de travail, des impressions aux preuves
 
 **Statut :** `candidate` · **Expérience :** `not_run`  
 Les fixtures du dépôt ne contiennent pas de journaux de comparaison exécutés.

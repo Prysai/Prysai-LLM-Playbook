@@ -2,7 +2,7 @@
 
 # Mise en pratique facultative : langue, travail et recherche
 
-Pour une pratique courte et guidée, ouvrez la [boucle de mise à jour de travail](work-update-practice-loop-FR.md) ou la [boucle de vérification de recherche](research-check-practice-loop-FR.md). Ces cartes s’utilisent après le [guide de base](guides/llm-fundamentals-FR.md) ; ce n’est pas une introduction à ce qu’est un LLM.
+Pour une pratique courte et guidée, ouvrez la [boucle du point d’avancement](work-update-practice-loop-FR.md) ou la [boucle de vérification de recherche](research-check-practice-loop-FR.md). Ces cartes s’utilisent après le [guide de base](guides/llm-fundamentals-FR.md) ; ce n’est pas une introduction à ce qu’est un LLM.
 
 **Statut :** `candidate` · **Exécution :** `not_run` · **Données :** textes fictifs ou autorisés uniquement.  
 état : template_selected | practised | not_run | blocked
@@ -38,7 +38,7 @@ Demandez ensuite une question différente, sans reprendre votre première phrase
 Le but est d’observer une correction et un nouveau cas, pas d’apprendre une
 réponse par cœur.
 
-## B. Commencez ici : expression et décisions au travail
+## B. Commencez ici : communication et décisions au travail
 
 ### 3. Une mise à jour fidèle
 

@@ -56,7 +56,7 @@ ne constitue pas une migration vérifiée.
 ### Échec et limite
 
 Si la source ou la portée est inconnue, bloquez la migration. Une carte statique
-ne prouve ni la fraîcheur permanente ni le comportement de production.
+ne prouve ni l’actualité permanente ni le comportement en production.
 
 ### Réflexion
 

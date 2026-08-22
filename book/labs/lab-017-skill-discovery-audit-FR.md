@@ -34,7 +34,7 @@ licence claire et une sortie locale ; l’autre réclame un secret.
 
 ## Tâche
 
-Pour chaque candidat, notez : existe, trouvable, installé, chargé, comportement
+Pour chaque candidat, notez : existe, repérable, installé, chargé, comportement
 observé, licence, propriétaire et adoption. La carte doit conserver la révision
 exacte.
 

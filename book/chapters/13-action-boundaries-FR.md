@@ -4,7 +4,7 @@
 
 ## Le problème que résout ce chapitre
 
-Lire, éditer, exécuter, valider, committer, pousser et publier n’ont ni le même
+Lire, éditer, exécuter, valider, créer un commit, pousser et publier n’ont ni le même
 effet ni la même récupération. Les regrouper sous « travailler sur le projet »
 fait perdre la décision qui devait être confirmée.
 
@@ -34,7 +34,7 @@ Remplissez :
 | Lire | fichier nommé | lecture locale | aucun | contenu lu | n/a |
 | Éditer | un fichier | écriture locale | réversible | diff | restaurer la copie |
 | Exécuter | contrôle ciblé | terminal | variable | sortie et code | arrêter/inspecter |
-| Committer | historique local | dépôt | persistant | SHA et diff | revert contrôlé |
+| Créer un commit | historique local | dépôt | persistant | SHA et diff | revert contrôlé |
 | Pousser | branche distante | compte autorisé | externe | SHA distant | correction coordonnée |
 | Publier | site ou release | mainteneur | public | URL et artefact | rollback publié |
 

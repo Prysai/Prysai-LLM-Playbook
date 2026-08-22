@@ -21,11 +21,11 @@ ses preuves et ses cas où il doit refuser d’agir.
 
 ## Problèmes de terrain
 
-Un Skill peut être présent sans être trouvable, chargé ou autorisé. Une fiche qui ne décrit pas le non-déclenchement pousse l’utilisateur à élargir la demande au lieu de s’arrêter.
+Un Skill peut être présent sans être repérable, chargé ou autorisé. Une fiche qui ne décrit pas le non-déclenchement pousse l’utilisateur à élargir la demande au lieu de s’arrêter.
 
 ## Cas réel : le problème peut arriver avant le déclenchement
 
-« Le Skill est installé » ne dit pas s’il est trouvable, chargé, autorisé ou
+« Le Skill est installé » ne dit pas s’il est repérable, chargé, autorisé ou
 adapté à la demande. Chaque état doit avoir sa propre observation.
 
 ## Le contrat minimal
