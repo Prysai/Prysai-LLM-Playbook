@@ -541,7 +541,7 @@ that HTTP reachability is a semantic source review.
 
 English is the default public language and the first development priority.
 Every reader-facing localized file, including an English source, carries an
-explicit suffix: `-EN`, `-ZH`, `-ES`, `-JA`, `-KO`, `-DE`, or `-ZHTW`.
+ explicit suffix: `-EN`, `-ZH`, `-ES`, `-JA`, `-KO`, `-DE`, `-ZHTW`, or `-FR`.
 
 | Reader entry | Role | Current truth |
 |---|---|---|
@@ -553,6 +553,7 @@ explicit suffix: `-EN`, `-ZH`, `-ES`, `-JA`, `-KO`, `-DE`, or `-ZHTW`.
 | `README-KO.md` | Korean entry | Translation slice; independent language review pending |
 | `README-DE.md` | German entry | Translation slice; independent language review pending |
 | `README-ZHTW.md` | Traditional Chinese entry | Translation slice; independent language review pending |
+| `README-FR.md` | French entry | Translation slice; independent language review pending |
 
 `README.md` is intentionally English because GitHub uses it as the default
 repository face. It is not a second independent English translation:
@@ -567,9 +568,9 @@ the [locale-suffixed content decision](docs/adr/0010-locale-suffixed-content.md)
 On a localized page, links to reader-facing content stay in that locale. When
 the target translation does not exist, the page says so and points to the
 current source with an explicit source-locale notice. It never silently
-presents English as a completed translation. Traditional Chinese is registered
-in the locale matrix and has same-locale paths, but independent language review
-and supplemental-material coverage remain pending.
+presents English as a completed translation. Traditional Chinese and French are
+registered in the locale matrix and have same-locale paths, but independent
+language review and supplemental-material coverage remain pending.
 
 ## How to update the project
 
