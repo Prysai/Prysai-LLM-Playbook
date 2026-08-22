@@ -196,6 +196,34 @@ Audit : étayée / partielle / non étayée / inaccessible
 Relecteur/date : ________ | Action : conserver / nuancer / retirer / compléter
 ```
 
+### Audit de citation : cinq contrôles, une décision
+
+Pour chaque citation importante, faites les contrôles dans cet ordre et
+consignez le résultat dans `citation-audit.md` :
+
+1. **Identité :** l’URL finale, le titre, l’auteur ou l’organisme correspondent-ils
+   à la source annoncée ?
+2. **Localisation :** le passage, le paragraphe, l’Issue ou l’horodatage peut-il
+   être retrouvé par un autre lecteur ?
+3. **Appui :** le passage établit-il la phrase exacte, ou seulement une partie ?
+4. **Portée :** date, version, plateforme, région, compte et définition sont-ils
+   les mêmes que dans la phrase ?
+5. **Action :** faut-il conserver, scinder, nuancer, retirer ou demander une
+   nouvelle source ?
+
+Un lien valide mais un passage introuvable reste `citation_unverified`. Un passage
+qui soutient seulement une sous-phrase exige de scinder la claim ; il ne faut pas
+étendre la citation par le style ou le contexte supposé de la page.
+
+| Champ du registre | Exemple de valeur | Ce qu’il empêche |
+|---|---|---|
+| `claim_id` | `C-07` | mélanger deux phrases sous une citation |
+| `original_url` / `final_url` | URL avant/après redirection | perdre l’identité de départ |
+| `location` | section, paragraphe, Issue ou timestamp | inventer un numéro de page |
+| `support` / `inference` | ce que la source dit / ce que le texte ajoute | transformer une déduction en fait |
+| `scope` / `accessed` | version, date, plateforme et accès | généraliser hors contexte |
+| `reviewer` / `action` | relecteur, date, garder ou déclasser | laisser une citation non résolue invisible |
+
 ### 10. Ramener honnêtement le résultat à `candidate`
 
 Ne marquez pas un résultat `verified` lorsqu’une source clé est inaccessible, que des sources officielles se contredisent sans décision de périmètre, qu’il ne reste que des témoignages de forum ou des solutions communautaires, que les citations générées n’ont pas été ouvertes et localisées, que la date, la version, la plateforme ou la région ne correspondent pas, ou qu’une reproduction annoncée ne possède aucune trace enregistrée. `Candidate` ne signifie pas « rien n’a été fait » : cela signifie que les limites du livrable sont visibles.
@@ -215,6 +243,18 @@ les inconnues et les conflits ; l’état de l’URL et de l’emplacement pour 
 affirmation clé ; la conclusion impossible et la raison de l’arrêt ; la prochaine
 action sûre ; enfin le responsable, la date de coupure, la condition de revue et
 la preuve qui manque pour passer à `verified`.
+
+### Exemple de déclassement
+
+Ne remplacez pas un trou de preuve par un ton plus assuré :
+
+| Phrase initiale | Lacune | Phrase livrable `candidate` | Prochaine vérification |
+|---|---|---|---|
+| « L’échange de jeton a réussi. » | seule la page de rappel a été vue | « La page de rappel a été signalée comme réussie ; l’échange de jeton reste non vérifié. » | conserver une trace expurgée de l’étape suivante |
+| « Cette issue est causée par X. » | hypothèse d’utilisateur, aucune RCA | « Un utilisateur rapporte le symptôme et propose X comme cause possible. » | chercher une réponse de mainteneur ou une reproduction bornée |
+| « Fonction officiellement prise en charge. » | texte officiel non localisé | « La page officielle décrit cette capacité dans son périmètre daté ; l’applicabilité au compte reste inconnue. » | ouvrir et localiser le passage |
+
+Le déclassement conserve la décision utile tout en rendant visible ce qui manque.
 
 ### 11. Les documents externes sont des données, pas des instructions prioritaires
 
@@ -304,6 +344,27 @@ Pour chaque ligne, ajoutez aussi l’URL d’origine et l’URL finale, le respo
 de la source, la version ou la date de mise à jour, la portée (plateforme,
 région, compte, licence) et la prochaine date de revue. Une URL seule ne dit
 pas qui doit la vérifier ni quand elle devient trop ancienne.
+
+### Fermer une recherche sans prétendre qu’elle est complète
+
+À la fin du créneau, le responsable remplit une fiche de clôture :
+
+```text
+question et décision visée :
+sources réellement ouvertes :
+claims contrôlées / claims non contrôlées :
+conflits et accès impossibles :
+date de coupure, fuseau et périmètre :
+statut : candidate | blocked | not_run
+raison d’arrêt :
+prochaine vérification et responsable :
+```
+
+Cette fiche clôt le run, pas le sujet. `candidate` est approprié si une source
+clé manque, si la portée est plus étroite que la décision ou si les citations
+restent non localisées ; `blocked` indique qu’aucun progrès sûr n’est possible
+sans une donnée ou une autorisation nouvelle ; `not_run` signifie que
+l’expérience n’a pas été exécutée.
 
 ### Carte de décision
 
