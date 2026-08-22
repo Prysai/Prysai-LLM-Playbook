@@ -17,7 +17,7 @@ reflection: "Quelle confirmation a réduit le risque ? Que prouve le diff et que
 status: draft
 last_verified: "not run"
 transfer_task: "Réutiliser le protocole pour une recherche à sources fixes ou une révision de texte sans écriture externe"
-transfer_domain: "research, engineering, content, design, or marketing"
+transfer_domain: "recherche, ingénierie, contenu, design ou marketing"
 transfer_evidence: "Deux protocoles, le diff, le contrôle et la liste explicite des points non vérifiés"
 transfer_limitations: "Ce Lab montre une frontière locale ; il ne prouve ni les permissions d’un compte, ni la sécurité d’une production, ni le comportement d’un outil en ligne."
 ---
@@ -44,6 +44,10 @@ N’invente ni test, ni approbation, ni date, ni raison.
 Avant de répondre, nomme les faits manquants qui changeraient la décision.
 ```
 
+Pour chaque réponse, relevez séparément les faits conservés, les éléments
+ajoutés, le format obtenu et les inconnues. Le but n’est pas de préférer une
+formulation ; il est de voir quelle contrainte rend le résultat contrôlable.
+
 ## Préparation
 
 Si vous poursuivez avec une modification, copiez un projet jetable. N’utilisez
@@ -55,6 +59,10 @@ aucun secret, compte, donnée client, réseau, publication ou dépôt de product
 2. Demandez l’état initial et un plan.
 3. Après confirmation, modifiez uniquement `README.md`.
 4. Conservez le diff et la sortie réelle du contrôle.
+
+Avant l’édition, demandez au système de citer la cible et de montrer ce qu’il
+compte modifier. Avant la livraison, lisez vous-même le diff ; un message
+« terminé » n’est pas une preuve.
 
 ## Preuve
 
@@ -72,6 +80,10 @@ non_exécuté: installation, réseau, publication
 Le premier état peut être `FIRST_SAFE_CHANGE_FAILED` : c’est le défaut prévu
 de la fixture. Ne modifiez jamais le vérificateur pour obtenir un succès. Une
 réponse simulée n’est pas une exécution d’outil.
+
+Si le contrôle échoue, conservez l’état, la sortie et la commande exacte.
+Modifiez une seule condition de diagnostic avant une nouvelle tentative ; si
+la cause ou l’autorité reste inconnue, arrêtez-vous et notez `blocked`.
 
 ## Réflexion
 

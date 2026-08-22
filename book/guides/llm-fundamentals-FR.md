@@ -176,4 +176,4 @@ prouve ni l’apprentissage, ni le transfert, ni l’équivalence entre produits
 Cette page est une réécriture pédagogique originale. Les sources de référence
 et la date d’accès sont conservées dans la version anglaise et dans le registre
 du projet. Une relecture indépendante par une personne francophone reste à
-faire ; ce fichier est donc `in-progress`, pas une traduction vérifiée.
+faire ; ce fichier reste `in-progress` / `candidate`, pas une traduction vérifiée.

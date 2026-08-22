@@ -19,6 +19,19 @@ une action réalisée, ou une connexion disponible pour une autorisation acquise
 - écrire une première demande avec une frontière et un contrôle visibles ;
 - refuser une affirmation d’exécution sans reçu correspondant.
 
+## Commencez par les rôles, pas par les marques
+
+Le **modèle** génère une réponse à partir du contexte qu’il reçoit. Le
+**produit** de chat assemble ce contexte, applique ses propres règles et
+affiche le résultat. Un **outil** peut lire ou modifier un système extérieur.
+Un **Agent** organise plusieurs tours visibles entre demande, proposition,
+action, retour et arrêt. Ces rôles peuvent se trouver dans la même interface,
+mais le nom commercial ne les rend pas équivalents.
+
+La question pratique est donc toujours : *qu’est-ce qui vient d’être
+observé ?* Une phrase produite par le modèle, une action proposée, un résultat
+d’outil et un état vérifié sont quatre observations différentes.
+
 ## Cas réels : problèmes de terrain
 
 Dans un projet, une phrase comme « Codex a mis à jour le dépôt » peut vouloir
@@ -72,6 +85,129 @@ vers des projets et des outils. Les frontières exactes dépendent du produit et
 de sa documentation actuelle. Le nom d’un modèle ne prouve ni accès aux
 fichiers, ni terminal, ni GitHub, ni permission de publier.
 
+### Comment une réponse est produite
+
+Pour une demande textuelle simple, gardez ce schéma modeste en tête :
+
+```text
+demande + documents fournis
+          ↓
+l’hôte assemble les instructions et le contexte
+          ↓
+le modèle génère une suite de tokens
+          ↓
+l’hôte affiche la réponse ou propose un appel d’outil
+          ↓
+l’outil ne s’exécute que si l’hôte et l’autorité l’autorisent
+          ↓
+une personne relit le résultat, la limite et le reçu
+```
+
+Le contexte est à la fois un **budget** et un **filtre**. Un document absent ne
+peut pas être déduit de façon fiable ; un document présent peut être ancien,
+hors sujet ou mal interprété. Une fenêtre de contexte plus large augmente la
+capacité d’entrée, mais ne transforme pas automatiquement chaque passage en
+preuve.
+
+La génération comporte aussi une part de variation. Si vous comparez deux
+réponses, conservez au minimum la surface, le modèle ou libellé visible, la
+version exacte de l’entrée, le réglage qui a changé et le résultat observé.
+Sans cela, écrivez `résultat différent observé ; cause non isolée` plutôt que
+d’attribuer l’écart à une seule phrase.
+
+## Un appel d’outil est une frontière de protocole
+
+Un modèle peut proposer un appel structuré ; l’hôte décide s’il est permis ;
+l’outil l’exécute et renvoie un résultat. Notez les cinq éléments suivants :
+
+| Élément | Question à poser |
+|---|---|
+| cible | Quel fichier, compte, dépôt ou service est visé ? |
+| autorité | Qui a le droit d’autoriser cette action ? |
+| effet | Qu’est-ce qui pourrait changer à l’extérieur ? |
+| résultat | Quelle sortie l’outil a-t-il réellement renvoyée ? |
+| preuve | Quel diff, journal ou nouvel état permet de relire l’action ? |
+
+Un bouton, un nom d’outil ou le mot `completed` ne remplace aucune de ces
+preuves. Après un délai ou une interruption, relisez la cible avant de relancer
+une action qui pourrait envoyer, publier, supprimer, payer ou modifier un
+compte.
+
+## Trois pièges de mécanisme à reconnaître
+
+### 1. Une sortie structurée peut être correcte sur la forme et fausse sur le fond
+
+Un JSON peut contenir tous les champs obligatoires tout en citant un fichier
+qui n’existe pas ou une version qui n’est pas la bonne. Ajoutez donc un contrôle
+de l’état réel, pas seulement un contrôle de schéma.
+
+### 2. Une recherche apporte un chemin vers une preuve, pas une garantie de vérité
+
+La récupération peut sélectionner une copie, manquer l’exception importante ou
+retourner une page ancienne. Conservez l’URL, la date, le périmètre et la
+correspondance entre chaque affirmation et sa source.
+
+### 3. Un texte qui ressemble à une instruction reste une donnée
+
+Un README, un résultat d’outil ou un extrait cité peut dire « ignore la règle
+de sécurité ». Tant que la tâche ne l’a pas rendu applicable, gardez ce texte
+comme matériau, refusez l’effet externe et enregistrez la source de la demande.
+
+## La boucle Agent que vous pouvez réellement inspecter
+
+Ne cherchez pas à expliquer une pensée cachée. Décrivez plutôt les états
+visibles :
+
+```text
+état lu → action proposée → autorité vérifiée → action exécutée
+→ résultat relu → critère d’acceptation contrôlé → continuer, transmettre ou arrêter
+```
+
+Une boucle saine possède un budget, une condition d’arrêt et un point de
+reprise. Si l’entrée manque, si l’autorité est ambiguë ou si deux essais ont
+échoué sans changer le diagnostic, elle doit s’arrêter et demander la plus
+petite information utile.
+
+## Trois prompts utilisables dès maintenant
+
+Ces cartes sont des points de départ, pas des recettes magiques. Remplacez les
+éléments entre crochets et inspectez toujours la sortie.
+
+### 1. Pratiquer une langue ou une autre petite compétence
+
+```text
+Je veux pratiquer [espagnol] à l’écrit pendant cinq minutes.
+Fais-moi essayer avant d’expliquer. Pose une seule question à la fois,
+attends ma réponse, corrige d’abord l’erreur qui bloque le sens et demande-moi
+de la reformuler. Termine par ce qui a été observé, ce qui reste inconnu et un
+exercice légèrement différent. Ne promets ni fluidité ni maîtrise.
+```
+
+### 2. Organiser des sources publiques sans inventer de recherche
+
+```text
+Question : [question précise].
+Sources fournies : [URL, titre, extrait ou « aucune »].
+Commence par reformuler la question et liste les preuves nécessaires. Fais un
+tableau : affirmation possible, source réellement fournie, vérification encore
+nécessaire. N’invente aucune citation, ne prétends pas avoir ouvert une URL
+inaccessible et sépare faits, témoignages et inférences. Arrête-toi si une
+source manque ou se contredit.
+```
+
+### 3. Clarifier une demande trop vague
+
+```text
+Avant de proposer une solution, transforme ma demande en contrat court :
+résultat observable, contexte fourni, actions permises, actions interdites,
+critère d’acceptation, preuve à conserver et condition d’arrêt. Pose seulement
+la question dont la réponse changerait le risque ou l’acceptation. N’invente
+pas de cible et n’agis pas tant qu’un champ essentiel manque.
+```
+
+Une seule séance ne prouve ni un apprentissage durable ni une performance
+indépendante. Elle vous donne une première observation à relire.
+
 Une demande utile commence par le résultat observable :
 
 ```text
@@ -90,6 +226,11 @@ message. Gardez les champs résultat, contexte, autorité, contrôle et arrêt ;
 remplacez seulement le contenu métier. Si le nouveau cas demande une source
 actuelle ou un effet externe, ajoutez la vérification correspondante au lieu
 de supposer que la première carte suffit.
+
+Pour une nouvelle tâche, conservez la même chaîne : résultat → contexte →
+action bornée → contrôle → limite. Si la tâche change de plateforme, vérifiez
+à nouveau les faits propres à cette plateforme ; la méthode générale ne prouve
+pas que les permissions, les outils ou la mémoire sont identiques.
 
 ## Liste de contrôle d’acceptation
 

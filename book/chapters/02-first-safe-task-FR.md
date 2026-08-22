@@ -18,6 +18,17 @@ doit au contraire être petite, réversible, visible et sans données sensibles.
 - conserver un diff et un contrôle ciblé ;
 - arrêter l’action quand une entrée, une autorité ou une preuve manque.
 
+## Les six conditions d’une première tâche
+
+Avant de demander une modification, vérifiez :
+
+1. la cible exacte et son état initial sont lisibles ;
+2. le résultat attendu tient en une phrase observable ;
+3. les entrées autorisées et les interdits sont nommés ;
+4. l’action reste locale, réversible et sans secret ;
+5. le contrôle de sortie est connu avant l’édition ;
+6. un arrêt est prévu si l’entrée, l’autorité ou la preuve manque.
+
 ## Cas réels : problèmes de terrain
 
 « Rends ce projet plus professionnel » ne dit ni quel fichier changer, ni ce
@@ -45,6 +56,15 @@ Arrêt : tout autre fichier, permission ou fait non fourni.
 Demandez d’abord un état initial et un plan. Ne validez qu’après avoir lu la
 cible et le contrôle qu’elle documente.
 
+### Trois moments où l’on confirme
+
+- **Avant l’action :** la cible, le périmètre et les fichiers autorisés sont
+  corrects.
+- **Avant un effet externe :** la personne confirme l’autorité, le destinataire
+  et l’effet attendu.
+- **Avant la livraison :** le diff, le contrôle et les éléments non testés sont
+  relus.
+
 ### Preuve
 
 Conservez la version avant, le diff après et la sortie du contrôle. Distinguez
@@ -55,6 +75,10 @@ Conservez la version avant, le diff après et la sortie du contrôle. Distinguez
 Si l’outil prétend avoir terminé sans diff, marquez la modification
 `non_observée`. Si la vérification exige une installation ou un accès externe,
 arrêtez-vous ; ce n’est pas une extension automatique de la tâche.
+
+Ne confondez pas non plus « commande lancée » et « contrôle réussi », ni
+« configuration présente » et « capacité démontrée ». Chaque affirmation a son
+propre reçu.
 
 ### Réflexion
 
@@ -79,8 +103,8 @@ la preuve et l’arrêt.
 
 Ce protocole est une méthode stable du projet. Les commandes et surfaces
 propres à un produit doivent être confirmées dans leur documentation actuelle.
-Cette version française est `in-progress`, `candidate` et `not_run`; elle ne
-prouve pas un résultat d’apprentissage.
+Cette version française reste `candidate` et `not_run` ; elle ne prouve pas un
+résultat d’apprentissage.
 
 Continuez avec le [Chapitre 3 : transformer un souhait en protocole](03-task-protocol-FR.md).
 

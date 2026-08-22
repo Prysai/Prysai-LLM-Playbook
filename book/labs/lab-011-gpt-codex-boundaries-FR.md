@@ -17,7 +17,7 @@ reflection: "Quelle couche avez-vous cessé de confondre avec la suivante ?"
 status: draft
 last_verified: "not run"
 transfer_task: "Appliquer la matrice à une recherche ou à une reformulation sans outil externe"
-transfer_domain: "research, content, engineering, or design"
+transfer_domain: "recherche, contenu, ingénierie ou design"
 transfer_evidence: "Matrice, deux observations, différence contrôlée et inconnues"
 transfer_limitations: "La simulation ne prouve aucun comportement de produit, de permission ou d’Agent en direct."
 ---
@@ -37,6 +37,12 @@ interdite, la preuve minimale et la condition d’arrêt :
 | D | Réessayer jusqu’à ce que cela paraisse réussi, sans journal intermédiaire. |
 | E | Le système est connecté, donc publier sans contrôle. |
 
+Repères attendus : A relève de la génération ; B combine lecture et édition
+locale bornée ; C demande un effet externe et doit rester bloqué ici ; D est une
+boucle sans budget ; E confond connexion, autorité et preuve. Justifiez chaque
+classement avec la plus petite observation nécessaire, sans présenter ces
+repères comme un résultat de produit.
+
 ## Préparation
 
 Écrivez une ligne `not_observed` lorsqu’une preuve manque. Ne remplacez pas une
@@ -51,7 +57,11 @@ Répétez cette question avec une seule modification de contexte :
 
 La variable changée peut être la cible, une règle courte ou un critère
 d’acceptation. Si l’effet change mais que la cause n’est pas isolée, écrivez
-`different outcome observed; cause not isolated`.
+`résultat différent observé ; cause non isolée`.
+
+Conservez aussi la version exacte de l’entrée et l’état de l’outil. Une réponse
+différente n’identifie pas sa cause si le modèle, la surface ou la configuration
+ont changé en même temps.
 
 ## Preuve
 
@@ -64,6 +74,10 @@ run_id | version d’entrée | surface/modèle | variable changée | outil appel
 
 Une session connectée, un statut `completed` ou une phrase du modèle ne prouve
 pas une publication. L’expérience reste statique et `not_run`.
+
+Après une interruption, l’état distant doit être relu avant toute nouvelle
+écriture. La bonne récupération est une observation plus petite, pas une
+répétition automatique.
 
 ## Réflexion
 

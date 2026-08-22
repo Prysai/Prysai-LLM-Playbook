@@ -52,16 +52,25 @@ un repère de registre ; il ne prouve pas qu’une exécution a eu lieu.
 Demandez uniquement les questions de clarification et un protocole. Le modèle
 ne doit ni choisir une cible ni agir.
 
+Conservez les questions : elles montrent quelles décisions manquent encore.
+
 ### v2 — objectif et limites
 
 Ajoutez le public, le résultat observable, les fichiers lisibles, les fichiers
 éditables et les actions interdites. Comparez les questions supprimées et celles
 qui restent.
 
+Ne supprimez pas une question seulement parce qu’elle ralentit la réponse ;
+supprimez-la lorsque le nouvel objectif la rend réellement inutile.
+
 ### v3 — acceptation et récupération
 
 Ajoutez les preuves attendues, les conditions d’arrêt, la récupération après
 échec et le format de livraison. Une modification est un échec de périmètre.
+
+Ajoutez aussi ce qui doit être transmis à la personne suivante et ce qui reste
+`unverified`. Un protocole complet décrit la sortie attendue, mais ne rend pas
+les entrées vraies.
 
 ## Preuve à conserver
 
@@ -99,7 +108,8 @@ ou un plan de publication.
 ## Sources et limite de mise à jour
 
 **Statut :** `draft` · **Exécution :** `not_run`. Le Lab ne prouve ni la qualité
-d’un prompt ni une capacité produit. Traduction française en cours de relecture.
+d’un prompt ni une capacité produit. La version française reste candidate ; une
+relecture indépendante est encore nécessaire.
 
 <!-- lab-navigation:start -->
 <hr>

@@ -16,6 +16,22 @@ Construire une carte courte qui rend la tâche exécutable et contrôlable :
 résultat, entrées, contraintes, actions autorisées, réception, preuves,
 échec, arrêt et transmission.
 
+## Les huit champs du protocole
+
+Un protocole utile ne demande pas une longue formule. Il sépare huit décisions :
+
+1. **Résultat :** quel objet ou quelle décision doit exister à la fin ?
+2. **Contexte :** quelles informations de départ sont réellement disponibles ?
+3. **Entrées :** quels fichiers, passages ou sources peuvent être lus ?
+4. **Contraintes :** qu’est-ce qui doit rester vrai ou ne doit pas arriver ?
+5. **Actions permises :** que peut proposer ou faire le système, et qu’est-ce qui
+   reste soumis à confirmation ?
+6. **Acceptation :** quelle observation soutient chaque affirmation de fin ?
+7. **Échec et arrêt :** quelle condition bloque, et quelle est la plus petite
+   récupération sûre ?
+8. **Transmission :** que doit recevoir la personne suivante, y compris les
+   inconnues ?
+
 ## Entrée du problème réel
 
 Les erreurs coûteuses commencent souvent par un mot vague : « optimise »,
@@ -49,6 +65,22 @@ Format de transmission :
 Avant de demander une génération, faites relire la carte et posez seulement la
 question qui changerait le risque ou le critère d’acceptation.
 
+### Un prompt de départ réutilisable
+
+```text
+Résultat : [résultat observable]
+Contexte : [faits et documents fournis]
+Aide autorisée : [ce que le modèle peut proposer ou vérifier]
+Contraintes : [faits à préserver et actions interdites]
+Réponse : [format attendu]
+Contrôle : [ce que je vérifierai moi-même]
+Arrêt : [entrée, autorité, source ou preuve manquante]
+```
+
+Une instruction citée dans un document reste une donnée tant que la tâche ne
+la rend pas explicitement applicable. Le prompt encadre le travail ; il ne crée
+ni accès, ni permission, ni preuve.
+
 ### Preuve
 
 Conservez la carte, la première réponse et la comparaison entre le résultat
@@ -70,6 +102,11 @@ réduisant le périmètre ?
 Écrivez une seconde carte pour une recherche à sources imposées ou pour une
 révision de texte. Comparez les champs stables et les champs propres au domaine.
 
+Pour une recherche, remplacez la cible par une question, ajoutez les URL et la
+date d’accès, puis séparez faits, témoignages et inférences. Pour une révision
+de texte, gardez le texte source, le diff et la règle qui interdit d’ajouter des
+faits. Dans les deux cas, conservez une liste explicite des inconnues.
+
 ## Liste de contrôle d’acceptation
 
 - [ ] Le résultat peut être observé sans interprétation vague.
@@ -82,7 +119,8 @@ révision de texte. Comparez les champs stables et les champs propres au domaine
 
 Le protocole est une méthode originale et stable. Les permissions, commandes,
 versions et fonctions d’un produit exigent une source officielle datée. Cette
-traduction française est en cours de relecture et reste `candidate / not_run`.
+traduction française reste `candidate / not_run` ; une relecture indépendante
+est encore nécessaire.
 
 Passez à la [vérification et récupération](09-verification-and-recovery-FR.md).
 
