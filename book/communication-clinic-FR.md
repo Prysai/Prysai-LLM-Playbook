@@ -48,9 +48,9 @@ réponse par cœur.
 ```text
 Transformez ces notes en une mise à jour destinée à [public].
 Notes : [fait 1], [fait 2], [encore inconnu].
-Liste d’abord les faits vérifiables. N’ajoute ni date, ni promesse, ni statut de
-fin, ni raison. N’ajoutez ni date, ni promesse, ni statut d’achèvement, ni
-justification. Donnez une version de 120 mots maximum et une version plus
+Listez d’abord les faits vérifiables. N’ajoutez ni date, ni promesse, ni statut
+d’achèvement, ni justification. Donnez une version de 120 mots maximum et une
+version plus
 formelle. Terminez par deux points que je dois vérifier avant l’envoi.
 ```
 
