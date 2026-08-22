@@ -77,6 +77,7 @@ exactitude automatique, ni maîtrise d’une langue en quelques jours, ni
 La traduction française est `in-progress` et le contenu reste `candidate`.
 La couverture structurelle ne signifie pas que les textes sont certifiés
 « niveau natif », ni que les résultats d’apprentissage ou la fiabilité des
-Skills ont été démontrés. Voir la [matrice des langues](docs/governance/locale-matrix.yaml)
-et l’[état de publication](docs/governance/release-readiness.yaml) pour les
-limites actuelles.
+Skills ont été démontrés. Consultez la [bibliothèque française des preuves](book/evidence-library-FR.md#method-and-status)
+pour les limites actuelles et les règles de lecture des sources. Les documents
+de gouvernance internes restent dans leur langue de maintenance et ne
+constituent pas une traduction française publiée.
