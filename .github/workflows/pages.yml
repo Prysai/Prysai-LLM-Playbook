@@ -216,6 +216,11 @@ jobs:
           path: _site
           github-token: ${{ github.token }}
 
+      - name: Set up Python for the public verifier
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+
       - name: Verify the public Docs site matches this artifact
         run: >-
           python scripts/check_deployed_site.py
