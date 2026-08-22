@@ -63,3 +63,4 @@ Current entry points:
 - [ADR-0045: deploy only the validated Pages artifact](0045-deploy-only-validated-pages-artifact.md)
 - [ADR-0046: constrain Reader source loading and maintain CodeQL v4](0046-reader-source-boundary-and-codeql-v4.md)
 - [ADR-0047: record the post-mutation host boundary receipt](0047-post-mutation-host-boundary-receipt.md)
+- [ADR-0048: verify the public Docs host after artifact publication](0048-post-publish-public-artifact-check.md)

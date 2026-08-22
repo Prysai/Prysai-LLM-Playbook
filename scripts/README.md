@@ -163,6 +163,22 @@ before serving it. It is not a deployment command. Run
 artifact boundary, credential-signature and symlink guards, loopback binding,
 artifact root, listing boundary, and path-traversal boundary.
 
+`check_deployed_site.py` is the post-publish public-integrity check used by
+the Docs deployment job. It compares the generated discovery files, every
+static locale entry, and route-critical Reader assets with the public host
+using a bounded retry window. It is intentionally separate from content,
+translation, learner, and release-readiness evidence. Run it only with an
+explicit artifact and public base URL, for example:
+
+```powershell
+& $py scripts\check_deployed_site.py `
+  --artifact _site `
+  --base-url https://docs.prysai.com/llm-playbook/ `
+  --attempts 18 `
+  --delay-seconds 10 `
+  --cache-buster $env:GITHUB_SHA
+```
+
 `build_site_search_index.py` generates the dependency-free browser search index
 from canonical content identities and Markdown sources. It deduplicates
 language variants, records explicit fallback state, and must pass `--check`

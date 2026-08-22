@@ -14,6 +14,13 @@ Playbook is ready for public production use.
 
 ### Changed
 
+- **Post-publish public consistency check.** The Docs deployment now compares
+  the public discovery files, eight static locale entries, and route-critical
+  Reader assets with the exact Pages artifact after publication. A bounded
+  propagation window fails the deployment when the public host still serves
+  stale or fallback bytes; this is deployment-integrity evidence, not proof of
+  translation quality, learning outcomes, or release readiness.
+
 - **Open licenses adopted.** Project-owned content (curriculum, diagrams,
   teaching assets, Skill instructions) moves from CC BY-NC 4.0 to **CC BY 4.0**,
   and scripts/tooling move to **Apache-2.0** (new `LICENSE-CODE`). Reuse,

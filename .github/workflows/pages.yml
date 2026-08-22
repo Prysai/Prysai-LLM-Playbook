@@ -14,6 +14,7 @@ on:
       - "AGENTS.md"
       - "CONTEXT.md"
       - "scripts/build_*.py"
+      - "scripts/check_deployed_site.py"
       - "scripts/validate_*.py"
       - "README*.md"
       - ".github/workflows/pages.yml"
@@ -193,3 +194,34 @@ jobs:
           -o StrictHostKeyChecking=yes
           -o UserKnownHostsFile="$HOME/.ssh/known_hosts"
           prysai-docs-deploy@docs.prysai.com
+
+  verify-docs-prysai-public:
+    needs: docs-prysai-deploy
+    if: ${{ needs.docs-prysai-deploy.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - name: Check out deployment verifier
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Download the validated Pages artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: pages-candidate-${{ github.sha }}
+          path: _site
+          github-token: ${{ github.token }}
+
+      - name: Verify the public Docs site matches this artifact
+        run: >-
+          python scripts/check_deployed_site.py
+          --artifact _site
+          --base-url https://docs.prysai.com/llm-playbook/
+          --attempts 18
+          --delay-seconds 10
+          --timeout-seconds 10
+          --cache-buster "${{ github.sha }}"
