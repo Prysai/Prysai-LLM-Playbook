@@ -130,8 +130,8 @@ contrôle ultérieur qui pourrait renforcer — ou réfuter — l’affirmation 
 
 ## Sources et entretien
 
-- [Apprentissage durable assisté par LLM](../../docs/research/durable-llm-assisted-learning-and-skill-candidates-2026-08-12.md) — synthèse candidate sur le rappel, le feedback, l’espacement, la rétention, le transfert et les limites d’affirmation ; consultée le 12/08/2026.
-- [Terminologie du projet](../../CONTEXT.md) — distinction entre modèles, outils, Skills, Agents, preuves et parcours d’apprentissage.
+- [Apprentissage durable assisté par LLM](../evidence-library-FR.md#source-notes) — synthèse candidate sur le rappel, le feedback, l’espacement, la rétention, le transfert et les limites d’affirmation ; consultée le 12/08/2026.
+- [Terminologie du projet](../evidence-library-FR.md#core-terms) — distinction entre modèles, outils, Skills, Agents, preuves et parcours d’apprentissage.
 - [Pack de pratique débutant](../communication-clinic-FR.md) — routes de langue, de travail et de recherche qui appliquent ce contrat.
 
 Ce guide est un texte original du projet. La fiche de recherche indique ce que
