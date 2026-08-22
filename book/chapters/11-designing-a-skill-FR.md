@@ -164,6 +164,16 @@ Sans `allowed_actions`, aucune limite n’est déclarée. Sans `stop_when`, un
 échec devient une série de reprises ouvertes. Sans `evidence`, la prose reste
 impossible à contrôler.
 
+### Le contrat minimal n'est pas la prose du Skill
+
+Le contrat doit rester lisible par une personne qui n'a pas vu le reste du
+chapitre. Il répond à cinq questions avant tout chargement : quelle demande
+déclenche la méthode, quelles entrées sont requises, quelles actions sont
+permises, quel résultat doit être observable et quelle condition impose l'arrêt.
+Pour chaque champ, conservez la révision du contrat et le statut de
+l'observation ; `not_run` signifie que la branche n'a pas été exécutée, pas
+qu'elle a réussi.
+
 | Champ | Bonne question | Exemple solide |
 |---|---|---|
 | `purpose` | Quel travail répétable ? | Transformer des faits fournis en brouillon borné. |
@@ -247,6 +257,20 @@ autorisation de lire, écrire, appeler ou publier.
 Le test est réussi lorsque la décision, le relais et l’absence de modification
 hors périmètre sont lisibles dans le registre de run.
 
+### Le non-déclenchement fait partie du produit
+
+Un Skill fiable sait céder la place. Ajoutez au moins un cas voisin, une demande
+dont l'entrée manque et une demande qui exigerait une autorité excessive. Pour
+chacun, consignez :
+
+```text
+case_id | demande exacte | entrée observée | décision (continue/ask/handoff/blocked)
+| fichier modifié | preuve | limite
+```
+
+Le test échoue si le Skill invente une source, élargit le chemin d'écriture ou
+présente un résultat comme vérifié alors que le relais n'a pas été accepté.
+
 ## 3. Chargement progressif des ressources
 
 ```text
@@ -312,6 +336,15 @@ exemple « ne jamais afficher un credential » ou « ne pas publier » — ne do
 
 Ne chargez pas tout « pour être complet ». Chaque ressource augmente la surface
 de maintenance et doit supprimer une répétition réelle.
+
+### Chargement progressif et frontière de licence
+
+Une référence longue peut être chargée uniquement pour la branche qui en a
+besoin ; elle doit alors indiquer source, révision, responsable, licence,
+condition de chargement et comportement en cas d'absence. Un asset sans licence
+ou avec une provenance incertaine reste un lien ou un résultat `blocked`, pas un
+fichier intégré. Le chargement progressif réduit le contexte ; il ne masque ni
+une interdiction ni une limite de preuve.
 
 ## 4. Entrées, permissions et secrets
 
@@ -509,6 +542,33 @@ Pour chaque cas, conservez `case_id`, demande exacte, décision, fichiers lus,
 fichiers écrits, preuve, limite et relecture. Quatre sorties convaincantes sans
 ces champs ne forment pas une évaluation reproductible.
 
+### Cas positif : ce que signifie réussir
+
+La sortie sépare faits, hypothèses et inconnues, cite l'entrée fournie et reste
+dans le chemin autorisé. Le passage n'est pas « la prose semble bonne » : le
+relecteur doit pouvoir retrouver la demande, la révision de l'entrée, le
+résultat et le contrôle qui soutient l'affirmation.
+
+### Cas limite : céder sans agir
+
+Une demande de rédaction libre, de recherche externe ou de publication doit
+produire un relais explicite (`handoff`, `ask` ou `blocked`) et aucun fichier
+hors de la fixture. Une décision de non-déclenchement est un résultat positif
+du contrat, pas une erreur de capacité.
+
+### Cas d'entrée absente : ne jamais compléter silencieusement
+
+Si le rapport, le chemin ou le critère manque, conservez l'absence et posez une
+question ciblée. Un texte plausible, une recherche improvisée ou une citation
+de mémoire est un échec de contrat, même s'il est grammaticalement correct.
+
+### Cas de transfert : réécrire les hypothèses
+
+Pour un domaine différent, remplacez les faits, les sources, l'autorité, le
+format de sortie et l'acceptation. Le transfert ne passe pas si seuls les noms
+changent et que les chemins, clients ou permissions de l'ancien cas restent
+implicites.
+
 ### Préparation
 
 Créez une copie temporaire de la fixture synthétique. N’utilisez ni compte
@@ -561,6 +621,14 @@ Restaurez la baseline et consignez `failure_class`, `last_known_good`,
 `unsafe_claim_prevented` et `rollback_check`. Une page élégante qui cache une
 limite importante est un échec.
 
+### Mutation et signal attendu
+
+Conservez avant/après, la commande ou le contrôle utilisé, le code de sortie,
+la cible et le dernier état connu. Le rapport doit permettre à un second lecteur
+de voir la variable modifiée et le signal `FAIL` sans connaître l'historique du
+mainteneur. Une phrase dans un journal ne remplace pas l'artefact qui rend la
+limite visible.
+
 ## 9. Arrêt, préservation et restauration
 
 | Signal | Réponse |
@@ -574,6 +642,14 @@ limite importante est un échec.
 | Aucun état après le délai | Préserver sortie et processus ; ne pas appeler le silence succès. |
 | Échec répété sans nouvelle condition | Arrêter selon la borne et transmettre. |
 | Fichier sans rapport modifié | Geler, capturer le diff, restaurer seulement la tâche. |
+
+### Restaurer sans effacer l'incertitude
+
+Avant la restauration, préservez la baseline, le diff de l'échec, les sorties,
+les identifiants et les effets déjà observés. Restaurez uniquement la copie
+temporaire déclarée ; si l'état d'une cible ou d'un service externe est inconnu,
+arrêtez et demandez une lecture ou une décision humaine. Un `exit 0` ne prouve
+pas que la restauration a atteint la bonne cible.
 
 Avant toute reprise, enregistrez :
 
@@ -632,6 +708,13 @@ next_check: relecture indépendante de la copie restaurée
 Le champ `scope` empêche de transformer une vérification locale en affirmation
 sur un hôte ou une audience différente.
 
+### Ce que l'expérience ne prouve pas
+
+Même avec un contrôle vert, la fixture ne prouve ni la découverte du Skill, ni
+son chargement par un hôte, ni une permission réelle, ni la compréhension d'un
+client, ni un impact commercial. Gardez ces claims `unverified` ou `not_run` et
+nommez l'observation qui serait nécessaire pour les relever.
+
 ## 11. Paquet de preuves et décision d’adoption
 
 ```text
@@ -653,6 +736,14 @@ déblocage. Utilisez `recommendation-only`, `blocked`, `approved-to-install` ou
 Le statut d’adoption est séparé du statut éditorial. Présence, découverte,
 chargement, invocation, adoption et vérification du comportement sont six
 affirmations différentes.
+
+### Préparer un paquet relisible
+
+Le paquet doit pouvoir être inspecté hors de la conversation : contrat et
+révision, source/licence, demandes exactes, décisions de routage, sorties,
+échecs, diff de restauration, preuve de contrôle, transfert, inconnues et
+responsable de la revue. Si un élément n'a pas été exécuté, indiquez-le comme
+`not_run` au lieu de déduire un succès de la structure du dossier.
 
 ### Questions de décision pour un relecteur
 
