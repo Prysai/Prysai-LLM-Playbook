@@ -1,4 +1,4 @@
-<!-- content_id: chapter-02-first-safe-task | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-22-fr-foundation-restoration -->
+<!-- content_id: chapter-02-first-safe-task | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: 2026-08-22-fr-contract-polish -->
 
 # Chapitre 2 : Réaliser une première tâche sûre et vérifiable
 
@@ -109,6 +109,31 @@ Avant toute action :
 Répète l’objectif, les entrées lues, les actions interdites, la preuve d’acceptation
 et la condition d’arrêt. Si un champ manque, pose seulement la question minimale.
 ```
+
+### Les questions de la première réponse
+
+Une première réponse utile ne devrait pas commencer par une modification. Demandez
+à l’outil de reformuler le cadre, puis vérifiez cinq points avant d’autoriser la
+moindre écriture :
+
+1. **Objectif :** quel résultat court et observable est recherché ?
+2. **Entrées :** quels textes, fichiers ou chemins seront effectivement lus ?
+3. **Limites :** quelles actions, données, comptes et surfaces restent interdits ?
+4. **Acceptation :** quel diff, contrôle ou artefact permettra de décider ?
+5. **Arrêt :** quelle information manquante impose de s’arrêter plutôt que de deviner ?
+
+Vous pouvez utiliser cette carte telle quelle :
+
+```text
+Avant toute action, reformule l’objectif, les entrées que tu vas lire,
+les actions que tu n’effectueras pas, la preuve d’acceptation attendue
+et la condition d’arrêt. Si un champ manque ou est ambigu, pose uniquement
+la question minimale ; ne modifie aucun fichier et n’appelle aucun service.
+```
+
+Lisez la reformulation comme une proposition, pas comme une preuve d’exécution.
+Si elle introduit un autre fichier, un compte, une installation ou une action
+externe, réduisez-la ou arrêtez-vous avant de poursuivre.
 
 ## Trois moments de confirmation
 

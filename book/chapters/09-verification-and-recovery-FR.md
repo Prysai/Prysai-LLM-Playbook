@@ -1,4 +1,4 @@
-<!-- content_id: chapter-09-verification-and-recovery | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-22-fr-recovery-restoration -->
+<!-- content_id: chapter-09-verification-and-recovery | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: 2026-08-22-fr-contract-polish -->
 
 # Chapitre 9 : Vérifier, douter et récupérer
 
@@ -122,6 +122,15 @@ visible ? Quel contrôle additionnel changerait la décision ?
 La dernière phrase est plus exigeante que les quatre premières. Un build vert
 est utile, mais il ne prouve pas automatiquement le runtime, le rendu visuel,
 la sécurité ou l’acceptation par les utilisateurs.
+
+### Un statut n’est pas un contrôle de sortie
+
+Les étiquettes `Working`, `Completed`, `success` ou `ready` décrivent une surface
+ou un état rapporté ; elles ne ferment pas à elles seules une affirmation. Pour
+chaque statut, demandez : quel objet a changé, dans quel environnement, avec
+quelle sortie conservée et quelle lecture indépendante ? Si la réponse manque,
+gardez `unverified`, `partial` ou `not_run` au lieu de transformer le libellé en
+conclusion.
 
 ## 3. Récupérer dans un ordre borné
 

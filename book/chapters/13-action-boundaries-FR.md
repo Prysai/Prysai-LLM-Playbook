@@ -1,4 +1,4 @@
-<!-- content_id: chapter-13-action-boundaries | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-22-fr-action-restoration -->
+<!-- content_id: chapter-13-action-boundaries | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: 2026-08-22-fr-contract-polish -->
 
 # Chapitre 13 : Les frontières d’action entre fichiers, terminaux, navigateurs et GitHub
 
@@ -71,7 +71,7 @@ Confirmation humaine : quelle action à fort impact a été approuvée, par qui 
 La connexion n’élargit pas la tâche. Un répertoire inscriptible n’autorise pas
 son édition. Le réseau n’autorise pas un upload. Un connecteur visible ne prouve
 pas l’installation dans la bonne organisation. Une approbation ancienne ne couvre
-pas automatiquement un nouveau dépôt, une nouvelle branche ou un nouvel public.
+pas automatiquement un nouveau dépôt, une nouvelle branche ou un nouveau public.
 
 ### Matrice minimale
 
@@ -80,7 +80,7 @@ pas automatiquement un nouveau dépôt, une nouvelle branche ou un nouvel public
 | Lire une cible locale | Sous une racine lisible et approuvée ? | Bon fichier et périmètre de données ? | Chemin, contenu, statut. |
 | Écrire une copie locale | Chemin exact inscriptible ? | Édition autorisée et réversible ? | Original/hash, diff, contrôle. |
 | Lancer une commande réseau | Réseau activé ? | Quelles données sortent et pourquoi ? | Commande, destination, code, portée. |
-| Appeler un connecteur/MCP | Ressource atteignable avec cette identité ? | Objet distant et payload autorisés ? | Résultat et lecture indépendante de l’état. |
+| Appeler un connecteur/MCP | Ressource distante atteignable avec cette identité ? | Objet distant et payload autorisés ? | Résultat et lecture indépendante de l’état. |
 | Pousser ou publier | Cible distante joignable ? | Compte, branche, audience et révision approuvés ? | SHA distant, URL, job/release, rollback. |
 
 Pour un effet externe, le prompt minimal est un contrat :
