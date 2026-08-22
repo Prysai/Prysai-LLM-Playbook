@@ -3,7 +3,7 @@
 # Prysai LLM Playbook: Lab 목차
 
 <!-- language-switcher:start -->
-**언어:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md)
+**언어:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md) | [Français](README-FR.md)
 <!-- language-switcher:end -->
 
 Lab은 LLM에게 부탁하는 방식이 실제 일을 더 분명하게 만드는지 직접 확인하는 곳입니다. 서류 작업만

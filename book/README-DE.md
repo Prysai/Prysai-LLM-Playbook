@@ -147,7 +147,7 @@ gekennzeichnet, nicht stillschweigend als deutsche Kursseiten ausgegeben.
 
 ## Locale-Regel und Links
 
-Das Projekt unterstützt genau sechs Locales:
+Das Projekt registriert acht Locales:
 
 | Locale | Suffix | URL-Token | HTML-`lang` | Anzeigename |
 |---|---|---|---|---|
@@ -157,6 +157,8 @@ Das Projekt unterstützt genau sechs Locales:
 | JA | `-JA` | `ja` | `ja` | 日本語 |
 | KO | `-KO` | `ko` | `ko` | 한국어 |
 | DE | `-DE` | `de` | `de` | Deutsch |
+| ZHTW | `-ZHTW` | `zh-tw` | `zh-TW` | 繁體中文 |
+| FR | `-FR` | `fr` | `fr` | Français |
 
 Jede translatierbare Datei folgt `<stabiler-stem>-<LOCALE>.md`, auch die
 englische Quelle. Wenn das Ziel existiert, bleibt ein reader-facing Link in

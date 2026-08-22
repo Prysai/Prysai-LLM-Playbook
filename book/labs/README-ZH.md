@@ -3,7 +3,7 @@
 # Prysai LLM Playbook：实验目录
 
 <!-- language-switcher:start -->
-**语言：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md)
+**语言：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md) | [Français](README-FR.md)
 <!-- language-switcher:end -->
 
 实验是你亲自检查“一种向 LLM 求助的方式，是否能让实际工作更清楚”的地方。它不是另一套

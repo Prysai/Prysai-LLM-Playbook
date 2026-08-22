@@ -3,7 +3,7 @@
 # Prysai LLM Playbook: Lab-Übersicht
 
 <!-- language-switcher:start -->
-**Sprachen:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md)
+**Sprachen:** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md) | [Français](README-FR.md)
 <!-- language-switcher:end -->
 
 In den Labs prüfst du selbst, ob eine Art, ein LLM um Hilfe zu bitten, reale Arbeit

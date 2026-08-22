@@ -152,9 +152,9 @@ Reproduktionsstatus müssen deshalb sichtbar bleiben. Die zugehörigen
 Forschungsakten sind noch nicht auf Deutsch verfügbar; diese Einstiegsseite
 verweist deshalb nicht auf ihre Originalsprache.
 
-## Sechs Locales und Dateinamen
+## Acht Locales und Dateinamen
 
-Die sechs Zielsprachen haben eine feste Identität. Der Dateiname folgt immer
+Die acht registrierten Zielsprachen haben eine feste Identität. Der Dateiname folgt immer
 `<stabiler-stem>-<LOCALE>.md`; auch die englische Quelle erhält `-EN`. Eine
 Datei ohne Suffix ist nie der kanonische englische Ersatz.
 
@@ -166,13 +166,15 @@ Datei ohne Suffix ist nie der kanonische englische Ersatz.
 | 日本語 | `-JA` | `ja` | `ja` | Übersetzungslocale |
 | 한국어 | `-KO` | `ko` | `ko` | Übersetzungslocale |
 | Deutsch | `-DE` | `de` | `de` | Übersetzungslocale |
+| 繁體中文 | `-ZHTW` | `zh-tw` | `zh-TW` | Übersetzungslocale |
+| Français | `-FR` | `fr` | `fr` | Übersetzungslocale |
 
 Der stabile Stem und die `content_id` identifizieren denselben Lerngegenstand.
 Zum Beispiel gehören `book/README-EN.md`, `book/README-ZH.md`,
-`book/README-ES.md`, `book/README-JA.md`, `book/README-KO.md` und
-`book/README-DE.md` zusammen. Governance-Dateien, Quellenregister,
-Validatoren und ADRs bleiben locale-neutral und werden nicht künstlich in
-sechs Kopien aufgeteilt.
+`book/README-ES.md`, `book/README-JA.md`, `book/README-KO.md`,
+`book/README-DE.md`, `book/README-ZHTW.md` und `book/README-FR.md` zusammen.
+Governance-Dateien, Quellenregister, Validatoren und ADRs bleiben locale-neutral
+und werden nicht künstlich in acht Kopien aufgeteilt.
 
 ## Links bleiben in derselben Sprache
 

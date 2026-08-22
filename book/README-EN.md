@@ -169,8 +169,8 @@ not become proof by implication.
 
 English is the default public locale. Every localized reader-facing file,
 including an English source file, uses an uppercase suffix such as `-EN`,
-`-ZH`, `-ES`, `-JA`, `-KO`, or `-DE`. The stable chapter identity stays the
-same across translations.
+`-ZH`, `-ES`, `-JA`, `-KO`, `-DE`, `-ZHTW`, or `-FR`. The stable chapter identity
+stays the same across translations.
 
 When a translated target exists, links stay in the reader's current locale.
 Governance files, source registers, validators, and ADRs are intentionally

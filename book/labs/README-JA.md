@@ -3,7 +3,7 @@
 # Prysai LLM Playbook：Lab 目次
 
 <!-- language-switcher:start -->
-**言語：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md)
+**言語：** [English](README-EN.md) | [简体中文](README-ZH.md) | [Español](README-ES.md) | [日本語](README-JA.md) | [한국어](README-KO.md) | [Deutsch](README-DE.md) | [繁體中文](README-ZHTW.md) | [Français](README-FR.md)
 <!-- language-switcher:end -->
 
 Lab は、LLM への頼み方が実際の作業をより明確に進める助けになるかを自分で確かめる場所です。
