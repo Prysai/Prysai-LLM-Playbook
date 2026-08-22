@@ -19,6 +19,7 @@ END = "<!-- starter-task-contract:end -->"
 SITE_START = "<!-- starter-task-contract-site:start -->"
 SITE_END = "<!-- starter-task-contract-site:end -->"
 FORBIDDEN_BEGINNER_TERMS = ("git", "file path", "absolute path", "diff", "command", "terminal")
+LIVE_COPY_GUARD_MARKER = "// Final naming guard for the public no-setup exercise."
 
 
 def load_contract(path: Path = CONTRACT) -> dict[str, Any]:
@@ -122,6 +123,26 @@ def validate_contract(contract: dict[str, Any], *, check_surfaces: bool = True) 
         for forbidden in ("renderFirstWinRecord", "judgment_state:", "first_nonpass"):
             if forbidden in app:
                 errors.append(f"site/app.js must not implement a machine-style self-record: {forbidden}")
+        if LIVE_COPY_GUARD_MARKER not in app:
+            errors.append("site/app.js must contain the five-minute live-copy guard")
+        else:
+            live_copy = app.split(LIVE_COPY_GUARD_MARKER, 1)[1].split("initializeSearch();", 1)[0]
+            required_live_copy = (
+                "Five-minute prompt practice",
+                "5 分钟提示词练习",
+                "Práctica de prompt de cinco minutos",
+                "5分間のプロンプト練習",
+                "5분 프롬프트 연습",
+                "Fünf-Minuten-Prompt-Übung",
+                "5 分鐘提示詞練習",
+                "Pratique de prompt en cinq minutes",
+            )
+            for phrase in required_live_copy:
+                if phrase not in live_copy:
+                    errors.append(f"site/app.js live-copy guard is missing: {phrase}")
+            for phrase in ("15-minute", "15 minutos", "15分", "15분", "15 Minuten"):
+                if phrase in live_copy:
+                    errors.append(f"site/app.js live-copy guard still exposes the old duration: {phrase}")
     return errors
 
 

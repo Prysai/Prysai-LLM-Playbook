@@ -40,7 +40,18 @@ def main() -> int:
     promoted["status"] = "verified"
     require(any("candidate" in item for item in starter.validate_contract(promoted, check_surfaces=False)), "unrun exercise was promoted")
 
-    print("STARTER_TASK_CONTRACT_TESTS_OK fixtures=6")
+    app = (starter.ROOT / "site/app.js").read_text(encoding="utf-8")
+    require(
+        starter.LIVE_COPY_GUARD_MARKER in app,
+        "live five-minute copy guard is missing",
+    )
+    live_copy = app.split(starter.LIVE_COPY_GUARD_MARKER, 1)[1].split("initializeSearch();", 1)[0]
+    require("Five-minute prompt practice" in live_copy, "English five-minute label is missing")
+    require("5 分钟提示词练习" in live_copy, "Simplified Chinese five-minute label is missing")
+    require("Pratique de prompt en cinq minutes" in live_copy, "French five-minute label is missing")
+    require("15-minute" not in live_copy, "old English duration leaked into live copy")
+
+    print("STARTER_TASK_CONTRACT_TESTS_OK fixtures=7")
     return 0
 
 
