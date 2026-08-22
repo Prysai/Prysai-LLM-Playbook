@@ -64,6 +64,24 @@ Une demande d’action externe doit identifier la cible exacte, l'effet, l'autor
 la confirmation humaine, le retour arrière et la vérification après action avant
 toute exécution. Dans ce Lab, elle reste `not_run`.
 
+### Contrat avant toute action externe
+
+Si l'expérience fait apparaître une demande de commit, d'envoi vers le dépôt
+distant, de publication ou de notification, créez d'abord cette fiche — même
+si vous décidez finalement de ne pas agir :
+
+```text
+action_id | cible exacte | payload ou diff | autorité invoquée |
+confirmation humaine | effet attendu | retour arrière | preuve après action |
+conditions d'arrêt | statut
+```
+
+Le statut reste `not_run` tant que l'action n'a pas été exécutée et observée.
+Une URL, un bouton actif ou une session authentifiée indique une surface
+disponible ; cela ne prouve ni l'autorisation pour cette cible, ni l'exécution,
+ni le nouvel état distant. Si la confirmation ou le retour arrière manque,
+arrêtez-vous avant l'appel.
+
 ## Checkpoints
 
 Utilisez cinq checkpoints et ne passez pas au suivant sans conserver sa preuve :
@@ -96,9 +114,21 @@ Utilisez une fiche par observation :
 surface | authentification observée | capacité technique | autorisation | confirmation humaine | action proposée | action exécutée | état cible observé | preuve | inconnues
 ```
 
-Une réponse « connecté », un nom d'outil ou un message `completed` remplit au
+Une réponse « connecté », un nom d’outil ou un message `completed` remplit au
 mieux la colonne du message observé. Il ne remplit pas automatiquement les
 colonnes d'autorisation, d'exécution ou d'état cible.
+
+Pour éviter de mélanger les surfaces, utilisez une carte adaptée à chacune :
+
+| Surface | Carte minimale à conserver | Limite de la preuve |
+|---|---|---|
+| Éditeur local | chemin, diff, hachage avant/après, état du fichier | ne prouve pas le commit ou le dépôt distant |
+| Terminal | commande exacte, sortie brute, code, horodatage | ne prouve pas qu'un autre système a reçu l'effet |
+| Navigateur | URL, libellé de la cible, état visible, heure et capture si autorisée | ne prouve pas l'autorisation durable ni l'absence d'un autre onglet |
+| Dépôt distant | cible, SHA ou état affiché, moment de lecture et preuve de retour | ne prouve pas la compréhension du lecteur ou le déploiement final |
+
+Ne remplacez pas une carte manquante par un récit rédigé après coup ; marquez la
+colonne correspondante `unverified`.
 
 ## Cas d'échec et récupération
 
@@ -145,6 +175,11 @@ Pour chaque branche, remplissez une ligne « affirmation → preuve » :
       confirmation humaine, exécution et état cible.
 - [ ] Une branche de récupération indique le diagnostic changé, la restauration
       et la preuve après reprise.
+- [ ] Toute action externe a une fiche cible/effet/autorité/confirmation ou reste
+      `not_run`.
+- [ ] Les preuves de l'éditeur, du terminal, du navigateur et du dépôt distant
+      restent séparées ; aucune surface locale n'est présentée comme preuve de
+      publication.
 
 ## Preuves à conserver
 
