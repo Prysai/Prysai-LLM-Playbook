@@ -27,9 +27,11 @@ demandez-vous :
 3. Qu’est-ce qui changerait visiblement si l’affirmation était fausse ?
 
 Si vous ne pouvez pas répondre aux trois questions, marquez l’affirmation
-`inconnue` et notez la prochaine vérification. Voir les Skills
-[Platform Adapter Review](../../skills/prysai-platform-adapter-review/SKILL.md) et
-[Platform Fact Watch](../../skills/prysai-platform-fact-watch/SKILL.md).
+`inconnue` et notez la prochaine vérification. La méthode est résumée dans la
+[bibliothèque des preuves](../evidence-library-FR.md#method-and-status). Les
+fiches détaillées des Skills sont des documents de maintenance du dépôt ; si
+Reader ne propose pas une version française, il doit l’indiquer au lieu de
+charger silencieusement une autre langue.
 
 ## La première tâche sûre, quelle que soit la plateforme
 
@@ -92,8 +94,10 @@ leurs tarifs ou les droits d’un compte. Consultez une source officielle dédi�
 
 Pour un premier essai sans clé ni donnée privée, utilisez la tâche sûre
 générique ci-dessus dans une surface autorisée. Si une expérience API est
-explicitement autorisée, lisez d’abord le
-[reçu de source de l’API DeepSeek](../../docs/research/deepseek-api-source-receipt-2026-08-17.md).
+explicitement autorisée, consultez d’abord la
+[documentation officielle de l’API DeepSeek](https://api-docs.deepseek.com/),
+puis vérifiez le reçu de source conservé dans le dépôt avant de reprendre une
+affirmation. Cette page ne transforme pas ce reçu en preuve pour le chat web.
 Notez la surface, l’identifiant du modèle réellement utilisé et la date. Ne
 collez jamais de clé API, de code privé ou de document interne.
 
@@ -130,7 +134,9 @@ Skills, Agents et vérification. Commencez par la
 - Pour une pratique textuelle courte : [pack de pratique pour débuter](../communication-clinic-FR.md).
 - Pour le parcours approfondi avec fichiers et outils : [première modification sûre](first-safe-change-FR.md).
 - Pour le socle indépendant des plateformes : [fondations universelles](universal-core-foundations-FR.md).
-- Pour comparer deux plateformes : [protocole de comparaison LLM](../../skills/prysai-llm-comparison-protocol/SKILL.md).
+- Pour comparer deux plateformes : commencez par la [bibliothèque des
+  preuves](../evidence-library-FR.md#source-notes), puis consultez la version
+  actuelle du protocole du dépôt uniquement après avoir confirmé son périmètre.
 
 ## État des preuves et limites
 
