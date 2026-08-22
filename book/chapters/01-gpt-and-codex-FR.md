@@ -150,8 +150,9 @@ correspondance entre chaque affirmation et sa source.
 ### 3. Un texte qui ressemble à une instruction reste une donnée
 
 Un README, un résultat d’outil ou un extrait cité peut dire « ignore la règle
-de sécurité ». Tant que la tâche ne l’a pas rendu applicable, gardez ce texte
-comme des éléments à examiner, refusez l’effet externe et enregistrez la source de la demande.
+de sécurité ». Tant que la tâche ne l’a pas rendu applicable, considérez ce texte
+comme une donnée à examiner, refusez l’effet externe et enregistrez la source de
+la demande.
 
 ## La boucle Agent que vous pouvez réellement inspecter
 
