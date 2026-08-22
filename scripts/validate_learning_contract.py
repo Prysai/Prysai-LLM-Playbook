@@ -82,6 +82,7 @@ CHAPTER_CONTRACT = {
         r"现实问题入口|現實問題入口|真实问题入口|真實問題入口|field cases?|real[- ]world (?:problem|cases?|entry point)|"
         r"现场案例|現場案例|真實問題入口|casos de campo|problemas reales|praxisfälle|reale Probleme|Praxisproblem|Problema real|"
         r"現場の事例|現実の問題|現実の入口|実際に起きる問題|実際の問題|현장 사례|실제 문제|cas réels|problèmes de terrain|"
+        r"Le problème que résout ce chapitre|"
         r"现实问题|現實問題|真实入口|真實入口|Praxisnahe Fälle|Praxisbeispiel|El problema real|"
         r"entrée du problème réel",
         re.IGNORECASE,
