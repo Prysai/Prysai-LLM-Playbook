@@ -42,7 +42,7 @@ identique.
 
 ## Contrat de sécurité
 
-Créez un nouveau dossier jetable. Autorisez seulement des lectures locales et
+Créez un nouveau répertoire temporaire. Autorisez seulement des lectures locales et
 des écritures réversibles dans ce dossier. N’utilisez ni dépôt réel, ni données
 client, ni identifiants, ni réseau, ni message externe, ni installation de
 paquet, ni publication, ni push, ni suppression destructive, ni changement de
@@ -51,8 +51,8 @@ permissions.
 Avant la première tentative, écrivez :
 
 ```text
-read_root: le dossier jetable
-write_root: le dossier jetable et son sous-dossier evidence/
+read_root: le répertoire temporaire
+write_root: le répertoire temporaire et son sous-dossier evidence/
 external_actions: none
 retry_budget: une reprise après changement de condition par branche
 hard_stop: effet inconnu, autorité manquante ou échec répété sans preuve nouvelle

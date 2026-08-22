@@ -22,7 +22,7 @@ La compétence visée n’est pas de produire une revue plus longue. C’est de 
 4. traiter un conflit, une redirection, une limite de débit, une page protégée par connexion ou une source officielle inaccessible sans prendre un extrait de moteur de recherche pour une preuve ;
 5. séparer témoignage de forum, rapport utilisateur, confirmation du mainteneur, reproduction indépendante et hypothèse de cause ;
 6. auditer une citation produite par un modèle : authenticité, emplacement, portée et date ;
-7. ramener le résultat à `candidate` lorsqu’une preuve clé manque, qu’un conflit reste ouvert ou qu’il ne reste qu’un conseil de communauté, puis proposer la prochaine vérification sans risque ;
+7. reclasser le résultat en `candidate` lorsqu’une preuve clé manque, qu’un conflit reste ouvert ou qu’il ne reste qu’un conseil de communauté, puis proposer la prochaine vérification sans risque ;
 8. expliquer les limites de licence, d’attribution et d’adaptation des Skills de recherche externes, tout en distinguant une réécriture originale d’un texte, d’un script ou d’un visuel importé.
 
 ## Problèmes réels : une réussite partielle n’est pas une recherche terminée

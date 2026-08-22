@@ -245,8 +245,8 @@ prouver son injection.
 5. consigner chemin, opération, résultat et limites de la sonde.
 
 Cette sonde ne change pas les permissions, n’installe rien, n’appelle pas le
-réseau et ne prouve pas l’accès à la production. Une sonde réussie prouve
-seulement cette opération, à cet endroit, dans ce run. Si la portée ou le
+réseau et ne prouve pas l’accès à la production. Une vérification réussie ne
+prouve que cette opération, à cet endroit, dans ce run. Si la portée ou le
 nettoyage sont ambigus, le résultat est `blocked` ou `unverified`.
 
 ### Fiche de sonde et de reprise

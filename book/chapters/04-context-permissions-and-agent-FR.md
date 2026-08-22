@@ -87,7 +87,7 @@ observable.
 
 ### Préparation
 
-Utilisez une note fictive et un dossier jetable. Aucun compte, secret, réseau ou
+Utilisez une note fictive et un répertoire temporaire. Aucun compte, secret, réseau ou
 écriture externe n’est nécessaire.
 
 ### Tâche

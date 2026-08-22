@@ -70,7 +70,7 @@ d’aide officielle et notez sa date de consultation.
 ## Première tâche dans Claude Code
 
 Claude Code agit dans un terminal et peut lire ou modifier les fichiers du
-projet où vous le lancez. Commencez dans un dossier jetable avec la tâche sûre.
+projet où vous le lancez. Commencez dans un répertoire temporaire avec la tâche sûre.
 Observez la demande de permission avant toute modification ou commande. Si le
 projet contient un fichier `CLAUDE.md`, relisez-le comme une règle que l’outil
 pourrait suivre. N’utilisez pas un dépôt réel, des identifiants ou des données

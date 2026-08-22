@@ -226,7 +226,7 @@ ce que la phase et le trajet des données soient observés.
 
 ### Préparation
 
-Prenez une petite correction de texte dans un dossier jetable. N’utilisez ni
+Prenez une petite correction de texte dans un répertoire temporaire. N’utilisez ni
 secret ni dépôt de production.
 
 ### Tâche

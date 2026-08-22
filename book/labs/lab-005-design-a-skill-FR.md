@@ -5,7 +5,7 @@ title: "Transformer une méthode répétée en Skill étroit"
 level: L4
 domain: general
 goal: "Écrire un contrat de Skill testable avant ses détails"
-setup: "Une méthode fictive de classement de faits dans un dossier jetable"
+setup: "Une méthode fictive de classement de faits dans un répertoire temporaire"
 task: "Définir déclencheur, non-déclencheur, entrée, sortie, arrêt et preuve"
 evidence:
   - "Le contrat et quatre cas de test"

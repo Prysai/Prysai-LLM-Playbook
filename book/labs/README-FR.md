@@ -16,7 +16,7 @@ laissée peut-elle être relue par quelqu’un d’autre ?
 ## Commencer par le résultat voulu
 
 - [Lab 001](lab-001-first-safe-task-FR.md) : comparer une demande vague à une
-  demande vérifiable, d’abord sans code puis dans un dossier jetable ;
+  demande vérifiable, d’abord sans code puis dans un répertoire temporaire ;
 - [Lab 002](lab-002-task-protocol-FR.md) : transformer « aide-moi » en contrat
   de tâche avec objectif, contexte, limites, réception et arrêt ;
 - [Lab 008](lab-008-research-question-FR.md) : vérifier une réponse fondée sur
@@ -26,7 +26,7 @@ laissée peut-elle être relue par quelqu’un d’autre ?
 
 Si vous ne disposez que d’une fenêtre de chat, le premier Lab suffit. N’installez
 pas d’outil et n’utilisez pas un projet réel pour suivre le catalogue. Passez à
-un exercice de fichiers seulement lorsque vous pouvez nommer un dossier jetable,
+un exercice de fichiers seulement lorsque vous pouvez nommer un répertoire temporaire,
 une cible autorisée et la preuve que vous conserverez.
 
 ## État actuel
@@ -66,7 +66,7 @@ les niveaux et les prérequis déclarés.
 
 ## Exécuter un Lab avec prudence
 
-1. Utilisez un dossier jetable, une révision d’entrée fixe et aucune véritable
+1. Utilisez un répertoire temporaire, une révision d’entrée fixe et aucune véritable
    donnée d’identification.
 2. Lisez la limite de permission et d’effets de bord avant toute action.
 3. Conservez l’état initial, les commandes, les sorties, le diff, l’échec et les

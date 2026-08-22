@@ -4,7 +4,7 @@
 
 **Statut :** `candidate` · **Expérience :** `not_run`
 **Limite de preuve :** cette version française décrit une méthode de conception
-et un exercice sur une fixture locale. Elle ne prouve pas qu’un hôte découvrira,
+et un exercice sur un jeu de test local. Elle ne prouve pas qu’un hôte découvrira,
 chargera ou exécutera le Skill proposé. Une relecture francophone indépendante
 reste nécessaire.
 

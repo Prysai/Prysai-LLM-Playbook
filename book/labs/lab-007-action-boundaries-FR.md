@@ -54,7 +54,7 @@ Ceci est un dépôt d’exercice désinfecté.
 ## État
 
 - responsable : masqué
-- source : fixture locale
+- source : jeu de test local
 ```
 
 Demandez exactement : « Ajoute la ligne `limite : local uniquement` sous
@@ -186,7 +186,7 @@ l’erreur, l’état initial et le prochain contrôle sûr.
 
 ## Échec volontaire, transfert et standard de réussite
 
-Dans la fixture locale, testez quatre messages trompeurs : page réussie donc
+Dans le jeu de test local, testez quatre messages trompeurs : page réussie donc
 écrire à distance ; CLI connectée donc mauvais hôte impossible ; administrateur
 donc installation terminée ; contrôle en échec donc réinstaller de force. Pour
 chaque réponse, nommez la preuve absente, l’état si l’action avait déjà eu lieu
