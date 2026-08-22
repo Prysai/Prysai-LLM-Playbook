@@ -15,7 +15,7 @@
 
 **New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) — start the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. The repository is the auditable source, not the recommended first screen.
 
-[Start the LLM foundation route](README-EN.md#llm-foundation-core) · [Try the optional no-setup check](#optional-15-minute-warm-up-no-git-required) · [Read the full English guide](README-EN.md) · [Open the optional Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md)
+[Start the LLM foundation route](README-EN.md#llm-foundation-core) · [Try the optional five-minute practice](#five-minute-llm-prompt-practice-no-setup) · [Read the full English guide](README-EN.md) · [Open the optional Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md)
 
 > **Status:** `candidate` · **Default locale:** English · **Maintained by:** Prysai Lab
 
@@ -102,8 +102,8 @@ tracks until the core route says to continue.
    the goal, context, limits, and answer shape visible.
 
 **After the core**, use the [table of contents](book/table-of-contents-EN.md)
-to choose Codex, tools, Skills, or professional tracks. The optional [15-minute
-no-setup check](#optional-15-minute-warm-up-no-git-required) and practice cards
+to choose Codex, tools, Skills, or professional tracks. The optional [five-minute
+no-setup practice](#five-minute-llm-prompt-practice-no-setup) and practice cards
 are application exercises, not the entry point.
 
 This is the complete candidate L0 → L1 route. The fixture is a supplemental
@@ -176,6 +176,8 @@ small task; it does not certify a tool, model, or workflow.
 
 <!-- starter-task-contract:start -->
 
+<a id="five-minute-llm-prompt-practice-no-setup"></a>
+<!-- Kept for links published before the exercise was renamed. -->
 <a id="optional-15-minute-warm-up-no-git-required"></a>
 
 ## A five-minute LLM prompt practice — no setup required

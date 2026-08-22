@@ -39,7 +39,7 @@ catalogue before beginning.
 
 **New here?** [Open the guided reading site](https://docs.prysai.com/llm-playbook/) for the five-unit LLM foundation route. You do not need Codex, Git, a terminal, or a private file to begin. This repository remains the auditable source.
 
-[Start the LLM foundation core](#llm-foundation-core) · [Try the optional no-setup practice](#optional-15-minute-warm-up-no-git-required) · [Open the optional Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md)
+[Start the LLM foundation core](#llm-foundation-core) · [Try the optional five-minute practice](#five-minute-llm-prompt-practice-no-setup) · [Open the optional Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md)
 
 The Spanish, work-update, and research cards are **optional application practice** after the textbook path; they are not the first lesson.
 
@@ -163,10 +163,10 @@ or no-side-effect boundary is missing.
 
 | What you need now | Start here | Leave with |
 |---|---|---|
-| No project or coding background yet | [Five-minute LLM prompt practice](#optional-15-minute-warm-up-no-git-required) | One fictional message, three plain-language questions, and a visible example; use any chat model, no files, tools, account connection, or private data |
+| No project or coding background yet | [Five-minute LLM prompt practice](#five-minute-llm-prompt-practice-no-setup) | One fictional message, three plain-language questions, and a visible example; use any chat model, no files, tools, account connection, or private data |
 | Make a first reversible local change after the core | [GPT/Codex boundary chapter](book/chapters/01-gpt-and-codex-EN.md) → [First Safe Change](book/routes/first-safe-change-EN.md) | Needs a disposable project; leaves with one bounded task card, a small diff, a focused check, and an explicit unverified list |
 | Need a safe local file before using a project | [First Safe Change fixture](book/routes/first-safe-change-EN.md) | One seeded README failure, one permitted README edit, and one local acceptance result; candidate · learner run `not_run` |
-| See why prompts need checking | [Five-minute LLM prompt practice](#optional-15-minute-warm-up-no-git-required) | One fictional message, three plain-language questions, and a visible example; optional, not the local Codex path |
+| See why prompts need checking | [Five-minute LLM prompt practice](#five-minute-llm-prompt-practice-no-setup) | One fictional message, three plain-language questions, and a visible example; optional, not the local Codex path |
 | Turn a vague request into something an Agent can execute | [Chapter 3 — task protocol](book/chapters/03-task-protocol-EN.md) + [Lab 002](book/labs/lab-002-task-protocol-EN.md) | Goal, context, constraints, acceptance, stop conditions, and failure handling |
 | Turn a broad learning or research wish into a first attempt | [Beginner Practice Pack intake](book/communication-clinic-EN.md#first-practice-intake) | Ask one decision at a time, select one existing route, and leave with a bounded receipt; supplemental candidate · complete learner run `not_run` |
 | Assess an AI idea that could affect other people | [Public-interest safety inquiry](book/communication-clinic-EN.md#public-interest-safety-route) | A fixed fictional case for decision ownership, affected people, input limits, recourse, evidence, and a stop receipt; candidate · `not_run` |
@@ -206,6 +206,8 @@ time, completion, and learning effects have not been measured.
 
 <!-- starter-task-contract:start -->
 
+<a id="five-minute-llm-prompt-practice-no-setup"></a>
+<!-- Kept for links published before the exercise was renamed. -->
 <a id="optional-15-minute-warm-up-no-git-required"></a>
 
 ## A five-minute LLM prompt practice — no setup required
