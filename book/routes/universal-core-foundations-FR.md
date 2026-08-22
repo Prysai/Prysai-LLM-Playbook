@@ -42,9 +42,10 @@ preuve d’efficacité pédagogique ni un test en direct.
 ## Pratiquer une jonction avant de choisir une plateforme
 
 Ouvrez la [fixture de jonction universelle](../../examples/universal-seam-v1/README-FR.md)
-si vous souhaitez continuer avec quatre enregistrements fictifs : demande la
-plus récente, mauvaise cible, trace d’outil manquante et valeur structurée modifiée.
-Pour chacun, dites ce que le texte visible ne prouve pas, choisissez le plus
+si vous souhaitez continuer avec quatre enregistrements fictifs : demandez la
+plus récente, la mauvaise cible, la trace d’outil manquante et la valeur
+structurée modifiée. Pour chacun, dites ce que le texte visible ne prouve pas,
+choisissez le plus
 petit contrôle sûr et arrêtez-vous avant qu’un comportement réel ne demande un
 adaptateur.
 
