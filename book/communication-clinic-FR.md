@@ -12,8 +12,7 @@ Vous êtes sur le parcours expliqué en français. Cette version est encore en
 cours de relecture ; les exemples dans la langue cible sont facultatifs et ne
 promettent ni maîtrise ni aisance.
 
-Si vous découvrez le projet et ne souhaitez pas pratiquer l’espagnol, commencez
-par la carte 3 de B. Les exemples en espagnol restent facultatifs.
+Si vous découvrez le projet et ne souhaitez pas pratiquer l’espagnol, commencez par la carte 3 de B. Les exemples en espagnol restent facultatifs.
 
 <span id="language-practice-route"></span>
 
