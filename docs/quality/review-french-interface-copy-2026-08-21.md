@@ -23,11 +23,22 @@ d’acceptation* where the English means acceptance evidence, and replaces
 *mise à jour de travail* with the ordinary French workplace expression *point
 d’avancement*. The safety boundary and the underlying claims are unchanged.
 
+The final micro-pass corrected four reader-facing details found during the
+French-language audit: an inconsistent second-person form in the fundamentals
+guide, a data-versus-instruction phrase in Chapter 1, a duplicate visible state
+line in the French practice pack, and mixed `tu`/`vous` imperatives in the
+French practice loop. These are editorial corrections, not evidence of an
+independent native-speaker review.
+
 ## Evidence
 
 - `npm run test:browser` → `BROWSER_SMOKE_OK` with desktop `1280px` and mobile
   `390px`; eight locale routes, five foundation boards, Reader continuation,
   lazy search, invalid paths and fail-closed missing translations included.
+- The latest local candidate was pushed to Fork branch
+  `prysai/french-locale-20260821` at commit `3c22cb5`; direct synchronization to
+  upstream `main` was rejected by the repository's required Pull Request and
+  CodeQL rules.
 - `BOOK_NAVIGATION_OK chapters=22 locales=EN,ZH,ES,JA,KO,DE,ZHTW,FR`.
 - `LOCALE_RELEASE_PATHS_OK` and `LLM_FUNDAMENTALS_BOUNDARIES_OK` cover the 40
   chapter/Lab route units in all eight locales.
