@@ -87,6 +87,55 @@ Sans décision, exécution, diff, sortie, code retour et périmètre du test, l�
 correct est `unverified`, pas `verified`. Notez les frontières observables et
 marquez `unknown` ce qui ne l’est pas.
 
+### La boucle est un système de contrôle, pas un raisonnement caché
+
+Le modèle peut produire un plan interne que vous ne pouvez pas inspecter. Ce
+chapitre ne vous demande ni de l’inférer ni de le reproduire. Enregistrez
+seulement les frontières visibles : contrat courant, proposition, décision de
+l’hôte, événement d’outil, observation retournée, mise à jour d’état et résultat
+du contrôle. Quand une frontière n’est pas visible, écrivez `unknown`.
+
+Pour diagnostiquer une phrase finale incorrecte, cherchez la première transition
+non étayée :
+
+1. l’entrée nécessaire était-elle réellement présente ?
+2. la source a-t-elle été traitée comme donnée ou comme autorité ?
+3. la proposition respecte-t-elle le contrat ?
+4. l’hôte a-t-il accordé la portée attendue ?
+5. l’outil a-t-il réellement démarré et qu’a-t-il changé ?
+6. le checkpoint a-t-il conservé le bon état ?
+7. le contrôle couvre-t-il la phrase annoncée ?
+
+### Motifs d’architecture à conserver
+
+L’[audit de l’étude claude-code-from-source](../../docs/research/claude-code-from-source-repository-audit-2026-08-16.md)
+est une référence conceptuelle uniquement : il ne s’agit ni d’une source
+officielle d’implémentation, ni d’une preuve de parité. Ses idées utiles sont
+réécrites ici comme questions de conception transférables :
+
+- **Chaque appel d’outil a un contrat :** schéma d’entrée, cible, portée,
+  classe d’effet, autorité, erreurs possibles, sortie et preuve d’acceptation.
+  Le nom de l’outil n’est pas une politique de sécurité.
+- **Ordonner selon les dépendances :** les lectures indépendantes peuvent parfois
+  être parallèles ; les écritures et les lectures après écriture restent ordonnées
+  tant que l’état partagé n’est pas réconcilié. La parallélisation est d’abord
+  une décision de sécurité.
+- **Déléguer avec un brief scellé :** objectif, contexte, outils, permissions,
+  budget, arrêt et format de passation sont nommés. Le parent relit le résultat
+  et ses preuves ; la délégation n’hérite pas d’une autorité illimitée.
+- **Rendre la mémoire inspectable :** une mémoire persistante indique source,
+  date, responsable, règle de fraîcheur et gestion des conflits. Elle guide le
+  contexte, mais n’accorde pas de permission.
+- **Séparer capacité et contrôle :** Skill, adaptateur et script donnent une
+  méthode ; hook, sandbox, politique et approbation contrôlent son usage.
+- **Mesurer sur une charge figée :** rapporter séparément démarrage, latence,
+  taille de contexte, coût, correction et retries. Aucun chiffre interne non
+  vérifié ne devient une promesse de produit.
+
+Avant une action conséquente, posez : « Quel est le contrat ? Qui peut l’autoriser ?
+Que peut-il changer ? Quelle observation revient ? Quel contrôle arrête la boucle ?
+Quelle frontière reste inconnue ? »
+
 ## 2. Écrire l’état
 
 Un Agent ne récupère que l’état rendu explicite. Un fichier Markdown, JSON ou
@@ -187,6 +236,26 @@ Si un champ n’a pas été observé, écrivez `not_observed`.
 
 Une écriture expirée garde `exit_status: unknown` et reçoit plus tard une ligne
 de reconciliation ; ne la convertissez pas silencieusement en succès.
+
+Pour une petite tâche locale, les six lignes minimales sont généralement
+`proposal`, `approval`, `execution`, `effect`, `verification` et `delivery`.
+Une proposition refusée peut ne posséder aucune ligne d’exécution. Une écriture
+qui expire garde `exit_status: unknown` et reçoit plus tard une ligne de
+réconciliation ; elle ne devient pas silencieusement un succès.
+
+### Tableau de preuve par couche
+
+| Couche observable | Preuve minimale | Ce qui reste inconnu |
+|---|---|---|
+| Proposition | Sortie brute ou événement `proposal` | Autorisation et exécution |
+| Décision de l’hôte | Événement de politique avec chemin et portée | Effet correct dans la cible |
+| Exécution | Début/fin, code ou timeout, sortie | Sens sémantique de la modification |
+| Effet | Diff, hash, lecture arrière ou audit externe | Acceptation de l’objectif complet |
+| Vérification | Commande, répertoire, portée, sortie et règle | Toute affirmation hors contrôle |
+| Livraison | Note reliant exigences, preuves et statuts | Solidité des références non relues |
+
+Cette table ne demande pas d’exposer la pensée privée. Elle rend simplement la
+première affirmation non soutenue localisable.
 
 ## 3. Reprendre avec un budget borné
 
@@ -307,6 +376,18 @@ prise sur l’observation réelle, pas sur le texte que l’Agent aurait dû pro
 
 Ces lignes sont un format ; remplacez-les par les observations réelles du run.
 
+### Observations attendues pour les quatre runs
+
+| Run | Ce que l’exercice doit rendre visible | Ce qui ne doit pas être déduit |
+|---|---|---|
+| A · entrée absente | `blocked_input`, aucun diff et une question ciblée | Qu’un fichier peut être inventé ou récupéré ailleurs |
+| B · chemin interdit | Refus avant écriture ou détection de la dérive | Qu’un mode plus large est nécessaire |
+| C · aucun événement | Chronologie, état du processus et classification `unknown` | Que le silence signifie succès ou absence d’effet |
+| D · note impérative | Source classée comme donnée non fiable et action refusée | Que le texte externe possède une autorité |
+
+Ces quatre runs sont des variantes pédagogiques locales. Ils ne constituent pas
+un test de runtime d’un Agent, d’un fournisseur ou d’un compte.
+
 ### Preuve
 
 Conservez la fixture et sa baseline, la proposition, la décision de l’hôte,
@@ -397,6 +478,21 @@ Arrêt ou suite : raison exacte et prochaine décision
 « Tous les tests passent » n’a de sens qu’avec les tests, le répertoire, la
 date, le code et les limites. Un zéro peut être le mauvais contrôle.
 
+### Note de preuve pour chaque affirmation
+
+```text
+claim: phrase exacte
+scope: fichiers, commande, run, version ou environnement couverts
+evidence: diff, log, sortie, capture, source ou décision
+status: verified | partial | unverified | blocked | not_run
+uncovered: ce que cette preuve ne permet pas d’affirmer
+next_check: plus petite observation qui pourrait changer le statut
+```
+
+Une note de livraison qui omet `uncovered` invite le lecteur à élargir la
+conclusion. Le statut `verified` ne porte que sur le périmètre écrit dans
+`scope`.
+
 ## 8. Diagnostiquer la première frontière cassée
 
 | Couche | Symptôme | Première inspection |
@@ -452,6 +548,14 @@ ou une page marketing, mais gardez les conditions d’arrêt.
 - [ ] La fiche de reprise nomme dernier événement, première inconnue, cible, actions non faites et prochaine vérification.
 - [ ] Je peux livrer `blocked` ou `unverified` sans le déguiser en succès.
 - [ ] Je sais que l’expérience reste `not_run` tant qu’un vrai registre n’existe pas.
+- [ ] Je peux expliquer que les motifs d’architecture externes sont des questions
+      transférables, pas des faits internes ni une promesse de parité.
+- [ ] La table de preuve distingue proposition, décision, exécution, effet,
+      vérification et livraison.
+- [ ] Les quatre runs de sandbox possèdent une observation attendue, un arrêt et
+      une limite de ce qu’ils ne prouvent pas.
+- [ ] Ma note de livraison contient `scope`, `status`, `uncovered` et
+      `next_check` pour chaque affirmation importante.
 
 ## Sources et limite de mise à jour
 
