@@ -12,9 +12,10 @@ Accepted
 
 The six-locale set below was the initial migration baseline. On 2026-08-18 the
 canonical matrix added `ZHTW` (`zh-tw`, `zh-TW`) as the seventh registered
-locale. Historical examples retain the original six-locale wording, but
-current requirements such as matrix completeness, switchers, validation, and
-release gates mean every locale registered in `docs/governance/locale-matrix.yaml`.
+locale, and on 2026-08-21 it added `FR` (`fr`, `fr`) as the eighth. Historical
+examples retain the original six-locale wording, but current requirements such
+as matrix completeness, switchers, validation, and release gates mean every
+locale registered in `docs/governance/locale-matrix.yaml`.
 
 ## Context
 
@@ -54,7 +55,9 @@ Every localized content file, including the English source file, MUST include
 an uppercase locale suffix before its extension. English is never represented
 by an unsuffixed "main" file.
 
-The initial supported locale set is exactly these six locales:
+The initial supported locale set is exactly these six locales. It is preserved
+here as the 2026-08-10 baseline; the current set is maintained by the canonical
+matrix and is amended above.
 
 | Locale ID | File suffix | URL token | HTML `lang` | Display name | Role |
 |---|---|---|---|---|---|
@@ -83,6 +86,8 @@ stem. The locale is added only as the final stem component:
 <stable-stem>-JA.<extension>
 <stable-stem>-KO.<extension>
 <stable-stem>-DE.<extension>
+<stable-stem>-ZHTW.<extension>
+<stable-stem>-FR.<extension>
 ```
 
 For example, one chapter is represented as:
@@ -94,6 +99,8 @@ book/chapters/01-first-safe-task-ES.md
 book/chapters/01-first-safe-task-JA.md
 book/chapters/01-first-safe-task-KO.md
 book/chapters/01-first-safe-task-DE.md
+book/chapters/01-first-safe-task-ZHTW.md
+book/chapters/01-first-safe-task-FR.md
 ```
 
 The stable stem and `content_id` identify the same learning object. A
@@ -141,6 +148,8 @@ locales:
   JA: {suffix: JA, url_token: ja, html_lang: ja}
   KO: {suffix: KO, url_token: ko, html_lang: ko}
   DE: {suffix: DE, url_token: de, html_lang: de}
+  ZHTW: {suffix: ZHTW, url_token: zh-tw, html_lang: zh-TW}
+  FR: {suffix: FR, url_token: fr, html_lang: fr}
 content:
   - content_id: chapter-01
     kind: chapter
@@ -224,7 +233,7 @@ record. A locale-neutral link must not be presented as if it were translated
 reader content. External URLs are not rewritten, but their surrounding label
 and language status must remain honest.
 
-There is no silent fallback from `ZH`, `ES`, `JA`, `KO`, or `DE` to English.
+There is no silent fallback from `ZH`, `ES`, `JA`, `KO`, `DE`, `ZHTW`, or `FR` to English.
 While a translation is missing, the page must either link to an explicit
 same-locale placeholder/status page or show an explicit, machine-registered
 notice that the English source is the available reading path. A default-
@@ -262,7 +271,7 @@ The repository will migrate in small, reviewable slices:
 2. **English source first:** create the authoritative `-EN` file for each
    public artifact. Existing Chinese content must not be silently re-labeled
    as English merely because it was previously the primary file.
-3. **Translations:** add `-ZH`, `-ES`, `-JA`, `-KO`, and `-DE` from a recorded
+3. **Translations:** add `-ZH`, `-ES`, `-JA`, `-KO`, `-DE`, `-ZHTW`, and `-FR` from a recorded
    English `source_revision`; update each translated file's internal links to
    its own locale.
 4. **Canonical navigation:** switch the table of contents, site, learning
