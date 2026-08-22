@@ -248,8 +248,8 @@ formatter を no-output のまま長時間実行するか、存在しない serv
 
 ## 出典と保守の境界
 
-- 現実の問題：[`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md) の FP-09、FP-10、FP-11。status は `candidate`、アクセス・整理日は 2026-08-09、owner は Prysai LLM Playbook maintenance group です。
-- Engineering method と外部 asset：[`docs/sources/asset-register.md`](../../docs/sources/asset-register.md) の S05。ここは外部 Skill の本文をコピーせず、独自の process rewrite として書いています。
+- 現実の問題：[`docs/research/field-problems-codex.md`](../evidence-library-JA.md#source-notes) の FP-09、FP-10、FP-11。status は `candidate`、アクセス・整理日は 2026-08-09、owner は Prysai LLM Playbook maintenance group です。
+- Engineering method と外部 asset：[`docs/sources/asset-register.md`](../evidence-library-JA.md#source-notes) の S05。ここは外部 Skill の本文をコピーせず、独自の process rewrite として書いています。
 - 変動する framework / API / version：該当 project の公式文書と [OpenAI Codex repository](https://github.com/openai/codex)。engineering record に URL、version、アクセス日、verification scope を残します。
 
 ライフサイクルと evidence を分ける方法は比較的安定していますが、command、runtime、dependency、deployment の規則は project ごとに変わります。review owner は Engineering-track maintainer、次回確認は runtime、dependency、release process、permission policy の変更時、または遅くとも 2026-11-09 です。この章は `candidate`、実験は `draft / not_run` のままです。runtime、failure recovery、release rollback の evidence がそろうまで、delivery を `verified` や `production-ready` とは呼びません。
