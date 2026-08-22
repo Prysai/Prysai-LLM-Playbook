@@ -426,8 +426,8 @@ Agent に仕事を渡す前に、会話の勢いではなく契約を書きま�
 | 承認とガードレール | [OpenAI: Guardrails and approvals](https://developers.openai.com/api/docs/guides/agents/guardrails-approvals) | 2026-08-10 | 承認境界の説明。今回の実行で表示・付与された証明ではない |
 | 間接命令とデータの信頼境界 | [OpenAI: Agent Builder safety](https://developers.openai.com/api/docs/guides/agent-builder-safety) | 2026-08-10 | 安全設計の資料。すべての注入を遮断する証明ではない |
 | ツール利用とコンテキストの比較 | [Anthropic: Tool use overview](https://platform.claude.com/docs/en/agents-and-tools/tool-use/overview.md)、[context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows.md) | 2026-08-10 | 名前付き製品の比較資料。Codex の実装契約ではない |
-| 現場で報告された失敗境界 | [Field problems and prompt patterns](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)、[deep dive](../../docs/research/field-problems-deep-dive-p2-2026-08-11.md) | 2026-08-11 | 公開報告とプロジェクトの要約。再現、普遍的原因、ベンダー承認は示さない |
-| `claude-code-from-source` の設計研究 | [Repository audit](../../docs/research/claude-code-from-source-repository-audit-2026-08-16.md) | 2026-08-16 | 参照専用の概念入力。内部実装、性能数値、ブランド、承認は取り込まない |
+| 現場で報告された失敗境界 | [Field problems and prompt patterns](../evidence-library-JA.md#source-notes)、[deep dive](../evidence-library-JA.md#source-notes) | 2026-08-11 | 公開報告とプロジェクトの要約。再現、普遍的原因、ベンダー承認は示さない |
+| `claude-code-from-source` の設計研究 | [Repository audit](../evidence-library-JA.md#source-notes) | 2026-08-16 | 参照専用の概念入力。内部実装、性能数値、ブランド、承認は取り込まない |
 
 参照先は英語の原典章と [evidence library](../evidence-library-JA.md#source-notes) に記録されています。この章は `candidate`、実験は `not_run` のままです。
 
