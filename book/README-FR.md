@@ -26,6 +26,14 @@ Chaque chapitre suit la boucle : problème → concept → décision → action 
 preuve → échec → réflexion → transfert. Une structure réussie ne constitue pas
 à elle seule une preuve d’apprentissage ou de comportement d’un produit.
 
+## État du projet
+
+Le dépôt contient 22 chapitres `candidate`, 18 Labs `draft / not_run`, 26 Skills
+`candidate` et 40 fixtures d’évaluation `candidate / not_run`. Ces chiffres
+décrivent la structure déclarée, pas des résultats d’apprenants ni une fiabilité
+mesurée en production. Les huit routes de langue sont enregistrées, mais la
+traduction française reste `in-progress` et attend une relecture native.
+
 ## Entrées complémentaires
 
 - [Préface](preface-FR.md)

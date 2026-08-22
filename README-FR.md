@@ -35,7 +35,7 @@ Skills, Agents et la vérification des résultats. Il contient actuellement :
 - 22 chapitres `candidate` ;
 - 18 Labs `draft / not_run` ;
 - 26 Skills `candidate` (25 méthodes Prysai et 1 Skill externe examinée) ;
-- environ 40 fixtures d’évaluation `candidate / not_run` ;
+- 40 fixtures d’évaluation `candidate / not_run` ;
 - huit routes de langue enregistrées : EN, ZH, ES, JA, KO, DE, ZHTW et FR.
 
 Les 22 chapitres et 18 Labs disposent d’un fichier candidat en français, avec
