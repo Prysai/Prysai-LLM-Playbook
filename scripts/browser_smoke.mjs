@@ -1852,7 +1852,7 @@ try {
     ['ja', '最初の安全な変更', '安全な README の変更を一つ行う'],
     ['ko', '첫 번째 안전한 변경', '안전한 README 변경 하나 만들기'],
     ['de', 'Die erste sichere Änderung', 'Eine sichere README-Änderung vornehmen'],
-    ['fr', 'Première modification sûre', 'La première tâche sûre'],
+    ['fr', 'Première modification sûre', 'Rendre la première demande exploitable'],
   ];
   for (const [locale, heading, labHeading] of localizedSafeFixtureRoutes) {
     const localizedRoutePage = await context.newPage();
