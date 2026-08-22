@@ -532,6 +532,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": null,
           "explicit_anchors": [
+            "five-minute-llm-prompt-practice-no-setup",
             "optional-15-minute-warm-up-no-git-required"
           ]
         },
