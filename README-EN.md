@@ -57,23 +57,22 @@ quality, learner outcomes, or release readiness.
 | Locale | Readable course units | Current boundary |
 |---|---:|---|
 | English | 40 / 40 | Canonical source language. |
-| Simplified Chinese | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental LLM foundation guide is stale after the 2026-08-17 English revision and is withheld from the sitemap until retranslation and review. |
-| Spanish | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental LLM foundation guide is stale after the 2026-08-17 English revision and is withheld from the sitemap until retranslation and review. |
-| Japanese | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental LLM foundation guide is stale after the 2026-08-17 English revision and is withheld from the sitemap until retranslation and review. |
-| Korean | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental LLM foundation guide is stale after the 2026-08-17 English revision and is withheld from the sitemap until retranslation and review. |
-| German | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental LLM foundation guide is stale after the 2026-08-17 English revision and is withheld from the sitemap until retranslation and review. |
-| Traditional Chinese | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; independent Traditional Chinese language review is still pending. |
-| French | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; independent French language review is still pending. |
+| Simplified Chinese | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files. The supplemental foundation guide is structurally aligned with the current English source; native-language review and learner runs remain pending. |
+| Spanish | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files. The supplemental foundation guide is structurally aligned with the current English source; native-language review and learner runs remain pending. |
+| Japanese | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files. The supplemental foundation guide is structurally aligned with the current English source; native-language review and learner runs remain pending. |
+| Korean | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files. The supplemental foundation guide is structurally aligned with the current English source; native-language review and learner runs remain pending. |
+| German | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files. The supplemental foundation guide is structurally aligned with the current English source; native-language review and learner runs remain pending. |
+| Traditional Chinese | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental guide is a candidate migration and independent Traditional Chinese review is pending. |
+| French | 40 / 40 | 22 chapters and 18 Labs have same-locale candidate files; the supplemental guide is an in-progress candidate migration and independent French review is pending. |
 
-Eight locale choices are registered; all eight provide a complete **file path** for the 22 chapters and 18
-Labs. The supplemental foundation guide stays out of non-English sitemap
-entries until each translation has a current source revision and independent
-review. The five earlier translations are marked `stale`; Traditional Chinese
-is `in-progress` after the current English revision but still awaits review.
-That structural coverage is not eight independently reviewed, culturally adapted, or
-learner-validated courses. Supplemental
-reader material still has its own coverage and review status; the reader
-exposes the same `available / 40` course-unit count in its language selector.
+Eight locale choices are registered, and all eight provide a complete **file path**
+for the 22 chapters and 18 Labs. The supplemental foundation guide has its own
+translation status in the locale matrix: the first five translation routes are
+marked `candidate`, while Traditional Chinese and French remain `in-progress`.
+That structural coverage is not eight independently reviewed, culturally adapted,
+or learner-validated courses. Supplemental reader material still has its own
+coverage and review status; the reader exposes the same `available / 40`
+course-unit count in its language selector.
 
 > **Project status:** `candidate` · **Default locale:** English · **Scope:**
 > book, labs, Skills, research, evaluation, and team practice
@@ -507,7 +506,7 @@ records what can be used as research, what can be adapted, and what must not be 
 
 ## Current state
 
-This is a transparent snapshot as of **2026-08-18**. Counts describe the
+This is a transparent snapshot as of **2026-08-21**. Counts describe the
 repository; they do not describe learning outcomes.
 
 | Area | Current state | What the state means |
