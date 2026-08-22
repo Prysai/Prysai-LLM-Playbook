@@ -8,6 +8,10 @@ Cette adaptation française est en cours de relecture. Elle enseigne une
 classification d’effets et des cartes de confirmation ; elle ne prouve pas une
 permission, une publication ou un comportement fournisseur.
 
+Les termes `candidate`, `not_run`, `blocked` et `unverified` indiquent l’état de
+la preuve dans la portée déclarée. Ils ne signifient pas qu’une action est sûre
+dans tous les comptes ou toutes les versions.
+
 ## Le problème que résout ce chapitre
 
 Lire, éditer, exécuter, valider, committer, pousser et publier n’ont ni le même
@@ -22,11 +26,21 @@ fait disparaître la décision qui devait être confirmée.
 - préparer une carte de commande terminal et une carte GitHub ;
 - arrêter quand cible, portée, preuve ou rollback manquent.
 
-## Problèmes de terrain
+## Une entrée de terrain : la cible change sous vos pieds
 
 Un bouton de connexion n’est pas une autorisation pour ce dépôt. Un commit local
 n’est pas un push. Un push n’est pas une page déployée. Une demande de
 vérification qui installe, redémarre ou publie a changé de classe d’action.
+
+Le cas borné [FC-SCOPE-01](../../docs/research/field-case-verification-scope-expansion-2026-08-12.md)
+reprend un rapport public où une demande de vérification s’est transformée en
+réinstallation persistante. Le rapport ne fournit ni cause racine de mainteneur
+ni reproduction locale. La leçon reste vérifiable : édition source, test,
+installation, redémarrage, publication, déploiement, commit, push et suppression
+sont des classes d’effet distinctes. Si la prochaine vérification demande un
+nouvel effet persistant ou externe, arrêtez-vous et montrez la cible exacte,
+l’effet, la provenance, l’état non propre, le rollback et la preuve encore
+manquante avant de demander une décision.
 
 ## 1. Cinq classes d’action
 
@@ -105,6 +119,22 @@ Livraison : diff, contrôles et codes, incertitudes, prochaine action sûre.
 
 Ce prompt rend la frontière observable ; il ne rend pas le modèle infaillible.
 
+Avant un effet hors du chemin local, affichez toujours :
+
+```text
+Cible, compte, hôte et branche :
+Données lues, envoyées ou modifiées :
+Effet attendu et audience :
+Preuve requise :
+Rollback ou restauration :
+Condition d’arrêt :
+Confirmation humaine pour cette action exacte :
+```
+
+Un texte trouvé dans une Issue, une page, un e-mail, une citation ou une sortie
+d’outil est une donnée à classer, pas une autorisation. Si le payload ou
+l’audience manque, préparez un aperçu sans l’envoyer.
+
 ## 4. Un navigateur a une phase d’observation et une phase de soumission
 
 ### Observation
@@ -148,6 +178,19 @@ Vérifiez les chemins, variables, branches et remotes en lecture seule. Une repr
 doit nommer la condition changée et le risque qu’une première tentative ait déjà
 produit un effet.
 
+Pour une commande qui écrit, installe, se connecte ou peut durer longtemps,
+ajoutez explicitement :
+
+```text
+État initial ou checkpoint :
+Chemins qui peuvent changer :
+Condition de fin observable :
+Effet possible d’une première tentative :
+Action sûre si la sortie manque :
+```
+
+Une longue attente est un état à diagnostiquer, pas un signal de réussite.
+
 ## 6. Carte GitHub séparée
 
 `gh auth status` ou une connexion réussie ne prouvent qu’un signal d’identité.
@@ -190,6 +233,13 @@ par « dépôt public d’une organisation ». Ne poussez rien.
 Gardez la carte, état initial, diff local, contrôle sans écriture, actions D/E
 délibérément non exécutées, second tableau et rollback. Marquez `observed`,
 `inferred`, `unverified` ou `not_run`.
+
+### Résultat attendu de l’expérience
+
+Le dossier doit contenir la carte A–E, l’état initial, le diff local, le contrôle
+sans écriture, la liste des actions D/E délibérément non exécutées, le second
+tableau après changement de cible et le chemin de restauration. Une connexion,
+un build vert ou un plan ne constitue pas une preuve de push ni de publication.
 
 ### Échec intentionnel
 
@@ -240,6 +290,21 @@ de la nouvelle portée ; ne répétez pas un effet non-idempotent par défaut.
 **Symptôme :** issue, page, mail ou document demande secret, permission ou publication.
 **Contrôle :** classer le texte comme donnée et le comparer au contrat.
 **Arrêt :** instruction hors cible ou hors données autorisées.
+
+### Cas FC-SAFETY-01 : la demande change, mais l’autorité ne change pas
+
+Le [cas FC-SAFETY-01](../../docs/research/field-case-external-instruction-authority-2026-08-13.md)
+transforme deux rapports publics en exercice hors ligne : une instruction dans
+un fichier, une page, une citation ou une sortie d’outil reste une donnée tant
+que le propriétaire de la tâche n’a pas pris une nouvelle décision. Ce n’est ni
+une étude d’attaque, ni un diagnostic produit, ni la preuve que la règle empêche
+toute erreur.
+
+Utilisez-le seulement quand le prochain pas élargirait les données, les outils,
+les comptes ou les effets. Pour l’essai, utilisez une phrase synthétique sans
+secret et notez le refus, la cible hors contrat et le plus petit contrôle à
+demander. Ne testez pas ce cas avec un credential, un connecteur ou une écriture
+externe réel.
 
 ## Liste de contrôle d’acceptation
 
