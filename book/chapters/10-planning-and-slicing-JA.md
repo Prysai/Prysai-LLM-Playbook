@@ -514,10 +514,10 @@ Stop: 別ファイル、リンク、公開、インストール、または読�
 
 | topic | source | Accessed | evidence boundary | Owner / next review |
 |---|---|---:|---|---|
-| task protocol に goal、context、constraints、acceptance、stop、recovery、delivery を含める | [Prompt patterns for real work](../../docs/research/prompt-patterns-for-real-work-2026-08-10.md) | 2026-08-11 | project research synthesis。vendor が定めた prompt format ではない | `curriculum-maintainer` / 2026-09-11 |
-| capacity interruption と long-running verification で state が不明になることがある | [Field problems and prompt patterns P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md)、[field-problems deep dive](../../docs/research/field-problems-deep-dive-2026-08-11.md) | 2026-08-11 | public user reports。universal cause、repair、local reproduction は主張しない | `curriculum-maintainer` / 2026-09-11 |
-| external checkpoint、vertical slice、complete handoff を curriculum に加える | [Content value upgrade plan P2](../../docs/research/content-value-upgrade-plan-p2-2026-08-11.md) | 2026-08-11 | project planning recommendation。experiment は `not_run` | `curriculum-maintainer` / 2026-09-11 |
-| current Codex entry points、permission、model、command flag、UI state | [OpenAI Codex baseline](../../docs/research/openai-codex-baseline.md)、[official Codex documentation](https://developers.openai.com/codex/) | 2026-08-11 | volatile product facts。command や label は first-party source で再確認する | `curriculum-maintainer` / 2026-09-11 |
+| task protocol に goal、context、constraints、acceptance、stop、recovery、delivery を含める | [Prompt patterns for real work](../evidence-library-JA.md#source-notes) | 2026-08-11 | project research synthesis。vendor が定めた prompt format ではない | `curriculum-maintainer` / 2026-09-11 |
+| capacity interruption と long-running verification で state が不明になることがある | [Field problems and prompt patterns P2](../evidence-library-JA.md#source-notes)、[field-problems deep dive](../evidence-library-JA.md#source-notes) | 2026-08-11 | public user reports。universal cause、repair、local reproduction は主張しない | `curriculum-maintainer` / 2026-09-11 |
+| external checkpoint、vertical slice、complete handoff を curriculum に加える | [Content value upgrade plan P2](../evidence-library-JA.md#source-notes) | 2026-08-11 | project planning recommendation。experiment は `not_run` | `curriculum-maintainer` / 2026-09-11 |
+| current Codex entry points、permission、model、command flag、UI state | [OpenAI Codex baseline](../evidence-library-JA.md#source-notes)、[official Codex documentation](https://developers.openai.com/codex/) | 2026-08-11 | volatile product facts。command や label は first-party source で再確認する | `curriculum-maintainer` / 2026-09-11 |
 
 同じテンプレートを、調査メモ、マーケティング文、デザインレビューにも使えます。ただし、受け入れ条件は分野に合わせて変えます。
 調査なら出典の範囲と引用、文案なら提供された事実と読者の条件、デザインレビューならビューポートと観察が必要です。
