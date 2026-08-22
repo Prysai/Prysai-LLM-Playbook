@@ -571,7 +571,7 @@ implicites.
 
 ### Préparation
 
-Créez une copie temporaire de la fixture synthétique. N’utilisez ni compte
+Créez une copie temporaire du jeu de test synthétique. N’utilisez ni compte
 externe, ni token, ni données personnelles.
 
 ### Tâche

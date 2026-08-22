@@ -286,7 +286,7 @@ s’est passé.
 - [Lab 015 : livrer les preuves, pas une phrase de fin](lab-015-evidence-delivery-FR.md)
 - [OpenAI : guardrails et approbations](https://developers.openai.com/api/docs/guides/agents/guardrails-approvals) — accès 2026-08-10 ; documente une frontière d’approbation d’un runtime Agents, pas toutes les surfaces Codex.
 
-La fixture est locale et synthétique. La réussir montrerait que le compte rendu
+Le jeu de test est local et synthétique. Le réussir montrerait que le compte rendu
 est utile pour cette tâche déclarée ; elle ne prouverait pas que chaque modèle,
 hôte, outil, terminal ou service externe expose les mêmes événements ou respecte
 les mêmes conditions d’arrêt. Le Lab reste `draft / not_run` tant qu’un compte
