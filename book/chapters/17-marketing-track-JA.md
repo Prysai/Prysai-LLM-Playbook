@@ -241,8 +241,8 @@ course の start page に card を適用します。最初の safe action の lo
 
 decision と evidence の境界は安定しています。channel、consent、measurement、product data は変わるため、現在の具体的な review が必要です。
 
-- 現実の問題：[`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md) の FP-03、FP-04。記録状態は `candidate`、アクセス・整理日は 2026-08-09、owner は Prysai LLM Playbook maintenance group です。local reproduction ではありません。
-- Marketing-method reference：[`docs/sources/asset-register.md`](../../docs/sources/asset-register.md) の S04。この章は decision と evidence の独自統合であり、外部の marketing Skill 本文はコピーしていません。
+- 現実の問題：[`docs/research/field-problems-codex.md`](../evidence-library-JA.md#source-notes) の FP-03、FP-04。記録状態は `candidate`、アクセス・整理日は 2026-08-09、owner は Prysai LLM Playbook maintenance group です。local reproduction ではありません。
+- Marketing-method reference：[`docs/sources/asset-register.md`](../evidence-library-JA.md#source-notes) の S04。この章は decision と evidence の独自統合であり、外部の marketing Skill 本文はコピーしていません。
 - 変動する platform / privacy facts：該当 platform の公式 developer、privacy、organization policy、current configuration。experiment record に URL、アクセス日、region、data owner、retention policy を残します。
 
 更新担当は Marketing-track maintainer です。positioning、channel、permission、privacy policy、event schema、attribution method が変わったとき、または遅くとも 2026-11-09 に review します。この章は `candidate` です。マーケティングの結論を `verified` と呼ぶには、data quality、privacy、human review の根拠が必要です。この章は customer、inventory、conversion rate、campaign result を提供しません。
