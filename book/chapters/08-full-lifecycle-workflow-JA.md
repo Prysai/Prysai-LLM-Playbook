@@ -23,7 +23,7 @@ define → plan → build → verify → review → deliver → maintain
 
 同じ考え方をコード以外の成果物にも適用した、使い捨て可能なケースを用意しています。
 架空の「初めて家を買う人」向けの不動産ページです。スクリーンショットを見る前に、
-[ケース記録](../../docs/research/skill-case-product-context-real-estate-2026-08-11.md)
+[ケース記録](../evidence-library-JA.md#source-notes)
 を読んでください。合成入力、ローカルでのレンダリング方法、記録した viewport、
 画像からは言えないことが明記されています。
 
@@ -46,7 +46,7 @@ Product Context Skill が単独で動いたこと、物件が実在すること�
 ## 現実の問題：見える成功の間で workflow が壊れる
 
 ログイン、モデル選択画面、開始した検証は、次に必要な状態が欠けていても進んでいるように見えます。
-プロジェクトの [Codex フィールド調査](../../docs/research/field-problems-codex.md) には、
+プロジェクトの [Codex フィールド調査](../evidence-library-JA.md#source-notes) には、
 この種の公開利用者報告を記録しています。以下は症状から安全な確認方法を学ぶための材料であり、
 公式の製品診断でも、この実行を再現したものでもありません。
 
@@ -118,7 +118,7 @@ delivery: local review packet。commit と push をしていないなら、そ�
 
 公式のセキュリティ記録では、sandbox と承認を別の制御として扱い、副作用のあるコネクタや
 MCP アクションを承認境界に置いています。ワークフローには、技術的にできることと、意味の上で
-実行してよいことの両方を記録します。[公式事実の更新記録](../../docs/research/openai-codex-facts-refresh-2026-08-09.md) と
+実行してよいことの両方を記録します。[公式事実の更新記録](../evidence-library-JA.md#source-notes) と
 [事実の影響範囲レジストリ](../../docs/governance/fact-impact-registry.yaml) は、日付のある
 製品境界を確認する入口です。
 
@@ -386,12 +386,12 @@ workflow の順序、checkpoint、claim と evidence の分離は、このプロ
 
 | 事実または境界 | Source | Accessed | 適用範囲 | Owner / next review |
 |---|---|---:|---|---|
-| sandbox と approval は別の control で、connector/MCP の side effect は approval boundary に入り得る | [Agent approvals and security](https://learn.chatgpt.com/docs/agent-approvals-security.md) と [official facts refresh](../../docs/research/openai-codex-facts-refresh-2026-08-09.md) | 2026-08-09 | 当日の公式 product description。現在の repository runtime policy の証明ではない | `facts-maintainer` / 2026-09-09 |
+| sandbox と approval は別の control で、connector/MCP の side effect は approval boundary に入り得る | [Agent approvals and security](https://learn.chatgpt.com/docs/agent-approvals-security.md) と [official facts refresh](../evidence-library-JA.md#source-notes) | 2026-08-09 | 当日の公式 product description。現在の repository runtime policy の証明ではない | `facts-maintainer` / 2026-09-09 |
 | Cloud work には setup、Agent work、result review、follow-up の境界がある | [Codex Cloud](https://learn.chatgpt.com/docs/cloud.md) | 2026-08-09 | product description。account、organization、environment、current UI は別途確認する | `facts-maintainer` / 2026-09-09 |
-| capacity interruption が dependent task の state を不明にすることがある | [FP-09 / issue #33865](../../docs/research/field-problems-codex.md) | 2026-08-09 | 公開利用者報告。local reproduction や universal queue conclusion ではない | `curriculum-maintainer` / 2026-09-09 |
-| long-running verification が completion state を不明にすることがある | [FP-10 / issue #34325](../../docs/research/field-problems-codex.md) | 2026-08-09 | 公開利用者報告。root cause と release scope は不明 | `curriculum-maintainer` / 2026-09-09 |
-| authentication は別々の observable stage として記録する | [FP-01、FP-02](../../docs/research/field-problems-codex.md) | 2026-08-09 | evidence discipline のための利用者報告。公式の修復手順ではない | `curriculum-maintainer` / 2026-09-09 |
-| verification は install や persistent environment change に静かに広がってはいけない | [FP-11 / issue #37677](../../docs/research/field-problems-codex.md) | 2026-08-09 | 公開利用者報告。official policy や local reproduction ではない | `curriculum-maintainer` / 2026-09-09 |
+| capacity interruption が dependent task の state を不明にすることがある | [FP-09 / issue #33865](../evidence-library-JA.md#source-notes) | 2026-08-09 | 公開利用者報告。local reproduction や universal queue conclusion ではない | `curriculum-maintainer` / 2026-09-09 |
+| long-running verification が completion state を不明にすることがある | [FP-10 / issue #34325](../evidence-library-JA.md#source-notes) | 2026-08-09 | 公開利用者報告。root cause と release scope は不明 | `curriculum-maintainer` / 2026-09-09 |
+| authentication は別々の observable stage として記録する | [FP-01、FP-02](../evidence-library-JA.md#source-notes) | 2026-08-09 | evidence discipline のための利用者報告。公式の修復手順ではない | `curriculum-maintainer` / 2026-09-09 |
+| verification は install や persistent environment change に静かに広がってはいけない | [FP-11 / issue #37677](../evidence-library-JA.md#source-notes) | 2026-08-09 | 公開利用者報告。official policy や local reproduction ではない | `curriculum-maintainer` / 2026-09-09 |
 
 stable な方法は残し、product-specific instruction は source、access date、scope とともに更新します。
 変更があれば first-party record を先に更新し、その後でこの章、関連 Lab、Skill、evaluation fixture、
