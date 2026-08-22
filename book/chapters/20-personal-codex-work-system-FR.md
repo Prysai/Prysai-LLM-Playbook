@@ -2,7 +2,7 @@
 
 # Chapitre 20 : Construire son système de travail avec Codex
 
-**Statut :** `candidate` · **Expérience :** `not_run`  
+**Statut :** `candidate` · **Expérience :** `not_run`
 Ne présumez pas qu’une fonction de mémoire existe, sauvegarde automatiquement
 un contenu ou est disponible dans chaque compte.
 

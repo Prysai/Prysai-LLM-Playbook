@@ -2,7 +2,7 @@
 
 # Chapitre 17 : Marketing, du contexte produit aux expériences
 
-**Statut :** `candidate` · **Expérience :** `not_run`  
+**Statut :** `candidate` · **Expérience :** `not_run`
 Le contenu et les données de cet exemple sont fictifs ; aucune performance de
 campagne ou conversion réelle n’est fournie.
 

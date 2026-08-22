@@ -2,8 +2,8 @@
 
 # Ce qu’est un LLM : comprendre les couches avant de lui faire confiance
 
-**Unité :** `core-llm-boundaries`  
-**Statut :** `candidate`. **Exécution :** `not_run`.  
+**Unité :** `core-llm-boundaries`
+**Statut :** `candidate`. **Exécution :** `not_run`.
 **Durée indicative :** 25 minutes. **Prérequis :** aucun. Vous n’avez besoin ni de Codex, ni de Git, ni d’un compte payant, ni d’un outil.
 
 Cette page est le point de départ du Playbook. Avant de choisir un produit,

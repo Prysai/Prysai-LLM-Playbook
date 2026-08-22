@@ -2,7 +2,7 @@
 
 # Chapitre 4 : Le contexte, les permissions et la frontière d’action d’un Agent
 
-**Statut :** `candidate` · **Expérience :** `not_run`  
+**Statut :** `candidate` · **Expérience :** `not_run`
 Cette version française est en cours de relecture par une personne francophone.
 Les exemples décrivent une méthode ; ils ne prouvent pas le comportement d’un
 produit ou d’un compte particulier.

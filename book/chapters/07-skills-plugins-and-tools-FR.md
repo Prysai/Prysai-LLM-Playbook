@@ -2,7 +2,7 @@
 
 # Chapitre 7 : Skills, Plugins, MCP et outils : répartir le travail
 
-**Statut :** `candidate` · **Comparaison :** `not_run`  
+**Statut :** `candidate` · **Comparaison :** `not_run`
 Les exemples expliquent comment choisir une capacité. Ils ne prouvent pas qu’un
 Skill externe a été chargé ou exécuté par un hôte donné.
 

@@ -2,7 +2,7 @@
 
 # Chapitre 5 : Choisir la bonne surface Codex
 
-**Statut :** `candidate` · **Expérience :** `not_run`  
+**Statut :** `candidate` · **Expérience :** `not_run`
 Ce chapitre propose une méthode de décision. Il ne promet pas qu’un compte,
 un modèle ou un mode d’exécution précis est disponible partout.
 

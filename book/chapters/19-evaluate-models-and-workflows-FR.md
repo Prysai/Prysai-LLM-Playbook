@@ -2,7 +2,7 @@
 
 # Chapitre 19 : Évaluer les modèles et les flux de travail, des impressions aux preuves
 
-**Statut :** `candidate` · **Expérience :** `not_run`  
+**Statut :** `candidate` · **Expérience :** `not_run`
 Les fixtures du dépôt ne contiennent pas de journaux de comparaison exécutés.
 
 ## Le problème

@@ -2,7 +2,7 @@
 
 # Chapitre 18 : Contenu, design, données et automatisation
 
-**Statut :** `candidate` · **Expérience :** `not_run`  
+**Statut :** `candidate` · **Expérience :** `not_run`
 L’existence d’un fichier ou d’un script ne prouve pas que le livrable est lisible,
 accessible ou publiable.
 

@@ -2,7 +2,7 @@
 
 # Chapitre 11 : Concevoir un Skill qui mérite d’être conservé
 
-**Statut :** `candidate` · **Expérience :** `not_run`  
+**Statut :** `candidate` · **Expérience :** `not_run`
 Cette version française est une adaptation pédagogique en cours de relecture.
 Elle ne prouve pas qu’un hôte découvrira ou exécutera le Skill proposé.
 

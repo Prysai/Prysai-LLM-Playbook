@@ -4,7 +4,7 @@
 
 Pour une pratique courte et guidée, ouvrez la [boucle du point d’avancement](work-update-practice-loop-FR.md) ou la [boucle de vérification de recherche](research-check-practice-loop-FR.md). Ces cartes s’utilisent après le [Chapitre 0](guides/llm-fundamentals-FR.md) ; ce n’est pas une introduction à ce qu’est un LLM.
 
-**Statut :** `candidate` · **Exécution :** `not_run` · **Données :** textes fictifs ou autorisés uniquement.  
+**Statut :** `candidate` · **Exécution :** `not_run` · **Données :** textes fictifs ou autorisés uniquement.
 **État :** template_selected | practised | not_run | blocked
 <!-- état : template_selected | practised | not_run | blocked -->
 

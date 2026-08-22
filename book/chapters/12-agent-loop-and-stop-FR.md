@@ -2,7 +2,7 @@
 
 # Chapitre 12 : La boucle d’un Agent et ses conditions d’arrêt
 
-**Statut :** `candidate` · **Expérience :** `not_run`  
+**Statut :** `candidate` · **Expérience :** `not_run`
 Les états décrits sont observables ; ils ne prétendent pas révéler le
 raisonnement interne d’un modèle.
 

@@ -2,7 +2,7 @@
 
 # Chapitre 8 : De la définition à la livraison
 
-**Statut :** `candidate` · **Expérience :** `not_run`  
+**Statut :** `candidate` · **Expérience :** `not_run`
 Ce chapitre décrit un flux de travail fondé sur des preuves. Le cas est pédagogique ; il ne
 constitue pas le compte rendu d’une mise en production ou d’une session Codex
 réelle.

@@ -2,7 +2,7 @@
 
 # Chapitre 14 : Découvrir, installer et auditer un Skill externe
 
-**Statut :** `candidate` · **Expérience :** `not_run`  
+**Statut :** `candidate` · **Expérience :** `not_run`
 Un catalogue est un point de découverte, pas une preuve de qualité, de licence
 ou de sécurité.
 

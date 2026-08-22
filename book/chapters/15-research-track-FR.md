@@ -2,7 +2,7 @@
 
 # Chapitre 15 : Recherche, de la question au savoir vérifiable
 
-**Statut :** `candidate` · **Expérience :** `not_run`  
+**Statut :** `candidate` · **Expérience :** `not_run`
 Les rapports de terrain et les forums sont des signaux ; ils ne sont pas, à eux
 seuls, des preuves de cause officielle.
 

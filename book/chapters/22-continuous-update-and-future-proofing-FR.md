@@ -2,7 +2,7 @@
 
 # Chapitre 22 : Mettre à jour sans perdre la possibilité de revenir en arrière
 
-**Statut :** `candidate` · **Expérience :** `not_run`  
+**Statut :** `candidate` · **Expérience :** `not_run`
 L’exercice se déroule dans une copie jetable, sans credentials, push ni release.
 
 ## Le problème

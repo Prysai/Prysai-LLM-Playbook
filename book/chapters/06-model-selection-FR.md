@@ -2,7 +2,7 @@
 
 # Chapitre 6 : Choisir un modèle sans idolâtrer le modèle
 
-**Statut :** `candidate` · **Comparaison :** `not_run`  
+**Statut :** `candidate` · **Comparaison :** `not_run`
 La méthode ci-dessous aide à construire une comparaison ; elle ne fournit ni
 classement universel ni mesure de performance déjà exécutée.
 

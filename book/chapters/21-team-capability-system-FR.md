@@ -2,7 +2,7 @@
 
 # Chapitre 21 : Construire une capacité d’équipe
 
-**Statut :** `candidate` · **Expérience :** `not_run`  
+**Statut :** `candidate` · **Expérience :** `not_run`
 L’exercice est une simulation statique : il n’autorise, ne connecte et ne
 publie rien.
 

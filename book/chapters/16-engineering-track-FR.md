@@ -2,7 +2,7 @@
 
 # Chapitre 16 : Ingénierie, de l’idée au logiciel fiable
 
-**Statut :** `candidate` · **Expérience :** `not_run`  
+**Statut :** `candidate` · **Expérience :** `not_run`
 Un code qui compile n’est pas encore une livraison utilisable.
 
 ## Le problème

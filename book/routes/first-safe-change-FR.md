@@ -2,7 +2,7 @@
 
 # Première modification sûre : une sandbox hors ligne avant le Lab 001
 
-**Statut :** `candidate`. **Exécution :** `not_run`.  
+**Statut :** `candidate`. **Exécution :** `not_run`.
 **Traduction :** version française en cours ; relecture indépendante à venir.
 
 Cette route est le pont facultatif entre le Chapitre 2 et le Lab 001. Elle
