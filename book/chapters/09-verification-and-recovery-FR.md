@@ -1,4 +1,4 @@
-<!-- content_id: chapter-09-verification-and-recovery | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: 2026-08-22-fr-contract-polish -->
+<!-- content_id: chapter-09-verification-and-recovery | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: 2026-08-22-fr-contract-reinforcement -->
 
 # Chapitre 9 : Vérifier, douter et récupérer
 
@@ -65,6 +65,26 @@ La règle pratique est de capturer le plus petit artefact durable avant un retry
 fichier de sortie, comparaison de l’entrée reçue, diff, hash, journal de commande
 ou passation expurgée. Un contournement communautaire peut aider au triage ; ce
 n’est ni un correctif officiel ni une autorisation de modifier l’environnement.
+
+### Registre de terrain : ne pas mélanger signal et preuve
+
+Pour chaque rapport, remplissez une ligne avant de proposer une réparation. Le
+registre garde la portée du témoignage et empêche une hypothèse de devenir une
+cause officielle par simple répétition :
+
+| Champ | Exemple de valeur | Question de contrôle |
+|---|---|---|
+| `source` | ticket, URL ou rapport daté | Qui a écrit le signal et quand ? |
+| `observation` | « aucun événement visible pendant 10 min » | Qu’a-t-on réellement vu, dans quelle surface ? |
+| `claim` | « la première tentative est peut-être encore active » | Quelle phrase voulons-nous soutenir exactement ? |
+| `evidence` | sortie, diff, hash, état relu | Quel artefact peut être inspecté par une autre personne ? |
+| `status` | `verified`, `partial`, `unverified`, `blocked`, `not_run` | L’état décrit-il l’observation ou une conclusion trop large ? |
+| `next_check` | relire un fichier local sans écriture | Quelle seule lecture pourrait changer la décision ? |
+| `limit` | pas de reproduction, pas de cause mainteneur | Que cette source ne permet-elle pas d’affirmer ? |
+
+Un rapport peut donc contenir une observation `verified` tout en laissant sa
+cause `unverified`. N’écrivez pas « le service est bloqué » si la seule preuve
+est « aucun événement n’a été observé dans cette interface ».
 
 ### Cas FC-EVIDENCE-01 : une commande terminée peut laisser une affirmation impossible à relire
 
@@ -237,6 +257,24 @@ Une lecture qui trouve le bon fichier ne prouve pas qu’un message, un upload,
 un déploiement ou une autre cible externe n’a pas été touché. Reprenez seulement
 si la nouvelle condition, l’idempotence, la preuve attendue et le budget sont
 explicitement consignés.
+
+Avant une reprise, complétez cette fiche minimale :
+
+```text
+première tentative : commande ou demande exacte
+état avant : checkpoint, hash, diff et cible
+état après lecture : no_effect_observed | effect_matches | effect_differs | effect_unknown
+classe d’idempotence : aucune | idempotente | doublon possible | inconnue
+nouvelle condition : ce qui a changé depuis la première tentative
+preuve attendue du second essai : artefact distinct et lecture indépendante
+budget et arrêt : délai, nombre d’essais et condition d’arrêt
+```
+
+Une action dont la classe d’idempotence est `inconnue` ne doit pas être répétée
+pour « voir si cela passe ». Si l’état reste `effect_unknown`, livrez cette
+incertitude et demandez une décision ciblée ; ne la remplacez pas par le succès
+d’un second essai. Le second essai possède toujours son propre `run_id`, sa
+propre sortie et sa propre portée.
 
 Pour une reprise autorisée, conservez au minimum :
 
