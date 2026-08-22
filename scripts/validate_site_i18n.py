@@ -40,6 +40,17 @@ FRENCH_COPY_GUARDS = {
     "Les Lab sont": "French lab label must use the ordinary plural form",
     "ENREGISTREMENT DE CHÈQUE": "verification record must not use a banking term",
 }
+# These are deliberately high-confidence, user-facing false friends or
+# untranslated fragments. They are not a dictionary of French style; a native
+# reviewer is still required for idiom, register, and regional usage.
+FRENCH_EFFECTIVE_COPY_GUARDS = {
+    "noyau de base LLM": "the foundation route should use ordinary French wording",
+    "les Agent": "agent is a French masculine noun and must be pluralized naturally",
+    "les Skill": "Skill labels must use a consistent readable plural",
+    "repêchage": "a recovery route is not a sports repechage",
+    "tracé de fondation": "the route label should not use a literal map trace",
+    "prompt de remplacement": "replacement prompt should use the project’s localized term",
+}
 PUBLIC_COURSE_COVERAGE_TABLES = {
     ROOT / "README-EN.md": {
         "English": "en",
@@ -155,6 +166,17 @@ def validate_french_copy_guards(app: str, errors: list[str]) -> None:
     for phrase, explanation in FRENCH_COPY_GUARDS.items():
         if phrase in block:
             errors.append(f"French copy guard: {explanation}: {phrase}")
+    # Inspect only the effective override layer for softer editorial guards;
+    # earlier generated dictionaries remain as historical input to the
+    # composition process and are not necessarily rendered.
+    effective = block.rsplit("// Final editorial pass", 1)[-1]
+    for phrase, explanation in FRENCH_EFFECTIVE_COPY_GUARDS.items():
+        # Some guards are whole-word checks.  In particular, ``les Skill``
+        # must not match the valid plural ``les Skills`` that appears in the
+        # reader-facing catalogue.  Keep the guard readable while avoiding a
+        # substring false positive at a word boundary.
+        if re.search(rf"(?<![\w-]){re.escape(phrase)}(?![\w-])", effective):
+            errors.append(f"French effective copy guard: {explanation}: {phrase}")
 
 
 def load_generated_manifest() -> dict:

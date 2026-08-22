@@ -127,6 +127,31 @@ def main() -> int:
     )
     require(french_guard_errors and "Autocar Codex" in french_guard_errors[0], "a known French false translation was accepted")
 
+    effective_french_errors: list[str] = []
+    i18n.validate_french_copy_guards(
+        "// Generated French interface dictionary\n"
+        "const old = 'les Agent';\n"
+        "// Final editorial pass\n"
+        "const visible = 'les Agent';\n",
+        effective_french_errors,
+    )
+    require(
+        any("les Agent" in error for error in effective_french_errors),
+        "an effective French false friend was accepted",
+    )
+
+    valid_french_errors: list[str] = []
+    i18n.validate_french_copy_guards(
+        "// Generated French interface dictionary\n"
+        "// Final editorial pass\n"
+        "const visible = 'les Skills';\n",
+        valid_french_errors,
+    )
+    require(
+        not valid_french_errors,
+        "a valid French plural was rejected by the effective copy guard",
+    )
+
     print("SITE_I18N_TESTS_OK fixtures=10")
     return 0
 
