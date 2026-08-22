@@ -1,4 +1,4 @@
-<!-- content_id: chapter-02-first-safe-task | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: 2026-08-22-fr-contract-polish -->
+<!-- content_id: chapter-02-first-safe-task | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: 2026-08-22-fr-contract-reinforcement -->
 
 # Chapitre 2 : Réaliser une première tâche sûre et vérifiable
 
@@ -64,6 +64,47 @@ conviennent.
 | Acceptation | Contrôle tiré de la configuration, du test, du fichier ou de la source réelle. | Ajouter le contrôle. |
 | Arrêt | Règle pour entrée, autorité, délai, périmètre ou preuve manquants. | S’arrêter. |
 
+### La carte de contrat à relire avant d’écrire
+
+Les six préconditions deviennent utiles lorsqu’elles sont écrites pour la tâche
+réelle. Une connexion réussie ne remplit pas automatiquement les champs
+« capacité », « autorisation » et « confirmation humaine ». Notez-les séparément
+dans la carte :
+
+```text
+objectif observable :
+surface et chemin exacts :
+entrées effectivement lues :
+capacité technique démontrée :
+autorisation accordée pour cette tâche :
+confirmation humaine requise avant quel effet :
+actions permises :
+actions exclues :
+preuve d’acceptation :
+règle d’arrêt :
+livraison attendue :
+```
+
+La carte ne doit pas laisser entendre qu’un accès possible est une permission
+d’agir. Par exemple, un répertoire inscriptible démontre peut-être une capacité
+technique locale ; il ne démontre ni que ce fichier est la bonne cible, ni que
+la publication est autorisée. Une confirmation donnée pour une édition locale
+ne couvre pas ensuite un commit, un push ou un upload.
+
+Pour chaque ligne, ajoutez un état et un artefact :
+
+| Ligne | État à utiliser | Artefact minimal |
+|---|---|---|
+| Entrée ou chemin | `observed` / `unknown` | chemin, extrait ou liste réellement relu(e) |
+| Capacité | `verified` / `unverified` | sonde sans effet, sortie ou inventaire borné |
+| Autorisation | `confirmed` / `missing` | décision explicite et cible nommée |
+| Action | `not_run` / `performed` | commande, diff ou événement daté |
+| Acceptation | `verified` / `partial` / `blocked` | contrôle, résultat et limite de portée |
+
+Si une ligne reste `unknown`, `missing` ou `unverified`, la tâche ne devient pas
+plus sûre en ajoutant des étapes. Réduisez la question à une lecture seule, ou
+arrêtez-la avec cette lacune écrite dans la passation.
+
 ## Ce que la frontière officielle dit — et ne dit pas
 
 Consultez la [baseline officielle du chapitre 2](../../docs/research/chapter-02-official-baseline-2026-08-10.md)
@@ -92,6 +133,25 @@ Acceptation : les commandes existent dans le vrai script et le diff ne touche qu
 Échec : commande ambiguë, contrôle bloqué ou portée modifiée → préserver et arrêter.
 Livraison : résumé, fichiers, commandes exécutées, sorties, limites et prochaine vérification.
 ```
+
+### Le registre d’acceptation
+
+Avant la modification, écrivez une ligne par affirmation que la livraison devra
+contenir. Cela évite de transformer un seul message « terminé » en preuve de
+plusieurs résultats différents :
+
+```text
+affirmation : README.md contient la section demandée
+portée : copie locale, révision et chemin nommés
+preuve attendue : diff limité + contrôle de liens
+état avant l’action : not_run
+condition d’arrêt : autre fichier, commande ambiguë ou contrôle absent
+```
+
+Après l’action, remplacez `not_run` par l’état réellement soutenu par la
+preuve : `verified`, `partial`, `unverified`, `blocked` ou `not_run`. Un diff
+peut soutenir « le fichier a changé » ; il ne soutient pas à lui seul « le test
+a passé », « le site est publié » ou « les utilisateurs y gagnent ».
 
 Ce protocole convertit chaque verbe vague en objet, autorité et preuve. Ce n’est
 pas un prompt magique : le jugement humain reste nécessaire.
