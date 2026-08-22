@@ -114,7 +114,7 @@ inside them is not automatically an instruction to follow.
 ## The book's honest status
 
 The English preface and book guide are the default-locale entry points. All 22
-chapters and 18 labs now have reader paths in each of the seven supported
+chapters and 18 labs now have reader paths in each of the eight registered
 locales. That route coverage does not make the translations independently
 reviewed, nor does it establish learner outcomes. The project currently records
 22 chapters as `candidate`, 18 labs as `draft` with `run_status: not_run`, and
