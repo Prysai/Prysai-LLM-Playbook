@@ -6562,7 +6562,42 @@ Object.assign(copy.fr, {
   wizardIntro: 'Après les fondamentaux, choisissez un objectif, ajoutez seulement les détails nécessaires, puis copiez une consigne que vous pourrez vérifier dans n’importe quel modèle de chat. Aucun compte, fichier ni configuration n’est requis.',
   visualLearningSourceLink: 'Ouvrir le parcours des fondamentaux',
   foundationLayerCheckBody: 'Comparez le résultat avec une règle de source, un diff, un test, un journal ou un critère d’acceptation avant d’affirmer que la tâche est terminée.',
-  routeCTitle: 'Capacités et collaboration avec les agents'
+  routeCTitle: 'Capacités et collaboration avec les agents',
+
+  // Second editorial sweep: these labels were grammatically possible but
+  // misleading or noticeably literal in the generated dictionary above.
+  heroEyebrow: 'Commencez par comprendre le modèle · puis faites un essai vérifiable',
+  heroRouteFixtureBody: 'Il fournit une cible et une vérification après le chapitre 2. C’est un repli, pas un remplacement du parcours guidé.',
+  heroRouteBoundary: 'Les trois premières cartes donnent un aperçu ; elles ne sont pas trois portes d’entrée concurrentes. Terminez les cinq unités avant d’ouvrir Codex, les outils, les agents ou les skills. La mise en route reste facultative.',
+  checkCardLabel: 'Un contrat de tâche utile',
+  levelL1Name: 'Utilisateur prudent',
+  levelL5Short: 'Vérifier les affirmations de fin de tâche',
+  labsEyebrow: 'Les labs',
+  startingLab: 'premier lab',
+  skillResearch: 'Transformer une question en connaissances vérifiables.',
+  skillSourceName: 'Enquêteur de sources',
+  mobileIndexLocales: 'fiches de langue',
+  mobileIndexUpdates: 'zones à mettre à jour',
+  mobileIndexTrust: 'familles de confiance',
+  updatesEyebrow: 'Cadre de maintenance',
+  fileSkillsBody: '26 Skills du projet, avec leurs déclencheurs, leurs limites et leurs contrats de preuve.',
+  ledgerResearchNote: 'rapports d’utilisateurs ; non reproduits localement',
+  chapter19: 'Évaluer les modèles et les flux de travail',
+  researchReceiptsLink: 'Lire les signaux de terrain sur la sécurité de l’IA',
+  researchFirstTurnBody: 'Une carte textuelle à six champs pour la langue ou la recherche ; elle sert à explorer des pistes, pas à établir une équivalence entre plateformes ni un résultat.',
+  searchClear: 'Effacer',
+  searchIndexUnavailable: 'L’index de recherche local n’a pas pu être chargé. Vérifiez la connexion, puis relancez la recherche.',
+  promptContractStopLabel: 'Arrêt et éléments à conserver',
+  researchCardStepOne: 'Copiez la carte, puis remplacez uniquement les deux éléments entre crochets.',
+  wizardBack: 'Retour',
+  wizardCopied: 'Prompt copié. Collez-le dans le modèle de chat de votre choix.',
+  visualCaseAlt: 'Boucle de pratique pour débutants : essayer, corriger, changer le cas et conserver une fiche de vérification',
+  foundationConceptResponseBody: 'Texte proposé par le modèle, à vérifier. Une formulation fluide peut donner une fausse impression de certitude.',
+  foundationConceptBoundary: 'Réponse ≠ action ≠ résultat vérifié. Avant d’annoncer que la tâche est terminée, comparez le résultat à une source, un diff, un test, un journal ou un critère d’acceptation.',
+  wizardGoalWorkOutcome: 'Vous obtenez une consigne pour rédiger un point d’avancement délimité, en protégeant les informations que vous fournissez.',
+  localeIntro: 'Huit langues sont disponibles comme points d’entrée. Chaque parcours de cours couvre 22 chapitres et 18 Labs dans la langue choisie ; les pages complémentaires gardent leur propre statut de traduction et signalent clairement lorsqu’une page manque.',
+  skillHandoffName: 'Passation',
+  skillHandoff: 'Séparez les règles réutilisables de l’élément de travail fourni aujourd’hui.'
 });
 
 initializeSearch();

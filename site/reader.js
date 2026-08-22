@@ -355,13 +355,13 @@
     const loading = document.querySelector('[data-reader-loading]');
     if (loading) loading.textContent = strings.loading;
   const optionLabels = {
-      en: { en: 'English', zh: 'Simplified Chinese', es: 'Spanish', ja: 'Japanese', ko: 'Korean', de: 'German', 'zh-tw': 'Traditional Chinese' },
-      zh: { en: '英语', zh: '简体中文', es: '西班牙语', ja: '日语', ko: '韩语', de: '德语', 'zh-tw': '繁体中文' },
-      es: { en: 'Inglés', zh: 'Chino simplificado', es: 'Español', ja: 'Japonés', ko: 'Coreano', de: 'Alemán', 'zh-tw': 'Chino tradicional' },
-      ja: { en: '英語', zh: '簡体字中国語', es: 'スペイン語', ja: '日本語', ko: '韓国語', de: 'ドイツ語', 'zh-tw': '繁体字中国語' },
-      ko: { en: '영어', zh: '중국어 간체', es: '스페인어', ja: '일본어', ko: '한국어', de: '독일어', 'zh-tw': '중국어 번체' },
-      de: { en: 'Englisch', zh: 'Vereinfachtes Chinesisch', es: 'Spanisch', ja: 'Japanisch', ko: 'Koreanisch', de: 'Deutsch', 'zh-tw': 'Traditionelles Chinesisch' },
-      'zh-tw': { en: 'English', zh: '簡體中文', es: '西班牙文', ja: '日文', ko: '韓文', de: '德文', 'zh-tw': '繁體中文' },
+      en: { en: 'English', zh: 'Simplified Chinese', es: 'Spanish', ja: 'Japanese', ko: 'Korean', de: 'German', 'zh-tw': 'Traditional Chinese', fr: 'French' },
+      zh: { en: '英语', zh: '简体中文', es: '西班牙语', ja: '日语', ko: '韩语', de: '德语', 'zh-tw': '繁体中文', fr: '法语' },
+      es: { en: 'Inglés', zh: 'Chino simplificado', es: 'Español', ja: 'Japonés', ko: 'Coreano', de: 'Alemán', 'zh-tw': 'Chino tradicional', fr: 'Francés' },
+      ja: { en: '英語', zh: '簡体字中国語', es: 'スペイン語', ja: '日本語', ko: '韓国語', de: 'ドイツ語', 'zh-tw': '繁体字中国語', fr: 'フランス語' },
+      ko: { en: '영어', zh: '중국어 간체', es: '스페인어', ja: '일본어', ko: '한국어', de: '독일어', 'zh-tw': '중국어 번체', fr: '프랑스어' },
+      de: { en: 'Englisch', zh: 'Vereinfachtes Chinesisch', es: 'Spanisch', ja: 'Japanisch', ko: 'Koreanisch', de: 'Deutsch', 'zh-tw': 'Traditionelles Chinesisch', fr: 'Französisch' },
+      'zh-tw': { en: 'English', zh: '簡體中文', es: '西班牙文', ja: '日文', ko: '韓文', de: '德文', 'zh-tw': '繁體中文', fr: '法文' },
       fr: { en: 'anglais', zh: 'chinois simplifié', es: 'espagnol', ja: 'japonais', ko: 'coréen', de: 'allemand', 'zh-tw': 'chinois traditionnel', fr: 'français' },
     }[uiLanguage()] || {};
     document.querySelectorAll('[data-reader-language] option').forEach((option) => {
