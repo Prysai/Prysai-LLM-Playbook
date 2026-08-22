@@ -130,6 +130,38 @@ def main() -> int:
                         (lab_path.parent / target).is_file(),
                         f"{lab_path.relative_to(ROOT)} links to missing Lab navigation target: {target}",
                     )
+
+            # Lab 001 and Lab 007 are the two published locale entry points
+            # whose direct source navigation is part of the beginner route.
+            # Keep this assertion narrow: other localized Labs may still be
+            # route-only or awaiting an independently reviewed navigation rail.
+            for lab_number, expected_previous, expected_next in (
+                (1, None, f"lab-002-task-protocol-{locale}.md"),
+                (7, f"lab-006-agent-stop-conditions-{locale}.md", f"lab-008-research-question-{locale}.md"),
+            ):
+                lab_path = next(ROOT.joinpath("book/labs").glob(f"lab-{lab_number:03d}-*-{locale}.md"))
+                source = lab_path.read_text(encoding="utf-8")
+                require(
+                    source.count("<!-- lab-navigation:start -->") == 1
+                    and source.count("<!-- lab-navigation:end -->") == 1,
+                    f"{lab_path.relative_to(ROOT)} is missing its direct navigation block",
+                )
+                previous_targets = re.findall(
+                    r'<a\s+[^>]*data-lab-nav="previous"[^>]*href="([^"]+)"',
+                    source,
+                )
+                next_targets = re.findall(
+                    r'<a\s+[^>]*data-lab-nav="next"[^>]*href="([^"]+)"',
+                    source,
+                )
+                require(
+                    previous_targets == ([] if expected_previous is None else [expected_previous]),
+                    f"{lab_path.relative_to(ROOT)} has the wrong previous navigation target",
+                )
+                require(
+                    next_targets == [expected_next],
+                    f"{lab_path.relative_to(ROOT)} has the wrong next navigation target",
+                )
     except (AssertionError, KeyError, OSError, UnicodeError, ValueError, StopIteration) as exc:
         print("READER_LAB_NAVIGATION_TESTS_FAILED")
         print(f"- {exc}")
