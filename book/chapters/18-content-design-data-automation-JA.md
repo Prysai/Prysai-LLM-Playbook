@@ -146,13 +146,24 @@ A–D 表、最終 render、data dictionary、validation、無効入力への応
 
 ## 小実験：offline report flow と二つの failure
 
+### 準備
+
 1. normal、empty、`count` 欠落、negative、extreme の synthetic input を作る。real customer/personal/production data は使わない。
+### タスク
+
 2. Markdown report を作り window、total、category、empty state を確認する。PDF/PNG を render するなら final form を確認する。
+
+### 証拠
+
 3. run ごとに input hash、transform version、output path、exit status、raw log、read-back を残す。
 4. write 後 timeout を模擬する。すぐ再 write せず同じ batch で partial report を読む。unknown なら `unverified` として stop。
 5. missing column/bad data では block reason を示し、zero、chart、success を作らない。
 
 email、CRM、cloud drive、website への送信は別の external write です。test account/draft endpoint、target/audience、approval、batch、withdrawal/rollback、online read-back が必要で、この exercise は許可しません。
+
+### 振り返り
+
+どの入力、表示、ログ、または復旧条件が最も判断を変えたかを記録します。`candidate / not_run` の範囲を越える主張はしません。
 
 ## 受け入れチェックリスト（自己確認）
 
