@@ -224,6 +224,29 @@ qui soutient seulement une sous-phrase exige de scinder la claim ; il ne faut pa
 | `scope` / `accessed` | version, date, plateforme et accès | généraliser hors contexte |
 | `reviewer` / `action` | relecteur, date, garder ou déclasser | laisser une citation non résolue invisible |
 
+### Fiche d'audit prête à remplir
+
+Pour une affirmation importante, utilisez une ligne unique et faites relire
+les champs avant de rédiger la conclusion :
+
+```text
+claim_id : C-07
+claim : [phrase atomique, avec son niveau de certitude]
+original_url / final_url : [URL avant et après redirection]
+source_owner : [organisme, mainteneur ou auteur responsable]
+location : [section, paragraphe, issue, commentaire ou horodatage]
+support : [ce que le passage établit exactement]
+inference : [ce que le texte ajoute, s'il y en a]
+scope : [date, version, plateforme, région, compte, licence]
+accessed / cutoff : [date, heure et fuseau]
+status : supported | partial | citation_unverified | inaccessible
+reviewer / action / next_review : [relecture, décision et prochaine date]
+```
+
+`citation_unverified` est un état de travail explicite : il ne signifie pas
+« probablement correct ». Tant que le passage n'est pas localisé, scindez la
+phrase, réduisez son niveau de certitude ou retirez-la.
+
 ### 10. Ramener honnêtement le résultat à `candidate`
 
 Ne marquez pas un résultat `verified` lorsqu’une source clé est inaccessible, que des sources officielles se contredisent sans décision de périmètre, qu’il ne reste que des témoignages de forum ou des solutions communautaires, que les citations générées n’ont pas été ouvertes et localisées, que la date, la version, la plateforme ou la région ne correspondent pas, ou qu’une reproduction annoncée ne possède aucune trace enregistrée. `Candidate` ne signifie pas « rien n’a été fait » : cela signifie que les limites du livrable sont visibles.
@@ -243,6 +266,23 @@ les inconnues et les conflits ; l’état de l’URL et de l’emplacement pour 
 affirmation clé ; la conclusion impossible et la raison de l’arrêt ; la prochaine
 action sûre ; enfin le responsable, la date de coupure, la condition de revue et
 la preuve qui manque pour passer à `verified`.
+
+### Les cinq éléments d'une livraison `candidate`
+
+Avant de remettre une note, vérifiez qu'elle contient bien :
+
+1. **ce qui est établi**, avec la source et l'emplacement réellement ouverts ;
+2. **ce qui reste inconnu ou conflictuel**, sans le remplir par une hypothèse ;
+3. **la phrase qui ne peut pas être soutenue**, et la raison précise de l'arrêt ;
+4. **la prochaine vérification sans risque**, par exemple une lecture seule ou
+   une demande de source, sans élargir les permissions ;
+5. **le responsable, la coupure et la prochaine revue**, avec la preuve requise
+   pour envisager `verified`.
+
+Si l'échange de jeton n'est pas documenté, écrivez par exemple : « La page de
+redirection a été signalée comme réussie ; l'échange suivant reste non vérifié.
+Cette note ne conclut pas à une connexion complète. » Ne remplacez pas ce manque
+par un ton plus assuré ni par un conseil de forum.
 
 ### Exemple de déclassement
 
@@ -345,6 +385,11 @@ de la source, la version ou la date de mise à jour, la portée (plateforme,
 région, compte, licence) et la prochaine date de revue. Une URL seule ne dit
 pas qui doit la vérifier ni quand elle devient trop ancienne.
 
+Une source ancienne, une page dont le titre ne correspond pas au corps, une
+citation impossible à localiser ou une licence non confirmée doit apparaître
+comme une limite de la fiche. Elle ne doit pas disparaître dans la bibliographie
+finale.
+
 ### Fermer une recherche sans prétendre qu’elle est complète
 
 À la fin du créneau, le responsable remplit une fiche de clôture :
@@ -420,6 +465,26 @@ Cette fiche décrit uniquement ce qui s’est passé dans le périmètre consign
 Un résultat sans source ouverte, emplacement localisable, responsable, date de
 coupure ou condition de revue reste `candidate`, `blocked` ou `not_run` selon la
 lacune. Ne remplacez pas un champ manquant par une formulation plus assurée.
+
+### Fiche de clôture : arrêt, responsable et suite
+
+```text
+Décision visée :
+Question retenue :
+Claims vérifiées / non vérifiées :
+Sources ouvertes et emplacements :
+Sources redirigées, inaccessibles ou non localisables :
+Conflits, version, plateforme, région et licence :
+Responsable de la source et relecteur :
+Date de coupure + fuseau :
+Statut : candidate | blocked | not_run
+Raison d'arrêt :
+Prochaine vérification minimale + date :
+```
+
+Cette fiche ferme le run, pas le sujet. Elle permet à un autre lecteur de
+reprendre sans supposer qu'une citation, une licence ou une action externe a été
+vérifiée.
 
 ## Échecs et frontières
 
