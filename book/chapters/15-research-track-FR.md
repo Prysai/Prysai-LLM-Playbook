@@ -52,7 +52,7 @@ Une simple liste de liens n’est pas un livrable. Un lecteur doit savoir pourqu
 
 ```text
 Besoin : la question concrète ou la décision bloquée.
-Propriétaire de la source : projet, organisme de normalisation, mainteneur ou auteur.
+Responsable de la source : projet, organisme de normalisation, mainteneur ou auteur.
 Artefact : documentation, dépôt, exemple exécutable, issue ou discussion.
 Portée : langage, framework, plateforme, version, licence et public.
 Essai : la plus petite observation ou démonstration reproductible sans risque.
@@ -116,8 +116,9 @@ Relation : appuie / contredit / piste seulement / inconnu :
 Fait observé et hypothèse explicative (dans deux champs séparés) :
 Limites, échantillon et conflits :
 Audit de citation : ouvert et localisé / titre seulement / inaccessible :
-Tonalité : certain / possible / inconnu / à ne pas écrire :
-Relecteur, date et prochaine action :
+Niveau de certitude : certain / possible / inconnu / à ne pas écrire :
+Responsable de la source : ________ | Relecteur/date : ________
+Action : conserver / nuancer / retirer / compléter | Prochaine revue : ________
 ```
 
 La documentation officielle décrit les produits et les protocoles ; un rapport original décrit un symptôme ; un commentaire secondaire est une piste ; un résumé de modèle n’est jamais une source indépendante. Une page inaccessible peut être conservée comme « vérification requise », jamais comme une citation lue avec un numéro de page inventé.
@@ -209,6 +210,12 @@ Une livraison `candidate` doit comprendre :
 
 Exemple : sans preuve que l’échange de jeton a réussi, écrivez : « L’étape du navigateur a été signalée comme réussie ; l’échange suivant reste non vérifié ou a échoué, donc on ne peut pas conclure à une connexion réussie. La prochaine vérification consiste à conserver des traces sans secret et à contrôler la version et le périmètre réseau. » N’inventez pas de cause officielle et ne demandez pas d’élargir les permissions pour tester une piste non vérifiée.
 
+Une livraison `candidate` doit rendre visibles cinq éléments : les faits connus,
+les inconnues et les conflits ; l’état de l’URL et de l’emplacement pour chaque
+affirmation clé ; la conclusion impossible et la raison de l’arrêt ; la prochaine
+action sûre ; enfin le responsable, la date de coupure, la condition de revue et
+la preuve qui manque pour passer à `verified`.
+
 ### 11. Les documents externes sont des données, pas des instructions prioritaires
 
 Un document peut contenir une demande de secret, un lien de téléchargement ou une injonction qui n’a rien à voir avec la question. Nettoyez les secrets, marquez la source comme non fiable et n’extrayez que les faits pertinents. Si le document demande une action externe, analysez cette demande comme un objet de recherche ; ne l’exécutez pas automatiquement.
@@ -228,10 +235,15 @@ Choisissez un thème public, par exemple : « pourquoi certains problèmes de co
 1. Demandez d’abord trois questions candidates et des questions de clarification. N’autorisez ni récupération de sources ni conclusion à ce stade.
 2. Choisissez la question la plus petite et écrivez inclusions, exclusions, coupure, fuseau, périmètre et conditions d’arrêt.
 3. Concevez les groupes symptôme, frontière et environnement ; journalisez les termes, filtres, heures, résultats et exclusions.
-4. Construisez le plan de sources et la table avec des affirmations atomiques.
-5. Vérifiez version, portée et surface pour chaque source officielle ; créez un enregistrement d’échec pour les redirections, murs de connexion et limites.
-6. Demandez un résumé court et cité, puis ouvrez chaque citation avant de la conserver. Séparez officiel, rapport, conseil, hypothèse et inconnu.
-7. Faites relire trois affirmations. Si une preuve clé manque, livrez `candidate` avec la raison d’arrêt et le prochain contrôle sûr.
+4. Construisez le plan de sources et la table avec des affirmations atomiques ; ne
+   copiez pas le texte, le code ni les commandes d’un forum.
+5. Vérifiez version, portée et surface pour chaque source officielle ; créez un
+   enregistrement d’échec pour les redirections, pages nécessitant une
+   authentification et limites de débit.
+6. Demandez un résumé court et cité, puis ouvrez chaque citation avant de la
+   conserver. Séparez officiel, rapport, conseil, hypothèse et inconnu.
+7. Faites relire trois affirmations. Si une preuve clé manque, livrez `candidate`
+   avec la raison d’arrêt et le prochain contrôle sûr.
 
 ### Preuve
 
@@ -288,6 +300,11 @@ Statut : <official / user_report / lead / inaccessible / citation_unverified>
 Prochaine action sûre : <lire, comparer les périmètres ou arrêter>
 ```
 
+Pour chaque ligne, ajoutez aussi l’URL d’origine et l’URL finale, le responsable
+de la source, la version ou la date de mise à jour, la portée (plateforme,
+région, compte, licence) et la prochaine date de revue. Une URL seule ne dit
+pas qui doit la vérifier ni quand elle devient trop ancienne.
+
 ### Carte de décision
 
 Avant « cherche cela », écrivez :
@@ -300,6 +317,17 @@ Arrêt : quelle source, autorisation ou définition manquante impose une pause ?
 ```
 
 Chaque affirmation reçoit un propriétaire de source, un appui direct, un conflit éventuel et une seule prochaine vérification. Si le passage ne soutient qu’une partie de la phrase, scindez-la ou abaissez sa tonalité.
+
+#### Tableau responsable de source
+
+| Affirmation | Responsable de la source | Appui direct | Conflit ou inconnue | Prochain contrôle autorisé |
+|---|---|---|---|---|
+| [phrase vérifiable] | page officielle / étude originale / politique juridique / donnée première main | section, paragraphe ou horodatage | partie non soutenue, autre version ou région | une lecture ou comparaison minimale |
+
+Les forums servent à découvrir un symptôme et les bons termes de recherche ; ils
+ne prouvent pas automatiquement une cause ou un support pour tous les utilisateurs.
+Les liens, titres et dates produits par une IA doivent eux aussi être contrôlés
+sur le document original.
 
 #### Quatre questions avant de conclure
 
@@ -328,6 +356,10 @@ Statut : research_plan | scope_checked_for_supplied_list | blocked | not_run
 
 Cette fiche décrit uniquement ce qui s’est passé dans le périmètre consigné. Elle ne prouve ni que la recherche est terminée, ni que les faits sont encore actuels, ni qu’un modèle a correctement récupéré les sources, ni qu’une action peut être entreprise.
 
+Un résultat sans source ouverte, emplacement localisable, responsable, date de
+coupure ou condition de revue reste `candidate`, `blocked` ou `not_run` selon la
+lacune. Ne remplacez pas un champ manquant par une formulation plus assurée.
+
 ## Échecs et frontières
 
 - Ne transformez pas un rapport utilisateur en confirmation officielle.
@@ -337,9 +369,11 @@ Cette fiche décrit uniquement ce qui s’est passé dans le périmètre consign
 - Ne transformez pas une astuce de forum en cause racine ou promesse de support.
 - N’utilisez pas une citation non localisable ; conservez-la comme piste.
 - Ne généralisez pas un échantillon régional, un plan ou une seule version.
+- Ne présentez pas une source ancienne ou hors plateforme comme si elle était
+  actuelle : notez URL officielle, date d’accès, portée, responsable et prochaine
+  revue.
 - N’élargissez pas les permissions parce que les preuves sont faibles ; réduisez l’échantillon, retirez les secrets ou arrêtez.
 - Ne laissez pas une instruction injectée dans un document modifier l’étude.
-- Ne présentez pas une source ancienne ou hors périmètre comme si elle était actuelle ; attachez à chaque fait volatil son URL officielle, sa date d’accès, son périmètre, son responsable et sa prochaine revue.
 - Ne franchissez pas la limite de licence d’un Skill externe : S02 est une référence sous CC BY-NC 4.0 ; S01 n’a pas de licence claire et les répertoires S03/S06 ne reçoivent pas automatiquement une autorisation uniforme.
 
 ## Exercice de transfert
@@ -356,6 +390,9 @@ Prenez une conclusion récente sans la rechercher à nouveau. Donnez un identifi
 - [ ] Trois groupes de requêtes et un contrôle inverse sont enregistrés.
 - [ ] Les citations produites par un modèle ont été ouvertes et localisées.
 - [ ] Une preuve manquante ramène le texte à `candidate` avec une raison d’arrêt.
+- [ ] La livraison `candidate` contient un responsable de source, une date de
+      coupure, une condition de prochaine revue et l’élément nécessaire pour
+      passer à `verified`.
 - [ ] Les documents externes sont traités comme données et non comme consignes prioritaires.
 - [ ] Les licences et attributions des sources externes sont consignées, notamment la limite CC BY-NC 4.0 de S02.
 - [ ] Je peux expliquer pourquoi FP-01 et FP-02 demandent des preuves par étapes plutôt qu’une seule étiquette « réussite ».
