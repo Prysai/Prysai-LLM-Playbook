@@ -195,8 +195,8 @@ email、CRM、cloud drive、website への送信は別の external write です�
 
 final-form review と idempotency は安定した方法です。format、API、renderer、access rule は environment ごとに変わります。
 
-- Field reports：[`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md) の FP-10、FP-11。記録は `candidate`、アクセス・整理日は 2026-08-09、local reproduction ではありません。
-- External asset / license boundary：[`docs/sources/asset-register.md`](../../docs/sources/asset-register.md) の S01、S03、S06。画像、code、template、nested asset の license が不明なら reference-only とし、release にコピーしません。
+- Field reports：[`docs/research/field-problems-codex.md`](../evidence-library-JA.md#source-notes) の FP-10、FP-11。記録は `candidate`、アクセス・整理日は 2026-08-09、local reproduction ではありません。
+- External asset / license boundary：[`docs/sources/asset-register.md`](../evidence-library-JA.md#source-notes) の S01、S03、S06。画像、code、template、nested asset の license が不明なら reference-only とし、release にコピーしません。
 - Volatile tool facts：実際に使う document、PDF、spreadsheet、browser、renderer、external-service の公式文書。work record に URL、アクセス日、version、scope を残します。
 
 更新担当は Content and automation track maintainer です。renderer、format、browser、API、license、permission model が変わったとき、または遅くとも 2026-11-09 に review します。この章は `candidate` です。final-form、data quality、privacy、license、rollback、online evidence がそろうまで、納品を `verified` や `production-ready` とは呼びません。本章は production run を報告しません。
