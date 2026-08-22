@@ -2,12 +2,14 @@
 
 # Chapitre 9 : Vérifier, douter et récupérer
 
-**Statut :** candidate · **Expérience :** not_run
+**Statut :** `candidate` · **Expérience :** `not_run`
 
 Ce chapitre apprend à relier chaque affirmation à la plus petite preuve qui la
 soutient, puis à reprendre une tâche incertaine sans élargir son périmètre. Les
 rapports publics sont des entrées pédagogiques, pas des reproductions locales,
-diagnostics officiels ou preuves de production.
+diagnostics officiels ou preuves de production. Les états de travail (`verified`,
+`partial`, `unverified`, `blocked`, `not_run`) décrivent ici la portée de la
+preuve ; ils ne classent pas une personne ni un fournisseur.
 
 ![Carte pédagogique : s’arrêter à la première preuve manquante et récupérer avec une vérification sûre](../../assets/teaching/evidence-recovery-ladder.svg)
 
@@ -29,7 +31,7 @@ en affirmations et donnez à chacune la plus petite preuve qui puisse la souteni
 - préserver l’état, réduire la portée, ajouter un contrôle ou arrêter ;
 - rédiger une livraison avec les travaux faits, lacunes et prochaine vérification.
 
-## Problèmes de terrain : le signal n’est pas la preuve
+## Une entrée de terrain : reprendre le contrôle ne prouve pas le résultat
 
 Les recherches du projet décrivent des interruptions de capacité, des commandes
 restées en Working, des outils absents et des contrôles devenus réinstallation.
@@ -46,6 +48,34 @@ ni correctif pour chaque compte.
 Ne concluez pas « ne jamais réessayer » ou « installer est toujours faux ».
 Faites dépendre la suite de l’observation, de l’autorité et du budget.
 
+### Trois cas Windows : le signal n’est pas la preuve
+
+Ces cas proviennent de rapports GitHub publics consultés le 12 août 2026. Ils ne
+constituent ni une reproduction locale, ni un diagnostic officiel, ni un
+comportement Windows universel. Le détail des versions et la limite de chaque
+source figurent dans la [recherche sur les entrées et les preuves Windows](../../docs/research/field-problems-input-and-evidence-p3-2026-08-11.md).
+
+| Symptôme rapporté | Ce que l’on peut en tirer | Premier contrôle borné | S’arrêter avant |
+|---|---|---|---|
+| La sortie CLI dépasse la fenêtre du terminal et ne semble plus récupérable ([#35335](https://github.com/openai/codex/issues/35335)) | Une fenêtre d’affichage n’est pas une preuve durable | Sauvegarder la sortie dans un fichier nommé ou régénérer seulement l’extrait nécessaire ; noter CLI, terminal et portée du prompt | Affirmer que l’absence dans le scrollback prouve une perte de données du dépôt |
+| Des caractères non BMP disparaissent lors d’un collage dans le composeur TUI ([#37578](https://github.com/openai/codex/issues/37578)) | L’écho du composeur ne prouve pas l’intégrité de l’entrée | Comparer la chaîne prévue et la chaîne reçue avec une fixture inoffensive avant toute demande conséquente | Éditer, committer ou envoyer une requête dont l’entrée n’a pas été préservée |
+| Des références de checkpoint longues provoquent `bad ref` ou `Filename too long` sous Windows Git ([#37559](https://github.com/openai/codex/issues/37559)) | L’état interne d’un Agent n’est pas l’état ordinaire du projet | Dans un périmètre autorisé, consigner `git status`, `git show-ref`, `git fsck --full`, `git worktree list` et le chemin exact de la référence | Supprimer `.git`, modifier la configuration ou réparer sans copie et autorisation |
+
+La règle pratique est de capturer le plus petit artefact durable avant un retry :
+fichier de sortie, comparaison de l’entrée reçue, diff, hash, journal de commande
+ou passation expurgée. Un contournement communautaire peut aider au triage ; ce
+n’est ni un correctif officiel ni une autorisation de modifier l’environnement.
+
+### Cas FC-EVIDENCE-01 : une commande terminée peut laisser une affirmation impossible à relire
+
+Le [cas borné FC-EVIDENCE-01](../../docs/research/field-case-hidden-verification-output-2026-08-12.md)
+s’appuie sur le ticket #34951. Le ticket était ouvert, sans diagnostic public de
+mainteneur, et n’a pas été reproduit ici. Si la sortie nécessaire est absente,
+conservez seulement l’exit, l’événement, le diff, l’artefact, le hash ou la
+lecture arrière déjà autorisés ; marquez l’affirmation `unverified` et nommez le
+canal manquant. Ne relancez pas une action conséquente uniquement pour récupérer
+une sortie de présentation ou pour affaiblir une limite de sécurité.
+
 ## 1. Relier les affirmations aux preuves
 
 | Affirmation | Preuve minimale dans la portée déclarée | Ce qui reste hors affirmation |
@@ -59,7 +89,7 @@ Faites dépendre la suite de l’observation, de l’autorité et du budget.
 | Le résultat aide les utilisateurs | Échantillon, tâche et acceptation utilisateur définis. | Succès du marché. |
 | Prêt pour la production | Portes qualité, sécurité, maintenance, release et rollback. | Environnement non testé ou futur changement. |
 
-### Tableau affirmation → preuve
+### Avant le Lab 013 : écrire un tableau affirmation → preuve
 
 Avant un slice auditable, écrivez :
 
@@ -89,6 +119,10 @@ visible ? Quel contrôle additionnel changerait la décision ?
 | « La page est correcte. » | Rendu à viewport enregistré et critères visuels. |
 | « La fonctionnalité est publiée. » | État distant, release/deployment et contrôle post-livraison. |
 
+La dernière phrase est plus exigeante que les quatre premières. Un build vert
+est utile, mais il ne prouve pas automatiquement le runtime, le rendu visuel,
+la sécurité ou l’acceptation par les utilisateurs.
+
 ## 3. Récupérer dans un ordre borné
 
 1. préserver l’erreur et l’état courant ;
@@ -108,6 +142,16 @@ outil/Skill visible → découverte en lecture seule → état cible lisible
 
 Chaque maillon a sa propre preuve. Un nom visible ne prouve pas l’enregistrement,
 la découverte ou l’exécution. Une lecture du DOM ne prouve pas un clic réussi.
+
+### Décalage de surface : visible ne signifie pas callable
+
+Des rapports publics décrivent une surface Computer Use ou `node_repl` visible
+alors qu’un appel en lecture seule échouait, un navigateur dont le DOM était
+lisible mais dont le clic expirait, ou une configuration de fournisseur qui ne
+rendait pas la capacité multi-agent attendue. Ce sont des rapports du 10 août
+2026, pas des faits internes ni des reproductions. Consultez la
+[recherche terrain Web](../../docs/research/web-field-problems-2026-08-10.md),
+notamment WF-08 à WF-11, et ne généralisez pas l’exemple à tous les comptes.
 
 ### Fiche de point d’arrêt
 
@@ -179,16 +223,29 @@ Gardez tableau, chemins de preuve, catégorie de lacune, décision de revue et
 plan de récupération. Incluez une affirmation de fait, une de runtime et une
 d’effet utilisateur.
 
-### Échec et limite
+### Échec intentionnel et limite
 
-Si une phrase n’a aucun contrôle correspondant, baissez-la à unverified ou
-not_run. Le tableau n’établit ni une cause fournisseur, ni une reproduction, ni
-un succès d’apprentissage.
+Si une phrase n’a aucun contrôle correspondant, baissez-la à `unverified` ou
+`not_run`. Pour un exercice plus réaliste, commencez une petite modification
+réversible dans une copie jetable, écrivez avant le contrôle une passation disant
+« terminé » et « tous les tests passent », puis rendez la sortie absente ou
+faites proposer une installation, un redémarrage, un appel réseau ou une écriture
+hors périmètre. L’exercice n’est réussi que si l’apprenant :
+
+- marque l’affirmation non étayée `unverified` ou `not_run` ;
+- conserve diff partiel, erreur, portée et dernier checkpoint ;
+- refuse de déduire le runtime ou l’effet utilisateur du seul diff ;
+- choisit un contrôle sûr ou un arrêt net, sans empiler les éditions.
+
+Le tableau n’établit ni une cause fournisseur, ni une reproduction, ni un succès
+d’apprentissage.
 
 ### Réflexion
 
 Quelle phrase avait la preuve la plus faible ? Quelle action avez-vous refusée
-de répéter ? Quel contrôle unique aurait changé la décision ?
+de répéter ? Quel contrôle unique aurait changé la décision ? Pourquoi
+`unverified` ne signifie-t-il pas « faux » ? Réécrivez une phrase de passation
+pour que son statut corresponde à sa preuve.
 
 ## Liste de contrôle d’acceptation
 
@@ -200,21 +257,43 @@ de répéter ? Quel contrôle unique aurait changé la décision ?
 - [ ] Une chaîne de capacité possède une preuve par maillon.
 - [ ] La fiche de point d’arrêt nomme la première transition absente.
 - [ ] Un handoff distingue verified, partial, blocked et unverified.
+- [ ] Je peux expliquer la différence entre une erreur, une affirmation non
+      étayée et un résultat simplement inconnu.
+- [ ] Je peux dire pourquoi une récupération ne fait pas monter le statut de
+      complétion.
+- [ ] Je peux livrer une note contenant travaux terminés, travaux incomplets,
+      inconnues, risques, chemins de preuve et prochain contrôle sûr.
+- [ ] Je peux conserver `candidate` et `not_run` lorsque l’expérience et sa
+      relecture n’ont pas eu lieu.
 
 ## Transfert
 
-Appliquez le registre à une note de recherche : source consultée, date, portée,
-affirmation soutenue et contradiction ouverte. Puis transférez-le à une revue
-visuelle en ajoutant viewport, capture, critères et limites de ce que l’image ne
-prouve pas.
+Appliquez le registre à une note de recherche ou à un rapport marketing. Incluez
+au moins une affirmation factuelle, une affirmation d’exécution et une affirmation
+d’effet utilisateur. Expliquez pourquoi elles ne peuvent pas partager une preuve
+faible, puis nommez le plus petit contrôle de suivi pour l’affirmation la moins
+soutenue. Pour une revue visuelle, ajoutez viewport, capture, critères et limites
+de ce que l’image ne prouve pas.
 
 ## Sources et limite de mise à jour
 
-Les commandes, états et interfaces propres aux plateformes évoluent. Vérifiez
-les sources officielles avant une action. La [recherche de terrain](../../docs/research/field-problems-codex.md)
-contient des rapports et limites, pas des causes universelles. Cette adaptation
-reste in-progress, candidate et not_run jusqu’à une exécution bornée et une
-relecture francophone.
+Les méthodes de preuve et le vocabulaire de statut sont stables. Commandes,
+entrées, noms de modèles, comportements de fournisseurs et états de tickets sont
+volatils. Vérifiez les opérations concrètes dans le [cadre d’évaluation](../../docs/quality/evaluation-framework.md),
+la [baseline officielle](../../docs/research/openai-codex-baseline.md) et la
+[recherche Web](../../docs/research/web-field-problems-2026-08-10.md).
+
+| Fait ou frontière | Source | Consultée le | Portée | Responsable / prochaine revue |
+|---|---|---:|---|---|
+| Une interruption de capacité peut laisser l’état d’une tâche dépendante incertain | [FP-09 / issue #33865](../../docs/research/field-problems-codex.md) | 2026-08-09 | Rapport public ; pas de reproduction locale ni de conclusion universelle sur la file | `curriculum-maintainer` / 2026-09-09 |
+| Une vérification longue peut laisser l’état de complétion incertain | [FP-10 / issue #34325](../../docs/research/field-problems-codex.md) | 2026-08-09 | Rapport public ; cause et portée de version inconnues | `curriculum-maintainer` / 2026-09-09 |
+| Authentification, disponibilité de l’outil, exécution et résultat externe sont des affirmations distinctes | [FP-01—FP-02](../../docs/research/field-problems-codex.md), [WF-08—WF-11](../../docs/research/web-field-problems-2026-08-10.md) | 2026-08-09 / 2026-08-10 | Discipline de preuve pour des symptômes rapportés ; pas un guide officiel de réparation | `curriculum-maintainer` / 2026-09-09 |
+| Une vérification ne doit pas s’élargir silencieusement en installation ou changement persistant | [FP-11 / issue #37677](../../docs/research/field-problems-codex.md) | 2026-08-09 | Rapport public ; pas une politique officielle ni une reproduction locale | `curriculum-maintainer` / 2026-09-09 |
+| Passation, enregistrement d’outil, permissions et retry peuvent échouer à des étapes différentes | [FUP-01—FUP-05](../../docs/research/field-problems-follow-up-2026-08-10.md) | 2026-08-10 | Rapports publics ; compte, version, fournisseur et runtime local restent déterminants | `curriculum-maintainer` / 2026-09-09 |
+
+Ces sources servent à montrer où la preuve se rompt. Elles ne transforment pas
+un ticket, un contournement, un libellé ou une réponse communautaire en garantie
+produit.
 
 Continuez avec la [planification et le découpage](10-planning-and-slicing-FR.md).
 
