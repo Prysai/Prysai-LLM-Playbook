@@ -93,7 +93,7 @@ citation existe, qu’un site est encore disponible, qu’une information actuel
 est vraie ou qu’une action a réellement eu lieu. Un système de recherche peut
 ajouter un chemin vers une preuve, mais ce chemin peut être incomplet, ancien
 ou mal sélectionné. Avant de croire une affirmation actuelle, **vérifiez la
-source originale et sa date**, plutôt que de se fier uniquement à la date de
+source originale et sa date**, plutôt que de vous fier uniquement à la date de
 coupure du modèle.
 
 Avant de coller ou d’envoyer une donnée, vérifiez ce qui peut quitter
