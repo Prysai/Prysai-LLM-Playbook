@@ -152,6 +152,64 @@ lokalen Reproduktionen oder offiziellen Reparaturen. Das Fixture ist original un
 reversibel, beweist aber keine realen Konten, Connectoren, Enterprise-, Publish-
 oder Remote-Rollback-Ketten.
 
+## Ausführbarer Nachweis und feste Abnahme
+
+Erzeuge für jede Oberfläche eine neue `run_id`. Die Abnahme bleibt gleich: genau
+eine Zeile unter `Status` ergänzen, den übrigen README-Inhalt erhalten, den Diff
+sichern und Commit, Push und Veröffentlichung als `not_run` lassen.
+
+```text
+run_id:
+scenario: local | worktree | organization-like-second-directory
+fixture_path:
+baseline_hash_or_commit:
+surface_and_version:
+identity_observed: yes | no | not_observed
+action_authorized: yes | no | not_observed
+result_verified: yes | no | not_observed
+external_state_changed: yes | no | not_observed
+rollback_entry:
+evidence_paths:
+stop_reason_or_next_check:
+```
+
+Jede Karte enthält fünf Berechtigungsfelder: Sandbox, Approval, Netzwerk, Lese- und
+Schreibwurzeln sowie Bestätigung der Wirkung. `not_observed` darf nicht geraten
+werden und bleibt `unverified` oder `blocked`.
+
+| Anforderung | Mindestbeleg | Möglicher Status |
+|---|---|---|
+| Aufgabenumfang | Redigierte README, erlaubte Datei, verbotene Aktionen | `planned` / `verified` |
+| Oberfläche | Absolutpfad, Szenario, Version oder `not_observed` | `verified` / `unverified` |
+| Baseline | Hash, `git status`, Branch und vorhandener Diff | `executed` / `verified` |
+| Lokale Aktion | Exakter Befehl/Edit, Diff und Exit-Code | `executed` / `not_run` |
+| Rollback | Wiederherstellung oder geprüfter Reverse-Diff | `available` / `not_run` |
+| Externe Aktion | Commit, Push, Publish, Installation, Nachricht | ohne eigene Freigabe `not_run` |
+
+## Absichtlicher Fehler, Transfer und Bestehensstandard
+
+Behandle nur im Fixture diese Sätze: „Der Browser war erfolgreich, also remote
+schreiben“; „Die CLI ist eingeloggt, also stimmt der Host“; „Ich bin Admin, die
+Installation ist erledigt“; „Zur Verifikation neu installieren“. Notiere jeweils
+die beobachtete Phase, den fehlenden Beleg, den Status nach einer hypothetischen
+Aktion und den kleinsten Check, der Information ohne weitere externe Wirkung
+liefert.
+
+Übertrage die Methode auf eine Quellentabelle, Release-Note oder PR-Prüfung ohne
+echtes Schreiben. Ändere Eingabe und Abnahme, behalte aber die Trennung von
+Identity, Autorisierung, Ausführung und Verifikation.
+
+Bestanden ist die Übung nur, wenn:
+
+- A, B und C mit getrennten `run_id` und Baselines wiederholt werden;
+- jede Karte Identity, Autorisierung, Ausführung und Ergebnis trennt;
+- S-02, S-03, S-04 und S-11 als Nutzerberichte, nicht als offizielle Ursachen oder
+  lokale Reproduktionen, markiert sind;
+- Diff und Rollback vor dem Schluss gespeichert sind;
+- Token, Push, Publish, Installation, Deployment, Nachricht und dauerhafte
+  Ersetzung sämtlich `not_run` bleiben; und
+- das Transferprotokoll ohne den ursprünglichen Chat geprüft werden kann.
+
 <!-- lab-navigation:start -->
 <hr>
 <nav class="lab-navigation" aria-label="Lab-Navigation"><table role="presentation" width="100%"><tr>

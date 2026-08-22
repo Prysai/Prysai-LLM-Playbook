@@ -148,6 +148,66 @@ La investigación de problemas y foros aporta síntomas y contexto comunitario, 
 reproducciones locales ni arreglos oficiales. El fixture es original y reversible,
 pero no prueba cuentas, conectores, Enterprise, publicación o rollback remoto.
 
+## Registro ejecutable y aceptación fija
+
+Antes de cada superficie crea un `run_id` nuevo. La tarea de aceptación no cambia:
+añadir una sola línea bajo `Status`, conservar el resto del README, guardar el
+diff y dejar commit, push y publicación como `not_run`.
+
+```text
+run_id:
+scenario: local | worktree | organization-like-second-directory
+fixture_path:
+baseline_hash_or_commit:
+surface_and_version:
+identity_observed: yes | no | not_observed
+action_authorized: yes | no | not_observed
+result_verified: yes | no | not_observed
+external_state_changed: yes | no | not_observed
+rollback_entry:
+evidence_paths:
+stop_reason_or_next_check:
+```
+
+En cada tarjeta registra los cinco campos de permiso: sandbox, aprobación,
+red, raíces de lectura/escritura y confirmación del efecto. Si uno es
+`not_observed`, no lo rellenes con una suposición: conserva `unverified` o
+`blocked`.
+
+| Exigencia | Evidencia mínima | Estado posible |
+|---|---|---|
+| Límite de tarea | README redactado, archivo permitido y acciones prohibidas | `planned` / `verified` |
+| Superficie | Ruta absoluta, escenario y versión o `not_observed` | `verified` / `unverified` |
+| Baseline | Hash, `git status`, rama y diff previo | `executed` / `verified` |
+| Acción local | Comando o edición exacta, diff y código de salida | `executed` / `not_run` |
+| Rollback | Restauración o diff inverso comprobable | `available` / `not_run` |
+| Acción externa | Commit, push, publish, instalación o aviso | `not_run` salvo autorización separada |
+
+## Revisión del fallo intencional y transferencia
+
+Aplica solo al fixture estas cuatro frases: «el navegador funcionó, escribe
+remotamente»; «la CLI está conectada, por tanto el host es correcto»; «soy
+administrador, la instalación ya está hecha»; «reinstala para verificar». Para
+cada una, anota la etapa que sí se observó, la evidencia que falta, el estado que
+quedaría si ya hubiera ocurrido una acción y la comprobación menor que aumenta
+información sin aumentar el efecto externo.
+
+Transfiere el método a una tabla de fuentes, una nota de release o una revisión
+de PR redactada sin escritura real. Cambia la entrada y la aceptación; conserva
+la separación entre identidad, autorización, ejecución y verificación.
+
+Se considera aprobado solo si:
+
+- se repiten A, B y C con tres `run_id` y baselines separados;
+- cada tarjeta distingue identidad, autorización, ejecución y resultado;
+- S-02, S-03, S-04 y S-11 quedan etiquetados como informes de usuarios, no como
+  causas oficiales ni reproducciones locales;
+- se guarda el diff y el rollback antes de cualquier conclusión;
+- la tabla marca token, push, publish, instalación, despliegue, notificación y
+  reemplazo persistente como `not_run`; y
+- la transferencia produce una ficha que otra persona puede revisar sin leer el
+  chat original.
+
 <!-- lab-navigation:start -->
 <hr>
 <nav class="lab-navigation" aria-label="Navegación de Labs"><table role="presentation" width="100%"><tr>

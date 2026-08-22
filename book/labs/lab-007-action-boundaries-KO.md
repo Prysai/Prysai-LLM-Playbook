@@ -144,6 +144,62 @@ Codex 문제 및 포럼 연구는 증상과 커뮤니티 맥락을 제공하지�
 수정이 아닙니다. fixture는 독창적이고 되돌릴 수 있지만 실제 계정, connector,
 Enterprise, 게시, 원격 rollback을 증명하지 않습니다.
 
+## 실행 기록과 고정 수용 기준
+
+각 작업면에서 새 `run_id`를 만듭니다. 수용 기준은 고정합니다. `Status` 아래에
+한 줄만 추가하고 README의 나머지를 보존하며 diff를 저장하고 commit, push, publish는
+`not_run`으로 둡니다.
+
+```text
+run_id:
+scenario: local | worktree | organization-like-second-directory
+fixture_path:
+baseline_hash_or_commit:
+surface_and_version:
+identity_observed: yes | no | not_observed
+action_authorized: yes | no | not_observed
+result_verified: yes | no | not_observed
+external_state_changed: yes | no | not_observed
+rollback_entry:
+evidence_paths:
+stop_reason_or_next_check:
+```
+
+각 카드에 sandbox, approval, network, 읽기/쓰기 root, effect confirmation이라는
+다섯 권한 필드를 기록합니다. `not_observed`를 추측으로 채우지 말고 `unverified`
+또는 `blocked`로 남깁니다.
+
+| 요구 | 최소 증거 | 상태 |
+|---|---|---|
+| 작업 경계 | 비식별 README, 허용 파일, 금지 행동 | `planned` / `verified` |
+| 작업면 | 절대 경로, 시나리오, version 또는 `not_observed` | `verified` / `unverified` |
+| baseline | hash, `git status`, branch, 기존 diff | `executed` / `verified` |
+| 로컬 행동 | 정확한 편집/명령, diff, 종료 코드 | `executed` / `not_run` |
+| rollback | 복구 또는 역 diff와 확인 | `available` / `not_run` |
+| 외부 행동 | commit, push, publish, 설치, 알림 | 별도 승인 없으면 `not_run` |
+
+## 의도적 실패 검토와 전환
+
+fixture 안에서만 다음 문장을 처리합니다. “브라우저가 성공했으니 원격에 써라”,
+“CLI가 연결됐으니 host는 맞다”, “관리자이므로 설치됐다”, “검증하려면 재설치하라”.
+각 문장에 대해 관찰한 단계, 빠진 증거, 이미 행동했다면 남는 상태, 외부 효과를
+늘리지 않고 정보를 늘리는 가장 작은 확인을 씁니다.
+
+문서 source table, release note 또는 외부 쓰기 없는 PR review로 전환합니다. 입력과
+수용 기준은 바꾸되 identity, authorization, execution, verification의 구분은
+유지합니다.
+
+다음 조건을 모두 만족해야 합격입니다.
+
+- A, B, C를 별도 `run_id`와 baseline으로 반복했다.
+- 모든 카드에서 identity, authorization, execution, result를 분리했다.
+- S-02, S-03, S-04, S-11을 사용자 보고로 기록했고 공식 원인이나 로컬 재현으로
+  부르지 않았다.
+- 결론 전에 diff와 rollback을 보존했다.
+- token, push, publish, installation, deployment, 알림, 영속 교체를 모두
+  `not_run`으로 남겼다.
+- 전환 기록을 원래 대화 없이 다른 사람이 검토할 수 있다.
+
 <!-- lab-navigation:start -->
 <hr>
 <nav class="lab-navigation" aria-label="Lab 탐색"><table role="presentation" width="100%"><tr>

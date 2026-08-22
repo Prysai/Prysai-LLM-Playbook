@@ -146,6 +146,63 @@ Codex 問題研究とフォーラム研究は症状とコミュニティ背景�
 再現や公式修正ではありません。fixture は独自で可逆ですが、実際の account、
 connector、Enterprise、公開、遠隔 rollback を証明しません。
 
+## 実行記録と固定した受入条件
+
+各作業面で新しい `run_id` を作ります。受入条件は固定です。`Status` の下に
+一行だけ追加し、README の他の内容を保ち、diff を保存し、commit、push、公開は
+`not_run` とします。
+
+```text
+run_id:
+scenario: local | worktree | organization-like-second-directory
+fixture_path:
+baseline_hash_or_commit:
+surface_and_version:
+identity_observed: yes | no | not_observed
+action_authorized: yes | no | not_observed
+result_verified: yes | no | not_observed
+external_state_changed: yes | no | not_observed
+rollback_entry:
+evidence_paths:
+stop_reason_or_next_check:
+```
+
+各カードに sandbox、approval、network、読み書き root、effect confirmation の
+五つを記録します。`not_observed` を推測で埋めず、`unverified` または `blocked`
+として残します。
+
+| 要件 | 最小の証拠 | 状態 |
+|---|---|---|
+| タスク境界 | 匿名 README、許可ファイル、禁止行動 | `planned` / `verified` |
+| 作業面 | 絶対パス、シナリオ、version または `not_observed` | `verified` / `unverified` |
+| baseline | hash、`git status`、branch、既存 diff | `executed` / `verified` |
+| ローカル行動 | 正確な編集/command、diff、終了コード | `executed` / `not_run` |
+| rollback | 復元または逆 diff とその確認 | `available` / `not_run` |
+| 外部行動 | commit、push、publish、install、通知 | 個別認可がない限り `not_run` |
+
+## 故意の失敗レビューと転移
+
+fixture の中だけで次を扱います。「ブラウザが成功したから遠隔へ書く」
+「CLI が接続済みだから host は正しい」「管理者だから installation 済み」
+「検証のため再インストールする」。各文について、観測できた段階、欠けた証拠、
+すでに作用していた場合の状態、外部作用を増やさず情報を増やす最小の確認を
+記録します。
+
+文書の source table、release note、または書き込みをしない PR review に転移します。
+入力と受入条件は変えますが、identity、authorization、execution、verification の
+区別は保ちます。
+
+次を満たすときだけ合格です。
+
+- A、B、C を別々の `run_id` と baseline で繰り返した。
+- 各カードで identity、authorization、execution、result を分けた。
+- S-02、S-03、S-04、S-11 を利用者報告として扱い、公式原因やローカル再現と
+  呼ばなかった。
+- 結論の前に diff と rollback を保存した。
+- token、push、publish、installation、deployment、通知、永続置換をすべて
+  `not_run` とした。
+- 転移記録を元の会話なしで別の人がレビューできる。
+
 <!-- lab-navigation:start -->
 <hr>
 <nav class="lab-navigation" aria-label="Lab のナビゲーション"><table role="presentation" width="100%"><tr>
