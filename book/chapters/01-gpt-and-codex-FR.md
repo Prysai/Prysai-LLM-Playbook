@@ -199,7 +199,7 @@ si une source manque ou se contredit.
 ### 3. Clarifier une demande trop vague
 
 ```text
-Avant de proposer une solution, transforme ma demande en contrat court :
+Avant de proposer une solution, transformez ma demande en contrat court :
 résultat observable, contexte fourni, actions permises, actions interdites,
 critère d’acceptation, preuve à conserver et condition d’arrêt. Posez seulement
 la question dont la réponse changerait le risque ou l’acceptation. N’inventez
