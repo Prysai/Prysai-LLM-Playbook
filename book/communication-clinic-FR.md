@@ -6,7 +6,7 @@ Pour une pratique courte et guidée, ouvrez la [boucle du point d’avancement](
 
 **Statut :** `candidate` · **Exécution :** `not_run` · **Données :** textes fictifs ou autorisés uniquement.  
 **État :** template_selected | practised | not_run | blocked
-état : template_selected | practised | not_run | blocked
+<!-- état : template_selected | practised | not_run | blocked -->
 
 Vous lisez ici la version française du parcours. Le français de cette page est
 une version en cours de relecture ; les exemples de langue cible sont
