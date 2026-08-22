@@ -189,9 +189,9 @@ directory entry、Star、demo は candidate を見つけやすくしても、ori
 
 ## 出典と保守の境界
 
-review card と状態の分離は安定した学習方法です。directory、install、runtime behavior、product surface は変わるため、fixed revision、具体的な environment、実際の target path ごとに確認し直します。FP-06、FP-07、FP-11 は [`docs/research/field-problems-codex.md`](../../docs/research/field-problems-codex.md) に整理した公開報告です。報告の存在は、製品の普遍的な defect、公式の fix、ローカルでの再現を意味しません。
+review card と状態の分離は安定した学習方法です。directory、install、runtime behavior、product surface は変わるため、fixed revision、具体的な environment、実際の target path ごとに確認し直します。FP-06、FP-07、FP-11 は [`docs/research/field-problems-codex.md`](../evidence-library-JA.md#source-notes) に整理した公開報告です。報告の存在は、製品の普遍的な defect、公式の fix、ローカルでの再現を意味しません。
 
-license と asset の境界は [`docs/sources/asset-register.md`](../../docs/sources/asset-register.md) の S02、S03、S05、S06 で確認します。S05 と S06 は候補の出所を示す metadata であり、nested content の再配布や runtime の安全性を保証しません。Skill の構造と現行の入口を確認する場合は、[公式 OpenAI Codex repository](https://github.com/openai/codex) を一次資料の候補として読みますが、公式資料だけでこの章のローカル runtime を証明できるわけではありません。
+license と asset の境界は [`docs/sources/asset-register.md`](../evidence-library-JA.md#source-notes) の S02、S03、S05、S06 で確認します。S05 と S06 は候補の出所を示す metadata であり、nested content の再配布や runtime の安全性を保証しません。Skill の構造と現行の入口を確認する場合は、[公式 OpenAI Codex repository](https://github.com/openai/codex) を一次資料の候補として読みますが、公式資料だけでこの章のローカル runtime を証明できるわけではありません。
 
 更新担当は Prysai LLM Playbook maintenance group です。Skill の source、license、依存関係、発見挙動が変わったとき、または遅くとも 2026-11-09 に review します。この章は `candidate`、実験は `draft / not_run` のままです。関連 Skill を `production-ready` と呼ぶには、組織の権限、license、回帰テスト、rollback の証拠が別途必要です。
 
