@@ -1,4 +1,4 @@
-<!-- content_id: lab-016-side-effect-boundary | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-21-fr-course-slice -->
+<!-- content_id: lab-016-side-effect-boundary | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: 2026-08-22-fr-depth-repair -->
 ---
 id: lab-016-side-effect-boundary
 title: "S’arrêter à la frontière d’un effet durable"

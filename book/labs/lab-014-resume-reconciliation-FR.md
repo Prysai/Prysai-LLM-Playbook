@@ -1,4 +1,4 @@
-<!-- content_id: lab-014-resume-reconciliation | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-21-fr-course-slice -->
+<!-- content_id: lab-014-resume-reconciliation | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: 2026-08-22-fr-depth-repair -->
 ---
 id: lab-014-resume-reconciliation
 title: "Réconcilier une tâche avant de la reprendre"

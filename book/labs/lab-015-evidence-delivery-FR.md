@@ -1,4 +1,4 @@
-<!-- content_id: lab-015-evidence-delivery | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-21-fr-course-slice -->
+<!-- content_id: lab-015-evidence-delivery | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: 2026-08-22-fr-depth-repair -->
 ---
 id: lab-015-evidence-delivery
 title: "Livrer des preuves, pas une phrase de fin"
