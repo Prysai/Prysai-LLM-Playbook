@@ -459,7 +459,7 @@ try {
     fr: {
       heading: 'Cinq tableaux de base, une seule boucle.',
       titles: ['La plus petite boucle LLM sûre', 'Contrat de prompt : six champs', 'Frontière d’action observable', 'Échelle de récupération des preuves', 'Vérifier la source avant de croire'],
-      bodies: ['Définir, fournir le contexte, demander, vérifier, puis corriger, transférer ou s’arrêter.', 'Résultat, contexte, aide autorisée, limites, vérification et arrêt.', 'Proposition, autorité, exécution et relecture humaine.', 'Adapter la force de l’affirmation au prochain contrôle le plus petit.', 'Comparer affirmation, source, portée et actualité avant de s’y fier.'],
+      bodies: ['Définir, fournir le contexte, demander, vérifier, puis corriger, transférer ou s’arrêter.', 'Résultat, contexte, aide autorisée, limites, vérification et arrêt.', 'Proposition, autorité, exécution et relecture humaine.', 'Adaptez la force de l’affirmation au plus petit contrôle suivant.', 'Comparez affirmation, source, portée et actualité avant de vous y fier.'],
       boundary: /Tableaux anglais créés par le projet/i,
     },
   };
