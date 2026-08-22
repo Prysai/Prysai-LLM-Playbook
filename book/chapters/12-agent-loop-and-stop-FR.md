@@ -1,4 +1,4 @@
-<!-- content_id: chapter-12-agent-loop-and-stop | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-22-fr-loop-restoration -->
+<!-- content_id: chapter-12-agent-loop-and-stop | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-22-fr-loop-reinforcement -->
 
 # Chapitre 12 : La boucle d’un Agent, son état et ses conditions d’arrêt
 
@@ -326,6 +326,30 @@ Après un timeout ou une réponse absente :
 Une lecture qui trouve le bon fichier établit l’état de ce fichier. Elle ne
 prouve pas qu’un message, un déploiement ou une autre cible externe n’a pas été
 touché.
+
+### Tableau de passation après une réponse perdue
+
+Quand une tentative reste sans réponse, remplissez ce tableau avant tout nouvel
+appel. Il sépare l’observation du diagnostic et garde l’essai suivant dans son
+propre périmètre :
+
+| Champ | Valeur à conserver | Exemple d’état honnête |
+|---|---|---|
+| `run_id` / `attempt_id` | identifiants, surface et version | `run-07 / attempt-01` |
+| Dernier événement confirmé | événement, heure et sortie | `execution_start`, aucun terminal |
+| Première transition non observée | étape précise de la chaîne | `effect` |
+| Cible | chemin, objet, branche ou fenêtre exacts | `sandbox/output.txt` |
+| État avant / après lecture | baseline, hash, diff, postcondition | `effect_unknown` |
+| Idempotence | classe et risque de doublon | `non_idempotent` |
+| Autorité restante | actions permises et interdites | lecture seule, aucun réseau |
+| Prochaine vérification | une lecture et son arrêt | comparer le fichier à la baseline |
+| Décision humaine | choix nécessaire avant effet | aucune reprise sans réconciliation |
+
+Un message final disant « le run est terminé » ne remplit aucune ligne à lui
+seul. Une observation `not_observed` reste telle quelle même si une deuxième
+tentative réussit ; cette dernière reçoit un nouvel identifiant et une nouvelle
+preuve. Ne fusionnez jamais les deux essais pour faire disparaître l’incertitude
+du premier.
 
 ### Tableau de preuve par couche
 
@@ -696,6 +720,25 @@ reviewer/date: personne et moment de relecture
 Le reçu doit distinguer une sortie préparée d’une sortie effectivement lue et
 acceptée. Il ne doit pas transformer un statut d’interface, un login ou un plan
 en preuve d’action.
+
+### Contrat de livraison vérifiable
+
+Avant de transmettre un résultat, relisez chaque phrase avec cette grille :
+
+```text
+claim : phrase exacte livrée
+scope : fichiers, run, version et environnement couverts
+evidence : artefact réellement ouvert ou événement conservé
+status : verified | partial | unverified | blocked | not_run
+uncovered : ce que l’artefact ne permet pas d’affirmer
+next_check : observation unique qui pourrait changer le statut
+reviewer/date : personne et moment de la relecture
+```
+
+La grille s’applique aussi à une phrase négative. « Aucun effet externe » exige
+une frontière de journal bornée ; l’absence d’un événement dans une interface
+ne prouve pas qu’un autre canal n’a rien reçu. Si aucune preuve proportionnée
+n’existe, livrez `unverified` ou `not_run` et conservez le point d’arrêt.
 
 ## 8. Diagnostiquer la première frontière cassée
 
