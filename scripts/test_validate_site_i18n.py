@@ -43,6 +43,7 @@ def main() -> int:
                 "ko": {"total_units": 40, "available_units": 4, "source_units": 0, "candidate_translation_units": 4, "reviewed_translation_units": 0},
                 "de": {"total_units": 40, "available_units": 4, "source_units": 0, "candidate_translation_units": 4, "reviewed_translation_units": 0},
                 "zh-tw": {"total_units": 40, "available_units": 4, "source_units": 0, "candidate_translation_units": 4, "reviewed_translation_units": 0},
+                "fr": {"total_units": 40, "available_units": 4, "source_units": 0, "candidate_translation_units": 4, "reviewed_translation_units": 0},
             },
         },
         coverage_errors,
@@ -55,7 +56,7 @@ def main() -> int:
             "routed_status_counts": {"chapters": 22, "labs": 18},
             "localization_coverage": {
                 locale: {"total_units": 40, "available_units": 40 if locale == "en" else 4, "source_units": 40 if locale == "en" else 0, "candidate_translation_units": 0 if locale == "en" else 3, "reviewed_translation_units": 0}
-                for locale in ("en", "zh", "es", "ja", "ko", "de", "zh-tw")
+                for locale in ("en", "zh", "es", "ja", "ko", "de", "zh-tw", "fr")
             },
         },
         incomplete_errors,
@@ -110,6 +111,7 @@ def main() -> int:
         ordering_errors == [
             "de primary translation dictionary is missing",
             "es translation override appears before its primary dictionary",
+            "fr primary translation dictionary is missing",
             "ja primary translation dictionary is missing",
             "ko primary translation dictionary is missing",
             "zh-tw primary translation dictionary is missing",
