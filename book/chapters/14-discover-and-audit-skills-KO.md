@@ -149,9 +149,9 @@ review card와 상태 분리는 안정적인 학습 방법입니다. directory, 
 - [ ] 획득, 설치 대상 쓰기, 의존성/인증, 팀/production 진입 승인을 분리한다.
 - [ ] 증거가 있을 때만 exists, discovered, loaded, adopted, verified라고 쓴다.
 
-## 채택 영수증: 검토할 수 있음을 먼저 보이고 활성화를 결정하기
+## 채택 기록: 검토할 수 있음을 먼저 보이고 활성화를 결정하기
 
-이 영수증은 프로젝트의 original Skill과 외부에서 찾은 candidate 모두에 사용합니다. popular repository, 유창한 설명, 보이는 directory만으로 외부 content가 trustworthy하거나 executable한 능력이 되는 것은 아닙니다.
+이 기록은 프로젝트의 original Skill과 외부에서 찾은 candidate 모두에 사용합니다. popular repository, 유창한 설명, 보이는 directory만으로 외부 content가 trustworthy하거나 executable한 능력이 되는 것은 아닙니다.
 
 ```text
 candidate name과 version / commit:
