@@ -166,7 +166,7 @@ de usuarios ni consejo de compra; capítulo y experimento siguen `candidate` y
 ## Registro de investigación de diez minutos: documenta antes de concluir
 
 Al empezar no necesitas fingir un informe completo. Elige una pregunta estrecha
-y rellena este recibo durante diez minutos. Su fin es dejar un siguiente paso
+y rellena este registro durante diez minutos. Su fin es dejar un siguiente paso
 revisable, no declarar ya «el mejor modelo» o «la única causa».
 
 ```text
@@ -198,7 +198,7 @@ Un enlace no sustituye dos evidencias.
 Rebajar no debilita la investigación: evita que la existencia de una fuente se
 confunda con una conclusión demostrada.
 
-## Tarjeta de decisión de investigación: de la pregunta al recibo de parada
+## Tarjeta de decisión de investigación: de la pregunta al registro de parada
 
 Ante «investiga esto», empieza por una pregunta que pueda cambiar una decisión concreta. Esta tarjeta sirve para material público o autorizado que tú puedas abrir y revisar; no prueba que una página sea cierta, no navega toda la web ni decide asuntos de salud, derecho, empleo o dinero.
 
@@ -221,7 +221,7 @@ La experiencia de un foro puede ayudar a descubrir síntomas y preguntas, pero n
 
 Para cada frase prevista, pregunta: ¿el material la dice directamente o la infiero? ¿hay una revisión más nueva, excepción o fuente en conflicto? ¿la fecha de acceso sigue dentro del horizonte de la decisión? ¿otra persona encontraría el mismo apoyo con el registro? Si una respuesta falta, reduce la frase o marca `unknown`; no rellenes el hueco con seguridad retórica.
 
-### Recibo de parada de diez minutos
+### Registro de parada de diez minutos
 ```text
 Decisión y pregunta:
 Material abierto y comprobable:
@@ -234,7 +234,7 @@ Motivo de parada:
 Estado: research_plan | scope_checked_for_supplied_list | blocked | not_run
 ```
 
-El recibo solo registra lo ocurrido dentro de su alcance; no significa «investigación terminada», hechos actuales, recuperación correcta por un modelo ni autorización para actuar.
+Este registro solo recoge lo ocurrido dentro de su alcance; no significa «investigación terminada», hechos actuales, recuperación correcta por un modelo ni autorización para actuar.
 
 <!-- chapter-navigation:start -->
 <hr>
