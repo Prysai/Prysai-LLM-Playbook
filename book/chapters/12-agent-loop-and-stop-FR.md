@@ -312,7 +312,7 @@ pas été observé, utilisez `not_observed`, pas une valeur plausible.
 
 ### Réconcilier une réponse perdue
 
-Après un timeout ou une réponse absente :
+Après un délai d’attente ou une réponse absente :
 
 1. geler toute action dépendante et conserver la commande exacte ;
 2. relever le dernier événement, le processus et le checkpoint ;
