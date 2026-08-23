@@ -187,7 +187,7 @@ Danach folgt ein Grenzfall mit einem `https://`-Link. Der Skill soll ihn ohne Ne
 5. Verwirf das Beispiel oder stelle die Zeile wieder her; lies Original und Bericht erneut, um unautorisierte Änderungen auszuschließen.
 6. Gib einer zweiten Person nur Vertrag und Bericht. Sie soll Ergebnis, Umfang und Unbekanntes erklären können.
 
-Diese Beobachtung gilt nur für die dokumentierte Umgebung. Sie beweist nicht dieselbe Entdeckung, Auswahl, Ladung oder Ausführung in anderen Hosts, Versionen oder Modellen.
+Diese Beobachtung gilt nur für die dokumentierte Umgebung. Sie beweist nicht dieselbe Entdeckung, Auswahl, das Laden oder die Ausführung in anderen Hosts, Versionen oder Modellen.
 
 ## Häufige Fehler
 
