@@ -420,7 +420,7 @@ dépendances et le point de reprise après une interruption volontaire.
 Conservez les plans, le schéma de dépendances, les conditions d’entrée et de
 sortie, le diff, les contrôles et les checkpoints. Notez quelle inconnue est
 apparue le plus tôt, quelle tranche était encore trop grande et quel checkpoint
-serait utilisé après une erreur de capacité ou un timeout. Un résultat plus rapide
+serait utilisé après une erreur de capacité ou un délai d’attente. Un résultat plus rapide
 ou plus élégant n’est pas à lui seul une preuve d’efficacité générale.
 
 ## Échec intentionnel et frontière
@@ -467,7 +467,7 @@ diff, à un contrôle runtime et à une acceptation humaine.
 - [ ] Chaque tranche a une dépendance, un résultat fourni à la suivante et un
       contrôle de dépendance.
 - [ ] J’ai fixé un budget d’actions et un checkpoint avant tout effet irréversible.
-- [ ] Je peux arrêter après timeout, changement de portée, autorité manquante ou
+- [ ] Je peux arrêter après un délai d’attente, un changement de portée, une autorité manquante ou
       cible inconnue sans empiler automatiquement des éditions.
 - [ ] Je sais relire une reprise en changeant une seule variable.
 - [ ] Le relais sépare `done`, `partial`, `blocked`, `unverified`, `not_proven`
