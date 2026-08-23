@@ -34,7 +34,8 @@ en affirmations et donnez à chacune la plus petite preuve qui puisse la souteni
 ## Une entrée de terrain : reprendre le contrôle ne prouve pas le résultat
 
 Les recherches du projet décrivent des interruptions de capacité, des commandes
-restées en Working, des outils absents et des contrôles devenus réinstallation.
+restées en `Working`, des outils absents et des contrôles qui se sont transformés
+en réinstallation.
 Elles montrent des ruptures observables, mais n’établissent ni cause universelle
 ni correctif pour chaque compte.
 
@@ -43,7 +44,7 @@ ni correctif pour chaque compte.
 | Modèle indisponible, tâche interrompue | Un observateur a vu une erreur et une interruption. | Geler, inspecter diff, logs et dernier checkpoint. |
 | Contrôle bloqué en Working | Aucun signal de fin n’a été observé dans ce run. | Fixer un délai, capturer sortie et état, interrompre selon la règle. |
 | Session disponible, outil absent | Inventaire et attente ne correspondaient pas. | Consigner la liste réelle, arrêter avant l’action. |
-| Vérification transformée en réinstallation | Une interprétation a franchi une frontière persistante. | Séparer source, test, installation, restart, publication et live check. |
+| Vérification transformée en réinstallation | Une interprétation a franchi une frontière persistante. | Séparer source, test, installation, redémarrage, publication et contrôle en ligne. |
 
 Ne concluez pas « ne jamais réessayer » ou « installer est toujours faux ».
 Faites dépendre la suite de l’observation, de l’autorité et du budget.
@@ -58,10 +59,11 @@ source figurent dans la [recherche sur les entrées et les preuves Windows](../.
 | Symptôme rapporté | Ce que l’on peut en tirer | Premier contrôle borné | S’arrêter avant |
 |---|---|---|---|
 | La sortie CLI dépasse la fenêtre du terminal et ne semble plus récupérable ([#35335](https://github.com/openai/codex/issues/35335)) | Une fenêtre d’affichage n’est pas une preuve durable | Sauvegarder la sortie dans un fichier nommé ou régénérer seulement l’extrait nécessaire ; noter CLI, terminal et portée du prompt | Affirmer que l’absence dans le scrollback prouve une perte de données du dépôt |
-| Des caractères non BMP disparaissent lors d’un collage dans le composeur TUI ([#37578](https://github.com/openai/codex/issues/37578)) | L’écho du composeur ne prouve pas l’intégrité de l’entrée | Comparer la chaîne prévue et la chaîne reçue avec une fixture inoffensive avant toute demande conséquente | Éditer, committer ou envoyer une requête dont l’entrée n’a pas été préservée |
+| Des caractères non BMP disparaissent lors d’un collage dans le composeur TUI ([#37578](https://github.com/openai/codex/issues/37578)) | L’écho du composeur ne prouve pas l’intégrité de l’entrée | Comparer la chaîne prévue et la chaîne reçue avec un jeu de test inoffensif avant toute demande conséquente | Éditer, committer ou envoyer une requête dont l’entrée n’a pas été préservée |
 | Des références de checkpoint longues provoquent `bad ref` ou `Filename too long` sous Windows Git ([#37559](https://github.com/openai/codex/issues/37559)) | L’état interne d’un Agent n’est pas l’état ordinaire du projet | Dans un périmètre autorisé, consigner `git status`, `git show-ref`, `git fsck --full`, `git worktree list` et le chemin exact de la référence | Supprimer `.git`, modifier la configuration ou réparer sans copie et autorisation |
 
-La règle pratique est de capturer le plus petit artefact durable avant un retry :
+La règle pratique est de capturer le plus petit artefact durable avant une
+nouvelle tentative (`retry`) :
 fichier de sortie, comparaison de l’entrée reçue, diff, hash, journal de commande
 ou passation expurgée. Un contournement communautaire peut aider au triage ; ce
 n’est ni un correctif officiel ni une autorisation de modifier l’environnement.
@@ -253,7 +255,7 @@ postcondition, puis classez :
 no_effect_observed | effect_matches | effect_differs | effect_unknown
 ```
 
-Une lecture qui trouve le bon fichier ne prouve pas qu’un message, un upload,
+Une lecture qui trouve le bon fichier ne prouve pas qu’un message, un envoi,
 un déploiement ou une autre cible externe n’a pas été touché. Reprenez seulement
 si la nouvelle condition, l’idempotence, la preuve attendue et le budget sont
 explicitement consignés.
@@ -286,10 +288,10 @@ Pour une reprise autorisée, conservez au minimum :
 
 ## 4. Distinguer récupération et complétion
 
-practice désigne un exercice, candidate une structure prometteuse mais
-incomplètement évaluée, verified une preuve dans la portée déclarée et
-production-ready les portes qualité, sécurité, rollback, maintenance et release
-passées. not_observed décrit un événement non vu ; not_run signifie que
+`practice` désigne un exercice, `candidate` une structure prometteuse mais
+incomplètement évaluée, `verified` une preuve dans la portée déclarée et
+`production-ready` les portes qualité, sécurité, restauration (`rollback`),
+maintenance et publication (`release`) passées. `not_observed` décrit un événement non vu ; `not_run` signifie que
 l’expérience n’a pas eu lieu ; partial, unverified et blocked décrivent la lacune
 la plus étroite soutenue.
 
@@ -307,7 +309,7 @@ externe ne doit être connecté.
 
 ### Tâche
 
-Utilisez [Lab 003](../labs/lab-003-evidence-review-FR.md) pour créer un tableau
+Utilisez le [Lab 003](../labs/lab-003-evidence-review-FR.md) pour créer un tableau
 des affirmations. Ajoutez une phrase non étayée comme « tous les tests passent »
 et vérifiez que la revue la refuse au lieu de suivre son ton.
 
@@ -325,7 +327,7 @@ Utilisez trois lignes au minimum pour rendre la différence visible :
 | Exécution | « Le contrôle a passé dans cette copie. » | Commande, répertoire, code retour et sortie. |
 | Effet utilisateur | « La page est utilisable sur mobile. » | Rendu à un viewport nommé, critères et revue humaine. |
 
-Une seule capture, un seul diff ou un seul message de succès ne peut pas
+Une seule capture, un seul diff ou un seul message de réussite ne peut pas
 remplacer les trois preuves.
 
 ### Échec intentionnel et limite
