@@ -2,7 +2,7 @@
   "matrix_version": "1",
   "mode": "migration",
   "default_locale": "EN",
-  "last_reviewed": "2026-08-21",
+  "last_reviewed": "2026-08-23",
   "next_review": "2026-11-09",
   "description": "Canonical identity and translation state for reader-facing localized content.",
   "locales": {
