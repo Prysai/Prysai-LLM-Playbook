@@ -2,7 +2,7 @@
 
 ---
 id: lab-013-l3-vertical-slice
-title: "完成一个完整的竖向切片"
+title: "完成一个完整的垂直切片"
 level: L3
 domain: engineering
 goal: "让一项有边界的改动从定义经过证据走到交接"
@@ -22,7 +22,7 @@ transfer_evidence: "保留改写后的任务协议、检查点、产物或受阻
 transfer_limitations: "一次本地切片不证明远端发布、生产行为或读者验收"
 ---
 
-# 实验 013：完成一个完整的竖向切片
+# 实验 013：完成一个完整的垂直切片
 
 ## 学习目标
 
