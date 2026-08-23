@@ -798,7 +798,11 @@ const localizedFragmentIsAvailable = (record, href) => {
   // A full local document may use Reader-generated heading identifiers. A
   // declared subset is different: it may deliberately omit most of the
   // English pack, so only its authored anchors are valid deep-link promises.
-  return !fragment || record?.coverage !== 'starter-card subset' || record?.explicit_anchors?.includes(fragment);
+  // Full translations may use Reader-generated heading IDs. Any declared
+  // subset (including route-complete subsets) must opt into deep links with an
+  // authored anchor; otherwise the homepage silently promises a destination
+  // the localized document cannot render.
+  return !fragment || record?.coverage === 'full' || record?.explicit_anchors?.includes(fragment);
 };
 const localizedContentHref = (contentId, fallbackHref) => {
   const content = contentFor(contentId);
