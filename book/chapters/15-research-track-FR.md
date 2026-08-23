@@ -325,7 +325,7 @@ Ne remplacez pas un trou de preuve par un ton plus assuré :
 
 Le déclassement conserve la décision utile tout en rendant visible ce qui manque.
 
-### Reçu de livraison `candidate`
+### Fiche de livraison `candidate`
 
 Avant de fermer une session de recherche, produisez une fiche qui permet à une
 autre personne de reprendre sans confondre plan, accès et résultat :
@@ -425,7 +425,7 @@ Pour chaque conclusion, ajoutez une question qui pourrait la réduire : limite, 
 |---|---|---|---|---|
 | la page décrit X à cette date | URL et passage | limites/version/région | la formulation publique de la page | réussite de votre tâche et éligibilité du compte |
 
-### Reçu de recherche en dix minutes
+### Fiche de recherche en dix minutes
 
 ```text
 Question : <une tâche, une date, un périmètre>

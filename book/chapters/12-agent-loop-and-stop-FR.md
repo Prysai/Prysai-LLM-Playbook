@@ -358,7 +358,7 @@ du premier.
 | Proposition | Sortie brute ou événement `proposal` | Autorisation et exécution |
 | Décision de l’hôte | Événement de politique avec chemin et portée | Effet correct dans la cible |
 | Exécution | Début/fin, code ou timeout, sortie | Sens sémantique de la modification |
-| Effet | Diff, hash, lecture arrière ou audit externe | Acceptation de l’objectif complet |
+| Effet | Diff, hash, relecture ou audit externe | Acceptation de l’objectif complet |
 | Vérification | Commande, répertoire, portée, sortie et règle | Toute affirmation hors contrôle |
 | Livraison | Note reliant exigences, preuves et statuts | Solidité des références non relues |
 
@@ -532,7 +532,7 @@ Ces lignes sont un format ; remplacez-les par les observations réelles du run.
 
 Chaque ligne doit aussi indiquer la surface, la version, l'authentification
 observée (ou `not_observed`), la capacité technique, l'autorisation, la
-confirmation humaine exigée, l'état de la cible et la preuve de lecture arrière.
+confirmation humaine exigée, l'état de la cible et la preuve de relecture.
 Une session connectée ne remplit pas ces colonnes à elle seule.
 
 ### Observations attendues pour les quatre runs
@@ -705,7 +705,7 @@ tableau qui ne dépend pas du résumé de l'Agent :
 Une transmission complète permet de reprendre sans relire la conversation et
 sans transformer une ancienne proposition en autorisation actuelle.
 
-### Reçu de livraison minimal
+### Fiche de livraison minimale
 
 ```text
 claim: phrase exacte livrée

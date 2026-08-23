@@ -257,7 +257,7 @@ autorisation de lire, écrire, appeler ou publier.
 Le test est réussi lorsque la décision, le relais et l’absence de modification
 hors périmètre sont lisibles dans le registre de run.
 
-### Reçu de test du déclencheur
+### Fiche de test du déclencheur
 
 Ne résumez pas une matrice par « le Skill s’est déclenché ». Conservez une ligne
 par demande et par décision :
@@ -415,7 +415,7 @@ entrée hors domaine → handoff, sans élargir silencieusement
 | Modifier un fichier existant | Seulement si le fichier et le périmètre sont nommés | Lecture fraîche, diff prévu, rollback et autorité | Autre fichier modifié ou baseline obsolète |
 | Contrôle local en lecture seule | Autorisé si commande et dossier sont nommés | Entrée, délai, sortie attendue et réseau absent | Credential, écriture hors périmètre ou dépassement du délai |
 | Installer un Skill ou une dépendance | Jamais implicite dans une vérification | Révision, licence, cible, sauvegarde, rollback et approbation | Un champ manque |
-| Réseau, publication, envoi ou suppression | Hors contrat par défaut | Protocole séparé, cible, propriétaire, confirmation et lecture arrière | Confirmation ou preuve de retour absente |
+| Réseau, publication, envoi ou suppression | Hors contrat par défaut | Protocole séparé, cible, propriétaire, confirmation et relecture | Confirmation ou preuve de retour absente |
 
 La capacité technique et l’approbation sont deux axes différents. Une surface
 peut permettre une opération que la personne n’a pas autorisée, ou autoriser un

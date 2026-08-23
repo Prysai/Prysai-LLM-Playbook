@@ -126,7 +126,7 @@ arrêt si :
 ```
 
 Un login, un bouton visible ou un répertoire inscriptible ne remplit aucune de
-ces lignes à lui seul. Tant que la cible, l’audience ou la lecture arrière manque,
+ces lignes à lui seul. Tant que la cible, l’audience ou la relecture manque,
 restez en aperçu et n’envoyez rien.
 
 ### Exemple rempli, sans effet externe

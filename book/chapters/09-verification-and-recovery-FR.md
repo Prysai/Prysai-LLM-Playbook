@@ -91,8 +91,8 @@ est « aucun événement n’a été observé dans cette interface ».
 Le [cas borné FC-EVIDENCE-01](../../docs/research/field-case-hidden-verification-output-2026-08-12.md)
 s’appuie sur le ticket #34951. Le ticket était ouvert, sans diagnostic public de
 mainteneur, et n’a pas été reproduit ici. Si la sortie nécessaire est absente,
-conservez seulement l’exit, l’événement, le diff, l’artefact, le hash ou la
-lecture arrière déjà autorisés ; marquez l’affirmation `unverified` et nommez le
+conservez seulement l’exit, l’événement, le diff, l’artefact, le hash ou le
+résultat de la relecture déjà autorisés ; marquez l’affirmation `unverified` et nommez le
 canal manquant. Ne relancez pas une action conséquente uniquement pour récupérer
 une sortie de présentation ou pour affaiblir une limite de sécurité.
 
@@ -226,7 +226,7 @@ chain:
     observation: "résultat, code ou catégorie d’erreur"
     status: "passed | failed | not_observed"
   - stage: "effet confirmé"
-    observation: "diff, lecture arrière ou état distant"
+    observation: "diff, relecture ou état distant"
     status: "passed | failed | not_observed"
 last_confirmed_stage: "dernier maillon passé"
 first_breakpoint: "premier maillon échoué ou non observé"
@@ -345,7 +345,7 @@ hors périmètre. L’exercice n’est réussi que si l’apprenant :
 Le tableau n’établit ni une cause fournisseur, ni une reproduction, ni un succès
 d’apprentissage.
 
-### Reçu de revue
+### Fiche de revue
 
 ```text
 claim: phrase exacte
