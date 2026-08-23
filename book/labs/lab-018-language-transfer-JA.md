@@ -92,21 +92,21 @@ B1 **の前に**、前後一日を許す七日窓を宣言します。七日は�
 
 二人の独立採点が通過し、遅延と曝露の条件を保存できたときだけ、`retained_at_7_days` と `transferred_to_unseen-class-discussion-preparation` を別々に報告できます。曝露が未見ラベルを妨げる場合は `transferred_to_changed_delayed-class-discussion-preparation` だけです。通過は宣言条件下の一観察であり、広い言語学習の結論ではありません。未実行なら `not_run` のままです。
 
-## 印象ではなく record を残す
+## 印象ではなく記録を残す
 
-各 attempt は同じ local record に残します。項目がなければ `unknown` または `not_run` と書き、後から良く見える物語で埋めません。
+各 attempt は同じローカル記録に残します。項目がなければ `unknown` または `not_run` と書き、後から良く見える物語で埋めません。
 
 ```text
 run_id | date | target language | card_id | 5-minute limit | allowed aids
-original attempt | scorer | 5 行の score と根拠 | hint level | learner correction
+original attempt | 採点者の判定 | 5 行の score と根拠 | hint level | learner correction
 first pass か | rework count | model/surface（使った場合）| unknown | status
 ```
 
-C1 は別 record にし、修正後の B1 を新しい baseline にしません。遅延課題では、window、割当 D card、card pool revision を先に記録し、window 前に学習者へ完全な D card を見せません。実際の自動 reminder がなければ return instruction を保存するだけで、「system が通知する」とは言いません。
+C1 は別の記録にし、修正後の B1 を新しい baseline にしません。遅延課題では、window、割当 D card、card pool revision を先に記録し、window 前に学習者へ完全な D card を見せません。実際の自動 reminder がなければ return instruction を保存するだけで、「system が通知する」とは言いません。
 
-### scorer が食い違ったとき
+### 採点者の判定が食い違ったとき
 
-二人の scorer は、相手の score を見る前に各行の短い根拠を書きます。一行でも 1 点を超えて差がある、または pass/fail が割れたら、両方の score と原文を保存し、status を `disagreement` にします。保持や転移を宣言しません。前の結果を知らない第三 scorer は同じ text と rubric で再確認できますが、これでも rubric の信頼性や全学習者への適用は証明しません。
+二人の採点者は、相手の score を見る前に各行の短い根拠を書きます。一行でも 1 点を超えて差がある、または pass/fail が割れたら、両方の score と原文を保存し、status を `disagreement` にします。保持や転移を宣言しません。前の結果を知らない第三の採点者は同じ text と rubric で再確認できますが、これでも rubric の信頼性や全学習者への適用は証明しません。
 
 ## 意図的な失敗
 
