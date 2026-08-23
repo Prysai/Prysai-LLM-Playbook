@@ -94,8 +94,9 @@ Le [cas borné FC-EVIDENCE-01](../../docs/research/field-case-hidden-verificatio
 s’appuie sur le ticket #34951. Le ticket était ouvert, sans diagnostic public de
 mainteneur, et n’a pas été reproduit ici. Si la sortie nécessaire est absente,
 conservez seulement l’exit, l’événement, le diff, l’artefact, le hash ou le
-résultat de la relecture que vous êtes déjà autorisé à consulter ; marquez l’affirmation `unverified` et nommez le
-canal manquant. Ne relancez pas une action conséquente uniquement pour récupérer
+résultat de la relecture que vous êtes déjà autorisé à consulter ; marquez
+l’affirmation `unverified` et nommez le canal manquant. Ne relancez pas une
+action conséquente uniquement pour récupérer
 une sortie de présentation ou pour affaiblir une limite de sécurité.
 
 ## 1. Relier les affirmations aux preuves
