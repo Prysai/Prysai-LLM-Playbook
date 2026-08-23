@@ -39,8 +39,8 @@ réversibilité, le signal d’arrêt et la preuve attendue.
 
 ## Le problème que résout ce chapitre
 
-Lire, éditer, exécuter, valider, créer un commit, envoyer (`push`) et publier n’ont ni le même
-effet ni le même retour arrière. Les appeler tous « travailler sur le projet »
+Lire, éditer, exécuter, valider, créer un commit, envoyer (`push`) et publier ne
+produisent pas les mêmes effets et ne se récupèrent pas de la même manière. Les appeler tous « travailler sur le projet »
 fait disparaître la décision qui devait être confirmée.
 
 ## Objectifs d’apprentissage
@@ -52,7 +52,7 @@ fait disparaître la décision qui devait être confirmée.
 - traiter le texte d’une page web, d’une issue, d’un e-mail, d’une documentation
   tierce ou d’une sortie d’outil comme une donnée non fiable, et non comme une
   permission ;
-- réévaluer la tâche lorsqu’elle passe d’un sandbox privé à un dépôt partagé ou
+- réévaluer la tâche lorsqu’elle passe d’une sandbox privée à un dépôt partagé ou
   public ;
 - arrêter quand la cible, la portée, la preuve ou la restauration (`rollback`)
   manquent ;
@@ -150,8 +150,8 @@ restauration (`rollback`) :
 arrêt si :
 ```
 
-Une connexion, un bouton visible ou un répertoire inscriptible ne remplit aucune de
-ces lignes à lui seul. Tant que la cible, l’audience ou la relecture manque,
+Une connexion, un bouton visible ou un répertoire inscriptible ne suffit à remplir
+aucune de ces lignes. Tant que la cible, l’audience ou la relecture manque,
 restez en aperçu et n’envoyez rien.
 
 ### Exemple rempli, sans effet externe
@@ -228,8 +228,8 @@ Après le retour, vérifiez indépendamment l’état :
 élément trouvé → action appelée → réponse reçue → état de page changé
 ```
 
-Les deux premiers événements ne prouvent pas les deux derniers. Après timeout ou
-état inchangé, écrivez « soumission non vérifiée » et ne répétez pas un clic
+Les deux premiers événements ne prouvent pas les deux derniers. Après un délai
+d’attente ou si l’état reste inchangé, écrivez « soumission non vérifiée » et ne répétez pas un clic
 non-idempotent simplement parce que l’interface semble inchangée.
 
 ## 5. Fiche de commande terminal
@@ -289,7 +289,7 @@ Preuve distante attendue :
 Restauration (`rollback`) :
 ```
 
-Un build local vert ne prouve pas que Pages est activé, qu’un workflow a publié
+Un build local réussi ne prouve pas que Pages est activé, qu’un workflow a publié
 ou que l’URL publique répond. Gardez `validated`, `published`, `deployed` et
 `live verified` séparés.
 
@@ -301,7 +301,7 @@ Après l’action, distinguez les quatre événements :
 élément trouvé → action appelée → réponse reçue → état relu et changé
 ```
 
-Conservez pour chacun le timestamp, la cible et le statut. Les deux premiers
+Conservez pour chacun l’horodatage, la cible et le statut. Les deux premiers
 montrent une intention et un appel ; ils ne prouvent ni la réponse ni le nouvel
 état. En cas de timeout, écrivez `submission not verified` et ne répétez pas un
 clic non idempotent sans réconciliation.
@@ -423,7 +423,7 @@ de la nouvelle portée ; ne répétez pas un effet non-idempotent par défaut.
 
 **Symptôme :** étiquette et répertoire courant divergent.
 **Contrôle :** afficher le répertoire courant, la racine Git et les racines autorisées.
-**Arrêt :** racines différentes ou propriété obscure.
+**Arrêt :** racines différentes ou propriété incertaine.
 
 ### Vérification devenue remplacement d’environnement
 
