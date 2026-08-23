@@ -24,8 +24,8 @@ L’ordre par défaut est un chemin, pas un menu de chapitres concurrents :
 4. [Contrat du cours de base](../docs/product/core-course-contract.md) ;
 5. [Inventaire du contenu de base](../docs/governance/core-content-inventory.yaml).
 
-Les cartes de prompts, les boucles de langue, les Labs Codex et les Skills sont
-une pratique d’application facultative après les fondations. Elle ne
+Les cartes de prompts, les boucles de langue, les Labs Codex et les Skills
+constituent la pratique d’application facultative après les fondations. Elle ne
 remplace pas le cœur LLM ; son état `candidate` / `not_run` reste affiché.
 
 Le livre organise une méthode transférable autour des limites du modèle, du
