@@ -5,8 +5,10 @@
 **Statut :** `candidate` · **Expérience :** `not_run`
 
 Cette adaptation française est en cours de relecture. Elle enseigne une
-classification des effets et des fiches de confirmation ; elle ne prouve pas une
-permission, une publication ou un comportement fournisseur.
+classification des effets et des fiches de confirmation. Les rapports publics et
+les exemples ci-dessous sont des supports pédagogiques : ils ne constituent ni
+des reproductions locales, ni des analyses officielles de cause racine, ni des
+preuves de production.
 
 Les termes `candidate`, `not_run`, `blocked` et `unverified` indiquent l’état de
 la preuve dans la portée déclarée. Ils ne signifient pas qu’une action est sûre
