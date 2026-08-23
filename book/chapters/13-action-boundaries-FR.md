@@ -40,8 +40,9 @@ réversibilité, le signal d’arrêt et la preuve attendue.
 ## Le problème que résout ce chapitre
 
 Lire, éditer, exécuter, valider, créer un commit, envoyer (`push`) et publier ne
-produisent pas les mêmes effets et ne se récupèrent pas de la même manière. Les appeler tous « travailler sur le projet »
-fait disparaître la décision qui devait être confirmée.
+produisent pas les mêmes effets et ne se récupèrent pas de la même manière. Les
+regrouper sous « travailler sur le projet » fait disparaître la décision qui
+devait être confirmée.
 
 ## Objectifs d’apprentissage
 
@@ -52,8 +53,8 @@ fait disparaître la décision qui devait être confirmée.
 - traiter le texte d’une page web, d’une issue, d’un e-mail, d’une documentation
   tierce ou d’une sortie d’outil comme une donnée non fiable, et non comme une
   permission ;
-- réévaluer la tâche lorsqu’elle passe d’une sandbox privée à un dépôt partagé ou
-  public ;
+- réévaluer la tâche lorsqu’elle passe d’un environnement isolé privé à un dépôt
+  partagé ou public ;
 - arrêter quand la cible, la portée, la preuve ou la restauration (`rollback`)
   manquent ;
 - livrer proprement un état `blocked` ou `unverified` au lieu de combler une
@@ -86,11 +87,11 @@ selon la cible et les données.
 | **A — Observer** | Lire un fichier, inspecter un statut, lire une page ou un log. | Chemin/hôte, compte et sensibilité des données. |
 | **B — Local et réversible** | Éditer une copie, produire un rapport, lancer un contrôle sans écriture. | Périmètre, original/diff et critère d’acceptation. |
 | **C — Changement d’environnement ou de données** | Installer, configurer, écrire une base, lancer une commande réseau. | Version, données touchées, secrets, persistance et récupération. |
-| **D — Collaboration externe** | Envoyer (`push`) une branche, ouvrir une PR (pull request), téléverser un fichier, appeler un service distant ou publier un brouillon. | Compte, hôte, organisation, dépôt, audience, contenu envoyé (`payload`) et personne chargée de la revue. |
+| **D — Collaboration externe** | Envoyer (`push`) une branche, ouvrir une PR (pull request), téléverser un fichier, appeler un service distant ou publier un brouillon. | Compte, hôte, organisation, dépôt, audience, contenu transmis (`payload`) et personne chargée de la revue. |
 | **E — Impact élevé ou difficilement réversible** | Supprimer, déployer, envoyer, payer, changer une permission, utiliser un secret de production ou redémarrer. | Autorisation exacte, cible étroite, confirmation humaine et restauration (`rollback`) testée. |
 
 Un « test » n’est pas automatiquement B : s’il installe, écrit une base,
-envoie une télémétrie ou modifie un distant, il est au moins C. Une lecture de
+envoie une télémétrie ou modifie une ressource distante, il est au moins C. Une lecture de
 logs privés peut être sensible sans rien modifier.
 
 ## 2. Quatre états à garder séparés
@@ -103,7 +104,7 @@ Confirmation humaine : quelle action à fort impact a été approuvée, par qui 
 ```
 
 La connexion n’élargit pas la tâche. Un répertoire inscriptible n’autorise pas
-son édition. Le réseau n’autorise pas un upload. Un connecteur visible ne prouve
+son édition. Le réseau n’autorise pas un téléversement. Un connecteur visible ne prouve
 pas l’installation dans la bonne organisation. Une approbation ancienne ne couvre
 pas automatiquement un nouveau dépôt, une nouvelle branche ou un nouveau public.
 
@@ -114,8 +115,8 @@ pas automatiquement un nouveau dépôt, une nouvelle branche ou un nouveau publi
 | Lire une cible locale | Sous une racine lisible et approuvée ? | Bon fichier et périmètre de données ? | Chemin, contenu, statut. |
 | Écrire une copie locale | Chemin exact inscriptible ? | Édition autorisée et réversible ? | Original/hash, diff, contrôle. |
 | Lancer une commande réseau | Réseau activé ? | Quelles données sortent et pourquoi ? | Commande, destination, code, portée. |
-| Appeler un connecteur/MCP | Ressource distante atteignable avec cette identité ? | Objet distant et contenu envoyé (`payload`) autorisés ? | Résultat et lecture indépendante de l’état. |
-| Envoyer vers le dépôt distant ou publier | Cible distante joignable ? | Compte, branche, audience et révision approuvés ? | SHA distant, URL, tâche de publication, restauration (`rollback`). |
+| Appeler un connecteur/MCP | Ressource distante atteignable avec cette identité ? | Ressource distante et contenu transmis (`payload`) autorisés ? | Résultat et lecture indépendante de l’état. |
+| Envoyer vers le dépôt distant ou publier | Cible distante joignable ? | Compte, branche, audience et révision approuvés ? | SHA distant, URL, résultat de publication, restauration (`rollback`). |
 
 Pour un effet externe, le prompt minimal est un contrat :
 
@@ -145,7 +146,7 @@ dépôt, branche ou objet :
 action exacte et données transmises :
 public ou destinataire :
 autorisation pour cette action :
-preuve de retour attendue :
+preuve attendue après l’action :
 restauration (`rollback`) :
 arrêt si :
 ```
@@ -156,8 +157,8 @@ restez en aperçu et n’envoyez rien.
 
 ### Exemple rempli, sans effet externe
 
-Cet exemple montre la forme attendue ; il ne pousse rien et n’utilise aucun
-compte distant :
+Cet exemple montre la forme attendue ; il n’envoie rien vers un dépôt distant et
+n’utilise aucun compte distant :
 
 ```text
 cible et hôte : copie locale / dossier temporaire
@@ -166,7 +167,7 @@ dépôt, branche ou objet : README.md local
 action exacte et données transmises : lire puis proposer une correction ; rien envoyé
 public ou destinataire : aucun
 autorisation pour cette action : édition locale de README.md après confirmation
-preuve de retour attendue : diff limité à README.md et contrôle de liens local
+preuve attendue après l’action : diff limité à README.md et contrôle de liens local
 restauration (`rollback`) : restaurer la copie propre conservée avant l’édition
 arrêt si : chemin, commande ou critère d’acceptation est ambigu
 ```
@@ -274,7 +275,7 @@ Une longue attente est un état à diagnostiquer, pas un signal de réussite.
 ## 6. Fiche GitHub distincte
 
 `gh auth status` ou une connexion réussie ne prouvent qu’un signal d’identité.
-Avant un push ou une publication, consignez :
+Avant un `push` ou une publication, consignez :
 
 ```text
 Compte / identité :
@@ -416,12 +417,12 @@ de la nouvelle portée ; ne répétez pas un effet non-idempotent par défaut.
 ### Hôte ou organisation incorrects
 
 **Symptôme :** client authentifié, mais mauvais hôte, organisation ou dépôt.
-**Contrôle :** enregistrer hostname, compte, organisation, dépôt et branche.
-**Arrêt :** cible impossible à identifier indépendamment.
+**Contrôle :** enregistrer le nom d’hôte, le compte, l’organisation, le dépôt et la branche.
+**Arrêt :** cible impossible à identifier de manière indépendante.
 
 ### Répertoire de travail (`worktree`) ou racine incorrects
 
-**Symptôme :** étiquette et répertoire courant divergent.
+**Symptôme :** le libellé de la tâche et le répertoire courant divergent.
 **Contrôle :** afficher le répertoire courant, la racine Git et les racines autorisées.
 **Arrêt :** racines différentes ou propriété incertaine.
 
@@ -431,11 +432,11 @@ de la nouvelle portée ; ne répétez pas un effet non-idempotent par défaut.
 **Contrôle :** séparer source, tests, exécution, artefact, déploiement et contrôle en ligne.
 **Arrêt :** nouvelle autorité ou effet persistant nécessaire.
 
-### Longue attente puis retry
+### Nouvel essai après une longue attente
 
 **Symptôme :** aucun événement, erreur puis reprise automatique.
 **Contrôle :** comparer arbre de travail, artefacts, checkpoint et état distant.
-**Arrêt :** premier effet inconnu et action non-idempotente.
+**Arrêt :** effet de la première tentative inconnu et action non idempotente.
 
 ### Texte externe qui agrandit la tâche
 
@@ -452,7 +453,7 @@ que le propriétaire de la tâche n’a pas pris une nouvelle décision. Ce n’
 une étude d’attaque, ni un diagnostic produit, ni la preuve que la règle empêche
 toute erreur.
 
-Utilisez-le seulement quand le prochain pas élargirait les données, les outils,
+Utilisez-le seulement quand l’étape suivante élargirait les données, les outils,
 les comptes ou les effets. Pour l’essai, utilisez une phrase synthétique sans
 secret et notez le refus, la cible hors contrat et le plus petit contrôle à
 demander. Ne testez pas ce cas avec un identifiant secret, un connecteur ou une écriture
@@ -506,8 +507,8 @@ Le chapitre reste `candidate` et l’expérience `not_run` jusqu’à un run bor
 
 Utilisez le [Lab 016 : s’arrêter à la frontière d’effet](../labs/lab-016-side-effect-boundary-FR.md)
 pour séparer diagnostic, installation, redémarrage, téléversement, publication et autres
-actions persistantes. Le bon résultat peut être un diagnostic borné et une
-demande d’autorité, pas une correction non approuvée.
+actions persistantes. Le résultat utile peut être un diagnostic borné et une
+demande d’autorisation, pas une correction non approuvée.
 
 <!-- chapter-navigation:start -->
 <hr>
