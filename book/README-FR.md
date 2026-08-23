@@ -15,18 +15,18 @@
 
 L’ordre par défaut est un chemin, pas un menu de chapitres concurrents :
 
-1. [Fondations LLM : première route universelle](routes/universal-core-foundations-FR.md)
-   — expliquer, commencer, identifier, réparer, puis transférer ;
-2. [Unité 1 — notions LLM](guides/llm-fundamentals-FR.md) — tokens, contexte,
+1. [Unité 1 — notions LLM](guides/llm-fundamentals-FR.md) — tokens, contexte,
    prompts, outils, MCP, Agents et Skills ;
-3. [Unité 2 — première demande bornée](guides/llm-fundamentals-FR.md)
+2. [Fondations LLM : première route universelle](routes/universal-core-foundations-FR.md)
+   — expliquer, commencer, identifier, réparer, puis transférer ;
+3. [Première modification sûre](routes/first-safe-change-FR.md)
    — rendre visibles le but, le contexte, les limites et la forme de la réponse ;
 4. [Contrat du cours de base](../docs/product/core-course-contract.md) ;
 5. [Inventaire du contenu de base](../docs/governance/core-content-inventory.yaml).
 
 Les cartes de prompts, les boucles de langue, les Labs Codex et les Skills sont
-des pratiques d’application facultatives après les fondations. Elles ne
-remplacent pas le cœur LLM et leur état `candidate` / `not_run` reste affiché.
+une pratique d’application facultative après les fondations. Elle ne
+remplace pas le cœur LLM ; son état `candidate` / `not_run` reste affiché.
 
 Le livre organise une méthode transférable autour des limites du modèle, du
 contexte, des échecs observables, du contrôle et d’une tâche inconnue. Codex
