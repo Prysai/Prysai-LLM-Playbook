@@ -201,7 +201,7 @@ Confirmation humaine avant : [effet irréversible ou externe].
 Dépend de : [précondition et contrôle de dépendance].
 Fournit à : [entrée exacte de la tranche suivante].
 Preuve d’acceptation : [diff, sortie, test, rendu ou revue].
-Signal d’échec : [erreur, absence de sortie, timeout ou dérive].
+Signal d’échec : [erreur, absence de sortie, délai d’attente ou dérive].
 Règle : inspecter baseline, écrire checkpoint, agir au minimum, relire l’état
 après chaque action et arrêter si budget, cible, preuve ou autorité changent.
 Livraison : statut, fichiers, preuves, tentatives, inconnues, rollback, prochaine action.
@@ -282,7 +282,7 @@ entrée ; il ne prouve pas que tout le dépôt ou l’Agent est en cause.
 ### Réflexion
 
 Quelle inconnue est apparue le plus tôt ? Quelle tranche était encore trop
-grande ? Quel checkpoint utiliseriez-vous après un timeout ? Un résultat plus
+grande ? Quel checkpoint utiliseriez-vous après un délai d’attente ? Un résultat plus
 rapide n’est pas, à lui seul, une preuve d’efficacité générale.
 
 ## Récupération et arrêt dans le travail réel
@@ -344,7 +344,7 @@ cachée et une preuve manquante. Corrigez les fiches, pas sa mémoire.
 - [ ] La preuve est plus forte que « l’Agent a dit terminé ».
 - [ ] Le budget et le checkpoint sont écrits avant un effet irréversible.
 - [ ] Je reconnais une tranche trop grande ou trop petite.
-- [ ] Je peux arrêter après timeout, dérive de portée, autorité manquante ou cible
+- [ ] Je peux arrêter après un délai d’attente, une dérive de portée, une autorité manquante ou une cible
       inconnue sans empiler des éditions.
 - [ ] Je sais récupérer un résultat partiel en changeant une seule variable.
 - [ ] Mon relais sépare `done`, `partial`, `blocked`, `unverified`, `not_proven`
