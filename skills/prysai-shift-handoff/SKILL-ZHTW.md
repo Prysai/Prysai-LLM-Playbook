@@ -86,7 +86,7 @@ claim_limit:
 ## 維護紀錄
 
 - `source`：Prysai Lab 原創方法，源自有來源界線的重複項目研究紀錄、Task Protocol、Product Context 和 Interruption Checkpoint 界線
-- `license`：專案原創改寫；官方指南和公開回報仍僅作參考
+- `license`：專案原創改寫；官方指南和公開回報仍依 `docs/sources/asset-register.md` 僅作參考
 - `owner`：workflow-systems maintainer
 - `version`：`0.1.0`
 - `review_date`：`2026-11-14`

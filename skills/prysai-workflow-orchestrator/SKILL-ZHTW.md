@@ -81,7 +81,7 @@ confirmation: "required | not_required; state the decision point"
 ## 維護紀錄
 
 - `source`：`docs/book-architecture.md`；`docs/charter.md`；`docs/quality/skill-quality-standard.md`
-- `license`：專案原創改寫；外部資料仍僅作參考
+- `license`：專案原創改寫；外部資料仍依 `docs/sources/asset-register.md` 僅作參考
 - `owner`：workflow-systems maintainer
 - `version`：`0.2.0`
 - `review_date`：`2026-09-09`

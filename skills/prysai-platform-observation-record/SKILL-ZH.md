@@ -76,7 +76,7 @@ handoff:
 ## 维护记录
 
 - `source`：Prysai Lab 原创方法，源自平台适配器、任务和证据边界
-- `license`：项目原创改写；供应商文档、界面和公开报告仍仅作参考
+- `license`：项目原创改写；供应商文档、界面和公开报告仍根据 `docs/sources/asset-register.md` 仅作参考
 - `owner`：platform-adapter maintainer
 - `version`：`0.1.0`
 - `review_date`：`2026-09-15`

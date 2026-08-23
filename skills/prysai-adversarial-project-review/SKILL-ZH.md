@@ -64,7 +64,7 @@
 6. `release_decision_effect`
 7. `ranked_repair_agenda`
 8. `smallest_next_verification`
-9. `unknowns_and_non-claims`
+9. `unknowns_and_non_claims`
 10. `owner_and_review_date`
 11. `risk_and_permissions`
 12. `content_status`

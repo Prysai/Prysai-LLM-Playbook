@@ -81,7 +81,7 @@ risk_and_permission_boundary:
 ## 維護紀錄
 
 - `source`：Prysai Lab 原創方法，源自有來源界線的中斷檢查點案例、任務協議和證據審查界線
-- `license`：專案原創改寫；公開容量報告和 API 文件仍僅作參考
+- `license`：專案原創改寫；公開容量報告和 API 文件仍依 `docs/sources/asset-register.md` 僅作參考
 - `owner`：reliability-systems maintainer
 - `version`：`0.1.0`
 - `review_date`：`2026-09-14`
