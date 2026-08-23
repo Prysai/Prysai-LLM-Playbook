@@ -1235,9 +1235,9 @@
           "content_status": "candidate",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "source_revision": "956420a",
           "coverage": "full",
-          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
+          "reason": "French file is structurally complete and has received a targeted native-language review; broader independent review and learner-run evidence remain pending."
         }
       }
     },
@@ -1809,9 +1809,9 @@
           "content_status": "candidate",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "source_revision": "3b6571d",
           "coverage": "full",
-          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
+          "reason": "French file is structurally complete and has received a targeted native-language review; broader independent review and learner-run evidence remain pending."
         }
       }
     },
@@ -2000,7 +2000,7 @@
           "content_status": "candidate",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-15",
+          "source_revision": "27badcc",
           "coverage": "full",
           "reason": "The Simplified Chinese chapter exposes the complete observable-loop, state, retry, sandbox, recovery, evidence, transfer, acceptance, and source contract; independent language review and learner-run evidence remain pending."
         },
@@ -2137,9 +2137,9 @@
           "content_status": "candidate",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "source_revision": "99ad7df",
           "coverage": "full",
-          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
+          "reason": "French file is structurally complete and has received a targeted native-language review; broader independent review and learner-run evidence remain pending."
         }
       }
     },

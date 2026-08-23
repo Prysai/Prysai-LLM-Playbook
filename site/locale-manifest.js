@@ -1191,7 +1191,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "in-progress",
           "coverage": "full",
-          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "source_revision": "956420a",
           "explicit_anchors": []
         }
       }
@@ -1813,7 +1813,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "in-progress",
           "coverage": "full",
-          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "source_revision": "3b6571d",
           "explicit_anchors": []
         }
       }
@@ -2023,7 +2023,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "in-progress",
           "coverage": "full",
-          "source_revision": "worktree-2026-08-15",
+          "source_revision": "27badcc",
           "explicit_anchors": []
         },
         "es": {
@@ -2164,7 +2164,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "in-progress",
           "coverage": "full",
-          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "source_revision": "99ad7df",
           "explicit_anchors": []
         }
       }
