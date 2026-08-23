@@ -440,10 +440,21 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "starter-card subset",
-          "source_revision": "worktree-2026-08-15",
+          "coverage": "route-complete subset",
+          "source_revision": "worktree-2026-08-23-application-routes",
           "explicit_anchors": [
-            "language-practice-route"
+            "bounded-research-route",
+            "card-e1-user-declared-continuity-receipt",
+            "first-practice-intake",
+            "four-line-safety-card",
+            "general-skill-practice-route",
+            "language-practice-route",
+            "practice-route-chooser",
+            "public-interest-safety-route",
+            "recovery-route",
+            "request-escalation",
+            "share-check",
+            "source-check-route"
           ]
         },
         "es": {
@@ -451,10 +462,21 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "starter-card subset",
-          "source_revision": "worktree-2026-08-16",
+          "coverage": "route-complete subset",
+          "source_revision": "worktree-2026-08-23-application-routes",
           "explicit_anchors": [
-            "language-practice-route"
+            "bounded-research-route",
+            "card-e1-user-declared-continuity-receipt",
+            "first-practice-intake",
+            "four-line-safety-card",
+            "general-skill-practice-route",
+            "language-practice-route",
+            "practice-route-chooser",
+            "public-interest-safety-route",
+            "recovery-route",
+            "request-escalation",
+            "share-check",
+            "source-check-route"
           ]
         },
         "ja": {
@@ -462,10 +484,21 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "starter-card subset",
-          "source_revision": "worktree-2026-08-16",
+          "coverage": "route-complete subset",
+          "source_revision": "worktree-2026-08-23-application-routes",
           "explicit_anchors": [
-            "language-practice-route"
+            "bounded-research-route",
+            "card-e1-user-declared-continuity-receipt",
+            "first-practice-intake",
+            "four-line-safety-card",
+            "general-skill-practice-route",
+            "language-practice-route",
+            "practice-route-chooser",
+            "public-interest-safety-route",
+            "recovery-route",
+            "request-escalation",
+            "share-check",
+            "source-check-route"
           ]
         },
         "ko": {
@@ -473,10 +506,21 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "starter-card subset",
-          "source_revision": "worktree-2026-08-16",
+          "coverage": "route-complete subset",
+          "source_revision": "worktree-2026-08-23-application-routes",
           "explicit_anchors": [
-            "language-practice-route"
+            "bounded-research-route",
+            "card-e1-user-declared-continuity-receipt",
+            "first-practice-intake",
+            "four-line-safety-card",
+            "general-skill-practice-route",
+            "language-practice-route",
+            "practice-route-chooser",
+            "public-interest-safety-route",
+            "recovery-route",
+            "request-escalation",
+            "share-check",
+            "source-check-route"
           ]
         },
         "de": {
@@ -484,10 +528,21 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "starter-card subset",
-          "source_revision": "worktree-2026-08-16",
+          "coverage": "route-complete subset",
+          "source_revision": "worktree-2026-08-23-application-routes",
           "explicit_anchors": [
-            "language-practice-route"
+            "bounded-research-route",
+            "card-e1-user-declared-continuity-receipt",
+            "first-practice-intake",
+            "four-line-safety-card",
+            "general-skill-practice-route",
+            "language-practice-route",
+            "practice-route-chooser",
+            "public-interest-safety-route",
+            "recovery-route",
+            "request-escalation",
+            "share-check",
+            "source-check-route"
           ]
         },
         "zh-tw": {
@@ -495,21 +550,43 @@ window.CODEX_LOCALE_MANIFEST = {
           "exists": true,
           "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "starter-card subset",
-          "source_revision": "2026-08-18-zhtw-bootstrap",
+          "coverage": "route-complete subset",
+          "source_revision": "2026-08-23-application-routes",
           "explicit_anchors": [
-            "language-practice-route"
+            "bounded-research-route",
+            "card-e1-user-declared-continuity-receipt",
+            "first-practice-intake",
+            "four-line-safety-card",
+            "general-skill-practice-route",
+            "language-practice-route",
+            "practice-route-chooser",
+            "public-interest-safety-route",
+            "recovery-route",
+            "request-escalation",
+            "share-check",
+            "source-check-route"
           ]
         },
         "fr": {
           "path": "book/communication-clinic-FR.md",
           "exists": true,
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
-          "coverage": "full",
-          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "coverage": "route-complete subset",
+          "source_revision": "worktree-2026-08-23-application-routes",
           "explicit_anchors": [
-            "language-practice-route"
+            "bounded-research-route",
+            "card-e1-user-declared-continuity-receipt",
+            "first-practice-intake",
+            "four-line-safety-card",
+            "general-skill-practice-route",
+            "language-practice-route",
+            "practice-route-chooser",
+            "public-interest-safety-route",
+            "recovery-route",
+            "request-escalation",
+            "share-check",
+            "source-check-route"
           ]
         }
       }
@@ -2922,7 +2999,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": [],
-          "title": "Lab 011 : La frontière GPT–Codex"
+          "title": "Lab 011 : Distinguer GPT, Codex, les outils et les Agents"
         }
       }
     },
@@ -4206,7 +4283,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": [],
-          "title": "Lab 015 : Livrer des preuves"
+          "title": "Lab 015 : Livrer des preuves, pas une phrase de fin"
         }
       }
     },
@@ -4296,7 +4373,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": [],
-          "title": "Lab 016 : La frontière d’effet"
+          "title": "Lab 016 : S’arrêter à la frontière d’un effet durable"
         }
       }
     },
@@ -4746,7 +4823,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "explicit_anchors": [],
-          "title": "Lab 017 : Auditer avant d’adopter"
+          "title": "Lab 017 : Auditer la découverte avant d’adopter un Skill"
         }
       }
     },
