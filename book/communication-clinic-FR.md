@@ -1,4 +1,4 @@
-<!-- content_id: communication-clinic | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-21-fr-bootstrap -->
+<!-- content_id: communication-clinic | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-23-application-routes -->
 
 # Pratique d’application facultative : langue, travail et recherche
 
@@ -94,3 +94,151 @@ une autorisation ou une preuve manque, arrêtez-vous et marquez-la comme inconnu
 **Limite :** ces cartes ne prouvent pas la qualité d’un modèle, l’existence
 d’une source, la maîtrise d’une langue, la rétention, le transfert ou un
 résultat professionnel. Elles restent `not_run`.
+
+<span id="practice-route-chooser"></span>
+
+## Commencer par une seule route
+
+Si votre objectif n’est pas encore clair, ne demandez pas tout de suite une longue
+réponse. Choisissez une seule intention pour aujourd’hui : pratiquer une compétence,
+mettre en forme un point d’avancement ou vérifier une affirmation. Faites un essai
+bref et gardez une trace minimale. Cette carte d’entrée n’est ni un diagnostic ni
+un programme d’apprentissage complet.
+
+<span id="request-escalation"></span>
+
+### Préciser le type d’aide attendu
+
+```text
+Le petit résultat que je veux obtenir aujourd’hui : [résultat observable]
+Les informations que vous pouvez utiliser : [faits, texte ou liens que je fournis]
+Ce que je vous demande d’abord : [réécrire / poser des questions / proposer un exercice / préparer une vérification]
+N’inventez pas de faits, n’ouvrez pas de lien et n’effectuez aucune action externe.
+S’il manque une entrée nécessaire, indiquez laquelle et arrêtez-vous.
+```
+
+Ne mélangez pas « vérifier les informations à jour » et « modifier une page publique »
+dans la même demande. Vérifiez d’abord la source, puis rédigez un contrat d’action distinct
+avec l’objectif, le public, l’autorisation et la manière de revenir en arrière. Une citation
+ne vaut pas autorisation de publier.
+
+<span id="first-practice-intake"></span>
+
+### Réduire une intention large à un premier essai
+
+```text
+Mon intention : [par exemple : apprendre l’espagnol]
+Posez-moi une seule question à la fois jusqu’à obtenir un exercice sûr d’environ dix minutes :
+1. l’action observable que je dois réaliser ;
+2. ce que je vais essayer seul d’abord ;
+3. l’aide que j’accepte (question, indice, exemple ou relecture) ;
+4. ce que je vérifierai moi-même ;
+5. une version plus petite si je bloque.
+Ne présentez pas un seul essai comme une maîtrise, une aisance ou un niveau acquis.
+```
+
+<span id="four-line-safety-card"></span>
+
+## Avancé : poser la limite avant de partager, chercher ou agir
+
+Dès qu’un fichier, une source externe, un outil ou un compte est concerné, remplissez
+cette fiche. Elle n’accorde aucun droit. Si un champ est vide, arrêtez-vous.
+
+```text
+Objectif et ce que je ne ferai pas cette fois :
+Entrées lisibles et origine de chacune :
+Fichier ou objet précis qui pourrait être modifié :
+Données qui ne seront ni lues, ni envoyées, ni conservées :
+Résultat attendu et preuve d’acceptation vérifiable :
+Arrêt : si le chemin, l’autorisation, la source ou la preuve est incertain, je m’arrête.
+```
+
+<span id="share-check"></span>
+
+### Vérifier avant de partager : réduire le contenu et le public
+
+```text
+Ce que j’envisage de partager : [une phrase ; ne collez aucun secret]
+Objectif : [qui doit vérifier quoi]
+Public possible : [rôle ou groupe]
+Indiquez l’extrait minimal nécessaire et séparez le contenu, le public, l’autorisation
+et le canal que je dois vérifier moi-même. N’envoyez rien, ne téléversez rien et ne créez pas de lien.
+Si une limite ou une autorisation manque, indiquez ce qui manque et arrêtez-vous.
+```
+
+<span id="public-interest-safety-route"></span>
+
+## Avancé : examiner une idée d’IA qui peut affecter des personnes
+
+Pour une idée qui touche l’emploi, l’éducation, la santé, le logement ou les prestations,
+commencez par un cas fictif et n’utilisez aucune donnée personnelle réelle.
+
+```text
+Un système fictif aiderait [un rôle] à prendre [une décision].
+Séparez : les personnes qui pourraient en bénéficier ou subir un préjudice ; les données
+strictement nécessaires ; le point où une personne peut contrôler ou contester la décision ;
+les éléments qui la justifieraient ; et le signal qui impose l’arrêt.
+Ne proposez pas de déploiement, n’appelez aucun service et ne présentez pas la suggestion du modèle comme un fait.
+```
+
+<span id="general-skill-practice-route"></span>
+
+## Route B : pratiquer une compétence observable
+
+```text
+Je veux pratiquer : [expliquer une idée / répondre à un entretien / faire une présentation].
+Laissez-moi essayer pendant [minutes] sans me montrer de modèle à l’avance.
+Ensuite, vérifiez seulement : l’objectif est-il clair, les éléments sont-ils suffisants,
+et le public sait-il quelle est la prochaine étape ?
+Signalez le problème qui a le plus d’effet et donnez-moi une situation différente à refaire.
+N’inventez pas mon expérience et ne qualifiez pas un essai de maîtrise.
+```
+
+<span id="bounded-research-route"></span>
+
+## Route C : faire une recherche bornée pour une décision
+
+```text
+La décision à prendre : [décision]. Date, lieu et version concernés : [périmètre]
+Commencez par une question vérifiable, trois types de sources prioritaires et une condition d’arrêt.
+Pour chaque affirmation, notez le responsable de la source, l’URL d’origine et l’URL actuelle,
+la localisation du passage, la date, le périmètre et ce qui reste inconnu.
+Ne traitez pas un extrait de moteur de recherche, un témoignage de forum ou un lien non ouvert comme une preuve vérifiée.
+```
+
+<span id="source-check-route"></span>
+
+### Comparer une phrase avec son passage source
+
+```text
+Affirmation : [une phrase précise]
+Source originale ou extrait dont le partage est autorisé : [contenu]
+Séparez ce que le passage étaye directement, ce qu’il ne dit pas ou contredit,
+et ce que je dois ouvrir et localiser moi-même. Si le passage est introuvable,
+marquez citation_unverified et réduisez la portée de la conclusion.
+```
+
+<span id="recovery-route"></span>
+
+## Avancé : corriger une réponse qui a dévié, une condition à la fois
+
+Conservez la demande initiale, le contexte visible, la réponse reçue et le résultat attendu.
+Ne changez qu’une condition de communication — par exemple lister d’abord les entrées ou
+imposer un format — puis faites une seule comparaison à faible risque. Si des fichiers, des
+droits, un réseau ou une action externe deviennent nécessaires, redéfinissez la limite et arrêtez-vous.
+
+<span id="card-e1-user-declared-continuity-receipt"></span>
+
+### Fiche de continuité avant la prochaine tentative
+
+```text
+Tâche initiale et limites qui restent valables :
+Entrées réellement lues ou terminées lors de la tentative précédente :
+Résultat vérifiable de la tentative précédente :
+Ce qui reste inconnu, a échoué ou n’a pas été exécuté :
+La seule condition que je vais changer maintenant :
+Condition d’arrêt et personne chargée de relire le résultat :
+```
+
+Cette fiche est un contexte déclaré par la personne, pas la mémoire du modèle ni une preuve
+d’autorisation. Elle n’ajoute pas automatiquement un nouveau compte, une branche, un dépôt ou un public.
