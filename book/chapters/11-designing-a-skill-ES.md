@@ -56,7 +56,7 @@ required_inputs:
   - ruta o artefacto pegado
   - objetivo, exclusiones y aceptación
   - procedencia de afirmaciones materiales
-allowed_actions: "leer los archivos indicados; escribir un informe en una salida desechable; ejecutar comprobaciones reversibles con nombre"
+allowed_actions: "leer los archivos indicados; escribir un informe temporal; ejecutar comprobaciones reversibles con nombre"
 forbidden_actions: "leer o imprimir secretos; publicar, enviar, borrar, instalar o usar la red sin autorización"
 output: "informe de afirmación → evidencia → alcance no cubierto"
 stop_when: "falta entrada, autoridad, fuente o destino recuperable"
