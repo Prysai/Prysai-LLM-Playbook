@@ -364,8 +364,8 @@ observations locales.
 <nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="06-model-selection-FR.md" aria-label="Chapitre précédent : Chapitre 6 · Choisir un modèle">← Précédent<br><strong>Chapitre 6 · Choisir un modèle</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="08-full-lifecycle-workflow-FR.md" aria-label="Chapitre suivant : Chapitre 8 · De la définition à la livraison">Suivant →<br><strong>Chapitre 8 · De la définition à la livraison</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="06-model-selection-FR.md" aria-label="Chapitre précédent: Chapitre 6 · Choisir un modèle">← Précédent<br><strong>Chapitre 6 · Choisir un modèle</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="08-full-lifecycle-workflow-FR.md" aria-label="Chapitre suivant: Chapitre 8 · De la définition à la livraison">Suivant →<br><strong>Chapitre 8 · De la définition à la livraison</strong></a></td>
     </tr>
   </table>
 </nav>
