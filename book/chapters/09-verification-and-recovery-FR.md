@@ -289,16 +289,17 @@ Pour une reprise autorisée, conservez au minimum :
 ## 4. Distinguer récupération et complétion
 
 `practice` désigne un exercice ; `candidate` désigne une structure ou un résultat
-prometteur, encore incomplètement évalué ; `verified` signifie que les contrôles
-déclarés sont passés dans la portée documentée ; `production-ready` indique que
+prometteur, encore incomplètement évalué ; `verified` signifie que des preuves
+existent dans la portée, la version et l’ensemble de tâches déclarés ;
+`production-ready` indique que
 les portes de qualité, de sécurité, de restauration (`rollback`), de maintenance
 et de publication (`release`) sont passées. `not_observed` décrit un événement
 non vu ; `not_run` signifie que l’expérience n’a pas eu lieu ; `partial`,
 `unverified` et `blocked` décrivent la lacune la plus étroite soutenue.
 
 Récupérer le contrôle ne fait pas monter le statut de complétion. Interrompre un
-processus et préserver un diff peut produire un handoff candidate alors que le
-résultat runtime reste unverified.
+processus et préserver un diff peut produire une passation candidate alors que le
+résultat d’exécution reste unverified.
 
 ## 5. Expérience : auditer une affirmation de complétion
 
