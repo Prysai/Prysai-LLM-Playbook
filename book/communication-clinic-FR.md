@@ -178,10 +178,10 @@ quelque chose changerait-il hors de cette conversation ?**
 
 | Si votre demande ressemble à ceci | Choisissez cette voie | Premier geste sûr |
 |---|---|---|
-| « Rendez ce paragraphe fourni plus chaleureux, sans ajouter de faits. » | Texte uniquement | Utilisez le [Brief de dialogue](../skills/prysai-dialogue-brief/SKILL.md) ou le [Contrôle du premier tour](../skills/prysai-first-turn-check/SKILL.md). |
-| « Cette règle produit est-elle toujours à jour ? » | Un fait actuel borné | Utilisez [Source Investigator](../skills/prysai-source-investigator/SKILL.md) ; fixez une affirmation, une date et le responsable de la source. |
-| « Comparez plusieurs options et dites-moi ce que montrent les preuves. » | Recherche multi-source | Utilisez [Research Router](../skills/prysai-research-router/SKILL.md) ; définissez d’abord la décision, les options et les preuves acceptables. |
-| « Confirmez la règle puis modifiez la page publique. » | Action ou changement externe | Utilisez d’abord [Task Protocol](../skills/prysai-task-protocol/SKILL.md). La vérification de la règle et la publication sont deux décisions séparées. |
+| « Rendez ce paragraphe fourni plus chaleureux, sans ajouter de faits. » | Texte uniquement | Utilisez le [Brief de dialogue (locale-neutral)](../skills/prysai-dialogue-brief/SKILL.md) ou le [Contrôle du premier tour (locale-neutral)](../skills/prysai-first-turn-check/SKILL.md). |
+| « Cette règle produit est-elle toujours à jour ? » | Un fait actuel borné | Utilisez [Source Investigator (locale-neutral)](../skills/prysai-source-investigator/SKILL.md) ; fixez une affirmation, une date et le responsable de la source. |
+| « Comparez plusieurs options et dites-moi ce que montrent les preuves. » | Recherche multi-source | Utilisez [Research Router (locale-neutral)](../skills/prysai-research-router/SKILL.md) ; définissez d’abord la décision, les options et les preuves acceptables. |
+| « Confirmez la règle puis modifiez la page publique. » | Action ou changement externe | Utilisez d’abord [Task Protocol (locale-neutral)](../skills/prysai-task-protocol/SKILL.md). La vérification de la règle et la publication sont deux décisions séparées. |
 
 ### Petit reçu de routage
 
