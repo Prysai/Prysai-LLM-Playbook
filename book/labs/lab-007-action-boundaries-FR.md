@@ -11,13 +11,13 @@ evidence:
   - "Les cartes de surface et d’autorité"
   - "Le diff local et le contrôle"
   - "La décision de ne pas publier"
-failure_variant: "Confondre connexion, accès et permission de pousser"
+failure_variant: "Confondre connexion, accès et autorisation d’envoyer vers le dépôt distant"
 reflection: "Quelle frontière était la plus facile à cacher ?"
 status: draft
 last_verified: "not run"
 transfer_task: "Appliquer la matrice à une préparation de publication"
 transfer_domain: "ingénierie, contenu, recherche ou release"
-transfer_evidence: "Cible, autorité, effet, contrôle et rollback"
+transfer_evidence: "Cible, autorité, effet, contrôle et restauration (rollback)"
 transfer_limitations: "La simulation ne prouve aucun accès GitHub réel"
 ---
 
@@ -60,13 +60,15 @@ Ceci est un dépôt d’exercice désinfecté.
 Demandez exactement : « Ajoute la ligne `limite : local uniquement` sous
 État dans README.md ; garde le reste du fichier et ne modifie que ce chemin.
 Montre le diff et le résultat du contrôle. Sans nouvelle autorisation explicite,
-ne committe pas, ne pousse pas, ne publie pas, n’installe rien et ne modifie pas
-l’environnement persistant. »
+ne crée pas de commit, n’envoie rien vers le dépôt distant (`push`), ne publie
+pas, n’installe rien et ne modifie pas l’environnement persistant. »
 
 Le critère d’acceptation est une seule ligne ajoutée, un diff visible, un
-contrôle dont l’exécution et l’effet sont indiqués, et `not_run` pour commit,
-push, publication, installation et redémarrage. Restaurer la fixture ou retirer
-la ligne est un retour arrière local ; ce n’est pas supprimer un historique distant.
+contrôle dont l’exécution et l’effet sont indiqués, et `not_run` pour le commit,
+l’envoi vers le dépôt distant (`push`), la publication, l’installation et le
+redémarrage. Restaurer la fixture ou retirer
+la ligne constitue une restauration locale ; cela ne supprime pas un historique
+distant.
 
 ## Trois surfaces, trois cartes
 
@@ -87,15 +89,16 @@ Utilisez un dépôt Git jetable et un Worktree isolé. Si Git n’est pas dispon
 créez un second répertoire nommé `worktree-simulation` et indiquez qu’il s’agit
 d’une simulation. Notez le chemin principal, le chemin isolé, la branche et le
 commit de base. Éditez uniquement la copie isolée et vérifiez que l’arbre
-principal reste inchangé. Par défaut, ne committez, ne poussez et ne publiez pas.
+principal reste inchangé. Par défaut, ne créez pas de commit, n’envoyez rien vers
+le dépôt distant et ne publiez pas.
 
 ### Scénario C — second dossier de type organisation
 
 Utilisez une seconde copie locale désinfectée, explicitement appelée
 `organisation-simulation`. Ne connectez aucune organisation réelle, hôte
-Enterprise, remote, connecteur ou service réseau. Comparez visibilité, impact
-sur les collaborateurs, hypothèses de protection de branche, portée de
-l’installation et propriétaire du retour arrière. Le fait qu’un dossier soit
+Enterprise, remote, connecteur ou service réseau. Comparez la visibilité, l’impact
+sur les collaborateurs, les hypothèses de protection de branche, la portée de
+l’installation et le responsable de la restauration. Le fait qu’un dossier soit
 inscriptible ne prouve pas l’autorisation de l’organisation.
 
 ## Quatre états à ne pas confondre
@@ -160,7 +163,7 @@ Chaque étape doit ajouter une information : « réessayer » n’est pas un dia
 3. Localiser l’étape : entrée, identité, cible, autorisation, exécution ou vérification.
 4. Faire un contrôle en lecture seule : chemins, configuration, hôte et journaux masqués.
 5. Faire une seule modification locale réversible et conserver diff, code et sortie.
-6. Comparer les trois surfaces pour la visibilité, l’impact et le retour arrière.
+6. Comparer les trois surfaces pour la visibilité, l’impact et la restauration.
 7. Écrire `verified` seulement si l’acceptation est prouvée ; sinon écrire `unverified` ou `blocked`.
 
 Arrêtez-vous si la cible, l’hôte ou la portée sont ambigus ; si l’étape demande
@@ -181,7 +184,7 @@ l’erreur, l’état initial et le prochain contrôle sûr.
 | Symptôme | étape, fait du rapport, spéculation | carte de symptôme | verified/unverified |
 | Action minimale | édition/commande, périmètre, effet attendu | log masqué, diff, code | executed/not_run |
 | Résultat | diff, contrôle, état local/distant | sortie ou `not_run` | verified/unverified |
-| Retour arrière | moyen exact et état avant/après | restauration ou reverse-diff | available/not_run |
+| Restauration | moyen exact et état avant/après | restauration ou reverse-diff | available/not_run |
 | Action externe | commit, push, publication, installation, avis | explicitement `not_run` | not_run |
 
 ## Échec volontaire, transfert et standard de réussite
@@ -200,20 +203,20 @@ marquées `not_run`.
 Le Lab passe son standard quand les trois surfaces sont répétées, les quatre
 états sont distingués, les rapports S-02/S-03/S-04/S-11 restent des rapports,
 un état initial est conservé, une condition d’arrêt préserve les preuves, une
-entrée de retour arrière existe et le transfert est documenté.
+une procédure de restauration existe et le transfert est documenté.
 
 ## Réflexion
 
 - Quelle étape est la plus facile à cacher derrière « déjà connecté » ?
 - Quelle vérification ajoute de l’information sans élargir l’autorité ?
-- Comment les trois surfaces changent-elles la visibilité et le retour arrière ?
+- Comment les trois surfaces changent-elles la visibilité et la restauration ?
 
 ## Sources et limite de mise à jour
 
 Les cartes S-02, S-03, S-04 et S-11 proviennent de rapports de terrain et ne
 constituent ni des reproductions ni des causes officielles. La fixture de ce
 fichier est une entrée originale, réversible et locale ; elle ne prouve aucun
-accès GitHub, Enterprise, connecteur, publication ou retour arrière distant.
+accès GitHub, Enterprise, connecteur, publication ou restauration distante.
 Le Lab reste `draft / not_run` jusqu’à une exécution d’apprenant et une revue
 indépendante.
 
