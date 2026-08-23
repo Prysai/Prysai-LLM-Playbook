@@ -41,7 +41,7 @@ Después de intentarlo una vez, usa las cuatro unidades siguientes para entender
 
 Las instrucciones de un producto concreto pertenecen a un adaptador de plataforma; los ejercicios de dominio pertenecen a rutas de aplicación.
 
-## Practica una frontera antes de elegir plataforma
+## Prueba un límite antes de elegir una plataforma
 
 El [ejercicio de fronteras universales](../../examples/universal-seam-v1/README-ES.md) contiene cuatro registros ficticios: una solicitud más reciente que no coincide, un destino equivocado, un comprobante de ejecución de herramienta ausente y un valor estructurado que ha cambiado. En cada caso, indica qué no demuestra el texto visible, elige la comprobación segura más pequeña y detente antes de que un comportamiento real requiera un adaptador. La explicación está en español; los datos fijos siguen siendo material ficticio y compartido.
 
