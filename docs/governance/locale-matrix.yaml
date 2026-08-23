@@ -75,7 +75,16 @@
       "content_id": "field-problems-index-2026-08-10",
       "kind": "field-note",
       "path": "docs/research/field-problems-index-2026-08-10.md",
-      "content_status": "candidate"
+      "content_status": "candidate",
+      "localized_paths": {
+        "ZH": "docs/research/field-problems-index-2026-08-10-ZH.md",
+        "ES": "docs/research/field-problems-index-2026-08-10-ES.md",
+        "JA": "docs/research/field-problems-index-2026-08-10-JA.md",
+        "KO": "docs/research/field-problems-index-2026-08-10-KO.md",
+        "DE": "docs/research/field-problems-index-2026-08-10-DE.md",
+        "ZHTW": "docs/research/field-problems-index-2026-08-10-ZHTW.md",
+        "FR": "docs/research/field-problems-index-2026-08-10-FR.md"
+      }
     },
     {
       "content_id": "field-problems-forums-2026-08-10",
@@ -135,7 +144,16 @@
       "content_id": "verification-stability-2026-08-15",
       "kind": "project-document",
       "path": "docs/quality/verification-stability-2026-08-15.md",
-      "content_status": "candidate"
+      "content_status": "candidate",
+      "localized_paths": {
+        "ZH": "docs/quality/verification-stability-2026-08-15-ZH.md",
+        "ES": "docs/quality/verification-stability-2026-08-15-ES.md",
+        "JA": "docs/quality/verification-stability-2026-08-15-JA.md",
+        "KO": "docs/quality/verification-stability-2026-08-15-KO.md",
+        "DE": "docs/quality/verification-stability-2026-08-15-DE.md",
+        "ZHTW": "docs/quality/verification-stability-2026-08-15-ZHTW.md",
+        "FR": "docs/quality/verification-stability-2026-08-15-FR.md"
+      }
     },
     {
       "content_id": "first-win-pilot-protocol-v2",
@@ -147,7 +165,16 @@
       "content_id": "newcomer-entry-observation-protocol-v1",
       "kind": "project-document",
       "path": "docs/quality/newcomer-entry-observation-protocol-v1.md",
-      "content_status": "candidate"
+      "content_status": "candidate",
+      "localized_paths": {
+        "ZH": "docs/quality/newcomer-entry-observation-protocol-v1-ZH.md",
+        "ES": "docs/quality/newcomer-entry-observation-protocol-v1-ES.md",
+        "JA": "docs/quality/newcomer-entry-observation-protocol-v1-JA.md",
+        "KO": "docs/quality/newcomer-entry-observation-protocol-v1-KO.md",
+        "DE": "docs/quality/newcomer-entry-observation-protocol-v1-DE.md",
+        "ZHTW": "docs/quality/newcomer-entry-observation-protocol-v1-ZHTW.md",
+        "FR": "docs/quality/newcomer-entry-observation-protocol-v1-FR.md"
+      }
     },
     {
       "content_id": "ai-assisted-language-practice-boundaries-2026-08-14",
