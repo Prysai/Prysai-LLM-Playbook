@@ -738,7 +738,13 @@ Object.assign(copy.zh, {
   repositorySkills: '26 个可复用 Skill · candidate',
 });
 
-const currentCopy = () => copy[effectiveUiLanguage] || copy.en;
+// Dictionary entries are extended in several localized blocks below. Normalize
+// at read time as well as during bootstrap so an unavailable generated artifact
+// cannot resurrect an older reader-facing term from a later fallback block.
+const currentCopy = () => {
+  normalizeLegacyLearningPath(copy);
+  return copy[effectiveUiLanguage] || copy.en;
+};
 const dataLanguage = () => effectiveUiLanguage;
 const localeDisplayName = (language) => localeManifest.locales[language]?.display_name || language;
 const localeHasUiCopy = (language) => uiLocales.has(language);
