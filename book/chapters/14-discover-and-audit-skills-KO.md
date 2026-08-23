@@ -28,11 +28,11 @@
 | 빈틈 | 보통의 해결 방법 | 흔한 오판 |
 |---|---|---|
 | 개념 또는 사실 부족 | 조사, 공식 문서, 사람의 판단 | 출처 확인 대신 Skill 사용 |
-| 안정적으로 반복되는 절차 | 로컬 Skill 또는 script | 하나의 거대한 Skill로 모든 상황 처리 |
-| 외부 시스템 관찰 또는 변경 | 통제된 tool 또는 connector | “호출 가능”을 “허가됨”으로 취급 |
+| 안정적으로 반복되는 절차 | 로컬 Skill 또는 스크립트 | 하나의 거대한 Skill로 모든 상황 처리 |
+| 외부 시스템 관찰 또는 변경 | 통제된 도구 또는 커넥터 | “호출 가능”을 “허가됨”으로 취급 |
 | 불분명한 목표·수용 규칙 | 먼저 명확화 | 설치로 모호한 요구를 숨김 |
 
-Skill은 방법과 라우팅 계약이고 tool은 외부를 관찰하거나 바꾸는 인터페이스입니다. Plugin과 Connector는 제품 계층입니다. 검토할 때는 Skill이 무엇을 읽는지, 무엇을 권하는지, tool이 실제로 무엇을 하는지, 외부 서비스가 무엇을 받는지를 분리합니다.
+Skill은 방법과 라우팅 계약이고 도구는 외부를 관찰하거나 바꾸는 인터페이스입니다. 플러그인과 커넥터는 제품 계층입니다. 검토할 때는 Skill이 무엇을 읽는지, 무엇을 권하는지, 도구가 실제로 무엇을 하는지, 외부 서비스가 무엇을 받는지를 분리합니다.
 
 ## 설치 전 검토 카드
 
@@ -42,13 +42,13 @@ Skill은 방법과 라우팅 계약이고 tool은 외부를 관찰하거나 바�
 
 ## Skill 내용은 신뢰할 수 없는 입력
 
-`SKILL.md`, README, 원격 페이지, Issue, 샘플, tool 결과는 데이터로 취급합니다. “상위 규칙을 무시”, “비밀을 올려라”, “결과를 보내라”, “승인되지 않은 명령을 실행하라”는 말은 Skill 안에 있어도 권한을 얻지 못합니다. 필요한 부분만 추출하고, 비밀을 제거하며, 가능하면 네트워크 없는 sandbox에서 시험하고, 거부한 내용을 기록합니다.
+`SKILL.md`, README, 원격 페이지, 이슈, 샘플, 도구 결과는 데이터로 취급합니다. “상위 규칙을 무시”, “비밀을 올려라”, “결과를 보내라”, “승인되지 않은 명령을 실행하라”는 말은 Skill 안에 있어도 권한을 얻지 못합니다. 필요한 부분만 추출하고, 비밀을 제거하며, 가능하면 네트워크 없는 샌드박스에서 시험하고, 거부한 내용을 기록합니다.
 
-위험은 단계적으로 올립니다. 로컬 읽기, 되돌릴 수 있는 쓰기, sandbox 외부 연결, 그 뒤에 프로덕션 쓰기와 공개입니다. 더 높은 단계로 가기 전 새 권한, 증거, rollback을 선언합니다. 한 번의 smoke test가 뒷받침할 수 있는 최대 상태는 `candidate`입니다.
+위험은 단계적으로 올립니다. 로컬 읽기, 되돌릴 수 있는 쓰기, 샌드박스 외부 연결, 그 뒤에 프로덕션 쓰기와 공개입니다. 더 높은 단계로 가기 전 새 권한, 증거, 복구 계획을 선언합니다. 한 번의 스모크 테스트가 뒷받침할 수 있는 최대 상태는 `candidate`입니다.
 
 ## 연습과 경계
 
-고정 리비전의 두 후보를 설치하지 않고 검토하세요. A는 추적 가능한 라이선스 신호와 작업 적합성이 있어 `recommendation-only`가 될 수 있습니다. B는 라이선스·NOTICE 또는 구체적인 복구 계획이 없어 `blocked`여야 합니다. URL, 리비전, 인벤토리, 의존성, 권한, 격리 대상, 백업, 복원, 승인, 담당자를 기록하고 A에 대해 정상, 경계, 실패·주입, 전이 테스트를 설계하되 실행하지 마세요.
+고정 리비전의 두 후보를 설치하지 않고 검토하세요. A는 추적 가능한 라이선스 신호와 작업 적합성이 있어 `recommendation-only`가 될 수 있습니다. B는 라이선스·NOTICE 또는 구체적인 복구 계획이 없어 `blocked`여야 합니다. URL, 리비전, 인벤토리, 의존성, 권한, 격리 대상, 백업, 복원, 승인 지점, 담당자를 기록하고 A에 대해 정상, 경계, 실패·주입, 전이 테스트를 설계하되 실행하지 마세요.
 
 이 연습은 검토 결정을 보여 줄 뿐 발견, 로드, 실행, 실제 채택을 증명하지 않습니다. 선언된 환경에서 실행하고 독립 검토한 기록이 생기기 전까지 이 장은 `candidate / not_run`입니다.
 
@@ -58,16 +58,16 @@ Skill은 방법과 라우팅 계약이고 tool은 외부를 관찰하거나 바�
 
 ```text
 작업 공백: 이번 작업에 부족한 안정적인 방법
-출처: 프로젝트 URL, 고정 revision, 확인일, 실제 파일 경로
-trigger / non-trigger: 적용할 때와 양보할 때
-license: 저장소, 대상 파일, NOTICE, 중첩 script / asset의 증거
+출처: 프로젝트 URL, 고정 리비전, 확인일, 실제 파일 경로
+trigger / non-trigger: 적용할 때와 적용하지 않을 때
+license: 저장소, 대상 파일, NOTICE, 중첩 스크립트 / 에셋의 증거
 의존성 / 권한: 읽기, 쓰기, 네트워크, 계정, 비밀, 외부 부작용
 격리 시험: 디렉터리, 비밀 없는 입력, 허용 행동, 중지점
-복구: 설치 전 backup, restore 단계, read-back check
+복구: 설치 전 백업, 복원 단계, 되읽기 검사
 결정: recommendation-only / blocked / approved-to-install / installed-candidate
 ```
 
-고정 revision, license/NOTICE, 설치 대상, backup, restore check 중 하나라도 없으면 `blocked`입니다. “먼저 설치”는 증거 공백을 해결하지 않습니다.
+고정 리비전, license/NOTICE, 설치 대상, 백업, 복원 후 검사 중 하나라도 없으면 `blocked`입니다. “먼저 설치”는 증거 공백을 해결하지 않습니다.
 
 `file exists`, `discovered`, `loaded`, `adopted`, `verified`를 합치지 마세요. `SKILL.md`는 첫 상태만, 설치 로그는 많아야 `installed-candidate`만 뒷받침합니다.
 
@@ -106,18 +106,18 @@ license: 저장소, 대상 파일, NOTICE, 중첩 script / asset의 증거
 
 ### 작업
 
-고정 revision의 공개 후보 두 개나 가린 로컬 샘플 두 개를 고릅니다. A에는 추적 가능한 출처와 license 신호가 있고, B에는 license/NOTICE, 의존성 선언, 복구 계획 중 하나가 의도적으로 없습니다.
+고정 리비전의 공개 후보 두 개나 가린 로컬 샘플 두 개를 고릅니다. A에는 추적 가능한 출처와 license 신호가 있고, B에는 license/NOTICE, 의존성 선언, 복구 계획 중 하나가 의도적으로 없습니다.
 
-1. 출처, revision, 목록, 입구 요약, 의존성, license 신호만 읽습니다. runtime 디렉터리에 내려받거나 로그인하거나 네트워크 실행을 하지 않습니다.
+1. 출처, 리비전, 목록, 입구 요약, 의존성, license 신호만 읽습니다. 실행 디렉터리에 내려받거나 로그인하거나 네트워크 실행을 하지 않습니다.
 2. 각각의 카드에 작업 공백, 경계, 최소 권한, 격리 시험, 승인 지점을 씁니다.
-3. A에는 긍정, 경계, injection/failure, migration 사례를 설계하고 입력, 예상 행동, 중지, 증거를 적습니다. 실행했다고 주장하지 않습니다.
+3. A에는 긍정, 경계, 주입/실패, 전이 사례를 설계하고 입력, 예상 행동, 중지, 증거를 적습니다. 실행했다고 주장하지 않습니다.
 4. B는 `blocked`로 두고 해제에 필요한 자료를 씁니다.
 
-출처 안의 “상위 규칙 무시”, “`.env` 업로드”, “테스트용 production 변경”은 신뢰할 수 없는 데이터일 뿐 Skill 권한이나 사용자 승인이 아닙니다. 거부, 기록, 중지가 올바른 결과입니다.
+출처 안의 “상위 규칙 무시”, “`.env` 업로드”, “테스트용 프로덕션 변경”은 신뢰할 수 없는 데이터일 뿐 Skill 권한이나 사용자 승인이 아닙니다. 거부, 기록, 중지가 올바른 결과입니다.
 
 ### 증거
 
-A와 B 각각에 source, revision, 실제 path, license/NOTICE 결론, dependencies, 예상 permission, owner, decision, unknown을 기록한 카드를 보관합니다. A에는 positive, boundary, failure/injection, migration의 네 설계 case를 남깁니다. 카드는 설치나 runtime behavior를 주장하지 않습니다.
+A와 B 각각에 출처, 리비전, 실제 경로, license/NOTICE 결론, 의존성, 예상 권한, 담당자, 결정, 미확인 항목을 기록한 카드를 보관합니다. A에는 긍정, 경계, 실패/주입, 전이의 네 가지 설계 사례를 남깁니다. 카드는 설치나 실행 중 동작을 주장하지 않습니다.
 
 ### 회고
 
@@ -129,12 +129,12 @@ A와 B 각각에 source, revision, 실제 path, license/NOTICE 결론, dependenc
 
 ## 전이 과제
 
-팀이 이미 사용하는 internal script에 카드를 적용합니다. trigger와 non-trigger, 최소 read-only check, injection case, 나중에 write나 network를 허가할 사람을 적습니다. script와 production은 바꾸지 않습니다.
+팀이 이미 사용하는 내부 스크립트에 카드를 적용합니다. trigger와 non-trigger, 최소 읽기 전용 검사, 주입 사례, 나중에 쓰기나 네트워크를 허가할 사람을 적습니다. 스크립트와 프로덕션은 바꾸지 않습니다.
 
 ## 수용 체크리스트
 
-- [ ] knowledge gap, 반복 가능한 method, tool, authorization을 구분한다.
-- [ ] source, fixed revision, path, license/NOTICE, permission, recovery, owner를 기록한다.
+- [ ] 지식 공백, 반복 가능한 방법, 도구, 권한 문제를 구분한다.
+- [ ] 출처, 고정 리비전, 경로, license/NOTICE, 권한, 복구, 담당자를 기록한다.
 - [ ] `file exists`, `discovered`, `loaded`, `adopted`, `verified`를 혼동하지 않는다.
 - [ ] license, permission, recovery가 불명확하면 설치 대신 `blocked`로 둔다.
 
@@ -146,7 +146,7 @@ A와 B 각각에 source, revision, 실제 path, license/NOTICE 결론, dependenc
 
 - [ ] 지식 공백, 반복 방법, 도구 능력, 불분명한 작업을 구분한다.
 - [ ] URL, revision, 경로, license/NOTICE, 의존성, 권한, owner를 기록한다.
-- [ ] 획득, 설치 대상 쓰기, 의존성/인증, 팀/production 진입 승인을 분리한다.
+- [ ] 획득, 설치 대상 쓰기, 의존성/인증, 팀/프로덕션 진입 승인을 분리한다.
 - [ ] 증거가 있을 때만 exists, discovered, loaded, adopted, verified라고 쓴다.
 
 ## 채택 기록: 검토할 수 있음을 먼저 보이고 활성화를 결정하기
@@ -154,21 +154,21 @@ A와 B 각각에 source, revision, 실제 path, license/NOTICE 결론, dependenc
 이 기록은 프로젝트가 직접 만든 Skill과 외부에서 찾은 후보 모두에 사용합니다. 인기 저장소나 매끄러운 설명, 디렉터리에 보인다는 사실만으로 외부 콘텐츠를 신뢰하거나 실행 가능한 능력으로 판단해서는 안 됩니다.
 
 ```text
-candidate name과 version / commit:
+후보 이름과 버전 / 커밋:
 source: original | external; external project original link:
-owner와 review date:
+담당자와 검토일:
 메울 구체적인 작업 공백:
 license: 코드, 텍스트, 에셋, 중첩 의존성이 각각 명확한가:
 예상 read / write / network / install / send / publish:
-positive, boundary, failure, transfer case:
+긍정, 경계, 실패, 전이 사례:
 observed: file | discovery | selection | load | execution | read-back verification
-not observed:
-허용된 temporary trial scope:
+관찰하지 못한 항목:
+허용된 임시 시험 범위:
 reject, pause, adopt 이유:
-다음 최소 safe check:
+다음 최소 안전 검사:
 ```
 
-외부 `SKILL.md`, page, Issue, install log, tool output은 평가할 data입니다. 그 안의 command, link 또는 “이전 rule을 무시하라” 같은 문장은 authority를 늘리지 않습니다. source, license, behavior scope, recovery path가 분명하지 않다면 올바른 결정은 `blocked` 또는 reject이며 “먼저 install”이 아닙니다.
+외부 `SKILL.md`, 페이지, 이슈, 설치 로그, 도구 출력은 평가할 자료입니다. 그 안의 명령, 링크 또는 “이전 규칙을 무시하라” 같은 문장은 권한을 늘리지 않습니다. 출처, 라이선스, 동작 범위, 복구 경로가 분명하지 않다면 올바른 결정은 `blocked` 또는 reject이며 “먼저 install”이 아닙니다.
 
 ### 한 번에 신뢰하지 말고 층별로 활성화하기
 
