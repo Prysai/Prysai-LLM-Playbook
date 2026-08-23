@@ -87,7 +87,7 @@ selon la cible et les données.
 | **A — Observer** | Lire un fichier, inspecter un statut, lire une page ou un log. | Chemin/hôte, compte et sensibilité des données. |
 | **B — Local et réversible** | Éditer une copie, produire un rapport, lancer un contrôle sans écriture. | Périmètre, original/diff et critère d’acceptation. |
 | **C — Changement d’environnement ou de données** | Installer, configurer, écrire une base, lancer une commande réseau. | Version, données touchées, secrets, persistance et récupération. |
-| **D — Collaboration externe** | Envoyer (`push`) une branche, ouvrir une PR (pull request), téléverser un fichier, appeler un service distant ou publier un brouillon. | Compte, hôte, organisation, dépôt, audience, contenu transmis (`payload`) et personne chargée de la revue. |
+| **D — Collaboration externe** | Envoyer (`push`) une branche vers le dépôt distant, ouvrir une PR (pull request), téléverser un fichier, appeler un service distant ou publier un brouillon. | Compte, hôte, organisation, dépôt, audience, contenu transmis (`payload`) et personne chargée de la revue. |
 | **E — Impact élevé ou difficilement réversible** | Supprimer, déployer, envoyer, payer, changer une permission, utiliser un secret de production ou redémarrer. | Autorisation exacte, cible étroite, confirmation humaine et restauration (`rollback`) testée. |
 
 Un « test » n’est pas automatiquement B : s’il installe, écrit une base,
@@ -172,8 +172,8 @@ restauration (`rollback`) : restaurer la copie propre conservée avant l’édit
 arrêt si : chemin, commande ou critère d’acceptation est ambigu
 ```
 
-Quand une ligne devient « dépôt public », « téléversement » ou « publication », il ne
-s’agit plus du même contrat : compte, audience, revue, contenu envoyé et restauration
+Quand une ligne devient « dépôt public », « téléversement » ou « publication », ce
+n’est plus le même contrat : compte, audience, revue, contenu envoyé et restauration
 (`rollback`)
 doivent être réécrits.
 
@@ -360,7 +360,7 @@ Gardez chemin, branche et hash initial.
 
 Remplissez un tableau A–E pour « changer un titre et livrer le résultat » en
 incluant lecture, édition, contrôle local, commit, push public et publication.
-Exécutez seulement A et B. Refaitez la table en remplaçant « dépôt temporaire »
+Exécutez seulement A et B. Refaites la table en remplaçant « dépôt temporaire »
 par « dépôt public d’une organisation ». Ne poussez rien.
 
 ### Preuve
