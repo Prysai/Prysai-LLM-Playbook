@@ -6870,66 +6870,59 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "skills/prysai-first-turn-check/SKILL-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "es": {
           "path": "skills/prysai-first-turn-check/SKILL-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "skills/prysai-first-turn-check/SKILL-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ko": {
           "path": "skills/prysai-first-turn-check/SKILL-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "de": {
           "path": "skills/prysai-first-turn-check/SKILL-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "zh-tw": {
           "path": "skills/prysai-first-turn-check/SKILL-ZHTW.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "fr": {
           "path": "skills/prysai-first-turn-check/SKILL-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         }
       }
     },
