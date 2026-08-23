@@ -152,7 +152,7 @@ condition d’arrêt : autre fichier, commande ambiguë ou contrôle absent
 Après l’action, remplacez `not_run` par l’état réellement soutenu par la
 preuve : `verified`, `partial`, `unverified`, `blocked` ou `not_run`. Un diff
 peut soutenir « le fichier a changé » ; il ne soutient pas à lui seul « le test
-a passé », « le site est publié » ou « les utilisateurs y gagnent ».
+a réussi », « le site est publié » ou « les utilisateurs y gagnent ».
 
 Ce protocole convertit chaque verbe vague en objet, autorité et preuve. Ce n’est
 pas un prompt magique : le jugement humain reste nécessaire.
