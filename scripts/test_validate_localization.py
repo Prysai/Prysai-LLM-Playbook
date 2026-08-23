@@ -25,6 +25,14 @@ def main() -> int:
         validator.LOCALIZED_ENTRY_RE.fullmatch("book/preface-EN.md"),
         "English preface should be recognized by the shared entry matcher",
     )
+    require(
+        validator.has_explicit_locale_neutral_marker("Evaluation framework (locale-neutral)"),
+        "explicit locale-neutral link marker was not recognized",
+    )
+    require(
+        not validator.has_explicit_locale_neutral_marker("Evaluation framework"),
+        "unmarked neutral link was accepted",
+    )
     print("LOCALIZATION_VALIDATOR_TESTS_OK fixtures=5")
     return 0
 

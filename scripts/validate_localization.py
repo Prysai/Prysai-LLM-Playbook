@@ -65,6 +65,18 @@ def is_unlocalized_reader_target(path: str) -> bool:
     return normalized == "CONTEXT.md" or normalized.startswith(("docs/", "evals/", "site/", "skills/"))
 
 
+def has_explicit_locale_neutral_marker(link_label: str) -> bool:
+    """Require a stable marker when a localized entry cites neutral evidence.
+
+    Governance, research, and Skill sources are intentionally maintained in one
+    language.  A localized entry may link to them for evidence, but the link
+    itself must say ``locale-neutral`` so a reader and a static checker cannot
+    mistake the target for a translated reader page.
+    """
+
+    return "locale-neutral" in link_label.casefold()
+
+
 def iter_workspace_files() -> list[Path]:
     """Walk the project while pruning machine-local work directories early."""
 
@@ -248,9 +260,13 @@ def main() -> int:
             except ValueError:
                 errors.append(f"{path_string} links outside workspace: {target}")
                 continue
-            if is_localized_entry_page and is_unlocalized_reader_target(target_relative):
+            if (
+                is_localized_entry_page
+                and is_unlocalized_reader_target(target_relative)
+                and not has_explicit_locale_neutral_marker(link_label)
+            ):
                 errors.append(
-                    f"{path_string} links from a localized entry page to an untranslated target: {target_relative}"
+                    f"{path_string} links from a localized entry page to an unmarked locale-neutral target: {target_relative}"
                 )
             if target_relative in path_to_identity:
                 target_content_id, target_locale = path_to_identity[target_relative]
