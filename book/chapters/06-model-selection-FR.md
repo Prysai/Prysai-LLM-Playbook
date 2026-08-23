@@ -375,8 +375,8 @@ et les observations d’exécution locale.
 <nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="05-choose-the-codex-surface-FR.md" aria-label="Chapitre précédent : Chapitre 5 · Choisir la bonne interface Codex">← Précédent<br><strong>Chapitre 5 · Choisir la bonne interface Codex</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="07-skills-plugins-and-tools-FR.md" aria-label="Chapitre suivant : Chapitre 7 · Skills, Plugins, MCP et outils">Suivant →<br><strong>Chapitre 7 · Skills, Plugins, MCP et outils</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="05-choose-the-codex-surface-FR.md" aria-label="Chapitre précédent: Chapitre 5 · Choisir son interface Codex">← Précédent<br><strong>Chapitre 5 · Choisir son interface Codex</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="07-skills-plugins-and-tools-FR.md" aria-label="Chapitre suivant: Chapitre 7 · Skills, Plugins, MCP et outils">Suivant →<br><strong>Chapitre 7 · Skills, Plugins, MCP et outils</strong></a></td>
     </tr>
   </table>
 </nav>
