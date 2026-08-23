@@ -12,11 +12,11 @@
 
 ## 학습 목표
 
-proposal, approval, execution, 관찰한 effect, acceptance를 구분하고, input, authority, evidence, budget의 stop을 시작 전에 정하며, 일어났을 수 있는 write를 다음 사람이 blind repeat하지 않는 handoff를 쓸 수 있습니다. 이 연습은 일반 Agent나 host behavior를 증명하지 않습니다.
+제안, 승인, 실행, 관찰된 효과, 수용 판정을 구분하고, input, authority, evidence, budget에 대한 중단 조건을 시작 전에 정하며, 일어났을 수 있는 쓰기 작업을 다음 사람이 그대로 반복하지 않도록 handoff를 작성할 수 있습니다. 이 연습은 일반적인 Agent나 호스트 동작을 증명하지 않습니다.
 
-## 실제 문제: 보이는 loop는 완료 result가 아니다
+## 실제 문제: 보이는 루프가 곧 완료된 결과는 아니다
 
-제안한 command, `Working` label, summary는 execution, read-back, acceptance가 없어도 보일 수 있습니다. 이는 제품 진단이 아닙니다. tool start, target state, check output 등 처음 관찰하지 못한 stage에서 멈춰야 하는 이유입니다.
+제안한 명령, `Working` 레이블, 요약은 실행·결과 재확인·수용 판정이 없어도 화면에 나타날 수 있습니다. 이는 제품 진단이 아닙니다. 도구 시작, 대상 상태, 검사 출력처럼 아직 관찰하지 못한 단계에서 멈춰야 하는 이유입니다.
 
 ## 관찰 가능한 루프
 
