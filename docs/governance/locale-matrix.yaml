@@ -2001,8 +2001,8 @@
           "translation_status": "in-progress",
           "translated_from": "EN",
           "source_revision": "worktree-2026-08-15",
-          "coverage": "partial",
-          "reason": "A Simplified Chinese candidate teaching translation exists for the core chapter method; source alignment and independent language review remain pending."
+          "coverage": "full",
+          "reason": "The Simplified Chinese chapter exposes the complete observable-loop, state, retry, sandbox, recovery, evidence, transfer, acceptance, and source contract; independent language review and learner-run evidence remain pending."
         },
         "ES": {
           "path": "book/chapters/12-agent-loop-and-stop-ES.md",
