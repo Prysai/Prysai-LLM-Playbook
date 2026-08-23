@@ -21,8 +21,8 @@ L’ordre par défaut est un chemin, pas un menu de chapitres concurrents :
    — expliquer, commencer, identifier, réparer, puis transférer ;
 3. [Première modification sûre](routes/first-safe-change-FR.md)
    — rendre visibles le but, le contexte, les limites et la forme de la réponse ;
-4. [Contrat du cours de base](../docs/product/core-course-contract.md) ;
-5. [Inventaire du contenu de base](../docs/governance/core-content-inventory.yaml).
+4. [Contrat du cours de base (locale-neutral)](../docs/product/core-course-contract.md) ;
+5. [Inventaire du contenu de base (locale-neutral)](../docs/governance/core-content-inventory.yaml).
 
 Les cartes de prompts, les boucles de langue, les Labs Codex et les Skills
 constituent la pratique d’application facultative après les fondations. Elle ne
@@ -59,7 +59,7 @@ Avant d’entrer dans le chemin principal, un chapitre doit rendre visibles :
 - les faits actuels, leurs sources et leur périmètre de revue ;
 - un état de maturité et de mise à jour qui ne dépasse pas les preuves.
 
-Le [cadre d’évaluation](../docs/quality/evaluation-framework.md) définit le
+Le [cadre d’évaluation (locale-neutral)](../docs/quality/evaluation-framework.md) définit le
 seuil minimal. Une fiche de chapitre, un validateur structurel vert ou une
 réponse générée agréable ne suffisent pas à appeler le chapitre `verified`.
 
@@ -102,13 +102,13 @@ collection contient 18 Labs, chacun `draft` avec `run_status: not_run`.
   — classer une liste fictive selon une règle explicite ;
 - [Share Check](communication-clinic-FR.md#share-check) — choisir un élément
   fictif plus petit à partager ou s’arrêter avant tout envoi ;
-- [Carte du projet](../docs/project-map-EN.md) — emplacement des chapitres,
+- [Carte du projet (locale-neutral)](../docs/project-map-EN.md) — emplacement des chapitres,
   Labs, Skills, recherches et contrôles ;
-- [Source canonique de navigation](../docs/governance/book-navigation.yaml) ;
-- [Cadre d’évaluation neutre par langue](../docs/quality/evaluation-framework.md) ;
-- [Évaluation du modèle Luna](../docs/model-evaluation-luna.md) ;
-- [Recherche de base OpenAI/Codex](../docs/research/openai-codex-baseline.md) ;
-- [Index des problèmes réels](../docs/research/field-problems-index-2026-08-10.md).
+- [Source canonique de navigation (locale-neutral)](../docs/governance/book-navigation.yaml) ;
+- [Cadre d’évaluation neutre par langue (locale-neutral)](../docs/quality/evaluation-framework.md) ;
+- [Évaluation du modèle Luna (locale-neutral)](../docs/model-evaluation-luna.md) ;
+- [Recherche de base OpenAI/Codex (locale-neutral)](../docs/research/openai-codex-baseline.md) ;
+- [Index des problèmes réels (locale-neutral)](../docs/research/field-problems-index-2026-08-10.md).
 
 Les chapitres anglais sont les sources canoniques de contenu. Les pages
 françaises gardent leur navigation française lorsque le fichier cible existe.
@@ -178,7 +178,7 @@ Pour déclarer une capacité apprise, vous devez pouvoir :
 4. repérer une erreur, un risque, une hallucination, un élément incomplet ou
    un fait périmé.
 
-Le [modèle d’apprentissage](../docs/learning-model.md) et le [cadre d’évaluation](../docs/quality/evaluation-framework.md)
+Le [modèle d’apprentissage (locale-neutral)](../docs/learning-model.md) et le [cadre d’évaluation (locale-neutral)](../docs/quality/evaluation-framework.md)
 décrivent ces preuves plus précisément. Un journal manquant maintient un item
 à `draft`, `candidate` ou `not_run` ; il ne devient pas une preuve par
 implication.
@@ -194,7 +194,7 @@ Lorsqu’une cible traduite existe, les liens restent dans la locale courante.
 Les fichiers de gouvernance, registres, validateurs et ADR sont volontairement
 neutres. Un ancien lien sans suffixe n’est utilisé que lorsqu’il est marqué
 explicitement comme migration en cours. Consultez la [décision sur les suffixes
-de locale](../docs/adr/0010-locale-suffixed-content.md).
+de locale (locale-neutral)](../docs/adr/0010-locale-suffixed-content.md).
 
 Les huit routes de langue sont désormais exposées pour les 22 chapitres et les
 18 Labs. Cette couverture ne prouve ni la relecture native indépendante, ni
