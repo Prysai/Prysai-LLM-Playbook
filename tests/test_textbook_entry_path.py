@@ -24,6 +24,7 @@ class TextbookEntryPathTests(unittest.TestCase):
             cwd=ROOT,
             text=True,
             capture_output=True,
+            encoding="utf-8",
             check=False,
         )
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
