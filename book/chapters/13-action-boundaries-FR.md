@@ -476,7 +476,7 @@ externe réelle.
 
 ## Transfert
 
-Appliquez la carte à une note personnelle, une mise à jour de dépôt d’équipe et
+Appliquez la carte à une note personnelle, une mise à jour d’un dépôt d’équipe et
 une préparation de documentation publique. Pour chacune, notez les changements de
 données, audience, autorité, réversibilité, revue et preuve. Puis faites le même
 exercice pour une recherche ou une page marketing en distinguant source et

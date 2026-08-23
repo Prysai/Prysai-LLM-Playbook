@@ -25,13 +25,13 @@ en affirmations et donnez à chacune la plus petite preuve qui puisse la souteni
 
 ## Objectifs d’apprentissage
 
-- séparer une affirmation de complétion et choisir sa preuve minimale ;
+- séparer une affirmation d’achèvement et choisir sa preuve minimale ;
 - distinguer `error`, `unverified`, `unknown`, `partial`, `not_observed` et `verified` ;
 - repérer la dernière étape confirmée et le premier maillon non étayé ;
 - préserver l’état, réduire la portée, ajouter un contrôle ou arrêter ;
 - rédiger une livraison avec les travaux faits, lacunes et prochaine vérification.
 
-## Une entrée de terrain : reprendre le contrôle ne prouve pas le résultat
+## Un cas observé sur le terrain : reprendre le contrôle ne prouve pas le résultat
 
 Les recherches du projet décrivent des interruptions de capacité, des commandes
 restées en `Working`, des outils absents et des contrôles qui se sont transformés
@@ -288,7 +288,7 @@ Pour une reprise autorisée, conservez au minimum :
 4. la lecture indépendante qui a justifié la reprise ; et
 5. la preuve propre au second essai, sans la fusionner avec la première ligne.
 
-## 4. Distinguer récupération et complétion
+## 4. Distinguer récupération et achèvement
 
 `practice` désigne un exercice ; `candidate` désigne une structure ou un résultat
 prometteur, encore incomplètement évalué ; `verified` signifie que des preuves
@@ -299,7 +299,7 @@ et de publication (`release`) ont été franchis. `not_observed` décrit un év�
 non vu ; `not_run` signifie que l’expérience n’a pas eu lieu ; `partial`,
 `unverified` et `blocked` décrivent la lacune la plus étroite soutenue.
 
-Récupérer le contrôle ne fait pas monter le statut de complétion. Interrompre un
+Récupérer le contrôle ne fait pas monter le statut d’achèvement. Interrompre un
 processus et préserver un diff peut produire une passation candidate alors que le
 résultat d’exécution reste unverified.
 
@@ -318,7 +318,7 @@ une attente ou un résumé assuré en permission implicite :
 « Continuer » ne signifie donc pas « réessayer comme avant ». Si aucune ligne ne
 décrit la prochaine action et son contrôle, passez à **demander** ou **arrêter**.
 
-## 5. Expérience : auditer une affirmation de complétion
+## 5. Expérience : auditer une affirmation d’achèvement
 
 ### Préparation
 
@@ -402,7 +402,7 @@ pour que son statut corresponde à sa preuve.
 - [ ] Je peux expliquer la différence entre une erreur, une affirmation non
       étayée et un résultat simplement inconnu.
 - [ ] Je peux dire pourquoi une récupération ne fait pas monter le statut de
-      complétion.
+      achèvement.
 - [ ] Je peux livrer une note contenant travaux terminés, travaux incomplets,
       inconnues, risques, chemins de preuve et prochain contrôle sûr.
 - [ ] Je peux conserver `candidate` et `not_run` lorsque l’expérience et sa
@@ -430,7 +430,7 @@ la [baseline officielle](../../docs/research/openai-codex-baseline.md) et la
 | Fait ou frontière | Source | Consultée le | Portée | Responsable / prochaine revue |
 |---|---|---:|---|---|
 | Une interruption de capacité peut laisser l’état d’une tâche dépendante incertain | [FP-09 / issue #33865](../../docs/research/field-problems-codex.md) | 2026-08-09 | Rapport public ; pas de reproduction locale ni de conclusion universelle sur la file | `curriculum-maintainer` / 2026-09-09 |
-| Une vérification longue peut laisser l’état de complétion incertain | [FP-10 / issue #34325](../../docs/research/field-problems-codex.md) | 2026-08-09 | Rapport public ; cause et portée de version inconnues | `curriculum-maintainer` / 2026-09-09 |
+| Une vérification longue peut laisser l’état d’achèvement incertain | [FP-10 / issue #34325](../../docs/research/field-problems-codex.md) | 2026-08-09 | Rapport public ; cause et portée de version inconnues | `curriculum-maintainer` / 2026-09-09 |
 | Authentification, disponibilité de l’outil, exécution et résultat externe sont des affirmations distinctes | [FP-01—FP-02](../../docs/research/field-problems-codex.md), [WF-08—WF-11](../../docs/research/web-field-problems-2026-08-10.md) | 2026-08-09 / 2026-08-10 | Discipline de preuve pour des symptômes rapportés ; pas un guide officiel de réparation | `curriculum-maintainer` / 2026-09-09 |
 | Une vérification ne doit pas s’élargir silencieusement en installation ou changement persistant | [FP-11 / issue #37677](../../docs/research/field-problems-codex.md) | 2026-08-09 | Rapport public ; pas une politique officielle ni une reproduction locale | `curriculum-maintainer` / 2026-09-09 |
 | Passation, enregistrement d’outil, permissions et retry peuvent échouer à des étapes différentes | [FUP-01—FUP-05](../../docs/research/field-problems-follow-up-2026-08-10.md) | 2026-08-10 | Rapports publics ; compte, version, fournisseur et runtime local restent déterminants | `curriculum-maintainer` / 2026-09-09 |
