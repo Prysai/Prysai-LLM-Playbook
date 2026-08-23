@@ -52,7 +52,7 @@ transfer_limitations: "一次本地切片不證明遠端釋出、生產行為或
 ## 實驗
 
 只能使用輸入中提供的事實來寫釋出說明。檢查是否只改了允許路徑、是否包含必需內容、
-是否沒有引入無依據宣告，以及聚焦本地檢查是否完成。成功的 diff 不證明已經發布、
+是否沒有引入無依據宣告，以及聚焦本地檢查是否完成。成功的 diff 不證明已經發佈、
 讀者理解或遠端同步。
 
 ## 失敗案例
@@ -104,7 +104,7 @@ Codex 行為、遷移、釋出、回滾演練或生產就緒性。學習者和�
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-lab-nav="previous" href="lab-012-team-capability-migration-ZHTW.md" aria-label="上一個實驗：實驗 012·把個人方法遷移為團隊能力">← 上一個實驗<br><strong>實驗 012·把個人方法遷移為團隊能力</strong></a></td>
-      <td align="right"><a data-lab-nav="next" href="lab-014-resume-reconciliation-ZHTW.md" aria-label="下一個實驗：實驗 014·恢復任務前的狀態對賬">下一個實驗 →<br><strong>實驗 014·恢復任務前的狀態對賬</strong></a></td>
+      <td align="right"><a data-lab-nav="next" href="lab-014-resume-reconciliation-ZHTW.md" aria-label="下一個實驗：實驗 014·恢復任務前的狀態對帳">下一個實驗 →<br><strong>實驗 014·恢復任務前的狀態對帳</strong></a></td>
     </tr>
   </table>
 </nav>

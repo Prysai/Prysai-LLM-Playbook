@@ -70,7 +70,7 @@
 | 實驗 008：研究問題 | [開啟實驗 008](labs/lab-008-research-question-ZHTW.md) | `draft` / `not_run` |
 | 實驗 009：工程生命週期 | [開啟實驗 009](labs/lab-009-engineering-lifecycle-ZHTW.md) | `draft` / `not_run` |
 | 實驗 010：產品上下文 | [開啟實驗 010](labs/lab-010-product-context-ZHTW.md) | `draft` / `not_run` |
-| 實驗 014：恢復任務前的狀態對賬 | [開啟實驗 014](labs/lab-014-resume-reconciliation-ZHTW.md) | `draft` / `not_run` |
+| 實驗 014：恢復任務前的狀態對帳 | [開啟實驗 014](labs/lab-014-resume-reconciliation-ZHTW.md) | `draft` / `not_run` |
 | 實驗 015：證據化交付 | [開啟實驗 015](labs/lab-015-evidence-delivery-ZHTW.md) | `draft` / `not_run` |
 | 實驗 016：副作用邊界 | [開啟實驗 016](labs/lab-016-side-effect-boundary-ZHTW.md) | `draft` / `not_run` |
 | 實驗 017：採納 Skill 前審計發現過程 | [開啟實驗 017](labs/lab-017-skill-discovery-audit-ZHTW.md) | `draft` / `not_run` |

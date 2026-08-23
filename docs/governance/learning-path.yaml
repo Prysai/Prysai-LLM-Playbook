@@ -715,7 +715,7 @@
             "ja": "ファイル・端末・ブラウザ・GitHub の操作を、権限・副作用・リカバリコストで分類できる。",
             "ko": "파일, 터미널, 브라우저, GitHub 행동을 권한, 부작용, 복구 비용 기준으로 분류한다.",
             "de": "Datei-, Terminal-, Browser- und GitHub-Aktionen nach Berechtigung, Nebeneffekt und Recovery-Kosten einstufen.",
-            "zh-tw": "按授權、副作用和恢覆成本對檔案、終端、瀏覽器和 GitHub 行動分級。",
+            "zh-tw": "按授權、副作用和復原成本對檔案、終端、瀏覽器和 GitHub 行動分級。",
             "fr": "Classez les actions sur les fichiers, le terminal, le navigateur et GitHub selon leur autorité, leurs effets de bord et leur coût de récupération."
           },
           "new_artifact": {
@@ -725,7 +725,7 @@
             "ja": "読み取り・編集・実行・コミット・プッシュ・公開の行を持つ操作境界マトリクス。",
             "ko": "읽기, 편집, 실행, 커밋, 푸시, 게시 행이 있는 행동 경계 행렬.",
             "de": "Eine Aktionsgrenzen-Matrix mit Zeilen für Lesen, Bearbeiten, Ausführen, Commit, Push und Veröffentlichen.",
-            "zh-tw": "一張包含讀取、編輯、執行、提交、推送和發布行的行動邊界矩陣。",
+            "zh-tw": "一張包含讀取、編輯、執行、提交、推送和發佈行的行動邊界矩陣。",
             "fr": "Une matrice des limites d’action avec des lignes pour lire, modifier, exécuter, valider, pousser et publier."
           },
           "new_acceptance": {
@@ -785,7 +785,7 @@
             "ja": "中断した作業を再開する前に、対象・ブランチ・権限・副作用の状態を突き合わせられる。",
             "ko": "중단된 작업을 재개하기 전에 목표, 브랜치, 권한, 부작용 상태를 대조한다.",
             "de": "Ziel, Branch, Berechtigungen und Nebeneffekt-Zustand abgleichen, bevor unterbrochene Arbeit fortgesetzt wird.",
-            "zh-tw": "在恢復中斷工作前，對賬目標、分支、權限和副作用狀態。",
+            "zh-tw": "在恢復中斷工作前，對帳目標、分支、權限和副作用狀態。",
             "fr": "Avant de reprendre un travail interrompu, réconciliez la cible, la branche, les autorisations et l’état des effets de bord."
           },
           "new_artifact": {
@@ -795,7 +795,7 @@
             "ja": "最後に確認できた正常状態・現在の不明点・次の安全な探査を含む、再開時の突き合わせ記録。",
             "ko": "마지막으로 알려진 정상 상태, 현재 미지 항목, 다음 안전 탐색이 있는 재개 대조 기록.",
             "de": "Eine Fortsetzungs-Abgleichsaufzeichnung mit letztem bekannten guten Zustand, aktuellen Unbekannten und nächster sicherer Sonde.",
-            "zh-tw": "一份恢復對賬記錄，包含最後已知良好狀態、目前未知項和下一個安全探針。",
+            "zh-tw": "一份恢復對帳記錄，包含最後已知良好狀態、目前未知項和下一個安全探針。",
             "fr": "Un relevé de reprise qui indique le dernier état connu comme bon, les inconnues actuelles et la prochaine vérification sûre."
           },
           "new_acceptance": {
@@ -820,7 +820,7 @@
             "ja": "診断を、インストール・公開・再起動などの永続的な操作から分離できる。",
             "ko": "진단을 설치, 게시, 재시작 및 기타 지속 행동과 분리한다.",
             "de": "Diagnose von Installation, Veröffentlichung, Neustart und anderen persistenten Aktionen trennen.",
-            "zh-tw": "把診斷與安裝、發布、重啟及其他持久行動分開。",
+            "zh-tw": "把診斷與安裝、發佈、重啟及其他持久行動分開。",
             "fr": "Séparez le diagnostic de l’installation, de la publication, du redémarrage et des autres actions persistantes."
           },
           "new_artifact": {
@@ -830,7 +830,7 @@
             "ja": "読み取り専用・可逆・補償・再試行不可の操作を分類する副作用台帳。",
             "ko": "읽기 전용, 되돌릴 수 있음, 보상 가능, 재시도 불가 행동으로 분류하는 부작용 원장.",
             "de": "Ein Nebeneffekt-Buch, das Aktionen als schreibgeschützt, umkehrbar, kompensierend und nicht wiederholbar einstuft.",
-            "zh-tw": "一份副作用賬本，對只讀、可回滾、可補償和不可重試行動進行分類。",
+            "zh-tw": "一份副作用帳本，對只讀、可回滾、可補償和不可重試行動進行分類。",
             "fr": "Un registre des effets de bord qui classe les actions en lecture seule, réversibles, compensatoires et non réessayables."
           },
           "new_acceptance": {
@@ -840,7 +840,7 @@
             "ja": "未承認の永続的操作を実行せず、リカバリコストを隠さなくても、診断結果が有用である。",
             "ko": "진단 종료 지점이 승인되지 않은 지속 행동을 수행하지 않고도, 복구 비용을 숨기지 않고도 유용하다.",
             "de": "Der Diagnose-Endpunkt ist nützlich, ohne eine nicht genehmigte persistente Aktion auszuführen oder Recovery-Kosten zu verbergen.",
-            "zh-tw": "診斷終點在不執行未批準持久行動、也不隱藏恢覆成本的情況下仍然有用。",
+            "zh-tw": "診斷終點在不執行未批准持久行動、也不隱藏復原成本的情況下仍然有用。",
             "fr": "Le diagnostic reste utile sans effectuer d’action persistante non approuvée ni dissimuler son coût de récupération."
           }
         }
@@ -1305,7 +1305,7 @@
             "ja": "イベントの時系列・状態台帳・再試行記録・停止の決定・引き継ぎパケット。",
             "ko": "이벤트 타임라인, 상태 원장, 재시도 기록, 중지 결정, 인계 패킷.",
             "de": "Eine Ereignis-Zeitleiste, ein Zustandsbuch, eine Wiederholungsaufzeichnung, eine Stoppentscheidung und ein Übergabepaket.",
-            "zh-tw": "一份事件時間線、狀態賬本、重試記錄、停止決策和交接包。",
+            "zh-tw": "一份事件時間線、狀態帳本、重試記錄、停止決策和交接包。",
             "fr": "Une chronologie des événements, un registre d’état, un relevé des tentatives, une décision d’arrêt et un dossier de transmission."
           },
           "new_acceptance": {
@@ -1375,7 +1375,7 @@
             "ja": "範囲・証拠へのポインタ・除外事項・次のチェックを含む主張台帳と簡潔な引き継ぎ。",
             "ko": "범위, 증거 포인터, 배제 항목, 다음 점검이 있는 주장 원장과 간결한 인계.",
             "de": "Ein Behauptungsbuch und eine knappe Übergabe mit Umfang, Belegverweisen, Ausschlüssen und nächstem Check.",
-            "zh-tw": "一份聲明賬本和簡潔交接，包含範圍、證據指針、排除項和下一檢查。",
+            "zh-tw": "一份聲明帳本和簡潔交接，包含範圍、證據指針、排除項和下一檢查。",
             "fr": "Un registre des affirmations et une transmission concise indiquant le périmètre, les renvois vers les preuves, les exclusions et le prochain contrôle."
           },
           "new_acceptance": {
@@ -1637,7 +1637,7 @@
           "ja": "安定した原則・変わりやすい事実・仮説・実行時の証拠・リリースの主張を区別できる。",
           "ko": "안정적 원칙, 변동성 사실, 가설, 런타임 증거, 릴리스 주장을 구분한다.",
           "de": "Stabile Prinzipien, volatile Fakten, Hypothesen, Laufzeitbelege und Release-Behauptungen trennen.",
-          "zh-tw": "分開穩定原則、易變事實、假設、執行時證據和發布聲明。",
+          "zh-tw": "分開穩定原則、易變事實、假設、執行時證據和發佈聲明。",
           "fr": "Séparez les principes stables, les faits volatils, les hypothèses, les preuves d’exécution et les affirmations de publication."
         },
         "review": {

@@ -5625,7 +5625,7 @@ Object.assign(copy['zh-tw'], {
   visualModelAlt: '從請求到證據的教學圖板',
   visualCaseAlt: '先嘗試、修正、改變條件並保留核對紀錄的入門練習閉環',
   visualEvidenceLink: '專案證據快照',
-  visualEvidenceBody: '數量、狀態與發布聲明不應隱藏的缺口。',
+  visualEvidenceBody: '數量、狀態與發佈聲明不應隱藏的缺口。',
   visualEvidenceAlt: '專案證據快照教學圖板',
   visualLoopLink: '從理解到遷移',
   visualLoopBody: '理解、嘗試、檢查、修正、變化，並在未見過的任務上重複。',

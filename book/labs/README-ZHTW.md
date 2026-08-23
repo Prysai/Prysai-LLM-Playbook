@@ -59,7 +59,7 @@
 | 011 | GPT 與 Codex 的邊界 | L0 | [開啟實驗 011](lab-011-gpt-codex-boundaries-ZHTW.md) |
 | 012 | 團隊能力遷移 | L6 | [開啟實驗 012](lab-012-team-capability-migration-ZHTW.md) |
 | 013 | 可審計的垂直切片 | L3 | [開啟實驗 013](lab-013-l3-vertical-slice-ZHTW.md) |
-| 014 | 恢復時的對賬 | L3 | [開啟實驗 014](lab-014-resume-reconciliation-ZHTW.md) |
+| 014 | 恢復時的對帳 | L3 | [開啟實驗 014](lab-014-resume-reconciliation-ZHTW.md) |
 | 015 | 帶證據的交付 | L5 | [開啟實驗 015](lab-015-evidence-delivery-ZHTW.md) |
 | 016 | 副作用邊界 | L3 | [開啟實驗 016](lab-016-side-effect-boundary-ZHTW.md) |
 | 017 | Skill 發現審計 | L4 | [開啟實驗 017](lab-017-skill-discovery-audit-ZHTW.md) |
