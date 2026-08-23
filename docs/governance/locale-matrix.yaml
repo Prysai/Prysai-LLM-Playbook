@@ -153,7 +153,16 @@
       "content_id": "ai-assisted-language-practice-boundaries-2026-08-14",
       "kind": "field-note",
       "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md",
-      "content_status": "candidate"
+      "content_status": "candidate",
+      "localized_paths": {
+        "ZH": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-ZH.md",
+        "ES": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-ES.md",
+        "JA": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-JA.md",
+        "KO": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-KO.md",
+        "DE": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-DE.md",
+        "ZHTW": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-ZHTW.md",
+        "FR": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-FR.md"
+      }
     },
     {
       "content_id": "prompt-escalation-boundary-source-and-action-2026-08-14",
