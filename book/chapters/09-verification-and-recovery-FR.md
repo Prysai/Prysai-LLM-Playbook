@@ -303,6 +303,21 @@ Récupérer le contrôle ne fait pas monter le statut de complétion. Interrompr
 processus et préserver un diff peut produire une passation candidate alors que le
 résultat d’exécution reste unverified.
 
+### Carte de décision : continuer, demander, récupérer ou arrêter
+
+Utilisez cette carte dès qu’un run devient incertain. Elle évite de transformer
+une attente ou un résumé assuré en permission implicite :
+
+| Ce que vous observez | Prochaine action bornée | Statut à conserver |
+|---|---|---|
+| La cible, l’entrée et la preuve attendue sont présentes ; le prochain geste est réversible et prévu | **Continuer** avec une seule action du protocole | `observed` ou `verified` pour l’étape réellement relue |
+| Une cible, une autorisation, une définition ou une donnée manque | **Demander** le champ précis qui manque ; ne pas deviner | `blocked` ou `unverified` |
+| Une première tentative a laissé un état partiel mais la restauration et la lecture sont autorisées | **Récupérer** : préserver l’état, comparer au checkpoint, puis faire une seule vérification sûre | `partial` jusqu’à la nouvelle preuve |
+| L’effet est externe, non réversible, hors contrat ou sans preuve indépendante | **Arrêter** et livrer la limite, la cible et la condition de reprise | `blocked` ou `not_run` |
+
+« Continuer » ne signifie donc pas « réessayer comme avant ». Si aucune ligne ne
+décrit la prochaine action et son contrôle, passez à **demander** ou **arrêter**.
+
 ## 5. Expérience : auditer une affirmation de complétion
 
 ### Préparation
