@@ -6352,66 +6352,59 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "locale-matrix",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "es": {
           "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "locale-matrix",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-JA.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "locale-matrix",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ko": {
           "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-KO.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "locale-matrix",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "de": {
           "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-DE.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "locale-matrix",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "zh-tw": {
           "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-ZHTW.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "locale-matrix",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "fr": {
           "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-FR.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "locale-matrix",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         }
       }
     },
