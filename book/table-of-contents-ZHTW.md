@@ -27,7 +27,7 @@
 | 實驗 001：第一個安全任務 | [開啟實驗 001](labs/lab-001-first-safe-task-ZHTW.md) | `draft` / `not_run` |
 | 第 3 章：把願望變成任務協議 | [閱讀第 3 章](chapters/03-task-protocol-ZHTW.md) | `candidate` / `in-progress` |
 | 實驗 002：任務協議 | [開啟實驗 002](labs/lab-002-task-protocol-ZHTW.md) | `draft` / `not_run` |
-| 第 4 章：上下文、許可權與 Agent 的行動邊界 | [閱讀第 4 章](chapters/04-context-permissions-and-agent-ZHTW.md) | `candidate` / `in-progress` |
+| 第 4 章：上下文、權限與 Agent 的行動邊界 | [閱讀第 4 章](chapters/04-context-permissions-and-agent-ZHTW.md) | `candidate` / `in-progress` |
 | 實驗 007：行動邊界 | [開啟實驗 007](labs/lab-007-action-boundaries-ZHTW.md) | `draft` / `not_run` |
 | 第 5 章：選擇正確的 Codex 工作面 | [閱讀第 5 章](chapters/05-choose-the-codex-surface-ZHTW.md) | `candidate` / `in-progress` |
 | 第 6 章：模型選擇不是模型崇拜 | [閱讀第 6 章](chapters/06-model-selection-ZHTW.md) | `candidate` / `in-progress` |
@@ -39,10 +39,10 @@
 | 第 7 章：Skill、Plugin、MCP 和工具如何分工 | [閱讀第 7 章](chapters/07-skills-plugins-and-tools-ZHTW.md) | `candidate` / `in-progress` |
 | 實驗 004：選擇最小有用能力 | [開啟實驗 004](labs/lab-004-skill-selection-ZHTW.md) | `draft` / `not_run` |
 | 第 8 章：從定義到交付的完整生命週期 | [閱讀第 8 章](chapters/08-full-lifecycle-workflow-ZHTW.md) | `candidate` / `in-progress` |
-| 實驗 013：可審計的 L3 豎向切片 | [開啟實驗 013](labs/lab-013-l3-vertical-slice-ZHTW.md) | `draft` / `not_run` |
+| 實驗 013：可審計的 L3 垂直切片 | [開啟實驗 013](labs/lab-013-l3-vertical-slice-ZHTW.md) | `draft` / `not_run` |
 | 第 9 章：驗證、懷疑與恢復 | [閱讀第 9 章](chapters/09-verification-and-recovery-ZHTW.md) | `candidate` / `in-progress` |
 | 實驗 003：證據審查 | [開啟實驗 003](labs/lab-003-evidence-review-ZHTW.md) | `draft` / `not_run` |
-| 第 10 章：規劃與豎向切片 | [閱讀第 10 章](chapters/10-planning-and-slicing-ZHTW.md) | `candidate` / `in-progress` |
+| 第 10 章：規劃與垂直切片 | [閱讀第 10 章](chapters/10-planning-and-slicing-ZHTW.md) | `candidate` / `in-progress` |
 | 第 11 章：設計一個真正有用的 Skill | [閱讀第 11 章](chapters/11-designing-a-skill-ZHTW.md) | `candidate` / `in-progress` |
 | 實驗 005：設計一個 Skill | [開啟實驗 005](labs/lab-005-design-a-skill-ZHTW.md) | `draft` / `not_run` |
 | 第 12 章：Agent 的迴圈、狀態和停止條件 | [閱讀第 12 章](chapters/12-agent-loop-and-stop-ZHTW.md) | `candidate` / `in-progress` |
