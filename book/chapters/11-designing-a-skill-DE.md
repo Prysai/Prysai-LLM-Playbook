@@ -56,7 +56,7 @@ required_inputs:
   - genauer Pfad oder eingefügtes Artefakt
   - Ziel, Ausschlüsse und Abnahme
   - Herkunft wesentlicher Aussagen
-allowed_actions: "Benannte Ziele lesen; Bericht in einen wegwerfbaren Ausgabeort schreiben; benannte reversible Prüfungen ausführen"
+allowed_actions: "Benannte Ziele lesen; Bericht in einen temporären Ausgabeort schreiben; benannte reversible Prüfungen ausführen"
 forbidden_actions: "Geheimnisse lesen oder ausgeben; veröffentlichen, versenden, löschen, installieren oder ohne Autorisierung das Netzwerk nutzen"
 output: "Bericht: Behauptung → Evidenz → nicht abgedeckter Umfang"
 stop_when: "Eingabe, Autorität, Quelle oder wiederherstellbares Ziel fehlt"
