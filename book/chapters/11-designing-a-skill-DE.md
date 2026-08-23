@@ -214,7 +214,7 @@ nächster sicherer Check: genau eine unbeobachtete Stufe prüfen
 Stopp: Eingabe, Autorität, Wiederherstellungsziel oder Beleg fehlt
 ```
 
-Eine vorhandene `SKILL.md` stützt nur die Existenz der Datei, nicht die Discovery
+Eine vorhandene `SKILL.md` stützt nur die Existenz der Datei, nicht die Auffindbarkeit
 im Host oder die Ausführung der Methode. Ein einmaliger Bericht gilt nur für
 die dokumentierte Aufgabe und Umgebung, nicht für alle Modelle, Ordner oder
 Nutzenden. Der Beleg macht aus „ich glaube, es geht“ eine prüfbare Entscheidung.
@@ -265,7 +265,7 @@ Entscheidung, Grenze und ein prüfbares Signal.
 
 ## Reflexion
 
-Welche Entscheidung ist im Skill wiederverwendbar, und welche gehört nur zu dieser Datei oder diesem Host? Welche Anfrage darf der Skill ausdrücklich nicht übernehmen? Welche Evidence würde die nächste unbeobachtete Stufe prüfen, ohne Berechtigung oder Umfang zu erweitern?
+Welche Entscheidung ist im Skill wiederverwendbar, und welche gehört nur zu dieser Datei oder diesem Host? Welche Anfrage darf der Skill ausdrücklich nicht übernehmen? Welcher Nachweis würde die nächste unbeobachtete Stufe prüfen, ohne Berechtigung oder Umfang zu erweitern?
 
 ## Transferaufgabe
 
