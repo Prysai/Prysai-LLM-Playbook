@@ -159,7 +159,11 @@ def neutral_content(
     A newer English route can point at an already governed localized page
     while its own translation is still being authored.  The projection is
     explicit and same-locale; it is never an English fallback and does not
-    take ownership of the projected path in ``path_index``.
+    take ownership of the projected path in ``path_index``.  For neutral
+    Reader records without an authored projection, reserve a locale-specific
+    sibling path so an unavailable translation cannot be mistaken for the
+    English source.  Skills use ``SKILL-<LOCALE>.md`` because the runtime
+    contract must keep ``SKILL.md`` unchanged.
     """
 
     source_path = normalize(path)
@@ -167,7 +171,16 @@ def neutral_content(
     localized_paths = localized_paths or {}
     for suffix in LOCALES:
         token = next(record["url_token"] for key, record in locale_records.items() if key == suffix)
-        projected_path = source_path if suffix == "EN" else normalize(localized_paths.get(suffix, source_path))
+        if suffix == "EN":
+            projected_path = source_path
+        elif suffix in localized_paths:
+            projected_path = normalize(localized_paths[suffix])
+        elif kind == "skill" and source_path.endswith("/SKILL.md"):
+            projected_path = f"{source_path[:-len('SKILL.md')]}SKILL-{suffix}.md"
+        elif source_path.endswith(".md"):
+            projected_path = f"{source_path[:-3]}-{suffix}.md"
+        else:
+            projected_path = f"{source_path}-{suffix}"
         projected_exists = (ROOT / projected_path).is_file()
         localized[token] = {
             "path": projected_path,
@@ -176,9 +189,16 @@ def neutral_content(
             "translation_status": "source" if suffix == "EN" else "candidate" if projected_path != source_path and projected_exists else "not-started",
             "source_revision": source_revision,
         }
+        if suffix != "EN" and not projected_exists:
+            localized[token]["translated_from"] = "EN"
+            localized[token]["reason"] = "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         if projected_path != source_path and projected_exists:
             localized[token]["coverage"] = "projected-existing-page"
     add_path_index(path_index, source_path, content_id)
+    for record in localized.values():
+        projected_path = record.get("path")
+        if projected_path != source_path and projected_path not in path_index:
+            add_path_index(path_index, projected_path, content_id)
     reader_type, overview_target = reader_presentation(kind)
     return {"kind": kind, "reader_type": reader_type, "overview_target": overview_target, "stem": stem_from_path(source_path), "source_locale": "en", "legacy_paths": [], "locales": localized}
 
