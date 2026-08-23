@@ -18,7 +18,7 @@ Playbook 的主打練習路徑是 Codex，但方法並不繫結某一家廠商�
 ## 第零規則：永遠不要憑名稱推斷等價
 
 一個模型名稱、一次登入或一個眼熟的按鈕，並不能證明兩個平臺共享工具、
-許可權、記憶、賬號、價格、資料控制或 Agent 行為。在轉述任何平臺說法之前，
+權限、記憶、帳號、價格、資料控制或 Agent 行為。在轉述任何平臺說法之前，
 先問三個問題：
 
 1. **具體是哪一個產品介面**（網頁聊天、應用、CLI、IDE、API、agent）？
@@ -34,21 +34,21 @@ Platform Adapter Review Skill
 
 | 平臺 | 常見介面 | 與核心通常不同的地方 | 本頁中可安全嘗試的第一步 |
 |---|---|---|---|
-| ChatGPT | 網頁聊天、應用、API | 賬號範圍、記憶設定、檔案上傳、聯網搜尋開關、分享連結 | [ChatGPT 首個任務](#chatgpt-first-task) |
-| Claude / Claude Code | 網頁聊天、CLI agent、IDE | 終端 + 檔案 agent、許可權提示、CLAUDE.md 專案記憶 | [Claude Code 首個任務](#claude-code-first-task) |
-| Gemini | 網頁聊天、應用、API | Google 賬號範圍、Google Workspace 整合、應用擴充套件 | [Gemini 首個任務](#gemini-first-task) |
+| ChatGPT | 網頁聊天、應用、API | 帳號範圍、記憶設定、檔案上傳、聯網搜尋開關、分享連結 | [ChatGPT 首個任務](#chatgpt-first-task) |
+| Claude / Claude Code | 網頁聊天、CLI agent、IDE | 終端 + 檔案 agent、權限提示、CLAUDE.md 專案記憶 | [Claude Code 首個任務](#claude-code-first-task) |
+| Gemini | 網頁聊天、應用、API | Google 帳號範圍、Google Workspace 整合、應用擴充套件 | [Gemini 首個任務](#gemini-first-task) |
 | DeepSeek | **本路線目前的來源憑據只涵蓋 API**；網頁聊天與應用程式不在這份證據範圍內 | API 的模型清單、帳戶限制與工具呼叫控制具有產品特定性且會變動；請核對具體介面的官方來源 | [DeepSeek 首個任務](#deepseek-first-task) |
-| Grok | 網頁聊天、應用 | X 賬號整合、實時帖子訪問、模型釋出節奏 | [Grok 首個任務](#grok-first-task) |
-| Codex | 桌面端、CLI、IDE、雲端、API | Playbook 的主打路徑：檔案、工具、Skills、Agents、許可權 | [Codex 路徑](../routes/first-safe-change-ZHTW.md) |
+| Grok | 網頁聊天、應用 | X 帳號整合、實時帖子訪問、模型釋出節奏 | [Grok 首個任務](#grok-first-task) |
+| Codex | 桌面端、CLI、IDE、雲端、API | Playbook 的主打路徑：檔案、工具、Skills、Agents、權限 | [Codex 路徑](../routes/first-safe-change-ZHTW.md) |
 
 這張表是定位參考，不是等價證明。每一行在被課程引用之前，都仍然需要它
-自己當前的來源。介面可用性、價格和許可權預設值變化頻繁；請把它們當作
+自己當前的來源。介面可用性、價格和權限預設值變化頻繁；請把它們當作
 易變事實。
 
 ## 任何平臺上的首個安全任務
 
 把下面這段請求複製到你選擇的平臺。它使用虛構材料，不涉及工具，也不需要
-賬號資料——同一個任務在任何地方都能完成，這正是核心的意義所在。
+帳號資料——同一個任務在任何地方都能完成，這正是核心的意義所在。
 
 ```text
 結果：把這份虛構的俱樂部通知改寫成面向新會員的版本。
@@ -85,7 +85,7 @@ Source Investigator Skill，
 
 Claude Code 是一個終端 agent：它可以讀取和編輯你啟動它的那個專案裡的
 檔案。在執行任何東西之前，先建立一個可丟棄的資料夾，在那裡執行首個安全
-任務。留意許可權提示：它在編輯檔案或執行命令之前會先詢問嗎？這個提示正是
+任務。留意權限提示：它在編輯檔案或執行命令之前會先詢問嗎？這個提示正是
 聊天與 agent 的區別所在——也是你做出選擇的地方。在專案記憶方面，
 Claude Code 會讀取 `CLAUDE.md` 檔案；把裡面寫的內容都視為模型可能遵循
 的指令，所以像審閱任何專案規則一樣審閱它。在完成
@@ -96,7 +96,7 @@ Claude Code 會讀取 `CLAUDE.md` 檔案；把裡面寫的內容都視為模型�
 
 ## Gemini 首個任務
 
-在 Gemini 聊天介面執行首個安全任務。留意當前生效的是哪個賬號範圍，以及
+在 Gemini 聊天介面執行首個安全任務。留意當前生效的是哪個帳號範圍，以及
 介面上是否提供應用擴充套件（Google Workspace、YouTube、Maps）。擴充套件會產生
 外部影響：它可以代表你讀取或寫入資料，因此關於擴充套件的 Gemini 課程屬於
 平臺適配主題，而不是核心主題。純文字的練習任務不要啟用擴充套件。
@@ -120,7 +120,7 @@ Claude Code 會讀取 `CLAUDE.md` 檔案；把裡面寫的內容都視為模型�
 
 ## Grok 首個任務
 
-在 Grok 聊天介面執行首個安全任務。如果你的賬號關聯了 X，請注意帖子和
+在 Grok 聊天介面執行首個安全任務。如果你的帳號關聯了 X，請注意帖子和
 實時內容可能進入對話範圍；這既是平臺差異，也是一項隱私決定。不要把私信
 或草稿貼上到可能觸達社交關係圖的對話中。Grok 引用最新帖子的回答是對該
 平臺檢索行為的一種主張——在轉述之前，請對照 X/Grok 官方幫助頁面核實。
@@ -128,7 +128,7 @@ Claude Code 會讀取 `CLAUDE.md` 檔案；把裡面寫的內容都視為模型�
 ## Codex 首個任務
 
 Codex 是 Playbook 的主打路徑，因為它把完整的迴圈攤開在你面前：上下文、
-工具、許可權、Skills、Agents 和驗證。請從一個可丟棄的專案開始，先走
+工具、權限、Skills、Agents 和驗證。請從一個可丟棄的專案開始，先走
 [First Safe Change 路線](first-safe-change-ZHTW.md) 和
 [Lab 001](../labs/lab-001-first-safe-task-ZHTW.md)。在“先檢查再編輯”的
 習慣變得順手之前，不要貿然跳到雲端介面或真實倉庫。
@@ -150,7 +150,7 @@ Codex 是 Playbook 的主打路徑，因為它把完整的迴圈攤開在你面�
 （cross-LLM beginner prompting source receipt、
 platform teaching boundary card）。
 它們不是任何平臺行為一致、任務在所有平臺都會成功、或產品功能彼此等價
-的證據。平臺特有的命令、許可權、價格和可用性都是易變事實：在依賴它們
+的證據。平臺特有的命令、權限、價格和可用性都是易變事實：在依賴它們
 之前，請核對官方來源並記錄訪問日期。
 
 - [ ] 我只使用了虛構、公開或經授權的文字。
