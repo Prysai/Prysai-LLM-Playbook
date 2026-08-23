@@ -151,8 +151,13 @@ transfer, source/status boundaries, and the entry navigation required by the
 current route. It also reports conservative heading and reader-text compression
 signals for non-English files. Those signals require a blind native-language
 review; they are not translation scores, proof of missing meaning, or learner
-evidence. The companion `test_audit_semantic_contract.py` protects the audit's
-missing-versus-compressed distinction.
+evidence. Add `--deep` to inspect targeted concept groups for the historically
+condensed Labs and chapters (event traces, branches, evidence tables, citation
+audits, and similar teaching concepts). Deep findings are still editorial
+signals: they use concept aliases rather than literal heading parity and do not
+claim that a translation is incomplete without a native-language review. The
+companion `test_audit_semantic_contract.py` protects the audit's
+missing-versus-compressed distinction and its localized concept aliases.
 
 Use `validate_learning_contract.py --canonical-en` to inspect only the
 English sources currently declared by the locale matrix. The full command
