@@ -5151,53 +5151,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh": {
-          "path": "docs/research/field-problems-index-2026-08-10.md",
-          "exists": true,
+          "path": "docs/research/field-problems-index-2026-08-10-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "docs/research/field-problems-index-2026-08-10.md",
-          "exists": true,
+          "path": "docs/research/field-problems-index-2026-08-10-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "docs/research/field-problems-index-2026-08-10.md",
-          "exists": true,
+          "path": "docs/research/field-problems-index-2026-08-10-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "docs/research/field-problems-index-2026-08-10.md",
-          "exists": true,
+          "path": "docs/research/field-problems-index-2026-08-10-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "docs/research/field-problems-index-2026-08-10.md",
-          "exists": true,
+          "path": "docs/research/field-problems-index-2026-08-10-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "docs/research/field-problems-index-2026-08-10.md",
-          "exists": true,
+          "path": "docs/research/field-problems-index-2026-08-10-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "docs/research/field-problems-index-2026-08-10.md",
-          "exists": true,
+          "path": "docs/research/field-problems-index-2026-08-10-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -5217,53 +5231,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh": {
-          "path": "docs/research/field-problems-forums-2026-08-10.md",
-          "exists": true,
+          "path": "docs/research/field-problems-forums-2026-08-10-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "docs/research/field-problems-forums-2026-08-10.md",
-          "exists": true,
+          "path": "docs/research/field-problems-forums-2026-08-10-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "docs/research/field-problems-forums-2026-08-10.md",
-          "exists": true,
+          "path": "docs/research/field-problems-forums-2026-08-10-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "docs/research/field-problems-forums-2026-08-10.md",
-          "exists": true,
+          "path": "docs/research/field-problems-forums-2026-08-10-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "docs/research/field-problems-forums-2026-08-10.md",
-          "exists": true,
+          "path": "docs/research/field-problems-forums-2026-08-10-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "docs/research/field-problems-forums-2026-08-10.md",
-          "exists": true,
+          "path": "docs/research/field-problems-forums-2026-08-10-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "docs/research/field-problems-forums-2026-08-10.md",
-          "exists": true,
+          "path": "docs/research/field-problems-forums-2026-08-10-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -5283,53 +5311,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh": {
-          "path": "docs/research/codex-field-cases-current-review-2026-08-12.md",
-          "exists": true,
+          "path": "docs/research/codex-field-cases-current-review-2026-08-12-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "docs/research/codex-field-cases-current-review-2026-08-12.md",
-          "exists": true,
+          "path": "docs/research/codex-field-cases-current-review-2026-08-12-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "docs/research/codex-field-cases-current-review-2026-08-12.md",
-          "exists": true,
+          "path": "docs/research/codex-field-cases-current-review-2026-08-12-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "docs/research/codex-field-cases-current-review-2026-08-12.md",
-          "exists": true,
+          "path": "docs/research/codex-field-cases-current-review-2026-08-12-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "docs/research/codex-field-cases-current-review-2026-08-12.md",
-          "exists": true,
+          "path": "docs/research/codex-field-cases-current-review-2026-08-12-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "docs/research/codex-field-cases-current-review-2026-08-12.md",
-          "exists": true,
+          "path": "docs/research/codex-field-cases-current-review-2026-08-12-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "docs/research/codex-field-cases-current-review-2026-08-12.md",
-          "exists": true,
+          "path": "docs/research/codex-field-cases-current-review-2026-08-12-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -5349,53 +5391,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh": {
-          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -5415,53 +5471,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh": {
-          "path": "docs/research/field-case-external-instruction-authority-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/field-case-external-instruction-authority-2026-08-13-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "docs/research/field-case-external-instruction-authority-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/field-case-external-instruction-authority-2026-08-13-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "docs/research/field-case-external-instruction-authority-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/field-case-external-instruction-authority-2026-08-13-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "docs/research/field-case-external-instruction-authority-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/field-case-external-instruction-authority-2026-08-13-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "docs/research/field-case-external-instruction-authority-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/field-case-external-instruction-authority-2026-08-13-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "docs/research/field-case-external-instruction-authority-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/field-case-external-instruction-authority-2026-08-13-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "docs/research/field-case-external-instruction-authority-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/field-case-external-instruction-authority-2026-08-13-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -5481,53 +5551,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh": {
-          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-blocked-network-boundary-2026-08-14-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -5547,53 +5631,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh": {
-          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -5613,53 +5711,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh": {
-          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -5679,53 +5791,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh": {
-          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/community-tutorial-intake-and-foundations-2026-08-14-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -5745,53 +5871,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh": {
-          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
-          "exists": true,
+          "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -5811,53 +5951,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh": {
-          "path": "docs/quality/verification-stability-2026-08-15.md",
-          "exists": true,
+          "path": "docs/quality/verification-stability-2026-08-15-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "docs/quality/verification-stability-2026-08-15.md",
-          "exists": true,
+          "path": "docs/quality/verification-stability-2026-08-15-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "docs/quality/verification-stability-2026-08-15.md",
-          "exists": true,
+          "path": "docs/quality/verification-stability-2026-08-15-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "docs/quality/verification-stability-2026-08-15.md",
-          "exists": true,
+          "path": "docs/quality/verification-stability-2026-08-15-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "docs/quality/verification-stability-2026-08-15.md",
-          "exists": true,
+          "path": "docs/quality/verification-stability-2026-08-15-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "docs/quality/verification-stability-2026-08-15.md",
-          "exists": true,
+          "path": "docs/quality/verification-stability-2026-08-15-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "docs/quality/verification-stability-2026-08-15.md",
-          "exists": true,
+          "path": "docs/quality/verification-stability-2026-08-15-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -5877,53 +6031,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh": {
-          "path": "docs/quality/first-win-pilot-protocol-v2.md",
-          "exists": true,
+          "path": "docs/quality/first-win-pilot-protocol-v2-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "docs/quality/first-win-pilot-protocol-v2.md",
-          "exists": true,
+          "path": "docs/quality/first-win-pilot-protocol-v2-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "docs/quality/first-win-pilot-protocol-v2.md",
-          "exists": true,
+          "path": "docs/quality/first-win-pilot-protocol-v2-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "docs/quality/first-win-pilot-protocol-v2.md",
-          "exists": true,
+          "path": "docs/quality/first-win-pilot-protocol-v2-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "docs/quality/first-win-pilot-protocol-v2.md",
-          "exists": true,
+          "path": "docs/quality/first-win-pilot-protocol-v2-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "docs/quality/first-win-pilot-protocol-v2.md",
-          "exists": true,
+          "path": "docs/quality/first-win-pilot-protocol-v2-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "docs/quality/first-win-pilot-protocol-v2.md",
-          "exists": true,
+          "path": "docs/quality/first-win-pilot-protocol-v2-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -5943,53 +6111,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh": {
-          "path": "docs/quality/newcomer-entry-observation-protocol-v1.md",
-          "exists": true,
+          "path": "docs/quality/newcomer-entry-observation-protocol-v1-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "docs/quality/newcomer-entry-observation-protocol-v1.md",
-          "exists": true,
+          "path": "docs/quality/newcomer-entry-observation-protocol-v1-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "docs/quality/newcomer-entry-observation-protocol-v1.md",
-          "exists": true,
+          "path": "docs/quality/newcomer-entry-observation-protocol-v1-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "docs/quality/newcomer-entry-observation-protocol-v1.md",
-          "exists": true,
+          "path": "docs/quality/newcomer-entry-observation-protocol-v1-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "docs/quality/newcomer-entry-observation-protocol-v1.md",
-          "exists": true,
+          "path": "docs/quality/newcomer-entry-observation-protocol-v1-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "docs/quality/newcomer-entry-observation-protocol-v1.md",
-          "exists": true,
+          "path": "docs/quality/newcomer-entry-observation-protocol-v1-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "docs/quality/newcomer-entry-observation-protocol-v1.md",
-          "exists": true,
+          "path": "docs/quality/newcomer-entry-observation-protocol-v1-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -6009,53 +6191,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh": {
-          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -6075,53 +6271,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh": {
-          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -6141,53 +6351,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "locale-matrix"
         },
         "zh": {
-          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md",
-          "exists": true,
+          "path": "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "locale-matrix"
+          "source_revision": "locale-matrix",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -6572,53 +6796,60 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-dialogue-brief/SKILL.md",
+          "path": "skills/prysai-dialogue-brief/SKILL-ZH.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "translation_status": "candidate",
+          "source_revision": "skill-registry",
+          "coverage": "projected-existing-page"
         },
         "es": {
-          "path": "skills/prysai-dialogue-brief/SKILL.md",
+          "path": "skills/prysai-dialogue-brief/SKILL-ES.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "translation_status": "candidate",
+          "source_revision": "skill-registry",
+          "coverage": "projected-existing-page"
         },
         "ja": {
-          "path": "skills/prysai-dialogue-brief/SKILL.md",
+          "path": "skills/prysai-dialogue-brief/SKILL-JA.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "translation_status": "candidate",
+          "source_revision": "skill-registry",
+          "coverage": "projected-existing-page"
         },
         "ko": {
-          "path": "skills/prysai-dialogue-brief/SKILL.md",
+          "path": "skills/prysai-dialogue-brief/SKILL-KO.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "translation_status": "candidate",
+          "source_revision": "skill-registry",
+          "coverage": "projected-existing-page"
         },
         "de": {
-          "path": "skills/prysai-dialogue-brief/SKILL.md",
+          "path": "skills/prysai-dialogue-brief/SKILL-DE.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "translation_status": "candidate",
+          "source_revision": "skill-registry",
+          "coverage": "projected-existing-page"
         },
         "zh-tw": {
-          "path": "skills/prysai-dialogue-brief/SKILL.md",
+          "path": "skills/prysai-dialogue-brief/SKILL-ZHTW.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "translation_status": "candidate",
+          "source_revision": "skill-registry",
+          "coverage": "projected-existing-page"
         },
         "fr": {
-          "path": "skills/prysai-dialogue-brief/SKILL.md",
+          "path": "skills/prysai-dialogue-brief/SKILL-FR.md",
           "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "translation_status": "candidate",
+          "source_revision": "skill-registry",
+          "coverage": "projected-existing-page"
         }
       }
     },
@@ -6638,53 +6869,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-first-turn-check/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-first-turn-check/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-first-turn-check/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-first-turn-check/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-first-turn-check/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-first-turn-check/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-first-turn-check/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-first-turn-check/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-first-turn-check/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-first-turn-check/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-first-turn-check/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-first-turn-check/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-first-turn-check/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-first-turn-check/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -6704,53 +6949,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-field-signal-curator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-field-signal-curator/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-field-signal-curator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-field-signal-curator/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-field-signal-curator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-field-signal-curator/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-field-signal-curator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-field-signal-curator/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-field-signal-curator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-field-signal-curator/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-field-signal-curator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-field-signal-curator/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-field-signal-curator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-field-signal-curator/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -6770,53 +7029,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-platform-adapter-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-adapter-review/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-platform-adapter-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-adapter-review/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-platform-adapter-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-adapter-review/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-platform-adapter-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-adapter-review/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-platform-adapter-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-adapter-review/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-platform-adapter-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-adapter-review/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-platform-adapter-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-adapter-review/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -6836,53 +7109,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-platform-fact-watch/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-fact-watch/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-platform-fact-watch/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-fact-watch/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-platform-fact-watch/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-fact-watch/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-platform-fact-watch/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-fact-watch/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-platform-fact-watch/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-fact-watch/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-platform-fact-watch/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-fact-watch/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-platform-fact-watch/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-fact-watch/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -6902,53 +7189,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-communication-failure-triage/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-communication-failure-triage/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-communication-failure-triage/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-communication-failure-triage/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-communication-failure-triage/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-communication-failure-triage/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-communication-failure-triage/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-communication-failure-triage/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-communication-failure-triage/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-communication-failure-triage/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-communication-failure-triage/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-communication-failure-triage/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-communication-failure-triage/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-communication-failure-triage/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -6968,53 +7269,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-codex-coach/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-codex-coach/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-codex-coach/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-codex-coach/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-codex-coach/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-codex-coach/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-codex-coach/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-codex-coach/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-codex-coach/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-codex-coach/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-codex-coach/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-codex-coach/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-codex-coach/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-codex-coach/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -7034,53 +7349,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-task-protocol/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-task-protocol/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-task-protocol/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-task-protocol/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-task-protocol/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-task-protocol/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-task-protocol/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-task-protocol/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-task-protocol/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-task-protocol/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-task-protocol/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-task-protocol/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-task-protocol/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-task-protocol/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -7100,53 +7429,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-evidence-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-evidence-review/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-evidence-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-evidence-review/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-evidence-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-evidence-review/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-evidence-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-evidence-review/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-evidence-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-evidence-review/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-evidence-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-evidence-review/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-evidence-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-evidence-review/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -7166,53 +7509,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-skill-selector/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-skill-selector/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-skill-selector/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-skill-selector/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-skill-selector/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-skill-selector/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-skill-selector/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-skill-selector/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-skill-selector/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-skill-selector/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-skill-selector/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-skill-selector/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-skill-selector/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-skill-selector/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -7232,53 +7589,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-workflow-orchestrator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-workflow-orchestrator/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-workflow-orchestrator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-workflow-orchestrator/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-workflow-orchestrator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-workflow-orchestrator/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-workflow-orchestrator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-workflow-orchestrator/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-workflow-orchestrator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-workflow-orchestrator/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-workflow-orchestrator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-workflow-orchestrator/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-workflow-orchestrator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-workflow-orchestrator/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -7298,53 +7669,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-research-router/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-research-router/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-research-router/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-research-router/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-research-router/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-research-router/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-research-router/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-research-router/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-research-router/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-research-router/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-research-router/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-research-router/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-research-router/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-research-router/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -7364,53 +7749,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-product-context/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-product-context/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-product-context/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-product-context/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-product-context/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-product-context/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-product-context/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-product-context/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-product-context/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-product-context/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-product-context/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-product-context/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-product-context/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-product-context/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -7430,53 +7829,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-learning-coach/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-learning-coach/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-learning-coach/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-learning-coach/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-learning-coach/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-learning-coach/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-learning-coach/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-learning-coach/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-learning-coach/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-learning-coach/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-learning-coach/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-learning-coach/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-learning-coach/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-learning-coach/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -7496,53 +7909,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-source-investigator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-source-investigator/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-source-investigator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-source-investigator/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-source-investigator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-source-investigator/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-source-investigator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-source-investigator/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-source-investigator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-source-investigator/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-source-investigator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-source-investigator/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-source-investigator/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-source-investigator/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -7562,53 +7989,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-prompt-card-editor/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-prompt-card-editor/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-prompt-card-editor/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-prompt-card-editor/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-prompt-card-editor/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-prompt-card-editor/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-prompt-card-editor/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-prompt-card-editor/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-prompt-card-editor/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-prompt-card-editor/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-prompt-card-editor/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-prompt-card-editor/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-prompt-card-editor/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-prompt-card-editor/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -7628,53 +8069,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-adversarial-project-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-adversarial-project-review/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-adversarial-project-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-adversarial-project-review/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-adversarial-project-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-adversarial-project-review/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-adversarial-project-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-adversarial-project-review/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-adversarial-project-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-adversarial-project-review/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-adversarial-project-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-adversarial-project-review/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-adversarial-project-review/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-adversarial-project-review/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -7694,53 +8149,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-request-escalation/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-request-escalation/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-request-escalation/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-request-escalation/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-request-escalation/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-request-escalation/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-request-escalation/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-request-escalation/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-request-escalation/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-request-escalation/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-request-escalation/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-request-escalation/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-request-escalation/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-request-escalation/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -7760,53 +8229,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-llm-comparison-protocol/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-llm-comparison-protocol/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-llm-comparison-protocol/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-llm-comparison-protocol/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-llm-comparison-protocol/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-llm-comparison-protocol/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-llm-comparison-protocol/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-llm-comparison-protocol/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-llm-comparison-protocol/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-llm-comparison-protocol/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-llm-comparison-protocol/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-llm-comparison-protocol/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-llm-comparison-protocol/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-llm-comparison-protocol/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -7826,53 +8309,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-practice-target/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-practice-target/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-practice-target/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-practice-target/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-practice-target/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-practice-target/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-practice-target/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-practice-target/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-practice-target/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-practice-target/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-practice-target/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-practice-target/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-practice-target/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-practice-target/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -7892,53 +8389,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-interruption-checkpoint/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-interruption-checkpoint/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-interruption-checkpoint/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-interruption-checkpoint/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-interruption-checkpoint/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-interruption-checkpoint/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-interruption-checkpoint/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-interruption-checkpoint/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-interruption-checkpoint/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-interruption-checkpoint/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-interruption-checkpoint/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-interruption-checkpoint/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-interruption-checkpoint/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-interruption-checkpoint/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -7958,53 +8469,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-shift-handoff/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-shift-handoff/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-shift-handoff/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-shift-handoff/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-shift-handoff/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-shift-handoff/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-shift-handoff/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-shift-handoff/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-shift-handoff/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-shift-handoff/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-shift-handoff/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-shift-handoff/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-shift-handoff/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-shift-handoff/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -8024,53 +8549,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-platform-observation-record/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-observation-record/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-platform-observation-record/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-observation-record/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-platform-observation-record/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-observation-record/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-platform-observation-record/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-observation-record/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-platform-observation-record/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-observation-record/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-platform-observation-record/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-observation-record/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-platform-observation-record/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-platform-observation-record/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -8090,53 +8629,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-language-partner/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-language-partner/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-language-partner/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-language-partner/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-language-partner/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-language-partner/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-language-partner/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-language-partner/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-language-partner/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-language-partner/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-language-partner/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-language-partner/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-language-partner/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-language-partner/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -8156,53 +8709,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/prysai-interview-rehearsal/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-interview-rehearsal/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/prysai-interview-rehearsal/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-interview-rehearsal/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/prysai-interview-rehearsal/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-interview-rehearsal/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/prysai-interview-rehearsal/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-interview-rehearsal/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/prysai-interview-rehearsal/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-interview-rehearsal/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/prysai-interview-rehearsal/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-interview-rehearsal/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/prysai-interview-rehearsal/SKILL.md",
-          "exists": true,
+          "path": "skills/prysai-interview-rehearsal/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     },
@@ -8222,53 +8789,67 @@ window.CODEX_LOCALE_MANIFEST = {
           "source_revision": "skill-registry"
         },
         "zh": {
-          "path": "skills/polish-open-source-prose/SKILL.md",
-          "exists": true,
+          "path": "skills/polish-open-source-prose/SKILL-ZH.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "es": {
-          "path": "skills/polish-open-source-prose/SKILL.md",
-          "exists": true,
+          "path": "skills/polish-open-source-prose/SKILL-ES.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ja": {
-          "path": "skills/polish-open-source-prose/SKILL.md",
-          "exists": true,
+          "path": "skills/polish-open-source-prose/SKILL-JA.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "ko": {
-          "path": "skills/polish-open-source-prose/SKILL.md",
-          "exists": true,
+          "path": "skills/polish-open-source-prose/SKILL-KO.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "de": {
-          "path": "skills/polish-open-source-prose/SKILL.md",
-          "exists": true,
+          "path": "skills/polish-open-source-prose/SKILL-DE.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "zh-tw": {
-          "path": "skills/polish-open-source-prose/SKILL.md",
-          "exists": true,
+          "path": "skills/polish-open-source-prose/SKILL-ZHTW.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         },
         "fr": {
-          "path": "skills/polish-open-source-prose/SKILL.md",
-          "exists": true,
+          "path": "skills/polish-open-source-prose/SKILL-FR.md",
+          "exists": false,
           "content_status": "candidate",
           "translation_status": "not-started",
-          "source_revision": "skill-registry"
+          "source_revision": "skill-registry",
+          "translated_from": "EN",
+          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
         }
       }
     }
@@ -8805,52 +9386,346 @@ window.CODEX_LOCALE_MANIFEST = {
     "book/guides/llm-fundamentals-ZHTW.md": "llm-fundamentals-guide",
     "book/guides/llm-fundamentals-FR.md": "llm-fundamentals-guide",
     "docs/research/field-problems-index-2026-08-10.md": "field-problems-index-2026-08-10",
+    "docs/research/field-problems-index-2026-08-10-ZH.md": "field-problems-index-2026-08-10",
+    "docs/research/field-problems-index-2026-08-10-ES.md": "field-problems-index-2026-08-10",
+    "docs/research/field-problems-index-2026-08-10-JA.md": "field-problems-index-2026-08-10",
+    "docs/research/field-problems-index-2026-08-10-KO.md": "field-problems-index-2026-08-10",
+    "docs/research/field-problems-index-2026-08-10-DE.md": "field-problems-index-2026-08-10",
+    "docs/research/field-problems-index-2026-08-10-ZHTW.md": "field-problems-index-2026-08-10",
+    "docs/research/field-problems-index-2026-08-10-FR.md": "field-problems-index-2026-08-10",
     "docs/research/field-problems-forums-2026-08-10.md": "field-problems-forums-2026-08-10",
+    "docs/research/field-problems-forums-2026-08-10-ZH.md": "field-problems-forums-2026-08-10",
+    "docs/research/field-problems-forums-2026-08-10-ES.md": "field-problems-forums-2026-08-10",
+    "docs/research/field-problems-forums-2026-08-10-JA.md": "field-problems-forums-2026-08-10",
+    "docs/research/field-problems-forums-2026-08-10-KO.md": "field-problems-forums-2026-08-10",
+    "docs/research/field-problems-forums-2026-08-10-DE.md": "field-problems-forums-2026-08-10",
+    "docs/research/field-problems-forums-2026-08-10-ZHTW.md": "field-problems-forums-2026-08-10",
+    "docs/research/field-problems-forums-2026-08-10-FR.md": "field-problems-forums-2026-08-10",
     "docs/research/codex-field-cases-current-review-2026-08-12.md": "codex-field-cases-current-review-2026-08-12",
+    "docs/research/codex-field-cases-current-review-2026-08-12-ZH.md": "codex-field-cases-current-review-2026-08-12",
+    "docs/research/codex-field-cases-current-review-2026-08-12-ES.md": "codex-field-cases-current-review-2026-08-12",
+    "docs/research/codex-field-cases-current-review-2026-08-12-JA.md": "codex-field-cases-current-review-2026-08-12",
+    "docs/research/codex-field-cases-current-review-2026-08-12-KO.md": "codex-field-cases-current-review-2026-08-12",
+    "docs/research/codex-field-cases-current-review-2026-08-12-DE.md": "codex-field-cases-current-review-2026-08-12",
+    "docs/research/codex-field-cases-current-review-2026-08-12-ZHTW.md": "codex-field-cases-current-review-2026-08-12",
+    "docs/research/codex-field-cases-current-review-2026-08-12-FR.md": "codex-field-cases-current-review-2026-08-12",
     "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md": "ai-safety-field-signals-and-research-receipts-2026-08-13",
+    "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-ZH.md": "ai-safety-field-signals-and-research-receipts-2026-08-13",
+    "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-ES.md": "ai-safety-field-signals-and-research-receipts-2026-08-13",
+    "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-JA.md": "ai-safety-field-signals-and-research-receipts-2026-08-13",
+    "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-KO.md": "ai-safety-field-signals-and-research-receipts-2026-08-13",
+    "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-DE.md": "ai-safety-field-signals-and-research-receipts-2026-08-13",
+    "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-ZHTW.md": "ai-safety-field-signals-and-research-receipts-2026-08-13",
+    "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-FR.md": "ai-safety-field-signals-and-research-receipts-2026-08-13",
     "docs/research/field-case-external-instruction-authority-2026-08-13.md": "field-case-external-instruction-authority-2026-08-13",
+    "docs/research/field-case-external-instruction-authority-2026-08-13-ZH.md": "field-case-external-instruction-authority-2026-08-13",
+    "docs/research/field-case-external-instruction-authority-2026-08-13-ES.md": "field-case-external-instruction-authority-2026-08-13",
+    "docs/research/field-case-external-instruction-authority-2026-08-13-JA.md": "field-case-external-instruction-authority-2026-08-13",
+    "docs/research/field-case-external-instruction-authority-2026-08-13-KO.md": "field-case-external-instruction-authority-2026-08-13",
+    "docs/research/field-case-external-instruction-authority-2026-08-13-DE.md": "field-case-external-instruction-authority-2026-08-13",
+    "docs/research/field-case-external-instruction-authority-2026-08-13-ZHTW.md": "field-case-external-instruction-authority-2026-08-13",
+    "docs/research/field-case-external-instruction-authority-2026-08-13-FR.md": "field-case-external-instruction-authority-2026-08-13",
     "docs/research/field-case-blocked-network-boundary-2026-08-14.md": "field-case-blocked-network-boundary-2026-08-14",
+    "docs/research/field-case-blocked-network-boundary-2026-08-14-ZH.md": "field-case-blocked-network-boundary-2026-08-14",
+    "docs/research/field-case-blocked-network-boundary-2026-08-14-ES.md": "field-case-blocked-network-boundary-2026-08-14",
+    "docs/research/field-case-blocked-network-boundary-2026-08-14-JA.md": "field-case-blocked-network-boundary-2026-08-14",
+    "docs/research/field-case-blocked-network-boundary-2026-08-14-KO.md": "field-case-blocked-network-boundary-2026-08-14",
+    "docs/research/field-case-blocked-network-boundary-2026-08-14-DE.md": "field-case-blocked-network-boundary-2026-08-14",
+    "docs/research/field-case-blocked-network-boundary-2026-08-14-ZHTW.md": "field-case-blocked-network-boundary-2026-08-14",
+    "docs/research/field-case-blocked-network-boundary-2026-08-14-FR.md": "field-case-blocked-network-boundary-2026-08-14",
     "docs/research/field-case-agent-handoff-receipt-2026-08-14.md": "field-case-agent-handoff-receipt-2026-08-14",
+    "docs/research/field-case-agent-handoff-receipt-2026-08-14-ZH.md": "field-case-agent-handoff-receipt-2026-08-14",
+    "docs/research/field-case-agent-handoff-receipt-2026-08-14-ES.md": "field-case-agent-handoff-receipt-2026-08-14",
+    "docs/research/field-case-agent-handoff-receipt-2026-08-14-JA.md": "field-case-agent-handoff-receipt-2026-08-14",
+    "docs/research/field-case-agent-handoff-receipt-2026-08-14-KO.md": "field-case-agent-handoff-receipt-2026-08-14",
+    "docs/research/field-case-agent-handoff-receipt-2026-08-14-DE.md": "field-case-agent-handoff-receipt-2026-08-14",
+    "docs/research/field-case-agent-handoff-receipt-2026-08-14-ZHTW.md": "field-case-agent-handoff-receipt-2026-08-14",
+    "docs/research/field-case-agent-handoff-receipt-2026-08-14-FR.md": "field-case-agent-handoff-receipt-2026-08-14",
     "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14.md": "field-case-capacity-interruption-checkpoint-2026-08-14",
+    "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14-ZH.md": "field-case-capacity-interruption-checkpoint-2026-08-14",
+    "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14-ES.md": "field-case-capacity-interruption-checkpoint-2026-08-14",
+    "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14-JA.md": "field-case-capacity-interruption-checkpoint-2026-08-14",
+    "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14-KO.md": "field-case-capacity-interruption-checkpoint-2026-08-14",
+    "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14-DE.md": "field-case-capacity-interruption-checkpoint-2026-08-14",
+    "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14-ZHTW.md": "field-case-capacity-interruption-checkpoint-2026-08-14",
+    "docs/research/field-case-capacity-interruption-checkpoint-2026-08-14-FR.md": "field-case-capacity-interruption-checkpoint-2026-08-14",
     "docs/research/community-tutorial-intake-and-foundations-2026-08-14.md": "community-tutorial-intake-and-foundations-2026-08-14",
+    "docs/research/community-tutorial-intake-and-foundations-2026-08-14-ZH.md": "community-tutorial-intake-and-foundations-2026-08-14",
+    "docs/research/community-tutorial-intake-and-foundations-2026-08-14-ES.md": "community-tutorial-intake-and-foundations-2026-08-14",
+    "docs/research/community-tutorial-intake-and-foundations-2026-08-14-JA.md": "community-tutorial-intake-and-foundations-2026-08-14",
+    "docs/research/community-tutorial-intake-and-foundations-2026-08-14-KO.md": "community-tutorial-intake-and-foundations-2026-08-14",
+    "docs/research/community-tutorial-intake-and-foundations-2026-08-14-DE.md": "community-tutorial-intake-and-foundations-2026-08-14",
+    "docs/research/community-tutorial-intake-and-foundations-2026-08-14-ZHTW.md": "community-tutorial-intake-and-foundations-2026-08-14",
+    "docs/research/community-tutorial-intake-and-foundations-2026-08-14-FR.md": "community-tutorial-intake-and-foundations-2026-08-14",
     "docs/research/universal-first-turn-prompt-contract-2026-08-13.md": "universal-first-turn-prompt-contract-2026-08-13",
+    "docs/research/universal-first-turn-prompt-contract-2026-08-13-ZH.md": "universal-first-turn-prompt-contract-2026-08-13",
+    "docs/research/universal-first-turn-prompt-contract-2026-08-13-ES.md": "universal-first-turn-prompt-contract-2026-08-13",
+    "docs/research/universal-first-turn-prompt-contract-2026-08-13-JA.md": "universal-first-turn-prompt-contract-2026-08-13",
+    "docs/research/universal-first-turn-prompt-contract-2026-08-13-KO.md": "universal-first-turn-prompt-contract-2026-08-13",
+    "docs/research/universal-first-turn-prompt-contract-2026-08-13-DE.md": "universal-first-turn-prompt-contract-2026-08-13",
+    "docs/research/universal-first-turn-prompt-contract-2026-08-13-ZHTW.md": "universal-first-turn-prompt-contract-2026-08-13",
+    "docs/research/universal-first-turn-prompt-contract-2026-08-13-FR.md": "universal-first-turn-prompt-contract-2026-08-13",
     "docs/quality/verification-stability-2026-08-15.md": "verification-stability-2026-08-15",
+    "docs/quality/verification-stability-2026-08-15-ZH.md": "verification-stability-2026-08-15",
+    "docs/quality/verification-stability-2026-08-15-ES.md": "verification-stability-2026-08-15",
+    "docs/quality/verification-stability-2026-08-15-JA.md": "verification-stability-2026-08-15",
+    "docs/quality/verification-stability-2026-08-15-KO.md": "verification-stability-2026-08-15",
+    "docs/quality/verification-stability-2026-08-15-DE.md": "verification-stability-2026-08-15",
+    "docs/quality/verification-stability-2026-08-15-ZHTW.md": "verification-stability-2026-08-15",
+    "docs/quality/verification-stability-2026-08-15-FR.md": "verification-stability-2026-08-15",
     "docs/quality/first-win-pilot-protocol-v2.md": "first-win-pilot-protocol-v2",
+    "docs/quality/first-win-pilot-protocol-v2-ZH.md": "first-win-pilot-protocol-v2",
+    "docs/quality/first-win-pilot-protocol-v2-ES.md": "first-win-pilot-protocol-v2",
+    "docs/quality/first-win-pilot-protocol-v2-JA.md": "first-win-pilot-protocol-v2",
+    "docs/quality/first-win-pilot-protocol-v2-KO.md": "first-win-pilot-protocol-v2",
+    "docs/quality/first-win-pilot-protocol-v2-DE.md": "first-win-pilot-protocol-v2",
+    "docs/quality/first-win-pilot-protocol-v2-ZHTW.md": "first-win-pilot-protocol-v2",
+    "docs/quality/first-win-pilot-protocol-v2-FR.md": "first-win-pilot-protocol-v2",
     "docs/quality/newcomer-entry-observation-protocol-v1.md": "newcomer-entry-observation-protocol-v1",
+    "docs/quality/newcomer-entry-observation-protocol-v1-ZH.md": "newcomer-entry-observation-protocol-v1",
+    "docs/quality/newcomer-entry-observation-protocol-v1-ES.md": "newcomer-entry-observation-protocol-v1",
+    "docs/quality/newcomer-entry-observation-protocol-v1-JA.md": "newcomer-entry-observation-protocol-v1",
+    "docs/quality/newcomer-entry-observation-protocol-v1-KO.md": "newcomer-entry-observation-protocol-v1",
+    "docs/quality/newcomer-entry-observation-protocol-v1-DE.md": "newcomer-entry-observation-protocol-v1",
+    "docs/quality/newcomer-entry-observation-protocol-v1-ZHTW.md": "newcomer-entry-observation-protocol-v1",
+    "docs/quality/newcomer-entry-observation-protocol-v1-FR.md": "newcomer-entry-observation-protocol-v1",
     "docs/research/ai-assisted-language-practice-boundaries-2026-08-14.md": "ai-assisted-language-practice-boundaries-2026-08-14",
+    "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-ZH.md": "ai-assisted-language-practice-boundaries-2026-08-14",
+    "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-ES.md": "ai-assisted-language-practice-boundaries-2026-08-14",
+    "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-JA.md": "ai-assisted-language-practice-boundaries-2026-08-14",
+    "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-KO.md": "ai-assisted-language-practice-boundaries-2026-08-14",
+    "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-DE.md": "ai-assisted-language-practice-boundaries-2026-08-14",
+    "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-ZHTW.md": "ai-assisted-language-practice-boundaries-2026-08-14",
+    "docs/research/ai-assisted-language-practice-boundaries-2026-08-14-FR.md": "ai-assisted-language-practice-boundaries-2026-08-14",
     "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14.md": "prompt-escalation-boundary-source-and-action-2026-08-14",
+    "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14-ZH.md": "prompt-escalation-boundary-source-and-action-2026-08-14",
+    "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14-ES.md": "prompt-escalation-boundary-source-and-action-2026-08-14",
+    "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14-JA.md": "prompt-escalation-boundary-source-and-action-2026-08-14",
+    "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14-KO.md": "prompt-escalation-boundary-source-and-action-2026-08-14",
+    "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14-DE.md": "prompt-escalation-boundary-source-and-action-2026-08-14",
+    "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14-ZHTW.md": "prompt-escalation-boundary-source-and-action-2026-08-14",
+    "docs/research/prompt-escalation-boundary-source-and-action-2026-08-14-FR.md": "prompt-escalation-boundary-source-and-action-2026-08-14",
     "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14.md": "source-shaped-answers-and-beginner-checks-2026-08-14",
+    "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-ZH.md": "source-shaped-answers-and-beginner-checks-2026-08-14",
+    "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-ES.md": "source-shaped-answers-and-beginner-checks-2026-08-14",
+    "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-JA.md": "source-shaped-answers-and-beginner-checks-2026-08-14",
+    "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-KO.md": "source-shaped-answers-and-beginner-checks-2026-08-14",
+    "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-DE.md": "source-shaped-answers-and-beginner-checks-2026-08-14",
+    "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-ZHTW.md": "source-shaped-answers-and-beginner-checks-2026-08-14",
+    "docs/research/source-shaped-answers-and-beginner-checks-2026-08-14-FR.md": "source-shaped-answers-and-beginner-checks-2026-08-14",
     "book/routes/llm-foundation-core-v1-EN.md": "llm-foundation-core-v1",
     "book/routes/llm-core-first-generation-EN.md": "llm-core-first-generation",
     "book/routes/llm-core-visible-failures-EN.md": "llm-core-visible-failures",
     "book/routes/llm-core-check-repair-EN.md": "llm-core-check-repair",
     "book/routes/llm-core-unseen-transfer-EN.md": "llm-core-unseen-transfer",
     "skills/prysai-dialogue-brief/SKILL.md": "prysai-dialogue-brief",
+    "skills/prysai-dialogue-brief/SKILL-ZH.md": "prysai-dialogue-brief",
+    "skills/prysai-dialogue-brief/SKILL-ES.md": "prysai-dialogue-brief",
+    "skills/prysai-dialogue-brief/SKILL-JA.md": "prysai-dialogue-brief",
+    "skills/prysai-dialogue-brief/SKILL-KO.md": "prysai-dialogue-brief",
+    "skills/prysai-dialogue-brief/SKILL-DE.md": "prysai-dialogue-brief",
+    "skills/prysai-dialogue-brief/SKILL-ZHTW.md": "prysai-dialogue-brief",
+    "skills/prysai-dialogue-brief/SKILL-FR.md": "prysai-dialogue-brief",
     "skills/prysai-first-turn-check/SKILL.md": "prysai-first-turn-check",
+    "skills/prysai-first-turn-check/SKILL-ZH.md": "prysai-first-turn-check",
+    "skills/prysai-first-turn-check/SKILL-ES.md": "prysai-first-turn-check",
+    "skills/prysai-first-turn-check/SKILL-JA.md": "prysai-first-turn-check",
+    "skills/prysai-first-turn-check/SKILL-KO.md": "prysai-first-turn-check",
+    "skills/prysai-first-turn-check/SKILL-DE.md": "prysai-first-turn-check",
+    "skills/prysai-first-turn-check/SKILL-ZHTW.md": "prysai-first-turn-check",
+    "skills/prysai-first-turn-check/SKILL-FR.md": "prysai-first-turn-check",
     "skills/prysai-field-signal-curator/SKILL.md": "prysai-field-signal-curator",
+    "skills/prysai-field-signal-curator/SKILL-ZH.md": "prysai-field-signal-curator",
+    "skills/prysai-field-signal-curator/SKILL-ES.md": "prysai-field-signal-curator",
+    "skills/prysai-field-signal-curator/SKILL-JA.md": "prysai-field-signal-curator",
+    "skills/prysai-field-signal-curator/SKILL-KO.md": "prysai-field-signal-curator",
+    "skills/prysai-field-signal-curator/SKILL-DE.md": "prysai-field-signal-curator",
+    "skills/prysai-field-signal-curator/SKILL-ZHTW.md": "prysai-field-signal-curator",
+    "skills/prysai-field-signal-curator/SKILL-FR.md": "prysai-field-signal-curator",
     "skills/prysai-platform-adapter-review/SKILL.md": "prysai-platform-adapter-review",
+    "skills/prysai-platform-adapter-review/SKILL-ZH.md": "prysai-platform-adapter-review",
+    "skills/prysai-platform-adapter-review/SKILL-ES.md": "prysai-platform-adapter-review",
+    "skills/prysai-platform-adapter-review/SKILL-JA.md": "prysai-platform-adapter-review",
+    "skills/prysai-platform-adapter-review/SKILL-KO.md": "prysai-platform-adapter-review",
+    "skills/prysai-platform-adapter-review/SKILL-DE.md": "prysai-platform-adapter-review",
+    "skills/prysai-platform-adapter-review/SKILL-ZHTW.md": "prysai-platform-adapter-review",
+    "skills/prysai-platform-adapter-review/SKILL-FR.md": "prysai-platform-adapter-review",
     "skills/prysai-platform-fact-watch/SKILL.md": "prysai-platform-fact-watch",
+    "skills/prysai-platform-fact-watch/SKILL-ZH.md": "prysai-platform-fact-watch",
+    "skills/prysai-platform-fact-watch/SKILL-ES.md": "prysai-platform-fact-watch",
+    "skills/prysai-platform-fact-watch/SKILL-JA.md": "prysai-platform-fact-watch",
+    "skills/prysai-platform-fact-watch/SKILL-KO.md": "prysai-platform-fact-watch",
+    "skills/prysai-platform-fact-watch/SKILL-DE.md": "prysai-platform-fact-watch",
+    "skills/prysai-platform-fact-watch/SKILL-ZHTW.md": "prysai-platform-fact-watch",
+    "skills/prysai-platform-fact-watch/SKILL-FR.md": "prysai-platform-fact-watch",
     "skills/prysai-communication-failure-triage/SKILL.md": "prysai-communication-failure-triage",
+    "skills/prysai-communication-failure-triage/SKILL-ZH.md": "prysai-communication-failure-triage",
+    "skills/prysai-communication-failure-triage/SKILL-ES.md": "prysai-communication-failure-triage",
+    "skills/prysai-communication-failure-triage/SKILL-JA.md": "prysai-communication-failure-triage",
+    "skills/prysai-communication-failure-triage/SKILL-KO.md": "prysai-communication-failure-triage",
+    "skills/prysai-communication-failure-triage/SKILL-DE.md": "prysai-communication-failure-triage",
+    "skills/prysai-communication-failure-triage/SKILL-ZHTW.md": "prysai-communication-failure-triage",
+    "skills/prysai-communication-failure-triage/SKILL-FR.md": "prysai-communication-failure-triage",
     "skills/prysai-codex-coach/SKILL.md": "prysai-codex-coach",
+    "skills/prysai-codex-coach/SKILL-ZH.md": "prysai-codex-coach",
+    "skills/prysai-codex-coach/SKILL-ES.md": "prysai-codex-coach",
+    "skills/prysai-codex-coach/SKILL-JA.md": "prysai-codex-coach",
+    "skills/prysai-codex-coach/SKILL-KO.md": "prysai-codex-coach",
+    "skills/prysai-codex-coach/SKILL-DE.md": "prysai-codex-coach",
+    "skills/prysai-codex-coach/SKILL-ZHTW.md": "prysai-codex-coach",
+    "skills/prysai-codex-coach/SKILL-FR.md": "prysai-codex-coach",
     "skills/prysai-task-protocol/SKILL.md": "prysai-task-protocol",
+    "skills/prysai-task-protocol/SKILL-ZH.md": "prysai-task-protocol",
+    "skills/prysai-task-protocol/SKILL-ES.md": "prysai-task-protocol",
+    "skills/prysai-task-protocol/SKILL-JA.md": "prysai-task-protocol",
+    "skills/prysai-task-protocol/SKILL-KO.md": "prysai-task-protocol",
+    "skills/prysai-task-protocol/SKILL-DE.md": "prysai-task-protocol",
+    "skills/prysai-task-protocol/SKILL-ZHTW.md": "prysai-task-protocol",
+    "skills/prysai-task-protocol/SKILL-FR.md": "prysai-task-protocol",
     "skills/prysai-evidence-review/SKILL.md": "prysai-evidence-review",
+    "skills/prysai-evidence-review/SKILL-ZH.md": "prysai-evidence-review",
+    "skills/prysai-evidence-review/SKILL-ES.md": "prysai-evidence-review",
+    "skills/prysai-evidence-review/SKILL-JA.md": "prysai-evidence-review",
+    "skills/prysai-evidence-review/SKILL-KO.md": "prysai-evidence-review",
+    "skills/prysai-evidence-review/SKILL-DE.md": "prysai-evidence-review",
+    "skills/prysai-evidence-review/SKILL-ZHTW.md": "prysai-evidence-review",
+    "skills/prysai-evidence-review/SKILL-FR.md": "prysai-evidence-review",
     "skills/prysai-skill-selector/SKILL.md": "prysai-skill-selector",
+    "skills/prysai-skill-selector/SKILL-ZH.md": "prysai-skill-selector",
+    "skills/prysai-skill-selector/SKILL-ES.md": "prysai-skill-selector",
+    "skills/prysai-skill-selector/SKILL-JA.md": "prysai-skill-selector",
+    "skills/prysai-skill-selector/SKILL-KO.md": "prysai-skill-selector",
+    "skills/prysai-skill-selector/SKILL-DE.md": "prysai-skill-selector",
+    "skills/prysai-skill-selector/SKILL-ZHTW.md": "prysai-skill-selector",
+    "skills/prysai-skill-selector/SKILL-FR.md": "prysai-skill-selector",
     "skills/prysai-workflow-orchestrator/SKILL.md": "prysai-workflow-orchestrator",
+    "skills/prysai-workflow-orchestrator/SKILL-ZH.md": "prysai-workflow-orchestrator",
+    "skills/prysai-workflow-orchestrator/SKILL-ES.md": "prysai-workflow-orchestrator",
+    "skills/prysai-workflow-orchestrator/SKILL-JA.md": "prysai-workflow-orchestrator",
+    "skills/prysai-workflow-orchestrator/SKILL-KO.md": "prysai-workflow-orchestrator",
+    "skills/prysai-workflow-orchestrator/SKILL-DE.md": "prysai-workflow-orchestrator",
+    "skills/prysai-workflow-orchestrator/SKILL-ZHTW.md": "prysai-workflow-orchestrator",
+    "skills/prysai-workflow-orchestrator/SKILL-FR.md": "prysai-workflow-orchestrator",
     "skills/prysai-research-router/SKILL.md": "prysai-research-router",
+    "skills/prysai-research-router/SKILL-ZH.md": "prysai-research-router",
+    "skills/prysai-research-router/SKILL-ES.md": "prysai-research-router",
+    "skills/prysai-research-router/SKILL-JA.md": "prysai-research-router",
+    "skills/prysai-research-router/SKILL-KO.md": "prysai-research-router",
+    "skills/prysai-research-router/SKILL-DE.md": "prysai-research-router",
+    "skills/prysai-research-router/SKILL-ZHTW.md": "prysai-research-router",
+    "skills/prysai-research-router/SKILL-FR.md": "prysai-research-router",
     "skills/prysai-product-context/SKILL.md": "prysai-product-context",
+    "skills/prysai-product-context/SKILL-ZH.md": "prysai-product-context",
+    "skills/prysai-product-context/SKILL-ES.md": "prysai-product-context",
+    "skills/prysai-product-context/SKILL-JA.md": "prysai-product-context",
+    "skills/prysai-product-context/SKILL-KO.md": "prysai-product-context",
+    "skills/prysai-product-context/SKILL-DE.md": "prysai-product-context",
+    "skills/prysai-product-context/SKILL-ZHTW.md": "prysai-product-context",
+    "skills/prysai-product-context/SKILL-FR.md": "prysai-product-context",
     "skills/prysai-learning-coach/SKILL.md": "prysai-learning-coach",
+    "skills/prysai-learning-coach/SKILL-ZH.md": "prysai-learning-coach",
+    "skills/prysai-learning-coach/SKILL-ES.md": "prysai-learning-coach",
+    "skills/prysai-learning-coach/SKILL-JA.md": "prysai-learning-coach",
+    "skills/prysai-learning-coach/SKILL-KO.md": "prysai-learning-coach",
+    "skills/prysai-learning-coach/SKILL-DE.md": "prysai-learning-coach",
+    "skills/prysai-learning-coach/SKILL-ZHTW.md": "prysai-learning-coach",
+    "skills/prysai-learning-coach/SKILL-FR.md": "prysai-learning-coach",
     "skills/prysai-source-investigator/SKILL.md": "prysai-source-investigator",
+    "skills/prysai-source-investigator/SKILL-ZH.md": "prysai-source-investigator",
+    "skills/prysai-source-investigator/SKILL-ES.md": "prysai-source-investigator",
+    "skills/prysai-source-investigator/SKILL-JA.md": "prysai-source-investigator",
+    "skills/prysai-source-investigator/SKILL-KO.md": "prysai-source-investigator",
+    "skills/prysai-source-investigator/SKILL-DE.md": "prysai-source-investigator",
+    "skills/prysai-source-investigator/SKILL-ZHTW.md": "prysai-source-investigator",
+    "skills/prysai-source-investigator/SKILL-FR.md": "prysai-source-investigator",
     "skills/prysai-prompt-card-editor/SKILL.md": "prysai-prompt-card-editor",
+    "skills/prysai-prompt-card-editor/SKILL-ZH.md": "prysai-prompt-card-editor",
+    "skills/prysai-prompt-card-editor/SKILL-ES.md": "prysai-prompt-card-editor",
+    "skills/prysai-prompt-card-editor/SKILL-JA.md": "prysai-prompt-card-editor",
+    "skills/prysai-prompt-card-editor/SKILL-KO.md": "prysai-prompt-card-editor",
+    "skills/prysai-prompt-card-editor/SKILL-DE.md": "prysai-prompt-card-editor",
+    "skills/prysai-prompt-card-editor/SKILL-ZHTW.md": "prysai-prompt-card-editor",
+    "skills/prysai-prompt-card-editor/SKILL-FR.md": "prysai-prompt-card-editor",
     "skills/prysai-adversarial-project-review/SKILL.md": "prysai-adversarial-project-review",
+    "skills/prysai-adversarial-project-review/SKILL-ZH.md": "prysai-adversarial-project-review",
+    "skills/prysai-adversarial-project-review/SKILL-ES.md": "prysai-adversarial-project-review",
+    "skills/prysai-adversarial-project-review/SKILL-JA.md": "prysai-adversarial-project-review",
+    "skills/prysai-adversarial-project-review/SKILL-KO.md": "prysai-adversarial-project-review",
+    "skills/prysai-adversarial-project-review/SKILL-DE.md": "prysai-adversarial-project-review",
+    "skills/prysai-adversarial-project-review/SKILL-ZHTW.md": "prysai-adversarial-project-review",
+    "skills/prysai-adversarial-project-review/SKILL-FR.md": "prysai-adversarial-project-review",
     "skills/prysai-request-escalation/SKILL.md": "prysai-request-escalation",
+    "skills/prysai-request-escalation/SKILL-ZH.md": "prysai-request-escalation",
+    "skills/prysai-request-escalation/SKILL-ES.md": "prysai-request-escalation",
+    "skills/prysai-request-escalation/SKILL-JA.md": "prysai-request-escalation",
+    "skills/prysai-request-escalation/SKILL-KO.md": "prysai-request-escalation",
+    "skills/prysai-request-escalation/SKILL-DE.md": "prysai-request-escalation",
+    "skills/prysai-request-escalation/SKILL-ZHTW.md": "prysai-request-escalation",
+    "skills/prysai-request-escalation/SKILL-FR.md": "prysai-request-escalation",
     "skills/prysai-llm-comparison-protocol/SKILL.md": "prysai-llm-comparison-protocol",
+    "skills/prysai-llm-comparison-protocol/SKILL-ZH.md": "prysai-llm-comparison-protocol",
+    "skills/prysai-llm-comparison-protocol/SKILL-ES.md": "prysai-llm-comparison-protocol",
+    "skills/prysai-llm-comparison-protocol/SKILL-JA.md": "prysai-llm-comparison-protocol",
+    "skills/prysai-llm-comparison-protocol/SKILL-KO.md": "prysai-llm-comparison-protocol",
+    "skills/prysai-llm-comparison-protocol/SKILL-DE.md": "prysai-llm-comparison-protocol",
+    "skills/prysai-llm-comparison-protocol/SKILL-ZHTW.md": "prysai-llm-comparison-protocol",
+    "skills/prysai-llm-comparison-protocol/SKILL-FR.md": "prysai-llm-comparison-protocol",
     "skills/prysai-practice-target/SKILL.md": "prysai-practice-target",
+    "skills/prysai-practice-target/SKILL-ZH.md": "prysai-practice-target",
+    "skills/prysai-practice-target/SKILL-ES.md": "prysai-practice-target",
+    "skills/prysai-practice-target/SKILL-JA.md": "prysai-practice-target",
+    "skills/prysai-practice-target/SKILL-KO.md": "prysai-practice-target",
+    "skills/prysai-practice-target/SKILL-DE.md": "prysai-practice-target",
+    "skills/prysai-practice-target/SKILL-ZHTW.md": "prysai-practice-target",
+    "skills/prysai-practice-target/SKILL-FR.md": "prysai-practice-target",
     "skills/prysai-interruption-checkpoint/SKILL.md": "prysai-interruption-checkpoint",
+    "skills/prysai-interruption-checkpoint/SKILL-ZH.md": "prysai-interruption-checkpoint",
+    "skills/prysai-interruption-checkpoint/SKILL-ES.md": "prysai-interruption-checkpoint",
+    "skills/prysai-interruption-checkpoint/SKILL-JA.md": "prysai-interruption-checkpoint",
+    "skills/prysai-interruption-checkpoint/SKILL-KO.md": "prysai-interruption-checkpoint",
+    "skills/prysai-interruption-checkpoint/SKILL-DE.md": "prysai-interruption-checkpoint",
+    "skills/prysai-interruption-checkpoint/SKILL-ZHTW.md": "prysai-interruption-checkpoint",
+    "skills/prysai-interruption-checkpoint/SKILL-FR.md": "prysai-interruption-checkpoint",
     "skills/prysai-shift-handoff/SKILL.md": "prysai-shift-handoff",
+    "skills/prysai-shift-handoff/SKILL-ZH.md": "prysai-shift-handoff",
+    "skills/prysai-shift-handoff/SKILL-ES.md": "prysai-shift-handoff",
+    "skills/prysai-shift-handoff/SKILL-JA.md": "prysai-shift-handoff",
+    "skills/prysai-shift-handoff/SKILL-KO.md": "prysai-shift-handoff",
+    "skills/prysai-shift-handoff/SKILL-DE.md": "prysai-shift-handoff",
+    "skills/prysai-shift-handoff/SKILL-ZHTW.md": "prysai-shift-handoff",
+    "skills/prysai-shift-handoff/SKILL-FR.md": "prysai-shift-handoff",
     "skills/prysai-platform-observation-record/SKILL.md": "prysai-platform-observation-record",
+    "skills/prysai-platform-observation-record/SKILL-ZH.md": "prysai-platform-observation-record",
+    "skills/prysai-platform-observation-record/SKILL-ES.md": "prysai-platform-observation-record",
+    "skills/prysai-platform-observation-record/SKILL-JA.md": "prysai-platform-observation-record",
+    "skills/prysai-platform-observation-record/SKILL-KO.md": "prysai-platform-observation-record",
+    "skills/prysai-platform-observation-record/SKILL-DE.md": "prysai-platform-observation-record",
+    "skills/prysai-platform-observation-record/SKILL-ZHTW.md": "prysai-platform-observation-record",
+    "skills/prysai-platform-observation-record/SKILL-FR.md": "prysai-platform-observation-record",
     "skills/prysai-language-partner/SKILL.md": "prysai-language-partner",
+    "skills/prysai-language-partner/SKILL-ZH.md": "prysai-language-partner",
+    "skills/prysai-language-partner/SKILL-ES.md": "prysai-language-partner",
+    "skills/prysai-language-partner/SKILL-JA.md": "prysai-language-partner",
+    "skills/prysai-language-partner/SKILL-KO.md": "prysai-language-partner",
+    "skills/prysai-language-partner/SKILL-DE.md": "prysai-language-partner",
+    "skills/prysai-language-partner/SKILL-ZHTW.md": "prysai-language-partner",
+    "skills/prysai-language-partner/SKILL-FR.md": "prysai-language-partner",
     "skills/prysai-interview-rehearsal/SKILL.md": "prysai-interview-rehearsal",
-    "skills/polish-open-source-prose/SKILL.md": "polish-open-source-prose"
+    "skills/prysai-interview-rehearsal/SKILL-ZH.md": "prysai-interview-rehearsal",
+    "skills/prysai-interview-rehearsal/SKILL-ES.md": "prysai-interview-rehearsal",
+    "skills/prysai-interview-rehearsal/SKILL-JA.md": "prysai-interview-rehearsal",
+    "skills/prysai-interview-rehearsal/SKILL-KO.md": "prysai-interview-rehearsal",
+    "skills/prysai-interview-rehearsal/SKILL-DE.md": "prysai-interview-rehearsal",
+    "skills/prysai-interview-rehearsal/SKILL-ZHTW.md": "prysai-interview-rehearsal",
+    "skills/prysai-interview-rehearsal/SKILL-FR.md": "prysai-interview-rehearsal",
+    "skills/polish-open-source-prose/SKILL.md": "polish-open-source-prose",
+    "skills/polish-open-source-prose/SKILL-ZH.md": "polish-open-source-prose",
+    "skills/polish-open-source-prose/SKILL-ES.md": "polish-open-source-prose",
+    "skills/polish-open-source-prose/SKILL-JA.md": "polish-open-source-prose",
+    "skills/polish-open-source-prose/SKILL-KO.md": "polish-open-source-prose",
+    "skills/polish-open-source-prose/SKILL-DE.md": "polish-open-source-prose",
+    "skills/polish-open-source-prose/SKILL-ZHTW.md": "polish-open-source-prose",
+    "skills/polish-open-source-prose/SKILL-FR.md": "polish-open-source-prose"
   },
   "routed_status_counts": {
     "chapters": 22,
