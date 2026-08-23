@@ -17,8 +17,8 @@ outil d’intelligence artificielle. Une tâche trop ambitieuse mélange trop de
 fichiers, d’autorisations et d’inconnues, au point de masquer ce qui a réussi
 ou échoué. Choisissez
 une cible visible, une modification autorisée et un contrôle répétable. Sans
-projet temporaire, utilisez le [jeu de test hors ligne Première modification
-sûre](../routes/first-safe-change-FR.md). Il ne demande ni compte, ni réseau,
+projet temporaire, utilisez le [jeu de test hors ligne « Première modification
+sûre »](../routes/first-safe-change-FR.md). Il ne demande ni compte, ni réseau,
 ni dépôt public : il sert uniquement à répéter le cycle dans un environnement
 isolé que vous pouvez inspecter puis supprimer. Ce jeu de test ne prouve pas
 que votre compte, votre dépôt réel ou votre outil dispose des mêmes capacités.
@@ -120,7 +120,7 @@ pour les faits produits datés. La méthode stable est :
 | Réponse de succès | Une réponse d’outil a été reçue. | Objet modifié correctement. |
 | `git diff` | L’état comparé diffère. | Tests, déploiement ou acceptation. |
 | Test avec code zéro | Ce contrôle a réussi dans cet environnement. | Tous les chemins ou services. |
-| `Completed` dans l’interface | Un état visuel existe. | Résultat relu ou objectif atteint. |
+| `Completed` dans l’interface | Un état visuel existe. | Le résultat a été relu et la tâche est effectivement terminée. |
 
 ## Le protocole de première tâche
 
@@ -238,7 +238,7 @@ reproductions locales. Chaque carte sépare ce qui a été observé de ce qui re
 
 | Cas | Signal | Réponse sûre |
 |---|---|---|
-| Aucun événement visible | Attente et retry ne prouvent pas l’absence d’effet. | Conserver chronologie, checkpoint, diff et effets avant reprise. |
+| Aucun événement visible | L’attente et la nouvelle tentative ne prouvent pas l’absence d’effet. | Conserver chronologie, checkpoint, diff et effets avant reprise. |
 | Commande en `Working` | Démarrage, fin et contrôle réussi sont trois faits. | Fixer un délai, capturer sortie/état et inspecter le diff. |
 | Vérification devenue réinstallation | Contrôle et mutation persistante sont différents. | Séparer source, test, installation, redémarrage, publication et contrôle en ligne. |
 | Configuration sans capacité | Visible, découvrable, utilisable (`callable`), lisible et inscriptible sont distincts. | Tester le chemin courant avec une vérification inoffensive. |
@@ -247,11 +247,11 @@ reproductions locales. Chaque carte sépare ce qui a été observé de ce qui re
 ### Cas CH2-01 : aucun événement visible n’est pas un résultat
 
 Un rapport Windows décrivait une requête Responses restée plusieurs minutes
-sans événement visible, puis une erreur HTTP et un retry. Le rapport ne prouvait
+sans événement visible, puis une erreur HTTP et une nouvelle tentative. Le rapport ne prouvait
 ni la cause côté service ni l’innocuité de la répétition.
 
 - **Observé dans le rapport :** une chronologie d’absence d’événements et une
-  réponse de retry.
+  réponse de la nouvelle tentative.
 - **Fait officiel :** aucune cause racine ni correctif de mainteneur n’était
   confirmé dans le dossier consulté.
 - **Réponse sûre :** conserver l’heure de début, le dernier événement, le
@@ -261,8 +261,8 @@ ni la cause côté service ni l’innocuité de la répétition.
 - **Hypothèse :** taille de requête, proxy ou amont pourraient compter, sans
   que cela soit établi.
 
-La règle est simple : « toujours en cours » ne prouve pas le progrès, et un
-retry réussi ne prouve pas que la première tentative n’a rien changé.
+La règle est simple : « toujours en cours » ne prouve pas le progrès, et une
+nouvelle tentative réussie ne prouve pas que la première tentative n’a rien changé.
 
 ### Cas CH2-02 : commande démarrée n’est pas contrôle réussi
 
@@ -336,7 +336,7 @@ Après la relecture, classez le résultat `observed`, `verified`,
 une installation ou une publication ; elle répond seulement à la question précise
 qui a été écrite dans la fiche.
 
-### Cas CH2-05 : terminé dans l’interface n’est pas relu et terminé
+### Cas CH2-05 : afficher « Terminé » ne signifie pas que la tâche est achevée
 
 Un rapport Desktop signalait un désaccord entre le label `Active` de l’interface
 parente et le statut runtime `completed` d’un Agent enfant. Ouvrir le résultat
