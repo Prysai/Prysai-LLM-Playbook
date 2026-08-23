@@ -1762,7 +1762,7 @@ try {
   await chineseChapterNavigationPage.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
   assert.match(
     await chineseChapterNavigationPage.locator('[data-reader-article] h1').innerText(),
-    /规划与竖向切片/,
+    /规划与垂直切片/,
     'Chinese chapter navigation does not open the available Chapter 10 candidate translation',
   );
   assert.equal(

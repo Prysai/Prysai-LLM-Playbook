@@ -1024,7 +1024,7 @@ window.CODEX_LEARNING_PATH = {
           "id": "chapter-10",
           "name": {
             "en": "Planning and vertical slices",
-            "zh": "规划与竖向切片",
+            "zh": "规划与垂直切片",
             "es": "Planificación y slices verticales",
             "ja": "計画と垂直スライス",
             "ko": "계획과 수직 슬라이스",
@@ -1056,7 +1056,7 @@ window.CODEX_LEARNING_PATH = {
           "id": "lab-013",
           "name": {
             "en": "Auditable vertical slice",
-            "zh": "可审计的竖向切片",
+            "zh": "可审计的垂直切片",
             "es": "Slice vertical auditable",
             "ja": "監査可能な垂直スライス",
             "ko": "감사 가능한 수직 슬라이스",
@@ -1069,7 +1069,7 @@ window.CODEX_LEARNING_PATH = {
           "firstSeen": "L3",
           "newCapability": {
             "en": "Run a complete vertical slice with checkpoints, failure handling, recovery, and a bounded handoff.",
-            "zh": "运行一条包含检查点、失败处理、恢复和有边界交接的完整竖向切片。",
+            "zh": "运行一条包含检查点、失败处理、恢复和有边界交接的完整垂直切片。",
             "es": "Ejecuta un slice vertical completo con puntos de control, manejo de fallos, recuperación y una transferencia acotada.",
             "ja": "チェックポイント・失敗処理・リカバリ・境界のある引き継ぎを備えた完全な垂直スライスを実行できる。",
             "ko": "체크포인트, 실패 처리, 복구, 경계 있는 인계를 갖춘 완전한 수직 슬라이스를 실행한다.",
@@ -1429,7 +1429,7 @@ window.CODEX_LEARNING_PATH = {
         },
         "operate": {
           "en": "Run a vertical slice from definition to verification with an explicit checkpoint.",
-          "zh": "用明确检查点跑通从定义到验证的一条竖向切片。",
+          "zh": "用明确检查点跑通从定义到验证的一条垂直切片。",
           "es": "Ejecuta un slice vertical desde la definición hasta la verificación con un punto de control explícito.",
           "ja": "明示的なチェックポイントを置いて、定義から検証までの垂直スライスを実行できる。",
           "ko": "명시적 체크포인트로 정의에서 검증까지 수직 슬라이스를 실행한다.",
@@ -1460,7 +1460,7 @@ window.CODEX_LEARNING_PATH = {
       },
       "graduation": {
         "en": "Advance with one complete vertical slice recorded from definition through review, one intentional failure or boundary case, a claim-evidence table, and a transfer task in another domain.",
-        "zh": "完成一条从定义到审查并留下记录的完整竖向切片、一个故意失败或边界案例、一张断言—证据表，以及另一个领域的迁移任务后，才进入下一阶段。",
+        "zh": "完成一条从定义到审查并留下记录的完整垂直切片、一个故意失败或边界案例、一张断言—证据表，以及另一个领域的迁移任务后，才进入下一阶段。",
         "es": "Avanza con un slice vertical completo registrado desde la definición hasta la revisión, un fallo intencional o caso límite, una tabla afirmación-evidencia y una tarea de transferencia en otro dominio.",
         "ja": "定義からレビューまで記録された完全な垂直スライス1本・意図的な失敗または境界ケース1件・主張―証拠テーブル・別領域での転移タスクを揃えてから進む。",
         "ko": "정의부터 리뷰까지 기록된 완전한 수직 슬라이스 하나, 의도적 실패 또는 경계 사례 하나, 주장-증거 표, 다른 도메인의 전이 과제를 갖춰야 다음 단계로 진급한다.",
@@ -1500,7 +1500,7 @@ window.CODEX_LEARNING_PATH = {
           "id": "lab-013",
           "name": {
             "en": "Auditable vertical slice",
-            "zh": "可审计的竖向切片",
+            "zh": "可审计的垂直切片",
             "es": "Slice vertical auditable",
             "ja": "監査可能な垂直スライス",
             "ko": "감사 가능한 수직 슬라이스",
@@ -1513,7 +1513,7 @@ window.CODEX_LEARNING_PATH = {
           "firstSeen": "L3",
           "newCapability": {
             "en": "Run a complete vertical slice with checkpoints, failure handling, recovery, and a bounded handoff.",
-            "zh": "运行一条包含检查点、失败处理、恢复和有边界交接的完整竖向切片。",
+            "zh": "运行一条包含检查点、失败处理、恢复和有边界交接的完整垂直切片。",
             "es": "Ejecuta un slice vertical completo con puntos de control, manejo de fallos, recuperación y una transferencia acotada.",
             "ja": "チェックポイント・失敗処理・リカバリ・境界のある引き継ぎを備えた完全な垂直スライスを実行できる。",
             "ko": "체크포인트, 실패 처리, 복구, 경계 있는 인계를 갖춘 완전한 수직 슬라이스를 실행한다.",

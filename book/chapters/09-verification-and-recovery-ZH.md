@@ -89,7 +89,7 @@ Agent 可能会为错误、超出范围、从未执行，或在错误环境中�
 
 ### 在 Lab 013 之前：写一张声明—证据对照表
 
-在进入 [Lab 013：可审计的竖向切片](../labs/lab-013-l3-vertical-slice-ZH.md) 前，
+在进入 [Lab 013：可审计的垂直切片](../labs/lab-013-l3-vertical-slice-ZH.md) 前，
 将“完成”拆成可检查的行。每行只可由其声明范围内的证据支撑：
 
 ~~~text
@@ -324,7 +324,7 @@ list_windows() 调用会出现 spawn EPERM；浏览器弹窗与 DOM 可读，但
   <table role="presentation" width="100%">
     <tr>
       <td align="left"><a data-chapter-nav="previous" href="08-full-lifecycle-workflow-ZH.md" aria-label="上一章: 第 8 章 · 从定义到交付的完整生命周期">← 上一章<br><strong>第 8 章 · 从定义到交付的完整生命周期</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-ZH.md" aria-label="下一章: 第 10 章 · 规划与竖向切片">下一章 →<br><strong>第 10 章 · 规划与竖向切片</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="10-planning-and-slicing-ZH.md" aria-label="下一章: 第 10 章 · 规划与垂直切片">下一章 →<br><strong>第 10 章 · 规划与垂直切片</strong></a></td>
     </tr>
   </table>
 </nav>

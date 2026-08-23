@@ -111,7 +111,7 @@
     "chapter-10": {
       "name": {
         "en": "Planning and vertical slices",
-        "zh": "规划与竖向切片",
+        "zh": "规划与垂直切片",
         "es": "Planificación y slices verticales",
         "ja": "計画と垂直スライス",
         "ko": "계획과 수직 슬라이스",
@@ -413,7 +413,7 @@
     "lab-013": {
       "name": {
         "en": "Auditable vertical slice",
-        "zh": "可审计的竖向切片",
+        "zh": "可审计的垂直切片",
         "es": "Slice vertical auditable",
         "ja": "監査可能な垂直スライス",
         "ko": "감사 가능한 수직 슬라이스",

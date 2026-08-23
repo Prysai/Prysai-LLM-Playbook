@@ -38,10 +38,10 @@
 | 第 7 章：Skill、Plugin、MCP 和工具如何分工 | [阅读第 7 章](chapters/07-skills-plugins-and-tools-ZH.md) | `candidate` / `in-progress` |
 | 实验 004：选择最小有用能力 | [打开实验 004](labs/lab-004-skill-selection-ZH.md) | `draft` / `not_run` |
 | 第 8 章：从定义到交付的完整生命周期 | [阅读第 8 章](chapters/08-full-lifecycle-workflow-ZH.md) | `candidate` / `in-progress` |
-| 实验 013：可审计的 L3 竖向切片 | [打开实验 013](labs/lab-013-l3-vertical-slice-ZH.md) | `draft` / `not_run` |
+| 实验 013：可审计的 L3 垂直切片 | [打开实验 013](labs/lab-013-l3-vertical-slice-ZH.md) | `draft` / `not_run` |
 | 第 9 章：验证、怀疑与恢复 | [阅读第 9 章](chapters/09-verification-and-recovery-ZH.md) | `candidate` / `in-progress` |
 | 实验 003：证据审查 | [打开实验 003](labs/lab-003-evidence-review-ZH.md) | `draft` / `not_run` |
-| 第 10 章：规划与竖向切片 | [阅读第 10 章](chapters/10-planning-and-slicing-ZH.md) | `candidate` / `in-progress` |
+| 第 10 章：规划与垂直切片 | [阅读第 10 章](chapters/10-planning-and-slicing-ZH.md) | `candidate` / `in-progress` |
 | 第 11 章：设计一个真正有用的 Skill | [阅读第 11 章](chapters/11-designing-a-skill-ZH.md) | `candidate` / `in-progress` |
 | 实验 005：设计一个 Skill | [打开实验 005](labs/lab-005-design-a-skill-ZH.md) | `draft` / `not_run` |
 | 第 12 章：Agent 的循环、状态和停止条件 | [阅读第 12 章](chapters/12-agent-loop-and-stop-ZH.md) | `candidate` / `in-progress` |

@@ -69,5 +69,5 @@ status: "pass | fail | blocked | not_run"
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="实验导航"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-011-gpt-codex-boundaries-ZH.md">← 上一个实验<br><strong>实验 011 · GPT、Codex、工具与 Agent 的边界</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-013-l3-vertical-slice-ZH.md">下一个实验 →<br><strong>实验 013 · 可审计的竖向切片</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="实验导航"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-011-gpt-codex-boundaries-ZH.md">← 上一个实验<br><strong>实验 011 · GPT、Codex、工具与 Agent 的边界</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-013-l3-vertical-slice-ZH.md">下一个实验 →<br><strong>实验 013 · 可审计的垂直切片</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->

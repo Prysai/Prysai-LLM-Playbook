@@ -9235,7 +9235,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "number": 10,
         "part": "part-2",
         "title_en": "Planning and vertical slicing",
-        "title_zh": "规划与竖向切片",
+        "title_zh": "规划与垂直切片",
         "title_es": "planificación y cortes verticales",
         "title_ja": "計画と垂直スライス",
         "title_ko": "10장: 계획과 수직 슬라이스",

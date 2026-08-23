@@ -77,10 +77,10 @@
 [第 7 章：Skill、Plugin、MCP 和工具如何分工](chapters/07-skills-plugins-and-tools-ZH.md) →
 [实验 004：选择最小有用能力](labs/lab-004-skill-selection-ZH.md) →
 [第 8 章：从定义到交付](chapters/08-full-lifecycle-workflow-ZH.md) →
-[实验 013：完成一个完整的竖向切片](labs/lab-013-l3-vertical-slice-ZH.md) →
+[实验 013：完成一个完整的垂直切片](labs/lab-013-l3-vertical-slice-ZH.md) →
 [第 9 章：验证、怀疑与恢复](chapters/09-verification-and-recovery-ZH.md) →
 [实验 003：审计一条完成声明](labs/lab-003-evidence-review-ZH.md) →
-[第 10 章：规划与竖向切片](chapters/10-planning-and-slicing-ZH.md)。
+[第 10 章：规划与垂直切片](chapters/10-planning-and-slicing-ZH.md)。
 
 整套中文路径现有 40 / 40 个课程单元（22 章、18 个实验），所有翻译仍为 `in-progress`。中文页面只链接中文文件，不会静默跳到英文正文。固定评测夹具仍没有中文阅读版，也没有把静态定义变成已完成评测。
 
