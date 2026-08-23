@@ -38,7 +38,7 @@
 
 ## 이어서 쓸 수 있는 아키텍처 패턴
 
-감사한 [`claude-code-from-source` 연구](../evidence-library-KO.md#source-notes)는
+검토한 [`claude-code-from-source` 연구](../evidence-library-KO.md#source-notes)는
 참고 자료일 뿐 공식 구현 기록이 아닙니다. 특정 제품에 종속되지 않도록
 다시 쓴 결과, 다음 설계 질문을 남깁니다.
 
@@ -46,7 +46,7 @@
   부작용 유형, 필요한 권한, 오류, 출력, 수용 증거를 적습니다.
 - **의존성으로 순서를 정한다:** 독립적인 읽기 전용 관찰은 때로 병렬화할 수
   있지만, 쓰기·쓰기 후 읽기·공유 상태는 충돌을 검토할 때까지 순서를 지킵니다.
-- **위임에는 닫힌 브리프를 준다:** 하위 Agent에 목표, 컨텍스트, 도구, 권한,
+- **위임할 때는 범위가 제한된 브리프를 준다:** 하위 Agent에 목표, 컨텍스트, 도구, 권한,
   예산, 중지 조건, 인계 형식을 주고 부모가 결과와 증거를 다시 검토합니다.
 - **메모리를 검사 가능하게 한다:** 저장할 사실에는 출처, 시각, 담당자,
   최신성·충돌 규칙을 붙입니다. 컨텍스트는 생성을 이끌 뿐 권한을 강제하지 않습니다.
@@ -157,7 +157,7 @@ next_safe_action: "target을 읽고 나서 새 쓰기를 허용할지 결정"
 
 ## 작은 실험: continue, pause, stop 연습하기
 
-버릴 수 있는 디렉터리에 순서 없는 세 줄의 `input.txt`를 만듭니다. 비어 있지 않은 줄을 정렬해 `output.txt`에 쓰는 작업입니다. 이 디렉터리 안에서만 읽고 쓸 수 있으며 네트워크와 설치는 금지합니다.
+버릴 수 있는 디렉터리에 순서가 섞인 세 줄이 있는 `input.txt`를 만듭니다. 비어 있지 않은 줄을 정렬해 `output.txt`에 쓰는 작업입니다. 이 디렉터리 안에서만 읽고 쓸 수 있으며 네트워크와 설치는 금지합니다.
 
 1. 목표, 허용 경로, 수용 조건, 한 번의 재시도 예산을 적습니다.
 2. 입력을 읽고 관찰을 기록한 뒤 쓰기를 제안합니다. 범위를 확인한 뒤 실행합니다.
@@ -235,7 +235,7 @@ event card의 어느 stage가 그럴듯한 text로 가장 쉽게 건너뛰어질
 
 ## 전이 과제
 
-같은 loop를 language practice나 source research에 적용합니다. language에서는 model correction, learner answer, 나중의 무도움 recall, feedback이 별 event이며 유창한 dialogue는 mastery 증거가 아닙니다. research에서는 발견, 읽기, source check, conclusion을 나눕니다. stop budget과 정직한 handoff를 유지합니다.
+같은 loop를 language practice나 source research에 적용합니다. language에서는 model correction, learner answer, 나중에 도움 없이 회상하는 과제, feedback이 별 event이며 유창한 dialogue는 mastery 증거가 아닙니다. research에서는 발견, 읽기, source check, conclusion을 나눕니다. stop budget과 정직한 handoff를 유지합니다.
 
 ## 수용 체크리스트
 
@@ -247,9 +247,9 @@ event card의 어느 stage가 그럴듯한 text로 가장 쉽게 건너뛰어질
 
 ## 출처와 갱신 경계
 
-관찰 가능한 loop, state, stop method는 project의 안정적인 teaching method입니다. 구체 Agent surface, tool name, permission, runtime behavior는 변합니다. 현재 fact는 [공식 사실 카드](../evidence-library-KO.md#source-notes)에서 확인하고 [field-problem index](../evidence-library-KO.md#source-notes)는 symptom material로만 사용합니다. 어느 것도 기록한 own run을 대신하지 않습니다.
+관찰 가능한 loop, state, stop method는 project의 안정적인 teaching method입니다. 구체 Agent surface, tool name, permission, runtime behavior는 변합니다. 현재 fact는 [공식 사실 카드](../evidence-library-KO.md#source-notes)에서 확인하고 [field-problem index](../evidence-library-KO.md#source-notes)는 symptom material로만 사용합니다. 어느 것도 직접 실행한 기록을 대신하지 않습니다.
 
-## 실행 handoff: 다음 reader가 사실에서 이어 가도록 하기
+## 실행 인계: 다음 독자가 확인된 사실을 바탕으로 이어 가도록 하기
 
 task가 멈추거나 timeout이 나거나 사람의 판단이 필요해졌을 때 “계속하세요”만 남기지 마세요. 다음 reader가 관찰한 사실과 아직 허가되지 않은 범위를 먼저 보도록 다음 template을 사용합니다.
 
@@ -354,7 +354,7 @@ partial output, diff, external receipt를 확인 가능한 범위에서 보존�
 
 ## 실무용 task protocol
 
-Agent에게 일을 넘기기 전에 대화의 기세가 아니라 contract를 적습니다. 다음은 local text task의 예입니다.
+Agent에게 일을 넘기기 전에 대화의 흐름이 아니라 작업 계약을 기준으로 적습니다. 다음은 local text task의 예입니다.
 
 ```text
 Goal: docs/guide/ 안에서 존재하지 않는 local file을 가리키는 link를 report한다.
@@ -414,9 +414,8 @@ test를 어디에서 실행했고 무엇을 cover하지 않는지 알 수 없으
 
 ## sources와 업데이트 경계
 
-이 장의 안정적인 method는 proposal, execution, state, verification, authority를 분리하고 recovery를
-bounded하게 하는 것입니다. product별 event 이름, approval behavior, tool inventory, UI label, command
-syntax는 current official documentation에서 확인해야 합니다. 공개 issue는 symptom을 보고한 증거일 뿐,
+이 장의 안정적인 방법은 제안, 실행, 상태, 검증, 권한을 분리하고 복구 범위를 제한하는 것입니다. 제품별
+이벤트 이름, 승인 동작, 도구 목록, UI 라벨, 명령어 문법은 최신 공식 문서에서 확인해야 합니다. 공개 issue는 symptom을 보고한 증거일 뿐,
 prevalence, root cause, universal repair의 증거는 아닙니다. 참조는 English source chapter와
 [evidence library](../evidence-library-KO.md#source-notes)에 남아 있습니다. 이 장은 `candidate`,
 실험은 `not_run` 상태를 유지합니다.
