@@ -597,73 +597,73 @@
         },
         "ZH": {
           "path": "book/communication-clinic-ZH.md",
-          "content_status": "draft",
+          "content_status": "candidate",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-23-application-routes",
-          "coverage": "route-complete subset",
+          "source_revision": "f071e2f",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "The localized route cards and deep-link anchors are present, but this is not a complete translation of the full English pack; independent language review and learner-run evidence remain pending."
+          "reason": "The localized application practice pack and required route anchors are complete at the structural/content-contract level; independent language review and learner-run evidence remain pending."
         },
         "ES": {
           "path": "book/communication-clinic-ES.md",
-          "content_status": "draft",
+          "content_status": "candidate",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-23-application-routes",
-          "coverage": "route-complete subset",
+          "source_revision": "fcc0b17",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "The localized route cards and deep-link anchors are present, but this is not a complete translation of the full English pack; independent language review and learner-run evidence remain pending."
+          "reason": "The localized application practice pack and required route anchors are complete at the structural/content-contract level; independent language review and learner-run evidence remain pending."
         },
         "JA": {
           "path": "book/communication-clinic-JA.md",
-          "content_status": "draft",
+          "content_status": "candidate",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-23-application-routes",
-          "coverage": "route-complete subset",
+          "source_revision": "a9ae275",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "The localized route cards and deep-link anchors are present, but this is not a complete translation of the full English pack; independent language review and learner-run evidence remain pending."
+          "reason": "The localized application practice pack and required route anchors are complete at the structural/content-contract level; independent language review and learner-run evidence remain pending."
         },
         "KO": {
           "path": "book/communication-clinic-KO.md",
-          "content_status": "draft",
+          "content_status": "candidate",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-23-application-routes",
-          "coverage": "route-complete subset",
+          "source_revision": "d83b4f7",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "The localized route cards and deep-link anchors are present, but this is not a complete translation of the full English pack; independent language review and learner-run evidence remain pending."
+          "reason": "The localized application practice pack and required route anchors are complete at the structural/content-contract level; independent language review and learner-run evidence remain pending."
         },
         "DE": {
           "path": "book/communication-clinic-DE.md",
-          "content_status": "draft",
+          "content_status": "candidate",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-23-application-routes",
-          "coverage": "route-complete subset",
+          "source_revision": "3a9165e",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "The localized route cards and deep-link anchors are present, but this is not a complete translation of the full English pack; independent language review and learner-run evidence remain pending."
+          "reason": "The localized application practice pack and required route anchors are complete at the structural/content-contract level; independent language review and learner-run evidence remain pending."
         },
         "ZHTW": {
           "path": "book/communication-clinic-ZHTW.md",
-          "content_status": "draft",
+          "content_status": "candidate",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "2026-08-23-application-routes",
-          "coverage": "route-complete subset",
+          "source_revision": "5e1c599",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "繁體中文的路線卡片與深連結錨點已建立，但仍不是完整英文練習包的翻譯；獨立語言審校與學習者執行證據仍待完成。"
+          "reason": "繁體中文應用練習包與必要路線錨點已在結構與內容契約層面完成；獨立語言審校與學習者執行證據仍待完成。"
         },
         "FR": {
           "path": "book/communication-clinic-FR.md",
-          "content_status": "draft",
+          "content_status": "candidate",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-23-application-routes",
-          "coverage": "route-complete subset",
+          "source_revision": "fc4d000",
+          "coverage": "full",
           "run_status": "not_run",
-          "reason": "The French route cards and deep-link anchors are present, but the file is not a complete translation of the full English pack; independent native-language review and learner-run evidence remain pending."
+          "reason": "The French application practice pack and required route anchors are complete at the structural/content-contract level; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
