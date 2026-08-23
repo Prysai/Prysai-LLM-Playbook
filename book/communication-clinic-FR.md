@@ -1,8 +1,12 @@
-<!-- content_id: communication-clinic | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-22-fr-full-pack -->
+<!-- content_id: communication-clinic | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-22-fr-starter-routing -->
 
 # Pratique d’application facultative : langue, travail et recherche
 
-Pour une pratique courte et guidée, ouvrez la [boucle du point d’avancement](work-update-practice-loop-FR.md) ou la [boucle de vérification de recherche](research-check-practice-loop-FR.md). Ces cartes s’utilisent après le [Chapitre 0](guides/llm-fundamentals-FR.md) ; ce n’est pas une introduction à ce qu’est un LLM.
+**Utilisation :** après le [cœur des fondations LLM](guides/llm-fundamentals-FR.md)
+→ [première demande bornée](routes/universal-core-foundations-FR.md). Ces cartes
+appliquent la méthode de base ; elles n’expliquent pas ce qu’est un LLM. Pour
+une carte courte et prête à copier, ouvrez la [boucle du point d’avancement](work-update-practice-loop-FR.md)
+ou la [boucle de vérification de recherche](research-check-practice-loop-FR.md).
 
 **Statut :** `candidate` · **Exécution :** `not_run` · **Données :** textes fictifs ou autorisés uniquement.
 **État :** template_selected | practised | not_run | blocked
@@ -12,7 +16,43 @@ Vous êtes sur le parcours expliqué en français. Cette version est encore en
 cours de relecture ; les exemples dans la langue cible sont facultatifs et ne
 promettent ni maîtrise ni aisance.
 
-Si vous découvrez le projet et ne souhaitez pas pratiquer l’espagnol, commencez par la carte 3 de B. Les exemples en espagnol restent facultatifs.
+Si vous découvrez le projet, ne lisez pas tout le dossier avant d’essayer. Faites
+les quatre gestes de la section suivante, puis choisissez une seule route. Vous
+n’avez pas besoin de pratiquer l’espagnol : les exemples de langue restent
+facultatifs.
+
+## Commencer ici : un petit résultat, puis s’arrêter
+
+Pour une première visite, faites seulement ceci :
+
+1. **Nommez un résultat.** Remplacez « aide-moi à apprendre » par une chose que
+   vous voulez faire ou décider aujourd’hui.
+2. **Donnez le contexte de départ.** Fournissez uniquement les faits, le public,
+   la limite de temps et le matériel autorisé. Gardez les données privées ou
+   sensibles hors du chat.
+3. **Demandez une réponse contrôlable.** Précisez la forme attendue et un fait
+   ou critère que vous vérifierez vous-même.
+4. **Arrêtez-vous à la frontière.** S’il manque une entrée, une source, une
+   autorité ou une prochaine étape sûre, laissez le manque visible et posez une
+   question au lieu d’allonger la demande.
+
+Premier message prêt à copier :
+
+```text
+Aidez-moi à obtenir un petit résultat : [ce que je veux faire ou décider].
+Contexte de départ : [seuls les faits et documents que vous pouvez utiliser].
+Réponse attendue : [forme exacte, longueur ou question nécessaire].
+Limites : n’inventez aucun fait, ne citez aucune source que vous n’avez pas
+inspectée et n’effectuez aucune action externe. Je vérifierai [un fait, un critère
+ou un passage source].
+S’il manque une entrée ou une autorisation nécessaire, dites laquelle et arrêtez-vous.
+```
+
+Gardez la demande et la réponse originales. Après ce premier contrôle, choisissez
+une route ci-dessous ou retournez au livre. La carte de frontière, les contrôles
+de sources, l’enquête d’intérêt public, la récupération et la fiche de continuité
+sont du **matériel avancé facultatif** : ils servent quand la tâche s’élargit ou
+qu’une réponse échoue, pas comme prérequis de cette première pratique.
 
 <span id="language-practice-route"></span>
 
@@ -104,6 +144,65 @@ réponse. Choisissez une seule intention pour aujourd’hui : pratiquer une comp
 mettre en forme un point d’avancement ou vérifier une affirmation. Faites un essai
 bref et gardez une trace minimale. Cette carte d’entrée n’est ni un diagnostic ni
 un programme d’apprentissage complet.
+
+### Choisir une application après les fondations
+
+Choisissez la situation qui ressemble le plus à votre besoin **aujourd’hui**.
+Ouvrez une seule carte, faites votre propre essai, puis revenez ici seulement si
+une explication vous manque.
+
+- **Pratiquer une réponse en espagnol.** Commencez par la [vérification d’horaire
+  en quatre tours](#route-a-full) : vous essayez d’abord, puis le modèle corrige
+  une erreur qui change le sens au lieu de donner un long cours.
+- **Travailler une compétence sans recevoir la réponse toute faite.** Commencez
+  par la [première tentative observable](#general-skill-practice-route), par
+  exemple expliquer une idée ou préparer un point d’avancement.
+- **Vérifier une affirmation avant de la répéter.** Commencez par la [question et
+  le plan de sources](#bounded-research-route), puis réduisez la conclusion si
+  les sources manquent ou se contredisent.
+
+Ce sont des modèles `candidate`, pas une preuve d’efficacité pour chaque
+apprenant, modèle ou situation. Si une réponse a déjà dévié, utilisez la
+[route de récupération](#recovery-route). Avant d’introduire un fichier local,
+une source externe, un outil ou une action, lisez la [carte de frontière](#four-line-safety-card).
+
+## Avant de demander : choisir la bonne voie
+
+**Objectif :** nommer le plus petit type d’aide nécessaire avant qu’une demande
+ne devienne une recherche ou une action. Cette aide au routage n’est ni une
+formule de prompt, ni une vérification de source, ni une autorisation.
+
+Commencez par demander : **puis-je juger la réponse seulement à partir du texte
+ou des faits que j’ai fournis ?** Puis : **faut-il un fait externe à jour, ou
+quelque chose changerait-il hors de cette conversation ?**
+
+| Si votre demande ressemble à ceci | Choisissez cette voie | Premier geste sûr |
+|---|---|---|
+| « Rendez ce paragraphe fourni plus chaleureux, sans ajouter de faits. » | Texte uniquement | Utilisez le [Brief de dialogue](../skills/prysai-dialogue-brief/SKILL.md) ou le [Contrôle du premier tour](../skills/prysai-first-turn-check/SKILL.md). |
+| « Cette règle produit est-elle toujours à jour ? » | Un fait actuel borné | Utilisez [Source Investigator](../skills/prysai-source-investigator/SKILL.md) ; fixez une affirmation, une date et le responsable de la source. |
+| « Comparez plusieurs options et dites-moi ce que montrent les preuves. » | Recherche multi-source | Utilisez [Research Router](../skills/prysai-research-router/SKILL.md) ; définissez d’abord la décision, les options et les preuves acceptables. |
+| « Confirmez la règle puis modifiez la page publique. » | Action ou changement externe | Utilisez d’abord [Task Protocol](../skills/prysai-task-protocol/SKILL.md). La vérification de la règle et la publication sont deux décisions séparées. |
+
+### Petit reçu de routage
+
+Ne demandez pas au modèle de traiter les quatre voies à la fois. Écrivez celle
+que vous avez choisie et gardez ce reçu :
+
+```text
+demande dans mes mots :
+voie choisie :
+raison pour laquelle une voie plus petite ne suffit pas :
+première action sûre :
+ce qui doit faire arrêter le travail :
+inconnues :
+```
+
+**Cas d’échec :** « Vérifiez si cette règle est à jour et modifiez notre site. »
+Un lien dans une réponse peut donner une impression de travail terminé, mais on
+ignore encore qui possède le fait, quand il a été vérifié, qui peut publier,
+quelle page est visée et comment annuler une mauvaise modification. Séparez la
+question de source, puis créez un contrat d’action. Arrêtez-vous avant toute
+demande de donnée privée, d’accès ou d’écriture externe.
 
 <span id="request-escalation"></span>
 
