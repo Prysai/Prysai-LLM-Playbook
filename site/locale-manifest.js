@@ -7462,12 +7462,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "skills/prysai-skill-selector/SKILL-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "skills/prysai-skill-selector/SKILL-JA.md",
@@ -7536,12 +7535,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "skills/prysai-workflow-orchestrator/SKILL-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "skills/prysai-workflow-orchestrator/SKILL-JA.md",
@@ -7610,12 +7608,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "skills/prysai-research-router/SKILL-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "skills/prysai-research-router/SKILL-JA.md",
@@ -7684,12 +7681,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "skills/prysai-product-context/SKILL-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "skills/prysai-product-context/SKILL-JA.md",
@@ -7758,12 +7754,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "skills/prysai-learning-coach/SKILL-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "skills/prysai-learning-coach/SKILL-JA.md",
@@ -7832,12 +7827,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "skills/prysai-source-investigator/SKILL-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "skills/prysai-source-investigator/SKILL-JA.md",
@@ -7906,12 +7900,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "skills/prysai-prompt-card-editor/SKILL-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "skills/prysai-prompt-card-editor/SKILL-JA.md",
@@ -7980,12 +7973,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "skills/prysai-adversarial-project-review/SKILL-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "skills/prysai-adversarial-project-review/SKILL-JA.md",
@@ -8054,12 +8046,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "skills/prysai-request-escalation/SKILL-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "skills/prysai-request-escalation/SKILL-JA.md",
@@ -8128,12 +8119,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "skills/prysai-llm-comparison-protocol/SKILL-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "skills/prysai-llm-comparison-protocol/SKILL-JA.md",
@@ -8202,12 +8192,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "skills/prysai-practice-target/SKILL-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "skills/prysai-practice-target/SKILL-JA.md",
@@ -8276,12 +8265,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "skills/prysai-interruption-checkpoint/SKILL-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "skills/prysai-interruption-checkpoint/SKILL-JA.md",
@@ -8350,12 +8338,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "skills/prysai-shift-handoff/SKILL-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "skills/prysai-shift-handoff/SKILL-JA.md",
@@ -8424,12 +8411,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "skills/prysai-platform-observation-record/SKILL-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "skills/prysai-platform-observation-record/SKILL-JA.md",
@@ -8498,12 +8484,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "skills/prysai-language-partner/SKILL-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "skills/prysai-language-partner/SKILL-JA.md",
@@ -8572,12 +8557,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "skills/prysai-interview-rehearsal/SKILL-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "skills/prysai-interview-rehearsal/SKILL-JA.md",
@@ -8646,12 +8630,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "es": {
           "path": "skills/polish-open-source-prose/SKILL-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "skill-registry",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "skills/polish-open-source-prose/SKILL-JA.md",
