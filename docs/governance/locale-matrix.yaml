@@ -600,70 +600,70 @@
           "content_status": "draft",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-15",
-          "coverage": "starter-card subset",
+          "source_revision": "worktree-2026-08-23-application-routes",
+          "coverage": "route-complete subset",
           "run_status": "not_run",
-          "reason": "A Simplified Chinese starter-card subset exists; it is not a complete translation of the full English pack and independent language review remains pending."
+          "reason": "The localized route cards and deep-link anchors are present, but this is not a complete translation of the full English pack; independent language review and learner-run evidence remain pending."
         },
         "ES": {
           "path": "book/communication-clinic-ES.md",
           "content_status": "draft",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-16",
-          "coverage": "starter-card subset",
+          "source_revision": "worktree-2026-08-23-application-routes",
+          "coverage": "route-complete subset",
           "run_status": "not_run",
-          "reason": "A Spanish starter-card subset exists; it is not a complete translation of the full English pack and independent language review remains pending."
+          "reason": "The localized route cards and deep-link anchors are present, but this is not a complete translation of the full English pack; independent language review and learner-run evidence remain pending."
         },
         "JA": {
           "path": "book/communication-clinic-JA.md",
           "content_status": "draft",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-16",
-          "coverage": "starter-card subset",
+          "source_revision": "worktree-2026-08-23-application-routes",
+          "coverage": "route-complete subset",
           "run_status": "not_run",
-          "reason": "A Japanese starter-card subset exists; it is not a complete translation of the full English pack and independent language review remains pending."
+          "reason": "The localized route cards and deep-link anchors are present, but this is not a complete translation of the full English pack; independent language review and learner-run evidence remain pending."
         },
         "KO": {
           "path": "book/communication-clinic-KO.md",
           "content_status": "draft",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-16",
-          "coverage": "starter-card subset",
+          "source_revision": "worktree-2026-08-23-application-routes",
+          "coverage": "route-complete subset",
           "run_status": "not_run",
-          "reason": "A Korean starter-card subset exists; it is not a complete translation of the full English pack and independent language review remains pending."
+          "reason": "The localized route cards and deep-link anchors are present, but this is not a complete translation of the full English pack; independent language review and learner-run evidence remain pending."
         },
         "DE": {
           "path": "book/communication-clinic-DE.md",
           "content_status": "draft",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-16",
-          "coverage": "starter-card subset",
+          "source_revision": "worktree-2026-08-23-application-routes",
+          "coverage": "route-complete subset",
           "run_status": "not_run",
-          "reason": "A German starter-card subset exists; it is not a complete translation of the full English pack and independent language review remains pending."
+          "reason": "The localized route cards and deep-link anchors are present, but this is not a complete translation of the full English pack; independent language review and learner-run evidence remain pending."
         },
         "ZHTW": {
           "path": "book/communication-clinic-ZHTW.md",
           "content_status": "draft",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "2026-08-18-zhtw-bootstrap",
-          "coverage": "starter-card subset",
+          "source_revision": "2026-08-23-application-routes",
+          "coverage": "route-complete subset",
           "run_status": "not_run",
-          "reason": "繁體中文起步卡片子集已建立；它不是完整英文練習包的翻譯，獨立語言審校與學習者執行證據仍待完成。"
+          "reason": "繁體中文的路線卡片與深連結錨點已建立，但仍不是完整英文練習包的翻譯；獨立語言審校與學習者執行證據仍待完成。"
         },
         "FR": {
           "path": "book/communication-clinic-FR.md",
-          "content_status": "candidate",
+          "content_status": "draft",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-21-fr-bootstrap",
-          "coverage": "full",
+          "source_revision": "worktree-2026-08-23-application-routes",
+          "coverage": "route-complete subset",
           "run_status": "not_run",
-          "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
+          "reason": "The French route cards and deep-link anchors are present, but the file is not a complete translation of the full English pack; independent native-language review and learner-run evidence remain pending."
         }
       }
     },
