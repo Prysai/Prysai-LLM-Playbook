@@ -359,27 +359,33 @@ try {
     );
   }
   await readerBrandPage.close();
-  // The localized application guide is intentionally a starter-card subset.
-  // Do not preserve an English-only detailed fragment when the local document
-  // cannot satisfy it: link to the selected-language overview and say why.
-  await page.goto(`${origin}/site/?lang=zh`, { waitUntil: 'networkidle' });
-  const localizedLanguageBoundary = page.locator('#everyday-prompts [data-prompt-card]').first().getByRole('link', { name: /练习边界/ });
-  assert.match(
-    await localizedLanguageBoundary.getAttribute('href'),
-    /communication-clinic-ZH\.md&lang=zh#language-practice-route$/,
-    'localized language prompt boundary lost its available local anchor',
-  );
-  const localizedResearchBoundary = page.locator('#everyday-prompts [data-prompt-card]').nth(1).getByRole('link', { name: /研究边界/ });
-  assert.match(
-    await localizedResearchBoundary.getAttribute('href'),
-    /communication-clinic-ZH\.md&lang=zh$/,
-    'localized research prompt boundary retained a missing English-only fragment',
-  );
-  assert.equal(
-    await localizedResearchBoundary.locator('[data-locale-anchor-note]').innerText(),
-    '本地概览；该详细专题尚未完成翻译。',
-    'localized research prompt boundary does not disclose its unavailable detailed section',
-  );
+  // The localized application guide exposes the same low-risk route anchors in
+  // every language. Keep the prompt cards and Reader destination in one locale;
+  // a stale English fragment would silently move the reader to the article top.
+  const localizedBoundaryCases = {
+    zh: { languageAnchor: 'language-practice-route', researchAnchor: 'bounded-research-route' },
+    es: { languageAnchor: 'language-practice-route', researchAnchor: 'bounded-research-route' },
+    ja: { languageAnchor: 'language-practice-route', researchAnchor: 'bounded-research-route' },
+    ko: { languageAnchor: 'language-practice-route', researchAnchor: 'bounded-research-route' },
+    de: { languageAnchor: 'language-practice-route', researchAnchor: 'bounded-research-route' },
+    'zh-tw': { languageAnchor: 'language-practice-route', researchAnchor: 'bounded-research-route' },
+    fr: { languageAnchor: 'language-practice-route', researchAnchor: 'bounded-research-route' },
+  };
+  for (const [locale, route] of Object.entries(localizedBoundaryCases)) {
+    await page.goto(`${origin}/site/?lang=${locale}`, { waitUntil: 'networkidle' });
+    const localizedLanguageBoundary = page.locator('#everyday-prompts [data-prompt-card]').first().locator('a');
+    assert.match(
+      await localizedLanguageBoundary.getAttribute('href'),
+      new RegExp(`communication-clinic-${locale === 'zh-tw' ? 'ZHTW' : locale.toUpperCase()}\\.md&lang=${locale}#${route.languageAnchor}$`),
+      `${locale} language prompt boundary does not stay on its local route`,
+    );
+    const localizedResearchBoundary = page.locator('#everyday-prompts [data-prompt-card]').nth(1).locator('a');
+    assert.match(
+      await localizedResearchBoundary.getAttribute('href'),
+      new RegExp(`communication-clinic-${locale === 'zh-tw' ? 'ZHTW' : locale.toUpperCase()}\\.md&lang=${locale}#${route.researchAnchor}$`),
+      `${locale} research prompt boundary does not stay on its local route`,
+    );
+  }
   await page.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
   // The home page must lead with outcomes, not internal development labels.
   // Evidence remains available in the dedicated status section and Reader.
