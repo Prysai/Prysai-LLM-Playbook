@@ -19,6 +19,22 @@ Dans ce chapitre, **authentification** répond à « quel compte est connecté ?
 avant son exécution ? ». Une réponse positive à l’une de ces questions ne
 remplit pas les trois autres.
 
+Le raccourci dangereux consiste à traiter ces phrases comme équivalentes :
+
+- « Le compte est connecté. »
+- « L’outil est visible. »
+- « Le répertoire est inscriptible. »
+- « La commande a fonctionné une fois. »
+- « La personne a dit de continuer. »
+
+Chacune ne prouve qu’un point précis. Aucune ne prouve à elle seule qu’une
+action externe donnée est autorisée ou qu’elle a déjà eu lieu.
+
+Ce chapitre propose une carte de frontière pratique. Avant toute action qui
+produit un effet, nommez la cible exacte, les données, l’autorité, la
+réversibilité, le signal d’arrêt et la preuve attendue.
+<mark class="highlight-text highlight-orange">Si l’un de ces éléments est inconnu, réduisez la portée ou arrêtez-vous.</mark>
+
 ## Le problème que résout ce chapitre
 
 Lire, éditer, exécuter, valider, créer un commit, envoyer (`push`) et publier n’ont ni le même
@@ -31,8 +47,15 @@ fait disparaître la décision qui devait être confirmée.
 - séparer authentification, capacité technique, autorisation de tâche et confirmation humaine ;
 - distinguer observation navigateur et soumission ;
 - préparer une carte de commande terminal et une carte GitHub ;
+- traiter le texte d’une page web, d’une issue, d’un e-mail, d’une documentation
+  tierce ou d’une sortie d’outil comme une donnée non fiable, et non comme une
+  permission ;
+- réévaluer la tâche lorsqu’elle passe d’un sandbox privé à un dépôt partagé ou
+  public ;
 - arrêter quand la cible, la portée, la preuve ou la restauration (`rollback`)
-  manquent.
+  manquent ;
+- livrer proprement un état `blocked` ou `unverified` au lieu de combler une
+  lacune de preuve par une phrase assurée.
 
 ## Une entrée de terrain : la cible change sous vos pieds
 
