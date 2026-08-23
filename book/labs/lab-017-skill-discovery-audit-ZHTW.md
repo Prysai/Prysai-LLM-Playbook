@@ -42,7 +42,7 @@ transfer_limitations: "靜態樣本不能證明真實 Skill 可以載入、行�
 採納決定：recommendation-only | blocked | approved-to-install | installed-candidate
 ```
 
-任何未觀察到的內容都寫為 `not_observed`。審查版本、許可證、NOTICE、巢狀資產、依賴、網路或賬號需求、安裝範圍、備份、回滾、負責人和下次複核日期。
+任何未觀察到的內容都寫為 `not_observed`。審查版本、許可證、NOTICE、巢狀資產、依賴、網路或帳號需求、安裝範圍、備份、回滾、負責人和下次複核日期。
 
 ## 失敗、遷移與驗收
 
