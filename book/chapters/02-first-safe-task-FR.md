@@ -13,8 +13,9 @@ comparaison exacte entre les langues.
 ## Commencer ici : rendre le premier pas volontairement banal
 
 Vous n’avez pas besoin d’un projet spectaculaire pour apprendre à utiliser un
-outil d’intelligence artificielle. Une tâche trop ambitieuse mélange trop de fichiers, de permissions et
-d’inconnues pour permettre de comprendre ce qui a réussi ou échoué. Choisissez
+outil d’intelligence artificielle. Une tâche trop ambitieuse mélange trop de
+fichiers, d’autorisations et d’inconnues, au point de masquer ce qui a réussi
+ou échoué. Choisissez
 une cible visible, une modification autorisée et un contrôle répétable. Sans
 projet temporaire, utilisez le [jeu de test hors ligne Première modification
 sûre](../routes/first-safe-change-FR.md). Il ne demande ni compte, ni réseau,
@@ -61,7 +62,7 @@ conviennent.
 | Surface | Copie temporaire ou environnement isolé (`sandbox`), chemin absolu et état. | Rester en lecture seule et demander la surface. |
 | Cible | Un fichier non sensible et son chemin exact. | Ne pas deviner. |
 | Baseline | Copie propre, hash ou changements existants connus. | Enregistrer l’état avant de toucher. |
-| Action | Une modification et les contrôles nécessaires ; pas d’installation, commit, push ou publication. | Demander si l’effet est autorisé. |
+| Action | Une modification et les contrôles nécessaires ; pas d’installation, de commit, de push ni de publication. | Demander si l’effet est autorisé. |
 | Acceptation | Contrôle tiré de la configuration, du test, du fichier ou de la source réelle. | Ajouter le contrôle. |
 | Arrêt | Règle pour entrée, autorité, délai, périmètre ou preuve manquants. | S’arrêter. |
 
@@ -97,7 +98,7 @@ Pour chaque ligne, ajoutez un état et un artefact :
 | Ligne | État à utiliser | Artefact minimal |
 |---|---|---|
 | Entrée ou chemin | `observed` / `unknown` | chemin, extrait ou liste réellement relu(e) |
-| Capacité | `verified` / `unverified` | sonde sans effet, sortie ou inventaire borné |
+| Capacité | `verified` / `unverified` | vérification sans effet, sortie ou inventaire borné |
 | Autorisation | `confirmed` / `missing` | décision explicite et cible nommée |
 | Action | `not_run` / `performed` | commande, diff ou événement daté |
 | Acceptation | `verified` / `partial` / `blocked` | contrôle, résultat et limite de portée |
@@ -113,7 +114,7 @@ pour les faits produits datés. La méthode stable est :
 
 | Événement | Ce qu’il peut établir | Ce qu’il ne prouve pas seul |
 |---|---|---|
-| Proposition du modèle | Une action possible a été générée. | Permission ou exécution. |
+| Proposition du modèle | Une action possible a été générée. | Autorisation ou exécution. |
 | Sandbox affichée | Une limite technique est décrite. | Accès à tous les chemins. |
 | Approbation acceptée | Une approbation précise a eu lieu. | Une portée plus large. |
 | Réponse de succès | Une réponse d’outil a été reçue. | Objet modifié correctement. |
@@ -239,7 +240,7 @@ reproductions locales. Chaque carte sépare ce qui a été observé de ce qui re
 | Aucun événement visible | Attente et retry ne prouvent pas l’absence d’effet. | Conserver chronologie, checkpoint, diff et effets avant reprise. |
 | Commande en `Working` | Démarrage, fin et contrôle réussi sont trois faits. | Fixer un délai, capturer sortie/état et inspecter le diff. |
 | Vérification devenue réinstallation | Contrôle et mutation persistante sont différents. | Séparer source, test, installation, redémarrage, publication et contrôle en ligne. |
-| Configuration sans capacité | Visible, découvrable, utilisable (`callable`), lisible et inscriptible sont distincts. | Tester le chemin courant avec une sonde inoffensive. |
+| Configuration sans capacité | Visible, découvrable, utilisable (`callable`), lisible et inscriptible sont distincts. | Tester le chemin courant avec une vérification inoffensive. |
 | Terminé dans l’interface | État d’exécution et résultat relu peuvent diverger. | Vérifier l’exécution, l’artefact, le diff, les effets et la revue. |
 
 ### Cas CH2-01 : aucun événement visible n’est pas un résultat
@@ -299,23 +300,23 @@ courante. Vérifiez séparément le répertoire courant, les racines lisibles et
 inscriptibles, et l’étape d’environnement ; ne lisez jamais un secret pour
 prouver son injection.
 
-#### La plus petite sonde sûre
+#### La plus petite vérification sans effet
 
 1. confirmer le chemin absolu et le répertoire courant ;
-2. vérifier l’inclusion dans la sandbox déjà autorisée ;
+2. vérifier l’inclusion dans l’environnement isolé déjà autorisé ;
 3. créer un seul fichier sentinelle, sans secret ni donnée client ;
 4. le relire, noter le résultat et le retirer seulement si le nettoyage est
    autorisé ;
-5. consigner chemin, opération, résultat et limites de la sonde.
+5. consigner chemin, opération, résultat et limites de la vérification.
 
-Cette sonde ne change pas les permissions, n’installe rien, n’appelle pas le
-réseau et ne prouve pas l’accès à la production. Une vérification réussie ne
-prouve que cette opération, à cet endroit, dans ce run. Si la portée ou le
+Cette vérification ne change pas les autorisations, n’installe rien, n’appelle
+pas le réseau et ne prouve pas l’accès à la production. Une vérification réussie
+ne prouve que cette opération, à cet endroit, dans ce run. Si la portée ou le
 nettoyage sont ambigus, le résultat est `blocked` ou `unverified`.
 
-### Fiche de sonde et de reprise
+### Fiche de vérification et de reprise
 
-Avant la sonde, inscrivez la cible et la limite dans une fiche courte :
+Avant la vérification, inscrivez la cible et la limite dans une fiche courte :
 
 ```text
 run_id :
@@ -330,8 +331,8 @@ arrêt : chemin ambigu, donnée sensible, écriture hors périmètre ou preuve a
 ```
 
 Après la relecture, classez le résultat `observed`, `verified`,
-`unverified` ou `blocked`. La sonde n’autorise pas une seconde écriture, une
-installation ou une publication ; elle répond seulement à la question précise
+`unverified` ou `blocked`. Cette vérification n’autorise pas une seconde écriture,
+une installation ou une publication ; elle répond seulement à la question précise
 qui a été écrite dans la fiche.
 
 ### Cas CH2-05 : terminé dans l’interface n’est pas relu et terminé
