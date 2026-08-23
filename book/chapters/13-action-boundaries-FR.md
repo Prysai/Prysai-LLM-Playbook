@@ -60,7 +60,7 @@ devait être confirmée.
 - livrer proprement un état `blocked` ou `unverified` au lieu de combler une
   lacune de preuve par une phrase assurée.
 
-## Une entrée de terrain : la cible change sous vos pieds
+## Un cas observé sur le terrain : la cible change sous vos pieds
 
 Un bouton de connexion n’est pas une autorisation pour ce dépôt. Un commit local
 n’est pas un envoi vers le dépôt distant (`push`). Un `push` n’est pas une page
