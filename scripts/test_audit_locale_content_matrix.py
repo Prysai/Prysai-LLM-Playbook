@@ -37,6 +37,10 @@ def main() -> int:
         not any(item["kind"] == "missing-reader-alias" for item in result["issues"]),
         "neutral research records were misclassified as missing localized aliases",
     )
+    require(
+        not any(item["kind"] == "duplicate-authored-anchor" for item in result["issues"]),
+        "a localized Reader document contains a duplicate authored anchor",
+    )
     require(result["summary"]["EN"]["full"] == 56, "English source coverage changed unexpectedly")
     require(result["summary"]["FR"]["full"] == 55, "French governed coverage changed unexpectedly")
     print("LOCALE_CONTENT_MATRIX_AUDIT_TESTS_OK")

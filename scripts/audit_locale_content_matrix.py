@@ -13,6 +13,7 @@ import argparse
 import json
 import re
 import sys
+from collections import Counter
 from pathlib import Path
 from typing import Any
 
@@ -63,6 +64,7 @@ def file_record(path_text: str, content_id: str, locale: str, *, check_identity:
         "locale": locale,
         "identity_ok": False,
         "anchors": [],
+        "duplicate_anchors": [],
         "embedded_navigation": False,
         "lines": 0,
         "chars": 0,
@@ -77,7 +79,9 @@ def file_record(path_text: str, content_id: str, locale: str, *, check_identity:
     # their own front-matter identity.  Course units and supplemental guides
     # carry the governed content_id marker and are checked strictly.
     result["identity_ok"] = not check_identity or bool(match and match.group(1) == content_id and match.group(2).upper() == locale)
-    result["anchors"] = sorted(set(ANCHOR.findall(text)))
+    authored_anchors = ANCHOR.findall(text)
+    result["anchors"] = sorted(set(authored_anchors))
+    result["duplicate_anchors"] = sorted(anchor for anchor, count in Counter(authored_anchors).items() if count > 1)
     result["embedded_navigation"] = "<!-- chapter-navigation:start -->" in text or "<!-- lab-navigation:start -->" in text
     return result
 
@@ -116,6 +120,16 @@ def audit() -> dict[str, Any]:
                 issues.append({"content_id": content_id, "locale": locale, "kind": "missing-file", "path": record["path"]})
             elif not record["identity_ok"]:
                 issues.append({"content_id": content_id, "locale": locale, "kind": "identity-mismatch", "path": record["path"]})
+            if record["duplicate_anchors"]:
+                issues.append(
+                    {
+                        "content_id": content_id,
+                        "locale": locale,
+                        "kind": "duplicate-authored-anchor",
+                        "duplicates": record["duplicate_anchors"],
+                        "path": record["path"],
+                    }
+                )
             if locale != "EN" and record["coverage"] != "full":
                 issues.append(
                     {
