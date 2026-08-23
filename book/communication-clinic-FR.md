@@ -4,7 +4,7 @@
 
 **Utilisation :** après le [cœur des fondations LLM](guides/llm-fundamentals-FR.md)
 → [première demande bornée](routes/universal-core-foundations-FR.md). Ces cartes
-appliquent la méthode de base ; elles n’expliquent pas ce qu’est un LLM. Pour
+appliquent la méthode de base ; elles ne remplacent pas le [Chapitre 0](guides/llm-fundamentals-FR.md) : ce n’est pas une introduction à ce qu’est un LLM. Pour
 une carte courte et prête à copier, ouvrez la [boucle du point d’avancement](work-update-practice-loop-FR.md)
 ou la [boucle de vérification de recherche](research-check-practice-loop-FR.md).
 
@@ -17,9 +17,7 @@ cours de relecture ; les exemples dans la langue cible sont facultatifs et ne
 promettent ni maîtrise ni aisance.
 
 Si vous découvrez le projet, ne lisez pas tout le dossier avant d’essayer. Faites
-les quatre gestes de la section suivante, puis choisissez une seule route. Vous
-n’avez pas besoin de pratiquer l’espagnol : les exemples de langue restent
-facultatifs.
+les quatre gestes de la section suivante, puis choisissez une seule route. Si vous découvrez le projet et ne souhaitez pas pratiquer l’espagnol, commencez par la carte 3 de B. Les exemples de langue restent facultatifs.
 
 ## Commencer ici : un petit résultat, puis s’arrêter
 
