@@ -364,7 +364,7 @@ not_proven: 不是 Skill 根因，也不是遠端網站可用性的證明
 
 ## 來源與更新提示
 
-Skill 的觸發契約、漸進揭露、失敗處理、任務集評測和證據邊界是穩定方法；具體呼叫語法、發現範圍、目錄結構、外掛能力和資源載入行為則屬於易變事實。產品事實請以[OpenAI Codex 官方基線](../evidence-library-ZHTW.md#source-notes)及其中列出的目前官方文件為準；現實問題請回到[現場研究記錄](../evidence-library-ZHTW.md#source-notes)檢視證據等級、原始 URL 和調查限制。吸收外部 Skill、程式碼或資產前，依專案的[資產與來源登錄表](../evidence-library-ZHTW.md#source-notes)記錄來源、授權、適用範圍和複核日期。
+Skill 的觸發契約、漸進揭露、失敗處理、任務集評測和證據邊界是穩定方法；具體呼叫語法、發現範圍、目錄結構、外掛能力和資源載入行為則屬於易變事實。產品事實請以[OpenAI Codex 官方基線](../evidence-library-ZHTW.md#source-notes)及其中列出的目前官方文件為準；現實問題請回到[現場研究記錄](../evidence-library-ZHTW.md#source-notes)檢視證據等級、原始 URL 和調查限制。吸收外部 Skill、程式碼或資產前，依專案的[資產與來源登記表](../evidence-library-ZHTW.md#source-notes)記錄來源、授權、適用範圍和複核日期。
 
 ## 一次可觀察的設計流程
 
