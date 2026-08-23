@@ -80,6 +80,7 @@
         {"id": "foundation-route-structure", "argv": ["{python}", "scripts/validate_foundation_route_structure.py"]},
         {"id": "translation-depth", "argv": ["{python}", "scripts/audit_translation_depth.py"]},
         {"id": "semantic-contract-audit", "argv": ["{python}", "scripts/audit_semantic_contract.py", "--fail-on-missing"]},
+        {"id": "semantic-contract-deep-audit", "argv": ["{python}", "scripts/audit_semantic_contract.py", "--deep"]},
         {"id": "semantic-contract-audit-fixtures", "argv": ["{python}", "scripts/test_audit_semantic_contract.py"]},
         {"id": "first-path-localization", "argv": ["{python}", "scripts/audit_first_path_localization.py"]},
         {"id": "first-path-localization-fixtures", "argv": ["{python}", "scripts/test_audit_first_path_localization.py"]},
