@@ -308,8 +308,8 @@ résultat de campagne.
 <nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="16-engineering-track-FR.md" aria-label="Chapitre précédent : Chapitre 16 · Ingénierie fiable">← Précédent<br><strong>Chapitre 16 · Ingénierie fiable</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="18-content-design-data-automation-FR.md" aria-label="Chapitre suivant : Chapitre 18 · Contenu, design, données et automatisation">Suivant →<br><strong>Chapitre 18 · Contenu, design, données et automatisation</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="16-engineering-track-FR.md" aria-label="Chapitre précédent: Chapitre 16 · Ingénierie fiable">← Précédent<br><strong>Chapitre 16 · Ingénierie fiable</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="18-content-design-data-automation-FR.md" aria-label="Chapitre suivant: Chapitre 18 · Contenu, design, données">Suivant →<br><strong>Chapitre 18 · Contenu, design, données</strong></a></td>
     </tr>
   </table>
 </nav>
