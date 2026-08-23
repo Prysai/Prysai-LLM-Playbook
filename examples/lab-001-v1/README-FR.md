@@ -1,60 +1,60 @@
-# Lab 001 v1 — Fixture de première modification sûre
+# Lab 001 v1 — Fixture pour une première modification sûre
 
-Cette petite fixture synthétique accompagne le [Lab 001](../../book/labs/lab-001-first-safe-task-FR.md).
-Elle ne contient ni projet réel, ni historique Git, ni identifiant, ni requête
-réseau, ni installation, ni compte, ni appel de modèle, ni effet externe.
+Cette petite fixture synthétique accompagne le [Lab 001](../../book/labs/lab-001-first-safe-task-FR.md). Elle ne contient ni projet réel, ni historique Git, ni identifiant, ni requête réseau, ni installation, ni compte, ni appel de modèle, ni effet externe.
 
 ## Ce que vous allez modifier
 
-Copiez **tout** ce dossier dans un répertoire temporaire. Dans la copie, lisez
-`seed/README.md`, puis ne modifiez que ce fichier. Ne touchez ni à
-`verify_readme.py`, ni à `expected/acceptance.json`.
+Copiez **tout ce dossier** dans un emplacement temporaire. Dans cette copie,
+ouvrez `seed/README.md` et ne modifiez que ce fichier. Ne modifiez ni
+`verify_readme.py`, ni `expected/acceptance.json`.
 
-Le contrat d’acceptation indique la correction attendue : la commande d’aperçu
-doit mentionner le port `8080` et le README doit donner l’URL locale. Comparez
-les éléments fixes du contrat ; ne déduisez pas une commande à partir d’une
-réponse de modèle.
+Le contrat d’acceptation indique la correction à effectuer : la commande de
+prévisualisation doit mentionner le port `8080`, et le README doit mentionner
+l’URL locale. Comparez ces éléments avec la source d’acceptation locale ; ne
+devinez pas la commande à partir d’une réponse de modèle.
 
-## Exécuter la fixture
+## Déroulement
 
 Dans la copie, ouvrez `seed/README.md` et `expected/acceptance.json` côte à côte.
 
-1. Avant de modifier quoi que ce soit, constatez que le README ne contient pas
-   le port et l’URL locale exigés.
+1. Avant toute modification, constatez que le README ne contient ni le port
+   requis ni l’URL locale.
 2. Effectuez l’unique correction autorisée dans le README.
 3. Vérifiez que toutes les valeurs de `required_readme_strings` sont présentes :
-   contrôle manuel `3/3`.
+   le contrôle manuel doit donner `3/3`.
 
-Ce contrôle manuel est le chemin par défaut. Il ne demande ni compte, ni paquet,
-ni installation, ni dépôt Git, ni réseau.
+Si Python 3 est déjà disponible, vous pouvez aussi ouvrir un terminal dans la
+copie et lancer :
 
-Si Python 3 fonctionne déjà sur votre machine, vous pouvez aussi lancer
-`python .\seed\verify_readme.py` dans un terminal ouvert dans la copie. Le
-premier résultat doit être `FIRST_SAFE_CHANGE_FAILED` ; après la correction
-autorisée, il doit être `FIRST_SAFE_CHANGE_OK`. N’installez pas Python pour
-obtenir ce signal supplémentaire.
+```powershell
+python .\seed\verify_readme.py
+```
 
-## Fiche de tâche bornée
+Le premier résultat attendu est `FIRST_SAFE_CHANGE_FAILED`. Après la correction
+autorisée, il doit devenir `FIRST_SAFE_CHANGE_OK`. N’installez pas Python
+uniquement pour obtenir ce signal supplémentaire.
+
+## Carte de tâche bornée
 
 ```text
-Objectif : corriger les instructions d’aperçu local dans seed/README.md.
+Objectif : corriger les instructions de prévisualisation locale dans seed/README.md.
 Sandbox : <le dossier lab-001-v1 copié temporairement>.
 À lire d’abord : seed/README.md et expected/acceptance.json.
 Modification autorisée : seed/README.md uniquement, après présentation d’un plan.
-Interdit : modifier le vérificateur ou le fichier d’acceptation ; installer ;
-  utiliser le réseau ; lire des secrets ; commit ; envoyer vers un dépôt distant ;
-  publier ; contacter quelqu’un ; modifier un autre fichier.
-Acceptation : confirmer manuellement required_readme_strings 3/3 ; si Python est
-  déjà disponible, le vérificateur fourni renvoie aussi FIRST_SAFE_CHANGE_OK.
-Reçu : résultat initial, plan, diff exact du README, second résultat du contrôle
-  et liste explicite de ce qui reste non vérifié.
-Arrêt : la copie locale, la cible ou la source d’acceptation est indisponible.
+Interdit : modifier le vérificateur ou le fichier d’acceptation, installer,
+  utiliser le réseau, lire des secrets, créer un commit, envoyer vers un dépôt
+  distant (`push`), publier, contacter quelqu’un ou modifier un autre fichier.
+Acceptation : confirmer manuellement `required_readme_strings 3/3` ; si Python
+  est déjà disponible, le vérificateur fourni renvoie aussi `FIRST_SAFE_CHANGE_OK`.
+Reçu : état initial, plan, diff exact du README, second résultat du contrôle et
+  liste explicite des éléments non vérifiés.
+Arrêt : la copie locale, la cible ou la source d’acceptation est introuvable.
 ```
 
-## Ce que signifie le résultat
+## Ce que signifie un résultat positif
 
-La fixture et un éventuel succès local établissent seulement le comportement de
-ce vérificateur synthétique et fixe sur cette forme de README. Ils ne montrent
-pas qu’une personne a terminé l’exercice, qu’un modèle a suivi la fiche, qu’une
-commande d’un projet réel est correcte ou que la méthode se transfère à une
-autre tâche.
+La fixture et le contrôle local établissent seulement le comportement de ce
+vérificateur synthétique fixe sur cette structure de README. Ils ne prouvent
+ni qu’un apprenant a terminé l’exercice, ni qu’un modèle a suivi la carte, ni
+que la commande convient à un projet réel, ni que la méthode se transfère à
+une autre tâche.
