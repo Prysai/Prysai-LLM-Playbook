@@ -48,7 +48,7 @@ Skill은 방법과 라우팅 계약이고 tool은 외부를 관찰하거나 바�
 
 ## 연습과 경계
 
-고정 revision의 두 후보를 설치하지 않고 검토하세요. A는 추적 가능한 license 신호와 작업 적합성이 있어 `recommendation-only`가 될 수 있습니다. B는 license / NOTICE 또는 구체적인 rollback이 없어 `blocked`여야 합니다. URL, revision, 인벤토리, 의존성, 권한, 격리 대상, backup, 복원, 승인, owner를 기록하고 A에 대해 긍정, 경계, 실패·주입, 전이 테스트를 설계하되 실행하지 마세요.
+고정 리비전의 두 후보를 설치하지 않고 검토하세요. A는 추적 가능한 라이선스 신호와 작업 적합성이 있어 `recommendation-only`가 될 수 있습니다. B는 라이선스·NOTICE 또는 구체적인 복구 계획이 없어 `blocked`여야 합니다. URL, 리비전, 인벤토리, 의존성, 권한, 격리 대상, 백업, 복원, 승인, 담당자를 기록하고 A에 대해 긍정, 경계, 실패·주입, 전이 테스트를 설계하되 실행하지 마세요.
 
 이 연습은 검토 결정을 보여 줄 뿐 발견, 로드, 실행, 실제 채택을 증명하지 않습니다. 선언된 환경에서 실행하고 독립 검토한 기록이 생기기 전까지 이 장은 `candidate / not_run`입니다.
 
@@ -125,7 +125,7 @@ A와 B 각각에 source, revision, 실제 path, license/NOTICE 결론, dependenc
 
 ## 실제 문제: 발견 가능하다고 채택 가능한 것은 아니다
 
-디렉터리 항목, star, demo는 후보를 보이게 할 수 있지만 origin, nested dependency, side effect를 증명하지 않습니다. 먼저 구체적으로 반복되는 작업을 개선하는지 결정하고, 그 다음 secret 없는 좁은 환경에서 검토합니다.
+디렉터리 항목, 별표 수, 데모는 후보를 발견하게 해 줄 뿐 출처, 중첩 의존성, 외부 부작용을 증명하지 않습니다. 먼저 구체적으로 반복되는 작업을 개선하는지 결정하고, 그다음 비밀이 없는 제한된 환경에서 검토합니다.
 
 ## 전이 과제
 
@@ -151,14 +151,14 @@ A와 B 각각에 source, revision, 실제 path, license/NOTICE 결론, dependenc
 
 ## 채택 기록: 검토할 수 있음을 먼저 보이고 활성화를 결정하기
 
-이 기록은 프로젝트가 직접 만든 Skill과 외부에서 찾은 후보 모두에 사용합니다. 인기 저장소나 매끄러운 설명, 디렉터리에 보인다는 사실만으로 외부 콘텐츠를 신뢰하거나 실행 가능한 것으로 볼 수는 없습니다.
+이 기록은 프로젝트가 직접 만든 Skill과 외부에서 찾은 후보 모두에 사용합니다. 인기 저장소나 매끄러운 설명, 디렉터리에 보인다는 사실만으로 외부 콘텐츠를 신뢰하거나 실행할 수 있다고 판단해서는 안 됩니다.
 
 ```text
 candidate name과 version / commit:
 source: original | external; external project original link:
 owner와 review date:
-메울 구체적인 task gap:
-license: code, text, asset, nested dependency가 각각 명확한가:
+메울 구체적인 작업 공백:
+license: 코드, 텍스트, 에셋, 중첩 의존성이 각각 명확한가:
 예상 read / write / network / install / send / publish:
 positive, boundary, failure, transfer case:
 observed: file | discovery | selection | load | execution | read-back verification
