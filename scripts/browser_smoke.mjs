@@ -666,7 +666,7 @@ try {
   );
   assert.match(
     await page.locator('.mobile-index-rail a[data-content-id="field-problems-index-2026-08-10"]').getAttribute('href'),
-    /reader\.html\?path=docs%2Fresearch%2Ffield-problems-index-2026-08-10\.md&lang=fr$/,
+    /reader\.html\?path=docs%2Fresearch%2Ffield-problems-index-2026-08-10-FR\.md&lang=fr$/,
     'mobile field-case index does not retain the selected French locale',
   );
   await mobileProjectDetails.locator('summary').click();
