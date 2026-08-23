@@ -14,7 +14,7 @@ comparaison exacte entre les langues.
 
 Vous n’avez pas besoin d’un projet spectaculaire pour apprendre à utiliser un
 outil d’intelligence artificielle. Une tâche dramatique mélange trop de fichiers, de permissions et
-inconnues pour permettre de comprendre ce qui a réussi ou échoué. Choisissez
+d’inconnues pour permettre de comprendre ce qui a réussi ou échoué. Choisissez
 une cible visible, une modification autorisée et un contrôle répétable. Sans
 projet temporaire, utilisez le [jeu de test hors ligne Première modification
 sûre](../routes/first-safe-change-FR.md). Il ne demande ni compte, ni réseau,
@@ -44,6 +44,7 @@ définir → inspecter → confirmer → modifier → relire le diff → vérifi
 - écrire le fichier exact et la frontière d’action avant l’édition ;
 - distinguer capacité technique, approbation, état modifié et preuve ;
 - récupérer sans élargir l’autorité ;
+- relire un diff et un contrôle ciblé avant de déclarer la tâche terminée ;
 - livrer un compte rendu qui sépare observé, vérifié, non vérifié et bloqué.
 
 ## Une première tâche est une petite expérience
@@ -433,8 +434,8 @@ l’application.
 ### Variantes d’échec
 
 Dans une copie temporaire, rendez le nom du script différent de README, faites
-attendre un contrôle, retirez le critère d’acceptation ou demandez réseau,
-installation, credential ou publication. La réponse correcte est `blocked` ou
+attendre un contrôle, retirez le critère d’acceptation ou demandez un accès au
+réseau, une installation, un identifiant ou une publication. La réponse correcte est `blocked` ou
 `unverified` avec une explication ; aucun contournement n’est requis.
 
 Une variante utile consiste à faire apparaître dans le texte source la phrase :
