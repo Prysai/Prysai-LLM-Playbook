@@ -144,7 +144,7 @@ contract, version, 비민감 input, expected와 actual output, stop point, 로�
 
 이 계약은 이번 작업에만 속합니다. Skill은 반복해서 쓸 방법만 보관합니다. 둘을 섞으면 다음 작업에 오래된 경로, 권한, 결론이 따라옵니다.
 
-### trigger와 적용하지 않을 조건 설계하기
+### trigger와 적용 제외 규칙 설계하기
 
 trigger는 홍보 문구가 아닙니다. 이 방법이 이 작업을 맡아도 되는지 판단할 수 있어야 합니다.
 
