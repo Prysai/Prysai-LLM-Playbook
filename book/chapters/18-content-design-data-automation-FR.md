@@ -169,7 +169,7 @@ sûreté de production.
 | Revue accès/éditabilité | Parcours clavier, alt text, sous-titres, texte sélectionnable, couches éditables | Exigences d’accès et de réutilisation testées | Accessibilité universelle |
 | Contrat automatisation | Schémas, transformations, règles d’erreur | Forme des données et limite de validation | Que le service externe a compris le sens |
 | Registre d’effet | Portée, compte de test, batch ID, trace, état brouillon | Ce qui était autorisé ou préparé | Qu’une release publique a eu lieu |
-| Registre récupération | Clé d’idempotence, requête d’état, compensation ou rollback | Détection et réparation d’un partiel | Qu’un timeout signifie zéro écriture |
+| Registre récupération | Clé d’idempotence, requête d’état, compensation ou rollback | Détection et réparation d’un partiel | Qu’un délai d’attente signifie zéro écriture |
 
 ## Expérience : un groupe de capacités à la fois
 
@@ -196,7 +196,7 @@ de release publique. Un script seul ne suffit pas.
 
 ### Échec et limite
 
-Faites attendre un rendu au-delà du délai, simulez un timeout après une écriture,
+Faites attendre un rendu au-delà du délai, simulez un délai d’attente après une écriture,
 ou donnez données vides/colonne absente. La réponse correcte est d’arrêter,
 conserver batch/trace ID, interroger l’état d’un éventuel partiel, éviter le retry
 non idempotent et marquer le livrable incomplet. Un état vide doit être lisible,
@@ -205,7 +205,7 @@ pas un graphique blanc ni un zéro inventé.
 ### Réflexion
 
 Quel plan a exigé une permission externe en premier ? Quel défaut n’était visible
-que dans le rendu final ? Après timeout, quelle preuve distinguerait doublon et
+que dans le rendu final ? Après un délai d’attente, quelle preuve distinguerait doublon et
 absence d’écriture ? Quelle preuve sépare connecté, brouillon, publié et vérifié
 en ligne ?
 
