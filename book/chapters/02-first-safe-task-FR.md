@@ -13,7 +13,7 @@ comparaison exacte entre les langues.
 ## Commencer ici : rendre le premier pas volontairement banal
 
 Vous n’avez pas besoin d’un projet spectaculaire pour apprendre à utiliser un
-outil d’intelligence artificielle. Une tâche dramatique mélange trop de fichiers, de permissions et
+outil d’intelligence artificielle. Une tâche trop ambitieuse mélange trop de fichiers, de permissions et
 d’inconnues pour permettre de comprendre ce qui a réussi ou échoué. Choisissez
 une cible visible, une modification autorisée et un contrôle répétable. Sans
 projet temporaire, utilisez le [jeu de test hors ligne Première modification
@@ -118,7 +118,7 @@ pour les faits produits datés. La méthode stable est :
 | Approbation acceptée | Une approbation précise a eu lieu. | Une portée plus large. |
 | Réponse de succès | Une réponse d’outil a été reçue. | Objet modifié correctement. |
 | `git diff` | L’état comparé diffère. | Tests, déploiement ou acceptation. |
-| Test avec code zéro | Ce contrôle a passé ici. | Tous les chemins ou services. |
+| Test avec code zéro | Ce contrôle a réussi dans cet environnement. | Tous les chemins ou services. |
 | `Completed` dans l’interface | Un état visuel existe. | Résultat relu ou objectif atteint. |
 
 ## Le protocole de première tâche
@@ -461,7 +461,7 @@ quel état reste inconnu ?
 - [ ] Le diff réel nomme son périmètre.
 - [ ] Le contrôle a une sortie ou un statut `not_run` explicite.
 - [ ] Une variante distingue arrêt, échec et succès.
-- [ ] Le handoff sépare plan, action, preuve et portée non vérifiée.
+- [ ] La passation (`handoff`) sépare plan, action, preuve et portée non vérifiée.
 - [ ] L’autorité minimale suffit à la tâche.
 - [ ] Un statut `not_run` ou `unverified` est conservé lorsqu’un contrôle n’a pas
       été exécuté ou ne couvre pas la phrase annoncée.
