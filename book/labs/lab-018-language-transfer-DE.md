@@ -2,10 +2,10 @@
 
 ---
 id: lab-018-language-transfer
-  title: "Einen getippten Austausch zur Lernkoordination bei Anfängern auf Behalten und Transfer testen"
+title: "Einen getippten Austausch zur Lernkoordination bei Anfängern auf Behalten und Transfer testen"
 level: L2
 domain: language-learning
-  goal: "Unter festen Bedingungen einen fünfminütigen getippten Austausch zur Lernkoordination durchführen, einen geänderten Fall und eine vorab deklarierte verzögerte Aufgabe testen, ohne eine Beobachtung in Flüssigkeit umzudeuten"
+goal: "Unter festen Bedingungen einen fünfminütigen getippten Austausch zur Lernkoordination durchführen, einen geänderten Fall und eine vorab deklarierte verzögerte Aufgabe testen, ohne eine Beobachtung in Flüssigkeit umzudeuten"
 setup: "Synthetische Lernkarten, feste Rubrik, Wegwerf-Lokalprotokoll; kein Netzwerk, Zugangsdaten, externer Kontakt, Produktion oder automatisierte Erinnerung"
 task: "Unaided-Basis erfassen, abruforientiert korrigieren, einen sofortigen geänderten Fall durchführen und eine verzögerte ungesehene Aufgabe bewahren"
 evidence: ["Basis, Hinweisleiter, vom Lernenden verfasste Korrektur, Korrekturprotokoll", "Sofortversuch im geänderten Fall und Rubrikscore", "Bei Durchführung ID der verzögerten Karte, Zuteilung, Exposition, unabhängige Scores, Unstimmigkeit, Unbekanntes"]
@@ -14,7 +14,7 @@ reflection: "Welche Antwort überstand veränderten Kontext ohne Hilfe und welch
 status: draft
 run_status: not_run
 last_verified: "not run"
-  transfer_task: "Nach einem vorab deklarierten Sieben-Tage-Fenster (± ein Tag) einen vorverfassten getippten Austausch zur Lernkoordination mit geändertem Kontext, Wortschatz und Mehrdeutigkeit durchführen"
+transfer_task: "Nach einem vorab deklarierten Sieben-Tage-Fenster (± ein Tag) einen vorverfassten getippten Austausch zur Lernkoordination mit geändertem Kontext, Wortschatz und Mehrdeutigkeit durchführen"
 transfer_domain: "Lern- und Projektabstimmung für Anfänger"
 transfer_evidence: "Poolrevision, Zuteilung, Lernendenexposition, unaided Versuch, Rubrik, Scorer-Unabhängigkeit, Differenz, tatsächliche Verzögerung, Unbekanntes"
 transfer_limitations: "Dieses Text-Lab beweist weder breites Sprachlernen noch Flüssigkeit, Hörverstehen, Aussprache, Sprechen, Behalten außerhalb des Fensters, Aufgabenäquivalenz, Rubrikzuverlässigkeit oder Modelleffektivität"
