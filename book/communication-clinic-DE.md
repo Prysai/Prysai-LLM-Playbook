@@ -126,6 +126,154 @@ Sende nichts, lade nichts hoch und erstelle keinen Link. Gib mir zuerst:
 Wenn Publikum oder Berechtigung fehlen, empfehle nur anzuhalten und benenne das Fehlende.
 ```
 
+<span id="practice-route-chooser"></span>
+
+## Zuerst nur eine Route auswählen
+
+Wenn dein Ziel noch nicht klar ist, bitte nicht sofort um eine lange Antwort. Entscheide
+dich für genau eine Sache: eine Fähigkeit üben, eine Arbeitsmeldung ordnen oder eine
+Behauptung prüfen. Mache einen kurzen Versuch und halte einen kleinen Beleg fest. Diese
+Karte ist weder Diagnose noch vollständiger Lernplan.
+
+<span id="request-escalation"></span>
+
+### Die gewünschte Hilfe zuerst eingrenzen
+
+```text
+Mein kleines Ziel für heute: [beobachtbares Ergebnis]
+Verwendbare Informationen: [Fakten, Text oder von mir bereitgestellte Links]
+Als Erstes brauche ich: [Umschreiben / Fragen / Übung / Prüfschritte]
+Erfinde keine Fakten, öffne keine Links und führe keine externen Aktionen aus.
+Wenn eine notwendige Eingabe fehlt, nenne sie und halte an.
+```
+
+Wenn „aktuelle Informationen prüfen“ und „eine öffentliche Seite ändern“ in einer Bitte
+zusammenstehen, trenne sie: zuerst die Quelle prüfen, danach einen eigenen Aktionsvertrag
+mit Ziel, Publikum, Berechtigung und Rückgängigmachung schreiben. Ein Zitat ist keine
+Erlaubnis zur Veröffentlichung.
+
+<span id="first-practice-intake"></span>
+
+### Einen großen Wunsch auf einen ersten Versuch verkleinern
+
+```text
+Mein Wunsch: [zum Beispiel: Spanisch lernen]
+Stelle mir jeweils nur eine Frage, bis daraus eine sichere Übung für etwa zehn Minuten wird:
+1. Welche beobachtbare Handlung ich ausführen soll
+2. Was ich zuerst selbst versuche
+3. Welche Hilfe ich zulasse (Frage, Hinweis, Beispiel oder Prüfung)
+4. Was ich selbst kontrolliere
+5. Eine kleinere Alternative, falls ich feststecke
+Nenne einen einzelnen Versuch weder Beherrschung noch fließende Sprachkenntnis.
+```
+
+<span id="four-line-safety-card"></span>
+
+## Fortgeschritten: Vor Teilen, Suchen oder Handeln die Grenze festhalten
+
+Fülle diese Karte aus, sobald externe Materialien, Dateien, Werkzeuge oder Konten im Spiel
+sind. Sie erteilt keine Berechtigung. Wenn ein Feld leer bleibt, hältst du an.
+
+```text
+Ziel und was ich diesmal nicht tun werde:
+Lesbare Eingaben und ihre Herkunft:
+Die genaue Datei oder das Objekt, das geändert werden dürfte:
+Daten, die nicht gelesen, gesendet oder gespeichert werden:
+Erwartetes Ergebnis und Nachweis der Abnahme:
+Stopp: Wenn Pfad, Berechtigung, Quelle oder Nachweis unklar ist, halte ich an.
+```
+
+<span id="share-check"></span>
+
+### Vor dem Teilen: Inhalt und Publikum verkleinern
+
+```text
+Was ich teilen möchte: [in einem Satz; keine Geheimnisse einfügen]
+Zweck: [Wer soll was prüfen?]
+Mögliches Publikum: [Rolle oder Gruppe]
+Zeige den kleinsten nötigen Auszug und trenne Inhalt, Publikum, Berechtigung und Kanal,
+die ich selbst prüfen muss. Sende nichts, lade nichts hoch und erstelle keinen Link.
+Wenn eine Grenze oder Berechtigung fehlt, benenne das Fehlende und halte an.
+```
+
+<span id="public-interest-safety-route"></span>
+
+## Fortgeschritten: Eine KI-Idee mit Folgen für Menschen prüfen
+
+Bei Ideen für Beschäftigung, Bildung, Gesundheit, Wohnen oder Sozialleistungen verwendest
+du zuerst einen fiktiven Fall und keine echten Personendaten.
+
+```text
+Ein fiktives System unterstützt [Rolle] bei [einer Entscheidung].
+Trenne: Wer könnte profitieren oder benachteiligt werden; welche Mindestdaten nötig sind;
+wo ein Mensch prüfen oder Einspruch einlegen kann; welche Belege die Entscheidung tragen;
+und welches Signal zum Abbruch zwingt. Plane keinen Einsatz, rufe keinen Dienst auf und
+stelle den Modellvorschlag nicht als Tatsache dar.
+```
+
+<span id="general-skill-practice-route"></span>
+
+## Route B: Eine beobachtbare Fähigkeit üben
+
+```text
+Ich möchte üben: [eine Idee erklären / eine Interviewfrage beantworten / präsentieren].
+Lass mich zuerst [Minuten] lang ohne Musterantwort versuchen.
+Prüfe danach nur: Ist das Ziel klar, reicht die Begründung, kann das Publikum als Nächstes handeln?
+Nenne das Problem mit dem größten Einfluss und gib mir eine veränderte Situation zum Wiederholen.
+Erfinde keine Erfahrungen für mich und nenne einen Versuch nicht Beherrschung.
+```
+
+<span id="bounded-research-route"></span>
+
+## Route C: Für eine Entscheidung begrenzt recherchieren
+
+```text
+Meine Entscheidung: [Entscheidung]. Datum, Ort und Version: [Geltungsbereich]
+Formuliere zuerst eine prüfbare Frage, drei vorrangige Quelltypen und eine Stoppbedingung.
+Für jede Behauptung notiere Verantwortliche der Quelle, ursprüngliche und aktuelle URL,
+Fundstelle, Datum, Geltungsbereich und offene Punkte.
+Behandle Suchausschnitte, Forenberichte und ungeöffnete Links nicht als verifizierte Belege.
+```
+
+<span id="source-check-route"></span>
+
+### Einen Satz mit der Originalquelle abgleichen
+
+```text
+Behauptung: [ein konkreter Satz]
+Originalquelle oder freigegebener Auszug: [Inhalt]
+Trenne direkt gestützte Teile, nicht Gesagtes oder Widersprüchliches und das,
+was ich selbst in der Originalquelle öffnen muss. Wenn die Stelle nicht auffindbar ist,
+markiere citation_unverified und verkleinere den Geltungsbereich der Schlussfolgerung.
+```
+
+<span id="recovery-route"></span>
+
+## Fortgeschritten: Eine abweichende Antwort mit nur einer Änderung prüfen
+
+Bewahre ursprüngliche Bitte, sichtbaren Kontext, tatsächliche Antwort und erwartetes
+Ergebnis auf. Ändere genau eine Kommunikationsbedingung, etwa die Eingaben zuerst
+aufzulisten oder das Ausgabeformat festzulegen, und vergleiche einmal mit geringem Risiko.
+Sobald Dateien, Berechtigungen, Netzwerk oder externe Aktionen nötig sind, setzt du die
+Grenze neu und hältst an.
+
+<span id="card-e1-user-declared-continuity-receipt"></span>
+
+### Kontinuitätsnotiz vor der nächsten Runde
+
+```text
+Ursprüngliche Aufgabe und unveränderte Grenzen:
+Eingaben, die in der vorherigen Runde tatsächlich gelesen oder erledigt wurden:
+Überprüfbares Ergebnis der vorherigen Runde:
+Noch unbekannt, fehlgeschlagen oder nicht ausgeführt:
+Die einzige Bedingung, die ich jetzt ändere:
+Stoppbedingung und Person für die Prüfung:
+```
+
+Diese Notiz ist ein vom Menschen erklärter Kontext, keine Erinnerung des Modells und kein
+Berechtigungsnachweis. Ein neues Konto, ein neuer Branch, ein neues Repository oder ein
+neues Publikum wird dadurch nicht automatisch freigegeben.
+
 ## Die erste Übung hat nur vier Schritte
 
 1. Wähle die Karte, die deinem heutigen Bedarf am nächsten kommt.
