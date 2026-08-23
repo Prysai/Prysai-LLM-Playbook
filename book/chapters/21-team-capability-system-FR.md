@@ -291,8 +291,8 @@ connexion.
 <nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
   <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-FR.md" aria-label="Chapitre précédent : Chapitre 20 · Système de travail Codex">← Précédent<br><strong>Chapitre 20 · Système de travail Codex</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing-FR.md" aria-label="Chapitre suivant : Chapitre 22 · Mise à jour et récupération">Suivant →<br><strong>Chapitre 22 · Mise à jour et récupération</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="20-personal-codex-work-system-FR.md" aria-label="Chapitre précédent: Chapitre 20 · Système de travail Codex">← Précédent<br><strong>Chapitre 20 · Système de travail Codex</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="22-continuous-update-and-future-proofing-FR.md" aria-label="Chapitre suivant: Chapitre 22 · Mise à jour et récupération">Suivant →<br><strong>Chapitre 22 · Mise à jour et récupération</strong></a></td>
     </tr>
   </table>
 </nav>
