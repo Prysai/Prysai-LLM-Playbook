@@ -150,8 +150,8 @@ restauration (`rollback`) :
 arrêt si :
 ```
 
-Une connexion, un bouton visible ou un répertoire inscriptible ne suffit à remplir
-aucune de ces lignes. Tant que la cible, l’audience ou la relecture manque,
+Une connexion, un bouton visible ou un répertoire inscriptible ne suffit pas à
+remplir aucune de ces lignes. Tant que la cible, l’audience ou la relecture manque,
 restez en aperçu et n’envoyez rien.
 
 ### Exemple rempli, sans effet externe
@@ -303,7 +303,7 @@ Après l’action, distinguez les quatre événements :
 
 Conservez pour chacun l’horodatage, la cible et le statut. Les deux premiers
 montrent une intention et un appel ; ils ne prouvent ni la réponse ni le nouvel
-état. En cas de timeout, écrivez `submission not verified` et ne répétez pas un
+état. En cas de délai d’attente, écrivez `submission not verified` et ne répétez pas un
 clic non idempotent sans réconciliation.
 
 ### Deux cartes, deux décisions
