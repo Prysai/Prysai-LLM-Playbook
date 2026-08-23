@@ -88,7 +88,7 @@ Incluye un fallo intencional que cambie una sola variable y deje una señal visi
 
 ### Preparación
 
-Elige una tarea local y no sensible que hayas hecho al menos dos veces. Define una entrada desechable, criterios de aceptación claros y un límite de solo lectura. No uses credenciales, instalaciones, red ni contenido ajeno de una Skill cuya licencia no esté clara.
+Elige una tarea local y no sensible que hayas hecho al menos dos veces. Define una entrada temporal, criterios de aceptación claros y un límite de solo lectura. No uses credenciales, instalaciones, red ni contenido ajeno de una Skill cuya licencia no esté clara.
 
 ### Tarea
 
@@ -139,7 +139,7 @@ Que aparezcan «enlace» y «revisión» no basta. La intención, las entradas, 
 | Entrada | Leer archivo y acuerdo | Ruta, versión base, entradas ausentes | Que el enlace esté roto |
 | Exploración | Extraer enlaces relativos | Tabla de candidatos y regla de análisis | Que el destino exista |
 | Comprobación | Resolver rutas en solo lectura | Resultado existe/no existe/desconocido | Que una URL remota funcione |
-| Entrega | Escribir informe desechable | Informe, comando y estado de salida | Que el problema se arregló |
+| Entrega | Escribir un informe temporal | Informe, comando y estado de salida | Que el problema se arregló |
 | Revisión | Leer casos de riesgo o desconocidos | Decisión y alcance no cubierto | Que funcione en todo repositorio |
 
 Un estado de salida cero solo prueba que la comprobación terminó según su propia definición. No prueba formatos ignorados, reescrituras de compilación ni destinos remotos.
