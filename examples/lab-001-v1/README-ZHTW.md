@@ -1,7 +1,7 @@
 <!-- Traditional Chinese candidate generated from the Simplified Chinese source; independent language review pending. -->
 # Lab 001 v1：第一次安全改動夾具
 
-這是配合[實驗 001](../../book/labs/lab-001-first-safe-task-ZHTW.md)的小型合成夾具。它沒有真實專案、Git 歷史、憑據、網路請求、安裝步驟、賬號、模型呼叫或外部副作用。
+這是配合[實驗 001](../../book/labs/lab-001-first-safe-task-ZHTW.md)的小型合成夾具。它沒有真實專案、Git 歷史、憑據、網路請求、安裝步驟、帳號、模型呼叫或外部副作用。
 
 ## 你會改什麼
 
