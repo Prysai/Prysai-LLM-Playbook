@@ -157,7 +157,7 @@ next_safe_action: "target을 읽고 나서 새 쓰기를 허용할지 결정"
 
 ## 작은 실험: continue, pause, stop 연습하기
 
-버릴 수 있는 디렉터리에 순서가 섞인 세 줄이 있는 `input.txt`를 만듭니다. 비어 있지 않은 줄을 정렬해 `output.txt`에 쓰는 작업입니다. 이 디렉터리 안에서만 읽고 쓸 수 있으며 네트워크와 설치는 금지합니다.
+버릴 수 있는 디렉터리에 서로 다른 순서로 적힌 세 줄이 담긴 `input.txt`를 만듭니다. 비어 있지 않은 줄을 정렬해 `output.txt`에 쓰는 작업입니다. 이 디렉터리 안에서만 읽고 쓸 수 있으며 네트워크와 설치는 금지합니다.
 
 1. 목표, 허용 경로, 수용 조건, 한 번의 재시도 예산을 적습니다.
 2. 입력을 읽고 관찰을 기록한 뒤 쓰기를 제안합니다. 범위를 확인한 뒤 실행합니다.
@@ -235,7 +235,7 @@ event card의 어느 stage가 그럴듯한 text로 가장 쉽게 건너뛰어질
 
 ## 전이 과제
 
-같은 loop를 language practice나 source research에 적용합니다. language에서는 model correction, learner answer, 나중에 도움 없이 회상하는 과제, feedback이 별 event이며 유창한 dialogue는 mastery 증거가 아닙니다. research에서는 발견, 읽기, source check, conclusion을 나눕니다. stop budget과 정직한 handoff를 유지합니다.
+같은 루프를 언어 연습이나 출처 조사에도 적용합니다. 언어 연습에서는 모델의 교정, 학습자의 답변, 나중에 도움 없이 회상하는 과제, 피드백을 각각 별도의 사건으로 기록하며, 유창한 대화가 숙달의 증거는 아닙니다. 조사에서는 발견, 읽기, 출처 확인, 결론을 나눕니다. 중지 예산과 정직한 인계를 유지합니다.
 
 ## 수용 체크리스트
 
@@ -247,11 +247,11 @@ event card의 어느 stage가 그럴듯한 text로 가장 쉽게 건너뛰어질
 
 ## 출처와 갱신 경계
 
-관찰 가능한 loop, state, stop method는 project의 안정적인 teaching method입니다. 구체 Agent surface, tool name, permission, runtime behavior는 변합니다. 현재 fact는 [공식 사실 카드](../evidence-library-KO.md#source-notes)에서 확인하고 [field-problem index](../evidence-library-KO.md#source-notes)는 symptom material로만 사용합니다. 어느 것도 직접 실행한 기록을 대신하지 않습니다.
+관찰 가능한 루프, 상태, 중지 방법은 프로젝트 전반에 적용할 수 있는 안정적인 학습 방법입니다. 구체적인 Agent 화면, 도구 이름, 권한, 실행 중 동작은 변합니다. 현재 사실은 [공식 사실 카드](../evidence-library-KO.md#source-notes)에서 확인하고, [현장 문제 색인](../evidence-library-KO.md#source-notes)은 증상을 보여 주는 자료로만 사용합니다. 어느 것도 직접 실행한 기록을 대신하지 않습니다.
 
 ## 실행 인계: 다음 독자가 확인된 사실을 바탕으로 이어 가도록 하기
 
-task가 멈추거나 timeout이 나거나 사람의 판단이 필요해졌을 때 “계속하세요”만 남기지 마세요. 다음 reader가 관찰한 사실과 아직 허가되지 않은 범위를 먼저 보도록 다음 template을 사용합니다.
+작업이 멈추거나 타임아웃이 발생하거나 사람의 판단이 필요해졌을 때 “계속하세요”만 남기지 마세요. 다음 독자가 관찰된 사실과 아직 허가되지 않은 범위를 먼저 확인할 수 있도록 다음 서식을 사용합니다.
 
 ### goal과 scope
 ```text
@@ -415,9 +415,9 @@ test를 어디에서 실행했고 무엇을 cover하지 않는지 알 수 없으
 ## sources와 업데이트 경계
 
 이 장의 안정적인 방법은 제안, 실행, 상태, 검증, 권한을 분리하고 복구 범위를 제한하는 것입니다. 제품별
-이벤트 이름, 승인 동작, 도구 목록, UI 라벨, 명령어 문법은 최신 공식 문서에서 확인해야 합니다. 공개 issue는 symptom을 보고한 증거일 뿐,
-prevalence, root cause, universal repair의 증거는 아닙니다. 참조는 English source chapter와
-[evidence library](../evidence-library-KO.md#source-notes)에 남아 있습니다. 이 장은 `candidate`,
+이벤트 이름, 승인 동작, 도구 목록, UI 라벨, 명령어 문법은 최신 공식 문서에서 확인해야 합니다. 공개 이슈는 증상을 보고한 자료일 뿐,
+발생 빈도나 근본 원인, 보편적인 해결책을 증명하지는 않습니다. 참조는 영어 원문 장과
+[증거 라이브러리](../evidence-library-KO.md#source-notes)에 남아 있습니다. 이 장은 `candidate`,
 실험은 `not_run` 상태를 유지합니다.
 
 <!-- chapter-navigation:start -->
