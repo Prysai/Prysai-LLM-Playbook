@@ -31,7 +31,7 @@ Ein Skill ist weder Modell, Werkzeug, Berechtigung, Connector noch Ersatz für m
 
 ## Ein Praxisproblem: Ein Skill kann scheitern, bevor seine Methode beginnt
 
-Der praktische Fehler ist oft eine fehlende Entscheidung: Der Host entdeckt den Skill nicht, der Trigger passt nicht, eine Eingabe fehlt, die Lizenz ist unklar oder die Aufgabe verlangt eine weitergehende Nebenwirkung als erlaubt. Deshalb prüfst du Datei, Discovery, Auswahl, Laden, Aktion und Ausgabe getrennt. Stoppe, bevor du einen externen Kandidaten als eigene Fähigkeit ausgibst.
+Der praktische Fehler ist oft eine fehlende Entscheidung: Der Host entdeckt den Skill nicht, der Trigger passt nicht, eine Eingabe fehlt, die Lizenz ist unklar oder die Aufgabe verlangt eine weitergehende Nebenwirkung als erlaubt. Deshalb prüfst du Datei, Auffindbarkeit, Auswahl, Laden und Ausführung getrennt. Stoppe, bevor du einen externen Kandidaten als eigene Fähigkeit ausgibst.
 
 > Ein Skill ist ein auffindbares, wiederverwendbares Methodenpaket, das eine abgegrenzte Aufgabenklasse auf begrenzte Aktionen und prüfbare Evidenz abbildet.
 
