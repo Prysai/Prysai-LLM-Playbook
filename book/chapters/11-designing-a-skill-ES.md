@@ -62,7 +62,7 @@ output: "informe de afirmación → evidencia → alcance no cubierto"
 stop_when: "falta entrada, autoridad, fuente o destino recuperable"
 ```
 
-Un disparador debe incluir intención, entradas necesarias, propiedad del método y riesgo aceptable. Una coincidencia de palabra no basta. Definir cuándo no debe activarse evita que la Skill se apropie de una tarea vecina.
+Un disparador debe incluir intención, entradas necesarias, propiedad del método y riesgo aceptable. Una coincidencia de palabra no basta. Definir en qué situaciones no debe activarse evita que la Skill se apropie de una tarea vecina.
 
 ## Divide método, datos y ejecución
 
@@ -92,7 +92,7 @@ Elige una tarea local y no sensible que hayas hecho al menos dos veces. Define u
 
 ### Tarea
 
-Elige un método de bajo riesgo realizado al menos dos veces, como revisar enlaces de Markdown, comprobar fuentes de un informe o preparar una entrega. Diseña contrato, un caso positivo, un caso cercano que no debe activar, una entrada ausente, una falla visible y una comprobación de restauración (rollback). Conserva una tabla de qué prueba cada artefacto y qué queda desconocido.
+Elige un método de bajo riesgo realizado al menos dos veces, como revisar enlaces de Markdown, comprobar fuentes de un informe o preparar una entrega. Diseña contrato, un caso positivo, un caso cercano que no debe activarse, una entrada ausente, una falla visible y una comprobación de restauración (rollback). Conserva una tabla de qué prueba cada artefacto y qué queda desconocido.
 
 ### Evidencia
 
