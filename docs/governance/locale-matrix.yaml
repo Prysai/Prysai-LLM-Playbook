@@ -108,7 +108,16 @@
       "content_id": "field-case-external-instruction-authority-2026-08-13",
       "kind": "field-note",
       "path": "docs/research/field-case-external-instruction-authority-2026-08-13.md",
-      "content_status": "candidate"
+      "content_status": "candidate",
+      "localized_paths": {
+        "ZH": "docs/research/field-case-external-instruction-authority-2026-08-13-ZH.md",
+        "ES": "docs/research/field-case-external-instruction-authority-2026-08-13-ES.md",
+        "JA": "docs/research/field-case-external-instruction-authority-2026-08-13-JA.md",
+        "KO": "docs/research/field-case-external-instruction-authority-2026-08-13-KO.md",
+        "DE": "docs/research/field-case-external-instruction-authority-2026-08-13-DE.md",
+        "ZHTW": "docs/research/field-case-external-instruction-authority-2026-08-13-ZHTW.md",
+        "FR": "docs/research/field-case-external-instruction-authority-2026-08-13-FR.md"
+      }
     },
     {
       "content_id": "field-case-blocked-network-boundary-2026-08-14",
