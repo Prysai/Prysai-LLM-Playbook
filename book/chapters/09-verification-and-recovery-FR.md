@@ -26,7 +26,7 @@ en affirmations et donnez à chacune la plus petite preuve qui puisse la souteni
 ## Objectifs d’apprentissage
 
 - séparer une affirmation de complétion et choisir sa preuve minimale ;
-- distinguer error, unverified, unknown, partial, not_observed et verified ;
+- distinguer `error`, `unverified`, `unknown`, `partial`, `not_observed` et `verified` ;
 - repérer la dernière étape confirmée et le premier maillon non étayé ;
 - préserver l’état, réduire la portée, ajouter un contrôle ou arrêter ;
 - rédiger une livraison avec les travaux faits, lacunes et prochaine vérification.
@@ -257,7 +257,7 @@ postcondition, puis classez :
 no_effect_observed | effect_matches | effect_differs | effect_unknown
 ```
 
-Une lecture qui trouve le bon fichier ne prouve pas qu’un message, un envoi,
+La lecture du bon fichier ne prouve pas qu’un message, un envoi,
 un déploiement ou une autre cible externe n’a pas été touché. Reprenez seulement
 si la nouvelle condition, l’idempotence, la preuve attendue et le budget sont
 explicitement consignés.
