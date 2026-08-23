@@ -58,7 +58,7 @@ source figurent dans la [recherche sur les entrées et les preuves Windows](../.
 
 | Symptôme rapporté | Ce que l’on peut en tirer | Premier contrôle borné | S’arrêter avant |
 |---|---|---|---|
-| La sortie CLI dépasse la fenêtre du terminal et ne semble plus récupérable ([#35335](https://github.com/openai/codex/issues/35335)) | Une fenêtre d’affichage n’est pas une preuve durable | Sauvegarder la sortie dans un fichier nommé ou régénérer seulement l’extrait nécessaire ; noter CLI, terminal et portée du prompt | Affirmer que l’absence dans le scrollback prouve une perte de données du dépôt |
+| La sortie CLI dépasse la fenêtre du terminal et ne semble plus récupérable ([#35335](https://github.com/openai/codex/issues/35335)) | Une fenêtre d’affichage n’est pas une preuve durable | Sauvegarder la sortie dans un fichier nommé ou régénérer la sortie pertinente dans un fichier nommé ; noter CLI, terminal et portée du prompt | Affirmer que l’absence dans le scrollback prouve une perte de données du dépôt |
 | Des caractères non BMP disparaissent lors d’un collage dans le composeur TUI ([#37578](https://github.com/openai/codex/issues/37578)) | L’écho du composeur ne prouve pas l’intégrité de l’entrée | Comparer la chaîne prévue et la chaîne reçue avec un jeu de test inoffensif avant toute demande conséquente | Éditer, committer ou envoyer une requête dont l’entrée n’a pas été préservée |
 | Des références de checkpoint longues provoquent `bad ref` ou `Filename too long` sous Windows Git ([#37559](https://github.com/openai/codex/issues/37559)) | L’état interne d’un Agent n’est pas l’état ordinaire du projet | Dans un périmètre autorisé, consigner `git status`, `git show-ref`, `git fsck --full`, `git worktree list` et le chemin exact de la référence | Supprimer `.git`, modifier la configuration ou réparer sans copie et autorisation |
 
@@ -198,7 +198,7 @@ installer, publier, élargir les permissions ou répéter une écriture dont l�
 reste inconnu. Si aucune lecture bornée ne peut lever le doute, livrez
 `unverified` ou `blocked`.
 
-### Décalage de surface : visible ne signifie pas callable
+### Décalage de surface : visible ne signifie pas forcément appelable (`callable`)
 
 Des rapports publics décrivent une surface Computer Use ou `node_repl` visible
 alors qu’un appel en lecture seule échouait, un navigateur dont le DOM était
@@ -288,12 +288,13 @@ Pour une reprise autorisée, conservez au minimum :
 
 ## 4. Distinguer récupération et complétion
 
-`practice` désigne un exercice, `candidate` une structure prometteuse mais
-incomplètement évaluée, `verified` une preuve dans la portée déclarée et
-`production-ready` les portes qualité, sécurité, restauration (`rollback`),
-maintenance et publication (`release`) passées. `not_observed` décrit un événement non vu ; `not_run` signifie que
-l’expérience n’a pas eu lieu ; partial, unverified et blocked décrivent la lacune
-la plus étroite soutenue.
+`practice` désigne un exercice ; `candidate` désigne une structure ou un résultat
+prometteur, encore incomplètement évalué ; `verified` signifie que les contrôles
+déclarés sont passés dans la portée documentée ; `production-ready` indique que
+les portes de qualité, de sécurité, de restauration (`rollback`), de maintenance
+et de publication (`release`) sont passées. `not_observed` décrit un événement
+non vu ; `not_run` signifie que l’expérience n’a pas eu lieu ; `partial`,
+`unverified` et `blocked` décrivent la lacune la plus étroite soutenue.
 
 Récupérer le contrôle ne fait pas monter le statut de complétion. Interrompre un
 processus et préserver un diff peut produire un handoff candidate alors que le
