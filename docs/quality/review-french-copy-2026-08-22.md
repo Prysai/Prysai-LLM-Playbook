@@ -45,6 +45,34 @@ It did not expand translated chapters merely to match English character counts.
 - All French source files therefore remain `translation_status: in-progress` or
   their declared candidate status. The project remains `candidate`.
 
+## Follow-up pass — 2026-08-22
+
+The current French files were re-read before comparison; older compression notes
+were not treated as a description of the present worktree. This pass made
+targeted, reader-facing corrections in:
+
+- `book/chapters/02-first-safe-task-FR.md`: natural wording for an isolated
+  environment, retry, runtime state, secret identifiers, and the hand-off
+  record;
+- `book/chapters/09-verification-and-recovery-FR.md`: natural wording for
+  retries, test fixtures, online checks, status tokens, and the evidence-review
+  exercise;
+- `book/chapters/13-action-boundaries-FR.md`: first-use explanations for
+  `push`, pull requests, payloads, tokens, worktrees, and rollback cards;
+- `book/README-FR.md`: restored the foundation-entry order and the optional
+  practice boundary so the French book route passes the same structural guard;
+- `tests/test_textbook_entry_path.py`: explicitly decode the validator's
+  UTF-8 output so Windows' GBK default cannot turn a passing localized-entry
+  check into a test-runner error.
+
+The generated search index was refreshed after the reader-facing changes. The
+targeted commits are `49476b6`, `55bd093`, `9c32f52`, `bdb8598`, `2f25214`,
+`90a3a6c`, `dc00093`, and `d92f046`, pushed to the fork branch
+`prysai/french-locale-20260823`. Structural checks and browser smoke cover
+identity, links, locale continuity, rendered routes, and the stated fixtures;
+they do not establish native-level fluency, independent proofreading,
+learner comprehension, model behavior, or production readiness.
+
 ## Next review boundary
 
 A French-speaking reviewer should blind-read the homepage, foundation guide,
