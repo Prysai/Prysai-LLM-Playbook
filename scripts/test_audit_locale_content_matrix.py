@@ -20,9 +20,9 @@ def main() -> int:
     require(path_record["identity_ok"], "identity opt-out should be explicit for entry pages")
     require(audit.ANCHOR.search(sample), "authored anchor fixture no longer matches")
 
-    # The production matrix contains six starter-card subset records and one
-    # partial chapter.  The audit must keep those visible instead of treating
-    # all existing files as full translations.
+    # The production matrix contains seven route-complete subset records and
+    # one partial chapter. The audit must keep those visible instead of
+    # treating all existing files as full translations.
     result = audit.audit()
     issues = {(item["content_id"], item["locale"], item["kind"]) for item in result["issues"]}
     require(
@@ -38,7 +38,7 @@ def main() -> int:
         "neutral research records were misclassified as missing localized aliases",
     )
     require(result["summary"]["EN"]["full"] == 56, "English source coverage changed unexpectedly")
-    require(result["summary"]["FR"]["full"] == 56, "French governed coverage changed unexpectedly")
+    require(result["summary"]["FR"]["full"] == 55, "French governed coverage changed unexpectedly")
     print("LOCALE_CONTENT_MATRIX_AUDIT_TESTS_OK")
     return 0
 
