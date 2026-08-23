@@ -164,10 +164,10 @@ La traduction française reste `in-progress / candidate / not_run`.
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
-  <table role="presentation">
+  <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows-FR.md" aria-label="Chapitre précédent : Chapitre 19 · Évaluer modèles et workflows">← Précédent<br><strong>Chapitre 19 · Évaluer modèles et workflows</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="21-team-capability-system-FR.md" aria-label="Chapitre suivant : Chapitre 21 · Construire une capacité d’équipe">Suivant →<br><strong>Chapitre 21 · Construire une capacité d’équipe</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="19-evaluate-models-and-workflows-FR.md" aria-label="Chapitre précédent: Chapitre 19 · Évaluer modèles et workflows">← Précédent<br><strong>Chapitre 19 · Évaluer modèles et workflows</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="21-team-capability-system-FR.md" aria-label="Chapitre suivant: Chapitre 21 · Capacité d’équipe">Suivant →<br><strong>Chapitre 21 · Capacité d’équipe</strong></a></td>
     </tr>
   </table>
 </nav>
