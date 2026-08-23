@@ -281,7 +281,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
           "explicit_anchors": [],
-          "title": "Lab 018: 초보자 학습 조정 입력 대화로 유지와 전이 시험하기"
+          "title": "Lab 018: 초보자용 타이핑 학습 대화로 유지와 전이 시험하기"
         },
         "de": {
           "path": "book/labs/lab-018-language-transfer-DE.md",
@@ -291,7 +291,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-16",
           "explicit_anchors": [],
-          "title": "Lab 018: Einen getippten Lernabstimmungsaustausch für Anfänger auf Behalten und Transfer testen"
+          "title": "Lab 018: Einen getippten Austausch zur Lernkoordination bei Anfängern auf Behalten und Transfer testen"
         },
         "zh-tw": {
           "path": "book/labs/lab-018-language-transfer-ZHTW.md",
@@ -3873,7 +3873,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "worktree-2026-08-12",
           "explicit_anchors": [],
-          "title": "实验 013：完成一个完整的竖向切片"
+          "title": "实验 013：完成一个完整的垂直切片"
         },
         "es": {
           "path": "book/labs/lab-013-l3-vertical-slice-ES.md",
@@ -3923,7 +3923,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "coverage": "full",
           "source_revision": "2026-08-18-zhtw-bootstrap",
           "explicit_anchors": [],
-          "title": "實驗 013：完成一個完整的豎向切片"
+          "title": "實驗 013：完成一個完整的垂直切片"
         },
         "fr": {
           "path": "book/labs/lab-013-l3-vertical-slice-FR.md",
@@ -9240,7 +9240,7 @@ window.CODEX_LOCALE_MANIFEST = {
         "title_ja": "計画と垂直スライス",
         "title_ko": "10장: 계획과 수직 슬라이스",
         "title_de": "Planung und vertikale Schnitte",
-        "title_zh-tw": "規劃與豎向切片",
+        "title_zh-tw": "規劃與垂直切片",
         "title_fr": "Planification et tranches verticales",
         "canonical_title_en": "Planning and vertical slicing",
         "canonical_title_zh": "把大目标拆成可交付切片",

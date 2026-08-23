@@ -645,7 +645,7 @@
             "ja": "チェックポイント・失敗処理・リカバリ・境界のある引き継ぎを備えた完全な垂直スライスを実行できる。",
             "ko": "체크포인트, 실패 처리, 복구, 경계 있는 인계를 갖춘 완전한 수직 슬라이스를 실행한다.",
             "de": "Einen vollständigen vertikalen Schnitt mit Checkpoints, Fehlerbehandlung, Recovery und begrenzter Übergabe durchlaufen.",
-            "zh-tw": "執行一條包含檢查點、失敗處理、恢復和有邊界交接的完整豎向切片。",
+            "zh-tw": "執行一條包含檢查點、失敗處理、恢復和有邊界交接的完整垂直切片。",
             "fr": "Exécutez un parcours complet, jalonné de points de contrôle, de gestion d’échec, de récupération et d’une transmission délimitée."
           },
           "new_artifact": {
@@ -906,7 +906,7 @@
           "ja": "明示的なチェックポイントを置いて、定義から検証までの垂直スライスを実行できる。",
           "ko": "명시적 체크포인트로 정의에서 검증까지 수직 슬라이스를 실행한다.",
           "de": "Einen vertikalen Schnitt von der Definition bis zur Verifikation mit explizitem Checkpoint durchlaufen.",
-          "zh-tw": "用明確檢查點跑通從定義到驗證的一條豎向切片。",
+          "zh-tw": "用明確檢查點跑通從定義到驗證的一條垂直切片。",
           "fr": "Exécutez un parcours de bout en bout, de la définition à la vérification, avec un point de contrôle explicite."
         },
         "judge": {
@@ -937,7 +937,7 @@
         "ja": "定義からレビューまで記録された完全な垂直スライス1本・意図的な失敗または境界ケース1件・主張―証拠テーブル・別領域での転移タスクを揃えてから進む。",
         "ko": "정의부터 리뷰까지 기록된 완전한 수직 슬라이스 하나, 의도적 실패 또는 경계 사례 하나, 주장-증거 표, 다른 도메인의 전이 과제를 갖춰야 다음 단계로 진급한다.",
         "de": "Erst weitergehen mit einem vollständigen, von der Definition bis zur Prüfung dokumentierten vertikalen Schnitt, einem absichtlichen Fehlschlag oder Grenzfall, einer Behauptungs-Beleg-Tabelle und einer Transfer-Aufgabe in einem anderen Bereich.",
-        "zh-tw": "完成一條從定義到審查並留下記錄的完整豎向切片、一個故意失敗或邊界案例、一張斷言—證據表，以及另一個領域的遷移任務後，才進入下一階段。",
+        "zh-tw": "完成一條從定義到審查並留下記錄的完整垂直切片、一個故意失敗或邊界案例、一張斷言—證據表，以及另一個領域的遷移任務後，才進入下一階段。",
         "fr": "Passez à la suite avec un parcours complet consigné de la définition à la relecture, un échec volontaire ou un cas limite, un tableau affirmations-preuves et une tâche de transfert dans un autre domaine."
       },
       "blocked_when": {
