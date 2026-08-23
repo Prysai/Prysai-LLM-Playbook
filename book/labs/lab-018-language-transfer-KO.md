@@ -2,7 +2,7 @@
 
 ---
 id: lab-018-language-transfer
-title: "초보자 학습 조정 입력 대화로 유지와 전이 시험하기"
+title: "초보자용 타이핑 학습 대화로 유지와 전이 시험하기"
 level: L2
 domain: language-learning
 goal: "고정 조건에서 5분 입력형 학습 조정 대화를 만들고, 바뀐 사례와 사전 선언된 지연 과제를 시험하되 한 관찰을 유창성으로 바꾸지 않기"
@@ -20,7 +20,7 @@ transfer_evidence: "카드 풀 revision, 배정, 학습자 노출, 도움 없는
 transfer_limitations: "이 텍스트 Lab은 폭넓은 언어 학습, 유창성, 듣기, 발음, 구두 상호작용, 창 밖 유지, 과제 동등성, rubric 신뢰도, 모델 효율을 증명하지 않음"
 ---
 
-# Lab 018: 초보자 학습 조정 입력 대화로 유지와 전이 시험하기
+# Lab 018: 초보자용 타이핑 학습 대화로 유지와 전이 시험하기
 
 > 선택 L2 연습입니다. 즉시 실행 하나는 유지나 숙련을 증명하지 않습니다. 선언한 증거가 생길 때까지 `draft / not_run`입니다.
 
@@ -92,21 +92,21 @@ B1 **전에** 앞뒤 하루를 허용하는 7일 창을 선언합니다. 7일은
 
 두 독립 채점이 통과하고 지연·노출 조건이 보존되었을 때만 `retained_at_7_days`와 `transferred_to_unseen-class-discussion-preparation`을 분리해 보고할 수 있습니다. 노출 때문에 미확인 라벨이 불가능하면 `transferred_to_changed_delayed-class-discussion-preparation`만 씁니다. 통과는 선언 조건 아래 한 번의 관찰일 뿐, 폭넓은 언어 학습 결론이 아닙니다. 실행하지 않았다면 `not_run`으로 둡니다.
 
-## 인상이 아니라 record 남기기
+## 인상이 아니라 기록 남기기
 
-각 attempt를 같은 local record에 남깁니다. 항목이 없으면 `unknown` 또는 `not_run`이라고 쓰고 나중에 더 좋아 보이는 이야기로 채우지 않습니다.
+각 시도는 같은 로컬 기록에 남깁니다. 항목이 없으면 `unknown` 또는 `not_run`이라고 쓰고 나중에 더 좋아 보이는 이야기로 채우지 않습니다.
 
 ```text
 run_id | 날짜 | 목표 언어 | card_id | 5분 제한 | 허용 보조
-원래 시도 | 채점자 | 다섯 행 score와 근거 | hint level | 학습자 수정
+원래 시도 | 채점자 | 다섯 행의 점수와 근거 | 힌트 수준 | 학습자 수정
 first pass 여부 | rework count | model/surface(사용한 경우) | unknown | status
 ```
 
-C1은 별도 record로 남기고 수정한 B1을 새 baseline으로 쓰지 않습니다. 지연 과제는 window, 배정 D card, card pool revision을 먼저 기록하고 window 전에는 학습자에게 완전한 D card를 보여 주지 않습니다. 실제 자동 reminder가 없다면 return instruction만 저장하며 “system이 알려 준다”고 말하지 않습니다.
+C1은 별도 기록으로 남기고 수정한 B1을 새 baseline으로 쓰지 않습니다. 지연 과제는 window, 배정 D card, card pool revision을 먼저 기록하고 window 전에는 학습자에게 완전한 D card를 보여 주지 않습니다. 실제 자동 reminder가 없다면 return instruction만 저장하며 “system이 알려 준다”고 말하지 않습니다.
 
-### scorer가 다를 때
+### 채점자의 판정이 다를 때
 
-두 scorer는 서로의 score를 보기 전에 각 행의 짧은 근거를 씁니다. 한 행이라도 1점보다 차이가 나거나 pass/fail이 갈리면 두 score와 원문을 보존하고 status를 `disagreement`로 둡니다. 유지나 전이를 선언하지 않습니다. 이전 결과를 모르는 세 번째 scorer가 같은 text와 rubric으로 다시 검토할 수 있지만, 그래도 rubric 신뢰도나 모든 학습자에 대한 적용을 증명하지는 않습니다.
+두 채점자는 서로의 점수를 보기 전에 각 행의 짧은 근거를 씁니다. 한 행이라도 1점보다 차이가 나거나 pass/fail이 갈리면 두 점수와 원문을 보존하고 status를 `disagreement`로 둡니다. 유지나 전이를 선언하지 않습니다. 이전 결과를 모르는 세 번째 채점자가 같은 text와 rubric으로 다시 검토할 수 있지만, 그래도 rubric의 신뢰도나 모든 학습자에게 적용할 수 있다는 점을 증명하지는 않습니다.
 
 ## 의도적 실패
 
