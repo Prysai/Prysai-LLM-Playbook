@@ -13,14 +13,14 @@ comparaison exacte entre les langues.
 ## Commencer ici : rendre le premier pas volontairement banal
 
 Vous n’avez pas besoin d’un projet spectaculaire pour apprendre à utiliser un
-outil d’IA. Une tâche dramatique mélange trop de fichiers, permissions et
+outil d’intelligence artificielle. Une tâche dramatique mélange trop de fichiers, de permissions et
 inconnues pour permettre de comprendre ce qui a réussi ou échoué. Choisissez
 une cible visible, une modification autorisée et un contrôle répétable. Sans
 projet temporaire, utilisez le [jeu de test hors ligne Première modification
 sûre](../routes/first-safe-change-FR.md). Il ne demande ni compte, ni réseau,
-ni dépôt public : il sert uniquement à répéter le cycle dans une surface que
-vous pouvez inspecter et jeter. Ce jeu de test ne prouve pas que votre compte,
-votre dépôt réel ou votre outil dispose des mêmes capacités.
+ni dépôt public : il sert uniquement à répéter le cycle dans un environnement
+isolé que vous pouvez inspecter puis supprimer. Ce jeu de test ne prouve pas
+que votre compte, votre dépôt réel ou votre outil dispose des mêmes capacités.
 
 ## Le problème que résout ce chapitre
 
@@ -57,7 +57,7 @@ conviennent.
 
 | Frontière | Réponse minimale | Si elle manque |
 |---|---|---|
-| Surface | Copie temporaire ou sandbox, chemin absolu et état. | Rester en lecture seule et demander la surface. |
+| Surface | Copie temporaire ou environnement isolé (`sandbox`), chemin absolu et état. | Rester en lecture seule et demander la surface. |
 | Cible | Un fichier non sensible et son chemin exact. | Ne pas deviner. |
 | Baseline | Copie propre, hash ou changements existants connus. | Enregistrer l’état avant de toucher. |
 | Action | Une modification et les contrôles nécessaires ; pas d’installation, commit, push ou publication. | Demander si l’effet est autorisé. |
@@ -237,9 +237,9 @@ reproductions locales. Chaque carte sépare ce qui a été observé de ce qui re
 |---|---|---|
 | Aucun événement visible | Attente et retry ne prouvent pas l’absence d’effet. | Conserver chronologie, checkpoint, diff et effets avant reprise. |
 | Commande en `Working` | Démarrage, fin et contrôle réussi sont trois faits. | Fixer un délai, capturer sortie/état et inspecter le diff. |
-| Vérification devenue réinstallation | Contrôle et mutation persistante sont différents. | Séparer source, test, installation, restart, publication et live check. |
-| Configuration sans capacité | Visible, callable, lisible et inscriptible sont distincts. | Tester le chemin courant avec une sonde inoffensive. |
-| Terminé dans l’interface | État runtime et résultat relu peuvent diverger. | Vérifier runtime, artefact, diff, effets et revue. |
+| Vérification devenue réinstallation | Contrôle et mutation persistante sont différents. | Séparer source, test, installation, redémarrage, publication et contrôle en ligne. |
+| Configuration sans capacité | Visible, découvrable, utilisable (`callable`), lisible et inscriptible sont distincts. | Tester le chemin courant avec une sonde inoffensive. |
+| Terminé dans l’interface | État d’exécution et résultat relu peuvent diverger. | Vérifier l’exécution, l’artefact, le diff, les effets et la revue. |
 
 ### Cas CH2-01 : aucun événement visible n’est pas un résultat
 
@@ -251,8 +251,9 @@ ni la cause côté service ni l’innocuité de la répétition.
   réponse de retry.
 - **Fait officiel :** aucune cause racine ni correctif de mainteneur n’était
   confirmé dans le dossier consulté.
-- **Réponse sûre :** conserver heure de début, dernier événement, checkpoint,
-  diff et effets externes ; ne relancer que si l’action est idempotente.
+- **Réponse sûre :** conserver l’heure de début, le dernier événement, le
+  checkpoint, le diff et les effets externes ; ne faire une nouvelle tentative
+  (`retry`) que si l’action est idempotente.
 - **Reproduction locale :** `not_run`.
 - **Hypothèse :** taille de requête, proxy ou amont pourraient compter, sans
   que cela soit établi.
@@ -284,7 +285,8 @@ la vérification.
 - Consigner séparément `source modified`, `validated`, `installed`, `published`,
   `deployed`, `restarted` et `live verified`.
 - Ne pas présenter une hypothèse de cause interne comme un fait officiel.
-- Ici, aucune réinstallation ni reproduction avec credential réel n’a été faite.
+- Ici, aucune réinstallation ni reproduction avec un identifiant secret réel
+  n’a été faite.
 
 Un contrôle qui réclame un nouvel effet persistant est une nouvelle décision.
 
@@ -353,7 +355,7 @@ pas la cause d’une machine d’état interne.
 5. Réduire la prochaine vérification à un fichier, une lecture, un test ou un marqueur temporaire.
 6. Reprendre une seule fois seulement si une condition change et que le budget est écrit.
 
-N’installez pas, n’élargissez pas l’accès, n’utilisez pas de credential, ne
+N’installez pas, n’élargissez pas l’accès, n’utilisez pas d’identifiant secret, ne
 supprimez pas l’état et ne contactez pas un service externe simplement parce
 qu’une vérification a échoué.
 
@@ -381,7 +383,7 @@ l’objet de résultat et le chemin de restauration. Pour un rendu, ajoutez la p
 ou la capture et le viewport. Pour un fait volatil, ajoutez URL, date d’accès,
 portée, responsable et prochaine revue.
 
-## Expérience : une modification README en sandbox
+## Expérience : une modification README dans un environnement isolé
 
 ### Préparation
 
@@ -425,7 +427,8 @@ status: passed | failed | stopped
 
 Le passage exige que seul README change, que la commande corresponde au script
 réel, que le contrôle ait une sortie ou `not_run`, qu’aucune écriture externe
-ne soit faite et que le handoff n’affirme pas avoir lancé toute l’application.
+ne soit faite et que la fiche de passation n’affirme pas avoir lancé toute
+l’application.
 
 ### Variantes d’échec
 
