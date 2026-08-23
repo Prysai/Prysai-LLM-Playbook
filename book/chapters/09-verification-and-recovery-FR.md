@@ -49,7 +49,7 @@ ni correctif pour chaque compte.
 Ne concluez pas « ne jamais réessayer » ou « installer est toujours faux ».
 Faites dépendre la suite de l’observation, de l’autorité et du budget.
 
-### Trois cas Windows : le signal n’est pas la preuve
+## Trois cas Windows : le signal n’est pas la preuve
 
 Ces cas proviennent de rapports GitHub publics consultés le 12 août 2026. Ils ne
 constituent ni une reproduction locale, ni un diagnostic officiel, ni un
@@ -97,7 +97,7 @@ conservez seulement l’exit, l’événement, le diff, l’artefact, le hash ou
 résultat de la relecture que vous êtes déjà autorisé à consulter ; marquez
 l’affirmation `unverified` et nommez le canal manquant. Ne relancez pas une
 action conséquente uniquement pour récupérer
-une sortie de présentation ou pour affaiblir une limite de sécurité.
+une sortie destinée à l’affichage ou pour contourner une limite de sécurité.
 
 ## 1. Relier les affirmations aux preuves
 
@@ -130,7 +130,7 @@ token ou une action distante. Une preuve absente reste unverified ou blocked.
 ## 2. Utiliser le doute pour choisir le prochain contrôle
 
 Pour une décision importante, demandez : quelle prémisse n’a pas de preuve ?
-Quelle frontière est hors test ? Le résultat peut-il venir d’un cache, d’un mock,
+Quelle frontière n’est pas couverte par le test ? Le résultat peut-il venir d’un cache, d’un mock,
 d’un fichier ancien ou du mauvais environnement ? Où le défaut deviendrait-il
 visible ? Quel contrôle additionnel changerait la décision ?
 
@@ -168,7 +168,8 @@ conclusion.
 « Relancer » n’est donc pas une stratégie de récupération. Avant tout nouvel
 essai, écrivez l’état qui a changé, l’idempotence de l’action, le budget restant
 et la preuve attendue. Si l’effet de la première tentative est inconnu, le
-statut reste `unverified` ou `blocked` jusqu’à une lecture de réconciliation ;
+statut reste `unverified` ou `blocked` jusqu’à une lecture de réconciliation,
+c’est-à-dire une comparaison entre l’état observé et le dernier point de contrôle ;
 un résultat favorable obtenu ensuite ne transforme pas rétroactivement la
 première tentative en succès.
 
@@ -176,7 +177,7 @@ première tentative en succès.
 
 ~~~text
 outil/Skill visible → découverte en lecture seule → état cible lisible
-→ action retourne → changement externe confirmé
+→ réponse de l’action reçue → effet externe confirmé
 ~~~
 
 Chaque maillon a sa propre preuve. Un nom visible ne prouve pas l’enregistrement,
@@ -293,8 +294,8 @@ Pour une reprise autorisée, conservez au minimum :
 prometteur, encore incomplètement évalué ; `verified` signifie que des preuves
 existent dans la portée, la version et l’ensemble de tâches déclarés ;
 `production-ready` indique que
-les portes de qualité, de sécurité, de restauration (`rollback`), de maintenance
-et de publication (`release`) sont passées. `not_observed` décrit un événement
+les contrôles de qualité, de sécurité, de restauration (`rollback`), de maintenance
+et de publication (`release`) ont été franchis. `not_observed` décrit un événement
 non vu ; `not_run` signifie que l’expérience n’a pas eu lieu ; `partial`,
 `unverified` et `blocked` décrivent la lacune la plus étroite soutenue.
 
@@ -327,7 +328,7 @@ Utilisez trois lignes au minimum pour rendre la différence visible :
 | Type d’affirmation | Exemple | Preuve attendue |
 |---|---|---|
 | Fait source | « La documentation décrit cette option. » | URL, date, passage et portée relus. |
-| Exécution | « Le contrôle a passé dans cette copie. » | Commande, répertoire, code retour et sortie. |
+| Exécution | « Le contrôle a été exécuté avec succès dans cette copie. » | Commande, répertoire, code retour et sortie. |
 | Effet utilisateur | « La page est utilisable sur mobile. » | Rendu à un viewport nommé, critères et revue humaine. |
 
 Une seule capture, un seul diff ou un seul message de réussite ne peut pas
@@ -337,9 +338,9 @@ remplacer les trois preuves.
 
 Si une phrase n’a aucun contrôle correspondant, baissez-la à `unverified` ou
 `not_run`. Pour un exercice plus réaliste, commencez une petite modification
-réversible dans une copie jetable, écrivez avant le contrôle une passation disant
+réversible dans un répertoire temporaire, écrivez avant le contrôle une passation disant
 « terminé » et « tous les tests passent », puis rendez la sortie absente ou
-faites proposer une installation, un redémarrage, un appel réseau ou une écriture
+introduisez une proposition d’installation, de redémarrage, d’appel réseau ou d’écriture
 hors périmètre. L’exercice n’est réussi que si l’apprenant :
 
 - marque l’affirmation non étayée `unverified` ou `not_run` ;
