@@ -1,12 +1,14 @@
-<!-- content_id: universal-core-foundations-route | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-21-fr-bootstrap -->
+<!-- content_id: universal-core-foundations-route | locale: FR | language: fr | default_locale: EN | translation_status: in-progress | translated_from: EN | source_revision: worktree-2026-08-22-fr-boundary-check -->
 
 # Travailler avec un LLM : une première tâche sûre et quatre fondations
 
 **Statut :** `candidate`. **Exécution :** `not_run`.
 
 Commencez ici si vous utilisez un chat textuel sans configuration de produit.
-Cette route ne prétend pas que ChatGPT, Claude, Gemini, Grok et Codex ont les
-mêmes outils, droits, tarifs ou comportements.
+Cette route n’enseigne qu’une couche de décision commune : une tâche claire, un
+matériel borné, un contrôle visible et une limite d’arrêt. Elle ne prétend pas
+que ChatGPT, Claude, Gemini, Grok et Codex ont les mêmes outils, droits, tarifs,
+comptes, mémoire ou comportements d’Agent.
 
 ## Essayez maintenant une tâche sûre
 
@@ -24,9 +26,18 @@ cotisation, ni contact, ni promesse.
 Arrêt : ne naviguez pas, n’envoyez rien, ne publiez rien et n’inventez rien.
 ```
 
-Vérifiez vous-même : chaque phrase est-elle rattachée au texte ? La forme est-
-elle respectée ? Un détail inconnu a-t-il été inventé ? Un résultat bien écrit
-ne prouve ni la vérité des faits ni un comportement identique sur chaque produit.
+Vérifiez vous-même :
+
+1. Pouvez-vous rattacher chaque phrase de la réécriture à l’avis fourni ?
+2. La réponse respecte-t-elle la limite de deux phrases et énumère-t-elle les
+   faits conservés ?
+3. Un détail inconnu a-t-il été inventé au lieu de rester entre crochets ?
+
+Si la réponse à la troisième question est oui, supprimez le détail ajouté ou
+demandez une seule correction. Si le chat propose une recherche, un envoi, une
+publication ou un outil, ou réclame plus de matière que cet exercice n’en
+nécessite, arrêtez-vous. Un résultat bien écrit ne prouve ni la vérité des faits
+ni un comportement identique sur chaque produit.
 
 ## Relier la première tâche aux quatre fondations
 
