@@ -138,7 +138,16 @@
       "content_id": "field-case-agent-handoff-receipt-2026-08-14",
       "kind": "field-note",
       "path": "docs/research/field-case-agent-handoff-receipt-2026-08-14.md",
-      "content_status": "candidate"
+      "content_status": "candidate",
+      "localized_paths": {
+        "ZH": "docs/research/field-case-agent-handoff-receipt-2026-08-14-ZH.md",
+        "ES": "docs/research/field-case-agent-handoff-receipt-2026-08-14-ES.md",
+        "JA": "docs/research/field-case-agent-handoff-receipt-2026-08-14-JA.md",
+        "KO": "docs/research/field-case-agent-handoff-receipt-2026-08-14-KO.md",
+        "DE": "docs/research/field-case-agent-handoff-receipt-2026-08-14-DE.md",
+        "ZHTW": "docs/research/field-case-agent-handoff-receipt-2026-08-14-ZHTW.md",
+        "FR": "docs/research/field-case-agent-handoff-receipt-2026-08-14-FR.md"
+      }
     },
     {
       "content_id": "field-case-capacity-interruption-checkpoint-2026-08-14",
