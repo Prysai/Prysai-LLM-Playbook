@@ -199,7 +199,7 @@ Le Skill ne remplace pas silencieusement l’objectif. Si une entrée manque, il
 pose une question ciblée ou passe le relais ; il n’invente pas la recherche et
 ne publie pas.
 
-## 2. Déclenchement et non-déclenchement
+## 2. Déclenchement et conditions dans lesquelles le Skill ne doit pas se déclencher
 
 Une sélection explicite signifie « envisager cette méthode » ; elle ne fournit
 pas les entrées ni l’autorisation d’un effet. Les chemins de découverte et la
@@ -281,7 +281,7 @@ charger les références inutiles. Un mot-clé commun, un fichier présent ou un
 sélection explicite ne suffit pas à prouver que l’intention, les entrées et la
 responsabilité correspondent.
 
-### Le non-déclenchement fait partie du produit
+### Savoir ne pas se déclencher fait partie du produit
 
 Un Skill fiable sait céder la place. Ajoutez au moins un cas voisin, une demande
 dont l'entrée manque et une demande qui exigerait une autorité excessive. Pour
@@ -432,7 +432,7 @@ fichier .env, code de récupération ou dossier personnel/client brut.
 Si un service externe est réellement requis, le Skill passe le relais avec le
 service et l’opération exacts, les données minimales, le chemin contrôlé de
 fourniture du credential, la destination de la réponse expurgée et le plan de
-lecture arrière/rollback. « La personne est déjà connectée » ne remplace pas
+relecture/rollback. « La personne est déjà connectée » ne remplace pas
 la revue de flux de données.
 
 ### Les données d’entrée ne sont pas toutes des preuves
@@ -577,8 +577,8 @@ résultat et le contrôle qui soutient l'affirmation.
 
 Une demande de rédaction libre, de recherche externe ou de publication doit
 produire un relais explicite (`handoff`, `ask` ou `blocked`) et aucun fichier
-hors de la fixture. Une décision de non-déclenchement est un résultat positif
-du contrat, pas une erreur de capacité.
+hors de la fixture. Une décision indiquant que le Skill ne doit pas se déclencher
+est un résultat positif du contrat, pas une erreur de capacité.
 
 ### Cas d'entrée absente : ne jamais compléter silencieusement
 
@@ -752,7 +752,7 @@ review/transfer.md  review/rollback.md  review/skill-adoption-decision.md
 La décision doit répondre à : écart de tâche, déclencheurs et non-déclencheurs,
 source/révision/date, licence et actifs imbriqués, dépendances, périmètre
 d’installation, permissions, effets externes, essai isolé, cible de sauvegarde,
-retour arrière et contrôle de succès, points d’approbation, tests positif/
+retour arrière et contrôle de succès, points d’approbation, tests positifs/
 limite/échec/transfert, propriétaire/version/revue, décision et conditions de
 déblocage. Utilisez `recommendation-only`, `blocked`, `approved-to-install` ou
 `installed-candidate` sans les traduire en promesse de fonctionnement.
