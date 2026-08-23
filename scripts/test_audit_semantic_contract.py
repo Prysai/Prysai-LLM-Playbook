@@ -48,6 +48,24 @@ def main() -> int:
     require(audit.ACCEPTANCE_RE.search("## Liste de contrôle d’acceptation"), "French acceptance heading not recognized")
     require("lab-002-task-protocol" not in audit.EMBEDDED_NAVIGATION_REQUIRED, "non-entry Lab incorrectly requires embedded navigation")
     require("lab-001-first-safe-task" in audit.EMBEDDED_NAVIGATION_REQUIRED, "first Lab entry navigation is not protected")
+
+    # Deep concept checks are intentionally separate from the ordinary
+    # contract gate. They should recognise a natural localized label and
+    # report a genuinely absent concept without requiring English headings.
+    lab006_groups = {group.name: group for group in audit.DEEP_CONTRACTS["lab-006-agent-stop-conditions"]}
+    localized_lab006 = """
+events.yaml run-record.yaml handoff.md
+## Cinq branches bornées
+### Réponse perdue : réconcilier avant de reprendre
+## Revue des preuves
+## Transfert
+## Sources et limites
+"""
+    require(audit.has_group(localized_lab006, lab006_groups["event_trace"]), "localized event trace was not recognised")
+    require(audit.has_group(localized_lab006, lab006_groups["run_record"]), "localized run record was not recognised")
+    require(audit.has_group(localized_lab006, lab006_groups["lost_response"]), "localized lost-response branch was not recognised")
+    require(audit.has_group(localized_lab006, lab006_groups["transfer"]), "localized transfer was not recognised")
+    require("evidence_to_keep" in {group.name for group in audit.DEEP_CONTRACTS["lab-013-l3-vertical-slice"]}, "deep contract lost evidence group")
     print("SEMANTIC_CONTRACT_AUDIT_TESTS_OK fixtures=3")
     return 0
 
