@@ -271,10 +271,10 @@ pas une conclusion sur l’intelligence ou la productivité.
 <!-- chapter-navigation:start -->
 <hr>
 <nav class="chapter-navigation" aria-label="Navigation entre les chapitres">
-  <table role="presentation">
+  <table role="presentation" width="100%">
     <tr>
-      <td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-FR.md" aria-label="Chapitre précédent : Chapitre 18 · Contenu, design, données et automatisation">← Précédent<br><strong>Chapitre 18 · Contenu, design, données et automatisation</strong></a></td>
-      <td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-FR.md" aria-label="Chapitre suivant : Chapitre 20 · Construire son système de travail Codex">Suivant →<br><strong>Chapitre 20 · Construire son système de travail Codex</strong></a></td>
+      <td align="left"><a data-chapter-nav="previous" href="18-content-design-data-automation-FR.md" aria-label="Chapitre précédent: Chapitre 18 · Contenu, design, données">← Précédent<br><strong>Chapitre 18 · Contenu, design, données</strong></a></td>
+      <td align="right"><a data-chapter-nav="next" href="20-personal-codex-work-system-FR.md" aria-label="Chapitre suivant: Chapitre 20 · Système de travail Codex">Suivant →<br><strong>Chapitre 20 · Système de travail Codex</strong></a></td>
     </tr>
   </table>
 </nav>
