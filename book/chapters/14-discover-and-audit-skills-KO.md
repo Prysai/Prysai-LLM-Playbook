@@ -12,7 +12,7 @@
 
 ## 학습 목표
 
-task gap을 knowledge, tool, authorization 문제와 구분하고 source, revision, license, permission, recovery, evidence로 후보를 판단할 수 있습니다.
+작업 공백을 지식·도구·권한 문제와 구분하고 출처, 리비전, 라이선스, 권한, 복구, 증거를 기준으로 후보를 판단할 수 있습니다.
 
 ## 먼저 작업 계약을 쓰기
 
@@ -48,7 +48,7 @@ Skill은 방법과 라우팅 계약이고 tool은 외부를 관찰하거나 바�
 
 ## 연습과 경계
 
-고정 revision의 두 후보를 설치하지 않고 검토하세요. A는 추적 가능한 license 신호와 작업 적합성이 있어 `recommendation-only`가 될 수 있습니다. B는 license / NOTICE 또는 구체적인 rollback이 없어 `blocked`여야 합니다. URL, revision, 인벤토리, 의존성, 권한, 격리 대상, backup, 복원, 승인, owner를 기록하고 A에 대해 긍정, 경계, 실패·주입, 이전 테스트를 설계하되 실행하지 마세요.
+고정 revision의 두 후보를 설치하지 않고 검토하세요. A는 추적 가능한 license 신호와 작업 적합성이 있어 `recommendation-only`가 될 수 있습니다. B는 license / NOTICE 또는 구체적인 rollback이 없어 `blocked`여야 합니다. URL, revision, 인벤토리, 의존성, 권한, 격리 대상, backup, 복원, 승인, owner를 기록하고 A에 대해 긍정, 경계, 실패·주입, 전이 테스트를 설계하되 실행하지 마세요.
 
 이 연습은 검토 결정을 보여 줄 뿐 발견, 로드, 실행, 실제 채택을 증명하지 않습니다. 선언된 환경에서 실행하고 독립 검토한 기록이 생기기 전까지 이 장은 `candidate / not_run`입니다.
 
@@ -96,7 +96,7 @@ license: 저장소, 대상 파일, NOTICE, 중첩 script / asset의 증거
 해제 조건: 부족한 정보를 채우고 민감하지 않은 격리 directory에서 검토를 다시 한다.
 ```
 
-이는 “위험해 보인다”보다 쓸모 있고, 실행하지 않은 behavior를 이미 관찰한 risk로 바꾸지 않습니다.
+이는 “위험해 보인다”보다 쓸모 있고, 실행하지 않은 동작을 이미 관찰한 위험인 것처럼 기록하지 않습니다.
 
 ## 작은 실험: 설치하지 않고 두 후보 검토하기
 
@@ -125,7 +125,7 @@ A와 B 각각에 source, revision, 실제 path, license/NOTICE 결론, dependenc
 
 ## 실제 문제: 발견 가능하다고 채택 가능한 것은 아니다
 
-directory entry, star, demo는 후보를 보이게 할 수 있지만 origin, nested dependency, side effect를 증명하지 않습니다. 먼저 구체적인 반복 task를 개선하는지 결정하고, 그 다음 secret 없는 좁은 환경에서 검토합니다.
+디렉터리 항목, star, demo는 후보를 보이게 할 수 있지만 origin, nested dependency, side effect를 증명하지 않습니다. 먼저 구체적으로 반복되는 작업을 개선하는지 결정하고, 그 다음 secret 없는 좁은 환경에서 검토합니다.
 
 ## 전이 과제
 
@@ -140,7 +140,7 @@ directory entry, star, demo는 후보를 보이게 할 수 있지만 origin, nes
 
 ## 출처 및 유지보수 경계
 
-review card와 상태 분리는 안정적인 학습 방법입니다. directory, 설치, runtime behavior, product surface는 변하므로 fixed revision, 구체적 environment, 실제 target path마다 다시 확인합니다.
+검토 카드와 상태 분리는 안정적인 학습 방법입니다. 디렉터리, 설치, 런타임 동작, 제품 표면은 변하므로 고정 리비전, 구체적인 환경, 실제 대상 경로마다 다시 확인합니다.
 
 ## 스스로 확인하기
 
@@ -151,7 +151,7 @@ review card와 상태 분리는 안정적인 학습 방법입니다. directory, 
 
 ## 채택 기록: 검토할 수 있음을 먼저 보이고 활성화를 결정하기
 
-이 기록은 프로젝트의 original Skill과 외부에서 찾은 candidate 모두에 사용합니다. popular repository, 유창한 설명, 보이는 directory만으로 외부 content가 trustworthy하거나 executable한 능력이 되는 것은 아닙니다.
+이 기록은 프로젝트가 직접 만든 Skill과 외부에서 찾은 후보 모두에 사용합니다. 인기 저장소나 매끄러운 설명, 디렉터리에 보인다는 사실만으로 외부 콘텐츠를 신뢰하거나 실행 가능한 것으로 볼 수는 없습니다.
 
 ```text
 candidate name과 version / commit:
