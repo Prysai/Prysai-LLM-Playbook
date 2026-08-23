@@ -1813,7 +1813,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "in-progress",
           "coverage": "full",
-          "source_revision": "3b6571d",
+          "source_revision": "44bd0cd",
           "explicit_anchors": []
         }
       }
@@ -2164,7 +2164,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "in-progress",
           "coverage": "full",
-          "source_revision": "99ad7df",
+          "source_revision": "341fe7f",
           "explicit_anchors": []
         }
       }

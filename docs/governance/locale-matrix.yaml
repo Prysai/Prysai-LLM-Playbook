@@ -1809,7 +1809,7 @@
           "content_status": "candidate",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "3b6571d",
+          "source_revision": "44bd0cd",
           "coverage": "full",
           "reason": "French file is structurally complete and has received a targeted native-language review; broader independent review and learner-run evidence remain pending."
         }
@@ -2137,7 +2137,7 @@
           "content_status": "candidate",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "99ad7df",
+          "source_revision": "341fe7f",
           "coverage": "full",
           "reason": "French file is structurally complete and has received a targeted native-language review; broader independent review and learner-run evidence remain pending."
         }
