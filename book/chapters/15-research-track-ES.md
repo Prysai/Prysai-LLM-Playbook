@@ -163,7 +163,7 @@ motivo de parada y siguiente acción de bajo riesgo. No es un benchmark, estudio
 de usuarios ni consejo de compra; capítulo y experimento siguen `candidate` y
 `not_run`.
 
-## Recibo de investigación de diez minutos: documenta antes de concluir
+## Registro de investigación de diez minutos: documenta antes de concluir
 
 Al empezar no necesitas fingir un informe completo. Elige una pregunta estrecha
 y rellena este recibo durante diez minutos. Su fin es dejar un siguiente paso
