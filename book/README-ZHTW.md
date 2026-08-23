@@ -71,17 +71,17 @@
 [實驗 001：做一次安全的 README 改動](labs/lab-001-first-safe-task-ZHTW.md) →
 [第 3 章：任務協議](chapters/03-task-protocol-ZHTW.md) →
 [實驗 002：任務協議](labs/lab-002-task-protocol-ZHTW.md) →
-[第 4 章：上下文、許可權與 Agent 行動邊界](chapters/04-context-permissions-and-agent-ZHTW.md) →
+[第 4 章：上下文、權限與 Agent 行動邊界](chapters/04-context-permissions-and-agent-ZHTW.md) →
 [實驗 007：行動邊界](labs/lab-007-action-boundaries-ZHTW.md) →
 [第 5 章：選擇正確的 Codex 工作面](chapters/05-choose-the-codex-surface-ZHTW.md) →
 [第 6 章：模型選擇不是模型崇拜](chapters/06-model-selection-ZHTW.md) →
 [第 7 章：Skill、Plugin、MCP 和工具如何分工](chapters/07-skills-plugins-and-tools-ZHTW.md) →
 [實驗 004：選擇最小有用能力](labs/lab-004-skill-selection-ZHTW.md) →
 [第 8 章：從定義到交付](chapters/08-full-lifecycle-workflow-ZHTW.md) →
-[實驗 013：完成一個完整的豎向切片](labs/lab-013-l3-vertical-slice-ZHTW.md) →
+[實驗 013：完成一個完整的垂直切片](labs/lab-013-l3-vertical-slice-ZHTW.md) →
 [第 9 章：驗證、懷疑與恢復](chapters/09-verification-and-recovery-ZHTW.md) →
 [實驗 003：審計一條完成宣告](labs/lab-003-evidence-review-ZHTW.md) →
-[第 10 章：規劃與豎向切片](chapters/10-planning-and-slicing-ZHTW.md)。
+[第 10 章：規劃與垂直切片](chapters/10-planning-and-slicing-ZHTW.md)。
 
 整套中文路徑現有 40 / 40 個課程單元（22 章、18 個實驗），所有翻譯仍為 `in-progress`。中文頁面只連結中文檔案，不會靜默跳到英文正文。固定評測夾具仍沒有中文閱讀版，也沒有把靜態定義變成已完成評測。
 
