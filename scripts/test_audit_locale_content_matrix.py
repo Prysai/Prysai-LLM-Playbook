@@ -20,18 +20,17 @@ def main() -> int:
     require(path_record["identity_ok"], "identity opt-out should be explicit for entry pages")
     require(audit.ANCHOR.search(sample), "authored anchor fixture no longer matches")
 
-    # The production matrix contains seven route-complete subset records and
-    # one partial chapter. The audit must keep those visible instead of
-    # treating all existing files as full translations.
+    # The production matrix records complete structural/content-contract
+    # coverage separately from translation quality and learner evidence.
     result = audit.audit()
     issues = {(item["content_id"], item["locale"], item["kind"]) for item in result["issues"]}
     require(
-        ("communication-clinic", "ZH", "incomplete-coverage") in issues,
-        "starter-card subset disappeared from the audit",
+        not any(item["content_id"] == "communication-clinic" and item["kind"] == "incomplete-coverage" for item in result["issues"]),
+        "complete application pack was regressed to subset coverage",
     )
     require(
-        ("chapter-12-agent-loop-and-stop", "ZH", "incomplete-coverage") in issues,
-        "partial chapter disappeared from the audit",
+        not ("chapter-12-agent-loop-and-stop", "ZH", "incomplete-coverage") in issues,
+        "complete Simplified Chinese Chapter 12 was regressed to partial coverage",
     )
     require(
         not any(item["kind"] == "missing-reader-alias" for item in result["issues"]),
@@ -42,7 +41,8 @@ def main() -> int:
         "a localized Reader document contains a duplicate authored anchor",
     )
     require(result["summary"]["EN"]["full"] == 56, "English source coverage changed unexpectedly")
-    require(result["summary"]["FR"]["full"] == 55, "French governed coverage changed unexpectedly")
+    require(result["summary"]["ZH"]["full"] == 56, "Simplified Chinese governed coverage changed unexpectedly")
+    require(result["summary"]["FR"]["full"] == 56, "French governed coverage changed unexpectedly")
     print("LOCALE_CONTENT_MATRIX_AUDIT_TESTS_OK")
     return 0
 
