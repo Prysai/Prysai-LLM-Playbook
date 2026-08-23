@@ -151,8 +151,8 @@ restauration (`rollback`) :
 arrêt si :
 ```
 
-Une connexion, un bouton visible ou un répertoire inscriptible ne suffit pas à
-remplir aucune de ces lignes. Tant que la cible, l’audience ou la relecture manque,
+Une connexion, un bouton visible ou un répertoire inscriptible ne suffit à remplir
+aucune de ces lignes. Tant que la cible, l’audience ou la relecture manque,
 restez en aperçu et n’envoyez rien.
 
 ### Exemple rempli, sans effet externe
@@ -230,8 +230,9 @@ Après le retour, vérifiez indépendamment l’état :
 ```
 
 Les deux premiers événements ne prouvent pas les deux derniers. Après un délai
-d’attente ou si l’état reste inchangé, écrivez « soumission non vérifiée » et ne répétez pas un clic
-non-idempotent simplement parce que l’interface semble inchangée.
+d’attente ou si l’état reste inchangé, écrivez « soumission non vérifiée » et ne
+répétez pas un clic non idempotent simplement parce que l’interface semble
+inchangée.
 
 ## 5. Fiche de commande terminal
 
@@ -304,8 +305,8 @@ Après l’action, distinguez les quatre événements :
 
 Conservez pour chacun l’horodatage, la cible et le statut. Les deux premiers
 montrent une intention et un appel ; ils ne prouvent ni la réponse ni le nouvel
-état. En cas de délai d’attente, écrivez `submission not verified` et ne répétez pas un
-clic non idempotent sans réconciliation.
+état. En cas de délai d’attente, écrivez `submission not verified` et ne répétez
+pas un clic non idempotent sans réconciliation.
 
 ### Deux cartes, deux décisions
 
@@ -496,6 +497,19 @@ limites GitHub, capacités navigateur, modèles et labels UI sont volatils. Vér
 la documentation de première partie pour la surface et le compte concernés.
 Les rapports de terrain et contournements communautaires ne sont pas des règles
 officielles.
+
+Pour maintenir une affirmation volatile, conservez aussi sa fiche de provenance :
+
+| Champ | À noter |
+|---|---|
+| Source et responsable | URL ou identifiant original ; personne ou équipe qui en répond |
+| Date d’accès | Date et fuseau de la consultation |
+| Portée | Produit, version, compte, région et surface concernés ; `unknown` si absent |
+| État de la preuve | `supported`, `partial`, `inaccessible`, `unverified` ou `not_run` |
+| Prochaine revue | Date ou événement qui doit déclencher une nouvelle vérification |
+
+Une fiche complète facilite la correction lorsque l’interface ou la permission
+change ; elle ne transforme pas un rapport communautaire en règle officielle.
 
 Les exemples s’appuient sur l’[index des problèmes](../../docs/research/field-problems-index-2026-08-10.md),
 la [recherche surface/environnement](../../docs/research/field-problems-surface-2026-08-10.md),
