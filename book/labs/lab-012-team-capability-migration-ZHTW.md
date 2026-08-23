@@ -70,5 +70,5 @@ status: "pass | fail | blocked | not_run"
 
 <!-- lab-navigation:start -->
 <hr>
-<nav class="lab-navigation" aria-label="實驗導航"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-011-gpt-codex-boundaries-ZHTW.md">← 上一個實驗<br><strong>實驗 011 · GPT、Codex、工具與 Agent 的邊界</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-013-l3-vertical-slice-ZHTW.md">下一個實驗 →<br><strong>實驗 013 · 可審計的豎向切片</strong></a></td></tr></table></nav>
+<nav class="lab-navigation" aria-label="實驗導航"><table role="presentation" width="100%"><tr><td align="left"><a data-lab-nav="previous" href="lab-011-gpt-codex-boundaries-ZHTW.md">← 上一個實驗<br><strong>實驗 011 · GPT、Codex、工具與 Agent 的邊界</strong></a></td><td align="right"><a data-lab-nav="next" href="lab-013-l3-vertical-slice-ZHTW.md">下一個實驗 →<br><strong>實驗 013 · 可審計的垂直切片</strong></a></td></tr></table></nav>
 <!-- lab-navigation:end -->
