@@ -138,7 +138,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "in-progress",
           "coverage": "full",
-          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "source_revision": "worktree-2026-08-22-fr-contract-completion",
           "explicit_anchors": []
         }
       }
@@ -392,7 +392,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "in-progress",
           "coverage": "full",
-          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "source_revision": "worktree-2026-08-22-fr-boundary-check",
           "explicit_anchors": []
         }
       }
@@ -579,7 +579,7 @@ window.CODEX_LOCALE_MANIFEST = {
           "content_status": "candidate",
           "translation_status": "in-progress",
           "coverage": "full",
-          "source_revision": "fc4d000",
+          "source_revision": "worktree-2026-08-22-fr-starter-routing",
           "explicit_anchors": [
             "advanced-boundary-card",
             "advanced-recovery",

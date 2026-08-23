@@ -409,7 +409,7 @@
           "content_status": "candidate",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-22-fr-boundary-check",
+          "source_revision": "worktree-2026-08-21-fr-bootstrap",
           "coverage": "full",
           "run_status": "not_run",
           "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
@@ -575,7 +575,7 @@
           "content_status": "candidate",
           "translation_status": "in-progress",
           "translated_from": "EN",
-          "source_revision": "worktree-2026-08-21-fr-bootstrap",
+          "source_revision": "worktree-2026-08-22-fr-boundary-check",
           "coverage": "full",
           "reason": "French file exists and is structurally complete; independent native-language review and learner-run evidence remain pending."
         }
