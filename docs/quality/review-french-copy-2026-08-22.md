@@ -79,3 +79,25 @@ A French-speaking reviewer should blind-read the homepage, foundation guide,
 Chapters 1–5, and the practice cards in context, then record concrete edits and
 the reviewed scope before any status is changed to `reviewed` or
 `production-ready`.
+
+## Follow-up blind review — 2026-08-23
+
+The follow-up pass read selected target-language passages before comparing them
+with the English source. It treated terminology and meaning errors separately
+from the compression signals emitted by the semantic audit.
+
+| Locale | Surface | Resolution | Evidence boundary |
+|---|---|---|---|
+| FR | Chapter 13 field-case heading | Changed `Une entrée de terrain` to `Un cas observé sur le terrain`; the meaning remains a reported field case, not a literal data entry. | Editorial language correction; not proof of full French review. |
+| ZH | Chapter 14 isolated test wording | Changed `小范围隔离环境` to `受限隔离环境` so the phrase describes a bounded test scope rather than a physically small space. | Editorial language correction; not a completeness or learning result. |
+| ZHTW | Chapter 14 isolated test wording | Changed `小範圍隔離環境` to `受限隔離環境` for the same scope distinction. | Editorial language correction; not a completeness or learning result. |
+| ZHTW | Chapter 14 approval and smoke-test terms | Retained the existing natural forms `一項核准不代表下一項也已獲核准` and `冒煙測試`. | Blind-read confirmation; no additional change was needed. |
+| ES / DE / KO | Chapters 11–12 terminology | Confirmed the already-shipped `informe temporal`, `Laden`, and Korean reader-facing loop wording. | Confirmation of prior edits; not independent native certification. |
+
+The targeted semantic audit still reports nine conservative compression signals
+and zero missing deep concept groups. Those signals require a native-language
+editorial review; they are not evidence that a translation has lost meaning.
+All translated routes therefore remain `in-progress` or their declared
+candidate state. The project remains `candidate`, and this pass does not claim
+native-level fluency, cultural adaptation, learner comprehension, or production
+readiness.
