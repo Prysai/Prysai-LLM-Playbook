@@ -33,7 +33,7 @@ def main() -> int:
         not validator.has_explicit_locale_neutral_marker("Evaluation framework"),
         "unmarked neutral link was accepted",
     )
-    print("LOCALIZATION_VALIDATOR_TESTS_OK fixtures=5")
+    print("LOCALIZATION_VALIDATOR_TESTS_OK fixtures=7")
     return 0
 
 
