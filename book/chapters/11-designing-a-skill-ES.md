@@ -16,7 +16,7 @@ Podrás decidir si una tarea repetida realmente necesita una Skill, escribir un 
 
 Usa esta definición durante todo el capítulo:
 
-> Una Skill es un paquete de método descubrible y reutilizable que asigna una clase de tarea acotada a acciones acotadas y a evidencia comprobable.
+> Una Skill es un paquete de método que se pueda descubrir y reutilizar, y que asigna una clase de tarea acotada a acciones acotadas y a evidencia comprobable.
 
 Cuatro palabras marcan sus límites:
 
