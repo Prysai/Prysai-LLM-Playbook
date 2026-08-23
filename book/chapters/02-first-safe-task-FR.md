@@ -215,8 +215,9 @@ actions interdites et la preuve attendue. Corrigez tout malentendu avant le diff
 ### Avant un effet de bord
 
 Éditer, exécuter, installer, utiliser le réseau, un compte, Git, un navigateur,
-committer, pousser, publier ou envoyer sont des actions distinctes. Demandez une
-nouvelle décision avec cible, effet, rollback et preuve exacts.
+créer un commit, envoyer vers le dépôt distant (`push`), publier ou transmettre
+sont des actions distinctes. Demandez une nouvelle décision avec la cible,
+l’effet, la restauration (`rollback`) et la preuve exactement définis.
 
 ### Avant la livraison
 
@@ -321,11 +322,11 @@ baseline ou hash :
 opération unique :
 réseau / secrets / effets externes : aucun
 nettoyage autorisé : oui / non / inconnu
-preuve attendue : chemin, lecture arrière, sortie et limite
+preuve attendue : chemin, relecture, sortie et limite
 arrêt : chemin ambigu, donnée sensible, écriture hors périmètre ou preuve absente
 ```
 
-Après la lecture arrière, classez le résultat `observed`, `verified`,
+Après la relecture, classez le résultat `observed`, `verified`,
 `unverified` ou `blocked`. La sonde n’autorise pas une seconde écriture, une
 installation ou une publication ; elle répond seulement à la question précise
 qui a été écrite dans la fiche.
@@ -384,7 +385,7 @@ portée, responsable et prochaine revue.
 
 ### Préparation
 
-Utilisez un dossier ou dépôt Git jetable, confirmez le chemin absolu et gardez
+Utilisez un répertoire temporaire ou un dépôt Git de test, confirmez le chemin absolu et gardez
 une copie propre. N’utilisez aucun secret, `.env`, fichier client, dépôt public,
 installation ou cible de déploiement. Les commandes viennent du manifeste ou des
 scripts réels.
@@ -464,23 +465,23 @@ quel état reste inconnu ?
       datée ; une rumeur ou une sortie de modèle n’est pas présentée comme une
       règle officielle.
 
-### Reçu de première livraison
+### Fiche de première livraison
 
-Conservez un reçu qui relie chaque phrase à la preuve réellement lue :
+Conservez une fiche qui relie chaque phrase à la preuve réellement lue :
 
 ```text
 objectif et hors périmètre :
 fichiers et révision :
 actions réellement exécutées :
-diff / sortie / lecture arrière :
+diff / sortie / relecture :
 exigence → preuve → statut :
 inconnu ou non exécuté :
 prochaine vérification sûre :
 ```
 
 Un plan, une connexion réussie ou un label `Completed` peut figurer dans le
-contexte ; il ne remplace pas le diff, la sortie du contrôle ou la relecture de
-la cible. Si une ligne du reçu ne possède pas de preuve, réduisez la phrase ou
+contexte ; elle ne remplace pas le diff, la sortie du contrôle ou la relecture de
+la cible. Si une ligne de la fiche ne possède pas de preuve, réduisez la phrase ou
 livrez `unverified`.
 
 ## Transfert
