@@ -35,12 +35,12 @@
     <title>Prysai LLM Playbook — LLM Guide, Prompts, and Reliable AI Work</title>
     <script type="application/ld+json" id="site-structured-data">{"@context":"https://schema.org","@type":"WebSite","name":"Prysai LLM Playbook","alternateName":"LLMPlaybook","url":"https://docs.prysai.com/llm-playbook/","description":"Learn what LLMs are, write clearer prompts, and turn a first AI task into bounded, checkable work before choosing a platform-specific track.","inLanguage":["en","zh-CN","es","ja","ko","de","zh-TW","fr"],"isAccessibleForFree":true}</script>
     <link rel="icon" type="image/png" href="../assets/branding/prysai-lab-mark-black-96.png" />
-    <link rel="stylesheet" href="styles.css?v=20260822-home-locale-contract" />
+    <link rel="stylesheet" href="styles.css?v=20260824-visual-loop" />
     <script src="locale-manifest.js?v=20260822-home-locale-contract"></script>
     <script src="learning-path-data.js?v=20260822-home-locale-contract"></script>
     <script src="goal-templates.js?v=20260822-home-locale-contract"></script>
     <script src="traditional-chinese.js?v=20260822-home-locale-contract"></script>
-      <script src="app.js?v=20260822-completeness-fallback" defer></script>
+      <script src="app.js?v=20260824-visual-loop" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main" data-i18n="skipToContent">Skip to main content</a>
@@ -419,6 +419,49 @@ Return only the rewritten message.</code></pre></div>
               </ol>
               <p class="research-boundary foundation-concept-boundary" data-i18n="foundationConceptBoundary">Response ≠ action ≠ verified result. Compare the result with a source, diff, test, log, or acceptance rule before claiming completion.</p>
             </div>
+            <section class="foundation-loop-map" id="foundation-loop-map" aria-labelledby="foundation-loop-title" data-foundation-loop>
+              <div class="foundation-loop-head">
+                <div class="index-panel-head"><span class="index-panel-number">08</span><h3 id="foundation-loop-title" data-i18n="mindMapTitle">Follow the reliable LLM work loop.</h3></div>
+                <p class="index-panel-intro" data-i18n="mindMapIntro">Choose a node to see the next question. The static list below keeps the same route available when the interaction is unavailable.</p>
+              </div>
+              <div class="foundation-loop-workspace">
+                <div class="foundation-loop-visual" role="group" aria-label="Six steps in the reliable LLM work loop" data-i18n-attr="aria-label:mindMapAria">
+                  <div class="foundation-loop-center" aria-hidden="true"><span data-i18n="mindMapCenter">Reliable LLM work</span><small data-i18n="mindMapCenterSub">make the claim checkable</small></div>
+                  <ol class="foundation-loop-nodes">
+                    <li><button type="button" class="foundation-loop-node is-selected" data-mindmap-node="understand" aria-pressed="true" aria-controls="foundation-loop-detail"><span>01</span><strong data-i18n="mindMapNodeUnderstand">Understand</strong></button></li>
+                    <li><button type="button" class="foundation-loop-node" data-mindmap-node="frame" aria-pressed="false" aria-controls="foundation-loop-detail"><span>02</span><strong data-i18n="mindMapNodeFrame">Frame</strong></button></li>
+                    <li><button type="button" class="foundation-loop-node" data-mindmap-node="act" aria-pressed="false" aria-controls="foundation-loop-detail"><span>03</span><strong data-i18n="mindMapNodeAct">Act</strong></button></li>
+                    <li><button type="button" class="foundation-loop-node" data-mindmap-node="inspect" aria-pressed="false" aria-controls="foundation-loop-detail"><span>04</span><strong data-i18n="mindMapNodeInspect">Inspect</strong></button></li>
+                    <li><button type="button" class="foundation-loop-node" data-mindmap-node="repair" aria-pressed="false" aria-controls="foundation-loop-detail"><span>05</span><strong data-i18n="mindMapNodeRepair">Repair</strong></button></li>
+                    <li><button type="button" class="foundation-loop-node" data-mindmap-node="transfer" aria-pressed="false" aria-controls="foundation-loop-detail"><span>06</span><strong data-i18n="mindMapNodeTransfer">Transfer</strong></button></li>
+                  </ol>
+                </div>
+                <article class="foundation-loop-detail" id="foundation-loop-detail" aria-live="polite">
+                  <span class="foundation-loop-detail-label" data-i18n="mindMapDetailLabel">SELECTED STEP</span>
+                  <h4 data-mindmap-detail-title data-i18n="mindMapNodeUnderstand">Understand</h4>
+                  <p data-mindmap-detail-body data-i18n="mindMapUnderstandBody">Separate a model's proposed text from what the available evidence can establish.</p>
+                  <p class="foundation-loop-next"><span data-i18n="mindMapNextLabel">Next question</span><strong data-mindmap-detail-next data-i18n="mindMapUnderstandNext">What result can I check?</strong></p>
+                  <a class="text-link" data-mindmap-detail-link data-content-id="llm-fundamentals-guide" href="reader.html?path=book%2Fguides%2Fllm-fundamentals-EN.md&amp;lang=en"><span data-i18n="mindMapOpenRoute">Open this part of the route</span><span aria-hidden="true">↗</span></a>
+                </article>
+              </div>
+              <details class="foundation-loop-fallback" open>
+                <summary data-i18n="mindMapFallbackSummary">Read the six steps as a text sequence</summary>
+                <p data-i18n="mindMapFallbackIntro">Use this list without the interactive map. Each step names an action and the evidence boundary that follows it.</p>
+                <ol>
+                  <li><strong data-i18n="mindMapNodeUnderstand">Understand</strong><span data-i18n="mindMapUnderstandBody">Separate a model's proposed text from what the available evidence can establish.</span><a class="text-link" data-content-id="llm-fundamentals-guide" href="reader.html?path=book%2Fguides%2Fllm-fundamentals-EN.md&amp;lang=en"><span data-i18n="mindMapOpenRoute">Open this part of the route</span><span aria-hidden="true">↗</span></a></li>
+                  <li><strong data-i18n="mindMapNodeFrame">Frame</strong><span data-i18n="mindMapFrameBody">State the goal, relevant context, allowed help, limits, check, and stop condition.</span><a class="text-link" data-content-id="llm-core-first-generation" href="reader.html?path=book%2Froutes%2Fllm-core-first-generation-EN.md&amp;lang=en"><span data-i18n="mindMapOpenRoute">Open this part of the route</span><span aria-hidden="true">↗</span></a></li>
+                  <li><strong data-i18n="mindMapNodeAct">Act</strong><span data-i18n="mindMapActBody">Allow the smallest reversible action and pause before an external effect.</span><a class="text-link" data-content-id="chapter-13-action-boundaries" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en"><span data-i18n="mindMapOpenRoute">Open this part of the route</span><span aria-hidden="true">↗</span></a></li>
+                  <li><strong data-i18n="mindMapNodeInspect">Inspect</strong><span data-i18n="mindMapInspectBody">Compare the output or diff with a source, test, log, or acceptance rule.</span><a class="text-link" data-content-id="chapter-09-verification-and-recovery" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en"><span data-i18n="mindMapOpenRoute">Open this part of the route</span><span aria-hidden="true">↗</span></a></li>
+                  <li><strong data-i18n="mindMapNodeRepair">Repair</strong><span data-i18n="mindMapRepairBody">Name one mismatch, keep the failed receipt, and change one condition before retrying.</span><a class="text-link" data-content-id="llm-core-check-repair" href="reader.html?path=book%2Froutes%2Fllm-core-check-repair-EN.md&amp;lang=en"><span data-i18n="mindMapOpenRoute">Open this part of the route</span><span aria-hidden="true">↗</span></a></li>
+                  <li><strong data-i18n="mindMapNodeTransfer">Transfer</strong><span data-i18n="mindMapTransferBody">Repeat the method on an unseen task; do not turn one successful attempt into mastery.</span><a class="text-link" data-content-id="llm-core-unseen-transfer" href="reader.html?path=book%2Froutes%2Fllm-core-unseen-transfer-EN.md&amp;lang=en"><span data-i18n="mindMapOpenRoute">Open this part of the route</span><span aria-hidden="true">↗</span></a></li>
+                </ol>
+              </details>
+              <figure class="foundation-loop-figure">
+                <a href="../assets/teaching/reliable-llm-work-loop-red-black.svg" target="_blank" rel="noreferrer"><img src="../assets/teaching/reliable-llm-work-loop-red-black.svg" width="900" height="1500" loading="lazy" alt="Six-step reliable LLM work loop: understand, frame, act, inspect, repair, and transfer" data-i18n-attr="alt:mindMapFigureAlt" /></a>
+                <figcaption data-i18n="mindMapFigureCaption">Open the full project-authored board for a printable view. The list and explanation above carry the same meaning in text.</figcaption>
+              </figure>
+              <p class="research-boundary foundation-loop-boundary" data-i18n="mindMapBoundary">A map is a route, not proof of learning. Keep the attempt, the check, the failure, and the remaining unknowns.</p>
+            </section>
             <div class="foundation-visuals" id="foundation-visuals" aria-labelledby="foundation-visuals-title">
               <div class="foundation-visuals-head">
                 <div class="index-panel-head"><span class="index-panel-number">07</span><h3 id="foundation-visuals-title" data-i18n="foundationVisualsTitle">Five foundation boards, one loop.</h3></div>
@@ -488,7 +531,7 @@ Return only the rewritten message.</code></pre></div>
             <a href="../docs/skill-registry.md"><strong>26</strong><span data-i18n="mobileIndexSkills">Skills</span></a>
             <a href="reader.html?path=docs%2Fresearch%2Ffield-problems-index-2026-08-10.md&amp;lang=en" data-content-id="field-problems-index-2026-08-10"><strong>03</strong><span data-i18n="mobileIndexCases">field cases</span></a>
             <a href="../docs/governance/locale-matrix.yaml"><strong>08</strong><span data-i18n="mobileIndexLocales">locale records</span></a>
-            <a href="../assets/teaching/README.md"><strong>25</strong><span data-i18n="mobileIndexVisuals">teaching boards</span></a>
+            <a href="../assets/teaching/README.md"><strong>26</strong><span data-i18n="mobileIndexVisuals">teaching boards</span></a>
             <a href="../docs/governance/update-map.md"><strong>18</strong><span data-i18n="mobileIndexUpdates">update areas</span></a>
             <a href="../docs/governance/page-trust-registry.yaml"><strong>04</strong><span data-i18n="mobileIndexTrust">trust families</span></a>
           </nav>
