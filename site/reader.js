@@ -101,6 +101,25 @@
   const conceptMapFallbackIntro = document.querySelector('[data-reader-concept-map-fallback-intro]');
   const conceptMapFallbackList = document.querySelector('[data-reader-concept-map-fallback-list]');
   const conceptMapBoundary = document.querySelector('[data-reader-concept-map-boundary]');
+  const readingLoop = document.querySelector('[data-reader-reading-loop]');
+  const readingLoopSummary = document.querySelector('[data-reader-reading-loop-summary]');
+  const readingLoopIntro = document.querySelector('[data-reader-reading-loop-intro]');
+  const readingLoopNodes = document.querySelector('[data-reader-reading-loop-nodes]');
+  const readingLoopDetailLabel = document.querySelector('[data-reader-reading-loop-detail-label]');
+  const readingLoopDetailTitle = document.querySelector('[data-reader-reading-loop-detail-title]');
+  const readingLoopDetailBody = document.querySelector('[data-reader-reading-loop-detail-body]');
+  const readingLoopNextLabel = document.querySelector('[data-reader-reading-loop-next-label]');
+  const readingLoopDetailNext = document.querySelector('[data-reader-reading-loop-detail-next]');
+  const readingLoopDetailLink = document.querySelector('[data-reader-reading-loop-detail-link]');
+  const readingLoopOpen = document.querySelector('[data-reader-reading-loop-open]');
+  const readingLoopFallback = document.querySelector('[data-reader-reading-loop-fallback]');
+  const readingLoopFallbackIntro = document.querySelector('[data-reader-reading-loop-fallback-intro]');
+  const readingLoopFallbackList = document.querySelector('[data-reader-reading-loop-fallback-list]');
+  const readingLoopFigureLink = document.querySelector('[data-reader-reading-loop-figure-link]');
+  const readingLoopImage = document.querySelector('[data-reader-reading-loop-image]');
+  const readingLoopFigureOpen = document.querySelector('[data-reader-reading-loop-figure-open]');
+  const readingLoopFigureCaption = document.querySelector('[data-reader-reading-loop-figure-caption]');
+  const readingLoopBoundary = document.querySelector('[data-reader-reading-loop-boundary]');
   const visualCompanion = document.querySelector('[data-reader-visual-companion]');
   const visualCompanionSummary = document.querySelector('[data-reader-visual-companion-summary]');
   const visualCompanionIntro = document.querySelector('[data-reader-visual-companion-intro]');
@@ -262,6 +281,110 @@
     fr: {
       summary: 'Carte visuelle du parcours', intro: 'Utilisez ces six étapes pour situer cette page dans la méthode générale. Sélectionnez-en une pour voir la question suivante.', aria: 'Six étapes de la méthode de travail fiable avec un LLM', selected: 'Étape sélectionnée', next: 'Question suivante', open: 'Ouvrir cette partie du parcours', fallback: 'Lire le parcours sous forme de texte', fallbackIntro: 'La séquence garde le même sens sans les commandes interactives ni l’image.', figureAlt: 'Boucle de travail fiable avec un LLM en six étapes : comprendre, cadrer, agir, vérifier, corriger et transférer.', figureOpen: 'Ouvrir le visuel en taille réelle', figureCaption: 'Planche pédagogique originale du projet. Le texte environnant constitue l’explication accessible ; la planche sert à se repérer.', boundary: 'La carte montre une séquence, pas une preuve de réussite. Conservez l’essai, le contrôle, l’échec et les inconnues restantes.', labels: ['Comprendre', 'Cadrer', 'Agir', 'Vérifier', 'Corriger', 'Transférer'], bodies: ['Séparez la proposition du modèle de ce que les preuves disponibles permettent réellement d’établir.', 'Indiquez le but, le contexte, l’aide autorisée, les limites, le contrôle et la condition d’arrêt.', 'N’autorisez que l’action réversible la plus petite et faites une pause avant tout effet externe.', 'Comparez la sortie ou le diff avec une source, un test, un journal ou une règle d’acceptation.', 'Nommez un écart, conservez la trace de l’échec et ne changez qu’une condition avant de réessayer.', 'Répétez la méthode sur une tâche inconnue ; un essai réussi ne prouve pas la maîtrise.'], nextQuestions: ['Quel résultat puis-je vérifier ?', 'Qu’est-ce qui est autorisé et qu’est-ce qui ne l’est pas ?', 'Quelle est la plus petite action sûre ?', 'Quelle preuve ferait évoluer mon affirmation ?', 'Quel écart vais-je corriger en premier ?', 'Puis-je répéter la méthode sur une nouvelle tâche ?']
     },
+  };
+
+  // A page-level task chain complements the heading map: it tells a reader
+  // what to extract and keep, while the heading text continues to come from
+  // the selected locale. The ordered fallback is rendered from the same data.
+  const readerReadingLoopCopy = {
+    en: { summary: 'Read this page as a task chain', intro: 'Move from the page problem to one checked action, then carry the question to a changed task.', aria: 'Six-stage page reading task chain', selected: 'Selected stage', next: 'Next question', open: 'Open the linked section', fallback: 'Read the task chain as text', fallbackIntro: 'The same six stages and heading links remain available as a simple ordered list.', figureOpen: 'Open full-size visual', figureAlt: 'Six-stage page reading loop: problem, concept, action, evidence, boundary, and transfer.', figureCaption: 'Project-authored page-to-practice board. The task chain and heading links remain the accessible explanation.', boundary: 'This chain makes a reading move visible. It does not prove comprehension, execution, or transfer.', labels: ['Problem', 'Concept', 'Action', 'Evidence', 'Boundary', 'Transfer'], bodies: ['Name the situation or decision this page is meant to clarify.', 'Find the distinction that should change what you do next.', 'Choose one small, observable move with a clear stop point.', 'Keep the source, diff, test, log, or other record that lets you check it.', 'State what the page or one attempt still cannot establish.', 'Change the task and ask whether the same method still holds.'], nextQuestions: ['What situation am I trying to resolve?', 'Which distinction changes my next move?', 'What is the smallest safe move?', 'What record lets me check the result?', 'What can this page not prove?', 'What changes on the next task?'] },
+    zh: { summary: '把本页读成一条任务链', intro: '从页面要解决的问题走到一次可检查的行动，再把问题带到变化后的任务。', aria: '页面阅读六阶段任务链', selected: '当前阶段', next: '下一道问题', open: '打开对应小节', fallback: '按文字阅读任务链', fallbackIntro: '相同的六个阶段和标题链接也会以简单的有序列表提供。', figureOpen: '打开完整尺寸图示', figureAlt: '页面阅读六步闭环：问题、概念、行动、证据、边界和迁移。', figureCaption: '项目原创页面到实践图板。任务链和标题链接才是无障碍解释。', boundary: '这条任务链让阅读动作变得清楚；它不证明理解、执行或迁移已经发生。', labels: ['问题', '概念', '行动', '证据', '边界', '迁移'], bodies: ['说清本页要帮助你理解的情境或判断。', '找出会改变你下一步做法的关键区分。', '选择一个可观察、规模最小并有明确停止点的行动。', '保留能让你检查结果的来源、差异、测试、日志或其他记录。', '说明页面或一次尝试仍然无法证明什么。', '改变任务，检查同一套方法是否仍然成立。'], nextQuestions: ['我正在解决什么情境？', '哪个区分会改变我的下一步？', '最小的安全行动是什么？', '哪条记录能让我检查结果？', '这页内容不能证明什么？', '下一个任务会改变什么？'] },
+    es: { summary: 'Lee esta página como una cadena de tarea', intro: 'Pasa del problema de la página a una acción comprobable y lleva la pregunta a una tarea distinta.', aria: 'Cadena de lectura de seis etapas', selected: 'Etapa seleccionada', next: 'Siguiente pregunta', open: 'Abrir la sección enlazada', fallback: 'Leer la cadena como texto', fallbackIntro: 'Las mismas seis etapas y enlaces a los encabezados están disponibles en una lista ordenada.', boundary: 'Esta cadena hace visible el movimiento de lectura. No demuestra comprensión, ejecución ni transferencia.', labels: ['Problema', 'Concepto', 'Acción', 'Evidencia', 'Límite', 'Transferencia'], bodies: ['Nombra la situación o decisión que la página debe aclarar.', 'Encuentra la distinción que debería cambiar lo que haces después.', 'Elige una acción pequeña y observable, con un punto claro de parada.', 'Conserva la fuente, el diff, la prueba, el registro u otro rastro que permita comprobarla.', 'Di qué no puede demostrar todavía la página o un solo intento.', 'Cambia la tarea y comprueba si el mismo método sigue funcionando.'], nextQuestions: ['¿Qué situación intento resolver?', '¿Qué distinción cambia mi siguiente paso?', '¿Cuál es la acción segura más pequeña?', '¿Qué registro me permite comprobar el resultado?', '¿Qué no puede demostrar esta página?', '¿Qué cambia en la próxima tarea?'] },
+    ja: { summary: 'このページをタスクの流れとして読む', intro: 'ページの問題から確認できる操作へ進み、その問いを別の課題に持ち込みます。', aria: 'ページを読む6段階のタスクフロー', selected: '選択中の段階', next: '次に考える問い', open: '対応する節を開く', fallback: 'タスクの流れを文字で読む', fallbackIntro: '同じ6段階と見出しへのリンクを、順序付きリストでも確認できます。', boundary: 'この流れは読み方を見えるようにする補助です。理解、実行、転用の証明ではありません。', labels: ['問題', '概念', '操作', '証拠', '境界', '転用'], bodies: ['このページが明らかにしようとしている状況や判断を言葉にします。', '次の行動を変えるべき区別を見つけます。', '停止点が明確で、観測できる最小の操作を1つ選びます。', '確認に使える出典、差分、テスト、ログなどの記録を残します。', 'ページや1回の試行だけでは何を示せないかを述べます。', '課題を変えて、同じ方法が通用するかを確かめます。'], nextQuestions: ['何を解決しようとしているのか？', '次の行動を変える区別は何か？', '最小で安全な操作は何か？', '結果を確認できる記録は何か？', 'このページでは何を証明できないか？', '次の課題で何が変わるか？'] },
+    ko: { summary: '이 페이지를 작업 흐름으로 읽기', intro: '페이지의 문제에서 확인 가능한 행동으로 이동한 뒤, 그 질문을 달라진 작업에 적용합니다.', aria: '페이지 읽기 6단계 작업 흐름', selected: '선택한 단계', next: '다음 질문', open: '연결된 섹션 열기', fallback: '작업 흐름을 텍스트로 읽기', fallbackIntro: '같은 여섯 단계와 제목 링크를 간단한 순서 목록으로도 확인할 수 있습니다.', boundary: '이 흐름은 읽는 행동을 드러낼 뿐입니다. 이해, 실행 또는 전이를 증명하지 않습니다.', labels: ['문제', '개념', '행동', '증거', '경계', '전이'], bodies: ['이 페이지가 분명히 하려는 상황이나 판단을 적습니다.', '다음에 할 일을 바꿔야 하는 구분을 찾습니다.', '중지 지점이 분명한 작고 관찰 가능한 행동 하나를 고릅니다.', '확인에 쓸 출처, diff, 테스트, 로그 또는 다른 기록을 남깁니다.', '페이지나 한 번의 시도가 아직 증명하지 못하는 것을 말합니다.', '작업을 바꾸고 같은 방법이 여전히 통하는지 확인합니다.'], nextQuestions: ['어떤 상황을 해결하려는가?', '다음 행동을 바꾸는 구분은 무엇인가?', '가장 작은 안전한 행동은 무엇인가?', '결과를 확인할 기록은 무엇인가?', '이 페이지가 증명하지 못하는 것은 무엇인가?', '다음 작업에서 무엇이 달라지는가?'] },
+    de: { summary: 'Diese Seite als Aufgabenfolge lesen', intro: 'Gehe vom Problem der Seite zu einer prüfbaren Handlung und nimm die Frage in eine veränderte Aufgabe mit.', aria: 'Sechsstufige Aufgabenfolge zum Lesen der Seite', selected: 'Ausgewählte Stufe', next: 'Nächste Frage', open: 'Verknüpften Abschnitt öffnen', fallback: 'Die Aufgabenfolge als Text lesen', fallbackIntro: 'Dieselben sechs Stufen und Überschriftenlinks stehen auch als einfache geordnete Liste bereit.', boundary: 'Diese Folge macht den Leseschritt sichtbar. Sie belegt weder Verständnis noch Ausführung oder Übertragung.', labels: ['Problem', 'Begriff', 'Handlung', 'Beleg', 'Grenze', 'Übertragung'], bodies: ['Benenne die Situation oder Entscheidung, die diese Seite klären soll.', 'Finde die Unterscheidung, die dein nächstes Handeln verändern sollte.', 'Wähle eine kleine, beobachtbare Handlung mit einem klaren Haltepunkt.', 'Bewahre Quelle, Diff, Test, Protokoll oder einen anderen prüfbaren Beleg auf.', 'Sage, was die Seite oder ein einzelner Versuch noch nicht belegen kann.', 'Ändere die Aufgabe und prüfe, ob dieselbe Methode weiterhin trägt.'], nextQuestions: ['Welche Situation will ich klären?', 'Welche Unterscheidung verändert meinen nächsten Schritt?', 'Was ist die kleinste sichere Handlung?', 'Welcher Beleg lässt mich das Ergebnis prüfen?', 'Was kann diese Seite nicht belegen?', 'Was ändert sich bei der nächsten Aufgabe?'] },
+    'zh-tw': { summary: '把本頁讀成一條任務鏈', intro: '從頁面要解決的問題走到一次可檢查的行動，再把問題帶到有所變化的任務。', aria: '頁面閱讀六階段任務鏈', selected: '目前階段', next: '下一個問題', open: '開啟對應段落', fallback: '依文字閱讀任務鏈', fallbackIntro: '相同的六個階段與標題連結，也會以簡單的有序清單呈現。', boundary: '這條任務鏈讓閱讀動作變得清楚；不代表理解、執行或遷移已經發生。', labels: ['問題', '概念', '行動', '證據', '界線', '遷移'], bodies: ['說清楚本頁要協助你理解的情境或判斷。', '找出會改變下一步做法的關鍵區分。', '選擇一個可觀察、規模最小且有明確停止點的行動。', '保留能讓你檢查結果的來源、差異、測試、日誌或其他紀錄。', '說明頁面或一次嘗試仍然無法證明什麼。', '改變任務，檢查同一套方法是否仍然成立。'], nextQuestions: ['我正在解決什麼情境？', '哪個區分會改變我的下一步？', '最小的安全行動是什麼？', '哪一筆紀錄能讓我檢查結果？', '這頁內容不能證明什麼？', '下一個任務會改變什麼？'] },
+    fr: { summary: 'Lire cette page comme une chaîne de tâches', intro: 'Partez du problème posé par la page, allez jusqu’à une action vérifiable, puis emportez la question vers une tâche différente.', aria: 'Chaîne de lecture en six étapes', selected: 'Étape sélectionnée', next: 'Question suivante', open: 'Ouvrir la section liée', fallback: 'Lire la chaîne sous forme de texte', fallbackIntro: 'Les six mêmes étapes et les liens vers les titres restent disponibles dans une liste ordonnée.', boundary: 'Cette chaîne rend le geste de lecture explicite. Elle ne prouve ni la compréhension, ni l’exécution, ni le transfert.', labels: ['Problème', 'Concept', 'Action', 'Preuve', 'Limite', 'Transfert'], bodies: ['Nommez la situation ou la décision que la page doit aider à éclaircir.', 'Trouvez la distinction qui devrait modifier votre prochaine action.', 'Choisissez une action petite et observable, avec un point d’arrêt clair.', 'Conservez la source, le diff, le test, le journal ou tout autre relevé qui permet de vérifier le résultat.', 'Dites ce que la page ou un seul essai ne permet pas encore d’établir.', 'Changez de tâche et vérifiez si la même méthode tient toujours.'], nextQuestions: ['Quelle situation est-ce que je cherche à résoudre ?', 'Quelle distinction change mon prochain geste ?', 'Quelle est la plus petite action sûre ?', 'Quel relevé me permet de vérifier le résultat ?', 'Que cette page ne peut-elle pas prouver ?', 'Qu’est-ce qui change dans la prochaine tâche ?'] },
+  };
+  Object.assign(readerReadingLoopCopy.es, { figureOpen: 'Abrir el visual a tamaño completo', figureAlt: 'Ciclo de lectura en seis etapas: problema, concepto, acción, evidencia, límite y transferencia.', figureCaption: 'Tablero original del proyecto, de la página a la práctica. La cadena y los enlaces de encabezado son la explicación accesible.' });
+  Object.assign(readerReadingLoopCopy.ja, { figureOpen: '図を原寸で開く', figureAlt: 'ページを読む6段階の流れ：問題、概念、操作、証拠、境界、転用。', figureCaption: 'ページから実践へのプロジェクト作成ボードです。タスクの流れと見出しリンクがアクセシブルな説明です。' });
+  Object.assign(readerReadingLoopCopy.ko, { figureOpen: '전체 그림 열기', figureAlt: '페이지 읽기 6단계 흐름: 문제, 개념, 행동, 증거, 경계, 전이.', figureCaption: '페이지에서 실천으로 이어지는 프로젝트 제작 보드입니다. 작업 흐름과 제목 링크가 접근 가능한 설명입니다.' });
+  Object.assign(readerReadingLoopCopy.de, { figureOpen: 'Visualisierung in voller Größe öffnen', figureAlt: 'Sechsstufige Lesefolge: Problem, Begriff, Handlung, Beleg, Grenze und Übertragung.', figureCaption: 'Projektbezogene Tafel von der Seite zur Praxis. Die Aufgabenfolge und Überschriftenlinks sind die zugängliche Erklärung.' });
+  Object.assign(readerReadingLoopCopy['zh-tw'], { figureOpen: '開啟完整尺寸圖示', figureAlt: '頁面閱讀六步閉環：問題、概念、行動、證據、界線與遷移。', figureCaption: '專案原創頁面到實踐圖板。任務鏈與標題連結才是無障礙說明。' });
+  Object.assign(readerReadingLoopCopy.fr, { figureOpen: 'Ouvrir le visuel en taille réelle', figureAlt: 'Chaîne de lecture en six étapes : problème, concept, action, preuve, limite et transfert.', figureCaption: 'Planche originale du projet, de la page à la pratique. La chaîne et les liens vers les titres constituent l’explication accessible.' });
+
+  const renderReaderReadingLoop = (selection, headings = []) => {
+    if (!readingLoop || !readingLoopNodes || !readingLoopFallbackList) return;
+    const mappedHeadings = headings.filter((heading) => heading.id && heading.textContent.trim()).slice(0, 6);
+    if (!selection || mappedHeadings.length < 2) {
+      readingLoop.hidden = true;
+      readingLoopNodes.replaceChildren();
+      readingLoopFallbackList.replaceChildren();
+      return;
+    }
+    const strings = readerReadingLoopCopy[uiLanguage()] || readerReadingLoopCopy.en;
+    readingLoop.hidden = false;
+    readingLoop.open = false;
+    readingLoopSummary.textContent = strings.summary;
+    readingLoopSummary.setAttribute('aria-label', strings.aria);
+    readingLoopIntro.textContent = strings.intro;
+    readingLoopNodes.setAttribute('aria-label', strings.aria);
+    readingLoopDetailLabel.textContent = strings.selected;
+    readingLoopNextLabel.textContent = strings.next;
+    readingLoopOpen.textContent = strings.open;
+    readingLoopFallback.textContent = strings.fallback;
+    readingLoopFallbackIntro.textContent = strings.fallbackIntro;
+    if (readingLoopFigureLink && readingLoopImage && readingLoopFigureOpen && readingLoopFigureCaption) {
+      const imageHref = directHref('assets/teaching/reader-page-reading-loop-red-black.svg');
+      readingLoopFigureLink.href = imageHref;
+      readingLoopFigureLink.setAttribute('aria-label', strings.figureOpen);
+      readingLoopImage.src = imageHref;
+      readingLoopImage.alt = strings.figureAlt;
+      readingLoopFigureOpen.textContent = strings.figureOpen;
+      readingLoopFigureCaption.textContent = strings.figureCaption;
+    }
+    readingLoopBoundary.textContent = strings.boundary;
+    readingLoopNodes.replaceChildren();
+    readingLoopFallbackList.replaceChildren();
+    const nodes = [];
+    const selectStage = (index) => {
+      nodes.forEach((node, nodeIndex) => {
+        const active = nodeIndex === index;
+        node.classList.toggle('is-current', active);
+        if (active) node.setAttribute('aria-current', 'step');
+        else node.removeAttribute('aria-current');
+      });
+      const heading = mappedHeadings[index];
+      readingLoopDetailTitle.textContent = strings.labels[index] || heading.textContent.trim();
+      readingLoopDetailBody.textContent = strings.bodies[index] || '';
+      readingLoopDetailNext.textContent = strings.nextQuestions[index] || '';
+      const href = headingHref(heading.id);
+      readingLoopDetailLink.href = href;
+      readingLoopDetailLink.setAttribute('aria-label', `${strings.open}: ${heading.textContent.trim()}`);
+    };
+    mappedHeadings.forEach((heading, index) => {
+      const item = document.createElement('li');
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'reader-reading-loop-node';
+      button.dataset.readerReadingLoopStep = String(index);
+      const number = document.createElement('span');
+      number.className = 'reader-reading-loop-node-number';
+      number.textContent = String(index + 1).padStart(2, '0');
+      const label = document.createElement('strong');
+      label.textContent = strings.labels[index] || heading.textContent.trim();
+      const source = document.createElement('span');
+      source.textContent = heading.textContent.trim();
+      button.append(number, label, source);
+      button.addEventListener('click', () => {
+        selectStage(index);
+        const target = document.getElementById(heading.id);
+        if (!target) return;
+        target.tabIndex = -1;
+        target.focus({ preventScroll: true });
+        target.scrollIntoView({ block: 'start' });
+      });
+      item.append(button);
+      readingLoopNodes.append(item);
+      nodes.push(button);
+      const fallbackItem = document.createElement('li');
+      const fallbackLink = document.createElement('a');
+      fallbackLink.href = headingHref(heading.id);
+      fallbackLink.textContent = `${String(index + 1).padStart(2, '0')} · ${strings.labels[index] || heading.textContent.trim()} — ${heading.textContent.trim()}`;
+      fallbackItem.append(fallbackLink);
+      readingLoopFallbackList.append(fallbackItem);
+    });
+    selectStage(0);
   };
 
   // These strings describe the progressive-enhancement layer around the
@@ -2134,6 +2257,7 @@ function canonicalChapterTitle(chapter) {
       || readerRouteMapSteps.some((step) => step.contentId === selection.contentId);
     renderReaderRouteMap(routeMapEligible ? selection : null);
     renderReaderConceptMap(selection, title, pageHeadings);
+    renderReaderReadingLoop(selection, pageHeadings);
     renderReaderInlineConceptMap(selection, title, pageHeadings);
     renderReaderPageAnatomy(selection, title, pageHeadings);
     renderReaderInlineVisual(selection, title);

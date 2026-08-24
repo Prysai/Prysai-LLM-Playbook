@@ -1810,6 +1810,16 @@ try {
     'zh-tw': ['本頁概念圖', '配套教學圖'],
     fr: ['Carte conceptuelle de cette page', 'Visuel pédagogique'],
   };
+  const readingLoopLocales = {
+    en: ['Read this page as a task chain', 'Problem', 'Evidence'],
+    zh: ['把本页读成一条任务链', '问题', '证据'],
+    es: ['Lee esta página como una cadena de tarea', 'Problema', 'Evidencia'],
+    ja: ['このページをタスクの流れとして読む', '問題', '証拠'],
+    ko: ['이 페이지를 작업 흐름으로 읽기', '문제', '증거'],
+    de: ['Diese Seite als Aufgabenfolge lesen', 'Problem', 'Beleg'],
+    'zh-tw': ['把本頁讀成一條任務鏈', '問題', '證據'],
+    fr: ['Lire cette page comme une chaîne de tâches', 'Problème', 'Preuve'],
+  };
   for (const [locale, suffix, expectedInspectLabel] of routeMapLocales) {
     await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F02-first-safe-task-${suffix}.md&lang=${locale}`, { waitUntil: 'networkidle' });
     await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
@@ -1831,6 +1841,17 @@ try {
     assert.equal((await page.locator('[data-reader-concept-map-summary]').innerText()).trim(), visualGuideLocales[locale][0], `${locale} concept map label is not localized`);
     assert.equal((await page.locator('[data-reader-visual-companion-summary]').innerText()).trim(), visualGuideLocales[locale][1], `${locale} visual companion label is not localized`);
     assert.equal((await page.locator('[data-reader-inline-concept-map] summary').innerText()).trim(), visualGuideLocales[locale][0], `${locale} inline concept map label is not localized`);
+    const readingLoop = page.locator('[data-reader-reading-loop]');
+    assert.equal(await readingLoop.isVisible(), true, `${locale} page reading task chain is not available`);
+    assert.equal((await page.locator('[data-reader-reading-loop-summary]').innerText()).trim(), readingLoopLocales[locale][0], `${locale} reading task chain label is not localized`);
+    await page.locator('[data-reader-reading-loop-summary]').click();
+    assert.equal(await page.locator('.reader-reading-loop-node').count(), 6, `${locale} reading task chain does not expose six stages`);
+    assert.equal((await page.locator('[data-reader-reading-loop-detail-title]').innerText()).trim(), readingLoopLocales[locale][1], `${locale} reading task chain did not select its first stage`);
+    assert.equal(await page.locator('[data-reader-reading-loop-fallback-list] li').count(), 6, `${locale} reading task chain has no six-item text fallback`);
+    assert.notEqual((await page.locator('[data-reader-reading-loop-image]').getAttribute('alt') || '').trim(), '', `${locale} reading task chain visual has no alternative text`);
+    assert.notEqual((await page.locator('[data-reader-reading-loop-figure-caption]').innerText()).trim(), '', `${locale} reading task chain visual has no caption`);
+    await page.locator('.reader-reading-loop-node').nth(3).click();
+    assert.equal((await page.locator('[data-reader-reading-loop-detail-title]').innerText()).trim(), readingLoopLocales[locale][2], `${locale} reading task chain selection did not update`);
     assert.ok(await page.locator('[data-reader-inline-concept-map-node]').count() >= 2, `${locale} inline concept map lost localized heading branches`);
     assert.notEqual((await page.locator('[data-reader-inline-concept-map-root]').textContent()).trim(), '', `${locale} inline concept map root is empty`);
     assert.ok(await page.locator('[data-reader-concept-map-node]').count() >= 2, `${locale} concept map lost localized heading branches`);
