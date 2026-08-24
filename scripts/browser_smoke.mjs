@@ -579,6 +579,26 @@ try {
       `${locale} foundation visual descriptions are not fully localized`,
     );
     assert.match(await foundationVisuals.locator('.foundation-visual-boundary').innerText(), localizedFoundationVisuals[locale].boundary, `${locale} foundation visual provenance boundary is not localized`);
+    const journey = page.locator('#foundation-journey');
+    assert.equal(await journey.count(), 1, `${locale} Playbook learning journey is missing`);
+    const localizedJourney = {
+      en: { title: 'See the whole Playbook before you choose a track.', steps: ['Foundation Core', 'First bounded task', 'Evidence loop', 'Optional tracks'], alt: 'Playbook learning journey from the Foundation Core to a first bounded task, an evidence loop, and optional tracks' },
+      zh: { title: '先看完整路线，再选择下一条实践路径。', steps: ['基础核心课', '第一项有边界任务', '证据闭环', '可选实践路径'], alt: '从基础核心课到第一项有边界任务、证据闭环和可选路径的 Playbook 学习旅程图' },
+      es: { title: 'Mira el Playbook completo antes de elegir una ruta.', steps: ['Núcleo de fundamentos', 'Primera tarea acotada', 'Ciclo de evidencia', 'Rutas opcionales'], alt: 'Ruta de aprendizaje del Playbook: del núcleo de fundamentos a una tarea acotada, un ciclo de evidencia y rutas opcionales' },
+      ja: { title: 'ルートを選ぶ前に、Playbook 全体の流れを見る。', steps: ['LLM 基礎コア', '最初の範囲付きタスク', '証拠のループ', '任意の実践ルート'], alt: 'LLM 基礎コアから最初の範囲付きタスク、証拠のループ、任意の実践ルートへ進む Playbook 学習図' },
+      ko: { title: '경로를 고르기 전에 Playbook 전체 흐름을 보세요.', steps: ['LLM 기초 코어', '첫 번째 범위 있는 작업', '증거 루프', '선택 실습 경로'], alt: 'LLM 기초 코어에서 첫 번째 범위 있는 작업, 증거 루프와 선택 실습 경로로 이어지는 Playbook 학습 여정' },
+      de: { title: 'Sieh dir das ganze Playbook an, bevor du eine Route wählst.', steps: ['LLM-Grundlagenkern', 'Erste begrenzte Aufgabe', 'Belegschleife', 'Optionale Routen'], alt: 'Playbook-Lernroute vom LLM-Grundlagenkern über eine begrenzte Aufgabe und eine Belegschleife zu optionalen Routen' },
+      'zh-tw': { title: '先看完整路線，再選擇下一條實踐路徑。', steps: ['基礎核心課', '第一項有界線的任務', '證據閉環', '可選實踐路徑'], alt: '從基礎核心課到第一項有界線任務、證據閉環與可選路徑的 Playbook 學習旅程圖' },
+      fr: { title: 'Voyez l’ensemble du Playbook avant de choisir une voie.', steps: ['Foundation Core', 'Première tâche délimitée', 'Boucle de preuves', 'Parcours facultatifs'], alt: 'Parcours d’apprentissage du Playbook : du Foundation Core à une première tâche délimitée, une boucle de preuves et des parcours facultatifs' },
+    }[locale];
+    assert.equal(await journey.locator('h3').innerText(), localizedJourney.title, `${locale} learning journey title is not localized`);
+    assert.deepEqual(await journey.locator('.foundation-journey-list strong').allTextContents(), localizedJourney.steps, `${locale} learning journey steps are not localized`);
+    assert.equal(await journey.locator('img').getAttribute('alt'), localizedJourney.alt, `${locale} learning journey alt text is not localized`);
+    assert.equal(await journey.locator('.foundation-journey-list li').count(), 4, `${locale} learning journey text fallback lost a stage`);
+    await journey.scrollIntoViewIfNeeded();
+    await journey.locator('img').waitFor();
+    await page.waitForTimeout(50);
+    assert.equal((await journey.locator('img').evaluate((image) => image.complete && image.naturalWidth > 0)), true, `${locale} learning journey SVG did not load`);
     const evidenceMap = page.locator('#foundation-evidence-map');
     assert.equal(await evidenceMap.count(), 1, `${locale} evidence decision map is missing`);
     assert.equal(await evidenceMap.locator('[data-evidence-node]').count(), 5, `${locale} evidence decision map lost a step`);
