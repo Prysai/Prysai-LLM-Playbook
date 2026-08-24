@@ -19,8 +19,17 @@ class ReaderLocaleCoverageTests(unittest.TestCase):
         self.assertEqual(report["missing_locale_records"], [])
         self.assertEqual(report["missing_files"], [])
         self.assertEqual(report["manifest_content_count"], 103)
-        self.assertEqual(report["not_started_counts"]["en"], 0)
-        self.assertGreater(report["not_started_counts"]["zh"], 0)
+        # All currently indexed Reader identities have an authored route in
+        # every locale.  Missing-route behavior remains covered by the
+        # navigation and browser negative fixtures.
+        self.assertTrue(all(count == 0 for count in report["not_started_counts"].values()))
+        self.assertTrue(
+            all(
+                report["status_counts"][locale].get("in-progress", 0) > 0
+                for locale in report["locales"]
+                if locale != "en"
+            )
+        )
 
     def test_audit_keeps_course_and_reader_counts_separate(self) -> None:
         report = coverage.audit(coverage.load_manifest())
