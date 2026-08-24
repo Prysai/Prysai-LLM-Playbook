@@ -81,6 +81,26 @@
   const routeMapFigureOpen = document.querySelector('[data-reader-route-map-figure-open]');
   const routeMapFigureCaption = document.querySelector('[data-reader-route-map-figure-caption]');
   const routeMapBoundary = document.querySelector('[data-reader-route-map-boundary]');
+  const conceptMap = document.querySelector('[data-reader-concept-map]');
+  const conceptMapSummary = document.querySelector('[data-reader-concept-map-summary]');
+  const conceptMapIntro = document.querySelector('[data-reader-concept-map-intro]');
+  const conceptMapGraph = document.querySelector('[data-reader-concept-map-graph]');
+  const conceptMapRootLabel = document.querySelector('[data-reader-concept-map-root-label]');
+  const conceptMapRoot = document.querySelector('[data-reader-concept-map-root]');
+  const conceptMapBranches = document.querySelector('[data-reader-concept-map-branches]');
+  const conceptMapFallback = document.querySelector('[data-reader-concept-map-fallback]');
+  const conceptMapFallbackIntro = document.querySelector('[data-reader-concept-map-fallback-intro]');
+  const conceptMapFallbackList = document.querySelector('[data-reader-concept-map-fallback-list]');
+  const conceptMapBoundary = document.querySelector('[data-reader-concept-map-boundary]');
+  const visualCompanion = document.querySelector('[data-reader-visual-companion]');
+  const visualCompanionSummary = document.querySelector('[data-reader-visual-companion-summary]');
+  const visualCompanionIntro = document.querySelector('[data-reader-visual-companion-intro]');
+  const visualCompanionLink = document.querySelector('[data-reader-visual-companion-link]');
+  const visualCompanionThesis = document.querySelector('[data-reader-visual-companion-thesis]');
+  const visualCompanionImage = document.querySelector('[data-reader-visual-companion-image]');
+  const visualCompanionOpen = document.querySelector('[data-reader-visual-companion-open]');
+  const visualCompanionCaption = document.querySelector('[data-reader-visual-companion-caption]');
+  const visualCompanionBoundary = document.querySelector('[data-reader-visual-companion-boundary]');
   const trustCard = document.querySelector('[data-reader-trust-card]');
   const trustScope = document.querySelector('[data-reader-trust-scope]');
   const trustReviewed = document.querySelector('[data-reader-trust-reviewed]');
@@ -213,6 +233,52 @@
       summary: 'Carte visuelle du parcours', intro: 'Utilisez ces six étapes pour situer cette page dans la méthode générale. Sélectionnez-en une pour voir la question suivante.', aria: 'Six étapes de la méthode de travail fiable avec un LLM', selected: 'Étape sélectionnée', next: 'Question suivante', open: 'Ouvrir cette partie du parcours', fallback: 'Lire le parcours sous forme de texte', fallbackIntro: 'La séquence garde le même sens sans les commandes interactives ni l’image.', figureAlt: 'Boucle de travail fiable avec un LLM en six étapes : comprendre, cadrer, agir, vérifier, corriger et transférer.', figureOpen: 'Ouvrir le visuel en taille réelle', figureCaption: 'Planche pédagogique originale du projet. Le texte environnant constitue l’explication accessible ; la planche sert à se repérer.', boundary: 'La carte montre une séquence, pas une preuve de réussite. Conservez l’essai, le contrôle, l’échec et les inconnues restantes.', labels: ['Comprendre', 'Cadrer', 'Agir', 'Vérifier', 'Corriger', 'Transférer'], bodies: ['Séparez la proposition du modèle de ce que les preuves disponibles permettent réellement d’établir.', 'Indiquez le but, le contexte, l’aide autorisée, les limites, le contrôle et la condition d’arrêt.', 'N’autorisez que l’action réversible la plus petite et faites une pause avant tout effet externe.', 'Comparez la sortie ou le diff avec une source, un test, un journal ou une règle d’acceptation.', 'Nommez un écart, conservez la trace de l’échec et ne changez qu’une condition avant de réessayer.', 'Répétez la méthode sur une tâche inconnue ; un essai réussi ne prouve pas la maîtrise.'], nextQuestions: ['Quel résultat puis-je vérifier ?', 'Qu’est-ce qui est autorisé et qu’est-ce qui ne l’est pas ?', 'Quelle est la plus petite action sûre ?', 'Quelle preuve ferait évoluer mon affirmation ?', 'Quel écart vais-je corriger en premier ?', 'Puis-je répéter la méthode sur une nouvelle tâche ?']
     },
   };
+
+  // These strings describe the progressive-enhancement layer around the
+  // source page. Headings and visual labels still come from the selected
+  // locale, so the map never replaces the localized lesson with an English
+  // summary.
+  const readerVisualCopy = {
+    en: {
+      conceptSummary: 'Page concept map', conceptIntro: 'See the current page as one main idea with the sections that move it forward.', conceptAria: 'Concept map for this page', conceptRoot: 'This page', conceptFallback: 'Read the map as text', conceptFallbackIntro: 'The same headings and links remain available in a simple ordered list.', conceptBoundary: 'This map is derived from headings. It helps you orient yourself; it does not prove that the page was understood or completed.', visualSummary: 'Teaching visual', visualIntro: 'Use one project-authored board to see the relationship this page is about before you read the detail.', visualOpen: 'Open full-size visual', visualCaptionPrefix: 'Project-authored teaching board for', visualBoundary: 'The board explains a relationship and a next question. It is an orientation aid, not evidence that a model acted or that learning occurred.', visualAltPrefix: 'Teaching diagram showing',
+    },
+    zh: {
+      conceptSummary: '本页思维导图', conceptIntro: '把当前页面看成一个主问题，以及推动它向前的各个小节。', conceptAria: '本页概念图', conceptRoot: '当前页面', conceptFallback: '按文字阅读导图', conceptFallbackIntro: '相同的标题和链接也会以简单的有序列表提供。', conceptBoundary: '这张图根据页面标题生成，用于定位阅读位置；它不证明你已经理解或完成本页。', visualSummary: '配套教学图', visualIntro: '先用一张项目原创图看清本页讨论的关系，再阅读具体细节。', visualOpen: '打开完整尺寸图示', visualCaptionPrefix: '项目原创教学图，主题是', visualBoundary: '图示解释一种关系和下一道问题；它只是定位工具，不证明模型已经行动或学习已经发生。', visualAltPrefix: '展示以下关系的教学图',
+    },
+    es: {
+      conceptSummary: 'Mapa conceptual de esta página', conceptIntro: 'Mira la página como una idea principal y las secciones que la hacen avanzar.', conceptAria: 'Mapa conceptual de esta página', conceptRoot: 'Esta página', conceptFallback: 'Leer el mapa como texto', conceptFallbackIntro: 'Los mismos títulos y enlaces están disponibles en una lista ordenada.', conceptBoundary: 'El mapa se genera a partir de los encabezados. Sirve para orientarse; no demuestra comprensión ni finalización.', visualSummary: 'Visual didáctico', visualIntro: 'Mira un tablero original del proyecto para entender la relación central antes de leer el detalle.', visualOpen: 'Abrir el visual a tamaño completo', visualCaptionPrefix: 'Tablero didáctico original del proyecto sobre', visualBoundary: 'El tablero explica una relación y una pregunta siguiente. Orienta, pero no demuestra que un modelo haya actuado ni que haya aprendizaje.', visualAltPrefix: 'Diagrama didáctico que muestra',
+    },
+    ja: {
+      conceptSummary: 'このページの概念マップ', conceptIntro: 'このページを、中心となる考えと、それを前に進める各節として捉えます。', conceptAria: 'このページの概念マップ', conceptRoot: 'このページ', conceptFallback: 'マップを文字で読む', conceptFallbackIntro: '同じ見出しとリンクを、単純な順序付きリストでも確認できます。', conceptBoundary: 'このマップは見出しから生成されます。位置づけの補助であり、理解や完了の証明ではありません。', visualSummary: '教材図', visualIntro: '本文の細部に入る前に、このページの関係をプロジェクト作成の図でつかみます。', visualOpen: '原寸の図を開く', visualCaptionPrefix: 'プロジェクト作成の教材図：', visualBoundary: '図は関係と次の問いを説明する補助資料です。モデルの実行や学習が起きた証拠ではありません。', visualAltPrefix: '次の関係を示す教材図',
+    },
+    ko: {
+      conceptSummary: '이 페이지의 개념 지도', conceptIntro: '현재 페이지를 핵심 생각 하나와 그것을 이어 가는 섹션으로 살펴보세요.', conceptAria: '이 페이지의 개념 지도', conceptRoot: '이 페이지', conceptFallback: '지도를 텍스트로 읽기', conceptFallbackIntro: '같은 제목과 링크를 간단한 순서 목록으로도 확인할 수 있습니다.', conceptBoundary: '이 지도는 제목에서 생성됩니다. 위치를 잡는 보조 자료이며 이해나 완료를 증명하지 않습니다.', visualSummary: '교육용 시각 자료', visualIntro: '세부 내용을 읽기 전에 이 페이지의 관계를 프로젝트가 만든 보드로 먼저 확인하세요.', visualOpen: '원본 크기 시각 자료 열기', visualCaptionPrefix: '프로젝트가 만든 교육 보드: ', visualBoundary: '보드는 관계와 다음 질문을 설명하는 보조 자료입니다. 모델 실행이나 학습이 일어났다는 증거가 아닙니다.', visualAltPrefix: '다음 관계를 보여 주는 교육용 그림',
+    },
+    de: {
+      conceptSummary: 'Begriffskarte dieser Seite', conceptIntro: 'Ordne die Seite als einen Hauptgedanken mit den Abschnitten ein, die ihn weiterführen.', conceptAria: 'Begriffskarte für diese Seite', conceptRoot: 'Diese Seite', conceptFallback: 'Die Karte als Text lesen', conceptFallbackIntro: 'Dieselben Überschriften und Links stehen auch als einfache geordnete Liste bereit.', conceptBoundary: 'Die Karte wird aus den Überschriften erzeugt. Sie dient der Orientierung und beweist weder Verständnis noch Abschluss.', visualSummary: 'Lehrtafel', visualIntro: 'Sieh dir zuerst eine projektbezogene Tafel an, um die zentrale Beziehung der Seite zu erfassen.', visualOpen: 'Visualisierung in voller Größe öffnen', visualCaptionPrefix: 'Projektbezogene Lehrtafel zu', visualBoundary: 'Die Tafel erklärt eine Beziehung und eine nächste Frage. Sie ist eine Orientierungshilfe, kein Beleg für eine Modellaktion oder einen Lernerfolg.', visualAltPrefix: 'Lehrdiagramm zu',
+    },
+    'zh-tw': {
+      conceptSummary: '本頁概念圖', conceptIntro: '把目前頁面看成一個核心問題，以及推動它前進的各個段落。', conceptAria: '本頁概念圖', conceptRoot: '目前頁面', conceptFallback: '依文字閱讀概念圖', conceptFallbackIntro: '相同的標題與連結也會以簡單的有序清單呈現。', conceptBoundary: '這張圖根據頁面標題產生，用來定位閱讀位置；不代表你已理解或完成本頁。', visualSummary: '配套教學圖', visualIntro: '先用一張專案原創圖看清本頁討論的關係，再閱讀細節。', visualOpen: '開啟完整尺寸圖示', visualCaptionPrefix: '專案原創教學圖，主題是', visualBoundary: '圖示解釋一種關係與下一個問題；它只是定位工具，不代表模型已採取行動或學習已經發生。', visualAltPrefix: '展示以下關係的教學圖',
+    },
+    fr: {
+      conceptSummary: 'Carte conceptuelle de cette page', conceptIntro: 'Lisez la page comme une idée centrale et les sections qui la font progresser.', conceptAria: 'Carte conceptuelle de cette page', conceptRoot: 'Cette page', conceptFallback: 'Lire la carte sous forme de texte', conceptFallbackIntro: 'Les mêmes titres et liens restent disponibles dans une liste ordonnée.', conceptBoundary: 'La carte est dérivée des titres. Elle aide à se repérer ; elle ne prouve ni la compréhension ni la fin de la page.', visualSummary: 'Visuel pédagogique', visualIntro: 'Regardez une planche originale du projet pour saisir la relation centrale avant les détails.', visualOpen: 'Ouvrir le visuel en taille réelle', visualCaptionPrefix: 'Planche pédagogique originale du projet :', visualBoundary: 'La planche explique une relation et une question suivante. Elle aide à se repérer, mais ne prouve ni une action du modèle ni un apprentissage.', visualAltPrefix: 'Diagramme pédagogique montrant',
+    },
+  };
+
+  const readerVisualMap = [
+    { tokens: ['llm-fundamentals-guide', 'chapter-01-gpt-and-codex'], path: 'assets/teaching/llm-six-terms-to-one-check.svg', step: 0 },
+    { tokens: ['llm-core-first-generation', 'chapter-02-first-safe-task', 'chapter-03-task-protocol'], path: 'assets/teaching/prompt-contract-six-fields-red-black.svg', step: 1 },
+    { tokens: ['chapter-13-action-boundaries', 'lab-007-action-boundaries', 'observable-action-boundary'], path: 'assets/teaching/observable-action-boundary-red-black.svg', step: 2 },
+    { tokens: ['chapter-09-verification-and-recovery', 'lab-003-evidence-review', 'lab-015-evidence-delivery', 'task-to-evidence'], path: 'assets/teaching/evidence-recovery-ladder.svg', step: 3 },
+    { tokens: ['llm-core-visible-failures', 'llm-core-check-repair', 'chapter-12-agent-loop-and-stop', 'lab-006-agent-stop-conditions', 'lab-014-resume-reconciliation'], path: 'assets/teaching/failed-interaction-recovery-red-black.svg', step: 4 },
+    { tokens: ['chapter-11-designing-a-skill', 'lab-005-design-a-skill', 'lab-017-skill-discovery-audit', 'skill-to-observable-output'], path: 'assets/teaching/skill-to-observable-output.svg', step: 1 },
+    { tokens: ['chapter-15-research-track', 'lab-008-research-question', 'research-question-to-source-record', 'source-check-before-belief'], path: 'assets/teaching/research-question-to-source-record-red-black.svg', step: 3 },
+    { tokens: ['chapter-10-planning-and-slicing', 'lab-013-l3-vertical-slice', 'chapter-08-full-lifecycle-workflow'], path: 'assets/teaching/task-to-evidence-red-black.svg', step: 3 },
+    { tokens: ['lab-018-language-transfer', 'communication-clinic', 'language-partner', 'beginner-practice-loop'], path: 'assets/teaching/beginner-practice-loop-red-black.svg', step: 5 },
+    { tokens: ['llm-core-unseen-transfer', 'understanding-to-transfer'], path: 'assets/teaching/understanding-to-transfer-red-black.svg', step: 5 },
+    { tokens: ['chapter-14-discover-and-audit-skills', 'source-investigator', 'platform-fact-watch'], path: 'assets/teaching/source-check-before-belief-red-black.svg', step: 3 },
+    { tokens: ['project-evidence-snapshot', 'content-status', 'release-readiness'], path: 'assets/teaching/project-evidence-snapshot-red-black.svg', step: 3 },
+  ];
 
   const readerRouteMapSteps = [
     { id: 'understand', contentId: 'llm-fundamentals-guide', path: 'book/guides/llm-fundamentals-EN.md' },
@@ -476,6 +542,97 @@
       routeMapFallbackList.append(fallbackItem);
     });
     selectStep(selectedIndex);
+  };
+  const currentReaderVisualCopy = () => readerVisualCopy[uiLanguage()] || readerVisualCopy.en;
+  const chooseReaderVisual = (selection) => {
+    if (!selection?.path) return null;
+    const haystack = `${selection.contentId || ''} ${selection.path}`.toLowerCase();
+    const match = readerVisualMap.find((candidate) => candidate.tokens.some((token) => haystack.includes(token)));
+    if (match) return match;
+    if (/^(?:book|skills)\//i.test(selection.path)) {
+      return { path: 'assets/teaching/reliable-llm-work-loop-red-black.svg', step: 0 };
+    }
+    return null;
+  };
+  const renderReaderConceptMap = (selection, title, headings = []) => {
+    if (!conceptMap || !conceptMapBranches || !conceptMapFallbackList) return;
+    const mappedHeadings = headings.filter((heading) => heading.id && heading.textContent.trim()).slice(0, 8);
+    if (!selection || mappedHeadings.length === 0) {
+      conceptMap.hidden = true;
+      conceptMapBranches.replaceChildren();
+      conceptMapFallbackList.replaceChildren();
+      return;
+    }
+    const strings = currentReaderVisualCopy();
+    conceptMap.hidden = false;
+    conceptMap.open = false;
+    conceptMapSummary.textContent = strings.conceptSummary;
+    conceptMapSummary.setAttribute('aria-label', strings.conceptAria);
+    conceptMapIntro.textContent = strings.conceptIntro;
+    conceptMapGraph.setAttribute('aria-label', strings.conceptAria);
+    conceptMapRootLabel.textContent = strings.conceptRoot;
+    conceptMapRoot.textContent = title || article.querySelector('h1')?.textContent?.trim() || selection.path;
+    conceptMapFallback.textContent = strings.conceptFallback;
+    conceptMapFallbackIntro.textContent = strings.conceptFallbackIntro;
+    conceptMapBoundary.textContent = strings.conceptBoundary;
+    conceptMapBranches.replaceChildren();
+    conceptMapFallbackList.replaceChildren();
+    mappedHeadings.forEach((heading, index) => {
+      const label = heading.textContent.trim();
+      const href = headingHref(heading.id);
+      const node = document.createElement('a');
+      node.className = 'reader-concept-map-node';
+      node.href = href;
+      node.dataset.readerConceptMapNode = heading.id;
+      const number = document.createElement('span');
+      number.textContent = String(index + 1).padStart(2, '0');
+      const nodeLabel = document.createElement('strong');
+      nodeLabel.textContent = label;
+      node.append(number, nodeLabel);
+      node.addEventListener('click', () => {
+        window.requestAnimationFrame(() => {
+          const target = document.getElementById(heading.id);
+          if (!target) return;
+          target.tabIndex = -1;
+          target.focus({ preventScroll: true });
+          target.scrollIntoView({ block: 'start' });
+        });
+      });
+      conceptMapBranches.append(node);
+
+      const item = document.createElement('li');
+      const fallbackLink = document.createElement('a');
+      fallbackLink.href = href;
+      fallbackLink.textContent = `${index + 1}. ${label}`;
+      item.append(fallbackLink);
+      conceptMapFallbackList.append(item);
+    });
+  };
+  const renderReaderVisualCompanion = (selection) => {
+    if (!visualCompanion) return;
+    const visual = chooseReaderVisual(selection);
+    if (!visual) {
+      visualCompanion.hidden = true;
+      return;
+    }
+    const strings = currentReaderVisualCopy();
+    const routeStrings = currentReaderRouteMapCopy();
+    const step = Math.max(0, Math.min(routeStrings.labels.length - 1, visual.step || 0));
+    const label = routeStrings.labels[step];
+    const body = routeStrings.bodies[step];
+    const imageHref = directHref(visual.path);
+    visualCompanion.hidden = false;
+    visualCompanion.open = false;
+    visualCompanionSummary.textContent = strings.visualSummary;
+    visualCompanionSummary.setAttribute('aria-label', `${strings.visualSummary}: ${label}`);
+    visualCompanionIntro.textContent = strings.visualIntro;
+    visualCompanionLink.href = imageHref;
+    visualCompanionThesis.textContent = `${label} · ${routeStrings.nextQuestions[step]}`;
+    visualCompanionImage.src = imageHref;
+    visualCompanionImage.alt = `${strings.visualAltPrefix} ${label.toLowerCase()}: ${body}`;
+    visualCompanionOpen.textContent = strings.visualOpen;
+    visualCompanionCaption.textContent = `${strings.visualCaptionPrefix} ${label}. ${body}`;
+    visualCompanionBoundary.textContent = strings.visualBoundary;
   };
   const applyReaderChrome = () => {
     const strings = currentReaderCopy();
@@ -1206,6 +1363,7 @@ function canonicalChapterTitle(chapter) {
       }));
     }
     observeHeadings(headings);
+    return headings;
   }
 
   function observeHeadings(headings) {
@@ -1354,6 +1512,8 @@ function canonicalChapterTitle(chapter) {
     if (orientation) orientation.hidden = true;
     if (mobilePageToc) mobilePageToc.hidden = true;
     if (pagination) pagination.hidden = true;
+    renderReaderConceptMap(null, '');
+    renderReaderVisualCompanion(null);
     const box = document.createElement('div');
     box.className = 'reader-error';
     box.setAttribute('role', 'alert');
@@ -1509,7 +1669,7 @@ function canonicalChapterTitle(chapter) {
         : lab
           ? `Lab ${String(lab.number).padStart(3, '0')}: ${lab.title}`
           : renderedTitle || selection.path;
-    buildTableOfContents();
+    const pageHeadings = buildTableOfContents();
     updateChapterRail(selection, title);
     updateOverviewLinks(selection);
     const routeMapEligible = selection.path.startsWith('book/chapters/')
@@ -1517,6 +1677,8 @@ function canonicalChapterTitle(chapter) {
       || selection.contentId === 'llm-foundation-core-v1'
       || readerRouteMapSteps.some((step) => step.contentId === selection.contentId);
     renderReaderRouteMap(routeMapEligible ? selection : null);
+    renderReaderConceptMap(selection, title, pageHeadings);
+    renderReaderVisualCompanion(selection);
     renderBookNavigation(selection);
     renderTrustRecord(null);
     if (selection.contentId) void loadTrustRecord(selection.contentId).then(renderTrustRecord);
