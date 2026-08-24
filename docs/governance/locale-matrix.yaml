@@ -105,7 +105,16 @@
       "content_id": "codex-field-cases-current-review-2026-08-12",
       "kind": "field-note",
       "path": "docs/research/codex-field-cases-current-review-2026-08-12.md",
-      "content_status": "candidate"
+      "content_status": "candidate",
+      "localized_paths": {
+        "ZH": "docs/research/codex-field-cases-current-review-2026-08-12-ZH.md",
+        "ES": "docs/research/codex-field-cases-current-review-2026-08-12-ES.md",
+        "JA": "docs/research/codex-field-cases-current-review-2026-08-12-JA.md",
+        "KO": "docs/research/codex-field-cases-current-review-2026-08-12-KO.md",
+        "DE": "docs/research/codex-field-cases-current-review-2026-08-12-DE.md",
+        "ZHTW": "docs/research/codex-field-cases-current-review-2026-08-12-ZHTW.md",
+        "FR": "docs/research/codex-field-cases-current-review-2026-08-12-FR.md"
+      }
     },
     {
       "content_id": "ai-safety-field-signals-and-research-receipts-2026-08-13",
@@ -201,7 +210,16 @@
       "content_id": "universal-first-turn-prompt-contract-2026-08-13",
       "kind": "field-note",
       "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13.md",
-      "content_status": "candidate"
+      "content_status": "candidate",
+      "localized_paths": {
+        "ZH": "docs/research/universal-first-turn-prompt-contract-2026-08-13-ZH.md",
+        "ES": "docs/research/universal-first-turn-prompt-contract-2026-08-13-ES.md",
+        "JA": "docs/research/universal-first-turn-prompt-contract-2026-08-13-JA.md",
+        "KO": "docs/research/universal-first-turn-prompt-contract-2026-08-13-KO.md",
+        "DE": "docs/research/universal-first-turn-prompt-contract-2026-08-13-DE.md",
+        "ZHTW": "docs/research/universal-first-turn-prompt-contract-2026-08-13-ZHTW.md",
+        "FR": "docs/research/universal-first-turn-prompt-contract-2026-08-13-FR.md"
+      }
     },
     {
       "content_id": "verification-stability-2026-08-15",
@@ -222,7 +240,16 @@
       "content_id": "first-win-pilot-protocol-v2",
       "kind": "project-document",
       "path": "docs/quality/first-win-pilot-protocol-v2.md",
-      "content_status": "candidate"
+      "content_status": "candidate",
+      "localized_paths": {
+        "ZH": "docs/quality/first-win-pilot-protocol-v2-ZH.md",
+        "ES": "docs/quality/first-win-pilot-protocol-v2-ES.md",
+        "JA": "docs/quality/first-win-pilot-protocol-v2-JA.md",
+        "KO": "docs/quality/first-win-pilot-protocol-v2-KO.md",
+        "DE": "docs/quality/first-win-pilot-protocol-v2-DE.md",
+        "ZHTW": "docs/quality/first-win-pilot-protocol-v2-ZHTW.md",
+        "FR": "docs/quality/first-win-pilot-protocol-v2-FR.md"
+      }
     },
     {
       "content_id": "newcomer-entry-observation-protocol-v1",
