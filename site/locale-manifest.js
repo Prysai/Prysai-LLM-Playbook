@@ -5341,12 +5341,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh-tw": {
           "path": "docs/research/codex-field-cases-current-review-2026-08-12-ZHTW.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "locale-matrix",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "fr": {
           "path": "docs/research/codex-field-cases-current-review-2026-08-12-FR.md",
@@ -5857,12 +5856,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh-tw": {
           "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13-ZHTW.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "locale-matrix",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "fr": {
           "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13-FR.md",
@@ -6008,12 +6006,11 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh-tw": {
           "path": "docs/quality/first-win-pilot-protocol-v2-ZHTW.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "locale-matrix",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "fr": {
           "path": "docs/quality/first-win-pilot-protocol-v2-FR.md",
