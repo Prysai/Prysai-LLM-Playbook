@@ -352,6 +352,34 @@ def main() -> int:
                 raise AssertionError(f"recovery-decision-map: missing {required}")
         if "recoveryMap.hidden = true" not in reader_script or "recoveryMapFigureLink.href" not in reader_script:
             raise AssertionError("recovery-decision-map: missing hide and full-size image route")
+        # The page-anatomy board is progressive enhancement: every supported
+        # locale needs its own short control copy, while the image stays
+        # inside a native <details> disclosure so mobile readers are not
+        # forced through a tall board.
+        for locale, marker in {
+            "en": "Object.assign(readerVisualCopy.en, {",
+            "zh": "Object.assign(readerVisualCopy.zh, {",
+            "es": "Object.assign(readerVisualCopy.es, {",
+            "ja": "Object.assign(readerVisualCopy.ja, {",
+            "ko": "Object.assign(readerVisualCopy.ko, {",
+            "de": "Object.assign(readerVisualCopy.de, {",
+            "zh-tw": "Object.assign(readerVisualCopy['zh-tw'], {",
+            "fr": "Object.assign(readerVisualCopy.fr, {",
+        }.items():
+            if marker not in reader_script:
+                raise AssertionError(f"page-anatomy-localization: missing {locale} copy")
+        for required in (
+            "conceptAnatomyOpen",
+            "conceptAnatomyCaption",
+            "conceptAnatomyBoundary",
+            "details.className = 'reader-page-anatomy'",
+            "data-reader-page-anatomy",
+            "reader-page-anatomy-figure",
+            ".reader-page-anatomy summary",
+            ".reader-page-anatomy-figure .reader-teaching-visual img",
+        ):
+            if required not in reader_markup + reader_script + reader_css:
+                raise AssertionError(f"page-anatomy-contract: missing {required}")
         fixtures += 1
 
         manifest = build_site_locale_manifest.build_manifest()

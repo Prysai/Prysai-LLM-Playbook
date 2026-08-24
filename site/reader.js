@@ -261,7 +261,7 @@
   // summary.
   const readerVisualCopy = {
     en: {
-      conceptSummary: 'Page concept map', conceptIntro: 'See the current page as one main idea with the sections that move it forward.', conceptAria: 'Concept map for this page', conceptRoot: 'This page', conceptFallback: 'Read the map as text', conceptFallbackIntro: 'The same headings and links remain available in a simple ordered list.', conceptBoundary: 'This map is derived from headings. It helps you orient yourself; it does not prove that the page was understood or completed.', visualSummary: 'Teaching visual', visualIntro: 'Use one project-authored board to see the relationship this page is about before you read the detail.', visualOpen: 'Open full-size visual', visualCaptionPrefix: 'Project-authored teaching board for', visualBoundary: 'The board explains a relationship and a next question. It is an orientation aid, not evidence that a model acted or that learning occurred.', visualAltPrefix: 'Teaching diagram showing', recoverySummary: 'Recovery decision map', recoveryIntro: 'When a result is uncertain, follow the smallest permitted next decision.', recoveryAria: 'Five-step recovery decision map', recoveryRoot: 'Recovery decision', recoverySelected: 'Selected step', recoveryNext: 'Next decision', recoveryOpen: 'Open the recovery route', recoveryFallback: 'Read the recovery map as text', recoveryFallbackIntro: 'The same five decisions remain available as a simple ordered list.', recoveryFigureAlt: 'Recovery decision tree: preserve the trace, classify the first mismatch, check authority, run one safe check or stop, then keep the claim narrow.', recoveryFigureOpen: 'Open full-size recovery board', recoveryFigureCaption: 'Project-authored recovery decision board. The text sequence is the accessible explanation; the board is an orientation aid.', recoveryBoundary: 'A recovery map does not prove that a retry worked. Preserve the original gap and report only what the new record supports.', recoveryLabels: ['Preserve', 'Classify', 'Authority', 'Check', 'Stop'], recoveryBodies: ['Keep the request, inputs, output, diff, state, and last checkpoint before changing anything.', 'Name the first mismatch: missing input, wrong scope, failed action, or weak proof.', 'Ask whether the next check is permitted by the stated scope, permission, and available input.', 'If permitted, change one condition and compare one observable result with the original.', 'If proof or authority is missing, stop and keep the result candidate, blocked, or unknown.'], recoveryNextQuestions: ['What exact trace will I keep?', 'What failed first?', 'May I take this next action?', 'What changed in the new record?', 'What narrow claim can I support?'],
+      conceptSummary: 'Page concept map', conceptIntro: 'See the current page as one main idea with the sections that move it forward.', conceptAria: 'Concept map for this page', conceptRoot: 'This page', conceptFallback: 'Read the map as text', conceptFallbackIntro: 'The same headings and links remain available in a simple ordered list.', conceptBoundary: 'This map is derived from headings. It helps you orient yourself; it does not prove that the page was understood or completed.', visualSummary: 'Teaching visual', visualIntro: 'Use one project-authored board to see the relationship this page is about before you read the detail.', visualOpen: 'Open full-size visual', visualCaptionPrefix: 'Project-authored teaching board for', visualBoundary: 'The board explains a relationship and a next question. It is an orientation aid, not evidence that a model acted or that learning occurred.', visualAltPrefix: 'Teaching diagram showing', conceptAnatomyOpen: 'Open the page anatomy board', conceptAnatomyCaption: 'Project-authored page anatomy board. The text sequence is the accessible explanation; the board is an orientation aid.', conceptAnatomyBoundary: 'The page anatomy describes a reading route, not proof of understanding, runtime success, or transfer.', recoverySummary: 'Recovery decision map', recoveryIntro: 'When a result is uncertain, follow the smallest permitted next decision.', recoveryAria: 'Five-step recovery decision map', recoveryRoot: 'Recovery decision', recoverySelected: 'Selected step', recoveryNext: 'Next decision', recoveryOpen: 'Open the recovery route', recoveryFallback: 'Read the recovery map as text', recoveryFallbackIntro: 'The same five decisions remain available as a simple ordered list.', recoveryFigureAlt: 'Recovery decision tree: preserve the trace, classify the first mismatch, check authority, run one safe check or stop, then keep the claim narrow.', recoveryFigureOpen: 'Open full-size recovery board', recoveryFigureCaption: 'Project-authored recovery decision board. The text sequence is the accessible explanation; the board is an orientation aid.', recoveryBoundary: 'A recovery map does not prove that a retry worked. Preserve the original gap and report only what the new record supports.', recoveryLabels: ['Preserve', 'Classify', 'Authority', 'Check', 'Stop'], recoveryBodies: ['Keep the request, inputs, output, diff, state, and last checkpoint before changing anything.', 'Name the first mismatch: missing input, wrong scope, failed action, or weak proof.', 'Ask whether the next check is permitted by the stated scope, permission, and available input.', 'If permitted, change one condition and compare one observable result with the original.', 'If proof or authority is missing, stop and keep the result candidate, blocked, or unknown.'], recoveryNextQuestions: ['What exact trace will I keep?', 'What failed first?', 'May I take this next action?', 'What changed in the new record?', 'What narrow claim can I support?'],
     },
     zh: {
       conceptSummary: '本页思维导图', conceptIntro: '把当前页面看成一个主问题，以及推动它向前的各个小节。', conceptAria: '本页概念图', conceptRoot: '当前页面', conceptFallback: '按文字阅读导图', conceptFallbackIntro: '相同的标题和链接也会以简单的有序列表提供。', conceptBoundary: '这张图根据页面标题生成，用于定位阅读位置；它不证明你已经理解或完成本页。', visualSummary: '配套教学图', visualIntro: '先用一张项目原创图看清本页讨论的关系，再阅读具体细节。', visualOpen: '打开完整尺寸图示', visualCaptionPrefix: '项目原创教学图，主题是', visualBoundary: '图示解释一种关系和下一道问题；它只是定位工具，不证明模型已经行动或学习已经发生。', visualAltPrefix: '展示以下关系的教学图', recoverySummary: '恢复决策图', recoveryIntro: '结果不确定时，沿着最小、获准的下一步行动判断。', recoveryAria: '五步恢复决策图', recoveryRoot: '恢复决策', recoverySelected: '当前步骤', recoveryNext: '下一项判断', recoveryOpen: '打开恢复路线', recoveryFallback: '按文字阅读恢复图', recoveryFallbackIntro: '相同的五项判断也会以简单的有序列表提供。', recoveryFigureAlt: '恢复决策树：保留轨迹、分类首个不匹配、检查授权，在获准时执行一次安全检查，否则停止并收窄声明。', recoveryFigureOpen: '打开完整恢复图板', recoveryFigureCaption: '项目原创恢复决策图。文字序列是无障碍解释；图板用于帮助定位。', recoveryBoundary: '恢复图不证明重试成功。保留原始缺口，只陈述新记录支持的范围。', recoveryLabels: ['保留', '分类', '授权', '检查', '停止'], recoveryBodies: ['先保留请求、输入、输出、差异、状态和最后检查点，再改变任何条件。', '指出首个不匹配：输入缺失、范围错误、行动失败或证据不足。', '确认下一项检查是否符合当前范围、权限和已有输入。', '如果获准，只改变一个条件，并把一个可观察结果与原记录对照。', '如果缺少证据或授权，就停止，并把结果标为 candidate、blocked 或 unknown。'], recoveryNextQuestions: ['要保留哪一条明确轨迹？', '最先失败的是什么？', '下一步行动是否获准？', '新记录具体改变了什么？', '我能支持哪一条窄声明？'],
@@ -285,6 +285,50 @@
       conceptSummary: 'Carte conceptuelle de cette page', conceptIntro: 'Lisez la page comme une idée centrale et les sections qui la font progresser.', conceptAria: 'Carte conceptuelle de cette page', conceptRoot: 'Cette page', conceptFallback: 'Lire la carte sous forme de texte', conceptFallbackIntro: 'Les mêmes titres et liens restent disponibles dans une liste ordonnée.', conceptBoundary: 'La carte est dérivée des titres. Elle aide à se repérer ; elle ne prouve ni la compréhension ni la fin de la page.', visualSummary: 'Visuel pédagogique', visualIntro: 'Regardez une planche originale du projet pour saisir la relation centrale avant les détails.', visualOpen: 'Ouvrir le visuel en taille réelle', visualCaptionPrefix: 'Planche pédagogique originale du projet :', visualBoundary: 'La planche explique une relation et une question suivante. Elle aide à se repérer, mais ne prouve ni une action du modèle ni un apprentissage.', visualAltPrefix: 'Diagramme pédagogique montrant', recoverySummary: 'Carte de décision pour récupérer', recoveryIntro: 'Quand le résultat est incertain, suivez la plus petite décision suivante qui reste autorisée.', recoveryAria: 'Carte de décision de récupération en cinq étapes', recoveryRoot: 'Décision de récupération', recoverySelected: 'Étape sélectionnée', recoveryNext: 'Décision suivante', recoveryOpen: 'Ouvrir le parcours de récupération', recoveryFallback: 'Lire la carte sous forme de texte', recoveryFallbackIntro: 'Les cinq mêmes décisions restent disponibles dans une liste ordonnée.', recoveryFigureAlt: 'Arbre de décision de récupération : conserver la trace, classer le premier écart, vérifier l’autorisation, effectuer une vérification sûre ou s’arrêter en limitant l’affirmation.', recoveryFigureOpen: 'Ouvrir la planche de récupération en taille réelle', recoveryFigureCaption: 'Planche originale du projet. La séquence textuelle est l’explication accessible ; la planche sert à se repérer.', recoveryBoundary: 'La carte ne prouve pas qu’une nouvelle tentative a réussi. Conservez le manque initial et ne formulez que ce que le nouveau relevé permet d’établir.', recoveryLabels: ['Conserver', 'Classer', 'Autorisation', 'Vérifier', 'S’arrêter'], recoveryBodies: ['Conservez la demande, les entrées, la sortie, le diff, l’état et le dernier checkpoint avant de modifier quoi que ce soit.', 'Nommez le premier écart : entrée manquante, périmètre incorrect, action échouée ou preuve insuffisante.', 'Vérifiez que la prochaine vérification est autorisée par le périmètre, les droits et les entrées disponibles.', 'Si elle est autorisée, ne changez qu’une condition et comparez un résultat observable avec le relevé initial.', 'S’il manque une preuve ou une autorisation, arrêtez-vous et gardez le résultat comme candidate, blocked ou unknown.'], recoveryNextQuestions: ['Quelle trace exacte vais-je conserver ?', 'Qu’est-ce qui a échoué en premier ?', 'Cette action est-elle autorisée ?', 'Qu’est-ce qui a changé dans le nouveau relevé ?', 'Quelle affirmation limitée puis-je soutenir ?'],
     },
   };
+
+  // The page-anatomy board is a compact orientation layer. Keep its copy
+  // separate from the large visual dictionary so each locale can be reviewed
+  // as a short, assembled passage rather than as a key-by-key translation.
+  Object.assign(readerVisualCopy.en, {
+    conceptAnatomyOpen: 'Open the page anatomy board',
+    conceptAnatomyCaption: 'Page anatomy: a compact route from the problem to a transferable check.',
+    conceptAnatomyBoundary: 'This board explains how to read the page; it does not prove understanding, execution, or transfer.',
+  });
+  Object.assign(readerVisualCopy.zh, {
+    conceptAnatomyOpen: '打开页面解剖图',
+    conceptAnatomyCaption: '页面解剖图：从问题到可迁移检查的一条紧凑路线。',
+    conceptAnatomyBoundary: '这张图说明如何阅读页面，不证明你已经理解、执行或迁移方法。',
+  });
+  Object.assign(readerVisualCopy.es, {
+    conceptAnatomyOpen: 'Abrir el esquema de la página',
+    conceptAnatomyCaption: 'Esquema de la página: un recorrido breve desde el problema hasta una comprobación reutilizable.',
+    conceptAnatomyBoundary: 'El esquema explica cómo leer la página; no demuestra comprensión, ejecución ni transferencia.',
+  });
+  Object.assign(readerVisualCopy.ja, {
+    conceptAnatomyOpen: 'ページの読み方ボードを開く',
+    conceptAnatomyCaption: 'ページの読み方：問題を見つけ、再利用できる確認まで進む短いルート。',
+    conceptAnatomyBoundary: 'このボードはページの読み方を示すだけで、理解・実行・応用を証明するものではありません。',
+  });
+  Object.assign(readerVisualCopy.ko, {
+    conceptAnatomyOpen: '페이지 읽기 보드 열기',
+    conceptAnatomyCaption: '페이지 읽기: 문제에서 다른 과제에도 적용할 수 있는 점검까지 이어지는 짧은 경로입니다.',
+    conceptAnatomyBoundary: '이 보드는 페이지를 읽는 방법을 설명할 뿐, 이해했거나 실행했거나 다른 과제에 적용했다는 증거가 아닙니다.',
+  });
+  Object.assign(readerVisualCopy.de, {
+    conceptAnatomyOpen: 'Seitenaufbau öffnen',
+    conceptAnatomyCaption: 'Seitenaufbau: ein kurzer Weg vom Problem zu einer übertragbaren Prüfung.',
+    conceptAnatomyBoundary: 'Die Tafel zeigt, wie die Seite gelesen werden kann; sie belegt weder Verständnis noch Ausführung oder Übertragung.',
+  });
+  Object.assign(readerVisualCopy['zh-tw'], {
+    conceptAnatomyOpen: '開啟頁面閱讀圖',
+    conceptAnatomyCaption: '頁面閱讀圖：從問題一路走到可重複使用的檢查。',
+    conceptAnatomyBoundary: '這張圖說明如何閱讀頁面，不代表你已理解、執行或把方法套用到新任務。',
+  });
+  Object.assign(readerVisualCopy.fr, {
+    conceptAnatomyOpen: 'Ouvrir le schéma de lecture de la page',
+    conceptAnatomyCaption: 'Schéma de lecture : un parcours court, du problème à une vérification réutilisable.',
+    conceptAnatomyBoundary: 'Ce schéma explique comment lire la page ; il ne prouve ni la compréhension, ni l’exécution, ni le transfert.',
+  });
 
   const readerVisualMap = [
     { tokens: ['chapter-04-context-permissions-and-agent', 'lab-016-side-effect-boundary', 'conversation-safety-card'], path: 'assets/teaching/conversation-safety-card-red-black.svg', step: 2 },
@@ -907,6 +951,54 @@
     inlineConceptMapScrollHandler = updateActiveHeading;
     window.addEventListener('scroll', inlineConceptMapScrollHandler, { passive: true });
     updateActiveHeading();
+  };
+  const renderReaderPageAnatomy = (selection, title, headings = []) => {
+    if (!article) return;
+    const existing = article.querySelector('[data-reader-page-anatomy]');
+    existing?.remove();
+    if (!selection || !/^book\//i.test(selection.path) || headings.length < 3) return;
+    // Pages with a dedicated teaching board already have a visual in the
+    // reading flow. The anatomy board fills the remaining gap instead of
+    // stacking two large diagrams on the same page.
+    const dedicatedVisual = chooseReaderVisual(selection);
+    if (dedicatedVisual && !dedicatedVisual.fallback) return;
+    const strings = currentReaderVisualCopy();
+    if (!strings.conceptAnatomyOpen) return;
+    const details = document.createElement('details');
+    details.className = 'reader-page-anatomy';
+    details.dataset.readerPageAnatomy = 'true';
+    const summary = document.createElement('summary');
+    summary.textContent = strings.conceptAnatomyOpen;
+    summary.setAttribute('aria-label', strings.conceptAnatomyOpen);
+    const figure = document.createElement('figure');
+    figure.className = 'reader-page-anatomy-figure';
+    const link = document.createElement('a');
+    link.className = 'reader-image-link reader-teaching-visual';
+    link.target = '_blank';
+    link.rel = 'noreferrer';
+    link.href = directHref('assets/teaching/reader-page-anatomy-red-black.svg');
+    link.setAttribute('aria-label', strings.conceptAnatomyOpen);
+    const image = document.createElement('img');
+    image.src = link.href;
+    image.width = 900;
+    image.height = 1500;
+    image.loading = 'lazy';
+    image.alt = strings.conceptAnatomyCaption;
+    const label = document.createElement('span');
+    label.className = 'reader-image-link-label';
+    label.textContent = strings.conceptAnatomyOpen;
+    link.append(image, label);
+    const caption = document.createElement('figcaption');
+    caption.textContent = `${strings.conceptAnatomyCaption} ${title || ''}`.trim();
+    const boundary = document.createElement('p');
+    boundary.className = 'reader-page-anatomy-boundary';
+    boundary.textContent = strings.conceptAnatomyBoundary;
+    figure.append(link, caption, boundary);
+    details.append(summary, figure);
+    const concept = article.querySelector('[data-reader-inline-concept-map]');
+    const anchor = concept || article.querySelector('[data-reader-inline-visual]') || article.querySelector(':scope > p') || article.querySelector('h1');
+    if (anchor) anchor.after(details);
+    else article.prepend(details);
   };
   const renderReaderVisualCompanion = (selection) => {
     if (!visualCompanion) return;
@@ -1980,6 +2072,7 @@ function canonicalChapterTitle(chapter) {
     renderReaderRouteMap(routeMapEligible ? selection : null);
     renderReaderConceptMap(selection, title, pageHeadings);
     renderReaderInlineConceptMap(selection, title, pageHeadings);
+    renderReaderPageAnatomy(selection, title, pageHeadings);
     renderReaderInlineVisual(selection, title);
     renderReaderVisualCompanion(selection);
     renderReaderRecoveryMap(selection);

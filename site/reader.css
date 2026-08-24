@@ -338,6 +338,52 @@ a:hover { color: var(--reader-link-hover); }
   line-height: 1.45;
 }
 
+.reader-page-anatomy {
+  margin: 0 0 34px;
+  padding: 14px 16px;
+  border: 1px solid var(--reader-line);
+  border-left: 4px solid var(--reader-ink);
+  background: #fafaf8;
+}
+.reader-page-anatomy summary {
+  cursor: pointer;
+  color: var(--reader-ink);
+  font-size: .9rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+.reader-page-anatomy summary:hover,
+.reader-page-anatomy summary:focus-visible { color: var(--reader-red); }
+.reader-page-anatomy-figure {
+  margin: 14px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--reader-line);
+}
+.reader-page-anatomy-figure .reader-teaching-visual {
+  width: min(100%, 42rem);
+  margin: 0;
+  padding: 12px;
+}
+.reader-page-anatomy-figure .reader-teaching-visual img {
+  display: block;
+  width: 100%;
+  max-height: 560px;
+  object-fit: contain;
+  object-position: top center;
+}
+.reader-page-anatomy-figure figcaption {
+  margin-top: 10px;
+  color: var(--reader-ink);
+  font-size: .84rem;
+  line-height: 1.5;
+}
+.reader-page-anatomy-boundary {
+  margin: 10px 0 0;
+  color: var(--reader-muted);
+  font-size: .72rem;
+  line-height: 1.45;
+}
+
 .reader-article ul,
 .reader-article ol { margin: 0 0 22px; padding-left: 26px; }
 .reader-article li + li { margin-top: 6px; }
@@ -713,10 +759,14 @@ a:hover { color: var(--reader-link-hover); }
   /* The inline figure is the reader's primary explanation, so keep its
      compressed image visible on small screens. Sidebar companion boards still
      use the compact full-size-link treatment above. */
-  .reader-inline-visual .reader-teaching-visual img {
-    display: block;
-    max-height: 300px;
-  }
+   .reader-inline-visual .reader-teaching-visual img {
+     display: block;
+     max-height: 300px;
+   }
+   .reader-page-anatomy .reader-page-anatomy-figure .reader-teaching-visual img {
+     display: block;
+     max-height: 360px;
+   }
 }
 
 @media (max-width: 520px) {

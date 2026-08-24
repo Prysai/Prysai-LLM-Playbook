@@ -35,6 +35,7 @@ see before the reader works through the prose.
 - [Claim to evidence audit](claim-to-evidence-audit-red-black.svg)
 - [Evidence to decision and stop](evidence-to-decision-stop-map-red-black.svg)
 - [Recovery decision tree](recovery-decision-tree-red-black.svg)
+- [Reader page anatomy](reader-page-anatomy-red-black.svg)
 
 The cards are visual explanations, not benchmark results. Their scope,
 ownership, and reuse boundary are recorded in the
