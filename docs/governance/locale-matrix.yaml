@@ -111,7 +111,16 @@
       "content_id": "ai-safety-field-signals-and-research-receipts-2026-08-13",
       "kind": "field-note",
       "path": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13.md",
-      "content_status": "candidate"
+      "content_status": "candidate",
+      "localized_paths": {
+        "ZH": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-ZH.md",
+        "ES": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-ES.md",
+        "JA": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-JA.md",
+        "KO": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-KO.md",
+        "DE": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-DE.md",
+        "ZHTW": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-ZHTW.md",
+        "FR": "docs/research/ai-safety-field-signals-and-research-receipts-2026-08-13-FR.md"
+      }
     },
     {
       "content_id": "field-case-external-instruction-authority-2026-08-13",
