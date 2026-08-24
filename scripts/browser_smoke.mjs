@@ -441,51 +441,51 @@ try {
   };
   const localizedFoundationVisuals = {
     en: {
-      heading: 'Seven foundation boards, one loop.',
-      titles: ['The smallest safe LLM loop', 'Prompt contract: six fields', 'Observable action boundary', 'Evidence recovery ladder', 'Source check before belief', 'Claim to evidence audit', 'Evidence to decision and stop'],
-      bodies: ['Define, supply context, request, check, then repair, transfer, or stop.', 'Result, context, allowed help, limits, check, and stop.', 'Proposal, authority, execution, and human read-back.', 'Match claim strength to the next smallest check.', 'Match claim, source, scope, and freshness before relying on it.', 'State the claim, scope it, name the source, check the link, and keep the limit.', 'Follow a question to an observation, a bounded decision, or a deliberate stop.'],
+      heading: 'Eight foundation boards, one loop.',
+      titles: ['First visit route', 'The smallest safe LLM loop', 'Prompt contract: six fields', 'Observable action boundary', 'Evidence recovery ladder', 'Source check before belief', 'Claim to evidence audit', 'Evidence to decision and stop'],
+      bodies: ['Choose one goal, open the Foundation Core, make one safe attempt, check the record, then continue or stop with the unknown visible.', 'Define, supply context, request, check, then repair, transfer, or stop.', 'Result, context, allowed help, limits, check, and stop.', 'Proposal, authority, execution, and human read-back.', 'Match claim strength to the next smallest check.', 'Match claim, source, scope, and freshness before relying on it.', 'State the claim, scope it, name the source, check the link, and keep the limit.', 'Follow a question to an observation, a bounded decision, or a deliberate stop.'],
       boundary: /Project-authored English boards/i,
     },
     zh: {
-      heading: '七张基础图，串起一个闭环。',
-      titles: ['最小安全 LLM 闭环', '提示词契约：六个字段', '可观察的行动边界', '证据恢复阶梯', '相信前先检查来源', '声明到证据审计', '从证据到决定与停止'],
-      bodies: ['定义、提供上下文、提出请求、检查，然后修正、迁移或停止。', '结果、上下文、允许的帮助、限制、回答与检查、停止条件。', '提议、授权、执行和人工核对。', '让声明的强度匹配下一个最小检查。', '依赖信息前，对照声明、来源、范围和时效性。', '写清声明，限定范围，标出来源，检查证据链，并保留限制。', '沿着问题走到观察结果、有边界的决定，或明确停止。'],
+      heading: '八张基础图，串起一个闭环。',
+      titles: ['第一次访问路线', '最小安全 LLM 闭环', '提示词契约：六个字段', '可观察的行动边界', '证据恢复阶梯', '相信前先检查来源', '声明到证据审计', '从证据到决定与停止'],
+      bodies: ['先选一个目标，进入基础核心，做一次安全尝试，检查记录，然后继续，或在保留未知项的情况下停止。', '定义、提供上下文、提出请求、检查，然后修正、迁移或停止。', '结果、上下文、允许的帮助、限制、回答与检查、停止条件。', '提议、授权、执行和人工核对。', '让声明的强度匹配下一个最小检查。', '依赖信息前，对照声明、来源、范围和时效性。', '写清声明，限定范围，标出来源，检查证据链，并保留限制。', '沿着问题走到观察结果、有边界的决定，或明确停止。'],
       boundary: /项目原创英文图表/,
     },
     es: {
-      heading: 'Siete tablas, un solo bucle de fundamentos.',
-      titles: ['El bucle LLM seguro más pequeño', 'Contrato de prompt: seis campos', 'Límite de acción observable', 'Escalera de recuperación de evidencia', 'Comprobar la fuente antes de creer', 'Auditar la afirmación y la evidencia', 'De la evidencia a la decisión y la parada'],
-      bodies: ['Define, aporta contexto, pide, comprueba y después repara, transfiere o detén.', 'Resultado, contexto, ayuda permitida, límites, comprobación y parada.', 'Propuesta, autoridad, ejecución y lectura humana del resultado.', 'Ajusta la fuerza de la afirmación a la siguiente comprobación mínima.', 'Compara afirmación, fuente, alcance y vigencia antes de confiar.', 'Formula la afirmación, delimítala, nombra la fuente, comprueba el vínculo y conserva el límite.', 'Sigue una pregunta hasta una observación, una decisión acotada o una parada deliberada.'],
+      heading: 'Ocho tablas, un solo bucle.',
+      titles: ['Ruta para la primera visita', 'El bucle LLM seguro más pequeño', 'Contrato de prompt: seis campos', 'Límite de acción observable', 'Escalera de recuperación de evidencia', 'Comprobar la fuente antes de creer', 'Auditar la afirmación y la evidencia', 'De la evidencia a la decisión y la parada'],
+      bodies: ['Elige un objetivo, abre el núcleo de fundamentos, haz una prueba segura, revisa el registro y decide si continúas o paras dejando visible lo que aún no sabes.', 'Define, aporta contexto, pide, comprueba y después repara, transfiere o detén.', 'Resultado, contexto, ayuda permitida, límites, comprobación y parada.', 'Propuesta, autoridad, ejecución y lectura humana del resultado.', 'Ajusta la fuerza de la afirmación a la siguiente comprobación mínima.', 'Compara afirmación, fuente, alcance y vigencia antes de confiar.', 'Formula la afirmación, delimítala, nombra la fuente, comprueba el vínculo y conserva el límite.', 'Sigue una pregunta hasta una observación, una decisión acotada o una parada deliberada.'],
       boundary: /Tablas originales del proyecto en inglés/,
     },
     ja: {
-      heading: '7つの基礎ボード、1つのループ。',
-      titles: ['最小の安全なLLMループ', 'プロンプト契約：6つの項目', '観測可能な操作境界', 'エビデンス回復ラダー', '信じる前に出典を確認', '主張と証拠を監査する', '証拠から判断、停止まで'],
-      bodies: ['定義、コンテキスト提供、依頼、確認、その後に修正、転移、または停止。', '結果、コンテキスト、許可された支援、制約、確認、停止。', '提案、権限、実行、人による読み戻し。', '主張の強さを、次に行う最小の確認に合わせます。', '頼る前に、主張、出典、範囲、鮮度を照合します。', '主張を書き、範囲を定め、出典の責任者を示し、つながりを確認し、限界を残します。', '問いを観察結果、範囲を限定した判断、または意図した停止へつなげます。'],
+      heading: '8つの基礎ボード、1つのループ。',
+      titles: ['初回訪問の学習ルート', '最小の安全なLLMループ', 'プロンプト契約：6つの項目', '観測可能な操作境界', 'エビデンス回復ラダー', '信じる前に出典を確認', '主張と証拠を監査する', '証拠から判断、停止まで'],
+      bodies: ['目的を1つ選び、LLM Foundation Coreを開き、安全な試行を1回行い、記録を確認します。そのうえで、未知の点を残したまま続けるか止めます。', '定義、コンテキスト提供、依頼、確認、その後に修正、転移、または停止。', '結果、コンテキスト、許可された支援、制約、確認、停止。', '提案、権限、実行、人による読み戻し。', '主張の強さを、次に行う最小の確認に合わせます。', '頼る前に、主張、出典、範囲、鮮度を照合します。', '主張を書き、範囲を定め、出典の責任者を示し、つながりを確認し、限界を残します。', '問いを観察結果、範囲を限定した判断、または意図した停止へつなげます。'],
       boundary: /プロジェクト作成の英語図/,
     },
     ko: {
-      heading: '일곱 기초 보드, 하나의 루프.',
-      titles: ['가장 작은 안전한 LLM 루프', '프롬프트 계약: 여섯 필드', '관찰 가능한 행동 경계', '증거 복구 사다리', '믿기 전에 출처 점검', '주장과 증거 감사', '증거에서 판단과 중지까지'],
-      bodies: ['정의하고, 맥락을 제공하고, 요청하고, 점검한 다음 수정·전이하거나 멈춥니다.', '결과, 컨텍스트, 허용된 도움, 제한, 응답과 점검, 중지.', '제안, 권한, 실행, 사람의 결과 확인.', '주장의 강도를 다음 최소 점검에 맞추세요.', '의존하기 전에 주장, 출처, 범위, 최신성을 맞춰 보세요.', '주장을 적고 범위를 정하고 출처를 밝힌 뒤 연결을 점검하고 한계를 남기세요.', '질문을 관찰 결과, 범위가 정해진 판단 또는 의도적인 중지로 이어 가세요.'],
+      heading: '여덟 기초 보드, 하나의 루프.',
+      titles: ['첫 방문 학습 경로', '가장 작은 안전한 LLM 루프', '프롬프트 계약: 여섯 필드', '관찰 가능한 행동 경계', '증거 복구 사다리', '믿기 전에 출처 점검', '주장과 증거 감사', '증거에서 판단과 중지까지'],
+      bodies: ['목표 하나를 고르고 Foundation Core를 연 뒤 안전하게 한 번 시도합니다. 기록을 확인하고, 모르는 점을 남긴 채 계속할지 멈출지 결정하세요.', '정의하고, 맥락을 제공하고, 요청하고, 점검한 다음 수정·전이하거나 멈춥니다.', '결과, 컨텍스트, 허용된 도움, 제한, 응답과 점검, 중지.', '제안, 권한, 실행, 사람의 결과 확인.', '주장의 강도를 다음 최소 점검에 맞추세요.', '의존하기 전에 주장, 출처, 범위, 최신성을 맞춰 보세요.', '주장을 적고 범위를 정하고 출처를 밝힌 뒤 연결을 점검하고 한계를 남기세요.', '질문을 관찰 결과, 범위가 정해진 판단 또는 의도적인 중지로 이어 가세요.'],
       boundary: /프로젝트가 만든 영어 보드/,
     },
     de: {
-      heading: 'Sieben Grundtafeln, ein Ablauf.',
-      titles: ['Der kleinste sichere LLM-Ablauf', 'Prompt-Vertrag: sechs Felder', 'Beobachtbare Handlungsgrenze', 'Evidenz-Wiederherstellungsleiter', 'Quelle prüfen, bevor du vertraust', 'Aussage und Beleg prüfen', 'Vom Beleg zur Entscheidung und zum Stopp'],
-      bodies: ['Definieren, Kontext liefern, anfragen, prüfen und dann reparieren, übertragen oder stoppen.', 'Ergebnis, Kontext, erlaubte Hilfe, Grenzen, Prüfung und Stopp.', 'Vorschlag, Autorität, Ausführung und menschliche Rücklese.', 'Passe die Stärke der Aussage an die nächste kleinste Prüfung an.', 'Gleiche Aussage, Quelle, Umfang und Aktualität ab, bevor du dich darauf verlässt.', 'Formuliere die Aussage, grenze sie ein, nenne die Quelle, prüfe die Verbindung und halte die Grenze fest.', 'Verfolge eine Frage bis zur Beobachtung, zur begrenzten Entscheidung oder zum bewussten Stopp.'],
+      heading: 'Acht Grundtafeln, ein Ablauf.',
+      titles: ['Route für den ersten Besuch', 'Der kleinste sichere LLM-Ablauf', 'Prompt-Vertrag: sechs Felder', 'Beobachtbare Handlungsgrenze', 'Evidenz-Wiederherstellungsleiter', 'Quelle prüfen, bevor du vertraust', 'Aussage und Beleg prüfen', 'Vom Beleg zur Entscheidung und zum Stopp'],
+      bodies: ['Wähle ein Ziel, öffne den Foundation Core, mache einen sicheren Versuch, prüfe das Protokoll und entscheide dann, ob du mit sichtbaren Unklarheiten weitermachst oder stoppst.', 'Definieren, Kontext liefern, anfragen, prüfen und dann reparieren, übertragen oder stoppen.', 'Ergebnis, Kontext, erlaubte Hilfe, Grenzen, Prüfung und Stopp.', 'Vorschlag, Autorität, Ausführung und menschliche Rücklese.', 'Passe die Stärke der Aussage an die nächste kleinste Prüfung an.', 'Gleiche Aussage, Quelle, Umfang und Aktualität ab, bevor du dich darauf verlässt.', 'Formuliere die Aussage, grenze sie ein, nenne die Quelle, prüfe die Verbindung und halte die Grenze fest.', 'Verfolge eine Frage bis zur Beobachtung, zur begrenzten Entscheidung oder zum bewussten Stopp.'],
       boundary: /Projekt-eigene englische Tafeln/,
     },
     'zh-tw': {
-      heading: '七張基礎圖，串起一個閉環。',
-      titles: ['最小安全 LLM 閉環', '提示詞契約：六個欄位', '可觀察的行動邊界', '證據恢復階梯', '相信前先檢查來源', '稽核主張與證據', '從證據到判斷與停止'],
-      bodies: ['定義、提供脈絡、提出請求、檢查，然後修正、遷移或停止。', '結果、起始脈絡、允許的協助、限制、回答與檢查、停止條件。', '提議、授權、執行與人工讀回。', '讓聲明的強度對應下一個最小檢查。', '依賴資訊前，對照聲明、來源、範圍與時效性。', '寫清楚主張，限定範圍，標出來源，檢查證據鏈，並保留限制。', '沿著問題走到觀察結果、有界線的判斷，或明確停止。'],
+      heading: '八張基礎圖，串起一個閉環。',
+      titles: ['第一次造訪路線', '最小安全 LLM 閉環', '提示詞契約：六個欄位', '可觀察的行動邊界', '證據恢復階梯', '相信前先檢查來源', '稽核主張與證據', '從證據到判斷與停止'],
+      bodies: ['先選一個目標，進入基礎核心，做一次安全嘗試，檢查紀錄，然後繼續，或在保留未知項目的情況下停止。', '定義、提供脈絡、提出請求、檢查，然後修正、遷移或停止。', '結果、起始脈絡、允許的協助、限制、回答與檢查、停止條件。', '提議、授權、執行與人工讀回。', '讓聲明的強度對應下一個最小檢查。', '依賴資訊前，對照聲明、來源、範圍與時效性。', '寫清楚主張，限定範圍，標出來源，檢查證據鏈，並保留限制。', '沿著問題走到觀察結果、有界線的判斷，或明確停止。'],
       boundary: /專案原創英文圖表/,
     },
     fr: {
-      heading: 'Sept tableaux de base, une seule boucle.',
-      titles: ['La plus petite boucle LLM sûre', 'Contrat de prompt : six champs', 'Frontière d’action observable', 'Échelle de récupération des preuves', 'Vérifier la source avant de croire', 'Auditer l’affirmation et les preuves', 'Des preuves à la décision et à l’arrêt'],
-      bodies: ['Définir, fournir le contexte, demander, vérifier, puis corriger, transférer ou s’arrêter.', 'Résultat, contexte, aide autorisée, limites, vérification et arrêt.', 'Proposition, autorité, exécution et relecture humaine.', 'Adaptez la force de l’affirmation au plus petit contrôle suivant.', 'Comparez affirmation, source, portée et actualité avant de vous y fier.', 'Écrivez l’affirmation, délimitez-la, nommez la source, vérifiez le lien et gardez la limite.', 'Suivez une question jusqu’à une observation, une décision délimitée ou un arrêt volontaire.'],
+      heading: 'Huit tableaux de base, une seule boucle.',
+      titles: ['Parcours de première visite', 'La plus petite boucle LLM sûre', 'Contrat de prompt : six champs', 'Frontière d’action observable', 'Échelle de récupération des preuves', 'Vérifier la source avant de croire', 'Auditer l’affirmation et les preuves', 'Des preuves à la décision et à l’arrêt'],
+      bodies: ['Choisissez un objectif, ouvrez le Foundation Core, faites un essai sûr, vérifiez le relevé, puis continuez ou arrêtez-vous en laissant visibles les inconnues.', 'Définir, fournir le contexte, demander, vérifier, puis corriger, transférer ou s’arrêter.', 'Résultat, contexte, aide autorisée, limites, vérification et arrêt.', 'Proposition, autorité, exécution et relecture humaine.', 'Adaptez la force de l’affirmation au plus petit contrôle suivant.', 'Comparez affirmation, source, portée et actualité avant de vous y fier.', 'Écrivez l’affirmation, délimitez-la, nommez la source, vérifiez le lien et gardez la limite.', 'Suivez une question jusqu’à une observation, une décision délimitée ou un arrêt volontaire.'],
       boundary: /Tableaux anglais créés par le projet/i,
     },
   };
@@ -566,7 +566,7 @@ try {
     );
     const foundationVisuals = page.locator('#foundation-visuals');
     assert.equal(await foundationVisuals.count(), 1, `${locale} foundation teaching visual section is missing`);
-    assert.equal(await foundationVisuals.locator('.foundation-visual-card').count(), 7, `${locale} foundation teaching visual section lost a board`);
+    assert.equal(await foundationVisuals.locator('.foundation-visual-card').count(), 8, `${locale} foundation teaching visual section lost a board`);
     assert.equal(await foundationVisuals.locator('h3').innerText(), localizedFoundationVisuals[locale].heading, `${locale} foundation visual heading is not localized`);
     assert.deepEqual(
       await foundationVisuals.locator('.foundation-visual-card strong').allTextContents(),
@@ -589,6 +589,7 @@ try {
     assert.deepEqual(
       await foundationVisuals.locator('img').evaluateAll((images) => images.map((image) => image.getAttribute('src'))),
       [
+        '../assets/teaching/foundation-first-visit-route-red-black.svg',
         '../assets/teaching/foundation-route-map-red-black.svg',
         '../assets/teaching/prompt-contract-six-fields-red-black.svg',
         '../assets/teaching/observable-action-boundary-red-black.svg',
@@ -602,14 +603,14 @@ try {
     assert.deepEqual(
       await foundationVisuals.locator('img').evaluateAll((images) => images.map((image) => image.getAttribute('alt'))),
       {
-        en: ['Smallest safe LLM loop teaching board', 'Six-field prompt contract teaching board', 'Observable action boundary teaching board', 'Evidence recovery ladder teaching board', 'Source check before belief teaching board', 'Claim to evidence audit teaching board', 'Evidence to decision and stop teaching board'],
-        zh: ['最小安全 LLM 闭环教学图', '六字段提示词契约教学图', '可观察行动边界教学图', '证据恢复阶梯教学图', '相信前先检查来源教学图', '声明到证据审计教学图', '从证据到决定与停止的教学图'],
-        es: ['Tabla didáctica del bucle LLM seguro más pequeño', 'Tabla didáctica del contrato de prompt de seis campos', 'Tabla didáctica del límite de acción observable', 'Tabla didáctica de la escalera de recuperación de evidencia', 'Tabla didáctica de comprobar la fuente antes de creer', 'Tabla didáctica de la auditoría de afirmación a evidencia', 'Tabla didáctica de evidencia, decisión y parada'],
-        ja: ['最小の安全なLLMループを示す教材図', '6項目のプロンプト契約を示す教材図', '観測可能な操作境界を示す教材図', 'エビデンス回復ラダーを示す教材図', '信じる前の出典確認を示す教材図', '主張から証拠までの監査を示す教材図', '証拠から判断と停止までを示す教材図'],
-        ko: ['가장 작은 안전한 LLM 루프 교육 보드', '여섯 필드 프롬프트 계약 교육 보드', '관찰 가능한 행동 경계 교육 보드', '증거 복구 사다리 교육 보드', '믿기 전 출처 점검 교육 보드', '주장에서 증거까지 감사하는 교육 보드', '증거에서 판단과 중지까지 보여 주는 교육 보드'],
-        de: ['Lehrtafel zum kleinsten sicheren LLM-Ablauf', 'Lehrtafel für einen Prompt-Vertrag mit sechs Feldern', 'Lehrtafel für eine beobachtbare Handlungsgrenze', 'Lehrtafel zur Evidenz-Wiederherstellungsleiter', 'Lehrtafel zur Quellenprüfung vor dem Vertrauen', 'Lehrtafel zur Prüfung von Aussage und Beleg', 'Lehrtafel von Beleg zu Entscheidung und Stopp'],
-        'zh-tw': ['最小安全 LLM 閉環教學圖', '六欄位提示詞契約教學圖', '可觀察行動邊界教學圖', '證據恢復階梯教學圖', '相信前先檢查來源教學圖', '主張到證據稽核教學圖', '從證據到判斷與停止的教學圖'],
-        fr: ['Tableau pédagogique de la plus petite boucle LLM sûre', 'Tableau pédagogique du contrat de prompt à six champs', 'Tableau pédagogique de la frontière d’action observable', 'Tableau pédagogique de l’échelle de récupération des preuves', 'Tableau pédagogique de la vérification de la source avant de croire', 'Tableau pédagogique de l’audit de l’affirmation par les preuves', 'Tableau pédagogique des preuves vers la décision et l’arrêt'],
+        en: ['First visit route to one checked LLM task teaching board', 'Smallest safe LLM loop teaching board', 'Six-field prompt contract teaching board', 'Observable action boundary teaching board', 'Evidence recovery ladder teaching board', 'Source check before belief teaching board', 'Claim to evidence audit teaching board', 'Evidence to decision and stop teaching board'],
+        zh: ['从第一次访问到完成一次可检查 LLM 任务的教学图', '最小安全 LLM 闭环教学图', '六字段提示词契约教学图', '可观察行动边界教学图', '证据恢复阶梯教学图', '相信前先检查来源教学图', '声明到证据审计教学图', '从证据到决定与停止的教学图'],
+        es: ['Tabla didáctica de la primera visita a una tarea LLM comprobable', 'Tabla didáctica del bucle LLM seguro más pequeño', 'Tabla didáctica del contrato de prompt de seis campos', 'Tabla didáctica del límite de acción observable', 'Tabla didáctica de la escalera de recuperación de evidencia', 'Tabla didáctica de comprobar la fuente antes de creer', 'Tabla didáctica de la auditoría de afirmación a evidencia', 'Tabla didáctica de evidencia, decisión y parada'],
+        ja: ['初回訪問から確認可能なLLMタスクまでの学習図', '最小の安全なLLMループを示す教材図', '6項目のプロンプト契約を示す教材図', '観測可能な操作境界を示す教材図', 'エビデンス回復ラダーを示す教材図', '信じる前の出典確認を示す教材図', '主張から証拠までの監査を示す教材図', '証拠から判断と停止までを示す教材図'],
+        ko: ['첫 방문부터 확인 가능한 LLM 작업까지 보여 주는 교육 보드', '가장 작은 안전한 LLM 루프 교육 보드', '여섯 필드 프롬프트 계약 교육 보드', '관찰 가능한 행동 경계 교육 보드', '증거 복구 사다리 교육 보드', '믿기 전 출처 점검 교육 보드', '주장에서 증거까지 감사하는 교육 보드', '증거에서 판단과 중지까지 보여 주는 교육 보드'],
+        de: ['Lehrtafel vom ersten Besuch bis zu einer prüfbaren LLM-Aufgabe', 'Lehrtafel zum kleinsten sicheren LLM-Ablauf', 'Lehrtafel für einen Prompt-Vertrag mit sechs Feldern', 'Lehrtafel für eine beobachtbare Handlungsgrenze', 'Lehrtafel zur Evidenz-Wiederherstellungsleiter', 'Lehrtafel zur Quellenprüfung vor dem Vertrauen', 'Lehrtafel zur Prüfung von Aussage und Beleg', 'Lehrtafel von Beleg zu Entscheidung und Stopp'],
+        'zh-tw': ['從第一次造訪到完成一次可檢查 LLM 任務的教學圖', '最小安全 LLM 閉環教學圖', '六欄位提示詞契約教學圖', '可觀察行動邊界教學圖', '證據恢復階梯教學圖', '相信前先檢查來源教學圖', '主張到證據稽核教學圖', '從證據到判斷與停止的教學圖'],
+        fr: ['Tableau pédagogique du premier parcours jusqu’à une tâche LLM vérifiable', 'Tableau pédagogique de la plus petite boucle LLM sûre', 'Tableau pédagogique du contrat de prompt à six champs', 'Tableau pédagogique de la frontière d’action observable', 'Tableau pédagogique de l’échelle de récupération des preuves', 'Tableau pédagogique de la vérification de la source avant de croire', 'Tableau pédagogique de l’audit de l’affirmation par les preuves', 'Tableau pédagogique des preuves vers la décision et l’arrêt'],
       }[locale],
       `${locale} foundation visual alt text is not localized`,
     );
@@ -659,7 +660,7 @@ try {
   await page.goto(`${origin}/site/?lang=fr`, { waitUntil: 'networkidle' });
   await noHorizontalOverflow(page, 'mobile localized six-term concept map');
   assert.equal(await page.locator('.foundation-concept-card').count(), 6, 'mobile six-term concept map is not discoverable');
-    assert.equal(await page.locator('#foundation-visuals .foundation-visual-card').count(), 7, 'mobile foundation visual section is not discoverable');
+    assert.equal(await page.locator('#foundation-visuals .foundation-visual-card').count(), 8, 'mobile foundation visual section is not discoverable');
   await page.locator('#foundation-visuals').scrollIntoViewIfNeeded();
   await page.locator('#foundation-visuals').screenshot({ path: path.join(visualEvidenceDirectory, 'foundation-visuals-mobile.png') });
   await page.goto(`${origin}/site/?lang=fr`, { waitUntil: 'networkidle' });
