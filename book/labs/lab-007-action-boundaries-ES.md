@@ -59,18 +59,24 @@ nueva y toda acción externa como not_run; el rollback restaura la copia.
 
 ## Tres superficies
 
-**A, copia local:** registra ruta y hash, edita una línea, revisa diff y usa una
+### Escenario A: copia local ordinaria
+
+Registra ruta y hash, edita una línea, revisa diff y usa una
 comprobación offline. Cuenta, remoto y publicación siguen not_run.
 
-**B, Worktree:** usa un repositorio desechable o worktree-simulation. Registra rama,
+### Escenario B: Worktree aislado
+
+Usa un repositorio desechable o worktree-simulation. Registra rama,
 commit base y rutas; edita solo allí, comprueba que el árbol principal no cambió y
 no hagas commit, push ni publish.
 
-**C, segunda carpeta:** usa organization-like-simulation. No conectes organización,
+### Escenario C: segunda carpeta de tipo organización
+
+Usa organization-like-simulation. No conectes organización,
 Enterprise, connector, remote ni red. Revisa visibilidad, colaboradores, protección
 de rama, installation y dueño del rollback. Poder escribir no es autorización.
 
-## Tarjetas de síntomas
+## Tarjetas de síntomas: preguntas de observación segura
 
 | Tarjeta | Síntoma | Hecho seguro | No inferir | Comprobación mínima |
 |---|---|---|---|---|
@@ -81,7 +87,7 @@ de rama, installation y dueño del rollback. Poder escribir no es autorización.
 
 Añade: fuente user report, reproducción local no hecha, causa oficial no confirmada.
 
-## Tarjeta de estado
+## Tarjeta de estado por etapas
 
 ~~~text
 run_id:
@@ -114,7 +120,7 @@ Antes de marcar un estado como `verified`, registra qué observación lo apoya, 
 sigue siendo desconocida y si la siguiente comprobación añade información sin añadir un
 efecto externo.
 
-## Orden diagnóstico, parada y evidencia
+## Orden diagnóstico mínimo
 
 1. Congela ruta, objetivo, host, datos y acciones prohibidas.
 2. Guarda hash, git status, rama, Worktree y tarea.
@@ -124,13 +130,15 @@ efecto externo.
 6. Compara visibilidad y rollback de las tres superficies.
 7. Escribe verified solo si la evidencia coincide; si no, unverified o blocked.
 
+## Condiciones de parada y tabla de evidencia
+
 Detente ante alcance ambiguo, commit/push/publish, secretos, datos personales,
 aprobación imprecisa, cuenta externa, instalación, entorno persistente, force
 operation o escritura desconocida. Conserva diff, error, baseline y checkpoint.
 Entrega una tabla con tarea, superficie, baseline, cinco campos de permiso, síntoma,
 acción, resultado, estados, rollback y acciones externas not_run.
 
-## Fallo intencional, transferencia y aprobación
+## Revisión del fallo intencional
 
 Procesa solo en el fixture: el navegador funcionó; la CLI está conectada; soy
 administrador; reinstala para verificar. En cada caso identifica la evidencia
@@ -183,7 +191,7 @@ red, raíces de lectura/escritura y confirmación del efecto. Si uno es
 | Rollback | Restauración o diff inverso comprobable | `available` / `not_run` |
 | Acción externa | Commit, push, publish, instalación o aviso | `not_run` salvo autorización separada |
 
-## Revisión del fallo intencional y transferencia
+## Tarea de transferencia
 
 Aplica solo al fixture estas cuatro frases: «el navegador funcionó, escribe
 remotamente»; «la CLI está conectada, por tanto el host es correcto»; «soy
@@ -195,6 +203,8 @@ información sin aumentar el efecto externo.
 Transfiere el método a una tabla de fuentes, una nota de release o una revisión
 de PR redactada sin escritura real. Cambia la entrada y la aceptación; conserva
 la separación entre identidad, autorización, ejecución y verificación.
+
+## Criterio de aprobación
 
 Se considera aprobado solo si:
 
