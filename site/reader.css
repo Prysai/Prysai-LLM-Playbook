@@ -218,6 +218,49 @@ a:hover { color: var(--reader-link-hover); }
   line-height: 1.5;
 }
 
+.reader-visual-explanation {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--reader-line);
+}
+
+.reader-visual-explanation summary {
+  cursor: pointer;
+  color: var(--reader-ink);
+  font-size: .76rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.reader-visual-explanation summary:hover,
+.reader-visual-explanation summary:focus-visible { color: var(--reader-red); }
+
+.reader-visual-explanation > p {
+  margin: 10px 0;
+  color: var(--reader-muted);
+  font-size: .72rem;
+  line-height: 1.45;
+}
+
+.reader-visual-explanation ol {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.reader-visual-explanation li {
+  display: grid;
+  gap: 2px;
+  padding-left: 2px;
+  color: var(--reader-muted);
+  font-size: .72rem;
+  line-height: 1.4;
+}
+
+.reader-visual-explanation li strong { color: var(--reader-ink); font-size: .76rem; }
+.reader-visual-explanation li em { color: var(--reader-red); font-style: normal; }
+
 .reader-inline-visual-boundary {
   margin: 10px 0 0;
   color: var(--reader-muted);
