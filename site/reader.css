@@ -413,6 +413,7 @@ a:hover { color: var(--reader-link-hover); }
 .reader-concept-map-boundary, .reader-visual-companion-boundary { margin: 14px 0 0; color: var(--reader-muted); font-size: .72rem; line-height: 1.45; }
 .reader-visual-companion figure { margin: 0; }
 .reader-visual-companion .reader-image-link { margin: 0; padding: 10px; border: 1px solid var(--reader-line); background: #f1f1ed; text-decoration: none; }
+.reader-visual-companion .reader-teaching-visual { width: auto; margin: 0; }
 .reader-visual-companion .reader-image-link img { display: block; width: 100%; max-height: 230px; object-fit: contain; border: 1px solid var(--reader-line); background: #fff; }
 .reader-visual-companion .reader-visual-thesis { display: block; margin-bottom: 8px; color: var(--reader-ink); font-size: .78rem; font-weight: 800; line-height: 1.35; }
 .reader-visual-companion .reader-image-link-label { display: block; margin-top: 7px; font-size: .72rem; font-weight: 700; }
