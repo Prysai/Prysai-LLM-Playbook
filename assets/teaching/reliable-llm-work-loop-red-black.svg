@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1500" role="img" aria-labelledby="title desc">
+  <title id="title">The reliable LLM work loop</title>
+  <desc id="desc">A six-step loop for reliable language-model work: understand the model boundary, frame a bounded request, act within authority, inspect the result, repair one mismatch, and transfer the method to an unseen task.</desc>
+  <rect width="900" height="1500" fill="#f6f6f2"/>
+  <rect x="42" y="34" width="816" height="10" fill="#171717"/>
+  <text x="42" y="94" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">RELIABLE WORK / ONE LOOP</text>
+  <text x="42" y="158" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">MAKE THE WORK</text>
+  <text x="42" y="214" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">EASY TO CHECK.</text>
+  <text x="44" y="255" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="16">understand / frame / act / inspect / repair / transfer</text>
+
+  <line x1="76" y1="328" x2="76" y2="1194" stroke="#d71920" stroke-width="8"/>
+  <circle cx="76" cy="362" r="15" fill="#d71920"/>
+  <circle cx="76" cy="516" r="15" fill="#d71920"/>
+  <circle cx="76" cy="670" r="15" fill="#d71920"/>
+  <circle cx="76" cy="824" r="15" fill="#d71920"/>
+  <circle cx="76" cy="978" r="15" fill="#d71920"/>
+  <circle cx="76" cy="1132" r="15" fill="#d71920"/>
+
+  <g transform="translate(122 310)">
+    <rect width="734" height="118" fill="#171717"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / UNDERSTAND</text>
+    <text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Name what the model can establish.</text>
+    <text x="24" y="101" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">A fluent response is a proposal, not proof.</text>
+  </g>
+  <g transform="translate(122 464)">
+    <rect width="734" height="118" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / FRAME</text>
+    <text x="24" y="78" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">State the goal, limits, and check.</text>
+    <text x="24" y="101" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Missing facts stay unknown; authority stays explicit.</text>
+  </g>
+  <g transform="translate(122 618)">
+    <rect width="734" height="118" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / ACT</text>
+    <text x="24" y="78" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Allow only the smallest safe action.</text>
+    <text x="24" y="101" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Read first; pause before an external effect.</text>
+  </g>
+  <g transform="translate(122 772)">
+    <rect width="734" height="118" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / INSPECT</text>
+    <text x="24" y="78" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Compare the result with evidence.</text>
+    <text x="24" y="101" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Use a source, diff, test, log, or acceptance rule.</text>
+  </g>
+  <g transform="translate(122 926)">
+    <rect width="734" height="118" fill="#d71920"/>
+    <text x="24" y="34" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">05 / REPAIR</text>
+    <text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Name one mismatch and try once.</text>
+    <text x="24" y="101" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="15">Keep the failed attempt; change one condition.</text>
+  </g>
+  <g transform="translate(122 1080)">
+    <rect width="734" height="118" fill="#171717"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">06 / TRANSFER</text>
+    <text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Repeat the method on an unseen task.</text>
+    <text x="24" y="101" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">A route is practice; a claim needs its own evidence.</text>
+  </g>
+
+  <rect x="42" y="1262" width="816" height="132" fill="#d71920"/>
+  <text x="66" y="1304" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">BOUNDARY / KEEP THE CLAIM SMALL</text>
+  <text x="66" y="1348" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="900">NO CHECK? DO NOT CALL IT DONE.</text>
+  <text x="66" y="1378" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18">Keep the receipt, the unknowns, and the next smallest check.</text>
+  <text x="42" y="1448" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / EVIDENCE BEFORE CLAIM</text>
+</svg>
