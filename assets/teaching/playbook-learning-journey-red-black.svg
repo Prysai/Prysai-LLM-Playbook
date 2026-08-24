@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" role="img" aria-labelledby="title desc">
+  <title id="title">Prysai LLM Playbook learning journey</title>
+  <desc id="desc">A four-stage learning journey: complete the five-unit LLM Foundation Core, make one bounded first task, turn the result into evidence and a deliberate stop or decision, then choose an optional Codex, tools, Skills, or team track.</desc>
+  <rect width="1200" height="1600" fill="#f6f6f2"/>
+  <rect x="58" y="42" width="1084" height="10" fill="#171717"/>
+  <text x="58" y="106" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="4">PRYSAI LLM PLAYBOOK / LEARNING JOURNEY</text>
+  <text x="58" y="178" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="900" letter-spacing="-3">LEARN THE METHOD.</text>
+  <text x="58" y="244" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="900" letter-spacing="-3">THEN CHOOSE THE PLATFORM.</text>
+  <text x="60" y="286" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="17">foundation / first task / evidence / optional practice</text>
+
+  <line x1="90" y1="360" x2="90" y2="1300" stroke="#d71920" stroke-width="9"/>
+  <circle cx="90" cy="425" r="17" fill="#d71920"/>
+  <circle cx="90" cy="690" r="17" fill="#d71920"/>
+  <circle cx="90" cy="955" r="17" fill="#d71920"/>
+  <circle cx="90" cy="1220" r="17" fill="#d71920"/>
+
+  <g transform="translate(140 360)">
+    <rect width="1000" height="198" fill="#171717"/>
+    <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">01 / FOUNDATION CORE</text>
+    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Understand → initiate → identify → repair → transfer</text>
+    <text x="28" y="134" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">Five units make the model, the request, the visible failures, the check, and the unseen task explicit.</text>
+    <text x="28" y="170" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="16">Start here before Codex, tools, Agents, or Skills.</text>
+  </g>
+
+  <g transform="translate(140 625)">
+    <rect width="1000" height="198" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+    <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">02 / FIRST BOUNDED TASK</text>
+    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Name the result before you ask.</text>
+    <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">State the goal, supplied context, allowed help, limits, response shape, and stop condition.</text>
+    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">Use a fictional or disposable task; keep the first request and first response.</text>
+  </g>
+
+  <g transform="translate(140 890)">
+    <rect width="1000" height="198" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
+    <text x="28" y="42" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">03 / EVIDENCE LOOP</text>
+    <text x="28" y="91" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Observe what changed. Keep what is unknown.</text>
+    <text x="28" y="134" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="18">Compare the answer or diff with a source, test, log, or acceptance rule.</text>
+    <text x="28" y="170" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="16">Continue only when the next proof exists; otherwise record the smallest safe stop.</text>
+  </g>
+
+  <g transform="translate(140 1155)">
+    <rect width="1000" height="198" fill="#d71920"/>
+    <text x="28" y="42" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">04 / OPTIONAL TRACKS</text>
+    <text x="28" y="91" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="900">Choose the smallest useful next layer.</text>
+    <text x="28" y="134" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="18">Codex · tools · Skills · Agents · research · engineering · team practice</text>
+    <text x="28" y="170" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="16">Each track keeps its own source, permissions, evidence, failure cases, and limits.</text>
+  </g>
+
+  <rect x="58" y="1410" width="1084" height="126" fill="#171717"/>
+  <text x="84" y="1452" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">BOUNDARY / CANDIDATE ROUTE</text>
+  <text x="84" y="1492" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="900">A MAP SHOWS THE ORDER. IT DOES NOT PROVE MASTERY.</text>
+  <text x="84" y="1518" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="16">Keep the artifact, the evidence, the limit, and the next question.</text>
+  <text x="58" y="1574" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / PRACTICE BEFORE CLAIM</text>
+</svg>
