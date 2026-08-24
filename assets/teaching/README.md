@@ -31,6 +31,7 @@ see before the reader works through the prose.
 - [Observable action boundary](observable-action-boundary-red-black.svg)
 - [Prompt contract: six fields](prompt-contract-six-fields-red-black.svg)
 - [Reliable LLM work loop](reliable-llm-work-loop-red-black.svg)
+- [Side-effect boundary decision map](side-effect-boundary-decision-map.svg)
 
 The cards are visual explanations, not benchmark results. Their scope,
 ownership, and reuse boundary are recorded in the
