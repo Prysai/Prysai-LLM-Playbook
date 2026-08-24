@@ -6719,6 +6719,49 @@ Object.assign(copy.fr, {
 // minutes in the checked-in starter contract; keep older duration fragments
 // only as historical research or compatibility anchors, never as live UI.
 Object.assign(copy.en, {
+  journeyTitle: 'See the whole Playbook before you choose a track.',
+  journeyIntro: 'One map answers the first practical question: what should I do now, and what comes after the first checked result?',
+  journeyAria: 'The four stages of the Playbook learning journey',
+  journeyStepOneTitle: 'Foundation Core', journeyStepOneBody: 'Understand the model, make one request, recognize visible failures, repair, and try a new task.',
+  journeyStepTwoTitle: 'First bounded task', journeyStepTwoBody: 'Name the result, context, allowed help, limits, check, and stop condition.',
+  journeyStepThreeTitle: 'Evidence loop', journeyStepThreeBody: 'Compare what changed with a source, test, log, or acceptance rule; stop when proof is missing.',
+  journeyStepFourTitle: 'Optional tracks', journeyStepFourBody: 'Choose Codex, tools, Skills, Agents, research, engineering, or team practice only when the next layer is useful.',
+  journeyBoundary: 'The map shows order, not mastery. Keep the artifact, evidence, limit, and next question.',
+  journeyFigureAlt: 'Playbook learning journey from the Foundation Core to a first bounded task, an evidence loop, and optional tracks',
+  journeyFigureCaption: 'Open the project-authored journey board for a printable view. The ordered list is the text explanation.',
+});
+Object.assign(copy.zh, {
+  journeyTitle: '先看完整路线，再选择下一条实践路径。', journeyIntro: '这张地图回答第一个实际问题：现在该做什么，完成一次可检查结果后又该去哪？', journeyAria: 'Playbook 学习旅程的四个阶段',
+  journeyStepOneTitle: '基础核心课', journeyStepOneBody: '理解模型，提出一次请求，识别看得见的失败，修正结果，再在新任务上重做。', journeyStepTwoTitle: '第一项有边界任务', journeyStepTwoBody: '写清结果、上下文、允许的帮助、限制、检查方式和停止条件。', journeyStepThreeTitle: '证据闭环', journeyStepThreeBody: '用来源、测试、日志或验收规则对照变化；缺少下一项证明时就停止。', journeyStepFourTitle: '可选实践路径', journeyStepFourBody: '只有在确实需要下一层时，才选择 Codex、工具、Skill、Agent、研究、工程或团队实践。', journeyBoundary: '地图展示顺序，不代表掌握。请保留产物、证据、限制和下一个问题。', journeyFigureAlt: '从基础核心课到第一项有边界任务、证据闭环和可选路径的 Playbook 学习旅程图', journeyFigureCaption: '打开项目原创旅程图以查看适合打印的版本。有序列表才是文字解释。',
+});
+Object.assign(copy.es, {
+  journeyTitle: 'Mira el Playbook completo antes de elegir una ruta.', journeyIntro: 'Un mapa responde a la primera pregunta práctica: ¿qué hago ahora y qué viene después del primer resultado comprobado?', journeyAria: 'Las cuatro etapas de la ruta de aprendizaje del Playbook',
+  journeyStepOneTitle: 'Núcleo de fundamentos', journeyStepOneBody: 'Entiende el modelo, haz una petición, reconoce fallos visibles, repara el resultado y repite en una tarea nueva.', journeyStepTwoTitle: 'Primera tarea acotada', journeyStepTwoBody: 'Nombra el resultado, el contexto, la ayuda permitida, los límites, la comprobación y la condición de parada.', journeyStepThreeTitle: 'Ciclo de evidencia', journeyStepThreeBody: 'Compara el cambio con una fuente, prueba, registro o regla de aceptación; detente si falta la siguiente prueba.', journeyStepFourTitle: 'Rutas opcionales', journeyStepFourBody: 'Elige Codex, herramientas, Skills, agentes, investigación, ingeniería o práctica de equipo solo cuando la siguiente capa te sea útil.', journeyBoundary: 'El mapa muestra el orden, no el dominio. Conserva el artefacto, la evidencia, el límite y la siguiente pregunta.', journeyFigureAlt: 'Ruta de aprendizaje del Playbook: del núcleo de fundamentos a una tarea acotada, un ciclo de evidencia y rutas opcionales', journeyFigureCaption: 'Abre la tabla original del proyecto para verla en formato imprimible. La lista ordenada es la explicación textual.',
+});
+Object.assign(copy.ja, {
+  journeyTitle: 'ルートを選ぶ前に、Playbook 全体の流れを見る。', journeyIntro: '最初の実用的な問い――今何をし、その後どこへ進むか――を1枚で確認できます。', journeyAria: 'Playbook 学習ルートの4段階',
+  journeyStepOneTitle: 'LLM 基礎コア', journeyStepOneBody: 'モデルを理解し、1つ依頼し、目に見える失敗を見つけ、修正して、新しい課題で試します。', journeyStepTwoTitle: '最初の範囲付きタスク', journeyStepTwoBody: '結果、コンテキスト、許可する支援、制約、確認方法、停止条件を明示します。', journeyStepThreeTitle: '証拠のループ', journeyStepThreeBody: '変更を出典、テスト、ログ、受け入れ条件と照合し、次の証拠がなければ止まります。', journeyStepFourTitle: '任意の実践ルート', journeyStepFourBody: '次の層が必要なときだけ、Codex、ツール、Skill、Agent、調査、開発、チーム実践を選びます。', journeyBoundary: '地図は順序を示すもので、習得を証明しません。成果物、証拠、限界、次の問いを残してください。', journeyFigureAlt: 'LLM 基礎コアから最初の範囲付きタスク、証拠のループ、任意の実践ルートへ進む Playbook 学習図', journeyFigureCaption: 'プロジェクト作成のルートボードを原寸で開けます。順序付きリストが文章による説明です。',
+});
+Object.assign(copy.ko, {
+  journeyTitle: '경로를 고르기 전에 Playbook 전체 흐름을 보세요.', journeyIntro: '첫 번째 실용적인 질문인 “지금 무엇을 하고, 첫 점검 결과 다음에는 어디로 가는가?”를 한눈에 보여 줍니다.', journeyAria: 'Playbook 학습 여정의 네 단계',
+  journeyStepOneTitle: 'LLM 기초 코어', journeyStepOneBody: '모델을 이해하고 요청 하나를 만든 뒤, 눈에 보이는 실패를 찾아 고치고 새 작업에서 다시 시도합니다.', journeyStepTwoTitle: '첫 번째 범위 있는 작업', journeyStepTwoBody: '결과, 맥락, 허용된 도움, 제한, 점검 방법과 중지 조건을 적습니다.', journeyStepThreeTitle: '증거 루프', journeyStepThreeBody: '변경 사항을 출처, 테스트, 로그 또는 수용 기준과 비교하고 다음 증거가 없으면 멈춥니다.', journeyStepFourTitle: '선택 실습 경로', journeyStepFourBody: '다음 층이 필요할 때만 Codex, 도구, Skill, Agent, 조사, 엔지니어링 또는 팀 실습을 고르세요.', journeyBoundary: '이 지도는 순서를 보여 줄 뿐 숙련을 증명하지 않습니다. 결과물, 증거, 한계와 다음 질문을 남기세요.', journeyFigureAlt: 'LLM 기초 코어에서 첫 번째 범위 있는 작업, 증거 루프와 선택 실습 경로로 이어지는 Playbook 학습 여정', journeyFigureCaption: '프로젝트가 만든 여정 보드를 인쇄용으로 열어 보세요. 순서 목록이 텍스트 설명입니다.',
+});
+Object.assign(copy.de, {
+  journeyTitle: 'Sieh dir das ganze Playbook an, bevor du eine Route wählst.', journeyIntro: 'Eine Karte beantwortet die erste praktische Frage: Was mache ich jetzt, und was kommt nach dem ersten geprüften Ergebnis?', journeyAria: 'Die vier Stufen der Playbook-Lernroute',
+  journeyStepOneTitle: 'LLM-Grundlagenkern', journeyStepOneBody: 'Verstehe das Modell, stelle eine Anfrage, erkenne sichtbare Fehler, repariere das Ergebnis und probiere eine neue Aufgabe.', journeyStepTwoTitle: 'Erste begrenzte Aufgabe', journeyStepTwoBody: 'Benenne Ergebnis, Kontext, erlaubte Hilfe, Grenzen, Prüfung und Stop-Bedingung.', journeyStepThreeTitle: 'Belegschleife', journeyStepThreeBody: 'Vergleiche die Änderung mit Quelle, Test, Log oder Abnahmeregel; stoppe, wenn der nächste Beleg fehlt.', journeyStepFourTitle: 'Optionale Routen', journeyStepFourBody: 'Wähle Codex, Tools, Skills, Agents, Recherche, Engineering oder Teampraxis erst, wenn die nächste Ebene nützlich ist.', journeyBoundary: 'Die Karte zeigt die Reihenfolge, nicht die Beherrschung. Bewahre Artefakt, Beleg, Grenze und nächste Frage auf.', journeyFigureAlt: 'Playbook-Lernroute vom LLM-Grundlagenkern über eine begrenzte Aufgabe und eine Belegschleife zu optionalen Routen', journeyFigureCaption: 'Öffne die projektbezogene Routentafel zum Drucken. Die geordnete Liste ist die Texterklärung.',
+});
+Object.assign(copy['zh-tw'], {
+  journeyTitle: '先看完整路線，再選擇下一條實踐路徑。', journeyIntro: '這張地圖回答第一個實際問題：現在該做什麼，完成一次可檢查的結果後又該去哪裡？', journeyAria: 'Playbook 學習旅程的四個階段',
+  journeyStepOneTitle: '基礎核心課', journeyStepOneBody: '理解模型、提出一次請求、辨識看得見的失敗、修正結果，再在新任務上重做。', journeyStepTwoTitle: '第一項有界線的任務', journeyStepTwoBody: '寫清楚結果、上下文、允許的協助、限制、檢查方式與停止條件。', journeyStepThreeTitle: '證據閉環', journeyStepThreeBody: '用來源、測試、日誌或驗收規則對照變化；缺少下一項證明時就停止。', journeyStepFourTitle: '可選實踐路徑', journeyStepFourBody: '只有在確實需要下一層時，才選擇 Codex、工具、Skill、Agent、研究、工程或團隊實踐。', journeyBoundary: '地圖展示順序，不代表掌握。請保留產物、證據、限制與下一個問題。', journeyFigureAlt: '從基礎核心課到第一項有界線任務、證據閉環與可選路徑的 Playbook 學習旅程圖', journeyFigureCaption: '開啟專案原創旅程圖以查看適合列印的版本。有序清單才是文字說明。',
+});
+Object.assign(copy.fr, {
+  journeyTitle: 'Voyez l’ensemble du Playbook avant de choisir une voie.', journeyIntro: 'Une seule carte répond à la première question pratique : que faire maintenant, puis où aller après le premier résultat vérifié ?', journeyAria: 'Les quatre étapes du parcours d’apprentissage du Playbook',
+  journeyStepOneTitle: 'Foundation Core', journeyStepOneBody: 'Comprendre le modèle, formuler une demande, repérer les erreurs visibles, corriger, puis essayer une nouvelle tâche.', journeyStepTwoTitle: 'Première tâche délimitée', journeyStepTwoBody: 'Nommer le résultat, le contexte, l’aide autorisée, les limites, la vérification et la condition d’arrêt.', journeyStepThreeTitle: 'Boucle de preuves', journeyStepThreeBody: 'Comparer le changement à une source, un test, un journal ou un critère d’acceptation ; s’arrêter si la prochaine preuve manque.', journeyStepFourTitle: 'Parcours facultatifs', journeyStepFourBody: 'Choisir Codex, les outils, les Skills, les Agents, la recherche, l’ingénierie ou le travail d’équipe seulement si l’étape suivante est utile.', journeyBoundary: 'La carte montre l’ordre, pas la maîtrise. Gardez l’artefact, les preuves, la limite et la prochaine question.', journeyFigureAlt: 'Parcours d’apprentissage du Playbook : du Foundation Core à une première tâche délimitée, une boucle de preuves et des parcours facultatifs', journeyFigureCaption: 'Ouvrez la planche originale du projet pour une version imprimable. La liste ordonnée est l’explication textuelle.',
+});
+
+// Add the localized journey copy after the existing dictionaries so every
+// supported interface language receives the same four-stage explanation.
+Object.assign(copy.en, {
   navFirst30: 'Five-minute prompt practice',
   heroProofLink: 'Try the five-minute prompt practice',
   first30Eyebrow: 'Your five-minute prompt practice',
