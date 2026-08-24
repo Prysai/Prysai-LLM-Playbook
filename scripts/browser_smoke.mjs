@@ -1740,6 +1740,12 @@ try {
   assert.equal(await visualCompanion.isVisible(), true, 'Reader teaching visual companion is not available on a chapter page');
   assert.match(await visualCompanion.locator('img').getAttribute('src'), /prompt-contract-six-fields-red-black\.svg$/, 'Chapter visual companion chose the wrong teaching board');
   assert.notEqual((await visualCompanion.locator('img').getAttribute('alt') || '').trim(), '', 'Reader visual companion has no alternative text');
+  const inlineConceptMap = page.locator('[data-reader-inline-concept-map]');
+  assert.equal(await inlineConceptMap.count(), 1, 'Reader inline concept map is not available on a chapter page');
+  assert.equal(await inlineConceptMap.locator('[data-reader-inline-concept-map-root]').count(), 1, 'Reader inline concept map has no localized root node');
+  assert.ok(await inlineConceptMap.locator('[data-reader-inline-concept-map-node]').count() >= 2, 'Reader inline concept map has no heading branches');
+  assert.equal(await inlineConceptMap.locator('ol').count(), 1, 'Reader inline concept map has no static ordered-list fallback');
+  assert.match(await inlineConceptMap.getAttribute('aria-controls') || '', /^reader-inline-concept-map-list$/, 'Reader inline concept map does not expose its controlled list');
 
   // The visual route map is reader-facing content, not English-only chrome.
   // Recheck every supported locale so labels, links, and mobile layout cannot
@@ -1784,6 +1790,9 @@ try {
     );
     assert.equal((await page.locator('[data-reader-concept-map-summary]').innerText()).trim(), visualGuideLocales[locale][0], `${locale} concept map label is not localized`);
     assert.equal((await page.locator('[data-reader-visual-companion-summary]').innerText()).trim(), visualGuideLocales[locale][1], `${locale} visual companion label is not localized`);
+    assert.equal((await page.locator('[data-reader-inline-concept-map] summary').innerText()).trim(), visualGuideLocales[locale][0], `${locale} inline concept map label is not localized`);
+    assert.ok(await page.locator('[data-reader-inline-concept-map-node]').count() >= 2, `${locale} inline concept map lost localized heading branches`);
+    assert.notEqual((await page.locator('[data-reader-inline-concept-map-root]').innerText()).trim(), '', `${locale} inline concept map root is empty`);
     assert.ok(await page.locator('[data-reader-concept-map-node]').count() >= 2, `${locale} concept map lost localized heading branches`);
     assert.match(await page.locator('[data-reader-visual-companion] img').getAttribute('src'), /prompt-contract-six-fields-red-black\.svg$/, `${locale} visual companion chose the wrong teaching board`);
     await noHorizontalOverflow(page, `${locale} localized Reader route map`);
