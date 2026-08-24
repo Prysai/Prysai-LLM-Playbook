@@ -356,6 +356,38 @@ a:hover { color: var(--reader-link-hover); }
 .reader-core-button-quiet { color: var(--reader-muted); }
 .reader-core-privacy { margin: 0; }
 .reader-core-status { min-height: 1.35em; margin: 0; color: var(--reader-red); font-weight: 750; }
+.reader-route-map summary { cursor: pointer; color: var(--reader-ink); font-size: .9rem; font-weight: 800; line-height: 1.3; }
+.reader-route-map summary:hover, .reader-route-map summary:focus-visible { color: var(--reader-red); }
+.reader-route-map-body { padding-top: 14px; }
+.reader-route-map-intro { margin: 0 0 14px; color: var(--reader-muted); font-size: .76rem; line-height: 1.45; }
+.reader-route-map-nodes { display: grid; gap: 6px; margin: 0 0 16px; padding: 0; list-style: none; }
+.reader-route-map-nodes li { min-width: 0; }
+.reader-route-map-node { display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); gap: 8px; align-items: center; width: 100%; min-height: 38px; padding: 7px 8px; border: 1px solid var(--reader-line); border-left: 3px solid var(--reader-line); border-radius: 0; color: var(--reader-ink); background: var(--reader-white); cursor: pointer; font: inherit; text-align: left; }
+.reader-route-map-node:hover, .reader-route-map-node:focus-visible { border-color: var(--reader-red); color: var(--reader-red); background: #fffafb; }
+.reader-route-map-node.is-current { border-left-color: var(--reader-red); color: var(--reader-link-hover); }
+.reader-route-map-node-number { color: var(--reader-red); font: 700 .68rem/1 Consolas, 'Courier New', monospace; }
+.reader-route-map-node strong { overflow-wrap: anywhere; font-size: .76rem; line-height: 1.25; }
+.reader-route-map-detail { margin: 0 0 16px; padding: 12px; border-left: 4px solid var(--reader-red); background: #fafaf8; }
+.reader-route-map-detail h3 { margin: 0 0 8px; font-size: .95rem; line-height: 1.25; }
+.reader-route-map-detail p { margin: 0 0 9px; color: var(--reader-muted); font-size: .76rem; line-height: 1.45; }
+.reader-route-map-detail .reader-source-link { margin-top: 9px; font-size: .74rem; }
+.reader-route-map-next { display: grid; gap: 3px; }
+.reader-route-map-next span { color: var(--reader-red); font-size: .65rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.reader-route-map-next strong { color: var(--reader-ink); font-size: .78rem; line-height: 1.35; }
+.reader-route-map-fallback { margin-top: 12px; }
+.reader-route-map-fallback summary { color: var(--reader-muted); font-size: .75rem; font-weight: 700; }
+.reader-route-map-fallback > p { margin: 10px 0; color: var(--reader-muted); font-size: .72rem; line-height: 1.45; }
+.reader-route-map-fallback ol { display: grid; gap: 11px; margin: 0; padding-left: 20px; }
+.reader-route-map-fallback li { display: grid; gap: 3px; padding-left: 2px; color: var(--reader-muted); font-size: .72rem; line-height: 1.4; }
+.reader-route-map-fallback li strong { color: var(--reader-ink); font-size: .76rem; }
+.reader-route-map-fallback li a { font-weight: 700; }
+.reader-route-map-figure { margin: 18px 0 0; padding-top: 14px; border-top: 1px solid var(--reader-line); }
+.reader-route-map-figure a { display: block; color: var(--reader-link); text-decoration: none; }
+.reader-route-map-figure img { display: block; width: 100%; max-height: 220px; object-fit: contain; object-position: top center; border: 1px solid var(--reader-line); background: #f6f6f2; }
+.reader-route-map-figure a:hover img, .reader-route-map-figure a:focus-visible img { border-color: var(--reader-red); }
+.reader-route-map-figure .reader-image-link-label { display: block; margin-top: 6px; font-size: .74rem; font-weight: 700; }
+.reader-route-map-figure figcaption { margin-top: 8px; color: var(--reader-muted); font-size: .7rem; line-height: 1.45; }
+.reader-route-map-boundary { margin: 14px 0 0; color: var(--reader-muted); font-size: .72rem; line-height: 1.45; }
 .reader-source-link { display: block; margin-top: 22px; font-size: .86rem; font-weight: 700; }
 .reader-loading { color: var(--reader-muted); }
 .reader-error { padding: 22px; border-left: 5px solid var(--reader-red); background: #fff0f2; }

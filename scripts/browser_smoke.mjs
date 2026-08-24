@@ -1719,6 +1719,13 @@ try {
   const mobileTableWidth = await mobileWideTable.evaluate((wrap) => ({ viewport: wrap.clientWidth, content: wrap.querySelector('table').scrollWidth }));
   assert.ok(mobileTableWidth.content > mobileTableWidth.viewport, `mobile wide table is still compressed instead of scrollable: ${JSON.stringify(mobileTableWidth)}`);
   await noHorizontalOverflow(page, 'mobile Reader');
+  const routeMap = page.locator('[data-reader-route-map]');
+  assert.equal(await routeMap.isVisible(), true, 'Reader route map is not available on a chapter page');
+  await page.locator('[data-reader-route-map-summary]').click();
+  assert.equal(await page.locator('[data-reader-route-map-step]').count(), 6, 'Reader route map does not expose all six method steps');
+  await page.locator('[data-reader-route-map-step="3"]').click();
+  assert.equal((await page.locator('[data-reader-route-map-detail-title]').innerText()).trim(), 'Inspect', 'Reader route map selection does not update its detail');
+  assert.match(await page.locator('[data-reader-route-map-detail-link]').getAttribute('href'), /09-verification-and-recovery-EN\.md&lang=en$/, 'Reader route map selection loses its locale-preserving Reader link');
 
   // Navigation must keep the requested locale when the next candidate file
   // exists, then enter the explicit fallback path at the first missing one.

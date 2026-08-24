@@ -62,6 +62,25 @@
   const coreCopy = document.querySelector('[data-reader-core-copy]');
   const coreClear = document.querySelector('[data-reader-core-clear]');
   const coreStatus = document.querySelector('[data-reader-core-status]');
+  const routeMap = document.querySelector('[data-reader-route-map]');
+  const routeMapSummary = document.querySelector('[data-reader-route-map-summary]');
+  const routeMapIntro = document.querySelector('[data-reader-route-map-intro]');
+  const routeMapNodes = document.querySelector('[data-reader-route-map-nodes]');
+  const routeMapDetailLabel = document.querySelector('[data-reader-route-map-detail-label]');
+  const routeMapDetailTitle = document.querySelector('[data-reader-route-map-detail-title]');
+  const routeMapDetailBody = document.querySelector('[data-reader-route-map-detail-body]');
+  const routeMapNextLabel = document.querySelector('[data-reader-route-map-next-label]');
+  const routeMapDetailNext = document.querySelector('[data-reader-route-map-detail-next]');
+  const routeMapDetailLink = document.querySelector('[data-reader-route-map-detail-link]');
+  const routeMapOpen = document.querySelector('[data-reader-route-map-open]');
+  const routeMapFallbackSummary = document.querySelector('[data-reader-route-map-fallback-summary]');
+  const routeMapFallbackIntro = document.querySelector('[data-reader-route-map-fallback-intro]');
+  const routeMapFallbackList = document.querySelector('[data-reader-route-map-fallback-list]');
+  const routeMapFigureLink = document.querySelector('[data-reader-route-map-figure-link]');
+  const routeMapImage = document.querySelector('[data-reader-route-map-image]');
+  const routeMapFigureOpen = document.querySelector('[data-reader-route-map-figure-open]');
+  const routeMapFigureCaption = document.querySelector('[data-reader-route-map-figure-caption]');
+  const routeMapBoundary = document.querySelector('[data-reader-route-map-boundary]');
   const trustCard = document.querySelector('[data-reader-trust-card]');
   const trustScope = document.querySelector('[data-reader-trust-scope]');
   const trustReviewed = document.querySelector('[data-reader-trust-reviewed]');
@@ -165,6 +184,44 @@
     },
   };
   Object.entries(coreReaderCopy).forEach(([locale, copy]) => Object.assign(readerCopy[locale], copy));
+
+  // The Reader route map is a progressive enhancement: the ordered fallback
+  // and the localized links remain useful even when this interaction is off.
+  const readerRouteMapCopy = {
+    en: {
+      summary: 'Visual route map', intro: 'Use the six steps to place this page in the wider method. Select a step for its next question.', aria: 'Six steps in the reliable LLM work method', selected: 'Selected step', next: 'Next question', open: 'Open this part of the route', fallback: 'Read the route as text', fallbackIntro: 'This sequence carries the same meaning without the interactive controls or the image.', figureAlt: 'Six-step reliable LLM work loop: understand, frame, act, inspect, repair, and transfer.', figureOpen: 'Open full-size visual', figureCaption: 'Project-authored teaching board. The surrounding text is the accessible explanation; the board is an orientation aid.', boundary: 'A route map shows sequence, not completion. Keep the attempt, the check, the failure, and the remaining unknowns.', labels: ['Understand', 'Frame', 'Act', 'Inspect', 'Repair', 'Transfer'], bodies: ['Separate a model proposal from what the available evidence can establish.', 'State the goal, context, allowed help, limits, check, and stop condition.', 'Allow only the smallest reversible action and pause before an external effect.', 'Compare the output or diff with a source, test, log, or acceptance rule.', 'Name one mismatch, preserve the failed receipt, and change one condition before retrying.', 'Repeat the method on an unseen task; one successful attempt is not mastery.'], nextQuestions: ['What result can I check?', 'What is allowed, and what is not?', 'What is the smallest safe action?', 'What evidence would change my claim?', 'Which mismatch will I change first?', 'Can I repeat the method on a new task?']
+    },
+    zh: {
+      summary: '视觉路线图', intro: '用这六个步骤定位当前页面在整套方法中的位置。选择一个步骤，查看下一道问题。', aria: '可靠 LLM 工作方法的六个步骤', selected: '当前步骤', next: '下一道问题', open: '打开这部分路线', fallback: '按文字顺序阅读路线', fallbackIntro: '即使不使用交互控件或图片，下面的顺序仍然表达相同内容。', figureAlt: '可靠 LLM 工作闭环六步图：理解、框定、行动、检查、修正和迁移。', figureOpen: '打开完整尺寸图示', figureCaption: '项目原创教学图。周围文字才是可访问的解释，图板只是路线提示。', boundary: '路线图展示的是顺序，不是完成证明。保留尝试、检查、失败记录和仍然未知的部分。', labels: ['理解', '框定任务', '采取行动', '检查结果', '修正问题', '迁移方法'], bodies: ['把模型提出的内容，与现有证据能够证明的内容分开。', '写清目标、上下文、允许的帮助、限制、检查方式和停止条件。', '只允许最小且可回退的行动；在产生外部影响前先暂停。', '把输出或差异与来源、测试、日志或验收规则对照。', '指出一个不匹配，保留失败记录，只改变一个条件后再试。', '在没有见过的新任务上重复方法；一次成功不等于掌握。'], nextQuestions: ['我能检查哪个结果？', '哪些事情允许做，哪些不允许？', '最小的安全行动是什么？', '什么证据会改变我的结论？', '我先修正哪一个不匹配？', '我能在新任务上重复这套方法吗？']
+    },
+    es: {
+      summary: 'Mapa visual del recorrido', intro: 'Usa estos seis pasos para situar esta página dentro del método. Elige uno para ver la siguiente pregunta.', aria: 'Seis pasos del método de trabajo fiable con LLM', selected: 'Paso seleccionado', next: 'Siguiente pregunta', open: 'Abrir esta parte del recorrido', fallback: 'Leer el recorrido como texto', fallbackIntro: 'La secuencia conserva el mismo significado sin los controles interactivos ni la imagen.', figureAlt: 'Ciclo de trabajo fiable con LLM en seis pasos: entender, delimitar, actuar, inspeccionar, corregir y transferir.', figureOpen: 'Abrir el visual a tamaño completo', figureCaption: 'Tablero didáctico original del proyecto. El texto que lo rodea es la explicación accesible; el tablero solo orienta.', boundary: 'El mapa muestra una secuencia, no una finalización. Conserva el intento, la comprobación, el fallo y lo que aún no se sabe.', labels: ['Entender', 'Delimitar', 'Actuar', 'Inspeccionar', 'Corregir', 'Transferir'], bodies: ['Separa la propuesta del modelo de lo que pueden demostrar las pruebas disponibles.', 'Define objetivo, contexto, ayuda permitida, límites, comprobación y condición de parada.', 'Permite solo la acción reversible más pequeña y detente antes de cualquier efecto externo.', 'Compara la respuesta o el diff con una fuente, prueba, registro o criterio de aceptación.', 'Nombra un desajuste, conserva el registro del fallo y cambia una sola condición antes de reintentar.', 'Repite el método en una tarea nueva; un intento acertado no demuestra dominio.'], nextQuestions: ['¿Qué resultado puedo comprobar?', '¿Qué está permitido y qué queda fuera?', '¿Cuál es la acción segura más pequeña?', '¿Qué evidencia cambiaría mi conclusión?', '¿Qué desajuste corregiré primero?', '¿Puedo repetir el método en una tarea nueva?']
+    },
+    ja: {
+      summary: '視覚的なルートマップ', intro: 'この6ステップで、今のページが方法全体のどこにあるかを確認します。ステップを選ぶと次の問いが表示されます。', aria: '信頼できるLLM作業方法の6ステップ', selected: '選択中のステップ', next: '次に確認する問い', open: 'この部分のルートを開く', fallback: 'ルートをテキストで読む', fallbackIntro: 'インタラクティブ操作や画像がなくても、同じ順序と意味を確認できます。', figureAlt: '信頼できるLLM作業ループの6ステップ図：理解、枠決め、実行、確認、修正、転用。', figureOpen: '原寸の図を開く', figureCaption: 'プロジェクト作成の教材ボードです。周囲のテキストがアクセシブルな説明で、ボードは位置づけのための補助です。', boundary: 'ルートマップは順序を示すもので、完了を証明しません。試行、確認、失敗の記録、まだ不明な点を残してください。', labels: ['理解する', '枠を決める', '実行する', '確認する', '修正する', '転用する'], bodies: ['モデルの提案と、手元の証拠で確かめられることを分けます。', '目的、文脈、許可する支援、制約、確認方法、停止条件を明記します。', '最小限で元に戻せる操作だけを許可し、外部に影響する前に止まります。', '出力や差分を、出典、テスト、ログ、受け入れ条件と照合します。', '不一致を1つ特定し、失敗の記録を残して、条件を1つだけ変えて再試行します。', '初めて扱う課題でも方法を繰り返します。1回の成功は習得の証拠ではありません。'], nextQuestions: ['どの結果なら確認できるか？', '何が許可され、何が対象外か？', '最小の安全な操作は何か？', 'どの証拠が主張を変えるか？', '最初にどの不一致を直すか？', '新しい課題でも方法を繰り返せるか？']
+    },
+    ko: {
+      summary: '시각적 경로 지도', intro: '여섯 단계로 현재 페이지가 전체 방법에서 어디에 놓이는지 확인하세요. 단계를 선택하면 다음 질문이 표시됩니다.', aria: '신뢰할 수 있는 LLM 작업 방법의 여섯 단계', selected: '선택한 단계', next: '다음 질문', open: '이 경로의 해당 부분 열기', fallback: '경로를 텍스트 순서로 읽기', fallbackIntro: '대화형 조작이나 이미지 없이도 같은 순서와 의미를 확인할 수 있습니다.', figureAlt: '신뢰할 수 있는 LLM 작업 루프 여섯 단계 그림: 이해, 범위 설정, 행동, 점검, 수정, 전이.', figureOpen: '원본 크기 시각 자료 열기', figureCaption: '프로젝트가 만든 교육용 보드입니다. 주변 텍스트가 접근 가능한 설명이고 보드는 위치를 잡는 보조 자료입니다.', boundary: '경로 지도는 순서를 보여 줄 뿐 완료를 증명하지 않습니다. 시도, 점검, 실패 기록과 아직 모르는 내용을 남기세요.', labels: ['이해하기', '범위 정하기', '행동하기', '점검하기', '수정하기', '전이하기'], bodies: ['모델이 제안한 내용과 현재 증거로 확인할 수 있는 내용을 분리합니다.', '목표, 맥락, 허용된 도움, 제한, 점검 방법과 중지 조건을 적습니다.', '가장 작고 되돌릴 수 있는 행동만 허용하고 외부 효과가 생기기 전에 멈춥니다.', '출력이나 diff를 출처, 테스트, 로그 또는 수용 기준과 대조합니다.', '불일치 하나를 적고 실패 기록을 보존한 뒤 조건 하나만 바꾸어 다시 시도합니다.', '처음 보는 작업에서도 방법을 반복합니다. 한 번의 성공은 숙련의 증거가 아닙니다.'], nextQuestions: ['어떤 결과를 확인할 수 있는가?', '무엇을 허용하고 무엇을 제외할 것인가?', '가장 작은 안전한 행동은 무엇인가?', '어떤 증거가 내 판단을 바꿀 수 있는가?', '어떤 불일치부터 고칠 것인가?', '새 작업에서도 이 방법을 반복할 수 있는가?']
+    },
+    de: {
+      summary: 'Visuelle Routenkarten', intro: 'Ordne diese Seite mit den sechs Schritten in die Gesamtmethode ein. Wähle einen Schritt für die nächste Frage.', aria: 'Sechs Schritte der verlässlichen LLM-Arbeitsmethode', selected: 'Ausgewählter Schritt', next: 'Nächste Frage', open: 'Diesen Teil des Lernwegs öffnen', fallback: 'Den Lernweg als Text lesen', fallbackIntro: 'Auch ohne interaktive Steuerelemente oder Bild bleibt dieselbe Reihenfolge verständlich.', figureAlt: 'Sechsstufiger verlässlicher LLM-Arbeitsablauf: verstehen, abgrenzen, handeln, prüfen, korrigieren und übertragen.', figureOpen: 'Visualisierung in voller Größe öffnen', figureCaption: 'Projektbezogene Lehrtafel. Der umgebende Text ist die zugängliche Erklärung; die Tafel dient nur der Orientierung.', boundary: 'Die Karte zeigt eine Reihenfolge, aber keinen Abschlussnachweis. Bewahre Versuch, Prüfung, Fehler und die verbleibenden Unbekannten auf.', labels: ['Verstehen', 'Abgrenzen', 'Handeln', 'Prüfen', 'Korrigieren', 'Übertragen'], bodies: ['Trenne den Vorschlag des Modells von dem, was die vorhandenen Belege tatsächlich zeigen können.', 'Benenne Ziel, Kontext, erlaubte Hilfe, Grenzen, Prüfung und Abbruchbedingung.', 'Erlaube nur die kleinste reversible Handlung und halte vor einer Außenwirkung an.', 'Vergleiche Ausgabe oder Diff mit Quelle, Test, Protokoll oder Abnahmeregel.', 'Benenne eine Abweichung, bewahre den Fehlerversuch auf und ändere genau eine Bedingung.', 'Wiederhole die Methode an einer unbekannten Aufgabe; ein gelungener Versuch ist noch keine Beherrschung.'], nextQuestions: ['Welches Ergebnis kann ich prüfen?', 'Was ist erlaubt, und was bleibt ausgeschlossen?', 'Was ist die kleinste sichere Handlung?', 'Welcher Beleg würde meine Aussage ändern?', 'Welche Abweichung korrigiere ich zuerst?', 'Kann ich die Methode an einer neuen Aufgabe wiederholen?']
+    },
+    'zh-tw': {
+      summary: '視覺化路線圖', intro: '用這六個步驟定位目前頁面在整套方法中的位置。選取一個步驟，查看下一個問題。', aria: '可靠 LLM 工作方法的六個步驟', selected: '目前步驟', next: '下一個問題', open: '開啟這部分路線', fallback: '依文字順序閱讀路線', fallbackIntro: '即使不使用互動控制項或圖片，下方順序仍表達相同內容。', figureAlt: '可靠 LLM 工作迴圈六步圖：理解、框定、行動、檢查、修正與遷移。', figureOpen: '開啟完整尺寸圖示', figureCaption: '專案原創教學圖。周圍文字才是可存取的說明，圖板只是用來定位路線。', boundary: '路線圖呈現順序，不是完成證明。請保留嘗試、檢查、失敗紀錄與仍然未知的部分。', labels: ['理解', '框定任務', '採取行動', '檢查結果', '修正問題', '遷移方法'], bodies: ['把模型提出的內容，與現有證據能夠證明的內容分開。', '寫清楚目標、上下文、允許的協助、限制、檢查方式與停止條件。', '只允許最小且可復原的行動；在產生外部影響前先暫停。', '把輸出或差異與來源、測試、日誌或驗收規則對照。', '指出一個不一致，保留失敗紀錄，只改變一個條件後再試。', '在沒看過的新任務上重複方法；一次成功不等於掌握。'], nextQuestions: ['我能檢查哪個結果？', '哪些事情允許做，哪些不允許？', '最小的安全行動是什麼？', '什麼證據會改變我的結論？', '我先修正哪一個不一致？', '我能在新任務上重複這套方法嗎？']
+    },
+    fr: {
+      summary: 'Carte visuelle du parcours', intro: 'Utilisez ces six étapes pour situer cette page dans la méthode générale. Sélectionnez-en une pour voir la question suivante.', aria: 'Six étapes de la méthode de travail fiable avec un LLM', selected: 'Étape sélectionnée', next: 'Question suivante', open: 'Ouvrir cette partie du parcours', fallback: 'Lire le parcours sous forme de texte', fallbackIntro: 'La séquence garde le même sens sans les commandes interactives ni l’image.', figureAlt: 'Boucle de travail fiable avec un LLM en six étapes : comprendre, cadrer, agir, vérifier, corriger et transférer.', figureOpen: 'Ouvrir le visuel en taille réelle', figureCaption: 'Planche pédagogique originale du projet. Le texte environnant constitue l’explication accessible ; la planche sert à se repérer.', boundary: 'La carte montre une séquence, pas une preuve de réussite. Conservez l’essai, le contrôle, l’échec et les inconnues restantes.', labels: ['Comprendre', 'Cadrer', 'Agir', 'Vérifier', 'Corriger', 'Transférer'], bodies: ['Séparez la proposition du modèle de ce que les preuves disponibles permettent réellement d’établir.', 'Indiquez le but, le contexte, l’aide autorisée, les limites, le contrôle et la condition d’arrêt.', 'N’autorisez que l’action réversible la plus petite et faites une pause avant tout effet externe.', 'Comparez la sortie ou le diff avec une source, un test, un journal ou une règle d’acceptation.', 'Nommez un écart, conservez la trace de l’échec et ne changez qu’une condition avant de réessayer.', 'Répétez la méthode sur une tâche inconnue ; un essai réussi ne prouve pas la maîtrise.'], nextQuestions: ['Quel résultat puis-je vérifier ?', 'Qu’est-ce qui est autorisé et qu’est-ce qui ne l’est pas ?', 'Quelle est la plus petite action sûre ?', 'Quelle preuve ferait évoluer mon affirmation ?', 'Quel écart vais-je corriger en premier ?', 'Puis-je répéter la méthode sur une nouvelle tâche ?']
+    },
+  };
+
+  const readerRouteMapSteps = [
+    { id: 'understand', contentId: 'llm-fundamentals-guide', path: 'book/guides/llm-fundamentals-EN.md' },
+    { id: 'frame', contentId: 'llm-core-first-generation', path: 'book/routes/llm-core-first-generation-EN.md' },
+    { id: 'act', contentId: 'chapter-13-action-boundaries', path: 'book/chapters/13-action-boundaries-EN.md' },
+    { id: 'inspect', contentId: 'chapter-09-verification-and-recovery', path: 'book/chapters/09-verification-and-recovery-EN.md' },
+    { id: 'repair', contentId: 'llm-core-check-repair', path: 'book/routes/llm-core-check-repair-EN.md' },
+    { id: 'transfer', contentId: 'llm-core-unseen-transfer', path: 'book/routes/llm-core-unseen-transfer-EN.md' },
+  ];
 
   const coreUnits = [
     { id: 'core-first-success', contentId: 'llm-foundation-core-v1', path: 'book/routes/llm-foundation-core-v1-EN.md', titles: { en: 'Start with one safe attempt', zh: '从一次安全尝试开始', es: 'Empieza con un intento seguro', ja: '安全な試行から始める', ko: '안전한 시도 하나로 시작하기', de: 'Mit einem sicheren Versuch beginnen', 'zh-tw': '從一次安全嘗試開始', fr: 'Commencer par un essai sûr' } },
@@ -340,6 +397,86 @@
   coreReceipts = readCoreReceipts();
   const uiLanguage = () => readerCopy[activeLocale || requestedLocale] ? activeLocale || requestedLocale : 'en';
   const currentReaderCopy = () => readerCopy[uiLanguage()];
+  const currentReaderRouteMapCopy = () => readerRouteMapCopy[uiLanguage()] || readerRouteMapCopy.en;
+  const routeMapStepIndex = (contentId) => readerRouteMapSteps.findIndex((step) => step.contentId === contentId);
+  const routeMapStepHref = (step) => {
+    const record = manifest.contents?.[step.contentId];
+    const localizedPath = record?.locales?.[activeLocale]?.path;
+    return readerHref(localizedPath || step.path, '', activeLocale);
+  };
+  const renderReaderRouteMap = (selection = null) => {
+    if (!routeMap || !routeMapNodes || !routeMapDetailTitle || !routeMapDetailBody || !routeMapDetailNext) return;
+    if (!selection) {
+      routeMap.hidden = true;
+      return;
+    }
+    const strings = currentReaderRouteMapCopy();
+    const selectedIndex = Math.max(0, routeMapStepIndex(selection.contentId));
+    routeMap.hidden = false;
+    routeMap.open = selection.contentId === 'llm-foundation-core-v1';
+    routeMapSummary.textContent = strings.summary;
+    routeMapSummary.setAttribute('aria-label', strings.aria);
+    routeMapIntro.textContent = strings.intro;
+    routeMapDetailLabel.textContent = strings.selected;
+    routeMapNextLabel.textContent = strings.next;
+    routeMapOpen.textContent = strings.open;
+    routeMapFallbackSummary.textContent = strings.fallback;
+    routeMapFallbackIntro.textContent = strings.fallbackIntro;
+    routeMapFigureOpen.textContent = strings.figureOpen;
+    routeMapFigureCaption.textContent = strings.figureCaption;
+    routeMapBoundary.textContent = strings.boundary;
+    routeMapImage.alt = strings.figureAlt;
+    routeMapFigureLink.href = directHref('assets/teaching/reliable-llm-work-loop-red-black.svg');
+    routeMapNodes.setAttribute('aria-label', strings.aria);
+
+    const selectStep = (index) => {
+      const step = readerRouteMapSteps[index];
+      if (!step) return;
+      routeMapNodes.querySelectorAll('[data-reader-route-map-step]').forEach((button) => {
+        const active = Number(button.dataset.readerRouteMapStep) === index;
+        button.setAttribute('aria-pressed', String(active));
+        button.classList.toggle('is-current', active);
+      });
+      routeMapDetailTitle.textContent = strings.labels[index];
+      routeMapDetailBody.textContent = strings.bodies[index];
+      routeMapDetailNext.textContent = strings.nextQuestions[index];
+      routeMapDetailLink.href = routeMapStepHref(step);
+      routeMapDetailLink.setAttribute('aria-label', `${strings.open}: ${strings.labels[index]}`);
+    };
+
+    routeMapNodes.replaceChildren();
+    routeMapFallbackList.replaceChildren();
+    readerRouteMapSteps.forEach((step, index) => {
+      const item = document.createElement('li');
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'reader-route-map-node';
+      button.dataset.readerRouteMapStep = String(index);
+      button.setAttribute('aria-pressed', 'false');
+      button.setAttribute('aria-label', `${strings.selected}: ${strings.labels[index]}`);
+      const number = document.createElement('span');
+      number.className = 'reader-route-map-node-number';
+      number.textContent = String(index + 1).padStart(2, '0');
+      const label = document.createElement('strong');
+      label.textContent = strings.labels[index];
+      button.append(number, label);
+      button.addEventListener('click', () => selectStep(index));
+      item.append(button);
+      routeMapNodes.append(item);
+
+      const fallbackItem = document.createElement('li');
+      const fallbackTitle = document.createElement('strong');
+      fallbackTitle.textContent = strings.labels[index];
+      const fallbackBody = document.createElement('span');
+      fallbackBody.textContent = strings.bodies[index];
+      const fallbackLink = document.createElement('a');
+      fallbackLink.href = routeMapStepHref(step);
+      fallbackLink.textContent = strings.open;
+      fallbackItem.append(fallbackTitle, fallbackBody, fallbackLink);
+      routeMapFallbackList.append(fallbackItem);
+    });
+    selectStep(selectedIndex);
+  };
   const applyReaderChrome = () => {
     const strings = currentReaderCopy();
     document.querySelectorAll('[data-reader-i18n]').forEach((element) => {
@@ -1211,6 +1348,7 @@ function canonicalChapterTitle(chapter) {
     article.dataset.readerFallback = 'false';
     article.replaceChildren();
     if (readerAside) readerAside.hidden = true;
+    renderReaderRouteMap(null);
     if (coreCard) coreCard.hidden = true;
     coreCurrentUnitId = null;
     if (orientation) orientation.hidden = true;
@@ -1374,6 +1512,11 @@ function canonicalChapterTitle(chapter) {
     buildTableOfContents();
     updateChapterRail(selection, title);
     updateOverviewLinks(selection);
+    const routeMapEligible = selection.path.startsWith('book/chapters/')
+      || selection.path.startsWith('book/labs/')
+      || selection.contentId === 'llm-foundation-core-v1'
+      || readerRouteMapSteps.some((step) => step.contentId === selection.contentId);
+    renderReaderRouteMap(routeMapEligible ? selection : null);
     renderBookNavigation(selection);
     renderTrustRecord(null);
     if (selection.contentId) void loadTrustRecord(selection.contentId).then(renderTrustRecord);

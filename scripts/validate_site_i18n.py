@@ -108,6 +108,15 @@ def translation_keys(app: str, language: str, html_keys: set[str]) -> set[str]:
                 re.DOTALL,
             )
         )
+        visual_map = re.search(r"const\s+foundationMindMapCopy\s*=\s*\{(?P<body>.*?)\n\};", app, re.DOTALL)
+        if visual_map:
+            visual_locale = re.search(
+                r"\n\s{2}['\"]zh-tw['\"]:\s*\{(?P<body>.*?)\n\s{2}\},",
+                visual_map.group("body"),
+                re.DOTALL,
+            )
+            if visual_locale:
+                blocks.append(visual_locale.group("body"))
         return base_keys | set().union(*(keys_for(block, html_keys) for block in blocks))
     else:
         match = re.search(
@@ -128,6 +137,19 @@ def translation_keys(app: str, language: str, html_keys: set[str]) -> set[str]:
             re.DOTALL,
         )
     )
+    # The homepage mind map lives in a dedicated object and is merged into
+    # every locale through Object.entries at runtime. Include that layer in
+    # the static check so localized visual copy is validated as real UI copy.
+    visual_map = re.search(r"const\s+foundationMindMapCopy\s*=\s*\{(?P<body>.*?)\n\};", app, re.DOTALL)
+    if visual_map:
+        locale_key = rf"(?:['\"]{re.escape(language)}['\"]|{re.escape(language)})"
+        visual_locale = re.search(
+            rf"\n\s{{2}}{locale_key}:\s*\{{(?P<body>.*?)\n\s{{2}}\}},",
+            visual_map.group("body"),
+            re.DOTALL,
+        )
+        if visual_locale:
+            blocks.append(visual_locale.group("body"))
     return set().union(*(keys_for(block, html_keys) for block in blocks)) if blocks else set()
 
 
