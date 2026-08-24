@@ -284,7 +284,7 @@ permission, input, external side effect boundary:
 
 이 handoff는 unknown을 완료로 바꾸지 않습니다. 안전하지 않은 action의 반복이나 오래된 artifact를 새 결과로 오해하는 일을 막을 뿐입니다.
 
-## 완전한 state record: 재개할 때 추측을 남기지 않기
+## 완전한 상태 기록: 재개할 때 추측을 남기지 않기
 
 짧은 checkpoint만으로 긴 task나 중단된 task를 다시 시작하기에는 부족할 수 있습니다. 다음 표를
 run record의 최소 구성으로 사용하세요. vendor event API가 아니라, 나중에 다른 사람이 같은 task를
@@ -352,7 +352,7 @@ side effects: network, publish, message, install, delete는 0회.
 partial output, diff, external receipt를 확인 가능한 범위에서 보존합니다. 여전히 불명확하면
 `unknown` 또는 `unverified`로 멈춥니다.
 
-## 실무용 task protocol
+## 실무용 작업 프로토콜
 
 Agent에게 일을 넘기기 전에 대화의 흐름이 아니라 작업 계약을 기준으로 적습니다. 다음은 로컬 텍스트 작업의 예입니다.
 
