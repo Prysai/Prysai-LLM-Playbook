@@ -37,6 +37,7 @@ see before the reader works through the prose.
 - [Recovery decision tree](recovery-decision-tree-red-black.svg)
 - [Reader page anatomy](reader-page-anatomy-red-black.svg)
 - [Reader page-to-practice reading loop](reader-page-reading-loop-red-black.svg)
+- [Reader route compass](reader-route-compass-red-black.svg)
 - [LLM Foundation Core path](llm-foundation-core-path-red-black.svg)
 - [First visit route to one checked LLM task](foundation-first-visit-route-red-black.svg)
 - [Playbook learning journey](playbook-learning-journey-red-black.svg)
