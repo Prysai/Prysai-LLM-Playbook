@@ -5298,21 +5298,19 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "docs/research/codex-field-cases-current-review-2026-08-12-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "locale-matrix",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "es": {
           "path": "docs/research/codex-field-cases-current-review-2026-08-12-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "locale-matrix",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "docs/research/codex-field-cases-current-review-2026-08-12-JA.md",
@@ -5816,21 +5814,19 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "locale-matrix",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "es": {
           "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "locale-matrix",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "docs/research/universal-first-turn-prompt-contract-2026-08-13-JA.md",
@@ -5969,21 +5965,19 @@ window.CODEX_LOCALE_MANIFEST = {
         },
         "zh": {
           "path": "docs/quality/first-win-pilot-protocol-v2-ZH.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "locale-matrix",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "es": {
           "path": "docs/quality/first-win-pilot-protocol-v2-ES.md",
-          "exists": false,
+          "exists": true,
           "content_status": "candidate",
-          "translation_status": "not-started",
+          "translation_status": "candidate",
           "source_revision": "locale-matrix",
-          "translated_from": "EN",
-          "reason": "A locale-specific Reader file is not authored yet; the English runtime source remains locale-neutral."
+          "coverage": "projected-existing-page"
         },
         "ja": {
           "path": "docs/quality/first-win-pilot-protocol-v2-JA.md",
