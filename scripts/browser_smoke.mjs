@@ -1728,7 +1728,7 @@ try {
   assert.match(await page.locator('[data-reader-route-map-detail-link]').getAttribute('href'), /09-verification-and-recovery-EN\.md&lang=en$/, 'Reader route map selection loses its locale-preserving Reader link');
   const conceptMap = page.locator('[data-reader-concept-map]');
   assert.equal(await conceptMap.isVisible(), true, 'Reader concept map is not available on a chapter page');
-  await conceptMap.locator('summary').click();
+  await conceptMap.locator('[data-reader-concept-map-summary]').click();
   assert.ok(await conceptMap.locator('[data-reader-concept-map-node]').count() >= 2, 'Reader concept map does not derive branches from page headings');
   assert.match(await conceptMap.locator('[data-reader-concept-map-root]').innerText(), /first safe, verifiable task/i, 'Reader concept map does not identify the current page');
   const firstConceptNode = conceptMap.locator('[data-reader-concept-map-node]').first();
