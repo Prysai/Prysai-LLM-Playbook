@@ -102,7 +102,7 @@ run_id | 날짜 | 목표 언어 | card_id | 5분 제한 | 허용 보조
 first pass 여부 | rework count | model/surface(사용한 경우) | unknown | status
 ```
 
-C1은 별도 기록으로 남기고 수정한 B1을 새 baseline으로 쓰지 않습니다. 지연 과제는 window, 배정 D card, card pool revision을 먼저 기록하고 window 전에는 학습자에게 완전한 D card를 보여 주지 않습니다. 실제 자동 reminder가 없다면 return instruction만 저장하며 “system이 알려 준다”고 말하지 않습니다.
+C1은 별도 기록으로 남기고 수정한 B1을 새 기준선으로 쓰지 않습니다. 지연 과제는 기간, 배정된 D 카드, 카드 풀 버전을 먼저 기록하고 그 기간이 시작되기 전에는 학습자에게 D 카드 전체를 보여 주지 않습니다. 실제 자동 알림이 없다면 다시 확인할 안내만 저장하며 “시스템이 알려 준다”고 말하지 않습니다.
 
 ### 채점자의 판정이 다를 때
 
