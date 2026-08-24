@@ -1727,6 +1727,45 @@ try {
   assert.equal((await page.locator('[data-reader-route-map-detail-title]').innerText()).trim(), 'Inspect', 'Reader route map selection does not update its detail');
   assert.match(await page.locator('[data-reader-route-map-detail-link]').getAttribute('href'), /09-verification-and-recovery-EN\.md&lang=en$/, 'Reader route map selection loses its locale-preserving Reader link');
 
+  // The visual route map is reader-facing content, not English-only chrome.
+  // Recheck every supported locale so labels, links, and mobile layout cannot
+  // silently regress when a dictionary or manifest entry changes.
+  const routeMapLocales = [
+    ['en', 'EN', 'Inspect'],
+    ['zh', 'ZH', '检查结果'],
+    ['es', 'ES', 'Inspeccionar'],
+    ['ja', 'JA', '確認する'],
+    ['ko', 'KO', '점검하기'],
+    ['de', 'DE', 'Prüfen'],
+    ['zh-tw', 'ZHTW', '檢查結果'],
+    ['fr', 'FR', 'Vérifier'],
+  ];
+  for (const [locale, suffix, expectedInspectLabel] of routeMapLocales) {
+    await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F02-first-safe-task-${suffix}.md&lang=${locale}`, { waitUntil: 'networkidle' });
+    await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
+    const localizedRouteMap = page.locator('[data-reader-route-map]');
+    assert.equal(await localizedRouteMap.isVisible(), true, `${locale} Reader route map is not available`);
+    await page.locator('[data-reader-route-map-summary]').click();
+    assert.equal(await page.locator('[data-reader-route-map-step]').count(), 6, `${locale} route map does not expose all six steps`);
+    await page.locator('[data-reader-route-map-step="3"]').click();
+    assert.equal(
+      (await page.locator('[data-reader-route-map-detail-title]').innerText()).trim(),
+      expectedInspectLabel,
+      `${locale} route map did not localize the selected step`,
+    );
+    assert.match(
+      await page.locator('[data-reader-route-map-detail-link]').getAttribute('href'),
+      new RegExp(`09-verification-and-recovery-${suffix}\\.md&lang=${locale}$`),
+      `${locale} route map selection lost its localized Reader link`,
+    );
+    await noHorizontalOverflow(page, `${locale} localized Reader route map`);
+  }
+  // Restore the original English baseline before the rest of this smoke run;
+  // later assertions intentionally inspect English-only trust copy.
+  await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F02-first-safe-task-EN.md&lang=en`, { waitUntil: 'networkidle' });
+  await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
+  await page.locator('[data-reader-route-map-summary]').click();
+
   // Navigation must keep the requested locale when the next candidate file
   // exists, then enter the explicit fallback path at the first missing one.
   const chineseChapterNavigationPage = await context.newPage();
