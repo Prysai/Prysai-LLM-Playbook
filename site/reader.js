@@ -462,6 +462,24 @@
     conceptAnatomyBoundary: 'Ce schéma explique comment lire la page ; il ne prouve ni la compréhension, ni l’exécution, ni le transfert.',
   });
 
+  // Topic-specific teaching boards need their own text equivalent. Reusing
+  // the concept-map label here makes a reader think the board is only a list
+  // of headings, even when it explains a concrete relationship or decision.
+  const readerVisualExplanationCopy = {
+    en: { summary: 'Read this teaching visual as text', intro: 'The same relationship and next question are available here without relying on the image.' },
+    zh: { summary: '按文字理解这张教学图', intro: '即使不依赖图片，这里也会说明同一项关系和下一道问题。' },
+    es: { summary: 'Leer este visual didáctico como texto', intro: 'Aquí puedes consultar la misma relación y la misma pregunta siguiente sin depender de la imagen.' },
+    ja: { summary: 'この教材図を文字で読む', intro: '画像に頼らず、同じ関係と次に考える問いをここで確認できます。' },
+    ko: { summary: '이 교육용 그림을 텍스트로 읽기', intro: '이미지 없이도 같은 관계와 다음 질문을 여기서 확인할 수 있습니다.' },
+    de: { summary: 'Diese Lehrtafel als Text lesen', intro: 'Dieselbe Beziehung und nächste Frage stehen hier auch ohne das Bild bereit.' },
+    'zh-tw': { summary: '依文字理解這張教學圖', intro: '即使不依賴圖片，這裡也會說明同一項關係與下一個問題。' },
+    fr: { summary: 'Lire ce visuel pédagogique sous forme de texte', intro: 'La même relation et la même question suivante sont disponibles ici sans dépendre de l’image.' },
+  };
+  Object.entries(readerVisualExplanationCopy).forEach(([locale, copy]) => Object.assign(readerVisualCopy[locale], {
+    visualExplanation: copy.summary,
+    visualExplanationIntro: copy.intro,
+  }));
+
   const readerVisualMap = [
     { tokens: ['llm-foundation-core-v1', 'llm-foundation-core-path'], path: 'assets/teaching/foundation-first-visit-route-red-black.svg', step: 0 },
     { tokens: ['chapter-04-context-permissions-and-agent', 'lab-016-side-effect-boundary', 'conversation-safety-card'], path: 'assets/teaching/conversation-safety-card-red-black.svg', step: 2 },
@@ -1070,32 +1088,35 @@
     link.append(openLabel);
     const caption = document.createElement('figcaption');
     caption.textContent = visualCaption;
+    // A complex board needs more than a short alt sentence. Keep the same
+    // localized sequence that drives the route map beside the image so a
+    // reader can inspect each visual relationship without opening the SVG.
+    // This is also the fallback for readers who prefer text to diagrams.
+    const explanation = document.createElement('details');
+    explanation.className = visual.fallback
+      ? 'reader-visual-explanation reader-route-compass-fallback'
+      : 'reader-visual-explanation';
+    const explanationSummary = document.createElement('summary');
+    explanationSummary.textContent = visual.fallback ? strings.fallback : strings.visualExplanation;
+    const explanationIntro = document.createElement('p');
+    explanationIntro.textContent = visual.fallback ? strings.fallbackIntro : strings.visualExplanationIntro;
+    const explanationList = document.createElement('ol');
+    routeStrings.labels.forEach((routeLabel, index) => {
+      const item = document.createElement('li');
+      const itemTitle = document.createElement('strong');
+      itemTitle.textContent = routeLabel;
+      const itemBody = document.createElement('span');
+      itemBody.textContent = routeStrings.bodies[index] || '';
+      const itemQuestion = document.createElement('em');
+      itemQuestion.textContent = routeStrings.nextQuestions[index] || '';
+      item.append(itemTitle, itemBody, itemQuestion);
+      explanationList.append(item);
+    });
+    explanation.append(explanationSummary, explanationIntro, explanationList);
     const boundary = document.createElement('p');
     boundary.className = 'reader-inline-visual-boundary';
     boundary.textContent = visualBoundary;
-    figure.append(link, caption, boundary);
-    if (visual.fallback) {
-      const fallback = document.createElement('details');
-      fallback.className = 'reader-route-compass-fallback';
-      const fallbackSummary = document.createElement('summary');
-      fallbackSummary.textContent = strings.fallback;
-      const fallbackIntro = document.createElement('p');
-      fallbackIntro.textContent = strings.fallbackIntro;
-      const fallbackList = document.createElement('ol');
-      routeStrings.labels.forEach((routeLabel, index) => {
-        const item = document.createElement('li');
-        const itemTitle = document.createElement('strong');
-        itemTitle.textContent = routeLabel;
-        const itemBody = document.createElement('span');
-        itemBody.textContent = routeStrings.bodies[index];
-        const itemQuestion = document.createElement('em');
-        itemQuestion.textContent = routeStrings.nextQuestions[index];
-        item.append(itemTitle, itemBody, itemQuestion);
-        fallbackList.append(item);
-      });
-      fallback.append(fallbackSummary, fallbackIntro, fallbackList);
-      figure.append(fallback);
-    }
+    figure.append(link, caption, explanation, boundary);
     const openingParagraph = article.querySelector(':scope > p');
     // On pages using the compact fallback, put the compass directly after the
     // opening explanation. A long mobile TOC can otherwise push the only
