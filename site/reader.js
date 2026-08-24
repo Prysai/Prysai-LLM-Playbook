@@ -102,6 +102,7 @@
   const visualCompanionCaption = document.querySelector('[data-reader-visual-companion-caption]');
   const visualCompanionBoundary = document.querySelector('[data-reader-visual-companion-boundary]');
   let conceptMapScrollHandler = null;
+  let inlineConceptMapScrollHandler = null;
   const trustCard = document.querySelector('[data-reader-trust-card]');
   const trustScope = document.querySelector('[data-reader-trust-scope]');
   const trustReviewed = document.querySelector('[data-reader-trust-reviewed]');
@@ -291,7 +292,8 @@
     { tokens: ['lab-017-skill-discovery-audit'], path: 'assets/teaching/source-check-before-belief-red-black.svg', step: 3 },
     { tokens: ['llm-fundamentals-guide', 'chapter-01-gpt-and-codex'], path: 'assets/teaching/llm-six-terms-to-one-check.svg', step: 0 },
     { tokens: ['llm-core-first-generation', 'chapter-02-first-safe-task', 'chapter-03-task-protocol'], path: 'assets/teaching/prompt-contract-six-fields-red-black.svg', step: 1 },
-    { tokens: ['chapter-13-action-boundaries', 'lab-007-action-boundaries', 'observable-action-boundary'], path: 'assets/teaching/observable-action-boundary-red-black.svg', step: 2 },
+    { tokens: ['chapter-13-action-boundaries', 'lab-007-action-boundaries', 'side-effect-boundary-decision-map'], path: 'assets/teaching/side-effect-boundary-decision-map.svg', step: 2 },
+    { tokens: ['observable-action-boundary'], path: 'assets/teaching/observable-action-boundary-red-black.svg', step: 2 },
     { tokens: ['chapter-09-verification-and-recovery', 'task-to-evidence'], path: 'assets/teaching/evidence-recovery-ladder.svg', step: 3 },
     { tokens: ['llm-core-visible-failures', 'llm-core-check-repair', 'chapter-12-agent-loop-and-stop', 'lab-006-agent-stop-conditions'], path: 'assets/teaching/failed-interaction-recovery-red-black.svg', step: 4 },
     { tokens: ['chapter-11-designing-a-skill', 'skill-to-observable-output'], path: 'assets/teaching/skill-to-observable-output.svg', step: 1 },
@@ -699,6 +701,82 @@
       : openingParagraph || article.querySelector('h1');
     if (insertionAnchor) insertionAnchor.after(figure);
     else article.prepend(figure);
+  };
+  const renderReaderInlineConceptMap = (selection, title, headings = []) => {
+    if (!article) return;
+    if (inlineConceptMapScrollHandler) window.removeEventListener('scroll', inlineConceptMapScrollHandler);
+    inlineConceptMapScrollHandler = null;
+    const existing = article.querySelector('[data-reader-inline-concept-map]');
+    existing?.remove();
+    const mappedHeadings = headings.filter((heading) => heading.id && heading.textContent.trim()).slice(0, 6);
+    if (!selection || mappedHeadings.length < 2) return;
+    const strings = currentReaderVisualCopy();
+    const details = document.createElement('details');
+    details.className = 'reader-inline-concept-map';
+    details.dataset.readerInlineConceptMap = 'true';
+    const summary = document.createElement('summary');
+    summary.textContent = strings.conceptSummary;
+    summary.setAttribute('aria-label', strings.conceptAria);
+    const intro = document.createElement('p');
+    intro.className = 'reader-inline-concept-map-intro';
+    intro.textContent = strings.conceptIntro;
+    const root = document.createElement('div');
+    root.className = 'reader-inline-concept-map-root';
+    root.dataset.readerInlineConceptMapRoot = 'true';
+    const rootLabel = document.createElement('span');
+    rootLabel.className = 'reader-inline-concept-map-root-label';
+    rootLabel.textContent = strings.conceptRoot;
+    const rootTitle = document.createElement('strong');
+    rootTitle.textContent = title || article.querySelector('h1')?.textContent?.trim() || selection.path;
+    root.append(rootLabel, rootTitle);
+    const list = document.createElement('ol');
+    list.className = 'reader-inline-concept-map-list';
+    list.id = 'reader-inline-concept-map-list';
+    details.setAttribute('aria-controls', list.id);
+    summary.setAttribute('aria-controls', list.id);
+    const nodesByHeadingId = new Map();
+    mappedHeadings.forEach((heading, index) => {
+      const item = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = headingHref(heading.id);
+      link.dataset.readerInlineConceptMapNode = heading.id;
+      link.textContent = `${String(index + 1).padStart(2, '0')} · ${heading.textContent.trim()}`;
+      link.addEventListener('click', () => {
+        window.requestAnimationFrame(() => {
+          const target = document.getElementById(heading.id);
+          if (!target) return;
+          target.tabIndex = -1;
+          target.focus({ preventScroll: true });
+          target.scrollIntoView({ block: 'start' });
+        });
+      });
+      item.append(link);
+      list.append(item);
+      nodesByHeadingId.set(heading.id, link);
+    });
+    const boundary = document.createElement('p');
+    boundary.className = 'reader-inline-concept-map-boundary';
+    boundary.textContent = strings.conceptBoundary;
+    details.append(summary, intro, root, list, boundary);
+    const openingParagraph = article.querySelector(':scope > p');
+    const anchor = article.querySelector('[data-reader-inline-visual]') || openingParagraph || article.querySelector('h1');
+    if (anchor) anchor.after(details);
+    else article.prepend(details);
+    const setActiveNode = (headingId) => {
+      nodesByHeadingId.forEach((node, id) => {
+        const active = id === headingId;
+        node.classList.toggle('is-active', active);
+        if (active) node.setAttribute('aria-current', 'location');
+        else node.removeAttribute('aria-current');
+      });
+    };
+    const updateActiveHeading = () => {
+      const candidates = mappedHeadings.filter((heading) => heading.getBoundingClientRect().top <= 220);
+      setActiveNode((candidates[candidates.length - 1] || mappedHeadings[0]).id);
+    };
+    inlineConceptMapScrollHandler = updateActiveHeading;
+    window.addEventListener('scroll', inlineConceptMapScrollHandler, { passive: true });
+    updateActiveHeading();
   };
   const renderReaderVisualCompanion = (selection) => {
     if (!visualCompanion) return;
@@ -1770,6 +1848,7 @@ function canonicalChapterTitle(chapter) {
       || readerRouteMapSteps.some((step) => step.contentId === selection.contentId);
     renderReaderRouteMap(routeMapEligible ? selection : null);
     renderReaderConceptMap(selection, title, pageHeadings);
+    renderReaderInlineConceptMap(selection, title, pageHeadings);
     renderReaderInlineVisual(selection, title);
     renderReaderVisualCompanion(selection);
     renderBookNavigation(selection);

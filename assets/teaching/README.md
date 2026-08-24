@@ -45,3 +45,12 @@ Run `python scripts/validate_teaching_assets.py` before adding or renaming a
 card. It checks the catalog, source-register path, public mobile inventory
 count, and minimal SVG text alternatives; it does not assess comprehension,
 visual quality, or runtime behavior.
+
+## Reader presentation contract
+
+The Reader pairs each selected board with a localized thesis, caption, concise
+alternative text, and a link to the original SVG. On narrow screens the board
+is kept within the viewport and the surrounding text remains the baseline
+explanation. The Reader's heading-derived concept map is a separate navigation
+enhancement: its ordered list works without relying on a canvas, Mermaid, a
+remote script, or a pointer gesture.
