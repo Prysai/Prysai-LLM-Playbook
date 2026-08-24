@@ -1814,13 +1814,13 @@ try {
   await noHorizontalOverflow(chineseBookEntryPage, 'mobile Chinese book entry');
   await chineseBookEntryPage.close();
 
-    // Some supplemental records are intentionally not authored in every
-    // locale. The Reader must preserve the selected locale and render its
-    // unavailable state rather than silently presenting English Markdown.
-  const partiallyLocalizedResearchPath = 'docs%2Fquality%2Ffirst-win-pilot-protocol-v2.md';
+    // An unknown supplemental path is a negative fixture. The Reader must
+    // preserve the selected locale and render its unavailable state rather
+    // than silently presenting English Markdown.
+  const missingSupplementalPath = 'docs%2Fquality%2Fmissing-reader-locale-fixture.md';
   const japaneseResearchBoundaryPage = await context.newPage();
   await japaneseResearchBoundaryPage.setViewportSize({ width: 390, height: 844 });
-  await japaneseResearchBoundaryPage.goto(`${origin}/site/reader.html?path=${partiallyLocalizedResearchPath}&lang=ja`, { waitUntil: 'networkidle' });
+  await japaneseResearchBoundaryPage.goto(`${origin}/site/reader.html?path=${missingSupplementalPath}&lang=ja`, { waitUntil: 'networkidle' });
   await japaneseResearchBoundaryPage.locator('[data-reader-article][aria-busy="false"]').waitFor();
   const localizedUnavailable = japaneseResearchBoundaryPage.locator('[data-reader-article] [role="alert"]');
   await localizedUnavailable.waitFor();
@@ -1830,11 +1830,10 @@ try {
   await noHorizontalOverflow(japaneseResearchBoundaryPage, 'mobile Japanese research unavailable state');
   await japaneseResearchBoundaryPage.close();
 
-  // The same protection is a Reader contract for every locale that currently
-  // has this record marked not-started in the locale manifest.
+  // The same protection is a Reader contract for every supported locale.
   for (const locale of ['ja', 'ko', 'de', 'fr']) {
     const untranslatedProjectPage = await context.newPage();
-    await untranslatedProjectPage.goto(`${origin}/site/reader.html?path=${partiallyLocalizedResearchPath}&lang=${locale}`, { waitUntil: 'networkidle' });
+    await untranslatedProjectPage.goto(`${origin}/site/reader.html?path=${missingSupplementalPath}&lang=${locale}`, { waitUntil: 'networkidle' });
     await untranslatedProjectPage.locator('[data-reader-article] [role="alert"]').waitFor();
     assert.equal(await untranslatedProjectPage.locator('[data-reader-language]').inputValue(), locale, `${locale} untranslated project route loses the selected locale`);
     assert.equal(await untranslatedProjectPage.locator('[data-reader-article] h1').count(), 0, `${locale} untranslated project route renders an English document body`);
