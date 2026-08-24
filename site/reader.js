@@ -101,6 +101,8 @@
   const visualCompanionOpen = document.querySelector('[data-reader-visual-companion-open]');
   const visualCompanionCaption = document.querySelector('[data-reader-visual-companion-caption]');
   const visualCompanionBoundary = document.querySelector('[data-reader-visual-companion-boundary]');
+  let conceptMapObserver = null;
+  let conceptMapScrollHandler = null;
   const trustCard = document.querySelector('[data-reader-trust-card]');
   const trustScope = document.querySelector('[data-reader-trust-scope]');
   const trustReviewed = document.querySelector('[data-reader-trust-reviewed]');
@@ -266,14 +268,36 @@
   };
 
   const readerVisualMap = [
+    { tokens: ['chapter-04-context-permissions-and-agent', 'lab-016-side-effect-boundary', 'conversation-safety-card'], path: 'assets/teaching/conversation-safety-card-red-black.svg', step: 2 },
+    { tokens: ['chapter-05-choose-the-codex-surface', 'platform-adapter-guide', 'universal-seams'], path: 'assets/teaching/universal-seams-red-black.svg', step: 1 },
+    { tokens: ['chapter-06-model-selection', 'model-choice-is-a-test', 'llm-comparison-protocol'], path: 'assets/teaching/model-choice-is-a-test.svg', step: 1 },
+    { tokens: ['chapter-07-skills-plugins-and-tools', 'lab-004-skill-selection'], path: 'assets/teaching/skill-to-observable-output.svg', step: 1 },
+    { tokens: ['chapter-08-full-lifecycle-workflow', 'lab-009-engineering-lifecycle', 'lifecycle-checkpoints'], path: 'assets/teaching/lifecycle-checkpoints.svg', step: 2 },
+    { tokens: ['chapter-16-engineering-track'], path: 'assets/teaching/lifecycle-checkpoints.svg', step: 2 },
+    { tokens: ['chapter-17-marketing-track'], path: 'assets/teaching/practice-target-to-first-attempt-red-black.svg', step: 1 },
+    { tokens: ['chapter-18-content-design-data-automation'], path: 'assets/teaching/task-to-evidence-red-black.svg', step: 3 },
+    { tokens: ['chapter-19-evaluate-models-and-workflows', 'four-evidence-lenses'], path: 'assets/teaching/four-evidence-lenses-red-black.svg', step: 3 },
+    { tokens: ['chapter-20-personal-codex-work-system'], path: 'assets/teaching/beginner-practice-loop-red-black.svg', step: 5 },
+    { tokens: ['chapter-21-team-capability-system', 'agent-handoff-receipt-checkpoints'], path: 'assets/teaching/agent-handoff-receipt-checkpoints-red-black.svg', step: 5 },
+    { tokens: ['chapter-22-continuous-update-and-future-proofing', 'interruption-checkpoint'], path: 'assets/teaching/interruption-checkpoint-card-red-black.svg', step: 4 },
+    { tokens: ['lab-001-first-safe-task', 'first-turn-contract'], path: 'assets/teaching/first-turn-contract-card.svg', step: 1 },
+    { tokens: ['lab-002-task-protocol'], path: 'assets/teaching/prompt-contract-six-fields-red-black.svg', step: 1 },
+    { tokens: ['lab-003-evidence-review'], path: 'assets/teaching/evidence-recovery-ladder.svg', step: 3 },
+    { tokens: ['lab-005-design-a-skill'], path: 'assets/teaching/skill-to-observable-output.svg', step: 1 },
+    { tokens: ['lab-010-product-context'], path: 'assets/teaching/practice-target-to-first-attempt-red-black.svg', step: 1 },
+    { tokens: ['lab-011-gpt-codex-boundaries'], path: 'assets/teaching/llm-six-terms-to-one-check.svg', step: 0 },
+    { tokens: ['lab-012-team-capability-migration'], path: 'assets/teaching/agent-handoff-receipt-checkpoints-red-black.svg', step: 5 },
+    { tokens: ['lab-014-resume-reconciliation'], path: 'assets/teaching/interruption-checkpoint-card-red-black.svg', step: 4 },
+    { tokens: ['lab-015-evidence-delivery'], path: 'assets/teaching/four-evidence-lenses-red-black.svg', step: 3 },
+    { tokens: ['lab-017-skill-discovery-audit'], path: 'assets/teaching/source-check-before-belief-red-black.svg', step: 3 },
     { tokens: ['llm-fundamentals-guide', 'chapter-01-gpt-and-codex'], path: 'assets/teaching/llm-six-terms-to-one-check.svg', step: 0 },
     { tokens: ['llm-core-first-generation', 'chapter-02-first-safe-task', 'chapter-03-task-protocol'], path: 'assets/teaching/prompt-contract-six-fields-red-black.svg', step: 1 },
     { tokens: ['chapter-13-action-boundaries', 'lab-007-action-boundaries', 'observable-action-boundary'], path: 'assets/teaching/observable-action-boundary-red-black.svg', step: 2 },
-    { tokens: ['chapter-09-verification-and-recovery', 'lab-003-evidence-review', 'lab-015-evidence-delivery', 'task-to-evidence'], path: 'assets/teaching/evidence-recovery-ladder.svg', step: 3 },
-    { tokens: ['llm-core-visible-failures', 'llm-core-check-repair', 'chapter-12-agent-loop-and-stop', 'lab-006-agent-stop-conditions', 'lab-014-resume-reconciliation'], path: 'assets/teaching/failed-interaction-recovery-red-black.svg', step: 4 },
-    { tokens: ['chapter-11-designing-a-skill', 'lab-005-design-a-skill', 'lab-017-skill-discovery-audit', 'skill-to-observable-output'], path: 'assets/teaching/skill-to-observable-output.svg', step: 1 },
-    { tokens: ['chapter-15-research-track', 'lab-008-research-question', 'research-question-to-source-record', 'source-check-before-belief'], path: 'assets/teaching/research-question-to-source-record-red-black.svg', step: 3 },
-    { tokens: ['chapter-10-planning-and-slicing', 'lab-013-l3-vertical-slice', 'chapter-08-full-lifecycle-workflow'], path: 'assets/teaching/task-to-evidence-red-black.svg', step: 3 },
+    { tokens: ['chapter-09-verification-and-recovery', 'task-to-evidence'], path: 'assets/teaching/evidence-recovery-ladder.svg', step: 3 },
+    { tokens: ['llm-core-visible-failures', 'llm-core-check-repair', 'chapter-12-agent-loop-and-stop', 'lab-006-agent-stop-conditions'], path: 'assets/teaching/failed-interaction-recovery-red-black.svg', step: 4 },
+    { tokens: ['chapter-11-designing-a-skill', 'skill-to-observable-output'], path: 'assets/teaching/skill-to-observable-output.svg', step: 1 },
+    { tokens: ['chapter-15-research-track', 'lab-008-research-question', 'research-question-to-source-record'], path: 'assets/teaching/research-question-to-source-record-red-black.svg', step: 3 },
+    { tokens: ['chapter-10-planning-and-slicing', 'lab-013-l3-vertical-slice'], path: 'assets/teaching/task-to-evidence-red-black.svg', step: 3 },
     { tokens: ['lab-018-language-transfer', 'communication-clinic', 'language-partner', 'beginner-practice-loop'], path: 'assets/teaching/beginner-practice-loop-red-black.svg', step: 5 },
     { tokens: ['llm-core-unseen-transfer', 'understanding-to-transfer'], path: 'assets/teaching/understanding-to-transfer-red-black.svg', step: 5 },
     { tokens: ['chapter-14-discover-and-audit-skills', 'source-investigator', 'platform-fact-watch'], path: 'assets/teaching/source-check-before-belief-red-black.svg', step: 3 },
@@ -550,12 +574,16 @@
     const match = readerVisualMap.find((candidate) => candidate.tokens.some((token) => haystack.includes(token)));
     if (match) return match;
     if (/^(?:book|skills)\//i.test(selection.path)) {
-      return { path: 'assets/teaching/reliable-llm-work-loop-red-black.svg', step: 0 };
+      return { path: 'assets/teaching/reliable-llm-work-loop-red-black.svg', step: 0, fallback: true };
     }
     return null;
   };
   const renderReaderConceptMap = (selection, title, headings = []) => {
     if (!conceptMap || !conceptMapBranches || !conceptMapFallbackList) return;
+    conceptMapObserver?.disconnect();
+    conceptMapObserver = null;
+    if (conceptMapScrollHandler) window.removeEventListener('scroll', conceptMapScrollHandler);
+    conceptMapScrollHandler = null;
     const mappedHeadings = headings.filter((heading) => heading.id && heading.textContent.trim()).slice(0, 8);
     if (!selection || mappedHeadings.length === 0) {
       conceptMap.hidden = true;
@@ -577,6 +605,15 @@
     conceptMapBoundary.textContent = strings.conceptBoundary;
     conceptMapBranches.replaceChildren();
     conceptMapFallbackList.replaceChildren();
+    const nodesByHeadingId = new Map();
+    const setActiveNode = (headingId) => {
+      nodesByHeadingId.forEach((node, id) => {
+        const active = id === headingId;
+        node.classList.toggle('is-active', active);
+        if (active) node.setAttribute('aria-current', 'location');
+        else node.removeAttribute('aria-current');
+      });
+    };
     mappedHeadings.forEach((heading, index) => {
       const label = heading.textContent.trim();
       const href = headingHref(heading.id);
@@ -590,6 +627,7 @@
       nodeLabel.textContent = label;
       node.append(number, nodeLabel);
       node.addEventListener('click', () => {
+        setActiveNode(heading.id);
         window.requestAnimationFrame(() => {
           const target = document.getElementById(heading.id);
           if (!target) return;
@@ -599,6 +637,7 @@
         });
       });
       conceptMapBranches.append(node);
+      nodesByHeadingId.set(heading.id, node);
 
       const item = document.createElement('li');
       const fallbackLink = document.createElement('a');
@@ -607,6 +646,62 @@
       item.append(fallbackLink);
       conceptMapFallbackList.append(item);
     });
+    setActiveNode(mappedHeadings[0].id);
+    const updateActiveHeading = () => {
+      const candidates = mappedHeadings.filter((heading) => heading.getBoundingClientRect().top <= 220);
+      setActiveNode((candidates[candidates.length - 1] || mappedHeadings[0]).id);
+    };
+    conceptMapScrollHandler = updateActiveHeading;
+    window.addEventListener('scroll', conceptMapScrollHandler, { passive: true });
+    updateActiveHeading();
+  };
+  const renderReaderInlineVisual = (selection, title) => {
+    const visual = chooseReaderVisual(selection);
+    if (!visual || visual.fallback || !article) return;
+    const existing = article.querySelector('[data-reader-inline-visual]');
+    existing?.remove();
+    const strings = currentReaderVisualCopy();
+    const routeStrings = currentReaderRouteMapCopy();
+    const step = Math.max(0, Math.min(routeStrings.labels.length - 1, visual.step || 0));
+    const label = routeStrings.labels[step];
+    const body = routeStrings.bodies[step];
+    const figure = document.createElement('figure');
+    figure.className = 'reader-inline-visual';
+    figure.dataset.readerInlineVisual = visual.path;
+    const link = document.createElement('a');
+    link.className = 'reader-image-link reader-teaching-visual';
+    link.target = '_blank';
+    link.rel = 'noreferrer';
+    link.href = directHref(visual.path);
+    link.setAttribute('aria-label', `${strings.visualOpen}: ${label}`);
+    const thesis = document.createElement('span');
+    thesis.className = 'reader-visual-thesis';
+    thesis.textContent = `${label} · ${routeStrings.nextQuestions[step]}`;
+    const image = document.createElement('img');
+    image.src = directHref(visual.path);
+    image.alt = `${strings.visualAltPrefix} ${label.toLowerCase()}: ${body}`;
+    // This is the one teaching image placed in the reading flow. Load it as
+    // part of the page so a reader does not reach an empty card while the
+    // browser is still deciding whether a lazy image is near the viewport.
+    image.loading = 'eager';
+    image.decoding = 'async';
+    link.append(thesis, image);
+    const openLabel = document.createElement('span');
+    openLabel.className = 'reader-image-link-label';
+    openLabel.textContent = strings.visualOpen;
+    link.append(openLabel);
+    const caption = document.createElement('figcaption');
+    caption.textContent = `${strings.visualCaptionPrefix} ${title || label}. ${body}`;
+    const boundary = document.createElement('p');
+    boundary.className = 'reader-inline-visual-boundary';
+    boundary.textContent = strings.visualBoundary;
+    figure.append(link, caption, boundary);
+    const openingParagraph = article.querySelector(':scope > p');
+    const insertionAnchor = mobilePageToc?.parentElement === article
+      ? mobilePageToc
+      : openingParagraph || article.querySelector('h1');
+    if (insertionAnchor) insertionAnchor.after(figure);
+    else article.prepend(figure);
   };
   const renderReaderVisualCompanion = (selection) => {
     if (!visualCompanion) return;
@@ -1678,6 +1773,7 @@ function canonicalChapterTitle(chapter) {
       || readerRouteMapSteps.some((step) => step.contentId === selection.contentId);
     renderReaderRouteMap(routeMapEligible ? selection : null);
     renderReaderConceptMap(selection, title, pageHeadings);
+    renderReaderInlineVisual(selection, title);
     renderReaderVisualCompanion(selection);
     renderBookNavigation(selection);
     renderTrustRecord(null);
