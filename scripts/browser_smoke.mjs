@@ -1801,6 +1801,11 @@ try {
   assert.equal(await visualCompanion.isVisible(), true, 'Reader teaching visual companion is not available on a chapter page');
   assert.match(await visualCompanion.locator('img').getAttribute('src'), /prompt-contract-six-fields-red-black\.svg$/, 'Chapter visual companion chose the wrong teaching board');
   assert.notEqual((await visualCompanion.locator('img').getAttribute('alt') || '').trim(), '', 'Reader visual companion has no alternative text');
+  const inlineTeachingVisual = page.locator('[data-reader-inline-visual]');
+  assert.equal(await inlineTeachingVisual.count(), 1, 'Reader chapter did not add its inline teaching visual');
+  assert.equal(await inlineTeachingVisual.locator('.reader-visual-explanation').count(), 1, 'Inline teaching visual has no text explanation');
+  assert.equal((await inlineTeachingVisual.locator('.reader-visual-explanation summary').innerText()).trim(), 'Read this teaching visual as text', 'Inline teaching visual uses the wrong English explanation label');
+  assert.equal(await inlineTeachingVisual.locator('.reader-visual-explanation li').count(), 6, 'Inline teaching visual text explanation does not expose all route steps');
   const inlineConceptMap = page.locator('[data-reader-inline-concept-map]');
   assert.equal(await inlineConceptMap.count(), 1, 'Reader inline concept map is not available on a chapter page');
   assert.equal(await inlineConceptMap.locator('[data-reader-inline-concept-map-root]').count(), 1, 'Reader inline concept map has no localized root node');
@@ -1859,6 +1864,16 @@ try {
     'zh-tw': ['本頁概念圖', '配套教學圖'],
     fr: ['Carte conceptuelle de cette page', 'Visuel pédagogique'],
   };
+  const visualExplanationLocales = {
+    en: 'Read this teaching visual as text',
+    zh: '按文字理解这张教学图',
+    es: 'Leer este visual didáctico como texto',
+    ja: 'この教材図を文字で読む',
+    ko: '이 교육용 그림을 텍스트로 읽기',
+    de: 'Diese Lehrtafel als Text lesen',
+    'zh-tw': '依文字理解這張教學圖',
+    fr: 'Lire ce visuel pédagogique sous forme de texte',
+  };
   const readingLoopLocales = {
     en: ['Read this page as a task chain', 'Problem', 'Evidence'],
     zh: ['把本页读成一条任务链', '问题', '证据'],
@@ -1890,6 +1905,14 @@ try {
     assert.equal((await page.locator('[data-reader-concept-map-summary]').innerText()).trim(), visualGuideLocales[locale][0], `${locale} concept map label is not localized`);
     assert.equal((await page.locator('[data-reader-visual-companion-summary]').innerText()).trim(), visualGuideLocales[locale][1], `${locale} visual companion label is not localized`);
     assert.equal((await page.locator('[data-reader-inline-concept-map] summary').innerText()).trim(), visualGuideLocales[locale][0], `${locale} inline concept map label is not localized`);
+    const localizedInlineTeachingVisual = page.locator('[data-reader-inline-visual]');
+    assert.equal(await localizedInlineTeachingVisual.count(), 1, `${locale} Reader chapter did not add its inline teaching visual`);
+    assert.equal(
+      (await localizedInlineTeachingVisual.locator('.reader-visual-explanation summary').innerText()).trim(),
+      visualExplanationLocales[locale],
+      `${locale} inline teaching visual explanation is not localized`,
+    );
+    assert.equal(await localizedInlineTeachingVisual.locator('.reader-visual-explanation li').count(), 6, `${locale} inline teaching visual text explanation lost route steps`);
     const readingLoop = page.locator('[data-reader-reading-loop]');
     assert.equal(await readingLoop.isVisible(), true, `${locale} page reading task chain is not available`);
     assert.equal((await page.locator('[data-reader-reading-loop-summary]').innerText()).trim(), readingLoopLocales[locale][0], `${locale} reading task chain label is not localized`);
