@@ -1792,7 +1792,7 @@ try {
     assert.equal((await page.locator('[data-reader-visual-companion-summary]').innerText()).trim(), visualGuideLocales[locale][1], `${locale} visual companion label is not localized`);
     assert.equal((await page.locator('[data-reader-inline-concept-map] summary').innerText()).trim(), visualGuideLocales[locale][0], `${locale} inline concept map label is not localized`);
     assert.ok(await page.locator('[data-reader-inline-concept-map-node]').count() >= 2, `${locale} inline concept map lost localized heading branches`);
-    assert.notEqual((await page.locator('[data-reader-inline-concept-map-root]').innerText()).trim(), '', `${locale} inline concept map root is empty`);
+    assert.notEqual((await page.locator('[data-reader-inline-concept-map-root]').textContent()).trim(), '', `${locale} inline concept map root is empty`);
     assert.ok(await page.locator('[data-reader-concept-map-node]').count() >= 2, `${locale} concept map lost localized heading branches`);
     assert.match(await page.locator('[data-reader-visual-companion] img').getAttribute('src'), /prompt-contract-six-fields-red-black\.svg$/, `${locale} visual companion chose the wrong teaching board`);
     await noHorizontalOverflow(page, `${locale} localized Reader route map`);
