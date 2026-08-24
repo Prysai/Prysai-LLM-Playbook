@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">Reader route compass</title>
+  <desc id="desc">A four-stage reading route: read the question, try one bounded action, check the evidence, then transfer the method or stop.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e11d48" />
+    </marker>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#deded8" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="1200" height="780" fill="#f7f7f3" />
+  <rect x="28" y="28" width="1144" height="724" fill="url(#grid)" stroke="#1f1f1d" stroke-width="2" />
+  <text x="72" y="94" fill="#e11d48" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="4">READER ROUTE</text>
+  <text x="72" y="142" fill="#1f1f1d" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Make one page answer one next question.</text>
+  <text x="72" y="180" fill="#5b5b56" font-family="Arial, Helvetica, sans-serif" font-size="20">A visual aid for moving from explanation to a checkable attempt.</text>
+
+  <path d="M 300 398 H 354" fill="none" stroke="#e11d48" stroke-width="4" marker-end="url(#arrow)" />
+  <path d="M 574 398 H 628" fill="none" stroke="#e11d48" stroke-width="4" marker-end="url(#arrow)" />
+  <path d="M 848 398 H 902" fill="none" stroke="#e11d48" stroke-width="4" marker-end="url(#arrow)" />
+
+  <g>
+    <rect x="72" y="248" width="228" height="300" fill="#1f1f1d" />
+    <text x="98" y="298" fill="#e11d48" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="700">01 / READ</text>
+    <text x="98" y="360" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Name the</text>
+    <text x="98" y="398" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">question.</text>
+    <text x="98" y="454" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">What decision or</text>
+    <text x="98" y="482" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">distinction matters?</text>
+  </g>
+  <g>
+    <rect x="354" y="248" width="220" height="300" fill="#ffffff" stroke="#1f1f1d" stroke-width="2" />
+    <text x="380" y="298" fill="#e11d48" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="700">02 / TRY</text>
+    <text x="380" y="360" fill="#1f1f1d" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Choose one</text>
+    <text x="380" y="398" fill="#1f1f1d" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">small action.</text>
+    <text x="380" y="454" fill="#5b5b56" font-family="Arial, Helvetica, sans-serif" font-size="18">Set scope, inputs,</text>
+    <text x="380" y="482" fill="#5b5b56" font-family="Arial, Helvetica, sans-serif" font-size="18">permission, and stop.</text>
+  </g>
+  <g>
+    <rect x="628" y="248" width="220" height="300" fill="#f9d7df" stroke="#1f1f1d" stroke-width="2" />
+    <text x="654" y="298" fill="#e11d48" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="700">03 / CHECK</text>
+    <text x="654" y="360" fill="#1f1f1d" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Keep the</text>
+    <text x="654" y="398" fill="#1f1f1d" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">receipt.</text>
+    <text x="654" y="454" fill="#5b5b56" font-family="Arial, Helvetica, sans-serif" font-size="18">Compare source, diff,</text>
+    <text x="654" y="482" fill="#5b5b56" font-family="Arial, Helvetica, sans-serif" font-size="18">test, log, or rule.</text>
+  </g>
+  <g>
+    <rect x="902" y="248" width="218" height="300" fill="#ffffff" stroke="#1f1f1d" stroke-width="2" />
+    <text x="928" y="298" fill="#e11d48" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="700">04 / MOVE</text>
+    <text x="928" y="360" fill="#1f1f1d" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Transfer</text>
+    <text x="928" y="398" fill="#1f1f1d" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">or stop.</text>
+    <text x="928" y="454" fill="#5b5b56" font-family="Arial, Helvetica, sans-serif" font-size="18">Try a changed task,</text>
+    <text x="928" y="482" fill="#5b5b56" font-family="Arial, Helvetica, sans-serif" font-size="18">or keep the unknown.</text>
+  </g>
+  <path d="M 1088 596 C 1088 668 112 668 112 596" fill="none" stroke="#1f1f1d" stroke-width="2" stroke-dasharray="8 10" marker-end="url(#arrow)" />
+  <text x="600" y="700" text-anchor="middle" fill="#5b5b56" font-family="Arial, Helvetica, sans-serif" font-size="18">The route repeats on a new task; one successful page is not mastery.</text>
+</svg>
