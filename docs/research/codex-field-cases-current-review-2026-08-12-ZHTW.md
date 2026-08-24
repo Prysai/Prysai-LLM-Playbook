@@ -2,10 +2,10 @@
 
 # Codex 現場案例：當前公開狀態審查
 
-**研究日期：**2026-08-12（America/Los_Angeles）  
-**所有連結的存取日期：**2026-08-12  
-**狀態：**`candidate` / `reference-only`  
-**範圍：**`openai/codex` Issue [#34352](https://github.com/openai/codex/issues/34352)、[#34951](https://github.com/openai/codex/issues/34951)、[#37677](https://github.com/openai/codex/issues/37677) 的公開記錄，以及每個教學案例對應的一條穩定的一手 OpenAI 邊界。  
+**研究日期：**2026-08-12（America/Los_Angeles）
+**所有連結的存取日期：**2026-08-12
+**狀態：**`candidate` / `reference-only`
+**範圍：**`openai/codex` Issue [#34352](https://github.com/openai/codex/issues/34352)、[#34951](https://github.com/openai/codex/issues/34951)、[#37677](https://github.com/openai/codex/issues/37677) 的公開記錄，以及每個教學案例對應的一條穩定的一手 OpenAI 邊界。
 **本地復現：**`not_run`。本專案沒有執行 Codex App 的工作樹切換，沒有觸發所報告的輸出過濾，也沒有替換持久安裝的軟體包。
 
 ## 結論先行
