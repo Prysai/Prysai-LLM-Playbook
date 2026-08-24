@@ -101,7 +101,6 @@
   const visualCompanionOpen = document.querySelector('[data-reader-visual-companion-open]');
   const visualCompanionCaption = document.querySelector('[data-reader-visual-companion-caption]');
   const visualCompanionBoundary = document.querySelector('[data-reader-visual-companion-boundary]');
-  let conceptMapObserver = null;
   let conceptMapScrollHandler = null;
   const trustCard = document.querySelector('[data-reader-trust-card]');
   const trustScope = document.querySelector('[data-reader-trust-scope]');
@@ -580,8 +579,6 @@
   };
   const renderReaderConceptMap = (selection, title, headings = []) => {
     if (!conceptMap || !conceptMapBranches || !conceptMapFallbackList) return;
-    conceptMapObserver?.disconnect();
-    conceptMapObserver = null;
     if (conceptMapScrollHandler) window.removeEventListener('scroll', conceptMapScrollHandler);
     conceptMapScrollHandler = null;
     const mappedHeadings = headings.filter((heading) => heading.id && heading.textContent.trim()).slice(0, 8);
