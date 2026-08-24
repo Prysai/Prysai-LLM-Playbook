@@ -463,6 +463,7 @@
   });
 
   const readerVisualMap = [
+    { tokens: ['llm-foundation-core-v1', 'llm-foundation-core-path'], path: 'assets/teaching/foundation-first-visit-route-red-black.svg', step: 0 },
     { tokens: ['chapter-04-context-permissions-and-agent', 'lab-016-side-effect-boundary', 'conversation-safety-card'], path: 'assets/teaching/conversation-safety-card-red-black.svg', step: 2 },
     { tokens: ['chapter-05-choose-the-codex-surface', 'platform-adapter-guide', 'universal-seams'], path: 'assets/teaching/universal-seams-red-black.svg', step: 1 },
     { tokens: ['chapter-06-model-selection', 'model-choice-is-a-test', 'llm-comparison-protocol'], path: 'assets/teaching/model-choice-is-a-test.svg', step: 1 },
