@@ -60,7 +60,7 @@ const freePort = () => new Promise((resolve, reject) => {
   const server = createServer();
   server.unref();
   server.on('error', reject);
-  server.listen(0, '127.0.0.1', () => {
+  server.listen(0, 'localhost', () => {
     const address = server.address();
     server.close(() => resolve(address.port));
   });
@@ -95,8 +95,8 @@ const noHorizontalOverflow = async (page, label) => {
 };
 
 const port = await freePort();
-const origin = `http://127.0.0.1:${port}`;
-const server = spawn(python, ['-m', 'http.server', String(port), '--bind', '127.0.0.1', '--directory', artifact], {
+const origin = `http://localhost:${port}`;
+const server = spawn(python, ['-m', 'http.server', String(port), '--bind', 'localhost', '--directory', artifact], {
   cwd: root,
   stdio: ['ignore', 'pipe', 'pipe'],
 });
@@ -1736,7 +1736,7 @@ try {
   const firstConceptHref = await firstConceptNode.getAttribute('href');
   assert.match(firstConceptHref || '', /^#/, 'Reader concept map branch is not an in-page link');
   await firstConceptNode.click();
-  assert.equal(await page.locator(new URL(firstConceptHref, 'http://reader.local/').hash).count(), 1, 'Reader concept map branch does not land on a real heading');
+  assert.equal(await page.locator(new URL(firstConceptHref, 'http://example.test/').hash).count(), 1, 'Reader concept map branch does not land on a real heading');
   const visualCompanion = page.locator('[data-reader-visual-companion]');
   assert.equal(await visualCompanion.isVisible(), true, 'Reader teaching visual companion is not available on a chapter page');
   assert.match(await visualCompanion.locator('img').getAttribute('src'), /prompt-contract-six-fields-red-black\.svg$/, 'Chapter visual companion chose the wrong teaching board');
