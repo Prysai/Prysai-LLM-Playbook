@@ -80,7 +80,7 @@
 
 후보를 채택하기 전에 다음 질문에 글로 답합니다.
 
-- **task gap:** 안정적인 방법, 결정적 스크립트, 외부 연결, 아니면 작업 정의 자체 중 무엇이 부족한가?
+- **작업 공백(task gap):** 안정적인 방법, 결정적 스크립트, 외부 연결, 아니면 작업 정의 자체 중 무엇이 부족한가?
 - **trigger / non-trigger:** 어떤 입력에서 실행되어야 하는가? 비슷한 요청 중 무엇은 실행하지 않거나 다른 방법이 처리해야 하는가? 단어가 겹친다는 이유만으로는 부족하다.
 - **source / revision:** 다른 리뷰어가 URL, 고정 커밋, 버전, 아카이브 해시, 인벤토리 날짜를 확인할 수 있는가?
 - **license / dependency:** 저장소 라이선스가 대상 파일을 포함하는가? NOTICE, 중첩된 에셋, 런타임 의존성을 목록화했는가?
@@ -262,7 +262,7 @@ fact impact registry, 이 장, Labs, Skills, fixtures, site route를 차례로 �
 ## 수용 체크리스트
 
 - [ ] Skill, Plugin, MCP 서버, connector, tool, script, template, document를 구분한다.
-- [ ] task gap, trigger, non-trigger, source revision, license, dependency, permission, side effect, owner, rollback을 설명한다.
+- [ ] 작업 공백(task gap), trigger, non-trigger, source revision, license, dependency, permission, side effect, owner, rollback을 설명한다.
 - [ ] candidate를 `recommendation-only`로 두고 license나 rollback이 불명확하면 `blocked`로 표시한다.
 - [ ] existence, discovery, load, adoption, verified behavior를 구분한다.
 - [ ] 고정 input, acceptance, evidence boundary에서 protocol baseline과 역량 조합을 비교한다.

@@ -227,7 +227,7 @@ recovery로 control을 되찾아도 completion claim이 참이 되는 것은 아
 
 ## 전이 과제
 
-고정 source를 쓰는 research memo나 static page review에 같은 method를 옮깁니다. language practice에서는 assisted reply와 나중의 미지·무도움 recall을 구분합니다. fact claim,
+고정 source를 쓰는 research memo나 static page review에 같은 method를 옮깁니다. language practice에서는 도움을 받은 답변과 나중에 도움 없이 회상하는 과제를 구분합니다. fact claim,
 execution claim, reader-effect claim을 하나씩 쓰고 각각에 다른 evidence를 요구합니다. citation, diff,
 output 중 하나를 일부러 빼고 claim을 downgrade한 뒤 한 가지 safe next check를 고릅니다.
 

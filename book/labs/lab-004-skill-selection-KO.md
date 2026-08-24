@@ -18,7 +18,7 @@ status: draft
 last_verified: "Not run"
 transfer_task: "저위험 research 또는 content task에서 비교를 반복한다"
 transfer_domain: "research, engineering, marketing, or documentation"
-transfer_evidence: "task gap, 비교표, adoption record, reviewer comment를 보존한다"
+transfer_evidence: "작업 공백(task gap), 비교표, 도입 기록(adoption record), 검토자 의견(reviewer comment)을 보존한다"
 transfer_limitations: "recommendation-only 비교는 설치, runtime behavior, 장기 유지 가치를 증명하지 않는다"
 ---
 
@@ -72,7 +72,7 @@ evidence / unknowns / unblock_conditions:
 
 ## 수용 체크리스트
 
-- [ ] 후보를 비교하기 전에 task gap을 적었다.
+- [ ] 후보를 비교하기 전에 작업 공백(task gap)을 적었다.
 - [ ] 적어도 한 후보를 구체적인 이유로 거부했다.
 - [ ] license와 nested asset의 불확실성이 보인다.
 - [ ] permission과 외부 side effect가 작업에 필요한 범위를 넘지 않는다.
