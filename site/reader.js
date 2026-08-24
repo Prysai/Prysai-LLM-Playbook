@@ -1097,7 +1097,13 @@
       figure.append(fallback);
     }
     const openingParagraph = article.querySelector(':scope > p');
-    const insertionAnchor = mobilePageToc?.parentElement === article
+    // On pages using the compact fallback, put the compass directly after the
+    // opening explanation. A long mobile TOC can otherwise push the only
+    // visual orientation aid below the first screen; dedicated boards retain
+    // the existing TOC-aware placement.
+    const insertionAnchor = visual.fallback
+      ? openingParagraph || article.querySelector('h1')
+      : mobilePageToc?.parentElement === article
       ? mobilePageToc
       : openingParagraph || article.querySelector('h1');
     if (insertionAnchor) insertionAnchor.after(figure);
