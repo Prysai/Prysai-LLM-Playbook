@@ -6761,5 +6761,21 @@ const foundationMindMapCopy = {
 
 Object.entries(foundationMindMapCopy).forEach(([language, strings]) => Object.assign(copy[language], strings));
 
+// The research-audit board is a sixth companion, not a replacement for the
+// route map. Keep its surrounding copy in the selected locale; the SVG itself
+// remains a project-authored English board with a complete text equivalent in
+// the card description and Reader fallback.
+const foundationClaimAuditCopy = {
+  en: { foundationVisualsTitle: 'Six foundation boards, one loop.', foundationVisualsIntro: 'Start with the route map, then use the five check boards as quick references: prompt contract, action evidence, recovery, source checks, and a claim-to-evidence audit.', foundationClaimAuditVisualAlt: 'Claim to evidence audit teaching board', foundationClaimAuditVisualTitle: 'Claim to evidence audit', foundationClaimAuditVisualBody: 'State the claim, scope it, name the source, check the link, and keep the limit.' },
+  zh: { foundationVisualsTitle: '六张基础图，串起一个闭环。', foundationVisualsIntro: '先看路线图，再把另外五张图当作速查表：提示词契约、行动证据、证据恢复、来源检查，以及声明到证据的审计。', foundationClaimAuditVisualAlt: '声明到证据审计教学图', foundationClaimAuditVisualTitle: '声明到证据审计', foundationClaimAuditVisualBody: '写清声明，限定范围，标出来源，检查证据链，并保留限制。' },
+  es: { foundationVisualsTitle: 'Seis tablas, un solo bucle de fundamentos.', foundationVisualsIntro: 'Empieza por el mapa de la ruta y usa las otras cinco tablas como referencia: contrato del prompt, evidencia de la acción, recuperación, comprobación de fuentes y auditoría de afirmación a evidencia.', foundationClaimAuditVisualAlt: 'Tabla didáctica de la auditoría de afirmación a evidencia', foundationClaimAuditVisualTitle: 'Auditar la afirmación y la evidencia', foundationClaimAuditVisualBody: 'Formula la afirmación, delimítala, nombra la fuente, comprueba el vínculo y conserva el límite.' },
+  ja: { foundationVisualsTitle: '6つの基礎ボード、1つのループ。', foundationVisualsIntro: 'まずルートマップを見て、残り5つのボードを早見表として使います。プロンプト契約、操作の証拠、回復、出典確認、主張と証拠の監査を扱います。', foundationClaimAuditVisualAlt: '主張から証拠までの監査を示す教材図', foundationClaimAuditVisualTitle: '主張と証拠を監査する', foundationClaimAuditVisualBody: '主張を書き、範囲を定め、出典の責任者を示し、つながりを確認し、限界を残します。' },
+  ko: { foundationVisualsTitle: '여섯 기초 보드, 하나의 루프.', foundationVisualsIntro: '먼저 경로 지도를 보고, 나머지 다섯 보드를 빠른 참고표로 사용하세요. 프롬프트 계약, 행동의 증거, 복구, 출처 점검, 주장과 증거 감사까지 다룹니다.', foundationClaimAuditVisualAlt: '주장에서 증거까지 감사하는 교육 보드', foundationClaimAuditVisualTitle: '주장과 증거 감사', foundationClaimAuditVisualBody: '주장을 적고 범위를 정하고 출처를 밝힌 뒤 연결을 점검하고 한계를 남기세요.' },
+  de: { foundationVisualsTitle: 'Sechs Grundtafeln, ein Ablauf.', foundationVisualsIntro: 'Beginne mit der Routentafel und nutze die fünf weiteren Tafeln als Kurzreferenz: Prompt-Vertrag, Handlungsbeleg, Wiederherstellung, Quellenprüfung und die Prüfung von Aussage und Beleg.', foundationClaimAuditVisualAlt: 'Lehrtafel zur Prüfung von Aussage und Beleg', foundationClaimAuditVisualTitle: 'Aussage und Beleg prüfen', foundationClaimAuditVisualBody: 'Formuliere die Aussage, grenze sie ein, nenne die Quelle, prüfe die Verbindung und halte die Grenze fest.' },
+  'zh-tw': { foundationVisualsTitle: '六張基礎圖，串起一個閉環。', foundationVisualsIntro: '先看路線圖，再把另外五張圖當作速查表：提示詞契約、行動證據、證據恢復、來源檢查，以及主張到證據的稽核。', foundationClaimAuditVisualAlt: '主張到證據稽核教學圖', foundationClaimAuditVisualTitle: '稽核主張與證據', foundationClaimAuditVisualBody: '寫清楚主張，限定範圍，標出來源，檢查證據鏈，並保留限制。' },
+  fr: { foundationVisualsTitle: 'Six tableaux de base, une seule boucle.', foundationVisualsIntro: 'Commencez par la feuille de route, puis utilisez les cinq autres tableaux comme aide-mémoire : contrat de prompt, preuves d’action, récupération, contrôle des sources et audit de l’affirmation par les preuves.', foundationClaimAuditVisualAlt: 'Tableau pédagogique de l’audit de l’affirmation par les preuves', foundationClaimAuditVisualTitle: 'Auditer l’affirmation et les preuves', foundationClaimAuditVisualBody: 'Écrivez l’affirmation, délimitez-la, nommez la source, vérifiez le lien et gardez la limite.' },
+};
+Object.entries(foundationClaimAuditCopy).forEach(([language, strings]) => Object.assign(copy[language], strings));
+
 initializeSearch();
 applyLanguage(currentLanguage, { updateUrl: hasExplicitLanguageParam && !hasValidLanguageParam });
