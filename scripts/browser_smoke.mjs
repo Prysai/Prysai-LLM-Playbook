@@ -1726,6 +1726,20 @@ try {
   await page.locator('[data-reader-route-map-step="3"]').click();
   assert.equal((await page.locator('[data-reader-route-map-detail-title]').innerText()).trim(), 'Inspect', 'Reader route map selection does not update its detail');
   assert.match(await page.locator('[data-reader-route-map-detail-link]').getAttribute('href'), /09-verification-and-recovery-EN\.md&lang=en$/, 'Reader route map selection loses its locale-preserving Reader link');
+  const conceptMap = page.locator('[data-reader-concept-map]');
+  assert.equal(await conceptMap.isVisible(), true, 'Reader concept map is not available on a chapter page');
+  await conceptMap.locator('summary').click();
+  assert.ok(await conceptMap.locator('[data-reader-concept-map-node]').count() >= 2, 'Reader concept map does not derive branches from page headings');
+  assert.match(await conceptMap.locator('[data-reader-concept-map-root]').innerText(), /first safe, verifiable task/i, 'Reader concept map does not identify the current page');
+  const firstConceptNode = conceptMap.locator('[data-reader-concept-map-node]').first();
+  const firstConceptHref = await firstConceptNode.getAttribute('href');
+  assert.match(firstConceptHref || '', /^#/, 'Reader concept map branch is not an in-page link');
+  await firstConceptNode.click();
+  assert.equal(await page.locator(new URL(firstConceptHref, 'http://reader.local/').hash).count(), 1, 'Reader concept map branch does not land on a real heading');
+  const visualCompanion = page.locator('[data-reader-visual-companion]');
+  assert.equal(await visualCompanion.isVisible(), true, 'Reader teaching visual companion is not available on a chapter page');
+  assert.match(await visualCompanion.locator('img').getAttribute('src'), /prompt-contract-six-fields-red-black\.svg$/, 'Chapter visual companion chose the wrong teaching board');
+  assert.notEqual((await visualCompanion.locator('img').getAttribute('alt') || '').trim(), '', 'Reader visual companion has no alternative text');
 
   // The visual route map is reader-facing content, not English-only chrome.
   // Recheck every supported locale so labels, links, and mobile layout cannot
@@ -1740,6 +1754,16 @@ try {
     ['zh-tw', 'ZHTW', '檢查結果'],
     ['fr', 'FR', 'Vérifier'],
   ];
+  const visualGuideLocales = {
+    en: ['Page concept map', 'Teaching visual'],
+    zh: ['本页思维导图', '配套教学图'],
+    es: ['Mapa conceptual de esta página', 'Visual didáctico'],
+    ja: ['このページの概念マップ', '教材図'],
+    ko: ['이 페이지의 개념 지도', '교육용 시각 자료'],
+    de: ['Begriffskarte dieser Seite', 'Lehrtafel'],
+    'zh-tw': ['本頁概念圖', '配套教學圖'],
+    fr: ['Carte conceptuelle de cette page', 'Visuel pédagogique'],
+  };
   for (const [locale, suffix, expectedInspectLabel] of routeMapLocales) {
     await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F02-first-safe-task-${suffix}.md&lang=${locale}`, { waitUntil: 'networkidle' });
     await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
@@ -1758,6 +1782,10 @@ try {
       new RegExp(`09-verification-and-recovery-${suffix}\\.md&lang=${locale}$`),
       `${locale} route map selection lost its localized Reader link`,
     );
+    assert.equal((await page.locator('[data-reader-concept-map-summary]').innerText()).trim(), visualGuideLocales[locale][0], `${locale} concept map label is not localized`);
+    assert.equal((await page.locator('[data-reader-visual-companion-summary]').innerText()).trim(), visualGuideLocales[locale][1], `${locale} visual companion label is not localized`);
+    assert.ok(await page.locator('[data-reader-concept-map-node]').count() >= 2, `${locale} concept map lost localized heading branches`);
+    assert.match(await page.locator('[data-reader-visual-companion] img').getAttribute('src'), /prompt-contract-six-fields-red-black\.svg$/, `${locale} visual companion chose the wrong teaching board`);
     await noHorizontalOverflow(page, `${locale} localized Reader route map`);
   }
   // Restore the original English baseline before the rest of this smoke run;
@@ -1765,6 +1793,9 @@ try {
   await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F02-first-safe-task-EN.md&lang=en`, { waitUntil: 'networkidle' });
   await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
   await page.locator('[data-reader-route-map-summary]').click();
+  await page.locator('[data-reader-concept-map-summary]').click();
+  await page.locator('[data-reader-visual-companion-summary]').click();
+  await page.locator('[data-reader-concept-map]').screenshot({ path: path.join(visualEvidenceDirectory, 'reader-concept-map-mobile.png') });
 
   // Navigation must keep the requested locale when the next candidate file
   // exists, then enter the explicit fallback path at the first missing one.
