@@ -90,7 +90,16 @@
       "content_id": "field-problems-forums-2026-08-10",
       "kind": "field-note",
       "path": "docs/research/field-problems-forums-2026-08-10.md",
-      "content_status": "candidate"
+      "content_status": "candidate",
+      "localized_paths": {
+        "ZH": "docs/research/field-problems-forums-2026-08-10-ZH.md",
+        "ES": "docs/research/field-problems-forums-2026-08-10-ES.md",
+        "JA": "docs/research/field-problems-forums-2026-08-10-JA.md",
+        "KO": "docs/research/field-problems-forums-2026-08-10-KO.md",
+        "DE": "docs/research/field-problems-forums-2026-08-10-DE.md",
+        "ZHTW": "docs/research/field-problems-forums-2026-08-10-ZHTW.md",
+        "FR": "docs/research/field-problems-forums-2026-08-10-FR.md"
+      }
     },
     {
       "content_id": "codex-field-cases-current-review-2026-08-12",
