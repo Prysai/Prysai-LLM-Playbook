@@ -1072,6 +1072,10 @@
     const details = document.createElement('details');
     details.className = 'reader-inline-concept-map';
     details.dataset.readerInlineConceptMap = 'true';
+    // The inline map is the reader's first orientation aid. Keep it open so
+    // the visual relationship is discoverable without requiring a second
+    // interaction; the ordered list below remains the no-script fallback.
+    details.open = true;
     const summary = document.createElement('summary');
     summary.textContent = strings.conceptSummary;
     summary.setAttribute('aria-label', strings.conceptAria);
@@ -1151,6 +1155,10 @@
     const details = document.createElement('details');
     details.className = 'reader-page-anatomy';
     details.dataset.readerPageAnatomy = 'true';
+    // This is the only visual on pages without a dedicated teaching board, so
+    // expose it in the reading flow instead of hiding the explanation behind
+    // a second disclosure.
+    details.open = true;
     const summary = document.createElement('summary');
     summary.textContent = strings.conceptAnatomyOpen;
     summary.setAttribute('aria-label', strings.conceptAnatomyOpen);
@@ -1178,9 +1186,12 @@
     boundary.className = 'reader-page-anatomy-boundary';
     boundary.textContent = strings.conceptAnatomyBoundary;
     figure.append(link, caption, boundary);
-    details.append(summary, figure);
     const concept = article.querySelector('[data-reader-inline-concept-map]');
     const anchor = concept || article.querySelector('[data-reader-inline-visual]') || article.querySelector(':scope > p') || article.querySelector('h1');
+    // Keep the page anatomy available as a deliberate, compact entry point.
+    // The text/list fallback remains inside the existing reading loop; this
+    // board is only added when a page has no dedicated teaching board.
+    details.append(summary, figure);
     if (anchor) anchor.after(details);
     else article.prepend(details);
   };
