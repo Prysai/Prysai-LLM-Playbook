@@ -117,6 +117,21 @@ def translation_keys(app: str, language: str, html_keys: set[str]) -> set[str]:
             )
             if visual_locale:
                 blocks.append(visual_locale.group("body"))
+        claim_audit_map = re.search(r"const\s+foundationClaimAuditCopy\s*=\s*\{(?P<body>.*?)\n\};", app, re.DOTALL)
+        if claim_audit_map:
+            claim_locale = re.search(
+                r"\n\s{2}['\"]zh-tw['\"]:\s*\{(?P<body>.*?)\n\s{2}\},",
+                claim_audit_map.group("body"),
+                re.DOTALL,
+            )
+            if not claim_locale:
+                claim_locale = re.search(
+                    r"(?:^|\n)\s{2}['\"]zh-tw['\"]:\s*\{(?P<body>[^{}]*)\}",
+                    claim_audit_map.group("body"),
+                    re.DOTALL,
+                )
+            if claim_locale:
+                blocks.append(claim_locale.group("body"))
         return base_keys | set().union(*(keys_for(block, html_keys) for block in blocks))
     else:
         match = re.search(
@@ -150,6 +165,22 @@ def translation_keys(app: str, language: str, html_keys: set[str]) -> set[str]:
         )
         if visual_locale:
             blocks.append(visual_locale.group("body"))
+    claim_audit_map = re.search(r"const\s+foundationClaimAuditCopy\s*=\s*\{(?P<body>.*?)\n\};", app, re.DOTALL)
+    if claim_audit_map:
+        locale_key = rf"(?:['\"]{re.escape(language)}['\"]|{re.escape(language)})"
+        claim_locale = re.search(
+            rf"\n\s{{2}}{locale_key}:\s*\{{(?P<body>.*?)\n\s{{2}}\}},",
+            claim_audit_map.group("body"),
+            re.DOTALL,
+        )
+        if not claim_locale:
+            claim_locale = re.search(
+                rf"(?:^|\n)\s{{2}}{locale_key}:\s*\{{(?P<body>[^{{}}]*)\}}",
+                claim_audit_map.group("body"),
+                re.DOTALL,
+            )
+        if claim_locale:
+            blocks.append(claim_locale.group("body"))
     return set().union(*(keys_for(block, html_keys) for block in blocks)) if blocks else set()
 
 
