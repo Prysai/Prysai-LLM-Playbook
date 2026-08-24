@@ -288,7 +288,7 @@
     { tokens: ['lab-011-gpt-codex-boundaries'], path: 'assets/teaching/llm-six-terms-to-one-check.svg', step: 0 },
     { tokens: ['lab-012-team-capability-migration'], path: 'assets/teaching/agent-handoff-receipt-checkpoints-red-black.svg', step: 5 },
     { tokens: ['lab-014-resume-reconciliation'], path: 'assets/teaching/interruption-checkpoint-card-red-black.svg', step: 4 },
-    { tokens: ['lab-015-evidence-delivery', 'chapter-15-research-track'], path: 'assets/teaching/claim-to-evidence-audit-red-black.svg', step: 3 },
+    { tokens: ['lab-015-evidence-delivery', 'chapter-15-research-track'], path: 'assets/teaching/evidence-to-decision-stop-map-red-black.svg', step: 3 },
     { tokens: ['lab-017-skill-discovery-audit'], path: 'assets/teaching/source-check-before-belief-red-black.svg', step: 3 },
     { tokens: ['llm-fundamentals-guide', 'chapter-01-gpt-and-codex'], path: 'assets/teaching/llm-six-terms-to-one-check.svg', step: 0 },
     { tokens: ['llm-core-first-generation', 'chapter-02-first-safe-task', 'chapter-03-task-protocol'], path: 'assets/teaching/prompt-contract-six-fields-red-black.svg', step: 1 },

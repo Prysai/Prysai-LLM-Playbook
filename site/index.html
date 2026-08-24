@@ -457,15 +457,55 @@ Return only the rewritten message.</code></pre></div>
                 </ol>
               </details>
               <figure class="foundation-loop-figure">
-                <a href="../assets/teaching/reliable-llm-work-loop-red-black.svg" target="_blank" rel="noreferrer"><img src="../assets/teaching/reliable-llm-work-loop-red-black.svg" width="900" height="1500" loading="lazy" alt="Six-step reliable LLM work loop: understand, frame, act, inspect, repair, and transfer" data-i18n-attr="alt:mindMapFigureAlt" /></a>
-                <figcaption data-i18n="mindMapFigureCaption">Open the full project-authored board for a printable view. The list and explanation above carry the same meaning in text.</figcaption>
+                <a href="../assets/teaching/reliable-llm-work-loop-red-black.svg" target="_blank" rel="noreferrer" aria-labelledby="mind-map-visual-caption"><img src="../assets/teaching/reliable-llm-work-loop-red-black.svg" width="900" height="1500" loading="lazy" alt="Six-step reliable LLM work loop: understand, frame, act, inspect, repair, and transfer" data-i18n-attr="alt:mindMapFigureAlt" /></a>
+                <figcaption id="mind-map-visual-caption" data-i18n="mindMapFigureCaption">Open the full project-authored board for a printable view. The list and explanation above carry the same meaning in text.</figcaption>
               </figure>
               <p class="research-boundary foundation-loop-boundary" data-i18n="mindMapBoundary">A map is a route, not proof of learning. Keep the attempt, the check, the failure, and the remaining unknowns.</p>
             </section>
+            <section class="foundation-evidence-map" id="foundation-evidence-map" aria-labelledby="foundation-evidence-map-title" data-evidence-map>
+              <div class="foundation-evidence-head">
+                <div class="index-panel-head"><span class="index-panel-number">09</span><h3 id="foundation-evidence-map-title" data-i18n="evidenceMapTitle">Let the evidence set the decision.</h3></div>
+                <p class="index-panel-intro" data-i18n="evidenceMapIntro">Follow one question from source to observation. The map ends at a deliberate stop when the next proof is missing.</p>
+              </div>
+              <div class="foundation-evidence-workspace">
+                <div class="foundation-evidence-visual" role="group" aria-label="Evidence to decision map" data-i18n-attr="aria-label:evidenceMapAria">
+                  <ol class="foundation-evidence-nodes">
+                    <li><button type="button" class="foundation-evidence-node is-selected" data-evidence-node="question" aria-pressed="true" aria-controls="foundation-evidence-detail"><span>01</span><strong data-i18n="evidenceMapNodeQuestion">Question</strong></button></li>
+                    <li><button type="button" class="foundation-evidence-node" data-evidence-node="source" aria-pressed="false" aria-controls="foundation-evidence-detail"><span>02</span><strong data-i18n="evidenceMapNodeSource">Source</strong></button></li>
+                    <li><button type="button" class="foundation-evidence-node" data-evidence-node="observe" aria-pressed="false" aria-controls="foundation-evidence-detail"><span>03</span><strong data-i18n="evidenceMapNodeObserve">Observe</strong></button></li>
+                    <li><button type="button" class="foundation-evidence-node" data-evidence-node="decide" aria-pressed="false" aria-controls="foundation-evidence-detail"><span>04</span><strong data-i18n="evidenceMapNodeDecide">Decide</strong></button></li>
+                    <li><button type="button" class="foundation-evidence-node" data-evidence-node="stop" aria-pressed="false" aria-controls="foundation-evidence-detail"><span>05</span><strong data-i18n="evidenceMapNodeStop">Stop</strong></button></li>
+                  </ol>
+                </div>
+                <article class="foundation-evidence-detail" id="foundation-evidence-detail" aria-live="polite" aria-atomic="true">
+                  <span class="foundation-evidence-detail-label" data-i18n="evidenceMapDetailLabel">SELECTED STEP</span>
+                  <h4 data-evidence-detail-title data-i18n="evidenceMapNodeQuestion">Question</h4>
+                  <p data-evidence-detail-body data-i18n="evidenceMapQuestionBody">Name the decision before you search. A broad topic is not yet a checkable question.</p>
+                  <p class="foundation-evidence-next"><span data-i18n="evidenceMapNextLabel">Next check</span><strong data-evidence-detail-next data-i18n="evidenceMapQuestionNext">What decision would this evidence change?</strong></p>
+                  <a class="text-link" data-evidence-detail-link data-content-id="chapter-15-research-track" href="reader.html?path=book%2Fchapters%2F15-research-track-EN.md&amp;lang=en"><span data-i18n="evidenceMapOpenRoute">Open this part of the route</span><span aria-hidden="true">↗</span></a>
+                </article>
+              </div>
+              <details class="foundation-evidence-fallback" open>
+                <summary data-i18n="evidenceMapFallbackSummary">Read the evidence path as text</summary>
+                <p data-i18n="evidenceMapFallbackIntro">Use this sequence without the interactive map. Each step keeps the claim within the record.</p>
+                <ol>
+                  <li><strong data-i18n="evidenceMapNodeQuestion">Question</strong><span data-i18n="evidenceMapQuestionBody">Name the decision before you search. A broad topic is not yet a checkable question.</span><a class="text-link" data-content-id="chapter-15-research-track" href="reader.html?path=book%2Fchapters%2F15-research-track-EN.md&amp;lang=en"><span data-i18n="evidenceMapOpenRoute">Open this part of the route</span><span aria-hidden="true">↗</span></a></li>
+                  <li><strong data-i18n="evidenceMapNodeSource">Source</strong><span data-i18n="evidenceMapSourceBody">Name the owner, location, date, version, and the source's boundary.</span><a class="text-link" data-content-id="lab-008-research-question" href="reader.html?path=book%2Flabs%2Flab-008-research-question-EN.md&amp;lang=en"><span data-i18n="evidenceMapOpenRoute">Open this part of the route</span><span aria-hidden="true">↗</span></a></li>
+                  <li><strong data-i18n="evidenceMapNodeObserve">Observe</strong><span data-i18n="evidenceMapObserveBody">Read the page, diff, test, log, or response. Do not infer an event you did not observe.</span><a class="text-link" data-content-id="chapter-09-verification-and-recovery" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en"><span data-i18n="evidenceMapOpenRoute">Open this part of the route</span><span aria-hidden="true">↗</span></a></li>
+                  <li><strong data-i18n="evidenceMapNodeDecide">Decide</strong><span data-i18n="evidenceMapDecideBody">Keep the claim supported when the check matches; otherwise mark it candidate or unknown.</span><a class="text-link" data-content-id="lab-015-evidence-delivery" href="reader.html?path=book%2Flabs%2Flab-015-evidence-delivery-EN.md&amp;lang=en"><span data-i18n="evidenceMapOpenRoute">Open this part of the route</span><span aria-hidden="true">↗</span></a></li>
+                  <li><strong data-i18n="evidenceMapNodeStop">Stop</strong><span data-i18n="evidenceMapStopBody">When the next proof is missing, stop and record the smallest safe next check.</span><a class="text-link" data-content-id="chapter-12-agent-loop-and-stop" href="reader.html?path=book%2Fchapters%2F12-agent-loop-and-stop-EN.md&amp;lang=en"><span data-i18n="evidenceMapOpenRoute">Open this part of the route</span><span aria-hidden="true">↗</span></a></li>
+                </ol>
+              </details>
+              <figure class="foundation-evidence-figure">
+                <a href="../assets/teaching/evidence-to-decision-stop-map-red-black.svg" target="_blank" rel="noreferrer" aria-labelledby="evidence-map-visual-caption"><img src="../assets/teaching/evidence-to-decision-stop-map-red-black.svg" width="900" height="1500" loading="lazy" alt="Evidence to decision and stop teaching board" data-i18n-attr="alt:evidenceMapFigureAlt" /></a>
+                <figcaption id="evidence-map-visual-caption" data-i18n="evidenceMapFigureCaption">Open the project-authored board for a printable view. The interactive map and text sequence carry the same meaning.</figcaption>
+              </figure>
+              <p class="research-boundary foundation-evidence-boundary" data-i18n="evidenceMapBoundary">A decision map is a reasoning aid, not proof that a source is correct, a tool ran, or a learner mastered the method.</p>
+            </section>
             <div class="foundation-visuals" id="foundation-visuals" aria-labelledby="foundation-visuals-title">
               <div class="foundation-visuals-head">
-                <div class="index-panel-head"><span class="index-panel-number">07</span><h3 id="foundation-visuals-title" data-i18n="foundationVisualsTitle">Five foundation boards, one loop.</h3></div>
-                <p class="index-panel-intro" data-i18n="foundationVisualsIntro">Use these original boards as a quick reference. They cover the prompt contract, action evidence, recovery when proof is missing, and source checks before belief.</p>
+                <div class="index-panel-head"><span class="index-panel-number">10</span><h3 id="foundation-visuals-title" data-i18n="foundationVisualsTitle">Seven foundation boards, one loop.</h3></div>
+                <p class="index-panel-intro" data-i18n="foundationVisualsIntro">Start with the route map, then use the six check boards as quick references: prompt contract, action evidence, recovery, source checks, claim audit, and evidence-to-decision stopping.</p>
               </div>
               <div class="foundation-visual-links">
                 <a class="foundation-visual-card foundation-visual-card-wide" href="../assets/teaching/foundation-route-map-red-black.svg" target="_blank" rel="noreferrer">
@@ -491,6 +531,10 @@ Return only the rewritten message.</code></pre></div>
                 <a class="foundation-visual-card" href="../assets/teaching/claim-to-evidence-audit-red-black.svg" target="_blank" rel="noreferrer">
                   <img src="../assets/teaching/claim-to-evidence-audit-red-black.svg" alt="Claim to evidence audit teaching board" data-i18n-attr="alt:foundationClaimAuditVisualAlt" loading="lazy" />
                   <span><strong data-i18n="foundationClaimAuditVisualTitle">Claim to evidence audit</strong><small data-i18n="foundationClaimAuditVisualBody">State the claim, scope it, name the source, check the link, and keep the limit.</small></span><b aria-hidden="true">↗</b>
+                </a>
+                <a class="foundation-visual-card" href="../assets/teaching/evidence-to-decision-stop-map-red-black.svg" target="_blank" rel="noreferrer">
+                  <img src="../assets/teaching/evidence-to-decision-stop-map-red-black.svg" alt="Evidence to decision and stop teaching board" data-i18n-attr="alt:foundationEvidenceVisualAlt" loading="lazy" />
+                  <span><strong data-i18n="foundationEvidenceVisualTitle">Evidence to decision and stop</strong><small data-i18n="foundationEvidenceVisualBody">Follow a question to an observation, a bounded decision, or a deliberate stop.</small></span><b aria-hidden="true">↗</b>
                 </a>
               </div>
               <p class="research-boundary foundation-visual-boundary" data-i18n="foundationVisualsBoundary">Project-authored English boards · the surrounding explanation and alt text stay localized.</p>
@@ -535,7 +579,7 @@ Return only the rewritten message.</code></pre></div>
             <a href="../docs/skill-registry.md"><strong>26</strong><span data-i18n="mobileIndexSkills">Skills</span></a>
             <a href="reader.html?path=docs%2Fresearch%2Ffield-problems-index-2026-08-10.md&amp;lang=en" data-content-id="field-problems-index-2026-08-10"><strong>03</strong><span data-i18n="mobileIndexCases">field cases</span></a>
             <a href="../docs/governance/locale-matrix.yaml"><strong>08</strong><span data-i18n="mobileIndexLocales">locale records</span></a>
-            <a href="../assets/teaching/README.md"><strong>28</strong><span data-i18n="mobileIndexVisuals">teaching boards</span></a>
+            <a href="../assets/teaching/README.md"><strong>29</strong><span data-i18n="mobileIndexVisuals">teaching boards</span></a>
             <a href="../docs/governance/update-map.md"><strong>18</strong><span data-i18n="mobileIndexUpdates">update areas</span></a>
             <a href="../docs/governance/page-trust-registry.yaml"><strong>04</strong><span data-i18n="mobileIndexTrust">trust families</span></a>
           </nav>

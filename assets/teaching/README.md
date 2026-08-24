@@ -33,6 +33,7 @@ see before the reader works through the prose.
 - [Reliable LLM work loop](reliable-llm-work-loop-red-black.svg)
 - [Side-effect boundary decision map](side-effect-boundary-decision-map.svg)
 - [Claim to evidence audit](claim-to-evidence-audit-red-black.svg)
+- [Evidence to decision and stop](evidence-to-decision-stop-map-red-black.svg)
 
 The cards are visual explanations, not benchmark results. Their scope,
 ownership, and reuse boundary are recorded in the
