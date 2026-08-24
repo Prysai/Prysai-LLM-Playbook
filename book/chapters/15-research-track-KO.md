@@ -316,7 +316,7 @@ stop reason:
 status: research_plan | scope_checked_for_supplied_list | blocked | not_run
 ```
 
-이 receipt는 기록한 scope 안에서 일어난 일만 보여 줍니다. “조사 완료”, 최신 사실, model의 올바른 retrieval, 행동 권한을 뜻하지 않습니다.
+이 연구 기록은 명시한 범위 안에서 일어난 일만 보여 줍니다. “조사 완료”, 최신 사실, 모델이 올바르게 검색했다는 사실이나 행동 권한을 뜻하지 않습니다.
 
 <!-- chapter-navigation:start -->
 <hr>
