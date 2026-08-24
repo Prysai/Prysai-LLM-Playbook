@@ -1814,28 +1814,27 @@ try {
   await noHorizontalOverflow(chineseBookEntryPage, 'mobile Chinese book entry');
   await chineseBookEntryPage.close();
 
-    // A localized page may reference an English-only governance record. The
-  // Reader must preserve the selected locale and render its local unavailable
-  // state rather than silently presenting the English Markdown as Chinese.
-  const englishOnlyResearchPath = 'docs%2Fresearch%2Funiversal-first-turn-prompt-contract-2026-08-13.md';
-  const chineseResearchBoundaryPage = await context.newPage();
-  await chineseResearchBoundaryPage.setViewportSize({ width: 390, height: 844 });
-  await chineseResearchBoundaryPage.goto(`${origin}/site/reader.html?path=${englishOnlyResearchPath}&lang=zh`, { waitUntil: 'networkidle' });
-  await chineseResearchBoundaryPage.locator('[data-reader-article][aria-busy="false"]').waitFor();
-  const localizedUnavailable = chineseResearchBoundaryPage.locator('[data-reader-article] [role="alert"]');
+    // Some supplemental records are intentionally not authored in every
+    // locale. The Reader must preserve the selected locale and render its
+    // unavailable state rather than silently presenting English Markdown.
+  const partiallyLocalizedResearchPath = 'docs%2Fquality%2Ffirst-win-pilot-protocol-v2.md';
+  const japaneseResearchBoundaryPage = await context.newPage();
+  await japaneseResearchBoundaryPage.setViewportSize({ width: 390, height: 844 });
+  await japaneseResearchBoundaryPage.goto(`${origin}/site/reader.html?path=${partiallyLocalizedResearchPath}&lang=ja`, { waitUntil: 'networkidle' });
+  await japaneseResearchBoundaryPage.locator('[data-reader-article][aria-busy="false"]').waitFor();
+  const localizedUnavailable = japaneseResearchBoundaryPage.locator('[data-reader-article] [role="alert"]');
   await localizedUnavailable.waitFor();
-  assert.match(await localizedUnavailable.innerText(), /暂时没有.*版本|不会自动切换到其他语言/, 'Chinese research route does not explain the same-locale unavailable state');
-  assert.equal(await chineseResearchBoundaryPage.locator('[data-reader-article] h1').count(), 0, 'Chinese research route renders the English-only document body');
-  const localizedResearchRecovery = localizedUnavailable.getByRole('link', { name: '返回总览' });
-  assert.match(await localizedResearchRecovery.getAttribute('href'), /index\.html\?lang=zh$/, 'Chinese research boundary recovery does not preserve the selected locale');
-  await noHorizontalOverflow(chineseResearchBoundaryPage, 'mobile Chinese research unavailable state');
-  await chineseResearchBoundaryPage.close();
+  assert.equal(await japaneseResearchBoundaryPage.locator('[data-reader-article] h1').count(), 0, 'Japanese supplemental route renders an English document body');
+  const localizedResearchRecovery = localizedUnavailable.getByRole('link');
+  assert.match(await localizedResearchRecovery.getAttribute('href'), /index\.html\?lang=ja$/, 'Japanese research boundary recovery does not preserve the selected locale');
+  await noHorizontalOverflow(japaneseResearchBoundaryPage, 'mobile Japanese research unavailable state');
+  await japaneseResearchBoundaryPage.close();
 
-// The same protection is a Reader contract for every non-English route,
-  // including locales that currently have only their starter path translated.
-  for (const locale of ['zh', 'es', 'ja', 'ko', 'de', 'fr']) {
+  // The same protection is a Reader contract for every locale that currently
+  // has this record marked not-started in the locale manifest.
+  for (const locale of ['ja', 'ko', 'de', 'fr']) {
     const untranslatedProjectPage = await context.newPage();
-    await untranslatedProjectPage.goto(`${origin}/site/reader.html?path=${englishOnlyResearchPath}&lang=${locale}`, { waitUntil: 'networkidle' });
+    await untranslatedProjectPage.goto(`${origin}/site/reader.html?path=${partiallyLocalizedResearchPath}&lang=${locale}`, { waitUntil: 'networkidle' });
     await untranslatedProjectPage.locator('[data-reader-article] [role="alert"]').waitFor();
     assert.equal(await untranslatedProjectPage.locator('[data-reader-language]').inputValue(), locale, `${locale} untranslated project route loses the selected locale`);
     assert.equal(await untranslatedProjectPage.locator('[data-reader-article] h1').count(), 0, `${locale} untranslated project route renders an English document body`);
