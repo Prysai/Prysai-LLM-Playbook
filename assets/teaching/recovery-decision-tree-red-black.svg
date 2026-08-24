@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Recovery decision tree</title>
+  <desc id="desc">A recovery decision tree: preserve the request and observed trace, find the first mismatch, check authority, run one bounded check when permitted, and stop with a candidate or unknown result when proof is still missing.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+      <path d="M0 0 8 4 0 8Z" fill="#d71920"/>
+    </marker>
+    <style>
+      .ink { fill:#111; font-family:Arial,Helvetica,sans-serif; }
+      .mono { fill:#d71920; font-family:Consolas,'Courier New',monospace; font-weight:700; letter-spacing:1px; }
+      .muted { fill:#565650; font-family:Arial,Helvetica,sans-serif; }
+      .line { stroke:#111; stroke-width:2; fill:none; }
+      .redline { stroke:#d71920; stroke-width:4; fill:none; marker-end:url(#arrow); }
+    </style>
+  </defs>
+  <rect width="900" height="1500" fill="#f3f0e9"/>
+  <rect x="42" y="42" width="816" height="1416" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="78" y="112" class="mono" font-size="22">RECOVERY / DECISION TREE</text>
+  <text x="78" y="174" class="ink" font-size="43" font-weight="900">MAKE THE NEXT</text>
+  <text x="78" y="224" class="ink" font-size="43" font-weight="900">CHECK SMALLER.</text>
+  <text x="78" y="274" class="muted" font-size="20">Preserve the miss, verify authority, and keep the claim inside the record.</text>
+
+  <line x1="112" y1="350" x2="112" y2="1230" class="line"/>
+  <line x1="112" y1="460" x2="112" y2="500" class="redline"/>
+  <line x1="112" y1="650" x2="112" y2="690" class="redline"/>
+
+  <g transform="translate(78 316)">
+    <circle cx="34" cy="54" r="30" fill="#111"/>
+    <text x="34" y="63" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="22" font-weight="700" text-anchor="middle">01</text>
+    <rect x="86" y="0" width="684" height="146" fill="#111"/>
+    <text x="112" y="38" class="mono" fill="#fff" font-size="17">PRESERVE</text>
+    <text x="112" y="78" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="900">Keep the request and the trace.</text>
+    <text x="112" y="116" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">Save the wording, inputs, output, diff, state, and last checkpoint.</text>
+  </g>
+
+  <g transform="translate(78 510)">
+    <circle cx="34" cy="54" r="30" fill="#d71920"/>
+    <text x="34" y="63" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="22" font-weight="700" text-anchor="middle">02</text>
+    <rect x="86" y="0" width="684" height="146" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="112" y="38" class="mono" font-size="17">CLASSIFY</text>
+    <text x="112" y="78" class="ink" font-size="27" font-weight="900">Name the first mismatch.</text>
+    <text x="112" y="116" class="muted" font-size="17">Separate missing input, wrong scope, failed action, and weak proof.</text>
+  </g>
+
+  <g transform="translate(78 700)">
+    <circle cx="34" cy="54" r="30" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="34" y="63" class="mono" font-size="22" text-anchor="middle">03</text>
+    <rect x="86" y="0" width="684" height="146" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="112" y="38" class="mono" font-size="17">AUTHORITY</text>
+    <text x="112" y="78" class="ink" font-size="27" font-weight="900">Is the next check permitted?</text>
+    <text x="112" y="116" class="muted" font-size="17">If scope, permission, or input is missing, do not widen the action.</text>
+  </g>
+
+  <path d="M112 846V916M112 916H290M112 916H650" class="redline"/>
+  <g transform="translate(78 938)">
+    <rect width="352" height="170" fill="#d71920"/>
+    <text x="24" y="40" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="16" font-weight="700">YES / PERMITTED</text>
+    <text x="24" y="88" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="900">Run one safe check.</text>
+    <text x="24" y="126" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="17">Change one condition and compare.</text>
+    <text x="24" y="151" fill="#111" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700">KEEP THE ORIGINAL RECEIPT</text>
+  </g>
+  <g transform="translate(470 938)">
+    <rect width="352" height="170" fill="#111"/>
+    <text x="24" y="40" fill="#d71920" font-family="Consolas,'Courier New',monospace" font-size="16" font-weight="700">NO / NOT PERMITTED</text>
+    <text x="24" y="88" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="900">Stop and record the gap.</text>
+    <text x="24" y="126" fill="#c8c8c2" font-family="Arial,Helvetica,sans-serif" font-size="17">Mark candidate, blocked, or unknown.</text>
+    <text x="24" y="151" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="15" font-weight="700">DO NOT INVENT A SUCCESS</text>
+  </g>
+
+  <path d="M254 1108V1160H450V1200M646 1108V1160H450" class="redline"/>
+  <rect x="78" y="1208" width="744" height="132" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="104" y="1250" class="mono" font-size="17">AFTER THE CHECK</text>
+  <text x="104" y="1290" class="ink" font-size="26" font-weight="900">Supported result, narrower claim, or deliberate stop.</text>
+  <text x="104" y="1320" class="muted" font-size="17">A better rerun is evidence for that run—not a universal fix.</text>
+
+  <rect x="78" y="1372" width="744" height="52" fill="#f3f0e9" stroke="#111" stroke-width="2"/>
+  <text x="102" y="1405" class="mono" font-size="16">BOUNDARY</text>
+  <text x="222" y="1405" class="ink" font-size="18" font-weight="700">No authority or no proof? Stop with the unknown intact.</text>
+</svg>
