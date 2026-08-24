@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
+  <title id="title">The side-effect boundary decision map</title>
+  <desc id="desc">A five-stage decision map. Reading and local reversible work stay narrow; environment changes, external collaboration, and high-impact actions require progressively stronger checks, authority, and recovery evidence.</desc>
+  <rect width="900" height="1400" fill="#f6f6f2"/>
+  <rect x="40" y="30" width="820" height="10" fill="#171717"/>
+  <text x="40" y="88" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">BOUNDARY CARD / SAME GOAL, NEW RISK</text>
+  <text x="40" y="148" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">THE TARGET MOVES.</text>
+  <text x="40" y="202" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">THE CHECK MUST</text>
+  <text x="40" y="256" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="900" letter-spacing="-2">MOVE WITH IT.</text>
+  <text x="42" y="294" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="16">observe / reverse / persist / publish / confirm</text>
+
+  <line x1="78" y1="354" x2="78" y2="1138" stroke="#d71920" stroke-width="8"/>
+  <circle cx="78" cy="386" r="16" fill="#d71920"/>
+  <circle cx="78" cy="548" r="16" fill="#d71920"/>
+  <circle cx="78" cy="710" r="16" fill="#d71920"/>
+  <circle cx="78" cy="872" r="16" fill="#d71920"/>
+  <circle cx="78" cy="1034" r="16" fill="#d71920"/>
+
+  <g transform="translate(126 330)">
+    <rect width="734" height="126" fill="#171717"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">A / OBSERVE</text>
+    <text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Read the named target.</text>
+    <text x="24" y="104" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">Path, host, account, and data scope stay visible.</text>
+  </g>
+  <g transform="translate(126 492)">
+    <rect width="734" height="126" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">B / REVERSE</text>
+    <text x="24" y="78" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Keep the smallest local change.</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Save an original, diff, or no-write check before editing.</text>
+  </g>
+  <g transform="translate(126 654)">
+    <rect width="734" height="126" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">C / PERSIST</text>
+    <text x="24" y="78" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Name what will remain.</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Installation, data writes, network calls, and recovery now matter.</text>
+  </g>
+  <g transform="translate(126 816)">
+    <rect width="734" height="126" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+    <text x="24" y="34" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">D / PUBLISH</text>
+    <text x="24" y="78" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Re-check audience and revision.</text>
+    <text x="24" y="104" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">A login signal is not permission to push, send, or publish.</text>
+  </g>
+  <g transform="translate(126 978)">
+    <rect width="734" height="126" fill="#d71920"/>
+    <text x="24" y="34" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">E / CONFIRM</text>
+    <text x="24" y="78" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Stop before hard-to-reverse effects.</text>
+    <text x="24" y="104" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="15">Exact authority, human confirmation, and tested recovery are required.</text>
+  </g>
+
+  <rect x="40" y="1180" width="820" height="132" fill="#171717"/>
+  <text x="64" y="1222" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">STOP RULE / UNKNOWN TARGET OR EFFECT</text>
+  <text x="64" y="1266" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="900">NARROW THE TASK OR STOP.</text>
+  <text x="64" y="1297" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="17">A plan, login, or visible tool is not evidence that the action happened.</text>
+  <text x="40" y="1360" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / AUTHORITY FOLLOWS EFFECT</text>
+</svg>
