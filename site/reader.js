@@ -501,6 +501,21 @@
     { tokens: ['project-evidence-snapshot', 'content-status', 'release-readiness'], path: 'assets/teaching/project-evidence-snapshot-red-black.svg', step: 3 },
   ];
 
+  // The compact compass is the deliberate fallback for a page that has no
+  // topic-specific board. Its surrounding copy and text equivalent are
+  // localized here; the SVG itself stays a small, project-authored English
+  // label set rather than pretending to be an eight-language image.
+  const readerRouteCompassCopy = {
+    en: { summary: 'Reader route compass', intro: 'Use four moves to turn one page into one checkable next step.', aria: 'Four-step reader route compass', open: 'Open the full-size reader route compass', alt: 'Four-step reader route compass: name the question, try one bounded action, keep and check the record, then transfer the method or stop.', caption: 'Project-authored reader route compass: name the question, try one bounded action, keep and check the record, then transfer the method or stop.', boundary: 'This is a reading aid, not evidence that a model acted, a learner understood, or a method transferred.', fallback: 'Read the compass as text', fallbackIntro: 'The same four moves remain available here without relying on the image.', labels: ['Read', 'Try', 'Check', 'Move or stop'], bodies: ['Name the decision or distinction this page should clarify.', 'Choose one small action with a clear boundary and stop point.', 'Keep the output, diff, source, or other record that lets you inspect the result.', 'Repeat the method on a changed task, or stop and keep the unknown visible.'], nextQuestions: ['What question am I trying to answer?', 'What is the smallest safe action?', 'What record will let me check it?', 'Can I transfer this, or should I stop?'] },
+    zh: { summary: '阅读路线指南', intro: '用四步把一页内容变成下一项可检查的小行动。', aria: '四步阅读路线指南', open: '打开完整尺寸的阅读路线图', alt: '四步阅读路线图：命名问题，尝试一次有边界的行动，保留并检查记录，然后迁移方法或停止。', caption: '项目原创阅读路线图：命名问题，尝试一次有边界的行动，保留并检查记录，然后迁移方法或停止。', boundary: '这是一份阅读辅助，不证明模型已经行动、学习者已经理解，或方法已经迁移成功。', fallback: '按文字阅读路线图', fallbackIntro: '即使不依赖图片，相同的四步路线也会在这里提供。', labels: ['阅读', '尝试', '检查', '迁移或停止'], bodies: ['说清楚本页要帮助你判断的决定或区别。', '选择一次范围明确、设有停止点的小行动。', '保留输出、差异、来源或其他能让你检查结果的记录。', '把方法放到变式任务上再试一次；如果证据不足，就停下来并保留未知。'], nextQuestions: ['我正在回答什么问题？', '最小的安全行动是什么？', '哪条记录能让我检查结果？', '可以迁移，还是应该停止？'] },
+    es: { summary: 'Brújula del recorrido de lectura', intro: 'Usa cuatro movimientos para convertir una página en un siguiente paso que puedas comprobar.', aria: 'Brújula de cuatro pasos para leer la página', open: 'Abrir la brújula de lectura a tamaño completo', alt: 'Brújula de lectura en cuatro pasos: nombrar la pregunta, probar una acción acotada, conservar y revisar el registro, y transferir el método o detenerse.', caption: 'Brújula de lectura original del proyecto: nombra la pregunta, prueba una acción acotada, conserva y revisa el registro, y transfiere el método o detente.', boundary: 'Es una ayuda para orientarse, no una prueba de que el modelo actuó, de que alguien comprendió ni de que el método se transfirió.', fallback: 'Leer la brújula como texto', fallbackIntro: 'Los mismos cuatro movimientos están disponibles sin depender de la imagen.', labels: ['Leer', 'Probar', 'Comprobar', 'Transferir o detenerse'], bodies: ['Nombra la decisión o distinción que esta página debe aclarar.', 'Elige una acción pequeña, con alcance y punto de parada claros.', 'Conserva la salida, el diff, la fuente u otro registro que permita revisar el resultado.', 'Repite el método en una tarea distinta; si falta evidencia, detente y deja visible lo que aún no sabes.'], nextQuestions: ['¿Qué pregunta intento responder?', '¿Cuál es la acción segura más pequeña?', '¿Qué registro me permitirá comprobarlo?', '¿Puedo transferirlo o debo detenerme?'] },
+    ja: { summary: '読者ルート・コンパス', intro: '4つの動きで、1ページを確認できる次の一歩に変えます。', aria: '4段階の読者ルート・コンパス', open: '読者ルート・コンパスを原寸で開く', alt: '4段階の読者ルート・コンパス：問いを言葉にし、範囲を区切った操作を1つ試し、記録を残して確認し、方法を応用するか停止する。', caption: 'プロジェクト作成の読者ルート・コンパス：問いを言葉にし、範囲を区切った操作を1つ試し、記録を残して確認し、方法を応用するか停止します。', boundary: 'これは読解の補助であり、モデルの実行、学習者の理解、方法の転用を証明するものではありません。', fallback: 'コンパスを文字で読む', fallbackIntro: '画像に頼らず、同じ4つの動きをここで確認できます。', labels: ['読む', '試す', '確認する', '応用する／停止する'], bodies: ['このページが明らかにする判断や区別を言葉にします。', '範囲と停止点が明確な、小さな操作を1つ選びます。', '結果を確認できる出力、差分、出典などの記録を残します。', '別の課題で方法をもう一度試します。根拠が足りなければ停止し、未知の部分を残します。'], nextQuestions: ['何を明らかにしたいのか？', '最小限で安全な操作は何か？', '何を記録すれば確認できるか？', '応用できるか、それとも停止するか？'] },
+    ko: { summary: '읽기 경로 나침반', intro: '네 가지 동작으로 한 페이지를 확인 가능한 다음 단계로 바꿔 보세요.', aria: '네 단계 읽기 경로 나침반', open: '읽기 경로 나침반 전체 크기로 열기', alt: '네 단계 읽기 경로 나침반: 질문을 정하고, 범위가 제한된 작업 하나를 시도하고, 기록을 남겨 확인한 뒤 방법을 옮겨 쓰거나 중지한다.', caption: '프로젝트가 만든 읽기 경로 나침반입니다. 질문을 정하고, 범위가 제한된 작업 하나를 시도하고, 기록을 남겨 확인한 뒤 방법을 옮겨 쓰거나 중지합니다.', boundary: '이 자료는 읽기를 돕는 안내일 뿐, 모델 실행·학습자의 이해·방법의 전이를 증명하지 않습니다.', fallback: '나침반을 텍스트로 읽기', fallbackIntro: '이미지 없이도 같은 네 가지 동작을 여기서 확인할 수 있습니다.', labels: ['읽기', '시도하기', '확인하기', '전이 또는 중지'], bodies: ['이 페이지가 분명히 해 주어야 할 판단이나 구분을 정합니다.', '범위와 중지 지점이 분명한 작은 작업 하나를 선택합니다.', '결과를 점검할 수 있도록 출력, diff, 출처 또는 다른 기록을 남깁니다.', '다른 과제에서 방법을 다시 시도합니다. 근거가 부족하면 중지하고 모르는 부분을 그대로 남깁니다.'], nextQuestions: ['무슨 질문에 답하려는가?', '가장 작고 안전한 작업은 무엇인가?', '무엇을 기록해야 확인할 수 있는가?', '옮겨 쓸 수 있는가, 아니면 중지해야 하는가?'] },
+    de: { summary: 'Kompass für den Lesepfad', intro: 'Vier Schritte machen aus einer Seite einen überprüfbaren nächsten Schritt.', aria: 'Kompass für den Lesepfad in vier Schritten', open: 'Kompass für den Lesepfad in voller Größe öffnen', alt: 'Kompass für den Lesepfad in vier Schritten: Frage benennen, eine begrenzte Aktion versuchen, den Beleg sichern und prüfen, dann die Methode übertragen oder anhalten.', caption: 'Projektbezogener Kompass für den Lesepfad: Frage benennen, eine begrenzte Aktion versuchen, den Beleg sichern und prüfen, dann die Methode übertragen oder anhalten.', boundary: 'Das ist eine Lesehilfe, kein Beleg für eine Modellaktion, ein Verständnis der Lernenden oder eine erfolgreiche Übertragung.', fallback: 'Den Kompass als Text lesen', fallbackIntro: 'Dieselben vier Schritte stehen auch ohne das Bild zur Verfügung.', labels: ['Lesen', 'Versuchen', 'Prüfen', 'Übertragen oder anhalten'], bodies: ['Benenne die Entscheidung oder Unterscheidung, die diese Seite klären soll.', 'Wähle eine kleine Aktion mit klarem Umfang und Haltepunkt.', 'Sichere Ausgabe, Diff, Quelle oder einen anderen Beleg, mit dem du das Ergebnis prüfen kannst.', 'Wiederhole die Methode an einer veränderten Aufgabe. Fehlt der Beleg, halte an und lasse das Unbekannte sichtbar.'], nextQuestions: ['Welche Frage will ich beantworten?', 'Was ist die kleinste sichere Aktion?', 'Welcher Beleg ermöglicht die Prüfung?', 'Kann ich die Methode übertragen oder sollte ich anhalten?'] },
+    'zh-tw': { summary: '閱讀路線指南', intro: '用四個動作，把一頁內容變成下一個可檢查的步驟。', aria: '四步閱讀路線指南', open: '開啟完整尺寸的閱讀路線圖', alt: '四步閱讀路線圖：說清楚問題，嘗試一次有界線的行動，保留並檢查紀錄，接著套用方法或停止。', caption: '專案原創閱讀路線圖：說清楚問題，嘗試一次有界線的行動，保留並檢查紀錄，接著套用方法或停止。', boundary: '這是閱讀輔助，不代表模型已採取行動、學習者已理解，或方法已成功套用到新任務。', fallback: '依文字閱讀路線圖', fallbackIntro: '即使不依賴圖片，相同的四個動作也會在這裡提供。', labels: ['閱讀', '嘗試', '檢查', '套用或停止'], bodies: ['說清楚本頁要協助你判斷的決定或差異。', '選擇一次範圍明確、設有停止點的小型行動。', '保留輸出、差異、來源或其他能讓你檢查結果的紀錄。', '把方法放到不同的任務上再試一次；證據不足時就停止，並保留未知之處。'], nextQuestions: ['我正在回答什麼問題？', '最小且安全的行動是什麼？', '哪一份紀錄能讓我檢查結果？', '可以套用，還是應該停止？'] },
+    fr: { summary: 'Boussole du parcours de lecture', intro: 'Quatre mouvements transforment une page en prochaine étape vérifiable.', aria: 'Boussole du parcours de lecture en quatre étapes', open: 'Ouvrir la boussole du parcours en taille réelle', alt: 'Boussole du parcours de lecture en quatre étapes : formuler la question, essayer une action délimitée, conserver et vérifier le relevé, puis transférer la méthode ou s’arrêter.', caption: 'Boussole du parcours de lecture créée par le projet : formuler la question, essayer une action délimitée, conserver et vérifier le relevé, puis transférer la méthode ou s’arrêter.', boundary: 'C’est une aide à la lecture, pas la preuve d’une action du modèle, de la compréhension d’un apprenant ou d’un transfert réussi.', fallback: 'Lire la boussole sous forme de texte', fallbackIntro: 'Les quatre mêmes mouvements restent disponibles sans dépendre de l’image.', labels: ['Lire', 'Essayer', 'Vérifier', 'Transférer ou s’arrêter'], bodies: ['Formulez la décision ou la distinction que cette page doit éclairer.', 'Choisissez une petite action dont le périmètre et le point d’arrêt sont clairs.', 'Conservez la sortie, le diff, la source ou tout autre relevé qui permet de vérifier le résultat.', 'Réessayez la méthode sur une tâche différente ; si la preuve manque, arrêtez-vous et laissez l’inconnu visible.'], nextQuestions: ['À quelle question est-ce que je réponds ?', 'Quelle est la plus petite action sûre ?', 'Quel relevé me permettra de vérifier ?', 'Puis-je transférer la méthode ou dois-je m’arrêter ?'] },
+  };
+
   const readerRecoveryMapSteps = [
     { id: 'preserve', contentId: 'chapter-09-verification-and-recovery', path: 'book/chapters/09-verification-and-recovery-EN.md' },
     { id: 'classify', contentId: 'chapter-12-agent-loop-and-stop', path: 'book/chapters/12-agent-loop-and-stop-EN.md' },
@@ -928,13 +943,14 @@
     selectStep(selectedIndex);
   };
   const currentReaderVisualCopy = () => readerVisualCopy[uiLanguage()] || readerVisualCopy.en;
+  const currentReaderRouteCompassCopy = () => readerRouteCompassCopy[uiLanguage()] || readerRouteCompassCopy.en;
   const chooseReaderVisual = (selection) => {
     if (!selection?.path) return null;
     const haystack = `${selection.contentId || ''} ${selection.path}`.toLowerCase();
     const match = readerVisualMap.find((candidate) => candidate.tokens.some((token) => haystack.includes(token)));
     if (match) return match;
     if (/^(?:book|skills)\//i.test(selection.path)) {
-      return { path: 'assets/teaching/reliable-llm-work-loop-red-black.svg', step: 0, fallback: true };
+      return { path: 'assets/teaching/reader-route-compass-red-black.svg', step: 0, fallback: true };
     }
     return null;
   };
@@ -1015,14 +1031,18 @@
   };
   const renderReaderInlineVisual = (selection, title) => {
     const visual = chooseReaderVisual(selection);
-    if (!visual || visual.fallback || !article) return;
+    if (!visual || !article) return;
     const existing = article.querySelector('[data-reader-inline-visual]');
     existing?.remove();
-    const strings = currentReaderVisualCopy();
-    const routeStrings = currentReaderRouteMapCopy();
+    const strings = visual.fallback ? currentReaderRouteCompassCopy() : currentReaderVisualCopy();
+    const routeStrings = visual.fallback ? currentReaderRouteCompassCopy() : currentReaderRouteMapCopy();
     const step = Math.max(0, Math.min(routeStrings.labels.length - 1, visual.step || 0));
     const label = routeStrings.labels[step];
     const body = routeStrings.bodies[step];
+    const visualOpen = visual.fallback ? strings.open : strings.visualOpen;
+    const visualAlt = visual.fallback ? strings.alt : `${strings.visualAltPrefix} ${label.toLowerCase()}: ${body}`;
+    const visualCaption = visual.fallback ? strings.caption : `${strings.visualCaptionPrefix} ${title || label}. ${body}`;
+    const visualBoundary = visual.fallback ? strings.boundary : strings.visualBoundary;
     const figure = document.createElement('figure');
     figure.className = 'reader-inline-visual';
     figure.dataset.readerInlineVisual = visual.path;
@@ -1031,13 +1051,13 @@
     link.target = '_blank';
     link.rel = 'noreferrer';
     link.href = directHref(visual.path);
-    link.setAttribute('aria-label', `${strings.visualOpen}: ${label}`);
+    link.setAttribute('aria-label', `${visualOpen}: ${label}`);
     const thesis = document.createElement('span');
     thesis.className = 'reader-visual-thesis';
     thesis.textContent = `${label} · ${routeStrings.nextQuestions[step]}`;
     const image = document.createElement('img');
     image.src = directHref(visual.path);
-    image.alt = `${strings.visualAltPrefix} ${label.toLowerCase()}: ${body}`;
+    image.alt = visualAlt;
     // This is the one teaching image placed in the reading flow. Load it as
     // part of the page so a reader does not reach an empty card while the
     // browser is still deciding whether a lazy image is near the viewport.
@@ -1046,14 +1066,36 @@
     link.append(thesis, image);
     const openLabel = document.createElement('span');
     openLabel.className = 'reader-image-link-label';
-    openLabel.textContent = strings.visualOpen;
+    openLabel.textContent = visualOpen;
     link.append(openLabel);
     const caption = document.createElement('figcaption');
-    caption.textContent = `${strings.visualCaptionPrefix} ${title || label}. ${body}`;
+    caption.textContent = visualCaption;
     const boundary = document.createElement('p');
     boundary.className = 'reader-inline-visual-boundary';
-    boundary.textContent = strings.visualBoundary;
+    boundary.textContent = visualBoundary;
     figure.append(link, caption, boundary);
+    if (visual.fallback) {
+      const fallback = document.createElement('details');
+      fallback.className = 'reader-route-compass-fallback';
+      const fallbackSummary = document.createElement('summary');
+      fallbackSummary.textContent = strings.fallback;
+      const fallbackIntro = document.createElement('p');
+      fallbackIntro.textContent = strings.fallbackIntro;
+      const fallbackList = document.createElement('ol');
+      routeStrings.labels.forEach((routeLabel, index) => {
+        const item = document.createElement('li');
+        const itemTitle = document.createElement('strong');
+        itemTitle.textContent = routeLabel;
+        const itemBody = document.createElement('span');
+        itemBody.textContent = routeStrings.bodies[index];
+        const itemQuestion = document.createElement('em');
+        itemQuestion.textContent = routeStrings.nextQuestions[index];
+        item.append(itemTitle, itemBody, itemQuestion);
+        fallbackList.append(item);
+      });
+      fallback.append(fallbackSummary, fallbackIntro, fallbackList);
+      figure.append(fallback);
+    }
     const openingParagraph = article.querySelector(':scope > p');
     const insertionAnchor = mobilePageToc?.parentElement === article
       ? mobilePageToc
@@ -1150,7 +1192,7 @@
     // reading flow. The anatomy board fills the remaining gap instead of
     // stacking two large diagrams on the same page.
     const dedicatedVisual = chooseReaderVisual(selection);
-    if (dedicatedVisual && !dedicatedVisual.fallback) return;
+    if (dedicatedVisual) return;
     const strings = currentReaderVisualCopy();
     if (!strings.conceptAnatomyOpen) return;
     const details = document.createElement('details');
@@ -1199,7 +1241,7 @@
   const renderReaderVisualCompanion = (selection) => {
     if (!visualCompanion) return;
     const visual = chooseReaderVisual(selection);
-    if (!visual) {
+    if (!visual || visual.fallback) {
       visualCompanion.hidden = true;
       return;
     }
