@@ -1808,6 +1808,34 @@ try {
   assert.equal(await inlineConceptMap.locator('ol').count(), 1, 'Reader inline concept map has no static ordered-list fallback');
   assert.match(await inlineConceptMap.getAttribute('aria-controls') || '', /^reader-inline-concept-map-list$/, 'Reader inline concept map does not expose its controlled list');
 
+  // A page without a topic-specific board must still expose the compact route
+  // compass immediately after its opening explanation. Keep this assertion at
+  // the 390px viewport so a long mobile TOC cannot hide the first next action.
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(`${origin}/site/reader.html?path=skills%2Fprysai-task-protocol%2FSKILL.md&lang=en`, { waitUntil: 'networkidle' });
+  await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
+  const compass = page.locator('[data-reader-inline-visual]');
+  assert.match(await compass.getAttribute('data-reader-inline-visual') || '', /reader-route-compass-red-black\.svg$/, 'Reader fallback page did not use the route compass');
+  assert.equal(await compass.locator('img').count(), 1, 'Reader route compass has no image');
+  assert.notEqual((await compass.locator('img').getAttribute('alt') || '').trim(), '', 'Reader route compass has no alternative text');
+  assert.notEqual((await compass.locator('figcaption').innerText()).trim(), '', 'Reader route compass has no caption');
+  assert.equal(await compass.locator('.reader-route-compass-fallback li').count(), 4, 'Reader route compass has no four-step text equivalent');
+  const compassOrder = await page.evaluate(() => {
+    const article = document.querySelector('[data-reader-article]');
+    const opening = article?.querySelector(':scope > p');
+    const figure = article?.querySelector('[data-reader-inline-visual]');
+    const toc = article?.querySelector('[data-reader-mobile-page-toc]');
+    return {
+      figureAfterOpening: Boolean(opening && figure && (opening.compareDocumentPosition(figure) & Node.DOCUMENT_POSITION_FOLLOWING)),
+      figureBeforeMobileToc: Boolean(figure && toc && (figure.compareDocumentPosition(toc) & Node.DOCUMENT_POSITION_FOLLOWING)),
+      scrollWidth: document.documentElement.scrollWidth,
+      clientWidth: document.documentElement.clientWidth,
+    };
+  });
+  assert.equal(compassOrder.figureAfterOpening, true, 'Reader route compass is not placed after the opening explanation');
+  assert.equal(compassOrder.figureBeforeMobileToc, true, 'Reader route compass was pushed below the mobile page contents');
+  assert.equal(compassOrder.scrollWidth, compassOrder.clientWidth, `mobile Reader route compass overflows horizontally: ${JSON.stringify(compassOrder)}`);
+
   // The visual route map is reader-facing content, not English-only chrome.
   // Recheck every supported locale so labels, links, and mobile layout cannot
   // silently regress when a dictionary or manifest entry changes.
