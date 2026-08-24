@@ -388,6 +388,36 @@ a:hover { color: var(--reader-link-hover); }
 .reader-route-map-figure .reader-image-link-label { display: block; margin-top: 6px; font-size: .74rem; font-weight: 700; }
 .reader-route-map-figure figcaption { margin-top: 8px; color: var(--reader-muted); font-size: .7rem; line-height: 1.45; }
 .reader-route-map-boundary { margin: 14px 0 0; color: var(--reader-muted); font-size: .72rem; line-height: 1.45; }
+.reader-concept-map summary, .reader-visual-companion summary { cursor: pointer; color: var(--reader-ink); font-size: .9rem; font-weight: 800; line-height: 1.3; }
+.reader-concept-map summary:hover, .reader-concept-map summary:focus-visible,
+.reader-visual-companion summary:hover, .reader-visual-companion summary:focus-visible { color: var(--reader-red); }
+.reader-concept-map-body, .reader-visual-companion-body { padding-top: 14px; }
+.reader-concept-map-intro, .reader-visual-companion-intro { margin: 0 0 14px; color: var(--reader-muted); font-size: .76rem; line-height: 1.45; }
+.reader-concept-map-graph { display: grid; gap: 10px; }
+.reader-concept-map-root { display: grid; gap: 4px; padding: 10px; border: 1px solid var(--reader-ink); border-left: 4px solid var(--reader-red); background: #fafaf8; }
+.reader-concept-map-root .reader-aside-label { margin: 0; color: var(--reader-red); }
+.reader-concept-map-root strong { overflow-wrap: anywhere; font-size: .82rem; line-height: 1.3; }
+.reader-concept-map-branches { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.reader-concept-map-branches::before { position: absolute; top: -6px; right: 25%; left: 25%; height: 1px; background: var(--reader-line); content: ''; }
+.reader-concept-map-node { position: relative; display: grid; gap: 4px; min-width: 0; min-height: 58px; align-content: start; padding: 8px; border: 1px solid var(--reader-line); border-top: 3px solid var(--reader-line); color: var(--reader-ink); background: var(--reader-white); text-decoration: none; }
+.reader-concept-map-node::before { position: absolute; top: -8px; left: 50%; width: 1px; height: 7px; background: var(--reader-line); content: ''; }
+.reader-concept-map-node:hover, .reader-concept-map-node:focus-visible { border-color: var(--reader-red); color: var(--reader-red); background: #fffafb; }
+.reader-concept-map-node span { color: var(--reader-red); font: 700 .64rem/1 Consolas, 'Courier New', monospace; }
+.reader-concept-map-node strong { overflow-wrap: anywhere; font-size: .73rem; line-height: 1.3; }
+.reader-concept-map-fallback { margin-top: 14px; }
+.reader-concept-map-fallback summary { color: var(--reader-muted); font-size: .75rem; font-weight: 700; }
+.reader-concept-map-fallback > p { margin: 10px 0; color: var(--reader-muted); font-size: .72rem; line-height: 1.45; }
+.reader-concept-map-fallback ol { display: grid; gap: 8px; margin: 0; padding-left: 20px; }
+.reader-concept-map-fallback li { padding-left: 2px; color: var(--reader-muted); font-size: .72rem; line-height: 1.4; }
+.reader-concept-map-fallback li a { font-weight: 700; }
+.reader-concept-map-boundary, .reader-visual-companion-boundary { margin: 14px 0 0; color: var(--reader-muted); font-size: .72rem; line-height: 1.45; }
+.reader-visual-companion figure { margin: 0; }
+.reader-visual-companion .reader-image-link { margin: 0; padding: 10px; border: 1px solid var(--reader-line); background: #f1f1ed; text-decoration: none; }
+.reader-visual-companion .reader-image-link img { display: block; width: 100%; max-height: 230px; object-fit: contain; border: 1px solid var(--reader-line); background: #fff; }
+.reader-visual-companion .reader-visual-thesis { display: block; margin-bottom: 8px; color: var(--reader-ink); font-size: .78rem; font-weight: 800; line-height: 1.35; }
+.reader-visual-companion .reader-image-link-label { display: block; margin-top: 7px; font-size: .72rem; font-weight: 700; }
+.reader-visual-companion .reader-image-link:hover img, .reader-visual-companion .reader-image-link:focus-visible img { border-color: var(--reader-red); }
+.reader-visual-companion figcaption { margin-top: 8px; color: var(--reader-muted); font-size: .7rem; line-height: 1.45; }
 .reader-source-link { display: block; margin-top: 22px; font-size: .86rem; font-weight: 700; }
 .reader-loading { color: var(--reader-muted); }
 .reader-error { padding: 22px; border-left: 5px solid var(--reader-red); background: #fff0f2; }
@@ -488,6 +518,8 @@ a:hover { color: var(--reader-link-hover); }
   .reader-header-inner, .reader-footer-inner, .reader-shell { width: min(100% - 28px, 1160px); }
   .reader-article > h1 { overflow-wrap: anywhere; font-size: 2.15rem; }
   .reader-aside-card + .reader-aside-card { border-top: 0; }
+  .reader-concept-map-branches { grid-template-columns: 1fr; }
+  .reader-concept-map-branches::before, .reader-concept-map-node::before { display: none; }
   .reader-prompt-block pre { white-space: pre-wrap; overflow-wrap: anywhere; }
   .reader-core-actions { display: grid; grid-template-columns: 1fr; }
   .reader-core-button { width: 100%; overflow-wrap: anywhere; }
