@@ -46,6 +46,15 @@
   const chapterLabel = document.querySelector('[data-reader-chapter-label]');
   const chapterStatus = document.querySelector('[data-reader-chapter-status]');
   const coreCard = document.querySelector('[data-reader-core-card]');
+  const corePath = document.querySelector('[data-reader-core-path]');
+  const corePathSummary = document.querySelector('[data-reader-core-path-summary]');
+  const corePathIntro = document.querySelector('[data-reader-core-path-intro]');
+  const corePathNodes = document.querySelector('[data-reader-core-path-nodes]');
+  const corePathFigureLink = document.querySelector('[data-reader-core-path-figure-link]');
+  const corePathImage = document.querySelector('[data-reader-core-path-image]');
+  const corePathOpen = document.querySelector('[data-reader-core-path-open]');
+  const corePathCaption = document.querySelector('[data-reader-core-path-caption]');
+  const corePathBoundary = document.querySelector('[data-reader-core-path-boundary]');
   const coreCurrentTitle = document.querySelector('[data-reader-core-current-title]');
   const coreProgress = document.querySelector('[data-reader-core-progress]');
   const coreUnitsList = document.querySelector('[data-reader-core-units]');
@@ -402,6 +411,16 @@
     'zh-tw': ['一張解釋卡與三項觀察表', '一張四欄位任務卡與第一次輸出', '四個附來源引文的失敗標記', '一張檢查表、最小差異與一項限制', '一份獨立任務核對紀錄'],
     fr: ['une fiche d’explication et un tableau de trois observations', 'une carte de tâche à quatre champs et la première réponse', 'quatre erreurs repérées avec leurs citations sources', 'un tableau de vérification, une différence minimale et une limite', 'une fiche indépendante de vérification de tâche'],
   };
+  const corePathCopy = {
+    en: { summary: 'Foundation Core path map', intro: 'Five units move from a safe first attempt to a checked method you can repeat. Select a unit to open it.', aria: 'Five units in the LLM Foundation Core', current: 'Current unit', open: 'Open this unit', figureOpen: 'Open full-size path visual', figureAlt: 'Five-unit LLM Foundation Core path: attempt, frame, notice, repair, and transfer.', figureCaption: 'Project-authored path board. The ordered list is the accessible explanation; the board is an orientation aid.', boundary: 'This is a candidate route and a local progress aid. It does not prove completion, learning, retention, or transfer.', bodies: ['Use a fictional, offline task and keep the first response as your baseline.', 'Separate supplied facts, missing facts, limits, and the shape of the requested answer.', 'Mark omissions, unsupported additions, forced ambiguity, and overconfident language.', 'Compare the result with evidence, change one condition, and record what remains unknown.', 'Repeat the method on a new task; a successful route is practice, not mastery.'] },
+    zh: { summary: 'LLM 基础核心路线图', intro: '五个单元从一次安全尝试走到可以重复的方法。选择一个单元即可打开它。', aria: 'LLM 基础核心的五个单元', current: '当前单元', open: '打开这个单元', figureOpen: '打开完整路线图', figureAlt: 'LLM 基础核心五单元路线图：尝试、框定、识别、修正和迁移。', figureCaption: '项目原创路线图。下面的有序列表才是无障碍解释，图板只是路线提示。', boundary: '这是候选路线和本地进度辅助工具，不证明完成、学习、保持或迁移。', bodies: ['使用虚构的离线任务，并保留第一次回答作为基线。', '分开已提供的事实、缺失的事实、限制和所需回答的形式。', '标出遗漏、无依据的新增内容、被迫含混和过度自信的表述。', '用证据对照结果，只改变一个条件，并记录仍然未知的部分。', '在新任务上重复方法；走通路线是练习，不等于掌握。'] },
+    es: { summary: 'Mapa del Núcleo de fundamentos LLM', intro: 'Cinco unidades llevan del primer intento seguro a un método que puedes repetir. Elige una para abrirla.', aria: 'Cinco unidades del Núcleo de fundamentos LLM', current: 'Unidad actual', open: 'Abrir esta unidad', figureOpen: 'Abrir el visual completo del recorrido', figureAlt: 'Recorrido de cinco unidades del Núcleo de fundamentos LLM: intentar, delimitar, detectar, corregir y transferir.', figureCaption: 'Tablero original del proyecto. La lista ordenada es la explicación accesible; el tablero solo orienta.', boundary: 'Es un recorrido candidato y una ayuda de progreso local. No demuestra finalización, aprendizaje, retención ni transferencia.', bodies: ['Usa una tarea ficticia y sin conexión; conserva la primera respuesta como línea de base.', 'Separa los hechos aportados, los que faltan, los límites y la forma de respuesta solicitada.', 'Marca omisiones, añadidos sin respaldo, ambigüedad forzada y lenguaje demasiado seguro.', 'Compara el resultado con pruebas, cambia una sola condición y anota lo que sigue sin saberse.', 'Repite el método en una tarea nueva; completar el recorrido es práctica, no dominio.'] },
+    ja: { summary: 'LLM基礎コアのルートマップ', intro: '5つのユニットで、安全な最初の試行から繰り返せる方法まで進みます。選ぶと開けます。', aria: 'LLM基礎コアの5ユニット', current: '現在のユニット', open: 'このユニットを開く', figureOpen: 'ルート図を原寸で開く', figureAlt: 'LLM基礎コア5ユニットのルート：試行、枠決め、発見、修正、転用。', figureCaption: 'プロジェクト作成のルートボードです。順序付きリストがアクセシブルな説明で、ボードは補助資料です。', boundary: 'これは候補ルートとローカルな進捗補助です。完了、学習、保持、転用を証明するものではありません。', bodies: ['架空のオフライン課題で試し、最初の回答を基準として残します。', '与えられた事実、欠けている事実、制約、求める回答の形を分けます。', '抜け、根拠のない追加、無理な曖昧さ、過度に断定的な表現を見つけます。', '証拠と結果を照合し、条件を1つだけ変えて、まだ不明な点を記録します。', '初めての課題でも方法を繰り返します。ルートを通ることは練習であり、習得ではありません。'] },
+    ko: { summary: 'LLM 기초 코어 경로 지도', intro: '다섯 단원은 안전한 첫 시도에서 반복 가능한 방법까지 이어집니다. 단원을 선택해 여세요.', aria: 'LLM 기초 코어의 다섯 단원', current: '현재 단원', open: '이 단원 열기', figureOpen: '전체 경로 그림 열기', figureAlt: 'LLM 기초 코어 다섯 단원 경로: 시도, 범위 설정, 발견, 수정, 전이.', figureCaption: '프로젝트가 만든 경로 보드입니다. 순서 목록이 접근 가능한 설명이고 보드는 보조 자료입니다.', boundary: '후보 경로와 로컬 진행 보조일 뿐입니다. 완료, 학습, 유지 또는 전이를 증명하지 않습니다.', bodies: ['가상의 오프라인 작업으로 시도하고 첫 응답을 기준 기록으로 남깁니다.', '제공된 사실, 빠진 사실, 제한과 요청한 답변 형식을 분리합니다.', '누락, 근거 없는 추가, 억지로 모호해진 부분과 지나치게 확신하는 표현을 표시합니다.', '증거와 결과를 대조하고 조건 하나만 바꾼 뒤 아직 모르는 내용을 기록합니다.', '새 작업에서도 방법을 반복합니다. 경로를 끝내는 것은 연습이지 숙련의 증거가 아닙니다.'] },
+    de: { summary: 'Routenkarte für den LLM-Grundlagenkern', intro: 'Fünf Einheiten führen vom sicheren ersten Versuch zu einer wiederholbaren Methode. Wähle eine Einheit zum Öffnen.', aria: 'Fünf Einheiten im LLM-Grundlagenkern', current: 'Aktuelle Einheit', open: 'Diese Einheit öffnen', figureOpen: 'Routenvisualisierung in voller Größe öffnen', figureAlt: 'Fünfstufige Route des LLM-Grundlagenkerns: versuchen, abgrenzen, erkennen, korrigieren und übertragen.', figureCaption: 'Projektbezogene Routentafel. Die geordnete Liste ist die zugängliche Erklärung; die Tafel dient der Orientierung.', boundary: 'Dies ist eine Kandidatenroute und eine lokale Fortschrittshilfe. Sie belegt weder Abschluss noch Lernen, Behalten oder Übertragung.', bodies: ['Verwende eine fiktive Offline-Aufgabe und bewahre die erste Antwort als Ausgangspunkt auf.', 'Trenne gelieferte Fakten, fehlende Fakten, Grenzen und die gewünschte Antwortform.', 'Markiere Auslassungen, unbelegte Ergänzungen, erzwungene Mehrdeutigkeit und übermäßig sichere Formulierungen.', 'Vergleiche das Ergebnis mit Belegen, ändere genau eine Bedingung und notiere, was unbekannt bleibt.', 'Wiederhole die Methode an einer neuen Aufgabe; die Route ist Übung, kein Beherrschungsnachweis.'] },
+    'zh-tw': { summary: 'LLM 基礎核心路線圖', intro: '五個單元從一次安全嘗試走到可以重複的方法。選取一個單元即可開啟。', aria: 'LLM 基礎核心的五個單元', current: '目前單元', open: '開啟這個單元', figureOpen: '開啟完整路線圖', figureAlt: 'LLM 基礎核心五單元路線圖：嘗試、框定、辨識、修正與遷移。', figureCaption: '專案原創路線圖。下方有序清單才是無障礙說明，圖板只是路線提示。', boundary: '這是候選路線與本機進度輔助工具，不代表完成、學習、保留或遷移。', bodies: ['使用虛構的離線任務，並保留第一次回答作為基線。', '分開已提供的事實、缺少的事實、限制與所需回答的形式。', '標出遺漏、沒有根據的新增內容、被迫含混與過度自信的表述。', '用證據對照結果，只改變一個條件，並記錄仍然未知的部分。', '在新任務上重複方法；走完路線是練習，不等於掌握。'] },
+    fr: { summary: 'Carte du parcours fondamental LLM', intro: 'Cinq unités mènent d’un premier essai sûr à une méthode réutilisable. Sélectionnez-en une pour l’ouvrir.', aria: 'Cinq unités du parcours fondamental LLM', current: 'Unité actuelle', open: 'Ouvrir cette unité', figureOpen: 'Ouvrir le parcours en taille réelle', figureAlt: 'Parcours en cinq unités : essayer, cadrer, repérer, corriger et transférer.', figureCaption: 'Planche originale du projet. La liste ordonnée est l’explication accessible ; la planche sert à se repérer.', boundary: 'Il s’agit d’un parcours candidat et d’une aide de progression locale. Il ne prouve ni la fin, ni l’apprentissage, ni la rétention, ni le transfert.', bodies: ['Utilisez une tâche fictive hors ligne et conservez la première réponse comme point de départ.', 'Séparez les faits fournis, les faits manquants, les limites et la forme de réponse demandée.', 'Repérez les omissions, les ajouts sans preuve, l’ambiguïté forcée et les formulations trop sûres.', 'Comparez le résultat aux preuves, ne changez qu’une condition et notez ce qui reste inconnu.', 'Répétez la méthode sur une nouvelle tâche ; parcourir la route est un entraînement, pas une maîtrise.'] },
+  };
   const coreStorageKey = 'prysai-llm-foundation-core-receipt-v1';
   const coreReceiptVersion = 1;
   let coreStorageAvailable = true;
@@ -554,6 +573,48 @@
     coreArtifact.value = entry.artifact || '';
     coreLimit.value = entry.limit || '';
     coreStatus.textContent = coreStorageAvailable ? '' : strings.coreStorageError;
+  }
+
+  function renderCorePath(selection) {
+    if (!corePath || !corePathNodes) return;
+    const currentIndex = coreUnits.findIndex((unit) => unit.contentId === selection?.contentId);
+    if (currentIndex < 0) {
+      corePath.hidden = true;
+      corePathNodes.replaceChildren();
+      return;
+    }
+    const strings = corePathCopy[uiLanguage()] || corePathCopy.en;
+    corePath.hidden = false;
+    corePath.open = false;
+    corePathSummary.textContent = strings.summary;
+    corePathIntro.textContent = strings.intro;
+    corePathNodes.setAttribute('aria-label', strings.aria);
+    corePathFigureLink.href = directHref('assets/teaching/llm-foundation-core-path-red-black.svg');
+    corePathFigureLink.setAttribute('aria-label', strings.figureOpen);
+    corePathImage.src = directHref('assets/teaching/llm-foundation-core-path-red-black.svg');
+    corePathImage.alt = strings.figureAlt;
+    corePathOpen.textContent = strings.figureOpen;
+    corePathCaption.textContent = strings.figureCaption;
+    corePathBoundary.textContent = strings.boundary;
+    corePathNodes.replaceChildren();
+    coreUnits.forEach((unit, index) => {
+      const item = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = readerHref(unit.path, '', activeLocale);
+      link.className = index === currentIndex ? 'is-current' : '';
+      link.setAttribute('aria-label', `${index + 1}. ${coreUnitTitle(unit)}`);
+      if (index === currentIndex) link.setAttribute('aria-current', 'page');
+      const number = document.createElement('span');
+      number.className = 'reader-core-path-node-number';
+      number.textContent = String(index + 1).padStart(2, '0');
+      const label = document.createElement('strong');
+      label.textContent = coreUnitTitle(unit);
+      const body = document.createElement('span');
+      body.textContent = strings.bodies[index];
+      link.append(number, label, body);
+      item.append(link);
+      corePathNodes.append(item);
+    });
   }
 
   coreReceipts = readCoreReceipts();
@@ -1900,6 +1961,8 @@ function canonicalChapterTitle(chapter) {
     if (readerAside) readerAside.hidden = true;
     renderReaderRouteMap(null);
     if (coreCard) coreCard.hidden = true;
+    if (corePath) corePath.hidden = true;
+    if (corePathNodes) corePathNodes.replaceChildren();
     coreCurrentUnitId = null;
     if (orientation) orientation.hidden = true;
     if (mobilePageToc) mobilePageToc.hidden = true;
@@ -2096,6 +2159,7 @@ function canonicalChapterTitle(chapter) {
     sourceLink.href = directHref(selection.path);
     languageSelect.value = locale;
     renderCoreTracker(selection);
+    renderCorePath(selection);
     if (selection.translationReviewPending) {
       setReaderStatus(currentReaderCopy().translationInProgress(locales[locale]?.display_name || locale));
     } else setReaderStatus('');
@@ -2129,6 +2193,7 @@ function canonicalChapterTitle(chapter) {
       return;
     }
     renderCoreTracker({ contentId: unit.contentId });
+    renderCorePath({ contentId: unit.contentId });
     coreStatus.textContent = currentReaderCopy().coreSaved;
   });
 
@@ -2150,6 +2215,7 @@ function canonicalChapterTitle(chapter) {
     }
     const currentUnit = coreUnits.find((unit) => unit.id === coreCurrentUnitId);
     if (currentUnit) renderCoreTracker({ contentId: currentUnit.contentId });
+    if (currentUnit) renderCorePath({ contentId: currentUnit.contentId });
     coreStatus.textContent = currentReaderCopy().coreCleared;
   });
 
