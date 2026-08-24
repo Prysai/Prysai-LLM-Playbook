@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1400" role="img" aria-labelledby="title desc">
+  <title id="title">First visit route to one checked LLM task</title>
+  <desc id="desc">A five-step first-visit route: choose one goal, open the LLM Foundation Core, make one safe attempt, inspect the record, and continue to the next route or stop with the unknown visible.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto">
+      <path d="M0 0 8 4 0 8Z" fill="#d71920"/>
+    </marker>
+    <style>
+      .ink { fill:#111; font-family:Arial,Helvetica,sans-serif; }
+      .mono { fill:#d71920; font-family:Consolas,'Courier New',monospace; font-weight:700; letter-spacing:1px; }
+      .muted { fill:#565650; font-family:Arial,Helvetica,sans-serif; }
+      .line { stroke:#111; stroke-width:2; fill:none; }
+      .redline { stroke:#d71920; stroke-width:4; fill:none; marker-end:url(#arrow); }
+    </style>
+  </defs>
+  <rect width="900" height="1400" fill="#f3f0e9"/>
+  <rect x="42" y="42" width="816" height="1316" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="78" y="112" class="mono" font-size="22">START / FIRST VISIT</text>
+  <text x="78" y="174" class="ink" font-size="48" font-weight="900">ONE SAFE ROUTE.</text>
+  <text x="78" y="230" class="ink" font-size="48" font-weight="900">BEFORE THE CATALOG.</text>
+  <text x="78" y="282" class="muted" font-size="22">Choose one goal, make one small attempt, and keep the record.</text>
+
+  <line x1="128" y1="362" x2="128" y2="1154" class="line"/>
+  <line x1="128" y1="480" x2="128" y2="538" class="redline"/>
+  <line x1="128" y1="642" x2="128" y2="700" class="redline"/>
+  <line x1="128" y1="804" x2="128" y2="862" class="redline"/>
+  <line x1="128" y1="966" x2="128" y2="1024" class="redline"/>
+
+  <g transform="translate(78 320)">
+    <circle cx="50" cy="48" r="34" fill="#111"/>
+    <text x="50" y="58" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">01</text>
+    <rect x="112" width="650" height="120" fill="#111"/>
+    <text x="140" y="44" class="mono" fill="#fff" font-size="19">CHOOSE</text>
+    <text x="140" y="78" fill="#fff" font-size="28" font-weight="900">Name one outcome.</text>
+    <text x="140" y="106" fill="#c8c8c2" font-size="17">Understand, practise, or check one small thing.</text>
+  </g>
+
+  <g transform="translate(78 482)">
+    <circle cx="50" cy="48" r="34" fill="#d71920"/>
+    <text x="50" y="58" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">02</text>
+    <rect x="112" width="650" height="120" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="140" y="44" class="mono" font-size="19">OPEN</text>
+    <text x="140" y="78" class="ink" font-size="28" font-weight="900">Start with the Foundation Core.</text>
+    <text x="140" y="106" class="muted" font-size="17">Learn the model boundary before choosing a platform.</text>
+  </g>
+
+  <g transform="translate(78 644)">
+    <circle cx="50" cy="48" r="34" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="50" y="58" class="mono" font-size="25" text-anchor="middle">03</text>
+    <rect x="112" width="650" height="120" fill="#ffe5e9" stroke="#111" stroke-width="2"/>
+    <text x="140" y="44" class="mono" font-size="19">TRY</text>
+    <text x="140" y="78" class="ink" font-size="28" font-weight="900">Make one safe attempt.</text>
+    <text x="140" y="106" class="muted" font-size="17">Use fictional or local, non-sensitive material.</text>
+  </g>
+
+  <g transform="translate(78 806)">
+    <circle cx="50" cy="48" r="34" fill="#111"/>
+    <text x="50" y="58" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">04</text>
+    <rect x="112" width="650" height="120" fill="#d71920"/>
+    <text x="140" y="44" fill="#111" font-family="Consolas,'Courier New',monospace" font-size="19" font-weight="700">CHECK</text>
+    <text x="140" y="78" fill="#fff" font-size="28" font-weight="900">Read the actual record.</text>
+    <text x="140" y="106" fill="#fff" font-size="17">Compare the answer, diff, source, test, or log.</text>
+  </g>
+
+  <g transform="translate(78 968)">
+    <circle cx="50" cy="48" r="34" fill="#111"/>
+    <text x="50" y="58" fill="#fff" font-family="Consolas,'Courier New',monospace" font-size="25" font-weight="700" text-anchor="middle">05</text>
+    <rect x="112" width="650" height="120" fill="#111"/>
+    <text x="140" y="44" class="mono" fill="#fff" font-size="19">CONTINUE / STOP</text>
+    <text x="140" y="78" fill="#fff" font-size="28" font-weight="900">Choose the next bounded route.</text>
+    <text x="140" y="106" fill="#c8c8c2" font-size="17">Keep the unknown visible when the next proof is missing.</text>
+  </g>
+
+  <rect x="78" y="1160" width="762" height="116" fill="#f3f0e9" stroke="#111" stroke-width="2"/>
+  <text x="102" y="1200" class="mono" font-size="17">BOUNDARY</text>
+  <text x="102" y="1236" class="ink" font-size="21" font-weight="700">The catalog is a set of options, not the first task.</text>
+  <text x="102" y="1264" class="muted" font-size="17">This route orients a visitor; it does not prove learning or mastery.</text>
+  <text x="78" y="1320" class="muted" font-size="17">PRYSAI LAB / ORIGINAL TEACHING BOARD / START SMALL, CHECK WHAT MATTERS</text>
+</svg>
