@@ -1752,6 +1752,20 @@ try {
   await page.locator('[data-reader-route-map-step="3"]').click();
   assert.equal((await page.locator('[data-reader-route-map-detail-title]').innerText()).trim(), 'Inspect', 'Reader route map selection does not update its detail');
   assert.match(await page.locator('[data-reader-route-map-detail-link]').getAttribute('href'), /09-verification-and-recovery-EN\.md&lang=en$/, 'Reader route map selection loses its locale-preserving Reader link');
+  await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&lang=en`, { waitUntil: 'networkidle' });
+  await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
+  const recoveryMap = page.locator('[data-reader-recovery-map]');
+  assert.equal(await recoveryMap.isVisible(), true, 'Reader recovery decision map is not available on a verification chapter');
+  await page.locator('[data-reader-recovery-map-summary]').click();
+  assert.equal(await page.locator('[data-reader-recovery-map-step]').count(), 5, 'Reader recovery map does not expose all five decisions');
+  assert.equal((await page.locator('[data-reader-recovery-map-detail-title]').innerText()).trim(), 'Preserve', 'Reader recovery map selected the wrong initial decision');
+  await page.locator('[data-reader-recovery-map-step="3"]').click();
+  assert.equal((await page.locator('[data-reader-recovery-map-detail-title]').innerText()).trim(), 'Check', 'Reader recovery map selection does not update its detail');
+  assert.match(await page.locator('[data-reader-recovery-map-detail-link]').getAttribute('href'), /lab-003-evidence-review-EN\.md&lang=en$/, 'Reader recovery map selection loses its locale-preserving Reader link');
+  assert.match(await page.locator('[data-reader-recovery-map-image]').getAttribute('alt') || '', /preserve the trace/i, 'Reader recovery map image has no useful alternative text');
+  assert.notEqual((await page.locator('[data-reader-recovery-map-fallback-list]').textContent()).trim(), '', 'Reader recovery map has no text fallback');
+  await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F02-first-safe-task-EN.md&lang=en`, { waitUntil: 'networkidle' });
+  await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
   const conceptMap = page.locator('[data-reader-concept-map]');
   assert.equal(await conceptMap.isVisible(), true, 'Reader concept map is not available on a chapter page');
   await conceptMap.locator('[data-reader-concept-map-summary]').click();
@@ -1841,6 +1855,19 @@ try {
       assert.notEqual((await page.locator('[data-reader-visual-companion] img').getAttribute('alt') || '').trim(), '', `${locale} ${kind} visual companion has no alternative text`);
       await noHorizontalOverflow(page, `${locale} ${kind} visual companion`);
     }
+  }
+  for (const [locale, suffix] of routeMapLocales) {
+    await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F09-verification-and-recovery-${suffix}.md&lang=${locale}`, { waitUntil: 'networkidle' });
+    await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
+    const localizedRecoveryMap = page.locator('[data-reader-recovery-map]');
+    assert.equal(await localizedRecoveryMap.isVisible(), true, `${locale} recovery decision map is not available`);
+    await page.locator('[data-reader-recovery-map-summary]').click();
+    assert.equal(await page.locator('[data-reader-recovery-map-step]').count(), 5, `${locale} recovery map does not expose all five decisions`);
+    assert.notEqual((await page.locator('[data-reader-recovery-map-detail-title]').innerText()).trim(), '', `${locale} recovery map title is empty`);
+    assert.notEqual((await page.locator('[data-reader-recovery-map-detail-body]').innerText()).trim(), '', `${locale} recovery map body is empty`);
+    assert.match(await page.locator('[data-reader-recovery-map-detail-link]').getAttribute('href'), new RegExp(`09-verification-and-recovery-${suffix}\\.md&lang=${locale}$`), `${locale} recovery map loses its localized Reader link`);
+    assert.notEqual((await page.locator('[data-reader-recovery-map-fallback-list]').textContent()).trim(), '', `${locale} recovery map has no text fallback`);
+    await noHorizontalOverflow(page, `${locale} recovery decision map`);
   }
   // Restore the original English baseline before the rest of this smoke run;
   // later assertions intentionally inspect English-only trust copy.

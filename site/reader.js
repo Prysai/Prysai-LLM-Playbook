@@ -101,6 +101,25 @@
   const visualCompanionOpen = document.querySelector('[data-reader-visual-companion-open]');
   const visualCompanionCaption = document.querySelector('[data-reader-visual-companion-caption]');
   const visualCompanionBoundary = document.querySelector('[data-reader-visual-companion-boundary]');
+  const recoveryMap = document.querySelector('[data-reader-recovery-map]');
+  const recoveryMapSummary = document.querySelector('[data-reader-recovery-map-summary]');
+  const recoveryMapIntro = document.querySelector('[data-reader-recovery-map-intro]');
+  const recoveryMapNodes = document.querySelector('[data-reader-recovery-map-nodes]');
+  const recoveryMapDetailLabel = document.querySelector('[data-reader-recovery-map-detail-label]');
+  const recoveryMapDetailTitle = document.querySelector('[data-reader-recovery-map-detail-title]');
+  const recoveryMapDetailBody = document.querySelector('[data-reader-recovery-map-detail-body]');
+  const recoveryMapNextLabel = document.querySelector('[data-reader-recovery-map-next-label]');
+  const recoveryMapDetailNext = document.querySelector('[data-reader-recovery-map-detail-next]');
+  const recoveryMapDetailLink = document.querySelector('[data-reader-recovery-map-detail-link]');
+  const recoveryMapOpen = document.querySelector('[data-reader-recovery-map-open]');
+  const recoveryMapFallbackSummary = document.querySelector('[data-reader-recovery-map-fallback-summary]');
+  const recoveryMapFallbackIntro = document.querySelector('[data-reader-recovery-map-fallback-intro]');
+  const recoveryMapFallbackList = document.querySelector('[data-reader-recovery-map-fallback-list]');
+  const recoveryMapFigureLink = document.querySelector('[data-reader-recovery-map-figure-link]');
+  const recoveryMapImage = document.querySelector('[data-reader-recovery-map-image]');
+  const recoveryMapFigureOpen = document.querySelector('[data-reader-recovery-map-figure-open]');
+  const recoveryMapFigureCaption = document.querySelector('[data-reader-recovery-map-figure-caption]');
+  const recoveryMapBoundary = document.querySelector('[data-reader-recovery-map-boundary]');
   let conceptMapScrollHandler = null;
   let inlineConceptMapScrollHandler = null;
   const trustCard = document.querySelector('[data-reader-trust-card]');
@@ -242,28 +261,28 @@
   // summary.
   const readerVisualCopy = {
     en: {
-      conceptSummary: 'Page concept map', conceptIntro: 'See the current page as one main idea with the sections that move it forward.', conceptAria: 'Concept map for this page', conceptRoot: 'This page', conceptFallback: 'Read the map as text', conceptFallbackIntro: 'The same headings and links remain available in a simple ordered list.', conceptBoundary: 'This map is derived from headings. It helps you orient yourself; it does not prove that the page was understood or completed.', visualSummary: 'Teaching visual', visualIntro: 'Use one project-authored board to see the relationship this page is about before you read the detail.', visualOpen: 'Open full-size visual', visualCaptionPrefix: 'Project-authored teaching board for', visualBoundary: 'The board explains a relationship and a next question. It is an orientation aid, not evidence that a model acted or that learning occurred.', visualAltPrefix: 'Teaching diagram showing',
+      conceptSummary: 'Page concept map', conceptIntro: 'See the current page as one main idea with the sections that move it forward.', conceptAria: 'Concept map for this page', conceptRoot: 'This page', conceptFallback: 'Read the map as text', conceptFallbackIntro: 'The same headings and links remain available in a simple ordered list.', conceptBoundary: 'This map is derived from headings. It helps you orient yourself; it does not prove that the page was understood or completed.', visualSummary: 'Teaching visual', visualIntro: 'Use one project-authored board to see the relationship this page is about before you read the detail.', visualOpen: 'Open full-size visual', visualCaptionPrefix: 'Project-authored teaching board for', visualBoundary: 'The board explains a relationship and a next question. It is an orientation aid, not evidence that a model acted or that learning occurred.', visualAltPrefix: 'Teaching diagram showing', recoverySummary: 'Recovery decision map', recoveryIntro: 'When a result is uncertain, follow the smallest permitted next decision.', recoveryAria: 'Five-step recovery decision map', recoveryRoot: 'Recovery decision', recoverySelected: 'Selected step', recoveryNext: 'Next decision', recoveryOpen: 'Open the recovery route', recoveryFallback: 'Read the recovery map as text', recoveryFallbackIntro: 'The same five decisions remain available as a simple ordered list.', recoveryFigureAlt: 'Recovery decision tree: preserve the trace, classify the first mismatch, check authority, run one safe check or stop, then keep the claim narrow.', recoveryFigureOpen: 'Open full-size recovery board', recoveryFigureCaption: 'Project-authored recovery decision board. The text sequence is the accessible explanation; the board is an orientation aid.', recoveryBoundary: 'A recovery map does not prove that a retry worked. Preserve the original gap and report only what the new record supports.', recoveryLabels: ['Preserve', 'Classify', 'Authority', 'Check', 'Stop'], recoveryBodies: ['Keep the request, inputs, output, diff, state, and last checkpoint before changing anything.', 'Name the first mismatch: missing input, wrong scope, failed action, or weak proof.', 'Ask whether the next check is permitted by the stated scope, permission, and available input.', 'If permitted, change one condition and compare one observable result with the original.', 'If proof or authority is missing, stop and keep the result candidate, blocked, or unknown.'], recoveryNextQuestions: ['What exact trace will I keep?', 'What failed first?', 'May I take this next action?', 'What changed in the new record?', 'What narrow claim can I support?'],
     },
     zh: {
-      conceptSummary: '本页思维导图', conceptIntro: '把当前页面看成一个主问题，以及推动它向前的各个小节。', conceptAria: '本页概念图', conceptRoot: '当前页面', conceptFallback: '按文字阅读导图', conceptFallbackIntro: '相同的标题和链接也会以简单的有序列表提供。', conceptBoundary: '这张图根据页面标题生成，用于定位阅读位置；它不证明你已经理解或完成本页。', visualSummary: '配套教学图', visualIntro: '先用一张项目原创图看清本页讨论的关系，再阅读具体细节。', visualOpen: '打开完整尺寸图示', visualCaptionPrefix: '项目原创教学图，主题是', visualBoundary: '图示解释一种关系和下一道问题；它只是定位工具，不证明模型已经行动或学习已经发生。', visualAltPrefix: '展示以下关系的教学图',
+      conceptSummary: '本页思维导图', conceptIntro: '把当前页面看成一个主问题，以及推动它向前的各个小节。', conceptAria: '本页概念图', conceptRoot: '当前页面', conceptFallback: '按文字阅读导图', conceptFallbackIntro: '相同的标题和链接也会以简单的有序列表提供。', conceptBoundary: '这张图根据页面标题生成，用于定位阅读位置；它不证明你已经理解或完成本页。', visualSummary: '配套教学图', visualIntro: '先用一张项目原创图看清本页讨论的关系，再阅读具体细节。', visualOpen: '打开完整尺寸图示', visualCaptionPrefix: '项目原创教学图，主题是', visualBoundary: '图示解释一种关系和下一道问题；它只是定位工具，不证明模型已经行动或学习已经发生。', visualAltPrefix: '展示以下关系的教学图', recoverySummary: '恢复决策图', recoveryIntro: '结果不确定时，沿着最小、获准的下一步行动判断。', recoveryAria: '五步恢复决策图', recoveryRoot: '恢复决策', recoverySelected: '当前步骤', recoveryNext: '下一项判断', recoveryOpen: '打开恢复路线', recoveryFallback: '按文字阅读恢复图', recoveryFallbackIntro: '相同的五项判断也会以简单的有序列表提供。', recoveryFigureAlt: '恢复决策树：保留轨迹、分类首个不匹配、检查授权，在获准时执行一次安全检查，否则停止并收窄声明。', recoveryFigureOpen: '打开完整恢复图板', recoveryFigureCaption: '项目原创恢复决策图。文字序列是无障碍解释；图板用于帮助定位。', recoveryBoundary: '恢复图不证明重试成功。保留原始缺口，只陈述新记录支持的范围。', recoveryLabels: ['保留', '分类', '授权', '检查', '停止'], recoveryBodies: ['先保留请求、输入、输出、差异、状态和最后检查点，再改变任何条件。', '指出首个不匹配：输入缺失、范围错误、行动失败或证据不足。', '确认下一项检查是否符合当前范围、权限和已有输入。', '如果获准，只改变一个条件，并把一个可观察结果与原记录对照。', '如果缺少证据或授权，就停止，并把结果标为 candidate、blocked 或 unknown。'], recoveryNextQuestions: ['要保留哪一条明确轨迹？', '最先失败的是什么？', '下一步行动是否获准？', '新记录具体改变了什么？', '我能支持哪一条窄声明？'],
     },
     es: {
-      conceptSummary: 'Mapa conceptual de esta página', conceptIntro: 'Mira la página como una idea principal y las secciones que la hacen avanzar.', conceptAria: 'Mapa conceptual de esta página', conceptRoot: 'Esta página', conceptFallback: 'Leer el mapa como texto', conceptFallbackIntro: 'Los mismos títulos y enlaces están disponibles en una lista ordenada.', conceptBoundary: 'El mapa se genera a partir de los encabezados. Sirve para orientarse; no demuestra comprensión ni finalización.', visualSummary: 'Visual didáctico', visualIntro: 'Mira un tablero original del proyecto para entender la relación central antes de leer el detalle.', visualOpen: 'Abrir el visual a tamaño completo', visualCaptionPrefix: 'Tablero didáctico original del proyecto sobre', visualBoundary: 'El tablero explica una relación y una pregunta siguiente. Orienta, pero no demuestra que un modelo haya actuado ni que haya aprendizaje.', visualAltPrefix: 'Diagrama didáctico que muestra',
+      conceptSummary: 'Mapa conceptual de esta página', conceptIntro: 'Mira la página como una idea principal y las secciones que la hacen avanzar.', conceptAria: 'Mapa conceptual de esta página', conceptRoot: 'Esta página', conceptFallback: 'Leer el mapa como texto', conceptFallbackIntro: 'Los mismos títulos y enlaces están disponibles en una lista ordenada.', conceptBoundary: 'El mapa se genera a partir de los encabezados. Sirve para orientarse; no demuestra comprensión ni finalización.', visualSummary: 'Visual didáctico', visualIntro: 'Mira un tablero original del proyecto para entender la relación central antes de leer el detalle.', visualOpen: 'Abrir el visual a tamaño completo', visualCaptionPrefix: 'Tablero didáctico original del proyecto sobre', visualBoundary: 'El tablero explica una relación y una pregunta siguiente. Orienta, pero no demuestra que un modelo haya actuado ni que haya aprendizaje.', visualAltPrefix: 'Diagrama didáctico que muestra', recoverySummary: 'Mapa de decisión para recuperarse', recoveryIntro: 'Cuando el resultado es incierto, sigue la decisión siguiente más pequeña que esté permitida.', recoveryAria: 'Mapa de cinco pasos para recuperarse', recoveryRoot: 'Decisión de recuperación', recoverySelected: 'Paso seleccionado', recoveryNext: 'Siguiente decisión', recoveryOpen: 'Abrir la ruta de recuperación', recoveryFallback: 'Leer el mapa como texto', recoveryFallbackIntro: 'Las mismas cinco decisiones están disponibles en una lista ordenada.', recoveryFigureAlt: 'Árbol de decisión de recuperación: conservar el rastro, clasificar el primer desajuste, comprobar la autorización, hacer una comprobación segura o detenerse y limitar la afirmación.', recoveryFigureOpen: 'Abrir el tablero de recuperación completo', recoveryFigureCaption: 'Tablero original del proyecto. La secuencia textual es la explicación accesible; el tablero solo orienta.', recoveryBoundary: 'El mapa no demuestra que un reintento haya funcionado. Conserva el hueco original y afirma solo lo que permite el nuevo registro.', recoveryLabels: ['Conservar', 'Clasificar', 'Autorización', 'Comprobar', 'Detenerse'], recoveryBodies: ['Conserva la petición, las entradas, la salida, el diff, el estado y el último checkpoint antes de cambiar nada.', 'Nombra el primer desajuste: entrada ausente, alcance incorrecto, acción fallida o prueba débil.', 'Comprueba si la siguiente verificación está permitida por el alcance, la autorización y las entradas disponibles.', 'Si está permitida, cambia una sola condición y compara un resultado observable con el registro original.', 'Si falta prueba o autorización, detente y mantén el resultado como candidate, blocked o unknown.'], recoveryNextQuestions: ['¿Qué rastro exacto conservaré?', '¿Qué falló primero?', '¿Puedo hacer esta acción?', '¿Qué cambió en el nuevo registro?', '¿Qué afirmación acotada puedo sostener?'],
     },
     ja: {
-      conceptSummary: 'このページの概念マップ', conceptIntro: 'このページを、中心となる考えと、それを前に進める各節として捉えます。', conceptAria: 'このページの概念マップ', conceptRoot: 'このページ', conceptFallback: 'マップを文字で読む', conceptFallbackIntro: '同じ見出しとリンクを、単純な順序付きリストでも確認できます。', conceptBoundary: 'このマップは見出しから生成されます。位置づけの補助であり、理解や完了の証明ではありません。', visualSummary: '教材図', visualIntro: '本文の細部に入る前に、このページの関係をプロジェクト作成の図でつかみます。', visualOpen: '原寸の図を開く', visualCaptionPrefix: 'プロジェクト作成の教材図：', visualBoundary: '図は関係と次の問いを説明する補助資料です。モデルの実行や学習が起きた証拠ではありません。', visualAltPrefix: '次の関係を示す教材図',
+      conceptSummary: 'このページの概念マップ', conceptIntro: 'このページを、中心となる考えと、それを前に進める各節として捉えます。', conceptAria: 'このページの概念マップ', conceptRoot: 'このページ', conceptFallback: 'マップを文字で読む', conceptFallbackIntro: '同じ見出しとリンクを、単純な順序付きリストでも確認できます。', conceptBoundary: 'このマップは見出しから生成されます。位置づけの補助であり、理解や完了の証明ではありません。', visualSummary: '教材図', visualIntro: '本文の細部に入る前に、このページの関係をプロジェクト作成の図でつかみます。', visualOpen: '原寸の図を開く', visualCaptionPrefix: 'プロジェクト作成の教材図：', visualBoundary: '図は関係と次の問いを説明する補助資料です。モデルの実行や学習が起きた証拠ではありません。', visualAltPrefix: '次の関係を示す教材図', recoverySummary: '復旧の判断マップ', recoveryIntro: '結果が不確かなときは、許可された最小の次の判断をたどります。', recoveryAria: '5段階の復旧判断マップ', recoveryRoot: '復旧の判断', recoverySelected: '選択中の段階', recoveryNext: '次の判断', recoveryOpen: '復旧ルートを開く', recoveryFallback: '復旧マップを文字で読む', recoveryFallbackIntro: '同じ5つの判断を、順序付きリストでも確認できます。', recoveryFigureAlt: '復旧判断ツリー：記録を残し、最初の不一致を分類し、権限を確認し、許可された安全な確認を1つ行うか停止して主張を狭める。', recoveryFigureOpen: '復旧ボードを原寸で開く', recoveryFigureCaption: 'プロジェクト作成の復旧判断ボード。文字の流れがアクセシブルな説明で、ボードは位置づけの補助です。', recoveryBoundary: 'このマップは再試行の成功を証明しません。元の不明点を残し、新しい記録が支える範囲だけを述べます。', recoveryLabels: ['保持', '分類', '権限', '確認', '停止'], recoveryBodies: ['依頼、入力、出力、差分、状態、最後のチェックポイントを、条件を変える前に残します。', '最初の不一致を、入力不足、範囲違い、操作失敗、証拠不足のいずれかに分けます。', '次の確認が、範囲・権限・手元の入力で許可されているかを確認します。', '許可されていれば条件を1つだけ変え、観測できる結果を元の記録と比較します。', '証拠または権限が足りなければ停止し、candidate、blocked、unknownのまま記録します。'], recoveryNextQuestions: ['何を記録として残すか？', '最初に失敗したのは何か？', '次の操作は許可されているか？', '新しい記録で何が変わったか？', 'どの範囲の主張なら支えられるか？'],
     },
     ko: {
-      conceptSummary: '이 페이지의 개념 지도', conceptIntro: '현재 페이지를 핵심 생각 하나와 그것을 이어 가는 섹션으로 살펴보세요.', conceptAria: '이 페이지의 개념 지도', conceptRoot: '이 페이지', conceptFallback: '지도를 텍스트로 읽기', conceptFallbackIntro: '같은 제목과 링크를 간단한 순서 목록으로도 확인할 수 있습니다.', conceptBoundary: '이 지도는 제목에서 생성됩니다. 위치를 잡는 보조 자료이며 이해나 완료를 증명하지 않습니다.', visualSummary: '교육용 시각 자료', visualIntro: '세부 내용을 읽기 전에 이 페이지의 관계를 프로젝트가 만든 보드로 먼저 확인하세요.', visualOpen: '원본 크기 시각 자료 열기', visualCaptionPrefix: '프로젝트가 만든 교육 보드: ', visualBoundary: '보드는 관계와 다음 질문을 설명하는 보조 자료입니다. 모델 실행이나 학습이 일어났다는 증거가 아닙니다.', visualAltPrefix: '다음 관계를 보여 주는 교육용 그림',
+      conceptSummary: '이 페이지의 개념 지도', conceptIntro: '현재 페이지를 핵심 생각 하나와 그것을 이어 가는 섹션으로 살펴보세요.', conceptAria: '이 페이지의 개념 지도', conceptRoot: '이 페이지', conceptFallback: '지도를 텍스트로 읽기', conceptFallbackIntro: '같은 제목과 링크를 간단한 순서 목록으로도 확인할 수 있습니다.', conceptBoundary: '이 지도는 제목에서 생성됩니다. 위치를 잡는 보조 자료이며 이해나 완료를 증명하지 않습니다.', visualSummary: '교육용 시각 자료', visualIntro: '세부 내용을 읽기 전에 이 페이지의 관계를 프로젝트가 만든 보드로 먼저 확인하세요.', visualOpen: '원본 크기 시각 자료 열기', visualCaptionPrefix: '프로젝트가 만든 교육 보드: ', visualBoundary: '보드는 관계와 다음 질문을 설명하는 보조 자료입니다. 모델 실행이나 학습이 일어났다는 증거가 아닙니다.', visualAltPrefix: '다음 관계를 보여 주는 교육용 그림', recoverySummary: '복구 의사결정 지도', recoveryIntro: '결과가 불확실할 때 허용된 가장 작은 다음 판단을 따라가세요.', recoveryAria: '5단계 복구 의사결정 지도', recoveryRoot: '복구 판단', recoverySelected: '선택한 단계', recoveryNext: '다음 판단', recoveryOpen: '복구 경로 열기', recoveryFallback: '복구 지도를 텍스트로 읽기', recoveryFallbackIntro: '같은 다섯 가지 판단을 간단한 순서 목록으로도 확인할 수 있습니다.', recoveryFigureAlt: '복구 의사결정 트리: 기록을 보존하고 첫 불일치를 분류한 뒤 권한을 확인하고, 허용되면 안전한 점검 하나를 실행하거나 중지하며 주장을 좁힌다.', recoveryFigureOpen: '전체 복구 보드 열기', recoveryFigureCaption: '프로젝트가 만든 복구 의사결정 보드입니다. 텍스트 순서가 접근 가능한 설명이고 보드는 방향을 잡는 보조 자료입니다.', recoveryBoundary: '이 지도는 재시도가 성공했다는 증거가 아닙니다. 원래의 공백을 보존하고 새 기록이 지지하는 범위만 말하세요.', recoveryLabels: ['보존', '분류', '권한', '점검', '중지'], recoveryBodies: ['조건을 바꾸기 전에 요청, 입력, 출력, diff, 상태, 마지막 체크포인트를 보존합니다.', '첫 불일치를 입력 누락, 범위 오류, 작업 실패, 증거 부족으로 구분합니다.', '다음 점검이 현재 범위·권한·입력으로 허용되는지 확인합니다.', '허용되면 조건 하나만 바꾸고 관찰 가능한 결과 하나를 원래 기록과 비교합니다.', '증거나 권한이 부족하면 중지하고 결과를 candidate, blocked, unknown으로 남깁니다.'], recoveryNextQuestions: ['어떤 기록을 그대로 남길까?', '무엇이 먼저 실패했나?', '다음 작업은 허용되었나?', '새 기록에서 무엇이 달라졌나?', '어떤 범위의 주장만 할 수 있나?'],
     },
     de: {
-      conceptSummary: 'Begriffskarte dieser Seite', conceptIntro: 'Ordne die Seite als einen Hauptgedanken mit den Abschnitten ein, die ihn weiterführen.', conceptAria: 'Begriffskarte für diese Seite', conceptRoot: 'Diese Seite', conceptFallback: 'Die Karte als Text lesen', conceptFallbackIntro: 'Dieselben Überschriften und Links stehen auch als einfache geordnete Liste bereit.', conceptBoundary: 'Die Karte wird aus den Überschriften erzeugt. Sie dient der Orientierung und beweist weder Verständnis noch Abschluss.', visualSummary: 'Lehrtafel', visualIntro: 'Sieh dir zuerst eine projektbezogene Tafel an, um die zentrale Beziehung der Seite zu erfassen.', visualOpen: 'Visualisierung in voller Größe öffnen', visualCaptionPrefix: 'Projektbezogene Lehrtafel zu', visualBoundary: 'Die Tafel erklärt eine Beziehung und eine nächste Frage. Sie ist eine Orientierungshilfe, kein Beleg für eine Modellaktion oder einen Lernerfolg.', visualAltPrefix: 'Lehrdiagramm zu',
+      conceptSummary: 'Begriffskarte dieser Seite', conceptIntro: 'Ordne die Seite als einen Hauptgedanken mit den Abschnitten ein, die ihn weiterführen.', conceptAria: 'Begriffskarte für diese Seite', conceptRoot: 'Diese Seite', conceptFallback: 'Die Karte als Text lesen', conceptFallbackIntro: 'Dieselben Überschriften und Links stehen auch als einfache geordnete Liste bereit.', conceptBoundary: 'Die Karte wird aus den Überschriften erzeugt. Sie dient der Orientierung und beweist weder Verständnis noch Abschluss.', visualSummary: 'Lehrtafel', visualIntro: 'Sieh dir zuerst eine projektbezogene Tafel an, um die zentrale Beziehung der Seite zu erfassen.', visualOpen: 'Visualisierung in voller Größe öffnen', visualCaptionPrefix: 'Projektbezogene Lehrtafel zu', visualBoundary: 'Die Tafel erklärt eine Beziehung und eine nächste Frage. Sie ist eine Orientierungshilfe, kein Beleg für eine Modellaktion oder einen Lernerfolg.', visualAltPrefix: 'Lehrdiagramm zu', recoverySummary: 'Entscheidungskarte für die Wiederherstellung', recoveryIntro: 'Wenn ein Ergebnis unsicher ist, folge der kleinsten zulässigen nächsten Entscheidung.', recoveryAria: 'Fünfstufige Entscheidungskarte für die Wiederherstellung', recoveryRoot: 'Wiederherstellungsentscheidung', recoverySelected: 'Ausgewählter Schritt', recoveryNext: 'Nächste Entscheidung', recoveryOpen: 'Wiederherstellungsroute öffnen', recoveryFallback: 'Karte als Text lesen', recoveryFallbackIntro: 'Dieselben fünf Entscheidungen stehen auch als einfache geordnete Liste bereit.', recoveryFigureAlt: 'Entscheidungsbaum zur Wiederherstellung: Spur sichern, erste Abweichung einordnen, Berechtigung prüfen, eine sichere Prüfung ausführen oder anhalten und die Aussage begrenzen.', recoveryFigureOpen: 'Wiederherstellungskarte in voller Größe öffnen', recoveryFigureCaption: 'Projektbezogene Entscheidungskarte. Die Textfolge ist die zugängliche Erklärung; die Karte dient der Orientierung.', recoveryBoundary: 'Die Karte beweist nicht, dass ein erneuter Versuch funktioniert hat. Bewahre die ursprüngliche Lücke und formuliere nur, was der neue Beleg trägt.', recoveryLabels: ['Sichern', 'Einordnen', 'Berechtigung', 'Prüfen', 'Stoppen'], recoveryBodies: ['Sichere Anfrage, Eingaben, Ausgabe, Diff, Zustand und letzten Checkpoint, bevor du etwas änderst.', 'Benenne die erste Abweichung: fehlende Eingabe, falscher Umfang, fehlgeschlagene Aktion oder schwacher Beleg.', 'Prüfe, ob die nächste Prüfung durch Umfang, Berechtigung und vorhandene Eingaben gedeckt ist.', 'Wenn sie zulässig ist, ändere nur eine Bedingung und vergleiche ein beobachtbares Ergebnis mit dem ursprünglichen Beleg.', 'Wenn Beleg oder Berechtigung fehlen, halte an und lasse das Ergebnis als candidate, blocked oder unknown stehen.'], recoveryNextQuestions: ['Welche Spur sichere ich genau?', 'Was ist zuerst fehlgeschlagen?', 'Darf ich diese Aktion ausführen?', 'Was hat sich im neuen Beleg geändert?', 'Welche begrenzte Aussage kann ich tragen?'],
     },
     'zh-tw': {
-      conceptSummary: '本頁概念圖', conceptIntro: '把目前頁面看成一個核心問題，以及推動它前進的各個段落。', conceptAria: '本頁概念圖', conceptRoot: '目前頁面', conceptFallback: '依文字閱讀概念圖', conceptFallbackIntro: '相同的標題與連結也會以簡單的有序清單呈現。', conceptBoundary: '這張圖根據頁面標題產生，用來定位閱讀位置；不代表你已理解或完成本頁。', visualSummary: '配套教學圖', visualIntro: '先用一張專案原創圖看清本頁討論的關係，再閱讀細節。', visualOpen: '開啟完整尺寸圖示', visualCaptionPrefix: '專案原創教學圖，主題是', visualBoundary: '圖示解釋一種關係與下一個問題；它只是定位工具，不代表模型已採取行動或學習已經發生。', visualAltPrefix: '展示以下關係的教學圖',
+      conceptSummary: '本頁概念圖', conceptIntro: '把目前頁面看成一個核心問題，以及推動它前進的各個段落。', conceptAria: '本頁概念圖', conceptRoot: '目前頁面', conceptFallback: '依文字閱讀概念圖', conceptFallbackIntro: '相同的標題與連結也會以簡單的有序清單呈現。', conceptBoundary: '這張圖根據頁面標題產生，用來定位閱讀位置；不代表你已理解或完成本頁。', visualSummary: '配套教學圖', visualIntro: '先用一張專案原創圖看清本頁討論的關係，再閱讀細節。', visualOpen: '開啟完整尺寸圖示', visualCaptionPrefix: '專案原創教學圖，主題是', visualBoundary: '圖示解釋一種關係與下一個問題；它只是定位工具，不代表模型已採取行動或學習已經發生。', visualAltPrefix: '展示以下關係的教學圖', recoverySummary: '復原決策圖', recoveryIntro: '結果不確定時，沿著最小且獲准的下一步判斷。', recoveryAria: '五步復原決策圖', recoveryRoot: '復原決策', recoverySelected: '目前步驟', recoveryNext: '下一項判斷', recoveryOpen: '開啟復原路線', recoveryFallback: '依文字閱讀復原圖', recoveryFallbackIntro: '相同的五項判斷也會以簡單的有序清單呈現。', recoveryFigureAlt: '復原決策樹：保留軌跡、分類第一個不一致、檢查權限，在獲准時執行一次安全檢查，否則停止並縮小主張範圍。', recoveryFigureOpen: '開啟完整復原圖板', recoveryFigureCaption: '專案原創復原決策圖。文字序列是無障礙說明；圖板用來協助定位。', recoveryBoundary: '復原圖不代表重試成功。保留原始缺口，只陳述新紀錄能支持的範圍。', recoveryLabels: ['保留', '分類', '權限', '檢查', '停止'], recoveryBodies: ['先保留請求、輸入、輸出、差異、狀態與最後一個檢查點，再改變任何條件。', '指出第一個不一致：輸入缺失、範圍錯誤、行動失敗或證據不足。', '確認下一項檢查是否符合目前範圍、權限與現有輸入。', '如果獲准，只改變一個條件，並將一項可觀察結果與原始紀錄對照。', '如果缺少證據或權限，就停止，並把結果標為 candidate、blocked 或 unknown。'], recoveryNextQuestions: ['要保留哪一條明確軌跡？', '最先失敗的是什麼？', '下一步行動是否獲准？', '新紀錄具體改變了什麼？', '我能支持哪一項較窄的主張？'],
     },
     fr: {
-      conceptSummary: 'Carte conceptuelle de cette page', conceptIntro: 'Lisez la page comme une idée centrale et les sections qui la font progresser.', conceptAria: 'Carte conceptuelle de cette page', conceptRoot: 'Cette page', conceptFallback: 'Lire la carte sous forme de texte', conceptFallbackIntro: 'Les mêmes titres et liens restent disponibles dans une liste ordonnée.', conceptBoundary: 'La carte est dérivée des titres. Elle aide à se repérer ; elle ne prouve ni la compréhension ni la fin de la page.', visualSummary: 'Visuel pédagogique', visualIntro: 'Regardez une planche originale du projet pour saisir la relation centrale avant les détails.', visualOpen: 'Ouvrir le visuel en taille réelle', visualCaptionPrefix: 'Planche pédagogique originale du projet :', visualBoundary: 'La planche explique une relation et une question suivante. Elle aide à se repérer, mais ne prouve ni une action du modèle ni un apprentissage.', visualAltPrefix: 'Diagramme pédagogique montrant',
+      conceptSummary: 'Carte conceptuelle de cette page', conceptIntro: 'Lisez la page comme une idée centrale et les sections qui la font progresser.', conceptAria: 'Carte conceptuelle de cette page', conceptRoot: 'Cette page', conceptFallback: 'Lire la carte sous forme de texte', conceptFallbackIntro: 'Les mêmes titres et liens restent disponibles dans une liste ordonnée.', conceptBoundary: 'La carte est dérivée des titres. Elle aide à se repérer ; elle ne prouve ni la compréhension ni la fin de la page.', visualSummary: 'Visuel pédagogique', visualIntro: 'Regardez une planche originale du projet pour saisir la relation centrale avant les détails.', visualOpen: 'Ouvrir le visuel en taille réelle', visualCaptionPrefix: 'Planche pédagogique originale du projet :', visualBoundary: 'La planche explique une relation et une question suivante. Elle aide à se repérer, mais ne prouve ni une action du modèle ni un apprentissage.', visualAltPrefix: 'Diagramme pédagogique montrant', recoverySummary: 'Carte de décision pour récupérer', recoveryIntro: 'Quand le résultat est incertain, suivez la plus petite décision suivante qui reste autorisée.', recoveryAria: 'Carte de décision de récupération en cinq étapes', recoveryRoot: 'Décision de récupération', recoverySelected: 'Étape sélectionnée', recoveryNext: 'Décision suivante', recoveryOpen: 'Ouvrir le parcours de récupération', recoveryFallback: 'Lire la carte sous forme de texte', recoveryFallbackIntro: 'Les cinq mêmes décisions restent disponibles dans une liste ordonnée.', recoveryFigureAlt: 'Arbre de décision de récupération : conserver la trace, classer le premier écart, vérifier l’autorisation, effectuer une vérification sûre ou s’arrêter en limitant l’affirmation.', recoveryFigureOpen: 'Ouvrir la planche de récupération en taille réelle', recoveryFigureCaption: 'Planche originale du projet. La séquence textuelle est l’explication accessible ; la planche sert à se repérer.', recoveryBoundary: 'La carte ne prouve pas qu’une nouvelle tentative a réussi. Conservez le manque initial et ne formulez que ce que le nouveau relevé permet d’établir.', recoveryLabels: ['Conserver', 'Classer', 'Autorisation', 'Vérifier', 'S’arrêter'], recoveryBodies: ['Conservez la demande, les entrées, la sortie, le diff, l’état et le dernier checkpoint avant de modifier quoi que ce soit.', 'Nommez le premier écart : entrée manquante, périmètre incorrect, action échouée ou preuve insuffisante.', 'Vérifiez que la prochaine vérification est autorisée par le périmètre, les droits et les entrées disponibles.', 'Si elle est autorisée, ne changez qu’une condition et comparez un résultat observable avec le relevé initial.', 'S’il manque une preuve ou une autorisation, arrêtez-vous et gardez le résultat comme candidate, blocked ou unknown.'], recoveryNextQuestions: ['Quelle trace exacte vais-je conserver ?', 'Qu’est-ce qui a échoué en premier ?', 'Cette action est-elle autorisée ?', 'Qu’est-ce qui a changé dans le nouveau relevé ?', 'Quelle affirmation limitée puis-je soutenir ?'],
     },
   };
 
@@ -303,6 +322,14 @@
     { tokens: ['llm-core-unseen-transfer', 'understanding-to-transfer'], path: 'assets/teaching/understanding-to-transfer-red-black.svg', step: 5 },
     { tokens: ['chapter-14-discover-and-audit-skills', 'source-investigator', 'platform-fact-watch'], path: 'assets/teaching/source-check-before-belief-red-black.svg', step: 3 },
     { tokens: ['project-evidence-snapshot', 'content-status', 'release-readiness'], path: 'assets/teaching/project-evidence-snapshot-red-black.svg', step: 3 },
+  ];
+
+  const readerRecoveryMapSteps = [
+    { id: 'preserve', contentId: 'chapter-09-verification-and-recovery', path: 'book/chapters/09-verification-and-recovery-EN.md' },
+    { id: 'classify', contentId: 'chapter-12-agent-loop-and-stop', path: 'book/chapters/12-agent-loop-and-stop-EN.md' },
+    { id: 'authority', contentId: 'chapter-13-action-boundaries', path: 'book/chapters/13-action-boundaries-EN.md' },
+    { id: 'check', contentId: 'lab-003-evidence-review', path: 'book/labs/lab-003-evidence-review-EN.md' },
+    { id: 'stop', contentId: 'lab-006-agent-stop-conditions', path: 'book/labs/lab-006-agent-stop-conditions-EN.md' },
   ];
 
   const readerRouteMapSteps = [
@@ -489,6 +516,7 @@
   const uiLanguage = () => readerCopy[activeLocale || requestedLocale] ? activeLocale || requestedLocale : 'en';
   const currentReaderCopy = () => readerCopy[uiLanguage()];
   const currentReaderRouteMapCopy = () => readerRouteMapCopy[uiLanguage()] || readerRouteMapCopy.en;
+  const currentReaderRecoveryMapCopy = () => readerVisualCopy[uiLanguage()] || readerVisualCopy.en;
   const routeMapStepIndex = (contentId) => readerRouteMapSteps.findIndex((step) => step.contentId === contentId);
   const routeMapStepHref = (step) => {
     const record = manifest.contents?.[step.contentId];
@@ -565,6 +593,108 @@
       fallbackLink.textContent = strings.open;
       fallbackItem.append(fallbackTitle, fallbackBody, fallbackLink);
       routeMapFallbackList.append(fallbackItem);
+    });
+    selectStep(selectedIndex);
+  };
+  const recoveryMapEligibleIds = new Set([
+    'chapter-09-verification-and-recovery',
+    'chapter-12-agent-loop-and-stop',
+    'chapter-13-action-boundaries',
+    'lab-003-evidence-review',
+    'lab-006-agent-stop-conditions',
+    'lab-014-resume-reconciliation',
+    'lab-015-evidence-delivery',
+  ]);
+  const recoveryMapSelectionIndex = {
+    'chapter-09-verification-and-recovery': 0,
+    'chapter-12-agent-loop-and-stop': 1,
+    'chapter-13-action-boundaries': 2,
+    'lab-003-evidence-review': 3,
+    'lab-006-agent-stop-conditions': 4,
+    'lab-014-resume-reconciliation': 4,
+    'lab-015-evidence-delivery': 3,
+  };
+  const recoveryMapStepHref = (step) => {
+    const record = manifest.contents?.[step.contentId];
+    const localizedPath = record?.locales?.[activeLocale]?.path;
+    return readerHref(localizedPath || step.path, '', activeLocale);
+  };
+  const renderReaderRecoveryMap = (selection = null) => {
+    if (!recoveryMap || !recoveryMapNodes || !recoveryMapFallbackList) return;
+    if (!selection || !recoveryMapEligibleIds.has(selection.contentId)) {
+      recoveryMap.hidden = true;
+      recoveryMapNodes.replaceChildren();
+      recoveryMapFallbackList.replaceChildren();
+      return;
+    }
+    const strings = currentReaderRecoveryMapCopy();
+    const selectedIndex = Math.max(0, Math.min(
+      readerRecoveryMapSteps.length - 1,
+      recoveryMapSelectionIndex[selection.contentId] ?? 0,
+    ));
+    recoveryMap.hidden = false;
+    recoveryMap.open = false;
+    recoveryMapSummary.textContent = strings.recoverySummary;
+    recoveryMapSummary.setAttribute('aria-label', strings.recoveryAria);
+    recoveryMapIntro.textContent = strings.recoveryIntro;
+    recoveryMapDetailLabel.textContent = strings.recoverySelected;
+    recoveryMapNextLabel.textContent = strings.recoveryNext;
+    recoveryMapOpen.textContent = strings.recoveryOpen;
+    recoveryMapFallbackSummary.textContent = strings.recoveryFallback;
+    recoveryMapFallbackIntro.textContent = strings.recoveryFallbackIntro;
+    recoveryMapFigureOpen.textContent = strings.recoveryFigureOpen;
+    recoveryMapFigureCaption.textContent = strings.recoveryFigureCaption;
+    recoveryMapBoundary.textContent = strings.recoveryBoundary;
+    recoveryMapImage.alt = strings.recoveryFigureAlt;
+    recoveryMapFigureLink.href = directHref('assets/teaching/recovery-decision-tree-red-black.svg');
+    recoveryMapFigureLink.setAttribute('aria-label', strings.recoveryFigureOpen);
+    recoveryMapNodes.setAttribute('aria-label', strings.recoveryAria);
+
+    const selectStep = (index) => {
+      const step = readerRecoveryMapSteps[index];
+      if (!step) return;
+      recoveryMapNodes.querySelectorAll('[data-reader-recovery-map-step]').forEach((button) => {
+        const active = Number(button.dataset.readerRecoveryMapStep) === index;
+        button.setAttribute('aria-pressed', String(active));
+        button.classList.toggle('is-current', active);
+      });
+      recoveryMapDetailTitle.textContent = strings.recoveryLabels[index];
+      recoveryMapDetailBody.textContent = strings.recoveryBodies[index];
+      recoveryMapDetailNext.textContent = strings.recoveryNextQuestions[index];
+      recoveryMapDetailLink.href = recoveryMapStepHref(step);
+      recoveryMapDetailLink.setAttribute('aria-label', `${strings.recoveryOpen}: ${strings.recoveryLabels[index]}`);
+    };
+
+    recoveryMapNodes.replaceChildren();
+    recoveryMapFallbackList.replaceChildren();
+    readerRecoveryMapSteps.forEach((step, index) => {
+      const item = document.createElement('li');
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'reader-recovery-map-node';
+      button.dataset.readerRecoveryMapStep = String(index);
+      button.setAttribute('aria-pressed', 'false');
+      button.setAttribute('aria-label', `${strings.recoverySelected}: ${strings.recoveryLabels[index]}`);
+      const number = document.createElement('span');
+      number.className = 'reader-recovery-map-node-number';
+      number.textContent = String(index + 1).padStart(2, '0');
+      const label = document.createElement('strong');
+      label.textContent = strings.recoveryLabels[index];
+      button.append(number, label);
+      button.addEventListener('click', () => selectStep(index));
+      item.append(button);
+      recoveryMapNodes.append(item);
+
+      const fallbackItem = document.createElement('li');
+      const fallbackTitle = document.createElement('strong');
+      fallbackTitle.textContent = strings.recoveryLabels[index];
+      const fallbackBody = document.createElement('span');
+      fallbackBody.textContent = strings.recoveryBodies[index];
+      const fallbackLink = document.createElement('a');
+      fallbackLink.href = recoveryMapStepHref(step);
+      fallbackLink.textContent = strings.recoveryOpen;
+      fallbackItem.append(fallbackTitle, fallbackBody, fallbackLink);
+      recoveryMapFallbackList.append(fallbackItem);
     });
     selectStep(selectedIndex);
   };
@@ -1684,6 +1814,7 @@ function canonicalChapterTitle(chapter) {
     if (pagination) pagination.hidden = true;
     renderReaderConceptMap(null, '');
     renderReaderVisualCompanion(null);
+    renderReaderRecoveryMap(null);
     const box = document.createElement('div');
     box.className = 'reader-error';
     box.setAttribute('role', 'alert');
@@ -1851,6 +1982,7 @@ function canonicalChapterTitle(chapter) {
     renderReaderInlineConceptMap(selection, title, pageHeadings);
     renderReaderInlineVisual(selection, title);
     renderReaderVisualCompanion(selection);
+    renderReaderRecoveryMap(selection);
     renderBookNavigation(selection);
     renderTrustRecord(null);
     if (selection.contentId) void loadTrustRecord(selection.contentId).then(renderTrustRecord);

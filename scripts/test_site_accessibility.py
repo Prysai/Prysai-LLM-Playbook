@@ -337,6 +337,21 @@ def main() -> int:
         ):
             if required not in reader_css:
                 raise AssertionError(f"teaching-visual-reader-treatment: missing {required}")
+        for required in (
+            "data-reader-recovery-map",
+            "data-reader-recovery-map-nodes",
+            "data-reader-recovery-map-fallback-list",
+            "recoveryLabels",
+            "recoveryBodies",
+            "recoveryNextQuestions",
+            "renderReaderRecoveryMap(selection)",
+            ".reader-recovery-map-node {",
+            ".reader-recovery-map-figure img {",
+        ):
+            if required not in reader_markup + reader_script + reader_css:
+                raise AssertionError(f"recovery-decision-map: missing {required}")
+        if "recoveryMap.hidden = true" not in reader_script or "recoveryMapFigureLink.href" not in reader_script:
+            raise AssertionError("recovery-decision-map: missing hide and full-size image route")
         fixtures += 1
 
         manifest = build_site_locale_manifest.build_manifest()
