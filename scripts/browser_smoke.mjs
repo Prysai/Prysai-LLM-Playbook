@@ -923,6 +923,15 @@ try {
       await visualGuidePage.locator('#visual-capability').screenshot({ path: path.join(visualEvidenceDirectory, 'capability-ladder-desktop.png') });
     }
   }
+  const rootVisualPage = await context.newPage();
+  await rootVisualPage.goto(`${origin}/visuals.html?lang=fr`, { waitUntil: 'networkidle' });
+  assert.equal(await rootVisualPage.locator('html').getAttribute('lang'), 'fr', 'root visual guide does not preserve the requested language');
+  assert.equal(await rootVisualPage.locator('h1').innerText(), 'Voyez la méthode avant d’entrer dans le détail.', 'root visual guide serves the wrong document');
+  assert.equal(await rootVisualPage.locator('link[rel="canonical"]').getAttribute('href'), 'https://docs.prysai.com/llm-playbook/visuals.html', 'root visual guide is missing its canonical URL');
+  assert.equal(await rootVisualPage.locator('.visual-card').count(), 17, 'root visual guide lost its teaching boards');
+  assert.equal(await rootVisualPage.locator('[data-visual-map-nodes] button').count(), 6, 'root visual guide lost its dynamic route map');
+  await noHorizontalOverflow(rootVisualPage, 'root visual guide desktop');
+  await rootVisualPage.close();
   await visualGuidePage.setViewportSize({ width: 390, height: 844 });
   await visualGuidePage.goto(`${origin}/site/visuals.html?lang=fr`, { waitUntil: 'networkidle' });
   await noHorizontalOverflow(visualGuidePage, 'mobile French visual guide');
