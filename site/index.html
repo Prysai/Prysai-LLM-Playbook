@@ -550,12 +550,39 @@ Return only the rewritten message.</code></pre></div>
               </div>
               <div class="foundation-journey-grid">
                 <div class="foundation-journey-copy">
-                  <ol class="foundation-journey-list" aria-label="Playbook learning journey" data-i18n-attr="aria-label:journeyAria">
+                  <div class="foundation-journey-interactive" data-journey-interactive hidden>
+                    <div class="foundation-journey-node-grid" role="list" aria-label="Playbook learning journey stages" data-i18n-attr="aria-label:journeyAria">
+                      <button class="foundation-journey-node is-selected" type="button" role="listitem" data-journey-node="foundation" aria-pressed="true">
+                        <span>01</span><strong data-i18n="journeyStepOneTitle">Foundation Core</strong>
+                      </button>
+                      <button class="foundation-journey-node" type="button" role="listitem" data-journey-node="task" aria-pressed="false">
+                        <span>02</span><strong data-i18n="journeyStepTwoTitle">First bounded task</strong>
+                      </button>
+                      <button class="foundation-journey-node" type="button" role="listitem" data-journey-node="evidence" aria-pressed="false">
+                        <span>03</span><strong data-i18n="journeyStepThreeTitle">Evidence loop</strong>
+                      </button>
+                      <button class="foundation-journey-node" type="button" role="listitem" data-journey-node="tracks" aria-pressed="false">
+                        <span>04</span><strong data-i18n="journeyStepFourTitle">Optional tracks</strong>
+                      </button>
+                    </div>
+                    <section class="foundation-journey-detail" data-journey-detail aria-live="polite" aria-atomic="true">
+                      <span class="foundation-journey-detail-label" data-i18n="journeyDetailLabel">SELECTED STAGE</span>
+                      <h4 data-journey-detail-title data-i18n="journeyStepOneTitle">Foundation Core</h4>
+                      <p data-journey-detail-body data-i18n="journeyStepOneBody">Understand the model, make one request, recognize visible failures, repair, and try a new task.</p>
+                      <p class="foundation-journey-next"><span data-i18n="journeyNextLabel">Next move</span><strong data-journey-detail-next data-i18n="journeyStepOneNext">Finish the foundation before adding a platform-specific layer.</strong></p>
+                      <a class="text-link" data-journey-detail-link data-content-id="llm-foundation-core-v1" href="reader.html?path=book%2Froutes%2Fllm-foundation-core-v1-EN.md&amp;lang=en"><span data-i18n="journeyOpenRoute">Open this stage</span><span aria-hidden="true">↗</span></a>
+                    </section>
+                  </div>
+                  <details class="foundation-journey-fallback" data-journey-fallback open>
+                    <summary data-i18n="journeyFallbackSummary">Read the four stages as text</summary>
+                    <p data-i18n="journeyFallbackIntro">Use this ordered list without the interactive map. Each stage names the work and the evidence boundary that follows it.</p>
+                    <ol class="foundation-journey-list" aria-label="Playbook learning journey" data-i18n-attr="aria-label:journeyAria">
                     <li><span>01</span><strong data-i18n="journeyStepOneTitle">Foundation Core</strong><p data-i18n="journeyStepOneBody">Understand the model, make one request, recognize visible failures, repair, and try a new task.</p></li>
                     <li><span>02</span><strong data-i18n="journeyStepTwoTitle">First bounded task</strong><p data-i18n="journeyStepTwoBody">Name the result, context, allowed help, limits, check, and stop condition.</p></li>
                     <li><span>03</span><strong data-i18n="journeyStepThreeTitle">Evidence loop</strong><p data-i18n="journeyStepThreeBody">Compare what changed with a source, test, log, or acceptance rule; stop when proof is missing.</p></li>
                     <li><span>04</span><strong data-i18n="journeyStepFourTitle">Optional tracks</strong><p data-i18n="journeyStepFourBody">Choose Codex, tools, Skills, Agents, research, engineering, or team practice only when the next layer is useful.</p></li>
-                  </ol>
+                    </ol>
+                  </details>
                   <p class="research-boundary foundation-journey-boundary" data-i18n="journeyBoundary">The map shows order, not mastery. Keep the artifact, evidence, limit, and next question.</p>
                 </div>
                 <figure class="foundation-journey-figure">
