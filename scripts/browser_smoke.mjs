@@ -760,6 +760,16 @@ try {
     'zh-tw': ['Token（詞元）', 'Context（上下文）', 'Context window（上下文視窗）', 'Prompt（提示）', 'Response（回應）', 'Tool / Agent（工具 / Agent）'],
     fr: ['Token', 'Contexte', 'Fenêtre de contexte', 'Prompt', 'Réponse', 'Outil / Agent'],
   };
+  const visualRouteLabels = {
+    en: ['Choose a purpose', 'See the order', 'Separate the terms', 'Follow the work loop', 'Decide from the record', 'Browse one decision', 'Read the board correctly'],
+    zh: ['选择一个目的', '看清顺序', '分清术语', '跟着工作闭环走', '根据记录作决定', '查看一个决定', '正确阅读图板'],
+    es: ['Elegir un propósito', 'Ver el orden', 'Separar los términos', 'Seguir el ciclo de trabajo', 'Decidir a partir del registro', 'Ver una decisión', 'Leer bien el tablero'],
+    ja: ['目的を選ぶ', '順序を見る', '用語を分ける', '作業ループをたどる', '記録から判断する', '1つの判断を見る', 'ボードを正しく読む'],
+    ko: ['목적 고르기', '순서 보기', '용어 구분하기', '작업 루프 따라가기', '기록으로 판단하기', '결정 하나 살펴보기', '보드 올바르게 읽기'],
+    de: ['Einen Zweck wählen', 'Die Reihenfolge sehen', 'Begriffe trennen', 'Der Arbeitsschleife folgen', 'Aus dem Beleg entscheiden', 'Eine Entscheidung ansehen', 'Die Tafel richtig lesen'],
+    'zh-tw': ['選擇一個目的', '看清順序', '分清術語', '跟著工作閉環走', '根據紀錄作判斷', '查看一個判斷', '正確閱讀圖板'],
+    fr: ['Choisir un objectif', 'Voir l’ordre', 'Distinguer les notions', 'Suivre la boucle de travail', 'Décider à partir du relevé', 'Voir une décision', 'Lire correctement la planche'],
+  };
   const visualGuidePage = await context.newPage();
   await visualGuidePage.setViewportSize({ width: 1280, height: 900 });
   for (const locale of Object.keys(visualGuideLabels)) {
@@ -795,6 +805,10 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-concept-fallback] li').count(), 6, `${locale} visual guide concept fallback lost a term`);
     assert.notEqual(await visualGuidePage.locator('[data-visual-concept-image]').getAttribute('alt'), '', `${locale} concept map image has no alternative text`);
     assert.equal(await visualGuidePage.locator('[data-visual-concept-title]').innerText(), visualConceptLabels[locale][0], `${locale} visual guide concept selection is not localized`);
+    assert.deepEqual(await visualGuidePage.locator('[data-visual-route-nodes] button strong').allTextContents(), visualRouteLabels[locale], `${locale} visual route steps are not localized`);
+    assert.equal(await visualGuidePage.locator('[data-visual-route-nodes] button').count(), 7, `${locale} visual route lost a step`);
+    assert.equal(await visualGuidePage.locator('[data-visual-route-fallback] li').count(), 7, `${locale} visual route text fallback lost a step`);
+    assert.equal(await visualGuidePage.locator('[data-visual-route-title]').innerText(), visualRouteLabels[locale][0], `${locale} visual route selection is not localized`);
     assert.notEqual(await visualGuidePage.locator('.visual-card img').first().getAttribute('alt'), '', `${locale} visual guide image has no alternative text`);
     assert.equal(await visualGuidePage.locator('.visual-brand').getAttribute('aria-label'), {
       en: 'Prysai LLM Playbook home', zh: 'Prysai LLM Playbook 首页', es: 'Inicio de Prysai LLM Playbook', ja: 'Prysai LLM Playbook のホーム', ko: 'Prysai LLM Playbook 홈', de: 'Startseite des Prysai LLM Playbook', 'zh-tw': 'Prysai LLM Playbook 首頁', fr: 'Accueil du Prysai LLM Playbook',
@@ -819,6 +833,10 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-concept-title]').innerText(), visualConceptLabels[locale][5], `${locale} visual guide concept selection does not update`);
     assert.equal(await visualGuidePage.locator('[data-visual-concept-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} visual guide concept selection is not exposed`);
     assert.match(await visualGuidePage.locator('[data-visual-concept-link]').getAttribute('href'), new RegExp(`13-action-boundaries-[A-Z]+\.md&lang=${locale}$`), `${locale} visual guide concept route loses its locale`);
+    await visualGuidePage.locator('[data-visual-route-nodes] button').last().click();
+    assert.equal(await visualGuidePage.locator('[data-visual-route-title]').innerText(), visualRouteLabels[locale][6], `${locale} visual route selection does not update`);
+    assert.equal(await visualGuidePage.locator('[data-visual-route-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} visual route selection is not exposed`);
+    assert.equal(await visualGuidePage.locator('[data-visual-route-link]').getAttribute('href'), '#visual-how', `${locale} visual route does not link to the matching section`);
     await noHorizontalOverflow(visualGuidePage, `${locale} visual guide desktop`);
   }
   await visualGuidePage.setViewportSize({ width: 390, height: 844 });
@@ -829,12 +847,16 @@ try {
   assert.equal(await visualGuidePage.locator('[data-visual-journey-nodes] button').count(), 4, 'mobile visual guide learning journey loses a stage');
   assert.equal(await visualGuidePage.locator('[data-visual-concept-nodes] button').count(), 6, 'mobile visual guide concept map loses a term');
   assert.equal(await visualGuidePage.locator('[data-visual-concept-fallback] li').count(), 6, 'mobile visual guide concept fallback loses a term');
+  assert.equal(await visualGuidePage.locator('[data-visual-route-nodes] button').count(), 7, 'mobile visual route loses a step');
+  assert.equal(await visualGuidePage.locator('[data-visual-route-fallback] li').count(), 7, 'mobile visual route fallback loses a step');
   assert.equal(await visualGuidePage.locator('.visual-card').count(), 16, 'mobile visual guide loses teaching boards');
   await visualGuidePage.screenshot({ path: path.join(visualEvidenceDirectory, 'visual-guide-mobile-fr.png'), fullPage: false });
   await visualGuidePage.close();
   const noScriptVisualContext = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
   const noScriptVisualPage = await noScriptVisualContext.newPage();
   await noScriptVisualPage.goto(`${origin}/site/visuals.html?lang=en`, { waitUntil: 'domcontentloaded' });
+  assert.equal(await noScriptVisualPage.locator('[data-visual-route-fallback] li').count(), 7, 'visual guide has no static visual route when JavaScript is disabled');
+  assert.equal(await noScriptVisualPage.locator('[data-visual-route-fallback] a').count(), 7, 'static visual route has no section links');
   assert.equal(await noScriptVisualPage.locator('[data-visual-map-fallback] li').count(), 6, 'visual guide has no static route when JavaScript is disabled');
   assert.equal(await noScriptVisualPage.locator('[data-visual-map-fallback] a').count(), 6, 'static visual guide route has no lesson links');
   assert.equal(await noScriptVisualPage.locator('[data-visual-evidence-fallback] li').count(), 5, 'visual guide has no static evidence route when JavaScript is disabled');
