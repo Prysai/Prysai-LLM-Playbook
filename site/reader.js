@@ -381,10 +381,10 @@
     readingLoopFallback.textContent = strings.fallback;
     readingLoopFallbackIntro.textContent = strings.fallbackIntro;
     if (readingLoopFigureLink && readingLoopImage && readingLoopFigureOpen && readingLoopFigureCaption) {
-      const imageHref = directHref('assets/teaching/reader-page-reading-loop-red-black.svg');
+      const imageHref = visualHref('assets/teaching/reader-page-reading-loop-red-black.svg', strings.figureOpen);
       readingLoopFigureLink.href = imageHref;
       readingLoopFigureLink.setAttribute('aria-label', strings.figureOpen);
-      readingLoopImage.src = imageHref;
+      readingLoopImage.src = directHref('assets/teaching/reader-page-reading-loop-red-black.svg');
       readingLoopImage.alt = strings.figureAlt;
       readingLoopFigureOpen.textContent = strings.figureOpen;
       readingLoopFigureCaption.textContent = strings.figureCaption;
@@ -535,6 +535,21 @@
     visualExplanation: copy.summary,
     visualExplanationIntro: copy.intro,
   }));
+
+  // A visual should lead to a small, observable action. This copy powers a
+  // compact reading strip below the figure; the longer disclosure remains
+  // the complete text equivalent for readers who need it.
+  const readerVisualReadingNoteCopy = {
+    en: { title: 'Turn the picture into a next move', intro: 'Use the board to orient yourself, then return to the page and make the smallest checkable move.', labels: ['Look first', 'Do next', 'Keep', 'Do not infer'], keep: 'Keep the output, source, diff, test, log, or decision record the page asks you to inspect.' },
+    zh: { title: '把图示变成下一步行动', intro: '先用图示定位，再回到正文，完成最小、可检查的行动。', labels: ['先看什么', '下一步做什么', '保留什么', '不要据此推断'], keep: '保留正文要求检查的输出、来源、差异、测试、日志或决策记录。' },
+    es: { title: 'Convierte la imagen en el siguiente paso', intro: 'Usa el tablero para orientarte y vuelve al texto para hacer la comprobación más pequeña que se pueda revisar.', labels: ['Mira primero', 'Haz después', 'Conserva', 'No deduzcas'], keep: 'Conserva la salida, la fuente, el diff, la prueba, el registro o la decisión que el texto te pida revisar.' },
+    ja: { title: '図を次の一歩につなげる', intro: '図で全体の位置をつかんだら本文に戻り、確認できる最小の行動を1つ行います。', labels: ['まず見ること', '次にすること', '残すもの', 'ここから推測しないこと'], keep: '本文で確認すると指定された出力、出典、差分、テスト、ログ、判断記録を残します。' },
+    ko: { title: '그림을 다음 행동으로 연결하기', intro: '그림으로 전체 관계를 파악한 다음 본문으로 돌아가 확인 가능한 가장 작은 행동을 하나 수행하세요.', labels: ['먼저 볼 것', '다음에 할 것', '남길 기록', '이 그림만으로 알 수 없는 것'], keep: '본문에서 확인하라고 한 출력, 출처, diff, 테스트, 로그 또는 판단 기록을 남기세요.' },
+    de: { title: 'Aus dem Bild den nächsten Schritt ableiten', intro: 'Nutze die Tafel zur Orientierung und kehre dann zum Text zurück, um den kleinsten prüfbaren Schritt auszuführen.', labels: ['Zuerst ansehen', 'Als Nächstes tun', 'Aufbewahren', 'Nicht daraus ableiten'], keep: 'Bewahre die Ausgabe, Quelle, den Diff, Test, Log oder die Entscheidungsnotiz auf, die im Text geprüft werden soll.' },
+    'zh-tw': { title: '把圖示變成下一步行動', intro: '先用圖示確認位置，再回到本文，完成最小且可檢查的行動。', labels: ['先看什麼', '下一步做什麼', '要保留什麼', '不要據此推論'], keep: '保留本文要求檢查的輸出、來源、差異、測試、紀錄或決策記錄。' },
+    fr: { title: 'Transformer l’image en prochaine action', intro: 'Utilisez la planche pour vous orienter, puis revenez au texte et effectuez la plus petite vérification possible.', labels: ['À regarder d’abord', 'À faire ensuite', 'À conserver', 'Ne pas en déduire'], keep: 'Conservez la sortie, la source, le diff, le test, le journal ou la décision que le texte vous demande d’examiner.' },
+  };
+  const currentReaderVisualReadingNoteCopy = () => readerVisualReadingNoteCopy[uiLanguage()] || readerVisualReadingNoteCopy.en;
 
   // The heading map is more useful when a selected node answers two questions:
   // what does this section contain, and where do I go next? The summary is
@@ -981,7 +996,7 @@
     corePathSummary.textContent = strings.summary;
     corePathIntro.textContent = strings.intro;
     corePathNodes.setAttribute('aria-label', strings.aria);
-    corePathFigureLink.href = directHref('assets/teaching/llm-foundation-core-path-red-black.svg');
+    corePathFigureLink.href = visualHref('assets/teaching/llm-foundation-core-path-red-black.svg', strings.figureOpen);
     corePathFigureLink.setAttribute('aria-label', strings.figureOpen);
     corePathImage.src = directHref('assets/teaching/llm-foundation-core-path-red-black.svg');
     corePathImage.alt = strings.figureAlt;
@@ -1057,7 +1072,7 @@
     courseMapFigureCaption.textContent = strings.figureCaption;
     courseMapBoundary.textContent = strings.boundary;
     courseMapImage.alt = strings.figureAlt;
-    courseMapFigureLink.href = directHref('assets/teaching/playbook-learning-journey-red-black.svg');
+    courseMapFigureLink.href = visualHref('assets/teaching/playbook-learning-journey-red-black.svg', strings.figureOpen);
     courseMapFigureLink.setAttribute('aria-label', strings.figureOpen);
     courseMapNodes.setAttribute('aria-label', strings.aria);
     const selectStage = (index) => {
@@ -1147,7 +1162,7 @@
     routeMapFigureCaption.textContent = strings.figureCaption;
     routeMapBoundary.textContent = strings.boundary;
     routeMapImage.alt = strings.figureAlt;
-    routeMapFigureLink.href = directHref('assets/teaching/reliable-llm-work-loop-red-black.svg');
+    routeMapFigureLink.href = visualHref('assets/teaching/reliable-llm-work-loop-red-black.svg', strings.figureOpen);
     routeMapNodes.setAttribute('aria-label', strings.aria);
 
     const selectStep = (index) => {
@@ -1248,7 +1263,7 @@
     recoveryMapFigureCaption.textContent = strings.recoveryFigureCaption;
     recoveryMapBoundary.textContent = strings.recoveryBoundary;
     recoveryMapImage.alt = strings.recoveryFigureAlt;
-    recoveryMapFigureLink.href = directHref('assets/teaching/recovery-decision-tree-red-black.svg');
+    recoveryMapFigureLink.href = visualHref('assets/teaching/recovery-decision-tree-red-black.svg', strings.recoveryFigureOpen);
     recoveryMapFigureLink.setAttribute('aria-label', strings.recoveryFigureOpen);
     recoveryMapNodes.setAttribute('aria-label', strings.recoveryAria);
 
@@ -1324,7 +1339,10 @@
     const step = Math.max(0, Math.min(routeStrings.labels.length - 1, visual?.step || 0));
     const visualKey = visual?.path?.split('/').pop();
     const localizedBriefs = visualKey ? readerVisualBriefs[visualKey] : null;
-    const brief = localizedBriefs?.[uiLanguage()] || localizedBriefs?.en || null;
+    // Do not silently insert English board copy into a localized Reader. The
+    // route map is already localized and is a safer fallback for an unreviewed
+    // board brief.
+    const brief = localizedBriefs?.[uiLanguage()] || (uiLanguage() === 'en' ? localizedBriefs?.en : null);
     return {
       step,
       brief,
@@ -1453,7 +1471,7 @@
     link.className = 'reader-image-link reader-teaching-visual';
     link.target = '_blank';
     link.rel = 'noreferrer';
-    link.href = directHref(visual.path);
+    link.href = visualHref(visual.path, label);
     link.setAttribute('aria-label', `${visualOpen}: ${label}`);
     const thesis = document.createElement('span');
     thesis.className = 'reader-visual-thesis';
@@ -1473,6 +1491,32 @@
     link.append(openLabel);
     const caption = document.createElement('figcaption');
     caption.textContent = visualCaption;
+    const noteCopy = currentReaderVisualReadingNoteCopy();
+    const readingNote = document.createElement('section');
+    readingNote.className = 'reader-visual-reading-note';
+    readingNote.setAttribute('aria-labelledby', 'reader-visual-reading-note-title');
+    const readingNoteTitle = document.createElement('h3');
+    readingNoteTitle.id = 'reader-visual-reading-note-title';
+    readingNoteTitle.textContent = noteCopy.title;
+    const readingNoteIntro = document.createElement('p');
+    readingNoteIntro.className = 'reader-visual-reading-note-intro';
+    readingNoteIntro.textContent = noteCopy.intro;
+    const readingNoteGrid = document.createElement('dl');
+    readingNoteGrid.className = 'reader-visual-reading-note-grid';
+    const readingNoteItems = [
+      { label: noteCopy.labels[0], value: `${label}: ${body}` },
+      { label: noteCopy.labels[1], value: next },
+      { label: noteCopy.labels[2], value: noteCopy.keep },
+      { label: noteCopy.labels[3], value: visualBoundary },
+    ];
+    readingNoteItems.forEach(({ label: itemLabel, value }) => {
+      const term = document.createElement('dt');
+      term.textContent = itemLabel;
+      const description = document.createElement('dd');
+      description.textContent = value || '';
+      readingNoteGrid.append(term, description);
+    });
+    readingNote.append(readingNoteTitle, readingNoteIntro, readingNoteGrid);
     // A complex board needs more than a short alt sentence. Use the board's
     // specific brief when one exists; otherwise keep the localized route
     // sequence as the accessible fallback for readers who prefer text.
@@ -1503,7 +1547,7 @@
     const boundary = document.createElement('p');
     boundary.className = 'reader-inline-visual-boundary';
     boundary.textContent = visualBoundary;
-    figure.append(link, caption, explanation, boundary);
+    figure.append(link, caption, readingNote, explanation, boundary);
     const openingParagraph = article.querySelector(':scope > p');
     // Put the visual immediately after the opening explanation for every
     // page. The diagram answers the reader's first practical question before
@@ -1655,10 +1699,10 @@
     link.className = 'reader-image-link reader-teaching-visual';
     link.target = '_blank';
     link.rel = 'noreferrer';
-    link.href = directHref('assets/teaching/reader-page-anatomy-red-black.svg');
+    link.href = visualHref('assets/teaching/reader-page-anatomy-red-black.svg', strings.conceptAnatomyOpen);
     link.setAttribute('aria-label', strings.conceptAnatomyOpen);
     const image = document.createElement('img');
-    image.src = link.href;
+    image.src = directHref('assets/teaching/reader-page-anatomy-red-black.svg');
     image.width = 900;
     image.height = 1500;
     image.loading = 'lazy';
@@ -1693,7 +1737,7 @@
     const routeStrings = currentReaderRouteMapCopy();
     const reading = readerVisualReading(visual, routeStrings);
     const { label, body, next } = reading;
-    const imageHref = directHref(visual.path);
+    const imageHref = visualHref(visual.path, label);
     visualCompanion.hidden = false;
     visualCompanion.open = false;
     visualCompanionSummary.textContent = strings.visualSummary;
@@ -1701,7 +1745,7 @@
     visualCompanionIntro.textContent = strings.visualIntro;
     visualCompanionLink.href = imageHref;
     visualCompanionThesis.textContent = `${label} · ${next}`;
-    visualCompanionImage.src = imageHref;
+    visualCompanionImage.src = directHref(visual.path);
     visualCompanionImage.alt = `${strings.visualAltPrefix} ${label}: ${body}`;
     visualCompanionOpen.textContent = strings.visualOpen;
     visualCompanionCaption.textContent = `${strings.visualCaptionPrefix} ${label}. ${body}`;
@@ -1729,7 +1773,7 @@
       card.className = 'reader-related-visual-card';
       const link = document.createElement('a');
       link.className = 'reader-related-visual-link';
-      link.href = directHref(visual.path);
+      link.href = visualHref(visual.path, label);
       link.target = '_blank';
       link.rel = 'noreferrer';
       link.setAttribute('aria-label', `${strings.relatedVisualOpen}: ${label}`);
@@ -1783,7 +1827,7 @@
       const figure = document.createElement('figure');
       const link = document.createElement('a');
       link.className = 'reader-image-link reader-teaching-visual';
-      link.href = directHref(visual.path);
+      link.href = visualHref(visual.path, label);
       link.target = '_blank';
       link.rel = 'noreferrer';
       link.setAttribute('aria-label', `${strings.open}: ${label}`);
@@ -2130,6 +2174,18 @@ function canonicalChapterTitle(chapter) {
 
   function directHref(path) {
     return `../${path}`;
+  }
+
+  function visualHref(path, label = '') {
+    const normalized = String(path || '').replace(/^\.\.\//, '');
+    const marker = 'assets/teaching/';
+    if (!normalized.startsWith(marker) || !normalized.endsWith('.svg')) return directHref(normalized);
+    const params = new URLSearchParams({
+      asset: normalized.slice(marker.length),
+      lang: validLocales.includes(uiLanguage()) ? uiLanguage() : 'en',
+    });
+    if (label) params.set('label', label);
+    return `visual.html?${params.toString()}`;
   }
 
   function isExternal(value) {

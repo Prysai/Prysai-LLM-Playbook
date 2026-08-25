@@ -2201,6 +2201,9 @@ try {
   assert.equal(await inlineTeachingVisual.locator('.reader-visual-explanation').count(), 1, 'Inline teaching visual has no text explanation');
   assert.equal((await inlineTeachingVisual.locator('.reader-visual-explanation summary').innerText()).trim(), 'Read this teaching visual as text', 'Inline teaching visual uses the wrong English explanation label');
   assert.equal(await inlineTeachingVisual.locator('.reader-visual-explanation li').count(), 1, 'Inline teaching visual did not use the board-specific text explanation');
+  assert.equal(await inlineTeachingVisual.locator('.reader-visual-reading-note').count(), 1, 'Inline teaching visual has no action-oriented reading note');
+  assert.equal(await inlineTeachingVisual.locator('.reader-visual-reading-note-grid dt').count(), 4, 'Inline teaching visual reading note does not expose four questions');
+  assert.notEqual((await inlineTeachingVisual.locator('.reader-visual-reading-note-grid dd').nth(1).innerText()).trim(), '', 'Inline teaching visual reading note has no next action');
   assert.match(await inlineTeachingVisual.locator('.reader-visual-thesis').innerText(), /A prompt is a small contract/, 'Inline teaching visual lost the prompt-contract thesis');
   const inlineVisualOrder = await page.locator('[data-reader-article]').evaluate((article) => {
     const opening = article.querySelector(':scope > p');
@@ -2343,6 +2346,16 @@ try {
     'zh-tw': '依文字理解這張教學圖',
     fr: 'Lire ce visuel pédagogique sous forme de texte',
   };
+  const visualReadingNoteLocales = {
+    en: ['Turn the picture into a next move', 'Look first', 'Do not infer'],
+    zh: ['把图示变成下一步行动', '先看什么', '不要据此推断'],
+    es: ['Convierte la imagen en el siguiente paso', 'Mira primero', 'No deduzcas'],
+    ja: ['図を次の一歩につなげる', 'まず見ること', 'ここから推測しないこと'],
+    ko: ['그림을 다음 행동으로 연결하기', '먼저 볼 것', '이 그림만으로 알 수 없는 것'],
+    de: ['Aus dem Bild den nächsten Schritt ableiten', 'Zuerst ansehen', 'Nicht daraus ableiten'],
+    'zh-tw': ['把圖示變成下一步行動', '先看什麼', '不要據此推論'],
+    fr: ['Transformer l’image en prochaine action', 'À regarder d’abord', 'Ne pas en déduire'],
+  };
   const readingLoopLocales = {
     en: ['Read this page as a task chain', 'Problem', 'Evidence'],
     zh: ['把本页读成一条任务链', '问题', '证据'],
@@ -2409,6 +2422,21 @@ try {
       (await localizedInlineTeachingVisual.locator('.reader-visual-explanation summary').innerText()).trim(),
       visualExplanationLocales[locale],
       `${locale} inline teaching visual explanation is not localized`,
+    );
+    assert.equal(
+      (await localizedInlineTeachingVisual.locator('.reader-visual-reading-note h3').innerText()).trim(),
+      visualReadingNoteLocales[locale][0],
+      `${locale} inline teaching visual reading note title is not localized`,
+    );
+    assert.equal(
+      (await localizedInlineTeachingVisual.locator('.reader-visual-reading-note-grid dt').first().innerText()).trim(),
+      visualReadingNoteLocales[locale][1],
+      `${locale} inline teaching visual reading note first label is not localized`,
+    );
+    assert.equal(
+      (await localizedInlineTeachingVisual.locator('.reader-visual-reading-note-grid dt').nth(3).innerText()).trim(),
+      visualReadingNoteLocales[locale][2],
+      `${locale} inline teaching visual reading note boundary label is not localized`,
     );
     assert.equal(await localizedInlineTeachingVisual.locator('.reader-visual-explanation li').count(), 1, `${locale} inline teaching visual did not use its board-specific explanation`);
     const readingLoop = page.locator('[data-reader-reading-loop]');

@@ -218,6 +218,53 @@ a:hover { color: var(--reader-link-hover); }
   line-height: 1.5;
 }
 
+.reader-visual-reading-note {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid var(--reader-line);
+  border-left: 4px solid var(--reader-ink);
+  background: #f1f1ed;
+}
+
+.reader-visual-reading-note h3 {
+  margin: 0;
+  color: var(--reader-ink);
+  font-size: .94rem;
+  line-height: 1.3;
+}
+
+.reader-visual-reading-note-intro {
+  margin: 6px 0 12px;
+  color: var(--reader-muted);
+  font-size: .76rem;
+  line-height: 1.45;
+}
+
+.reader-visual-reading-note-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 14px;
+  margin: 0;
+}
+
+.reader-visual-reading-note-grid dt {
+  margin: 0;
+  color: var(--reader-red);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.reader-visual-reading-note-grid dd {
+  min-width: 0;
+  margin: 3px 0 0;
+  color: var(--reader-ink);
+  font-size: .76rem;
+  line-height: 1.45;
+}
+
 .reader-visual-explanation {
   margin-top: 12px;
   padding-top: 12px;
@@ -1180,6 +1227,7 @@ a:hover { color: var(--reader-link-hover); }
   .reader-inline-concept-map-list::before,
   .reader-inline-concept-map-list li::before { display: none; }
   .reader-inline-concept-map-detail { margin-top: 10px; padding: 9px 10px; }
+  .reader-visual-reading-note-grid { grid-template-columns: 1fr; }
   .reader-inline-visual-sequence-grid { grid-template-columns: 1fr; }
   .reader-inline-visual-sequence-card .reader-image-link img { height: 180px; }
   .reader-related-visuals-grid { grid-template-columns: 1fr; }
