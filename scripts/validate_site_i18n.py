@@ -213,6 +213,25 @@ def translation_keys(app: str, language: str, html_keys: set[str]) -> set[str]:
             )
         if journey_locale:
             blocks.append(journey_locale.group("body"))
+    # The first-attempt receipt card is composed in its own additive layer.
+    # Keep that layer in the static key audit just like the other localized
+    # visual maps; otherwise valid runtime copy is reported as missing.
+    receipt_copy = re.search(r"const\s+foundationReceiptCopy\s*=\s*\{(?P<body>.*?)\n\};", app, re.DOTALL)
+    if receipt_copy:
+        locale_key = rf"(?:['\"]{re.escape(language)}['\"]|{re.escape(language)})"
+        receipt_locale = re.search(
+            rf"\n\s{{2}}{locale_key}:\s*\{{(?P<body>.*?)\n\s{{2}}\}},",
+            receipt_copy.group("body"),
+            re.DOTALL,
+        )
+        if not receipt_locale:
+            receipt_locale = re.search(
+                rf"(?:^|\n)\s{{2}}{locale_key}:\s*\{{(?P<body>[^{{}}]*)\}}",
+                receipt_copy.group("body"),
+                re.DOTALL,
+            )
+        if receipt_locale:
+            blocks.append(receipt_locale.group("body"))
     return set().union(*(keys_for(block, html_keys) for block in blocks)) if blocks else set()
 
 
