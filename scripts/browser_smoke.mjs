@@ -710,6 +710,16 @@ try {
     'zh-tw': ['理解', '框定', '行動', '檢查', '修正', '遷移'],
     fr: ['Comprendre', 'Cadrer', 'Agir', 'Inspecter', 'Corriger', 'Transférer'],
   };
+  const visualGuideGoalLabels = {
+    en: ['I need a first safe task', 'I am not sure what the result proves', 'I need to verify a claim', 'I want to reuse the method'],
+    zh: ['我想先完成一次安全任务', '我不确定结果能证明什么', '我需要核对一个结论', '我想把方法用到别的任务'],
+    es: ['Quiero empezar con una tarea segura', 'No sé qué demuestra el resultado', 'Necesito comprobar una afirmación', 'Quiero reutilizar el método'],
+    ja: ['まず安全なタスクを試したい', 'この結果で何が言えるか分からない', '主張を確かめたい', '方法を別の課題でも使いたい'],
+    ko: ['안전한 작업 하나부터 시작하고 싶다', '이 결과가 무엇을 증명하는지 모르겠다', '주장을 확인하고 싶다', '방법을 다른 작업에도 쓰고 싶다'],
+    de: ['Mit einer sicheren Aufgabe beginnen', 'Ich weiß nicht, was dieses Ergebnis belegt', 'Eine Aussage überprüfen', 'Die Methode weiterverwenden'],
+    'zh-tw': ['我想先完成一次安全任務', '我不確定結果能證明什麼', '我需要核對一項主張', '我想把方法用在其他任務'],
+    fr: ['Commencer par une tâche sûre', 'Je ne sais pas ce que ce résultat prouve', 'Vérifier une affirmation', 'Réutiliser la méthode'],
+  };
   const visualGuidePage = await context.newPage();
   await visualGuidePage.setViewportSize({ width: 1280, height: 900 });
   for (const locale of Object.keys(visualGuideLabels)) {
@@ -722,6 +732,10 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-map-nodes] button').count(), 6, `${locale} visual guide map lost a stage`);
     assert.equal(await visualGuidePage.locator('[data-visual-map-fallback] li').count(), 6, `${locale} visual guide text fallback lost a stage`);
     assert.equal(await visualGuidePage.locator('.visual-card').count(), 12, `${locale} visual guide lost a teaching board`);
+    assert.deepEqual(await visualGuidePage.locator('[data-visual-goal-nodes] button strong').allTextContents(), visualGuideGoalLabels[locale], `${locale} visual guide goal entry labels are not localized`);
+    assert.equal(await visualGuidePage.locator('[data-visual-goal-nodes] button').count(), 4, `${locale} visual guide goal map lost an entry`);
+    assert.equal(await visualGuidePage.locator('[data-visual-goal-fallback] li').count(), 4, `${locale} visual guide goal fallback lost an entry`);
+    assert.notEqual(await visualGuidePage.locator('[data-visual-goal-image]').getAttribute('alt'), '', `${locale} visual guide goal image has no alternative text`);
     assert.notEqual(await visualGuidePage.locator('.visual-card img').first().getAttribute('alt'), '', `${locale} visual guide image has no alternative text`);
     assert.equal(await visualGuidePage.locator('.visual-brand').getAttribute('aria-label'), {
       en: 'Prysai LLM Playbook home', zh: 'Prysai LLM Playbook 首页', es: 'Inicio de Prysai LLM Playbook', ja: 'Prysai LLM Playbook のホーム', ko: 'Prysai LLM Playbook 홈', de: 'Startseite des Prysai LLM Playbook', 'zh-tw': 'Prysai LLM Playbook 首頁', fr: 'Accueil du Prysai LLM Playbook',
@@ -732,6 +746,9 @@ try {
     await visualGuidePage.locator('[data-visual-map-nodes] button').last().click();
     assert.equal(await visualGuidePage.locator('[data-visual-map-title]').innerText(), visualGuideLabels[locale][5], `${locale} visual guide selection does not update`);
     assert.match(await visualGuidePage.locator('[data-visual-map-link]').getAttribute('href'), new RegExp(`lang=${locale}$`), `${locale} visual guide route loses its locale`);
+    await visualGuidePage.locator('[data-visual-goal-nodes] button').nth(2).click();
+    assert.match(await visualGuidePage.locator('[data-visual-goal-link]').getAttribute('href'), new RegExp(`lang=${locale}$`), `${locale} visual guide goal route loses its locale`);
+    assert.equal(await visualGuidePage.locator('[data-visual-goal-nodes] button').nth(2).getAttribute('aria-pressed'), 'true', `${locale} visual guide goal selection does not update`);
     await noHorizontalOverflow(visualGuidePage, `${locale} visual guide desktop`);
   }
   await visualGuidePage.setViewportSize({ width: 390, height: 844 });
@@ -746,6 +763,8 @@ try {
   await noScriptVisualPage.goto(`${origin}/site/visuals.html?lang=en`, { waitUntil: 'domcontentloaded' });
   assert.equal(await noScriptVisualPage.locator('[data-visual-map-fallback] li').count(), 6, 'visual guide has no static route when JavaScript is disabled');
   assert.equal(await noScriptVisualPage.locator('[data-visual-map-fallback] a').count(), 6, 'static visual guide route has no lesson links');
+  assert.equal(await noScriptVisualPage.locator('[data-visual-goal-fallback] li').count(), 4, 'visual guide has no static goal entry route when JavaScript is disabled');
+  assert.equal(await noScriptVisualPage.locator('[data-visual-goal-fallback] a').count(), 4, 'static visual guide goal route has no lesson links');
   await noScriptVisualContext.close();
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(`${origin}/site/?lang=fr`, { waitUntil: 'networkidle' });
