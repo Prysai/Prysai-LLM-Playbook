@@ -51,9 +51,41 @@
         </div>
       </section>
 
-      <section class="visual-goal-section" aria-labelledby="visual-goal-title">
+      <section id="visual-route" class="visual-route-section" aria-labelledby="visual-route-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">02</span><p class="visual-eyebrow" data-i18n="goalEyebrow">Start from your question</p><h2 id="visual-goal-title" data-i18n="goalTitle">Choose a reason, not a random page.</h2></div>
+          <div><span class="visual-section-number">02</span><p class="visual-eyebrow" data-i18n="routeEyebrow">A guided visual route</p><h2 id="visual-route-title" data-i18n="routeTitle">Know what each picture is for.</h2></div>
+          <p data-i18n="routeIntro">Follow the route from your purpose to a checked decision. Select a step to see what it explains, what to ask next, and where to continue.</p>
+        </div>
+        <div class="visual-route-workspace">
+          <nav class="visual-route-nav" aria-label="Visual route steps" data-i18n-attr="aria-label:routeAria">
+            <ol data-visual-route-nodes></ol>
+          </nav>
+          <section class="visual-route-detail" aria-live="polite" aria-atomic="true">
+            <span class="visual-detail-label" data-i18n="routeSelected">Current visual step</span>
+            <h3 data-visual-route-title></h3>
+            <p data-visual-route-body></p>
+            <p class="visual-route-next"><span data-i18n="routeNext">Next question</span><strong data-visual-route-next></strong></p>
+            <a class="visual-action-link" data-visual-route-link href="#visual-goal"><span data-i18n="routeOpen">Jump to this section</span><span aria-hidden="true">↘</span></a>
+          </section>
+        </div>
+        <details class="visual-route-fallback" open>
+          <summary data-i18n="routeFallback">Read the visual route as text</summary>
+          <p data-i18n="routeFallbackIntro">The same order remains available without JavaScript or pointer interaction.</p>
+          <ol data-visual-route-fallback>
+            <li><strong>01 · Choose a purpose</strong><span>Start with a safe first task, an uncertain result, a claim to verify, or a method to reuse.</span><em>Next question: Which small outcome do I need?</em><a class="visual-action-link" href="#visual-goal">Jump to this section ↘</a></li>
+            <li><strong>02 · See the order</strong><span>Finish the foundation before adding optional platform-specific layers.</span><em>Next question: Am I still on the foundation route?</em><a class="visual-action-link" href="#visual-journey">Jump to this section ↘</a></li>
+            <li><strong>03 · Separate the terms</strong><span>Keep token, context, prompt, response, and tool authority in their own lanes.</span><em>Next question: What can this term actually establish?</em><a class="visual-action-link" href="#visual-concept">Jump to this section ↘</a></li>
+            <li><strong>04 · Follow the work loop</strong><span>Move through understand, frame, act, inspect, repair, and transfer.</span><em>Next question: What evidence follows this action?</em><a class="visual-action-link" href="#visual-map">Jump to this section ↘</a></li>
+            <li><strong>05 · Decide from the record</strong><span>Name the question, locate the source, observe the result, decide within scope, and stop when proof is missing.</span><em>Next question: What does the record actually support?</em><a class="visual-action-link" href="#visual-evidence">Jump to this section ↘</a></li>
+            <li><strong>06 · Browse one decision</strong><span>Open one board and its matching lesson; the gallery is not a second catalogue.</span><em>Next question: Which decision does this board clarify?</em><a class="visual-action-link" href="#visual-gallery">Jump to this section ↘</a></li>
+            <li><strong>07 · Read the board correctly</strong><span>Use the thesis and text fallback, try one bounded move, and keep the boundary visible.</span><em>Next question: What does the picture still not prove?</em><a class="visual-action-link" href="#visual-how">Jump to this section ↘</a></li>
+          </ol>
+        </details>
+      </section>
+
+      <section id="visual-goal" class="visual-goal-section" aria-labelledby="visual-goal-title">
+        <div class="visual-section-heading">
+          <div><span class="visual-section-number">03</span><p class="visual-eyebrow" data-i18n="goalEyebrow">Start from your question</p><h2 id="visual-goal-title" data-i18n="goalTitle">Choose a reason, not a random page.</h2></div>
           <p data-i18n="goalIntro">Pick the situation that brought you here. The map suggests one bounded next step and one visual explanation instead of sending you into the full catalogue.</p>
         </div>
         <div class="visual-goal-workspace">
@@ -88,9 +120,9 @@
         </details>
       </section>
 
-      <section class="visual-journey-section" aria-labelledby="visual-journey-title">
+      <section id="visual-journey" class="visual-journey-section" aria-labelledby="visual-journey-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">03</span><p class="visual-eyebrow" data-i18n="journeyEyebrow">Learning journey map</p><h2 id="visual-journey-title" data-i18n="journeyTitle">See the whole Playbook before you choose a track.</h2></div>
+          <div><span class="visual-section-number">04</span><p class="visual-eyebrow" data-i18n="journeyEyebrow">Learning journey map</p><h2 id="visual-journey-title" data-i18n="journeyTitle">See the whole Playbook before you choose a track.</h2></div>
           <p data-i18n="journeyIntro">One map answers the first practical question: what should I do now, and what comes after the first checked result?</p>
         </div>
         <div class="visual-journey-workspace">
@@ -126,9 +158,9 @@
         <p class="visual-boundary" data-i18n="journeyBoundary">The map shows order, not mastery. Keep the artifact, evidence, limit, and next question.</p>
       </section>
 
-      <section class="visual-concept-section" aria-labelledby="visual-concept-title">
+      <section id="visual-concept" class="visual-concept-section" aria-labelledby="visual-concept-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">04</span><p class="visual-eyebrow" data-i18n="conceptEyebrow">Concept mind map</p><h2 id="visual-concept-title" data-i18n="conceptTitle">Separate the six terms before you trust the answer.</h2></div>
+          <div><span class="visual-section-number">05</span><p class="visual-eyebrow" data-i18n="conceptEyebrow">Concept mind map</p><h2 id="visual-concept-title" data-i18n="conceptTitle">Separate the six terms before you trust the answer.</h2></div>
           <p data-i18n="conceptIntro">Token, context, context window, prompt, response, and tool or Agent are related, but they are not interchangeable. Select one term to see what it explains and what it still cannot prove.</p>
         </div>
         <div class="visual-concept-workspace">
@@ -166,9 +198,9 @@
         <p class="visual-boundary" data-i18n="conceptBoundary">Response is not action, and action is not a verified result. Compare the result with a source, diff, test, log, or acceptance rule before claiming completion.</p>
       </section>
 
-      <section class="visual-map-section" aria-labelledby="visual-map-title">
+      <section id="visual-map" class="visual-map-section" aria-labelledby="visual-map-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">05</span><p class="visual-eyebrow" data-i18n="mapEyebrow">Dynamic route map</p><h2 id="visual-map-title" data-i18n="mapTitle">Choose a stage, then ask one question.</h2></div>
+          <div><span class="visual-section-number">06</span><p class="visual-eyebrow" data-i18n="mapEyebrow">Dynamic route map</p><h2 id="visual-map-title" data-i18n="mapTitle">Choose a stage, then ask one question.</h2></div>
           <p data-i18n="mapIntro">Select a node to see the action, the evidence boundary, and the next safe question. The ordered list below keeps the route available without interaction.</p>
         </div>
         <div class="visual-map-workspace">
@@ -198,9 +230,9 @@
         </details>
       </section>
 
-      <section class="visual-evidence-section" aria-labelledby="visual-evidence-title">
+      <section id="visual-evidence" class="visual-evidence-section" aria-labelledby="visual-evidence-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">06</span><p class="visual-eyebrow" data-i18n="evidenceEyebrow">Evidence decision map</p><h2 id="visual-evidence-title" data-i18n="evidenceTitle">Let the record decide how far the claim can go.</h2></div>
+          <div><span class="visual-section-number">07</span><p class="visual-eyebrow" data-i18n="evidenceEyebrow">Evidence decision map</p><h2 id="visual-evidence-title" data-i18n="evidenceTitle">Let the record decide how far the claim can go.</h2></div>
           <p data-i18n="evidenceIntro">This is the practical bridge between a plausible answer and a defensible conclusion: name the question, locate the source, observe what happened, choose a bounded decision, then stop when the next proof is missing.</p>
         </div>
         <div class="visual-evidence-workspace">
@@ -239,7 +271,7 @@
 
       <section id="visual-gallery" class="visual-gallery-section" aria-labelledby="visual-gallery-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">07</span><p class="visual-eyebrow" data-i18n="galleryEyebrow">Teaching boards</p><h2 id="visual-gallery-title" data-i18n="galleryTitle">Pictures that explain one decision at a time.</h2></div>
+          <div><span class="visual-section-number">08</span><p class="visual-eyebrow" data-i18n="galleryEyebrow">Teaching boards</p><h2 id="visual-gallery-title" data-i18n="galleryTitle">Pictures that explain one decision at a time.</h2></div>
           <p data-i18n="galleryIntro">Each board has a short explanation, a localized alternative text, and a route into the matching lesson. Open the image when you want the printable version; use the text beside it when you want the exact boundary.</p>
         </div>
         <div class="visual-gallery" data-visual-gallery></div>
@@ -251,9 +283,9 @@
         <p class="visual-boundary" data-i18n="galleryBoundary">This is a focused selection from the project-authored teaching boards. It is not a quality score, benchmark, or proof of learning.</p>
       </section>
 
-      <section class="visual-how-section" aria-labelledby="visual-how-title">
+      <section id="visual-how" class="visual-how-section" aria-labelledby="visual-how-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">08</span><p class="visual-eyebrow" data-i18n="howEyebrow">Read the picture correctly</p><h2 id="visual-how-title" data-i18n="howTitle">Use a board without overtrusting it.</h2></div>
+          <div><span class="visual-section-number">09</span><p class="visual-eyebrow" data-i18n="howEyebrow">Read the picture correctly</p><h2 id="visual-how-title" data-i18n="howTitle">Use a board without overtrusting it.</h2></div>
           <p data-i18n="howIntro">The board gives you a shape to remember. Your own small attempt and record decide what you may claim.</p>
         </div>
         <div class="visual-how-grid">
