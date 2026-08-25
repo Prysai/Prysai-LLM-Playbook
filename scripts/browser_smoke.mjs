@@ -938,6 +938,8 @@ try {
   assert.equal(await noScriptVisualPage.locator('[data-visual-action-boundary-fallback] a').count(), 5, 'static action boundary map has no lesson links');
   assert.equal(await noScriptVisualPage.locator('[data-visual-triage-fallback] li').count(), 4, 'visual guide has no static claim triage map when JavaScript is disabled');
   assert.equal(await noScriptVisualPage.locator('[data-visual-triage-fallback] a').count(), 4, 'static claim triage map has no lesson links');
+  assert.equal(await noScriptVisualPage.locator('[data-visual-explorer-fallback] li').count(), 6, 'visual guide has no static board explorer when JavaScript is disabled');
+  assert.equal(await noScriptVisualPage.locator('[data-visual-explorer-fallback] a').count(), 6, 'static board explorer has no lesson links');
   await noScriptVisualContext.close();
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(`${origin}/site/?lang=fr`, { waitUntil: 'networkidle' });
