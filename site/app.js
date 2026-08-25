@@ -1309,6 +1309,11 @@ const applyLanguage = (language, { updateUrl = true } = {}) => {
     url.searchParams.set('lang', element.dataset.languageOption);
     element.href = `${url.pathname}${url.search}${url.hash}`;
   });
+  document.querySelectorAll('.site-nav a[href^="visuals.html"]').forEach((link) => {
+    const url = new URL(link.href, window.location.href);
+    url.searchParams.set('lang', currentLanguage);
+    link.href = `${url.pathname}${url.search}`;
+  });
   updateLevel(document.querySelector('.level-tab.is-active')?.dataset.level || 'L0', false);
   updateRouteStatus(document.querySelector('.filter-button.is-active')?.dataset.filter || 'all');
   refreshMindMap();
@@ -1488,6 +1493,7 @@ if (window.top !== window.self) {
     '#path': 'https://docs.prysai.com/llm-playbook/#path',
     '#chapters': 'https://docs.prysai.com/llm-playbook/#chapters',
     '#project-map': 'https://docs.prysai.com/llm-playbook/#project-map',
+    '#visuals': 'https://docs.prysai.com/llm-playbook/visuals.html',
   };
   const hostedLocale = new URLSearchParams(window.location.search).get('lang');
   document.querySelectorAll('.site-nav a[href^="index.html#"]').forEach((link) => {
@@ -1496,6 +1502,14 @@ if (window.top !== window.self) {
     link.href = hostedLocale && hostedLocale !== 'en'
       ? `https://docs.prysai.com/llm-playbook/?lang=${encodeURIComponent(hostedLocale)}${new URL(destination).hash}`
       : destination;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.dataset.hostedNavigation = 'new-tab';
+  });
+  document.querySelectorAll('.site-nav a[href^="visuals.html"]').forEach((link) => {
+    const destination = hostedNavigationTargets['#visuals'];
+    const locale = hostedLocale && hostedLocale !== 'en' ? `?lang=${encodeURIComponent(hostedLocale)}` : '';
+    link.href = `${destination}${locale}`;
     link.target = '_blank';
     link.rel = 'noopener';
     link.dataset.hostedNavigation = 'new-tab';
@@ -6935,6 +6949,18 @@ const foundationEvidenceMapCopy = {
   },
 };
 Object.entries(foundationEvidenceMapCopy).forEach(([language, strings]) => Object.assign(copy[language], strings));
+
+// The visual guide is a first-class route. Keep its label in every interface
+// dictionary so a localized homepage never exposes an English-only navigation
+// item.
+Object.assign(copy.en, { navVisuals: 'Visual guide' });
+Object.assign(copy.zh, { navVisuals: '视觉导览' });
+Object.assign(copy.es, { navVisuals: 'Guía visual' });
+Object.assign(copy.ja, { navVisuals: 'ビジュアルガイド' });
+Object.assign(copy.ko, { navVisuals: '시각 안내서' });
+Object.assign(copy.de, { navVisuals: 'Visueller Leitfaden' });
+Object.assign(copy['zh-tw'], { navVisuals: '視覺導覽' });
+Object.assign(copy.fr, { navVisuals: 'Guide visuel' });
 
 initializeSearch();
 applyLanguage(currentLanguage, { updateUrl: hasExplicitLanguageParam && !hasValidLanguageParam });
