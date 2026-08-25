@@ -1830,6 +1830,11 @@ try {
   assert.equal(await visualCompanion.isVisible(), true, 'Reader teaching visual companion is not available on a chapter page');
   assert.match(await visualCompanion.locator('img').getAttribute('src'), /prompt-contract-six-fields-red-black\.svg$/, 'Chapter visual companion chose the wrong teaching board');
   assert.notEqual((await visualCompanion.locator('img').getAttribute('alt') || '').trim(), '', 'Reader visual companion has no alternative text');
+  const relatedVisuals = page.locator('[data-reader-related-visuals]');
+  assert.equal(await relatedVisuals.isVisible(), true, 'Reader related visual boards are not available on a chapter page');
+  assert.equal((await relatedVisuals.locator('[data-reader-related-visuals-summary]').innerText()).trim(), 'Related teaching visuals', 'Reader related visual label is not localized');
+  assert.equal(await relatedVisuals.locator('.reader-related-visual-card').count(), 2, 'Reader related visual boards do not expose the two next relationships');
+  assert.notEqual((await relatedVisuals.locator('[data-reader-related-visuals-boundary]').textContent()).trim(), '', 'Reader related visual boards have no evidence boundary');
   const inlineTeachingVisual = page.locator('[data-reader-inline-visual]');
   assert.equal(await inlineTeachingVisual.count(), 1, 'Reader chapter did not add its inline teaching visual');
   assert.equal(await inlineTeachingVisual.locator('.reader-visual-explanation').count(), 1, 'Inline teaching visual has no text explanation');
@@ -1903,6 +1908,16 @@ try {
     de: ['Begriffskarte dieser Seite', 'Lehrtafel'],
     'zh-tw': ['本頁概念圖', '配套教學圖'],
     fr: ['Carte conceptuelle de cette page', 'Visuel pédagogique'],
+  };
+  const relatedVisualLocales = {
+    en: 'Related teaching visuals',
+    zh: '相关教学图',
+    es: 'Visuales didácticos relacionados',
+    ja: '関連する教材図',
+    ko: '관련 교육용 그림',
+    de: 'Verwandte Lehrtafeln',
+    'zh-tw': '相關教學圖',
+    fr: 'Visuels pédagogiques associés',
   };
   const conceptDetailLocales = {
     en: ['Selected section', 'Next section', 'Open this section'],
@@ -1984,6 +1999,10 @@ try {
     assert.notEqual((await page.locator('[data-reader-course-map-figure-caption]').innerText()).trim(), '', `${locale} whole-Playbook map has no caption`);
     assert.match(await page.locator('[data-reader-course-map-figure-link]').getAttribute('aria-label'), /.+/, `${locale} whole-Playbook map visual link has no accessible label`);
     assert.equal((await page.locator('[data-reader-visual-companion-summary]').innerText()).trim(), visualGuideLocales[locale][1], `${locale} visual companion label is not localized`);
+    const localizedRelatedVisuals = page.locator('[data-reader-related-visuals]');
+    assert.equal(await localizedRelatedVisuals.isVisible(), true, `${locale} related visual boards are not available`);
+    assert.equal((await localizedRelatedVisuals.locator('[data-reader-related-visuals-summary]').innerText()).trim(), relatedVisualLocales[locale], `${locale} related visual label is not localized`);
+    assert.equal(await localizedRelatedVisuals.locator('.reader-related-visual-card').count(), 2, `${locale} related visual boards lost a relationship`);
     assert.equal((await page.locator('[data-reader-inline-concept-map] summary').innerText()).trim(), visualGuideLocales[locale][0], `${locale} inline concept map label is not localized`);
     assert.equal((await page.locator('.reader-inline-concept-map-detail-label').textContent()).trim(), conceptDetailLocales[locale][0], `${locale} inline concept map selected-label is not localized`);
     assert.equal((await page.locator('.reader-inline-concept-map-detail-next span').textContent()).trim().replace(/:$/, ''), conceptDetailLocales[locale][1], `${locale} inline concept map next-label is not localized`);
