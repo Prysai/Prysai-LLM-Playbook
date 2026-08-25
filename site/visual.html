@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; form-action 'self'; frame-src 'none'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A responsive viewer for a project-authored Prysai LLM Playbook teaching visual." />
+    <meta name="theme-color" content="#f7f7f2" />
+    <title>Prysai LLM Playbook — Teaching visual</title>
+    <link rel="icon" type="image/png" href="../assets/branding/prysai-lab-mark-black-96.png" />
+    <link rel="stylesheet" href="visual-viewer.css?v=20260825-visual-viewer-1" />
+    <script src="visual-viewer.js?v=20260825-visual-viewer-1" defer></script>
+  </head>
+  <body>
+    <a class="viewer-skip" href="#viewer-main" data-i18n="skip">Skip to visual</a>
+    <header class="viewer-header">
+      <a class="viewer-brand" href="visuals.html?lang=en" data-viewer-home>
+        <img src="../assets/branding/prysai-lab-mark-black-96.png" width="34" height="34" alt="" />
+        <span><small>Prysai Lab</small><strong>LLM Playbook</strong></span>
+      </a>
+      <div class="viewer-header-actions">
+        <label for="viewer-language" data-i18n="language">Language</label>
+        <select id="viewer-language" aria-label="Choose visual language" data-i18n-attr="aria-label:languageAria">
+          <option value="en">English</option>
+          <option value="zh">简体中文</option>
+          <option value="es">Español</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="de">Deutsch</option>
+          <option value="zh-tw">繁體中文</option>
+          <option value="fr">Français</option>
+        </select>
+      </div>
+    </header>
+
+    <main id="viewer-main" class="viewer-main">
+      <div class="viewer-breadcrumb">
+        <a href="visuals.html?lang=en" data-viewer-home data-i18n="back">Back to visual guide</a>
+        <span aria-hidden="true">/</span>
+        <span data-i18n="eyebrow">Project teaching visual</span>
+      </div>
+      <section class="viewer-intro" aria-labelledby="viewer-title">
+        <p class="viewer-eyebrow" data-i18n="eyebrow">Project teaching visual</p>
+        <h1 id="viewer-title" data-viewer-title>Teaching visual</h1>
+        <p data-i18n="intro">Read the visual at a comfortable size. The surrounding lesson and the text alternative remain the explanation; the image is an orientation aid.</p>
+      </section>
+
+      <section class="viewer-stage" aria-labelledby="viewer-title">
+        <div class="viewer-toolbar" role="toolbar" aria-label="Visual controls" data-i18n-attr="aria-label:toolbarAria">
+          <button type="button" data-viewer-zoom-out data-i18n="zoomOut">Zoom out</button>
+          <output data-viewer-zoom-value aria-live="polite">100%</output>
+          <button type="button" data-viewer-zoom-in data-i18n="zoomIn">Zoom in</button>
+          <button type="button" data-viewer-zoom-reset data-i18n="zoomReset">Reset</button>
+          <a class="viewer-raw-link" data-viewer-raw target="_blank" rel="noreferrer" data-i18n="openRaw">Open original SVG</a>
+        </div>
+        <div class="viewer-canvas" data-viewer-canvas tabindex="0" aria-label="Scrollable visual area" data-i18n-attr="aria-label:canvasAria">
+          <figure class="viewer-figure">
+            <img data-viewer-image width="900" height="1500" alt="" />
+            <figcaption data-viewer-caption></figcaption>
+          </figure>
+        </div>
+        <p class="viewer-boundary" data-i18n="boundary">The visual explains a relationship. It does not prove that a model acted, that a learner understood the method, or that a result is production-ready.</p>
+      </section>
+
+      <section class="viewer-error" data-viewer-error hidden aria-live="assertive">
+        <h1 data-i18n="errorTitle">This visual could not be opened.</h1>
+        <p data-i18n="errorBody">The requested file is not an approved project teaching visual.</p>
+        <a class="viewer-primary-link" href="visuals.html?lang=en" data-viewer-home data-i18n="back">Back to visual guide</a>
+      </section>
+    </main>
+
+    <noscript>
+      <p class="viewer-noscript">JavaScript is required for the localized controls. The approved visual still appears above at its responsive size; use the visual guide for the text explanation.</p>
+    </noscript>
+  </body>
+</html>
