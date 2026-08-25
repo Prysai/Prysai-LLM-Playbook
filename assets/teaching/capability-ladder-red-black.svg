@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1750" role="img" aria-labelledby="title desc">
+  <title id="title">Prysai LLM Playbook capability ladder</title>
+  <desc id="desc">Seven candidate learning levels move from observing an LLM result to coaching a team: observer, safe user, task designer, workflow designer, capability builder, evidence reviewer, and team coach. Each level adds one observable responsibility; the ladder is a route aid, not proof of mastery.</desc>
+  <rect width="1200" height="1750" fill="#f6f6f2"/>
+  <rect x="58" y="42" width="1084" height="10" fill="#171717"/>
+  <text x="58" y="106" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="4">PRYSAI LLM PLAYBOOK / CAPABILITY LADDER</text>
+  <text x="58" y="178" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="900" letter-spacing="-3">BUILD ONE CAPABILITY</text>
+  <text x="58" y="244" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="900" letter-spacing="-3">BEFORE ADDING THE NEXT.</text>
+  <text x="60" y="286" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="17">notice / act / design / orchestrate / build / review / coach</text>
+
+  <line x1="94" y1="356" x2="94" y2="1438" stroke="#d71920" stroke-width="9"/>
+  <circle cx="94" cy="420" r="17" fill="#d71920"/>
+  <circle cx="94" cy="570" r="17" fill="#d71920"/>
+  <circle cx="94" cy="720" r="17" fill="#d71920"/>
+  <circle cx="94" cy="870" r="17" fill="#d71920"/>
+  <circle cx="94" cy="1020" r="17" fill="#d71920"/>
+  <circle cx="94" cy="1170" r="17" fill="#d71920"/>
+  <circle cx="94" cy="1320" r="17" fill="#d71920"/>
+
+  <g transform="translate(140 362)">
+    <rect width="1000" height="116" fill="#171717"/>
+    <text x="28" y="30" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">L0 / OBSERVER</text>
+    <text x="28" y="68" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Notice what happened.</text>
+    <text x="28" y="96" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">Keep the visible result separate from what you infer.</text>
+  </g>
+  <g transform="translate(140 512)">
+    <rect width="1000" height="116" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+    <text x="28" y="30" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">L1 / SAFE USER</text>
+    <text x="28" y="68" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Make one small, reversible request.</text>
+    <text x="28" y="96" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Use fictional input, a clear stop, and a saved first response.</text>
+  </g>
+  <g transform="translate(140 662)">
+    <rect width="1000" height="116" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
+    <text x="28" y="30" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">L2 / TASK DESIGNER</text>
+    <text x="28" y="68" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Write the result, limits, check, and stop.</text>
+    <text x="28" y="96" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">A request becomes a task contract another person can inspect.</text>
+  </g>
+  <g transform="translate(140 812)">
+    <rect width="1000" height="116" fill="#171717"/>
+    <text x="28" y="30" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">L3 / WORKFLOW DESIGNER</text>
+    <text x="28" y="68" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Sequence actions around evidence.</text>
+    <text x="28" y="96" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="15">Separate proposal, authority, execution, observation, and recovery.</text>
+  </g>
+  <g transform="translate(140 962)">
+    <rect width="1000" height="116" fill="#ffffff" stroke="#171717" stroke-width="3"/>
+    <text x="28" y="30" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">L4 / CAPABILITY BUILDER</text>
+    <text x="28" y="68" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Give a Skill a trigger and a boundary.</text>
+    <text x="28" y="96" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Define inputs, non-triggers, outputs, evidence, and rollback.</text>
+  </g>
+  <g transform="translate(140 1112)">
+    <rect width="1000" height="116" fill="#ffe5e9" stroke="#171717" stroke-width="3"/>
+    <text x="28" y="30" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">L5 / EVIDENCE REVIEWER</text>
+    <text x="28" y="68" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Judge claims against source and scope.</text>
+    <text x="28" y="96" fill="#575750" font-family="Arial, Helvetica, sans-serif" font-size="15">Keep citation, version, access, and unknowns visible.</text>
+  </g>
+  <g transform="translate(140 1262)">
+    <rect width="1000" height="116" fill="#d71920"/>
+    <text x="28" y="30" fill="#171717" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">L6 / TEAM COACH</text>
+    <text x="28" y="68" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="900">Make the method repeatable for others.</text>
+    <text x="28" y="96" fill="#171717" font-family="Arial, Helvetica, sans-serif" font-size="15">Teach the contract, review the receipt, and stop unsafe escalation.</text>
+  </g>
+
+  <rect x="58" y="1488" width="1084" height="144" fill="#171717"/>
+  <text x="84" y="1530" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="700">BOUNDARY / CANDIDATE ROUTE</text>
+  <text x="84" y="1570" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="900">A LEVEL NAMES A PRACTICE, NOT A STATUS CLAIM.</text>
+  <text x="84" y="1604" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="16">Move up only after the artifact, evidence, limit, and next question are visible.</text>
+  <text x="58" y="1695" fill="#575750" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / PRACTICE BEFORE CLAIM</text>
+</svg>
