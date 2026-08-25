@@ -576,6 +576,20 @@
     relatedVisualBoundary: copy.boundary,
   }));
 
+  // Keep the next visual relationship in the reading flow as well as in the
+  // sidebar. A reader should be able to move from one explained mechanism to
+  // the adjacent one without returning to the full asset catalogue.
+  const readerVisualSequenceCopy = {
+    en: { title: 'Continue with the next visual relationship', intro: 'The first board explains this page\'s starting relationship. These two boards show adjacent decisions; the text beside each image remains the baseline explanation.', open: 'Open full-size visual', next: 'Next question', boundary: 'This sequence is a reading aid, not a benchmark or proof of execution, learning, or transfer.' },
+    zh: { title: '继续看相邻的图示关系', intro: '第一张图解释本页的起始关系。下面两张图展示相邻的判断；每张图旁的文字仍然是主要解释。', open: '打开完整尺寸图示', next: '下一道问题', boundary: '这组图只是阅读辅助，不是基准测试，也不证明执行、学习或迁移已经发生。' },
+    es: { title: 'Continúa con la siguiente relación visual', intro: 'El primer tablero explica la relación de partida de esta página. Estos dos muestran decisiones cercanas; el texto junto a cada imagen sigue siendo la explicación principal.', open: 'Abrir el visual a tamaño completo', next: 'Siguiente pregunta', boundary: 'Esta secuencia ayuda a leer; no es un benchmark ni demuestra ejecución, aprendizaje o transferencia.' },
+    ja: { title: '次の関係を図で確認する', intro: '最初のボードは、このページの出発点となる関係を示します。次の2枚は隣り合う判断を扱います。各図の横にある文章が基準となる説明です。', open: '原寸の図を開く', next: '次の問い', boundary: 'この図の並びは読解の補助であり、ベンチマークでも実行・学習・転用の証明でもありません。' },
+    ko: { title: '다음 관계를 그림으로 이어서 보기', intro: '첫 번째 보드는 이 페이지의 출발점이 되는 관계를 설명합니다. 다음 두 보드는 이어지는 판단을 보여 주며, 각 그림 옆의 텍스트가 기본 설명입니다.', open: '전체 크기 그림 열기', next: '다음 질문', boundary: '이 순서는 읽기를 돕는 자료일 뿐, 벤치마크나 실행·학습·전이의 증거가 아닙니다.' },
+    de: { title: 'Mit der nächsten visuellen Beziehung fortfahren', intro: 'Die erste Tafel erklärt die Ausgangsbeziehung dieser Seite. Die nächsten beiden zeigen angrenzende Entscheidungen; der Text neben jeder Abbildung bleibt die maßgebliche Erklärung.', open: 'Visualisierung in voller Größe öffnen', next: 'Nächste Frage', boundary: 'Diese Abfolge hilft beim Lesen. Sie ist weder ein Benchmark noch ein Beleg für Ausführung, Lernen oder Übertragung.' },
+    'zh-tw': { title: '接著看相鄰的圖示關係', intro: '第一張圖解釋本頁的起始關係。下面兩張圖呈現相鄰的判斷；每張圖旁的文字仍是主要說明。', open: '開啟完整尺寸圖示', next: '下一個問題', boundary: '這組圖只是閱讀輔助，不是基準測試，也不代表執行、學習或遷移已經發生。' },
+    fr: { title: 'Poursuivre avec la relation visuelle suivante', intro: 'La première planche présente la relation de départ de cette page. Les deux suivantes montrent des décisions voisines ; le texte placé à côté de chaque image reste l’explication de référence.', open: 'Ouvrir le visuel en taille réelle', next: 'Question suivante', boundary: 'Cette séquence aide à lire ; elle ne constitue ni un benchmark ni une preuve d’exécution, d’apprentissage ou de transfert.' },
+  };
+
   const readerVisualMap = [
     { tokens: ['llm-foundation-core-v1', 'llm-foundation-core-path'], path: 'assets/teaching/foundation-first-visit-route-red-black.svg', step: 0 },
     { tokens: ['chapter-04-context-permissions-and-agent', 'lab-016-side-effect-boundary', 'conversation-safety-card'], path: 'assets/teaching/conversation-safety-card-red-black.svg', step: 2 },
@@ -1213,6 +1227,7 @@
     selectStep(selectedIndex);
   };
   const currentReaderVisualCopy = () => readerVisualCopy[uiLanguage()] || readerVisualCopy.en;
+  const currentReaderVisualSequenceCopy = () => readerVisualSequenceCopy[uiLanguage()] || readerVisualSequenceCopy.en;
   const currentReaderRouteCompassCopy = () => readerRouteCompassCopy[uiLanguage()] || readerRouteCompassCopy.en;
   const chooseReaderVisual = (selection) => {
     if (!selection?.path) return null;
@@ -1649,6 +1664,76 @@
       card.append(link, caption);
       relatedVisualsGrid.append(card);
     });
+  };
+  const renderReaderInlineVisualSequence = (selection) => {
+    if (!article) return;
+    article.querySelector('[data-reader-inline-visual-sequence]')?.remove();
+    const primary = chooseReaderVisual(selection);
+    const visuals = chooseReaderRelatedVisuals(selection);
+    if (!primary || !visuals.length) return;
+
+    const strings = currentReaderVisualSequenceCopy();
+    const routeStrings = currentReaderRouteMapCopy();
+    const section = document.createElement('section');
+    section.className = 'reader-inline-visual-sequence';
+    section.dataset.readerInlineVisualSequence = 'true';
+    const heading = document.createElement('h2');
+    heading.textContent = strings.title;
+    const intro = document.createElement('p');
+    intro.className = 'reader-inline-visual-sequence-intro';
+    intro.textContent = strings.intro;
+    const grid = document.createElement('div');
+    grid.className = 'reader-inline-visual-sequence-grid';
+
+    visuals.forEach((visual, index) => {
+      const step = Math.max(0, Math.min(routeStrings.labels.length - 1, visual.step || 0));
+      const label = routeStrings.labels[step];
+      const body = routeStrings.bodies[step];
+      const card = document.createElement('article');
+      card.className = 'reader-inline-visual-sequence-card';
+      const cardLabel = document.createElement('span');
+      cardLabel.className = 'reader-inline-visual-sequence-index';
+      cardLabel.textContent = `${String(index + 1).padStart(2, '0')} · ${label}`;
+      const figure = document.createElement('figure');
+      const link = document.createElement('a');
+      link.className = 'reader-image-link reader-teaching-visual';
+      link.href = directHref(visual.path);
+      link.target = '_blank';
+      link.rel = 'noreferrer';
+      link.setAttribute('aria-label', `${strings.open}: ${label}`);
+      const image = document.createElement('img');
+      image.src = directHref(visual.path);
+      image.width = 900;
+      image.height = 1500;
+      image.loading = 'lazy';
+      image.decoding = 'async';
+      image.alt = `${currentReaderVisualCopy().visualAltPrefix} ${label.toLowerCase()}: ${body}`;
+      const openLabel = document.createElement('span');
+      openLabel.className = 'reader-image-link-label';
+      openLabel.textContent = strings.open;
+      link.append(image, openLabel);
+      const caption = document.createElement('figcaption');
+      caption.textContent = body;
+      figure.append(link, caption);
+      const next = document.createElement('p');
+      next.className = 'reader-inline-visual-sequence-next';
+      const nextLabel = document.createElement('span');
+      nextLabel.textContent = `${strings.next}: `;
+      const nextQuestion = document.createElement('strong');
+      nextQuestion.textContent = routeStrings.nextQuestions[step] || '';
+      next.append(nextLabel, nextQuestion);
+      card.append(cardLabel, figure, next);
+      grid.append(card);
+    });
+
+    const boundary = document.createElement('p');
+    boundary.className = 'reader-inline-visual-sequence-boundary';
+    boundary.textContent = strings.boundary;
+    section.append(heading, intro, grid, boundary);
+    const concept = article.querySelector('[data-reader-inline-concept-map]');
+    const anchor = concept || article.querySelector('[data-reader-inline-visual]') || article.querySelector(':scope > p') || article.querySelector('h1');
+    if (anchor) anchor.after(section);
+    else article.prepend(section);
   };
   const applyReaderChrome = () => {
     const strings = currentReaderCopy();
@@ -2708,6 +2793,7 @@ function canonicalChapterTitle(chapter) {
     // anchor immediately after it instead of appearing before the visual.
     renderReaderInlineVisual(selection, title);
     renderReaderInlineConceptMap(selection, title, pageHeadings);
+    renderReaderInlineVisualSequence(selection);
     renderReaderPageAnatomy(selection, title, pageHeadings);
     renderReaderVisualCompanion(selection);
     renderReaderRelatedVisuals(selection);

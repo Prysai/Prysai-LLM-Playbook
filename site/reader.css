@@ -268,6 +268,110 @@ a:hover { color: var(--reader-link-hover); }
   line-height: 1.45;
 }
 
+.reader-inline-visual-sequence {
+  margin: 0 0 34px;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--reader-line);
+}
+
+.reader-inline-visual-sequence h2 {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.reader-inline-visual-sequence-intro {
+  margin: 0 0 16px;
+  color: var(--reader-muted);
+  font-size: .82rem;
+  line-height: 1.55;
+}
+
+.reader-inline-visual-sequence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.reader-inline-visual-sequence-card {
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid var(--reader-line);
+  border-top: 3px solid var(--reader-line);
+  background: #fafaf8;
+}
+
+.reader-inline-visual-sequence-card:hover,
+.reader-inline-visual-sequence-card:focus-within { border-top-color: var(--reader-red); }
+
+.reader-inline-visual-sequence-index {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--reader-red);
+  font: 700 .68rem/1.2 Consolas, 'Courier New', monospace;
+}
+
+.reader-inline-visual-sequence-card figure { margin: 0; }
+
+.reader-inline-visual-sequence-card .reader-image-link {
+  display: block;
+  color: var(--reader-link);
+  text-decoration: none;
+}
+
+.reader-inline-visual-sequence-card .reader-image-link img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  object-position: top center;
+  border: 1px solid var(--reader-line);
+  background: #f6f6f2;
+}
+
+.reader-inline-visual-sequence-card .reader-image-link:hover img,
+.reader-inline-visual-sequence-card .reader-image-link:focus-visible img { border-color: var(--reader-red); }
+
+.reader-inline-visual-sequence-card .reader-image-link-label {
+  display: block;
+  margin-top: 7px;
+  font-size: .7rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.reader-inline-visual-sequence-card figcaption {
+  margin-top: 8px;
+  color: var(--reader-muted);
+  font-size: .73rem;
+  line-height: 1.45;
+}
+
+.reader-inline-visual-sequence-next {
+  display: grid;
+  gap: 3px;
+  margin: 10px 0 0;
+  padding-top: 9px;
+  border-top: 1px solid var(--reader-line);
+  color: var(--reader-red);
+  font-size: .68rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.reader-inline-visual-sequence-next strong {
+  color: var(--reader-ink);
+  font-size: .75rem;
+  font-weight: 700;
+}
+
+.reader-inline-visual-sequence-boundary {
+  margin: 12px 0 0;
+  color: var(--reader-muted);
+  font-size: .72rem;
+  line-height: 1.45;
+}
+
 .reader-route-compass-fallback {
   margin-top: 14px;
   padding-top: 12px;
@@ -1047,6 +1151,12 @@ a:hover { color: var(--reader-link-hover); }
      display: block;
      max-height: 300px;
    }
+   /* The adjacent visual sequence is part of the reading flow too; keep a
+      compact image visible on phones instead of reducing it to a link label. */
+   .reader-inline-visual-sequence .reader-teaching-visual img {
+     display: block;
+     max-height: 300px;
+   }
    .reader-page-anatomy .reader-page-anatomy-figure .reader-teaching-visual img {
      display: block;
      max-height: 360px;
@@ -1070,6 +1180,8 @@ a:hover { color: var(--reader-link-hover); }
   .reader-inline-concept-map-list::before,
   .reader-inline-concept-map-list li::before { display: none; }
   .reader-inline-concept-map-detail { margin-top: 10px; padding: 9px 10px; }
+  .reader-inline-visual-sequence-grid { grid-template-columns: 1fr; }
+  .reader-inline-visual-sequence-card .reader-image-link img { height: 180px; }
   .reader-related-visuals-grid { grid-template-columns: 1fr; }
   .reader-related-visual-link img { height: 150px; }
   .reader-prompt-block pre { white-space: pre-wrap; overflow-wrap: anywhere; }
