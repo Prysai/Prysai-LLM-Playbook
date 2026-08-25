@@ -595,6 +595,12 @@ try {
     assert.deepEqual(await journey.locator('.foundation-journey-list strong').allTextContents(), localizedJourney.steps, `${locale} learning journey steps are not localized`);
     assert.equal(await journey.locator('img').getAttribute('alt'), localizedJourney.alt, `${locale} learning journey alt text is not localized`);
     assert.equal(await journey.locator('.foundation-journey-list li').count(), 4, `${locale} learning journey text fallback lost a stage`);
+    assert.equal(await journey.locator('[data-journey-node]').count(), 4, `${locale} learning journey interactive map lost a stage`);
+    await journey.locator('[data-journey-node="tracks"]').click();
+    assert.equal(await journey.locator('[data-journey-detail-title]').innerText(), localizedJourney.steps[3], `${locale} learning journey selection does not update the selected stage`);
+    assert.notEqual((await journey.locator('[data-journey-detail-next]').innerText()).trim(), '', `${locale} learning journey selected stage has no next move`);
+    assert.match(await journey.locator('[data-journey-detail-link]').getAttribute('href'), new RegExp(`lang=${locale}$`), `${locale} learning journey route does not retain the selected language`);
+    assert.equal(await journey.locator('[data-journey-fallback]').count(), 1, `${locale} learning journey has no static text fallback`);
     await journey.scrollIntoViewIfNeeded();
     await journey.locator('img').waitFor();
     await journey.locator('img').evaluate((image) => image.complete && image.naturalWidth > 0 ? true : new Promise((resolve) => {
@@ -683,7 +689,11 @@ try {
   await page.goto(`${origin}/site/?lang=fr`, { waitUntil: 'networkidle' });
   await noHorizontalOverflow(page, 'mobile localized six-term concept map');
   assert.equal(await page.locator('.foundation-concept-card').count(), 6, 'mobile six-term concept map is not discoverable');
-    assert.equal(await page.locator('#foundation-visuals .foundation-visual-card').count(), 8, 'mobile foundation visual section is not discoverable');
+  assert.equal(await page.locator('#foundation-visuals .foundation-visual-card').count(), 8, 'mobile foundation visual section is not discoverable');
+  const mobileJourney = page.locator('#foundation-journey');
+  assert.equal(await mobileJourney.locator('[data-journey-node]').count(), 4, 'mobile learning journey map loses a stage');
+  await mobileJourney.locator('[data-journey-node="evidence"]').click();
+  assert.equal(await mobileJourney.locator('[data-journey-detail-title]').innerText(), 'Boucle de preuves', 'mobile learning journey map cannot activate the localized evidence stage');
   await page.locator('#foundation-visuals').scrollIntoViewIfNeeded();
   await page.locator('#foundation-visuals').screenshot({ path: path.join(visualEvidenceDirectory, 'foundation-visuals-mobile.png') });
   await page.goto(`${origin}/site/?lang=fr`, { waitUntil: 'networkidle' });
@@ -721,6 +731,9 @@ try {
   assert.equal(await narrowEvidenceMap.locator('[data-evidence-node]').count(), 5, '360px evidence decision map loses a step');
   await narrowEvidenceMap.locator('[data-evidence-node="stop"]').click();
   assert.equal(await narrowEvidenceMap.locator('[data-evidence-detail-title]').innerText(), 'Arrêter', '360px evidence decision map cannot activate the localized Stop step');
+  const narrowJourney = page.locator('#foundation-journey');
+  assert.equal(await narrowJourney.locator('[data-journey-node]').count(), 4, '360px learning journey map loses a stage');
+  assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth), true, '360px learning journey map overflows horizontally');
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.goto(`${origin}/site/?lang=en`, { waitUntil: 'networkidle' });
   assert.equal(await page.locator('#start').evaluate((section) => section.previousElementSibling?.id), 'top', 'the useful result is not immediately after the hero');
