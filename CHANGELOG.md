@@ -13,6 +13,15 @@ Playbook is ready for public production use.
 
 ### Visual route candidate (2026-08-24)
 
+- Added a standalone eight-locale Visual Guide with a six-stage interactive
+  mind map, twelve project-authored teaching boards, localized captions and
+  alternatives, and a text-first route that remains usable without JavaScript.
+  The route is linked from the homepage and Reader in the selected locale;
+  browser checks cover the eight language paths, image inventory, keyboard
+  selection, mobile reflow, and the no-script text fallback. These checks are
+  implementation evidence only, not proof of comprehension, accessibility
+  conformance, learner transfer, or release readiness.
+
 - Added the whole-Playbook route map to the Reader. It connects the
   Foundation Core, first bounded task, evidence loop, and optional tracks with
   localized stage labels, route links, a text equivalent, and the original
