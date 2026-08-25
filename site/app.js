@@ -1154,6 +1154,13 @@ const foundationEvidenceMap = {
   stop: { title: 'evidenceMapNodeStop', body: 'evidenceMapStopBody', next: 'evidenceMapStopNext', contentId: 'chapter-12-agent-loop-and-stop' },
 };
 
+const foundationJourneyMap = {
+  foundation: { title: 'journeyStepOneTitle', body: 'journeyStepOneBody', next: 'journeyStepOneNext', contentId: 'llm-foundation-core-v1' },
+  task: { title: 'journeyStepTwoTitle', body: 'journeyStepTwoBody', next: 'journeyStepTwoNext', contentId: 'llm-core-first-generation' },
+  evidence: { title: 'journeyStepThreeTitle', body: 'journeyStepThreeBody', next: 'journeyStepThreeNext', contentId: 'chapter-09-verification-and-recovery' },
+  tracks: { title: 'journeyStepFourTitle', body: 'journeyStepFourBody', next: 'journeyStepFourNext', contentId: 'chapter-05-choose-the-codex-surface' },
+};
+
 const setLocalizedElement = (element, key, strings) => {
   if (!element || !key) return;
   element.dataset.i18n = key;
@@ -1212,6 +1219,37 @@ const refreshEvidenceMap = (selected = document.querySelector('[data-evidence-no
 document.querySelectorAll('[data-evidence-node]').forEach((button) => {
   button.addEventListener('click', () => {
     refreshEvidenceMap(button.dataset.evidenceNode);
+    localizeReaderLinks();
+  });
+});
+
+const refreshJourneyMap = (selected = document.querySelector('[data-journey-node][aria-pressed="true"]')?.dataset.journeyNode || 'foundation') => {
+  const root = document.querySelector('[data-journey-interactive]');
+  const config = foundationJourneyMap[selected] || foundationJourneyMap.foundation;
+  if (!root) return;
+  const strings = currentCopy();
+  root.hidden = false;
+  root.dataset.journeySelection = selected;
+  root.querySelectorAll('[data-journey-node]').forEach((button) => {
+    const active = button.dataset.journeyNode === selected;
+    button.setAttribute('aria-pressed', String(active));
+    button.classList.toggle('is-selected', active);
+  });
+  setLocalizedElement(root.querySelector('[data-journey-detail-title]'), config.title, strings);
+  setLocalizedElement(root.querySelector('[data-journey-detail-body]'), config.body, strings);
+  setLocalizedElement(root.querySelector('[data-journey-detail-next]'), config.next, strings);
+  const detailLink = root.querySelector('[data-journey-detail-link]');
+  if (detailLink) {
+    detailLink.dataset.contentId = config.contentId;
+    detailLink.dataset.journeyLinkContentId = config.contentId;
+  }
+  const fallback = document.querySelector('[data-journey-fallback]');
+  if (fallback) fallback.open = false;
+};
+
+document.querySelectorAll('[data-journey-node]').forEach((button) => {
+  button.addEventListener('click', () => {
+    refreshJourneyMap(button.dataset.journeyNode);
     localizeReaderLinks();
   });
 });
@@ -1275,6 +1313,7 @@ const applyLanguage = (language, { updateUrl = true } = {}) => {
   updateRouteStatus(document.querySelector('.filter-button.is-active')?.dataset.filter || 'all');
   refreshMindMap();
   refreshEvidenceMap();
+  refreshJourneyMap();
   localizeReaderLinks();
   // The goal wizard is rendered from locale-specific templates. Rebuild the
   // visible step after a language change so its labels, fields, and deep link
@@ -6758,6 +6797,18 @@ Object.assign(copy.fr, {
   journeyTitle: 'Voyez l’ensemble du Playbook avant de choisir une voie.', journeyIntro: 'Une seule carte répond à la première question pratique : que faire maintenant, puis où aller après le premier résultat vérifié ?', journeyAria: 'Les quatre étapes du parcours d’apprentissage du Playbook',
   journeyStepOneTitle: 'Foundation Core', journeyStepOneBody: 'Comprendre le modèle, formuler une demande, repérer les erreurs visibles, corriger, puis essayer une nouvelle tâche.', journeyStepTwoTitle: 'Première tâche délimitée', journeyStepTwoBody: 'Nommer le résultat, le contexte, l’aide autorisée, les limites, la vérification et la condition d’arrêt.', journeyStepThreeTitle: 'Boucle de preuves', journeyStepThreeBody: 'Comparer le changement à une source, un test, un journal ou un critère d’acceptation ; s’arrêter si la prochaine preuve manque.', journeyStepFourTitle: 'Parcours facultatifs', journeyStepFourBody: 'Choisir Codex, les outils, les Skills, les Agents, la recherche, l’ingénierie ou le travail d’équipe seulement si l’étape suivante est utile.', journeyBoundary: 'La carte montre l’ordre, pas la maîtrise. Gardez l’artefact, les preuves, la limite et la prochaine question.', journeyFigureAlt: 'Parcours d’apprentissage du Playbook : du Foundation Core à une première tâche délimitée, une boucle de preuves et des parcours facultatifs', journeyFigureCaption: 'Ouvrez la planche originale du projet pour une version imprimable. La liste ordonnée est l’explication textuelle.',
 });
+
+const foundationJourneyMapCopy = {
+  en: { journeyDetailLabel: 'SELECTED STAGE', journeyNextLabel: 'Next move', journeyOpenRoute: 'Open this stage', journeyFallbackSummary: 'Read the four stages as text', journeyFallbackIntro: 'Use this ordered list without the interactive map. Each stage names the work and the evidence boundary that follows it.', journeyStepOneNext: 'Finish the foundation before adding a platform-specific layer.', journeyStepTwoNext: 'Make the request bounded before choosing tools or permissions.', journeyStepThreeNext: 'Keep the claim within the evidence; stop if the next proof is missing.', journeyStepFourNext: 'Choose an optional track only when a concrete next task needs it.' },
+  zh: { journeyDetailLabel: '当前阶段', journeyNextLabel: '下一步', journeyOpenRoute: '打开这一阶段', journeyFallbackSummary: '用文字阅读四个阶段', journeyFallbackIntro: '不使用交互地图也可以阅读这份有序列表。每个阶段都说明要做什么，以及接下来受什么证据边界约束。', journeyStepOneNext: '在增加平台专属层之前，先完成基础核心课。', journeyStepTwoNext: '在选择工具或权限之前，先把请求限定清楚。', journeyStepThreeNext: '让结论留在证据范围内；缺少下一项证明时就停止。', journeyStepFourNext: '只有具体的下一项任务确实需要时，才选择可选路径。' },
+  es: { journeyDetailLabel: 'ETAPA SELECCIONADA', journeyNextLabel: 'Siguiente movimiento', journeyOpenRoute: 'Abrir esta etapa', journeyFallbackSummary: 'Leer las cuatro etapas como texto', journeyFallbackIntro: 'Usa esta lista ordenada sin el mapa interactivo. Cada etapa nombra el trabajo y el límite de evidencia que le sigue.', journeyStepOneNext: 'Completa el núcleo antes de añadir una capa específica de plataforma.', journeyStepTwoNext: 'Delimita la petición antes de elegir herramientas o permisos.', journeyStepThreeNext: 'Mantén la afirmación dentro de la evidencia; detente si falta la siguiente prueba.', journeyStepFourNext: 'Elige una ruta opcional solo cuando una tarea concreta la necesite.' },
+  ja: { journeyDetailLabel: '選択中の段階', journeyNextLabel: '次の一歩', journeyOpenRoute: 'この段階を開く', journeyFallbackSummary: '4段階をテキストで読む', journeyFallbackIntro: 'インタラクティブ表示なしでも、この順序付きリストを使えます。各段階で行うことと、その後の証拠の境界を示します。', journeyStepOneNext: 'プラットフォーム固有の層を加える前に、まず基礎コアを終える。', journeyStepTwoNext: 'ツールや権限を選ぶ前に、依頼の範囲を決める。', journeyStepThreeNext: '主張を証拠の範囲に保ち、次の根拠がなければ止まる。', journeyStepFourNext: '具体的な次の課題に必要なときだけ、任意のルートを選ぶ。' },
+  ko: { journeyDetailLabel: '선택한 단계', journeyNextLabel: '다음 단계', journeyOpenRoute: '이 단계 열기', journeyFallbackSummary: '네 단계를 텍스트로 읽기', journeyFallbackIntro: '대화형 지도 없이도 이 순서 목록을 사용할 수 있습니다. 각 단계에서 할 일과 이어지는 증거의 범위를 보여 줍니다.', journeyStepOneNext: '플랫폼별 계층을 추가하기 전에 기초 코어를 먼저 끝내세요.', journeyStepTwoNext: '도구나 권한을 고르기 전에 요청 범위를 정하세요.', journeyStepThreeNext: '주장을 증거의 범위 안에 두고, 다음 증거가 없으면 멈추세요.', journeyStepFourNext: '구체적인 다음 작업에 필요할 때만 선택 실습 경로를 고르세요.' },
+  de: { journeyDetailLabel: 'AUSGEWÄHLTE STUFE', journeyNextLabel: 'Nächster Schritt', journeyOpenRoute: 'Diese Stufe öffnen', journeyFallbackSummary: 'Die vier Stufen als Text lesen', journeyFallbackIntro: 'Verwende diese geordnete Liste ohne die interaktive Karte. Jede Stufe nennt die Arbeit und die anschließende Beleggrenze.', journeyStepOneNext: 'Schließe den Grundlagenkern ab, bevor du eine plattformspezifische Ebene ergänzt.', journeyStepTwoNext: 'Begrenze die Anfrage, bevor du Tools oder Berechtigungen auswählst.', journeyStepThreeNext: 'Halte die Aussage innerhalb des Belegs; fehlt der nächste Beleg, halte an.', journeyStepFourNext: 'Wähle eine optionale Route erst, wenn eine konkrete nächste Aufgabe sie braucht.' },
+  'zh-tw': { journeyDetailLabel: '目前階段', journeyNextLabel: '下一步', journeyOpenRoute: '開啟這個階段', journeyFallbackSummary: '用文字閱讀四個階段', journeyFallbackIntro: '不使用互動地圖也能閱讀這份有序清單。每個階段都說明要做什麼，以及接下來的證據界線。', journeyStepOneNext: '在增加平台專屬層之前，先完成基礎核心課。', journeyStepTwoNext: '在選擇工具或權限之前，先把請求限定清楚。', journeyStepThreeNext: '讓主張留在證據範圍內；缺少下一項證明時就停止。', journeyStepFourNext: '只有具體的下一項任務確實需要時，才選擇可選路徑。' },
+  fr: { journeyDetailLabel: 'ÉTAPE SÉLECTIONNÉE', journeyNextLabel: 'Prochaine étape', journeyOpenRoute: 'Ouvrir cette étape', journeyFallbackSummary: 'Lire les quatre étapes en texte', journeyFallbackIntro: 'Utilisez cette liste ordonnée sans la carte interactive. Chaque étape indique le travail à faire et la limite de preuve qui suit.', journeyStepOneNext: 'Terminez le Foundation Core avant d’ajouter une couche propre à une plateforme.', journeyStepTwoNext: 'Délimitez la demande avant de choisir des outils ou des autorisations.', journeyStepThreeNext: 'Gardez l’affirmation dans les limites des preuves ; s’il manque la preuve suivante, arrêtez-vous.', journeyStepFourNext: 'Choisissez un parcours facultatif seulement si une tâche concrète en a besoin.' },
+};
+Object.entries(foundationJourneyMapCopy).forEach(([language, strings]) => Object.assign(copy[language], strings));
 
 // Add the localized journey copy after the existing dictionaries so every
 // supported interface language receives the same four-stage explanation.
