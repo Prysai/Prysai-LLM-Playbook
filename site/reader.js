@@ -55,6 +55,25 @@
   const corePathOpen = document.querySelector('[data-reader-core-path-open]');
   const corePathCaption = document.querySelector('[data-reader-core-path-caption]');
   const corePathBoundary = document.querySelector('[data-reader-core-path-boundary]');
+  const courseMap = document.querySelector('[data-reader-course-map]');
+  const courseMapSummary = document.querySelector('[data-reader-course-map-summary]');
+  const courseMapIntro = document.querySelector('[data-reader-course-map-intro]');
+  const courseMapNodes = document.querySelector('[data-reader-course-map-nodes]');
+  const courseMapDetailLabel = document.querySelector('[data-reader-course-map-detail-label]');
+  const courseMapDetailTitle = document.querySelector('[data-reader-course-map-detail-title]');
+  const courseMapDetailBody = document.querySelector('[data-reader-course-map-detail-body]');
+  const courseMapNextLabel = document.querySelector('[data-reader-course-map-next-label]');
+  const courseMapDetailNext = document.querySelector('[data-reader-course-map-detail-next]');
+  const courseMapDetailLink = document.querySelector('[data-reader-course-map-detail-link]');
+  const courseMapOpen = document.querySelector('[data-reader-course-map-open]');
+  const courseMapFallback = document.querySelector('[data-reader-course-map-fallback]');
+  const courseMapFallbackIntro = document.querySelector('[data-reader-course-map-fallback-intro]');
+  const courseMapFallbackList = document.querySelector('[data-reader-course-map-fallback-list]');
+  const courseMapFigureLink = document.querySelector('[data-reader-course-map-figure-link]');
+  const courseMapImage = document.querySelector('[data-reader-course-map-image]');
+  const courseMapFigureOpen = document.querySelector('[data-reader-course-map-figure-open]');
+  const courseMapFigureCaption = document.querySelector('[data-reader-course-map-figure-caption]');
+  const courseMapBoundary = document.querySelector('[data-reader-course-map-boundary]');
   const coreCurrentTitle = document.querySelector('[data-reader-core-current-title]');
   const coreProgress = document.querySelector('[data-reader-core-progress]');
   const coreUnitsList = document.querySelector('[data-reader-core-units]');
@@ -150,6 +169,16 @@
   const recoveryMapBoundary = document.querySelector('[data-reader-recovery-map-boundary]');
   let conceptMapScrollHandler = null;
   let inlineConceptMapScrollHandler = null;
+  const readerCourseMapCopy = {
+    en: { summary: 'Whole Playbook map', intro: 'See how the foundation route leads into safe work, evidence, and optional tracks. Select a stage to open its starting point.', aria: 'Four stages in the Playbook route', selected: 'Selected stage', next: 'Next question', open: 'Open this stage', fallback: 'Read the whole route as text', fallbackIntro: 'The same four stages remain available as a simple ordered list.', figureAlt: 'Playbook route from foundation to a first bounded task, an evidence loop, and optional tracks.', figureOpen: 'Open the full route visual', figureCaption: 'Project-authored route board. The ordered list is the accessible explanation; the board is an orientation aid.', boundary: 'The map shows an order of practice, not completion or mastery.', labels: ['Foundation Core', 'First bounded task', 'Evidence loop', 'Optional tracks'], bodies: ['Learn the model boundary, make one low-risk request, notice visible failure, repair it, and try a new case.', 'Write the result, context, allowed help, limits, check, and stop condition before acting.', 'Compare the output with a source, diff, test, log, or acceptance rule; stop when the proof is missing.', 'Choose Codex, tools, Skills, Agents, research, engineering, or team practice when the next layer is useful.'], nextQuestions: ['Can I explain what the model did not establish?', 'What is the smallest reversible task I can check?', 'What evidence would change my claim?', 'Which track supports the next real task?'] },
+    zh: { summary: '整本 Playbook 地图', intro: '先看基础路线如何连接到安全任务、证据闭环和可选专题。选择一个阶段，打开它的起点。', aria: 'Playbook 路线的四个阶段', selected: '当前阶段', next: '下一个问题', open: '打开这个阶段', fallback: '按文字阅读整条路线', fallbackIntro: '相同的四个阶段也会以简单的有序列表呈现。', figureAlt: 'Playbook 路线：从基础课到有边界的任务、证据闭环和可选专题。', figureOpen: '打开完整路线图', figureCaption: '项目原创路线图。文字版有序列表才是无障碍说明，图板只是定位辅助。', boundary: '这张图展示练习顺序，不代表完成或掌握。', labels: ['基础核心课', '第一个有边界的任务', '证据闭环', '可选专题路线'], bodies: ['理解模型边界，完成一次低风险请求，识别可见失败，修正后再尝试新案例。', '在行动前写清结果、上下文、允许的帮助、限制、检查方式和停止条件。', '把输出与来源、差异、测试、日志或验收规则对照；证据不足就停止。', '下一层确实有用时，再选择 Codex、工具、Skill、Agent、研究、工程或团队练习。'], nextQuestions: ['我能说清模型没有建立什么吗？', '我能检查的最小可逆任务是什么？', '什么证据会改变我的结论？', '下一项真实任务需要哪条路线？'] },
+    es: { summary: 'Mapa completo del Playbook', intro: 'Mira cómo la ruta de fundamentos lleva al trabajo seguro, a la evidencia y a las rutas opcionales. Elige una etapa para abrir su punto de partida.', aria: 'Cuatro etapas de la ruta del Playbook', selected: 'Etapa seleccionada', next: 'Siguiente pregunta', open: 'Abrir esta etapa', fallback: 'Leer toda la ruta como texto', fallbackIntro: 'Las mismas cuatro etapas están disponibles en una lista ordenada.', figureAlt: 'Ruta del Playbook: fundamentos, primera tarea acotada, bucle de evidencia y rutas opcionales.', figureOpen: 'Abrir el diagrama completo del recorrido', figureCaption: 'Diagrama original del proyecto. La lista ordenada es la explicación accesible; el diagrama solo orienta.', boundary: 'El mapa muestra un orden de práctica, no finalización ni dominio.', labels: ['Núcleo de fundamentos', 'Primera tarea acotada', 'Bucle de evidencia', 'Rutas opcionales'], bodies: ['Entiende el límite del modelo, haz una petición de bajo riesgo, detecta un fallo visible, corrígelo y prueba un caso nuevo.', 'Escribe el resultado, el contexto, la ayuda permitida, los límites, la comprobación y la condición de parada antes de actuar.', 'Compara la respuesta con una fuente, un diff, una prueba, un registro o un criterio de aceptación; detente si falta la prueba.', 'Elige Codex, herramientas, Skills, agentes, investigación, ingeniería o práctica de equipo cuando la siguiente capa sea útil.'], nextQuestions: ['¿Puedo explicar qué no estableció el modelo?', '¿Cuál es la tarea reversible más pequeña que puedo comprobar?', '¿Qué evidencia cambiaría mi conclusión?', '¿Qué ruta apoya la siguiente tarea real?'] },
+    ja: { summary: 'Playbook 全体マップ', intro: '基礎ルートが安全な作業、エビデンス、選べる発展ルートへどうつながるかを確認します。段階を選ぶと、その入口を開けます。', aria: 'Playbook ルートの4段階', selected: '選択中の段階', next: '次の問い', open: 'この段階を開く', fallback: 'ルート全体をテキストで読む', fallbackIntro: '同じ4段階を順序付きリストでも確認できます。', figureAlt: 'Playbook のルート：基礎、範囲を決めた最初の課題、エビデンスループ、選べる発展ルート。', figureOpen: 'ルート図を原寸で開く', figureCaption: 'プロジェクトが作成したルートボードです。順序付きリストがテキストによる説明で、ボードは補助資料です。', boundary: 'このマップは練習の順序を示すもので、完了や習得を証明しません。', labels: ['基礎コア', '最初の範囲付きタスク', 'エビデンスループ', '選べる発展ルート'], bodies: ['モデルの境界を理解し、低リスクの依頼を1つ試し、見える失敗を修正して別のケースで試します。', '行動する前に、結果、文脈、許可する支援、制約、確認方法、停止条件を書きます。', '出力を出典、差分、テスト、ログ、受け入れ条件と照合し、証拠がなければ止まります。', '次の層が必要になったときに Codex、ツール、Skill、Agent、研究、エンジニアリング、チーム練習を選びます。'], nextQuestions: ['モデルが示していないことを説明できるか？', '確認できる最小の可逆タスクは何か？', 'どの証拠が主張を変えるか？', '次の実際の課題にどのルートが役立つか？'] },
+    ko: { summary: 'Playbook 전체 지도', intro: '기초 과정이 안전한 작업, 증거 루프, 선택 가능한 심화 경로로 어떻게 이어지는지 확인하세요. 단계를 선택하면 시작점이 열립니다.', aria: 'Playbook 경로의 네 단계', selected: '선택한 단계', next: '다음 질문', open: '이 단계 열기', fallback: '전체 경로를 텍스트로 읽기', fallbackIntro: '같은 네 단계를 간단한 순서 목록으로도 확인할 수 있습니다.', figureAlt: 'Playbook 경로: 기초 과정, 범위가 정해진 첫 작업, 증거 루프, 선택 가능한 심화 경로.', figureOpen: '전체 경로 그림 열기', figureCaption: '프로젝트가 만든 경로 보드입니다. 순서 목록이 접근 가능한 설명이고 보드는 보조 자료입니다.', boundary: '이 지도는 연습 순서를 보여 줄 뿐, 완료나 숙련을 증명하지 않습니다.', labels: ['LLM 기초 과정', '범위가 정해진 첫 작업', '증거 루프', '선택 가능한 심화 경로'], bodies: ['모델의 경계를 이해하고 저위험 요청을 하나 시도한 뒤 눈에 보이는 실패를 고치고 새 사례에 적용합니다.', '행동하기 전에 결과, 맥락, 허용된 도움, 제한, 점검과 중지 조건을 적습니다.', '출력을 출처, diff, 테스트, 로그 또는 검수 기준과 대조하고 증거가 없으면 중지합니다.', '다음 단계가 필요할 때 Codex, 도구, Skill, Agent, 연구, 엔지니어링 또는 팀 연습을 선택합니다.'], nextQuestions: ['모델이 증명하지 못한 것을 설명할 수 있나?', '확인할 수 있는 가장 작고 되돌릴 수 있는 작업은 무엇인가?', '어떤 증거가 내 주장을 바꾸나?', '다음 실제 작업에 어떤 경로가 맞나?'] },
+    de: { summary: 'Gesamtkarte des Playbooks', intro: 'Sieh, wie die Grundlagenroute zu sicherer Arbeit, Belegen und optionalen Routen führt. Wähle eine Stufe, um ihren Einstieg zu öffnen.', aria: 'Vier Stufen der Playbook-Route', selected: 'Ausgewählte Stufe', next: 'Nächste Frage', open: 'Diese Stufe öffnen', fallback: 'Die gesamte Route als Text lesen', fallbackIntro: 'Dieselben vier Stufen stehen auch als einfache geordnete Liste bereit.', figureAlt: 'Playbook-Route von den Grundlagen über eine begrenzte erste Aufgabe und die Belegschleife zu optionalen Routen.', figureOpen: 'Gesamte Routenübersicht öffnen', figureCaption: 'Vom Projekt erstellte Routentafel. Die geordnete Liste ist die zugängliche Erklärung; die Tafel dient der Orientierung.', boundary: 'Die Karte zeigt eine Übungsreihenfolge, nicht den Abschluss oder die Beherrschung.', labels: ['LLM-Grundlagenkern', 'Erste begrenzte Aufgabe', 'Belegschleife', 'Optionale Routen'], bodies: ['Verstehe die Modellgrenze, stelle eine risikoarme Anfrage, erkenne einen sichtbaren Fehler, repariere ihn und versuche einen neuen Fall.', 'Notiere Ergebnis, Kontext, erlaubte Hilfe, Grenzen, Prüfung und Stopbedingung, bevor du handelst.', 'Vergleiche die Ausgabe mit Quelle, Diff, Test, Log oder Abnahmeregel; halte an, wenn der Beleg fehlt.', 'Wähle Codex, Werkzeuge, Skills, Agents, Recherche, Engineering oder Teampraxis, wenn die nächste Ebene nützlich ist.'], nextQuestions: ['Kann ich erklären, was das Modell nicht belegt hat?', 'Was ist die kleinste reversible Aufgabe, die ich prüfen kann?', 'Welcher Beleg würde meine Aussage ändern?', 'Welche Route unterstützt die nächste reale Aufgabe?'] },
+    'zh-tw': { summary: '整本 Playbook 地圖', intro: '先看基礎路線如何連接到安全任務、證據循環與可選主題。選取一個階段，開啟它的起點。', aria: 'Playbook 路線的四個階段', selected: '目前階段', next: '下一個問題', open: '開啟這個階段', fallback: '依文字閱讀整條路線', fallbackIntro: '相同的四個階段也會以簡單的有序清單呈現。', figureAlt: 'Playbook 路線：從基礎課到範圍明確的任務、證據循環與可選主題。', figureOpen: '開啟完整路線圖', figureCaption: '專案原創路線圖。下方有序清單才是無障礙說明，圖板只是定位輔助。', boundary: '這張圖展示練習順序，不代表完成或掌握。', labels: ['基礎核心課', '第一個範圍明確的任務', '證據循環', '可選主題路線'], bodies: ['理解模型邊界，完成一次低風險請求，辨識看得見的失敗，修正後再嘗試新案例。', '行動前先寫清結果、上下文、允許的協助、限制、檢查方式與停止條件。', '把輸出與來源、差異、測試、日誌或驗收規則對照；證據不足就停止。', '下一層確實有用時，再選擇 Codex、工具、Skill、Agent、研究、工程或團隊練習。'], nextQuestions: ['我能說清楚模型沒有建立什麼嗎？', '我能檢查的最小可逆任務是什麼？', '什麼證據會改變我的結論？', '下一項真實任務需要哪條路線？'] },
+    fr: { summary: 'Carte complète du Playbook', intro: 'Voyez comment le parcours fondamental mène au travail sûr, aux preuves et aux parcours optionnels. Sélectionnez une étape pour ouvrir son point de départ.', aria: 'Quatre étapes du parcours du Playbook', selected: 'Étape sélectionnée', next: 'Question suivante', open: 'Ouvrir cette étape', fallback: 'Lire tout le parcours sous forme de texte', fallbackIntro: 'Les quatre mêmes étapes restent disponibles dans une liste ordonnée.', figureAlt: 'Parcours du Playbook : fondamentaux, première tâche délimitée, boucle de preuves et parcours optionnels.', figureOpen: 'Ouvrir le parcours complet', figureCaption: 'Planche originale du projet. La liste ordonnée est l’explication accessible ; la planche sert à se repérer.', boundary: 'La carte montre un ordre de pratique, pas une fin de parcours ni une maîtrise.', labels: ['Parcours fondamental LLM', 'Première tâche délimitée', 'Boucle de preuves', 'Parcours optionnels'], bodies: ['Comprenez la limite du modèle, faites une demande à faible risque, repérez une erreur visible, corrigez-la et essayez un nouveau cas.', 'Notez le résultat, le contexte, l’aide autorisée, les limites, la vérification et la condition d’arrêt avant d’agir.', 'Comparez la réponse à une source, un diff, un test, un journal ou un critère d’acceptation ; arrêtez-vous si la preuve manque.', 'Choisissez Codex, les outils, les Skills, les Agents, la recherche, l’ingénierie ou la pratique d’équipe lorsque l’étape suivante est utile.'], nextQuestions: ['Puis-je expliquer ce que le modèle n’a pas établi ?', 'Quelle est la plus petite tâche réversible que je peux vérifier ?', 'Quelle preuve changerait mon affirmation ?', 'Quel parcours sert la prochaine tâche réelle ?'] },
+  };
   const trustCard = document.querySelector('[data-reader-trust-card]');
   const trustScope = document.querySelector('[data-reader-trust-scope]');
   const trustReviewed = document.querySelector('[data-reader-trust-reviewed]');
@@ -779,6 +808,103 @@
   const currentReaderCopy = () => readerCopy[uiLanguage()];
   const currentReaderRouteMapCopy = () => readerRouteMapCopy[uiLanguage()] || readerRouteMapCopy.en;
   const currentReaderRecoveryMapCopy = () => readerVisualCopy[uiLanguage()] || readerVisualCopy.en;
+  const currentReaderCourseMapCopy = () => readerCourseMapCopy[uiLanguage()] || readerCourseMapCopy.en;
+  const readerCourseMapStages = [
+    { id: 'foundation', contentId: 'llm-foundation-core-v1', path: 'book/routes/llm-foundation-core-v1-EN.md' },
+    { id: 'task', contentId: 'chapter-02-first-safe-task', path: 'book/chapters/02-first-safe-task-EN.md' },
+    { id: 'evidence', contentId: 'chapter-09-verification-and-recovery', path: 'book/chapters/09-verification-and-recovery-EN.md' },
+    { id: 'tracks', contentId: 'chapter-07-skills-plugins-and-tools', path: 'book/chapters/07-skills-plugins-and-tools-EN.md' },
+  ];
+  const courseMapStageHref = (stage) => {
+    const record = manifest.contents?.[stage.contentId];
+    const localizedPath = record?.locales?.[activeLocale]?.path;
+    return readerHref(localizedPath || stage.path, '', activeLocale);
+  };
+  const renderReaderCourseMap = (selection = null) => {
+    if (!courseMap || !courseMapNodes || !courseMapFallbackList) return;
+    if (!selection || !(selection.path.startsWith('book/') || readerCourseMapStages.some((stage) => stage.contentId === selection.contentId))) {
+      courseMap.hidden = true;
+      courseMapNodes.replaceChildren();
+      courseMapFallbackList.replaceChildren();
+      return;
+    }
+    const strings = currentReaderCourseMapCopy();
+    const selectedIndex = Math.max(0, readerCourseMapStages.findIndex((stage) => stage.contentId === selection.contentId));
+    courseMap.hidden = false;
+    courseMap.open = selection.contentId === 'llm-foundation-core-v1';
+    courseMapSummary.textContent = strings.summary;
+    courseMapSummary.setAttribute('aria-label', strings.aria);
+    courseMapIntro.textContent = strings.intro;
+    courseMapDetailLabel.textContent = strings.selected;
+    courseMapNextLabel.textContent = strings.next;
+    courseMapOpen.textContent = strings.open;
+    courseMapFallback.textContent = strings.fallback;
+    courseMapFallbackIntro.textContent = strings.fallbackIntro;
+    courseMapFigureOpen.textContent = strings.figureOpen;
+    courseMapFigureCaption.textContent = strings.figureCaption;
+    courseMapBoundary.textContent = strings.boundary;
+    courseMapImage.alt = strings.figureAlt;
+    courseMapFigureLink.href = directHref('assets/teaching/playbook-learning-journey-red-black.svg');
+    courseMapNodes.setAttribute('aria-label', strings.aria);
+    const selectStage = (index) => {
+      const stage = readerCourseMapStages[index];
+      if (!stage) return;
+      courseMapNodes.querySelectorAll('[data-reader-course-map-stage]').forEach((button) => {
+        const active = Number(button.dataset.readerCourseMapStage) === index;
+        button.setAttribute('aria-pressed', String(active));
+        button.classList.toggle('is-current', active);
+      });
+      courseMapDetailTitle.textContent = strings.labels[index];
+      courseMapDetailBody.textContent = strings.bodies[index];
+      courseMapDetailNext.textContent = strings.nextQuestions[index];
+      courseMapDetailLink.href = courseMapStageHref(stage);
+      courseMapDetailLink.setAttribute('aria-label', `${strings.open}: ${strings.labels[index]}`);
+    };
+    courseMapNodes.replaceChildren();
+    courseMapFallbackList.replaceChildren();
+    readerCourseMapStages.forEach((stage, index) => {
+      const item = document.createElement('li');
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'reader-course-map-node';
+      button.dataset.readerCourseMapStage = String(index);
+      button.setAttribute('aria-pressed', 'false');
+      button.setAttribute('aria-label', `${strings.selected}: ${strings.labels[index]}`);
+      const number = document.createElement('span');
+      number.className = 'reader-course-map-node-number';
+      number.textContent = String(index + 1).padStart(2, '0');
+      const label = document.createElement('strong');
+      label.textContent = strings.labels[index];
+      button.append(number, label);
+      button.addEventListener('click', () => selectStage(index));
+      button.addEventListener('keydown', (event) => {
+        if (!['ArrowRight', 'ArrowDown', 'ArrowLeft', 'ArrowUp', 'Home', 'End'].includes(event.key)) return;
+        event.preventDefault();
+        const buttons = [...courseMapNodes.querySelectorAll('[data-reader-course-map-stage]')];
+        const nextIndex = event.key === 'Home'
+          ? 0
+          : event.key === 'End'
+            ? buttons.length - 1
+            : (index + (event.key === 'ArrowRight' || event.key === 'ArrowDown' ? 1 : -1) + buttons.length) % buttons.length;
+        buttons[nextIndex]?.focus();
+        selectStage(nextIndex);
+      });
+      item.append(button);
+      courseMapNodes.append(item);
+
+      const fallbackItem = document.createElement('li');
+      const fallbackTitle = document.createElement('strong');
+      fallbackTitle.textContent = strings.labels[index];
+      const fallbackBody = document.createElement('span');
+      fallbackBody.textContent = strings.bodies[index];
+      const fallbackLink = document.createElement('a');
+      fallbackLink.href = courseMapStageHref(stage);
+      fallbackLink.textContent = strings.open;
+      fallbackItem.append(fallbackTitle, fallbackBody, fallbackLink);
+      courseMapFallbackList.append(fallbackItem);
+    });
+    selectStage(selectedIndex);
+  };
   const routeMapStepIndex = (contentId) => readerRouteMapSteps.findIndex((step) => step.contentId === contentId);
   const routeMapStepHref = (step) => {
     const record = manifest.contents?.[step.contentId];
@@ -2168,6 +2294,7 @@ function canonicalChapterTitle(chapter) {
     if (corePath) corePath.hidden = true;
     if (corePathNodes) corePathNodes.replaceChildren();
     coreCurrentUnitId = null;
+    renderReaderCourseMap(null);
     if (orientation) orientation.hidden = true;
     if (mobilePageToc) mobilePageToc.hidden = true;
     if (pagination) pagination.hidden = true;
@@ -2337,6 +2464,7 @@ function canonicalChapterTitle(chapter) {
       || selection.contentId === 'llm-foundation-core-v1'
       || readerRouteMapSteps.some((step) => step.contentId === selection.contentId);
     renderReaderRouteMap(routeMapEligible ? selection : null);
+    renderReaderCourseMap(selection);
     renderReaderConceptMap(selection, title, pageHeadings);
     renderReaderReadingLoop(selection, pageHeadings);
     renderReaderInlineConceptMap(selection, title, pageHeadings);
