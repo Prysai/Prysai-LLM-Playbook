@@ -37,6 +37,8 @@
 
 **新增资产记录 S147：** `assets/teaching/response-claim-triage-red-black.svg`、`site/visuals.html`、`site/visuals.css`、`site/visuals.js` 与 `site/reader.js` 的 2026-08-25 更新增加了“先分类回答结论，再选择最小检查”的原创教学图和八语种动态分流图。它把文字结论、工具/执行声称、外部影响和未知或过度确定四类情况分别连接到来源、事件、授权/回执和降级/停止检查；SVG 及周边文字只使用项目自有文字、几何图形和系统字体，不含外部图片、字体、脚本、文案或远程请求。它仍是 candidate 教学解释，不证明来源正确、工具运行、外部影响已发生、学习效果、可访问性合规或生产就绪。
 
+**新增资产记录 S148：** `assets/teaching/capability-ladder-red-black.svg` 是 Prysai Lab 于 2026-08-25 创作的原创红黑能力阶梯图，依据 `site/learning-path-data.js` 的七个候选等级（Observer、Safe user、Task designer、Workflow designer、Capability builder、Evidence reviewer、Team coach）组织“下一项可观察练习”。SVG 只使用项目自有文字、几何图形和系统字体，不含外部图片、字体、图标、代码或远程请求；`site/visuals.html`、`site/visuals.js` 和 `scripts/browser_smoke.mjs` 负责八语种周边说明、动态选择、Reader 路径和有序文字回退。它是 candidate 导航与教学解释，不证明学习者达到任何等级、掌握方法、完成迁移、运行工具、具备权限、通过可访问性审查或达到生产就绪。
+
 **新增资产记录 S80：** `assets/teaching/side-effect-boundary-decision-map.svg` 是 Prysai Lab 于 2026-08-24 创作的原创红黑编辑式教学图，以 A–E 行动类别说明目标变化、持续性、受众、授权与恢复要求如何随副作用增强。它仅使用内嵌几何图形、文字与系统字体，不含外部图片、字体、图标、代码或远程请求，随仓库内容许可发布。它只是候选教学解释，不证明权限、工具运行、学习效果、可访问性合规或生产就绪。
 
 | ID | 本地文件 | 上游 | 盘点结果 | 许可证信号 | 当前决策 |
