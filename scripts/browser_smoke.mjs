@@ -898,7 +898,7 @@ try {
     await visualGuidePage.locator('[data-visual-concept-nodes] button').last().click();
     assert.equal(await visualGuidePage.locator('[data-visual-concept-title]').innerText(), visualConceptLabels[locale][5], `${locale} visual guide concept selection does not update`);
     assert.equal(await visualGuidePage.locator('[data-visual-concept-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} visual guide concept selection is not exposed`);
-    assert.match(await visualGuidePage.locator('[data-visual-concept-link]').getAttribute('href'), new RegExp(`13-action-boundaries-[A-Z]+\.md&lang=${locale}$`), `${locale} visual guide concept route loses its locale`);
+    assert.match(await visualGuidePage.locator('[data-visual-concept-link]').getAttribute('href'), new RegExp(`13-action-boundaries-[A-Z]+\\.md&lang=${locale}$`), `${locale} visual guide concept route loses its locale`);
     await visualGuidePage.locator('[data-visual-route-nodes] button').nth(8).click();
     assert.equal(await visualGuidePage.locator('[data-visual-route-title]').innerText(), visualRouteLabels[locale][8], `${locale} visual route selection does not update`);
     assert.equal(await visualGuidePage.locator('[data-visual-route-nodes] button').nth(8).getAttribute('aria-pressed'), 'true', `${locale} visual route selection is not exposed`);
