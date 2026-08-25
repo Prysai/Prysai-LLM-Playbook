@@ -34,7 +34,7 @@ const expectedCounts = {
   readingLoop: 6,
   actionBoundary: 5,
   triage: 4,
-  cards: 19,
+  cards: 20,
 };
 
 const build = spawnSync(python, ['-X', 'utf8', 'scripts/build_pages_artifact.py', '--output', artifact], {

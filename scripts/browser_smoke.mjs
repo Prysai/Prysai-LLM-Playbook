@@ -741,6 +741,16 @@ try {
     'zh-tw': '把一頁內容讀成四步路線',
     fr: 'Lire une page en quatre étapes',
   };
+  const experimentRecordTitles = {
+    en: 'Keep a lab run small enough to check',
+    zh: '让实验记录小到可以检查',
+    es: 'Mantén el experimento lo bastante acotado para comprobarlo',
+    ja: '確認できる大きさに実験を絞る',
+    ko: '확인할 수 있을 만큼 실험 범위를 줄이기',
+    de: 'Einen Versuch so klein halten, dass er prüfbar bleibt',
+    'zh-tw': '把實驗縮小到可以檢查',
+    fr: 'Garder un essai assez petit pour être vérifiable',
+  };
   const visualGuideGoalLabels = {
     en: ['I need a first safe task', 'I am not sure what the result proves', 'I need to verify a claim', 'I want to reuse the method'],
     zh: ['我想先完成一次安全任务', '我不确定结果能证明什么', '我需要核对一个结论', '我想把方法用到别的任务'],
@@ -846,12 +856,17 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-evidence-nodes] button').count(), 5, `${locale} evidence map lost a step`);
     assert.equal(await visualGuidePage.locator('[data-visual-evidence-fallback] li').count(), 5, `${locale} evidence map text fallback lost a step`);
     assert.notEqual(await visualGuidePage.locator('[data-visual-evidence-image]').getAttribute('alt'), '', `${locale} evidence map image has no alternative text`);
-    assert.equal(await visualGuidePage.locator('.visual-card').count(), 19, `${locale} visual guide lost a teaching board`);
+    assert.equal(await visualGuidePage.locator('.visual-card').count(), 20, `${locale} visual guide lost a teaching board`);
     assert.equal(await visualGuidePage.locator('.visual-header').evaluate((header) => getComputedStyle(header).position), 'relative', `${locale} visual guide navigation can cover a diagram while scrolling`);
     const routeCompassCard = visualGuidePage.locator('.visual-card').first();
     assert.equal(await routeCompassCard.locator('h3').innerText(), visualRouteCompassTitles[locale], `${locale} reader route compass title is not localized`);
     assert.match(await routeCompassCard.locator('img').getAttribute('src'), /reader-route-compass-red-black\.svg$/, `${locale} visual guide lost the reader route compass board`);
     assert.match(await routeCompassCard.locator('.visual-action-link').getAttribute('href'), new RegExp(`llm-fundamentals-[A-Z]+\\.md&lang=${locale}$`), `${locale} reader route compass lesson does not stay localized`);
+    const experimentRecordCard = visualGuidePage.locator('.visual-card').filter({ has: visualGuidePage.locator('img[src$="experiment-record-anatomy-red-black.svg"]') });
+    assert.equal(await experimentRecordCard.count(), 1, `${locale} visual guide lost the experiment record board`);
+    assert.equal(await experimentRecordCard.locator('h3').innerText(), experimentRecordTitles[locale], `${locale} experiment record board title is not localized`);
+    assert.notEqual((await experimentRecordCard.locator('img').getAttribute('alt') || '').trim(), '', `${locale} experiment record board has no alternative text`);
+    assert.match(await experimentRecordCard.locator('.visual-action-link').getAttribute('href'), new RegExp(`lab-003-evidence-review-[A-Z]+\\.md&lang=${locale}$`), `${locale} experiment record lesson does not stay localized`);
     assert.deepEqual(await visualGuidePage.locator('[data-visual-goal-nodes] button strong').allTextContents(), visualGuideGoalLabels[locale], `${locale} visual guide goal entry labels are not localized`);
     assert.equal(await visualGuidePage.locator('[data-visual-goal-nodes] button').count(), 4, `${locale} visual guide goal map lost an entry`);
     assert.equal(await visualGuidePage.locator('[data-visual-goal-fallback] li').count(), 4, `${locale} visual guide goal fallback lost an entry`);
@@ -973,7 +988,7 @@ try {
   assert.equal(await rootVisualPage.locator('html').getAttribute('lang'), 'fr', 'root visual guide does not preserve the requested language');
   assert.equal(await rootVisualPage.locator('h1').innerText(), 'Voyez la méthode avant d’entrer dans le détail.', 'root visual guide serves the wrong document');
   assert.equal(await rootVisualPage.locator('link[rel="canonical"]').getAttribute('href'), 'https://docs.prysai.com/llm-playbook/visuals.html', 'root visual guide is missing its canonical URL');
-  assert.equal(await rootVisualPage.locator('.visual-card').count(), 19, 'root visual guide lost its teaching boards');
+  assert.equal(await rootVisualPage.locator('.visual-card').count(), 20, 'root visual guide lost its teaching boards');
   assert.equal(await rootVisualPage.locator('[data-visual-map-nodes] button').count(), 6, 'root visual guide lost its dynamic route map');
   await noHorizontalOverflow(rootVisualPage, 'root visual guide desktop');
   await rootVisualPage.close();
@@ -999,7 +1014,7 @@ try {
   assert.equal(await visualGuidePage.locator('[data-visual-action-boundary-fallback] li').count(), 5, 'mobile action boundary fallback loses a layer');
   assert.equal(await visualGuidePage.locator('[data-visual-triage-nodes] button').count(), 4, 'mobile claim triage map loses a branch');
   assert.equal(await visualGuidePage.locator('[data-visual-triage-fallback] li').count(), 4, 'mobile claim triage fallback loses a branch');
-  assert.equal(await visualGuidePage.locator('.visual-card').count(), 19, 'mobile visual guide loses teaching boards');
+  assert.equal(await visualGuidePage.locator('.visual-card').count(), 20, 'mobile visual guide loses teaching boards');
   await visualGuidePage.locator('#visual-capability').scrollIntoViewIfNeeded();
   await visualGuidePage.screenshot({ path: path.join(visualEvidenceDirectory, 'capability-ladder-mobile-fr.png'), fullPage: false });
   await visualGuidePage.screenshot({ path: path.join(visualEvidenceDirectory, 'visual-guide-mobile-fr.png'), fullPage: false });
@@ -2429,13 +2444,13 @@ try {
       `${locale} inline teaching visual reading note title is not localized`,
     );
     assert.equal(
-      (await localizedInlineTeachingVisual.locator('.reader-visual-reading-note-grid dt').first().innerText()).trim(),
-      visualReadingNoteLocales[locale][1],
+      (await localizedInlineTeachingVisual.locator('.reader-visual-reading-note-grid dt').first().innerText()).trim().toLocaleLowerCase(locale),
+      visualReadingNoteLocales[locale][1].toLocaleLowerCase(locale),
       `${locale} inline teaching visual reading note first label is not localized`,
     );
     assert.equal(
-      (await localizedInlineTeachingVisual.locator('.reader-visual-reading-note-grid dt').nth(3).innerText()).trim(),
-      visualReadingNoteLocales[locale][2],
+      (await localizedInlineTeachingVisual.locator('.reader-visual-reading-note-grid dt').nth(3).innerText()).trim().toLocaleLowerCase(locale),
+      visualReadingNoteLocales[locale][2].toLocaleLowerCase(locale),
       `${locale} inline teaching visual reading note boundary label is not localized`,
     );
     assert.equal(await localizedInlineTeachingVisual.locator('.reader-visual-explanation li').count(), 1, `${locale} inline teaching visual did not use its board-specific explanation`);

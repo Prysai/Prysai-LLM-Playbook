@@ -19,19 +19,26 @@ Playbook is ready for public production use.
   smoke test asserts both the fallback item counts and the collapsed default.
 
 - Added a focused `npm run test:visuals` smoke check for the standalone guide.
-  It verifies all eight locale routes, the 19-board inventory, interactive
+  It verifies all eight locale routes, the 20-board inventory, interactive
   maturity navigation, 390/360px overflow boundaries, and no-JavaScript text
   fallbacks. The check passed on 2026-08-25; it is implementation evidence
   only and does not replace the broader browser smoke or learner validation.
 
 - Added a standalone eight-locale Visual Guide with a six-stage interactive
-  mind map, nineteen project-authored teaching boards, localized captions and
+  mind map, twenty project-authored teaching boards, localized captions and
   alternatives, and a text-first route that remains usable without JavaScript.
   The route is linked from the homepage and Reader in the selected locale;
   browser checks cover the eight language paths, image inventory, keyboard
   selection, mobile reflow, and the no-script text fallback. These checks are
   implementation evidence only, not proof of comprehension, accessibility
   conformance, learner transfer, or release readiness.
+
+- Added the project-authored `experiment-record-anatomy-red-black.svg` board
+  to Lab 003, the Lab 001/003 Reader visual sequence, and the Visual Guide.
+  Its six-part record moves from question to safe fixture, actual run,
+  observation, acceptance check, and explicit boundary; localized captions,
+  alternatives, next questions, and evidence limits remain the reader-facing
+  explanation around the source-language artwork.
 
 - Added the whole-Playbook route map to the Reader. It connects the
   Foundation Core, first bounded task, evidence loop, and optional tracks with

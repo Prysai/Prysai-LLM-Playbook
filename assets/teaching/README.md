@@ -46,6 +46,7 @@ see before the reader works through the prose.
 - [Capability ladder](capability-ladder-red-black.svg)
 - [First attempt to evidence receipt](first-attempt-evidence-receipt-red-black.svg)
 - [Evidence maturity ladder](evidence-maturity-ladder-red-black.svg)
+- [Experiment record anatomy](experiment-record-anatomy-red-black.svg)
 
 The cards are visual explanations, not benchmark results. Their scope,
 ownership, and reuse boundary are recorded in the

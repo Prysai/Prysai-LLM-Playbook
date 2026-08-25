@@ -621,7 +621,7 @@
     { tokens: ['chapter-22-continuous-update-and-future-proofing', 'interruption-checkpoint'], path: 'assets/teaching/interruption-checkpoint-card-red-black.svg', step: 4 },
     { tokens: ['lab-001-first-safe-task', 'first-turn-contract'], path: 'assets/teaching/first-turn-contract-card.svg', step: 1 },
     { tokens: ['lab-002-task-protocol'], path: 'assets/teaching/prompt-contract-six-fields-red-black.svg', step: 1 },
-    { tokens: ['lab-003-evidence-review'], path: 'assets/teaching/evidence-recovery-ladder.svg', step: 3 },
+    { tokens: ['lab-003-evidence-review'], path: 'assets/teaching/experiment-record-anatomy-red-black.svg', step: 3 },
     { tokens: ['lab-005-design-a-skill'], path: 'assets/teaching/skill-to-observable-output.svg', step: 1 },
     { tokens: ['lab-010-product-context'], path: 'assets/teaching/practice-target-to-first-attempt-red-black.svg', step: 1 },
     { tokens: ['lab-011-gpt-codex-boundaries'], path: 'assets/teaching/llm-six-terms-to-one-check.svg', step: 0 },
@@ -681,6 +681,16 @@
       'zh-tw': { title: '把第一次嘗試變成可檢查的紀錄', body: '寫清楚一個結果，使用安全的輸入，保存實際發生的內容，檢查一個重要細節，並記下結果、限制、未知項目與下一步。', next: '我要保留什麼，別人才有辦法檢查這次嘗試？', boundary: '這張圖說明紀錄的寫法；它不能證明執行成功、輸入已獲授權，也不能把一次嘗試當成已經學會。' },
       fr: { title: 'Transformer un premier essai en relevé vérifiable', body: 'Nommez un résultat, utilisez des entrées sûres, conservez ce qui s’est réellement passé, vérifiez un point important et notez le résultat, les limites, les inconnues et la prochaine étape.', next: 'Que dois-je conserver pour qu’une autre personne puisse vérifier cet essai ?', boundary: 'La planche propose un modèle de relevé ; elle ne prouve ni la réussite de l’exécution, ni l’autorisation des entrées, ni la maîtrise à partir d’un seul essai.' },
     },
+    'experiment-record-anatomy-red-black.svg': {
+      en: { title: 'Keep a lab run small enough to check', body: 'Move from one observable question through a safe fixture, the actual run, an observation, one focused acceptance check, and an explicit boundary.', next: 'Which part of this run could another person inspect directly?', boundary: 'The board describes a record structure; it does not prove that an experiment succeeded, that a tool ran, or that the result transfers.' },
+      zh: { title: '让实验记录小到可以检查', body: '从一个可观察的问题开始，经过安全夹具、实际运行、观察、一次聚焦验收，再明确写下边界。', next: '这次运行中，哪一部分可以让别人直接检查？', boundary: '这张图说明记录结构；它不能证明实验成功、工具已经运行，或结果可以迁移。' },
+      es: { title: 'Mantén el experimento lo bastante acotado para comprobarlo', body: 'Pasa de una pregunta observable a un juego de prueba seguro, la ejecución real, una observación, una comprobación de aceptación y un límite explícito.', next: '¿Qué parte de esta ejecución podría revisar directamente otra persona?', boundary: 'El tablero describe la estructura del registro; no demuestra que el experimento funcionara, que se ejecutara una herramienta ni que el resultado sea transferible.' },
+      ja: { title: '確認できる大きさに実験を絞る', body: '観察できる問いから始め、安全なテスト用入力、実際の実行、観察、1つの受け入れ確認、明示した境界へ進みます。', next: 'この実行のどの部分なら、別の人が直接確認できるか？', boundary: 'この図は記録の構造を示すだけです。実験の成功、ツールの実行、結果の転用を証明するものではありません。' },
+      ko: { title: '확인할 수 있을 만큼 실험 범위를 줄이기', body: '관찰 가능한 질문에서 시작해 안전한 테스트 입력, 실제 실행, 관찰, 하나의 집중된 승인 점검과 명시적인 경계로 이어 갑니다.', next: '이 실행에서 다른 사람이 직접 확인할 수 있는 부분은 무엇인가?', boundary: '이 그림은 기록 구조를 보여 줄 뿐입니다. 실험 성공, 도구 실행, 결과의 전이를 증명하지 않습니다.' },
+      de: { title: 'Einen Versuch so klein halten, dass er prüfbar bleibt', body: 'Gehe von einer beobachtbaren Frage über eine sichere Testeingabe, den tatsächlichen Lauf, eine Beobachtung und einen gezielten Abnahmetest zu einer klaren Grenze.', next: 'Welchen Teil dieses Laufs könnte eine andere Person direkt prüfen?', boundary: 'Die Tafel beschreibt eine Protokollstruktur. Sie belegt weder einen erfolgreichen Versuch noch eine Tool-Ausführung oder Übertragbarkeit.' },
+      'zh-tw': { title: '把實驗縮小到可以檢查', body: '從一個可觀察的問題開始，經過安全的測試用例、實際執行、觀察、一次聚焦驗收，再明確寫下界線。', next: '這次執行中，哪一部分可以讓別人直接檢查？', boundary: '這張圖說明紀錄結構；它不能證明實驗成功、工具已執行，或結果可以遷移。' },
+      fr: { title: 'Garder un essai assez petit pour être vérifiable', body: 'Partez d’une question observable, utilisez un jeu de test sûr, conservez l’exécution réelle, une observation, un contrôle d’acceptation ciblé et une limite explicite.', next: 'Quelle partie de cet essai une autre personne pourrait-elle vérifier directement ?', boundary: 'La planche décrit une structure de relevé ; elle ne prouve ni la réussite de l’expérience, ni l’exécution d’un outil, ni le transfert du résultat.' },
+    },
     'side-effect-boundary-decision-map.svg': {
       en: { title: 'Separate reading from external effects', body: 'Reading and local reversible work stay narrow; external effects require stronger authority and recovery evidence.', next: 'What can change, who authorizes it, and how would I recover?', boundary: 'The map separates risk and authority; it does not grant permission or show that recovery has been tested.' },
       zh: { title: '把阅读与外部影响分开', body: '阅读和本地可回退工作保持狭窄范围；外部影响需要更强的权限和恢复证据。', next: '什么可以改变？谁来授权？如果出错，如何恢复？', boundary: '这张图区分风险和权限；它不会授予权限，也不能证明恢复方案已经测试过。' },
@@ -721,6 +731,12 @@
     { tokens: ['lab-001-first-safe-task', 'first-turn-contract'], visuals: [
       { path: 'assets/teaching/first-turn-contract-card.svg', step: 1 },
       { path: 'assets/teaching/first-attempt-evidence-receipt-red-black.svg', step: 3 },
+      { path: 'assets/teaching/experiment-record-anatomy-red-black.svg', step: 3 },
+    ] },
+    { tokens: ['lab-003-evidence-review'], visuals: [
+      { path: 'assets/teaching/experiment-record-anatomy-red-black.svg', step: 3 },
+      { path: 'assets/teaching/evidence-recovery-ladder.svg', step: 3 },
+      { path: 'assets/teaching/task-to-evidence-red-black.svg', step: 3 },
     ] },
     { tokens: ['llm-fundamentals-guide', 'chapter-01-gpt-and-codex'], visuals: [
       { path: 'assets/teaching/response-claim-triage-red-black.svg', step: 3 },
