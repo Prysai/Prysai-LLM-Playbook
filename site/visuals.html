@@ -8,9 +8,9 @@
     <meta name="theme-color" content="#f7f7f2" />
     <title>Prysai LLM Playbook — Visual Guide</title>
     <link rel="icon" type="image/png" href="../assets/branding/prysai-lab-mark-black-96.png" />
-    <link rel="stylesheet" href="visuals.css?v=20260825-visual-guide-5" />
+    <link rel="stylesheet" href="visuals.css?v=20260825-visual-guide-6" />
     <script src="learning-path-data.js?v=20260825-capability-ladder-1" defer></script>
-    <script src="visuals.js?v=20260825-capability-ladder-1" defer></script>
+    <script src="visuals.js?v=20260825-capability-ladder-2" defer></script>
   </head>
   <body>
     <a class="visual-skip" href="#visual-main" data-i18n="skip">Skip to content</a>
@@ -83,6 +83,7 @@
             <li><strong>08 · Browse one decision</strong><span>Open one board and its matching lesson; the gallery is not a second catalogue.</span><em>Next question: Which decision does this board clarify?</em><a class="visual-action-link" href="#visual-gallery">Jump to this section ↘</a></li>
             <li><strong>09 · Read the board correctly</strong><span>Use the thesis and text fallback, try one bounded move, and keep the boundary visible.</span><em>Next question: What does the picture still not prove?</em><a class="visual-action-link" href="#visual-how">Jump to this section ↘</a></li>
             <li><strong>10 · Read one page into practice</strong><span>Turn one page into one checked attempt instead of another random click.</span><em>Next question: What is the smallest attempt I can keep and inspect?</em><a class="visual-action-link" href="#visual-reading-loop">Jump to this section ↘</a></li>
+            <li><strong>11 · Keep a first-attempt receipt</strong><span>Record the goal, safe input, actual run, focused check, result, limit, and next step.</span><em>Next question: What can another person inspect?</em><a class="visual-action-link" href="#visual-receipt">Jump to this section ↘</a></li>
           </ol>
         </details>
       </section>
@@ -441,9 +442,48 @@
         <p class="visual-boundary" data-i18n="readingBoundary">A completed reading loop is not proof of mastery. Keep the attempt, result, and unknowns visible.</p>
       </section>
 
+      <section id="visual-receipt" class="visual-receipt-section" aria-labelledby="visual-receipt-title">
+        <div class="visual-section-heading">
+          <div><span class="visual-section-number">12</span><p class="visual-eyebrow" data-i18n="receiptEyebrow">First-attempt receipt</p><h2 id="visual-receipt-title" data-i18n="receiptTitle">Do the small attempt. Keep the receipt.</h2></div>
+          <p data-i18n="receiptIntro">This five-step map turns a safe first try into a record another person can inspect. Select a step to see what to keep, what to ask next, and where the matching lesson begins.</p>
+        </div>
+        <div class="visual-receipt-workspace">
+          <div class="visual-receipt-graph" role="group" aria-label="Five steps from a bounded first attempt to a checkable receipt" data-i18n-attr="aria-label:receiptAria">
+            <div class="visual-receipt-center" aria-hidden="true"><span data-i18n="receiptCenter">Keep the receipt</span><small data-i18n="receiptCenterSub">small run → clear record</small></div>
+            <ol class="visual-receipt-nodes" data-visual-receipt-nodes></ol>
+          </div>
+          <section class="visual-receipt-detail" data-visual-receipt-detail aria-live="polite" aria-atomic="true">
+            <span class="visual-detail-label" data-i18n="receiptSelected">Selected receipt step</span>
+            <h3 data-visual-receipt-title></h3>
+            <p data-visual-receipt-body></p>
+            <p class="visual-receipt-next"><span data-i18n="receiptNext">Next question</span><strong data-visual-receipt-next></strong></p>
+            <a class="visual-action-link" data-visual-receipt-link href="reader.html?path=book%2Flabs%2Flab-001-first-safe-task-EN.md&amp;lang=en"><span data-i18n="receiptOpen">Open the matching lesson</span><span aria-hidden="true">↗</span></a>
+          </section>
+        </div>
+        <details class="visual-receipt-fallback" open>
+          <summary data-i18n="receiptFallback">Read the first-attempt receipt as text</summary>
+          <p data-i18n="receiptFallbackIntro">The same five steps remain available as an ordered list. Keep the record smaller than the original task, and stop when the boundary is unclear.</p>
+          <ol data-visual-receipt-fallback>
+            <li><strong>01 · Name one checkable result</strong><span>Choose a small outcome that can be observed without expanding the task.</span><em>Next question: What would count as a result?</em><a class="visual-action-link" href="reader.html?path=book%2Flabs%2Flab-001-first-safe-task-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
+            <li><strong>02 · Keep only safe, relevant input</strong><span>Use a fixture or non-sensitive example, and mark what is missing instead of guessing.</span><em>Next question: What input is allowed?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en">Open the task protocol ↗</a></li>
+            <li><strong>03 · Save what actually happened</strong><span>Keep the response, diff, exit status, log, or screenshot—not only the plan.</span><em>Next question: What did I observe?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open verification and recovery ↗</a></li>
+            <li><strong>04 · Compare one important detail</strong><span>Use a source, diff, test, log, or acceptance rule for one focused check.</span><em>Next question: Which record could change the claim?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open verification and recovery ↗</a></li>
+            <li><strong>05 · Write result, limit, and unknown</strong><span>Record the result and the smallest safe next step, or stop without filling the gap.</span><em>Next question: What can another person inspect?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open action boundaries ↗</a></li>
+          </ol>
+        </details>
+        <figure class="visual-receipt-figure">
+          <a data-visual-receipt-image-link href="../assets/teaching/first-attempt-evidence-receipt-red-black.svg" target="_blank" rel="noreferrer" aria-label="Open the first-attempt receipt board">
+            <img data-visual-receipt-image src="../assets/teaching/first-attempt-evidence-receipt-red-black.svg" width="900" height="1400" loading="lazy" alt="Five-step first-attempt receipt: goal, safe input, actual run, focused check, and receipt" data-i18n-attr="alt:receiptFigureAlt" />
+            <span class="visual-image-link" data-i18n="receiptOpenVisual">Open the first-attempt receipt board</span>
+          </a>
+          <figcaption data-i18n="receiptFigureCaption">Project-authored teaching board. The text route and your own record carry the explanation; the image is a visual aid.</figcaption>
+        </figure>
+        <p class="visual-boundary" data-i18n="receiptBoundary">A receipt shows what was recorded for one bounded attempt. It does not prove that the task was correct, transferable, or mastered.</p>
+      </section>
+
       <section id="visual-gallery" class="visual-gallery-section" aria-labelledby="visual-gallery-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">12</span><p class="visual-eyebrow" data-i18n="galleryEyebrow">Teaching boards</p><h2 id="visual-gallery-title" data-i18n="galleryTitle">Pictures that explain one decision at a time.</h2></div>
+          <div><span class="visual-section-number">13</span><p class="visual-eyebrow" data-i18n="galleryEyebrow">Teaching boards</p><h2 id="visual-gallery-title" data-i18n="galleryTitle">Pictures that explain one decision at a time.</h2></div>
           <p data-i18n="galleryIntro">Each board has a short explanation, a localized alternative text, and a route into the matching lesson. Open the image when you want the printable version; use the text beside it when you want the exact boundary.</p>
         </div>
         <div class="visual-board-explorer" data-visual-board-explorer>
@@ -499,7 +539,7 @@
 
       <section id="visual-how" class="visual-how-section" aria-labelledby="visual-how-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">13</span><p class="visual-eyebrow" data-i18n="howEyebrow">Read the picture correctly</p><h2 id="visual-how-title" data-i18n="howTitle">Use a board without overtrusting it.</h2></div>
+          <div><span class="visual-section-number">14</span><p class="visual-eyebrow" data-i18n="howEyebrow">Read the picture correctly</p><h2 id="visual-how-title" data-i18n="howTitle">Use a board without overtrusting it.</h2></div>
           <p data-i18n="howIntro">The board gives you a shape to remember. Your own small attempt and record decide what you may claim.</p>
         </div>
         <div class="visual-how-grid">
