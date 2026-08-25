@@ -40,6 +40,7 @@ see before the reader works through the prose.
 - [Reader route compass](reader-route-compass-red-black.svg)
 - [LLM Foundation Core path](llm-foundation-core-path-red-black.svg)
 - [First visit route to one checked LLM task](foundation-first-visit-route-red-black.svg)
+- [Goal entry decision map](goal-entry-decision-map-red-black.svg)
 - [Playbook learning journey](playbook-learning-journey-red-black.svg)
 
 The cards are visual explanations, not benchmark results. Their scope,
