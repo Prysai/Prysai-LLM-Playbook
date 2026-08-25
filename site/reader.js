@@ -656,6 +656,16 @@
       'zh-tw': { title: '提示是一份小型契約', body: '在提出請求前，讓結果、上下文、允許的協助、限制、檢查與停止條件都清楚可見。', next: '哪個欄位能讓這次請求更安全、更容易檢查？', boundary: '這份契約讓請求更明確；它不能保證模型遵守，也不能證明目標結果已經存在。' },
       fr: { title: 'Un prompt est un petit contrat', body: 'Rendez visibles le résultat, le contexte, l’aide autorisée, les limites, le contrôle et l’arrêt avant la demande.', next: 'Quel champ rendrait cette demande plus sûre ou plus facile à vérifier ?', boundary: 'Le contrat explicite la demande ; il ne contraint pas le modèle à la respecter et ne prouve pas que le résultat existe.' },
     },
+    'first-attempt-evidence-receipt-red-black.svg': {
+      en: { title: 'Turn a first attempt into a checkable receipt', body: 'Name one result, use safe input, save what actually happened, check one important detail, and record the result, limits, unknowns, and next step.', next: 'What will I keep so another person can check this attempt?', boundary: 'The board describes a receipt pattern; it does not prove that a run succeeded, that the input was authorized, or that one attempt shows mastery.' },
+      zh: { title: '把第一次尝试变成可检查的回执', body: '写清一个结果，使用安全输入，保存实际发生的内容，检查一个重要细节，并记录结果、限制、未知项和下一步。', next: '我要保留什么，才能让别人检查这次尝试？', boundary: '这张图说明回执的写法；它不能证明运行成功、输入已获授权，也不能把一次尝试当成掌握。' },
+      es: { title: 'Convierte el primer intento en un registro comprobable', body: 'Nombra un resultado, usa datos seguros, guarda lo que ocurrió, comprueba un detalle importante y anota el resultado, los límites, las incógnitas y el siguiente paso.', next: '¿Qué voy a conservar para que otra persona pueda comprobar este intento?', boundary: 'El tablero describe una forma de registrar la prueba; no demuestra que la ejecución funcionara, que la entrada estuviera autorizada ni que un intento implique dominio.' },
+      ja: { title: '最初の試行を確認できる記録にする', body: '確認できる結果を1つ決め、安全な入力を使い、実際に起きたことを保存し、重要な点を1つ確認して、結果・限界・未知の点・次の一歩を記録します。', next: '他の人がこの試行を確認できるように、何を残すか？', boundary: 'この図は記録の型を示すだけです。実行の成功、入力の許可、一度の試行による習得を証明しません。' },
+      ko: { title: '첫 시도를 확인 가능한 기록으로 남기기', body: '확인할 결과 하나를 정하고, 안전한 입력을 사용하고, 실제로 일어난 일을 저장한 뒤 중요한 항목 하나를 점검합니다. 결과·한계·모르는 점·다음 단계를 기록하세요.', next: '다른 사람이 이 시도를 확인하려면 무엇을 남겨야 하는가?', boundary: '이 그림은 기록의 형식을 보여 줄 뿐입니다. 실행 성공, 입력 권한, 한 번의 시도로 얻은 숙련을 증명하지 않습니다.' },
+      de: { title: 'Aus dem ersten Versuch einen prüfbaren Beleg machen', body: 'Benenne ein Ergebnis, nutze sichere Eingaben, sichere den tatsächlichen Ablauf, prüfe ein wichtiges Detail und notiere Ergebnis, Grenzen, Unklarheiten und den nächsten Schritt.', next: 'Was muss ich aufbewahren, damit jemand anderes diesen Versuch prüfen kann?', boundary: 'Die Tafel zeigt ein Muster für einen Beleg. Sie beweist weder einen erfolgreichen Lauf noch eine Berechtigung der Eingaben oder Beherrschung durch einen einzelnen Versuch.' },
+      'zh-tw': { title: '把第一次嘗試變成可檢查的紀錄', body: '寫清楚一個結果，使用安全的輸入，保存實際發生的內容，檢查一個重要細節，並記下結果、限制、未知項目與下一步。', next: '我要保留什麼，別人才有辦法檢查這次嘗試？', boundary: '這張圖說明紀錄的寫法；它不能證明執行成功、輸入已獲授權，也不能把一次嘗試當成已經學會。' },
+      fr: { title: 'Transformer un premier essai en relevé vérifiable', body: 'Nommez un résultat, utilisez des entrées sûres, conservez ce qui s’est réellement passé, vérifiez un point important et notez le résultat, les limites, les inconnues et la prochaine étape.', next: 'Que dois-je conserver pour qu’une autre personne puisse vérifier cet essai ?', boundary: 'La planche propose un modèle de relevé ; elle ne prouve ni la réussite de l’exécution, ni l’autorisation des entrées, ni la maîtrise à partir d’un seul essai.' },
+    },
     'side-effect-boundary-decision-map.svg': {
       en: { title: 'Separate reading from external effects', body: 'Reading and local reversible work stay narrow; external effects require stronger authority and recovery evidence.', next: 'What can change, who authorizes it, and how would I recover?', boundary: 'The map separates risk and authority; it does not grant permission or show that recovery has been tested.' },
       zh: { title: '把阅读与外部影响分开', body: '阅读和本地可回退工作保持狭窄范围；外部影响需要更强的权限和恢复证据。', next: '什么可以改变？谁来授权？如果出错，如何恢复？', boundary: '这张图区分风险和权限；它不会授予权限，也不能证明恢复方案已经测试过。' },
@@ -692,6 +702,10 @@
     { tokens: ['llm-foundation-core-v1', 'llm-foundation-core-path'], visuals: [
       { path: 'assets/teaching/foundation-route-map-red-black.svg', step: 0 },
       { path: 'assets/teaching/understanding-to-transfer-red-black.svg', step: 5 },
+    ] },
+    { tokens: ['lab-001-first-safe-task', 'first-turn-contract'], visuals: [
+      { path: 'assets/teaching/first-turn-contract-card.svg', step: 1 },
+      { path: 'assets/teaching/first-attempt-evidence-receipt-red-black.svg', step: 3 },
     ] },
     { tokens: ['llm-fundamentals-guide', 'chapter-01-gpt-and-codex'], visuals: [
       { path: 'assets/teaching/response-claim-triage-red-black.svg', step: 3 },
