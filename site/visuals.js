@@ -119,6 +119,28 @@
   };
   Object.entries(CONCEPT_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
 
+  const ROUTE_COPY = {
+    en: { routeEyebrow: 'A guided visual route', routeTitle: 'Know what each picture is for.', routeIntro: 'Follow the route from your purpose to a checked decision. Select a step to see what it explains, what to ask next, and where to continue.', routeAria: 'Seven steps in the visual route', routeSelected: 'Current visual step', routeNext: 'Next question', routeOpen: 'Jump to this section', routeFallback: 'Read the visual route as text', routeFallbackIntro: 'The same order remains available without JavaScript or pointer interaction.' },
+    zh: { routeEyebrow: '视觉导览路线', routeTitle: '先知道每张图要解决什么问题。', routeIntro: '从你的目的走到一个可检查的决定。选择一个步骤，查看它解释什么、下一步该问什么，以及应该继续到哪里。', routeAria: '视觉导览路线的七个步骤', routeSelected: '当前视觉步骤', routeNext: '下一个问题', routeOpen: '跳到这部分', routeFallback: '按文字阅读视觉路线', routeFallbackIntro: '即使没有 JavaScript 或鼠标操作，也可以按同样顺序阅读。' },
+    es: { routeEyebrow: 'Recorrido visual guiado', routeTitle: 'Entiende para qué sirve cada imagen.', routeIntro: 'Sigue el recorrido desde tu propósito hasta una decisión comprobable. Elige un paso para ver qué explica, qué preguntar después y dónde continuar.', routeAria: 'Siete pasos del recorrido visual', routeSelected: 'Paso visual actual', routeNext: 'Siguiente pregunta', routeOpen: 'Ir a esta sección', routeFallback: 'Leer el recorrido visual como texto', routeFallbackIntro: 'El mismo orden está disponible sin JavaScript ni interacción con el puntero.' },
+    ja: { routeEyebrow: '視覚ガイドの道筋', routeTitle: '各図が何のためにあるかを先に知る。', routeIntro: '目的から、確認できる判断までの道筋をたどります。段階を選ぶと、何を説明し、次に何を問い、どこへ進むかが分かります。', routeAria: '視覚ガイドの7段階', routeSelected: '現在の視覚ステップ', routeNext: '次の問い', routeOpen: 'このセクションへ移動', routeFallback: '視覚ルートをテキストで読む', routeFallbackIntro: 'JavaScript やポインター操作がなくても、同じ順序で読めます。' },
+    ko: { routeEyebrow: '안내형 시각 경로', routeTitle: '각 그림이 무엇을 위한 것인지 먼저 확인하세요.', routeIntro: '목적에서 확인 가능한 결정까지 경로를 따라가세요. 단계를 선택하면 무엇을 설명하는지, 다음에 무엇을 물을지, 어디로 이어지는지 볼 수 있습니다.', routeAria: '시각 경로의 일곱 단계', routeSelected: '현재 시각 단계', routeNext: '다음 질문', routeOpen: '이 섹션으로 이동', routeFallback: '시각 경로를 텍스트로 읽기', routeFallbackIntro: 'JavaScript나 포인터 조작 없이도 같은 순서로 읽을 수 있습니다.' },
+    de: { routeEyebrow: 'Geführte visuelle Route', routeTitle: 'Verstehe zuerst, wofür jedes Bild da ist.', routeIntro: 'Folge dem Weg von deinem Zweck zu einer prüfbaren Entscheidung. Wähle eine Stufe, um Erklärung, nächste Frage und Anschluss zu sehen.', routeAria: 'Sieben Schritte der visuellen Route', routeSelected: 'Aktueller visueller Schritt', routeNext: 'Nächste Frage', routeOpen: 'Zu diesem Abschnitt springen', routeFallback: 'Die visuelle Route als Text lesen', routeFallbackIntro: 'Dieselbe Reihenfolge bleibt ohne JavaScript und Zeigerbedienung verfügbar.' },
+    'zh-tw': { routeEyebrow: '視覺導覽路線', routeTitle: '先了解每張圖要解決什麼問題。', routeIntro: '從你的目的走到一個可檢查的判斷。選擇一個步驟，查看它說明什麼、下一步要問什麼，以及應該繼續到哪裡。', routeAria: '視覺導覽路線的七個步驟', routeSelected: '目前視覺步驟', routeNext: '下一個問題', routeOpen: '跳到這個區段', routeFallback: '依文字閱讀視覺路線', routeFallbackIntro: '即使沒有 JavaScript 或指標操作，也能依相同順序閱讀。' },
+    fr: { routeEyebrow: 'Parcours visuel guidé', routeTitle: 'Sachez à quoi sert chaque image.', routeIntro: 'Suivez le parcours, de votre objectif jusqu’à une décision vérifiable. Sélectionnez une étape pour voir ce qu’elle explique, la question suivante et la suite du parcours.', routeAria: 'Sept étapes du parcours visuel', routeSelected: 'Étape visuelle actuelle', routeNext: 'Question suivante', routeOpen: 'Aller à cette section', routeFallback: 'Lire le parcours visuel en texte', routeFallbackIntro: 'Le même ordre reste disponible sans JavaScript ni interaction avec le pointeur.' },
+  };
+  Object.entries(ROUTE_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
+
+  const VISUAL_ROUTE_STEPS = [
+    { id: 'purpose', section: 'visual-goal', labels: { en: 'Choose a purpose', zh: '选择一个目的', es: 'Elegir un propósito', ja: '目的を選ぶ', ko: '목적 고르기', de: 'Einen Zweck wählen', 'zh-tw': '選擇一個目的', fr: 'Choisir un objectif' }, bodies: { en: 'Start with why you came: a safe first task, an uncertain result, a claim to verify, or a method to reuse.', zh: '先说清楚你为什么来：安全的第一项任务、不确定的结果、需要核验的结论，或想复用的方法。', es: 'Empieza por tu motivo: una primera tarea segura, un resultado incierto, una afirmación que comprobar o un método que reutilizar.', ja: 'まず来た理由を選びます。安全な最初のタスク、不確かな結果、確認したい主張、再利用したい方法のいずれかです。', ko: '왜 왔는지부터 고르세요. 안전한 첫 작업, 불확실한 결과, 확인할 주장 또는 재사용할 방법 중 하나입니다.', de: 'Beginne mit deinem Anlass: eine sichere erste Aufgabe, ein unsicheres Ergebnis, eine zu prüfende Aussage oder eine wiederverwendbare Methode.', 'zh-tw': '先說清楚你為什麼來：安全的第一項任務、不確定的結果、需要核對的主張，或想重複使用的方法。', fr: 'Commencez par votre besoin : une première tâche sûre, un résultat incertain, une affirmation à vérifier ou une méthode à réutiliser.' }, next: { en: 'Which small outcome do I need?', zh: '我需要哪项小结果？', es: '¿Qué resultado pequeño necesito?', ja: '必要な小さな結果は何か？', ko: '어떤 작은 결과가 필요한가?', de: 'Welches kleine Ergebnis brauche ich?', 'zh-tw': '我需要哪個小結果？', fr: 'De quel petit résultat ai-je besoin ?' } },
+    { id: 'order', section: 'visual-journey', labels: { en: 'See the order', zh: '看清顺序', es: 'Ver el orden', ja: '順序を見る', ko: '순서 보기', de: 'Die Reihenfolge sehen', 'zh-tw': '看清順序', fr: 'Voir l’ordre' }, bodies: { en: 'The foundation comes first. Platform tracks are optional layers added after a checked first route, not competing starting points.', zh: '基础核心先开始。平台路径是完成第一条可检查路线后再增加的可选层，不是互相竞争的起点。', es: 'El núcleo de fundamentos va primero. Las rutas de plataforma son capas opcionales después de un primer recorrido comprobado, no puntos de partida rivales.', ja: '最初は基礎コアです。プラットフォーム別のルートは、最初の確認できる道筋の後に必要に応じて加える層であり、競合する入口ではありません。', ko: '기초 코어가 먼저입니다. 플랫폼 경로는 첫 번째 확인 가능한 경로 뒤에 필요할 때 추가하는 선택 계층이지, 서로 경쟁하는 시작점이 아닙니다.', de: 'Der Grundlagenkern kommt zuerst. Plattformrouten sind optionale Ebenen nach einer geprüften ersten Route, keine konkurrierenden Einstiege.', 'zh-tw': '先從基礎核心開始。平台路線是在完成第一條可檢查路線後才增加的選用層，不是彼此競爭的起點。', fr: 'Le Foundation Core vient d’abord. Les parcours de plateforme sont des couches facultatives après une première route vérifiée, pas des points de départ concurrents.' }, next: { en: 'Am I still on the foundation route?', zh: '我还在基础路线中吗？', es: '¿Sigo en el recorrido de fundamentos?', ja: 'まだ基礎ルートにいるか？', ko: '아직 기초 경로에 있는가?', de: 'Bin ich noch auf der Grundlagenroute?', 'zh-tw': '我還在基礎路線中嗎？', fr: 'Suis-je encore sur le parcours de base ?' } },
+    { id: 'terms', section: 'visual-concept', labels: { en: 'Separate the terms', zh: '分清术语', es: 'Separar los términos', ja: '用語を分ける', ko: '용어 구분하기', de: 'Begriffe trennen', 'zh-tw': '分清術語', fr: 'Distinguer les notions' }, bodies: { en: 'Token, context, prompt, response, and tool authority describe different things. Fluency does not turn one into another.', zh: 'Token、上下文、提示、回答和工具权限分别描述不同的事。语言流畅不会把其中一个变成另一个。', es: 'Token, contexto, prompt, respuesta y autoridad de herramienta describen cosas distintas. La fluidez no convierte una en otra.', ja: 'Token、コンテキスト、プロンプト、応答、ツール権限は別のものです。流暢さだけで、それらが同じになるわけではありません。', ko: 'Token, 컨텍스트, 프롬프트, 응답과 도구 권한은 서로 다른 것을 설명합니다. 유창하다고 같은 것이 되지는 않습니다.', de: 'Token, Kontext, Prompt, Antwort und Tool-Berechtigung bezeichnen Verschiedenes. Sprachliche Glätte macht daraus nicht dasselbe.', 'zh-tw': 'Token、上下文、提示、回應與工具權限分別描述不同的事。語句流暢不會讓其中一項變成另一項。', fr: 'Token, contexte, prompt, réponse et autorité de l’outil désignent des choses différentes. La fluidité ne les rend pas interchangeables.' }, next: { en: 'What can this term actually establish?', zh: '这个术语实际上能证明什么？', es: '¿Qué puede establecer realmente este término?', ja: 'この用語だけで何を確認できるか？', ko: '이 용어만으로 무엇을 확인할 수 있는가?', de: 'Was kann dieser Begriff tatsächlich belegen?', 'zh-tw': '這個術語實際能證明什麼？', fr: 'Que peut réellement établir cette notion ?' } },
+    { id: 'loop', section: 'visual-map', labels: { en: 'Follow the work loop', zh: '跟着工作闭环走', es: 'Seguir el ciclo de trabajo', ja: '作業ループをたどる', ko: '작업 루프 따라가기', de: 'Der Arbeitsschleife folgen', 'zh-tw': '跟著工作閉環走', fr: 'Suivre la boucle de travail' }, bodies: { en: 'Understand, frame, act, inspect, repair, and transfer. Each stage has a different question and evidence boundary.', zh: '理解、框定、行动、检查、修正和迁移。每个阶段都有不同的问题和证据边界。', es: 'Entender, delimitar, actuar, inspeccionar, reparar y transferir. Cada etapa tiene una pregunta y un límite de evidencia distintos.', ja: '理解、枠決め、実行、確認、修正、転用の順に進みます。各段階には別の問いと証拠の境界があります。', ko: '이해하고, 범위를 정하고, 실행하고, 점검하고, 고치고, 전이합니다. 각 단계에는 다른 질문과 증거의 경계가 있습니다.', de: 'Verstehen, abgrenzen, handeln, prüfen, reparieren und übertragen. Jede Stufe hat eine eigene Frage und Beleggrenze.', 'zh-tw': '理解、框定、行動、檢查、修正與遷移。每個階段都有不同的問題與證據界線。', fr: 'Comprendre, délimiter, agir, inspecter, réparer et transférer. Chaque étape a sa propre question et sa limite de preuve.' }, next: { en: 'What evidence follows this action?', zh: '这项行动之后有什么证据？', es: '¿Qué evidencia sigue a esta acción?', ja: 'この行動の後にどんな証拠が残るか？', ko: '이 행동 뒤에 어떤 증거가 남는가?', de: 'Welcher Beleg folgt auf diese Handlung?', 'zh-tw': '這項行動之後有什麼證據？', fr: 'Quelle preuve suit cette action ?' } },
+    { id: 'decision', section: 'visual-evidence', labels: { en: 'Decide from the record', zh: '根据记录作决定', es: 'Decidir a partir del registro', ja: '記録から判断する', ko: '기록으로 판단하기', de: 'Aus dem Beleg entscheiden', 'zh-tw': '根據紀錄作判斷', fr: 'Décider à partir du relevé' }, bodies: { en: 'Name the question, locate the source, observe the result, choose a bounded decision, and stop when the next proof is missing.', zh: '说清问题，找到来源，观察结果，做出有边界的决定；下一项证明缺失时就停止。', es: 'Formula la pregunta, localiza la fuente, observa el resultado, toma una decisión acotada y detente si falta la prueba siguiente.', ja: '問いを定め、出典を特定し、結果を観察し、範囲を区切って判断します。次の証拠がなければ止まります。', ko: '질문을 정하고 출처를 찾고 결과를 관찰한 뒤 범위가 정해진 결정을 내립니다. 다음 증거가 없으면 멈춥니다.', de: 'Frage benennen, Quelle finden, Ergebnis beobachten, begrenzt entscheiden und anhalten, wenn der nächste Nachweis fehlt.', 'zh-tw': '說清楚問題，找到來源，觀察結果，做出有界線的判斷；下一項證據不足時就停止。', fr: 'Formulez la question, repérez la source, observez le résultat, prenez une décision délimitée et arrêtez-vous si la preuve suivante manque.' }, next: { en: 'What does the record actually support?', zh: '这份记录实际支持什么？', es: '¿Qué respalda realmente el registro?', ja: '記録は実際に何を支えているか？', ko: '이 기록이 실제로 뒷받침하는 것은 무엇인가?', de: 'Was stützt der Beleg tatsächlich?', 'zh-tw': '這份紀錄實際支持什麼？', fr: 'Que soutient réellement le relevé ?' } },
+    { id: 'examples', section: 'visual-gallery', labels: { en: 'Browse one decision', zh: '查看一个决定', es: 'Ver una decisión', ja: '1つの判断を見る', ko: '결정 하나 살펴보기', de: 'Eine Entscheidung ansehen', 'zh-tw': '查看一個判斷', fr: 'Voir une décision' }, bodies: { en: 'Open one teaching board and its matching lesson. The gallery is a set of examples, not a second catalogue to wander through.', zh: '打开一张教学图和对应课程。图库是一组示例，不是另一份让你漫游的目录。', es: 'Abre un tablero y su lección correspondiente. La galería reúne ejemplos; no es un segundo catálogo para recorrer sin rumbo.', ja: '教材ボードと対応するレッスンを1つ開きます。ギャラリーは例の集まりであり、目的なく巡る別のカタログではありません。', ko: '교육 보드 하나와 연결된 수업을 여세요. 갤러리는 예시 모음이지 목적 없이 돌아다니는 두 번째 목록이 아닙니다.', de: 'Öffne eine Lehrtafel und die passende Lektion. Die Galerie ist eine Beispielsammlung, kein zweiter Katalog zum ziellosen Stöbern.', 'zh-tw': '開啟一張教學圖與對應課程。圖庫是一組範例，不是另一份讓你漫無目的瀏覽的目錄。', fr: 'Ouvrez une planche et la leçon correspondante. La galerie rassemble des exemples ; ce n’est pas un second catalogue où se perdre.' }, next: { en: 'Which decision does this board clarify?', zh: '这张图解释哪项决定？', es: '¿Qué decisión aclara este tablero?', ja: 'このボードはどの判断を明らかにするか？', ko: '이 보드는 어떤 결정을 설명하는가?', de: 'Welche Entscheidung klärt diese Tafel?', 'zh-tw': '這張圖說明哪個判斷？', fr: 'Quelle décision cette planche clarifie-t-elle ?' } },
+    { id: 'read', section: 'visual-how', labels: { en: 'Read the board correctly', zh: '正确阅读图板', es: 'Leer bien el tablero', ja: 'ボードを正しく読む', ko: '보드 올바르게 읽기', de: 'Die Tafel richtig lesen', 'zh-tw': '正確閱讀圖板', fr: 'Lire correctement la planche' }, bodies: { en: 'Start with the thesis, use the text fallback, make one bounded move, and keep what the picture cannot prove visible.', zh: '先看主旨，打开文字回退，做一次有边界的行动，并保留这张图无法证明的部分。', es: 'Empieza por la tesis, abre la alternativa textual, haz un movimiento acotado y mantén visible lo que la imagen no puede demostrar.', ja: '主旨を確認し、テキストの代替を読み、範囲を区切った操作を1つ行い、図だけでは証明できないことを残します。', ko: '핵심을 먼저 보고 텍스트 대체 설명을 연 다음 범위 있는 행동을 하나 시도하고 그림만으로 증명할 수 없는 것을 남겨 두세요.', de: 'Beginne mit der These, öffne die Textalternative, mache eine begrenzte Handlung und halte sichtbar, was das Bild nicht belegen kann.', 'zh-tw': '先看主旨，開啟文字替代說明，做一次有界線的行動，並保留這張圖無法證明的部分。', fr: 'Commencez par la thèse, lisez l’alternative textuelle, faites une action délimitée et gardez visible ce que l’image ne peut pas prouver.' }, next: { en: 'What does the picture still not prove?', zh: '这张图仍然不能证明什么？', es: '¿Qué no demuestra todavía la imagen?', ja: 'この図だけでは何が証明できないか？', ko: '이 그림만으로 아직 증명할 수 없는 것은 무엇인가?', de: 'Was belegt das Bild weiterhin nicht?', 'zh-tw': '這張圖仍然不能證明什麼？', fr: 'Que l’image ne prouve-t-elle toujours pas ?' } },
+  ];
+
   const STAGES = [
     {
       id: 'understand', path: 'book/guides/llm-fundamentals',
@@ -356,6 +378,7 @@
   let activeStageId = 'understand';
   let activeEvidenceId = 'question';
   let activeConceptId = 'token';
+  let activeRouteId = 'purpose';
 
   const query = (selector) => document.querySelector(selector);
   const queryAll = (selector) => [...document.querySelectorAll(selector)];
@@ -368,6 +391,63 @@
   }
 
   function assetHref(asset) { return `../assets/teaching/${asset}`; }
+
+  function renderVisualRoute() {
+    const nodes = query('[data-visual-route-nodes]');
+    const fallback = query('[data-visual-route-fallback]');
+    if (!nodes || !fallback) return;
+    const strings = copy();
+    nodes.replaceChildren();
+    fallback.replaceChildren();
+    VISUAL_ROUTE_STEPS.forEach((step, index) => {
+      const item = document.createElement('li');
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'visual-route-node';
+      button.dataset.visualRoute = step.id;
+      button.setAttribute('aria-pressed', String(step.id === activeRouteId));
+      button.setAttribute('aria-label', `${String(index + 1).padStart(2, '0')} ${localized(step.labels)}`);
+      const number = document.createElement('span');
+      number.textContent = String(index + 1).padStart(2, '0');
+      const label = document.createElement('strong');
+      label.textContent = localized(step.labels);
+      button.append(number, label);
+      button.addEventListener('click', () => {
+        activeRouteId = step.id;
+        renderVisualRoute();
+        document.getElementById(step.section)?.scrollIntoView({
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+          block: 'start',
+        });
+      });
+      if (step.id === activeRouteId) button.classList.add('is-selected');
+      item.append(button);
+      nodes.append(item);
+
+      const fallbackItem = document.createElement('li');
+      const fallbackTitle = document.createElement('strong');
+      fallbackTitle.textContent = `${String(index + 1).padStart(2, '0')} · ${localized(step.labels)}`;
+      const fallbackBody = document.createElement('span');
+      fallbackBody.textContent = localized(step.bodies);
+      const fallbackNext = document.createElement('em');
+      fallbackNext.textContent = `${strings.routeNext}: ${localized(step.next)}`;
+      const fallbackLink = document.createElement('a');
+      fallbackLink.className = 'visual-action-link';
+      fallbackLink.href = `#${step.section}`;
+      fallbackLink.textContent = `${strings.routeOpen} ↘`;
+      fallbackItem.append(fallbackTitle, fallbackBody, fallbackNext, fallbackLink);
+      fallback.append(fallbackItem);
+    });
+    const step = VISUAL_ROUTE_STEPS.find((candidate) => candidate.id === activeRouteId) || VISUAL_ROUTE_STEPS[0];
+    const detailTitle = query('[data-visual-route-title]');
+    const detailBody = query('[data-visual-route-body]');
+    const detailNext = query('[data-visual-route-next]');
+    const detailLink = query('[data-visual-route-link]');
+    if (detailTitle) detailTitle.textContent = localized(step.labels);
+    if (detailBody) detailBody.textContent = localized(step.bodies);
+    if (detailNext) detailNext.textContent = localized(step.next);
+    if (detailLink) detailLink.href = `#${step.section}`;
+  }
 
   function renderIntentMap() {
     const nodes = query('[data-visual-goal-nodes]');
@@ -711,6 +791,7 @@
     if (!Object.prototype.hasOwnProperty.call(LOCALES, nextLocale)) return;
     locale = nextLocale;
     setText();
+    renderVisualRoute();
     renderIntentMap();
     renderJourney();
     renderConceptMap();
@@ -727,6 +808,7 @@
   const language = query('#visual-language');
   language?.addEventListener('change', (event) => setLocale(event.target.value));
   setText();
+  renderVisualRoute();
   renderIntentMap();
   renderJourney();
   renderConceptMap();
