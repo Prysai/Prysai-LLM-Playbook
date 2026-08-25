@@ -188,6 +188,24 @@ def pages_reader(reader: Path) -> str:
     return text.replace(marker, f"{marker}\n{flag}", 1)
 
 
+def pages_reader_alias(reader: Path) -> str:
+    """Return a root-level Reader alias whose base points into ``site/``.
+
+    The published artifact keeps the source Reader at ``site/reader.html``.
+    A root-level alias makes copied or bookmarked ``/reader.html?...`` links
+    resolve to the same shell instead of falling back to the homepage.  The
+    explicit file base is important: it routes the Reader's relative assets,
+    Markdown sources, and locale manifest through the artifact root.
+    """
+
+    text = pages_reader(reader)
+    marker = "<head>"
+    if marker not in text:
+        raise ValueError(f"{reader.relative_to(ROOT)} is missing a <head> element")
+    base = '    <base href="site/reader.html" />\n'
+    return text.replace(marker, f"{marker}\n{base}", 1)
+
+
 def pages_visuals(visuals: Path, base_url: str) -> str:
     """Return the root visual entry while keeping its source-relative assets."""
 
@@ -347,6 +365,7 @@ def space_readme(source: str) -> str:
 def validate_artifact(output: Path, versions: dict[str, str] | None = None) -> None:
     expected = (
         output / "index.html",
+        output / "reader.html",
         output / "visuals.html",
         output / ".nojekyll",
         output / "robots.txt",
@@ -397,6 +416,12 @@ def validate_artifact(output: Path, versions: dict[str, str] | None = None) -> N
     reader_text = (output / "site/reader.html").read_text(encoding="utf-8")
     if "window.CODEX_PAGES_ARTIFACT = true" not in reader_text:
         raise ValueError("Pages Reader must retain artifact routing mode")
+    reader_alias_text = (output / "reader.html").read_text(encoding="utf-8")
+    if (
+        '<base href="site/reader.html" />' not in reader_alias_text
+        or "window.CODEX_PAGES_ARTIFACT = true" not in reader_alias_text
+    ):
+        raise ValueError("root Reader alias must point to site/reader.html and retain artifact routing mode")
     visuals_text = (output / "visuals.html").read_text(encoding="utf-8")
     if (
         '<base href="site/visuals.html" />' not in visuals_text
@@ -408,6 +433,7 @@ def validate_artifact(output: Path, versions: dict[str, str] | None = None) -> N
         public_texts = {
             "index": root_text,
             "reader": reader_text,
+            "reader_alias": reader_alias_text,
             "app": (output / "site/app.js").read_text(encoding="utf-8"),
             "visuals": visuals_text,
         }
@@ -510,6 +536,8 @@ def build_into(output: Path) -> None:
             (output / f"{locale}.html").write_text(versioned_asset_references(page, versions), encoding="utf-8", newline="\n")
     reader_entry = versioned_asset_references(pages_reader(ROOT / "site/reader.html"), versions)
     (output / "site/reader.html").write_text(reader_entry, encoding="utf-8", newline="\n")
+    reader_alias = versioned_asset_references(pages_reader_alias(ROOT / "site/reader.html"), versions)
+    (output / "reader.html").write_text(reader_alias, encoding="utf-8", newline="\n")
     app_path = output / "site/app.js"
     app_path.write_text(versioned_asset_references(app_path.read_text(encoding="utf-8"), versions), encoding="utf-8", newline="\n")
     (output / ".nojekyll").write_text("", encoding="utf-8")

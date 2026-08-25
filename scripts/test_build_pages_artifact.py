@@ -14,6 +14,7 @@ from build_pages_artifact import (
     artifact_secret_findings,
     load_seo_config,
     root_index,
+    pages_reader_alias,
     seo_files,
     sitemap_index_file,
     sitemap_urls,
@@ -63,6 +64,9 @@ def main() -> int:
     require('<base href="site/index.html" />' in root_entry, "Pages root entry must use an explicit site document as its base URL")
     require('<base href="site/" />' not in root_entry, "Pages root entry must not resolve fragment links through a directory route")
     require('href="https://docs.prysai.com/llm-playbook/" target="_top"' in root_entry, "Playbook logo must return the top-level window to the canonical Docs URL from hosted wrappers")
+    reader_alias = pages_reader_alias(Path(__file__).resolve().parents[1] / "site/reader.html")
+    require('<base href="site/reader.html" />' in reader_alias, "root Reader alias must resolve assets through site/reader.html")
+    require("window.CODEX_PAGES_ARTIFACT = true" in reader_alias, "root Reader alias must retain artifact routing mode")
     index = ET.fromstring(sitemap_index_file(config))
     index_urls = [item.text for item in index.findall(f"{namespace}sitemap/{namespace}loc")]
     require(index_urls == [config["public_site_url"] + "sitemap.xml"], "sitemap_index.xml does not point to the canonical sitemap")
