@@ -9,7 +9,8 @@
     <title>Prysai LLM Playbook — Visual Guide</title>
     <link rel="icon" type="image/png" href="../assets/branding/prysai-lab-mark-black-96.png" />
     <link rel="stylesheet" href="visuals.css?v=20260825-visual-guide-5" />
-    <script src="visuals.js?v=20260825-visual-guide-5" defer></script>
+    <script src="learning-path-data.js?v=20260825-capability-ladder-1" defer></script>
+    <script src="visuals.js?v=20260825-capability-ladder-1" defer></script>
   </head>
   <body>
     <a class="visual-skip" href="#visual-main" data-i18n="skip">Skip to content</a>
@@ -161,9 +162,60 @@
         <p class="visual-boundary" data-i18n="journeyBoundary">The map shows order, not mastery. Keep the artifact, evidence, limit, and next question.</p>
       </section>
 
+      <section id="visual-capability" class="visual-capability-section" aria-labelledby="visual-capability-title">
+        <div class="visual-section-heading">
+          <div><span class="visual-section-number">05</span><p class="visual-eyebrow" data-i18n="capabilityEyebrow">Capability ladder</p><h2 id="visual-capability-title" data-i18n="capabilityTitle">Choose the next capability, not the biggest tool.</h2></div>
+          <p data-i18n="capabilityIntro">The ladder turns the learning path into seven observable practices. Select a level to see what it adds, which lesson to open next, and what the level still does not prove.</p>
+        </div>
+        <div class="visual-capability-workspace">
+          <div class="visual-capability-graph" role="group" aria-label="Seven candidate capability levels from observer to team coach" data-i18n-attr="aria-label:capabilityAria">
+            <div class="visual-capability-center" aria-hidden="true"><span data-i18n="capabilityCenter">Seven levels</span><small data-i18n="capabilityCenterSub">one observable practice at a time</small></div>
+            <ol class="visual-capability-nodes" data-visual-capability-nodes>
+              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en"><span>00</span><strong>Observer</strong></a></li>
+              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F02-first-safe-task-EN.md&amp;lang=en"><span>01</span><strong>Safe user</strong></a></li>
+              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en"><span>02</span><strong>Task designer</strong></a></li>
+              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F12-agent-loop-and-stop-EN.md&amp;lang=en"><span>03</span><strong>Workflow designer</strong></a></li>
+              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F11-designing-a-skill-EN.md&amp;lang=en"><span>04</span><strong>Capability builder</strong></a></li>
+              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F15-research-track-EN.md&amp;lang=en"><span>05</span><strong>Evidence reviewer</strong></a></li>
+              <li><a class="visual-capability-node" href="reader.html?path=book%2Fchapters%2F20-personal-codex-work-system-EN.md&amp;lang=en"><span>06</span><strong>Team coach</strong></a></li>
+            </ol>
+          </div>
+          <section class="visual-capability-detail" data-visual-capability-detail aria-live="polite" aria-atomic="true">
+            <span class="visual-detail-label" data-i18n="capabilitySelected">Selected capability</span>
+            <h3 data-visual-capability-title>Observer</h3>
+            <p data-visual-capability-headline>Understand the model before you act.</p>
+            <p data-visual-capability-body>Explain what an LLM, context, prompt, product, tool, Agent, and Skill can establish before choosing a platform.</p>
+            <p class="visual-capability-stats" data-visual-capability-stats>Level 0 · 1 chapter · 1 lab</p>
+            <p class="visual-capability-next"><span data-i18n="capabilityNext">Next practice</span><strong data-visual-capability-next>Open the first bounded task.</strong></p>
+            <figure class="visual-capability-figure">
+              <a data-visual-capability-image-link href="../assets/teaching/capability-ladder-red-black.svg" target="_blank" rel="noreferrer" aria-label="Open the capability ladder">
+                <img data-visual-capability-image src="../assets/teaching/capability-ladder-red-black.svg" width="1200" height="1750" loading="lazy" alt="Seven-level capability ladder from observing an LLM result to coaching a team" data-i18n-attr="alt:capabilityFigureAlt" />
+                <span class="visual-image-link" data-i18n="capabilityOpenVisual">Open the capability ladder</span>
+              </a>
+              <figcaption data-i18n="capabilityFigureCaption">Project-authored capability ladder. The level names a practice; the ordered list and source lesson carry the explanation.</figcaption>
+            </figure>
+            <a class="visual-action-link" data-visual-capability-link href="reader.html?path=book%2Fchapters%2F02-first-safe-task-EN.md&amp;lang=en"><span data-i18n="capabilityOpen">Open the next lesson</span><span aria-hidden="true">↗</span></a>
+          </section>
+        </div>
+        <details class="visual-capability-fallback" open>
+          <summary data-i18n="capabilityFallback">Read the seven levels as text</summary>
+          <p data-i18n="capabilityFallbackIntro">The same progression remains available without the interactive map. Each level names a practice and a bounded next route.</p>
+          <ol data-visual-capability-fallback>
+            <li><strong>00 · Observer</strong><span>Notice what happened and keep the visible result separate from what you infer.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
+            <li><strong>01 · Safe user</strong><span>Make one small, reversible request with fictional input, a clear stop, and a saved first response.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F02-first-safe-task-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
+            <li><strong>02 · Task designer</strong><span>Write the result, limits, check, and stop so another person can inspect the task contract.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
+            <li><strong>03 · Workflow designer</strong><span>Sequence actions around evidence and separate proposal, authority, execution, observation, and recovery.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F12-agent-loop-and-stop-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
+            <li><strong>04 · Capability builder</strong><span>Give a Skill a trigger, boundary, output, evidence, and rollback rule.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F11-designing-a-skill-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
+            <li><strong>05 · Evidence reviewer</strong><span>Judge claims against source, scope, version, access, and visible unknowns.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F15-research-track-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
+            <li><strong>06 · Team coach</strong><span>Make the method repeatable for others, review the receipt, and stop unsafe escalation.</span><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F20-personal-codex-work-system-EN.md&amp;lang=en">Open the next lesson ↗</a></li>
+          </ol>
+        </details>
+        <p class="visual-boundary" data-i18n="capabilityBoundary">A level is a practice target, not a status claim. The project has not measured mastery or transfer.</p>
+      </section>
+
       <section id="visual-concept" class="visual-concept-section" aria-labelledby="visual-concept-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">05</span><p class="visual-eyebrow" data-i18n="conceptEyebrow">Concept mind map</p><h2 id="visual-concept-title" data-i18n="conceptTitle">Separate the six terms before you trust the answer.</h2></div>
+          <div><span class="visual-section-number">06</span><p class="visual-eyebrow" data-i18n="conceptEyebrow">Concept mind map</p><h2 id="visual-concept-title" data-i18n="conceptTitle">Separate the six terms before you trust the answer.</h2></div>
           <p data-i18n="conceptIntro">Token, context, context window, prompt, response, and tool or Agent are related, but they are not interchangeable. Select one term to see what it explains and what it still cannot prove.</p>
         </div>
         <div class="visual-concept-workspace">
@@ -203,7 +255,7 @@
 
       <section id="visual-action-boundary" class="visual-action-boundary-section" aria-labelledby="visual-action-boundary-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">06</span><p class="visual-eyebrow" data-i18n="boundaryEyebrow">Action boundary map</p><h2 id="visual-action-boundary-title" data-i18n="boundaryTitle">A proposal is not proof that an action happened.</h2></div>
+          <div><span class="visual-section-number">07</span><p class="visual-eyebrow" data-i18n="boundaryEyebrow">Action boundary map</p><h2 id="visual-action-boundary-title" data-i18n="boundaryTitle">A proposal is not proof that an action happened.</h2></div>
           <p data-i18n="boundaryIntro">Follow one request through the layers that can be checked: a model proposes words, the host decides authority, a tool may run, a person reads the result, and evidence sets the claim limit.</p>
         </div>
         <div class="visual-action-boundary-workspace">
@@ -242,7 +294,7 @@
 
       <section id="visual-triage" class="visual-triage-section" aria-labelledby="visual-triage-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">07</span><p class="visual-eyebrow" data-i18n="triageEyebrow">Response claim triage</p><h2 id="visual-triage-title" data-i18n="triageTitle">Classify the claim before you choose a check.</h2></div>
+          <div><span class="visual-section-number">08</span><p class="visual-eyebrow" data-i18n="triageEyebrow">Response claim triage</p><h2 id="visual-triage-title" data-i18n="triageTitle">Classify the claim before you choose a check.</h2></div>
           <p data-i18n="triageIntro">A response can be text, a run claim, an external effect, or an unknown dressed up as certainty. Choose the branch first; it tells you which record can change your claim.</p>
         </div>
         <div class="visual-triage-workspace">
@@ -280,7 +332,7 @@
 
       <section id="visual-map" class="visual-map-section" aria-labelledby="visual-map-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">08</span><p class="visual-eyebrow" data-i18n="mapEyebrow">Dynamic route map</p><h2 id="visual-map-title" data-i18n="mapTitle">Choose a stage, then ask one question.</h2></div>
+          <div><span class="visual-section-number">09</span><p class="visual-eyebrow" data-i18n="mapEyebrow">Dynamic route map</p><h2 id="visual-map-title" data-i18n="mapTitle">Choose a stage, then ask one question.</h2></div>
           <p data-i18n="mapIntro">Select a node to see the action, the evidence boundary, and the next safe question. The ordered list below keeps the route available without interaction.</p>
         </div>
         <div class="visual-map-workspace">
@@ -312,7 +364,7 @@
 
       <section id="visual-evidence" class="visual-evidence-section" aria-labelledby="visual-evidence-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">09</span><p class="visual-eyebrow" data-i18n="evidenceEyebrow">Evidence decision map</p><h2 id="visual-evidence-title" data-i18n="evidenceTitle">Let the record decide how far the claim can go.</h2></div>
+          <div><span class="visual-section-number">10</span><p class="visual-eyebrow" data-i18n="evidenceEyebrow">Evidence decision map</p><h2 id="visual-evidence-title" data-i18n="evidenceTitle">Let the record decide how far the claim can go.</h2></div>
           <p data-i18n="evidenceIntro">This is the practical bridge between a plausible answer and a defensible conclusion: name the question, locate the source, observe what happened, choose a bounded decision, then stop when the next proof is missing.</p>
         </div>
         <div class="visual-evidence-workspace">
@@ -351,7 +403,7 @@
 
       <section id="visual-reading-loop" class="visual-reading-loop-section" aria-labelledby="visual-reading-loop-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">10</span><p class="visual-eyebrow" data-i18n="readingEyebrow">Page-to-practice loop</p><h2 id="visual-reading-loop-title" data-i18n="readingTitle">Turn one page into one checked attempt.</h2></div>
+          <div><span class="visual-section-number">11</span><p class="visual-eyebrow" data-i18n="readingEyebrow">Page-to-practice loop</p><h2 id="visual-reading-loop-title" data-i18n="readingTitle">Turn one page into one checked attempt.</h2></div>
           <p data-i18n="readingIntro">Use the page in order: name the problem, find the concept, try one bounded action, inspect the record, state the boundary, and transfer the method to a changed task.</p>
         </div>
         <div class="visual-reading-loop-workspace">
@@ -391,7 +443,7 @@
 
       <section id="visual-gallery" class="visual-gallery-section" aria-labelledby="visual-gallery-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">11</span><p class="visual-eyebrow" data-i18n="galleryEyebrow">Teaching boards</p><h2 id="visual-gallery-title" data-i18n="galleryTitle">Pictures that explain one decision at a time.</h2></div>
+          <div><span class="visual-section-number">12</span><p class="visual-eyebrow" data-i18n="galleryEyebrow">Teaching boards</p><h2 id="visual-gallery-title" data-i18n="galleryTitle">Pictures that explain one decision at a time.</h2></div>
           <p data-i18n="galleryIntro">Each board has a short explanation, a localized alternative text, and a route into the matching lesson. Open the image when you want the printable version; use the text beside it when you want the exact boundary.</p>
         </div>
         <div class="visual-board-explorer" data-visual-board-explorer>
@@ -447,7 +499,7 @@
 
       <section id="visual-how" class="visual-how-section" aria-labelledby="visual-how-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">12</span><p class="visual-eyebrow" data-i18n="howEyebrow">Read the picture correctly</p><h2 id="visual-how-title" data-i18n="howTitle">Use a board without overtrusting it.</h2></div>
+          <div><span class="visual-section-number">13</span><p class="visual-eyebrow" data-i18n="howEyebrow">Read the picture correctly</p><h2 id="visual-how-title" data-i18n="howTitle">Use a board without overtrusting it.</h2></div>
           <p data-i18n="howIntro">The board gives you a shape to remember. Your own small attempt and record decide what you may claim.</p>
         </div>
         <div class="visual-how-grid">
