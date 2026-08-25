@@ -215,6 +215,31 @@
   ];
 
   const CARDS = [
+    {
+      stage: 'understand',
+      asset: 'reader-route-compass-red-black.svg',
+      path: 'book/guides/llm-fundamentals',
+      titles: {
+        en: 'Read one page as a four-step route',
+        zh: '把一页内容读成四步路线',
+        es: 'Lee una página como un recorrido de cuatro pasos',
+        ja: '1ページを4つの手順で読む',
+        ko: '한 페이지를 네 단계 경로로 읽기',
+        de: 'Eine Seite als Weg in vier Schritten lesen',
+        'zh-tw': '把一頁內容讀成四步路線',
+        fr: 'Lire une page en quatre étapes',
+      },
+      bodies: {
+        en: 'Name the question, try one bounded action, keep and check the record, then transfer or stop.',
+        zh: '先说清问题，尝试一次有边界的行动，保留并检查记录，然后迁移方法或停止。',
+        es: 'Formula la pregunta, prueba una acción acotada, conserva y comprueba el registro, y después transfiere el método o detente.',
+        ja: '問いを言葉にし、範囲を区切った行動を1つ試し、記録を残して確認したら、応用するか止まります。',
+        ko: '질문을 정하고, 범위가 정해진 행동 하나를 시도하고, 기록을 남겨 점검한 뒤 전이하거나 멈춥니다.',
+        de: 'Formuliere die Frage, probiere eine begrenzte Handlung, bewahre und prüfe den Beleg und übertrage die Methode oder stoppe.',
+        'zh-tw': '先說清楚問題，嘗試一次有界線的行動，保留並檢查紀錄，然後遷移方法或停止。',
+        fr: 'Formulez la question, essayez une action délimitée, conservez et vérifiez le relevé, puis transférez la méthode ou arrêtez-vous.',
+      },
+    },
     { stage: 'understand', asset: 'llm-six-terms-to-one-check.svg', path: 'book/chapters/01-gpt-and-codex', titles: { en: 'Six terms, one checked result', zh: '六个术语，一个可检查结果', es: 'Seis términos, un resultado comprobado', ja: '6つの用語、1つの確認できる結果', ko: '여섯 용어, 하나의 점검된 결과', de: 'Sechs Begriffe, ein geprüftes Ergebnis', 'zh-tw': '六個術語，一個可檢查結果', fr: 'Six termes, un résultat vérifié' }, bodies: { en: 'Separate token, context, prompt, response, and tool authority before you trust the answer.', zh: '在相信回答前，分开 token、上下文、提示、响应和工具权限。', es: 'Separa token, contexto, prompt, respuesta y autoridad de la herramienta antes de confiar en la respuesta.', ja: '回答を信じる前に、トークン、コンテキスト、プロンプト、応答、ツールの権限を分けます。', ko: '답변을 믿기 전에 토큰, 맥락, 프롬프트, 응답과 도구 권한을 분리합니다.', de: 'Trenne Token, Kontext, Prompt, Antwort und Tool-Berechtigung, bevor du der Antwort vertraust.', 'zh-tw': '在相信回答前，分開 token、上下文、提示、回應與工具權限。', fr: 'Séparez token, contexte, prompt, réponse et autorité de l’outil avant de faire confiance à la réponse.' } },
     { stage: 'understand', asset: 'goal-entry-decision-map-red-black.svg', path: 'book/routes/universal-core-foundations', titles: { en: 'Choose a goal before the catalogue', zh: '先选目标，再看完整目录', es: 'Elige un objetivo antes del catálogo', ja: 'カタログより先に目的を選ぶ', ko: '카탈로그보다 목표부터 고르기', de: 'Ein Ziel vor dem Katalog wählen', 'zh-tw': '先選目標，再看完整目錄', fr: 'Choisir un objectif avant le catalogue' }, bodies: { en: 'Start with a safe task, uncertain result, claim, or transfer question; do not browse without a purpose.', zh: '从安全任务、不确定结果、结论核验或方法迁移中选一个理由，不要漫无目的地浏览。', es: 'Elige entre una tarea segura, un resultado incierto, una afirmación o una transferencia; no navegues sin propósito.', ja: '安全なタスク、曖昧な結果、主張の確認、方法の転用のどれかを選び、目的なく閲覧しません。', ko: '안전한 작업, 불확실한 결과, 주장 확인과 방법 전이 중 하나를 고르고 목적 없이 둘러보지 않습니다.', de: 'Wähle sichere Aufgabe, unsicheres Ergebnis, Aussageprüfung oder Übertragung; blättere nicht ohne Zweck.', 'zh-tw': '從安全任務、不確定結果、主張核對或方法遷移中選一項理由，不要漫無目的地瀏覽。', fr: 'Choisissez entre tâche sûre, résultat incertain, vérification d’affirmation ou transfert ; ne parcourez pas le catalogue sans but.' } },
     { stage: 'understand', asset: 'model-choice-is-a-test.svg', path: 'book/chapters/01-gpt-and-codex', titles: { en: 'Model choice is a bounded comparison', zh: '模型选择是一项有边界的比较', es: 'Elegir modelo es una comparación acotada', ja: 'モデル選択は範囲を区切った比較', ko: '모델 선택은 범위가 있는 비교입니다', de: 'Modellauswahl ist ein begrenzter Vergleich', 'zh-tw': '模型選擇是一項有界線的比較', fr: 'Choisir un modèle est une comparaison délimitée' }, bodies: { en: 'Hold the task contract steady, compare working conditions, and record what the test cannot show.', zh: '保持任务契约不变，比较工作条件，并记录测试无法说明的部分。', es: 'Mantén estable el contrato de tarea, compara las condiciones y registra lo que la prueba no puede mostrar.', ja: 'タスク契約を固定し、動作条件を比べ、テストで分からないことを記録します。', ko: '작업 계약을 고정하고 실행 조건을 비교하며 테스트로 알 수 없는 것을 기록합니다.', de: 'Halte den Aufgabenvertrag fest, vergleiche die Bedingungen und notiere, was der Test nicht zeigen kann.', 'zh-tw': '維持任務契約不變，比較工作條件，並記下測試無法說明的部分。', fr: 'Gardez le contrat de tâche fixe, comparez les conditions et notez ce que le test ne montre pas.' } },
