@@ -223,6 +223,61 @@
   };
   Object.entries(CAPABILITY_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
 
+  const MATURITY_COPY = {
+    en: { maturityEyebrow: 'Evidence maturity', maturityTitle: 'Do not skip the evidence.', maturityIntro: 'A complete page is not the same as a practiced, transferred, independently reviewed method. Select the strongest stage you can honestly support.', maturityAria: 'Five stages of evidence maturity', maturityCenter: 'Evidence maturity', maturityCenterSub: 'name the stage you can support', maturitySelected: 'Selected evidence stage', maturitySupports: 'Supports', maturityCannotSupport: 'Does not support', maturityNext: 'Evidence needed to move forward', maturityOpen: 'Open the matching lesson', maturityFallback: 'Read the evidence stages as text', maturityFallbackIntro: 'The same five stages remain available without the interactive map. Use the strongest label the record permits, not the label you hope to reach.', maturityFigureAlt: 'Five-stage evidence maturity ladder from a designed contract to independent review', maturityOpenVisual: 'Open the evidence maturity ladder', maturityFigureCaption: 'Project-authored ladder. It separates structure, access, practice, transfer, and independent review so a release claim can stay inside its evidence.', maturityBoundary: 'This ladder is a disclosure aid, not a score. The project currently has substantial structure and static checks, while learner runs, transfer evidence, and independent review remain separate questions.' },
+    zh: { maturityEyebrow: '证据成熟度', maturityTitle: '不要跳过证据。', maturityIntro: '页面写完，不等于有人实际练过、迁移过，或经过独立复核。请选择现有记录能够诚实支持的最高阶段。', maturityAria: '证据成熟度的五个阶段', maturityCenter: '证据成熟度', maturityCenterSub: '说清记录支持到哪一阶段', maturitySelected: '当前证据阶段', maturitySupports: '可以支持', maturityCannotSupport: '不能支持', maturityNext: '进入下一阶段需要的证据', maturityOpen: '打开对应课程', maturityFallback: '按文字阅读证据阶段', maturityFallbackIntro: '不使用交互地图时，下面仍保留五个阶段。记录允许你说到哪一步，就只使用哪一个标签。', maturityFigureAlt: '从已设计契约到独立复核的五阶段证据成熟度阶梯图', maturityOpenVisual: '打开证据成熟度阶梯图', maturityFigureCaption: '项目原创阶梯图，把结构、可访问、实际练习、迁移和独立复核分开，避免发布结论超出证据。', maturityBoundary: '这张阶梯图用于披露证据边界，不是评分。目前项目有较多结构和静态检查，但学习者运行、迁移证据和独立复核仍是不同的问题。' },
+    es: { maturityEyebrow: 'Madurez de la evidencia', maturityTitle: 'No te saltes la evidencia.', maturityIntro: 'Que una página esté completa no significa que el método se haya practicado, transferido o revisado de forma independiente. Elige el nivel más alto que el registro permita sostener con honestidad.', maturityAria: 'Cinco etapas de madurez de la evidencia', maturityCenter: 'Madurez de la evidencia', maturityCenterSub: 'indica el nivel que puedes respaldar', maturitySelected: 'Etapa de evidencia seleccionada', maturitySupports: 'Permite afirmar', maturityCannotSupport: 'No permite afirmar', maturityNext: 'Evidencia necesaria para avanzar', maturityOpen: 'Abrir la lección correspondiente', maturityFallback: 'Leer las etapas de evidencia como texto', maturityFallbackIntro: 'Las cinco etapas siguen disponibles sin el mapa interactivo. Usa la etiqueta más fuerte que permita el registro, no la que te gustaría alcanzar.', maturityFigureAlt: 'Escalera de cinco etapas, desde un contrato diseñado hasta una revisión independiente', maturityOpenVisual: 'Abrir la escalera de madurez de la evidencia', maturityFigureCaption: 'Escalera original del proyecto. Separa estructura, acceso, práctica, transferencia y revisión independiente para que una afirmación de lanzamiento no vaya más allá de sus pruebas.', maturityBoundary: 'Esta escalera sirve para declarar límites, no para puntuar. El proyecto tiene estructura y comprobaciones estáticas, pero las ejecuciones de aprendizaje, la transferencia y la revisión independiente siguen siendo preguntas distintas.' },
+    ja: { maturityEyebrow: '証拠の成熟度', maturityTitle: '証拠を飛ばさない。', maturityIntro: 'ページが完成していることと、方法が実際に練習され、別の課題に転用され、独立に確認されたことは別です。記録が正直に支えられる最も高い段階を選びます。', maturityAria: '証拠の成熟度を示す5段階', maturityCenter: '証拠の成熟度', maturityCenterSub: '記録が支えられる段階を示す', maturitySelected: '選択中の証拠段階', maturitySupports: 'ここから言えること', maturityCannotSupport: 'ここからは言えないこと', maturityNext: '次の段階に進むための証拠', maturityOpen: '対応するレッスンを開く', maturityFallback: '証拠の段階をテキストで読む', maturityFallbackIntro: 'インタラクティブなマップがなくても、同じ5段階を読めます。期待するラベルではなく、記録が許す最も強いラベルを使ってください。', maturityFigureAlt: '設計された契約から独立レビューまでの5段階の証拠成熟度ラダー', maturityOpenVisual: '証拠成熟度ラダーを開く', maturityFigureCaption: 'プロジェクト作成のラダーです。構造、到達可能性、実践、転用、独立レビューを分け、公開時の主張が証拠を越えないようにします。', maturityBoundary: 'このラダーは開示の補助であり、点数ではありません。プロジェクトには構造と静的チェックがありますが、学習者の実行、転用の証拠、独立レビューは別々に確認する必要があります。' },
+    ko: { maturityEyebrow: '증거 성숙도', maturityTitle: '증거 단계를 건너뛰지 마세요.', maturityIntro: '페이지가 완성됐다는 사실만으로 방법을 실제로 연습했거나 전이했거나 독립적으로 검토했다는 뜻은 아닙니다. 기록이 정직하게 뒷받침하는 가장 높은 단계를 고르세요.', maturityAria: '증거 성숙도의 다섯 단계', maturityCenter: '증거 성숙도', maturityCenterSub: '기록이 뒷받침하는 단계를 표시하기', maturitySelected: '선택한 증거 단계', maturitySupports: '말할 수 있는 것', maturityCannotSupport: '말할 수 없는 것', maturityNext: '다음 단계로 가는 데 필요한 증거', maturityOpen: '해당 수업 열기', maturityFallback: '증거 단계를 텍스트로 읽기', maturityFallbackIntro: '대화형 지도 없이도 같은 다섯 단계를 볼 수 있습니다. 도달하고 싶은 단계가 아니라 기록이 허용하는 가장 강한 표현을 사용하세요.', maturityFigureAlt: '설계된 계약에서 독립 검토까지 이어지는 다섯 단계 증거 성숙도 단계표', maturityOpenVisual: '증거 성숙도 단계표 열기', maturityFigureCaption: '프로젝트가 만든 단계표입니다. 구조, 접근 가능성, 실제 연습, 전이와 독립 검토를 나누어 출시 주장이 증거를 넘지 않게 합니다.', maturityBoundary: '이 단계표는 공개 범위를 설명하는 도구이지 점수가 아닙니다. 프로젝트에는 구조와 정적 점검이 있지만 학습자 실행, 전이 증거와 독립 검토는 별도로 확인해야 합니다.' },
+    de: { maturityEyebrow: 'Belegreife', maturityTitle: 'Überspringe die Belege nicht.', maturityIntro: 'Eine fertige Seite bedeutet nicht, dass die Methode geübt, auf eine neue Aufgabe übertragen oder unabhängig geprüft wurde. Wähle die höchste Stufe, die der vorhandene Beleg ehrlich trägt.', maturityAria: 'Fünf Stufen der Belegreife', maturityCenter: 'Belegreife', maturityCenterSub: 'die vom Beleg getragene Stufe nennen', maturitySelected: 'Ausgewählte Belegstufe', maturitySupports: 'Damit lässt sich sagen', maturityCannotSupport: 'Damit lässt sich nicht sagen', maturityNext: 'Beleg für den nächsten Schritt', maturityOpen: 'Passende Lektion öffnen', maturityFallback: 'Die Belegstufen als Text lesen', maturityFallbackIntro: 'Ohne interaktive Karte bleiben dieselben fünf Stufen verfügbar. Verwende die stärkste Bezeichnung, die der Beleg erlaubt, nicht die gewünschte.', maturityFigureAlt: 'Fünfstufige Leiter der Belegreife vom entworfenen Vertrag bis zur unabhängigen Prüfung', maturityOpenVisual: 'Leiter der Belegreife öffnen', maturityFigureCaption: 'Vom Projekt erstellte Leiter. Sie trennt Struktur, Erreichbarkeit, Übung, Übertragung und unabhängige Prüfung, damit eine Veröffentlichungsbehauptung innerhalb ihrer Belege bleibt.', maturityBoundary: 'Die Leiter dient der Offenlegung, nicht der Bewertung. Das Projekt hat viel Struktur und statische Checks; Lernläufe, Übertragungsbelege und unabhängige Prüfung sind weiterhin getrennte Fragen.' },
+    'zh-tw': { maturityEyebrow: '證據成熟度', maturityTitle: '不要跳過證據。', maturityIntro: '頁面完成，不代表有人實際練習過、遷移過，或經過獨立複核。請選擇現有紀錄能誠實支持的最高階段。', maturityAria: '證據成熟度的五個階段', maturityCenter: '證據成熟度', maturityCenterSub: '說清楚紀錄支持到哪一階段', maturitySelected: '目前證據階段', maturitySupports: '可以支持', maturityCannotSupport: '不能支持', maturityNext: '進入下一階段需要的證據', maturityOpen: '開啟對應課程', maturityFallback: '依文字閱讀證據階段', maturityFallbackIntro: '不使用互動地圖時，下面仍保留五個階段。紀錄允許你說到哪一步，就只使用哪一個標籤。', maturityFigureAlt: '從已設計契約到獨立複核的五階段證據成熟度階梯圖', maturityOpenVisual: '開啟證據成熟度階梯圖', maturityFigureCaption: '專案原創階梯圖，把結構、可到達、實際練習、遷移與獨立複核分開，避免發佈主張超出證據。', maturityBoundary: '這張階梯圖用來揭露證據界線，不是評分。目前專案有不少結構與靜態檢查，但學習者執行、遷移證據與獨立複核仍是不同的問題。' },
+    fr: { maturityEyebrow: 'Maturité des preuves', maturityTitle: 'Ne sautez pas les preuves.', maturityIntro: 'Une page terminée ne signifie pas que la méthode a été pratiquée, transférée ou revue de façon indépendante. Choisissez le niveau le plus élevé que le relevé permet de soutenir honnêtement.', maturityAria: 'Cinq étapes de maturité des preuves', maturityCenter: 'Maturité des preuves', maturityCenterSub: 'indiquer le niveau que le relevé soutient', maturitySelected: 'Étape de preuve sélectionnée', maturitySupports: 'Ce que cela permet d’affirmer', maturityCannotSupport: 'Ce que cela ne permet pas d’affirmer', maturityNext: 'Preuve nécessaire pour avancer', maturityOpen: 'Ouvrir la leçon correspondante', maturityFallback: 'Lire les étapes de preuve en texte', maturityFallbackIntro: 'Les cinq étapes restent disponibles sans la carte interactive. Utilisez le libellé le plus fort que le relevé autorise, pas celui que vous espérez atteindre.', maturityFigureAlt: 'Échelle en cinq étapes, du contrat conçu à la revue indépendante', maturityOpenVisual: 'Ouvrir l’échelle de maturité des preuves', maturityFigureCaption: 'Échelle créée par le projet. Elle sépare structure, accès, pratique, transfert et revue indépendante afin qu’une affirmation de publication reste dans les limites des preuves.', maturityBoundary: 'Cette échelle sert à expliciter les limites, pas à attribuer une note. Le projet dispose d’une structure et de contrôles statiques ; les essais d’apprenants, les preuves de transfert et la revue indépendante restent des questions distinctes.' },
+  };
+  Object.entries(MATURITY_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
+
+  const MATURITY_STAGES = [
+    {
+      id: 'designed', path: 'book/routes/universal-core-foundations',
+      labels: { en: 'Designed', zh: '已设计', es: 'Diseñado', ja: '設計済み', ko: '설계됨', de: 'Entworfen', 'zh-tw': '已設計', fr: 'Conçu' },
+      bodies: { en: 'The teaching contract names the intended result, boundary, action, check, and stop.', zh: '教学契约写清了预期结果、边界、行动、检查和停止条件。', es: 'El contrato didáctico nombra el resultado previsto, los límites, la acción, la comprobación y la parada.', ja: '教材の契約に、意図した結果、境界、行動、確認、停止条件が書かれています。', ko: '교육 계약에 의도한 결과, 경계, 행동, 점검과 중지 조건이 적혀 있습니다.', de: 'Der Lehrvertrag benennt Ergebnis, Grenze, Handlung, Prüfung und Stopp.', 'zh-tw': '教學契約寫清楚預期結果、界線、行動、檢查與停止條件。', fr: 'Le contrat pédagogique précise le résultat visé, les limites, l’action, le contrôle et l’arrêt.' },
+      supports: { en: 'A clear intended method.', zh: '一套清楚的预期方法。', es: 'Un método previsto y claramente definido.', ja: '意図した方法が明確であること。', ko: '의도한 방법이 분명하다는 점.', de: 'Eine klar beschriebene Methode.', 'zh-tw': '一套清楚定義的預期方法。', fr: 'Une méthode visée et clairement définie.' },
+      limits: { en: 'That a reader can reach, use, or learn it.', zh: '不能证明读者能找到、使用或学会它。', es: 'Que un lector pueda encontrarlo, usarlo o aprenderlo.', ja: '読者が到達し、使い、学べること。', ko: '독자가 찾아서 사용하거나 익힐 수 있다는 점.', de: 'Dass Lesende sie erreichen, anwenden oder lernen können.', 'zh-tw': '無法證明讀者能找到、使用或學會它。', fr: 'Qu’un lecteur puisse l’atteindre, l’utiliser ou l’apprendre.' },
+      next: { en: 'Render the route and make every entry reachable.', zh: '把路线呈现出来，并让每个入口都能访问。', es: 'Publica el recorrido y haz accesible cada entrada.', ja: 'ルートを表示し、すべての入口に到達できるようにします。', ko: '경로를 렌더링하고 모든 진입점을 접근 가능하게 만드세요.', de: 'Route ausliefern und jeden Einstieg erreichbar machen.', 'zh-tw': '把路線呈現出來，並讓每個入口都能使用。', fr: 'Rendez le parcours visible et chaque entrée accessible.' },
+    },
+    {
+      id: 'rendered', path: 'book/routes/universal-core-foundations',
+      labels: { en: 'Rendered', zh: '已呈现', es: 'Publicado', ja: '表示済み', ko: '렌더링됨', de: 'Dargestellt', 'zh-tw': '已呈現', fr: 'Rendu' },
+      bodies: { en: 'The page, language route, image, and text fallback work for a reader.', zh: '页面、语言路径、图片和文字回退都能供读者使用。', es: 'La página, la ruta lingüística, la imagen y la alternativa textual funcionan para quien lee.', ja: 'ページ、言語ルート、画像、テキスト代替が読者向けに機能しています。', ko: '페이지, 언어 경로, 이미지와 텍스트 대체 설명이 독자에게 작동합니다.', de: 'Seite, Sprachroute, Bild und Textalternative funktionieren für Lesende.', 'zh-tw': '頁面、語言路徑、圖片與文字替代說明都能供讀者使用。', fr: 'La page, la route linguistique, l’image et l’alternative textuelle fonctionnent pour le lecteur.' },
+      supports: { en: 'A reader can reach and inspect the material.', zh: '读者能够到达并检查这份材料。', es: 'Que un lector puede llegar al material e inspeccionarlo.', ja: '読者が教材に到達し、確認できること。', ko: '독자가 자료에 도달해 살펴볼 수 있다는 점.', de: 'Dass Lesende das Material erreichen und prüfen können.', 'zh-tw': '讀者能到達並檢查這份教材。', fr: 'Qu’un lecteur puisse atteindre le contenu et l’inspecter.' },
+      limits: { en: 'That a reader understood, practiced, or transferred it.', zh: '不能证明读者理解、练习或迁移了它。', es: 'Que un lector lo haya entendido, practicado o transferido.', ja: '読者が理解し、練習し、転用したこと。', ko: '독자가 이해하고 연습하거나 전이했다는 점.', de: 'Dass Lesende sie verstanden, geübt oder übertragen haben.', 'zh-tw': '無法證明讀者理解、練習或遷移了它。', fr: 'Qu’un lecteur l’ait compris, pratiqué ou transféré.' },
+      next: { en: 'Observe a learner running one bounded task.', zh: '观察一位学习者运行一次有边界的任务。', es: 'Observa a un aprendiz ejecutar una tarea acotada.', ja: '学習者が範囲を区切った課題を1つ実行する様子を観察します。', ko: '학습자가 범위가 정해진 작업 하나를 수행하는 모습을 관찰하세요.', de: 'Beobachte eine lernende Person bei einer begrenzten Aufgabe.', 'zh-tw': '觀察一位學習者執行一次有界線的任務。', fr: 'Observez un apprenant qui exécute une tâche délimitée.' },
+    },
+    {
+      id: 'practiced', path: 'book/labs/lab-001-first-safe-task',
+      labels: { en: 'Practiced', zh: '已练习', es: 'Practicado', ja: '実践済み', ko: '연습됨', de: 'Geübt', 'zh-tw': '已練習', fr: 'Pratiqué' },
+      bodies: { en: 'A learner runs the task and keeps a record of the actual attempt and result.', zh: '学习者运行了任务，并保留实际尝试和结果的记录。', es: 'Un aprendiz ejecuta la tarea y conserva el registro del intento y el resultado reales.', ja: '学習者が課題を実行し、実際の試行と結果の記録を残しています。', ko: '학습자가 작업을 수행하고 실제 시도와 결과의 기록을 남깁니다.', de: 'Eine lernende Person führt die Aufgabe aus und bewahrt den tatsächlichen Versuch samt Ergebnis auf.', 'zh-tw': '學習者執行了任務，並保留實際嘗試與結果的紀錄。', fr: 'Un apprenant exécute la tâche et conserve le relevé de l’essai et du résultat.' },
+      supports: { en: 'One observed attempt and its result.', zh: '一次可观察的尝试及其结果。', es: 'Un intento observado y su resultado.', ja: '観察された1回の試行とその結果。', ko: '관찰된 한 번의 시도와 그 결과.', de: 'Einen beobachteten Versuch mit seinem Ergebnis.', 'zh-tw': '一次可觀察的嘗試及其結果。', fr: 'Un essai observé et son résultat.' },
+      limits: { en: 'Reliable performance on a changed task.', zh: '不能证明在变化后的任务上仍能可靠完成。', es: 'Un desempeño fiable en una tarea distinta.', ja: '条件が変わった課題でも安定してできること。', ko: '조건이 바뀐 작업에서도 안정적으로 수행한다는 점.', de: 'Zuverlässige Leistung bei einer veränderten Aufgabe.', 'zh-tw': '無法證明在改變後的任務上仍能可靠完成。', fr: 'Une performance fiable sur une tâche différente.' },
+      next: { en: 'Repeat the method on a changed task and keep the comparison.', zh: '在变化后的任务上重复方法，并保留对照记录。', es: 'Repite el método en una tarea distinta y conserva la comparación.', ja: '条件を変えた課題で方法を繰り返し、比較記録を残します。', ko: '조건을 바꾼 작업에서 방법을 반복하고 비교 기록을 남기세요.', de: 'Methode an einer veränderten Aufgabe wiederholen und den Vergleich aufbewahren.', 'zh-tw': '在改變後的任務上重複方法，並保留對照紀錄。', fr: 'Répétez la méthode sur une tâche différente et gardez la comparaison.' },
+    },
+    {
+      id: 'transferred', path: 'book/chapters/20-personal-codex-work-system',
+      labels: { en: 'Transferred', zh: '已迁移', es: 'Transferido', ja: '転用済み', ko: '전이됨', de: 'Übertragen', 'zh-tw': '已遷移', fr: 'Transféré' },
+      bodies: { en: 'The method survives a changed task while the changed condition and remaining limits stay visible.', zh: '方法在变化后的任务上仍然成立，同时保留变化条件和剩余限制。', es: 'El método resiste una tarea distinta y mantiene visibles el cambio y sus límites.', ja: '条件を変えた課題でも方法が機能し、変更点と残る限界が見える状態です。', ko: '조건을 바꾼 작업에서도 방법이 유지되고 변경점과 남은 한계가 보입니다.', de: 'Die Methode hält bei einer veränderten Aufgabe, während Änderung und Grenzen sichtbar bleiben.', 'zh-tw': '方法在改變後的任務上仍然成立，同時保留變化條件與剩餘限制。', fr: 'La méthode tient sur une tâche différente, avec le changement et les limites restantes clairement visibles.' },
+      supports: { en: 'Evidence that the method was reused beyond the first example.', zh: '方法在第一个示例之外被复用的证据。', es: 'Evidencia de que el método se reutilizó más allá del primer ejemplo.', ja: '最初の例を超えて方法を再利用した証拠。', ko: '첫 사례를 넘어 방법을 재사용했다는 증거.', de: 'Beleg für die Wiederverwendung über das erste Beispiel hinaus.', 'zh-tw': '方法在第一個範例之外被重複使用的證據。', fr: 'La preuve que la méthode a été réutilisée au-delà du premier exemple.' },
+      limits: { en: 'A universal, permanent, or mastery claim.', zh: '不能证明它适用于所有情况、永久有效或已经掌握。', es: 'Una afirmación de universalidad, permanencia o dominio.', ja: '普遍性、永続性、習得を主張すること。', ko: '보편적·영구적 효과나 숙련을 주장하는 것.', de: 'Eine universelle, dauerhafte oder auf Beherrschung bezogene Aussage.', 'zh-tw': '無法證明它適用於所有情況、永久有效或已經掌握。', fr: 'Une affirmation d’universalité, de permanence ou de maîtrise.' },
+      next: { en: 'Invite an independent rerun under a named scope.', zh: '邀请他人在明确范围内独立重做一次。', es: 'Invita a otra persona a repetirlo de forma independiente dentro de un alcance definido.', ja: '対象範囲を明示し、別の人に独立した再実行を依頼します。', ko: '범위를 명시하고 다른 사람에게 독립적인 재실행을 요청하세요.', de: 'Unabhängigen Wiederholungslauf unter einem benannten Umfang einladen.', 'zh-tw': '邀請他人在明確範圍內獨立重做一次。', fr: 'Invitez une autre personne à refaire l’essai indépendamment dans un périmètre défini.' },
+    },
+    {
+      id: 'reviewed', path: 'book/chapters/15-research-track',
+      labels: { en: 'Independently reviewed', zh: '已独立复核', es: 'Revisado de forma independiente', ja: '独立レビュー済み', ko: '독립적으로 검토됨', de: 'Unabhängig geprüft', 'zh-tw': '已獨立複核', fr: 'Revu indépendamment' },
+      bodies: { en: 'Another person reruns and checks the method under a named scope, revision, and evidence boundary.', zh: '另一位人员在明确范围、版本和证据边界下重做并检查了这套方法。', es: 'Otra persona repite y comprueba el método con un alcance, una revisión y un límite de evidencia definidos.', ja: '別の人が、対象範囲・版・証拠の境界を明示して方法を再実行し、確認しています。', ko: '다른 사람이 범위, 리비전과 증거 경계를 명시한 뒤 방법을 다시 실행하고 점검합니다.', de: 'Eine andere Person wiederholt und prüft die Methode unter benanntem Umfang, Stand und Beleggrenze.', 'zh-tw': '另一位人員在明確範圍、版本與證據界線下重做並檢查這套方法。', fr: 'Une autre personne refait et vérifie la méthode dans un périmètre, une révision et une limite de preuve nommés.' },
+      supports: { en: 'A corroborated result within the reviewed scope.', zh: '在已复核范围内得到相互印证的结果。', es: 'Un resultado corroborado dentro del alcance revisado.', ja: 'レビューした範囲内で裏づけられた結果。', ko: '검토한 범위 안에서 서로 확인된 결과.', de: 'Ein bestätigtes Ergebnis innerhalb des geprüften Umfangs.', 'zh-tw': '在已複核範圍內得到相互印證的結果。', fr: 'Un résultat corroboré dans le périmètre revu.' },
+      limits: { en: 'Claims outside the reviewed conditions or future product behavior.', zh: '不能支持复核条件之外的结论，也不能预测未来产品行为。', es: 'Afirmaciones fuera de las condiciones revisadas o sobre el comportamiento futuro del producto.', ja: 'レビュー条件の外にある主張や、将来の製品動作。', ko: '검토 조건 밖의 주장이나 앞으로의 제품 동작.', de: 'Aussagen außerhalb der Prüfbedingungen oder über künftiges Produktverhalten.', 'zh-tw': '無法支持複核條件之外的主張，也不能預測未來產品行為。', fr: 'Des affirmations hors des conditions revues ou sur le comportement futur du produit.' },
+      next: { en: 'Keep the reviewed scope explicit and schedule the next review.', zh: '保留已复核范围，并安排下一次复核。', es: 'Mantén explícito el alcance revisado y programa la próxima revisión.', ja: 'レビュー済みの範囲を明示し、次のレビューを予定します。', ko: '검토한 범위를 분명히 남기고 다음 검토 일정을 잡으세요.', de: 'Geprüften Umfang sichtbar halten und nächste Prüfung einplanen.', 'zh-tw': '保留已複核範圍，並安排下一次複核。', fr: 'Gardez le périmètre revu explicite et planifiez la prochaine revue.' },
+    },
+  ];
+
   const VISUAL_ROUTE_STEPS = [
     { id: 'purpose', section: 'visual-goal', labels: { en: 'Choose a purpose', zh: '选择一个目的', es: 'Elegir un propósito', ja: '目的を選ぶ', ko: '목적 고르기', de: 'Einen Zweck wählen', 'zh-tw': '選擇一個目的', fr: 'Choisir un objectif' }, bodies: { en: 'Start with why you came: a safe first task, an uncertain result, a claim to verify, or a method to reuse.', zh: '先说清楚你为什么来：安全的第一项任务、不确定的结果、需要核验的结论，或想复用的方法。', es: 'Empieza por tu motivo: una primera tarea segura, un resultado incierto, una afirmación que comprobar o un método que reutilizar.', ja: 'まず来た理由を選びます。安全な最初のタスク、不確かな結果、確認したい主張、再利用したい方法のいずれかです。', ko: '왜 왔는지부터 고르세요. 안전한 첫 작업, 불확실한 결과, 확인할 주장 또는 재사용할 방법 중 하나입니다.', de: 'Beginne mit deinem Anlass: eine sichere erste Aufgabe, ein unsicheres Ergebnis, eine zu prüfende Aussage oder eine wiederverwendbare Methode.', 'zh-tw': '先說清楚你為什麼來：安全的第一項任務、不確定的結果、需要核對的主張，或想重複使用的方法。', fr: 'Commencez par votre besoin : une première tâche sûre, un résultat incertain, une affirmation à vérifier ou une méthode à réutiliser.' }, next: { en: 'Which small outcome do I need?', zh: '我需要哪项小结果？', es: '¿Qué resultado pequeño necesito?', ja: '必要な小さな結果は何か？', ko: '어떤 작은 결과가 필요한가?', de: 'Welches kleine Ergebnis brauche ich?', 'zh-tw': '我需要哪個小結果？', fr: 'De quel petit résultat ai-je besoin ?' } },
     { id: 'order', section: 'visual-journey', labels: { en: 'See the order', zh: '看清顺序', es: 'Ver el orden', ja: '順序を見る', ko: '순서 보기', de: 'Die Reihenfolge sehen', 'zh-tw': '看清順序', fr: 'Voir l’ordre' }, bodies: { en: 'The foundation comes first. Platform tracks are optional layers added after a checked first route, not competing starting points.', zh: '基础核心先开始。平台路径是完成第一条可检查路线后再增加的可选层，不是互相竞争的起点。', es: 'El núcleo de fundamentos va primero. Las rutas de plataforma son capas opcionales después de un primer recorrido comprobado, no puntos de partida rivales.', ja: '最初は基礎コアです。プラットフォーム別のルートは、最初の確認できる道筋の後に必要に応じて加える層であり、競合する入口ではありません。', ko: '기초 코어가 먼저입니다. 플랫폼 경로는 첫 번째 확인 가능한 경로 뒤에 필요할 때 추가하는 선택 계층이지, 서로 경쟁하는 시작점이 아닙니다.', de: 'Der Grundlagenkern kommt zuerst. Plattformrouten sind optionale Ebenen nach einer geprüften ersten Route, keine konkurrierenden Einstiege.', 'zh-tw': '先從基礎核心開始。平台路線是在完成第一條可檢查路線後才增加的選用層，不是彼此競爭的起點。', fr: 'Le Foundation Core vient d’abord. Les parcours de plateforme sont des couches facultatives après une première route vérifiée, pas des points de départ concurrents.' }, next: { en: 'Am I still on the foundation route?', zh: '我还在基础路线中吗？', es: '¿Sigo en el recorrido de fundamentos?', ja: 'まだ基礎ルートにいるか？', ko: '아직 기초 경로에 있는가?', de: 'Bin ich noch auf der Grundlagenroute?', 'zh-tw': '我還在基礎路線中嗎？', fr: 'Suis-je encore sur le parcours de base ?' } },
@@ -597,6 +652,7 @@
     { stage: 'repair', asset: 'recovery-decision-tree-red-black.svg', path: 'book/chapters/12-agent-loop-and-stop', titles: { en: 'Recovery decision tree', zh: '恢复决策树', es: 'Árbol de decisión para recuperar', ja: '復旧の判断ツリー', ko: '복구 의사결정 트리', de: 'Entscheidungsbaum für die Wiederherstellung', 'zh-tw': '復原決策樹', fr: 'Arbre de décision pour la reprise' }, bodies: { en: 'Preserve the trace, find the first mismatch, check authority, run one safe check, or stop with a small claim.', zh: '保留轨迹，找到第一个不匹配，检查权限，执行一次安全检查；否则停下并缩小结论。', es: 'Conserva el rastro, encuentra el primer desajuste, comprueba la autoridad, haz una verificación segura o detente con una afirmación pequeña.', ja: '記録を保存し、最初の不一致を見つけ、権限を確認し、安全な確認を1つ行うか、小さな主張で止まります。', ko: '기록을 보존하고 첫 불일치를 찾은 뒤 권한을 확인합니다. 안전한 점검 하나를 하거나 작은 주장으로 멈춥니다.', de: 'Bewahre die Spur, finde die erste Abweichung, prüfe die Berechtigung, führe einen sicheren Check aus oder stoppe mit einer kleinen Aussage.', 'zh-tw': '保留軌跡，找出第一個不相符，檢查權限，執行一次安全檢查；否則停下並縮小主張。', fr: 'Conservez la trace, trouvez le premier écart, vérifiez l’autorité, faites un contrôle sûr ou arrêtez-vous avec une affirmation limitée.' } },
     { stage: 'transfer', asset: 'understanding-to-transfer-red-black.svg', path: 'book/chapters/20-personal-codex-work-system', titles: { en: 'From understanding to transfer', zh: '从理解到迁移', es: 'De entender a transferir', ja: '理解から転用へ', ko: '이해에서 전이까지', de: 'Vom Verstehen zur Übertragung', 'zh-tw': '從理解到遷移', fr: 'De la compréhension au transfert' }, bodies: { en: 'Understand the boundary, make a bounded attempt, inspect it, repair one mismatch, vary one condition, and repeat.', zh: '理解边界，做一次有边界的尝试，检查结果，修正一个不匹配，改变一个条件，再重复方法。', es: 'Entiende el límite, haz un intento acotado, inspecciónalo, repara un desajuste, cambia una condición y repite.', ja: '境界を理解し、範囲を区切って試し、確認し、不一致を1つ直し、条件を1つ変えて繰り返します。', ko: '경계를 이해하고 범위 있는 시도를 한 뒤 점검하며 불일치 하나를 고치고 조건 하나를 바꿔 반복합니다.', de: 'Verstehe die Grenze, mache einen begrenzten Versuch, prüfe ihn, repariere eine Abweichung, ändere eine Bedingung und wiederhole.', 'zh-tw': '理解界線，做一次有界線的嘗試，檢查結果，修正一個不相符，改變一個條件，再重複方法。', fr: 'Comprenez la limite, faites un essai délimité, inspectez-le, corrigez un écart, changez une condition et recommencez.' } },
     { stage: 'transfer', asset: 'beginner-practice-loop-red-black.svg', path: 'book/chapters/20-personal-codex-work-system', titles: { en: 'Beginner practice loop', zh: '初学者练习闭环', es: 'Ciclo de práctica para principiantes', ja: '初心者の練習ループ', ko: '초보자 연습 루프', de: 'Übungszyklus für Einsteiger', 'zh-tw': '初學者練習閉環', fr: 'Boucle de pratique pour débutants' }, bodies: { en: 'Make an unaided attempt, correct one point, vary the case, and keep a bounded receipt instead of claiming mastery.', zh: '先独立尝试，修正一个要点，改变案例，再保留有边界的记录，不要直接宣称掌握。', es: 'Haz un intento sin ayuda, corrige un punto, cambia el caso y conserva un registro acotado en vez de afirmar dominio.', ja: '自力で試し、1点を直し、条件を変えて、習得を主張する代わりに範囲のある記録を残します。', ko: '도움 없이 시도하고 한 가지를 고친 뒤 사례를 바꿔 보며 숙련을 주장하는 대신 범위 있는 기록을 남깁니다.', de: 'Versuche es ohne Hilfe, korrigiere einen Punkt, verändere den Fall und bewahre einen begrenzten Beleg statt Beherrschung zu behaupten.', 'zh-tw': '先獨立嘗試，修正一個要點，改變案例，再保留有界線的紀錄，不要直接宣稱掌握。', fr: 'Essayez sans aide, corrigez un point, changez le cas et gardez un relevé limité au lieu de proclamer la maîtrise.' } },
+    { stage: 'inspect', asset: 'evidence-maturity-ladder-red-black.svg', path: 'book/chapters/15-research-track', titles: { en: 'Name the evidence stage you actually have', zh: '说清你实际拥有哪一阶段的证据', es: 'Nombra la etapa de evidencia que realmente tienes', ja: '実際に持っている証拠の段階を示す', ko: '실제로 가진 증거 단계를 밝히기', de: 'Die tatsächlich belegte Stufe benennen', 'zh-tw': '說清楚你實際擁有哪些階段的證據', fr: 'Nommer le niveau de preuve réellement disponible' }, bodies: { en: 'Separate a designed contract from a rendered page, a learner run, transfer, and independent review.', zh: '把已设计的契约、已呈现的页面、学习者运行、迁移和独立复核分开。', es: 'Separa el contrato diseñado, la página publicada, la ejecución de un aprendiz, la transferencia y la revisión independiente.', ja: '設計済みの契約、表示されたページ、学習者の実行、転用、独立レビューを分けます。', ko: '설계된 계약, 렌더링된 페이지, 학습자 실행, 전이와 독립 검토를 구분합니다.', de: 'Trenne den entworfenen Vertrag, die dargestellte Seite, den Lernlauf, die Übertragung und die unabhängige Prüfung.', 'zh-tw': '把已設計的契約、已呈現的頁面、學習者執行、遷移與獨立複核分開。', fr: 'Séparez le contrat conçu, la page rendue, l’essai d’un apprenant, le transfert et la revue indépendante.' } },
   ];
 
   const params = new URLSearchParams(window.location.search);
@@ -615,6 +671,7 @@
   let activeReceiptId = 'result';
   let activeExplorerId = 'understand';
   let activeCapabilityId = 'L0';
+  let activeMaturityId = 'designed';
 
   const query = (selector) => document.querySelector(selector);
   const queryAll = (selector) => [...document.querySelectorAll(selector)];
@@ -882,6 +939,72 @@
     }
     if (image) image.alt = strings.capabilityFigureAlt;
     if (imageLink) imageLink.setAttribute('aria-label', `${strings.capabilityOpenVisual}: ${localizedCapabilityName(level)}`);
+  }
+
+  function renderMaturityMap() {
+    const nodes = query('[data-visual-maturity-nodes]');
+    const fallback = query('[data-visual-maturity-fallback]');
+    if (!nodes || !fallback || !MATURITY_STAGES.length) return;
+    const strings = copy();
+    nodes.replaceChildren();
+    fallback.replaceChildren();
+    MATURITY_STAGES.forEach((stage, index) => {
+      const item = document.createElement('li');
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'visual-maturity-node';
+      button.dataset.maturity = stage.id;
+      button.setAttribute('aria-pressed', String(stage.id === activeMaturityId));
+      button.setAttribute('aria-label', `${String(index + 1).padStart(2, '0')} ${localized(stage.labels)}`);
+      const number = document.createElement('span');
+      number.textContent = String(index + 1).padStart(2, '0');
+      const label = document.createElement('strong');
+      label.textContent = localized(stage.labels);
+      button.append(number, label);
+      button.addEventListener('click', () => {
+        activeMaturityId = stage.id;
+        renderMaturityMap();
+      });
+      if (stage.id === activeMaturityId) button.classList.add('is-selected');
+      item.append(button);
+      nodes.append(item);
+
+      const fallbackItem = document.createElement('li');
+      const fallbackTitle = document.createElement('strong');
+      fallbackTitle.textContent = `${String(index + 1).padStart(2, '0')} · ${localized(stage.labels)}`;
+      const fallbackBody = document.createElement('span');
+      fallbackBody.textContent = localized(stage.bodies);
+      const fallbackSupport = document.createElement('small');
+      fallbackSupport.textContent = `${strings.maturitySupports}: ${localized(stage.supports)}`;
+      const fallbackLimit = document.createElement('small');
+      fallbackLimit.textContent = `${strings.maturityCannotSupport}: ${localized(stage.limits)}`;
+      const fallbackNext = document.createElement('em');
+      fallbackNext.textContent = `${strings.maturityNext}: ${localized(stage.next)}`;
+      const fallbackLink = document.createElement('a');
+      fallbackLink.className = 'visual-action-link';
+      fallbackLink.href = readerHref(stage.path);
+      fallbackLink.textContent = `${strings.maturityOpen} ↗`;
+      fallbackItem.append(fallbackTitle, fallbackBody, fallbackSupport, fallbackLimit, fallbackNext, fallbackLink);
+      fallback.append(fallbackItem);
+    });
+
+    const stage = MATURITY_STAGES.find((candidate) => candidate.id === activeMaturityId) || MATURITY_STAGES[0];
+    const detailTitle = query('[data-visual-maturity-title]');
+    const detailBody = query('[data-visual-maturity-body]');
+    const detailSupport = query('[data-visual-maturity-support]');
+    const detailLimit = query('[data-visual-maturity-limit]');
+    const detailNext = query('[data-visual-maturity-next]');
+    const detailLink = query('[data-visual-maturity-link]');
+    const image = query('[data-visual-maturity-image]');
+    const imageLink = query('[data-visual-maturity-image-link]');
+    if (detailTitle) detailTitle.textContent = localized(stage.labels);
+    if (detailBody) detailBody.textContent = localized(stage.bodies);
+    if (detailSupport) detailSupport.textContent = localized(stage.supports);
+    if (detailLimit) detailLimit.textContent = localized(stage.limits);
+    if (detailNext) detailNext.textContent = localized(stage.next);
+    if (detailLink) detailLink.href = readerHref(stage.path);
+    if (image) image.alt = strings.maturityFigureAlt;
+    if (imageLink) imageLink.setAttribute('aria-label', `${strings.maturityOpenVisual}: ${localized(stage.labels)}`);
   }
 
   function setText() {
@@ -1413,6 +1536,7 @@
     renderIntentMap();
     renderJourney();
     renderCapabilityMap();
+    renderMaturityMap();
     renderConceptMap();
     renderActionBoundaryMap();
     renderTriageMap();
@@ -1436,6 +1560,7 @@
   renderIntentMap();
   renderJourney();
   renderCapabilityMap();
+  renderMaturityMap();
   renderConceptMap();
   renderActionBoundaryMap();
   renderTriageMap();
