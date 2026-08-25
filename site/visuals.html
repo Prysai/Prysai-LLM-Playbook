@@ -309,9 +309,49 @@
         <p class="visual-boundary" data-i18n="evidenceBoundary">The map is a reasoning aid. It does not prove that a source is correct, a tool ran, or a learner mastered the method.</p>
       </section>
 
+      <section id="visual-reading-loop" class="visual-reading-loop-section" aria-labelledby="visual-reading-loop-title">
+        <div class="visual-section-heading">
+          <div><span class="visual-section-number">09</span><p class="visual-eyebrow" data-i18n="readingEyebrow">Page-to-practice loop</p><h2 id="visual-reading-loop-title" data-i18n="readingTitle">Turn one page into one checked attempt.</h2></div>
+          <p data-i18n="readingIntro">Use the page in order: name the problem, find the concept, try one bounded action, inspect the record, state the boundary, and transfer the method to a changed task.</p>
+        </div>
+        <div class="visual-reading-loop-workspace">
+          <div class="visual-reading-loop-graph" role="group" aria-label="Six steps from a page to a checked attempt" data-i18n-attr="aria-label:readingAria">
+            <div class="visual-reading-loop-center" aria-hidden="true"><span data-i18n="readingCenter">One page, one attempt</span><small data-i18n="readingCenterSub">read → try → check</small></div>
+            <ol class="visual-reading-loop-nodes" data-visual-reading-loop-nodes></ol>
+          </div>
+          <section class="visual-reading-loop-detail" data-visual-reading-loop-detail aria-live="polite" aria-atomic="true">
+            <span class="visual-detail-label" data-i18n="readingSelected">Selected reading step</span>
+            <h3 data-visual-reading-loop-title></h3>
+            <p data-visual-reading-loop-body></p>
+            <p class="visual-reading-loop-next"><span data-i18n="readingNext">Next question</span><strong data-visual-reading-loop-next></strong></p>
+            <a class="visual-action-link" data-visual-reading-loop-link href="reader.html?path=book%2Fguides%2Fllm-fundamentals-EN.md&amp;lang=en"><span data-i18n="readingOpen">Open the matching lesson</span><span aria-hidden="true">↗</span></a>
+          </section>
+        </div>
+        <details class="visual-reading-loop-fallback" open>
+          <summary data-i18n="readingFallback">Read the page-to-practice loop as text</summary>
+          <p data-i18n="readingFallbackIntro">The same six steps remain available as an ordered list. Follow the links only after you can name the next question.</p>
+          <ol data-visual-reading-loop-fallback>
+            <li><strong>01 · Name the problem</strong><span>Write the concrete question before you browse or ask for a solution.</span><em>Next question: What would count as a small, observable result?</em><a class="visual-action-link" href="reader.html?path=book%2Fguides%2Fllm-fundamentals-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
+            <li><strong>02 · Find the concept</strong><span>Locate the distinction or rule that explains the problem; do not skip straight to a tool.</span><em>Next question: Which idea changes what I will do?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
+            <li><strong>03 · Try one bounded move</strong><span>Make the smallest reversible attempt with a clear input, permission, and stop condition.</span><em>Next question: What exactly will I change or leave untouched?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
+            <li><strong>04 · Inspect the record</strong><span>Read the output, diff, source, test, or log; separate what you saw from what you inferred.</span><em>Next question: What does the record support?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
+            <li><strong>05 · State the boundary</strong><span>Name what remains unknown, unauthorized, unobserved, or outside the task.</span><em>Next question: What is the smallest safe next check?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
+            <li><strong>06 · Try a changed task</strong><span>Vary one condition and repeat the method without claiming mastery from one success.</span><em>Next question: What changed, and did the method still hold?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F20-personal-codex-work-system-EN.md&amp;lang=en">Open the matching lesson ↗</a></li>
+          </ol>
+        </details>
+        <figure class="visual-reading-loop-figure">
+          <a data-visual-reading-loop-image-link href="../assets/teaching/reader-page-reading-loop-red-black.svg" target="_blank" rel="noreferrer" aria-label="Open the page-to-practice board">
+            <img data-visual-reading-loop-image src="../assets/teaching/reader-page-reading-loop-red-black.svg" width="900" height="1200" loading="lazy" alt="Six-stage page-to-practice reading loop: problem, concept, action, evidence, boundary, transfer" data-i18n-attr="alt:readingFigureAlt" />
+            <span class="visual-image-link" data-i18n="readingOpenVisual">Open the page-to-practice board</span>
+          </a>
+          <figcaption data-i18n="readingFigureCaption">Project-authored reading loop. The board is a memory aid; the page text and your own record remain the basis for any claim.</figcaption>
+        </figure>
+        <p class="visual-boundary" data-i18n="readingBoundary">A completed reading loop is not proof of mastery. Keep the attempt, result, and unknowns visible.</p>
+      </section>
+
       <section id="visual-gallery" class="visual-gallery-section" aria-labelledby="visual-gallery-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">09</span><p class="visual-eyebrow" data-i18n="galleryEyebrow">Teaching boards</p><h2 id="visual-gallery-title" data-i18n="galleryTitle">Pictures that explain one decision at a time.</h2></div>
+          <div><span class="visual-section-number">10</span><p class="visual-eyebrow" data-i18n="galleryEyebrow">Teaching boards</p><h2 id="visual-gallery-title" data-i18n="galleryTitle">Pictures that explain one decision at a time.</h2></div>
           <p data-i18n="galleryIntro">Each board has a short explanation, a localized alternative text, and a route into the matching lesson. Open the image when you want the printable version; use the text beside it when you want the exact boundary.</p>
         </div>
         <div class="visual-gallery" data-visual-gallery></div>
@@ -325,7 +365,7 @@
 
       <section id="visual-how" class="visual-how-section" aria-labelledby="visual-how-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">10</span><p class="visual-eyebrow" data-i18n="howEyebrow">Read the picture correctly</p><h2 id="visual-how-title" data-i18n="howTitle">Use a board without overtrusting it.</h2></div>
+          <div><span class="visual-section-number">11</span><p class="visual-eyebrow" data-i18n="howEyebrow">Read the picture correctly</p><h2 id="visual-how-title" data-i18n="howTitle">Use a board without overtrusting it.</h2></div>
           <p data-i18n="howIntro">The board gives you a shape to remember. Your own small attempt and record decide what you may claim.</p>
         </div>
         <div class="visual-how-grid">
