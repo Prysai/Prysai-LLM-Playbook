@@ -196,7 +196,10 @@ def resolve_artifact_target(page: Path, artifact: Path, reference: str, base_hre
     elif reference_path:
         target = start / reference_path
     elif base_href:
-        target = start / "index.html"
+        # A fragment-only link resolves against the base document itself when
+        # the base names a file (for example the root visual guide alias).
+        # Directory bases still resolve to their conventional index document.
+        target = base_target if base_path and not base_path.endswith("/") else start / "index.html"
     else:
         target = page
     return target.resolve(), fragment
