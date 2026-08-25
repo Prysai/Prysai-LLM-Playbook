@@ -247,6 +247,20 @@
   readerCopy.fr = Object.assign({}, readerCopy.en, {
     skip: 'Aller au contenu', back: 'Retour à l’aperçu', githubBadgeAria: 'Voir le projet sur GitHub', language: 'Langue', languageAria: 'Choisir la langue de lecture', detailsAria: 'Détails de la page', bookChaptersAria: 'Chapitres de cette partie', bookChapters: 'Chapitres de cette partie', chapterList: 'Liste des chapitres', labSequence: 'Parcours des labs', skillMethod: 'Méthode réutilisable', fieldNote: 'Note de terrain', projectDocument: 'Document du projet', pageDetails: 'Détails de la page', trustRecord: 'Note de preuve pour cette page', trustScope: 'Périmètre déclaré', trustReviewed: 'Dernière revue des preuves', trustReview: 'Prochaine revue prévue', trustLimitations: 'Une limite déclarée', trustBoundary: 'Une revue prévue ne garantit pas la fraîcheur du contenu. Cette note ne constitue pas une évaluation complète des risques.', scopeUniversal: 'Méthode générale', scopePlatform: 'Guide propre au produit', scopeMixed: 'Méthode générale avec exemples de produit', trustUnavailable: 'indisponible', trustUnavailableDetail: 'Le registre des preuves n’a pas pu être chargé. Il s’agit d’un problème de données, pas d’une preuve que cette page n’a aucun registre.', chapterNavigationAria: 'Navigation entre les chapitres', labNavigationAria: 'Navigation du catalogue des labs', previousChapter: 'Chapitre précédent', nextChapter: 'Chapitre suivant', previousLab: 'Lab précédent', nextLab: 'Lab suivant', onThisPageAria: 'Sur cette page', onThisPage: 'Sur cette page', readingRoute: 'Type de contenu', sourcePath: 'Chemin du fichier source', contentIdentity: 'Identité du contenu', openSource: 'Ouvrir le fichier source ↗', footer: 'La source reste en Markdown ; cette page est une vue de lecture statique', loading: 'Chargement de la page source…', copyPrompt: 'Copier le prompt', copiedPrompt: 'Prompt copié', copyFailed: 'Échec de la copie', openVisual: 'Ouvrir le visuel en taille réelle', wideTable: 'Tableau large : faites défiler horizontalement pour lire toutes les colonnes.', wideTableAria: (columns) => `Tableau de ${columns} colonnes. Faites défiler horizontalement pour lire toutes les colonnes.`, chapterProgress: (number, total, partNumber, partLabel) => `Chapitre ${number} sur ${total} · ordre éditorial · partie ${partNumber} · ${partLabel}`.trim(), labProgress: (number, total) => `Lab ${number} sur ${total} · ordre du catalogue, pas une chaîne de prérequis`, chapterCard: (number, label) => `Chapitre ${number} · ${label}`, labCard: (number, title) => `Lab ${number} · ${title}`, catalogOrderOnly: 'ordre du catalogue uniquement', contentStatus: { source: 'source', candidate: 'candidat', 'in-progress': 'traduction en cours', verified: 'vérifié', 'unindexed source': 'source non indexée' }, fallbackSourceShown: (name) => `source ${name} affichée`, missingTranslation: (name) => `Cette page n’est pas encore disponible en ${name}. Le Reader ne basculera pas vers une autre langue ; revenez à l’aperçu et choisissez une unité disponible.`, invalidPath: 'Cette URL du Reader ne désigne pas un fichier source autorisé du projet. Revenez à l’aperçu et choisissez une page du guide.', loadError: (status) => `La page source n’a pas pu être chargée (${status}).`, loadTimeout: 'La page source met trop de temps à répondre.', loadNetwork: 'La page source est inaccessible.', retry: 'Réessayer', translationInProgress: (name) => `La traduction ${name} est disponible à titre de candidate et attend une relecture linguistique indépendante. Elle n’est pas vérifiée.`
   });
+  const visualGuideCopyByLocale = {
+    en: 'Visual guide',
+    zh: '视觉导览',
+    es: 'Guía visual',
+    ja: 'ビジュアルガイド',
+    ko: '시각 안내서',
+    de: 'Visueller Leitfaden',
+    'zh-tw': '視覺導覽',
+    fr: 'Guide visuel',
+  };
+  Object.entries(visualGuideCopyByLocale).forEach(([locale, label]) => {
+    readerCopy[locale].visualGuide = label;
+  });
+
   // The brand link is shared markup, but its accessible name belongs to the
   // selected Reader language just like the visible controls do.  Add the
   // label after all locale dictionaries have been composed so no locale falls
@@ -1662,6 +1676,9 @@
     }[uiLanguage()] || {};
     document.querySelectorAll('[data-reader-language] option').forEach((option) => {
       option.textContent = optionLabels[option.value] || option.textContent;
+    });
+    document.querySelectorAll('[data-reader-visual-guide]').forEach((link) => {
+      link.href = `visuals.html?lang=${encodeURIComponent(uiLanguage())}`;
     });
   };
   const setReaderStatus = (message, { assertive = false } = {}) => {
