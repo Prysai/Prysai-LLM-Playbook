@@ -137,6 +137,46 @@ DEEP_CONTRACTS: dict[str, tuple[ContractGroup, ...]] = {
         ContractGroup("acceptance", (r"acceptance|acceptation|验收|驗收|受け入れ|수용|Abnahme|aceptación")),
         ContractGroup("sources", (r"sources|sources et|来源|來源|出典|출처|Quellen|fuentes")),
     ),
+    "lab-014-resume-reconciliation": (
+        ContractGroup("checkpoint_fields", (r"checkpoint|检查点|檢查點|チェックポイント|체크포인트|Kontrollpunkt")),
+        ContractGroup("state_classification", (r"matched.*changed.*not_observed|changed.*not_observed|已改变|已改變|変更.*未観測|변경.*미관찰|verändert.*nicht beobachtet")),
+        ContractGroup("reconciliation", (r"reconcil|核对|核對|照合|조정|Abgleich|concil")),
+        ContractGroup("failure_variant", (r"failure variant|失败变体|失敗變體|失敗.*受入|失敗.*境界|Fallo|Fehler")),
+        ContractGroup("transfer", (r"transfer|transfert|迁移|轉移|転移|전이|Übertragung")),
+        ContractGroup("acceptance", (r"acceptance|acceptation|验收|驗收|受け入れ|수용|Abnahme|aceptación")),
+        ContractGroup("reflection", (r"reflection|réflexion|复盘|覆盤|振り返り|회고|Reflexion|reflexión")),
+        ContractGroup("sources", (r"sources|sources et|来源|來源|出典|출처|Quellen|fuentes")),
+    ),
+    "lab-015-evidence-delivery": (
+        ContractGroup("claim_table", (r"claim.*evidence|主张.*证据|主張.*證據|主張.*証拠|주장.*증거|Anspruch.*Evidenz|afirmación.*evidencia")),
+        ContractGroup("status_states", (r"verified.*partial.*unverified.*blocked.*not_run|verified.*unverified.*not_run")),
+        ContractGroup("windows_breaks", (r"three Windows|三个 Windows|三個 Windows|三つ.*Windows|세 가지 Windows|drei Windows|trois ruptures")),
+        ContractGroup("failure_variant", (r"failure variant|失败变体|失敗變體|失敗.*境界|Fallo|Fehler")),
+        ContractGroup("transfer", (r"transfer|transfert|迁移|轉移|転移|전이|Übertragung")),
+        ContractGroup("acceptance", (r"acceptance|acceptation|验收|驗收|受け入れ|수용|Abnahme|aceptación")),
+        ContractGroup("reflection", (r"reflection|réflexion|复盘|覆盤|振り返り|회고|Reflexion|reflexión")),
+        ContractGroup("sources", (r"sources|sources et|来源|來源|出典|출처|Quellen|fuentes")),
+    ),
+    "lab-016-side-effect-boundary": (
+        ContractGroup("side_effect_matrix", (r"side.?effect|副作用|副作用|副作用|부작용|Nebenwirkung|efectos externos")),
+        ContractGroup("authorization", (r"authorization|autorisation|授权|授權|権限|권한|Berechtigung|autorización")),
+        ContractGroup("rollback", (r"rollback|retour arrière|回滚|回滾|ロールバック|롤백|Rollback|revers")),
+        ContractGroup("failure_variant", (r"failure variant|失败变体|失敗變體|失敗.*境界|Fallo|Fehler")),
+        ContractGroup("transfer", (r"transfer|transfert|迁移|轉移|転移|전이|Übertragung")),
+        ContractGroup("acceptance", (r"acceptance|acceptation|验收|驗收|受け入れ|수용|Abnahme|aceptación")),
+        ContractGroup("reflection", (r"reflection|réflexion|复盘|覆盤|振り返り|회고|Reflexion|reflexión")),
+        ContractGroup("sources", (r"sources|sources et|来源|來源|出典|출처|Quellen|fuentes")),
+    ),
+    "lab-017-skill-discovery-audit": (
+        ContractGroup("discovery_stages", (r"implicit discovery|explicit name|隐式发现|显式名称|隱式發現|顯式名稱|暗黙.*発見|明示.*名前|암시적 발견|명시적 이름|implizite Entdeckung|descubrimiento implícito")),
+        ContractGroup("four_cases", (r"four.case|四类测试|四類測試|四つ.*ケース|네 가지.*사례|vier.*Fälle|cuatro casos")),
+        ContractGroup("license_boundary", (r"license|licence|许可证|許可證|ライセンス|라이선스|Lizenz|licencia")),
+        ContractGroup("failure_variant", (r"failure variant|失败变体|失敗變體|失敗.*境界|Fallo|Fehler")),
+        ContractGroup("transfer", (r"transfer|transfert|迁移|轉移|転移|전이|Übertragung")),
+        ContractGroup("acceptance", (r"acceptance|acceptation|验收|驗收|受け入れ|수용|Abnahme|aceptación")),
+        ContractGroup("reflection", (r"reflection|réflexion|复盘|覆盤|振り返り|회고|Reflexion|reflexión")),
+        ContractGroup("sources", (r"sources|sources et|来源|來源|出典|출처|Quellen|fuentes")),
+    ),
     "lab-018-language-transfer": (
         ContractGroup("part_1", (r"Part 1|Partie 1|第\s*1\s*部分|第1部|1부|Teil 1")),
         ContractGroup("part_2", (r"Part 2|Partie 2|第\s*2\s*部分|第2部|2부|Teil 2")),
@@ -213,6 +253,20 @@ def headings(text: str) -> int:
 
 def has_group(text: str, group: ContractGroup) -> bool:
     return any(re.search(pattern, text, flags=re.IGNORECASE) for pattern in group.patterns)
+
+
+def instructional_body(text: str) -> str:
+    """Return the authored body without metadata-only contract values.
+
+    Deep groups describe teaching content, so frontmatter must not satisfy a
+    group merely because it repeats a field name or status token. Keep fenced
+    examples in the body: fixture fields and command snippets are part of the
+    executable teaching contract.
+    """
+
+    _metadata, body = learning_contract.metadata_block(text)
+    body = re.sub(r"<!--.*?-->", " ", body, flags=re.DOTALL)
+    return body
 
 
 def frontmatter_missing(text: str, kind: str) -> list[str]:
@@ -316,10 +370,11 @@ def audit(matrix: dict[str, Any], *, include_deep: bool = False) -> tuple[list[F
         compressed: list[str] = []
         deep_missing: list[str] = []
         if include_deep and content_id in DEEP_CONTRACTS:
+            deep_body = instructional_body(text)
             deep_missing = [
                 group.name
                 for group in DEEP_CONTRACTS[content_id]
-                if not has_group(text, group)
+                if not has_group(deep_body, group)
             ]
         if locale != "EN":
             # Character ratios are especially misleading for CJK.  Keep the
