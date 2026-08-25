@@ -13,6 +13,11 @@ Playbook is ready for public production use.
 
 ### Visual route candidate (2026-08-24)
 
+- Mobile fallback lists now start collapsed on the Visual Guide so the
+  interactive explanation remains the primary reading surface on narrow
+  screens. The full ordered text remains available on demand, and the visual
+  smoke test asserts both the fallback item counts and the collapsed default.
+
 - Added a focused `npm run test:visuals` smoke check for the standalone guide.
   It verifies all eight locale routes, the 19-board inventory, interactive
   maturity navigation, 390/360px overflow boundaries, and no-JavaScript text
