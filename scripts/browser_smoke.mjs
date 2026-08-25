@@ -771,6 +771,16 @@ try {
     'zh-tw': ['觀察者', '安全使用者', '任務設計者', '工作流程設計者', '能力構建者', '證據審查者', '團隊教練'],
     fr: ['Observateur', 'Utilisateur prudent', 'Concepteur de tâches', 'Concepteur de workflows', 'Constructeur de capacités', 'Évaluateur des preuves', 'Coach d’équipe'],
   };
+  const visualMaturityLabels = {
+    en: ['Designed', 'Rendered', 'Practiced', 'Transferred', 'Independently reviewed'],
+    zh: ['已设计', '已呈现', '已练习', '已迁移', '已独立复核'],
+    es: ['Diseñado', 'Publicado', 'Practicado', 'Transferido', 'Revisado de forma independiente'],
+    ja: ['設計済み', '表示済み', '実践済み', '転用済み', '独立レビュー済み'],
+    ko: ['설계됨', '렌더링됨', '연습됨', '전이됨', '독립적으로 검토됨'],
+    de: ['Entworfen', 'Dargestellt', 'Geübt', 'Übertragen', 'Unabhängig geprüft'],
+    'zh-tw': ['已設計', '已呈現', '已練習', '已遷移', '已獨立複核'],
+    fr: ['Conçu', 'Rendu', 'Pratiqué', 'Transféré', 'Revu indépendamment'],
+  };
   const visualConceptLabels = {
     en: ['Token', 'Context', 'Context window', 'Prompt', 'Response', 'Tool / Agent'],
     zh: ['Token（词元）', 'Context（上下文）', 'Context window（上下文窗口）', 'Prompt（提示）', 'Response（回答）', 'Tool / Agent（工具 / Agent）'],
@@ -836,7 +846,7 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-evidence-nodes] button').count(), 5, `${locale} evidence map lost a step`);
     assert.equal(await visualGuidePage.locator('[data-visual-evidence-fallback] li').count(), 5, `${locale} evidence map text fallback lost a step`);
     assert.notEqual(await visualGuidePage.locator('[data-visual-evidence-image]').getAttribute('alt'), '', `${locale} evidence map image has no alternative text`);
-    assert.equal(await visualGuidePage.locator('.visual-card').count(), 18, `${locale} visual guide lost a teaching board`);
+    assert.equal(await visualGuidePage.locator('.visual-card').count(), 19, `${locale} visual guide lost a teaching board`);
     assert.equal(await visualGuidePage.locator('.visual-header').evaluate((header) => getComputedStyle(header).position), 'relative', `${locale} visual guide navigation can cover a diagram while scrolling`);
     const routeCompassCard = visualGuidePage.locator('.visual-card').first();
     assert.equal(await routeCompassCard.locator('h3').innerText(), visualRouteCompassTitles[locale], `${locale} reader route compass title is not localized`);
@@ -857,6 +867,11 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-capability-title]').innerText(), visualCapabilityLabels[locale][0], `${locale} visual guide capability selection is not localized`);
     assert.notEqual(await visualGuidePage.locator('[data-visual-capability-image]').getAttribute('alt'), '', `${locale} capability ladder image has no alternative text`);
     assert.match(await visualGuidePage.locator('[data-visual-capability-link]').getAttribute('href'), new RegExp(`lang=${locale}$`), `${locale} capability ladder route does not retain the selected language`);
+    assert.deepEqual(await visualGuidePage.locator('[data-visual-maturity-nodes] button strong').allTextContents(), visualMaturityLabels[locale], `${locale} evidence maturity stages are not localized`);
+    assert.equal(await visualGuidePage.locator('[data-visual-maturity-nodes] button').count(), 5, `${locale} evidence maturity map lost a stage`);
+    assert.equal(await visualGuidePage.locator('[data-visual-maturity-fallback] li').count(), 5, `${locale} evidence maturity fallback lost a stage`);
+    assert.equal(await visualGuidePage.locator('[data-visual-maturity-title]').innerText(), visualMaturityLabels[locale][0], `${locale} evidence maturity selection is not localized`);
+    assert.notEqual(await visualGuidePage.locator('[data-visual-maturity-image]').getAttribute('alt'), '', `${locale} evidence maturity image has no alternative text`);
     assert.deepEqual(await visualGuidePage.locator('[data-visual-concept-nodes] button strong').allTextContents(), visualConceptLabels[locale], `${locale} visual guide concept terms are not localized`);
     assert.equal(await visualGuidePage.locator('[data-visual-concept-nodes] button').count(), 6, `${locale} visual guide concept map lost a term`);
     assert.equal(await visualGuidePage.locator('[data-visual-concept-fallback] li').count(), 6, `${locale} visual guide concept fallback lost a term`);
@@ -911,6 +926,10 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-capability-title]').innerText(), visualCapabilityLabels[locale][6], `${locale} capability ladder selection does not update`);
     assert.equal(await visualGuidePage.locator('[data-visual-capability-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} capability ladder selection is not exposed`);
     assert.match(await visualGuidePage.locator('[data-visual-capability-link]').getAttribute('href'), new RegExp(`20-personal-codex-work-system-[A-Z]+\\.md&lang=${locale}$`), `${locale} capability ladder lesson loses its locale`);
+    await visualGuidePage.locator('[data-visual-maturity-nodes] button').last().click();
+    assert.equal(await visualGuidePage.locator('[data-visual-maturity-title]').innerText(), visualMaturityLabels[locale][4], `${locale} evidence maturity selection does not update`);
+    assert.equal(await visualGuidePage.locator('[data-visual-maturity-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} evidence maturity selection is not exposed`);
+    assert.match(await visualGuidePage.locator('[data-visual-maturity-link]').getAttribute('href'), new RegExp(`15-research-track-[A-Z]+\\.md&lang=${locale}$`), `${locale} evidence maturity lesson loses its locale`);
     await visualGuidePage.locator('[data-visual-concept-nodes] button').last().click();
     assert.equal(await visualGuidePage.locator('[data-visual-concept-title]').innerText(), visualConceptLabels[locale][5], `${locale} visual guide concept selection does not update`);
     assert.equal(await visualGuidePage.locator('[data-visual-concept-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} visual guide concept selection is not exposed`);
@@ -946,6 +965,7 @@ try {
     await noHorizontalOverflow(visualGuidePage, `${locale} visual guide desktop`);
     if (locale === 'en') {
       await visualGuidePage.locator('#visual-capability').screenshot({ path: path.join(visualEvidenceDirectory, 'capability-ladder-desktop.png') });
+      await visualGuidePage.locator('#visual-maturity').screenshot({ path: path.join(visualEvidenceDirectory, 'evidence-maturity-desktop.png') });
     }
   }
   const rootVisualPage = await context.newPage();
@@ -953,7 +973,7 @@ try {
   assert.equal(await rootVisualPage.locator('html').getAttribute('lang'), 'fr', 'root visual guide does not preserve the requested language');
   assert.equal(await rootVisualPage.locator('h1').innerText(), 'Voyez la méthode avant d’entrer dans le détail.', 'root visual guide serves the wrong document');
   assert.equal(await rootVisualPage.locator('link[rel="canonical"]').getAttribute('href'), 'https://docs.prysai.com/llm-playbook/visuals.html', 'root visual guide is missing its canonical URL');
-  assert.equal(await rootVisualPage.locator('.visual-card').count(), 18, 'root visual guide lost its teaching boards');
+  assert.equal(await rootVisualPage.locator('.visual-card').count(), 19, 'root visual guide lost its teaching boards');
   assert.equal(await rootVisualPage.locator('[data-visual-map-nodes] button').count(), 6, 'root visual guide lost its dynamic route map');
   await noHorizontalOverflow(rootVisualPage, 'root visual guide desktop');
   await rootVisualPage.close();
@@ -965,6 +985,8 @@ try {
   assert.equal(await visualGuidePage.locator('[data-visual-journey-nodes] button').count(), 4, 'mobile visual guide learning journey loses a stage');
   assert.equal(await visualGuidePage.locator('[data-visual-capability-nodes] button').count(), 7, 'mobile capability ladder loses a level');
   assert.equal(await visualGuidePage.locator('[data-visual-capability-fallback] li').count(), 7, 'mobile capability ladder fallback loses a level');
+  assert.equal(await visualGuidePage.locator('[data-visual-maturity-nodes] button').count(), 5, 'mobile evidence maturity map loses a stage');
+  assert.equal(await visualGuidePage.locator('[data-visual-maturity-fallback] li').count(), 5, 'mobile evidence maturity fallback loses a stage');
   assert.equal(await visualGuidePage.locator('[data-visual-concept-nodes] button').count(), 6, 'mobile visual guide concept map loses a term');
   assert.equal(await visualGuidePage.locator('[data-visual-concept-fallback] li').count(), 6, 'mobile visual guide concept fallback loses a term');
    assert.equal(await visualGuidePage.locator('[data-visual-route-nodes] button').count(), 11, 'mobile visual route loses a step');
@@ -977,7 +999,7 @@ try {
   assert.equal(await visualGuidePage.locator('[data-visual-action-boundary-fallback] li').count(), 5, 'mobile action boundary fallback loses a layer');
   assert.equal(await visualGuidePage.locator('[data-visual-triage-nodes] button').count(), 4, 'mobile claim triage map loses a branch');
   assert.equal(await visualGuidePage.locator('[data-visual-triage-fallback] li').count(), 4, 'mobile claim triage fallback loses a branch');
-  assert.equal(await visualGuidePage.locator('.visual-card').count(), 18, 'mobile visual guide loses teaching boards');
+  assert.equal(await visualGuidePage.locator('.visual-card').count(), 19, 'mobile visual guide loses teaching boards');
   await visualGuidePage.locator('#visual-capability').scrollIntoViewIfNeeded();
   await visualGuidePage.screenshot({ path: path.join(visualEvidenceDirectory, 'capability-ladder-mobile-fr.png'), fullPage: false });
   await visualGuidePage.screenshot({ path: path.join(visualEvidenceDirectory, 'visual-guide-mobile-fr.png'), fullPage: false });
@@ -999,6 +1021,8 @@ try {
   assert.equal(await noScriptVisualPage.locator('[data-visual-journey-fallback] a').count(), 4, 'static visual guide learning journey route has no lesson links');
   assert.equal(await noScriptVisualPage.locator('[data-visual-capability-fallback] li').count(), 7, 'visual guide has no static capability ladder when JavaScript is disabled');
   assert.equal(await noScriptVisualPage.locator('[data-visual-capability-fallback] a').count(), 7, 'static capability ladder has no lesson links');
+  assert.equal(await noScriptVisualPage.locator('[data-visual-maturity-fallback] li').count(), 5, 'visual guide has no static evidence maturity ladder when JavaScript is disabled');
+  assert.equal(await noScriptVisualPage.locator('[data-visual-maturity-fallback] a').count(), 5, 'static evidence maturity ladder has no lesson links');
   assert.equal(await noScriptVisualPage.locator('[data-visual-concept-fallback] li').count(), 6, 'visual guide has no static concept map when JavaScript is disabled');
   assert.equal(await noScriptVisualPage.locator('[data-visual-concept-fallback] a').count(), 6, 'static visual guide concept map has no lesson links');
   assert.equal(await noScriptVisualPage.locator('[data-visual-action-boundary-fallback] li').count(), 5, 'visual guide has no static action boundary map when JavaScript is disabled');
