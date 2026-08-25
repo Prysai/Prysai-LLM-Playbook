@@ -601,6 +601,9 @@ try {
     assert.notEqual((await journey.locator('[data-journey-detail-next]').innerText()).trim(), '', `${locale} learning journey selected stage has no next move`);
     assert.match(await journey.locator('[data-journey-detail-link]').getAttribute('href'), new RegExp(`lang=${locale}$`), `${locale} learning journey route does not retain the selected language`);
     assert.equal(await journey.locator('[data-journey-fallback]').count(), 1, `${locale} learning journey has no static text fallback`);
+    if (locale === 'en') {
+      await journey.screenshot({ path: path.join(visualEvidenceDirectory, 'learning-journey-map-desktop.png') });
+    }
     await journey.scrollIntoViewIfNeeded();
     await journey.locator('img').waitFor();
     await journey.locator('img').evaluate((image) => image.complete && image.naturalWidth > 0 ? true : new Promise((resolve) => {
@@ -694,6 +697,7 @@ try {
   assert.equal(await mobileJourney.locator('[data-journey-node]').count(), 4, 'mobile learning journey map loses a stage');
   await mobileJourney.locator('[data-journey-node="evidence"]').click();
   assert.equal(await mobileJourney.locator('[data-journey-detail-title]').innerText(), 'Boucle de preuves', 'mobile learning journey map cannot activate the localized evidence stage');
+  await mobileJourney.screenshot({ path: path.join(visualEvidenceDirectory, 'learning-journey-map-mobile.png') });
   await page.locator('#foundation-visuals').scrollIntoViewIfNeeded();
   await page.locator('#foundation-visuals').screenshot({ path: path.join(visualEvidenceDirectory, 'foundation-visuals-mobile.png') });
   await page.goto(`${origin}/site/?lang=fr`, { waitUntil: 'networkidle' });
