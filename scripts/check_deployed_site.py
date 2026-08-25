@@ -29,6 +29,7 @@ DEFAULT_ATTEMPTS = 18
 DEFAULT_DELAY_SECONDS = 10.0
 CORE_PATHS = (
     "index.html",
+    "visuals.html",
     "robots.txt",
     "sitemap.xml",
     "sitemap_index.xml",
@@ -44,6 +45,9 @@ CORE_PATHS = (
     "site/traditional-chinese.js",
     "site/search-index.js",
     "site/seo-config.json",
+    "site/visuals.html",
+    "site/visuals.css",
+    "site/visuals.js",
 )
 
 
