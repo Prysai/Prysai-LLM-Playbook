@@ -693,6 +693,12 @@
 
   function assetHref(asset) { return `../assets/teaching/${asset}`; }
 
+  function viewerHref(asset, label = '') {
+    const params = new URLSearchParams({ asset, lang: locale });
+    if (label) params.set('label', label);
+    return `visual.html?${params.toString()}`;
+  }
+
   function catalogReaderHref(href) {
     if (!href) return '';
     const base = href.replace(/^\.\.\//, '').replace(/-(?:EN|ZH|ES|JA|KO|DE|ZHTW|FR)\.md$/i, '');
@@ -820,7 +826,7 @@
     if (detailNext) detailNext.textContent = localized(intent.next);
     if (detailLink) detailLink.href = readerHref(intent.path);
     if (image) image.alt = localized(intent.imageAlt);
-    if (imageLink) imageLink.href = assetHref(intent.asset);
+    if (imageLink) imageLink.href = viewerHref(intent.asset, localized(intent.labels));
     if (imageLink) imageLink.setAttribute('aria-label', `${strings.goalOpenVisual}: ${localized(intent.labels)}`);
     if (caption) caption.textContent = localized(intent.caption);
   }
@@ -874,7 +880,10 @@
     if (detailNext) detailNext.textContent = localized(stage.next);
     if (detailLink) detailLink.href = readerHref(stage.path);
     if (image) image.alt = strings.journeyFigureAlt;
-    if (imageLink) imageLink.setAttribute('aria-label', `${strings.journeyOpenVisual}: ${localized(stage.labels)}`);
+    if (imageLink) {
+      imageLink.href = viewerHref('playbook-learning-journey-red-black.svg', localized(stage.labels));
+      imageLink.setAttribute('aria-label', `${strings.journeyOpenVisual}: ${localized(stage.labels)}`);
+    }
   }
 
   function renderCapabilityMap() {
@@ -938,7 +947,10 @@
       detailLink.hidden = !next?.href;
     }
     if (image) image.alt = strings.capabilityFigureAlt;
-    if (imageLink) imageLink.setAttribute('aria-label', `${strings.capabilityOpenVisual}: ${localizedCapabilityName(level)}`);
+    if (imageLink) {
+      imageLink.href = viewerHref('capability-ladder-red-black.svg', localizedCapabilityName(level));
+      imageLink.setAttribute('aria-label', `${strings.capabilityOpenVisual}: ${localizedCapabilityName(level)}`);
+    }
   }
 
   function renderMaturityMap() {
@@ -1004,7 +1016,10 @@
     if (detailNext) detailNext.textContent = localized(stage.next);
     if (detailLink) detailLink.href = readerHref(stage.path);
     if (image) image.alt = strings.maturityFigureAlt;
-    if (imageLink) imageLink.setAttribute('aria-label', `${strings.maturityOpenVisual}: ${localized(stage.labels)}`);
+    if (imageLink) {
+      imageLink.href = viewerHref('evidence-maturity-ladder-red-black.svg', localized(stage.labels));
+      imageLink.setAttribute('aria-label', `${strings.maturityOpenVisual}: ${localized(stage.labels)}`);
+    }
   }
 
   function setText() {
@@ -1021,10 +1036,17 @@
     });
     queryAll('[data-visual-home]').forEach((link) => { link.href = `index.html?lang=${encodeURIComponent(locale)}`; });
     queryAll('[data-visual-reader]').forEach((link) => { link.href = readerHref('book/guides/llm-fundamentals'); });
+    queryAll('[data-visual-viewer-link]').forEach((link) => {
+      const asset = link.dataset.visualAsset;
+      if (asset) link.href = viewerHref(asset);
+    });
     const anatomyImage = query('[data-visual-anatomy-image]');
     if (anatomyImage) anatomyImage.alt = strings.howFigureAlt;
     const anatomyLink = query('[data-visual-anatomy-link]');
-    if (anatomyLink) anatomyLink.setAttribute('aria-label', strings.openFullVisual);
+    if (anatomyLink) {
+      anatomyLink.href = viewerHref('reader-page-anatomy-red-black.svg', strings.howEyebrow);
+      anatomyLink.setAttribute('aria-label', strings.openFullVisual);
+    }
     document.documentElement.lang = locale;
     document.title = `${strings.title} — Prysai LLM Playbook`;
     const banner = query('[data-visual-banner]');
@@ -1135,7 +1157,10 @@
     if (detailNext) detailNext.textContent = localized(step.next);
     if (detailLink) detailLink.href = readerHref(step.path);
     if (image) image.alt = strings.evidenceFigureAlt;
-    if (imageLink) imageLink.setAttribute('aria-label', `${strings.evidenceOpenVisual}: ${localized(step.labels)}`);
+    if (imageLink) {
+      imageLink.href = viewerHref('evidence-to-decision-stop-map-red-black.svg', localized(step.labels));
+      imageLink.setAttribute('aria-label', `${strings.evidenceOpenVisual}: ${localized(step.labels)}`);
+    }
   }
 
   function renderReadingLoop() {
@@ -1189,7 +1214,10 @@
     if (detailNext) detailNext.textContent = localized(step.next);
     if (detailLink) detailLink.href = readerHref(step.path);
     if (image) image.alt = strings.readingFigureAlt;
-    if (imageLink) imageLink.setAttribute('aria-label', `${strings.readingOpenVisual}: ${localized(step.labels)}`);
+    if (imageLink) {
+      imageLink.href = viewerHref('reader-page-reading-loop-red-black.svg', localized(step.labels));
+      imageLink.setAttribute('aria-label', `${strings.readingOpenVisual}: ${localized(step.labels)}`);
+    }
   }
 
   function renderReceiptMap() {
@@ -1243,7 +1271,10 @@
     if (detailNext) detailNext.textContent = localized(step.next);
     if (detailLink) detailLink.href = readerHref(step.path);
     if (image) image.alt = strings.receiptFigureAlt;
-    if (imageLink) imageLink.setAttribute('aria-label', `${strings.receiptOpenVisual}: ${localized(step.labels)}`);
+    if (imageLink) {
+      imageLink.href = viewerHref('first-attempt-evidence-receipt-red-black.svg', localized(step.labels));
+      imageLink.setAttribute('aria-label', `${strings.receiptOpenVisual}: ${localized(step.labels)}`);
+    }
   }
 
   function renderConceptMap() {
@@ -1297,7 +1328,10 @@
     if (detailNext) detailNext.textContent = localized(concept.next);
     if (detailLink) detailLink.href = readerHref(concept.path);
     if (image) image.alt = strings.conceptFigureAlt;
-    if (imageLink) imageLink.setAttribute('aria-label', `${strings.conceptOpenVisual}: ${localized(concept.labels)}`);
+    if (imageLink) {
+      imageLink.href = viewerHref('llm-six-terms-to-one-check.svg', localized(concept.labels));
+      imageLink.setAttribute('aria-label', `${strings.conceptOpenVisual}: ${localized(concept.labels)}`);
+    }
   }
 
   function renderActionBoundaryMap() {
@@ -1351,7 +1385,10 @@
     if (detailNext) detailNext.textContent = localized(step.next);
     if (detailLink) detailLink.href = readerHref(step.path);
     if (image) image.alt = strings.boundaryFigureAlt;
-    if (imageLink) imageLink.setAttribute('aria-label', `${strings.boundaryOpenVisual}: ${localized(step.labels)}`);
+    if (imageLink) {
+      imageLink.href = viewerHref('observable-action-boundary-red-black.svg', localized(step.labels));
+      imageLink.setAttribute('aria-label', `${strings.boundaryOpenVisual}: ${localized(step.labels)}`);
+    }
   }
 
   function renderTriageMap() {
@@ -1405,7 +1442,10 @@
     if (detailNext) detailNext.textContent = localized(step.next);
     if (detailLink) detailLink.href = readerHref(step.path);
     if (image) image.alt = strings.triageFigureAlt;
-    if (imageLink) imageLink.setAttribute('aria-label', `${strings.triageOpenVisual}: ${localized(step.labels)}`);
+    if (imageLink) {
+      imageLink.href = viewerHref('response-claim-triage-red-black.svg', localized(step.labels));
+      imageLink.setAttribute('aria-label', `${strings.triageOpenVisual}: ${localized(step.labels)}`);
+    }
   }
 
   function renderGallery() {
@@ -1419,7 +1459,7 @@
       article.className = 'visual-card';
       const link = document.createElement('a');
       link.className = 'visual-card-link';
-      link.href = assetHref(card.asset);
+      link.href = viewerHref(card.asset, localized(card.titles));
       link.target = '_blank';
       link.rel = 'noreferrer';
       link.setAttribute('aria-label', `${strings.openFullVisual}: ${localized(card.titles)}`);
@@ -1517,7 +1557,7 @@
       image.alt = `${localized(card.titles)} — ${localized(card.bodies)}`;
     }
     if (imageLink) {
-      imageLink.href = assetHref(card.asset);
+      imageLink.href = viewerHref(card.asset, localized(card.titles));
       imageLink.setAttribute('aria-label', `${strings.explorerOpenVisual}: ${localized(card.titles)}`);
     }
     if (caption) caption.textContent = localized(card.bodies);
