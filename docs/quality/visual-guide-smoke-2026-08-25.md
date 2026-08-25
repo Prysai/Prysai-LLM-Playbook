@@ -33,10 +33,10 @@ python -X utf8 scripts/run_tests.py
 | No-script fallback | passed | English ordered text fallbacks for every interactive visual route |
 | Repository validators | passed | project, structure, content completeness, learning contract, and site i18n |
 | Regression suite | passed | `script_tests=48 passed=49 failed=0` |
-| Full browser smoke | not established | the broader `scripts/browser_smoke.mjs` exceeded its 240-second guard during this run; no pass claim is made |
+| Full browser smoke | passed | the independent `scripts/browser_smoke.mjs` rerun completed with exit code 0 after the focused viewer checks |
 
 The focused command is intentionally narrower than the full browser smoke. It
 is a fast regression signal for the visual guide and viewer. The Reader action
 note and Traditional Chinese mobile render were also checked with a local
-Playwright run. These checks are not a substitute for the broader Reader,
-homepage, deployment, or learner checks.
+Playwright run, followed by an independent full browser smoke pass. These
+checks are not a substitute for deployment propagation or learner checks.
