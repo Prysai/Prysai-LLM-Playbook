@@ -1953,12 +1953,12 @@ try {
     );
     assert.equal((await page.locator('[data-reader-concept-map-summary]').innerText()).trim(), visualGuideLocales[locale][0], `${locale} concept map label is not localized`);
     await page.locator('[data-reader-concept-map-summary]').click();
-    assert.equal((await page.locator('[data-reader-concept-map-detail-label]').innerText()).trim(), conceptDetailLocales[locale][0], `${locale} concept map selected-label is not localized`);
-    assert.equal((await page.locator('[data-reader-concept-map-detail-next-label]').innerText()).trim(), conceptDetailLocales[locale][1], `${locale} concept map next-label is not localized`);
+    assert.equal((await page.locator('[data-reader-concept-map-detail-label]').textContent()).trim(), conceptDetailLocales[locale][0], `${locale} concept map selected-label is not localized`);
+    assert.equal((await page.locator('[data-reader-concept-map-detail-next-label]').textContent()).trim(), conceptDetailLocales[locale][1], `${locale} concept map next-label is not localized`);
     assert.notEqual((await page.locator('[data-reader-concept-map-detail-title]').innerText()).trim(), '', `${locale} concept map detail title is empty`);
     assert.notEqual((await page.locator('[data-reader-concept-map-detail-body]').innerText()).trim(), '', `${locale} concept map detail summary is empty`);
     assert.notEqual((await page.locator('[data-reader-concept-map-detail-next]').innerText()).trim(), '', `${locale} concept map detail next section is empty`);
-    assert.equal((await page.locator('[data-reader-concept-map-detail-open]').innerText()).trim(), conceptDetailLocales[locale][2], `${locale} concept map open-label is not localized`);
+    assert.equal((await page.locator('[data-reader-concept-map-detail-open]').textContent()).trim(), conceptDetailLocales[locale][2], `${locale} concept map open-label is not localized`);
     assert.match(await page.locator('[data-reader-concept-map-detail-link]').getAttribute('href') || '', /^#/, `${locale} concept map detail link is not an in-page link`);
     const localizedCourseMap = page.locator('[data-reader-course-map]');
     assert.equal(await localizedCourseMap.isVisible(), true, `${locale} whole-Playbook map is not available`);
@@ -1974,8 +1974,8 @@ try {
     assert.match(await page.locator('[data-reader-course-map-figure-link]').getAttribute('aria-label'), /.+/, `${locale} whole-Playbook map visual link has no accessible label`);
     assert.equal((await page.locator('[data-reader-visual-companion-summary]').innerText()).trim(), visualGuideLocales[locale][1], `${locale} visual companion label is not localized`);
     assert.equal((await page.locator('[data-reader-inline-concept-map] summary').innerText()).trim(), visualGuideLocales[locale][0], `${locale} inline concept map label is not localized`);
-    assert.equal((await page.locator('.reader-inline-concept-map-detail-label').innerText()).trim(), conceptDetailLocales[locale][0], `${locale} inline concept map selected-label is not localized`);
-    assert.equal((await page.locator('.reader-inline-concept-map-detail-next span').innerText()).trim().replace(/:$/, ''), conceptDetailLocales[locale][1], `${locale} inline concept map next-label is not localized`);
+    assert.equal((await page.locator('.reader-inline-concept-map-detail-label').textContent()).trim(), conceptDetailLocales[locale][0], `${locale} inline concept map selected-label is not localized`);
+    assert.equal((await page.locator('.reader-inline-concept-map-detail-next span').textContent()).trim().replace(/:$/, ''), conceptDetailLocales[locale][1], `${locale} inline concept map next-label is not localized`);
     assert.notEqual((await page.locator('[data-reader-inline-concept-map-detail] > strong').innerText()).trim(), '', `${locale} inline concept map detail title is empty`);
     assert.notEqual((await page.locator('[data-reader-inline-concept-map-detail] p').first().innerText()).trim(), '', `${locale} inline concept map detail summary is empty`);
     assert.notEqual((await page.locator('[data-reader-inline-concept-map-detail-next] strong').innerText()).trim(), '', `${locale} inline concept map detail next section is empty`);
