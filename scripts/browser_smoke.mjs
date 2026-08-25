@@ -720,6 +720,16 @@ try {
     'zh-tw': ['問題', '來源', '觀察', '判斷', '停止'],
     fr: ['Question', 'Source', 'Observation', 'Décision', 'Arrêt'],
   };
+  const visualTriageLabels = {
+    en: ['Text only', 'Tool or run claim', 'External side effect', 'Unknown or overconfident'],
+    zh: ['只有文字', '工具或执行声称', '外部副作用', '未知或过度确定'],
+    es: ['Solo texto', 'Afirmación de ejecución', 'Efecto externo', 'Desconocido o demasiado seguro'],
+    ja: ['文章だけ', 'ツール／実行の主張', '外部への影響', '不明／過度に断定的'],
+    ko: ['텍스트만 있음', '도구 또는 실행 주장', '외부 효과', '알 수 없음 또는 과도한 확신'],
+    de: ['Nur Text', 'Tool- oder Ausführungsbehauptung', 'Außenwirkung', 'Unbekannt oder übermäßig sicher'],
+    'zh-tw': ['只有文字', '工具或執行主張', '外部副作用', '未知或過度確定'],
+    fr: ['Texte seulement', 'Action ou exécution annoncée', 'Effet externe', 'Inconnu ou trop affirmatif'],
+  };
   const visualRouteCompassTitles = {
     en: 'Read one page as a four-step route',
     zh: '把一页内容读成四步路线',
@@ -761,14 +771,14 @@ try {
     fr: ['Token', 'Contexte', 'Fenêtre de contexte', 'Prompt', 'Réponse', 'Outil / Agent'],
   };
   const visualRouteLabels = {
-    en: ['Choose a purpose', 'See the order', 'Separate the terms', 'Check the action boundary', 'Follow the work loop', 'Decide from the record', 'Browse one decision', 'Read the board correctly', 'Read one page into practice'],
-    zh: ['选择一个目的', '看清顺序', '分清术语', '检查行动边界', '跟着工作闭环走', '根据记录作决定', '查看一个决定', '正确阅读图板', '把一页内容读到实践'],
-    es: ['Elegir un propósito', 'Ver el orden', 'Separar los términos', 'Comprobar el límite de acción', 'Seguir el ciclo de trabajo', 'Decidir a partir del registro', 'Ver una decisión', 'Leer bien el tablero', 'Llevar una página a la práctica'],
-    ja: ['目的を選ぶ', '順序を見る', '用語を分ける', 'アクションの境界を確認する', '作業ループをたどる', '記録から判断する', '1つの判断を見る', 'ボードを正しく読む', '1ページを実践につなげる'],
-    ko: ['목적 고르기', '순서 보기', '용어 구분하기', '행동 경계 확인하기', '작업 루프 따라가기', '기록으로 판단하기', '결정 하나 살펴보기', '보드 올바르게 읽기', '페이지 하나를 실천으로 옮기기'],
-    de: ['Einen Zweck wählen', 'Die Reihenfolge sehen', 'Begriffe trennen', 'Die Aktionsgrenze prüfen', 'Der Arbeitsschleife folgen', 'Aus dem Beleg entscheiden', 'Eine Entscheidung ansehen', 'Die Tafel richtig lesen', 'Eine Seite in die Praxis bringen'],
-    'zh-tw': ['選擇一個目的', '看清順序', '分清術語', '檢查行動界線', '跟著工作閉環走', '根據紀錄作判斷', '查看一個判斷', '正確閱讀圖板', '把一頁內容讀到實踐'],
-    fr: ['Choisir un objectif', 'Voir l’ordre', 'Distinguer les notions', 'Vérifier la limite d’action', 'Suivre la boucle de travail', 'Décider à partir du relevé', 'Voir une décision', 'Lire correctement la planche', 'Passer d’une page à la pratique'],
+    en: ['Choose a purpose', 'See the order', 'Separate the terms', 'Check the action boundary', 'Classify the claim', 'Follow the work loop', 'Decide from the record', 'Browse one decision', 'Read the board correctly', 'Read one page into practice'],
+    zh: ['选择一个目的', '看清顺序', '分清术语', '检查行动边界', '先分类结论', '跟着工作闭环走', '根据记录作决定', '查看一个决定', '正确阅读图板', '把一页内容读到实践'],
+    es: ['Elegir un propósito', 'Ver el orden', 'Separar los términos', 'Comprobar el límite de acción', 'Clasificar la afirmación', 'Seguir el ciclo de trabajo', 'Decidir a partir del registro', 'Ver una decisión', 'Leer bien el tablero', 'Llevar una página a la práctica'],
+    ja: ['目的を選ぶ', '順序を見る', '用語を分ける', 'アクションの境界を確認する', '主張を分類する', '作業ループをたどる', '記録から判断する', '1つの判断を見る', 'ボードを正しく読む', '1ページを実践につなげる'],
+    ko: ['목적 고르기', '순서 보기', '용어 구분하기', '행동 경계 확인하기', '주장 분류하기', '작업 루프 따라가기', '기록으로 판단하기', '결정 하나 살펴보기', '보드 올바르게 읽기', '페이지 하나를 실천으로 옮기기'],
+    de: ['Einen Zweck wählen', 'Die Reihenfolge sehen', 'Begriffe trennen', 'Die Aktionsgrenze prüfen', 'Die Aussage einordnen', 'Der Arbeitsschleife folgen', 'Aus dem Beleg entscheiden', 'Eine Entscheidung ansehen', 'Die Tafel richtig lesen', 'Eine Seite in die Praxis bringen'],
+    'zh-tw': ['選擇一個目的', '看清順序', '分清術語', '檢查行動界線', '先分類主張', '跟著工作閉環走', '根據紀錄作判斷', '查看一個判斷', '正確閱讀圖板', '把一頁內容讀到實踐'],
+    fr: ['Choisir un objectif', 'Voir l’ordre', 'Distinguer les notions', 'Vérifier la limite d’action', 'Classer l’affirmation', 'Suivre la boucle de travail', 'Décider à partir du relevé', 'Voir une décision', 'Lire correctement la planche', 'Passer d’une page à la pratique'],
   };
   const visualReadingLabels = {
     en: ['Name the problem', 'Find the concept', 'Try one bounded move', 'Inspect the record', 'State the boundary', 'Try a changed task'],
@@ -805,7 +815,7 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-evidence-nodes] button').count(), 5, `${locale} evidence map lost a step`);
     assert.equal(await visualGuidePage.locator('[data-visual-evidence-fallback] li').count(), 5, `${locale} evidence map text fallback lost a step`);
     assert.notEqual(await visualGuidePage.locator('[data-visual-evidence-image]').getAttribute('alt'), '', `${locale} evidence map image has no alternative text`);
-    assert.equal(await visualGuidePage.locator('.visual-card').count(), 16, `${locale} visual guide lost a teaching board`);
+    assert.equal(await visualGuidePage.locator('.visual-card').count(), 17, `${locale} visual guide lost a teaching board`);
     assert.equal(await visualGuidePage.locator('.visual-header').evaluate((header) => getComputedStyle(header).position), 'relative', `${locale} visual guide navigation can cover a diagram while scrolling`);
     const routeCompassCard = visualGuidePage.locator('.visual-card').first();
     assert.equal(await routeCompassCard.locator('h3').innerText(), visualRouteCompassTitles[locale], `${locale} reader route compass title is not localized`);
@@ -826,8 +836,8 @@ try {
     assert.notEqual(await visualGuidePage.locator('[data-visual-concept-image]').getAttribute('alt'), '', `${locale} concept map image has no alternative text`);
     assert.equal(await visualGuidePage.locator('[data-visual-concept-title]').innerText(), visualConceptLabels[locale][0], `${locale} visual guide concept selection is not localized`);
     assert.deepEqual(await visualGuidePage.locator('[data-visual-route-nodes] button strong').allTextContents(), visualRouteLabels[locale], `${locale} visual route steps are not localized`);
-    assert.equal(await visualGuidePage.locator('[data-visual-route-nodes] button').count(), 9, `${locale} visual route lost a step`);
-    assert.equal(await visualGuidePage.locator('[data-visual-route-fallback] li').count(), 9, `${locale} visual route text fallback lost a step`);
+    assert.equal(await visualGuidePage.locator('[data-visual-route-nodes] button').count(), 10, `${locale} visual route lost a step`);
+    assert.equal(await visualGuidePage.locator('[data-visual-route-fallback] li').count(), 10, `${locale} visual route text fallback lost a step`);
     assert.equal(await visualGuidePage.locator('[data-visual-route-title]').innerText(), visualRouteLabels[locale][0], `${locale} visual route selection is not localized`);
     assert.deepEqual(await visualGuidePage.locator('[data-visual-reading-loop-nodes] button strong').allTextContents(), visualReadingLabels[locale], `${locale} page practice steps are not localized`);
     assert.equal(await visualGuidePage.locator('[data-visual-reading-loop-nodes] button').count(), 6, `${locale} page practice map lost a step`);
@@ -839,6 +849,11 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-action-boundary-fallback] li').count(), 5, `${locale} action boundary fallback lost a layer`);
     assert.notEqual(await visualGuidePage.locator('[data-visual-action-boundary-image]').getAttribute('alt'), '', `${locale} action boundary image has no alternative text`);
     assert.equal(await visualGuidePage.locator('[data-visual-action-boundary-title]').innerText(), visualBoundaryLabels[locale][0], `${locale} action boundary selection is not localized`);
+    assert.deepEqual(await visualGuidePage.locator('[data-visual-triage-nodes] button strong').allTextContents(), visualTriageLabels[locale], `${locale} claim triage labels are not localized`);
+    assert.equal(await visualGuidePage.locator('[data-visual-triage-nodes] button').count(), 4, `${locale} claim triage map lost a branch`);
+    assert.equal(await visualGuidePage.locator('[data-visual-triage-fallback] li').count(), 4, `${locale} claim triage text fallback lost a branch`);
+    assert.notEqual(await visualGuidePage.locator('[data-visual-triage-image]').getAttribute('alt'), '', `${locale} claim triage image has no alternative text`);
+    assert.equal(await visualGuidePage.locator('[data-visual-triage-title]').innerText(), visualTriageLabels[locale][0], `${locale} claim triage selection is not localized`);
     assert.notEqual(await visualGuidePage.locator('.visual-card img').first().getAttribute('alt'), '', `${locale} visual guide image has no alternative text`);
     assert.equal(await visualGuidePage.locator('.visual-brand').getAttribute('aria-label'), {
       en: 'Prysai LLM Playbook home', zh: 'Prysai LLM Playbook 首页', es: 'Inicio de Prysai LLM Playbook', ja: 'Prysai LLM Playbook のホーム', ko: 'Prysai LLM Playbook 홈', de: 'Startseite des Prysai LLM Playbook', 'zh-tw': 'Prysai LLM Playbook 首頁', fr: 'Accueil du Prysai LLM Playbook',
@@ -863,12 +878,12 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-concept-title]').innerText(), visualConceptLabels[locale][5], `${locale} visual guide concept selection does not update`);
     assert.equal(await visualGuidePage.locator('[data-visual-concept-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} visual guide concept selection is not exposed`);
     assert.match(await visualGuidePage.locator('[data-visual-concept-link]').getAttribute('href'), new RegExp(`13-action-boundaries-[A-Z]+\.md&lang=${locale}$`), `${locale} visual guide concept route loses its locale`);
-    await visualGuidePage.locator('[data-visual-route-nodes] button').nth(7).click();
-    assert.equal(await visualGuidePage.locator('[data-visual-route-title]').innerText(), visualRouteLabels[locale][7], `${locale} visual route selection does not update`);
-    assert.equal(await visualGuidePage.locator('[data-visual-route-nodes] button').nth(7).getAttribute('aria-pressed'), 'true', `${locale} visual route selection is not exposed`);
+    await visualGuidePage.locator('[data-visual-route-nodes] button').nth(8).click();
+    assert.equal(await visualGuidePage.locator('[data-visual-route-title]').innerText(), visualRouteLabels[locale][8], `${locale} visual route selection does not update`);
+    assert.equal(await visualGuidePage.locator('[data-visual-route-nodes] button').nth(8).getAttribute('aria-pressed'), 'true', `${locale} visual route selection is not exposed`);
     assert.equal(await visualGuidePage.locator('[data-visual-route-link]').getAttribute('href'), '#visual-how', `${locale} visual route does not link to the matching section`);
     await visualGuidePage.locator('[data-visual-route-nodes] button').last().click();
-    assert.equal(await visualGuidePage.locator('[data-visual-route-title]').innerText(), visualRouteLabels[locale][8], `${locale} page practice route selection does not update`);
+    assert.equal(await visualGuidePage.locator('[data-visual-route-title]').innerText(), visualRouteLabels[locale][9], `${locale} page practice route selection does not update`);
     assert.equal(await visualGuidePage.locator('[data-visual-route-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} page practice route selection is not exposed`);
     assert.equal(await visualGuidePage.locator('[data-visual-route-link]').getAttribute('href'), '#visual-reading-loop', `${locale} page practice route does not link to the matching section`);
     await visualGuidePage.locator('[data-visual-reading-loop-nodes] button').last().click();
@@ -879,6 +894,10 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-action-boundary-title]').innerText(), visualBoundaryLabels[locale][4], `${locale} action boundary selection does not update`);
     assert.equal(await visualGuidePage.locator('[data-visual-action-boundary-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} action boundary selection is not exposed`);
     assert.match(await visualGuidePage.locator('[data-visual-action-boundary-link]').getAttribute('href'), new RegExp(`13-action-boundaries-[A-Z]+\\.md&lang=${locale}$`), `${locale} action boundary lesson loses its locale`);
+    await visualGuidePage.locator('[data-visual-triage-nodes] button').last().click();
+    assert.equal(await visualGuidePage.locator('[data-visual-triage-title]').innerText(), visualTriageLabels[locale][3], `${locale} claim triage selection does not update`);
+    assert.equal(await visualGuidePage.locator('[data-visual-triage-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} claim triage selection is not exposed`);
+    assert.match(await visualGuidePage.locator('[data-visual-triage-link]').getAttribute('href'), new RegExp(`09-verification-and-recovery-[A-Z]+\\.md&lang=${locale}$`), `${locale} claim triage lesson loses its locale`);
     await noHorizontalOverflow(visualGuidePage, `${locale} visual guide desktop`);
   }
   await visualGuidePage.setViewportSize({ width: 390, height: 844 });
@@ -889,20 +908,22 @@ try {
   assert.equal(await visualGuidePage.locator('[data-visual-journey-nodes] button').count(), 4, 'mobile visual guide learning journey loses a stage');
   assert.equal(await visualGuidePage.locator('[data-visual-concept-nodes] button').count(), 6, 'mobile visual guide concept map loses a term');
   assert.equal(await visualGuidePage.locator('[data-visual-concept-fallback] li').count(), 6, 'mobile visual guide concept fallback loses a term');
-  assert.equal(await visualGuidePage.locator('[data-visual-route-nodes] button').count(), 9, 'mobile visual route loses a step');
-  assert.equal(await visualGuidePage.locator('[data-visual-route-fallback] li').count(), 9, 'mobile visual route fallback loses a step');
+   assert.equal(await visualGuidePage.locator('[data-visual-route-nodes] button').count(), 10, 'mobile visual route loses a step');
+   assert.equal(await visualGuidePage.locator('[data-visual-route-fallback] li').count(), 10, 'mobile visual route fallback loses a step');
   assert.equal(await visualGuidePage.locator('[data-visual-reading-loop-nodes] button').count(), 6, 'mobile page practice map loses a step');
   assert.equal(await visualGuidePage.locator('[data-visual-reading-loop-fallback] li').count(), 6, 'mobile page practice fallback loses a step');
   assert.equal(await visualGuidePage.locator('[data-visual-action-boundary-nodes] button').count(), 5, 'mobile action boundary map loses a layer');
   assert.equal(await visualGuidePage.locator('[data-visual-action-boundary-fallback] li').count(), 5, 'mobile action boundary fallback loses a layer');
-  assert.equal(await visualGuidePage.locator('.visual-card').count(), 16, 'mobile visual guide loses teaching boards');
+  assert.equal(await visualGuidePage.locator('[data-visual-triage-nodes] button').count(), 4, 'mobile claim triage map loses a branch');
+  assert.equal(await visualGuidePage.locator('[data-visual-triage-fallback] li').count(), 4, 'mobile claim triage fallback loses a branch');
+  assert.equal(await visualGuidePage.locator('.visual-card').count(), 17, 'mobile visual guide loses teaching boards');
   await visualGuidePage.screenshot({ path: path.join(visualEvidenceDirectory, 'visual-guide-mobile-fr.png'), fullPage: false });
   await visualGuidePage.close();
   const noScriptVisualContext = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
   const noScriptVisualPage = await noScriptVisualContext.newPage();
   await noScriptVisualPage.goto(`${origin}/site/visuals.html?lang=en`, { waitUntil: 'domcontentloaded' });
-  assert.equal(await noScriptVisualPage.locator('[data-visual-route-fallback] li').count(), 8, 'visual guide has no static visual route when JavaScript is disabled');
-  assert.equal(await noScriptVisualPage.locator('[data-visual-route-fallback] a').count(), 8, 'static visual route has no section links');
+  assert.equal(await noScriptVisualPage.locator('[data-visual-route-fallback] li').count(), 10, 'visual guide has no static visual route when JavaScript is disabled');
+  assert.equal(await noScriptVisualPage.locator('[data-visual-route-fallback] a').count(), 10, 'static visual route has no section links');
   assert.equal(await noScriptVisualPage.locator('[data-visual-map-fallback] li').count(), 6, 'visual guide has no static route when JavaScript is disabled');
   assert.equal(await noScriptVisualPage.locator('[data-visual-map-fallback] a').count(), 6, 'static visual guide route has no lesson links');
   assert.equal(await noScriptVisualPage.locator('[data-visual-evidence-fallback] li').count(), 5, 'visual guide has no static evidence route when JavaScript is disabled');
@@ -915,6 +936,8 @@ try {
   assert.equal(await noScriptVisualPage.locator('[data-visual-concept-fallback] a').count(), 6, 'static visual guide concept map has no lesson links');
   assert.equal(await noScriptVisualPage.locator('[data-visual-action-boundary-fallback] li').count(), 5, 'visual guide has no static action boundary map when JavaScript is disabled');
   assert.equal(await noScriptVisualPage.locator('[data-visual-action-boundary-fallback] a').count(), 5, 'static action boundary map has no lesson links');
+  assert.equal(await noScriptVisualPage.locator('[data-visual-triage-fallback] li').count(), 4, 'visual guide has no static claim triage map when JavaScript is disabled');
+  assert.equal(await noScriptVisualPage.locator('[data-visual-triage-fallback] a').count(), 4, 'static claim triage map has no lesson links');
   await noScriptVisualContext.close();
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(`${origin}/site/?lang=fr`, { waitUntil: 'networkidle' });
@@ -2153,6 +2176,14 @@ try {
     ['zh-tw', 'ZHTW', '檢查結果'],
     ['fr', 'FR', 'Vérifier'],
   ];
+  for (const [locale, suffix] of routeMapLocales) {
+    await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F01-gpt-and-codex-${suffix}.md&lang=${locale}`, { waitUntil: 'networkidle' });
+    await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
+    assert.match(await page.locator('[data-reader-visual-companion] img').getAttribute('src') || '', /response-claim-triage-red-black\.svg$/, `${locale} Chapter 1 did not use the claim-triage visual`);
+    assert.match(await page.locator('[data-reader-inline-visual]').getAttribute('data-reader-inline-visual') || '', /response-claim-triage-red-black\.svg$/, `${locale} Chapter 1 inline visual did not use the claim-triage board`);
+    assert.notEqual((await page.locator('[data-reader-visual-companion] img').getAttribute('alt') || '').trim(), '', `${locale} Chapter 1 claim-triage visual has no alternative text`);
+    await noHorizontalOverflow(page, `${locale} Chapter 1 claim-triage visual`);
+  }
   const visualGuideLocales = {
     en: ['Page concept map', 'Teaching visual'],
     zh: ['本页思维导图', '配套教学图'],

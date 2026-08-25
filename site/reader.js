@@ -614,6 +614,7 @@
     { tokens: ['lab-014-resume-reconciliation'], path: 'assets/teaching/interruption-checkpoint-card-red-black.svg', step: 4 },
     { tokens: ['lab-015-evidence-delivery', 'chapter-15-research-track'], path: 'assets/teaching/evidence-to-decision-stop-map-red-black.svg', step: 3 },
     { tokens: ['lab-017-skill-discovery-audit'], path: 'assets/teaching/source-check-before-belief-red-black.svg', step: 3 },
+    { tokens: ['chapter-01-gpt-and-codex'], path: 'assets/teaching/response-claim-triage-red-black.svg', step: 3 },
     { tokens: ['llm-fundamentals-guide', 'chapter-01-gpt-and-codex'], path: 'assets/teaching/llm-six-terms-to-one-check.svg', step: 0 },
     { tokens: ['llm-core-first-generation', 'chapter-02-first-safe-task', 'chapter-03-task-protocol'], path: 'assets/teaching/prompt-contract-six-fields-red-black.svg', step: 1 },
     { tokens: ['chapter-13-action-boundaries', 'lab-007-action-boundaries', 'side-effect-boundary-decision-map'], path: 'assets/teaching/side-effect-boundary-decision-map.svg', step: 2 },
@@ -635,6 +636,7 @@
       { path: 'assets/teaching/understanding-to-transfer-red-black.svg', step: 5 },
     ] },
     { tokens: ['llm-fundamentals-guide', 'chapter-01-gpt-and-codex'], visuals: [
+      { path: 'assets/teaching/response-claim-triage-red-black.svg', step: 3 },
       { path: 'assets/teaching/model-choice-is-a-test.svg', step: 1 },
       { path: 'assets/teaching/llm-six-terms-to-one-check.svg', step: 0 },
     ] },

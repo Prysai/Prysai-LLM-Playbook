@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Classify a response before trusting the claim</title>
+  <desc id="desc">A four-branch teaching board separates a text answer, a tool or run claim, an external side effect, and an unknown or overconfident answer. Each branch names the smallest next check.</desc>
+  <rect width="900" height="1500" fill="#f3f0e9"/>
+  <rect x="42" y="42" width="816" height="1416" fill="#fff" stroke="#111" stroke-width="2"/>
+  <text x="78" y="112" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="21" font-weight="700" letter-spacing="2">CLAIM TRIAGE / RESPONSE TO CHECK</text>
+  <text x="78" y="174" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="47" font-weight="900">WHAT KIND OF CLAIM</text>
+  <text x="78" y="230" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="47" font-weight="900">IS THIS?</text>
+  <text x="78" y="280" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="21">Classify the response before you decide what it proves.</text>
+
+  <rect x="168" y="338" width="564" height="112" fill="#111"/>
+  <text x="198" y="378" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="17" font-weight="700">START HERE</text>
+  <text x="198" y="420" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="900">CLASSIFY THE CLAIM.</text>
+
+  <line x1="450" y1="450" x2="450" y2="494" stroke="#d71920" stroke-width="4"/>
+  <line x1="450" y1="494" x2="134" y2="494" stroke="#d71920" stroke-width="4"/>
+  <line x1="450" y1="494" x2="766" y2="494" stroke="#d71920" stroke-width="4"/>
+  <line x1="134" y1="494" x2="134" y2="530" stroke="#d71920" stroke-width="4"/>
+  <line x1="766" y1="494" x2="766" y2="530" stroke="#d71920" stroke-width="4"/>
+
+  <g transform="translate(78 530)">
+    <rect width="350" height="170" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="24" y="38" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">01 / TEXT ONLY</text>
+    <text x="24" y="78" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="900">CHECK THE SOURCE.</text>
+    <text x="24" y="114" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="18">Name scope, date, and freshness.</text>
+    <text x="24" y="145" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="18">A fluent answer is not a citation.</text>
+  </g>
+  <g transform="translate(472 530)">
+    <rect width="350" height="170" fill="#d71920"/>
+    <text x="24" y="38" fill="#111" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">02 / TOOL OR RUN CLAIM</text>
+    <text x="24" y="78" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="900">FIND THE EVENT.</text>
+    <text x="24" y="114" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="18">Look for returned data, a diff,</text>
+    <text x="24" y="145" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="18">a log, or an execution receipt.</text>
+  </g>
+
+  <line x1="450" y1="700" x2="450" y2="748" stroke="#111" stroke-width="2"/>
+  <line x1="450" y1="748" x2="134" y2="748" stroke="#111" stroke-width="2"/>
+  <line x1="450" y1="748" x2="766" y2="748" stroke="#111" stroke-width="2"/>
+  <line x1="134" y1="748" x2="134" y2="790" stroke="#111" stroke-width="2"/>
+  <line x1="766" y1="748" x2="766" y2="790" stroke="#111" stroke-width="2"/>
+
+  <g transform="translate(78 790)">
+    <rect width="350" height="190" fill="#fff" stroke="#111" stroke-width="2"/>
+    <text x="24" y="38" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">03 / EXTERNAL SIDE EFFECT</text>
+    <text x="24" y="78" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="900">CHECK AUTHORITY.</text>
+    <text x="24" y="114" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="18">Confirm target, permission,</text>
+    <text x="24" y="145" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="18">receipt, and recovery path.</text>
+    <text x="24" y="174" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700">Pause before the effect.</text>
+  </g>
+  <g transform="translate(472 790)">
+    <rect width="350" height="190" fill="#111"/>
+    <text x="24" y="38" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="700">04 / UNKNOWN OR OVERCONFIDENT</text>
+    <text x="24" y="78" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="900">MAKE THE CLAIM SMALL.</text>
+    <text x="24" y="114" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">Label candidate or unknown.</text>
+    <text x="24" y="145" fill="#c8c8c2" font-family="Arial, Helvetica, sans-serif" font-size="18">Stop, or ask for one smaller check.</text>
+    <text x="24" y="174" fill="#d71920" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700">Do not fill the gap with confidence.</text>
+  </g>
+
+  <rect x="78" y="1060" width="744" height="140" fill="#f3f0e9" stroke="#111" stroke-width="2"/>
+  <text x="106" y="1104" fill="#d71920" font-family="Consolas, 'Courier New', monospace" font-size="17" font-weight="700">NEXT CHECK / KEEP IT OBSERVABLE</text>
+  <text x="106" y="1148" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="900">CLASSIFY FIRST. THEN CHOOSE THE SMALLEST TEST.</text>
+  <text x="106" y="1182" fill="#565650" font-family="Arial, Helvetica, sans-serif" font-size="18">The response type tells you which record can change your claim.</text>
+
+  <rect x="78" y="1250" width="744" height="82" fill="#d71920"/>
+  <text x="106" y="1302" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="900">FLUENCY IS A STARTING POINT, NOT A RECEIPT.</text>
+  <text x="78" y="1384" fill="#565650" font-family="Consolas, 'Courier New', monospace" font-size="13">PRYSAI LAB / ORIGINAL TEACHING BOARD / CHECK THE RIGHT THING</text>
+</svg>
