@@ -13,6 +13,12 @@ Playbook is ready for public production use.
 
 ### Visual route candidate (2026-08-24)
 
+- Added a focused `npm run test:visuals` smoke check for the standalone guide.
+  It verifies all eight locale routes, the 19-board inventory, interactive
+  maturity navigation, 390/360px overflow boundaries, and no-JavaScript text
+  fallbacks. The check passed on 2026-08-25; it is implementation evidence
+  only and does not replace the broader browser smoke or learner validation.
+
 - Added a standalone eight-locale Visual Guide with a six-stage interactive
   mind map, twelve project-authored teaching boards, localized captions and
   alternatives, and a text-first route that remains usable without JavaScript.
