@@ -2147,7 +2147,8 @@ try {
   assert.equal(await inlineTeachingVisual.count(), 1, 'Reader chapter did not add its inline teaching visual');
   assert.equal(await inlineTeachingVisual.locator('.reader-visual-explanation').count(), 1, 'Inline teaching visual has no text explanation');
   assert.equal((await inlineTeachingVisual.locator('.reader-visual-explanation summary').innerText()).trim(), 'Read this teaching visual as text', 'Inline teaching visual uses the wrong English explanation label');
-  assert.equal(await inlineTeachingVisual.locator('.reader-visual-explanation li').count(), 6, 'Inline teaching visual text explanation does not expose all route steps');
+  assert.equal(await inlineTeachingVisual.locator('.reader-visual-explanation li').count(), 1, 'Inline teaching visual did not use the board-specific text explanation');
+  assert.match(await inlineTeachingVisual.locator('.reader-visual-thesis').innerText(), /A prompt is a small contract/, 'Inline teaching visual lost the prompt-contract thesis');
   const inlineVisualOrder = await page.locator('[data-reader-article]').evaluate((article) => {
     const opening = article.querySelector(':scope > p');
     const visual = article.querySelector('[data-reader-inline-visual]');
@@ -2216,12 +2217,27 @@ try {
     ['zh-tw', 'ZHTW', '檢查結果'],
     ['fr', 'FR', 'Vérifier'],
   ];
+  const visualBriefTitles = {
+    en: 'Classify the claim before checking it',
+    zh: '先分类结论，再选择检查',
+    es: 'Clasifica la afirmación antes de comprobarla',
+    ja: '確認する前に主張を分類する',
+    ko: '확인하기 전에 주장을 분류하기',
+    de: 'Die Aussage vor der Prüfung einordnen',
+    'zh-tw': '先分類主張，再選擇檢查',
+    fr: 'Classer l’affirmation avant de la vérifier',
+  };
   for (const [locale, suffix] of routeMapLocales) {
     await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F01-gpt-and-codex-${suffix}.md&lang=${locale}`, { waitUntil: 'networkidle' });
     await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
     assert.match(await page.locator('[data-reader-visual-companion] img').getAttribute('src') || '', /response-claim-triage-red-black\.svg$/, `${locale} Chapter 1 did not use the claim-triage visual`);
     assert.match(await page.locator('[data-reader-inline-visual]').getAttribute('data-reader-inline-visual') || '', /response-claim-triage-red-black\.svg$/, `${locale} Chapter 1 inline visual did not use the claim-triage board`);
     assert.notEqual((await page.locator('[data-reader-visual-companion] img').getAttribute('alt') || '').trim(), '', `${locale} Chapter 1 claim-triage visual has no alternative text`);
+    const inlineVisual = page.locator('[data-reader-inline-visual]');
+    assert.match(await inlineVisual.locator('.reader-visual-thesis').innerText(), new RegExp(visualBriefTitles[locale].replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `${locale} Reader visual does not expose its board-specific thesis`);
+    assert.equal(await inlineVisual.locator('.reader-visual-explanation li').count(), 1, `${locale} Reader visual fell back to generic route steps`);
+    assert.ok((await inlineVisual.locator('img').getAttribute('alt') || '').includes(visualBriefTitles[locale]), `${locale} Reader visual alt text does not name the localized board`);
+    assert.notEqual((await inlineVisual.locator('.reader-inline-visual-boundary').innerText()).trim(), '', `${locale} Reader visual lost its evidence boundary`);
     await noHorizontalOverflow(page, `${locale} Chapter 1 claim-triage visual`);
   }
   const visualGuideLocales = {
@@ -2341,7 +2357,7 @@ try {
       visualExplanationLocales[locale],
       `${locale} inline teaching visual explanation is not localized`,
     );
-    assert.equal(await localizedInlineTeachingVisual.locator('.reader-visual-explanation li').count(), 6, `${locale} inline teaching visual text explanation lost route steps`);
+    assert.equal(await localizedInlineTeachingVisual.locator('.reader-visual-explanation li').count(), 1, `${locale} inline teaching visual did not use its board-specific explanation`);
     const readingLoop = page.locator('[data-reader-reading-loop]');
     assert.equal(await readingLoop.isVisible(), true, `${locale} page reading task chain is not available`);
     assert.equal((await page.locator('[data-reader-reading-loop-summary]').innerText()).trim(), readingLoopLocales[locale][0], `${locale} reading task chain label is not localized`);
