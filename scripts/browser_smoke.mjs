@@ -760,6 +760,16 @@ try {
     'zh-tw': ['基礎核心課', '第一項有界線的任務', '證據閉環', '可選實踐路徑'],
     fr: ['Foundation Core', 'Première tâche délimitée', 'Boucle de preuves', 'Parcours facultatifs'],
   };
+  const visualCapabilityLabels = {
+    en: ['Observer', 'Safe user', 'Task designer', 'Workflow designer', 'Capability builder', 'Evidence reviewer', 'Team coach'],
+    zh: ['观察者', '安全使用者', '任务设计者', '工作流设计者', '能力构建者', '证据审查者', '团队教练'],
+    es: ['Observador', 'Usuario seguro', 'Diseñador de tareas', 'Diseñador de flujos de trabajo', 'Constructor de capacidades', 'Revisor de evidencia', 'Coach de equipo'],
+    ja: ['観察者', '安全なユーザー', 'タスク設計者', 'ワークフロー設計者', '能力構築者', '証拠レビュアー', 'チームコーチ'],
+    ko: ['관찰자', '안전 사용자', '작업 설계자', '워크플로 설계자', '역량 구축자', '증거 검토자', '팀 코치'],
+    de: ['Beobachter', 'Sicherer Nutzer', 'Task-Designer', 'Workflow-Designer', 'Capability-Builder', 'Evidence-Reviewer', 'Team-Coach'],
+    'zh-tw': ['觀察者', '安全使用者', '任務設計者', '工作流程設計者', '能力構建者', '證據審查者', '團隊教練'],
+    fr: ['Niveau 0', 'Niveau 1', 'Niveau 2', 'Niveau 3', 'Niveau 4', 'Niveau 5', 'Niveau 6'],
+  };
   const visualConceptLabels = {
     en: ['Token', 'Context', 'Context window', 'Prompt', 'Response', 'Tool / Agent'],
     zh: ['Token（词元）', 'Context（上下文）', 'Context window（上下文窗口）', 'Prompt（提示）', 'Response（回答）', 'Tool / Agent（工具 / Agent）'],
@@ -830,6 +840,12 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-journey-fallback] li').count(), 4, `${locale} visual guide learning journey fallback lost a stage`);
     assert.equal(await visualGuidePage.locator('[data-visual-journey-title]').innerText(), visualJourneyLabels[locale][0], `${locale} visual guide learning journey selection is not localized`);
     assert.notEqual(await visualGuidePage.locator('[data-visual-journey-image]').getAttribute('alt'), '', `${locale} visual guide learning journey image has no alternative text`);
+    assert.deepEqual(await visualGuidePage.locator('[data-visual-capability-nodes] button strong').allTextContents(), visualCapabilityLabels[locale], `${locale} visual guide capability levels are not localized`);
+    assert.equal(await visualGuidePage.locator('[data-visual-capability-nodes] button').count(), 7, `${locale} visual guide capability ladder lost a level`);
+    assert.equal(await visualGuidePage.locator('[data-visual-capability-fallback] li').count(), 7, `${locale} visual guide capability fallback lost a level`);
+    assert.equal(await visualGuidePage.locator('[data-visual-capability-title]').innerText(), visualCapabilityLabels[locale][0], `${locale} visual guide capability selection is not localized`);
+    assert.notEqual(await visualGuidePage.locator('[data-visual-capability-image]').getAttribute('alt'), '', `${locale} capability ladder image has no alternative text`);
+    assert.match(await visualGuidePage.locator('[data-visual-capability-link]').getAttribute('href'), new RegExp(`lang=${locale}$`), `${locale} capability ladder route does not retain the selected language`);
     assert.deepEqual(await visualGuidePage.locator('[data-visual-concept-nodes] button strong').allTextContents(), visualConceptLabels[locale], `${locale} visual guide concept terms are not localized`);
     assert.equal(await visualGuidePage.locator('[data-visual-concept-nodes] button').count(), 6, `${locale} visual guide concept map lost a term`);
     assert.equal(await visualGuidePage.locator('[data-visual-concept-fallback] li').count(), 6, `${locale} visual guide concept fallback lost a term`);
@@ -874,6 +890,10 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-journey-title]').innerText(), visualJourneyLabels[locale][3], `${locale} visual guide learning journey selection does not update`);
     assert.equal(await visualGuidePage.locator('[data-visual-journey-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} visual guide learning journey selection is not exposed`);
     assert.match(await visualGuidePage.locator('[data-visual-journey-link]').getAttribute('href'), new RegExp(`lang=${locale}$`), `${locale} visual guide learning journey route loses its locale`);
+    await visualGuidePage.locator('[data-visual-capability-nodes] button').last().click();
+    assert.equal(await visualGuidePage.locator('[data-visual-capability-title]').innerText(), visualCapabilityLabels[locale][6], `${locale} capability ladder selection does not update`);
+    assert.equal(await visualGuidePage.locator('[data-visual-capability-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} capability ladder selection is not exposed`);
+    assert.match(await visualGuidePage.locator('[data-visual-capability-link]').getAttribute('href'), new RegExp(`20-personal-codex-work-system-[A-Z]+\\.md&lang=${locale}$`), `${locale} capability ladder lesson loses its locale`);
     await visualGuidePage.locator('[data-visual-concept-nodes] button').last().click();
     assert.equal(await visualGuidePage.locator('[data-visual-concept-title]').innerText(), visualConceptLabels[locale][5], `${locale} visual guide concept selection does not update`);
     assert.equal(await visualGuidePage.locator('[data-visual-concept-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} visual guide concept selection is not exposed`);
@@ -899,6 +919,9 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-triage-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} claim triage selection is not exposed`);
     assert.match(await visualGuidePage.locator('[data-visual-triage-link]').getAttribute('href'), new RegExp(`09-verification-and-recovery-[A-Z]+\\.md&lang=${locale}$`), `${locale} claim triage lesson loses its locale`);
     await noHorizontalOverflow(visualGuidePage, `${locale} visual guide desktop`);
+    if (locale === 'en') {
+      await visualGuidePage.locator('#visual-capability').screenshot({ path: path.join(visualEvidenceDirectory, 'capability-ladder-desktop.png') });
+    }
   }
   await visualGuidePage.setViewportSize({ width: 390, height: 844 });
   await visualGuidePage.goto(`${origin}/site/visuals.html?lang=fr`, { waitUntil: 'networkidle' });
@@ -906,6 +929,8 @@ try {
   assert.equal(await visualGuidePage.locator('[data-visual-map-nodes] button').count(), 6, 'mobile visual guide map loses a stage');
   assert.equal(await visualGuidePage.locator('[data-visual-evidence-nodes] button').count(), 5, 'mobile evidence map loses a step');
   assert.equal(await visualGuidePage.locator('[data-visual-journey-nodes] button').count(), 4, 'mobile visual guide learning journey loses a stage');
+  assert.equal(await visualGuidePage.locator('[data-visual-capability-nodes] button').count(), 7, 'mobile capability ladder loses a level');
+  assert.equal(await visualGuidePage.locator('[data-visual-capability-fallback] li').count(), 7, 'mobile capability ladder fallback loses a level');
   assert.equal(await visualGuidePage.locator('[data-visual-concept-nodes] button').count(), 6, 'mobile visual guide concept map loses a term');
   assert.equal(await visualGuidePage.locator('[data-visual-concept-fallback] li').count(), 6, 'mobile visual guide concept fallback loses a term');
    assert.equal(await visualGuidePage.locator('[data-visual-route-nodes] button').count(), 10, 'mobile visual route loses a step');
@@ -917,6 +942,8 @@ try {
   assert.equal(await visualGuidePage.locator('[data-visual-triage-nodes] button').count(), 4, 'mobile claim triage map loses a branch');
   assert.equal(await visualGuidePage.locator('[data-visual-triage-fallback] li').count(), 4, 'mobile claim triage fallback loses a branch');
   assert.equal(await visualGuidePage.locator('.visual-card').count(), 17, 'mobile visual guide loses teaching boards');
+  await visualGuidePage.locator('#visual-capability').scrollIntoViewIfNeeded();
+  await visualGuidePage.screenshot({ path: path.join(visualEvidenceDirectory, 'capability-ladder-mobile-fr.png'), fullPage: false });
   await visualGuidePage.screenshot({ path: path.join(visualEvidenceDirectory, 'visual-guide-mobile-fr.png'), fullPage: false });
   await visualGuidePage.close();
   const noScriptVisualContext = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
@@ -932,6 +959,8 @@ try {
   assert.equal(await noScriptVisualPage.locator('[data-visual-goal-fallback] a').count(), 4, 'static visual guide goal route has no lesson links');
   assert.equal(await noScriptVisualPage.locator('[data-visual-journey-fallback] li').count(), 4, 'visual guide has no static learning journey route');
   assert.equal(await noScriptVisualPage.locator('[data-visual-journey-fallback] a').count(), 4, 'static visual guide learning journey route has no lesson links');
+  assert.equal(await noScriptVisualPage.locator('[data-visual-capability-fallback] li').count(), 7, 'visual guide has no static capability ladder when JavaScript is disabled');
+  assert.equal(await noScriptVisualPage.locator('[data-visual-capability-fallback] a').count(), 7, 'static capability ladder has no lesson links');
   assert.equal(await noScriptVisualPage.locator('[data-visual-concept-fallback] li').count(), 6, 'visual guide has no static concept map when JavaScript is disabled');
   assert.equal(await noScriptVisualPage.locator('[data-visual-concept-fallback] a').count(), 6, 'static visual guide concept map has no lesson links');
   assert.equal(await noScriptVisualPage.locator('[data-visual-action-boundary-fallback] li').count(), 5, 'visual guide has no static action boundary map when JavaScript is disabled');
