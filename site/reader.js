@@ -1304,15 +1304,12 @@
     boundary.textContent = visualBoundary;
     figure.append(link, caption, explanation, boundary);
     const openingParagraph = article.querySelector(':scope > p');
-    // On pages using the compact fallback, put the compass directly after the
-    // opening explanation. A long mobile TOC can otherwise push the only
-    // visual orientation aid below the first screen; dedicated boards retain
-    // the existing TOC-aware placement.
-    const insertionAnchor = visual.fallback
-      ? openingParagraph || article.querySelector('h1')
-      : mobilePageToc?.parentElement === article
-      ? mobilePageToc
-      : openingParagraph || article.querySelector('h1');
+    // Put the visual immediately after the opening explanation for every
+    // page. The diagram answers the reader's first practical question before
+    // the generated mobile TOC or long heading list takes over. The ordered
+    // explanation below the image remains the baseline when the image is
+    // unavailable, and the concept map is inserted after this figure.
+    const insertionAnchor = openingParagraph || article.querySelector('h1');
     if (insertionAnchor) insertionAnchor.after(figure);
     else article.prepend(figure);
   };
@@ -2560,9 +2557,11 @@ function canonicalChapterTitle(chapter) {
     renderReaderCourseMap(selection);
     renderReaderConceptMap(selection, title, pageHeadings);
     renderReaderReadingLoop(selection, pageHeadings);
+    // Render the page-specific board first so the inline concept map can
+    // anchor immediately after it instead of appearing before the visual.
+    renderReaderInlineVisual(selection, title);
     renderReaderInlineConceptMap(selection, title, pageHeadings);
     renderReaderPageAnatomy(selection, title, pageHeadings);
-    renderReaderInlineVisual(selection, title);
     renderReaderVisualCompanion(selection);
     renderReaderRecoveryMap(selection);
     renderBookNavigation(selection);
