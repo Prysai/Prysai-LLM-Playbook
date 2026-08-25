@@ -63,3 +63,10 @@ is kept within the viewport and the surrounding text remains the baseline
 explanation. The Reader's heading-derived concept map is a separate navigation
 enhancement: its ordered list works without relying on a canvas, Mermaid, a
 remote script, or a pointer gesture.
+
+The visual guide adds a goal-first entry map: choose whether you need a safe
+first task, result recovery, claim verification, or method transfer. Each
+choice points to one localized route and one existing project-owned board. The
+additional board gallery is deliberately optional; it supplements the route
+without becoming a second catalogue to wander through. Both maps retain an
+ordered text fallback when JavaScript is unavailable.
