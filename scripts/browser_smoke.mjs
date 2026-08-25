@@ -1822,6 +1822,10 @@ try {
   assert.match(firstConceptHref || '', /^#/, 'Reader concept map branch is not an in-page link');
   await firstConceptNode.click();
   assert.equal(await page.locator(new URL(firstConceptHref, 'http://example.test/').hash).count(), 1, 'Reader concept map branch does not land on a real heading');
+  assert.notEqual((await conceptMap.locator('[data-reader-concept-map-detail-title]').innerText()).trim(), '', 'Reader concept map detail has no selected heading');
+  assert.notEqual((await conceptMap.locator('[data-reader-concept-map-detail-body]').innerText()).trim(), '', 'Reader concept map detail has no localized summary');
+  assert.notEqual((await conceptMap.locator('[data-reader-concept-map-detail-next]').innerText()).trim(), '', 'Reader concept map detail has no next-section guidance');
+  assert.match(await conceptMap.locator('[data-reader-concept-map-detail-link]').getAttribute('href') || '', /^#/, 'Reader concept map detail link is not an in-page link');
   const visualCompanion = page.locator('[data-reader-visual-companion]');
   assert.equal(await visualCompanion.isVisible(), true, 'Reader teaching visual companion is not available on a chapter page');
   assert.match(await visualCompanion.locator('img').getAttribute('src'), /prompt-contract-six-fields-red-black\.svg$/, 'Chapter visual companion chose the wrong teaching board');
@@ -1889,6 +1893,16 @@ try {
     'zh-tw': ['本頁概念圖', '配套教學圖'],
     fr: ['Carte conceptuelle de cette page', 'Visuel pédagogique'],
   };
+  const conceptDetailLocales = {
+    en: ['Selected section', 'Next section', 'Open this section'],
+    zh: ['当前小节', '下一小节', '打开这个小节'],
+    es: ['Sección seleccionada', 'Siguiente sección', 'Abrir esta sección'],
+    ja: ['選択中の節', '次の節', 'この節を開く'],
+    ko: ['선택한 섹션', '다음 섹션', '이 섹션 열기'],
+    de: ['Ausgewählter Abschnitt', 'Nächster Abschnitt', 'Diesen Abschnitt öffnen'],
+    'zh-tw': ['目前段落', '下一個段落', '開啟這個段落'],
+    fr: ['Section sélectionnée', 'Section suivante', 'Ouvrir cette section'],
+  };
   const courseMapLocales = {
     en: ['Whole Playbook map', 'Evidence loop'],
     zh: ['整本 Playbook 地图', '证据闭环'],
@@ -1938,6 +1952,14 @@ try {
       `${locale} route map selection lost its localized Reader link`,
     );
     assert.equal((await page.locator('[data-reader-concept-map-summary]').innerText()).trim(), visualGuideLocales[locale][0], `${locale} concept map label is not localized`);
+    await page.locator('[data-reader-concept-map-summary]').click();
+    assert.equal((await page.locator('[data-reader-concept-map-detail-label]').innerText()).trim(), conceptDetailLocales[locale][0], `${locale} concept map selected-label is not localized`);
+    assert.equal((await page.locator('[data-reader-concept-map-detail-next-label]').innerText()).trim(), conceptDetailLocales[locale][1], `${locale} concept map next-label is not localized`);
+    assert.notEqual((await page.locator('[data-reader-concept-map-detail-title]').innerText()).trim(), '', `${locale} concept map detail title is empty`);
+    assert.notEqual((await page.locator('[data-reader-concept-map-detail-body]').innerText()).trim(), '', `${locale} concept map detail summary is empty`);
+    assert.notEqual((await page.locator('[data-reader-concept-map-detail-next]').innerText()).trim(), '', `${locale} concept map detail next section is empty`);
+    assert.equal((await page.locator('[data-reader-concept-map-detail-open]').innerText()).trim(), conceptDetailLocales[locale][2], `${locale} concept map open-label is not localized`);
+    assert.match(await page.locator('[data-reader-concept-map-detail-link]').getAttribute('href') || '', /^#/, `${locale} concept map detail link is not an in-page link`);
     const localizedCourseMap = page.locator('[data-reader-course-map]');
     assert.equal(await localizedCourseMap.isVisible(), true, `${locale} whole-Playbook map is not available`);
     assert.equal((await page.locator('[data-reader-course-map-summary]').innerText()).trim(), courseMapLocales[locale][0], `${locale} whole-Playbook map label is not localized`);
@@ -1952,6 +1974,11 @@ try {
     assert.match(await page.locator('[data-reader-course-map-figure-link]').getAttribute('aria-label'), /.+/, `${locale} whole-Playbook map visual link has no accessible label`);
     assert.equal((await page.locator('[data-reader-visual-companion-summary]').innerText()).trim(), visualGuideLocales[locale][1], `${locale} visual companion label is not localized`);
     assert.equal((await page.locator('[data-reader-inline-concept-map] summary').innerText()).trim(), visualGuideLocales[locale][0], `${locale} inline concept map label is not localized`);
+    assert.equal((await page.locator('.reader-inline-concept-map-detail-label').innerText()).trim(), conceptDetailLocales[locale][0], `${locale} inline concept map selected-label is not localized`);
+    assert.equal((await page.locator('.reader-inline-concept-map-detail-next span').innerText()).trim().replace(/:$/, ''), conceptDetailLocales[locale][1], `${locale} inline concept map next-label is not localized`);
+    assert.notEqual((await page.locator('[data-reader-inline-concept-map-detail] > strong').innerText()).trim(), '', `${locale} inline concept map detail title is empty`);
+    assert.notEqual((await page.locator('[data-reader-inline-concept-map-detail] p').first().innerText()).trim(), '', `${locale} inline concept map detail summary is empty`);
+    assert.notEqual((await page.locator('[data-reader-inline-concept-map-detail-next] strong').innerText()).trim(), '', `${locale} inline concept map detail next section is empty`);
     const localizedInlineTeachingVisual = page.locator('[data-reader-inline-visual]');
     assert.equal(await localizedInlineTeachingVisual.count(), 1, `${locale} Reader chapter did not add its inline teaching visual`);
     assert.equal(
