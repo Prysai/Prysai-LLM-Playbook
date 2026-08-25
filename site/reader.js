@@ -156,6 +156,11 @@
   const visualCompanionOpen = document.querySelector('[data-reader-visual-companion-open]');
   const visualCompanionCaption = document.querySelector('[data-reader-visual-companion-caption]');
   const visualCompanionBoundary = document.querySelector('[data-reader-visual-companion-boundary]');
+  const relatedVisuals = document.querySelector('[data-reader-related-visuals]');
+  const relatedVisualsSummary = document.querySelector('[data-reader-related-visuals-summary]');
+  const relatedVisualsIntro = document.querySelector('[data-reader-related-visuals-intro]');
+  const relatedVisualsGrid = document.querySelector('[data-reader-related-visuals-grid]');
+  const relatedVisualsBoundary = document.querySelector('[data-reader-related-visuals-boundary]');
   const recoveryMap = document.querySelector('[data-reader-recovery-map]');
   const recoveryMapSummary = document.querySelector('[data-reader-recovery-map-summary]');
   const recoveryMapIntro = document.querySelector('[data-reader-recovery-map-intro]');
@@ -537,6 +542,26 @@
     conceptDetailOpen: labels.open,
   }));
 
+  // A second, optional board is useful when it shows the next relationship in
+  // the lesson rather than duplicating the primary board. It stays collapsed
+  // in the sidebar so the article keeps one clear visual entry point.
+  const readerRelatedVisualCopy = {
+    en: { summary: 'Related teaching visuals', intro: 'Open the next relationship when the main board leaves you with a new question.', open: 'Open full-size visual', boundary: 'These boards are orientation aids. Use the localized text and the source page to check what the picture does and does not establish.' },
+    zh: { summary: '相关教学图', intro: '如果主图让你产生了新的问题，可以打开下一项关系图。', open: '打开完整尺寸图示', boundary: '这些图板只是定位辅助。请结合本地化文字和原文页面，检查图示能证明什么、不能证明什么。' },
+    es: { summary: 'Visuales didácticos relacionados', intro: 'Abre la relación siguiente cuando el tablero principal te deje una nueva pregunta.', open: 'Abrir el visual a tamaño completo', boundary: 'Estos tableros sirven para orientarse. Usa el texto localizado y la página fuente para comprobar qué demuestra la imagen y qué no.' },
+    ja: { summary: '関連する教材図', intro: '主図から次の問いが生まれたら、関連する関係図を開いてください。', open: '原寸の図を開く', boundary: 'これらの図は位置づけの補助です。画像が示すことと示さないことは、ローカライズされた本文と原典ページで確認してください。' },
+    ko: { summary: '관련 교육용 그림', intro: '주요 보드가 새로운 질문을 남겼다면 다음 관계를 보여 주는 그림을 열어 보세요.', open: '원본 크기 시각 자료 열기', boundary: '이 보드들은 방향을 잡는 보조 자료입니다. 그림이 보여 주는 것과 보여 주지 않는 것은 현지화된 본문과 원문에서 확인하세요.' },
+    de: { summary: 'Verwandte Lehrtafeln', intro: 'Öffne die nächste Beziehung, wenn die Haupttafel eine neue Frage offenlässt.', open: 'Visualisierung in voller Größe öffnen', boundary: 'Diese Tafeln dienen der Orientierung. Prüfe mit dem lokalisierten Text und der Quellseite, was das Bild belegt und was nicht.' },
+    'zh-tw': { summary: '相關教學圖', intro: '如果主圖帶出新的問題，可以開啟下一個關係圖。', open: '開啟完整尺寸圖示', boundary: '這些圖板只是定位輔助。請搭配在地化文字與原始頁面，確認圖示能證明什麼、不能證明什麼。' },
+    fr: { summary: 'Visuels pédagogiques associés', intro: 'Ouvrez la relation suivante si la planche principale fait naître une nouvelle question.', open: 'Ouvrir le visuel en taille réelle', boundary: 'Ces planches servent à se repérer. Vérifiez avec le texte localisé et la page source ce que l’image établit ou non.' },
+  };
+  Object.entries(readerRelatedVisualCopy).forEach(([locale, copy]) => Object.assign(readerVisualCopy[locale], {
+    relatedVisualSummary: copy.summary,
+    relatedVisualIntro: copy.intro,
+    relatedVisualOpen: copy.open,
+    relatedVisualBoundary: copy.boundary,
+  }));
+
   const readerVisualMap = [
     { tokens: ['llm-foundation-core-v1', 'llm-foundation-core-path'], path: 'assets/teaching/foundation-first-visit-route-red-black.svg', step: 0 },
     { tokens: ['chapter-04-context-permissions-and-agent', 'lab-016-side-effect-boundary', 'conversation-safety-card'], path: 'assets/teaching/conversation-safety-card-red-black.svg', step: 2 },
@@ -574,6 +599,57 @@
     { tokens: ['llm-core-unseen-transfer', 'understanding-to-transfer'], path: 'assets/teaching/understanding-to-transfer-red-black.svg', step: 5 },
     { tokens: ['chapter-14-discover-and-audit-skills', 'source-investigator', 'platform-fact-watch'], path: 'assets/teaching/source-check-before-belief-red-black.svg', step: 3 },
     { tokens: ['project-evidence-snapshot', 'content-status', 'release-readiness'], path: 'assets/teaching/project-evidence-snapshot-red-black.svg', step: 3 },
+  ];
+
+  const readerRelatedVisualMap = [
+    { tokens: ['llm-foundation-core-v1', 'llm-foundation-core-path'], visuals: [
+      { path: 'assets/teaching/foundation-route-map-red-black.svg', step: 0 },
+      { path: 'assets/teaching/understanding-to-transfer-red-black.svg', step: 5 },
+    ] },
+    { tokens: ['llm-fundamentals-guide', 'chapter-01-gpt-and-codex'], visuals: [
+      { path: 'assets/teaching/model-choice-is-a-test.svg', step: 1 },
+      { path: 'assets/teaching/llm-six-terms-to-one-check.svg', step: 0 },
+    ] },
+    { tokens: ['llm-core-first-generation', 'chapter-02-first-safe-task', 'chapter-03-task-protocol'], visuals: [
+      { path: 'assets/teaching/task-to-evidence-red-black.svg', step: 3 },
+      { path: 'assets/teaching/evidence-recovery-ladder.svg', step: 3 },
+    ] },
+    { tokens: ['chapter-04-context-permissions-and-agent', 'chapter-13-action-boundaries', 'lab-007-action-boundaries'], visuals: [
+      { path: 'assets/teaching/observable-action-boundary-red-black.svg', step: 2 },
+      { path: 'assets/teaching/side-effect-boundary-decision-map.svg', step: 2 },
+    ] },
+    { tokens: ['chapter-05-choose-the-codex-surface', 'chapter-06-model-selection', 'chapter-07-skills-plugins-and-tools'], visuals: [
+      { path: 'assets/teaching/universal-seams-red-black.svg', step: 1 },
+      { path: 'assets/teaching/skill-to-observable-output.svg', step: 1 },
+    ] },
+    { tokens: ['chapter-08-full-lifecycle-workflow', 'chapter-09-verification-and-recovery', 'chapter-12-agent-loop-and-stop', 'lab-006-agent-stop-conditions'], visuals: [
+      { path: 'assets/teaching/lifecycle-checkpoints.svg', step: 2 },
+      { path: 'assets/teaching/recovery-decision-tree-red-black.svg', step: 4 },
+    ] },
+    { tokens: ['chapter-10-planning-and-slicing', 'lab-013-l3-vertical-slice'], visuals: [
+      { path: 'assets/teaching/task-to-evidence-red-black.svg', step: 3 },
+      { path: 'assets/teaching/observable-action-boundary-red-black.svg', step: 2 },
+    ] },
+    { tokens: ['chapter-11-designing-a-skill', 'chapter-14-discover-and-audit-skills', 'lab-005-design-a-skill', 'lab-017-skill-discovery-audit'], visuals: [
+      { path: 'assets/teaching/source-check-before-belief-red-black.svg', step: 3 },
+      { path: 'assets/teaching/skill-to-observable-output.svg', step: 1 },
+    ] },
+    { tokens: ['chapter-15-research-track', 'lab-008-research-question', 'lab-015-evidence-delivery'], visuals: [
+      { path: 'assets/teaching/research-question-to-source-record-red-black.svg', step: 3 },
+      { path: 'assets/teaching/evidence-to-decision-stop-map-red-black.svg', step: 3 },
+    ] },
+    { tokens: ['chapter-16-engineering-track', 'chapter-18-content-design-data-automation', 'chapter-19-evaluate-models-and-workflows'], visuals: [
+      { path: 'assets/teaching/lifecycle-checkpoints.svg', step: 2 },
+      { path: 'assets/teaching/four-evidence-lenses-red-black.svg', step: 3 },
+    ] },
+    { tokens: ['chapter-17-marketing-track', 'chapter-20-personal-codex-work-system', 'lab-018-language-transfer', 'communication-clinic'], visuals: [
+      { path: 'assets/teaching/practice-target-to-first-attempt-red-black.svg', step: 1 },
+      { path: 'assets/teaching/beginner-practice-loop-red-black.svg', step: 5 },
+    ] },
+    { tokens: ['chapter-21-team-capability-system', 'chapter-22-continuous-update-and-future-proofing', 'lab-012-team-capability-migration', 'lab-014-resume-reconciliation'], visuals: [
+      { path: 'assets/teaching/agent-handoff-receipt-checkpoints-red-black.svg', step: 5 },
+      { path: 'assets/teaching/interruption-checkpoint-card-red-black.svg', step: 4 },
+    ] },
   ];
 
   // The compact compass is the deliberate fallback for a page that has no
@@ -1134,6 +1210,13 @@
     }
     return null;
   };
+  const chooseReaderRelatedVisuals = (selection) => {
+    if (!selection?.path) return [];
+    const haystack = `${selection.contentId || ''} ${selection.path}`.toLowerCase();
+    const match = readerRelatedVisualMap.find((candidate) => candidate.tokens.some((token) => haystack.includes(token)));
+    const primary = chooseReaderVisual(selection)?.path;
+    return (match?.visuals || []).filter((visual) => visual.path !== primary).slice(0, 2);
+  };
   const renderReaderConceptMap = (selection, title, headings = []) => {
     if (!conceptMap || !conceptMapBranches || !conceptMapFallbackList || !conceptMapDetail) return;
     if (conceptMapScrollHandler) window.removeEventListener('scroll', conceptMapScrollHandler);
@@ -1506,6 +1589,52 @@
     visualCompanionOpen.textContent = strings.visualOpen;
     visualCompanionCaption.textContent = `${strings.visualCaptionPrefix} ${label}. ${body}`;
     visualCompanionBoundary.textContent = strings.visualBoundary;
+  };
+  const renderReaderRelatedVisuals = (selection) => {
+    if (!relatedVisuals || !relatedVisualsGrid) return;
+    relatedVisualsGrid.replaceChildren();
+    const visuals = chooseReaderRelatedVisuals(selection);
+    if (!visuals.length || !chooseReaderVisual(selection)) {
+      relatedVisuals.hidden = true;
+      return;
+    }
+    const strings = currentReaderVisualCopy();
+    const routeStrings = currentReaderRouteMapCopy();
+    relatedVisuals.hidden = false;
+    relatedVisuals.open = false;
+    relatedVisualsSummary.textContent = strings.relatedVisualSummary;
+    relatedVisualsIntro.textContent = strings.relatedVisualIntro;
+    relatedVisualsBoundary.textContent = strings.relatedVisualBoundary;
+    visuals.forEach((visual, index) => {
+      const step = Math.max(0, Math.min(routeStrings.labels.length - 1, visual.step || 0));
+      const label = routeStrings.labels[step];
+      const body = routeStrings.bodies[step];
+      const card = document.createElement('article');
+      card.className = 'reader-related-visual-card';
+      const link = document.createElement('a');
+      link.className = 'reader-related-visual-link';
+      link.href = directHref(visual.path);
+      link.target = '_blank';
+      link.rel = 'noreferrer';
+      link.setAttribute('aria-label', `${strings.relatedVisualOpen}: ${label}`);
+      const heading = document.createElement('strong');
+      heading.textContent = `${String(index + 1).padStart(2, '0')} · ${label}`;
+      const image = document.createElement('img');
+      image.src = directHref(visual.path);
+      image.width = 900;
+      image.height = 1500;
+      image.loading = 'lazy';
+      image.alt = `${strings.visualAltPrefix} ${label.toLowerCase()}: ${body}`;
+      const openLabel = document.createElement('span');
+      openLabel.className = 'reader-image-link-label';
+      openLabel.textContent = strings.relatedVisualOpen;
+      link.append(heading, image, openLabel);
+      const caption = document.createElement('p');
+      caption.className = 'reader-related-visual-caption';
+      caption.textContent = body;
+      card.append(link, caption);
+      relatedVisualsGrid.append(card);
+    });
   };
   const applyReaderChrome = () => {
     const strings = currentReaderCopy();
@@ -2390,6 +2519,7 @@ function canonicalChapterTitle(chapter) {
     if (pagination) pagination.hidden = true;
     renderReaderConceptMap(null, '');
     renderReaderVisualCompanion(null);
+    renderReaderRelatedVisuals(null);
     renderReaderRecoveryMap(null);
     const box = document.createElement('div');
     box.className = 'reader-error';
@@ -2563,6 +2693,7 @@ function canonicalChapterTitle(chapter) {
     renderReaderInlineConceptMap(selection, title, pageHeadings);
     renderReaderPageAnatomy(selection, title, pageHeadings);
     renderReaderVisualCompanion(selection);
+    renderReaderRelatedVisuals(selection);
     renderReaderRecoveryMap(selection);
     renderBookNavigation(selection);
     renderTrustRecord(null);
