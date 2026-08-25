@@ -118,6 +118,9 @@ VERSIONED_SITE_ASSETS = (
     "search-index.js",
     "visuals.css",
     "visuals.js",
+    "visual.html",
+    "visual-viewer.css",
+    "visual-viewer.js",
 )
 
 
@@ -232,6 +235,9 @@ def validate_source() -> None:
         ROOT / "site/reader.html",
         ROOT / "site/reader.css",
         ROOT / "site/reader.js",
+        ROOT / "site/visual.html",
+        ROOT / "site/visual-viewer.css",
+        ROOT / "site/visual-viewer.js",
         SEO_CONFIG,
         *(ROOT / path for path in REQUIRED_PUBLISH_FILES),
     )
@@ -367,6 +373,7 @@ def validate_artifact(output: Path, versions: dict[str, str] | None = None) -> N
         output / "index.html",
         output / "reader.html",
         output / "visuals.html",
+        output / "site" / "visual.html",
         output / ".nojekyll",
         output / "robots.txt",
         output / "sitemap.xml",
@@ -436,6 +443,7 @@ def validate_artifact(output: Path, versions: dict[str, str] | None = None) -> N
             "reader_alias": reader_alias_text,
             "app": (output / "site/app.js").read_text(encoding="utf-8"),
             "visuals": visuals_text,
+            "visual": (output / "site/visual.html").read_text(encoding="utf-8"),
         }
         for name, version in versions.items():
             expected = f"{name}?v={version}"
@@ -447,6 +455,8 @@ def validate_artifact(output: Path, versions: dict[str, str] | None = None) -> N
                 raise ValueError("Pages artifact search loader is missing a content version")
             if name in {"visuals.css", "visuals.js"} and expected not in public_texts["visuals"]:
                 raise ValueError(f"Pages visual entry is missing content version for {name}")
+            if name in {"visual-viewer.css", "visual-viewer.js"} and expected not in public_texts["visual"]:
+                raise ValueError(f"Pages visual viewer is missing content version for {name}")
     home_page = config["home_page"]
     assert isinstance(home_page, dict)
     source_index = (ROOT / "site/index.html").read_text(encoding="utf-8")
@@ -536,6 +546,8 @@ def build_into(output: Path) -> None:
             (output / f"{locale}.html").write_text(versioned_asset_references(page, versions), encoding="utf-8", newline="\n")
     reader_entry = versioned_asset_references(pages_reader(ROOT / "site/reader.html"), versions)
     (output / "site/reader.html").write_text(reader_entry, encoding="utf-8", newline="\n")
+    visual_entry = versioned_asset_references((ROOT / "site/visual.html").read_text(encoding="utf-8"), versions)
+    (output / "site/visual.html").write_text(visual_entry, encoding="utf-8", newline="\n")
     reader_alias = versioned_asset_references(pages_reader_alias(ROOT / "site/reader.html"), versions)
     (output / "reader.html").write_text(reader_alias, encoding="utf-8", newline="\n")
     app_path = output / "site/app.js"

@@ -32,6 +32,7 @@ def make_artifact(root: Path, marker: str) -> Path:
         "site/app.js", "site/reader.js", "site/locale-manifest.js",
         "site/learning-path-data.js", "site/goal-templates.js", "site/traditional-chinese.js", "site/search-index.js",
         "site/seo-config.json", "site/visuals.html", "site/visuals.css", "site/visuals.js",
+        "site/visual.html", "site/visual-viewer.css", "site/visual-viewer.js",
         *(f"{locale}.html" for locale in LOCALES if locale != "en"),
     ]
     for relative_path in paths:

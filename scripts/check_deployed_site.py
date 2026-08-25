@@ -48,6 +48,9 @@ CORE_PATHS = (
     "site/visuals.html",
     "site/visuals.css",
     "site/visuals.js",
+    "site/visual.html",
+    "site/visual-viewer.css",
+    "site/visual-viewer.js",
 )
 
 
