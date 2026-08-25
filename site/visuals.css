@@ -227,6 +227,7 @@ button, select { font: inherit; }
   color: var(--visual-white);
   background: var(--visual-ink);
   text-align: center;
+  pointer-events: none;
   transform: translate(-50%, -50%);
 }
 .visual-journey-center span { color: var(--visual-red); font-size: .82rem; font-weight: 800; line-height: 1.1; }
