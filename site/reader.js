@@ -1355,6 +1355,7 @@
     const nodesByHeadingId = new Map();
     const detail = document.createElement('section');
     detail.className = 'reader-inline-concept-map-detail';
+    detail.dataset.readerInlineConceptMapDetail = 'true';
     detail.setAttribute('aria-live', 'polite');
     detail.setAttribute('aria-atomic', 'true');
     const detailLabel = document.createElement('span');
