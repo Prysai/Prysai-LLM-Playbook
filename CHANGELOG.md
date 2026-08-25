@@ -20,7 +20,7 @@ Playbook is ready for public production use.
   only and does not replace the broader browser smoke or learner validation.
 
 - Added a standalone eight-locale Visual Guide with a six-stage interactive
-  mind map, twelve project-authored teaching boards, localized captions and
+  mind map, nineteen project-authored teaching boards, localized captions and
   alternatives, and a text-first route that remains usable without JavaScript.
   The route is linked from the homepage and Reader in the selected locale;
   browser checks cover the eight language paths, image inventory, keyboard
