@@ -197,6 +197,22 @@ def translation_keys(app: str, language: str, html_keys: set[str]) -> set[str]:
             )
         if evidence_locale:
             blocks.append(evidence_locale.group("body"))
+    journey_map = re.search(r"const\s+foundationJourneyMapCopy\s*=\s*\{(?P<body>.*?)\n\};", app, re.DOTALL)
+    if journey_map:
+        locale_key = rf"(?:['\"]{re.escape(language)}['\"]|{re.escape(language)})"
+        journey_locale = re.search(
+            rf"\n\s{{2}}{locale_key}:\s*\{{(?P<body>.*?)\n\s{{2}}\}},",
+            journey_map.group("body"),
+            re.DOTALL,
+        )
+        if not journey_locale:
+            journey_locale = re.search(
+                rf"(?:^|\n)\s{{2}}{locale_key}:\s*\{{(?P<body>[^{{}}]*)\}}",
+                journey_map.group("body"),
+                re.DOTALL,
+            )
+        if journey_locale:
+            blocks.append(journey_locale.group("body"))
     return set().union(*(keys_for(block, html_keys) for block in blocks)) if blocks else set()
 
 
