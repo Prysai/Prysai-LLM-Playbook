@@ -557,6 +557,13 @@
   const copy = () => COPY[locale] || COPY.en;
   const localized = (values) => values[locale] || values.en;
   const CAPABILITY_LEVELS = Object.values(window.CODEX_LEARNING_PATH?.levels || {}).sort((left, right) => left.id.localeCompare(right.id, 'en', { numeric: true }));
+  const FRENCH_CAPABILITY_NAMES = ['Observateur', 'Utilisateur prudent', 'Concepteur de tâches', 'Concepteur de workflows', 'Constructeur de capacités', 'Évaluateur des preuves', 'Coach d’équipe'];
+
+  function localizedCapabilityName(level) {
+    const value = localized(level.name);
+    if (locale === 'fr' && /^Niveau\s+\d+$/i.test(value)) return FRENCH_CAPABILITY_NAMES[Number(level.id.replace(/^L/, ''))] || value;
+    return value;
+  }
 
   function readerHref(base) {
     const file = `${base}-${LOCALES[locale].suffix}.md`;
@@ -763,11 +770,11 @@
       button.className = 'visual-capability-node';
       button.dataset.capability = level.id;
       button.setAttribute('aria-pressed', String(level.id === activeCapabilityId));
-      button.setAttribute('aria-label', `${String(index).padStart(2, '0')} ${localized(level.name)}`);
+      button.setAttribute('aria-label', `${String(index).padStart(2, '0')} ${localizedCapabilityName(level)}`);
       const number = document.createElement('span');
       number.textContent = String(index).padStart(2, '0');
       const label = document.createElement('strong');
-      label.textContent = localized(level.name);
+      label.textContent = localizedCapabilityName(level);
       button.append(number, label);
       button.addEventListener('click', () => { activeCapabilityId = level.id; renderCapabilityMap(); });
       if (level.id === activeCapabilityId) button.classList.add('is-selected');
@@ -776,7 +783,7 @@
 
       const fallbackItem = document.createElement('li');
       const fallbackTitle = document.createElement('strong');
-      fallbackTitle.textContent = `${String(index).padStart(2, '0')} · ${localized(level.name)}`;
+      fallbackTitle.textContent = `${String(index).padStart(2, '0')} · ${localizedCapabilityName(level)}`;
       const fallbackBody = document.createElement('span');
       fallbackBody.textContent = localized(level.description || level.short);
       const next = level.next?.chapter || level.next?.lab || level.chapters?.[0] || level.labs?.[0];
@@ -798,9 +805,11 @@
     const detailLink = query('[data-visual-capability-link]');
     const image = query('[data-visual-capability-image]');
     const imageLink = query('[data-visual-capability-image-link]');
-    if (title) title.textContent = localized(level.name);
-    if (headline) headline.textContent = localized(level.headline || level.short);
-    if (body) body.textContent = localized(level.description || level.short);
+    const headlineText = localized(level.headline || level.short);
+    const bodyText = localized(level.description || level.short) === headlineText ? localized(level.short) : localized(level.description || level.short);
+    if (title) title.textContent = localizedCapabilityName(level);
+    if (headline) headline.textContent = headlineText;
+    if (body) body.textContent = bodyText;
     if (stats) stats.textContent = capabilityStats(level, strings);
     if (nextText) nextText.textContent = next ? localized(next.name) : strings.capabilityNoNext;
     if (detailLink) {
@@ -808,7 +817,7 @@
       detailLink.hidden = !next?.href;
     }
     if (image) image.alt = strings.capabilityFigureAlt;
-    if (imageLink) imageLink.setAttribute('aria-label', `${strings.capabilityOpenVisual}: ${localized(level.name)}`);
+    if (imageLink) imageLink.setAttribute('aria-label', `${strings.capabilityOpenVisual}: ${localizedCapabilityName(level)}`);
   }
 
   function setText() {
