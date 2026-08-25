@@ -22,6 +22,16 @@ const locales = [
   ['fr', 'FR', 'Lab 003 : Auditer une affirmation de fin', 'Garder un essai assez petit pour être vérifiable'],
 ];
 const documentLanguages = { zh: 'zh-CN', 'zh-tw': 'zh-TW' };
+const researchLocales = [
+  ['en', 'EN'],
+  ['zh', 'ZH'],
+  ['es', 'ES'],
+  ['ja', 'JA'],
+  ['ko', 'KO'],
+  ['de', 'DE'],
+  ['zh-tw', 'ZHTW'],
+  ['fr', 'FR'],
+];
 
 const build = spawnSync(python, ['-X', 'utf8', 'scripts/build_pages_artifact.py', '--output', artifact], {
   cwd: root,
@@ -87,7 +97,22 @@ try {
     assert.notEqual((await related.locator('[data-reader-related-visuals-boundary]').textContent() || '').trim(), '', `${locale} Lab 003 related visuals have no evidence boundary`);
     await noHorizontalOverflow(`${locale} Lab 003 Reader`);
   }
-  console.log(`READER_VISUAL_SMOKE_OK locales=${locales.length} lab=003 mobile=390 no_horizontal_overflow=1`);
+
+  for (const [locale, suffix] of researchLocales) {
+    await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F15-research-track-${suffix}.md&lang=${locale}`, { waitUntil: 'networkidle' });
+    await page.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+    assert.notEqual((await page.locator('[data-reader-article] h1').innerText()).trim(), '', `${locale} Chapter 15 has no localized heading`);
+
+    const related = page.locator('[data-reader-related-visuals]');
+    assert.equal(await related.isVisible(), true, `${locale} Chapter 15 related visuals are not discoverable`);
+    assert.equal(await related.locator('.reader-related-visual-card').count(), 2, `${locale} Chapter 15 related visual sequence changed`);
+    const maturityCard = related.locator('img[src*="evidence-maturity-ladder-red-black.svg"]');
+    assert.equal(await maturityCard.count(), 1, `${locale} Chapter 15 is missing the evidence maturity ladder`);
+    assert.notEqual((await maturityCard.getAttribute('alt') || '').trim(), '', `${locale} evidence maturity ladder has no localized alternative text`);
+    assert.notEqual((await related.locator('[data-reader-related-visuals-boundary]').textContent() || '').trim(), '', `${locale} Chapter 15 related visuals have no evidence boundary`);
+    await noHorizontalOverflow(`${locale} Chapter 15 Reader`);
+  }
+  console.log(`READER_VISUAL_SMOKE_OK locales=${locales.length} lab=003 research_locales=${researchLocales.length} chapter=15 mobile=390 no_horizontal_overflow=1`);
 } finally {
   await browser.close();
   await new Promise((resolve) => server.close(resolve));
