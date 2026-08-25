@@ -3,7 +3,7 @@ import { createServer } from 'node:http';
 import { spawnSync } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath, pathToFileURL } from 'node:url';
+import { fileURLToPath } from 'node:url';
 
 const playwrightModule = await import('playwright');
 const { chromium } = playwrightModule.default ?? playwrightModule;
