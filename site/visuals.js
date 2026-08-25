@@ -183,6 +183,18 @@
   };
   Object.entries(READING_LOOP_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
 
+  const CAPABILITY_COPY = {
+    en: { capabilityEyebrow: 'Capability ladder', capabilityTitle: 'Choose the next capability, not the biggest tool.', capabilityIntro: 'The ladder turns the learning path into seven observable practices. Select a level to see what it adds, which lesson to open next, and what the level still does not prove.', capabilityAria: 'Seven candidate capability levels from observer to team coach', capabilityCenter: 'Seven levels', capabilityCenterSub: 'one observable practice at a time', capabilitySelected: 'Selected capability', capabilityNext: 'Next practice', capabilityOpen: 'Open the next lesson', capabilityOpenVisual: 'Open the capability ladder', capabilityFallback: 'Read the seven levels as text', capabilityFallbackIntro: 'The same progression remains available without the interactive map. Each level names a practice and a bounded next route.', capabilityFigureAlt: 'Seven-level capability ladder from observing an LLM result to coaching a team', capabilityFigureCaption: 'Project-authored capability ladder. The level names a practice; the ordered list and source lesson carry the explanation.', capabilityBoundary: 'A level is a practice target, not a status claim. The project has not measured mastery or transfer.', capabilityLevelPrefix: 'Level', capabilityChapterLabel: 'chapters', capabilityLabLabel: 'labs', capabilityNoNext: 'No next route is registered. Keep the receipt and ask for review.' },
+    zh: { capabilityEyebrow: '能力阶梯', capabilityTitle: '先练下一项能力，不要先追最大的工具。', capabilityIntro: '这张阶梯把学习路径变成七项可以观察的练习。选择一个等级，就能看到它增加了什么、下一课该打开哪里，以及它仍然不能证明什么。', capabilityAria: '从观察者到团队教练的七个候选能力等级', capabilityCenter: '七个等级', capabilityCenterSub: '一次练成一项可观察能力', capabilitySelected: '当前能力', capabilityNext: '下一项练习', capabilityOpen: '打开下一课', capabilityOpenVisual: '打开能力阶梯图', capabilityFallback: '按文字阅读七个等级', capabilityFallbackIntro: '不使用交互地图时，下面仍保留同一条进阶路线。每个等级都说明一项练习和一条有边界的下一步路线。', capabilityFigureAlt: '从观察 LLM 结果到辅导团队的七级能力阶梯', capabilityFigureCaption: '项目原创能力阶梯图。等级名称只是练习目标；有序列表和来源课程才是具体解释。', capabilityBoundary: '等级是练习目标，不是状态声明。项目尚未测量掌握程度或迁移效果。', capabilityLevelPrefix: '等级', capabilityChapterLabel: '章', capabilityLabLabel: '个实验', capabilityNoNext: '没有登记下一条路线。请保留记录并请求复核。' },
+    es: { capabilityEyebrow: 'Escalera de capacidades', capabilityTitle: 'Elige la próxima capacidad, no la herramienta más grande.', capabilityIntro: 'La escalera convierte la ruta de aprendizaje en siete prácticas observables. Elige un nivel para ver qué añade, qué lección abrir después y qué no demuestra todavía.', capabilityAria: 'Siete niveles candidatos, de observador a coach de equipo', capabilityCenter: 'Siete niveles', capabilityCenterSub: 'una práctica observable cada vez', capabilitySelected: 'Capacidad seleccionada', capabilityNext: 'Próxima práctica', capabilityOpen: 'Abrir la siguiente lección', capabilityOpenVisual: 'Abrir la escalera de capacidades', capabilityFallback: 'Leer los siete niveles como texto', capabilityFallbackIntro: 'La misma progresión queda disponible sin el mapa interactivo. Cada nivel nombra una práctica y un siguiente recorrido acotado.', capabilityFigureAlt: 'Escalera de siete niveles: de observar un resultado de LLM a acompañar a un equipo', capabilityFigureCaption: 'Escalera de capacidades original del proyecto. El nombre del nivel marca una práctica; la lista y la lección explican el trabajo.', capabilityBoundary: 'Un nivel es un objetivo de práctica, no una afirmación de estado. El proyecto no ha medido dominio ni transferencia.', capabilityLevelPrefix: 'Nivel', capabilityChapterLabel: 'capítulos', capabilityLabLabel: 'labs', capabilityNoNext: 'No hay una ruta siguiente registrada. Conserva el registro y pide una revisión.' },
+    ja: { capabilityEyebrow: '能力ラダー', capabilityTitle: '大きなツールではなく、次の能力を選ぶ。', capabilityIntro: 'このラダーは学習ルートを、観察できる7つの練習に分けます。段階を選ぶと、何が加わるか、次に開くレッスン、まだ証明できないことが分かります。', capabilityAria: '観察者からチームコーチまでの7つの候補能力レベル', capabilityCenter: '7つのレベル', capabilityCenterSub: '一度に1つの観察可能な練習', capabilitySelected: '選択中の能力', capabilityNext: '次の練習', capabilityOpen: '次のレッスンを開く', capabilityOpenVisual: '能力ラダーを開く', capabilityFallback: '7つのレベルをテキストで読む', capabilityFallbackIntro: 'インタラクティブなマップなしでも同じ進み方を確認できます。各レベルは練習と範囲を区切った次のルートを示します。', capabilityFigureAlt: 'LLMの結果を観察する段階からチームを支援する段階までの7段階の能力ラダー', capabilityFigureCaption: 'プロジェクト作成の能力ラダーです。レベル名は練習目標であり、具体的な説明は順序付きリストと本文が担います。', capabilityBoundary: 'レベルは練習目標であり、習得を示すステータスではありません。習得や転用は測定されていません。', capabilityLevelPrefix: 'レベル', capabilityChapterLabel: '章', capabilityLabLabel: 'ラボ', capabilityNoNext: '次のルートは登録されていません。記録を残してレビューを依頼してください。' },
+    ko: { capabilityEyebrow: '역량 단계', capabilityTitle: '가장 큰 도구보다 다음 역량을 고르세요.', capabilityIntro: '이 단계표는 학습 경로를 관찰 가능한 일곱 가지 연습으로 바꿉니다. 단계를 선택하면 무엇이 추가되는지, 다음에 열 수업과 아직 증명할 수 없는 것을 볼 수 있습니다.', capabilityAria: '관찰자에서 팀 코치까지 일곱 개의 후보 역량 단계', capabilityCenter: '일곱 단계', capabilityCenterSub: '한 번에 하나의 관찰 가능한 연습', capabilitySelected: '선택한 역량', capabilityNext: '다음 연습', capabilityOpen: '다음 수업 열기', capabilityOpenVisual: '역량 단계표 열기', capabilityFallback: '일곱 단계를 텍스트로 읽기', capabilityFallbackIntro: '대화형 지도 없이도 같은 진행 순서를 확인할 수 있습니다. 각 단계는 연습 하나와 범위가 정해진 다음 경로를 제시합니다.', capabilityFigureAlt: 'LLM 결과를 관찰하는 단계에서 팀을 코칭하는 단계까지의 일곱 단계 역량표', capabilityFigureCaption: '프로젝트가 만든 역량 단계표입니다. 단계 이름은 연습 목표이며, 순서 목록과 원문 수업이 구체적인 설명을 제공합니다.', capabilityBoundary: '단계는 연습 목표이지 상태 주장이 아닙니다. 숙련도나 전이는 아직 측정하지 않았습니다.', capabilityLevelPrefix: '단계', capabilityChapterLabel: '개 장', capabilityLabLabel: '개 실습', capabilityNoNext: '등록된 다음 경로가 없습니다. 기록을 남기고 검토를 요청하세요.' },
+    de: { capabilityEyebrow: 'Kompetenzleiter', capabilityTitle: 'Wähle die nächste Kompetenz, nicht das größte Tool.', capabilityIntro: 'Die Leiter macht aus der Lernroute sieben beobachtbare Übungen. Wähle eine Stufe, um ihren Zusatz, die nächste Lektion und ihre Beleggrenze zu sehen.', capabilityAria: 'Sieben Kandidatenstufen vom Beobachter bis zum Team-Coach', capabilityCenter: 'Sieben Stufen', capabilityCenterSub: 'jeweils eine beobachtbare Übung', capabilitySelected: 'Ausgewählte Kompetenz', capabilityNext: 'Nächste Übung', capabilityOpen: 'Nächste Lektion öffnen', capabilityOpenVisual: 'Kompetenzleiter öffnen', capabilityFallback: 'Die sieben Stufen als Text lesen', capabilityFallbackIntro: 'Ohne interaktive Karte bleibt dieselbe Entwicklung verfügbar. Jede Stufe nennt eine Übung und eine begrenzte nächste Route.', capabilityFigureAlt: 'Kompetenzleiter mit sieben Stufen: vom Beobachten eines LLM-Ergebnisses bis zum Coaching eines Teams', capabilityFigureCaption: 'Vom Projekt erstellte Kompetenzleiter. Der Stufenname benennt eine Übung; Liste und Lektion erklären sie genauer.', capabilityBoundary: 'Eine Stufe ist ein Übungsziel, keine Statusbehauptung. Beherrschung und Übertragung wurden nicht gemessen.', capabilityLevelPrefix: 'Stufe', capabilityChapterLabel: 'Kapitel', capabilityLabLabel: 'Labs', capabilityNoNext: 'Keine nächste Route registriert. Bewahre den Beleg auf und bitte um Prüfung.' },
+    'zh-tw': { capabilityEyebrow: '能力階梯', capabilityTitle: '先練下一項能力，不要先追最大的工具。', capabilityIntro: '這張階梯把學習路徑變成七項可以觀察的練習。選擇一個等級，就能看到它增加了什麼、下一課該開啟哪裡，以及它仍然不能證明什麼。', capabilityAria: '從觀察者到團隊教練的七個候選能力等級', capabilityCenter: '七個等級', capabilityCenterSub: '一次練習一項可觀察能力', capabilitySelected: '目前能力', capabilityNext: '下一項練習', capabilityOpen: '開啟下一課', capabilityOpenVisual: '開啟能力階梯圖', capabilityFallback: '依文字閱讀七個等級', capabilityFallbackIntro: '不使用互動地圖時，下面仍保留相同的進階路線。每個等級都說明一項練習與一條有界線的下一步路線。', capabilityFigureAlt: '從觀察 LLM 結果到輔導團隊的七級能力階梯', capabilityFigureCaption: '專案原創能力階梯圖。等級名稱只是練習目標；有序清單與來源課程才是具體說明。', capabilityBoundary: '等級是練習目標，不是狀態聲明。專案尚未測量掌握程度或遷移效果。', capabilityLevelPrefix: '等級', capabilityChapterLabel: '章', capabilityLabLabel: '個實驗', capabilityNoNext: '沒有登記下一條路線。請保留紀錄並請求複核。' },
+    fr: { capabilityEyebrow: 'Échelle des capacités', capabilityTitle: 'Choisissez la prochaine capacité, pas le plus gros outil.', capabilityIntro: 'Cette échelle transforme le parcours en sept pratiques observables. Choisissez un niveau pour voir ce qu’il ajoute, quelle leçon ouvrir ensuite et ce qu’il ne prouve toujours pas.', capabilityAria: 'Sept niveaux candidats, de l’observateur au coach d’équipe', capabilityCenter: 'Sept niveaux', capabilityCenterSub: 'une pratique observable à la fois', capabilitySelected: 'Capacité sélectionnée', capabilityNext: 'Prochaine pratique', capabilityOpen: 'Ouvrir la leçon suivante', capabilityOpenVisual: 'Ouvrir l’échelle des capacités', capabilityFallback: 'Lire les sept niveaux en texte', capabilityFallbackIntro: 'La même progression reste disponible sans la carte interactive. Chaque niveau nomme une pratique et une prochaine route délimitée.', capabilityFigureAlt: 'Échelle de sept niveaux, de l’observation d’un résultat LLM à l’accompagnement d’une équipe', capabilityFigureCaption: 'Échelle des capacités créée par le projet. Le nom indique une pratique ; la liste et la leçon en donnent l’explication.', capabilityBoundary: 'Un niveau est un objectif de pratique, pas une affirmation de statut. La maîtrise et le transfert n’ont pas été mesurés.', capabilityLevelPrefix: 'Niveau', capabilityChapterLabel: 'chapitres', capabilityLabLabel: 'labs', capabilityNoNext: 'Aucune route suivante n’est enregistrée. Conservez le relevé et demandez une revue.' },
+  };
+  Object.entries(CAPABILITY_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
+
   const VISUAL_ROUTE_STEPS = [
     { id: 'purpose', section: 'visual-goal', labels: { en: 'Choose a purpose', zh: '选择一个目的', es: 'Elegir un propósito', ja: '目的を選ぶ', ko: '목적 고르기', de: 'Einen Zweck wählen', 'zh-tw': '選擇一個目的', fr: 'Choisir un objectif' }, bodies: { en: 'Start with why you came: a safe first task, an uncertain result, a claim to verify, or a method to reuse.', zh: '先说清楚你为什么来：安全的第一项任务、不确定的结果、需要核验的结论，或想复用的方法。', es: 'Empieza por tu motivo: una primera tarea segura, un resultado incierto, una afirmación que comprobar o un método que reutilizar.', ja: 'まず来た理由を選びます。安全な最初のタスク、不確かな結果、確認したい主張、再利用したい方法のいずれかです。', ko: '왜 왔는지부터 고르세요. 안전한 첫 작업, 불확실한 결과, 확인할 주장 또는 재사용할 방법 중 하나입니다.', de: 'Beginne mit deinem Anlass: eine sichere erste Aufgabe, ein unsicheres Ergebnis, eine zu prüfende Aussage oder eine wiederverwendbare Methode.', 'zh-tw': '先說清楚你為什麼來：安全的第一項任務、不確定的結果、需要核對的主張，或想重複使用的方法。', fr: 'Commencez par votre besoin : une première tâche sûre, un résultat incertain, une affirmation à vérifier ou une méthode à réutiliser.' }, next: { en: 'Which small outcome do I need?', zh: '我需要哪项小结果？', es: '¿Qué resultado pequeño necesito?', ja: '必要な小さな結果は何か？', ko: '어떤 작은 결과가 필요한가?', de: 'Welches kleine Ergebnis brauche ich?', 'zh-tw': '我需要哪個小結果？', fr: 'De quel petit résultat ai-je besoin ?' } },
     { id: 'order', section: 'visual-journey', labels: { en: 'See the order', zh: '看清顺序', es: 'Ver el orden', ja: '順序を見る', ko: '순서 보기', de: 'Die Reihenfolge sehen', 'zh-tw': '看清順序', fr: 'Voir l’ordre' }, bodies: { en: 'The foundation comes first. Platform tracks are optional layers added after a checked first route, not competing starting points.', zh: '基础核心先开始。平台路径是完成第一条可检查路线后再增加的可选层，不是互相竞争的起点。', es: 'El núcleo de fundamentos va primero. Las rutas de plataforma son capas opcionales después de un primer recorrido comprobado, no puntos de partida rivales.', ja: '最初は基礎コアです。プラットフォーム別のルートは、最初の確認できる道筋の後に必要に応じて加える層であり、競合する入口ではありません。', ko: '기초 코어가 먼저입니다. 플랫폼 경로는 첫 번째 확인 가능한 경로 뒤에 필요할 때 추가하는 선택 계층이지, 서로 경쟁하는 시작점이 아닙니다.', de: 'Der Grundlagenkern kommt zuerst. Plattformrouten sind optionale Ebenen nach einer geprüften ersten Route, keine konkurrierenden Einstiege.', 'zh-tw': '先從基礎核心開始。平台路線是在完成第一條可檢查路線後才增加的選用層，不是彼此競爭的起點。', fr: 'Le Foundation Core vient d’abord. Les parcours de plateforme sont des couches facultatives après une première route vérifiée, pas des points de départ concurrents.' }, next: { en: 'Am I still on the foundation route?', zh: '我还在基础路线中吗？', es: '¿Sigo en el recorrido de fundamentos?', ja: 'まだ基礎ルートにいるか？', ko: '아직 기초 경로에 있는가?', de: 'Bin ich noch auf der Grundlagenroute?', 'zh-tw': '我還在基礎路線中嗎？', fr: 'Suis-je encore sur le parcours de base ?' } },
@@ -538,11 +550,13 @@
   let activeTriageId = 'text';
   let activeRouteId = 'purpose';
   let activeExplorerId = 'understand';
+  let activeCapabilityId = 'L0';
 
   const query = (selector) => document.querySelector(selector);
   const queryAll = (selector) => [...document.querySelectorAll(selector)];
   const copy = () => COPY[locale] || COPY.en;
   const localized = (values) => values[locale] || values.en;
+  const CAPABILITY_LEVELS = Object.values(window.CODEX_LEARNING_PATH?.levels || {}).sort((left, right) => left.id.localeCompare(right.id, 'en', { numeric: true }));
 
   function readerHref(base) {
     const file = `${base}-${LOCALES[locale].suffix}.md`;
@@ -550,6 +564,26 @@
   }
 
   function assetHref(asset) { return `../assets/teaching/${asset}`; }
+
+  function catalogReaderHref(href) {
+    if (!href) return '';
+    const base = href.replace(/^\.\.\//, '').replace(/-(?:EN|ZH|ES|JA|KO|DE|ZHTW|FR)\.md$/i, '');
+    return readerHref(base);
+  }
+
+  function capabilityStats(level, strings) {
+    const chapters = level.chapters?.length || 0;
+    const labs = level.labs?.length || 0;
+    const number = level.id.replace(/^L/, '');
+    if (locale === 'zh') return `${strings.capabilityLevelPrefix} ${number} · ${chapters} 章 · ${labs} 个实验`;
+    if (locale === 'zh-tw') return `${strings.capabilityLevelPrefix} ${number} · ${chapters} 章 · ${labs} 個實驗`;
+    if (locale === 'ja') return `${strings.capabilityLevelPrefix} ${number} · 章 ${chapters} · ラボ ${labs}`;
+    if (locale === 'ko') return `${strings.capabilityLevelPrefix} ${number} · 챕터 ${chapters}개 · 실습 ${labs}개`;
+    if (locale === 'de') return `${strings.capabilityLevelPrefix} ${number} · ${chapters} Kapitel · ${labs} Labs`;
+    if (locale === 'es') return `${strings.capabilityLevelPrefix} ${number} · ${chapters} capítulos · ${labs} labs`;
+    if (locale === 'fr') return `${strings.capabilityLevelPrefix} ${number} · ${chapters} chapitres · ${labs} labs`;
+    return `${strings.capabilityLevelPrefix} ${number} · ${chapters} chapter${chapters === 1 ? '' : 's'} · ${labs} lab${labs === 1 ? '' : 's'}`;
+  }
 
   function renderVisualRoute() {
     const nodes = query('[data-visual-route-nodes]');
@@ -713,6 +747,68 @@
     if (detailLink) detailLink.href = readerHref(stage.path);
     if (image) image.alt = strings.journeyFigureAlt;
     if (imageLink) imageLink.setAttribute('aria-label', `${strings.journeyOpenVisual}: ${localized(stage.labels)}`);
+  }
+
+  function renderCapabilityMap() {
+    const nodes = query('[data-visual-capability-nodes]');
+    const fallback = query('[data-visual-capability-fallback]');
+    if (!nodes || !fallback || !CAPABILITY_LEVELS.length) return;
+    const strings = copy();
+    nodes.replaceChildren();
+    fallback.replaceChildren();
+    CAPABILITY_LEVELS.forEach((level, index) => {
+      const item = document.createElement('li');
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'visual-capability-node';
+      button.dataset.capability = level.id;
+      button.setAttribute('aria-pressed', String(level.id === activeCapabilityId));
+      button.setAttribute('aria-label', `${String(index).padStart(2, '0')} ${localized(level.name)}`);
+      const number = document.createElement('span');
+      number.textContent = String(index).padStart(2, '0');
+      const label = document.createElement('strong');
+      label.textContent = localized(level.name);
+      button.append(number, label);
+      button.addEventListener('click', () => { activeCapabilityId = level.id; renderCapabilityMap(); });
+      if (level.id === activeCapabilityId) button.classList.add('is-selected');
+      item.append(button);
+      nodes.append(item);
+
+      const fallbackItem = document.createElement('li');
+      const fallbackTitle = document.createElement('strong');
+      fallbackTitle.textContent = `${String(index).padStart(2, '0')} · ${localized(level.name)}`;
+      const fallbackBody = document.createElement('span');
+      fallbackBody.textContent = localized(level.description || level.short);
+      const next = level.next?.chapter || level.next?.lab || level.chapters?.[0] || level.labs?.[0];
+      const fallbackLink = document.createElement('a');
+      fallbackLink.className = 'visual-action-link';
+      fallbackLink.href = catalogReaderHref(next?.href);
+      fallbackLink.textContent = `${strings.capabilityOpen} ↗`;
+      fallbackItem.append(fallbackTitle, fallbackBody, fallbackLink);
+      fallback.append(fallbackItem);
+    });
+
+    const level = CAPABILITY_LEVELS.find((candidate) => candidate.id === activeCapabilityId) || CAPABILITY_LEVELS[0];
+    const next = level.next?.chapter || level.next?.lab || level.chapters?.[0] || level.labs?.[0];
+    const title = query('[data-visual-capability-title]');
+    const headline = query('[data-visual-capability-headline]');
+    const body = query('[data-visual-capability-body]');
+    const stats = query('[data-visual-capability-stats]');
+    const nextText = query('[data-visual-capability-next]');
+    const detailLink = query('[data-visual-capability-link]');
+    const image = query('[data-visual-capability-image]');
+    const imageLink = query('[data-visual-capability-image-link]');
+    if (title) title.textContent = localized(level.name);
+    if (headline) headline.textContent = localized(level.headline || level.short);
+    if (body) body.textContent = localized(level.description || level.short);
+    if (stats) stats.textContent = capabilityStats(level, strings);
+    if (nextText) nextText.textContent = next ? localized(next.name) : strings.capabilityNoNext;
+    if (detailLink) {
+      detailLink.href = catalogReaderHref(next?.href);
+      detailLink.hidden = !next?.href;
+    }
+    if (image) image.alt = strings.capabilityFigureAlt;
+    if (imageLink) imageLink.setAttribute('aria-label', `${strings.capabilityOpenVisual}: ${localized(level.name)}`);
   }
 
   function setText() {
@@ -1189,6 +1285,7 @@
     renderVisualRoute();
     renderIntentMap();
     renderJourney();
+    renderCapabilityMap();
     renderConceptMap();
     renderActionBoundaryMap();
     renderTriageMap();
@@ -1210,6 +1307,7 @@
   renderVisualRoute();
   renderIntentMap();
   renderJourney();
+  renderCapabilityMap();
   renderConceptMap();
   renderActionBoundaryMap();
   renderTriageMap();
