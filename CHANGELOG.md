@@ -23,6 +23,12 @@ Playbook is ready for public production use.
   locales; this is implementation evidence, not learner, accessibility,
   translation-quality, or release evidence.
 
+- Added selected-section detail panels to the Reader concept maps. Selecting a
+  heading now exposes a localized summary, the next section, and a direct
+  in-page link; the inline map and side map share the same text-first behavior.
+  This is navigation and orientation evidence only, not proof that a reader
+  understood or completed the section.
+
 
 ### Changed
 
