@@ -731,7 +731,7 @@ try {
     assert.deepEqual(await visualGuidePage.locator('[data-visual-map-nodes] button strong').allTextContents(), visualGuideLabels[locale], `${locale} visual guide stages are not localized`);
     assert.equal(await visualGuidePage.locator('[data-visual-map-nodes] button').count(), 6, `${locale} visual guide map lost a stage`);
     assert.equal(await visualGuidePage.locator('[data-visual-map-fallback] li').count(), 6, `${locale} visual guide text fallback lost a stage`);
-    assert.equal(await visualGuidePage.locator('.visual-card').count(), 12, `${locale} visual guide lost a teaching board`);
+    assert.equal(await visualGuidePage.locator('.visual-card').count(), 13, `${locale} visual guide lost a teaching board`);
     assert.deepEqual(await visualGuidePage.locator('[data-visual-goal-nodes] button strong').allTextContents(), visualGuideGoalLabels[locale], `${locale} visual guide goal entry labels are not localized`);
     assert.equal(await visualGuidePage.locator('[data-visual-goal-nodes] button').count(), 4, `${locale} visual guide goal map lost an entry`);
     assert.equal(await visualGuidePage.locator('[data-visual-goal-fallback] li').count(), 4, `${locale} visual guide goal fallback lost an entry`);
@@ -755,7 +755,7 @@ try {
   await visualGuidePage.goto(`${origin}/site/visuals.html?lang=fr`, { waitUntil: 'networkidle' });
   await noHorizontalOverflow(visualGuidePage, 'mobile French visual guide');
   assert.equal(await visualGuidePage.locator('[data-visual-map-nodes] button').count(), 6, 'mobile visual guide map loses a stage');
-  assert.equal(await visualGuidePage.locator('.visual-card').count(), 12, 'mobile visual guide loses teaching boards');
+  assert.equal(await visualGuidePage.locator('.visual-card').count(), 13, 'mobile visual guide loses teaching boards');
   await visualGuidePage.screenshot({ path: path.join(visualEvidenceDirectory, 'visual-guide-mobile-fr.png'), fullPage: false });
   await visualGuidePage.close();
   const noScriptVisualContext = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
