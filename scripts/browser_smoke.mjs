@@ -1835,6 +1835,17 @@ try {
   assert.equal(await inlineTeachingVisual.locator('.reader-visual-explanation').count(), 1, 'Inline teaching visual has no text explanation');
   assert.equal((await inlineTeachingVisual.locator('.reader-visual-explanation summary').innerText()).trim(), 'Read this teaching visual as text', 'Inline teaching visual uses the wrong English explanation label');
   assert.equal(await inlineTeachingVisual.locator('.reader-visual-explanation li').count(), 6, 'Inline teaching visual text explanation does not expose all route steps');
+  const inlineVisualOrder = await page.locator('[data-reader-article]').evaluate((article) => {
+    const opening = article.querySelector(':scope > p');
+    const visual = article.querySelector('[data-reader-inline-visual]');
+    const concept = article.querySelector('[data-reader-inline-concept-map]');
+    return {
+      visualAfterOpening: Boolean(opening && visual && (opening.compareDocumentPosition(visual) & Node.DOCUMENT_POSITION_FOLLOWING)),
+      visualBeforeConcept: Boolean(visual && concept && (visual.compareDocumentPosition(concept) & Node.DOCUMENT_POSITION_FOLLOWING)),
+    };
+  });
+  assert.equal(inlineVisualOrder.visualAfterOpening, true, 'Reader inline teaching visual is not placed after the opening explanation');
+  assert.equal(inlineVisualOrder.visualBeforeConcept, true, 'Reader concept map appears before the teaching visual');
   const inlineConceptMap = page.locator('[data-reader-inline-concept-map]');
   assert.equal(await inlineConceptMap.count(), 1, 'Reader inline concept map is not available on a chapter page');
   assert.equal(await inlineConceptMap.locator('[data-reader-inline-concept-map-root]').count(), 1, 'Reader inline concept map has no localized root node');
