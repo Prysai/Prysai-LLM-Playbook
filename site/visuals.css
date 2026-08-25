@@ -212,6 +212,7 @@ button, select { font: inherit; }
 
 .visual-route-node {
   display: grid;
+  width: 100%;
   align-content: space-between;
   min-height: 7.2rem;
   padding: .85rem;
