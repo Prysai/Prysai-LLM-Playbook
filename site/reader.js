@@ -630,6 +630,64 @@
     { tokens: ['project-evidence-snapshot', 'content-status', 'release-readiness'], path: 'assets/teaching/project-evidence-snapshot-red-black.svg', step: 3 },
   ];
 
+  // A route label is useful for orientation, but it is too generic to explain
+  // a concrete board such as claim triage or side-effect boundaries. These
+  // briefs keep the image, caption, alt text, and text fallback aligned around
+  // the decision the selected board actually teaches. Unlisted boards keep
+  // the route copy below as a deliberate fallback.
+  const readerVisualBriefs = {
+    'response-claim-triage-red-black.svg': {
+      en: { title: 'Classify the claim before checking it', body: 'Separate text, execution, external-effect, and unknown claims so each one gets the smallest useful check.', next: 'Which claim type is this, and what would count as a direct check?', boundary: 'The board classifies a claim; it does not verify the claim, report that a tool ran, or prove an external effect.' },
+      zh: { title: '先分类结论，再选择检查', body: '把文字、执行、外部影响和未知结论分开，让每一类都得到最小而有用的检查。', next: '这是什么类型的结论？什么才算直接检查？', boundary: '这张图只帮助分类结论；它不能核实结论、证明工具已经运行，也不能证明外部影响已经发生。' },
+      es: { title: 'Clasifica la afirmación antes de comprobarla', body: 'Separa las afirmaciones de texto, ejecución, efecto externo y desconocimiento para elegir la comprobación mínima útil.', next: '¿Qué tipo de afirmación es y qué sería una comprobación directa?', boundary: 'El tablero clasifica la afirmación; no la verifica, no demuestra que se haya ejecutado una herramienta ni prueba un efecto externo.' },
+      ja: { title: '確認する前に主張を分類する', body: '文章、実行、外部への影響、不明の主張を分け、それぞれに最小限で役立つ確認を選びます。', next: 'これはどの種類の主張で、直接確認できるものは何か？', boundary: 'この図は主張の分類を示すだけです。主張の真偽、ツールの実行、外部への影響は証明しません。' },
+      ko: { title: '확인하기 전에 주장을 분류하기', body: '텍스트, 실행, 외부 효과와 미확인 주장을 나누고 각각에 가장 작고 유용한 점검을 선택합니다.', next: '이 주장은 어떤 유형이며 직접 확인하려면 무엇을 봐야 하는가?', boundary: '이 그림은 주장을 분류할 뿐입니다. 주장의 진위, 도구 실행, 외부 효과를 증명하지 않습니다.' },
+      de: { title: 'Die Aussage vor der Prüfung einordnen', body: 'Trenne Text-, Ausführungs-, Außenwirkungs- und unbekannte Aussagen, damit jede den kleinsten sinnvollen Check bekommt.', next: 'Um welche Aussageart handelt es sich, und was wäre ein direkter Check?', boundary: 'Die Tafel ordnet eine Aussage ein. Sie prüft sie nicht und belegt weder eine Tool-Ausführung noch eine Außenwirkung.' },
+      'zh-tw': { title: '先分類主張，再選擇檢查', body: '把文字、執行、外部影響與未知主張分開，讓每一類都得到最小且有用的檢查。', next: '這是哪一類主張？什麼才算直接檢查？', boundary: '這張圖只協助分類主張；它不能核實主張、證明工具已執行，也不能證明外部影響已發生。' },
+      fr: { title: 'Classer l’affirmation avant de la vérifier', body: 'Séparez les affirmations textuelles, d’exécution, d’effet externe et inconnues pour choisir le plus petit contrôle utile.', next: 'De quel type d’affirmation s’agit-il, et quel serait un contrôle direct ?', boundary: 'La planche classe une affirmation ; elle ne la vérifie pas et ne prouve ni l’exécution d’un outil ni un effet externe.' },
+    },
+    'prompt-contract-six-fields-red-black.svg': {
+      en: { title: 'A prompt is a small contract', body: 'Make result, context, allowed help, limits, check, and stop visible before the request starts.', next: 'Which field would make this request safer or easier to check?', boundary: 'The contract makes the request explicit; it does not make the model comply or prove that the requested result exists.' },
+      zh: { title: '提示词是一份小型契约', body: '在发出请求前，让结果、上下文、允许的帮助、限制、检查和停止条件都可见。', next: '哪个字段能让这次请求更安全、更容易检查？', boundary: '这份契约让请求变得明确；它不能保证模型遵守，也不能证明目标结果已经存在。' },
+      es: { title: 'Un prompt es un pequeño contrato', body: 'Haz visibles el resultado, el contexto, la ayuda permitida, los límites, la comprobación y la parada antes de empezar.', next: '¿Qué campo haría esta petición más segura o más fácil de comprobar?', boundary: 'El contrato hace explícita la petición; no obliga al modelo a cumplirla ni demuestra que el resultado exista.' },
+      ja: { title: 'プロンプトは小さな契約', body: '依頼を始める前に、結果、コンテキスト、許可する支援、制約、確認、停止を見える形にします。', next: 'どの項目があれば、この依頼をより安全に確認できるか？', boundary: 'この契約は依頼を明確にしますが、モデルの遵守や結果の存在を証明するものではありません。' },
+      ko: { title: '프롬프트는 작은 계약입니다', body: '요청을 시작하기 전에 결과, 맥락, 허용된 도움, 제한, 점검과 중지를 분명히 합니다.', next: '어떤 필드가 이 요청을 더 안전하고 확인하기 쉽게 만드는가?', boundary: '이 계약은 요청을 분명히 할 뿐입니다. 모델의 준수나 결과의 존재를 보장하지 않습니다.' },
+      de: { title: 'Ein Prompt ist ein kleiner Vertrag', body: 'Mache Ergebnis, Kontext, erlaubte Hilfe, Grenzen, Prüfung und Stopp vor der Anfrage sichtbar.', next: 'Welches Feld macht diese Anfrage sicherer oder leichter prüfbar?', boundary: 'Der Vertrag macht die Anfrage explizit. Er zwingt das Modell nicht zur Befolgung und belegt nicht, dass das Ergebnis vorhanden ist.' },
+      'zh-tw': { title: '提示是一份小型契約', body: '在提出請求前，讓結果、上下文、允許的協助、限制、檢查與停止條件都清楚可見。', next: '哪個欄位能讓這次請求更安全、更容易檢查？', boundary: '這份契約讓請求更明確；它不能保證模型遵守，也不能證明目標結果已經存在。' },
+      fr: { title: 'Un prompt est un petit contrat', body: 'Rendez visibles le résultat, le contexte, l’aide autorisée, les limites, le contrôle et l’arrêt avant la demande.', next: 'Quel champ rendrait cette demande plus sûre ou plus facile à vérifier ?', boundary: 'Le contrat explicite la demande ; il ne contraint pas le modèle à la respecter et ne prouve pas que le résultat existe.' },
+    },
+    'side-effect-boundary-decision-map.svg': {
+      en: { title: 'Separate reading from external effects', body: 'Reading and local reversible work stay narrow; external effects require stronger authority and recovery evidence.', next: 'What can change, who authorizes it, and how would I recover?', boundary: 'The map separates risk and authority; it does not grant permission or show that recovery has been tested.' },
+      zh: { title: '把阅读与外部影响分开', body: '阅读和本地可回退工作保持狭窄范围；外部影响需要更强的权限和恢复证据。', next: '什么可以改变？谁来授权？如果出错，如何恢复？', boundary: '这张图区分风险和权限；它不会授予权限，也不能证明恢复方案已经测试过。' },
+      es: { title: 'Separa la lectura de los efectos externos', body: 'La lectura y el trabajo local reversible se mantienen acotados; los efectos externos exigen más autoridad y pruebas de recuperación.', next: '¿Qué puede cambiar, quién lo autoriza y cómo se recuperaría?', boundary: 'El mapa separa riesgo y autoridad; no concede permisos ni demuestra que la recuperación se haya probado.' },
+      ja: { title: '読み取りと外部への影響を分ける', body: '読み取りとローカルの可逆操作は狭く保ち、外部への影響には強い権限と復旧の証拠を求めます。', next: '何を変えられ、誰が許可し、失敗時にどう戻せるか？', boundary: 'この図はリスクと権限を分けるだけで、権限を与えたり復旧テストを証明したりしません。' },
+      ko: { title: '읽기와 외부 효과를 분리하기', body: '읽기와 로컬 되돌리기 작업은 좁게 유지하고 외부 효과에는 더 강한 권한과 복구 증거를 요구합니다.', next: '무엇을 바꿀 수 있고, 누가 승인하며, 문제가 생기면 어떻게 복구할 것인가?', boundary: '이 지도는 위험과 권한을 나눌 뿐입니다. 권한을 부여하거나 복구가 검증됐음을 보여 주지 않습니다.' },
+      de: { title: 'Lesen von Außenwirkungen trennen', body: 'Lesen und lokale reversible Arbeit bleiben eng begrenzt; Außenwirkungen brauchen stärkere Berechtigung und Wiederherstellungsbelege.', next: 'Was darf sich ändern, wer gibt es frei, und wie wäre eine Wiederherstellung möglich?', boundary: 'Die Karte trennt Risiko und Berechtigung. Sie erteilt keine Freigabe und belegt keinen getesteten Wiederherstellungsweg.' },
+      'zh-tw': { title: '把讀取與外部影響分開', body: '讀取與本機可復原工作維持狹窄範圍；外部影響需要更強的權限與復原證據。', next: '什麼可以改變？誰來授權？出錯時要怎麼復原？', boundary: '這張圖區分風險與權限；它不會授予權限，也不能證明復原方案已經測試過。' },
+      fr: { title: 'Séparer la lecture des effets externes', body: 'La lecture et le travail local réversible restent limités ; les effets externes exigent une autorité et des preuves de reprise plus fortes.', next: 'Qu’est-ce qui peut changer, qui l’autorise et comment revenir en arrière ?', boundary: 'La carte sépare le risque et l’autorité ; elle n’accorde aucun droit et ne prouve pas qu’une reprise a été testée.' },
+    },
+    'evidence-to-decision-stop-map-red-black.svg': {
+      en: { title: 'From evidence to a decision — and a stop', body: 'Compare the record with the claim; choose a bounded action, downgrade the claim, or stop when evidence or authority is missing.', next: 'What is the strongest decision this record actually permits?', boundary: 'The map orders decisions from a record; it does not fill a missing source, permission, or observation.' },
+      zh: { title: '从证据走到决定，再决定是否停止', body: '把记录与结论对照；证据或权限不足时，选择有边界的行动、降级结论，或停止。', next: '这份记录实际允许我做出多强的决定？', boundary: '这张图只按记录排列决策；它不能补齐缺失的来源、权限或观察。' },
+      es: { title: 'De la evidencia a la decisión y la parada', body: 'Compara el registro con la afirmación; elige una acción acotada, rebaja la afirmación o detente si faltan pruebas o autorización.', next: '¿Cuál es la decisión más fuerte que permite realmente este registro?', boundary: 'El mapa ordena decisiones a partir de un registro; no rellena una fuente, un permiso o una observación que falten.' },
+      ja: { title: '証拠から判断し、必要なら止まる', body: '記録と主張を照合し、範囲を区切った行動を選ぶか、証拠や権限が足りなければ主張を下げて止まります。', next: 'この記録で実際に許される最も強い判断は何か？', boundary: 'この図は記録から判断する順序を示しますが、欠けた出典・権限・観測を補うものではありません。' },
+      ko: { title: '증거를 결정으로 잇고, 필요하면 멈추기', body: '기록과 주장을 대조해 범위가 정해진 행동을 선택하고, 증거나 권한이 부족하면 주장을 낮추거나 멈춥니다.', next: '이 기록이 실제로 허용하는 가장 강한 결정은 무엇인가?', boundary: '이 지도는 기록에 따른 결정 순서를 보여 줄 뿐입니다. 빠진 출처·권한·관찰을 대신 채우지 않습니다.' },
+      de: { title: 'Vom Beleg zur Entscheidung — und zum Stopp', body: 'Vergleiche Protokoll und Aussage; wähle eine begrenzte Handlung, stufe die Aussage zurück oder stoppe, wenn Beleg oder Berechtigung fehlen.', next: 'Welche stärkste Entscheidung erlaubt dieser Beleg tatsächlich?', boundary: 'Die Karte ordnet Entscheidungen anhand eines Belegs. Fehlende Quelle, Berechtigung oder Beobachtung ersetzt sie nicht.' },
+      'zh-tw': { title: '從證據走到判斷，再決定是否停止', body: '把紀錄與主張對照；證據或權限不足時，選擇有界線的行動、降低主張強度，或停止。', next: '這份紀錄實際允許我做出多強的判斷？', boundary: '這張圖只依紀錄排列判斷；它不能補足缺少的來源、權限或觀察。' },
+      fr: { title: 'Passer des preuves à la décision, puis s’arrêter', body: 'Comparez le relevé à l’affirmation ; choisissez une action délimitée, reclassez l’affirmation ou arrêtez-vous si la preuve ou l’autorisation manque.', next: 'Quelle est la décision la plus forte que ce relevé permet réellement ?', boundary: 'La carte ordonne les décisions à partir d’un relevé ; elle ne remplace ni une source, ni une autorisation, ni une observation manquante.' },
+    },
+    'failed-interaction-recovery-red-black.svg': {
+      en: { title: 'Recover from the first mismatch', body: 'Preserve the inputs and trace, classify the first mismatch, change one condition, and keep the result bounded.', next: 'What failed first, and what single safe change can test that diagnosis?', boundary: 'The board orders a recovery attempt; it does not prove that a retry worked or that the original gap is closed.' },
+      zh: { title: '从第一个不匹配处开始恢复', body: '保留输入和轨迹，分类第一个不匹配，只改变一个条件，并让结论保持有边界。', next: '最先失败的是什么？哪一个单一且安全的改变能检验判断？', boundary: '这张图安排一次恢复尝试；它不能证明重试成功，也不能证明原始缺口已经消失。' },
+      es: { title: 'Recupera la interacción desde el primer desajuste', body: 'Conserva las entradas y el rastro, clasifica el primer desajuste, cambia una condición y mantén acotado el resultado.', next: '¿Qué falló primero y qué cambio seguro puede poner a prueba esa explicación?', boundary: 'El tablero ordena un intento de recuperación; no demuestra que el reintento funcionara ni que se haya cerrado el hueco original.' },
+      ja: { title: '最初の不一致からやり取りを復旧する', body: '入力と記録を残し、最初の不一致を分類し、条件を1つだけ変えて、結果の範囲を保ちます。', next: '最初に失敗したのは何で、どの安全な変更で確かめられるか？', boundary: 'この図は復旧の試行手順を示します。再試行の成功や元の不明点の解消を証明するものではありません。' },
+      ko: { title: '첫 불일치부터 상호작용 복구하기', body: '입력과 추적 기록을 보존하고 첫 불일치를 분류한 뒤 조건 하나만 바꾸며 결과의 범위를 제한합니다.', next: '무엇이 먼저 실패했고, 어떤 한 가지 안전한 변경으로 확인할 수 있는가?', boundary: '이 그림은 복구 시도의 순서를 보여 줄 뿐입니다. 재시도 성공이나 원래 공백의 해소를 증명하지 않습니다.' },
+      de: { title: 'Von der ersten Abweichung aus wiederherstellen', body: 'Bewahre Eingaben und Spur, klassifiziere die erste Abweichung, ändere eine Bedingung und halte das Ergebnis begrenzt.', next: 'Was ist zuerst fehlgeschlagen, und welche einzelne sichere Änderung prüft diese Diagnose?', boundary: 'Die Tafel ordnet einen Wiederherstellungsversuch. Sie belegt weder einen erfolgreichen Neustart noch eine geschlossene ursprüngliche Lücke.' },
+      'zh-tw': { title: '從第一個不相符處開始復原', body: '保留輸入與軌跡，分類第一個不相符，只改變一個條件，並讓結果保持有界線。', next: '最先失敗的是什麼？哪一項單一且安全的改變能檢驗這個判斷？', boundary: '這張圖安排一次復原嘗試；它不能證明重試成功，也不能證明原始缺口已經消失。' },
+      fr: { title: 'Récupérer à partir du premier écart', body: 'Conservez les entrées et la trace, classez le premier écart, ne changez qu’une condition et gardez le résultat délimité.', next: 'Qu’est-ce qui a échoué en premier et quel changement sûr permettrait de le vérifier ?', boundary: 'La planche ordonne une tentative de reprise ; elle ne prouve ni la réussite du nouvel essai ni la fermeture du manque initial.' },
+    },
+  };
+
   const readerRelatedVisualMap = [
     { tokens: ['llm-foundation-core-v1', 'llm-foundation-core-path'], visuals: [
       { path: 'assets/teaching/foundation-route-map-red-black.svg', step: 0 },
@@ -1248,6 +1306,20 @@
     const primary = chooseReaderVisual(selection)?.path;
     return (match?.visuals || []).filter((visual) => visual.path !== primary).slice(0, 2);
   };
+  const readerVisualReading = (visual, routeStrings) => {
+    const step = Math.max(0, Math.min(routeStrings.labels.length - 1, visual?.step || 0));
+    const visualKey = visual?.path?.split('/').pop();
+    const localizedBriefs = visualKey ? readerVisualBriefs[visualKey] : null;
+    const brief = localizedBriefs?.[uiLanguage()] || localizedBriefs?.en || null;
+    return {
+      step,
+      brief,
+      label: brief?.title || routeStrings.labels[step],
+      body: brief?.body || routeStrings.bodies[step],
+      next: brief?.next || routeStrings.nextQuestions[step],
+      boundary: brief?.boundary || null,
+    };
+  };
   const renderReaderConceptMap = (selection, title, headings = []) => {
     if (!conceptMap || !conceptMapBranches || !conceptMapFallbackList || !conceptMapDetail) return;
     if (conceptMapScrollHandler) window.removeEventListener('scroll', conceptMapScrollHandler);
@@ -1354,13 +1426,12 @@
     existing?.remove();
     const strings = visual.fallback ? currentReaderRouteCompassCopy() : currentReaderVisualCopy();
     const routeStrings = visual.fallback ? currentReaderRouteCompassCopy() : currentReaderRouteMapCopy();
-    const step = Math.max(0, Math.min(routeStrings.labels.length - 1, visual.step || 0));
-    const label = routeStrings.labels[step];
-    const body = routeStrings.bodies[step];
+    const reading = readerVisualReading(visual, routeStrings);
+    const { step, label, body, next, brief } = reading;
     const visualOpen = visual.fallback ? strings.open : strings.visualOpen;
-    const visualAlt = visual.fallback ? strings.alt : `${strings.visualAltPrefix} ${label.toLowerCase()}: ${body}`;
+    const visualAlt = visual.fallback ? strings.alt : `${strings.visualAltPrefix} ${label}: ${body}`;
     const visualCaption = visual.fallback ? strings.caption : `${strings.visualCaptionPrefix} ${title || label}. ${body}`;
-    const visualBoundary = visual.fallback ? strings.boundary : strings.visualBoundary;
+    const visualBoundary = visual.fallback ? strings.boundary : (reading.boundary || strings.visualBoundary);
     const figure = document.createElement('figure');
     figure.className = 'reader-inline-visual';
     figure.dataset.readerInlineVisual = visual.path;
@@ -1372,7 +1443,7 @@
     link.setAttribute('aria-label', `${visualOpen}: ${label}`);
     const thesis = document.createElement('span');
     thesis.className = 'reader-visual-thesis';
-    thesis.textContent = `${label} · ${routeStrings.nextQuestions[step]}`;
+    thesis.textContent = `${label} · ${next}`;
     const image = document.createElement('img');
     image.src = directHref(visual.path);
     image.alt = visualAlt;
@@ -1388,10 +1459,9 @@
     link.append(openLabel);
     const caption = document.createElement('figcaption');
     caption.textContent = visualCaption;
-    // A complex board needs more than a short alt sentence. Keep the same
-    // localized sequence that drives the route map beside the image so a
-    // reader can inspect each visual relationship without opening the SVG.
-    // This is also the fallback for readers who prefer text to diagrams.
+    // A complex board needs more than a short alt sentence. Use the board's
+    // specific brief when one exists; otherwise keep the localized route
+    // sequence as the accessible fallback for readers who prefer text.
     const explanation = document.createElement('details');
     explanation.className = visual.fallback
       ? 'reader-visual-explanation reader-route-compass-fallback'
@@ -1401,14 +1471,17 @@
     const explanationIntro = document.createElement('p');
     explanationIntro.textContent = visual.fallback ? strings.fallbackIntro : strings.visualExplanationIntro;
     const explanationList = document.createElement('ol');
-    routeStrings.labels.forEach((routeLabel, index) => {
+    const explanationSteps = brief
+      ? [{ label, body, next }]
+      : routeStrings.labels.map((routeLabel, index) => ({ label: routeLabel, body: routeStrings.bodies[index] || '', next: routeStrings.nextQuestions[index] || '' }));
+    explanationSteps.forEach(({ label: routeLabel, body: routeBody, next: routeNext }) => {
       const item = document.createElement('li');
       const itemTitle = document.createElement('strong');
       itemTitle.textContent = routeLabel;
       const itemBody = document.createElement('span');
-      itemBody.textContent = routeStrings.bodies[index] || '';
+      itemBody.textContent = routeBody;
       const itemQuestion = document.createElement('em');
-      itemQuestion.textContent = routeStrings.nextQuestions[index] || '';
+      itemQuestion.textContent = routeNext;
       item.append(itemTitle, itemBody, itemQuestion);
       explanationList.append(item);
     });
@@ -1604,9 +1677,8 @@
     }
     const strings = currentReaderVisualCopy();
     const routeStrings = currentReaderRouteMapCopy();
-    const step = Math.max(0, Math.min(routeStrings.labels.length - 1, visual.step || 0));
-    const label = routeStrings.labels[step];
-    const body = routeStrings.bodies[step];
+    const reading = readerVisualReading(visual, routeStrings);
+    const { label, body, next } = reading;
     const imageHref = directHref(visual.path);
     visualCompanion.hidden = false;
     visualCompanion.open = false;
@@ -1614,12 +1686,12 @@
     visualCompanionSummary.setAttribute('aria-label', `${strings.visualSummary}: ${label}`);
     visualCompanionIntro.textContent = strings.visualIntro;
     visualCompanionLink.href = imageHref;
-    visualCompanionThesis.textContent = `${label} · ${routeStrings.nextQuestions[step]}`;
+    visualCompanionThesis.textContent = `${label} · ${next}`;
     visualCompanionImage.src = imageHref;
-    visualCompanionImage.alt = `${strings.visualAltPrefix} ${label.toLowerCase()}: ${body}`;
+    visualCompanionImage.alt = `${strings.visualAltPrefix} ${label}: ${body}`;
     visualCompanionOpen.textContent = strings.visualOpen;
     visualCompanionCaption.textContent = `${strings.visualCaptionPrefix} ${label}. ${body}`;
-    visualCompanionBoundary.textContent = strings.visualBoundary;
+    visualCompanionBoundary.textContent = reading.boundary || strings.visualBoundary;
   };
   const renderReaderRelatedVisuals = (selection) => {
     if (!relatedVisuals || !relatedVisualsGrid) return;
@@ -1637,9 +1709,8 @@
     relatedVisualsIntro.textContent = strings.relatedVisualIntro;
     relatedVisualsBoundary.textContent = strings.relatedVisualBoundary;
     visuals.forEach((visual, index) => {
-      const step = Math.max(0, Math.min(routeStrings.labels.length - 1, visual.step || 0));
-      const label = routeStrings.labels[step];
-      const body = routeStrings.bodies[step];
+      const reading = readerVisualReading(visual, routeStrings);
+      const { label, body } = reading;
       const card = document.createElement('article');
       card.className = 'reader-related-visual-card';
       const link = document.createElement('a');
@@ -1655,7 +1726,7 @@
       image.width = 900;
       image.height = 1500;
       image.loading = 'lazy';
-      image.alt = `${strings.visualAltPrefix} ${label.toLowerCase()}: ${body}`;
+      image.alt = `${strings.visualAltPrefix} ${label}: ${body}`;
       const openLabel = document.createElement('span');
       openLabel.className = 'reader-image-link-label';
       openLabel.textContent = strings.relatedVisualOpen;
@@ -1688,9 +1759,8 @@
     grid.className = 'reader-inline-visual-sequence-grid';
 
     visuals.forEach((visual, index) => {
-      const step = Math.max(0, Math.min(routeStrings.labels.length - 1, visual.step || 0));
-      const label = routeStrings.labels[step];
-      const body = routeStrings.bodies[step];
+      const reading = readerVisualReading(visual, routeStrings);
+      const { label, body, next: nextQuestionText } = reading;
       const card = document.createElement('article');
       card.className = 'reader-inline-visual-sequence-card';
       const cardLabel = document.createElement('span');
@@ -1709,7 +1779,7 @@
       image.height = 1500;
       image.loading = 'lazy';
       image.decoding = 'async';
-      image.alt = `${currentReaderVisualCopy().visualAltPrefix} ${label.toLowerCase()}: ${body}`;
+      image.alt = `${currentReaderVisualCopy().visualAltPrefix} ${label}: ${body}`;
       const openLabel = document.createElement('span');
       openLabel.className = 'reader-image-link-label';
       openLabel.textContent = strings.open;
@@ -1722,7 +1792,7 @@
       const nextLabel = document.createElement('span');
       nextLabel.textContent = `${strings.next}: `;
       const nextQuestion = document.createElement('strong');
-      nextQuestion.textContent = routeStrings.nextQuestions[step] || '';
+      nextQuestion.textContent = nextQuestionText || '';
       next.append(nextLabel, nextQuestion);
       card.append(cardLabel, figure, next);
       grid.append(card);
