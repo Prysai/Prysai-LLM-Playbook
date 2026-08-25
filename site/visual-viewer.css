@@ -99,6 +99,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .viewer-intro > p:last-child { max-width: 48rem; margin: 1rem 0 0; color: var(--viewer-muted); font-size: clamp(.95rem, 1.8vw, 1.15rem); }
 
 .viewer-stage { display: grid; gap: 1px; background: var(--viewer-ink); }
+.viewer-stage[hidden],
+.viewer-error[hidden] { display: none; }
 
 .viewer-toolbar {
   display: flex;

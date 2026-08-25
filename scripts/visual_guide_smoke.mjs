@@ -113,6 +113,28 @@ try {
   await noHorizontalOverflow('fr 360px visual guide');
   assert.equal(await count('.visual-card'), expectedCounts.cards, 'fr 360px gallery lost teaching boards');
 
+  // Board links open the project-owned responsive viewer rather than a raw
+  // SVG. Verify one localized route, the zoom contract, and the invalid-asset
+  // boundary so a broken link cannot look like a successful visual page.
+  await page.goto(`${origin}/site/visuals.html?lang=fr`, { waitUntil: 'networkidle' });
+  const routeVisualHref = await page.locator('[data-visual-goal-image-link]').getAttribute('href');
+  assert.match(routeVisualHref || '', /^visual\.html\?asset=[^&]+&lang=fr(?:&label=|$)/, 'visual guide goal board does not use the localized responsive viewer');
+  await page.goto(`${origin}/site/visual.html?asset=prompt-contract-six-fields-red-black.svg&lang=fr&label=Contrat%20de%20prompt`, { waitUntil: 'networkidle' });
+  assert.equal(await page.locator('[data-viewer-title]').innerText(), 'Contrat de prompt', 'viewer did not preserve the localized board label');
+  assert.equal(await page.locator('[data-viewer-error]').isHidden(), true, 'viewer rejected an approved teaching board');
+  assert.equal(await page.locator('[data-viewer-image]').evaluate((image) => image.complete && image.naturalWidth > 0), true, 'viewer image did not load');
+  assert.equal(await page.locator('[data-viewer-zoom-value]').innerText(), '100%', 'viewer did not expose its initial zoom');
+  await page.locator('[data-viewer-zoom-in]').click();
+  assert.equal(await page.locator('[data-viewer-zoom-value]').innerText(), '125%', 'viewer zoom control did not update');
+  await noHorizontalOverflow('fr 360px visual viewer');
+  await page.locator('#viewer-language').selectOption('zh-tw');
+  assert.equal(await page.locator('html').getAttribute('lang'), 'zh-tw', 'viewer language switch did not update document language');
+  assert.match(await page.locator('[data-viewer-home]').first().getAttribute('href') || '', /visuals\.html\?lang=zh-tw$/, 'viewer language switch lost the localized guide route');
+  await page.goto(`${origin}/site/visual.html?asset=not-a-teaching-board.svg&lang=fr`, { waitUntil: 'networkidle' });
+  assert.equal(await page.locator('.viewer-stage').isHidden(), true, 'viewer kept the stage for an unapproved asset');
+  assert.equal(await page.locator('[data-viewer-error]').isHidden(), false, 'viewer did not expose the invalid-asset error');
+  await page.goto(`${origin}/site/visuals.html?lang=en`, { waitUntil: 'networkidle' });
+
   const noScriptContext = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
   const noScriptPage = await noScriptContext.newPage();
   await noScriptPage.goto(`${origin}/site/visuals.html?lang=en`, { waitUntil: 'domcontentloaded' });
@@ -149,7 +171,7 @@ try {
     '.visual-receipt-fallback',
     '.visual-board-explorer-fallback',
   ]) {
-    assert.equal(await page.locator(selector).evaluate((details) => details.open), false, `default visual guide keeps ${selector} expanded`);
+    assert.equal(await noScriptPage.locator(selector).evaluate((details) => details.open), false, `default visual guide keeps ${selector} expanded`);
   }
   await noScriptContext.close();
   console.log(`VISUAL_GUIDE_SMOKE_OK locales=${locales.length} cards=${expectedCounts.cards} mobile=390,360 no_script=1`);
