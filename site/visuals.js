@@ -143,6 +143,34 @@
   };
   Object.entries(BOUNDARY_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
 
+  const READING_LOOP_COPY = {
+    en: {
+      readingEyebrow: 'Page-to-practice loop', readingTitle: 'Turn one page into one checked attempt.', readingIntro: 'Use the page in order: name the problem, find the concept, try one bounded action, inspect the record, state the boundary, and transfer the method to a changed task.', readingAria: 'Six steps from a page to a checked attempt', readingCenter: 'One page, one attempt', readingCenterSub: 'read → try → check', readingSelected: 'Selected reading step', readingNext: 'Next question', readingOpen: 'Open the matching lesson', readingFallback: 'Read the page-to-practice loop as text', readingFallbackIntro: 'The same six steps remain available as an ordered list. Follow the links only after you can name the next question.', readingOpenVisual: 'Open the page-to-practice board', readingFigureAlt: 'Six-stage page-to-practice reading loop: problem, concept, action, evidence, boundary, transfer', readingFigureCaption: 'Project-authored reading loop. The board is a memory aid; the page text and your own record remain the basis for any claim.', readingBoundary: 'A completed reading loop is not proof of mastery. Keep the attempt, result, and unknowns visible.'
+    },
+    zh: {
+      readingEyebrow: '从页面到实践的闭环', readingTitle: '把一页内容变成一次可检查的尝试。', readingIntro: '按顺序使用页面：说清问题，找到概念，做一次有边界的行动，检查记录，说明边界，再把方法迁移到变化后的任务。', readingAria: '从一页内容到一次可检查尝试的六个步骤', readingCenter: '一页，一次尝试', readingCenterSub: '阅读 → 尝试 → 检查', readingSelected: '当前阅读步骤', readingNext: '下一个问题', readingOpen: '打开对应课程', readingFallback: '按文字阅读从页面到实践的闭环', readingFallbackIntro: '无法交互时，下面的有序列表仍保留同样的六步。先说清下一个问题，再打开链接。', readingOpenVisual: '打开页面到实践图', readingFigureAlt: '从页面到实践的六步阅读闭环：问题、概念、行动、证据、边界、迁移', readingFigureCaption: '项目原创阅读闭环图。图示帮助记忆结构；真正支撑结论的仍是页面文字和你自己的记录。', readingBoundary: '走完阅读闭环不等于已经掌握方法。请保留尝试、结果和未知项。'
+    },
+    es: {
+      readingEyebrow: 'Del texto a la práctica', readingTitle: 'Convierte una página en un intento comprobable.', readingIntro: 'Lee la página en orden: nombra el problema, encuentra el concepto, prueba una acción acotada, inspecciona el registro, declara el límite y transfiere el método a una tarea distinta.', readingAria: 'Seis pasos desde una página hasta un intento comprobable', readingCenter: 'Una página, un intento', readingCenterSub: 'leer → probar → comprobar', readingSelected: 'Paso de lectura seleccionado', readingNext: 'Siguiente pregunta', readingOpen: 'Abrir la lección correspondiente', readingFallback: 'Leer como texto el ciclo del texto a la práctica', readingFallbackIntro: 'Los mismos seis pasos quedan disponibles en una lista ordenada. Abre los enlaces solo después de formular la siguiente pregunta.', readingOpenVisual: 'Abrir el tablero del texto a la práctica', readingFigureAlt: 'Ciclo de lectura en seis etapas: problema, concepto, acción, evidencia, límite y transferencia', readingFigureCaption: 'Ciclo de lectura original del proyecto. El tablero ayuda a recordar; la página y tu propio registro sustentan cualquier afirmación.', readingBoundary: 'Completar el ciclo no demuestra dominio. Conserva el intento, el resultado y lo que sigue sin saberse.'
+    },
+    ja: {
+      readingEyebrow: 'ページから実践へ', readingTitle: '1ページを、確認できる1回の試行に変える。', readingIntro: 'ページを順に使います。問題を言葉にし、概念を見つけ、範囲を区切って行動し、記録を確認し、境界を示し、条件を変えた課題へ方法を転用します。', readingAria: '1ページから確認できる試行までの6段階', readingCenter: '1ページ、1回の試行', readingCenterSub: '読む → 試す → 確認する', readingSelected: '選択中の読解ステップ', readingNext: '次の問い', readingOpen: '対応するレッスンを開く', readingFallback: 'ページから実践への流れをテキストで読む', readingFallbackIntro: '操作できない場合も、同じ6段階を順序付きリストで読めます。次の問いを言葉にしてからリンクを開いてください。', readingOpenVisual: 'ページから実践へのボードを開く', readingFigureAlt: '問題、概念、行動、証拠、境界、転用からなる6段階の読解ループ', readingFigureCaption: 'プロジェクト作成の読解ループです。ボードは記憶の補助であり、主張の根拠は本文と自分の記録です。', readingBoundary: '読解ループを完了しても、習得の証明にはなりません。試行、結果、不明点を残してください。'
+    },
+    ko: {
+      readingEyebrow: '페이지에서 실천까지', readingTitle: '페이지 하나를 확인 가능한 시도 하나로 바꾸세요.', readingIntro: '페이지를 순서대로 사용하세요. 문제를 정하고, 개념을 찾고, 범위가 분명한 행동을 하나 시도하고, 기록을 점검하고, 한계를 밝힌 뒤, 조건을 바꾼 작업에 방법을 전이합니다.', readingAria: '페이지에서 확인 가능한 시도까지의 여섯 단계', readingCenter: '페이지 하나, 시도 하나', readingCenterSub: '읽기 → 시도 → 점검', readingSelected: '선택한 읽기 단계', readingNext: '다음 질문', readingOpen: '해당 수업 열기', readingFallback: '페이지에서 실천까지의 흐름을 텍스트로 읽기', readingFallbackIntro: '상호작용이 없어도 같은 여섯 단계를 순서 목록으로 볼 수 있습니다. 다음 질문을 먼저 정한 뒤 링크를 여세요.', readingOpenVisual: '페이지에서 실천까지의 보드 열기', readingFigureAlt: '문제, 개념, 행동, 증거, 한계와 전이로 이루어진 여섯 단계 읽기 루프', readingFigureCaption: '프로젝트가 만든 읽기 루프입니다. 보드는 기억을 돕는 자료이고, 주장의 근거는 본문과 직접 남긴 기록입니다.', readingBoundary: '읽기 루프를 끝냈다고 숙련이 증명되는 것은 아닙니다. 시도, 결과와 미확인 사항을 남기세요.'
+    },
+    de: {
+      readingEyebrow: 'Von der Seite zur Praxis', readingTitle: 'Mach aus einer Seite einen prüfbaren Versuch.', readingIntro: 'Arbeite die Seite in dieser Reihenfolge durch: Problem benennen, Begriff finden, eine begrenzte Handlung testen, den Beleg prüfen, die Grenze nennen und die Methode auf eine veränderte Aufgabe übertragen.', readingAria: 'Sechs Schritte von einer Seite zu einem prüfbaren Versuch', readingCenter: 'Eine Seite, ein Versuch', readingCenterSub: 'lesen → testen → prüfen', readingSelected: 'Ausgewählter Leseschritt', readingNext: 'Nächste Frage', readingOpen: 'Passende Lektion öffnen', readingFallback: 'Den Weg von der Seite zur Praxis als Text lesen', readingFallbackIntro: 'Dieselben sechs Schritte stehen als geordnete Liste bereit. Öffne die Links erst, wenn du die nächste Frage formuliert hast.', readingOpenVisual: 'Die Tafel von der Seite zur Praxis öffnen', readingFigureAlt: 'Sechsstufige Leseschleife: Problem, Begriff, Handlung, Beleg, Grenze und Übertragung', readingFigureCaption: 'Vom Projekt erstellte Leseschleife. Die Tafel dient als Merkhilfe; Text und eigener Beleg tragen die Aussage.', readingBoundary: 'Eine abgeschlossene Leseschleife beweist keine Beherrschung. Bewahre Versuch, Ergebnis und offene Fragen.'
+    },
+    'zh-tw': {
+      readingEyebrow: '從頁面到實踐的閉環', readingTitle: '把一頁內容變成一次可檢查的嘗試。', readingIntro: '依序使用頁面：說清楚問題，找出概念，做一次有界線的行動，檢查紀錄，說明界線，再把方法遷移到有所變化的任務。', readingAria: '從一頁內容到一次可檢查嘗試的六個步驟', readingCenter: '一頁，一次嘗試', readingCenterSub: '閱讀 → 嘗試 → 檢查', readingSelected: '目前閱讀步驟', readingNext: '下一個問題', readingOpen: '開啟對應課程', readingFallback: '依文字閱讀從頁面到實踐的閉環', readingFallbackIntro: '無法互動時，下面的有序清單仍保留相同的六步。先說清楚下一個問題，再開啟連結。', readingOpenVisual: '開啟頁面到實踐圖', readingFigureAlt: '從頁面到實踐的六步閱讀閉環：問題、概念、行動、證據、界線、遷移', readingFigureCaption: '專案原創的閱讀閉環圖。圖示只協助記憶結構；真正支撐主張的仍是頁面文字與你自己的紀錄。', readingBoundary: '走完閱讀閉環不等於已經掌握方法。請保留嘗試、結果與未知項目。'
+    },
+    fr: {
+      readingEyebrow: 'De la page à la pratique', readingTitle: 'Transformer une page en un essai vérifiable.', readingIntro: 'Suivez la page dans l’ordre : nommer le problème, trouver le concept, tenter une action délimitée, inspecter le relevé, énoncer la limite, puis transférer la méthode à une tâche différente.', readingAria: 'Six étapes pour passer d’une page à un essai vérifiable', readingCenter: 'Une page, un essai', readingCenterSub: 'lire → essayer → vérifier', readingSelected: 'Étape de lecture sélectionnée', readingNext: 'Prochaine question', readingOpen: 'Ouvrir la leçon correspondante', readingFallback: 'Lire en texte le parcours de la page à la pratique', readingFallbackIntro: 'Les six mêmes étapes restent disponibles dans une liste ordonnée. Ouvrez les liens seulement après avoir formulé la prochaine question.', readingOpenVisual: 'Ouvrir la planche de la page à la pratique', readingFigureAlt: 'Boucle de lecture en six étapes : problème, concept, action, preuves, limite et transfert', readingFigureCaption: 'Boucle de lecture créée par le projet. La planche aide à mémoriser ; le texte et votre propre relevé fondent toute affirmation.', readingBoundary: 'Terminer la boucle de lecture ne prouve pas la maîtrise. Conservez l’essai, le résultat et les points inconnus.'
+    },
+  };
+  Object.entries(READING_LOOP_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
+
   const VISUAL_ROUTE_STEPS = [
     { id: 'purpose', section: 'visual-goal', labels: { en: 'Choose a purpose', zh: '选择一个目的', es: 'Elegir un propósito', ja: '目的を選ぶ', ko: '목적 고르기', de: 'Einen Zweck wählen', 'zh-tw': '選擇一個目的', fr: 'Choisir un objectif' }, bodies: { en: 'Start with why you came: a safe first task, an uncertain result, a claim to verify, or a method to reuse.', zh: '先说清楚你为什么来：安全的第一项任务、不确定的结果、需要核验的结论，或想复用的方法。', es: 'Empieza por tu motivo: una primera tarea segura, un resultado incierto, una afirmación que comprobar o un método que reutilizar.', ja: 'まず来た理由を選びます。安全な最初のタスク、不確かな結果、確認したい主張、再利用したい方法のいずれかです。', ko: '왜 왔는지부터 고르세요. 안전한 첫 작업, 불확실한 결과, 확인할 주장 또는 재사용할 방법 중 하나입니다.', de: 'Beginne mit deinem Anlass: eine sichere erste Aufgabe, ein unsicheres Ergebnis, eine zu prüfende Aussage oder eine wiederverwendbare Methode.', 'zh-tw': '先說清楚你為什麼來：安全的第一項任務、不確定的結果、需要核對的主張，或想重複使用的方法。', fr: 'Commencez par votre besoin : une première tâche sûre, un résultat incertain, une affirmation à vérifier ou une méthode à réutiliser.' }, next: { en: 'Which small outcome do I need?', zh: '我需要哪项小结果？', es: '¿Qué resultado pequeño necesito?', ja: '必要な小さな結果は何か？', ko: '어떤 작은 결과가 필요한가?', de: 'Welches kleine Ergebnis brauche ich?', 'zh-tw': '我需要哪個小結果？', fr: 'De quel petit résultat ai-je besoin ?' } },
     { id: 'order', section: 'visual-journey', labels: { en: 'See the order', zh: '看清顺序', es: 'Ver el orden', ja: '順序を見る', ko: '순서 보기', de: 'Die Reihenfolge sehen', 'zh-tw': '看清順序', fr: 'Voir l’ordre' }, bodies: { en: 'The foundation comes first. Platform tracks are optional layers added after a checked first route, not competing starting points.', zh: '基础核心先开始。平台路径是完成第一条可检查路线后再增加的可选层，不是互相竞争的起点。', es: 'El núcleo de fundamentos va primero. Las rutas de plataforma son capas opcionales después de un primer recorrido comprobado, no puntos de partida rivales.', ja: '最初は基礎コアです。プラットフォーム別のルートは、最初の確認できる道筋の後に必要に応じて加える層であり、競合する入口ではありません。', ko: '기초 코어가 먼저입니다. 플랫폼 경로는 첫 번째 확인 가능한 경로 뒤에 필요할 때 추가하는 선택 계층이지, 서로 경쟁하는 시작점이 아닙니다.', de: 'Der Grundlagenkern kommt zuerst. Plattformrouten sind optionale Ebenen nach einer geprüften ersten Route, keine konkurrierenden Einstiege.', 'zh-tw': '先從基礎核心開始。平台路線是在完成第一條可檢查路線後才增加的選用層，不是彼此競爭的起點。', fr: 'Le Foundation Core vient d’abord. Les parcours de plateforme sont des couches facultatives après une première route vérifiée, pas des points de départ concurrents.' }, next: { en: 'Am I still on the foundation route?', zh: '我还在基础路线中吗？', es: '¿Sigo en el recorrido de fundamentos?', ja: 'まだ基礎ルートにいるか？', ko: '아직 기초 경로에 있는가?', de: 'Bin ich noch auf der Grundlagenroute?', 'zh-tw': '我還在基礎路線中嗎？', fr: 'Suis-je encore sur le parcours de base ?' } },
@@ -152,6 +180,7 @@
     { id: 'decision', section: 'visual-evidence', labels: { en: 'Decide from the record', zh: '根据记录作决定', es: 'Decidir a partir del registro', ja: '記録から判断する', ko: '기록으로 판단하기', de: 'Aus dem Beleg entscheiden', 'zh-tw': '根據紀錄作判斷', fr: 'Décider à partir du relevé' }, bodies: { en: 'Name the question, locate the source, observe the result, choose a bounded decision, and stop when the next proof is missing.', zh: '说清问题，找到来源，观察结果，做出有边界的决定；下一项证明缺失时就停止。', es: 'Formula la pregunta, localiza la fuente, observa el resultado, toma una decisión acotada y detente si falta la prueba siguiente.', ja: '問いを定め、出典を特定し、結果を観察し、範囲を区切って判断します。次の証拠がなければ止まります。', ko: '질문을 정하고 출처를 찾고 결과를 관찰한 뒤 범위가 정해진 결정을 내립니다. 다음 증거가 없으면 멈춥니다.', de: 'Frage benennen, Quelle finden, Ergebnis beobachten, begrenzt entscheiden und anhalten, wenn der nächste Nachweis fehlt.', 'zh-tw': '說清楚問題，找到來源，觀察結果，做出有界線的判斷；下一項證據不足時就停止。', fr: 'Formulez la question, repérez la source, observez le résultat, prenez une décision délimitée et arrêtez-vous si la preuve suivante manque.' }, next: { en: 'What does the record actually support?', zh: '这份记录实际支持什么？', es: '¿Qué respalda realmente el registro?', ja: '記録は実際に何を支えているか？', ko: '이 기록이 실제로 뒷받침하는 것은 무엇인가?', de: 'Was stützt der Beleg tatsächlich?', 'zh-tw': '這份紀錄實際支持什麼？', fr: 'Que soutient réellement le relevé ?' } },
     { id: 'examples', section: 'visual-gallery', labels: { en: 'Browse one decision', zh: '查看一个决定', es: 'Ver una decisión', ja: '1つの判断を見る', ko: '결정 하나 살펴보기', de: 'Eine Entscheidung ansehen', 'zh-tw': '查看一個判斷', fr: 'Voir une décision' }, bodies: { en: 'Open one teaching board and its matching lesson. The gallery is a set of examples, not a second catalogue to wander through.', zh: '打开一张教学图和对应课程。图库是一组示例，不是另一份让你漫游的目录。', es: 'Abre un tablero y su lección correspondiente. La galería reúne ejemplos; no es un segundo catálogo para recorrer sin rumbo.', ja: '教材ボードと対応するレッスンを1つ開きます。ギャラリーは例の集まりであり、目的なく巡る別のカタログではありません。', ko: '교육 보드 하나와 연결된 수업을 여세요. 갤러리는 예시 모음이지 목적 없이 돌아다니는 두 번째 목록이 아닙니다.', de: 'Öffne eine Lehrtafel und die passende Lektion. Die Galerie ist eine Beispielsammlung, kein zweiter Katalog zum ziellosen Stöbern.', 'zh-tw': '開啟一張教學圖與對應課程。圖庫是一組範例，不是另一份讓你漫無目的瀏覽的目錄。', fr: 'Ouvrez une planche et la leçon correspondante. La galerie rassemble des exemples ; ce n’est pas un second catalogue où se perdre.' }, next: { en: 'Which decision does this board clarify?', zh: '这张图解释哪项决定？', es: '¿Qué decisión aclara este tablero?', ja: 'このボードはどの判断を明らかにするか？', ko: '이 보드는 어떤 결정을 설명하는가?', de: 'Welche Entscheidung klärt diese Tafel?', 'zh-tw': '這張圖說明哪個判斷？', fr: 'Quelle décision cette planche clarifie-t-elle ?' } },
     { id: 'read', section: 'visual-how', labels: { en: 'Read the board correctly', zh: '正确阅读图板', es: 'Leer bien el tablero', ja: 'ボードを正しく読む', ko: '보드 올바르게 읽기', de: 'Die Tafel richtig lesen', 'zh-tw': '正確閱讀圖板', fr: 'Lire correctement la planche' }, bodies: { en: 'Start with the thesis, use the text fallback, make one bounded move, and keep what the picture cannot prove visible.', zh: '先看主旨，打开文字回退，做一次有边界的行动，并保留这张图无法证明的部分。', es: 'Empieza por la tesis, abre la alternativa textual, haz un movimiento acotado y mantén visible lo que la imagen no puede demostrar.', ja: '主旨を確認し、テキストの代替を読み、範囲を区切った操作を1つ行い、図だけでは証明できないことを残します。', ko: '핵심을 먼저 보고 텍스트 대체 설명을 연 다음 범위 있는 행동을 하나 시도하고 그림만으로 증명할 수 없는 것을 남겨 두세요.', de: 'Beginne mit der These, öffne die Textalternative, mache eine begrenzte Handlung und halte sichtbar, was das Bild nicht belegen kann.', 'zh-tw': '先看主旨，開啟文字替代說明，做一次有界線的行動，並保留這張圖無法證明的部分。', fr: 'Commencez par la thèse, lisez l’alternative textuelle, faites une action délimitée et gardez visible ce que l’image ne peut pas prouver.' }, next: { en: 'What does the picture still not prove?', zh: '这张图仍然不能证明什么？', es: '¿Qué no demuestra todavía la imagen?', ja: 'この図だけでは何が証明できないか？', ko: '이 그림만으로 아직 증명할 수 없는 것은 무엇인가?', de: 'Was belegt das Bild weiterhin nicht?', 'zh-tw': '這張圖仍然不能證明什麼？', fr: 'Que l’image ne prouve-t-elle toujours pas ?' } },
+    { id: 'practice', section: 'visual-reading-loop', labels: { en: 'Read one page into practice', zh: '把一页内容读到实践', es: 'Llevar una página a la práctica', ja: '1ページを実践につなげる', ko: '페이지 하나를 실천으로 옮기기', de: 'Eine Seite in die Praxis bringen', 'zh-tw': '把一頁內容讀到實踐', fr: 'Passer d’une page à la pratique' }, bodies: { en: 'Move through problem, concept, action, evidence, boundary, and transfer so the page gives you one checked attempt instead of another random click.', zh: '按问题、概念、行动、证据、边界和迁移走完一遍，让页面带来一次可检查的尝试，而不是又一次无目的点击。', es: 'Pasa por problema, concepto, acción, evidencia, límite y transferencia para que la página produzca un intento comprobable, no otro clic al azar.', ja: '問題、概念、行動、証拠、境界、転用を順にたどり、目的のないクリックではなく、確認できる1回の試行につなげます。', ko: '문제, 개념, 행동, 증거, 한계와 전이를 차례로 거쳐 무작위 클릭이 아니라 확인 가능한 시도 하나를 만드세요.', de: 'Gehe über Problem, Begriff, Handlung, Beleg, Grenze und Übertragung, damit die Seite zu einem prüfbaren Versuch statt zu einem weiteren ziellosen Klick führt.', 'zh-tw': '依序走過問題、概念、行動、證據、界線與遷移，讓頁面帶來一次可檢查的嘗試，而不是又一次無目的的點擊。', fr: 'Parcourez le problème, le concept, l’action, les preuves, la limite et le transfert pour obtenir un essai vérifiable plutôt qu’un clic de plus au hasard.' }, next: { en: 'What is the smallest attempt I can keep and inspect?', zh: '我能保留并检查的最小尝试是什么？', es: '¿Cuál es el intento más pequeño que puedo conservar e inspeccionar?', ja: '残して確認できる最小の試行は何か？', ko: '보존하고 점검할 수 있는 가장 작은 시도는 무엇인가?', de: 'Welchen kleinsten Versuch kann ich aufbewahren und prüfen?', 'zh-tw': '我能保留並檢查的最小嘗試是什麼？', fr: 'Quel est le plus petit essai que je puisse conserver et inspecter ?' } },
   ];
 
   const STAGES = [
@@ -262,6 +291,45 @@
       labels: { en: 'Stop', zh: '停止', es: 'Parada', ja: '停止', ko: '중지', de: 'Stopp', 'zh-tw': '停止', fr: 'Arrêt' },
       bodies: { en: 'When the next proof is missing, stop and record the smallest safe next check. Preserve the unknown.', zh: '下一项证明缺失时，停下并记录最小的安全检查，同时保留未知项。', es: 'Si falta la siguiente prueba, detente y registra la comprobación segura más pequeña. Conserva lo desconocido.', ja: '次の証拠がなければ停止し、最小限で安全な次の確認を記録します。不明点を残します。', ko: '다음 증거가 없으면 멈추고 가장 작고 안전한 다음 점검을 기록하세요. 모르는 부분을 남기세요.', de: 'Wenn der nächste Nachweis fehlt, halte an und notiere den kleinsten sicheren nächsten Check. Bewahre das Unbekannte.', 'zh-tw': '下一項證據不足時，停下並記錄最小且安全的下一項檢查，同時保留未知之處。', fr: 'Quand la preuve suivante manque, arrêtez-vous et notez le plus petit contrôle sûr à faire ensuite. Préservez l’inconnu.' },
       next: { en: 'What remains unknown, and who can authorize the next step?', zh: '什么仍然未知，谁能授权下一步？', es: '¿Qué sigue sin saberse y quién puede autorizar la siguiente etapa?', ja: '何が不明で、次の段階を誰が承認できるか？', ko: '무엇이 여전히 미확인이고 다음 단계를 승인할 수 있는 사람은 누구인가?', de: 'Was bleibt unbekannt, und wer darf den nächsten Schritt freigeben?', 'zh-tw': '什麼仍然未知，誰能授權下一步？', fr: 'Qu’est-ce qui reste inconnu et qui peut autoriser la suite ?' },
+    },
+  ];
+
+  const READING_LOOP_STEPS = [
+    {
+      id: 'problem', path: 'book/guides/llm-fundamentals',
+      labels: { en: 'Name the problem', zh: '说清问题', es: 'Nombrar el problema', ja: '問題を言葉にする', ko: '문제 정하기', de: 'Das Problem benennen', 'zh-tw': '說清楚問題', fr: 'Nommer le problème' },
+      bodies: { en: 'Write the concrete question before you browse or ask for a solution.', zh: '在浏览或寻求解决方案前，先写下具体问题。', es: 'Escribe la pregunta concreta antes de navegar o pedir una solución.', ja: '調べたり解決策を求めたりする前に、具体的な問いを書きます。', ko: '찾아보거나 해결책을 요청하기 전에 구체적인 질문을 적으세요.', de: 'Schreibe die konkrete Frage auf, bevor du suchst oder nach einer Lösung fragst.', 'zh-tw': '在瀏覽或尋求解決方案前，先寫下具體問題。', fr: 'Écrivez la question concrète avant de chercher ou de demander une solution.' },
+      next: { en: 'What would count as a small, observable result?', zh: '什么算是一个小而可观察的结果？', es: '¿Qué sería un resultado pequeño y observable?', ja: '小さく、観察できる結果とは何か？', ko: '작고 관찰 가능한 결과란 무엇인가?', de: 'Was wäre ein kleines, beobachtbares Ergebnis?', 'zh-tw': '什麼算是一個小而可觀察的結果？', fr: 'Qu’est-ce qui constituerait un petit résultat observable ?' },
+    },
+    {
+      id: 'concept', path: 'book/chapters/01-gpt-and-codex',
+      labels: { en: 'Find the concept', zh: '找到概念', es: 'Encontrar el concepto', ja: '概念を見つける', ko: '개념 찾기', de: 'Den Begriff finden', 'zh-tw': '找出概念', fr: 'Trouver le concept' },
+      bodies: { en: 'Locate the distinction or rule that explains the problem; do not skip straight to a tool.', zh: '找到能解释问题的区别或规则；不要直接跳到工具。', es: 'Localiza la distinción o regla que explica el problema; no saltes directamente a una herramienta.', ja: '問題を説明する区別やルールを見つけます。すぐにツールへ飛ばしません。', ko: '문제를 설명하는 구분이나 규칙을 찾으세요. 곧바로 도구로 넘어가지 마세요.', de: 'Finde die Unterscheidung oder Regel, die das Problem erklärt; springe nicht direkt zu einem Tool.', 'zh-tw': '找出能解釋問題的區別或規則；不要直接跳到工具。', fr: 'Repérez la distinction ou la règle qui explique le problème ; ne passez pas directement à un outil.' },
+      next: { en: 'Which idea changes what I will do?', zh: '哪个概念会改变我的行动？', es: '¿Qué idea cambia lo que voy a hacer?', ja: 'どの考え方が行動を変えるか？', ko: '어떤 개념이 내 행동을 바꾸는가?', de: 'Welche Idee verändert mein Vorgehen?', 'zh-tw': '哪個概念會改變我的行動？', fr: 'Quelle idée change ce que je vais faire ?' },
+    },
+    {
+      id: 'action', path: 'book/chapters/03-task-protocol',
+      labels: { en: 'Try one bounded move', zh: '尝试一次有边界的行动', es: 'Probar una acción acotada', ja: '範囲を区切って試す', ko: '범위가 정해진 행동 하나 시도하기', de: 'Eine begrenzte Handlung testen', 'zh-tw': '嘗試一次有界線的行動', fr: 'Tenter une action délimitée' },
+      bodies: { en: 'Make the smallest reversible attempt with a clear input, permission, and stop condition.', zh: '用明确的输入、权限和停止条件，做一次最小且可回退的尝试。', es: 'Haz el intento reversible más pequeño, con una entrada, una autorización y una condición de parada claras.', ja: '入力、権限、停止条件を明確にして、最小限で元に戻せる試行を行います。', ko: '입력, 권한과 중지 조건을 분명히 하고 가장 작고 되돌릴 수 있는 시도를 하세요.', de: 'Mache den kleinsten reversiblen Versuch mit klarer Eingabe, Berechtigung und Stop-Bedingung.', 'zh-tw': '用明確的輸入、權限與停止條件，做一次最小且可復原的嘗試。', fr: 'Faites le plus petit essai réversible possible, avec une entrée, une autorisation et une condition d’arrêt claires.' },
+      next: { en: 'What exactly will I change or leave untouched?', zh: '我究竟会改变什么，又会保持什么不变？', es: '¿Qué voy a cambiar exactamente y que voy a dejar intacto?', ja: '何を変え、何を変えずに残すのか？', ko: '정확히 무엇을 바꾸고 무엇을 그대로 둘 것인가?', de: 'Was ändere ich genau, und was bleibt unberührt?', 'zh-tw': '我究竟會改變什麼，又會保持什麼不變？', fr: 'Qu’est-ce que je vais changer exactement, et qu’est-ce qui reste intact ?' },
+    },
+    {
+      id: 'evidence', path: 'book/chapters/09-verification-and-recovery',
+      labels: { en: 'Inspect the record', zh: '检查记录', es: 'Inspeccionar el registro', ja: '記録を確認する', ko: '기록 점검하기', de: 'Den Beleg prüfen', 'zh-tw': '檢查紀錄', fr: 'Inspecter le relevé' },
+      bodies: { en: 'Read the output, diff, source, test, or log; separate what you saw from what you inferred.', zh: '读取输出、差异、来源、测试或日志；分开你看到的内容和你推断的内容。', es: 'Lee la salida, el diff, la fuente, la prueba o el registro; separa lo observado de lo inferido.', ja: '出力、差分、出典、テスト、ログを読み、見たことと推測したことを分けます。', ko: '출력, diff, 출처, 테스트 또는 로그를 읽고 본 것과 추정한 것을 분리하세요.', de: 'Lies Ausgabe, Diff, Quelle, Test oder Protokoll; trenne Beobachtung und Schlussfolgerung.', 'zh-tw': '讀取輸出、差異、來源、測試或日誌；分開你看到的內容與你推斷的內容。', fr: 'Lisez la sortie, le diff, la source, le test ou le journal ; séparez ce que vous avez vu de ce que vous avez inféré.' },
+      next: { en: 'What does the record support?', zh: '这份记录支持什么？', es: '¿Qué respalda el registro?', ja: '記録は何を支えるか？', ko: '이 기록이 뒷받침하는 것은 무엇인가?', de: 'Was stützt der Beleg?', 'zh-tw': '這份紀錄支持什麼？', fr: 'Que permet d’établir le relevé ?' },
+    },
+    {
+      id: 'boundary', path: 'book/chapters/13-action-boundaries',
+      labels: { en: 'State the boundary', zh: '说明边界', es: 'Declarar el límite', ja: '境界を示す', ko: '한계 밝히기', de: 'Die Grenze nennen', 'zh-tw': '說明界線', fr: 'Énoncer la limite' },
+      bodies: { en: 'Name what remains unknown, unauthorized, unobserved, or outside the task.', zh: '说清什么仍然未知、未经授权、没有观察到，或超出了任务范围。', es: 'Indica qué sigue siendo desconocido, no autorizado, no observado o queda fuera de la tarea.', ja: '不明、未承認、未観察、または課題の範囲外に残るものを明示します。', ko: '무엇이 여전히 미확인·미승인·미관찰 상태이거나 작업 범위를 벗어나는지 밝히세요.', de: 'Benenne, was unbekannt, nicht autorisiert, unbeobachtet oder außerhalb der Aufgabe bleibt.', 'zh-tw': '說清楚什麼仍然未知、未獲授權、沒有觀察到，或超出任務範圍。', fr: 'Nommez ce qui reste inconnu, non autorisé, non observé ou hors du périmètre.' },
+      next: { en: 'What is the smallest safe next check?', zh: '下一项最小的安全检查是什么？', es: '¿Cuál es la siguiente comprobación segura más pequeña?', ja: '次にできる最小限で安全な確認は何か？', ko: '다음으로 할 수 있는 가장 작고 안전한 점검은 무엇인가?', de: 'Was ist der kleinste sichere nächste Check?', 'zh-tw': '下一項最小且安全的檢查是什麼？', fr: 'Quel est le plus petit contrôle sûr à faire ensuite ?' },
+    },
+    {
+      id: 'transfer', path: 'book/chapters/20-personal-codex-work-system',
+      labels: { en: 'Try a changed task', zh: '在变化后的任务上尝试', es: 'Probar una tarea distinta', ja: '条件を変えた課題で試す', ko: '조건을 바꾼 작업에서 시도하기', de: 'Eine veränderte Aufgabe testen', 'zh-tw': '在變化後的任務上嘗試', fr: 'Essayer sur une tâche différente' },
+      bodies: { en: 'Vary one condition and repeat the method without claiming mastery from one success.', zh: '改变一个条件，重复这套方法，不要因为一次成功就宣称已经掌握。', es: 'Cambia una condición y repite el método sin afirmar dominio por un solo éxito.', ja: '条件を1つ変えて方法を繰り返し、1回の成功だけで習得を主張しません。', ko: '조건 하나를 바꿔 방법을 반복하고 한 번의 성공만으로 숙련을 주장하지 마세요.', de: 'Verändere eine Bedingung und wiederhole die Methode, ohne aus einem Erfolg Beherrschung abzuleiten.', 'zh-tw': '改變一個條件，重複這套方法，不要因為一次成功就宣稱已經掌握。', fr: 'Changez une condition et répétez la méthode sans conclure à la maîtrise après un seul succès.' },
+      next: { en: 'What changed, and did the method still hold?', zh: '什么变了，这套方法还成立吗？', es: '¿Qué cambió y el método sigue funcionando?', ja: '何が変わり、方法はまだ成り立つか？', ko: '무엇이 바뀌었고 방법은 여전히 통하는가?', de: 'Was hat sich geändert, und trägt die Methode noch?', 'zh-tw': '什麼改變了，這套方法仍然成立嗎？', fr: 'Qu’est-ce qui a changé, et la méthode tient-elle toujours ?' },
     },
   ];
 
@@ -423,6 +491,7 @@
   let activeJourneyId = 'foundation';
   let activeStageId = 'understand';
   let activeEvidenceId = 'question';
+  let activeReadingLoopId = 'problem';
   let activeConceptId = 'token';
   let activeBoundaryId = 'proposal';
   let activeRouteId = 'purpose';
@@ -734,6 +803,60 @@
     if (imageLink) imageLink.setAttribute('aria-label', `${strings.evidenceOpenVisual}: ${localized(step.labels)}`);
   }
 
+  function renderReadingLoop() {
+    const nodes = query('[data-visual-reading-loop-nodes]');
+    const fallback = query('[data-visual-reading-loop-fallback]');
+    if (!nodes || !fallback) return;
+    const strings = copy();
+    nodes.replaceChildren();
+    fallback.replaceChildren();
+    READING_LOOP_STEPS.forEach((step, index) => {
+      const item = document.createElement('li');
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'visual-reading-loop-node';
+      button.dataset.readingLoop = step.id;
+      button.setAttribute('aria-pressed', String(step.id === activeReadingLoopId));
+      button.setAttribute('aria-label', `${String(index + 1).padStart(2, '0')} ${localized(step.labels)}`);
+      const number = document.createElement('span');
+      number.textContent = String(index + 1).padStart(2, '0');
+      const label = document.createElement('strong');
+      label.textContent = localized(step.labels);
+      button.append(number, label);
+      button.addEventListener('click', () => { activeReadingLoopId = step.id; renderReadingLoop(); });
+      if (step.id === activeReadingLoopId) button.classList.add('is-selected');
+      item.append(button);
+      nodes.append(item);
+
+      const fallbackItem = document.createElement('li');
+      const fallbackTitle = document.createElement('strong');
+      fallbackTitle.textContent = `${String(index + 1).padStart(2, '0')} · ${localized(step.labels)}`;
+      const fallbackBody = document.createElement('span');
+      fallbackBody.textContent = localized(step.bodies);
+      const fallbackNext = document.createElement('em');
+      fallbackNext.textContent = `${strings.readingNext}: ${localized(step.next)}`;
+      const fallbackLink = document.createElement('a');
+      fallbackLink.className = 'visual-action-link';
+      fallbackLink.href = readerHref(step.path);
+      fallbackLink.textContent = `${strings.readingOpen} ↗`;
+      fallbackItem.append(fallbackTitle, fallbackBody, fallbackNext, fallbackLink);
+      fallback.append(fallbackItem);
+    });
+    const step = READING_LOOP_STEPS.find((candidate) => candidate.id === activeReadingLoopId) || READING_LOOP_STEPS[0];
+    const detailTitle = query('[data-visual-reading-loop-title]');
+    const detailBody = query('[data-visual-reading-loop-body]');
+    const detailNext = query('[data-visual-reading-loop-next]');
+    const detailLink = query('[data-visual-reading-loop-link]');
+    const image = query('[data-visual-reading-loop-image]');
+    const imageLink = query('[data-visual-reading-loop-image-link]');
+    if (detailTitle) detailTitle.textContent = localized(step.labels);
+    if (detailBody) detailBody.textContent = localized(step.bodies);
+    if (detailNext) detailNext.textContent = localized(step.next);
+    if (detailLink) detailLink.href = readerHref(step.path);
+    if (image) image.alt = strings.readingFigureAlt;
+    if (imageLink) imageLink.setAttribute('aria-label', `${strings.readingOpenVisual}: ${localized(step.labels)}`);
+  }
+
   function renderConceptMap() {
     const nodes = query('[data-visual-concept-nodes]');
     const fallback = query('[data-visual-concept-fallback]');
@@ -899,6 +1022,7 @@
     renderActionBoundaryMap();
     renderMap();
     renderEvidenceMap();
+    renderReadingLoop();
     renderGallery();
     if (updateUrl) {
       const nextUrl = new URL(window.location.href);
@@ -917,5 +1041,6 @@
   renderActionBoundaryMap();
   renderMap();
   renderEvidenceMap();
+  renderReadingLoop();
   renderGallery();
 })();
