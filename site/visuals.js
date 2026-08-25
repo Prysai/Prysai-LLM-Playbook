@@ -83,6 +83,18 @@
   };
   Object.entries(ACCESSIBILITY_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
 
+  const EVIDENCE_COPY = {
+    en: { evidenceEyebrow: 'Evidence decision map', evidenceTitle: 'Let the record decide how far the claim can go.', evidenceIntro: 'This is the practical bridge between a plausible answer and a defensible conclusion: name the question, locate the source, observe what happened, choose a bounded decision, then stop when the next proof is missing.', evidenceAria: 'Five steps from a question to a bounded decision', evidenceCenter: 'Keep the claim checkable', evidenceCenterSub: 'one record at a time', evidenceSelected: 'Selected evidence step', evidenceNext: 'Next check', evidenceOpen: 'Open the evidence route', evidenceFallback: 'Read the evidence path as text', evidenceFallbackIntro: 'The same five steps remain available without the interactive map. Each step says what you can claim and what remains outside the record.', evidenceFigureAlt: 'Evidence path from a question to a source, an observation, a bounded decision, and a deliberate stop.', evidenceOpenVisual: 'Open the full evidence board', evidenceFigureCaption: 'Project-authored board; the interactive map and the ordered text carry the same meaning.', evidenceBoundary: 'The map is a reasoning aid. It does not prove that a source is correct, a tool ran, or a learner mastered the method.' },
+    zh: { evidenceEyebrow: '证据决策图', evidenceTitle: '让记录决定结论能走多远。', evidenceIntro: '这条路线把“看起来合理的回答”和“可以站得住的结论”接起来：先说清问题，找到来源，观察实际发生了什么，再做有边界的决定；下一项证明缺失时就停下。', evidenceAria: '从问题到有边界决定的五个步骤', evidenceCenter: '让结论可以检查', evidenceCenterSub: '一次只看一份记录', evidenceSelected: '当前证据步骤', evidenceNext: '下一项检查', evidenceOpen: '打开证据路线', evidenceFallback: '按文字阅读证据路线', evidenceFallbackIntro: '不使用交互地图时，下面仍保留相同的五个步骤。每一步都说明可以提出什么结论，以及什么仍然超出记录范围。', evidenceFigureAlt: '从问题走向来源、观察结果、有边界的决定和有意停止的证据路线图。', evidenceOpenVisual: '打开完整证据图', evidenceFigureCaption: '项目原创图板；交互地图和下面的有序文字表达同一含义。', evidenceBoundary: '这张图是推理辅助，不证明来源正确、工具已经运行，或学习者已经掌握方法。' },
+    es: { evidenceEyebrow: 'Mapa de decisión basada en pruebas', evidenceTitle: 'Deja que el registro marque hasta dónde llega la afirmación.', evidenceIntro: 'Este recorrido conecta una respuesta plausible con una conclusión defendible: formula la pregunta, localiza la fuente, observa lo ocurrido, toma una decisión acotada y detente cuando falte la siguiente prueba.', evidenceAria: 'Cinco pasos desde una pregunta hasta una decisión acotada', evidenceCenter: 'Mantén comprobable la afirmación', evidenceCenterSub: 'un registro cada vez', evidenceSelected: 'Paso de evidencia seleccionado', evidenceNext: 'Siguiente comprobación', evidenceOpen: 'Abrir el recorrido de evidencia', evidenceFallback: 'Leer el recorrido de evidencia como texto', evidenceFallbackIntro: 'Los mismos cinco pasos están disponibles sin el mapa interactivo. Cada uno indica qué puedes afirmar y qué queda fuera del registro.', evidenceFigureAlt: 'Recorrido de evidencia desde una pregunta hasta una fuente, una observación, una decisión acotada y una parada deliberada.', evidenceOpenVisual: 'Abrir el tablero completo de evidencia', evidenceFigureCaption: 'Tablero original del proyecto; el mapa interactivo y el texto ordenado expresan lo mismo.', evidenceBoundary: 'El mapa ayuda a razonar. No demuestra que una fuente sea correcta, que una herramienta se ejecutara ni que alguien dominara el método.' },
+    ja: { evidenceEyebrow: '証拠から判断するマップ', evidenceTitle: '主張をどこまで広げられるかは、記録に決めてもらう。', evidenceIntro: 'もっともらしい回答を、根拠のある結論へつなぐ実践ルートです。問いを言葉にし、出典を特定し、実際に起きたことを観察し、範囲を区切って判断します。次の証拠がなければ停止します。', evidenceAria: '問いから範囲を区切った判断までの5段階', evidenceCenter: '主張を確認可能に保つ', evidenceCenterSub: '一度に1つの記録', evidenceSelected: '選択中の証拠段階', evidenceNext: '次の確認', evidenceOpen: '証拠のルートを開く', evidenceFallback: '証拠のルートをテキストで読む', evidenceFallbackIntro: 'インタラクティブなマップを使わなくても、同じ5段階を読めます。各段階で言えることと、記録の外に残ることを示します。', evidenceFigureAlt: '問いから出典、観察、範囲を区切った判断、意図した停止へ進む証拠ルート図。', evidenceOpenVisual: '証拠ボードを原寸で開く', evidenceFigureCaption: 'プロジェクト作成のボードです。インタラクティブなマップと順序付きテキストは同じ内容を示します。', evidenceBoundary: 'このマップは推論の補助です。出典の正しさ、ツールの実行、学習者の習得を証明するものではありません。' },
+    ko: { evidenceEyebrow: '증거 기반 의사결정 지도', evidenceTitle: '주장이 어디까지 갈 수 있는지는 기록이 정하게 하세요.', evidenceIntro: '그럴듯한 답변을 근거 있는 결론으로 바꾸는 실전 경로입니다. 질문을 정하고, 출처를 찾고, 실제로 일어난 일을 관찰한 뒤 범위를 정한 결정을 내립니다. 다음 증거가 없으면 멈춥니다.', evidenceAria: '질문에서 범위가 정해진 결정까지의 다섯 단계', evidenceCenter: '주장을 확인 가능하게 유지하기', evidenceCenterSub: '한 번에 기록 하나', evidenceSelected: '선택한 증거 단계', evidenceNext: '다음 점검', evidenceOpen: '증거 경로 열기', evidenceFallback: '증거 경로를 텍스트로 읽기', evidenceFallbackIntro: '대화형 지도를 쓰지 않아도 같은 다섯 단계를 볼 수 있습니다. 각 단계에서 말할 수 있는 것과 기록 밖에 남는 것을 구분합니다.', evidenceFigureAlt: '질문에서 출처, 관찰, 범위가 정해진 결정과 의도적인 중지로 이어지는 증거 경로 그림.', evidenceOpenVisual: '전체 증거 보드 열기', evidenceFigureCaption: '프로젝트가 만든 보드입니다. 대화형 지도와 순서 목록은 같은 내용을 전달합니다.', evidenceBoundary: '이 지도는 추론을 돕는 자료입니다. 출처의 정확성, 도구 실행 또는 학습자의 숙련을 증명하지 않습니다.' },
+    de: { evidenceEyebrow: 'Karte für belegte Entscheidungen', evidenceTitle: 'Lass den Beleg bestimmen, wie weit die Aussage reicht.', evidenceIntro: 'Diese Route verbindet eine plausible Antwort mit einer tragfähigen Aussage: Frage benennen, Quelle finden, Beobachtung prüfen, eine begrenzte Entscheidung treffen und anhalten, wenn der nächste Nachweis fehlt.', evidenceAria: 'Fünf Schritte von der Frage zur begrenzten Entscheidung', evidenceCenter: 'Die Aussage prüfbar halten', evidenceCenterSub: 'ein Beleg nach dem anderen', evidenceSelected: 'Ausgewählter Belegschritt', evidenceNext: 'Nächster Check', evidenceOpen: 'Belegroute öffnen', evidenceFallback: 'Die Belegroute als Text lesen', evidenceFallbackIntro: 'Ohne interaktive Karte bleiben dieselben fünf Schritte verfügbar. Jeder Schritt zeigt, was du behaupten kannst und was außerhalb des Belegs bleibt.', evidenceFigureAlt: 'Belegroute von einer Frage über Quelle und Beobachtung zu einer begrenzten Entscheidung und einem bewussten Stopp.', evidenceOpenVisual: 'Vollständige Belegtafel öffnen', evidenceFigureCaption: 'Projektbezogene Tafel; interaktive Karte und geordneter Text haben dieselbe Bedeutung.', evidenceBoundary: 'Die Karte unterstützt das Denken. Sie belegt weder die Richtigkeit einer Quelle noch eine Tool-Ausführung oder den Lernerfolg.' },
+    'zh-tw': { evidenceEyebrow: '證據判斷圖', evidenceTitle: '讓紀錄決定主張可以走多遠。', evidenceIntro: '這條路線把「看起來合理的回答」接到「站得住腳的結論」：先說清楚問題，找到來源，觀察實際發生的事，再做有界線的判斷；下一項證據不足時就停止。', evidenceAria: '從問題到有界線判斷的五個步驟', evidenceCenter: '讓主張保持可檢查', evidenceCenterSub: '一次只看一份紀錄', evidenceSelected: '目前證據步驟', evidenceNext: '下一項檢查', evidenceOpen: '開啟證據路線', evidenceFallback: '依文字閱讀證據路線', evidenceFallbackIntro: '不使用互動地圖時，下面仍保留相同的五個步驟。每一步都說明可以提出什麼主張，以及哪些內容仍在紀錄之外。', evidenceFigureAlt: '從問題走向來源、觀察結果、有界線判斷與刻意停止的證據路線圖。', evidenceOpenVisual: '開啟完整證據圖', evidenceFigureCaption: '專案原創圖板；互動地圖與下方有序文字表達相同含義。', evidenceBoundary: '這張圖是推理輔助，不代表來源正確、工具已執行，或學習者已掌握方法。' },
+    fr: { evidenceEyebrow: 'Carte de décision fondée sur les preuves', evidenceTitle: 'Laissez le relevé fixer la portée de l’affirmation.', evidenceIntro: 'Ce parcours relie une réponse plausible à une conclusion défendable : formuler la question, repérer la source, observer ce qui s’est réellement passé, prendre une décision délimitée, puis s’arrêter quand la preuve suivante manque.', evidenceAria: 'Cinq étapes, de la question à une décision délimitée', evidenceCenter: 'Garder l’affirmation vérifiable', evidenceCenterSub: 'un relevé à la fois', evidenceSelected: 'Étape de preuve sélectionnée', evidenceNext: 'Prochain contrôle', evidenceOpen: 'Ouvrir le parcours de preuve', evidenceFallback: 'Lire le parcours de preuve en texte', evidenceFallbackIntro: 'Les cinq mêmes étapes restent disponibles sans la carte interactive. Chacune précise ce que vous pouvez affirmer et ce qui reste hors du relevé.', evidenceFigureAlt: 'Parcours de preuve allant d’une question à une source, une observation, une décision délimitée et un arrêt délibéré.', evidenceOpenVisual: 'Ouvrir la planche complète des preuves', evidenceFigureCaption: 'Planche créée par le projet ; la carte interactive et la liste ordonnée portent le même sens.', evidenceBoundary: 'La carte aide à raisonner. Elle ne prouve ni la justesse d’une source, ni l’exécution d’un outil, ni l’apprentissage de la méthode.' },
+  };
+  Object.entries(EVIDENCE_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
+
   const STAGES = [
     {
       id: 'understand', path: 'book/guides/llm-fundamentals',
@@ -131,6 +143,39 @@
         en: 'Repeat the method on an unseen task; one successful attempt is not mastery.', zh: '在未见任务上重复方法；一次成功尝试不等于掌握。', es: 'Repite el método en una tarea nueva; un intento acertado no demuestra dominio.', ja: '見たことのない課題で方法を繰り返します。1回の成功は習得の証明ではありません。', ko: '새 작업에서 방법을 반복하세요. 한 번의 성공은 숙련의 증거가 아닙니다.', de: 'Wiederhole die Methode an einer neuen Aufgabe; ein erfolgreicher Versuch ist kein Beherrschungsnachweis.', 'zh-tw': '在未見任務上重複方法；一次成功嘗試不等於掌握。', fr: 'Répétez la méthode sur une nouvelle tâche ; un essai réussi ne prouve pas la maîtrise.'
       },
       next: { en: 'Can I transfer this, or should I stop?', zh: '我可以迁移，还是应该停止？', es: '¿Puedo transferirlo o debo parar?', ja: '応用できるか、それとも止めるか？', ko: '전이할 수 있는가, 아니면 멈춰야 하는가?', de: 'Kann ich das übertragen oder sollte ich stoppen?', 'zh-tw': '可以遷移，還是應該停止？', fr: 'Puis-je transférer la méthode ou dois-je m’arrêter ?' },
+    },
+  ];
+
+  const EVIDENCE_STEPS = [
+    {
+      id: 'question', path: 'book/chapters/15-research-track',
+      labels: { en: 'Question', zh: '问题', es: 'Pregunta', ja: '問い', ko: '질문', de: 'Frage', 'zh-tw': '問題', fr: 'Question' },
+      bodies: { en: 'Name the decision before you search. A broad topic is not yet a checkable question.', zh: '先说清楚要做什么决定。宽泛主题还不是一个可以检查的问题。', es: 'Nombra la decisión antes de buscar. Un tema amplio todavía no es una pregunta comprobable.', ja: '検索する前に、どの判断をするのかを言葉にします。広いテーマだけでは確認できる問いになりません。', ko: '검색하기 전에 어떤 결정을 내릴지 정하세요. 넓은 주제만으로는 확인 가능한 질문이 되지 않습니다.', de: 'Benenne die Entscheidung vor der Suche. Ein breites Thema ist noch keine prüfbare Frage.', 'zh-tw': '搜尋前先說清楚要做什麼判斷。寬泛主題還不是可以檢查的問題。', fr: 'Formulez la décision avant de chercher. Un thème général ne constitue pas encore une question vérifiable.' },
+      next: { en: 'What decision would this evidence change?', zh: '哪项决定会被这条证据改变？', es: '¿Qué decisión cambiaría con esta evidencia?', ja: 'この証拠でどの判断が変わるか？', ko: '이 증거로 어떤 결정이 달라지는가?', de: 'Welche Entscheidung würde dieser Beleg ändern?', 'zh-tw': '哪一項判斷會被這份證據改變？', fr: 'Quelle décision cette preuve pourrait-elle changer ?' },
+    },
+    {
+      id: 'source', path: 'book/labs/lab-008-research-question',
+      labels: { en: 'Source', zh: '来源', es: 'Fuente', ja: '出典', ko: '출처', de: 'Quelle', 'zh-tw': '來源', fr: 'Source' },
+      bodies: { en: 'Name the owner, location, date, version, and boundary of the source before relying on it.', zh: '依赖来源前，写清负责人、位置、日期、版本和来源边界。', es: 'Antes de apoyarte en ella, anota responsable, ubicación, fecha, versión y límites de la fuente.', ja: '頼る前に、出典の責任者、場所、日付、版、適用範囲を記録します。', ko: '출처를 근거로 삼기 전에 담당자, 위치, 날짜, 버전과 범위를 적습니다.', de: 'Halte Eigentümer, Fundort, Datum, Version und Grenze der Quelle fest, bevor du dich darauf stützt.', 'zh-tw': '依賴來源前，寫清楚負責人、位置、日期、版本與來源界線。', fr: 'Notez le responsable, l’emplacement, la date, la version et la limite de la source avant de vous y fier.' },
+      next: { en: 'Can I locate the exact passage?', zh: '我能定位到原文的具体位置吗？', es: '¿Puedo localizar el pasaje exacto?', ja: '該当箇所を特定できるか？', ko: '정확한 문장을 찾을 수 있는가?', de: 'Kann ich die genaue Stelle finden?', 'zh-tw': '我能定位到原文的具體位置嗎？', fr: 'Puis-je localiser le passage exact ?' },
+    },
+    {
+      id: 'observe', path: 'book/chapters/09-verification-and-recovery',
+      labels: { en: 'Observe', zh: '观察', es: 'Observación', ja: '観察', ko: '관찰', de: 'Beobachtung', 'zh-tw': '觀察', fr: 'Observation' },
+      bodies: { en: 'Read the page, diff, test, log, or response. Do not infer an event you did not observe.', zh: '读取页面、差异、测试、日志或回答。没有观察到的事件，不能靠推测补出来。', es: 'Lee la página, el diff, la prueba, el registro o la respuesta. No infieras un evento que no hayas observado.', ja: 'ページ、差分、テスト、ログ、回答を読みます。観察していない出来事を推測で補いません。', ko: '페이지, diff, 테스트, 로그 또는 응답을 읽으세요. 관찰하지 않은 사건을 추정하지 마세요.', de: 'Lies Seite, Diff, Test, Protokoll oder Antwort. Schließe nicht auf ein Ereignis, das du nicht beobachtet hast.', 'zh-tw': '讀取頁面、差異、測試、日誌或回應。沒有觀察到的事件，不能靠推測補出來。', fr: 'Lisez la page, le diff, le test, le journal ou la réponse. N’inférez pas un événement que vous n’avez pas observé.' },
+      next: { en: 'What happened in the record, not in the story?', zh: '记录里实际发生了什么，而不是故事里说了什么？', es: '¿Qué ocurrió en el registro, más allá del relato?', ja: '物語ではなく、記録には何が残っているか？', ko: '설명이 아니라 기록에서 실제로 무엇이 일어났는가?', de: 'Was steht im Beleg, nicht in der Erzählung?', 'zh-tw': '紀錄裡實際發生了什麼，而不是故事裡說了什麼？', fr: 'Que montre le relevé, plutôt que le récit ?' },
+    },
+    {
+      id: 'decide', path: 'book/labs/lab-015-evidence-delivery',
+      labels: { en: 'Decide', zh: '决定', es: 'Decisión', ja: '判断', ko: '판단', de: 'Entscheidung', 'zh-tw': '判斷', fr: 'Décision' },
+      bodies: { en: 'Keep the claim supported when the check matches; otherwise mark it candidate, unknown, or out of scope.', zh: '检查匹配时保留有证据支持的结论；否则标为 candidate、unknown 或超出范围。', es: 'Mantén la afirmación como respaldada si la comprobación encaja; si no, márcala como candidate, unknown o fuera de alcance.', ja: '確認結果が一致するなら根拠ありとして残し、そうでなければ candidate、unknown、範囲外に分けます。', ko: '점검 결과가 맞으면 근거 있는 주장으로 남기고, 아니면 candidate, unknown 또는 범위 밖으로 표시하세요.', de: 'Lass die Aussage bei passender Prüfung belegt; sonst kennzeichne sie als candidate, unknown oder außerhalb des Umfangs.', 'zh-tw': '檢查相符時保留有證據支持的主張；否則標為 candidate、unknown 或超出範圍。', fr: 'Gardez l’affirmation étayée si le contrôle concorde ; sinon, classez-la candidate, unknown ou hors périmètre.' },
+      next: { en: 'What is the strongest label the record permits?', zh: '这份记录允许的最强标签是什么？', es: '¿Cuál es la etiqueta más fuerte que permite el registro?', ja: 'この記録で許される最も強いラベルは何か？', ko: '이 기록이 허용하는 가장 강한 상태 표시는 무엇인가?', de: 'Welche stärkste Einstufung erlaubt der Beleg?', 'zh-tw': '這份紀錄允許的最強標籤是什麼？', fr: 'Quelle est la qualification la plus forte permise par le relevé ?' },
+    },
+    {
+      id: 'stop', path: 'book/chapters/12-agent-loop-and-stop',
+      labels: { en: 'Stop', zh: '停止', es: 'Parada', ja: '停止', ko: '중지', de: 'Stopp', 'zh-tw': '停止', fr: 'Arrêt' },
+      bodies: { en: 'When the next proof is missing, stop and record the smallest safe next check. Preserve the unknown.', zh: '下一项证明缺失时，停下并记录最小的安全检查，同时保留未知项。', es: 'Si falta la siguiente prueba, detente y registra la comprobación segura más pequeña. Conserva lo desconocido.', ja: '次の証拠がなければ停止し、最小限で安全な次の確認を記録します。不明点を残します。', ko: '다음 증거가 없으면 멈추고 가장 작고 안전한 다음 점검을 기록하세요. 모르는 부분을 남기세요.', de: 'Wenn der nächste Nachweis fehlt, halte an und notiere den kleinsten sicheren nächsten Check. Bewahre das Unbekannte.', 'zh-tw': '下一項證據不足時，停下並記錄最小且安全的下一項檢查，同時保留未知之處。', fr: 'Quand la preuve suivante manque, arrêtez-vous et notez le plus petit contrôle sûr à faire ensuite. Préservez l’inconnu.' },
+      next: { en: 'What remains unknown, and who can authorize the next step?', zh: '什么仍然未知，谁能授权下一步？', es: '¿Qué sigue sin saberse y quién puede autorizar la siguiente etapa?', ja: '何が不明で、次の段階を誰が承認できるか？', ko: '무엇이 여전히 미확인이고 다음 단계를 승인할 수 있는 사람은 누구인가?', de: 'Was bleibt unbekannt, und wer darf den nächsten Schritt freigeben?', 'zh-tw': '什麼仍然未知，誰能授權下一步？', fr: 'Qu’est-ce qui reste inconnu et qui peut autoriser la suite ?' },
     },
   ];
 
@@ -193,6 +238,7 @@
   const invalidLocale = Boolean(requestedLocale) && !Object.prototype.hasOwnProperty.call(LOCALES, requestedLocale);
   let activeIntentId = 'start';
   let activeStageId = 'understand';
+  let activeEvidenceId = 'question';
 
   const query = (selector) => document.querySelector(selector);
   const queryAll = (selector) => [...document.querySelectorAll(selector)];
@@ -338,6 +384,60 @@
     if (detailLink) detailLink.href = readerHref(stage.path);
   }
 
+  function renderEvidenceMap() {
+    const nodes = query('[data-visual-evidence-nodes]');
+    const fallback = query('[data-visual-evidence-fallback]');
+    if (!nodes || !fallback) return;
+    const strings = copy();
+    nodes.replaceChildren();
+    fallback.replaceChildren();
+    EVIDENCE_STEPS.forEach((step, index) => {
+      const item = document.createElement('li');
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'visual-evidence-node';
+      button.dataset.evidence = step.id;
+      button.setAttribute('aria-pressed', String(step.id === activeEvidenceId));
+      button.setAttribute('aria-label', `${String(index + 1).padStart(2, '0')} ${localized(step.labels)}`);
+      const number = document.createElement('span');
+      number.textContent = String(index + 1).padStart(2, '0');
+      const label = document.createElement('strong');
+      label.textContent = localized(step.labels);
+      button.append(number, label);
+      button.addEventListener('click', () => { activeEvidenceId = step.id; renderEvidenceMap(); });
+      if (step.id === activeEvidenceId) button.classList.add('is-selected');
+      item.append(button);
+      nodes.append(item);
+
+      const fallbackItem = document.createElement('li');
+      const fallbackTitle = document.createElement('strong');
+      fallbackTitle.textContent = `${String(index + 1).padStart(2, '0')} · ${localized(step.labels)}`;
+      const fallbackBody = document.createElement('span');
+      fallbackBody.textContent = localized(step.bodies);
+      const fallbackNext = document.createElement('em');
+      fallbackNext.textContent = `${strings.evidenceNext}: ${localized(step.next)}`;
+      const fallbackLink = document.createElement('a');
+      fallbackLink.className = 'visual-action-link';
+      fallbackLink.href = readerHref(step.path);
+      fallbackLink.textContent = `${strings.evidenceOpen} ↗`;
+      fallbackItem.append(fallbackTitle, fallbackBody, fallbackNext, fallbackLink);
+      fallback.append(fallbackItem);
+    });
+    const step = EVIDENCE_STEPS.find((candidate) => candidate.id === activeEvidenceId) || EVIDENCE_STEPS[0];
+    const detailTitle = query('[data-visual-evidence-title]');
+    const detailBody = query('[data-visual-evidence-body]');
+    const detailNext = query('[data-visual-evidence-next]');
+    const detailLink = query('[data-visual-evidence-link]');
+    const image = query('[data-visual-evidence-image]');
+    const imageLink = query('[data-visual-evidence-image-link]');
+    if (detailTitle) detailTitle.textContent = localized(step.labels);
+    if (detailBody) detailBody.textContent = localized(step.bodies);
+    if (detailNext) detailNext.textContent = localized(step.next);
+    if (detailLink) detailLink.href = readerHref(step.path);
+    if (image) image.alt = strings.evidenceFigureAlt;
+    if (imageLink) imageLink.setAttribute('aria-label', `${strings.evidenceOpenVisual}: ${localized(step.labels)}`);
+  }
+
   function renderGallery() {
     const gallery = query('[data-visual-gallery]');
     if (!gallery) return;
@@ -390,6 +490,7 @@
     setText();
     renderIntentMap();
     renderMap();
+    renderEvidenceMap();
     renderGallery();
     if (updateUrl) {
       const nextUrl = new URL(window.location.href);
@@ -403,5 +504,6 @@
   setText();
   renderIntentMap();
   renderMap();
+  renderEvidenceMap();
   renderGallery();
 })();
