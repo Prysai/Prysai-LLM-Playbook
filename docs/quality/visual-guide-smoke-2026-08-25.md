@@ -12,6 +12,7 @@ readiness.
 ```text
 python -X utf8 scripts/build_pages_artifact.py --output _site
 npm run test:visuals
+npm run test:reader-visuals
 python -X utf8 scripts/validate_project.py
 python -X utf8 scripts/validate_project_structure.py
 python -X utf8 scripts/validate_content_completeness.py
@@ -25,7 +26,8 @@ python -X utf8 scripts/run_tests.py
 | Check | Result | Scope |
 | --- | --- | --- |
 | Candidate Pages build | passed | `_site/` generated from the current source tree |
-| Focused visual smoke | passed | 8 locale routes; 19 boards; dynamic route, goal, journey, capability, maturity, concept, evidence, receipt, reading-loop, action-boundary, and triage nodes |
+| Focused visual smoke | passed | 8 locale routes; 20 boards; dynamic route, goal, journey, capability, maturity, concept, evidence, receipt, reading-loop, action-boundary, and triage nodes |
+| Lab 003 Reader visual smoke | passed | 8 locale routes; localized heading, experiment-record board, alternative text, text explanation, evidence boundary, related visuals, and 390px overflow check |
 | Responsive visual viewer | passed | Approved board links use the project viewer with localized labels, zoom controls, raw-SVG escape hatch, and rejected-asset error state |
 | Reader visual action note | passed | Localized `look first / do next / keep / do not infer` strip rendered in English, Simplified Chinese, Spanish, Japanese, Korean, German, Traditional Chinese, and French |
 | Mobile overflow | passed | 390px and 360px visual guide viewports |
