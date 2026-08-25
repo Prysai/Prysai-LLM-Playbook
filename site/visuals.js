@@ -107,6 +107,18 @@
   };
   Object.entries(JOURNEY_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
 
+  const CONCEPT_COPY = {
+    en: { conceptEyebrow: 'Concept mind map', conceptTitle: 'Separate the six terms before you trust the answer.', conceptIntro: 'Token, context, context window, prompt, response, and tool or Agent are related, but they are not interchangeable. Select one term to see what it explains and what it still cannot prove.', conceptAria: 'Six LLM terms that lead to one checked result', conceptCenter: 'One checked result', conceptCenterSub: 'keep generation, action, and verification distinct', conceptSelected: 'Selected term', conceptNext: 'Next check', conceptOpenVisual: 'Open the full concept board', conceptFigureAlt: 'Six LLM terms leading to one checked result', conceptFigureCaption: 'Project-authored concept board. The selected term, ordered list, and source lesson carry the explanation; the image is an orientation aid.', conceptOpen: 'Open the foundation lesson', conceptFallback: 'Read the six terms as text', conceptFallbackIntro: 'The same six terms remain available as an ordered list. Use the list when the map or image is unavailable.', conceptBoundary: 'Response is not action, and action is not a verified result. Compare the result with a source, diff, test, log, or acceptance rule before claiming completion.' },
+    zh: { conceptEyebrow: '概念思维导图', conceptTitle: '先分清六个术语，再判断回答能不能信。', conceptIntro: 'Token、上下文、上下文窗口、提示、回答，以及工具或 Agent 彼此相关，但不能互换。选择一个术语，查看它能解释什么，以及它仍然不能证明什么。', conceptAria: '通向一个可检查结果的六个 LLM 术语', conceptCenter: '一个可检查的结果', conceptCenterSub: '区分生成、行动与验证', conceptSelected: '当前术语', conceptNext: '下一项检查', conceptOpenVisual: '打开完整术语图', conceptFigureAlt: '六个 LLM 术语通向一个可检查的结果', conceptFigureCaption: '项目原创概念图。当前术语、有序列表和课程链接共同承担解释；图片本身只是定位辅助。', conceptOpen: '打开基础课程', conceptFallback: '按文字阅读六个术语', conceptFallbackIntro: '地图或图片无法使用时，下面的有序列表仍保留同样的六个术语。', conceptBoundary: '回答不等于行动，行动也不等于经过验证的结果。声称完成前，请用来源、差异、测试、日志或验收规则对照结果。' },
+    es: { conceptEyebrow: 'Mapa conceptual', conceptTitle: 'Distingue los seis términos antes de fiarte de la respuesta.', conceptIntro: 'Token, contexto, ventana de contexto, prompt, respuesta y herramienta o agente están relacionados, pero no son intercambiables. Selecciona un término para ver qué explica y qué no puede demostrar por sí solo.', conceptAria: 'Seis términos de LLM que llevan a un resultado comprobado', conceptCenter: 'Un resultado comprobado', conceptCenterSub: 'separa generación, acción y verificación', conceptSelected: 'Término seleccionado', conceptNext: 'Siguiente comprobación', conceptOpenVisual: 'Abrir el mapa conceptual completo', conceptFigureAlt: 'Seis términos de LLM que llevan a un resultado comprobado', conceptFigureCaption: 'Mapa conceptual original del proyecto. El término seleccionado, la lista ordenada y la lección enlazada contienen la explicación; la imagen solo orienta.', conceptOpen: 'Abrir la lección de fundamentos', conceptFallback: 'Leer los seis términos como texto', conceptFallbackIntro: 'Si el mapa o la imagen no están disponibles, los mismos seis términos quedan en esta lista ordenada.', conceptBoundary: 'Una respuesta no es una acción, y una acción no es un resultado verificado. Antes de afirmar que terminaste, compara el resultado con una fuente, un diff, una prueba, un registro o un criterio de aceptación.' },
+    ja: { conceptEyebrow: '概念マインドマップ', conceptTitle: '回答を信じる前に、6つの用語を切り分ける。', conceptIntro: 'Token、コンテキスト、コンテキストウィンドウ、プロンプト、応答、ツールまたは Agent は関係していますが、同じものではありません。用語を1つ選ぶと、何を説明でき、何をまだ証明できないかを確認できます。', conceptAria: '1つの確認できる結果につながる LLM の6用語', conceptCenter: '確認できる1つの結果', conceptCenterSub: '生成・操作・検証を分けて考える', conceptSelected: '選択中の用語', conceptNext: '次の確認', conceptOpenVisual: '概念図を原寸で開く', conceptFigureAlt: 'LLM の6用語から確認できる1つの結果へ進む図', conceptFigureCaption: 'プロジェクト作成の概念図です。選択中の用語、順序付きリスト、リンク先のレッスンが説明を担い、画像は位置づけを補助します。', conceptOpen: '基礎レッスンを開く', conceptFallback: '6つの用語をテキストで読む', conceptFallbackIntro: 'マップや画像が使えない場合も、同じ6つの用語を順序付きリストで読めます。', conceptBoundary: '応答は操作ではなく、操作は検証済みの結果ではありません。完了を主張する前に、出典、差分、テスト、ログ、受け入れ条件と結果を照合します。' },
+    ko: { conceptEyebrow: '개념 마인드맵', conceptTitle: '답변을 믿기 전에 여섯 가지 용어부터 구분하세요.', conceptIntro: 'Token, 컨텍스트, 컨텍스트 창, 프롬프트, 응답, 도구 또는 Agent는 서로 관련 있지만 같은 뜻이 아닙니다. 용어 하나를 선택하면 무엇을 설명할 수 있고 무엇은 아직 증명할 수 없는지 확인할 수 있습니다.', conceptAria: '확인 가능한 결과 하나로 이어지는 LLM 여섯 용어', conceptCenter: '확인 가능한 결과 하나', conceptCenterSub: '생성·행동·검증을 구분하기', conceptSelected: '선택한 용어', conceptNext: '다음 점검', conceptOpenVisual: '전체 개념 보드 열기', conceptFigureAlt: 'LLM 여섯 용어에서 확인 가능한 결과 하나로 이어지는 그림', conceptFigureCaption: '프로젝트가 만든 개념 보드입니다. 선택한 용어, 순서 목록과 연결된 수업이 설명을 담당하고 그림은 방향을 잡는 데만 씁니다.', conceptOpen: '기초 수업 열기', conceptFallback: '여섯 용어를 텍스트로 읽기', conceptFallbackIntro: '지도나 그림을 사용할 수 없어도 같은 여섯 용어를 순서 목록으로 읽을 수 있습니다.', conceptBoundary: '응답은 행동이 아니며 행동도 검증된 결과가 아닙니다. 완료를 주장하기 전에 출처, diff, 테스트, 로그 또는 수용 기준과 결과를 비교하세요.' },
+    de: { conceptEyebrow: 'Begriffs-Mindmap', conceptTitle: 'Trenne die sechs Begriffe, bevor du der Antwort vertraust.', conceptIntro: 'Token, Kontext, Kontextfenster, Prompt, Antwort und Tool oder Agent hängen zusammen, sind aber nicht austauschbar. Wähle einen Begriff, um zu sehen, was er erklärt und was er allein noch nicht belegen kann.', conceptAria: 'Sechs LLM-Begriffe führen zu einem geprüften Ergebnis', conceptCenter: 'Ein geprüftes Ergebnis', conceptCenterSub: 'Erzeugung, Handlung und Prüfung getrennt halten', conceptSelected: 'Ausgewählter Begriff', conceptNext: 'Nächster Check', conceptOpenVisual: 'Vollständige Begriffs-Mindmap öffnen', conceptFigureAlt: 'Sechs LLM-Begriffe führen zu einem geprüften Ergebnis', conceptFigureCaption: 'Projektbezogene Begriffs-Mindmap. Der ausgewählte Begriff, die geordnete Liste und die verknüpfte Lektion erklären den Inhalt; das Bild dient nur zur Orientierung.', conceptOpen: 'Grundlagenlektion öffnen', conceptFallback: 'Die sechs Begriffe als Text lesen', conceptFallbackIntro: 'Wenn Karte oder Bild nicht verfügbar sind, bleiben dieselben sechs Begriffe in dieser geordneten Liste erhalten.', conceptBoundary: 'Eine Antwort ist keine Handlung, und eine Handlung ist kein geprüftes Ergebnis. Vergleiche das Ergebnis vor einer Abschlussbehauptung mit Quelle, Diff, Test, Protokoll oder Abnahmeregel.' },
+    'zh-tw': { conceptEyebrow: '概念心智圖', conceptTitle: '先分清六個術語，再判斷回應能不能信。', conceptIntro: 'Token、上下文、上下文視窗、提示、回應，以及工具或 Agent 彼此相關，但不能互換。選擇一個術語，查看它能解釋什麼，以及它仍然不能證明什麼。', conceptAria: '通往一個可檢查結果的六個 LLM 術語', conceptCenter: '一個可檢查的結果', conceptCenterSub: '區分生成、行動與驗證', conceptSelected: '目前術語', conceptNext: '下一項檢查', conceptOpenVisual: '開啟完整術語圖', conceptFigureAlt: '六個 LLM 術語通往一個可檢查的結果', conceptFigureCaption: '專案原創概念圖。目前術語、有序清單與課程連結共同承擔說明；圖片本身只是定位輔助。', conceptOpen: '開啟基礎課程', conceptFallback: '依文字閱讀六個術語', conceptFallbackIntro: '地圖或圖片無法使用時，下面的有序清單仍保留相同的六個術語。', conceptBoundary: '回應不等於行動，行動也不等於經過驗證的結果。聲稱完成前，請用來源、差異、測試、日誌或驗收規則對照結果。' },
+    fr: { conceptEyebrow: 'Carte mentale des concepts', conceptTitle: 'Distinguez les six notions avant de faire confiance à la réponse.', conceptIntro: 'Token, contexte, fenêtre de contexte, prompt, réponse et outil ou Agent sont liés, mais ne sont pas interchangeables. Sélectionnez une notion pour voir ce qu’elle explique et ce qu’elle ne peut pas encore prouver seule.', conceptAria: 'Six notions LLM qui mènent à un résultat vérifié', conceptCenter: 'Un résultat vérifié', conceptCenterSub: 'séparer génération, action et vérification', conceptSelected: 'Notion sélectionnée', conceptNext: 'Prochain contrôle', conceptOpenVisual: 'Ouvrir la carte mentale complète', conceptFigureAlt: 'Six notions LLM menant à un résultat vérifié', conceptFigureCaption: 'Carte mentale créée par le projet. La notion sélectionnée, la liste ordonnée et la leçon liée portent l’explication ; l’image sert à se repérer.', conceptOpen: 'Ouvrir la leçon de base', conceptFallback: 'Lire les six notions en texte', conceptFallbackIntro: 'Si la carte ou l’image n’est pas disponible, les six mêmes notions restent accessibles dans cette liste ordonnée.', conceptBoundary: 'Une réponse n’est pas une action, et une action n’est pas un résultat vérifié. Avant de déclarer la tâche terminée, comparez le résultat à une source, un diff, un test, un journal ou un critère d’acceptation.' },
+  };
+  Object.entries(CONCEPT_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
+
   const STAGES = [
     {
       id: 'understand', path: 'book/guides/llm-fundamentals',
@@ -218,6 +230,45 @@
     },
   ];
 
+  const CONCEPTS = [
+    {
+      id: 'token', path: 'book/chapters/01-gpt-and-codex',
+      labels: { en: 'Token', zh: 'Token（词元）', es: 'Token', ja: 'Token（トークン）', ko: 'Token（토큰）', de: 'Token', 'zh-tw': 'Token（詞元）', fr: 'Token' },
+      bodies: { en: 'A unit of text processed by the model; it is not a fact or a permission.', zh: '模型处理的文字单位；它不是事实，也不代表权限。', es: 'Unidad de texto que procesa el modelo; no es un hecho ni concede permisos.', ja: 'モデルが処理するテキストの単位です。事実でも権限でもありません。', ko: '모델이 처리하는 텍스트 단위입니다. 사실도 아니고 권한도 아닙니다.', de: 'Eine vom Modell verarbeitete Texteinheit; sie ist weder eine Tatsache noch eine Berechtigung.', 'zh-tw': '模型處理的文字單位；它不是事實，也不代表權限。', fr: 'Unité de texte traitée par le modèle ; ce n’est ni un fait ni une autorisation.' },
+      next: { en: 'What material is actually present?', zh: '实际有哪些材料在场？', es: '¿Qué material está realmente presente?', ja: '実際に何が入力されているか？', ko: '실제로 어떤 자료가 들어와 있는가?', de: 'Welches Material ist tatsächlich vorhanden?', 'zh-tw': '實際有哪些資料在場？', fr: 'Quel contenu est réellement présent ?' },
+    },
+    {
+      id: 'context', path: 'book/chapters/01-gpt-and-codex',
+      labels: { en: 'Context', zh: 'Context（上下文）', es: 'Contexto', ja: 'Context（コンテキスト）', ko: 'Context（컨텍스트）', de: 'Kontext', 'zh-tw': 'Context（上下文）', fr: 'Contexte' },
+      bodies: { en: 'Material available in this turn, such as a prompt, supplied text, or tool data.', zh: '这一轮可用的材料，例如提示、提供的文字或工具数据。', es: 'Material disponible en este turno, como el prompt, texto aportado o datos de una herramienta.', ja: 'このターンで利用できる材料です。プロンプト、提供された文章、ツールのデータなどが含まれます。', ko: '이번 턴에서 사용할 수 있는 자료입니다. 프롬프트, 제공된 텍스트 또는 도구 데이터가 여기에 포함됩니다.', de: 'Material, das in diesem Durchlauf verfügbar ist, etwa Prompt, bereitgestellter Text oder Tool-Daten.', 'zh-tw': '這一輪可用的資料，例如提示、提供的文字或工具資料。', fr: 'Contenu disponible dans ce tour : prompt, texte fourni ou données d’un outil, par exemple.' },
+      next: { en: 'What is missing and still unknown?', zh: '什么缺失，什么仍然未知？', es: '¿Qué falta y sigue sin saberse?', ja: '何が欠けていて、まだ不明なのか？', ko: '무엇이 빠져 있고 여전히 모르는가?', de: 'Was fehlt und bleibt unbekannt?', 'zh-tw': '什麼缺少，什麼仍然未知？', fr: 'Qu’est-ce qui manque et reste inconnu ?' },
+    },
+    {
+      id: 'window', path: 'book/chapters/01-gpt-and-codex',
+      labels: { en: 'Context window', zh: 'Context window（上下文窗口）', es: 'Ventana de contexto', ja: 'Context window（コンテキストウィンドウ）', ko: 'Context window（컨텍스트 창）', de: 'Kontextfenster', 'zh-tw': 'Context window（上下文視窗）', fr: 'Fenêtre de contexte' },
+      bodies: { en: 'The amount of material that fits in one turn; the exact limit depends on the product.', zh: '一轮能容纳的材料总量；具体上限取决于产品。', es: 'Cantidad de material que cabe en un turno; el límite exacto depende del producto.', ja: '1つのターンに収まる材料の量です。正確な上限は製品によって異なります。', ko: '한 턴에 들어갈 수 있는 자료의 양입니다. 정확한 한도는 제품마다 다릅니다.', de: 'Die Materialmenge, die in einen Durchlauf passt; das genaue Limit hängt vom Produkt ab.', 'zh-tw': '一輪能容納的資料總量；具體上限取決於產品。', fr: 'Quantité de contenu qui tient dans un tour ; la limite exacte dépend du produit.' },
+      next: { en: 'Which limit is documented for this surface?', zh: '这个产品界面记录了什么限制？', es: '¿Qué límite documenta esta interfaz?', ja: 'この環境に記載された上限は何か？', ko: '이 환경에 문서로 남은 한도는 무엇인가?', de: 'Welches Limit ist für diese Oberfläche dokumentiert?', 'zh-tw': '這個產品介面記錄了什麼限制？', fr: 'Quelle limite est documentée pour cette interface ?' },
+    },
+    {
+      id: 'prompt', path: 'book/chapters/03-task-protocol',
+      labels: { en: 'Prompt', zh: 'Prompt（提示）', es: 'Prompt', ja: 'Prompt（プロンプト）', ko: 'Prompt（프롬프트）', de: 'Prompt', 'zh-tw': 'Prompt（提示）', fr: 'Prompt' },
+      bodies: { en: 'The goal, context, constraints, and requested answer shape; it frames work but grants no access.', zh: '目标、上下文、约束和所要求的回答形式；它能框定工作，但不会自动授予访问权限。', es: 'Objetivo, contexto, restricciones y forma de respuesta solicitada; encuadra el trabajo, pero no concede acceso.', ja: '目的、コンテキスト、制約、求める回答の形です。作業の枠は決めますが、アクセス権は与えません。', ko: '목표, 맥락, 제약과 원하는 답변 형식입니다. 작업 범위는 정하지만 접근 권한을 주지는 않습니다.', de: 'Ziel, Kontext, Einschränkungen und gewünschte Antwortform; der Prompt grenzt die Arbeit ein, gewährt aber keinen Zugriff.', 'zh-tw': '目標、上下文、限制與要求的回應形式；它能框定工作，但不會自動授予存取權限。', fr: 'Objectif, contexte, contraintes et forme de réponse demandée ; il cadre le travail, mais n’accorde aucun accès.' },
+      next: { en: 'What is allowed before the request starts?', zh: '请求开始前，什么是允许的？', es: '¿Qué está permitido antes de empezar?', ja: '依頼を始める前に何が許可されているか？', ko: '요청을 시작하기 전에 무엇이 허용되는가?', de: 'Was ist vor Beginn der Anfrage erlaubt?', 'zh-tw': '請求開始前，什麼是允許的？', fr: 'Qu’est-ce qui est autorisé avant de commencer ?' },
+    },
+    {
+      id: 'response', path: 'book/chapters/09-verification-and-recovery',
+      labels: { en: 'Response', zh: 'Response（回答）', es: 'Respuesta', ja: 'Response（応答）', ko: 'Response（응답）', de: 'Antwort', 'zh-tw': 'Response（回應）', fr: 'Réponse' },
+      bodies: { en: 'Text proposed for inspection; fluent wording can still make an error sound certain.', zh: '等待检查的文字建议；表达流畅，仍可能把错误说得像确定事实。', es: 'Texto propuesto para inspección; una redacción fluida puede hacer que un error parezca seguro.', ja: '確認するために提示された文章です。流暢でも、誤りを確実そうに見せることがあります。', ko: '점검해야 할 텍스트 제안입니다. 표현이 매끄러워도 오류를 확실한 사실처럼 보이게 할 수 있습니다.', de: 'Zur Prüfung vorgeschlagener Text; flüssige Formulierungen können einen Fehler trotzdem sicher klingen lassen.', 'zh-tw': '等待檢查的文字建議；表達流暢，仍可能把錯誤說得像確定事實。', fr: 'Texte proposé à l’inspection ; une formulation fluide peut donner à une erreur un air de certitude.' },
+      next: { en: 'What record can I compare with the response?', zh: '我能用哪份记录对照回答？', es: '¿Con qué registro puedo comparar la respuesta?', ja: '応答と照合できる記録は何か？', ko: '응답과 비교할 기록은 무엇인가?', de: 'Mit welchem Beleg kann ich die Antwort vergleichen?', 'zh-tw': '我能用哪份紀錄對照回應？', fr: 'Avec quel relevé puis-je comparer la réponse ?' },
+    },
+    {
+      id: 'tool', path: 'book/chapters/13-action-boundaries',
+      labels: { en: 'Tool / Agent', zh: 'Tool / Agent（工具 / Agent）', es: 'Herramienta / agente', ja: 'Tool / Agent（ツール / Agent）', ko: 'Tool / Agent（도구 / Agent）', de: 'Tool / Agent', 'zh-tw': 'Tool / Agent（工具 / Agent）', fr: 'Outil / Agent' },
+      bodies: { en: 'A product may add reading, action, or coordination; runtime permission and evidence decide what happened.', zh: '产品可能增加读取、行动或协作能力；运行时权限和证据才能决定实际发生了什么。', es: 'Un producto puede añadir lectura, acción o coordinación; los permisos en tiempo de ejecución y la evidencia determinan lo ocurrido.', ja: '製品によって読み取り、操作、調整が加わります。実行時の権限と証拠で、実際に起きたことを判断します。', ko: '제품은 읽기, 행동 또는 조정 기능을 추가할 수 있습니다. 실제로 무슨 일이 일어났는지는 실행 권한과 증거로 판단합니다.', de: 'Ein Produkt kann Lesen, Handeln oder Koordination ergänzen; Laufzeitberechtigung und Belege entscheiden, was passiert ist.', 'zh-tw': '產品可能增加讀取、行動或協作能力；執行時權限與證據才能判斷實際發生了什麼。', fr: 'Un produit peut ajouter lecture, action ou coordination ; les autorisations d’exécution et les preuves déterminent ce qui s’est passé.' },
+      next: { en: 'What action receipt or log exists?', zh: '留下了什么行动回执或日志？', es: '¿Qué comprobante o registro de acción existe?', ja: 'どの操作記録やログが残っているか？', ko: '어떤 행동 기록이나 로그가 남아 있는가?', de: 'Welcher Aktionsbeleg oder welches Protokoll existiert?', 'zh-tw': '留下了什麼行動紀錄或日誌？', fr: 'Quel relevé d’action ou quel journal existe ?' },
+    },
+  ];
+
   const INTENTS = [
     {
       id: 'start', asset: 'foundation-first-visit-route-red-black.svg', path: 'book/chapters/02-first-safe-task',
@@ -304,6 +355,7 @@
   let activeJourneyId = 'foundation';
   let activeStageId = 'understand';
   let activeEvidenceId = 'question';
+  let activeConceptId = 'token';
 
   const query = (selector) => document.querySelector(selector);
   const queryAll = (selector) => [...document.querySelectorAll(selector)];
@@ -555,6 +607,60 @@
     if (imageLink) imageLink.setAttribute('aria-label', `${strings.evidenceOpenVisual}: ${localized(step.labels)}`);
   }
 
+  function renderConceptMap() {
+    const nodes = query('[data-visual-concept-nodes]');
+    const fallback = query('[data-visual-concept-fallback]');
+    if (!nodes || !fallback) return;
+    const strings = copy();
+    nodes.replaceChildren();
+    fallback.replaceChildren();
+    CONCEPTS.forEach((concept, index) => {
+      const item = document.createElement('li');
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'visual-concept-node';
+      button.dataset.concept = concept.id;
+      button.setAttribute('aria-pressed', String(concept.id === activeConceptId));
+      button.setAttribute('aria-label', `${String(index + 1).padStart(2, '0')} ${localized(concept.labels)}`);
+      const number = document.createElement('span');
+      number.textContent = String(index + 1).padStart(2, '0');
+      const label = document.createElement('strong');
+      label.textContent = localized(concept.labels);
+      button.append(number, label);
+      button.addEventListener('click', () => { activeConceptId = concept.id; renderConceptMap(); });
+      if (concept.id === activeConceptId) button.classList.add('is-selected');
+      item.append(button);
+      nodes.append(item);
+
+      const fallbackItem = document.createElement('li');
+      const fallbackTitle = document.createElement('strong');
+      fallbackTitle.textContent = `${String(index + 1).padStart(2, '0')} · ${localized(concept.labels)}`;
+      const fallbackBody = document.createElement('span');
+      fallbackBody.textContent = localized(concept.bodies);
+      const fallbackNext = document.createElement('em');
+      fallbackNext.textContent = `${strings.conceptNext}: ${localized(concept.next)}`;
+      const fallbackLink = document.createElement('a');
+      fallbackLink.className = 'visual-action-link';
+      fallbackLink.href = readerHref(concept.path);
+      fallbackLink.textContent = `${strings.conceptOpen} ↗`;
+      fallbackItem.append(fallbackTitle, fallbackBody, fallbackNext, fallbackLink);
+      fallback.append(fallbackItem);
+    });
+    const concept = CONCEPTS.find((candidate) => candidate.id === activeConceptId) || CONCEPTS[0];
+    const detailTitle = query('[data-visual-concept-title]');
+    const detailBody = query('[data-visual-concept-body]');
+    const detailNext = query('[data-visual-concept-next]');
+    const detailLink = query('[data-visual-concept-link]');
+    const image = query('[data-visual-concept-image]');
+    const imageLink = query('[data-visual-concept-image-link]');
+    if (detailTitle) detailTitle.textContent = localized(concept.labels);
+    if (detailBody) detailBody.textContent = localized(concept.bodies);
+    if (detailNext) detailNext.textContent = localized(concept.next);
+    if (detailLink) detailLink.href = readerHref(concept.path);
+    if (image) image.alt = strings.conceptFigureAlt;
+    if (imageLink) imageLink.setAttribute('aria-label', `${strings.conceptOpenVisual}: ${localized(concept.labels)}`);
+  }
+
   function renderGallery() {
     const gallery = query('[data-visual-gallery]');
     if (!gallery) return;
@@ -607,6 +713,7 @@
     setText();
     renderIntentMap();
     renderJourney();
+    renderConceptMap();
     renderMap();
     renderEvidenceMap();
     renderGallery();
@@ -622,6 +729,7 @@
   setText();
   renderIntentMap();
   renderJourney();
+  renderConceptMap();
   renderMap();
   renderEvidenceMap();
   renderGallery();

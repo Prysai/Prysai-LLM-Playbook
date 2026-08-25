@@ -8,8 +8,8 @@
     <meta name="theme-color" content="#f7f7f2" />
     <title>Prysai LLM Playbook — Visual Guide</title>
     <link rel="icon" type="image/png" href="../assets/branding/prysai-lab-mark-black-96.png" />
-    <link rel="stylesheet" href="visuals.css?v=20260824-visual-guide-2" />
-    <script src="visuals.js?v=20260824-visual-guide-2" defer></script>
+    <link rel="stylesheet" href="visuals.css?v=20260825-visual-guide-3" />
+    <script src="visuals.js?v=20260825-visual-guide-3" defer></script>
   </head>
   <body>
     <a class="visual-skip" href="#visual-main" data-i18n="skip">Skip to content</a>
@@ -126,9 +126,49 @@
         <p class="visual-boundary" data-i18n="journeyBoundary">The map shows order, not mastery. Keep the artifact, evidence, limit, and next question.</p>
       </section>
 
+      <section class="visual-concept-section" aria-labelledby="visual-concept-title">
+        <div class="visual-section-heading">
+          <div><span class="visual-section-number">04</span><p class="visual-eyebrow" data-i18n="conceptEyebrow">Concept mind map</p><h2 id="visual-concept-title" data-i18n="conceptTitle">Separate the six terms before you trust the answer.</h2></div>
+          <p data-i18n="conceptIntro">Token, context, context window, prompt, response, and tool or Agent are related, but they are not interchangeable. Select one term to see what it explains and what it still cannot prove.</p>
+        </div>
+        <div class="visual-concept-workspace">
+          <div class="visual-concept-graph" role="group" aria-label="Six LLM terms that lead to one checked result" data-i18n-attr="aria-label:conceptAria">
+            <div class="visual-concept-center" aria-hidden="true"><span data-i18n="conceptCenter">One checked result</span><small data-i18n="conceptCenterSub">keep generation, action, and verification distinct</small></div>
+            <ol class="visual-concept-nodes" data-visual-concept-nodes></ol>
+          </div>
+          <section class="visual-concept-detail" data-visual-concept-detail aria-live="polite" aria-atomic="true">
+            <span class="visual-detail-label" data-i18n="conceptSelected">Selected term</span>
+            <h3 data-visual-concept-title></h3>
+            <p data-visual-concept-body></p>
+            <p class="visual-concept-next"><span data-i18n="conceptNext">Next check</span><strong data-visual-concept-next></strong></p>
+            <figure class="visual-concept-figure">
+              <a data-visual-concept-image-link href="../assets/teaching/llm-six-terms-to-one-check.svg" target="_blank" rel="noreferrer" aria-label="Open the six-term concept board">
+                <img data-visual-concept-image src="../assets/teaching/llm-six-terms-to-one-check.svg" width="900" height="1500" loading="lazy" alt="Six LLM terms leading to one checked result" data-i18n-attr="alt:conceptFigureAlt" />
+                <span class="visual-image-link" data-i18n="conceptOpenVisual">Open the full concept board</span>
+              </a>
+              <figcaption data-i18n="conceptFigureCaption">Project-authored concept board. The selected term, ordered list, and source lesson carry the explanation; the image is an orientation aid.</figcaption>
+            </figure>
+            <a class="visual-action-link" data-visual-concept-link href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en"><span data-i18n="conceptOpen">Open the foundation lesson</span><span aria-hidden="true">↗</span></a>
+          </section>
+        </div>
+        <details class="visual-concept-fallback" open>
+          <summary data-i18n="conceptFallback">Read the six terms as text</summary>
+          <p data-i18n="conceptFallbackIntro">The same six terms remain available as an ordered list. Use the list when the map or image is unavailable.</p>
+          <ol data-visual-concept-fallback>
+            <li><strong>01 · Token</strong><span>A unit of text processed by the model; it is not a fact or a permission.</span><em>Next check: What material is actually present?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en">Open the foundation lesson ↗</a></li>
+            <li><strong>02 · Context</strong><span>Material available in this turn, such as a prompt, supplied text, or tool data.</span><em>Next check: What is missing and still unknown?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en">Open the foundation lesson ↗</a></li>
+            <li><strong>03 · Context window</strong><span>The amount of material that fits in one turn; the exact limit depends on the product.</span><em>Next check: Which limit is documented for this surface?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F01-gpt-and-codex-EN.md&amp;lang=en">Open the foundation lesson ↗</a></li>
+            <li><strong>04 · Prompt</strong><span>The goal, context, constraints, and requested answer shape; it frames work but grants no access.</span><em>Next check: What is allowed before the request starts?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F03-task-protocol-EN.md&amp;lang=en">Open the task protocol ↗</a></li>
+            <li><strong>05 · Response</strong><span>Text proposed for inspection; fluent wording can still make an error sound certain.</span><em>Next check: What record can I compare with the response?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&amp;lang=en">Open verification and recovery ↗</a></li>
+            <li><strong>06 · Tool / Agent</strong><span>A product may add reading, action, or coordination; runtime permission and evidence decide what happened.</span><em>Next check: What action receipt or log exists?</em><a class="visual-action-link" href="reader.html?path=book%2Fchapters%2F13-action-boundaries-EN.md&amp;lang=en">Open action boundaries ↗</a></li>
+          </ol>
+        </details>
+        <p class="visual-boundary" data-i18n="conceptBoundary">Response is not action, and action is not a verified result. Compare the result with a source, diff, test, log, or acceptance rule before claiming completion.</p>
+      </section>
+
       <section class="visual-map-section" aria-labelledby="visual-map-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">04</span><p class="visual-eyebrow" data-i18n="mapEyebrow">Dynamic route map</p><h2 id="visual-map-title" data-i18n="mapTitle">Choose a stage, then ask one question.</h2></div>
+          <div><span class="visual-section-number">05</span><p class="visual-eyebrow" data-i18n="mapEyebrow">Dynamic route map</p><h2 id="visual-map-title" data-i18n="mapTitle">Choose a stage, then ask one question.</h2></div>
           <p data-i18n="mapIntro">Select a node to see the action, the evidence boundary, and the next safe question. The ordered list below keeps the route available without interaction.</p>
         </div>
         <div class="visual-map-workspace">
@@ -160,7 +200,7 @@
 
       <section class="visual-evidence-section" aria-labelledby="visual-evidence-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">05</span><p class="visual-eyebrow" data-i18n="evidenceEyebrow">Evidence decision map</p><h2 id="visual-evidence-title" data-i18n="evidenceTitle">Let the record decide how far the claim can go.</h2></div>
+          <div><span class="visual-section-number">06</span><p class="visual-eyebrow" data-i18n="evidenceEyebrow">Evidence decision map</p><h2 id="visual-evidence-title" data-i18n="evidenceTitle">Let the record decide how far the claim can go.</h2></div>
           <p data-i18n="evidenceIntro">This is the practical bridge between a plausible answer and a defensible conclusion: name the question, locate the source, observe what happened, choose a bounded decision, then stop when the next proof is missing.</p>
         </div>
         <div class="visual-evidence-workspace">
@@ -199,7 +239,7 @@
 
       <section id="visual-gallery" class="visual-gallery-section" aria-labelledby="visual-gallery-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">06</span><p class="visual-eyebrow" data-i18n="galleryEyebrow">Teaching boards</p><h2 id="visual-gallery-title" data-i18n="galleryTitle">Pictures that explain one decision at a time.</h2></div>
+          <div><span class="visual-section-number">07</span><p class="visual-eyebrow" data-i18n="galleryEyebrow">Teaching boards</p><h2 id="visual-gallery-title" data-i18n="galleryTitle">Pictures that explain one decision at a time.</h2></div>
           <p data-i18n="galleryIntro">Each board has a short explanation, a localized alternative text, and a route into the matching lesson. Open the image when you want the printable version; use the text beside it when you want the exact boundary.</p>
         </div>
         <div class="visual-gallery" data-visual-gallery></div>
@@ -213,7 +253,7 @@
 
       <section class="visual-how-section" aria-labelledby="visual-how-title">
         <div class="visual-section-heading">
-          <div><span class="visual-section-number">07</span><p class="visual-eyebrow" data-i18n="howEyebrow">Read the picture correctly</p><h2 id="visual-how-title" data-i18n="howTitle">Use a board without overtrusting it.</h2></div>
+          <div><span class="visual-section-number">08</span><p class="visual-eyebrow" data-i18n="howEyebrow">Read the picture correctly</p><h2 id="visual-how-title" data-i18n="howTitle">Use a board without overtrusting it.</h2></div>
           <p data-i18n="howIntro">The board gives you a shape to remember. Your own small attempt and record decide what you may claim.</p>
         </div>
         <div class="visual-how-grid">
