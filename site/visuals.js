@@ -95,6 +95,18 @@
   };
   Object.entries(EVIDENCE_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
 
+  const JOURNEY_COPY = {
+    en: { journeyEyebrow: 'Learning journey map', journeyTitle: 'See the whole Playbook before you choose a track.', journeyIntro: 'One map answers the first practical question: what should I do now, and what comes after the first checked result?', journeyAria: 'Four stages in the Playbook learning journey', journeyCenter: 'One checked route', journeyCenterSub: 'add the next layer only when useful', journeySelected: 'Selected stage', journeyNext: 'Next move', journeyOpen: 'Open this stage', journeyOpenVisual: 'Open the journey board', journeyFallback: 'Read the four stages as text', journeyFallbackIntro: 'Use this ordered list without the interactive map. Each stage names the work and the evidence boundary that follows it.', journeyBoundary: 'The map shows order, not mastery. Keep the artifact, evidence, limit, and next question.', journeyFigureAlt: 'Playbook learning journey from the Foundation Core to a first bounded task, an evidence loop, and optional tracks', journeyFigureCaption: 'Open the project-authored journey board for a printable view. The ordered list is the text explanation.' },
+    zh: { journeyEyebrow: '完整学习旅程图', journeyTitle: '先看完整路线，再选择下一条实践路径。', journeyIntro: '这张地图回答第一个实际问题：现在该做什么，完成一次可检查的结果后又该去哪？', journeyAria: 'Playbook 学习旅程的四个阶段', journeyCenter: '一条可检查的路线', journeyCenterSub: '只有确实需要时才增加下一层', journeySelected: '当前阶段', journeyNext: '下一步', journeyOpen: '打开这一阶段', journeyOpenVisual: '打开旅程图', journeyFallback: '用文字阅读四个阶段', journeyFallbackIntro: '不使用交互地图也可以阅读这份有序列表。每个阶段都说明要做什么，以及接下来受什么证据边界约束。', journeyBoundary: '地图展示顺序，不代表掌握。请保留产物、证据、限制和下一个问题。', journeyFigureAlt: '从基础核心课到第一项有边界任务、证据闭环和可选路径的 Playbook 学习旅程图', journeyFigureCaption: '打开项目原创旅程图以查看适合打印的版本。有序列表才是文字解释。' },
+    es: { journeyEyebrow: 'Mapa de la ruta de aprendizaje', journeyTitle: 'Mira el Playbook completo antes de elegir una ruta.', journeyIntro: 'Un mapa responde a la primera pregunta práctica: ¿qué hago ahora y qué viene después del primer resultado comprobado?', journeyAria: 'Las cuatro etapas de la ruta de aprendizaje del Playbook', journeyCenter: 'Un recorrido comprobable', journeyCenterSub: 'añade la siguiente capa solo si hace falta', journeySelected: 'Etapa seleccionada', journeyNext: 'Siguiente movimiento', journeyOpen: 'Abrir esta etapa', journeyOpenVisual: 'Abrir el mapa de aprendizaje', journeyFallback: 'Leer las cuatro etapas como texto', journeyFallbackIntro: 'Usa esta lista ordenada sin el mapa interactivo. Cada etapa nombra el trabajo y el límite de evidencia que le sigue.', journeyBoundary: 'El mapa muestra el orden, no el dominio. Conserva el artefacto, la evidencia, el límite y la siguiente pregunta.', journeyFigureAlt: 'Ruta de aprendizaje del Playbook: del núcleo de fundamentos a una tarea acotada, un ciclo de evidencia y rutas opcionales', journeyFigureCaption: 'Abre la tabla original del proyecto para verla en formato imprimible. La lista ordenada es la explicación textual.' },
+    ja: { journeyEyebrow: '学習ルートマップ', journeyTitle: 'ルートを選ぶ前に、Playbook 全体の流れを見る。', journeyIntro: '最初の実用的な問い――今何をし、その後どこへ進むか――を1枚で確認できます。', journeyAria: 'Playbook 学習ルートの4段階', journeyCenter: '確認できる1本のルート', journeyCenterSub: '次の層は必要なときだけ加える', journeySelected: '選択中の段階', journeyNext: '次の一歩', journeyOpen: 'この段階を開く', journeyOpenVisual: '学習ルート図を開く', journeyFallback: '4段階をテキストで読む', journeyFallbackIntro: 'インタラクティブ表示なしでも、この順序付きリストを使えます。各段階で行うことと、その後の証拠の境界を示します。', journeyBoundary: '地図は順序を示すもので、習得を証明しません。成果物、証拠、限界、次の問いを残してください。', journeyFigureAlt: 'LLM 基礎コアから最初の範囲付きタスク、証拠のループ、任意の実践ルートへ進む Playbook 学習図', journeyFigureCaption: 'プロジェクト作成のルートボードを原寸で開けます。順序付きリストが文章による説明です。' },
+    ko: { journeyEyebrow: '학습 여정 지도', journeyTitle: '경로를 고르기 전에 Playbook 전체 흐름을 보세요.', journeyIntro: '첫 번째 실용적인 질문인 “지금 무엇을 하고, 첫 점검 결과 다음에는 어디로 가는가?”를 한눈에 보여 줍니다.', journeyAria: 'Playbook 학습 여정의 네 단계', journeyCenter: '점검 가능한 하나의 경로', journeyCenterSub: '다음 계층은 필요할 때만 추가하기', journeySelected: '선택한 단계', journeyNext: '다음 단계', journeyOpen: '이 단계 열기', journeyOpenVisual: '학습 여정 보드 열기', journeyFallback: '네 단계를 텍스트로 읽기', journeyFallbackIntro: '대화형 지도 없이도 이 순서 목록을 사용할 수 있습니다. 각 단계에서 할 일과 이어지는 증거의 범위를 보여 줍니다.', journeyBoundary: '이 지도는 순서를 보여 줄 뿐 숙련을 증명하지 않습니다. 결과물, 증거, 한계와 다음 질문을 남기세요.', journeyFigureAlt: 'LLM 기초 코어에서 첫 번째 범위 있는 작업, 증거 루프와 선택 실습 경로로 이어지는 Playbook 학습 여정', journeyFigureCaption: '프로젝트가 만든 여정 보드를 인쇄용으로 열어 보세요. 순서 목록이 텍스트 설명입니다.' },
+    de: { journeyEyebrow: 'Karte der Lernroute', journeyTitle: 'Sieh dir das ganze Playbook an, bevor du eine Route wählst.', journeyIntro: 'Eine Karte beantwortet die erste praktische Frage: Was mache ich jetzt, und was kommt nach dem ersten geprüften Ergebnis?', journeyAria: 'Die vier Stufen der Playbook-Lernroute', journeyCenter: 'Eine prüfbare Route', journeyCenterSub: 'die nächste Ebene nur bei Bedarf ergänzen', journeySelected: 'Ausgewählte Stufe', journeyNext: 'Nächster Schritt', journeyOpen: 'Diese Stufe öffnen', journeyOpenVisual: 'Lernrouten-Tafel öffnen', journeyFallback: 'Die vier Stufen als Text lesen', journeyFallbackIntro: 'Verwende diese geordnete Liste ohne die interaktive Karte. Jede Stufe nennt die Arbeit und die anschließende Beleggrenze.', journeyBoundary: 'Die Karte zeigt die Reihenfolge, nicht die Beherrschung. Bewahre Artefakt, Beleg, Grenze und nächste Frage auf.', journeyFigureAlt: 'Playbook-Lernroute vom LLM-Grundlagenkern über eine begrenzte Aufgabe und eine Belegschleife zu optionalen Routen', journeyFigureCaption: 'Öffne die projektbezogene Routentafel zum Drucken. Die geordnete Liste ist die Texterklärung.' },
+    'zh-tw': { journeyEyebrow: '完整學習旅程圖', journeyTitle: '先看完整路線，再選擇下一條實踐路徑。', journeyIntro: '這張地圖回答第一個實際問題：現在該做什麼，完成一次可檢查的結果後又該去哪裡？', journeyAria: 'Playbook 學習旅程的四個階段', journeyCenter: '一條可檢查的路線', journeyCenterSub: '確實需要時才增加下一層', journeySelected: '目前階段', journeyNext: '下一步', journeyOpen: '開啟這個階段', journeyOpenVisual: '開啟學習旅程圖', journeyFallback: '用文字閱讀四個階段', journeyFallbackIntro: '不使用互動地圖也能閱讀這份有序清單。每個階段都說明要做什麼，以及接下來的證據界線。', journeyBoundary: '地圖展示順序，不代表掌握。請保留產物、證據、限制與下一個問題。', journeyFigureAlt: '從基礎核心課到第一項有界線任務、證據閉環與可選路徑的 Playbook 學習旅程圖', journeyFigureCaption: '開啟專案原創旅程圖以查看適合列印的版本。有序清單才是文字說明。' },
+    fr: { journeyEyebrow: 'Carte du parcours d’apprentissage', journeyTitle: 'Voyez l’ensemble du Playbook avant de choisir une voie.', journeyIntro: 'Une seule carte répond à la première question pratique : que faire maintenant, puis où aller après le premier résultat vérifié ?', journeyAria: 'Les quatre étapes du parcours d’apprentissage du Playbook', journeyCenter: 'Un parcours vérifiable', journeyCenterSub: 'ajouter la couche suivante seulement si elle est utile', journeySelected: 'Étape sélectionnée', journeyNext: 'Prochaine étape', journeyOpen: 'Ouvrir cette étape', journeyOpenVisual: 'Ouvrir la carte du parcours', journeyFallback: 'Lire les quatre étapes en texte', journeyFallbackIntro: 'Utilisez cette liste ordonnée sans la carte interactive. Chaque étape indique le travail à faire et la limite de preuve qui suit.', journeyBoundary: 'La carte montre l’ordre, pas la maîtrise. Gardez l’artefact, les preuves, la limite et la prochaine question.', journeyFigureAlt: 'Parcours d’apprentissage du Playbook : du Foundation Core à une première tâche délimitée, une boucle de preuves et des parcours facultatifs', journeyFigureCaption: 'Ouvrez la planche originale du projet pour une version imprimable. La liste ordonnée est l’explication textuelle.' },
+  };
+  Object.entries(JOURNEY_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
+
   const STAGES = [
     {
       id: 'understand', path: 'book/guides/llm-fundamentals',
@@ -143,6 +155,33 @@
         en: 'Repeat the method on an unseen task; one successful attempt is not mastery.', zh: '在未见任务上重复方法；一次成功尝试不等于掌握。', es: 'Repite el método en una tarea nueva; un intento acertado no demuestra dominio.', ja: '見たことのない課題で方法を繰り返します。1回の成功は習得の証明ではありません。', ko: '새 작업에서 방법을 반복하세요. 한 번의 성공은 숙련의 증거가 아닙니다.', de: 'Wiederhole die Methode an einer neuen Aufgabe; ein erfolgreicher Versuch ist kein Beherrschungsnachweis.', 'zh-tw': '在未見任務上重複方法；一次成功嘗試不等於掌握。', fr: 'Répétez la méthode sur une nouvelle tâche ; un essai réussi ne prouve pas la maîtrise.'
       },
       next: { en: 'Can I transfer this, or should I stop?', zh: '我可以迁移，还是应该停止？', es: '¿Puedo transferirlo o debo parar?', ja: '応用できるか、それとも止めるか？', ko: '전이할 수 있는가, 아니면 멈춰야 하는가?', de: 'Kann ich das übertragen oder sollte ich stoppen?', 'zh-tw': '可以遷移，還是應該停止？', fr: 'Puis-je transférer la méthode ou dois-je m’arrêter ?' },
+    },
+  ];
+
+  const JOURNEY_STAGES = [
+    {
+      id: 'foundation', path: 'book/routes/universal-core-foundations',
+      labels: { en: 'Foundation Core', zh: '基础核心课', es: 'Núcleo de fundamentos', ja: 'LLM 基礎コア', ko: 'LLM 기초 코어', de: 'LLM-Grundlagenkern', 'zh-tw': '基礎核心課', fr: 'Foundation Core' },
+      bodies: { en: 'Understand the model, make one request, recognize visible failures, repair, and try a new task.', zh: '理解模型，提出一次请求，识别看得见的失败，修正结果，再在新任务上重做。', es: 'Entiende el modelo, haz una petición, reconoce fallos visibles, repara el resultado y repite en una tarea nueva.', ja: 'モデルを理解し、1つ依頼し、目に見える失敗を見つけ、修正して、新しい課題で試します。', ko: '모델을 이해하고 요청 하나를 만든 뒤, 눈에 보이는 실패를 찾아 고치고 새 작업에서 다시 시도합니다.', de: 'Verstehe das Modell, stelle eine Anfrage, erkenne sichtbare Fehler, repariere das Ergebnis und probiere eine neue Aufgabe.', 'zh-tw': '理解模型、提出一次請求、辨識看得見的失敗、修正結果，再在新任務上重做。', fr: 'Comprendre le modèle, formuler une demande, repérer les erreurs visibles, corriger, puis essayer une nouvelle tâche.' },
+      next: { en: 'Finish the foundation before adding a platform-specific layer.', zh: '在增加平台专属层之前，先完成基础核心课。', es: 'Completa el núcleo antes de añadir una capa específica de plataforma.', ja: 'プラットフォーム固有の層を加える前に、まず基礎コアを終える。', ko: '플랫폼별 계층을 추가하기 전에 기초 코어를 먼저 끝내세요.', de: 'Schließe den Grundlagenkern ab, bevor du eine plattformspezifische Ebene ergänzt.', 'zh-tw': '在增加平台專屬層之前，先完成基礎核心課。', fr: 'Terminez le Foundation Core avant d’ajouter une couche propre à une plateforme.' },
+    },
+    {
+      id: 'task', path: 'book/chapters/02-first-safe-task',
+      labels: { en: 'First bounded task', zh: '第一项有边界任务', es: 'Primera tarea acotada', ja: '最初の範囲付きタスク', ko: '첫 번째 범위 있는 작업', de: 'Erste begrenzte Aufgabe', 'zh-tw': '第一項有界線的任務', fr: 'Première tâche délimitée' },
+      bodies: { en: 'Name the result, context, allowed help, limits, check, and stop condition.', zh: '写清结果、上下文、允许的帮助、限制、检查方式和停止条件。', es: 'Nombra el resultado, el contexto, la ayuda permitida, los límites, la comprobación y la condición de parada.', ja: '結果、コンテキスト、許可する支援、制約、確認方法、停止条件を明示します。', ko: '결과, 맥락, 허용된 도움, 제한, 점검 방법과 중지 조건을 적습니다.', de: 'Benenne Ergebnis, Kontext, erlaubte Hilfe, Grenzen, Prüfung und Stop-Bedingung.', 'zh-tw': '寫清楚結果、上下文、允許的協助、限制、檢查方式與停止條件。', fr: 'Nommer le résultat, le contexte, l’aide autorisée, les limites, la vérification et la condition d’arrêt.' },
+      next: { en: 'Make the request bounded before choosing tools or permissions.', zh: '在选择工具或权限之前，先把请求限定清楚。', es: 'Delimita la petición antes de elegir herramientas o permisos.', ja: 'ツールや権限を選ぶ前に、依頼の範囲を決める。', ko: '도구나 권한을 고르기 전에 요청 범위를 정하세요.', de: 'Begrenze die Anfrage, bevor du Tools oder Berechtigungen auswählst.', 'zh-tw': '在選擇工具或權限之前，先把請求限定清楚。', fr: 'Délimitez la demande avant de choisir des outils ou des autorisations.' },
+    },
+    {
+      id: 'evidence', path: 'book/chapters/09-verification-and-recovery',
+      labels: { en: 'Evidence loop', zh: '证据闭环', es: 'Ciclo de evidencia', ja: '証拠のループ', ko: '증거 루프', de: 'Belegschleife', 'zh-tw': '證據閉環', fr: 'Boucle de preuves' },
+      bodies: { en: 'Compare what changed with a source, test, log, or acceptance rule; stop when proof is missing.', zh: '用来源、测试、日志或验收规则对照变化；缺少下一项证明时就停止。', es: 'Compara el cambio con una fuente, prueba, registro o regla de aceptación; detente si falta la siguiente prueba.', ja: '変更を出典、テスト、ログ、受け入れ条件と照合し、次の証拠がなければ止まります。', ko: '변경 사항을 출처, 테스트, 로그 또는 수용 기준과 비교하고 다음 증거가 없으면 멈춥니다.', de: 'Vergleiche die Änderung mit Quelle, Test, Log oder Abnahmeregel; stoppe, wenn der nächste Beleg fehlt.', 'zh-tw': '用來源、測試、日誌或驗收規則對照變化；缺少下一項證明時就停止。', fr: 'Comparer le changement à une source, un test, un journal ou un critère d’acceptation ; s’arrêter si la prochaine preuve manque.' },
+      next: { en: 'Keep the claim within the evidence; stop if the next proof is missing.', zh: '让结论留在证据范围内；缺少下一项证明时就停止。', es: 'Mantén la afirmación dentro de la evidencia; detente si falta la siguiente prueba.', ja: '主張を証拠の範囲に保ち、次の根拠がなければ止まる。', ko: '주장을 증거의 범위 안에 두고, 다음 증거가 없으면 멈추세요.', de: 'Halte die Aussage innerhalb des Belegs; fehlt der nächste Beleg, halte an.', 'zh-tw': '讓主張留在證據範圍內；缺少下一項證明時就停止。', fr: 'Gardez l’affirmation dans les limites des preuves ; s’il manque la preuve suivante, arrêtez-vous.' },
+    },
+    {
+      id: 'tracks', path: 'book/chapters/05-choose-the-codex-surface',
+      labels: { en: 'Optional tracks', zh: '可选实践路径', es: 'Rutas opcionales', ja: '任意の実践ルート', ko: '선택 실습 경로', de: 'Optionale Routen', 'zh-tw': '可選實踐路徑', fr: 'Parcours facultatifs' },
+      bodies: { en: 'Choose Codex, tools, Skills, Agents, research, engineering, or team practice only when the next layer is useful.', zh: '只有在确实需要下一层时，才选择 Codex、工具、Skill、Agent、研究、工程或团队实践。', es: 'Elige Codex, herramientas, Skills, agentes, investigación, ingeniería o práctica de equipo solo cuando la siguiente capa te sea útil.', ja: '次の層が必要なときだけ、Codex、ツール、Skill、Agent、調査、開発、チーム実践を選びます。', ko: '다음 층이 필요할 때만 Codex, 도구, Skill, Agent, 조사, 엔지니어링 또는 팀 실습을 고르세요.', de: 'Wähle Codex, Tools, Skills, Agents, Recherche, Engineering oder Teampraxis erst, wenn die nächste Ebene nützlich ist.', 'zh-tw': '只有在確實需要下一層時，才選擇 Codex、工具、Skill、Agent、研究、工程或團隊實踐。', fr: 'Choisir Codex, les outils, les Skills, les Agents, la recherche, l’ingénierie ou le travail d’équipe seulement si l’étape suivante est utile.' },
+      next: { en: 'Choose an optional track only when a concrete next task needs it.', zh: '只有具体的下一项任务确实需要时，才选择可选路径。', es: 'Elige una ruta opcional solo cuando una tarea concreta la necesite.', ja: '具体的な次の課題に必要なときだけ、任意のルートを選ぶ。', ko: '구체적인 다음 작업에 필요할 때만 선택 실습 경로를 고르세요.', de: 'Wähle eine optionale Route erst, wenn eine konkrete nächste Aufgabe sie braucht.', 'zh-tw': '只有具體的下一項任務確實需要時，才選擇可選路徑。', fr: 'Choisissez un parcours facultatif seulement si une tâche concrète en a besoin.' },
     },
   ];
 
@@ -262,6 +301,7 @@
   let locale = Object.prototype.hasOwnProperty.call(LOCALES, requestedLocale) ? requestedLocale : 'en';
   const invalidLocale = Boolean(requestedLocale) && !Object.prototype.hasOwnProperty.call(LOCALES, requestedLocale);
   let activeIntentId = 'start';
+  let activeJourneyId = 'foundation';
   let activeStageId = 'understand';
   let activeEvidenceId = 'question';
 
@@ -330,6 +370,58 @@
     if (imageLink) imageLink.href = assetHref(intent.asset);
     if (imageLink) imageLink.setAttribute('aria-label', `${strings.goalOpenVisual}: ${localized(intent.labels)}`);
     if (caption) caption.textContent = localized(intent.caption);
+  }
+
+  function renderJourney() {
+    const nodes = query('[data-visual-journey-nodes]');
+    const fallback = query('[data-visual-journey-fallback]');
+    if (!nodes || !fallback) return;
+    const strings = copy();
+    nodes.replaceChildren();
+    fallback.replaceChildren();
+    JOURNEY_STAGES.forEach((stage, index) => {
+      const item = document.createElement('li');
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'visual-journey-node';
+      button.dataset.journey = stage.id;
+      button.setAttribute('aria-pressed', String(stage.id === activeJourneyId));
+      button.setAttribute('aria-label', `${String(index + 1).padStart(2, '0')} ${localized(stage.labels)}`);
+      const number = document.createElement('span');
+      number.textContent = String(index + 1).padStart(2, '0');
+      const label = document.createElement('strong');
+      label.textContent = localized(stage.labels);
+      button.append(number, label);
+      button.addEventListener('click', () => { activeJourneyId = stage.id; renderJourney(); });
+      if (stage.id === activeJourneyId) button.classList.add('is-selected');
+      item.append(button);
+      nodes.append(item);
+
+      const fallbackItem = document.createElement('li');
+      const fallbackTitle = document.createElement('strong');
+      fallbackTitle.textContent = `${String(index + 1).padStart(2, '0')} · ${localized(stage.labels)}`;
+      const fallbackBody = document.createElement('span');
+      fallbackBody.textContent = localized(stage.bodies);
+      const fallbackLink = document.createElement('a');
+      fallbackLink.className = 'visual-action-link';
+      fallbackLink.href = readerHref(stage.path);
+      fallbackLink.textContent = `${strings.journeyOpen} ↗`;
+      fallbackItem.append(fallbackTitle, fallbackBody, fallbackLink);
+      fallback.append(fallbackItem);
+    });
+    const stage = JOURNEY_STAGES.find((candidate) => candidate.id === activeJourneyId) || JOURNEY_STAGES[0];
+    const detailTitle = query('[data-visual-journey-title]');
+    const detailBody = query('[data-visual-journey-body]');
+    const detailNext = query('[data-visual-journey-next]');
+    const detailLink = query('[data-visual-journey-link]');
+    const image = query('[data-visual-journey-image]');
+    const imageLink = query('[data-visual-journey-image-link]');
+    if (detailTitle) detailTitle.textContent = localized(stage.labels);
+    if (detailBody) detailBody.textContent = localized(stage.bodies);
+    if (detailNext) detailNext.textContent = localized(stage.next);
+    if (detailLink) detailLink.href = readerHref(stage.path);
+    if (image) image.alt = strings.journeyFigureAlt;
+    if (imageLink) imageLink.setAttribute('aria-label', `${strings.journeyOpenVisual}: ${localized(stage.labels)}`);
   }
 
   function setText() {
@@ -514,6 +606,7 @@
     locale = nextLocale;
     setText();
     renderIntentMap();
+    renderJourney();
     renderMap();
     renderEvidenceMap();
     renderGallery();
@@ -528,6 +621,7 @@
   language?.addEventListener('change', (event) => setLocale(event.target.value));
   setText();
   renderIntentMap();
+  renderJourney();
   renderMap();
   renderEvidenceMap();
   renderGallery();
