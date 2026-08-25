@@ -27,11 +27,11 @@ def make_artifact(root: Path, marker: str) -> Path:
     (artifact / "site").mkdir(parents=True)
     (artifact / "site" / "seo-config.json").write_text(json.dumps({"locales": LOCALES}), encoding="utf-8")
     paths = [
-        "index.html", "robots.txt", "sitemap.xml", "sitemap_index.xml",
+        "index.html", "visuals.html", "robots.txt", "sitemap.xml", "sitemap_index.xml",
         "site/index.html", "site/reader.html", "site/styles.css", "site/reader.css",
         "site/app.js", "site/reader.js", "site/locale-manifest.js",
         "site/learning-path-data.js", "site/goal-templates.js", "site/traditional-chinese.js", "site/search-index.js",
-        "site/seo-config.json",
+        "site/seo-config.json", "site/visuals.html", "site/visuals.css", "site/visuals.js",
         *(f"{locale}.html" for locale in LOCALES if locale != "en"),
     ]
     for relative_path in paths:
