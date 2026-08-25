@@ -120,14 +120,14 @@
   Object.entries(CONCEPT_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
 
   const ROUTE_COPY = {
-    en: { routeEyebrow: 'A guided visual route', routeTitle: 'Know what each picture is for.', routeIntro: 'Follow the route from your purpose to a checked decision. Select a step to see what it explains, what to ask next, and where to continue.', routeAria: 'Ten steps in the visual route', routeSelected: 'Current visual step', routeNext: 'Next question', routeOpen: 'Jump to this section', routeFallback: 'Read the visual route as text', routeFallbackIntro: 'The same order remains available without JavaScript or pointer interaction.' },
-    zh: { routeEyebrow: '视觉导览路线', routeTitle: '先知道每张图要解决什么问题。', routeIntro: '从你的目的走到一个可检查的决定。选择一个步骤，查看它解释什么、下一步该问什么，以及应该继续到哪里。', routeAria: '视觉导览路线的十个步骤', routeSelected: '当前视觉步骤', routeNext: '下一个问题', routeOpen: '跳到这部分', routeFallback: '按文字阅读视觉路线', routeFallbackIntro: '即使没有 JavaScript 或鼠标操作，也可以按同样顺序阅读。' },
-    es: { routeEyebrow: 'Recorrido visual guiado', routeTitle: 'Entiende para qué sirve cada imagen.', routeIntro: 'Sigue el recorrido desde tu propósito hasta una decisión comprobable. Elige un paso para ver qué explica, qué preguntar después y dónde continuar.', routeAria: 'Diez pasos del recorrido visual', routeSelected: 'Paso visual actual', routeNext: 'Siguiente pregunta', routeOpen: 'Ir a esta sección', routeFallback: 'Leer el recorrido visual como texto', routeFallbackIntro: 'El mismo orden está disponible sin JavaScript ni interacción con el puntero.' },
-    ja: { routeEyebrow: '視覚ガイドの道筋', routeTitle: '各図が何のためにあるかを先に知る。', routeIntro: '目的から、確認できる判断までの道筋をたどります。段階を選ぶと、何を説明し、次に何を問い、どこへ進むかが分かります。', routeAria: '視覚ガイドの10段階', routeSelected: '現在の視覚ステップ', routeNext: '次の問い', routeOpen: 'このセクションへ移動', routeFallback: '視覚ルートをテキストで読む', routeFallbackIntro: 'JavaScript やポインター操作がなくても、同じ順序で読めます。' },
-    ko: { routeEyebrow: '안내형 시각 경로', routeTitle: '각 그림이 무엇을 위한 것인지 먼저 확인하세요.', routeIntro: '목적에서 확인 가능한 결정까지 경로를 따라가세요. 단계를 선택하면 무엇을 설명하는지, 다음에 무엇을 물을지, 어디로 이어지는지 볼 수 있습니다.', routeAria: '시각 경로의 열 단계', routeSelected: '현재 시각 단계', routeNext: '다음 질문', routeOpen: '이 섹션으로 이동', routeFallback: '시각 경로를 텍스트로 읽기', routeFallbackIntro: 'JavaScript나 포인터 조작 없이도 같은 순서로 읽을 수 있습니다.' },
-    de: { routeEyebrow: 'Geführte visuelle Route', routeTitle: 'Verstehe zuerst, wofür jedes Bild da ist.', routeIntro: 'Folge dem Weg von deinem Zweck zu einer prüfbaren Entscheidung. Wähle eine Stufe, um Erklärung, nächste Frage und Anschluss zu sehen.', routeAria: 'Zehn Schritte der visuellen Route', routeSelected: 'Aktueller visueller Schritt', routeNext: 'Nächste Frage', routeOpen: 'Zu diesem Abschnitt springen', routeFallback: 'Die visuelle Route als Text lesen', routeFallbackIntro: 'Dieselbe Reihenfolge bleibt ohne JavaScript und Zeigerbedienung verfügbar.' },
-    'zh-tw': { routeEyebrow: '視覺導覽路線', routeTitle: '先了解每張圖要解決什麼問題。', routeIntro: '從你的目的走到一個可檢查的判斷。選擇一個步驟，查看它說明什麼、下一步要問什麼，以及應該繼續到哪裡。', routeAria: '視覺導覽路線的十個步驟', routeSelected: '目前視覺步驟', routeNext: '下一個問題', routeOpen: '跳到這個區段', routeFallback: '依文字閱讀視覺路線', routeFallbackIntro: '即使沒有 JavaScript 或指標操作，也能依相同順序閱讀。' },
-    fr: { routeEyebrow: 'Parcours visuel guidé', routeTitle: 'Sachez à quoi sert chaque image.', routeIntro: 'Suivez le parcours, de votre objectif jusqu’à une décision vérifiable. Sélectionnez une étape pour voir ce qu’elle explique, la question suivante et la suite du parcours.', routeAria: 'Dix étapes du parcours visuel', routeSelected: 'Étape visuelle actuelle', routeNext: 'Question suivante', routeOpen: 'Aller à cette section', routeFallback: 'Lire le parcours visuel en texte', routeFallbackIntro: 'Le même ordre reste disponible sans JavaScript ni interaction avec le pointeur.' },
+    en: { routeEyebrow: 'A guided visual route', routeTitle: 'Know what each picture is for.', routeIntro: 'Follow the route from your purpose to a checked decision. Select a step to see what it explains, what to ask next, and where to continue.', routeAria: 'Eleven steps in the visual route', routeSelected: 'Current visual step', routeNext: 'Next question', routeOpen: 'Jump to this section', routeFallback: 'Read the visual route as text', routeFallbackIntro: 'The same order remains available without JavaScript or pointer interaction.' },
+    zh: { routeEyebrow: '视觉导览路线', routeTitle: '先知道每张图要解决什么问题。', routeIntro: '从你的目的走到一个可检查的决定。选择一个步骤，查看它解释什么、下一步该问什么，以及应该继续到哪里。', routeAria: '视觉导览路线的十一个步骤', routeSelected: '当前视觉步骤', routeNext: '下一个问题', routeOpen: '跳到这部分', routeFallback: '按文字阅读视觉路线', routeFallbackIntro: '即使没有 JavaScript 或鼠标操作，也可以按同样顺序阅读。' },
+    es: { routeEyebrow: 'Recorrido visual guiado', routeTitle: 'Entiende para qué sirve cada imagen.', routeIntro: 'Sigue el recorrido desde tu propósito hasta una decisión comprobable. Elige un paso para ver qué explica, qué preguntar después y dónde continuar.', routeAria: 'Once pasos del recorrido visual', routeSelected: 'Paso visual actual', routeNext: 'Siguiente pregunta', routeOpen: 'Ir a esta sección', routeFallback: 'Leer el recorrido visual como texto', routeFallbackIntro: 'El mismo orden está disponible sin JavaScript ni interacción con el puntero.' },
+    ja: { routeEyebrow: '視覚ガイドの道筋', routeTitle: '各図が何のためにあるかを先に知る。', routeIntro: '目的から、確認できる判断までの道筋をたどります。段階を選ぶと、何を説明し、次に何を問い、どこへ進むかが分かります。', routeAria: '視覚ガイドの11段階', routeSelected: '現在の視覚ステップ', routeNext: '次の問い', routeOpen: 'このセクションへ移動', routeFallback: '視覚ルートをテキストで読む', routeFallbackIntro: 'JavaScript やポインター操作がなくても、同じ順序で読めます。' },
+    ko: { routeEyebrow: '안내형 시각 경로', routeTitle: '각 그림이 무엇을 위한 것인지 먼저 확인하세요.', routeIntro: '목적에서 확인 가능한 결정까지 경로를 따라가세요. 단계를 선택하면 무엇을 설명하는지, 다음에 무엇을 물을지, 어디로 이어지는지 볼 수 있습니다.', routeAria: '시각 경로의 열한 단계', routeSelected: '현재 시각 단계', routeNext: '다음 질문', routeOpen: '이 섹션으로 이동', routeFallback: '시각 경로를 텍스트로 읽기', routeFallbackIntro: 'JavaScript나 포인터 조작 없이도 같은 순서로 읽을 수 있습니다.' },
+    de: { routeEyebrow: 'Geführte visuelle Route', routeTitle: 'Verstehe zuerst, wofür jedes Bild da ist.', routeIntro: 'Folge dem Weg von deinem Zweck zu einer prüfbaren Entscheidung. Wähle eine Stufe, um Erklärung, nächste Frage und Anschluss zu sehen.', routeAria: 'Elf Schritte der visuellen Route', routeSelected: 'Aktueller visueller Schritt', routeNext: 'Nächste Frage', routeOpen: 'Zu diesem Abschnitt springen', routeFallback: 'Die visuelle Route als Text lesen', routeFallbackIntro: 'Dieselbe Reihenfolge bleibt ohne JavaScript und Zeigerbedienung verfügbar.' },
+    'zh-tw': { routeEyebrow: '視覺導覽路線', routeTitle: '先了解每張圖要解決什麼問題。', routeIntro: '從你的目的走到一個可檢查的判斷。選擇一個步驟，查看它說明什麼、下一步要問什麼，以及應該繼續到哪裡。', routeAria: '視覺導覽路線的十一個步驟', routeSelected: '目前視覺步驟', routeNext: '下一個問題', routeOpen: '跳到這個區段', routeFallback: '依文字閱讀視覺路線', routeFallbackIntro: '即使沒有 JavaScript 或指標操作，也能依相同順序閱讀。' },
+    fr: { routeEyebrow: 'Parcours visuel guidé', routeTitle: 'Sachez à quoi sert chaque image.', routeIntro: 'Suivez le parcours, de votre objectif jusqu’à une décision vérifiable. Sélectionnez une étape pour voir ce qu’elle explique, la question suivante et la suite du parcours.', routeAria: 'Onze étapes du parcours visuel', routeSelected: 'Étape visuelle actuelle', routeNext: 'Question suivante', routeOpen: 'Aller à cette section', routeFallback: 'Lire le parcours visuel en texte', routeFallbackIntro: 'Le même ordre reste disponible sans JavaScript ni interaction avec le pointeur.' },
   };
   Object.entries(ROUTE_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
 
@@ -183,6 +183,34 @@
   };
   Object.entries(READING_LOOP_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
 
+  const RECEIPT_COPY = {
+    en: {
+      receiptEyebrow: 'First-attempt receipt', receiptTitle: 'Do the small attempt. Keep the receipt.', receiptIntro: 'This five-step map turns a safe first try into a record another person can inspect. Select a step to see what to keep, what to ask next, and where the matching lesson begins.', receiptAria: 'Five steps from a bounded first attempt to a checkable receipt', receiptCenter: 'Keep the receipt', receiptCenterSub: 'small run → clear record', receiptSelected: 'Selected receipt step', receiptNext: 'Next question', receiptOpen: 'Open the matching lesson', receiptFallback: 'Read the first-attempt receipt as text', receiptFallbackIntro: 'The same five steps remain available as an ordered list. Keep the record smaller than the original task, and stop when the boundary is unclear.', receiptOpenVisual: 'Open the first-attempt receipt board', receiptFigureAlt: 'Five-step first-attempt receipt: goal, safe input, actual run, focused check, and receipt', receiptFigureCaption: 'Project-authored teaching board. The text route and your own record carry the explanation; the image is a visual aid.', receiptBoundary: 'A receipt shows what was recorded for one bounded attempt. It does not prove that the task was correct, transferable, or mastered.'
+    },
+    zh: {
+      receiptEyebrow: '首次尝试回执', receiptTitle: '先做小尝试，把回执留下。', receiptIntro: '这张五步图把一次安全的首次尝试变成别人可以检查的记录。选择一个步骤，查看要保留什么、下一步该问什么，以及对应课程从哪里开始。', receiptAria: '从一次有边界的首次尝试到可检查回执的五个步骤', receiptCenter: '保留回执', receiptCenterSub: '小范围运行 → 清楚记录', receiptSelected: '当前回执步骤', receiptNext: '下一个问题', receiptOpen: '打开对应课程', receiptFallback: '按文字阅读首次尝试回执', receiptFallbackIntro: '无法交互时，下面仍保留同样的五步有序列表。回执应比原任务更小；边界不清楚时就停止。', receiptOpenVisual: '打开首次尝试回执图', receiptFigureAlt: '首次尝试回执五步图：目标、安全输入、实际运行、聚焦检查和回执', receiptFigureCaption: '项目原创教学图板。文字路线和你自己的记录才是解释依据；图片只是视觉辅助。', receiptBoundary: '回执只说明一次有边界尝试记录了什么。它不能证明任务正确、可以迁移或已经掌握。'
+    },
+    es: {
+      receiptEyebrow: 'Registro del primer intento', receiptTitle: 'Haz un intento pequeño y conserva el registro.', receiptIntro: 'Este mapa de cinco pasos convierte una primera prueba segura en un registro que otra persona puede inspeccionar. Elige un paso para ver qué conservar, qué preguntar después y dónde empieza la lección correspondiente.', receiptAria: 'Cinco pasos desde un primer intento acotado hasta un registro comprobable', receiptCenter: 'Conserva el registro', receiptCenterSub: 'prueba pequeña → registro claro', receiptSelected: 'Paso del registro seleccionado', receiptNext: 'Siguiente pregunta', receiptOpen: 'Abrir la lección correspondiente', receiptFallback: 'Leer el registro del primer intento como texto', receiptFallbackIntro: 'Los mismos cinco pasos quedan disponibles en una lista ordenada. Mantén el registro más pequeño que la tarea original y detente si el límite no está claro.', receiptOpenVisual: 'Abrir el tablero del primer intento', receiptFigureAlt: 'Registro del primer intento en cinco pasos: objetivo, entrada segura, ejecución real, comprobación concreta y registro', receiptFigureCaption: 'Tablero didáctico original del proyecto. La ruta textual y tu propio registro explican el método; la imagen solo orienta.', receiptBoundary: 'El registro muestra qué quedó anotado de un intento acotado. No demuestra que la tarea sea correcta, transferible ni dominada.'
+    },
+    ja: {
+      receiptEyebrow: '最初の試行の記録', receiptTitle: '小さく試し、記録を残す。', receiptIntro: 'この5段階のマップは、安全な最初の試行を、別の人が確認できる記録に変えます。段階を選ぶと、残すもの、次の問い、対応するレッスンの入口が分かります。', receiptAria: '範囲を区切った最初の試行から確認可能な記録までの5段階', receiptCenter: '記録を残す', receiptCenterSub: '小さな実行 → 明確な記録', receiptSelected: '選択中の記録ステップ', receiptNext: '次の問い', receiptOpen: '対応するレッスンを開く', receiptFallback: '最初の試行の記録をテキストで読む', receiptFallbackIntro: '操作できない場合も、同じ5段階を順序付きリストで読めます。元の課題より小さな記録にし、境界が曖昧なら止めてください。', receiptOpenVisual: '最初の試行の記録ボードを開く', receiptFigureAlt: '最初の試行の記録5段階：目的、安全な入力、実際の実行、焦点を絞った確認、記録', receiptFigureCaption: 'プロジェクト作成の教材ボードです。説明の根拠はテキストの道筋と自分の記録であり、画像は視覚的な補助です。', receiptBoundary: '記録が示すのは、範囲を区切った1回の試行で何を残したかです。正しさ、転用可能性、習得を証明するものではありません。'
+    },
+    ko: {
+      receiptEyebrow: '첫 시도 기록', receiptTitle: '작게 시도하고 기록을 남기세요.', receiptIntro: '이 다섯 단계 지도는 안전한 첫 시도를 다른 사람이 확인할 수 있는 기록으로 바꿉니다. 단계를 선택하면 무엇을 남길지, 다음에 무엇을 물을지, 연결된 수업이 어디서 시작하는지 볼 수 있습니다.', receiptAria: '범위가 정해진 첫 시도에서 확인 가능한 기록으로 가는 다섯 단계', receiptCenter: '기록 남기기', receiptCenterSub: '작은 실행 → 분명한 기록', receiptSelected: '선택한 기록 단계', receiptNext: '다음 질문', receiptOpen: '해당 수업 열기', receiptFallback: '첫 시도 기록을 텍스트로 읽기', receiptFallbackIntro: '상호작용 없이도 같은 다섯 단계를 순서 목록으로 볼 수 있습니다. 원래 작업보다 기록을 작게 유지하고 경계가 분명하지 않으면 멈추세요.', receiptOpenVisual: '첫 시도 기록 보드 열기', receiptFigureAlt: '첫 시도 기록 다섯 단계: 목표, 안전한 입력, 실제 실행, 핵심 점검과 기록', receiptFigureCaption: '프로젝트가 만든 교육 보드입니다. 설명은 텍스트 경로와 직접 남긴 기록이 담당하고, 이미지는 시각적 보조로만 사용합니다.', receiptBoundary: '기록은 범위가 정해진 한 번의 시도에서 무엇을 남겼는지를 보여 줍니다. 작업의 정확성, 전이 가능성 또는 숙련을 증명하지는 않습니다.'
+    },
+    de: {
+      receiptEyebrow: 'Beleg für den ersten Versuch', receiptTitle: 'Probiere es klein und bewahre den Beleg auf.', receiptIntro: 'Diese Karte mit fünf Schritten macht aus einem sicheren ersten Versuch einen Beleg, den eine andere Person prüfen kann. Wähle einen Schritt, um zu sehen, was bleibt, welche Frage folgt und wo die passende Lektion beginnt.', receiptAria: 'Fünf Schritte vom begrenzten ersten Versuch zu einem prüfbaren Beleg', receiptCenter: 'Beleg aufbewahren', receiptCenterSub: 'kleiner Lauf → klarer Beleg', receiptSelected: 'Ausgewählter Belegschritt', receiptNext: 'Nächste Frage', receiptOpen: 'Passende Lektion öffnen', receiptFallback: 'Den Beleg für den ersten Versuch als Text lesen', receiptFallbackIntro: 'Dieselben fünf Schritte stehen als geordnete Liste bereit. Halte den Beleg kleiner als die ursprüngliche Aufgabe und stoppe, wenn die Grenze unklar ist.', receiptOpenVisual: 'Belegtafel für den ersten Versuch öffnen', receiptFigureAlt: 'Beleg für den ersten Versuch in fünf Schritten: Ziel, sichere Eingabe, tatsächlicher Lauf, gezielter Check und Beleg', receiptFigureCaption: 'Vom Projekt erstellte Lehrtafel. Der Textweg und dein eigener Beleg tragen die Erklärung; das Bild dient nur zur Orientierung.', receiptBoundary: 'Ein Beleg zeigt, was bei einem begrenzten Versuch festgehalten wurde. Er beweist weder Richtigkeit noch Übertragbarkeit oder Beherrschung.'
+    },
+    'zh-tw': {
+      receiptEyebrow: '首次嘗試紀錄', receiptTitle: '先做小嘗試，把紀錄留下。', receiptIntro: '這張五步圖把一次安全的首次嘗試變成別人可以檢查的紀錄。選擇一個步驟，查看要保留什麼、下一步該問什麼，以及對應課程從哪裡開始。', receiptAria: '從一次有界線的首次嘗試到可檢查紀錄的五個步驟', receiptCenter: '保留紀錄', receiptCenterSub: '小範圍執行 → 清楚紀錄', receiptSelected: '目前紀錄步驟', receiptNext: '下一個問題', receiptOpen: '開啟對應課程', receiptFallback: '依文字閱讀首次嘗試紀錄', receiptFallbackIntro: '無法互動時，下面仍保留相同的五步有序清單。紀錄應比原任務更小；界線不清楚時就停止。', receiptOpenVisual: '開啟首次嘗試紀錄圖', receiptFigureAlt: '首次嘗試紀錄五步圖：目標、安全輸入、實際執行、聚焦檢查與紀錄', receiptFigureCaption: '專案原創教學圖板。文字路線與你自己的紀錄才是說明依據；圖片只是視覺輔助。', receiptBoundary: '紀錄只說明一次有界線嘗試留下了什麼。它不能證明任務正確、可以遷移或已經掌握。'
+    },
+    fr: {
+      receiptEyebrow: 'Relevé du premier essai', receiptTitle: 'Faites un petit essai et gardez le relevé.', receiptIntro: 'Cette carte en cinq étapes transforme un premier essai sûr en un relevé qu’une autre personne peut inspecter. Sélectionnez une étape pour voir quoi conserver, quelle question poser ensuite et où commence la leçon correspondante.', receiptAria: 'Cinq étapes, du premier essai délimité au relevé vérifiable', receiptCenter: 'Garder le relevé', receiptCenterSub: 'petit essai → relevé clair', receiptSelected: 'Étape du relevé sélectionnée', receiptNext: 'Question suivante', receiptOpen: 'Ouvrir la leçon correspondante', receiptFallback: 'Lire le relevé du premier essai en texte', receiptFallbackIntro: 'Les cinq mêmes étapes restent disponibles dans une liste ordonnée. Gardez un relevé plus petit que la tâche initiale et arrêtez-vous si la limite est floue.', receiptOpenVisual: 'Ouvrir la planche du premier essai', receiptFigureAlt: 'Relevé du premier essai en cinq étapes : objectif, entrée sûre, exécution réelle, contrôle ciblé et relevé', receiptFigureCaption: 'Planche pédagogique créée par le projet. Le parcours textuel et votre propre relevé portent l’explication ; l’image sert de repère.', receiptBoundary: 'Un relevé montre ce qui a été noté pour un essai délimité. Il ne prouve ni la justesse, ni le transfert, ni la maîtrise.'
+    },
+  };
+  Object.entries(RECEIPT_COPY).forEach(([language, strings]) => Object.assign(COPY[language], strings));
+
   const CAPABILITY_COPY = {
     en: { capabilityEyebrow: 'Capability ladder', capabilityTitle: 'Choose the next capability, not the biggest tool.', capabilityIntro: 'The ladder turns the learning path into seven observable practices. Select a level to see what it adds, which lesson to open next, and what the level still does not prove.', capabilityAria: 'Seven candidate capability levels from observer to team coach', capabilityCenter: 'Seven levels', capabilityCenterSub: 'one observable practice at a time', capabilitySelected: 'Selected capability', capabilityNext: 'Next practice', capabilityOpen: 'Open the next lesson', capabilityOpenVisual: 'Open the capability ladder', capabilityFallback: 'Read the seven levels as text', capabilityFallbackIntro: 'The same progression remains available without the interactive map. Each level names a practice and a bounded next route.', capabilityFigureAlt: 'Seven-level capability ladder from observing an LLM result to coaching a team', capabilityFigureCaption: 'Project-authored capability ladder. The level names a practice; the ordered list and source lesson carry the explanation.', capabilityBoundary: 'A level is a practice target, not a status claim. The project has not measured mastery or transfer.', capabilityLevelPrefix: 'Level', capabilityChapterLabel: 'chapters', capabilityLabLabel: 'labs', capabilityNoNext: 'No next route is registered. Keep the receipt and ask for review.' },
     zh: { capabilityEyebrow: '能力阶梯', capabilityTitle: '先练下一项能力，不要先追最大的工具。', capabilityIntro: '这张阶梯把学习路径变成七项可以观察的练习。选择一个等级，就能看到它增加了什么、下一课该打开哪里，以及它仍然不能证明什么。', capabilityAria: '从观察者到团队教练的七个候选能力等级', capabilityCenter: '七个等级', capabilityCenterSub: '一次练成一项可观察能力', capabilitySelected: '当前能力', capabilityNext: '下一项练习', capabilityOpen: '打开下一课', capabilityOpenVisual: '打开能力阶梯图', capabilityFallback: '按文字阅读七个等级', capabilityFallbackIntro: '不使用交互地图时，下面仍保留同一条进阶路线。每个等级都说明一项练习和一条有边界的下一步路线。', capabilityFigureAlt: '从观察 LLM 结果到辅导团队的七级能力阶梯', capabilityFigureCaption: '项目原创能力阶梯图。等级名称只是练习目标；有序列表和来源课程才是具体解释。', capabilityBoundary: '等级是练习目标，不是状态声明。项目尚未测量掌握程度或迁移效果。', capabilityLevelPrefix: '等级', capabilityChapterLabel: '章', capabilityLabLabel: '个实验', capabilityNoNext: '没有登记下一条路线。请保留记录并请求复核。' },
@@ -206,6 +234,7 @@
     { id: 'examples', section: 'visual-gallery', labels: { en: 'Browse one decision', zh: '查看一个决定', es: 'Ver una decisión', ja: '1つの判断を見る', ko: '결정 하나 살펴보기', de: 'Eine Entscheidung ansehen', 'zh-tw': '查看一個判斷', fr: 'Voir une décision' }, bodies: { en: 'Open one teaching board and its matching lesson. The gallery is a set of examples, not a second catalogue to wander through.', zh: '打开一张教学图和对应课程。图库是一组示例，不是另一份让你漫游的目录。', es: 'Abre un tablero y su lección correspondiente. La galería reúne ejemplos; no es un segundo catálogo para recorrer sin rumbo.', ja: '教材ボードと対応するレッスンを1つ開きます。ギャラリーは例の集まりであり、目的なく巡る別のカタログではありません。', ko: '교육 보드 하나와 연결된 수업을 여세요. 갤러리는 예시 모음이지 목적 없이 돌아다니는 두 번째 목록이 아닙니다.', de: 'Öffne eine Lehrtafel und die passende Lektion. Die Galerie ist eine Beispielsammlung, kein zweiter Katalog zum ziellosen Stöbern.', 'zh-tw': '開啟一張教學圖與對應課程。圖庫是一組範例，不是另一份讓你漫無目的瀏覽的目錄。', fr: 'Ouvrez une planche et la leçon correspondante. La galerie rassemble des exemples ; ce n’est pas un second catalogue où se perdre.' }, next: { en: 'Which decision does this board clarify?', zh: '这张图解释哪项决定？', es: '¿Qué decisión aclara este tablero?', ja: 'このボードはどの判断を明らかにするか？', ko: '이 보드는 어떤 결정을 설명하는가?', de: 'Welche Entscheidung klärt diese Tafel?', 'zh-tw': '這張圖說明哪個判斷？', fr: 'Quelle décision cette planche clarifie-t-elle ?' } },
     { id: 'read', section: 'visual-how', labels: { en: 'Read the board correctly', zh: '正确阅读图板', es: 'Leer bien el tablero', ja: 'ボードを正しく読む', ko: '보드 올바르게 읽기', de: 'Die Tafel richtig lesen', 'zh-tw': '正確閱讀圖板', fr: 'Lire correctement la planche' }, bodies: { en: 'Start with the thesis, use the text fallback, make one bounded move, and keep what the picture cannot prove visible.', zh: '先看主旨，打开文字回退，做一次有边界的行动，并保留这张图无法证明的部分。', es: 'Empieza por la tesis, abre la alternativa textual, haz un movimiento acotado y mantén visible lo que la imagen no puede demostrar.', ja: '主旨を確認し、テキストの代替を読み、範囲を区切った操作を1つ行い、図だけでは証明できないことを残します。', ko: '핵심을 먼저 보고 텍스트 대체 설명을 연 다음 범위 있는 행동을 하나 시도하고 그림만으로 증명할 수 없는 것을 남겨 두세요.', de: 'Beginne mit der These, öffne die Textalternative, mache eine begrenzte Handlung und halte sichtbar, was das Bild nicht belegen kann.', 'zh-tw': '先看主旨，開啟文字替代說明，做一次有界線的行動，並保留這張圖無法證明的部分。', fr: 'Commencez par la thèse, lisez l’alternative textuelle, faites une action délimitée et gardez visible ce que l’image ne peut pas prouver.' }, next: { en: 'What does the picture still not prove?', zh: '这张图仍然不能证明什么？', es: '¿Qué no demuestra todavía la imagen?', ja: 'この図だけでは何が証明できないか？', ko: '이 그림만으로 아직 증명할 수 없는 것은 무엇인가?', de: 'Was belegt das Bild weiterhin nicht?', 'zh-tw': '這張圖仍然不能證明什麼？', fr: 'Que l’image ne prouve-t-elle toujours pas ?' } },
     { id: 'practice', section: 'visual-reading-loop', labels: { en: 'Read one page into practice', zh: '把一页内容读到实践', es: 'Llevar una página a la práctica', ja: '1ページを実践につなげる', ko: '페이지 하나를 실천으로 옮기기', de: 'Eine Seite in die Praxis bringen', 'zh-tw': '把一頁內容讀到實踐', fr: 'Passer d’une page à la pratique' }, bodies: { en: 'Move through problem, concept, action, evidence, boundary, and transfer so the page gives you one checked attempt instead of another random click.', zh: '按问题、概念、行动、证据、边界和迁移走完一遍，让页面带来一次可检查的尝试，而不是又一次无目的点击。', es: 'Pasa por problema, concepto, acción, evidencia, límite y transferencia para que la página produzca un intento comprobable, no otro clic al azar.', ja: '問題、概念、行動、証拠、境界、転用を順にたどり、目的のないクリックではなく、確認できる1回の試行につなげます。', ko: '문제, 개념, 행동, 증거, 한계와 전이를 차례로 거쳐 무작위 클릭이 아니라 확인 가능한 시도 하나를 만드세요.', de: 'Gehe über Problem, Begriff, Handlung, Beleg, Grenze und Übertragung, damit die Seite zu einem prüfbaren Versuch statt zu einem weiteren ziellosen Klick führt.', 'zh-tw': '依序走過問題、概念、行動、證據、界線與遷移，讓頁面帶來一次可檢查的嘗試，而不是又一次無目的的點擊。', fr: 'Parcourez le problème, le concept, l’action, les preuves, la limite et le transfert pour obtenir un essai vérifiable plutôt qu’un clic de plus au hasard.' }, next: { en: 'What is the smallest attempt I can keep and inspect?', zh: '我能保留并检查的最小尝试是什么？', es: '¿Cuál es el intento más pequeño que puedo conservar e inspeccionar?', ja: '残して確認できる最小の試行は何か？', ko: '보존하고 점검할 수 있는 가장 작은 시도는 무엇인가?', de: 'Welchen kleinsten Versuch kann ich aufbewahren und prüfen?', 'zh-tw': '我能保留並檢查的最小嘗試是什麼？', fr: 'Quel est le plus petit essai que je puisse conserver et inspecter ?' } },
+    { id: 'receipt', section: 'visual-receipt', labels: { en: 'Keep a first-attempt receipt', zh: '留下首次尝试回执', es: 'Conservar el registro del primer intento', ja: '最初の試行の記録を残す', ko: '첫 시도 기록 남기기', de: 'Den Beleg des ersten Versuchs bewahren', 'zh-tw': '留下首次嘗試紀錄', fr: 'Garder le relevé du premier essai' }, bodies: { en: 'Record the goal, safe input, actual run, focused check, result, limit, and next step so another person can inspect one bounded attempt.', zh: '记录目标、安全输入、实际运行、聚焦检查、结果、限制和下一步，让别人可以检查一次有边界的尝试。', es: 'Registra el objetivo, la entrada segura, la ejecución real, la comprobación concreta, el resultado, los límites y el siguiente paso para que otra persona pueda revisar un intento acotado.', ja: '目的、安全な入力、実際の実行、焦点を絞った確認、結果、限界、次の一歩を記録し、別の人が範囲を区切った試行を確認できるようにします。', ko: '목표, 안전한 입력, 실제 실행, 핵심 점검, 결과, 한계와 다음 단계를 기록해 다른 사람이 범위 있는 시도를 확인할 수 있게 하세요.', de: 'Halte Ziel, sichere Eingabe, tatsächlichen Lauf, gezielten Check, Ergebnis, Grenzen und nächsten Schritt fest, damit eine andere Person den begrenzten Versuch prüfen kann.', 'zh-tw': '記錄目標、安全輸入、實際執行、聚焦檢查、結果、限制與下一步，讓別人可以檢查一次有界線的嘗試。', fr: 'Notez l’objectif, les entrées sûres, l’exécution réelle, le contrôle ciblé, le résultat, les limites et la suite afin qu’une autre personne puisse inspecter un essai délimité.' }, next: { en: 'What can another person inspect?', zh: '别人可以检查什么？', es: '¿Qué puede inspeccionar otra persona?', ja: '別の人は何を確認できるか？', ko: '다른 사람이 무엇을 확인할 수 있는가?', de: 'Was kann eine andere Person prüfen?', 'zh-tw': '別人可以檢查什麼？', fr: 'Que peut inspecter une autre personne ?' } },
   ];
 
   const STAGES = [
@@ -355,6 +384,39 @@
       labels: { en: 'Try a changed task', zh: '在变化后的任务上尝试', es: 'Probar una tarea distinta', ja: '条件を変えた課題で試す', ko: '조건을 바꾼 작업에서 시도하기', de: 'Eine veränderte Aufgabe testen', 'zh-tw': '在變化後的任務上嘗試', fr: 'Essayer sur une tâche différente' },
       bodies: { en: 'Vary one condition and repeat the method without claiming mastery from one success.', zh: '改变一个条件，重复这套方法，不要因为一次成功就宣称已经掌握。', es: 'Cambia una condición y repite el método sin afirmar dominio por un solo éxito.', ja: '条件を1つ変えて方法を繰り返し、1回の成功だけで習得を主張しません。', ko: '조건 하나를 바꿔 방법을 반복하고 한 번의 성공만으로 숙련을 주장하지 마세요.', de: 'Verändere eine Bedingung und wiederhole die Methode, ohne aus einem Erfolg Beherrschung abzuleiten.', 'zh-tw': '改變一個條件，重複這套方法，不要因為一次成功就宣稱已經掌握。', fr: 'Changez une condition et répétez la méthode sans conclure à la maîtrise après un seul succès.' },
       next: { en: 'What changed, and did the method still hold?', zh: '什么变了，这套方法还成立吗？', es: '¿Qué cambió y el método sigue funcionando?', ja: '何が変わり、方法はまだ成り立つか？', ko: '무엇이 바뀌었고 방법은 여전히 통하는가?', de: 'Was hat sich geändert, und trägt die Methode noch?', 'zh-tw': '什麼改變了，這套方法仍然成立嗎？', fr: 'Qu’est-ce qui a changé, et la méthode tient-elle toujours ?' },
+    },
+  ];
+
+  const RECEIPT_STEPS = [
+    {
+      id: 'result', path: 'book/labs/lab-001-first-safe-task',
+      labels: { en: 'Name one checkable result', zh: '写下一个可检查的结果', es: 'Nombra un resultado comprobable', ja: '確認できる結果を1つ決める', ko: '확인 가능한 결과 하나 정하기', de: 'Ein prüfbares Ergebnis benennen', 'zh-tw': '寫下一個可檢查的結果', fr: 'Nommer un résultat vérifiable' },
+      bodies: { en: 'Choose a small outcome that can be observed without expanding the task.', zh: '选择一个不扩大任务范围也能观察到的小结果。', es: 'Elige un resultado pequeño que puedas observar sin ampliar la tarea.', ja: '課題の範囲を広げずに観察できる小さな結果を選びます。', ko: '작업 범위를 넓히지 않고도 관찰할 수 있는 작은 결과를 고르세요.', de: 'Wähle ein kleines Ergebnis, das du beobachten kannst, ohne die Aufgabe auszuweiten.', 'zh-tw': '選擇一個不擴大任務範圍也能觀察到的小結果。', fr: 'Choisissez un petit résultat observable sans élargir la tâche.' },
+      next: { en: 'What would count as a result?', zh: '什么才算结果？', es: '¿Qué contaría como resultado?', ja: '何を結果とみなすか？', ko: '무엇을 결과로 볼 것인가?', de: 'Was würde als Ergebnis gelten?', 'zh-tw': '什麼才算是結果？', fr: 'Qu’est-ce qui compterait comme résultat ?' },
+    },
+    {
+      id: 'input', path: 'book/chapters/03-task-protocol',
+      labels: { en: 'Keep only safe, relevant input', zh: '只保留安全且相关的输入', es: 'Conserva solo entradas seguras y pertinentes', ja: '安全で必要な入力だけを残す', ko: '안전하고 필요한 입력만 남기기', de: 'Nur sichere, relevante Eingaben verwenden', 'zh-tw': '只保留安全且相關的輸入', fr: 'Garder seulement les entrées sûres et utiles' },
+      bodies: { en: 'Use a fixture or non-sensitive example, and mark what is missing instead of guessing.', zh: '使用夹具或非敏感示例；缺少的信息要标出来，不要猜。', es: 'Usa un juego de prueba o un ejemplo no sensible, y marca lo que falta en vez de adivinar.', ja: 'テスト用の例や非機密の例を使い、足りない情報は推測せず明記します。', ko: '테스트용 예시나 민감하지 않은 예시를 쓰고, 빠진 정보는 추측하지 말고 표시하세요.', de: 'Verwende ein Testbeispiel oder nicht sensible Daten und markiere Fehlendes, statt zu raten.', 'zh-tw': '使用測試用例或非敏感範例；缺少的資訊要標示出來，不要猜測。', fr: 'Utilisez un jeu de test ou un exemple non sensible et signalez ce qui manque au lieu de deviner.' },
+      next: { en: 'What input is allowed?', zh: '允许使用哪些输入？', es: '¿Qué entrada está permitida?', ja: 'どの入力が許可されているか？', ko: '어떤 입력이 허용되는가?', de: 'Welche Eingabe ist erlaubt?', 'zh-tw': '允許使用哪些輸入？', fr: 'Quelle entrée est autorisée ?' },
+    },
+    {
+      id: 'run', path: 'book/chapters/09-verification-and-recovery',
+      labels: { en: 'Save what actually happened', zh: '保存实际发生的内容', es: 'Guarda lo que ocurrió realmente', ja: '実際に起きたことを保存する', ko: '실제로 일어난 내용을 저장하기', de: 'Festhalten, was tatsächlich passiert ist', 'zh-tw': '保存實際發生的內容', fr: 'Conserver ce qui s’est réellement passé' },
+      bodies: { en: 'Keep the response, diff, exit status, log, or screenshot—not only the plan.', zh: '保留回答、差异、退出状态、日志或截图，不要只留下计划。', es: 'Conserva la respuesta, el diff, el estado de salida, el registro o la captura; no solo el plan.', ja: '計画だけでなく、応答、差分、終了ステータス、ログ、スクリーンショットを残します。', ko: '계획만 남기지 말고 응답, diff, 종료 상태, 로그 또는 스크린샷을 보존하세요.', de: 'Bewahre Antwort, Diff, Exit-Status, Protokoll oder Screenshot auf — nicht nur den Plan.', 'zh-tw': '保留回應、差異、結束狀態、日誌或螢幕截圖，不要只留下計畫。', fr: 'Conservez la réponse, le diff, le code de sortie, le journal ou la capture — pas seulement le plan.' },
+      next: { en: 'What did I observe?', zh: '我观察到了什么？', es: '¿Qué observé?', ja: '何を観察したか？', ko: '무엇을 관찰했는가?', de: 'Was habe ich beobachtet?', 'zh-tw': '我觀察到了什麼？', fr: 'Qu’ai-je observé ?' },
+    },
+    {
+      id: 'check', path: 'book/chapters/09-verification-and-recovery',
+      labels: { en: 'Compare one important detail', zh: '对照一个重要细节', es: 'Compara un detalle importante', ja: '重要な点を1つ照合する', ko: '중요한 세부 사항 하나 대조하기', de: 'Ein wichtiges Detail vergleichen', 'zh-tw': '對照一個重要細節', fr: 'Comparer un point important' },
+      bodies: { en: 'Use a source, diff, test, log, or acceptance rule for one focused check.', zh: '用来源、差异、测试、日志或验收规则，做一次聚焦检查。', es: 'Usa una fuente, un diff, una prueba, un registro o un criterio de aceptación para una comprobación concreta.', ja: '出典、差分、テスト、ログ、受け入れ条件のいずれかで、焦点を絞って確認します。', ko: '출처, diff, 테스트, 로그 또는 승인 기준으로 중요한 한 가지를 점검하세요.', de: 'Nutze Quelle, Diff, Test, Protokoll oder Abnahmeregel für einen gezielten Check.', 'zh-tw': '用來源、差異、測試、日誌或驗收規則，做一次聚焦檢查。', fr: 'Faites un contrôle ciblé avec une source, un diff, un test, un journal ou un critère d’acceptation.' },
+      next: { en: 'Which record could change the claim?', zh: '哪份记录可能改变结论？', es: '¿Qué registro podría cambiar la afirmación?', ja: 'どの記録なら主張が変わるか？', ko: '어떤 기록이 주장을 바꿀 수 있는가?', de: 'Welcher Beleg könnte die Aussage ändern?', 'zh-tw': '哪份紀錄可能改變主張？', fr: 'Quel relevé pourrait modifier l’affirmation ?' },
+    },
+    {
+      id: 'limit', path: 'book/chapters/13-action-boundaries',
+      labels: { en: 'Write result, limit, and unknown', zh: '写下结果、限制和未知', es: 'Anota resultado, límites e incógnitas', ja: '結果、限界、不明点を書く', ko: '결과·한계·미확인 사항 적기', de: 'Ergebnis, Grenzen und Unbekanntes notieren', 'zh-tw': '寫下結果、限制與未知', fr: 'Noter le résultat, les limites et l’inconnu' },
+      bodies: { en: 'Record the result and the smallest safe next step, or stop without filling the gap.', zh: '记录结果和最小的安全下一步；如果边界不清楚，就停止，不要填补空白。', es: 'Registra el resultado y el siguiente paso seguro más pequeño, o detente sin rellenar el vacío.', ja: '結果と最小限で安全な次の一歩を記録し、空白を埋めずに止めます。', ko: '결과와 가장 작고 안전한 다음 단계를 기록하고, 빈틈을 채우려 하지 말고 멈추세요.', de: 'Notiere Ergebnis und den kleinsten sicheren nächsten Schritt — oder stoppe, ohne die Lücke zu füllen.', 'zh-tw': '記錄結果與最小且安全的下一步；如果界線不清楚，就停止，不要填補空白。', fr: 'Notez le résultat et le plus petit prochain pas sûr, ou arrêtez-vous sans combler le vide.' },
+      next: { en: 'What can another person inspect?', zh: '别人可以检查什么？', es: '¿Qué puede inspeccionar otra persona?', ja: '別の人は何を確認できるか？', ko: '다른 사람이 무엇을 확인할 수 있는가?', de: 'Was kann eine andere Person prüfen?', 'zh-tw': '別人可以檢查什麼？', fr: 'Que peut inspecter une autre personne ?' },
     },
   ];
 
@@ -550,6 +612,7 @@
   let activeBoundaryId = 'proposal';
   let activeTriageId = 'text';
   let activeRouteId = 'purpose';
+  let activeReceiptId = 'result';
   let activeExplorerId = 'understand';
   let activeCapabilityId = 'L0';
 
@@ -1006,6 +1069,60 @@
     if (imageLink) imageLink.setAttribute('aria-label', `${strings.readingOpenVisual}: ${localized(step.labels)}`);
   }
 
+  function renderReceiptMap() {
+    const nodes = query('[data-visual-receipt-nodes]');
+    const fallback = query('[data-visual-receipt-fallback]');
+    if (!nodes || !fallback) return;
+    const strings = copy();
+    nodes.replaceChildren();
+    fallback.replaceChildren();
+    RECEIPT_STEPS.forEach((step, index) => {
+      const item = document.createElement('li');
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'visual-receipt-node';
+      button.dataset.receipt = step.id;
+      button.setAttribute('aria-pressed', String(step.id === activeReceiptId));
+      button.setAttribute('aria-label', `${String(index + 1).padStart(2, '0')} ${localized(step.labels)}`);
+      const number = document.createElement('span');
+      number.textContent = String(index + 1).padStart(2, '0');
+      const label = document.createElement('strong');
+      label.textContent = localized(step.labels);
+      button.append(number, label);
+      button.addEventListener('click', () => { activeReceiptId = step.id; renderReceiptMap(); });
+      if (step.id === activeReceiptId) button.classList.add('is-selected');
+      item.append(button);
+      nodes.append(item);
+
+      const fallbackItem = document.createElement('li');
+      const fallbackTitle = document.createElement('strong');
+      fallbackTitle.textContent = `${String(index + 1).padStart(2, '0')} · ${localized(step.labels)}`;
+      const fallbackBody = document.createElement('span');
+      fallbackBody.textContent = localized(step.bodies);
+      const fallbackNext = document.createElement('em');
+      fallbackNext.textContent = `${strings.receiptNext}: ${localized(step.next)}`;
+      const fallbackLink = document.createElement('a');
+      fallbackLink.className = 'visual-action-link';
+      fallbackLink.href = readerHref(step.path);
+      fallbackLink.textContent = `${strings.receiptOpen} ↗`;
+      fallbackItem.append(fallbackTitle, fallbackBody, fallbackNext, fallbackLink);
+      fallback.append(fallbackItem);
+    });
+    const step = RECEIPT_STEPS.find((candidate) => candidate.id === activeReceiptId) || RECEIPT_STEPS[0];
+    const detailTitle = query('[data-visual-receipt-title]');
+    const detailBody = query('[data-visual-receipt-body]');
+    const detailNext = query('[data-visual-receipt-next]');
+    const detailLink = query('[data-visual-receipt-link]');
+    const image = query('[data-visual-receipt-image]');
+    const imageLink = query('[data-visual-receipt-image-link]');
+    if (detailTitle) detailTitle.textContent = localized(step.labels);
+    if (detailBody) detailBody.textContent = localized(step.bodies);
+    if (detailNext) detailNext.textContent = localized(step.next);
+    if (detailLink) detailLink.href = readerHref(step.path);
+    if (image) image.alt = strings.receiptFigureAlt;
+    if (imageLink) imageLink.setAttribute('aria-label', `${strings.receiptOpenVisual}: ${localized(step.labels)}`);
+  }
+
   function renderConceptMap() {
     const nodes = query('[data-visual-concept-nodes]');
     const fallback = query('[data-visual-concept-fallback]');
@@ -1302,6 +1419,7 @@
     renderMap();
     renderEvidenceMap();
     renderReadingLoop();
+    renderReceiptMap();
     renderGallery();
     renderBoardExplorer();
     if (updateUrl) {
@@ -1324,6 +1442,7 @@
   renderMap();
   renderEvidenceMap();
   renderReadingLoop();
+  renderReceiptMap();
   renderGallery();
   renderBoardExplorer();
 })();
