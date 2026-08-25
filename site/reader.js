@@ -116,6 +116,14 @@
   const conceptMapRootLabel = document.querySelector('[data-reader-concept-map-root-label]');
   const conceptMapRoot = document.querySelector('[data-reader-concept-map-root]');
   const conceptMapBranches = document.querySelector('[data-reader-concept-map-branches]');
+  const conceptMapDetail = document.querySelector('[data-reader-concept-map-detail]');
+  const conceptMapDetailLabel = document.querySelector('[data-reader-concept-map-detail-label]');
+  const conceptMapDetailTitle = document.querySelector('[data-reader-concept-map-detail-title]');
+  const conceptMapDetailBody = document.querySelector('[data-reader-concept-map-detail-body]');
+  const conceptMapDetailNextLabel = document.querySelector('[data-reader-concept-map-detail-next-label]');
+  const conceptMapDetailNext = document.querySelector('[data-reader-concept-map-detail-next]');
+  const conceptMapDetailLink = document.querySelector('[data-reader-concept-map-detail-link]');
+  const conceptMapDetailOpen = document.querySelector('[data-reader-concept-map-detail-open]');
   const conceptMapFallback = document.querySelector('[data-reader-concept-map-fallback]');
   const conceptMapFallbackIntro = document.querySelector('[data-reader-concept-map-fallback-intro]');
   const conceptMapFallbackList = document.querySelector('[data-reader-concept-map-fallback-list]');
@@ -507,6 +515,26 @@
   Object.entries(readerVisualExplanationCopy).forEach(([locale, copy]) => Object.assign(readerVisualCopy[locale], {
     visualExplanation: copy.summary,
     visualExplanationIntro: copy.intro,
+  }));
+
+  // The heading map is more useful when a selected node answers two questions:
+  // what does this section contain, and where do I go next? The summary is
+  // extracted from the already-rendered localized article, so the map never
+  // invents translated prose or silently falls back to English.
+  const readerConceptMapLabels = {
+    en: { selected: 'Selected section', next: 'Next section', open: 'Open this section' },
+    zh: { selected: '当前小节', next: '下一小节', open: '打开这个小节' },
+    es: { selected: 'Sección seleccionada', next: 'Siguiente sección', open: 'Abrir esta sección' },
+    ja: { selected: '選択中の節', next: '次の節', open: 'この節を開く' },
+    ko: { selected: '선택한 섹션', next: '다음 섹션', open: '이 섹션 열기' },
+    de: { selected: 'Ausgewählter Abschnitt', next: 'Nächster Abschnitt', open: 'Diesen Abschnitt öffnen' },
+    'zh-tw': { selected: '目前段落', next: '下一個段落', open: '開啟這個段落' },
+    fr: { selected: 'Section sélectionnée', next: 'Section suivante', open: 'Ouvrir cette section' },
+  };
+  Object.entries(readerConceptMapLabels).forEach(([locale, labels]) => Object.assign(readerVisualCopy[locale], {
+    conceptDetailLabel: labels.selected,
+    conceptDetailNextLabel: labels.next,
+    conceptDetailOpen: labels.open,
   }));
 
   const readerVisualMap = [
@@ -1107,7 +1135,7 @@
     return null;
   };
   const renderReaderConceptMap = (selection, title, headings = []) => {
-    if (!conceptMap || !conceptMapBranches || !conceptMapFallbackList) return;
+    if (!conceptMap || !conceptMapBranches || !conceptMapFallbackList || !conceptMapDetail) return;
     if (conceptMapScrollHandler) window.removeEventListener('scroll', conceptMapScrollHandler);
     conceptMapScrollHandler = null;
     const mappedHeadings = headings.filter((heading) => heading.id && heading.textContent.trim()).slice(0, 8);
@@ -1115,6 +1143,7 @@
       conceptMap.hidden = true;
       conceptMapBranches.replaceChildren();
       conceptMapFallbackList.replaceChildren();
+      conceptMapDetail.hidden = true;
       return;
     }
     const strings = currentReaderVisualCopy();
@@ -1129,16 +1158,39 @@
     conceptMapFallback.textContent = strings.conceptFallback;
     conceptMapFallbackIntro.textContent = strings.conceptFallbackIntro;
     conceptMapBoundary.textContent = strings.conceptBoundary;
+    conceptMapDetailLabel.textContent = strings.conceptDetailLabel;
+    conceptMapDetailNextLabel.textContent = strings.conceptDetailNextLabel;
+    conceptMapDetailOpen.textContent = strings.conceptDetailOpen;
+    conceptMapDetail.hidden = false;
     conceptMapBranches.replaceChildren();
     conceptMapFallbackList.replaceChildren();
     const nodesByHeadingId = new Map();
+    const headingIndex = new Map(mappedHeadings.map((heading, index) => [heading.id, index]));
+    const headingSummary = (heading) => {
+      const parts = [];
+      let sibling = heading.nextElementSibling;
+      while (sibling && !/^H[1-3]$/.test(sibling.tagName)) {
+        if (sibling.tagName === 'P' && sibling.textContent.trim()) parts.push(sibling.textContent.trim());
+        if (parts.length >= 1) break;
+        sibling = sibling.nextElementSibling;
+      }
+      return parts[0] || '';
+    };
     const setActiveNode = (headingId) => {
+      const index = headingIndex.get(headingId) ?? 0;
+      const heading = mappedHeadings[index];
+      const nextHeading = mappedHeadings[index + 1];
       nodesByHeadingId.forEach((node, id) => {
         const active = id === headingId;
         node.classList.toggle('is-active', active);
         if (active) node.setAttribute('aria-current', 'location');
         else node.removeAttribute('aria-current');
       });
+      conceptMapDetailTitle.textContent = heading?.textContent.trim() || '';
+      conceptMapDetailBody.textContent = headingSummary(heading) || strings.conceptIntro;
+      conceptMapDetailNext.textContent = nextHeading?.textContent.trim() || strings.conceptBoundary;
+      conceptMapDetailLink.href = heading ? headingHref(heading.id) : '#';
+      conceptMapDetailLink.setAttribute('aria-label', `${strings.conceptDetailOpen}: ${heading?.textContent.trim() || ''}`);
     };
     mappedHeadings.forEach((heading, index) => {
       const label = heading.textContent.trim();
@@ -1301,6 +1353,32 @@
     details.setAttribute('aria-controls', list.id);
     summary.setAttribute('aria-controls', list.id);
     const nodesByHeadingId = new Map();
+    const detail = document.createElement('section');
+    detail.className = 'reader-inline-concept-map-detail';
+    detail.setAttribute('aria-live', 'polite');
+    detail.setAttribute('aria-atomic', 'true');
+    const detailLabel = document.createElement('span');
+    detailLabel.className = 'reader-inline-concept-map-detail-label';
+    detailLabel.textContent = strings.conceptDetailLabel;
+    const detailTitle = document.createElement('strong');
+    const detailBody = document.createElement('p');
+    const detailNext = document.createElement('p');
+    detailNext.className = 'reader-inline-concept-map-detail-next';
+    detailNext.dataset.readerInlineConceptMapDetailNext = 'true';
+    const detailNextLabel = document.createElement('span');
+    detailNextLabel.textContent = `${strings.conceptDetailNextLabel}: `;
+    const detailNextTitle = document.createElement('strong');
+    detailNext.append(detailNextLabel, detailNextTitle);
+    detail.append(detailLabel, detailTitle, detailBody, detailNext);
+    const headingSummary = (heading) => {
+      let sibling = heading.nextElementSibling;
+      while (sibling && !/^H[1-3]$/.test(sibling.tagName)) {
+        if (sibling.tagName === 'P' && sibling.textContent.trim()) return sibling.textContent.trim();
+        sibling = sibling.nextElementSibling;
+      }
+      return strings.conceptIntro;
+    };
+    const headingIndex = new Map(mappedHeadings.map((heading, index) => [heading.id, index]));
     mappedHeadings.forEach((heading, index) => {
       const item = document.createElement('li');
       const link = document.createElement('a');
@@ -1323,18 +1401,24 @@
     const boundary = document.createElement('p');
     boundary.className = 'reader-inline-concept-map-boundary';
     boundary.textContent = strings.conceptBoundary;
-    details.append(summary, intro, root, list, boundary);
+    details.append(summary, intro, root, list, detail, boundary);
     const openingParagraph = article.querySelector(':scope > p');
     const anchor = article.querySelector('[data-reader-inline-visual]') || openingParagraph || article.querySelector('h1');
     if (anchor) anchor.after(details);
     else article.prepend(details);
     const setActiveNode = (headingId) => {
+      const index = headingIndex.get(headingId) ?? 0;
+      const heading = mappedHeadings[index];
+      const nextHeading = mappedHeadings[index + 1];
       nodesByHeadingId.forEach((node, id) => {
         const active = id === headingId;
         node.classList.toggle('is-active', active);
         if (active) node.setAttribute('aria-current', 'location');
         else node.removeAttribute('aria-current');
       });
+      detailTitle.textContent = heading?.textContent.trim() || '';
+      detailBody.textContent = headingSummary(heading);
+      detailNextTitle.textContent = nextHeading?.textContent.trim() || strings.conceptBoundary;
     };
     const updateActiveHeading = () => {
       const candidates = mappedHeadings.filter((heading) => heading.getBoundingClientRect().top <= 220);
