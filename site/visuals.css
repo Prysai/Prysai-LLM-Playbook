@@ -36,7 +36,7 @@ button, select { font: inherit; }
 .visual-skip:focus { top: .75rem; }
 
 .visual-header {
-  position: sticky;
+  position: relative;
   z-index: 5;
   top: 0;
   border-bottom: 1px solid var(--visual-line);
