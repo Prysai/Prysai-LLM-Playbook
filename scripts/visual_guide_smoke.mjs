@@ -131,6 +131,26 @@ try {
   })) {
     assert.equal(await noScriptPage.locator(selector).count(), expectedCounts[name], `no-script ${name} fallback changed`);
   }
+  // The interactive guide owns the first explanation in each section. The
+  // remaining ordered lists are progressive-enhancement fallbacks: they must
+  // stay available without scripts, but should not duplicate every map on the
+  // default page or turn a mobile visit into one very long scroll.
+  for (const selector of [
+    '.visual-goal-fallback',
+    '.visual-journey-fallback',
+    '.visual-capability-fallback',
+    '.visual-maturity-fallback',
+    '.visual-concept-fallback',
+    '.visual-action-boundary-fallback',
+    '.visual-triage-fallback',
+    '.visual-map-fallback',
+    '.visual-evidence-fallback',
+    '.visual-reading-loop-fallback',
+    '.visual-receipt-fallback',
+    '.visual-board-explorer-fallback',
+  ]) {
+    assert.equal(await page.locator(selector).evaluate((details) => details.open), false, `default visual guide keeps ${selector} expanded`);
+  }
   await noScriptContext.close();
   console.log(`VISUAL_GUIDE_SMOKE_OK locales=${locales.length} cards=${expectedCounts.cards} mobile=390,360 no_script=1`);
 } finally {
