@@ -116,6 +116,8 @@ VERSIONED_SITE_ASSETS = (
     "reader.css",
     "reader.js",
     "search-index.js",
+    "visuals.css",
+    "visuals.js",
 )
 
 
@@ -184,6 +186,19 @@ def pages_reader(reader: Path) -> str:
         raise ValueError(f"{reader.relative_to(ROOT)} is missing a <head> element")
     flag = "    <script>window.CODEX_PAGES_ARTIFACT = true;</script>\n"
     return text.replace(marker, f"{marker}\n{flag}", 1)
+
+
+def pages_visuals(visuals: Path, base_url: str) -> str:
+    """Return the root visual entry while keeping its source-relative assets."""
+
+    text = visuals.read_text(encoding="utf-8")
+    marker = "<head>"
+    if marker not in text:
+        raise ValueError(f"{visuals.relative_to(ROOT)} is missing a <head> element")
+    base = '    <base href="site/visuals.html" />\n'
+    flag = "    <script>window.CODEX_PAGES_ARTIFACT = true;</script>\n"
+    canonical = f'    <link rel="canonical" href="{base_url}visuals.html" />\n'
+    return text.replace(marker, f"{marker}\n{base}{flag}{canonical}", 1)
 
 
 def validate_source() -> None:
@@ -332,6 +347,7 @@ def space_readme(source: str) -> str:
 def validate_artifact(output: Path, versions: dict[str, str] | None = None) -> None:
     expected = (
         output / "index.html",
+        output / "visuals.html",
         output / ".nojekyll",
         output / "robots.txt",
         output / "sitemap.xml",
@@ -373,6 +389,7 @@ def validate_artifact(output: Path, versions: dict[str, str] | None = None) -> N
         raise ValueError("credential signature leaked into Pages artifact: " + ", ".join(secret_findings))
 
     root_text = (output / "index.html").read_text(encoding="utf-8")
+    config = load_seo_config()
     if '<base href="site/index.html" />' not in root_text or "window.CODEX_PAGES_ARTIFACT = true" not in root_text:
         raise ValueError("root Pages entry must point relative assets and content through site/index.html")
     if not (output / "site/search-index.js").is_file():
@@ -380,11 +397,19 @@ def validate_artifact(output: Path, versions: dict[str, str] | None = None) -> N
     reader_text = (output / "site/reader.html").read_text(encoding="utf-8")
     if "window.CODEX_PAGES_ARTIFACT = true" not in reader_text:
         raise ValueError("Pages Reader must retain artifact routing mode")
+    visuals_text = (output / "visuals.html").read_text(encoding="utf-8")
+    if (
+        '<base href="site/visuals.html" />' not in visuals_text
+        or "window.CODEX_PAGES_ARTIFACT = true" not in visuals_text
+        or f'<link rel="canonical" href="{config["public_site_url"]}visuals.html" />' not in visuals_text
+    ):
+        raise ValueError("Pages visual entry must retain artifact routing and canonical metadata")
     if versions:
         public_texts = {
             "index": root_text,
             "reader": reader_text,
             "app": (output / "site/app.js").read_text(encoding="utf-8"),
+            "visuals": visuals_text,
         }
         for name, version in versions.items():
             expected = f"{name}?v={version}"
@@ -394,7 +419,8 @@ def validate_artifact(output: Path, versions: dict[str, str] | None = None) -> N
                 raise ValueError(f"Pages artifact Reader is missing content version for {name}")
             if name == "search-index.js" and expected not in public_texts["app"]:
                 raise ValueError("Pages artifact search loader is missing a content version")
-    config = load_seo_config()
+            if name in {"visuals.css", "visuals.js"} and expected not in public_texts["visuals"]:
+                raise ValueError(f"Pages visual entry is missing content version for {name}")
     home_page = config["home_page"]
     assert isinstance(home_page, dict)
     source_index = (ROOT / "site/index.html").read_text(encoding="utf-8")
@@ -473,6 +499,11 @@ def build_into(output: Path) -> None:
     root_entry = versioned_asset_references(root_index(source_index), versions)
     (output / "index.html").write_text(root_entry, encoding="utf-8", newline="\n")
     seo_config = load_seo_config()
+    visuals_entry = versioned_asset_references(
+        pages_visuals(ROOT / "site/visuals.html", str(seo_config["public_site_url"])),
+        versions,
+    )
+    (output / "visuals.html").write_text(visuals_entry, encoding="utf-8", newline="\n")
     for locale in seo_config["locales"]:
         if locale != "en":
             page = static_locale_page(source_index, seo_config, locale)
