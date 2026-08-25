@@ -815,6 +815,13 @@
     { id: 'evidence', contentId: 'chapter-09-verification-and-recovery', path: 'book/chapters/09-verification-and-recovery-EN.md' },
     { id: 'tracks', contentId: 'chapter-07-skills-plugins-and-tools', path: 'book/chapters/07-skills-plugins-and-tools-EN.md' },
   ];
+  const readerCourseMapStageIndex = (selection) => {
+    const token = `${selection?.contentId || ''} ${selection?.path || ''}`.toLowerCase();
+    if (/llm-(?:foundation|fundamentals|core)/.test(token)) return 0;
+    if (/chapter-0[23]|lab-00[12]|first-safe|first-win|newcomer-entry|task-protocol|foundation-first-visit/.test(token)) return 1;
+    if (/chapter-(?:09|10|12|15)|lab-(?:003|006|008|009|013|014|015|017)|evidence|research|verification|recovery|planning-and-slicing/.test(token)) return 2;
+    return 3;
+  };
   const courseMapStageHref = (stage) => {
     const record = manifest.contents?.[stage.contentId];
     const localizedPath = record?.locales?.[activeLocale]?.path;
@@ -829,7 +836,7 @@
       return;
     }
     const strings = currentReaderCourseMapCopy();
-    const selectedIndex = Math.max(0, readerCourseMapStages.findIndex((stage) => stage.contentId === selection.contentId));
+    const selectedIndex = readerCourseMapStageIndex(selection);
     courseMap.hidden = false;
     courseMap.open = selection.contentId === 'llm-foundation-core-v1';
     courseMapSummary.textContent = strings.summary;
@@ -845,6 +852,7 @@
     courseMapBoundary.textContent = strings.boundary;
     courseMapImage.alt = strings.figureAlt;
     courseMapFigureLink.href = directHref('assets/teaching/playbook-learning-journey-red-black.svg');
+    courseMapFigureLink.setAttribute('aria-label', strings.figureOpen);
     courseMapNodes.setAttribute('aria-label', strings.aria);
     const selectStage = (index) => {
       const stage = readerCourseMapStages[index];

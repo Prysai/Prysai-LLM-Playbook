@@ -37,7 +37,7 @@ const python = process.env.PYTHON || process.env.PYTHON_PATH || (existsSync(bund
 // This smoke covers every locale, multiple full Reader routes, visual
 // screenshots, and mobile navigation. Keep the guard above normal CI jitter
 // without hiding a genuinely stalled run.
-const testTimeoutMs = 180_000;
+const testTimeoutMs = 240_000;
 const testTimeout = setTimeout(() => {
   console.error(`BROWSER_SMOKE_FAILED timeout_ms=${testTimeoutMs}`);
   process.exit(2);
@@ -597,7 +597,10 @@ try {
     assert.equal(await journey.locator('.foundation-journey-list li').count(), 4, `${locale} learning journey text fallback lost a stage`);
     await journey.scrollIntoViewIfNeeded();
     await journey.locator('img').waitFor();
-    await page.waitForTimeout(50);
+    await journey.locator('img').evaluate((image) => image.complete && image.naturalWidth > 0 ? true : new Promise((resolve) => {
+      image.addEventListener('load', () => resolve(true), { once: true });
+      image.addEventListener('error', () => resolve(false), { once: true });
+    }));
     assert.equal((await journey.locator('img').evaluate((image) => image.complete && image.naturalWidth > 0)), true, `${locale} learning journey SVG did not load`);
     const evidenceMap = page.locator('#foundation-evidence-map');
     assert.equal(await evidenceMap.count(), 1, `${locale} evidence decision map is missing`);
@@ -1773,6 +1776,28 @@ try {
   await page.locator('[data-reader-route-map-step="3"]').click();
   assert.equal((await page.locator('[data-reader-route-map-detail-title]').innerText()).trim(), 'Inspect', 'Reader route map selection does not update its detail');
   assert.match(await page.locator('[data-reader-route-map-detail-link]').getAttribute('href'), /09-verification-and-recovery-EN\.md&lang=en$/, 'Reader route map selection loses its locale-preserving Reader link');
+  const courseMap = page.locator('[data-reader-course-map]');
+  assert.equal(await courseMap.isVisible(), true, 'Reader whole-Playbook map is not available on a chapter page');
+  await page.locator('[data-reader-course-map-summary]').click();
+  assert.equal(await page.locator('[data-reader-course-map-stage]').count(), 4, 'Reader whole-Playbook map does not expose four route stages');
+  assert.match((await page.locator('[data-reader-course-map-detail-title]').innerText()).trim(), /First bounded task/i, 'Reader whole-Playbook map selected the wrong stage');
+  await page.locator('[data-reader-course-map-stage="2"]').click();
+  assert.equal((await page.locator('[data-reader-course-map-detail-title]').innerText()).trim(), 'Evidence loop', 'Reader whole-Playbook map selection does not update its detail');
+  assert.match(await page.locator('[data-reader-course-map-detail-link]').getAttribute('href'), /09-verification-and-recovery-EN\.md&lang=en$/, 'Reader whole-Playbook map loses its localized stage link');
+  await page.locator('[data-reader-course-map-stage="2"]').focus();
+  await page.keyboard.press('End');
+  assert.equal((await page.locator('[data-reader-course-map-detail-title]').innerText()).trim(), 'Optional tracks', 'Reader whole-Playbook map End key does not select the final stage');
+  await page.keyboard.press('Home');
+  assert.equal((await page.locator('[data-reader-course-map-detail-title]').innerText()).trim(), 'Foundation Core', 'Reader whole-Playbook map Home key does not select the first stage');
+  assert.equal(await page.locator('[data-reader-course-map-fallback-list] li').count(), 4, 'Reader whole-Playbook map has no four-stage text fallback');
+  assert.notEqual((await page.locator('[data-reader-course-map-image]').getAttribute('alt') || '').trim(), '', 'Reader whole-Playbook map has no alternative text');
+  assert.notEqual((await page.locator('[data-reader-course-map-figure-caption]').innerText()).trim(), '', 'Reader whole-Playbook map has no caption');
+  assert.match(await page.locator('[data-reader-course-map-figure-link]').getAttribute('aria-label'), /Open the full route visual/i, 'Reader whole-Playbook map visual link has no accessible label');
+  await noHorizontalOverflow(page, 'English whole-Playbook map');
+  await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F15-research-track-EN.md&lang=en`, { waitUntil: 'networkidle' });
+  await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
+  await page.locator('[data-reader-course-map-summary]').click();
+  assert.equal((await page.locator('[data-reader-course-map-detail-title]').innerText()).trim(), 'Evidence loop', 'Reader whole-Playbook map does not follow the current research stage');
   await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F09-verification-and-recovery-EN.md&lang=en`, { waitUntil: 'networkidle' });
   await page.locator('[data-reader-article][aria-busy="false"]').waitFor();
   const recoveryMap = page.locator('[data-reader-recovery-map]');
@@ -1864,6 +1889,16 @@ try {
     'zh-tw': ['本頁概念圖', '配套教學圖'],
     fr: ['Carte conceptuelle de cette page', 'Visuel pédagogique'],
   };
+  const courseMapLocales = {
+    en: ['Whole Playbook map', 'Evidence loop'],
+    zh: ['整本 Playbook 地图', '证据闭环'],
+    es: ['Mapa completo del Playbook', 'Bucle de evidencia'],
+    ja: ['Playbook 全体マップ', 'エビデンスループ'],
+    ko: ['Playbook 전체 지도', '증거 루프'],
+    de: ['Gesamtkarte des Playbooks', 'Belegschleife'],
+    'zh-tw': ['整本 Playbook 地圖', '證據循環'],
+    fr: ['Carte complète du Playbook', 'Boucle de preuves'],
+  };
   const visualExplanationLocales = {
     en: 'Read this teaching visual as text',
     zh: '按文字理解这张教学图',
@@ -1903,6 +1938,18 @@ try {
       `${locale} route map selection lost its localized Reader link`,
     );
     assert.equal((await page.locator('[data-reader-concept-map-summary]').innerText()).trim(), visualGuideLocales[locale][0], `${locale} concept map label is not localized`);
+    const localizedCourseMap = page.locator('[data-reader-course-map]');
+    assert.equal(await localizedCourseMap.isVisible(), true, `${locale} whole-Playbook map is not available`);
+    assert.equal((await page.locator('[data-reader-course-map-summary]').innerText()).trim(), courseMapLocales[locale][0], `${locale} whole-Playbook map label is not localized`);
+    await page.locator('[data-reader-course-map-summary]').click();
+    assert.equal(await page.locator('[data-reader-course-map-stage]').count(), 4, `${locale} whole-Playbook map lost a route stage`);
+    await page.locator('[data-reader-course-map-stage="2"]').click();
+    assert.equal((await page.locator('[data-reader-course-map-detail-title]').innerText()).trim(), courseMapLocales[locale][1], `${locale} whole-Playbook map stage is not localized`);
+    assert.match(await page.locator('[data-reader-course-map-detail-link]').getAttribute('href'), new RegExp(`09-verification-and-recovery-${suffix}\\.md&lang=${locale}$`), `${locale} whole-Playbook map lost its localized stage link`);
+    assert.equal(await page.locator('[data-reader-course-map-fallback-list] li').count(), 4, `${locale} whole-Playbook map has no four-stage text fallback`);
+    assert.notEqual((await page.locator('[data-reader-course-map-image]').getAttribute('alt') || '').trim(), '', `${locale} whole-Playbook map has no alternative text`);
+    assert.notEqual((await page.locator('[data-reader-course-map-figure-caption]').innerText()).trim(), '', `${locale} whole-Playbook map has no caption`);
+    assert.match(await page.locator('[data-reader-course-map-figure-link]').getAttribute('aria-label'), /.+/, `${locale} whole-Playbook map visual link has no accessible label`);
     assert.equal((await page.locator('[data-reader-visual-companion-summary]').innerText()).trim(), visualGuideLocales[locale][1], `${locale} visual companion label is not localized`);
     assert.equal((await page.locator('[data-reader-inline-concept-map] summary').innerText()).trim(), visualGuideLocales[locale][0], `${locale} inline concept map label is not localized`);
     const localizedInlineTeachingVisual = page.locator('[data-reader-inline-visual]');

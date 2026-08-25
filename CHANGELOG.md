@@ -11,6 +11,18 @@ Playbook is ready for public production use.
 - Added the eighth registered interface and course route: French (`fr`). The 22 chapters and 18 Labs now have same-locale candidate files and routes.
 - French copy remains `in-progress`: independent native-language review, learner runs, transfer evidence, and production deployment are not established.
 
+### Visual route candidate (2026-08-24)
+
+- Added the whole-Playbook route map to the Reader. It connects the
+  Foundation Core, first bounded task, evidence loop, and optional tracks with
+  localized stage labels, route links, a text equivalent, and the original
+  learning-journey board.
+- The map is progressive enhancement: the ordered text route remains the
+  baseline, while the interactive stage selection adds orientation. Responsive
+  checks cover desktop and 390px mobile layouts across all eight Reader
+  locales; this is implementation evidence, not learner, accessibility,
+  translation-quality, or release evidence.
+
 
 ### Changed
 
