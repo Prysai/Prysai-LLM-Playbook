@@ -768,7 +768,7 @@ try {
     ko: ['관찰자', '안전 사용자', '작업 설계자', '워크플로 설계자', '역량 구축자', '증거 검토자', '팀 코치'],
     de: ['Beobachter', 'Sicherer Nutzer', 'Task-Designer', 'Workflow-Designer', 'Capability-Builder', 'Evidence-Reviewer', 'Team-Coach'],
     'zh-tw': ['觀察者', '安全使用者', '任務設計者', '工作流程設計者', '能力構建者', '證據審查者', '團隊教練'],
-    fr: ['Niveau 0', 'Niveau 1', 'Niveau 2', 'Niveau 3', 'Niveau 4', 'Niveau 5', 'Niveau 6'],
+    fr: ['Observateur', 'Utilisateur prudent', 'Concepteur de tâches', 'Concepteur de workflows', 'Constructeur de capacités', 'Évaluateur des preuves', 'Coach d’équipe'],
   };
   const visualConceptLabels = {
     en: ['Token', 'Context', 'Context window', 'Prompt', 'Response', 'Tool / Agent'],
