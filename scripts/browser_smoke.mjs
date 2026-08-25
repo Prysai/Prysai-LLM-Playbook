@@ -750,6 +750,16 @@ try {
     'zh-tw': ['基礎核心課', '第一項有界線的任務', '證據閉環', '可選實踐路徑'],
     fr: ['Foundation Core', 'Première tâche délimitée', 'Boucle de preuves', 'Parcours facultatifs'],
   };
+  const visualConceptLabels = {
+    en: ['Token', 'Context', 'Context window', 'Prompt', 'Response', 'Tool / Agent'],
+    zh: ['Token（词元）', 'Context（上下文）', 'Context window（上下文窗口）', 'Prompt（提示）', 'Response（回答）', 'Tool / Agent（工具 / Agent）'],
+    es: ['Token', 'Contexto', 'Ventana de contexto', 'Prompt', 'Respuesta', 'Herramienta / agente'],
+    ja: ['Token（トークン）', 'Context（コンテキスト）', 'Context window（コンテキストウィンドウ）', 'Prompt（プロンプト）', 'Response（応答）', 'Tool / Agent（ツール / Agent）'],
+    ko: ['Token（토큰）', 'Context（컨텍스트）', 'Context window（컨텍스트 창）', 'Prompt（프롬프트）', 'Response（응답）', 'Tool / Agent（도구 / Agent）'],
+    de: ['Token', 'Kontext', 'Kontextfenster', 'Prompt', 'Antwort', 'Tool / Agent'],
+    'zh-tw': ['Token（詞元）', 'Context（上下文）', 'Context window（上下文視窗）', 'Prompt（提示）', 'Response（回應）', 'Tool / Agent（工具 / Agent）'],
+    fr: ['Token', 'Contexte', 'Fenêtre de contexte', 'Prompt', 'Réponse', 'Outil / Agent'],
+  };
   const visualGuidePage = await context.newPage();
   await visualGuidePage.setViewportSize({ width: 1280, height: 900 });
   for (const locale of Object.keys(visualGuideLabels)) {
@@ -780,6 +790,11 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-journey-fallback] li').count(), 4, `${locale} visual guide learning journey fallback lost a stage`);
     assert.equal(await visualGuidePage.locator('[data-visual-journey-title]').innerText(), visualJourneyLabels[locale][0], `${locale} visual guide learning journey selection is not localized`);
     assert.notEqual(await visualGuidePage.locator('[data-visual-journey-image]').getAttribute('alt'), '', `${locale} visual guide learning journey image has no alternative text`);
+    assert.deepEqual(await visualGuidePage.locator('[data-visual-concept-nodes] button strong').allTextContents(), visualConceptLabels[locale], `${locale} visual guide concept terms are not localized`);
+    assert.equal(await visualGuidePage.locator('[data-visual-concept-nodes] button').count(), 6, `${locale} visual guide concept map lost a term`);
+    assert.equal(await visualGuidePage.locator('[data-visual-concept-fallback] li').count(), 6, `${locale} visual guide concept fallback lost a term`);
+    assert.notEqual(await visualGuidePage.locator('[data-visual-concept-image]').getAttribute('alt'), '', `${locale} concept map image has no alternative text`);
+    assert.equal(await visualGuidePage.locator('[data-visual-concept-title]').innerText(), visualConceptLabels[locale][0], `${locale} visual guide concept selection is not localized`);
     assert.notEqual(await visualGuidePage.locator('.visual-card img').first().getAttribute('alt'), '', `${locale} visual guide image has no alternative text`);
     assert.equal(await visualGuidePage.locator('.visual-brand').getAttribute('aria-label'), {
       en: 'Prysai LLM Playbook home', zh: 'Prysai LLM Playbook 首页', es: 'Inicio de Prysai LLM Playbook', ja: 'Prysai LLM Playbook のホーム', ko: 'Prysai LLM Playbook 홈', de: 'Startseite des Prysai LLM Playbook', 'zh-tw': 'Prysai LLM Playbook 首頁', fr: 'Accueil du Prysai LLM Playbook',
@@ -800,6 +815,10 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-journey-title]').innerText(), visualJourneyLabels[locale][3], `${locale} visual guide learning journey selection does not update`);
     assert.equal(await visualGuidePage.locator('[data-visual-journey-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} visual guide learning journey selection is not exposed`);
     assert.match(await visualGuidePage.locator('[data-visual-journey-link]').getAttribute('href'), new RegExp(`lang=${locale}$`), `${locale} visual guide learning journey route loses its locale`);
+    await visualGuidePage.locator('[data-visual-concept-nodes] button').last().click();
+    assert.equal(await visualGuidePage.locator('[data-visual-concept-title]').innerText(), visualConceptLabels[locale][5], `${locale} visual guide concept selection does not update`);
+    assert.equal(await visualGuidePage.locator('[data-visual-concept-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} visual guide concept selection is not exposed`);
+    assert.match(await visualGuidePage.locator('[data-visual-concept-link]').getAttribute('href'), new RegExp(`13-action-boundaries-[A-Z]+\.md&lang=${locale}$`), `${locale} visual guide concept route loses its locale`);
     await noHorizontalOverflow(visualGuidePage, `${locale} visual guide desktop`);
   }
   await visualGuidePage.setViewportSize({ width: 390, height: 844 });
@@ -808,6 +827,8 @@ try {
   assert.equal(await visualGuidePage.locator('[data-visual-map-nodes] button').count(), 6, 'mobile visual guide map loses a stage');
   assert.equal(await visualGuidePage.locator('[data-visual-evidence-nodes] button').count(), 5, 'mobile evidence map loses a step');
   assert.equal(await visualGuidePage.locator('[data-visual-journey-nodes] button').count(), 4, 'mobile visual guide learning journey loses a stage');
+  assert.equal(await visualGuidePage.locator('[data-visual-concept-nodes] button').count(), 6, 'mobile visual guide concept map loses a term');
+  assert.equal(await visualGuidePage.locator('[data-visual-concept-fallback] li').count(), 6, 'mobile visual guide concept fallback loses a term');
   assert.equal(await visualGuidePage.locator('.visual-card').count(), 16, 'mobile visual guide loses teaching boards');
   await visualGuidePage.screenshot({ path: path.join(visualEvidenceDirectory, 'visual-guide-mobile-fr.png'), fullPage: false });
   await visualGuidePage.close();
@@ -822,6 +843,8 @@ try {
   assert.equal(await noScriptVisualPage.locator('[data-visual-goal-fallback] a').count(), 4, 'static visual guide goal route has no lesson links');
   assert.equal(await noScriptVisualPage.locator('[data-visual-journey-fallback] li').count(), 4, 'visual guide has no static learning journey route');
   assert.equal(await noScriptVisualPage.locator('[data-visual-journey-fallback] a').count(), 4, 'static visual guide learning journey route has no lesson links');
+  assert.equal(await noScriptVisualPage.locator('[data-visual-concept-fallback] li').count(), 6, 'visual guide has no static concept map when JavaScript is disabled');
+  assert.equal(await noScriptVisualPage.locator('[data-visual-concept-fallback] a').count(), 6, 'static visual guide concept map has no lesson links');
   await noScriptVisualContext.close();
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(`${origin}/site/?lang=fr`, { waitUntil: 'networkidle' });
@@ -2009,6 +2032,15 @@ try {
   assert.ok(await inlineConceptMap.locator('[data-reader-inline-concept-map-node]').count() >= 2, 'Reader inline concept map has no heading branches');
   assert.equal(await inlineConceptMap.locator('ol').count(), 1, 'Reader inline concept map has no static ordered-list fallback');
   assert.match(await inlineConceptMap.getAttribute('aria-controls') || '', /^reader-inline-concept-map-list$/, 'Reader inline concept map does not expose its controlled list');
+  const inlineVisualSequence = page.locator('[data-reader-inline-visual-sequence]');
+  assert.equal(await inlineVisualSequence.count(), 1, 'Reader chapter did not add its adjacent visual sequence');
+  assert.ok(await inlineVisualSequence.locator('.reader-inline-visual-sequence-card').count() >= 1, 'Reader visual sequence has no related board card');
+  assert.ok(await inlineVisualSequence.locator('img').count() >= 1, 'Reader visual sequence has no image');
+  assert.notEqual((await inlineVisualSequence.locator('img').first().getAttribute('alt') || '').trim(), '', 'Reader visual sequence image has no alternative text');
+  await page.setViewportSize({ width: 390, height: 844 });
+  assert.equal(await inlineVisualSequence.locator('img').first().evaluate((image) => getComputedStyle(image).display), 'block', 'Reader visual sequence hides its image on mobile');
+  await noHorizontalOverflow(page, 'mobile Reader visual sequence');
+  await page.setViewportSize({ width: 1280, height: 900 });
 
   // A page without a topic-specific board must still expose the compact route
   // compass immediately after its opening explanation. Keep this assertion at
