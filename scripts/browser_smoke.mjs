@@ -191,6 +191,11 @@ try {
     assert.equal(await hostedLink.getAttribute('rel'), 'noopener', `${translationKey} hosted navigation is missing noopener`);
     assert.equal(await hostedLink.getAttribute('data-hosted-navigation'), 'new-tab', `${translationKey} hosted navigation is not marked`);
   }
+  const hostedVisualLink = hostedFrame.locator('.site-nav a[data-i18n="navVisuals"]');
+  assert.equal(await hostedVisualLink.getAttribute('href'), 'https://docs.prysai.com/llm-playbook/visuals.html', 'visual guide does not target the canonical Docs visual route when hosted');
+  assert.equal(await hostedVisualLink.getAttribute('target'), '_blank', 'embedded visual guide link does not escape the hosted iframe');
+  assert.equal(await hostedVisualLink.getAttribute('rel'), 'noopener', 'embedded visual guide link is missing noopener');
+  assert.equal(await hostedVisualLink.getAttribute('data-hosted-navigation'), 'new-tab', 'embedded visual guide fallback is not marked');
   await hostedWrapperPage.close();
   const homepageMenuTargets = {
     'Start here': '#start',
@@ -210,6 +215,10 @@ try {
     await menuLink.click();
     await page.waitForURL(`${origin}/site/index.html${hash}`);
   }
+  await page.goto(`${origin}/site/index.html?lang=en`, { waitUntil: 'networkidle' });
+  const visualGuideMenuLink = page.getByRole('link', { name: 'Visual guide', exact: true });
+  assert.match(await visualGuideMenuLink.getAttribute('href'), /(?:^|\/)visuals\.html\?lang=en$/, 'homepage visual guide link does not preserve the English locale');
+  assert.equal(new URL(await visualGuideMenuLink.evaluate((link) => link.href)).pathname, '/site/visuals.html', 'homepage visual guide link resolves through the wrong document');
   await noHorizontalOverflow(page, 'desktop showcase');
   // Every homepage Reader link with a fragment promises a concrete landing
   // point. Check the rendered Markdown document, not just the shell URL: a
@@ -688,6 +697,56 @@ try {
       assert.match(visibleText, /跳到主要內容|基礎系統|搜尋|學習路徑/, 'Traditional Chinese home page does not expose its localized UI vocabulary');
     }
   }
+  // The standalone visual guide is a real reader entry, not just a linked
+  // asset folder. Check its localized route, dynamic map, text fallback,
+  // accessible labels, and image inventory in the same browser session.
+  const visualGuideLabels = {
+    en: ['Understand', 'Frame', 'Act', 'Inspect', 'Repair', 'Transfer'],
+    zh: ['理解', '框定', '行动', '检查', '修正', '迁移'],
+    es: ['Entender', 'Delimitar', 'Actuar', 'Inspeccionar', 'Reparar', 'Transferir'],
+    ja: ['理解する', '枠を決める', '行動する', '確認する', '修正する', '転用する'],
+    ko: ['이해하기', '범위 정하기', '행동하기', '점검하기', '고치기', '전이하기'],
+    de: ['Verstehen', 'Abgrenzen', 'Handeln', 'Prüfen', 'Reparieren', 'Übertragen'],
+    'zh-tw': ['理解', '框定', '行動', '檢查', '修正', '遷移'],
+    fr: ['Comprendre', 'Cadrer', 'Agir', 'Inspecter', 'Corriger', 'Transférer'],
+  };
+  const visualGuidePage = await context.newPage();
+  await visualGuidePage.setViewportSize({ width: 1280, height: 900 });
+  for (const locale of Object.keys(visualGuideLabels)) {
+    await visualGuidePage.goto(`${origin}/site/visuals.html?lang=${locale}`, { waitUntil: 'networkidle' });
+    assert.equal(await visualGuidePage.locator('html').getAttribute('lang'), locale, `${locale} visual guide has the wrong document language`);
+    assert.equal(await visualGuidePage.locator('h1').innerText(), {
+      en: 'See the method before you read the detail.', zh: '先看懂方法，再读具体内容。', es: 'Mira el método antes de leer el detalle.', ja: '細部を読む前に、方法の全体像を見る。', ko: '세부 내용을 읽기 전에 방법을 먼저 보세요.', de: 'Erst die Methode sehen, dann ins Detail gehen.', 'zh-tw': '先看懂方法，再閱讀細節。', fr: 'Voyez la méthode avant d’entrer dans le détail.',
+    }[locale], `${locale} visual guide hero is not localized`);
+    assert.deepEqual(await visualGuidePage.locator('[data-visual-map-nodes] button strong').allTextContents(), visualGuideLabels[locale], `${locale} visual guide stages are not localized`);
+    assert.equal(await visualGuidePage.locator('[data-visual-map-nodes] button').count(), 6, `${locale} visual guide map lost a stage`);
+    assert.equal(await visualGuidePage.locator('[data-visual-map-fallback] li').count(), 6, `${locale} visual guide text fallback lost a stage`);
+    assert.equal(await visualGuidePage.locator('.visual-card').count(), 12, `${locale} visual guide lost a teaching board`);
+    assert.notEqual(await visualGuidePage.locator('.visual-card img').first().getAttribute('alt'), '', `${locale} visual guide image has no alternative text`);
+    assert.equal(await visualGuidePage.locator('.visual-brand').getAttribute('aria-label'), {
+      en: 'Prysai LLM Playbook home', zh: 'Prysai LLM Playbook 首页', es: 'Inicio de Prysai LLM Playbook', ja: 'Prysai LLM Playbook のホーム', ko: 'Prysai LLM Playbook 홈', de: 'Startseite des Prysai LLM Playbook', 'zh-tw': 'Prysai LLM Playbook 首頁', fr: 'Accueil du Prysai LLM Playbook',
+    }[locale], `${locale} visual guide brand label is not localized`);
+    assert.equal(await visualGuidePage.locator('#visual-language').getAttribute('aria-label'), {
+      en: 'Choose visual guide language', zh: '选择视觉导览语言', es: 'Elegir el idioma de la guía visual', ja: 'ビジュアルガイドの言語を選択', ko: '시각 안내서 언어 선택', de: 'Sprache des visuellen Leitfadens wählen', 'zh-tw': '選擇視覺導覽語言', fr: 'Choisir la langue du guide visuel',
+    }[locale], `${locale} visual guide language control is not localized`);
+    await visualGuidePage.locator('[data-visual-map-nodes] button').last().click();
+    assert.equal(await visualGuidePage.locator('[data-visual-map-title]').innerText(), visualGuideLabels[locale][5], `${locale} visual guide selection does not update`);
+    assert.match(await visualGuidePage.locator('[data-visual-map-link]').getAttribute('href'), new RegExp(`lang=${locale}$`), `${locale} visual guide route loses its locale`);
+    await noHorizontalOverflow(visualGuidePage, `${locale} visual guide desktop`);
+  }
+  await visualGuidePage.setViewportSize({ width: 390, height: 844 });
+  await visualGuidePage.goto(`${origin}/site/visuals.html?lang=fr`, { waitUntil: 'networkidle' });
+  await noHorizontalOverflow(visualGuidePage, 'mobile French visual guide');
+  assert.equal(await visualGuidePage.locator('[data-visual-map-nodes] button').count(), 6, 'mobile visual guide map loses a stage');
+  assert.equal(await visualGuidePage.locator('.visual-card').count(), 12, 'mobile visual guide loses teaching boards');
+  await visualGuidePage.screenshot({ path: path.join(visualEvidenceDirectory, 'visual-guide-mobile-fr.png'), fullPage: false });
+  await visualGuidePage.close();
+  const noScriptVisualContext = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
+  const noScriptVisualPage = await noScriptVisualContext.newPage();
+  await noScriptVisualPage.goto(`${origin}/site/visuals.html?lang=en`, { waitUntil: 'domcontentloaded' });
+  assert.equal(await noScriptVisualPage.locator('[data-visual-map-fallback] li').count(), 6, 'visual guide has no static route when JavaScript is disabled');
+  assert.equal(await noScriptVisualPage.locator('[data-visual-map-fallback] a').count(), 6, 'static visual guide route has no lesson links');
+  await noScriptVisualContext.close();
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(`${origin}/site/?lang=fr`, { waitUntil: 'networkidle' });
   await noHorizontalOverflow(page, 'mobile localized six-term concept map');
