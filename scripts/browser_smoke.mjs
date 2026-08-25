@@ -720,6 +720,16 @@ try {
     'zh-tw': ['問題', '來源', '觀察', '判斷', '停止'],
     fr: ['Question', 'Source', 'Observation', 'Décision', 'Arrêt'],
   };
+  const visualRouteCompassTitles = {
+    en: 'Read one page as a four-step route',
+    zh: '把一页内容读成四步路线',
+    es: 'Lee una página como un recorrido de cuatro pasos',
+    ja: '1ページを4つの手順で読む',
+    ko: '한 페이지를 네 단계 경로로 읽기',
+    de: 'Eine Seite als Weg in vier Schritten lesen',
+    'zh-tw': '把一頁內容讀成四步路線',
+    fr: 'Lire une page en quatre étapes',
+  };
   const visualGuideGoalLabels = {
     en: ['I need a first safe task', 'I am not sure what the result proves', 'I need to verify a claim', 'I want to reuse the method'],
     zh: ['我想先完成一次安全任务', '我不确定结果能证明什么', '我需要核对一个结论', '我想把方法用到别的任务'],
@@ -745,7 +755,12 @@ try {
     assert.equal(await visualGuidePage.locator('[data-visual-evidence-nodes] button').count(), 5, `${locale} evidence map lost a step`);
     assert.equal(await visualGuidePage.locator('[data-visual-evidence-fallback] li').count(), 5, `${locale} evidence map text fallback lost a step`);
     assert.notEqual(await visualGuidePage.locator('[data-visual-evidence-image]').getAttribute('alt'), '', `${locale} evidence map image has no alternative text`);
-    assert.equal(await visualGuidePage.locator('.visual-card').count(), 15, `${locale} visual guide lost a teaching board`);
+    assert.equal(await visualGuidePage.locator('.visual-card').count(), 16, `${locale} visual guide lost a teaching board`);
+    assert.equal(await visualGuidePage.locator('.visual-header').evaluate((header) => getComputedStyle(header).position), 'relative', `${locale} visual guide navigation can cover a diagram while scrolling`);
+    const routeCompassCard = visualGuidePage.locator('.visual-card').first();
+    assert.equal(await routeCompassCard.locator('h3').innerText(), visualRouteCompassTitles[locale], `${locale} reader route compass title is not localized`);
+    assert.match(await routeCompassCard.locator('img').getAttribute('src'), /reader-route-compass-red-black\.svg$/, `${locale} visual guide lost the reader route compass board`);
+    assert.match(await routeCompassCard.locator('.visual-action-link').getAttribute('href'), new RegExp(`llm-fundamentals-[A-Z]+\\.md&lang=${locale}$`), `${locale} reader route compass lesson does not stay localized`);
     assert.deepEqual(await visualGuidePage.locator('[data-visual-goal-nodes] button strong').allTextContents(), visualGuideGoalLabels[locale], `${locale} visual guide goal entry labels are not localized`);
     assert.equal(await visualGuidePage.locator('[data-visual-goal-nodes] button').count(), 4, `${locale} visual guide goal map lost an entry`);
     assert.equal(await visualGuidePage.locator('[data-visual-goal-fallback] li').count(), 4, `${locale} visual guide goal fallback lost an entry`);
@@ -773,7 +788,7 @@ try {
   await noHorizontalOverflow(visualGuidePage, 'mobile French visual guide');
   assert.equal(await visualGuidePage.locator('[data-visual-map-nodes] button').count(), 6, 'mobile visual guide map loses a stage');
   assert.equal(await visualGuidePage.locator('[data-visual-evidence-nodes] button').count(), 5, 'mobile evidence map loses a step');
-  assert.equal(await visualGuidePage.locator('.visual-card').count(), 15, 'mobile visual guide loses teaching boards');
+  assert.equal(await visualGuidePage.locator('.visual-card').count(), 16, 'mobile visual guide loses teaching boards');
   await visualGuidePage.screenshot({ path: path.join(visualEvidenceDirectory, 'visual-guide-mobile-fr.png'), fullPage: false });
   await visualGuidePage.close();
   const noScriptVisualContext = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
