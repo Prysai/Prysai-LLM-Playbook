@@ -942,6 +942,28 @@ a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: bl
 .foundation-journey-head .index-panel-intro { margin: 0; max-width: 42rem; }
 .foundation-journey-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(18rem, 1.1fr); gap: 1px; background: var(--line-dark); }
 .foundation-journey-copy { min-width: 0; padding: 1rem; background: var(--ink); }
+.foundation-journey-interactive { display: grid; gap: 1px; margin-bottom: 1px; background: var(--line-dark); }
+.foundation-journey-node-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; margin: 0; padding: 0; list-style: none; background: var(--line-dark); }
+.foundation-journey-node-grid > li { display: flex; min-width: 0; }
+.foundation-journey-node { display: grid; width: 100%; min-height: 6.5rem; align-content: space-between; gap: .7rem; padding: .8rem; border: 0; border-radius: 0; color: var(--ink); background: #fff; cursor: pointer; font: inherit; text-align: left; transition: color .15s ease, background .15s ease; }
+.foundation-journey-node span { color: var(--red); font: 700 .66rem/1.2 Consolas, 'Courier New', monospace; }
+.foundation-journey-node strong { font-size: .82rem; line-height: 1.2; }
+.foundation-journey-node:hover, .foundation-journey-node:focus-visible { color: var(--red); background: #fffafb; }
+.foundation-journey-node[aria-pressed="true"] { color: #fff; background: var(--red); }
+.foundation-journey-node[aria-pressed="true"] span { color: var(--ink); }
+.foundation-journey-node[aria-pressed="true"]:hover, .foundation-journey-node[aria-pressed="true"]:focus-visible { color: #fff; background: var(--red-dark); }
+.foundation-journey-detail { display: grid; align-content: start; gap: .75rem; min-width: 0; padding: 1rem; color: #fff; background: var(--ink); }
+.foundation-journey-detail-label { color: var(--red); font: 700 .64rem/1.3 Consolas, 'Courier New', monospace; letter-spacing: .08em; }
+.foundation-journey-detail h4 { margin: 0; color: #fff; font-size: clamp(1.35rem, 2vw, 1.8rem); letter-spacing: -.045em; line-height: 1; }
+.foundation-journey-detail p { margin: 0; color: #c8c8c2; font-size: .75rem; line-height: 1.5; }
+.foundation-journey-next { display: grid; gap: .25rem; margin-top: .15rem !important; padding-top: .7rem; border-top: 1px solid var(--line-dark); }
+.foundation-journey-next span { color: var(--red); font: 700 .62rem/1.3 Consolas, 'Courier New', monospace; letter-spacing: .06em; text-transform: uppercase; }
+.foundation-journey-next strong { color: #fff; font-size: .8rem; line-height: 1.35; }
+.foundation-journey-detail .text-link { justify-self: start; margin-top: .15rem; color: #fff; }
+.foundation-journey-detail .text-link:hover, .foundation-journey-detail .text-link:focus-visible { color: var(--red); }
+.foundation-journey-fallback { margin-top: 1px; padding: 1rem 1.2rem; border-top: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); background: #fff; }
+.foundation-journey-fallback summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; cursor: pointer; color: var(--ink); font-size: .78rem; font-weight: 800; }
+.foundation-journey-fallback > p { max-width: 48rem; margin: .8rem 0 0; color: var(--muted); font-size: .72rem; line-height: 1.5; }
 .foundation-journey-list { display: grid; gap: 1px; margin: 0; padding: 0; list-style: none; background: var(--line-dark); }
 .foundation-journey-list li { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr); gap: .25rem .8rem; padding: .9rem; background: #fff; }
 .foundation-journey-list li:nth-child(1), .foundation-journey-list li:nth-child(4) { color: #fff; background: var(--ink); }
@@ -1006,12 +1028,14 @@ a[data-locale-anchor-unavailable="true"] [data-locale-anchor-note] { display: bl
   .foundation-evidence-figure { grid-template-columns: 1fr; gap: .75rem; }
   .foundation-visual-links { grid-template-columns: 1fr; }
   .foundation-journey-grid { grid-template-columns: 1fr; }
+  .foundation-journey-node-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .foundation-visual-card, .foundation-visual-card-wide { grid-column: auto; grid-template-columns: minmax(0, 7rem) minmax(0, 1fr) auto; gap: .75rem; padding: .75rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .foundation-loop-node { transition: none; }
   .foundation-loop-node:hover, .foundation-loop-node:focus-visible { transform: none; }
+  .foundation-journey-node { min-height: 5.2rem; padding: .7rem; }
 }
 
 @media (max-width: 760px) {
