@@ -181,9 +181,10 @@ artifact boundary, credential-signature and symlink guards, loopback binding,
 artifact root, listing boundary, and path-traversal boundary.
 
 `check_deployed_site.py` is the post-publish public-integrity check used by
-the Docs deployment job. It compares the generated discovery files, every
-static locale entry, and route-critical Reader assets with the public host
-using a bounded retry window. It is intentionally separate from content,
+the Docs deployment job. It compares the generated discovery files, the
+canonical visual-guide entry, every static locale entry, and route-critical
+Reader assets with the public host using a bounded retry window. It is
+intentionally separate from content,
 translation, learner, and release-readiness evidence. Run it only with an
 explicit artifact and public base URL, for example:
 
