@@ -34,7 +34,7 @@ const expectedCounts = {
   readingLoop: 6,
   actionBoundary: 5,
   triage: 4,
-  cards: 20,
+  cards: 21,
 };
 
 const build = spawnSync(python, ['-X', 'utf8', 'scripts/build_pages_artifact.py', '--output', artifact], {
@@ -102,6 +102,7 @@ try {
     for (const [name, selector] of Object.entries(selectors)) {
       assert.equal(await count(selector), expectedCounts[name], `${locale} ${name} visual contract changed`);
     }
+    assert.equal(await count('.visual-card img[src*="first-task-evidence-bridge-red-black.svg"]'), 1, `${locale} first-task evidence bridge is missing from the visual gallery`);
     await page.locator('[data-visual-maturity-nodes] button').last().click();
     assert.equal(await page.locator('[data-visual-maturity-nodes] button').last().getAttribute('aria-pressed'), 'true', `${locale} maturity selection is not exposed`);
     assert.match(await page.locator('[data-visual-maturity-link]').getAttribute('href'), new RegExp(`15-research-track-[A-Z]+\\.md&lang=${locale}$`), `${locale} maturity route lost its locale`);

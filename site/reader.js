@@ -619,7 +619,7 @@
     { tokens: ['chapter-20-personal-codex-work-system'], path: 'assets/teaching/beginner-practice-loop-red-black.svg', step: 5 },
     { tokens: ['chapter-21-team-capability-system', 'agent-handoff-receipt-checkpoints'], path: 'assets/teaching/agent-handoff-receipt-checkpoints-red-black.svg', step: 5 },
     { tokens: ['chapter-22-continuous-update-and-future-proofing', 'interruption-checkpoint'], path: 'assets/teaching/interruption-checkpoint-card-red-black.svg', step: 4 },
-    { tokens: ['lab-001-first-safe-task', 'first-turn-contract'], path: 'assets/teaching/first-turn-contract-card.svg', step: 1 },
+    { tokens: ['lab-001-first-safe-task', 'first-turn-contract'], path: 'assets/teaching/first-task-evidence-bridge-red-black.svg', step: 1 },
     { tokens: ['lab-002-task-protocol'], path: 'assets/teaching/prompt-contract-six-fields-red-black.svg', step: 1 },
     { tokens: ['lab-003-evidence-review'], path: 'assets/teaching/experiment-record-anatomy-red-black.svg', step: 3 },
     { tokens: ['lab-005-design-a-skill'], path: 'assets/teaching/skill-to-observable-output.svg', step: 1 },
@@ -651,6 +651,16 @@
   // the decision the selected board actually teaches. Unlisted boards keep
   // the route copy below as a deliberate fallback.
   const readerVisualBriefs = {
+    'first-task-evidence-bridge-red-black.svg': {
+      en: { title: 'Make the first task checkable', body: 'Choose one observable result, keep the input and stop boundary visible, save what actually happened, make one focused check, and hand off the result with its limits.', next: 'What small record would let another person inspect this attempt?', boundary: 'The board describes an evidence bridge; it does not prove that a run succeeded, that the input was authorized, or that one attempt shows mastery.' },
+      zh: { title: '让第一次任务可以检查', body: '选择一个可观察结果，保留输入和停止边界，保存实际发生的内容，做一次聚焦检查，再交接结果和限制。', next: '保留哪份小记录，才能让别人检查这次尝试？', boundary: '这张图说明一座证据桥；它不能证明运行成功、输入已获授权，也不能把一次尝试当成掌握。' },
+      es: { title: 'Haz comprobable la primera tarea', body: 'Elige un resultado observable, deja visibles la entrada y el límite de parada, guarda lo que ocurrió, haz una comprobación concreta y entrega el resultado con sus límites.', next: '¿Qué registro pequeño permitiría que otra persona revisara este intento?', boundary: 'El tablero describe un puente hacia la evidencia; no demuestra que la ejecución funcionara, que la entrada estuviera autorizada ni que un solo intento implique dominio.' },
+      ja: { title: '最初のタスクを確認できる形にする', body: '観察できる結果を1つ選び、入力と停止の境界を見えるようにし、実際に起きたことを保存します。重要な点を1つ確認し、限界と一緒に結果を引き継ぎます。', next: '他の人がこの試行を確認するには、どんな小さな記録を残せばよいか？', boundary: 'この図は証拠へつなぐ道筋を示すだけです。実行の成功、入力の許可、一度の試行による習得を証明しません。' },
+      ko: { title: '첫 작업을 확인 가능한 형태로 만들기', body: '관찰 가능한 결과 하나를 정하고 입력과 중지 경계를 분명히 남깁니다. 실제로 일어난 일을 저장하고 중요한 항목 하나를 점검한 뒤 결과와 한계를 인계하세요.', next: '다른 사람이 이 시도를 확인하려면 어떤 작은 기록을 남겨야 하는가?', boundary: '이 그림은 증거로 이어지는 다리를 설명할 뿐입니다. 실행 성공, 입력 권한 또는 한 번의 시도로 얻은 숙련을 증명하지 않습니다.' },
+      de: { title: 'Die erste Aufgabe prüfbar machen', body: 'Wähle ein beobachtbares Ergebnis, halte Eingabe und Stoppgrenze sichtbar, sichere den tatsächlichen Ablauf, prüfe ein wichtiges Detail und übergib Ergebnis und Grenzen.', next: 'Welcher kleine Beleg würde es einer anderen Person ermöglichen, diesen Versuch zu prüfen?', boundary: 'Die Tafel zeigt eine Brücke zum Beleg. Sie beweist weder einen erfolgreichen Lauf noch eine Berechtigung der Eingabe oder Beherrschung durch einen einzelnen Versuch.' },
+      'zh-tw': { title: '讓第一次任務變得可檢查', body: '選擇一個可觀察的結果，保留輸入與停止界線，保存實際發生的內容，做一次聚焦檢查，再連同限制交接結果。', next: '要保留哪一份小型紀錄，別人才有辦法檢查這次嘗試？', boundary: '這張圖說明一座通往證據的橋；它不能證明執行成功、輸入已獲授權，也不能把一次嘗試當成已經學會。' },
+      fr: { title: 'Rendre la première tâche vérifiable', body: 'Choisissez un résultat observable, gardez visibles l’entrée et la limite d’arrêt, conservez ce qui s’est réellement passé, vérifiez un point précis, puis transmettez le résultat avec ses limites.', next: 'Quel petit relevé permettrait à une autre personne de vérifier cet essai ?', boundary: 'La planche décrit un chemin vers des preuves ; elle ne prouve ni la réussite de l’exécution, ni l’autorisation des entrées, ni la maîtrise après un seul essai.' },
+    },
     'response-claim-triage-red-black.svg': {
       en: { title: 'Classify the claim before checking it', body: 'Separate text, execution, external-effect, and unknown claims so each one gets the smallest useful check.', next: 'Which claim type is this, and what would count as a direct check?', boundary: 'The board classifies a claim; it does not verify the claim, report that a tool ran, or prove an external effect.' },
       zh: { title: '先分类结论，再选择检查', body: '把文字、执行、外部影响和未知结论分开，让每一类都得到最小而有用的检查。', next: '这是什么类型的结论？什么才算直接检查？', boundary: '这张图只帮助分类结论；它不能核实结论、证明工具已经运行，也不能证明外部影响已经发生。' },

@@ -7,7 +7,7 @@
     'beginner-safety-stop-card.svg', 'capability-ladder-red-black.svg', 'claim-to-evidence-audit-red-black.svg',
     'conversation-safety-card-red-black.svg', 'evidence-maturity-ladder-red-black.svg', 'evidence-recovery-ladder.svg',
     'evidence-to-decision-stop-map-red-black.svg', 'failed-interaction-recovery-red-black.svg',
-    'field-signal-to-safe-degradation-red-black.svg', 'first-attempt-evidence-receipt-red-black.svg',
+    'field-signal-to-safe-degradation-red-black.svg', 'first-attempt-evidence-receipt-red-black.svg', 'first-task-evidence-bridge-red-black.svg',
     'first-turn-contract-card.svg', 'foundation-first-visit-route-red-black.svg', 'foundation-route-map-red-black.svg',
     'four-evidence-lenses-red-black.svg', 'goal-entry-decision-map-red-black.svg', 'interruption-checkpoint-card-red-black.svg',
     'lifecycle-checkpoints.svg', 'llm-foundation-core-path-red-black.svg', 'llm-six-terms-to-one-check.svg',
