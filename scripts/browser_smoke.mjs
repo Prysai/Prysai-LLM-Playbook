@@ -1051,7 +1051,7 @@ try {
   await page.goto(`${origin}/site/?lang=fr`, { waitUntil: 'networkidle' });
   await noHorizontalOverflow(page, 'mobile localized six-term concept map');
   assert.equal(await page.locator('.foundation-concept-card').count(), 6, 'mobile six-term concept map is not discoverable');
-  assert.equal(await page.locator('#foundation-visuals .foundation-visual-card').count(), 9, 'mobile foundation visual section is not discoverable');
+  assert.equal(await page.locator('#foundation-visuals .foundation-visual-card').count(), 10, 'mobile foundation visual section is not discoverable');
   const mobileJourney = page.locator('#foundation-journey');
   assert.equal(await mobileJourney.locator('[data-journey-node]').count(), 4, 'mobile learning journey map loses a stage');
   await mobileJourney.locator('[data-journey-node="evidence"]').click();
