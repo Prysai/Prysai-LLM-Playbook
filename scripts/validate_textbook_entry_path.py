@@ -17,7 +17,10 @@ LOCALES = ("EN", "ZH", "ES", "JA", "KO", "DE", "ZHTW", "FR")
 OPTIONAL_MARKERS = {
     "EN": "optional application practice",
     "ZH": "可选应用练习",
-    "ES": "práctica de aplicación opcional",
+    # The Spanish entries use the natural plural because several optional
+    # practice routes are listed together. Keep the validator aligned with
+    # the reader-facing wording instead of forcing a singular calque.
+    "ES": "prácticas de aplicación opcionales",
     "JA": "任意の応用練習",
     "KO": "선택 응용 연습",
     "DE": "optionale Anwendungsübung",

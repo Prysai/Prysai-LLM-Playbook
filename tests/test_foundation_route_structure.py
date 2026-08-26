@@ -20,10 +20,11 @@ SPEC.loader.exec_module(VALIDATOR)
 class FoundationRouteStructureTests(unittest.TestCase):
     def test_all_localized_routes_match_the_foundation_sequence(self) -> None:
         result = subprocess.run(
-            [sys.executable, "scripts/validate_foundation_route_structure.py"],
+            [sys.executable, "-X", "utf8", "scripts/validate_foundation_route_structure.py"],
             cwd=ROOT,
             text=True,
             capture_output=True,
+            encoding="utf-8",
             check=False,
         )
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)

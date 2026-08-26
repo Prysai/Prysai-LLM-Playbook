@@ -20,7 +20,7 @@ SPEC.loader.exec_module(VALIDATOR)
 class TextbookEntryPathTests(unittest.TestCase):
     def test_all_locale_entries_keep_the_textbook_path(self) -> None:
         result = subprocess.run(
-            [sys.executable, "scripts/validate_textbook_entry_path.py"],
+            [sys.executable, "-X", "utf8", "scripts/validate_textbook_entry_path.py"],
             cwd=ROOT,
             text=True,
             capture_output=True,
