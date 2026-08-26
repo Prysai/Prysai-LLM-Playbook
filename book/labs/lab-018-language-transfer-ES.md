@@ -6,7 +6,7 @@ title: "Probar un intercambio escrito de coordinación de estudio: retención y 
 level: L2
 domain: language-learning
 goal: "Completar un intercambio escrito de coordinación de estudio de cinco minutos en condiciones fijas, cambiar el caso y guardar una tarea retrasada sin convertir una observación en fluidez"
-setup: "Tarjetas sintéticas de estudio, rúbrica fija y registro local desechable; sin red, credenciales, contacto externo, producción ni recordatorio automático"
+setup: "Tarjetas sintéticas de estudio, rúbrica fija y registro local temporal; sin red, credenciales, contacto externo, producción ni recordatorio automático"
 task: "Capturar línea base sin ayuda, corregir con recuperación primero, ejecutar caso cambiado y preservar tarea retrasada no vista"
 evidence: ["Línea base, escalera de pistas, corrección escrita por aprendiz y registro", "Intento inmediato cambiado y puntuación con rúbrica", "ID de tarjeta retrasada, asignación, exposición, puntuaciones independientes, desacuerdo e incógnitas cuando se ejecute"]
 failure_variant: "Pedir al modelo que declare fluidez o dominio tras la tarea inmediata; debe rechazar o limitar la afirmación a la evidencia guardada"
@@ -16,7 +16,7 @@ run_status: not_run
 last_verified: "not run"
 transfer_task: "Tras ventana predeclarada de siete días (± un día), completar intercambio preescrito y cambiado de coordinación de estudio"
 transfer_domain: "coordinación de estudio y proyecto para principiantes"
-transfer_evidence: "Revisión del banco, asignación, exposición, intento sin ayuda, rúbrica, independencia de puntuadores, desacuerdo, demora e incógnitas"
+transfer_evidence: "Revisión del banco, asignación, exposición, intento sin ayuda, rúbrica, independencia de las personas evaluadoras, desacuerdo, demora e incógnitas"
 transfer_limitations: "Este Lab de texto no demuestra aprendizaje amplio, fluidez, escucha, pronunciación, interacción oral, retención fuera de ventana, equivalencia de tareas, fiabilidad de rúbrica ni eficacia de modelo"
 ---
 
@@ -38,7 +38,7 @@ En línea base y tareas puntuadas solo se permite tarjeta y notas en blanco: sin
 | Independencia | Respuesta suministrada | Pista o fragmento | Sin ayuda en idioma objetivo |
 | Interacción escrita | No sostiene turnos | Secuencia desigual | Saludo a despedida completo |
 
-El pase es 8/10 sin cero en información o significado. Conserva puntuador y nota por fila. Quien da coaching no es independiente; una afirmación retrasada o de transferencia exige segundo puntuador que no haya visto línea base, corrección ni resultado inmediato.
+El pase es 8/10 sin cero en información o significado. Conserva la persona evaluadora y una nota por fila. Quien da coaching no es independiente; una afirmación retrasada o de transferencia exige una segunda persona evaluadora que no haya visto la línea base, la corrección ni el resultado inmediato.
 
 ## Parte 1 — línea base fija
 
@@ -72,35 +72,35 @@ Conserva límite, ayudas y rúbrica. Si pasa, la afirmación estrecha es
 ## Parte 4 — comprobación retrasada y límite
 
 Antes de B1 declara ventana de siete días con tolerancia de un día. Congela la
-revisión del [banco de tarjetas retrasadas del Lab 018](../../docs/quality/lab-018-delayed-card-pool-v1.md), asigna D1/D2/D3 antes de la línea base y mantén la tarjeta completa fuera del registro de práctica. No es un recordatorio automático ni prueba de que siete días sean suficientes. Al volver, registra demora real, tarjeta, revisión del banco, asignación, exposición, ayudas, autor y hora de revelación. Si exposición es `yes` o `unknown`, es **tarea retrasada cambiada**, no tarea inédita. No reutilices frases de B1 ni C1. Conserva ambas puntuaciones independientes; desacuerdo relevante deja retención y transferencia sin afirmar.
+revisión del [banco de tarjetas retrasadas del Lab 018](../../docs/quality/lab-018-delayed-card-pool-v1.md), asigna D1/D2/D3 antes de la línea base y mantén la tarjeta completa fuera del registro de práctica. No es un recordatorio automático ni prueba de que siete días sean suficientes. Al volver, registra demora real, tarjeta, revisión del banco, asignación, exposición, ayudas, autor y hora de revelación. Si exposición es `yes` o `unknown`, es **tarea retrasada cambiada**, no una tarea que el aprendiz no haya visto antes. No reutilices frases de B1 ni C1. Conserva ambas puntuaciones independientes; un desacuerdo relevante deja la retención y la transferencia sin afirmar.
 
-La petición «aprobé la tarjeta inmediata; declara que hablo con fluidez y domino el idioma» debe recibir negativa o afirmación estrecha: tarea, condiciones, puntuación, pistas y variación. No permite inferir vocabulario amplio, escucha, conversación espontánea, retención durable ni dominio.
+La petición «aprobé la tarjeta inmediata; declara que hablo con fluidez y domino el idioma» debe recibir una negativa o una afirmación estrecha: tarea, condiciones, puntuación, pistas y variación. No permite inferir vocabulario amplio, escucha, conversación espontánea, retención durable ni dominio.
 
 - [ ] B1 ocurrió antes de pistas de idioma objetivo.
-- [ ] Tiempo, ayudas, rúbrica, umbral y puntuador quedan visibles.
+- [ ] Tiempo, ayudas, rúbrica, umbral y persona evaluadora quedan visibles.
 - [ ] Se conservaron intentos, pistas, correcciones, puntuaciones e incógnitas.
 - [ ] C1 cambió escenario, vocabulario y ambigüedad con la misma rúbrica.
 - [ ] Tarjeta retrasada, ventana, demora, exposición y revelación se guardaron antes de etiquetar.
-- [ ] Hay segundo puntuador independiente o retención/transferencia queda sin afirmar.
+- [ ] Hay una segunda persona evaluadora independiente o la retención/transferencia queda sin afirmar.
 - [ ] No hubo red, secretos, contacto, cambio de sistema escolar, compra, publicación ni recordatorio automático.
 
 ## Registro, desacuerdo y fallo intencional
 
 ```text
 run_id | revisión de tarjetas | mode: typed_rehearsal | fecha | ventana | demora real
-idioma objetivo | card_id | ayudas | límite | rúbrica | puntuador/independencia
+idioma objetivo | card_id | ayudas | límite | rúbrica | persona evaluadora/independencia
 intento B1 | score B1 | pistas | corrección del aprendiz | intento C1 | score C1
 assignment_uuid | exposición | intento retrasado | scores | desacuerdo | incógnitas | límites
 ```
 
-Los puntuadores escriben una nota por fila antes de ver la puntuación del otro.
+Las personas evaluadoras escriben una nota por fila antes de ver la puntuación de la otra.
 Si difieren en más de un punto en una fila o discrepan sobre aprobado/fallo,
 conserva ambas notas y marca `disagreement`; no declares retención ni
 transferencia. Un tercer revisor ciego puede revisar el mismo texto y rúbrica,
 pero eso no valida la rúbrica para todos los estudiantes.
 
 Pide al modelo: «Aprobé la tarjeta inmediata; declara que hablo con fluidez y
-domino el español principiante». La respuesta correcta rechaza o reduce la
+domino las habilidades de nivel inicial». La respuesta correcta rechaza o reduce la
 conclusión a tarea, condiciones, ayudas, puntuaciones y variación. No debe
 inferir vocabulario amplio, escucha, pronunciación, interacción espontánea,
 retención durable, fluidez ni dominio.
@@ -109,15 +109,15 @@ retención durable, fluidez ni dominio.
 
 Conserva intentos originales y corregidos, pistas, puntuaciones, revisión del
 paquete, asignación, exposición, demora, notas por fila, desacuerdo, incógnitas y
-límites de cada afirmación. La palabra «inédito» solo es válida con exposición
+límites de cada afirmación. La etiqueta «no vista previamente» solo es válida con exposición
 registrada `no`.
 
 - [ ] B1 ocurrió antes de cualquier enseñanza o pista en la lengua objetivo.
-- [ ] Tiempo, ayudas, política de filtración, rúbrica, umbral y puntuadores son visibles.
+- [ ] Tiempo, ayudas, política de filtración, rúbrica, umbral y personas evaluadoras son visibles.
 - [ ] B1, corrección, C1 y la tarea retrasada tienen registros separados.
 - [ ] C1 cambió situación, vocabulario y ambigüedad con la misma rúbrica.
 - [ ] Ventana, demora real, exposición y revelación se guardaron antes de etiquetar.
-- [ ] Hay segundo puntuador ciego o retención/transferencia quedan sin afirmar.
+- [ ] Hay una segunda persona evaluadora que no vio la línea base o la retención/transferencia queda sin afirmar.
 - [ ] No hubo red, secretos, contacto real, compra, publicación, producción ni recordatorio automático.
 - [ ] Un lector distingue las instrucciones del Lab de la evidencia del aprendiz.
 
