@@ -6,6 +6,13 @@ Playbook is ready for public production use.
 
 ## Unreleased
 
+### Validation reliability (2026-08-26)
+
+- Fixed Windows test discovery to run locale validators with UTF-8 output, and
+  aligned the Spanish optional-practice boundary check with the natural plural
+  wording used by the reader entries. `npm test` now completes with 49/49
+  checks passing on this worktree.
+
 ### French locale candidate (2026-08-21)
 
 - Added the eighth registered interface and course route: French (`fr`). The 22 chapters and 18 Labs now have same-locale candidate files and routes.
