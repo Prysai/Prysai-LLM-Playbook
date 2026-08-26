@@ -7,6 +7,8 @@ research route's related visual sequence. It records route and rendering
 checks; it does not establish translation quality, learner comprehension,
 transfer, independent review, or release readiness.
 
+**Follow-up verification:** 2026-08-26 at commit `4a12e18`.
+
 ## Change
 
 - `site/reader.js` now supplies localized title, next-question, and evidence-
@@ -37,6 +39,8 @@ transfer, independent review, or release readiness.
 The ladder separates designed, rendered, practiced, transferred, and
 independently reviewed evidence. Adding it to the Reader improves discovery of
 that distinction; it does not move this project to a higher evidence stage.
-The full browser smoke suite remains separately tracked because its latest
-rerun timed out after the focused checks, so this record must not be read as a
-production or deployment claim.
+The full browser smoke suite completed at commit `4a12e18` when run with
+`BROWSER_SMOKE_TIMEOUT_MS=600000`; the default 240-second guard had timed out
+once without an assertion stack. This is bounded local regression evidence,
+not a performance target, production claim, deployment proof, or learner
+evidence.

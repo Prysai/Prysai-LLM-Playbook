@@ -7,6 +7,8 @@ the local candidate artifact. It does not establish translation quality,
 accessibility conformance, learner comprehension, transfer, or release
 readiness.
 
+**Follow-up verification:** 2026-08-26 at commit `4a12e18`.
+
 ## Reproduction
 
 ```text
@@ -35,15 +37,15 @@ python -X utf8 scripts/run_tests.py
 | No-script fallback | passed | English ordered text fallbacks for every interactive visual route |
 | Repository validators | passed | project, structure, content completeness, learning contract, and site i18n |
 | Regression suite | passed | `script_tests=48 passed=49 failed=0` |
-| Full browser smoke | historical pass; current rerun timed out | An earlier run recorded exit code 0 after the focused viewer checks. The 2026-08-25 rerun reached the 240-second guard without a new assertion stack, so this remains an open investigation rather than current pass evidence. |
+| Full browser smoke | passed with an extended diagnostic budget | The default 240-second guard timed out once without an assertion stack. A bounded rerun at commit `4a12e18` with `BROWSER_SMOKE_TIMEOUT_MS=600000` completed with `BROWSER_SMOKE_OK`; the longer budget is test-run evidence, not a product-performance claim. |
 
 The focused commands are intentionally narrower than the full browser smoke.
 They are fast regression signals for the visual guide, viewer, and Lab 003
 Reader route. The Reader action note and Traditional Chinese mobile render
-were also checked with a local Playwright run. The full browser suite retains a
-historical pass record, but its latest rerun timed out and needs a separate
-performance investigation before it can be treated as current evidence. None
-of these checks substitute for deployment propagation or learner checks.
+were also checked with a local Playwright run. The full suite can exceed the
+default 240-second guard in this Windows worktree, but the same suite completed
+within a 600-second diagnostic budget at the recorded commit. This does not
+establish a performance target, deployment propagation, or learner evidence.
 
 ## Follow-up: additive foundation bridge audit
 
