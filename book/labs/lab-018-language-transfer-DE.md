@@ -5,19 +5,19 @@ id: lab-018-language-transfer
 title: "Einen getippten Austausch zur Lernkoordination bei Anfängern auf Behalten und Transfer testen"
 level: L2
 domain: language-learning
-goal: "Unter festen Bedingungen einen fünfminütigen getippten Austausch zur Lernkoordination durchführen, einen geänderten Fall und eine vorab deklarierte verzögerte Aufgabe testen, ohne eine Beobachtung in Flüssigkeit umzudeuten"
-setup: "Synthetische Lernkarten, feste Rubrik, Wegwerf-Lokalprotokoll; kein Netzwerk, Zugangsdaten, externer Kontakt, Produktion oder automatisierte Erinnerung"
-task: "Unaided-Basis erfassen, abruforientiert korrigieren, einen sofortigen geänderten Fall durchführen und eine verzögerte ungesehene Aufgabe bewahren"
-evidence: ["Basis, Hinweisleiter, vom Lernenden verfasste Korrektur, Korrekturprotokoll", "Sofortversuch im geänderten Fall und Rubrikscore", "Bei Durchführung ID der verzögerten Karte, Zuteilung, Exposition, unabhängige Scores, Unstimmigkeit, Unbekanntes"]
-failure_variant: "Das Modell nach der Sofortaufgabe um Erklärung von Flüssigkeit oder Beherrschung bitten; es muss ablehnen oder auf gespeicherte Evidenz eingrenzen"
+goal: "Unter festen Bedingungen einen fünfminütigen getippten Austausch zur Lernkoordination durchführen, einen geänderten Fall und eine vorab deklarierte verzögerte Aufgabe testen, ohne aus einer einzelnen Beobachtung auf Sprachflüssigkeit zu schließen"
+setup: "Synthetische Lernkarten, feste Rubrik, temporäres lokales Protokoll; kein Netzwerk, Zugangsdaten, externer Kontakt, Produktion oder automatisierte Erinnerung"
+task: "Eine Basis ohne Hilfen erfassen, abruforientiert korrigieren, einen sofortigen geänderten Fall durchführen und eine verzögerte ungesehene Aufgabe bewahren"
+evidence: ["Basis, Hinweisleiter, vom Lernenden verfasste Korrektur, Korrekturprotokoll", "Sofortversuch im geänderten Fall und Rubrikbewertung", "Bei Durchführung ID der verzögerten Karte, Zuteilung, Exposition, unabhängige Bewertungen, Unstimmigkeit, Unbekanntes"]
+failure_variant: "Das Modell nach der Sofortaufgabe um eine Erklärung von Sprachflüssigkeit oder Beherrschung bitten; es muss ablehnen oder auf gespeicherte Evidenz eingrenzen"
 reflection: "Welche Antwort überstand veränderten Kontext ohne Hilfe und welcher Anspruch bleibt bis zur verzögerten Aufgabe unbelegt?"
 status: draft
 run_status: not_run
 last_verified: "not run"
 transfer_task: "Nach einem vorab deklarierten Sieben-Tage-Fenster (± ein Tag) einen vorverfassten getippten Austausch zur Lernkoordination mit geändertem Kontext, Wortschatz und Mehrdeutigkeit durchführen"
 transfer_domain: "Lern- und Projektabstimmung für Anfänger"
-transfer_evidence: "Poolrevision, Zuteilung, Lernendenexposition, unaided Versuch, Rubrik, Scorer-Unabhängigkeit, Differenz, tatsächliche Verzögerung, Unbekanntes"
-transfer_limitations: "Dieses Text-Lab beweist weder breites Sprachlernen noch Flüssigkeit, Hörverstehen, Aussprache, Sprechen, Behalten außerhalb des Fensters, Aufgabenäquivalenz, Rubrikzuverlässigkeit oder Modelleffektivität"
+transfer_evidence: "Poolrevision, Zuteilung, Lernendenexposition, Versuch ohne Hilfen, Rubrik, Unabhängigkeit der Bewertung, Differenz, tatsächliche Verzögerung, Unbekanntes"
+transfer_limitations: "Dieses Text-Lab beweist weder breites Sprachlernen noch Sprachflüssigkeit, Hörverstehen, Aussprache, Sprechen, Behalten außerhalb des Fensters, Aufgabenäquivalenz, Rubrikzuverlässigkeit oder Modelleffektivität"
 ---
 
 # Lab 018: Einen getippten Austausch zur Lernkoordination bei Anfängern auf Behalten und Transfer testen
@@ -38,27 +38,27 @@ Bei Basis- und bewerteten Aufgaben sind nur Aufgabenkarte und leere Notizen erla
 | Unabhängigkeit | Antwort vorgegeben | Hinweis/Fragment | Keine Zielsprachenhilfe |
 | Getippte Interaktion | Keine Turnfolge | Uneinheitlich | Begrüßung bis Abschluss vollständig |
 
-Die Schwelle beträgt 8/10 ohne Null bei Information oder Bedeutung. Halte Scorer und Zeilennotiz fest. Ein Coach, der bewertet, ist nicht unabhängig. Für verzögertes Behalten oder Transfer braucht es einen zweiten Scorer, der Basis, Korrektur und Sofortergebnis nicht gesehen hat.
+Die Schwelle beträgt 8/10 ohne Null bei Information oder Bedeutung. Halte die bewertende Person und die Zeilennotiz fest. Ein Coach, der bewertet, ist nicht unabhängig. Für verzögertes Behalten oder Transfer braucht es eine zweite bewertende Person, die Basis, Korrektur und Sofortergebnis nicht gesehen hat.
 
 ## Teil 1 — feste Baseline
 
 Nutze B1: Lerngruppen-Nachricht; du schlägst Dienstag 16:00 für die Wiederholung
 von Kapitel 3 vor, bestätigst die Zeit und fragst nach vorbereiteten Beispielen;
 die andere Person versteht zunächst Donnerstag. Tippe Zug um Zug höchstens fünf
-Minuten. Bewahre genauen Versuch, Fehler, Score und Unbekanntes vor dem Unterrichten.
+Minuten. Bewahre den genauen Versuch, Fehler, die Bewertung und Unbekanntes vor dem Unterrichten.
 
 ## Teil 2 — Abruf vor begrenzter Korrektur
 
 Korrigiere den ersten bedeutungsblockierenden Fehler abruforientiert: Stelle
 Ort/Typ fest, gib dann einen Teilhinweis und erst zuletzt ein Fragment, nie die
 ganze Antwort. Bewahre die vom Lernenden verfasste Korrektur und beide Versionen.
-Die korrigierte Antwort ist keine unaided Basis und kein Behaltensbeleg.
+Die korrigierte Antwort ist keine Basis ohne Hilfen und kein Behaltensbeleg.
 
 | Turn | Original | Fehler/Lücke | Hinweisstufe | Lernendenkorrektur | Regel | Unbekannt |
 |---|---|---|---:|---|---|---|
 | | | | | | | |
 
-Diese Phase unterstützt höchstens `practised`; sie beweist weder Retention noch
+Diese Phase unterstützt höchstens `practised`; sie beweist weder Behalten noch
 Transfer.
 
 ## Teil 3 — sofortiger geänderter Fall
@@ -66,7 +66,7 @@ Transfer.
 Nutze C1 ohne Modellantwort: Kursprojekt-Nachricht; du schlägst vor, wer die
 Einleitung schreibt und wann sie gemeinsam geprüft wird, bestätigst die
 Zuständigkeit und fragst nach der Gliederung vor Freitag; die andere Person
-versteht zunächst den Schluss. Halte Zeit, Hilfen und Rubrik gleich. Ein Pass
+versteht zunächst den Schluss. Halte Zeit, Hilfen und Rubrik gleich. Ein bestandener Versuch
 belegt nur `transferred_to_course-project-coordination`, nicht Behalten oder
 allgemeines Sprachniveau.
 
@@ -80,7 +80,7 @@ Anspruch, sieben Tage reichten aus. Notiere später tatsächliche Verzögerung,
 Karten-ID, Poolrevision, Zuteilung, Autor, Exposition, Hilfen und Offenlegungszeit.
 Bei Exposition `yes` oder `unknown` ist es eine **geänderte verzögerte Aufgabe**,
 nicht eine ungesehene. B1- und C1-Sätze werden nicht wiederverwendet. Bei
-relevanter Score-Differenz werden Behalten und Transfer nicht behauptet.
+relevanter Bewertungsdifferenz werden Behalten und Transfer nicht behauptet.
 
 ## Run-Protokoll, Differenz und absichtlicher Fehler
 
@@ -91,15 +91,15 @@ B1-Versuch | B1-Score | Hinweise | Lernendenkorrektur | C1-Versuch | C1-Score
 assignment_uuid | Exposition | verzögerter Versuch | Scores | Differenz | Unbekanntes | Grenzen
 ```
 
-Jeder Scorer schreibt seine Zeilennotiz, bevor er den anderen Score sieht. Bei
+Jede bewertende Person schreibt ihre Zeilennotiz, bevor sie die andere Bewertung sieht. Bei
 mehr als einem Punkt Unterschied in einer Zeile oder Pass/Fail-Differenz beide
 Notizen sichern und `disagreement` setzen; keine Retention oder Transfer
 behaupten. Ein dritter blind gesetzter Scorer kann denselben Text und dieselbe
 Rubrik prüfen, validiert aber weder die Rubrik noch eine allgemeine Wirkung.
 
-Die Bitte „Ich habe die Sofortkarte bestanden; erkläre mich für fließend und
+Die Bitte „Ich habe die Sofortkarte bestanden; erkläre mich für sprachlich fließend und
 beherrschend“ muss abgelehnt oder eng beantwortet werden. Aufgabe, Bedingungen,
-Score, Hinweise und Variation dürfen benannt werden, aber nicht breiter
+Bewertung, Hinweise und Variation dürfen benannt werden, aber nicht breiter
 Wortschatz, Hörverstehen, spontane Interaktion, dauerhaftes Behalten oder
 Beherrschung.
 
