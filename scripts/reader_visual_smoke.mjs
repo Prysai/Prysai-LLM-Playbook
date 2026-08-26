@@ -37,6 +37,16 @@ const researchLocales = [
   ['zh-tw', 'ZHTW'],
   ['fr', 'FR'],
 ];
+const skillLocales = [
+  ['en', 'EN', 'A Skill must know when to yield'],
+  ['zh', 'ZH', 'Skill 必须知道什么时候让出'],
+  ['es', 'ES', 'Un Skill debe saber cuándo ceder'],
+  ['ja', 'JA', 'Skill には、譲るべき時を判断する境界が要る'],
+  ['ko', 'KO', 'Skill은 언제 물러나야 하는지도 알아야 합니다'],
+  ['de', 'DE', 'Ein Skill muss auch wissen, wann er abgeben muss'],
+  ['zh-tw', 'ZHTW', 'Skill 也必須知道何時讓出'],
+  ['fr', 'FR', 'Un Skill doit aussi savoir quand céder la main'],
+];
 const firstTaskLocales = [
   ['en', 'EN', 'Lab 001: Make the first request usable', 'Make the first task checkable'],
   ['zh', 'ZH', '实验 001：让第一个请求变得可用', '让第一次任务可以检查'],
@@ -146,7 +156,24 @@ try {
     assert.notEqual((await visual.locator('.reader-inline-visual-boundary').innerText()).trim(), '', `${locale} Lab 001 visual has no evidence boundary`);
     await noHorizontalOverflow(`${locale} Lab 001 Reader`);
   }
-  console.log(`READER_VISUAL_SMOKE_OK locales=${locales.length} lab=003 first_task_locales=${firstTaskLocales.length} research_locales=${researchLocales.length} chapter=15 mobile=390 no_horizontal_overflow=1`);
+
+  for (const [locale, suffix, thesis] of skillLocales) {
+    await page.goto(`${origin}/site/reader.html?path=book%2Fchapters%2F11-designing-a-skill-${suffix}.md&lang=${locale}`, { waitUntil: 'networkidle' });
+    await page.locator('[data-reader-article][aria-busy="false"] h1').waitFor();
+    const visual = page.locator('[data-reader-inline-visual]');
+    assert.equal(await visual.count(), 1, `${locale} Chapter 11 is missing its inline teaching visual`);
+    assert.match(await visual.getAttribute('data-reader-inline-visual') || '', /skill-trigger-boundary-decision-map\.svg$/, `${locale} Chapter 11 selected the wrong teaching visual`);
+    assert.equal((await visual.locator('.reader-visual-thesis').innerText()).includes(thesis), true, `${locale} Chapter 11 Skill boundary thesis is not localized`);
+    assert.notEqual((await visual.locator('img').getAttribute('alt') || '').trim(), '', `${locale} Chapter 11 Skill boundary visual has no alternative text`);
+    assert.match(await visual.locator('img').getAttribute('src') || '', /assets\/teaching\/skill-trigger-boundary-decision-map\.svg$/, `${locale} Chapter 11 Skill boundary asset is missing`);
+    assert.notEqual((await visual.locator('.reader-visual-explanation li').textContent() || '').trim(), '', `${locale} Chapter 11 Skill boundary visual has no text explanation`);
+    assert.notEqual((await visual.locator('.reader-inline-visual-boundary').innerText()).trim(), '', `${locale} Chapter 11 Skill boundary visual has no evidence boundary`);
+    const related = page.locator('[data-reader-related-visuals]');
+    assert.equal(await related.isVisible(), true, `${locale} Chapter 11 related visuals are not discoverable`);
+    assert.equal(await related.locator('.reader-related-visual-card').count(), 2, `${locale} Chapter 11 related visual sequence changed`);
+    await noHorizontalOverflow(`${locale} Chapter 11 Reader`);
+  }
+  console.log(`READER_VISUAL_SMOKE_OK locales=${locales.length} lab=003 first_task_locales=${firstTaskLocales.length} research_locales=${researchLocales.length} skill_locales=${skillLocales.length} chapter=11,15 mobile=390 no_horizontal_overflow=1`);
 } finally {
   await browser.close();
   await new Promise((resolve) => server.close(resolve));

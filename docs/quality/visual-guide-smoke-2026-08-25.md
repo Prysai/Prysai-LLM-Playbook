@@ -26,8 +26,8 @@ python -X utf8 scripts/run_tests.py
 | Check | Result | Scope |
 | --- | --- | --- |
 | Candidate Pages build | passed | `_site/` generated from the current source tree |
-| Focused visual smoke | passed | 8 locale routes; 20 boards; dynamic route, goal, journey, capability, maturity, concept, evidence, receipt, reading-loop, action-boundary, and triage nodes |
-| Lab 003 Reader visual smoke | passed | 8 locale routes; localized heading, experiment-record board, alternative text, text explanation, evidence boundary, related visuals, and 390px overflow check |
+| Focused visual smoke | passed | 8 locale routes; 22 boards; dynamic route, goal, journey, capability, maturity, concept, evidence, receipt, reading-loop, action-boundary, and triage nodes |
+| Reader visual smoke | passed | 8 locale routes for Lab 001, Lab 003, Chapter 11, and Chapter 15; localized headings/theses, Skill-boundary and experiment boards, alternative text, text explanations, evidence boundaries, related visuals, and 390px overflow checks |
 | Responsive visual viewer | passed | Approved board links use the project viewer with localized labels, zoom controls, raw-SVG escape hatch, and rejected-asset error state |
 | Reader visual action note | passed | Localized `look first / do next / keep / do not infer` strip rendered in English, Simplified Chinese, Spanish, Japanese, Korean, German, Traditional Chinese, and French |
 | Mobile overflow | passed | 390px and 360px visual guide viewports |
@@ -56,8 +56,8 @@ false-negative validation gap without changing the runtime fallback order.
 | --- | --- | --- |
 | Additive dictionary regression fixtures | passed | `SITE_I18N_TESTS_OK fixtures=10` |
 | Site i18n inventory after bridge audit | passed | `html_keys=674 translated_keys=674`, all 8 locales |
-| Visual Guide smoke after bridge audit | passed | `VISUAL_GUIDE_SMOKE_OK locales=8 cards=21 mobile=390,360 no_script=1` |
-| Reader visual smoke after bridge audit | passed | `READER_VISUAL_SMOKE_OK locales=8 lab=003 first_task_locales=8 research_locales=8 chapter=15 mobile=390 no_horizontal_overflow=1` |
+| Visual Guide smoke after bridge audit | passed | `VISUAL_GUIDE_SMOKE_OK locales=8 cards=22 mobile=390,360 no_script=1` |
+| Reader visual smoke after bridge audit | passed | `READER_VISUAL_SMOKE_OK locales=8 lab=003 first_task_locales=8 research_locales=8 skill_locales=8 chapter=11,15 mobile=390 no_horizontal_overflow=1` |
 
 The bridge board remains a teaching aid. These checks establish dictionary
 coverage and rendered-route behavior; they do not establish native-language
