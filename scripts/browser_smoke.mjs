@@ -44,9 +44,9 @@ const bundledPython = path.join(
 );
 const python = process.env.PYTHON || process.env.PYTHON_PATH || (existsSync(bundledPython) ? bundledPython : 'python');
 // This smoke covers every locale, multiple full Reader routes, visual
-// screenshots, and mobile navigation. Keep the guard above normal CI jitter
-// without hiding a genuinely stalled run.
-const testTimeoutMs = Number(process.env.BROWSER_SMOKE_TIMEOUT_MS || 240_000);
+// screenshots, and mobile navigation. Keep a finite guard for a genuinely
+// stalled run while allowing the full Windows matrix to finish.
+const testTimeoutMs = Number(process.env.BROWSER_SMOKE_TIMEOUT_MS || 600_000);
 const testTimeout = setTimeout(() => {
   console.error(`BROWSER_SMOKE_FAILED timeout_ms=${testTimeoutMs}`);
   process.exit(2);
@@ -108,7 +108,9 @@ const port = await freePort();
 const origin = `http://localhost:${port}`;
 const server = spawn(python, ['-m', 'http.server', String(port), '--bind', 'localhost', '--directory', artifact], {
   cwd: root,
-  stdio: ['ignore', 'pipe', 'pipe'],
+  // Access logs are not diagnostic evidence; piping unread stdout can fill
+  // the Windows pipe and stall the server during this request-heavy smoke.
+  stdio: ['ignore', 'ignore', 'pipe'],
 });
 let serverError = '';
 server.stderr.on('data', (chunk) => { serverError += chunk.toString(); });
@@ -116,6 +118,7 @@ server.stderr.on('data', (chunk) => { serverError += chunk.toString(); });
 let browser;
 let context;
 let page;
+let serverWasTerminated = false;
 try {
   await waitForHttp(`${origin}/`);
   browser = await chromium.launch({ headless: true });
@@ -2950,9 +2953,13 @@ try {
   clearTimeout(testTimeout);
   if (browser) await browser.close();
   if (server.exitCode === null) {
+    // Windows may report an intentional child-process kill as unsigned -1.
+    serverWasTerminated = true;
     server.kill();
     await new Promise((resolve) => server.once('exit', resolve));
   }
   await fs.rm(temporaryRoot, { recursive: true, force: true });
-  if (server.exitCode && server.exitCode !== 0) throw new Error(`Local server failed (${server.exitCode}): ${serverError}`);
+  if (!serverWasTerminated && server.exitCode && server.exitCode !== 0) {
+    throw new Error(`Local server failed (${server.exitCode}): ${serverError}`);
+  }
 }
