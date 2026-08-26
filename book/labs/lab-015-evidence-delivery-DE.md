@@ -21,13 +21,22 @@ transfer_limitations: "Ein Quellencheck beweist weder visuelle Laufzeit noch Nut
 
 # Lab 015: Evidenz statt einer Fertigmeldung übergeben
 
-## Das Problem
+## Warum dieses Lab existiert
 
-Ein Befehl kann laufen, während seine Ausgabe verborgen, gekürzt, an das falsche Arbeitsverzeichnis gebunden oder für den behaupteten Schluss zu schwach ist. Dieses Lab verwandelt „fertig“ in ein Anspruch-Evidenz-Protokoll.
+Ein Befehl kann laufen, während seine Ausgabe verborgen, gekürzt, an das falsche
+Arbeitsverzeichnis gebunden oder für den behaupteten Schluss zu schwach ist. Dieses
+Lab macht aus „fertig“ ein Protokoll, das jeden Anspruch mit einem Beleg verbindet.
 
-## Vorbereitung und Aufgabe
+## Vorbereitung
 
-Erstelle eine Wegwerf-Textänderung, einen fokussierten und einen absichtlich fehlenden Check. Bereite eine anonymisierte Übergabe mit Quellenanspruch, Checkanspruch und Laufzeit- oder Nutzerwirkungsanspruch vor. Nutze keinen echten Dienst und keine Nutzerdaten. Notiere je Anspruch:
+Erstelle eine temporäre Textänderung, einen fokussierten Check und einen absichtlich
+fehlenden Check. Bereite eine anonymisierte Übergabe mit einem Quellenanspruch,
+einem Checkanspruch und einem Laufzeit- oder Nutzerwirkungsanspruch vor. Nutze
+keinen echten Dienst und keine Nutzerdaten.
+
+## Aufgabe
+
+Notiere für jeden Anspruch:
 
 ```text
 Anspruch:
@@ -40,21 +49,77 @@ Status: verified | partial | unverified | blocked | not_run
 Kleinster nächster Check:
 ```
 
-Eine zweite Reviewperson oder frische Sitzung soll Ansprüche ohne Evidenz, außerhalb des Umfangs oder nur aus einer anderen Zeile abgeleitete Ansprüche zurückweisen.
+Eine zweite Reviewperson oder eine frische Sitzung soll jeden Anspruch zurückweisen,
+für den ein Beleg fehlt, dessen Umfang größer als die Prüfung ist oder der nur aus
+einer anderen Zeile abgeleitet wurde.
 
-## Fehler und Grenzübung
+## Nachweise
 
-Entferne die Ausgabedatei, aber lasse den Befehlsnamen in der Übergabe. Der korrekte Status ist `unverified` oder `not_run`, nicht „wahrscheinlich bestanden“. Ohne Netzwerk lassen sich Grenzen modellieren: mehr Text als ein Terminal zeigt, BMP- und Nicht-BMP-Zeichen vor Toolaufruf vergleichen oder — falls unterstützt — einen langen normalen Testdateinamen verwenden. Ein lokales Fixture ist kein Nachweis, ein fremdes Problem reproduziert zu haben.
+Bewahre Anspruchstabelle, rohe Befehlsausgabe, Diff und Reviewentscheidung auf. Das
+Protokoll muss zeigen, warum ein bestandener Quellencheck weder visuellen Laufzeit-
+Erfolg noch Nutzerakzeptanz beweist.
 
-## Abnahme und Transfer
+## Fehlerfall
+
+Entferne die Ausgabedatei, lasse aber den Befehlsnamen in der Übergabe stehen. Der
+richtige Status ist `unverified` oder `not_run`, nicht „wahrscheinlich bestanden“.
+
+## Feldvariante: drei Windows-Brüche in der Evidenz
+
+Nutze die drei öffentlichen Berichte in [Kapitel 9](../chapters/09-verification-and-recovery-DE.md) als Referenzfälle. Versuche in diesem Lab nicht, ein externes Produktproblem zu reproduzieren. Erstelle stattdessen harmlose lokale Fixtures, die die Evidenzgrenze modellieren:
+
+1. Erzeuge mehr Text, als der Terminalausschnitt anzeigen kann, speichere denselben
+   Inhalt in einer Datei und vergleiche das Dauerhafte mit dem Sichtbaren.
+2. Lege BMP- und Nicht-BMP-Zeichen in ein Text-Fixture. Vergleiche die erwartete
+   und die empfangene Zeichenfolge vor jedem Toolaufruf; bei einer Abweichung den
+   Fall als `blocked` markieren.
+3. Erstelle nur dann ein temporäres Git-Repository mit einem absichtlich langen,
+   aber gewöhnlichen Testdateinamen, wenn das Dateisystem dies unterstützt.
+   Protokolliere Pfadlänge und Git-Ergebnis; erstelle oder lösche keine internen
+   Codex-Refs und ändere keine Repository-Konfiguration.
+
+Füge für jeden Fall eine Zeile in die Anspruchstabelle ein:
+
+```text
+reported symptom:
+local fixture:
+source URL:
+local reproduction: not_run | observed | blocked
+last confirmed stage:
+first unknown stage:
+durable evidence:
+safe next check:
+stop condition:
+```
+
+Das richtige Ergebnis kann `reference-only`, `not_run` oder `blocked` sein. Ein
+lokales Fixture, das eine Grenze modelliert, ist keine Reproduktion des externen
+Problems; ein aus einem öffentlichen Bericht kopierter Workaround ist kein
+offizieller Fix.
+
+## Übertragung
+
+Wende dieselbe Tabelle auf eine statische Website an. Trenne vorhandene Quelldateien,
+gebautes Artefakt, Browser-Render, geprüftes Screenshot und erreichbare öffentliche
+URL.
+
+## Abnahme-Checkliste
 
 - [ ] Jeder Fertigsatz ist in einen Anspruch mit Umfang zerlegt.
-- [ ] Befehle enthalten Pfad, Ausgabe und Exit-Code.
-- [ ] Fehlende Evidenz ist explizit.
+- [ ] Befehle enthalten Pfad, Exit-Code und gespeicherte Ausgabe.
+- [ ] Fehlende Belege sind ausdrücklich markiert.
 - [ ] Ein späterer Erfolg überschreibt keine frühere Ungewissheit.
-- [ ] Die Übergabe nennt nächsten Check und Stoppbedingung.
+- [ ] Die Übergabe nennt den kleinsten nächsten Check und die Stoppbedingung.
 
-Übertrage die Tabelle auf eine statische Website: Trenne Quelldateien, gebautes Artefakt, Browser-Render, Screenshot-Review und erreichbare öffentliche URL. Dieses Lab bleibt `draft / not_run`; ein Quellencheck beweist weder visuelle Laufzeit noch Nutzerakzeptanz.
+## Reflexion
+
+Bestimme den Anspruch, dessen Umfang größer als seine Evidenz war, und nenne den
+kleinsten Check, der die Lücke schließen würde.
+
+## Quellen
+
+- [Feldprobleme und Prompt-Muster — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-05, FP2-06 und FP2-20.
+- [Kapitel 9: Verifikation, Zweifel und Wiederherstellung](../chapters/09-verification-and-recovery-DE.md).
 
 <!-- lab-navigation:start -->
 <hr>

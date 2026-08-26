@@ -21,40 +21,106 @@ transfer_limitations: "Un check de fuente no prueba ejecución visual, aceptaci�
 
 # Lab 015: entregar evidencia, no una frase de finalización
 
-## El problema
+## Por qué existe este Lab
 
-Un comando puede ejecutarse con salida oculta, truncada, en el directorio equivocado o demasiado débil para la afirmación. Convierte «hecho» en una tabla de afirmación y evidencia.
+Un comando puede ejecutarse mientras su salida queda oculta, truncada, asociada al
+directorio equivocado o resulta demasiado débil para la afirmación que se hace.
+Este Lab convierte una frase pulida de «terminado» en un registro que une cada
+afirmación con su evidencia.
 
-## Preparación y tarea
+## Preparación
 
-Crea un cambio de texto desechable, un check focalizado y otro omitido. Prepara un traspaso anonimizado con una afirmación de fuente, otra de check y otra de ejecución o efecto de usuario. No uses servicio ni datos reales. Para cada afirmación registra:
+Crea un cambio de texto temporal con una comprobación concreta y otra que falte de
+forma deliberada. Prepara un traspaso anonimizado con tres afirmaciones: una sobre
+la fuente, una sobre la comprobación y una sobre la ejecución o el efecto para el
+usuario. No uses un servicio real ni datos de usuarios.
+
+## Tarea
+
+Para cada afirmación, registra:
 
 ```text
-afirmación:
-alcance:
-comando u observación:
-directorio de trabajo:
-código de salida / resultado:
-salida guardada:
-estado: verified | partial | unverified | blocked | not_run
-siguiente comprobación mínima:
+claim:
+scope:
+command or observation:
+working directory:
+exit code / result:
+saved output:
+status: verified | partial | unverified | blocked | not_run
+smallest next check:
 ```
 
-Pide a un segundo revisor —o sesión nueva— que rechace cualquier afirmación sin evidencia, fuera de alcance o inferida de otra fila.
+Pide a una segunda persona —o a una sesión nueva— que rechace cualquier afirmación
+cuya evidencia falte, cuyo alcance sea más amplio que la prueba o que solo se
+infiera de otra fila.
 
-## Fallo y práctica de campo
+## Evidencia
 
-Elimina el archivo de salida pero deja el comando en el traspaso: el resultado es `unverified` o `not_run`, no «probablemente pasó». También puedes modelar sin red tres límites: texto que excede el terminal pero se guarda en archivo; cadenas BMP y no BMP cuya comparación debe hacerse antes de llamar herramientas; un nombre de archivo de prueba largo si el sistema lo permite. Un fixture local no reproduce automáticamente un fallo ajeno ni convierte un workaround de un informe público en arreglo oficial.
+Conserva la tabla de afirmaciones, la salida cruda de los comandos, el diff y la
+decisión de revisión. El registro debe mostrar por qué una comprobación correcta
+de la fuente no demuestra por sí sola que el tiempo de ejecución visual o la
+aceptación del usuario hayan sido correctos.
 
-## Aceptación y transferencia
+## Variante de fallo
 
-- [ ] Cada frase de finalización está dividida en afirmación con alcance.
-- [ ] Los comandos incluyen ruta, salida y código.
-- [ ] La evidencia faltante queda explícita.
-- [ ] Un check posterior no reescribe una incertidumbre previa.
-- [ ] El traspaso nombra siguiente check y condición de parada.
+Elimina el archivo de salida, pero deja el nombre del comando en el traspaso. El
+estado correcto es `unverified` o `not_run`, no «probablemente pasó».
 
-Transfiere la tabla a un sitio estático: distingue archivos fuente, artefacto construido, navegador renderizado, captura revisada y URL pública alcanzable. Este Lab sigue `draft / not_run`; un check de fuente no demuestra aceptación ni ejecución visual.
+## Variante de campo: tres fallos de evidencia en Windows
+
+Usa como casos de referencia los tres informes públicos de [Capítulo 9](../chapters/09-verification-and-recovery-ES.md). No intentes reproducir un problema de un producto externo como parte de este Lab. En su lugar, crea fixtures locales inofensivos que modelen la frontera de evidencia:
+
+1. Genera más texto del que cabe en la ventana del terminal, guarda el mismo
+   contenido en un archivo y compara lo que quedó guardado con lo que se vio.
+2. Coloca caracteres BMP y no BMP en un fixture de texto. Compara la cadena
+   prevista con la recibida antes de cualquier llamada a una herramienta; marca
+   el caso como `blocked` si difieren.
+3. Crea un repositorio Git temporal con un nombre de archivo de prueba normal y
+   deliberadamente largo, solo si el sistema de archivos lo permite. Registra la
+   longitud y el resultado de Git; no crees ni borres referencias internas de
+   Codex ni cambies la configuración del repositorio.
+
+Añade una fila por caso a la tabla de afirmaciones:
+
+```text
+reported symptom:
+local fixture:
+source URL:
+local reproduction: not_run | observed | blocked
+last confirmed stage:
+first unknown stage:
+durable evidence:
+safe next check:
+stop condition:
+```
+
+La conclusión correcta puede ser `reference-only`, `not_run` o `blocked`. Un
+fixture local que modela una frontera no reproduce el problema externo, y una
+solución copiada de un informe público no se convierte en un arreglo oficial.
+
+## Transferencia
+
+Usa la misma tabla en un sitio estático: distingue los archivos fuente presentes,
+el artefacto construido, el renderizado del navegador, la captura revisada y la
+URL pública alcanzable.
+
+## Lista de aceptación
+
+- [ ] Dividí cada frase de finalización en una afirmación con alcance.
+- [ ] Los comandos incluyen ruta, código de salida y salida guardada.
+- [ ] La evidencia que falta queda marcada de forma explícita.
+- [ ] Una comprobación posterior no reescribe un intento anterior desconocido.
+- [ ] El traspaso nombra la comprobación mínima siguiente y la condición de parada.
+
+## Reflexión
+
+Identifica la afirmación cuyo alcance superaba su evidencia y nombra la
+comprobación mínima que cerraría esa brecha.
+
+## Fuentes
+
+- [Problemas de campo y patrones de prompts — P2](../../docs/research/field-problems-and-prompt-patterns-p2-2026-08-11.md), FP2-05, FP2-06 y FP2-20.
+- [Capítulo 9: verificación, duda y recuperación](../chapters/09-verification-and-recovery-ES.md).
 
 <!-- lab-navigation:start -->
 <hr>
