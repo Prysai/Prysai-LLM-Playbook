@@ -124,15 +124,15 @@ Prysai LLM Playbook（Prysai 大模型實戰手冊）不是把 skills 平鋪在�
 
 ## 中文候選學習路徑
 
-當前中文候選路徑不是隻有語言入口。它包括：
+當前中文候選路徑不只是語言入口。它包括：
 
 - `README-ZHTW.md`、`book/README-ZHTW.md`、`book/preface-ZHTW.md` 與本目錄；
 - [中文新手提示卡](book/communication-clinic-ZHTW.md)：七張可直接複製的低風險文字練習卡；獨立語言審校、學習效果與跨模型執行證據仍待完成；
 - [第 1 章](book/chapters/01-gpt-and-codex-ZHTW.md) → [實驗 011](book/labs/lab-011-gpt-codex-boundaries-ZHTW.md) → [第 2 章](book/chapters/02-first-safe-task-ZHTW.md) → [第一次安全改動夾具](book/routes/first-safe-change-ZHTW.md) → [實驗 001](book/labs/lab-001-first-safe-task-ZHTW.md) → [第 3 章](book/chapters/03-task-protocol-ZHTW.md) → [實驗 002](book/labs/lab-002-task-protocol-ZHTW.md)；
 - [第 4 章](book/chapters/04-context-permissions-and-agent-ZHTW.md) → [實驗 007](book/labs/lab-007-action-boundaries-ZHTW.md) → [第 5 章](book/chapters/05-choose-the-codex-surface-ZHTW.md) → [第 6 章](book/chapters/06-model-selection-ZHTW.md) → [第 7 章](book/chapters/07-skills-plugins-and-tools-ZHTW.md) → [實驗 004：選擇最小有用能力](book/labs/lab-004-skill-selection-ZHTW.md) → [第 8 章](book/chapters/08-full-lifecycle-workflow-ZHTW.md) → [實驗 013](book/labs/lab-013-l3-vertical-slice-ZHTW.md) → [第 9 章](book/chapters/09-verification-and-recovery-ZHTW.md) → [實驗 003](book/labs/lab-003-evidence-review-ZHTW.md) → [第 10 章](book/chapters/10-planning-and-slicing-ZHTW.md)。
 
-它們都是遷移中的 `ZHTW` 候選內容。22 章與 18 個實驗之外的 Skill、研究檔案、評測和治理檔案仍不代表已完成同內容 ID 的繁體中文版本，語言質量也尚未由獨立審校者確認。後續遷移必須繼續使用同一內容 ID、明確語言字尾和同語言連結；只有檔案、審校與對應證據都存在時才可提升狀態。
+它們都是遷移中的 `ZHTW` 候選內容。22 章與 18 個實驗之外的 Skill、研究檔案、評測和治理檔案仍不代表已完成同內容 ID 的繁體中文版本，翻譯品質也尚未由獨立審校者確認。後續遷移必須繼續使用同一內容 ID、明確語言字尾和同語言連結；只有檔案、審校與對應證據都存在時才可提升狀態。
 
 ## 名稱說明
 
-當前對外名稱為 `Prysai LLM Playbook — From First Task to Reliable Work`，中文名稱為“Prysai 大模型實戰手冊：從第一個任務到可靠交付”。GitHub 倉庫路徑暫保持現有 slug；倉庫後設資料和舊連結遷移需要單獨決定。組織歸屬、維護責任和發行門禁記錄在治理與來原始檔中，不放進產品標題。
+當前對外名稱為 `Prysai LLM Playbook — From First Task to Reliable Work`，中文名稱為“Prysai 大模型實戰手冊：從第一個任務到可靠交付”。GitHub 倉庫路徑暫保持現有 slug；倉庫後設資料和舊連結遷移需要單獨決定。組織歸屬、維護責任和發行門禁記錄在治理與來源檔中，不放進產品標題。
