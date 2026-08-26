@@ -37,7 +37,7 @@ const python = process.env.PYTHON || process.env.PYTHON_PATH || (existsSync(bund
 // This smoke covers every locale, multiple full Reader routes, visual
 // screenshots, and mobile navigation. Keep the guard above normal CI jitter
 // without hiding a genuinely stalled run.
-const testTimeoutMs = 240_000;
+const testTimeoutMs = Number(process.env.BROWSER_SMOKE_TIMEOUT_MS || 240_000);
 const testTimeout = setTimeout(() => {
   console.error(`BROWSER_SMOKE_FAILED timeout_ms=${testTimeoutMs}`);
   process.exit(2);
@@ -631,6 +631,7 @@ try {
       await foundationVisuals.locator('img').evaluateAll((images) => images.map((image) => image.getAttribute('src'))),
       [
         '../assets/teaching/foundation-first-visit-route-red-black.svg',
+        '../assets/teaching/first-task-evidence-bridge-red-black.svg',
         '../assets/teaching/first-attempt-evidence-receipt-red-black.svg',
         '../assets/teaching/foundation-route-map-red-black.svg',
         '../assets/teaching/prompt-contract-six-fields-red-black.svg',
@@ -645,14 +646,14 @@ try {
     assert.deepEqual(
       await foundationVisuals.locator('img').evaluateAll((images) => images.map((image) => image.getAttribute('alt'))),
       {
-        en: ['First visit route to one checked LLM task teaching board', 'First attempt to evidence receipt teaching board', 'Smallest safe LLM loop teaching board', 'Six-field prompt contract teaching board', 'Observable action boundary teaching board', 'Evidence recovery ladder teaching board', 'Source check before belief teaching board', 'Claim to evidence audit teaching board', 'Evidence to decision and stop teaching board'],
-        zh: ['从第一次访问到完成一次可检查 LLM 任务的教学图', '从第一次尝试到证据回执的教学图', '最小安全 LLM 闭环教学图', '六字段提示词契约教学图', '可观察行动边界教学图', '证据恢复阶梯教学图', '相信前先检查来源教学图', '声明到证据审计教学图', '从证据到决定与停止的教学图'],
-        es: ['Tabla didáctica de la primera visita a una tarea LLM comprobable', 'Tabla didáctica del primer intento al registro de evidencia', 'Tabla didáctica del bucle LLM seguro más pequeño', 'Tabla didáctica del contrato de prompt de seis campos', 'Tabla didáctica del límite de acción observable', 'Tabla didáctica de la escalera de recuperación de evidencia', 'Tabla didáctica de comprobar la fuente antes de creer', 'Tabla didáctica de la auditoría de afirmación a evidencia', 'Tabla didáctica de evidencia, decisión y parada'],
-        ja: ['初回訪問から確認可能なLLMタスクまでの学習図', '最初の試行から確認できる記録までを示す教材図', '最小の安全なLLMループを示す教材図', '6項目のプロンプト契約を示す教材図', '観測可能な操作境界を示す教材図', 'エビデンス回復ラダーを示す教材図', '信じる前の出典確認を示す教材図', '主張から証拠までの監査を示す教材図', '証拠から判断と停止までを示す教材図'],
-        ko: ['첫 방문부터 확인 가능한 LLM 작업까지 보여 주는 교육 보드', '첫 시도에서 확인 가능한 기록으로 이어지는 교육 보드', '가장 작은 안전한 LLM 루프 교육 보드', '여섯 필드 프롬프트 계약 교육 보드', '관찰 가능한 행동 경계 교육 보드', '증거 복구 사다리 교육 보드', '믿기 전 출처 점검 교육 보드', '주장에서 증거까지 감사하는 교육 보드', '증거에서 판단과 중지까지 보여 주는 교육 보드'],
-        de: ['Lehrtafel vom ersten Besuch bis zu einer prüfbaren LLM-Aufgabe', 'Lehrtafel vom ersten Versuch zum prüfbaren Beleg', 'Lehrtafel zum kleinsten sicheren LLM-Ablauf', 'Lehrtafel für einen Prompt-Vertrag mit sechs Feldern', 'Lehrtafel für eine beobachtbare Handlungsgrenze', 'Lehrtafel zur Evidenz-Wiederherstellungsleiter', 'Lehrtafel zur Quellenprüfung vor dem Vertrauen', 'Lehrtafel zur Prüfung von Aussage und Beleg', 'Lehrtafel von Beleg zu Entscheidung und Stopp'],
-        'zh-tw': ['從第一次造訪到完成一次可檢查 LLM 任務的教學圖', '從第一次嘗試到可檢查紀錄的教學圖', '最小安全 LLM 閉環教學圖', '六欄位提示詞契約教學圖', '可觀察行動邊界教學圖', '證據恢復階梯教學圖', '相信前先檢查來源教學圖', '主張到證據稽核教學圖', '從證據到判斷與停止的教學圖'],
-        fr: ['Tableau pédagogique du premier parcours jusqu’à une tâche LLM vérifiable', 'Tableau pédagogique du premier essai au relevé vérifiable', 'Tableau pédagogique de la plus petite boucle LLM sûre', 'Tableau pédagogique du contrat de prompt à six champs', 'Tableau pédagogique de la frontière d’action observable', 'Tableau pédagogique de l’échelle de récupération des preuves', 'Tableau pédagogique de la vérification de la source avant de croire', 'Tableau pédagogique de l’audit de l’affirmation par les preuves', 'Tableau pédagogique des preuves vers la décision et l’arrêt'],
+        en: ['First visit route to one checked LLM task teaching board', 'First task to evidence bridge teaching board', 'First attempt to evidence receipt teaching board', 'Smallest safe LLM loop teaching board', 'Six-field prompt contract teaching board', 'Observable action boundary teaching board', 'Evidence recovery ladder teaching board', 'Source check before belief teaching board', 'Claim to evidence audit teaching board', 'Evidence to decision and stop teaching board'],
+        zh: ['从第一次访问到完成一次可检查 LLM 任务的教学图', '让首任务通向证据的教学图', '从第一次尝试到证据回执的教学图', '最小安全 LLM 闭环教学图', '六字段提示词契约教学图', '可观察行动边界教学图', '证据恢复阶梯教学图', '相信前先检查来源教学图', '声明到证据审计教学图', '从证据到决定与停止的教学图'],
+        es: ['Tabla didáctica de la primera visita a una tarea LLM comprobable', 'Tabla didáctica del puente de la primera tarea a la evidencia', 'Tabla didáctica del primer intento al registro de evidencia', 'Tabla didáctica del bucle LLM seguro más pequeño', 'Tabla didáctica del contrato de prompt de seis campos', 'Tabla didáctica del límite de acción observable', 'Tabla didáctica de la escalera de recuperación de evidencia', 'Tabla didáctica de comprobar la fuente antes de creer', 'Tabla didáctica de la auditoría de afirmación a evidencia', 'Tabla didáctica de evidencia, decisión y parada'],
+        ja: ['初回訪問から確認可能なLLMタスクまでの学習図', '最初のタスクから証拠へつなぐ教材図', '最初の試行から確認できる記録までを示す教材図', '最小の安全なLLMループを示す教材図', '6項目のプロンプト契約を示す教材図', '観測可能な操作境界を示す教材図', 'エビデンス回復ラダーを示す教材図', '信じる前の出典確認を示す教材図', '主張から証拠までの監査を示す教材図', '証拠から判断と停止までを示す教材図'],
+        ko: ['첫 방문부터 확인 가능한 LLM 작업까지 보여 주는 교육 보드', '첫 작업에서 증거로 이어지는 다리를 보여 주는 교육 보드', '첫 시도에서 확인 가능한 기록으로 이어지는 교육 보드', '가장 작은 안전한 LLM 루프 교육 보드', '여섯 필드 프롬프트 계약 교육 보드', '관찰 가능한 행동 경계 교육 보드', '증거 복구 사다리 교육 보드', '믿기 전 출처 점검 교육 보드', '주장에서 증거까지 감사하는 교육 보드', '증거에서 판단과 중지까지 보여 주는 교육 보드'],
+        de: ['Lehrtafel vom ersten Besuch bis zu einer prüfbaren LLM-Aufgabe', 'Lehrtafel von der ersten Aufgabe zur Belegbrücke', 'Lehrtafel vom ersten Versuch zum prüfbaren Beleg', 'Lehrtafel zum kleinsten sicheren LLM-Ablauf', 'Lehrtafel für einen Prompt-Vertrag mit sechs Feldern', 'Lehrtafel für eine beobachtbare Handlungsgrenze', 'Lehrtafel zur Evidenz-Wiederherstellungsleiter', 'Lehrtafel zur Quellenprüfung vor dem Vertrauen', 'Lehrtafel zur Prüfung von Aussage und Beleg', 'Lehrtafel von Beleg zu Entscheidung und Stopp'],
+        'zh-tw': ['從第一次造訪到完成一次可檢查 LLM 任務的教學圖', '讓首項任務通往證據的教學圖', '從第一次嘗試到可檢查紀錄的教學圖', '最小安全 LLM 閉環教學圖', '六欄位提示詞契約教學圖', '可觀察行動邊界教學圖', '證據恢復階梯教學圖', '相信前先檢查來源教學圖', '主張到證據稽核教學圖', '從證據到判斷與停止的教學圖'],
+        fr: ['Tableau pédagogique du premier parcours jusqu’à une tâche LLM vérifiable', 'Tableau pédagogique du pont entre première tâche et preuves', 'Tableau pédagogique du premier essai au relevé vérifiable', 'Tableau pédagogique de la plus petite boucle LLM sûre', 'Tableau pédagogique du contrat de prompt à six champs', 'Tableau pédagogique de la frontière d’action observable', 'Tableau pédagogique de l’échelle de récupération des preuves', 'Tableau pédagogique de la vérification de la source avant de croire', 'Tableau pédagogique de l’audit de l’affirmation par les preuves', 'Tableau pédagogique des preuves vers la décision et l’arrêt'],
       }[locale],
       `${locale} foundation visual alt text is not localized`,
     );
