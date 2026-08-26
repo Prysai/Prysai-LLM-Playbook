@@ -1,7 +1,7 @@
 <!-- Traditional Chinese candidate generated from the Simplified Chinese source; independent language review pending. -->
 <!-- content_id: book-readme | locale: ZHTW | language: zh-TW | default_locale: EN | translation_status: in-progress -->
 
-# Prysai 大模型實戰手冊：書稿
+# Prysai 大型語言模型實戰手冊：書稿
 
 > 繁體中文書稿入口（`ZHTW`）。入口、序言、目錄、22 章、18 項實驗、兩條新手路線和一組新手提示卡均已有繁體中文候選內容；獨立語言審校與學習者執行證據仍待完成。
 
@@ -24,7 +24,7 @@
 - **宿主**：承載模型、工具、權限與狀態的執行環境；看得到某個設定，不等於執行已經發生。
 - **夾具**：為練習準備的固定、無敏感資料的輸入與預期結果，用來重複檢查，不代表真實產品行為。
 - **讀回**：行動後重新讀取目標或輸出，確認實際狀態，而不是只看「完成」提示。
-- **回執**：記錄這次嘗試實際發生什麼、保留了哪些證據，以及還有哪些未知的短記錄。
+- **回執**：記下這次嘗試實際發生了什麼、保留哪些證據，以及還有哪些未知事項的簡短記錄。
 - **垂直切片**：從輸入到交付貫通的一條最小可驗證路徑，不是一次完成所有功能。
 
 導航：
@@ -61,7 +61,7 @@
 | `book/labs/` | 18 個實驗 | 18 個實驗均有繁體中文候選譯文；獨立語言審校與學習者執行記錄仍待完成 |
 | `book/table-of-contents-ZHTW.md` | 繁體中文閱讀目錄與章節入口 | 已列出 22 章與 18 項實驗的繁體中文候選入口 |
 | `book/communication-clinic-ZHTW.md` | 繁體中文新手提示卡 | 七張低風險文字練習卡；是起步切片，不代表學習效果已驗證 |
-| `book/routes/first-safe-change-ZHTW.md` | 中文新手安全路線 | 完整初稿，遷移狀態為 `in-progress`；獨立語言審校待完成 |
+| `book/routes/first-safe-change-ZHTW.md` | 繁體中文新手安全路線 | 完整初稿，遷移狀態為 `in-progress`；獨立語言審校待完成 |
 | `book/README-ZHTW.md` | 本繁體中文書稿入口 | 遷移狀態為 `in-progress` |
 | `book/preface-ZHTW.md` | 繁體中文序言 | 遷移狀態為 `in-progress` |
 

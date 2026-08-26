@@ -194,3 +194,15 @@ status.
   bleibt`). The fixture path and safety boundary are unchanged.
 - **Boundary:** this is one grammar/meaning correction; it is not evidence of
   independent German proofreading or equivalent content across locales.
+
+### Precision review slice — Traditional Chinese book entry (2026-08-26)
+
+- **File:** `book/README-ZHTW.md`.
+- **Change:** replaced the ambiguous title term `大模型` with the Taiwan-
+  appropriate `大型語言模型`, clarified the definition of `回執` as a short
+  record of what happened and what remains unknown, and changed the route label
+  from generic `中文` to `繁體中文` so the entry identifies its locale.
+- **Boundary:** these are three high-confidence wording corrections in the
+  book entry. They do not certify the Traditional Chinese route as native-level,
+  prove semantic equivalence, or provide learner evidence; its status remains
+  `in-progress` pending independent review and comprehension checks.
