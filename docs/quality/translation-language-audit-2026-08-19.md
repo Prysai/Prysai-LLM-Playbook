@@ -185,3 +185,12 @@ status.
   Simplified and Taiwan Traditional conventions respectively.
 - **Boundary:** this is a two-file entry-copy correction, not proof that either
   Chinese route has completed native review or learner validation.
+
+### Precision review slice — German fixture-preservation sentence (2026-08-26)
+
+- **File:** `book/routes/first-safe-change-DE.md`.
+- **Change:** repaired an incomplete sentence and its polarity so the prepared
+  fixture error is stated to remain available for the next reader (`erhalten
+  bleibt`). The fixture path and safety boundary are unchanged.
+- **Boundary:** this is one grammar/meaning correction; it is not evidence of
+  independent German proofreading or equivalent content across locales.
